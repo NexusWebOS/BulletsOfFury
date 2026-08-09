@@ -1,0 +1,10 @@
+# scratch and generated
+_superseded/
+*.zip
+node_modules/
+__pycache__/
+.DS_Store
+
+# capture output — regenerate with shoot.py rather than committing pixels
+_shots/
+/tmp/

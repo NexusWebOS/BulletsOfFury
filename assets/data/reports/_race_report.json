@@ -1,0 +1,128 @@
+{
+ "courses": {
+  "aoa": {
+   "enc": "02-03",
+   "sections": 4,
+   "variant": "oa"
+  },
+  "aob": {
+   "enc": "02-03",
+   "sections": 4,
+   "variant": "ob"
+  },
+  "atn": {
+   "enc": "02-03",
+   "sections": 3,
+   "variant": "tn"
+  },
+  "boa": {
+   "enc": "04-05",
+   "sections": 4,
+   "variant": "oa"
+  },
+  "bob": {
+   "enc": "04-05",
+   "sections": 4,
+   "variant": "ob"
+  },
+  "btn": {
+   "enc": "04-05",
+   "sections": 3,
+   "variant": "tn"
+  },
+  "coa": {
+   "enc": "06-07",
+   "sections": 4,
+   "variant": "oa"
+  },
+  "cob": {
+   "enc": "06-07",
+   "sections": 4,
+   "variant": "ob"
+  },
+  "ctn": {
+   "enc": "06-07",
+   "sections": 3,
+   "variant": "tn"
+  }
+ },
+ "encounters": {
+  "a": "2-3",
+  "b": "4-5",
+  "c": "6-7"
+ },
+ "objects": {
+  "barrier": {
+   "kind": "breakable_obstacle",
+   "states": [
+    "intact",
+    "damaged",
+    "breaking",
+    "debris"
+   ]
+  },
+  "boulder": {
+   "kind": "breakable_obstacle",
+   "states": [
+    "intact",
+    "damaged",
+    "breaking",
+    "debris"
+   ]
+  },
+  "crate": {
+   "kind": "pickup",
+   "states": [
+    "sealed",
+    "glint",
+    "opening",
+    "empty"
+   ]
+  },
+  "gate": {
+   "kind": "checkpoint",
+   "states": [
+    "red",
+    "amber",
+    "green",
+    "finish_flash"
+   ]
+  },
+  "ice": {
+   "kind": "breakable_obstacle",
+   "states": [
+    "intact",
+    "damaged",
+    "breaking",
+    "debris"
+   ]
+  },
+  "mine": {
+   "kind": "breakable_obstacle",
+   "states": [
+    "intact",
+    "damaged",
+    "breaking",
+    "debris"
+   ]
+  },
+  "sat": {
+   "kind": "breakable_obstacle",
+   "states": [
+    "intact",
+    "damaged",
+    "breaking",
+    "debris"
+   ]
+  },
+  "tank": {
+   "kind": "breakable_obstacle",
+   "states": [
+    "intact",
+    "damaged",
+    "breaking",
+    "debris"
+   ]
+  }
+ }
+}

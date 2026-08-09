@@ -1,0 +1,45 @@
+{
+  "_README": [
+    "PROTECTED ASSETS \u2014 do not delete these in any cleanup pass.",
+    "",
+    "This file exists because the asset audit in drop 0801kq flagged families with no",
+    "code reference as deletion candidates, and the single largest of them (nst9_, the",
+    "stage-9 bonus level) turned out to be PLANNED CONTENT, not dead weight. Mike:",
+    "'stage 9 was the bonus stage, yes. This is accesible through Level 5, this will be",
+    "a thing we wire up towards the end of the project.'",
+    "",
+    "Anything listed here is unreferenced by code ON PURPOSE \u2014 it is waiting to be",
+    "wired, not waiting to be removed. test_fl.js asserts every entry still resolves,",
+    "so deleting one fails the suite instead of quietly shipping a broken bonus stage",
+    "six months from now when nobody remembers this conversation.",
+    "",
+    "To add: put the manifest key or path here with a reason and who asked for it."
+  ],
+  "stage9_bonus": {
+    "reason": "Bonus stage, entered from Level 5. Art, music, font and projectile set are all authored and complete; only the wiring is outstanding. Deliberately absent from STAGES[] until it is hooked up.",
+    "requested_by": "Mike, drop 0801kq",
+    "status": "AWAITING WIRING \u2014 do not delete, do not 'clean up'",
+    "keys": [
+      "nst9_master",
+      "nep_9_0",
+      "nep_9_1",
+      "nep_9_2",
+      "nep_9_3",
+      "nep_9_4",
+      "nep_9_5",
+      "nep_9_6",
+      "nbp_9_0",
+      "nbp_9_1",
+      "nbp_9_2",
+      "nbp_9_3",
+      "nbp_9_4",
+      "nbp_9_5",
+      "nbp_9_6"
+    ],
+    "paths": [
+      "assets/game"
+    ],
+    "approx_mb": 8.0,
+    "paths_note": "Updated for the three-bucket restructure (drop 0806r). These were assets/levels/level9, assets/music/stages/9, assets/fonts/stages/9 \u2014 folders that the move emptied because the art itself relocated into player/enemy/game. The 15 KEYS above are the real protection and every one of them still resolves; the folder list only ever described where they happened to sit."
+  }
+}

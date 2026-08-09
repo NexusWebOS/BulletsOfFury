@@ -1,0 +1,14 @@
+{
+ "chain_frames": 12,
+ "cannon_masters": 2,
+ "mirror_exact": true,
+ "chain_phases": [
+  "slack",
+  "tension",
+  "rising",
+  "alignment",
+  "docking",
+  "charged"
+ ],
+ "min_phase_diff": 2.439
+}

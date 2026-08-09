@@ -1,0 +1,286 @@
+{
+ "nlgt": {
+  "front_weapon": [
+   65,
+   178
+  ],
+  "hull": [
+   39,
+   201
+  ],
+  "left_track": [
+   0,
+   105
+  ],
+  "left_weapon_pod": [
+   38,
+   52
+  ],
+  "rear_engine": [
+   92,
+   0
+  ],
+  "right_track": [
+   199,
+   105
+  ],
+  "right_weapon_pod": [
+   145,
+   47
+  ],
+  "turret_core": [
+   92,
+   63
+  ]
+ },
+ "nobd": {
+  "front_weapon": [
+   54,
+   178
+  ],
+  "hull": [
+   27,
+   201
+  ],
+  "left_track": [
+   0,
+   72
+  ],
+  "left_weapon_pod": [
+   27,
+   47
+  ],
+  "rear_engine": [
+   44,
+   0
+  ],
+  "right_track": [
+   188,
+   72
+  ],
+  "right_weapon_pod": [
+   134,
+   47
+  ],
+  "turret_core": [
+   81,
+   63
+  ]
+ },
+ "nmrv": {
+  "front_weapon": [
+   70,
+   178
+  ],
+  "hull": [
+   43,
+   201
+  ],
+  "left_track": [
+   0,
+   0
+  ],
+  "left_weapon_pod": [
+   43,
+   47
+  ],
+  "rear_engine": [
+   43,
+   1
+  ],
+  "right_track": [
+   204,
+   0
+  ],
+  "right_weapon_pod": [
+   150,
+   47
+  ],
+  "turret_core": [
+   97,
+   63
+  ]
+ },
+ "nglr": {
+  "front_weapon": [
+   64,
+   178
+  ],
+  "hull": [
+   37,
+   201
+  ],
+  "left_track": [
+   0,
+   120
+  ],
+  "left_weapon_pod": [
+   37,
+   47
+  ],
+  "rear_engine": [
+   71,
+   0
+  ],
+  "right_track": [
+   198,
+   120
+  ],
+  "right_weapon_pod": [
+   144,
+   47
+  ],
+  "turret_core": [
+   91,
+   63
+  ]
+ },
+ "nslc": {
+  "central_hull": [
+   97,
+   151
+  ],
+  "head_cab": [
+   97,
+   193
+  ],
+  "left_crusher_claw": [
+   4,
+   216
+  ],
+  "left_front_legs": [
+   2,
+   22
+  ],
+  "left_rear_legs": [
+   0,
+   162
+  ],
+  "reactor_turret": [
+   97,
+   0
+  ],
+  "right_crusher_claw": [
+   197,
+   216
+  ],
+  "right_front_legs": [
+   158,
+   22
+  ],
+  "right_rear_legs": [
+   158,
+   162
+  ]
+ },
+ "nrmp": {
+  "command_core": [
+   76,
+   0
+  ],
+  "gun_decks": [
+   76,
+   86
+  ],
+  "left_fortress_wing": [
+   11,
+   10
+  ],
+  "left_siege_arm": [
+   0,
+   94
+  ],
+  "ram_gate": [
+   76,
+   274
+  ],
+  "right_fortress_wing": [
+   161,
+   10
+  ],
+  "right_siege_arm": [
+   207,
+   94
+  ]
+ },
+ "ntxl": {
+  "body_segment_01": [
+   66,
+   106
+  ],
+  "body_segment_02": [
+   1,
+   149
+  ],
+  "body_segment_03": [
+   45,
+   191
+  ],
+  "body_segment_04": [
+   38,
+   233
+  ],
+  "body_segment_05": [
+   57,
+   275
+  ],
+  "body_segment_06": [
+   62,
+   318
+  ],
+  "head_core": [
+   66,
+   0
+  ],
+  "left_claw": [
+   0,
+   37
+  ],
+  "right_claw": [
+   165,
+   37
+  ],
+  "tail_blade": [
+   99,
+   348
+  ]
+ },
+ "ncyc": {
+  "command_core": [
+   105,
+   59
+  ],
+  "left_engine_pods": [
+   0,
+   212
+  ],
+  "left_weapon_rack": [
+   5,
+   151
+  ],
+  "left_wing": [
+   10,
+   20
+  ],
+  "nose": [
+   105,
+   239
+  ],
+  "right_engine_pods": [
+   205,
+   212
+  ],
+  "right_weapon_rack": [
+   143,
+   151
+  ],
+  "right_wing": [
+   128,
+   20
+  ],
+  "tail": [
+   105,
+   0
+  ]
+ }
+}

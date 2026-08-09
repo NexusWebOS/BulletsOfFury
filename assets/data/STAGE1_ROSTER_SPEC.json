@@ -1,0 +1,108 @@
+{
+  "_README": "Stage 1 roster spec, dictated by Mike 0808i. THIS IS THE SOURCE OF TRUTH for what each unit is and how it behaves. Do not infer behaviour from a type name.",
+  "art_rules": {
+    "purple_halo": "convert every purple halo to a BLACK EDGE \u2014 never delete the halo, convert it",
+    "black_edge": "every unit sprite gets a black edge",
+    "white_flash": "every unit gets a usable white-flash variant for hit feedback",
+    "no_propellers": "NO enemy may have propellers. The ONLY propellered unit in the game is the helicopter boss. Units 10 and 11 are therefore OUT.",
+    "palette_swaps": "black-camo palette swaps needed for the jets, and for the boats and tanks",
+    "unit12_fix": "\u26a0 unit 12's sprite is clipped \u2014 its wing is sitting in unit 11's frame on the source sheet. Fix before registering.",
+    "missiles_unswapped": "\u26a0 DO NOT palette-swap the missile graphics. Mike: 'dont swap the missile graphics thoiugh.' On a black-camo variant the hull darkens but the ordnance keeps its authored colour \u2014 a red missile stays red, because that is what makes it readable as a threat."
+  },
+  "units": {
+    "1": {
+      "keep": true,
+      "kind": "tank",
+      "name": "s1_tank_heavy",
+      "attack": "machinegun_turret",
+      "note": "tank machine-gun turret style"
+    },
+    "2": {
+      "keep": true,
+      "kind": "tank",
+      "name": "s1_tank_light",
+      "attack": "missile"
+    },
+    "3": {
+      "keep": true,
+      "kind": "tank",
+      "name": "s1_tank_apc",
+      "attack": "burst_machinegun_kickback"
+    },
+    "4": {
+      "keep": true,
+      "kind": "tank",
+      "name": "s1_truck_missile",
+      "attack": "homing_missile",
+      "note": "wheeled \u2014 the wheels should look like they move within their own pixels"
+    },
+    "5": {
+      "keep": true,
+      "kind": "boat",
+      "name": "s1_boat_gun",
+      "attack": "machinegun",
+      "note": "rapid fire at HALF the player's rate, in ~3 second bursts. Pellets travel like real bullets out of the turret \u2014 they do NOT float or gravitate."
+    },
+    "6": {
+      "keep": false,
+      "reason": "not named in Mike's spec \u2014 he listed the tanks 1-4, boats 5 and 8, the jets, the barrels and the mine"
+    },
+    "7": {
+      "keep": false,
+      "reason": "not named in Mike's spec \u2014 same"
+    },
+    "8": {
+      "keep": true,
+      "kind": "boat",
+      "name": "s1_boat_patrol",
+      "attack": "big_missile",
+      "note": "moves, pauses, IDLES ~1.5s, then a huge missile blast that knocks itself back a few pixels with shake. The missile does NOT home \u2014 it travels like a medium-speed rocket."
+    },
+    "9": {
+      "keep": true,
+      "kind": "jet",
+      "name": "s1_jet_delta"
+    },
+    "10": {
+      "keep": false,
+      "reason": "propellers \u2014 only the helicopter boss may have them"
+    },
+    "11": {
+      "keep": false,
+      "reason": "propellers (tilt-rotor) \u2014 only the helicopter boss may have them"
+    },
+    "12": {
+      "keep": true,
+      "kind": "jet",
+      "name": "s1_jet_bomber",
+      "note": "\u26a0 CLIPPED on the source sheet: its wing is in unit 11's frame. Repair first."
+    },
+    "13": {
+      "keep": true,
+      "kind": "prop",
+      "name": "s1_barrel_oil"
+    },
+    "14": {
+      "keep": true,
+      "kind": "prop",
+      "name": "s1_barrel_fire",
+      "note": "use THIS one on the jungle level, at the coastline, with tanks nearby"
+    },
+    "15": {
+      "keep": false,
+      "reason": "ammo box not needed"
+    },
+    "16": {
+      "keep": true,
+      "kind": "hazard",
+      "name": "s1_mine_water",
+      "note": "placed in level 1's WATER sections as a hazard, with the level-1 alert. Does NOT scroll \u2014 holds its position in the water. Can destroy the player's ship and blows up."
+    }
+  },
+  "behaviour": {
+    "boats": "MOVE, do not scroll. Free in all 8 directions. They only ATTACK when the player is within their '6' \u2014 their facing arc. Placed between the mines, or in open water clear of the mountains and grass.",
+    "tanks": "Same attack styles as the boats, but NOT free movement. Forward and backward only. To reverse they must BRAKE, adjust, then move back. To go sideways they must perform a real reversing turn like a vehicle. Focus on forward/backward.",
+    "jets": "travel at MEDIUM speed toward the player, entering from the top or from the sides.",
+    "no_mini_vehicles": "there are no more mini vehicles"
+  }
+}

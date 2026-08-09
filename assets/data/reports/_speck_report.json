@@ -1,0 +1,56 @@
+{
+ "sprites": 10,
+ "px": 167,
+ "detail": [
+  {
+   "key": "ship_cole_br1",
+   "blobs": 2,
+   "px": 5
+  },
+  {
+   "key": "ship_cole_pv2",
+   "blobs": 1,
+   "px": 1
+  },
+  {
+   "key": "ship_cole_pv4",
+   "blobs": 2,
+   "px": 2
+  },
+  {
+   "key": "ship_juggernaut_br0",
+   "blobs": 1,
+   "px": 2
+  },
+  {
+   "key": "ship_lizzie_t",
+   "blobs": 1,
+   "px": 4
+  },
+  {
+   "key": "ship_maverick_br2",
+   "blobs": 1,
+   "px": 1
+  },
+  {
+   "key": "ship_maverick_br6",
+   "blobs": 1,
+   "px": 1
+  },
+  {
+   "key": "ship_maverick_pv0",
+   "blobs": 1,
+   "px": 1
+  },
+  {
+   "key": "ship_yuri",
+   "blobs": 1,
+   "px": 149
+  },
+  {
+   "key": "ship_yuri_br1",
+   "blobs": 1,
+   "px": 1
+  }
+ ]
+}

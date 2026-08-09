@@ -1,0 +1,64 @@
+{
+ "scard_1": {
+  "before": 816,
+  "after": 0,
+  "healed": 605,
+  "kept": 211,
+  "px_changed": 605,
+  "residue2": 211
+ },
+ "scard_2": {
+  "before": 21,
+  "after": 0,
+  "healed": 21,
+  "kept": 0,
+  "px_changed": 21
+ },
+ "scard_3": {
+  "before": 14,
+  "after": 0,
+  "healed": 14,
+  "kept": 0,
+  "px_changed": 14
+ },
+ "scard_4": {
+  "before": 716,
+  "after": 0,
+  "healed": 386,
+  "kept": 330,
+  "px_changed": 386,
+  "residue2": 333
+ },
+ "scard_5": {
+  "before": 8580,
+  "after": 5972,
+  "healed": 2703,
+  "kept": 5877,
+  "px_changed": 2285,
+  "residue2": 63
+ },
+ "scard_6": {
+  "before": 650,
+  "after": 0,
+  "healed": 393,
+  "kept": 257,
+  "px_changed": 393,
+  "residue2": 258
+ },
+ "scard_7": {
+  "before": 254,
+  "after": 0,
+  "healed": 121,
+  "kept": 133,
+  "px_changed": 121,
+  "residue2": 133
+ },
+ "scard_8": {
+  "before": 237,
+  "after": 0,
+  "healed": 168,
+  "kept": 69,
+  "px_changed": 168,
+  "residue2": 69
+ }
+}

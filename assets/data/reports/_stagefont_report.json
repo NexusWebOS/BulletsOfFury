@@ -1,0 +1,30 @@
+{
+ "stage6": {
+  "glyphs": 46,
+  "chars": 46,
+  "empty": [],
+  "magenta": 0,
+  "title": "HEAVY TURBULENCE"
+ },
+ "stage7": {
+  "glyphs": 46,
+  "chars": 46,
+  "empty": [],
+  "magenta": 0,
+  "title": "NOT ANOTHER SEWER LEVEL"
+ },
+ "stage8": {
+  "glyphs": 46,
+  "chars": 46,
+  "empty": [],
+  "magenta": 0,
+  "title": "FURIOUS DEATH"
+ },
+ "stage9": {
+  "glyphs": 46,
+  "chars": 46,
+  "empty": [],
+  "magenta": 0,
+  "title": "BONUS STAGE"
+ }
+}

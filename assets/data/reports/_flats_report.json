@@ -1,0 +1,182 @@
+{
+ "grass": {
+  "src": "assets/levels/stack/nbg1_loop2.png",
+  "at": [
+   704,
+   336
+  ],
+  "var": 24.62,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   67,
+   72,
+   12
+  ]
+ },
+ "sand": {
+  "src": "assets/levels/stack/nbg1_loop3.png",
+  "at": [
+   160,
+   832
+  ],
+  "var": 6.84,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   187,
+   95,
+   47
+  ]
+ },
+ "gravel": {
+  "src": "assets/levels/stack/nbg2_loop3.png",
+  "at": [
+   640,
+   496
+  ],
+  "var": 25.47,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   63,
+   44,
+   46
+  ]
+ },
+ "ice": {
+  "src": "assets/levels/stack/nbg3_loop3.png",
+  "at": [
+   368,
+   224
+  ],
+  "var": 23.47,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   165,
+   192,
+   223
+  ]
+ },
+ "road": {
+  "src": "assets/levels/stack/nbg4_loop2.png",
+  "at": [
+   128,
+   80
+  ],
+  "var": 5.99,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   80,
+   81,
+   83
+  ]
+ },
+ "concrete": {
+  "src": "assets/levels/stack/nbg4_loop5.png",
+  "at": [
+   496,
+   400
+  ],
+  "var": 11.32,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   104,
+   103,
+   101
+  ]
+ },
+ "sky": {
+  "src": "assets/levels/stack/nbg5_loop2.png",
+  "at": [
+   384,
+   96
+  ],
+  "var": 11.33,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   2,
+   1,
+   31
+  ]
+ },
+ "metal": {
+  "src": "assets/levels/stack/nbg7_loop3.png",
+  "at": [
+   352,
+   32
+  ],
+  "var": 11.48,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   74,
+   69,
+   40
+  ]
+ },
+ "lava": {
+  "src": "assets/levels/fx/nlq_lava_0.png",
+  "liquid": true,
+  "var": 40.51,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   166,
+   22,
+   4
+  ]
+ },
+ "icewater": {
+  "src": "assets/levels/fx/nlq_icewater_0.png",
+  "liquid": true,
+  "var": 41.86,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   17,
+   76,
+   132
+  ]
+ },
+ "water": {
+  "src": "assets/levels/fx/nlq2_water_0.png",
+  "liquid": true,
+  "var": 40.46,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   17,
+   101,
+   142
+  ]
+ },
+ "lavafall": {
+  "src": "assets/levels/fx/nlqf_lava_0.png",
+  "liquid": true,
+  "var": 47.53,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   189,
+   35,
+   6
+  ]
+ },
+ "waterfall": {
+  "src": "assets/levels/fx/nlqf_water_0.png",
+  "liquid": true,
+  "var": 58.39,
+  "wrap_x": 0.0,
+  "wrap_y": 0.0,
+  "mean": [
+   37,
+   128,
+   168
+  ]
+ }
+}

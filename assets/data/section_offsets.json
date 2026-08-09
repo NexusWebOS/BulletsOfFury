@@ -1,0 +1,1224 @@
+{
+ "ncyc": {
+  "command_core": {
+   "critical": [
+    102,
+    59
+   ],
+   "damaged": [
+    105,
+    59
+   ],
+   "destroyed": [
+    98,
+    59
+   ],
+   "intact": [
+    105,
+    59
+   ]
+  },
+  "left_engine_pods": {
+   "critical": [
+    -8,
+    212
+   ],
+   "damaged": [
+    0,
+    212
+   ],
+   "destroyed": [
+    0,
+    212
+   ],
+   "intact": [
+    0,
+    212
+   ]
+  },
+  "left_weapon_rack": {
+   "critical": [
+    5,
+    151
+   ],
+   "damaged": [
+    5,
+    151
+   ],
+   "destroyed": [
+    -4,
+    151
+   ],
+   "intact": [
+    5,
+    151
+   ]
+  },
+  "left_wing": {
+   "critical": [
+    5,
+    20
+   ],
+   "damaged": [
+    10,
+    20
+   ],
+   "destroyed": [
+    12,
+    20
+   ],
+   "intact": [
+    10,
+    20
+   ]
+  },
+  "nose": {
+   "critical": [
+    99,
+    239
+   ],
+   "damaged": [
+    105,
+    239
+   ],
+   "destroyed": [
+    101,
+    239
+   ],
+   "intact": [
+    105,
+    239
+   ]
+  },
+  "right_engine_pods": {
+   "critical": [
+    197,
+    212
+   ],
+   "damaged": [
+    205,
+    212
+   ],
+   "destroyed": [
+    193,
+    212
+   ],
+   "intact": [
+    205,
+    212
+   ]
+  },
+  "right_weapon_rack": {
+   "critical": [
+    130,
+    151
+   ],
+   "damaged": [
+    143,
+    151
+   ],
+   "destroyed": [
+    136,
+    151
+   ],
+   "intact": [
+    143,
+    151
+   ]
+  },
+  "right_wing": {
+   "critical": [
+    117,
+    20
+   ],
+   "damaged": [
+    128,
+    20
+   ],
+   "destroyed": [
+    127,
+    20
+   ],
+   "intact": [
+    128,
+    20
+   ]
+  },
+  "tail": {
+   "critical": [
+    85,
+    0
+   ],
+   "damaged": [
+    100,
+    0
+   ],
+   "destroyed": [
+    98,
+    0
+   ],
+   "intact": [
+    105,
+    0
+   ]
+  }
+ },
+ "nglr": {
+  "front_weapon": {
+   "critical": [
+    64,
+    178
+   ],
+   "damaged": [
+    64,
+    178
+   ],
+   "destroyed": [
+    54,
+    180
+   ],
+   "intact": [
+    64,
+    178
+   ]
+  },
+  "hull": {
+   "critical": [
+    21,
+    201
+   ],
+   "damaged": [
+    37,
+    201
+   ],
+   "destroyed": [
+    37,
+    201
+   ],
+   "intact": [
+    37,
+    201
+   ]
+  },
+  "left_track": {
+   "critical": [
+    0,
+    120
+   ],
+   "damaged": [
+    0,
+    120
+   ],
+   "destroyed": [
+    -11,
+    120
+   ],
+   "intact": [
+    0,
+    120
+   ]
+  },
+  "left_weapon_pod": {
+   "critical": [
+    37,
+    47
+   ],
+   "damaged": [
+    37,
+    47
+   ],
+   "destroyed": [
+    37,
+    50
+   ],
+   "intact": [
+    37,
+    47
+   ]
+  },
+  "rear_engine": {
+   "critical": [
+    66,
+    0
+   ],
+   "damaged": [
+    71,
+    0
+   ],
+   "destroyed": [
+    86,
+    3
+   ],
+   "intact": [
+    71,
+    0
+   ]
+  },
+  "right_track": {
+   "critical": [
+    198,
+    120
+   ],
+   "damaged": [
+    198,
+    120
+   ],
+   "destroyed": [
+    193,
+    120
+   ],
+   "intact": [
+    198,
+    120
+   ]
+  },
+  "right_weapon_pod": {
+   "critical": [
+    130,
+    47
+   ],
+   "damaged": [
+    144,
+    47
+   ],
+   "destroyed": [
+    144,
+    47
+   ],
+   "intact": [
+    144,
+    47
+   ]
+  },
+  "turret_core": {
+   "critical": [
+    91,
+    63
+   ],
+   "damaged": [
+    84,
+    63
+   ],
+   "destroyed": [
+    91,
+    63
+   ],
+   "intact": [
+    91,
+    63
+   ]
+  }
+ },
+ "nlgt": {
+  "front_weapon": {
+   "critical": [
+    57,
+    178
+   ],
+   "damaged": [
+    65,
+    178
+   ],
+   "destroyed": [
+    65,
+    178
+   ],
+   "intact": [
+    65,
+    178
+   ]
+  },
+  "hull": {
+   "critical": [
+    39,
+    201
+   ],
+   "damaged": [
+    39,
+    201
+   ],
+   "destroyed": [
+    39,
+    201
+   ],
+   "intact": [
+    39,
+    201
+   ]
+  },
+  "left_track": {
+   "critical": [
+    0,
+    105
+   ],
+   "damaged": [
+    0,
+    105
+   ],
+   "destroyed": [
+    -6,
+    129
+   ],
+   "intact": [
+    0,
+    105
+   ]
+  },
+  "left_weapon_pod": {
+   "critical": [
+    38,
+    52
+   ],
+   "damaged": [
+    38,
+    52
+   ],
+   "destroyed": [
+    37,
+    52
+   ],
+   "intact": [
+    38,
+    52
+   ]
+  },
+  "rear_engine": {
+   "critical": [
+    92,
+    0
+   ],
+   "damaged": [
+    92,
+    0
+   ],
+   "destroyed": [
+    89,
+    0
+   ],
+   "intact": [
+    92,
+    0
+   ]
+  },
+  "right_track": {
+   "critical": [
+    196,
+    105
+   ],
+   "damaged": [
+    199,
+    105
+   ],
+   "destroyed": [
+    198,
+    105
+   ],
+   "intact": [
+    199,
+    105
+   ]
+  },
+  "right_weapon_pod": {
+   "critical": [
+    145,
+    47
+   ],
+   "damaged": [
+    145,
+    47
+   ],
+   "destroyed": [
+    145,
+    47
+   ],
+   "intact": [
+    145,
+    47
+   ]
+  },
+  "turret_core": {
+   "critical": [
+    91,
+    63
+   ],
+   "damaged": [
+    78,
+    63
+   ],
+   "destroyed": [
+    92,
+    63
+   ],
+   "intact": [
+    92,
+    63
+   ]
+  }
+ },
+ "nmrv": {
+  "front_weapon": {
+   "critical": [
+    70,
+    178
+   ],
+   "damaged": [
+    70,
+    178
+   ],
+   "destroyed": [
+    70,
+    178
+   ],
+   "intact": [
+    70,
+    178
+   ]
+  },
+  "hull": {
+   "critical": [
+    43,
+    201
+   ],
+   "damaged": [
+    43,
+    201
+   ],
+   "destroyed": [
+    43,
+    201
+   ],
+   "intact": [
+    43,
+    201
+   ]
+  },
+  "left_track": {
+   "critical": [
+    0,
+    0
+   ],
+   "damaged": [
+    0,
+    0
+   ],
+   "destroyed": [
+    -5,
+    8
+   ],
+   "intact": [
+    0,
+    0
+   ]
+  },
+  "left_weapon_pod": {
+   "critical": [
+    38,
+    47
+   ],
+   "damaged": [
+    43,
+    47
+   ],
+   "destroyed": [
+    36,
+    47
+   ],
+   "intact": [
+    43,
+    47
+   ]
+  },
+  "rear_engine": {
+   "critical": [
+    34,
+    1
+   ],
+   "damaged": [
+    43,
+    1
+   ],
+   "destroyed": [
+    36,
+    1
+   ],
+   "intact": [
+    43,
+    1
+   ]
+  },
+  "right_track": {
+   "critical": [
+    204,
+    0
+   ],
+   "damaged": [
+    184,
+    0
+   ],
+   "destroyed": [
+    195,
+    1
+   ],
+   "intact": [
+    204,
+    0
+   ]
+  },
+  "right_weapon_pod": {
+   "critical": [
+    138,
+    47
+   ],
+   "damaged": [
+    150,
+    47
+   ],
+   "destroyed": [
+    133,
+    55
+   ],
+   "intact": [
+    150,
+    47
+   ]
+  },
+  "turret_core": {
+   "critical": [
+    78,
+    63
+   ],
+   "damaged": [
+    92,
+    63
+   ],
+   "destroyed": [
+    96,
+    55
+   ],
+   "intact": [
+    97,
+    63
+   ]
+  }
+ },
+ "nobd": {
+  "front_weapon": {
+   "critical": [
+    54,
+    178
+   ],
+   "damaged": [
+    43,
+    178
+   ],
+   "destroyed": [
+    54,
+    178
+   ],
+   "intact": [
+    54,
+    178
+   ]
+  },
+  "hull": {
+   "critical": [
+    27,
+    201
+   ],
+   "damaged": [
+    27,
+    201
+   ],
+   "destroyed": [
+    13,
+    201
+   ],
+   "intact": [
+    27,
+    201
+   ]
+  },
+  "left_track": {
+   "critical": [
+    -13,
+    72
+   ],
+   "damaged": [
+    0,
+    72
+   ],
+   "destroyed": [
+    -16,
+    80
+   ],
+   "intact": [
+    0,
+    72
+   ]
+  },
+  "left_weapon_pod": {
+   "critical": [
+    27,
+    47
+   ],
+   "damaged": [
+    27,
+    47
+   ],
+   "destroyed": [
+    27,
+    47
+   ],
+   "intact": [
+    27,
+    47
+   ]
+  },
+  "rear_engine": {
+   "critical": [
+    44,
+    0
+   ],
+   "damaged": [
+    44,
+    0
+   ],
+   "destroyed": [
+    44,
+    0
+   ],
+   "intact": [
+    44,
+    0
+   ]
+  },
+  "right_track": {
+   "critical": [
+    186,
+    72
+   ],
+   "damaged": [
+    176,
+    72
+   ],
+   "destroyed": [
+    182,
+    72
+   ],
+   "intact": [
+    188,
+    72
+   ]
+  },
+  "right_weapon_pod": {
+   "critical": [
+    131,
+    47
+   ],
+   "damaged": [
+    134,
+    47
+   ],
+   "destroyed": [
+    134,
+    47
+   ],
+   "intact": [
+    134,
+    47
+   ]
+  },
+  "turret_core": {
+   "critical": [
+    80,
+    63
+   ],
+   "damaged": [
+    81,
+    63
+   ],
+   "destroyed": [
+    81,
+    63
+   ],
+   "intact": [
+    81,
+    63
+   ]
+  }
+ },
+ "nrmp": {
+  "command_core": {
+   "critical": [
+    60,
+    0
+   ],
+   "damaged": [
+    76,
+    0
+   ],
+   "destroyed": [
+    63,
+    8
+   ],
+   "intact": [
+    76,
+    0
+   ]
+  },
+  "gun_decks": {
+   "critical": [
+    64,
+    86
+   ],
+   "damaged": [
+    64,
+    86
+   ],
+   "destroyed": [
+    76,
+    86
+   ],
+   "intact": [
+    76,
+    86
+   ]
+  },
+  "left_fortress_wing": {
+   "critical": [
+    8,
+    10
+   ],
+   "damaged": [
+    11,
+    10
+   ],
+   "destroyed": [
+    11,
+    10
+   ],
+   "intact": [
+    11,
+    10
+   ]
+  },
+  "left_siege_arm": {
+   "critical": [
+    0,
+    94
+   ],
+   "damaged": [
+    0,
+    94
+   ],
+   "destroyed": [
+    -12,
+    94
+   ],
+   "intact": [
+    0,
+    94
+   ]
+  },
+  "ram_gate": {
+   "critical": [
+    76,
+    274
+   ],
+   "damaged": [
+    76,
+    274
+   ],
+   "destroyed": [
+    64,
+    274
+   ],
+   "intact": [
+    76,
+    274
+   ]
+  },
+  "right_fortress_wing": {
+   "critical": [
+    161,
+    10
+   ],
+   "damaged": [
+    161,
+    10
+   ],
+   "destroyed": [
+    161,
+    10
+   ],
+   "intact": [
+    161,
+    10
+   ]
+  },
+  "right_siege_arm": {
+   "critical": [
+    207,
+    94
+   ],
+   "damaged": [
+    207,
+    94
+   ],
+   "destroyed": [
+    207,
+    94
+   ],
+   "intact": [
+    207,
+    94
+   ]
+  }
+ },
+ "nslc": {
+  "central_hull": {
+   "critical": [
+    97,
+    151
+   ],
+   "damaged": [
+    97,
+    151
+   ],
+   "destroyed": [
+    87,
+    153
+   ],
+   "intact": [
+    97,
+    151
+   ]
+  },
+  "head_cab": {
+   "critical": [
+    97,
+    193
+   ],
+   "damaged": [
+    94,
+    193
+   ],
+   "destroyed": [
+    90,
+    192
+   ],
+   "intact": [
+    97,
+    193
+   ]
+  },
+  "left_crusher_claw": {
+   "critical": [
+    -3,
+    216
+   ],
+   "damaged": [
+    4,
+    216
+   ],
+   "destroyed": [
+    -4,
+    216
+   ],
+   "intact": [
+    4,
+    216
+   ]
+  },
+  "left_front_legs": {
+   "critical": [
+    2,
+    22
+   ],
+   "damaged": [
+    2,
+    22
+   ],
+   "destroyed": [
+    -2,
+    22
+   ],
+   "intact": [
+    2,
+    22
+   ]
+  },
+  "left_rear_legs": {
+   "critical": [
+    0,
+    162
+   ],
+   "damaged": [
+    -9,
+    162
+   ],
+   "destroyed": [
+    -6,
+    162
+   ],
+   "intact": [
+    0,
+    162
+   ]
+  },
+  "reactor_turret": {
+   "critical": [
+    97,
+    0
+   ],
+   "damaged": [
+    97,
+    0
+   ],
+   "destroyed": [
+    97,
+    0
+   ],
+   "intact": [
+    97,
+    0
+   ]
+  },
+  "right_crusher_claw": {
+   "critical": [
+    194,
+    216
+   ],
+   "damaged": [
+    197,
+    216
+   ],
+   "destroyed": [
+    197,
+    216
+   ],
+   "intact": [
+    197,
+    216
+   ]
+  },
+  "right_front_legs": {
+   "critical": [
+    158,
+    22
+   ],
+   "damaged": [
+    158,
+    22
+   ],
+   "destroyed": [
+    158,
+    38
+   ],
+   "intact": [
+    158,
+    22
+   ]
+  },
+  "right_rear_legs": {
+   "critical": [
+    153,
+    162
+   ],
+   "damaged": [
+    158,
+    162
+   ],
+   "destroyed": [
+    158,
+    162
+   ],
+   "intact": [
+    158,
+    162
+   ]
+  }
+ },
+ "ntxl": {
+  "body_segment_01": {
+   "critical": [
+    66,
+    106
+   ],
+   "damaged": [
+    66,
+    106
+   ],
+   "destroyed": [
+    66,
+    106
+   ],
+   "intact": [
+    66,
+    106
+   ]
+  },
+  "body_segment_02": {
+   "critical": [
+    1,
+    149
+   ],
+   "damaged": [
+    -6,
+    149
+   ],
+   "destroyed": [
+    1,
+    149
+   ],
+   "intact": [
+    1,
+    149
+   ]
+  },
+  "body_segment_03": {
+   "critical": [
+    43,
+    191
+   ],
+   "damaged": [
+    45,
+    191
+   ],
+   "destroyed": [
+    53,
+    191
+   ],
+   "intact": [
+    45,
+    191
+   ]
+  },
+  "body_segment_04": {
+   "critical": [
+    38,
+    233
+   ],
+   "damaged": [
+    38,
+    233
+   ],
+   "destroyed": [
+    38,
+    233
+   ],
+   "intact": [
+    38,
+    233
+   ]
+  },
+  "body_segment_05": {
+   "critical": [
+    57,
+    275
+   ],
+   "damaged": [
+    57,
+    275
+   ],
+   "destroyed": [
+    52,
+    274
+   ],
+   "intact": [
+    57,
+    275
+   ]
+  },
+  "body_segment_06": {
+   "critical": [
+    62,
+    318
+   ],
+   "damaged": [
+    62,
+    318
+   ],
+   "destroyed": [
+    62,
+    318
+   ],
+   "intact": [
+    62,
+    318
+   ]
+  },
+  "head_core": {
+   "critical": [
+    62,
+    0
+   ],
+   "damaged": [
+    66,
+    0
+   ],
+   "destroyed": [
+    62,
+    0
+   ],
+   "intact": [
+    66,
+    0
+   ]
+  },
+  "left_claw": {
+   "critical": [
+    -4,
+    37
+   ],
+   "damaged": [
+    0,
+    37
+   ],
+   "destroyed": [
+    -7,
+    37
+   ],
+   "intact": [
+    0,
+    37
+   ]
+  },
+  "right_claw": {
+   "critical": [
+    165,
+    37
+   ],
+   "damaged": [
+    165,
+    37
+   ],
+   "destroyed": [
+    165,
+    37
+   ],
+   "intact": [
+    165,
+    37
+   ]
+  },
+  "tail_blade": {
+   "critical": [
+    81,
+    347
+   ],
+   "damaged": [
+    91,
+    347
+   ],
+   "destroyed": [
+    88,
+    347
+   ],
+   "intact": [
+    99,
+    348
+   ]
+  }
+ }
+}

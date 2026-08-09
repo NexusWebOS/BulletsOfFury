@@ -1,0 +1,92 @@
+{
+ "cole": {
+  "src": 3,
+  "twin": false,
+  "hue": 105,
+  "mean": [
+   145,
+   252,
+   110
+  ]
+ },
+ "maverick": {
+  "src": 3,
+  "twin": false,
+  "hue": 100,
+  "mean": [
+   157,
+   252,
+   110
+  ]
+ },
+ "falva": {
+  "src": 3,
+  "twin": false,
+  "hue": 320,
+  "mean": [
+   252,
+   110,
+   204
+  ]
+ },
+ "yuri": {
+  "src": 3,
+  "twin": false,
+  "hue": 0,
+  "mean": [
+   252,
+   110,
+   110
+  ]
+ },
+ "lizzie": {
+  "src": 2,
+  "twin": false,
+  "hue": null,
+  "mean": [
+   251,
+   191,
+   85
+  ]
+ },
+ "axel": {
+  "src": 3,
+  "twin": false,
+  "hue": 205,
+  "mean": [
+   110,
+   192,
+   252
+  ]
+ },
+ "decker": {
+  "src": 3,
+  "twin": false,
+  "hue": 45,
+  "mean": [
+   252,
+   216,
+   110
+  ]
+ },
+ "freezer": {
+  "src": 3,
+  "twin": false,
+  "hue": 275,
+  "mean": [
+   192,
+   110,
+   252
+  ]
+ },
+ "juggernaut": {
+  "src": 3,
+  "twin": false,
+  "hue": 25,
+  "mean": [
+   252,
+   169,
+   110
+  ]
+ }
+}

@@ -1,0 +1,12 @@
+{
+ "cell": 8,
+ "drivable_cells": 17408,
+ "drivable_frac": 0.3851327433628319,
+ "engine_reject_below": 0.02,
+ "grid": [
+  100,
+  452
+ ],
+ "master": "nst4b_master",
+ "total_cells": 45200
+}

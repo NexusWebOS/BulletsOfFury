@@ -1,0 +1,27 @@
+{
+ "1": {
+  "name": "dam",
+  "h": 2011,
+  "dock_diff": 0.0
+ },
+ "2": {
+  "name": "volcano",
+  "h": 2011,
+  "dock_diff": 0.0
+ },
+ "3": {
+  "name": "ice_circle",
+  "h": 2011,
+  "dock_diff": 0.0
+ },
+ "4": {
+  "name": "airbase_end",
+  "h": 2106,
+  "dock_diff": 0.0
+ },
+ "5": {
+  "name": "orbital_end",
+  "h": 1581,
+  "dock_diff": 0.0
+ }
+}

@@ -1,0 +1,32 @@
+{
+ "nst4b_exit": {
+  "halo_before": 5469,
+  "halo_after": 471,
+  "feathered_px": 6789
+ },
+ "nst4b_run": {
+  "halo_before": 5792,
+  "halo_after": 431,
+  "feathered_px": 7953
+ },
+ "nst4b_app": {
+  "halo_before": 5792,
+  "halo_after": 431,
+  "feathered_px": 7953
+ },
+ "nst7_exit": {
+  "halo_before": 6175,
+  "halo_after": 272,
+  "feathered_px": 9058
+ },
+ "nst7_run": {
+  "halo_before": 5988,
+  "halo_after": 269,
+  "feathered_px": 9990
+ },
+ "nst7_app": {
+  "halo_before": 5888,
+  "halo_after": 269,
+  "feathered_px": 9996
+ }
+}

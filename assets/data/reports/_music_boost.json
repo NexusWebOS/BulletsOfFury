@@ -1,0 +1,32 @@
+{
+ "boost_db": 2.3,
+ "tracks": [
+  "Battle_in_the_sky.mp3",
+  "Deathtrap.mp3",
+  "Fierce_Planes.mp3",
+  "Hot_Flight.mp3",
+  "Iron_Cage.mp3",
+  "Lord_of_the_shadows.mp3",
+  "Neon_Velocity.mp3",
+  "boss1.mp3",
+  "boss2.mp3",
+  "boss3.mp3",
+  "boss4.mp3",
+  "boss5.mp3",
+  "boss6.mp3",
+  "bullets.wav",
+  "crawling.mp3",
+  "enter-password.mp3",
+  "lvl1.mp3",
+  "lvl2.mp3",
+  "lvl3-alt.mp3",
+  "lvl3.wav",
+  "lvl4.mp3",
+  "lvl5.mp3",
+  "lvl6.mp3",
+  "main-menu.mp3",
+  "rival.mp3",
+  "selectscreen.mp3",
+  "untitled.mp3"
+ ]
+}

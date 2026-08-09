@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>BOF — MINIMAL ISOLATION TEST</title>
+<!--
+  WHY THIS FILE EXISTS
+  Mike cannot get past the menu. I cannot reproduce it: a faithful browser simulation of the shipped
+  build reaches gameplay with zero errors, and disabling the stage transitions did not help either.
+  So the remaining question is whether the fault is in game.js or in everything AROUND it —
+  index.html's layout pass, the HUD canvases, the fullscreen plumbing, the credit rails.
+
+  This page has NONE of that. One canvas, the manifest, game.js. Nothing else. No layout script, no
+  HUD canvas, no equip canvas, no fullscreen handling, no CSS transforms, no filtered ancestors.
+
+  IF THE MENU WORKS HERE  -> the fault is in index.html, not the game, and I know where to look.
+  IF IT DOES NOT          -> the fault is in game.js, and the panel below will name it.
+-->
+<style>
+  html,body{margin:0;background:#0a0b0d;color:#cfd6e0;font:12px monospace;}
+  #wrap{display:flex;gap:16px;padding:12px;align-items:flex-start;}
+  canvas{background:#000;image-rendering:pixelated;width:480px;height:512px;display:block;}
+  #log{width:420px;white-space:pre-wrap;line-height:1.45;}
+  h1{font-size:13px;margin:0 0 8px;color:#8dff9a;}
+  .bad{color:#ff6a5a;} .good{color:#8dff9a;} .dim{color:#7f8aa0;}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <!-- the ONLY element game.js needs; same id and size as the real page -->
+  <canvas id="screen" width="480" height="512"></canvas>
+  <div>
+    <h1>MINIMAL ISOLATION TEST</h1>
+    <div id="log" class="dim">loading…</div>
+  </div>
+</div>
+
+<script>
+/* Capture EVERYTHING before the game loads, so nothing can be swallowed. */
+window.__diag = {errors:[], warns:[], keys:0, stored:0, lastKey:'-', lastStored:'-'};
+window.addEventListener('error', function(e){
+  window.__diag.errors.push((e.message||'?') + '  @' + String(e.filename||'').split('/').pop() + ':' + (e.lineno||0));
+});
+window.addEventListener('unhandledrejection', function(e){
+  window.__diag.errors.push('promise: ' + ((e.reason&&e.reason.message)||e.reason));
+});
+(function(){
+  var ce = console.error, cw = console.warn;
+  console.error = function(){ window.__diag.errors.push(Array.prototype.map.call(arguments,function(a){
+    return (a && a.message) ? (a.message + ' | ' + String(a.stack||'').split('\n')[1]) : String(a); }).join(' ')); ce.apply(console,arguments); };
+  console.warn  = function(){ window.__diag.warns.push(Array.prototype.join.call(arguments,' ')); cw.apply(console,arguments); };
+})();
+/* Count raw keydowns at the WINDOW level, before the game's own handler sees them. */
+window.addEventListener('keydown', function(e){
+  window.__diag.keys++;
+  window.__diag.lastKey = (typeof e.key==='string' ? e.key : '(e.key UNDEFINED)') +
+                          '  code=' + (e.code||'-') + '  keyCode=' + (e.keyCode===undefined?'-':e.keyCode);
+}, true);   // capture phase: fires even if something else stops propagation
+</script>
+
+<script src="assets/manifest.js"></script>
+<script src="assets/game.js"></script>
+
+<script>
+(function(){
+  var log = document.getElementById('log');
+  function row(label, val, cls){
+    return '<span class="dim">'+label+'</span> <span class="'+(cls||'')+'">'+val+'</span>';
+  }
+  function ok(v){ return v ? 'good' : 'bad'; }
+  setInterval(function(){
+    var D = window.__diag, out = [];
+    var st  = (typeof state!=='undefined') ? String(state) : '(no state)';
+    var mi  = (typeof menuIndex!=='undefined') ? menuIndex : '-';
+    var kb  = (typeof keybind!=='undefined' && keybind.down) ? JSON.stringify(keybind.down) : '(none)';
+    var dn  = (typeof Input!=='undefined' && Input.down) ? String(Input.down('arrowdown')) : '-';
+    var frames = window.__bofFrames|0;
+
+    out.push(row('script loaded  ', (typeof drawScene==='function') ? 'YES' : 'NO', ok(typeof drawScene==='function')));
+    out.push(row('frames drawn   ', frames, ok(frames>5)));
+    out.push(row('state          ', st));
+    out.push(row('menuIndex      ', mi, (mi!==0 && mi!=='-') ? 'good' : ''));
+    out.push('');
+    out.push(row('window keydowns', D.keys, ok(D.keys>0)));
+    out.push(row('last raw event ', D.lastKey));
+    out.push(row('keybind.down   ', kb));
+    out.push(row('Input.down(arrowdown) while held', dn, dn==='true'?'good':''));
+    out.push('');
+    if(typeof handleTitleInput!=='undefined' && handleTitleInput._err){
+      out.push(row('title input err', handleTitleInput._err, 'bad'));
+    }
+    if(D.errors.length){
+      out.push('<span class="bad">ERRORS ('+D.errors.length+'):</span>');
+      D.errors.slice(-6).forEach(function(e){ out.push('  <span class="bad">'+e+'</span>'); });
+    } else {
+      out.push(row('errors         ', 'none', 'good'));
+    }
+    if(D.warns.length){
+      out.push('<span class="dim">warnings:</span>');
+      D.warns.slice(-3).forEach(function(w){ out.push('  <span class="dim">'+w+'</span>'); });
+    }
+    out.push('');
+    out.push('<span class="dim">Press an arrow key. If "window keydowns" rises but</span>');
+    out.push('<span class="dim">Input.down stays false, the game is dropping the event.</span>');
+    out.push('<span class="dim">If menuIndex changes here, the fault is in index.html.</span>');
+    log.innerHTML = out.join('<br>');
+  }, 200);
+})();
+</script>
+</body>
+</html>

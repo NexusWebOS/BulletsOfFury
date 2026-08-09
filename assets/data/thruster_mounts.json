@@ -1,0 +1,76 @@
+{
+  "_README": "Per-pilot thruster mounts as a fraction of hull width from centre, plus the plume scale relative to hull width. NAMED BY MIKE 0808e; positions measured off the hull art where the art supports it. Do not change these from a guess \u2014 he has corrected them once already.",
+  "axel": {
+    "mounts": [
+      0.0
+    ],
+    "scale": 0.3,
+    "note": "middle only, not the sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)",
+    "dy": -0.0223
+  },
+  "cole": {
+    "mounts": [
+      -0.1641,
+      0.1406
+    ],
+    "scale": 0.16,
+    "note": "twin thrusters, measured by brightness"
+  },
+  "decker": {
+    "mounts": [
+      -0.0035
+    ],
+    "scale": 0.26,
+    "note": "already correct"
+  },
+  "falva": {
+    "mounts": [
+      0.0
+    ],
+    "scale": 0.28,
+    "note": "middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)",
+    "dy": -0.0223
+  },
+  "freezer": {
+    "mounts": [
+      0.0
+    ],
+    "scale": 0.28,
+    "note": "one middle, no sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)",
+    "dy": -0.0223
+  },
+  "juggernaut": {
+    "mounts": [
+      -0.1687,
+      0.0,
+      0.1627
+    ],
+    "scale": 0.16,
+    "note": "three"
+  },
+  "lizzie": {
+    "mounts": [
+      0.0
+    ],
+    "scale": 0.3,
+    "flip": true,
+    "note": "centred and tucked just under the tail; her reel is a warbird flame, not a star burst, so it is flipped | dy +10px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)",
+    "dy": 0.0446
+  },
+  "maverick": {
+    "mounts": [
+      0.0
+    ],
+    "scale": 0.26,
+    "note": "ONE, centred \u2014 Mike: 'maverick gets one, not double'"
+  },
+  "yuri": {
+    "mounts": [
+      0.0
+    ],
+    "scale": 0.28,
+    "note": "one middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)",
+    "dy": -0.0223
+  },
+  "_DY_README": "dy is a FRACTION OF HULL HEIGHT, positive = downward. Mike gave these in pixels against the 224px hull in the 0808e render; storing the ratio means they stay correct when the ship draws at 44px in play or 128px in the launch cinematic. Do not convert these back to raw pixels."
+}
