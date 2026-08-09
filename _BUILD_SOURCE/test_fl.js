@@ -5725,7 +5725,22 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      every one of those passes is reversible. The intent this asserts is intact;
      only the folder name changed. */
   ok(fs.existsSync(ROOT+'/_superseded'), 'removals are quarantined in _superseded/, not deleted, so any of this is reversible');
-  ok(fs.readdirSync(ROOT+'/_superseded').filter(function(f){return /LEDGER\.json$/.test(f);}).length>=6, 'and every move is recorded in a ledger');
+  /* A MISSING FOLDER MUST FAIL, NOT THROW (drop 0809l).
+     readdirSync on an absent path throws, and a throw HERE ends the run at section 149: the
+     remaining ~676 assertions never execute and the BUILD OK banner never prints. That is
+     rule 3 in CLAUDE.md happening to the suite itself — the run reports no failures and looks
+     like a pass, when in fact two thirds of it never ran.
+
+     _superseded/ is in .gitignore, so it was never inside any drop zip, and it is not on this
+     machine or in any of the four full-build archives. It is not coming back. What it existed
+     for — "so any of this is reversible" — is now git's job, which is the entire argument
+     SETUP.md makes for the move off full-zip drops.
+
+     So: report its absence honestly as a failure, and let the rest of the suite run. */
+  ok((function(){
+       try{ return fs.readdirSync(ROOT+'/_superseded').filter(function(f){return /LEDGER\.json$/.test(f);}).length; }
+       catch(e){ return 0; }
+     })()>=6, 'and every move is recorded in a ledger');
 
 
   // ===== 150. drawImage CAN NEVER RECEIVE A NULL (drop 0724dq) =====
