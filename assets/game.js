@@ -3334,7 +3334,7 @@ const Input = (()=>{
 let PENDING_STAGE=1;   // stage the next run starts at (password sets this, pilot-select consumes it)
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
-  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIVAL:'rival', FLYOVER:'flyover', STAGESEL:'stagesel', MODESEL:'modesel', OUTBOUND:'outbound', OPENING:'opening' };
+  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIVAL:'rival', FLYOVER:'flyover', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', OUTBOUND:'outbound', OPENING:'opening' };
 let state = GS.BOOT;
 /* ============================================================
    DEBUG SWITCHBOARD (drop 0724do)
@@ -10690,7 +10690,18 @@ function _hudStateWants(s){
   return s===GS.PLAY || s==='paused' || s===GS.LAUNCH || s===GS.OUTBOUND ||
          s===GS.INTRO || s===GS.STAGECLEAR || s===GS.RIVAL;
 }
-function setState(s){ state=s; stateT=0; Input.clearTaps(); _hudShow(_hudStateWants(s));
+function setState(s){
+  /* BACKING OUT OF A CAMPAIGN UNLOCKS CONTINUE (drop 0809l). Mike: "if they are playing
+     campaign and decide to back out of the campaign mode, continue game will be unlocked
+     and they can simply use that to continue their game if they decide to go to a menu or
+     options to select stuff." Caught centrally here rather than at each back handler,
+     because there are several ways out of a campaign and one of them always gets missed. */
+  try{
+    if(typeof campSuspend==='function' &&
+       (s===GS.TITLE||s===GS.MODESEL||s===GS.CAMPHUB||s===GS.OPTIONS) &&
+       (state===GS.STAGESEL||state===GS.PLAY||state===GS.STAGECLEAR||state===GS.FLYOVER)) campSuspend();
+  }catch(_){}
+  state=s; stateT=0; Input.clearTaps(); _hudShow(_hudStateWants(s));
   if(s===GS.TITLE){ if(Audio.SFX&&Audio.SFX.announce)Audio.SFX.announce(); }
   else if(s===GS.PILOT){ if(Audio.SFX&&Audio.SFX.selectpilot)Audio.SFX.selectpilot(); if(Audio.startMusic)Audio.startMusic('select'); }
 }
@@ -19074,6 +19085,7 @@ function drawScene(dt){
     case GS.FLYOVER: return drawFlyover(dt);
     case GS.STAGESEL: return drawStageSelect(dt);
     case GS.MODESEL: return drawModeSelect(dt);
+    case GS.CAMPHUB: return drawCampaignHub(dt);
   }
 }
 
@@ -26206,7 +26218,13 @@ function drawModeSelect(dt){
     if(it.open){
       // flash white, THEN move on — same as every other confirmed selection in the engine
       const _m=it.mode;
-      selFlash(function(){ run.mode=_m; setState(GS.DIFF); }, null, drawModeSelect._selRect||null);
+      /* CAMPAIGN now lands on its own hub (drop 0809l) — new game / continue / load / save.
+         Every other mode still goes straight to difficulty, unchanged. */
+      selFlash(function(){
+        run.mode=_m;
+        if(_m==='campaign'){ campHubIndex=campCanContinue()?1:0; campPick=null; setState(GS.CAMPHUB); }
+        else setState(GS.DIFF);
+      }, null, drawModeSelect._selRect||null);
     }
     else { if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   }
@@ -26322,6 +26340,189 @@ let sselCursor=1, sselMax=1, sselNext=1;
 // CAMPAIGN progress: per-stage rank (null=locked, 'incomplete' once unlocked, or 'S'/'A'/'B'/... once beaten)
 // Rank->flag color: locked=gray, unlocked-not-beaten=red, beaten default=green, S=gold, A=silver, B or below=green.
 var campaign = { unlockedMax:1, rank:{}, justUnlocked:0 };
+/* ============================================================
+   CAMPAIGN SAVE SLOTS + HUB (drop 0809l)
+
+   Mike: "they get 3 save slots which saves to localmachine for now. I'll do backend
+   server stuff later... if they are playing campaign and decide to back out of the
+   campaign mode, continue game will be unlocked and they can simply use that to
+   continue their game if they decide to go to a menu or options to select stuff."
+
+   TWO DIFFERENT IDEAS, DELIBERATELY KEPT APART:
+
+     CONTINUE   SESSION-ONLY. The campaign you just backed out of, held in memory so a
+                detour through OPTIONS costs you nothing. It is NOT written to
+                localStorage. Drop 0724 burned a pass proving that persisting a
+                session flag is exactly how you get a menu that lies after a reload —
+                see the bof_hi/session note at the top of this file.
+     LOAD/SAVE  The three PERSISTED slots. These survive a reload; CONTINUE does not.
+
+   NAME COLLISION, ON PURPOSE: GS.CONTINUE already exists and is the post-death
+   countdown. This is not that. The campaign hub state is GS.CAMPHUB.
+   ============================================================ */
+const CAMP_SLOTS=3, CAMP_SAVE_VER=1;
+const campSlotKey=i=>'bof_campaign_slot'+i;
+function campSnapshot(){
+  return { v:CAMP_SAVE_VER, t:Date.now(),
+    pilot:run.pilot, pilotIndex:(typeof pilotIndex==='number'?pilotIndex:0), diff:diffKey,
+    stage:run.stage, score:run.score, lives:run.lives, bombs:run.bombs,
+    weapon:run.weapon, wlevel:run.wlevel, wlevels:(run.wlevels||[]).slice(),
+    unlockedMax:campaign.unlockedMax||1, rank:Object.assign({},campaign.rank||{}) };
+}
+/* A slot written by an older build must never half-apply — version out, or nothing. */
+function campApply(s){
+  if(!s || s.v!==CAMP_SAVE_VER) return false;
+  run.mode='campaign';
+  run.pilot=s.pilot||run.pilot;
+  run.stage=clamp(s.stage||1,1,9);
+  run.score=s.score||0;
+  run.lives=(s.lives==null?3:s.lives);
+  run.bombs=(s.bombs==null?2:s.bombs);
+  run.weapon=s.weapon||0; run.wlevel=s.wlevel||1;
+  if(Array.isArray(s.wlevels)) run.wlevels=s.wlevels.slice();
+  if(typeof s.pilotIndex==='number') pilotIndex=s.pilotIndex;
+  if(s.diff) diffKey=s.diff;
+  campaign.unlockedMax=Math.max(1, s.unlockedMax||1);
+  campaign.rank=Object.assign({}, s.rank||{});
+  return true;
+}
+function campReadSlot(i){ try{ return JSON.parse(localStorage.getItem(campSlotKey(i))||'null'); }catch(e){ return null; } }
+function campWriteSlot(i){ try{ localStorage.setItem(campSlotKey(i), JSON.stringify(campSnapshot())); return true; }catch(e){ return false; } }
+function campSlotUsed(i){ const s=campReadSlot(i); return !!(s && s.v===CAMP_SAVE_VER); }
+function campAnySaved(){ for(let i=0;i<CAMP_SLOTS;i++) if(campSlotUsed(i)) return true; return false; }
+/* A CONTROLS RESET MUST NOT EAT A CAMPAIGN (drop 0809l).
+   Two paths call localStorage.clear() — the keybind healer and the F1 "RESET CONTROLS"
+   footer. Both predate save slots, so both would silently delete all three saved games,
+   and the button that did it is labelled RESET CONTROLS. The slots are lifted out,
+   storage is cleared, the slots go back. */
+function bofStorageResetKeepSaves(){
+  const keep=[];
+  for(let i=0;i<CAMP_SLOTS;i++){ try{ keep.push(localStorage.getItem(campSlotKey(i))); }catch(e){ keep.push(null); } }
+  try{ localStorage.clear(); }catch(e){}
+  for(let i=0;i<CAMP_SLOTS;i++){ if(keep[i]!=null){ try{ localStorage.setItem(campSlotKey(i), keep[i]); }catch(e){} } }
+}
+function campSlotLabel(i){
+  const s=campReadSlot(i);
+  if(!s || s.v!==CAMP_SAVE_VER) return 'SLOT '+(i+1)+'  - - -  EMPTY';
+  return 'SLOT '+(i+1)+'  '+String(s.pilot||'?').toUpperCase()+'  STAGE '+(s.stage||1)+'  '+(s.score||0);
+}
+/* SESSION-ONLY resume point — see the block comment above before persisting this. */
+let campSession=null;
+function campSuspend(){
+  if(typeof run==='undefined' || run.mode!=='campaign') return;
+  if(typeof campaign==='undefined') return;
+  campSession=campSnapshot();
+}
+function campCanContinue(){ return !!campSession; }
+const CAMPHUB_ITEMS=[
+  {key:'btn_newgame',  label:'NEW GAME',  act:'new'},
+  {key:'btn_continue', label:'CONTINUE',  act:'continue'},
+  {key:'btn_load',     label:'LOAD GAME', act:'load'},
+  {key:'btn_save',     label:'SAVE GAME', act:'save'},
+];
+let campHubIndex=0, campPick=null, campHubMsg='', campHubMsgT=0;
+function campHubEnabled(act){
+  if(act==='continue') return campCanContinue();
+  if(act==='load')     return campAnySaved();
+  if(act==='save')     return campCanContinue();   // nothing to write until a campaign is under way
+  return true;
+}
+function campHubSay(m){ campHubMsg=m; campHubMsgT=2.2; }
+/* SPACING IS DERIVED, NOT GUESSED. These buttons are 1085x293, so at width W each one
+   stands W*293/1085 tall — 78px at W=290. A 62px gap had them overlapping. The gap is
+   the drawn height plus air, and four of them still clear the footer at VH=512. */
+const CAMPHUB_W=290, CAMPHUB_H=Math.round(CAMPHUB_W*293/1085), CAMPHUB_GAP=CAMPHUB_H+8, CAMPHUB_Y0=150;
+function drawCampaignHub(dt){
+  ctx.fillStyle='#080611'; ctx.fillRect(0,0,VW,VH);
+  for(const s of starField){ s.y=(s.y+s.z*1.5*dt*60)%VH; ctx.fillStyle=s.z>1?'#cfe2ff':'#4455aa'; ctx.fillRect(s.x|0,s.y|0,2,2); }
+  ctx.textAlign='center';
+  ctx.fillStyle='#ffe682'; ctx.font='bold 20px "BOFmil", monospace';
+  ctx.fillText('CAMPAIGN', VW/2, 64);
+  if(campPick){ drawCampSlots(dt); ctx.textAlign='left'; return; }
+  for(let i=0;i<CAMPHUB_ITEMS.length;i++){
+    const it=CAMPHUB_ITEMS[i], on=campHubEnabled(it.act), sel=(i===campHubIndex);
+    const cy=CAMPHUB_Y0+i*CAMPHUB_GAP;
+    if(XART.rdy(it.key)){
+      const im=XART.get(it.key), w=sel?CAMPHUB_W*1.04:CAMPHUB_W, h=w*(im.naturalHeight/im.naturalWidth);
+      ctx.save();
+      if(!on) ctx.globalAlpha=0.32;                       // locked reads dim, never hidden
+      else if(sel){ ctx.shadowColor='#ffd24a'; ctx.shadowBlur=18; }
+      else ctx.globalAlpha=0.9;
+      ctx.drawImage(im, VW/2-w/2, cy-h/2, w, h);
+      ctx.restore();
+      if(sel && on){ const p=Math.sin(performance.now()/130)*2;
+        if(!(typeof drawSelArrow==='function' && drawSelArrow(VW/2-w/2-18-p, cy, 22, false) && drawSelArrow(VW/2+w/2+18+p, cy, 22, true))){
+          ctx.fillStyle='#ffe682'; ctx.font='bold 16px "BOFmil", monospace';
+          ctx.fillText('▶', VW/2-w/2-12-p, cy+5); ctx.fillText('◀', VW/2+w/2+12+p, cy+5); } }
+    } else {
+      drawMenuButton(VW/2, cy, 250, 40, it.label, sel, 'ship');
+    }
+  }
+  if(campHubMsgT>0){ campHubMsgT-=dt;
+    ctx.fillStyle='#9fe8a0'; ctx.font='10px "BOFmil", monospace'; ctx.fillText(campHubMsg, VW/2, VH-40); }
+  ctx.globalAlpha=0.55+0.45*Math.sin(stateT*5); ctx.fillStyle='#cfd6e0'; ctx.font='10px "BOFmil", monospace';
+  ctx.fillText('ARROWS: SELECT   FIRE: CONFIRM   BACK: MODE SELECT', VW/2, VH-18);
+  ctx.globalAlpha=1; ctx.textAlign='left';
+  campHubInput();
+}
+function drawCampSlots(dt){
+  ctx.fillStyle='#cfd6e0'; ctx.font='bold 13px "BOFmil", monospace';
+  ctx.fillText(campPick==='save'?'SAVE TO WHICH SLOT?':'LOAD WHICH SLOT?', VW/2, 108);
+  for(let i=0;i<CAMP_SLOTS;i++){
+    const cy=170+i*54, sel=(i===campHubIndex), used=campSlotUsed(i);
+    const on=(campPick==='save') || used;                  // loading an empty slot is not an action
+    const w=330, h=42, x=VW/2-w/2, y=cy-h/2;
+    octFill(x,y,w,h,6, sel?'#3a3032':'#1a1d22');
+    ctx.strokeStyle= sel?'#ff3a3a':'#5a5d63'; ctx.lineWidth=2; ctx.strokeRect(x,y,w,h);
+    ctx.save(); if(!on) ctx.globalAlpha=0.4;
+    ctx.fillStyle= sel?'#ffffff':'#cfd6e0'; ctx.font='11px "BOFmil", monospace';
+    ctx.fillText(campSlotLabel(i), VW/2, cy+4);
+    ctx.restore();
+  }
+  if(campHubMsgT>0){ campHubMsgT-=dt;
+    ctx.fillStyle='#9fe8a0'; ctx.font='10px "BOFmil", monospace'; ctx.fillText(campHubMsg, VW/2, VH-40); }
+  ctx.globalAlpha=0.55+0.45*Math.sin(stateT*5); ctx.fillStyle='#cfd6e0'; ctx.font='10px "BOFmil", monospace';
+  ctx.fillText('ARROWS: SELECT   FIRE: CONFIRM   BACK: CANCEL', VW/2, VH-18);
+  ctx.globalAlpha=1;
+  campSlotInput();
+}
+function campHubInput(){
+  const n=CAMPHUB_ITEMS.length;
+  if(Input.tap('up')||Input.tap('w')){ campHubIndex=(campHubIndex+n-1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.tap('down')||Input.tap('s')){ campHubIndex=(campHubIndex+1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){
+    const it=CAMPHUB_ITEMS[campHubIndex];
+    if(!campHubEnabled(it.act)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip();
+      campHubSay(it.act==='continue'?'NO CAMPAIGN IN PROGRESS':it.act==='load'?'NO SAVED GAMES':'START A CAMPAIGN FIRST'); return; }
+    const act=it.act;
+    selFlash(function(){
+      if(act==='new'){ campSession=null; setState(GS.DIFF); }
+      else if(act==='continue'){ if(campApply(campSession)) openStageSelect(run.stage,{}); else setState(GS.DIFF); }
+      else { campPick=act; campHubIndex=0; }
+    }, null, null);
+  }
+  if(Input.tap('backspace')||(typeof backButton==='function'&&backButton())){ setState(GS.MODESEL); }
+}
+function campSlotInput(){
+  if(Input.tap('up')||Input.tap('w')){ campHubIndex=(campHubIndex+CAMP_SLOTS-1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.tap('down')||Input.tap('s')){ campHubIndex=(campHubIndex+1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){
+    const i=campHubIndex, mode=campPick;
+    if(mode==='load' && !campSlotUsed(i)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); campHubSay('THAT SLOT IS EMPTY'); return; }
+    selFlash(function(){
+      if(mode==='save'){
+        const ok=campWriteSlot(i);
+        campPick=null; campHubIndex=3;
+        campHubSay(ok?('SAVED TO SLOT '+(i+1)):'SAVE FAILED - STORAGE BLOCKED');
+      } else {
+        const s=campReadSlot(i);
+        if(campApply(s)){ campSession=campSnapshot(); campPick=null; openStageSelect(run.stage,{}); }
+        else { campPick=null; campHubSay('THAT SAVE IS FROM AN OLDER BUILD'); }
+      }
+    }, null, null);
+  }
+  if(Input.tap('backspace')||(typeof backButton==='function'&&backButton())){ campPick=null; campHubIndex=0; }
+}
 function rankFlagColor(rank){
   if(rank==='S') return 'gold';
   if(rank==='A') return 'silver';
@@ -27271,7 +27472,7 @@ function drawTitle(dt){
      bug eight times, so there is now an escape hatch that does not depend on me having guessed
      right: F1, or clicking the label, wipes every stored key and reloads. */
   if(Input.down('f1') || Input.down('F1')){
-    try{ localStorage.removeItem('bof_keys'); localStorage.removeItem('bof_opts'); localStorage.clear(); }catch(e){}
+    try{ localStorage.removeItem('bof_keys'); localStorage.removeItem('bof_opts'); bofStorageResetKeepSaves(); }catch(e){}
     try{ location.reload(); }catch(e){}
   }
   {
@@ -27281,7 +27482,7 @@ function drawTitle(dt){
     const m=Input.mouse;
     if(m && m.down && m.y>VH-18 && Math.abs(m.x-VW/2)<90 && !drawTitle._rdown){
       drawTitle._rdown=true;
-      try{ localStorage.clear(); }catch(e){}
+      try{ bofStorageResetKeepSaves(); }catch(e){}
       try{ location.reload(); }catch(e){}
     }
     if(m && !m.down) drawTitle._rdown=false;
