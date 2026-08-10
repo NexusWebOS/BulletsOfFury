@@ -177,7 +177,17 @@ def main():
                 " const hw = h ? h.width : 0, hh = h ? h.height : 0;"
                 " const ew = e ? e.width : 0, eh = e ? e.height : 0;"
                 " const rowH = Math.max(hh, eh), W = Math.max(hw + ew, g.width), H = rowH + g.height;"
-                " const c = document.createElement('canvas'); c.width = W; c.height = H;"
+                # ONE SCRATCH CANVAS, REUSED, rather than a fresh one per capture. This is
+                # hygiene, not a cure: a long warm (~3900 frames) COMBINED with many captures
+                # still faults the renderer ("Target crashed"). Measured - warm 200 + 9 shots
+                # passes, warm 3900 + 1 shot passes, warm 3900 + 9 shots crashes. So it is
+                # accumulated memory across a long headless run, not any one frame.
+                # Worth knowing because the fault surfaces as whatever you happened to be
+                # testing at the time: it cost a whole pass being read as a boss-death crash.
+                # If you need deep warm AND a sequence, take the shots in separate runs.
+                " let c = window.__shotc;"
+                " if(!c){ c = window.__shotc = document.createElement('canvas'); }"
+                " if(c.width !== W || c.height !== H){ c.width = W; c.height = H; }"
                 " const x = c.getContext('2d');"
                 " x.fillStyle = '#000'; x.fillRect(0, 0, W, H);"
                 " if(h) x.drawImage(h, 0, 0);"
