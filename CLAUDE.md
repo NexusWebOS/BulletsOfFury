@@ -168,14 +168,30 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
   zip, and it is in none of the four full-build archives. Its two assertions now FAIL rather than
   throw (a throw there killed the run at section 149 and looked like a pass). Git is the
   reversibility mechanism it existed for; decide whether to retire them.
-- The dam swap is wired and data-driven (`cfg.destroyed`). ⚠ **The art EXISTS** — I twice recorded
-  it as missing and both times that was wrong. `ndam_intact` / `ndam_damaged` / `ndam_breach` /
-  `ndam_destroyed`, 254×350, magenta-keyed, sitting in `assets/game/` and registered in the
-  manifest. It is a full four-stage progression, so it maps onto boss damage tiers rather than
-  being a single end-state swap. What misled me: RC2 ships no destroyed *composite*, and its loose
-  dam objects don't template-match the dam painted into the plate — both true, and both irrelevant,
-  because `ndam_*` is separate art that was already here. **Search `assets/game/` by filename
-  before concluding art is missing** — not just the RC2 pack and not just the atlas cells.
+- **The stage 1 dam ending — read this before touching it, there are TWO dams.**
+
+  The art exists. `ndam_intact` / `ndam_damaged` / `ndam_breach` / `ndam_destroyed` are in
+  `assets/game/`, registered, 244–254×350, magenta-keyed. De-keyed rect of `ndam_intact` is
+  (10,28)–(231,317) = 222×290. I twice recorded this art as missing; both times wrong. **Search
+  `assets/game/` by filename before concluding art is missing** — not just the RC2 pack, not just
+  the atlas cells.
+
+  ⚠ **But `ndam_*` does NOT overlay the dam painted into the plate.** Template-matched
+  `ndam_intact` against the top 1000px of `jungle800_rc2_master.png` across scales 1.0–3.8: best
+  mean-abs-diff **37.26**, which is noise — a true match on identical art scores under 8. (Best
+  candidate was scale 1.4 at (251,155); not a match.) **Don't repeat this test.**
+
+  So the two mechanisms are for different things:
+  - `cfg.destroyed` → `stageMasterKey` is a whole-master key substitution. It needs a destroyed
+    800×4800 RC2 master, which RC2 does not ship. Wrong tool for `ndam_*`.
+  - `ndam_*` is OBJECT art — keyed, 222×290, four staged variants. Meant to be **drawn as** the
+    dam, not composited over the painted one.
+
+  Recommended: the boss arena uses the `ndam` object as the dam it fights at, progressing
+  intact → damaged → breach on damage tiers and → destroyed on the kill during the white flash.
+  Uses the art as authored, needs no new plate. **Coordinate first — the boss is being wired in
+  another chat; check `git log` before editing boss code.** De-key by flooding from the border
+  (never a colour-match sweep), despill the rim rather than deleting it, halo → black edge.
 - ~~The pilot-card hint row renders ENTER as "BNTBR"~~ **fixed in 0809q** — it was the tint, not
   the glyph map. See "A flat tint destroys the glyph" above.
 - Stage 1 fields no camo tank variants yet (`s1tankheavy_b` and friends are registered, unused).
