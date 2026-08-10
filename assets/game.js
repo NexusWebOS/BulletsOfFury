@@ -5320,10 +5320,23 @@ function buildStagePlan(stageNum){
        A ground wave now asks the terrain directly: it fires when we are ON LAND and
        before the halfway cutoff, and simply defers a beat if we are not there yet.
        The wave cannot be mistimed because it no longer depends on timing. */
+    /* ⚠ THIS NUMBER MUST TRACK THE NAVAL SWAP'S COASTLINE (drop 0809m).
+       There are TWO coastline tests and they have to agree:
+         spawnEnemy   swaps a ground unit to a boat while the camera is over water
+         _s1OnLand    holds a ground WAVE back until we are clear of the water
+       The RC2 rebuild re-measured the coast to 4605 and moved the plate to h=5120, but only
+       the swap was updated - this still said 3384. Measured consequence with h=5120:
+           _s1OnLand  needed mapScroll >= 1796   (was 1476 on the old 4800 plate)
+           _s1Past    cuts all ground off at     2144
+       a 348px window instead of 668px, so the t=44 and t=50 APC waves deferred until the
+       halfway cutoff killed them and the sand tanks never reached the beach at all. The
+       suite caught it as "stage 1: the sand tanks spawn (scroll never)".
+       Kept as a named constant so the pair cannot drift apart again. */
+    const S1_COAST_Y = 4605;                         // == the _COAST used by the naval swap
     const _s1OnLand = () => {
       const cfg = (typeof _levelCfg==='function') ? _levelCfg() : null;
       const H = (cfg && cfg.h) || 4800;
-      return (H - (mapScroll||0)) <= 3384 - 60;      // clear of the water, with margin
+      return (H - (mapScroll||0)) <= S1_COAST_Y - 60;   // clear of the water, with margin
     };
     const _s1Ground = (fn) => function _g(){
       if(_s1Past()) return;                          // past halfway: no ground at all

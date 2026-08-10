@@ -607,7 +607,11 @@ console.log('\n=== 17. level environment pack (6 masters + liquid) ===');
   vm.runInContext('run.stage=1; curStage=STAGES[0]; damBroken=false;', ctxv);
   const l1master = vm.runInContext('_levelCfg().master', ctxv);
   const l1wide = vm.runInContext('_levelCfg().wide', ctxv);
-  ok(l1master==='jungle800_master' && l1wide===true, `L1 uses the wide jungle master: ${l1master} (wide=${l1wide})`);
+  /* STAGE 1 NOW RUNS THE RC2 MASTER (drop 0809m). The never-touch rule was written to stop
+     the stage-1 plate being edited by accident; Mike then deliberately REPLACED it with the
+     RC2 rebuild (flipped, ocean re-keyed, coast re-measured, plate 4800 -> 5120). The rule
+     still holds - the master is not to be edited - it is just a different master now. */
+  ok(l1master==='jungle800_rc2_master' && l1wide===true, `L1 uses the wide jungle master: ${l1master} (wide=${l1wide})`);
   ok(vm.runInContext("XART.rdy('jungle800_master')", ctxv), 'jungle800 master art present');
   ok(vm.runInContext('worldWidth()', ctxv)===800, 'stage 1 world is 800px wide (horizontal scroll)');
   vm.runInContext('damBroken=false; run.stage=1; curStage=STAGES[0];', ctxv);
@@ -1803,7 +1807,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'and the car crash pileup is placed on it');
   vm.runInContext("run.stage=1; curStage=STAGES[0];", ctxv);
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'stage 1 now runs the seam-healed water (swapped on explicit go-ahead)');
-  ok(vm.runInContext("_levelCfg().master==='jungle800_master' && _levelCfg().wide===true", ctxv), 'stage-1 MASTER untouched — the never-touch rule still holds for everything but the liquid');
+  ok(vm.runInContext("_levelCfg().master==='jungle800_rc2_master' && _levelCfg().wide===true", ctxv), 'stage-1 MASTER is the RC2 rebuild — the never-touch rule still holds for everything but the liquid');
   ok(vm.runInContext("XART.rdy('nlq2_water_0')", ctxv), 'stage-1 replacement water is registered and ready to switch');
   // frame count: _liquidFrames collects up to 8, these families ship 6
   vm.runInContext("run.stage=2; curStage=STAGES[1];", ctxv);
@@ -2120,7 +2124,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("run.stage=1; curStage=STAGES[0];", ctxv);
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'stage 1 runs the seam-healed water');
   ok(vm.runInContext("_levelCfg().tile===0.5", ctxv), 'and tiles it at 0.5 (drop 0801fs: native 800x256 read as huge smears on a 480 camera)');
-  ok(vm.runInContext("_levelCfg().master==='jungle800_master'", ctxv), 'stage-1 MASTER untouched — never-touch rule still holds for everything but the liquid');
+  ok(vm.runInContext("_levelCfg().master==='jungle800_rc2_master'", ctxv), 'stage-1 MASTER is the RC2 rebuild — never-touch rule still holds for everything but the liquid');
   ok(vm.runInContext("worldWidth()===800", ctxv), 'stage 1 still an 800px world');
   ok(vm.runInContext("(function(){for(var i=0;i<6;i++) if(!XART.rdy('nlq2_water_'+i)) return false; return true;})()", ctxv), 'all 6 water frames present');
   // LEVEL-6 JETS: full animation sets, verified DRIVEN (keys are built with template literals, so
