@@ -5357,6 +5357,52 @@ function buildStagePlan(stageNum){
     add(8.2, ()=>{ spawnEnemy('s1jetdelta', VW*0.20, -30, {route:'cornerRL'});
                    spawnEnemy('s1jetdelta', VW*0.80, -30, {route:'straight'}); });
 
+    /* ============================================================================
+       THE NAVAL OPENING (drop 0809n)
+
+       The RC2 rebuild opens over open water and the stage had NOTHING in it. Eight
+       units were registered, drawing and behaving correctly - patrol boat, missile
+       gunboat, corvette, landing craft, river mine - and not one wave ever spawned
+       them, so the sea leg was jets over empty blue.
+
+       _s1Sea is the exact inverse of _s1OnLand and reads the SAME constant, so the
+       two gates cannot drift: a boat may only appear while the camera is over water,
+       a tank only once we are clear of it. Without this a corvette would beach itself
+       the moment the wave ran late.
+
+       THE LEG IS SHORT AND THE DISPATCHER IS SLOWER THAN THE CLOCK. 515px at ~43px/s is
+       about 12 seconds, but a wave only fires when the live count is at or under the
+       dispatch cap, so its turn can arrive well after its authored t. Measured: authored at
+       4.0/7.5/10.5/13.0 the last three waves came up at t=16, already past the coastline,
+       and were skipped by their own sea gate - three of four naval waves never fired and
+       nothing reported it.
+       Pulled in to 3.0/5.2/7.4/9.6 so the whole sequence lands inside the window even when
+       every wave is held a beat. It escalates: pickets, then guns, then the heavy with mines
+       to force movement, then the landing craft as the beach arrives.
+       ============================================================================ */
+    const _s1Sea = () => {
+      const cfg = (typeof _levelCfg==='function') ? _levelCfg() : null;
+      const H = (cfg && cfg.h) || 4800;
+      return (H - (mapScroll||0)) > S1_COAST_Y - 60;   // still out over the water
+    };
+    const _s1Naval = (fn) => function(){ if(_s1Sea()) fn(); };
+
+    /* two pickets hold station either side - they cancel the scroll and fire on an arc */
+    add(3.0, _s1Naval(()=>{ spawnEnemy('s1boatpatrol', VW*0.22, -40, {});
+                            spawnEnemy('s1boatpatrol', VW*0.78, -40, {}); }));
+    /* gunboats, and the first mine drifting down between them */
+    add(5.2, _s1Naval(()=>{ spawnEnemy('s1boatgun', VW*0.34, -40, {});
+                            spawnEnemy('s1boatgun', VW*0.66, -40, {});
+                            spawnEnemy('s1rivermine', VW*0.50, -70, {}); }));
+    /* the corvette is the heavy of the sea leg - flanked by mines so you cannot simply
+       park on it and trade */
+    add(7.4, _s1Naval(()=>{ spawnEnemy('s1corvette', VW*0.50, -46, {});
+                             spawnEnemy('s1rivermine', VW*0.24, -70, {});
+                             spawnEnemy('s1rivermine', VW*0.76, -90, {}); }));
+    /* landing craft running for the beach as the sand comes up */
+    add(9.6, _s1Naval(()=>{ spawnEnemy('s1landingcraft', VW*0.38, -50, {});
+                             spawnEnemy('s1landingcraft', VW*0.62, -80, {}); }));
+
     /* --- the beach: four heavy tanks, each set back further, firing in turn ---
        TIMED TO THE ACTUAL COASTLINE (drop 0801jw). Mike: "no tanks were shown or
        visible." They were spawning at t=13, which is mapScroll ~520 - still out
@@ -5381,9 +5427,45 @@ function buildStagePlan(stageNum){
          is a strafing pass - guns. */
       spawnEnemy('s1jetbomber', VW*0.08+i*12, -32 - i*68, {route:'straight'}); });
 
+    /* ============================================================================
+       THE BEACH DUMP — SCENERY THAT CHAINS (drop 0809n)
+
+       This is the Contra half of "Contra meets a shmup". The props were registered
+       and given blast profiles and nothing ever placed one, so the splash system had
+       literally nothing to detonate in a real run.
+
+       SPACING IS THE MECHANIC. A fuel barrel's blast radius is 62px and a fuel tank's
+       is 80, so a cluster laid ~40px apart chains end to end from one shot, and
+       anything armoured parked inside that radius takes the whole run. Laid out so
+       the reward for shooting the barrel instead of the tank is obvious the first
+       time it happens.
+
+       ⚠ spawnEnemy REMAPS x into world space, so authored gaps come out WIDER than
+       written - measured at roughly 1.24x on this stage. These are deliberately
+       tighter than the radius to survive that.
+       ============================================================================ */
+    /* the dump itself: four barrels in a line with a crate, right where the tanks sit */
+    add(38.0, _s1Ground(()=>{ for(let i=0;i<4;i++)
+                                spawnEnemy('s1fuelbarrel', VW*0.30, -30 - i*40, {});
+                              spawnEnemy('s1ammocrate', VW*0.30, -30 - 4*40, {}); }));
+    /* the big tank, parked beside armour - the trade is obvious */
+    add(41.5, _s1Ground(()=>{ spawnEnemy('s1fueltank', VW*0.68, -34, {});
+                              spawnEnemy('s1tankheavy', VW*0.68, -74, {});
+                              spawnEnemy('s1fuelbarrel', VW*0.68, -114, {}); }));
+    /* missile trucks: they lock on, so they force you off the barrel line */
+    add(43.0, _s1Ground(()=>{ spawnEnemy('s1truckmissile', VW*0.18, -30, {});
+                              spawnEnemy('s1truckmissile', VW*0.82, -58, {}); }));
+
     /* --- sand sections: the little tanks --- */
     add(44.0, _s1Ground(()=>{ spawnEnemy('s1tankapc', VW*0.24, -30, {});
                               spawnEnemy('s1tankapc', VW*0.72, -60, {}); }));
+    /* the light tanks finally field - fast, thin, in a staggered file */
+    add(46.5, _s1Ground(()=>{ for(let i=0;i<3;i++)
+      spawnEnemy('s1tanklight', VW*(0.30+i*0.20), -30 - i*52, {}); }));
+    /* one more dump before the miniboss, this one guarding the APC file */
+    add(52.0, _s1Ground(()=>{ spawnEnemy('s1fuelbarrel', VW*0.46, -30, {});
+                              spawnEnemy('s1fuelbarrel', VW*0.46, -70, {});
+                              spawnEnemy('s1fueltank',   VW*0.46, -110, {}); }));
     add(50.0, _s1Ground(()=>{ for(let i=0;i<3;i++)
       spawnEnemy('s1tankapc', VW*(0.18+i*0.30), -30 - i*44, {}); }));
 
@@ -10976,6 +11058,22 @@ function updatePlay(dt){
     for(const _e of enemies){
       if(_e.dead || _e._dyingT!=null) continue;
       if(_e._tur || _e._bunker || _e._mini) continue;
+      /* PROPS ARE SCENERY, NOT PRESSURE (drop 0809n). Barrels, fuel tanks, crates and
+         river mines sit where they are placed and wait to be shot - exactly the case the
+         exclusion above was written for. Counting them would starve the queue far worse
+         than turrets ever did: a four-barrel dump is four permanent units against a
+         dispatch cap of three, so the level would stop spawning entirely from the beach
+         onward until the player cleared them. Same reasoning, same list. */
+      if(_e._prop) continue;
+      /* AND STATION-HOLDING NAVAL (drop 0809n). A 'naval' unit cancels the scroll and holds
+         its position, so like a turret it never clears the screen on its own - it counts
+         against the cap until the player kills it.
+         Measured consequence: two patrol boats plus two jets is 4 against a dispatch cap of
+         3, which held the next wave until t=16. The sea leg ENDS at about t=14, so the
+         gunboats, the corvette and the landing craft all reached their turn after the
+         coastline and were skipped by their own sea gate. Three of the four naval waves
+         never fired, and nothing reported it - the level just looked empty over the water. */
+      if(_e.pattern==='naval') continue;
       _liveN++;
     }
     if(waveIdx<stagePlan.length && stageTimer>=stagePlan[waveIdx].t && _waveGap<=0 && _liveN<=_dispatchAt){
@@ -16910,6 +17008,23 @@ function navalInSix(e){
 }
 function navalTick(e, dt){
   if(e.dead) return;
+  /* ⚠ A BOAT MUST NOT BEACH ITSELF (drop 0809n).
+     'naval' cancels the map scroll so the unit holds station in the water. That is right while
+     there IS water, but the coastline keeps coming: once it passes underneath, the boat is
+     still holding station over jungle. Caught in a capture - two missile gunboats parked in
+     the trees, perfectly stationary, firing.
+     Past the coast it stops steering and withdraws off the bottom instead, which reads as the
+     flotilla falling behind as you push inland. Same constant as both other coastline tests. */
+  if(run.stage===1 && !e._beached){
+    const _c=(typeof _levelCfg==='function')?_levelCfg():null;
+    const _H=(_c&&_c.h)||4800;
+    if((_H-(mapScroll||0)) <= 4605-60) e._beached=1;
+  }
+  if(e._beached){
+    e.y += 74*dt;
+    if(e.y > VH+70) e.dead=true;
+    return;
+  }
   /* LAZY INIT (drop 0808k). spawnEnemy has more than one exit, so hooking a single push site
      leaves a boat spawned through another path with no heading and no timers. Initialising on the
      first tick means every naval unit is configured regardless of how it got here. */
