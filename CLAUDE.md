@@ -218,7 +218,21 @@ reintroduce. The affiliations ("ORDER OF THE MATRIX", "PRINCESSES OF THE SKY" �
 as baked pixels — they are transcribed into `AINTRO_AFFIL` and exist nowhere else, so do not
 regenerate the plates from the pack without carrying that table forward.
 
-`attractIdleTick` is defined and **never called** — the 12-second idle trigger is dead code. The Fury HQ scenes now have a state to run in
+`attractIdleTick` is defined and **never called** — the 12-second idle trigger is dead code.
+
+**The campaign is not backable.** k/backspace/escape no longer exit `CAMPHUB`/`STAGESEL`/`PILOT`
+in campaign mode — they open `campPause`, a glowing `dlg_window` holding the four authored buttons
+(`btn_save`, `btn_load`, `btn_options`, `btn_exit`; EXIT GAME *is* RETURN TO MAIN MENU, per Mike).
+The point is `campaignEnd()`: one place that knows the campaign is over, which a stray back key
+never gave us. Checked before `menuBackTick` so one press cannot be read as both.
+
+⚠ **Campaign persistence already existed** — `campSnapshot`/`campWriteSlot`/`campReadSlot`/
+`campApply`/`campSlotUsed`, keyed `bof_campaign_slot<i>`, with CAMPHUB's own save/load flow. I
+duplicated the whole thing before noticing (`CAMP_SLOTS` redeclared). **Grep for `camp` before
+adding campaign state** — the save system is far down the file, past the hub drawing code.
+
+**Cutscene portraits face each other** — every pose in the pack is authored facing SCREEN-LEFT
+(Axel's drawn pistol is the giveaway), so `drawCutscene` mirrors the LEFT slot only. The Fury HQ scenes now have a state to run in
 (`GS.CUTSCENE`): `HQ_SCENES` carries all eight ensemble scenes from ColeForge's own cutscene bible
 verbatim, `drawCutsceneState` types a line at a time over `drawCutscene`, and `hqTrigger(when,
 stage, next)` fires them at the boundaries the bible names — `pre` 1 and 8, `post` 1/3/4/6/7/9.

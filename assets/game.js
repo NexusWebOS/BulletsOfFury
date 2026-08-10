@@ -1992,7 +1992,17 @@ function drawCutscene(sc){
       const t=xartTint(pk,'#000000',0.45);                // 55% brightness, hue untouched
       if(t) src=t;
     }
-    ctx.drawImage(src, X(px), Y(py)-S(h), S(w), S(h));
+    /* FACE EACH OTHER (drop 0809t). Mike: "flip the characters to be facing each other while
+       talking." Every pose in the pack is authored facing SCREEN-LEFT - Axel's drawn pistol
+       points that way and the rest angle with it - so the RIGHT slot is already looking inward
+       and it is the LEFT one that has to mirror. Centre is left alone; it has nobody to face. */
+    const _dx=X(px), _dy=Y(py)-S(h), _dw=S(w), _dh=S(h);
+    if(name==='left'){
+      ctx.save(); ctx.translate(_dx+_dw, _dy); ctx.scale(-1,1);
+      ctx.drawImage(src, 0, 0, _dw, _dh); ctx.restore();
+    } else {
+      ctx.drawImage(src, _dx, _dy, _dw, _dh);
+    }
   }
   // 6. dialogue frame  7. name + emblem  8. text
   const dx=X(18), dy=Y(350), dw=S(604), dh=S(112);
@@ -19585,10 +19595,152 @@ function outlineText(t,x,y,fill,stroke,lw){
    ============================================================ */
 let bootStars=[]; for(let i=0;i<60;i++) bootStars.push({x:rnd(0,VW),y:rnd(0,VH),s:rnd(0.5,2)});
 
+/* ============================================================
+   CAMPAIGN PAUSE (drop 0809t)
+
+   Mike: "do not make k/b back you out of the campaign menu, selecting a level or starting a
+   campaign. They need to press start, where a glowing pop up window will appear with options
+   such as Save Game, Load Game, Options, Return to Main Menu - this way the game can register
+   when were no longer in the campaign mode."
+
+   The last clause is the actual requirement. Backing out of a campaign screen on a stray key
+   left nothing to hook - the game slid back to the menus without ever being told the campaign
+   had ended. Leaving is deliberate now, through one exit, and RETURN TO MAIN MENU is where
+   campaignEnd() runs.
+
+   So the back keys no longer back out of CAMPHUB / STAGESEL / PILOT, they OPEN this. Selecting a
+   level and starting a campaign are untouched - those are confirm, not back.
+
+   ⚠ THE PERSISTENCE ALREADY EXISTED. campSnapshot / campWriteSlot / campReadSlot / campApply /
+   campSlotUsed have been here since the save-slot drop, and CAMPHUB already had its own save and
+   load flow. This adds a way IN from anywhere in the campaign; it does not add a second store.
+   The four buttons are the authored ones - btn_save and btn_load were registered and drawn for
+   exactly this and were sitting unused. EXIT GAME is RETURN TO MAIN MENU, per Mike.
+   ============================================================ */
+const CAMP_PAUSE_BTN=[
+  {key:'btn_save',    act:'save'},
+  {key:'btn_load',    act:'load'},
+  {key:'btn_options', act:'options'},
+  {key:'btn_exit',    act:'exit'}
+];
+let campPause=null;   // {sel, mode:'root'|'save'|'load', t, msg, msgT}
+
+function campPauseIsCampaignScreen(){
+  return (state===GS.STAGESEL || state===GS.CAMPHUB || state===GS.PILOT) &&
+         (typeof run!=='undefined' && run && run.mode==='campaign');
+}
+function campPauseOpen(){
+  campPause={sel:0, mode:'root', t:0, msg:'', msgT:0};
+  if(Audio.SFX&&Audio.SFX.select) Audio.SFX.select();
+}
+function campPauseClose(){ campPause=null; }
+function campPauseSay(m){ if(campPause){ campPause.msg=m; campPause.msgT=1.8; } }
+function campaignEnd(){
+  /* the single place that knows the campaign is over - the point of the whole change */
+  if(typeof run!=='undefined' && run) run.mode='arcade';
+  try{ window.sselCommitted=false; }catch(e){}
+  if(typeof hqSeen!=='undefined') hqSeen={};
+  if(typeof campPick!=='undefined') campPick=null;
+}
+function campPauseSlotLabel(i){
+  if(!campSlotUsed(i)) return 'SLOT '+(i+1)+'  EMPTY';
+  const d=campReadSlot(i)||{};
+  const P=(typeof PILOTS!=='undefined')?PILOTS.find(function(p){ return p.key===d.pilot; }):null;
+  return 'SLOT '+(i+1)+'  STAGE '+(d.stage||1)+'  '+((P&&P.name)||String(d.pilot||'').toUpperCase());
+}
+
+function campPauseDraw(dt){
+  if(!campPause) return;
+  campPause.t+=dt;
+  if(campPause.msgT>0) campPause.msgT-=dt;
+  const f=(typeof uiFontArt==='function')?uiFontArt():null;
+  const rows=(campPause.mode==='root')?CAMP_PAUSE_BTN.length:CAMP_SLOTS;
+
+  ctx.save();
+  ctx.fillStyle='rgba(0,0,0,0.62)'; ctx.fillRect(0,0,VW,VH);
+
+  /* dlg_window has a deep frame - a thick top rail and a bottom lip with an emblem on it - so
+     the list needs real padding at BOTH ends or the last button is clipped by the lip */
+  const bw=Math.min(VW-104, 308), bh=Math.round(bw*0.185), gap=Math.round(bh*0.26);
+  const listH=rows*bh+(rows-1)*gap;
+  const padX=22, padTop=36, padBot=34;
+  const pw=bw+padX*2, ph=listH+padTop+padBot;
+  const px=Math.round((VW-pw)/2), py=Math.round((VH-ph)/2);
+
+  /* THE GLOW is a shadow cast BY the authored panel, not a drawn box */
+  const pulse=0.55+0.45*Math.sin(campPause.t*3.0);
+  ctx.save();
+  ctx.shadowColor='rgba(120,200,255,'+(0.55+0.35*pulse).toFixed(3)+')';
+  ctx.shadowBlur=18+10*pulse;
+  if(typeof XART!=='undefined' && XART.rdy('dlg_window')) ctx.drawImage(XART.get('dlg_window'), px, py, pw, ph);
+  else { ctx.fillStyle='rgba(8,12,18,0.95)'; ctx.fillRect(px,py,pw,ph); }
+  ctx.restore();
+
+  if(f && typeof stageText==='function'){
+    const title=(campPause.mode==='root')?'PAUSED':(campPause.mode==='save'?'SAVE GAME':'LOAD GAME');
+    stageText(f, title, px+pw/2, py+19, 15, '#cfe6ff', 0.85, 1, 0.10);
+  }
+
+  for(let i=0;i<rows;i++){
+    const by=py+padTop+i*(bh+gap), sel=(i===campPause.sel);
+    ctx.save();
+    ctx.globalAlpha=sel?1:0.5;
+    if(sel){ ctx.shadowColor='rgba(150,220,255,0.9)'; ctx.shadowBlur=12+6*pulse; }
+    const k=(campPause.mode==='root')?CAMP_PAUSE_BTN[i].key:'dlg_window';
+    if(typeof XART!=='undefined' && XART.rdy(k)) ctx.drawImage(XART.get(k), px+padX, by, bw, bh);
+    ctx.restore();
+    if(campPause.mode!=='root' && f && typeof stageText==='function')
+      stageText(f, campPauseSlotLabel(i), px+padX+bw/2, by+bh*0.52,
+                Math.max(10,Math.round(bh*0.28)), sel?'#ffe082':'#cfd6e0', 0.85, sel?1:0.7, 0.09);
+  }
+  if(campPause.msgT>0 && f && typeof stageText==='function')
+    stageText(f, campPause.msg, px+pw/2, py+ph-11, 11, '#ffe082', 0.85,
+              Math.min(1,campPause.msgT*2), 0.10);
+  ctx.restore(); ctx.globalAlpha=1;
+
+  // ---- input ----
+  if(Input.menuUp()){ campPause.sel=(campPause.sel+rows-1)%rows; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.menuDown()){ campPause.sel=(campPause.sel+1)%rows; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.menuBack()){
+    if(campPause.mode!=='root'){ campPause.mode='root'; campPause.sel=0; }
+    else campPauseClose();
+    return;
+  }
+  if(campPause.t>0.18 && Input.menuConfirm()){
+    if(campPause.mode==='root'){
+      if(Audio.SFX&&Audio.SFX.select) Audio.SFX.select();
+      const act=CAMP_PAUSE_BTN[campPause.sel].act;
+      if(act==='save'){ campPause.mode='save'; campPause.sel=0; }
+      else if(act==='load'){ campPause.mode='load'; campPause.sel=0; }
+      else if(act==='options'){ campPauseClose(); menuIndex=0; setState(GS.OPTIONS); }
+      else { campPauseClose(); campaignEnd(); menuIndex=0; setState(GS.TITLE); }
+    } else if(campPause.mode==='save'){
+      const ok=campWriteSlot(campPause.sel);
+      if(typeof campSession!=='undefined') campSession=campSnapshot();
+      if(Audio.SFX&&Audio.SFX.select) Audio.SFX.select();
+      campPause.mode='root'; campPause.sel=0;
+      campPauseSay(ok?('SAVED TO SLOT '+(campPause.sel+1)):'SAVE FAILED - STORAGE BLOCKED');
+    } else {
+      const i=campPause.sel;
+      if(!campSlotUsed(i)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); campPauseSay('THAT SLOT IS EMPTY'); return; }
+      const snap=campReadSlot(i);
+      if(campApply(snap)){
+        if(typeof campSession!=='undefined') campSession=campSnapshot();
+        if(Audio.SFX&&Audio.SFX.select) Audio.SFX.select();
+        campPauseClose(); openStageSelect(run.stage,{});
+      } else { campPause.mode='root'; campPause.sel=0; campPauseSay('THAT SAVE IS FROM AN OLDER BUILD'); }
+    }
+  }
+}
+
 function drawScene(dt){
   if(typeof window!=='undefined') window.__bofFrames=(window.__bofFrames|0)+1;   // watchdog: proves the loop is running
-  /* every menu is backable, checked once here rather than in seven screens (drop 0809c) */
-  if(typeof menuBackTick==='function' && menuBackTick()) return;
+  /* THE CAMPAIGN IS NOT BACKABLE (drop 0809t). Leaving it has to be deliberate so the game has
+     one place that knows the campaign ended. Checked BEFORE menuBackTick so a single keypress
+     cannot be read as a back as well, and skipped entirely while the pause owns input. */
+  if(!campPause && campPauseIsCampaignScreen() && Input.menuBack()){ campPauseOpen(); return; }
+  /* every other menu is backable, checked once here rather than in seven screens (drop 0809c) */
+  if(!campPause && typeof menuBackTick==='function' && menuBackTick()) return;
   switch(state){
     case GS.OPENING: return drawOpening(dt);
     case GS.BOOT:    return drawBoot(dt);
@@ -19612,9 +19764,9 @@ function drawScene(dt){
     case GS.VICTORY: return drawVictory(dt);
     case GS.RIVAL:   return drawRivalSeq(dt);
     case GS.FLYOVER: return drawFlyover(dt);
-    case GS.STAGESEL: return drawStageSelect(dt);
+    case GS.STAGESEL: { drawStageSelect(dt); campPauseDraw(dt); return; }
     case GS.MODESEL: return drawModeSelect(dt);
-    case GS.CAMPHUB: return drawCampaignHub(dt);
+    case GS.CAMPHUB: { drawCampaignHub(dt); campPauseDraw(dt); return; }
   }
 }
 
@@ -27883,7 +28035,8 @@ function campHubInput(){
       else { campPick=act; campHubIndex=0; }
     }, null, null);
   }
-  if(Input.tap('backspace')||(typeof backButton==='function'&&backButton())){ setState(GS.MODESEL); }
+  /* was: setState(GS.MODESEL). Mike: k/b must not back you out of the campaign menu. */
+  if(Input.tap('backspace')||(typeof backButton==='function'&&backButton())){ campPauseOpen(); }
 }
 function campSlotInput(){
   if(Input.tap('up')||Input.tap('w')){ campHubIndex=(campHubIndex+CAMP_SLOTS-1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }

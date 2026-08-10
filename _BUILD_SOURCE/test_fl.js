@@ -8933,8 +8933,27 @@ console.log("=== 215. menu navigation ===");
     ok(_mb[p[0]]===p[1], p[0]+' backs out to '+p[1]);
   });
   var _g215=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g215.indexOf("if(typeof menuBackTick==='function' && menuBackTick()) return;")>0,
+  /* the pin used to include the leading "if(" and broke on a deliberate change: drop 0809t
+     guards the call with !campPause so the campaign pause owns input while it is up. The
+     assertion's INTENT is that the check happens ONCE in drawScene rather than being copied
+     into each screen, and that is still true - so the pin is on the call, not on the whole
+     line, and the count is what actually enforces "once". */
+  ok(_g215.indexOf("typeof menuBackTick==='function' && menuBackTick()) return;")>0,
      'and it is checked once in drawScene, not copied into each screen');
+  ok((_g215.match(/menuBackTick\(\)\) return;/g)||[]).length===1,
+     'exactly one menuBackTick call site');
+
+  /* CAMPAIGN PAUSE (drop 0809t). Mike: k/b must not back you out of the campaign; START opens a
+     window instead, so the game has one place that knows the campaign ended. */
+  ok(_g215.indexOf('campPauseIsCampaignScreen() && Input.menuBack()){ campPauseOpen(); }')>0 ||
+     _g215.indexOf('campPauseIsCampaignScreen() && Input.menuBack()){ campPauseOpen(); return; }')>0,
+     'the campaign back key opens the pause instead of backing out');
+  ok(vm.runInContext("CAMP_PAUSE_BTN.length===4 && CAMP_PAUSE_BTN.map(b=>b.act).join(',')==='save,load,options,exit'", ctxv),
+     'and it offers save, load, options and return-to-main-menu');
+  ok(vm.runInContext("CAMP_PAUSE_BTN.every(b=>!!(XART._src&&XART._src[b.key]))", ctxv),
+     'all four use authored button art that actually resolves');
+  ok(vm.runInContext("(function(){ run.mode='campaign'; campaignEnd(); return run.mode; })()", ctxv)==='arcade',
+     'campaignEnd is the one place that registers leaving campaign mode');
   ok(vm.runInContext("Input.menuBack.toString().indexOf(\"'k'\")>0", ctxv),
      'the K key is one of the back bindings');
 
