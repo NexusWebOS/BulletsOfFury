@@ -1788,10 +1788,19 @@ const SUBBOSS_NO_HOLD = {};
    keying — so this is a straight key substitution at draw time with no geometry
    change and no second code path. Falls back to the intact master if the
    destroyed plate is missing. */
+/* ⚠ DRIVEN BY THE CONFIG NOW, NOT BY A HARDCODED KEY (drop 0809m).
+   This used to test `mk==='jungle800_master'` literally. Swapping stage 1 onto the RC2 plate
+   changed that key, so the whole dam swap went SILENTLY dead - beat the boss and the dam
+   simply stayed intact, with nothing failing and nothing logged. Mike caught it by asking
+   whether the swap graphic was ready.
+
+   The destroyed plate is now named by the level config, so any stage can declare one and no
+   future master rename can quietly kill it again. A stage with no `destroyed` key keeps its
+   intact plate, which is the same safe fallback as before. */
 function stageMasterKey(cfg){
   const mk=cfg&&cfg.master;
-  if(mk==='jungle800_master' && typeof damBroken!=='undefined' && damBroken){
-    const d='jungle800_master_destroyed';
+  const d=cfg&&cfg.destroyed;
+  if(d && typeof damBroken!=='undefined' && damBroken){
     if(typeof XART!=='undefined' && XART._src && XART._src[d]){
       if(XART._touch) XART._touch(d);
       if(XART.rdy(d)) return d;
@@ -25128,11 +25137,16 @@ function mechDraw(b){
        comes from mechAnimKey() below; components are only ever used for ASSEMBLY and DAMAGE. */
     ctx.globalAlpha=al*(b.flash>0?0.85:1);
     if(anchored){
+      /* SEAT ON THE COMPONENT BOX, NOT ON A STACK OF NUDGES (drop 0809l).
+         The gap / elbow / head offsets exist because the pieces could not tile flush at their
+         old oversized draw scale — they are a workaround for the sizing bug fixed just above.
+         With each piece now fitted INSIDE its component-map box, the box centre already says
+         where the part belongs in the assembled mech, and re-applying the nudges scatters it.
+         _mechSeat still runs for the plate-mating adjustment; only the pushes are dropped. */
       const so=_mechSeat(K.tag, c, _pc);
-      const gp0=_mechGap(c);                      // push the limb out from its parent
-      const el=_mechElbow(K.tag, c);              // then slide a cannon down onto its arm deck
-      const hd=(c==='head')?_mechHeadOffset(K):[0,0];   // and the head floats free
-      const gp=[gp0[0]+el[0]+hd[0], gp0[1]+el[1]+hd[1]];
+      const _bd2 = M.components && M.components[c] && M.components[c].bounds;
+      const gp=[0,0];
+      const soC = _bd2 ? [(_bd2[0]+_bd2[2])/2, (_bd2[1]+_bd2[3])/2] : so;
       /* ⚠ FIT EACH PIECE TO ITS OWN BOUNDS (drop 0809l).
          This drew every piece at naturalWidth*S*0.85. S is derived from the 384 MASTER canvas,
          but a p_ piece is not master-scale: it carries its own socket region, so it is much
@@ -25152,8 +25166,8 @@ function mechDraw(b){
         }
       }
       const w2=im.naturalWidth*S*_fit, h2=im.naturalHeight*S*_fit;
-      const px2=cx+(so[0]-192)*S-w2/2+ox+gp[0]*S;
-      const py2=cy+(so[1]-192)*S-h2/2+oy+gp[1]*S;
+      const px2=cx+(soC[0]-192)*S-w2/2+ox+gp[0]*S;
+      const py2=cy+(soC[1]-192)*S-h2/2+oy+gp[1]*S;
       ctx.drawImage(im, px2, py2, w2, h2);
       p._dx=px2+w2/2; p._dy=py2+h2/2;             // remembered so the chain can find it
     } else {
