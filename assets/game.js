@@ -23502,6 +23502,7 @@ function mechUpdate(b, dt){
   const K=b._mech; if(!K) return;
   K.t+=dt;
   if(K.shieldT>0) K.shieldT=Math.max(0, K.shieldT-dt);      // armour-deflect sweep (drop 0809m)
+  if(K._tdeath) mechTorsoDeathTick(b, K, dt);               // nine blasts on tics (drop 0809n)
   /* ---- FIRE ON THE TORSO ENDS IN A CHARGE (drop 0809n) ----
      Mike: "fire on the TORSO — the white turns more REDDISH, flashes FASTER, and eventually he
      CHARGES and RAMS you — kill."
@@ -23694,6 +23695,62 @@ function mechDeflect(b, bt){
   bt.dead=true;
   if(Audio.SFX && Audio.SFX.blocked) Audio.SFX.blocked();
 }
+/* ============================================================
+   THE TORSO'S DEATH (drop 0809n) — spec: MAGMA_COMBAT_SPEC_0801jr
+
+     "The torso falls and detaches from the head"
+     "It blows up and bursts, sending armour fragments everywhere"
+     "Use the armour palette on the debris chunks"
+     "A giant pulsating ARMOUR shock ring"
+     "The massive boss explosion NINE times — not three — all over, one by one, on tics"
+     "It falls into the lava as it bursts, with the rings"
+
+   NINE, ON TICS, is the whole character of it: one big blast is a death, nine walking
+   across the hull over a second and a half is a machine coming apart. So this is a
+   sequence with its own clock rather than a burst at the moment of the killing shot.
+   ============================================================ */
+const MECH_ARMOUR_COL = '#b9a48c';        // the plating, not the fire — armour-palette debris
+function mechTorsoDeath(b, K){
+  if(!K || K._tdeath) return;
+  K._tdeath={t:0, n:0, x:b.x, y:(b._drawY!=null?b._drawY:b.y)};
+  /* the giant pulsating armour ring lands immediately, at the moment the shell gives.
+     ⚠ SIZED, NOT MAXED (drop 0809n). The first cut asked for a 273px ring plus a 200px fxBurst
+     carrying 40 chunks and 60 sparks, and then nine fireball reels on top of it over the next
+     second — measured result was "Target crashed": a renderer fault, not a JS error. A boss
+     death is the worst possible moment to find the particle ceiling, so the spectacle is spread
+     across the nine tics rather than spent in frame one. */
+  if(typeof spawnShockRing==='function') spawnShockRing(b.x, K._tdeath.y, (b.w||280)*0.55, 'fire');
+  if(typeof fxBurst==='function'){
+    fxBurst(b.x, K._tdeath.y, (b.w||280)*0.42, {rings:2, chunks:16, sparks:22, color:MECH_ARMOUR_COL});
+  }
+  shake=Math.max(shake,18);
+  flashScreen=Math.max(flashScreen||0, 0.5);
+  floatText(b.x, b.y-84, 'CORE BREACHED', '#ff5a3c');
+  if(Audio.SFX && Audio.SFX.bossPhase) Audio.SFX.bossPhase();
+}
+function mechTorsoDeathTick(b, K, dt){
+  const D=K._tdeath; if(!D) return;
+  D.t+=dt;
+  /* THE TORSO FALLS. It detaches and drops into the lava while it is still bursting, so the
+     rings and the blasts travel down with it rather than hanging where it used to be. */
+  D.y += 66*dt;
+  b._tdy = D.y;
+  const want=Math.min(9, Math.floor(D.t/0.16)+1);      // one tic every 0.16s -> nine in ~1.4s
+  while(D.n<want){
+    D.n++;
+    /* scattered ACROSS the hull, not stacked on one point: "all over, one by one" */
+    const a=(D.n*2.399);                                // golden-angle walk, so no two land together
+    const rx=Math.cos(a)*(b.w||280)*0.30, ry=Math.sin(a)*(b.h||280)*0.26;
+    explode(D.x+rx, D.y+ry, 26+((D.n%3)*6), 'red', 'fireball');
+    /* armour fragments ride the blasts rather than all landing on tic one */
+    if(typeof fxBurst==='function' && D.n%2===1)
+      fxBurst(D.x+rx, D.y+ry, 40, {rings:1, chunks:8, sparks:10, color:MECH_ARMOUR_COL});
+    if(D.n%3===0 && typeof spawnShockRing==='function') spawnShockRing(D.x+rx, D.y+ry, 52, 'fire');
+    shake=Math.max(shake, 8);
+    if(Audio.SFX && Audio.SFX.expBig) Audio.SFX.expBig();
+  }
+  if(D.n>=9 && D.t>1.9) K._tdeath=null;                 // done: phase 3 owns the head from here
+}
 const _SHOT_MISSILE = {missile:1, gmiss:1, nade:1, mechmortar:1};
 function mechShieldIntercept(b, bt){
   const K=b && b._mech;
@@ -23806,6 +23863,8 @@ function mechDamage(b, comp, dmg){
        a beat of its own rather than the same puff every other part gets: the shell that has been
        turning your shots away all fight is gone, and the core is open. Checked AFTER the state
        change above, so the part that just died counts toward the shell being clear. */
+    /* THE TORSO GOING IS ITS OWN EVENT, not another limb coming off (drop 0809n). */
+    if(comp==='torso' && typeof mechTorsoDeath==='function') mechTorsoDeath(b, K);
     if(K.parts.torso && MECH_SHELL_PARTS.indexOf(comp)>=0 && !mechShieldUp(K)){
       K._shieldSaid=0;
       K.shieldT=0;
