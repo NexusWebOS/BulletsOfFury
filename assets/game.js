@@ -805,7 +805,13 @@ const XART=(function(){
      nine — and every bank and roll frame besides, which the old pattern never reached. Fewer
      preloads, more coverage. ship_ stays in the pattern harmlessly: those keys are cells now,
      so nothing matches it, and leaving it costs nothing if a loose ship file ever returns. */
-  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_)/;
+  /* THE STAGE 1-3 ENEMY SHEETS ARE EAGER (drop 0809l). Measured in shoot.py by logging
+     XART.rdy per draw call: nca_80 was still false 600 draw calls in and only came true around
+     3000 — so the first seconds of stage 1 ran with every new enemy invisible. They spawn, they
+     move, they shoot, they collide; they just are not drawn until their sheet decodes. Exactly
+     the failure the suite cannot see, and it looked like a wiring bug for an hour.
+     nca_80..86 are the roster sheets; lazily loaded they lose the opening of the level. */
+  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nca_8[0-9])/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
   /* get() MUST NEVER HAND drawImage A NULL (drop 0724dq).
      Mike is seeing THOUSANDS of draw errors mentioning HTMLImageElement. That is this:
@@ -4661,6 +4667,10 @@ const SHIPS=[];
      as the boats, and the same fix — find the branch that owns the object. (drop 0808s) */
   if(typeof S1_TANKS!=='undefined' && S1_TANKS[type]) applyS1Tank(c, type);
   if(typeof S1_JETS!=='undefined'  && S1_JETS[type])  applyS1Jet(c, type);
+  /* THE ART-LOCK ROSTER (drop 0809l). Same handoff, same reason as the two above: this is the
+     last point before the enemy is finalised, and these types carry NO case in the switch
+     below, so nothing downstream reassigns art/pattern/size. See NEF_S1. */
+  if(typeof NEF_S1!=='undefined'   && NEF_S1[type])   applyNefUnit(c, type);
 
   /* ---- STAGE 1 NAVAL ROSTER (drop 0808l) ----------------------------------------------------
      ⚠ THIS HAS TO BE HERE, not up at `const base = {...}` where it belongs logically.
@@ -12380,6 +12390,10 @@ function dmgVent(e, i){
   return { dx: Math.cos(a)*w*0.26, dy: Math.sin(a)*h*0.20 - h*0.10 };
 }
 function drawEnemyDamage(e, dt){
+  /* ART-LOCK UNITS CARRY THEIR OWN DAMAGE (drop 0809l). Their damaged/critical frames have the
+     smoke and fire authored onto the hull at the right vents. Venting procedurally on top of
+     that gives every one of them two plumes from two different systems at two different scales. */
+  if(e._nef) return;
   const T=dmgTierFor(e); if(!T) return;
   if(e._dyingT!=null || e.dead) return;
   e._dmgT=(e._dmgT||0)+(dt||1/60);
@@ -14957,6 +14971,10 @@ function _drawEnemyZapFlash(e, k){
   ctx.restore();
 }
 function drawEnemy(e){
+  /* BAKED DAMAGE STATE FOLLOWS HP (drop 0809l). Resolved at draw rather than on the damage
+     call: hp is reduced from several places — hitEnemy, splash, collision, the lightning —
+     and hooking one of them means a hull that never changes when killed by the others. */
+  if(e._nef) e.art=nefArtFor(e);
   if(e && e.type==='sandtank'){ try{ if(sandTankDraw(e)) return; }catch(_sde){} }
   /* arsenal drones own their whole draw — thrusters, banked body, measured glow core */
   if(e._dr && typeof droneDraw==='function' && droneDraw(e)) return;
@@ -16333,6 +16351,112 @@ function applyS1Jet(c, type){
   /* a wave picks the route: spawnEnemy(type,x,y,{route:'cornerLR'}) */
   if(c.route && JET_ROUTES.indexOf(c.route)>=0) c._route=c.route;
   c.vy=0; c.shoots=true;
+  return true;
+}
+/* ============================================================
+   THE STAGE 1 ROSTER FROM THE ART LOCK (drop 0809l)
+
+   Fourteen units from CF_BOFFinalArtLock-Vol.2, replacing the Vol.2 slices. Same shape as
+   S1_TANKS and S1_JETS — a row of data, not another case in the spawn switch, which is
+   what lets applyNefUnit run at the `const c=base` handoff and survive. Adding a unit is a
+   row here.
+
+   TWO THINGS THIS ART HAS THAT THE OLD SLICES DID NOT:
+
+   1. THREE BAKED DAMAGE STATES per unit — intact / damaged / critical, authored on the
+      identical canvas and pivot. nefArtFor picks by hp fraction on the SAME thresholds the
+      procedural system already uses (DMG_TIER: 0.65 and 0.35), so a hull that starts
+      smoking is the same moment it always was; only now the smoke is drawn by the artist
+      instead of vented over the top. drawEnemyDamage bails out for these units for exactly
+      that reason — running both would double every plume.
+
+   2. `w`/`h` ARE THE VISIBLE SIZE AGAIN. These cells were uniform 256x256 with the unit
+      floating in transparent margin, and w/h feed BOTH drawImage and the hitbox. The rects
+      are now tightened onto the content union across all three states (union, not per
+      state, or a hull would jump sideways the moment it started burning). Heights are
+      carried over from the units these replace so the stage plays the way it was tuned;
+      widths are derived from each sprite's own aspect rather than typed in.
+
+   prop:true is scenery — no camo variant, and it does not shoot. The barrels become
+   destructible in the splash-damage pass; they are listed here so they have art first.
+   ============================================================ */
+/* ⚠ KEYED ON THE EXISTING TYPE NAMES, ON PURPOSE.
+   The waves spawn 's1tankheavy'. Keying this table on the new art's own names would mean
+   applyNefUnit never fires and none of this reaches the screen. Because it runs AFTER
+   applyS1Tank/applyS1Jet at the handoff, matching their keys lets it override them — so
+   every existing stage 1 wave picks up the new art with no wave-script change at all.
+   Behaviour (atk, hp, score, speed) is carried over verbatim from S1_TANKS/S1_JETS so the
+   stage plays exactly as tuned; only the art and the damage states are new.
+   Heights are the old tuned values; widths are derived from each sprite's measured aspect. */
+const NEF_S1 = {
+  //                    art base                          pattern   atk        w    h   hp  score
+  s1tankheavy:     {art:'nef_s1_jungle_tank',      pat:'s1tank', atk:'mg',      w:47, h:64, hp:16, score:460},
+  s1tanklight:     {art:'nef_s1_jungle_mini_tank', pat:'s1tank', atk:'missile', w:38, h:52, hp:10, score:340},
+  s1tankapc:       {art:'nef_s1_jungle_apc',       pat:'s1tank', atk:'kick',    w:39, h:62, hp:13, score:400},
+  s1truckmissile:  {art:'nef_s1_rocket_buggy',     pat:'s1tank', atk:'homing',  w:42, h:62, hp:12, score:520, wheels:true},
+  s1jetdelta:      {art:'nef_s1_camo_attack_jet',  pat:'s1jet',  atk:'mg',      w:73, h:81, hp:9,  score:380, spd:96},
+  s1jetbomber:     {art:'nef_s1_jungle_bomber',    pat:'s1jet',  atk:'missile', w:101,h:89, hp:14, score:520, spd:78},
+  s1boatgun:       {art:'nef_s1_missile_gunboat',  pat:'naval',  atk:'missile', w:41, h:64, hp:14, score:420},
+  s1boatpatrol:    {art:'nef_s1_river_patrol_boat',pat:'naval',  atk:'mg',      w:43, h:68, hp:18, score:560},
+  /* BLACK CAMO — same vehicle, night paint, same stat deltas the old rows carried. */
+  s1tankheavy_b:   {art:'nef_s1_jungle_tank',      pat:'s1tank', atk:'mg',      w:47, h:64, hp:20, score:560, blk:true},
+  s1tanklight_b:   {art:'nef_s1_jungle_mini_tank', pat:'s1tank', atk:'missile', w:38, h:52, hp:13, score:420, blk:true},
+  s1tankapc_b:     {art:'nef_s1_jungle_apc',       pat:'s1tank', atk:'kick',    w:39, h:62, hp:16, score:500, blk:true},
+  s1truckmissile_b:{art:'nef_s1_rocket_buggy',     pat:'s1tank', atk:'homing',  w:42, h:62, hp:15, score:640, blk:true, wheels:true},
+  s1jetdelta_b:    {art:'nef_s1_camo_attack_jet',  pat:'s1jet',  atk:'mg',      w:73, h:81, hp:12, score:470, spd:104, blk:true, fireMul:0.75},
+  s1jetbomber_b:   {art:'nef_s1_jungle_bomber',    pat:'s1jet',  atk:'salvo',   w:101,h:89, hp:18, score:640, spd:86,  blk:true, fireMul:0.75},
+  /* NEW UNITS — no old counterpart, so no wave fields them yet. They exist here so the art is
+     live and addressable; placing them in the stage 1 plan is the next pass. */
+  s1corvette:      {art:'nef_s1_river_corvette',   pat:'naval',  atk:'mg',      w:48, h:76, hp:24, score:720, blk:true},
+  s1landingcraft:  {art:'nef_s1_landing_craft',    pat:'naval',  atk:'none',    w:46, h:72, hp:20, score:600, blk:true},
+  /* scenery. river_mine rides the current rather than sitting still, so it keeps a vy. */
+  s1fuelbarrel:    {art:'nef_s1_fuel_barrel',      pat:'prop',   atk:'none',    w:25, h:40, hp:4,  score:150, prop:true},
+  s1fueltank:      {art:'nef_s1_fuel_tank',        pat:'prop',   atk:'none',    w:27, h:42, hp:6,  score:200, prop:true},
+  s1ammocrate:     {art:'nef_s1_ammo_crate',       pat:'prop',   atk:'none',    w:39, h:34, hp:4,  score:150, prop:true},
+  s1rivermine:     {art:'nef_s1_river_mine',       pat:'prop',   atk:'none',    w:37, h:36, hp:3,  score:180, prop:true, drift:true},
+};
+/* ⚠ e.art IS A NAME, NOT A CELL KEY (drop 0809l).
+   drawNewEnemyArt does `const base=ENEMY_ART[e.art]; if(!base) return false;` and then builds
+   base+'_'+enemyArtState(e) — idle / fire / death / wreck. Handing it a raw cell key makes that
+   lookup miss, it returns false, and the unit falls through to the legacy rigs which do not know
+   these types: the enemy spawns, moves, shoots and collides, and simply never draws.
+
+   Registered from BOFX.cells rather than hand-listed, so a unit added to the sheet cannot be
+   forgotten here. The mapping is identity — the cell key IS the base — and the manifest carries
+   a matching `<key>_idle` alias so base+'_idle' resolves. */
+if(typeof ENEMY_ART!=='undefined' && typeof window!=='undefined' && window.BOFX && BOFX.cells){
+  for(const k in BOFX.cells){
+    if(k.lastIndexOf('nef_',0)!==0 || /_idle$/.test(k)) continue;
+    ENEMY_ART[k]=k;
+  }
+}
+/* hp fraction -> which baked state. Same breakpoints as DMG_TIER so the two systems agree. */
+function nefArtFor(e){
+  const base=e._nef; if(!base) return e.art;
+  const f=(e.maxhp>0)? (e.hp/e.maxhp) : 1;
+  const state = (f>=0.65)?'intact' : (f>=0.35)?'damaged' : 'critical';
+  return base+'_'+state+(e._blk?'_blk':'');
+}
+function applyNefUnit(c, type){
+  const d=(typeof NEF_S1!=='undefined')?NEF_S1[type]:null; if(!d) return false;
+  /* camo is a property of the ROW, not of the wave — the _b types are their own units, which is
+     how S1_TANKS expressed it and why the two can never drift apart */
+  c._nef=d.art; c._blk=!!d.blk;
+  c.art=nefArtFor(c);
+  c.pattern=d.pat;
+  c.w=d.w; c.h=d.h;
+  c.hp=EHP(d.hp); c.maxhp=c.hp; c.score=d.score;
+  c._atk=d.atk; c._wheels=!!d.wheels; c._prop=!!d.prop;
+  /* ENEMY_ART_FOOT is 2.15 because the stock uniform canvases carry a wide transparent margin
+     and the draw compensates for it. These rects are already trimmed onto the content union,
+     so the compensation would oversize them by the same 2.15. _foot is the per-unit override
+     the draw path already supports. */
+  c._foot=1;
+  if(d.spd) c._jspd=d.spd;
+  if(d.fireMul) c._fmul=d.fireMul;
+  if(c.route && typeof JET_ROUTES!=='undefined' && JET_ROUTES.indexOf(c.route)>=0) c._route=c.route;
+  c.shoots = d.atk!=='none';
+  c.vy = d.drift ? 0.35 : 0;                    // a mine rides the current; everything else holds station
   return true;
 }
 function jetTick(e, dt){
