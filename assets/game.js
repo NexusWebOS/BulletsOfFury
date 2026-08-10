@@ -5419,8 +5419,21 @@ function buildStagePlan(stageNum){
        The coast sits at scroll 1416 (camY 3384 on a 4800 master) and the stage
        advances 40px/s, so land begins at t=35. The beach wave now lands just after
        that, and the air waves fill the run out to it. */
+    /* ⚠ PROPS RIDE EXISTING WAVES, THEY DO NOT GET THEIR OWN (drop 0809n).
+       The dump started as five waves of its own and that broke the level: waves fire IN ORDER
+       with a 0.9s gap each, so five inserts pushed everything after them back far enough that
+       the sand tanks and the miniboss fell off the end of the run. The suite caught it as
+       "the sand tanks spawn (scroll never)".
+       Props cost nothing to attach - they are excluded from the dispatch cap - so they ride
+       along with the wave they belong to and the timeline is unchanged.
+       SPACING IS THE MECHANIC: a barrel's blast is 62px and a fuel tank's 80, so a file laid
+       ~40px apart chains end to end from one shot and takes the armour parked in it with it.
+       Authored tighter than the radius because spawnEnemy remaps x and real gaps come out
+       about 1.24x wider than written. */
     add(36.0, _s1Ground(()=>{ for(let i=0;i<4;i++)
-      spawnEnemy('s1tankheavy', VW*(0.15+i*0.235), -34 - i*58, {_order:i}); }));
+      spawnEnemy('s1tankheavy', VW*(0.15+i*0.235), -34 - i*58, {_order:i});
+      for(let i=0;i<3;i++) spawnEnemy('s1fuelbarrel', VW*0.30, -30 - i*40, {});
+      spawnEnemy('s1ammocrate', VW*0.30, -150, {}); }));
 
     /* --- grass jets: in off the very edge, turn inward, then hunt --- */
     add(21.0, ()=>{ spawnEnemy('s1jetdelta_b', -28, 96, {route:'cornerLR'}); spawnEnemy('s1jetdelta_b', -28, 150, {route:'cornerLR'}); });
@@ -5433,38 +5446,12 @@ function buildStagePlan(stageNum){
          is a strafing pass - guns. */
       spawnEnemy('s1jetbomber', VW*0.08+i*12, -32 - i*68, {route:'straight'}); });
 
-    /* ============================================================================
-       THE BEACH DUMP — SCENERY THAT CHAINS (drop 0809n)
-
-       This is the Contra half of "Contra meets a shmup". The props were registered
-       and given blast profiles and nothing ever placed one, so the splash system had
-       literally nothing to detonate in a real run.
-
-       SPACING IS THE MECHANIC. A fuel barrel's blast radius is 62px and a fuel tank's
-       is 80, so a cluster laid ~40px apart chains end to end from one shot, and
-       anything armoured parked inside that radius takes the whole run. Laid out so
-       the reward for shooting the barrel instead of the tank is obvious the first
-       time it happens.
-
-       ⚠ spawnEnemy REMAPS x into world space, so authored gaps come out WIDER than
-       written - measured at roughly 1.24x on this stage. These are deliberately
-       tighter than the radius to survive that.
-       ============================================================================ */
-    /* the dump itself: four barrels in a line with a crate, right where the tanks sit */
-    add(38.0, _s1Ground(()=>{ for(let i=0;i<4;i++)
-                                spawnEnemy('s1fuelbarrel', VW*0.30, -30 - i*40, {});
-                              spawnEnemy('s1ammocrate', VW*0.30, -30 - 4*40, {}); }));
-    /* the big tank, parked beside armour - the trade is obvious */
-    add(41.5, _s1Ground(()=>{ spawnEnemy('s1fueltank', VW*0.68, -34, {});
-                              spawnEnemy('s1tankheavy', VW*0.68, -74, {});
-                              spawnEnemy('s1fuelbarrel', VW*0.68, -114, {}); }));
-    /* missile trucks: they lock on, so they force you off the barrel line */
-    add(43.0, _s1Ground(()=>{ spawnEnemy('s1truckmissile', VW*0.18, -30, {});
-                              spawnEnemy('s1truckmissile', VW*0.82, -58, {}); }));
-
     /* --- sand sections: the little tanks --- */
     add(44.0, _s1Ground(()=>{ spawnEnemy('s1tankapc', VW*0.24, -30, {});
-                              spawnEnemy('s1tankapc', VW*0.72, -60, {}); }));
+                              spawnEnemy('s1tankapc', VW*0.72, -60, {});
+                              /* the big tank parked beside armour - the trade is obvious */
+                              spawnEnemy('s1fueltank',   VW*0.50, -34, {});
+                              spawnEnemy('s1fuelbarrel', VW*0.50, -74, {}); }));
     /* the light tanks finally field - fast, thin, in a staggered file */
     add(46.5, _s1Ground(()=>{ for(let i=0;i<3;i++)
       spawnEnemy('s1tanklight', VW*(0.30+i*0.20), -30 - i*52, {}); }));
@@ -5473,7 +5460,11 @@ function buildStagePlan(stageNum){
                               spawnEnemy('s1fuelbarrel', VW*0.46, -70, {});
                               spawnEnemy('s1fueltank',   VW*0.46, -110, {}); }));
     add(50.0, _s1Ground(()=>{ for(let i=0;i<3;i++)
-      spawnEnemy('s1tankapc', VW*(0.18+i*0.30), -30 - i*44, {}); }));
+      spawnEnemy('s1tankapc', VW*(0.18+i*0.30), -30 - i*44, {});
+      /* the light tank and the missile truck finally field - both were registered and
+         fielded by nothing. Riding this wave rather than adding two more. */
+      spawnEnemy('s1tanklight',    VW*0.50, -120, {});
+      spawnEnemy('s1truckmissile', VW*0.84, -150, {}); }));
 
     /* --- one more air wave before the gate --- */
     add(47.0, ()=>{ spawnEnemy('s1jetdelta', VW*0.30, -30, {route:'curveL'});
