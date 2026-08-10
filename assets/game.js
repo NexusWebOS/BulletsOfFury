@@ -19617,6 +19617,64 @@ let bootStars=[]; for(let i=0;i<60;i++) bootStars.push({x:rnd(0,VW),y:rnd(0,VH),
    The four buttons are the authored ones - btn_save and btn_load were registered and drawn for
    exactly this and were sitting unused. EXIT GAME is RETURN TO MAIN MENU, per Mike.
    ============================================================ */
+/* ============================================================
+   PANEL PALETTE SWAP (drop 0809u)
+
+   Mike: "palette swap it to black... each save slot gets a different palette swap. 1st - red,
+   2nd - white not silver, 3rd - blue like USA."
+
+   NOT xartTint. That one is a source-atop flood, which is the exact overlay that flattened the
+   BOF font's drop shadow and turned every E into a B (drop 0809q). dlg_window is a machined
+   metal frame - bevels, rivets, a dark inner screen - and flooding it with colour erases all of
+   that and leaves a coloured slab.
+
+   So each mode preserves luminance and changes only what it has to:
+     black   multiply toward a dark neutral. The frame keeps its bevels, they just go dark.
+             'color' cannot do this - black has no hue or saturation to donate, so it would
+             desaturate to grey and stay exactly as bright.
+     white   'color' with white strips the silver's blue cast to neutral, then a gentle screen
+             lifts it. Mike asked for white, NOT silver, and those differ by cast and level.
+     hue     'color' - hue and saturation from the fill, luminosity from the frame. Every bevel
+             and rivet survives, the metal simply becomes red or blue.
+   Re-masked with destination-in because the blends spread past the art's own alpha.
+   Cached per key+mode; these are redrawn every frame. */
+const _palCache={};
+function xartPalette(key, mode){
+  if(!mode) return null;
+  const ck=key+'|'+mode;
+  if(_palCache[ck]) return _palCache[ck];
+  if(typeof XART==='undefined' || !XART.rdy(key)) return null;
+  const im=XART.get(key);
+  const w=im.naturalWidth|0, h=im.naturalHeight|0;
+  if(!w || !h) return null;
+  let c;
+  try{ c=document.createElement('canvas'); }catch(e){ return null; }
+  c.width=w; c.height=h;
+  const x=c.getContext('2d');
+  if(!x) return null;
+  x.drawImage(im,0,0);
+  if(mode==='black'){
+    x.globalCompositeOperation='multiply'; x.fillStyle='#2a2b31'; x.fillRect(0,0,w,h);
+  } else if(mode==='white'){
+    x.globalCompositeOperation='color';  x.fillStyle='#ffffff'; x.fillRect(0,0,w,h);
+    x.globalCompositeOperation='screen'; x.globalAlpha=0.34; x.fillStyle='#ffffff';
+    x.fillRect(0,0,w,h); x.globalAlpha=1;
+  } else {
+    x.globalCompositeOperation='color'; x.fillStyle=mode; x.fillRect(0,0,w,h);
+  }
+  x.globalCompositeOperation='destination-in'; x.drawImage(im,0,0);
+  x.globalCompositeOperation='source-over';
+  _palCache[ck]=c; return c;
+}
+/* red, white and blue, in slot order. Mike: "like USA." */
+const CAMP_SLOT_PAL=['#d2323c', 'white', '#2f5fd0'];
+function drawPanel(key, mode, dx, dy, dw, dh){
+  const c=(mode?xartPalette(key,mode):null);
+  if(c){ ctx.drawImage(c, dx, dy, dw, dh); return true; }
+  if(typeof XART!=='undefined' && XART.rdy(key)){ ctx.drawImage(XART.get(key), dx, dy, dw, dh); return true; }
+  return false;
+}
+
 const CAMP_PAUSE_BTN=[
   {key:'btn_save',    act:'save'},
   {key:'btn_load',    act:'load'},
@@ -19659,21 +19717,28 @@ function campPauseDraw(dt){
   ctx.save();
   ctx.fillStyle='rgba(0,0,0,0.62)'; ctx.fillRect(0,0,VW,VH);
 
-  /* dlg_window has a deep frame - a thick top rail and a bottom lip with an emblem on it - so
-     the list needs real padding at BOTH ends or the last button is clipped by the lip */
-  const bw=Math.min(VW-104, 308), bh=Math.round(bw*0.185), gap=Math.round(bh*0.26);
+  /* FULL SIZE (drop 0809u). Mike: "make that menu pop up be full sized so all buttons fixed."
+     The panel spans the screen now and the buttons are sized from it, rather than the panel
+     being sized from a fixed button width. dlg_window has a deep frame - thick top rail, bottom
+     lip with an emblem - so both ends still need real padding or the last button is clipped. */
+  const padX=20, padTop=40, padBot=36;
+  const pw=VW-16, px=8;
+  const bw=pw-padX*2;
+  const gap=Math.round(bw*0.185*0.26);
+  const bh=Math.round(bw*0.185);
   const listH=rows*bh+(rows-1)*gap;
-  const padX=22, padTop=36, padBot=34;
-  const pw=bw+padX*2, ph=listH+padTop+padBot;
-  const px=Math.round((VW-pw)/2), py=Math.round((VH-ph)/2);
+  const ph=Math.min(VH-16, listH+padTop+padBot);
+  const py=Math.round((VH-ph)/2);
 
   /* THE GLOW is a shadow cast BY the authored panel, not a drawn box */
   const pulse=0.55+0.45*Math.sin(campPause.t*3.0);
   ctx.save();
   ctx.shadowColor='rgba(120,200,255,'+(0.55+0.35*pulse).toFixed(3)+')';
   ctx.shadowBlur=18+10*pulse;
-  if(typeof XART!=='undefined' && XART.rdy('dlg_window')) ctx.drawImage(XART.get('dlg_window'), px, py, pw, ph);
-  else { ctx.fillStyle='rgba(8,12,18,0.95)'; ctx.fillRect(px,py,pw,ph); }
+  /* black on the root menu; the save/load screens keep the white/silver frame, per Mike */
+  if(!drawPanel('dlg_window', (campPause.mode==='root')?'black':null, px, py, pw, ph)){
+    ctx.fillStyle='rgba(8,12,18,0.95)'; ctx.fillRect(px,py,pw,ph);
+  }
   ctx.restore();
 
   if(f && typeof stageText==='function'){
@@ -19686,8 +19751,12 @@ function campPauseDraw(dt){
     ctx.save();
     ctx.globalAlpha=sel?1:0.5;
     if(sel){ ctx.shadowColor='rgba(150,220,255,0.9)'; ctx.shadowBlur=12+6*pulse; }
-    const k=(campPause.mode==='root')?CAMP_PAUSE_BTN[i].key:'dlg_window';
-    if(typeof XART!=='undefined' && XART.rdy(k)) ctx.drawImage(XART.get(k), px+padX, by, bw, bh);
+    if(campPause.mode==='root'){
+      const k=CAMP_PAUSE_BTN[i].key;
+      if(typeof XART!=='undefined' && XART.rdy(k)) ctx.drawImage(XART.get(k), px+padX, by, bw, bh);
+    } else {
+      drawPanel('dlg_window', CAMP_SLOT_PAL[i]||null, px+padX, by, bw, bh);
+    }
     ctx.restore();
     if(campPause.mode!=='root' && f && typeof stageText==='function')
       stageText(f, campPauseSlotLabel(i), px+padX+bw/2, by+bh*0.52,

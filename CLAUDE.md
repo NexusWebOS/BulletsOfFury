@@ -232,7 +232,16 @@ duplicated the whole thing before noticing (`CAMP_SLOTS` redeclared). **Grep for
 adding campaign state** — the save system is far down the file, past the hub drawing code.
 
 **Cutscene portraits face each other** — every pose in the pack is authored facing SCREEN-LEFT
-(Axel's drawn pistol is the giveaway), so `drawCutscene` mirrors the LEFT slot only. The Fury HQ scenes now have a state to run in
+(Axel's drawn pistol is the giveaway), so `drawCutscene` mirrors the LEFT slot only.
+
+**`xartPalette(key, mode)` is the panel palette swap — use it, not `xartTint`.** `xartTint` is a
+`source-atop` flood, the same overlay that flattened the font's drop shadow into the E→B bug; on
+`dlg_window` it erases every bevel and rivet and leaves a coloured slab. `xartPalette` preserves
+luminance per mode: `black` multiplies toward a dark neutral (`'color'` **cannot** darken — black
+has no hue or saturation to donate, so it only desaturates), `white` strips the silver's blue cast
+then lifts, and any hex uses `'color'` so the metal keeps its shading. Cached per key+mode.
+The pause menu is full-screen: black frame on the root, silver kept on save/load, slots red /
+white / blue. The Fury HQ scenes now have a state to run in
 (`GS.CUTSCENE`): `HQ_SCENES` carries all eight ensemble scenes from ColeForge's own cutscene bible
 verbatim, `drawCutsceneState` types a line at a time over `drawCutscene`, and `hqTrigger(when,
 stage, next)` fires them at the boundaries the bible names — `pre` 1 and 8, `post` 1/3/4/6/7/9.
