@@ -25355,7 +25355,11 @@ function pcDraw(rect){
       const _gh=stageFitH(_sfb, _longest, _bw2, ch*0.026, ch*0.017, 0.05);
       let _n=0;
       if(_sfb && typeof stageWrap==='function') _n=stageWrap(_sfb, shown, bx, ty+_gh*0.6, _gh, _bw2, 1.45, 1, 0.05);
-      ty += Math.max(1,_n)*_gh*1.45 + _gh*0.7;
+      /* ⚠ CLEAR THE FIRST STAT LABEL, NOT JUST THE BAR (drop 0809n). The stat block starts at
+         ty, but each label is drawn at y-fh*0.30 - ABOVE its own bar - so the first label
+         reaches back up into whatever the bio left behind. A 0.7 gap covered the bar and not
+         the label, which is why the bio's last line and SPEED sat on top of each other. */
+      ty += Math.max(1,_n)*_gh*1.45 + _gh*1.25;
     } else if(false) {
       ctx.fillText(shown, bx, ty); ty+=SZ[i]*1.45;
     }
@@ -25433,10 +25437,14 @@ function pcDraw(rect){
     const _spb='spicon_'+p;
     const ik = _spAttackOK ? (C.sp.icon||_spb)
              : ((typeof XART!=='undefined' && XART._src && XART._src[_spb]) ? _spb : C.sp.icon);
+    /* the emblem's drawn width has to survive this block - the label below has to start
+       AFTER it, and it used to be a const scoped in here (drop 0809n) */
+    let _iconW = 0;
     if(ik && XART.rdy(ik)){
       const _aw=(typeof iconDraw==='function')?iconDraw(ik, bx, iy, isz):null;
       if(_aw!=null){ ctx.restore(); }
       const ii=_aw!=null?null:XART.get(ik), iw=_aw!=null?_aw:(isz*(ii.naturalWidth/ii.naturalHeight));
+      _iconW = iw;
       ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=e;
       if(_aw==null){ ctx.drawImage(ii, bx, iy, iw, isz); ctx.restore(); }
     }
@@ -25447,13 +25455,19 @@ function pcDraw(rect){
       /* SOCKET-AWARE WIDTH (drop 0807d): if this row sits level with the emblem it must use the
          narrow column, or a long name like CHAIN LIGHTNING runs straight under the mark. */
       /* the same measurement as everything else on the card now, via the shared helper */
-      const _aw=bwAt((ty-cy)/ch)-ch*0.10;
+      /* ⚠ START AFTER THE EMBLEM (drop 0809n). The name was centred on the FULL column while
+         the emblem sits at its left edge, so the mark and the first letters shared the same
+         pixels - "AFTERBURNER" reading straight through the winged A. The label now gets the
+         column MINUS the emblem it has to sit beside. */
+      const _gap = ch*0.014;
+      const _lx  = bx + _iconW + _gap;
+      const _aw=Math.max(ch*0.10, (bx + bwAt((ty-cy)/ch) - ch*0.05) - _lx);
       let _ah=stageFitH(_sf3, String(C.sp.name||''), _aw, ch*0.030, ch*0.019, 0.06);
       for(let _g=0;_g<0;_g++){
         let _w=0;
         if(_w<=_aw) break; _ah*=0.88;
       }
-      stageText(_sf3, C.sp.name, bx+ch*0.088+_aw/2, iy+isz*0.50, _ah, null,null,e,0.06);
+      stageText(_sf3, C.sp.name, _lx+_aw/2, iy+isz*0.50, _ah, null,null,e,0.06);
     } else { ctx.fillStyle='#ffffff'; ctx.font=F(ch*0.034); ctx.fillText(C.sp.name, bx+ch*0.088, iy+isz*0.68); }
     if(k2<0.5){ ctx.globalAlpha=(0.5-k2)*1.2; ctx.fillStyle='#ffffff';
                 ctx.fillRect(bx-5, iy-5, bw, isz+10); }
