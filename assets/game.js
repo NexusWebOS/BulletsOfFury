@@ -10960,7 +10960,14 @@ function updatePlay(dt){
     updateRoll(dt);
     const _rolling=!!player.roll;
     let mvx=0,mvy=0;
-    if(Input.lf)mvx-=1; if(Input.rt)mvx+=1; if(Input.up)mvy-=1; if(Input.dn)mvy+=1;
+    /* NON-PLAYABLE THE MOMENT THE STAGE CLEARS (drop 0809v). Mike: "stop taking screen pauses
+       and leaving my ship in the frame... simply make me non playable once the stage clears."
+       The boss death payoff runs for ~9s and the player was fully controllable through all of
+       it, parked in frame with nothing to shoot - which is the pause he is describing. Movement
+       and fire stop here; the ship keeps DRAWING, and drawFlyover takes it out. */
+    if(!bossDefeated){
+      if(Input.lf)mvx-=1; if(Input.rt)mvx+=1; if(Input.up)mvy-=1; if(Input.dn)mvy+=1;
+    }
     const sp=playerBaseSpeed();
     if((mvx||mvy) && !_rolling){                 // the roll drives x itself; allow only vertical nudge mid-roll
       const l=Math.hypot(mvx,mvy)||1; player.x+=mvx/l*sp*1.35; player.y+=mvy/l*sp*1.35;
@@ -12476,7 +12483,13 @@ function updatePlay(dt){
     stageEnding+=dt;
     // the death runs ~9.4s now (6s of blasts + whiteout + 2.5s of coming apart), so the stage must
     // hold past it or the payoff gets cut off mid-explosion.
-    const endT = (run.stage===1) ? 11.0 : 9.8;
+    /* THE EXIT OVERLAPS THE DEATH, IT DOES NOT QUEUE BEHIND IT (drop 0809v). Mike: "stop
+       taking screen pauses". This waited for the ENTIRE boss death - 11s on stage 1 - before
+       the ship even started to leave, so the last third of it was a still frame with a parked
+       ship in it. The spectacle is not cut: the fly-off now begins once the whiteout has
+       resolved and the wreck is coming apart, so the debris burns on under the departing ship.
+       One constant, easy to dial if Mike wants more or less overlap. */
+    const endT = (run.stage===1) ? 6.4 : 5.8;
     if(stageEnding>endT){
       whiteBlast=0;
       if(run.stage>=5){ if(run.score>highScore){ highScore=run.score; try{localStorage.setItem('bof_hi',highScore);}catch(e){} } }
