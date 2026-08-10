@@ -204,9 +204,19 @@ its own, which is why the demo runs fine under `GS.ATTRACT`.
 
 ⚠ **The arcade intro pack had Decker and Freezer swapped** — the pack's own folder names, not the
 registration, which was byte-identical to source. Rule 1 one level further out: distrust the
-*source directory* names too. Fixed by recompositing background + the right pilot layer at (78,42)
-+ the authored panel art from `x>=300`; below 300 you drag the old body's rim glow along as a ghost
-silhouette. The other seven check out against `port_*_idle`.
+*source directory* names too. The other seven check out against `port_*_idle`.
+
+**The arcade plates are rebuilt as `background + pilot-layer` and their panels are DRAWN**
+(`drawAintroPanels`). The pack's flattened composite carried both panels — a faux rounded box with
+PILOT DEPLOYED in a mono face, and another with the name in a generic sans — and the bottom one was
+painted directly over a proper authored HUD frame the background already had. Now the top is BOF
+text with a rule under it and no box, and the bottom is `dlg_window`, per Mike. Both lines
+shrink-to-fit; JUGGERNAUT and PRINCESSES OF THE SKY both reach the frame at nominal size.
+
+Drawing the name from the pilot key makes the Decker/Freezer swap **structurally impossible** to
+reintroduce. The affiliations ("ORDER OF THE MATRIX", "PRINCESSES OF THE SKY" …) only ever existed
+as baked pixels — they are transcribed into `AINTRO_AFFIL` and exist nowhere else, so do not
+regenerate the plates from the pack without carrying that table forward.
 
 `attractIdleTick` is defined and **never called** — the 12-second idle trigger is dead code. The Fury HQ scenes now have a state to run in
 (`GS.CUTSCENE`): `HQ_SCENES` carries all eight ensemble scenes from ColeForge's own cutscene bible

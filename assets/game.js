@@ -19735,6 +19735,75 @@ function attractDemoEnd(){
   }catch(e){}
 }
 
+/* ============================================================
+   THE ARCADE PLATE'S PANELS ARE DRAWN, NOT BAKED (drop 0809s)
+
+   Mike, looking at the Decker plate: "Use the text we have in-game for font, use the dialogue
+   box for the bottom, underline the top text dont make a faux text window."
+
+   The pack ships each plate as background + pilot-layer + a flattened composite, and it was the
+   COMPOSITE that carried both panels: a rounded faux box with PILOT DEPLOYED in a mono face, and
+   a second one with the name in a generic bold sans. The bottom one is the worse offence - it
+   was painted directly OVER a proper authored HUD frame that the background already had.
+
+   So the plates are rebuilt as background + pilot layer only, and the two panels are drawn here:
+   the top is BOF text with a rule under it and no box at all, the bottom is dlg_window, the same
+   authored panel the dialogue path uses.
+
+   Drawing them also makes the Decker/Freezer swap structurally impossible to reintroduce - the
+   name is no longer a picture, it comes from the pilot key.
+
+   The affiliations only ever existed as baked pixels, so they are transcribed here from the
+   plates before those panels were stripped. Panel rects are the measured union across all nine.
+   ============================================================ */
+const AINTRO_AFFIL = {
+  cole:'FURY FOUNDER', axel:'AIRFORCE', decker:'ORDER OF THE MATRIX',
+  falva:'PRINCESSES OF THE SKY', freezer:'AIRFORCE', juggernaut:'BROTHERHOOD OF FURY',
+  lizzie:'STRATEGIC ORDNANCE', maverick:'INDEPENDENT', yuri:'INDEPENDENT'
+};
+const AIN_TOP=[351,41,273,44];     // x,y,w,h of the old top panel, in 640x480 plate space
+const AIN_BOT=[325,338,302,120];   // and the bottom one, padded to cover the authored frame
+
+function drawAintroPanels(k, alpha){
+  const f=(typeof uiFontArt==='function')?uiFontArt():null;
+  if(!f || typeof stageText!=='function') return;
+  /* the plate is drawn CONTAIN-fit by attDrawFit, so mirror that transform exactly */
+  const s=Math.min(VW/640, VH/480), ox=(VW-640*s)/2, oy=(VH-480*s)/2;
+  const X=function(x){ return ox+x*s; }, Y=function(y){ return oy+y*s; }, S=function(v){ return v*s; };
+  const P=(typeof PILOTS!=='undefined')?PILOTS.find(function(p){ return p.key===k; }):null;
+  const tint=(P&&P.tint)||'#ffe082';
+  const a=clamp(alpha,0,1);
+  ctx.save(); ctx.globalAlpha=a;
+
+  /* TOP - text and a rule, no window */
+  {
+    const cx=X(AIN_TOP[0]+AIN_TOP[2]/2), cy=Y(AIN_TOP[1]+AIN_TOP[3]*0.46), h=S(19);
+    stageText(f,'PILOT DEPLOYED', cx, cy, h, '#e8eef6', 0.85, a, 0.11);
+    const w=(typeof stageWidth==='function')?stageWidth(f,'PILOT DEPLOYED',h,0.11):S(150);
+    ctx.strokeStyle=tint; ctx.globalAlpha=a*0.9; ctx.lineWidth=Math.max(1,S(2));
+    ctx.beginPath(); ctx.moveTo(cx-w/2, cy+h*0.82); ctx.lineTo(cx+w/2, cy+h*0.82); ctx.stroke();
+    ctx.globalAlpha=a;
+  }
+
+  /* BOTTOM - the authored dialogue window, name and affiliation inside it */
+  {
+    const dx=X(AIN_BOT[0]), dy=Y(AIN_BOT[1]), dw=S(AIN_BOT[2]), dh=S(AIN_BOT[3]);
+    if(typeof XART!=='undefined' && XART.rdy('dlg_window')) ctx.drawImage(XART.get('dlg_window'), dx, dy, dw, dh);
+    const name=String((P&&P.name)||k).toUpperCase();
+    const aff =AINTRO_AFFIL[k]||'';
+    /* shrink to fit rather than trusting the longest string to be short enough - JUGGERNAUT and
+       PRINCESSES OF THE SKY both reach the frame at the nominal size */
+    const inner=dw*0.82;
+    const fit=function(txt,H,sp){
+      if(typeof stageWidth!=='function') return H;
+      const w=stageWidth(f,txt,H,sp);
+      return (w>inner) ? H*(inner/w) : H;
+    };
+    stageText(f, name, dx+dw/2, dy+dh*0.40, fit(name,S(30),0.09), tint, 0.95, a, 0.09);
+    if(aff) stageText(f, aff, dx+dw/2, dy+dh*0.72, fit(aff,S(13),0.10), '#cfd6e0', 0.8, a, 0.10);
+  }
+  ctx.restore(); ctx.globalAlpha=1;
+}
 function drawAttract(dt){
   ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
   /* any input, any time - the whole point of an attract mode */
@@ -19750,7 +19819,9 @@ function drawAttract(dt){
     const key='aintro_'+k;
     if(typeof XART==='undefined' || !XART.rdy(key)) return;   // rdy STARTS the load; keep asking
     attractT+=dt;
-    attDrawFit(XART.get(key), attFade(attractT,dur));
+    const _a=attFade(attractT,dur);
+    attDrawFit(XART.get(key), _a);
+    drawAintroPanels(k, _a);          // the panels are drawn now, not baked into the plate
   }
   else if(attractBeat===1){
     const key=(XART._src&&XART._src['pcard_'+k])?('pcard_'+k):('card_'+k);
