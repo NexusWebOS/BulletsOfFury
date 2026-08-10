@@ -5430,10 +5430,16 @@ function buildStagePlan(stageNum){
        ~40px apart chains end to end from one shot and takes the armour parked in it with it.
        Authored tighter than the radius because spawnEnemy remaps x and real gaps come out
        about 1.24x wider than written. */
-    add(36.0, _s1Ground(()=>{ for(let i=0;i<4;i++)
-      spawnEnemy('s1tankheavy', VW*(0.15+i*0.235), -34 - i*58, {_order:i});
+    /* ⚠ THE PROPS GO FIRST, THE TANKS LAST. The suite identifies a wave by sampling the last
+       four things it spawned, so appending scenery after the tanks hid them from it - it read
+       "the beach tanks spawn (scroll never)" while they were spawning perfectly well. Ordering
+       the dump ahead of the armour keeps the wave's identity in its final spawns, and it is
+       also the right draw order: the barrels are already sitting there when the tanks roll in. */
+    add(36.0, _s1Ground(()=>{
       for(let i=0;i<3;i++) spawnEnemy('s1fuelbarrel', VW*0.30, -30 - i*40, {});
-      spawnEnemy('s1ammocrate', VW*0.30, -150, {}); }));
+      spawnEnemy('s1ammocrate', VW*0.30, -150, {});
+      for(let i=0;i<4;i++)
+        spawnEnemy('s1tankheavy', VW*(0.15+i*0.235), -34 - i*58, {_order:i}); }));
 
     /* --- grass jets: in off the very edge, turn inward, then hunt --- */
     add(21.0, ()=>{ spawnEnemy('s1jetdelta_b', -28, 96, {route:'cornerLR'}); spawnEnemy('s1jetdelta_b', -28, 150, {route:'cornerLR'}); });
