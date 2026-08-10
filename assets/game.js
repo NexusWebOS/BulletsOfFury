@@ -810,8 +810,11 @@ const XART=(function(){
      3000 — so the first seconds of stage 1 ran with every new enemy invisible. They spawn, they
      move, they shoot, they collide; they just are not drawn until their sheet decodes. Exactly
      the failure the suite cannot see, and it looked like a wiring bug for an hour.
-     nca_80..86 are the roster sheets; lazily loaded they lose the opening of the level. */
-  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nca_8[0-9])/;
+     nca_80..82 and 86 are the roster sheets; lazily loaded they lose the opening of the level.
+     The BOSS sheets (87, 88) are deliberately NOT here: they are 10MB between them and are not
+     needed until the end of a stage, by which point lazy loading has had minutes. Preloading
+     them would put that on the boot path for no gain. */
+  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nca_8[0-2]|nca_86)/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
   /* get() MUST NEVER HAND drawImage A NULL (drop 0724dq).
      Mike is seeing THOUSANDS of draw errors mentioning HTMLImageElement. That is this:
@@ -4670,7 +4673,7 @@ const SHIPS=[];
   /* THE ART-LOCK ROSTER (drop 0809l). Same handoff, same reason as the two above: this is the
      last point before the enemy is finalised, and these types carry NO case in the switch
      below, so nothing downstream reassigns art/pattern/size. See NEF_S1. */
-  if(typeof NEF_S1!=='undefined'   && NEF_S1[type])   applyNefUnit(c, type);
+  if(typeof applyNefUnit==='function') applyNefUnit(c, type);   // no-op unless a row matches
 
   /* ---- STAGE 1 NAVAL ROSTER (drop 0808l) ----------------------------------------------------
      ⚠ THIS HAS TO BE HERE, not up at `const base = {...}` where it belongs logically.
@@ -16419,6 +16422,51 @@ const NEF_S1 = {
   s1ammocrate:     {art:'nef_s1_ammo_crate',       pat:'prop',   atk:'none',    w:39, h:34, hp:4,  score:150, prop:true},
   s1rivermine:     {art:'nef_s1_river_mine',       pat:'prop',   atk:'none',    w:37, h:36, hp:3,  score:180, prop:true, drift:true},
 };
+/* ============================================================
+   STAGE 2 AND 3 ROSTERS FROM THE ART LOCK (drop 0809m)
+
+   Keyed on the LIVE spawn types, same reason as NEF_S1 — these are the names the waves
+   actually call. Measured by instrumenting spawnEnemy and firing every wave in the plan:
+
+     stage 2 fields  ash skim disc lance eye cruc carrier   (+ el_lr, el_em, both in _DELETE)
+     stage 3 fields  frost shieldd cryo turdrone mdrone icegun sideswirl racer topgun
+                     (+ minishipA/B/C, minidrone, el_cs, all in _DELETE)
+
+   ⚠ EVERY STAGE 2 UNIT WAS DRAWING WITH art=undefined. Measured, one spawn at a time: ash,
+   skim, disc, lance, eye, cruc and carrier all came back with no art key at all. The whole
+   volcanic roster has been running on nothing. That is what this fills.
+
+   NO `pat` FIELD ON THESE ROWS, DELIBERATELY. Stage 2 units are on 'volc' (they levitate,
+   see volcHover) and stage 3 units are on sine/spin/dive — those are tuned movement and
+   this pass is about ART, not behaviour. applyNefUnit only sets pattern when a row asks
+   for one, so these keep what they have. Heights are the measured live values so hitboxes
+   and difficulty do not move; widths follow each sprite's own aspect so nothing is squashed.
+   ============================================================ */
+const NEF_S2 = {
+  ash:     {art:'nef_s2_molten_drone',               w:46, h:39, hp: 7, score:480},
+  skim:    {art:'nef_s2_magma_skimmer',              w:43, h:39, hp: 8, score:520},
+  disc:    {art:'nef_s2_volcanic_mine',              w:53, h:44, hp: 6, score:760},
+  lance:   {art:'nef_s2_volcanic_elite_interceptor', w:47, h:47, hp: 9, score:640},
+  eye:     {art:'nef_s2_eruption_pod',               w:33, h:42, hp:10, score:700},
+  cruc:    {art:'nef_s2_lava_crawler',               w:59, h:52, hp:16, score:1320},
+  carrier: {art:'nef_s2_magma_artillery',            w:57, h:60, hp:20, score:1850},
+  /* scenery — the volcanic barrel. No wave fields it yet; it is here so the art is live and
+     so PROP_BLAST can reach it the moment one is placed. */
+  s2heatbarrel: {art:'nef_s2_heat_shielded_barrel', pat:'prop', w:29, h:42, hp:5, score:180, prop:true},
+};
+const NEF_S3 = {
+  frost:     {art:'nef_s3_glacier_drone',         w:47, h:36, hp: 5, score:200},
+  shieldd:   {art:'nef_s3_shard_mine',            w:46, h:44, hp: 8, score:500},
+  cryo:      {art:'nef_s3_elite_ice_interceptor', w:43, h:39, hp: 9, score:600},
+  turdrone:  {art:'nef_s3_frozen_turret',         w:43, h:44, hp: 8, score:480},
+  mdrone:    {art:'nef_s3_ice_skimmer',           w:51, h:44, hp: 6, score:360},
+  icegun:    {art:'nef_s3_aa_sled',               w:39, h:44, hp:10, score:520},
+  sideswirl: {art:'nef_s3_snowmobile_gunner',     w:21, h:40, hp: 7, score:440},
+  racer:     {art:'nef_s3_ice_crawler',           w:39, h:44, hp:12, score:560},
+  topgun:    {art:'nef_s3_snow_tank',             w:45, h:48, hp:14, score:700},
+  /* the ice equivalent of a fuel barrel */
+  s3canister: {art:'nef_s3_explosive_cryo_canister', pat:'prop', w:26, h:42, hp:4, score:180, prop:true},
+};
 /* ⚠ e.art IS A NAME, NOT A CELL KEY (drop 0809l).
    drawNewEnemyArt does `const base=ENEMY_ART[e.art]; if(!base) return false;` and then builds
    base+'_'+enemyArtState(e) — idle / fire / death / wreck. Handing it a raw cell key makes that
@@ -16441,13 +16489,21 @@ function nefArtFor(e){
   const state = (f>=0.65)?'intact' : (f>=0.35)?'damaged' : 'critical';
   return base+'_'+state+(e._blk?'_blk':'');
 }
+function nefRow(type){
+  if(typeof NEF_S1!=='undefined' && NEF_S1[type]) return NEF_S1[type];
+  if(typeof NEF_S2!=='undefined' && NEF_S2[type]) return NEF_S2[type];
+  if(typeof NEF_S3!=='undefined' && NEF_S3[type]) return NEF_S3[type];
+  return null;
+}
 function applyNefUnit(c, type){
-  const d=(typeof NEF_S1!=='undefined')?NEF_S1[type]:null; if(!d) return false;
+  const d=nefRow(type); if(!d) return false;
   /* camo is a property of the ROW, not of the wave — the _b types are their own units, which is
      how S1_TANKS expressed it and why the two can never drift apart */
   c._nef=d.art; c._blk=!!d.blk;
   c.art=nefArtFor(c);
-  c.pattern=d.pat;
+  /* ONLY when the row asks. Stage 2 rides 'volc' and stage 3 sine/spin/dive — tuned movement
+     this pass has no business rewriting. An art swap should not change how a unit flies. */
+  if(d.pat) c.pattern=d.pat;
   c.w=d.w; c.h=d.h;
   c.hp=EHP(d.hp); c.maxhp=c.hp; c.score=d.score;
   c._atk=d.atk; c._wheels=!!d.wheels; c._prop=!!d.prop;
@@ -16486,6 +16542,10 @@ const PROP_BLAST = {
   s1fueltank:   {r:80, dmg:13, shake:7},   // the big one - it is worth parking next to
   s1ammocrate:  {r:52, dmg:6,  shake:4},
   s1rivermine:  {r:70, dmg:14, shake:6},   // naval mine: small radius, nasty inside it
+  /* stage 2 and 3 keep the same idea in their own materials: the volcanic barrel is the
+     biggest bang on the board, the cryo canister trades reach for a harder core. */
+  s2heatbarrel: {r:86, dmg:15, shake:7},
+  s3canister:   {r:58, dmg:11, shake:5},
 };
 function propBlast(e){
   if(!e || e._blown) return;
@@ -22890,11 +22950,34 @@ function _bossArtOK(pfx){
    That is why the torso is the piece that rises on its own at the start: it is the only part of
    him that was never in the lava, and the only part you cannot shoot off.
    ============================================================ */
+/* ============================================================
+   THE FORMATION ORDER IS MIKE'S, NOT MINE (drop 0809l)
+
+   From his MAGMA COLOSSUS formation sheet, which is the reference for this sequence:
+
+     1-2  the torso rises from the lava
+     3    the core powers on
+     4    the left shoulder hooks the arm
+     5    the right shoulder hooks the arm
+     6    one trunk from the plate, ONE CHAIN PER LEG      <- both legs, together
+     9-10 the cannons hang, then the head descends and connects
+     11   the eyes turn on
+     13   arms lift, head tilts, the mech screams
+
+   What was implemented ran legs first, then arms with their cannons bundled in, then the
+   head - so the mech grew from the ground up with its guns already attached. His sheet builds
+   it from the shoulders down and hangs the cannons LAST before the head, which is why the
+   silhouette reads as a torso growing limbs rather than a body assembling bottom-up.
+
+   The legs share one haul because the sheet shows one trunk splitting into a chain per leg;
+   the cannons share one for the same reason. Still five hauls, so GEN_LIMB_HP (a fifth each)
+   is unchanged.
+   ============================================================ */
 const GEN_HAULS = [
-  {limb:'left-leg',   pieces:['left-leg']},
-  {limb:'right-leg',  pieces:['right-leg']},
-  {limb:'left-arm',   pieces:['left-upper-arm','left-cannon-forearm']},
-  {limb:'right-arm',  pieces:['right-upper-arm','right-cannon-forearm']},
+  {limb:'left-arm',   pieces:['left-upper-arm']},
+  {limb:'right-arm',  pieces:['right-upper-arm']},
+  {limb:'legs',       pieces:['left-leg','right-leg']},
+  {limb:'cannons',    pieces:['left-cannon-forearm','right-cannon-forearm']},
   {limb:'head',       pieces:['head']},
 ];
 const GEN_LIMB_HP = 0.20;          // each of the five anchored limbs carries a fifth of the boss
@@ -23020,8 +23103,13 @@ function genesisUpdate(b, dt){
   return false;
 }
 function _genLimbComps(limb){
-  if(limb==='left-arm')  return ['left-arm','left-cannon'];
-  if(limb==='right-arm') return ['right-arm','right-cannon'];
+  /* the haul groups from GEN_HAULS map onto the damageable components they dock.
+     legs and cannons now arrive as PAIRS (Mike's sheet: one trunk, one chain per leg), so each
+     of those hauls owns two components and its HP share is split across them. */
+  if(limb==='left-arm')  return ['left-arm'];
+  if(limb==='right-arm') return ['right-arm'];
+  if(limb==='legs')      return ['left-leg','right-leg'];
+  if(limb==='cannons')   return ['left-cannon','right-cannon'];
   return [limb];
 }
 function _genChainDraw(x0,y0,x1,y1){
