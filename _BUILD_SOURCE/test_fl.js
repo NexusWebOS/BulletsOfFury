@@ -1054,8 +1054,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      worldWidth() measures the master, and stage 2's is 800 - so 800 is the correct
      answer and 480 would be the bug. What still matters is that camX resets, which
      it does: measured 0 after carrying 320 in from stage 1. */
-  ok(vm.runInContext("camX", ctxv)===0 && vm.runInContext("WORLD_W", ctxv)===vm.runInContext("worldWidth()", ctxv),
-     'beginStage resets camX and WORLD_W tracks the new stage master');
+  /* AND camX IS NO LONGER 0 (drop 0810a). This asserted camX===0, which was the value beginStage
+     happened to leave rather than the value the level actually wants. probe_seam.py measured PLAY
+     easing camX from 0 to 159.04 within 41 frames of GO on stage 2 — so 0 was a position the game
+     abandoned immediately, and that ease IS the sideways drift Mike reported as the ship being
+     "knocked back" after 3-2-1. beginStage now snaps the camera onto the player it just reset.
+     What this assertion exists to protect is that stage 1's camera does not LEAK, so that is what
+     it tests now: camX must be the value this stage's own geometry asks for, and not the 320
+     carried in. Stricter than ===0, which would have passed for a leak that happened to be zero. */
+  ok(vm.runInContext("camX === clamp(player.x - VW/2, 0, Math.max(0, worldWidth()-VW))", ctxv)
+       && vm.runInContext("camX", ctxv)!==320
+       && vm.runInContext("WORLD_W", ctxv)===vm.runInContext("worldWidth()", ctxv),
+     'beginStage snaps camX onto the new stage and WORLD_W tracks its master');
   vm.runInContext("setState(GS.PLAY); player.reset(); enemies.length=0; spawnEnemy('drone', 240, -20, {pattern:'sine'});", ctxv);
   ok(vm.runInContext("enemies[0].e1", ctxv)===undefined, 'stage-2 drones use the classic ROBO drone art (no recon-jet e1 mapping)');
   vm.runInContext("enemies.length=0; vKamikazePair(1);", ctxv);
@@ -1069,7 +1079,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   for(let f=0;f<120;f++) vm.runInContext("player.x=760; updatePlay(1/60); drawWorld(1/60);", ctxv);
   ok(vm.runInContext("camX", ctxv) > 250, 'stage 1 camera pans right (camX '+Math.round(vm.runInContext("camX", ctxv))+')');
   vm.runInContext("beginStage(2);", ctxv);
-  ok(vm.runInContext("camX===0", ctxv), 'beginStage(2) clears camX — stage-1 camera must not leak into the level display');
+  /* the live-sim twin of the check above: stage 1 has genuinely panned to camX>250 here, so a leak
+     is a real value to catch rather than a synthetic one. Tests the same intent — re-aimed at the
+     new stage, not carried over — instead of the literal 0 (drop 0810a). */
+  ok(vm.runInContext("camX === clamp(player.x - VW/2, 0, Math.max(0, worldWidth()-VW))", ctxv)
+       && vm.runInContext("camX", ctxv) < 250,
+     'beginStage(2) re-aims camX at the new stage — stage-1 camera must not leak into the level display');
   vm.runInContext("setState(GS.PLAY); enemies.length=0; vKamikazePair(1);", ctxv);
   ok(vm.runInContext("enemies.every(function(e){return e.pattern!=='kamikaze'||!e.e1;})", ctxv), 'stage-2 kamikaze drones use the classic ROBO drone art (no recon-jet e1 mapping)');
   vm.runInContext("beginStage(1); enemies.length=0; spawnEnemy('drone', 240, -20, {pattern:'sine'});", ctxv);

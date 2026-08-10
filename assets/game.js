@@ -10819,6 +10819,12 @@ function beginStage(num){
   else if(typeof ambStop==='function') ambStop();
   if(typeof allyReset==='function') allyReset();
   player.reset();
+  /* AND PUT THE CAMERA WHERE PLAY WILL WANT IT (drop 0810a). beginStage set camX=0 twenty lines
+     up, before player.reset() had chosen a position, so on every 800-wide stage the camera began
+     160px off target and updateCamX spent the first two-thirds of a second of play easing across.
+     The ship therefore appeared right of centre at GO and visibly drifted back. Snapped here,
+     AFTER reset, so the launch draws through the same camera play will use. */
+  snapCamToPlayer();
   setState(GS.INTRO);
   Audio.stopMusic();/*card-first*/
   /* raised at the top, applied HERE — after the stage is fully built */
@@ -28345,12 +28351,11 @@ function openingStart(stage){
   player.x = (typeof worldWidth==='function' ? worldWidth() : VW)/2;
   player.y = VH*0.72;
   /* and snap the camera there rather than easing across from the left on the
-     opening frame — updateCamX lerps at 0.12, which would visibly slide. */
-  if(typeof updateCamX==='function' && typeof WORLD_W!=='undefined'){
-    WORLD_W = worldWidth();
-    if(WORLD_W>VW) camX = clamp(player.x - VW/2, 0, WORLD_W - VW);
-    else camX = 0;
-  }
+     opening frame — updateCamX lerps at 0.12, which would visibly slide.
+     Shared with beginStage as of 0810a: this was the only place that knew to do
+     it, so every stage using the LAUNCH path instead of this cinematic had the
+     slide the comment describes. */
+  if(typeof snapCamToPlayer==='function') snapCamToPlayer();
   return opening;
 }
 function openingPhase(){
@@ -30858,10 +30863,56 @@ function _region(img,wStart,wEnd,dist,tint,fallback){
   ctx.restore();
 }
 /* the stage itself scrolls in from the top (the "entrance"): drawBG clipped above the SEG_B3 seam */
+/* ONE POSE, READ BY BOTH SIDES OF THE SEAM (drop 0810a). Mike: "kill the jerk after 3-2-1 that
+   knocks the ship back and clips it in and out."
+
+   Measured, not guessed — _BUILD_SOURCE/probe_seam.py on stage 2, at the frame GO hands over:
+
+       intro drew    x= 240.00  y= 307.20  h= 62.00     (phase cd)
+       play draws    x= 400.00  y= 399.36  h= 76.10
+       DELTA         x=+160.00  y= +92.16  h=+14.10
+
+   and camX then slid 0 -> 159.04 over the next 41 frames. Three separate quantities plus a
+   camera, none of which anything forced to agree:
+
+       x   the launch drew at VW/2 while PLAY draws at player.x - camX, and camX was left at 0 by
+           beginStage, so the ship appeared 160px right of where it had been and the camera spent
+           the next two-thirds of a second easing back. That IS the "knocks the ship back".
+       y   the launch held VH*ANCHORY (0.60); player.reset() starts play at VH*0.78.
+       h   the launch passed a CANVAS height to drawShipSprite, but PLAY scales to a CONTENT
+           height and divides by the pilot's content fraction — so 62 landed as 76.1, a 23% pop.
+           That is the "clips it in and out".
+
+   Both sides read this now. The launch cannot settle onto a pose play does not start from,
+   because there is only one pose. Same reasoning as drawing the arcade name from the pilot key:
+   make the disagreement structurally impossible rather than fixing today's instance of it. */
+function playShipPose(){
+  const cf=(typeof _CFO!=='undefined' && _CFO[run.pilot]!=null)?_CFO[run.pilot]:0.80;
+  const ww=(typeof worldWidth==='function')?worldWidth():VW;
+  return {
+    x: (player.x!=null?player.x:VW/2) - (ww>VW ? camX : 0),
+    y: player.y,
+    h: ((player.h||34)*2.05)/cf
+  };
+}
+/* Put the camera exactly where PLAY will want it, with no ease. openingStart already did this
+   inline for the level-1 cinematic and explained why: updateCamX lerps at 0.12, so anything that
+   starts it away from its target slides visibly. beginStage left camX at 0 for every OTHER stage,
+   which is the same bug the opening had already fixed once. One function, both callers. */
+function snapCamToPlayer(){
+  WORLD_W=(typeof worldWidth==='function')?worldWidth():VW;
+  camX = (WORLD_W>VW) ? clamp((player?player.x:VW/2) - VW/2, 0, WORLD_W - VW) : 0;
+}
 function _drawLevelRegion(dist,dt){
   const seam=VH*ANCHORY-(SEG_B3-dist);
   if(seam<=0) return;
   ctx.save(); ctx.beginPath(); ctx.rect(0,0,VW,Math.min(VH,seam)); ctx.clip();
+  /* THE SAME CAMERA PLAY USES. Without this the launch drew the master from world x=0 — the left
+     480 of an 800-wide plate — while PLAY draws it through translate(-camX). So at GO the terrain
+     slid 160px sideways at the same moment the ship jumped the other way, which is most of why
+     the cut read as a lurch rather than a step. Mirrors drawWorld's translate exactly, including
+     the live worldWidth() check rather than the cached WORLD_W. */
+  if((typeof worldWidth==='function'?worldWidth():VW)>VW) ctx.translate(-camX, 0);
   drawBG(dt);
   ctx.restore();
 }
@@ -30957,14 +31008,25 @@ function drawLaunch(dt){
      (drawLaunch lives in patches.js, not gamecode.js - my first patch went into
      the dead copy and did nothing, same as the HUD in 0801ej.) */
   /* ---- ship: launches off the pad, pulls up over the run, settles into the level ---- */
-  let shipY, suf='', shipH=62;             // plain hull; the thruster is drawn live (drop 0808g)
+  const POSE=playShipPose();               // the exact pose PLAY starts from — see playShipPose
+  let shipX=VW/2, shipY, suf='', shipH=62; // plain hull; the thruster is drawn live (drop 0808g)
   if(ph==='run'){ shipY=lerp(VH*0.66, VH*0.42, _ease(clamp(dist/SEG_B1,0,1)))+Math.sin(t*3)*3;
     if(_space){ // lifting off: the ship scales up as it rockets toward space
       const lift=_ease(clamp(dist/(SEG_B3),0,1)); shipH=lerp(62, 128, lift); shipY=lerp(VH*0.66, VH*0.30, lift); }
   }
   else if(ph==='brake'){ shipY=lerp(VH*0.42, VH*0.60, _ease(clamp(drawLaunch._pt/2.0,0,1))); if(_space) shipH=lerp(128,62,_ease(clamp(drawLaunch._pt/2.0,0,1))); }
-  else { shipY=VH*0.60; suf=''; }  // 3-2-1-GO: hold the ship still, no bob/drift
-  drawShipSprite(VW/2, shipY, shipH, suf);
+  else if(ph==='settle'){
+    /* SETTLE ONTO THE POSE, don't just stop moving (drop 0810a). This phase's comment already
+       claimed the ship "holds the exact spot it will start play from" — it held VH*0.60 at 62px
+       while play began at VH*0.78 and 76.1px, so the claim was true of the intent and false of
+       the numbers. It now eases onto playShipPose() over the 0.45s the phase already had, which
+       reads as the ship settling into its flying position instead of snapping there at GO.
+       Both endpoints of the brake beat are untouched: this only replaces the dead hold. */
+    const k=_ease(clamp(drawLaunch._pt/0.45,0,1));
+    shipX=lerp(VW/2, POSE.x, k); shipY=lerp(VH*0.60, POSE.y, k); shipH=lerp(62, POSE.h, k);
+  }
+  else { shipX=POSE.x; shipY=POSE.y; shipH=POSE.h; suf=''; }  // 3-2-1-GO: hold the play pose exactly
+  drawShipSprite(shipX, shipY, shipH, suf);
   /* THE PILOT'S OWN ANIMATED PLUME (drop 0801fd). Mike: "start using our pilots
      with the animated thruster during the stage transitions, no more static
      images. this applies for all 9 of them."
@@ -30993,7 +31055,7 @@ function drawLaunch(dt){
       ctx.save();
       ctx.globalCompositeOperation='lighter';
       ctx.globalAlpha=(ph==='run')?0.95:0.55;      // full burn on the run, banked on the brake
-      ctx.drawImage(im, VW/2-_tw/2, shipY+shipH*0.30, _tw, _th);
+      ctx.drawImage(im, shipX-_tw/2, shipY+shipH*0.30, _tw, _th);
       ctx.restore();
     }
   }
