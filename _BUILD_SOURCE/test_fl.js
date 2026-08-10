@@ -7987,10 +7987,21 @@ console.log("=== 194. enemy damage states ===");
     for(var f=0;f<60*40 && enemies.length<2;f++){ player.invuln=999999; updatePlay(1/60); }
     if(!enemies.length) return JSON.stringify({err:1});
     var e=enemies[0]; e.maxhp=100; e.dead=false; e._dyingT=null;
+    /* THIS SECTION IS ABOUT THE PROCEDURAL VENT SYSTEM (drop 0809l).
+       Stage 1 now fields art-lock units, whose damaged/critical frames have the smoke and fire
+       AUTHORED onto the hull - drawEnemyDamage returns early for them on purpose, because
+       venting procedurally on top gives two plumes at two scales from two systems. Taking
+       enemies[0] off a live stage 1 therefore started handing this test a unit that correctly
+       draws no vents at all. Clearing _nef puts the subject back on the vented path, so the
+       assertions below still cover every enemy that uses it. */
+    e._nef=null;
     [90,50,25,8].forEach(function(hp){ e.hp=hp; var T=dmgTierFor(e); o.tiers.push(T?T.fam:'none'); });
     e.hp=8;
     var c=0, od=ctx.drawImage; ctx.drawImage=function(){ c++; return od.apply(ctx,arguments); };
     drawEnemyDamage(e,1/60); ctx.drawImage=od; o.calls=c;
+    /* and the converse: a unit whose damage is baked into its art must draw NO vents */
+    var c2=0; e._nef='nef_s1_jungle_tank'; ctx.drawImage=function(){ c2++; return od.apply(ctx,arguments); };
+    drawEnemyDamage(e,1/60); ctx.drawImage=od; o.bakedCalls=c2; e._nef=null;
     // a vent must be STABLE — bolted to the hull, not wandering per frame
     var v1=dmgVent(e,0), v2=dmgVent(e,0);
     o.stable=(v1.dx===v2.dx && v1.dy===v2.dy);
@@ -8004,6 +8015,8 @@ console.log("=== 194. enemy damage states ===");
   ok(_d.tiers[2]==='nsd_chim', 'at a quarter it vents a looping chimney column');
   ok(_d.tiers[3]==='nxp_upward', 'and below 15% it burns with the 1407-colour rising plume');
   ok(_d.calls>=2, 'the burning tier anchors vents to the hull ('+_d.calls+' draws)');
+  ok(_d.bakedCalls===0,
+     'and a unit carrying baked damage art vents NOTHING, so it never smokes twice ('+_d.bakedCalls+' draws)');
   ok(_d.stable===true, 'and a vent stays bolted to its section rather than wandering each frame');
 }
 
