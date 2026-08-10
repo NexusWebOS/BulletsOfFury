@@ -19652,42 +19652,149 @@ const ATTRACT_ORDER = ['cole','axel','lizzie','falva','yuri','maverick','decker'
 const ATT_IN=0.34, ATT_HOLD=1.32, ATT_OUT=0.30;
 const ATT_ONE = ATT_IN+ATT_HOLD+ATT_OUT;
 let attractI=0, attractT=0;
-function attractStart(){ attractI=0; attractT=0; setState(GS.ATTRACT); }
+function attractStart(){ attractI=0; attractT=0; attractBeat=0; attractDemoOn=false; setState(GS.ATTRACT); }
 function attractToTitle(){
   /* NO startMusic here, on purpose - see above. The title track is already playing. */
   setState(GS.TITLE); menuIndex=0;
 }
+/* ============================================================
+   THE ATTRACT REEL IS A DEMO, NOT A SLIDESHOW (drop 0809r)
+
+   Mike: "I told you not to make those basic ass windows or fonts for the cinematics. And you
+   should fade to their card, and then show their ship going off and actual gameplay with their
+   special abilities."
+
+   Three beats per pilot:
+
+     PLATE   the authored aintro plate, and NOTHING drawn over it. It already carries its own
+             PILOT DEPLOYED banner and name panel - my PRESS START sat on top of finished art.
+     CARD    a cross-fade to that pilot's card.
+     DEMO    the real game. Not a recording: run.pilot is set, beginStage runs, and updatePlay +
+             drawWorld are called directly, which is exactly what the harness does. Nothing is
+             baked, so it cannot go stale when a weapon or a stage changes, and it costs no art.
+             The ship RISES INTO FRAME from below the bottom edge - that is the "ship going off"
+             - then an autopilot flies it and startSpecial() fires the pilot's ability on cue.
+
+   State is left dirty on purpose in one direction only: the demo runs a real stage, so on the
+   way out the world arrays are emptied. Anything that starts a real game calls startRun, which
+   rebuilds all of it anyway.
+   ============================================================ */
+const ATB_PLATE=1.80, ATB_CARD=1.30, ATB_DEMO=3.60;
+const ATB_DUR=[ATB_PLATE, ATB_CARD, ATB_DEMO];
+const ATT_RISE=0.70;          // how long the ship takes to climb into frame
+const ATT_SPECIAL_AT=1.45;    // when the ability fires, measured into the demo beat
+let attractBeat=0, attractDemoOn=false, _attFrame=0;
+
+function attractPilot(){ return ATTRACT_ORDER[attractI]||'cole'; }
+
+/* fade helper - in over the first 0.28s, out over the last 0.26s of a beat */
+function attFade(t, dur){
+  if(t<0.28) return t/0.28;
+  if(t>dur-0.26) return Math.max(0,(dur-t)/0.26);
+  return 1;
+}
+function attDrawFit(im, alpha){
+  const s=Math.min(VW/im.naturalWidth, VH/im.naturalHeight);
+  const w=im.naturalWidth*s, h=im.naturalHeight*s;
+  ctx.save();
+  ctx.imageSmoothingEnabled=false;                  // nearest-neighbour, per the pack contract
+  ctx.globalAlpha=clamp(alpha,0,1);
+  ctx.drawImage(im, (VW-w)/2, (VH-h)/2, w, h);
+  ctx.restore(); ctx.globalAlpha=1;
+}
+
+function attractDemoStart(){
+  const k=attractPilot();
+  try{
+    run.pilot=k;
+    const _pi=PILOTS.findIndex(function(p){ return p.key===k; });
+    if(_pi>=0) pilotIndex=_pi;
+    run.stage=1; if(typeof STAGES!=='undefined') curStage=STAGES[0];
+    beginStage(1);
+    /* ⚠ beginStage DRIVES THE STATE (drop 0809r). It runs the stage card and the launch
+       sequence, so it hands the screen to GS.OPENING and the reel is never drawn again - the
+       capture came back state=opening with the attract beat frozen. Take it straight back, the
+       same way test_fl and shoot.py do (beginStage then force the state they want). updatePlay
+       has no state gate of its own, so it runs perfectly happily under GS.ATTRACT. */
+    setState(GS.ATTRACT);
+    if(player && player.reset) player.reset();
+    player.invuln=1e9;                              // the demo never dies on camera
+    run.weapon=0; run.wlevel=2; run.missileLevel=1;
+    attractDemoOn=true; _attFrame=0;
+  }catch(e){ attractDemoOn=false; }
+}
+function attractDemoEnd(){
+  attractDemoOn=false;
+  /* the demo ran a real stage - put the world back to empty rather than leaving a live wave
+     running behind the next pilot's plate */
+  try{
+    if(typeof special!=='undefined') special=null;
+    if(typeof timeScale!=='undefined') timeScale=1;
+    [enemies,pBullets,eBullets,powerups,explosions,particles,floaters,sprAnims,fadeOuts,pilotFx]
+      .forEach(function(arr){ if(arr&&arr.length) arr.length=0; });
+  }catch(e){}
+}
+
 function drawAttract(dt){
   ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
   /* any input, any time - the whole point of an attract mode */
-  if(stateT>0.12 && (Input.mouse.down || (typeof anyTap==='function' && anyTap()))){ attractToTitle(); return; }
-  if(attractI>=ATTRACT_ORDER.length){ attractToTitle(); return; }
-
-  const k='aintro_'+ATTRACT_ORDER[attractI];
-  const ready = (typeof XART!=='undefined') && XART.rdy(k);
-  if(ready){
-    attractT+=dt;                                   // only once there is something to show
-    const im=XART.get(k);
-    const s=Math.min(VW/im.naturalWidth, VH/im.naturalHeight);
-    const w=im.naturalWidth*s, h=im.naturalHeight*s;
-    let a=1;
-    if(attractT<ATT_IN) a=attractT/ATT_IN;
-    else if(attractT>ATT_IN+ATT_HOLD) a=(ATT_ONE-attractT)/ATT_OUT;
-    ctx.save();
-    ctx.imageSmoothingEnabled=false;                // nearest-neighbour, per the pack contract
-    ctx.globalAlpha=clamp(a,0,1);
-    ctx.drawImage(im, (VW-w)/2, (VH-h)/2, w, h);
-    ctx.restore();
-    ctx.globalAlpha=1;
-    if(attractT>=ATT_ONE){ attractT=0; attractI++; }
+  if(stateT>0.12 && (Input.mouse.down || (typeof anyTap==='function' && anyTap()))){
+    attractDemoEnd(); attractToTitle(); return;
   }
-  /* THE PROMPT IS BOF TEXT, AND IT IS THE ONLY TEXT (drop 0809p). Mike: "you should be using
-     our BOF text too, no faux boxes." The second line was a system monospace face, which is
-     precisely the mismatch the single-face rule exists to stop - and a real cabinet flashes
-     ONE line, not a caption under it. */
-  if(Math.floor(stateT*1.7)%2){
-    const _f=(typeof uiFontArt==='function')?uiFontArt():null;
-    if(_f && typeof stageText==='function') stageText(_f,'PRESS START', VW/2, VH-24, 14, '#ffe082',0.9,1,0.10);
+  if(attractI>=ATTRACT_ORDER.length){ attractDemoEnd(); attractToTitle(); return; }
+
+  const k=attractPilot();
+  const dur=ATB_DUR[attractBeat]||1.5;
+
+  if(attractBeat===0){
+    const key='aintro_'+k;
+    if(typeof XART==='undefined' || !XART.rdy(key)) return;   // rdy STARTS the load; keep asking
+    attractT+=dt;
+    attDrawFit(XART.get(key), attFade(attractT,dur));
+  }
+  else if(attractBeat===1){
+    const key=(XART._src&&XART._src['pcard_'+k])?('pcard_'+k):('card_'+k);
+    if(typeof XART==='undefined' || !XART.rdy(key)) return;
+    attractT+=dt;
+    attDrawFit(XART.get(key), attFade(attractT,dur));
+  }
+  else {
+    if(!attractDemoOn) attractDemoStart();
+    if(!attractDemoOn){ attractT=dur; }              // could not start - skip the beat
+    else {
+      attractT+=dt;
+      const t=attractT;
+      /* THE LAUNCH: the ship climbs in from under the bottom edge before the autopilot takes it */
+      if(t<ATT_RISE){
+        const e=t/ATT_RISE;
+        player.x=VW/2; player.y=VH+40-(VH*0.30+40)*e*e*(3-2*e);   // smoothstep
+      } else {
+        const q=t-ATT_RISE;
+        player.x=VW/2+Math.sin(q*1.9)*VW*0.30;
+        player.y=VH*0.70+Math.sin(q*1.35)*VH*0.05;
+        if((_attFrame++ % 4)===0 && typeof pShoot==='function') pShoot();
+        if(t>=ATT_SPECIAL_AT && !specialActive() && typeof startSpecial==='function') startSpecial();
+      }
+      try{ updatePlay(dt); }catch(e){}
+      try{ drawWorld(dt); }catch(e){}
+      /* the fade at the seams, painted over the live frame */
+      const f=attFade(t,dur);
+      if(f<1){ ctx.save(); ctx.globalAlpha=1-clamp(f,0,1); ctx.fillStyle='#000';
+               ctx.fillRect(0,0,VW,VH); ctx.restore(); }
+      /* PRESS START belongs HERE and only here - over the demo, the way a real cabinet does it,
+         never over the authored pilot art */
+      if(Math.floor(stateT*1.7)%2){
+        const _f=(typeof uiFontArt==='function')?uiFontArt():null;
+        if(_f && typeof stageText==='function')
+          stageText(_f,'PRESS START', VW/2, VH-24, 14, '#ffe082',0.9,1,0.10);
+      }
+    }
+  }
+
+  if(attractT>=dur){
+    attractT=0;
+    if(attractBeat===2){ attractDemoEnd(); attractBeat=0; attractI++; }
+    else attractBeat++;
   }
 }
 

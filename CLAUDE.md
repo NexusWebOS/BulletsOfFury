@@ -189,8 +189,26 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
 - `mfx_` (252 cells) is marked DELETE in the taxonomy but is the **live** art for every enemy
   pellet and missile. Confirm with Mike before removing.
 
-**Cinematics are wired.** The arcade intro reel runs after the ColeForge logo (`GS.ATTRACT`, nine
-`aintro_*` plates, any button to the title). The Fury HQ scenes now have a state to run in
+**Cinematics are wired.** The arcade reel runs after the ColeForge logo (`GS.ATTRACT`, any button
+to the title) and is a **demo, not a slideshow** — three beats per pilot: the authored `aintro_*`
+plate with **nothing drawn over it**, a cross-fade to their card, then the real game. The demo sets
+`run.pilot`, calls `beginStage`, and drives `updatePlay`+`drawWorld` directly the way the harness
+does; the ship climbs in from below the bottom edge and `startSpecial()` fires the pilot's ability
+on cue. Nothing is baked, so it cannot go stale when a weapon or a stage changes. `PRESS START`
+blinks over the demo only — a cabinet never puts its chrome on the pilot art.
+
+⚠ **`beginStage` drives the state.** It runs the stage card and launch sequence and hands the
+screen to `GS.OPENING`, so anything calling it from another state must take the screen back
+immediately (`setState`) or its own draw is never reached again. `updatePlay` has no state gate of
+its own, which is why the demo runs fine under `GS.ATTRACT`.
+
+⚠ **The arcade intro pack had Decker and Freezer swapped** — the pack's own folder names, not the
+registration, which was byte-identical to source. Rule 1 one level further out: distrust the
+*source directory* names too. Fixed by recompositing background + the right pilot layer at (78,42)
++ the authored panel art from `x>=300`; below 300 you drag the old body's rim glow along as a ghost
+silhouette. The other seven check out against `port_*_idle`.
+
+`attractIdleTick` is defined and **never called** — the 12-second idle trigger is dead code. The Fury HQ scenes now have a state to run in
 (`GS.CUTSCENE`): `HQ_SCENES` carries all eight ensemble scenes from ColeForge's own cutscene bible
 verbatim, `drawCutsceneState` types a line at a time over `drawCutscene`, and `hqTrigger(when,
 stage, next)` fires them at the boundaries the bible names — `pre` 1 and 8, `post` 1/3/4/6/7/9.
