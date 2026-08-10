@@ -23175,12 +23175,17 @@ function genesisUpdate(b, dt){
       if(b._mech){
         const K=b._mech;
         K.phase='fight';
-        for(const nm in G.limbs){
-          const share=Math.max(1,Math.ceil((b.maxhp||1000)*GEN_LIMB_HP));
-          for(const c of _genLimbComps(nm)){
-            if(K.parts[c]){ K.parts[c].hp=K.parts[c].maxhp=share; K.parts[c]._limb=nm; }
-          }
-        }
+        /* ⚠ THE HAUL IS CHOREOGRAPHY, NOT A HEALTH POOL (drop 0809m).
+           This used to overwrite every part with a flat GEN_LIMB_HP share and stamp _limb on it,
+           which made mechDamage route a hit to the whole haul group. That was survivable while a
+           group was "an arm and its own cannon", but the formation now hauls the two legs on one
+           trunk and the two cannons together — Mike's sheet — so a shot to the left cannon was
+           silently damaging the right one too.
+
+           Mike: "each piece of the mech gets a decent chunk of health ... until you take out the
+           cannons, legs, and arms" — six separate targets. So the haul no longer touches HP at
+           all: mechInit's MECH_HP_SHARE is the single source, and every component keeps its own
+           pool. Choreography decides what arrives together; it does not decide what dies together. */
       }
       b._gen=null; b.enter=false;
       shake=Math.max(shake,12); flashScreen=Math.max(flashScreen,0.75);
@@ -23395,8 +23400,16 @@ function genesisDraw(b){
 }
 const MECH_ASM_STAGGER = 0.22;   // seconds between one part launching and the next
 const MECH_ASM_FLY     = 0.55;   // seconds for a part to travel in and lock
-const MECH_HP_SHARE = {torso:0.26, head:0.14, 'left-arm':0.12, 'right-arm':0.12,
-                       'left-leg':0.10, 'right-leg':0.10, 'left-cannon':0.08, 'right-cannon':0.08};
+/* Mike: "each piece of the mech gets a decent chunk of health."
+   Rebalanced so the six shootable limbs carry the fight and the torso is the last act rather
+   than the bulk of it — the torso is now SHIELDED until the cannons, arms and legs are off
+   (see mechDamage), so its share is a finale, not a wall you chip at from the start.
+   The TOTAL is deliberately unchanged: gating the torso already lengthens the fight, and
+   0730u/0731v both had to pull this boss back from being a two-minute damage sponge.
+   Cannons went UP the most (0.08 -> 0.11): they are what is shooting at you, so they should
+   be the satisfying thing to tear off, not the cheapest. */
+const MECH_HP_SHARE = {torso:0.20, head:0.11, 'left-arm':0.12, 'right-arm':0.12,
+                       'left-leg':0.115, 'right-leg':0.115, 'left-cannon':0.11, 'right-cannon':0.11};
 function _mechMeta(tag){
   return (typeof BOFX!=='undefined' && BOFX.mechboss && BOFX.mechboss[tag]) || null;
 }
@@ -23468,6 +23481,7 @@ function mechInit(b, tag, hpTotal){
 function mechUpdate(b, dt){
   const K=b._mech; if(!K) return;
   K.t+=dt;
+  if(K.shieldT>0) K.shieldT=Math.max(0, K.shieldT-dt);      // armour-deflect sweep (drop 0809m)
   if(K.phase==='assemble'){
     const want=Math.floor(K.t/MECH_ASM_STAGGER)+1;
     K.launched=Math.min(K.asm.length, want);
@@ -23538,10 +23552,46 @@ function mechHitPart(b, wx, wy){
    of the lava on the same chain and they share a health pool, so shooting the arm off takes the
    cannon with it. That is also why the torso is not in this list: it is the core, it has no bar
    of its own, and it comes apart when the last limb does. */
+/* ============================================================
+   THE TORSO IS ARMOURED UNTIL THE LIMBS COME OFF (drop 0809m)
+
+   Mike: "the armor/torso is shielded/does the flash bottom to top until you take out the
+   cannons, legs, and arms."
+
+   Six shootable limbs, then the core. That is the Contra / Shinobi III shape: you cannot
+   rush the body, you have to dismantle the machine first, and the boss keeps fighting the
+   whole time because the cannons are the last thing you want to leave alive.
+
+   The head is deliberately NOT in the gate — Mike listed cannons, legs and arms, so the
+   head stays shootable throughout and is not a lock on the finale.
+
+   Only mechs with an actual 'torso' are gated, which is mbg2 and mbg3 — the stage 2 and 3
+   bosses. The tanks, aircraft and leviathan on this same system have no torso and are
+   untouched by any of it. */
+const MECH_SHELL_PARTS = ['left-cannon','right-cannon','left-arm','right-arm','left-leg','right-leg'];
+function mechShieldUp(K){
+  if(!K || !K.parts || !K.parts.torso) return false;          // not a torso'd mech: no shell
+  for(const c of MECH_SHELL_PARTS){
+    const q=K.parts[c];
+    if(q && q.state!=='destroyed') return true;               // something is still attached
+  }
+  return false;
+}
 function mechDamage(b, comp, dmg){
   const K=b._mech; if(!K) return false;
   dmg = Math.ceil(dmg * bossVulnMul(K));      // RULE 3: recovery windows are the openings
   const p=K.parts[comp]; if(!p || p.state==='destroyed') return false;
+  /* ARMOURED CORE. The shot is REFUSED, not merely reduced — a chip of damage would teach the
+     player that shooting the body works, which is the opposite of what the fight is saying.
+     The bottom-to-top sweep is the tell, and it is the same white climb the ignite beat uses,
+     so the shield reads as the same armour that switched on when he assembled. */
+  if(comp==='torso' && mechShieldUp(K)){
+    K.shieldT = Math.max(K.shieldT||0, 0.42);
+    if(!K._shieldSaid){ K._shieldSaid=1; floatText(b.x, b.y-52, 'ARMOUR HOLDING', '#8fd8ff'); }
+    if(Audio.SFX && Audio.SFX.blocked) Audio.SFX.blocked();
+    b.flash=Math.max(b.flash||0, 0.06);
+    return false;
+  }
   // route damage to the whole limb when this component belongs to one
   const limb=p._limb;
   if(limb){
@@ -23580,6 +23630,19 @@ function mechDamage(b, comp, dmg){
     }
     shake=Math.max(shake,9);
     floatText(b.x, b.y-40, comp.toUpperCase().replace('-',' ')+' DOWN', '#ffd36b');
+    /* THE ARMOUR DROPS ON THE LAST LIMB (drop 0809m). This is the turn of the fight, so it gets
+       a beat of its own rather than the same puff every other part gets: the shell that has been
+       turning your shots away all fight is gone, and the core is open. Checked AFTER the state
+       change above, so the part that just died counts toward the shell being clear. */
+    if(K.parts.torso && MECH_SHELL_PARTS.indexOf(comp)>=0 && !mechShieldUp(K)){
+      K._shieldSaid=0;
+      K.shieldT=0;
+      shake=Math.max(shake,16);
+      flashScreen=Math.max(flashScreen||0, 0.55);
+      floatText(b.x, b.y-70, 'ARMOUR DOWN — CORE EXPOSED', '#ff5a3c');
+      if(Audio.SFX && Audio.SFX.bossPhase) Audio.SFX.bossPhase();
+      else if(Audio.SFX && Audio.SFX.bossAlarm) Audio.SFX.bossAlarm();
+    }
     /* THE CORE. Five limbs at 20% each is the whole boss, so once they are all off there is
        nothing left to shoot — the torso comes apart rather than sitting there at 0%. */
     const LIMBS=['head','left-arm','left-cannon','right-arm','right-cannon','left-leg','right-leg'];
@@ -25189,6 +25252,36 @@ function mechDraw(b){
     }
   }
   if(K.phase==='fight'){ bossTelegraph(b,K); mechCoreGlow(b, K, S, cx, cy, dw, dh); }
+  /* ---- ARMOUR DEFLECT: THE BOTTOM-TO-TOP SWEEP (drop 0809m) ----
+     Mike: "the armor/torso is shielded/does the flash bottom to top until you take out the
+     cannons, legs, and arms."
+
+     Deliberately the SAME climb as the ignite beat, at half its height and tinted to the
+     stage: the armour that switched on when he assembled is the armour turning your shots
+     away, and reusing the motion says that without a word of UI. Ice runs it blue.
+
+     Drawn additively, above the parts and under the FX, so it reads as light ON the plating
+     rather than a panel floating in front of it. */
+  if(K.shieldT>0 && K.phase==='fight'){
+    const k=1-clamp(K.shieldT/0.42,0,1);                 // 0 at the hit, 1 as it finishes climbing
+    const bh=300*S, yTop=cy+bh*0.42-(k*bh);
+    /* WHITE ON THE LAVA, NOT WARM. The ignite beat already established this: its sweep throws the
+       colour away and draws pure white "so it reads as light rather than fire and does not fight
+       the lava behind him". A warm cream band over a magma field is nearly invisible — measured by
+       looking at it. Ice keeps its blue, which has the same contrast job on a white shelf. */
+    const cold=(curStage && curStage.bg==='ice');
+    const c0=cold?'150,225,255':'255,255,255';
+    ctx.save();
+    ctx.globalCompositeOperation='lighter';
+    ctx.globalAlpha=0.55+0.45*Math.sin(k*Math.PI);       // fades in and out across the climb
+    const g=ctx.createLinearGradient(0,yTop,0,yTop+54*S);
+    g.addColorStop(0,'rgba('+c0+',0)');
+    g.addColorStop(0.5,'rgba('+c0+',0.9)');
+    g.addColorStop(1,'rgba('+c0+',0)');
+    ctx.fillStyle=g;
+    ctx.fillRect(cx-118*S, yTop, 236*S, 54*S);
+    ctx.restore();
+  }
   mechFxDraw(b);
   ctx.restore();
   return true;
