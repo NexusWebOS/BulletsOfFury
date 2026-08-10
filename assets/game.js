@@ -12449,6 +12449,10 @@ function _hitEnemyCore(e,dmg){
 }
 function killEnemy(e){
   if(e.dead) return;
+  /* A DESTROYED PROP DETONATES (drop 0809l). Before the death FX, so the splash and the chain
+     are already under way while this unit plays its own explosion. propBlast latches _blown, so
+     the per-frame hp<=0 sweep re-entering here cannot fire a second blast. */
+  if(e._prop && typeof propBlast==='function') propBlast(e);
   if(e._dyingT==null && typeof stageStats!=='undefined') stageStats.kills++;
   if((e._bunker||e._tur) && e._dieT!=null) return;      // already collapsing — the per-frame hp<=0 sweep must not re-kill it
   // BUNKERS collapse through their own 6-frame destruction art instead of popping instantly
@@ -16458,6 +16462,71 @@ function applyNefUnit(c, type){
   c.shoots = d.atk!=='none';
   c.vy = d.drift ? 0.35 : 0;                    // a mine rides the current; everything else holds station
   return true;
+}
+/* ============================================================
+   BARRELS GO UP, AND TAKE THE NEIGHBOURS WITH THEM (drop 0809l)
+
+   Mike: "the barrels being able to blow up and go splash explosive damage."
+
+   Two behaviours, and the second is the one that makes it feel like Contra:
+
+     SPLASH  a destroyed prop damages everything inside its radius, falling off with
+             distance, so shooting one barrel parked beside a tank hurts the tank.
+     CHAIN   a prop caught in another prop's blast does not just take damage - it is
+             QUEUED to detonate on a short fuse of its own. Three barrels in a line go
+             off bang-bang-bang, not all in one frame. The stagger is the whole point;
+             detonating them simultaneously reads as one big explosion instead of a
+             chain, which is what makes the Contra version satisfying.
+
+   _blown latches before anything else so a prop can never re-enter its own blast, which
+   is how a chain becomes an infinite loop. r is in pixels at the 480x512 playfield.
+   ============================================================ */
+const PROP_BLAST = {
+  s1fuelbarrel: {r:62, dmg:8,  shake:5},
+  s1fueltank:   {r:80, dmg:13, shake:7},   // the big one - it is worth parking next to
+  s1ammocrate:  {r:52, dmg:6,  shake:4},
+  s1rivermine:  {r:70, dmg:14, shake:6},   // naval mine: small radius, nasty inside it
+};
+function propBlast(e){
+  if(!e || e._blown) return;
+  const B=PROP_BLAST[e.type]; if(!B) return;
+  e._blown=true;                                  // latch FIRST - see the note above
+  explode(e.x, e.y, Math.max(14, B.r*0.42), 'red', 'fireball');
+  shake=Math.max(shake, B.shake);
+  if(Audio.SFX && Audio.SFX.boom) Audio.SFX.boom();
+  const r2=B.r*B.r;
+  const chain=[];
+  for(const o of enemies){
+    if(o===e || o.dead || o._dyingT!=null || o._blown) continue;
+    const d2=dist2(o.x,o.y,e.x,e.y);
+    if(d2>r2) continue;
+    if(PROP_BLAST[o.type]){ chain.push(o); continue; }   // detonated below, after this blast resolves
+    const fall=1-Math.sqrt(d2)/B.r;               // full damage at the centre, a third at the rim
+    hitEnemy(o, Math.max(1, Math.round(B.dmg*(0.35+0.65*fall))));
+  }
+  if(typeof boss!=='undefined' && boss && typeof bossActive!=='undefined' && bossActive &&
+     !boss.dead && dist2(boss.x,boss.y,e.x,e.y)<r2){
+    hitBoss(Math.max(1, Math.round(B.dmg*0.5)));
+  }
+  /* the player is not spared - sitting on top of a barrel you just shot should hurt. Radius is
+     deliberately tighter than the enemy one (30% of the area) so it punishes hugging the prop
+     rather than merely being on the same side of the screen. */
+  if(typeof player!=='undefined' && player && !player.dead && typeof playerHit==='function'){
+    if(dist2(player.x,player.y,e.x,e.y) < r2*0.30) playerHit();
+  }
+  /* THE CHAIN RUNS HERE, BY RECURSION (drop 0809l).
+     This started as a queue with a per-barrel fuse so the chain would travel visibly. It is
+     gone deliberately. Any state this block holds in a `let` is re-initialised on EVERY
+     spawnEnemy call — the block is inside that function's never-closed if — and moving the
+     queue onto window still left the entries un-drained in the live loop while draining fine
+     under a manual tick. Recursion needs no persistent state at all, so it cannot be broken
+     by the same trap. The blasts land on one frame, but each explode() animates independently
+     from its own position, so a line of barrels still reads as a run of blasts rather than one.
+     _blown is latched before any recursion, so a barrel can never re-enter its own chain. */
+  for(const o of chain){
+    if(o.dead || o._dyingT!=null || o._blown) continue;
+    o.hp=0; killEnemy(o);                         // killEnemy calls propBlast for the next link
+  }
 }
 function jetTick(e, dt){
   if(e.dead) return;
