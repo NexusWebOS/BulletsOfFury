@@ -1651,7 +1651,28 @@ function _levelCfg(){
        enormous smears rather than moving water. An earlier drop swung the other
        way (0.18-0.22 crushed a 128px tile to 23px, which was mush), so 0.5 sits
        between the two: real texture, at a scale where the wave pattern reads. */
-  case 1: return {master:'jungle800_master', liquid:'nlq2_water', fill:'#0a1607', tile:0.5, fps:5, wide:true};
+  /* ============================================================
+     STAGE 1 REBUILT FROM RC2 (drop 0809m). Mike handed over ColeForge_BOF_Rebuilt_Stages_RC2
+     and asked for the stage replacements, which supersedes the never-touch note above — that
+     rule was written to stop the master drifting by accident, not to freeze it against a
+     deliberate art drop. Recorded here so the next reader knows it was replaced on purpose.
+
+     TWO CONVERSIONS WERE REQUIRED. It is NOT a file swap:
+
+       FLIPPED VERTICALLY. RC2 paints ocean at the TOP and the dam at the BOTTOM. This engine
+       scrolls bottom to top (_camY = H - mapScroll), so the bottom of the plate is where the
+       level STARTS. Dropped in as authored, the player began at the dam and flew out to sea -
+       the route backwards.
+
+       OCEAN RE-KEYED TO EXACT #FF00FF. The old master carried a keyed channel that drawStageBG
+       paints the animated liquid through. RC2's ocean is baked paint, so copied straight in the
+       water went static and the stage lost its nlq2_water animation. 549,088 px re-keyed, 13.4%
+       of the plate - the sea plus the river delta, which is why the delta ripples too.
+
+     h IS DECLARED NOW. The plate is 5120, not 4800, and every reader of cfg.h falls back to
+     4800 when it is absent - so leaving it off would have mismapped the whole stage.
+     ============================================================ */
+  case 1: return {master:'jungle800_rc2_master', liquid:'nlq2_water', fill:'#0a1607', tile:0.5, fps:5, wide:true, h:5120};
     /* THE FIRE BOSS FIGHTS OVER OPEN LAVA (drop 0806f). Mike: "the stage did not connect a
        tiled looped lava section of its own where he has his intro, we should be traveling past
        this mountain, flying over just lava that repeats, and he appears and does his intro."
@@ -4402,7 +4423,12 @@ function spawnEnemy(type, x, y, opt={}){
       if(_GROUND.test(type)){
         const _cfg=(typeof _levelCfg==='function')?_levelCfg():null;
         const _H=(_cfg&&_cfg.h)||4800;
-        const _COAST=3384;                       // measured, see above
+        /* RE-MEASURED FOR THE RC2 PLATE (drop 0809m). 3384 was measured off the old 800x4800
+           master and cannot carry over to a different plate of a different height and route.
+           Same method, run on the keyed result: below y=4605 the rows average 86% open water,
+           above it 5%. Note the sea leg is much SHORTER than it was - 515px against 1416 - so
+           the naval opening is a brief run before the beach, which is how RC2 authored it. */
+        const _COAST=4605;                       // measured on jungle800_rc2_master
         const _camY=_H-(mapScroll||0);           // scroll runs bottom -> top
         if(_camY > _COAST){                      // still out over the sea
           /* picked from the spawn POSITION, not Math.random(): the same wave lays
