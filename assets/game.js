@@ -8071,12 +8071,18 @@ function pShoot(){
         w:10,h:22, dmg, kind:'missile', lv, spd:6.6, turn, t:0, ang:launchAng, mkey:mk});
     }
     (Audio.SFX.missile||Audio.SFX.grenade||Audio.SFX.shoot)();
+    /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
+       PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
+    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(5,lv||1));
   } else if(w===3){ // LASER — solid continuous beam that burns straight up the column
     const dmg = 2 + Math.floor(lv/2);            // lv1:2 lv2:3 lv3:3 lv4:4 lv5:4
     let beam=null; for(const b of pBullets){ if(b.kind==='beam'){ beam=b; break; } }
     if(!beam){ beam={kind:'beam', pierce:true, lv, dmg, x:player.x, y:player.y, w:0, h:0, vx:0, vy:0, life:0.15, _hit:[], _ht:0, _bt:0}; pBullets.push(beam); }
     beam.dmg=dmg; beam.lv=lv; beam.life=0.15; beam.w=14+lv*4;   // width grows with level; refreshed while firing
     (Audio.SFX.laser||Audio.SFX.spread||Audio.SFX.shoot)();
+    /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
+       PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
+    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(5,lv||1));
   } else if(w===5){ // ICE ORB — D2 frozen-orb: spins upward, sprays shards, pierces; one orb at a time (two at lv5)
     const maxOrbs = lv>=5?2:1;
     let live=0; for(const b of pBullets){ if(b.kind==='orb') live++; }
@@ -8085,6 +8091,9 @@ function pShoot(){
       const vx=(maxOrbs>1)?(live===0?-1.5:1.5):0;
       pBullets.push({kind:'orb', x:player.x, y:player.y-16, vx, vy:-2.7, w:34, h:34, dmg:2, lv, spin:0, life:2.6, shardN, shardCd:0.06, frame:0, _hit:[], _ht:0, _bt:0});
       (Audio.SFX.spread||Audio.SFX.shoot)();  // ice orb launch
+    /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
+       PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
+    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(5,lv||1));
     }
   } else if(w===4){ // FLAMETHROWER — held, short reach, huge close-quarters damage (crowd control)
     flameFire(lv);
@@ -14554,6 +14563,27 @@ function _drawPlayerCore(){
   // REAL machinefx muzzle flash at the nose while the MG is firing (level-colored row,
   // same row map as the bullets). Art attachment is at the RIGHT edge -> rotate +90 so the
   // flame points UP with the attachment sitting on the gun.
+  /* ⚠ THIS WAS GATED TO weapon===0, SO ONLY THE MG EVER FLASHED (drop 0809n).
+     The spread branch of pShoot sets _mgMuzT and says so in its own comment - "the gun's
+     real muzzle flash, which spread never lit" - and then this test threw it away. It has
+     been setting a timer nothing reads.
+     Now every weapon that sets the timer gets a flash, and the ones that are not the MG use
+     the authored PlayerWeapons frames. The MG keeps its per-level machinefx crown below,
+     because that art is colour-graded per tier and a single frame would lose that. */
+  if(player._mgMuzT>0 && run.weapon!==0 && typeof XART!=='undefined'){
+    const _NWM={1:'nwp_kin_spread_muzzle', 2:'nwp_mls_missile_exhaust', 3:'nwp_lfi_laser_start',
+                4:'nwp_lfi_fire_travel_1', 5:'nwp_lfi_ice_orb'};
+    const _nk=_NWM[run.weapon];
+    if(_nk && XART.rdy(_nk)){
+      const im3=XART.get(_nk);
+      const fh3=17+clamp(player._mgMuzLv||1,1,5)*2, fw3=fh3*(im3.naturalWidth/Math.max(1,im3.naturalHeight));
+      ctx.save();
+      ctx.globalAlpha=Math.min(1, player._mgMuzT/0.05);
+      ctx.globalCompositeOperation='lighter';           // a muzzle is light, not a decal
+      ctx.drawImage(im3, x-fw3/2, y-16-fh3*0.72, fw3, fh3);
+      ctx.restore();
+    }
+  }
   if(player._mgMuzT>0 && run.weapon===0 && typeof XART!=='undefined'){
     const _ml=clamp(player._mgMuzLv||1,1,5);
     // v2.2 crown muzzle flash: art points UP natively, 6-frame anim, per-level color
