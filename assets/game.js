@@ -23577,6 +23577,21 @@ function mechShieldUp(K){
   }
   return false;
 }
+/* THE HEAD IS THE THIRD PHASE, NOT A SEVENTH LIMB (drop 0809n).
+   Per MAGMA_COMBAT_SPEC_0801jr, the fight is three gates, not two:
+
+     phase 1  cannons / arms / legs      torso immune, head locked
+     phase 2  the CORE only              "The head still cannot be attacked"
+     phase 3  the head, floating free
+
+   I had left the head shootable throughout, on the reading that Mike's "cannons, legs and
+   arms" list meant the head was simply not part of the shell. It is not part of the shell -
+   it is the phase AFTER the core, and locking it is what makes the torso's death the turn of
+   the fight rather than an optional detour. */
+function mechHeadLocked(K){
+  if(!K || !K.parts || !K.parts.head || !K.parts.torso) return false;
+  return K.parts.torso.state!=='destroyed';                   // the torso must fall first
+}
 function mechDamage(b, comp, dmg){
   const K=b._mech; if(!K) return false;
   dmg = Math.ceil(dmg * bossVulnMul(K));      // RULE 3: recovery windows are the openings
@@ -23590,6 +23605,13 @@ function mechDamage(b, comp, dmg){
     if(!K._shieldSaid){ K._shieldSaid=1; floatText(b.x, b.y-52, 'ARMOUR HOLDING', '#8fd8ff'); }
     if(Audio.SFX && Audio.SFX.blocked) Audio.SFX.blocked();
     b.flash=Math.max(b.flash||0, 0.06);
+    return false;
+  }
+  /* THE HEAD DOES NOT OPEN UNTIL THE TORSO FALLS (phase 3 gate, see mechHeadLocked). */
+  if(comp==='head' && mechHeadLocked(K)){
+    K.shieldT = Math.max(K.shieldT||0, 0.30);
+    if(!K._headSaid){ K._headSaid=1; floatText(b.x, b.y-52, 'SEALED', '#8fd8ff'); }
+    if(Audio.SFX && Audio.SFX.blocked) Audio.SFX.blocked();
     return false;
   }
   // route damage to the whole limb when this component belongs to one
