@@ -4361,14 +4361,20 @@ function spawnEnemy(type, x, y, opt={}){
       'boat7',
       'bunkerA',
       'bunkerB',
-      'el_cs',
-      'el_em',
+      /* ⚠ el_cs, el_em AND el_lr ARE NO LONGER DELETED (drop 0809n).
+         They were culled because their art had zero registered keys - true when it was
+         written. It stopped being true when the art lock landed: NEF_S2/NEF_S3 now give all
+         three real units, from sprites no other wave was using.
+         They matter because they are not spare parts. Three stage 2 waves field el_em/el_lr
+         and three stage 3 waves field el_cs, and while these sat in this set every one of
+         those six waves spawned NOTHING - the stage simply went quiet where its elites were
+         meant to punctuate. Removing them from the list is the whole fix; the rows do the
+         rest. The other el_ entries stay dead, because they still have no art. */
       'el_gr',
       'el_gw',
       'el_hd',
       'el_iv',
       'el_jh',
-      'el_lr',
       'el_od',
       'el_vr',
       'esturret1',
@@ -16626,6 +16632,14 @@ const NEF_S2 = {
   eye:     {art:'nef_s2_eruption_pod',               w:33, h:42, hp:10, score:700},
   cruc:    {art:'nef_s2_lava_crawler',               w:59, h:52, hp:16, score:1320},
   carrier: {art:'nef_s2_magma_artillery',            w:57, h:60, hp:20, score:1850},
+  /* THE TWO ELITES COME BACK (drop 0809n). el_em (EMBER MANTIS) and el_lr are named in the
+     stage 2 plan and fielded by three waves between them - and both sat in spawnEnemy's
+     _DELETE set, so those waves have been spawning NOTHING. They were culled because their
+     old art had zero registered keys, which was true then and is not true now: the art lock
+     ships units for exactly these roles that no wave was using. Elites are tougher and worth
+     more than the line units, which is what makes them punctuation rather than filler. */
+  el_em:   {art:'nef_s2_mini_drill_tank',    w:43, h:54, hp:22, score:1450},
+  el_lr:   {art:'nef_s2_armored_lava_boat',  w:34, h:56, hp:26, score:1650},
   /* scenery — the volcanic barrel. No wave fields it yet; it is here so the art is live and
      so PROP_BLAST can reach it the moment one is placed. */
   s2heatbarrel: {art:'nef_s2_heat_shielded_barrel', pat:'prop', w:29, h:42, hp:5, score:180, prop:true},
@@ -16640,6 +16654,10 @@ const NEF_S3 = {
   sideswirl: {art:'nef_s3_snowmobile_gunner',     w:21, h:40, hp: 7, score:440},
   racer:     {art:'nef_s3_ice_crawler',           w:39, h:44, hp:12, score:560},
   topgun:    {art:'nef_s3_snow_tank',             w:45, h:48, hp:14, score:700},
+  /* el_cs is fielded by three stage 3 waves and was likewise in _DELETE, so all three spawned
+     nothing. cryo_barge is the one ice unit the roster pass left unused, and a barge reads as
+     the heavy an elite slot wants. */
+  el_cs:   {art:'nef_s3_cryo_barge',              w:40, h:56, hp:24, score:1500},
   /* the ice equivalent of a fuel barrel */
   s3canister: {art:'nef_s3_explosive_cryo_canister', pat:'prop', w:26, h:42, hp:4, score:180, prop:true},
 };
