@@ -8293,7 +8293,9 @@ function breakContainer(p){
        stage-gated crates had to be added to both or they would have appeared from a
        broken supply box and not from an mcrate. mslPackRoll() is now the only place
        that decides, and it is what applies the stage gate. */
-    const _pk = mslPackRoll();
+    /* A crate may be spawned with its pack already decided (_pack). The Magma Colossus's phase 2
+       and phase 3 crates are "always a 10-missile crate" per the spec, not a roll. (drop 0809n) */
+    const _pk = p._pack || mslPackRoll();
     /* collision box from the tier's target area, so the hitbox matches what is drawn */
     const _sz = MSL_BIG[_pk]
       ? (function(a){ const s=Math.round(Math.sqrt(a)); return [s,s]; })(MSL_BIG[_pk].a)
@@ -8377,7 +8379,7 @@ function applyPowerup(p){
   if(p.kind==='crate'){ crateBreak(p.x,p.y,'#ffcf4a'); p={kind:'weapon',wtype:p.wtype,x:p.x,y:p.y}; }
   else if(p.kind==='scrate'){ crateBreak(p.x,p.y,'#ff3a2a'); p={kind:scrateYield(),x:p.x,y:p.y}; }
   else if(p.kind==='mcrate'){ crateBreak(p.x,p.y,'#5ab4ff');
-    p={kind:mslPackRoll(),x:p.x,y:p.y}; }
+    p={kind:(p._pack||mslPackRoll()),x:p.x,y:p.y}; }
   else if(p.kind==='capsule'){ crateBreak(p.x,p.y,'#7fd1ff'); p={kind:(Math.random()<0.5)?'speed':'shield',x:p.x,y:p.y}; }
   switch(p.kind){
     case 'speed':
@@ -23692,12 +23694,27 @@ function mechDeflect(b, bt){
   bt.dead=true;
   if(Audio.SFX && Audio.SFX.blocked) Audio.SFX.blocked();
 }
+const _SHOT_MISSILE = {missile:1, gmiss:1, nade:1, mechmortar:1};
 function mechShieldIntercept(b, bt){
   const K=b && b._mech;
   if(!K || K.phase!=='fight' || !K.parts || !K.parts.torso) return false;
-  if(!mechShieldUp(K)) return false;                          // phase 1 only
   const comp=mechHitPart(b, bt.x, bt.y); if(!comp) return false;
   const cls=mechShotClass(bt);
+  /* ---- PHASE 2: THE CORE TAKES MISSILES AND NOTHING ELSE (drop 0809n) ----
+     Spec: "Only the CORE can be damaged ... The core can only be damaged by MISSILES."
+     Runs once the shell is off and while the torso still stands. Anything that is not a
+     missile sparks off it, so the 10-crate the phase hands you is the fight, not a bonus. */
+  if(!mechShieldUp(K) && K.parts.torso.state!=='destroyed'){
+    if(comp==='torso' && !_SHOT_MISSILE[(bt.kind||'')]){
+      K.shieldT=Math.max(K.shieldT||0, 0.22);
+      if(!K._coreSaid){ K._coreSaid=1; floatText(b.x, b.y-52, 'MISSILES ONLY', '#ffd36b'); }
+      explode(bt.x, bt.y, 6, 'blue');
+      bt.dead=true;
+      return true;
+    }
+    return false;                                             // missiles, and every limb, pass
+  }
+  if(!mechShieldUp(K)) return false;                          // phase 3: the head fight
   if(cls==='fire'){
     /* FIRE HEALS whatever it touches. Deliberately generous enough to notice: a flamethrower
        player must FEEL that they are repairing him, or the rule reads as the weapon being weak. */
@@ -23797,6 +23814,14 @@ function mechDamage(b, comp, dmg){
       floatText(b.x, b.y-70, 'ARMOUR DOWN — CORE EXPOSED', '#ff5a3c');
       if(Audio.SFX && Audio.SFX.bossPhase) Audio.SFX.bossPhase();
       else if(Audio.SFX && Audio.SFX.bossAlarm) Audio.SFX.bossAlarm();
+      /* THE PHASE 2 CRATE (drop 0809n). Spec: "A missile box appears — always a 10-missile
+         crate. It appears every time this phase begins." Forced, not rolled: the core takes
+         missiles and nothing else, so the crate IS the phase, and leaving it to mslPackRoll
+         would hand the player a 2-pack for a fight that needs ten. */
+      if(typeof powerups!=='undefined'){
+        powerups.push({x:clamp(b.x, 60, VW-60), y:-30, vy:0.85, t:0, kind:'mcrate',
+                       hp:6, flash:0, w:48, h:44, bob:rnd(0,TAU), _pack:'missilepack10'});
+      }
     }
     /* THE CORE. Five limbs at 20% each is the whole boss, so once they are all off there is
        nothing left to shoot — the torso comes apart rather than sitting there at 0%. */
