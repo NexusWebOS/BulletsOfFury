@@ -3526,6 +3526,12 @@ let _dmgSrc=null;                  // 'missile' | 'special' | null, for the fram
 
 /* entity pools */
 let pBullets=[], eBullets=[], enemies=[], powerups=[], explosions=[], particles=[], floaters=[], decals=[], sprAnims=[], fadeOuts=[], pilotFx=[];
+/* PLAYER IMPACT FX (drop 0809m). Declared HERE with the other pools, deliberately: this is
+   provably top-level, whereas anything declared further down can land inside spawnEnemy's
+   never-closed if-block and be re-initialised on every spawn - which is what silently emptied
+   the barrel chain queue. sprAnims cannot serve these because it draws through ASSETS, and
+   the player weapon frames are XART cells. */
+let pImpacts=[];
 let boss=null;
 let shake=0, flashScreen=0, bombFlash=0, whiteBlast=0;
 let pwTimer=0, spTimer=6;
@@ -12448,6 +12454,18 @@ function _hitEnemyCore(e,dmg){
   }
   // small spark
   particles.push({x:e.x,y:e.y-e.h/4,vx:rnd(-1,1),vy:rnd(-1,0),life:0.18,t:0,r:rnd(1,2),color:'#fff'});
+  /* AUTHORED IMPACT ON TOP OF THE SPARK (drop 0809m). The single white particle above was the
+     whole of the player's hit feedback. The KineticSpread pack ships real impact frames, and
+     they are pale-cyan/white ("team_highlight") so a hit registers as YOURS at a glance -
+     which is the readability the enemy ordnance on mfx_ cannot give you. Metal armour rings
+     differently from a soft target: tanks and ships take metal_impact, everything else the
+     spark, and a glancing hit that fails to kill throws a ricochet. */
+  if(typeof pImpacts!=='undefined'){
+    const hard = (e._nef && /tank|apc|boat|corvette|craft|artillery|crawler|turret|sled/.test(e._nef));
+    pImpacts.push({ x:e.x+rnd(-4,4), y:e.y-e.h*0.18+rnd(-4,4), t:0, dur:0.20,
+                    key: hard ? 'nwp_kin_metal_impact' : 'nwp_kin_hit_spark',
+                    size: hard ? 22 : 17, rot: rnd(0,6.28) });
+  }
   if(e.hp<=0) killEnemy(e);
 }
 function killEnemy(e){
@@ -13562,6 +13580,10 @@ function updateEffects(dt){
   if(typeof rbShardsUpdate==='function') rbShardsUpdate(dt);   // rollerball shrapnel
   for(const sa of sprAnims){ sa.t+=dt; if(sa.t>=sa.dur) sa.dead=true; }
   sprAnims=sprAnims.filter(s=>!s.dead);
+  if(typeof pImpacts!=='undefined' && pImpacts.length){
+    for(const p of pImpacts) p.t+=dt;
+    pImpacts=pImpacts.filter(p=>p.t<p.dur);
+  }
   for(const f of fadeOuts){ f.t+=dt; if(f.t>=f.dur) f.dead=true; }
   fadeOuts=fadeOuts.filter(f=>!f.dead);
 }
@@ -19176,6 +19198,23 @@ function _drawEffectsInner(){
   for(const sa of sprAnims){
     const k=clamp(sa.t/sa.dur,0,1); const fi=Math.min(sa.n-1, Math.floor(k*sa.n)); const nm=sa.base+fi;
     if(ASSETS.has(nm)){ const d=ASSETS.dims(nm), s=sa.size/Math.max(d.w,d.h); ctx.globalAlpha=clamp(1-(k-0.7)/0.3,0,1); ASSETS.blit(nm,sa.x,sa.y,d.w*s,d.h*s); ctx.globalAlpha=1; }
+  }
+  /* PLAYER IMPACTS (drop 0809m). One frame each, so the life is carried by scale and alpha
+     rather than a reel: it punches out to full size fast and fades, which reads as a hit
+     rather than a sprite that appeared. Additive, because these are sparks. */
+  if(typeof pImpacts!=='undefined' && pImpacts.length && typeof XART!=='undefined'){
+    for(const p of pImpacts){
+      if(!XART.rdy(p.key)) continue;
+      const im=XART.get(p.key), k=clamp(p.t/p.dur,0,1);
+      const s=p.size*(0.55+0.45*Math.min(1,k*3));          // snap open, then hold
+      const w=s*(im.naturalWidth/Math.max(1,im.naturalHeight)), h=s;
+      ctx.save();
+      ctx.globalAlpha=clamp(1-k,0,1);
+      ctx.globalCompositeOperation='lighter';
+      ctx.translate(p.x,p.y); ctx.rotate(p.rot);
+      ctx.drawImage(im,-w/2,-h/2,w,h);
+      ctx.restore();
+    }
   }
 }
 
