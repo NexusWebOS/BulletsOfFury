@@ -12158,6 +12158,11 @@ function updatePlay(dt){
     }
     // collide boss
     if(!b.dead && boss && bossActive && !boss.dead && bossHitTest(b.x,b.y)){
+      /* PHASE 1 SHIELD (drop 0809n). Runs BEFORE any damage is computed: a deflected round
+         never becomes a hit, and a fire round becomes a heal instead of one. Returns false for
+         anything it does not own — limbs, non-mech bosses, phases 2 and 3 — so the ordinary
+         path below is untouched. */
+      if(typeof mechShieldIntercept==='function' && mechShieldIntercept(boss, b)) continue;
       // _bossDmg caps what a shot may do to a BOSS. The helix flurry one-shots ordinary enemies
       // (dmg 9999) but must never trivialise a boss fight, so it lands heavy-but-capped instead.
       const _bd = (b._bossDmg!=null) ? b._bossDmg : b.dmg;
@@ -23482,6 +23487,45 @@ function mechUpdate(b, dt){
   const K=b._mech; if(!K) return;
   K.t+=dt;
   if(K.shieldT>0) K.shieldT=Math.max(0, K.shieldT-dt);      // armour-deflect sweep (drop 0809m)
+  /* ---- FIRE ON THE TORSO ENDS IN A CHARGE (drop 0809n) ----
+     Mike: "fire on the TORSO — the white turns more REDDISH, flashes FASTER, and eventually he
+     CHARGES and RAMS you — kill."
+
+     Rage only cools while you are NOT burning him, so a flamethrower player is on a timer they
+     can see: the sweep reddens and quickens the whole way up. At the top he commits — a wind-up
+     so the charge is readable, then a straight run down the screen. Contact is lethal, which is
+     the punish the spec asks for; surviving it is a dodge, not a trade. */
+  if(K.phase==='fight'){
+    if(K.rage>0 && !K.ram) K.rage=Math.max(0, K.rage-dt*0.06);
+    if((K.rage||0)>=1 && !K.ram){
+      K.ram={t:0, phase:'wind', x0:b.x, y0:b.y};
+      K.rage=0;
+      shake=Math.max(shake,10);
+      floatText(b.x, b.y-60, 'ENRAGED', '#ff4a2a');
+      if(Audio.SFX && Audio.SFX.bossAlarm) Audio.SFX.bossAlarm();
+    }
+    if(K.ram){
+      const R=K.ram; R.t+=dt;
+      if(R.phase==='wind'){
+        b.x = R.x0 + Math.sin(R.t*38)*4;                     // shudder in place: the tell
+        if(R.t>=0.65){ R.phase='run'; R.t=0;
+          R.tx=(typeof player!=='undefined'&&player)?player.x:b.x;
+          if(Audio.SFX && Audio.SFX.dash) Audio.SFX.dash(); }
+      } else if(R.phase==='run'){
+        b.x += (R.tx-b.x)*Math.min(1,dt*3.0);
+        b.y += 470*dt;
+        if(typeof player!=='undefined' && player && !player.dead &&
+           Math.abs(player.x-b.x)<(b.w*0.42) && Math.abs(player.y-b.y)<(b.h*0.46)){
+          if(typeof playerHit==='function') playerHit();     // the spec says kill
+          R.phase='back'; R.t=0;
+        }
+        if(b.y>VH+40 || R.t>1.9){ R.phase='back'; R.t=0; }
+      } else {
+        b.y += ((R.y0!=null?R.y0:140)-b.y)*Math.min(1,dt*1.8);
+        if(Math.abs(b.y-(R.y0!=null?R.y0:140))<3){ b.y=(R.y0!=null?R.y0:140); K.ram=null; }
+      }
+    }
+  }
   if(K.phase==='assemble'){
     const want=Math.floor(K.t/MECH_ASM_STAGGER)+1;
     K.launched=Math.min(K.asm.length, want);
@@ -23591,6 +23635,77 @@ function mechShieldUp(K){
 function mechHeadLocked(K){
   if(!K || !K.parts || !K.parts.head || !K.parts.torso) return false;
   return K.parts.torso.state!=='destroyed';                   // the torso must fall first
+}
+/* ============================================================
+   PHASE 1 — WHAT THE SHIELD DOES TO EACH WEAPON (drop 0809n)
+   Spec: docs/MAGMA_COMBAT_SPEC_0801jr.md, recorded verbatim from Mike.
+
+     missiles / bullets   DEFLECTED BACK AT YOU
+     lasers               deflected, and the beam STOPS at the point of contact
+     FIRE weapons         HEAL whatever body part you hit
+     fire on the TORSO    the white turns more REDDISH, flashes FASTER, and
+                          eventually he CHARGES AND RAMS you - kill
+     everything else      simply deflected back
+
+   "Deflected shots can hurt you. That is the point - attacking the shield is
+   punished, not just wasted."
+
+   Limbs are NOT protected: shooting a cannon or a leg damages it normally, which is
+   how you get out of phase 1 at all. Only the torso turns shots around.
+   ============================================================ */
+const _SHOT_FIRE  = {flame:1, fire:1, fireball:1, firray:1, hfl:1};
+const _SHOT_LASER = {beam:1, lzslug:1, laser:1, flaser:1, axbeam:1};
+function mechShotClass(bt){
+  const k=(bt && bt.kind)||'';
+  if(_SHOT_FIRE[k])  return 'fire';
+  if(_SHOT_LASER[k]) return 'laser';
+  return 'shot';
+}
+/* A deflected round is handed to the ENEMY pool rather than flagged in place: the enemy-bullet
+   path already owns collision with the player, its own draw and its own cleanup, so the shot
+   that just bounced can hurt you without a second damage path existing for it. */
+function mechDeflect(b, bt){
+  const px=(typeof player!=='undefined'&&player)?player.x:bt.x;
+  const py=(typeof player!=='undefined'&&player)?player.y:VH;
+  const a=Math.atan2(py-bt.y, px-bt.x);
+  const spd=Math.max(2.4, Math.hypot(bt.vx||0, bt.vy||0)*0.9);
+  eBullets.push({x:bt.x, y:bt.y, vx:Math.cos(a)*spd, vy:Math.sin(a)*spd,
+                 w:bt.w||10, h:bt.h||10, dmg:1, t:0, kind:'eshot', _deflected:1});
+  bt.dead=true;
+  if(Audio.SFX && Audio.SFX.blocked) Audio.SFX.blocked();
+}
+function mechShieldIntercept(b, bt){
+  const K=b && b._mech;
+  if(!K || K.phase!=='fight' || !K.parts || !K.parts.torso) return false;
+  if(!mechShieldUp(K)) return false;                          // phase 1 only
+  const comp=mechHitPart(b, bt.x, bt.y); if(!comp) return false;
+  const cls=mechShotClass(bt);
+  if(cls==='fire'){
+    /* FIRE HEALS whatever it touches. Deliberately generous enough to notice: a flamethrower
+       player must FEEL that they are repairing him, or the rule reads as the weapon being weak. */
+    const p=K.parts[comp];
+    if(p && p.state!=='destroyed' && p.hp<p.maxhp){
+      p.hp=Math.min(p.maxhp, p.hp+Math.max(1, Math.ceil((bt.dmg||1)*0.75)));
+      p.state=(p.hp/p.maxhp)<0.7 ? 'critical' : 'intact';
+      if(Math.random()<0.25) floatText(bt.x, bt.y-8, '+', '#7fe08a');
+    }
+    if(comp==='torso'){
+      K.rage=Math.min(1,(K.rage||0)+0.045);                   // stoking him toward the ram
+      K.shieldT=Math.max(K.shieldT||0, 0.30);
+    }
+    bt.dead=true;
+    return true;
+  }
+  if(comp!=='torso') return false;                            // limbs take it normally
+  K.shieldT=Math.max(K.shieldT||0, 0.42);
+  if(cls==='laser'){
+    bt.dead=true;                                             // beam terminates ON the plating
+    explode(bt.x, bt.y, 7, 'blue');
+    if(Audio.SFX && Audio.SFX.blocked) Audio.SFX.blocked();
+    return true;
+  }
+  mechDeflect(b, bt);
+  return true;
 }
 function mechDamage(b, comp, dmg){
   const K=b._mech; if(!K) return false;
@@ -25285,14 +25400,20 @@ function mechDraw(b){
      Drawn additively, above the parts and under the FX, so it reads as light ON the plating
      rather than a panel floating in front of it. */
   if(K.shieldT>0 && K.phase==='fight'){
-    const k=1-clamp(K.shieldT/0.42,0,1);                 // 0 at the hit, 1 as it finishes climbing
+    /* RAGE REDDENS AND QUICKENS IT (drop 0809n). Mike: "the white turns more REDDISH, flashes
+       FASTER". Rage only climbs while you are burning the torso, so the sweep IS the meter —
+       the player watches the armour go from white to red and speeds up, and that is the only
+       warning they get before the charge. */
+    const rage=clamp(K.rage||0,0,1);
+    const k=1-clamp(K.shieldT/(0.42*(1-rage*0.55)),0,1);  // same climb, up to ~2.2x faster
     const bh=300*S, yTop=cy+bh*0.42-(k*bh);
     /* WHITE ON THE LAVA, NOT WARM. The ignite beat already established this: its sweep throws the
        colour away and draws pure white "so it reads as light rather than fire and does not fight
        the lava behind him". A warm cream band over a magma field is nearly invisible — measured by
        looking at it. Ice keeps its blue, which has the same contrast job on a white shelf. */
     const cold=(curStage && curStage.bg==='ice');
-    const c0=cold?'150,225,255':'255,255,255';
+    const c0=cold ? '150,225,255'
+                  : (255+',' + Math.round(255-rage*195) + ',' + Math.round(255-rage*215));
     ctx.save();
     ctx.globalCompositeOperation='lighter';
     ctx.globalAlpha=0.55+0.45*Math.sin(k*Math.PI);       // fades in and out across the climb

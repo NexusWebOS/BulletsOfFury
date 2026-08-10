@@ -161,9 +161,29 @@ def main():
         # index.html centres the canvas with a CSS transform, and Locator.screenshot hangs waiting
         # for a transformed element to settle. toDataURL reads the backing store directly, which is
         # both faster and exactly what the game drew — no compositing, no CSS scaling, no chrome.
-        GRAB = ("() => { const c = document.querySelector('#screen-area canvas')"
-                " || document.querySelector('canvas');"
-                " return c ? c.toDataURL('image/png') : null; }")
+        # ⚠ AND TAKE ALL THREE CANVASES, NOT JUST THE GAME (drop 0809m).
+        # index.html has THREE: #hud (480x62), #equipcv (128x128) and #screen (480x512).
+        # This grabbed only #screen, so the HUD strip and the equipment box were invisible to
+        # shoot.py — which is the tool CLAUDE.md names as the one that proves pixels. A HUD bug
+        # was therefore unseeable by the suite AND by the capture, which is how you end up
+        # staring at a frame with no HUD in it and concluding the HUD is broken.
+        # Composited in the same arrangement index.html lays them out: hud row on top, game
+        # below. Falls back to the game canvas alone if the others are absent.
+        GRAB = ("() => {"
+                " const g = document.querySelector('#screen-area canvas') || document.querySelector('canvas');"
+                " if(!g) return null;"
+                " const h = document.querySelector('#hud'), e = document.querySelector('#equipcv');"
+                " if(!h && !e) return g.toDataURL('image/png');"
+                " const hw = h ? h.width : 0, hh = h ? h.height : 0;"
+                " const ew = e ? e.width : 0, eh = e ? e.height : 0;"
+                " const rowH = Math.max(hh, eh), W = Math.max(hw + ew, g.width), H = rowH + g.height;"
+                " const c = document.createElement('canvas'); c.width = W; c.height = H;"
+                " const x = c.getContext('2d');"
+                " x.fillStyle = '#000'; x.fillRect(0, 0, W, H);"
+                " if(h) x.drawImage(h, 0, 0);"
+                " if(e) x.drawImage(e, hw, 0);"
+                " x.drawImage(g, 0, rowH);"
+                " return c.toDataURL('image/png'); }")
 
         import base64
         n = 1 if args.seconds <= 0 else max(1, int(args.seconds * args.fps))
