@@ -168,11 +168,14 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
   zip, and it is in none of the four full-build archives. Its two assertions now FAIL rather than
   throw (a throw there killed the run at section 149 and looked like a pass). Git is the
   reversibility mechanism it existed for; decide whether to retire them.
-- The dam swap is wired and data-driven (`cfg.destroyed`) but points at no art. RC2 ships no
-  destroyed COMPOSITE for stage 1, and its dam objects do not match the dam painted into the
-  plate — template-matched at six scales, all noise. The real fix is drawing stage 1 as
-  Background + placed Objects the way RC2's README intends, which would also give the damaged and
-  breaching states mid-fight.
+- The dam swap is wired and data-driven (`cfg.destroyed`). ⚠ **The art EXISTS** — I twice recorded
+  it as missing and both times that was wrong. `ndam_intact` / `ndam_damaged` / `ndam_breach` /
+  `ndam_destroyed`, 254×350, magenta-keyed, sitting in `assets/game/` and registered in the
+  manifest. It is a full four-stage progression, so it maps onto boss damage tiers rather than
+  being a single end-state swap. What misled me: RC2 ships no destroyed *composite*, and its loose
+  dam objects don't template-match the dam painted into the plate — both true, and both irrelevant,
+  because `ndam_*` is separate art that was already here. **Search `assets/game/` by filename
+  before concluding art is missing** — not just the RC2 pack and not just the atlas cells.
 - ~~The pilot-card hint row renders ENTER as "BNTBR"~~ **fixed in 0809q** — it was the tint, not
   the glyph map. See "A flat tint destroys the glyph" above.
 - Stage 1 fields no camo tank variants yet (`s1tankheavy_b` and friends are registered, unused).
