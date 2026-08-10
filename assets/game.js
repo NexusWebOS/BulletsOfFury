@@ -4425,10 +4425,11 @@ function spawnEnemy(type, x, y, opt={}){
         const _H=(_cfg&&_cfg.h)||4800;
         /* RE-MEASURED FOR THE RC2 PLATE (drop 0809m). 3384 was measured off the old 800x4800
            master and cannot carry over to a different plate of a different height and route.
-           Same method, run on the keyed result: below y=4605 the rows average 86% open water,
-           above it 5%. Note the sea leg is much SHORTER than it was - 515px against 1416 - so
-           the naval opening is a brief run before the beach, which is how RC2 authored it. */
-        const _COAST=4605;                       // measured on jungle800_rc2_master
+           Same method, run on the finished plate: below y=4593 the rows average 98% open
+           water, above it 0% - a cleaner split than the old plate ever had. Note the sea leg
+           is much SHORTER than it was, 527px against 1416, so the naval opening is a brief
+           run before the beach. That is how RC2 authored the route, not a bug to tune out. */
+        const _COAST=4593;                       // measured on jungle800_rc2_master
         const _camY=_H-(mapScroll||0);           // scroll runs bottom -> top
         if(_camY > _COAST){                      // still out over the sea
           /* picked from the spawn POSITION, not Math.random(): the same wave lays
@@ -25132,7 +25133,25 @@ function mechDraw(b){
       const el=_mechElbow(K.tag, c);              // then slide a cannon down onto its arm deck
       const hd=(c==='head')?_mechHeadOffset(K):[0,0];   // and the head floats free
       const gp=[gp0[0]+el[0]+hd[0], gp0[1]+el[1]+hd[1]];
-      const w2=im.naturalWidth*S*0.85, h2=im.naturalHeight*S*0.85;
+      /* ⚠ FIT EACH PIECE TO ITS OWN BOUNDS (drop 0809l).
+         This drew every piece at naturalWidth*S*0.85. S is derived from the 384 MASTER canvas,
+         but a p_ piece is not master-scale: it carries its own socket region, so it is much
+         larger than the box it occupies in the assembled mech. Measured on mbg2, art-to-bounds:
+
+             torso 3.22x/3.63x   left-arm 2.48x/1.85x   left-leg 1.67x/2.48x   head 1.67x/1.43x
+
+         Not the uniform 6x the old note assumed, and different on each axis — which is why one
+         flat factor could never fit them and the Colossus drew as a scatter of oversized limbs
+         with the torso shoved into the corner.
+         Fitting each piece INSIDE its component-map box, uniformly so nothing is stretched. */
+      let _fit=0.85;
+      {
+        const _bd = M.components && M.components[c] && M.components[c].bounds;
+        if(_bd && im.naturalWidth>0 && im.naturalHeight>0){
+          _fit = Math.min((_bd[2]-_bd[0])/im.naturalWidth, (_bd[3]-_bd[1])/im.naturalHeight);
+        }
+      }
+      const w2=im.naturalWidth*S*_fit, h2=im.naturalHeight*S*_fit;
       const px2=cx+(so[0]-192)*S-w2/2+ox+gp[0]*S;
       const py2=cy+(so[1]-192)*S-h2/2+oy+gp[1]*S;
       ctx.drawImage(im, px2, py2, w2, h2);
