@@ -29611,7 +29611,7 @@ function stageWidth(art,text,H,spacingMul){
     if(ch===' '){ w+=H*0.42+sp; continue; }
     const nm=art.font[ch];
     if(!nm||!art.frames[nm]){ w+=H*0.42+sp; continue; }
-    const f=art.frames[nm]; w+=f[2]*(H/f[3])+sp;
+    const f=art.frames[nm]; w+=glyphBox(art,f,H).w+sp;
   }
   return Math.max(0,w-sp);
 }
@@ -29662,19 +29662,61 @@ function stageWrap(art,text,x,y,H,maxW,lineMul,alpha,spacingMul){
   flush();
   return n;
 }
+/* ============================================================
+   CAP-HEIGHT GLYPH METRICS (drop 0809n)
+
+   Every one of these renderers drew EACH glyph at the full line height H, with only the
+   width scaled to keep its aspect. For letters that is fine - measured, all 26 letters and
+   all 10 digits in the BOF font are EXACTLY 254 tall, one distinct height between them. For
+   punctuation it is destructive: the period is authored 64x66, a quarter of cap height, and
+   was being stretched to a full-height near-square. That is the block Mike sees as a period.
+   The hyphen is 111x66 and came out a bar wider than it is tall.
+
+   The font is right; the renderer was wrong. Scaling everything by the CAP height instead
+   preserves each glyph's authored proportion:
+
+       period 0.26 of cap    comma 0.41    apostrophe 0.36    colon 0.58    ! and ? 0.87
+
+   Letters are unaffected BY CONSTRUCTION - they are all exactly cap height, so their scale
+   is unchanged and every existing banner, menu and label renders identically. Only
+   punctuation moves, and it moves to what the artist drew.
+
+   Glyphs are bottom-aligned in the cap box, because a period belongs on the baseline and
+   not floating at cap height. Letters, being full height, sit exactly where they always did.
+   ============================================================ */
+function fontCapH(art){
+  if(!art || !art.font || !art.frames) return 0;
+  if(art._capH != null) return art._capH;
+  let cap = 0;
+  for(const ch of 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789'){
+    const nm = art.font[ch], f = nm && art.frames[nm];
+    if(f && f[3] > cap) cap = f[3];
+  }
+  try{ art._capH = cap; }catch(_){}
+  return cap;
+}
+/* returns {w,h,dy} for one glyph on a line of height H. dy bottom-aligns it in the cap box.
+   Falls back to the old full-height behaviour when a font exposes no letters to measure. */
+function glyphBox(art, f, H){
+  const cap = fontCapH(art);
+  if(!(cap > 0)) return {w: f[2]*(H/f[3]), h: H, dy: 0};
+  const sc = H / cap;
+  const gh = f[3]*sc;
+  return {w: f[2]*sc, h: gh, dy: H - gh};
+}
 function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
   if(!art||!art.font) return;
   const sp=(spacingMul==null?0.10:spacingMul)*H; const items=[]; let total=0;
   for(const ch of String(text).toUpperCase()){
     if(ch===' '){ items.push(null); total+=H*0.42+sp; continue; }
     const nm=art.font[ch]; if(!nm||!art.frames[nm]){ items.push(null); total+=H*0.42+sp; continue; }
-    const f=art.frames[nm], w=f[2]*(H/f[3]); items.push([f,w]); total+=w+sp;
+    const f=art.frames[nm], gb=glyphBox(art,f,H); items.push([f,gb.w,gb]); total+=gb.w+sp;
   }
   total-=sp; let x=cx-total/2;
   for(const it of items){
     if(!it){ x+=H*0.42+sp; continue; }
-    const f=it[0], w=it[1];
-    drawFrameTinted(art.img,f,Math.round(x),Math.round(cy-H/2),Math.round(w),Math.round(H),tintC,tintA,alpha);
+    const f=it[0], w=it[1], gb=it[2];
+    drawFrameTinted(art.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
     x+=w+sp;
   }
 }
@@ -29697,13 +29739,13 @@ function msgText(text,cx,cy,H,tintC,tintA,alpha,spacingMul){
     let art=a1, nm=a1.font[ch];
     if((!nm||!a1.frames[nm]) && a2 && a2.font && a2.font[ch] && a2.frames[a2.font[ch]]){ art=a2; nm=a2.font[ch]; }
     if(!nm||!art.frames[nm]){ items.push(null); total+=H*0.42+sp; continue; }
-    const f=art.frames[nm], w=f[2]*(H/f[3]); items.push([art,f,w]); total+=w+sp;
+    const f=art.frames[nm], gb=glyphBox(art,f,H); items.push([art,f,gb.w,gb]); total+=gb.w+sp;
   }
   total-=sp; let x=cx-total/2;
   for(const it of items){
     if(!it){ x+=H*0.42+sp; continue; }
-    const art=it[0], f=it[1], w=it[2];
-    drawFrameTinted(art.img,f,Math.round(x),Math.round(cy-H/2),Math.round(w),Math.round(H),tintC,tintA,alpha);
+    const art=it[0], f=it[1], w=it[2], gb=it[3];
+    drawFrameTinted(art.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
     x+=w+sp;
   }
 }
@@ -31173,11 +31215,11 @@ function stageTextMixed(prim, fb, text, cx, cy, H, fbTint, alpha, sm){
     let art=prim, nm=(prim&&prim.font)?prim.font[ch]:null, tint=null;
     if(!nm || !prim.frames[nm]){ art=fb; nm=(fb&&fb.font)?fb.font[ch]:null; tint=fbTint; }
     if(!art || !nm || !art.frames[nm] || !art.img){ items.push(null); total+=H*0.42+sp; continue; }
-    const f=art.frames[nm], w=f[2]*(H/f[3]); items.push([art,f,w,tint]); total+=w+sp;
+    const f=art.frames[nm], gb=glyphBox(art,f,H); items.push([art,f,gb.w,tint,gb]); total+=gb.w+sp;
   }
   let x=cx-(total-sp)/2;
-  for(const it of items){ if(!it){ x+=H*0.42+sp; continue; } const a=it[0],f=it[1],w=it[2],tint=it[3];
-    if(tint) drawFrameTinted(a.img,f,x,cy-H/2,w,H,tint,1.0,alpha); else drawFrameTinted(a.img,f,x,cy-H/2,w,H,null,null,alpha);
+  for(const it of items){ if(!it){ x+=H*0.42+sp; continue; } const a=it[0],f=it[1],w=it[2],tint=it[3],gb=it[4];
+    if(tint) drawFrameTinted(a.img,f,x,cy-H/2+gb.dy,w,gb.h,tint,1.0,alpha); else drawFrameTinted(a.img,f,x,cy-H/2+gb.dy,w,gb.h,null,null,alpha);
     x+=w+sp; }
 }
 function fmtTime(s){ s=Math.max(0,Math.round(s)); const m=Math.floor(s/60), ss=s%60; return m+':'+String(ss).padStart(2,'0'); }
@@ -31311,7 +31353,7 @@ function _tw(art, text, H, sp){
   const s=(sp==null?0.10:sp)*H; let t=0;
   for(const ch of String(text).toUpperCase()){
     const nm=art.font[ch], f=nm&&art.frames[nm];
-    t += (f? f[2]*(H/f[3]) : H*0.42) + s;
+    t += (f? glyphBox(art,f,H).w : H*0.42) + s;
   }
   return Math.max(0,t-s);
 }
