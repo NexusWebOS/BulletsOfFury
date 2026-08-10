@@ -4434,11 +4434,11 @@ function spawnEnemy(type, x, y, opt={}){
         const _H=(_cfg&&_cfg.h)||4800;
         /* RE-MEASURED FOR THE RC2 PLATE (drop 0809m). 3384 was measured off the old 800x4800
            master and cannot carry over to a different plate of a different height and route.
-           Same method, run on the finished plate: below y=4593 the rows average 98% open
+           Same method, run on the finished plate: below y=4595 the rows average 98% open
            water, above it 0% - a cleaner split than the old plate ever had. Note the sea leg
            is much SHORTER than it was, 527px against 1416, so the naval opening is a brief
            run before the beach. That is how RC2 authored the route, not a bug to tune out. */
-        const _COAST=4593;                       // measured on jungle800_rc2_master
+        const _COAST=4595;                       // measured on jungle800_rc2_master
         const _camY=_H-(mapScroll||0);           // scroll runs bottom -> top
         if(_camY > _COAST){                      // still out over the sea
           /* picked from the spawn POSITION, not Math.random(): the same wave lays
