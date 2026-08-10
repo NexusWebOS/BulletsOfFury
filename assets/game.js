@@ -23180,6 +23180,19 @@ function genesisUpdate(b, dt){
       if(b._mech){
         const K=b._mech;
         K.phase='fight';
+        /* ⚠ THE GENESIS MECHS WERE INVULNERABLE (drop 0809n).
+           mechHitPart refuses any part with docked=false, and docked is only ever set by
+           mechUpdate's ASSEMBLE phase — which a genesis boss never runs, because updateBoss
+           returns early the whole time _gen is alive and ignite then jumps straight to 'fight'.
+           So every part stayed docked=false for the entire fight.
+
+           Measured: all 8 parts docked=0, and 957 probes over the whole rig found NOTHING
+           hittable. The Magma Colossus and the Cryo Behemoth could not be damaged by any shot,
+           which is exactly what Mike meant by the level 2 and 3 bosses not working.
+
+           The genesis sequence has just finished physically seating every piece, so this is
+           only telling the hit test what the choreography already did. */
+        for(const c in K.parts){ if(K.parts[c]) K.parts[c].docked=true; }
         /* ⚠ THE HAUL IS CHOREOGRAPHY, NOT A HEALTH POOL (drop 0809m).
            This used to overwrite every part with a flat GEN_LIMB_HP share and stamp _limb on it,
            which made mechDamage route a hit to the whole haul group. That was survivable while a
@@ -23575,7 +23588,12 @@ function mechUpdate(b, dt){
 function mechHitPart(b, wx, wy){
   const K=b._mech; if(!K) return null;
   const M=_mechMeta(K.tag); if(!M) return null;
-  const S=(b.w/ (M.canvas?M.canvas[0]:384)) * (K.scale||1);
+  /* ⚠ THE HIT TEST MUST USE THE DRAW'S SCALE (drop 0809n).
+     This omitted MECH_SCALE, which mechDraw applies — 0.75 on the Colossus. So every hitbox
+     sat 1.33x larger than the piece you can see and spread further from the centre: you could
+     miss the cannon you were aiming at and clip one that was not there. Same expression as the
+     draw, so what you shoot is what is drawn. */
+  const S=(b.w/ (M.canvas?M.canvas[0]:384)) * (K.scale||1) * (MECH_SCALE[K.tag]||1);
   const cx=b.x, cy=(b._drawY!=null?b._drawY:b.y);
   // walk FRONT to back so the topmost piece takes the hit — same order the draw uses, or the
   // piece you can see is not the piece you hit

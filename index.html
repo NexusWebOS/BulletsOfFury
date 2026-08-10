@@ -118,8 +118,16 @@
       if(run && !window.player.dead && run.weapon!=null){
         var wt=WT[run.weapon]||'mg';
         var wlv=Math.max(1,Math.min(5,(run.wlevels&&run.wlevels[run.weapon])||run.wlevel||1));
-        var ik='micon_'+wt+'_'+wlv;
-        if(X.rdy(ik)){
+        /* ⚠ micon_* DOES NOT EXIST. NOT ONE OF THE 30 KEYS THIS ASKED FOR IS REGISTERED,
+           so the box has been drawing its frame and never an icon. The convention that is
+           actually in the manifest is <weapon>_icon_<level>, with iceorb filed under "ice".
+           Tried in order, so if micon_ is ever added it still wins, and an unlevelled
+           <weapon>_icon catches anything without a ladder. */
+        var alt = (wt==='iceorb') ? 'ice' : wt;
+        var cands = ['micon_'+wt+'_'+wlv, alt+'_icon_'+wlv, alt+'_icon_1', alt+'_icon'];
+        var ik = null;
+        for(var ci=0; ci<cands.length; ci++){ if(X.rdy(cands[ci])){ ik = cands[ci]; break; } }
+        if(ik){
           var im=X.get(ik), fit=W*0.52, ss=Math.min(fit/im.naturalWidth, fit/im.naturalHeight);
           var cx=W*0.499, cy=H*0.505;
           g.save(); g.shadowColor='#ffb24a'; g.shadowBlur=6;
