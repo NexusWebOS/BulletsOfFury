@@ -814,7 +814,7 @@ const XART=(function(){
      The BOSS sheets (87, 88) are deliberately NOT here: they are 10MB between them and are not
      needed until the end of a stage, by which point lazy loading has had minutes. Preloading
      them would put that on the boot path for no gain. */
-  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nca_8[0-2]|nca_86)/;
+  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nca_8[0-2]|nca_86|nca_8[7-9]|aintro_)/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
   /* get() MUST NEVER HAND drawImage A NULL (drop 0724dq).
      Mike is seeing THOUSANDS of draw errors mentioning HTMLImageElement. That is this:
@@ -1996,8 +1996,17 @@ function drawCutscene(sc){
   }
   // 6. dialogue frame  7. name + emblem  8. text
   const dx=X(18), dy=Y(350), dw=S(604), dh=S(112);
-  ctx.fillStyle='rgba(6,9,14,0.90)'; ctx.fillRect(dx,dy,dw,dh);
-  ctx.strokeStyle=sc.tint||'#ffb347'; ctx.lineWidth=Math.max(2,S(2)); ctx.strokeRect(dx,dy,dw,dh);
+  /* ⚠ THE REAL DIALOGUE WINDOW, NOT A DRAWN RECTANGLE (drop 0809p). Mike: "no faux boxes. use
+     the dialogue windows we have if needed." This was a fillRect plus a strokeRect, which is
+     why the cutscene frame read as a plain outlined box against hand-painted backgrounds while
+     dlg_window - the authored panel every other dialogue path already uses - sat unused.
+     The stroke stays only as the fallback for the frames before the art has decoded. */
+  if(typeof XART!=='undefined' && XART.rdy('dlg_window')){
+    ctx.drawImage(XART.get('dlg_window'), dx, dy, dw, dh);
+  } else {
+    ctx.fillStyle='rgba(6,9,14,0.90)'; ctx.fillRect(dx,dy,dw,dh);
+    ctx.strokeStyle=sc.tint||'#ffb347'; ctx.lineWidth=Math.max(2,S(2)); ctx.strokeRect(dx,dy,dw,dh);
+  }
   const spk=sc[sc.speaking||'left'];
   if(spk){
     const ek='pemb_'+spk.pilot;
@@ -3373,7 +3382,7 @@ const Input = (()=>{
 let PENDING_STAGE=1;   // stage the next run starts at (password sets this, pilot-select consumes it)
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
-  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIVAL:'rival', FLYOVER:'flyover', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', OUTBOUND:'outbound', OPENING:'opening' };
+  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIVAL:'rival', FLYOVER:'flyover', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening' };
 let state = GS.BOOT;
 /* ============================================================
    DEBUG SWITCHBOARD (drop 0724do)
@@ -19573,6 +19582,7 @@ function drawScene(dt){
   switch(state){
     case GS.OPENING: return drawOpening(dt);
     case GS.BOOT:    return drawBoot(dt);
+    case GS.ATTRACT: return drawAttract(dt);
     case GS.LOADING: return drawLoading(dt);
     case GS.TITLE:   return drawTitle(dt);
     case GS.DIFF:    return drawDiff(dt);
@@ -19598,6 +19608,77 @@ function drawScene(dt){
 }
 
 /* BOOT — press-start gate (unlocks audio) then ColeForge cinematic */
+/* ============================================================
+   THE ARCADE ATTRACT REEL (drop 0809p)
+
+   Mike: "after the ColeForge logo does its thing, use the music for the main menu as before
+   and do the arcade intros that eventually lead to the main menu with BULLETS OF FURY!
+   playing. They may press any button or start to get to the main menu at any time, flashing
+   on the bottom like a true arcade game."
+
+   Nine 640x480 plates, one per pilot, each already flattened by the pack - background, pilot
+   layer, header and nameplate are composited in, so this does not need to re-stage the
+   entrance. Timing follows the pack's own manifest (180/240/120/180/900/220ms), collapsed to
+   fade / hold / fade because the beats inside the plate are already drawn.
+
+   TWO THINGS THAT MAKE IT READ AS A CABINET RATHER THAN A SLIDESHOW:
+
+     THE MUSIC NEVER RESTARTS. drawBoot starts 'title' when the logo finishes and the reel
+     does not touch it, so one unbroken piece runs from the logo, through all nine pilots, and
+     into the menu. Restarting it at the menu is the obvious implementation and it is wrong -
+     you hear the seam.
+
+     THE PROMPT FLASHES THROUGHOUT and any input takes it, at any moment, including mid-fade.
+     An attract reel you cannot escape is a cutscene.
+
+   THE TIMER DOES NOT ADVANCE UNTIL THE PLATE IS READY. These are ~400KB each and lazily
+   decoded; without the hold the reel would run its whole 15 seconds against black and drop
+   you at the menu having shown nothing. Learned the hard way this session - XART.rdy() also
+   returns false on its FIRST call, because that call is what starts the load, so the hold
+   doubles as the poll that fetches them.
+   ============================================================ */
+const ATTRACT_ORDER = ['cole','axel','lizzie','falva','yuri','maverick','decker','freezer','juggernaut'];
+const ATT_IN=0.34, ATT_HOLD=1.32, ATT_OUT=0.30;
+const ATT_ONE = ATT_IN+ATT_HOLD+ATT_OUT;
+let attractI=0, attractT=0;
+function attractStart(){ attractI=0; attractT=0; setState(GS.ATTRACT); }
+function attractToTitle(){
+  /* NO startMusic here, on purpose - see above. The title track is already playing. */
+  setState(GS.TITLE); menuIndex=0;
+}
+function drawAttract(dt){
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
+  /* any input, any time - the whole point of an attract mode */
+  if(stateT>0.12 && (Input.mouse.down || (typeof anyTap==='function' && anyTap()))){ attractToTitle(); return; }
+  if(attractI>=ATTRACT_ORDER.length){ attractToTitle(); return; }
+
+  const k='aintro_'+ATTRACT_ORDER[attractI];
+  const ready = (typeof XART!=='undefined') && XART.rdy(k);
+  if(ready){
+    attractT+=dt;                                   // only once there is something to show
+    const im=XART.get(k);
+    const s=Math.min(VW/im.naturalWidth, VH/im.naturalHeight);
+    const w=im.naturalWidth*s, h=im.naturalHeight*s;
+    let a=1;
+    if(attractT<ATT_IN) a=attractT/ATT_IN;
+    else if(attractT>ATT_IN+ATT_HOLD) a=(ATT_ONE-attractT)/ATT_OUT;
+    ctx.save();
+    ctx.imageSmoothingEnabled=false;                // nearest-neighbour, per the pack contract
+    ctx.globalAlpha=clamp(a,0,1);
+    ctx.drawImage(im, (VW-w)/2, (VH-h)/2, w, h);
+    ctx.restore();
+    ctx.globalAlpha=1;
+    if(attractT>=ATT_ONE){ attractT=0; attractI++; }
+  }
+  /* THE PROMPT IS BOF TEXT, AND IT IS THE ONLY TEXT (drop 0809p). Mike: "you should be using
+     our BOF text too, no faux boxes." The second line was a system monospace face, which is
+     precisely the mismatch the single-face rule exists to stop - and a real cabinet flashes
+     ONE line, not a caption under it. */
+  if(Math.floor(stateT*1.7)%2){
+    const _f=(typeof uiFontArt==='function')?uiFontArt():null;
+    if(_f && typeof stageText==='function') stageText(_f,'PRESS START', VW/2, VH-24, 14, '#ffe082',0.9,1,0.10);
+  }
+}
 function drawBoot(dt){
   ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
   // ---- gate: wait for a gesture so the chime + music are allowed to play ----
@@ -19642,7 +19723,13 @@ function drawBoot(dt){
     ctx.restore();
     ctx.globalAlpha=1;
     if(!drawBoot._chimed && t>0.15){ drawBoot._chimed=true; if(BootChime) BootChime.play(); }
-    if(t>DONE){ setState(GS.TITLE); menuIndex=0; Audio.startMusic('title'); }
+    /* THE LOGO HANDS OFF TO THE ATTRACT REEL, NOT STRAIGHT TO THE TITLE (drop 0809p).
+       Mike: "after the ColeForge logo does its thing, use the music for the main menu as
+       before and do the arcade intros that eventually lead to the main menu."
+       The music starts HERE and is deliberately NOT restarted when the reel ends, so it plays
+       unbroken from the logo through the nine pilots and into the menu - one continuous piece,
+       the way an arcade cabinet sounds. */
+    if(t>DONE){ Audio.startMusic('title'); attractStart(); }
     return;
   }
   // star tile parallax — scroll DOWN, fade in then out
@@ -27336,12 +27423,19 @@ function campHubSay(m){ campHubMsg=m; campHubMsgT=2.2; }
    stands W*293/1085 tall — 78px at W=290. A 62px gap had them overlapping. The gap is
    the drawn height plus air, and four of them still clear the footer at VH=512. */
 const CAMPHUB_W=290, CAMPHUB_H=Math.round(CAMPHUB_W*293/1085), CAMPHUB_GAP=CAMPHUB_H+8, CAMPHUB_Y0=150;
+/* one place for the hub's text so it can never drift back to a system face (drop 0809p) */
+function campText(str, cx, cy, h, col, alpha){
+  const f=(typeof uiFontArt==='function')?uiFontArt():null;
+  if(f && typeof stageText==='function'){ stageText(f, str, cx, cy, h, col||null, 0.9, (alpha==null?1:alpha), 0.08); return; }
+  ctx.textAlign='center'; ctx.fillStyle=col||'#cfd6e0';
+  ctx.font='bold '+Math.round(h)+'px "BOFmil", monospace';
+  ctx.fillText(str, cx, cy);
+}
 function drawCampaignHub(dt){
   ctx.fillStyle='#080611'; ctx.fillRect(0,0,VW,VH);
   for(const s of starField){ s.y=(s.y+s.z*1.5*dt*60)%VH; ctx.fillStyle=s.z>1?'#cfe2ff':'#4455aa'; ctx.fillRect(s.x|0,s.y|0,2,2); }
   ctx.textAlign='center';
-  ctx.fillStyle='#ffe682'; ctx.font='bold 20px "BOFmil", monospace';
-  ctx.fillText('CAMPAIGN', VW/2, 64);
+  campText('CAMPAIGN', VW/2, 62, 20, '#ffe682');
   if(campPick){ drawCampSlots(dt); ctx.textAlign='left'; return; }
   for(let i=0;i<CAMPHUB_ITEMS.length;i++){
     const it=CAMPHUB_ITEMS[i], on=campHubEnabled(it.act), sel=(i===campHubIndex);
@@ -27363,30 +27457,45 @@ function drawCampaignHub(dt){
     }
   }
   if(campHubMsgT>0){ campHubMsgT-=dt;
-    ctx.fillStyle='#9fe8a0'; ctx.font='10px "BOFmil", monospace'; ctx.fillText(campHubMsg, VW/2, VH-40); }
-  ctx.globalAlpha=0.55+0.45*Math.sin(stateT*5); ctx.fillStyle='#cfd6e0'; ctx.font='10px "BOFmil", monospace';
-  ctx.fillText('ARROWS: SELECT   FIRE: CONFIRM   BACK: MODE SELECT', VW/2, VH-18);
+    campText(campHubMsg, VW/2, VH-40, 12, '#9fe8a0'); }
+  campText('ARROWS SELECT   FIRE CONFIRM   BACK MODE SELECT', VW/2, VH-18, 11, '#cfd6e0',
+           0.55+0.45*Math.sin(stateT*5));
   ctx.globalAlpha=1; ctx.textAlign='left';
   campHubInput();
 }
 function drawCampSlots(dt){
-  ctx.fillStyle='#cfd6e0'; ctx.font='bold 13px "BOFmil", monospace';
-  ctx.fillText(campPick==='save'?'SAVE TO WHICH SLOT?':'LOAD WHICH SLOT?', VW/2, 108);
+  campText(campPick==='save'?'SAVE TO WHICH SLOT?':'LOAD WHICH SLOT?', VW/2, 106, 13, '#cfd6e0');
   for(let i=0;i<CAMP_SLOTS;i++){
     const cy=170+i*54, sel=(i===campHubIndex), used=campSlotUsed(i);
     const on=(campPick==='save') || used;                  // loading an empty slot is not an action
     const w=330, h=42, x=VW/2-w/2, y=cy-h/2;
-    octFill(x,y,w,h,6, sel?'#3a3032':'#1a1d22');
-    ctx.strokeStyle= sel?'#ff3a3a':'#5a5d63'; ctx.lineWidth=2; ctx.strokeRect(x,y,w,h);
+    /* ⚠ THE AUTHORED FRAME, NOT A DRAWN ONE (drop 0809p). Mike: "no faux boxes. use the
+       dialogue windows we have if needed." These rows were an octFill plus a strokeRect,
+       which is exactly the hand-drawn panel that rule exists to stop, sitting under art
+       menus everywhere else in the game. dlg_window is the authored panel. */
+    if(typeof XART!=='undefined' && XART.rdy('dlg_window')){
+      ctx.save(); if(!sel) ctx.globalAlpha=0.72;
+      ctx.drawImage(XART.get('dlg_window'), x, y, w, h);
+      ctx.restore();
+    } else {
+      octFill(x,y,w,h,6, sel?'#3a3032':'#1a1d22');
+      ctx.strokeStyle= sel?'#ff3a3a':'#5a5d63'; ctx.lineWidth=2; ctx.strokeRect(x,y,w,h);
+    }
     ctx.save(); if(!on) ctx.globalAlpha=0.4;
-    ctx.fillStyle= sel?'#ffffff':'#cfd6e0'; ctx.font='11px "BOFmil", monospace';
-    ctx.fillText(campSlotLabel(i), VW/2, cy+4);
+    /* and the label in the BOF face, like every other menu */
+    const _sf=(typeof uiFontArt==='function')?uiFontArt():null;
+    if(_sf && typeof stageText==='function'){
+      stageText(_sf, campSlotLabel(i), VW/2, cy+2, 14, sel?'#ffffff':'#cfd6e0', 0.9, 1, 0.06);
+    } else {
+      ctx.fillStyle= sel?'#ffffff':'#cfd6e0'; ctx.font='11px "BOFmil", monospace';
+      ctx.fillText(campSlotLabel(i), VW/2, cy+4);
+    }
     ctx.restore();
   }
   if(campHubMsgT>0){ campHubMsgT-=dt;
-    ctx.fillStyle='#9fe8a0'; ctx.font='10px "BOFmil", monospace'; ctx.fillText(campHubMsg, VW/2, VH-40); }
-  ctx.globalAlpha=0.55+0.45*Math.sin(stateT*5); ctx.fillStyle='#cfd6e0'; ctx.font='10px "BOFmil", monospace';
-  ctx.fillText('ARROWS: SELECT   FIRE: CONFIRM   BACK: CANCEL', VW/2, VH-18);
+    campText(campHubMsg, VW/2, VH-40, 12, '#9fe8a0'); }
+  campText('ARROWS SELECT   FIRE CONFIRM   BACK CANCEL', VW/2, VH-18, 11, '#cfd6e0',
+           0.55+0.45*Math.sin(stateT*5));
   ctx.globalAlpha=1;
   campSlotInput();
 }

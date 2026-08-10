@@ -109,6 +109,18 @@
   var WT={0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'};
   window.__drawEquipDom=function(px){
     var W=cv.width, H=cv.height; g.clearRect(0,0,W,H);
+    /* GAMEPLAY ONLY (drop 0809p). The box was drawn in every state, so the boot logo, the
+       arcade attract reel and the pilot select all carried an EQUIPPED panel hanging over
+       them. It belongs to the run, not to the app. Cleared above, so hiding is simply
+       returning early. */
+    /* ⚠ NOT window.state. game.js declares it with `let` at top level, which creates a LEXICAL
+       global - reachable as a bare identifier from another classic script, but never a property
+       of window. Reading window.state gives undefined and would hide the box in every state,
+       including gameplay. */
+    var st = null;
+    try { st = state; } catch(e) { st = null; }
+    if(st !== null &&
+       !(st==='play' || st==='paused' || st==='stageclear' || st==='continue' || st==='gameover')) return;
     var X=(window.XART||null);
     if(!X || !X.rdy || !X.rdy('nequipbox')) return;
     var box=X.get('nequipbox');
