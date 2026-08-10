@@ -110,3 +110,41 @@ Use `--seconds/--fps` for anything needing art loaded on entry.
 
 ⚠ **The boss is being wired in another chat, in this same working tree.** Check `git log` before
 assuming a change is yours, and coordinate before touching boss code.
+
+---
+
+## Appendix — the bridge rescale, four attempts deep
+
+`jungle800_rc2_master.png` is **untouched**; all work went to scratchpad. Mike: "Scale it as best
+as possible."
+
+**Settled:** band is **y 2290–2880**, full width. **0.65 is the right scale** — confirmed visually,
+the structure stops dominating and reads as part of the jungle.
+
+**The approach that works** is: mask the stone, heal the band with jungle, scale *only* the masked
+structure, composite it back. Do **not** scale a rectangular crop — attempt 2 proved the jungle
+inside the crop ends up at 65% while the jungle around it is native scale, and the rectangle's edge
+is plainly visible however much you feather it.
+
+**Calibrated stone gate** (measured, don't re-derive):
+
+```
+sat < 32  and  50 < lum < 210        -> 29.4% of the band   ✅ correct shape
+```
+
+Traps already hit, each cost an attempt:
+
+1. Adding a dark clause (`sat<46 and lum<=45`) to catch tower interiors floods the mask — the
+   canopy is full of low-saturation shadow. It went ~100% white. Don't.
+2. `MaxFilter(9)` then dilates that flood over everything. Keep morphology gentle (5/5).
+3. Tiling the fill with an alternating vertical flip makes the two halves near-mirrors and
+   duplicates a river. Sample each patch at the **same x**, never flipped.
+
+**What is still wrong, and it is the only thing left:** the mask has interior speckle holes and I
+Gaussian-blurred it, so the structure composites *semi-transparent* and reads as a ghost with
+jungle showing through. Fix: fill holes properly (flood-fill the mask's interior, or a much larger
+close) and use **hard alpha** in the interior — feather only the outer boundary, not the whole
+mask.
+
+Then cover Mike's seam at **y 2760–2875** *after* the rescale, since scaling moves where the span
+lands.
