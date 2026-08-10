@@ -2013,14 +2013,23 @@ function drawCutscene(sc){
     if(XART._src && XART._src[ek] && XART.rdy(ek)){
       const em=XART.get(ek), eh=S(26), ew=eh*(em.naturalWidth/em.naturalHeight);
       ctx.drawImage(em, dx+S(10), dy+S(6), ew, eh);
-      if(typeof stageWidth==='function' && ASSETS.stageFont && ASSETS.stageFont['1'])
-        stageText(ASSETS.stageFont['1'], String(spk.name||spk.pilot).toUpperCase(),
-                  dx+S(10)+ew+S(6)+stageWidth(ASSETS.stageFont['1'],String(spk.name||spk.pilot),S(15),0.06)/2,
-                  dy+S(18), S(15), null,null,1,0.06);
+      /* the BOF face, like everything else - this was still on the old v3 stage font (drop 0809p) */
+      const _cf=(typeof uiFontArt==='function')?uiFontArt():null;
+      if(_cf && typeof stageWidth==='function')
+        stageText(_cf, String(spk.name||spk.pilot).toUpperCase(),
+                  dx+S(10)+ew+S(6)+stageWidth(_cf,String(spk.name||spk.pilot),S(16),0.06)/2,
+                  dy+S(19), S(16), null,null,1,0.06);
     }
   }
-  if(sc.text && typeof stageWrap==='function' && ASSETS.stageFont && ASSETS.stageFont['1'])
-    stageWrap(ASSETS.stageFont['1'], sc.text, dx+S(12), dy+S(46), S(13), dw-S(24), 1.45, 1, 0.05);
+  {
+    const _cf2=(typeof uiFontArt==='function')?uiFontArt():null;
+    /* S(15) and three lines of room. Sized purely for FIT - the bible's longest line is 118
+       characters and needs three lines inside a 112-unit frame. Legibility is not a factor in
+       the number: the E-reads-as-B problem was the tint, fixed at drawFrameTinted, and this
+       face is clean down to 11px once the shadow survives. */
+    if(sc.text && typeof stageWrap==='function' && _cf2)
+      stageWrap(_cf2, sc.text, dx+S(12), dy+S(44), S(15), dw-S(24), 1.40, 1, 0.05);
+  }
   ctx.restore();
   return true;
 }
@@ -3382,7 +3391,7 @@ const Input = (()=>{
 let PENDING_STAGE=1;   // stage the next run starts at (password sets this, pilot-select consumes it)
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
-  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIVAL:'rival', FLYOVER:'flyover', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening' };
+  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIVAL:'rival', FLYOVER:'flyover', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene' };
 let state = GS.BOOT;
 /* ============================================================
    DEBUG SWITCHBOARD (drop 0724do)
@@ -10354,6 +10363,7 @@ function startRun(fromStage=1){
      a Cole sonic test left run.sonicT set and the Lizzie block that ran after it fired
      nothing at all, because pShoot returned on the sonic branch before reaching the mount. */
   run.sonicT=0; run._sonicCd=0; run._lzCd=0;
+  if(typeof hqSeen!=='undefined') hqSeen={};      // a fresh run plays the HQ scenes again
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
   if(typeof lzMount!=='undefined') lzMount=null;
   run.weapon=0; run.wlevel=0; run.wlevels=[0,0,0,0,0,0]; run.speed=0; run.speedT=0; run.speedLevel=0; run.shield=0; run.power=0; run.missileLevel=0; run._mslCd=0;   // 0 = basic MG (pilot stat-card fire rate); other weapons not yet acquired
@@ -19583,6 +19593,7 @@ function drawScene(dt){
     case GS.OPENING: return drawOpening(dt);
     case GS.BOOT:    return drawBoot(dt);
     case GS.ATTRACT: return drawAttract(dt);
+    case GS.CUTSCENE: return drawCutsceneState(dt);
     case GS.LOADING: return drawLoading(dt);
     case GS.TITLE:   return drawTitle(dt);
     case GS.DIFF:    return drawDiff(dt);
@@ -19678,6 +19689,186 @@ function drawAttract(dt){
     const _f=(typeof uiFontArt==='function')?uiFontArt():null;
     if(_f && typeof stageText==='function') stageText(_f,'PRESS START', VW/2, VH-24, 14, '#ffe082',0.9,1,0.10);
   }
+}
+
+/* ============================================================
+   FURY HQ CUTSCENES (drop 0809q)
+
+   CF_FuryHQCutscenes-Vol.1 shipped 224 files and a bible - ColeForge's own
+   FuryHQ-Cutscene-Bible.md - and none of it was reachable. drawCutscene() could already
+   compose a scene (background, up to three bottom-aligned portraits, the dlg_window frame,
+   emblem, name, body text) and NOTHING CALLED IT. What was missing was a state: something
+   that owns the screen, holds input, types a line at a time and knows what comes next.
+
+   The eight ensemble scenes below are the bible's, verbatim, with the curly quotes stripped
+   because this face has no double-quote glyph. Pose numbers map to the pack's six sheets -
+   idle 0, smile 1, anger 2, laugh 3, sad 4, victory 5.
+
+   STAGING: two slots, and a speaker never moves once seated. Whoever talks takes the slot the
+   PREVIOUS speaker is not in, so a back-and-forth stays put instead of the portraits jumping
+   sides on every line - and the listener stays on screen, dimmed, which is what makes it read
+   as a conversation rather than a slideshow of single portraits.
+   ============================================================ */
+const HQ_SCENES = [
+  {id:'HQ_ALL_00', title:"Nine Chairs, Eight Names", lines:[
+    ['cole',0,"Every military network on Earth is compromised. Every civilian system connected to it is becoming a weapon."],
+    ['axel',2,"Then command authority transfers to the surviving Airforce structure."],
+    ['cole',0,"There is no surviving structure. There is this room."],
+    ['maverick',1,"Good. Less paperwork."],
+    ['yuri',2,"And less supervision. That is not the advantage you think it is."],
+    ['falva',1,"Eight pilots, nine stations. Either Cole cannot count, or somebody is late."],
+    ['cole',0,"That station is not part of today's briefing."],
+    ['lizzie',0,"Then brief the eight who are."],
+    ['decker',0,"The impact was not a comet. It transmitted before it touched the ground."],
+    ['freezer',0,"Destination?"],
+    ['cole',5,"Meridian Basin. We cut a road through everything between here and there."]
+  ]},
+  {id:'HQ_ALL_01', title:"Trust Is a Weapon", lines:[
+    ['decker',0,"The dam defense grid was waiting for our exact approach vector."],
+    ['axel',2,"That route existed on one closed briefing terminal."],
+    ['maverick',2,"So we have a rat."],
+    ['falva',0,"Or the Signal can predict obvious people. You fly like a bar fight."],
+    ['maverick',3,"A winning bar fight."],
+    ['yuri',2,"You broke formation three times."],
+    ['cole',0,"Nobody leaves the room accused and nobody leaves it cleared. From now on, routes are carried by hand."],
+    ['decker',0,"Analog secrecy will slow us."],
+    ['cole',2,"Staying alive is allowed to take longer."]
+  ]},
+  {id:'HQ_ALL_02', title:"Chain of Command", lines:[
+    ['axel',2,"Your improvisation turned an extraction into a collapse."],
+    ['cole',2,"Your formation left a burning aircraft outside the shield."],
+    ['freezer',0,"One pilot."],
+    ['freezer',2,"Then the calculation is wrong."],
+    ['lizzie',0,"Enough. Cole chooses the objective. Axel commands the formation. Either man exceeds that boundary, I end the argument."],
+    ['maverick',1,"With diplomacy?"],
+    ['lizzie',0,"With the payload elevator."],
+    ['falva',3,"I vote Lizzie."]
+  ]},
+  {id:'HQ_ALL_03', title:"The Man Behind the Door", lines:[
+    ['cole',2,"You entered a vault that does not exist."],
+    ['decker',0,"I entered it because it exists."],
+    ['axel',2,"Order of the Matrix. You were placed inside Fury."],
+    ['decker',0,"The distinction is becoming less clear."],
+    ['falva',2,"You used my lab as a bridge."],
+    ['decker',4,"Your hardware was the only system the Signal could not recognize."],
+    ['decker',0,"Because I found the command buried inside the Signal: HARVEST FLEET REDIRECTED."]
+  ]},
+  {id:'HQ_ALL_04', title:"Open the Ninth Door", lines:[
+    ['axel',2,"You kept an unregistered heavy pilot beneath an active command base?"],
+    ['cole',0,"I kept a solution that could not be hacked, bribed, reassigned, or remotely activated."],
+    ['juggernaut',1,"He means I do not take instructions from computers."],
+    ['maverick',3,"I like him."],
+    ['yuri',0,"That is not reassuring."],
+    ['juggernaut',0,"Brotherhood sent me to protect the thing behind Fury. Not the base. Not the aircraft. The people."],
+    ['falva',1,"You have been under us this entire time?"],
+    ['juggernaut',3,"Your music is terrible."],
+    ['falva',2,"Open the door. I changed my mind."],
+    ['cole',5,"Juggernaut, you are cleared for launch."]
+  ]},
+  {id:'HQ_ALL_05', title:"Destroy It or Take It Back", lines:[
+    ['cole',2,"The Black Signal is inside the World Engine. We destroy the core and bury everything connected to it."],
+    ['lizzie',2,"No. We can destroy it, or we can take it back."],
+    ['decker',0,"She is correct. The Signal is not the invasion. It is a change-of-address notice."],
+    ['falva',1,"Decker attacks through the network. I keep the counter-signal analog. If one gets infected, the other cuts it loose."],
+    ['juggernaut',1,"We become the anesthesia."]
+  ]},
+  {id:'HQ_ALL_06', title:"Fury Means All of Us", lines:[
+    ['cole',0,"Axel, the formation is yours."],
+    ['axel',0,"And the field command remains yours."],
+    ['maverick',1,"Good. I need you where I am not looking."],
+    ['freezer',0,"That may be the closest he gets to trust."],
+    ['falva',1,"Then be brilliant faster."],
+    ['cole',1,"I know."],
+    ['juggernaut',5,"Doors open. Problems close."],
+    ['cole',5,"Fury Division—last sky. Launch."]
+  ]},
+  {id:'HQ_ALL_07', title:"The Emergency Division", lines:[
+    ['decker',4,"The Signal escaped past the Moon."],
+    ['falva',4,"Show us."],
+    ['lizzie',0,"This was supposed to be the emergency division."],
+    ['cole',0,"It still is."],
+    ['cole',5,"It does now."]
+  ]}
+];
+/* which scene fires where. 'pre' plays before that stage, 'post' after it clears. */
+const HQ_AT = { pre:{1:'HQ_ALL_00', 8:'HQ_ALL_06'},
+                post:{1:'HQ_ALL_01', 3:'HQ_ALL_02', 4:'HQ_ALL_03', 6:'HQ_ALL_04', 7:'HQ_ALL_05', 9:'HQ_ALL_07'} };
+let hqSc=null, hqLine=0, hqChars=0, hqDone=null, hqSeen={};
+let hqSlot={left:null, right:null}, hqSpeak='left';
+const HQ_CPS=42;                                   // characters per second
+
+function hqScene(id){ for(const s of HQ_SCENES) if(s.id===id) return s; return null; }
+
+/* seat the speaker of line i, leaving the other slot holding whoever spoke last */
+function hqSeat(i){
+  const ln=hqSc.lines[i]; if(!ln) return;
+  const who=ln[0], pose=ln[1]|0;
+  if(hqSlot.left && hqSlot.left.pilot===who){ hqSlot.left.pose=pose; hqSpeak='left'; return; }
+  if(hqSlot.right && hqSlot.right.pilot===who){ hqSlot.right.pose=pose; hqSpeak='right'; return; }
+  const to=(hqSpeak==='left')?'right':'left';      // opposite the last speaker
+  hqSlot[to]={pilot:who, pose:pose}; hqSpeak=to;
+}
+
+function hqPlay(id, onDone){
+  const sc=hqScene(id); if(!sc){ if(onDone) onDone(); return false; }
+  hqSc=sc; hqLine=0; hqChars=0; hqDone=onDone||null;
+  hqSlot={left:null,right:null}; hqSpeak='right';  // so line 0 seats left
+  hqSeat(0);
+  hqSeen[id]=1;
+  setState(GS.CUTSCENE);
+  return true;
+}
+
+function hqEnd(){
+  const d=hqDone; hqSc=null; hqDone=null;
+  if(d) d(); else setState(GS.CAMPHUB);
+}
+
+/* fire the scene for a boundary if it has one and has not played this run */
+function hqTrigger(when, stage, onDone){
+  const id = HQ_AT[when] && HQ_AT[when][stage];
+  if(!id || hqSeen[id] || !run || run.mode!=='campaign'){ if(onDone) onDone(); return false; }
+  return hqPlay(id, onDone);
+}
+
+function drawCutsceneState(dt){
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
+  if(!hqSc){ hqEnd(); return; }
+  const ln=hqSc.lines[hqLine];
+  if(!ln){ hqEnd(); return; }
+  const full=ln[2], n=full.length;
+
+  const sc={ bg:CUT_HQ, left:hqSlot.left, right:hqSlot.right, speaking:hqSpeak,
+             text: full.slice(0, Math.min(n, Math.floor(hqChars))) };
+  /* drawCutscene returns false until the background and poses have loaded. XART.rdy STARTS the
+     load on its first call, so a one-shot check always reads false - hold on black and keep
+     asking rather than treating it as missing art. */
+  const shown = drawCutscene(sc);
+  if(!shown){
+    const _f=(typeof uiFontArt==='function')?uiFontArt():null;
+    if(_f && typeof stageText==='function') stageText(_f,'...', VW/2, VH/2, 18, '#5a6070',0.9,1,0.10);
+    return;
+  }
+  if(hqChars<n) hqChars+=HQ_CPS*dt;
+
+  /* the advance prompt, inside the dialogue frame, blinking only once the line has finished */
+  if(hqChars>=n && Math.floor(stateT*2.2)%2){
+    const s=Math.min(VW/640, VH/480), oy=(VH-480*s)/2, ox=(VW-640*s)/2;
+    const _f=(typeof uiFontArt==='function')?uiFontArt():null;
+    if(_f && typeof stageText==='function')
+      stageText(_f,'NEXT', ox+552*s, oy+441*s, 13, '#ffe082',0.9,1,0.10);
+  }
+
+  if(stateT>0.15 && (Input.mouse.down || anyTap())){
+    if(hqChars<n){ hqChars=n; }                    // first tap completes the line
+    else {
+      hqLine++;
+      if(hqLine>=hqSc.lines.length){ hqEnd(); return; }
+      hqChars=0; hqSeat(hqLine);
+    }
+    Input.mouse.down=false;
+  }
+  if(typeof Input.menuBack==='function' && Input.menuBack()){ hqEnd(); return; }   // skip the scene
 }
 function drawBoot(dt){
   ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
@@ -28401,7 +28592,10 @@ function _drawStageSelectInner(dt){
         selFlash(function(){
           sselDeploy(_st, function(){
             if(Audio.stopMusic) Audio.stopMusic();
-            beginStage(_st);
+            /* the HQ scene for this boundary, if there is one and it has not played. hqTrigger
+               calls straight through to the continuation when there is nothing to show, so the
+               deploy path is unchanged for every stage that has no scene. */
+            hqTrigger('pre', _st, function(){ beginStage(_st); });
           });
         });
       } else if(Audio.SFX&&Audio.SFX.blip){ Audio.SFX.blip(); }
@@ -28918,7 +29112,7 @@ function drawPilot(dt){
   ctx.fillStyle=rgba(hx(P.tint),0.85); ctx.fillText('\u25C0',20,VH*0.46+10); ctx.fillText('\u25B6',VW-20,VH*0.46+10);
   { const _backKey=(typeof keyName==='function' && keybind && keybind.back)?keyName(keybind.back[0]):'BKSP';
     const _hint='\u25C0 \u25B6 SCROLL   \u2022   ENTER = LAUNCH   \u2022   '+_backKey+' = BACK';
-    if(typeof msgText==='function'){ msgText(_hint, VW/2, VH-14, 10, '#cfd6e0', 0.7, 0.9, 0.12); }
+    if(typeof msgText==='function'){ msgText(_hint, VW/2, VH-14, 12, '#cfd6e0', 0.7, 0.9, 0.10); }
     else { ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='8px "BOFmil", monospace'; ctx.fillText(_hint,VW/2,VH-12); } }
   // (pip/dot indicator removed per Mike — the player discovers the roster by scrolling)
   // hover check (locked card) -> glow pulse + flashing unlock prompt
@@ -29639,9 +29833,29 @@ function drawFrameTinted(img,f,dx,dy,dw,dh,tintC,tintA,alpha){
     _ftc.width=f[2];_ftc.height=f[3];
     _ftx.globalCompositeOperation='source-over';_ftx.globalAlpha=1;_ftx.clearRect(0,0,f[2],f[3]);
     _ftx.drawImage(img,f[0],f[1],f[2],f[3],0,0,f[2],f[3]);
-    _ftx.globalCompositeOperation='source-atop';_ftx.globalAlpha=(tintA==null?0.8:tintA);
+    /* ⚠ THE TINT IS WHAT ATE THE E (drop 0809q). This was a flat source-atop flood, and the
+       standing rule - "palette/luminance swaps, not overlays" - is not a style preference, it
+       is load-bearing. Every glyph in this face is drawn as a bright face over its OWN dark
+       drop shadow, and the shadow is opaque, so a flat flood repaints it the same colour as
+       the face. The E's arm gaps are shadow. Fill them with face colour and an E becomes a
+       solid block that reads as a B.
+
+       Proved with a controlled render: untinted, "NEXT BEEF" is clean at 11px; tinted at 0.9 it
+       is "NBXT BBBF" at every size up to 20px. So it was never the glyph map (correct), never
+       the atlas (correct), and never the point sampling.
+
+       'color' IS the palette swap the rule asks for: it takes the hue and saturation of the
+       source and the LUMINOSITY of the destination, so the shadow stays dark, the face stays
+       bright, and the glyph actually becomes the requested colour. multiply also preserves the
+       shadow but cannot lift a gold face to pale blue - it can only darken - so the hint row
+       came out warm instead of the chrome tone it is meant to match.
+       globalAlpha still blends toward the untinted original, so tintA means what it always
+       meant. The blend spreads past the glyph's alpha, so destination-in re-masks it. */
+    _ftx.globalCompositeOperation='color';_ftx.globalAlpha=(tintA==null?0.8:tintA);
     _ftx.fillStyle=tintC;_ftx.fillRect(0,0,f[2],f[3]);
-    _ftx.globalAlpha=1;_ftx.globalCompositeOperation='source-over';
+    _ftx.globalCompositeOperation='destination-in';_ftx.globalAlpha=1;
+    _ftx.drawImage(img,f[0],f[1],f[2],f[3],0,0,f[2],f[3]);
+    _ftx.globalCompositeOperation='source-over';
     ctx.save(); if(alpha!=null)ctx.globalAlpha=alpha;
     ctx.drawImage(_ftc,0,0,f[2],f[3],dx,dy,dw,dh); ctx.restore();
   } else {
@@ -29731,7 +29945,7 @@ function stageWidth(art,text,H,spacingMul){
     if(ch===' '){ w+=H*0.42+sp; continue; }
     const nm=art.font[ch];
     if(!nm||!art.frames[nm]){ w+=H*0.42+sp; continue; }
-    const f=art.frames[nm]; w+=glyphBox(art,f,H).w+sp;
+    const f=art.frames[nm]; w+=glyphBox(art,f,H,ch).w+sp;
   }
   return Math.max(0,w-sp);
 }
@@ -29817,12 +30031,24 @@ function fontCapH(art){
 }
 /* returns {w,h,dy} for one glyph on a line of height H. dy bottom-aligns it in the cap box.
    Falls back to the old full-height behaviour when a font exposes no letters to measure. */
-function glyphBox(art, f, H){
+/* GLYPHS THAT HANG BELOW THE BASELINE (drop 0809q). Bottom-aligning in the cap box is right
+   for a period, which is all head. A comma is a period-sized HEAD plus a descending TAIL, so
+   bottom-aligning the whole cell rests the tail on the baseline and lifts the head to mid
+   height - which is exactly the raised middot Mike has been seeing in dialogue. Dropping it by
+   its own height minus the period's puts the head back on the baseline where it belongs, and
+   derives the amount from the art rather than a tuned constant. */
+const FONT_DESC = {',':1, ';':1};
+function glyphBox(art, f, H, ch){
   const cap = fontCapH(art);
   if(!(cap > 0)) return {w: f[2]*(H/f[3]), h: H, dy: 0};
   const sc = H / cap;
   const gh = f[3]*sc;
-  return {w: f[2]*sc, h: gh, dy: H - gh};
+  let dy = H - gh;
+  if(ch && FONT_DESC[ch] && art.font){
+    const pn = art.font['.'], pf = pn && art.frames[pn];
+    if(pf && f[3] > pf[3]) dy += (f[3]-pf[3])*sc;
+  }
+  return {w: f[2]*sc, h: gh, dy: dy};
 }
 function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
   if(!art||!art.font) return;
@@ -29830,7 +30056,7 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
   for(const ch of String(text).toUpperCase()){
     if(ch===' '){ items.push(null); total+=H*0.42+sp; continue; }
     const nm=art.font[ch]; if(!nm||!art.frames[nm]){ items.push(null); total+=H*0.42+sp; continue; }
-    const f=art.frames[nm], gb=glyphBox(art,f,H); items.push([f,gb.w,gb]); total+=gb.w+sp;
+    const f=art.frames[nm], gb=glyphBox(art,f,H,ch); items.push([f,gb.w,gb]); total+=gb.w+sp;
   }
   total-=sp; let x=cx-total/2;
   for(const it of items){
@@ -29859,7 +30085,7 @@ function msgText(text,cx,cy,H,tintC,tintA,alpha,spacingMul){
     let art=a1, nm=a1.font[ch];
     if((!nm||!a1.frames[nm]) && a2 && a2.font && a2.font[ch] && a2.frames[a2.font[ch]]){ art=a2; nm=a2.font[ch]; }
     if(!nm||!art.frames[nm]){ items.push(null); total+=H*0.42+sp; continue; }
-    const f=art.frames[nm], gb=glyphBox(art,f,H); items.push([art,f,gb.w,gb]); total+=gb.w+sp;
+    const f=art.frames[nm], gb=glyphBox(art,f,H,ch); items.push([art,f,gb.w,gb]); total+=gb.w+sp;
   }
   total-=sp; let x=cx-total/2;
   for(const it of items){
@@ -31335,7 +31561,7 @@ function stageTextMixed(prim, fb, text, cx, cy, H, fbTint, alpha, sm){
     let art=prim, nm=(prim&&prim.font)?prim.font[ch]:null, tint=null;
     if(!nm || !prim.frames[nm]){ art=fb; nm=(fb&&fb.font)?fb.font[ch]:null; tint=fbTint; }
     if(!art || !nm || !art.frames[nm] || !art.img){ items.push(null); total+=H*0.42+sp; continue; }
-    const f=art.frames[nm], gb=glyphBox(art,f,H); items.push([art,f,gb.w,tint,gb]); total+=gb.w+sp;
+    const f=art.frames[nm], gb=glyphBox(art,f,H,ch); items.push([art,f,gb.w,tint,gb]); total+=gb.w+sp;
   }
   let x=cx-(total-sp)/2;
   for(const it of items){ if(!it){ x+=H*0.42+sp; continue; } const a=it[0],f=it[1],w=it[2],tint=it[3],gb=it[4];
@@ -31473,7 +31699,7 @@ function _tw(art, text, H, sp){
   const s=(sp==null?0.10:sp)*H; let t=0;
   for(const ch of String(text).toUpperCase()){
     const nm=art.font[ch], f=nm&&art.frames[nm];
-    t += (f? glyphBox(art,f,H).w : H*0.42) + s;
+    t += (f? glyphBox(art,f,H,ch).w : H*0.42) + s;
   }
   return Math.max(0,t-s);
 }
@@ -31787,7 +32013,12 @@ function drawStageClear(dt){
           var _r=R.rank;
           if(!campaign.rank[_st] || 'SABCDF'.indexOf(_r) < 'SABCDF'.indexOf(campaign.rank[_st])) campaign.rank[_st]=_r;
           var _wasLocked = _next>campaign.unlockedMax;
-          openStageSelect(_next, _wasLocked ? {unlock:_next} : {});
+          /* the debrief scene for the stage that just cleared, THEN back to the hub. Keyed on
+             _st (the stage completed), not _next, because the bible's triggers read "After
+             Stage 1", "After Stage 3" and so on. */
+          hqTrigger('post', _st, function(){
+            openStageSelect(_next, _wasLocked ? {unlock:_next} : {});
+          });
         } else openStageSelect(_next);
       }
     }

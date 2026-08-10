@@ -94,6 +94,23 @@ flameless airframe" — it is the flame-BAKED one. Another pinned the exact stat
 Mike had asked to be replaced. When an assertion fails after a deliberate change, read it before
 fixing the code.
 
+**A flat tint destroys the glyph, and it looked like a font bug for three drops.** `ENTER`
+rendered as `BNTBR`. The glyph map is correct (A→g00 … E→g04), both atlases hold a clean `E`, and
+the slice rects match the true column runs exactly — all three were checked and all three were
+innocent. Every letter in this face is a bright face drawn over its own **opaque** dark drop
+shadow, and `drawFrameTinted` flooded the cell with `source-atop`, repainting the shadow the same
+colour as the face. The E's arm gaps ARE shadow, so they filled in and it became a solid block.
+Now `'color'` — source hue/sat, destination luminosity, then `destination-in` to re-mask. This is
+what "palette/luminance swaps, not overlays" means; the rule is load-bearing, not taste. **When
+text looks wrong, render it tinted AND untinted before touching the map or the atlas** — that one
+comparison would have ended it immediately.
+
+**`shoot.py --warm N` is a single synchronous burst.** It never yields, so lazily-loaded art never
+arrives no matter how high N goes — 1400 warm frames still showed a black screen where 200 warm
+plus `--seconds 2 --fps 3` showed the scene. Each screenshot is a separate `evaluate`, and *that*
+boundary is what lets the network run. Use `--seconds/--fps` whenever the shot needs art the state
+loads on entry.
+
 ---
 
 ## Standing creative rules
@@ -114,7 +131,14 @@ fixing the code.
 
 ## Current state (2026-08-10)
 
-Suite: **~2,393 assertions / 215 sections / 2 failures**, both `_superseded` (see below).
+Suite: **2,390 assertions / 215 sections / 5 failures** — all five pre-existing at HEAD, verified
+by stashing and re-running: the boss limb pool, the preload count, the two `_superseded` ones and
+the naval flash families.
+
+⚠ **Section 202 (miniboss shield aura) is FLAKY.** It simulates 200 seconds of play to reach the
+miniboss and its result depends on state left by earlier sections — it failed once and passed on a
+re-run of the identical file, and the same play loop reaches the miniboss every time in isolation.
+Before blaming a change for it, re-run, or lift the loop into a standalone probe.
 
 **The repo is now git.** `SETUP.md`'s move happened; `core.autocrlf=false` is pinned locally so a
 revert restores byte-identical files. A second session is wiring the bosses in the same working
@@ -149,8 +173,8 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
   plate — template-matched at six scales, all noise. The real fix is drawing stage 1 as
   Background + placed Objects the way RC2's README intends, which would also give the damaged and
   breaching states mid-fight.
-- The pilot-card hint row renders ENTER as "BNTBR" — every `E` in that face resolves to the `B`
-  glyph. The map looks sequential (A→g00 … E→g04) and only E is wrong, so it is not an offset.
+- ~~The pilot-card hint row renders ENTER as "BNTBR"~~ **fixed in 0809q** — it was the tint, not
+  the glyph map. See "A flat tint destroys the glyph" above.
 - Stage 1 fields no camo tank variants yet (`s1tankheavy_b` and friends are registered, unused).
 - Camo (`_blk`) exists for stage 1 only. Stage 2 is volcanic and stage 3 frozen; black is the
   wrong scheme for either and picking one is Mike's call.
@@ -165,6 +189,16 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
 - `mfx_` (252 cells) is marked DELETE in the taxonomy but is the **live** art for every enemy
   pellet and missile. Confirm with Mike before removing.
 
-**Next:** the stats-screen alignment; the `E`→`B` glyph in the hint face; camo schemes for stages
-2–3; and cinematics — `CF_PilotArcadeIntros`, `CF_PilotCutscenePack` and `CF_FuryHQCutscenes` are
-extracted in `_ART_SOURCES/` (224 files) and entirely unwired.
+**Cinematics are wired.** The arcade intro reel runs after the ColeForge logo (`GS.ATTRACT`, nine
+`aintro_*` plates, any button to the title). The Fury HQ scenes now have a state to run in
+(`GS.CUTSCENE`): `HQ_SCENES` carries all eight ensemble scenes from ColeForge's own cutscene bible
+verbatim, `drawCutsceneState` types a line at a time over `drawCutscene`, and `hqTrigger(when,
+stage, next)` fires them at the boundaries the bible names — `pre` 1 and 8, `post` 1/3/4/6/7/9.
+It is campaign-only, plays each scene once per run, and calls straight through to its continuation
+when a stage has no scene, so arcade and every unscened stage are untouched.
+
+Two slots, and a speaker keeps its side: whoever talks takes the slot the PREVIOUS speaker is not
+in, so the listener stays on screen dimmed instead of the portraits swapping sides every line.
+
+**Next:** the stats-screen alignment; camo schemes for stages 2–3; and `CF_PilotCutscenePack` —
+the per-pilot scenes are still unwired, only the ensemble ones are.
