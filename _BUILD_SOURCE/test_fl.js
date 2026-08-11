@@ -5298,6 +5298,83 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_missing.length===0,
      'every route draws the held player through outboundScreenX, never o.px directly'+(_missing.length?(' — '+_missing.join(', ')):''));
 
+  // ===== 133c. THE ONE-HIT FAIRNESS CONTRACT — aim locks at the START of the tell =====
+  console.log("=== 133c. tell -> commit -> recover ===");
+  /* Ported from the laptop drop 0810a. THIS IS THE ASSERTION THE WHOLE SYSTEM EXISTS FOR.
+     droneFire used to solve atan2 on the player's LIVE position at the instant the bullet spawned,
+     so an aimed shot tracked you right up to the muzzle and no move beat it. In a one-hit game
+     that is not difficulty, it is an unavoidable death. Locking the aim when the tell BEGINS is
+     what makes the tell actionable — move during it and the shot goes where you were.
+
+     So the test moves the player DURING the tell and checks the shot misses on purpose. */
+  vm.runInContext("beginStage(2); setState(GS.PLAY); mapScroll=0; enemies.length=0; eBullets.length=0; player.x=240; player.y=420;", ctxv);
+  vm.runInContext("spawnEnemy('cinderwasp', 240, 100, {});", ctxv);
+  ok(vm.runInContext("!!(enemies[0] && enemies[0]._dr)", ctxv), 'an arsenal drone spawns with its behaviour attached');
+  var _phaseSeen={}, _lockedAim=null, _guard=0;
+  for(var _i=0;_i<4000 && _lockedAim===null;_i++){
+    vm.runInContext("droneTick(enemies[0], 1/60);", ctxv);
+    var _ph=vm.runInContext("enemies[0]._dr.phase", ctxv); _phaseSeen[_ph]=1;
+    if(_ph==='tell') _lockedAim=vm.runInContext("enemies[0]._dr.aim", ctxv);
+  }
+  ok(_lockedAim!==null, 'it reaches a TELL phase and locks an aim there  (aim='+(_lockedAim===null?'null':_lockedAim.toFixed(3))+')');
+  /* the player now runs for it — the whole point of a telegraph */
+  vm.runInContext("player.x=40; player.y=420;", ctxv);
+  for(var _i2=0;_i2<4000 && vm.runInContext("eBullets.length", ctxv)===0;_i2++){
+    vm.runInContext("droneTick(enemies[0], 1/60);", ctxv);
+    _phaseSeen[vm.runInContext("enemies[0]._dr.phase", ctxv)]=1;
+  }
+  /* and keep ticking past the shot so the recover window is observed too — the first loop stops
+     at the tell by construction, so it can only ever have seen idle and tell */
+  for(var _i3=0;_i3<600;_i3++){
+    vm.runInContext("droneTick(enemies[0], 1/60);", ctxv);
+    _phaseSeen[vm.runInContext("enemies[0]._dr.phase", ctxv)]=1;
+  }
+  var _nb=vm.runInContext("eBullets.length", ctxv);
+  ok(_nb>0, 'the tell commits — the shot is coming once it has played  ('+_nb+' bullets)');
+  if(_nb>0 && _lockedAim!==null){
+    var _fired=vm.runInContext("Math.atan2(eBullets[0].vy, eBullets[0].vx)", ctxv);
+    var _live =vm.runInContext("Math.atan2(player.y-(enemies[0].y+(enemies[0]._dr.hover||0)+8), player.x-enemies[0].x)", ctxv);
+    var _dLock=Math.abs(((_fired-_lockedAim+Math.PI)%(2*Math.PI))-Math.PI);
+    var _dLive=Math.abs(((_fired-_live      +Math.PI)%(2*Math.PI))-Math.PI);
+    /* strafe fans its pellets around the aim, so allow the fan's own offset but require the shot
+       to be far closer to where the player WAS than to where they now are */
+    ok(_dLock < _dLive,
+       'the shot goes where the player WAS, not where they are — moving during the tell beats it'
+       + '  (off locked aim '+_dLock.toFixed(3)+' rad vs off live aim '+_dLive.toFixed(3)+')');
+  }
+  ok(!!_phaseSeen['recover'] || !!_phaseSeen['commit'],
+     'and it passes through commit/recover rather than firing straight back  ['+Object.keys(_phaseSeen).join(',')+']');
+
+  /* HEAT — ramps across the level, and can never breach the floors. */
+  vm.runInContext("beginStage(2); mapScroll=0;", ctxv);
+  var _h0=vm.runInContext("stageHeat()", ctxv);
+  vm.runInContext("mapScroll = (function(){var c=_levelCfg(); return (c&&c.scrollLen)||(c&&c.h)||4800;})();", ctxv);
+  var _h1=vm.runInContext("stageHeat()", ctxv);
+  ok(_h0===0, 'heat is 0 at the top of a stage  ('+_h0+')');
+  ok(_h1>0.99, 'and 1 by the end of it  ('+_h1.toFixed(3)+')');
+  vm.runInContext("mapScroll = (function(){var c=_levelCfg(); return ((c&&c.scrollLen)||(c&&c.h)||4800)*0.5;})();", ctxv);
+  ok(vm.runInContext("stageHeat()", ctxv)===0.5, 'smoothstep is symmetric — exactly 0.5 at the halfway mark');
+  vm.runInContext("mapScroll = (function(){var c=_levelCfg(); return (c&&c.scrollLen)||(c&&c.h)||4800;})();", ctxv);
+  ok(vm.runInContext("droneTellDur({}) >= DRONE_TELL_FLOOR - 1e-9", ctxv),
+     'the tell never compresses past its floor, even at full heat  ('+vm.runInContext("droneTellDur({}).toFixed(3)", ctxv)+' >= '+vm.runInContext("DRONE_TELL_FLOOR", ctxv)+')');
+  ok(vm.runInContext("droneRecoverDur() >= DRONE_RECOVER_FLOOR - 1e-9", ctxv),
+     'and neither does the recover window — the punish is always there  ('+vm.runInContext("droneRecoverDur().toFixed(3)", ctxv)+')');
+  /* ⚠ NOT "even at full heat" — the laptop's comment claims a mini "stays the most readable thing
+     on screen even at the end of a stage", and the arithmetic does not support that. The squeeze
+     is base - (base-FLOOR)*heat, so at heat 1 EVERY tell lands exactly on the floor regardless of
+     tellMul, and a mini warns for precisely as long as a drone. tellMul buys readability for the
+     first ~90% of a stage and nothing at the very end. Asserted where it is true, and the comment
+     in game.js has been corrected rather than the code — the floor collapsing everything to one
+     value is the intended design, it is only the description that overreached. */
+  vm.runInContext("mapScroll = (function(){var c=_levelCfg(); return ((c&&c.scrollLen)||(c&&c.h)||4800)*0.5;})();", ctxv);
+  ok(vm.runInContext("droneTellDur({tellMul:1.6}) > droneTellDur({})", ctxv),
+     'a mini warns for longer than a drone (tellMul) through the body of a stage  ('
+     + vm.runInContext("droneTellDur({tellMul:1.6}).toFixed(3)", ctxv)+'s vs '
+     + vm.runInContext("droneTellDur({}).toFixed(3)", ctxv)+'s at half heat)');
+  vm.runInContext("mapScroll = (function(){var c=_levelCfg(); return (c&&c.scrollLen)||(c&&c.h)||4800;})();", ctxv);
+  ok(vm.runInContext("droneTellDur({tellMul:1.6}) === droneTellDur({})", ctxv),
+     'and at FULL heat both sit on the floor — tellMul buys nothing there, by design');
+
   // ===== 134. BOLTS GLOW, THEY DO NOT ANIMATE (drop 0724da) =====
   console.log("=== 134. laser + missile ===");
   var _gM=fs.readFileSync(ROOT+'/assets/game.js','utf8');

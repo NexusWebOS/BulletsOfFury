@@ -4135,12 +4135,26 @@ function _jungleTank(){ const L=(typeof run!=='undefined'&&run.stage===4)?STAGE4
    ============================================================ */
 const DRONE_BEHAV = {
   /* ---- ICE: cold, precise, formation-minded ---- */
+  /* ---- ICE: THE OPPOSED PAIR (drop 0810a) ----
+     cryoeye and sharddart are deliberately built as opposites, and fielding them together IS the
+     level-3 idea. One is answered by moving, the other by holding a spot — so the player has to
+     read WHICH is telling before they react, and the wrong instinct kills them. Before this they
+     were both aimed, which made them the same problem at two speeds. */
   cryoeye:        {hz:0.55, amp:7,  bank:0.05, spin:0,     glowHz:1.6, thr:'ice',      mount:'side',
-                   atk:'burst',  cd:2.2, n:5, spd:2.6, arc:1.5},   // a slow eye that opens into a ring
+                   /* FIXED, not aimed. The gap sits at a fixed place on screen no matter where you
+                      are, so fleeing does not help and FINDING it does. Wider arc than the old
+                      aimed burst because a fixed pattern has to cover ground to be a question. */
+                   atk:'burst',  cd:2.2, n:5, spd:2.4, arc:2.1, aimed:false},
   sharddart:      {hz:1.30, amp:4,  bank:0.22, spin:0,     glowHz:3.0, thr:'ice',      mount:'side',
-                   atk:'lance',  cd:1.4, n:1, spd:6.2},            // fast, single aimed shard
+                   /* AIMED and fast — answered only by moving during the tell. The shard travels
+                      too quickly to dodge on reaction, so the BANK is what you read. */
+                   atk:'lance',  cd:1.4, n:1, spd:6.2},
   glaciercarrier: {hz:0.35, amp:10, bank:0.03, spin:0,     glowHz:1.0, thr:'ice',      mount:'side',
-                   atk:'spawn',  cd:3.4, n:2, spd:2.0},            // heavy, drops sub-shards
+                   /* The board-management question: it keeps producing while it lives, so the
+                      choice is between killing the source and dodging what it already made. hpMul
+                      makes it worth the decision — a 6hp carrier dies to a stray shot and never
+                      poses one. */
+                   atk:'spawn',  cd:3.0, n:2, spd:2.0, hpMul:4.5},
   /* ---- VOLCANIC: aggressive, hot, close-range ---- */
   cinderwasp:     {hz:2.10, amp:5,  bank:0.30, spin:0,     glowHz:4.0, thr:'volcanic', mount:'rear',
                    atk:'strafe', cd:0.9, n:2, spd:4.4},            // darts and stings
@@ -4151,17 +4165,69 @@ const DRONE_BEHAV = {
   /* ---- CHAOS: erratic, unreadable on purpose ---- */
   discordgunship: {hz:0.90, amp:6,  bank:0.16, spin:0,     glowHz:2.6, thr:null,
                    atk:'spray',  cd:1.6, n:4, spd:3.4, arc:0.9},
+  /* ---- LEVEL 5 (drop 0810a). Mike's assignment: deathchoir, furymine, ragetalon, nullprism and
+     fractureskimmer. Five units, five different questions — and between them they re-ask every
+     question levels 2 and 3 taught, at a tempo that assumes you learned the answers. ---- */
   fractureskimmer:{hz:1.70, amp:9,  bank:0.34, spin:0,     glowHz:3.4, thr:null,
-                   atk:'strafe', cd:1.1, n:2, spd:5.0},
+                   /* THE PRESSURE UNIT. Never stops, never holds — it skims through, banks onto
+                      its line and fires on the way past. Short tell because it is not the one
+                      that kills you; it is the one that stops you standing still. */
+                   atk:'strafe', cd:1.1, n:2, spd:5.0, tellMul:0.85},
   nullprism:      {hz:0.50, amp:5,  bank:0,    spin:1.4,   glowHz:1.8, thr:null,
-                   atk:'ring',   cd:3.0, n:6, spd:2.8},
+                   /* magmaorb's lane puzzle made HEAVIER rather than faster: fewer bullets, wider
+                      gaps, longer tell. It should read as something you have time to solve. */
+                   atk:'ring',   cd:3.0, n:6, spd:2.8, tellMul:1.25},
   /* ---- FURIOUS: the finale's units. heavier, meaner ---- */
   ragetalon:      {hz:1.50, amp:6,  bank:0.28, spin:0,     glowHz:3.2, thr:null,
-                   atk:'lance',  cd:1.2, n:2, spd:6.8},
+                   /* sharddart's question at level-5 tempo — aimed, fast, SHORT tell. The
+                      difficulty here is the window narrowing, not more bullets: same shape, less
+                      time. That is the whole thesis of the heat ramp, expressed as a unit. */
+                   atk:'lance',  cd:1.2, n:2, spd:6.8, tellMul:0.8},
   deathchoir:     {hz:0.60, amp:8,  bank:0.06, spin:0,     glowHz:1.9, thr:null,
-                   atk:'burst',  cd:2.0, n:7, spd:3.0, arc:2.1},
+                   /* The widest fan in the game (arc 2.1, 7 rounds), and therefore the LONGEST
+                      tell of the set. A wide aimed burst is not answered by twitching sideways —
+                      you have to be outside the fan before it opens, which takes reading it early.
+                      Wide and fast would just be unfair; wide and slow is a positioning problem. */
+                   atk:'burst',  cd:2.0, n:7, spd:3.0, arc:2.1, tellMul:1.45},
   furymine:       {hz:0.30, amp:3,  bank:0,    spin:0.5,   glowHz:5.0, thr:null,
-                   atk:'mine',   cd:4.0, n:1, spd:0},              // hangs, then detonates into a ring
+                   /* ⚠ THIS UNIT DID NOTHING AT ALL. Its 'mine' case set e._mineArmed=1 and NOTHING
+                      IN THE ENGINE EVER READ THAT FLAG — grep it: one write, zero reads. So
+                      furymine hung in the air, ran its cooldown, armed itself forever and never
+                      fired, exploded or threatened anything. n:1 spd:0 is the giveaway: there was
+                      no ring to detonate into because the detonation was never written.
+
+                      Now it is a TIMER THE PLAYER CHOOSES TO ENGAGE WITH. It hangs, never chases,
+                      and its glow accelerates through a long tell until it detonates into a full
+                      ring and dies. The tell IS the fuse — as far as the player is concerned that
+                      ramp is its health bar. The question is not "can you dodge this", it is
+                      "is it worth your time and your position to go and deal with it". */
+                   atk:'mine',   cd:4.0, n:10, spd:2.6, tellMul:1.8},
+  /* ---- ARSENAL MINI BOSSES (drop 0810a) ----
+     A mini is a drone that CYCLES. Each runs its level's three attacks on a fixed rotation, so it
+     reads as an exam on what the stage has been teaching rather than a new vocabulary arriving at
+     the end. The rotation is fixed and never shuffled — the order is part of what you learn.
+
+     tellMul stretches the tell. A mini is bigger and hits harder, so it warns for longer; that is
+     the difficulty ramp's trade made in reverse, and it is what keeps a heavyweight readable. */
+  caldera:        {hz:0.50, amp:6,  bank:0.06, spin:0,     glowHz:1.8, thr:'volcanic', mount:'rear',
+                   atk:'ring', cd:1.9, n:8, spd:2.4, tellMul:1.35,
+                   cycle:[{atk:'strafe', n:3, spd:4.2},           // cinderwasp's question
+                          {atk:'lob',    n:3, spd:2.2},           // basaltbomber's
+                          {atk:'ring',   n:8, spd:2.4}]},         // magmaorb's
+  frostbite:      {hz:0.42, amp:7,  bank:0.05, spin:0,     glowHz:1.5, thr:'ice', mount:'side',
+                   atk:'burst', cd:2.0, n:5, spd:2.6, arc:1.5, tellMul:1.35,
+                   cycle:[{atk:'lance', n:2, spd:6.0},            // sharddart's
+                          {atk:'burst', n:5, spd:2.6, arc:1.5},   // cryoeye's
+                          {atk:'spawn', n:2, spd:2.0}]},          // glaciercarrier's
+  /* DAMBREAKER is the only unit in the game with real animation — an 8-frame rotor and two
+     thruster pairs. It is the one enemy whose tell can be an ACTUAL animated wind-up rather than
+     a glow ramp standing in for one, so it earns a slower, heavier rhythm and a fourth attack. */
+  dambreaker:     {hz:0.30, amp:9,  bank:0.04, spin:0,     glowHz:1.1, thr:null, mount:'rear',
+                   atk:'burst', cd:2.4, n:7, spd:2.8, arc:1.9, tellMul:1.6,
+                   cycle:[{atk:'burst',  n:7,  spd:2.8, arc:1.9},
+                          {atk:'lob',    n:4,  spd:2.4},
+                          {atk:'ring',   n:10, spd:2.6},
+                          {atk:'strafe', n:4,  spd:4.0}]},
 };
 /* Introspection hook, same reason as bossRules(): DRONE_BEHAV is a module-scope const and does
    not cross a vm context boundary, so the harness would only be able to string-match the source.
@@ -4174,11 +4240,287 @@ function droneGlow(slug){
   const G=(typeof BOFX!=='undefined'&&BOFX.arsenal&&BOFX.arsenal.glow)||{};
   return G[slug]||'#9fd4ff';
 }
+/* ============================================================
+   TELL -> COMMIT -> RECOVER (drop 0810a).
+
+   THE GAME IS ONE-HIT-DEATH. playerHit() is explicit about it — shields absorb a hit and are
+   consumed, and past that the comment reads "1-shot kill". So every enemy bullet is a run-ender,
+   and that is what decides this design: in a game where one bullet ends the attempt, the telegraph
+   is not polish, it IS the fairness contract.
+
+   THE ART CANNOT TELEGRAPH. Measured: every arsenal drone is a 4-frame idle loop and nothing else
+   (dambreaker alone has a rotor and thrusters). There is no wind-up pose to draw, and the design
+   literature is unanimous that the wind-up animation is normally the primary tell.
+
+   So the tell rides the channels we already own — Contra's answer, where the enemy's CHANGE OF
+   MOTION is the warning rather than a special frame, plus the glow, which DRONE_BEHAV already
+   carries as glowHz:
+
+     TELL     glow ramps from its idle throb to a hard flash; the unit's hover stiffens.
+     COMMIT   the shot fires. Locked — once the tell has played, it is coming.
+     RECOVER  glow drops below idle and the unit is passive. The player's window.
+
+   ⚠ THE AIM LOCKS AT THE START OF THE TELL, NOT AT RELEASE. droneFire used to call atan2 on the
+   player's LIVE position at the instant the bullet spawned, which means an aimed shot tracked the
+   player right up to the moment it left the barrel — there was no move that beat it. In a one-hit
+   game that is not difficulty, it is an unavoidable death. Locking the aim when the tell BEGINS is
+   what turns the tell into something the player can act on: move during the tell and the shot goes
+   where you were. That single change is the difference between "hard" and "cheap".
+
+   DIFFICULTY COMPRESSES THE TELL, NOT THE DAMAGE. The attack keeps its shape at every setting, so
+   what the player learns on normal still applies on furious. Nothing here scales bullet counts.
+   ============================================================ */
+const DRONE_TELL    = {easy:0.70, normal:0.55, hard:0.46, furious:0.40};
+const DRONE_RECOVER = {easy:0.85, normal:0.68, hard:0.55, furious:0.45};
+/* Floors, not suggestions. Below ~0.35s a tell is a surprise rather than a warning, and below
+   ~0.4s of recover the unit is never punishable and the fight is pure attrition. */
+const DRONE_TELL_FLOOR = 0.35, DRONE_RECOVER_FLOOR = 0.40;
+/* ============================================================
+   HEAT — THE RAMP ACROSS A LEVEL (drop 0810a).
+
+   Mike: "since bullets is more high speed action and has all these cool abilities, homing missiles
+   etc, there should be an obvious ramp up in difficulty, enemy behaivor and action to it."
+
+   Correct, and it is the thing the Raiden reading would have talked us out of. Raiden's answer is
+   a slow deliberate tempo you memorise; this game is fast and gives the player a lot of tools, so
+   the tempo has to CLIMB or the back half of a level feels like the front half.
+
+   Heat is 0 at the start of a stage and 1 at the end, weighted so it builds late rather than
+   linearly — the first third stays readable while you are still learning the units, and the last
+   third is where it bites. It drives three things:
+
+     the TELL compresses toward its floor   attacks arrive with less warning, never none
+     the COOLDOWN shortens                  they arrive more often
+     units start DOUBLE-TAPPING             one tell, two volleys — see droneTick
+
+   What it never touches: the floor, the pattern shape, or the bullet count. The contract from the
+   header still holds at heat 1 — you always get a real tell, and it is always beatable by moving.
+   The difficulty comes from the window narrowing, not from the rules changing.
+   ============================================================ */
+function stageHeat(){
+  if(typeof mapScroll==='undefined') return 0;
+  let range=0;
+  try{
+    const c=(typeof _levelCfg==='function')?_levelCfg():null;
+    range=(c&&c.scrollLen)||(c&&c.h)||4800;
+  }catch(e){ range=4800; }
+  const p=clamp(range>0?(mapScroll/range):0, 0, 1);
+  return p*p*(3-2*p);          // smoothstep: gentle opening, hard back third
+}
+function droneTellDur(B){
+  const k=(typeof DIFF!=='undefined'&&DIFF&&DIFF.name)?DIFF.name.toLowerCase():'normal';
+  let base=DRONE_TELL[k]!=null?DRONE_TELL[k]:DRONE_TELL.normal;
+  /* a mini is bigger and hits harder, so it WARNS for longer — applied before the heat squeeze.
+     ⚠ CORRECTED (drop 0810c): this used to claim a mini "stays the most readable thing on screen
+     even at the end of a stage". The arithmetic below does not support that. The squeeze is
+     base - (base-FLOOR)*heat, so at heat 1 EVERY tell lands exactly on the floor whatever tellMul
+     was, and a mini warns for precisely as long as a drone. tellMul buys readability through the
+     body of a stage and nothing at the very end. That is the intended design — the floor is what
+     guarantees a warning always exists — so the comment was wrong, not the code. Both facts are
+     asserted in suite section 133c. */
+  if(B && B.tellMul) base *= B.tellMul;
+  /* heat pulls the tell toward the floor, and can never pass it */
+  return Math.max(DRONE_TELL_FLOOR, base - (base-DRONE_TELL_FLOOR)*stageHeat());
+}
+function droneRecoverDur(){
+  const k=(typeof DIFF!=='undefined'&&DIFF&&DIFF.name)?DIFF.name.toLowerCase():'normal';
+  const base=DRONE_RECOVER[k]!=null?DRONE_RECOVER[k]:DRONE_RECOVER.normal;
+  return Math.max(DRONE_RECOVER_FLOOR, base - (base-DRONE_RECOVER_FLOOR)*stageHeat());
+}
+/* ENTRANCE SWEEP — the Galaga read, at this game's speed.
+   Galaga's aliens fly a curve INTO position and are killable the whole way, and the entrance is
+   fixed per stage so it can be learned. BOF spawned at y=-30 and drove straight down, which is
+   dead time. The sweep below arcs a drone in from one side and straightens it into its lane over
+   ENTRY_DUR, moving the REAL position so the hitbox comes with it — being killable during the
+   entrance is the whole point, and a draw-only offset would have made that a lie. */
+const ENTRY_DUR = 1.05, ENTRY_SWEEP = 96;
+/* ============================================================
+   THE SWEEP, FOR STOCK ENEMIES TOO (drop 0810a).
+
+   ⚠ MY OWN GAP. The entrance arc went into droneTick, which runs only for ARSENAL drones — and
+   ARSENAL_DRONES has no stage 1. So every unit on the level Mike actually complained about
+   (racer, topgun, intcp, jungletank, sandtank, drone, turdrone, stationship, gunboat) was still
+   dropping straight down. The pop-in fix and the wave spacing reached level 1; the Galaga part
+   did not, and I reported the entrance work as done.
+
+   Same technique as the drone version, and the same rules:
+     · the side is seeded from the SPAWN POSITION, never Math.random(), so a wave lays out the
+       same way every attempt — fixed entrances are the thing that makes them learnable
+     · it moves the REAL x, so the hitbox comes with it and the unit is killable throughout
+     · applied as a delta against last frame's offset and decayed to exactly zero, so whatever
+       else moves this enemy keeps working and it ends where its pattern intended
+
+   ONLY FOR TOP ENTRIES. A unit spawned off the left or right edge already arrives on a heading —
+   sweeping it would fight the entrance it was authored with. Bosses, minis and arsenal drones are
+   excluded too: the drones run their own, and a boss arriving on a curve is not an arrival.
+   ============================================================ */
+function enemyEntrySweep(e, dt){
+  if(!e || e._dr || e._boss || e._amini || e.dead) return;
+  if(e._esw===undefined){
+    const W=(typeof worldWidth==='function')?worldWidth():VW;
+    /* qualify ONCE, at first sight: spawned above the top, and horizontally on-screen */
+    const topEntry = (e._spawnY!=null ? e._spawnY : e.y) < 0 && e.x > 8 && e.x < W-8;
+    e._esw = topEntry ? {t:0, side:((Math.abs((e.x|0)*13+((e._spawnY|e.y)|0)*7)%2)?1:-1), off:0} : null;
+  }
+  const S=e._esw; if(!S) return;
+  if(S.t < ENTRY_DUR){
+    S.t += dt;
+    const k = clamp(S.t/ENTRY_DUR, 0, 1);
+    const want = S.side * ENTRY_SWEEP * Math.sin(Math.PI*(1-k)) * (1-k);
+    e.x += (want - (S.off||0));
+    S.off = want;
+  } else {
+    /* UNCONDITIONAL. This was `else if(S.off)`, which never fired: the sweep eases to want≈0 on its
+       own final in-range frame, so by the time t passes ENTRY_DUR the offset is already 0, the
+       branch is skipped, and the state object lives on the enemy for the rest of its life being
+       re-checked every frame. Correct residual, leaked bookkeeping. */
+    if(S.off){ e.x -= S.off; }
+    e._esw = null;                      // done: stop paying for it every frame for the rest of its life
+  }
+}
 function droneInit(e, slug){
   e._dr={slug:slug, b:DRONE_BEHAV[slug]||DRONE_BEHAV.cryoeye, t:Math.random()*9,
-         ph:Math.random()*6.283, cd:0.6+Math.random()*1.2, fi:0};
+         ph:Math.random()*6.283, cd:0.6+Math.random()*1.2, fi:0,
+         phase:'idle', pt:0, aim:null, tellK:0,
+         /* entrance sweep: which side it arcs in from, and how far through it is. Seeded off the
+            spawn position, not Math.random(), so a wave lays out the same way every attempt —
+            Galaga's entrances are fixed per stage precisely so they can be learned. */
+         ent:0, entSide:((Math.abs((e.x|0)*13+(e.y|0)*7)%2)?1:-1), entOff:0,
+         rep:0, repCd:0};
+  /* hpMul: a unit whose job is to be a PRIORITY TARGET has to survive long enough to be one.
+     Applied here because spawnEnemy hands every drone the same EHP(6) before this runs. */
+  const _hm=(e._dr.b && e._dr.b.hpMul)||1;
+  if(_hm!==1){ e.hp=Math.ceil(e.hp*_hm); e.maxhp=Math.ceil(e.maxhp*_hm); }
   e._noArsenal=false;
   return e;
+}
+/* ============================================================
+   PER-UNIT MOVEMENT — LEVEL 2, THE VOLCANIC SET (drop 0810a).
+
+   Runs from droneTick, which the enemy loop calls BEFORE the pattern switch integrates e.vy — so
+   setting velocity here is the drone's own say over how it moves, and the generic mover still
+   carries it.
+
+   Each of the three asks a different question. If two asked the same one, one of them is filler.
+   ============================================================ */
+function droneMove(e, D, dt){
+  switch(D.slug){
+    /* CINDERWASP — "can you deal with something faster than you?"
+       THE STOP IS THE TELEGRAPH. It dives in faster than the player can comfortably track, then
+       brakes hard at a fixed height and hangs there to fire. That brake is Contra's trick: the
+       change of motion is the warning, and it needs no wind-up frame we do not have. Then it
+       peels off the side it arrived from rather than grinding down the screen. */
+    case 'cinderwasp': {
+      const holdY = VH*0.55;
+      if(D.mv==null) D.mv='dive';
+      if(D.mv==='dive'){
+        e.vy = 2.9;
+        if(e.y >= holdY){
+          /* ARRIVE, THEN COMMIT — a FRESH attack. Resetting the phase machine here matters: the
+             wasp fires on the way down too, so without this it could reach the hold point already
+             in 'recover' from that earlier shot, peel on the very next frame, and never brake at
+             all. The brake is the telegraph, so skipping it skips the warning. */
+          D.mv='hold'; D.phase='idle'; D.pt=0; D.cd=0.05;
+        }
+      } else if(D.mv==='hold'){
+        e.vy += (0 - e.vy)*Math.min(1, dt*7);        // hard brake — this is the tell
+        if(D.phase==='recover') D.mv='peel';
+      } else {
+        e.vy += (2.2 - e.vy)*Math.min(1, dt*3);
+        e.x  += D.entSide*150*dt;                    // exits the way it came in
+      }
+      break; }
+    /* MAGMAORB — "can you find the lane?"
+       FIRES ONLY WHILE STATIONARY. A ring released while the emitter is sliding is a smear, not a
+       set of lanes — the gaps stop being equal and the pattern stops being readable. It brakes to
+       a stop through the tell and the volley, then drifts again. */
+    case 'magmaorb':
+      if(D.phase==='tell' || D.phase==='commit') e.vy += (0 - e.vy)*Math.min(1, dt*6);
+      else e.vy += (0.85 - e.vy)*Math.min(1, dt*2);
+      break;
+    /* BASALTBOMBER — "can you read an arc?"
+       Stays high and slow deliberately. It is the unit you have TIME to answer, sitting underneath
+       the fast ones — the level needs something that punishes camping without demanding reflex. */
+    case 'basaltbomber':
+      e.vy += (0.55 - e.vy)*Math.min(1, dt*2);
+      break;
+
+    /* ---- LEVEL 3, THE ICE SET ---- */
+
+    /* SHARDDART — "can you move before it commits?"
+       THE BANK IS THE TELEGRAPH. The shard is the fastest projectile any drone fires (spd 6.2) and
+       it is aimed, so it cannot be dodged on reaction — by the time you see the shot it has
+       arrived. What you read instead is the dart squaring up: it slows and leans hard onto its
+       firing line through the tell, then releases. Same trick as cinderwasp's brake, but a lean
+       rather than a stop, because this one never stops moving. */
+    case 'sharddart':
+      if(D.phase==='tell'){
+        e.vy += (0.3 - e.vy)*Math.min(1, dt*5);
+        D.bank += D.entSide * 0.9 * (D.tellK||0);
+      } else {
+        e.vy += (1.9 - e.vy)*Math.min(1, dt*3);
+      }
+      break;
+
+    /* CRYOEYE — "can you hold still under pressure?"
+       It does NOT need to brake the way magmaorb does: its pattern is fixed, so sliding does not
+       smear the gap relative to the player — the gap was never relative to the player. It eases
+       slightly through the tell only so the opening reads as an opening. */
+    case 'cryoeye':
+      if(D.phase==='tell') e.vy += (0.25 - e.vy)*Math.min(1, dt*4);
+      else e.vy += (0.70 - e.vy)*Math.min(1, dt*2);
+      break;
+
+    /* GLACIERCARRIER — "can you manage the board?"
+       Heavy, unhurried, and it never stops or flinches. That is the point: it is not trying to
+       kill you, it is manufacturing the things that will, and the question is whether you spend
+       the time to go and shut it off. */
+    case 'glaciercarrier':
+      e.vy += (0.50 - e.vy)*Math.min(1, dt*1.5);
+      break;
+
+    /* ---- LEVEL 5, CHAOS AND FURY ---- */
+
+    /* FRACTURESKIMMER — the pressure unit. It never stops and never holds; the bank is all the
+       warning there is, and it fires on the way past rather than settling to shoot. Its job is to
+       stop the player standing still while the heavier units set up. */
+    case 'fractureskimmer':
+      e.vy += (2.4 - e.vy)*Math.min(1, dt*3);
+      if(D.phase==='tell') D.bank += D.entSide * 0.7 * (D.tellK||0);
+      break;
+
+    /* NULLPRISM — magmaorb's rule for the same reason: a ring released while sliding is a smear,
+       not a set of equal lanes. Brakes through the tell and the volley, drifts otherwise. */
+    case 'nullprism':
+      if(D.phase==='tell' || D.phase==='commit') e.vy += (0 - e.vy)*Math.min(1, dt*6);
+      else e.vy += (0.8 - e.vy)*Math.min(1, dt*2);
+      break;
+
+    /* RAGETALON — sharddart's lean at a higher tempo. Same telegraph, less of it. */
+    case 'ragetalon':
+      if(D.phase==='tell'){
+        e.vy += (0.4 - e.vy)*Math.min(1, dt*6);
+        D.bank += D.entSide * 0.9 * (D.tellK||0);
+      } else {
+        e.vy += (2.2 - e.vy)*Math.min(1, dt*3);
+      }
+      break;
+
+    /* DEATHCHOIR — slows almost to a stop through its long tell. The widest fan in the game needs
+       the player to READ it early and walk out of the arc, and a mover that is still sliding when
+       it opens moves the fan with it. */
+    case 'deathchoir':
+      if(D.phase==='tell') e.vy += (0.1 - e.vy)*Math.min(1, dt*4);
+      else e.vy += (0.75 - e.vy)*Math.min(1, dt*2);
+      break;
+
+    /* FURYMINE — it HANGS. No descent, no chase, no reaction to anything the player does. The
+       entire unit is a fuse burning down in place, and the only question is whether you spend the
+       time and the position to go and deal with it before it goes off. */
+    case 'furymine':
+      e.vy += (0 - e.vy)*Math.min(1, dt*4);
+      break;
+  }
 }
 /* ---- LEVITATION + the sprite tricks that make four frames feel alive ---- */
 function droneTick(e, dt){
@@ -4193,7 +4535,8 @@ function droneTick(e, dt){
   D.bank  = (B.bank? clamp((e.vx||0)*0.10, -1, 1)*B.bank : 0) + (B.spin? D.t*B.spin : 0);
   /* BREATH: a gentle scale pulse, out of phase with the hover so they never peak together. */
   D.breath= 1 + Math.sin(D.t*Math.PI*2*B.hz*0.63 + D.ph*1.7)*0.045;
-  /* GLOW: its own faster clock, so the core throbs independently of the body's motion. */
+  /* GLOW: its own faster clock, so the core throbs independently of the body's motion.
+     During a TELL this is overridden below — the ramp is the telegraph. */
   D.glow  = 0.55 + 0.45*Math.sin(D.t*Math.PI*2*B.glowHz + D.ph*2.3);
   /* FRAME: the four idle frames stepped on a per-drone rate, offset by the phase seed so a
      formation of the same unit is never in sync. */
@@ -4209,54 +4552,192 @@ function droneTick(e, dt){
      the wave tables. */
   if(D.entry==null) D.entry = (20 + (Math.abs((e.x|0)*7+(e.y|0)*3)%41)) / 60;
   if(D.entry>0){ D.entry-=dt; }
-  // fire
-  D.cd-=dt;
-  if(D.entry<=0 && D.cd<=0){ D.cd=B.cd*(0.85+Math.random()*0.3); droneFire(e); }
+
+  /* ---- ENTRANCE SWEEP: arc in, straighten into the lane ----
+     Applied as a DELTA against last frame's offset, so whatever else is moving this unit keeps
+     working and the sweep decays cleanly to zero — the drone ends exactly where its mover wanted
+     it, having got there on a curve instead of a straight drop. */
+  if(D.ent < ENTRY_DUR){
+    D.ent += dt;
+    const k = clamp(D.ent/ENTRY_DUR, 0, 1);
+    const want = D.entSide * ENTRY_SWEEP * Math.sin(Math.PI*(1-k)) * (1-k);
+    e.x += (want - (D.entOff||0));
+    D.entOff = want;
+    D.bank += D.entSide * 0.55 * (1-k);      // it leans into the arc, then levels out
+  } else if(D.entOff){
+    e.x -= D.entOff; D.entOff = 0;           // fully straightened
+  }
+
+  /* ---- per-unit movement, before the generic pattern mover integrates e.vy ---- */
+  droneMove(e, D, dt);
+
+  /* ---- the attack loop: idle -> TELL -> commit -> RECOVER -> idle ---- */
+  D.pt += dt;
+  if(D.phase==='tell'){
+    const dur=droneTellDur(B);
+    D.tellK = clamp(D.pt/dur, 0, 1);
+    /* THE RAMP IS THE TELEGRAPH. The idle throb accelerates and brightens into a hard flash at
+       release — the "charge up, then flash" cue, in the one channel four idle frames leave us. */
+    const rate = B.glowHz*(1 + 3.2*D.tellK);
+    D.glow = 0.55 + 0.45*Math.sin(D.t*Math.PI*2*rate + D.ph*2.3) + 1.5*D.tellK*D.tellK;
+    /* and the hover stiffens as it commits, so the MOTION reads as a wind-up too */
+    D.hover *= (1 - 0.75*D.tellK);
+    if(D.pt>=dur){
+      droneFire(e);
+      /* DOUBLE-TAP AT HEAT. Late in a stage a unit commits TWICE off one tell, ~0.16s apart, both
+         volleys on the SAME locked aim. That is a real escalation in behaviour rather than another
+         number: it is more to dodge, but it is still the one tell and still the one solution, so
+         it stays learnable. Below half heat it never happens. */
+      D.rep = (stageHeat() > 0.5 && Math.random() < (stageHeat()-0.5)*1.6) ? 1 : 0;
+      D.repCd = 0.16;
+      D.phase='commit'; D.pt=0; D.tellK=0;
+    }
+  } else if(D.phase==='commit'){
+    /* the volley window. Empty unless heat armed a second tap. */
+    if(D.rep>0){
+      D.repCd-=dt;
+      if(D.repCd<=0){ droneFire(e); D.rep--; D.repCd=0.16; }
+    } else { D.phase='recover'; D.pt=0; }
+  } else if(D.phase==='recover'){
+    const dur=droneRecoverDur();
+    D.glow *= 0.35;                      // visibly spent: this is the punish window, and it shows
+    if(D.pt>=dur){
+      D.phase='idle'; D.pt=0;
+      /* heat also shortens the gap between attacks — up to ~35% tighter by the end of a stage */
+      D.cd = B.cd*(0.85+Math.random()*0.3) * (1 - 0.35*stageHeat());
+    }
+  } else {
+    D.cd-=dt;
+    if(D.entry<=0 && D.cd<=0){
+      /* AIM LOCKS HERE — at the START of the tell. See the header: locking at release made every
+         aimed shot untrackable, which in a one-hit game is an unavoidable death rather than a
+         difficulty. Now moving during the tell always beats the shot. */
+      const px=(typeof player!=='undefined'&&player)?player.x:e.x;
+      const py=(typeof player!=='undefined'&&player)?player.y:e.y+200;
+      D.aim = Math.atan2(py-(e.y+(D.hover||0)+8), px-e.x);
+      D.phase='tell'; D.pt=0; D.tellK=0;
+    }
+  }
 }
 function droneFire(e){
   const D=e._dr; if(!D) return;
   const B=D.b, x=e.x, y=e.y+(D.hover||0)+8;
+  /* THE LOCKED AIM, taken when the tell BEGAN. Falling back to a live solve only if something
+     fired without going through the tell — if that fallback is ever hit, the one-hit fairness
+     contract is broken and the harness says so. */
   const px=(typeof player!=='undefined'&&player)?player.x:x;
   const py=(typeof player!=='undefined'&&player)?player.y:y+200;
-  const aim=Math.atan2(py-y, px-x);
-  const push=(vx,vy,w)=>eBullets.push({x:x,y:y,vx:vx,vy:vy,w:w||10,h:w||10,dmg:1,t:0,kind:'eshot'});
-  switch(B.atk){
+  const aim=(D.aim!=null)?D.aim:Math.atan2(py-y, px-x);
+  /* ⚠ DIFFICULTY REACHES DRONE BULLETS NOW (drop 0810a).
+
+     eShoot — the route every OTHER enemy's fire takes — multiplies both components by
+     DIFF.ebSpeed. droneFire builds its own push() and did not, so all fifteen arsenal drones
+     fired at exactly the same bullet speed on EASY and on FURIOUS. The table's headline lever
+     (0.70 -> 1.35) simply did not apply to them.
+
+     Bullet SPEED is the right lever to scale, and it is the one the Raiden games lean on: their
+     bullets stay slow and readable, on a consistent tempo, and the higher difficulties raise the
+     SPEED rather than flooding the screen. That is also why nothing here scales B.n — the pattern
+     keeps its shape at every setting, so what the player learned still applies. */
+  const _sp=(typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1;
+  const push=(vx,vy,w)=>eBullets.push({x:x,y:y,vx:vx*_sp,vy:vy*_sp,w:w||10,h:w||10,dmg:1,t:0,kind:'eshot'});
+  /* ---- THE CYCLE (drop 0810a). A mini runs its level's attacks on a FIXED rotation, so the
+     order is learnable. Each entry may override n / spd / arc; anything it omits falls back to the
+     unit's own defaults, so a cycle entry only has to state what makes it different. ---- */
+  /* ---- AIMED vs FIXED (drop 0810a) ----
+     Every attack in this file centred on the player. That makes every unit ask the same question —
+     "can you move?" — and it is why level 3's set had no shape: sharddart and cryoeye were the
+     same problem at different speeds.
+
+     `aimed:false` centres the pattern straight DOWN instead. The consequence is the whole point:
+     a fixed pattern's safe gap exists at a fixed place on the screen regardless of where the
+     player is standing, so the answer is to FIND it and hold it rather than to run. Set against an
+     aimed unit, that is a genuine dilemma — the two correct responses are opposites, and you have
+     to read which one is coming. */
+  const _base = (B.aimed===false) ? Math.PI/2 : aim;
+  const _C = (B.cycle && B.cycle.length) ? B.cycle[(D.cyc||0) % B.cycle.length] : null;
+  const _atk = _C ? _C.atk : B.atk;
+  const B_n   = (_C && _C.n   != null) ? _C.n   : B.n;
+  const B_spd = (_C && _C.spd != null) ? _C.spd : B.spd;
+  const B_arc = (_C && _C.arc != null) ? _C.arc : B.arc;
+  if(_C) D.cyc = ((D.cyc||0) + 1) % B.cycle.length;
+  switch(_atk){
     case 'lance':                                   // one fast aimed shot
-      for(let i=0;i<B.n;i++) push(Math.cos(aim)*B.spd, Math.sin(aim)*B.spd, 12);
+      for(let i=0;i<B_n;i++) push(Math.cos(_base)*B_spd, Math.sin(_base)*B_spd, 12);
       break;
     case 'burst': {                                 // a fan centred on the player
-      const half=(B.arc||1.2)/2;
-      for(let i=0;i<B.n;i++){
-        const a=aim-half+(i/(B.n-1))*(half*2);
-        push(Math.cos(a)*B.spd, Math.sin(a)*B.spd, 10);
+      const half=(B_arc||1.2)/2;
+      for(let i=0;i<B_n;i++){
+        const a=_base-half+(i/(B_n-1))*(half*2);
+        push(Math.cos(a)*B_spd, Math.sin(a)*B_spd, 10);
       } break; }
-    case 'ring':                                    // even circle, dodged by position
-      for(let i=0;i<B.n;i++){
-        const a=(i/B.n)*Math.PI*2 + D.t*0.6;
-        push(Math.cos(a)*B.spd, Math.sin(a)*B.spd, 10);
+    /* RING — even circle, dodged by position.
+       ⚠ THE PHASE WAS UNLEARNABLE. It used to be `+ D.t*0.6`, and D.t is seeded Math.random()*9 —
+       so where the gaps fell was random per unit AND drifting while you watched. In a one-hit game
+       that is the worst kind of pattern: you cannot read it, only survive it, and the whole design
+       rests on patterns being learnable.
+
+       Anchored to the LOCKED AIM instead. Bullet 0 goes exactly where the player was when the tell
+       began, so the gaps sit half a step either side of it. Stand still through the tell and you
+       eat bullet 0; move at all and you are in a gap. Same contract as every other attack here —
+       the tell is the warning, moving is the answer — and now the ring teaches it too. */
+    case 'ring':
+      for(let i=0;i<B_n;i++){
+        const a=_base + (i/B_n)*Math.PI*2;
+        push(Math.cos(a)*B_spd, Math.sin(a)*B_spd, 10);
       } break;
-    case 'spray': {                                 // deliberately loose — the chaos family
-      const half=(B.arc||0.9)/2;
-      for(let i=0;i<B.n;i++){
-        const a=aim-half+Math.random()*half*2;
-        push(Math.cos(a)*B.spd*(0.8+Math.random()*0.4), Math.sin(a)*B.spd*(0.8+Math.random()*0.4), 9);
+    /* SPRAY — loose, but NOT random.
+       ⚠ This rolled Math.random() per bullet for both angle and speed, so the same attack was a
+       fresh dice throw every time. In a ONE-HIT game that is the one thing a pattern must never
+       be: it cannot be learned, only survived, and the shmup literature is explicit that random
+       placement "can create unfair situations". Every other deterministic thing in this design —
+       fixed entrances, anchored rings, the locked aim — exists so the player can learn; this
+       quietly opted out of all of it.
+
+       Still reads as scatter, because the offsets are irregular. They are just the SAME irregular
+       offsets every time: a fixed low-discrepancy sequence keyed to the shot index. Learnable
+       scatter, which is what "loose" should have meant. */
+    case 'spray': {
+      const half=(B_arc||0.9)/2;
+      for(let i=0;i<B_n;i++){
+        const g=((i*0.6180339887)%1);               // golden-ratio walk: even-looking, never repeating a run
+        const a=_base-half+g*half*2;
+        const sm=0.82+(((i*0.7548776662)%1)*0.36);  // and a matching speed jitter, also fixed
+        push(Math.cos(a)*B_spd*sm, Math.sin(a)*B_spd*sm, 9);
       } break; }
     case 'strafe':                                  // pair of shots across its own heading
-      for(let i=0;i<B.n;i++){
-        const a=aim+(i-(B.n-1)/2)*0.18;
-        push(Math.cos(a)*B.spd, Math.sin(a)*B.spd, 9);
+      for(let i=0;i<B_n;i++){
+        const a=_base+(i-(B_n-1)/2)*0.18;
+        push(Math.cos(a)*B_spd, Math.sin(a)*B_spd, 9);
       } break;
-    case 'lob':                                     // arcing bombs that fall short and spread
-      for(let i=0;i<B.n;i++){
-        const s=(i-(B.n-1)/2)*1.5;
-        push(s, B.spd, 13);
-      } break;
+    /* LOB — arcing shells that fall short and spread.
+       The SHAPE is fixed: three shells, 1.5 apart, every single time, so it can be learned. What
+       moves is where the group is PLACED — the spread drifts toward the locked _base, so it lands
+       where the player was standing when the tell began rather than on top of them.
+       That is the difference between a pattern that punishes camping (this) and one that punishes
+       existing. Keep moving laterally and the shells fall behind you. */
+    case 'lob': {
+      const lat=Math.cos(_base)*B_spd*0.55;
+      for(let i=0;i<B_n;i++){
+        const s=(i-(B_n-1)/2)*1.5;
+        push(lat+s, B_spd, 13);
+      } break; }
     case 'spawn':                                   // carrier: drops slower sub-shards
-      for(let i=0;i<B.n;i++) push((i?1:-1)*1.1, B.spd, 11);
+      for(let i=0;i<B_n;i++) push((i?1:-1)*1.1, B_spd, 11);
       break;
-    case 'mine':                                    // hangs, then bursts into a ring on death
-      e._mineArmed=1;
-      break;
+    /* MINE — the fuse runs out and it takes itself with it.
+       Was `e._mineArmed=1;` and nothing else: one write, zero readers anywhere in the engine, so
+       the unit was inert. The ring is anchored on the locked aim like every other ring here, so
+       one round goes where the player was when the fuse hit zero and the gaps sit either side. */
+    case 'mine': {
+      for(let i=0;i<B_n;i++){
+        const a=_base + (i/B_n)*Math.PI*2;
+        push(Math.cos(a)*B_spd, Math.sin(a)*B_spd, 11);
+      }
+      if(typeof explode==='function') explode(x, y, 46, 'red');
+      if(typeof shake!=='undefined') shake=Math.max(shake, 5);
+      e.dead=true;                                  // it detonates; it does not linger
+      break; }
   }
   if(Audio.SFX && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
