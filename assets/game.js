@@ -118,8 +118,14 @@ function outboundStart(fromStage){
               /* ROUTES ARE PER-JOIN NOW (drop 0801a). DBG.transitions gated all eight at once,
                  which is why turning it on lit up seven unbuilt ones. 1 -> 2 is built and tested,
                  so it populates on its own; the rest still wait behind the flag until each is
-                 made. One join, one switch. */
-              via:(fromStage===1 || ((typeof DBG!=='undefined' && DBG.transitions)))
+                 made. One join, one switch.
+
+                   1 -> 2  water                built 0801a
+                   2 -> 3  lava -> ice          built on the laptop 0810a, ported 0810b
+                   3 -> 4  ice -> sky -> town   built on the laptop 0810a, ported 0810b
+                   4 -> 5  the boss chase, still blocked on the stage-4 boss
+                 */
+              via:(fromStage===1 || fromStage===2 || fromStage===3 || ((typeof DBG!=='undefined' && DBG.transitions)))
                     && typeof transVia==='function' ? transVia(fromStage) : []};
   return outbound;
 }
@@ -151,6 +157,65 @@ const W12_PAST = 2.2, W12_WATER = 1.6, W12_CRUISE = 1.5, W12_FADE = 1.0;
 function outboundIsWaterRoute(o){
   return o && o.from===1 && o.via && o.via.indexOf('water')>=0;
 }
+/* ============================================================
+   2 -> 3 · LAVA -> ICE (drop 0810a). Step 3 of Mike's order, and the second END transition built.
+
+   Stage 2 is the volcano and stage 3 is the ice mountains, so this join leaves the Magma Colossus,
+   runs out over open lava, and freezes over into ice. TRANS[2].via is ['lava','ice'] — see the
+   re-key note on the table above; the entry that used to sit on key 2 described 1 -> 2.
+
+   THE PLAYER IS HELD, exactly as in 1 -> 2. Mike's water spec — "follow the player. do not fly
+   them off in the distance" — is treated as a STANDING rule for end transitions rather than a
+   one-off, so the generic climb beat is skipped here too and the world moves underneath instead.
+
+   FIVE beats, one more than the water route, because via names TWO terrain changes and not one:
+
+     PAST    the volcano master keeps scrolling and accelerating, the caldera passing BEHIND
+     LAVA    tflat_lava washes down from the top and takes the ground over entirely
+     FREEZE  tflat_ice washes down OVER the lava
+     CRUISE  a beat of open ice, so it reads as a journey rather than a wipe
+     FADE    to black, into the stage-end stats
+
+   THE SEAM IS STEAM, NOT FOAM. The water route draws a pale foam line where the two surfaces
+   meet. Lava meeting ice does not foam — it flashes off as steam over a chilled crust. Same
+   structural idea as the foam line (never a hard rectangle), correct material for these two.
+   ============================================================ */
+const L23_PAST = 2.2, L23_LAVA = 1.6, L23_FREEZE = 1.8, L23_CRUISE = 1.3, L23_FADE = 1.0;
+function outboundIsLavaIceRoute(o){
+  return o && o.from===2 && o.via && o.via.indexOf('lava')>=0 && o.via.indexOf('ice')>=0;
+}
+/* ============================================================
+   3 -> 4 · ICE -> SKY -> TOWN (drop 0810a). Step 4 of Mike's order.
+
+   TRANS[3] after the re-key: via ['ice','sky'], "ice up into the sky, then scale DOWN into the
+   town". Leaving the Cryo Behemoth, climbing out of the ice shelf, and coming down into stage 4.
+
+   THE SKY IS THE AUTHORED PLATE, NOT tflat_sky. TRANS_FLAT.sky is deliberately null and there is a
+   standing assertion about it: tflat_sky was extracted from the ORBITAL stage and is a dark
+   starfield — a fine space texture and a terrible daytime sky. The opening cinematic uses
+   nl6sky_stage06_sky_scroll_640x960 and so does this.
+
+   Four beats. The player is HELD, as in both routes before it; the climb is carried entirely by
+   the world, which is also how the opening's own TAKEOFF/SKY phases do it.
+
+     PAST   the ice master keeps scrolling and accelerating, the shelf passing BEHIND
+     SKY    the authored sky washes down from the top — the climb, without moving the player
+     TOWN   stage 4 enters SMALL and scales up to 1:1 as you come down into it
+     FADE   to black, into the stage-end stats
+
+   "SCALE DOWN INTO THE TOWN" IS READ AS THE CAMERA'S MOVE, NOT THE PLATE'S. Descending toward
+   ground makes that ground larger, so the town is drawn scaled DOWN — small and far below — and
+   grows to 1:1 as you arrive. Both readings of the phrase land on the same picture. It is one
+   constant, S34_TOWN_SCALE0, if the other reading was meant.
+
+   The town is hazed while it is distant and the haze burns off as it rises to meet you, which is
+   the atmospheric cue that sells depth rather than a rectangle being zoomed.
+   ============================================================ */
+const S34_PAST = 2.0, S34_SKY = 1.8, S34_TOWN = 2.4, S34_FADE = 1.0;
+const S34_TOWN_SCALE0 = 0.34;        // the town enters at about a third size and grows to 1:1
+function outboundIsSkyTownRoute(o){
+  return o && o.from===3 && o.via && o.via.indexOf('ice')>=0 && o.via.indexOf('sky')>=0;
+}
 function outboundUpdate(dt){
   if(!outbound) return null;
   const o=outbound; o.t+=dt;
@@ -172,6 +237,55 @@ function outboundUpdate(dt){
       o.scroll += 740*dt; o.wash=1;
       o.fade = clamp(o.t/W12_FADE, 0, 1);
       if(o.t>=W12_FADE) return outboundFinish();
+    }
+    return null;
+  }
+  /* ---- the 2 -> 3 lava -> ice route owns its own timeline ---- */
+  if(outboundIsLavaIceRoute(o)){
+    if(o.phase==='climb'){ o.phase='past'; o.t=0; }        // never climbs: the player is held
+    if(o.phase==='past'){
+      o.scroll += (220 + 520*(o.t/L23_PAST))*dt;           // accelerating away from the caldera
+      o.wash = 0; o.frost = 0;
+      if(o.t>=L23_PAST){ o.phase='lava'; o.t=0; }
+    } else if(o.phase==='lava'){
+      o.scroll += 740*dt;
+      o.wash = clamp(o.t/L23_LAVA, 0, 1);                  // lava descends from the top
+      o.frost = 0;
+      if(o.t>=L23_LAVA){ o.phase='freeze'; o.t=0; o.wash=1; }
+    } else if(o.phase==='freeze'){
+      o.scroll += 740*dt; o.wash = 1;
+      o.frost = clamp(o.t/L23_FREEZE, 0, 1);               // and the ice descends over the lava
+      if(o.t>=L23_FREEZE){ o.phase='cruise'; o.t=0; o.frost=1; }
+    } else if(o.phase==='cruise'){
+      o.scroll += 740*dt; o.wash = 1; o.frost = 1;
+      if(o.t>=L23_CRUISE){ o.phase='fade'; o.t=0; }
+    } else if(o.phase==='fade'){
+      o.scroll += 740*dt; o.wash = 1; o.frost = 1;
+      o.fade = clamp(o.t/L23_FADE, 0, 1);
+      if(o.t>=L23_FADE) return outboundFinish();
+    }
+    return null;
+  }
+  /* ---- the 3 -> 4 ice -> sky -> town route owns its own timeline ---- */
+  if(outboundIsSkyTownRoute(o)){
+    if(o.phase==='climb'){ o.phase='past'; o.t=0; }        // never climbs: the player is held
+    if(o.phase==='past'){
+      o.scroll += (220 + 560*(o.t/S34_PAST))*dt;           // accelerating off the ice shelf
+      o.wash = 0; o.town = 0;
+      if(o.t>=S34_PAST){ o.phase='sky'; o.t=0; }
+    } else if(o.phase==='sky'){
+      o.scroll += 780*dt;
+      o.wash = clamp(o.t/S34_SKY, 0, 1);                   // the sky descends from the top
+      o.town = 0;
+      if(o.t>=S34_SKY){ o.phase='town'; o.t=0; o.wash=1; }
+    } else if(o.phase==='town'){
+      o.scroll += 780*dt; o.wash = 1;
+      o.town = clamp(o.t/S34_TOWN, 0, 1);                  // and the town grows up to meet you
+      if(o.t>=S34_TOWN){ o.phase='fade'; o.t=0; o.town=1; }
+    } else if(o.phase==='fade'){
+      o.scroll += 780*dt; o.wash = 1; o.town = 1;
+      o.fade = clamp(o.t/S34_FADE, 0, 1);
+      if(o.t>=S34_FADE) return outboundFinish();
     }
     return null;
   }
@@ -266,12 +380,186 @@ function outboundDrawWater(o){
   // ---- fade to the stats screen ----
   if(o.fade>0){ ctx.globalAlpha=o.fade; ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH); ctx.globalAlpha=1; }
 }
+/* The 2 -> 3 lava -> ice route, drawn. Volcano ground first, then lava washing down over it, then
+   ice washing down over the lava, then the player on top — the player is the thing the camera is
+   holding and nothing may pass in front of them.
+
+   BOTH washes descend from the TOP, for the reason the water route's does: in a vertical scroller
+   everything you approach enters from the top and travels down past you. Ice rising from the
+   bottom would read as the glacier coming up to meet the player rather than the player flying
+   out over it. */
+function outboundDrawLavaIce(o){
+  /* ⚠ _levelCfg() IGNORES ITS ARGUMENT — it switches on run.stage. outboundDrawWater calls it as
+     _levelCfg(1), which READS like "give me stage 1's config" but does not do that; it is correct
+     there only because run.stage is still 1 during that outbound. The same holds here (run.stage
+     is still 2 until beginStage(3) runs at handoff), but the fallback names stage 2's master
+     explicitly rather than resting on an argument that goes nowhere. */
+  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
+  const mk=(cfg&&cfg.master)||'nst2_master';
+  const wash=o.wash||0, frost=o.frost||0;
+  const dw=(typeof worldWidth==='function')?worldWidth():VW;
+  // ---- the volcano they just cleared, still scrolling, the caldera passing behind ----
+  if(XART.rdy(mk)){
+    const im=XART.get(mk), H=im.naturalHeight, W=im.naturalWidth;
+    let sY=H - ((o.scroll % H)+H)%H - VH;
+    sY=((sY % H)+H)%H;
+    const h1=Math.min(VH, H-sY);
+    ctx.drawImage(im, 0, sY, W, h1, 0, 0, dw, h1);
+    if(h1<VH) ctx.drawImage(im, 0, 0, W, VH-h1, 0, h1, dw, VH-h1);
+  }
+  // ---- the lava flat, washing down from the top and taking the ground over ----
+  if(wash>0 && XART.rdy('tflat_lava')){
+    const t=XART.get('tflat_lava'), tw=t.naturalWidth, th=t.naturalHeight;
+    const edge=Math.round(VH*wash);
+    ctx.save();
+    ctx.beginPath(); ctx.rect(0,0,VW,edge); ctx.clip();
+    const off=(o.scroll*0.9)%th;
+    for(let y=-off; y<edge+th; y+=th)
+      for(let x=0; x<VW+tw; x+=tw) ctx.drawImage(t, x, y, tw, th);
+    ctx.restore();
+    // its leading edge reads HOT — a molten rim. The water route's pale foam would be wrong here.
+    if(wash<1){
+      const g=ctx.createLinearGradient(0,edge-18,0,edge+6);
+      g.addColorStop(0,'rgba(255,150,40,0)');
+      g.addColorStop(0.6,'rgba(255,190,90,0.60)');
+      g.addColorStop(1,'rgba(255,120,30,0)');
+      ctx.fillStyle=g; ctx.fillRect(0,edge-18,VW,24);
+    }
+  }
+  // ---- the ice flat, washing down OVER the lava ----
+  if(frost>0 && XART.rdy('tflat_ice')){
+    const t=XART.get('tflat_ice'), tw=t.naturalWidth, th=t.naturalHeight;
+    const edge=Math.round(VH*frost);
+    ctx.save();
+    ctx.beginPath(); ctx.rect(0,0,VW,edge); ctx.clip();
+    const off=(o.scroll*0.9)%th;
+    for(let y=-off; y<edge+th; y+=th)
+      for(let x=0; x<VW+tw; x+=tw) ctx.drawImage(t, x, y, tw, th);
+    ctx.restore();
+    /* THE SEAM IS STEAM OVER A CHILLED CRUST. Lava meeting ice does not foam — it flashes off as
+       vapour and skins over. So the boundary is a still-glowing crust line with steam lifting off
+       it: same structural job as the water route's foam line (never a hard rectangle), correct
+       material for these two surfaces. */
+    if(frost<1){
+      const c=ctx.createLinearGradient(0,edge-4,0,edge+10);
+      c.addColorStop(0,'rgba(255,190,120,0)');
+      c.addColorStop(0.45,'rgba(255,160,70,0.75)');
+      c.addColorStop(1,'rgba(120,60,40,0)');
+      ctx.fillStyle=c; ctx.fillRect(0,edge-4,VW,14);
+      // steam drifts UP, against the scroll — that contrary motion is what reads as vapour
+      ctx.save(); ctx.fillStyle='#dfeaf2';
+      for(let i=0;i<9;i++){
+        const sx=((i*97 + o.scroll*0.35) % (VW+60)) - 30;
+        const rise=((o.scroll*0.8 + i*53) % 46);
+        ctx.globalAlpha=0.30*(1-rise/46);
+        ctx.beginPath(); ctx.arc(sx, edge-rise, 7+(i%3)*4, 0, Math.PI*2); ctx.fill();
+      }
+      ctx.restore();
+    }
+  }
+  // ---- the player, held exactly where they were when the boss died ----
+  if(typeof drawPlayerShip==='function'){ try{ drawPlayerShip(o.px,o.py); }catch(e){} }
+  else if(typeof player!=='undefined' && player){
+    const sk=(typeof shipKey==='function')?shipKey():null;
+    if(sk && XART.rdy(sk)){
+      const im=XART.get(sk), h=44, w=h*(im.naturalWidth/im.naturalHeight);
+      ctx.drawImage(im, o.px-w/2, o.py-h/2, w, h);
+    }
+  }
+  // ---- fade to the stats screen ----
+  if(o.fade>0){ ctx.globalAlpha=o.fade; ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH); ctx.globalAlpha=1; }
+}
+/* The 3 -> 4 ice -> sky -> town route, drawn. Ice first, then the sky washing down over it, then
+   the town growing up out of it, then the player on top. */
+function outboundDrawSkyTown(o){
+  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
+  const mk=(cfg&&cfg.master)||'nst3_master';       // see the _levelCfg note in outboundDrawLavaIce
+  const wash=o.wash||0, town=o.town||0;
+  const dw=(typeof worldWidth==='function')?worldWidth():VW;
+  // ---- the ice they just cleared, still scrolling, the shelf passing behind ----
+  if(XART.rdy(mk)){
+    const im=XART.get(mk), H=im.naturalHeight, W=im.naturalWidth;
+    let sY=H - ((o.scroll % H)+H)%H - VH;
+    sY=((sY % H)+H)%H;
+    const h1=Math.min(VH, H-sY);
+    ctx.drawImage(im, 0, sY, W, h1, 0, 0, dw, h1);
+    if(h1<VH) ctx.drawImage(im, 0, 0, W, VH-h1, 0, h1, dw, VH-h1);
+  }
+  // ---- the sky, washing down from the top: the climb, carried by the world ----
+  if(wash>0){
+    const edge=Math.round(VH*wash);
+    ctx.save();
+    ctx.beginPath(); ctx.rect(0,0,VW,edge); ctx.clip();
+    const skyK='nl6sky_stage06_sky_scroll_640x960';
+    if(XART.rdy(skyK)){
+      const im=XART.get(skyK), H=im.naturalHeight, w=im.naturalWidth;
+      const sc=VW/w, dh=H*sc;
+      let y=(o.scroll*0.35 % dh)-dh;
+      for(; y<VH+dh; y+=dh) ctx.drawImage(im, 0, Math.round(y), VW, dh);
+    } else { ctx.fillStyle='#2c4a78'; ctx.fillRect(0,0,VW,edge); }
+    /* CLOUDS AT TWO RATES so the climb reads as depth. The opening asks for a high-altitude bank
+       and a low rolling one, but nl6c_high_altitude_bank_* IS NOT IN THE MANIFEST — only
+       nl6c_low_rolling_bank_0..5 exists, so that loop's first layer silently never draws and the
+       opening has been running on one rate. Rather than repeat a dead key, both layers here come
+       from the family that exists, at different rates, sizes and alphas. */
+    for(const [rate,sz,al] of [[0.45,190,0.34],[1.0,260,0.52]]){
+      const fk='nl6c_low_rolling_bank_'+(Math.floor(o.t*7)%6);
+      if(!XART.rdy(fk)) continue;
+      const im=XART.get(fk), step=sz*1.15;
+      let y=((o.scroll*rate)%step)-step;
+      ctx.save(); ctx.globalAlpha=al*wash;
+      for(; y<VH+step; y+=step){
+        ctx.drawImage(im, ((y*0.7)%VW)-sz*0.5, Math.round(y), sz, sz*0.62);
+        ctx.drawImage(im, ((y*0.7)%VW)+sz*0.6, Math.round(y+step*0.5), sz, sz*0.62);
+      }
+      ctx.restore();
+    }
+    ctx.restore();
+    // the ice/sky seam is a cold haze, not a hard line — the same job the foam and crust lines do
+    if(wash<1){
+      const g=ctx.createLinearGradient(0,edge-20,0,edge+8);
+      g.addColorStop(0,'rgba(214,236,248,0)');
+      g.addColorStop(0.6,'rgba(228,244,255,0.50)');
+      g.addColorStop(1,'rgba(214,236,248,0)');
+      ctx.fillStyle=g; ctx.fillRect(0,edge-20,VW,28);
+    }
+  }
+  // ---- the town, entering small and scaling up as you come down into it ----
+  if(town>0 && XART.rdy('nst4_master_crash')){
+    const im=XART.get('nst4_master_crash'), H=im.naturalHeight, W=im.naturalWidth;
+    const e=town*town*(3-2*town);                        // smoothstep: no linear snap at either end
+    const sc=S34_TOWN_SCALE0+(1-S34_TOWN_SCALE0)*e;
+    /* Scaled about the CENTRE OF THE SCREEN and drawn with the stage's own geometry, so at sc=1
+       this is pixel-for-pixel the view stage 4 opens on. The arrival end of a master is its
+       BOTTOM — the world maps as sY = H - scroll - VH — so the source is the last VH rows. */
+    ctx.save();
+    ctx.translate(VW/2, VH/2); ctx.scale(sc, sc); ctx.translate(-VW/2, -VH/2);
+    ctx.globalAlpha=clamp(town*1.8,0,1);
+    ctx.drawImage(im, 0, Math.max(0,H-VH), W, Math.min(VH,H), 0, 0, dw, VH);
+    // atmospheric haze: heavy while it is far below, burning off as it rises to meet you
+    if(town<1){ ctx.globalAlpha=0.5*(1-e); ctx.fillStyle='#9fc0da'; ctx.fillRect(0,0,dw,VH); }
+    ctx.restore();
+  }
+  // ---- the player, held exactly where they were when the boss died ----
+  if(typeof drawPlayerShip==='function'){ try{ drawPlayerShip(o.px,o.py); }catch(e){} }
+  else if(typeof player!=='undefined' && player){
+    const sk=(typeof shipKey==='function')?shipKey():null;
+    if(sk && XART.rdy(sk)){
+      const im=XART.get(sk), h=44, w=h*(im.naturalWidth/im.naturalHeight);
+      ctx.drawImage(im, o.px-w/2, o.py-h/2, w, h);
+    }
+  }
+  // ---- fade to the stats screen ----
+  if(o.fade>0){ ctx.globalAlpha=o.fade; ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH); ctx.globalAlpha=1; }
+}
 function outboundDraw(){
   if(!outbound || typeof XART==='undefined') return;
   const o=outbound;
   ctx.save();
   ctx.fillStyle=seqCfg(o.from).fill; ctx.fillRect(0,0,VW,VH);
   if(outboundIsWaterRoute(o)){ outboundDrawWater(o); ctx.restore(); return; }
+  if(outboundIsLavaIceRoute(o)){ outboundDrawLavaIce(o); ctx.restore(); return; }
+  if(outboundIsSkyTownRoute(o)){ outboundDrawSkyTown(o); ctx.restore(); return; }
   if(o.phase==='climb'){
     // still over the map they cleared — NOT liquid, NOT terrain
     const cfg=(typeof _levelCfg==='function')?_levelCfg():null;

@@ -5218,6 +5218,58 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_bad.length===0, 'every terrain in every route resolves to a real flat, or is sky/space which have none'+(_bad.length?(' — '+_bad.join(', ')):''));
   ok(vm.runInContext("TRANS_FLAT.sky===null && TRANS_FLAT.space===null", ctxv), "sky and space have NO flat — using tflat_sky as a sky was the starfield mistake and it is not repeated");
 
+  // ===== 133b. THE TWO NEW END ROUTES RUN (2->3 lava->ice, 3->4 ice->sky->town) =====
+  console.log("=== 133b. end routes 2>3 and 3>4 ===");
+  /* Ported from the laptop drop 0810a. These are pure state functions — no canvas — so the suite
+     is the right home for them; the laptop's own route assertions lived in the other harness.
+
+     THE INVARIANT THAT MATTERS IS THAT THE PLAYER IS HELD. Mike's water spec — "follow the
+     player. do not fly them off in the distance to some cut water" — is treated as a standing
+     rule for every end transition, not a one-off, so none of these routes runs the generic climb
+     beat. A route that starts moving the player is the regression to catch. */
+  function _runRoute(from, expectPhases){
+    vm.runInContext("outbound=null; outboundStart("+from+");", ctxv);
+    var seen=[], moved=0, frostLed=0, frames=0, done=null;
+    vm.runInContext("player.x=200; player.y=300;", ctxv);
+    for(var f=0; f<1200; f++){
+      var ph=vm.runInContext("outbound?outbound.phase:null", ctxv);
+      if(ph && seen[seen.length-1]!==ph) seen.push(ph);
+      /* ice may never lead the lava: no frame with frost rising while the lava wash is still
+         landing, or there is a frame of ice sitting over bare volcano */
+      var w=vm.runInContext("outbound?(outbound.wash||0):0", ctxv);
+      var fr=vm.runInContext("outbound?(outbound.frost||0):0", ctxv);
+      if(fr>0 && w<1) frostLed++;
+      done=vm.runInContext("outboundUpdate(1/60)", ctxv);
+      frames++;
+      if(vm.runInContext("player.x", ctxv)!==200 || vm.runInContext("player.y", ctxv)!==300) moved++;
+      if(done!=null) break;
+    }
+    /* outboundStart seeds phase='climb' and the first update converts it, so 'climb' is always
+       the first thing sampled. Dropping it here is not hiding anything — that it is converted
+       on frame one, rather than ever being RUN, is asserted separately below. */
+    var climbed = (seen[0]==='climb');
+    if(climbed) seen.shift();
+    return {seen:seen, moved:moved, frostLed:frostLed, frames:frames, to:done, climbSkipped:climbed};
+  }
+  var _r23=_runRoute(2);
+  ok(_r23.to===3, '2>3 runs to completion and hands off to stage 3 (to='+_r23.to+', '+_r23.frames+' frames)');
+  ok(_r23.seen.join('>')==='past>lava>freeze>cruise>fade',
+     '2>3 walks its five beats in order — past, lava, freeze, cruise, fade  ['+_r23.seen.join('>')+']');
+  ok(_r23.moved===0, '2>3 never moves the player: the world changes underneath them  ('+_r23.moved+' frames moved)');
+  ok(_r23.climbSkipped && _r23.seen.indexOf('climb')<0,
+     'and it never RUNS the generic climb beat — "do not fly them off in the distance" is a standing rule');
+  ok(_r23.frostLed===0, 'and the ice never leads the lava — no frame of frost over bare volcano  ('+_r23.frostLed+')');
+  var _r34=_runRoute(3);
+  ok(_r34.to===4, '3>4 runs to completion and hands off to stage 4 (to='+_r34.to+', '+_r34.frames+' frames)');
+  ok(_r34.seen.join('>')==='past>sky>town>fade',
+     '3>4 walks its four beats in order — past, sky, town, fade  ['+_r34.seen.join('>')+']');
+  ok(_r34.moved===0, '3>4 never moves the player either  ('+_r34.moved+' frames moved)');
+  /* the join that is NOT built must still take no route rather than a wrong one */
+  vm.runInContext("outbound=null; outboundStart(7);", ctxv);
+  ok(vm.runInContext("outbound.via.length===0", ctxv),
+     '7>8 is still unbuilt, so it populates no route at all rather than a wrong one');
+  ok(vm.runInContext("outbound.con===null", ctxv),
+     'and no connector plate is loaded for any of them — Mike rejected those outright');
 
   // ===== 134. BOLTS GLOW, THEY DO NOT ANIMATE (drop 0724da) =====
   console.log("=== 134. laser + missile ===");
