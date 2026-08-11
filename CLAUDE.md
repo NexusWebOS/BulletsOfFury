@@ -139,7 +139,7 @@ loads on entry.
 
 ## Current state (2026-08-11)
 
-Suite: **2,421 assertions / 217 sections / 5 failures** — all five pre-existing at HEAD: the boss
+Suite: **2,433 assertions / 218 sections / 5 failures** — all five pre-existing at HEAD: the boss
 limb pool, the preload count, the two `_superseded` ones and the naval flash families.
 
 ### ⚠ THERE ARE TWO DIVERGENT TREES. READ THIS BEFORE MERGING ANYTHING.
@@ -187,11 +187,25 @@ this is *not* the `aorb_`/`nadb_` hue-rotation Mike rejected in 0805d — differ
 helper balls, not her charge orb) and a live swap rather than a baked second copy. Verified by
 `probe_palette.py`: hue moves ~100°, luminance holds within 0.05.
 
-**`ARSENAL_MINIS` is defined and never read — and that may be correct.** The laptop wired a
-consumer for it. Do not port that without asking Mike: `SUBBOSS` already fields quadlaser /
-obsidiandrill / glacierrail on stages 1–3, and the quadlaser is there because Mike explicitly
-replaced the siege crawler with it. Consuming the table would evict three approved minibosses. The
-trees also disagree on the keying (trunk `dambreaker→1`, laptop `→4`).
+**The ARSENAL MINI TIER is live** — caldera on 2, frostbite on 3, dambreaker on 4. Mike: "those
+are enemies we have."
+
+⚠ I blocked on this once for the wrong reason, so the correction is worth keeping: I read
+`ARSENAL_MINIS` as feeding `SUBBOSS` and refused to wire it. **It does not.** It is a separate,
+lighter tier that arrives mid-wave EARLIER than the sub-boss, with no WARNING banner and no scroll
+hold, so a level reads mini → sub-boss → boss. Nothing is displaced, and the suite now pins both
+halves. The stage assignment is Mike's own, recorded verbatim in the laptop drop: *"that dambreaker
+isnt the same miniboss I have in level 1 currently"* — so level 1 keeps its quadlaser and
+dambreaker moves to 4. The old `{1:'dambreaker'}` keying was simply wrong.
+
+⚠ **AND I WAS WRONG THAT THE ARSENAL BLOCK WAS ALREADY HOISTED.** I read grep line numbers as
+proof of scope. `spawnEnemy`'s unclosed `if` swallows everything below it whatever column it sits
+in, so `ARSENAL_DRONES`, `ARSENAL_MINIS`, `arsenalDroneArt` and `arsenalDronesFor` are ALL still
+function-scoped — the laptop's "dead systems" finding was right about trunk too. The mini tier is
+now hoisted above `spawnEnemy`; **the other four are not**, and anything outside `spawnEnemy`
+reading them is silently getting `undefined`. Left for its own drop because it has a real blast
+radius. When it bit, the suite reported **0 failures with the count down from 2,421 to 1,567** — a
+crash wearing a pass, rule 3 exactly. Always read the COUNT.
 
 ### Probes added — all four drive the real game in real Chromium
 
@@ -352,9 +366,9 @@ in, so the listener stays on screen dimmed instead of the portraits swapping sid
 2. Then: the stats-screen alignment; camo for stages 2–3; `CF_PilotCutscenePack` (per-pilot scenes
    still unwired, only the ensemble ones are).
 
-**Waiting on Mike:** what `ARSENAL_MINIS`' three units are for (see the note at its declaration),
-and whether `dambreaker` belongs to stage 1 or 4. (The `o.px` camera question below is ANSWERED
-and fixed — he approved it in 0810c.)
+**Waiting on Mike:** nothing outstanding. The arsenal-mini questions are answered (they are
+enemies we have; caldera 2 / frostbite 3 / dambreaker 4) and the `o.px` camera fix was approved
+and shipped in 0810c.
 
 **The `o.px` camera fix (0810c), for the record.**
 `outboundStart` captures `o.px = player.x`, which is a **world** coordinate, and all three

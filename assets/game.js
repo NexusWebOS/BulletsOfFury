@@ -4017,6 +4017,7 @@ let curStage=null;
 let stageTimer=0, spawnClock=0, _waveGap=0, bossActive=false, bossDefeated=false, stageEnding=0, lifeUpRolled=false;
 let subBoss=null, subBossActive=false, subBossDone=false, subBossTriggered=false, _sbMusicResumed=false;
 let warnT=0, warnKind=null, bossWarned=false, _sc1=false, _sc2=false, _mc1=false, _mc2=false;
+let aminiTriggered=false;   // the arsenal mini has been sent this stage
 // per-stage sub-boss: mid-level mini-boss. {at: fraction of stage length, kind}
 const SUBBOSS={
   /* QUAD-LASER replaces the SIEGE CRAWLER (drop 0801em). Mike: "I have a
@@ -5128,6 +5129,64 @@ function strafeDiveTick(e, dt){
   e._faceAng = Math.atan2(e._sdLean*0.42, -1);
   if(e.y > VH+70) e.dead=true;
 }
+/* ⚠ HOISTED ABOVE spawnEnemy ON PURPOSE (drop 0810c). This block was written just after
+   ARSENAL_DRONES, which LOOKS like top level — column 0, no indentation — and is not.
+   spawnEnemy's `if(base.art===undefined){` is never closed, so everything below that line is
+   inside the function however it is formatted, and a `function` declared there is visible only
+   to spawnEnemy. arsenalMiniFor threw "is not defined" from the wave loop, and the suite
+   reported 0 failures with the count down from 2,421 to 1,567 — a crash wearing a pass, which
+   is rule 3 in CLAUDE.md exactly.
+
+   ⚠ ARSENAL_DRONES / ARSENAL_MINIS / arsenalDroneArt / arsenalDronesFor are STILL down there and
+   still function-scoped. The laptop drop flagged that and I wrongly recorded it as already
+   fixed here, reading grep line numbers as proof of scope. Anything outside spawnEnemy that
+   reads them is silently getting undefined. Not moved in this drop because it is a separate
+   change with its own blast radius — see the note in CLAUDE.md. */
+/* ============================================================
+   THE ARSENAL MINI-BOSS TIER (drop 0810a).
+
+   ⚠ THIS TABLE WAS DEFINED AND NEVER READ. Nothing in the engine consumed ARSENAL_MINIS, so
+   CALDERA, FROSTBITE and DAMBREAKER — all three named in LEVEL_ROSTERS.md, all three with their
+   own art on disk — could not spawn at all. The same shape as DEAD_TYPES: a table that looks like
+   wiring and is decoration.
+
+   THIS IS A THIRD TIER, not the sub-boss. LEVEL_ROSTERS lists them separately and so does the
+   engine: SUBBOSS carries the heavyweights (Obsidian Drill Tank, Glacier Rail Fortress) with their
+   own mech/modular construction. A mini is lighter — a drone that has been scaled up, given real
+   HP, and made to CYCLE its level's attacks. That reuses the whole tell/commit/recover machine
+   rather than bolting a second boss system alongside the first.
+
+   STAGES ARE MIKE'S ASSIGNMENT, not the old table's. He was explicit that level 1 keeps the
+   quadlaser it already has — "that dambreaker isnt the same miniboss I have in level 1 currently"
+   — so dambreaker moves to 4 and level 1 is left alone.
+   ============================================================ */
+const ARSENAL_MINIS = {2:'caldera', 3:'frostbite', 4:'dambreaker'};
+/* at: fraction of the stage clock. Deliberately EARLIER than SUBBOSS[n].at, so the order down a
+   level reads mini -> sub-boss -> boss, each heavier than the last. */
+const ARSENAL_MINI_DEF = {
+  caldera:    {at:0.34, hp:52, size:104, score:9000,  name:'CALDERA'},
+  frostbite:  {at:0.34, hp:52, size:104, score:9000,  name:'FROSTBITE'},
+  dambreaker: {at:0.32, hp:64, size:120, score:11000, name:'DAMBREAKER'},
+};
+function arsenalMiniFor(stage){ return ARSENAL_MINIS[stage] || null; }
+/* Built as a drone so it inherits the tell, the aim lock, the glow ramp and the cycle — the whole
+   contract, at a heavier weight. Enters at the top centre and settles; it does not sweep, because
+   an entrance arc on something this size reads as a fly-past rather than an arrival. */
+function spawnArsenalMini(slug){
+  const M=ARSENAL_MINI_DEF[slug]; if(!M || typeof DRONE_BEHAV[slug]==='undefined') return null;
+  const hp=Math.ceil(M.hp*((typeof DIFF!=='undefined'&&DIFF)?DIFF.eHp:1));
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  const e={type:slug, x:W/2, y:-M.size*0.8, vx:0, vy:0.9, w:M.size, h:M.size,
+           hp:hp, maxhp:hp, fireCd:9, fireRate:9, t:0, pattern:'sine', amp:5, phase:0,
+           score:M.score, shoots:false, _amini:slug, _aminiName:M.name};
+  droneInit(e, slug);
+  e._dr.ent = ENTRY_DUR;        // no entrance sweep: it arrives, it does not strafe past
+  e._dr.entry = 0.9;            // a beat on screen before its first tell
+  enemies.push(e);
+  if(typeof stageStats!=='undefined') stageStats.spawned++;
+  return e;
+}
+
 function spawnEnemy(type, x, y, opt={}){
   /* ================================================================
      INLINED CULL (drop 0801ce). Mike, on the fifteenth report of invisible
@@ -5356,21 +5415,6 @@ const ARSENAL_DRONES = {
   5: ['discordgunship','fractureskimmer','nullprism'],
   8: ['ragetalon','deathchoir','furymine'],
 };
-/* ⚠ DEFINED AND NEVER READ — AND THAT MAY BE CORRECT. DO NOT "FIX" IT WITHOUT ASKING MIKE.
-   (drop 0810b, triaged against the laptop's 0810a finding.)
-
-   The laptop session listed this among five dead systems and wired an arsenalMiniFor() consumer
-   for it. Checked here before porting that, and the slots it would fill are NOT empty: SUBBOSS
-   already fields quadlaser on 1, obsidiandrill on 2 and glacierrail on 3 — and the quadlaser is
-   there because Mike explicitly replaced the siege crawler with it ("I have a replacement
-   miniboss for level 1"). Consuming this table would silently evict three approved minibosses.
-
-   The two trees also disagree on the keying: trunk says dambreaker->1 "the stages they are named
-   for" (stage 1 ends at the dam); the laptop says dambreaker->4. Mike's call, not ours.
-
-   So it stays unread until he says what these three are for — a second mini tier, a replacement,
-   or cut. An unread table is cheap; three evicted minibosses are not. */
-const ARSENAL_MINIS = {1:'dambreaker', 2:'caldera', 3:'frostbite'};
 function arsenalDroneArt(slug, part, fi){
   const k='ndr_'+slug+'_'+(part||'idle')+'_'+(fi|0);
   return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
@@ -11622,6 +11666,7 @@ function beginStage(num){
   if(typeof _navalFlashes!=='undefined') _navalFlashes.length=0;
   bossActive=false; bossDefeated=false; stageTimer=0; stageEnding=0; lifeUpRolled=false;
   subBoss=null; subBossActive=false; subBossDone=false; subBossTriggered=false; _sbMusicResumed=false;
+  aminiTriggered=false;
   if(specialActive('freezer')){ timeScale=1; try{ if(Snd&&Snd.cur) Snd.cur.playbackRate=1; }catch(e){} }
   special=null; retina.target=null; timeScale=1; zaps.length=0; missileRush=null; clearPilotFX();
   warnT=0; warnKind=null; bossWarned=false; _sc1=false; _sc2=false; _mc1=false; _mc2=false;
@@ -11963,6 +12008,20 @@ function updatePlay(dt){
     // special crates: 1 before the sub-boss, 1 between sub-boss and boss
     if(!_sc1 && stageTimer>=curStage.length*0.22){ _sc1=true; spawnContainer('scrate'); }
     if(!_sc2 && subBossDone && stageTimer>=curStage.length*0.62){ _sc2=true; spawnContainer('scrate'); }
+    /* ARSENAL MINI: earlier than the sub-boss, so a level reads mini -> sub-boss -> boss, each
+       heavier than the last. No WARNING banner and no scroll hold — that ceremony belongs to the
+       heavier tiers, and a mini that froze the stage would land in the same trap the sub-boss
+       needed a failsafe for. It simply arrives, mid-wave, and the level keeps moving. */
+    const _amSlug = (typeof arsenalMiniFor==='function') ? arsenalMiniFor(run.stage) : null;
+    if(_amSlug && !aminiTriggered && ARSENAL_MINI_DEF[_amSlug]
+       && stageTimer >= curStage.length*(ARSENAL_MINI_DEF[_amSlug].at) && enemies.length<=7){
+      aminiTriggered=true;
+      if(typeof spawnArsenalMini==='function' && spawnArsenalMini(_amSlug)){
+        if(Audio.SFX && Audio.SFX.enemyApproach) Audio.SFX.enemyApproach();
+        shake=Math.max(shake,3);
+        if(typeof floatText==='function') floatText(VW/2, 64, ARSENAL_MINI_DEF[_amSlug].name, '#ffb04a');
+      }
+    }
     // missile crates: one mid-stage, a second later if the player is out of missiles (keeps the rush usable)
     if(!_mc1 && stageTimer>=curStage.length*0.35){ _mc1=true; spawnContainer('mcrate'); }
     if(!_mc2 && stageTimer>=curStage.length*0.78 && run.bombs<=1){ _mc2=true; spawnContainer('mcrate'); }

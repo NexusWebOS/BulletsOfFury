@@ -5375,6 +5375,51 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("droneTellDur({tellMul:1.6}) === droneTellDur({})", ctxv),
      'and at FULL heat both sit on the floor — tellMul buys nothing there, by design');
 
+  // ===== 133d. THE ARSENAL MINI TIER — a tier, not a replacement =====
+  console.log("=== 133d. arsenal mini tier ===");
+  /* Mike: "those are enemies we have." They are, and the art backs it — ndr_caldera_idle_0..3,
+     ndr_frostbite_*, ndr_dambreaker_*.
+
+     ⚠ I BLOCKED ON THIS ONCE FOR THE WRONG REASON. I read ARSENAL_MINIS as feeding SUBBOSS and
+     refused to wire it because it would evict quadlaser/obsidiandrill/glacierrail. It does not
+     feed SUBBOSS at all — it is a SEPARATE, LIGHTER tier that arrives mid-wave, earlier than the
+     sub-boss, with no WARNING banner and no scroll hold. Nothing is displaced. The assertions
+     below pin both halves so nobody re-litigates it.
+
+     THE STAGE ASSIGNMENT IS MIKE'S, verbatim: "that dambreaker isnt the same miniboss I have in
+     level 1 currently" — so level 1 keeps its quadlaser and dambreaker moves to 4. The old
+     {1:'dambreaker'} keying was wrong. */
+  ok(vm.runInContext("arsenalMiniFor(1)===null", ctxv),
+     'level 1 gets NO arsenal mini — it keeps the quadlaser Mike chose for it');
+  ok(vm.runInContext("arsenalMiniFor(2)==='caldera'",   ctxv), 'stage 2 fields CALDERA');
+  ok(vm.runInContext("arsenalMiniFor(3)==='frostbite'", ctxv), 'stage 3 fields FROSTBITE');
+  ok(vm.runInContext("arsenalMiniFor(4)==='dambreaker'",ctxv), 'stage 4 fields DAMBREAKER');
+  /* the tier displaces nothing: the real minibosses are still where they were */
+  ok(vm.runInContext("SUBBOSS[1].kind==='quadlaser'", ctxv), 'and SUBBOSS[1] is still the QUAD-LASER');
+  ok(vm.runInContext("SUBBOSS[2].kind==='obsidiandrill'", ctxv), 'SUBBOSS[2] still the OBSIDIAN DRILL');
+  ok(vm.runInContext("SUBBOSS[3].kind==='glacierrail'", ctxv), 'SUBBOSS[3] still the GLACIER RAIL');
+  /* order down a level: mini -> sub-boss -> boss, each heavier than the last */
+  var _amEarly=[];
+  [2,3].forEach(function(n){
+    var slug=vm.runInContext("arsenalMiniFor("+n+")", ctxv);
+    var amAt=vm.runInContext("ARSENAL_MINI_DEF["+JSON.stringify(slug)+"].at", ctxv);
+    var sbAt=vm.runInContext("(SUBBOSS["+n+"]&&SUBBOSS["+n+"].at)||1", ctxv);
+    if(!(amAt<sbAt)) _amEarly.push('stage '+n+' mini@'+amAt+' subboss@'+sbAt);
+  });
+  ok(_amEarly.length===0,
+     'the mini always arrives BEFORE the sub-boss, so a level reads mini > sub-boss > boss'
+     + (_amEarly.length?(' — '+_amEarly.join('; ')):''));
+  /* and it is built as a drone, so it inherits the whole tell/aim-lock contract */
+  vm.runInContext("beginStage(2); setState(GS.PLAY); enemies.length=0; spawnArsenalMini('caldera');", ctxv);
+  ok(vm.runInContext("enemies.length===1 && !!enemies[0]._dr", ctxv),
+     'it spawns carrying the drone contract — same tell, same aim lock, heavier weight');
+  ok(vm.runInContext("enemies[0].hp > 40", ctxv),
+     'with mini HP rather than fodder HP  (hp='+vm.runInContext("enemies[0].hp", ctxv)+')');
+  ok(vm.runInContext("enemies[0]._dr.ent >= ENTRY_DUR", ctxv),
+     'and it does NOT run the entrance sweep — at this size an arc reads as a fly-past');
+  ok(vm.runInContext("droneTellDur(DRONE_BEHAV.caldera) > droneTellDur(DRONE_BEHAV.cinderwasp)", ctxv),
+     'a mini warns for longer than the drones around it');
+
   // ===== 134. BOLTS GLOW, THEY DO NOT ANIMATE (drop 0724da) =====
   console.log("=== 134. laser + missile ===");
   var _gM=fs.readFileSync(ROOT+'/assets/game.js','utf8');
