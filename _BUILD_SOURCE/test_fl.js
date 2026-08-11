@@ -5188,16 +5188,24 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // the routes match what Mike described
   var _r={};
   for(var n=1;n<=8;n++) _r[n]=JSON.parse(vm.runInContext("JSON.stringify(TRANS["+n+"].via)", ctxv));
+  /* RE-KEYED (drop 0810a, found on the laptop). These assertions were GREEN WHILE BEING WRONG:
+     the table was keyed by DESTINATION for entries 2..8 and transVia() reads it by SOURCE, so
+     every label below the first named a join whose terrain did not match the stages it runs
+     between. '2>3 water into lava' was the giveaway — stage 2 IS the volcano, so that line was
+     describing 1>2 under key 2. Checked against _levelCfg: 1 jungle, 2 volcano, 3 ice, 4
+     crash-town, 5 orbital, 6 sky, 7 sewer. TRANS[N] now means the join LEAVING stage N.
+     Another entry for CLAUDE.md's "assertions can defend a bug" list: eight of them agreed with
+     the table because they were written from the table. */
   ok(_r[1].join()==='water', '1>2 goes out over water');
-  ok(_r[2].join()==='water,lava', '2>3 water into lava');
-  ok(_r[3].join()==='lava,ice', '3>4 lava into ice');
-  ok(_r[4].join()==='ice,sky', '4>5 ice up into the sky');
-  ok(_r[5].join()==='sky,space', '5>6 sky into space (the chase ends there)');
+  ok(_r[2].join()==='lava,ice', '2>3 out over the lava field, then freezing over into the ice mountains');
+  ok(_r[3].join()==='ice,sky', '3>4 ice up into the sky, then down into the town');
+  ok(_r[4].join()==='sky,space', '4>5 THE BOSS CHASE — sky into space, which is what the roadmap always called it');
   /* THE ONE MIKE CALLED OUT: stage 6 is HEAVY TURBULENCE, a SKY stage. Not sand. */
-  ok(_r[6].join()==='space,sky', '6>7 descends from SPACE to SKY — not sand, because 6 is a sky stage');
-  ok(_r[6].indexOf('sand')<0, 'and sand appears nowhere in it');
-  ok(_r[7].join()==='sky,metal', '7>8 sky down into the sewer');
-  ok(_r[8].join()==='metal,space', '8 escapes into space');
+  ok(_r[5].join()==='space,sky', '5>6 descends from SPACE to SKY — not sand, because 6 is a sky stage');
+  ok(_r[5].indexOf('sand')<0, 'and sand appears nowhere in it');
+  ok(_r[6].join()==='sky,metal', '6>7 sky down into the sewer');
+  ok(_r[7].join()==='metal,space', '7>8 escapes the sewer into chaotic space');
+  ok(_r[8].join()==='', '8>9 is UNSPECIFIED — an empty via, because that handoff has never been described');
   // every terrain names a real flat, or is deliberately flat-less
   var _bad=[];
   Object.keys(_r).forEach(function(k){

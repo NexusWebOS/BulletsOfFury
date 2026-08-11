@@ -74,17 +74,31 @@ let outbound = null;
    TRANS[from] describes what the player travels THROUGH, in order. 'sky' and 'space' are treated
    as terrains here because that is what they are in a vertical scroller.
    ============================================================ */
+/* ⚠ THIS TABLE WAS KEYED BY DESTINATION AND READ BY SOURCE (found on the laptop, drop 0810a).
+   `transVia(fromStage)` reads TRANS[from], so TRANS[2] must describe LEAVING stage 2. It said
+   "water into lava, arriving at the volcano" — but stage 2 IS the volcano, so that is the 1 -> 2
+   join sitting under key 2. Every entry from 2 up was one place out, which also meant the eight
+   keys described only seven joins: 1 -> 2 appeared twice (keys 1 and 2) and 8 -> 9 was missing
+   entirely.
+
+   It was latent rather than visible because outboundStart only populates `via` for fromStage===1,
+   and key 1 was the one entry that happened to be right. It would have bitten the moment any
+   other join was switched on — which is exactly what enabling 2 -> 3 does.
+
+   Re-keyed by SOURCE. 8 -> 9 is left with an empty via rather than invented: an empty route takes
+   no route, which is the honest state for a handoff nobody has specced. Do not "fix" it by
+   copying key 7 down. */
 const TRANS = {
   1: {via:['water'],              note:'past the broken dam, out over water, camera follows, fade to stats'},
-  2: {via:['water','lava'],       note:'water into lava, arriving at the volcano'},
-  3: {via:['lava','ice'],         note:'lava into the ice mountains'},
-  4: {via:['ice','sky'],          note:'ice up into the sky, then scale DOWN into the town'},
-  5: {via:['sky','space'],        note:'THE BOSS CHASE: highway, ascent, space, slow-mo kill'},
+  2: {via:['lava','ice'],         note:'out over the lava field, then freezing over into the ice mountains'},
+  3: {via:['ice','sky'],          note:'ice up into the sky, then scale DOWN into the town'},
+  4: {via:['sky','space'],        note:'THE BOSS CHASE: highway, ascent, space, slow-mo kill'},
   /* STAGE 6 IS HEAVY TURBULENCE — A SKY STAGE. Mike: not sand. We come DOWN from space into the
      sky, so the descent is space -> sky and nothing touches ground. */
-  6: {via:['space','sky'],        note:'descend from space into the sky; jets ambush from below'},
-  7: {via:['sky','metal'],        note:'down to the sewer mouth, cut inside, reverb on'},
-  8: {via:['metal','space'],      note:'escape the sewer into a blackhole, chaotic space'},
+  5: {via:['space','sky'],        note:'descend from space into the sky; jets ambush from below'},
+  6: {via:['sky','metal'],        note:'down to the sewer mouth, cut inside, reverb on'},
+  7: {via:['metal','space'],      note:'escape the sewer into a blackhole, chaotic space'},
+  8: {via:[],                     note:'UNSPECIFIED — the 8 -> 9 finale handoff has never been described'},
 };
 /* The flats each terrain draws with. 'space' has no flat of its own — the orbital background is
    the right surface for it, and using tflat_sky there was the starfield mistake all over again. */
