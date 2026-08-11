@@ -139,7 +139,7 @@ loads on entry.
 
 ## Current state (2026-08-11)
 
-Suite: **2,395 assertions / 215 sections / 5 failures** — all five pre-existing at HEAD: the boss
+Suite: **2,405 assertions / 216 sections / 5 failures** — all five pre-existing at HEAD: the boss
 limb pool, the preload count, the two `_superseded` ones and the naval flash families.
 
 ### ⚠ THERE ARE TWO DIVERGENT TREES. READ THIS BEFORE MERGING ANYTHING.
@@ -154,7 +154,8 @@ It is preserved verbatim as orphan branch **`laptop-0810a`** and is being ported
 feature. **Never sync that tree wholesale.** Its zip is also incomplete — 78 files short, including
 `jungle800_rc2_master.png`, the whole BOF font set, `ART_TAXONOMY.json` and `shoot.py`.
 
-Ported so far: the TRANS re-key (below). Still to port: transitions 2→3 and 3→4, and the
+Ported so far: the TRANS re-key, and transitions **2→3** (lava→ice) and **3→4**
+(ice→sky→town), both live and guarded by suite section 133b. Still to port: the
 TELL→COMMIT→RECOVER enemy contract with `stageHeat()` (design in `docs/ENEMY_BEHAVIOUR.md`).
 
 ### Landed 0810a–0810b
@@ -344,9 +345,7 @@ Two slots, and a speaker keeps its side: whoever talks takes the slot the PREVIO
 in, so the listener stays on screen dimmed instead of the portraits swapping sides every line.
 
 **Next, in order:**
-1. **Port transitions 2→3 and 3→4** from `laptop-0810a` (`docs/TRANSITIONS_STEP3.md` / `STEP4.md`).
-   The TRANS re-key they depend on is already in.
-2. **Port the TELL→COMMIT→RECOVER enemy contract** with `stageHeat()` — levels 2, 3, 5 and the
+1. **Port the TELL→COMMIT→RECOVER enemy contract** with `stageHeat()` — levels 2, 3, 5 and the
    arsenal mini tier. Design in `docs/ENEMY_BEHAVIOUR.md`. The fairness fix is real: `droneFire`
    here still solves aim at bullet spawn, so an aimed shot tracks you to the muzzle and no move
    beats it — an unavoidable death in a one-hit game, not difficulty.
@@ -356,7 +355,16 @@ in, so the listener stays on screen dimmed instead of the portraits swapping sid
    still unwired, only the ensemble ones are).
 
 **Waiting on Mike:** what `ARSENAL_MINIS`' three units are for (see the note at its declaration),
-and whether `dambreaker` belongs to stage 1 or 4.
+whether `dambreaker` belongs to stage 1 or 4, and the `o.px` question below.
+
+**Found while porting the routes, NOT changed — it touches the approved 1→2 route too.**
+`outboundStart` captures `o.px = player.x`, which is a **world** coordinate, and all three
+`outboundDraw*` functions draw the held player at `o.px` in **screen** space with no `camX`
+translate. On an 800-wide stage that puts the ship up to 160px off where it was when the boss
+died. It is the same class of bug as the launch seam (0810a) — world coords drawn through no
+camera — but 1→2 shipped this way and Mike has signed it off, so the fix is his call, not a
+silent correction. If he wants it: subtract the `camX` that was live at `outboundStart`, captured
+alongside `px`/`py`, rather than the current `camX`, which keeps drifting after the handoff.
 
 ⚠ **The bosses are being wired in another chat in this same tree.** Nothing has been committed
 there since `73b3009`, but check `git log` before touching boss code.
