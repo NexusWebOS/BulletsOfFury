@@ -5270,6 +5270,33 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      '7>8 is still unbuilt, so it populates no route at all rather than a wrong one');
   ok(vm.runInContext("outbound.con===null", ctxv),
      'and no connector plate is loaded for any of them — Mike rejected those outright');
+  /* THE HELD PLAYER IS DRAWN THROUGH THE CAMERA THAT WAS LIVE AT THE CUT (drop 0810c).
+     o.px is a WORLD coordinate and the routes draw in SCREEN space, so without this the ship
+     jumped up to 160px sideways on an 800-wide stage at the exact moment the beat is supposed to
+     hold it still. Frozen at outboundStart rather than read live, because camX keeps easing after
+     the handoff and a live read would make the held ship drift. */
+  vm.runInContext("beginStage(2); player.x=700; player.y=300; WORLD_W=worldWidth(); camX=220; outbound=null; outboundStart(2);", ctxv);
+  ok(vm.runInContext("outbound.pcam===220", ctxv),
+     'the outbound freezes the camera as it was at the cut  (pcam='+vm.runInContext("outbound.pcam", ctxv)+')');
+  ok(vm.runInContext("outboundScreenX(outbound)===480", ctxv),
+     'so the held ship draws at its true SCREEN x, not its world x  ('+vm.runInContext("outboundScreenX(outbound)", ctxv)+' from world 700 - cam 220)');
+  vm.runInContext("camX=40;", ctxv);
+  ok(vm.runInContext("outboundScreenX(outbound)===480", ctxv),
+     'and it does not drift when camX keeps easing afterwards');
+  /* and every route must go through the accessor — a fourth route that draws o.px directly
+     reintroduces the bug silently, so this is checked in the SOURCE, not just in behaviour */
+  var _osrc=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  var _routeFns=['outboundDrawWater','outboundDrawLavaIce','outboundDrawSkyTown'];
+  var _missing=[];
+  _routeFns.forEach(function(fn){
+    var i=_osrc.indexOf('function '+fn);
+    if(i<0){ _missing.push(fn+' (not found)'); return; }
+    var j=_osrc.indexOf('\nfunction ', i+1);
+    var body=_osrc.slice(i, j<0?_osrc.length:j);
+    if(body.indexOf('outboundScreenX')<0) _missing.push(fn+' (draws o.px directly)');
+  });
+  ok(_missing.length===0,
+     'every route draws the held player through outboundScreenX, never o.px directly'+(_missing.length?(' — '+_missing.join(', ')):''));
 
   // ===== 134. BOLTS GLOW, THEY DO NOT ANIMATE (drop 0724da) =====
   console.log("=== 134. laser + missile ===");

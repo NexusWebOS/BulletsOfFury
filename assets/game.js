@@ -112,6 +112,14 @@ function outboundStart(fromStage){
   outbound = {from:fromStage, to:fromStage+1, t:0, phase:'climb', scroll:0,
               px:(typeof player!=='undefined'&&player)?player.x:VW/2,
               py:(typeof player!=='undefined'&&player)?player.y:VH*0.7,
+              /* ⚠ px IS A WORLD COORDINATE AND THE ROUTES DRAW IN SCREEN SPACE (drop 0810c).
+                 Every outboundDraw* held the player at o.px with no camera, so on an 800-wide
+                 stage the ship jumped up to 160px sideways on the cut — the same class as the
+                 launch seam, world coords through no camera. Captured HERE rather than read at
+                 draw time on purpose: camX keeps easing after the handoff, so reading it live
+                 would make the held ship drift during a beat whose whole point is that it does
+                 not move. This is the camera as it was at the instant of the cut, frozen. */
+              pcam:((typeof worldWidth==='function'?worldWidth():VW)>VW && typeof camX!=='undefined')?camX:0,
               /* con is forced null: the connector plates are rejected art. The follow beat now
                  has to come from TRANS[] terrain, not from a plate that belongs to neither stage. */
               con:null,
@@ -130,6 +138,10 @@ function outboundStart(fromStage){
   return outbound;
 }
 function outboundActive(){ return !!outbound; }
+/* the held player's SCREEN x — see pcam in outboundStart. Every route must draw through
+   this; drawing o.px directly is the bug it exists to prevent. */
+function outboundScreenX(o){ return (o?o.px:VW/2) - ((o&&o.pcam)||0); }
+
 /* ============================================================
    1 -> 2 · WATER (drop 0801a). Step 2 of Mike's order, and the first END transition built.
 
@@ -369,12 +381,12 @@ function outboundDrawWater(o){
     }
   }
   // ---- the player, held exactly where they were when the boss died ----
-  if(typeof drawPlayerShip==='function'){ try{ drawPlayerShip(o.px,o.py); }catch(e){} }
+  if(typeof drawPlayerShip==='function'){ try{ drawPlayerShip(outboundScreenX(o),o.py); }catch(e){} }
   else if(typeof player!=='undefined' && player){
     const sk=(typeof shipKey==='function')?shipKey():null;
     if(sk && XART.rdy(sk)){
       const im=XART.get(sk), h=44, w=h*(im.naturalWidth/im.naturalHeight);
-      ctx.drawImage(im, o.px-w/2, o.py-h/2, w, h);
+      ctx.drawImage(im, outboundScreenX(o)-w/2, o.py-h/2, w, h);
     }
   }
   // ---- fade to the stats screen ----
@@ -458,12 +470,12 @@ function outboundDrawLavaIce(o){
     }
   }
   // ---- the player, held exactly where they were when the boss died ----
-  if(typeof drawPlayerShip==='function'){ try{ drawPlayerShip(o.px,o.py); }catch(e){} }
+  if(typeof drawPlayerShip==='function'){ try{ drawPlayerShip(outboundScreenX(o),o.py); }catch(e){} }
   else if(typeof player!=='undefined' && player){
     const sk=(typeof shipKey==='function')?shipKey():null;
     if(sk && XART.rdy(sk)){
       const im=XART.get(sk), h=44, w=h*(im.naturalWidth/im.naturalHeight);
-      ctx.drawImage(im, o.px-w/2, o.py-h/2, w, h);
+      ctx.drawImage(im, outboundScreenX(o)-w/2, o.py-h/2, w, h);
     }
   }
   // ---- fade to the stats screen ----
@@ -541,12 +553,12 @@ function outboundDrawSkyTown(o){
     ctx.restore();
   }
   // ---- the player, held exactly where they were when the boss died ----
-  if(typeof drawPlayerShip==='function'){ try{ drawPlayerShip(o.px,o.py); }catch(e){} }
+  if(typeof drawPlayerShip==='function'){ try{ drawPlayerShip(outboundScreenX(o),o.py); }catch(e){} }
   else if(typeof player!=='undefined' && player){
     const sk=(typeof shipKey==='function')?shipKey():null;
     if(sk && XART.rdy(sk)){
       const im=XART.get(sk), h=44, w=h*(im.naturalWidth/im.naturalHeight);
-      ctx.drawImage(im, o.px-w/2, o.py-h/2, w, h);
+      ctx.drawImage(im, outboundScreenX(o)-w/2, o.py-h/2, w, h);
     }
   }
   // ---- fade to the stats screen ----
@@ -578,7 +590,7 @@ function outboundDraw(){
   }
   // the player, climbing out of frame
   if(o.phase==='climb' && o.py>-80 && typeof drawShipSprite==='function'){
-    drawShipSprite(o.px, o.py, 38, '');      // plain hull + live thruster (drop 0808g)
+    drawShipSprite(outboundScreenX(o), o.py, 38, '');      // plain hull + live thruster (drop 0808g)
   }
   // speed streaks sell the acceleration
   const spd=(o.phase==='climb')?clamp(o.t/OUT_CLIMB,0,1):1;
