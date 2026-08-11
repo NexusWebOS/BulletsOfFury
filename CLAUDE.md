@@ -81,6 +81,14 @@ one-shot readiness check reads false and looks like missing art. Poll it.
 
 **The player never fires in `shoot.py`.** Firing needs an input tap the harness does not simulate,
 so `pBullets` stays empty and any weapon FX measures as dead. A test must call `pShoot()` itself.
+`_BUILD_SOURCE/probe_weapons.py` is that test — it drives `pShoot()` directly and asserts on what
+lands in `pBullets`, for all nine primaries plus Decker's shotgun and Lizzie's mount.
+
+**`pShoot` is a chain of early returns, and a weapon that claims the trigger silences everyone.**
+`sonicFire` → `dkFire` → Lizzie's mount → the primary, each returning on a claim. `dkFire` returns
+true *while reloading* — deliberately, it is what makes the shotgun a shotgun — so any pilot-gate
+that is missing there costs another pilot their entire weapon. This is not hypothetical: it cost
+Lizzie her turret completely (0810b). When a weapon "does nothing", look UP the chain first.
 
 **State declared inside `spawnEnemy`'s unclosed `if` is re-initialised on every spawn.** A `let`
 there is not module state — each wave spawn gives you a fresh one. Anything that must persist
@@ -129,11 +137,76 @@ loads on entry.
 
 ---
 
-## Current state (2026-08-10)
+## Current state (2026-08-11)
 
-Suite: **2,390 assertions / 215 sections / 5 failures** — all five pre-existing at HEAD, verified
-by stashing and re-running: the boss limb pool, the preload count, the two `_superseded` ones and
-the naval flash families.
+Suite: **2,395 assertions / 215 sections / 5 failures** — all five pre-existing at HEAD: the boss
+limb pool, the preload count, the two `_superseded` ones and the naval flash families.
+
+### ⚠ THERE ARE TWO DIVERGENT TREES. READ THIS BEFORE MERGING ANYTHING.
+
+A laptop session delivered `BulletsOfFury_0810a.zip` on 08-11. **It forked from a snapshot older
+than this repo's first commit** (its `game.js` is 30,364 lines against 30,979 at `2cd089c`), so it
+has *no common ancestor here and cannot be 3-way merged*. It is missing everything from 0809 on —
+campaign save slots, `campPause`, the attract reel, the Fury HQ cutscenes, `xartPalette`, the
+stage-1 RC2 rebuild. Copying it over trunk would erase all of that.
+
+It is preserved verbatim as orphan branch **`laptop-0810a`** and is being ported forward feature by
+feature. **Never sync that tree wholesale.** Its zip is also incomplete — 78 files short, including
+`jungle800_rc2_master.png`, the whole BOF font set, `ART_TAXONOMY.json` and `shoot.py`.
+
+Ported so far: the TRANS re-key (below). Still to port: transitions 2→3 and 3→4, and the
+TELL→COMMIT→RECOVER enemy contract with `stageHeat()` (design in `docs/ENEMY_BEHAVIOUR.md`).
+
+### Landed 0810a–0810b
+
+**The 3-2-1 jerk is fixed.** It was three quantities plus a camera that nothing forced to agree —
+at GO the ship jumped +160 x, +92 y, +14 h (a 23% pop) and the camera then slid 159px back.
+`playShipPose()` is now the single pose both sides read, the launch's settle phase eases onto it,
+`snapCamToPlayer()` fixes the camera in `beginStage`, and `_drawLevelRegion` draws through the same
+`translate(-camX)` `drawWorld` uses. All three deltas are 0. Measured by `probe_seam.py`.
+
+**⚠ There are TWO intro systems.** Stage 1 uses `GS.OPENING` (the runway cinematic); stages 2–9 use
+`GS.INTRO` → `GS.LAUNCH`. "Stage 2's intro is the model" means `drawLaunch`. The fork is in
+`beginStage`, gated on `DBG.opening && num===1 && XART.rdy('nst4b_exit')` — and `XART.rdy` is false
+on its first call, so a cold boot can silently take the LAUNCH path on stage 1.
+
+**The TRANS table was keyed by DESTINATION and read by SOURCE.** `TRANS[2]` said "water into lava,
+arriving at the volcano" when stage 2 *is* the volcano. Eight keys covering seven joins, 1→2 twice,
+8→9 missing. Latent only because just stage 1 was switched on. Re-keyed; its eight assertions had
+been green while wrong because they were written from the table they checked.
+
+**Lizzie's turret fired nothing, and Decker's shotgun was why.** `beginStage` never cleared
+`run.dkT` despite the comment promising it, and `dkActive()` checked only the timer, not the pilot.
+Both fixed and pilot-gated. Decker's shotgun itself was always correct.
+
+**Axel's orb and laser are now runtime `xartPalette` swaps of Falva's `florb_`/`fllaser_`.** Note
+this is *not* the `aorb_`/`nadb_` hue-rotation Mike rejected in 0805d — different source art (her
+helper balls, not her charge orb) and a live swap rather than a baked second copy. Verified by
+`probe_palette.py`: hue moves ~100°, luminance holds within 0.05.
+
+**`ARSENAL_MINIS` is defined and never read — and that may be correct.** The laptop wired a
+consumer for it. Do not port that without asking Mike: `SUBBOSS` already fields quadlaser /
+obsidiandrill / glacierrail on stages 1–3, and the quadlaser is there because Mike explicitly
+replaced the siege crawler with it. Consuming the table would evict three approved minibosses. The
+trees also disagree on the keying (trunk `dambreaker→1`, laptop `→4`).
+
+### Probes added — all four drive the real game in real Chromium
+
+| tool | proves |
+|---|---|
+| `probe_seam.py` | ship/camera/terrain deltas across an intro→PLAY seam |
+| `probe_weapons.py` | what `pShoot()` actually puts in `pBullets`, all nine pilots |
+| `probe_palette.py` | a palette swap moves hue and holds luminance, i.e. is not an overlay |
+| `scenario_seam.js` / `scenario_special.js` | drop `shoot.py` into the launch, or into a live special |
+
+⚠ `probe_seam.py` runs its whole sequence in ONE `evaluate` — deliberate, because the game takes
+`dt` from `performance.now()` and stepping one frame per `evaluate` gives every frame a `dt` of
+~1.6 **seconds**. But that means it hits the `--warm` trap: lazily-loaded art never arrives, so
+`mapScroll` reads 0. Trust it for ship and camera, never for terrain.
+
+⚠ `shoot.py` captures inflate `dt` between shots — each screenshot is a separate `evaluate`, so the
+next frame sees the real wall-clock gap as its `dt`. A 6.3s launch finishes in far fewer captures
+than `--seconds`/`--fps` implies.
 
 ⚠ **Section 202 (miniboss shield aura) is FLAKY.** It simulates 200 seconds of play to reach the
 miniboss and its result depends on state left by earlier sections — it failed once and passed on a
@@ -270,5 +343,20 @@ when a stage has no scene, so arcade and every unscened stage are untouched.
 Two slots, and a speaker keeps its side: whoever talks takes the slot the PREVIOUS speaker is not
 in, so the listener stays on screen dimmed instead of the portraits swapping sides every line.
 
-**Next:** the stats-screen alignment; camo schemes for stages 2–3; and `CF_PilotCutscenePack` —
-the per-pilot scenes are still unwired, only the ensemble ones are.
+**Next, in order:**
+1. **Port transitions 2→3 and 3→4** from `laptop-0810a` (`docs/TRANSITIONS_STEP3.md` / `STEP4.md`).
+   The TRANS re-key they depend on is already in.
+2. **Port the TELL→COMMIT→RECOVER enemy contract** with `stageHeat()` — levels 2, 3, 5 and the
+   arsenal mini tier. Design in `docs/ENEMY_BEHAVIOUR.md`. The fairness fix is real: `droneFire`
+   here still solves aim at bullet spawn, so an aimed shot tracks you to the muzzle and no move
+   beats it — an unavoidable death in a one-hit game, not difficulty.
+3. **Requirement 2 for stage 1** — the opening still paints a generated coast while PLAY paints the
+   jungle master. Mechanism written up in `docs/HANDOFF_TRANSITIONS.md`.
+4. Then: the stats-screen alignment; camo for stages 2–3; `CF_PilotCutscenePack` (per-pilot scenes
+   still unwired, only the ensemble ones are).
+
+**Waiting on Mike:** what `ARSENAL_MINIS`' three units are for (see the note at its declaration),
+and whether `dambreaker` belongs to stage 1 or 4.
+
+⚠ **The bosses are being wired in another chat in this same tree.** Nothing has been committed
+there since `73b3009`, but check `git log` before touching boss code.

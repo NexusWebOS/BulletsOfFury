@@ -4575,6 +4575,20 @@ const ARSENAL_DRONES = {
   5: ['discordgunship','fractureskimmer','nullprism'],
   8: ['ragetalon','deathchoir','furymine'],
 };
+/* ⚠ DEFINED AND NEVER READ — AND THAT MAY BE CORRECT. DO NOT "FIX" IT WITHOUT ASKING MIKE.
+   (drop 0810b, triaged against the laptop's 0810a finding.)
+
+   The laptop session listed this among five dead systems and wired an arsenalMiniFor() consumer
+   for it. Checked here before porting that, and the slots it would fill are NOT empty: SUBBOSS
+   already fields quadlaser on 1, obsidiandrill on 2 and glacierrail on 3 — and the quadlaser is
+   there because Mike explicitly replaced the siege crawler with it ("I have a replacement
+   miniboss for level 1"). Consuming this table would silently evict three approved minibosses.
+
+   The two trees also disagree on the keying: trunk says dambreaker->1 "the stages they are named
+   for" (stage 1 ends at the dam); the laptop says dambreaker->4. Mike's call, not ours.
+
+   So it stays unread until he says what these three are for — a second mini tier, a replacement,
+   or cut. An unread table is cheap; three evicted minibosses are not. */
 const ARSENAL_MINIS = {1:'dambreaker', 2:'caldera', 3:'frostbite'};
 function arsenalDroneArt(slug, part, fi){
   const k='ndr_'+slug+'_'+(part||'idle')+'_'+(fi|0);
