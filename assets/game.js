@@ -9740,7 +9740,9 @@ const LZ_SLUG_DMG = 7;
 const LZ_SLUG_CD  = 0.16;
 const LZ_SLUG_SPD = 10.5;
 let lzMount=null;
-function lzMountActive(){ return !!(lzMount && lzMount.docked); }
+/* pilot-gated for the same reason dkActive is — this one is cleared per stage so it has not bitten,
+   but it sits in the same pShoot chain and would swallow another pilot's trigger identically */
+function lzMountActive(){ return !!(lzMount && lzMount.docked && (typeof _pilotKey!=='function' || _pilotKey()==='lizzie')); }
 function lzMountGrant(){
   lzMount={t:0, docked:false, ax:player.x+rnd(-70,70), ay:player.y+rnd(30,70)};
   floatText(player.x,player.y-18,'HEAVY MG','#ffc21a');
@@ -9832,7 +9834,14 @@ const DK_BURN_TIME = 2.6;      // how long a hit enemy stays alight
 let dkShells=[];               // ejected casings, purely cosmetic
 let dkDecals=[];               // bullet-hole bursts riding on the units they hit
 
-function dkActive(){ return !!(run && run.dkT>0); }
+/* ⚠ AND IT MUST BE DECKER HOLDING IT (drop 0810b). This checked only the timer, and dkFire() is
+   consulted in pShoot BEFORE Lizzie's mount and BEFORE the primary — returning true even while
+   reloading, which is deliberate and is what makes it a shotgun. So a live dkT claimed the
+   trigger for WHOEVER was flying: pick the shotgun up as Decker, clear the stage, take Lizzie
+   next, and her heavy MG fired nothing at all for the remainder of the 24s. Measured in
+   probe_weapons.py — the mount docked, rode the hull, reported active, and produced 0 slugs.
+   _pilotKey() rather than run.pilot directly, because run.pilot can be an index. */
+function dkActive(){ return !!(run && run.dkT>0 && (typeof _pilotKey!=='function' || _pilotKey()==='decker')); }
 function dkGrant(){
   run.dkT=24; run._dkCd=0;
   floatText(player.x,player.y-18,'INCENDIARY','#ffb347');
@@ -10765,6 +10774,15 @@ function beginStage(num){
   run.sonicT=0; run._sonicCd=0; run._lzCd=0;          // pickup weapons do not ride between stages
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
   if(typeof lzMount!=='undefined') lzMount=null;
+  /* ⚠ AND DECKER'S SHOTGUN, WHICH THIS LINE HAD BEEN PROMISING SINCE 0805w (drop 0810b).
+     The comment above says pickup weapons do not ride between stages. Cole's sonic and Lizzie's
+     mount were cleared; Decker's incendiary was added later and never joined them, so a 24s
+     dkT walked straight into the next level — where, until dkActive was pilot-gated, it also
+     took the trigger away from whoever was flying. Shells and decals go too: they hold a
+     reference to the enemy they are riding, and those are cleared just below. */
+  if(run){ run.dkT=0; run._dkCd=0; }
+  if(typeof dkShells!=='undefined') dkShells.length=0;
+  if(typeof dkDecals!=='undefined') dkDecals.length=0;
   /* ⚠ THE RESET HAD TO GROW TOO (drop 0807o). I extended the stageStats declaration with
      mslHits / spShots / spHits / spDmg and missed this, so every field was undefined the moment a
      stage began — the four new rows would have read 0 forever. Caught by asserting the fields
