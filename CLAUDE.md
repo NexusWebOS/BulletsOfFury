@@ -139,7 +139,7 @@ loads on entry.
 
 ## Current state (2026-08-11)
 
-Suite: **2,405 assertions / 216 sections / 5 failures** — all five pre-existing at HEAD: the boss
+Suite: **2,421 assertions / 217 sections / 5 failures** — all five pre-existing at HEAD: the boss
 limb pool, the preload count, the two `_superseded` ones and the naval flash families.
 
 ### ⚠ THERE ARE TWO DIVERGENT TREES. READ THIS BEFORE MERGING ANYTHING.
@@ -154,9 +154,11 @@ It is preserved verbatim as orphan branch **`laptop-0810a`** and is being ported
 feature. **Never sync that tree wholesale.** Its zip is also incomplete — 78 files short, including
 `jungle800_rc2_master.png`, the whole BOF font set, `ART_TAXONOMY.json` and `shoot.py`.
 
-Ported so far: the TRANS re-key, and transitions **2→3** (lava→ice) and **3→4**
-(ice→sky→town), both live and guarded by suite section 133b. Still to port: the
-TELL→COMMIT→RECOVER enemy contract with `stageHeat()` (design in `docs/ENEMY_BEHAVIOUR.md`).
+**The port is COMPLETE.** All four pieces are on trunk: the TRANS re-key, transitions **2→3**
+(lava→ice) and **3→4** (ice→sky→town), and the **TELL→COMMIT→RECOVER** enemy contract with
+`stageHeat()`. Guarded by suite sections 133b and 133c. The only thing deliberately NOT ported is
+the `ARSENAL_MINIS` consumer — see the note at its declaration. The branch stays as the record of
+what the laptop tree was; nothing further is owed to it.
 
 ### Landed 0810a–0810b
 
@@ -345,19 +347,16 @@ Two slots, and a speaker keeps its side: whoever talks takes the slot the PREVIO
 in, so the listener stays on screen dimmed instead of the portraits swapping sides every line.
 
 **Next, in order:**
-1. **Port the TELL→COMMIT→RECOVER enemy contract** with `stageHeat()` — levels 2, 3, 5 and the
-   arsenal mini tier. Design in `docs/ENEMY_BEHAVIOUR.md`. The fairness fix is real: `droneFire`
-   here still solves aim at bullet spawn, so an aimed shot tracks you to the muzzle and no move
-   beats it — an unavoidable death in a one-hit game, not difficulty.
-3. **Requirement 2 for stage 1** — the opening still paints a generated coast while PLAY paints the
+1. **Requirement 2 for stage 1** — the opening still paints a generated coast while PLAY paints the
    jungle master. Mechanism written up in `docs/HANDOFF_TRANSITIONS.md`.
-4. Then: the stats-screen alignment; camo for stages 2–3; `CF_PilotCutscenePack` (per-pilot scenes
+2. Then: the stats-screen alignment; camo for stages 2–3; `CF_PilotCutscenePack` (per-pilot scenes
    still unwired, only the ensemble ones are).
 
 **Waiting on Mike:** what `ARSENAL_MINIS`' three units are for (see the note at its declaration),
-whether `dambreaker` belongs to stage 1 or 4, and the `o.px` question below.
+and whether `dambreaker` belongs to stage 1 or 4. (The `o.px` camera question below is ANSWERED
+and fixed — he approved it in 0810c.)
 
-**Found while porting the routes, NOT changed — it touches the approved 1→2 route too.**
+**The `o.px` camera fix (0810c), for the record.**
 `outboundStart` captures `o.px = player.x`, which is a **world** coordinate, and all three
 `outboundDraw*` functions draw the held player at `o.px` in **screen** space with no `camX`
 translate. On an 800-wide stage that puts the ship up to 160px off where it was when the boss
