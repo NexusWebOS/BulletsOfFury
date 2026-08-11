@@ -14053,30 +14053,55 @@ function axelBallTick(dt){
   pBullets.push({
     kind:'axbeam', x:P.x, y:P.y,
     vx:Math.cos(ang)*sp, vy:Math.sin(ang)*sp,
-    w:14, h:26, dmg:6, lv:1, pierce:false, t:0, _ang:ang
+    /* _f picks the bolt's shape ONCE, the way flaser does — see the draw branch */
+    w:14, h:26, dmg:6, lv:1, pierce:false, t:0, _ang:ang, _f:(Math.random()*8)|0
   });
   if(Audio.SFX && Audio.SFX.laser) Audio.SFX.laser();
+}
+/* AXEL RIDES FALVA'S ART, PALETTE-SWAPPED AT RUNTIME (drop 0810b). Mike: "fix axels orb and
+   laser to be palette swap versions of falva's helper balls and laser graphics."
+
+   ⚠ This is NOT the thing he rejected in 0805d, and the difference matters enough to write down
+   or someone will "fix" it back. Two separate distinctions:
+
+     WHICH ART. The rejected orb was `aorb_0..11`, baked from `forb_` — Falva's CHARGE orb, the
+     big 12-frame ring she winds up. Mike is naming her HELPER BALLS, which are `florb_0..7`, a
+     different asset entirely (drawFalvaBalls uses them). Same for the beam: `nadb_` was baked
+     from her charge beam; `fllaser_0..7` is what her balls actually fire.
+
+     HOW. `aorb_`/`nadb_` were HUE-ROTATED and registered as separate files, so Axel carried a
+     second copy of her art that could drift from it. This is a live `xartPalette` swap of the
+     art she is using this frame — the standing rule ("palette/luminance swaps, not overlays")
+     applied at runtime, so there is one source sprite and Axel can never fall out of sync with
+     it. Never xartTint here: that is the source-atop flood that flattened the font's drop shadow
+     into the E->B bug.
+
+   nuo_body stays as the fallback, so a build where florb_ has not decoded still shows an orb
+   rather than nothing. */
+function axelSwap(key){
+  const c=(typeof nuoColour==='function') ? nuoColour('axel') : '#2f6fff';
+  return (typeof xartPalette==='function') ? xartPalette(key, c) : null;
 }
 function axelBallDraw(){
   if(!axelBallActive() || typeof XART==='undefined') return;
   const P=axelBallPos();
-  /* THE UNIVERSAL ORB (drop 0805d). Was `aorb_0..11` — Falva's orb hue-rotated to royal
-     blue, which is the "faux orb" Mike flagged. Now the purpose-drawn neutral orb tinted
-     per pilot, so Axel is royal blue by table rather than by hue-rotating someone else's
-     sprite. A single frame, so the SPIN carries the motion the 12-frame cycle used to;
-     P.a*1.6 was already rotating it, so it reads the same.
-     aorb_ stays registered and is the fallback if the new art has not decoded. */
-  const tinted = nuoTinted('nuo_body', nuoColour(run&&run.pilot));
+  const now=performance.now();
+  /* her 8-frame cycle at her rate, so the two read as the same object in two colours */
+  const swapped = axelSwap('florb_'+(Math.floor(now/60)%8));
   ctx.save();
   ctx.globalCompositeOperation='lighter';
   ctx.globalAlpha=0.95;
   ctx.translate(P.x,P.y); ctx.rotate(P.a*1.6);
-  if(tinted){
-    const S=30;
-    ctx.drawImage(tinted,-S/2,-S/2,S,S);
+  if(swapped){
+    /* the same breathing scale drawFalvaBalls gives hers, so it pulses rather than sitting dead */
+    const S=30+Math.sin(now/120+P.a)*2;
+    ctx.shadowColor=nuoColour('axel'); ctx.shadowBlur=9;
+    ctx.drawImage(swapped,-S/2,-S/2,S,S);
   } else {
-    const k='aorb_'+(((performance.now()/70)|0)%12);
-    if(XART.rdy(k)){ const im=XART.get(k), S=26; ctx.drawImage(im,-S/2,-S/2,S,S); }
+    const tinted = nuoTinted('nuo_body', nuoColour(run&&run.pilot));
+    if(tinted){ const S=30; ctx.drawImage(tinted,-S/2,-S/2,S,S); }
+    else { const k='aorb_'+(((now/70)|0)%12);
+      if(XART.rdy(k)){ const im=XART.get(k), S=26; ctx.drawImage(im,-S/2,-S/2,S,S); } }
   }
   ctx.restore();
 }
@@ -18019,13 +18044,32 @@ function drawBullets(){
       continue;
     }
     if(b.kind==='axbeam'){
-      const _k='nadb_'+(((performance.now()/60)|0)%12);
-      if(typeof XART!=='undefined' && XART.rdy(_k)){
-        const im=XART.get(_k);
-        ctx.save(); ctx.globalCompositeOperation='lighter';
+      /* AXEL'S BOLT IS FALVA'S, PALETTE-SWAPPED (drop 0810b) — see axelSwap. Was `nadb_`, a baked
+         hue-rotation of her CHARGE beam; this is a live swap of `fllaser_`, which is what her
+         helper balls actually fire. Frame is FIXED at spawn and the GLOW animates, exactly as the
+         flaser branch does — her comment there is the reason: the sprite is a shape, not a reel,
+         so cycling it reads as flicker rather than motion. */
+      const _bc=(typeof nuoColour==='function')?nuoColour('axel'):'#2f6fff';
+      const _sw=(typeof axelSwap==='function') ? axelSwap('fllaser_'+((b._f!=null?b._f:0)%8)) : null;
+      if(_sw){
+        const h=b.h, w=h*(_sw.width/_sw.height);
+        const pulse=0.78+0.22*Math.sin((b.t||0)*22);
+        ctx.save();
         ctx.translate(b.x,b.y); ctx.rotate((b._ang||0)+Math.PI/2);
-        ctx.drawImage(im,-b.w/2,-b.h/2,b.w,b.h);
+        ctx.globalCompositeOperation='lighter';
+        ctx.globalAlpha=pulse;
+        ctx.shadowColor=_bc; ctx.shadowBlur=6+8*pulse;
+        ctx.drawImage(_sw, -w/2, -h/2, w, h);
         ctx.restore();
+      } else {
+        const _k='nadb_'+(((performance.now()/60)|0)%12);
+        if(typeof XART!=='undefined' && XART.rdy(_k)){
+          const im=XART.get(_k);
+          ctx.save(); ctx.globalCompositeOperation='lighter';
+          ctx.translate(b.x,b.y); ctx.rotate((b._ang||0)+Math.PI/2);
+          ctx.drawImage(im,-b.w/2,-b.h/2,b.w,b.h);
+          ctx.restore();
+        }
       }
       continue;
     }
