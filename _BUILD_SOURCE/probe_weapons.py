@@ -185,6 +185,34 @@ LIZZIE = r"""
 """
 
 
+# "make sure the weapons all work right" — the Lizzie bug was a GATING bug, and every pilot's
+# primary runs through the same pShoot chain of early returns. So walk all nine and confirm each
+# one actually puts something in pBullets from a clean stage start. A pilot who fires nothing is
+# the failure mode that just cost Lizzie her turret, and it is invisible from any other seat.
+ALL_PILOTS = r"""
+() => {
+  const R = {name:'ALL NINE PILOTS — primary fire', checks:[]};
+  const add = (ok, label, detail) => R.checks.push({ok:!!ok, label:label, detail:detail||''});
+  const keys = ['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
+  try {
+    ASSETS.ready = true;
+    for (const k of keys) {
+      run.pilot = k;
+      curStage = STAGES[0]; beginStage(1); setState(GS.PLAY);
+      player.reset(); player.invuln = 1e9;
+      enemies.length = 0; pBullets.length = 0;
+      // a few pulls: some primaries have a cooldown that can eat a single call
+      let n = 0;
+      for (let i = 0; i < 6; i++) { pShoot(); n = pBullets.length; if (n) break; _newWeaponTick(1/60); }
+      const kinds = Array.from(new Set(pBullets.map(b => b.kind || 'pellet'))).join(',');
+      add(n > 0, k + ' fires a primary', n + ' bullet(s)' + (kinds ? ' [' + kinds + ']' : ''));
+    }
+  } catch (e) { R.err = String(e && e.message || e); }
+  return R;
+}
+"""
+
+
 def main():
     from playwright.sync_api import sync_playwright
     port, stop = serve(GAME)
@@ -213,6 +241,7 @@ def main():
                                      'detail': 'missing: ' + ', '.join(missing)})
         results.append(dk)
         results.append(pg.evaluate(LIZZIE))
+        results.append(pg.evaluate(ALL_PILOTS))
         b.close()
     stop()
 
