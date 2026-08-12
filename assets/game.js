@@ -33036,7 +33036,19 @@ function drawFlyover(dt){
      The exit is: accelerate up and out (eased, so it reads as a takeoff rather
      than a constant slide), then the screen fades to black, then STAGECLEAR. */
   flyoverT+=dt;
-  const FLY=1.25, FADE=0.75, DUR=FLY+FADE;
+  /* ⚠ THE FADE STARTED BEFORE THE SHIP LEFT (drop 0810f). FLY was 1.25 and DUR 2.0, while the
+     beats below are a 1.35s HOVER followed by a 1.7s climb — so the screen began fading to black
+     at 1.25s, while the ship was still HOVERING, and the state flipped to STAGECLEAR at 2.0s with
+     the climb only 38% done. The ship never got off the top of the screen; it faded out roughly
+     where it had been standing.
+
+     That is the other half of what Mike is seeing at the end of stages 1 and 2. Mike's spec is
+     "simply show the player fly out the top of the screen ... then fade to black and into the
+     stats end screen", so the beats now run in that order and none of them overlaps the next:
+     hover 1.35, climb 1.7, fade 0.75. Derived from HOVER and the climb duration rather than
+     hand-set, so moving either cannot silently truncate the exit again. */
+  const HOVER_T=1.35, CLIMB_T=1.7, FADE=0.75;
+  const FLY=HOVER_T+CLIMB_T, DUR=FLY+FADE;
   /* HOVER, THEN LEAVE — AND THE WORLD KEEPS MOVING (drop 0801fe). Mike: "you
      should have my player hover for a while, cut to the music, and make the
      actual player fly off without being able to control him. You were doing this
@@ -33050,32 +33062,42 @@ function drawFlyover(dt){
 
      A HOVER beat is added in front of the climb - the ship sits and idles while
      the last blasts die out, the music cuts, and only then does it go. */
-  const HOVER=1.35;                              // seconds of hanging before the climb
-  drawWorld(dt);                                 // live, not a snapshot
+  const HOVER=HOVER_T;                           // seconds of hanging before the climb
   if(!drawFlyover._musicCut && flyoverT>=HOVER*0.55){
     drawFlyover._musicCut=true;
     try{ if(Audio.stopMusic) Audio.stopMusic(); }catch(e){}
   }
-  // 2) the player flies straight up and out. x is NOT touched.
-  const fp=clamp(flyoverT/FLY,0,1);
-  const ease=fp*fp;                                  // accelerates away, like a takeoff
-  const pk=_pilotKey();
-  const sx=(flyoverStartX!=null)?flyoverStartX:VW/2;  // held, never re-centred
-  // the climb only starts after the hover; a small idle bob sells the hang
+  /* 2) THE PLAYER FLIES OUT — AND IT IS THE REAL PLAYER (drop 0810f).
+
+     Mike: "Find out why stage 1 and 2 the end of the stage keeps my ship in the background and
+     shows another one fly off."
+
+     Because that is precisely what it did. drawWorld() draws drawPlayer() at player.x/player.y,
+     and this function then drew a SECOND ship on top out of ship_<pilot>. The real one sat where
+     you left it while a copy climbed away. Three faults in one block:
+
+       - two ships on screen at once
+       - the copy was drawn at flyoverStartX — a WORLD coordinate — into SCREEN space with no
+         camera, the same 160px offset as the launch seam, the outbound routes and the opening.
+         Fourth instance of that bug; see the note in CLAUDE.md.
+       - the copy was a bare 44px still with no plume, against the standing rule that transitions
+         use the pilots' animated thruster, "this applies for all 9 of them"
+
+     Driving player.y and letting drawWorld draw it kills all three at once: ONE ship, through the
+     same camera, at the same size, with the same live thruster as in play. player.x is still never
+     touched — that was the original spec and it stands. */
   const _climb=Math.max(0,(flyoverT-HOVER));
-  const _ce=(typeof _ease==='function')?_ease(clamp(_climb/1.7,0,1)):clamp(_climb/1.7,0,1);
+  const _ce=(typeof _ease==='function')?_ease(clamp(_climb/CLIMB_T,0,1)):clamp(_climb/CLIMB_T,0,1);
   const _base=(flyoverStartY!=null)?flyoverStartY:VH*0.78;
-  const sy=(flyoverT<HOVER)
+  player.y=(flyoverT<HOVER)
       ? _base+Math.sin(flyoverT*4.2)*3           // hovering
       : lerp(_base, -80, _ce);
-  if(typeof XART!=='undefined' && XART.rdy('ship_'+pk)){
-    const im=XART.get('ship_'+pk), w=44, h=w*(im.naturalHeight/im.naturalWidth);
-    ctx.drawImage(im, sx-w/2, sy-h/2, w, h);          // full scale all the way out
+  drawWorld(dt);                                 // live, not a snapshot — and it draws the ship
+  /* exhaust, in WORLD space because that is where drawWorld's particle pass reads it */
+  if(player.y>-40 && Math.random()<0.9){
     const theme=['#8de23a','#ff5a2a','#6fd0ff','#d8c068','#d07a3a'][clamp(run.stage-1,0,4)];
-    if(sy>-40 && Math.random()<0.9){
-      particles.push({x:sx+rnd(-4,4), y:sy+h*0.45, vx:rnd(-0.2,0.2), vy:rnd(2.5,4.5),
-                      life:rnd(0.2,0.4), t:0, r:rnd(1,2), color:theme});
-    }
+    particles.push({x:player.x+rnd(-4,4), y:player.y+20, vx:rnd(-0.2,0.2), vy:rnd(2.5,4.5),
+                    life:rnd(0.2,0.4), t:0, r:rnd(1,2), color:theme});
   }
   // 3) fade to black once he is gone, then the stats screen. Nothing in between.
   if(flyoverT>FLY){
