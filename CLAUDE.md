@@ -148,7 +148,7 @@ loads on entry.
 
 ## Current state (2026-08-11)
 
-Suite: **2,446 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
+Suite: **2,447 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
 ones and the naval flash families. The fifth (the boss limb pool) was a stale assertion, not a bug;
 see the Magma Colossus section below.
 Entry joins: **`probe_arrival.py` green on all eight stages** (see the connector section below —
@@ -531,7 +531,7 @@ seeing.** It spawns, enters, reaches the playfield and draws its damage states. 
 "broken" looks like — does it not take damage, not die, not block, arrive at the wrong point, or
 something else. Do not "fix" it blind.
 
-**Still not done: the boss/miniboss HUD replacement** (handoff section 3, "The hud and fills, remove
+**DONE 0810n — see the gauge section below. Superseded note:** (handoff section 3, "The hud and fills, remove
 and make your own please"). The `nbb_`/`nmb_` art fills are still what draws, through
 `drawHealthBarV2`. ⚠ `drawHUDCustom` returns early and only `drawHUDCustomImg` reaches the boss
 gauge — whatever replaces it must be reachable from the path that actually RUNS, and given the
@@ -613,8 +613,30 @@ six separate targets. It could only ever fail. Replaced with the contract that a
 every part DOCKED (the 0809m fix for "957 probes found nothing hittable"), per-component shares,
 summing to 100%, and the haul writing no pool. All four pass. **Standing failures: 5 → 4.**
 
+## THE BOSS / MINIBOSS GAUGE IS OURS NOW (drop 0810n)
+
+> "The hud and fills, remove and make your own please for all bosses and mini bosses."
+
+`drawHealthBarV2` keeps its name and signature — every call site already lands there, which is the
+one change that cannot miss the path that actually runs — and its body is drawn, not blitted: a
+bevelled plate, a segmented drain (26 for a boss, 16 for a miniboss), a white DAMAGE-LAG ghost that
+trails the true value so a big hit reads as one, and colour carrying the state (green / amber / red,
+pulsing under 25%). 168 `nbb_`/`nmb_` keys are off the screen; the art stays registered so reverting
+is this one function. Proof: `docs/proofs/boss_gauge_0810n_states.png`.
+
+⚠ **THERE WERE THREE BOSS BARS, not one**, and which one you saw depended on which art had decoded:
+the `nhud_bar` block, the `hud_bar` block gated on `XART.rdy('nbb_frame_'+stage)`, and a hand-rolled
+red-to-amber gradient with nine dividers in BOTH `drawHUDOverlay` and `drawHUDCustomLegacy`. That is
+most of the history of this gauge being reported wrong in a different way each time. All of them
+call the one drawn gauge now, and an assertion pins that no HUD path hand-rolls another.
+
+Three assertions that pinned the art bar (clipped fill, per-stage theme, the PINS ITSELF note) moved
+onto the behaviour they were protecting: drains by fraction, always draws, takes its space from the
+caller.
+
 **Next, in order:**
-1. **The boss/miniboss HUD** — the last unbuilt piece of the 0810i brief.
+1. Mike's calls on the Colossus — the duplicate head, and whether the cannon rotation set is worth
+   re-fitting to the 384 master canvas to buy back the aim pose.
 2. Mike's two calls above on the Colossus (the head, and the fused-form swap).
 3. "Almost no minibosses or bosses past level 1 truly work right" — the teleport above was a large
    part of it; the rest needs per-stage checking with `probe_boss.py`.

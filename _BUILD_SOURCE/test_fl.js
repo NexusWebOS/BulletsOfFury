@@ -4477,9 +4477,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _pl=true; for(var i=0;i<4;i++){ if(!vm.runInContext("XART.rdy('nbb_pulse_"+i+"')", ctxv)) _pl=false; }
   ok(_pl, 'plus the authored critical-pulse overlays on the boss bar');
   ok(vm.runInContext("typeof drawHealthBarV2==='function'", ctxv), 'the v2 bar renderer exists');
-  ok(vm.runInContext("drawHealthBarV2.toString().indexOf('ctx.clip()')>0", ctxv), 'the fill is CLIPPED to the health fraction, so the gauge drains instead of the art squashing');
+  ok(!/createLinearGradient\(bxs/.test(fs.readFileSync(ROOT+'/assets/game.js','utf8')),
+     'and no HUD path hand-rolls a second boss bar of its own — one gauge, every path');
+  /* THE FILLS ARE GONE, SO THE ASSERTIONS ABOUT THEM GO WITH THEM (drop 0810n). Mike: "The hud
+     and fills, remove and make your own please for all bosses and mini bosses." These three pinned
+     the nbb_/nmb_ art bar — a clipped fill, a per-stage art theme, and the PINS ITSELF note — and
+     the gauge is drawn now, so none of them can hold. What must still be true is the BEHAVIOUR
+     they were protecting: the gauge drains by fraction rather than squashing, it pulses when
+     critical, and it does not guess its own space. */
+  ok(vm.runInContext("drawHealthBarV2.toString().indexOf('w * frac')>0", ctxv), 'the gauge drains BY FRACTION rather than scaling one bar');
   ok(vm.runInContext("drawHealthBarV2.toString().indexOf('frac<=0.25')>0", ctxv), 'and the authored pulse plays under 25%');
-  ok(vm.runInContext("drawHealthBarV2.toString().indexOf('clamp(run.stage,1,8)')>0", ctxv), 'the bar art follows the STAGE, so each level has its own theme');
+  ok(vm.runInContext("drawHealthBarV2('boss',0.5,240,20,300)===true && drawHealthBarV2('mini',0.5,240,20,200,false)===true", ctxv),
+     'and it ALWAYS draws — no art to wait on, so no decode race can leave the bar empty');
   ok(vm.runInContext("drawSubBossBar.toString().indexOf('drawHealthBarV2')>0", ctxv), 'the miniboss bar uses it');
   ok(_g4.indexOf("drawHealthBarV2('boss'")>0, 'and so does the boss bar');
   // it renders without throwing at every health level
@@ -4655,7 +4664,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // every bar goes through it
   var _g7=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok((_g7.match(/screenBar\(function\(\)/g)||[]).length>=4, 'all four in-world bars use it (miniboss x2, special meter, missile meter)');
-  ok(vm.runInContext("drawHealthBarV2.toString().indexOf('PINS ITSELF')>0", ctxv), 'and the v2 boss/miniboss bar pins itself, so no caller has to remember');
+  ok(vm.runInContext("drawHealthBarV2.toString().indexOf(\"inWorld===true\")>0", ctxv),
+     'and the gauge still takes its space from the CALLER rather than guessing from the world width');
   ok(vm.runInContext("drawSpecialHUD.toString().indexOf('screenBar')>0", ctxv), 'the special meter is pinned');
   ok(vm.runInContext("drawMissileRushHUD.toString().indexOf('screenBar')>0", ctxv), 'the missile meter is pinned');
   ok(vm.runInContext("drawSubBoss.toString().indexOf('screenBar')>0", ctxv), 'the miniboss HP bar is pinned');

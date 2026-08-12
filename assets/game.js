@@ -3481,38 +3481,20 @@ function drawHUDCustomImg(){
   if(boss && bossActive && !boss.dead){
     const by=HUDH+6, bw=VW-44, bxs=22, r=clamp(boss.hp/boss.maxhp,0,1);
     // v2.0 per-stage themed boss bar (frame + 8-frame animated fill), legacy gradient fallback
-    const _bst=clamp((run&&run.stage)||1,1,8);
-    /* KEY SCHEME FIX (drop 0724bv). This looked for 'nbb<N>_frame' / 'nbb<N>_fill_<f>', but the
-       shipped pack registers as 'nbb_frame_<N>' / 'nbb_fill_<N>_<f>'. The keys never resolved, so
-       the guard below always fell through to the legacy gradient bar — which is why the v2 art was
-       in the build and never once appeared on screen. */
-    const _bfk='nbb_frame_'+_bst, _bik='nbb_fill_'+_bst+'_'+(((performance.now()/110)|0)%8);
-    const _bsk='nbb_seg_'+_bst;
-    /* THE GUARD ASKED FOR TOO MUCH (drop 0801jw). Mike: "Boss bar - still doesnt
-       fill in when a boss appears."
+    /* ⚠ THE SECOND BOSS BAR, AND THE LAST nbb_ BLIT (drop 0810n). Mike: "The hud and fills,
+       remove and make your own please for all bosses and mini bosses."
 
-       It required the FRAME *and* the clock-selected FILL frame to be decoded in
-       the same instant. All 8 fills are registered on all 8 stages - verified - but
-       they decode asynchronously and _bik moves every 110ms. Miss that window and
-       the whole thing fell through to the legacy gradient, which is the empty bar
-       he is seeing.
+       This had already been pointed at drawHealthBarV2 — but behind `XART.rdy('nbb_frame_'+stage)`,
+       a gate on art the gauge no longer uses. Miss that decode and it fell through to the legacy
+       gradient below it, which is a THIRD boss bar with its own look. Three renderings of one
+       gauge, chosen by whichever art happened to have landed, is most of the history of Mike
+       reporting the boss bar wrong in a different way each time.
 
-       drawHealthBarV2 already copes with a missing fill: it scans the other seven
-       frames and falls back to a flat colour if none has landed. So the frame alone
-       is a sufficient gate, and the fill can arrive when it arrives. */
-    if(typeof XART!=='undefined' && XART.rdy(_bfk)){
-      const H2=13;
-      ctx.fillStyle='rgba(5,7,10,0.85)'; ctx.fillRect(bxs+2,by+2,bw-4,H2-4);
-      if(typeof drawHealthBarV2==='function') drawHealthBarV2('boss', r, VW/2, by+H2/2, bw);
-      else drawBarArtNS(_bfk, _bik, bxs, by, bw, H2, r);
-      ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText((boss.name||'BOSS'),VW/2,by-4); ctx.textAlign='left';
-    } else {
-    ctx.fillStyle='#05070a'; ctx.fillRect(bxs-3,by-3,bw+6,13); ctx.fillStyle='#2a0808'; ctx.fillRect(bxs,by,bw,7);
-    const gg=ctx.createLinearGradient(bxs,0,bxs+bw,0); gg.addColorStop(0,'#ff2020'); gg.addColorStop(0.7,'#ff6a2a'); gg.addColorStop(1,'#ffd24a');
-    ctx.save(); ctx.shadowColor='#ff3b3b'; ctx.shadowBlur=7; ctx.fillStyle=gg; ctx.fillRect(bxs,by,bw*r,7); ctx.restore();
-    ctx.fillStyle='rgba(0,0,0,0.4)'; for(let i=1;i<10;i++) ctx.fillRect(bxs+bw*i/10,by,1,7);
+       One bar now, drawn, no gate, no art, no fallback — so what he sees cannot depend on a
+       decode race. The legacy gradient and drawBarArtNS go with it. */
+    const H2=13;
+    drawHealthBarV2('boss', r, VW/2, by+H2/2, bw);
     ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText((boss.name||'BOSS'),VW/2,by-4); ctx.textAlign='left';
-    }
   }
 }
 function _miniShipG(g,x,y){ g.fillStyle='#d7dbe2'; g.fillRect(x+2,y,2,8); g.fillStyle='#c81f24';
@@ -3616,10 +3598,12 @@ function drawHUDOverlay(){
   // shield/speed shown as HUD EQUIPMENT pips now — no overlay icons
   if(boss && bossActive && !boss.dead){
     const by=6, bw=VW-44, bxs=22, r=clamp(boss.hp/boss.maxhp,0,1);
-    ctx.fillStyle='#05070a'; ctx.fillRect(bxs-3,by-3,bw+6,13); ctx.fillStyle='#2a0808'; ctx.fillRect(bxs,by,bw,7);
-    const gg=ctx.createLinearGradient(bxs,0,bxs+bw,0); gg.addColorStop(0,'#ff2020'); gg.addColorStop(0.7,'#ff6a2a'); gg.addColorStop(1,'#ffd24a');
-    ctx.save(); ctx.shadowColor='#ff3b3b'; ctx.shadowBlur=7; ctx.fillStyle=gg; ctx.fillRect(bxs,by,bw*r,7); ctx.restore();
-    ctx.fillStyle='rgba(0,0,0,0.4)'; for(let i=1;i<10;i++) ctx.fillRect(bxs+bw*i/10,by,1,7);
+    /* ONE GAUGE, EVERY PATH (drop 0810n). This was a third hand-rolled boss bar — the red-to-amber
+       gradient with nine divider lines — and it is what actually reaches the screen whenever the
+       HUD art has not decoded, which in a cold boot is most of the opening seconds. Three
+       renderings of one gauge, picked by whichever art had landed, is why the boss bar has been
+       reported wrong in a different way each time. They all call the drawn gauge now. */
+    drawHealthBarV2('boss', r, VW/2, by+6, bw);
     ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText((boss.name||'BOSS'),VW/2,by-4); ctx.textAlign='left';
   }
 }
@@ -3667,10 +3651,12 @@ function drawHUDCustomLegacy(){
   // boss bar
   if(boss && bossActive && !boss.dead){
     const by=H+6, bw=VW-44, bxs=22, r=clamp(boss.hp/boss.maxhp,0,1);
-    ctx.fillStyle='#05070a'; ctx.fillRect(bxs-3,by-3,bw+6,13); ctx.fillStyle='#2a0808'; ctx.fillRect(bxs,by,bw,7);
-    const gg=ctx.createLinearGradient(bxs,0,bxs+bw,0); gg.addColorStop(0,'#ff2020'); gg.addColorStop(0.7,'#ff6a2a'); gg.addColorStop(1,'#ffd24a');
-    ctx.save(); ctx.shadowColor='#ff3b3b'; ctx.shadowBlur=7; ctx.fillStyle=gg; ctx.fillRect(bxs,by,bw*r,7); ctx.restore();
-    ctx.fillStyle='rgba(0,0,0,0.4)'; for(let i=1;i<10;i++) ctx.fillRect(bxs+bw*i/10,by,1,7);
+    /* ONE GAUGE, EVERY PATH (drop 0810n). This was a third hand-rolled boss bar — the red-to-amber
+       gradient with nine divider lines — and it is what actually reaches the screen whenever the
+       HUD art has not decoded, which in a cold boot is most of the opening seconds. Three
+       renderings of one gauge, picked by whichever art had landed, is why the boss bar has been
+       reported wrong in a different way each time. They all call the drawn gauge now. */
+    drawHealthBarV2('boss', r, VW/2, by+6, bw);
     ctx.strokeStyle='#6a1a1a'; ctx.lineWidth=1; ctx.strokeRect(bxs,by,bw,7);
     ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText((boss.name||'BOSS'),VW/2,by-4);
   }
@@ -7802,198 +7788,97 @@ function subBossAttack(){
    The FILL is clipped to the health fraction rather than scaled, so the bar empties from the right
    like a real gauge instead of the artwork squashing.
    ============================================================ */
+/* ============================================================
+   THE BOSS AND MINIBOSS GAUGE (drop 0810n) — ours, drawn, not the pack's fills.
+
+   Mike, 0810i: "The hud and fills, remove and make your own please for all bosses and mini
+   bosses."
+
+   WHAT THIS REPLACES: 168 registered keys — nbb_ for bosses, nmb_ for minibosses, eight authored
+   fills per stage for each — blitted as a frame plus a fill clipped to the health fraction. None
+   of them are drawn any more. The art stays registered and nothing else references it, so putting
+   the old bar back is a revert of this one function.
+
+   ⚠ IT KEEPS THE NAME AND THE SIGNATURE ON PURPOSE. drawHUDCustom returns early and only
+   drawHUDCustomImg ever reached the old bar — "calling it directly emits 3 nbb_ blits, calling
+   drawHUD() emits none" (0801ej) — and that is why Mike once reported no fills showing up at all.
+   Every existing call site already lands here, so replacing the body is the one change that cannot
+   miss the path that actually runs. It also now ALWAYS draws and always returns true: the old one
+   returned false when its frame art had not decoded, and both callers carry a whole second bar
+   just to cover that. There is no art left to miss.
+
+   THE SPACE IS STILL THE CALLER'S TO DECLARE. Kept verbatim from the art bar (0801bq): a bar
+   cannot infer its own space from the world width, and guessing cost two drops of it sliding off
+   the right-hand edge as the camera moved.
+
+   WHAT IT DRAWS: a machined plate with a real bevel — light top-left, dark bottom-right, the same
+   read as dlg_window — over a segmented drain rather than one smooth bar, because segments make a
+   chunk of damage legible at a glance. A white DAMAGE-LAG ghost trails the true value and falls to
+   meet it, so a big hit shows as a big hit instead of a bar that is quietly shorter. Colour is the
+   state and needs no label: green healthy, amber wounded, red critical, with a pulse under a
+   quarter so a nearly-dead boss announces itself.
+   ============================================================ */
+const _gaugeLag = {};
 function drawHealthBarV2(kind, frac, cx, cy, w, inWorld){
-  if(typeof XART==='undefined') return false;
-  /* PINS ITSELF. Callers should not have to remember which space they are in — a health bar is a
-     HUD element and must sit at the same place on screen whatever the camera is doing. */
-  /* SPACE IS THE CALLER'S TO DECLARE (drop 0801bq). MY REGRESSION, drop 0801bb.
-
-     This cancelled the camera whenever worldWidth()>VW. That test used to be
-     FALSE on most stages, because worldWidth() returned VW until the master art
-     decoded. Making worldWidth() race-free meant it returns the true 800 on every
-     stage from frame one - so this shift suddenly fired everywhere, including for
-     the caller that is already in SCREEN space.
-
-       drawSubBossBar   runs inside drawWorld, after translate(-camX)  -> needs it
-       drawHUDCustomImg runs in the HUD pass, screen space             -> must NOT
-
-     So the main boss bar started sliding with the camera, and once camX reached
-     320 the bar's left edge sat off the right of the screen - which is why the
-     FILL looked missing: it is clipped from the left, so it was the first thing
-     to leave the viewport. Both of Mike's bar complaints are this one line.
-
-     The bar cannot infer its own space from the world width. The caller says. */
+  if(typeof ctx==='undefined') return false;
+  const boss = (kind==='boss');
+  frac = clamp(frac||0, 0, 1);
   const _shift = (inWorld===true && typeof camX==='number') ? camX : 0;
-  const P = (kind==='boss') ? 'nbb' : 'nmb';
-  const st = clamp(run.stage,1,8);
-  const fk = P+'_frame_'+st;
-  if(!XART.rdy(fk)) return false;
-  const fi=XART.get(fk);
-  const h = w*(fi.naturalHeight/fi.naturalWidth);
-  const x = cx-w/2, y = cy-h/2;
-  frac = clamp(frac,0,1);
+  const h = boss ? 14 : 11;
+  const x = cx - w/2, y = cy - h/2;
+
+  /* DAMAGE LAG. The ghost only ever falls, and only toward the live value, so a refill (a new
+     boss, or a phase that restores health) snaps rather than crawling up from nowhere. */
+  const key = kind || 'boss';
+  const prev = (_gaugeLag[key]==null) ? frac : _gaugeLag[key];
+  const lag = (frac < prev) ? Math.max(frac, prev - 0.012) : frac;
+  _gaugeLag[key] = lag;
+
   ctx.save();
   if(_shift) ctx.translate(_shift, 0);
-  // 1) FILL first, clipped to the health fraction so the gauge drains rather than squashes
-  /* FILL BY HEALTH, NOT BY CLOCK (drop 0801bc). The boss set (nbb_) is an
-     8-frame ANIMATION, so cycling it on a timer is right. The miniboss set that
-     Mike supplied is not an animation - it is four COLOURS, green / yellow /
-     red / critical, authored to be chosen by remaining health. Cycling those on
-     a timer would strobe the bar green-to-critical eight times a second.
+  ctx.imageSmoothingEnabled = false;
 
-     The four colours are registered across the eight slots in pairs, so a band
-     lookup lands on the right colour and the two slots inside a band still give
-     a gentle shimmer rather than a dead bar. */
-  let _fi;
-  if(P==='nmb'){
-    const band = (frac>0.60) ? 0 : (frac>0.30) ? 2 : (frac>0.10) ? 4 : 6;
-    _fi = band + (Math.floor(performance.now()/140)%2);
-  } else {
-    _fi = Math.floor(performance.now()/90)%8;
+  ctx.fillStyle='rgba(4,6,9,0.90)'; ctx.fillRect(x-4, y-4, w+8, h+8);      // drop
+  ctx.fillStyle='#20242c';          ctx.fillRect(x-2, y-2, w+4, h+4);      // frame
+  ctx.fillStyle='#525b68'; ctx.fillRect(x-2, y-2, w+4, 1); ctx.fillRect(x-2, y-2, 1, h+4);
+  ctx.fillStyle='#0a0c10'; ctx.fillRect(x-2, y+h+1, w+4, 1); ctx.fillRect(x+w+1, y-2, 1, h+4);
+  ctx.fillStyle='#12151a';          ctx.fillRect(x, y, w, h);              // well
+
+  const col  = frac>0.5 ? '#5fd66a' : frac>0.25 ? '#ffc23a' : '#ff4a3a';
+  const col2 = frac>0.5 ? '#a9f0a2' : frac>0.25 ? '#ffe391' : '#ff9d8a';
+
+  if(lag > frac){                                                          // the ghost, behind
+    ctx.fillStyle='rgba(255,255,255,0.50)';
+    ctx.fillRect(x, y, Math.round(w*lag), h);
   }
-  /* AN EMPTY BAR IS THE HALF-DECODED CASE (drop 0801ey). Mike: "theres still no
-     fills showing up", with a screenshot of the frame drawn and nothing inside.
 
-     The function returns false if the FRAME is not decoded, so it either draws
-     the whole bar or none of it - except here. If the frame had decoded and the
-     fill had not, it drew the frame and silently skipped the fill. That is the
-     empty gauge: not a missing asset, a partially decoded one. 168 nbb_/nmb_
-     keys are registered and every one resolves.
-
-     A flat colour fill now covers the gap until the plate lands, so the bar is
-     never empty while a boss is alive. */
-  let fillK = P+'_fill_'+st+'_'+_fi;
-  if(!XART.rdy(fillK)){
-    for(let _k=0;_k<8;_k++){ const _t=P+'_fill_'+st+'_'+_k; if(XART.rdy(_t)){ fillK=_t; break; } }
+  const SEG = boss ? 26 : 16, GAP = 1;
+  const sw = (w - (SEG-1)*GAP) / SEG;
+  const lit = w * frac;
+  for(let i=0; i<SEG; i++){
+    const sx = i*(sw+GAP);
+    if(sx >= lit) break;
+    const cut = Math.min(sw, lit - sx);
+    ctx.fillStyle=col;  ctx.fillRect(x+sx, y, cut, h);
+    ctx.fillStyle=col2; ctx.fillRect(x+sx, y, cut, Math.max(1, Math.round(h*0.26)));
   }
-  // a SOLID frame is a backplate: it goes down before the fill, never over it
-  if(drawHealthBarV2._solid && drawHealthBarV2._solid[P]) ctx.drawImage(fi, x, y, w, h);
 
-  /* SLOT BY SLOT (drop 0801ka). Mike: "use the plates. but slice out | pieces to
-     you can fill up the bar 1 slot at a time in-game."
-
-     The fill plate already held TEN discrete cells - solid runs on a 32px pitch,
-     measured across all eight stages - and drawing it whole then clipping made
-     them read as one sliding bar. A single cell is now stamped once per unit of
-     health, so the gauge STEPS. Ten slots, ten percent each, countable at a glance.
-
-     Falls back to the old clipped plate if the slot art has not decoded. */
-  const _slotK = 'nbs_slot_'+st+'_'+_fi;
-  const _slotAny = XART.rdy(_slotK) ? _slotK : ('nbs_slot_'+st+'_0');
-  if(frac>0 && XART.rdy(_slotAny)){
-    const _si = XART.get(_slotAny);
-    const N = 10, _lit = Math.ceil(frac*N);
-    const _a = (kind==='boss') ? 0.211 : 0.025;
-    const _b = (kind==='boss') ? 0.787 : 0.973;
-    const _x0 = x + w*_a, _span = w*(_b-_a);
-    const _pitch = _span/N, _sw = _pitch*0.86, _sh = h*0.62, _sy = y+(h-_sh)/2;
-    for(let _n=0; _n<_lit; _n++){
-      ctx.drawImage(_si, _x0 + _n*_pitch + (_pitch-_sw)/2, _sy, _sw, _sh);
-    }
-  } else if(frac>0){
-    /* CLIP TO THE FILL'S OWN SPAN, NOT THE PLATE'S (drop 0801jy). Mike: "Boss bar
-       still doesnt fill in."
-
-       Measured: nbb_fill_1_3 is 512 wide but its art only occupies x 108..403 -
-       21% to 79%. The margins are transparent because the FRAME's end caps sit
-       there. Clipping from x=0 to w*frac therefore showed nothing at all until
-       health passed 21%, and only reached full at 79%.
-
-       The gauge now runs between the fill's real edges, so 0% is empty, 100% is
-       full, and every value in between lands where the player expects. */
-    /* THE SPAN DIFFERS PER BAR FAMILY (drop 0801jz). Hard-coding 0.211/0.787 was
-       right for the BOSS plate and wrong for the miniboss: nbb_fill art occupies
-       x 108..403 of 512 (21%-79%), nmb_fill occupies x 8..317 of 326 (2%-97%).
-
-       Measured once per family and cached, so each bar clips to its own artwork
-       instead of borrowing the other's margins. */
-    const _spanKey = (kind==='boss') ? 'nbb' : 'nmb';
-    if(!drawHealthBarV2._span) drawHealthBarV2._span = {};
-    let _sp = drawHealthBarV2._span[_spanKey];
-    if(!_sp){
-      _sp = (_spanKey==='nbb') ? {a:0.211, b:0.787} : {a:0.025, b:0.973};
-      drawHealthBarV2._span[_spanKey] = _sp;
-    }
-    const _F0 = _sp.a, _F1 = _sp.b;
-    const _x0 = x + w*_F0;
-    const _wid = w*(_F1-_F0)*frac;
-    ctx.save();
-    ctx.beginPath(); ctx.rect(_x0, y-2, _wid, h+4); ctx.clip();
-    if(XART.rdy(fillK)){
-      ctx.drawImage(XART.get(fillK), x, y, w, h);
-    } else {
-      ctx.fillStyle = frac>0.5 ? '#4fd66a' : frac>0.25 ? '#e8c33a' : '#e04b3a';
-      ctx.fillRect(x, y, w, h);
-    }
-    ctx.restore();
+  if(frac>0 && frac<=0.25){
+    const t=(typeof stateT!=='undefined')?stateT:0;
+    ctx.globalAlpha = 0.16 + 0.16*Math.sin(t*9);
+    ctx.fillStyle='#ffffff'; ctx.fillRect(x, y, Math.round(w*frac), h);
+    ctx.globalAlpha = 1;
   }
-  /* 2) SEGMENT TICKS - TILED, NOT STRETCHED (drop 0801jz).
 
-     nbb_seg_* is a full-width strip of ticks (512x64) and stretching it is right.
-     nmb_seg_* is ONE tick, 39x33 - stretching that across the whole bar produced a
-     solid block that buried the fill at every health value, which is why the
-     miniboss gauge never appeared to drain.
-
-     A plate materially narrower than the frame is a single tick, so it is repeated
-     along the bar at its own aspect instead. */
-  const sk = P+'_seg_'+st;
-  if(XART.rdy(sk)){
-    const _si = XART.get(sk);
-    const _sw = _si.naturalWidth||w, _sh = _si.naturalHeight||h;
-    const _fw = fi.naturalWidth||_sw;
-    if(_sw < _fw*0.5){
-      /* A NARROW SEG PLATE IS THE FILL UNIT, NOT A TICK (drop 0801jz). nmb_seg_1
-         is a solid 39x33 GREEN BLOCK - tiling it across the whole bar filled the
-         miniboss gauge at every health value, so it never appeared to drain.
-
-         It tiles only as far as the health reaches, inside the same span the fill
-         uses. */
-      const _tw = h * (_sw/Math.max(1,_sh));
-      const _a = (kind==='boss') ? 0.211 : 0.025;
-      const _b = (kind==='boss') ? 0.787 : 0.973;
-      const _sx = x + w*_a;
-      const _end = _sx + w*(_b-_a)*frac;
-      ctx.save();
-      ctx.beginPath(); ctx.rect(_sx, y-2, Math.max(0,_end-_sx), h+4); ctx.clip();
-      for(let _tx = _sx; _tx < _end; _tx += _tw) ctx.drawImage(_si, _tx, y, _tw, h);
-      ctx.restore();
-    } else {
-      ctx.drawImage(_si, x, y, w, h);
-    }
+  /* THE MINIBOSS CARRIES ITS OWN NAME. drawSubBossBar only labels the bar in the branch it takes
+     when this function FAILS, so a successful draw used to leave the miniboss anonymous. The boss
+     caller draws its own name after this returns, so labelling both here would double it. */
+  if(!boss && typeof subBoss!=='undefined' && subBoss && subBoss.name){
+    ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='left';
+    ctx.fillStyle='#05070a'; ctx.fillText(String(subBoss.name), x+1, y-5);
+    ctx.fillStyle='#ffd9a8'; ctx.fillText(String(subBoss.name), x,   y-6);
   }
-  /* 3) THE FRAME - BUT NOT ON TOP OF A SOLID ONE (drop 0801jz). Mike: show me all
-     the bars. Rendering them revealed every MINIBOSS bar reading as empty.
 
-     Measured: nbb_frame_1 is hollow - 0% opacity across its interior - so drawing
-     it last is correct. nmb_frame_1 is 100% OPAQUE inside, so drawing it last
-     buried its own fill completely. Sixteen bars, eight of them permanently blank.
-
-     A solid frame is a BACKPLATE and belongs underneath. Measured once and cached
-     rather than assumed, so new bar art is handled on its own terms. */
-  if(drawHealthBarV2._solid === undefined){
-    drawHealthBarV2._solid = {};
-  }
-  if(drawHealthBarV2._solid[P] === undefined){
-    let solid = false;
-    try{
-      const _c=document.createElement('canvas'); _c.width=fi.naturalWidth||64; _c.height=fi.naturalHeight||64;
-      const _g=_c.getContext('2d'); _g.drawImage(fi,0,0);
-      const _d=_g.getImageData(Math.floor(_c.width*0.42), Math.floor(_c.height*0.5), 8, 4).data;
-      let op=0; for(let _i=3;_i<_d.length;_i+=4) if(_d[_i]>16) op++;
-      solid = (op > (_d.length/4)*0.6);
-    }catch(_e){ solid = (P==='nmb'); }
-    drawHealthBarV2._solid[P] = solid;
-  }
-  if(!drawHealthBarV2._solid[P]) ctx.drawImage(fi, x, y, w, h);
-  // 4) CRITICAL PULSE under 25%, using the authored overlay rather than a coloured rectangle
-  if(frac<=0.25){
-    const pk = P+'_pulse_'+(Math.floor(performance.now()/110)%4);
-    if(XART.rdy(pk)){
-      ctx.globalCompositeOperation='lighter';
-      ctx.globalAlpha=0.55+0.45*Math.sin(performance.now()/90);
-      ctx.drawImage(XART.get(pk), x, y, w, h);
-    }
-  }
   ctx.restore();
   return true;
 }
