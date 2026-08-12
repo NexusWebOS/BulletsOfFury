@@ -31976,6 +31976,34 @@ function glyphBox(art, f, H, ch){
 }
 function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
   if(!art||!art.font) return;
+  /* ⚠ THE GLYPH MAP CAN BE PRESENT WHILE THE SHEET IS NOT (drop 0810o), AND THIS DREW NOTHING AT
+     ALL WHEN THAT HAPPENED — silently, with no fallback and no error.
+
+     Mike's stage-clear panel showed nine filled bars, a portrait and a rank frame, and NOT ONE
+     LABEL OR NUMBER. Measured rather than guessed, and it took two wrong guesses to get here:
+     stageText was called 2,853 times during that panel and produced no pixels, including for the
+     "STAGE 1 CLEAR" title. `art` was an object and `art.font` was populated — the guard above was
+     satisfied — but every glyph goes through drawFrameTinted(art.img, ...), and an Image that has
+     not decoded draws nothing. So the panel asked for its text, was told yes, and got silence.
+
+     artReady() is the predicate that already knows the difference (a.img.complete &&
+     naturalWidth>0) and drawIntro has always used it. Checking it HERE rather than at the call
+     sites fixes every caller at once — the stage banners, the stats rows, the pilot cards, the
+     password screen — because they all funnel through this one function.
+
+     The fallback is the same BOFmil face the rest of the UI uses, centred the way this function
+     centres, so a slow decode costs the authored letterforms and nothing else. Nothing changes
+     once the sheet lands. */
+  if(typeof artReady==='function' && !artReady(art)){
+    ctx.save();
+    if(alpha!=null) ctx.globalAlpha=alpha;
+    ctx.font='bold '+Math.max(6,Math.round(H*0.92))+'px "BOFmil", monospace';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillStyle=tintC||'#e8eef8';
+    ctx.fillText(String(text).toUpperCase(), cx, cy);
+    ctx.restore();
+    return;
+  }
   const sp=(spacingMul==null?0.10:spacingMul)*H; const items=[]; let total=0;
   for(const ch of String(text).toUpperCase()){
     if(ch===' '){ items.push(null); total+=H*0.42+sp; continue; }
@@ -33838,7 +33866,38 @@ function drawStageClear(dt){
     const slideX=rowsX-(1-app)*26;
     ctx.save(); ctx.globalAlpha=app;
     const dim=(row.val<0.34)?0.62:1;
-    if(art && typeof stageText==='function'){
+    /* _fontOK is read by BOTH the label and the value below, so they cannot end up in two
+       different faces. The real readiness question — is the glyph SHEET decoded — is answered
+       inside stageText now; see the fallback at the top of it. Superseded note follows:
+       ⚠ A TRUTHY `art` IS NOT A USABLE FONT (drop 0810o). Mike's stage-clear panel drew nine
+       filled bars, the portrait and the rank frame, and NOT ONE LABEL OR NUMBER — the data was
+       arriving, only the text was missing.
+
+       This asked `if(art)`. curArt() hands back an object as soon as the descriptor exists, but
+       stageText needs art.font — the glyph map — and draws NOTHING, silently, when that has not
+       landed. Because `art` was truthy the fillText fallback on the next line never ran either,
+       so the branch that could have shown something was skipped by the branch that showed
+       nothing. _tw() twenty lines down already knew this and guards on `!art||!art.font`.
+
+       Same shape as the XART.rdy first-call trap: a readiness check that answers about the
+       wrapper rather than the thing you are about to use. Now the fallback face carries the
+       panel until the real one is decoded, so the screen is never blank. */
+    /* BAR FIRST, TEXT OVER IT (drop 0810o). scBar blits nui_bframe_large — a 512x64 FULL-BAR
+       plate, opaque across its top edge — and the label was going down before it. 0807o had
+       already spotted the two colliding and bought clearance by dropping the bar 0.016 and
+       shaving its height; nine rows into this panel there was none left to buy. Flipping the
+       order costs nothing and moves nothing.
+
+       ⚠ THIS IS NOT WHAT MADE MIKE'S PANEL BLANK. I changed it believing it was, and the panel
+       came back just as empty. The blank screen was stageText drawing NOTHING AT ALL when its
+       glyph sheet had not decoded — 2,853 calls, no pixels, the title missing too — and the fix
+       belongs at the top of stageText, where it now is. Kept because it is correct on its own
+       terms, not because it fixed this. Two wrong guesses before measuring; the measurement took
+       one run. */
+    scBar(slideX, y+ph*0.016, rowsW, rowH*0.50, (row._shown||0), SC_SEGS, row.fill,
+          (i===drawStageClear._row && (row._shown||0)>=row.segs) ? 1 : 0, t+i*0.3);
+    const _fontOK = !!(art && art.font);
+    if(_fontOK && typeof stageText==='function'){
       ctx.globalAlpha=app*dim;
       stageText(art, row.label, slideX+ph*0.005, y, ph*0.024, null,null,app*dim,0.05);
     } else { ctx.textAlign='left'; ctx.fillStyle='#cfd6e0'; ctx.font=F(ph*0.024);
@@ -33848,7 +33907,7 @@ function drawStageClear(dt){
        number on the screen was in the browser fallback face AND on a different vertical
        baseline: stageText centres on cy, fillText sits on the alphabetic baseline. That is the
        drift Mike photographed, where the labels and the numbers march apart down the panel. */
-    if(art && typeof stageText==='function'){
+    if(_fontOK && typeof stageText==='function'){
       stageText(art, row.text, slideX+rowsW-_tw(art,row.text,ph*0.026,0.05)/2, y, ph*0.026, null,0,app,0.05);
     } else {
       ctx.textAlign='right'; ctx.font=F(ph*0.026);
@@ -33861,8 +33920,7 @@ function drawStageClear(dt){
     /* ⚠ THE LABEL WAS TOUCHING ITS OWN BAR (drop 0807o). At a 0.062 pitch with the bar starting
        0.010 below the label baseline, the two met — nine rows is tight and I took the clearance
        out of the wrong place. The bar drops to 0.016 and loses a little height instead. */
-    scBar(slideX, y+ph*0.016, rowsW, rowH*0.50, (row._shown||0), SC_SEGS, row.fill,
-          (i===drawStageClear._row && (row._shown||0)>=row.segs) ? 1 : 0, t+i*0.3);
+    ctx.globalAlpha=app;
     ctx.restore();
   }
 
