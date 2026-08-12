@@ -10585,16 +10585,39 @@ const LZM_DOCK_T = 0.55;            // seconds to fly in and connect
    Stage-8 fodder sits at 14 hp, so 6 left a third shot on the table and 7 closes it. One or two
    shots everywhere, which is the brief. */
 const LZ_SLUG_DMG = 7;
-const LZ_SLUG_CD  = 0.16;
+/* ⚠ WAY TOO SLOW AT 0.16 (drop 0810f). Mike: "Lizzies machine gun attachment is too slow, way too
+   slow." Measured against what it was competing with: the player's own primary runs on
+   _weaponCadence() ~0.20s, so a MOUNTED HEAVY MACHINE GUN was firing at 0.16 — barely a quarter
+   faster than the pea-shooter it replaces. That is not a machine gun, it is the same gun with
+   bigger bullets, which is exactly how it read.
+
+   0.075 is 2.1x faster: ~13 volleys a second, and with two barrels that is the chatter the name
+   promises. The DAMAGE is untouched at 7 — that number was measured against every fodder type in
+   0805u for the one-or-two-shot brief and is not the thing he complained about.
+
+   Yes, that is a lot of DPS. It is meant to be: this is now a 15-SECOND pickup (LZ_LIFE below),
+   not a permanent weapon, and a short overwhelming window is the point of it. */
+const LZ_SLUG_CD  = 0.075;
 const LZ_SLUG_SPD = 10.5;
+/* THE MOUNT IS A LOAN, NOT A GIFT (drop 0810f). Mike: "needs to goes away after 15 seconds or when
+   she dies. Same with deckers shotgun." It previously had NO expiry at all — it survived until the
+   next beginStage, so a mount picked up early in a level was simply the rest of that level. */
+const LZ_LIFE = 15;
 let lzMount=null;
 /* pilot-gated for the same reason dkActive is — this one is cleared per stage so it has not bitten,
    but it sits in the same pShoot chain and would swallow another pilot's trigger identically */
 function lzMountActive(){ return !!(lzMount && lzMount.docked && (typeof _pilotKey!=='function' || _pilotKey()==='lizzie')); }
 function lzMountGrant(){
-  lzMount={t:0, docked:false, ax:player.x+rnd(-70,70), ay:player.y+rnd(30,70)};
+  lzMount={t:0, docked:false, life:LZ_LIFE, ax:player.x+rnd(-70,70), ay:player.y+rnd(30,70)};
   floatText(player.x,player.y-18,'HEAVY MG','#ffc21a');
   if(Audio&&Audio.SFX&&Audio.SFX.powerup) Audio.SFX.powerup();
+}
+/* the loan expiring, from either end — the clock or a death. One place, so the two paths cannot
+   drift apart the way dkT did from the reset line that claimed to cover it. */
+function lzMountEnd(quiet){
+  if(!lzMount) return;
+  lzMount=null; run._lzCd=0;
+  if(!quiet && typeof floatText==='function') floatText(player.x,player.y-18,'MG LOST','#8fa4bd');
 }
 function lzMountTick(dt){
   if(!lzMount) return;
@@ -10611,7 +10634,13 @@ function lzMountTick(dt){
     if(p>=1){ lzMount.docked=true; shake=Math.max(shake,3);
       if(Audio&&Audio.SFX&&Audio.SFX.powerup) Audio.SFX.powerup(); }
   }
-  if(lzMount.docked){ lzMount.x=player.x; lzMount.y=player.y-14; lzMount.s=0.38; }
+  if(lzMount.docked){
+    lzMount.x=player.x; lzMount.y=player.y-14; lzMount.s=0.38;
+    /* the 15s runs from the moment it CONNECTS, not from the pickup — the fly-in is ceremony and
+       charging the player for it would make a fast dock worth more than a slow one */
+    lzMount.life=(lzMount.life==null?LZ_LIFE:lzMount.life)-dt;
+    if(lzMount.life<=0){ lzMountEnd(); return; }
+  }
 }
 function lzMountDraw(){
   if(!lzMount || typeof XART==='undefined' || !XART.rdy('nlz_mount')) return;
@@ -10690,8 +10719,18 @@ let dkDecals=[];               // bullet-hole bursts riding on the units they hi
    probe_weapons.py — the mount docked, rode the hull, reported active, and produced 0 slugs.
    _pilotKey() rather than run.pilot directly, because run.pilot can be an index. */
 function dkActive(){ return !!(run && run.dkT>0 && (typeof _pilotKey!=='function' || _pilotKey()==='decker')); }
+/* 15, NOT 24 (drop 0810f). Mike: "needs to goes away after 15 seconds or when she dies. Same with
+   deckers shotgun." Matched to LZ_LIFE so the two loans have the same shape — a pilot should not
+   have to learn a different clock per pickup. */
+const DK_LIFE = 15;
+function dkEnd(quiet){
+  if(!run || !(run.dkT>0)) return;
+  run.dkT=0; run._dkCd=0;
+  if(typeof dkShells!=='undefined') dkShells.length=0;
+  if(!quiet && typeof floatText==='function') floatText(player.x,player.y-18,'SHOTGUN LOST','#8fa4bd');
+}
 function dkGrant(){
-  run.dkT=24; run._dkCd=0;
+  run.dkT=DK_LIFE; run._dkCd=0;
   floatText(player.x,player.y-18,'INCENDIARY','#ffb347');
   if(Audio&&Audio.SFX&&Audio.SFX.powerup) Audio.SFX.powerup();
 }
@@ -13689,6 +13728,12 @@ function playerHit(){
   run.missileLevel=0;   // die -> lose ALL auto-missiles; next missile powerup is level 1 again
   // lose the active special on death (Maverick venom, Yuri chain, etc.)
   if(special){ if(typeof endSpecial==='function') endSpecial(); special=null; }
+  /* AND THE LOANED WEAPONS (drop 0810f). Mike: "needs to goes away after 15 seconds or when she
+     dies. Same with deckers shotgun." Everything else the player was carrying is stripped on the
+     lines above — weapon, levels, power, speed, missiles, the special — and these two were the
+     only powerups that survived being killed. Quiet: the death already has enough on screen. */
+  if(typeof dkEnd==='function') dkEnd(true);
+  if(typeof lzMountEnd==='function') lzMountEnd(true);
   retina.target=null; retina.phase=null; timeScale=1; zaps.length=0;
 }
 

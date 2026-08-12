@@ -107,6 +107,18 @@ DECKER = r"""
     dkIgnite(mini);
     add(!(mini._burn > 0), 'and neither does a miniboss');
 
+    // ---- THE LOAN EXPIRES: 15s, or the moment he dies ----
+    add(DK_LIFE === 15, "the shotgun is a 15-second loan too, not 24", 'DK_LIFE=' + DK_LIFE);
+    run.dkT = 0.05; dkTick(0.1);
+    add(!dkActive(), 'and it goes away when the clock runs out');
+    dkGrant();
+    add(dkActive() && run.dkT === DK_LIFE, 'granted again for the full 15');
+    player.invuln = 0; run.shield = 0; special = null;
+    playerHit();
+    add(player.dead, 'he is actually dead');
+    add(!dkActive() && run.dkT === 0, 'and the shotgun is GONE with him');
+    player.dead = false; player.deathT = 0; player.invuln = 1e9;
+
     // ---- ART ----
     for (let i = 0; i < DK_PELLETS; i++) XART.rdy('ndk_ang_' + i);
     R.artKeys = [];
@@ -168,6 +180,23 @@ LIZZIE = r"""
     pShoot();
     add(pBullets.filter(b => b.kind === 'lzslug').length === 0,
         'the cooldown holds the next volley', 'got ' + pBullets.length);
+
+    // ---- THE LOAN EXPIRES: 15s, or the moment she dies ----
+    add(LZ_SLUG_CD < 0.16, 'the cadence is faster than the 0.16 Mike called "way too slow"',
+        LZ_SLUG_CD + 's, vs ~0.20 for the primary it replaces');
+    add(LZ_LIFE === 15, 'the mount is a 15-second loan', 'LZ_LIFE=' + LZ_LIFE);
+    lzMount.life = 0.05;
+    lzMountTick(0.1);
+    add(!lzMountActive() && !lzMount, 'and it goes away when the clock runs out');
+
+    lzMountGrant();
+    for (let i = 0; i < 40; i++) lzMountTick(LZM_DOCK_T / 30);
+    add(lzMountActive(), 'granted again and docked');
+    // the real death path, not a hand-cleared flag — playerHit bails on invuln/shield/specials
+    player.invuln = 0; run.shield = 0; special = null;
+    playerHit();
+    add(player.dead, 'she is actually dead (playerHit bails on invuln, shield and specials)');
+    add(!lzMount, 'and the mount is GONE — it was one of only two powerups that survived a death');
 
     // one-or-two-shot fodder, which is the brief the 7 dmg was measured for
     enemies.length = 0;
