@@ -391,6 +391,22 @@ when a stage has no scene, so arcade and every unscened stage are untouched.
 Two slots, and a speaker keeps its side: whoever talks takes the slot the PREVIOUS speaker is not
 in, so the listener stays on screen dimmed instead of the portraits swapping sides every line.
 
+## ⚠ START HERE — `docs/HANDOFF_CONNECTORS.md`
+
+Mike's current brief (0810i) is captured verbatim there: seamless entry connectors for every
+stage, the stage-2 exit, a new boss/miniboss HUD, and two miniboss bugs. He called it "extremly
+important".
+
+**The one thing worth knowing before you open it:** the seamless mechanism ALREADY EXISTS and is
+proven. `openingDrawArrival` lands the level's own first frame byte-identically on PLAY's first
+tick — 0 differing pixels of 393,600, measured by `probe_arrival.py` — because it calls `drawBG(0)`
+under a translate instead of reimplementing the master blit. Generalising that to all nine stages
+is the job. Reinventing it is not.
+
+What he is complaining about is `drawLaunch`: `_drawLevelRegion` clips the level into a window that
+WIDENS as distance grows, so the level is revealed behind a runway plate rather than joined to it.
+That is "fly over a flat and then pull the flat away", exactly.
+
 **Next, in order:**
 1. **The remaining themed joins** — 5→6, 6→7, 7→8. (4→5 is the boss chase and stays blocked on
    the stage-4 boss.) Build them on the 2→3 / 3→4 pattern already on trunk: a per-join predicate,
