@@ -1356,7 +1356,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("(function(){for(var i=0;i<6;i++){if(!XART.rdy('nlq_sludge_'+i))return false;}return true;})()", ctxv), 'sludge surface 6f registered (256px)');
   ok(vm.runInContext("(function(){for(var i=0;i<6;i++){if(!XART.rdy('nlqf_sludge_'+i))return false;}return true;})()", ctxv), 'sludge FALL 6f registered');
   ok(vm.runInContext("run.stage=7; worldWidth()===800", ctxv), 'stage 7 reports WORLD width 800, not camera width 480');
-  ok(vm.runInContext("run.stage=7; _levelCfg().master==='nst7_master' && _levelCfg().wide===true && _levelCfg().arena==='nst7_arena'", ctxv), 'stage-7 level cfg: wide master + dedicated boss arena');
+  /* master renamed to the RC2 rebuild in 0810g; the STRUCTURE is what this was protecting and
+     it is unchanged — a wide master plus a dedicated boss arena that is NOT the scroll plate. */
+  ok(vm.runInContext("run.stage=7; _levelCfg().master==='sewer800_rc2_master' && _levelCfg().wide===true && _levelCfg().arena==='nst7_arena'", ctxv), 'stage-7 level cfg: wide RC2 master + dedicated boss arena');
+  ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv),
+     'and it KEEPS its sludge — the RC2 plate is magenta-punched to alpha and the sludge is what shows through');
   /* THE SLUDGE FAMILY IS nlq_sludgeF (drop 0801go) - the 'F' variant, which is what
      the stage config carries and what _liquidFrames resolves. nlq_sludge with no
      suffix is not a registered family. */
@@ -1818,8 +1822,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      "on stage 4 you have a waterfall appearing instead of our car crash object."
      A liquid stage needs actual liquid in the art; this one has none. */
   ok(vm.runInContext("_levelCfg().liquid===null", ctxv), 'stage 4 has NO liquid bed — it is a desert highway');
-  ok(vm.runInContext("(_levelCfg().props||[]).some(function(p){return p.k==='nst4_crash_overlay';})", ctxv),
-     'and the car crash pileup is placed on it');
+  /* ⚠ THE CRASH OVERLAY IS DELIBERATELY GONE (drop 0810g). Mike: "were supposed to replace level
+     4". Its y=2124 was derived in 0801ku by diffing nst4_master_clean against _crash to locate the
+     scorch on the 4800px plate. That plate is no longer the master, so the coordinate is meaningless
+     and placing it anyway would drop a wreck at an arbitrary spot. The RC2 stage carries its own
+     wreckage down the highway. Asserting the HAZARD instead: no prop may be pinned to coordinates
+     measured against a plate the stage no longer uses. */
+  ok(!vm.runInContext("(_levelCfg().props||[]).some(function(p){return p.k==='nst4_crash_overlay';})", ctxv),
+     'and no prop is left pinned to coordinates measured on the retired 4800px plate');
   vm.runInContext("run.stage=1; curStage=STAGES[0];", ctxv);
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'stage 1 now runs the seam-healed water (swapped on explicit go-ahead)');
   ok(vm.runInContext("_levelCfg().master==='jungle800_rc2_master' && _levelCfg().wide===true", ctxv), 'stage-1 MASTER is the RC2 rebuild — the never-touch rule still holds for everything but the liquid');
@@ -1843,7 +1853,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("run.stage=4; curStage=STAGES[3];", ctxv);
   /* the nst4b plates are still REGISTERED but stage 4 fields the crash pack now
      (drop 0801gd) - _levelCfg().master is nst4_master. */
-  ok(vm.runInContext("_levelCfg().master==='nst4_master_crash' && _levelCfg().wide===true", ctxv), 'stage 4 runs the CRASH master, wide');
+  ok(vm.runInContext("_levelCfg().master==='airbase800_rc2_master' && _levelCfg().wide===true", ctxv), 'stage 4 runs the RC2 AIRBASE master, wide (replaced the crash plate, 0810g)');
   // THE recurring bug class: wide:true is meaningless without worldWidth()
   ok(vm.runInContext("run.stage=4; worldWidth()===800", ctxv), 'stage 4 reports WORLD width 800 — wide:true and worldWidth() agree');
   ok(vm.runInContext("buildStagePlan.toString().indexOf('const W4=worldWidth()')>0", ctxv), 'stage-4 roster spans the 800px world, not the 480 camera');
@@ -1913,7 +1923,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("run.stage=4; curStage=STAGES[3];", ctxv);
   /* nst4_master aliases the CLEAN plate — the one without the scorch. The crash
      variant existed unused the whole time (drop 0801ku). */
-  ok(vm.runInContext("_levelCfg().master==='nst4_master_crash'", ctxv), 'stage 4 runs the CRASH master, not the clean one');
+  ok(vm.runInContext("_levelCfg().master==='airbase800_rc2_master'", ctxv), 'stage 4 runs the RC2 airbase rebuild; nst4_master_crash/_clean stay registered but unused');
   ok(vm.runInContext("!!BOFX.img['nst4_master_crash'] && !!BOFX.img['nst4_master_clean']", ctxv), 'and both its clean and crash plates are registered');
   ok(vm.runInContext("_levelCfg().wide===true && _levelCfg().liquid===null", ctxv), 'the crash route keeps the wide world, with no water on the road');
   vm.runInContext("run.remix4=false;", ctxv);
