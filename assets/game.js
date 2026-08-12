@@ -2835,7 +2835,12 @@ function drawLevelMaster(dt){
      default, so the rule applies everywhere until a level opts out. */
   const _sbRun = (typeof subBossActive!=='undefined' && subBossActive && subBoss && !subBoss.dead
                   && !(typeof SUBBOSS_NO_HOLD!=='undefined' && SUBBOSS_NO_HOLD[run.stage]));
-  const _bossRun = (typeof bossActive!=='undefined' && bossActive && boss && !boss.dead) || _sbRun;
+  /* TWO FLAGS, BECAUSE THEY MEAN TWO DIFFERENT THINGS (drop 0810m). _bossRun answers "should the
+     level stop advancing", which a miniboss also demands. _realBossRun answers "should the arena
+     replace the level", which is the BOSS's alone — see the long note at the arena block below,
+     and Mike's "it teleports me to a animated lava tileset section from where i was". */
+  const _realBossRun = (typeof bossActive!=='undefined' && bossActive && boss && !boss.dead);
+  const _bossRun = _realBossRun || _sbRun;
   if(_bossRun){
     _bossHold = Math.min(1, (_bossHold||0) + dt*1.6);            // 0 -> 1 over ~0.6s
     mapScroll = Math.min(range, mapScroll + dt*40*(1-_bossHold));
@@ -2863,7 +2868,28 @@ function drawLevelMaster(dt){
     ctx.drawImage(image, 0, sY, drawW, h1, 0, 0, drawW, h1);
     if(h1<winH) ctx.drawImage(image, 0, 0, drawW, winH-h1, 0, h1, drawW, winH-h1);
   };
-  if(_bossRun){
+  /* ⚠ THE ARENA BELONGS TO THE BOSS, NOT TO THE MINIBOSS (drop 0810m). Mike: "it ... teleports me
+     to a animated lava tileset section from where i was on the level."
+
+     He is describing this block, and it fired for the MINIBOSS because _bossRun is
+     `bossActive || _sbRun` — one flag doing two jobs. Both of the things below are a hard change of
+     place, and neither has anything to do with holding the scroll:
+
+       arenaLiquid   stops drawing the master entirely and leaves the animated lava bed. Authored
+                     for the stage-2 BOSS, who is supposed to fight out over open lava (0806f).
+                     On the miniboss it drops the mountain you were flying past and replaces the
+                     whole screen with tiling lava — the teleport, exactly.
+       _loopDraw     maps the master by `mapScroll % H` instead of by scrollFrac through rangeSrc.
+                     That is a DIFFERENT mapping of the same plate, so switching to it jumps the
+                     terrain to an unrelated part of the level. That one fires on every stage with
+                     a miniboss, not just 2, which is a fair part of "almost no minibosses or
+                     bosses past level 1 truly work right".
+
+     The miniboss hold is already implemented ABOVE, where mapScroll stops advancing. Held terrain
+     is all the rule asks for — "stop vertically scrolling the level, do not allow player to pass".
+     So a miniboss now falls through to the normal draw and the level simply stops where it stands,
+     with the player still looking at the piece of the level they were fighting over. */
+  if(_bossRun && _realBossRun){
     /* arenaLiquid: the stage's own liquid IS the arena. It was already drawn above and it
        already loops, so returning here simply stops the master covering it — the player flies
        out past the mountain and over open lava while the boss makes his entrance. */
@@ -5833,7 +5859,19 @@ const DEAD_TYPES = {
 /* the OVERLOAD REACTOR sub-boss is removed outright at Mike's instruction, not remapped: a
    sub-boss with no replacement should simply not spawn, and the stage's gate already handles a
    missing sub-boss by clearing to the main fight. */
-const DEAD_SUBBOSS = {subreactor:1};
+/* AND THE OBSIDIAN DRILL TANK IS OUT (drop 0810m). Mike: "It cuts to this broken drill tank I told
+   you to remove ... and he does absolutely nothing."
+
+   Both halves were true and they were separate faults. "Does absolutely nothing" is literal — the
+   unit has no attack case of its own, so it drove into position and sat there. And it was still in
+   SUBBOSS[2] after being retired, so stage 2 stopped at it on the way to the Magma Colossus. It is
+   removed the way subreactor was, and for the same stated reason: a sub-boss with no replacement
+   should not spawn at all rather than be remapped onto something else. The gate below clears
+   subBossDone so the stage runs straight through to its real boss instead of stalling on it.
+
+   The art and every code path stay on disk — deleting the entry here is the whole retirement, and
+   putting the drill back is deleting one word. */
+const DEAD_SUBBOSS = {subreactor:1, obsidiandrill:1};
 function liveType(t){ return DEAD_TYPES[t] || t; }
 /* kinds the visibility gate refused, and how often. Read it in the console with
    `INVIS_BLOCKED` — an empty object means nothing invisible tried to spawn. */
@@ -25600,16 +25638,23 @@ function genesisDraw(b){
     }
     ctx.restore();
   }
-  // ---- torso: the only piece never in the lava ----
-  let ty=cy;
-  if(!(G.phase==='ignite' && G.rise>0.72) && XART.rdy(tag+'_p_torso')){
-    const im=XART.get(tag+'_p_torso');
-    const tw=im.naturalWidth*S, th=im.naturalHeight*S;
-    const rise=(G.phase==='rise')?clamp(G.t/GEN_T_RISE,0,1):1;
-    ty=cy+(1-rise)*175*S;
-    ctx.drawImage(im, cx-tw/2, ty-th/2, tw, th);
-  }
-  // ---- limbs already home ----
+  /* ⚠ LIMBS UNDER THE TORSO (drop 0810m). Mike: "your overlaying the graphics instead of
+     underlaing to make them look connected."
+
+     The torso was drawn FIRST and every seated limb painted over it, which is backwards against
+     this system's own header eight hundred lines up: "drawOrder is back-to-front for painting
+     (torso last, so it sits on top)". With the order inverted nothing tucks behind anything, so a
+     shoulder sits ON the chest instead of into it and the joins read as decals rather than
+     joints. Limbs first now, torso last.
+
+     ⚠ AND THE SEATED PIECES KEEP THEIR SOCKET PLACEMENT AND THEIR 0.85. I changed that to a
+     centred full-canvas draw first, on the strength of the MECH BOSS header's guarantee that every
+     component is a locked 384x384 canvas that composites at (0,0) — and it is WRONG HERE. The note
+     at the top of GENESIS says so plainly: "mbg2_p_* are the sprites cut from Mike's sheet — the
+     loose limbs, not the position-locked damage canvases", and BOFX.mechpieces gives each its own
+     size (head 142x173, torso 274x334, leg 200x432). They are loose art of differing sizes and the
+     sockets are the only thing placing them; centring them stacks the whole mech in one spot.
+     Two contracts in one file, and the wrong one is a plausible fit for the right one. */
   // Once the flash takes over the hauled pieces stop drawing entirely: the fused mech is what
   // comes out the other side, and showing both would be the cross-fade Mike does not want.
   const _hidePieces = (G.phase==='ignite' && G.rise>0.72);
@@ -25631,6 +25676,17 @@ function genesisDraw(b){
       ctx.drawImage(im, cx+(so[0]-192)*S-ww/2, cy+(so[1]-192)*S-hh/2, ww, hh);
       ctx.restore();
     }
+  }
+  /* ---- torso LAST, so it sits on top: the only piece never in the lava ----
+     Moved below the limbs in 0810m — see the note above. ty is still computed here and the chain
+     below reads it, so the hoist point follows the torso as it rises exactly as before. */
+  let ty=cy;
+  if(!(G.phase==='ignite' && G.rise>0.72) && XART.rdy(tag+'_p_torso')){
+    const im=XART.get(tag+'_p_torso');
+    const tw=im.naturalWidth*S, th=im.naturalHeight*S;
+    const rise=(G.phase==='rise')?clamp(G.t/GEN_T_RISE,0,1):1;
+    ty=cy+(1-rise)*175*S;
+    ctx.drawImage(im, cx-tw/2, ty-th/2, tw, th);
   }
   // ---- THE one chain ----
   if(G.phase!=='rise' && G.phase!=='ignite'){

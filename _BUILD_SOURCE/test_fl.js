@@ -3438,8 +3438,30 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("!boss._gen", ctxv), 'genesis completes inside its authored runtime');
   ok(vm.runInContext("boss._mech && boss._mech.phase==='fight'", ctxv),
      'and hands over to the fight with the limbs wired for damage');
-  var _lhp=vm.runInContext("(function(){var K=boss._mech,n=0;for(var c in K.parts){if(K.parts[c]._limb)n++;}return n;})()", ctxv);
-  ok(_lhp>=5, _lhp+' components carry a limb HP pool (5 limbs x 20% of the boss)');
+  /* ⚠ THIS WAS ONE OF THE FIVE "PRE-EXISTING FAILURES" AND IT WAS NOT A BUG — it was an assertion
+     defending a design Mike replaced (found 0810m, while chasing his "almost no minibosses or
+     bosses past level 1 truly work right").
+
+     It counted parts stamped `_limb`, the flat GEN_LIMB_HP share the HAUL used to write across a
+     whole haul group. 0809m deleted that deliberately: the formation hauls the two legs on one
+     trunk and the two cannons together, so a group pool meant a shot to the left cannon silently
+     damaged the right one. Mike: "each piece of the mech gets a decent chunk of health ... until
+     you take out the cannons, legs, and arms" — SIX separate targets. `_limb` is gone by intent
+     and no part will ever carry it again, so this could only ever fail from here on.
+
+     What has to be true now is the contract that replaced it: the haul is choreography only,
+     MECH_HP_SHARE is the single source of HP, every component owns its own pool, and genesis
+     leaves every part DOCKED — the 0809m fix for "957 probes found nothing hittable", which is
+     the real "the level 2 and 3 bosses cannot be damaged" bug and the thing worth guarding. */
+  var _dock=vm.runInContext("(function(){var K=boss._mech,n=0,t=0;for(var c in K.parts){t++;if(K.parts[c].docked)n++;}return [n,t];})()", ctxv);
+  ok(_dock[0]===_dock[1] && _dock[1]>0,
+     'genesis leaves every part DOCKED and hittable ('+_dock[0]+'/'+_dock[1]+')');
+  ok(vm.runInContext("(function(){var n=0;for(var k in MECH_HP_SHARE) n++; return n;})()", ctxv)>=6,
+     'and HP is per-COMPONENT, six-plus separate targets, not one pool per haul group');
+  ok(vm.runInContext("Math.abs(Object.keys(MECH_HP_SHARE).reduce(function(s,k){return s+MECH_HP_SHARE[k];},0)-1)<0.001", ctxv),
+     'and those component shares sum to exactly 100% of the boss');
+  ok(vm.runInContext("!/_limb\\s*=/.test(genesisUpdate.toString())", ctxv),
+     'the haul never writes a health pool of its own — choreography does not decide what dies together');
   // VEHICLES DRIVE
   ok(vm.runInContext("updateSubBoss.toString().indexOf('VEHICLES DRIVE')>0", ctxv), 'ground minibosses reposition instead of drifting on a sine');
   ok(vm.runInContext("drawSubBoss.toString().indexOf('GROUND UNITS DO NOT BOB')>0", ctxv), 'and do not bob vertically');

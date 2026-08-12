@@ -148,8 +148,9 @@ loads on entry.
 
 ## Current state (2026-08-11)
 
-Suite: **2,442 assertions / 218 sections / 5 failures** — all five pre-existing at HEAD: the boss
-limb pool, the preload count, the two `_superseded` ones and the naval flash families.
+Suite: **2,446 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
+ones and the naval flash families. The fifth (the boss limb pool) was a stale assertion, not a bug;
+see the Magma Colossus section below.
 Entry joins: **`probe_arrival.py` green on all eight stages** (see the connector section below —
 and read the warning there before trusting any older arrival number).
 
@@ -536,11 +537,69 @@ and make your own please"). The `nbb_`/`nmb_` art fills are still what draws, th
 gauge — whatever replaces it must be reachable from the path that actually RUNS, and given the
 above, prove that with a frame diff rather than a blit count.
 
+## STAGE 2's MINIBOSS AND BOSS (drop 0810m) — Mike's 0810m report
+
+> "It cuts to this broken drill tank I told you to remove, teleports me to a animated lava tileset
+> section from where i was on the level and he does absolutely nothing."
+
+**THE TELEPORT WAS ONE FLAG DOING TWO JOBS, and it fires on every stage, not just 2.** `_bossRun`
+is `bossActive || _sbRun`, and the arena block keyed off it does two things that are both a hard
+change of place: `arenaLiquid` stops drawing the master and leaves the animated lava bed (authored
+for the stage-2 BOSS, 0806f), and `_loopDraw` maps the master by `mapScroll % H` instead of by
+`scrollFrac` through `rangeSrc` — **a different mapping of the same plate**, so switching to it
+jumps the terrain to an unrelated part of the level. Every miniboss on every stage was doing that.
+Split into `_realBossRun` (arena) and `_bossRun` (hold the scroll). The miniboss hold was already
+implemented where mapScroll stops advancing, which is all Mike's rule asks for.
+
+**The Obsidian Drill Tank is retired** — `DEAD_SUBBOSS`, same as subreactor. "He does absolutely
+nothing" was literal: it has no attack case of its own.
+
+### The Magma Colossus build — one fixed, two diagnosed and NOT guessed at
+
+**Fixed: the torso now draws LAST.** It was drawn first with every seated limb painted over it,
+against this file's own note ("drawOrder is back-to-front for painting, torso last so it sits on
+top"). That is "overlaying instead of underlaying" — nothing tucked behind anything.
+
+⚠ **A NEAR-MISS WORTH KEEPING: there are TWO contracts in this file and the wrong one fits.** The
+MECH BOSS header guarantees every component is a locked 384x384 canvas that composites at (0,0)
+with 0 channel difference. I applied that to the genesis seated draw and it is WRONG — GENESIS's
+own header says `mbg2_p_*` are "the sprites cut from Mike's sheet — the loose limbs, not the
+position-locked damage canvases", and `BOFX.mechpieces` gives each its own size (head 142x173,
+torso 274x334, leg 200x432). Centring them stacks the whole mech on one spot. Caught before it
+shipped only by reading on. **The `_p_` set is loose art placed by sockets; the `<comp>_<state>`
+set is position-locked. Never mix the two contracts.**
+
+**Diagnosed, needs Mike: "his head is too close".** `GEN_HAULS` hauls a `head` limb, and genesis
+never checks `MECH_SKIP_PART`, which exists precisely because — measured in 0801dy — `mbg2_p_torso`
+ink is 274x334 while the whole assembled master is 267x350: **the torso sheet piece IS the body and
+head together.** So a second head is seated over the one already baked in. The fight honours the
+skip (test_fl-adjacent, game.js:27758); genesis never got it. Not fixed blind because dropping the
+head haul removes one of the five 20% limbs and one of Mike's authored beats ("head last so the
+moment it can see you is the moment it comes alive"). **Ask: drop the head haul, or get a headless
+torso plate?**
+
+**Diagnosed, needs Mike: "when he flashes to his fused form, it is totally not what he was
+before".** Genesis draws the LOOSE sheet pieces at `S*0.85`; the fight draws the POSITION-LOCKED
+components at `MECH_SCALE=0.75`. Two different art sets at two different scales — so the flash
+necessarily swaps one machine for another. The structural fix is for the seated pose to be drawn
+from the same components the fight uses, which makes the two identical by construction; that is a
+real change to the genesis draw and wants his eyes on it first.
+
+### One of the five standing failures was a stale assertion, not a bug
+
+"0 components carry a limb HP pool (5 limbs x 20%)" counted parts stamped `_limb` — the flat share
+the haul used to write. **0809m deleted that deliberately**: the legs arrive on one trunk and the
+cannons together, so a group pool meant shooting the left cannon damaged the right. Mike asked for
+six separate targets. It could only ever fail. Replaced with the contract that actually holds —
+every part DOCKED (the 0809m fix for "957 probes found nothing hittable"), per-component shares,
+summing to 100%, and the haul writing no pool. All four pass. **Standing failures: 5 → 4.**
+
 **Next, in order:**
 1. **The boss/miniboss HUD** — the last unbuilt piece of the 0810i brief.
-2. Get a repro from Mike for level 2's miniboss.
-3. Move 1→2 and 3→4 onto `exitConnectorDraw`.
-4. The remaining themed outbound joins — 5→6, 6→7, 7→8 (4→5 stays blocked on the stage-4 boss).
+2. Mike's two calls above on the Colossus (the head, and the fused-form swap).
+3. "Almost no minibosses or bosses past level 1 truly work right" — the teleport above was a large
+   part of it; the rest needs per-stage checking with `probe_boss.py`.
+4. Move 1→2 and 3→4 onto `exitConnectorDraw`; then the 5→6, 6→7, 7→8 outbound joins.
 
 **Waiting on Mike:** nothing outstanding. The arsenal-mini questions are answered (they are
 enemies we have; caldera 2 / frostbite 3 / dambreaker 4) and the `o.px` camera fix was approved
