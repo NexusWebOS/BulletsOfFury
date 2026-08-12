@@ -615,6 +615,42 @@ six separate targets. It could only ever fail. Replaced with the contract that a
 every part DOCKED (the 0809m fix for "957 probes found nothing hittable"), per-component shares,
 summing to 100%, and the haul writing no pool. All four pass. **Standing failures: 5 → 4.**
 
+## ⚠⚠ START HERE NEXT — DEAD_SUBBOSS IS OUT OF SCOPE, AND IT MAKES A SHIPPED FIX A LIE
+
+Measured at runtime in real Chromium: **`typeof DEAD_SUBBOSS` is `"undefined"` at global scope.**
+`const DEAD_SUBBOSS` sits at game.js:5860, BELOW `spawnEnemy`'s unclosed `if(base.art===undefined){`
+at 5759 — so it is function-scoped, exactly as CLAUDE.md already records for `ARSENAL_DRONES`,
+`arsenalDroneArt` and `arsenalDronesFor`. The guard in `spawnSubBoss__inner` is therefore
+permanently false and **every "retired" sub-boss still spawns.**
+
+**This means drop 0810m's retirement of the Obsidian Drill Tank NEVER TOOK EFFECT.** Mike asked for
+that unit to be removed, the commit says it is gone, and stage 2 still fields it. The same is true
+of `subreactor`. Do not trust that commit message.
+
+### The fix is one hoist, and it breaks the suite until the fixtures move with it
+
+Moving the declaration above `spawnEnemy` makes the guard real — verified: `typeof` becomes
+`object`, `spawnSubBoss('obsidiandrill')` returns null, `subBossDone` clears so the stage runs on
+to its real boss, and `quadlaser` still spawns. **But the suite then dies**, because several
+fixtures spawn a retired kind and dereference the null:
+
+- test_fl.js:3927 (miniboss wall) — builds the kind from `SUBBOSS[st]`
+- test_fl.js:4321 — `[['obsidiandrill','odt',...],['glacierrail','grf',...]].forEach`
+- test_fl.js:4607 — `[[1,'quadlaser'],[2,'obsidiandrill'],[3,'glacierrail']].forEach`
+
+I patched 3927 and 4607 to skip retired kinds and the count still came back short (1,222 of
+2,447), so **at least one more fixture is unfixed — 4321 is the prime suspect.** Every one of those
+runs reported **ZERO failures** while losing half the suite: rule 3, a crash wearing a pass. Check
+the COUNT.
+
+The hoist is reverted for now so the build Mike comes home to is green and consistent. Redo it as
+its own drop: hoist the declaration, then walk every `spawnSubBoss(` in test_fl.js and make each
+one skip a kind in `DEAD_SUBBOSS`, re-running until the count is back to 2,447.
+
+⚠ And decide with Mike whether a retired sub-boss should be refused at SPAWN (what the table does)
+or removed from `SUBBOSS[]` outright. Several assertions still pin `SUBBOSS[2].kind==='obsidiandrill'`,
+which is true either way today but would not survive the second choice.
+
 ## THE BOSS / MINIBOSS GAUGE IS OURS NOW (drop 0810n)
 
 > "The hud and fills, remove and make your own please for all bosses and mini bosses."
