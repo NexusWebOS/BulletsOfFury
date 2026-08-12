@@ -108,6 +108,148 @@ const TRANS_FLAT = {
   sky:null, space:null
 };
 function transVia(fromStage){ const t=TRANS[fromStage]; return t?t.via.slice():[]; }
+/* ============================================================
+   ENTRY CONNECTORS (drop 0810j) — the seamless way INTO a stage, for all nine.
+
+   Mike, 0810i: "even all stages basically have you fly over a flat and then pull the flat away
+   and hover you over the level into it. I wanted you to make connecting sections of these
+   animated flats like another 800x2000 flat or something that directly connects to beginning of
+   our levels so it's seamless. this is extremly important"
+
+   THIS IS openingDrawArrival's MECHANISM, LIFTED AND MADE STAGE-AGNOSTIC. It is not a new idea
+   and deliberately not a reinvention: the arrival built for stage 1 in 0810e already lands the
+   level's own first frame byte-identically on PLAY's first tick — 0 differing pixels of 393,600,
+   measured by probe_arrival.py — and it does that because it calls drawBG(0) under a translate
+   instead of reimplementing the master blit. PLAY's first frame is whatever drawBG paints, so
+   calling the same function makes "the last cinematic frame IS the first play frame" structurally
+   true rather than a claim to re-verify every time the level draw changes. Everything below keeps
+   that property; nothing here paints terrain of its own.
+
+   GEOMETRY. dy is how far the level still is from its play position, in world px:
+
+       the JOIN — the level's first row — sits at screen y = VH - dy
+       above it   the master, drawn by drawBG under translate(0,-dy)
+       below it   the connector surface, tiled
+
+   dy falls to 0 and stays there. At dy = 0 the translate is a no-op, so the frame IS PLAY's.
+
+   THE JOIN IS RIGID, AND THAT IS THE PART MIKE IS ACTUALLY DESCRIBING. The stage-1 original
+   scrolled its water at O.scroll*0.6 while the join descended on a phase clock — two different
+   rates, so the ocean raced past underneath a level that appeared to float above it. That reads
+   as exactly what he wrote: hovering over the level rather than flying into it. Here the surface's
+   tile grid is anchored TO the join, so surface and level move as one strip and cannot slide
+   against each other at any frame rate. That is what "directly connects" means.
+
+   ⚠ ONE POSE, ONE CAMERA. The whole thing draws through translate(-camX) like drawWorld. World
+   coordinates through no camera has now cost four drops (the launch seam, the outbound routes,
+   the opening's ship, the stage-clear flyover) and on an 800-wide stage it is a silent 160px
+   sideways jump. ============================================================ */
+const CONN_H = 2000;                 // world px of connector ahead of the level — Mike's "800x2000"
+/* The surface you cross to reach each stage. `bed` is an ANIMATED liquid family — the SAME one the
+   level itself tiles, so the connector is literally made of the level's own material and cannot be
+   the wrong biome. `flat` is a static 64px tile for the stages with no liquid. Neither means the
+   stage has no ground at all (space, night sky) and the connector is the level's own fill with the
+   right motion over it.
+
+   ⚠ EVERY ONE OF THESE WAS RENDERED BEFORE IT WAS TRUSTED, per rule 1, and one name lied as usual:
+   tflat_sky is the ORBITAL STARFIELD, not a sky. It is not used here. Stage 6 is the NIGHT CLOUD
+   sky fortress and takes cloud plates over its own fill; the space stages take stars. */
+const ENTRY_CONN = {
+  1:{bed:'nlq2_water'},              // ocean — the coast the jungle opens on
+  2:{bed:'nlq2_lava'},               // the volcano's open lava
+  3:{bed:'nlq2_ice'},                // the ice shelf
+  4:{flat:'tflat_road'},             // open airbase / armoured highway: asphalt, the stage has no liquid
+  5:{stars:true},                    // storm to upper atmosphere
+  6:{clouds:true},                   // night cloud sky fortress
+  7:{bed:'nlq_sludgeF'},             // the FILLED sludge: nlq_sludge alone is a 34.8%-opaque decal
+  8:{stars:true},                    // deep space, black hole
+  9:{bed:'nlq2_water'},              // water world
+};
+function entryConnCfg(st){ return ENTRY_CONN[st] || ENTRY_CONN[1]; }
+/* THE CONNECTOR SURFACE. Tiled across the world width with its grid anchored to joinY — see the
+   rigidity note above. Returns true if it laid a real texture down, false if it could only fill. */
+function entryConnectorSurface(st, joinY, ww){
+  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
+  /* the LEVEL's own fill, never SEQ's. SEQ[6].fill is still #2a6ac0 — daylight blue — from before
+     stage 6 became the night sky fortress, and drawing it is half of why Mike called that stage's
+     entry broken: ten seconds of bright blue cutting to a night level. _levelCfg is the live one. */
+  ctx.fillStyle=(cfg&&cfg.fill)||'#05060a';
+  ctx.fillRect(0,0,Math.max(ww,VW),VH);
+  const cc=entryConnCfg(st);
+  let im=null;
+  if(cc.bed && typeof _liquidFrames==='function'){
+    const fr=_liquidFrames(cc.bed);
+    /* the reel animates in place while the GRID travels with the join: alive, and still rigid. Its
+       fps is the level's own, so the surface does not change tempo across the seam. */
+    if(fr && fr.length){
+      const f=fr[Math.floor(performance.now()/(1000/((cfg&&cfg.fps)||6)))%fr.length];
+      if(f && f.complete && f.naturalWidth) im=f;
+    }
+  }
+  if(!im && cc.flat && typeof XART!=='undefined' && XART.rdy(cc.flat)) im=XART.get(cc.flat);
+  if(im){
+    const tw=im.naturalWidth||64, th=im.naturalHeight||64;
+    let y=joinY; while(y>0) y-=th;                       // step up past the top edge, keeping phase
+    for(; y<VH; y+=th)
+      for(let x=0; x<Math.max(ww,VW); x+=tw) ctx.drawImage(im, x, Math.round(y), tw, th);
+    return true;
+  }
+  /* NO FLAT EXISTS FOR SKY OR SPACE, and inventing one would be a placeholder sprite — against the
+     standing rules and the reason tflat_sky got misused as a daytime sky in the first place. What
+     these stages get instead is motion in their own material. */
+  if(cc.stars){
+    for(let i=0;i<110;i++){
+      const sx=(i*137)%Math.max(ww,VW), dep=0.35+((i%5)*0.24);   // parallax: far stars lag
+      let sy=(((i*97)%VH) + joinY*dep)%VH; if(sy<0) sy+=VH;
+      const big=(i%9===0);
+      ctx.fillStyle=big?'#cfe2ff':((i%3===0)?'#7f8fc4':'#4a5a92');
+      ctx.fillRect(sx|0, sy|0, big?2:1, big?2:1);
+    }
+    return true;
+  }
+  if(cc.clouds && typeof XART!=='undefined'){
+    /* ncl_ are the nine authored cloud plates. nl6c_high_altitude_bank_ is NOT registered — the
+       opening's SKY phase asks for it and has been drawing nothing for it, so do not copy that. */
+    for(let i=0;i<6;i++){
+      const k='ncl_'+(1+(i%9));
+      if(!XART.rdy(k)) continue;
+      const cim=XART.get(k), dep=0.45+((i%3)*0.28), w=200+((i%3)*70), h=w*(cim.naturalHeight/cim.naturalWidth);
+      let sy=(((i*173)%(VH+h)) + joinY*dep)%(VH+h); if(sy<0) sy+=VH+h;
+      ctx.save(); ctx.globalAlpha=0.30+0.13*(i%3);
+      ctx.drawImage(cim, (i*191)%Math.max(ww,VW)-w*0.3, Math.round(sy-h), w, h);
+      ctx.restore();
+    }
+    return true;
+  }
+  return false;
+}
+/* THE CONNECTOR. dy is the level's remaining distance from its play position, in world px.
+   Always paints something: the surface goes down first and unconditionally, so a master that has
+   not decoded yet costs the level, never the screen. Returns true once the level itself is drawn. */
+function entryConnectorDraw(st, dy){
+  if(typeof ctx==='undefined') return false;
+  const d=Math.max(0, Math.round(dy));
+  const ww=(typeof worldWidth==='function')?worldWidth():VW;
+  ctx.save();
+  if(ww>VW) ctx.translate(-camX, 0);
+  entryConnectorSurface(st, VH-d, ww);
+  ctx.restore();
+  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
+  if(!cfg || !cfg.master || typeof drawBG!=='function') return false;
+  if(d>=VH) return false;                    // the level cannot be on screen yet — skip the blit
+  const mk=(typeof stageMasterKey==='function')?stageMasterKey(cfg):cfg.master;
+  /* XART.rdy is false on its FIRST call and that call is what starts the load, so this reads false
+     for a few frames on entry. Poll it, never one-shot — a single check looks like missing art. */
+  if(typeof XART==='undefined' || !XART.rdy(mk)) return false;
+  ctx.save();
+  if(ww>VW) ctx.translate(-camX, 0);         // the same camera PLAY uses — see the ⚠ above
+  ctx.translate(0, -d);
+  /* dt is 0 DELIBERATELY: drawLevelMaster advances mapScroll by dt*40, and the connector must not
+     consume any of the level before the player has control of it. */
+  try{ drawBG(0); }catch(e){}
+  ctx.restore();
+  return true;
+}
 function outboundStart(fromStage){
   outbound = {from:fromStage, to:fromStage+1, t:0, phase:'climb', scroll:0,
               px:(typeof player!=='undefined'&&player)?player.x:VW/2,
@@ -29632,6 +29774,16 @@ function openingCoastY(x, prog, seed){
        + Math.sin(x*0.011 + s)*46
        + Math.sin(x*0.027 + s*2.1)*17;
 }
+/* ⚠ RETIRED FROM THE DRAW PATH, STILL DEFINED (drop 0810j). openingDrawCoast was the fallback for
+   the frames before the master decoded; entryConnectorDraw now paints the real water surface
+   unconditionally and only the LEVEL waits on the decode, so this would draw a sine-generated
+   shoreline over the authored one and then pop when the master landed.
+
+   It is NOT deleted, because section 130 still calls openingCoastY directly in five assertions
+   ("the coastline is generated, not painted") — a claim 0810e already superseded when the level's
+   own first frame replaced the generated coast. Those assertions and these two functions should
+   retire together, in their own drop; taking them out alongside a nine-stage mechanism change is
+   how a run ends up reporting 0 failures with the count down by fifty. */
 function openingDrawCoast(prog){
   const O=opening; if(!O || typeof XART==='undefined') return false;
   const wat=XART.rdy('tflat_water') ? XART.get('tflat_water') : null;
@@ -29652,47 +29804,28 @@ function openingDrawCoast(prog){
   ctx.restore();
   return true;
 }
-/* THE ARRIVAL — the level's own first frame, descending into place over open water (drop 0810e).
-
-   ⚠ IT DRAWS THROUGH drawBG, NOT A COPY OF IT. That is the whole mechanism. PLAY's first frame is
-   whatever drawBG paints at mapScroll 0; if this reimplemented the master blit, the two could
-   drift apart the moment anything about the level draw changed — liquid beds, props, road signs,
-   the cloud layer, the fill. Calling the same function under a translate makes "the last
-   cinematic frame IS the first play frame" structurally true instead of a claim to re-check.
-
-   prog 0 -> 1 puts the master's bottom edge from off the top of the screen down to exactly its
-   PLAY position. At prog 1, dy is 0 and the translate is a no-op, so the frame is byte-identical
-   to what PLAY draws on its first tick. The 3-2-1 then counts down over the live field, which is
-   what the phase header has claimed since the day it was written.
-
-   dt is 0 deliberately: drawLevelMaster advances mapScroll by dt*40, and the cinematic must not
-   consume any of the level before the player has control of it. */
+/* THE ARRIVAL — the level's own first frame, descending into place over open water (drop 0810e,
+   generalised 0810j). Stage 1's half of the shared entry connector; the mechanism, the camera and
+   the drawBG(0) core all live in entryConnectorDraw now, so this stage and the other eight arrive
+   through exactly the same code. See the ENTRY CONNECTORS block near TRANS_FLAT. */
 function openingDrawArrival(prog){
-  const O=opening; if(!O || typeof XART==='undefined' || typeof drawBG!=='function') return false;
-  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
-  if(!cfg || !cfg.master) return false;
-  const mk=(typeof stageMasterKey==='function')?stageMasterKey(cfg):cfg.master;
-  /* XART.rdy is false on its FIRST call and that call starts the load — so this returns false for
-     a few frames on entry and the generated coast covers the gap. Polling, never one-shot. */
-  if(!XART.rdy(mk)) return false;
+  const O=opening; if(!O) return false;
+  /* THE SURFACE IS RIGID WITH THE JOIN NOW (drop 0810j), and that is the only change of substance.
+     This used to tile tflat_water at O.scroll*0.6 while the level descended on the phase clock —
+     two unrelated rates, so the ocean raced past underneath a level that appeared to float above
+     it. Mike's 0810i note calls that "hover you over the level into it", and stage 1 was doing it
+     as plainly as the stages he was pointing at. entryConnectorDraw anchors the tile grid to the
+     join, so the water and the level travel as one strip.
 
-  /* the ocean we are still over. Full screen: the master is about to cover the top of it. */
-  const wat=XART.rdy('tflat_water') ? XART.get('tflat_water') : null;
-  if(wat){
-    const T=64, off=((O.scroll*0.6)%T+T)%T;
-    for(let y=-T; y<VH+T; y+=T)
-      for(let x=0; x<VW+T; x+=T) ctx.drawImage(wat, x, y+off, T, T);
-  } else { ctx.fillStyle='#1d3a5c'; ctx.fillRect(0,0,VW,VH); }
-
-  const dy=Math.round((1-clamp(prog,0,1))*VH);
-  ctx.save();
-  /* the same camera PLAY uses — drawWorld does this and openingDraw never did, so without it the
-     master would arrive 160px off on an 800-wide stage and slide sideways at the handoff */
-  if((typeof worldWidth==='function'?worldWidth():VW)>VW) ctx.translate(-camX, 0);
-  ctx.translate(0, -dy);
-  try{ drawBG(0); }catch(e){}
-  ctx.restore();
-  return true;
+     DRIVEN BY THE SCROLL, FLOORED BY THE PHASE CLOCK. O.scroll is the distance actually travelled,
+     so the surface decelerates with O.speed (1280 -> 200 across COAST) and the level arrives on the
+     same curve the flight does. The phase clock is kept as a MINIMUM so prog 1 always means landed,
+     however the frame times fell — a 3-2-1 counting down over a half-arrived level would put the
+     snap right back at GO, which is the whole thing 0810a went to pieces over. */
+  if(O.coast0==null) O.coast0=O.scroll;
+  const byScroll=Math.max(0, CONN_H-(O.scroll-O.coast0));
+  const byClock =(1-clamp(prog,0,1))*CONN_H;
+  return entryConnectorDraw(O.stage||run.stage||1, Math.min(byScroll, byClock));
 }
 function openingDraw(dt){
   const O=opening; if(!O) return false;
@@ -29765,13 +29898,12 @@ function openingDraw(dt){
        over open water, and by the end of COAST it is sitting exactly where PLAY will start. The
        shoreline you arrive at is the one painted into the master, which is the only way the last
        cinematic frame and the first play frame can be the same picture. */
-    if(!openingDrawArrival(clamp((O.t-OPEN_T[2])/(OPEN_T[3]-OPEN_T[2]),0,1))){
-      /* the master has not decoded yet — fall back to the generated coast rather than a blank
-         screen, on its ORIGINAL clock so it still reads as an approach */
-      if(!openingDrawCoast(clamp((O.t-OPEN_T[2])/(OPEN_T[4]-OPEN_T[2]),0,1))){
-        ctx.fillStyle='#1d3a5c'; ctx.fillRect(0,0,VW,VH);
-      }
-    }
+    /* NO GENERATED-COAST FALLBACK ANY MORE (drop 0810j). It used to cover the frames before the
+       master decoded, from back when a miss here meant a blank screen. entryConnectorDraw paints
+       the real water surface unconditionally and only the LEVEL waits on the decode, so the
+       fallback would now draw a sine-generated shoreline over the authored one and then pop when
+       the master landed. The honest wait is open water — the same water the arrival uses. */
+    openingDrawArrival(clamp((O.t-OPEN_T[2])/(OPEN_T[3]-OPEN_T[2]),0,1));
   }
   ctx.restore();
   return true;
@@ -29876,6 +30008,10 @@ function drawOpening(dt){
   const done = openingUpdate(dt);
   openingDraw(dt);
   openingDrawShip();
+  /* scanlines LAST, over the whole cinematic — see the note in drawLaunch. Applied to every
+     opening phase rather than only the arrival, so the runway and the sky wear the same screen
+     the level does and nothing pops when the connector takes over at COAST. */
+  if(typeof drawScanlines==='function') drawScanlines();
   if(openingPhase()===OPEN_PH.HANDOFF){
     const left=OPEN_T[4]-opening.t, seg=(OPEN_T[4]-OPEN_T[3])/4;
     const n=Math.max(0,Math.ceil(left/seg));
@@ -32115,46 +32251,19 @@ function _pilotStill(P){
 /* ===== continuous filmstrip transition (NO fades / NO cuts) ===== */
 const ANCHORY=0.60;                         /* player "front" as a screen fraction */
 const SEG_B1=2000, SEG_B2=SEG_B1+2200, SEG_B3=SEG_B2+8800;   /* runway | terrain | liquid | level(entrance) */
-function _liquidFrame(){
-  /* Upgraded beds first (drop 0724f: seam-healed, native 1:1). These are real Image objects, so
-     _region draws them directly; the legacy ASSETS path stays as the fallback for any stage
-     whose bed was never upgraded. */
-  if(typeof seqBedFrames==='function'){
-    const fr=seqBedFrames(run.stage);
-    if(fr && fr.length) return fr[Math.floor(performance.now()/150)%fr.length];
-  }
-  const s=run.stage; let frames=ASSETS.water; if(s===2)frames=ASSETS.lava;
-  const f2=(frames&&frames.length)?frames[Math.floor(performance.now()/70)%frames.length]:null;
-  return (f2&&ASSETS.rdy&&ASSETS.rdy(f2))?f2:null; }
-/* tile an image across world-band [wStart,wEnd]; the world scrolls DOWN as dist grows (no fades) */
-function _region(img,wStart,wEnd,dist,tint,fallback){
-  const anchorY=VH*ANCHORY;
-  const bandTop=anchorY-(wEnd-dist), bandBot=anchorY-(wStart-dist);
-  const cTop=Math.max(0,bandTop), cBot=Math.min(VH,bandBot);
-  if(cBot<=cTop) return;
-  ctx.save(); ctx.beginPath(); ctx.rect(0,cTop,VW,cBot-cTop); ctx.clip();
-  if(img&&img.complete&&img.naturalWidth){
-    // NATIVE-SIZE LIQUIDS. This stretched every texture to the full VW, so the 128px liquid tiles
-    // came out ~3.75x upscaled and mushy during the runway/launch scenes. A small square tile is
-    // meant to TILE at 1:1 (that is the whole point of the 0724f tiling fix), so anything that is
-    // roughly square and small is now drawn at its own size and repeated across, exactly like the
-    // in-level tiler. Wide plates (runways, connectors, masters) still fill the width as before.
-    const _sq = img.naturalWidth<=256 && Math.abs(img.naturalWidth-img.naturalHeight)<=img.naturalWidth*0.4;
-    const dw = _sq ? img.naturalWidth : VW;
-    const dh = _sq ? img.naturalHeight : dw*(img.naturalHeight/img.naturalWidth);
-    for(let y=wStart; y<wEnd+dh; y+=dh){
-      const st=anchorY-((y+dh)-dist);
-      if(st>VH||st+dh<0) continue;
-      if(dw<VW){ for(let xx=0; xx<VW; xx+=dw) ctx.drawImage(img, xx, st, dw, dh); continue; }
-      ctx.drawImage(img,0,0,img.naturalWidth,img.naturalHeight,0,Math.round(st),dw,Math.ceil(dh));
-    }
-  } else if(fallback){ ctx.fillStyle=fallback; ctx.fillRect(0,cTop,VW,cBot-cTop); }
-  if(tint){ ctx.fillStyle=tint; ctx.fillRect(0,cTop,VW,cBot-cTop);
-    ctx.globalAlpha=0.45; ctx.fillStyle='#eaf9ff';
-    for(let i=0;i<7;i++){ const y=cTop+((dist*0.5+i*96)%(cBot-cTop)); ctx.fillRect(0,Math.round(y),VW,2); } ctx.globalAlpha=1; }
-  ctx.restore();
-}
-/* the stage itself scrolls in from the top (the "entrance"): drawBG clipped above the SEG_B3 seam */
+/* _liquidFrame AND _region ARE GONE TOO (drop 0810j). They were the launch's band tiler and the
+   bed it tiled, and their only caller was the runway/liquid/level stack that _drawLevelRegion
+   headed — all of it replaced by the entry connector. Deleted rather than left sitting, because
+   uncalled code has cost this project twice already: bgStackDraw assembled a 6000px scroll on
+   every beginStage for nobody, and enemyEntrySweep went two drops without a call site.
+
+   The property _region existed to protect is NOT lost. "A small square texture tiles at its own
+   size instead of being stretched across the view" is what keeps a 128px bed reading as water
+   rather than a 3.75x smear, and entryConnectorSurface does exactly that — the suite's two
+   assertions for it (section 62) were retargeted onto that function rather than deleted.
+
+   seqBedFrames survives them: it is a tested data accessor in its own right (section 47), not a
+   helper of theirs. */
 /* ONE POSE, READ BY BOTH SIDES OF THE SEAM (drop 0810a). Mike: "kill the jerk after 3-2-1 that
    knocks the ship back and clips it in and out."
 
@@ -32195,18 +32304,38 @@ function snapCamToPlayer(){
   WORLD_W=(typeof worldWidth==='function')?worldWidth():VW;
   camX = (WORLD_W>VW) ? clamp((player?player.x:VW/2) - VW/2, 0, WORLD_W - VW) : 0;
 }
-function _drawLevelRegion(dist,dt){
-  const seam=VH*ANCHORY-(SEG_B3-dist);
-  if(seam<=0) return;
-  ctx.save(); ctx.beginPath(); ctx.rect(0,0,VW,Math.min(VH,seam)); ctx.clip();
-  /* THE SAME CAMERA PLAY USES. Without this the launch drew the master from world x=0 — the left
-     480 of an 800-wide plate — while PLAY draws it through translate(-camX). So at GO the terrain
-     slid 160px sideways at the same moment the ship jumped the other way, which is most of why
-     the cut read as a lurch rather than a step. Mirrors drawWorld's translate exactly, including
-     the live worldWidth() check rather than the cached WORLD_W. */
-  if((typeof worldWidth==='function'?worldWidth():VW)>VW) ctx.translate(-camX, 0);
-  drawBG(dt);
-  ctx.restore();
+/* _drawLevelRegion IS GONE (drop 0810j) — it WAS the mechanism Mike rejected, not a symptom of it.
+
+   It clipped the level into rect(0, 0, VW, VH*ANCHORY-(SEG_B3-dist)): a window that opens downward
+   as distance grows, so the level was uncovered through a widening hole behind a runway plate that
+   simply ended. "you fly over a flat and then pull the flat away and hover you over the level into
+   it" is a description of this function. entryConnectorDraw JOINS the level to a surface instead
+   of uncovering it, so there is no longer anything to widen.
+
+   Its one good idea travelled with it: the translate(-camX) it carried lives in entryConnectorDraw,
+   and the suite's camera guard (section 133b) names that function now instead of this one. */
+/* HOW FAR THE LEVEL STILL IS from its play position during a launch, in world px — the launch's
+   half of the entry connector (drop 0810j).
+
+   DISTANCE-DRIVEN while the world is moving. That is what makes the join rigid: the connector
+   surface is anchored to the join inside entryConnectorDraw, so both travel at exactly the
+   launch's own speed and there is no second clock for them to disagree with. Tie either one to a
+   phase timer instead and the flat starts sliding under the level again, which is the thing being
+   fixed.
+
+   FORCED TO ZERO BY THE END OF THE SETTLE. A countdown running over a half-arrived level would put
+   the snap right back at GO — the precise failure 0810a spent a drop measuring out of existence.
+   The brake integrates roughly 1750px and LAND sits about 1160 into it, so on any normal frame
+   budget the level is down well before the settle and the ease below has nothing left to do. It is
+   the guarantee, not the plan. */
+function launchConnDy(){
+  const LAND=SEG_B3+1400;
+  const raw=Math.max(0, LAND-(drawLaunch._dist||0));
+  const ph=drawLaunch._phase;
+  if(ph==='run' || ph==='brake') return raw;
+  /* _dist is frozen from 'settle' onward (spd is 0), so raw is constant here and the ease is clean */
+  if(ph==='settle') return raw*(1-_ease(clamp((drawLaunch._pt||0)/0.45,0,1)));
+  return 0;                     // 'cd': the 3-2-1 always counts down over the LANDED level
 }
 function drawLaunch(dt){
   if(drawLaunch._phase===undefined || stateT < (drawLaunch._lastT||0)-0.001){ drawLaunch._dist=0; drawLaunch._spd=110; drawLaunch._phase='run'; drawLaunch._pt=0;
@@ -32241,57 +32370,36 @@ function drawLaunch(dt){
   } else { drawLaunch._pt+=dt; drawLaunch._spd=0; }
   const dist=drawLaunch._dist, nrm=clamp(drawLaunch._spd/1750,0,1);
   const art=(typeof curArt==='function')&&curArt();
-  const X=(typeof XART!=='undefined')?XART:null;
-  /* ---- one continuous scroll (far->near): level entrance, liquid, terrain, runway, pad ---- */
-  ctx.fillStyle='#05070a'; ctx.fillRect(0,0,VW,VH);
+  /* ---- THE ENTRY CONNECTOR (drop 0810j): one continuous strip — the stage's own animated flat,
+     with the level's first frame butted directly onto it. ----
+
+     WHAT WAS HERE, and why the whole stack went rather than being tuned:
+
+         _drawLevelRegion   the level, clipped into a window that WIDENS as dist grows
+         _region liquid     a liquid band between SEG_B2 and SEG_B3
+         _region runway     the legacy 360x955 strip — on EVERY stage, see below
+         landingpad         a pad at the very start
+
+     _drawLevelRegion clips the level to rect(0, 0, VW, VH*ANCHORY-(SEG_B3-dist)), so the level is
+     revealed through a hole that opens downward, BEHIND a runway plate that simply ends. That is
+     "fly over a flat and then pull the flat away and hover you over the level into it", literally
+     and exactly. Smoothing the numbers cannot fix it, because the reveal IS the complaint — so the
+     mechanism is what changed, not its tuning.
+
+     ⚠ AND THE RUNWAY WAS DRAWING ON ALL NINE STAGES. seqRunway returns null for every stage except
+     1 — SEQ, drop 0801bf, Mike: "only stage 1 gets the runway intro" — and the else-branch drew the
+     legacy 'runway' key anyway, for all of them. Eight stages opened by rolling down a runway they
+     were never meant to have, which is the flat he is describing. Gone.
+
+     Stage 6's sky branch went with it and is worth recording, because it explains "stage 6's is
+     broken and horrible" completely: it asked for 'nsky6_par', which is NOT A REGISTERED KEY, so
+     the thickening cloud deck it describes has never drawn one pixel. What stage 6 actually showed
+     was seqCfg(6).fill — #2a6ac0, DAYLIGHT BLUE, left over from before the stage became the night
+     cloud sky fortress — held for ten seconds and then cut to a night level. Two dead references
+     and a stale colour. The connector takes its fill from _levelCfg, the live one, so the entry and
+     the level cannot disagree about what the stage looks like again. */
   const rum=nrm*4; ctx.save(); if(rum>0.2) ctx.translate(rnd(-rum,rum),rnd(-rum,rum));
-  _drawLevelRegion(dist,dt);
-  if(typeof seqCfg==='function' && seqCfg(run.stage).sky){
-    /* SKY LAUNCH: open sky instead of a liquid bed, with the parallax cloud deck thickening as
-       the climb builds. No ground to tile up here. */
-    const sky=clamp(drawLaunch._sky||0,0,1);
-    ctx.save();
-    ctx.fillStyle=seqCfg(run.stage).fill; ctx.fillRect(0,0,VW,VH);
-    if(X && X.rdy('nsky6_par')){
-      const im=X.get('nsky6_par');
-      const dh=VW*(im.naturalHeight/im.naturalWidth);
-      const layers=1+Math.round(sky*3);                 /* more cloud passes the higher we get */
-      for(let L=0; L<layers; L++){
-        ctx.globalAlpha=0.30+0.16*L;
-        let off=((dist*(0.5+L*0.35))%dh); if(off<0) off+=dh;
-        for(let yy=off-dh; yy<VH; yy+=dh) ctx.drawImage(im,0,yy,VW,dh);
-      }
-    }
-    ctx.restore();
-  } else {
-    _region(_liquidFrame(), SEG_B2, SEG_B3, dist, (run.stage===3?'rgba(150,222,255,0.42)':null), (run.stage===2?'#241008':'#0a1505'));
-  }
-  // TERRAIN region removed per Mike — runway extends straight up to the liquid
-  /* RUNWAY: stages 4 and 7 have authored 800x1000 plates (approach / main / exit). Everything
-     else has no runway art at all, so it keeps the legacy strip. Never invent a runway. */
-  const _rwMain=(typeof seqRunway==='function')?seqRunway(run.stage,'run'):null;
-  const _rwApp =(typeof seqRunway==='function')?seqRunway(run.stage,'app'):null;
-  /* CONNECTOR: entering stage N>1, the plate that bridges N-1 -> N scrolls through FIRST, below
-     the runway. 3>4, 4>5, 6>7 and 7>8 were drawn; 1>2, 2>3 and 5>6 never were, so those stages
-     simply open on their own bed instead of a bridge that does not exist. */
-  const _con=(typeof seqConnector==='function' && run.stage>1) ? seqConnector(run.stage-1, run.stage) : null;
-  if(_con && X) _region(X.get(_con), -2000, -600, dist, null, null);
-  if(_rwMain && X){
-    /* FULL RUNWAY SEQUENCE, in the order you actually fly it:
-         start-approach (behind you, where you rolled from) -> main-runway (tiled, the roll) ->
-         runway-exit (the lip you leave the ground on, right before the bed opens up).
-       Stages 4 and 7 have all three; stage 1's legacy strip only has the main part. */
-    const _rwExit=(typeof seqRunway==='function')?seqRunway(run.stage,'exit'):null;
-    if(_rwApp) _region(X.get(_rwApp), -1000, 0, dist, null, null);
-    _region(X.get(_rwMain), 0, SEG_B1, dist, null, (typeof seqCfg==='function'?seqCfg(run.stage).fill:'#14140f'));
-    if(_rwExit) _region(X.get(_rwExit), SEG_B1, SEG_B2, dist, null, null);
-    else _region(X.get(_rwMain), SEG_B1, SEG_B2, dist, null, null);
-  } else {
-    _region(X&&X.get('runway'), 0, SEG_B2, dist, null, '#14140f');
-  }
-  if(X){ const pad=X.get('landingpad'); if(pad&&pad.complete&&pad.naturalWidth){    /* pad drawn once at the very start */
-    const dw=VW, dh=dw*(pad.naturalHeight/pad.naturalWidth), st=VH*ANCHORY-(dh-dist);
-    if(st<VH && st+dh>0) ctx.drawImage(pad,0,Math.round(st),dw,Math.ceil(dh)); } }
+  entryConnectorDraw(run.stage, launchConnDy());
   ctx.restore();
   _speedLines((run.stage===5?0.25:0.10)+(run.stage===5?1.3:0.85)*nrm);
   /* ---- sfx cues ---- */
@@ -32351,6 +32459,13 @@ function drawLaunch(dt){
       ctx.restore();
     }
   }
+  /* THE CRT SCANLINES ARE PART OF THE PICTURE (drop 0810j). drawWorld ends with drawScanlines()
+     and no cinematic had ever drawn them, so every other row darkened by 8% at the exact instant
+     PLAY took over: the entry and the game did not look like the same screen, and the change landed
+     on GO. Invisible to every state-based check, and invisible to the eye on a dark stage — but on
+     stage 1's bright water it moved HALF THE PIXELS IN THE FRAME, which is how probe_arrival caught
+     it. Drawn after the ship, matching drawWorld's own order (world, craft, then scanlines). */
+  if(typeof drawScanlines==='function') drawScanlines();
   /* ---- GET READY 3-2-1 -> GO ---- */
   if(ph==='cd'){
     const ct=drawLaunch._pt;

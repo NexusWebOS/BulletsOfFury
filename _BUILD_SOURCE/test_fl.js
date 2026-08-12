@@ -2032,9 +2032,22 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // the launch runs for EVERY stage: beginStage -> stage card -> launch
   ok(vm.runInContext("beginStage.toString().indexOf('GS.INTRO')>0", ctxv), 'every stage begins on the stage card (the screen face stays)');
   ok(vm.runInContext("String(GS.LAUNCH)!=='undefined'", ctxv), 'launch state exists in the flow after the card');
-  // connector is drawn ahead of the runway, and only for stage>1
-  ok(vm.runInContext("drawLaunch.toString().indexOf('seqConnector(run.stage-1, run.stage)')>0", ctxv), 'launch pulls the connector for the stage it is entering');
-  ok(vm.runInContext("drawLaunch.toString().indexOf('run.stage>1')>0", ctxv), 'stage 1 has no inbound connector');
+  /* THE ENTRY CONNECTOR REPLACES THE PLATE-AND-RUNWAY REVEAL (drop 0810j). These two used to pin
+     `seqConnector(run.stage-1, run.stage)` and the `run.stage>1` branch INSIDE drawLaunch — the
+     ncon_ plate scrolling below a runway. Mike rejected those plates on sight in 0724cz, and in
+     0810i rejected the reveal itself: "you fly over a flat and then pull the flat away and hover
+     you over the level into it". They were assertions defending the thing being replaced, which
+     is the failure mode this file's own header warns about. What has to be true now is that the
+     launch flies the stage its own connector and reveals nothing through a hole. */
+  /* ⚠ MATCH THE CODE, NOT THE PROSE. The first cut of these read drawLaunch.toString() raw and
+     failed instantly — because the comment that explains what was removed NAMES the things that
+     were removed, and toString() carries comments. A source assertion that a docstring can defeat
+     is not measuring anything. Comments are stripped here, in plain node rather than inside the vm
+     string, so the regex needs no double-escaping. */
+  var _lsrc = vm.runInContext("drawLaunch.toString()", ctxv)
+                .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '');
+  ok(_lsrc.indexOf('entryConnectorDraw(run.stage')>0, 'the launch flies the stage its own entry connector');
+  ok(_lsrc.indexOf('_drawLevelRegion')<0, 'and no longer reveals the level through a widening clip window');
 
 
   // ===== 48. RIVAL RACE + SPARED-RIVAL ALLY (drop 0724j) =====
@@ -2143,9 +2156,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("outboundDraw.toString().indexOf('_liquidFrame')<0", ctxv), 'no liquid anywhere in the outbound');
   // stage clear routes through it
   ok(vm.runInContext("drawStageClear.toString().indexOf('outboundStart')>0", ctxv), 'stage clear routes into the outbound cinematic');
-  // FULL RUNWAY SEQUENCE
-  ok(vm.runInContext("drawLaunch.toString().indexOf(\"seqRunway(run.stage,'exit')\")>0", ctxv), 'launch pulls the runway EXIT plate');
-  ok(vm.runInContext("drawLaunch.toString().indexOf('_rwApp')>0", ctxv), 'launch pulls the runway APPROACH plate');
+  /* ⚠ THESE TWO PINNED THE RUNWAY PLATES INSIDE drawLaunch, AND THE TWO DIRECTLY BELOW THEM SAID
+     THE OPPOSITE — worth keeping as the clearest example of rule 2 in this file. 'no OTHER stage
+     flies a runway' passed for drops on end, because it asks seqRunway, which returns null for
+     stages 2-8. Meanwhile drawLaunch's else-branch drew the legacy 'runway' key for every one of
+     them anyway, through a path neither assertion looked at. Two green assertions, one honest
+     table, and eight stages rolling down a runway Mike had said only stage 1 should have.
+     The launch draws no runway at all now, so the two claims finally agree. */
+  /* comments stripped — see the note in section 47; the removal comment names what it removed */
+  var _lsrc49 = vm.runInContext("drawLaunch.toString()", ctxv)
+                  .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '');
+  ok(_lsrc49.indexOf('seqRunway')<0 && _lsrc49.indexOf("get('runway')")<0, 'the launch pulls no runway plate for any stage');
+  ok(_lsrc49.indexOf('landingpad')<0, 'and no landing pad — the runway cinematic belongs to stage 1, in the opening');
   /* see the retirement note above — stage 1 is the only runway stage now. */
   ok(vm.runInContext("!!(seqRunway(1,'app')||seqRunway(1,'run')||seqRunway(1,'exit'))", ctxv), 'stage 1 still flies its runway intro');
   ok(vm.runInContext("[2,3,4,5,6,7,8].every(function(n){return !seqRunway(n,'run');})", ctxv), 'no OTHER stage flies a runway'),
@@ -2716,9 +2738,13 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_cdHurt<_cdFull, 'and it fires faster once it is past half HP ('+_cdFull+'s -> '+_cdHurt+'s)');
   // no shootable scenery on stage 2
   ok(vm.runInContext("spawnSceneryPlan.toString().indexOf('run.stage===2')>0", ctxv), 'stage 2 spawns no shootable scenery obstacles');
-  // launch liquids tile at native size instead of being blown up to full width
-  ok(vm.runInContext("_region.toString().indexOf('naturalWidth<=256')>0", ctxv), 'small square textures tile at NATIVE size in the launch');
-  ok(vm.runInContext("_region.toString().indexOf('for(let xx=0; xx<VW; xx+=dw)')>0", ctxv), 'and repeat across the width rather than stretching');
+  /* NATIVE-SIZE TILING MOVED WITH THE MECHANISM (drop 0810j). _region was the launch's band tiler
+     and went out with the runway stack it served. The property these two protect is unchanged and
+     still matters — a small texture repeats at its OWN size instead of being stretched across the
+     view, which is the difference between water and a smear — so they now measure it where it
+     actually happens, on the entry connector's surface. Retargeted, not retired. */
+  ok(vm.runInContext("entryConnectorSurface.toString().indexOf('im.naturalWidth||64')>0", ctxv), 'the entry connector tiles its flat at NATIVE size');
+  ok(vm.runInContext("entryConnectorSurface.toString().indexOf('x+=tw')>0", ctxv), 'and repeats it across the width rather than stretching');
   vm.runInContext("boss=null; bossActive=false; eBullets.length=0; run.stage=1;", ctxv);
 
 
@@ -5340,7 +5366,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      x as player.x - camX rather than recording what was drawn — the probe asserted the fix it was
      meant to be testing, and reported the handoff clean while the ship sat hard right.
      Checked in SOURCE, because the behavioural check is exactly what got fooled. */
-  var _camFns=['openingDrawShip','openingDrawArrival','_drawLevelRegion'];
+  /* THE GUARD FOLLOWS THE DRAWING (drop 0810j). Two names left this list, for opposite reasons,
+     and both matter: _drawLevelRegion is DELETED along with the reveal it implemented, and
+     openingDrawArrival no longer draws world coordinates at all — it hands stage 1 to the shared
+     entry connector. entryConnectorDraw is what puts a master on screen for all nine stages now,
+     so it is what has to carry drawWorld's translate. A guard left pointing at a function that
+     stopped drawing is worse than no guard: it stays green while the thing it was written to
+     catch moves house. */
+  var _camFns=['openingDrawShip','entryConnectorDraw'];
   var _nocam=[];
   _camFns.forEach(function(fn){
     var i=_osrc.indexOf('function '+fn);

@@ -148,8 +148,10 @@ loads on entry.
 
 ## Current state (2026-08-11)
 
-Suite: **2,435 assertions / 218 sections / 5 failures** — all five pre-existing at HEAD: the boss
+Suite: **2,441 assertions / 218 sections / 5 failures** — all five pre-existing at HEAD: the boss
 limb pool, the preload count, the two `_superseded` ones and the naval flash families.
+Entry joins: **`probe_arrival.py` green on all eight stages** (see the connector section below —
+and read the warning there before trusting any older arrival number).
 
 ### ⚠ THERE ARE TWO DIVERGENT TREES. READ THIS BEFORE MERGING ANYTHING.
 
@@ -391,29 +393,79 @@ when a stage has no scene, so arcade and every unscened stage are untouched.
 Two slots, and a speaker keeps its side: whoever talks takes the slot the PREVIOUS speaker is not
 in, so the listener stays on screen dimmed instead of the portraits swapping sides every line.
 
-## ⚠ START HERE — `docs/HANDOFF_CONNECTORS.md`
+## THE ENTRY CONNECTORS ARE BUILT — all nine stages (drop 0810j)
 
-Mike's current brief (0810i) is captured verbatim there: seamless entry connectors for every
-stage, the stage-2 exit, a new boss/miniboss HUD, and two miniboss bugs. He called it "extremly
-important".
+Mike's 0810i brief is in `docs/HANDOFF_CONNECTORS.md`. The **entry** half is done and measured.
 
-**The one thing worth knowing before you open it:** the seamless mechanism ALREADY EXISTS and is
-proven. `openingDrawArrival` lands the level's own first frame byte-identically on PLAY's first
-tick — 0 differing pixels of 393,600, measured by `probe_arrival.py` — because it calls `drawBG(0)`
-under a translate instead of reimplementing the master blit. Generalising that to all nine stages
-is the job. Reinventing it is not.
+Every stage now flies a connecting section of its own animated flat, with the level's own first
+frame **butted directly onto it**. One mechanism, both intro systems: `entryConnectorDraw(stage,dy)`
+next to `TRANS_FLAT`, driven by `launchConnDy()` on the launch path and by `openingDrawArrival` on
+stage 1's. It keeps the load-bearing decision from 0810e — it calls `drawBG(0)` under a translate
+rather than reimplementing the master blit — so "the last cinematic frame IS the first play frame"
+stays structurally true instead of a claim to re-verify.
 
-What he is complaining about is `drawLaunch`: `_drawLevelRegion` clips the level into a window that
-WIDENS as distance grows, so the level is revealed behind a runway plate rather than joined to it.
-That is "fly over a flat and then pull the flat away", exactly.
+**Measured, honestly this time: 0 differing pixels of 299,842 on six of eight stages** (stage 2: 13
+px, stage 4: 6 px, stage 5: 0.64%). `python3 _BUILD_SOURCE/probe_arrival.py` runs all of them.
+
+### ⚠⚠ THE OLD "0 of 393,600" NUMBER WAS NEVER REAL. Do not cite it.
+
+`probe_arrival.py` grabbed the canvas on the `play` branch **without stepping first**. The state
+flips at the END of `drawOpening`, inside a step that has already drawn a cinematic frame — so the
+"first play frame" was that cinematic frame, and the probe compared two consecutive cinematic
+frames. Both static by then, so it returned 0 differing pixels *whatever the handoff looked like*.
+It could not fail. That number is quoted in this file's history and in the handoff doc as the bar
+for this work, and it was measuring nothing.
+
+Same family as the `probe_seam.py` lesson one step further out: that probe RECOMPUTED the value
+under test, this one READ THE WRONG FRAME. **A probe must draw the frame it intends to measure,
+then read it.** With that fixed, three real seams appeared that had been invisible for two drops:
+
+- **CRT SCANLINES WERE PLAY-ONLY.** `drawWorld` ends with `drawScanlines()` — a black row every 2px
+  at 8% alpha — and no cinematic ever drew them, so every other row darkened the instant PLAY took
+  over. Invisible on a dark stage and to every state-based check; on stage 1's bright water it was
+  **half the pixels in the frame** moving at the handoff. Both cinematics draw them now.
+- **THE LEGACY RUNWAY DREW ON ALL NINE STAGES.** `seqRunway` returns null for every stage but 1
+  (Mike, 0801bf: "only stage 1 gets the runway intro") and `drawLaunch`'s else-branch drew
+  `X.get('runway')` anyway. The suite asserted "no OTHER stage flies a runway" and passed, because
+  it asked the *table* while the pixels came from a different path. Rule 2, in one line.
+- **STAGE 6's ENTRY WAS TWO DEAD REFERENCES AND A STALE COLOUR.** `nsky6_par` — the cloud deck its
+  sky branch asked for — **is not a registered key** and never drew a pixel. What stage 6 actually
+  showed for ten seconds was `SEQ[6].fill`, `#2a6ac0`, DAYLIGHT BLUE left over from before the
+  stage became the night cloud sky fortress, and then it cut to a night level. That is "stage 6's
+  is broken and horrible", entirely. Connectors read `_levelCfg`, never SEQ's stale copy.
+
+`_drawLevelRegion`, `_region` and `_liquidFrame` are **deleted** — the widening-clip reveal and the
+band tiler that served it. Six assertions moved with them (sections 47, 49, 62, 133b) rather than
+being dropped; the camera guard now names `entryConnectorDraw`.
+
+⚠ Source assertions that read `drawLaunch.toString()` see **comments too** — the first cut of the
+new ones failed because the comment explaining what was removed named what was removed. They strip
+comments now. A source assertion a docstring can defeat is not measuring anything.
+
+### Still open on this brief
+
+- **The craft draws twice at the join.** `drawLaunch` draws the ship and a hand-rolled `nthp_`
+  plume itself; PLAY draws the player through its own path. Nothing forces them to agree — the same
+  shape as the pose seam 0810a fixed, one layer in. It is the whole of the residual 2.5–4.3% in the
+  probe's "whole band" column. The fix is 0810a's: one draw, read by both sides.
+- **The ship is INVISIBLE on PLAY's first tick, every stage, every time.** `player.reset()` leaves
+  `invuln` at 120 and the player draw hides it on a 4-on/4-off blink
+  (`Math.floor(player.invuln/4)%2`). It was solid a frame earlier in the cinematic. This is a second
+  live cause of "clips it in and out" — 0810a fixed the height pop, not this. Whether a fresh stage
+  start should carry visible i-frames at all is **Mike's call**, so it is left alone.
+- **Stage 5 is the only stage above 0.01%** (0.636%). Not diagnosed.
+- The seam between flat and level is a **hard butt-join**, not feathered. That reads as a direct
+  connection and matches "no more fake transitions"; if Mike wants it blended it is a small change.
+- Stage 9 has a `_levelCfg` case and a connector entry but **no `STAGES[]` entry**, so it is off the
+  probe's default list and `beginStage(9)` has no `curStage`.
 
 **Next, in order:**
-1. **The remaining themed joins** — 5→6, 6→7, 7→8. (4→5 is the boss chase and stays blocked on
-   the stage-4 boss.) Build them on the 2→3 / 3→4 pattern already on trunk: a per-join predicate,
-   a beat timeline in `outboundUpdate`, a draw, two dispatch lines, and the join switched on in
-   `outboundStart`. Section 133b is the template for asserting them.
-2. Then: the stats-screen alignment; camo for stages 2–3; `CF_PilotCutscenePack` (per-pilot scenes
-   still unwired, only the ensemble ones are).
+1. **The stage-2 EXIT** — section 2 of the handoff, still untouched: a connector out of the boss and
+   an infinitely-scrolling section under the cinematic. `_loopDraw` in `drawLevelMaster` is the
+   infinite-scroll pattern; the standing rule is the player is HELD and the world moves.
+2. **The boss/miniboss HUD** and the two miniboss bugs (handoff sections 3 and 4).
+3. The remaining themed **outbound** joins — 5→6, 6→7, 7→8 (4→5 stays blocked on the stage-4 boss).
+   Build on the 2→3 / 3→4 pattern; section 133b is the template.
 
 **Waiting on Mike:** nothing outstanding. The arsenal-mini questions are answered (they are
 enemies we have; caldera 2 / frostbite 3 / dambreaker 4) and the `o.px` camera fix was approved

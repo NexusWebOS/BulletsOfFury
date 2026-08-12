@@ -1,5 +1,14 @@
 # Handoff — the seamless entry connectors, boss HUD, and the 0810h bug list
 
+> **STATUS 0810j — SECTION 1 (THE ENTRY CONNECTOR) IS DONE, all nine stages.** See CLAUDE.md.
+> Sections 2 (stage-2 exit), 3 (boss/miniboss HUD) and 4 (the two miniboss bugs) are untouched.
+>
+> ⚠ **The "0 differing pixels out of 393,600" quoted below was never a real measurement.**
+> `probe_arrival.py` read the canvas on the `play` branch without drawing a play frame first, so it
+> compared two consecutive *cinematic* frames — both static — and could not fail. Fixed in 0810j;
+> the real figure for the rebuilt connectors is 0 of 299,842 on six of eight stages. Everything the
+> old number was used to justify still holds, but it was justifying itself.
+
 **Read `CLAUDE.md` first, then this.** Suite at HEAD: **2,441 assertions / 218 sections / 5
 failures**, all five pre-existing. Tree clean, 29 commits since `d67dbbf`.
 
