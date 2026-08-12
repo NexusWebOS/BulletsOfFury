@@ -2069,7 +2069,30 @@ function _levelCfg(){
        RC2 stage has its own authored wreckage down the highway. Dropping it rather than dropping
        it somewhere arbitrary — if Mike wants the crash object on the new plate it needs a placement
        he picks. nst4_master_crash / _clean stay registered and are one line from coming back. */
-    case 4: return {master:'airbase800_rc2_master', liquid:null, fill:'#101820', tile:1, fps:5, wide:true};
+    /* THE CAR CRASH IS BACK, ON THE HIGHWAY (drop 0810h). Mike: "The car crash object can go
+       somewhere on the map ... they do not scroll ever, they are objects that stay put."
+
+       drawStageProps draws at `pr.y - mapScroll`, so a prop is pinned to a map coordinate and the
+       world scrolls past it — which is what "stays put" means here, and it already worked that way.
+       The only thing that was ever wrong is the coordinate.
+
+       PLACEMENT IS MEASURED, NOT GUESSED, same discipline as 0801ku used on the old plate. A prop
+       reaches the top of the screen when mapScroll === pr.y, and at that instant the master's top
+       row is (rangeSrc - pr.y), with rangeSrc = 5120-512 = 4608. Rendering the flipped master a
+       screen at a time gives:
+
+           prop y 4208   the fortified compound at the end
+           prop y 3508   armoured highway, heavy blast rubble
+           prop y 2708   armoured highway, more open road
+           prop y 1908   the checkpoint gantry
+           prop y 1108   airbase apron, open concrete
+
+       3100 puts the pileup mid-highway, between the two rubble bands — on open road where a dozen
+       wrecked vehicles read as a pileup, rather than on top of authored debris where they would
+       just be more mess. x=0 because the overlay is authored full-width in the same 800 world
+       space as the master. */
+    case 4: return {master:'airbase800_rc2_master', liquid:null, fill:'#101820', tile:1, fps:5, wide:true,
+                    props:[{k:'nst4_crash_overlay', x:0, y:3100}]};
     /* RC2 REBUILD (drop 0810g) — Stage_05_Storm_To_Upper_Atmosphere, 800x5120. Starts in the
        nebula and descends to a planet under aurora. Flipped on the way in like every plate in
        this pack (see the note on case 4), magenta punched to alpha. The BOSS ARENA is untouched:
@@ -2499,9 +2522,34 @@ function drawStageProps(){
     ctx.drawImage(im, pr.x|0, Math.round(sy), im.naturalWidth, im.naturalHeight);
   }
 }
+/* ⚠ THE STAGE-4 SIGNS WERE PLACED ON A PLATE THAT NO LONGER EXISTS (drop 0810h). Mike: "The car
+   crash object can go somewhere on the map, same with those signs. But they do not scroll ever,
+   they are objects that stay put."
+
+   They already stay put — drawRoadSigns and drawStageProps both draw at `y - mapScroll`, so a
+   sign is pinned to a MAP coordinate and the world moves past it. That part was never wrong.
+
+   What was wrong is WHERE. All ten sit at y 1002..2760, which is 23%..64% of the OLD 4288-travel
+   plate. The new RC2 airbase runs 4608, and its fortified compound is at the very end — so the
+   sequence, which reads runway -> restricted -> hangars -> command -> checkpoint -> AIR FORCE
+   BASE, used to finish two thirds of the way along with nothing to arrive at.
+
+   Remapped to span 20%..85% of the new level so the run ENDS on the approach to the base. The
+   authored x positions and the order are untouched: they alternate roadside deliberately, and
+   that reads as driving past them. Done in code rather than in the manifest because the manifest
+   is generated and this would be lost on the next regeneration. */
+const SIGN_REMAP = {
+  4: {from:[1002,2760], to:[920,3920]}
+};
+function roadSignY(stage, y){
+  const R=SIGN_REMAP[stage]; if(!R) return y;
+  const [a,b]=R.from, [c,d]=R.to;
+  return (b===a) ? c : (c + (y-a)*(d-c)/(b-a));
+}
 function drawRoadSigns(){
   if(typeof XART==='undefined' || typeof window==='undefined' || !window.BOFRS) return;
-  const list=window.BOFRS[String(run.stage)]; if(!list) return;
+  let list=window.BOFRS[String(run.stage)]; if(!list) return;
+  if(SIGN_REMAP[run.stage]) list=list.map(s=>({k:s.k, x:s.x, y:roadSignY(run.stage, s.y)}));
   for(const sn of list){
     const k=sn.k;
     if(!(XART._src && XART._src[k])) continue;

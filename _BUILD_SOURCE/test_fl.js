@@ -1828,8 +1828,20 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      and placing it anyway would drop a wreck at an arbitrary spot. The RC2 stage carries its own
      wreckage down the highway. Asserting the HAZARD instead: no prop may be pinned to coordinates
      measured against a plate the stage no longer uses. */
-  ok(!vm.runInContext("(_levelCfg().props||[]).some(function(p){return p.k==='nst4_crash_overlay';})", ctxv),
-     'and no prop is left pinned to coordinates measured on the retired 4800px plate');
+  /* THE CRASH IS BACK, ON A MEASURED COORDINATE (drop 0810h). Mike: "The car crash object can go
+     somewhere on the map ... they do not scroll ever, they are objects that stay put." It is a
+     fixed map prop — drawStageProps draws at y - mapScroll — and 3100 puts it mid-highway on the
+     new plate, measured by rendering the flipped master a screen at a time.
+
+     The check that matters is that it is NOT still on 2124, the coordinate derived from the
+     retired 4800px plate's scorch. That number is the bug this guards against: a prop placed by
+     measuring a plate the stage no longer uses. */
+  ok(vm.runInContext("(_levelCfg().props||[]).some(function(p){return p.k==='nst4_crash_overlay';})", ctxv),
+     'the car crash pileup is placed on the map as a fixed prop');
+  ok(vm.runInContext("(_levelCfg().props||[]).every(function(p){return p.y!==2124;})", ctxv),
+     'and NOT at 2124 — that was measured on the retired 4800px plate');
+  ok(vm.runInContext("(function(){var im=XART.rdy(_levelCfg().master)?XART.get(_levelCfg().master):null; if(!im) return true; var r=im.naturalHeight-VH; return (_levelCfg().props||[]).every(function(p){return p.y>0 && p.y<r;});})()", ctxv),
+     'and every prop sits inside the levels actual travel range');
   vm.runInContext("run.stage=1; curStage=STAGES[0];", ctxv);
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'stage 1 now runs the seam-healed water (swapped on explicit go-ahead)');
   ok(vm.runInContext("_levelCfg().master==='jungle800_rc2_master' && _levelCfg().wide===true", ctxv), 'stage-1 MASTER is the RC2 rebuild — the never-touch rule still holds for everything but the liquid');
@@ -4225,7 +4237,21 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* _levelCfg IGNORES ITS ARGUMENT - it reads run.stage. Passing 6 returned the
      stage-1 config, which is my mistake in writing this check, not the game's. */
   vm.runInContext("run.stage=6; curStage=STAGES[5];", ctxv);
-  ok(vm.runInContext("_levelCfg().master==='nsky6_sky'", ctxv), 'and stage 6 points at it as its master');
+  /* ⚠ STAGE 6 IS THE NIGHT CLOUD SKY FORTRESS NOW (drop 0810h). Mike: "no we're doing the night
+     cloud sky, but in game its loading the bright sky that doesnt even scroll."
+
+     nsky6_sky stays REGISTERED — the assertion above still checks it decodes, and the "one sky,
+     no backgrounds" decision it represents is untouched. What changed is which single plate the
+     stage points at. The old one could not scroll properly: an 800x2400 cell gives 1888 source
+     px, and scrollLen was 7324, so it was consumed at a quarter of the level's rate.
+
+     THE REAL GUARD IS THE ONE BELOW IT: no scrollLen. That is what made it crawl, and it is the
+     mistake worth preventing, not the filename. */
+  ok(vm.runInContext("_levelCfg().master==='skyfort800_rc2_master'", ctxv), 'and stage 6 points at the RC2 night sky fortress');
+  ok(vm.runInContext("_levelCfg().scrollLen===undefined", ctxv),
+     'with NO scrollLen — the master height sets the length 1:1, or the sky crawls');
+  ok(vm.runInContext("run.stage=6; XART.rdy('skyfort800_rc2_master') && XART.get('skyfort800_rc2_master').naturalHeight>=VH*4", ctxv),
+     'and the plate is tall enough to actually scroll ('+vm.runInContext("XART.rdy('skyfort800_rc2_master')?XART.get('skyfort800_rc2_master').naturalHeight:0", ctxv)+'px vs the old 2400)');
   ok(vm.runInContext("typeof l6CloudsDraw==='function' && l6CloudsDraw.toString().indexOf('l6SkyMood')>0", ctxv), 'weather darkens the sky in code, with no cloud art');
   ok(vm.runInContext("XART.rdy('nl6sky_stage06_sky_scroll_640x960')", ctxv), 'and the stage-6 scrolling sky plate');
   // chroma
