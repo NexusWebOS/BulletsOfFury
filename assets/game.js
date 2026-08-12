@@ -21177,7 +21177,13 @@ function drawScene(dt){
     case GS.LOADING: return drawLoading(dt);
     case GS.TITLE:   return drawTitle(dt);
     case GS.DIFF:    return drawDiff(dt);
-    case GS.PILOT:   return drawPilot(dt);
+    /* ⚠ PILOT COULD OPEN THE PAUSE MENU AND NEVER DRAW IT (drop 0810o). campPauseIsCampaignScreen
+       claims GS.PILOT, so backspace there sets campPause — and this arm never called campPauseDraw,
+       so the menu was invisible, its input never ran, and it could never be closed. From that
+       moment BOTH back handlers above are dead for the rest of the session, and the stale menu
+       reappears the next time the player reaches STAGESEL or CAMPHUB. Drawn now, like the other
+       two campaign screens. */
+    case GS.PILOT:   { drawPilot(dt); campPauseDraw(dt); return; }
     case GS.PASSWORD:return drawPassword(dt);
     case GS.CREDITS: return drawCredits(dt);
     case GS.OPTIONS: return drawOptions(dt);
@@ -29510,7 +29516,7 @@ function drawCampaignHub(dt){
   campText('ARROWS SELECT   FIRE CONFIRM   BACK MODE SELECT', VW/2, VH-18, 11, '#cfd6e0',
            0.55+0.45*Math.sin(stateT*5));
   ctx.globalAlpha=1; ctx.textAlign='left';
-  campHubInput();
+  if(!campPause) campHubInput();      // the modal owns the keys while it is up — see the note at `locked`
 }
 function drawCampSlots(dt){
   campText(campPick==='save'?'SAVE TO WHICH SLOT?':'LOAD WHICH SLOT?', VW/2, 106, 13, '#cfd6e0');
@@ -29546,7 +29552,7 @@ function drawCampSlots(dt){
   campText('ARROWS SELECT   FIRE CONFIRM   BACK CANCEL', VW/2, VH-18, 11, '#cfd6e0',
            0.55+0.45*Math.sin(stateT*5));
   ctx.globalAlpha=1;
-  campSlotInput();
+  if(!campPause) campSlotInput();     // same gate: the hub's slot picker must not read under the modal
 }
 function campHubInput(){
   const n=CAMPHUB_ITEMS.length;
@@ -30502,7 +30508,21 @@ function _drawStageSelectInner(dt){
      input stayed live through all of it - so the cursor could keep moving, or a
      second press could fire another selFlash on top of the first. sselCommitted
      closes that window and is cleared when the stage actually begins. */
-  const locked = sselBoot>0 || (sselUnlockCine!=null) || !!window.sselCommitted;
+  /* ⚠ campPause GATES THE MAP TOO (drop 0810o). Mike: "making a selection in the campaign menu
+     makes me select the level while its open, shouldnt happen."
+
+     Measured in real Chromium, and it is NOT one press consumed twice — Input.tap clears
+     pressed[k] on read, so exactly ONE handler acts. It is the WRONG one. Menu input lives inside
+     the DRAW functions, and drawScene draws the modal LAST (`drawStageSelect(dt); campPauseDraw(dt)`),
+     so the map underneath reads and clears the tap and campPauseDraw finds nothing. The modal fires
+     zero times; the map deploys the level out from under it.
+
+     campPause already gates the two BACK handlers in drawScene and gated nothing here. Added to the
+     existing lock rather than bolted on separately, because DEPLOY and the a/d map cursor both
+     already sit under `if(!locked)` — so one token stops the level launching AND stops the cursor
+     walking around behind an open menu. Verified A/B: with the gate, Enter and j reach SAVE/LOAD
+     and deploy stays 0; without it, deploy=1 and the stage card is on screen 3.2s later. */
+  const locked = campPause || sselBoot>0 || (sselUnlockCine!=null) || !!window.sselCommitted;
   if(!locked){
     const _lo=1, _hi=Math.max(1, Math.min(8, campaign.unlockedMax||1));   // only navigate UNLOCKED stages (max 8)
     if(Input.tap('left')||Input.tap('a')){ sselCursor = sselCursor<=_lo ? _hi : sselCursor-1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
