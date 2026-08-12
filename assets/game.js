@@ -2070,7 +2070,11 @@ function _levelCfg(){
        it somewhere arbitrary — if Mike wants the crash object on the new plate it needs a placement
        he picks. nst4_master_crash / _clean stay registered and are one line from coming back. */
     case 4: return {master:'airbase800_rc2_master', liquid:null, fill:'#101820', tile:1, fps:5, wide:true};
-    case 5: return {master:'nst5_master', liquid:null,          fill:'#05060a', tile:1.0, wide:true,
+    /* RC2 REBUILD (drop 0810g) — Stage_05_Storm_To_Upper_Atmosphere, 800x5120. Starts in the
+       nebula and descends to a planet under aurora. Flipped on the way in like every plate in
+       this pack (see the note on case 4), magenta punched to alpha. The BOSS ARENA is untouched:
+       norb5_arena is a separate loop plate and has nothing to do with the scroll master. */
+    case 5: return {master:'storm800_rc2_master', liquid:null,  fill:'#05060a', tile:1.0, wide:true,
                     arena:'norb5_arena'};
     // 6 HEAVY TURBULENCE — dedicated sky kit (env pack v1.0): 800x4000 base sky + separate
     // parallax cloud layer + 800x1000 boss arena. WIDE level (800px world, camera scrolls).
@@ -2095,10 +2099,22 @@ function _levelCfg(){
     /* nlq_sludgeF is the FILLED sludge: the authored scum overlay composited onto a base built
        from its own colour. nlq_sludge alone is 34.8% opaque with transparent edges — a surface
        decal, not a fill — so tiling it left 65% of the sewage showing the bare dark fill. */
-    case 7: return {master:'nst7_master', liquid:'nlq_sludgeF', fill:'#232b12', tile:0.5, fps:5, wide:true,
+    /* RC2 REBUILD (drop 0810g) — Stage_07_Sewer_Nuclear_Underworks, 800x5120. Green sludge
+       channels between concrete underworks; the closest thematic match in the whole pack.
+       ⚠ THE SLUDGE STAYS. 8,412 magenta px were punched to alpha, and nlq_sludgeF is what shows
+       THROUGH those holes — that is the entire point of the magenta in these plates, and dropping
+       the liquid here would leave the channels empty. Boss arena untouched. */
+    case 7: return {master:'sewer800_rc2_master', liquid:'nlq_sludgeF', fill:'#232b12', tile:0.5, fps:5, wide:true,
                     arena:'nst7_arena'};
     // 8 FURIOUS DEATH — the true-16bit necro master (this art is the finale's, not stage 6's).
-    case 8: return {master:'nst8_master', liquid:null,          fill:'#0a0406', tile:1.0};
+    /* RC2 REBUILD (drop 0810g) — Stage_08_Deep_Space_Black_Hole, 800x5120. Starfield running down
+       into a spiral black hole, which is what TRANS[7] has always described the 7->8 join as:
+       "escapes the sewer into chaotic space".
+       ⚠ 112,940 magenta px punched to alpha here — 2.76%, by far the most in the pack, and it is
+       the VOID: the plate is deliberately see-through where space should be, so `fill` shows
+       through. That is why fill stays #0a0406 rather than becoming a texture. wide:true added
+       because this master is 800 across; the old one was not. */
+    case 8: return {master:'blackhole800_rc2_master', liquid:null, fill:'#0a0406', tile:1.0, wide:true};
     /* 9 BONUS STAGE — entered from Level 5. Mike: "stage 9 was the bonus stage, yes.
        This is accesible through Level 5", and "wire it to 800 wide."
 
@@ -2117,7 +2133,9 @@ function _levelCfg(){
 
        STILL NOT IN STAGES[]. This gives the bonus stage a correct world the moment
        it is entered; the entry point from Level 5 is a separate piece of wiring. */
-    case 9: return {master:'nst9_master', liquid:null,          fill:'#020220', tile:1.0, wide:true};
+    /* RC2 REBUILD (drop 0810g) — Stage_09_Water_World_Naval_War, 800x5120. Open ocean with island
+       fortresses and naval emplacements down both flanks. */
+    case 9: return {master:'waterworld800_rc2_master', liquid:null, fill:'#020220', tile:1.0, wide:true};
     default: return null;
   }
 }
