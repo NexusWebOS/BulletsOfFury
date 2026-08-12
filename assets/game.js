@@ -12161,6 +12161,23 @@ function updatePlay(dt){
     if(_tslow) continue;
     e.t+=dt;
     if(e._dr && typeof droneTick==='function'){ droneTick(e, dt); }   // arsenal drone: hover, bank, glow, fire
+    /* ⚠ AND STOCK ENEMIES GET THE ARC TOO (drop 0810f). Mike: "find out why enemies are appearing
+       on stage 1 out of thin air instead of flying in."
+
+       The entrance sweep landed in droneTick, which runs ONLY for arsenal drones — and
+       ARSENAL_DRONES has no stage 1 entry at all. So every unit on the level he was actually
+       complaining about (racer, topgun, intcp, jungletank, sandtank, drone, turdrone, stationship,
+       gunboat) still dropped straight down from y=-30.
+
+       ⚠ AND THIS LINE WAS MY OWN PORTING GAP. I spliced the drone behaviour region wholesale in
+       0810d and enemyEntrySweep came across with it — but its ONE call site lives here, in the
+       enemy update loop, outside the region I moved. The function existed on trunk with no caller
+       for two drops: defined, correct, and never run. Grep for the call site, not just the
+       definition, when porting a function.
+
+       Runs BEFORE the pattern switch so the normal mover still carries the unit; the sweep is a
+       decaying offset laid on top of it, and it removes its own residual when it finishes. */
+    else if(typeof enemyEntrySweep==='function'){ enemyEntrySweep(e, dt); }
     if(e._cn && typeof droneCannonTick==='function') droneCannonTick(e, dt);   // drone weapon mount
     if(e._l6x && typeof l6xTick==='function') l6xTick(e, dt);   // L6 expansion fighter
     if(e._h6 && typeof l6PatternTick==='function') l6PatternTick(e,dt);
