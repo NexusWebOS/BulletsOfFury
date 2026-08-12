@@ -5419,6 +5419,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'and it does NOT run the entrance sweep — at this size an arc reads as a fly-past');
   ok(vm.runInContext("droneTellDur(DRONE_BEHAV.caldera) > droneTellDur(DRONE_BEHAV.cinderwasp)", ctxv),
      'a mini warns for longer than the drones around it');
+  /* ⚠ SCOPE, MEASURED RATHER THAN INFERRED (drop 0810d). spawnEnemy's `if(base.art===undefined){`
+     is never closed, so everything below it is function-scoped however it is indented — and
+     column 0 is NOT evidence of top level. I got this wrong once by reading grep line numbers as
+     proof, and the symptom was arsenalMiniFor throwing "is not defined" from the wave loop while
+     the suite reported 0 failures with the count down from 2,421 to 1,567.
+     typeof at global scope is the only honest check. */
+  var _scoped=['ARSENAL_DRONES','ARSENAL_MINIS','ARSENAL_MINI_DEF','arsenalMiniFor',
+               'spawnArsenalMini','arsenalDronesFor','arsenalDroneArt','droneDraw','stageHeat'];
+  var _lost=_scoped.filter(function(n){ return vm.runInContext("typeof "+n, ctxv)==='undefined'; });
+  ok(_lost.length===0,
+     'every arsenal symbol is reachable at global scope, not swallowed by spawnEnemy'
+     + (_lost.length?(' — stranded: '+_lost.join(', ')):''));
 
   // ===== 134. BOLTS GLOW, THEY DO NOT ANIMATE (drop 0724da) =====
   console.log("=== 134. laser + missile ===");

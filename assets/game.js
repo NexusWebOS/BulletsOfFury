@@ -5129,6 +5129,26 @@ function strafeDiveTick(e, dt){
   e._faceAng = Math.atan2(e._sdLean*0.42, -1);
   if(e.y > VH+70) e.dead=true;
 }
+/* ⚠ HOISTED TOO (drop 0810d). Measured at runtime, not inferred: before this move,
+   `typeof ARSENAL_DRONES`, `arsenalDronesFor` and `arsenalDroneArt` all evaluated to
+   "undefined" at global scope while ARSENAL_MINIS and arsenalMiniFor — moved in 0810c —
+   evaluated fine. Same cause: spawnEnemy's unclosed if.
+
+   Nothing actually CALLED any of the three, so this was dormant rather than biting: droneDraw
+   builds its own 'ndr_<slug>_idle_<fi>' key and never asks arsenalDroneArt for one. Moved so a
+   future caller does not rediscover the trap the hard way, which is what it cost last time. */
+const ARSENAL_DRONES = {
+  2: ['cinderwasp','basaltbomber','magmaorb'],
+  3: ['cryoeye','sharddart','glaciercarrier'],
+  5: ['discordgunship','fractureskimmer','nullprism'],
+  8: ['ragetalon','deathchoir','furymine'],
+};
+function arsenalDroneArt(slug, part, fi){
+  const k='ndr_'+slug+'_'+(part||'idle')+'_'+(fi|0);
+  return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
+}
+function arsenalDronesFor(stage){ return ARSENAL_DRONES[stage] || []; }
+
 /* ⚠ HOISTED ABOVE spawnEnemy ON PURPOSE (drop 0810c). This block was written just after
    ARSENAL_DRONES, which LOOKS like top level — column 0, no indentation — and is not.
    spawnEnemy's `if(base.art===undefined){` is never closed, so everything below that line is
@@ -5409,17 +5429,6 @@ function spawnEnemy(type, x, y, opt={}){
 
    The three MINI BOSSES land on the stages they are named for:
      dambreaker -> 1,  caldera -> 2,  frostbite -> 3 */
-const ARSENAL_DRONES = {
-  2: ['cinderwasp','basaltbomber','magmaorb'],
-  3: ['cryoeye','sharddart','glaciercarrier'],
-  5: ['discordgunship','fractureskimmer','nullprism'],
-  8: ['ragetalon','deathchoir','furymine'],
-};
-function arsenalDroneArt(slug, part, fi){
-  const k='ndr_'+slug+'_'+(part||'idle')+'_'+(fi|0);
-  return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
-}
-function arsenalDronesFor(stage){ return ARSENAL_DRONES[stage] || []; }
 /* RETIRED UNITS (drop 0801ba). Mike asked twice to have the turrets out and they were still in
    play, because my first list only covered the units NAMED turret. The ones on screen were
    bunkerA / bunkerB — emplacements by another name, with ZERO registered art, falling back to
