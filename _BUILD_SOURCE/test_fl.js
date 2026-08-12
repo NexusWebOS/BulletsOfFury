@@ -5297,6 +5297,25 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   });
   ok(_missing.length===0,
      'every route draws the held player through outboundScreenX, never o.px directly'+(_missing.length?(' — '+_missing.join(', ')):''));
+  /* ⚠ THE SAME BUG HAS NOW APPEARED THREE TIMES: the launch seam (0810a), the outbound routes
+     (0810c) and the level-1 opening (0810e). Every one of them drew a WORLD coordinate into
+     SCREEN space with no camera, and on an 800-wide stage that is a 160px sideways jump. The
+     opening's ship was the worst of the three because probe_seam.py had been computing the ship's
+     x as player.x - camX rather than recording what was drawn — the probe asserted the fix it was
+     meant to be testing, and reported the handoff clean while the ship sat hard right.
+     Checked in SOURCE, because the behavioural check is exactly what got fooled. */
+  var _camFns=['openingDrawShip','openingDrawArrival','_drawLevelRegion'];
+  var _nocam=[];
+  _camFns.forEach(function(fn){
+    var i=_osrc.indexOf('function '+fn);
+    if(i<0){ _nocam.push(fn+' (not found)'); return; }
+    var j=_osrc.indexOf('\nfunction ', i+1);
+    var body=_osrc.slice(i, j<0?_osrc.length:j);
+    if(body.indexOf('translate(-camX')<0) _nocam.push(fn);
+  });
+  ok(_nocam.length===0,
+     'and every cinematic that draws world coords applies drawWorld\'s camera'
+     +(_nocam.length?(' — missing in: '+_nocam.join(', ')):''));
 
   // ===== 133c. THE ONE-HIT FAIRNESS CONTRACT — aim locks at the START of the tell =====
   console.log("=== 133c. tell -> commit -> recover ===");

@@ -29371,6 +29371,48 @@ function openingDrawCoast(prog){
   ctx.restore();
   return true;
 }
+/* THE ARRIVAL — the level's own first frame, descending into place over open water (drop 0810e).
+
+   ⚠ IT DRAWS THROUGH drawBG, NOT A COPY OF IT. That is the whole mechanism. PLAY's first frame is
+   whatever drawBG paints at mapScroll 0; if this reimplemented the master blit, the two could
+   drift apart the moment anything about the level draw changed — liquid beds, props, road signs,
+   the cloud layer, the fill. Calling the same function under a translate makes "the last
+   cinematic frame IS the first play frame" structurally true instead of a claim to re-check.
+
+   prog 0 -> 1 puts the master's bottom edge from off the top of the screen down to exactly its
+   PLAY position. At prog 1, dy is 0 and the translate is a no-op, so the frame is byte-identical
+   to what PLAY draws on its first tick. The 3-2-1 then counts down over the live field, which is
+   what the phase header has claimed since the day it was written.
+
+   dt is 0 deliberately: drawLevelMaster advances mapScroll by dt*40, and the cinematic must not
+   consume any of the level before the player has control of it. */
+function openingDrawArrival(prog){
+  const O=opening; if(!O || typeof XART==='undefined' || typeof drawBG!=='function') return false;
+  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
+  if(!cfg || !cfg.master) return false;
+  const mk=(typeof stageMasterKey==='function')?stageMasterKey(cfg):cfg.master;
+  /* XART.rdy is false on its FIRST call and that call starts the load — so this returns false for
+     a few frames on entry and the generated coast covers the gap. Polling, never one-shot. */
+  if(!XART.rdy(mk)) return false;
+
+  /* the ocean we are still over. Full screen: the master is about to cover the top of it. */
+  const wat=XART.rdy('tflat_water') ? XART.get('tflat_water') : null;
+  if(wat){
+    const T=64, off=((O.scroll*0.6)%T+T)%T;
+    for(let y=-T; y<VH+T; y+=T)
+      for(let x=0; x<VW+T; x+=T) ctx.drawImage(wat, x, y+off, T, T);
+  } else { ctx.fillStyle='#1d3a5c'; ctx.fillRect(0,0,VW,VH); }
+
+  const dy=Math.round((1-clamp(prog,0,1))*VH);
+  ctx.save();
+  /* the same camera PLAY uses — drawWorld does this and openingDraw never did, so without it the
+     master would arrive 160px off on an 800-wide stage and slide sideways at the handoff */
+  if((typeof worldWidth==='function'?worldWidth():VW)>VW) ctx.translate(-camX, 0);
+  ctx.translate(0, -dy);
+  try{ drawBG(0); }catch(e){}
+  ctx.restore();
+  return true;
+}
 function openingDraw(dt){
   const O=opening; if(!O) return false;
   const ph=openingPhase();
@@ -29428,8 +29470,27 @@ function openingDraw(dt){
     }
   }
   else {
-    const prog=clamp((O.t-OPEN_T[2])/(OPEN_T[4]-OPEN_T[2]),0,1);
-    if(!openingDrawCoast(prog)){ ctx.fillStyle='#1d3a5c'; ctx.fillRect(0,0,VW,VH); }
+    /* WE FLY INTO THE ACTUAL LEVEL NOW (drop 0810e). Mike: "connect the last transition tile to
+       the level's first frame ... so we truly fly into level 1, same with level 2 etc. No more
+       fake transitions."
+
+       What this used to do: generate a coastline from two sine terms and tile it out of the sand
+       and water flats, then hand over to PLAY, which draws the jungle MASTER. Measured across the
+       handoff: mapScroll 0 -> 0, camX 160 -> 160, the ship untouched. Nothing jumped — and the
+       entire picture was still replaced, because a generated coast and a painted one are not the
+       same image. That is the fake transition, and no amount of smoothing the numbers fixes it.
+
+       So the coast is not generated any more. The level's own first frame descends into place
+       over open water, and by the end of COAST it is sitting exactly where PLAY will start. The
+       shoreline you arrive at is the one painted into the master, which is the only way the last
+       cinematic frame and the first play frame can be the same picture. */
+    if(!openingDrawArrival(clamp((O.t-OPEN_T[2])/(OPEN_T[3]-OPEN_T[2]),0,1))){
+      /* the master has not decoded yet — fall back to the generated coast rather than a blank
+         screen, on its ORIGINAL clock so it still reads as an approach */
+      if(!openingDrawCoast(clamp((O.t-OPEN_T[2])/(OPEN_T[4]-OPEN_T[2]),0,1))){
+        ctx.fillStyle='#1d3a5c'; ctx.fillRect(0,0,VW,VH);
+      }
+    }
   }
   ctx.restore();
   return true;
@@ -29446,6 +29507,17 @@ function openingDrawShip(){
   const dh=((player.h||34)*2.05/cf)*O.shipScale;
   const dw=dh*(im.naturalWidth/im.naturalHeight);
   ctx.save();
+  /* ⚠ THE CAMERA, AND THIS IS THE THIRD PLACE IT WAS MISSING (drop 0810e).
+     player.x is a WORLD coordinate and this draws in SCREEN space. On stage 1 the player starts at
+     worldWidth()/2 = 400 with camX 160, so the ship sat at screen x 400 — hard right of a 480-wide
+     view — and snapped to 240 the instant PLAY took over. Caught by LOOKING at the arrival frame;
+     it was invisible to probe_seam.py because that probe computed the ship's x as player.x - camX
+     rather than recording what was drawn, so it asserted the fix it was supposed to be testing.
+     The probe has been corrected too.
+
+     Same shape as the launch seam (0810a) and the outbound routes (0810c): world coords through no
+     camera. drawWorld's translate is the one being matched, live worldWidth() check and all. */
+  if((typeof worldWidth==='function'?worldWidth():VW)>VW) ctx.translate(-camX, 0);
   ctx.translate(0, O.panY);
   ctx.drawImage(im, player.x-dw/2, player.y-dh/2, dw, dh);
   ctx.restore();

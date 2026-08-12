@@ -60,19 +60,36 @@ INSTRUMENT = r"""
     window.__ship = {x: x, y: y, h: h};
     return orig.apply(this, arguments);
   };
-  // the opening draws its own ship rather than going through drawShipSprite; capture that too so
-  // stage 1 is measurable in the same units
+  /* The opening draws its own ship rather than going through drawShipSprite, so capture that too.
+     ⚠ RECORD WHAT WAS DRAWN, DO NOT RECOMPUTE IT. The first version of this hook set
+        x: player.x - camX
+     which is the very thing under test — so it reported the ship as continuous across the handoff
+     while the real draw was putting it at screen x 400 with no camera at all, 160px right of where
+     PLAY starts. A probe that assumes the fix cannot find the bug. It now wraps drawImage for the
+     duration of the call and reads the transform the game actually had. */
   const oship = window.openingDrawShip;
   if (typeof oship === 'function') {
     window.openingDrawShip = function() {
-      const r = oship.apply(this, arguments);
-      try {
-        const O = window.opening;
-        if (O) window.__ship = {x: player.x - (typeof camX!=='undefined'?camX:0),
-                                y: player.y + (O.panY||0),
-                                h: ((player.h||34)*2.05/window.__cf())*(O.shipScale||1)};
-      } catch(e) {}
-      return r;
+      const c = document.querySelector('#screen-area canvas') || document.querySelector('canvas');
+      const g = c && c.getContext('2d');
+      if (!g) return oship.apply(this, arguments);
+      const origDraw = g.drawImage;
+      let seen = null;
+      /* ⚠ getTransform() carries the canvas's BASE DEVICE SCALE as well as the game's translates —
+         index.html backs a 480x512 logical canvas with a 960x1024 store. Reported raw, the opening
+         side comes out in device pixels and the PLAY side in logical ones, and a perfectly
+         continuous handoff reads as an exact 2x "jerk". Normalise by the scale so both sides are
+         in the same units, which is the entire point of putting them side by side. */
+      const S = (c.width || VW) / VW;
+      g.drawImage = function(im, dx, dy, dw, dh) {
+        if (arguments.length === 5 && seen === null) {
+          const m = g.getTransform();           // includes every translate the draw applied
+          seen = {x: (m.a*(dx + dw/2) + m.e)/S, y: (m.d*(dy + dh/2) + m.f)/S, h: dh*m.d/S};
+        }
+        return origDraw.apply(g, arguments);
+      };
+      try { return oship.apply(this, arguments); }
+      finally { g.drawImage = origDraw; if (seen) window.__ship = seen; }
     };
   }
   // content-height fraction per pilot, the same table _drawPlayerCore uses
