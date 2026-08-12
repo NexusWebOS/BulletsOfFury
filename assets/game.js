@@ -2048,8 +2048,28 @@ function _levelCfg(){
        opaque mass sits at x 220..579, centre (395,285) — the same x band, because it
        is authored in the same 800-wide world space. So it drops in at 1:1 with its
        centre on the scorch: y = 2409 - 285 = 2124. */
-    case 4: return {master:'nst4_master_crash', liquid:null, fill:'#101820', tile:1, fps:5, wide:true,
-                    props:[{k:'nst4_crash_overlay', x:0, y:2124}]};
+    /* ============================================================
+       STAGE 4 IS THE RC2 REBUILD NOW (drop 0810g). Mike: "were supposed to replace level 4" and
+       "find the new stages from the zip and use them".
+
+       The zip is _ART_SOURCES/ColeForge_BOF_Rebuilt_Stages_RC2_SALVAGED, and it carries SEVEN
+       rebuilt stages — 01, 04, 05, 06, 07, 08, 09 — of which only 01 had ever been wired.
+       Stage_04_Open_Airbase_Armored_Highway is 800x5120: airbase apron, the armoured checkpoint
+       gantry that covers the A/B seam at y 2560, the highway running through blast rubble, and a
+       fortified compound at the end. Rendered before trusting the name, per rule 1.
+
+       ⚠ IT IS FLIPPED ON THE WAY IN, and that is not cosmetic. The pack authors A-then-B top to
+       bottom, and mapScroll 0 shows the image's BOTTOM — so section A, the start, has to end up
+       there. Verified against stage 1 rather than assumed: the shipped jungle800_rc2_master is
+       the flipped composite (mean abs diff 4.69) and not the as-is one (35.16).
+
+       ⚠ THE CAR CRASH OVERLAY IS GONE WITH THE OLD PLATE. nst4_crash_overlay sat at y=2124, a
+       position derived in 0801ku by diffing nst4_master_clean against nst4_master_crash to find
+       the scorch. That scorch belongs to the 4800px plate and means nothing on this one, and the
+       RC2 stage has its own authored wreckage down the highway. Dropping it rather than dropping
+       it somewhere arbitrary — if Mike wants the crash object on the new plate it needs a placement
+       he picks. nst4_master_crash / _clean stay registered and are one line from coming back. */
+    case 4: return {master:'airbase800_rc2_master', liquid:null, fill:'#101820', tile:1, fps:5, wide:true};
     case 5: return {master:'nst5_master', liquid:null,          fill:'#05060a', tile:1.0, wide:true,
                     arena:'norb5_arena'};
     // 6 HEAVY TURBULENCE — dedicated sky kit (env pack v1.0): 800x4000 base sky + separate
