@@ -569,14 +569,16 @@ torso 274x334, leg 200x432). Centring them stacks the whole mech on one spot. Ca
 shipped only by reading on. **The `_p_` set is loose art placed by sockets; the `<comp>_<state>`
 set is position-locked. Never mix the two contracts.**
 
-**Diagnosed, needs Mike: "his head is too close".** `GEN_HAULS` hauls a `head` limb, and genesis
-never checks `MECH_SKIP_PART`, which exists precisely because — measured in 0801dy — `mbg2_p_torso`
-ink is 274x334 while the whole assembled master is 267x350: **the torso sheet piece IS the body and
-head together.** So a second head is seated over the one already baked in. The fight honours the
-skip (test_fl-adjacent, game.js:27758); genesis never got it. Not fixed blind because dropping the
-head haul removes one of the five 20% limbs and one of Mike's authored beats ("head last so the
-moment it can see you is the moment it comes alive"). **Ask: drop the head haul, or get a headless
-torso plate?**
+**FIXED: "his head is too close" was TWO HEADS.** `GEN_HAULS` hauled a `head` limb and genesis
+never checked `MECH_SKIP_PART` — which exists precisely because 0801dy measured `mbg2_p_torso` ink
+at 274x334 against a whole assembled master of 267x350: **the torso sheet piece IS the body and head
+together.** So the chain fished a head out of the lava and seated it over the one that had already
+risen with the torso. The fight honours the skip; genesis never got it — the same "grep for the CALL
+SITE, not just the definition" lesson. Driven off `MECH_SKIP_PART` now rather than hand-listed, so
+the two cannot disagree again, and the filtered list rides on `G.hauls` because `genesisUpdate`
+indexes it to pick the next haul and to know when it is done. mbg2 hauls four times, ending on the
+cannons. It costs no HP — 0809m moved that to `MECH_HP_SHARE` entirely — only the beat.
+Proof: `docs/proofs/magmacolossus_0810n_genesis.png`.
 
 **FIXED: the fused form was a scatter of oversized parts, and it was the FIGHT that was wrong.**
 Rendered at full health, the Colossus came out as two enormous detached cannons, a shrunken torso

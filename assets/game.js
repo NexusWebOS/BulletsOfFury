@@ -25365,12 +25365,31 @@ const GEN_THEME = {
 function genTheme(tag){ return GEN_THEME[tag]||GEN_THEME.mbg2; }
 function genesisInit(b, tag){
   if(typeof XART==='undefined' || !XART.rdy(tag+'_p_torso')) return false;
+  /* ⚠ DO NOT HAUL A PIECE THE TORSO ALREADY CARRIES (drop 0810n). Mike: "his head is too close."
+
+     He is looking at TWO HEADS. 0801dy established it for the fight — "dont use the head piece,
+     use the body piece with the head attached", measured: mbg2_p_torso ink is 274x334 while the
+     whole assembled master is only 267x350, so the torso sheet piece IS the body and head
+     together — and gave it MECH_SKIP_PART. mechDraw honours that. GENESIS never got it, so the
+     chain fished a head out of the lava and seated it over the one that had risen with the torso.
+     Same bug, second location, exactly the "grep for the CALL SITE, not just the definition"
+     lesson.
+
+     Driven off MECH_SKIP_PART rather than hand-listing, so the two can never disagree again —
+     the _selfPat rule. The haul carries no HP of its own (0809m moved that to MECH_HP_SHARE
+     entirely), so dropping a haul costs nothing but its beat. mbg2 hauls four times now, ending
+     on the cannons rather than the head. */
+  const _skip=(typeof MECH_SKIP_PART!=='undefined' && MECH_SKIP_PART[tag]) || {};
+  const _hauls=GEN_HAULS.filter(h => !h.pieces.every(c => _skip[c]));
   const limbs={};
-  for(const h of GEN_HAULS){
-    limbs[h.limb]={pieces:h.pieces, socks:h.pieces.map(c=>_genSocket(tag,c)),
+  for(const h of _hauls){
+    limbs[h.limb]={pieces:h.pieces.filter(c=>!_skip[c]), socks:h.pieces.filter(c=>!_skip[c]).map(c=>_genSocket(tag,c)),
                    home:false, hp:1, maxhp:1, state:'intact', lockT:0};
   }
-  b._gen={tag, phase:'rise', t:0, idx:0, limbs, chain:0, hook:0, carry:null, flash:0, rise:0};
+  /* the FILTERED list rides on the state object: genesisUpdate indexes it to pick the next haul
+     and to know when it is done, and reading the unfiltered GEN_HAULS there would haul a piece
+     that was never given a limb — off by one, and the last haul would grab nothing. */
+  b._gen={tag, phase:'rise', t:0, idx:0, limbs, hauls:_hauls, chain:0, hook:0, carry:null, flash:0, rise:0};
   b.enter=true;
   return true;
 }
@@ -25382,7 +25401,7 @@ function genesisUpdate(b, dt){
     if(G.t>=GEN_T_RISE){ G.t=0; G.phase='drop'; }
   } else if(P==='drop'){
     G.chain=clamp(G.t/GEN_T_DROP,0,1); G.hook=0;
-    if(G.t>=GEN_T_DROP){ G.t=0; G.phase='grab'; G.carry=GEN_HAULS[G.idx].limb; }
+    if(G.t>=GEN_T_DROP){ G.t=0; G.phase='grab'; G.carry=(G.hauls||GEN_HAULS)[G.idx].limb; }
   } else if(P==='grab'){
     G.hook=clamp(G.t/GEN_T_GRAB,0,1);
     if(G.t>=GEN_T_GRAB){ G.t=0; G.phase='reel'; shake=Math.max(shake,3); }
@@ -25399,7 +25418,7 @@ function genesisUpdate(b, dt){
     const L=G.limbs[G.carry]; if(L) L.lockT=clamp(G.t/GEN_T_LOCK,0,1);
     if(G.t>=GEN_T_LOCK){
       G.t=0; G.idx++; G.carry=null; G.reel=0; G.chain=0; G.hook=0;
-      G.phase = (G.idx>=GEN_HAULS.length) ? 'ignite' : 'drop';
+      G.phase = (G.idx>=(G.hauls||GEN_HAULS).length) ? 'ignite' : 'drop';
     }
   } else if(P==='ignite'){
     G.rise=clamp(G.t/GEN_T_IGNITE,0,1);
