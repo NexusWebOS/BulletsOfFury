@@ -44,17 +44,17 @@ def serve(directory, port=0):
     return port, httpd.shutdown
 
 
-/* ⚠ THE FIRST VERSION OF THIS MEASURED THE WRONG THING, and the numbers looked authoritative.
-   It recorded each unit's y the first time drawEnemy touched it and called anything above 0 a
-   "pop-in". But drawEnemy is not called for a unit that is still off the top, so a perfectly
-   normal entry from y=-40 registers its first DRAW at y>0 and was reported as popping in. It
-   flagged s1boatgun (spawns at y=-40) and s1jetdelta_b (spawns at x=-28, y=96 — a deliberate SIDE
-   entry, which the sweep itself excludes for good reason) as faults. Neither is one.
-
-   Spawn position is what matters, so tag every unit the first frame it appears in the enemies
-   array — before the movers have touched it — rather than the first frame it happens to be drawn.
-   Tagging from the array also catches units that never go through spawnEnemy at all, like
-   spawnArsenalMini, which pushes directly. */
+# ⚠ THE FIRST VERSION OF THIS MEASURED THE WRONG THING, and the numbers looked authoritative.
+# It recorded each unit's y the first time drawEnemy touched it and called anything above 0 a
+# "pop-in". But drawEnemy is not called for a unit that is still off the top, so a perfectly
+# normal entry from y=-40 registers its first DRAW at y>0 and was reported as popping in. It
+# flagged s1boatgun (spawns at y=-40) and s1jetdelta_b (spawns at x=-28, y=96 — a deliberate SIDE
+# entry, which the sweep itself excludes for good reason) as faults. Neither is one.
+#
+# Spawn position is what matters, so tag every unit the first frame it appears in the enemies
+# array — before the movers have touched it — rather than the first frame it happens to be drawn.
+# Tagging from the array also catches units that never go through spawnEnemy at all, like
+# spawnArsenalMini, which pushes directly.
 INSTRUMENT = r"""
 () => {
   const cv = document.querySelector('#screen-area canvas') || document.querySelector('canvas');

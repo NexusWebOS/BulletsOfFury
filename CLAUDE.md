@@ -216,6 +216,26 @@ reading them is silently getting `undefined`. Left for its own drop because it h
 radius. When it bit, the suite reported **0 failures with the count down from 2,421 to 1,567** — a
 crash wearing a pass, rule 3 exactly. Always read the COUNT.
 
+### Fixed in 0810f — Mike's bug list
+
+- **Lizzie's MG was barely faster than the primary.** 0.16 against ~0.20; now 0.075. Damage
+  untouched at 7 — that was measured for the one-or-two-shot brief and was not the complaint.
+- **Both loaned weapons now expire.** 15s each, and they die with you. The mount previously had
+  NO expiry at all and Decker's ran 24s. `dkEnd()` / `lzMountEnd()` are single exits shared by the
+  clock and the death path so they cannot drift apart.
+- **The stage exit drew TWO ships** — `drawWorld` draws the real player, and `drawFlyover` drew
+  another on top. It now drives `player.y`. The fade also started at 1.25s against a 1.35s hover,
+  so the ship faded out where it stood instead of leaving; beats are derived now.
+- **The stage-3 crate wore an ice orb over a fireball.** `weaponIconKey` was right all along
+  (verified at runtime); the FALLBACK substituted `ice_icon_` with no `orbIsFire()` check, and it
+  runs for every pickup because `XART.rdy` is false on its first call. It no longer substitutes
+  when the element would be wrong.
+- **Level 4's waterfall was in a second table.** 0801ku nulled stage 4's `liquid` but left
+  `FALL_FOR[4]='nlf_water'` plus a FULL-WIDTH drop `{y:2904, x0:0, x1:799}`. Removed.
+- **`enemyEntrySweep` had no caller for two drops.** It ported cleanly in 0810d and its one call
+  site — in the enemy update loop — did not come with it. **When porting a function, grep for
+  the CALL SITE, not just the definition.**
+
 ### Probes added — all four drive the real game in real Chromium
 
 | tool | proves |
@@ -223,6 +243,8 @@ crash wearing a pass, rule 3 exactly. Always read the COUNT.
 | `probe_seam.py` | ship/camera/terrain deltas across an intro→PLAY seam |
 | `probe_weapons.py` | what `pShoot()` actually puts in `pBullets`, all nine pilots |
 | `probe_palette.py` | a palette swap moves hue and holds luminance, i.e. is not an overlay |
+| `probe_arrival.py` | the opening's last frame and PLAY's first are the same picture (0/393,600 px) |
+| `probe_enemies.py` | per-unit BLIT COUNT and SPAWN position — invisible vs vanished vs pop-in |
 | `scenario_seam.js` / `scenario_special.js` | drop `shoot.py` into the launch, or into a live special |
 
 ⚠ `probe_seam.py` runs its whole sequence in ONE `evaluate` — deliberate, because the game takes
