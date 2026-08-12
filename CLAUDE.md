@@ -84,6 +84,15 @@ so `pBullets` stays empty and any weapon FX measures as dead. A test must call `
 `_BUILD_SOURCE/probe_weapons.py` is that test — it drives `pShoot()` directly and asserts on what
 lands in `pBullets`, for all nine primaries plus Decker's shotgun and Lizzie's mount.
 
+**A WORLD coordinate drawn into SCREEN space with no camera. This has now bitten THREE times:**
+the launch seam (0810a), the outbound routes (0810c) and the level-1 opening's ship (0810e). On an
+800-wide stage it is a silent 160px sideways jump. `drawWorld` applies `translate(-camX)` and every
+cinematic that draws `player.x`, `o.px` or a master must do the same. A source assertion now
+enforces it — deliberately in SOURCE, because the behavioural check is what got fooled:
+`probe_seam.py` had been COMPUTING the ship's x as `player.x - camX` instead of recording what was
+drawn, so it asserted the fix it was meant to test and called a 160px offset clean. **A probe that
+recomputes the thing under test cannot find the bug.** Record what the game actually drew.
+
 **`pShoot` is a chain of early returns, and a weapon that claims the trigger silences everyone.**
 `sonicFire` → `dkFire` → Lizzie's mount → the primary, each returning on a claim. `dkFire` returns
 true *while reloading* — deliberately, it is what makes the shotgun a shotgun — so any pilot-gate
@@ -139,7 +148,7 @@ loads on entry.
 
 ## Current state (2026-08-11)
 
-Suite: **2,433 assertions / 218 sections / 5 failures** — all five pre-existing at HEAD: the boss
+Suite: **2,435 assertions / 218 sections / 5 failures** — all five pre-existing at HEAD: the boss
 limb pool, the preload count, the two `_superseded` ones and the naval flash families.
 
 ### ⚠ THERE ARE TWO DIVERGENT TREES. READ THIS BEFORE MERGING ANYTHING.
@@ -361,8 +370,10 @@ Two slots, and a speaker keeps its side: whoever talks takes the slot the PREVIO
 in, so the listener stays on screen dimmed instead of the portraits swapping sides every line.
 
 **Next, in order:**
-1. **Requirement 2 for stage 1** — the opening still paints a generated coast while PLAY paints the
-   jungle master. Mechanism written up in `docs/HANDOFF_TRANSITIONS.md`.
+1. **The remaining themed joins** — 5→6, 6→7, 7→8. (4→5 is the boss chase and stays blocked on
+   the stage-4 boss.) Build them on the 2→3 / 3→4 pattern already on trunk: a per-join predicate,
+   a beat timeline in `outboundUpdate`, a draw, two dispatch lines, and the join switched on in
+   `outboundStart`. Section 133b is the template for asserting them.
 2. Then: the stats-screen alignment; camo for stages 2–3; `CF_PilotCutscenePack` (per-pilot scenes
    still unwired, only the ensemble ones are).
 
