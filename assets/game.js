@@ -1809,7 +1809,24 @@ const WIDE_FLAT = {nlq2_water:'nwl_water', nlq2_lava:'nwl_lava', nlq_sludge:'nwl
    Baked into BOFX.liquids.drops at registration so the runtime never scans pixels. Each crest
    carries its own x span, so a 189px-wide shelf gets a 189px curtain rather than a full-width one
    draped over solid ground. */
-const FALL_FOR = {1:'nlf_water', 2:'nlf_lava', 4:'nlf_water', 7:'nlf_sludge'};   // nlf_, not nwf_: nwf_ is the WEATHER namespace
+/* ⚠ STAGE 4 IS OUT (drop 0810f). Mike, for the second time: "why the waterfall is still on
+   level 4".
+
+   0801ku found half of it — liquid:'nlq2_water' was painting an animated water BED down a desert
+   highway — and set stage 4's liquid to null. It did not touch this table, and this is the other
+   half: FALL_FOR[4] pointed at nlf_water, and BOFX.liquids.drops['4'] holds one entry,
+   {y:2904, x0:0, x1:799}. A FULL-WIDTH waterfall, all 800px of the world, poured across the air
+   force base every time the scroll reached map y 2904.
+
+   Stage 1's entry is the counter-example and shows what a real one looks like: {y:764, x0:139,
+   x1:660}, a partial span behind the temple gate, authored to sit in the dam. Stage 4's spans the
+   entire width, which is the signature of something derived from a keyed region rather than
+   placed by hand.
+
+   Removed here rather than from the manifest: the manifest is generated, and drawLiquidFalls
+   already bails on `!fam`, so one missing key is the whole fix. If stage 4 ever wants a fall it
+   needs an authored span, not the full width. */
+const FALL_FOR = {1:'nlf_water', 2:'nlf_lava', 7:'nlf_sludge'};   // nlf_, not nwf_: nwf_ is the WEATHER namespace
 function drawLiquidFalls(srcY){
   if(typeof XART==='undefined' || typeof BOFX==='undefined') return;
   const L=BOFX.liquids; if(!L || !L.drops) return;
