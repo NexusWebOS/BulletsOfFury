@@ -44,23 +44,46 @@ def serve(directory, port=0):
     return port, httpd.shutdown
 
 
+/* ⚠ THE FIRST VERSION OF THIS MEASURED THE WRONG THING, and the numbers looked authoritative.
+   It recorded each unit's y the first time drawEnemy touched it and called anything above 0 a
+   "pop-in". But drawEnemy is not called for a unit that is still off the top, so a perfectly
+   normal entry from y=-40 registers its first DRAW at y>0 and was reported as popping in. It
+   flagged s1boatgun (spawns at y=-40) and s1jetdelta_b (spawns at x=-28, y=96 — a deliberate SIDE
+   entry, which the sweep itself excludes for good reason) as faults. Neither is one.
+
+   Spawn position is what matters, so tag every unit the first frame it appears in the enemies
+   array — before the movers have touched it — rather than the first frame it happens to be drawn.
+   Tagging from the array also catches units that never go through spawnEnemy at all, like
+   spawnArsenalMini, which pushes directly. */
 INSTRUMENT = r"""
 () => {
   const cv = document.querySelector('#screen-area canvas') || document.querySelector('canvas');
   const g = cv.getContext('2d');
-  window.__seen = {};          // id -> {type, firstY, blits, frames, onscreen}
+  window.__seen = {};          // id -> {type, sx, sy, blits, onscreen, frames}
   window.__nid = 1;
   const origDrawEnemy = window.drawEnemy;
   const origDrawImage = g.drawImage;
+  const origLoop = window.loop;
   let counting = null;
   g.drawImage = function() { if (counting) counting.n++; return origDrawImage.apply(g, arguments); };
+
+  // tag at FIRST SIGHTING IN THE ARRAY — that is spawn position, before any mover runs
+  window.loop = function() {
+    try {
+      for (const e of enemies) {
+        if (e.__pid) continue;
+        e.__pid = window.__nid++;
+        window.__seen[e.__pid] = {type: e.type || e._amini || '?',
+                                  sx: Math.round(e.x), sy: Math.round(e.y),
+                                  blits: 0, onscreen: 0, frames: 0};
+      }
+    } catch (err) {}
+    return origLoop.apply(this, arguments);
+  };
+
   window.drawEnemy = function(e) {
-    if (!e.__pid) e.__pid = window.__nid++;
-    let rec = window.__seen[e.__pid];
-    if (!rec) {
-      rec = window.__seen[e.__pid] = {type: e.type || e._amini || '?', firstY: Math.round(e.y),
-                                      blits: 0, frames: 0, onscreen: 0};
-    }
+    const rec = e.__pid && window.__seen[e.__pid];
+    if (!rec) return origDrawEnemy.apply(this, arguments);
     const prev = counting; counting = {n: 0};
     try { return origDrawEnemy.apply(this, arguments); }
     finally {
@@ -117,27 +140,39 @@ def main():
         b.close()
     stop()
 
-    print('%-6s %-7s %-8s %-9s  %s' % ('stage', 'units', 'blind', 'popped-in', 'detail'))
-    print('-' * 88)
+    def tally(rs):
+        d = {}
+        for r in rs:
+            k = '%s@(%d,%d)' % (r['type'], r['sx'], r['sy'])
+            d[k] = d.get(k, 0) + 1
+        return ', '.join('%s x%d' % (k, v) for k, v in sorted(d.items()))
+
+    print('%-6s %-7s %-8s %-9s %-9s' % ('stage', 'spawned', 'invisible', 'vanished', 'pop-in'))
+    print('-' * 60)
+    rows = []
     for st in stages:
-        seen = out.get(st) or {}
-        recs = list(seen.values())
-        live = [r for r in recs if r['onscreen'] > 0]
-        blind = [r for r in live if r['blits'] == 0]
-        popped = [r for r in recs if r['firstY'] > 0]
-        bt = {}
-        for r in blind:
-            bt[r['type']] = bt.get(r['type'], 0) + 1
-        pt = {}
-        for r in popped:
-            pt[r['type']] = pt.get(r['type'], 0) + 1
-        detail = ''
-        if bt:
-            detail += 'INVISIBLE: ' + ', '.join('%s x%d' % (k, v) for k, v in sorted(bt.items()))
-        if pt:
-            detail += ('  |  ' if detail else '') + 'POP-IN: ' + \
-                      ', '.join('%s x%d' % (k, v) for k, v in sorted(pt.items()))
-        print('%-6d %-7d %-8d %-9d  %s' % (st, len(recs), len(blind), len(popped), detail or 'clean'))
+        recs = list((out.get(st) or {}).values())
+        onscreen = [r for r in recs if r['onscreen'] > 0]
+        # never drew a single image while alive and inside the playfield
+        blind = [r for r in onscreen if r['blits'] == 0]
+        # entered the array and never once reached the playfield — spawned and quietly removed
+        vanished = [r for r in recs if r['onscreen'] == 0]
+        # SPAWNED inside the playfield: not an entry at all, it simply appeared.
+        # A side entry (x off either edge) is legitimate and is NOT counted.
+        popped = [r for r in recs if 0 < r['sy'] < 512 and 0 <= r['sx'] <= 800]
+        rows.append((st, recs, blind, vanished, popped))
+        print('%-6d %-7d %-8d %-9d %-9d' % (st, len(recs), len(blind), len(vanished), len(popped)))
+
+    for st, recs, blind, vanished, popped in rows:
+        if not (blind or vanished or popped):
+            continue
+        print('\nstage %d' % st)
+        if blind:
+            print('  INVISIBLE (on screen, drew nothing): ' + tally(blind))
+        if vanished:
+            print('  VANISHED (spawned, never reached the playfield): ' + tally(vanished))
+        if popped:
+            print('  POP-IN (spawned INSIDE the playfield): ' + tally(popped))
 
     if errs:
         print('\npage errors (%d):' % len(errs))
