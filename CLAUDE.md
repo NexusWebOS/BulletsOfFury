@@ -578,12 +578,31 @@ head haul removes one of the five 20% limbs and one of Mike's authored beats ("h
 moment it can see you is the moment it comes alive"). **Ask: drop the head haul, or get a headless
 torso plate?**
 
-**Diagnosed, needs Mike: "when he flashes to his fused form, it is totally not what he was
-before".** Genesis draws the LOOSE sheet pieces at `S*0.85`; the fight draws the POSITION-LOCKED
-components at `MECH_SCALE=0.75`. Two different art sets at two different scales — so the flash
-necessarily swaps one machine for another. The structural fix is for the seated pose to be drawn
-from the same components the fight uses, which makes the two identical by construction; that is a
-real change to the genesis draw and wants his eyes on it first.
+**FIXED: the fused form was a scatter of oversized parts, and it was the FIGHT that was wrong.**
+Rendered at full health, the Colossus came out as two enormous detached cannons, a shrunken torso
+and one leg — most of the mech missing. Two causes, both the same mistake:
+
+- `mechDraw` preferred `<tag>_p_<piece>` — the LOOSE sheet art — whenever a part was intact, and
+  only fell back to the locked `<tag>_<comp>_<state>` once it took damage. The sheet pieces each
+  carry their own socket region so they cannot tile flush, which is why 0731f hung them with
+  `MECH_SEP` gaps and 0809l tried to fit each into its component box. Neither worked.
+- The aimed-cannon rotation frames are in the loose set's coordinate system — `BOFX.mechrot` gives
+  them a **538x538** canvas against the master's 384 — so at `S*0.85` one forearm drew ~257px
+  against a 288px whole mech, docked by its own anchor well off the body.
+
+The locked set needs none of that because the pack guarantees it, and I verified rather than
+trusting: eight cells, all 384x384, composited at (0,0) give an ink bbox of exactly 267x350 — the
+master's own size — and it draws as the complete machine (`docs/proofs/magmacolossus_0810m_fight_vs_reference.png`).
+Intact now takes the same path damage always took: full canvas, shared rect, no seat maths, no gap.
+The loose set stays as the fallback for any tag with no locked state, and genesis still uses it for
+pieces in FLIGHT, where loose art is correct.
+
+⚠ The trade: the cannon no longer visibly tracks its aim, because the rotation set is unusable
+alongside the locked components. Re-fitting that set into the 384 master canvas buys both back and
+is art work, not code. Mike's call whether it is worth it.
+
+⚠ Still not identical to the reference — the torso reads narrower and the limbs sit slightly wider,
+which is per-part idle motion (`mechPartMoves`), not placement. Worth a look next.
 
 ### One of the five standing failures was a stale assertion, not a bug
 

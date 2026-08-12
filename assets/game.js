@@ -27774,7 +27774,19 @@ function mechDraw(b){
       continue;
     }
     // AIMED CANNON: swap the static component for the rotation frame matching its aim
-    if((c==='left-cannon'||c==='right-cannon') && K.phase==='fight' && p.state!=='destroyed'){
+    /* ⚠ THE AIMED-CANNON ROTATION FRAMES ARE IN THE LOOSE SHEET'S COORDINATE SYSTEM, NOT THE
+       MASTER'S (drop 0810m). BOFX.mechrot gives them a canvas of 538x538 with their own pivot,
+       while S is derived from the 384 master — so drawn at S*0.85 a single forearm came out about
+       257px against a 288px WHOLE MECH, and docked by its own anchor it sat right off the body.
+       Those two vast detached cannons in Mike's screenshot are this branch.
+
+       Mixing the two coordinate systems is the same trap as the seated pieces above, so the rule
+       is the same: whenever the position-locked component exists, it wins. The cost is the aim
+       pose — the cannon no longer visibly tracks — and that is a deliberate trade of a gameplay
+       flourish for a boss that is the machine the player just watched being built. Re-fitting the
+       rotation set into the master canvas would buy both back; it is art work, not code. */
+    if((c==='left-cannon'||c==='right-cannon') && K.phase==='fight' && p.state!=='destroyed'
+       && !XART.rdy(K.tag+'_'+c+'_'+p.state)){
       const side=c.split('-')[0];
       const fr=_cannonFrame(K.tag, side, (p._aim||0)+(p._pa||0));
       if(fr){
@@ -27802,15 +27814,35 @@ function mechDraw(b){
 
        The gap also means the plates never have to hide — they are the hardpoints the chain runs
        between, so they are supposed to be visible. */
+    /* ⚠⚠ THE FIGHT DRAWS THE POSITION-LOCKED COMPONENTS NOW, NOT THE LOOSE SHEET PIECES
+       (drop 0810m). Mike: "your overlaying the graphics instead of underlaing to make them look
+       connected ... and then when he flashes to his fused form, it is totally not what he was
+       before at all."
+
+       This preferred `<tag>_p_<piece>` whenever a part was INTACT — the loose sheet art — and only
+       fell back to `<tag>_<comp>_<state>` once the part took damage. The sheet pieces each carry
+       their own full socket region, so they cannot tile flush; 0731f's answer was to HANG them
+       with MECH_SEP gaps, and 0809l then tried to fit each one inside its component box. Neither
+       worked. RENDERED, at full health, the Colossus came out as two oversized arms, a shrunken
+       torso and one leg floating in space with most of the mech missing.
+
+       The locked set needs none of that, because the pack guarantees it: composite all eight
+       `_intact` canvases at (0,0) and you get the assembled master. I verified it here rather than
+       trusting the claim — eight cells, all 384x384, composited to an ink bbox of exactly 267x350,
+       which is the master's own size, and it draws as the complete machine.
+
+       So intact takes the same path damage always took: full canvas, shared rect, no seat maths,
+       no gap. Which also settles the fused-form complaint for free — the fight form IS the
+       assembled master now, so nothing can look like a different machine than the one that was
+       just built. The loose set stays as the fallback for any tag whose locked state is missing,
+       and genesis still uses it for the pieces in flight, where loose art is correct. */
     const _pc=_mechPieceFor(c);
-    let k=null, im=null, anchored=false;
-    if(p.state==='intact' && _pc && XART.rdy(K.tag+'_p_'+_pc)){
-      k=K.tag+'_p_'+_pc; im=XART.get(k); anchored=true;
-    } else {
-      k=K.tag+'_'+c+'_'+p.state;
-      if(!XART.rdy(k)) continue;
+    let k=K.tag+'_'+c+'_'+p.state, im=null, anchored=false;
+    if(XART.rdy(k)){
       im=XART.get(k);
-    }
+    } else if(_pc && XART.rdy(K.tag+'_p_'+_pc)){
+      k=K.tag+'_p_'+_pc; im=XART.get(k); anchored=true;      // fallback: hung, per 0731f
+    } else continue;
     let ox=0, oy=0, al=1;
     if(mechPartMoves(c)){ ox=(p._ox||0)*S; oy=(p._oy||0)*S; }
 
