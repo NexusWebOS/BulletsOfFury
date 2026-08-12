@@ -4374,6 +4374,20 @@ const ENTRY_DUR = 1.05, ENTRY_SWEEP = 96;
    ============================================================ */
 function enemyEntrySweep(e, dt){
   if(!e || e._dr || e._boss || e._amini || e.dead) return;
+  /* ⚠ AND NOTHING THAT ALREADY HAS AN AUTHORED ENTRANCE (drop 0810f). A jet carrying a `route`
+     — straight / curveL / curveR / cornerLR / cornerRL — is flying a path someone drew. Laying a
+     decaying lateral arc on top of that is a second entrance fighting the first.
+
+     Caught by an existing assertion the moment the sweep was wired: "a straight jet never leans —
+     it is dead level south". It is not a stale assertion, it is exactly right. The bank is
+     derived from REAL lateral motion rather than the route name (deliberately, per the assertion
+     above it), so displacing x made a jet on the STRAIGHT route weave down the screen. The same
+     reasoning the sweep already applies to side entries — "already arrives on a heading" — covers
+     routes; they were simply not in the list.
+
+     Worth remembering next to the note in CLAUDE.md that something outside jetTick displaces the
+     jets. For one suite run, that something was me. */
+  if(e._route || e.route) return;
   if(e._esw===undefined){
     const W=(typeof worldWidth==='function')?worldWidth():VW;
     /* qualify ONCE, at first sight: spawned above the top, and horizontally on-screen */
