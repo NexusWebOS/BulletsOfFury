@@ -20182,7 +20182,26 @@ function drawPowerups(){
       let _xk=(typeof weaponIconKey==='function')?weaponIconKey(_w2,_l2)
                  :('micon_'+(({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[_w2]||'mg')+'_'+_l2);
       if(!(typeof XART!=='undefined' && XART.rdy(_xk))){
-        _xk=null; if(_w2===5)_xk='ice_icon_'+_l2; else if(_w2===3)_xk='laser_icon_'+_l2; else if(_w2===4)_xk='firewall_icon_'+_l2;
+        /* ⚠ THE FALLBACK WAS LYING ABOUT THE ELEMENT (drop 0810f). Mike: "ice orb still isnt the
+           fireball powerup icon on level 3."
+
+           weaponIconKey was already correct — it returns micon_fireorb_* on stage 3 and
+           micon_thermoshock_* for Freezer, both verified at runtime. This branch was the problem.
+           XART.rdy is false on its FIRST call, because that call is what starts the lazy load, so
+           this fallback runs at least once for EVERY pickup — and for slot 5 it substituted
+           'ice_icon_' unconditionally, with no orbIsFire() check. On stage 3 the crate therefore
+           drew an ICE ORB over a weapon that is a FIREBALL.
+
+           There is no fire_icon_ family to swap in — micon_fireorb_* IS the fireball art. So the
+           fix is not another substitution: it is to STOP substituting when the element would be
+           wrong. Leaving _xk null falls through to the generic pickup draw for the frame or two
+           before the real icon decodes, which is honest. A pickup may look plain for a moment; it
+           must never advertise the wrong weapon. */
+        const _fire=(typeof orbIsFire==='function' && orbIsFire());
+        _xk=null;
+        if(_w2===5){ if(!_fire) _xk='ice_icon_'+_l2; }
+        else if(_w2===3)_xk='laser_icon_'+_l2;
+        else if(_w2===4)_xk='firewall_icon_'+_l2;
       }
       if(_xk && typeof XART!=='undefined' && XART.rdy(_xk)){ const im=XART.get(_xk), s=36/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=6;

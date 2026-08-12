@@ -6892,8 +6892,18 @@ console.log("=== 164. Cole sonic boom + Lizzie heavy MG ===");
   ok(_lz.pre===false && _lz.docked===true, 'the MG mount flies in and CONNECTS rather than appearing docked');
   ok(_lz.s<1, 'and it scales down on the way in (final '+(+_lz.s).toFixed(2)+')');
   ok(_lz.slugs>0, 'docked, she fires heavy slugs ('+_lz.slugs+' alive)');
-  ok(vm.runInContext("LZ_SLUG_DMG >= 6 && LZ_SLUG_CD > 0.12", ctxv),
-     'the slug trades cadence for weight — mounted gun, not a faster pea-shooter');
+  /* ⚠ THE CADENCE FLOOR IS GONE, BY MIKE'S CALL (drop 0810f). This required LZ_SLUG_CD > 0.12 —
+     "trades cadence for weight" — and that is exactly what he overruled: "Lizzies machine gun
+     attachment is too slow, way too slow." At 0.16 against the primary's ~0.20 it was barely a
+     quarter faster, which is not a machine gun.
+
+     What the assertion was actually protecting is that the mount is a HEAVY gun rather than the
+     same gun firing quicker, and that lives in the DAMAGE, which is untouched at 7. So it tests
+     weight and now also tests the speed he asked for, instead of a floor he has rejected. */
+  ok(vm.runInContext("LZ_SLUG_DMG >= 6", ctxv),
+     'the slug still carries mounted-gun weight (dmg '+vm.runInContext("LZ_SLUG_DMG", ctxv)+' vs 2 for a base pellet)');
+  ok(vm.runInContext("LZ_SLUG_CD < 0.12", ctxv),
+     'and it is now decisively faster than the primary it replaces ('+vm.runInContext("LZ_SLUG_CD", ctxv)+'s vs ~0.20)');
 }
 
 // ===== 165. THE LEVEL-6 JET PACK ACTUALLY DRAWS (drop 0805k) =====
@@ -7326,7 +7336,8 @@ console.log("=== 172. lizzie heavy MG ===");
   ok(_dmg===7, 'the slug does 7 — one or two shots on every stage (got '+_dmg+')');
   var _worst=Math.ceil(14/_dmg);
   ok(_worst<=2, 'even stage-8 fodder at 14 hp dies in '+_worst+' shot(s)');
-  ok(vm.runInContext("LZ_SLUG_CD>0.12", ctxv), 'and it trades cadence for weight — a mounted gun, not a faster pea-shooter');
+  /* cadence floor removed — see the note at the other copy of this check (drop 0810f) */
+  ok(vm.runInContext("LZ_SLUG_CD<0.12 && LZ_SLUG_DMG>=6", ctxv), 'and it is a HEAVY gun that is also fast — weight in the damage, speed in the cadence Mike asked for');
 }
 
 // ===== 173. SONIC BOOM IS A CHARGE WEAPON (drop 0805v) =====
