@@ -459,13 +459,50 @@ comments now. A source assertion a docstring can defeat is not measuring anythin
 - Stage 9 has a `_levelCfg` case and a connector entry but **no `STAGES[]` entry**, so it is off the
   probe's default list and `beginStage(9)` has no `curStage`.
 
+## THE STAGE-2 EXIT IS BUILT TOO (drop 0810k) — `probe_exit.py`
+
+> "Level 2 boss cuts to the lava instead of a connecting section at the end of the level and
+> another one to lead us to the cinematic that we can scroll infinitely."
+
+**He was describing two cuts and both were real.** `outboundDrawLavaIce` drew the master through a
+modulo loop keyed off `o.scroll`, which starts at 0 — and `sY = H - (0 % H) - VH` is `H - VH`, the
+**bottom** of the plate. So the boss died at the top of the level and the volcano jumped straight
+back to the level's **first frame**; then `tflat_lava` wiped down over it. Invisible to every state
+check, because mapScroll, camX and the player were all exactly where they belonged. Only pixels can
+see a wrong picture drawn in the right place.
+
+`exitConnectorDraw(stage, dy)` is `entryConnectorDraw` run the other way: the join sits at screen
+`y = dy`, the level below it via `drawBG(0)` under `translate(0,+dy)`, the connector surface above.
+At `dy = 0` the outbound's first frame **IS** PLAY's last frame — **0 differing pixels of 299,842**,
+measured. Past `dy = VH` the level is gone and the flat tiles on alone, so it scrolls for as long as
+the cinematic wants and cannot run out. That is the "infinitely" half, as a property of the
+construction rather than a length someone has to guess.
+
+`levelScrollRange()` is new and was the missing piece: `drawLevelMaster` computed the level's length
+inline and nothing else could ask, which is *why* the routes looped from an arbitrary offset. The
+route now spends its travel on whatever scroll the level has LEFT first — the caldera genuinely
+passes behind — and only then on `exitDy`.
+
+⚠ **The ice-never-leads-the-lava ordering is structural now, not incidental.** It used to hold
+because the lava arrived as a timed wash that always finished first. With the lava joined on, how
+long it takes to own the screen depends on how much level was left when the boss died, and a boss
+that dies early leaves scroll behind it. The freeze clock therefore does not start until
+`exitDy >= VH`. Section 133b's assertion moved onto that quantity.
+
+**Scanlines were missing on the way OUT as well** — `drawOutbound` now draws them, so leaving a
+level no longer snaps them off just as arriving used to snap them on.
+
+**Still open here:** the 1→2 water and 3→4 sky-town routes still use the old loop-and-wash and have
+the same first-frame jump. They were not touched because Mike named level 2 and both are signed off,
+but `exitConnectorDraw` is generic and they should move onto it. `probe_exit.py` defaults to stage 2
+for exactly that reason — point it at 1 or 3 and it will fail honestly.
+
 **Next, in order:**
-1. **The stage-2 EXIT** — section 2 of the handoff, still untouched: a connector out of the boss and
-   an infinitely-scrolling section under the cinematic. `_loopDraw` in `drawLevelMaster` is the
-   infinite-scroll pattern; the standing rule is the player is HELD and the world moves.
-2. **The boss/miniboss HUD** and the two miniboss bugs (handoff sections 3 and 4).
-3. The remaining themed **outbound** joins — 5→6, 6→7, 7→8 (4→5 stays blocked on the stage-4 boss).
-   Build on the 2→3 / 3→4 pattern; section 133b is the template.
+1. **The boss/miniboss HUD** and the two miniboss bugs (handoff sections 3 and 4) — the last of the
+   0810i brief. `drawHUDCustom` returns early and only `drawHUDCustomImg` draws the boss gauge;
+   COUNT BLITS to prove reachability rather than reading the code.
+2. Move 1→2 and 3→4 onto `exitConnectorDraw`.
+3. The remaining themed outbound joins — 5→6, 6→7, 7→8 (4→5 stays blocked on the stage-4 boss).
 
 **Waiting on Mike:** nothing outstanding. The arsenal-mini questions are answered (they are
 enemies we have; caldera 2 / frostbite 3 / dambreaker 4) and the `o.px` camera fix was approved

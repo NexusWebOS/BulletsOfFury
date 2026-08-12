@@ -2743,8 +2743,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      still matters — a small texture repeats at its OWN size instead of being stretched across the
      view, which is the difference between water and a smear — so they now measure it where it
      actually happens, on the entry connector's surface. Retargeted, not retired. */
-  ok(vm.runInContext("entryConnectorSurface.toString().indexOf('im.naturalWidth||64')>0", ctxv), 'the entry connector tiles its flat at NATIVE size');
-  ok(vm.runInContext("entryConnectorSurface.toString().indexOf('x+=tw')>0", ctxv), 'and repeats it across the width rather than stretching');
+  ok(vm.runInContext("connectorSurface.toString().indexOf('im.naturalWidth||64')>0", ctxv), 'the entry connector tiles its flat at NATIVE size');
+  ok(vm.runInContext("connectorSurface.toString().indexOf('x+=tw')>0", ctxv), 'and repeats it across the width rather than stretching');
   vm.runInContext("boss=null; bossActive=false; eBullets.length=0; run.stage=1;", ctxv);
 
 
@@ -5298,9 +5298,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
       if(ph && seen[seen.length-1]!==ph) seen.push(ph);
       /* ice may never lead the lava: no frame with frost rising while the lava wash is still
          landing, or there is a frame of ice sitting over bare volcano */
-      var w=vm.runInContext("outbound?(outbound.wash||0):0", ctxv);
+      /* THE TEST OF "the ice never leads the lava" MOVED WITH THE MECHANISM (drop 0810k).
+         It read o.wash — the timed wipe that used to bring the lava down over the volcano. The
+         lava is a joined CONNECTOR now, so what "the lava owns the screen" means is that the level
+         has travelled fully below the bottom edge: exitDy >= VH. Same claim, live quantity. */
+      var dyv=vm.runInContext("outbound?(outbound.exitDy||0):0", ctxv);
+      var VHv=vm.runInContext("VH", ctxv);
       var fr=vm.runInContext("outbound?(outbound.frost||0):0", ctxv);
-      if(fr>0 && w<1) frostLed++;
+      if(fr>0 && dyv<VHv) frostLed++;
       done=vm.runInContext("outboundUpdate(1/60)", ctxv);
       frames++;
       if(vm.runInContext("player.x", ctxv)!==200 || vm.runInContext("player.y", ctxv)!==300) moved++;

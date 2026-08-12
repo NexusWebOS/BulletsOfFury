@@ -168,7 +168,7 @@ const ENTRY_CONN = {
 function entryConnCfg(st){ return ENTRY_CONN[st] || ENTRY_CONN[1]; }
 /* THE CONNECTOR SURFACE. Tiled across the world width with its grid anchored to joinY — see the
    rigidity note above. Returns true if it laid a real texture down, false if it could only fill. */
-function entryConnectorSurface(st, joinY, ww){
+function connectorSurface(st, joinY, ww){
   const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
   /* the LEVEL's own fill, never SEQ's. SEQ[6].fill is still #2a6ac0 — daylight blue — from before
      stage 6 became the night sky fortress, and drawing it is half of why Mike called that stage's
@@ -232,7 +232,7 @@ function entryConnectorDraw(st, dy){
   const ww=(typeof worldWidth==='function')?worldWidth():VW;
   ctx.save();
   if(ww>VW) ctx.translate(-camX, 0);
-  entryConnectorSurface(st, VH-d, ww);
+  connectorSurface(st, VH-d, ww);
   ctx.restore();
   const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
   if(!cfg || !cfg.master || typeof drawBG!=='function') return false;
@@ -246,6 +246,62 @@ function entryConnectorDraw(st, dy){
   ctx.translate(0, -d);
   /* dt is 0 DELIBERATELY: drawLevelMaster advances mapScroll by dt*40, and the connector must not
      consume any of the level before the player has control of it. */
+  try{ drawBG(0); }catch(e){}
+  ctx.restore();
+  return true;
+}
+/* How much scroll the current level has left in it. drawLevelMaster computes this inline and
+   nothing else could ask, which is why the outbound routes never knew where the level ENDED and
+   looped the master from an arbitrary offset instead. */
+function levelScrollRange(){
+  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
+  if(!cfg || !cfg.master) return 0;
+  if(cfg.scrollLen) return cfg.scrollLen;
+  if(typeof XART==='undefined' || !XART.rdy(cfg.master)) return 0;
+  const im=XART.get(cfg.master);
+  return Math.max(0, (im.naturalHeight||VH) - VH);
+}
+/* ============================================================
+   THE EXIT CONNECTOR (drop 0810k) — the same join, run the other way.
+
+   Mike, 0810i: "Level 2 boss cuts to the lava instead of a connecting section at the end of the
+   level and another one to lead us to the cinematic that we can scroll infinitely and make it look
+   and not break the game at all."
+
+   HE IS DESCRIBING TWO CUTS, AND BOTH WERE REAL. outboundDrawLavaIce drew the master through a
+   modulo loop keyed off o.scroll, which starts at 0 — and `sY = H - (0 % H) - VH` is H-VH, the
+   BOTTOM of the plate. So the instant the boss died the volcano jumped from the top of the level,
+   where the fight happens, back to the level's FIRST FRAME. Then tflat_lava wiped down over it.
+   A jump to the start of the level, followed by a wipe: "cuts to the lava", exactly.
+
+   MIRROR OF THE ENTRY. dy is how far PAST the level's end we have travelled:
+
+       the JOIN — the level's last row — sits at screen y = dy
+       below it   the level, drawn by drawBG under translate(0,+dy)
+       above it   the connector surface, tiled, grid anchored to the join
+
+   At dy = 0 the translate is a no-op, so the outbound's first frame IS PLAY's last frame for the
+   same structural reason the entry's last frame is PLAY's first. Past dy = VH the level is gone
+   and only the flat remains — which TILES, so it scrolls for as long as the cinematic needs and
+   can never run out. That is the "scroll infinitely" half of the ask, and it is a property of the
+   construction rather than a length someone has to guess right. ============================================================ */
+function exitConnectorDraw(st, dy){
+  if(typeof ctx==='undefined') return false;
+  const d=Math.max(0, Math.round(dy));
+  const ww=(typeof worldWidth==='function')?worldWidth():VW;
+  ctx.save();
+  if(ww>VW) ctx.translate(-camX, 0);
+  connectorSurface(st, d, ww);               // join at y = d; the flat is what lies ABOVE it
+  ctx.restore();
+  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
+  if(!cfg || !cfg.master || typeof drawBG!=='function') return false;
+  if(d>=VH) return false;                    // the level is entirely below the screen — skip the blit
+  const mk=(typeof stageMasterKey==='function')?stageMasterKey(cfg):cfg.master;
+  if(typeof XART==='undefined' || !XART.rdy(mk)) return false;
+  ctx.save();
+  if(ww>VW) ctx.translate(-camX, 0);
+  ctx.translate(0, d);
+  /* dt 0 again: the level is finished and must not advance under the cinematic. What moves is dy. */
   try{ drawBG(0); }catch(e){}
   ctx.restore();
   return true;
@@ -397,24 +453,45 @@ function outboundUpdate(dt){
   /* ---- the 2 -> 3 lava -> ice route owns its own timeline ---- */
   if(outboundIsLavaIceRoute(o)){
     if(o.phase==='climb'){ o.phase='past'; o.t=0; }        // never climbs: the player is held
+    /* WE FLY OUT OF THE LEVEL, WE DO NOT CUT AWAY FROM IT (drop 0810k). Travel is spent on
+       whatever scroll the level has LEFT first, so the caldera genuinely passes behind, and only
+       then on exitDy — the distance beyond the level's end, where the connector lives. The old
+       code advanced neither: it looped the master from o.scroll 0, which lands on the plate's
+       bottom, so the boss's death threw the volcano back to the level's first frame. */
+    const _adv=(amt)=>{
+      let d=amt;
+      const rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
+      if(typeof mapScroll!=='undefined' && mapScroll<rng){
+        const take=Math.min(d, rng-mapScroll); mapScroll+=take; d-=take;
+      }
+      o.exitDy=(o.exitDy||0)+d;
+    };
     if(o.phase==='past'){
-      o.scroll += (220 + 520*(o.t/L23_PAST))*dt;           // accelerating away from the caldera
-      o.wash = 0; o.frost = 0;
+      const v=(220 + 520*(o.t/L23_PAST))*dt;               // accelerating away from the caldera
+      o.scroll += v; _adv(v); o.frost = 0;
       if(o.t>=L23_PAST){ o.phase='lava'; o.t=0; }
     } else if(o.phase==='lava'){
-      o.scroll += 740*dt;
-      o.wash = clamp(o.t/L23_LAVA, 0, 1);                  // lava descends from the top
-      o.frost = 0;
-      if(o.t>=L23_LAVA){ o.phase='freeze'; o.t=0; o.wash=1; }
+      /* no wash any more: the lava is the CONNECTOR, already joined to the level's last frame and
+         already on screen. This beat is simply the crossing of it. */
+      o.scroll += 740*dt; _adv(740*dt); o.frost = 0;
+      if(o.t>=L23_LAVA){ o.phase='freeze'; o.t=0; }
     } else if(o.phase==='freeze'){
-      o.scroll += 740*dt; o.wash = 1;
-      o.frost = clamp(o.t/L23_FREEZE, 0, 1);               // and the ice descends over the lava
+      o.scroll += 740*dt; _adv(740*dt);
+      /* THE ICE MAY NOT LEAD THE LAVA, and that is now structural rather than a happy accident of
+         the timings. It used to hold because the lava arrived as a timed wash that always finished
+         first; with the lava as a joined connector, how long it takes to own the screen depends on
+         how much LEVEL was left when the boss died — which is not fixed, because a boss that dies
+         early leaves scroll behind it. So the freeze clock does not start until the connector has
+         taken the screen (exitDy >= VH, the level fully below the bottom edge). Suite section 133b
+         asserts the ordering; this is what makes it true in every case rather than the common one. */
+      if((o.exitDy||0) < VH){ o.t = 0; o.frost = 0; }
+      else o.frost = clamp(o.t/L23_FREEZE, 0, 1);          // the ice descends over the lava
       if(o.t>=L23_FREEZE){ o.phase='cruise'; o.t=0; o.frost=1; }
     } else if(o.phase==='cruise'){
-      o.scroll += 740*dt; o.wash = 1; o.frost = 1;
+      o.scroll += 740*dt; _adv(740*dt); o.frost = 1;
       if(o.t>=L23_CRUISE){ o.phase='fade'; o.t=0; }
     } else if(o.phase==='fade'){
-      o.scroll += 740*dt; o.wash = 1; o.frost = 1;
+      o.scroll += 740*dt; _adv(740*dt); o.frost = 1;
       o.fade = clamp(o.t/L23_FADE, 0, 1);
       if(o.t>=L23_FADE) return outboundFinish();
     }
@@ -474,6 +551,10 @@ function drawOutbound(dt){
   }
   const to=outboundUpdate(dt);
   outboundDraw();
+  /* scanlines, for the same reason the entry cinematics now draw them (0810j): drawWorld ends with
+     drawScanlines() and this did not, so leaving a level snapped them OFF just as arriving snapped
+     them ON. Both ends of every stage were changing screen at the cut. */
+  if(typeof drawScanlines==='function') drawScanlines();
   if(to!=null){
     if(typeof beginStage==='function') beginStage(to);   // -> stage card -> launch -> 3-2-1-GO
   }
@@ -548,38 +629,20 @@ function outboundDrawLavaIce(o){
      there only because run.stage is still 1 during that outbound. The same holds here (run.stage
      is still 2 until beginStage(3) runs at handoff), but the fallback names stage 2's master
      explicitly rather than resting on an argument that goes nowhere. */
-  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
-  const mk=(cfg&&cfg.master)||'nst2_master';
-  const wash=o.wash||0, frost=o.frost||0;
-  const dw=(typeof worldWidth==='function')?worldWidth():VW;
-  // ---- the volcano they just cleared, still scrolling, the caldera passing behind ----
-  if(XART.rdy(mk)){
-    const im=XART.get(mk), H=im.naturalHeight, W=im.naturalWidth;
-    let sY=H - ((o.scroll % H)+H)%H - VH;
-    sY=((sY % H)+H)%H;
-    const h1=Math.min(VH, H-sY);
-    ctx.drawImage(im, 0, sY, W, h1, 0, 0, dw, h1);
-    if(h1<VH) ctx.drawImage(im, 0, 0, W, VH-h1, 0, h1, dw, VH-h1);
-  }
-  // ---- the lava flat, washing down from the top and taking the ground over ----
-  if(wash>0 && XART.rdy('tflat_lava')){
-    const t=XART.get('tflat_lava'), tw=t.naturalWidth, th=t.naturalHeight;
-    const edge=Math.round(VH*wash);
-    ctx.save();
-    ctx.beginPath(); ctx.rect(0,0,VW,edge); ctx.clip();
-    const off=(o.scroll*0.9)%th;
-    for(let y=-off; y<edge+th; y+=th)
-      for(let x=0; x<VW+tw; x+=tw) ctx.drawImage(t, x, y, tw, th);
-    ctx.restore();
-    // its leading edge reads HOT — a molten rim. The water route's pale foam would be wrong here.
-    if(wash<1){
-      const g=ctx.createLinearGradient(0,edge-18,0,edge+6);
-      g.addColorStop(0,'rgba(255,150,40,0)');
-      g.addColorStop(0.6,'rgba(255,190,90,0.60)');
-      g.addColorStop(1,'rgba(255,120,30,0)');
-      ctx.fillStyle=g; ctx.fillRect(0,edge-18,VW,24);
-    }
-  }
+  const frost=o.frost||0;
+  /* ---- THE LEVEL, FLOWN OUT OF, WITH ITS LAVA CONNECTOR JOINED ON ABOVE (drop 0810k) ----
+
+     What was here: the master drawn through a modulo loop keyed off o.scroll, plus tflat_lava
+     wiping down from the top. o.scroll starts at 0, and `sY = H - (0 % H) - VH` is H - VH — the
+     BOTTOM of the plate. So the boss died at the top of the level and the volcano immediately
+     jumped back to the level's FIRST FRAME, and then a flat wiped over it. Both halves of "Level 2
+     boss cuts to the lava instead of a connecting section" were in those twenty lines.
+
+     exitConnectorDraw joins instead: at exitDy 0 the frame IS play's last frame, the lava is butted
+     onto the level's end rather than washed over its middle, and past VH the flat tiles on its own
+     for as long as the cinematic wants. The molten leading rim went with the wash — there is no
+     advancing edge to light any more, because nothing is arriving over anything. */
+  exitConnectorDraw(o.from||2, o.exitDy||0);
   // ---- the ice flat, washing down OVER the lava ----
   if(frost>0 && XART.rdy('tflat_ice')){
     const t=XART.get('tflat_ice'), tw=t.naturalWidth, th=t.naturalHeight;

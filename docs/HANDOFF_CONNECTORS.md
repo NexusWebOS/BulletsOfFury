@@ -1,7 +1,10 @@
 # Handoff — the seamless entry connectors, boss HUD, and the 0810h bug list
 
-> **STATUS 0810j — SECTION 1 (THE ENTRY CONNECTOR) IS DONE, all nine stages.** See CLAUDE.md.
-> Sections 2 (stage-2 exit), 3 (boss/miniboss HUD) and 4 (the two miniboss bugs) are untouched.
+> **STATUS 0810k — SECTIONS 1 AND 2 ARE DONE.** Entry connectors on all nine stages, and the
+> stage-2 exit: `exitConnectorDraw` joins the lava onto the level's last frame and tiles on
+> infinitely under the cinematic. 0 differing pixels of 299,842 at both joins, measured by
+> `probe_arrival.py` and `probe_exit.py`. See CLAUDE.md.
+> Sections 3 (boss/miniboss HUD) and 4 (the two miniboss bugs) are **untouched** and are next.
 >
 > ⚠ **The "0 differing pixels out of 393,600" quoted below was never a real measurement.**
 > `probe_arrival.py` read the canvas on the `play` branch without drawing a play frame first, so it
