@@ -148,7 +148,7 @@ loads on entry.
 
 ## Current state (2026-08-11)
 
-Suite: **2,441 assertions / 218 sections / 5 failures** — all five pre-existing at HEAD: the boss
+Suite: **2,442 assertions / 218 sections / 5 failures** — all five pre-existing at HEAD: the boss
 limb pool, the preload count, the two `_superseded` ones and the naval flash families.
 Entry joins: **`probe_arrival.py` green on all eight stages** (see the connector section below —
 and read the warning there before trusting any older arrival number).
@@ -497,12 +497,50 @@ the same first-frame jump. They were not touched because Mike named level 2 and 
 but `exitConnectorDraw` is generic and they should move onto it. `probe_exit.py` defaults to stage 2
 for exactly that reason — point it at 1 or 3 and it will fail honestly.
 
+## THE MINIBOSS BUGS (drop 0810l) — one fixed, one NOT REPRODUCIBLE
+
+**Miniboss 1's white flash is fixed, and the cause was an unreachable branch.** The hit always
+registered — `hitSubBoss` took the hp and set `b.flash` — and nothing ever drew it, because the
+quadlaser's body does not read `b.flash` at all. Its pulse is driven by `_qlArmor`, and `_qlArmor`
+was only ever set on the BLOCKED path, which `return`s before the hull can open. So the draw's
+`_sealed ? blue : amber` had an amber half that **could never run**: the hull could only pulse while
+still sealed, the exact opposite of the point. One assignment makes it reachable, and the colour is
+white per Mike (0807b's own rule was "do not let the hull flash white until you break all the
+turrets" — by then they are broken). Its assertion moved with it.
+
+**A `//` comment had swallowed a statement.** `b.hp-=dmg; b.flash=0.18;   // long enough that a
+single hit registers visually if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;` — the
+comment ran on past "visually" and ate the line. **No sub-boss damage has ever reached the stats
+screen**, on any stage. Nothing threw; the number was just quietly wrong.
+
+### ⚠ "The miniboss on level 2, broken" DID NOT REPRODUCE — and the probe that said it had lied
+
+`probe_boss.py` first reported **0 blits** for BOTH minibosses, with the art polled ready, the body
+key resolving, the unit alive and on screen, and `subBossActive` true — every branch the draw tests
+was correct and the count still said nothing was drawn. **A screenshot showed both units drawn in
+full, health bars and all** (`docs/proofs/miniboss_0810l_both.png`). Wrapping
+`CanvasRenderingContext2D.prototype.drawImage` and then calling `drawSubBoss()` by hand does not
+count what the real frame draws.
+
+So the verdict in that probe is now a **frame diff** — render with the unit, render without it, see
+whether the picture changed. Stage 1 moves 401,466 px, stage 2 moves 174,574 px. Both draw.
+
+**This means level 2's miniboss is not invisible and not missing, and I could not find what Mike is
+seeing.** It spawns, enters, reaches the playfield and draws its damage states. Ask him what
+"broken" looks like — does it not take damage, not die, not block, arrive at the wrong point, or
+something else. Do not "fix" it blind.
+
+**Still not done: the boss/miniboss HUD replacement** (handoff section 3, "The hud and fills, remove
+and make your own please"). The `nbb_`/`nmb_` art fills are still what draws, through
+`drawHealthBarV2`. ⚠ `drawHUDCustom` returns early and only `drawHUDCustomImg` reaches the boss
+gauge — whatever replaces it must be reachable from the path that actually RUNS, and given the
+above, prove that with a frame diff rather than a blit count.
+
 **Next, in order:**
-1. **The boss/miniboss HUD** and the two miniboss bugs (handoff sections 3 and 4) — the last of the
-   0810i brief. `drawHUDCustom` returns early and only `drawHUDCustomImg` draws the boss gauge;
-   COUNT BLITS to prove reachability rather than reading the code.
-2. Move 1→2 and 3→4 onto `exitConnectorDraw`.
-3. The remaining themed outbound joins — 5→6, 6→7, 7→8 (4→5 stays blocked on the stage-4 boss).
+1. **The boss/miniboss HUD** — the last unbuilt piece of the 0810i brief.
+2. Get a repro from Mike for level 2's miniboss.
+3. Move 1→2 and 3→4 onto `exitConnectorDraw`.
+4. The remaining themed outbound joins — 5→6, 6→7, 7→8 (4→5 stays blocked on the stage-4 boss).
 
 **Waiting on Mike:** nothing outstanding. The arsenal-mini questions are answered (they are
 enemies we have; caldera 2 / frostbite 3 / dambreaker 4) and the `o.px` camera fix was approved

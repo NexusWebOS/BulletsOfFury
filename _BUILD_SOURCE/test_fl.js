@@ -8106,8 +8106,17 @@ console.log("=== 190. quadlaser turrets + shield ===");
      BURST FAMILY (nxp_white), not from b.flash, which is why it survived the 0801kf fix. */
   ok(_g190.indexOf("fxBurst(b.x+rnd(-30,30), b.y+rnd(-20,20), 'nxp_white', 0.35)")<0,
      'the white burst on a blocked shot is gone');
-  ok(_g190.indexOf("_sealed ? '#7fd1ff' : '#ffd27a'")>0,
-     'the hull pulses SHIELD BLUE while a gun lives and amber once they are all dead');
+  /* AMBER -> WHITE (drop 0810l). 0807b picked amber for the open hull and this pinned it, but the
+     amber branch was UNREACHABLE: _qlArmor was only ever set on the blocked path, which returns
+     before the hull can be open, so the pulse could only ever fire while the hull was still
+     sealed. Mike, 0810i: "Mini boss 1 doesnt flash white when you attack his body after shield is
+     down." 0807b's own rule was "do not let the hull flash white until you break all the turrets"
+     — they are broken by then, so white is what it always meant. The claim this assertion exists
+     to protect is the STATE CHANGE at the seal boundary, and that is what it still checks. */
+  ok(_g190.indexOf("_sealed ? '#7fd1ff' : '#ffffff'")>0,
+     'the hull pulses SHIELD BLUE while a gun lives and WHITE once they are all dead');
+  ok(_g190.indexOf('if(b._ql && b._qlHullOpen) b._qlArmor = 0.30;')>0,
+     'and an open-hull hit actually drives that pulse — the amber branch used to be unreachable');
   ok(_g190.indexOf('function _qlBlockSfx')>0 && _g190.indexOf('blocked(){ tone(2350')>0,
      'a blocked shot has its own pitched sound, built from hit() rather than a new asset');
 

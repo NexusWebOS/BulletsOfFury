@@ -8080,8 +8080,14 @@ function drawSubBoss(){
            the hull is SEALED, so the pulse is shield blue and reads as a deflection. The moment
            the last gun dies the hull is live and the pulse goes amber — the colour change IS
            the signal that it can now be hurt, with no HUD text needed. */
+        /* ⚠ THE AMBER BRANCH HAD NEVER RUN (drop 0810l). _qlArmor was set only on the blocked
+           path, which returns before the hull can ever be open — so "shield blue while the guns
+           live, amber once they do not" only had one reachable half. It is WHITE now, not amber:
+           0807b's rule was "do not let the hull flash white until you break all the turrets", and
+           at this point they are broken. White is also what the standing rule gives every other
+           enemy on a hit, so the miniboss stops being the exception. */
         const _sealed = !b._qlHullOpen && (b._qlCan||[]).some(function(c){ return !c.dead; });
-        const _t=xartTint(bodyK, _sealed ? '#7fd1ff' : '#ffd27a', 0.55);
+        const _t=xartTint(bodyK, _sealed ? '#7fd1ff' : '#ffffff', 0.55);
         if(_t){
           ctx.save();
           ctx.globalAlpha = Math.min(1, (b._qlArmor||0)/0.30) * 0.9;
@@ -8487,7 +8493,24 @@ function hitSubBoss(dmg, hx, hy){
     }
     b._qlHullOpen=true;
   }
-  b.hp-=dmg; b.flash=0.18;   // long enough that a single hit registers visually if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
+  b.hp-=dmg; b.flash=0.18;   // long enough that a single hit registers visually
+  /* ⚠ THIS LINE WAS INSIDE THE COMMENT ABOVE (drop 0810l). The `//` ran on past "visually" and
+     swallowed it whole, so no sub-boss damage has EVER reached the stats screen — the miniboss
+     fight contributed 0 to dmgDealt on every stage. Nothing failed, nothing threw; the number was
+     just quietly wrong. Same family as the assertions that pass while measuring the wrong thing. */
+  if(typeof stageStats!=='undefined') stageStats.dmgDealt+=dmg;
+  /* AND THE HULL FLASHES NOW THAT IT CAN BE HURT (drop 0810l). Mike, 0810i: "Mini boss 1 doesnt
+     flash white when you attack his body after shield is down."
+
+     It registered the hit — hp came off and b.flash was set right here — and then nothing drew it.
+     The quadlaser's body does not read b.flash at all; its pulse is driven by _qlArmor, and
+     _qlArmor was only ever set on the BLOCKED path a dozen lines up, which returns early. So the
+     draw's `_sealed ? blue : amber` had an amber branch that could never run: the hull could only
+     pulse while it was still sealed, which is the exact opposite of what it is for.
+
+     One assignment makes the existing pulse reachable. The colour is Mike's — 0807b said "do not
+     let the hull flash white until you break all the turrets", and the turrets are broken. */
+  if(b._ql && b._qlHullOpen) b._qlArmor = 0.30;
   if(b.hp<=0){ b.dead=true; b.dying=0; Audio.SFX.expBig(); shake=Math.max(shake,10); }
 }
 
