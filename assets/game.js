@@ -2092,7 +2092,32 @@ function _levelCfg(){
        - the level stopped dead a fifth of the way in, which is exactly the "stopped
        scrolling, couldn't see or attack" Mike hit. The sky TILES, so its height is
        not the stage's length; scrollLen states the length explicitly. */
-    case 6: return {master:'nsky6_sky', liquid:null,           fill:'#6cbafd', tile:1.0, wide:true, scrollLen:7324};
+    /* ============================================================
+       STAGE 6 IS THE NIGHT CLOUD SKY FORTRESS (drop 0810h). Mike: "no we're doing the night cloud
+       sky, but in game its loading the bright sky that doesnt even scroll. so thats why I got
+       confused."
+
+       BOTH HALVES OF THAT ARE ONE CONFIG LINE, and they are worth writing down because "it does
+       not scroll" was literally true and the cause was not the scroller.
+
+         nsky6_sky resolves to an 800x2400 cell, so rangeSrc is 2400-512 = 1888 source pixels.
+         scrollLen was 7324. drawLevelMaster consumes the master as
+         srcY = rangeSrc - (mapScroll/range)*rangeSrc — so 1888px of sky were spread across 7324
+         of level progress, about a QUARTER of the rate every other stage runs at. It did scroll.
+         It crawled, imperceptibly, which reads as frozen.
+
+         And fill was #6cbafd — daylight blue — which is the "bright sky" showing through and
+         behind a daytime plate.
+
+       The RC2 rebuild is 800x5120, so rangeSrc is 4608 and scrollLen goes away entirely: the
+       master's own height defines the length, 1:1, exactly like every other stage. fill is
+       sampled from the plate's own dark quartile so what shows through the punched-alpha holes
+       is night sky rather than daylight.
+
+       ⚠ nsky6_sky and the 51 quarantined files in _superseded/stage6_bg are untouched. Mike's
+       "delete all of stage 6's backgrounds ... this is the only one we'll need" stands as the
+       reason THOSE are gone; this replaces the one that survived, at his word. */
+    case 6: return {master:'skyfort800_rc2_master', liquid:null, fill:'#01031c', tile:1.0, wide:true};
     // 7 NOT ANOTHER SEWER LEVEL — dedicated sewer kit (CF_LevelPack-Lvl7): 800x3616 gameplay
     // scroll + 800x1000 boss arena, with the 256px sludge surface animating through the
     // master's keyed channels. WIDE level (800px world, camera scrolls).
