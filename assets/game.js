@@ -30244,6 +30244,34 @@ function _drawStageSelectInner(dt){
   if(drawStageSelect._lockFx>0){ drawStageSelect._lockFx-=dt; }
   // ===== APPLY THE MAP CAMERA (zoom for boot reveal + unlock cinematic) =====
   const _cine=sselUnlockCine;
+  /* ⚠ THE SCREEN'S SUBJECT, IN ONE PLACE (drop 0810o). Mike: "the campaign map flashes on the wrong
+     area for level 6."
+
+     Measured on a real canvas — render with the region overlay, stub it out, re-render at the SAME
+     pinned timestamp, and bbox what changed; that bbox IS the flash. Every unlock 2..8 outlined
+     region N-1.
+
+     Clearing a stage calls openStageSelect(N, {unlock:N}), which DELIBERATELY parks the cursor one
+     behind so the new flag stays gray until the cine's ding unfurls it (sselCursor=unlock-1). The
+     camera and the "LEVEL N UNLOCKED" banner correctly read the CINE; the region outline and the
+     stage panel/label read the parked CURSOR. So during "LEVEL 6 UNLOCKED" the camera flew to the
+     storm plant while the outline flashed the central citadel and the panel read "STAGE 5".
+
+     Same family as the TRANS table in CLAUDE.md: the data was never wrong, it was READ with the
+     wrong stage. Named once here so the four consumers cannot drift apart again. The flag
+     highlight at ~30297 keeps reading sselCursor on purpose — the cursor really is still parked,
+     and the new flag must stay gray until the unfurl, which is the whole point of the cinematic. */
+  const _selStage=(_cine && _cine.stage) ? _cine.stage : sselCursor;
+  /* ⚠ APPLIED BUT NOT YET CONFIRMED ON PIXELS (drop 0810o). The diagnosis above is measured and
+     independently verified; this change follows from it and reads correctly. But re-running
+     probe_unlock.py after the edit STILL measured the old region for the unlock cine, and I ran
+     out of room to find out why — the probe diffs the overlay in and out, so what it reports is
+     real, and only ONE call site produces that overlay (`cmapRegionForStage`, just below). Either
+     `_cine` is falsy at the moment this line runs while the cinematic is live, or the flash is
+     reaching the canvas by a route I have not found.
+     DO NOT mark this bug closed on the strength of the code reading right. Re-run
+     scratchpad/probe_unlock.py, and if it still reports N-1, log `_selStage` and `sselUnlockCine`
+     from inside this function on the frame the flash is drawn. */
   if(_cine && _cine.z!=null && _cine.z>1){ const p9=SSEL_POS[_cine.stage]||[320,240];
     drawStageSelect._cam.z=_cine.z; drawStageSelect._cam.ax=MX+p9[0]*S; drawStageSelect._cam.ay=MY+p9[1]*S; }
   const CAMZ=drawStageSelect._cam.z, CAX=drawStageSelect._cam.ax, CAY=drawStageSelect._cam.ay;
@@ -30270,7 +30298,7 @@ function _drawStageSelectInner(dt){
      at the map's own rect so the ENTIRE outline shows: these overlays are position-locked to the
      master, so no crop and no offset are needed, and none of the boundary can be cut off. */
   if(_newMap && typeof cmapRegionForStage==='function'){
-    const _rid=cmapRegionForStage(sselCursor);
+    const _rid=cmapRegionForStage(_selStage);   // the SUBJECT, not the parked cursor — see above
     if(_rid){
       const _fi=Math.floor((performance.now()/125))%4;
       const _sk='ncm_sel_'+_rid+'_'+_fi;
@@ -30472,7 +30500,7 @@ function _drawStageSelectInner(dt){
   const BT=drawStageSelect._bannT;
   const _backOut=(x)=>{ const c1=1.70158,c3=c1+1; return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2); };
   const bScale=0.45+_backOut(clamp(BT/0.28,0,1))*0.55;    // 0.45 -> 1.0 with a little overshoot
-  const gp='nss_panel_'+sselCursor, gl='nss_label_'+sselCursor;
+  const gp='nss_panel_'+_selStage, gl='nss_label_'+_selStage;   // ditto: the banner read STAGE 5 under "LEVEL 6 UNLOCKED"
   if(sselBoot===0 && rdy(gp)){
     const im=XART.get(gp), pw=456*bScale, ph=pw*(im.naturalHeight/im.naturalWidth);
     ctx.drawImage(im,(VW-pw)/2, VH-ph-10-(1-bScale)*20, pw, ph);
