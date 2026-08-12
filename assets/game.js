@@ -21953,16 +21953,47 @@ function l6HighDive(type, x, opts){
   if(e){ e._pScale=0.22; e._pGrow=true; e._thr='nthr_heat'; }
   return e;
 }
+/* ⚠ THE ENTRY HELPERS HAVE TO TAKE THE PATTERN BACK AFTER THE SPAWN (drop 0810h).
+
+   Mike: "why enemies disappear on levels 5 and forward".
+
+   Measured on stage 6: a talon spawned by l6FromBehind sat at y=572 with vy=-2.81 for 240 frames
+   and NEVER MOVED. It requested pattern:'straight'; spawnEnemy handed it back carrying
+   pattern:'elite8', because the switch(type) inside spawnEnemy owns the object and overwrites
+   what the caller asked for — the trap CLAUDE.md opens with, "find the branch that OWNS the
+   object".
+
+   elite8Tick then drives the unit itself: it manages its own y, and it does
+   `e.x = clamp(e.x, 24, W-24)`. So BOTH level-6 entries were broken, in two different ways that
+   look like two different bugs:
+
+     l6FromBehind   y pinned by the tick, so the ambush never rises into the screen. It sits
+                    below the bottom edge for the rest of the level. That is the "disappear".
+     l6Crosser      x clamped INTO the field, so instead of flying in from off-screen it appears
+                    at x=24 or x=W-24 already inside. That is the "out of thin air" — the probe
+                    caught fang at x=771 and talon at x=40, which are exactly that clamp.
+
+   Forcing the pattern back AFTER the spawn is the fix, and it is the idiom this file already
+   uses: l6Crosser was ALREADY correcting x post-spawn for the same reason. _fromBehind and
+   _crosser are still honoured by l6PatternTick, which runs off its own flag, not the pattern. */
+function l6ForceOwnMovement(e){
+  if(!e) return e;
+  e.pattern='straight';        // take it back from the type's own tick
+  e._el8=null;                 // and stop elite8Tick claiming it if the type is a level-8 elite
+  return e;
+}
 function l6FromBehind(type, x, opts){
   const e=spawnEnemy(type, x, VH+60, Object.assign({pattern:'straight'}, opts||{}));
-  if(e){ e.vy=-(2.6+Math.random()*1.2);      // charging UP at the player from behind
+  if(e){ l6ForceOwnMovement(e);
+         e.vy=-(2.6+Math.random()*1.2);      // charging UP at the player from behind
          e._pScale=1.15; e._thr='nthr_orange'; e._fromBehind=true; }
   return e;
 }
 function l6Crosser(type, dir, y, opts){
   const fromLeft = dir>0;
   const e=spawnEnemy(type, fromLeft?0:VW, y, Object.assign({pattern:'straight'}, opts||{}));
-  if(e){ e.x = fromLeft ? -50 : worldWidth()+50;    // spawnEnemy clamps x into the field — place truly offscreen
+  if(e){ l6ForceOwnMovement(e);                     // or the type's own tick re-clamps x every frame
+         e.x = fromLeft ? -50 : worldWidth()+50;    // spawnEnemy clamps x into the field — place truly offscreen
          e.vx=(fromLeft?1:-1)*(5.2+Math.random()*1.6); e.vy=0;
          e._crosser=true; e._thr='nthr_cyan'; e._roll=0; e._rollSpd=rnd(0.5,0.9); }
   return e;
