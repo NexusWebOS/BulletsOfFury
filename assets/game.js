@@ -34021,8 +34021,15 @@ function drawGameOver(dt){
     const gc=arcGameOver(run.stage);
     if(gc) arcDraw(gc, VW/2, VH/2+66, 11, clamp((stateT-0.6)/1.4,0,1), '#c8d2e2');
   }
+  /* ⚠ THIS SAT TWO PIXELS FROM THE AUTHORED LINE (drop 0810o). arcDraw puts the banded game-over
+     text at VH/2+66 and this prompt was at VH/2+64, so the two printed THROUGH each other and the
+     result read as garbage — on screen it came out as "THE SEED CONTINUE", which is neither string.
+     Found by screenshotting the state rather than reading it; two overlapping fillTexts look
+     completely fine in source. Moved clear of the authored block, which needs the room because
+     arcGameOver bands its line by how far the player got and the longest band is two rows. */
   if(stateT>1.4){ ctx.globalAlpha=0.5+0.5*Math.sin(stateT*4); ctx.fillStyle='#cfd6e0';
-    ctx.fillText('ENTER = TITLE',VW/2,VH/2+64); ctx.globalAlpha=1; }
+    ctx.font='10px "BOFmil", monospace';
+    ctx.fillText('ENTER = TITLE',VW/2,VH/2+104); ctx.globalAlpha=1; }
   if(stateT>1.2&&(Input.tap('enter')||Input.mouse.down)){ setState(GS.TITLE); menuIndex=0; Audio.startMusic('title'); }
 }
 
