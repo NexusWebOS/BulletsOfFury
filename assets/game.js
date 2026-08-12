@@ -17944,9 +17944,36 @@ function propBlast(e){
   if(!e || e._blown) return;
   const B=PROP_BLAST[e.type]; if(!B) return;
   e._blown=true;                                  // latch FIRST - see the note above
-  explode(e.x, e.y, Math.max(14, B.r*0.42), 'red', 'fireball');
-  shake=Math.max(shake, B.shake);
+  /* ============================================================
+     IT HAS TO EXPLODE HUGE, AND SHOW ITS REACH (drop 0810h). Mike: "when you blow them up, they
+     EXPLODE huge and do some of our explosive patterns that causes splash damage."
+
+     What this drew was ONE explode() at B.r*0.42 — 26px for a barrel whose blast actually reaches
+     62. So the splash was already there and doing its job; the picture was a third the size of
+     the thing that hurts you, which makes the radius unlearnable. A player cannot park away from
+     a blast they have never seen the size of.
+
+     The damage maths below is untouched — it is tuned, and it is not what he asked about. Only
+     the presentation changes, and it now covers the standing FX rule in full: shock ring, debris,
+     white flash, smoke.
+
+       fxBurst at 2x the radius   rings, chunks and sparks scaled off the real blast
+       a CORE fireball at ~r       the body of it, matched to what the damage reaches
+       three OUTER fireballs       staggered around the rim so it reads as a detonation
+                                   spreading rather than one ball, and sells the reach
+
+     Each explode() animates from its own position, the same reason the chain below reads as a run
+     of blasts rather than a single pop. */
+  const _R=B.r;
+  if(typeof fxBurst==='function') fxBurst(e.x, e.y, _R*2.0, {color:'#ffb347', rings:3});
+  explode(e.x, e.y, Math.max(22, _R*0.95), 'red', 'fireball');
+  for(let i=0;i<3;i++){
+    const a=Math.random()*TAU, d=_R*(0.45+Math.random()*0.45);
+    explode(e.x+Math.cos(a)*d, e.y+Math.sin(a)*d, Math.max(16, _R*0.55), 'red', 'fireball');
+  }
+  shake=Math.max(shake, B.shake*1.6);             // a barrel going up should be felt, not noticed
   if(Audio.SFX && Audio.SFX.boom) Audio.SFX.boom();
+  if(Audio.SFX && Audio.SFX.expBig) Audio.SFX.expBig();
   const r2=B.r*B.r;
   const chain=[];
   for(const o of enemies){
