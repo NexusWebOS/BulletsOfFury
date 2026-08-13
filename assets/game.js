@@ -21183,11 +21183,17 @@ function campPauseDraw(dt){
       else if(act==='options'){ campPauseClose(); menuIndex=0; setState(GS.OPTIONS); }
       else { campPauseClose(); campaignEnd(); menuIndex=0; setState(GS.TITLE); }
     } else if(campPause.mode==='save'){
-      const ok=campWriteSlot(campPause.sel);
+      /* ⚠ THE CONFIRMATION ALWAYS SAID "SLOT 1" (drop 0810p). campPause.sel was reset to 0 on the
+         line ABOVE the message, and the message reads campPause.sel+1 — so saving to slot 2 or 3
+         wrote the right slot and then told the player it had written slot 1. The save itself was
+         always correct; only the receipt lied, which is the worst way for a save to be wrong.
+         The chosen slot is captured before anything resets it. */
+      const _slot=campPause.sel;
+      const ok=campWriteSlot(_slot);
       if(typeof campSession!=='undefined') campSession=campSnapshot();
       if(Audio.SFX&&Audio.SFX.select) Audio.SFX.select();
       campPause.mode='root'; campPause.sel=0;
-      campPauseSay(ok?('SAVED TO SLOT '+(campPause.sel+1)):'SAVE FAILED - STORAGE BLOCKED');
+      campPauseSay(ok?('SAVED TO SLOT '+(_slot+1)):'SAVE FAILED - STORAGE BLOCKED');
     } else {
       const i=campPause.sel;
       if(!campSlotUsed(i)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); campPauseSay('THAT SLOT IS EMPTY'); return; }
