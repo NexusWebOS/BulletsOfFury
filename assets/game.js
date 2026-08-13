@@ -22231,12 +22231,22 @@ function hqPlay(id, onDone){
   hqSlot={left:null,right:null}; hqSpeak='right';  // so line 0 seats left
   hqSeat(0);
   hqSeen[id]=1;
+  /* THE FURY HQ SCENES PLAYED IN SILENCE (drop 0811a). Mike: "apply music during the cinematics".
+     Eight authored ensemble scenes out of ColeForge's own cutscene bible, and not one audio call
+     in hqPlay, drawCutsceneState or hqEnd. 'lordshadows' was REGISTERED AND REFERENCED NOWHERE " a
+     whole track sitting unused while the game's only dialogue scenes ran dry. */
+  try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('lordshadows'); }catch(_hqm){}
   setState(GS.CUTSCENE);
   return true;
 }
 
 function hqEnd(){
   const d=hqDone; hqSc=null; hqDone=null;
+  /* HAND THE TRACK BACK EXPLICITLY. A continuation that starts a stage calls startMusic itself, so
+     only the scenes that fall back to the hub matter " and the hub's own guard is
+     `if(!musicPlaying()) startMusic('neonvelocity')`, which is FALSE while the cutscene theme is
+     still going. It would have sat under 'lordshadows' for the rest of the session. */
+  if(!d){ try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('neonvelocity'); }catch(_hqm){} }
   if(d) d(); else setState(GS.CAMPHUB);
 }
 
