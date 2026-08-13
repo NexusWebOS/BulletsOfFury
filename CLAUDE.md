@@ -649,6 +649,32 @@ is missing.**
 4. **Enemies still appearing out of thin air on level 1** — the long-standing pop-in; 2 of 29 units
    were last measured entering at (21,67) rather than flying in.
 
+## ⚠ THERE ARE THREE ART STORES, AND micon_ IS IN THE THIRD ONE (drop 0810r)
+
+This has now cost two wrong fixes in a row, so it is going near the top.
+
+    BOFX.img + BOFX.cells   -> XART.rdy / XART.get      (most art)
+    ASSETS                  -> ASSETS.has / .blit       (legacy)
+    BOFX.icons              -> iconDraw / _iconDrawCell (the 57 micon_ weapon icons)
+
+**`micon_` keys are in NONE of the first two.** Measured: zero `micon_` entries in `BOFX.img`,
+zero in `BOFX.cells`. They are 57 `[x,y,w,h]` rects in `BOFX.icons`, indexing the `nia_icons`
+sheet, and `iconDraw()` exists to read exactly that. So `XART.rdy('micon_fireorb_3')` can only ever
+be false, and so can `ASSETS.has()`.
+
+Mike: "I see your using a basic graphic for fireball icon, Im assuming yuo lost the icons." Nothing
+is lost. `drawHUDCustomImg` asked ASSETS, then (after my first wrong fix) XART, and never the one
+function that knows — so it drew the text "L3" where the icon belongs. It calls `iconDraw` first
+now, with XART and ASSETS behind it.
+
+⚠ **BUT THAT IS PROBABLY NOT THE SURFACE HE IS LOOKING AT.** `drawHUDCustom` (the `nhud_bar` HUD)
+returns before `drawHUDCustomImg` ever runs, and it shows the weapon as **pips**, not an icon —
+confirmed by rendering it. The world pickups already use `iconDraw` correctly. So the fix is real
+but the "basic graphic" he means may be the pip row or the equipped box. **Ask him which screen.**
+
+**When art looks "basic" in this project, find out WHICH STORE owns the key before concluding
+anything about the art.**
+
 ## THE ATLAS REORG (drop 0810r) — STARTED, AND IT IS A NAMING PROBLEM FIRST
 
 Mike: "I cant even find the icons on the atlas sheets ... make these atlas's easier to understand,

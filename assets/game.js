@@ -3495,20 +3495,21 @@ function drawHUDCustomImg(){
   }
   const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[run.weapon]||'mg', wlv=clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
   const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a'})[run.weapon]||'#fff';
-  /* ⚠ THE ICONS WERE NEVER LOST — THIS ASKED THE WRONG ASSET STORE (drop 0810q). Mike: "I see
-     your using a basic graphic for fireball icon, Im assuming yuo lost the icons."
+  /* ⚠ THE ICONS LIVE IN BOFX.icons, AND THERE IS ALREADY A FUNCTION FOR THEM (drop 0810r).
+     Mike: "I see your using a basic graphic for fireball icon, Im assuming yuo lost the icons."
 
-     Every micon_ family IS registered — fireorb, thermoshock, iceorb, icebreath, mg, spread,
-     missile, laser, firewall — but they live in XART, and this asked ASSETS.has(). The legacy
-     ASSETS store has never held them, so the test was false for EVERY weapon on EVERY frame and
-     the else-branch drew a text label, "L3", in place of the authored icon. Not a lost asset and
-     not a fallback doing its job: a lookup pointed at the wrong system.
+     Nothing is lost, and my first fix for this was still the wrong door. The micon_ families are
+     NOT in BOFX.img and NOT in BOFX.cells — measured, zero of either — so XART has never heard of
+     them and XART.rdy('micon_fireorb_3') can only ever be false. They live in BOFX.icons, a table
+     of 57 [x,y,w,h] rects into the nia_icons sheet, and iconDraw()/_iconDrawCell() exist to read
+     exactly that. This HUD asked ASSETS.has() first and XART second and never asked the one
+     function that knows, so it fell through to drawing the text "L3" where the icon belongs.
 
-     XART first, ASSETS second for anything that genuinely lives there, and the text only if both
-     miss. XART.rdy is polled every frame here, never one-shot, because its first call returns
-     false and starts the load. */
-  let _wDrew=false;
-  if(typeof XART!=='undefined' && XART.rdy(wIcon)){
+     Three stores, one of them right. When art looks "basic" in this project, find out WHICH STORE
+     owns the key before concluding anything about the art. */
+  const _wIconH = 22;
+  let _wDrew = (typeof iconDraw==='function') && (iconDraw(wIcon, cx[4], HUDH*0.46, _wIconH, true) != null);
+  if(!_wDrew && typeof XART!=='undefined' && XART.rdy(wIcon)){
     const im=XART.get(wIcon);
     if(im && im.naturalWidth){
       const ss=Math.min(30/im.naturalWidth, 24/im.naturalHeight);

@@ -123,6 +123,22 @@ RULES = [
     ('ui_fonts',              _pre('g0', 'sfont', 'stagefont', 'bof_font')),
 ]
 
+# ---- the family map, derived by atlas_fammap.py from the CODE THAT DRAWS each family ----------
+# 5,064 keys sit in families whose names say nothing (ntxl, nvl, ovrotor, ncyc, nmrv...). Rendering
+# all 403 to identify them by eye is the rule-1 answer and it is hours; the function that DRAWS a
+# family names it far better than the key does. atlas_fammap.py builds that map, and flags the
+# families referenced nowhere in game.js or any BOFX table so they can be quarantined instead of
+# repacked into sheets Mike is meant to be able to read.
+_FAM_PATH = os.path.join(GAME, 'assets', 'data', 'ART_FAMILY_MAP.json')
+FAMMAP = (json.load(open(_FAM_PATH, encoding='utf-8')).get('byFamily', {})
+          if os.path.exists(_FAM_PATH) else {})
+
+
+def _fam_of(key):
+    m = re.match(r'^([a-zA-Z]+[0-9]*)[_-]', key)
+    return m.group(1) if m else key[:6]
+
+
 def classify(key):
     # 1) a mech-boss tag owns its whole sheet — Mike: "each boss their own atlas"
     for tag in sorted(MECHBOSS, key=len, reverse=True):
@@ -143,6 +159,10 @@ def classify(key):
     for name, pred in RULES:
         if pred(key):
             return name
+    # 5) the code-derived family map, and the quarantine for art nothing references
+    fm = FAMMAP.get(_fam_of(key))
+    if fm and fm.get('group'):
+        return fm['group']
     return 'misc_unsorted'
 
 

@@ -1,0 +1,2526 @@
+{
+ "byFamily": {
+  "ac0": {
+   "group": "terrain_transitions",
+   "keys": 8,
+   "why": "drawn by connectorSurface, drawLaunch, drawNewEnemyArt"
+  },
+  "ac1": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt, playerBaseSpeed"
+  },
+  "ac10": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac11": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac12": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt, playerBaseSpeed"
+  },
+  "ac13": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac14": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac2": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac3": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac4": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt, playerBaseSpeed"
+  },
+  "ac5": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac6": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac7": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac8": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "ac9": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawNewEnemyArt, playerBaseSpeed"
+  },
+  "aintro": {
+   "group": "boss_generic_rigs",
+   "keys": 9,
+   "why": "drawn by attractToTitle, drawAttract, drawNewBoss"
+  },
+  "air": {
+   "group": "boss_generic_rigs",
+   "keys": 9,
+   "why": "drawn by _liquidFrames, drawNewBoss, drawScrollLevel"
+  },
+  "airbase800": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by _levelCfg"
+  },
+  "alaser": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 1,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "alert": {
+   "group": "misc_unsorted",
+   "keys": 2,
+   "why": "drawn by drawWarning, enemyLockOn, maulerMissile"
+  },
+  "aorb": {
+   "group": "misc_unsorted",
+   "keys": 13,
+   "why": "drawn by _jungleTank, droneMove"
+  },
+  "ashard": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 14,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bar": {
+   "group": "boss_generic_rigs",
+   "keys": 7,
+   "why": "drawn by _levelCfg, drawBossSprite, drawHUDCustom"
+  },
+  "beam": {
+   "group": "projectiles",
+   "keys": 5,
+   "why": "drawn by _weaponCadence, buildStagePlan, coleFuseDraw"
+  },
+  "bfx": {
+   "group": "boss_generic_rigs",
+   "keys": 216,
+   "why": "drawn by _bossProjKey, drawBullets, eaCometKey"
+  },
+  "blackhole800": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by _levelCfg"
+  },
+  "bootim": {
+   "group": "boss_generic_rigs",
+   "keys": 1,
+   "why": "drawn by drawBootBackdrop, drawLoading, drawNewBoss"
+  },
+  "bossblboss1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossblboss2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossblboss3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossblboss4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossblboss5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossblboss6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossblboss7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossblboss8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossgrboss1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossgrboss2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossgrboss3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossgrboss4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossgrboss5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossgrboss6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossgrboss7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "bossgrboss8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "btn": {
+   "group": "boss_generic_rigs",
+   "keys": 8,
+   "why": "drawn by drawNewBoss, drawPanel, outlineText"
+  },
+  "bz0": {
+   "group": "boss_generic_rigs",
+   "keys": 3,
+   "why": "drawn by _nbReady, drawBossSprite, drawNewEnemyArt"
+  },
+  "bz1": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by _nbReady, drawNewEnemyArt"
+  },
+  "bz2": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by _nbReady, drawNewEnemyArt"
+  },
+  "bz3": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by _nbReady, drawNewEnemyArt"
+  },
+  "bz4": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by _nbReady, drawNewEnemyArt"
+  },
+  "bz5": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by _nbReady, drawNewEnemyArt"
+  },
+  "bz6": {
+   "group": "boss_generic_rigs",
+   "keys": 3,
+   "why": "drawn by _nbReady, drawBossSprite, drawNewEnemyArt"
+  },
+  "card": {
+   "group": "terrain_props",
+   "keys": 10,
+   "why": "drawn by drawOutbound, updateCamX"
+  },
+  "cf": {
+   "group": "terrain_transitions",
+   "keys": 4,
+   "why": "drawn by connectorSurface, entryConnectorDraw"
+  },
+  "cfic": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by drawCredits"
+  },
+  "cfui": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by drawCredits"
+  },
+  "chain": {
+   "group": "misc_unsorted",
+   "keys": 35,
+   "why": "drawn by EHP, _buildClouds, isPilotLocked"
+  },
+  "cole": {
+   "group": "misc_unsorted",
+   "keys": 2,
+   "why": "drawn by drawClouds, drawHUDCustom, drawHUDCustomImg"
+  },
+  "crate": {
+   "group": "terrain_props",
+   "keys": 3,
+   "why": "drawn by buildStagePlan, flameHit, uiRect"
+  },
+  "crate2": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by drawCrate, drawPowerups, drawScrate"
+  },
+  "crate6": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by drawCrate"
+  },
+  "cut": {
+   "group": "terrain_transitions",
+   "keys": 10,
+   "why": "drawn by connectorSurface, entryConnectorDraw, levelScrollRange"
+  },
+  "diff": {
+   "group": "terrain_transitions",
+   "keys": 4,
+   "why": "drawn by entryConnectorDraw, outboundDrawSkyTown, outboundScreenX"
+  },
+  "dlg": {
+   "group": "misc_unsorted",
+   "keys": 10,
+   "why": "drawn by campPauseDraw, drawCutscene, outlineText"
+  },
+  "eglR": {
+   "group": "projectiles",
+   "keys": 2,
+   "why": "drawn by bossVulnMul, drawBullets, greenFlyerDraw"
+  },
+  "eglaser": {
+   "group": "projectiles",
+   "keys": 8,
+   "why": "drawn by coleFuseDraw, drawBullets, drawFireType"
+  },
+  "enemy": {
+   "group": "boss_generic_rigs",
+   "keys": 1,
+   "why": "drawn by drawNewBoss, updateCamX"
+  },
+  "esB": {
+   "group": "misc_unsorted",
+   "keys": 18,
+   "why": "drawn by _nbReady"
+  },
+  "face": {
+   "group": "terrain_transitions",
+   "keys": 9,
+   "why": "drawn by connectorSurface, seqCfg, transVia"
+  },
+  "fball": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by drawFalvaOrbs, drawRollers, greenFlyerDraw"
+  },
+  "fburst": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by drawRollers"
+  },
+  "fchg": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by _fchgFrame, coleFuseDraw, shipChargeDraw"
+  },
+  "fchgc": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by coleFuseDraw"
+  },
+  "fierce": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 1,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "firewall": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawHUDCustom, drawHUDCustomImg, drawHUDStrip"
+  },
+  "fllaser": {
+   "group": "projectiles",
+   "keys": 9,
+   "why": "drawn by axelBallTick, drawBullets"
+  },
+  "florb": {
+   "group": "misc_unsorted",
+   "keys": 9,
+   "why": "drawn by axelBallDraw, axelBallTick, drawFalvaBalls"
+  },
+  "flspread": {
+   "group": "projectiles",
+   "keys": 8,
+   "why": "drawn by drawBullets"
+  },
+  "forb": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by axelBallTick, drawClouds, drawFalvaOrbs"
+  },
+  "fshard": {
+   "group": "misc_unsorted",
+   "keys": 14,
+   "why": "drawn by drawShards"
+  },
+  "fx": {
+   "group": "terrain_props",
+   "keys": 24,
+   "why": "drawn by _buildClouds, _levelCfg, fitCanvas"
+  },
+  "gunmetboat1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "gunmetboat2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "gunmetboat3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "gunmetboat4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "gunmetboat5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "gunmetboat6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "gunmetboat7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "gunmetboat8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "homing": {
+   "group": "misc_unsorted",
+   "keys": 2,
+   "why": "drawn by _nbReady, droneGlow, liveType"
+  },
+  "hotfli": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 1,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "hud": {
+   "group": "terrain_props",
+   "keys": 1,
+   "why": "drawn by hudPanel, hudSlot, updateCamX"
+  },
+  "ice": {
+   "group": "terrain_transitions",
+   "keys": 6,
+   "why": "drawn by seqCfg, transVia"
+  },
+  "iceorb": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by drawHUDCustom, drawHUDCustomImg, weaponIconKey"
+  },
+  "iceshard": {
+   "group": "projectiles",
+   "keys": 4,
+   "why": "drawn by attackElement, drawBullets"
+  },
+  "impact": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by drawPlayerLocks, explode, hitSubBoss"
+  },
+  "insert": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by buildStagePlan, drawPassword, fmtTime"
+  },
+  "jungle800": {
+   "group": "terrain_transitions",
+   "keys": 5,
+   "why": "drawn by _levelCfg, outboundDrawWater, seqBedFrames"
+  },
+  "khakitank1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "khakitank2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "khakitank3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "khakitank4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "khakitank5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "khakitank6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "khakitank7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "khakitank8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "landin": {
+   "group": "boss_sectional_rigs",
+   "keys": 1,
+   "why": "drawn by buildStagePlan, drawSubBoss"
+  },
+  "laser": {
+   "group": "misc_unsorted",
+   "keys": 11,
+   "why": "drawn by drawHUDCustom, drawHUDCustomImg, drawHUDStrip"
+  },
+  "laserbeam": {
+   "group": "projectiles",
+   "keys": 5,
+   "why": "drawn by drawBullets, orbBeamsDraw"
+  },
+  "lavafall": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by drawLavafalls, drawStage3"
+  },
+  "logo": {
+   "group": "boss_generic_rigs",
+   "keys": 1,
+   "why": "drawn by drawLogo, drawNewBoss, drawScene"
+  },
+  "lvl1": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by drawOpening, playerBaseSpeed"
+  },
+  "lvl2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 1,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "lvl3": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by playerBaseSpeed"
+  },
+  "lvl4": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by playerBaseSpeed"
+  },
+  "lvl5": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by playerBaseSpeed"
+  },
+  "lvl6": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by playerBaseSpeed"
+  },
+  "lz": {
+   "group": "projectiles",
+   "keys": 5,
+   "why": "drawn by coleFuseDraw, pShoot, startRoll"
+  },
+  "lzr": {
+   "group": "boss_helix_lance",
+   "keys": 35,
+   "why": "drawn by coleFuseDraw, drawBullets, helixBallsDraw"
+  },
+  "mbc6": {
+   "group": "misc_unsorted",
+   "keys": 73,
+   "why": "drawn by bossArchetype, eaCometKey, spawnBoss"
+  },
+  "mbg2": {
+   "group": "pilot_specials",
+   "keys": 290,
+   "why": "drawn by _bossArtOK, eaCometKey, hbDraw"
+  },
+  "mbg3": {
+   "group": "pilot_specials",
+   "keys": 290,
+   "why": "drawn by hbDraw, spawnBoss"
+  },
+  "mbg3f_": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 69,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "mbj": {
+   "group": "misc_unsorted",
+   "keys": 2,
+   "why": "drawn by buildStagePlan, miniTick, spawnBoss"
+  },
+  "mbl5": {
+   "group": "misc_unsorted",
+   "keys": 69,
+   "why": "drawn by bossArchetype, eaCometKey, mechPartMoves"
+  },
+  "mbm4": {
+   "group": "misc_unsorted",
+   "keys": 69,
+   "why": "drawn by bossArchetype, eaCometKey, mechPartMoves"
+  },
+  "mbo2": {
+   "group": "misc_unsorted",
+   "keys": 69,
+   "why": "drawn by bossArchetype, eaCometKey, mechPartMoves"
+  },
+  "mbp": {
+   "group": "misc_unsorted",
+   "keys": 30,
+   "why": "drawn by playerBaseSpeed, spawnBoss"
+  },
+  "mbr5": {
+   "group": "misc_unsorted",
+   "keys": 65,
+   "why": "drawn by bossArchetype, eaCometKey, spawnBoss"
+  },
+  "mbs6": {
+   "group": "misc_unsorted",
+   "keys": 73,
+   "why": "drawn by bossArchetype, eaCometKey, spawnBoss"
+  },
+  "mbs7": {
+   "group": "misc_unsorted",
+   "keys": 73,
+   "why": "drawn by bossArchetype, eaCometKey, spawnBoss"
+  },
+  "mbt7": {
+   "group": "misc_unsorted",
+   "keys": 77,
+   "why": "drawn by eaCometKey, spawnBoss"
+  },
+  "mbv": {
+   "group": "misc_unsorted",
+   "keys": 88,
+   "why": "drawn by _body1"
+  },
+  "mbw4": {
+   "group": "misc_unsorted",
+   "keys": 73,
+   "why": "drawn by _cannonFrame, bossArchetype, eaCometKey"
+  },
+  "mexh": {
+   "group": "misc_unsorted",
+   "keys": 6,
+   "why": "drawn by drawSmokeTrails"
+  },
+  "mfx": {
+   "group": "misc_unsorted",
+   "keys": 252,
+   "why": "drawn by coleTriDraw, eShoot, eTwinGuns"
+  },
+  "mgmuz": {
+   "group": "misc_unsorted",
+   "keys": 5,
+   "why": "drawn by _drawPlayerCore"
+  },
+  "mgx": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 14,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "missil": {
+   "group": "boss_generic_rigs",
+   "keys": 3,
+   "why": "drawn by drawBossSprite, drawHUDCustom, drawHUDCustomImg"
+  },
+  "mlaunch": {
+   "group": "boss_generic_rigs",
+   "keys": 7,
+   "why": "drawn by drawBossSprite, ovRocketSide"
+  },
+  "msl": {
+   "group": "boss_sectional_rigs",
+   "keys": 21,
+   "why": "drawn by drawSubBoss, isPilotLocked, updateMauler"
+  },
+  "mslB": {
+   "group": "projectiles",
+   "keys": 18,
+   "why": "drawn by drawBullets, mslBigPackForStage, mslPackRoll"
+  },
+  "n6bc_d": {
+   "group": "misc_unsorted",
+   "keys": 14,
+   "why": "drawn by drawBCarrier"
+  },
+  "n6e_sk": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 129,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "n6w_cr": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 6,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "n6w_lb": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 6,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "n6w_lt": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 12,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "n6x_cr": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 41,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "n6x_cw": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 41,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "n6x_hw": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 41,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "n6x_st": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 41,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "n6x_tf": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 41,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "n6x_tl": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 41,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nab": {
+   "group": "terrain_props",
+   "keys": 28,
+   "why": "drawn by drawCutscene, drawHUDFramed, drawLiquidFalls"
+  },
+  "nadb": {
+   "group": "projectiles",
+   "keys": 12,
+   "why": "drawn by axelBallTick, drawBullets, px"
+  },
+  "nanc": {
+   "group": "misc_unsorted",
+   "keys": 5,
+   "why": "drawn by _hitEnemyCore, axelBallTick, coleFuseDraw"
+  },
+  "navyboat1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "navyboat2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "navyboat3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "navyboat4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "navyboat5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "navyboat6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "navyboat7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "navyboat8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nba": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by EHP, buildStagePlan, drawBoxPillCell"
+  },
+  "nbb": {
+   "group": "misc_unsorted",
+   "keys": 84,
+   "why": "drawn by drawHUDCustom, drawHUDCustomImg, subBossAttack"
+  },
+  "nbb1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nbb2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nbb3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nbb4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nbb5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nbb6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nbb7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nbb8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nbk": {
+   "group": "misc_unsorted",
+   "keys": 26,
+   "why": "drawn by drawTur360, turretSpawnSide"
+  },
+  "nbl": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by drawTitle"
+  },
+  "nbm": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 42,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nbp": {
+   "group": "projectiles",
+   "keys": 7,
+   "why": "drawn by drawBullets, drawFireType, eaCometKey"
+  },
+  "nbret": {
+   "group": "misc_unsorted",
+   "keys": 9,
+   "why": "drawn by drawBossRetina"
+  },
+  "nbs": {
+   "group": "terrain_masters",
+   "keys": 64,
+   "why": "drawn by warmStage"
+  },
+  "nbt": {
+   "group": "misc_unsorted",
+   "keys": 5,
+   "why": "drawn by drawBootBackdrop, drawDiff, drawModeSelect"
+  },
+  "nca": {
+   "group": "boss_generic_rigs",
+   "keys": 87,
+   "why": "drawn by _drawEffectsInner, drawNewBoss, drawPassword"
+  },
+  "ncb": {
+   "group": "misc_unsorted",
+   "keys": 2,
+   "why": "drawn by cryoCannonDraw, cryoPhaseKey, magmaChainDraw"
+  },
+  "nch": {
+   "group": "terrain_transitions",
+   "keys": 22,
+   "why": "drawn by entryConnCfg, entryConnectorDraw, seqCfg"
+  },
+  "nchg": {
+   "group": "misc_unsorted",
+   "keys": 16,
+   "why": "drawn by chargeFrameFor, coleFuseDraw, drawFalvaOrbs"
+  },
+  "nchgF": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by _isFlatPlate, chargeFrameFor, drawFalvaCharge"
+  },
+  "nchl": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 12,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nchp": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by drawZaps, tryYuriChain"
+  },
+  "nchunk": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by _drawEffectsInner, deathClassOf, hitBoss"
+  },
+  "nchx": {
+   "group": "terrain_masters",
+   "keys": 17,
+   "why": "drawn by warmStage"
+  },
+  "nck": {
+   "group": "misc_unsorted",
+   "keys": 30,
+   "why": "drawn by _bossArtOK, _genChainDraw, genesisDraw"
+  },
+  "ncl": {
+   "group": "terrain_transitions",
+   "keys": 9,
+   "why": "drawn by connectorSurface, stageMasterKey, updateCamX"
+  },
+  "ncl6": {
+   "group": "stage6_weather_and_clouds",
+   "keys": 36,
+   "why": "drawn by _l6frames"
+  },
+  "ncm": {
+   "group": "terrain_props",
+   "keys": 131,
+   "why": "drawn by anyTap, updateCamX"
+  },
+  "ncon": {
+   "group": "terrain_transitions",
+   "keys": 4,
+   "why": "drawn by _levelCfg, connectorSurface, drawLevelMaster"
+  },
+  "ncyc": {
+   "group": "boss_sectional_rigs",
+   "keys": 71,
+   "why": "drawn by sxPartOffset"
+  },
+  "ndam": {
+   "group": "boss_sectional_rigs",
+   "keys": 4,
+   "why": "drawn by _isFlatPlate, drawModularBoss, sxPartOffset"
+  },
+  "ndbr": {
+   "group": "terrain_masters",
+   "keys": 8,
+   "why": "drawn by _drawEffectsInner, deathClassOf, updateEffects"
+  },
+  "ndc": {
+   "group": "enemies_generic",
+   "keys": 48,
+   "why": "drawn by droneDraw"
+  },
+  "ndk": {
+   "group": "pilot_specials",
+   "keys": 37,
+   "why": "drawn by dkDraw, scrateYield, sonicDraw"
+  },
+  "ndr": {
+   "group": "boss_generic_rigs",
+   "keys": 76,
+   "why": "drawn by drawNewBoss, droneDraw, playerBaseSpeed"
+  },
+  "ndt": {
+   "group": "enemies_generic",
+   "keys": 16,
+   "why": "drawn by droneDraw, droneRecoverDur, playerBaseSpeed"
+  },
+  "nel": {
+   "group": "boss_generic_rigs",
+   "keys": 56,
+   "why": "drawn by drawAnimTerrain, drawNewBoss, drawScrollLevel"
+  },
+  "nep": {
+   "group": "projectiles",
+   "keys": 7,
+   "why": "drawn by drawBullets, drawFireType"
+  },
+  "nequip": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 1,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nev": {
+   "group": "terrain_transitions",
+   "keys": 11,
+   "why": "drawn by connectorSurface, entryConnectorDraw, seqCfg"
+  },
+  "newboo": {
+   "group": "boss_generic_rigs",
+   "keys": 1,
+   "why": "drawn by drawLoading, drawNewBoss"
+  },
+  "nex": {
+   "group": "boss_generic_rigs",
+   "keys": 21,
+   "why": "drawn by drawNewBoss, outboundFinish, outboundUpdate"
+  },
+  "nfb": {
+   "group": "projectiles",
+   "keys": 86,
+   "why": "drawn by drawBullets, updateEffects"
+  },
+  "nfdb": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by rbSpawnShards"
+  },
+  "nfrb": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by drawRollers"
+  },
+  "nfw": {
+   "group": "boss_generic_rigs",
+   "keys": 39,
+   "why": "drawn by drawNewBoss, flameDraw, flamePair"
+  },
+  "nfx": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 180,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nglr": {
+   "group": "boss_sectional_rigs",
+   "keys": 70,
+   "why": "drawn by bossEntryPowerDraw, sxPartOffset, warmStage"
+  },
+  "ngm": {
+   "group": "stage6_weather_and_clouds",
+   "keys": 156,
+   "why": "drawn by _drawEffectsInner, l6GMBlast, l6GMDraw"
+  },
+  "nhb": {
+   "group": "pilot_specials",
+   "keys": 49,
+   "why": "drawn by _mavP, hbDraw, hbLimbDraw"
+  },
+  "nhud": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by drawHUDCustom, drawHUDStrip"
+  },
+  "nhxb": {
+   "group": "boss_helix_lance",
+   "keys": 10,
+   "why": "drawn by helixBallsDraw"
+  },
+  "nhxfi": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by releaseHelix"
+  },
+  "nhxm": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 150,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nhxs": {
+   "group": "boss_helix_lance",
+   "keys": 12,
+   "why": "drawn by drawHelixLance, drawNewBoss, helixBurstsDraw"
+  },
+  "nhxsb": {
+   "group": "boss_helix_lance",
+   "keys": 6,
+   "why": "drawn by drawHelixLance, drawNewBoss, helixBurstsDraw"
+  },
+  "nhxv": {
+   "group": "boss_helix_lance",
+   "keys": 192,
+   "why": "drawn by _hxvKey, drawBullets, drawHelixLance"
+  },
+  "nia": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by _iconDrawCell"
+  },
+  "nib": {
+   "group": "misc_unsorted",
+   "keys": 31,
+   "why": "drawn by _levelCfg, drawLevelMaster"
+  },
+  "nibr": {
+   "group": "misc_unsorted",
+   "keys": 10,
+   "why": "drawn by flameDraw"
+  },
+  "nio": {
+   "group": "enemies_generic",
+   "keys": 38,
+   "why": "drawn by applyNefUnit, applyS1Jet, drawBullets"
+  },
+  "nl6c_h": {
+   "group": "terrain_transitions",
+   "keys": 6,
+   "why": "drawn by _buildClouds, connectorSurface, openingDraw"
+  },
+  "nl6c_l": {
+   "group": "stage6_weather_and_clouds",
+   "keys": 6,
+   "why": "drawn by cmapFxDraw, l6CloudBed, openingDraw"
+  },
+  "nl6c_r": {
+   "group": "misc_unsorted",
+   "keys": 6,
+   "why": "drawn by _buildClouds"
+  },
+  "nl6sky": {
+   "group": "terrain_transitions",
+   "keys": 2,
+   "why": "drawn by drawBG, openingDraw, outboundDrawSkyTown"
+  },
+  "nlf": {
+   "group": "terrain_masters",
+   "keys": 12,
+   "why": "drawn by drawScrollLevel"
+  },
+  "nlgt": {
+   "group": "boss_sectional_rigs",
+   "keys": 70,
+   "why": "drawn by sxPartOffset"
+  },
+  "nli": {
+   "group": "misc_unsorted",
+   "keys": 9,
+   "why": "drawn by drawHUDCustom, drawHUDStrip, drawOutbound"
+  },
+  "nlq": {
+   "group": "terrain_transitions",
+   "keys": 30,
+   "why": "drawn by drawScrollLevel, transVia"
+  },
+  "nlq2": {
+   "group": "terrain_transitions",
+   "keys": 24,
+   "why": "drawn by drawScrollLevel, transVia"
+  },
+  "nlqf": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 30,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nlz": {
+   "group": "projectiles",
+   "keys": 32,
+   "why": "drawn by drawBullets, lzMountDraw"
+  },
+  "nmb": {
+   "group": "misc_unsorted",
+   "keys": 84,
+   "why": "drawn by drawHUDCustom, drawPowerups, playerBaseSpeed"
+  },
+  "nmb1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nmb2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nmb3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nmb4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nmb5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nmb6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nmb7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nmb8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 9,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nmc": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by breakContainer, magmaChainDraw"
+  },
+  "nmg": {
+   "group": "projectiles",
+   "keys": 6,
+   "why": "drawn by drawBullets"
+  },
+  "nmgv": {
+   "group": "projectiles",
+   "keys": 5,
+   "why": "drawn by drawBullets"
+  },
+  "nmi": {
+   "group": "terrain_masters",
+   "keys": 9,
+   "why": "drawn by drawChainBurst, drawHUDCustom, drawHUDStrip"
+  },
+  "nmrv": {
+   "group": "boss_sectional_rigs",
+   "keys": 70,
+   "why": "drawn by sxPartOffset"
+  },
+  "nms": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by drawCanonBackdrop"
+  },
+  "nmvh": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 1,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nmz": {
+   "group": "misc_unsorted",
+   "keys": 36,
+   "why": "drawn by _drawPlayerCore, navalMuzzle"
+  },
+  "nob": {
+   "group": "boss_generic_rigs",
+   "keys": 8,
+   "why": "drawn by _buildTankMask, drawCutscene, drawNewBoss"
+  },
+  "nobd": {
+   "group": "boss_sectional_rigs",
+   "keys": 70,
+   "why": "drawn by bossEntryPowerDraw, sxDraw, sxPartOffset"
+  },
+  "nobj": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by drawIncomingWarnings"
+  },
+  "norb5": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by _levelCfg, _liquidFrames"
+  },
+  "np5": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by _rockTinted, l5FieldReset, l5RocksDraw"
+  },
+  "npo": {
+   "group": "stage6_weather_and_clouds",
+   "keys": 12,
+   "why": "drawn by l6ObjsDraw, l6PatternTick, updateModularBoss"
+  },
+  "nql": {
+   "group": "boss_sectional_rigs",
+   "keys": 22,
+   "why": "drawn by drawSubBoss"
+  },
+  "nqm": {
+   "group": "misc_unsorted",
+   "keys": 175,
+   "why": "drawn by nadeBlast"
+  },
+  "nqv": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 56,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nqx": {
+   "group": "boss_sectional_rigs",
+   "keys": 41,
+   "why": "drawn by drawSubBoss, warmStage"
+  },
+  "nrb": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by drawRollers"
+  },
+  "nrbfi": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 6,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nring": {
+   "group": "misc_unsorted",
+   "keys": 8,
+   "why": "drawn by _drawEffectsInner, hitBoss"
+  },
+  "nrmp": {
+   "group": "boss_sectional_rigs",
+   "keys": 61,
+   "why": "drawn by sxPartOffset"
+  },
+  "nrs": {
+   "group": "terrain_masters",
+   "keys": 12,
+   "why": "drawn by stageMasterKey"
+  },
+  "nsa": {
+   "group": "boss_generic_rigs",
+   "keys": 1,
+   "why": "drawn by applyNefUnit, drawNewBoss, enemyFire"
+  },
+  "nsb": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 49,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nsd": {
+   "group": "terrain_masters",
+   "keys": 32,
+   "why": "drawn by _buildClouds, drawClouds, nadeBlast"
+  },
+  "nsel": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by _selKey, drawDiff, goTitle"
+  },
+  "nsf": {
+   "group": "boss_generic_rigs",
+   "keys": 60,
+   "why": "drawn by drawNewBoss, fitCanvas, updateCamX"
+  },
+  "nsky6": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by _levelCfg, _liquidFrames, drawLaunch"
+  },
+  "nslc": {
+   "group": "boss_sectional_rigs",
+   "keys": 70,
+   "why": "drawn by sxPartOffset"
+  },
+  "nsp": {
+   "group": "boss_generic_rigs",
+   "keys": 30,
+   "why": "drawn by _levelCfg, drawAnimTerrain, drawLevelMaster"
+  },
+  "nspark": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by _drawEffectsInner, hitBoss"
+  },
+  "nspd": {
+   "group": "terrain_props",
+   "keys": 4,
+   "why": "drawn by speedPadsDraw"
+  },
+  "nspk": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 12,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nsr": {
+   "group": "terrain_masters",
+   "keys": 32,
+   "why": "drawn by spawnShockRing, warmStage"
+  },
+  "nss": {
+   "group": "misc_unsorted",
+   "keys": 77,
+   "why": "drawn by _drawStageSelectInner, drawCanonBackdrop, menuSelMark"
+  },
+  "nst1": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "referenced only in a BOFX data table"
+  },
+  "nst2": {
+   "group": "misc_unsorted",
+   "keys": 2,
+   "why": "drawn by _levelCfg, seqBedFrames"
+  },
+  "nst3": {
+   "group": "terrain_transitions",
+   "keys": 2,
+   "why": "drawn by _levelCfg, outboundDrawSkyTown, seqBedFrames"
+  },
+  "nst4": {
+   "group": "terrain_transitions",
+   "keys": 5,
+   "why": "drawn by _levelCfg, outboundDrawSkyTown, seqBedFrames"
+  },
+  "nst4b_": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by beginStage, openingDraw"
+  },
+  "nst5": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by seqBedFrames"
+  },
+  "nst7": {
+   "group": "misc_unsorted",
+   "keys": 6,
+   "why": "drawn by _levelCfg, seqBedFrames"
+  },
+  "nst8": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "referenced only in a BOFX data table"
+  },
+  "nst9": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "referenced only in a BOFX data table"
+  },
+  "nsw": {
+   "group": "boss_generic_rigs",
+   "keys": 28,
+   "why": "drawn by _jungleTank, drawLevelMaster, drawNewBoss"
+  },
+  "nsx": {
+   "group": "boss_sectional_rigs",
+   "keys": 205,
+   "why": "drawn by bossEntryPowerDraw, playerBaseSpeed, sxDraw"
+  },
+  "nthp": {
+   "group": "boss_generic_rigs",
+   "keys": 36,
+   "why": "drawn by _drawPlayerCore, drawLaunch, drawNewBoss"
+  },
+  "nthr": {
+   "group": "stage6_weather_and_clouds",
+   "keys": 40,
+   "why": "drawn by drawThruster, l6Crosser, l6FromBehind"
+  },
+  "nthr0": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 4,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nthr1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 4,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nthr2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 4,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nthr3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 4,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nthr4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 4,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nthr5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 4,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "ntr": {
+   "group": "terrain_transitions",
+   "keys": 96,
+   "why": "drawn by connectorSurface, entryConnCfg, entryConnectorDraw"
+  },
+  "nts": {
+   "group": "terrain_transitions",
+   "keys": 45,
+   "why": "drawn by connectorSurface, entryConnectorDraw, outboundDrawLavaIce"
+  },
+  "ntur": {
+   "group": "terrain_props",
+   "keys": 48,
+   "why": "drawn by speedPadsDraw"
+  },
+  "ntxl": {
+   "group": "boss_sectional_rigs",
+   "keys": 73,
+   "why": "drawn by sxPartOffset"
+  },
+  "nui": {
+   "group": "boss_generic_rigs",
+   "keys": 215,
+   "why": "drawn by _buildTerrain, drawHUDCustomImg, drawNewBoss"
+  },
+  "nuo": {
+   "group": "enemies_generic",
+   "keys": 2,
+   "why": "drawn by _buildClouds, _weaponCadence, drawGateWaterfall"
+  },
+  "nvg0": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nvi0": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nvi1": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nvi3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 3,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "nvl": {
+   "group": "enemies_stage2",
+   "keys": 72,
+   "why": "drawn by drawVolc"
+  },
+  "nvp0": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nvp1": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nvp2": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nvp3": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nvx": {
+   "group": "misc_unsorted",
+   "keys": 24,
+   "why": "drawn by vileImplosionDraw, vileMorphDraw"
+  },
+  "nvy0": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nvy1": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nvy2": {
+   "group": "misc_unsorted",
+   "keys": 3,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "nwarn": {
+   "group": "stage6_weather_and_clouds",
+   "keys": 3,
+   "why": "drawn by showCallout, wfxDraw"
+  },
+  "nwf": {
+   "group": "stage6_weather_and_clouds",
+   "keys": 68,
+   "why": "drawn by drawScrollLevel, l6PatternTick, wfxDraw"
+  },
+  "nwl": {
+   "group": "terrain_masters",
+   "keys": 16,
+   "why": "drawn by _liquidFrames, drawScrollLevel"
+  },
+  "nwx": {
+   "group": "stage6_weather_and_clouds",
+   "keys": 36,
+   "why": "drawn by l6PatternTick, l6WeatherDraw, wfxDraw"
+  },
+  "nx": {
+   "group": "misc_unsorted",
+   "keys": 56,
+   "why": "drawn by drawOutbound, saveKeybind, updateMauler"
+  },
+  "nxp": {
+   "group": "misc_unsorted",
+   "keys": 64,
+   "why": "drawn by explode, hitSubBoss"
+  },
+  "olivetank1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "olivetank2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "olivetank3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "olivetank4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "olivetank5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "olivetank6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "olivetank7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "olivetank8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "ovbody": {
+   "group": "boss_generic_rigs",
+   "keys": 2,
+   "why": "drawn by drawBoss, drawBossSprite"
+  },
+  "ovrotor": {
+   "group": "boss_generic_rigs",
+   "keys": 72,
+   "why": "drawn by drawBossSprite"
+  },
+  "pbar": {
+   "group": "misc_unsorted",
+   "keys": 27,
+   "why": "drawn by pcDraw"
+  },
+  "pcard": {
+   "group": "pilot_specials",
+   "keys": 10,
+   "why": "drawn by dkDraw, drawAttract, pcSkip"
+  },
+  "pemb": {
+   "group": "misc_unsorted",
+   "keys": 9,
+   "why": "drawn by drawCutscene, hitRival, pcDraw"
+  },
+  "pill": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by drawHUDCustom, retinaFire, yuriChainStrike"
+  },
+  "pmg": {
+   "group": "projectiles",
+   "keys": 15,
+   "why": "drawn by drawBullets"
+  },
+  "pmgc": {
+   "group": "projectiles",
+   "keys": 2,
+   "why": "drawn by drawBullets"
+  },
+  "port": {
+   "group": "boss_generic_rigs",
+   "keys": 63,
+   "why": "drawn by drawNewBoss, outboundStart, transVia"
+  },
+  "pose": {
+   "group": "terrain_transitions",
+   "keys": 54,
+   "why": "drawn by _levelCfg, cutPose, entryConnectorDraw"
+  },
+  "pwr": {
+   "group": "misc_unsorted",
+   "keys": 10,
+   "why": "drawn by drawPowerups"
+  },
+  "retm": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by retinaTinted"
+  },
+  "retmb": {
+   "group": "misc_unsorted",
+   "keys": 4,
+   "why": "drawn by retinaTinted"
+  },
+  "runway": {
+   "group": "terrain_transitions",
+   "keys": 1,
+   "why": "drawn by drawStageProps, outboundDraw, seqRunway"
+  },
+  "s1": {
+   "group": "misc_unsorted",
+   "keys": 38,
+   "why": "drawn by liveType"
+  },
+  "scard": {
+   "group": "boss_generic_rigs",
+   "keys": 8,
+   "why": "drawn by drawIntro, drawNewBoss, liveType"
+  },
+  "sewer800": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by _levelCfg"
+  },
+  "sfont1": {
+   "group": "terrain_props",
+   "keys": 47,
+   "why": "drawn by updateCamX"
+  },
+  "sfont2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 47,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "sfont3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 47,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "sfont4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 47,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "sfont5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 47,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "sfont6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 47,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "sfont7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 47,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "sfont8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 47,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "sfont9": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 47,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "sfontA": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 7,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "shield": {
+   "group": "misc_unsorted",
+   "keys": 5,
+   "why": "drawn by drawHUDCustom, drawHUDCustomImg, drawHUDFramed"
+  },
+  "skyfort800": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by _levelCfg"
+  },
+  "slatejet1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "slatejet2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "slatejet3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "slatejet4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "slatejet5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "slatejet6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "slatejet7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "slatejet8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "smk": {
+   "group": "terrain_masters",
+   "keys": 6,
+   "why": "drawn by drawSmokeTrails, nadeBlast, warmStage"
+  },
+  "sp": {
+   "group": "misc_unsorted",
+   "keys": 36,
+   "why": "drawn by seqCfg"
+  },
+  "special": {
+   "group": "boss_sectional_rigs",
+   "keys": 9,
+   "why": "drawn by EHP, drawSubBossBar, droneGlow"
+  },
+  "spr": {
+   "group": "terrain_transitions",
+   "keys": 25,
+   "why": "drawn by _nbReady, connectorSurface, updateCamX"
+  },
+  "starti": {
+   "group": "boss_generic_rigs",
+   "keys": 1,
+   "why": "drawn by _drawEffectsInner, drawNewBoss, entryConnectorDraw"
+  },
+  "statsc": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by drawStageClear"
+  },
+  "steeljet1": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "steeljet2": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "steeljet3": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "steeljet4": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "steeljet5": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "steeljet6": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "steeljet7": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "steeljet8": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 16,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "storm800": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by _levelCfg"
+  },
+  "terr": {
+   "group": "terrain_transitions",
+   "keys": 5,
+   "why": "drawn by seqCfg, transVia"
+  },
+  "tflat": {
+   "group": "terrain_transitions",
+   "keys": 13,
+   "why": "drawn by connectorSurface, seqCfg, transVia"
+  },
+  "tk0": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by drawNewEnemyArt, drawVaultVehicle, playerBaseSpeed"
+  },
+  "tk1": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by drawNewEnemyArt, drawVaultVehicle, playerBaseSpeed"
+  },
+  "tk2": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by drawNewEnemyArt, playerBaseSpeed"
+  },
+  "tk3": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by drawNewEnemyArt, playerBaseSpeed"
+  },
+  "tk4": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by drawNewEnemyArt, drawVaultVehicle, playerBaseSpeed"
+  },
+  "tk5": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by drawNewEnemyArt"
+  },
+  "tnkG": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by tintColor"
+  },
+  "tnkM": {
+   "group": "misc_unsorted",
+   "keys": 12,
+   "why": "drawn by buildStagePlan, liveType, sandTankDraw"
+  },
+  "trt": {
+   "group": "enemies_generic",
+   "keys": 12,
+   "why": "drawn by droneDraw, spawnEnemy"
+  },
+  "untitl": {
+   "group": "zz_unreferenced_quarantine",
+   "keys": 1,
+   "why": "not named in game.js and not in any BOFX table"
+  },
+  "wab": {
+   "group": "boss_generic_rigs",
+   "keys": 5,
+   "why": "drawn by drawNewBoss, droneCannonDraw, enemyArtState"
+  },
+  "waf": {
+   "group": "boss_generic_rigs",
+   "keys": 41,
+   "why": "drawn by _bossProjKey, drawBullets"
+  },
+  "wam": {
+   "group": "misc_unsorted",
+   "keys": 5,
+   "why": "drawn by droneCannonDraw, emplaceStep, enemyArtState"
+  },
+  "waterfall": {
+   "group": "terrain_masters",
+   "keys": 4,
+   "why": "drawn by _buildClouds, _levelCfg, drawGateWaterfall"
+  },
+  "waterworld800": {
+   "group": "misc_unsorted",
+   "keys": 1,
+   "why": "drawn by _levelCfg"
+  }
+ },
+ "unreferenced": [
+  {
+   "family": "alaser",
+   "keys": 1
+  },
+  {
+   "family": "ashard",
+   "keys": 14
+  },
+  {
+   "family": "bossblboss1",
+   "keys": 16
+  },
+  {
+   "family": "bossblboss2",
+   "keys": 16
+  },
+  {
+   "family": "bossblboss3",
+   "keys": 16
+  },
+  {
+   "family": "bossblboss4",
+   "keys": 16
+  },
+  {
+   "family": "bossblboss5",
+   "keys": 16
+  },
+  {
+   "family": "bossblboss6",
+   "keys": 16
+  },
+  {
+   "family": "bossblboss7",
+   "keys": 16
+  },
+  {
+   "family": "bossblboss8",
+   "keys": 16
+  },
+  {
+   "family": "bossgrboss1",
+   "keys": 16
+  },
+  {
+   "family": "bossgrboss2",
+   "keys": 16
+  },
+  {
+   "family": "bossgrboss3",
+   "keys": 16
+  },
+  {
+   "family": "bossgrboss4",
+   "keys": 16
+  },
+  {
+   "family": "bossgrboss5",
+   "keys": 16
+  },
+  {
+   "family": "bossgrboss6",
+   "keys": 16
+  },
+  {
+   "family": "bossgrboss7",
+   "keys": 16
+  },
+  {
+   "family": "bossgrboss8",
+   "keys": 16
+  },
+  {
+   "family": "fierce",
+   "keys": 1
+  },
+  {
+   "family": "gunmetboat1",
+   "keys": 16
+  },
+  {
+   "family": "gunmetboat2",
+   "keys": 16
+  },
+  {
+   "family": "gunmetboat3",
+   "keys": 16
+  },
+  {
+   "family": "gunmetboat4",
+   "keys": 16
+  },
+  {
+   "family": "gunmetboat5",
+   "keys": 16
+  },
+  {
+   "family": "gunmetboat6",
+   "keys": 16
+  },
+  {
+   "family": "gunmetboat7",
+   "keys": 16
+  },
+  {
+   "family": "gunmetboat8",
+   "keys": 16
+  },
+  {
+   "family": "hotfli",
+   "keys": 1
+  },
+  {
+   "family": "khakitank1",
+   "keys": 16
+  },
+  {
+   "family": "khakitank2",
+   "keys": 16
+  },
+  {
+   "family": "khakitank3",
+   "keys": 16
+  },
+  {
+   "family": "khakitank4",
+   "keys": 16
+  },
+  {
+   "family": "khakitank5",
+   "keys": 16
+  },
+  {
+   "family": "khakitank6",
+   "keys": 16
+  },
+  {
+   "family": "khakitank7",
+   "keys": 16
+  },
+  {
+   "family": "khakitank8",
+   "keys": 16
+  },
+  {
+   "family": "lvl2",
+   "keys": 1
+  },
+  {
+   "family": "mbg3f_",
+   "keys": 69
+  },
+  {
+   "family": "mgx",
+   "keys": 14
+  },
+  {
+   "family": "n6e_sk",
+   "keys": 129
+  },
+  {
+   "family": "n6w_cr",
+   "keys": 6
+  },
+  {
+   "family": "n6w_lb",
+   "keys": 6
+  },
+  {
+   "family": "n6w_lt",
+   "keys": 12
+  },
+  {
+   "family": "n6x_cr",
+   "keys": 41
+  },
+  {
+   "family": "n6x_cw",
+   "keys": 41
+  },
+  {
+   "family": "n6x_hw",
+   "keys": 41
+  },
+  {
+   "family": "n6x_st",
+   "keys": 41
+  },
+  {
+   "family": "n6x_tf",
+   "keys": 41
+  },
+  {
+   "family": "n6x_tl",
+   "keys": 41
+  },
+  {
+   "family": "navyboat1",
+   "keys": 16
+  },
+  {
+   "family": "navyboat2",
+   "keys": 16
+  },
+  {
+   "family": "navyboat3",
+   "keys": 16
+  },
+  {
+   "family": "navyboat4",
+   "keys": 16
+  },
+  {
+   "family": "navyboat5",
+   "keys": 16
+  },
+  {
+   "family": "navyboat6",
+   "keys": 16
+  },
+  {
+   "family": "navyboat7",
+   "keys": 16
+  },
+  {
+   "family": "navyboat8",
+   "keys": 16
+  },
+  {
+   "family": "nbb1",
+   "keys": 9
+  },
+  {
+   "family": "nbb2",
+   "keys": 9
+  },
+  {
+   "family": "nbb3",
+   "keys": 9
+  },
+  {
+   "family": "nbb4",
+   "keys": 9
+  },
+  {
+   "family": "nbb5",
+   "keys": 9
+  },
+  {
+   "family": "nbb6",
+   "keys": 9
+  },
+  {
+   "family": "nbb7",
+   "keys": 9
+  },
+  {
+   "family": "nbb8",
+   "keys": 9
+  },
+  {
+   "family": "nbm",
+   "keys": 42
+  },
+  {
+   "family": "nchl",
+   "keys": 12
+  },
+  {
+   "family": "nequip",
+   "keys": 1
+  },
+  {
+   "family": "nfx",
+   "keys": 180
+  },
+  {
+   "family": "nhxm",
+   "keys": 150
+  },
+  {
+   "family": "nlqf",
+   "keys": 30
+  },
+  {
+   "family": "nmb1",
+   "keys": 9
+  },
+  {
+   "family": "nmb2",
+   "keys": 9
+  },
+  {
+   "family": "nmb3",
+   "keys": 9
+  },
+  {
+   "family": "nmb4",
+   "keys": 9
+  },
+  {
+   "family": "nmb5",
+   "keys": 9
+  },
+  {
+   "family": "nmb6",
+   "keys": 9
+  },
+  {
+   "family": "nmb7",
+   "keys": 9
+  },
+  {
+   "family": "nmb8",
+   "keys": 9
+  },
+  {
+   "family": "nmvh",
+   "keys": 1
+  },
+  {
+   "family": "nqv",
+   "keys": 56
+  },
+  {
+   "family": "nrbfi",
+   "keys": 6
+  },
+  {
+   "family": "nsb",
+   "keys": 49
+  },
+  {
+   "family": "nspk",
+   "keys": 12
+  },
+  {
+   "family": "nthr0",
+   "keys": 4
+  },
+  {
+   "family": "nthr1",
+   "keys": 4
+  },
+  {
+   "family": "nthr2",
+   "keys": 4
+  },
+  {
+   "family": "nthr3",
+   "keys": 4
+  },
+  {
+   "family": "nthr4",
+   "keys": 4
+  },
+  {
+   "family": "nthr5",
+   "keys": 4
+  },
+  {
+   "family": "nvi3",
+   "keys": 3
+  },
+  {
+   "family": "olivetank1",
+   "keys": 16
+  },
+  {
+   "family": "olivetank2",
+   "keys": 16
+  },
+  {
+   "family": "olivetank3",
+   "keys": 16
+  },
+  {
+   "family": "olivetank4",
+   "keys": 16
+  },
+  {
+   "family": "olivetank5",
+   "keys": 16
+  },
+  {
+   "family": "olivetank6",
+   "keys": 16
+  },
+  {
+   "family": "olivetank7",
+   "keys": 16
+  },
+  {
+   "family": "olivetank8",
+   "keys": 16
+  },
+  {
+   "family": "sfont2",
+   "keys": 47
+  },
+  {
+   "family": "sfont3",
+   "keys": 47
+  },
+  {
+   "family": "sfont4",
+   "keys": 47
+  },
+  {
+   "family": "sfont5",
+   "keys": 47
+  },
+  {
+   "family": "sfont6",
+   "keys": 47
+  },
+  {
+   "family": "sfont7",
+   "keys": 47
+  },
+  {
+   "family": "sfont8",
+   "keys": 47
+  },
+  {
+   "family": "sfont9",
+   "keys": 47
+  },
+  {
+   "family": "sfontA",
+   "keys": 7
+  },
+  {
+   "family": "slatejet1",
+   "keys": 16
+  },
+  {
+   "family": "slatejet2",
+   "keys": 16
+  },
+  {
+   "family": "slatejet3",
+   "keys": 16
+  },
+  {
+   "family": "slatejet4",
+   "keys": 16
+  },
+  {
+   "family": "slatejet5",
+   "keys": 16
+  },
+  {
+   "family": "slatejet6",
+   "keys": 16
+  },
+  {
+   "family": "slatejet7",
+   "keys": 16
+  },
+  {
+   "family": "slatejet8",
+   "keys": 16
+  },
+  {
+   "family": "steeljet1",
+   "keys": 16
+  },
+  {
+   "family": "steeljet2",
+   "keys": 16
+  },
+  {
+   "family": "steeljet3",
+   "keys": 16
+  },
+  {
+   "family": "steeljet4",
+   "keys": 16
+  },
+  {
+   "family": "steeljet5",
+   "keys": 16
+  },
+  {
+   "family": "steeljet6",
+   "keys": 16
+  },
+  {
+   "family": "steeljet7",
+   "keys": 16
+  },
+  {
+   "family": "steeljet8",
+   "keys": 16
+  },
+  {
+   "family": "untitl",
+   "keys": 1
+  }
+ ],
+ "stats": {
+  "families": 403,
+  "namedByCode": 4596,
+  "quarantined": 2618
+ }
+}
