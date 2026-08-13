@@ -130,22 +130,34 @@
       if(run && !window.player.dead && run.weapon!=null){
         var wt=WT[run.weapon]||'mg';
         var wlv=Math.max(1,Math.min(5,(run.wlevels&&run.wlevels[run.weapon])||run.wlevel||1));
-        /* ⚠ micon_* DOES NOT EXIST. NOT ONE OF THE 30 KEYS THIS ASKED FOR IS REGISTERED,
-           so the box has been drawing its frame and never an icon. The convention that is
-           actually in the manifest is <weapon>_icon_<level>, with iceorb filed under "ice".
-           Tried in order, so if micon_ is ever added it still wins, and an unlevelled
-           <weapon>_icon catches anything without a ladder. */
-        var alt = (wt==='iceorb') ? 'ice' : wt;
-        var cands = ['micon_'+wt+'_'+wlv, alt+'_icon_'+wlv, alt+'_icon_1', alt+'_icon'];
+        /* ⚠ THE PRECEDING COMMENT WAS WRONG AND IT COST MIKE THE RIGHT ICON (fixed 0810s).
+           micon_* DOES exist — as 57 rects in BOFX.icons, the THIRD art store, which XART can
+           never answer for. So `X.rdy('micon_...')` was false for every weapon on every frame,
+           the micon_ candidate always lost, and this quietly drew the older *_icon_* set. That
+           is "I see your using a basic graphic for fireball icon".
+
+           And WT above is a second weapon table: it hard-codes 5:'iceorb', so slot 5 could never
+           show the fireball no matter which store answered. weaponIconKey is the game's own
+           resolver and already knows stage 3 dispenses the fireball and that Freezer's is the
+           fire/ice ball (0806d). Ask IT, and blit through the shared iconBlit so this surface and
+           the in-game one cannot drift apart again. The old chain stays as the fallback. */
+        var cx=W*0.499, cy=H*0.505, drew=null;
         var ik = null;
-        for(var ci=0; ci<cands.length; ci++){ if(X.rdy(cands[ci])){ ik = cands[ci]; break; } }
-        if(ik){
-          var im=X.get(ik), fit=W*0.52, ss=Math.min(fit/im.naturalWidth, fit/im.naturalHeight);
-          var cx=W*0.499, cy=H*0.505;
-          g.save(); g.shadowColor='#ffb24a'; g.shadowBlur=6;
-          g.drawImage(im, cx-im.naturalWidth*ss/2, cy-im.naturalHeight*ss/2, im.naturalWidth*ss, im.naturalHeight*ss);
-          g.restore();
+        try { ik = weaponIconKey(run.weapon, wlv); } catch(e){ ik = 'micon_'+wt+'_'+wlv; }
+        g.save(); g.shadowColor='#ffb24a'; g.shadowBlur=6;
+        try { if(typeof iconBlit==='function') drew = iconBlit(g, ik, cx, cy, H*0.56, true); }
+        catch(e){ drew = null; }
+        if(drew==null){
+          var alt = (wt==='iceorb') ? 'ice' : wt;
+          var cands = [alt+'_icon_'+wlv, alt+'_icon_1', alt+'_icon'];
+          for(var ci=0; ci<cands.length; ci++){ if(X.rdy(cands[ci])){ ik = cands[ci]; break; } }
+          if(ik && X.rdy(ik)){
+            var im=X.get(ik), fit=W*0.52, ss=Math.min(fit/im.naturalWidth, fit/im.naturalHeight);
+            g.drawImage(im, cx-im.naturalWidth*ss/2, cy-im.naturalHeight*ss/2,
+                        im.naturalWidth*ss, im.naturalHeight*ss);
+          }
         }
+        g.restore();
       }
     }catch(e){}
   };

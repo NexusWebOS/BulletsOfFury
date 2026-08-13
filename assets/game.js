@@ -15906,11 +15906,51 @@ function iconDraw(key, x, y, h, centred){
   }
   return _iconDrawCell(key, x, y, h, centred);
 }
+/* ============================================================
+   iconBlit — iconDraw, into a context the CALLER supplies (drop 0810s).
+
+   The EQUIPPED box lives in index.html as its own classic script drawing to its own canvas, so it
+   could not call iconDraw at all (iconDraw writes to the game's ctx). What it did instead is the
+   reason Mike sees a "basic graphic":
+
+     - it kept a SECOND weapon table with 5:'iceorb' hard-coded, so slot 5 could never show the
+       fireball — bypassing weaponIconKey and every rule 0806d put there (stage 3 dispenses the
+       fireball, Freezer gets thermoshock);
+     - and it probed micon_* against XART, where those keys have never existed. Its own comment
+       says so. So the micon_ candidate ALWAYS lost and it fell through to an older *_icon_* set.
+
+   That is the third store trap in CLAUDE.md, and this is the fix for it: one lookup, usable from
+   any canvas, so a second surface can never drift from the first again. ============================================================ */
+function iconBlit(g, key, x, y, h, centred){
+  if(!g) return null;
+  key = specialArtKey(key);
+  const T=(typeof BOFX!=='undefined' && BOFX.icons) ? BOFX.icons[key] : null;
+  if(T){
+    const sheetKey = T[4] || 'nia_icons';
+    if(typeof XART==='undefined' || !XART.rdy(sheetKey)) return null;
+    const im=XART.get(sheetKey); if(!im||!im.naturalWidth) return null;
+    const sc=h/T[3], w=T[2]*sc;
+    g.drawImage(im, T[0],T[1],T[2],T[3], centred?(x-w/2):x, centred?(y-h/2):y, w, h);
+    return w;
+  }
+  /* not a sheet cell — the override may point at a standalone plate */
+  if(typeof XART!=='undefined' && XART.rdy(key)){
+    const im=XART.get(key), w=h*(im.naturalWidth/im.naturalHeight);
+    g.drawImage(im, centred?(x-w/2):x, centred?(y-h/2):y, w, h);
+    return w;
+  }
+  return null;
+}
 function _iconDrawCell(key, x, y, h, centred){
-  if(typeof XART==='undefined' || !XART.rdy('nia_icons')) return null;
   const T=(typeof BOFX!=='undefined' && BOFX.icons) ? BOFX.icons[key] : null;
   if(!T) return null;
-  const im=XART.get('nia_icons'); if(!im||!im.naturalWidth) return null;
+  /* AN ENTRY MAY NAME ITS OWN SHEET (drop 0810s). This read 'nia_icons' as a literal, so a
+     refreshed icon could only ever land by repacking that one cell — and it is a CELL inside
+     nca_28, not a loose file, so a repack touches an atlas 668x656 of art belongs to. A fifth
+     element on the rect keeps every existing 4-element entry working untouched. */
+  const sheetKey = T[4] || 'nia_icons';
+  if(typeof XART==='undefined' || !XART.rdy(sheetKey)) return null;
+  const im=XART.get(sheetKey); if(!im||!im.naturalWidth) return null;
   const s=h/T[3], w=T[2]*s;
   /* centred is not cosmetic — the pickup draws about its own origin while the stage card
      draws from a left edge, and using the wrong one shifts the icon by half its width. */
