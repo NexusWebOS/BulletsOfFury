@@ -30308,16 +30308,15 @@ function _drawStageSelectInner(dt){
      highlight at ~30297 keeps reading sselCursor on purpose — the cursor really is still parked,
      and the new flag must stay gray until the unfurl, which is the whole point of the cinematic. */
   const _selStage=(_cine && _cine.stage) ? _cine.stage : sselCursor;
-  /* ⚠ APPLIED BUT NOT YET CONFIRMED ON PIXELS (drop 0810o). The diagnosis above is measured and
-     independently verified; this change follows from it and reads correctly. But re-running
-     probe_unlock.py after the edit STILL measured the old region for the unlock cine, and I ran
-     out of room to find out why — the probe diffs the overlay in and out, so what it reports is
-     real, and only ONE call site produces that overlay (`cmapRegionForStage`, just below). Either
-     `_cine` is falsy at the moment this line runs while the cinematic is live, or the flash is
-     reaching the canvas by a route I have not found.
-     DO NOT mark this bug closed on the strength of the code reading right. Re-run
-     scratchpad/probe_unlock.py, and if it still reports N-1, log `_selStage` and `sselUnlockCine`
-     from inside this function on the frame the flash is drawn. */
+  /* CONFIRMED (drop 0810p). The first re-check appeared to fail, and the probe was the thing at
+     fault: probe_unlock.py prints "region actually drawn (cursor)" from a value it RECOMPUTES off
+     sselCursor, so it reported the old answer no matter what the game did — the same
+     recompute-the-thing-under-test trap this file records against probe_seam.py.
+
+     Settled by wrapping cmapRegionForStage and logging its ARGUMENT: during the level-6 unlock it
+     is called with 6 in every phase — wait, zoomin, ding, unfurl, zoomout — while sselCursor sits
+     at 5. And on pixels: the banner reads "STAGE 6 HEAVY TURBULENCE" over the storm plant, where
+     it used to read "STAGE 5 ALL FOR ONE". docs/proofs/unlock6_0810p.png */
   if(_cine && _cine.z!=null && _cine.z>1){ const p9=SSEL_POS[_cine.stage]||[320,240];
     drawStageSelect._cam.z=_cine.z; drawStageSelect._cam.ax=MX+p9[0]*S; drawStageSelect._cam.ay=MY+p9[1]*S; }
   const CAMZ=drawStageSelect._cam.z, CAX=drawStageSelect._cam.ax, CAY=drawStageSelect._cam.ay;
