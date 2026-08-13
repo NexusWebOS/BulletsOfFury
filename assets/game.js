@@ -7335,13 +7335,52 @@ const ENEMY_VOLLEY = {
   hell:          {pat:'pincer',  every:2},
   cdisc:         {pat:'stagger', every:3},
 };
-function enemyVolley(e){
+/* ============================================================
+   enemyVolleyTick " the volley needs its OWN clock (drop 0810x)
+
+   Mike, twice: "the enemies should be SHOOTING".
+
+   Arming the silent rosters in 0810w was not enough, and the measurement said so: over 900 frames
+   of stage 7, 2,295 enemy-frames, every one with shoots=true and an atkProfile " and the generic
+   dispatch's four gates were ALL satisfied exactly ZERO times. fireCd reached <=0 in only 55 of
+   those frames.
+
+   " BECAUSE THE TICK FUNCTIONS OWN e.fireCd. volcTick, sewerTick and orbitalTick each run their
+   own cadence off the same field the generic block tests, so they reset it before it can ever
+   coincide with the entry debt being paid and the unit sitting in the play band. Two systems, one
+   timer, and the newer one loses every time. It is the same shape as the quad-laser " a unit that
+   is armed on paper with no path from "it should shoot" to a bullet " and it is invisible to any
+   check that only asks whether shoots is true.
+
+   So the volley does NOT share fireCd. It carries _volCd, decremented here every frame, and fires
+   regardless of what the unit's own tick is doing with its cooldown. That is what puts rounds on
+   screen. The gates that remain are the ones that exist for fairness rather than bookkeeping: not
+   while entering, and only from inside the play band, so nothing shoots from off the top edge.
+   ============================================================ */
+function enemyVolleyTick(e, dt){
+  if(!e || e.dead || !ENEMY_VOLLEY[e.type]) return;
+  if(e.enter || e._entry>0) return;                       // the entry debt is still honoured
+  if(!(e.y>0 && e.y<VH*0.85)) return;                     // never from off the top edge
+  const V = ENEMY_VOLLEY[e.type];
+  if(e._volCd==null){ e._volCd = rnd(0.25, 0.8); return; } // staggered so a wave never fires as one
+  e._volCd -= dt*((typeof DIFF!=='undefined'&&DIFF.eFire)?DIFF.eFire:1);
+  if(e._volCd>0) return;
+  /* RATE, not shape, is the dial Mike is asking for: "the enemies should be SHOOTING".
+     Measured at the old 0.42 factor stage 7 produced 14 volleys in 15s across ~2.5 live units
+     spread over an 800-wide world against a 480 camera, so most of it happened off-screen and
+     the screen read as empty. 0.16 puts roughly one volley per unit per half-second. */
+  e._volCd = (V.every||3)*0.16*rnd(0.85,1.25);
+  enemyVolley(e, true);
+}
+function enemyVolley(e, force){
   if(!e || e.dead) return false;
   const V = ENEMY_VOLLEY[e.type]; if(!V) return false;
-  /* the volley is PUNCTUATION. Its own counter, so changing a unit's normal cadence never
-     accidentally turns this into a firehose. */
-  e._volN = (e._volN|0) + 1;
-  if(e._volN % V.every) return false;
+  if(!force){
+    /* ridden off the unit's own fire cycle. Only reached by units whose fireCd the generic
+       dispatch actually owns " see enemyVolleyTick for why most do not. */
+    e._volN = (e._volN|0) + 1;
+    if(e._volN % V.every) return false;
+  }
   const y = e.y + e.h*0.30, D = Math.PI/2;      // D = straight down, the spine of every pattern
   const k = (e.type==='icegun'||e.type==='cryo') ? 'ice' : 'flare';
   switch(V.pat){
@@ -13400,6 +13439,10 @@ function updatePlay(dt){
     if(e._frzFlash>0) e._frzFlash-=dt;
     if(e._muz>0) e._muz-=dt;
     if(e._spent>0) e._spent-=dt;
+    /* the positional volley runs on its OWN clock, outside the shoots/fireCd gate below, because
+       the tick functions own fireCd and the generic dispatch therefore never fires for them
+       (drop 0810x " measured at 0 of 2,295 enemy-frames on stage 7). */
+    if(typeof enemyVolleyTick==='function') enemyVolleyTick(e, dt);
     if(e.shoots){
       /* ENTER, ESTABLISH, TELEGRAPH, THEN ATTACK (drop 0801eb).
 
@@ -13502,10 +13545,9 @@ function updatePlay(dt){
           case 'cryo':
             for(let k=-1;k<=1;k++) eShoot(e.x,e.y+10, Math.PI/2+k*0.22, 2.4,'ice'); break;
         }
-        /* and the positional volley on top, on its own slow cycle (drop 0810u) — see
-           ENEMY_VOLLEY. Placed INSIDE the just-fired block so it rides the unit's own
-           cadence and inherits the entry debt above rather than needing its own timer. */
-        if(typeof enemyVolley==='function') enemyVolley(e);
+        /* NOTE: the volley is driven by enemyVolleyTick on its own clock now (drop 0810x).
+           It used to be called here, riding the unit's fire cycle " which meant it never ran at
+           all for any unit whose tick owns fireCd, i.e. most of the ones that needed it. */
       }
     }
     // mines drift then explode near player
