@@ -620,6 +620,35 @@ six separate targets. It could only ever fail. Replaced with the contract that a
 every part DOCKED (the 0809m fix for "957 probes found nothing hittable"), per-component shares,
 summing to 100%, and the haul writing no pool. All four pass. **Standing failures: 5 → 4.**
 
+## ⚠ MIKE'S 0810q LIST — WHAT IS DONE AND WHAT IS NOT
+
+**Done and verified:** the transition regression (my clip band sat off-screen for the whole
+cinematic — `probe_arrival` stayed green because it only measures the handoff FRAME); level 1 now
+uses level 2's entry (`DBG.opening=false`); the game-over countdown is off the 3-2-1; the
+"BOOOOO" on kills (a flag collision — the death-halt wrote `e._frozen=true` and `true>0` sent
+EVERY enemy down the ice-shatter branch); barrels are scenery again; level 3's slow zig-zag is
+replaced with committed moves; the fireball icon.
+
+⚠ **THE WEAPON ICONS WERE NEVER LOST.** Every `micon_` family is registered — fireorb,
+thermoshock, iceorb, icebreath, mg, spread, missile, laser, firewall. The HUD asked
+`ASSETS.has(wIcon)`, and they live in **XART**. The legacy store has never held them, so the test
+was false for every weapon on every frame and the else-branch drew the text "L3" where the icon
+should be. **When art looks "basic", check which store is being asked before concluding anything
+is missing.**
+
+### NOT DONE — still owed to Mike from this list
+
+1. **Scrap the level 2 and level 3 bosses, and the level 3 miniboss.** "were gonna have to scrap
+   these bosses, as your just not able to pull off what I need." Deliberately not started: removing
+   a stage's boss outright leaves the stage unable to END, and what replaces them is his call.
+   `DEAD_SUBBOSS` (now genuinely in scope) is the mechanism for the level-3 miniboss;
+   bosses need a replacement chosen first.
+2. **Lasers from the beams on the level 1 miniboss** (the quadlaser's four cannons).
+3. **More projectiles, and patterns that force the player to hold specific spots.** The stage-3
+   pattern change is a first step, not the whole ask.
+4. **Enemies still appearing out of thin air on level 1** — the long-standing pop-in; 2 of 29 units
+   were last measured entering at (21,67) rather than flying in.
+
 ## THE stageText FALLBACK RESTORED UI TEXT ACROSS THE WHOLE GAME (drop 0810o/p)
 
 The guard added inside `stageText` for the stage-clear panel turned out to be load-bearing far

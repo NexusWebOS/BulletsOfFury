@@ -3495,8 +3495,31 @@ function drawHUDCustomImg(){
   }
   const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[run.weapon]||'mg', wlv=clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
   const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a'})[run.weapon]||'#fff';
-  if(ASSETS.has(wIcon)){ ctx.save(); ctx.shadowColor=wglow; ctx.shadowBlur=8; const dd=ASSETS.dims(wIcon), ss=Math.min(30/dd.w,24/dd.h); ASSETS.blit(wIcon,cx[4],HUDH*0.46,dd.w*ss,dd.h*ss); ctx.restore(); }
-  else { ctx.fillStyle=wglow; ctx.font='bold 11px "BOFmil", monospace'; ctx.fillText('L'+wlv,cx[4],vy-2); }
+  /* ⚠ THE ICONS WERE NEVER LOST — THIS ASKED THE WRONG ASSET STORE (drop 0810q). Mike: "I see
+     your using a basic graphic for fireball icon, Im assuming yuo lost the icons."
+
+     Every micon_ family IS registered — fireorb, thermoshock, iceorb, icebreath, mg, spread,
+     missile, laser, firewall — but they live in XART, and this asked ASSETS.has(). The legacy
+     ASSETS store has never held them, so the test was false for EVERY weapon on EVERY frame and
+     the else-branch drew a text label, "L3", in place of the authored icon. Not a lost asset and
+     not a fallback doing its job: a lookup pointed at the wrong system.
+
+     XART first, ASSETS second for anything that genuinely lives there, and the text only if both
+     miss. XART.rdy is polled every frame here, never one-shot, because its first call returns
+     false and starts the load. */
+  let _wDrew=false;
+  if(typeof XART!=='undefined' && XART.rdy(wIcon)){
+    const im=XART.get(wIcon);
+    if(im && im.naturalWidth){
+      const ss=Math.min(30/im.naturalWidth, 24/im.naturalHeight);
+      ctx.save(); ctx.shadowColor=wglow; ctx.shadowBlur=8;
+      ctx.drawImage(im, cx[4]-im.naturalWidth*ss/2, HUDH*0.46-im.naturalHeight*ss/2,
+                    im.naturalWidth*ss, im.naturalHeight*ss);
+      ctx.restore(); _wDrew=true;
+    }
+  }
+  if(!_wDrew && ASSETS.has(wIcon)){ ctx.save(); ctx.shadowColor=wglow; ctx.shadowBlur=8; const dd=ASSETS.dims(wIcon), ss=Math.min(30/dd.w,24/dd.h); ASSETS.blit(wIcon,cx[4],HUDH*0.46,dd.w*ss,dd.h*ss); ctx.restore(); _wDrew=true; }
+  if(!_wDrew){ ctx.fillStyle=wglow; ctx.font='bold 11px "BOFmil", monospace'; ctx.fillText('L'+wlv,cx[4],vy-2); }
   for(let i=0;i<5;i++){ const on=i<wlv; ctx.fillStyle=on?wglow:'#1b2430'; ctx.fillRect(cx[4]-11+i*5,HUDH-9,3.6,3.6); }
   ctx.textBaseline='alphabetic'; ctx.textAlign='left';
   let ix=VW-10;
