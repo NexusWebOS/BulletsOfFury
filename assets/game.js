@@ -4751,6 +4751,13 @@ function enemyEntrySweep(e, dt){
      Worth remembering next to the note in CLAUDE.md that something outside jetTick displaces the
      jets. For one suite run, that something was me. */
   if(e._route || e.route) return;
+  /* AND SCENERY NEVER SWEEPS IN (drop 0810q). Mike: "Stop making barrels move in level 1."
+     Pinning the prop pattern stopped the sine, but the entrance sweep was still easing every
+     barrel sideways on arrival — measured at ~9px, small but exactly the drift he is describing,
+     and a fuel barrel that slides as it appears reads as a unit rather than as scenery. Same
+     exclusion the routed jets already get one line up, for the same reason: a thing on a path of
+     its own must not be nudged onto another. */
+  if(e.prop || e.pattern==='prop') return;
   if(e._esw===undefined){
     const W=(typeof worldWidth==='function')?worldWidth():VW;
     /* qualify ONCE, at first sight: spawned above the top, and horizontally on-screen */
@@ -6315,6 +6322,21 @@ const SHIPS=[];
      trap the note above was written for. */
   _selfPat['sandtank']=1;
   _selfPat['strafedive']=1;
+  /* ⚠ SCENERY DOES NOT STEER (drop 0810q). Mike: "Stop making barrels move in level 1."
+
+     Every prop carries pat:'prop' in its roster row, and none of it survived: props were not in
+     _selfPat, so the generic block below overwrote the pattern with a RANDOM pick that falls back
+     to 'sine' — and a fuel barrel began weaving across the river. It is the same trap the note
+     above this line was written for, one roster further on.
+
+     Driven from the tables rather than hand-listed, which is the standing rule for _selfPat: any
+     row flagged prop:true is scenery, holds its pattern, and only moves with the terrain. Note
+     s1rivermine opts INTO drift with its own flag, so bobbing mines still bob. */
+  for(const _tbl of [(typeof NEF_S1!=='undefined')&&NEF_S1, (typeof NEF_S2!=='undefined')&&NEF_S2,
+                     (typeof NEF_S3!=='undefined')&&NEF_S3]){
+    if(!_tbl) continue;
+    for(const _k in _tbl){ if(_tbl[_k] && _tbl[_k].prop) _selfPat[_k]=1; }
+  }
   for(const _k in BUNKER_DEF) _selfPat[_k]=1;  // bunkers are stationary emplacements
   for(const _k in TUR360) _selfPat[_k]=1;      // 360 turrets hold position
   if(!opt.pattern && !_selfPat[type]){
@@ -6827,15 +6849,24 @@ function buildStagePlan(stageNum){
     /* DRONES, not only jets. Stage 3 was almost entirely fast airframes — the arctic needs slower,
        denser targets between the interceptor passes so the pacing breathes. These slot BETWEEN the
        existing jet waves rather than replacing any of them. */
-    add(7.5, ()=> vRow('mdrone', Math.round(4*D), {pattern:'sine', amp:30}));
-    add(14.5,()=> { spawnEnemy('drone', W3*0.24, -40, {pattern:'sine', amp:34});
-                    spawnEnemy('drone', W3*0.50, -46, {pattern:'sine', amp:34, phase:0.9});
-                    spawnEnemy('drone', W3*0.76, -40, {pattern:'sine', amp:34, phase:1.8}); });
-    add(21.0,()=> vRow('minidrone', Math.round(5*D), {pattern:'weave', amp:26}));
+    /* ⚠ NO MORE SLOW ZIG-ZAG ON THE ICE (drop 0810q). Mike: "sotp making the enemies slowly zig
+       zag in level 3", and in the same breath "give our shmup patterns where I have to keep
+       myself at certain spots to survive".
+
+       Stage 3 ran almost entirely on pattern:'sine' with amp 26-34 — a slow lateral wobble that
+       is neither threatening nor readable, and which the generic block hands out as its DEFAULT
+       whenever nothing else is chosen. The level's signature move was the absence of a decision.
+       These are committed moves instead: 'dive' comes down the screen AT you, and a straight row
+       denies a lane. Both give the player somewhere they have to BE, which a wobble never does. */
+    add(7.5, ()=> vRow('mdrone', Math.round(4*D), {pattern:'straight'}));
+    add(14.5,()=> { spawnEnemy('drone', W3*0.24, -40, {pattern:'dive'});
+                    spawnEnemy('drone', W3*0.50, -46, {pattern:'dive', phase:0.9});
+                    spawnEnemy('drone', W3*0.76, -40, {pattern:'dive', phase:1.8}); });
+    add(21.0,()=> vRow('minidrone', Math.round(5*D), {pattern:'straight'}));
     add(29.0,()=> { spawnEnemy('turdrone', W3*0.30, -40, {}); spawnEnemy('turdrone', W3*0.70, -40, {}); });
     add(36.0,()=> vRow('mdrone', Math.round(5*D), {pattern:'dive', amp:24}));
     add(44.0,()=> { spawnEnemy('shieldd', W3*0.36, -44, {}); spawnEnemy('shieldd', W3*0.64, -44, {});
-                    vRow('minidrone', Math.round(4*D), {pattern:'sine', amp:30}); });
+                    vRow('minidrone', Math.round(4*D), {pattern:'straight'}); });
     add(2.5, ()=> vRow('frost', Math.round(3*D), {pattern:'weave', amp:40}));
     add(6.0, ()=> { spawnEnemy('shieldd', VW*0.38, -30, {}); spawnEnemy('turdrone', VW*0.62, -30, {}); });
     add(15.0,()=> spawnEnemy('el_cs', VW*0.5, -50, {pattern:'weave', amp:32}));            // CRYO SCARAB
@@ -6844,7 +6875,7 @@ function buildStagePlan(stageNum){
     add(9.0, ()=> { spawnEnemy('mdrone', VW*0.28, -40, {}); spawnEnemy('mdrone', VW*0.72, -40, {}); });   // SHIPS
     add(22.0,()=> { spawnEnemy('mdrone', VW*0.5, -40, {}); spawnEnemy('frost', VW*0.22, -40, {}); spawnEnemy('frost', VW*0.78, -40, {}); });
     add(37.0,()=> { spawnEnemy('minishipC', VW*0.32, -40, {}); spawnEnemy('minishipC', VW*0.68, -40, {}); });
-    add(30.0,()=> { spawnEnemy('el_cs', VW*0.28, -50, {pattern:'sine'}); spawnEnemy('el_cs', VW*0.72, -50, {pattern:'sine', phase:1.4}); });
+    add(30.0,()=> { spawnEnemy('el_cs', VW*0.28, -50, {pattern:'dive'}); spawnEnemy('el_cs', VW*0.72, -50, {pattern:'dive', phase:1.4}); });
     add(12.0,()=> aiWaveRush('frost', 4, {}));                    // sheet 1
     add(24.0,()=> aiWaveSweep('frost', 4, {dir:-1}));             // pattern #1 MIRRORED, from the right
     add(36.0,()=> aiWaveColumns('icegun', {dir:1}));              // pattern #2
