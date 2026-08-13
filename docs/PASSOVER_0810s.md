@@ -139,9 +139,11 @@ value under test.
 
 ## Still open for Mike
 
-- **Which weapon should wear the ice shards?** `micon_iceshard_1..5` is registered and additive but
-  dresses nothing yet. The existing ice families are `iceorb` (the ball) and `icebreath` (Freezer's
-  cone).
+- ~~Which weapon should wear the ice shards?~~ **Answered by Mike on the resend** — that row is
+  ICE BREATH, Freezer's weapon, a family that already existed. `micon_icebreath_1..5` is repointed
+  at the new sheet and the invented `micon_iceshard_*` is removed. Verified: Freezer's slot 4
+  resolves `micon_icebreath_3` off `nia_icons2`, Cole's slot 4 still resolves firewall off the old
+  sheet (`docs/proofs/icons_equipbox_0810t.png`).
 - **More projectiles for the ordinary enemy roster.** The five boss patterns and the quad-laser's
   lanes land the ask for bosses; the regular units are still the stage-3 change only.
 - **The atlas reorg** is still blocked on names, not packing — 5,064 of 9,733 keys sit in families

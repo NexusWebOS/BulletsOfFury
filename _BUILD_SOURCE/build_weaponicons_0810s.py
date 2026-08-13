@@ -35,12 +35,16 @@ from PIL import Image
 ROOT = os.path.dirname(os.path.abspath(__file__))
 GAME = os.path.abspath(os.path.join(ROOT, '..'))
 SRC = os.path.join(GAME, '_ART_SOURCES', 'BOF2_WeaponIcons_0810s',
-                   'icons_fireorb_iceshard_tiers.png')
+                   'icons_fireorb_icebreath_tiers.png')
 OUT_SHEET = os.path.join(GAME, 'assets', 'game', 'nia_icons2.png')
 
 COLS = [(73, 309), (359, 598), (645, 885), (930, 1168), (1222, 1465)]
 ROWS = [(125, 400), (568, 843)]
-FAMILIES = ['micon_fireorb', 'micon_iceshard']       # row order, top to bottom
+# Mike named the bottom row himself on the resend: "heres your fireball and ice breath icoNS".
+# It is ICE BREATH - Freezer's weapon, and a family that already existed - not the "ice shards"
+# this script guessed at on the first pass. weaponIconKey already routes w===4 to icebreath for
+# him, so naming the row correctly is the whole wiring.
+FAMILIES = ['micon_fireorb', 'micon_icebreath']      # row order, top to bottom
 PAD = 2                                              # gutter in the packed sheet
 
 # ⚠ DOWNSCALED, and it is a FILTERED resize on purpose. The obvious assumption with pixel-art-

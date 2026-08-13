@@ -7249,7 +7249,13 @@ console.log("=== 168. icon atlas ===");
      refresh means repacking a CELL inside nca_28 that holds 668x656 of unrelated art */
   ok(!!_IC['micon_fireorb_1'] && _IC['micon_fireorb_1'][4]==='nia_icons2',
      'the refreshed fire orb reads from its own sheet, via the per-entry sheet key');
-  ok(!!_IC['micon_iceshard_3'], 'the ice shard family is registered');
+  /* ⚠ NAMED BY MIKE ON THE RESEND, and the first pass guessed wrong. That row is ICE
+     BREATH — Freezer's weapon, a family that already existed — not a new "ice shard" family.
+     weaponIconKey already routes w===4 to micon_icebreath_* for him, so the refreshed art
+     reaches him purely by being registered under the right name. */
+  ok(!!_IC['micon_icebreath_1'] && _IC['micon_icebreath_1'][4]==='nia_icons2',
+     'the refreshed ice breath reads from the new sheet too');
+  ok(!_IC['micon_iceshard_1'], 'and the guessed-at iceshard family is gone, not left as a phantom');
   ['falva','lizzie','cole','axel','yuri','decker','freezer','juggernaut','maverick'].forEach(function(p){
     ok(!!_IC['spicon_'+p], 'spicon_'+p+' is a cell in the sheet');
   });

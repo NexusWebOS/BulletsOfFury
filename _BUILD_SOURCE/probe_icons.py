@@ -20,8 +20,8 @@ def serve(d):
     return s.server_address[1]
 
 RUN = r"""
-([stage, weapon, lv]) => {
-  ASSETS.ready=true; run.pilot='cole'; run.mode='arcade';
+([stage, weapon, lv, pilot]) => {
+  ASSETS.ready=true; run.pilot=pilot||'cole'; run.mode='arcade';
   beginStage(stage); setState(GS.PLAY);
   run.weapon=weapon; run.wlevel=lv; if(run.wlevels) run.wlevels[weapon]=lv;
   const t0=performance.now(); let f=0;
@@ -38,14 +38,17 @@ RUN = r"""
 }
 """
 
-CASES = [(3,5,3,'fireball_stage3'), (2,5,3,'iceorb_stage2'), (1,0,3,'mg_stage1'), (1,3,4,'laser_stage1')]
+# ⚠ icebreath is PILOT-gated, not stage-gated: weaponIconKey routes w===4 to micon_icebreath_*
+# only for Freezer ("his kit, on every stage, not a stage rule"). Probing it as cole draws firewall.
+CASES = [(3,5,3,'fireball_stage3','cole'), (2,5,3,'iceorb_stage2','cole'),
+         (1,4,3,'icebreath_freezer','freezer'), (1,4,3,'firewall_cole','cole')]
 
 def main():
     from playwright.sync_api import sync_playwright
     os.makedirs(OUT, exist_ok=True)
     port = serve(GAME); url='http://127.0.0.1:%d/index.html'%port
     with sync_playwright() as p:
-        for stage, wp, lv, tag in CASES:
+        for stage, wp, lv, tag, pilot in CASES:
             b = p.chromium.launch(args=['--disable-gpu','--no-sandbox','--mute-audio'])
             pg = b.new_page(viewport={'width':620,'height':900}, device_scale_factor=1)
             try:
@@ -56,7 +59,7 @@ def main():
                     pg.evaluate("()=>{try{XART.rdy('nia_icons');XART.rdy('nia_icons2');}catch(e){}}")
                     pg.wait_for_timeout(200)
                     if pg.evaluate("()=>XART.rdy('nia_icons')&&XART.rdy('nia_icons2')"): break
-                r = pg.evaluate(RUN, [stage, wp, lv])
+                r = pg.evaluate(RUN, [stage, wp, lv, pilot])
                 print('  %-18s key=%-22s sheet=%-11s ready=%-5s drew=%s'
                       % (tag, r['key'], r['sheet'], r['sheetReady'], r['drewWidth']))
                 d = pg.evaluate("""()=>{const o=document.createElement('canvas');

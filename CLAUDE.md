@@ -753,8 +753,17 @@ drift apart again.
 
 Icon entries may now name their own sheet via a **5th element** on the rect (`_iconDrawCell` read
 `'nia_icons'` as a literal, and that is a CELL inside `nca_28`, not a loose file). Every existing
-4-element entry is untouched. New art: `assets/game/nia_icons2.png`, with `micon_iceshard_1..5` a
-new additive family — **which weapon it should dress is Mike's call.**
+4-element entry is untouched. New art: `assets/game/nia_icons2.png`, refreshing
+`micon_fireorb_1..5` and `micon_icebreath_1..5`.
+
+⚠ **The bottom row is ICE BREATH, and 0810s guessed it was a new "ice shard" family.** Mike
+named it on the resend: *"heres your fireball and ice breath icoNS i FOUND THEM!"*. It is
+Freezer's weapon and the family already existed, so the refreshed art reaches him purely by being
+registered under the right name — `weaponIconKey` already routes `w===4` to `micon_icebreath_*`
+for him, and for nobody else (Cole's slot 4 stays firewall). The invented `micon_iceshard_*` is
+removed rather than left as a phantom family, which is the whole of Mike's atlas complaint in
+miniature. Icon cells are back at 57. **When art arrives unlabelled, the family name is a
+question for Mike, not an inference.**
 
 ## THE ATLAS REORG (drop 0810r) — STARTED, AND IT IS A NAMING PROBLEM FIRST
 
