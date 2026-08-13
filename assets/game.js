@@ -4108,7 +4108,19 @@ const DBG = {
      in verify (1080 frames, 5 phases, and the player object is never touched once — rule 1 from
      the passover doc). `transitions` still gates the END routes, which remain unbuilt, and stays
      off until each one is made and checked on its own. */
-  opening:     true,       // level-1 opening: BUILT and verified
+  /* ⚠ OFF AT MIKE'S INSTRUCTION (drop 0810q): "you never fixed level 1's start and intro. Its
+     still the broken runway instead of the one from level 2 like I told you to use."
+
+     With this false, stage 1 stops taking the bespoke GS.OPENING runway cinematic and goes through
+     GS.INTRO -> GS.LAUNCH like every other stage — which since 0810j means it flies stage 1's own
+     entry connector (the ocean, ENTRY_CONN[1]) straight into the jungle's first frame. That is
+     exactly the level-2 entry he is asking for, and stage 1 was the ONLY stage still on the old
+     path. It also takes the game-over countdown off the 3-2-1 with it, because that call lived in
+     the opening.
+
+     The opening system is left intact rather than deleted — it is a large authored cinematic and
+     this is one word to put back. */
+  opening:     false,      // level-1 uses the standard launch entry, per Mike 0810q
   transitions: false,      // end-of-stage routes 1->2 .. 7->8: none built yet
   spriteFont:  false,
   probe:       false,      // OFF (drop 0731v) — Mike wanted his screen back
@@ -14039,7 +14051,19 @@ function killEnemy(e){
        nothing ever asked for it. Spawned here, before the return, where the
        kills actually are. */
     /* A FROZEN UNIT SHATTERS INSTEAD OF EXPLODING (drop 0801fl). */
-    if(e._frozen>0 && typeof iceShatter==='function'){ iceShatter(e); }
+    /* ⚠ A NUMBER, NOT A BOOLEAN — TWO FLAGS WERE SHARING ONE NAME (drop 0810q). Mike: "Stop
+       playing that annoying BOOOOOOOOOOOOOOOO sound when we blow up enemies."
+
+       The freeze WEAPON counts up: `e._frozen=(e._frozen||0)+1`. The death handler twenty lines
+       up ALSO writes `e._frozen=true`, to stop a dying unit drifting at the player. And
+       `true > 0` is true in JS — so EVERY enemy in the game took the frozen branch: every kill
+       shattered like ice instead of disintegrating, and every kill played iceShatter's borrowed
+       nsp_shield_down, which is the long descending drone Mike is describing. Measured by stack
+       trace from a plain stage-1 drone: killEnemy -> iceShatter -> nsp_shield_down.
+
+       Testing for a NUMBER separates the two without renaming either, so the death-halt keeps
+       working exactly as it did. */
+    if(typeof e._frozen==='number' && e._frozen>0 && typeof iceShatter==='function'){ iceShatter(e); }
     else if(typeof disintegrate==='function') disintegrate(e);
     shake=Math.max(shake, e.w>30?4:1.5);
     if(e.dropOk && chance(0.18*DIFF.dropMul)) dropPowerup(e.x,e.y);
@@ -14197,10 +14221,13 @@ function iceShatter(e){
       color: chance(0.45)?'#ffffff':'#9fe4ff'
     });
   }
-  /* there is no 'glass' sound registered - I invented the name in 0801fl and the
-     harness caught it. nsp_shield_down is the closest shatter in the bank. */
-  if(Audio.SFX && Audio.SFX.nsp_shield_down) Audio.SFX.nsp_shield_down();
-  else if(Audio.SFX && Audio.SFX.hit) Audio.SFX.hit();
+  /* NO BORROWED DRONE HERE (drop 0810q). There is no 'glass' sound registered — the name was
+     invented in 0801fl and the harness caught it — and nsp_shield_down was pressed in as "the
+     closest shatter in the bank". It is a long descending drone, and once the frozen gate above
+     started firing on every kill it became the sound of the whole game. Mike: "the explosive
+     sounds are good enough." The shatter keeps its chips and its shake; the explosion carries the
+     audio. A real glass sample is the only thing that should go back here. */
+  if(Audio.SFX && Audio.SFX.hit) Audio.SFX.hit();
   shake=Math.max(shake, clamp(S*0.06,1.5,8));
 }
 function fxBurst(x, y, size, opts){
@@ -29905,8 +29932,13 @@ function openingUpdate(dt){
     const c=Math.floor((OPEN_T[4]-O.t)/((OPEN_T[4]-OPEN_T[3])/4));
     if(c!==O.counted && c>=0 && c<=3){
       O.counted=c;
+      /* ⚠ NOT countdown() — THAT IS THE GAME-OVER CLIP (drop 0810q). Mike: "Stop playing the game
+         over countdown for the 3 2 1 part." Audio.SFX.countdown is countdown.wav, which
+         drawContinue plays ONCE on the continue screen as the you-are-about-to-lose timer. This
+         fired it on every number of the launch countdown, so starting a level sounded like dying.
+         getready is the launch's own per-number tick, which is what drawLaunch already uses. */
       if(c===0){ if(Audio.SFX.go) Audio.SFX.go(); }
-      else if(Audio.SFX.countdown) Audio.SFX.countdown();
+      else if(Audio.SFX.getready) Audio.SFX.getready();
     }
   }
   O.scroll += O.speed*dt;

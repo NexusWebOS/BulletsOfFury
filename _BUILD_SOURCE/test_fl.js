@@ -6064,7 +6064,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      Turning it on turned all nine on, which is most of why enabling it "wound up breaking the
      game". Split: DBG.opening gates the start, DBG.transitions gates the end routes. */
   ok(_gY.indexOf("DBG.opening) && (num===1")>0, 'the opening cinematic is gated on its OWN flag');
-  ok(vm.runInContext("DBG.opening===true && DBG.transitions===false", ctxv), 'the opening is ON; the unbuilt end routes stay OFF');
+  /* ⚠ THE OPENING IS OFF NOW (drop 0810q). Mike: "you never fixed level 1's start and intro. Its
+     still the broken runway instead of the one from level 2 like I told you to use." Stage 1 was
+     the only stage still on the bespoke runway cinematic; with the flag down it takes GS.INTRO ->
+     GS.LAUNCH like every other stage and flies its own entry connector in. The assertion follows
+     the decision rather than pinning the thing he asked to be replaced. */
+  ok(vm.runInContext("DBG.opening===false && DBG.transitions===false", ctxv), 'level 1 uses the standard launch entry; the unbuilt end routes stay OFF');
   ok(_gY.indexOf('DBG.verbose) || !loop._reported')>0, 'and every swallowed loop error is logged, not just the first');
 
 
