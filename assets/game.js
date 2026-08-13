@@ -4391,9 +4391,9 @@ const STAGES = [
   {n:1, name:'STAGE 1', sub:'RUMBLE IN THE JUNGLE',   bg:'jungle', music:'lvl1',
    length:62, boss:'damkeeper'},
   {n:2, name:'STAGE 2', sub:"IT'S HOT IN HERE",        bg:'volcano',music:'bullets',
-   length:48, boss:'magmacolossus'},
+   length:48, boss:'infernoreaver'},   // was magmacolossus - Mike scrapped it, 0810q/0810s
   {n:3, name:'STAGE 3', sub:"ICE STILL CAN'T SEE",     bg:'ice',    music:'lvl3',
-   length:50, boss:'cryobehemoth'},
+   length:50, boss:'cryospear'},       // was cryobehemoth - scrapped with it
   {n:4, name:'STAGE 4', sub:'CROUCHING MISSILES, HIDDEN DEATH', bg:'sky', music:'lvl4',
    /* STAGE 4 (drop 0801cf): ironrev's mbp_ir prefix has ZERO registered keys —
       it drew nothing, measured. WARHAWK ARSENAL is the stage-4 boss in the pack
@@ -4404,7 +4404,7 @@ const STAGES = [
       it takes the slot and Unity Breaker steps aside. Unity Breaker still draws
       and its spawn case is untouched — putting 'unitybreaker' back here restores
       it exactly as it was. */
-   length:56, boss:'rampartzero'},
+   length:56, boss:'voidbat'},          // bottom-right of the fleet sheet, per Mike 0810s
   {n:6, name:'STAGE 6', sub:'HEAVY TURBULENCE',         bg:'sky',    music:'deathtrap',
    /* STAGE 6 (drop 0801cf): leviathan's sectional code is not in the registered
       nsx_ set — it drew nothing, measured. STORM SOVEREIGN is the pack's stage-6
@@ -4501,11 +4501,11 @@ const SUBBOSS={
      (0801hn). No change needed there. */
   1:{at:0.62, kind:'quadlaser', afterScroll:2100},
                                   // Flipped so its turrets face you; crawls up/down only; quad MGs.
-  2:{at:0.45, kind:'obsidiandrill', afterScroll:961},   // OBSIDIAN DRILL TANK — sectional, tracked, level 2
+  2:{at:0.45, kind:'siegeember', afterScroll:961},      // EMBER SIEGECARRIER (0810s) — replaces the obsidian drill Mike retired
   6:{at:0.45, kind:'ss', afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
   7:{at:0.45, kind:'ratking', afterScroll:1161},    // RAT KING EXCAVATOR — level 7 sub-boss
   8:{at:0.45, kind:'herald', afterScroll:1201},     // HERALD OF DEATH (venom-reaver, retitled per the phase manifest)
-  3:{at:0.45, kind:'glacierrail', afterScroll:1001},     // GLACIER RAIL FORTRESS — sectional, tracked, level 3
+  3:{at:0.45, kind:'thornrime', afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'subreactor', afterScroll:1041},
   5:{at:0.45, kind:'subcore', afterScroll:1121},
 };
@@ -7182,6 +7182,120 @@ let stagePlan=[];
 /* ============================================================
    BOSS FACTORY
    ============================================================ */
+/* ============================================================
+   THE SHIP BOSSES (drop 0810s) — BOF2_South_Facing_Ships_v1.
+
+   Mike: "the volcano one is your new lava MAIN boss, and the ice ship is the new ice boss ...
+   The bottom left corner - use that boss for the stage 2 miniboss but palette swapped to look
+   fire red. Use the bottom middle one and also palette swap to a black/ice blue appearance,
+   thats your stage 3 miniboss. use the bottom right corner one for the stage 5 boss."
+
+   This REPLACES the Magma Colossus and the Cryo Behemoth, which he scrapped in 0810q ("were
+   gonna have to scrap these bosses, as your just not able to pull off what I need"). The genesis
+   and mech systems are untouched and still reachable by kind, so nothing is deleted — the stage
+   simply points at a different boss now.
+
+   THE PATTERNS DENY SPACE RATHER THAN CHASING. Mike: "give our shmup patterns where I have to
+   keep myself at certain spots to survive". The file already argues for this at eshot's push():
+   bullets stay slow and readable, difficulty raises SPEED and not count, and a pattern keeps its
+   shape so what the player learned still applies. So none of these five aim at the player. Each
+   one takes space away and leaves a readable place to stand:
+
+     ember  a wall of fire with ONE moving gap            find the gap, then hold it
+     lance  three lanes, alternating, two closed at once  commit to a lane and change on the beat
+     void   converging Vs from both wingtips              the safe spot is dead centre or the rim
+     siege  broadsides left, then right                   you have to cross, on their tempo
+     rime   a slow rotating spiral                        keep moving around it, never through it
+
+   All five scale by DIFF.ebSpeed exactly like every other pattern in the file. */
+const SHIPBOSS = {
+  infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'ember', cd:1.45},
+  cryospear:     {key:'nsb_cryo_spear',     name:'CRYO SPEAR',          w:195,h:195, hpMul:1.25, pat:'lance', cd:1.35},
+  voidbat:       {key:'nsb_void_bat',       name:'VOID BAT',            w:210,h:210, hpMul:1.45, pat:'void',  cd:1.30},
+  /* ⚠ the two MINIS carry an ABSOLUTE hp, not a multiplier. spawnBoss seeds maxhp from the stage
+     ((220+n*120)*eHp, so 460 on stage 2) but spawnSubBoss__inner seeds a flat 100, so the same
+     multiplier means two completely different fights. Measured: hpMul 0.42 gave these two 42 HP
+     against the quad-laser's 210 — a "miniboss" that dies to a few taps, which is the opposite of
+     what Mike asked for. Absolute, scaled by difficulty, in line with the quad-laser. */
+  siegeember:    {key:'nsb_siege_ember',    name:'EMBER SIEGECARRIER',  w:165,h:165, hp:235, pat:'siege', cd:1.25, mini:true},
+  thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true},
+};
+function shipBossInit(b, kind){
+  const D=SHIPBOSS[kind]; if(!D) return false;
+  b._ship=kind; b._profile='ship'; b.name=D.name; b.w=D.w; b.h=D.h;
+  b.hp=b.maxhp = D.hp ? Math.ceil(D.hp*DIFF.eHp) : Math.ceil((b.maxhp||200)*D.hpMul);
+  b.fireCd=D.cd; b._sbT=0; b._sbStep=0;
+  return true;
+}
+/* one bullet, on the file's own contract: slow, readable, scaled by difficulty SPEED */
+function _shipShot(x,y,vx,vy,w){
+  const sp=(typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1;
+  eBullets.push({x:x, y:y, vx:vx*sp, vy:vy*sp, w:w||11, h:w||11, dmg:1, t:0, kind:'eshot'});
+}
+function shipBossAttack(b){
+  const D=SHIPBOSS[b._ship]; if(!D) return;
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  const step=(b._sbStep=(b._sbStep|0)+1);
+  const y=b.y+b.h*0.30;
+  if(D.pat==='ember'){
+    /* a WALL with one gap, and the gap walks — the whole attack is "get to the gap in time" */
+    const cols=9, gap=((step*3)%cols);
+    for(let i=0;i<cols;i++){
+      if(i===gap || i===((gap+1)%cols)) continue;      // a two-column doorway, always reachable
+      _shipShot(W*(i+0.5)/cols, y, 0, 1.9, 13);
+    }
+  } else if(D.pat==='lance'){
+    /* three lanes; two fire, one is safe, and which one is safe rotates on a readable beat */
+    const safe=step%3;
+    for(let l=0;l<3;l++){
+      if(l===safe) continue;
+      const lx=W*(l+0.5)/3;
+      for(let k=0;k<3;k++) _shipShot(lx+(k-1)*16, y, 0, 2.3, 10);
+    }
+  } else if(D.pat==='void'){
+    /* two converging Vs from the wingtips. Dead centre and the outer rim both survive; the
+       middle distance does not, which is where a player instinctively sits. */
+    const n=6;
+    for(let i=0;i<n;i++){
+      const t=(i+1)/n;
+      _shipShot(b.x-b.w*0.42, y,  0.75*t, 1.7, 10);
+      _shipShot(b.x+b.w*0.42, y, -0.75*t, 1.7, 10);
+    }
+  } else if(D.pat==='siege'){
+    /* broadside: a dense bank down one half, then the other. You must cross on the beat. */
+    const left=(step%2)===0;
+    for(let i=0;i<6;i++){
+      const fx=left ? W*(0.06+i*0.075) : W*(0.94-i*0.075);
+      _shipShot(fx, y, 0, 2.0, 12);
+    }
+  } else if(D.pat==='rime'){
+    /* a slow spiral — never a wall, but it closes every straight line if you stand still */
+    const arms=5, base=step*0.55;
+    for(let a=0;a<arms;a++){
+      const ang=base + a*(Math.PI*2/arms);
+      _shipShot(b.x, y, Math.cos(ang)*1.5, Math.abs(Math.sin(ang))*0.8+1.25, 10);
+    }
+  }
+  if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+}
+/* south-facing 256 cell, pivot centre. White flash on hit is Mike's standing rule for every unit
+   and he asked for it again by name: "glow white when shot etc." */
+function shipBossDraw(b){
+  const D=SHIPBOSS[b&&b._ship]; if(!D) return false;
+  if(typeof XART==='undefined' || !XART.rdy(D.key)) return false;
+  const im=XART.get(D.key);
+  const s=b.w/256, w=256*s, h=256*s;
+  const x=b.x-w/2, y=(b._drawY!=null?b._drawY:b.y)-h/2;
+  ctx.save();
+  ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im, x, y, w, h);
+  if((b.flash||0)>0 && typeof xartTint==='function'){
+    const t=xartTint(D.key, '#ffffff', 0.9);
+    if(t){ ctx.globalAlpha=Math.min(1,(b.flash/0.18))*0.85; ctx.drawImage(t, x, y, w, h); ctx.globalAlpha=1; }
+  }
+  ctx.restore();
+  return true;
+}
 function spawnBoss(kind){
   const sn=curStage.n;
   const hpBase = (220 + sn*120) * DIFF.eHp;
@@ -7192,6 +7306,9 @@ function spawnBoss(kind){
     rotor:0,
   };
   switch(kind){
+    /* the ship bosses (drop 0810s) take their whole stat line from SHIPBOSS */
+    case 'infernoreaver': case 'cryospear': case 'voidbat':
+      shipBossInit(b, kind); break;
     case 'damkeeper': b.name='JUNGLE OVERLORD-X'; b.w=170; b.h=130; break;
     case 'dreadnought': b.name='HELLFIRE GUNSHIP'; b.w=190; b.h=150; break;
     case 'wargod': b.name='THE WAR GOD'; b.w=150; b.h=140; break;
@@ -7413,6 +7530,9 @@ function spawnSubBoss__inner(kind){
   const b={kind, x:VW/2, y:-120, ty:130, t:0, enter:true, hp:100, maxhp:100, w:130, h:120,
            flash:0, dead:false, dying:0, fireCd:1.4, drift:0, atkPhase:0, phaseT:1.2, sub:true, name:'SUB-BOSS'};
   switch(kind){
+    /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
+    case 'siegeember': case 'thornrime':
+      b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {
       /* Built from the pack's own map rather than eyeballed: BOFQL carries the
          384x384 canvas, the pivot, the body collision boxes and the four cannon
@@ -7872,6 +7992,7 @@ function bossProfileAttack(b){
 }
 function subBossAttack(){
   const b=subBoss, yy=(b._drawY||b.y);
+  if(b._ship && typeof shipBossAttack==='function'){ shipBossAttack(b); return; }
   if(b.mini){ bossProfileAttack(b); return; }   // minibosses use their named profile
   /* NO MORE RINGS, NO MORE SIDEWAYS BULLETS (drop 0801kn). Mike: "theres sideway
      bullets going across the screen instead of machine gun like attacks".
@@ -8072,6 +8193,8 @@ function screenBar(fn){
 function drawSubBoss(){
   const b=subBoss; if(!b) return;
   if(typeof drawSubBossBar==='function') drawSubBossBar(b);
+  if(b._ship && typeof shipBossDraw==='function' && shipBossDraw(b)){
+    if(b.flash>0) b.flash-=0.016; return; }
   /* THE QUAD-LASER GUNSHIP (drop 0801em). Body plate first, then the damaged
      overlay for each cannon that has been shot off, then a rupture play-once on
      the frame it dies. The pack's own layer_order:
@@ -14836,6 +14959,7 @@ function furyWall(b, cy, F, spd, kind){
 function bossAttack(){
   // NAMED PROFILES FIRST. The Magma Colossus (level 2) had no profile at all, so it fell through
   // every branch and never fired a shot — it just hovered. This is the boss-side hook.
+  if(boss && boss._ship && typeof shipBossAttack==='function'){ shipBossAttack(boss); boss._firing=0.35; return; }
   if(boss && boss._profile==='magma' && typeof magmaColossusAttack==='function'){ magmaColossusAttack(boss); return; }
   const b=boss; const a=aimPlayer(b.x,b.y);
   b._firing=0.35;   // show fire-frame art briefly on each attack
@@ -17299,6 +17423,8 @@ function drawBoss(){
      path and drawBossSprite picked up the LEGACY body art (mba_mc/mba_cb _ruin) — which is why the
      level-2 and level-3 death frames reverted to the old boss. A sectional unit already HAS its
      death art: every component's 'destroyed' state. Keep drawing it. */
+  if(boss && boss._ship && typeof shipBossDraw==='function' && shipBossDraw(boss)){
+    if(boss.flash>0) boss.flash-=0.016; return; }
   if(boss && boss._gen && typeof genesisDraw==='function' && genesisDraw(boss)){ return; }
   if(boss && boss._mech && typeof mechDraw==='function' && mechDraw(boss)){ if(boss.flash>0)boss.flash-=0.016; return; }
   if(boss && boss._sx && typeof sxDraw==='function'){ sxDraw(boss, _sxDt); if(boss.flash>0)boss.flash-=0.016; return; }

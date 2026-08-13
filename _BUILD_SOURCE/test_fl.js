@@ -1070,9 +1070,15 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(kcross, 'kamikaze drones CRISS-CROSS the screen');
   ok(kdive, 'kamikaze drones then BODY-DIVE at the player like homing missiles');
   ok((kmaxSep-kminSep)>120, 'the pair splits apart and crosses (separation range '+Math.round(kminSep)+'..'+Math.round(kmaxSep)+'px)');
-  // L2/L3 minibosses replaced by the SECTIONAL rebuild (drop 0724bs)
-  ok(vm.runInContext("SUBBOSS[2].kind==='obsidiandrill'", ctxv), 'level 2 miniboss is the OBSIDIAN DRILL TANK (sectional, tracked)');
-  ok(vm.runInContext("SUBBOSS[3].kind==='glacierrail'", ctxv), 'level 3 miniboss is the GLACIER RAIL FORTRESS (sectional, tracked)');
+  /* L2/L3 MINIBOSSES ARE THE SHIP HULLS NOW (drop 0810s). Mike scrapped both — the drill tank
+     in 0810m ("this broken drill tank I told you to remove ... he does absolutely nothing") and
+     the glacier rail in 0810q ("Scrap the level 3 miniboss too") — and named their replacements
+     off the South-Facing Ship sheet himself. The drill tank is additionally in DEAD_SUBBOSS; the
+     glacier rail is NOT, deliberately. It was replaced rather than reported broken, and retiring
+     the rig would empty section 105's sectional-damage coverage, which protects machinery other
+     rigs still use. It is simply no longer named by any stage. */
+  ok(vm.runInContext("SUBBOSS[2].kind==='siegeember'", ctxv), 'level 2 miniboss is the EMBER SIEGECARRIER (ship hull, fire-red swap)');
+  ok(vm.runInContext("SUBBOSS[3].kind==='thornrime'", ctxv), 'level 3 miniboss is the RIME THORN (ship hull, black/ice-blue swap)');
 
   // ===== 25. stage-transition camera reset + robo drones on stage 2 =====
   console.log('=== 25. camera reset + robo drones ===');
@@ -4341,7 +4347,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
 
   // ===== 105. SECTIONAL SUB-BOSSES IN PLAY (drop 0724bs) =====
   console.log("=== 105. sectional sub-bosses ===");
-  ok(vm.runInContext("SUBBOSS[2].kind==='obsidiandrill' && SUBBOSS[3].kind==='glacierrail'", ctxv), 'stages 2 and 3 field the rebuilt sub-bosses');
+  /* the RIGS still spawn and are still sectional — what changed in 0810s is only which stage
+     NAMES them. Asserted on the rigs themselves now, not on the stage table. */
   /* SIX BECAME EIGHT (drop 0801kl). These two were asserted at 6 components named
      core_hull / left_rail_turret / ice_ram — names invented for the old 205-key nsx_
      set. The passover §9.1 records that set as the WRONG art: the 70-frame nobd_ and
@@ -4637,7 +4644,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_sb.indexOf('GUARANTEED HIT FLASH')>0, 'the miniboss flash is one pass covering EVERY draw branch');
   ok((_sb.match(/_lastKey=/g)||[]).length>=3, 'each branch records the key it drew with ('+(_sb.match(/_lastKey=/g)||[]).length+' branches)');
   ok(vm.runInContext("hitSubBoss.toString().indexOf('b.flash=0.18')>0", ctxv), 'and the flash is held long enough for a single hit to register');
-  [[1,'quadlaser'],[2,'obsidiandrill'],[3,'glacierrail']]
+  [[1,'quadlaser'],[2,'obsidiandrill'],[3,'glacierrail'],[2,'siegeember'],[3,'thornrime']]
     .filter(function(pr){ return !sbRetired(pr[1]); })
     .forEach(function(pr){
     vm.runInContext("run.stage="+pr[0]+"; curStage=STAGES["+(pr[0]-1)+"]; subBoss=null; spawnSubBoss('"+pr[1]+"'); subBoss.enter=false; subBoss.flash=0; hitSubBoss(1);", ctxv);
@@ -5556,8 +5563,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("arsenalMiniFor(4)==='dambreaker'",ctxv), 'stage 4 fields DAMBREAKER');
   /* the tier displaces nothing: the real minibosses are still where they were */
   ok(vm.runInContext("SUBBOSS[1].kind==='quadlaser'", ctxv), 'and SUBBOSS[1] is still the QUAD-LASER');
-  ok(vm.runInContext("SUBBOSS[2].kind==='obsidiandrill'", ctxv), 'SUBBOSS[2] still the OBSIDIAN DRILL');
-  ok(vm.runInContext("SUBBOSS[3].kind==='glacierrail'", ctxv), 'SUBBOSS[3] still the GLACIER RAIL');
+  ok(vm.runInContext("SUBBOSS[2].kind==='siegeember'", ctxv), 'SUBBOSS[2] is the EMBER SIEGECARRIER');
+  ok(vm.runInContext("SUBBOSS[3].kind==='thornrime'", ctxv), 'SUBBOSS[3] is the RIME THORN');
   /* order down a level: mini -> sub-boss -> boss, each heavier than the last */
   var _amEarly=[];
   [2,3].forEach(function(n){

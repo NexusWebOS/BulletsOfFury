@@ -1,0 +1,50 @@
+{
+  "pack": "BOF2 South-Facing Ship Remakes",
+  "version": "1.0",
+  "author": "ColeForge Productions",
+  "camera": "top-down orthographic",
+  "facing": "South",
+  "cell": { "width": 256, "height": 256 },
+  "pivot": { "x": 128, "y": 128 },
+  "filtering": "nearest-neighbor",
+  "palette_limit": 64,
+  "transparency": "binary alpha",
+  "sprites": [
+    {
+      "id": "Cryo_Spear",
+      "file": "Frames/BOF2_Ship_Cryo_Spear_South.png",
+      "source": "Source/BOF2_Ship_Cryo_Spear_South_Source.png",
+      "used_colors": 60
+    },
+    {
+      "id": "Blacksteel_Raptor",
+      "file": "Frames/BOF2_Ship_Blacksteel_Raptor_South.png",
+      "source": "Source/BOF2_Ship_Blacksteel_Raptor_South_Source.png",
+      "used_colors": 64
+    },
+    {
+      "id": "Inferno_Reaver",
+      "file": "Frames/BOF2_Ship_Inferno_Reaver_South.png",
+      "source": "Source/BOF2_Ship_Inferno_Reaver_South_Source.png",
+      "used_colors": 64
+    },
+    {
+      "id": "Olive_Siegecarrier",
+      "file": "Frames/BOF2_Ship_Olive_Siegecarrier_South.png",
+      "source": "Source/BOF2_Ship_Olive_Siegecarrier_South_Source.png",
+      "used_colors": 64
+    },
+    {
+      "id": "Thorn_Cruiser",
+      "file": "Frames/BOF2_Ship_Thorn_Cruiser_South.png",
+      "source": "Source/BOF2_Ship_Thorn_Cruiser_South_Source.png",
+      "used_colors": 61
+    },
+    {
+      "id": "Void_Bat",
+      "file": "Frames/BOF2_Ship_Void_Bat_South.png",
+      "source": "Source/BOF2_Ship_Void_Bat_South_Source.png",
+      "used_colors": 64
+    }
+  ]
+}
