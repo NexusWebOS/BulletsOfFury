@@ -7615,6 +7615,8 @@ function updateSubBoss(dt){
   const b=subBoss; if(!b) return; b.t+=dt;
   if(b._crawler && typeof crawlerUpdate==='function') crawlerUpdate(b, dt);
   if(b.flash>0) b.flash-=dt;
+  if(b._muz>0) b._muz-=dt;      // only ever decremented for ENEMIES before this; a sub-boss that
+                                // set it would have held its muzzle flash lit for the whole fight
   if(b.dead){
     b.dying+=dt; const T=b.dying;
     if(T<2.0){ b._exT=(b._exT||0)-dt; if(b._exT<=0){ b._exT=0.12; explode(b.x+rnd(-b.w*0.5,b.w*0.5), (b._drawY||b.y)+rnd(-b.h*0.4,b.h*0.4), Math.max(16, Math.max(b.w,b.h)*rnd(0.20,0.38)), (curStage&&curStage.bg==='ice')?'blue':'red', 'fireball'); if(Math.random()<0.4)Audio.SFX.expBig(); } }
@@ -7993,6 +7995,45 @@ function bossProfileAttack(b){
 function subBossAttack(){
   const b=subBoss, yy=(b._drawY||b.y);
   if(b._ship && typeof shipBossAttack==='function'){ shipBossAttack(b); return; }
+  /* ============================================================
+     THE QUAD-LASER'S FOUR BEAMS FIRE (drop 0810s).
+
+     Mike, 0810q: "Program lasers to shoot from the beams on the level 1 miniboss."
+
+     They never had. The pack's four muzzle anchors were read at spawn into _qlCan and used for
+     exactly one thing — a muzzle flash gated on b._muz, which nothing ever set for this unit, so
+     even that never drew. The guns were geometry and a health pool and nothing else, and the
+     fight fell through to the generic sub-boss cases below (spread / twin MG / missiles), which
+     is why shooting the turrets off changed nothing you could see.
+
+     EACH LIVE CANNON HOLDS A FIXED VERTICAL LANE, and they all fire together. That is deliberate
+     and it is the whole fight Mike designed back in 0801if — "you have go destroy the lasers
+     first on this miniboss, then his hull is attackable". Four lanes is a wall you must stand
+     between; every cannon you break OPENS its lane for good, so the arena widens as you earn it
+     and the reward is spatial rather than a number going down. It is also the answer to "patterns
+     where I have to keep myself at certain spots to survive" from the same list.
+
+     Then the nose takes over: "when his lasers are gone, he should begin shooting charge lasers."
+     _qlChg and _qlChgN were declared for that in 0801if and never read by anything — the charge
+     phase was never built. It winds up over two beats so the release is telegraphed, and it
+     alternates a straight lance with a fan so phase two is not one note. ============================================================ */
+  if(b._ql && b._qlCan && b._qlCan.length){
+    const S=b.w/384, my=yy+(223-192)*S;            // 223 is the pack's own muzzle row
+    const live=b._qlCan.filter(c=>!c.dead);
+    if(live.length){
+      b.fireCd=1.15; b._muz=0.16;
+      for(const c of live) eShoot(b.x+(c.mz[0]-192)*S, my, Math.PI/2, 3.1, 'laser');
+      if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+      return;
+    }
+    b._qlChg=Math.min(1,(b._qlChg||0)+0.5);
+    if(b._qlChg<1){ b.fireCd=0.45; return; }        // the wind-up, so the release is readable
+    b._qlChg=0; b._qlChgN=(b._qlChgN|0)+1; b.fireCd=1.7; b._muz=0.24;
+    const fan=(b._qlChgN%2)?0.13:0;
+    for(let k=-2;k<=2;k++) eShoot(b.x, my, Math.PI/2+k*fan, 3.6, 'laser');
+    if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+    return;
+  }
   if(b.mini){ bossProfileAttack(b); return; }   // minibosses use their named profile
   /* NO MORE RINGS, NO MORE SIDEWAYS BULLETS (drop 0801kn). Mike: "theres sideway
      bullets going across the screen instead of machine gun like attacks".
@@ -8302,12 +8343,16 @@ function drawSubBoss(){
          Neither is drawn now: the turret detonates on the frame it dies and its plate simply
          stops existing, which is what "explode and disappear" means. The kill effect does the
          talking instead of a still image. */
-      // muzzle flash on the cannon that just fired
-      if(b._muz>0 && b._qlIdx!=null){
-        const c=(b._qlCan||[])[b._qlIdx];
+      /* muzzle flash on EVERY barrel that fired — the volley is all live cannons at once, so a
+         single _qlIdx would light one gun out of four while four lanes came down */
+      if(b._muz>0){
         const mk='nql_muzzle_0'+(1+((b.t*20|0)%4));
-        if(c && !c.dead && c.mz && XART.rdy(mk))
-          ctx.drawImage(XART.get(mk), x0+c.mz[0]*S-20, y0+c.mz[1]*S-8, 40, 40);
+        if(XART.rdy(mk)){
+          const mim=XART.get(mk);
+          for(const c of (b._qlCan||[])){
+            if(c && !c.dead && c.mz) ctx.drawImage(mim, x0+c.mz[0]*S-20, y0+c.mz[1]*S-8, 40, 40);
+          }
+        }
       }
       ctx.restore();
       return;
