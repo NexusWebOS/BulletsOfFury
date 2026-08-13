@@ -620,6 +620,20 @@ six separate targets. It could only ever fail. Replaced with the contract that a
 every part DOCKED (the 0809m fix for "957 probes found nothing hittable"), per-component shares,
 summing to 100%, and the haul writing no pool. All four pass. **Standing failures: 5 → 4.**
 
+## THE stageText FALLBACK RESTORED UI TEXT ACROSS THE WHOLE GAME (drop 0810o/p)
+
+The guard added inside `stageText` for the stage-clear panel turned out to be load-bearing far
+beyond it. Comparing the beta sweeps before and after (`docs/proofs/betapass_0810o_all_menus.png`
+vs `betapass_0810p_all_menus.png`), text reappeared on:
+
+TITLE (`INSERT COIN`) · DIFF (the difficulty blurbs) · PILOT (name, callsign, bio, FIRE RATE /
+ATTACK RANGE) · CAMPHUB (`CAMPAIGN`, the control hints) · STAGESEL (the stage panel) · CREDITS (the
+section headers) · STAGECLEAR (title and all nine rows) · CONTINUE (`PRESS FIRE TO CONTINUE`)
+
+All of it was being *requested* and silently dropped, because `stageText` bails to nothing when its
+glyph SHEET has not decoded while its glyph MAP has. Any screen that asked for authored text early
+in its life drew none. **If a screen ever looks bare, check this first.**
+
 ## "THE ENEMIES BROKEN" — EVERY STAGE NOW FIELDS ITS WHOLE WAVE SCRIPT (drop 0810p)
 
 Measured with `spawnEnemy` wrapped over 45s of real play per stage (`scratchpad/refused.py`):
