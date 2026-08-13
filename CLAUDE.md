@@ -649,6 +649,48 @@ is missing.**
 4. **Enemies still appearing out of thin air on level 1** — the long-standing pop-in; 2 of 29 units
    were last measured entering at (21,67) rather than flying in.
 
+## THE ATLAS REORG (drop 0810r) — STARTED, AND IT IS A NAMING PROBLEM FIRST
+
+Mike: "I cant even find the icons on the atlas sheets ... make these atlas's easier to understand,
+named properly, and sorted properly ... This is mandatory."
+
+**Measured before touching anything:** 9,726 registered keys, 9,998 cell entries (the difference is
+aliases), **86 sheets named `nca_0.png` .. `nca_86.png`, 317 MB**, with no relationship between a
+sheet's number and its contents — `tflat_water`, a boss cannon and a pilot portrait share nca_77.
+
+`_BUILD_SOURCE/atlas_reorg.py` is the tool. It is **table-driven, not prefix-guessed**: the game's
+own `ENEMY_ART`, every per-stage roster, `STAGES[].boss`, `SUBBOSS[].kind` and `BOFX.mechboss` are
+dumped to `assets/data/ART_INDEX_SOURCE.json`, plus the types each stage was *observed* to spawn in
+a real 45s run. Run it with no arguments for a dry run; it writes nothing yet.
+
+It already produces the shape Mike asked for — projectiles, missiles, per-stage enemies, **one sheet
+per boss** (`BOFX.mechboss` turned out to be twelve separate boss rigs hiding behind `mbXX_`
+prefixes), pickups/icons, portraits, ships, terrain, fx, ui.
+
+### ⚠ THE BLOCKER, AND IT IS NOT PACKING
+
+**5,064 of 9,726 keys cannot be classified by name at all — 316 families** like `nhxv`, `ntxl`,
+`nvl`, `ovrotor`, `ncyc`, `nmrv`, `nslc`, `nlgt`, `nwf`, `nbs`, `nrmp`, `nsf`, `nel`, `nqv`. They
+are not in `ENEMY_ART` and no roster names them.
+
+Repacking those into well-named sheets would produce tidy files full of keys nobody can find — the
+complaint would survive the fix. **The reorg needs a NAME MAP for those 316 families before the
+repack is worth doing**, and the only reliable way to build one is rule 1: render a mid-reel frame
+of each family and identify it. That is the next task, and it is the expensive half.
+
+**Do NOT repack before the names exist.** Packing is a few hundred lines and is reversible; renaming
+9,726 keys twice is not.
+
+### Also from 0810r, not yet done
+- `~/Desktop/level7corrected.png` (800x4062) IS on disk and is the stage-7 overlay to wire in, with
+  the sludge behind it.
+- **The two stage-1 sheets are NOT on disk** — they came through as pasted images. They need saving
+  as files before they can be used. The second one is the DAM BREACHED variant, which is the
+  `cfg.destroyed` master this file has recorded as "RC2 does not ship" since 0801cr.
+- `~/Desktop/3dmodel-Ref/CF_WeaponPickupsProjectiles-Vol.2.zip` (505 entries, per-weapon folders
+  with pickup + projectile atlases and JSON) is almost certainly where the fireball icons live.
+- Purple/white spec and halo cleanup on the new sheets.
+
 ## THE stageText FALLBACK RESTORED UI TEXT ACROSS THE WHOLE GAME (drop 0810o/p)
 
 The guard added inside `stageText` for the stage-clear panel turned out to be load-bearing far
