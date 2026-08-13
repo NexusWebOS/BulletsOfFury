@@ -232,7 +232,16 @@ function entryConnectorDraw(st, dy){
   const ww=(typeof worldWidth==='function')?worldWidth():VW;
   ctx.save();
   if(ww>VW) ctx.translate(-camX, 0);
+  /* ⚠ CLIP THE SURFACE TO ITS OWN SIDE OF THE JOIN (drop 0810p). The connector is drawn FIRST and
+     drawBG paints over it, which relies on drawBG's fill being opaque everywhere — and it is not.
+     Several RC2 masters have magenta punched to ALPHA on purpose (stage 8 is 2.76% void), so the
+     connector was showing through the level's own holes once the two overlapped. Measured on stage
+     5, whose surface is a procedural starfield: 1.224% of the band differed at a join that is
+     geometrically exact. Clipped, the surface exists only where it should — BELOW the join, the
+     stretch you have already flown — and cannot contribute a pixel to the level itself. */
+  ctx.save(); ctx.beginPath(); ctx.rect(-Math.max(ww,VW), VH-d, Math.max(ww,VW)*3, VH); ctx.clip();
   connectorSurface(st, VH-d, ww);
+  ctx.restore();
   ctx.restore();
   const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
   if(!cfg || !cfg.master || typeof drawBG!=='function') return false;
@@ -291,7 +300,11 @@ function exitConnectorDraw(st, dy){
   const ww=(typeof worldWidth==='function')?worldWidth():VW;
   ctx.save();
   if(ww>VW) ctx.translate(-camX, 0);
+  /* the mirror of the entry's clip: the exit surface lives ABOVE the join and must not reach the
+     level below it through the master's punched-alpha voids */
+  ctx.save(); ctx.beginPath(); ctx.rect(-Math.max(ww,VW), -VH, Math.max(ww,VW)*3, VH+d); ctx.clip();
   connectorSurface(st, d, ww);               // join at y = d; the flat is what lies ABOVE it
+  ctx.restore();
   ctx.restore();
   const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
   if(!cfg || !cfg.master || typeof drawBG!=='function') return false;

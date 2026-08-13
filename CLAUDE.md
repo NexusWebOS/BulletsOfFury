@@ -454,7 +454,12 @@ comments now. A source assertion a docstring can defeat is not measuring anythin
   (`Math.floor(player.invuln/4)%2`). It was solid a frame earlier in the cinematic. This is a second
   live cause of "clips it in and out" — 0810a fixed the height pop, not this. Whether a fresh stage
   start should carry visible i-frames at all is **Mike's call**, so it is left alone.
-- **Stage 5 is the only stage above 0.01%** (0.636%). Not diagnosed.
+- **Stage 5 is the only stage above 0.01%** (1.09%), and it is now diagnosed: `drawWorld` draws
+`l5FieldDraw` (orbital hardware, asteroid belt) and `l5RocksDraw` for stage 5, and those live in
+drawWorld rather than in `drawBG` — so the connector, which calls `drawBG(0)`, cannot include them
+and the field pops in on PLAY's first tick. Fixing it means either moving the stage-5 field into
+drawBG or having the connector call it; both are stage-specific and the field is dynamic, so it is
+left recorded rather than guessed at.
 - The seam between flat and level is a **hard butt-join**, not feathered. That reads as a direct
   connection and matches "no more fake transitions"; if Mike wants it blended it is a small change.
 - Stage 9 has a `_levelCfg` case and a connector entry but **no `STAGES[]` entry**, so it is off the
