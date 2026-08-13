@@ -150,6 +150,9 @@ value under test.
   whose names say nothing. Repacking those into tidy sheets would leave Mike exactly as unable to
   find anything. `atlas_fammap.py` derives names from the code that draws each family; that map
   needs reviewing before any repack.
+- ~~The stage-7 overlay~~ **done in 0810t.** `level7corrected.png` punched to alpha (30 regions,
+  68.4%, up from 0.21%) with 167 white specs filled rather than punched, and `h:4062` declared.
+  Proof: `docs/proofs/stage7_0810t_strip.png`.
 - **The stage-1 sheets are still not on disk** — they came through as pasted images. The stage-7
   overlay (`~/Desktop/level7corrected.png`, 800×4062) IS on disk and is not wired yet.
 - Level 1 pop-in: 2 of 29 units still appear rather than enter, both at (21,67).

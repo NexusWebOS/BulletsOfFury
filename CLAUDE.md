@@ -148,7 +148,7 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-Suite: **2,448 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
+Suite: **2,456 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
 ones and the naval flash families. The fifth (the boss limb pool) was a stale assertion, not a bug;
 see the Magma Colossus section below.
 Entry joins: **`probe_arrival.py` green on all eight stages** (see the connector section below —
@@ -648,6 +648,33 @@ is missing.**
 4. **Enemies still appearing out of thin air on level 1** — the long-standing pop-in; 2 of 29
    units were last measured entering at (21,67).
 
+## STAGE 7 IS MIKE'S CORRECTED PLATE (drop 0810t)
+
+*"replace stage 7 with that sheet as an overlay, clean up all purple and white specs and halos,
+and use the sludge for the background."*
+
+**No new draw path was needed.** The liquid bed is drawn UNDER the master and shows through
+wherever the master is transparent, and stage 7 has declared `liquid:'nlq_sludgeF'` all along. So
+the job was punching the plate's white background to alpha: **30 regions, 68.4% of the plate**,
+up from 0.21%. 167 white specs (558 px) were FILLED rather than punched " a blob under 24px
+inside the structure is a spec, and punching it opens a pinhole of sludge in the middle of a pipe.
+
+⚠ **White was swept GLOBALLY, against the standing border-flood rule, and that is measured.**
+A border flood cannot be used here because the ENCLOSED gaps must become channel too. A sweep is
+only safe when the key is cleanly separated, and it is: 68.43% at pure 255, the structure topping
+out at 229, and exactly **one pixel** in the 235-254 band between them. The build script
+re-checks that gap every run and refuses if it closes.
+
+⚠ **Two things I got wrong here, both caught by rendering, not by reading.** I built the
+channel as literal `#FF00FF` first, on a reading that `drawStageBG` keys magenta at runtime " it
+does not, the magenta in the RC2 plates is punched to alpha OFFLINE. Stage 7 rendered as a screen
+of raw magenta with pipes on it. And I claimed the sludge had "never drawn" after measuring the
+old master **converted to RGB, which DISCARDS ALPHA** " it has 8,412 alpha-0 px, the exact figure
+game.js already records. **When a plate's channel is alpha, an RGB histogram cannot see it.**
+
+⚠ `h:4062` is load-bearing and its absence is SILENT: every reader of `cfg.h` falls back to
+4800, so omitting it mismaps the whole stage rather than throwing. Pinned by an assertion now.
+
 ## THE SHIP BOSSES (drop 0810s) — stages 2, 3, 5 and two minibosses
 
 `BOF2_South_Facing_Ships_v1`, cast by Mike: the volcano hull is the lava boss, the ice hull the
@@ -798,8 +825,7 @@ of each family and identify it. That is the next task, and it is the expensive h
 9,726 keys twice is not.
 
 ### Also from 0810r, not yet done
-- `~/Desktop/level7corrected.png` (800x4062) IS on disk and is the stage-7 overlay to wire in, with
-  the sludge behind it.
+- ~~the stage-7 overlay~~ **done in 0810t**, see above.
 - **The two stage-1 sheets are NOT on disk** — they came through as pasted images. They need saving
   as files before they can be used. The second one is the DAM BREACHED variant, which is the
   `cfg.destroyed` master this file has recorded as "RC2 does not ship" since 0801cr.
