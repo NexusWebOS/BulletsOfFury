@@ -959,6 +959,34 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     if(named&&bul>0&&enr&&crit&&drew) megaOk++;
   }
   ok(megaOk===7, 'all 7 mega bosses (bz0-6) wired: named + attack + enrage + HP damage-state art + draw ('+megaOk+'/7)');
+  /* ⚠ A RETIRED SUB-BOSS SPAWNS NOTHING, AND FIVE FIXTURES DEREFERENCED THE NULL (drop 0810p).
+     DEAD_SUBBOSS was function-scoped behind spawnEnemy's unclosed `if`, so its guard never ran and
+     every retired kind still spawned. Hoisting it into scope made the guard real — and this file
+     immediately died at the first fixture that did `spawnSubBoss('obsidiandrill'); subBoss.enter=...`,
+     taking the count from 2,447 to 1,112 while printing ZERO FAILURES. Rule 3, twice over: the
+     crash looked like a pass, and the number that gave it away was the COUNT.
+
+     So every fixture that spawns from a table asks this first. A retired kind is not a broken kind;
+     it is a unit Mike asked to be removed, and the contract it must satisfy is asserted on its own
+     terms in the RETIREMENT block below rather than smuggled into tests about something else. */
+  function sbRetired(kind){
+    return !!vm.runInContext("!!(typeof DEAD_SUBBOSS!=='undefined' && DEAD_SUBBOSS["+JSON.stringify(kind)+"])", ctxv);
+  }
+  /* ===== RETIRED SUB-BOSSES: the contract, asserted on its own terms (drop 0810p) =====
+     Mike: "this broken drill tank I told you to remove". A retirement has to be provable, and it
+     was not — DEAD_SUBBOSS being out of scope meant the drill kept spawning for two drops while a
+     commit said it was gone. These four pin the whole contract so that cannot recur silently. */
+  ok(vm.runInContext("typeof DEAD_SUBBOSS==='object' && !!DEAD_SUBBOSS", ctxv),
+     'DEAD_SUBBOSS is REACHABLE at global scope — it lived below the unclosed if in spawnEnemy and was function-scoped');
+  ok(vm.runInContext("(function(){ subBoss=null; subBossActive=false; spawnSubBoss('obsidiandrill'); return subBoss===null; })()", ctxv),
+     'a retired sub-boss refuses to spawn');
+  ok(vm.runInContext("(function(){ subBoss=null; subBossDone=false; spawnSubBoss('obsidiandrill'); return subBossDone===true; })()", ctxv),
+     'and clears the gate, so the stage runs on to its real boss instead of stalling');
+  ok(vm.runInContext("(function(){ subBoss=null; spawnSubBoss('quadlaser'); return !!subBoss; })()", ctxv),
+     'while a live sub-boss still spawns — the guard is not a blanket refusal');
+  ok(vm.runInContext("!!(XART._src && XART._src['nobd_assembled_intact'])", ctxv),
+     'and the retired unit ART stays registered, so putting it back is deleting one word');
+
   const minis=['esB_big1','esB_big2','esB_big3','esB_big4','esB_big6'];   // esB_big5 (Mauler) has custom AI, tested separately
   let miniOk=0;
   for(const k of minis){
@@ -2321,6 +2349,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _sbFail=[];
   [[1,'quadlaser'],[2,'esB_big6'],[3,'subcore'],[4,'subreactor'],[5,'subcore'],[6,'ss'],[7,'ratking'],[8,'herald']].forEach(function(pair){
     var st=pair[0], kind=pair[1];
+    if(sbRetired(kind)) return;          // retired on purpose — not a stuck entry flag
     vm.runInContext("run.stage="+st+"; curStage=STAGES["+(st-1)+"]; subBoss=null; subBossActive=false; eBullets.length=0; spawnSubBoss('"+kind+"');", ctxv);
     if(!vm.runInContext("!!subBoss", ctxv)){ _sbFail.push(kind+'(no spawn)'); return; }
     vm.runInContext("for(var f=0;f<60*8;f++) updateSubBoss(1/60);", ctxv);
@@ -3924,6 +3953,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
          as well as the miniboss is what isolates this test. */
       vm.runInContext("run.stage="+st+"; curStage=STAGES["+(st-1)+"]; beginStage("+st+"); setState(GS.PLAY); player.reset(); mapScroll=1500; boss=null; bossActive=false; subBoss=null; subBossActive=false;", ctxv);
       var k=vm.runInContext("SUBBOSS["+st+"]?SUBBOSS["+st+"].kind:null", ctxv);
+      /* a stage whose sub-boss is retired has no wall to hold — it runs straight to its boss */
+      if(!k || sbRetired(k)){ held.push(true); return; }
       vm.runInContext("spawnSubBoss("+JSON.stringify(k)+"); subBossActive=true; subBoss.enter=false; for(var i=0;i<90;i++) drawWorld(1/60);", ctxv);
       var a=vm.runInContext("mapScroll", ctxv);
       vm.runInContext("for(var i=0;i<60;i++) drawWorld(1/60);", ctxv);
@@ -4318,7 +4349,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      EIGHT cut sections, so odt/grf now name what the art actually has and the count
      follows. The intent of this block — spawns, sectional, positional damage, tracked
      ground vehicle — is unchanged and still enforced below. */
-  [['obsidiandrill','odt','OBSIDIAN DRILL TANK',8],['glacierrail','grf','GLACIER RAIL FORTRESS',8]].forEach(function(pr){
+  [['obsidiandrill','odt','OBSIDIAN DRILL TANK',8],['glacierrail','grf','GLACIER RAIL FORTRESS',8]]
+    .filter(function(pr){ return !sbRetired(pr[0]); })     // its ART is still pinned below
+    .forEach(function(pr){
     vm.runInContext("subBoss=null; subBossActive=false; spawnSubBoss('"+pr[0]+"');", ctxv);
     ok(vm.runInContext("!!subBoss", ctxv), pr[2]+' spawns');
     ok(vm.runInContext("subBoss.name==="+JSON.stringify(pr[2]), ctxv), 'named correctly');
@@ -4604,7 +4637,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_sb.indexOf('GUARANTEED HIT FLASH')>0, 'the miniboss flash is one pass covering EVERY draw branch');
   ok((_sb.match(/_lastKey=/g)||[]).length>=3, 'each branch records the key it drew with ('+(_sb.match(/_lastKey=/g)||[]).length+' branches)');
   ok(vm.runInContext("hitSubBoss.toString().indexOf('b.flash=0.18')>0", ctxv), 'and the flash is held long enough for a single hit to register');
-  [[1,'quadlaser'],[2,'obsidiandrill'],[3,'glacierrail']].forEach(function(pr){
+  [[1,'quadlaser'],[2,'obsidiandrill'],[3,'glacierrail']]
+    .filter(function(pr){ return !sbRetired(pr[1]); })
+    .forEach(function(pr){
     vm.runInContext("run.stage="+pr[0]+"; curStage=STAGES["+(pr[0]-1)+"]; subBoss=null; spawnSubBoss('"+pr[1]+"'); subBoss.enter=false; subBoss.flash=0; hitSubBoss(1);", ctxv);
     /* THE HIT TURRET LIGHTS, NOT THE HULL (drop 0801kf). Mike: "stop making the whole
        frame light up, each turret ligths up seperately after being hit seperately,
@@ -6300,8 +6335,10 @@ console.log('=== 154. sub-boss hitboxes + no sideways rings (drop 0801kn) ===');
      the BEHAVIOUR rather than the source text: every shot must travel downward. */
   ok(vm.runInContext(`
     (function(){
+      /* was obsidiandrill, which is retired now and spawns nothing. This asserts SUB-BOSS MG
+         AIMING, not which unit fires it, so it moves to stage 1's own live miniboss. */
       run.stage=1; curStage=STAGES[0];
-      subBoss=null; subBossActive=false; spawnSubBoss('obsidiandrill');
+      subBoss=null; subBossActive=false; spawnSubBoss('quadlaser');
       subBoss.enter=false; subBoss.x=240; subBoss.y=120; subBoss.mini=false;
       var worst=0;
       for(var px=20; px<=460; px+=40){          // player anywhere across the screen

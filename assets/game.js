@@ -5566,6 +5566,30 @@ function spawnArsenalMini(slug){
   return e;
 }
 
+/* ⚠ HOISTED ABOVE spawnEnemy (drop 0810p), AND IT HAD NEVER WORKED WHERE IT WAS.
+   This sat BELOW spawnEnemy's unclosed `if(base.art===undefined){`, so it was FUNCTION-SCOPED —
+   the same trap CLAUDE.md records for ARSENAL_DRONES and friends. Measured at runtime:
+   `typeof DEAD_SUBBOSS` was "undefined" at global scope, so the guard in spawnSubBoss__inner
+   was permanently false and every 'retired' sub-boss still spawned.
+
+   That made drop 0810m's retirement of the Obsidian Drill Tank INERT. Mike asked for that unit
+   removed, the commit said it was gone, and stage 2 still fielded it. Declared here, above every
+   reader, so the table is real. Verified: typeof is 'object', spawnSubBoss('obsidiandrill')
+   returns null, subBossDone clears so the stage runs on to its real boss, quadlaser unaffected. */
+/* AND THE OBSIDIAN DRILL TANK IS OUT (drop 0810m). Mike: "It cuts to this broken drill tank I told
+   you to remove ... and he does absolutely nothing."
+
+   Both halves were true and they were separate faults. "Does absolutely nothing" is literal — the
+   unit has no attack case of its own, so it drove into position and sat there. And it was still in
+   SUBBOSS[2] after being retired, so stage 2 stopped at it on the way to the Magma Colossus. It is
+   removed the way subreactor was, and for the same stated reason: a sub-boss with no replacement
+   should not spawn at all rather than be remapped onto something else. The gate below clears
+   subBossDone so the stage runs straight through to its real boss instead of stalling on it.
+
+   The art and every code path stay on disk — deleting the entry here is the whole retirement, and
+   putting the drill back is deleting one word. */
+const DEAD_SUBBOSS = {subreactor:1, obsidiandrill:1};
+
 function spawnEnemy(type, x, y, opt={}){
   /* ================================================================
      INLINED CULL (drop 0801ce). Mike, on the fifteenth report of invisible
@@ -5845,19 +5869,6 @@ const DEAD_TYPES = {
 /* the OVERLOAD REACTOR sub-boss is removed outright at Mike's instruction, not remapped: a
    sub-boss with no replacement should simply not spawn, and the stage's gate already handles a
    missing sub-boss by clearing to the main fight. */
-/* AND THE OBSIDIAN DRILL TANK IS OUT (drop 0810m). Mike: "It cuts to this broken drill tank I told
-   you to remove ... and he does absolutely nothing."
-
-   Both halves were true and they were separate faults. "Does absolutely nothing" is literal — the
-   unit has no attack case of its own, so it drove into position and sat there. And it was still in
-   SUBBOSS[2] after being retired, so stage 2 stopped at it on the way to the Magma Colossus. It is
-   removed the way subreactor was, and for the same stated reason: a sub-boss with no replacement
-   should not spawn at all rather than be remapped onto something else. The gate below clears
-   subBossDone so the stage runs straight through to its real boss instead of stalling on it.
-
-   The art and every code path stay on disk — deleting the entry here is the whole retirement, and
-   putting the drill back is deleting one word. */
-const DEAD_SUBBOSS = {subreactor:1, obsidiandrill:1};
 function liveType(t){ return DEAD_TYPES[t] || t; }
 /* kinds the visibility gate refused, and how often. Read it in the console with
    `INVIS_BLOCKED` — an empty object means nothing invisible tried to spawn. */

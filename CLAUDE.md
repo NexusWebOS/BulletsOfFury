@@ -148,7 +148,7 @@ loads on entry.
 
 ## Current state (2026-08-11)
 
-Suite: **2,447 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
+Suite: **2,443 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
 ones and the naval flash families. The fifth (the boss limb pool) was a stale assertion, not a bug;
 see the Magma Colossus section below.
 Entry joins: **`probe_arrival.py` green on all eight stages** (see the connector section below —
@@ -615,41 +615,28 @@ six separate targets. It could only ever fail. Replaced with the contract that a
 every part DOCKED (the 0809m fix for "957 probes found nothing hittable"), per-component shares,
 summing to 100%, and the haul writing no pool. All four pass. **Standing failures: 5 → 4.**
 
-## ⚠⚠ START HERE NEXT — DEAD_SUBBOSS IS OUT OF SCOPE, AND IT MAKES A SHIPPED FIX A LIE
+## DEAD_SUBBOSS IS IN SCOPE NOW, AND THE DRILL TANK IS ACTUALLY GONE (drop 0810p)
 
-Measured at runtime in real Chromium: **`typeof DEAD_SUBBOSS` is `"undefined"` at global scope.**
-`const DEAD_SUBBOSS` sits at game.js:5860, BELOW `spawnEnemy`'s unclosed `if(base.art===undefined){`
-at 5759 — so it is function-scoped, exactly as CLAUDE.md already records for `ARSENAL_DRONES`,
-`arsenalDroneArt` and `arsenalDronesFor`. The guard in `spawnSubBoss__inner` is therefore
-permanently false and **every "retired" sub-boss still spawns.**
+`const DEAD_SUBBOSS` sat BELOW `spawnEnemy`'s unclosed `if(base.art===undefined){`, so it was
+function-scoped — the trap this file already records for `ARSENAL_DRONES`. Measured:
+`typeof DEAD_SUBBOSS` was `"undefined"` at global scope, the guard in `spawnSubBoss__inner` was
+permanently false, and **every retired sub-boss still spawned**. Drop 0810m's retirement of the
+Obsidian Drill Tank was inert for two drops while its commit said the unit was gone.
 
-**This means drop 0810m's retirement of the Obsidian Drill Tank NEVER TOOK EFFECT.** Mike asked for
-that unit to be removed, the commit says it is gone, and stage 2 still fields it. The same is true
-of `subreactor`. Do not trust that commit message.
+Hoisted above `spawnEnemy`. Verified at runtime: `typeof` is `object`,
+`spawnSubBoss('obsidiandrill')` returns null, `subBossDone` clears so stage 2 runs on to the Magma
+Colossus, and `quadlaser` still spawns.
 
-### The fix is one hoist, and it breaks the suite until the fixtures move with it
+⚠ **The hoist alone takes the suite from 2,447 to 1,112 with ZERO failures printed** — five
+fixtures spawned a retired kind and dereferenced the null. That is rule 3 twice over: the crash
+wears a pass, and only the COUNT gives it away. All five now ask `sbRetired(kind)` first, and the
+retirement contract is asserted on its own terms instead (reachable / refuses to spawn / clears the
+gate / a live kind still spawns / the art stays registered). **Suite 2,443 / 4 failures** — the drop
+from 2,447 is 5 added and ~9 skipped, and it is explainable, which is the only kind of count change
+worth accepting.
 
-Moving the declaration above `spawnEnemy` makes the guard real — verified: `typeof` becomes
-`object`, `spawnSubBoss('obsidiandrill')` returns null, `subBossDone` clears so the stage runs on
-to its real boss, and `quadlaser` still spawns. **But the suite then dies**, because several
-fixtures spawn a retired kind and dereference the null:
-
-- test_fl.js:3927 (miniboss wall) — builds the kind from `SUBBOSS[st]`
-- test_fl.js:4321 — `[['obsidiandrill','odt',...],['glacierrail','grf',...]].forEach`
-- test_fl.js:4607 — `[[1,'quadlaser'],[2,'obsidiandrill'],[3,'glacierrail']].forEach`
-
-I patched 3927 and 4607 to skip retired kinds and the count still came back short (1,222 of
-2,447), so **at least one more fixture is unfixed — 4321 is the prime suspect.** Every one of those
-runs reported **ZERO failures** while losing half the suite: rule 3, a crash wearing a pass. Check
-the COUNT.
-
-The hoist is reverted for now so the build Mike comes home to is green and consistent. Redo it as
-its own drop: hoist the declaration, then walk every `spawnSubBoss(` in test_fl.js and make each
-one skip a kind in `DEAD_SUBBOSS`, re-running until the count is back to 2,447.
-
-⚠ And decide with Mike whether a retired sub-boss should be refused at SPAWN (what the table does)
-or removed from `SUBBOSS[]` outright. Several assertions still pin `SUBBOSS[2].kind==='obsidiandrill'`,
-which is true either way today but would not survive the second choice.
+**If you retire another sub-boss:** add it to the table, then run the suite and expect fixtures to
+fall over. `sbRetired()` in test_fl.js is the pattern.
 
 ## THE BOSS / MINIBOSS GAUGE IS OURS NOW (drop 0810n)
 
