@@ -1,0 +1,343 @@
+{
+ "1": {
+  "s1jetdelta": {
+   "n": 6,
+   "shoots": 6,
+   "prof": {}
+  },
+  "s1boatpatrol": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  },
+  "s1boatgun": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  },
+  "s1rivermine": {
+   "n": 3,
+   "shoots": 0,
+   "prof": {}
+  },
+  "s1corvette": {
+   "n": 1,
+   "shoots": 1,
+   "prof": {}
+  },
+  "s1jetdelta_b": {
+   "n": 4,
+   "shoots": 4,
+   "prof": {}
+  },
+  "s1jetbomber": {
+   "n": 4,
+   "shoots": 4,
+   "prof": {}
+  },
+  "s1fuelbarrel": {
+   "n": 3,
+   "shoots": 0,
+   "prof": {}
+  },
+  "s1ammocrate": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "s1tankheavy": {
+   "n": 4,
+   "shoots": 4,
+   "prof": {}
+  }
+ },
+ "2": {
+  "ash": {
+   "n": 5,
+   "shoots": 0,
+   "prof": {}
+  },
+  "skim": {
+   "n": 2,
+   "shoots": 0,
+   "prof": {}
+  },
+  "eye": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "el_em": {
+   "n": 1,
+   "shoots": 1,
+   "prof": {}
+  },
+  "caldera": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "lance": {
+   "n": 3,
+   "shoots": 0,
+   "prof": {}
+  },
+  "disc": {
+   "n": 2,
+   "shoots": 0,
+   "prof": {}
+  },
+  "el_lr": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  },
+  "cruc": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "carrier": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  }
+ },
+ "3": {
+  "frost": {
+   "n": 10,
+   "shoots": 10,
+   "prof": {}
+  },
+  "shieldd": {
+   "n": 1,
+   "shoots": 1,
+   "prof": {}
+  },
+  "turdrone": {
+   "n": 1,
+   "shoots": 1,
+   "prof": {}
+  },
+  "mdrone": {
+   "n": 4,
+   "shoots": 4,
+   "prof": {}
+  },
+  "frostbite": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "sideswirl": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "drone": {
+   "n": 3,
+   "shoots": 3,
+   "prof": {}
+  },
+  "el_cs": {
+   "n": 1,
+   "shoots": 1,
+   "prof": {}
+  },
+  "cryo": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  },
+  "icegun": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  }
+ },
+ "4": {
+  "drone": {
+   "n": 3,
+   "shoots": 3,
+   "prof": {}
+  },
+  "roadtank": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  },
+  "s1jetDelta": {
+   "n": 3,
+   "shoots": 3,
+   "prof": {}
+  },
+  "dambreaker": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "assault": {
+   "n": 6,
+   "shoots": 6,
+   "prof": {}
+  },
+  "mdrone": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  },
+  "s1jetBomber": {
+   "n": 3,
+   "shoots": 3,
+   "prof": {}
+  },
+  "jetflyby": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "sandtank": {
+   "n": 3,
+   "shoots": 3,
+   "prof": {}
+  }
+ },
+ "5": {
+  "needle": {
+   "n": 5,
+   "shoots": 0,
+   "prof": {}
+  },
+  "octo": {
+   "n": 5,
+   "shoots": 5,
+   "prof": {}
+  },
+  "oracle": {
+   "n": 3,
+   "shoots": 0,
+   "prof": {}
+  },
+  "crescent": {
+   "n": 3,
+   "shoots": 0,
+   "prof": {}
+  },
+  "mine": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "hauler": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  }
+ },
+ "6": {
+  "talon": {
+   "n": 8,
+   "shoots": 0,
+   "prof": {}
+  },
+  "bcarrier": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  },
+  "raptor": {
+   "n": 3,
+   "shoots": 3,
+   "prof": {}
+  },
+  "l6x_st": {
+   "n": 2,
+   "shoots": 0,
+   "prof": {}
+  },
+  "s1jetDeltaB": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  },
+  "fang": {
+   "n": 2,
+   "shoots": 2,
+   "prof": {}
+  }
+ },
+ "7": {
+  "skimmer": {
+   "n": 7,
+   "shoots": 0,
+   "prof": {}
+  },
+  "sentry": {
+   "n": 2,
+   "shoots": 0,
+   "prof": {}
+  },
+  "crawler": {
+   "n": 2,
+   "shoots": 0,
+   "prof": {}
+  },
+  "shambler": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "maw": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "barge": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  }
+ },
+ "8": {
+  "needle": {
+   "n": 5,
+   "shoots": 0,
+   "prof": {}
+  },
+  "crescent": {
+   "n": 3,
+   "shoots": 0,
+   "prof": {}
+  },
+  "talon": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "oracle": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "mine": {
+   "n": 3,
+   "shoots": 0,
+   "prof": {}
+  },
+  "cdisc": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  },
+  "hauler": {
+   "n": 2,
+   "shoots": 0,
+   "prof": {}
+  },
+  "hell": {
+   "n": 1,
+   "shoots": 0,
+   "prof": {}
+  }
+ }
+}

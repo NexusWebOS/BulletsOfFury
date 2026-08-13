@@ -7199,6 +7199,129 @@ let stagePlan=[];
    BOSS FACTORY
    ============================================================ */
 /* ============================================================
+   THE POSITIONAL VOLLEY LAYER (drop 0810u)
+
+   Mike, 0810q: "Make the enemies shoot more projectiles and give our shmup patterns where I have
+   to keep myself at certain spots to survive and begin making enemies giving us a challenge either
+   in numbers or how they operate."
+
+   WHY A LAYER AND NOT A REWRITE OF EACH UNIT. Almost every enemy fires at `a` — the angle to the
+   player. An aimed shot is a REACTION test: it comes at you, you move, the screen is otherwise
+   free. That is why the game can be busy and still not ask anything of where you stand. Fixed
+   geometry is a POSITION test: the shape is the same every time, so it can be learned, and the
+   only way through is to be somewhere specific before it arrives. Mike is asking for the second
+   thing, and the units already do the first well, so this ADDS a volley on a slow cycle rather
+   than replacing anyone's character.
+
+   Every pattern here is DOWNWARD and NOT AIMED. Both halves matter:
+
+     - downward, because "theres sideway bullets going across the screen" is a complaint this file
+       already fixed once (0801kn), and eAimDown exists to enforce it for 'mg'. Nothing here is
+       allowed to reintroduce it.
+     - not aimed, because a fan that tracks you has no gaps you can stand in — it just follows.
+       The gap has to sit in world space for standing in it to be a skill.
+
+   Speed is left to eShoot, which scales by difficulty, so these get FASTER on harder settings and
+   never denser. Same contract the boss patterns took, and the same reason: a pattern that changes
+   shape with difficulty throws away what the player learned.
+
+   ⚠ DECLARED ABOVE spawnEnemy DELIBERATELY. Its `if(base.art===undefined){` is never closed, so
+   anything below it is function-scoped and invisible out here — the trap that made DEAD_SUBBOSS,
+   ARSENAL_DRONES and DEAD_TYPES silently undefined for drops at a time. ============================================================ */
+/* ⚠ THE FIRST CUT OF THIS TABLE FIRED EXACTLY ZERO ROUNDS, and it is worth saying why.
+
+   It was keyed on drone / gunship / turret / mech / octo / mgturret — names read off the type
+   switch a few lines below, which lists what the engine CAN draw. What a stage actually SPAWNS is
+   a different set entirely, and gunship, turret, mech and mgturret are fielded by NO stage at all.
+   Exactly the ENEMY_ART lesson one level out: the switch is a capability list, not a roster.
+
+   So this is now driven off a census of the running game (probe_types.py, 40s per stage, every
+   type that actually reached the field). Counts are units spawned in that window:
+
+     stage 1  s1jetdelta 6  s1jetdelta_b 4  s1jetbomber 4  s1tankheavy 4  s1boatpatrol 2  s1boatgun 2
+     stage 2  el_lr 2  el_em 1                     (19 units, only 3 of them shooters)
+     stage 3  frost 10  mdrone 4  drone 3  cryo 2  icegun 2
+     stage 4  assault 6  drone 3  s1jetDelta 3  s1jetBomber 3  sandtank 3  roadtank 2  mdrone 2
+     stage 5  octo 5
+     stage 6  raptor 3  bcarrier 2  s1jetDeltaB 2  fang 2
+
+   ⚠ BOTH SPELLINGS ARE REQUIRED. Stage 1 fields `s1jetdelta` and stage 4 fields `s1jetDelta` —
+   the same craft under two casings, from two different wave scripts. Keying only one silently
+   covers half the game, which is the sort of miss that looks like the feature simply not working.
+
+   Pattern is matched to how the unit MOVES, so the shape reads as something the craft did:
+   strafing aircraft rake a fan, static or slow platforms drop a wall abreast, drifting drones
+   pincer, and heavy ground units stagger their frontage. */
+const ENEMY_VOLLEY = {
+  /* type            pattern    every Nth fire cycle */
+  // stage 1 — jets rake, boats and tanks hold lanes
+  s1jetdelta:    {pat:'fan',     every:3},
+  s1jetDelta:    {pat:'fan',     every:3},
+  s1jetdelta_b:  {pat:'fan',     every:3},
+  s1jetDeltaB:   {pat:'fan',     every:3},
+  s1jetbomber:   {pat:'wall',    every:3},
+  s1jetBomber:   {pat:'wall',    every:3},
+  s1tankheavy:   {pat:'stagger', every:3},
+  s1boatgun:     {pat:'wall',    every:3},
+  s1boatpatrol:  {pat:'pincer',  every:4},
+  s1corvette:    {pat:'wall',    every:3},
+  // stage 2 — the elites are nearly the only things shooting here
+  el_lr:         {pat:'pincer',  every:2},
+  el_em:         {pat:'fan',     every:2},
+  // stage 3
+  frost:         {pat:'pincer',  every:4},
+  mdrone:        {pat:'wall',    every:3},
+  drone:         {pat:'wall',    every:4},
+  cryo:          {pat:'wall',    every:3},
+  icegun:        {pat:'pincer',  every:3},
+  // stage 4
+  assault:       {pat:'fan',     every:3},
+  sandtank:      {pat:'stagger', every:3},
+  roadtank:      {pat:'stagger', every:3},
+  // stage 5
+  octo:          {pat:'fan',     every:2},
+  // stage 6
+  raptor:        {pat:'fan',     every:3},
+  bcarrier:      {pat:'wall',    every:2},
+  fang:          {pat:'pincer',  every:3},
+};
+function enemyVolley(e){
+  if(!e || e.dead) return false;
+  const V = ENEMY_VOLLEY[e.type]; if(!V) return false;
+  /* the volley is PUNCTUATION. Its own counter, so changing a unit's normal cadence never
+     accidentally turns this into a firehose. */
+  e._volN = (e._volN|0) + 1;
+  if(e._volN % V.every) return false;
+  const y = e.y + e.h*0.30, D = Math.PI/2;      // D = straight down, the spine of every pattern
+  const k = (e.type==='icegun'||e.type==='cryo') ? 'ice' : 'flare';
+  switch(V.pat){
+    case 'fan':
+      /* a wide fixed fan. The gaps OPEN as it travels, so there is always a lane — but it is a
+         lane in world space, and you have to already be in it. */
+      for(let i=-2;i<=2;i++) eShoot(e.x, y, D + i*0.30, 2.5, k);
+      break;
+    case 'wall':
+      /* four straight-down rounds abreast with the CENTRE left open. Standing directly under the
+         unit is safe and the flanks are not, which is the opposite of what a player expects and
+         is the whole point of it. */
+      for(const dx of [-42,-22,22,42]) eShoot(e.x+dx, y, D, 2.6, k);
+      break;
+    case 'pincer':
+      /* two pairs angled outward, leaving the middle open. Punishes drifting wide to line a shot
+         up, which is exactly where a player goes to kill a turret. */
+      for(const t of [-0.44,-0.28,0.28,0.44]) eShoot(e.x, y, D + t, 2.5, k);
+      break;
+    case 'stagger':
+      /* one half of the unit's frontage, then the other. You have to cross, on its beat. */
+      { const left = ((e._volN / V.every) | 0) % 2 === 0;
+        for(let i=0;i<3;i++) eShoot(e.x + (left ? -46 + i*20 : 6 + i*20), y, D, 2.7, k); }
+      break;
+    default: return false;
+  }
+  e._muz = 0.14;
+  return true;
+}
+/* ============================================================
    THE SHIP BOSSES (drop 0810s) — BOF2_South_Facing_Ships_v1.
 
    Mike: "the volcano one is your new lava MAIN boss, and the ice ship is the new ice boss ...
@@ -13329,6 +13452,10 @@ function updatePlay(dt){
           case 'cryo':
             for(let k=-1;k<=1;k++) eShoot(e.x,e.y+10, Math.PI/2+k*0.22, 2.4,'ice'); break;
         }
+        /* and the positional volley on top, on its own slow cycle (drop 0810u) — see
+           ENEMY_VOLLEY. Placed INSIDE the just-fired block so it rides the unit's own
+           cadence and inherits the entry debt above rather than needing its own timer. */
+        if(typeof enemyVolley==='function') enemyVolley(e);
       }
     }
     // mines drift then explode near player
