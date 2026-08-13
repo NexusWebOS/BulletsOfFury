@@ -7437,22 +7437,36 @@ function enemyVolley(e, force){
 
    All five scale by DIFF.ebSpeed exactly like every other pattern in the file. */
 const SHIPBOSS = {
-  infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'ember', cd:1.45},
-  cryospear:     {key:'nsb_cryo_spear',     name:'CRYO SPEAR',          w:195,h:195, hpMul:1.25, pat:'lance', cd:1.35},
-  voidbat:       {key:'nsb_void_bat',       name:'VOID BAT',            w:210,h:210, hpMul:1.45, pat:'void',  cd:1.30},
+  /* `pats` IS THE FIGHT'S ARC (drop 0811c). Mike: "upgrade the new bosses ... make them
+     challenging". One pattern for a whole healthbar is a puzzle you solve once and then hold a
+     spot for ninety seconds. Three phases at 100/60/30% give it a shape: the opener teaches the
+     shape, the middle swaps to a pattern that punishes the spot the opener taught you to stand in,
+     and the last is the boss's own signature at speed. The ORDER is chosen per boss for that
+     reason, not shuffled " ember teaches "find the gap", then lance closes lanes so the gap-hunting
+     habit gets you hit, then ember again, faster. */
+  infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'ember', cd:1.45,
+                  pats:['ember','lance','ember']},
+  cryospear:     {key:'nsb_cryo_spear',     name:'CRYO SPEAR',          w:195,h:195, hpMul:1.25, pat:'lance', cd:1.35,
+                  pats:['lance','void','rime']},
+  voidbat:       {key:'nsb_void_bat',       name:'VOID BAT',            w:210,h:210, hpMul:1.45, pat:'void',  cd:1.30,
+                  pats:['void','rime','siege']},
   /* ⚠ the two MINIS carry an ABSOLUTE hp, not a multiplier. spawnBoss seeds maxhp from the stage
      ((220+n*120)*eHp, so 460 on stage 2) but spawnSubBoss__inner seeds a flat 100, so the same
      multiplier means two completely different fights. Measured: hpMul 0.42 gave these two 42 HP
      against the quad-laser's 210 — a "miniboss" that dies to a few taps, which is the opposite of
      what Mike asked for. Absolute, scaled by difficulty, in line with the quad-laser. */
-  siegeember:    {key:'nsb_siege_ember',    name:'EMBER SIEGECARRIER',  w:165,h:165, hp:235, pat:'siege', cd:1.25, mini:true},
-  thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true},
+  /* the minis get TWO phases, not three " they die faster and a third would never be seen */
+  siegeember:    {key:'nsb_siege_ember',    name:'EMBER SIEGECARRIER',  w:165,h:165, hp:235, pat:'siege', cd:1.25, mini:true,
+                  pats:['siege','fan2']},
+  thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true,
+                  pats:['rime','lance']},
   /* STAGE 4 HAD NO MINIBOSS AT ALL (drop 0811b). SUBBOSS[4] named 'subreactor', which is in
      DEAD_SUBBOSS - so spawnSubBoss cleared the gate and returned null, and the stage ran straight
      from its waves to the boss. Retiring a unit in 0810m left the table still pointing at it.
      nsb_blacksteel was built and registered in 0810s and never assigned to anything, so the
      Blacksteel Raptor takes the slot rather than inventing art. */
-  blacksteel:    {key:'nsb_blacksteel',     name:'BLACKSTEEL RAPTOR',   w:170,h:170, hp:245, pat:'lance', cd:1.15, mini:true},
+  blacksteel:    {key:'nsb_blacksteel',     name:'BLACKSTEEL RAPTOR',   w:170,h:170, hp:245, pat:'lance', cd:1.15, mini:true,
+                  pats:['lance','pincer2']},
 };
 function shipBossInit(b, kind){
   const D=SHIPBOSS[kind]; if(!D) return false;
@@ -7466,19 +7480,44 @@ function _shipShot(x,y,vx,vy,w){
   const sp=(typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1;
   eBullets.push({x:x, y:y, vx:vx*sp, vy:vy*sp, w:w||11, h:w||11, dmg:1, t:0, kind:'eshot'});
 }
+/* which phase is this boss in, 0-based, and has it just changed? */
+function shipBossPhase(b){
+  const D=SHIPBOSS[b._ship]; if(!D||!D.pats||D.pats.length<2) return 0;
+  const f = b.maxhp ? (b.hp/b.maxhp) : 1;
+  const n = D.pats.length;
+  /* thresholds are even across the bar: 3 phases -> 66%/33%, 2 -> 50% */
+  let i = Math.floor((1-f)*n);
+  if(i<0) i=0; if(i>n-1) i=n-1;
+  return i;
+}
 function shipBossAttack(b){
   const D=SHIPBOSS[b._ship]; if(!D) return;
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const step=(b._sbStep=(b._sbStep|0)+1);
   const y=b.y+b.h*0.30;
-  if(D.pat==='ember'){
+  /* PHASE. The pattern comes from pats[] rather than D.pat once a boss has an arc, and crossing a
+     threshold is ANNOUNCED " a flash and the alarm " because a pattern that changes silently reads
+     as the game cheating rather than as the fight escalating. */
+  const ph = shipBossPhase(b);
+  if(b._sbPhase==null) b._sbPhase = ph;
+  else if(ph !== b._sbPhase){
+    b._sbPhase = ph;
+    b.flash = Math.max(b.flash||0, 0.30);
+    b._sbStep = 0;
+    if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.bossPhase) Audio.SFX.bossPhase();
+  }
+  const pat = (D.pats && D.pats[ph]) || D.pat;
+  /* and it TIGHTENS as it goes: -18% cooldown per phase, floored so the last phase is still
+     readable rather than a wall of bullets. */
+  const cdMul = Math.max(0.55, 1 - ph*0.18);
+  if(pat==='ember'){
     /* a WALL with one gap, and the gap walks — the whole attack is "get to the gap in time" */
     const cols=9, gap=((step*3)%cols);
     for(let i=0;i<cols;i++){
       if(i===gap || i===((gap+1)%cols)) continue;      // a two-column doorway, always reachable
       _shipShot(W*(i+0.5)/cols, y, 0, 1.9, 13);
     }
-  } else if(D.pat==='lance'){
+  } else if(pat==='lance'){
     /* three lanes; two fire, one is safe, and which one is safe rotates on a readable beat */
     const safe=step%3;
     for(let l=0;l<3;l++){
@@ -7486,7 +7525,7 @@ function shipBossAttack(b){
       const lx=W*(l+0.5)/3;
       for(let k=0;k<3;k++) _shipShot(lx+(k-1)*16, y, 0, 2.3, 10);
     }
-  } else if(D.pat==='void'){
+  } else if(pat==='void'){
     /* two converging Vs from the wingtips. Dead centre and the outer rim both survive; the
        middle distance does not, which is where a player instinctively sits. */
     const n=6;
@@ -7495,21 +7534,30 @@ function shipBossAttack(b){
       _shipShot(b.x-b.w*0.42, y,  0.75*t, 1.7, 10);
       _shipShot(b.x+b.w*0.42, y, -0.75*t, 1.7, 10);
     }
-  } else if(D.pat==='siege'){
+  } else if(pat==='siege'){
     /* broadside: a dense bank down one half, then the other. You must cross on the beat. */
     const left=(step%2)===0;
     for(let i=0;i<6;i++){
       const fx=left ? W*(0.06+i*0.075) : W*(0.94-i*0.075);
       _shipShot(fx, y, 0, 2.0, 12);
     }
-  } else if(D.pat==='rime'){
+  } else if(pat==='rime'){
     /* a slow spiral — never a wall, but it closes every straight line if you stand still */
     const arms=5, base=step*0.55;
     for(let a=0;a<arms;a++){
       const ang=base + a*(Math.PI*2/arms);
       _shipShot(b.x, y, Math.cos(ang)*1.5, Math.abs(Math.sin(ang))*0.8+1.25, 10);
     }
+  } else if(pat==='fan2'){
+    /* a wide fixed fan off the hull. Phase 2 for the siegecarrier: the broadsides taught you to
+       cross on the beat, and this punishes being mid-crossing. */
+    for(let i=-3;i<=3;i++) _shipShot(b.x, y, Math.PI/2 + i*0.22, 2.2, 11);
+  } else if(pat==='pincer2'){
+    /* two angled walls leaving the middle open, so the safe ground is directly under the boss "
+       the one place a player will not stand while it is shooting at them. */
+    for(const t of [-0.50,-0.34,-0.18,0.18,0.34,0.50]) _shipShot(b.x, y, Math.PI/2 + t, 2.4, 11);
   }
+  b.fireCd = (D.cd||1.3) * cdMul;
   if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
 /* south-facing 256 cell, pivot centre. White flash on hit is Mike's standing rule for every unit

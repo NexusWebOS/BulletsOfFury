@@ -95,13 +95,21 @@ RUN = r"""
   performance.now=realNow;
 
   /* ---- FIRES: run it and count what lands in eBullets ---- */
+  /* ⚠ MEASURE THE GAP BETWEEN VOLLEYS, NOT JUST THE VOLLEYS. The first cut stopped at 6 waves
+     and reported perWave [7,7,7,7,7,7] - which looked like six volleys and was six CONSECUTIVE
+     FRAMES: shipBossAttack never reset fireCd, so once it hit zero the boss fired every frame for
+     the rest of the fight. A count with no interval cannot tell those apart. */
   eBullets.length=0;
-  const shots=[]; let waves=0;
-  for (let i=0;i<420;i++){
+  const shots=[]; const gaps=[]; let waves=0, lastAt=-1;
+  for (let i=0;i<900;i++){
     const before=eBullets.length;
     step();
-    if (eBullets.length>before){ waves++; shots.push(eBullets.length-before); }
-    if (waves>=6) break;
+    if (eBullets.length>before){
+      waves++; shots.push(eBullets.length-before);
+      if(lastAt>=0) gaps.push(i-lastAt);
+      lastAt=i;
+    }
+    if (waves>=8) break;
   }
   const vx=eBullets.map(z=>+z.vx.toFixed(2)), vy=eBullets.map(z=>+z.vy.toFixed(2));
   const xs=eBullets.map(z=>Math.round(z.x));
@@ -110,7 +118,7 @@ RUN = r"""
           art:b._ship, artReady:XART.rdy(SHIPBOSS[kind].key),
           drawPixels:diff(withIt,without),
           flashPixels:diff(noFlash,yesFlash),
-          waves, perWave:shots, bullets:eBullets.length,
+          waves, perWave:shots, gapsFrames:gaps, bullets:eBullets.length,
           vyMin:Math.min.apply(null,vy), vyMax:Math.max.apply(null,vy),
           anyAimed: vx.some((v,i)=>Math.abs(v)>0.01),
           spreadX: xs.length ? (Math.max.apply(null,xs)-Math.min.apply(null,xs)) : 0,
@@ -166,9 +174,10 @@ def main():
                 break
             r = pg.evaluate(RUN, [kind, stage, slot])
             res.append(r)
-            print('  measured %-14s draw=%-9s flash=%-8s bullets=%s'
+            g = r.get('gapsFrames') or []
+            print('  measured %-14s draw=%-9s flash=%-8s bullets=%-4s gap frames=%s'
                   % (kind, r.get('drawPixels', r.get('error')),
-                     r.get('flashPixels', '-'), r.get('bullets', '-')))
+                     r.get('flashPixels', '-'), r.get('bullets', '-'), g[:6]))
         pg.close()
 
         # screenshots on a FRESH BROWSER each — a fresh PAGE was not enough, the shared browser
