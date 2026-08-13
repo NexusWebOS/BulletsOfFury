@@ -148,7 +148,12 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-Suite: **2,456 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
+**0810s–0811b, all committed and each verified in real Chromium:** the five ship bosses (stages 2/3/5 + minis on 2/3) and the Blacksteel Raptor as stage 4's miniboss — stage 4 had had NONE, its table still named the retired `subreactor`; Mike's fire orb + ice breath icons and the EQUIPPED box that was drawing the wrong one; the quad-laser's four beams and its charge phase; stage 7 on Mike's corrected plate with the sludge behind it, darkened to 50% value; the enemy volley layer and the five silent rosters armed; Mike's loopable runway; the arcade intro cards' blank panel; music on the Fury HQ cutscenes.
+
+⚠ **The recurring failure this stretch was systems that were declared and never fired** — the quad-laser's muzzles, `_qlChg`, `enemyVolley` sharing a `fireCd` its unit's tick owns, `micon_` asked of the wrong store, `lordshadows` registered and referenced nowhere. In every case the state looked right and no pixel moved. **Render it, then believe it.**
+
+
+Suite: **2,460 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
 ones and the naval flash families. The fifth (the boss limb pool) was a stale assertion, not a bug;
 see the Magma Colossus section below.
 Entry joins: **`probe_arrival.py` green on all eight stages** (see the connector section below —
