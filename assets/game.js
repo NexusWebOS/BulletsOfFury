@@ -2380,8 +2380,24 @@ function _levelCfg(){
        ⚠ THE SLUDGE STAYS. 8,412 magenta px were punched to alpha, and nlq_sludgeF is what shows
        THROUGH those holes — that is the entire point of the magenta in these plates, and dropping
        the liquid here would leave the channels empty. Boss arena untouched. */
-    case 7: return {master:'sewer800_rc2_master', liquid:'nlq_sludgeF', fill:'#232b12', tile:0.5, fps:5, wide:true,
-                    arena:'nst7_arena'};
+    /* STAGE 7 IS MIKE'S CORRECTED PLATE, AND THE SLUDGE FINALLY HAS SOMEWHERE TO GO (0810t).
+       He asked to "replace stage 7 with that sheet as an overlay ... and use the sludge for the
+       background". This engine already does that without a new draw path: the liquid bed is
+       drawn UNDER the master and shows through wherever the master is TRANSPARENT. So the
+       plate's white background is punched to alpha and the stage pointed at it — no code.
+
+       ⚠ THE CHANNEL IS ALPHA, NOT MAGENTA. Built wrong once on the opposite reading and
+       rendered as a screen of raw magenta with pipes on it. The magenta in the RC2 plates is
+       punched offline; nothing keys it at runtime.
+
+       ⚠ The sludge was not missing before, only starved: the outgoing master has 8,412
+       alpha-0 px (0.21%). I first measured it by converting to RGB, which DISCARDS ALPHA, read
+       0.00% magenta and called the channel absent. This plate takes it to 68%.
+
+       ⚠ h:4062 IS LOAD-BEARING. Every reader of cfg.h falls back to 4800 when it is absent
+       and this plate is 4062, so omitting it mismaps the entire stage. Same note as stage 1. */
+    case 7: return {master:'nst7_master_v2', liquid:'nlq_sludgeF', fill:'#232b12', tile:0.5, fps:5, wide:true,
+                    h:4062, arena:'nst7_arena'};
     // 8 FURIOUS DEATH — the true-16bit necro master (this art is the finale's, not stage 6's).
     /* RC2 REBUILD (drop 0810g) — Stage_08_Deep_Space_Black_Hole, 800x5120. Starfield running down
        into a spiral black hole, which is what TRANS[7] has always described the 7->8 join as:

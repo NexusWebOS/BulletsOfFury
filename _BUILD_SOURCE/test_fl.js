@@ -1392,7 +1392,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("run.stage=7; worldWidth()===800", ctxv), 'stage 7 reports WORLD width 800, not camera width 480');
   /* master renamed to the RC2 rebuild in 0810g; the STRUCTURE is what this was protecting and
      it is unchanged — a wide master plus a dedicated boss arena that is NOT the scroll plate. */
-  ok(vm.runInContext("run.stage=7; _levelCfg().master==='sewer800_rc2_master' && _levelCfg().wide===true && _levelCfg().arena==='nst7_arena'", ctxv), 'stage-7 level cfg: wide RC2 master + dedicated boss arena');
+  /* STAGE 7 IS MIKE'S CORRECTED PLATE (drop 0810t) — "replace stage 7 with that sheet as an
+     overlay ... and use the sludge for the background". The boss arena is unchanged. */
+  ok(vm.runInContext("run.stage=7; _levelCfg().master==='nst7_master_v2' && _levelCfg().wide===true && _levelCfg().arena==='nst7_arena'", ctxv), 'stage-7 level cfg: the corrected plate + dedicated boss arena');
+  /* ⚠ h IS LOAD-BEARING and its absence is SILENT: every reader of cfg.h falls back to 4800,
+     and this plate is 4062, so omitting it mismaps the whole stage rather than throwing. Stage 1
+     carries the same note for the same reason. Pinned so it cannot be dropped in a later edit. */
+  ok(vm.runInContext("run.stage=7; _levelCfg().h===4062", ctxv), 'stage-7 declares its true plate height (4062, not the 4800 fallback)');
+  ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv), 'and the sludge bed it shows through the plate');
   ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv),
      'and it KEEPS its sludge — the RC2 plate is magenta-punched to alpha and the sludge is what shows through');
   /* THE SLUDGE FAMILY IS nlq_sludgeF (drop 0801go) - the 'F' variant, which is what
