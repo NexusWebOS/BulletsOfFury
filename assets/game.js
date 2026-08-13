@@ -837,7 +837,11 @@ function seqRunway(st, part){
   // 'legacy' = the original single 'runway' strip (360x955). It has no approach/exit siblings, so
   // only the main part resolves — the launch already falls back to tiling it, which is what
   // stage 1 wants until a jungle plate exists.
-  if(c.runway==='legacy') return (part==='run' && typeof XART!=='undefined' && XART.rdy('runway')) ? 'runway' : null;
+  if(c.runway==='legacy'){
+    if(part!=='run' || typeof XART==='undefined') return null;
+    const _rk = (typeof runwayKey==='function') ? runwayKey() : 'runway';
+    return XART.rdy(_rk) ? _rk : null;
+  }
   const k=c.runway+'_'+part;
   return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
 }
@@ -32894,9 +32898,33 @@ function drawShipSprite(x,y,h,suf){
     ASSETS.blit('player',x,y,fr.w*sc,h); return; }
   ctx.save(); ctx.translate(x,y); ctx.scale(h/40,h/40); drawStaticPlayer(); ctx.restore();
 }
+/* ============================================================
+   runwayKey — Mike's cleaner loopable runway, with the legacy strip behind it (drop 0810v).
+
+   "if you cant find one, heres a new cleaner loopable runway graphic".
+
+   ⚠ THE OLD `runway` KEY COULD NOT SIMPLY BE REPOINTED. It is a CELL inside nca_0.png, and
+   ten other keys resolve to that same sheet — bootimage, cf_logo, cf_boot, statscreen,
+   pcard_axel, two campaign-map cells, nst4b_run, cfic_shield. Swapping the file underneath it
+   would have changed the boot logo and the stats screen along with the runway. "A key does not
+   own its file" is in CLAUDE.md precisely for this, and it is the reason the new plate gets its
+   own loose key instead.
+
+   ⚠ XART.rdy is false on its FIRST call — that call starts the load — so this must be asked
+   every frame rather than resolved once. Both draw sites call it per frame, which is what makes
+   the fallback work rather than permanently sticking on the legacy strip.
+
+   The plate is 1254x1254 and tiles vertically: wrap seam 11.87 mean abs diff against an 8.37
+   interior row-to-row noise floor, i.e. barely above the grain of the art itself. _groundScroll
+   already tiles upward from the pad, so a square plate needs no other change.
+   ============================================================ */
+function runwayKey(){
+  if(typeof XART==='undefined') return 'runway';
+  return XART.rdy('nrun_v2') ? 'nrun_v2' : 'runway';
+}
 function _groundScroll(dist){
   ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
-  const pad=XART.get('landingpad'), run=XART.get('runway');
+  const pad=XART.get('landingpad'), run=XART.get(runwayKey());
   let padH=0; const padW=VW;
   if(pad&&pad.complete&&pad.naturalWidth){ padH=padW*(pad.naturalHeight/pad.naturalWidth); }
   const padTop=(VH+dist)-padH;                 /* pad bottom starts at VH, slides down as dist grows */
