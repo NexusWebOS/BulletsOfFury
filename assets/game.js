@@ -239,7 +239,17 @@ function entryConnectorDraw(st, dy){
      5, whose surface is a procedural starfield: 1.224% of the band differed at a join that is
      geometrically exact. Clipped, the surface exists only where it should — BELOW the join, the
      stretch you have already flown — and cannot contribute a pixel to the level itself. */
-  ctx.save(); ctx.beginPath(); ctx.rect(-Math.max(ww,VW), VH-d, Math.max(ww,VW)*3, VH); ctx.clip();
+  /* ⚠ THE HEIGHT MUST REACH THE BOTTOM OF THE SCREEN, NOT BE VH TALL (fixed 0810q). My first cut
+     was rect(..., VH-d, ..., VH) — a band VH tall starting at the join. The join starts ~14,640px
+     ABOVE the screen at the top of a launch, so for almost the whole transition that band sat
+     entirely off-screen, the surface was clipped away completely, and the canvas showed stale
+     garbage: vertical stripes with the ship floating in them. Mike photographed it.
+
+     probe_arrival stayed green through this because it measures the HANDOFF FRAME, where d is 0
+     and the bug cannot appear. A probe that only checks the end of a cinematic cannot see the
+     middle of it. The height is the distance from the join to the bottom of the screen, which is
+     d + VH. */
+  ctx.save(); ctx.beginPath(); ctx.rect(-Math.max(ww,VW), VH-d, Math.max(ww,VW)*3, d+VH); ctx.clip();
   connectorSurface(st, VH-d, ww);
   ctx.restore();
   ctx.restore();
