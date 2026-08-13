@@ -146,9 +146,9 @@ loads on entry.
 
 ---
 
-## Current state (2026-08-11)
+## Current state (2026-08-13)
 
-Suite: **2,443 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
+Suite: **2,448 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
 ones and the naval flash families. The fifth (the boss limb pool) was a stale assertion, not a bug;
 see the Magma Colossus section below.
 Entry joins: **`probe_arrival.py` green on all eight stages** (see the connector section below —
@@ -638,20 +638,75 @@ is missing.**
 
 ### NOT DONE — still owed to Mike from this list
 
-1. **Scrap the level 2 and level 3 bosses, and the level 3 miniboss.** "were gonna have to scrap
-   these bosses, as your just not able to pull off what I need." Deliberately not started: removing
-   a stage's boss outright leaves the stage unable to END, and what replaces them is his call.
-   `DEAD_SUBBOSS` (now genuinely in scope) is the mechanism for the level-3 miniboss;
-   bosses need a replacement chosen first.
-2. **Lasers from the beams on the level 1 miniboss** (the quadlaser's four cannons).
-3. **More projectiles, and patterns that force the player to hold specific spots.** The stage-3
-   pattern change is a first step, not the whole ask.
-4. **Enemies still appearing out of thin air on level 1** — the long-standing pop-in; 2 of 29 units
-   were last measured entering at (21,67) rather than flying in.
+1. ~~Scrap the level 2/3 bosses and the level 3 miniboss~~ **done in 0810s** — see THE SHIP
+   BOSSES below. He cast the replacements himself off the South-Facing Ship sheet.
+2. ~~Lasers from the beams on the level 1 miniboss~~ **done in 0810s** — see THE QUAD-LASER'S
+   BEAMS below.
+3. **More projectiles, and patterns that force the player to hold specific spots.** Five new boss
+   patterns and the quad-laser's four lanes land this for BOSSES. The ordinary enemy roster is
+   still the stage-3 change only, and is the rest of the ask.
+4. **Enemies still appearing out of thin air on level 1** — the long-standing pop-in; 2 of 29
+   units were last measured entering at (21,67).
+
+## THE SHIP BOSSES (drop 0810s) — stages 2, 3, 5 and two minibosses
+
+`BOF2_South_Facing_Ships_v1`, cast by Mike: the volcano hull is the lava boss, the ice hull the
+ice boss, bottom-right is stage 5, and the two remaining bottom hulls are the stage 2 and 3
+minibosses under palette swaps he specified ("fire red", "black/ice blue").
+
+| kind | slot | pattern | what it denies |
+|---|---|---|---|
+| `infernoreaver` | stage 2 boss | `ember` | a wall of fire with one moving two-column gap |
+| `cryospear` | stage 3 boss | `lance` | three lanes, two closed, the safe one rotates |
+| `voidbat` | stage 5 boss | `void` | converging Vs from both wingtips |
+| `siegeember` | stage 2 mini | `siege` | broadsides left then right — you cross on the beat |
+| `thornrime` | stage 3 mini | `rime` | a slow spiral that closes every straight line |
+
+One table (`SHIPBOSS`), one attack function, one draw. **None of the five aims at the player** —
+the file already argues for that at `eshot`'s `push()`, and it is what "shmup patterns where I
+have to keep myself at certain spots" asks for. All scale by `DIFF.ebSpeed`.
+
+The magma/cryo rigs are **not deleted**, only unassigned, and the glacier rail is deliberately NOT
+in `DEAD_SUBBOSS` — it was replaced rather than reported broken, and retiring it would empty
+section 105's sectional-damage coverage, which protects machinery other rigs still use.
+
+⚠ **`spawnSubBoss__inner` ASSIGNS the global and returns nothing.** It ends on `subBoss=b;
+subBossActive=true;`. `probe_shipboss.py` read its return value and reported both minibosses as
+failed spawns; every fixture in `test_fl.js` reads `subBoss` for exactly this reason.
+
+⚠ **`spawnBoss` seeds `maxhp` from the stage, `spawnSubBoss__inner` seeds a flat 100.** One
+multiplier across both means two completely different fights — the minis came out at **42 HP**
+against the quad-laser's 210. They carry absolute HP now.
+
+⚠ **A palette swap can pass its own numbers and still be wrong.** The first `ice_black` moved
+mean hue to 0.55 and saturation to 0.25 — exactly on target — and rendered as uniform gunmetal
+slate, dark everywhere and blue nowhere. Value and saturation have to curve in OPPOSITE
+directions (`vv**1.9` and `vv**2`) so the hull crushes to black and only the lit edges carry the
+ice. **Render the swap; the mean hue will lie to you.**
+
+## THE QUAD-LASER'S BEAMS FIRE NOW (drop 0810s)
+
+The four muzzle anchors were read into `_qlCan` at spawn and used for one thing — a muzzle
+flash gated on `b._muz`, **which nothing ever set for this unit**, so even that never drew. The
+guns were geometry and a health pool; the fight fell through to the generic sub-boss cases. That
+is why shooting the turrets off changed nothing visible.
+
+Each live cannon holds a **fixed vertical lane** and they fire together, so breaking one OPENS
+its lane permanently — the arena widens as you earn it. Then the nose runs charge lasers.
+`_qlChg` / `_qlChgN` were declared for that in 0801if and **read by nothing**; the charge phase
+had never been built.
+
+⚠ `_muz` was only ever decremented for ENEMIES. Any sub-boss setting it would hold its flash
+lit for the whole fight. Ticked in `updateSubBoss` now.
+
+⚠ `probe_quadlaser.py` failed all three live cases on its first run and **the game was
+right**. It snapshotted the unit's x at setup, but `updateSubBoss` drifts an air miniboss to
+WORLD centre, so a stage-1 unit placed at `VW/2`=240 is near 496 by the time it shoots — every
+volley read as off by a constant 256. Lanes are computed at FIRE time now.
 
 ## ⚠ THERE ARE THREE ART STORES, AND micon_ IS IN THE THIRD ONE (drop 0810r)
 
-This has now cost two wrong fixes in a row, so it is going near the top.
+This has now cost **three** wrong fixes, so it is going near the top.
 
     BOFX.img + BOFX.cells   -> XART.rdy / XART.get      (most art)
     ASSETS                  -> ASSETS.has / .blit       (legacy)
@@ -674,6 +729,32 @@ but the "basic graphic" he means may be the pip row or the equipped box. **Ask h
 
 **When art looks "basic" in this project, find out WHICH STORE owns the key before concluding
 anything about the art.**
+
+### 0810s — it WAS the equipped box, and it had this bug plus a second weapon table
+
+Mike supplied refreshed fire orb / ice shard tier icons. Rendering the existing ones FIRST
+(`docs/proofs/icons_existing_0810s.png`) settled that **nothing was lost** — `micon_fireorb_1..5`
+are hexagon tier icons in the same house style. The art was never the fault; the SURFACE was.
+
+The EQUIPPED box lives in `index.html` as its own classic script on its own canvas, and it:
+
+- probed `micon_*` against **XART**, so the candidate was false for every weapon on every frame
+  and it silently drew an older `*_icon_*` set. **Its own comment asserted "micon_* DOES NOT
+  EXIST. NOT ONE OF THE 30 KEYS THIS ASKED FOR IS REGISTERED"** — which is how the wrong
+  conclusion survived three drops. A confident comment is not a measurement.
+- kept a **second weapon table** hard-coding `5:'iceorb'`, bypassing `weaponIconKey` entirely, so
+  slot 5 could never show the fireball whichever store answered. Measured: stage 3 with the
+  fireball equipped drew an ICE icon (`docs/proofs/icons_equipbox_0810s.png`). Drop 0806d fixed
+  exactly this in `weaponIconKey`; this surface never asked it.
+
+**`iconBlit(g, key, x, y, h, centred)`** is `iconDraw` into a caller-supplied context — the
+reason the box could not simply call `iconDraw` — so both surfaces share one lookup and cannot
+drift apart again.
+
+Icon entries may now name their own sheet via a **5th element** on the rect (`_iconDrawCell` read
+`'nia_icons'` as a literal, and that is a CELL inside `nca_28`, not a loose file). Every existing
+4-element entry is untouched. New art: `assets/game/nia_icons2.png`, with `micon_iceshard_1..5` a
+new additive family — **which weapon it should dress is Mike's call.**
 
 ## THE ATLAS REORG (drop 0810r) — STARTED, AND IT IS A NAMING PROBLEM FIRST
 

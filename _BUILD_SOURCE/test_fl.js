@@ -7227,7 +7227,29 @@ console.log("=== 168. icon atlas ===");
   ok(!!_M168.img['nia_icons'] && fs.existsSync(ROOT+'/'+_M168.img['nia_icons']),
      'the icon sheet is registered and on disk');
   var _IC=_M168.icons||{};
-  ok(Object.keys(_IC).length===57, '57 icon cells (' + Object.keys(_IC).length + ')');
+  /* ⚠ THIS PINNED A BARE COUNT OF 57 and broke the moment icons were ADDED (drop 0810s
+     registered micon_iceshard_1..5, taking it to 62). A count is not what this section is
+     protecting — it is protecting that every icon cell resolves to a sheet that is registered
+     and on disk, which is the failure that actually costs a drawn icon. Asserted on that
+     instead, plus a floor so cells going MISSING is still caught. */
+  var _icKeys = Object.keys(_IC);
+  ok(_icKeys.length >= 57, 'the icon cells are all still here (' + _icKeys.length + ', floor 57)');
+  var _icSheets = {}, _icBadSheet = [];
+  _icKeys.forEach(function(k){
+    var sk = _IC[k][4] || 'nia_icons';
+    _icSheets[sk] = (_icSheets[sk]||0) + 1;
+    if(!_M168.img[sk]) _icBadSheet.push(k + ' -> ' + sk);
+  });
+  ok(_icBadSheet.length===0, 'every icon cell names a REGISTERED sheet (' +
+     (_icBadSheet.length ? _icBadSheet.slice(0,3).join(', ') : Object.keys(_icSheets).join(' + ')) + ')');
+  Object.keys(_icSheets).forEach(function(sk){
+    ok(fs.existsSync(ROOT+'/'+_M168.img[sk]), 'icon sheet ' + sk + ' is on disk (' + _icSheets[sk] + ' cells)');
+  });
+  /* the 5th element is what lets an icon live outside nia_icons (drop 0810s) — without it a
+     refresh means repacking a CELL inside nca_28 that holds 668x656 of unrelated art */
+  ok(!!_IC['micon_fireorb_1'] && _IC['micon_fireorb_1'][4]==='nia_icons2',
+     'the refreshed fire orb reads from its own sheet, via the per-entry sheet key');
+  ok(!!_IC['micon_iceshard_3'], 'the ice shard family is registered');
   ['falva','lizzie','cole','axel','yuri','decker','freezer','juggernaut','maverick'].forEach(function(p){
     ok(!!_IC['spicon_'+p], 'spicon_'+p+' is a cell in the sheet');
   });
