@@ -6281,14 +6281,19 @@ const SHIPS=[];
       const T=type.slice(4), L=L6X[T];
       c._l6x=T; c.name=L.name; c.w=L.w; c.h=L.h;
       c.hp=c.maxhp=EHP(L.hp); c.score=L.score;
-      c.vy=0.62; c.pattern='sine'; c.amp=34; c.shoots=false; c.dropOk=true;
+      c.vy=0.62; c.pattern='sine'; c.amp=34; c.dropOk=true;
+      c.shoots=true; c.fk='aimed'; c.fireRate=1.8;      // fighters that never fired (0810w)
       break;
     }
     case 'needle': case 'crescent': case 'hauler': case 'oracle': {
       const O=ORBITAL[type];
       c.w=O.w; c.h=O.h; c.hp=EHP(O.hp); c.score=O.score;
       c.vy=(type==='needle')?1.0:0.55; c.pattern='orbital'; c._orb=type;
-      c.shoots=false; c.dropOk=true;      // their weapons are BEAMS, handled in orbitalTick
+      /* THEY SHOOT NOW (drop 0810w). Mike: "more shooters yes. This is bullets of fury bro comon".
+         The beams in orbitalTick stay " this is a gun ON TOP of them, not a replacement. Stage 5
+         fielded 18 units with 5 shooters and stage 8 fielded 17 with none, which is not what the
+         title promises. */
+      c.shoots=true; c.fk='aimed'; c.fireRate=1.9; c.dropOk=true;
       break;
     }
     case 'talon': case 'hell': case 'cdisc': case 'spiral': {
@@ -6296,7 +6301,8 @@ const SHIPS=[];
       c.w=E.w; c.h=E.h; c.hp=c._maxhp=EHP(E.hp); c.score=E.score;
       c.vy=0; c.pattern='elite8'; c._el8=type;
       c._dieDur=0.52;                    // the destruction reel is 6f @12fps = 0.5s
-      c.shoots=false; c.dropOk=true;
+      /* the three ELITES are the whole of stage 8's air roster and none of them fired (0810w) */
+      c.shoots=true; c.fk='mg'; c.fireRate=1.5; c.dropOk=true;
       break;
     }
     case 'skim': case 'disc': case 'eye': case 'miner': case 'ash': case 'cruc':
@@ -6304,7 +6310,9 @@ const SHIPS=[];
       const V=VOLC[type];
       c.w=V.w; c.h=V.h; c.hp=c._maxhp=EHP(V.hp); c.score=V.score;
       c.vy=0; c.pattern='volc'; c._volc=type;
-      c.shoots=false; c.dropOk=true;     // all twelve fire from volcTick on their own cadences
+      /* volcTick keeps its own cadences; this arms them as well (0810w). Stage 2 fielded 19 units
+         and only 3 of them shot. */
+      c.shoots=true; c.fk='aimed'; c.fireRate=2.0; c.dropOk=true;
       break;
     }
     case 'skimmer': case 'shambler': case 'sentry': case 'barge': case 'crawler': case 'maw': {
@@ -6313,7 +6321,9 @@ const SHIPS=[];
       const S=SEWER[type];
       c.w=S.w; c.h=S.h; c.hp=c._maxhp=EHP(S.hp); c.score=S.score;
       c.vy=0; c.pattern='sewer'; c._sew=type;
-      c.shoots=false; c.dropOk=true;      // all six fire from sewerTick, on their own cadences
+      /* stage 7 fielded 14 units and NOT ONE of them was a shooter (0810w). sewerTick keeps its
+         own cadences; this arms them on top. */
+      c.shoots=true; c.fk='aimed'; c.fireRate=2.0; c.dropOk=true;
       break;
     }
     case 'bcarrier': // BATTLEFIELD COMMAND CARRIER — level-6 water intro surface vessel.
@@ -7288,6 +7298,42 @@ const ENEMY_VOLLEY = {
   raptor:        {pat:'fan',     every:3},
   bcarrier:      {pat:'wall',    every:2},
   fang:          {pat:'pincer',  every:3},
+  l6x_st:        {pat:'fan',     every:3},
+  l6x_tf:        {pat:'fan',     every:3},
+  l6x_cw:        {pat:'wall',    every:3},
+  l6x_cr:        {pat:'pincer',  every:3},
+  l6x_tl:        {pat:'stagger', every:3},
+  l6x_hw:        {pat:'wall',    every:3},
+  /* THE UNITS ARMED IN 0810w. These families had shoots=false on every member " stage 7 had no
+     shooters at all and stage 8 none " so they carry both an aimed round and a shape. */
+  // stage 2, the volcanic roster
+  ash:           {pat:'fan',     every:3},
+  lance:         {pat:'pincer',  every:3},
+  skim:          {pat:'wall',    every:3},
+  disc:          {pat:'pincer',  every:3},
+  eye:           {pat:'fan',     every:2},
+  cruc:          {pat:'wall',    every:3},
+  miner:         {pat:'wall',    every:4},
+  carrier:       {pat:'wall',    every:2},
+  crawl:         {pat:'stagger', every:3},
+  pod:           {pat:'pincer',  every:3},
+  golem:         {pat:'stagger', every:3},
+  lavamaw:       {pat:'fan',     every:3},
+  // stage 7, the sewer roster
+  skimmer:       {pat:'fan',     every:3},
+  sentry:        {pat:'wall',    every:2},
+  crawler:       {pat:'stagger', every:3},
+  shambler:      {pat:'pincer',  every:3},
+  maw:           {pat:'fan',     every:3},
+  barge:         {pat:'wall',    every:2},
+  // stages 5 and 8, the orbital and elite rosters
+  needle:        {pat:'fan',     every:3},
+  oracle:        {pat:'pincer',  every:3},
+  crescent:      {pat:'wall',    every:3},
+  hauler:        {pat:'wall',    every:2},
+  talon:         {pat:'fan',     every:3},
+  hell:          {pat:'pincer',  every:2},
+  cdisc:         {pat:'stagger', every:3},
 };
 function enemyVolley(e){
   if(!e || e.dead) return false;

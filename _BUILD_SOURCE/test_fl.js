@@ -2050,7 +2050,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("!!BOFX.img['nst4b_run'] && !!BOFX.img['nst7_run']", ctxv), 'the runway ART is still registered — retired from use, not deleted');
   // Stage 1 now uses the EXISTING legacy runway strip (no jungle plate was ever drawn), so it
   // resolves 'run' only — it has no approach/exit siblings to invent.
-  ok(vm.runInContext("seqRunway(1,'run')==='runway' && seqRunway(1,'app')===null && seqRunway(1,'exit')===null", ctxv), 'stage 1 uses the legacy runway strip, main part only');
+  /* MIKE'S CLEANER LOOPABLE PLATE (drop 0810v) — "heres a new cleaner loopable runway
+     graphic". Stage 1 still resolves 'run' ONLY (it has no approach/exit siblings to invent),
+     which is what this section is really protecting; what changed is WHICH plate.
+
+     ⚠ The old `runway` key could not be repointed: it is a CELL inside nca_0.png and ten
+     other keys share that sheet — bootimage, cf_logo, statscreen, pcard_axel and more — so
+     swapping the file underneath would have changed the boot logo and the stats screen too.
+     Asserted on runwayKey() so the resolver and the sequence can never disagree. */
+  ok(vm.runInContext("seqRunway(1,'run')===runwayKey() && seqRunway(1,'app')===null && seqRunway(1,'exit')===null", ctxv), 'stage 1 flies one runway plate, main part only');
+  ok(vm.runInContext("!!BOFX.img['nrun_v2'] && !!BOFX.img['runway']", ctxv), 'both the new plate and the legacy strip stay registered, so the fallback is real');
   ok(vm.runInContext("[2,3,5,6,8].every(function(s){return seqRunway(s,'run')===null;})", ctxv), 'stages with no runway art at all still return null — nothing invented');
   // connectors: 4 exist, 3 were never drawn
   ok(vm.runInContext("seqConnector(3,4)==='ncon_3_4' && seqConnector(4,5)==='ncon_4_5' && seqConnector(6,7)==='ncon_6_7' && seqConnector(7,8)==='ncon_7_8'", ctxv), 'all 4 authored connectors resolve');

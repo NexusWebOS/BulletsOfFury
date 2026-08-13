@@ -3,7 +3,7 @@
   "stage": 1,
   "off": {
    "stage": 1,
-   "born": 68,
+   "born": 59,
    "sideways": 0,
    "sideKinds": {},
    "byPat": {},
@@ -12,12 +12,12 @@
   },
   "on": {
    "stage": 1,
-   "born": 71,
+   "born": 84,
    "sideways": 0,
    "sideKinds": {},
    "byPat": {
-    "wall": 8,
     "pincer": 4,
+    "wall": 8,
     "fan": 10
    },
    "volleyShots": 22,
@@ -28,10 +28,10 @@
   "stage": 2,
   "off": {
    "stage": 2,
-   "born": 30,
-   "sideways": 3,
+   "born": 39,
+   "sideways": 6,
    "sideKinds": {
-    "dart": 3
+    "dart": 6
    },
    "byPat": {},
    "volleyShots": 0,
@@ -39,13 +39,16 @@
   },
   "on": {
    "stage": 2,
-   "born": 35,
-   "sideways": 5,
+   "born": 53,
+   "sideways": 12,
    "sideKinds": {
-    "dart": 5
+    "dart": 12
    },
-   "byPat": {},
-   "volleyShots": 0,
+   "byPat": {
+    "fan": 5,
+    "wall": 4
+   },
+   "volleyShots": 9,
    "volleySideways": 0
   }
  },
@@ -53,11 +56,10 @@
   "stage": 3,
   "off": {
    "stage": 3,
-   "born": 68,
-   "sideways": 7,
+   "born": 48,
+   "sideways": 2,
    "sideKinds": {
-    "ice": 6,
-    "dart": 1
+    "ice": 2
    },
    "byPat": {},
    "volleyShots": 0,
@@ -65,11 +67,11 @@
   },
   "on": {
    "stage": 3,
-   "born": 68,
-   "sideways": 7,
+   "born": 85,
+   "sideways": 4,
    "sideKinds": {
-    "ice": 5,
-    "dart": 2
+    "ice": 3,
+    "dart": 1
    },
    "byPat": {},
    "volleyShots": 0,
@@ -80,7 +82,7 @@
   "stage": 4,
   "off": {
    "stage": 4,
-   "born": 48,
+   "born": 15,
    "sideways": 0,
    "sideKinds": {},
    "byPat": {},
@@ -89,7 +91,7 @@
   },
   "on": {
    "stage": 4,
-   "born": 59,
+   "born": 23,
    "sideways": 0,
    "sideKinds": {},
    "byPat": {},
@@ -101,10 +103,10 @@
   "stage": 6,
   "off": {
    "stage": 6,
-   "born": 58,
-   "sideways": 13,
+   "born": 72,
+   "sideways": 18,
    "sideKinds": {
-    "dart": 13
+    "dart": 18
    },
    "byPat": {},
    "volleyShots": 0,
@@ -112,16 +114,16 @@
   },
   "on": {
    "stage": 6,
-   "born": 59,
-   "sideways": 12,
+   "born": 92,
+   "sideways": 11,
    "sideKinds": {
-    "dart": 12
+    "dart": 11
    },
    "byPat": {
-    "wall": 4,
-    "fan": 10
+    "fan": 20,
+    "wall": 4
    },
-   "volleyShots": 14,
+   "volleyShots": 24,
    "volleySideways": 0
   }
  },
@@ -129,10 +131,10 @@
   "stage": 7,
   "off": {
    "stage": 7,
-   "born": 19,
-   "sideways": 6,
+   "born": 29,
+   "sideways": 9,
    "sideKinds": {
-    "dart": 6
+    "dart": 9
    },
    "byPat": {},
    "volleyShots": 0,
@@ -140,13 +142,15 @@
   },
   "on": {
    "stage": 7,
-   "born": 19,
-   "sideways": 5,
+   "born": 34,
+   "sideways": 10,
    "sideKinds": {
-    "dart": 5
+    "dart": 10
    },
-   "byPat": {},
-   "volleyShots": 0,
+   "byPat": {
+    "wall": 4
+   },
+   "volleyShots": 4,
    "volleySideways": 0
   }
  }
