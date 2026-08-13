@@ -615,6 +615,45 @@ six separate targets. It could only ever fail. Replaced with the contract that a
 every part DOCKED (the 0809m fix for "957 probes found nothing hittable"), per-component shares,
 summing to 100%, and the haul writing no pool. All four pass. **Standing failures: 5 → 4.**
 
+## "THE ENEMIES BROKEN" — EVERY STAGE NOW FIELDS ITS WHOLE WAVE SCRIPT (drop 0810p)
+
+Measured with `spawnEnemy` wrapped over 45s of real play per stage (`scratchpad/refused.py`):
+
+| stage | before | after |
+|---|---|---|
+| 4 | asked 36, spawned 23 — **13 refused** | 26 / 26 |
+| 6 | asked 28, spawned 23 — 5 refused | 26 / 26 |
+| 3 | 2 refused | 25 / 25 |
+| 8 | 1 refused | 18 / 18 |
+
+**Stage 4 was running a third emptier than its script intended.** The refused names sit in
+`spawnEnemy`'s inlined `_DELETE` set because their art resolves ZERO registered keys — the cull is
+CORRECT and must stay; un-culling puts back units that spawn, fly, shoot and kill with nothing
+drawn. The bug was that the WAVE SCRIPTS still named them.
+
+⚠ **Both obvious repairs are wrong, and the file already records why.** Un-culling reintroduces the
+invisible-enemy bug (fifteen reports). Remapping via `DEAD_TYPES`→`'drone'` is the fix Mike
+explicitly rejected: *"the units he told me to delete were the ones my fix put back."* So the waves
+were repointed at units that EXIST, keeping every wave's shape, count and route:
+
+- stage 4 jets → `s1jetDelta` / `s1jetBomber` (the RC2 military jets)
+- stage 6 jets → `s1jetDeltaB` / `s1jetBomberB`, the **black** variants — stage 6 is the night sky
+- stage 4 mini tanks → `sandtank`, which 0801im built on the tnkM_ sprites *precisely so Mike's
+  deletion of minitank could stand*
+- stage 3 minishipA/B → `mdrone` / `frost` from NEF_S3
+- stage 8 `el_hd` → `hauler`, stage 8's own live carrier
+
+⚠ **RULE 1 EARNED ITS KEEP HERE.** `ENEMY_ART` aliases `jet1..jet5` onto `air_air1..7`, which
+*sound* like the obvious jet replacements. Rendered, they are **alien drone-ships** — round, eyed,
+podded — and would have been badly wrong on a military airbase. Render before substituting.
+
+⚠ `DEAD_TYPES` and `liveType` are STILL function-scoped inside `spawnEnemy` and still unreachable
+(0801ce measured it and worked around it by inlining `_DELETE` rather than hoisting). They are dead
+weight now — the inlined set is the live mechanism. Left alone deliberately: hoisting them would
+re-enable the remap-to-drone Mike rejected.
+
+**Stage 9 still fields nothing** — no `buildStagePlan` branch, not in `STAGES[]`. Unchanged.
+
 ## DEAD_SUBBOSS IS IN SCOPE NOW, AND THE DRILL TANK IS ACTUALLY GONE (drop 0810p)
 
 `const DEAD_SUBBOSS` sat BELOW `spawnEnemy`'s unclosed `if(base.art===undefined){`, so it was

@@ -6804,8 +6804,10 @@ function buildStagePlan(stageNum){
     add(2.5, ()=> vRow('frost', Math.round(3*D), {pattern:'weave', amp:40}));
     add(6.0, ()=> { spawnEnemy('shieldd', VW*0.38, -30, {}); spawnEnemy('turdrone', VW*0.62, -30, {}); });
     add(15.0,()=> spawnEnemy('el_cs', VW*0.5, -50, {pattern:'weave', amp:32}));            // CRYO SCARAB
-    add(9.0, ()=> { spawnEnemy('minishipA', VW*0.28, -40, {}); spawnEnemy('minishipA', VW*0.72, -40, {}); });   // SHIPS
-    add(22.0,()=> { spawnEnemy('minishipB', VW*0.5, -40, {}); spawnEnemy('minishipA', VW*0.22, -40, {}); spawnEnemy('minishipA', VW*0.78, -40, {}); });
+    /* minishipA/B/C are culled (no art). mdrone is stage 3's own ICE SKIMMER from NEF_S3 — a live
+       small craft on the stage's authored roster, which is what these waves wanted. */
+    add(9.0, ()=> { spawnEnemy('mdrone', VW*0.28, -40, {}); spawnEnemy('mdrone', VW*0.72, -40, {}); });   // SHIPS
+    add(22.0,()=> { spawnEnemy('mdrone', VW*0.5, -40, {}); spawnEnemy('frost', VW*0.22, -40, {}); spawnEnemy('frost', VW*0.78, -40, {}); });
     add(37.0,()=> { spawnEnemy('minishipC', VW*0.32, -40, {}); spawnEnemy('minishipC', VW*0.68, -40, {}); });
     add(30.0,()=> { spawnEnemy('el_cs', VW*0.28, -50, {pattern:'sine'}); spawnEnemy('el_cs', VW*0.72, -50, {pattern:'sine', phase:1.4}); });
     add(12.0,()=> aiWaveRush('frost', 4, {}));                    // sheet 1
@@ -6831,11 +6833,31 @@ function buildStagePlan(stageNum){
     const W4=worldWidth();
     add(5.0, ()=> vRow('drone', Math.round(3*D), {pattern:'sine', amp:34}));
     // ---- LEVEL 4 JET WING: 9 airframes, none shared with level 6 ----
-    add(9.0, ()=> aiWaveColumns('jet_f16', {dir:1}));                        // pattern #2 — columns down the runway
-    add(14.0,()=> aiWaveSweep('jet_f18', 3, {dir:1}));
-    add(19.0,()=> aiWaveSplit('jet_m29', {}));                               // sheet 2 — peel L / peel R / charge
+    /* ⚠ THESE WAVES WERE FIRING BLANKS (drop 0810p). Mike: "the enemies broken".
+
+       Measured over 45s of real play with spawnEnemy wrapped: stage 4 asked for 36 enemies and
+       got 23. THIRTEEN of its spawn requests were refused outright — a third of the level's
+       enemies never existed. jet_f16 / jet_f18 / jet_m29 are in spawnEnemy's inlined _DELETE set
+       because their mbj_ component art resolves ZERO registered keys, so the cull is right: they
+       would spawn, fly, shoot and kill with nothing drawn.
+
+       What was wrong was that the WAVE SCRIPT still named them. And the two obvious repairs are
+       both wrong: un-culling puts invisible killers back, and DEAD_TYPES' remap-to-'drone' is the
+       one Mike already rejected ("the units he told me to delete were the ones my fix put back").
+
+       So the waves are repointed at aircraft that EXIST. s1_jet_delta and s1_jet_bomber are the
+       RC2 military jets built for stage 1 — rendered before trusting the names, unlike air_air1..7
+       whose `jet1..jet5` aliases are actually alien drone-ships and would have been badly wrong on
+       an airbase. Same wave shapes, same counts, same routes; the units are simply real now. */
+    add(9.0, ()=> aiWaveColumns('s1jetDelta', {dir:1}));                        // pattern #2 — columns down the runway
+    add(14.0,()=> aiWaveSweep('s1jetBomber', 3, {dir:1}));
+    add(19.0,()=> aiWaveSplit('s1jetDelta', {}));                               // sheet 2 — peel L / peel R / charge
     add(24.0,()=> spawnEnemy('el_gw', W4*0.5, -55, {pattern:'weave', amp:30}));           // GOLDEN WIDOW
-    add(16.0,()=> { spawnEnemy('minitank', W4*0.24, -40, {}); spawnEnemy('minitank2', W4*0.5, -40, {}); spawnEnemy('minitank', W4*0.76, -40, {}); });  // MINI TANKS
+    /* MINI TANKS, ON THE TYPE THAT EXISTS FOR THEM (drop 0810p). minitank/minitank2 are culled —
+       zero registered art, measured drawing nothing for 7746 frames — and 0801im already built
+       'sandtank' on the tnkM_ sprites precisely so Mike's deletion could stand while he still got
+       the tiny tanks he asked for. This wave never got the memo and was firing three blanks. */
+    add(16.0,()=> { spawnEnemy('sandtank', W4*0.24, -40, {}); spawnEnemy('sandtank', W4*0.5, -40, {}); spawnEnemy('sandtank', W4*0.76, -40, {}); });  // MINI TANKS
     add(39.0,()=> { spawnEnemy('minitank3', W4*0.30, -40, {}); spawnEnemy('minitank3', W4*0.70, -40, {}); });
     add(28.0,()=> aiWaveRush('jet_f22', 3, {}));
     add(33.0,()=> spawnEnemy('el_od', W4*0.5, -55, {pattern:'straight'}));                // OBSIDIAN DRILL TANK
@@ -6882,19 +6904,23 @@ function buildStagePlan(stageNum){
 
     add(5.0, ()=> { l6HighDive('raptor', VW*0.20); l6HighDive('raptor', VW*0.50); l6HighDive('raptor', VW*0.80); });
     // ---- LEVEL 6 JET WING: 7 airframes, none shared with level 4 ----
-    add(11.0,()=> { spawnEnemy('jet_grp', VW*0.30, -50, {pattern:'sine'}); spawnEnemy('jet_grp', VW*0.70, -50, {pattern:'sine', phase:1.2}); });
+    /* stage 6 loses 5 of 28 the same way (jet_raf x3, jet_grp x2, and jet_kaw at t=50 beyond the
+       45s I measured). Repointed to the BLACK variants of the same two airframes: stage 6 is the
+       NIGHT cloud sky fortress, and the camo pair reads as daylight against it. Same art family,
+       correct scheme, no new sprites. */
+    add(11.0,()=> { spawnEnemy('s1jetDeltaB', VW*0.30, -50, {pattern:'sine'}); spawnEnemy('s1jetDeltaB', VW*0.70, -50, {pattern:'sine', phase:1.2}); });
     // SPEED BOOSTER PADS laid through the run — ride one to slip an incoming asteroid or missile
     add(6.0, ()=> { speedPadSpawn(VW*0.30,-30,'up'); speedPadSpawn(VW*0.70,-30,'up'); });
     add(15.0,()=> { speedPadSpawn(VW*0.20,-30,'right'); speedPadSpawn(VW*0.80,-30,'left'); });
     add(25.0,()=> { speedPadSpawn(VW*0.5,-30,'up'); });
     add(34.0,()=> { speedPadSpawn(VW*0.28,-30,'up'); speedPadSpawn(VW*0.72,-30,'up'); });
     add(46.0,()=> { speedPadSpawn(VW*0.35,-30,'right'); speedPadSpawn(VW*0.65,-30,'left'); });
-    add(17.0,()=> aiWaveSweep('jet_raf', 3, {dir:-1}));
+    add(17.0,()=> aiWaveSweep('s1jetBomberB', 3, {dir:-1}));
     add(23.0,()=> { spawnEnemy('jet_typ', VW*0.25, -50, {pattern:'weave'}); spawnEnemy('jet_typ', VW*0.75, -50, {pattern:'weave', phase:1.1}); });
     add(31.0,()=> aiWaveRush('jet_f35', 3, {}));
     add(37.0,()=> spawnEnemy('jet_cic', VW*0.5, -60, {pattern:'straight'}));              // CYCLONE INTERCEPTOR CARRIER
     add(44.0,()=> { spawnEnemy('jet_su57', VW*0.32, -50, {pattern:'dive'}); spawnEnemy('jet_su57', VW*0.68, -50, {pattern:'dive'}); });
-    add(50.0,()=> { spawnEnemy('jet_kaw', VW*0.5, -50, {pattern:'sine'}); spawnEnemy('jet_grp', VW*0.20, -50, {pattern:'weave'}); spawnEnemy('jet_raf', VW*0.80, -50, {pattern:'weave'}); });
+    add(50.0,()=> { spawnEnemy('s1jetBomberB', VW*0.5, -50, {pattern:'sine'}); spawnEnemy('s1jetDeltaB', VW*0.20, -50, {pattern:'weave'}); spawnEnemy('s1jetDeltaB', VW*0.80, -50, {pattern:'weave'}); });
     add(13.0,()=> aiWaveRush('talon', 4, {}));                    // sheet 1
     add(29.0,()=> aiWaveSweep('fang', 4, {dir:1}));               // pattern #1
     add(41.0,()=> aiWaveSplit('raptor', {}));
@@ -6999,7 +7025,10 @@ function buildStagePlan(stageNum){
     add(18.0,()=> spawnEnemy('hauler', W8*0.50, -60, {}));
 
     // ---- MOVEMENT II: THE CARRIERS
-    add(20.5,()=> spawnEnemy('el_hd', W8*0.5, -60, {pattern:'straight'}));      // HELLWING DEATH CARRIER
+    /* el_hd is one of the 25 culled elites (0801bl: every mbj_/el_ prefix resolves 0 of its parts).
+       'hauler' is stage 8's own live carrier and is already fielded two lines up, so the carrier
+       beat survives on art that exists rather than on a name that draws nothing. */
+    add(20.5,()=> spawnEnemy('hauler', W8*0.5, -60, {pattern:'straight'}));      // CARRIER (was el_hd, culled)
     add(23.0,()=> spawnEnemy('hell', W8*0.5, -60, {}));                         // ELITE 3
     add(25.5,()=> { spawnEnemy('octo', W8*0.24, -40, {pattern:'weave'});
                     spawnEnemy('octo', W8*0.76, -40, {pattern:'weave', phase:1.2}); });
@@ -7007,7 +7036,7 @@ function buildStagePlan(stageNum){
                     spawnEnemy('oracle', W8*0.60, -50, {}); });
     add(30.5,()=> aiWaveSplit('crescent', {}));
     add(33.0,()=> { spawnEnemy('talon', W8*0.24, -50, {}); spawnEnemy('talon', W8*0.76, -50, {}); });
-    add(35.5,()=> { spawnEnemy('el_hd', W8*0.28, -60, {pattern:'straight'});
+    add(35.5,()=> { spawnEnemy('hauler', W8*0.28, -60, {pattern:'straight'});
                     spawnEnemy('el_hd', W8*0.72, -60, {pattern:'straight'}); });
     add(38.0,()=> { spawnEnemy('hauler', W8*0.34, -60, {}); spawnEnemy('hauler', W8*0.66, -60, {}); });
 
