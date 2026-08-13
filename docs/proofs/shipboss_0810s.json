@@ -1,44 +1,16 @@
 [
  {
-  "kind": "infernoreaver",
-  "stage": 2,
-  "slot": "boss",
-  "name": "INFERNO REAVER",
-  "hp": 527,
-  "w": 200,
-  "h": 200,
-  "art": "infernoreaver",
+  "kind": "blacksteel",
+  "stage": 4,
+  "slot": "mini",
+  "name": "BLACKSTEEL RAPTOR",
+  "hp": 216,
+  "w": 170,
+  "h": 170,
+  "art": "blacksteel",
   "artReady": true,
-  "drawPixels": 97966,
-  "flashPixels": 63282,
-  "waves": 6,
-  "perWave": [
-   7,
-   7,
-   7,
-   7,
-   7,
-   7
-  ],
-  "bullets": 42,
-  "vyMin": 1.67,
-  "vyMax": 1.67,
-  "anyAimed": false,
-  "spreadX": 712,
-  "lanes": 9
- },
- {
-  "kind": "cryospear",
-  "stage": 3,
-  "slot": "boss",
-  "name": "CRYO SPEAR",
-  "hp": 638,
-  "w": 195,
-  "h": 195,
-  "art": "cryospear",
-  "artReady": true,
-  "drawPixels": 90486,
-  "flashPixels": 49318,
+  "drawPixels": 54266,
+  "flashPixels": 30710,
   "waves": 6,
   "perWave": [
    6,
@@ -54,41 +26,5 @@
   "anyAimed": false,
   "spreadX": 566,
   "lanes": 5
- },
- {
-  "kind": "voidbat",
-  "stage": 5,
-  "slot": "boss",
-  "name": "VOID BAT",
-  "hp": 1047,
-  "w": 210,
-  "h": 210,
-  "art": "voidbat",
-  "artReady": true,
-  "drawPixels": 73169,
-  "flashPixels": 69671,
-  "waves": 6,
-  "perWave": [
-   12,
-   12,
-   12,
-   12,
-   12,
-   12
-  ],
-  "bullets": 72,
-  "vyMin": 1.5,
-  "vyMax": 1.5,
-  "anyAimed": true,
-  "spreadX": 178,
-  "lanes": 2
- },
- {
-  "kind": "siegeember",
-  "error": "spawn returned null"
- },
- {
-  "kind": "thornrime",
-  "error": "spawn returned null"
  }
 ]

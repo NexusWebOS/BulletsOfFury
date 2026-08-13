@@ -30,13 +30,17 @@ import http.server, socketserver, threading, os, functools, base64, json
 GAME = r'C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury'
 OUT = os.path.join(GAME, 'docs', 'proofs')
 
+import os as _os
+ONLY = _os.environ.get('ONLY')
 UNITS = [
     ('infernoreaver', 2, 'boss', 'nsb_inferno_reaver'),
     ('cryospear',     3, 'boss', 'nsb_cryo_spear'),
     ('voidbat',       5, 'boss', 'nsb_void_bat'),
     ('siegeember',    2, 'mini', 'nsb_siege_ember'),
     ('thornrime',     3, 'mini', 'nsb_thorn_rime'),
+    ('blacksteel',    4, 'mini', 'nsb_blacksteel'),
 ]
+if ONLY: UNITS=[u for u in UNITS if u[0]==ONLY]
 
 
 def serve(directory):
@@ -158,6 +162,8 @@ def main():
         print('ship art ready %d/%d\n' % (ok, len(keys)))
 
         for kind, stage, slot, _k in ([] if os.environ.get('SHOTONLY') else UNITS):
+            if pg.is_closed():
+                break
             r = pg.evaluate(RUN, [kind, stage, slot])
             res.append(r)
             print('  measured %-14s draw=%-9s flash=%-8s bullets=%s'

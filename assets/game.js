@@ -4526,7 +4526,7 @@ const SUBBOSS={
   7:{at:0.45, kind:'ratking', afterScroll:1161},    // RAT KING EXCAVATOR — level 7 sub-boss
   8:{at:0.45, kind:'herald', afterScroll:1201},     // HERALD OF DEATH (venom-reaver, retitled per the phase manifest)
   3:{at:0.45, kind:'thornrime', afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
-  4:{at:0.45, kind:'subreactor', afterScroll:1041},
+  4:{at:0.45, kind:'blacksteel', afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
   5:{at:0.45, kind:'subcore', afterScroll:1121},
 };
 
@@ -7447,6 +7447,12 @@ const SHIPBOSS = {
      what Mike asked for. Absolute, scaled by difficulty, in line with the quad-laser. */
   siegeember:    {key:'nsb_siege_ember',    name:'EMBER SIEGECARRIER',  w:165,h:165, hp:235, pat:'siege', cd:1.25, mini:true},
   thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true},
+  /* STAGE 4 HAD NO MINIBOSS AT ALL (drop 0811b). SUBBOSS[4] named 'subreactor', which is in
+     DEAD_SUBBOSS - so spawnSubBoss cleared the gate and returned null, and the stage ran straight
+     from its waves to the boss. Retiring a unit in 0810m left the table still pointing at it.
+     nsb_blacksteel was built and registered in 0810s and never assigned to anything, so the
+     Blacksteel Raptor takes the slot rather than inventing art. */
+  blacksteel:    {key:'nsb_blacksteel',     name:'BLACKSTEEL RAPTOR',   w:170,h:170, hp:245, pat:'lance', cd:1.15, mini:true},
 };
 function shipBossInit(b, kind){
   const D=SHIPBOSS[kind]; if(!D) return false;
@@ -7759,7 +7765,7 @@ function spawnSubBoss__inner(kind){
            flash:0, dead:false, dying:0, fireCd:1.4, drift:0, atkPhase:0, phaseT:1.2, sub:true, name:'SUB-BOSS'};
   switch(kind){
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
-    case 'siegeember': case 'thornrime':
+    case 'siegeember': case 'thornrime': case 'blacksteel':
       b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {
       /* Built from the pack's own map rather than eyeballed: BOFQL carries the
