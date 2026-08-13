@@ -21879,10 +21879,63 @@ function attFade(t, dur){
 function attDrawFit(im, alpha){
   const s=Math.min(VW/im.naturalWidth, VH/im.naturalHeight);
   const w=im.naturalWidth*s, h=im.naturalHeight*s;
+  const x=(VW-w)/2, y=(VH-h)/2;
   ctx.save();
   ctx.imageSmoothingEnabled=false;                  // nearest-neighbour, per the pack contract
   ctx.globalAlpha=clamp(alpha,0,1);
-  ctx.drawImage(im, (VW-w)/2, (VH-h)/2, w, h);
+  ctx.drawImage(im, x, y, w, h);
+  ctx.restore(); ctx.globalAlpha=1;
+  return {x,y,w,h};                                 // where it landed, so overlays can follow it
+}
+/* ============================================================
+   THE ARCADE CARD'S RIGHT PANEL WAS EMPTY (drop 0810z)
+
+   Mike: "fix the arcade intro blank cards".
+
+   Beat 1 of the attract reel draws `pcard_<pilot>` and nothing else. The plate is authored as a
+   LEFT half (portrait + airframe) and a RIGHT half that is a bare panel waiting for text " so the
+   reel showed a pilot next to an empty green box, for every pilot, every loop.
+
+   Same shape as the aintro plates in 0809: the art provides the frame, the game provides the
+   words. Drawn rather than baked means it cannot go stale when a pilot's numbers change, and the
+   name comes from the PILOTS table, which is what made the Decker/Freezer swap structurally
+   impossible to reintroduce.
+
+   The panel rect is expressed as FRACTIONS of the drawn card, not screen pixels, because
+   attDrawFit letterboxes to whatever VW/VH are " hard-coding pixels here would drift the moment
+   the card is fitted differently. Measured off the plate: the flat panel starts at x 0.42 and runs
+   to the frame edge, so the text sits inside that with margins. ============================================================ */
+function attractCardText(pk, R, a){
+  if(!R || !(a>0.02)) return;
+  const P=(typeof PILOTS!=='undefined') ? PILOTS.find(p=>p.key===pk) : null;
+  if(!P) return;
+  const art=(typeof uiFontArt==='function') ? uiFontArt() : null;
+  const px=R.x+R.w*0.47, pw=R.w*0.48;               // the panel, inset off the measured 0.42 edge
+  const cx=px+pw/2;
+  let y=R.y+R.h*0.17;
+  if(art && typeof stageText==='function'){
+    stageText(art, String(P.name||'').toUpperCase(), cx, y, R.h*0.085, P.tint||'#e8eef6', 0.95, a, 0.10);
+    y += R.h*0.115;
+    stageText(art, String(P.role||'').toUpperCase(), cx, y, R.h*0.040, '#cfe0ef', 0.85, a, 0.12);
+    y += R.h*0.105;
+  } else {
+    y += R.h*0.22;
+  }
+  /* three bars, from the same fields the pilot select reads. -0.10..+0.25 covers every value in
+     PILOTS, so the fill is comparable across pilots instead of each being scaled to itself. */
+  const rows=[['SPEED',P.spd],['FIRE RATE',P.fire],['RANGE',P.range]];
+  const bw=pw*0.82, bh=Math.max(6,R.h*0.030), bx=cx-bw/2;
+  ctx.save(); ctx.globalAlpha=clamp(a,0,1);
+  for(const [label,v] of rows){
+    if(art && typeof stageText==='function')
+      stageText(art, label, bx, y, R.h*0.030, '#9fb4c8', 0.9, a, 0.12);
+    const by=y+R.h*0.042;
+    ctx.fillStyle='rgba(6,12,18,0.72)'; ctx.fillRect(bx, by, bw, bh);
+    ctx.strokeStyle='rgba(150,190,220,0.55)'; ctx.lineWidth=1; ctx.strokeRect(bx+0.5, by+0.5, bw-1, bh-1);
+    const f=clamp((( v==null?0:v )+0.10)/0.35, 0.06, 1);
+    ctx.fillStyle=P.tint||'#7fd13b'; ctx.fillRect(bx+2, by+2, (bw-4)*f, bh-4);
+    y += R.h*0.105;
+  }
   ctx.restore(); ctx.globalAlpha=1;
 }
 
@@ -22010,7 +22063,9 @@ function drawAttract(dt){
     const key=(XART._src&&XART._src['pcard_'+k])?('pcard_'+k):('card_'+k);
     if(typeof XART==='undefined' || !XART.rdy(key)) return;
     attractT+=dt;
-    attDrawFit(XART.get(key), attFade(attractT,dur));
+    const _a=attFade(attractT,dur);
+    const _R=attDrawFit(XART.get(key), _a);
+    attractCardText(k, _R, _a);       // the plate's right panel is EMPTY without this (0810z)
   }
   else {
     if(!attractDemoOn) attractDemoStart();
