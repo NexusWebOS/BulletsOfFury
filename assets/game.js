@@ -3435,6 +3435,24 @@ function weaponIconKey(w, lv){
   }
   return 'micon_'+base+'_'+lv;
 }
+/* ============================================================
+   THE LEGACY PICKUP NAME, ELEMENT-CORRECT (drop 0811m)
+
+   The `pw_*` and `*_icon_*` sets predate weaponIconKey and are keyed on the slot's DEFAULT
+   element. Every surface that fell back to one of them re-introduced the bug weaponIconKey
+   exists to prevent — 0806d fixed the resolver, 0810f fixed one fallback, 0810s fixed the
+   EQUIPPED box's private copy, and there were still two more. Four tables, one rule, and the
+   rule kept losing.
+
+   Returns null wherever the legacy set has no art for the element the slot ACTUALLY dispenses.
+   That is deliberate: the caller then draws nothing for a frame rather than the wrong weapon.
+   There is no fire_icon_ and no icebreath_icon_ family — micon_ IS that art. ============ */
+function weaponLegacyName(w, lv){
+  const _pk=(typeof _pilotKey==='function')?_pilotKey():'';
+  if(w===4 && (_pk==='freezer' || (run&&run._dbgIce))) return null;        // ice breath
+  if(w===5 && typeof orbIsFire==='function' && orbIsFire()) return null;   // the fireball
+  return 'pw_'+(({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[w]||'mg')+'_'+lv;
+}
 function drawHUDCustom(){
   // DROP 0720 — new HUD bar (SCORE/HI SCORE/LIVES/BOMBS/EQUIPMENT: SHIELD/SPEED/WEAP)
   if(typeof XART!=='undefined' && XART.rdy('nhud_bar')){
@@ -10354,12 +10372,14 @@ function applyPowerup(p){
       startSpecial(); break;
     /* THE TWO NEW BOXES (drop 0805i). Neither touches startSpecial — Cole keeps NUKE STRIKE
        and Lizzie keeps ATOM BOMB. These are WEAPON pickups that sit alongside the special. */
+    /* the loaned weapons announce themselves too — Mike's list names "weapons, specials or
+       powerups", and these are the three that were silent */
     case 'sonicbox':
-      sonicGrant(); break;
+      sonicGrant(); if(typeof arcadeBanner==='function') arcadeBanner('SONIC CANNON'); break;
     case 'lzmgbox':
-      lzMountGrant(); break;
+      lzMountGrant(); if(typeof arcadeBanner==='function') arcadeBanner('TURRET MOUNT'); break;
     case 'dkshotbox':
-      dkGrant(); break;
+      dkGrant(); if(typeof arcadeBanner==='function') arcadeBanner('INCENDIARY SHOTGUN'); break;
     case 'missilepack2':
       /* matches its siblings exactly — run.bombs, clamped 0..99, and Cole's nuke swap. I had
          written run.missiles/MSL_MAX, neither of which exists in this codebase. */
@@ -10392,12 +10412,16 @@ function applyPowerup(p){
       let _wt=(p.wtype!=null)?p.wtype:run.weapon;
       if(_wt===2){ // MISSILES is no longer a swappable weapon -> level up the auto-missiles instead
         run.missileLevel=clamp((run.missileLevel||0)+1,0,5);
-        floatText(p.x,p.y,'MISSILES L'+run.missileLevel,'#6bd06b'); Audio.SFX.weapon(); break;
+        if(typeof arcadeBanner==='function') arcadeBanner('LVL '+run.missileLevel+' MISSILES');
+        Audio.SFX.weapon(); break;
       }
       // First time acquiring this weapon (level 0/undefined) -> level 1. Otherwise level up.
       const _cur=(run.wlevels[_wt]|0);
       run.weapon=_wt; run.wlevels[_wt]=clamp(_cur+1,1,5); run.wlevel=run.wlevels[_wt];
-      floatText(p.x,p.y, WEAPONS[_wt].split(' ')[0]+' L'+run.wlevel, '#8de23a'); Audio.SFX.weapon(); break;
+      /* the announcement replaces floatText here — a pickup is an EVENT, and a small tinted
+         string drifting up from the crate reads as a damage number */
+      if(typeof arcadeBanner==='function') arcadeBanner(arcWeaponAnnounce(_wt, run.wlevel));
+      Audio.SFX.weapon(); break;
     }
     case 'bomb':
       /* THIS CAPPED AT 9 AND ROBBED THE PLAYER (found in drop 0801km). The pack cases
@@ -10413,6 +10437,94 @@ function applyPowerup(p){
   }
 }
 function floatText(x,y,txt,color){ floaters.push({x,y,txt,color,t:0,life:1.1}); }
+
+/* ============================================================
+   THE ARCADE PICKUP BANNER (drop 0811m)
+
+   Mike: "When you acquire weapons, specials or powerups - do text that appears letter by letter
+   and then flashes left to right in yellow/white color with an ! at the end and then slides and
+   fades or a video game arcade like effect. Ex: - LVL 1 Machine Gun!"
+
+   Four beats, in his order: TYPE -> SWEEP -> HOLD -> SLIDE OUT. The old feedback was floatText,
+   a small tinted string drifting up from the pickup in canvas BOFmil — it reads as a damage
+   number, not as an announcement, and it is in the wrong face.
+
+   Three things here are load-bearing rather than styling:
+
+   ⚠ THE LEFT EDGE IS FIXED FROM THE FULL STRING, NOT THE TYPED ONE. Centring each frame on what
+   has been typed so far makes the whole line crawl sideways as it fills in. Measure the finished
+   text once, pin x, and type left-aligned into it.
+
+   ⚠ IT IS DRAWN IN SCREEN SPACE. drawWorld runs under translate(-camX), and a banner that
+   inherits that slides off with the terrain — the exact fault Mike reports for the dialogue
+   window, and the fourth instance of the world/screen mix-up this file records.
+
+   ⚠ THE '!' IS ONLY APPENDED IF THE FACE HAS THE GLYPH. stageText/msgText render an unmapped
+   character as a blank advance, so a missing '!' would silently become a trailing gap — which is
+   the same family as the pilot card's periods coming out as a block. msgHasGlyph asks first, and
+   the mark is drawn from the face's own cap height when the answer is no.
+   ============================================================ */
+let _arcBan=null;
+const ARC_CPS=30, ARC_SWEEP=0.42, ARC_HOLD=0.60, ARC_OUT=0.45;
+function msgHasGlyph(ch){
+  const a1=defFontArt(), a2=defFontAlt();
+  const ok=(a)=>!!(a && a.font && a.font[ch] && a.frames && a.frames[a.font[ch]]);
+  return ok(a1)||ok(a2);
+}
+function arcadeBanner(text, col){
+  const t=String(text).toUpperCase();
+  _arcBan={ text:t, bang:!/[!?]$/.test(t), col:col||'#ffe06b', t:0 };
+}
+function arcadeBannerTick(dt){
+  if(!_arcBan) return;
+  _arcBan.t+=dt;
+  const typeDur=_arcBan.text.length/ARC_CPS;
+  if(_arcBan.t > typeDur+ARC_SWEEP+ARC_HOLD+ARC_OUT) _arcBan=null;
+}
+function drawArcadeBanner(){
+  const B=_arcBan; if(!B) return;
+  if(typeof msgMeasure!=='function') return;
+  const H=Math.max(12, Math.round(VH*0.042));
+  const typeDur=B.text.length/ARC_CPS;
+  const tSweep=B.t-typeDur, tOut=B.t-(typeDur+ARC_SWEEP+ARC_HOLD);
+
+  const full=B.text+((B.bang && msgHasGlyph('!'))?'!':'');
+  const w=msgMeasure(full,H); if(!w) return;             // sheet not up: draw nothing, not a guess
+  const x0=Math.round(VW/2-w/2);
+  let y=Math.round(VH*0.34), a=1;
+  if(tOut>0){ const k=Math.min(1,tOut/ARC_OUT); y-=Math.round(k*34); a=1-k; }   // slides up and fades
+
+  const shown = (tSweep>=0) ? full : full.slice(0, Math.max(0, Math.floor(B.t*ARC_CPS)));
+  const camx=(typeof camX!=='undefined')?camX:0;
+  ctx.save(); ctx.translate(camx,0);                      // screen space, so it cannot scroll away
+
+  msgTextLeft(shown, x0, y, H, B.col, 1, a);
+
+  /* the sweep: a bright band travelling left to right across the finished line */
+  if(tSweep>=0 && tSweep<=ARC_SWEEP){
+    const k=tSweep/ARC_SWEEP, band=Math.max(18,w*0.26);
+    ctx.save();
+    ctx.beginPath(); ctx.rect(x0-band+(w+band*2)*k, y-H, band, H*2); ctx.clip();
+    msgTextLeft(full, x0, y, H, '#ffffff', 1, a);
+    ctx.restore();
+  }
+  /* the mark, when the face has no '!' of its own — drawn to the face's cap height so it sits
+     with the letters instead of looking like a different typeface bolted on */
+  if(B.bang && !msgHasGlyph('!') && shown.length>=B.text.length){
+    const bw=Math.max(2,Math.round(H*0.14)), bx=x0+w+Math.round(H*0.16);
+    ctx.save(); ctx.globalAlpha=a; ctx.fillStyle=B.col;
+    ctx.fillRect(bx, y-Math.round(H*0.46), bw, Math.round(H*0.60));
+    ctx.fillRect(bx, y+Math.round(H*0.28), bw, bw);
+    ctx.restore();
+  }
+  ctx.restore();
+}
+/* the name a pickup announces itself by — WEAPONS carries the full label, and Mike's example
+   ("LVL 1 Machine Gun!") is level first, then the weapon */
+function arcWeaponAnnounce(slot, lv){
+  const nm=(typeof WEAPONS!=='undefined' && WEAPONS[slot]) ? WEAPONS[slot] : 'WEAPON';
+  return 'LVL '+lv+' '+nm;
+}
 
 /* ============================================================
    BOMB
@@ -15891,6 +16003,7 @@ function updateEffects(dt){
   particles=particles.filter(p=>!p.dead);
   for(const f of floaters){ f.t+=dt; f.y-=0.5; if(f.t>=f.life)f.dead=true; }
   floaters=floaters.filter(f=>!f.dead);
+  if(typeof arcadeBannerTick==='function') arcadeBannerTick(dt);   // the pickup announcement
   if(typeof rbShardsUpdate==='function') rbShardsUpdate(dt);   // rollerball shrapnel
   for(const sa of sprAnims){ sa.t+=dt; if(sa.t>=sa.dur) sa.dead=true; }
   sprAnims=sprAnims.filter(s=>!s.dead);
@@ -17876,41 +17989,80 @@ function storyDraw(){
   const tint=STORY_TINT[who]||'#cfd6e6';
   ctx.save();
   ctx.globalAlpha=S.fade;
-  if(S.when==='safe'){
-    /* FULL RADIO PANEL — only where the player is not flying */
-    /* CENTRED PANEL (drop 0801cb). Mike: "these dialogue windows are bad and need
-       to stay centered in game."
+  /* ============================================================
+     ONE PANEL, BOTTOM LEFT, AUTHORED ART, AUTHORED FONT (drop 0811m)
 
-       It was a full-bleed band 10px from each edge, pinned to the bottom - so on a
-       wide shot it ran the whole width and sat wherever the playfield happened to
-       be, with the ship overlapping it. Now a fixed-width block centred on BOTH
-       axes of the play area: it lands in the same place every time regardless of
-       stage width, and the text wraps to the block rather than the screen. */
-    const pw=Math.min(VW-40, 380);
-    const h=Math.round(VH*0.20);
-    const x=Math.round(VW/2-pw/2), y=Math.round(VH*0.62);
-    ctx.fillStyle='rgba(6,9,14,0.90)'; ctx.fillRect(x,y,pw,h);
-    ctx.strokeStyle=tint; ctx.lineWidth=2; ctx.strokeRect(x,y,pw,h);
-    ctx.fillStyle=tint; ctx.textAlign='left';
-    ctx.font='bold 13px "BOFmil", monospace';
-    ctx.fillText(who, x+12, y+22);
-    ctx.fillStyle='#dfe6f2'; ctx.font='12px "BOFmil", monospace';
-    let ln='', yy=y+44;
-    for(const w of shown.split(' ')){
-      const t2=ln?(ln+' '+w):w;
-      if(ctx.measureText(t2).width>pw-24 && ln){ ctx.fillText(ln,x+12,yy); yy+=16; ln=w; }
-      else ln=t2;
+     Mike: "The stage text dialogue windows when you start level 1, they must remain in the
+     bottom left corner and never scroll away, and need to use OUR dialogue window graphics, and
+     our fonts. again, scale and fit the text inside the window."
+
+     Everything he listed was wrong here, and the two branches were wrong in different ways:
+
+       - the SAFE panel was a fillRect plus a strokeRect. A faux box, which is the thing this
+         project has a standing rule against — dlg_window is the authored panel and it was
+         sitting unused two functions away.
+       - the COMBAT branch was a bare translucent strip with no panel at all, centred at the
+         bottom, drawn in canvas BOFmil. That is what plays on stage 1's opening, so it is the
+         one Mike is describing.
+       - both measured and wrapped with ctx.measureText against a canvas font while drawing —
+         in the safe branch — a different face entirely.
+
+     Now: one panel for both, pinned to the BOTTOM LEFT of the play area in screen space, in
+     dlg_window, with every glyph in the BOF face and the body wrapped by msgWrap to the panel's
+     own inner width. The speaker name shrinks to fit rather than running out of the frame.
+
+     ⚠ "NEVER SCROLL AWAY" IS ABOUT THE CAMERA, NOT THE TIMER. drawWorld runs under
+     translate(-camX); anything drawn inside it slides with the terrain. This is why the strip
+     appeared to drift off on a wide stage. The panel is drawn in SCREEN space — the camera
+     translate is undone for the duration — which is the same rule the file already enforces for
+     every cinematic that draws player.x. It has bitten three times; this is the fourth. */
+  const camx=(typeof camX!=='undefined')?camX:0;
+  ctx.translate(camx, 0);                       // out of world space, into screen space
+
+  const PAD=10;
+  const pw=Math.min(VW-PAD*2, 300);
+  const ph=Math.round(VH*0.17);
+  const x=PAD, y=VH-ph-PAD;                     // bottom left, and it stays there
+
+  /* drawPanel already tries XART itself and returns false only when the plate has not decoded,
+     so the fallback here is for that one case and nothing else. */
+  if(!(typeof drawPanel==='function' && drawPanel('dlg_window', null, x, y, pw, ph))){
+    ctx.fillStyle='rgba(6,9,14,0.90)'; ctx.fillRect(x,y,pw,ph);
+    ctx.strokeStyle=tint; ctx.lineWidth=2; ctx.strokeRect(x,y,pw,ph);
+  }
+  /* dlg_window has a deep machined frame — the inset is the frame, not taste. Text laid out to
+     the panel's outer edge sits on the rivets. */
+  const ix=x+16, iw=pw-32;
+  const nameH=Math.round(ph*0.20);
+  const _nh=(typeof msgFitH==='function')?msgFitH(who, iw, nameH, 7):nameH;
+  if(typeof msgTextLeft==='function') msgTextLeft(who, ix, y+Math.round(ph*0.24), _nh, tint, 1, S.fade);
+
+  /* ⚠ FIT THE TEXT, DO NOT TRUNCATE IT. The first cut clipped any line that would land past the
+     bottom rail, on the reasoning that overlong copy is a content problem. Rendered, that turned
+     "CIVILIAN EVACUATION IS BLOCKED ON THREE SIDES." into "...ON THREE" — the player loses the
+     end of the sentence, which is worse than small text and is not what "scale and fit the text
+     inside the window" asks for.
+
+     So the body SIZE is solved against the box instead: take the largest height whose wrap fits
+     the rows available, down to a floor. Below the floor it wraps at the floor and the tail is
+     dropped, because a line too small to read is not a fix either — but at 300px wide that takes
+     roughly twenty words, and Mike's own rule ("try not to use too much text") lands well inside
+     it. The typed-in prefix is wrapped at the FULL line's size so the block does not reflow
+     letter by letter as it types. */
+  const yTop=y+Math.round(ph*0.46), yBot=y+ph-Math.round(ph*0.12);
+  let bodyH=Math.round(ph*0.17); const minH=Math.max(7, Math.round(ph*0.10));
+  if(typeof msgWrap==='function'){
+    for(; bodyH>minH; bodyH--){
+      const rows=Math.max(1, Math.floor((yBot-yTop)/Math.round(bodyH*1.42))+1);
+      if(msgWrap(full, iw, bodyH).length<=rows) break;
     }
-    if(ln) ctx.fillText(ln,x+12,yy);
-  } else {
-    /* COMBAT — a single subtitle strip. No box, nothing over the playfield. */
-    const y=VH-30;
-    ctx.textAlign='center';
-    ctx.font='bold 11px "BOFmil", monospace';
-    const txt=who+':  '+shown;
-    const w=ctx.measureText(txt).width+18;
-    ctx.fillStyle='rgba(6,9,14,0.62)'; ctx.fillRect(VW/2-w/2, y-12, w, 18);
-    ctx.fillStyle=tint; ctx.fillText(txt, VW/2, y);
+  }
+  const lines=(typeof msgWrap==='function')?msgWrap(shown, iw, bodyH):[shown];
+  let yy=yTop;
+  for(const L of lines){
+    if(yy>yBot) break;
+    if(typeof msgTextLeft==='function') msgTextLeft(L, ix, yy, bodyH, '#dfe6f2', 1, S.fade);
+    yy += Math.round(bodyH*1.42);
   }
   ctx.restore();
 }
@@ -21356,9 +21508,30 @@ function drawPowerups(){
     if(p.kind==='crate'){ drawCrate(p.x,yb,p.t,p.flash||0); continue; }
     if(p.kind==='scrate'){ drawScrate(p.x,yb,p.t,p.flash||0); continue; }
     if(p.kind==='mcrate'){ drawMcrate(p.x,yb,p.t,p.flash||0); continue; }
-    if(p.kind==='sonicbox' || p.kind==='lzmgbox'){
-      /* the new pickups draw from their own icon plate, bobbing like their siblings */
-      const _k=(p.kind==='sonicbox')?'nsw_icon_cole':'nsw_icon_lizzie';
+    if(p.kind==='sonicbox' || p.kind==='lzmgbox' || p.kind==='dkshotbox'){
+      /* ⚠ dkshotbox HAD NO DRAW BRANCH AT ALL (drop 0811m). Mike: "Deckers Shotgun icon and
+         powerup has not appeared for me yet, so I dont know if this is working or not."
+
+         It is a real pickup — dkPickKind() rolls it 50/50 for Decker and the collect switch has
+         a `case 'dkshotbox': dkGrant()`. Only the DRAW was missing, so the box fell past its two
+         siblings to the generic coloured capsule with no icon on it. It has been grantable and
+         unrecognisable at the same time, which is exactly why he cannot tell whether it works.
+
+         ⚠ AND THERE IS NO AUTHORED ICON FOR IT. The manifest has nsw_icon_cole and
+         nsw_icon_lizzie and no decker entry; the only Decker shotgun art is ndk_shot_0..3 (the
+         blast reel) and ndk_shell_0..5 (the ejected shells). Per the standing rule this does not
+         invent one — it tries nsw_icon_decker first so a real icon drops straight in the moment
+         Mike supplies one, then falls back to authored Decker art.
+
+         ⚠ THE CANDIDATES WERE RENDERED BEFORE CHOOSING, per rule 1 — see
+         docs/proofs/decker_shotbox_candidates_0811m.png. ndk_shot_0..3 turned out to be the blast
+         seen head-on: a glowing orange emitter that reads as a FIREBALL pickup, which is the last
+         thing this particular box should be mistaken for. ndk_shell_0 is a brass shotgun shell —
+         an object rather than an effect, unmistakably ammunition, and it cannot be confused with
+         any other pickup on the field. That is the one, pending Mike's call. */
+      const _k=(p.kind==='sonicbox')?'nsw_icon_cole'
+             : (p.kind==='lzmgbox') ?'nsw_icon_lizzie'
+             : (XART.rdy('nsw_icon_decker')?'nsw_icon_decker':'ndk_shell_0');
       if(typeof XART!=='undefined' && XART.rdy(_k)){
         const im=XART.get(_k), h=34+2*Math.sin(performance.now()/240), w=h*(im.naturalWidth/im.naturalHeight);
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
@@ -21467,31 +21640,52 @@ function drawPowerups(){
       }
     }
     if(p.kind==='weapon'){ const _w2=(p.wtype!=null?p.wtype:run.weapon), _l2=clamp((run.wlevels&&run.wlevels[_w2])||1,1,5);
-      // v2.2 unified pickup icons — all 6 crate weapons (Roman-plaque rank borders, spec colors)
-      let _xk=(typeof weaponIconKey==='function')?weaponIconKey(_w2,_l2)
-                 :('micon_'+(({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[_w2]||'mg')+'_'+_l2);
-      if(!(typeof XART!=='undefined' && XART.rdy(_xk))){
-        /* ⚠ THE FALLBACK WAS LYING ABOUT THE ELEMENT (drop 0810f). Mike: "ice orb still isnt the
-           fireball powerup icon on level 3."
+      /* ============================================================
+         ASK THE ONE LOOKUP THAT KNOWS ALL THREE STORES (drop 0811m)
 
-           weaponIconKey was already correct — it returns micon_fireorb_* on stage 3 and
-           micon_thermoshock_* for Freezer, both verified at runtime. This branch was the problem.
-           XART.rdy is false on its FIRST call, because that call is what starts the lazy load, so
-           this fallback runs at least once for EVERY pickup — and for slot 5 it substituted
-           'ice_icon_' unconditionally, with no orbIsFire() check. On stage 3 the crate therefore
-           drew an ICE ORB over a weapon that is a FIREBALL.
+         Mike: "On Level 3 the fireorb icon does not appear and displays as ice orb instead when
+         opened from a powerbox." / "On Level 2 the icebreath icon shows as flamethrower icon."
 
-           There is no fire_icon_ family to swap in — micon_fireorb_* IS the fireball art. So the
-           fix is not another substitution: it is to STOP substituting when the element would be
-           wrong. Leaving _xk null falls through to the generic pickup draw for the frame or two
-           before the real icon decodes, which is honest. A pickup may look plain for a moment; it
-           must never advertise the wrong weapon. */
-        const _fire=(typeof orbIsFire==='function' && orbIsFire());
-        _xk=null;
-        if(_w2===5){ if(!_fire) _xk='ice_icon_'+_l2; }
-        else if(_w2===3)_xk='laser_icon_'+_l2;
-        else if(_w2===4)_xk='firewall_icon_'+_l2;
-      }
+         ⚠ THIS BRANCH ASKED **XART** FOR A **micon_** KEY, WHICH CAN ONLY EVER BE FALSE. That is
+         the three-art-stores trap in CLAUDE.md for the fourth time, and CLAUDE.md's own line
+         claiming "the world pickups already use iconDraw correctly" was wrong about this path.
+         micon_* lives in BOFX.icons. XART.rdy() on one of those keys is not the first-call race
+         0810f took it for — it is permanently false. Measured, all three stores side by side:
+
+             micon_fireorb_3    -> BOFX.icons only
+             micon_icebreath_3  -> BOFX.icons only
+             ice_icon_3         -> XART
+             firewall_icon_3    -> XART
+             pw_iceorb_3        -> IN NO STORE AT ALL
+
+         So the fallback ran for every weapon pickup on every frame of its life, and under it:
+
+           slot 4   substituted firewall_icon_ with NO Freezer check, so his ICE BREATH pickup
+                    drew the FLAMETHROWER. That is Mike's second report, exactly.
+           slot 5   on stage 3 correctly refused to substitute (0810f) and then fell through to
+                    an ASSETS map hard-coding 5:'iceorb' — a THIRD element table beneath the two
+                    that had already been fixed.
+           slots 0/1/2  have no legacy *_icon_ family at all, so an MG, spread or missile pickup
+                    has never once drawn an icon. It draws a plain coloured capsule. That is the
+                    "does not appear" half of both reports, and it was never slot-specific.
+
+         iconBlit is the lookup that knows all three stores — 0810s built it for the EQUIPPED box
+         for this exact reason. Asking it FIRST makes weaponIconKey's element rules the only
+         element rules in the path, so no fallback can contradict them any more.
+         ============================================================ */
+      ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=6;
+      const _drew=(typeof iconBlit==='function') && iconBlit(ctx, weaponIconKey(_w2,_l2), p.x, yb, 36, true);
+      ctx.restore();
+      if(_drew) continue;
+      /* Legacy fallback, and ONLY where the legacy family carries the same element the resolver
+         does. A pickup may look plain for a frame; it must never advertise the wrong weapon. */
+      let _xk=null;
+      const _pkNow=(typeof _pilotKey==='function')?_pilotKey():'';
+      const _iceB=(_pkNow==='freezer' || (run&&run._dbgIce));
+      const _fire=(typeof orbIsFire==='function' && orbIsFire());
+      if(_w2===5 && !_fire)      _xk='ice_icon_'+_l2;
+      else if(_w2===4 && !_iceB) _xk='firewall_icon_'+_l2;
+      else if(_w2===3)           _xk='laser_icon_'+_l2;
       if(_xk && typeof XART!=='undefined' && XART.rdy(_xk)){ const im=XART.get(_xk), s=36/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=6;
         ctx.drawImage(im, p.x-im.naturalWidth*s/2, yb-im.naturalHeight*s/2, im.naturalWidth*s, im.naturalHeight*s); ctx.restore(); continue; } }
@@ -21502,7 +21696,12 @@ function drawPowerups(){
         ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=4;
         ctx.drawImage(pim, p.x-pim.naturalWidth*_s/2, yb-pim.naturalHeight*_s/2, pim.naturalWidth*_s, pim.naturalHeight*_s); ctx.restore(); continue;
       }
-      const nm = p.kind==='weapon' ? ('pw_'+(({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[_wt]||'mg')+'_'+clamp((run.wlevels&&run.wlevels[_wt])||1,1,5)) : (({speed:('item_speed_'+clamp(run.speedLevel||1,1,5)),shield:'item_shield',bomb:'__use_crate__',life:'pu_life'})[p.kind]||('pu_'+p.kind)); if(ASSETS.has(nm)){ ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=4; const _f=ASSETS.dims(nm), _s=34/Math.max(_f.w,_f.h); ASSETS.blit(nm,p.x,yb,_f.w*_s,_f.h*_s); ctx.restore(); continue; } }
+      /* ⚠ THE THIRD ELEMENT TABLE LIVED ON THIS LINE (drop 0811m). It rebuilt the pw_ name from
+         its own {5:'iceorb', 4:'firewall'} map, so slot 5 on stage 3 and Freezer's slot 4 landed
+         here after the branches above had carefully refused to draw the wrong element — and this
+         one drew it anyway. weaponLegacyName answers the same question through weaponIconKey's
+         rules and returns null where the legacy set simply has no art for that element. */
+      const nm = p.kind==='weapon' ? ((typeof weaponLegacyName==='function')?weaponLegacyName(_wt, clamp((run.wlevels&&run.wlevels[_wt])||1,1,5)):null) : (({speed:('item_speed_'+clamp(run.speedLevel||1,1,5)),shield:'item_shield',bomb:'__use_crate__',life:'pu_life'})[p.kind]||('pu_'+p.kind)); if(nm && ASSETS.has(nm)){ ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=4; const _f=ASSETS.dims(nm), _s=34/Math.max(_f.w,_f.h); ASSETS.blit(nm,p.x,yb,_f.w*_s,_f.h*_s); ctx.restore(); continue; } }
     ctx.save(); ctx.translate(p.x,yb);
     // capsule frame
     let frame='#888', icon='#fff';
@@ -21749,6 +21948,8 @@ function _drawEffectsInner(){
   ctx.textAlign='center';
   for(const f of floaters){ ctx.globalAlpha=clamp(1-f.t/f.life,0,1); ctx.fillStyle=f.color;
     ctx.font='bold 10px "BOFmil", monospace'; ctx.fillText(f.txt,f.x,f.y); ctx.globalAlpha=1; }
+  /* the pickup announcement, over the field and in screen space (drop 0811m) */
+  if(typeof drawArcadeBanner==='function') drawArcadeBanner();
   // sprite animations (e.g. tank destruction frames)
   if(typeof rbShardsDraw==='function') rbShardsDraw();   // rollerball shrapnel, over the field
   for(const sa of sprAnims){
@@ -33143,6 +33344,69 @@ function msgText(text,cx,cy,H,tintC,tintA,alpha,spacingMul){
     drawFrameTinted(art.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
     x+=w+sp;
   }
+}
+/* ============================================================
+   THE BOF FONT CAN BE MEASURED AND WRAPPED NOW (drop 0811m)
+
+   Mike: "scale and fit the text inside the window."
+
+   The handoff has carried this as a blocker for two drops — "stageText/msgText have no wrap and
+   return no measure, so it needs a line-breaker" — and it is why every authored-font surface
+   either used one hand-counted line or fell back to canvas text with ctx.measureText.
+
+   msgMeasure walks the SAME glyph selection msgText does, including the a1 -> a2 fallback for
+   the glyphs stage 1's sheet is missing, so a measurement can never disagree with the draw. The
+   two must stay in step: if msgText's glyph choice changes, this changes with it.
+
+   ⚠ IT RETURNS 0 WHEN THE SHEET HAS NOT DECODED, and callers must treat that as "unknown", not
+   as "empty". msgText falls back to an Arial Black face in that state and its widths are nothing
+   like the authored ones — laying out against a 0 would stack every line on top of the last.
+   That is the same shape as the bug in 0810o where the glyph MAP was present and the SHEET was
+   not, and the panel asked for 2,853 glyphs and drew none. ============================================================ */
+function msgMeasure(text, H, spacingMul){
+  const a1=defFontArt(), a2=defFontAlt();
+  if(!a1||!a1.font||!a1.img||!a1.img.complete) return 0;      // unknown, NOT zero-width
+  const sp=(spacingMul==null?0.10:spacingMul)*H; let total=0;
+  for(const ch of String(text).toUpperCase()){
+    if(ch===' '){ total+=H*0.42+sp; continue; }
+    let art=a1, nm=a1.font[ch];
+    if((!nm||!a1.frames[nm]) && a2 && a2.font && a2.font[ch] && a2.frames[a2.font[ch]]){ art=a2; nm=a2.font[ch]; }
+    if(!nm||!art.frames[nm]){ total+=H*0.42+sp; continue; }
+    total+=glyphBox(art,art.frames[nm],H,ch).w+sp;
+  }
+  return Math.max(0, total-sp);
+}
+/* Greedy word wrap in the authored face. Returns an array of lines that each fit maxW, and a
+   single over-long word is left on its own line rather than dropped — a name that does not fit
+   should overflow visibly, not disappear. */
+function msgWrap(text, maxW, H, spacingMul){
+  const words=String(text).split(/\s+/).filter(Boolean);
+  if(!words.length) return [];
+  if(!msgMeasure('M', H, spacingMul)) return [String(text)];   // sheet not up: one line, let it fall back
+  const out=[]; let ln='';
+  for(const w of words){
+    const t=ln?(ln+' '+w):w;
+    if(ln && msgMeasure(t,H,spacingMul)>maxW){ out.push(ln); ln=w; }
+    else ln=t;
+  }
+  if(ln) out.push(ln);
+  return out;
+}
+/* Draw in the authored face, LEFT-aligned at x. msgText centres on cx and there is no left
+   variant, which is why panels that wanted a text column used canvas text instead. */
+function msgTextLeft(text,x,cy,H,tintC,tintA,alpha,spacingMul){
+  const w=msgMeasure(text,H,spacingMul);
+  msgText(text, x+w/2, cy, H, tintC, tintA, alpha, spacingMul);
+  return w;
+}
+/* Largest H at or below Hmax that fits `text` in maxW — "scale and fit", as asked. */
+function msgFitH(text, maxW, Hmax, Hmin, spacingMul){
+  for(let H=Hmax; H>Math.max(6,Hmin||8); H--){
+    const w=msgMeasure(text,H,spacingMul);
+    if(!w) return Hmax;                       // sheet not up; do not shrink against a guess
+    if(w<=maxW) return H;
+  }
+  return Math.max(6,Hmin||8);
 }
 function resetIntro(){ introSeq={crash:false,slice:false,mus:false,debris:[],lastnum:99,go:false}; }
 function drawCardFX(art,lx,ty,w,h,t){

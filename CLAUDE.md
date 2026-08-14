@@ -148,7 +148,34 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811L.md`, then `docs/PASSOVER_0811_HANDOFF.md`.** The handoff
+**→ START HERE: `docs/PASSOVER_0811M.md`, then `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811m — five of the nine items on Mike's bug list.** The pickup icon chain (his L3 fireorb and L2
+icebreath reports were ONE bug — the world pickup asked **XART** for a `micon_` key, which is
+permanently false, and there were **four** element tables in the path contradicting each other;
+also slots 0/1/2 had never drawn an icon at all); Decker's shotgun box (grantable since 0805i and
+with **no draw branch**, so it appeared as a blank capsule); the level-1 dialogue window (bottom
+left, `dlg_window`, BOF font, auto-fitted — and a **line-breaker for the BOF face at last**:
+`msgMeasure` / `msgWrap` / `msgTextLeft` / `msgFitH`); and the arcade pickup banner
+(type → sweep → hold → slide). **Not attempted: cinematic fullscreen, projectile wobble, projectile
+variety, and the pop-in half of "enemies from thin air".**
+
+⚠ **`micon_` IS IN THE THIRD ART STORE AND THE NOTE BELOW SAYING "the world pickups already use
+iconDraw correctly" WAS WRONG** — that is why this path went unchecked after 0810r. Use `iconBlit`,
+which knows all three stores, from every surface.
+
+⚠ **THREE INSTRUMENTS IN A ROW WRONGLY REPORTED THE BANNER DEAD** — a source grep of
+`updatePlay`/`drawWorld` (the call is one level down in `updateEffects`), a before/after frame diff
+(the stage scrolls; ~963k pixels move either way), and a same-state double draw (this renderer
+reads `performance.now()` directly, so two draws of one tick still differ everywhere).
+**Same-state frame isolation is not available here. The screenshot is the proof.**
+
+⚠ **`curveL bleeds LEFT` JOINS THE ORDER-DEPENDENT ASSERTIONS** (with §202 and the volley one). Two
+suite runs with no code change between them gave 6 failures then 4. In isolation, seeded, with
+separation off and on and three seeds, curveL is **-177 every time** against a -60 threshold.
+Re-run before blaming a change, and read the COUNT.
+
+The handoff
 covers drops 0810s–0811j — what landed, what is still owed WITH the exact reason each unfinished
 attempt failed, every trap found, and the eight new probes. 0811L is the newest drop and
 supersedes its §2.1.
@@ -789,8 +816,10 @@ now, with XART and ASSETS behind it.
 
 ⚠ **BUT THAT IS PROBABLY NOT THE SURFACE HE IS LOOKING AT.** `drawHUDCustom` (the `nhud_bar` HUD)
 returns before `drawHUDCustomImg` ever runs, and it shows the weapon as **pips**, not an icon —
-confirmed by rendering it. The world pickups already use `iconDraw` correctly. So the fix is real
-but the "basic graphic" he means may be the pip row or the equipped box. **Ask him which screen.**
+confirmed by rendering it. ~~The world pickups already use `iconDraw` correctly.~~ **THAT WAS
+FALSE and it cost two more drops** — the world pickup branch asked `XART.rdy()` for a `micon_` key,
+which can only ever be false, so it never drew one in its life. Fixed in 0811m; see
+`docs/PASSOVER_0811M.md`. **Every surface must go through `iconBlit`.**
 
 **When art looks "basic" in this project, find out WHICH STORE owns the key before concluding
 anything about the art.**
