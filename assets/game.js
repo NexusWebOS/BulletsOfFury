@@ -2235,7 +2235,21 @@ function _levelCfg(){
      h IS DECLARED NOW. The plate is 5120, not 4800, and every reader of cfg.h falls back to
      4800 when it is absent - so leaving it off would have mismapped the whole stage.
      ============================================================ */
-  case 1: return {master:'jungle800_rc2_master', liquid:'nlq2_water', fill:'#0a1607', tile:0.5, fps:5, wide:true, h:5120};
+    /* STAGE 1 IS MIKE'S PLATE (drop 0811h). Supplied as 333x2000 RGBA, scaled x2.4 to the
+       engine's canonical 800x4800 — which is also the value every reader of cfg.h falls
+       back to, so no override is needed and none is given.
+
+       ⚠ NO VERTICAL FLIP. The dam is at the TOP and the ocean at the BOTTOM, which is
+       already correct for an engine that scrolls bottom-to-top. RC2 was the opposite way round
+       and flipping it cost a drop in 0809m — do not reflexively apply that here.
+
+       ⚠ THE WATER IS THE PLATE'S OWN ALPHA, 21.9% of it, as supplied. Nothing was keyed,
+       swept or flooded. `liquid` paints nlq2_water through exactly those holes.
+
+       `destroyed` is the dam-breached variant, which this project has recorded as "RC2 does
+       not ship" since 0801cr. stageMasterKey swaps to it on damBroken. */
+  case 1: return {master:'jungle800_v3_intact', destroyed:'jungle800_v3_destroyed',
+                  liquid:'nlq2_water', fill:'#0a1607', tile:0.5, fps:5, wide:true, h:4800};
     /* THE FIRE BOSS FIGHTS OVER OPEN LAVA (drop 0806f). Mike: "the stage did not connect a
        tiled looped lava section of its own where he has his intro, we should be traveling past
        this mountain, flying over just lava that repeats, and he appears and does his intro."
@@ -3334,8 +3348,22 @@ function _legacyWater(){
   return null;
 }
 function drawStageMap(dt){
-  if(ASSETS.rdy(ASSETS.mapJungle)) _buildLandMask(ASSETS.mapJungle,'mapJungle');
-  if(ASSETS.rdy(ASSETS.mapJungleDam)) _buildLandMask(ASSETS.mapJungleDam,'mapJungleDam');
+  /* ⚠ THE MASK IS BUILT FROM THE STAGE PLATE ITSELF NOW (drop 0811h), not from a separate
+     mapJungle image. This is the one dependency that made swapping stage 1's master risky:
+     tanks are placed by _isLand/pickLandX against this mask, and it was derived from a
+     DIFFERENT picture. Point the stage at a new plate whose river runs elsewhere and every
+     tank keeps driving against the old river — in the water, on land that is now water.
+
+     _buildLandMask reads ALPHA and nothing else, and Mike's plate carries its water AS alpha.
+     So the plate is its own mask, exactly, and the two can no longer disagree by construction.
+     The old mapJungle images stay registered and are the fallback for any plate that has no
+     alpha of its own. */
+  const _jm = (typeof XART!=='undefined' && XART.rdy('jungle800_v3_intact')) ? XART.get('jungle800_v3_intact') : null;
+  const _jd = (typeof XART!=='undefined' && XART.rdy('jungle800_v3_destroyed')) ? XART.get('jungle800_v3_destroyed') : null;
+  if(_jm) _buildLandMask(_jm,'mapJungle');
+  else if(ASSETS.rdy(ASSETS.mapJungle)) _buildLandMask(ASSETS.mapJungle,'mapJungle');
+  if(_jd) _buildLandMask(_jd,'mapJungleDam');
+  else if(ASSETS.rdy(ASSETS.mapJungleDam)) _buildLandMask(ASSETS.mapJungleDam,'mapJungleDam');
   // stage 1: Base -> Island -> River -> Temple-gate DAM (waterfall behind gate);
   // copter dies -> white flash -> swap to mapJungleDam (temple blown open)
   const img = (damBroken && ASSETS.rdy(ASSETS.mapJungleDam)) ? ASSETS.mapJungleDam : ASSETS.mapJungle;

@@ -611,7 +611,12 @@ console.log('\n=== 17. level environment pack (6 masters + liquid) ===');
      the stage-1 plate being edited by accident; Mike then deliberately REPLACED it with the
      RC2 rebuild (flipped, ocean re-keyed, coast re-measured, plate 4800 -> 5120). The rule
      still holds - the master is not to be edited - it is just a different master now. */
-  ok(l1master==='jungle800_rc2_master' && l1wide===true, `L1 uses the wide jungle master: ${l1master} (wide=${l1wide})`);
+  /* STAGE 1 IS MIKE'S OWN PLATE NOW (drop 0811h). The never-touch rule was written to stop
+     the master DRIFTING BY ACCIDENT, not to freeze it against a deliberate art drop — the
+     same reasoning that let RC2 replace the original in 0809m, recorded there in the same
+     words. Asserted on what actually has to hold: a wide 800x4800 plate with a destroyed
+     variant and the water bed it shows through. */
+  ok(l1master==='jungle800_v3_intact' && l1wide===true, `L1 uses the wide jungle master: ${l1master} (wide=${l1wide})`);
   ok(vm.runInContext("XART.rdy('jungle800_master')", ctxv), 'jungle800 master art present');
   ok(vm.runInContext('worldWidth()', ctxv)===800, 'stage 1 world is 800px wide (horizontal scroll)');
   vm.runInContext('damBroken=false; run.stage=1; curStage=STAGES[0];', ctxv);
@@ -1885,7 +1890,13 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'and every prop sits inside the levels actual travel range');
   vm.runInContext("run.stage=1; curStage=STAGES[0];", ctxv);
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'stage 1 now runs the seam-healed water (swapped on explicit go-ahead)');
-  ok(vm.runInContext("_levelCfg().master==='jungle800_rc2_master' && _levelCfg().wide===true", ctxv), 'stage-1 MASTER is the RC2 rebuild — the never-touch rule still holds for everything but the liquid');
+  ok(vm.runInContext("_levelCfg().master==='jungle800_v3_intact' && _levelCfg().wide===true", ctxv), 'stage-1 flies Mike 0811 plate, wide');
+  /* ⚠ h IS LOAD-BEARING AND ITS ABSENCE IS SILENT: every reader of cfg.h falls back to 4800.
+     This plate IS 4800, so the fallback happens to be right — which means a wrong h would not
+     show up here at all. Pinned explicitly so the two can never drift apart. */
+  ok(vm.runInContext("_levelCfg().h===4800", ctxv), 'stage-1 declares its plate height (4800)');
+  ok(vm.runInContext("_levelCfg().destroyed==='jungle800_v3_destroyed'", ctxv), 'and the DAM-BREACHED variant exists at last (missing since 0801cr)');
+  ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'water still paints through the plate own alpha');
   ok(vm.runInContext("XART.rdy('nlq2_water_0')", ctxv), 'stage-1 replacement water is registered and ready to switch');
   // frame count: _liquidFrames collects up to 8, these families ship 6
   vm.runInContext("run.stage=2; curStage=STAGES[1];", ctxv);
@@ -2233,7 +2244,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("run.stage=1; curStage=STAGES[0];", ctxv);
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'stage 1 runs the seam-healed water');
   ok(vm.runInContext("_levelCfg().tile===0.5", ctxv), 'and tiles it at 0.5 (drop 0801fs: native 800x256 read as huge smears on a 480 camera)');
-  ok(vm.runInContext("_levelCfg().master==='jungle800_rc2_master'", ctxv), 'stage-1 MASTER is the RC2 rebuild — never-touch rule still holds for everything but the liquid');
+  ok(vm.runInContext("_levelCfg().master==='jungle800_v3_intact'", ctxv), 'stage-1 MASTER is Mike 0811 plate');
   ok(vm.runInContext("worldWidth()===800", ctxv), 'stage 1 still an 800px world');
   ok(vm.runInContext("(function(){for(var i=0;i<6;i++) if(!XART.rdy('nlq2_water_'+i)) return false; return true;})()", ctxv), 'all 6 water frames present');
   // LEVEL-6 JETS: full animation sets, verified DRIVEN (keys are built with template literals, so
