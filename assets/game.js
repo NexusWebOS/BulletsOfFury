@@ -879,6 +879,25 @@ const _wwCache=Object.create(null);
    1-8 all measure 800 across). Used as the pre-decode world width so nothing
    has to wait on a download to know the map is wider than the camera. */
 const MASTER_W = 800;
+/* ============================================================
+   "JUST OFF THE EDGE" MEANS THE WORLD'S EDGE, NOT THE VIEWPORT'S (drop 0811o)
+
+   Mike: "enemies appearing out of thin air on level 1."
+
+   ⚠ THIS IS THE "2 OF 29 UNITS APPEAR ON SCREEN RATHER THAN ENTERING" THIS FILE HAS CARRIED AS
+   OPEN FOR DROPS, and it is one character wide. Waves authored a right-side entry as `VW+28`.
+   VW is the VIEWPORT (480). Stage 1's world is its master's width — 800 — so VW+28 = 508 is not
+   off the right edge at all, it is a third of the way in from it. A cornerRL jet written to fly
+   in from the right therefore materialised in open sky. Left entries used -28 and were always
+   correct, which is why this only ever affected units coming from one side.
+
+   Measured with probe_popin: stage 1 had exactly 2 units whose whole box was inside the play
+   area on their first frame, both at x=508, both cornerRL. Stage 4 had none.
+
+   On any stage whose world IS the viewport width these return exactly what VW+n did, so this is
+   a no-op there rather than a behaviour change. ============================================================ */
+function offRightX(pad){ return ((typeof worldWidth==='function')?worldWidth():VW) + (pad==null?28:pad); }
+function offLeftX(pad){ return -(pad==null?28:pad); }
 function worldWidth(){
   const st=(typeof run!=='undefined'&&run)?run.stage:1;
   const hit=_wwCache[st];
@@ -6660,7 +6679,10 @@ const SHIPS=[];
      A short allow-list is applied here, at the single point every spawn passes
      through. Only fields a wave is entitled to set - not a blanket assign, which
      would let a typo in a wave overwrite hitboxes or hp. */
-  for(const _k of ['fk','vy','amp','aimed','shoots','hp','score','_fast','_noFire','_order','_lane','_side','_hold','_stagger']){
+  /* `inPlace` declares that a unit is MEANT to appear where it is rather than fly in from an
+     edge — a splitter's halves, a sewer maw surfacing. Without it those read as pop-ins to any
+     check and the next person to look at this "fixes" an authored beat (drop 0811o). */
+  for(const _k of ['fk','vy','amp','aimed','shoots','hp','score','_fast','_noFire','_order','_lane','_side','_hold','_stagger','inPlace']){
     if(opt[_k]!==undefined) c[_k]=opt[_k];
   }
   if(opt.hp!==undefined) c.maxhp=opt.hp;
@@ -6973,7 +6995,7 @@ function buildStagePlan(stageNum){
 
     /* --- grass jets: in off the very edge, turn inward, then hunt --- */
     add(21.0, ()=>{ spawnEnemy('s1jetdelta_b', -28, 96, {route:'cornerLR'}); spawnEnemy('s1jetdelta_b', -28, 150, {route:'cornerLR'}); });
-    add(24.0, ()=>{ spawnEnemy('s1jetdelta_b', VW+28, 96, {route:'cornerRL'}); spawnEnemy('s1jetdelta_b', VW+28, 150, {route:'cornerRL'}); });
+    add(24.0, ()=>{ spawnEnemy('s1jetdelta_b', offRightX(28), 96, {route:'cornerRL'}); spawnEnemy('s1jetdelta_b', offRightX(28), 150, {route:'cornerRL'}); });
 
     /* --- the diagonal file: four from the top left, moderate speed --- */
     add(30.0, ()=>{ for(let i=0;i<4;i++)
@@ -7011,7 +7033,7 @@ function buildStagePlan(stageNum){
     /* --- after the miniboss: air only, no ground past halfway --- */
     add(58.0, ()=>{ for(let i=0;i<4;i++)
       spawnEnemy('s1jetbomber_b', VW*0.10+i*14, -32 - i*62, {route:'straight'}); });
-    add(64.0, ()=>{ spawnEnemy('s1jetdelta_b', -28, 110, {route:'cornerLR'}); spawnEnemy('s1jetdelta_b', VW+28, 140, {route:'cornerRL'}); });
+    add(64.0, ()=>{ spawnEnemy('s1jetdelta_b', offLeftX(28), 110, {route:'cornerLR'}); spawnEnemy('s1jetdelta_b', offRightX(28), 140, {route:'cornerRL'}); });
     add(69.0, ()=>{ spawnEnemy('s1jetdelta', VW*0.14, -30, {route:'cornerLR'});
                     spawnEnemy('s1jetdelta', VW*0.86, -30, {route:'cornerRL'}); });
     add(75.0, ()=>{ for(let i=0;i<3;i++)
@@ -7030,7 +7052,7 @@ function buildStagePlan(stageNum){
     add(4.5, ()=> spawnEnemy('skim', -30, VH*0.10, {}));                    // enters from the LEFT
     add(6.5, ()=> spawnEnemy('eye', VW*0.50, -40, {}));
     add(9.0, ()=> { for(let i=0;i<Math.round(3*D);i++) spawnEnemy('ash', VW*0.18+i*VW*0.32, -40-i*20, {}); });
-    add(11.5,()=> spawnEnemy('skim', VW+30, VH*0.08, {}));                  // mirrored, from the RIGHT
+    add(11.5,()=> spawnEnemy('skim', offRightX(30), VH*0.08, {}));          // mirrored, from the RIGHT
     add(13.0,()=> spawnEnemy('el_em', VW*0.5, -50, {pattern:'weave', amp:34}));   // EMBER MANTIS
     add(17.0,()=> spawnEnemy('lance', VW*0.66, -40, {}));
     add(18.5,()=> { spawnEnemy('disc', VW*0.36, -40, {}); spawnEnemy('disc', VW*0.64, -40, {}); });
@@ -7039,7 +7061,7 @@ function buildStagePlan(stageNum){
     add(26.5,()=> spawnEnemy('cruc', VW*0.50, -50, {}));                    // seeds bombs down the lanes
     add(28.5,()=> { spawnEnemy('lance', VW*0.22, -40, {}); spawnEnemy('lance', VW*0.78, -40, {}); });
     add(30.5,()=> spawnEnemy('carrier', VW*0.44, -60, {}));                 // releases ashwings, then retreats
-    add(34.5,()=> { spawnEnemy('skim', -30, VH*0.14, {}); spawnEnemy('skim', VW+30, VH*0.20, {}); });
+    add(34.5,()=> { spawnEnemy('skim', offLeftX(30), VH*0.14, {}); spawnEnemy('skim', offRightX(30), VH*0.20, {}); });
     add(42.0,()=> { for(let i=0;i<Math.round(4*D);i++) spawnEnemy('ash', VW*0.14+i*VW*0.24, -40-i*16, {}); });
     add(curStage.length-4, ()=> { 
       spawnEnemy('disc', VW*0.22, -40, {}); spawnEnemy('disc', VW*0.78, -40, {}); });
@@ -7227,21 +7249,21 @@ function buildStagePlan(stageNum){
     add(8.0, ()=> { for(let i=0;i<Math.round(3*D);i++) spawnEnemy('skimmer', W*0.20+i*W*0.30, -40-i*22, {}); });
     add(11.0,()=> spawnEnemy('crawler', W*0.06, -40, {}));            // enters on the LEFT wall
     add(12.0,()=> spawnEnemy('shambler', W*0.45, -50, {}));
-    add(15.0,()=> spawnEnemy('maw', W*0.50, VH*0.30, {}));            // first surfacing: centre stage
+    add(15.0,()=> spawnEnemy('maw', W*0.50, VH*0.30, {inPlace:1}));   // first surfacing: centre stage
     add(18.5,()=> { spawnEnemy('crawler', W*0.94, -40, {}); spawnEnemy('sentry', W*0.32, -50, {}); });
     add(22.0,()=> spawnEnemy('barge', W*0.28, -80, {}));              // THE WALL
     add(25.0,()=> { spawnEnemy('skimmer', W*0.62, -40, {}); spawnEnemy('skimmer', W*0.78, -40, {}); });
     add(28.5,()=> { spawnEnemy('shambler', W*0.25, -50, {}); spawnEnemy('shambler', W*0.75, -50, {}); });
     add(31.0,()=> { spawnEnemy('crawler', W*0.06, -40, {}); spawnEnemy('crawler', W*0.94, -40, {}); });  // both walls close in
-    add(34.0,()=> spawnEnemy('maw', W*0.34, VH*0.28, {}));
+    add(34.0,()=> spawnEnemy('maw', W*0.34, VH*0.28, {inPlace:1}));
     add(36.5,()=> { spawnEnemy('sentry', W*0.24, -50, {}); spawnEnemy('sentry', W*0.76, -50, {}); });
     add(40.0,()=> spawnEnemy('barge', W*0.70, -80, {}));
     add(43.0,()=> { for(let i=0;i<Math.round(4*D);i++) spawnEnemy('skimmer', W*0.14+i*W*0.24, -40-i*18, {}); });
-    add(46.0,()=> { spawnEnemy('maw', W*0.66, VH*0.26, {}); spawnEnemy('shambler', W*0.40, -50, {}); });
+    add(46.0,()=> { spawnEnemy('maw', W*0.66, VH*0.26, {inPlace:1}); spawnEnemy('shambler', W*0.40, -50, {}); });
     add(49.5,()=> { spawnEnemy('crawler', W*0.06, -40, {}); spawnEnemy('crawler', W*0.94, -40, {});
       spawnEnemy('sentry', W*0.50, -50, {}); });
     add(curStage.length-4, ()=> { spawnEnemy('barge', W*0.50, -80, {});
-      spawnEnemy('maw', W*0.22, VH*0.30, {}); spawnEnemy('maw', W*0.78, VH*0.30, {}); });
+      spawnEnemy('maw', W*0.22, VH*0.30, {inPlace:1}); spawnEnemy('maw', W*0.78, VH*0.30, {inPlace:1}); });
     return _planSorted(P);
   }
   if(stageNum===5){ // ALL FOR ONE, NONE FOR ALL — orbital fleet war above the asteroid belt.
@@ -13856,7 +13878,35 @@ function updatePlay(dt){
     const _aiCrosser = e.pattern==='ai' && e._ai && (e._ai.kind==='sweep'||e._ai.kind==='diag'||e._ai.kind==='curve');
     const _racerDrifting=_aiCrosser || (e.pattern==='racer' && (e._phase==='cross'||e._phase==='curl'||e._phase==='dive'||e._phase==='flee')) || e.pattern==='topgun' || e.pattern==='sideswirl' || e.pattern==='jetflyby';
     const _wW=(typeof worldWidth==='function')?worldWidth():VW;   // wide stages: clamp to the WORLD, not the 480 camera
-    if(!_racerDrifting){
+    /* ============================================================
+       ⚠ THIS PIN WAS TELEPORTING EVERY SIDE ENTRY ONTO THE SCREEN (drop 0811o)
+
+       Mike, for drops: "enemies appearing out of thin air on level 1."
+
+       The catch-all above snaps any unit outside [w*0.66, W-w*0.66] straight to that margin — on
+       its VERY FIRST TICK. So a wave that authors an entry from off the side never gets one: the
+       unit is placed at x=-28, ticked once, and is at x=63 before it is ever drawn. Measured, and
+       the signature is unmistakable because the margin is a function of the unit's own width:
+
+           s1jetdelta_b (w 95)  spawned -28  -> drawn at  63      (95*2/3)
+           skim         (w 44)  spawned -30  -> drawn at  29      (44*2/3)
+           talon        (w 60)  spawned   0  -> drawn at  40      (60*2/3)
+           fang         (w 44)  spawned 480  -> drawn at 771      (800-29)
+
+       ⚠ AND THE EXEMPTION LIST IS HAND-WRITTEN, which is the _selfPat trap this file already has
+       a standing rule about. `ai` crossers, racer phases, topgun, sideswirl and jetflyby were
+       listed; routed jets (s1jet), volc skimmers and plain `straight` crossers were not, so they
+       were pinned. Drop 0809a fixed exactly this inside jetTick and could not fix it here.
+
+       ⚠ IT IS ALSO THE "SOMETHING OUTSIDE jetTick DISPLACES THEM" NOTE IN CLAUDE.md — the one
+       behind observed jet speeds of 96..138 on a route whose airspeed is one number. A 91px
+       teleport on frame one is exactly that, and the two open items were one bug.
+
+       The predicate is GEOMETRY, not a list: a unit is only pinned once it has been fully inside
+       the field at least once. Until then it is arriving and the pin has no business touching it.
+       Leaving is still handled by the branches below. ============================================================ */
+    if(!e._inField && (e.x-e.w*0.5)>=0 && (e.x+e.w*0.5)<=_wW) e._inField=1;
+    if(!_racerDrifting && e._inField){
       if(e.x<_edgeM){e.x=_edgeM; e.dir=1;} else if(e.x>_wW-_edgeM){e.x=_wW-_edgeM; e.dir=-1;}
     } else if(_aiCrosser){
       // free to exit the world entirely; culled once clear
@@ -24776,8 +24826,8 @@ function volcTick(e, dt){
     if((e._fcd=(e._fcd==null?1.8:e._fcd)-dt)<=0 && e._launched<3){
       e._fcd=2.2; e._launched++;
       if(typeof spawnEnemy==='function'){
-        spawnEnemy('ash', clamp(e.x-24,20,W-20), e.y+10, {});
-        spawnEnemy('ash', clamp(e.x+24,20,W-20), e.y+10, {});
+        spawnEnemy('ash', clamp(e.x-24,20,W-20), e.y+10, {inPlace:1});   // a SPLIT: both halves emerge from the wreck
+        spawnEnemy('ash', clamp(e.x+24,20,W-20), e.y+10, {inPlace:1});
       }
       if(e._launched>=3) e._retreat=true;
     }

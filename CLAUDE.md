@@ -148,7 +148,34 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811N.md`, then `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811O.md`, then `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811o — "ENEMIES APPEARING OUT OF THIN AIR" IS CLOSED, on all eight stages (probe_popin: 0).**
+Two causes, and neither was the one the handoff's §2.3 was chasing — **no y transform was needed on
+any unit; every real pop-in was horizontal**, so the drivable-band assertions that blocked the
+mirror were never the obstacle.
+
+1. **`VW` is the VIEWPORT (480); stage 1's world is 800.** Waves authored a right-side entry as
+   `VW+28` = 508, a third of the way in from the real edge. `offRightX()`/`offLeftX()` now say what
+   was meant (a no-op where world === viewport).
+2. ⚠ **The catch-all edge pin in the enemy loop snapped ANY unit to `w*0.66` from the world edge on
+   its FIRST TICK**, so no wave could ever author a side entry — measured, and the margin is a
+   function of the unit's own width (`w95 → 63`, `w44 → 29`, `w60 → 40`). Its exemption list was
+   **hand-written** (the `_selfPat` trap): routed jets, `volc` skimmers and plain `straight`
+   crossers were absent. It is gated on geometry now — `_inField`, "has been fully inside once".
+
+⚠ **THAT PIN IS ALSO "something outside jetTick displaces them"** — the note below, next to
+"observed jet speed varies 96–138". A 91px teleport on frame one is exactly that. **The two open
+items were one bug**; the speed figure is worth re-measuring on `probe_stack`'s seeded harness.
+
+⚠ **AND THE PROBE HAD BEEN ASKING THE WRONG QUESTION TWICE.** It tested only the TOP edge (so
+corner-route jets authored off the SIDE read as pop-ins — acting on that would have broken the
+routes), and it read `e.x` at `spawnEnemy`'s RETURN, before `l6Crosser` and friends correct it
+(so `octo`/`fang` read as `x=480`). **Four of the eight "bugs" it reported did not exist.** It
+measures the full box on the first DRAWN frame now, and respects `{inPlace:1}` — a declaration
+carried at the spawn site by units authored to appear where they are (a splitter's halves, a
+surfacing maw), so the design is not mistaken for a bug.
+
 
 **0811n — dialogue portraits, and the boats.** The speaker's portrait is in the stage dialogue
 window's left bay, **mirrored** (the pack is authored facing screen-left; `drawCutscene` mirrors its
@@ -404,11 +431,14 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
 - Cole's portrait shows the `crash` emotion at rank B; the table says `laugh`.
 - Two 404s at boot.
 - The `validate_antipatterns.py` hook errors on every write — its script path does not exist.
-- Jets: observed speed varies 96–138 even on `straight`; something outside `jetTick` displaces
-  them. A rescale inside `jetTick` does not fix it — the other mover runs after. ⚠ Note this is
-  now decoupled from BANKING (drop 0811l) — the lean no longer reads observed x — so the speed
-  variance is the only remaining symptom, and `enemyEntrySweep`'s blanket exclusion of routed
-  jets exists to dodge the *old* coupling and can be reconsidered.
+- ~~Jets: observed speed varies 96–138; something outside `jetTick` displaces them.~~
+  **IDENTIFIED in 0811o** — it is the catch-all edge pin in the enemy update loop
+  (`_edgeM = max(14, e.w*0.66)`), which teleported any unit outside that margin by up to 91px on
+  a single frame. Gated on `_inField` now. The speed figure has NOT been re-measured since;
+  do that on `probe_stack`'s seeded harness before assuming it is fully closed.
+  `enemyEntrySweep`'s blanket exclusion of routed jets dodges the *old* banking coupling
+  (removed in 0811l) and can now be reconsidered on its own merits.
+- Stage 1 pop-in: **CLOSED in 0811o**, 0 on all eight stages.
 - Two 404s at boot: **identified** — `assets/data/ui_layout.json` and
   `assets/fonts/BlackOpsOne.ttf`.
 - Stage 1: 2 of 29 units still appear on screen rather than entering, both at (21,67).
