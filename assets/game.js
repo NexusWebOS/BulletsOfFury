@@ -14088,7 +14088,15 @@ function updatePlay(dt){
        The predicate is GEOMETRY, not a list: a unit is only pinned once it has been fully inside
        the field at least once. Until then it is arriving and the pin has no business touching it.
        Leaving is still handled by the branches below. ============================================================ */
-    if(!e._inField && (e.x-e.w*0.5)>=0 && (e.x+e.w*0.5)<=_wW) e._inField=1;
+    /* ⚠ LATCH ON THE PIN'S OWN MARGIN, NOT ON "INSIDE THE WORLD" (fixed 0811t).
+       0811o latched this the moment the unit's BOX was inside [0,W] — but the pin clamps to
+       _edgeM (w*0.66), which is a stricter bound than w*0.5. That leaves a band between the two
+       where latching immediately triggers a snap, and it does: measured on a cornerLR jet, one
+       frame at 923 px/s against a 96 px/s airspeed — a 15px jump, exactly _edgeM minus half the
+       width. Smaller than the 91px teleport 0811o removed, and the same bug.
+       Latching on _edgeM makes the transition a no-op by construction: the unit is already
+       where the pin would put it, so the pin has nothing to do. */
+    if(!e._inField && e.x>=_edgeM && e.x<=_wW-_edgeM) e._inField=1;
     if(!_racerDrifting && e._inField){
       if(e.x<_edgeM){e.x=_edgeM; e.dir=1;} else if(e.x>_wW-_edgeM){e.x=_wW-_edgeM; e.dir=-1;}
     } else if(_aiCrosser){

@@ -148,7 +148,22 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811S.md`, then `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811T.md`, then `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811t — the jet-speed claim, VERIFIED, and a bug 0811o put in.** `probe_jetspeed.py` measures
+per-frame displacement (not a velocity read off the unit — that reports intent, not what moved it).
+**`straight` is exactly 96, min/median/max.** ⚠ 0811o's claim that the edge pin caused the variance
+was only HALF right: `curveL` reads 60..128 IDENTICALLY with the pin on and gated, so those two
+open items overlapped rather than being one bug. With separation off the high end collapses to 96 —
+the >96 excursions are `enemySeparate` doing its job, and the 60 dip is `jetTick`'s own `_entered`
+clamp at x=22. Every part of the residual is a deliberate mechanism.
+
+⚠ **AND THE MEASUREMENT FOUND A BUG 0811o INTRODUCED.** `_inField` latched when the unit's BOX was
+inside `[0,W]`, but the pin clamps to `_edgeM` (`w*0.66`) — a stricter bound — leaving a band where
+the latch fires and the pin instantly snaps: **one frame at 923 px/s against a 96 airspeed.**
+Latching on `_edgeM` makes the transition a no-op by construction. **A fix that removes a 91px
+teleport and leaves a 15px one is not finished, and only measuring the thing it claimed to fix
+would ever have shown that.**
 
 **0811s — projectile variety, and it made the screen QUIETER.** Four new volley shapes for the four
 things Mike named: **`rake`** (machine gun — a 3-round burst that WALKS across its arc each volley,
@@ -520,12 +535,14 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
 - Cole's portrait shows the `crash` emotion at rank B; the table says `laugh`.
 - Two 404s at boot.
 - The `validate_antipatterns.py` hook errors on every write — its script path does not exist.
-- ~~Jets: observed speed varies 96–138; something outside `jetTick` displaces them.~~
-  **IDENTIFIED in 0811o** — it is the catch-all edge pin in the enemy update loop
-  (`_edgeM = max(14, e.w*0.66)`), which teleported any unit outside that margin by up to 91px on
-  a single frame. Gated on `_inField` now. The speed figure has NOT been re-measured since;
-  do that on `probe_stack`'s seeded harness before assuming it is fully closed.
-  `enemyEntrySweep`'s blanket exclusion of routed jets dodges the *old* banking coupling
+- ~~Jets: observed speed varies 96–138 even on `straight`.~~ **CLOSED and MEASURED in 0811t**
+  (`probe_jetspeed.py`). **`straight` is exactly 96 — min, median and max.** The residual on
+  CURVED routes is fully attributed and every part of it is deliberate: the >96 excursions
+  (125–143) are `enemySeparate` pushing a jet clear of another unit (capped at `SEP_CAP`), and
+  the 60 dip on `curveL` is `jetTick`'s own `_entered` clamp at x=22 pinning a jet that reaches
+  the left margin. ⚠ 0811o's claim that the edge pin caused this was only HALF right — `curveL`
+  reads identically with the pin on and gated, so the two open items overlapped rather than being
+  one bug. `enemyEntrySweep`'s blanket exclusion of routed jets dodges the *old* banking coupling
   (removed in 0811l) and can now be reconsidered on its own merits.
 - Stage 1 pop-in: **CLOSED in 0811o**, 0 on all eight stages.
 - Two 404s at boot: **identified** — `assets/data/ui_layout.json` and
