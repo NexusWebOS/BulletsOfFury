@@ -148,7 +148,28 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811P.md`, then `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811Q.md`, then `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811q — the cutscene fits its boxes; "wide/fullscreen" is a DECISION, not a fix.** The dialogue
+ran out over the right rail because the text was laid out to the PANEL, not to its interior.
+Measured off the plate: `dlg_window` is 1465x808, interior **x 0.0389 / w 0.9208 / top 0.0817**
+(`DLGW_IN_*`) — the cutscene assumed 0.0199/0.9603, a column 6% wider than the frame starting 2%
+left of it. The body size is solved against the box now instead of hard-coded at S(15) with "three
+lines of room" assumed (three was true only of the too-wide column). New: **`stageWrapCount`**,
+the same greedy wrap **without drawing** — `stageWrap` only reports its count after drawing, which
+is too late to choose a size, so a block could be fitted to its width but never its height.
+
+⚠ **THE BOTTOM RAIL CANNOT BE MEASURED DOWN THE CENTRE** — a dark star medallion sits there, so a
+centre scan runs past the rail and reports h 0.915. Rails are symmetric; bottom is taken as top.
+⚠ **`drawCommWindow` keeps its own looser insets deliberately** — they are wider, so its text sits
+inside its frame; it was not changed blind on a surface this drop never rendered.
+
+⚠ **FULLSCREEN COSTS SOMETHING AND IT IS MIKE'S CALL.** All ten cutscene plates are **640x480
+(1.333)**; the viewport is **480x512 (0.938)**. The design space is already correct for the art —
+the letterbox is 4:3 plates in a near-square playfield. `Math.max` cover crops **203 of 640 design
+px, 31.7% of the width**, eating both stairwells and clipping a portrait; stretching distorts 42%.
+**New plates at the playfield's aspect are the only clean answer, and `drawCutscene` already fits
+whatever aspect it is handed** (SW/SH are two numbers). Art job, not a code one.
 
 **0811p — "projectiles appear wobbly SOMETIMES" is one system, and it is fixed.** "Sometimes" was
 the diagnosis: a shape that is always the same is an authored corkscrew, one that changes with the

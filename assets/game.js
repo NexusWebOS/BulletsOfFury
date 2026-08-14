@@ -2663,6 +2663,45 @@ function cutPose(pilotKey, pose){
   const z='pose_'+pilotKey+'_0';
   return (typeof XART!=='undefined' && XART._src && XART._src[z]) ? z : null;
 }
+/* ============================================================
+   dlg_window's INTERIOR, MEASURED OFF THE ART (drop 0811q)
+
+   Mike: "Needs scaling and fitting inside boxes."
+
+   Every surface that puts text in this panel had picked its own inset by eye, and the cutscene's
+   was the loosest — 12/604 with a 580/604 column, i.e. x 0.020 / w 0.960. Measured by walking in
+   from each edge of the plate until the bright machined rail gives way to the dark grid interior
+   and stays dark for 24px (a single dark pixel is a rivet shadow, not the interior):
+
+       dlg_window is 1465x808 -> interior x 0.0389, w 0.9208, top 0.0817
+
+   So the cutscene's column was about 6% wider than the frame and started 2% left of it, which is
+   exactly the line running out over the right rail in Mike's screenshot.
+
+   ⚠ THE BOTTOM RAIL IS NOT MEASURABLE DOWN THE CENTRE — the frame carries a dark star medallion
+   there, so a centre-column scan runs straight past the rail to the plate's edge and reports
+   h 0.915. The rails are symmetric, so the bottom is taken as the top. Do not "improve" this by
+   trusting a centre scan.
+
+   ⚠ drawCommWindow keeps its own slightly different numbers (0.055 / 0.89 / 0.10 / 0.72). They
+   are looser than these, so its text sits INSIDE the frame and nothing is broken; it is left
+   alone deliberately rather than changed blind on a surface this drop has not rendered.
+   ============================================================ */
+const DLGW_IN_X=0.0389, DLGW_IN_W=0.9208, DLGW_IN_Y=0.0817, DLGW_IN_H=1-0.0817*2;
+/* how many lines the greedy wrap would produce, WITHOUT drawing them. stageWrap draws as it goes
+   and only reports its count afterwards, which is too late to choose a size — so a block could
+   be fitted to its box's width but never to its HEIGHT. */
+function stageWrapCount(art,text,H,maxW,spacingMul){
+  if(!art||!art.font) return 1;
+  let line='', n=0;
+  for(const wd of String(text).split(' ')){
+    const t=line?(line+' '+wd):wd;
+    if(stageWidth(art,t,H,spacingMul)>maxW && line){ n++; line=wd; }
+    else line=t;
+  }
+  if(line) n++;
+  return Math.max(1,n);
+}
 function drawCutscene(sc){
   if(!sc || typeof XART==='undefined') return false;
   const bgk=sc.bg || cutsceneFor(sc.pilot);
@@ -2719,24 +2758,46 @@ function drawCutscene(sc){
   if(spk){
     const ek='pemb_'+spk.pilot;
     if(XART._src && XART._src[ek] && XART.rdy(ek)){
-      const em=XART.get(ek), eh=S(26), ew=eh*(em.naturalWidth/em.naturalHeight);
-      ctx.drawImage(em, dx+S(10), dy+S(6), ew, eh);
+      /* ⚠ THE NAME ROW SAT ON THE FRAME, NOT IN IT (drop 0811q). S(10)/S(6) from the panel's
+         outer edge puts the emblem and the name over the top-left rail — visible in
+         docs/proofs/cutscene_0811q_before.png. Anchored to the measured interior like the body
+         text, so the whole panel reads as one column. */
+      const _nx=dx+dw*DLGW_IN_X, _ny=dy+dh*DLGW_IN_Y;
+      const em=XART.get(ek), eh=S(22), ew=eh*(em.naturalWidth/em.naturalHeight);
+      ctx.drawImage(em, _nx, _ny, ew, eh);
       /* the BOF face, like everything else - this was still on the old v3 stage font (drop 0809p) */
       const _cf=(typeof uiFontArt==='function')?uiFontArt():null;
       if(_cf && typeof stageWidth==='function')
         stageText(_cf, String(spk.name||spk.pilot).toUpperCase(),
-                  dx+S(10)+ew+S(6)+stageWidth(_cf,String(spk.name||spk.pilot),S(16),0.06)/2,
-                  dy+S(19), S(16), null,null,1,0.06);
+                  _nx+ew+S(6)+stageWidth(_cf,String(spk.name||spk.pilot),S(16),0.06)/2,
+                  _ny+eh*0.5, S(16), null,null,1,0.06);
     }
   }
   {
     const _cf2=(typeof uiFontArt==='function')?uiFontArt():null;
-    /* S(15) and three lines of room. Sized purely for FIT - the bible's longest line is 118
-       characters and needs three lines inside a 112-unit frame. Legibility is not a factor in
-       the number: the E-reads-as-B problem was the tint, fixed at drawFrameTinted, and this
-       face is clean down to 11px once the shadow survives. */
-    if(sc.text && typeof stageWrap==='function' && _cf2)
-      stageWrap(_cf2, sc.text, dx+S(12), dy+S(44), S(15), dw-S(24), 1.40, 1, 0.05);
+    /* ⚠ LAID OUT TO THE FRAME'S INTERIOR, AND SIZED TO IT (drop 0811q).
+
+       This used a flat S(12) inset and a dw-S(24) column, which is 6% wider than the panel's
+       actual interior — so the bible's longer lines ran out over the right rail and the block
+       started on the left one. See DLGW_IN_*, measured off the plate.
+
+       And the size was FIXED at S(15) with "three lines of room" assumed. Three lines was true
+       of the old, too-wide column; a correct column needs four for the longest line, and a fixed
+       size cannot know that. It solves against the box now — the largest size whose wrapped
+       block fits the interior's HEIGHT — which is what "scaling and fitting inside boxes" asks
+       for, and it cannot go stale when a line of dialogue is rewritten. */
+    const _inX=dx+dw*DLGW_IN_X, _inW=dw*DLGW_IN_W;
+    const _inY=dy+dh*DLGW_IN_Y, _inH=dh*DLGW_IN_H;
+    const _nameH=S(16), _bodyTop=_inY+_nameH*1.55;      // clear of the speaker's name row
+    const _room=Math.max(_nameH, _inY+_inH-_bodyTop);
+    if(sc.text && typeof stageWrap==='function' && _cf2){
+      let _H=S(15);
+      for(let i=0;i<16 && _H>S(8); i++){
+        if(stageWrapCount(_cf2, sc.text, _H, _inW, 0.05)*_H*1.40 <= _room) break;
+        _H*=0.94;
+      }
+      stageWrap(_cf2, sc.text, _inX, _bodyTop+_H*0.7, _H, _inW, 1.40, 1, 0.05);
+    }
   }
   ctx.restore();
   return true;
