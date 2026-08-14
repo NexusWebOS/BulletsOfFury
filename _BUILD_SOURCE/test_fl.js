@@ -8786,6 +8786,43 @@ console.log("=== 201. rank glyph ===");
      'while the password keeps its two-colour flash');
 }
 
+/* ============================================================
+   DETERMINISTIC WAVES FOR THE LONG PLAY SIMULATIONS (drop 0811u)
+
+   Three assertions in this file report differently run to run with NO code change between them.
+   Measured across roughly nine runs in one session: the suite came back with 4, 5 and 6 failures,
+   and the rotating offenders were always the same three —
+
+       202  "miniboss shield aura"          a 200-second play simulation
+       208  "every volley fired is 5-8"     14 seconds of live stage with one boat in it
+       212  "curveL bleeds LEFT"            7 seconds of live stage per route
+
+   ⚠ THIS IS WORSE THAN AN OCCASIONAL RED. Rule 3 in CLAUDE.md is "0 failures can mean a crash —
+   ALWAYS CHECK THE COUNT", and a suite whose failure count moves on its own teaches everyone to
+   stop reading it. Two separate investigations this session had to attribute a red before they
+   could trust it: 212's curveL measured -48 in-suite and -177 in isolation across three seeds and
+   both arms of an A/B.
+
+   The cause is not the assertions. All three run the LIVE stage plan, which picks waves, spawn
+   offsets and fire cadences from Math.random — so each of them measures a slightly different
+   battle every time. That is the same "comparing two runs measures wave randomness rather than
+   your change" trap the probes already seed against; the suite simply never did.
+
+   seedWaves() installs a fixed LCG for the duration of a fixture and unseedWaves() puts the real
+   one back, so nothing outside these three fixtures changes behaviour.
+
+   ⚠ IT SEEDS, IT DOES NOT TUNE. If a seeded fixture now fails CONSISTENTLY, that is a real result
+   about a real battle and belongs in the passover — not a threshold to widen until it goes green.
+   ============================================================ */
+function seedWaves(seed){
+  vm.runInContext("(function(){ var _s=("+((seed>>>0)||1)+")>>>0;"
+    +"if(!Math.__realRandom) Math.__realRandom=Math.random;"
+    +"Math.random=function(){ _s=(_s*1664525+1013904223)>>>0; return _s/4294967296; };})()", ctxv);
+}
+function unseedWaves(){
+  vm.runInContext("(function(){ if(Math.__realRandom){ Math.random=Math.__realRandom; Math.__realRandom=null; } })()", ctxv);
+}
+
 // ===== 202. MINIBOSS 1 SHIELD AURA IS PERSISTENT (drop 0807r) =====
 console.log("=== 202. quadlaser shield aura ===");
 {
@@ -8801,6 +8838,7 @@ console.log("=== 202. quadlaser shield aura ===");
   var _g202=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok(_g202.indexOf('A STANDING SHIELD AURA, NOT JUST A HIT PULSE')>0, 'the aura is drawn from state, not from being hit');
   ok(_g202.indexOf("ctx.globalAlpha=0.20+0.12*Math.sin((b.t||0)*3.1)")>0, 'and it breathes rather than sitting flat');
+  seedWaves(20260811);                // 200 seconds of live stage — see seedWaves
   var _a=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
     +"beginStage(1); setState(GS.PLAY); player.reset();"
@@ -8814,6 +8852,7 @@ console.log("=== 202. quadlaser shield aura ===");
     +"(b._qlCan||[]).forEach(function(c){ c.dead=false; }); var sealed=count();"
     +"(b._qlCan||[]).forEach(function(c){ c.dead=true; }); b._qlHullOpen=true; var open=count();"
     +"return JSON.stringify({sealed:sealed, open:open, n:(b._qlCan||[]).length});})()", ctxv));
+  unseedWaves();
   ok(!_a.err && _a.n===4, 'the stage-1 miniboss is reached by PLAYING and fields four turrets');
   ok(_a.sealed>_a.open, 'it draws its aura while sealed even when nothing is hitting it ('+_a.sealed+' vs '+_a.open+')');
 }
@@ -9066,6 +9105,7 @@ console.log("=== 208. naval bursts + muzzle ===");
   }
 
   /* and it must actually fire that way when played */
+  seedWaves(20260811);                // spawns one boat but runs the LIVE plan around it
   var _f=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
     +"beginStage(1); setState(GS.PLAY); player.reset();"
@@ -9079,6 +9119,7 @@ console.log("=== 208. naval bursts + muzzle ===");
     +"var v=[[rounds[0]]];"
     +"for(var i=1;i<rounds.length;i++){ if(rounds[i]-rounds[i-1]>1.0) v.push([rounds[i]]); else v[v.length-1].push(rounds[i]); }"
     +"return JSON.stringify({volleys:v.map(function(x){return x.length;}), fams:Object.keys(fams)});})()", ctxv));
+  unseedWaves();
   ok(_f.volleys.every(function(n){ return n>=5 && n<=8; }),
      'every volley fired is 5-8 rounds ('+_f.volleys.join(', ')+')');
   ok(_f.fams.length<=1 || (_f.fams.length===2 && _f.fams.indexOf('nmz_2')>=0),
@@ -9315,6 +9356,7 @@ console.log("=== 212. jet routes ===");
   ok(_g212.indexOf("for(const sx of [e.x-nx, e.x+nx])")>0,
      'and there are TWO of them, firing together');
 
+  seedWaves(20260811);                // 7 seconds of the LIVE plan per route
   var _r212=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
     +"beginStage(1); setState(GS.PLAY); player.reset();"
@@ -9333,6 +9375,7 @@ console.log("=== 212. jet routes ===");
     +"  o[rt]={route:e._route, dx:Math.round(e.x-x0), dy:Math.round(e.y-y0), twin:twin}; });"
     +"return JSON.stringify(o);})()", ctxv));
 
+  unseedWaves();
   ok(Math.abs(_r212.straight.dx)<12, 'straight holds its lane ('+_r212.straight.dx+'px lateral)');
   ok(_r212.curveL.dx < -60,  'curveL bleeds LEFT across the screen ('+_r212.curveL.dx+')');
   ok(_r212.curveR.dx >  60,  'curveR bleeds RIGHT ('+_r212.curveR.dx+')');

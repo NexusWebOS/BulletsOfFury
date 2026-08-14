@@ -148,7 +148,28 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811T.md`, then `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811U.md`, then `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+## ⚠ THE SUITE IS DETERMINISTIC NOW — **2,505 / 221 / 5**, EVERY RUN
+
+Three fixtures (202 miniboss aura, 208 volley length, 212 curveL) run the LIVE stage plan, which
+picks waves and cadences from `Math.random` — so each measured a different battle every time and
+the suite returned **4, 5 or 6 failures with no code change between runs**. That is worse than an
+occasional red: rule 3 says ALWAYS CHECK THE COUNT, and a count that moves on its own teaches
+everyone to stop reading it. `seedWaves()` / `unseedWaves()` wrap those three. **Three consecutive
+runs now give identical 2500 ok / 5 fail / 221 sections.**
+
+⚠ **IT SETTLED ON 5, NOT 4, AND THAT IS THE FIX WORKING.** *"every volley fired is 5-8 rounds"* now
+fails every run with the same numbers (6, 3) instead of one run in three. Same defect, now always
+visible. A consistently red test you can attribute beats a flaky one you learn to ignore.
+
+⚠ **BUT THAT RED IS NOT YET ATTRIBUTABLE TO THE GAME.** Run standalone at 14/17/20/26 seconds with
+the fixture's own setup copied verbatim, the boat fires **ZERO rounds at every length**. The fixture
+only produces volleys because of state left by the ~200 sections before it, so its result is
+meaningless in isolation and **no threshold should be touched on the strength of it**. Lifting it
+out means first establishing which accumulated globals the boat needs. Recorded, not worked around.
+
+**A different count now means something actually changed.**
 
 **0811t — the jet-speed claim, VERIFIED, and a bug 0811o put in.** `probe_jetspeed.py` measures
 per-frame displacement (not a velocity read off the unit — that reports intent, not what moved it).
