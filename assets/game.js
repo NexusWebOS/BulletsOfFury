@@ -2755,6 +2755,31 @@ function drawCutscene(sc){
     ctx.strokeStyle=sc.tint||'#ffb347'; ctx.lineWidth=Math.max(2,S(2)); ctx.strokeRect(dx,dy,dw,dh);
   }
   const spk=sc[sc.speaking||'left'];
+  /* ============================================================
+     THE SPEAKER'S OWN COLOUR (drop 0811r)
+
+     Mike: "use the right colors via palette swap for the character whose speaking".
+
+     PILOTS[].tint is each pilot's real colour — the one their emblem, card and HUD already use
+     (Cole #7ad63a, the green on his emblem in the frame). Taken from that table so it can never
+     drift from the art.
+
+     ⚠ THERE IS A SECOND, DISAGREEING TINT TABLE. STORY_TINT (used by the in-game story panel)
+     has COLE:'#ff6b3a' — orange — against PILOTS' green. Two colour tables for the same nine
+     people. PILOTS is the one that matches what is drawn, so it wins here; STORY_TINT is left
+     alone rather than changed blind on a surface this drop has not rendered, and the clash is
+     recorded in the passover.
+
+     ⚠ AND IT IS A PALETTE SWAP, NOT AN OVERLAY. stageText hands tintC to drawFrameTinted, which
+     since 0809q uses 'color' (source hue/sat, destination luminosity, then destination-in to
+     re-mask) precisely because a source-atop flood repainted this face's opaque drop shadow the
+     same colour as its face and turned every E into a B. Passing a colour here is safe only
+     because that fix is in place. */
+  const _spkTint=(function(){
+    if(!spk || typeof PILOTS==='undefined') return null;
+    const P=PILOTS.find(p=>p.key===spk.pilot);
+    return (P && P.tint) || null;
+  })();
   if(spk){
     const ek='pemb_'+spk.pilot;
     if(XART._src && XART._src[ek] && XART.rdy(ek)){
@@ -2770,7 +2795,7 @@ function drawCutscene(sc){
       if(_cf && typeof stageWidth==='function')
         stageText(_cf, String(spk.name||spk.pilot).toUpperCase(),
                   _nx+ew+S(6)+stageWidth(_cf,String(spk.name||spk.pilot),S(16),0.06)/2,
-                  _ny+eh*0.5, S(16), null,null,1,0.06);
+                  _ny+eh*0.5, S(16), _spkTint, _spkTint?1:null, 1, 0.06);
     }
   }
   {
@@ -2796,7 +2821,10 @@ function drawCutscene(sc){
         if(stageWrapCount(_cf2, sc.text, _H, _inW, 0.05)*_H*1.40 <= _room) break;
         _H*=0.94;
       }
-      stageWrap(_cf2, sc.text, _inX, _bodyTop+_H*0.7, _H, _inW, 1.40, 1, 0.05);
+      /* the body carries the speaker's colour too — Mike asked for the character's colours, not
+         just a coloured name plate. If it reads too strong, _spkTint here is the one argument to
+         drop back to null and the name keeps the colour on its own. */
+      stageWrap(_cf2, sc.text, _inX, _bodyTop+_H*0.7, _H, _inW, 1.40, 1, 0.05, _spkTint, _spkTint?1:null);
     }
   }
   ctx.restore();
@@ -17205,7 +17233,31 @@ function _drawPlayerCore(){
       const im=XART.get(key);
       // legacy 'player_thrust' blit removed — it was a THIRD engine stacked on the other two
       const h=60, w=h*(im.naturalWidth/im.naturalHeight);
-      ctx.drawImage(im, x-w/2, y-h/2, w, h); return;
+      /* ============================================================
+         ⚠ THE BLACK EDGES WERE ALREADY IN THE ART. SMOOTHING WAS EATING THEM (drop 0811r).
+
+         Mike: "give all my pilot unit frames black edges."
+
+         Measured before touching anything: every pilot hull ALREADY carries one. Boundary pixels
+         on the source cells are 93–98% dark, mean luminance 15–27, magenta ~0 —
+         docs/proofs/shipframes_0811r_before.png shows the outlines plainly. There was no missing
+         art to add.
+
+         What there was: this blit takes a 226x271 cell down to h=60 — a 4.5x DOWNSCALE — under
+         the canvas default set once at init, `imageSmoothingEnabled=true` with
+         `imageSmoothingQuality='high'`. A high-quality bilinear reduction averages that one-pixel
+         black rim against the transparent surround and the hull colour, so it arrives on screen
+         as a soft semi-transparent fringe. The edge is in the file and not in the frame.
+
+         Nearest-neighbour here is not a preference, it is the contract this file states at a
+         dozen other draws ("pack contract: nearest-neighbour") — drawCutscene, the mech pieces,
+         the arcade plates and the boss rigs all set it and this one never did. Restored around
+         the blit only, so nothing else inherits it. ============================================================ */
+      const _sm=ctx.imageSmoothingEnabled;
+      ctx.imageSmoothingEnabled=false;
+      ctx.drawImage(im, x-w/2, y-h/2, w, h);
+      ctx.imageSmoothingEnabled=_sm;
+      return;
     }
     const spr=(dx<-0.6&&ASSETS.has('player_l'))?'player_l':(dx>0.6&&ASSETS.has('player_r'))?'player_r':'player';
     /* legacy player_thrust blit removed (drop 0724cj) — it was a second engine under our own.
@@ -23125,7 +23177,31 @@ function drawCutsceneState(dt){
     if(_f && typeof stageText==='function') stageText(_f,'...', VW/2, VH/2, 18, '#5a6070',0.9,1,0.10);
     return;
   }
-  if(hqChars<n) hqChars+=HQ_CPS*dt;
+  /* ============================================================
+     TYPE IT WITH SOUND, LIKE THE PILOT CARDS (drop 0811r)
+
+     Mike: "load each word letter by letter like the pilot cards with sound".
+
+     The letters were already arriving one at a time; what the scene had was SILENCE. Eight
+     authored ensemble scenes and the only audio in the whole state was the music cue 0811a added.
+
+     ⚠ MATCHED TO THE PILOT CARDS' FEEL, NOT COPIED FROM THEIR CODE. pcUpdate does
+     `if((C.typed|0)%3===0 && ... Math.random()<0.5) blip()` — and that test runs EVERY FRAME, so
+     at 42cps and 60fps one character sits on the same integer for about a frame and a half and
+     can blip twice; the random coin is what stops it sounding like a buzz. Here the blip fires on
+     the character actually ADVANCING, every third one, which gives the same sparse tick
+     deterministically. (The pilot-card version is left alone — it is not what he reported, and
+     its coin flip masks the fault. Recorded rather than quietly changed.) */
+  if(hqChars<n){
+    const _was=Math.floor(hqChars);
+    hqChars+=HQ_CPS*dt;
+    const _now=Math.min(n, Math.floor(hqChars));
+    if(_now>_was){
+      for(let c=_was+1;c<=_now;c++){
+        if(c%3===0 && typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.blip){ Audio.SFX.blip(); break; }
+      }
+    }
+  }
 
   /* the advance prompt, inside the dialogue frame, blinking only once the line has finished */
   if(hqChars>=n && Math.floor(stateT*2.2)%2){
@@ -33487,7 +33563,12 @@ function stageFitBlock(art, lines, maxW, wantH, minH, spacingMul){
   for(const t of lines) h=Math.min(h, stageFitH(art, t, maxW, wantH, minH, spacingMul));
   return h;
 }
-function stageWrap(art,text,x,y,H,maxW,lineMul,alpha,spacingMul){
+/* ⚠ tintC/tintA ARE NEW AND OPTIONAL (drop 0811r). This hard-coded `null` for the tint, so no
+   caller could colour a wrapped block however much stageText supports it — which is why the
+   cutscene dialogue was the one piece of text in the game with no speaker colour. Existing
+   callers pass nine arguments and get undefined here, which stageText already treats as "no
+   tint", so nothing that worked before changes. */
+function stageWrap(art,text,x,y,H,maxW,lineMul,alpha,spacingMul,tintC,tintA){
   if(!art||!art.font) return 0;
   const words=String(text).split(' ');
   let line='', yy=y, n=0;
@@ -33495,7 +33576,7 @@ function stageWrap(art,text,x,y,H,maxW,lineMul,alpha,spacingMul){
     if(!line) return;
     const w=stageWidth(art,line,H,spacingMul);
     // stageText centres on cx, so offset by half the line to left-align the block
-    stageText(art,line,x+w/2,yy,H,null,null,alpha,spacingMul);
+    stageText(art,line,x+w/2,yy,H,tintC,tintA,alpha,spacingMul);
     yy+=H*(lineMul||1.5); n++; line='';
   };
   for(const wd of words){

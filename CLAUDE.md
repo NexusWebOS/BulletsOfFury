@@ -148,7 +148,32 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811Q.md`, then `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811R.md`, then `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811r — speaker colour, typing sound, and black edges that were already there.** The cutscene
+name and body now carry the speaker's own `PILOTS[].tint` as a palette swap, and the scene types
+with a blip on every third character.
+
+⚠ **THE PILOT SHIPS ALREADY HAD BLACK EDGES; SMOOTHING WAS DISSOLVING THEM.** Measured first: source
+boundary pixels are **93–98% dark, magenta ~0** on every hull. `drawPlayer` blits a 226x271 cell at
+h=60 — a 4.5x downscale — under the init-time `imageSmoothingEnabled=true, quality='high'`, and
+measured at the drawn size **78–95% of the boundary comes out semi-transparent** (nearest: 11–19%).
+A black rim at 30% alpha reads as haze, not a line. Nearest-neighbour is set around that one blit —
+the contract a dozen other draws in this file already state and the player hull never did.
+⚠ The trade: nearest at 4.5x samples rather than averages, so the hull is crisper AND harder
+(Lizzie's roundel thins). One line to revert. See `docs/proofs/shipedge_0811r_smooth_vs_nearest.png`.
+
+⚠ **TWO DISAGREEING TINT TABLES FOR THE SAME NINE PILOTS** — `STORY_TINT` has COLE orange
+(`#ff6b3a`), `PILOTS[].tint` has him green (`#7ad63a`, matching his emblem). `PILOTS` matches the
+art and wins in the cutscene; `STORY_TINT` was left alone rather than changed blind. Reconcile by
+rendering both, not by picking.
+
+⚠ **`stageWrap` HARD-CODED `null` FOR ITS TINT** — no caller could colour a wrapped block at all.
+`tintC`/`tintA` are appended and optional; nine-argument callers are unaffected.
+
+⚠ **`pcUpdate`'s typing blip tests `(C.typed|0)%3` EVERY FRAME, not per character**, so one letter
+can blip twice and only its `Math.random()<0.5` coin keeps it from buzzing. The cutscene fires on
+the character advancing instead. The pilot-card version is deliberately untouched.
 
 **0811q — the cutscene fits its boxes; "wide/fullscreen" is a DECISION, not a fix.** The dialogue
 ran out over the right rail because the text was laid out to the PANEL, not to its interior.
