@@ -6560,6 +6560,48 @@ const SHIPS=[];
   }
   if(opt.hp!==undefined) c.maxhp=opt.hp;
   try{ ex8Init(c); }catch(_e){}   /* eight-state machine, drop 0801hi */
+  /* ============================================================
+     NOTHING ENTERS ALREADY HALF ON SCREEN (drop 0811e)
+
+     Mike, repeatedly: "I still have enemies appearing out of thin air for level 1 ... We've gone
+     over this one like 20x."
+
+     The wave scripts are not at fault " every stage-1 spawn already asks for a NEGATIVE y. The
+     trouble is that y is the unit's CENTRE and the scripts were written with small craft in mind:
+     `spawnEnemy('s1tankheavy', x, -34)` puts a 100px-tall tank's centre 34px above the top edge,
+     so 16px of it is off screen and the other 50 are already in frame on its very first drawn
+     frame. It does not fly in " it is simply there, which is exactly what "out of thin air" looks
+     like. The smaller the offset and the bigger the unit, the worse it reads, which is why it was
+     always the tanks and the boats.
+
+     Fixed HERE, at the single point every spawn passes through, rather than by editing forty wave
+     calls " and driven off the unit's OWN height, so a future unit of any size is covered without
+     anyone remembering this. Only units already asking to enter from above are touched: a
+     positive y is a deliberate on-screen placement (props, scenery) and racers spawn BELOW and fly
+     up, so both are left exactly as written. ============================================================ */
+  if(c.y < 0){
+    const _clear = -(c.h*0.5) - 6;
+    if(c.y > _clear) c.y = _clear;
+  }
+  /* ⚠ THE POSITIVE-Y HALF IS REVERTED, AND THE REASON IS WORTH KEEPING.
+
+     Measured: stage 1 puts four s1jetdelta_b in at y 96/150 and stage 4 seven units at y 82..236 —
+     inside the frame, materialising in open sky. That IS Mike's "out of thin air", and mirroring
+     them above the top edge (`y = -(h/2) - 6 - y`, which preserves formation order and spacing)
+     took both stages to ZERO pop-ins.
+
+     But a blanket lift also broke four assertions: "crawling tank NEVER leaves the drivable band
+     (47 violations)" and the tank-barrel muzzle test. For a tracked unit, spawn y is not a starting
+     line — it is a POSITION INSIDE ITS BAND, and the band is what its movement model is written
+     against. Excluding c.ground / c._tracked / c._crawler / c._sx did NOT clear it, so at least one
+     ground rig gets those flags somewhere other than its spawn case, and finding that needs a
+     session with room to chase it.
+
+     Left reverted deliberately: a stage that pops units in is a visible annoyance, a tank that
+     drives off its band is a broken fight. The fix is the mirror above plus the right predicate for
+     "is this thing airborne", and the measurement to confirm it is /tmp-style probe_pop (spawnEnemy
+     wrapped, flagging any unit whose top edge is > 0 on its first frame). */
+
   enemies.push(c);
   return c;
 }
