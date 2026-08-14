@@ -7473,6 +7473,12 @@ function shipBossInit(b, kind){
   b._ship=kind; b._profile='ship'; b.name=D.name; b.w=D.w; b.h=D.h;
   b.hp=b.maxhp = D.hp ? Math.ceil(D.hp*DIFF.eHp) : Math.ceil((b.maxhp||200)*D.hpMul);
   b.fireCd=D.cd; b._sbT=0; b._sbStep=0;
+  /* START THE LOAD AT SPAWN (drop 0811d). Mike: "I dont see my level 2 miniboss or level 2 boss at
+     all." Measured: rdy=false, preloaded=false, shipBossDraw returned false " the boss had a name,
+     a health bar, HP and an attack, and drew NOTHING. XART.rdy is what STARTS a lazy load and it is
+     false on that first call, so the first frame the boss exists is the first frame anything asks
+     for its art. Asking here, at spawn, gives it the whole entry to decode. */
+  try{ if(typeof XART!=='undefined'){ XART.rdy(D.key); if(XART._touch) XART._touch(D.key); } }catch(_sb){}
   return true;
 }
 /* one bullet, on the file's own contract: slow, readable, scaled by difficulty SPEED */
@@ -7564,7 +7570,25 @@ function shipBossAttack(b){
    and he asked for it again by name: "glow white when shot etc." */
 function shipBossDraw(b){
   const D=SHIPBOSS[b&&b._ship]; if(!D) return false;
-  if(typeof XART==='undefined' || !XART.rdy(D.key)) return false;
+  if(typeof XART==='undefined' || !XART.rdy(D.key)){
+    /* ⚠ NEVER FALL THROUGH TO NOTHING. Returning false here sent the draw down a chain of
+       early-returns for _gen / _mech / _sx / modular / mega, and a ship boss is none of those " so
+       the frame drew no boss at all while the health bar sat at the top of the screen. An
+       invisible boss that still shoots is the worst failure this file can produce, and it is
+       exactly what Mike saw on stage 2. A hull silhouette is drawn until the plate decodes: wrong
+       art is recoverable, no art is not. */
+    const w=b.w, h=b.h, x=b.x, y=(b._drawY!=null?b._drawY:b.y);
+    ctx.save();
+    ctx.globalAlpha=0.92;
+    ctx.fillStyle='#14161c'; ctx.strokeStyle=(b.flash>0)?'#ffffff':'#6d7a8c'; ctx.lineWidth=2;
+    ctx.beginPath();
+    ctx.moveTo(x, y+h*0.50); ctx.lineTo(x-w*0.42, y-h*0.10);
+    ctx.lineTo(x-w*0.16, y-h*0.46); ctx.lineTo(x+w*0.16, y-h*0.46);
+    ctx.lineTo(x+w*0.42, y-h*0.10); ctx.closePath();
+    ctx.fill(); ctx.stroke();
+    ctx.restore(); ctx.globalAlpha=1;
+    return true;
+  }
   const im=XART.get(D.key);
   const s=b.w/256, w=256*s, h=256*s;
   const x=b.x-w/2, y=(b._drawY!=null?b._drawY:b.y)-h/2;
@@ -22400,7 +22424,13 @@ function drawBoot(dt){
        The music starts HERE and is deliberately NOT restarted when the reel ends, so it plays
        unbroken from the logo through the nine pilots and into the menu - one continuous piece,
        the way an arcade cabinet sounds. */
-    if(t>DONE){ Audio.startMusic('title'); attractStart(); }
+    /* STRAIGHT TO THE TITLE (drop 0811d). Mike: "remove the arcade intros, just go to the
+       title screen." This supersedes his 0809 ask for the reel after the logo. The music
+       still starts HERE and is not restarted by goTitle, so it plays unbroken from the logo
+       into the menu - that half of the original brief still holds.
+       attractStart() and drawAttract are LEFT IN PLACE, not deleted: the reel is a working
+       system and this is a routing decision he may reverse. Nothing else calls it now. */
+    if(t>DONE){ Audio.startMusic('title'); setState(GS.TITLE); }
     return;
   }
   // star tile parallax — scroll DOWN, fade in then out
