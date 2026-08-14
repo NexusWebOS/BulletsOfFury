@@ -148,7 +148,25 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811W.md`, then `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811X.md`, then `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811x — the laser, done properly after 0811w failed at it.** The failure was METHOD: 0811w added
+tiered light additively with **no live baseline**. With a baseline taken first, two faults were
+obvious and were nothing to do with tiering — **level 4 was pure white** (`#ffffff` over `#ffffff`,
+reading as a hole in the screen over blue water) and **level 3 a pale mint** (`#5fe07a`, receding
+where the others pop). Swapped via **`xartPalette(key, hex)`**, which composites with `'color'` —
+hue/sat from the fill, **luminosity from the plate** — so the authored shading and the 6-frame
+animation survive. Level 3 → `#25c94a`, level 4 → `#ffc21a` gold. `col`/`glow` moved with them or
+the muzzle would have clashed with its own beam. Set now reads orange → blue → green → gold → red.
+⚠ **ONLY THE TWO THAT MEASURE WEAK WERE TOUCHED** — swapping all five would be redesigning Mike's
+weapon rather than fixing what he pointed at.
+
+⚠ **TWO PROBE FAULTS INVENTED GAME BUGS.** "Levels 1 and 2 do not draw" was `player.fireCd` carrying
+between tiers on one page, so `pShoot` early-returned. And the crop framed the wrong column because
+it used the beam's WORLD x against a SCREEN-space canvas — the world-vs-screen fault this file
+records for the launch seam, the outbound routes and the dialogue window, now a fourth time and the
+first inside a probe. **`xartPalette` is now proven on a moving, animated, per-frame sprite**, which
+is the hard case for the rest of the projectile palette work.
 
 **0811w — the laser. One real fix; the visual upgrade FAILED and is reverted.**
 ⚠ **THE LIVE LASER HAS BEEN FIRING OUT OF NOTHING.** The v2.2 branch asks for `nlz_<lv>_m0..5` and

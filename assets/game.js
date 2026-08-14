@@ -21128,8 +21128,11 @@ function drawBullets(){
          quietly. The glow is ADDITIVE ('lighter'), never a flood: the standing rule is
          palette/luminance, not overlay, and a source-atop wash here would flatten the authored
          shading exactly as it once flattened the font's drop shadow. ==================== */
-      const col=({1:'#ff8a1e',2:'#3a8aff',3:'#5fe07a',4:'#ffffff',5:'#ff4a48'})[lv];
-      const glow=({1:'#ffb060',2:'#7fd0ff',3:'#8fffa0',4:'#ffffff',5:'#ff8a88'})[lv];
+      /* 3 and 4 moved with their plates — see the palette-swap note below. The pulses, the hot
+         core's shadow and the muzzle orb all read from these, so leaving them on the old mint
+         and white would have put a green beam inside a pale-mint muzzle. */
+      const col=({1:'#ff8a1e',2:'#3a8aff',3:'#25c94a',4:'#ffc21a',5:'#ff4a48'})[lv];
+      const glow=({1:'#ffb060',2:'#7fd0ff',3:'#6bf58a',4:'#ffdd7a',5:'#ff8a88'})[lv];
       const top=(b.top!=null?b.top:PLAY.y), bot=(b.bot!=null?b.bot:(player.y-14)), bw=Math.max(6,b.w||14), bh=Math.max(2,bot-top);
       ctx.save();
       // v2.2 LASER: per-level authored beam (carries its own color -> no tint-flattening).
@@ -21139,7 +21142,34 @@ function drawBullets(){
       let _v22beam=false;
       if(typeof XART!=='undefined' && XART.rdy(_nb)){
         _v22beam=true;
-        const im=XART.get(_nb);
+        /* ============================================================
+           TWO TIERS READ WEAK, AND IT IS THEIR HUE (drop 0811x)
+
+           Mike: "level 3 laser looks underwhelming ... you can have alot of fun by palette
+           wapping them to red, blue, green gold etc".
+
+           Rendered live at all five tiers against stage 1's water (the baseline this drop
+           finally took — see docs/proofs/laser_tiers_0811x_before.png), two stand out:
+
+             level 4 is PURE WHITE, #ffffff with a #ffffff glow. Over bright blue sea it reads
+                     as a hole punched in the screen rather than a beam. It is the only tier
+                     with no colour at all.
+             level 3 is a PALE MINT, #5fe07a over an #8fffa0 glow — low saturation against a
+                     blue background, so it recedes exactly where the others pop.
+
+           ⚠ A PALETTE SWAP, NOT A TINT. xartPalette uses 'color' — hue and saturation from the
+           fill, LUMINOSITY from the plate, then destination-in to re-mask — so the authored
+           shading and the animation survive. That is the standing rule in this file, and it is
+           what a source-atop flood would have destroyed (it once repainted the font's drop
+           shadow and turned every E into a B). Cached per key+mode, so 6 frames x 2 levels is
+           twelve canvases built once.
+
+           ⚠ AND IT IS ONLY THE TWO THAT MEASURE WEAK. The other three are Mike's own colours and
+           read fine; swapping all five to a scheme of my choosing would be redesigning his
+           weapon rather than fixing what he pointed at. ============================================ */
+        const _lhue=({3:'#25c94a', 4:'#ffc21a'})[lv];
+        const _pal=_lhue && typeof xartPalette==='function' ? xartPalette(_nb,_lhue) : null;
+        const im=_pal || XART.get(_nb);
         ctx.shadowBlur=0;
         ctx.globalAlpha=0.97;
         ctx.drawImage(im, b.x-bw*0.8, top, bw*1.6, bh);
