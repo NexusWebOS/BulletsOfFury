@@ -3322,6 +3322,53 @@ function _isLand(key,x,mapY){
   return m.alpha[yi*m.w+xi] > 140;
 }
 // find a valid on-land x near preferX (checks the full footprint width, not just the centre point)
+/* ============================================================
+   THE MIRROR OF pickLandX, FOR HULLS (drop 0811n)
+
+   Mike: "boats only exsit on the water section."
+
+   ⚠ IT NEEDS NO SECOND MASK. _isLand reads the stage plate's ALPHA, and on Mike's 0811 plate the
+   water IS that alpha — the ocean is punched through. So "not land" is "water", free, and a
+   separate water mask would be a second source of truth that could drift from the first.
+
+   This was written, reverted, and written again across three drops. Both earlier CALL SITES were
+   wrong and the handoff records why, so the reasoning is worth keeping next to the function:
+
+     every frame   correct (3,244 samples, ZERO on land) but 70 candidate scans per unit per frame
+                   changed what section 202's 200-second play simulation reaches. Reproducible
+                   twice — not flaky, and not acceptable.
+     at spawn      free, and did NOTHING: 955/955 still on land. Boats spawn ABOVE the screen, so
+                   the mask row derived from their y is a part of the plate they never sit on.
+
+   The right form is ONCE, on the first frame the boat is actually on screen. A boat that starts
+   in water and rides a river stays in water, so one solve is enough — but it has to happen where
+   the boat really is. See navalTick. ============================================================ */
+/* ⚠ THE KEEL, NOT THE BEAM — AND THIS IS WHAT KILLED THREE ATTEMPTS (drop 0811n).
+
+   pickLandX asks for the unit's whole footprint, which is right for a tank: a track hanging over
+   a cliff looks wrong. Applied to a hull it is the wrong question, and measuring finally showed
+   why. On the rows where stage 1's boats actually sit, the widest contiguous water is **32px** and
+   the hull footprint is **47px**. The boat does not fit in the river. So the full-footprint test
+   returns null at EVERY x, on every row, forever — which is indistinguishable from "there is no
+   water here", and is why this was diagnosed three separate times as a timing problem (spawn vs
+   arrival vs every-frame) when it was never about timing at all.
+
+   A boat in a narrow channel overhanging its banks reads as being IN the river; that is how every
+   game of this kind draws it. So the test is the keel — the centre and a narrow margin — not the
+   beam. NAVAL_KEEL is the fraction of the hull width that must be over water. */
+const NAVAL_KEEL = 0.28;
+function pickWaterX(key, mapY, preferX, footW){
+  const half=footW*NAVAL_KEEL, lo=PLAY.x+half+2, hi=PLAY.x+PLAY.w-half-2;
+  const ok=(x)=> !_isLand(key,x-half,mapY) && !_isLand(key,x,mapY) && !_isLand(key,x+half,mapY) &&
+                 !_isLand(key,x-half,mapY-10) && !_isLand(key,x+half,mapY-10);
+  if(ok(preferX)) return preferX;
+  for(let r=8;r<=240;r+=8){
+    if(preferX+r<=hi && ok(preferX+r)) return preferX+r;
+    if(preferX-r>=lo && ok(preferX-r)) return preferX-r;
+  }
+  return null;     // ⚠ NULL, not a clamp — there may be no water on this row at all, and dumping
+                   // the hull at the play-area edge would beach it just as surely
+}
 function pickLandX(key, mapY, preferX, footW){
   const half=footW/2, lo=PLAY.x+half+2, hi=PLAY.x+PLAY.w-half-2;
   const ok=(x)=> _isLand(key,x-half,mapY) && _isLand(key,x,mapY) && _isLand(key,x+half,mapY) && _isLand(key,x-half,mapY-10) && _isLand(key,x+half,mapY-10);
@@ -18019,8 +18066,32 @@ function storyDraw(){
   const camx=(typeof camX!=='undefined')?camX:0;
   ctx.translate(camx, 0);                       // out of world space, into screen space
 
+  /* ============================================================
+     THE SPEAKER'S PORTRAIT (drop 0811n)
+
+     Mike: "use their portraits for the stage 1 and onward texts when the portraits appear."
+
+     ⚠ NOT drawCommWindow. That helper already does frame + portrait + typed text and it was the
+     obvious thing to reuse — but it opens with fillRect(0,0,VW,VH) at 0.66 alpha, i.e. it dims
+     the whole screen and is a MODAL. This file's own delivery rule is "never hold the player in a
+     dialogue box during active combat", which is why the combat path was a bare strip in the
+     first place. Reusing it here would have traded one of Mike's complaints for a worse one.
+
+     So: pilotPortrait() for the art (it already falls back idle -> face_ on its own), inside the
+     bottom-left panel, with the text column shifted clear of it.
+
+     ⚠ AND IT IS MIRRORED. Every portrait in the pack is authored facing SCREEN-LEFT — the note on
+     drawCutscene records it, and Axel's drawn pistol is the giveaway. A portrait on the LEFT of a
+     panel facing left is facing away from its own words. drawCutscene mirrors its left slot for
+     exactly this reason; this is the same slot. */
+  const _pk=String(who||'').toLowerCase();
+  const _isPilot=(typeof PILOTS!=='undefined' && PILOTS && PILOTS[_pk]) ||
+                 ['cole','axel','yuri','falva','decker','freezer','juggernaut','lizzie','maverick'].indexOf(_pk)>=0;
+  const _portK=(_isPilot && typeof pilotPortrait==='function') ? pilotPortrait(_pk,'idle') : null;
+  const _hasPort=!!(_portK && typeof XART!=='undefined' && XART.rdy(_portK));
+
   const PAD=10;
-  const pw=Math.min(VW-PAD*2, 300);
+  const pw=Math.min(VW-PAD*2, _hasPort?344:300);
   const ph=Math.round(VH*0.17);
   const x=PAD, y=VH-ph-PAD;                     // bottom left, and it stays there
 
@@ -18032,7 +18103,22 @@ function storyDraw(){
   }
   /* dlg_window has a deep machined frame — the inset is the frame, not taste. Text laid out to
      the panel's outer edge sits on the rivets. */
-  const ix=x+16, iw=pw-32;
+  /* the portrait sits in the panel's left bay, sized to the inner height and clipped to it so a
+     tall bust cannot ride over the frame's top rail */
+  let bay=0;
+  if(_hasPort){
+    const im=XART.get(_portK);
+    const bh=Math.round(ph*0.74), bw=Math.round(bh*((im.naturalWidth||1)/(im.naturalHeight||1)));
+    const bx=x+12, by=y+Math.round(ph*0.13);
+    ctx.save();
+    ctx.globalAlpha=S.fade;
+    ctx.beginPath(); ctx.rect(bx, by, Math.min(bw, Math.round(pw*0.30)), bh); ctx.clip();
+    ctx.translate(bx+bw, by); ctx.scale(-1,1);            // authored facing LEFT: face the words
+    ctx.drawImage(im, 0, 0, bw, bh);
+    ctx.restore();
+    bay=Math.min(bw, Math.round(pw*0.30))+10;
+  }
+  const ix=x+16+bay, iw=pw-32-bay;
   const nameH=Math.round(ph*0.20);
   const _nh=(typeof msgFitH==='function')?msgFitH(who, iw, nameH, 7):nameH;
   if(typeof msgTextLeft==='function') msgTextLeft(who, ix, y+Math.round(ph*0.24), _nh, tint, 1, S.fade);
@@ -18687,6 +18773,7 @@ const NAVAL_RELOAD    = 5.0;    // the patrol boat between launches
 const NAVAL_BURST_GAP = 2.0;     // the silence between volleys — fixed, so it can be learned
 const NAVAL_MG_GAP    = 0.40;    // half the player's ~0.20s cadence
 const NAVAL_ARC = 0.62;          // radians either side of the bow that counts as "in their six"
+const NAVAL_WET_PULL = 64;       // px/sec a hull steers back toward the channel — a correction, not a snap
 const NAVAL_DIRS = [0,1,2,3,4,5,6,7].map(i=>i*Math.PI/4);   // the eight headings
 
 function navalInit(e, kind){
@@ -19507,6 +19594,67 @@ function navalInSix(e){
 }
 function navalTick(e, dt){
   if(e.dead) return;
+  /* ============================================================
+     KEEP THE HULL ON WATER (drop 0811n)
+
+     Mike: "boats only exsit on the water section."
+
+     ⚠ A ONE-SHOT SOLVE CANNOT HOLD, and it took measuring to see why. A naval unit CANCELS the
+     map scroll to hold station on screen — so it does not ride the river, the river slides out
+     from under it. Solved once on arrival, 777 of 779 sample-frames carried the latch and every
+     one of them was on land a moment later. The handoff's premise, "a boat that starts in water
+     and rides a river stays in water, so one solve is enough", is not true of a unit that holds
+     station. That is why both previous attempts failed for reasons that looked unrelated.
+
+     So it is per-frame, and CHEAP: three mask reads on the hull's own footprint. Only a failure
+     pays for a search, and that search is a short local reach rather than the ±240 sweep whose
+     70 scans per unit per frame measurably changed what section 202 reaches.
+
+     ⚠ AND THE COMMON FAILURE IS NOT A PLACEMENT FAILURE. Measured on stage 1: of 252 live
+     naval sample-frames on land, 172 had NO WATER ANYWHERE ON THE ROW — the waves field boats
+     past the point the plate still has a channel, and no placement rule can fix that. Those are
+     handed to _beached, which is the behaviour 0809n already authored for exactly this case:
+     stop steering and withdraw off the bottom, so the flotilla reads as falling behind as you
+     push inland. The other 80 had water available and are what the pull below corrects. */
+  if(!e._beached && typeof sepLandRef==='function' && e.y>0){
+    const L=sepLandRef(e.y);
+    if(L){
+      /* the keel, matching pickWaterX — see NAVAL_KEEL. Testing the full beam here would make
+         this disagree with the search below it, and the boat would be judged aground at a
+         position the search had just called water. */
+      const half=(e.w||48)*NAVAL_KEEL;
+      const wet=(x)=> !_isLand(L.key,x-half,L.mapY) && !_isLand(L.key,x,L.mapY) && !_isLand(L.key,x+half,L.mapY);
+      if(!wet(e.x)){
+        /* ⚠ ARRIVAL AND STEADY STATE NEED DIFFERENT REACHES, and using one for both beached
+           every boat on its first frame. A short local search is right for tracking a channel
+           that wanders under a hull already in it — but on ARRIVAL the hull can be most of a
+           screen from the water, and a 176px reach found nothing, so every boat took the
+           no-channel branch and withdrew immediately. Measured: live-on-land fell 252 -> 2 and
+           `solved` was 0, i.e. not one boat ever reached water. A metric can improve because the
+           units left the field, and that is not the fix.
+
+           So: the FULL search on arrival, once, where a snap is invisible because the hull is
+           only just on screen; the cheap local pull thereafter; and the full search again before
+           giving up, so a wandering coastline never beaches a boat that still has a channel. */
+        let best=null;
+        if(e._wetFix){
+          for(let r=8; r<=176 && best===null; r+=8){
+            if(wet(e.x+r)) best=e.x+r; else if(wet(e.x-r)) best=e.x-r;
+          }
+        }
+        if(best===null) best=pickWaterX(L.key, L.mapY, e.x, (e.w||48)*0.9);
+        if(best===null) e._beached=1;                   // genuinely no channel: withdraw, per 0809n
+        else if(!e._wetFix){ e.x=best; e._wetFix=1; }   // ARRIVAL: place it cleanly, once
+        else {
+          /* afterwards it STEERS back rather than snapping — a hull that teleports sideways
+             every time the coastline wanders reads as a sprite being dragged, which is the same
+             complaint the jet banking work was about */
+          const step=NAVAL_WET_PULL*dt;
+          e.x += clamp(best-e.x, -step, step);
+        }
+      } else e._wetFix=1;
+    }
+  }
   /* ⚠ A BOAT MUST NOT BEACH ITSELF (drop 0809n).
      'naval' cancels the map scroll so the unit holds station in the water. That is right while
      there IS water, but the coastline keeps coming: once it passes underneath, the boat is

@@ -148,7 +148,25 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811M.md`, then `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811N.md`, then `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811n — dialogue portraits, and the boats.** The speaker's portrait is in the stage dialogue
+window's left bay, **mirrored** (the pack is authored facing screen-left; `drawCutscene` mirrors its
+left slot for the same reason). Deliberately NOT `drawCommWindow` — that helper dims the whole
+screen and is a modal, against this file's own "never hold the player in a dialogue box during
+active combat".
+
+⚠ **AND THE BOATS DO NOT FIT IN THE RIVER — that is why "boats on water" failed in FOUR drops.**
+Measured: widest contiguous water on the rows stage 1's boats occupy is **32px**; the footprint
+`pickWaterX` demanded was **47px**. It returned null at every x on every row, forever, which looks
+exactly like "there is no water here" — so three drops were spent on WHEN to call it when the answer
+was always going to be null. It tests the **keel** now (`NAVAL_KEEL`), not the beam. Two further
+things the measurement separated: a one-shot solve cannot hold (a naval unit cancels the scroll to
+hold station, so **the river slides out from under it**), and **two thirds of "779 boats on land"
+was the deliberate `_beached` withdrawal from 0809n**. Live-on-land 252 → 2.
+⚠ Fewer boats are now on screen (they move to water or withdraw rather than sitting on jungle).
+That is a gameplay change Mike has not seen — if he wants more, the fix is in the wave scripts.
+
 
 **0811m — five of the nine items on Mike's bug list.** The pickup icon chain (his L3 fireorb and L2
 icebreath reports were ONE bug — the world pickup asked **XART** for a `micon_` key, which is
