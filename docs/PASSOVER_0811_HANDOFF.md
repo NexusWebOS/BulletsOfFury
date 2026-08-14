@@ -1,5 +1,13 @@
 # Passover 0811 — full handoff
 
+> **⚠ SUPERSEDED IN PART BY `docs/PASSOVER_0811L.md`.** Read that first, then this.
+> §2.1 (enemies stack) is **DONE** — the banking channel and the separation pass both landed and
+> are measured in pixels. §2.2, §2.3 and §2.4 below are still owed and their diagnoses still hold.
+> Two numbers here are retracted: the 839 / 71.9% baselines were **one sample of an unseeded
+> distribution** that swings between 839 and 424, and `worst` is a max that cannot tell "stacked"
+> from "spawned together". `probe_stack.py` is seeded now and reports a settled-burial column
+> instead. Do not tune against the figures in §2.1.
+
 Everything from drops **0810s → 0811j**. Suite at the end: **2,463 assertions / 218 sections /
 4 failures** — the same four that have stood for weeks (preload count, the two `_superseded`, the
 naval flash families).

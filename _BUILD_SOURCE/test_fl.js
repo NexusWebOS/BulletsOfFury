@@ -9315,15 +9315,45 @@ console.log("=== 213. jet banking ===");
      banks into the turn and rolls level coming out. But this is a vertical shmup: the resting
      attitude is always SOUTH, so the bank is a lean it returns from, never a heading it keeps.
 
-     ⚠ Derived from the lateral movement the jet ACTUALLY made this frame, not from the route it
-     was asked to fly. That is what makes it true for the DODGE as well — a jet breaking off your
-     missile leans into the break and rights itself, and the dodge code knows nothing about
-     banking. One rule, every deviation. */
+     ⚠ Derived from the HEADING THE JET CHOSE (_hx*_spd), not from the ground it covered. That is
+     what makes it true for the DODGE as well — a jet breaking off your missile leans into the
+     break and rights itself, and the dodge code knows nothing about banking, because the dodge is
+     already inside the heading. One rule, every deviation the aircraft chooses for itself. */
   var _g213=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g213.indexOf("const _vx=(e.x-(e._px==null?e.x:e._px))/Math.max(1e-4,dt);")>0,
-     'the lean is derived from real lateral motion, not from the route name');
+  ok(_g213.indexOf("const _vx=_hx*_spd;")>0,
+     'the lean is derived from the heading the jet chose, not from the route name');
   ok(_g213.indexOf("if(Math.abs(e.spin)<0.002) e.spin=0;")>0,
      'and it settles true SOUTH, not merely near it');
+
+  /* ⚠ THIS REPLACED A SOURCE STRING, AND THE REPLACEMENT IS THE POINT (drop 0811l).
+     The old assertion pinned the exact expression the lean was computed from —
+     `(e.x - e._px)/dt` — which is precisely the thing this drop set out to change, so it could
+     only ever fail the change it existed to protect. That is the "assertions can defend a bug"
+     trap in CLAUDE.md, and reading it first is what the rule asks for.
+
+     What it was really defending is that a jet leans for its OWN turns and for nothing else. So
+     that is what is measured now, behaviourally: an external shove applied from OUTSIDE jetTick —
+     exactly as enemySeparate applies one, position and lane together — must produce no lean at
+     all. It pins both halves of the channel: banking off intent, and sepShift carrying the lane
+     with the unit. Drop either and this goes red. */
+  var _push213=JSON.parse(vm.runInContext("(function(){"
+    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
+    +"beginStage(1); setState(GS.PLAY); player.reset();"
+    +"enemies.length=0; eBullets.length=0; pBullets.length=0;"
+    +"player.x=240; player.y=470; player.invuln=999999;"
+    +"var e=spawnEnemy('s1jetdelta',240,-30,{route:'straight'});"
+    +"var mx=0, moved=0;"
+    +"for(var f=0;f<120;f++){ player.hp=99; e._dodge=0;"
+    +"  updatePlay(1/60); try{ drawWorld(1/60); }catch(err){}"
+    +"  if(e.dead) break;"
+    /* the separation pass's own move, verbatim: displace the unit AND its lane */
+    +"  e.x+=1; if(e._lane!=null) e._lane+=1; moved+=1;"
+    +"  var sp=Math.abs(e.spin||0); if(sp>mx) mx=sp; }"
+    +"return JSON.stringify({maxLean:+mx.toFixed(4), moved:moved, x:Math.round(e.x)});})()", ctxv));
+  ok(_push213.moved>=100,
+     'the jet really was displaced from outside jetTick ('+_push213.moved+'px of external push)');
+  ok(_push213.maxLean===0,
+     'and an external push produces NO lean whatsoever ('+_push213.maxLean+' rad) — separation has its own channel');
 
   var _b213=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
@@ -9356,6 +9386,117 @@ console.log("=== 213. jet banking ===");
      'a corner run leans HARDER than a gentle curve — the lean tracks how sharply it is turning');
   ok(vm.runInContext("JET_BANK_MAX<0.6", ctxv),
      'and the lean is capped well short of side-on — it is a shmup, the aircraft stays readable');
+}
+
+// ===== 213b. NOTHING STACKS (drop 0811l) =====
+console.log("=== 213b. enemy separation ===");
+{
+  /* Mike: "make sure enemies do not collide with each other or stack on each other like that."
+
+     ⚠ REACHABILITY IS THE FIRST ASSERTION, and it is not a formality. enemySeparate is declared a
+     few hundred lines above updatePlay — the same region of game.js where DEAD_SUBBOSS,
+     ARSENAL_DRONES, liveType and arsenalDroneArt all turned out to be function-scoped inside
+     spawnEnemy's never-closed `if`: correct, registered, and unreachable at runtime for drops at a
+     time. A separation pass that is never called measures exactly like one that does not work, so
+     this asks the RUNTIME rather than reading the source. */
+  ok(vm.runInContext("typeof enemySeparate==='function'", ctxv),
+     'enemySeparate is reachable at GLOBAL scope, not swallowed by spawnEnemy');
+  ok(vm.runInContext("typeof sepShift==='function' && typeof sepMovable==='function' && typeof sepEligible==='function'", ctxv),
+     'and so is every helper it calls');
+
+  var _s213=JSON.parse(vm.runInContext("(function(){"
+    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
+    +"beginStage(1); setState(GS.PLAY); player.reset(); player.invuln=999999;"
+    /* the same box test probe_stack.py and enemySeparate both use */
+    +"function burial(A,B){ var ox=(A.w+B.w)*0.42-Math.abs(B.x-A.x), oy=(A.h+B.h)*0.42-Math.abs(B.y-A.y);"
+    +"  if(ox<=0||oy<=0) return 0; return Math.min(ox/Math.min(A.w,B.w), oy/Math.min(A.h,B.h)); }"
+    +"var o={};"
+    +"enemies.length=0;"
+    +"var a=spawnEnemy('s1jetdelta',240,200,{route:'straight'});"
+    +"var b=spawnEnemy('s1jetdelta',240,200,{route:'straight'});"
+    +"o.before=+burial(a,b).toFixed(3);"
+    +"for(var f=0;f<90;f++) enemySeparate(1/60);"
+    +"o.after=+burial(a,b).toFixed(3);"
+    /* ⚠ THE SAME FIXTURE WITH THE PASS SWITCHED OFF. Without this arm the test proves only that
+       two units drifted apart, which their own movers could have done. */
+    +"enemies.length=0;"
+    +"var c=spawnEnemy('s1jetdelta',240,200,{route:'straight'});"
+    +"var d=spawnEnemy('s1jetdelta',240,200,{route:'straight'});"
+    +"window.__sepOff=true;"
+    +"for(var f2=0;f2<90;f2++) enemySeparate(1/60);"
+    +"o.offAfter=+burial(c,d).toFixed(3); window.__sepOff=false;"
+    /* a formation contact UNDER the deadzone must be left exactly where it was drawn */
+    +"enemies.length=0;"
+    +"var e1=spawnEnemy('s1jetdelta',240,200,{route:'straight'});"
+    +"var e2=spawnEnemy('s1jetdelta',240+e1.w*0.84-4,200,{route:'straight'});"
+    +"o.touch=+burial(e1,e2).toFixed(3); var tx=e2.x;"
+    +"for(var f3=0;f3<60;f3++) enemySeparate(1/60);"
+    +"o.touchMoved=+Math.abs(e2.x-tx).toFixed(2);"
+    +"return JSON.stringify(o);})()", ctxv));
+
+  /* ⚠ 0.84 IS THIS METRIC'S CEILING FOR TWO IDENTICAL UNITS, not 1.0, and my first cut of these
+     three thresholds was written as though it were 1.0 — all three went red against a pass that
+     was behaving exactly as designed. The box test compares |dx| against (A.w+B.w)*0.42, so two
+     units sharing a point give (95+95)*0.42/95 = 0.84 on both axes. Burial only exceeds 1.0 when
+     a SMALL unit sits inside a large one, which is what stage 4's 150.7% was.
+     Thresholds are stated against the metric's real range now. */
+  ok(_s213.before > 0.8,
+     'two units dropped on one point start fully buried ('+_s213.before+' — 0.84 is this metric\'s ceiling for a matched pair)');
+  ok(_s213.after < 0.2,
+     'and separation pushes them out to the deadzone ('+_s213.after+')');
+  ok(_s213.after < _s213.before*0.3,
+     'which is most of the burial gone ('+_s213.before+' -> '+_s213.after+')');
+  ok(_s213.offAfter > 0.8,
+     'with the pass switched off the same pair stays buried ('+_s213.offAfter+') — the change is attributable to the code under test');
+  ok(_s213.touch > 0 && _s213.touch <= 0.2,
+     'a formation contact under the deadzone reads as a touch ('+_s213.touch+')');
+  ok(_s213.touchMoved === 0,
+     'and separation leaves it alone ('+_s213.touchMoved+'px) — an authored formation keeps the shape it was drawn as');
+}
+
+// ===== 213c. ONE ROSTER ROW, WHATEVER THE WAVE SPELLED IT (drop 0811l) =====
+console.log("=== 213c. roster key spelling ===");
+{
+  /* ⚠ STAGES 4 AND 6 FIELDED 26x26 ONE-HP JETS THAT NEVER FIRED, from drop 0810p until this one.
+
+     0810p repointed their dead jet waves onto "units that EXIST" and spawns s1jetDelta /
+     s1jetBomber / s1jetDeltaB / s1jetBomberB. S1_JETS and NEF_S1 are keyed s1jetdelta /
+     s1jetbomber / s1jetdelta_b / s1jetbomber_b, so every lookup missed and the units took the
+     generic defaults. CLAUDE.md carried "⚠ BOTH SPELLINGS ARE REQUIRED" the whole time — the
+     requirement was recorded and never met, and nothing failed because nothing asked.
+
+     This asks. And it asks BEHAVIOURALLY on both halves, because a table lookup passing proves
+     nothing about what reaches the screen: the unit must get the jet's box and stats, AND its
+     pattern must still be s1jet after the generic block has run (that block overwrites the
+     pattern of anything missing from _selfPat, which is keyed on the SPELLING, not the row). */
+  ok(vm.runInContext("typeof rosterKey==='function' && typeof rosterHas==='function'", ctxv),
+     'rosterKey/rosterHas are reachable at GLOBAL scope');
+
+  var _k213=JSON.parse(vm.runInContext("(function(){"
+    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
+    +"beginStage(1); setState(GS.PLAY); player.reset(); player.invuln=999999;"
+    +"var o={pairs:{}, dups:(typeof _rosterDup!=='undefined'?_rosterDup.slice(0,4):['NO _rosterDup'])};"
+    +"[['s1jetdelta','s1jetDelta'],['s1jetbomber','s1jetBomber'],"
+    +" ['s1jetdelta_b','s1jetDeltaB'],['s1jetbomber_b','s1jetBomberB']].forEach(function(p){"
+    +"  var g=function(t){ enemies.length=0;"
+    +"    var e=spawnEnemy(t,240,-30,{route:'straight'});"
+    +"    return e?{w:e.w,h:e.h,hp:e.hp,pat:e.pattern,atk:e._atk||null,spd:e._jspd||null}:null; };"
+    +"  o.pairs[p[1]]={lower:g(p[0]), upper:g(p[1]), key:rosterKey(p[1])}; });"
+    +"return JSON.stringify(o);})()", ctxv));
+
+  ok(_k213.dups.length===0,
+     'no two roster rows normalise to the same key'+(_k213.dups.length?' (CLASH: '+_k213.dups.join('; ')+')':''));
+  Object.keys(_k213.pairs).forEach(function(up){
+    var P=_k213.pairs[up], L=P.lower, U=P.upper;
+    ok(!!L && !!U, up+': both spellings spawn');
+    if(!L || !U) return;
+    ok(U.w===L.w && U.h===L.h,
+       '  '+up+' gets the jet box, not the 26x26 default ('+U.w+'x'+U.h+')');
+    ok(U.hp===L.hp && U.atk===L.atk && U.spd===L.spd,
+       '  and the jet stats — hp '+U.hp+', atk '+U.atk+', speed '+U.spd);
+    ok(U.pat==='s1jet',
+       '  and its pattern SURVIVES the generic block as s1jet, not '+U.pat+' — _selfPat knows the spelling');
+  });
 }
 
 // ===== 214. THE CINEMATIC THRUSTER MATCHES THE IN-GAME ONE (drop 0809b) =====

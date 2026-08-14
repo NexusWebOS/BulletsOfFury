@@ -6102,12 +6102,18 @@ const SHIPS=[];
      enemy is finalised. My first placement landed in the ART-PICKING switch inside the unclosed
      if-block further up, where `c` does not exist yet: ReferenceError on every tank. Same trap
      as the boats, and the same fix — find the branch that owns the object. (drop 0808s) */
-  if(typeof S1_TANKS!=='undefined' && S1_TANKS[type]) applyS1Tank(c, type);
-  if(typeof S1_JETS!=='undefined'  && S1_JETS[type])  applyS1Jet(c, type);
+  /* ⚠ THE SPELLING A WAVE USED IS NOT ALWAYS THE SPELLING THE TABLE USES — see rosterKey above
+     S1_JETS. Stages 4 and 6 spawn s1jetDelta / s1jetBomber against tables keyed s1jetdelta /
+     s1jetbomber, and every lookup on this line missed in silence from drop 0810p on. Resolved
+     ONCE here and handed to all three appliers, so they cannot disagree about which row a unit
+     is — which is the failure mode that produced a jet with a tank's default hitbox. */
+  const _rk=(typeof rosterKey==='function')?rosterKey(type):type;
+  if(typeof S1_TANKS!=='undefined' && S1_TANKS[_rk]) applyS1Tank(c, _rk);
+  if(typeof S1_JETS!=='undefined'  && S1_JETS[_rk])  applyS1Jet(c, _rk);
   /* THE ART-LOCK ROSTER (drop 0809l). Same handoff, same reason as the two above: this is the
      last point before the enemy is finalised, and these types carry NO case in the switch
      below, so nothing downstream reassigns art/pattern/size. See NEF_S1. */
-  if(typeof applyNefUnit==='function') applyNefUnit(c, type);   // no-op unless a row matches
+  if(typeof applyNefUnit==='function') applyNefUnit(c, _rk);   // no-op unless a row matches
 
   /* ---- STAGE 1 NAVAL ROSTER (drop 0808l) ----------------------------------------------------
      ⚠ THIS HAS TO BE HERE, not up at `const base = {...}` where it belongs logically.
@@ -6394,6 +6400,12 @@ const SHIPS=[];
   for(const _k in SEWER) _selfPat[_k]=1;      // level-7 sewer units run their own sewerTick signatures
   if(typeof S1_TANKS!=='undefined') for(const _k in S1_TANKS) _selfPat[_k]=1;   // every tank row
   if(typeof S1_JETS!=='undefined')  for(const _k in S1_JETS)  _selfPat[_k]=1;   // and every jet
+  /* ⚠ AND THE SPELLING THIS WAVE ACTUALLY USED (drop 0811l). _selfPat is looked up with `type`,
+     not with the resolved row, so a stage-4 s1jetDelta was absent from it however complete the
+     tables were — and the generic block below overwrote the s1jet pattern applyS1Jet had just
+     set with a random 'sine'. The standing _selfPat trap, reached through the spelling gap
+     instead of through a missing row. Driven from rosterHas, never hand-listed. */
+  if(typeof rosterHas==='function' && rosterHas(type)) _selfPat[type]=1;
   for(const _k in VOLC) _selfPat[_k]=1;       // level-2 volcanic units run their own volcTick signatures
   for(const _k in ELITE8) _selfPat[_k]=1;     // level-8 elites run their own elite8Tick signatures
   for(const _k in ELITE_DEF) _selfPat[_k]=1;   // elites keep whatever the roster gives them
@@ -12793,6 +12805,142 @@ function setState(s){
 }
 
 /* ============================================================
+   ENEMY SEPARATION (drop 0811l)
+
+   Mike: "make sure enemies do not collide with each other or stack on each other like that."
+
+   ⚠ THE BANKING CHANNEL HAD TO LAND FIRST — see jetTick. While a jet's lean was derived from the
+   x it actually moved, a separation push was indistinguishable from a deliberate turn: pushing
+   two stacked jets apart rolled both of them, and "a straight jet never leans" failed honestly.
+   That is why the 0811i attempt was reverted with its measurements kept rather than tuned. It is
+   fixed at the source now — jets bank off the heading they CHOSE — so nothing below has to know
+   that attitude exists.
+
+   Three rules, and the last two are what let this push harder than the reverted nudge did.
+
+   1. HALF EACH, ALONG X. Two air units may also ease apart on Y; anything on the ground or the
+      water is only ever moved sideways, because its Y is its station in the world and its
+      movement model is written against it.
+
+   2. A DEADZONE. Waves are authored in formation and some of them touch by design — the bomber
+      echelon at (VW*0.08+i*12, -32-i*68) overlaps by 0.04px on Y and counted as a stacked pair
+      on every frame it was on screen. Under SEP_MIN burial nothing moves, so a formation keeps
+      the shape it was drawn as and only real stacking is resolved. This is also why the
+      pair-frame count and the WORST-BURIAL figure move differently: the second one is the one
+      that describes what Mike is looking at.
+
+   3. THE TERRAIN STILL OWNS THE UNIT. A tank is re-checked against tankDrivable and a boat
+      against the land mask before it is allowed to move, and a unit the terrain refuses leaves
+      the whole correction to its partner. Without that this pass reintroduces "tanks into the
+      water" from a new direction.
+   ============================================================ */
+const SEP_MIN  = 0.20;   // burial fraction below which a contact is left alone
+const SEP_GAIN = 0.5;    // share of the EXCESS burial taken out per pass
+const SEP_CAP  = 130;    // px/sec ceiling per unit, so nothing ever snaps apart
+const SEP_PASS = 2;      // relaxation passes per frame
+/* the land mask under the CURRENT stage, in the same terms the ground units' own hold uses.
+   Returns null when the stage has no mask built, in which case nothing here constrains anything. */
+function sepLandRef(y){
+  if(typeof _landMasks==='undefined' || typeof run==='undefined' || run.stage!==1) return null;
+  const key=(typeof damBroken!=='undefined' && damBroken)?'mapJungleDam':'mapJungle';
+  const m=_landMasks[key]; if(!m) return null;
+  return { key, mapY: Math.max(0, m.h-VH) - (typeof mapScroll!=='undefined'?mapScroll:0) + y };
+}
+/* ⚠ TAKING PART AND BEING MOVABLE ARE TWO DIFFERENT QUESTIONS, and conflating them left stage 4
+   at 150.7% burial across both arms of the A/B — completely untouched by a pass that was working
+   on stage 1. The offender named itself once the probe reported WHO: the dambreaker arsenal mini
+   (120x120) with an assault drone (39x39) sitting entirely inside it. Minis were excluded from
+   separation altogether, so the drone had nothing to be pushed out of.
+
+   A mini is an obstacle that does not yield: it should shoulder ordinary units aside on its
+   arrival beat, not be shoved off its own line by a drone. So it participates in every test and
+   takes none of the correction, and its partner takes the whole of it. */
+function sepEligible(e){    // counts as an obstacle
+  return !!e && !e.dead && e._dyingT==null && !e.prop && e.pattern!=='prop' && !e.enter;
+}
+function sepMovable(e){     // ...and may actually be displaced by one
+  return !e._boss && !e._amini;
+}
+function sepGrounded(e){ return !!(e.ground || e.microturret || e.pattern==='ground'); }
+/* Move a unit sideways, TAKING ITS LANE WITH IT. A jet that is pushed is now flying the same
+   route from a different lane rather than clawing its way back to the old one — which is both
+   what stops the push decaying away again next frame and what holds a straight run at zero lean.
+   Returns the distance actually moved, which is 0 when the terrain refuses it. */
+function sepShift(e, dx){
+  if(!dx) return 0;
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  const nx=clamp(e.x+dx, 8, W-8);
+  dx=nx-e.x; if(!dx) return 0;
+  if(sepGrounded(e)){
+    const ly=((typeof levelSrcY==='function')?levelSrcY():0)+e.y;
+    if(typeof tankDrivable==='function' && !tankDrivable(nx, ly)) return 0;
+  } else if(e._naval){
+    const L=sepLandRef(e.y);
+    if(L && _isLand(L.key, nx, L.mapY)) return 0;     // a boat is never pushed onto the bank
+  }
+  e.x=nx;
+  if(e._lane!=null) e._lane+=dx;
+  return dx;
+}
+function enemySeparate(dt){
+  if(typeof window!=='undefined' && window.__sepOff) return;      // probe_stack.py's A/B switch
+  if(typeof enemies==='undefined' || enemies.length<2) return;
+  const step=SEP_CAP*dt;
+  for(let pass=0; pass<SEP_PASS; pass++){
+    for(let a=0;a<enemies.length;a++){
+      const A=enemies[a]; if(!sepEligible(A)) continue;
+      for(let b=a+1;b<enemies.length;b++){
+        const B=enemies[b]; if(!sepEligible(B)) continue;
+        const movA=sepMovable(A), movB=sepMovable(B);
+        if(!movA && !movB) continue;                    // two immovables: nothing to do
+        /* THE SAME BOX TEST probe_stack.py MEASURES WITH, deliberately — a fix and its
+           measurement that compute overlap differently can both be green and disagree. */
+        const dx=B.x-A.x, dy=B.y-A.y;
+        const ox=(A.w+B.w)*0.42-Math.abs(dx), oy=(A.h+B.h)*0.42-Math.abs(dy);
+        if(ox<=0 || oy<=0) continue;
+        const burial=Math.min(ox/Math.min(A.w,B.w), oy/Math.min(A.h,B.h));
+        if(burial<=SEP_MIN) continue;                   // formations are allowed to touch
+
+        /* ⚠ ENGAGE AT THE DEADZONE, THEN RESOLVE ALL THE WAY OUT. Taking only the EXCESS over
+           SEP_MIN parks every contact at exactly the threshold, where it still counts as an
+           overlapping pair — measured: stage 1's worst settled burial fell 49.6% -> 20.8% (the
+           deadzone, to the decimal) while pair-frames ROSE 386 -> 615, because units that used to
+           cross through each other now loiter in contact instead. The deadzone decides WHETHER to
+           push; it must not decide how far. */
+        const bothAir = !sepGrounded(A) && !sepGrounded(B) && !A._naval && !B._naval;
+        /* an immovable partner does not halve the correction, it hands over the whole of it */
+        const shA = movA ? (movB?0.5:1) : 0, shB = movB ? (movA?0.5:1) : 0;
+        /* OUT THE SHORT SIDE. A column of jets is a few pixels deep and half a screen wide on the
+           box test; shoving it sideways is the long way out of a shallow overlap and reads as the
+           formation being blown apart. Only air units may take the Y exit — a tank or a boat's Y
+           is its station in the world and its movement model is written against it. */
+        if(bothAir && oy<ox){
+          const vs=(dy===0) ? (((a+b)&1)?1:-1) : Math.sign(dy);
+          const vp=Math.min(oy*SEP_GAIN, step);
+          B.y+=vs*vp*shB; A.y-=vs*vp*shA;
+          continue;
+        }
+        const full=Math.min(ox*SEP_GAIN, step);
+        /* exactly stacked gives Math.sign 0 and no direction at all; split on the pair's own
+           indices so the choice is stable frame to frame rather than jittering */
+        const s=(dx===0) ? (((a+b)&1)?1:-1) : Math.sign(dx);
+        const mB=sepShift(B,  s*full*shB), mA=sepShift(A, -s*full*shA);
+        if(mB===0 && mA!==0 && movA)      sepShift(A, -s*full*shB);  // the refused unit's share
+        else if(mA===0 && mB!==0 && movB) sepShift(B,  s*full*shA);
+        /* BOTH REFUSED and both in the air is impossible — sepShift only refuses on terrain — so
+           this is two ground units or two boats wedged where neither can legally give way. Air
+           units get the vertical exit instead of staying buried. */
+        else if(mA===0 && mB===0 && bothAir){
+          const vs=(dy===0) ? (((a+b)&1)?1:-1) : Math.sign(dy);
+          const vp=Math.min(oy*SEP_GAIN, step);
+          B.y+=vs*vp*shB; A.y-=vs*vp*shA;
+        }
+      }
+    }
+  }
+}
+
+/* ============================================================
    UPDATE — PLAYING
    ============================================================ */
 function updatePlay(dt){
@@ -13712,6 +13860,11 @@ function updatePlay(dt){
     if(e.pattern==='racer' && e._phase==='flee' && e.y<-60) e.dead=true;   // culled after fleeing off the top
   }
   enemies=enemies.filter(e=>!e.dead);
+  /* ---- NOTHING STACKS (drop 0811l) ----
+     After every mover has run and the dead are gone, so it relaxes the frame that will actually
+     be drawn rather than one some later tick still gets to overwrite. Held under _tslow with
+     everything else: a frozen battlefield does not shuffle itself. */
+  if(!_tslow && typeof enemySeparate==='function') enemySeparate(dt);
 
   // ---- boss ----
   if(boss && !_tslow) updateBoss(dt);
@@ -18620,6 +18773,55 @@ function jetRouteX(e, dt){
 }
 const MUZZLE_JET_MG  = 'nmz_3';
 const MUZZLE_JET_ORD = 'nmz_9';
+/* ============================================================
+   ONE ROW, WHATEVER THE WAVE SPELLED IT (drop 0811l)
+
+   ⚠ STAGES 4 AND 6 HAVE BEEN FIELDING 26x26 ONE-HP JETS THAT NEVER FIRE, since drop 0810p.
+
+   That drop repointed their dead jet waves onto "units that EXIST" and spawns s1jetDelta /
+   s1jetBomber / s1jetDeltaB / s1jetBomberB. S1_JETS and NEF_S1 are keyed s1jetdelta /
+   s1jetbomber / s1jetdelta_b / s1jetbomber_b — so every one of those lookups missed and the
+   units fell through to the generic defaults. Measured at runtime, both spellings side by side:
+
+       s1jetdelta   ->   95x105   hp 6   pattern s1jet   spd 96   atk mg
+       s1jetDelta   ->   26x26    hp 1   pattern sine    spd —    atk NONE
+
+   CLAUDE.md already carries the line "⚠ BOTH SPELLINGS ARE REQUIRED. Stage 1 fields
+   `s1jetdelta` and stage 4 fields `s1jetDelta`". The requirement was written down and never met,
+   and nothing failed because nothing asked. It is the "systems declared and never fired" family
+   once more: the waves spawn, the counts are right, probe_types reports jets on the stage — and
+   what arrives is a one-hit drifting square with no guns.
+
+   Resolved by NORMALISING rather than by adding four alias rows, so a fifth spelling cannot
+   reintroduce it. Case and underscores are ignored. A silent collision would be worse than the
+   bug, so the index keeps the first key it saw and records the clash in _rosterDup for the suite
+   to assert on.
+   ============================================================ */
+let _rosterIdx=null; const _rosterDup=[];
+function _rosterTables(){
+  return [(typeof S1_JETS !=='undefined') && S1_JETS,
+          (typeof S1_TANKS!=='undefined') && S1_TANKS,
+          (typeof NEF_S1  !=='undefined') && NEF_S1].filter(Boolean);
+}
+function rosterKey(type){
+  if(!type) return type;
+  const tbls=_rosterTables();
+  for(const t of tbls) if(t[type]) return type;          // an exact hit always wins
+  if(_rosterIdx===null){
+    _rosterIdx={};
+    for(const t of tbls) for(const k in t){
+      const n=k.toLowerCase().replace(/_/g,'');
+      if(_rosterIdx[n]===undefined) _rosterIdx[n]=k;
+      else if(_rosterIdx[n]!==k) _rosterDup.push(n+': '+_rosterIdx[n]+' vs '+k);
+    }
+  }
+  return _rosterIdx[String(type).toLowerCase().replace(/_/g,'')] || type;
+}
+/* does this type name reach a roster row at all, under any spelling? */
+function rosterHas(type){
+  const k=rosterKey(type);
+  return _rosterTables().some(t=>!!t[k]);
+}
 function applyS1Jet(c, type){
   const d=S1_JETS[type]; if(!d) return false;
   c.art=d.art; c.pattern='s1jet';
@@ -18971,7 +19173,7 @@ function jetTick(e, dt){
   if(e._entered) e.x=clamp(e.x, 22, (typeof worldWidth==='function'?worldWidth():VW)-22);
 
   /* ============================================================
-     BANKING (drop 0808y)
+     BANKING (drop 0808y — re-channelled 0811l)
 
      Mike: "When they curve. They begin to turn that direction but still turn facing vertically
      south. You somewhat got it."
@@ -18981,12 +19183,23 @@ function jetTick(e, dt){
      the resting attitude is always SOUTH — the bank is a lean the aircraft returns from, never a
      new heading it keeps.
 
-     Derived from the lateral movement it ACTUALLY made this frame rather than from the route it
-     was asked to fly, so it is true for the dodge as well: a jet breaking off your missile leans
-     into that break and rights itself afterwards, without the dodge needing to know anything
-     about banking. */
-  const _vx=(e.x-(e._px==null?e.x:e._px))/Math.max(1e-4,dt);
-  e._px=e.x;
+     ⚠ THE LEAN IS THE HEADING THE JET CHOSE, NOT THE GROUND IT COVERED. This used to read
+     (e.x - e._px)/dt — the lateral movement it ACTUALLY made — which is the better signal right
+     up until something outside jetTick touches x. Then it is the worse one: an external push and
+     a deliberate turn become the same number, and the aircraft rolls because it was shoved.
+
+     That is what blocked enemy separation for a whole drop. A relaxation pass that pushed stacked
+     units apart leaned every jet it touched, and the assertion that caught it — "a straight jet
+     never leans, it is dead level south" — was right to. enemyEntrySweep had already hit this
+     same wall and worked around it by excluding routed jets outright (read its comment); that
+     workaround is a symptom of the same missing channel. Neither the sweep nor the separation
+     pass should have to know that attitude exists.
+
+     _hx*_spd IS the jet's own lateral velocity. _wx already carries the route, the dodge and the
+     lane-hold, so every deviation the aircraft chooses still leans — a jet breaking off your
+     missile rolls into the break exactly as before. What it no longer carries is displacement the
+     aircraft never asked for. */
+  const _vx=_hx*_spd;
   const _want=clamp(_vx/260, -1, 1)*JET_BANK_MAX;
   /* eased, so it rolls INTO the turn and levels out rather than snapping between attitudes */
   e.spin = (e.spin||0) + (_want-(e.spin||0))*Math.min(1, dt*JET_BANK_RATE);

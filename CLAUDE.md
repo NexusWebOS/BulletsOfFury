@@ -148,9 +148,32 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811_HANDOFF.md`.** Full handoff for drops 0810s–0811j — what
-landed, what is still owed WITH the exact reason each unfinished attempt failed, every trap found,
-and the eight new probes. Written so nothing has to be rediscovered.
+**→ START HERE: `docs/PASSOVER_0811L.md`, then `docs/PASSOVER_0811_HANDOFF.md`.** The handoff
+covers drops 0810s–0811j — what landed, what is still owed WITH the exact reason each unfinished
+attempt failed, every trap found, and the eight new probes. 0811L is the newest drop and
+supersedes its §2.1.
+
+**Landed in 0811l:** the jet **banking channel** (a lean is now derived from the heading the
+aircraft CHOSE, `_hx*_spd`, not the ground it covered — an external push is invisible to attitude,
+which is what had blocked separation for a drop); **enemy separation** (`enemySeparate`, with a
+formation deadzone and terrain veto, measured 50.3% → 20.0% settled burial on stage 1 and
+150.7% → 52.4% on stage 4, and shown in `docs/proofs/separation_0811l_{off,on}.png`).
+
+⚠ **AND STAGES 4 AND 6 HAD BEEN FIELDING 26x26 ONE-HP JETS THAT NEVER FIRED, for six drops.**
+0810p repointed their waves onto `s1jetDelta`/`s1jetBomber`; `S1_JETS` and `NEF_S1` are keyed
+`s1jetdelta`/`s1jetbomber`, so every lookup missed and the units took the generic defaults —
+`26x26 hp 1 pattern sine atk NONE` against `95x105 hp 6 pattern s1jet atk mg`. The line "⚠ BOTH
+SPELLINGS ARE REQUIRED" was in this file the whole time; **nothing asked, so nothing failed.**
+`rosterKey()` normalises the spelling across all three tables. **This makes stages 4 and 6
+materially harder and the waves may want re-tuning — Mike's call.**
+
+⚠ **Two probe lessons from that drop, both general.** A `worst`-of-run maximum cannot tell
+"stacked" from "spawned on the same point"; and an **unseeded** A/B on this game measures wave
+randomness, not the change — the same arm swung 839→424. `probe_stack.py` seeds `Math.random`
+and reports settled burial. **The 839 / 71.9% baselines quoted in the handoff are retracted.**
+
+**The two 404s at boot are identified:** `assets/data/ui_layout.json` and
+`assets/fonts/BlackOpsOne.ttf`. Worth checking the first before the stats-screen alignment work.
 
 
 **0810s–0811b, all committed and each verified in real Chromium:** the five ship bosses (stages 2/3/5 + minis on 2/3) and the Blacksteel Raptor as stage 4's miniboss — stage 4 had had NONE, its table still named the retired `subreactor`; Mike's fire orb + ice breath icons and the EQUIPPED box that was drawing the wrong one; the quad-laser's four beams and its charge phase; stage 7 on Mike's corrected plate with the sludge behind it, darkened to 50% value; the enemy volley layer and the five silent rosters armed; Mike's loopable runway; the arcade intro cards' blank panel; music on the Fury HQ cutscenes.
@@ -337,7 +360,12 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
 - Two 404s at boot.
 - The `validate_antipatterns.py` hook errors on every write — its script path does not exist.
 - Jets: observed speed varies 96–138 even on `straight`; something outside `jetTick` displaces
-  them. A rescale inside `jetTick` does not fix it — the other mover runs after.
+  them. A rescale inside `jetTick` does not fix it — the other mover runs after. ⚠ Note this is
+  now decoupled from BANKING (drop 0811l) — the lean no longer reads observed x — so the speed
+  variance is the only remaining symptom, and `enemyEntrySweep`'s blanket exclusion of routed
+  jets exists to dodge the *old* coupling and can be reconsidered.
+- Two 404s at boot: **identified** — `assets/data/ui_layout.json` and
+  `assets/fonts/BlackOpsOne.ttf`.
 - Stage 1: 2 of 29 units still appear on screen rather than entering, both at (21,67).
 - `mfx_` (252 cells) is marked DELETE in the taxonomy but is the **live** art for every enemy
   pellet and missile. Confirm with Mike before removing.
