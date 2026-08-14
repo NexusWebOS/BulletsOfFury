@@ -18884,8 +18884,52 @@ function _bossProjKey(b){
   const fi = Math.floor(((b.t||0)*12))%6;      // six frames, ~12fps, glow animates in place
   return 'bfx_'+fam+'_p_'+fi;
 }
+/* ============================================================
+   THE MACHINE GUN PELLET (drop 0811y)
+
+   Mike, clarifying which projectiles look wobbly: "I meant the machine gun pellets".
+
+   ⚠ IT WAS TOGGLING BETWEEN TWO DIFFERENT SHAPES SEVEN TIMES A SECOND. The art picker was
+
+       ['mfx_mg_2_0','mfx_mg_2_2'][(floor(performance.now()/70) + b._ph) % 2]
+
+   and those two frames are not two poses of one thing. Measured:
+
+       mfx_mg_2_0   18x20   ink 123     a compact blob
+       mfx_mg_2_2   20x45   ink 380     a long thin streak     (+209% ink)
+
+   mfx_mg_<fam>_0..4 is a BIRTH SEQUENCE — a round blob that stretches into a tracer
+   (18x20 -> 23x33 -> 20x45 -> 33x51 -> 34x57). Alternating frame 0 against frame 2 is not
+   playing it; it is flipping between a blob and a streak on the wall clock, and at a fixed
+   draw height of 16 that swings the round's on-screen WIDTH between about 14px and 7px. That
+   is the wobble, and it is why the paths measured perfectly straight in 0811p — nothing about
+   it is trajectory.
+
+   ⚠ AND THE PELLET WAS THE ONLY FIRETYPE DOING THIS. Every sibling below animates off the
+   round's OWN AGE (`b.t`) — comet, homing, missile all do. Only the pellet used
+   performance.now(), so two rounds fired a frame apart were locked in step with each other and
+   out of step with their own flight. It plays its reel from b.t now, once, then holds.
+
+   ⚠ FIVE COLOUR FAMILIES WERE ALREADY AUTHORED AND FOUR WERE NEVER DRAWN. mfx_mg_0..4 are red,
+   blue, orange, green and white, five frames each — 25 registered plates, of which the game
+   used two. Mike: "you can have alot of fun by palette wapping them to red, blue, green gold
+   etc". No swap needed; the art exists. PELLET_FAM gives each stage the one that matches the
+   identity the rest of the file already gives it — "a level-3 shot is ice, a level-8 shot is
+   necro". ============================================================ */
+const PELLET_GLOW=['#ff6b5a','#7fb0ff','#ffd36b','#8fe07a','#dfe8ff'];
+const PELLET_FAM={1:2, 2:0, 3:1, 4:2, 5:4, 6:1, 7:3, 8:0, 9:4};
+function pelletFam(b){
+  if(b && b._pfam!=null) return clamp(b._pfam|0,0,4);
+  const st=(typeof run!=='undefined'&&run)?run.stage:1;
+  const f=PELLET_FAM[st]; return (f==null)?2:f;
+}
+function pelletKey(b){
+  /* the reel is a birth, not a loop: stretch over ~0.11s and then hold the tracer */
+  const f=Math.min(4, Math.floor(((b&&b.t)||0)/0.028));
+  return 'mfx_mg_'+pelletFam(b)+'_'+f;
+}
 const FIRETYPES={
-  pellet:{ art:(b)=>['mfx_mg_2_0','mfx_mg_2_2'][(Math.floor(performance.now()/70)+((b._ph|0)||0))%2], align:true, h:16, glow:'#ffd36b'},
+  pellet:{ art:(b)=>pelletKey(b), align:true, h:16, glow:(b)=>PELLET_GLOW[pelletFam(b)]},
   flare: { art:(b)=>'mfx_ea_3_'+(((Math.floor(performance.now()/80)+((b._ph|0)||0))%8)), spin:0, h:15, glow:'#ffd36b'},
   comet: { art:(b)=>eaCometKey(b.pal||'red', ((b.t||0)*12)|0), align:true, h:20, glow:'#ff8a4a'},
   blast: { art:(b)=>'mfx_bpow_'+({red:0,blue:1,white:2}[b.pal||'red']||0)+'_0', align:false, h:26, glow:'#ffd36b'},
@@ -18928,7 +18972,10 @@ function drawFireType(b){
   else if(T.spin) ang=(performance.now()/1000)*T.spin+((b._ph||0));
   if(T._pal && !b.pal) b.pal=T._pal;
   const h=(T.h||14)*(b.szMul||1)*(T._szMul||1);
-  return drawMfx(key,b.x,b.y,ang,h,b.tint||T._tint||null,1,T.glow,T.glow);
+  /* glow may be a FUNCTION now — the pellet picks its colour from the stage's family, so the
+     glow has to follow the plate or a green tracer sits inside an orange halo (drop 0811y) */
+  const _gl=(typeof T.glow==='function')?T.glow(b):T.glow;
+  return drawMfx(key,b.x,b.y,ang,h,b.tint||T._tint||null,1,_gl,_gl);
 }
 /* ============================================================
    ONE PROJECTILE REGISTRY (drop 0801kp)

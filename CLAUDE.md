@@ -148,7 +148,27 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811X.md`, then `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811Y.md`, then `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811y — THE MACHINE GUN PELLET WAS SWAPPING A BLOB FOR A STREAK, 7× A SECOND.**
+⚠ **0811v's wobble fix did NOT cover these** — it repaired the arsenal branch, gated
+`if(b._boss …)`, i.e. boss bullets only. Pellets from planes/ships/jets take the FIRETYPES path.
+Two different bugs wearing one description.
+
+The picker was `['mfx_mg_2_0','mfx_mg_2_2'][floor(performance.now()/70)%2]`. Those are not two
+poses of one thing: **18x20 ink 123 (a blob) against 20x45 ink 380 (a streak), +209%**.
+`mfx_mg_<fam>_0..4` is a BIRTH SEQUENCE, and at a fixed draw height of 16 that toggle swung the
+round's on-screen width between ~14px and ~7px in flight. Now driven from `b.t`: `000111222333444…`,
+monotonic, holds on the tracer.
+⚠ **AND IT WAS THE ONLY FIRETYPE USING THE WALL CLOCK** — comet, homing and missile all already
+animate off `b.t`, so two pellets fired a frame apart were in step with each other and out of step
+with their own flight.
+
+⚠ **FIVE PELLET COLOUR FAMILIES WERE AUTHORED AND FOUR HAD NEVER BEEN DRAWN** — `mfx_mg_0..4` are
+red/blue/orange/green/white, 25 plates, of which the game used TWO. No palette swap was needed;
+`PELLET_FAM` just points each stage at its own. `T.glow` may be a function now so the halo follows
+the plate. **Worth auditing `mfx_ea_`/`mfx_hom_`/`mfx_emr_` for the same two faults** — both were
+invisible until someone rendered the reel.
 
 **0811x — the laser, done properly after 0811w failed at it.** The failure was METHOD: 0811w added
 tiered light additively with **no live baseline**. With a baseline taken first, two faults were
