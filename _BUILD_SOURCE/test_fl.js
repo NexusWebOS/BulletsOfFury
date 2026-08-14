@@ -9430,6 +9430,59 @@ console.log("=== 213. jet banking ===");
      'and the lean is capped well short of side-on — it is a shmup, the aircraft stays readable');
 }
 
+// ===== 213a. THE VOLLEY PATTERNS ARE EIGHT DIFFERENT SHAPES (drop 0811s) =====
+console.log("=== 213a. volley patterns ===");
+{
+  /* Mike: "Are too predictable or too simple like, needs to be have the bullets of fury feel with
+     machine gun styled enemy attacks and missiles and random patterns and screen filling
+     patterns that are fun."
+
+     ⚠ A `case` IN A SWITCH THAT NO TABLE ROW REACHES IS A DEAD SYSTEM, and that is this project's
+     single most repeated failure — the quad-laser's muzzles, _qlChg, enemyVolley's own fireCd,
+     lordshadows. So every pattern is driven through the REAL enemyVolley on a REAL spawned unit
+     and asserted to produce rounds, and the screen-filling ones are asserted to actually span the
+     camera rather than merely being named "curtain". */
+  var _v213=JSON.parse(vm.runInContext("(function(){"
+    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
+    +"beginStage(1); setState(GS.PLAY); player.reset(); player.invuln=999999;"
+    +"player.x=240; player.y=430;"
+    +"var o={}, pats=['fan','wall','pincer','stagger','rake','salvo','curtain','ripple'];"
+    +"pats.forEach(function(p){"
+    +"  enemies.length=0; eBullets.length=0;"
+    +"  var e=spawnEnemy('s1jetdelta',240,120,{}); if(!e){ o[p]={n:0}; return; }"
+    +"  var saved=ENEMY_VOLLEY[e.type]; ENEMY_VOLLEY[e.type]={pat:p, every:1};"
+    /* salvo is gated on the per-stage missile budget (Math.random()<0.45 here), so ONE roll
+       failing is the budget working. Roll it until it fires or we run out of patience. */
+    +"  var n=0, xs=[], tries=(p==='salvo')?40:1;"
+    +"  for(var t=0;t<tries && !n;t++){ eBullets.length=0; e._volN=t; e._volSeed=0;"
+    +"    enemyVolley(e,true); n=eBullets.length; xs=eBullets.map(function(b){return b.x;}); }"
+    +"  ENEMY_VOLLEY[e.type]=saved;"
+    +"  o[p]={n:n, span:xs.length?Math.round(Math.max.apply(null,xs)-Math.min.apply(null,xs)):0};"
+    +"});"
+    /* and rotation: consecutive volleys of alt:['fan','rake'] must not all be the same shape */
+    +"enemies.length=0;"
+    +"var r=spawnEnemy('s1jetdelta',240,120,{}), seq=[];"
+    +"if(r){ var sv=ENEMY_VOLLEY[r.type]; ENEMY_VOLLEY[r.type]={alt:['fan','rake'],every:1}; r._volSeed=0;"
+    +"  for(var i=0;i<6;i++){ eBullets.length=0; r._volN=i; enemyVolley(r,true); seq.push(eBullets.length); }"
+    +"  ENEMY_VOLLEY[r.type]=sv; }"
+    +"return JSON.stringify({o:o, seq:seq, VW:VW});})()", ctxv));
+
+  ['fan','wall','pincer','stagger','rake','salvo','curtain','ripple'].forEach(function(p){
+    ok(_v213.o[p] && _v213.o[p].n>0, 'volley pattern "'+p+'" actually fires ('+((_v213.o[p]||{}).n||0)+' rounds)');
+  });
+  /* the two screen-filling shapes must cover most of the CAMERA — a pattern named "curtain" that
+     spans one unit's frontage is the old wall with a new label */
+  ok(_v213.o.curtain.span > _v213.VW*0.6,
+     'curtain spans the screen ('+_v213.o.curtain.span+'px of '+_v213.VW+')');
+  ok(_v213.o.ripple.span > _v213.VW*0.6,
+     'ripple spans the screen ('+_v213.o.ripple.span+'px of '+_v213.VW+')');
+  ok(_v213.o.curtain.span > _v213.o.wall.span*3,
+     'and a screen-filling pattern is far wider than the unit-frontage ones ('+_v213.o.curtain.span+' vs wall '+_v213.o.wall.span+')');
+  var _uniq={}; _v213.seq.forEach(function(v){ _uniq[v]=1; });
+  ok(Object.keys(_uniq).length>1,
+     'alt:[...] rotates a unit between shapes rather than repeating one ('+_v213.seq.join(',')+')');
+}
+
 // ===== 213b. NOTHING STACKS (drop 0811l) =====
 console.log("=== 213b. enemy separation ===");
 {

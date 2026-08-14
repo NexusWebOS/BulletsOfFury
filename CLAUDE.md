@@ -148,7 +148,29 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811R.md`, then `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811S.md`, then `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811s — projectile variety, and it made the screen QUIETER.** Four new volley shapes for the four
+things Mike named: **`rake`** (machine gun — a 3-round burst that WALKS across its arc each volley,
+not another fan), **`salvo`** (missiles, gated on `_eMslAllow()`), **`curtain`** and **`ripple`**
+(screen-filling; ripple's stagger is a y offset, which IS a delay because bullets move per frame).
+
+⚠ **"RANDOM PATTERNS" IS ROTATION BETWEEN SHAPES, NOT RANDOMNESS INSIDE ONE.** Jittering angles
+inside a pattern breaks the rule this layer exists for — a pattern must hold its shape so what the
+player learned still applies. Rows carry `alt:[...]` and cycle; `_volSeed` (from spawn position,
+NOT `Math.random`) desynchronises units of the same type so a wave replays identically.
+
+⚠ **SCREEN-FILLING SPANS THE CAMERA, NOT THE WORLD** — stage 1's world is 800 against a 480 camera,
+so a `worldWidth()` curtain measures wide and plays thin. Same trap as the pop-in (0811o).
+
+⚠ **MEASURED A/B, AND VOLUME WENT DOWN**: stage 1 −3%, **stage 5 −20%**, stage 7 −2%; peak on screen
+169→143 on stage 5. The screen-filling rows carry `every` 7–9 (RARE — `every` is the cooldown
+multiplier) and no screen-filling appears before stage 5. The baseline arm collapses every
+`alt:[...]` back to its first entry, which is exactly the old table.
+
+⚠ **`salvo` FIRING NOTHING ONCE IS THE MISSILE BUDGET, NOT A DEAD PATTERN** — `_eMslAllow()` is
+`Math.random()<0.45` on stage 1. One failed roll and a dead system look identical from one sample.
+Measured 23/40. A new missile source that ignored that gate would silently undo Mike's cut.
 
 **0811r — speaker colour, typing sound, and black edges that were already there.** The cutscene
 name and body now carry the speaker's own `PILOTS[].tint` as a palette swap, and the scene types

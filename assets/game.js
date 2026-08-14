@@ -7524,44 +7524,60 @@ let stagePlan=[];
    Pattern is matched to how the unit MOVES, so the shape reads as something the craft did:
    strafing aircraft rake a fan, static or slow platforms drop a wall abreast, drifting drones
    pincer, and heavy ground units stagger their frontage. */
+/* ⚠ THE ESCALATION IS DELIBERATE AND IT IS THE DESIGN, NOT A DEFAULT (drop 0811s).
+
+   `alt:[...]` rotates a unit through several shapes (see enemyVolley) — that is the "random
+   patterns" ask, done as variety between learnable shapes rather than randomness inside one.
+
+   rake     = MACHINE GUN, a burst that walks across its arc. Cheap, early, everywhere.
+   salvo    = MISSILES, and only on units heavy enough to read as carrying them. It is gated on
+              _eMslAllow(), which thins missiles hard on stages 1-4 because Mike cut that budget.
+   curtain  = SCREEN FILLING, a wall across the visible width with two readable gaps.
+   ripple   = SCREEN FILLING, the same span arriving as a rolling wave.
+
+   ⚠ NO SCREEN-FILLING PATTERN APPEARS BEFORE STAGE 5, and every one of them carries a HIGH
+   `every`. `every` is the cooldown multiplier, so a big number means RARE — a wall across the
+   screen is a moment you remember, and at stage-1 cadence it would just be a wall you die to.
+   Stage 1 gets the machine gun and nothing else new; Mike has already said level 1 was the worst
+   offender for volume once. */
 const ENEMY_VOLLEY = {
   /* type            pattern    every Nth fire cycle */
   // stage 1 — jets rake, boats and tanks hold lanes
-  s1jetdelta:    {pat:'fan',     every:3},
-  s1jetDelta:    {pat:'fan',     every:3},
-  s1jetdelta_b:  {pat:'fan',     every:3},
-  s1jetDeltaB:   {pat:'fan',     every:3},
-  s1jetbomber:   {pat:'wall',    every:3},
-  s1jetBomber:   {pat:'wall',    every:3},
+  s1jetdelta:    {alt:['fan','rake'],        every:3},
+  s1jetDelta:    {alt:['fan','rake'],        every:3},
+  s1jetdelta_b:  {alt:['fan','rake'],        every:3},
+  s1jetDeltaB:   {alt:['fan','rake'],        every:3},
+  s1jetbomber:   {alt:['wall','salvo'],      every:4},
+  s1jetBomber:   {alt:['wall','salvo'],      every:4},
   s1tankheavy:   {pat:'stagger', every:3},
-  s1boatgun:     {pat:'wall',    every:3},
+  s1boatgun:     {alt:['wall','rake'],       every:3},
   s1boatpatrol:  {pat:'pincer',  every:4},
   s1corvette:    {pat:'wall',    every:3},
   // stage 2 — the elites are nearly the only things shooting here
-  el_lr:         {pat:'pincer',  every:2},
-  el_em:         {pat:'fan',     every:2},
+  el_lr:         {alt:['pincer','rake'],     every:2},
+  el_em:         {alt:['fan','rake'],        every:2},
   // stage 3
   frost:         {pat:'pincer',  every:4},
-  mdrone:        {pat:'wall',    every:3},
+  mdrone:        {alt:['wall','rake'],       every:3},
   drone:         {pat:'wall',    every:4},
   cryo:          {pat:'wall',    every:3},
-  icegun:        {pat:'pincer',  every:3},
+  icegun:        {alt:['pincer','rake'],     every:3},
   // stage 4
-  assault:       {pat:'fan',     every:3},
+  assault:       {alt:['fan','rake'],        every:3},
   sandtank:      {pat:'stagger', every:3},
-  roadtank:      {pat:'stagger', every:3},
-  // stage 5
-  octo:          {pat:'fan',     every:2},
+  roadtank:      {alt:['stagger','salvo'],   every:4},
+  // stage 5 — the first screen-filling shapes
+  octo:          {alt:['fan','pincer','rake'], every:2},
   // stage 6
-  raptor:        {pat:'fan',     every:3},
-  bcarrier:      {pat:'wall',    every:2},
+  raptor:        {alt:['fan','rake'],        every:3},
+  bcarrier:      {alt:['wall','salvo'],      every:3},
   fang:          {pat:'pincer',  every:3},
-  l6x_st:        {pat:'fan',     every:3},
+  l6x_st:        {alt:['fan','rake'],        every:3},
   l6x_tf:        {pat:'fan',     every:3},
-  l6x_cw:        {pat:'wall',    every:3},
+  l6x_cw:        {alt:['wall','ripple'],     every:7},
   l6x_cr:        {pat:'pincer',  every:3},
   l6x_tl:        {pat:'stagger', every:3},
-  l6x_hw:        {pat:'wall',    every:3},
+  l6x_hw:        {alt:['wall','salvo'],      every:4},
   /* THE UNITS ARMED IN 0810w. These families had shoots=false on every member " stage 7 had no
      shooters at all and stage 8 none " so they carry both an aimed round and a shape. */
   // stage 2, the volcanic roster
@@ -7575,23 +7591,23 @@ const ENEMY_VOLLEY = {
   carrier:       {pat:'wall',    every:2},
   crawl:         {pat:'stagger', every:3},
   pod:           {pat:'pincer',  every:3},
-  golem:         {pat:'stagger', every:3},
+  golem:         {alt:['stagger','rake'],    every:3},
   lavamaw:       {pat:'fan',     every:3},
   // stage 7, the sewer roster
-  skimmer:       {pat:'fan',     every:3},
+  skimmer:       {alt:['fan','rake'],        every:3},
   sentry:        {pat:'wall',    every:2},
   crawler:       {pat:'stagger', every:3},
   shambler:      {pat:'pincer',  every:3},
-  maw:           {pat:'fan',     every:3},
-  barge:         {pat:'wall',    every:2},
+  maw:           {alt:['fan','ripple'],      every:8},   // the maw surfaces rarely; it earns a wave
+  barge:         {alt:['wall','curtain'],    every:9},   // the slowest thing on the level
   // stages 5 and 8, the orbital and elite rosters
-  needle:        {pat:'fan',     every:3},
+  needle:        {alt:['fan','rake'],        every:3},
   oracle:        {pat:'pincer',  every:3},
-  crescent:      {pat:'wall',    every:3},
-  hauler:        {pat:'wall',    every:2},
-  talon:         {pat:'fan',     every:3},
-  hell:          {pat:'pincer',  every:2},
-  cdisc:         {pat:'stagger', every:3},
+  crescent:      {alt:['wall','ripple'],     every:7},
+  hauler:        {alt:['wall','salvo'],      every:3},
+  talon:         {alt:['fan','rake'],        every:3},
+  hell:          {alt:['pincer','salvo'],    every:3},
+  cdisc:         {alt:['stagger','curtain'], every:8},
 };
 /* ============================================================
    enemyVolleyTick " the volley needs its OWN clock (drop 0810x)
@@ -7641,7 +7657,27 @@ function enemyVolley(e, force){
   }
   const y = e.y + e.h*0.30, D = Math.PI/2;      // D = straight down, the spine of every pattern
   const k = (e.type==='icegun'||e.type==='cryo') ? 'ice' : 'flare';
-  switch(V.pat){
+  /* ============================================================
+     "RANDOM PATTERNS" IS ROTATION BETWEEN SHAPES, NOT RANDOMNESS INSIDE ONE (drop 0811s).
+
+     Mike asked for "random patterns". Taken literally — jittering the angles or the count inside
+     a pattern — that breaks the rule this whole layer is built on and that eshot's push() argues
+     for: a pattern must hold its shape so what the player learned last wave still applies. A
+     shape that is different every time cannot be learned, only survived, and that is the
+     opposite of "fun".
+
+     So a unit may carry `alt:[...]` and CYCLES through several shapes. Any single volley is a
+     clean, readable, learnable pattern; what varies is which one comes next, so a wave stops
+     being monotonous without ever being unfair.
+
+     ⚠ _volSeed OFFSETS EACH UNIT so two of the same type in one wave are not in lockstep — the
+     whole point is lost if a row of four all fire the identical shape on the identical beat. It
+     is seeded off the unit's own spawn x, not Math.random, so a replay of the same wave produces
+     the same fight. */
+  if(e._volSeed==null) e._volSeed = (Math.abs((e.x|0)*7 + (e.y|0)*13)) % 97;
+  const _step = ((e._volN/(V.every||1))|0);
+  const _pat = (V.alt && V.alt.length) ? V.alt[(_step + e._volSeed) % V.alt.length] : V.pat;
+  switch(_pat){
     case 'fan':
       /* a wide fixed fan. The gaps OPEN as it travels, so there is always a lane — but it is a
          lane in world space, and you have to already be in it. */
@@ -7662,6 +7698,64 @@ function enemyVolley(e, force){
       /* one half of the unit's frontage, then the other. You have to cross, on its beat. */
       { const left = ((e._volN / V.every) | 0) % 2 === 0;
         for(let i=0;i<3;i++) eShoot(e.x + (left ? -46 + i*20 : 6 + i*20), y, D, 2.7, k); }
+      break;
+
+    /* ============================================================
+       ADDED IN 0811s. Mike: "Are too predictable or too simple like, needs to be have the
+       bullets of fury feel with machine gun styled enemy attacks and missiles and random
+       patterns and screen filling patterns that are fun."
+
+       Four shapes for the four things he named. They keep this layer's existing contract, which
+       is stated at eshot's push() and is what makes the game learnable: nothing aims at the
+       player, rounds stay slow and readable, and a pattern holds its shape so what you learned
+       last wave still applies. Difficulty raises SPEED, never count.
+       ============================================================ */
+    case 'rake':
+      /* MACHINE GUN. Not a wider fan — a tight three-round burst that WALKS one step across its
+         arc on each volley, so consecutive bursts sweep the lane and then sweep back. Reads as a
+         gun being traversed rather than a shape being stamped, which is the difference between
+         "machine gun styled" and another spread. */
+      { const steps=5, i=((e._volN/(V.every||1))|0)%(steps*2);
+        const s=(i<steps? i : steps*2-1-i) - (steps-1)/2;   // 0..4..0, a there-and-back sweep
+        for(let n=-1;n<=1;n++) eShoot(e.x, y, D + s*0.17 + n*0.045, 3.1, 'mg'); }
+      break;
+    case 'salvo':
+      /* MISSILES, one to each side, on the authored swerve — they sweep OUT before locking, so
+         the answer is to move early rather than to sit still.
+         ⚠ GATED ON _eMslAllow(). Mike cut the missile budget globally ("too many overall, and
+         level 1 is the worst offender") and that gate is per-stage; a new missile source that
+         ignored it would quietly undo his cut. */
+      if(typeof _eMslAllow!=='function' || _eMslAllow()){
+        if(typeof eMissileHoming==='function'){ eMissileHoming(e.x, y, -1); eMissileHoming(e.x, y, 1); }
+        else for(const t of [-0.5,0.5]) eShoot(e.x, y, D+t, 2.2, 'flare');
+      }
+      break;
+    case 'curtain':
+      /* SCREEN FILLING. Spans the VISIBLE width rather than the unit's own frontage, with two
+         gaps you can read and stand in. Rare by design — `every` is high for this one, because a
+         wall across the screen is a moment, not a cadence.
+         ⚠ SPANS THE CAMERA, NOT THE WORLD. Bullets live in world space and stage 1's world is
+         800 against a 480 camera, so a curtain built on worldWidth() would put most of itself
+         off-screen and read as a thin scatter — the same VW-vs-world confusion that hid the
+         pop-in for drops. */
+      { const camx=(typeof camX!=='undefined')?camX:0;
+        const gapA=1+(((e._volN/(V.every||1))|0)%5), gapB=(gapA+3)%7;
+        for(let i=0;i<7;i++){
+          if(i===gapA || i===gapB) continue;
+          eShoot(camx + VW*(0.07+i*0.145), Math.max(y, 6), D, 2.2, k);
+        } }
+      break;
+    case 'ripple':
+      /* SCREEN FILLING, ROLLING. The same span, but each round starts a little further back, so
+         it arrives as a wave travelling across the screen instead of a wall appearing at once.
+         The stagger is a y offset, not a timer: enemy bullets move per FRAME (see 0811p), so an
+         offset in y IS a delay and needs no per-round bookkeeping to stay in step. */
+      { const camx=(typeof camX!=='undefined')?camX:0;
+        const dir=(((e._volN/(V.every||1))|0)%2)?1:-1;
+        for(let i=0;i<8;i++){
+          const t=(dir>0? i : 7-i);
+          eShoot(camx + VW*(0.06+i*0.126), Math.max(y,6) - t*13, D, 2.3, k);
+        } }
       break;
     default: return false;
   }
