@@ -7,6 +7,15 @@ Mike: "make sure enemies do not collide with each other or stack on each other l
 OVERLAP is measured as the worst pair on any frame, as a fraction of the smaller unit's box, so a
 number here is "how buried was the most buried unit" rather than a count that hides severity.
 BOATS-ON-LAND samples the land mask under each naval unit, which is the same alpha the game uses.
+
+MEASURED BASELINES, with no separation and no water rule in the tree (drop 0811j):
+
+    stage 1   839 overlapping pair-frames, worst 71.9% burial, 955/955 naval samples ON LAND
+    stage 4   127 overlapping pair-frames, worst 153.6% burial (one unit fully inside another)
+
+Those are the numbers any fix has to beat. For reference, the reverted relaxation pass took stage 1
+from 839 pair-frames to 152 and the worst case from 71.9% to 51.8% - it helped a great deal and
+still did not clear it, which is worth knowing before someone assumes a nudge is enough.
 """
 import http.server, socketserver, threading, os, functools
 GAME=r'C:/Users/Mdogg/Desktop/BOF-CODE/BulletsOfFury'
