@@ -148,7 +148,28 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811O.md`, then `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811P.md`, then `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811p — "projectiles appear wobbly SOMETIMES" is one system, and it is fixed.** "Sometimes" was
+the diagnosis: a shape that is always the same is an authored corkscrew, one that changes with the
+frame time is a bug — so it was measurable without asking which projectile. `probe_wobble.py` flies
+every enemy bullet kind twice over the same simulated duration, steady 1/60 against a jittering
+frame time. **Ten of eleven are 0.00 lateral and frame-rate independent** (mg, shell, dart, ice,
+flare, minigunT, chaingunT, bolt, emissile, groundup). One is not: the swirl missile.
+
+⚠ **TWO CLOCKS IN ONE MOTION.** The swirl added a per-FRAME offset to position while its phase
+advanced on real TIME, and `b.x += b.vx` has no `dt` either — so forward travel is per-frame and
+the corkscrew is per-second, and any hitch desynchronises them. Its amplitude also scaled with
+frame rate (summing a cosine over frames is `amp/(HZ*dt)`). It is an absolute function of time now,
+applied as its delta. **The 60fps look is reproduced deliberately** (`SWIRL_AMP = 1.9*60/7.4`) —
+Mike signed that swirl off in 0808w, so the fix is frame-rate independence, not a straight line.
+Measured 27.68 steady both before and after; drift 4.84 → 1.03.
+
+⚠ **THE WHOLE ENEMY BULLET SYSTEM MOVES PER FRAME, NOT PER SECOND** (`b.x += b.vx`, no `dt`). That
+is the residual 1.03px. Putting `dt` on that line changes the speed of every enemy bullet in the
+game — every `spd` in every `eShoot` call was tuned against per-frame motion — so it is a balance
+change across nine stages wearing a bug fix. **Left alone deliberately; it needs Mike.**
+
 
 **0811o — "ENEMIES APPEARING OUT OF THIN AIR" IS CLOSED, on all eight stages (probe_popin: 0).**
 Two causes, and neither was the one the handoff's §2.3 was chasing — **no y transform was needed on

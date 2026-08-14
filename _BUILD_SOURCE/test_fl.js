@@ -9251,9 +9251,51 @@ console.log("=== 211. black jet salvo ===");
      apart, but every single round that leaves a quad launcher carries the flag (drop 0808w) */
   ok(_s211.swirl>0 && _s211.swirl%4===0,
      'every quad round swirls — '+_s211.swirl+' rounds, a whole number of four-round launches');
-  var _g211=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g211.indexOf("Math.cos(a-Math.PI/2)*sw")>0,
-     'the swirl is perpendicular to each round OWN heading, so it corkscrews along its line');
+  /* ⚠ THIS PINNED A VARIABLE NAME, NOT A PROPERTY (drop 0811p). It required the literal
+     "Math.cos(a-Math.PI/2)*sw" — so renaming `sw` while keeping the maths identical failed it,
+     and a screen-axis wobble spelled with a variable called `sw` would have passed. What it was
+     defending is that the corkscrew is perpendicular to the round's OWN heading rather than to
+     the screen axes, and that is testable directly: on a DIAGONAL heading, a perpendicular
+     offset has to move the round in BOTH x and y. A screen-axis wobble moves it in one. */
+  var _sw211=JSON.parse(vm.runInContext("(function(){"
+    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
+    +"beginStage(1); setState(GS.PLAY); player.reset(); player.invuln=999999;"
+    +"player.x=240; player.y=430;"
+    +"function fly(dt,steps){"
+    +"  enemies.length=0; eBullets.length=0;"
+    +"  eShoot(120, 60, Math.PI/4, 3.0, 'emissile');"      /* a 45-degree heading */
+    +"  var b=eBullets[0]; if(!b) return null;"
+    +"  b._swirl=1; b._swPh=0; b._swAmp=1.15; b.turn=0; b._swerve=null;"
+    +"  var pts=[];"
+    +"  for(var i=0;i<steps && !b.dead;i++){ updatePlay(dt); pts.push([b.x,b.y]); }"
+    +"  if(pts.length<3) return null;"
+    +"  var x0=pts[0][0], y0=pts[0][1], x1=pts[pts.length-1][0], y1=pts[pts.length-1][1];"
+    +"  var dx=x1-x0, dy=y1-y0, L=Math.hypot(dx,dy)||1, worst=0, wi=0;"
+    +"  for(var j=0;j<pts.length;j++){"
+    +"    var d=Math.abs((pts[j][0]-x0)*dy-(pts[j][1]-y0)*dx)/L;"
+    +"    if(d>worst){ worst=d; wi=j; } }"
+    +"  return {lat:+worst.toFixed(2), at:pts[wi], chord:[+dx.toFixed(2),+dy.toFixed(2)]};"
+    +"}"
+    /* same simulated duration, two different frame times */
+    +"var a=fly(1/60,84), c=fly(1/30,42);"
+    +"return JSON.stringify({a:a, c:c});})()", ctxv));
+
+  ok(!!_sw211.a && _sw211.a.lat>2,
+     'a swirl round visibly leaves its straight line ('+(_sw211.a?_sw211.a.lat:'no flight')+'px)');
+  if(_sw211.a){
+    /* perpendicular to a 45-degree heading has BOTH components; a screen-axis wobble has one */
+    ok(Math.abs(_sw211.a.chord[0])>1 && Math.abs(_sw211.a.chord[1])>1,
+       '  and it really is flying a diagonal ('+_sw211.a.chord.join(', ')+')');
+  }
+  /* ⚠ THE NEW CONTRACT, and the reason the old form was a bug: the shape must not depend on how
+     long a frame took. The offset used to ACCUMULATE per frame while its phase advanced on real
+     time, so the corkscrew was a different size at every frame rate — measured 27.7 at a steady
+     1/60 against 22.8 under a jittering one, which is Mike's "appear wobly SOMETIMES". */
+  if(_sw211.a && _sw211.c){
+    var _rel=Math.abs(_sw211.c.lat-_sw211.a.lat)/Math.max(1,_sw211.a.lat);
+    ok(_rel<0.25, 'the corkscrew is the same shape at 1/30 as at 1/60 ('
+       +_sw211.a.lat+' vs '+_sw211.c.lat+', '+(_rel*100).toFixed(0)+'% apart) — it is a function of TIME, not of frames');
+  }
 }
 
 // ===== 212. TWIN NOSE GUNS + JET TRAVEL ROUTES (drop 0808x) =====

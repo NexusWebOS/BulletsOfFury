@@ -14667,11 +14667,35 @@ function updatePlay(dt){
        along its line rather than wobbling on screen axes. Each of the four starts a quarter-turn
        out of phase, so the volley reads as four separate rounds braiding outward instead of one
        shape moving sideways. */
+    /* ⚠ AND THIS IS THE "PROJECTILES APPEAR WOBBLY SOMETIMES" (drop 0811p). Mike's word
+       "sometimes" is the whole diagnosis: a shape that is always the same is an authored
+       corkscrew, one that changes with the frame time is a bug.
+
+       The old form added a per-FRAME cosine to POSITION while its phase advanced on real TIME —
+       two different clocks in one motion. b.x += b.vx has no dt either, so the forward travel is
+       per-frame while the swirl phase is per-second, and any hitch desynchronises them. The
+       accumulated amplitude also scaled with frame rate: sum of cos over frames is
+       (amp*1.9)/(HZ*dt), about 15px at 60fps and something else at any other rate.
+
+       Measured, same simulated duration, steady 1/60 against a jittering frame time:
+
+           every other bullet kind   lateral 0.00 -> 0.00   (mg, shell, dart, ice, flare,
+                                     minigunT, chaingunT, bolt, emissile, groundup)
+           emissile + swirl          lateral 27.7 -> 22.8   a 4.8px change in SHAPE
+
+       So exactly one system wobbles, and this is it. The offset is an ABSOLUTE function of time
+       now, applied as its delta, so the corkscrew is the same shape at any frame rate. The
+       amplitude constant reproduces the 60fps look Mike signed off in 0808w rather than
+       "fixing" the weapon into a straight line — integrating a cosine gives a sine, hence the
+       change of function, and the sin(_swPh) term keeps it starting ON its line. */
     if(b._swirl){
       const a=Math.atan2(b.vy,b.vx);
-      const sw=Math.cos(b.t*7.4 + (b._swPh||0))*(b._swAmp||1)*1.9;
-      b.x += Math.cos(a-Math.PI/2)*sw;
-      b.y += Math.sin(a-Math.PI/2)*sw;
+      const ph=(b._swPh||0);
+      const want=(Math.sin(b.t*SWIRL_HZ+ph)-Math.sin(ph))*(b._swAmp||1)*SWIRL_AMP;
+      const d=want-(b._swOff||0);
+      b.x += Math.cos(a-Math.PI/2)*d;
+      b.y += Math.sin(a-Math.PI/2)*d;
+      b._swOff=want;
     }
     if(b.kind==='emissile'){
       // (b.t already advanced at the loop head — do not double-count)
@@ -19782,6 +19806,11 @@ function navalTick(e, dt){
     e._shotCd-=dt;
   }
 }
+/* The swirl's shape, as time rather than as frames — see the note in the eBullets loop.
+   SWIRL_AMP reproduces what the old per-frame accumulation produced at 60fps, which is the look
+   Mike approved in 0808w: (1.9)/(7.4 * 1/60). Change these to change the corkscrew; nothing else
+   in it is tunable by accident any more. */
+const SWIRL_HZ = 7.4, SWIRL_AMP = 1.9*60/7.4;
 function eShootT(x,y,ang,spd,kind,opts){
   eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, w:7,h:7, kind:kind||'bolt',
     t:0, _ph:(Math.random()*8)|0, pal:opts&&opts.pal, tint:opts&&opts.tint, szMul:opts&&opts.szMul});
