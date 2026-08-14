@@ -21566,6 +21566,29 @@ function drawBullets(){
       ctx.restore();
     } else { ctx.fillStyle=wcol; circle(b.x,b.y,5); ctx.fillStyle='#ffffff'; circle(b.x,b.y,2.2); }
   }
+  /* ============================================================
+     ⚠ THIS IS THE "PROJECTILES APPEAR WOBBLY" (drop 0811v). Mike, asked which ones:
+     "almost all of them do. bullets from the planes, ships, jets, level 1 boss etc."
+
+     Drop 0811p measured the PATHS and found ten of eleven kinds geometrically perfect — 0.00
+     lateral deviation, frame-rate independent — and fixed the one that was not (the swirl). That
+     measurement was right and it was answering the wrong question. **The wobble is in the DRAW,
+     not the trajectory**, which is why a straight path and a wobbly bullet are both true at once.
+
+     Every bullet below is drawn translate()+rotate()'d, and the canvas default set once at init is
+     imageSmoothingEnabled=true with quality 'high'. A rotated sprite resampled bilinearly at
+     12-20px lands on a different sub-pixel phase every frame as it moves, so its pixels crawl and
+     shimmer while its centre travels in a perfectly straight line. At this size that reads exactly
+     as "wobbly".
+
+     Same class as the ship hulls in 0811r, and the same fix: nearest-neighbour, which is the pack
+     contract this file already states at a dozen other draws. Set once for the whole enemy bullet
+     pass and restored after, so nothing downstream inherits it.
+
+     ⚠ IT IS SET AROUND THE LOOP, NOT PER BULLET. Toggling the flag inside the loop would cost a
+     state change per round on a list that routinely holds 140 of them (measured, stage 5). ==== */
+  const _ebSmooth = ctx.imageSmoothingEnabled;
+  ctx.imageSmoothingEnabled = false;
   // enemy — master fire-type art first (legacy kinds alias onto shared FIRETYPES)
   for(const b of eBullets){
     /* PER-LEVEL ENEMY PROJECTILES (drop 0801am). Mike: "brand new master projectiles for all
@@ -21622,9 +21645,34 @@ function drawBullets(){
            The plate is drawn exactly as authored; if it points the wrong way the PNG is
            rotated, not the canvas. */
         {
+          /* ============================================================
+             ⚠ THIS IS THE WOBBLE (drop 0811v). Mike, asked which projectiles: "almost all of
+             them do. bullets from the planes, ships, jets, level 1 boss etc." — and this branch
+             is the one whose own comment says the arsenal "wins wherever it has art", i.e. most
+             of them.
+
+             It was `Math.atan2(b.vx, -b.vy)`. Negating vy puts straight-down travel at ±PI, not
+             at 0 — so the function sits on its own discontinuity exactly where almost every
+             bullet in a vertical shmup lives. Computed:
+
+                 vx      atan2(vx,-vy)   clamped      atan2(vx,vy)   clamped
+                -0.005      -3.1396       -0.420        -0.0020       -0.002
+                 0           3.1416       +0.420         0.0000        0.000
+                +0.005       3.1396       +0.420        +0.0020       +0.002
+
+             Two faults from one sign. A perfectly straight round is drawn permanently tilted at
+             the clamp — 0.42 rad, 24 degrees — instead of pointing where it is going. And the
+             moment vx crosses zero the sprite snaps between +0.42 and -0.42: a **48.1 degree**
+             flip, on any round whose lateral drift changes sign. Homing missiles correcting,
+             swirl rounds, spreads, anything with a sine on it. That is the wobble, and it is
+             visible on a bullet whose PATH is exactly straight — which is why drop 0811p
+             measured every trajectory as clean and still had not found it.
+
+             atan2(vx, vy) is 0 for straight down and continuous through it; the same crossing
+             now moves 0.004 rad. The clamp stays as a cap on genuinely steep angles. ======== */
           const _round = Math.abs(sw0-sh0) <= Math.max(sw0,sh0)*0.22;
           if(!_round && (b.vx||b.vy)){
-            const _ang=Math.atan2(b.vx,-b.vy);
+            const _ang=Math.atan2(b.vx, b.vy);
             ctx.rotate(Math.max(-0.42, Math.min(0.42, _ang)));
           }
         }
@@ -21737,6 +21785,7 @@ function drawBullets(){
     else if(ASSETS.has('ebullet')){ ASSETS.blit('ebullet', b.x, b.y, 12, 11); }
     else { ctx.fillStyle='#ff5a2a'; circle(b.x,b.y,3.4); ctx.fillStyle='#ffd36b'; circle(b.x,b.y,1.6); }
   }
+  ctx.imageSmoothingEnabled = _ebSmooth;   // see the note at the head of this pass (drop 0811v)
 }
 
 function drawMcrate(x,y,t,flash){

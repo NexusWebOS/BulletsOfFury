@@ -148,7 +148,26 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811U.md`, then `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811V.md`, then `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811v — THE PROJECTILE WOBBLE IS A 48° SPRITE FLIP, and 0811p's "closed" was premature.** The
+arsenal/boss bullet branch rotated by `Math.atan2(b.vx, -b.vy)` under a ±0.42 clamp. Negating vy
+puts straight-down at **±π** — exactly where every bullet in a vertical shmup lives — so **every**
+value of vx clamps to ±0.42: a straight round is drawn permanently tilted **24°** carrying no
+heading information, and the instant vx crosses zero the sprite snaps **48.1°**. `atan2(vx, vy)` is
+0 for straight down and continuous; the same crossing now moves 0.004 rad, and straight-down means
+rotation 0, which is what this branch's own "drawn exactly as authored, no flip" contract asks for.
+
+⚠ **THE OTHER `atan2(vx,-vy)` SITES ARE NOT THIS BUG.** 20558/20756 feed a 24-way sprite index
+through `mod 24`, so ±π lands on the same index; 21320 has no clamp, and π correctly points an
+up-authored sprite down. **The fault was that formula COMBINED WITH a near-zero clamp.**
+
+⚠ **AND A PROBE REFUSED MY FIRST HYPOTHESIS.** I said the wobble was bilinear smoothing on rotated
+sprites, by analogy with the ship hulls (0811r), and built `probe_bulletshimmer.py` to confirm it —
+it returned **25.4% churn smoothed against 28.5% nearest**, i.e. worse under my own fix. The metric
+counts discrete pixel differences, which nearest maximises. The nearest-neighbour change on the
+bullet pass is KEPT but on pack-contract/crispness grounds, **not** as the wobble fix. An analogy
+was doing the work that evidence should have.
 
 ## ⚠ THE SUITE IS DETERMINISTIC NOW — **2,505 / 221 / 5**, EVERY RUN
 
