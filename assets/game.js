@@ -31768,9 +31768,25 @@ function drawCommWindow(o){
     }
   }
   const rx=inL+pbW+14, rw=inW-pbW-22;
+  /* THE PILOT NAME USES THE AUTHORED FACE (drop 0811f). Mike: "you have werid fonts wen selecting
+     a character." Two font systems were live on that one screen: the title goes through msgText and
+     the BOF glyph art, while this window drew raw canvas text in "BOFmil", monospace " which falls
+     back to the browser's monospace whenever that webfont has not loaded, and that is the plain
+     typewriter face in his screenshot sitting under a hand-authored heading.
+     The BODY text still uses canvas text: it wraps and types out character by character, and
+     stageText has no wrap or measure, so converting it needs a line-breaker rather than a
+     one-line swap. The NAME is a single line and moves cleanly. */
   ctx.textAlign='left'; ctx.fillStyle=t; ctx.font='20px "BOFmil", monospace';
+  if(typeof msgText==='function'){
+    /* ⚠ MEASURE AFTER SETTING THE FONT. The first cut measured the name with whatever face was
+       current from the previous draw, so the centring was off by however much the two faces
+       differed. msgText centres on cx, and this window lays its text out from a LEFT edge (rx),
+       so the half-width has to be right or the name walks. */
+    const _nm=String(o.name||'').toUpperCase();
+    msgText(_nm, rx + ctx.measureText(_nm).width*0.5, inT+20, 20, t, 1, 1, 0.08);
+  }
   ctx.shadowColor='rgba(0,0,0,0.8)'; ctx.shadowBlur=3;
-  ctx.fillText((o.name||'').toUpperCase(), rx, inT+26);
+  if(typeof msgText!=='function') ctx.fillText((o.name||'').toUpperCase(), rx, inT+26);
   if(o.text){ ctx.fillStyle='#eaf2ff'; ctx.font='14px "BOFmil", monospace';
     // typewriter: only reveal up to charsShown characters when provided
     let shown=o.text;
