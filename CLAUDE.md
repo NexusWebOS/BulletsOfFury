@@ -148,7 +148,31 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811V.md`, then `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0811W.md`, then `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0811w — the laser. One real fix; the visual upgrade FAILED and is reverted.**
+⚠ **THE LIVE LASER HAS BEEN FIRING OUT OF NOTHING.** The v2.2 branch asks for `nlz_<lv>_m0..5` and
+the manifest holds **ZERO at all five levels**, while the legacy muzzle orb was gated off whenever
+the v2.2 beam was live. Orb ungated — existing authored code, only ever needed to be allowed to run.
+
+⚠ **THE FIVE BEAM PLATES ARE THE SAME PICTURE IN FIVE HUES** — all 64x320, ink 57–62%, core width
+59–63%, luminance 157–189. **The art cannot carry a tier progression.** Level 3 is a flat poster
+green with almost no lit centre (why Mike singled it out); level 4 reads dirty grey. What the laser
+needs is ART with per-tier internal contrast, not draw tuning.
+
+⚠ **THE WIDTH ALREADY GROWS** — `beam.w = 14+lv*4`, 18px to 34px, driving the hit column too. My
+first probe drew every tier at a constant 14 and I nearly rebuilt a progression that works. **A
+probe that invents its own scale is not showing the game.**
+
+⚠ **MY DRAW-SIDE TIERING WASHED THE SCREEN WHITE, TWICE, AND IS REVERTED.** Additive layers compound
+far faster than their alphas suggest — three `lighter` passes over a plate that carries its own
+light, plus the pulse blobs already there, saturate long before any one layer looks strong. **And I
+had no baseline: I rendered the ART before changing anything but never the LIVE beam.**
+
+⚠ **FRAME-DIFFING TO SIZE THE BEAM DOES NOT WORK HERE AND I KNEW THAT.** With/without diff reported
+~475px lit at every tier — the whole row — because `drawWorld` reads `performance.now()` directly.
+Documented in 0811m, by me, and walked into again. Use the crop; quote `beam.w`, which is read off
+the object rather than inferred from pixels.
 
 **0811v — THE PROJECTILE WOBBLE IS A 48° SPRITE FLIP, and 0811p's "closed" was premature.** The
 arsenal/boss bullet branch rotated by `Math.atan2(b.vx, -b.vy)` under a ±0.42 clamp. Negating vy

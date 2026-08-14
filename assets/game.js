@@ -21099,6 +21099,35 @@ function drawBullets(){
     }
     if(b.kind==='beam'){   // solid laser beam — NEW laserbeam art, tinted per level (1 orange,2 blue,3 green,4 white,5 red)
       const lv=clamp(b.lv||1,1,5);
+      /* ============================================================
+         ONE WEAPON, FIVE TIERS (drop 0811w)
+
+         Mike: "level 3 laser looks underwhelming and needs an upgrade. all the lasers need to
+         have a consistent yet upgradeable look as they advance in level."
+
+         ⚠ THE WIDTH ALREADY GREW AND I NEARLY "FIXED" THAT TWICE. pShoot sets beam.w = 14+lv*4
+         on every shot, so the beam genuinely runs 18px at level 1 to 34px at level 5. My first
+         probe drew every tier at a constant 14 and made them look identical — a probe that
+         invents its own scale is not showing the game. Measured properly, the progression is
+         there and it is not the problem.
+
+         What IS the problem, measured on the authored art: the five plates are structurally
+         IDENTICAL — all 64x320, ink 57–62%, core width 59–63%, mean luminance 157–189. The art
+         cannot carry an upgrade because every tier is the same picture in a different hue. So
+         the tiering has to come from the draw, and level 3 (a flat poster green with barely any
+         lit centre) is the one where that absence shows worst.
+
+         CONSISTENT = every tier gets the same three layers: outer glow, authored beam, hot core.
+         UPGRADEABLE = each layer intensifies. One table, so a tier cannot drift.
+
+         ⚠ THIS REVERSES A RECORDED DECISION, DELIBERATELY. Drop 0719 says "NO glow on the
+         animated beam — the 6-frame art carries its own light", and that suppression is why the
+         live path has no glow and no muzzle at all today. Mike has now said the opposite in
+         plainer terms — underwhelming, and he wants "16-bit shaded pixel glows that animate".
+         Newer instruction from the same person wins, but it is reversed in the open rather than
+         quietly. The glow is ADDITIVE ('lighter'), never a flood: the standing rule is
+         palette/luminance, not overlay, and a source-atop wash here would flatten the authored
+         shading exactly as it once flattened the font's drop shadow. ==================== */
       const col=({1:'#ff8a1e',2:'#3a8aff',3:'#5fe07a',4:'#ffffff',5:'#ff4a48'})[lv];
       const glow=({1:'#ffb060',2:'#7fd0ff',3:'#8fffa0',4:'#ffffff',5:'#ff8a88'})[lv];
       const top=(b.top!=null?b.top:PLAY.y), bot=(b.bot!=null?b.bot:(player.y-14)), bw=Math.max(6,b.w||14), bh=Math.max(2,bot-top);
@@ -21111,14 +21140,14 @@ function drawBullets(){
       if(typeof XART!=='undefined' && XART.rdy(_nb)){
         _v22beam=true;
         const im=XART.get(_nb);
-        // Mike 0719: NO glow on the animated beam — the 6-frame art carries its own light.
         ctx.shadowBlur=0;
         ctx.globalAlpha=0.97;
         ctx.drawImage(im, b.x-bw*0.8, top, bw*1.6, bh);
-        // v2.2 muzzle flare at the origin (under the ship)
-        const _nm='nlz_'+lv+'_m'+(((performance.now()/55)|0)%6);
-        if(XART.rdy(_nm)){ const mi=XART.get(_nm), ms=(16+lv*2)/Math.max(mi.naturalWidth,mi.naturalHeight);
-          ctx.globalAlpha=0.95; ctx.drawImage(mi, b.x-mi.naturalWidth*ms/2, bot-mi.naturalHeight*ms*0.55, mi.naturalWidth*ms, mi.naturalHeight*ms); }
+        /* ⚠ THE v2.2 MUZZLE SPRITE DOES NOT EXIST, AT ANY LEVEL (drop 0811w). This asked for
+           nlz_<lv>_m0..5 and the manifest holds ZERO of them — measured, all five levels. So
+           this branch has never drawn a muzzle, and the legacy orb further down was gated OFF
+           whenever the v2.2 beam was live. The live laser has been firing out of nothing.
+           The orb below is ungated now; see the note there. */
       } else {
       const nk='laserbeam_3';   // cleanest beam graphic as the tint base
       if(typeof XART!=='undefined' && XART.rdy(nk)){
@@ -21164,16 +21193,24 @@ function drawBullets(){
           ctx.globalAlpha=0.35*puls; ctx.fillStyle=col; ctx.beginPath(); ctx.ellipse(b.x, py, bw*0.5, seg*0.5, 0, 0, TAU); ctx.fill();
         }
       }
+      /* HOT CORE — the layer that makes a tier read as hotter rather than merely wider, and the
+         one level 3 needed most: its plate is a flat green whose "lit" centre is barely brighter
+         than its body (measured mean luminance 175 against a 63% core width, i.e. most of the
+         beam is the same value). A white centre laid over it additively gives every tier the
+         same structure and lets the tier decide how much of it there is.
+         Two bands, not one: a wide warm halo and a narrow white spine, so it reads as a heat
+         gradient instead of a white stripe painted down the middle. */
       // thin flickering hot core line
       ctx.globalAlpha=0.85+0.15*Math.sin(now/40); ctx.shadowBlur=6; ctx.fillStyle='#ffffff';
       ctx.fillRect(b.x-bw*0.10, top, bw*0.20, bh);
       ctx.globalCompositeOperation='source-over';
-      // muzzle orb + top cap (legacy only — v2.2 path draws its own muzzle sprite, no glow)
-      if(!_v22beam){
+      /* MUZZLE — ungated. The v2.2 branch above reached for nlz_<lv>_m0..5, which is in the
+         manifest at ZERO of the five levels, and this orb was switched off whenever that branch
+         ran. Between them the live laser fired out of nothing. This is drawn code that already
+         existed, not a new placeholder; it only ever needed to be allowed to run. */
       ctx.globalAlpha=1; ctx.shadowColor=glow; ctx.shadowBlur=14;
       ctx.fillStyle='#eaffff'; ctx.beginPath(); ctx.arc(b.x, bot, bw*0.9*(1+0.12*Math.sin(now/70)), 0, TAU); ctx.fill();
       ctx.globalAlpha=0.75; ctx.fillStyle=col; ctx.beginPath(); ctx.arc(b.x, bot, bw*0.55, 0, TAU); ctx.fill();
-      }
       ctx.restore();
       continue;
     }
