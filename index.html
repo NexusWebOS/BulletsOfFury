@@ -5,7 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,viewport-fit=cover">
 <title>Bullets of Fury</title>
 <style>
-  @font-face{ font-family:'BOFmil'; src:url('assets/fonts/BlackOpsOne.ttf') format('truetype'); font-display:swap; }
+  <!-- assets/fonts/ DOES NOT EXIST. The file is at assets/game/BlackOpsOne.ttf and always has
+       been, so this @font-face 404'd on every boot and every BOFmil string fell back to the
+       generic monospace in the stacks below. One of the two long-standing boot 404s recorded in
+       CLAUDE.md; the other is assets/data/ui_layout.json, which is optional and guarded. -->
+  @font-face{ font-family:'BOFmil'; src:url('assets/game/BlackOpsOne.ttf') format('truetype'); font-display:swap; }
   html,body{margin:0;padding:0;height:100%;background:#05060a;overflow:hidden;
     font-family:"Courier New",monospace;color:#cfd6e0;-webkit-user-select:none;user-select:none;touch-action:none;}
   /* ROOM: a simple centred row — credits, game, credits. No cabinet, no filtered ancestor. */

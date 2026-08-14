@@ -1,0 +1,35 @@
+BULLETS OF FURY
+ColeForge
+
+
+TO PLAY
+-------
+1. Unzip the whole folder somewhere, keeping it together.
+2. Double-click  index.html
+
+It opens in your browser and runs straight from the file - no installer, no server
+to start, nothing to sign up for. Chrome, Edge and Firefox are all fine.
+
+Keep the "assets" folder next to index.html. Move index.html on its own and you
+get a black screen, because everything it draws lives in that folder.
+
+
+CONTROLS
+--------
+  W A S D  or  arrow keys     fly
+  J                           fire   (hold it down)
+  K                           bomb / special
+  C                           retina lock-on
+
+  Enter, Space or J           confirm
+  Esc, Backspace or K         back
+
+A gamepad works too if one is plugged in. The keys can be rebound in Options.
+
+
+IF SOMETHING LOOKS OFF
+----------------------
+The first load takes a few seconds while the art decodes. After that it is quick.
+
+
+A work-in-progress build. Nine stages, nine pilots, the art all hand-drawn.
