@@ -10146,6 +10146,40 @@ console.log("=== 224. pilot screen font ===");
   ok(/uiFontWarm\(\);/.test(_dp), 'and the pilot screen calls it');
 }
 
+// ===== 225. UNITS ENTER, THEY DO NOT SWITCH ON (drop 0812k) =====
+console.log("=== 225. entry, not materialisation ===");
+{
+  var _g225=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  /* ⚠ THE NAVAL FLOOR RAN ON THE FIRST TICK. Boats are spawned above the top edge — y -40 — and
+     `clamp(e.y, 40, VH-60)` snapped them to +40 in a single frame: 95% of an 88px hull switching
+     on at age zero. Tracked frame by frame; that is the "appearing out of thin air". The floor is
+     correct (a naval unit holds station and drifts south at only ~7px/s, so removing it would make
+     the flotilla take thirteen seconds to arrive) — applying it before arrival was not. */
+  /* ⚠ THE FLOOR IS IN navalSteer, NOT navalTick — I sliced the wrong function first and failed on
+     working code. navalTick handles the water mask; navalSteer owns the heading and the clamp. */
+  var _nsI=_g225.indexOf('function navalSteer(');
+  var _nt=_g225.slice(_nsI, _nsI+6000);
+  ok(/_navIn/.test(_nt), 'the naval station floor waits for the hull to arrive');
+  ok(/NAVAL_ENTRY_SPD/.test(_nt), 'and there is a real descent speed for the approach');
+  ok(!/^\s*e\.y=clamp\(e\.y, 40, VH-60\);\s*$/m.test(_nt),
+     'the unconditional floor is gone');
+
+  /* ⚠ AND A SIDE ENTRY MUST CLEAR THE SPRITE. offRightX/offLeftX put the CENTRE 28px past the
+     world edge while the stage-1 jets are 73 and 101 wide, so the hull was already protruding
+     into the world at spawn — and with the camera panned the world edge IS the screen edge. */
+  ok(/A SIDE ENTRY HAS TO CLEAR THE SPRITE/.test(_g225), 'side spawns clear their own half-width');
+  var _f225=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true; run.stage=1;"
+    +"try{ beginStage(1); }catch(e){} setState(GS.PLAY); enemies.length=0;"
+    +"var W=(typeof worldWidth==='function')?worldWidth():VW;"
+    +"var a=spawnEnemy('s1jetdelta', offRightX(28), 120, {});"
+    +"var b=spawnEnemy('s1jetbomber', offLeftX(28), 120, {});"
+    +"return JSON.stringify({W:W, ax:a.x, aw:a.w, bx:b.x, bw:b.w});})()", ctxv));
+  ok(_f225.ax >= _f225.W + _f225.aw/2,
+     'a right-side spawn starts fully outside ('+Math.round(_f225.ax)+' vs world '+_f225.W+' + half '+Math.round(_f225.aw/2)+')');
+  ok(_f225.bx <= -_f225.bw/2,
+     'and a left-side spawn too ('+Math.round(_f225.bx)+' vs half '+Math.round(_f225.bw/2)+')');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');

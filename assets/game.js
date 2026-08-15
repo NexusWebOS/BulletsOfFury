@@ -6944,6 +6944,32 @@ const SHIPS=[];
      "is this thing airborne", and the measurement to confirm it is /tmp-style probe_pop (spawnEnemy
      wrapped, flagging any unit whose top edge is > 0 on its first frame). */
 
+  /* ============================================================
+     ⚠ A SIDE ENTRY HAS TO CLEAR THE SPRITE, NOT JUST THE WORLD EDGE (drop 0812k)
+
+     Mike: "those enemies ... appeared out of thin air instead of coming from the top of the screen."
+
+     `offRightX(28)` / `offLeftX(28)` put the unit's CENTRE 28px beyond the world edge, and the
+     stage-1 jets are 73 and 101 wide — half-widths of 36 and 50. So the sprite was already
+     protruding into the world at the instant it spawned, and with the camera panned right the
+     world edge IS the screen edge: measured, the first frame a jet was drawable and in view had it
+     at sx 483 of a 480-wide view with 46% of the hull showing. It did not fly in; half of it
+     switched on at the edge.
+
+     ⚠ HORIZONTAL ONLY, AND ONLY FOR UNITS ALREADY OUTSIDE. The note above this records an earlier
+     pop-in fix that was reverted because it lifted units vertically and sent ground rigs off their
+     band. Nothing here touches y, and a unit spawned inside the world is not moved at all — the
+     clamp engages solely when the centre is already past an edge but the body is not.
+
+     Fixing it here rather than at the ~40 call sites means every stage gets it, and it is the
+     branch that owns the finished object: `c.w` is final by this point, which it is not at the
+     `offRightX()` call. ============================================================ */
+  {
+    const _W=(typeof worldWidth==='function')?worldWidth():VW;
+    const _clr=(c.w||32)/2 + 6;
+    if(c.x>=_W && c.x<_W+_clr)      c.x=_W+_clr;
+    else if(c.x<=0 && c.x>-_clr)    c.x=-_clr;
+  }
   enemies.push(c);
   return c;
 }
@@ -19421,6 +19447,10 @@ const NAVAL_RELOAD    = 5.0;    // the patrol boat between launches
 const NAVAL_BURST_GAP = 2.0;     // the silence between volleys — fixed, so it can be learned
 const NAVAL_MG_GAP    = 0.40;    // half the player's ~0.20s cadence
 const NAVAL_ARC = 0.62;          // radians either side of the bow that counts as "in their six"
+/* px/sec a hull descends from its spawn point above the top edge to its station line. 90px of
+   travel at this speed is a bit under a second - long enough to read as an approach, short enough
+   that the flotilla is in position for the beat the wave script timed it for. */
+const NAVAL_ENTRY_SPD = 110;
 const NAVAL_WET_PULL = 64;       // px/sec a hull steers back toward the channel — a correction, not a snap
 const NAVAL_DIRS = [0,1,2,3,4,5,6,7].map(i=>i*Math.PI/4);   // the eight headings
 
@@ -19457,7 +19487,29 @@ function navalSteer(e, dt){
   /* HOLD STATION AGAINST THE SCROLL — it moves, it does not ride the map */
   if(typeof _lastScrollDy!=='undefined') e.y += _lastScrollDy;
   e.x=clamp(e.x, 26, (typeof worldWidth==='function'?worldWidth():VW)-26);
-  e.y=clamp(e.y, 40, VH-60);
+  /* ============================================================
+     ⚠ THIS FLOOR TELEPORTED EVERY BOAT ONTO THE SCREEN (drop 0812k)
+
+     Mike: "those enemies ... appeared out of thin air instead of coming from the top of the
+     screen." The waves spawn the flotilla correctly above the top edge — `spawnEnemy('s1boatpatrol',
+     VW*0.22, -40)` — and then `clamp(e.y, 40, VH-60)` ran on its FIRST tick and snapped it from
+     -50 to +40 in one frame. Tracked: y -50 -> 40 between frame -1 and frame 0, then flat. With an
+     88px hull that is 95% of the boat switching on at once, at age zero. It was not entering
+     slowly; it was never entering at all.
+
+     ⚠ AND THE FLOOR CANNOT SIMPLY BE REMOVED. A naval unit holds station against the scroll and
+     its own southward drift is only `sin(hdg)*20*0.34` ≈ 7px/s, so without a floor the flotilla
+     would take THIRTEEN SECONDS to travel the 90px in. The floor is right; applying it before the
+     hull has arrived is what was wrong.
+
+     So there is now an approach: while it is still above the line it descends at a deliberate
+     entry speed, and the floor engages once — and only once — it has arrived. `_navIn` latches so
+     a boat pushed back up by the scroll is not re-entered. ============================================================ */
+  if(!e._navIn){
+    if(e.y<40) e.y=Math.min(40, e.y + NAVAL_ENTRY_SPD*dt);
+    if(e.y>=40) e._navIn=1;
+  }
+  e.y = e._navIn ? clamp(e.y, 40, VH-60) : Math.min(e.y, VH-60);
 }
 /* THE BARREL, NOT THE HULL CENTRE (drop 0808o). Mike: "Ensure your using muzzle flash anchored
    to the barrel of the turret of the ship, same with the rockets."
