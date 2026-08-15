@@ -12800,7 +12800,30 @@ function warmStage(n){
      no reason to re-introduce it here. The stage's own sub-boss kind picks the pack;
      anything unmapped falls back to warming nothing rather than guessing. */
   {
-    const _PACKOF = {obsidiandrill:'nobd_', glacierrail:'nglr_'};
+    /* ⚠ THIS TABLE ONLY EVER COVERED TWO RETIRED KINDS (drop 0812c). Mike's tester: *"a miniboss
+       is still just the hitbox square."* Measured at the moment of the spawn, after a full
+       beginStage + warmStage, with XART.rdy wrapped to record what it was asked for:
+
+         stage 2  siegeember   nsb_siege_ember   NOT READY
+         stage 3  thornrime    nsb_thorn_rime    NOT READY
+         stage 4  blacksteel   nsb_blacksteel    NOT READY
+
+       So the art is not missing and the miniboss is not unbuilt — **nothing warms its hull**, and
+       `XART.rdy()` is what STARTS a decode, so the fight opens on the placeholder and swaps to the
+       real ship a second or two later. That is the square in his screenshot.
+
+       ⚠ IT IS NOT ENOUGH TO WARM BY KIND NAME. The line above already does `addPrefix(kind)` —
+       'siegeember' — and the hull key is 'nsb_siege_ember'. A kind name is not an art prefix; that
+       assumption is what left these three uncovered while stage 1 (warmed explicitly as 'nqx_')
+       looked fine.
+
+       Kept NARROW on purpose: one key each. 0801kl had to cut this same block back from 555 images
+       because warming every pack stalled the liquid beds. */
+    const _PACKOF = {
+      obsidiandrill:'nobd_', glacierrail:'nglr_',
+      siegeember:'nsb_siege_ember', thornrime:'nsb_thorn_rime', blacksteel:'nsb_blacksteel',
+      herald:'nev_venom_',        // the Herald's attack reel; its mba_vr_ plates are NOT in XART
+    };
     const _sb = (typeof SUBBOSS!=='undefined' && SUBBOSS[n]) ? SUBBOSS[n].kind : null;
     if(_sb && _PACKOF[_sb]) addPrefix(_PACKOF[_sb]);
   }

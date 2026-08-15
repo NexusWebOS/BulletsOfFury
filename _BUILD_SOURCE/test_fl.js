@@ -9860,6 +9860,33 @@ console.log("=== 217. stats alignment + menu pointers ===");
   ok(_f217.donorPct===true, "and stageArt['2'] — stage2.png — is the sheet it borrows from");
 }
 
+// ===== 218. EVERY MINIBOSS'S HULL IS WARMED BEFORE IT SPAWNS (drop 0812c) =====
+console.log("=== 218. miniboss art warming ===");
+{
+  /* "A miniboss is still just the hitbox square." It was not unbuilt and its art was not missing:
+     nothing warmed the hull, and XART.rdy() is what STARTS a decode, so the fight opened on the
+     placeholder. Measured with XART.rdy wrapped — see _BUILD_SOURCE/probe_miniwarm.py.
+
+     ⚠ A KIND NAME IS NOT AN ART PREFIX. warmStage already did addPrefix(SUBBOSS[n].kind), i.e.
+     'siegeember', while the hull key is 'nsb_siege_ember' — which is why these three were missed
+     while stage 1 (warmed explicitly as 'nqx_') looked fine. That is the assumption pinned here. */
+  var _g218=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  var _hulls={siegeember:'nsb_siege_ember', thornrime:'nsb_thorn_rime', blacksteel:'nsb_blacksteel'};
+  for(var _k in _hulls){
+    ok(new RegExp(_k+"\\s*:\\s*'"+_hulls[_k]+"'").test(_g218),
+       'warmStage warms '+_k+"'s hull ("+_hulls[_k]+') before the fight');
+  }
+  ok(/herald\s*:\s*'nev_venom_'/.test(_g218), "and the Herald's attack reel");
+
+  /* every stage has a miniboss to warm in the first place */
+  var _f218=JSON.parse(vm.runInContext("(function(){var o={};"
+    +"for(var i=1;i<=8;i++) o[i]=(typeof SUBBOSS!=='undefined'&&SUBBOSS[i])?(SUBBOSS[i].kind||null):null;"
+    +"return JSON.stringify(o);})()", ctxv));
+  var _nokind=[];
+  for(var _s=1;_s<=8;_s++) if(!_f218[_s]) _nokind.push(_s);
+  ok(_nokind.length===0, 'all eight stages name a miniboss'+(_nokind.length?(' — missing: '+_nokind.join(', ')):''));
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');

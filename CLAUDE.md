@@ -148,7 +148,18 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0812B.md`, then `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0812C.md`, then `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0812c — the miniboss "hitbox square" is an UNWARMED HULL, on three stages.**
+⚠ **A KIND NAME IS NOT AN ART PREFIX.** `warmStage` warmed `addPrefix(SUBBOSS[n].kind)` —
+`'siegeember'` — while the hull key is `'nsb_siege_ember'`, so stages 2/3/4 opened their miniboss
+fight on the placeholder and swapped to the real ship a second later. Stage 1 only looked fine
+because 0801kd warms `'nqx_'` explicitly. `_PACKOF` now maps the three hulls and the Herald's reel.
+⚠ **AND BOTH OF MY FIRST TWO ANSWERS WERE PROBE ARTEFACTS** — `XART.rdy()` is false on its first
+call *because it starts the decode*, so spawning and screenshotting in one synchronous block
+photographs the placeholder; and a "boxy" test based on equal row extents also fires on any sprite
+larger than the scan window. **Open the PNG.**
+⚠ The Herald's `mba_vr_*` plates are **not in `XART._src` at all** — routed around, not resolved.
 
 **0812b — six art files were MISSING FROM THE WORKING TREE, deleted and never committed:**
 `logo.png` and `stage1..5.png`. Restored with `git checkout --`.
@@ -505,7 +516,7 @@ and reports settled burial. **The 839 / 71.9% baselines quoted in the handoff ar
 ⚠ **The recurring failure this stretch was systems that were declared and never fired** — the quad-laser's muzzles, `_qlChg`, `enemyVolley` sharing a `fireCd` its unit's tick owns, `micon_` asked of the wrong store, `lordshadows` registered and referenced nowhere. In every case the state looked right and no pixel moved. **Render it, then believe it.**
 
 
-Suite: **2,507 assertions / 222 sections / 5 failures** (drop 0812b) — the preload count, the two
+Suite: **2,512 assertions / 223 sections / 5 failures** (drop 0812c) — the preload count, the two
 `_superseded` ones, the volley round count and the naval flash families. ⚠ **If you see more than
 five, check `git status` for deleted art before you debug anything** — a missing file trips nine
 assertions across four sections and reads as an unrelated pile of failures.
