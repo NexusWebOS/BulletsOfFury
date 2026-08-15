@@ -10288,6 +10288,60 @@ console.log("=== 227. vile forms ===");
   ok(_f227.forms===4, 'all four forms are still defined ('+_f227.forms+')');
 }
 
+// ===== 228. THE ROLL COOLDOWN AND THE TWO CORNER READOUTS (drop 0812p) =====
+console.log("=== 228. roll cooldown + HUD corners ===");
+{
+  var _g228=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  /* Mike settled the tester's barrel-roll complaint himself: "lets do a 5 second cooldown on
+     barrel rolling." It was 0.18 — a lockout that only stopped two rolls in the same instant,
+     which is why it kept firing on micro-adjustments. */
+  var _f228=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true; run.stage=1;"
+    +"try{ beginStage(1); }catch(e){} setState(GS.PLAY); player.reset();"
+    +"player.invuln=0; player._rollCool=0;"
+    +"startRoll(1); var rolled=!!player.roll;"
+    +"for(var i=0;i<60 && player.roll;i++) updateRoll(1/60);"
+    +"var cool=player._rollCool||0;"
+    +"startRoll(-1); var refused=!player.roll;"
+    +"player._rollCool=0; startRoll(-1); var allowed=!!player.roll;"
+    +"return JSON.stringify({BR:BR_COOL, rolled:rolled, cool:+cool.toFixed(2),"
+    +" refused:refused, allowed:allowed});})()", ctxv));
+  ok(_f228.BR===5.0, 'the barrel roll cooldown is 5 seconds ('+_f228.BR+')');
+  ok(_f228.rolled===true, 'a roll still starts');
+  ok(Math.abs(_f228.cool-5.0)<0.01, 'and arms the FULL cooldown when it finishes ('+_f228.cool+')');
+  ok(_f228.refused===true, 'a second roll during the cooldown is refused');
+  ok(_f228.allowed===true, 'and it re-arms once the cooldown expires');
+
+  /* a 5-second cooldown has to be VISIBLE: at 0.18s the player never needed to know, at 5s an
+     invisible timer is just an input that sometimes does nothing */
+  ok(_g228.indexOf('function drawRollCharge(')>0, 'there is a roll charge bar');
+  ok(_g228.indexOf('function drawEquipCorner(')>0, 'and a corner equip box');
+  var _ovI=_g228.indexOf('function drawHUDOverlay(');
+  var _ov=_g228.slice(_ovI, _ovI+400);
+  ok(_ov.indexOf('drawRollCharge()')>0 && _ov.indexOf('drawEquipCorner()')>0,
+     'both are drawn from the play overlay');
+
+  /* ⚠ nequipbox WAS IN THE BUILD AND DRAWN BY NOTHING — a registered 777x731 "EQUIPPED" plate
+     with ZERO references anywhere in game.js. Not misplaced, not mis-sized: never called. */
+  ok(_g228.indexOf("'nequipbox'")>0, 'the authored EQUIPPED plate is drawn now');
+  var _ec=_g228.slice(_g228.indexOf('function drawEquipCorner('), _ovI);
+  ok(_ec.indexOf('PLAY.x+PLAY.w')>0 && _ec.indexOf('PLAY.y+PLAY.h')>0,
+     'anchored to the play rect corner, which is exactly what the HUD-strip copy was not');
+
+  /* ⚠ micon_ IS THE THIRD ART STORE, AND THE OTHER TWO CANNOT SEE IT. Measured: micon_mg_1 is
+     absent from XART._src, from BOFX.cells AND from ASSETS — it lives in BOFX.icons and draws
+     through iconDraw. Asking the wrong store returns false forever and paints an empty socket,
+     which reads as "the icon is not wired" and is really "asked the wrong store". */
+  ok(_ec.indexOf('iconDraw(wk')>0, 'the equipped icon goes through the icon store, not XART');
+  var _f228b=JSON.parse(vm.runInContext("(function(){ var k='micon_mg_1';"
+    +"return JSON.stringify({src:!!(XART._src&&XART._src[k]),"
+    +" cells:!!(typeof BOFX!=='undefined'&&BOFX.cells&&BOFX.cells[k]),"
+    +" assets:!!(ASSETS.has&&ASSETS.has(k)),"
+    +" icons:!!(typeof BOFX!=='undefined'&&BOFX.icons&&BOFX.icons[k])});})()", ctxv));
+  ok(_f228b.icons===true, 'micon_ lives in BOFX.icons');
+  ok(_f228b.src===false && _f228b.cells===false && _f228b.assets===false,
+     'and in NEITHER other store — asking them is always false');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');

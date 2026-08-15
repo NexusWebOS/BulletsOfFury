@@ -3988,7 +3988,98 @@ function drawHUDStrip(g){
   for(let i=0;i<5;i++){ const on=i<wlv; g.fillStyle=on?wglow:'#1b2430'; g.fillRect(cx[4]-11+i*5,HUDH-9,3.6,3.6); }
   g.textBaseline='alphabetic'; g.textAlign='left';
 }
+/* ============================================================
+   THE TWO CORNER READOUTS (drop 0812p)
+
+   Mike: "make a little charge bar that appears in the bottom left corner, and also I've noticed
+   our equipment box doesnt appear in-game in my hud. Place that on the lower right corner."
+
+   ⚠ WHY THE EQUIPMENT BOX WAS MISSING. It is not missing — it is drawn by drawHUDStrip on the
+   SEPARATE hud canvas, at 0.757..0.913 of VW, i.e. the far right of the strip. His second
+   screenshot is a narrower window with the strip cut off exactly there, so the panel he never sees
+   is the one furthest right. Moving it into the PLAY canvas puts it inside the frame the game
+   actually renders, where nothing can crop it.
+
+   ⚠ AND THE ROLL BAR IS NOT DECORATION. BR_COOL went from 0.18s to 5s in this same drop; at 0.18
+   the player never needed to know, and at 5 an invisible timer is just an input that sometimes
+   does nothing. The bar is the half of that change that keeps it fair.
+
+   Both are drawn in PLAY-area coordinates and anchored to the play rect's own corners, so a
+   different viewport moves them with the frame instead of stranding them. ============================================================ */
+function drawRollCharge(){
+  if(typeof player==='undefined' || !player) return;
+  const cool=player._rollCool||0;
+  const k=(typeof BR_COOL==='number' && BR_COOL>0) ? clamp(1-(cool/BR_COOL),0,1) : 1;
+  const W=54, H=6;
+  const x=(typeof PLAY!=='undefined'?PLAY.x:0)+10;
+  const y=(typeof PLAY!=='undefined'?(PLAY.y+PLAY.h):VH)-16;
+  ctx.save();
+  ctx.globalAlpha=0.92;
+  ctx.fillStyle='rgba(6,9,14,0.72)'; ctx.fillRect(x-2,y-2,W+4,H+4);
+  ctx.fillStyle='#1b2430'; ctx.fillRect(x,y,W,H);
+  /* amber while it refills, and a bright ready state - the READY moment is the thing the player is
+     waiting for, so it is the one that changes colour rather than just filling */
+  const ready=(k>=1);
+  ctx.fillStyle = ready ? '#8de23a' : '#ffae3a';
+  ctx.fillRect(x,y,Math.round(W*k),H);
+  if(ready){ ctx.globalAlpha=0.35+0.35*Math.sin((typeof stateT==='number'?stateT:0)*7); ctx.fillStyle='#dfffc0'; ctx.fillRect(x,y,W,H); ctx.globalAlpha=0.92; }
+  ctx.fillStyle=ready?'#cfe6ff':'#93a4b8';
+  ctx.font='bold 7px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+  ctx.fillText('ROLL', x, y-3);
+  ctx.restore();
+}
+function drawEquipCorner(){
+  /* ⚠ THE EQUIP BOX WAS IN THE BUILD AND DRAWN BY NOTHING (drop 0812p). Mike: "our equipment box
+     doesnt appear in-game in my hud." `nequipbox` is a registered key - a hand-authored 777x731
+     "EQUIPPED" panel with an empty interior - and grep found ZERO references to it in game.js.
+     Not misplaced, not mis-sized: never called. Same shape as the systems CLAUDE.md already lists
+     as declared-and-never-fired.
+
+     ⚠ AND IT IS NOT THE SHIELD/SPEED/WEAP PIP STRIP. My first cut built those pips into a corner
+     panel, which is a DIFFERENT readout that already exists on the HUD strip. This is the authored
+     frame, and what belongs inside it is the weapon you are actually holding.
+
+     The interior window was MEASURED off the plate rather than guessed - the innermost dark run is
+     x 0.218..0.785, y 0.244..0.855 - so the icon sits in the frame's own socket at any scale. */
+  if(typeof XART==='undefined' || !XART.rdy('nequipbox')) return;
+  const im=XART.get('nequipbox');
+  const H=64, W=H*(im.naturalWidth/im.naturalHeight);
+  const x=(typeof PLAY!=='undefined'?(PLAY.x+PLAY.w):VW)-W-6;
+  const y=(typeof PLAY!=='undefined'?(PLAY.y+PLAY.h):VH)-H-6;
+  ctx.save();
+  ctx.imageSmoothingEnabled=false;
+  ctx.globalAlpha=0.95;
+  ctx.drawImage(im, x, y, W, H);
+  /* the socket, in the plate's own fractions */
+  const ix=x+W*0.218, iy=y+H*0.244, iw=W*(0.785-0.218), ih=H*(0.855-0.244);
+  const wlv=clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
+  const wk=(typeof weaponIconKey==='function')?weaponIconKey(run.weapon,clamp(wlv,1,5)):null;
+  /* ⚠ micon_ IS THE THIRD ART STORE, AND NEITHER OF THE OTHER TWO CAN SEE IT. Measured:
+     `micon_mg_1` is absent from XART._src, from BOFX.cells AND from ASSETS - XART.rdy() on it is
+     false forever, which is what an unreachable key looks like. It lives in BOFX.icons and is
+     drawn through iconDraw/iconBlit, exactly as CLAUDE.md's three-store note says.
+
+     My first cut asked XART and then ASSETS, got false from both, and drew an empty socket - which
+     reads as "the icon is not wired" and is really "asked the wrong store". iconDraw already falls
+     through to XART for keys that are standalone plates, so this one call covers both shapes. */
+  if(wk && typeof iconDraw==='function'){
+    iconDraw(wk, ix+iw/2, iy+ih/2, Math.min(iw,ih)*0.86, true);
+  } else if(wk && ASSETS.has && ASSETS.has(wk)){
+    const f=ASSETS.frames[wk], sc=Math.min(iw/f[2], ih/f[3])*0.92;
+    ASSETS.blit(wk, ix+iw/2, iy+ih/2, f[2]*sc, f[3]*sc);
+  }
+  /* the tier, small, in the socket's bottom-right - Cole's 6-8 are real tiers and the icon art
+     only goes to 5, so the number is the only thing that can tell them apart */
+  ctx.globalAlpha=1;
+  ctx.fillStyle='#ffd36b';
+  ctx.font='bold 8px "BOFmil", monospace';
+  ctx.textAlign='right'; ctx.textBaseline='alphabetic';
+  ctx.fillText('L'+wlv, ix+iw-1, iy+ih-1);
+  ctx.restore();
+}
 function drawHUDOverlay(){
+  if(typeof drawRollCharge==='function') drawRollCharge();
+  if(typeof drawEquipCorner==='function') drawEquipCorner();
   let ix=VW-10;
   // shield/speed shown as HUD EQUIPMENT pips now — no overlay icons
   if(boss && bossActive && !boss.dead){
@@ -4733,7 +4824,15 @@ const player = {
 const BR_WINDOW=0.26;    // max seconds between the two taps
 const BR_DUR=0.46;       // roll duration
 const BR_DASH=190;       // total lateral travel (px) across the roll
-const BR_COOL=0.18;      // brief lockout after a roll so you can't chain infinitely
+/* ⚠ FIVE SECONDS, AT MIKE'S CALL (drop 0812p). This was 0.18 — a lockout that only stopped you
+   chaining two rolls in the same instant, which is why the roll was firing on micro-adjustments
+   and his tester wanted it suppressed. The tester's fix was hold-shift; Mike chose the cooldown:
+   "lets do a 5 second cooldown on barrel rolling."
+
+   ⚠ A COOLDOWN THIS LONG HAS TO BE VISIBLE. At 0.18s the player never needed to know; at 5s an
+   invisible timer is just an input that sometimes does nothing. See drawRollCharge — the bar is
+   not decoration, it is the half of this change that makes it fair. */
+const BR_COOL=5.0;       // seconds before the roll re-arms - Mike's call, and it is SHOWN
 function pilotHasRollArt(){ return typeof XART!=='undefined' && XART.rdy('ship_'+_pilotKey()+'_br0'); }
 function startRoll(dir){
   /* THE MOUNT WEIGHS HER DOWN (drop 0805u). Mike: "do not allow her to barrel roll while its
