@@ -12880,6 +12880,25 @@ function warmStageSheets(n){
     if(A.stageFont && A.stageFont['1']) void A.stageFont['1'].img;   // the UI font, used everywhere
   }catch(e){}
 }
+/* ============================================================
+   THE UI FONT DECODES ON FIRST USE, AND THE MENUS RUN BEFORE ANY STAGE (drop 0812j)
+
+   Every msgText/stageText caller falls back to a plain canvas face until the BOF glyph sheet has
+   decoded, and warmStageSheets is the only thing that starts it — which does not happen until a
+   stage begins. So the title and the pilot screen open in the fallback face for as long as the
+   decode takes, which is exactly the "basic ass text" Mike is looking at.
+
+   Rendered proof of the window: docs/proofs/pilotscreen_sel_0812j.png is the first frame, entirely
+   in the fallback; pilotscreen_comm_0812j.png is the same screen once the sheet lands.
+
+   Idempotent — the `img` getters cache, so calling this every frame costs one property read. */
+function uiFontWarm(){
+  try{
+    if(typeof ASSETS==='undefined') return;
+    if(ASSETS.bofFont   && ASSETS.bofFont['1'])   void ASSETS.bofFont['1'].img;
+    if(ASSETS.stageFont && ASSETS.stageFont['1']) void ASSETS.stageFont['1'].img;
+  }catch(e){}
+}
 function warmStage(n){
   warmStageSheets(n);                       // always, even if the rest is already warmed
   if(typeof XART==='undefined' || !XART._src || _warmed[n]) return 0;
@@ -33008,6 +33027,7 @@ const MENU_KEYS=['btn_newgame','btn_password','btn_options','btn_credits','btn_e
 const TMENU_Y0=172, TMENU_GAP=66, TMENU_W=330;
 let _menuScrollX=0;
 function drawTitle(dt){
+  if(typeof uiFontWarm==='function') uiFontWarm();   // earliest menu: start the face here, not at stage 1
   if(ASSETS.rdy(ASSETS.starplanets)){
     // SCROLLING PLANETS backdrop — left, medium speed, tiled
     const im=ASSETS.starplanets, dw=Math.round(im.naturalWidth*(VH/im.naturalHeight));
@@ -33394,25 +33414,45 @@ function drawCommWindow(o){
      typewriter face in his screenshot sitting under a hand-authored heading.
      The BODY text still uses canvas text: it wraps and types out character by character, and
      stageText has no wrap or measure, so converting it needs a line-breaker rather than a
-     one-line swap. The NAME is a single line and moves cleanly. */
+     one-line swap. The NAME is a single line and moves cleanly.
+     ⚠ SUPERSEDED (drop 0812j) — Mike: "eliminate this basic ass text and use our in-game font."
+     The line-breaker the note above was waiting for already exists: msgMeasure / msgWrap /
+     msgTextLeft were built for the stage dialogue window, and they measure in the BITMAP font
+     rather than the canvas one. Both the name and the body are authored glyphs now. */
   ctx.textAlign='left'; ctx.fillStyle=t; ctx.font='20px "BOFmil", monospace';
-  if(typeof msgText==='function'){
-    /* ⚠ MEASURE AFTER SETTING THE FONT. The first cut measured the name with whatever face was
-       current from the previous draw, so the centring was off by however much the two faces
-       differed. msgText centres on cx, and this window lays its text out from a LEFT edge (rx),
-       so the half-width has to be right or the name walks. */
-    const _nm=String(o.name||'').toUpperCase();
-    msgText(_nm, rx + ctx.measureText(_nm).width*0.5, inT+20, 20, t, 1, 1, 0.08);
-  }
+  const _nm=String(o.name||'').toUpperCase();
+  if(typeof msgTextLeft==='function'){
+    /* ⚠ AND THE NAME WAS MEASURED IN THE WRONG FONT. It drew through msgText — bitmap glyphs —
+       but computed its half-width with `ctx.measureText`, i.e. the CANVAS face, so the centring
+       was off by however much the two disagreed. msgTextLeft measures and draws in one face. */
+    msgTextLeft(_nm, rx, inT+20, 20, t, 1, 1, 0.08);
+  } else ctx.fillText(_nm, rx, inT+26);
   ctx.shadowColor='rgba(0,0,0,0.8)'; ctx.shadowBlur=3;
-  if(typeof msgText!=='function') ctx.fillText((o.name||'').toUpperCase(), rx, inT+26);
-  if(o.text){ ctx.fillStyle='#eaf2ff'; ctx.font='14px "BOFmil", monospace';
-    // typewriter: only reveal up to charsShown characters when provided
-    let shown=o.text;
-    if(o.charsShown!=null){ shown=o.text.slice(0, Math.max(0, Math.floor(o.charsShown))); }
-    const words=(shown||'').split(' '); let line='', yy=inT+54;
-    for(const w of words){ const test=line?line+' '+w:w; if(ctx.measureText(test).width>rw && line){ ctx.fillText(line,rx,yy); line=w; yy+=19; } else line=test; }
-    if(line) ctx.fillText(line,rx,yy); }
+  if(o.text){
+    const _bH=14, _bSP=0.08, _lead=19;
+    if(typeof msgWrap==='function' && typeof msgTextLeft==='function'){
+      /* ⚠ WRAP THE FULL TEXT, THEN REVEAL — NOT THE OTHER WAY ROUND. The old code sliced to
+         charsShown and wrapped what was left, so every time a word grew past the right edge the
+         whole paragraph re-flowed and the earlier lines jumped. Wrapping once and spending a
+         character budget down the finished lines keeps them still while it types. */
+      const _lines=msgWrap(String(o.text), rw, _bH, _bSP);
+      let _budget=(o.charsShown!=null) ? Math.max(0, Math.floor(o.charsShown)) : Infinity;
+      let _yy=inT+50;                       // msgTextLeft centres on cy; the old call sat on a baseline
+      for(const _ln of _lines){
+        if(_budget<=0) break;
+        msgTextLeft(_budget>=_ln.length ? _ln : _ln.slice(0,_budget), rx, _yy, _bH, '#eaf2ff', 1, 1, _bSP);
+        _budget-=_ln.length+1;              // +1 for the space the wrap consumed
+        _yy+=_lead;
+      }
+    } else {
+      ctx.fillStyle='#eaf2ff'; ctx.font=_bH+'px "BOFmil", monospace';
+      let shown=o.text;
+      if(o.charsShown!=null){ shown=o.text.slice(0, Math.max(0, Math.floor(o.charsShown))); }
+      const words=(shown||'').split(' '); let line='', yy=inT+54;
+      for(const w of words){ const test=line?line+' '+w:w; if(ctx.measureText(test).width>rw && line){ ctx.fillText(line,rx,yy); line=w; yy+=_lead; } else line=test; }
+      if(line) ctx.fillText(line,rx,yy);
+    }
+  }
   ctx.restore();
   return {px0,py0,pw,ph,inL,inT,inW,inH,pbW};
 }
@@ -33420,12 +33460,20 @@ function drawPilotComm(P,t){
   const appear=clamp(t/0.26,0,1);
   const _pp=(typeof pilotPortrait==='function')?pilotPortrait(P.key,'idle'):('face_'+P.key);
   const g=drawCommWindow({tint:P.tint, name:P.name, frameKey:'dlg_'+P.key, portraitKey:_pp, cardKey:'card_'+P.key, text:'GOOD LUCK, PILOT!', appear});
-  ctx.save(); ctx.globalAlpha=appear; ctx.textAlign='center'; ctx.fillStyle=P.tint; ctx.font='28px "BOFmil", monospace';
-  ctx.lineWidth=4; ctx.strokeStyle='rgba(0,0,0,0.6)'; ctx.strokeText(P.name.toUpperCase(),VW/2,g.py0-14); ctx.fillText(P.name.toUpperCase(),VW/2,g.py0-14);
+  /* the callsign OVER the window is the same screen and was the same raw canvas text (drop 0812j) */
+  ctx.save(); ctx.globalAlpha=appear;
+  if(typeof msgText==='function'){
+    msgText(P.name.toUpperCase(), VW/2, g.py0-22, 26, P.tint, 1, appear, 0.08);
+  } else {
+    ctx.textAlign='center'; ctx.fillStyle=P.tint; ctx.font='28px "BOFmil", monospace';
+    ctx.lineWidth=4; ctx.strokeStyle='rgba(0,0,0,0.6)';
+    ctx.strokeText(P.name.toUpperCase(),VW/2,g.py0-14); ctx.fillText(P.name.toUpperCase(),VW/2,g.py0-14);
+  }
   ctx.restore();
   // (emoji speech bubble removed per Mike)
 }
 function drawPilot(dt){
+  if(typeof uiFontWarm==='function') uiFontWarm();   // the menus run before any stage warms the face
   const N=PILOTS.length;
   // fresh entry into the pilot screen: clear any stale comm/selection transient so nothing stacks
   if(stateT<0.05 && !drawPilot._entered){ drawPilot._entered=true; pilotComm=null; pilotCommT=0; pilotPending=null; pilotSlide=0; pilotRot=0; }
@@ -33501,6 +33549,7 @@ function drawPilot(dt){
        with an icon, so printing it again underneath was the same fact twice. */
     const pf=pilotFont(P.font)||t2;
     if(pf){ stageTextMixed(pf,t2,P.name,VW/2,VH*0.80,28,P.tint,1,0.07); }
+    else if(typeof msgText==='function'){ msgText(P.name.toUpperCase(), VW/2, VH*0.80, 22, P.tint, 1, 1, 0.08); }
     else { ctx.textAlign='center'; ctx.fillStyle=P.tint; ctx.font='bold 22px "BOFmil", monospace'; ctx.fillText(P.name,VW/2,VH*0.81); }
     /* the SPECIAL line and its description used to print here, under the card. The new card has
        its own SPECIAL ABILITY section with a real icon, so this was the same fact twice on one
@@ -33519,8 +33568,13 @@ function drawPilot(dt){
   if(hoverLocked && pilotPending==null){
     pilotFlash=Math.min(1,pilotFlash+dt*3);
     if(Math.sin(performance.now()/140)>-0.2){
-      ctx.textAlign='center'; ctx.font='bold 12px "BOFmil", monospace'; ctx.fillStyle='#ffe98a';
-      ctx.fillText('UNLOCK WITH PASSWORD...', VW/2, cardRect[1]+cardRect[3]+18);
+      /* same screen, same fault (drop 0812j) */
+      if(typeof msgText==='function'){
+        msgText('UNLOCK WITH PASSWORD...', VW/2, cardRect[1]+cardRect[3]+14, 12, '#ffe98a', 1, 1, 0.09);
+      } else {
+        ctx.textAlign='center'; ctx.font='bold 12px "BOFmil", monospace'; ctx.fillStyle='#ffe98a';
+        ctx.fillText('UNLOCK WITH PASSWORD...', VW/2, cardRect[1]+cardRect[3]+18);
+      }
     }
   }
   // ---- input ----
@@ -34609,7 +34663,18 @@ function msgWrap(text, maxW, H, spacingMul){
 /* Draw in the authored face, LEFT-aligned at x. msgText centres on cx and there is no left
    variant, which is why panels that wanted a text column used canvas text instead. */
 function msgTextLeft(text,x,cy,H,tintC,tintA,alpha,spacingMul){
-  const w=msgMeasure(text,H,spacingMul);
+  let w=msgMeasure(text,H,spacingMul);
+  /* ⚠ msgMeasure RETURNS 0 WHEN THE GLYPH SHEET IS NOT UP — deliberately, it means "unknown", not
+     "zero wide". Passing that through put the half-width at 0, and msgText CENTRES on what it is
+     given, so during the decode window every left-anchored line was centred on its own left edge
+     and hung out of the panel. Visible in docs/proofs/pilottext_after_0812j.png, top tile.
+     msgText falls back to a canvas face in exactly that window, so measure in the same one. */
+  if(!w){
+    ctx.save();
+    ctx.font='900 '+Math.round(H*0.86)+'px "Arial Black",Impact,sans-serif';
+    w=ctx.measureText(String(text).toUpperCase()).width;
+    ctx.restore();
+  }
   msgText(text, x+w/2, cy, H, tintC, tintA, alpha, spacingMul);
   return w;
 }

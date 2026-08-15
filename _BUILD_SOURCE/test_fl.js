@@ -10107,6 +10107,45 @@ console.log("=== 223. ship boss attack geometry ===");
      'on every other volley, so the pattern stays legible between aimed beats');
 }
 
+// ===== 224. THE PILOT SCREEN IS ALL ONE FACE (drop 0812j) =====
+console.log("=== 224. pilot screen font ===");
+{
+  /* Mike: "Go to the dialogue boxes/text when you select a pilot. elimnate this basic ass text and
+     use our in-game font." drawCommWindow's own comment had conceded the body — the name moved to
+     the authored face in 0811f and the body stayed on canvas text because "stageText has no wrap
+     or measure". msgWrap/msgMeasure/msgTextLeft are that line-breaker. */
+  var _g224=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  function body(name){
+    var i=_g224.indexOf('function '+name+'(');
+    if(i<0) return '';
+    var j=_g224.indexOf('\nfunction ', i+10);
+    return _g224.slice(i, j<0?i+9000:j).replace(/\/\*[\s\S]*?\*\//g,' ').replace(/\/\/[^\n]*/g,' ');
+  }
+  var _cw=body('drawCommWindow'), _pc=body('drawPilotComm'), _dp=body('drawPilot');
+  ok(/msgWrap\(/.test(_cw) && /msgTextLeft\(/.test(_cw),
+     'the comm window body wraps and draws in the authored face');
+  ok(!/ctx\.fillText\(line/.test(_cw) || /typeof msgWrap==='function'/.test(_cw),
+     'and canvas text is only the not-decoded fallback');
+  ok(/msgText\(/.test(_pc), 'the callsign over the window uses the authored face');
+  ok(/UNLOCK WITH PASSWORD[\s\S]{0,200}msgText\(|msgText\([^)]*UNLOCK WITH PASSWORD/.test(_dp),
+     'and so does the unlock prompt');
+
+  /* ⚠ THE TYPEWRITER MUST NOT RE-FLOW. Slicing to charsShown and wrapping the remainder makes the
+     whole paragraph jump every time a word crosses the right edge. Wrap the FULL text, then spend
+     a character budget down the finished lines. */
+  ok(/msgWrap\(String\(o\.text\)/.test(_cw),
+     'the wrap runs on the FULL text, so lines do not move while it types');
+
+  /* ⚠ AND msgMeasure RETURNS 0 FOR "UNKNOWN", NOT "ZERO WIDE" — passing that straight into a
+     half-width centres a left-anchored line on its own left edge. */
+  var _mtl=_g224.slice(_g224.indexOf('function msgTextLeft('), _g224.indexOf('function msgTextLeft(')+900);
+  ok(/if\(!w\)/.test(_mtl), 'msgTextLeft falls back to a real measure when the sheet is not up');
+
+  /* the menus run before any stage, so nothing else would start the face */
+  ok(/function uiFontWarm\(/.test(_g224), 'there is a UI font warm');
+  ok(/uiFontWarm\(\);/.test(_dp), 'and the pilot screen calls it');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');
