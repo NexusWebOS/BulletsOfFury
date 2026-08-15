@@ -7352,8 +7352,17 @@ function buildStagePlan(stageNum){
     add(13.0,()=> spawnEnemy('el_em', VW*0.5, -50, {pattern:'weave', amp:34}));   // EMBER MANTIS
     add(17.0,()=> spawnEnemy('lance', VW*0.66, -40, {}));
     add(18.5,()=> { spawnEnemy('disc', VW*0.36, -40, {}); spawnEnemy('disc', VW*0.64, -40, {}); });
-    add(25.0,()=> { spawnEnemy('el_lr', VW*0.30, -55, {pattern:'sine'});
-                    spawnEnemy('el_lr', VW*0.70, -55, {pattern:'sine', phase:1.2}); });  // LAVA MAGMA REAVER
+    /* ⚠ THE LAVA REAVERS FLY, THEY DO NOT BOB (drop 0812m). Mike: "you have those lava boats. they
+       need to appear and act like jets or remove them."
+
+       They were spawned on `sine` — a slow wobble straight down the middle, which on a volcano
+       stage reads as a boat drifting on lava. Kept rather than removed, because the art is the
+       stage's own authored elite; what was wrong is the movement. They now enter from the sides on
+       the jet routes the stage-1 deltas use, which gives them the bank, the missile dodge and the
+       lane-hold in jetTick for free — measured, the unit keeps its own art and 57x68 footprint and
+       simply changes tick. Mirrored pair, so they cross the middle rather than falling through it. */
+    add(25.0,()=> { spawnEnemy('el_lr', offLeftX(30),  VH*0.16, {pattern:'s1jet', route:'cornerLR'});
+                    spawnEnemy('el_lr', offRightX(30), VH*0.30, {pattern:'s1jet', route:'cornerRL'}); });  // LAVA MAGMA REAVER
     add(26.5,()=> spawnEnemy('cruc', VW*0.50, -50, {}));                    // seeds bombs down the lanes
     add(28.5,()=> { spawnEnemy('lance', VW*0.22, -40, {}); spawnEnemy('lance', VW*0.78, -40, {}); });
     add(30.5,()=> spawnEnemy('carrier', VW*0.44, -60, {}));                 // releases ashwings, then retreats
@@ -8004,11 +8013,11 @@ const SHIPBOSS = {
      reason, not shuffled " ember teaches "find the gap", then lance closes lanes so the gap-hunting
      habit gets you hit, then ember again, faster. */
   infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'ember', cd:1.45,
-                  pats:['ember','lance','ember']},
+                  pats:['ember','chargebeam','mslfan','beamfan']},
   cryospear:     {key:'nsb_cryo_spear',     name:'CRYO SPEAR',          w:195,h:195, hpMul:1.25, pat:'lance', cd:1.35,
-                  pats:['lance','void','rime']},
+                  pats:['lance','beamfan','chargebeam','mslhome']},
   voidbat:       {key:'nsb_void_bat',       name:'VOID BAT',            w:210,h:210, hpMul:1.45, pat:'void',  cd:1.30,
-                  pats:['void','rime','siege']},
+                  pats:['void','mslhome','chargebeam','beamfan']},
   /* ⚠ the two MINIS carry an ABSOLUTE hp, not a multiplier. spawnBoss seeds maxhp from the stage
      ((220+n*120)*eHp, so 460 on stage 2) but spawnSubBoss__inner seeds a flat 100, so the same
      multiplier means two completely different fights. Measured: hpMul 0.42 gave these two 42 HP
@@ -8016,16 +8025,16 @@ const SHIPBOSS = {
      what Mike asked for. Absolute, scaled by difficulty, in line with the quad-laser. */
   /* the minis get TWO phases, not three " they die faster and a third would never be seen */
   siegeember:    {key:'nsb_siege_ember',    name:'EMBER SIEGECARRIER',  w:165,h:165, hp:235, pat:'siege', cd:1.25, mini:true,
-                  pats:['siege','fan2']},
+                  pats:['siege','mslfan']},
   thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true,
-                  pats:['rime','lance']},
+                  pats:['rime','chargebeam']},
   /* STAGE 4 HAD NO MINIBOSS AT ALL (drop 0811b). SUBBOSS[4] named 'subreactor', which is in
      DEAD_SUBBOSS - so spawnSubBoss cleared the gate and returned null, and the stage ran straight
      from its waves to the boss. Retiring a unit in 0810m left the table still pointing at it.
      nsb_blacksteel was built and registered in 0810s and never assigned to anything, so the
      Blacksteel Raptor takes the slot rather than inventing art. */
   blacksteel:    {key:'nsb_blacksteel',     name:'BLACKSTEEL RAPTOR',   w:170,h:170, hp:245, pat:'lance', cd:1.15, mini:true,
-                  pats:['lance','pincer2']},
+                  pats:['lance','beamfan']},
   /* ============================================================
      THE JUNGLE CRUISER TAKES STAGE 1 (drop 0812e)
 
@@ -8059,7 +8068,7 @@ const SHIPBOSS = {
      Same treatment: the Blacksteel silhouette is the pack's interceptor shape, and stage 6 is the
      sky fortress, so it flies in storm-steel. Late stage, so it is the toughest of the minis. */
   olivecarrier:  {key:'nsb_olive_carrier', name:'OLIVE CARRIER',  w:172,h:172, hp:265, pat:'lance', cd:1.12, mini:true,
-                  pats:['lance','void']},
+                  pats:['lance','mslfan']},
 };
 function shipBossInit(b, kind){
   const D=SHIPBOSS[kind]; if(!D) return false;
@@ -8080,6 +8089,135 @@ function _shipShot(x,y,vx,vy,w){
   eBullets.push({x:x, y:y, vx:vx*sp, vy:vy*sp, w:w||11, h:w||11, dmg:1, t:0, kind:'eshot'});
 }
 /* which phase is this boss in, 0-based, and has it just changed? */
+/* ============================================================
+   SHIP BOSS MANOEUVRES — CHARGE, X-STRIKE, RAM (drop 0812m)
+
+   Mike: "I wanna see our jet mini bosses and bosses charge at us, and then do in-game off screen
+   on screen x pattern strikes where we have to avoid them, then they try to do a vertical south,
+   vertical north, vertical south aggresively like they are trying to ram into us. Try to not just
+   think Shmup, but Mega Man and other amazin arcade classics too."
+
+   What was there: `b.x = worldWidth()/2 + sin(drift*0.9)*96`. One sine, forever. Every ship boss
+   and miniboss in the game slid left and right across the top while its guns did the work.
+
+   THE ARCADE PART IS THE TELL, NOT THE SPEED. A Mega Man boss is readable: it stops, it announces,
+   THEN it commits, and the window to react opens during the announcement. So every manoeuvre here
+   is preceded by a TELL — the hull halts, flashes and drags backwards — and only then moves, fast.
+   Without that a 500px/s dive is not a boss attack, it is a collision.
+
+     HOLD      the old drift, shortened as its health falls
+     TELL      0.5s halt + flash + recoil, so the commitment is legible
+     CHARGE    dives at where you ARE, overshoots past the bottom, climbs back
+     XSTRIKE   leaves the field and re-enters corner-to-corner, twice, drawing an X across it
+     RAM       south, north, south — three passes, each re-aimed at your column as it starts
+
+   ⚠ THE X AND THE RAM DELIBERATELY LEAVE THE SCREEN, and a boss that is off-screen cannot be shot
+   or shoot. Every leg is bounded and a 7-second watchdog forces RECOVER, because the failure mode
+   here is not "too hard", it is a fight that stalls with the boss parked somewhere invisible.
+   ⚠ AND `enter` IS RESPECTED: none of this runs until the unit has finished arriving, or a boss
+   would start its dive while still flying in. ============================================================ */
+const SBM_HOLD=0, SBM_TELL=1, SBM_CHARGE=2, SBM_XSTRIKE=3, SBM_RAM=4, SBM_RECOVER=5;
+const SBM_WATCHDOG=7.0;
+function shipBossStationY(b){ return (b.ty!=null) ? b.ty : VH*0.24; }
+function shipBossPickMove(b){
+  /* more phases = more of the aggressive ones; at full health it mostly charges, and only a hurt
+     boss starts crossing the field and ramming */
+  const ph=(typeof shipBossPhase==='function')?shipBossPhase(b):0;
+  const pool=(ph<=0) ? [SBM_CHARGE, SBM_CHARGE, SBM_RAM]
+           : (ph===1) ? [SBM_CHARGE, SBM_XSTRIKE, SBM_RAM]
+                      : [SBM_XSTRIKE, SBM_RAM, SBM_CHARGE, SBM_RAM];
+  return pool[(b._sbmN=(b._sbmN|0)+1) % pool.length];
+}
+function shipBossManoeuvre(b, dt){
+  if(!b || !b._ship || b.dead || b.enter) return false;
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  const sy=shipBossStationY(b);
+  /* the CHARGE BEAM resolves here, because this is the only per-frame hook a ship boss has.
+     ⚠ It fires on the column locked at the START of the wind-up (_cbX), never on the player's
+     current x - see the note in the pattern. */
+  if(b._cbT!=null){
+    b._cbT-=dt;
+    if(b._cbT<=0){
+      for(let k=0;k<14;k++) _shipShot(b._cbX, b.y+b.h*0.30+k*11, 0, 5.2, 14);
+      b._cbT=null;
+      if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.laserShot) Audio.SFX.laserShot();
+    }
+  }
+  if(b._sbm==null){ b._sbm=SBM_HOLD; b._sbmT=rnd(1.2,2.2); b._sbmLeg=0; }
+  b._sbmT-=dt;
+  b._sbmAge=(b._sbmAge||0)+dt;
+  if(b._sbm!==SBM_HOLD && b._sbm!==SBM_RECOVER && b._sbmAge>SBM_WATCHDOG){ b._sbm=SBM_RECOVER; b._sbmT=1.2; }
+
+  switch(b._sbm){
+    case SBM_HOLD: {
+      b.drift=(b.drift||0)+dt;
+      b.x=W/2+Math.sin(b.drift*0.9)*96;
+      b.y+=(sy-b.y)*Math.min(1,dt*3);
+      if(b._sbmT<=0){ b._sbm=SBM_TELL; b._sbmT=0.50; b._sbmNext=shipBossPickMove(b); b._sbmAge=0;
+                      b.flash=Math.max(b.flash||0,0.35);
+                      if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossAlarm) Audio.SFX.bossAlarm(); }
+      break;
+    }
+    case SBM_TELL: {
+      b.y-=42*dt;                                   // drags back as it winds up
+      if(((b._sbmT*12)|0)%2===0) b.flash=Math.max(b.flash||0,0.20);
+      if(b._sbmT<=0){
+        b._sbm=b._sbmNext; b._sbmLeg=0; b._sbmAge=0; b._sbmT=3.0;
+        b._sbmAX=(typeof player!=='undefined'&&player)?player.x:W/2;
+        b._sbmAY=(typeof player!=='undefined'&&player)?player.y:VH*0.8;
+        if(b._sbm===SBM_XSTRIKE){ b._sbmSide=(Math.random()<0.5)?-1:1; }
+      }
+      break;
+    }
+    case SBM_CHARGE: {
+      const dx=b._sbmAX-b.x, dy=Math.max(60,(b._sbmAY-b.y));
+      const d=Math.hypot(dx,dy)||1, sp=430;
+      b.x+=dx/d*sp*dt; b.y+=dy/d*sp*dt;
+      if(b.y>VH*0.88 || b._sbmT<=0){ b._sbm=SBM_RECOVER; b._sbmT=1.4; }
+      break;
+    }
+    case SBM_XSTRIKE: {
+      /* leg 0: off the top on one side. leg 1: cross to the far bottom. leg 2: off the top on the
+         OTHER side. leg 3: cross back. Two crossings = the X, and the corners are off-screen so
+         the repositioning between legs is never seen. */
+      const sp=560;
+      if(b._sbmLeg===0 || b._sbmLeg===2){
+        b.y-=sp*dt;
+        if(b.y<-b.h){
+          const side=(b._sbmLeg===0)?b._sbmSide:-b._sbmSide;
+          b.x=(side<0)? -b.w*0.6 : W+b.w*0.6;
+          b.y=-b.h*0.6; b._sbmLeg++;
+          b._sbmTX=(side<0)? W+b.w*0.6 : -b.w*0.6;
+          b._sbmTY=VH*0.92;
+        }
+      } else {
+        const dx=b._sbmTX-b.x, dy=b._sbmTY-b.y, d=Math.hypot(dx,dy)||1;
+        b.x+=dx/d*sp*dt; b.y+=dy/d*sp*dt;
+        if(d<40 || b.y>VH*0.9){ b._sbmLeg++; if(b._sbmLeg>=4){ b._sbm=SBM_RECOVER; b._sbmT=1.5; } }
+      }
+      break;
+    }
+    case SBM_RAM: {
+      const sp=520;
+      const dirs=[1,-1,1];                          // south, north, south
+      const dir=dirs[Math.min(2,b._sbmLeg)];
+      if(b._sbmLeg===0 || b._sbmLeg===2) b.x+=((b._sbmAX-b.x))*Math.min(1,dt*2.2);   // slide onto your column
+      b.y+=dir*sp*dt;
+      if(dir>0 && b.y>VH*0.94){ b._sbmLeg++; b._sbmAX=(player?player.x:b.x); }
+      else if(dir<0 && b.y<-b.h*0.5){ b._sbmLeg++; b._sbmAX=(player?player.x:b.x); }
+      if(b._sbmLeg>=3){ b._sbm=SBM_RECOVER; b._sbmT=1.5; }
+      break;
+    }
+    case SBM_RECOVER: {
+      b.x+=((W/2)-b.x)*Math.min(1,dt*1.6);
+      b.y+=(sy-b.y)*Math.min(1,dt*2.2);
+      if(b._sbmT<=0 && Math.abs(b.y-sy)<24){ b._sbm=SBM_HOLD; b._sbmT=rnd(1.0,2.0)-((typeof shipBossPhase==='function'?shipBossPhase(b):0)*0.28); b._sbmAge=0; }
+      break;
+    }
+  }
+  b.x=clamp(b.x, -b.w*0.7, W+b.w*0.7);
+  return true;
+}
 function shipBossPhase(b){
   const D=SHIPBOSS[b._ship]; if(!D||!D.pats||D.pats.length<2) return 0;
   const f = b.maxhp ? (b.hp/b.maxhp) : 1;
@@ -8157,6 +8295,52 @@ function shipBossAttack(b){
        second across a 45-second fight - they fired constantly and never once shot at the player.
        Real components now, fanned about straight DOWN. */
     for(let i=-3;i<=3;i++){ const a=i*0.22; _shipShot(b.x, y, Math.sin(a)*2.2, Math.cos(a)*2.2, 11); }
+  } else if(pat==='chargebeam'){
+    /* ============================================================
+       THE ARCADE ATTACKS (drop 0812m). Mike: "Dont just do simple projectile attacks. do charge up
+       laser attacks, spread laser attacks, spread missile launchs, homing missiles etc."
+
+       CHARGE BEAM is the Mega Man one: it locks your column, holds a visible wind-up, and only
+       then fires — so the punishment is for standing still, not for bad luck. The lock is taken
+       ONCE at the start of the wind-up and does not track afterwards; a beam that follows you is
+       unavoidable, and unavoidable is not difficulty. */
+    /* ⚠ A PHASE IS ONE PATTERN, SO A CHARGE ATTACK WOULD BECOME THE ONLY ATTACK. Measured on the
+       Void Bat: once its HP put it in the chargebeam phase the telegraph was up 55.7 of 70 seconds
+       - a permanent red column down the screen, which is neither readable nor a wind-up. It starts
+       a charge every THIRD volley and fires an ordinary aimed pair in between, so the beam stays
+       an event. And it never re-arms while one is already winding up. */
+    if(b._cbT==null && (step%3)===0){
+      b._cbX=(typeof player!=='undefined'&&player)?player.x:b.x;
+      b._cbT=0.62;                     // wind-up; drawn as a brightening column in shipBossDraw
+      if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.retinaCharge) Audio.SFX.retinaCharge();
+    } else {
+      const a3=aimPlayer(b.x,y);
+      for(const o of [-0.08,0.08]) _shipShot(b.x, y, Math.cos(a3+o)*2.4, Math.sin(a3+o)*2.4, 10);
+    }
+  } else if(pat==='beamfan'){
+    /* SPREAD LASER — three dense columns from the hull, angled. Dense because a "laser" made of
+       sparse rounds reads as a machine gun; tight spacing along the same vector is what makes the
+       eye join them into a beam. */
+    for(const a2 of [-0.34, 0, 0.34]){
+      for(let k=0;k<7;k++){
+        const sp=3.1, ox=Math.sin(a2)*sp, oy=Math.cos(a2)*sp;
+        _shipShot(b.x+ox*k*2.6, y+oy*k*2.6, ox, oy, 9);
+      }
+    }
+  } else if(pat==='mslfan'){
+    /* SPREAD MISSILES — a real fan, launched from the wingline rather than the centre so it opens
+       as it travels instead of starting on top of itself. */
+    if(typeof eMissile==='function'){
+      for(let i=-2;i<=2;i++) eMissile(b.x+i*(b.w*0.16), y);
+    }
+  } else if(pat==='mslhome'){
+    /* HOMING SALVO — alternating sides so they converge from BOTH, which is eMissileHoming's own
+       design; firing them all one way makes a wall you simply stand beside. */
+    if(typeof eMissileHoming==='function'){
+      eMissileHoming(b.x-b.w*0.22, y, -1);
+      eMissileHoming(b.x+b.w*0.22, y,  1);
+      if(ph>=1) eMissileHoming(b.x, y, (step%2)?1:-1);
+    }
   } else if(pat==='pincer2'){
     /* two angled walls leaving the middle open, so the safe ground is directly under the boss "
        the one place a player will not stand while it is shooting at them. */
@@ -8217,6 +8401,22 @@ function shipBossDraw(b){
      what is in the build is authored art. Doing the same swap at draw time is not the same thing
      — it is an overlay on top of finished work, and it reads as one. If a themed hull is wanted,
      the plate gets themed and imported, not tinted here. */
+  /* ⚠ A WIND-UP THAT CANNOT BE SEEN IS JUST A DELAY. The charge beam locks a column 0.62s before
+     it fires, and this is what makes that window mean something: a thin bright line down the
+     locked column, brightening as the shot approaches. Drawn BEFORE the hull so the boss sits on
+     top of its own telegraph. */
+  if(b._cbT!=null && b._cbT>0){
+    const k=1-(b._cbT/0.62);
+    ctx.save();
+    ctx.globalAlpha=0.25+0.55*k;
+    ctx.fillStyle='#ff5a48';
+    const tw=3+10*k;
+    ctx.fillRect(b._cbX-tw/2, (b._drawY!=null?b._drawY:b.y), tw, VH);
+    ctx.globalAlpha=0.9*k;
+    ctx.fillStyle='#ffe6a0';
+    ctx.fillRect(b._cbX-1, (b._drawY!=null?b._drawY:b.y), 2, VH);
+    ctx.restore();
+  }
   const im=XART.get(D.key);
   const s=b.w/256, w=256*s, h=256*s;
   const x=b.x-w/2, y=(b._drawY!=null?b._drawY:b.y)-h/2;
@@ -8610,7 +8810,9 @@ function updateSubBoss(dt){
       b._face = Math.sign(d) || (b._face||0);     // which way the hull is pointing
       if(ad<2){ b.x=b._tgtX; b._tgtX=null; }      // arrive and STOP
     }
-  } else {
+  } else if(!(b._ship && typeof shipBossManoeuvre==='function' && shipBossManoeuvre(b, dt))){
+    /* the sine is now the FALLBACK. A ship boss runs the manoeuvre state machine instead — see
+       shipBossManoeuvre — and everything else keeps the drift it was tuned with. */
     b.drift+=dt; b.x=worldWidth()/2+Math.sin(b.drift*0.9)*96;   // WORLD centre: wide stages are 800px
   }
   if(!b.mini){ b.phaseT-=dt; if(b.phaseT<=0){ b.atkPhase=(b.atkPhase+1)%4; b.phaseT=rnd(1.0,1.7); } }
@@ -16216,6 +16418,16 @@ function updateBoss(dt){
   if(b.enter){
     b.y=lerp(b.y,b.ty,0.04);
     if(Math.abs(b.y-b.ty)<2){ b.enter=false; b.y=b.ty; }
+    return;
+  }
+  /* ⚠ A SHIP BOSS FLIES ITS OWN MANOEUVRES (drop 0812m). Same state machine the ship MINIbosses
+     run — charge, X-strike, ram — so Mike's three jet bosses (inferno reaver, cryo spear, void bat)
+     behave like the minis of the same family instead of drifting on a sine. Returning here skips
+     the drift AND the dash system below it, which would otherwise fight the manoeuvre for control
+     of b.x. Everything non-ship falls through untouched. */
+  if(b._ship && typeof shipBossManoeuvre==='function' && shipBossManoeuvre(b, dt)){
+    b.fireCd -= dt*DIFF.eFire*(run.stage>=2?1.35:1);
+    if(b.fireCd<=0) bossAttack();
     return;
   }
   // drift (erratic + faster on stage 2+)

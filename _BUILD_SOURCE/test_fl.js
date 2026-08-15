@@ -10204,6 +10204,43 @@ console.log("=== 225. entry, not materialisation ===");
      'and a left-side spawn too ('+Math.round(_f225.bx)+' vs half '+Math.round(_f225.bw/2)+')');
 }
 
+// ===== 226. SHIP BOSSES MANOEUVRE, THEY DO NOT DRIFT (drop 0812m) =====
+console.log("=== 226. boss manoeuvres + arcade attacks ===");
+{
+  var _g226=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(/function shipBossManoeuvre\(/.test(_g226), 'ship bosses have a manoeuvre state machine');
+  ['SBM_CHARGE','SBM_XSTRIKE','SBM_RAM','SBM_TELL'].forEach(function(k){
+    ok(_g226.indexOf(k)>0, 'it has '+k.replace('SBM_','').toLowerCase());
+  });
+  /* ⚠ THE TELL IS THE ARCADE PART. A 500px/s dive with no wind-up is a collision, not an attack —
+     the boss has to halt and announce before it commits, or there is no window to react in. */
+  ok(/SBM_TELL; b\._sbmT=0\.5/.test(_g226), 'and every manoeuvre is preceded by a tell');
+  /* ⚠ AND OFF-SCREEN LEGS NEED A WATCHDOG. The X-strike and the ram deliberately leave the field,
+     and a boss stuck out there is a stalled fight, not a hard one. */
+  ok(/SBM_WATCHDOG/.test(_g226), 'and a watchdog forces recovery from an off-screen leg');
+
+  var _sm=_g226.slice(_g226.indexOf('function shipBossManoeuvre('), _g226.indexOf('function shipBossPhase('));
+  ok(/b\.enter/.test(_sm), 'a unit still arriving does not manoeuvre');
+
+  /* the four attacks Mike named */
+  ['chargebeam','beamfan','mslfan','mslhome'].forEach(function(p){
+    ok(new RegExp("pat==='"+p+"'").test(_g226), 'attack pattern '+p+' exists');
+  });
+  var _f226=JSON.parse(vm.runInContext("(function(){ var o={};"
+    +"for(var k in SHIPBOSS){ o[k]=(SHIPBOSS[k].pats||[]).slice(0); }"
+    +"return JSON.stringify(o);})()", ctxv));
+  var _newAtk=['chargebeam','beamfan','mslfan','mslhome'];
+  var _using=Object.keys(_f226).filter(function(k){
+    return _f226[k].some(function(p){ return _newAtk.indexOf(p)>=0; });
+  });
+  ok(_using.length>=5, 'and at least five ship units field one ('+_using.length+')');
+
+  /* ⚠ A PHASE IS ONE PATTERN, so a charge attack left ungated becomes the ONLY attack for a third
+     of the fight - measured at 55.7s of telegraph in 70. It arms every third volley. */
+  ok(/\(step%3\)===0/.test(_g226), 'the charge beam is gated to every third volley');
+  ok(/b\._cbT==null &&/.test(_g226), 'and never re-arms while one is already winding up');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');
