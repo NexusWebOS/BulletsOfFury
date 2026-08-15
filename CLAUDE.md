@@ -148,7 +148,22 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0812D.md`, then `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0812E.md`, then `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0812e — the JUNGLE CRUISER is stage 1's miniboss; the quad-laser is unassigned, not deleted.**
+⚠ **THE SOURCE FOLDER AND THE BUILD DISAGREE, AND THE SOURCE IS THE WRONG ONE TO READ.**
+`_ART_SOURCES/BOF2_South_Facing_Ships_v1/` frames are the UN-recoloured originals; the imported
+plates measure ember-red on 2, rime-teal on 3, gunmetal on 4 — every one matching its stage. All
+six hulls are in use (3 minis, 3 bosses). "Filenames lie" extends to source folders.
+⚠ **STAGE 6 FIELDED A UNIT LITERALLY NAMED "SUB-BOSS"** — `SUBBOSS[6]` said `'ss'` and the spawn
+switch had NO arm for it, so it took the generic 130x120 default: no art, no profile, stock HP.
+Nothing failed and nothing logged. Now the STORM LANCE. §220 asserts every stage names its mini.
+⚠ **`shipBossDraw` NOW TAKES A `pal`** — palette-swapped hulls via `xartPalette` (cached per
+key+mode, one canvas per run). A `pal` hull must ALSO warm its SOURCE key or it opens the fight on
+the silhouette fallback — the 0812c bug via a new unit. §220 asserts that too.
+⚠ **NINE ASSERTIONS FAILED ON A ONE-WORD CHANGE THAT BROKE NOTHING** — they tested the quad-laser
+by asking what stage 1 happens to field. Test a unit BY KIND; couple to the stage only when the
+claim is about the stage.
 
 **0812d — the nca_87 pack is now the machine gun and the spread, all 8 tiers.**
 ⚠ **nca_87 IS NOT SLICED** — one whole-sheet key, no cell keys exist. The 4x4 / 192-pitch grid was
@@ -533,7 +548,7 @@ and reports settled burial. **The 839 / 71.9% baselines quoted in the handoff ar
 ⚠ **The recurring failure this stretch was systems that were declared and never fired** — the quad-laser's muzzles, `_qlChg`, `enemyVolley` sharing a `fireCd` its unit's tick owns, `micon_` asked of the wrong store, `lordshadows` registered and referenced nowhere. In every case the state looked right and no pixel moved. **Render it, then believe it.**
 
 
-Suite: **2,526 assertions / 224 sections / 5 failures** (drop 0812d) — the preload count, the two
+Suite: **2,533 assertions / 225 sections / 5 failures** (drop 0812e) — the preload count, the two
 `_superseded` ones, the volley round count and the naval flash families. ⚠ **If you see more than
 five, check `git status` for deleted art before you debug anything** — a missing file trips nine
 assertions across four sections and reads as an unrelated pile of failures.

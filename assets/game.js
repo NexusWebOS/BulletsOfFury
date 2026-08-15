@@ -4771,10 +4771,13 @@ const SUBBOSS={
 
      "and stop the scrolling of the level" was already true: subBossActive holds stageTimer
      (0801hn). No change needed there. */
-  1:{at:0.62, kind:'quadlaser', afterScroll:2100},
+  /* the JUNGLE CRUISER replaces the quad-laser here (drop 0812e, Mike's word). `at` and
+     afterScroll are UNTOUCHED: 0801ke moved this trigger three times to land the fight after
+     the beach tanks and the grass jets, and that sequencing is about the STAGE, not the unit. */
+  1:{at:0.62, kind:'junglecruiser', afterScroll:2100},
                                   // Flipped so its turrets face you; crawls up/down only; quad MGs.
   2:{at:0.45, kind:'siegeember', afterScroll:961},      // EMBER SIEGECARRIER (0810s) — replaces the obsidian drill Mike retired
-  6:{at:0.45, kind:'ss', afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
+  6:{at:0.45, kind:'stormlance', afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
   7:{at:0.45, kind:'ratking', afterScroll:1161},    // RAT KING EXCAVATOR — level 7 sub-boss
   8:{at:0.45, kind:'herald', afterScroll:1201},     // HERALD OF DEATH (venom-reaver, retitled per the phase manifest)
   3:{at:0.45, kind:'thornrime', afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
@@ -7870,6 +7873,40 @@ const SHIPBOSS = {
      Blacksteel Raptor takes the slot rather than inventing art. */
   blacksteel:    {key:'nsb_blacksteel',     name:'BLACKSTEEL RAPTOR',   w:170,h:170, hp:245, pat:'lance', cd:1.15, mini:true,
                   pats:['lance','pincer2']},
+  /* ============================================================
+     THE JUNGLE CRUISER TAKES STAGE 1 (drop 0812e)
+
+     Mike: "get rid of level 1 miniboss use the new jungle cruiser I gave you."
+
+     The pack he means is BOF2_South_Facing_Ships_v1, and its only Cruiser is the THORN CRUISER —
+     whose SOURCE frame is olive-green, i.e. jungle. ⚠ The imported `nsb_thorn_rime` is that same
+     hull RECOLOURED TEAL for the ice stage, which is why reading the source folder and reading the
+     build give different answers: I checked the source first and nearly "fixed" three assignments
+     that were already correct. The registered plates measure ember-red on 2, rime-teal on 3 and
+     gunmetal on 4 — every one of them matching its stage.
+
+     So stage 1 gets the same hull under a jungle palette rather than a seventh 256x256 file. That
+     is how siegeember and thornrime were built in the first place: one silhouette family,
+     recoloured per theme.
+
+     ⚠ HP IS THE QUAD-LASER'S 210, DELIBERATELY. This replaces the FIRST miniboss a player ever
+     meets, and Mike tuned that fight's difficulty at 210; a cruiser-sized 245 would quietly make
+     stage 1 harder than stage 4's. The pattern pair is `siege`+`fan2` — a broadside opener, then a
+     spread that punishes the lane the broadside taught you to stand in.
+
+     The quad-laser system is NOT deleted, only unassigned: nqx_ art, _qlCan per-cannon hitboxes
+     and its charge attack all remain, so it can take another slot without being rebuilt. */
+  junglecruiser: {key:'nsb_thorn_rime', pal:'#6f9a34', name:'JUNGLE CRUISER', w:168,h:168, hp:210, pat:'siege', cd:1.28, mini:true,
+                  pats:['siege','fan2']},
+  /* ⚠ STAGE 6's MINIBOSS WAS A PLACEHOLDER WITH NO CASE AT ALL. SUBBOSS[6] named 'ss', and
+     spawnSubBoss__inner's switch has no arm for it — so it fell through to the generic 130x120
+     default and spawned literally named "SUB-BOSS", with no art, no attack profile and the stock
+     100 HP. Rendered proof: docs/proofs/miniboss_s6_0812c.png.
+
+     Same treatment: the Blacksteel silhouette is the pack's interceptor shape, and stage 6 is the
+     sky fortress, so it flies in storm-steel. Late stage, so it is the toughest of the minis. */
+  stormlance:    {key:'nsb_blacksteel', pal:'#5f86c8', name:'STORM LANCE',    w:172,h:172, hp:265, pat:'lance', cd:1.12, mini:true,
+                  pats:['lance','void']},
 };
 function shipBossInit(b, kind){
   const D=SHIPBOSS[kind]; if(!D) return false;
@@ -7992,7 +8029,15 @@ function shipBossDraw(b){
     ctx.restore(); ctx.globalAlpha=1;
     return true;
   }
-  const im=XART.get(D.key);
+  /* A HULL CAN CARRY A PALETTE (drop 0812e). The six ships in the south-facing pack are one
+     silhouette family recoloured per theme — that is how siegeember and thornrime were already
+     built from the same source frames — so a `pal` on the table gets the same treatment at draw
+     time instead of needing another 256x256 file on disk. xartPalette keeps the plate's own
+     shading (hue and saturation from the fill, luminosity from the art) and caches per key+mode,
+     so a themed hull costs one canvas for the whole run, not one per frame.
+     ⚠ Falls back to the untinted plate rather than drawing nothing if the swap fails — the
+     invisible-boss failure this function's own guard above exists to prevent. */
+  const im=(D.pal ? (xartPalette(D.key, D.pal) || XART.get(D.key)) : XART.get(D.key));
   const s=b.w/256, w=256*s, h=256*s;
   const x=b.x-w/2, y=(b._drawY!=null?b._drawY:b.y)-h/2;
   ctx.save();
@@ -8240,7 +8285,7 @@ function spawnSubBoss__inner(kind){
            flash:0, dead:false, dying:0, fireCd:1.4, drift:0, atkPhase:0, phaseT:1.2, sub:true, name:'SUB-BOSS'};
   switch(kind){
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
-    case 'siegeember': case 'thornrime': case 'blacksteel':
+    case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'stormlance':
       b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {
       /* Built from the pack's own map rather than eyeballed: BOFQL carries the
@@ -12823,6 +12868,10 @@ function warmStage(n){
       obsidiandrill:'nobd_', glacierrail:'nglr_',
       siegeember:'nsb_siege_ember', thornrime:'nsb_thorn_rime', blacksteel:'nsb_blacksteel',
       herald:'nev_venom_',        // the Herald's attack reel; its mba_vr_ plates are NOT in XART
+      /* the 0812e hulls warm their SOURCE plate — a palette-swapped hull still decodes the same
+         key, and xartPalette cannot build its canvas until that key is ready. Miss this and the
+         new minis open the fight on the silhouette fallback, which is the whole 0812c bug. */
+      junglecruiser:'nsb_thorn_rime', stormlance:'nsb_blacksteel',
     };
     const _sb = (typeof SUBBOSS!=='undefined' && SUBBOSS[n]) ? SUBBOSS[n].kind : null;
     if(_sb && _PACKOF[_sb]) addPrefix(_PACKOF[_sb]);

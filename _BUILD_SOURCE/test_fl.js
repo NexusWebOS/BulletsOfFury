@@ -1041,12 +1041,21 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
 
   // ===== 23. LEVEL 1 boss + miniboss wired =====
   console.log('=== 23. level 1 boss + miniboss ===');
-  vm.runInContext("subBoss=null;subBossActive=false; spawnSubBoss(SUBBOSS[1].kind); window.__l1s=subBoss;", ctxv);
+  /* THE QUAD-LASER IS NO LONGER STAGE 1's MINIBOSS (drop 0812e). Mike: "get rid of level 1
+     miniboss use the new jungle cruiser I gave you." The quad-laser SYSTEM is untouched — its
+     nqx_ art, its four per-cannon hitboxes and its charge attack all remain and are still worth
+     testing — so these spawn it BY KIND instead of by asking what stage 1 happens to field.
+     Coupling a unit's behaviour test to a stage assignment is what made nine assertions fail on
+     a one-word change that broke nothing. */
+  vm.runInContext("subBoss=null;subBossActive=false; spawnSubBoss('quadlaser'); window.__l1s=subBoss;", ctxv);
   /* I RETITLED THESE IN 0801em WITHOUT CHANGING WHAT THEY TEST (drop 0801ft) - the
      label said QUAD-LASER while the condition still demanded _crawler and the name
      'JUNGLE SIEGE CRAWLER'. Testing the unit that is actually there: the pack's own
      four independently destructible cannons, from window.BOFQL. */
-  ok(vm.runInContext("window.__l1s && window.__l1s._ql===true && window.__l1s.name==='QUAD-LASER GUNSHIP'", ctxv), "level 1 miniboss is the QUAD-LASER GUNSHIP (drop 0801em)");
+  ok(vm.runInContext("window.__l1s && window.__l1s._ql===true && window.__l1s.name==='QUAD-LASER GUNSHIP'", ctxv), "the QUAD-LASER GUNSHIP still builds (kept, unassigned)");
+  vm.runInContext("subBoss=null;subBossActive=false; spawnSubBoss(SUBBOSS[1].kind); window.__l1j=subBoss;", ctxv);
+  ok(vm.runInContext("window.__l1j && window.__l1j._ship==='junglecruiser' && window.__l1j.name==='JUNGLE CRUISER'", ctxv),
+     "level 1 fields the JUNGLE CRUISER (drop 0812e, Mike's word)");
   ok(vm.runInContext("window.__l1s && window.__l1s._qlCan && window.__l1s._qlCan.length===4", ctxv), 'quad-laser has its four destructible cannons (from the pack map)');
   vm.runInContext("boss=null;bossActive=false; spawnBoss(STAGES[0].boss); window.__l1b=boss;", ctxv);
   ok(vm.runInContext("window.__l1b && window.__l1b.name==='JUNGLE OVERLORD-X' && NEWBOSS[1].idle==='chopper_idle'", ctxv), 'level 1 boss is JUNGLE OVERLORD-X (chopper art)');
@@ -5584,12 +5593,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      level 1 currently" — so level 1 keeps its quadlaser and dambreaker moves to 4. The old
      {1:'dambreaker'} keying was wrong. */
   ok(vm.runInContext("arsenalMiniFor(1)===null", ctxv),
-     'level 1 gets NO arsenal mini — it keeps the quadlaser Mike chose for it');
+     'level 1 gets NO arsenal mini — it keeps the miniboss Mike chose for it');
   ok(vm.runInContext("arsenalMiniFor(2)==='caldera'",   ctxv), 'stage 2 fields CALDERA');
   ok(vm.runInContext("arsenalMiniFor(3)==='frostbite'", ctxv), 'stage 3 fields FROSTBITE');
   ok(vm.runInContext("arsenalMiniFor(4)==='dambreaker'",ctxv), 'stage 4 fields DAMBREAKER');
   /* the tier displaces nothing: the real minibosses are still where they were */
-  ok(vm.runInContext("SUBBOSS[1].kind==='quadlaser'", ctxv), 'and SUBBOSS[1] is still the QUAD-LASER');
+  ok(vm.runInContext("SUBBOSS[1].kind==='junglecruiser'", ctxv), 'and SUBBOSS[1] is the JUNGLE CRUISER');
   ok(vm.runInContext("SUBBOSS[2].kind==='siegeember'", ctxv), 'SUBBOSS[2] is the EMBER SIEGECARRIER');
   ok(vm.runInContext("SUBBOSS[3].kind==='thornrime'", ctxv), 'SUBBOSS[3] is the RIME THORN');
   /* order down a level: mini -> sub-boss -> boss, each heavier than the last */
@@ -8259,7 +8268,9 @@ console.log("=== 190. quadlaser turrets + shield ===");
   var _q=JSON.parse(vm.runInContext(`(function(){
     ASSETS.ready=true; run.stage=1; curStage=STAGES[0];
     beginStage(1); setState(GS.PLAY); player.reset();
-    for(var f=0;f<60*220 && !subBossActive;f++){ player.invuln=999999; player.hp=99; updatePlay(1/60); }
+    /* spawn the QUAD-LASER directly (drop 0812e): stage 1 fields the jungle cruiser now, and
+       this section is about the quad-laser's own turret/shield rules. */
+    subBoss=null; subBossActive=false; spawnSubBoss('quadlaser');
     if(!subBoss) return JSON.stringify({err:1});
     var b=subBoss, o={n:(b._qlCan||[]).length};
     var hp0=b.hp; hitSubBoss(10,b.x,b.y);
@@ -8852,15 +8863,23 @@ console.log("=== 202. quadlaser shield aura ===");
     +"for(var f=0;f<60*200 && !subBossActive;f++){ player.invuln=999999; player.hp=99;"
     +" if(f%4===0) pShoot(); updatePlay(1/60); try{drawWorld(1/60);}catch(e){} }"
     +"if(!subBoss) return JSON.stringify({err:1});"
+    /* THE PLAY-THROUGH STILL PROVES THE STAGE REACHES ITS MINIBOSS — that is the part worth
+       200 simulated seconds. The AURA rules below belong to the quad-laser, which stage 1 no
+       longer fields (drop 0812e), so it is spawned by kind once the stage has been proven to
+       arrive. Two claims, two units, one run. */
+    +"var reached=subBoss.name;"
+    +"subBoss=null; subBossActive=false; spawnSubBoss('quadlaser');"
     +"var b=subBoss;"
     +"function count(){ var n=0, od=ctx.drawImage; ctx.drawImage=function(){n++;return od.apply(ctx,arguments);};"
     +" try{ drawSubBoss(); }catch(e){} ctx.drawImage=od; return n; }"
     +"b._qlArmor=0; b._qlShield=0; b._qlHullOpen=false;"
     +"(b._qlCan||[]).forEach(function(c){ c.dead=false; }); var sealed=count();"
     +"(b._qlCan||[]).forEach(function(c){ c.dead=true; }); b._qlHullOpen=true; var open=count();"
-    +"return JSON.stringify({sealed:sealed, open:open, n:(b._qlCan||[]).length});})()", ctxv));
+    +"return JSON.stringify({sealed:sealed, open:open, n:(b._qlCan||[]).length, reached:reached});})()", ctxv));
   unseedWaves();
-  ok(!_a.err && _a.n===4, 'the stage-1 miniboss is reached by PLAYING and fields four turrets');
+  ok(!_a.err && _a.reached==='JUNGLE CRUISER',
+     'stage 1 reaches its miniboss by PLAYING it — the JUNGLE CRUISER ('+(_a.reached||'none')+')');
+  ok(!_a.err && _a.n===4, 'and the quad-laser still fields four turrets when spawned');
   ok(_a.sealed>_a.open, 'it draws its aura while sealed even when nothing is hitting it ('+_a.sealed+' vs '+_a.open+')');
 }
 
@@ -9943,6 +9962,45 @@ console.log("=== 219. nca_87 projectile pack ===");
   var _xp=_g219.slice(_g219.indexOf('function xartPalette('), _g219.indexOf('function xartPalette(')+1400);
   ok(/mode==='black'/.test(_xp) && /multiply/.test(_xp), 'xartPalette still darkens for black');
   ok(/mode==='white'/.test(_xp) && /screen/.test(_xp),   'and screens for white');
+}
+
+// ===== 220. EVERY STAGE FIELDS A NAMED MINIBOSS (drop 0812e) =====
+console.log("=== 220. named minibosses ===");
+{
+  /* ⚠ STAGE 6 SPAWNED A UNIT LITERALLY NAMED "SUB-BOSS". SUBBOSS[6] said 'ss' and
+     spawnSubBoss__inner's switch had no arm for it, so it fell through to the generic 130x120
+     default: no art, no attack profile, stock HP. Nothing failed, nothing logged — it just
+     quietly was not a miniboss. This is the check that would have caught it. */
+  var _f220=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true; var o={};"
+    +"for(var i=1;i<=8;i++){ var k=(SUBBOSS[i]||{}).kind;"
+    +" subBoss=null; subBossActive=false; subBossDone=false; subBossTriggered=false;"
+    +" try{ spawnSubBoss__inner(k); }catch(e){}"
+    +" o[i]={kind:k, name:subBoss?subBoss.name:null, ship:subBoss?(subBoss._ship||null):null}; }"
+    +"return JSON.stringify(o);})()", ctxv));
+  var _generic=[];
+  for(var _s2=1;_s2<=8;_s2++){
+    var _e=_f220[_s2];
+    if(!_e.name || _e.name==='SUB-BOSS') _generic.push(_s2+':'+_e.kind);
+  }
+  ok(_generic.length===0,
+     'every stage 1-8 fields a NAMED miniboss'+(_generic.length?(' — generic: '+_generic.join(', ')):''));
+  ok(_f220[1].ship==='junglecruiser', "stage 1 is the JUNGLE CRUISER (Mike's word, 0812e)");
+  ok(_f220[6].ship==='stormlance',    'stage 6 is the STORM LANCE, not the old placeholder');
+
+  /* ⚠ A PALETTE-SWAPPED HULL STILL DECODES ITS SOURCE KEY. xartPalette cannot build its canvas
+     until the underlying plate is ready, so a `pal` entry whose key is not warmed opens the fight
+     on the silhouette fallback — which is precisely the 0812c bug, reintroduced by a new unit. */
+  var _f220b=JSON.parse(vm.runInContext("(function(){ var o=[];"
+    +"for(var k in SHIPBOSS){ if(SHIPBOSS[k].pal) o.push([k, SHIPBOSS[k].key]); }"
+    +"return JSON.stringify(o);})()", ctxv));
+  var _g220=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  var _unwarmed=[];
+  _f220b.forEach(function(p){
+    if(_g220.indexOf(p[0]+":'"+p[1]+"'")<0) _unwarmed.push(p[0]);
+  });
+  ok(_f220b.length>0, 'the palette-swapped hulls are declared ('+_f220b.length+')');
+  ok(_unwarmed.length===0,
+     'and each one warms its SOURCE plate'+(_unwarmed.length?(' — missing: '+_unwarmed.join(', ')):''));
 }
 
 console.log('\n============================================');
