@@ -10033,6 +10033,35 @@ console.log("=== 221. boss art warming ===");
      +(_live.length?(' — NOW REGISTERED: '+_live.join(', ')+' (wire it or drop the branch)'):''));
 }
 
+// ===== 222. THE MUZZLE FLASH MATCHES THE ROUND IT FIRES (drop 0812g) =====
+console.log("=== 222. muzzle flash tiers ===");
+{
+  var _g222=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  /* ⚠ THE FLASH WAS CLAMPED TO FIVE TIERS at all five assignment sites, so Cole's exclusive 6 and
+     7 lit the level-5 flash while 0812d gave their ROUNDS their own colours — the gun lighting one
+     colour and the bullet leaving in another. */
+  ok(!/_mgMuzLv=Math\.max\(1,Math\.min\(5,/.test(_g222),
+     'no muzzle assignment clamps the tier to 5');
+  ok((_g222.match(/_mgMuzLv=Math\.max\(1,Math\.min\(8,/g)||[]).length===5,
+     'all five assignment sites store the true tier (1-8)');
+
+  /* ⚠ AND IT WAS DRIVEN BY THE WALL CLOCK on a 0.07s one-shot, so which of four authored frames
+     you saw depended on when you pulled the trigger. Same correction as the pellet in 0811y. */
+  var _blk=_g222.slice(_g222.indexOf('let _p87muz=false;'), _g222.indexOf('let _p87muz=false;')+1500);
+  ok(/player\._mgMuzT\s*\/\s*0\.07/.test(_blk), 'the flash reel is driven by its own remaining time');
+  ok(!/performance\.now\(\)/.test(_blk), 'and not by the wall clock');
+
+  /* ⚠ AND IT MUST NOT EARLY-RETURN. This block sits mid-way through the player overlay draw —
+     Cole's Aegis aura and the orbiting orbs come after it, so a `return` here would silently
+     delete them whenever the gun happened to be lit. I wrote that bug and caught it in review. */
+  ok(!/^\s*if\(p87Draw\([^)]*\)\)\s*return;/m.test(_blk),
+     'and it flags rather than returning, so the overlay below it still draws');
+
+  /* both legacy reels are gated on the flag, or the spread lights two muzzles at once */
+  ok((_g222.match(/if\(!_p87muz && player\._mgMuzT>0/g)||[]).length===2,
+     'both legacy muzzle branches are gated on the pack having drawn');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');

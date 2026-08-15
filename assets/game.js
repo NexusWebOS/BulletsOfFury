@@ -10278,7 +10278,7 @@ function pShoot(){
       const _blv = lvv<=1 ? 1 : Math.max(1,lvv);
       pBullets.push({x:player.x+off, y:player.y-14, vx:0, vy:-9, w:4,h:12, dmg:_bdmg, kind:'mg', lv:_blv});
     }
-    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(5,lvv));   // real machinefx muzzle flash at the nose
+    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lvv));   // real machinefx muzzle flash at the nose
     Audio.SFX.shoot();
   } else if(w===1){ // spread fire
     const n=2+lv;
@@ -10289,7 +10289,7 @@ function pShoot(){
     }
     /* the gun's real muzzle flash, which spread never lit - part of "more
        graphical". Same machinefx reel the MG branch uses. */
-    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(5,lv));
+    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv));
     Audio.SFX.spread();
   } else if(w===2){ // MISSILE — salvo of homing missiles (real pilot-colored missile art, Raiden-style tracking)
     const n = 1+Math.floor((lv+1)/2);              // lv1:2 lv2:2 lv3:3 lv4:3 lv5:4
@@ -10305,7 +10305,7 @@ function pShoot(){
     (Audio.SFX.missile||Audio.SFX.grenade||Audio.SFX.shoot)();
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
-    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(5,lv||1));
+    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv||1));
   } else if(w===3){ // LASER — solid continuous beam that burns straight up the column
     const dmg = 2 + Math.floor(lv/2);            // lv1:2 lv2:3 lv3:3 lv4:4 lv5:4
     let beam=null; for(const b of pBullets){ if(b.kind==='beam'){ beam=b; break; } }
@@ -10314,7 +10314,7 @@ function pShoot(){
     (Audio.SFX.laser||Audio.SFX.spread||Audio.SFX.shoot)();
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
-    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(5,lv||1));
+    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv||1));
   } else if(w===5){ // ICE ORB — D2 frozen-orb: spins upward, sprays shards, pierces; one orb at a time (two at lv5)
     const maxOrbs = lv>=5?2:1;
     let live=0; for(const b of pBullets){ if(b.kind==='orb') live++; }
@@ -10325,7 +10325,7 @@ function pShoot(){
       (Audio.SFX.spread||Audio.SFX.shoot)();  // ice orb launch
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
-    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(5,lv||1));
+    player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv||1));
     }
   } else if(w===4){ // FLAMETHROWER — held, short reach, huge close-quarters damage (crowd control)
     flameFire(lv);
@@ -17353,7 +17353,42 @@ function _drawPlayerCore(){
      Now every weapon that sets the timer gets a flash, and the ones that are not the MG use
      the authored PlayerWeapons frames. The MG keeps its per-level machinefx crown below,
      because that art is colour-graded per tier and a single frame would lose that. */
-  if(player._mgMuzT>0 && run.weapon!==0 && typeof XART!=='undefined'){
+  /* the pack owns weapon 1 (spread) now, so the legacy table below covers 2..5 only - without
+     this the spread would light BOTH its old kinetic muzzle and the new flash on every shot. */
+  /* ============================================================
+     THE MUZZLE FLASH NOW MATCHES THE ROUND IT FIRES (drop 0812g)
+
+     0812d put the nca_87 pack on the machine gun and the spread with Mike's eight-tier palette,
+     and left the flash behind — so the gun lit one colour and the bullet left in another.
+
+     ⚠ THE FLASH WAS CLAMPED TO FIVE TIERS. `_mgMuzLv` was stored as `min(5, lv)` at all five
+     assignment sites, so Cole's exclusive 6, 7 and 8 all lit the level-5 flash — the same fault
+     0801cb found in the pellet draw, where tiers that were mechanically real were visually
+     identical to everyone else's top tier. The true tier is stored now; the legacy `nmz_`/`mgmuz_`
+     reels clamp locally, where they actually index by level.
+
+     ⚠ AND IT WAS DRIVEN BY THE WALL CLOCK. `(performance.now()/45|0)%6` on a flash that lasts
+     0.07s means the frame you get depends on when you pulled the trigger, not on how far the
+     flash has come — so a four-frame reel authored to grow and decay was usually entered halfway
+     and often at its last frame. It is a ONE-SHOT off the flash's own remaining time now, so it
+     always plays from the start, exactly the correction 0811y made to the pellet.
+     ============================================================ */
+  let _p87muz=false;
+  if(player._mgMuzT>0 && (run.weapon===0 || run.weapon===1) && typeof p87Draw==='function'){
+    const _fl=clamp(player._mgMuzLv||1,1,8);
+    const _prog=1-Math.max(0,Math.min(1, player._mgMuzT/0.07));      // 0 at the shot -> 1 at the end
+    /* the spread takes the pack's SECOND, wider flash — cell [3,3], 13250 ink against row 0's
+       5076..10081 — because a spread lights the whole nose, not a single barrel. */
+    const _cell=(run.weapon===1) ? P87_ROW3FLASH
+                                 : P87_FLASH[Math.min(P87_FLASH.length-1,(_prog*4)|0)];
+    const _fh=(run.weapon===1?26:30)+_fl*1.4;
+    /* ⚠ NO EARLY RETURN HERE. This sits in the middle of the player-overlay draw and Cole's Aegis
+       aura, the orbit orbs and the rest all come after it — returning would silently delete them
+       whenever the gun happened to be lit. A flag, and the legacy reels are skipped instead. */
+    _p87muz = p87Draw(_cell, x, y-16-_fh*0.30, 0, _fh, _fl, wlvGlow(_fl),
+                      Math.min(1, player._mgMuzT/0.05));
+  }
+  if(!_p87muz && player._mgMuzT>0 && run.weapon!==0 && typeof XART!=='undefined'){
     const _NWM={1:'nwp_kin_spread_muzzle', 2:'nwp_mls_missile_exhaust', 3:'nwp_lfi_laser_start',
                 4:'nwp_lfi_fire_travel_1', 5:'nwp_lfi_ice_orb'};
     const _nk=_NWM[run.weapon];
@@ -17367,7 +17402,7 @@ function _drawPlayerCore(){
       ctx.restore();
     }
   }
-  if(player._mgMuzT>0 && run.weapon===0 && typeof XART!=='undefined'){
+  if(!_p87muz && player._mgMuzT>0 && run.weapon===0 && typeof XART!=='undefined'){
     const _ml=clamp(player._mgMuzLv||1,1,5);
     // v2.2 crown muzzle flash: art points UP natively, 6-frame anim, per-level color
     const _nmk='nmz_'+_ml+'_'+(((performance.now()/45)|0)%6);
@@ -20959,7 +20994,8 @@ function drawHelixPair(x, y, len, kind, frame, rot, glow, alpha){
    drawn instead of being resampled through an arbitrary rotation. ============================================================ */
 const P87_SHEET='nca_87', P87_CELL=192;
 const P87_ROUND=[[1,0],[1,1],[1,2],[1,3]];      // MG: birth -> streamlined, monotonic, holds
-const P87_FLASH=[[0,0],[0,1],[0,2],[0,3]];      // muzzle reel   (available; not wired yet)
+const P87_FLASH=[[0,0],[0,1],[0,2],[0,3]];      // muzzle reel, a one-shot (drop 0812g)
+const P87_ROW3FLASH=[3,3];                      // the second, WIDER flash - 13250 ink; the spread's
 const P87_IMPACT=[[2,0],[2,1],[2,2],[2,3]];     // impact reel   (available; not wired yet)
 /* travel angle each authored spread pose is drawn for, in atan2(vy,vx) terms — player rounds
    travel UP, which is -90°, and the two diagonals measured ±46.2° off that. */

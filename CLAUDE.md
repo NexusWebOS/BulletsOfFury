@@ -148,7 +148,21 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0812F.md`, then `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0812G.md`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0812g — the muzzle flash now matches the round it fires, all 8 tiers, both weapons.**
+⚠ **THE FLASH WAS CLAMPED TO FIVE TIERS** (`_mgMuzLv=min(5,lv)` at all five assignment sites), so
+after 0812d gave the ROUNDS eight colours the gun lit one colour and the bullet left in another.
+⚠ **AND IT RAN ON THE WALL CLOCK** — `(performance.now()/45|0)%6` on a 0.07s one-shot, so which of
+four authored frames you saw depended on when you pulled the trigger. Now a one-shot off
+`_mgMuzT`, exactly the correction 0811y made to the pellet.
+⚠ **`node --check` CANNOT CATCH WHAT NEARLY SHIPPED HERE.** I inserted the block between the two
+legacy branches, leaving `let _p87muz` declared AFTER a branch that reads it — a temporal-dead-zone
+ReferenceError on every spread shot, syntax-clean. Runtime probe or nothing.
+⚠ **AND IT MUST NOT EARLY-RETURN** — Cole's Aegis aura and the orbit orbs draw after it, so a
+`return` deletes them whenever the gun is lit. It sets a flag; both legacy branches gate on it.
+⚠ **TIER 8 DOES NOT FIRE THE MACHINE GUN AT ALL** — `coleTier()>=8` returns immediately, the fusion
+cannon replaces it. Asking tier 8 for a muzzle level reads the previous shot's value.
 
 **0812f — the boss art was unwarmed too, and the whole NEWBOSS table is dead.**
 ⚠ Audited all eight bosses the way 0812c audited the minis. `addPrefix('infernoreaver')` cannot
@@ -559,7 +573,7 @@ and reports settled burial. **The 839 / 71.9% baselines quoted in the handoff ar
 ⚠ **The recurring failure this stretch was systems that were declared and never fired** — the quad-laser's muzzles, `_qlChg`, `enemyVolley` sharing a `fireCd` its unit's tick owns, `micon_` asked of the wrong store, `lordshadows` registered and referenced nowhere. In every case the state looked right and no pixel moved. **Render it, then believe it.**
 
 
-Suite: **2,537 assertions / 226 sections / 5 failures** (drop 0812f) — the preload count, the two
+Suite: **2,543 assertions / 227 sections / 5 failures** (drop 0812g) — the preload count, the two
 `_superseded` ones, the volley round count and the naval flash families. ⚠ **If you see more than
 five, check `git status` for deleted art before you debug anything** — a missing file trips nine
 assertions across four sections and reads as an unrelated pile of failures.
