@@ -8116,6 +8116,79 @@ function _shipShot(x,y,vx,vy,w){
    here is not "too hard", it is a fight that stalls with the boss parked somewhere invisible.
    ⚠ AND `enter` IS RESPECTED: none of this runs until the unit has finished arriving, or a boss
    would start its dive while still flying in. ============================================================ */
+/* ============================================================
+   THE ROTATING BEAM RAKE (drop 0812n)
+
+   Mike: "a charge beam and beam should never follow you. tehy should be like beams that rotate on
+   the screen that kill you if you touch them, so you have to carefully move while avoiding bullets
+   between those beams too. Arcade stuff really. Stuff to increase the adrenaline."
+
+   ⚠ 0812m's charge beam WAS THE THING HE IS RULING OUT. It locked the player's column and fired
+   down it — aimed, even if it did not track after the lock. A beam pointed at you is a dodge you
+   either win or lose in one frame; a beam SWEEPING the field is a space you have to read and move
+   through, which is where the tension lives. That pattern is replaced, not tuned.
+
+   The rake is `n` spokes from the boss's own hull, evenly spaced and rotating together. It does not
+   aim, ever. The player threads the gaps while the boss's ordinary guns keep firing, which is
+   exactly the "move carefully between them while avoiding bullets" he asked for.
+
+   THREE THINGS MAKE IT FAIR RATHER THAN CHEAP, and each is a deliberate trade:
+     WARM-UP    0.75s drawn thin and dim, and NOT lethal. The sweep is readable before it bites.
+     GAP SIZE   the spoke count sets the gap; 3 spokes at 120 degrees leaves a wide corridor, 5 at
+                72 leaves a tight one. Phase picks it, so the pressure rises with the fight.
+     RETRACT    a hard duration. A permanent rotating hazard stops being an event and becomes the
+                arena, and the player just waits it out at the edge.
+
+   ⚠ IT KILLS ON CONTACT, so the collision is point-to-SEGMENT, not point-to-line: a spoke reaches
+   `len` and no further, and standing outside its reach is a legitimate answer to it. Using an
+   infinite line would make the whole screen lethal on the diagonal. ============================================================ */
+function beamRakeStart(b, spokes, spin, dur, len){
+  b._brk = { n:spokes, spin:spin, ang:Math.random()*Math.PI*2, t:0,
+             dur:dur, warm:0.75, len:len||Math.max(VW,VH)*1.15 };
+  if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.retinaCharge) Audio.SFX.retinaCharge();
+}
+function beamRakeTick(b, dt){
+  const R=b && b._brk; if(!R) return;
+  R.t+=dt; R.ang+=R.spin*dt;
+  if(R.t>=R.dur+R.warm){ b._brk=null; return; }
+  if(R.t<R.warm) return;                     // still announcing; not lethal yet
+  if(typeof player==='undefined' || !player || player.dead || player.invuln>0) return;
+  const ox=b.x, oy=(b._drawY!=null?b._drawY:b.y);
+  const px=player.x-ox, py=player.y-oy;
+  const HALF=7 + (player._hx||9)*0.5;        // beam half-width plus the ship's own slim hitbox
+  for(let i=0;i<R.n;i++){
+    const a=R.ang + i*(Math.PI*2/R.n);
+    const dx=Math.cos(a), dy=Math.sin(a);
+    const proj=px*dx + py*dy;                // distance ALONG the spoke
+    if(proj<0 || proj>R.len) continue;       // behind the hub, or past the tip
+    const perp=Math.abs(px*dy - py*dx);      // distance ACROSS it
+    if(perp<HALF){ if(typeof playerHit==='function') playerHit(); return; }
+  }
+}
+function beamRakeDraw(b){
+  const R=b && b._brk; if(!R) return;
+  const ox=b.x, oy=(b._drawY!=null?b._drawY:b.y);
+  const live=R.t>=R.warm;
+  const k=live ? 1 : (R.t/R.warm);
+  ctx.save();
+  ctx.translate(ox,oy);
+  ctx.globalCompositeOperation='lighter';
+  for(let i=0;i<R.n;i++){
+    const a=R.ang + i*(Math.PI*2/R.n);
+    ctx.save(); ctx.rotate(a);
+    /* the warm-up is a hairline that thickens into the real beam, so the tell and the hazard are
+       visibly the same object rather than two different effects */
+    const w = live ? (11 + Math.sin(R.t*22)*2.5) : (1.5 + 6*k);
+    ctx.globalAlpha = live ? 0.85 : (0.20+0.45*k);
+    ctx.fillStyle = live ? '#ff4d3d' : '#ff8a6a';
+    ctx.fillRect(0, -w/2, R.len, w);
+    ctx.globalAlpha = live ? 0.95 : (0.3*k);
+    ctx.fillStyle = '#fff2c8';
+    ctx.fillRect(0, -w*0.22, R.len, w*0.44);
+    ctx.restore();
+  }
+  ctx.restore();
+}
 const SBM_HOLD=0, SBM_TELL=1, SBM_CHARGE=2, SBM_XSTRIKE=3, SBM_RAM=4, SBM_RECOVER=5;
 const SBM_WATCHDOG=7.0;
 function shipBossStationY(b){ return (b.ty!=null) ? b.ty : VH*0.24; }
@@ -8132,17 +8205,9 @@ function shipBossManoeuvre(b, dt){
   if(!b || !b._ship || b.dead || b.enter) return false;
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const sy=shipBossStationY(b);
-  /* the CHARGE BEAM resolves here, because this is the only per-frame hook a ship boss has.
-     ⚠ It fires on the column locked at the START of the wind-up (_cbX), never on the player's
-     current x - see the note in the pattern. */
-  if(b._cbT!=null){
-    b._cbT-=dt;
-    if(b._cbT<=0){
-      for(let k=0;k<14;k++) _shipShot(b._cbX, b.y+b.h*0.30+k*11, 0, 5.2, 14);
-      b._cbT=null;
-      if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.laserShot) Audio.SFX.laserShot();
-    }
-  }
+  /* the rake is ticked here - the only per-frame hook a ship boss has. It keeps running through
+     every manoeuvre state, so a boss can be crossing the field while its beams sweep. */
+  if(b._brk) beamRakeTick(b, dt);
   if(b._sbm==null){ b._sbm=SBM_HOLD; b._sbmT=rnd(1.2,2.2); b._sbmLeg=0; }
   b._sbmT-=dt;
   b._sbmAge=(b._sbmAge||0)+dt;
@@ -8296,23 +8361,15 @@ function shipBossAttack(b){
        Real components now, fanned about straight DOWN. */
     for(let i=-3;i<=3;i++){ const a=i*0.22; _shipShot(b.x, y, Math.sin(a)*2.2, Math.cos(a)*2.2, 11); }
   } else if(pat==='chargebeam'){
-    /* ============================================================
-       THE ARCADE ATTACKS (drop 0812m). Mike: "Dont just do simple projectile attacks. do charge up
-       laser attacks, spread laser attacks, spread missile launchs, homing missiles etc."
+    /* ⚠ RENAMED IN SPIRIT, NOT IN KEY (drop 0812n). The pattern id stays `chargebeam` so the
+       SHIPBOSS tables do not have to change, but what it does is now the ROTATING RAKE — Mike:
+       "a charge beam and beam should never follow you." Nothing here reads the player's position.
 
-       CHARGE BEAM is the Mega Man one: it locks your column, holds a visible wind-up, and only
-       then fires — so the punishment is for standing still, not for bad luck. The lock is taken
-       ONCE at the start of the wind-up and does not track afterwards; a beam that follows you is
-       unavoidable, and unavoidable is not difficulty. */
-    /* ⚠ A PHASE IS ONE PATTERN, SO A CHARGE ATTACK WOULD BECOME THE ONLY ATTACK. Measured on the
-       Void Bat: once its HP put it in the chargebeam phase the telegraph was up 55.7 of 70 seconds
-       - a permanent red column down the screen, which is neither readable nor a wind-up. It starts
-       a charge every THIRD volley and fires an ordinary aimed pair in between, so the beam stays
-       an event. And it never re-arms while one is already winding up. */
-    if(b._cbT==null && (step%3)===0){
-      b._cbX=(typeof player!=='undefined'&&player)?player.x:b.x;
-      b._cbT=0.62;                     // wind-up; drawn as a brightening column in shipBossDraw
-      if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.retinaCharge) Audio.SFX.retinaCharge();
+       Spoke count rises with the phase, which is what tightens the corridor as the fight goes on:
+       3 spokes leave a 120-degree gap, 5 leave 72. Armed every third volley for the same reason
+       0812m gated the old one — a phase is ONE pattern, so an ungated hazard becomes the arena. */
+    if(!b._brk && (step%3)===0){
+      beamRakeStart(b, 3+Math.min(2,ph), (Math.random()<0.5?-1:1)*(0.55+ph*0.16), 4.2+ph*0.9);
     } else {
       const a3=aimPlayer(b.x,y);
       for(const o of [-0.08,0.08]) _shipShot(b.x, y, Math.cos(a3+o)*2.4, Math.sin(a3+o)*2.4, 10);
@@ -8401,22 +8458,8 @@ function shipBossDraw(b){
      what is in the build is authored art. Doing the same swap at draw time is not the same thing
      — it is an overlay on top of finished work, and it reads as one. If a themed hull is wanted,
      the plate gets themed and imported, not tinted here. */
-  /* ⚠ A WIND-UP THAT CANNOT BE SEEN IS JUST A DELAY. The charge beam locks a column 0.62s before
-     it fires, and this is what makes that window mean something: a thin bright line down the
-     locked column, brightening as the shot approaches. Drawn BEFORE the hull so the boss sits on
-     top of its own telegraph. */
-  if(b._cbT!=null && b._cbT>0){
-    const k=1-(b._cbT/0.62);
-    ctx.save();
-    ctx.globalAlpha=0.25+0.55*k;
-    ctx.fillStyle='#ff5a48';
-    const tw=3+10*k;
-    ctx.fillRect(b._cbX-tw/2, (b._drawY!=null?b._drawY:b.y), tw, VH);
-    ctx.globalAlpha=0.9*k;
-    ctx.fillStyle='#ffe6a0';
-    ctx.fillRect(b._cbX-1, (b._drawY!=null?b._drawY:b.y), 2, VH);
-    ctx.restore();
-  }
+  /* the rake draws UNDER the hull, so the spokes read as coming out of the ship */
+  if(b._brk && typeof beamRakeDraw==='function') beamRakeDraw(b);
   const im=XART.get(D.key);
   const s=b.w/256, w=256*s, h=256*s;
   const x=b.x-w/2, y=(b._drawY!=null?b._drawY:b.y)-h/2;

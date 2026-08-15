@@ -10235,10 +10235,28 @@ console.log("=== 226. boss manoeuvres + arcade attacks ===");
   });
   ok(_using.length>=5, 'and at least five ship units field one ('+_using.length+')');
 
-  /* ⚠ A PHASE IS ONE PATTERN, so a charge attack left ungated becomes the ONLY attack for a third
-     of the fight - measured at 55.7s of telegraph in 70. It arms every third volley. */
-  ok(/\(step%3\)===0/.test(_g226), 'the charge beam is gated to every third volley');
-  ok(/b\._cbT==null &&/.test(_g226), 'and never re-arms while one is already winding up');
+  /* ⚠ A PHASE IS ONE PATTERN, so a hazard left ungated becomes the ONLY attack for a third of the
+     fight - measured at 55.7s of telegraph in 70. It arms every third volley. */
+  ok(/\(step%3\)===0/.test(_g226), 'the rake is gated to every third volley');
+  ok(/!b\._brk && \(step%3\)===0/.test(_g226), 'and never re-arms while one is already sweeping');
+
+  /* ============================================================
+     ⚠ A BEAM MUST NEVER BE AIMED (drop 0812n). Mike: "a charge beam and beam should never follow
+     you. tehy should be like beams that rotate on the screen that kill you if you touch them."
+     0812m's version locked the player's column, which is exactly the thing ruled out. These assert
+     the REPLACEMENT is a sweep and stays one. ============================================================ */
+  ok(/function beamRakeStart\(/.test(_g226) && /function beamRakeTick\(/.test(_g226),
+     'the rotating beam rake exists');
+  var _rk=_g226.slice(_g226.indexOf('function beamRakeStart('), _g226.indexOf('const SBM_HOLD='));
+  ok(!/player\.x/.test(_rk.slice(0, _rk.indexOf('function beamRakeTick('))),
+     'starting a rake does not read the player position');
+  ok(/R\.ang\+=R\.spin\*dt/.test(_rk), 'and the spokes rotate on their own clock');
+  /* ⚠ WARM-UP MUST BE SAFE, or the hazard bites before it is readable */
+  ok(/if\(R\.t<R\.warm\) return;/.test(_rk), 'the warm-up announce is not lethal');
+  /* ⚠ POINT-TO-SEGMENT, NOT POINT-TO-LINE: an infinite line makes the whole diagonal lethal and
+     standing outside the reach stops being an answer. */
+  ok(/proj<0 \|\| proj>R\.len/.test(_rk), 'a spoke has a finite reach');
+  ok(/dur/.test(_rk), 'and the rake retracts rather than becoming the arena');
 }
 
 console.log('\n============================================');
