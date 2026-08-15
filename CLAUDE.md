@@ -148,7 +148,29 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0811Y.md`, then `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0812A.md`, then `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0812a — the beta tester's input list.** Mouse buttons are bindable now: they go into the same
+`keys` map as `pad_b0..15`, so `down()`/`tap()`/`tapAny()` and the rebind screen all understand a
+click with no special case. Defaults ADDED (not substituted): fire `j,mouse0,…`, bomb `k,mouse2,…`,
+retina `c,space,…`.
+⚠ **`setk` IS LOCAL TO `pollGamepad`** — my first cut called it from the event handlers and would
+have thrown a ReferenceError on every click. Mirror the keyboard's own two lines instead.
+⚠ **Mouse binds are FILTERED OUT of `menuConfirm`** — it reads `tapAny(keybind.fire)`, so `mouse0`
+would make any click both activate the button under the cursor and confirm the highlighted row.
+⚠ Right-click needs `contextmenu` suppressed on the canvas or the browser menu covers the playfield.
+
+⚠ **THE MOUSE DIES ONE SCREEN INTO THE GAME.** Audited every menu:
+**mouse OK** — title, difficulty, pilot, password, options, game over, continue.
+**KEYBOARD ONLY** — mode select, campaign hub, stage select, credits, stage clear.
+TITLE takes the mouse and MODE SELECT, the very next screen, was dead. Fixed there; the other four
+remain.
+
+⚠ **THE OPTIONS ARROWS: THE CLIP WAS WRONG, NOT THE POSITION.** `ww/2-46` put the left arrow at
+`wx+30` over labels drawn at `wx+16` ("MASTER" → "▶ER") and the right one inside the key button's
+span, which is drawn after it. 0801bp had pulled them inward because at `ww/2-10` the panel clip
+`rect(wx,wy,ww,wh)` cut them to slivers — that clip only ever needed to be tight VERTICALLY. Opened
+26px each side; `ww/2-4` now puts them outside the frame.
 
 **0811y — THE MACHINE GUN PELLET WAS SWAPPING A BLOB FOR A STREAK, 7× A SECOND.**
 ⚠ **0811v's wobble fix did NOT cover these** — it repaired the arsenal branch, gated

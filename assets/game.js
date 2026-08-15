@@ -4147,7 +4147,13 @@ const Audio = (()=>{
 /* ============================================================
    INPUT
    ============================================================ */
-const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','pad_b0','pad_b7'],bomb:['k','pad_b1','pad_b6'],retina:['c','pad_b2']};
+/* ⚠ THE MOUSE DEFAULTS ARE ADDED, NOT SUBSTITUTED (drop 0812a). Mike's tester: "A better control
+   for me would be Left click (Fire). Right Click (Missiles), Retina Lock (Space bar)." Those are
+   his three, and they work out of the box now — but J/K/C stay bound alongside them, because
+   keybindValidate only refills an action that is MISSING or EMPTY, so anyone who has already
+   played keeps whatever is in their localStorage and would never see a replacement anyway. Adding
+   costs nothing and taking away would strand the existing layout. */
+const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','pad_b2']};
 /* KEYBINDS MUST BE VALIDATED, NOT JUST FILLED IN (drop 0724dl).
 
    Mike's readout said it all: `state title, kd40 ku41, last shift, menu 0`. Forty keypresses
@@ -4263,8 +4269,40 @@ const Input = (()=>{
     mouse.x=nx; mouse.y=ny; mouse.active=true;
   }
   cv.addEventListener('mousemove',e=>{ window.__inp.mmove++; mouse.inside=true; mpos(e); window.__inp.lastXY=Math.round(mouse.x)+','+Math.round(mouse.y); });
-  cv.addEventListener('mousedown',e=>{ window.__inp.mdown++; mouse.down=true; mpos(e); window.__inp.lastXY=Math.round(mouse.x)+','+Math.round(mouse.y); try{ Audio.resume(); }catch(_){} });
-  window.addEventListener('mouseup',()=>mouse.down=false);
+  /* ============================================================
+     MOUSE BUTTONS ARE BINDABLE INPUTS (drop 0812a)
+
+     Mike's tester: "Add mouse buttons as programmable inputs. A better control for me would be
+     Left click (Fire). Right Click (Missiles), Retina Lock (Space bar)."
+
+     ⚠ NO NEW INPUT PLUMBING — the gamepad already showed the way. Pad buttons are pushed into the
+     same `keys` map as `pad_b0..15` and are therefore bindable, tappable and holdable through
+     down()/tap()/tapAny() with no special cases anywhere. Mouse buttons become `mouse0/1/2` in
+     exactly that map, so every consumer that already understands a bind understands a click. The
+     rebind screen picks them up for free because it stores whatever key name it observes.
+
+     mouse.down stays a plain boolean for the LEFT button only — every menu and the cutscene
+     advance read it, and making a right-click count as a menu confirm would be its own bug. */
+  const MOUSE_KEY=['mouse0','mouse1','mouse2','mouse3','mouse4'];
+  /* ⚠ NOT pollGamepad's setk — that is a const declared INSIDE pollGamepad and is not in scope
+     here; calling it would have thrown a ReferenceError on every single click. This mirrors the
+     keyboard's own two lines instead, including the `pressed` transition so tap() sees a click
+     exactly once rather than every frame the button is held. */
+  const mkey=(name,held)=>{ if(held && !keys[name]) pressed[name]=true; keys[name]=held; };
+  cv.addEventListener('mousedown',e=>{ window.__inp.mdown++;
+    if((e.button|0)===0) mouse.down=true;
+    const mk=MOUSE_KEY[e.button|0]; if(mk) mkey(mk,true);
+    mpos(e); window.__inp.lastXY=Math.round(mouse.x)+','+Math.round(mouse.y); try{ Audio.resume(); }catch(_){} });
+  window.addEventListener('mouseup',e=>{
+    if(!e || (e.button|0)===0) mouse.down=false;
+    const mk=e?MOUSE_KEY[e.button|0]:null;
+    if(mk) mkey(mk,false); else for(const k of MOUSE_KEY) mkey(k,false); });
+  /* ⚠ RIGHT-CLICK MUST NOT OPEN THE BROWSER MENU. Binding missiles to button 2 is useless if the
+     context menu covers the playfield on every shot. Suppressed on the canvas only, so the rest
+     of the page behaves normally. */
+  cv.addEventListener('contextmenu',e=>{ e.preventDefault(); return false; });
+  /* a click that starts on the canvas and ends off it would otherwise latch the button down */
+  window.addEventListener('blur',()=>{ for(const k of MOUSE_KEY) mkey(k,false); });
   cv.addEventListener('wheel',e=>{mouse.wheel=(mouse.wheel||0)+e.deltaY;e.preventDefault();},{passive:false});
   cv.addEventListener('mouseleave',()=>mouse.inside=false);
   // touch (bonus)
@@ -4307,7 +4345,12 @@ const Input = (()=>{
   function menuDown(){ return tapAny(keybind.down); }
   function menuLeft(){ return tapAny(keybind.left); }
   function menuRight(){ return tapAny(keybind.right); }
-  function menuConfirm(){ return tap('enter')||tap(' ')||tapAny(keybind.fire)||tap('pad_b0')||tap('pad_b9'); }
+  /* ⚠ MOUSE BINDS ARE FILTERED OUT OF menuConfirm (drop 0812a). fire now carries 'mouse0', which
+     is what the tester asked for in PLAY — but menus already handle their own clicks, hitting
+     whatever is under the cursor. If a left click also counted as "confirm the highlighted item",
+     one click would do two things: activate the button you aimed at AND the row the keyboard
+     cursor happened to be on. Gameplay keeps the click; menus keep their own semantics. */
+  function menuConfirm(){ return tap('enter')||tap(' ')||tapAny(keybind.fire.filter(k=>!/^mouse\d/.test(k)))||tap('pad_b0')||tap('pad_b9'); }
   /* K IS BACK (drop 0801bv). I bound 'b' last drop and that was wrong: on this
      layout the gamepad B button IS 'k' (fire=J, missile=K, retina=L), so 'b' was
      an unrelated key. 'b' is REMOVED rather than kept alongside — a stray letter
@@ -31118,7 +31161,10 @@ function drawModeSelect(dt){
   ctx.fillText('ARROWS: SELECT   FIRE: CONFIRM   BACK: TITLE',VW/2,VH-18); ctx.globalAlpha=1; ctx.textAlign='left';
   if(Input.tap('up')||Input.tap('w')){ modeIndex=(modeIndex+MODE_ITEMS.length-1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   if(Input.tap('down')||Input.tap('s')){ modeIndex=(modeIndex+1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){
+  /* ONE ACTIVATION PATH, shared by the keyboard and the mouse (drop 0812a). Duplicating this
+     block for the pointer is how the two drift apart — campaign's hub branch is the sort of
+     thing that gets fixed in one copy and not the other. */
+  const _modeGo=function(){
     const it=MODE_ITEMS[modeIndex];
     if(it.open){
       // flash white, THEN move on — same as every other confirmed selection in the engine
@@ -31132,6 +31178,38 @@ function drawModeSelect(dt){
       }, null, drawModeSelect._selRect||null);
     }
     else { if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  };
+  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))) _modeGo();
+  /* ============================================================
+     ⚠ THE MOUSE STOPPED WORKING ONE SCREEN INTO THE GAME (drop 0812a).
+
+     Mike's tester: "Inconsistent inputs. Main menu lets me use mouse, but immediately rejects
+     mouse inputs in random menus."
+
+     Audited every menu screen for a click handler, rather than guessing which ones he meant:
+
+         mouse OK        title, difficulty, pilot, password, options, game over, continue
+         KEYBOARD ONLY   mode select, campaign hub, stage select, credits, stage clear
+
+     "Immediately" is exact — TITLE takes the mouse and MODE SELECT, the very next screen, is one
+     of the dead ones. This fixes that screen; the rest are listed in the passover.
+
+     The row band is derived from the layout constants (y0/gap and the 324px selected pill), not
+     from the art, so a pill whose plate has a different aspect cannot make the clickable area
+     disagree with what is drawn. */
+  {
+    const m=Input.mouse, halfW=162, halfH=gap*0.42;
+    let hov=-1;
+    for(let i=0;i<MODE_ITEMS.length;i++){
+      if(Math.abs(m.x-VW/2)<halfW && Math.abs(m.y-(y0+i*gap))<halfH){ hov=i; break; }
+    }
+    /* only a REAL cursor movement re-selects, or a mouse resting over row 2 would fight every
+       arrow-key press the player makes */
+    if(hov>=0 && hov!==modeIndex && Input.consumeMouseMoved()){
+      modeIndex=hov; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip();
+    }
+    if(hov>=0 && m.down && !drawModeSelect._md && stateT>0.3){ modeIndex=hov; _modeGo(); }
+    drawModeSelect._md=m.down;
   }
   if(Input.tap('backspace')||(typeof backButton==='function'&&backButton())){ setState(GS.TITLE); menuIndex=0; }
 }
@@ -33472,7 +33550,12 @@ function drawOptions(dt){
   if(!rebindAction && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){ rebindAction=selRow.act; Audio.SFX.blip(); }
   // keep the selected row scrolled into view
   { const targetY=pad+selY*rh; if(targetY-optScroll<0) optScroll=clamp(targetY,0,maxScroll); if(targetY-optScroll>wh-rh) optScroll=clamp(targetY-wh+rh,0,maxScroll); }
-  ctx.save(); ctx.beginPath(); ctx.rect(wx,wy,ww,wh); ctx.clip();
+  /* ⚠ THE CLIP IS WIDER THAN THE PANEL, ON PURPOSE (drop 0812a). It exists to hide rows that
+     scroll past the top and bottom, so it only ever needed to be tight VERTICALLY. Being tight
+     horizontally too is what forced the selection arrows inward on top of the labels — see the
+     menuSelMark call below. The panel is x:28 w:VW-56, so there are 28 clear pixels either side;
+     26 of them are opened up here and nothing else in the row draws past wx / wx+ww. */
+  ctx.save(); ctx.beginPath(); ctx.rect(wx-26,wy,ww+52,wh); ctx.clip();
   let y=wy+pad-optScroll;
   for(const r of rows){ const cy=y+rh/2, rowIdx=rows.indexOf(r);
     if(y+rh>wy-2 && y<wy+wh+2){
@@ -33491,7 +33574,18 @@ function drawOptions(dt){
            ww/2-10 that placed them at wx-26 and wx+ww+26 - OUTSIDE the window on
            both sides. All that showed were the slivers landing on the frame.
            Pulled well inside the row so both arrows sit on the panel. */
-        if(isSel && typeof menuSelMark==='function') menuSelMark(wx+ww/2, cy, ww/2-46, '#ffd24a');
+        /* ⚠ ARROWS OUTSIDE THE PANEL. Mike's tester: "You arrow is covering and overlapping ...
+           Just move the arrows outside of the window", and separately "Right arrow disappears".
+           Both come from ww/2-46. menuSelMark draws at cx -/+ (halfW+16), so that put the LEFT
+           arrow at wx+30 — labels are drawn at wx+16, hence MASTER reading as "▶ER" — and the
+           RIGHT arrow at wx+ww-30, which is inside the key button's span (wx+ww-124 .. wx+ww-20)
+           and the button is drawn AFTER it, so it was painted over.
+
+           0801bp had pulled them inward for a real reason: at ww/2-10 they sat at wx-26 / wx+ww+26
+           and the panel clip cut them to slivers. The clip is what was wrong, not the position —
+           it is widened above. ww/2-4 now lands them at wx-12 and wx+ww+12: clear of the labels,
+           clear of the key buttons, inside the 28px margin the panel leaves. */
+        if(isSel && typeof menuSelMark==='function') menuSelMark(wx+ww/2, cy, ww/2-4, '#ffd24a');
         let vol=(r.k==='voice')?voiceVol:Audio.getVol(r.k); const rid='v_'+r.k;
         // segmented rectangle boxes — click a box to set that level, drag across to scroll through them
         const hoverRow = m.x>=sx0-6 && m.x<=sx1+6 && Math.abs(m.y-cy)<12 && m.y>wy && m.y<wy+wh;
@@ -33520,7 +33614,18 @@ function drawOptions(dt){
            ww/2-10 that placed them at wx-26 and wx+ww+26 - OUTSIDE the window on
            both sides. All that showed were the slivers landing on the frame.
            Pulled well inside the row so both arrows sit on the panel. */
-        if(isSel && typeof menuSelMark==='function') menuSelMark(wx+ww/2, cy, ww/2-46, '#ffd24a');
+        /* ⚠ ARROWS OUTSIDE THE PANEL. Mike's tester: "You arrow is covering and overlapping ...
+           Just move the arrows outside of the window", and separately "Right arrow disappears".
+           Both come from ww/2-46. menuSelMark draws at cx -/+ (halfW+16), so that put the LEFT
+           arrow at wx+30 — labels are drawn at wx+16, hence MASTER reading as "▶ER" — and the
+           RIGHT arrow at wx+ww-30, which is inside the key button's span (wx+ww-124 .. wx+ww-20)
+           and the button is drawn AFTER it, so it was painted over.
+
+           0801bp had pulled them inward for a real reason: at ww/2-10 they sat at wx-26 / wx+ww+26
+           and the panel clip cut them to slivers. The clip is what was wrong, not the position —
+           it is widened above. ww/2-4 now lands them at wx-12 and wx+ww+12: clear of the labels,
+           clear of the key buttons, inside the 28px margin the panel leaves. */
+        if(isSel && typeof menuSelMark==='function') menuSelMark(wx+ww/2, cy, ww/2-4, '#ffd24a');
         const bx=wx+ww-124, bw=104, bh=22, active=(rebindAction===r.act);
         const kg=ctx.createLinearGradient(0,cy-bh/2,0,cy+bh/2);
         if(active){ kg.addColorStop(0,'#ffb347'); kg.addColorStop(1,'#c96f14'); } else { kg.addColorStop(0,'#3a4150'); kg.addColorStop(1,'#20242e'); }
