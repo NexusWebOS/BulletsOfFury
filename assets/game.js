@@ -8069,11 +8069,38 @@ function shipBossAttack(b){
   } else if(pat==='fan2'){
     /* a wide fixed fan off the hull. Phase 2 for the siegecarrier: the broadsides taught you to
        cross on the beat, and this punishes being mid-crossing. */
-    for(let i=-3;i<=3;i++) _shipShot(b.x, y, Math.PI/2 + i*0.22, 2.2, 11);
+    /* [!] THESE WERE WRITTEN AS IF _shipShot TOOK AN ANGLE (drop 0812i). It takes VELOCITY
+       COMPONENTS - _shipShot(x,y,vx,vy,w) - and `Math.PI/2 + i*0.22` was being handed straight to
+       vx. Every round in the "fan" therefore left at vx 0.91..2.23, i.e. ALL of them to the right,
+       at nearly the same angle. Measured on the units that use these two patterns: 0.00 threat per
+       second across a 45-second fight - they fired constantly and never once shot at the player.
+       Real components now, fanned about straight DOWN. */
+    for(let i=-3;i<=3;i++){ const a=i*0.22; _shipShot(b.x, y, Math.sin(a)*2.2, Math.cos(a)*2.2, 11); }
   } else if(pat==='pincer2'){
     /* two angled walls leaving the middle open, so the safe ground is directly under the boss "
        the one place a player will not stand while it is shooting at them. */
-    for(const t of [-0.50,-0.34,-0.18,0.18,0.34,0.50]) _shipShot(b.x, y, Math.PI/2 + t, 2.4, 11);
+    for(const t of [-0.50,-0.34,-0.18,0.18,0.34,0.50]) _shipShot(b.x, y, Math.sin(t)*2.4, Math.cos(t)*2.4, 11);
+  }
+  /* ============================================================
+     AND THEY NOW SHOOT AT YOU (drop 0812i). Mike: "make them a little bit more challenging and
+     make them attack."
+
+     Measured before this: every miniboss fired 3.2-4.1 rounds a second and put 0.00-0.31 of them
+     through the player's column. The patterns above are all FIXED GEOMETRY - columns, lanes,
+     radial arms - and that is deliberate: their comments describe doorways and safe lanes, and a
+     readable pattern is the thing that makes a fight learnable rather than a wall of bullets.
+
+     So the geometry is untouched and an AIMED pair is added on top, on every other volley. That is
+     what turns "bullets are happening" into "it is shooting at me" without flattening the authored
+     shape, and the every-other cadence leaves the pattern legible between aimed beats. */
+  if((step%2)===0 && typeof player!=='undefined' && player && player.alive!==false){
+    const dx=player.x-b.x, dy=Math.max(40,(player.y-y));
+    const d=Math.hypot(dx,dy)||1, spd=2.35;
+    for(const off of [-0.10, 0.10]){
+      const ux=dx/d, uy=dy/d;
+      const ca=Math.cos(off), sa=Math.sin(off);
+      _shipShot(b.x, y, (ux*ca-uy*sa)*spd, (ux*sa+uy*ca)*spd, 10);
+    }
   }
   b.fireCd = (D.cd||1.3) * cdMul;
   if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();

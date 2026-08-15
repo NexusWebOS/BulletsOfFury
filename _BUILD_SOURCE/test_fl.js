@@ -10061,6 +10061,52 @@ console.log("=== 222. muzzle flash tiers ===");
      'both legacy muzzle branches are gated on the pack having drawn');
 }
 
+// ===== 223. THE SHIP PATTERNS FIRE WHERE THEY AIM (drop 0812i) =====
+console.log("=== 223. ship boss attack geometry ===");
+{
+  /* ⚠ fan2 AND pincer2 WERE WRITTEN AS IF _shipShot TOOK AN ANGLE. It takes VELOCITY COMPONENTS —
+     _shipShot(x,y,vx,vy,w) — and `Math.PI/2 + off` was handed straight to vx, so every round in
+     both "fans" left at vx 0.91..2.23: all of them to the right, at nearly the same angle. The
+     units using them put 0.00 rounds per second through the player in a 45-second fight.
+
+     Asserted as SYMMETRY, which is the property a fan has and a one-sided spray does not: the vx
+     of every round must sum to ~0 and span both signs. That catches the same mistake written any
+     other way.
+
+     ⚠ _sbStep IS 0 SO THE STEP LANDS ODD AND THE AIMED PAIR DOES NOT FIRE. The aimed volley is
+     SUPPOSED to be asymmetric — it points at the player — so letting it into this sample makes a
+     correct fan measure as lopsided. My first cut used _sbStep:1 and failed on working code. */
+  var _f223=JSON.parse(vm.runInContext("(function(){"
+    +"var out={}; var save=eBullets.slice(0);"
+    +"['fan2','pincer2','void','rime'].forEach(function(p){"
+    +"  eBullets.length=0;"
+    +"  var b={x:VW/2,y:100,w:160,h:160,_ship:'blacksteel',_sbStep:0,hp:100,maxhp:100,flash:0};"
+    +"  var D=SHIPBOSS.blacksteel; var keep=D.pats; D.pats=[p,p];"
+    +"  try{ shipBossAttack(b); }catch(e){}"
+    +"  D.pats=keep;"
+    +"  var vx=eBullets.map(function(x){return x.vx;});"
+    +"  out[p]={n:vx.length, sum:+(vx.reduce(function(a,c){return a+c;},0)).toFixed(2),"
+    +"          neg:vx.filter(function(v){return v<-0.05;}).length,"
+    +"          pos:vx.filter(function(v){return v>0.05;}).length};"
+    +"});"
+    +"eBullets.length=0; save.forEach(function(x){eBullets.push(x);});"
+    +"return JSON.stringify(out);})()", ctxv));
+  ['fan2','pincer2'].forEach(function(p){
+    var r=_f223[p];
+    ok(r && r.n>0, p+' fires ('+(r?r.n:0)+' rounds)');
+    if(!r || !r.n) return;
+    ok(Math.abs(r.sum)<0.6, p+' is SYMMETRIC about straight down (vx sum '+r.sum+')');
+    ok(r.neg>0 && r.pos>0, p+' covers both sides ('+r.neg+' left, '+r.pos+' right)');
+  });
+
+  /* and the aimed pair that makes them read as shooting AT the player rather than merely
+     shooting — the authored geometry above it is deliberately untouched */
+  var _g223=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(/AND THEY NOW SHOOT AT YOU/.test(_g223), 'the ship bosses fire an aimed volley');
+  ok(/\(step%2\)===0 && typeof player!=='undefined'/.test(_g223),
+     'on every other volley, so the pattern stays legible between aimed beats');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');
