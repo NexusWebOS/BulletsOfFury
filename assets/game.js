@@ -1381,6 +1381,25 @@ const XART=(function(){
      them would put that on the boot path for no gain. */
   const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nca_8[0-2]|nca_86|nca_8[7-9]|aintro_)/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
+  /* ============================================================
+     TWO AUTHORED HULLS REGISTERED IN CODE, NOT IN THE MANIFEST (drop 0812h)
+
+     Mike: "The minibosses, dont ever color overaly them."
+
+     0812e gave stage 1 and stage 6 their hulls by palette-swapping an existing plate at draw
+     time. That is the thing he is telling me not to do, so both now use AUTHORED art and the
+     `pal` field is gone from the table.
+
+     The plates are the South-Facing Ships pack's own frames, which were never imported: the
+     Thorn Cruiser is olive-green as drawn — a jungle cruiser without a single pixel changed —
+     and the Olive Siegecarrier is likewise untouched. Only their RECOLOURED variants
+     (nsb_thorn_rime, nsb_siege_ember) had made it into the build.
+
+     ⚠ REGISTERED HERE RATHER THAN IN manifest.js, WHICH IS GENERATED — its own first line says
+     so, and 0810h lost work to editing it. `_src` is a plain key->path map, so adding to it in
+     code is the same registration by a route that survives the next regeneration. ============================================================ */
+  X._src['nsb_jungle_cruiser'] = 'assets/game/nsb_jungle_cruiser.png';
+  X._src['nsb_olive_carrier']  = 'assets/game/nsb_olive_carrier.png';
   /* get() MUST NEVER HAND drawImage A NULL (drop 0724dq).
      Mike is seeing THOUSANDS of draw errors mentioning HTMLImageElement. That is this:
          ctx.drawImage(XART.get(k), ...)   with k missing or not yet decoded
@@ -2587,9 +2606,24 @@ function _buildClouds(st){
   let seed=st*9301+49297;
   const rnd=()=>{ seed=(seed*9301+49297)%233280; return seed/233280; };
   const out=[], n=Math.max(6, Math.round(H/520));
+  /* ============================================================
+     ⚠ THE CLOUDS WERE PLACED AT A PURELY RANDOM X, SO THEY CLUMPED (drop 0812h).
+     Mike: "the clouds as well. they should be horizontally spaced apart."
+
+     `x: 40+rnd()*720` with nothing else means two plates can land a few pixels apart and read as
+     one lumpy mass — which is what his screenshot shows, two puffs touching.
+
+     STRATIFIED, not re-rolled: the width is cut into `n` bands and each cloud takes the next band,
+     jittered inside it. That guarantees the spread instead of hoping for it, and it cannot fail to
+     converge the way a rejection loop can when the field is crowded. The band ORDER is then
+     shuffled against y, so a stratified x does not read as a diagonal staircase down the level. */
+  const BAND=(720/n);
+  const order=[];
+  for(let i=0;i<n;i++) order.push(i);
+  for(let i=n-1;i>0;i--){ const j=Math.floor(rnd()*(i+1)); const t=order[i]; order[i]=order[j]; order[j]=t; }
   for(let i=0;i<n;i++){
     out.push({k:keys[Math.floor(rnd()*keys.length)],
-              x: 40+rnd()*(720),
+              x: 40 + order[i]*BAND + BAND*(0.18+rnd()*0.64),
               y: rnd()*H,
               s: 0.55+rnd()*0.75,
               a: 0.26+rnd()*0.26,
@@ -3465,14 +3499,52 @@ function _isLand(key,x,mapY){
    game of this kind draws it. So the test is the keel — the centre and a narrow margin — not the
    beam. NAVAL_KEEL is the fraction of the hull width that must be over water. */
 const NAVAL_KEEL = 0.28;
-function pickWaterX(key, mapY, preferX, footW){
+/* ============================================================
+   BOATS HAVE TO KEEP OUT OF EACH OTHER'S LANE (drop 0812h)
+
+   Mike: "space them out thye cnanor stack on each other."
+
+   Measured on a live stage-1 run, the stacking is almost entirely NAVAL — corvette+landing craft
+   338 pair-frames, gunboat+patrol 96, and the worst overlap on the stage a full 1.00. It is not
+   the jets, and it is not units entering (zero of the stacked pairs had `enter` set).
+
+   ⚠ THE CAUSE IS THAT EVERY HULL INDEPENDENTLY SEEKS THE *NEAREST* WATER. pickWaterX ran with no
+   knowledge of the other boats, and the naval tick calls it every frame — so two hulls in the same
+   neighbourhood converge on the same channel centre and then hold there, one drawn on top of the
+   other. enemySeparate cannot undo it: it pushes them apart, the water pull steers them straight
+   back, and the pair settles overlapping.
+
+   So the search itself now refuses an x that another hull already occupies, on the same row only —
+   traffic 90px up or down the river is not in the way. */
+const NAVAL_LANE_GAP = 10;   // clear water between two keels, on top of both half-widths
+const NAVAL_LANE_Y   = 90;   // rows further apart than this are not competing for the same lane
+function navalBusy(x, footW, self){
+  if(typeof enemies==='undefined') return false;
+  const half=footW*NAVAL_KEEL, sy=(self&&self.y)||0;
+  for(const e of enemies){
+    if(e===self || e.dead) continue;
+    if(!(e._naval || e.pattern==='naval')) continue;
+    if(Math.abs((e.y||0)-sy) > NAVAL_LANE_Y) continue;
+    if(Math.abs(e.x-x) < half + (e.w||48)*NAVAL_KEEL + NAVAL_LANE_GAP) return true;
+  }
+  return false;
+}
+function pickWaterX(key, mapY, preferX, footW, self){
   const half=footW*NAVAL_KEEL, lo=PLAY.x+half+2, hi=PLAY.x+PLAY.w-half-2;
-  const ok=(x)=> !_isLand(key,x-half,mapY) && !_isLand(key,x,mapY) && !_isLand(key,x+half,mapY) &&
-                 !_isLand(key,x-half,mapY-10) && !_isLand(key,x+half,mapY-10);
-  if(ok(preferX)) return preferX;
-  for(let r=8;r<=240;r+=8){
-    if(preferX+r<=hi && ok(preferX+r)) return preferX+r;
-    if(preferX-r>=lo && ok(preferX-r)) return preferX-r;
+  const wet=(x)=> !_isLand(key,x-half,mapY) && !_isLand(key,x,mapY) && !_isLand(key,x+half,mapY) &&
+                  !_isLand(key,x-half,mapY-10) && !_isLand(key,x+half,mapY-10);
+  /* ⚠ TWO PASSES, AND THE SECOND ONE IGNORES THE TRAFFIC. A narrow channel with a boat already in
+     it must not return null — null means `_beached`, and a beached hull WITHDRAWS. Trading a
+     stacked boat for a vanished one is the same mistake 0809n recorded: "a metric can improve
+     because the units left the field, and that is not the fix." Spacing is a preference, not a
+     precondition. */
+  for(let pass=0; pass<2; pass++){
+    const ok = pass===0 ? (x)=>wet(x) && !navalBusy(x, footW, self) : wet;
+    if(ok(preferX)) return preferX;
+    for(let r=8;r<=240;r+=8){
+      if(preferX+r<=hi && ok(preferX+r)) return preferX+r;
+      if(preferX-r>=lo && ok(preferX-r)) return preferX-r;
+    }
   }
   return null;     // ⚠ NULL, not a clamp — there may be no water on this row at all, and dumping
                    // the hull at the play-area edge would beach it just as surely
@@ -4777,7 +4849,7 @@ const SUBBOSS={
   1:{at:0.62, kind:'junglecruiser', afterScroll:2100},
                                   // Flipped so its turrets face you; crawls up/down only; quad MGs.
   2:{at:0.45, kind:'siegeember', afterScroll:961},      // EMBER SIEGECARRIER (0810s) — replaces the obsidian drill Mike retired
-  6:{at:0.45, kind:'stormlance', afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
+  6:{at:0.45, kind:'olivecarrier', afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
   7:{at:0.45, kind:'ratking', afterScroll:1161},    // RAT KING EXCAVATOR — level 7 sub-boss
   8:{at:0.45, kind:'herald', afterScroll:1201},     // HERALD OF DEATH (venom-reaver, retitled per the phase manifest)
   3:{at:0.45, kind:'thornrime', afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
@@ -7896,7 +7968,7 @@ const SHIPBOSS = {
 
      The quad-laser system is NOT deleted, only unassigned: nqx_ art, _qlCan per-cannon hitboxes
      and its charge attack all remain, so it can take another slot without being rebuilt. */
-  junglecruiser: {key:'nsb_thorn_rime', pal:'#6f9a34', name:'JUNGLE CRUISER', w:168,h:168, hp:210, pat:'siege', cd:1.28, mini:true,
+  junglecruiser: {key:'nsb_jungle_cruiser', name:'JUNGLE CRUISER', w:168,h:168, hp:210, pat:'siege', cd:1.28, mini:true,
                   pats:['siege','fan2']},
   /* ⚠ STAGE 6's MINIBOSS WAS A PLACEHOLDER WITH NO CASE AT ALL. SUBBOSS[6] named 'ss', and
      spawnSubBoss__inner's switch has no arm for it — so it fell through to the generic 130x120
@@ -7905,7 +7977,7 @@ const SHIPBOSS = {
 
      Same treatment: the Blacksteel silhouette is the pack's interceptor shape, and stage 6 is the
      sky fortress, so it flies in storm-steel. Late stage, so it is the toughest of the minis. */
-  stormlance:    {key:'nsb_blacksteel', pal:'#5f86c8', name:'STORM LANCE',    w:172,h:172, hp:265, pat:'lance', cd:1.12, mini:true,
+  olivecarrier:  {key:'nsb_olive_carrier', name:'OLIVE CARRIER',  w:172,h:172, hp:265, pat:'lance', cd:1.12, mini:true,
                   pats:['lance','void']},
 };
 function shipBossInit(b, kind){
@@ -8029,15 +8101,15 @@ function shipBossDraw(b){
     ctx.restore(); ctx.globalAlpha=1;
     return true;
   }
-  /* A HULL CAN CARRY A PALETTE (drop 0812e). The six ships in the south-facing pack are one
-     silhouette family recoloured per theme — that is how siegeember and thornrime were already
-     built from the same source frames — so a `pal` on the table gets the same treatment at draw
-     time instead of needing another 256x256 file on disk. xartPalette keeps the plate's own
-     shading (hue and saturation from the fill, luminosity from the art) and caches per key+mode,
-     so a themed hull costs one canvas for the whole run, not one per frame.
-     ⚠ Falls back to the untinted plate rather than drawing nothing if the swap fails — the
-     invisible-boss failure this function's own guard above exists to prevent. */
-  const im=(D.pal ? (xartPalette(D.key, D.pal) || XART.get(D.key)) : XART.get(D.key));
+  /* ⚠ NEVER RECOLOUR A MINIBOSS OR A BOSS AT DRAW TIME (drop 0812h). Mike: "The minibosses, dont
+     ever color overaly them." 0812e gave this function a `pal` field and used it to theme stage 1
+     and stage 6 from an existing plate; that field is gone and both now use authored art.
+
+     The distinction that matters: the six hulls in the pack were recoloured ONCE, at import, and
+     what is in the build is authored art. Doing the same swap at draw time is not the same thing
+     — it is an overlay on top of finished work, and it reads as one. If a themed hull is wanted,
+     the plate gets themed and imported, not tinted here. */
+  const im=XART.get(D.key);
   const s=b.w/256, w=256*s, h=256*s;
   const x=b.x-w/2, y=(b._drawY!=null?b._drawY:b.y)-h/2;
   ctx.save();
@@ -8285,7 +8357,7 @@ function spawnSubBoss__inner(kind){
            flash:0, dead:false, dying:0, fireCd:1.4, drift:0, atkPhase:0, phaseT:1.2, sub:true, name:'SUB-BOSS'};
   switch(kind){
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
-    case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'stormlance':
+    case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
       b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {
       /* Built from the pack's own map rather than eyeballed: BOFQL carries the
@@ -12896,7 +12968,7 @@ function warmStage(n){
       /* the 0812e hulls warm their SOURCE plate — a palette-swapped hull still decodes the same
          key, and xartPalette cannot build its canvas until that key is ready. Miss this and the
          new minis open the fight on the silhouette fallback, which is the whole 0812c bug. */
-      junglecruiser:'nsb_thorn_rime', stormlance:'nsb_blacksteel',
+      junglecruiser:'nsb_jungle_cruiser', olivecarrier:'nsb_olive_carrier',
     };
     const _sb = (typeof SUBBOSS!=='undefined' && SUBBOSS[n]) ? SUBBOSS[n].kind : null;
     if(_sb && _PACKOF[_sb]) addPrefix(_PACKOF[_sb]);
@@ -17007,7 +17079,18 @@ function _shipFrameKey(pk){
   /* NO _t FALLBACK (drop 0808g). It is the flame-baked variant and 20-161px taller than the
      plain hull, so falling back to it silently swapped in a different-sized aircraft. */
   if(ab<0.06) return R('ship_'+pk) ? ('ship_'+pk) : (hasPv ? ('ship_'+pk+'_pv2') : ('ship_'+pk));
-  if(pk==='falva') return 'ship_falva';
+  /* ⚠ FALVA WAS PINNED TO HER NEUTRAL HULL AT EVERY BANK LEVEL (drop 0812h). Mike: "falva doesnt
+     twist at all when I move her left and right."
+
+     One unconditional early return here — `if(pk==='falva') return 'ship_falva';` — with no
+     comment and no guard, so she alone never reached the pv lean or the br twist below. Measured
+     across all nine pilots holding right: every one ramps `_bank` to 1.0 and every one resolves a
+     `_br2`/`_br6` twist frame; Falva resolved the bare `ship_falva`.
+
+     Removed rather than special-cased, because the reason it might have existed does not hold:
+     her art is all present and all distinct — pv0..4 at 152x280 and br0/2/6 at 174x271, the same
+     shape of pv-vs-br difference Cole has — so this is not the 0808g size-swap trap that the `_t`
+     fallback was. Rendered all nine of her frames before deleting the line. */
   if(ab>=TWIST && hasBr) return 'ship_'+pk+'_br'+(right?6:2);
   if(hasPv) return 'ship_'+pk+(ab<0.5?(right?'_pv3':'_pv1'):(right?'_pv4':'_pv0'));
   return 'ship_'+pk+'_br'+(right?(ab<0.5?7:6):(ab<0.5?1:2));
@@ -20157,11 +20240,14 @@ function navalTick(e, dt){
            giving up, so a wandering coastline never beaches a boat that still has a channel. */
         let best=null;
         if(e._wetFix){
+          /* the cheap local search gets the same traffic rule; without it the hull finds water
+             that another hull is already sitting in and steers straight back onto it */
           for(let r=8; r<=176 && best===null; r+=8){
-            if(wet(e.x+r)) best=e.x+r; else if(wet(e.x-r)) best=e.x-r;
+            if(wet(e.x+r) && !navalBusy(e.x+r,(e.w||48)*0.9,e)) best=e.x+r;
+            else if(wet(e.x-r) && !navalBusy(e.x-r,(e.w||48)*0.9,e)) best=e.x-r;
           }
         }
-        if(best===null) best=pickWaterX(L.key, L.mapY, e.x, (e.w||48)*0.9);
+        if(best===null) best=pickWaterX(L.key, L.mapY, e.x, (e.w||48)*0.9, e);   // `e` so it does not avoid itself
         if(best===null) e._beached=1;                   // genuinely no channel: withdraw, per 0809n
         else if(!e._wetFix){ e.x=best; e._wetFix=1; }   // ARRIVAL: place it cleanly, once
         else {

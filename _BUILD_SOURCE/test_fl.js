@@ -9985,22 +9985,21 @@ console.log("=== 220. named minibosses ===");
   ok(_generic.length===0,
      'every stage 1-8 fields a NAMED miniboss'+(_generic.length?(' — generic: '+_generic.join(', ')):''));
   ok(_f220[1].ship==='junglecruiser', "stage 1 is the JUNGLE CRUISER (Mike's word, 0812e)");
-  ok(_f220[6].ship==='stormlance',    'stage 6 is the STORM LANCE, not the old placeholder');
+  ok(_f220[6].ship==='olivecarrier',  'stage 6 is the OLIVE CARRIER, not the old placeholder');
 
-  /* ⚠ A PALETTE-SWAPPED HULL STILL DECODES ITS SOURCE KEY. xartPalette cannot build its canvas
-     until the underlying plate is ready, so a `pal` entry whose key is not warmed opens the fight
-     on the silhouette fallback — which is precisely the 0812c bug, reintroduced by a new unit. */
+  /* ⚠ NO MINIBOSS OR BOSS IS RECOLOURED AT DRAW TIME (drop 0812h). Mike: "The minibosses, dont
+     ever color overaly them." 0812e had themed stage 1 and stage 6 with a `pal` field on SHIPBOSS
+     that ran through xartPalette; both use authored plates now and the field is gone from the
+     draw. This asserts the RULE, not the two units — a `pal` on any entry means someone
+     reintroduced the mechanism. */
   var _f220b=JSON.parse(vm.runInContext("(function(){ var o=[];"
-    +"for(var k in SHIPBOSS){ if(SHIPBOSS[k].pal) o.push([k, SHIPBOSS[k].key]); }"
+    +"for(var k in SHIPBOSS){ if(SHIPBOSS[k].pal) o.push(k); }"
     +"return JSON.stringify(o);})()", ctxv));
+  ok(_f220b.length===0,
+     'no ship boss or miniboss carries a draw-time palette'+(_f220b.length?(' — '+_f220b.join(', ')):''));
   var _g220=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  var _unwarmed=[];
-  _f220b.forEach(function(p){
-    if(_g220.indexOf(p[0]+":'"+p[1]+"'")<0) _unwarmed.push(p[0]);
-  });
-  ok(_f220b.length>0, 'the palette-swapped hulls are declared ('+_f220b.length+')');
-  ok(_unwarmed.length===0,
-     'and each one warms its SOURCE plate'+(_unwarmed.length?(' — missing: '+_unwarmed.join(', ')):''));
+  ok(_g220.indexOf('const im=XART.get(D.key);')>0,
+     'and shipBossDraw takes the plate as authored');
 }
 
 // ===== 221. THE STAGE'S BOSS ART IS WARMED TOO (drop 0812f) =====
