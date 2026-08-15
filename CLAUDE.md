@@ -148,7 +148,31 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0812A.md`, then `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0812B.md`, then `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0812b — six art files were MISSING FROM THE WORKING TREE, deleted and never committed:**
+`logo.png` and `stage1..5.png`. Restored with `git checkout --`.
+⚠ **CHECK `git status` FOR ` D ` LINES BEFORE TRUSTING A 404 OR A SUITE COUNT.** This cost two boot
+404s whose paths `grep` could not find (they are built at runtime from the manifest, which was
+right), **eight extra suite failures** (5 → 13; nine assertions across four sections exist to catch
+exactly this), and every `%` on the stats screen — `%` lives in ONE sheet in the build and that
+sheet is `stage2.png`. The zip Mike already sent predates the deletion and is intact; checked.
+CLAUDE.md's "two 404s at boot" is now fully closed: one was the font path (0811z), the other two
+were these. Only `assets/data/ui_layout.json` still 404s, and it is optional and guarded.
+
+⚠ **`stageText`'s third argument is named `cx` and IS THE CENTRE** (`let x = cx - total/2`).
+Three stats-screen call sites passed a column EDGE as that centre: the row labels, SCORE and its
+digits, and PASSWORD. So the long labels grew 60px LEFT over the portrait column — **nothing moved
+into the portrait**, which is why "the rank collides with the rows" had no cause where it appeared
+to. The row VALUES were already correct (`right - width/2`); that mismatch of two rules IS the
+tester's "label column and value column disagree". Measure with `_tw`/`_twMix` and offset by half.
+⚠ **The password is the one value that must NOT be right-aligned** — `shown` is a growing prefix,
+so a pinned right edge types backwards. Left-anchored, anchor measured from the FULL password.
+
+**Mouse: all 13 menu screens now take a pointer** (`§217` asserts it). Stage select could not use
+`menuMouseList` — the flags are at authored map coords, hit-tested through the same
+`S=0.75 / MX=0 / MY=64` transform the draw loop uses. ⚠ **Two-stage: click a flag to SELECT, click
+the selected one to DEPLOY.** One click doing both launches a level you were only pointing at.
 
 **0812a — the beta tester's input list.** Mouse buttons are bindable now: they go into the same
 `keys` map as `pad_b0..15`, so `down()`/`tap()`/`tapAny()` and the rebind screen all understand a
@@ -481,9 +505,10 @@ and reports settled burial. **The 839 / 71.9% baselines quoted in the handoff ar
 ⚠ **The recurring failure this stretch was systems that were declared and never fired** — the quad-laser's muzzles, `_qlChg`, `enemyVolley` sharing a `fireCd` its unit's tick owns, `micon_` asked of the wrong store, `lordshadows` registered and referenced nowhere. In every case the state looked right and no pixel moved. **Render it, then believe it.**
 
 
-Suite: **2,463 assertions / 218 sections / 4 failures** — the preload count, the two `_superseded`
-ones and the naval flash families. The fifth (the boss limb pool) was a stale assertion, not a bug;
-see the Magma Colossus section below.
+Suite: **2,507 assertions / 222 sections / 5 failures** (drop 0812b) — the preload count, the two
+`_superseded` ones, the volley round count and the naval flash families. ⚠ **If you see more than
+five, check `git status` for deleted art before you debug anything** — a missing file trips nine
+assertions across four sections and reads as an unrelated pile of failures.
 Entry joins: **`probe_arrival.py` green on all eight stages** (see the connector section below —
 and read the warning there before trusting any older arrival number).
 
@@ -1283,9 +1308,16 @@ caller.
    part of it; the rest needs per-stage checking with `probe_boss.py`.
 4. Move 1→2 and 3→4 onto `exitConnectorDraw`; then the 5→6, 6→7, 7→8 outbound joins.
 
-**Waiting on Mike:** nothing outstanding. The arsenal-mini questions are answered (they are
-enemies we have; caldera 2 / frostbite 3 / dambreaker 4) and the `o.px` camera fix was approved
-and shipped in 0810c.
+**Waiting on Mike** (both from the beta tester's list, 0812a/b):
+- **The barrel roll fires on micro-adjustments.** Tester wants hold/toggle **shift** to suppress it;
+  Mike wanted a cooldown. Feel change to core movement — his call on which, not both.
+- **A `%` in the BOF face.** There is none in any of the eight BOF sheets; the stats screen borrows
+  stage 2's molten one, tinted to match. Authored art, so his call. `§217` pins the borrow and will
+  fail the moment a real one exists, which is how it gets removed.
+
+Still owed from the tester's list, no decision needed: the miniboss that is still a hitbox square
+(stage not identified), the stage 8 boss (4 forms, same pattern, very tanky), signs that scroll
+when told not to, and a waterfall in the middle of the road.
 
 **The `o.px` camera fix (0810c), for the record.**
 `outboundStart` captures `o.px = player.x`, which is a **world** coordinate, and all three

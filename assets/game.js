@@ -4357,7 +4357,15 @@ const Input = (()=>{
      closing menus is exactly the kind of thing that fires by accident. */
   function menuBack(){ return tap('backspace')||tap('escape')||tap('k')||tap('pad_b1')||tap('pad_b8'); }
   function consumeMouseMoved(){ const m=mouse.moved; mouse.moved=false; return m; }
-  return {keys,mouse,down,tap,clearTaps,pollGamepad,tapAny,menuUp,menuDown,menuLeft,menuRight,menuConfirm,menuBack,consumeMouseMoved,
+  /* ⚠ A CLICK SYNTHESISES THE CONFIRM THE KEYBOARD PATH ALREADY HANDLES (drop 0812b).
+     Five menu screens were pointer-dead, and each one's activation is a different block —
+     campaign's hub branches on four actions, the slot screen writes or reads localStorage, mode
+     select flashes a specific rect. Re-implementing any of those for the mouse is how the two
+     copies drift, and this file has that failure recorded a dozen times over. Injecting the tap
+     instead means the pointer runs the SAME line the keyboard runs, so there is only ever one
+     activation path per screen to get right. */
+  function injectTap(name){ pressed[name]=true; }
+  return {keys,mouse,down,tap,clearTaps,pollGamepad,tapAny,menuUp,menuDown,menuLeft,menuRight,menuConfirm,menuBack,consumeMouseMoved,injectTap,
     get gamepadConnected(){return gpConnected;},
     get up(){return keybind.up.some(k=>down(k));},
     get dn(){return keybind.down.some(k=>down(k));},
@@ -31045,6 +31053,45 @@ function selFlashDraw(){
   }
   ctx.restore();
 }
+/* ============================================================
+   ONE POINTER PATH FOR A VERTICAL MENU (drop 0812b)
+
+   Mike's tester: "Main menu lets me use mouse, but immediately rejects mouse inputs in random
+   menus." Audited, the split was: title / difficulty / pilot / password / options / game over /
+   continue took the mouse; mode select / campaign hub / stage select / credits / stage clear did
+   not. TITLE takes it and MODE SELECT, the next screen, did not — hence "immediately".
+
+   Each dead screen has a DIFFERENT activation block, so this deliberately does not carry one.
+   It moves the selection on hover and then injects the confirm tap the screen's own keyboard
+   path already handles, which keeps exactly one activation path per screen.
+
+   ⚠ HOVER ONLY RE-SELECTS ON REAL CURSOR MOVEMENT. A mouse resting over row 2 would otherwise
+   fight every arrow-key press, snapping the selection back every frame — the menu would feel
+   broken for keyboard players who happen to have a cursor on screen.
+
+   ⚠ AND THE CLICK IS EDGE-DETECTED PER SCREEN (the `id`). Sharing one _md flag across screens
+   means a click that changes state gets re-read by whatever screen draws next, which is how a
+   single click walks two menus deep.
+
+   geom(i) -> {cx, cy, hw, hh}; derive it from the screen's LAYOUT CONSTANTS, never from art
+   dimensions, or a plate with a different aspect makes the clickable area disagree with the
+   drawn one. ============================================================ */
+function menuMouseList(id, n, geom, getIdx, setIdx, ready){
+  if(typeof Input==='undefined' || !Input.mouse) return -1;
+  const m=Input.mouse;
+  let hov=-1;
+  for(let i=0;i<n;i++){
+    const g=geom(i); if(!g) continue;
+    if(Math.abs(m.x-g.cx)<g.hw && Math.abs(m.y-g.cy)<g.hh){ hov=i; break; }
+  }
+  if(hov>=0 && hov!==getIdx() && Input.consumeMouseMoved()){
+    setIdx(hov); if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip();
+  }
+  const md=menuMouseList._md||(menuMouseList._md={});
+  if(hov>=0 && m.down && !md[id] && ready!==false){ setIdx(hov); Input.injectTap('enter'); }
+  md[id]=m.down;
+  return hov;
+}
 function menuSelMark(cx, cy, halfW, tint){
   /* The caller passes a TINT COLOUR; map it to the matching duplicated cursor so
      the arrow path gets the real palette-swapped art rather than the flat
@@ -31453,6 +31500,11 @@ function drawCampaignHub(dt){
   campText('ARROWS SELECT   FIRE CONFIRM   BACK MODE SELECT', VW/2, VH-18, 11, '#cfd6e0',
            0.55+0.45*Math.sin(stateT*5));
   ctx.globalAlpha=1; ctx.textAlign='left';
+  /* MOUSE (drop 0812b) — must run BEFORE campHubInput, because the click injects the 'enter' tap
+     that campHubInput then reads and clears in this same frame. */
+  if(!campPause) menuMouseList('camphub', CAMPHUB_ITEMS.length,
+      i=>({cx:VW/2, cy:CAMPHUB_Y0+i*CAMPHUB_GAP, hw:CAMPHUB_W/2, hh:CAMPHUB_GAP*0.42}),
+      ()=>campHubIndex, v=>{campHubIndex=v;}, stateT>0.25);
   if(!campPause) campHubInput();      // the modal owns the keys while it is up — see the note at `locked`
 }
 function drawCampSlots(dt){
@@ -31489,6 +31541,11 @@ function drawCampSlots(dt){
   campText('ARROWS SELECT   FIRE CONFIRM   BACK CANCEL', VW/2, VH-18, 11, '#cfd6e0',
            0.55+0.45*Math.sin(stateT*5));
   ctx.globalAlpha=1;
+  /* MOUSE (drop 0812b) — rows are cy=170+i*54, w=330, h=42; before campSlotInput for the same
+     reason as the hub: the click injects the tap that call then consumes. */
+  if(!campPause) menuMouseList('campslots', CAMP_SLOTS,
+      i=>({cx:VW/2, cy:170+i*54, hw:165, hh:21}),
+      ()=>campHubIndex, v=>{campHubIndex=v;}, stateT>0.25);
   if(!campPause) campSlotInput();     // same gate: the hub's slot picker must not read under the modal
 }
 function campHubInput(){
@@ -32496,6 +32553,38 @@ function _drawStageSelectInner(dt){
     const _lo=1, _hi=Math.max(1, Math.min(8, campaign.unlockedMax||1));   // only navigate UNLOCKED stages (max 8)
     if(Input.tap('left')||Input.tap('a')){ sselCursor = sselCursor<=_lo ? _hi : sselCursor-1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
     if(Input.tap('right')||Input.tap('d')){ sselCursor = sselCursor>=_hi ? _lo : sselCursor+1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+    /* ============================================================
+       MOUSE ON THE MAP (drop 0812b) — the last pointer-dead screen.
+
+       Not a vertical list, so menuMouseList does not fit: the flags sit at authored map
+       coordinates. SSEL_POS is in the 640x480 map's own space and the map is drawn at
+       S=0.75 with offsets MX/MY, so a flag's screen centre is (MX + p[0]*S, MY + p[1]*S) —
+       the same numbers the flag loop above draws with, read from the same constants rather
+       than re-derived, so the hit target cannot drift from the art.
+
+       ⚠ TWO-STAGE, NOT INSTANT DEPLOY. Clicking a flag you are not on MOVES the cursor there;
+       clicking the one you are already on launches. A single click that both selects and
+       deploys would send the player into a level they were only pointing at, and deploy is
+       irreversible once the stage card starts.
+
+       ⚠ LOCKED FLAGS ARE NOT CLICKABLE — same _hi bound the keyboard navigation uses, so the
+       pointer cannot reach a stage the arrows refuse to walk to. */
+    {
+      const _S=0.75, _MX=0, _MY=64, m=Input.mouse;
+      let hit=-1;
+      for(let st=_lo; st<=_hi; st++){
+        const p=SSEL_POS[st]; if(!p) continue;
+        if(Math.hypot(m.x-(_MX+p[0]*_S), m.y-(_MY+p[1]*_S)) < 22){ hit=st; break; }
+      }
+      if(hit>0 && hit!==sselCursor && Input.consumeMouseMoved()){
+        sselCursor=hit; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip();
+      }
+      if(hit>0 && m.down && !_drawStageSelectInner._md && stateT>0.4){
+        if(hit===sselCursor) Input.injectTap('enter');       // second click on the same flag deploys
+        else { sselCursor=hit; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+      }
+      _drawStageSelectInner._md=m.down;
+    }
     if(stateT>0.4 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){
       if(sselCursor<=_hi){   // can't deploy to a locked level
         /* WHITE FLASH -> ZOOM IN ON THE FLAG + "GOOD LUCK" -> stage card. It used to cut straight
@@ -33136,6 +33225,11 @@ function drawCredits(dt){
     else { ctx.save(); ctx.shadowColor='rgba(120,180,255,0.5)'; ctx.shadowBlur=6; ctx.fillStyle='#eaf2ff'; ctx.font='bold 14px "BOFmil", monospace'; ctx.fillText(txt, VW/2, y); ctx.restore(); y+=26; }
   });
   ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace'; ctx.fillText('ENTER / BACKSPACE TO RETURN',VW/2,VH-18);
+  /* MOUSE (drop 0812b). Credits is a single "any key returns" screen, so the whole panel is the
+     target — there is no list to hover. Edge-detected, or the click that OPENED credits from the
+     title would be re-read here on the first frame and bounce straight back out. */
+  if(Input.mouse.down && !drawCredits._md) Input.injectTap('enter');
+  drawCredits._md=Input.mouse.down;
   if(Input.tap('enter')||Input.tap('backspace')||Input.tap(' ')||backButton()){ setState(GS.TITLE); menuIndex=3; }
 }
 function drawTitleBackdrop(dt){
@@ -35837,6 +35931,32 @@ function _tw(art, text, H, sp){
   }
   return Math.max(0,t-s);
 }
+/* SAMPLED, NOT PICKED. The stats values are drawn untinted, in the BOF sheet's own khaki — this
+   is the modal lit colour read off a rendered value (rgb 187,181,116), so the borrowed glyph
+   matches the digits beside it instead of arriving in stage 2's fire orange. */
+const SC_PCT_TINT='#bbb574';
+/* THE GLYPH DONOR: the only sheet in the build that has '%' (and it also carries '/'), verified
+   across all eighteen font sheets rather than assumed. stageArt[2] is stage 2's master art, the
+   same sheet the stage-1 font already borrows 'S' from. Returns null if it has not decoded, and
+   every caller falls back to plain stageText — a late-decoding donor must never blank a value. */
+function pctFont(){
+  const a=(typeof ASSETS!=='undefined' && ASSETS.stageArt) ? ASSETS.stageArt['2'] : null;
+  return (a && a.font && typeof artReady==='function' && artReady(a)) ? a : null;
+}
+/* _tw's twin for stageTextMixed. Right-aligning mixed text with the SINGLE-font width silently
+   under-measures by the difference on every borrowed glyph, which would push the value column out
+   of line by exactly the amount this screen is being fixed for. Same fallback order as
+   stageTextMixed, so the two cannot disagree. */
+function _twMix(prim, fb, text, H, sp){
+  const s=(sp==null?0.10:sp)*H; let t=0;
+  for(const ch of String(text).toUpperCase()){
+    let art=prim, nm=(prim&&prim.font)?prim.font[ch]:null;
+    if(!nm || !prim.frames[nm]){ art=fb; nm=(fb&&fb.font)?fb.font[ch]:null; }
+    const f=(art&&nm)?art.frames[nm]:null;
+    t += (f? glyphBox(art,f,H,ch).w : H*0.42) + s;
+  }
+  return Math.max(0,t-s);
+}
 function scBar(x, y, w, h, filled, total, type, glow, animT){
   const fk='nui_bframe_large';
   if(XART.rdy(fk)) ctx.drawImage(XART.get(fk), x, y, w, h);
@@ -36023,7 +36143,22 @@ function drawStageClear(dt){
     const _fontOK = !!(art && art.font);
     if(_fontOK && typeof stageText==='function'){
       ctx.globalAlpha=app*dim;
-      stageText(art, row.label, slideX+ph*0.005, y, ph*0.024, null,null,app*dim,0.05);
+      /* ============================================================
+         ⚠ THE LABELS WERE CENTRED, NOT LEFT-ALIGNED (drop 0812b) — the tester's
+         "label column and value column disagree", and the cause of the portrait collision too.
+
+         stageText's third parameter is named cx and IS the centre: its last line is
+         `let x = cx - total/2`. This passed the row's LEFT edge as that centre, so every label
+         straddled it and its left edge sat at `rowsX - width/2`. Short labels looked roughly
+         right — KILLS is 5 characters — while SPECIAL DAMAGE reached 60px further left, across
+         the gap and into the portrait column. That is why COLE, RANK and the rank letter appeared
+         to collide with the rows: nothing moved into them, the long labels grew out over them.
+
+         The values were already right-aligned correctly (`right - width/2`), so the two columns
+         were being positioned by two different rules. Both are now stated the same way: measure
+         the string, then offset by half of it. ============================================================ */
+      const _lH=ph*0.024, _lW=_tw(art, row.label, _lH, 0.05);
+      stageText(art, row.label, slideX+ph*0.005+_lW/2, y, _lH, null,null,app*dim,0.05);
     } else { ctx.textAlign='left'; ctx.fillStyle='#cfd6e0'; ctx.font=F(ph*0.024);
              ctx.globalAlpha=app*dim; ctx.fillText(row.label, slideX, y); }
     /* ⚠ THE VALUE WAS NEVER USING OUR FONT (drop 0807t). The label went through stageText and
@@ -36032,7 +36167,24 @@ function drawStageClear(dt){
        baseline: stageText centres on cy, fillText sits on the alphabetic baseline. That is the
        drift Mike photographed, where the labels and the numbers march apart down the panel. */
     if(_fontOK && typeof stageText==='function'){
-      stageText(art, row.text, slideX+rowsW-_tw(art,row.text,ph*0.026,0.05)/2, y, ph*0.026, null,0,app,0.05);
+      /* ⚠ EVERY PERCENT SIGN ON THIS SCREEN WAS INVISIBLE (drop 0812b). ACCURACY read "63",
+         MISSILE HITS "85", SPECIAL HITS "92" — the number, then a blank the width of a space.
+         stageText turns an unmapped character into a gap (`items.push(null)`) and says nothing,
+         so a missing glyph looks like a spacing quirk rather than a fault.
+
+         Checked all eighteen font sheets rather than assuming: '%' exists in EXACTLY ONE,
+         stageArt[2] — and that is `assets/game/stage2.png`, one of the six art files that had
+         gone missing from the working tree, so until they were restored no sheet in the build
+         had the glyph at all.
+
+         Borrowing one character from stage 2 is the established idiom here, not a new one — the
+         stage-1 font already borrows 'S' from it, and stageTextMixed exists to do exactly this
+         per glyph. `art` still draws everything it has, so the face does not change. */
+      const _vH=ph*0.026, _pf=(typeof pctFont==='function')?pctFont():null;
+      if(_pf && /%/.test(row.text))
+        stageTextMixed(art, _pf, row.text, slideX+rowsW-_twMix(art,_pf,row.text,_vH,0.05)/2, y, _vH, SC_PCT_TINT, app, 0.05);
+      else
+        stageText(art, row.text, slideX+rowsW-_tw(art,row.text,_vH,0.05)/2, y, _vH, null,0,app,0.05);
     } else {
       ctx.textAlign='right'; ctx.font=F(ph*0.026);
       ctx.fillStyle=(row.val>=0.92)?'#ffd24a':'#e8eef8';
@@ -36069,8 +36221,14 @@ function drawStageClear(dt){
     /* BOLD, and flashing while it climbs then steady once locked */
     const fl = done ? 1 : (0.55+0.45*Math.sin(t*22));
     if(art && typeof stageText==='function'){
-      stageText(art,'SCORE', rowsX, sy, ph*0.030, null,null,1,0.06);
-      stageText(art, String(drawStageClear._scoreShown), rowsX+rowsW, sy, ph*0.040, null, 0, fl, 0.06);
+      /* ⚠ THE SCORE BLOCK USED THE EDGES AS CENTRES — the same fault as the rows, in the one place
+         it is most obvious, because the score is the largest type on the panel. SCORE straddled
+         the left edge and the digits straddled the right, so the number hung about half its width
+         past every value above it. Measured: the digits ended 43px right of the value column.
+         Both ends now match the rows exactly. */
+      const _sLH=ph*0.030, _sVH=ph*0.040, _sv=String(drawStageClear._scoreShown);
+      stageText(art,'SCORE', rowsX+_tw(art,'SCORE',_sLH,0.06)/2, sy, _sLH, null,null,1,0.06);
+      stageText(art, _sv, rowsX+rowsW-_tw(art,_sv,_sVH,0.06)/2, sy, _sVH, null, 0, fl, 0.06);
     } else {
       ctx.textAlign='left'; ctx.fillStyle='#9fb4d0'; ctx.font=F(ph*0.030); ctx.fillText('SCORE', rowsX, sy);
       ctx.textAlign='right'; ctx.globalAlpha=fl;
@@ -36128,8 +36286,23 @@ function drawStageClear(dt){
     }
     const wy=py+ph*0.848;
     if(art && typeof stageText==='function'){
-      stageText(art,'PASSWORD', rowsX, wy, ph*0.028, null,null,1,0.06);
-      stageText(art, shown, rowsX+rowsW*0.52, wy, ph*0.046, pc, 1, pa, 0.16);
+      /* PASSWORD is a LABEL in the same column as SCORE and the nine row labels, and it had the
+         same edge-as-centre fault — measured 50px left of SCORE directly above it. The password
+         letters keep their deliberate 0.52 centre; only the label moves. */
+      const _pwLH=ph*0.028, _pwVH=ph*0.046;
+      const _pwLW=_tw(art,'PASSWORD',_pwLH,0.06);
+      stageText(art,'PASSWORD', rowsX+_pwLW/2, wy, _pwLH, null,null,1,0.06);
+      /* ⚠ THE LETTERS ARE TYPED, SO THIS CANNOT BE RIGHT-ALIGNED like every other value on the
+         panel — `shown` is a growing PREFIX, and pinning its right edge would make the password
+         appear to type backwards. It is left-anchored instead, and the anchor is measured from the
+         FULL password rather than the visible prefix so the block does not creep while it types.
+
+         Clamped clear of the label: IRON is four characters and merely looked tight, but the
+         centre at 0.52 puts an eight-character password's left edge 30px INSIDE "PASSWORD".
+         Authored centre when there is room, pushed right when there is not. */
+      const _pwFull=_tw(art, R.pw, _pwVH, 0.16);
+      const _pwL=Math.max(rowsX+rowsW*0.52-_pwFull/2, rowsX+_pwLW+ph*0.022);
+      stageText(art, shown, _pwL+_tw(art,shown,_pwVH,0.16)/2, wy, _pwVH, pc, 1, pa, 0.16);
     } else {
       ctx.textAlign='left'; ctx.fillStyle='#9fb4d0'; ctx.font=F(ph*0.028); ctx.fillText('PASSWORD', rowsX, wy);
       ctx.globalAlpha=pa; ctx.font=F(ph*0.046);
@@ -36145,6 +36318,12 @@ function drawStageClear(dt){
     ctx.fillStyle='#cfd6e0'; ctx.font=F(ph*0.028);
     ctx.fillText('PRESS FIRE', px+pw/2, py+ph*0.898); ctx.restore(); ctx.textAlign='left';
   }
+  /* MOUSE (drop 0812b). Stage clear says PRESS FIRE and had no pointer path at all, so a mouse
+     player was stranded on the results screen after every level. Click anywhere — it is a
+     continue prompt, not a list. Edge-detected so the click that killed the last enemy cannot
+     carry into this screen and skip the whole flourish. */
+  if(Input.mouse.down && !drawStageClear._md) Input.injectTap('enter');
+  drawStageClear._md=Input.mouse.down;
   /* any input SKIPS the flourish rather than making the player sit through it */
   if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))){
     if(!ready){

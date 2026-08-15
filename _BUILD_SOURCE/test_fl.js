@@ -8781,7 +8781,14 @@ console.log("=== 201. rank glyph ===");
   var _g201=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok(_g201.indexOf("stageText(art, R.rank, rx, ry+ph*0.040, ph*0.098*sc, null, 0, 1, 0.06)")>0,
      'the rank glyph is drawn with no tint');
-  ok(_g201.indexOf("ph*0.040, null, 0, fl, 0.06)")>0, 'and so is the score');
+  /* THIS PINNED THE SIZE EXPRESSION, NOT THE PROPERTY IT NAMES (drop 0812b). It matched the
+     literal "ph*0.040, null, 0, fl, 0.06)", so hoisting the size into a named constant in order to
+     right-align the score — a change that touched neither the tint nor the size — failed an
+     assertion whose subject is "the score draws untinted". Both halves are now checked directly:
+     the tint arguments stay null/0, and the size is still ph*0.040. */
+  ok(/stageText\(art,\s*_sv,[^;]*?,\s*null,\s*0,\s*fl,\s*0\.06\)/.test(_g201),
+     'and so is the score');
+  ok(_g201.indexOf("_sVH=ph*0.040")>0, 'and the score is still drawn at ph*0.040');
   ok(_g201.indexOf("pc = full ? (beat>0 ? '#8de23a' : '#ffd24a')")>0,
      'while the password keeps its two-colour flash');
 }
@@ -9780,6 +9787,77 @@ console.log("=== 216. the BOF font ===");
      'stage 9 falls back to another BOF tint, not to a different face');
   ok(_g216.indexOf('const bf=ASSETS.bofFont && ASSETS.bofFont[\'1\'];')>0,
      'the UI resolver reaches for the BOF font first');
+}
+
+// ===== 217. ONE COLUMN ON THE STATS PANEL, AND A POINTER ON EVERY MENU (drop 0812b) =====
+console.log("=== 217. stats alignment + menu pointers ===");
+{
+  /* Two of the tester's items, asserted as PROPERTIES rather than as literal call strings —
+     §201 pinned "ph*0.040, null, 0, fl, 0.06)" and failed on a change that touched neither the
+     tint nor the size it was guarding. */
+  var _g217=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+
+  /* ---- every menu screen answers the mouse ---- */
+  var _screens=['drawTitle','drawModeSelect','drawDiff','drawPilot','drawCampaignHub','drawCampSlots',
+                '_drawStageSelectInner','drawOptions','drawCredits','drawPassword',
+                'drawStageClear','drawGameOver','drawContinue'];
+  var _starts=[], _lines=_g217.split('\n');
+  for(var _i=0;_i<_lines.length;_i++){ var _m=/^function (\w+)\(/.exec(_lines[_i]); if(_m) _starts.push([_i,_m[1]]); }
+  function bodyOf(name){
+    for(var i=0;i<_starts.length;i++) if(_starts[i][1]===name){
+      var end=(i+1<_starts.length)?_starts[i+1][0]:_lines.length;
+      return _lines.slice(_starts[i][0], end).join('\n');
+    }
+    return null;
+  }
+  var _dead=[];
+  for(var _s=0;_s<_screens.length;_s++){
+    var _b=bodyOf(_screens[_s]);
+    if(_b===null){ _dead.push(_screens[_s]+'(NOT FOUND)'); continue; }
+    if(!/\bm\.down\b|mouse\.down|menuMouseList/.test(_b)) _dead.push(_screens[_s]);
+  }
+  ok(_dead.length===0, 'all '+_screens.length+' menu screens take a pointer'+(_dead.length?(' — dead: '+_dead.join(', ')):''));
+
+  /* ---- and the stats panel positions both columns by the same rule ----
+     stageText's third argument is the CENTRE. Any call inside drawStageClear that places text
+     from a column edge (rowsX / rowsW / slideX) must therefore correct by half a MEASURED width,
+     which means _tw( or _twMix( appears in the same call. This catches the fault by shape, so a
+     new row added later cannot reintroduce it with different numbers. */
+  var _sc=bodyOf('drawStageClear')||'';
+  /* ⚠ THE MEASUREMENT IS NOT ALWAYS ON THE CALL LINE. My first cut of this assertion scanned the
+     call line alone and flagged two calls that are correct — they measure into a local (_lW,
+     _pwLW) on the line above, because the same width is needed twice. Collect those locals first
+     and accept either form; a check this narrow would push the next author back toward inlining
+     for the suite's benefit rather than the code's. */
+  var _measured={}, _mre=/(\w+)\s*=\s*_tw(?:Mix)?\s*\(/g, _mv;
+  while((_mv=_mre.exec(_sc))!==null) _measured[_mv[1]]=1;
+  var _bad=[], _re=/stageText(?:Mixed)?\s*\(/g, _mm;
+  while((_mm=_re.exec(_sc))!==null){
+    var _rest=_sc.slice(_mm.index), _nl=_rest.indexOf('\n');
+    var _call=_rest.slice(0, _nl<0?_rest.length:_nl);
+    if(!/rowsX|rowsW|slideX/.test(_call)) continue;
+    var _corrected=/_tw\(|_twMix\(/.test(_call);
+    for(var _k in _measured) if(!_corrected && _call.indexOf(_k)>=0) _corrected=true;
+    if(!_corrected) _bad.push(_call.trim().slice(0,70));
+  }
+  ok(_bad.length===0, 'every stats column is placed from a measured width'+(_bad.length?(' — '+_bad.join(' | ')):''));
+
+  /* the password is the one value that must NOT be right-aligned: it is typed, so a pinned right
+     edge would make it appear to type backwards. Left-anchored, and clamped clear of its label. */
+  ok(/_pwL\s*=\s*Math\.max\(/.test(_sc), 'the password is left-anchored and clamped clear of its label');
+  ok(/_twMix\(art,\s*_pf,\s*row\.text/.test(_sc), 'and percent values go through the mixed-font measure');
+
+  /* ⚠ WHY THE BORROW EXISTS. '%' is in NO BOF font sheet and in exactly one sheet in the build.
+     If this ever fails because bofFont gained a '%', the borrow in drawStageClear can be deleted —
+     that is the point of pinning it. §216's "every glyph resolves" does not cover '%'. */
+  var _f217=JSON.parse(vm.runInContext("(function(){ASSETS.ready=true;"
+    +"var bof=ASSETS.bofFont&&ASSETS.bofFont['1'], don=ASSETS.stageArt&&ASSETS.stageArt['2'];"
+    +"var n=0; for(var k in (ASSETS.bofFont||{})) if(ASSETS.bofFont[k].font&&ASSETS.bofFont[k].font['%']) n++;"
+    +"return JSON.stringify({bofPct:!!(bof&&bof.font&&bof.font['%']), bofSheets:n,"
+    +" donorPct:!!(don&&don.font&&don.font['%'])});})()", ctxv));
+  ok(_f217.bofPct===false && _f217.bofSheets===0,
+     "no BOF font sheet has a '%' — the stats screen borrows one (sheets with it: "+_f217.bofSheets+")");
+  ok(_f217.donorPct===true, "and stageArt['2'] — stage2.png — is the sheet it borrows from");
 }
 
 console.log('\n============================================');
