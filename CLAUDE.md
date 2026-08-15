@@ -148,7 +148,24 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0812C.md`, then `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0812D.md`, then `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0812d — the nca_87 pack is now the machine gun and the spread, all 8 tiers.**
+⚠ **nca_87 IS NOT SLICED** — one whole-sheet key, no cell keys exist. The 4x4 / 192-pitch grid was
+measured off its own alpha and is indexed directly (no manifest edit: the manifest is generated).
+Rows: 0 muzzle flash · 1 round in flight · 2 impact · 3 straight + two authored diagonals + flash.
+⚠ **ROW 1 IS THE 0811y TRAP AGAIN** — 50px wide at frame 0 vs 26px at frame 2, a 92% swing. Driven
+MONOTONICALLY off `b.t`, holding on the last frame. Never the wall clock, never a loop.
+⚠ **THE DIAGONALS ARE AUTHORED AT ±46.2°, NOT 45** — spread picks the nearest pose and rotates by
+the RESIDUAL only, the idiom `nhxv_` already set.
+⚠ **NEW ART MUST GO FIRST IN `drawBullets`** — both arms are chains of five `continue` fallbacks,
+and drop 0720 lost an entire pack to exactly that. §219 asserts the ORDER.
+⚠ **WHITE AND BLACK MUST NOT USE THE HUE SWAP** — `xartPalette`'s default `'color'` composite takes
+hue from the fill, and achromatic fills have none, so both come out the same grey. It carries a
+`multiply` path for black and a colour+`screen` path for white; tiers 3 and 4 need them.
+⚠ **ONE SHADOWED DRAW IS NOT A GLOW** — measured every tier's halo at 14..26 of 255, present but
+invisible, and tier 8's purple read BLUE under the round's own casing. The halo is its own pass now.
+Tier 8's BODY is my choice (authored gold), not Mike's — he specified bodies for 1-7 only.
 
 **0812c — the miniboss "hitbox square" is an UNWARMED HULL, on three stages.**
 ⚠ **A KIND NAME IS NOT AN ART PREFIX.** `warmStage` warmed `addPrefix(SUBBOSS[n].kind)` —
@@ -516,7 +533,7 @@ and reports settled burial. **The 839 / 71.9% baselines quoted in the handoff ar
 ⚠ **The recurring failure this stretch was systems that were declared and never fired** — the quad-laser's muzzles, `_qlChg`, `enemyVolley` sharing a `fireCd` its unit's tick owns, `micon_` asked of the wrong store, `lordshadows` registered and referenced nowhere. In every case the state looked right and no pixel moved. **Render it, then believe it.**
 
 
-Suite: **2,512 assertions / 223 sections / 5 failures** (drop 0812c) — the preload count, the two
+Suite: **2,526 assertions / 224 sections / 5 failures** (drop 0812d) — the preload count, the two
 `_superseded` ones, the volley round count and the naval flash families. ⚠ **If you see more than
 five, check `git status` for deleted art before you debug anything** — a missing file trips nine
 assertions across four sections and reads as an unrelated pile of failures.

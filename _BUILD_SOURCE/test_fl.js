@@ -9887,6 +9887,64 @@ console.log("=== 218. miniboss art warming ===");
   ok(_nokind.length===0, 'all eight stages name a miniboss'+(_nokind.length?(' — missing: '+_nokind.join(', ')):''));
 }
 
+// ===== 219. THE nca_87 PACK ON THE MG AND THE SPREAD (drop 0812d) =====
+console.log("=== 219. nca_87 projectile pack ===");
+{
+  var _g219=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  /* ⚠ STRIP THE COMMENTS FIRST. The first cut of this assertion searched the raw branch text and
+     failed on correct code: the machine-gun arm opens with a long block comment that NAMES the
+     older packs (nmg_, mfx_mg_) in prose, so "is p87Draw before nmg_?" was answering a question
+     about a sentence, not about a draw call. Third time a check here has matched documentation
+     instead of behaviour. */
+  function _branch(kind){          // the CODE of one `b.kind==='<kind>'` arm of drawBullets
+    var i=_g219.indexOf("if(b.kind==='"+kind+"'){");
+    if(i<0) return '';
+    var j=_g219.indexOf("} else if(b.kind===", i+10);
+    return _g219.slice(i, j<0 ? i+9000 : j)
+                .replace(/\/\*[\s\S]*?\*\//g, ' ')
+                .replace(/\/\/[^\n]*/g, ' ');
+  }
+  /* ⚠ FIRST IN THE CHAIN, OR UNREACHABLE. Both arms are chains of fallbacks that each `continue`,
+     and drop 0720 lost an entire art pack to exactly this — nmg_ ran first and returned, so the
+     authored per-level art below it never drew, and nobody noticed because the glow kept a hint of
+     the tier. Asserted as an ORDER, not as a line number. */
+  ['mg','spread'].forEach(function(k){
+    var body=_branch(k);
+    var p=body.indexOf('p87Draw(');
+    ok(p>=0, 'the '+k+' draws the nca_87 pack');
+    if(p<0) return;
+    var older=[body.indexOf('nmg_'), body.indexOf('mfx_mg_'), body.indexOf('nmgv_'),
+               body.indexOf('nsp_'), body.indexOf('spr_'), body.indexOf('mfx_spr_')]
+              .filter(function(v){ return v>=0; });
+    ok(older.every(function(v){ return p<v; }),
+       'and it is tried BEFORE every older '+k+' fallback');
+  });
+
+  /* ⚠ THE REEL IS DRIVEN BY THE ROUND'S OWN AGE. Row 1 is 50px wide at frame 0 and 26px at
+     frame 2 — a 92% swing — so a wall-clock or looping frame index makes the round PULSE, which
+     is the "wobbly projectiles" 0811y already fixed once for the enemy pellet. */
+  var _rf=_g219.slice(_g219.indexOf('function p87RoundFrame('), _g219.indexOf('function p87Pose('));
+  ok(/b\.t/.test(_rf), 'the in-flight reel is driven from the round\'s own age');
+  ok(!/performance\.now\(\)/.test(_rf), 'and NOT from the wall clock');
+  ok(/Math\.min\(/.test(_rf), 'and it holds on the last frame rather than looping');
+
+  /* both tables cover all eight tiers, and the two achromatic bodies are spelled out so they go
+     through xartPalette's multiply/screen special cases instead of the hue swap (which would
+     turn white and black into the same grey) */
+  var _f219=JSON.parse(vm.runInContext("(function(){"
+    +"var g=[],b=[];for(var i=1;i<=8;i++){g.push(WLV_GLOW[i]||null);b.push(String(WLV_BODY[i]));}"
+    +"return JSON.stringify({glow:g, body:b, poses:P87_POSE.length, round:P87_ROUND.length});})()", ctxv));
+  ok(_f219.glow.every(function(v){ return !!v; }), 'every tier 1-8 has a glow colour');
+  ok(_f219.body.length===8, 'and every tier has a body entry (null = the authored gold)');
+  ok(_f219.body[2]==='white' && _f219.body[3]==='black',
+     'white and black are named so xartPalette uses its achromatic paths, not the hue swap');
+  ok(_f219.poses===3, 'the spread has three authored poses to choose between');
+  ok(_f219.round===4, 'and the in-flight reel is four frames');
+  var _xp=_g219.slice(_g219.indexOf('function xartPalette('), _g219.indexOf('function xartPalette(')+1400);
+  ok(/mode==='black'/.test(_xp) && /multiply/.test(_xp), 'xartPalette still darkens for black');
+  ok(/mode==='white'/.test(_xp) && /screen/.test(_xp),   'and screens for white');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');

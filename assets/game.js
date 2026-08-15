@@ -20849,6 +20849,125 @@ function drawHelixPair(x, y, len, kind, frame, rot, glow, alpha){
   ctx.restore();
   return true;
 }
+/* ============================================================
+   THE nca_87 PROJECTILE PACK — the machine gun and the spread (drop 0812d)
+
+   Mike: "nca_87 - these should replace the machine gun and spread projectiles immediately.
+   palette swap the bullet and glow ... lvl 1 orange lvl 2 blue lvl 3 green lvl 4 white lvl 5 red
+   lvl 6 gold lvl 7 black lvl 8 purple ... level 1 could be brownish, level 2 could be silver,
+   level 3 could be white, level 4 could be black, lvl 5 could be the bullet standard color
+   itself. 6 use blue, and 7 use red."
+
+   ⚠ nca_87 IS NOT SLICED. It is registered as ONE whole-sheet key, so there are no cell keys to
+   ask for and `XART.rdy('nca_87_bullet_1')` would be false forever. The grid was measured off the
+   sheet's own alpha rather than assumed: four bands at rows 10..181, 202..373, 394..565, 586..757
+   and the same in x — a clean 4x4 at a 192 pitch. Everything below indexes that pitch directly,
+   which is also why no manifest edit is needed (and the manifest is generated, so an edit there
+   would be lost on the next regeneration).
+
+   WHAT EACH ROW IS, measured as ink per cell rather than read off the thumbnail:
+
+     row 0  MUZZLE FLASH   8842 / 7581 / 10081 / 5076      a reel, peak at frame 2
+     row 1  ROUND IN FLIGHT  w 50 / 33 / 26 / 38           see the warning below
+     row 2  IMPACT         7062 / 11269 / 3947 / 929       grows to frame 1, then decays
+     row 3  [0] straight  [1] +46.2deg  [2] -46.2deg  [3] a second, wider flash
+
+   ⚠ ROW 1 IS THE 0811y TRAP AGAIN, AND WORSE. The round is 50px wide at frame 0 and 26px at
+   frame 2 — a 92% swing. Toggling or looping those makes the round PULSE, which is exactly the
+   "wobbly projectiles" Mike reported and 0811y fixed for the enemy pellet. So the reel is driven
+   from `b.t`, MONOTONICALLY, and HOLDS on the last frame: fat leaving the barrel, streamlined at
+   speed. Never `performance.now()` — two rounds fired a frame apart would animate in lockstep
+   with each other and out of step with their own flight.
+
+   ⚠ AND THE DIAGONALS ARE AUTHORED AT ±46.2°, NOT 45. Measured as the principal axis of each
+   cell's ink. The spread picks the NEAREST authored pose and rotates only by the residual — the
+   idiom the helix pack (`nhxv_`) already uses here — so a hand-pixelled diagonal is drawn as
+   drawn instead of being resampled through an arbitrary rotation. ============================================================ */
+const P87_SHEET='nca_87', P87_CELL=192;
+const P87_ROUND=[[1,0],[1,1],[1,2],[1,3]];      // MG: birth -> streamlined, monotonic, holds
+const P87_FLASH=[[0,0],[0,1],[0,2],[0,3]];      // muzzle reel   (available; not wired yet)
+const P87_IMPACT=[[2,0],[2,1],[2,2],[2,3]];     // impact reel   (available; not wired yet)
+/* travel angle each authored spread pose is drawn for, in atan2(vy,vx) terms — player rounds
+   travel UP, which is -90°, and the two diagonals measured ±46.2° off that. */
+const P87_POSE=[
+  {rc:[3,2], a:-Math.PI/2 - 0.8064},            // up-left
+  {rc:[3,0], a:-Math.PI/2},                     // straight up
+  {rc:[3,1], a:-Math.PI/2 + 0.8064},            // up-right
+];
+/* the round's widest row sits 41/172 down its ink, so anchoring there puts the BODY on the
+   collision point and streams the trail behind it, rather than centring the trail on the hit. */
+const P87_BODY_Y=0.24;
+
+/* Mike's scheme, 0812d. GLOW is the halo; BODY is the round itself, palette-swapped to mesh with
+   it. A null BODY means "the bullet standard color itself" — the authored gold — and is NOT the
+   same as skipping the swap by accident, so it is spelled out per level.
+   ⚠ LEVELS 6, 7 AND 8 ARE COLE-ONLY and already gated: run.wlevel is clamped to
+   `colePilot() ? 8 : 5` at every read site. Nothing here needs to re-check that.
+   ⚠ LEVEL 8's BODY IS MY CHOICE, NOT MIKE'S — he gave bodies for 1-7 and said only that 8 is
+   Cole's fusion cannon with a purple glow. Standard gold against purple reads hottest of the
+   options and invents the least. Flagged in the passover for his word. */
+const WLV_GLOW={1:'#ff8a1e', 2:'#3a8aff', 3:'#5fe07a', 4:'#dfe8ff',
+                5:'#ff3b30', 6:'#ffbe2a', 7:'#20242c', 8:'#a45cff'};
+const WLV_BODY={1:'#8a5a2b', 2:'#c8d2dc', 3:'white', 4:'black',
+                5:null,      6:'#3a8aff', 7:'#ff3b30', 8:null};
+function wlvGlow(lv){ return WLV_GLOW[clamp(lv|0||1,1,8)] || WLV_GLOW[1]; }
+/* ⚠ 'white' AND 'black' MUST NOT GO THROUGH THE HUE SWAP. xartPalette's default is a 'color'
+   composite — hue and saturation from the fill, luminosity from the plate — and an achromatic
+   fill has no hue to give, so white and black both come out GREY and the level reads as "dull",
+   not as white or black. xartPalette already carries the two special cases (multiply for black, a
+   colour+screen pass for white); this exists so callers cannot accidentally route around them. */
+function p87Body(lv){
+  const m=WLV_BODY[clamp(lv|0||1,1,8)];
+  if(m===null || m===undefined) return XART.rdy(P87_SHEET) ? XART.get(P87_SHEET) : null;
+  return xartPalette(P87_SHEET, m) || (XART.rdy(P87_SHEET) ? XART.get(P87_SHEET) : null);
+}
+/* one cell of the pack, drawn at `h` tall with its body on (x,y) and rotated to `ang`.
+   Returns false if the sheet has not decoded, so every caller keeps its existing fallback. */
+function p87Draw(rc, x, y, ang, h, lv, glow, alpha){
+  if(typeof XART==='undefined' || !XART.rdy(P87_SHEET)) return false;
+  const src=p87Body(lv); if(!src) return false;
+  const sx=rc[1]*P87_CELL, sy=rc[0]*P87_CELL;
+  ctx.save();
+  ctx.translate(x,y);
+  if(ang) ctx.rotate(ang);
+  if(alpha!=null) ctx.globalAlpha=alpha;
+  ctx.imageSmoothingEnabled=false;                       // pixel art: nearest neighbour
+  /* ⚠ ONE SHADOWED DRAW WAS NOT A GLOW. Measured the halo per level off a render: every tier came
+     back within a few units of the background (14..26 of 255) and the level colour was technically
+     present but invisible — and level 8's purple read BLUE, because the round's own baked
+     blue-white casing simply outweighed it.
+
+     The halo is its own pass now: the sprite drawn once at low alpha purely to cast a wide
+     shadow, then drawn clean on top. That is what lets a colour sit AROUND the round instead of
+     being averaged into it, and it is why the tier is legible at a glance rather than on
+     inspection. Two draws of a ~48px sprite; the pack is cached per palette so neither re-swaps. */
+  if(glow){
+    ctx.save();
+    ctx.shadowColor=glow; ctx.shadowBlur=16;
+    ctx.globalAlpha=(alpha!=null?alpha:1)*0.85;
+    ctx.drawImage(src, sx, sy, P87_CELL, P87_CELL, -h/2, -h*P87_BODY_Y, h, h);
+    ctx.shadowBlur=7;                                    // a tighter, hotter inner ring
+    ctx.drawImage(src, sx, sy, P87_CELL, P87_CELL, -h/2, -h*P87_BODY_Y, h, h);
+    ctx.restore();
+  }
+  ctx.drawImage(src, sx, sy, P87_CELL, P87_CELL, -h/2, -h*P87_BODY_Y, h, h);
+  ctx.restore();
+  return true;
+}
+/* the in-flight frame: monotonic on the round's own age, held on the last. */
+function p87RoundFrame(b){
+  const t=(b && b.t) || 0;
+  return P87_ROUND[Math.min(P87_ROUND.length-1, (t/0.045)|0)];
+}
+/* nearest authored pose, and the residual the caller still has to rotate by */
+function p87Pose(ang){
+  let best=P87_POSE[1], bd=1e9;
+  for(const p of P87_POSE){
+    let d=Math.abs(((ang-p.a+Math.PI*3)%(Math.PI*2))-Math.PI);
+    if(d<bd){ bd=d; best=p; }
+  }
+  return {rc:best.rc, res:ang-best.a};
+}
 function drawBullets(){
   ctx.shadowBlur=0;   // never inherit a shadow from an upstream draw: it silently blurs every bullet
   // player
@@ -21598,6 +21717,17 @@ function drawBullets(){
          Drawn at their authored aspect rather than square, or a 32x56 round renders as a blob.
          Tier 8 has no art in this pack and deliberately falls through to the L7 black — better
          a correct top-tier look than a red level-5 pellet. Flagged for Mike. */
+      /* ⚠ THE nca_87 PACK GOES FIRST, OR IT IS UNREACHABLE (drop 0812d). This branch is a chain of
+         five fallbacks that each `continue`, and drop 0720 already lost a whole art pack to
+         exactly that: nmg_ ran first and returned, so the authored per-level art below it never
+         drew, and the bug survived because the glow kept a hint of the tier. Mike asked for this
+         pack to replace the machine gun "immediately", so it is the first thing tried and
+         everything under it stays as the fallback for a sheet that has not decoded. */
+      /* SIZE PICKED AGAINST THE SHIP, not in the abstract: rendered at 32 / 48 / 67 beside Cole's
+         airframe (docs/proofs/p87_size_0812d.png). At 32 the round is a sliver, at 67 consecutive
+         rounds merge into one unbroken bar. 48 is about a quarter of the fuselage width, which is
+         where the capsule reads as a capsule. */
+      if(p87Draw(p87RoundFrame(b), b.x, b.y, 0, 44+clamp(b.lv||1,1,8)*1.6, b.lv, wlvGlow(b.lv), 1)) continue;
       const _cLv=b.lv||1;
       if(_cLv>=6){
         const _ck = (_cLv>=7) ? 'pmgc_7' : 'pmgc_6';
@@ -21652,6 +21782,11 @@ function drawBullets(){
     } else if(b.kind==='spread'){
       // Mike's spread-fire art: 5 color columns (levels) x animation frames. tint=null so the
       // art's own colors/shading show (tinting flattens it, same lesson as the MG pellet).
+      /* SPREAD takes the same pack, but through the authored diagonals rather than one sprite
+         spun to an arbitrary angle: nearest pose, then rotate by the residual only. First in the
+         chain for the same reason as the machine gun above. */
+      { const _a=Math.atan2(b.vy,b.vx), _p=p87Pose(_a);
+        if(p87Draw(_p.rc, b.x, b.y, _p.res, 36+clamp(b.lv||1,1,8)*1.4, b.lv, wlvGlow(b.lv), 1)) continue; }
       const _spLv=clamp((b.lv||1)-1,0,4);
       /* MACHINE GUN PELLETS (drop 0801bg). Mike: "the spread fire is supposed to
          be more graphical and use our machine gun bullets."
