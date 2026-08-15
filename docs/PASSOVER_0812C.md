@@ -103,6 +103,25 @@ the assertion that should catch them.
 
 - **Stage 8 boss**: four forms, very high HP, same attack pattern. Mike: *"filler shit"* — and see
   the `mba_vr` note above before starting.
-- **Signs scroll when told not to**, and a waterfall sits in the middle of the road.
+- **Signs scroll when told not to** — investigated here and **NOT REPRODUCED**; it needs Mike's
+  word, not a code change. Two hypotheses were measured and both refuted:
+  - *the terrain and the props scroll at different rates* — `drawLevelMaster` consumes the master
+    as `srcY = rangeSrc - (mapScroll/range)*rangeSrc` while signs draw at `y - mapScroll`, so they
+    drift whenever `scrollLen ≠ plateH - VH`. Checked all eight stages: **`scrollLen` is null
+    everywhere and `range === rangeSrc` on every stage.** In step.
+  - *the signs miss the camera translate* — they do not; `drawBG` calls `drawLevelMaster`,
+    `drawStageProps` and `drawRoadSigns` in one transform state.
+
+  Measured on stage 4: world 800 wide, `VW` 480, `camX` 0..320, sign x positions
+  `222 247 254 274 296 | 500 512 557 576 594` — five each side, all reachable by the camera, and
+  they alternate as the 0801cu note intended. Filmstrip at 18/30/45/62% of the level shows them
+  pinned to the tarmac while it moves past.
+
+  ⚠ **The question is what "scroll" means.** Mike's own 0810h instruction was *"they do not scroll
+  ever, they are objects that stay put"*, and objects that stay put **on the map** must move up the
+  screen as the level advances — which is what they do. If he means screen-fixed, that is a
+  different design and his call.
+- **A waterfall sits in the middle of the road** — not yet located; `drawLiquidFalls(srcY)` is the
+  place to start, and note it takes SOURCE-space y while props take map-space.
 - **The barrel roll fires on micro-adjustments** — hold/toggle shift (tester) vs a cooldown (Mike).
   **Needs Mike's call**, it is a feel change to core movement.
