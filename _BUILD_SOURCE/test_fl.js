@@ -10003,6 +10003,36 @@ console.log("=== 220. named minibosses ===");
      'and each one warms its SOURCE plate'+(_unwarmed.length?(' — missing: '+_unwarmed.join(', ')):''));
 }
 
+// ===== 221. THE STAGE'S BOSS ART IS WARMED TOO (drop 0812f) =====
+console.log("=== 221. boss art warming ===");
+{
+  var _g221=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  /* ⚠ A KIND NAME IS NOT AN ART PREFIX — the 0812c lesson, which turned out to apply to the
+     BOSSES as well. `addPrefix('infernoreaver')` cannot match `nsb_inferno_reaver`, so stages 2
+     and 3 opened their boss fight on the hull-silhouette fallback. Warming is driven off the
+     tables now, so a boss added later is covered by existing code; these pin that it stays that
+     way rather than reverting to a hand-list. */
+  ok(/addPrefix\(SHIPBOSS\[_bk\]\.key\)/.test(_g221), "warmStage warms the stage boss's own hull key");
+  ok(/addPrefix\(SHIPBOSS\[_mk\]\.key\)/.test(_g221), 'and the miniboss hull the same way');
+  ok(/addPrefix\(NEWBOSS\[n\]\.idle\)/.test(_g221),   'and any NEWBOSS idle reel');
+
+  /* ⚠ THE ENTIRE NEWBOSS TABLE POINTS AT ART THAT IS NOT REGISTERED. All four idle keys
+     (chopper_/fboss_/iboss_/tankboss_) are absent from every namespace, so `_hasNewBoss` in
+     drawBoss can never be true and every stage falls through to its other path — for stage 1 that
+     is the legacy helicopter sprite, which is what actually renders.
+
+     Pinned as STATE, not as a wish: this assertion FAILS the day someone registers that art, and
+     that failure is the reminder to delete the dead branch or finish the wiring. */
+  var _f221=JSON.parse(vm.runInContext("(function(){ var o=[];"
+    +"for(var i in NEWBOSS){ var k=NEWBOSS[i].idle;"
+    +" o.push([i, k, !!(XART._src && (XART._src[k]||XART._src[k+'_0']))]); }"
+    +"return JSON.stringify(o);})()", ctxv));
+  var _live=_f221.filter(function(r){ return r[2]; }).map(function(r){ return r[0]+':'+r[1]; });
+  ok(_live.length===0,
+     'NEWBOSS art is still unregistered, so the legacy paths are the live ones'
+     +(_live.length?(' — NOW REGISTERED: '+_live.join(', ')+' (wire it or drop the branch)'):''));
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');

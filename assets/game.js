@@ -12806,6 +12806,31 @@ function warmStage(n){
     const S=STAGES[n-1];
     if(S && S.boss) addPrefix(S.boss);
     if(typeof SUBBOSS!=='undefined' && SUBBOSS[n] && SUBBOSS[n].kind) addPrefix(SUBBOSS[n].kind);
+    /* ============================================================
+       ⚠ THE TWO LINES ABOVE WARM BY KIND NAME, AND A KIND NAME IS NOT AN ART PREFIX (drop 0812f).
+
+       0812c found this for the minibosses. The BOSSES have it too, and audited the same way — spawn
+       the stage's boss after a full beginStage + warmStage, with XART.rdy wrapped to record what it
+       is asked for:
+
+         stage 1  damkeeper       chopper_idle_0       NOT READY
+         stage 2  infernoreaver   nsb_inferno_reaver   NOT READY
+         stage 3  cryospear       nsb_cryo_spear       NOT READY
+
+       `addPrefix('infernoreaver')` cannot match `nsb_inferno_reaver`, and `addPrefix('damkeeper')`
+       cannot match `chopper_idle`. Stage 2 and 3 therefore opened their boss fight on the
+       hull-silhouette fallback, and stage 1 never satisfied `_hasNewBoss` at all — so it drew the
+       LEGACY helicopter sprite instead of the chopper art registered for it. Art that was in the
+       build the whole time and simply never decoded, which is the exact shape of 0801kd.
+
+       Driven off the tables rather than hand-listed, so a boss added later is warmed by existing
+       code: any ship boss warms its own hull key, any NEWBOSS stage warms its idle reel, and the
+       same for whatever the stage fields as its miniboss. ============================================================ */
+    const _bk = S && S.boss;
+    if(_bk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_bk]) addPrefix(SHIPBOSS[_bk].key);
+    if(typeof NEWBOSS!=='undefined' && NEWBOSS[n] && NEWBOSS[n].idle) addPrefix(NEWBOSS[n].idle);
+    const _mk = (typeof SUBBOSS!=='undefined' && SUBBOSS[n]) ? SUBBOSS[n].kind : null;
+    if(_mk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_mk]) addPrefix(SHIPBOSS[_mk].key);
   }catch(e){}
   /* 5. THE FAMILIES THAT DO NOT MATCH A FOLDER OR A KIND NAME (drop 0801kd).
 

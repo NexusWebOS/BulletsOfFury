@@ -148,7 +148,18 @@ loads on entry.
 
 ## Current state (2026-08-13)
 
-**→ START HERE: `docs/PASSOVER_0812E.md`, then `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0812F.md`, then `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0812f — the boss art was unwarmed too, and the whole NEWBOSS table is dead.**
+⚠ Audited all eight bosses the way 0812c audited the minis. `addPrefix('infernoreaver')` cannot
+match `nsb_inferno_reaver`, so **stages 2 and 3 opened their boss fight on the hull silhouette**.
+warmStage is table-driven now: any ship boss warms its own hull key, any NEWBOSS stage its idle
+reel, any ship mini its hull — so a boss added later is covered by existing code.
+⚠ **ALL FOUR `NEWBOSS` ENTRIES POINT AT UNREGISTERED ART** (`chopper_`, `fboss_`, `iboss_`,
+`tankboss_` — absent from every namespace). `_hasNewBoss` can therefore NEVER be true and every
+stage falls through; stage 1 draws the LEGACY helicopter sprite, which is what you actually see.
+§221 pins that as STATE — it fails the day the art is registered, which is the reminder to finish
+the wiring or delete the branch.
 
 **0812e — the JUNGLE CRUISER is stage 1's miniboss; the quad-laser is unassigned, not deleted.**
 ⚠ **THE SOURCE FOLDER AND THE BUILD DISAGREE, AND THE SOURCE IS THE WRONG ONE TO READ.**
@@ -548,7 +559,7 @@ and reports settled burial. **The 839 / 71.9% baselines quoted in the handoff ar
 ⚠ **The recurring failure this stretch was systems that were declared and never fired** — the quad-laser's muzzles, `_qlChg`, `enemyVolley` sharing a `fireCd` its unit's tick owns, `micon_` asked of the wrong store, `lordshadows` registered and referenced nowhere. In every case the state looked right and no pixel moved. **Render it, then believe it.**
 
 
-Suite: **2,533 assertions / 225 sections / 5 failures** (drop 0812e) — the preload count, the two
+Suite: **2,537 assertions / 226 sections / 5 failures** (drop 0812f) — the preload count, the two
 `_superseded` ones, the volley round count and the naval flash families. ⚠ **If you see more than
 five, check `git status` for deleted art before you debug anything** — a missing file trips nine
 assertions across four sections and reads as an unrelated pile of failures.
