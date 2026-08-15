@@ -8142,15 +8142,25 @@ function _shipShot(x,y,vx,vy,w){
    ⚠ IT KILLS ON CONTACT, so the collision is point-to-SEGMENT, not point-to-line: a spoke reaches
    `len` and no further, and standing outside its reach is a legitimate answer to it. Using an
    infinite line would make the whole screen lethal on the diagonal. ============================================================ */
+const BEAMRAKE_GAP = 4.5;      // open floor between sweeps, in seconds
 function beamRakeStart(b, spokes, spin, dur, len){
+  /* ⚠ A STEP GATE IS NOT A COOLDOWN. Arming "every third volley" still lets the next rake begin
+     the instant the last one retracts, because the volleys keep counting while it sweeps -
+     measured on the stage-8 forms, 34.6 seconds of rake in a 45-second sample, 77% of the fight.
+     At that density it stops being a hazard you survive and becomes the room you live in, which
+     is the exact failure the retract was meant to prevent. A real cooldown starts when the rake
+     ENDS, so there is always a stretch of open floor between sweeps. */
+  if(b._brkCd>0) return false;
   b._brk = { n:spokes, spin:spin, ang:Math.random()*Math.PI*2, t:0,
              dur:dur, warm:0.75, len:len||Math.max(VW,VH)*1.15 };
   if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.retinaCharge) Audio.SFX.retinaCharge();
+  return true;
 }
 function beamRakeTick(b, dt){
+  if(b && b._brkCd>0) b._brkCd-=dt;
   const R=b && b._brk; if(!R) return;
   R.t+=dt; R.ang+=R.spin*dt;
-  if(R.t>=R.dur+R.warm){ b._brk=null; return; }
+  if(R.t>=R.dur+R.warm){ b._brk=null; b._brkCd=BEAMRAKE_GAP; return; }
   if(R.t<R.warm) return;                     // still announcing; not lethal yet
   if(typeof player==='undefined' || !player || player.dead || player.invuln>0) return;
   const ox=b.x, oy=(b._drawY!=null?b._drawY:b.y);
@@ -8207,7 +8217,10 @@ function shipBossManoeuvre(b, dt){
   const sy=shipBossStationY(b);
   /* the rake is ticked here - the only per-frame hook a ship boss has. It keeps running through
      every manoeuvre state, so a boss can be crossing the field while its beams sweep. */
-  if(b._brk) beamRakeTick(b, dt);
+  /* ⚠ TICK WHILE THE COOLDOWN IS RUNNING TOO, not only while a rake exists. beamRakeTick is what
+     decrements _brkCd, so gating the call on `b._brk` alone would leave the cooldown frozen the
+     moment the sweep ended - and no rake would ever arm again for the rest of the fight. */
+  if(b._brk || b._brkCd>0) beamRakeTick(b, dt);
   if(b._sbm==null){ b._sbm=SBM_HOLD; b._sbmT=rnd(1.2,2.2); b._sbmLeg=0; }
   b._sbmT-=dt;
   b._sbmAge=(b._sbmAge||0)+dt;
@@ -16325,6 +16338,12 @@ function updateBoss(dt){
   const b=boss; b.t+=dt; if(!b.dead) b.rotor+=dt*30;
   if(b._firing>0) b._firing-=dt;
   if(b.flash>0) b.flash-=dt;
+  /* ⚠ THE RAKE NEEDS A TICK ON EVERY PATH THAT CAN OWN ONE (drop 0812o). shipBossManoeuvre ticks
+     it for `_ship` units, and the modular bosses - the VILE forms among them - never reach that
+     function, so a rake armed by vileAttack would have hung in its warm-up forever. Ticked here
+     for everything that is NOT a ship boss, so neither path double-advances it: a double tick
+     doubles the spin and halves the duration. */
+  if(!b._ship && (b._brk || b._brkCd>0) && typeof beamRakeTick==='function') beamRakeTick(b, dt);
   /* MECH BOSSES (drop 0730u) own their own assembly and limb motion. While the mech is still
      building itself the fight is gated: it does not shoot, and it takes no damage, exactly like
      the modular entrance below. */
@@ -16640,6 +16659,9 @@ function bossAttack(){
   // every branch and never fired a shot — it just hovered. This is the boss-side hook.
   if(boss && boss._ship && typeof shipBossAttack==='function'){ shipBossAttack(boss); boss._firing=0.35; return; }
   if(boss && boss._profile==='magma' && typeof magmaColossusAttack==='function'){ magmaColossusAttack(boss); return; }
+  /* the four VILE forms each fight their own way (drop 0812o) - ahead of the stage switch,
+     which is where all four used to share one branch */
+  if(boss && boss._vile && typeof vileAttack==='function'){ vileAttack(boss); boss._firing=0.35; return; }
   const b=boss; const a=aimPlayer(b.x,b.y);
   b._firing=0.35;   // show fire-frame art briefly on each attack
   // MEGA BOSSES (bz): profile attack + a telegraphed enrage salvo under 50% HP
@@ -19283,6 +19305,8 @@ function attractDraw(){
 }
 
 function drawBoss(){
+  /* the rake draws under the hull, and like the tick it has to reach the non-ship paths too */
+  if(boss && !boss._ship && boss._brk && typeof beamRakeDraw==='function') beamRakeDraw(boss);
   /* TELEGRAPH FIRST, under everything else — the wind-up ring has to be visible before the shots
      it warns about. A pattern the player cannot read is not difficulty, it is noise. */
   if(typeof bossTelegraphDraw==='function') bossTelegraphDraw(1/60);
@@ -27844,6 +27868,67 @@ function _vileSpec(scale){
     {c:'rear_core',     rect:[85,170,171,256],hp:950,  role:'drive'},
     {c:'right_systems', rect:[171,0,256,256], hp:1000, role:'systems'},
   ]};
+}
+/* ============================================================
+   THE FOUR FORMS FIGHT DIFFERENTLY (drop 0812o)
+
+   Mike, on the stage-8 boss: "4 forms, very tanky, attack pattern is the same through all 4
+   forms" — and measured, it was the least threatening unit in the game: 0.44 rounds per second
+   reaching the player and 4.2-second silences, on the LAST fight of the campaign. Every form ran
+   the one `case 8:` branch in bossAttack.
+
+   Four identities instead, escalating, each built from a primitive that already exists so none of
+   this is a new bullet system:
+
+     APOSTLE COCOON     a shell. Slow wall volleys with ONE moving gap — the stage-7 flood idiom,
+                        because a cocoon should read as something you break, not something that
+                        hunts you. Lowest pressure on purpose: it is the opener.
+     VENOM ASCENDANT    it has hatched. Aimed bursts plus homing pairs from both flanks.
+     NECROTIC LEVIATHAN area denial. The ROTATING RAKE with a bullet spiral to thread between —
+                        the two hazards Mike asked to be combined.
+     FURIOUS DEATH      all of it, faster: a five-spoke rake, missile fans and aimed fire.
+
+   ⚠ THE RAKE IS ARMED, NOT FIRED, and only if one is not already sweeping. Re-arming every volley
+   is the fault 0812m had to fix on the ship bosses — the hazard stops being an event and becomes
+   the arena. ============================================================ */
+function vileAttack(b){
+  const f=b._vForm|0, y=b.y+b.h*0.28;
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  const step=(b._vAtk=(b._vAtk|0)+1);
+  if(f===0){
+    const gap=W*(0.18+0.64*(0.5+0.5*Math.sin((b.t||0)*0.8)));
+    for(let x=30;x<W-20;x+=46){
+      if(Math.abs(x-gap)<70) continue;
+      eShoot(x, y, Math.PI/2, 2.0, 'blob');
+    }
+    b.fireCd=1.35;
+  } else if(f===1){
+    const a0=aimPlayer(b.x,y);
+    for(let k=-2;k<=2;k++) eShoot(b.x, y, a0+k*0.10, 3.4, 'bolt');
+    if((step%2)===0 && typeof eMissileHoming==='function'){
+      eMissileHoming(b.x-b.w*0.26, y, -1);
+      eMissileHoming(b.x+b.w*0.26, y,  1);
+    }
+    b.fireCd=1.05;
+  } else if(f===2){
+    if(!b._brk && (step%3)===0 && typeof beamRakeStart==='function'){
+      beamRakeStart(b, 4, (Math.random()<0.5?-1:1)*0.62, 5.0);
+    } else {
+      for(let k=0;k<9;k++) eShoot(b.x, y, (b._vRot=(b._vRot||0)+0.19)+k*TAU/9, 2.2, 'plasma');
+    }
+    b.fireCd=0.95;
+  } else {
+    if(!b._brk && (step%4)===0 && typeof beamRakeStart==='function'){
+      beamRakeStart(b, 5, (Math.random()<0.5?-1:1)*0.85, 5.4);
+    } else if((step%3)===0 && typeof eMissile==='function'){
+      for(const fx of [-0.30,-0.10,0.10,0.30]) eMissile(b.x+b.w*fx, y);
+    } else {
+      const a0=aimPlayer(b.x,y);
+      for(let k=-3;k<=3;k++) eShoot(b.x, y, a0+k*0.085, 4.0, 'bolt');
+    }
+    b.fireCd=0.78;
+  }
+  if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
 function vileBuildForm(b, idx){
   const F=VILE_FORMS[idx];

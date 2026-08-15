@@ -10257,6 +10257,35 @@ console.log("=== 226. boss manoeuvres + arcade attacks ===");
      standing outside the reach stops being an answer. */
   ok(/proj<0 \|\| proj>R\.len/.test(_rk), 'a spoke has a finite reach');
   ok(/dur/.test(_rk), 'and the rake retracts rather than becoming the arena');
+  /* ⚠ A STEP GATE IS NOT A COOLDOWN. Volleys keep counting while a rake sweeps, so "every third
+     volley" lets the next one begin the instant the last retracts - measured 34.6s of rake in a
+     45s sample on the stage-8 forms, 77% of the fight. The cooldown starts when the rake ENDS. */
+  ok(/BEAMRAKE_GAP/.test(_g226), 'there is a cooldown BETWEEN sweeps, not just a step gate');
+  ok(/if\(b\._brkCd>0\) return false;/.test(_rk), 'and a rake cannot arm during it');
+  /* ⚠ AND THE COOLDOWN MUST BE TICKED WHEN NO RAKE EXISTS, or it freezes the moment the sweep ends
+     and no rake ever arms again. I wrote that bug and caught it in the same pass. */
+  ok((_g226.match(/_brk \|\| b\._brkCd>0/g)||[]).length===2,
+     'both tick sites keep counting while only the cooldown is live');
+}
+
+// ===== 227. THE STAGE-8 FINALE FIGHTS FOUR WAYS (drop 0812o) =====
+console.log("=== 227. vile forms ===");
+{
+  /* Mike: "4 forms, very tanky, attack pattern is the same through all 4 forms." Every form ran the
+     one `case 8:` branch, and the boss measured as the least threatening unit in the game - 0.44
+     rounds per second reaching the player, with 4.2-second silences, on the LAST fight. */
+  var _g227=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(/function vileAttack\(/.test(_g227), 'the finale has its own attack');
+  ok(/boss\._vile && typeof vileAttack==='function'/.test(_g227),
+     'and it is reached BEFORE the shared stage switch');
+  var _va=_g227.slice(_g227.indexOf('function vileAttack('), _g227.indexOf('function vileBuildForm('));
+  ok(/f===0/.test(_va) && /f===1/.test(_va) && /f===2/.test(_va),
+     'each form branches separately');
+  ok(/beamRakeStart/.test(_va), 'and the later forms field the rotating rake');
+  ok(/!b\._brk &&/.test(_va), 'armed only when one is not already sweeping');
+  var _f227=JSON.parse(vm.runInContext("(function(){"
+    +"return JSON.stringify({forms:VILE_FORMS.length, names:VILE_FORMS.map(function(f){return f.name;})});})()", ctxv));
+  ok(_f227.forms===4, 'all four forms are still defined ('+_f227.forms+')');
 }
 
 console.log('\n============================================');
