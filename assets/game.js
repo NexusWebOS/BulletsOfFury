@@ -3631,11 +3631,66 @@ function hudPanel(x,y,w,h){
    when he is the pilot the flamethrower slot shows these instead of the fire
    icons. Every other pilot keeps micon_firewall_*. One lookup, used by the HUD
    and the pickup draw, so the two can never disagree. */
-function weaponIconKey(w, lv){
+/* ============================================================
+   ⚠ ONE TABLE DECIDES WHAT A SLOT IS — ICON, NAME AND DROP (drop 0812l)
+
+   Mike: "On stage 2 when Freezer got the icebreath icon, it said Lvl 1 flamethrower."
+
+   Exactly that: the ICON lookup below already knew about Freezer and about stage 3, and the
+   ANNOUNCE read a flat `WEAPONS[]` array that knew about neither — so slot 4 said FLAMETHROWER to
+   everyone, on every stage, while the art said ice. Two systems answering the same question.
+
+   His rules, written down so they are one lookup rather than three:
+
+     FLAME SLOT (4)
+       freezer, stage 1        flamethrower       (icebreath is not his yet)
+       freezer, stage 2        ICEBREATH          and from here on
+       freezer, stage 3        NOT AVAILABLE      "disable ice breath ... for him"
+       freezer, stage 4+       either             "he can obtain both"
+       everyone else           flamethrower
+     ORB SLOT (5)
+       freezer, stage 3+       FIREICE            "he keeps the new fireice orb"
+       everyone, stage 3       FIREORB            a one-off for them
+       otherwise               ICE ORB            "lvl 4 onward its ice orb"
+
+   ⚠ THE VARIANT IS BAKED ONTO THE PICKUP AT SPAWN, not recomputed at draw. Stage 4+ lets Freezer
+   roll either flame variant, and a variant re-rolled per frame would flicker between two icons
+   while the crate is falling. ============================================================ */
+const WVAR_NAME = {flamethrower:'FLAMETHROWER', icebreath:'ICE BREATH',
+                   iceorb:'ICE ORB', fireorb:'FIRE ORB', fireice:'FIRE-ICE ORB'};
+const WVAR_ICON = {flamethrower:'micon_firewall_', icebreath:'micon_icebreath_',
+                   iceorb:'micon_iceorb_', fireorb:'micon_fireorb_', fireice:'micon_thermoshock_'};
+function weaponVariant(w, opt){
+  /* a variant baked onto a pickup at spawn WINS - see the note above about stage 4+ re-rolling */
+  if(opt && opt.fixed) return opt.fixed;
+  const st  = (opt && opt.stage!=null) ? opt.stage : (run ? run.stage : 1);
+  const pk  = (opt && opt.pilot) ? opt.pilot : ((typeof _pilotKey==='function') ? _pilotKey() : '');
+  const frz = (pk==='freezer') || !!(run && run._dbgIce && w===4);
+  if(w===4){
+    if(!frz) return 'flamethrower';
+    if(st<=1) return 'flamethrower';
+    if(st===2) return 'icebreath';
+    if(st===3) return null;                       // withheld on 3, per Mike
+    return (opt && opt.roll!=null ? opt.roll : Math.random()) < 0.5 ? 'flamethrower' : 'icebreath';
+  }
+  if(w===5){
+    if(frz && st>=3) return 'fireice';
+    if(st===3 || (run && run._dbgFire)) return 'fireorb';
+    return 'iceorb';
+  }
+  return null;                                    // slots 0-3 have no variants
+}
+/* the display name, from the same table the icon uses - this is the fix for the mismatch */
+function weaponDisplayName(w, opt){
+  const v=weaponVariant(w, opt);
+  if(v && WVAR_NAME[v]) return WVAR_NAME[v];
+  return (typeof WEAPONS!=='undefined' && WEAPONS[w]) ? WEAPONS[w] : 'WEAPON';
+}
+function weaponIconKey(w, lv, opt){
   const base = ({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[w] || 'mg';
   const _pk = (typeof _pilotKey==='function') ? _pilotKey() : '';
-  /* FREEZER'S FLAMETHROWER IS ICE BREATH — his kit, on every stage, not a stage rule. */
-  if(w===4 && (_pk==='freezer' || (run&&run._dbgIce))) return 'micon_icebreath_'+lv;
+  const _v = weaponVariant(w, opt);
+  if(_v && WVAR_ICON[_v]) return WVAR_ICON[_v]+lv;
   /* ============================================================
      THE ICON MUST MATCH WHAT THE SLOT ACTUALLY DISPENSES (drop 0806d)
 
@@ -8177,7 +8232,21 @@ function shipBossDraw(b){
 }
 function spawnBoss(kind){
   const sn=curStage.n;
-  const hpBase = (220 + sn*120) * DIFF.eHp;
+  /* ============================================================
+     ⚠ BOSS HP CLIMBS FROM STAGE 2 ON (drop 0812l). Mike: "Beef up mini boss and boss hp from
+     level 2 onward."
+
+     The base curve is left exactly as it was — 220 + 120 per stage is what stage 1 was tuned
+     against and it stays untouched, because stage 1 is the fight a new player learns on. From
+     stage 2 a multiplier rides on top and grows with the stage, so the escalation is felt across
+     the run rather than as one step:
+
+         stage   1     2     3     4     5     6     7     8
+         mult   1.00  1.15  1.24  1.33  1.42  1.51  1.60  1.69
+
+     Expressed as a formula rather than a table so a ninth stage cannot be forgotten. */
+  const _hpRamp = (sn<=0) ? 1 : (1.06 + sn*0.09);
+  const hpBase = (220 + sn*120) * DIFF.eHp * _hpRamp;
   const b={
     kind, x:VW/2, y:-120, tx:VW/2, ty:120, w:160, h:120,
     hp:hpBase, maxhp:hpBase, t:0, phase:0, fireCd:1.5, enter:true,
@@ -8478,6 +8547,17 @@ function spawnSubBoss__inner(kind){
     const M=MINIBOSS[kind];
     b.mini=true; b.art=kind; b.name=M.name; b.atkProfile=M.atk; b.accent=M.accent;
     b.w=170; b.h=104; b.hp=b.maxhp=Math.ceil(135*DIFF.eHp);
+  }
+  /* ⚠ THE MINIS RAMP TOO, AND FROM ONE PLACE (drop 0812l). Mike: "Beef up mini boss and boss hp
+     from level 2 onward." Their HP is set in half a dozen branches above - the ship table's
+     absolute values, the quad-laser's own figure, the modular builds - so scaling here, after the
+     switch has finished with the object, is the only spot that catches all of them. Same curve as
+     the boss ramp, and stage 1 is deliberately left alone: the jungle cruiser is the first
+     miniboss anyone meets and it was tuned at 210. */
+  {
+    const _sn=(run.stage|0)-1;
+    const _r=(_sn<=0)?1:(1.06+_sn*0.09);
+    if(_r>1 && b.maxhp>0){ b.maxhp=Math.ceil(b.maxhp*_r); b.hp=b.maxhp; }
   }
   subBoss=b; subBossActive=true; Audio.SFX.bossAlarm();
 }
@@ -9788,6 +9868,34 @@ function flameBase(lv){ return 15 + clamp(lv,1,5)*4; }           // half-width a
 function flameFlare(lv){ return 2.0 + clamp(lv,1,5)*0.15; }      // tip width as a multiple of the base
 /* half-width at travel fraction t (0 = nozzle, 1 = tip) */
 function flameHalfW(lv,t){ const f=clamp(t,0,1); return flameBase(lv)*(1+(flameFlare(lv)-1)*f); }
+/* ============================================================
+   A CONTINUOUS WEAPON HAS TO BE HEARD LANDING (drop 0812l)
+
+   Mike: "We also need sound when lasers, flame thrower and ice hits enemies, bosses, mini bosses."
+
+   The beam, the flamethrower and the ice breath all deal damage on a TICK while the trigger is
+   held, and none of them made a sound on contact - only the firing sound. A held laser buried in a
+   boss was silent, which is why it never read as connecting.
+
+   ⚠ RATE-LIMITED PER ELEMENT, AND THAT IS THE WHOLE DIFFICULTY. These sites run every frame or
+   two: an ungated call is sixty plays a second and reads as a buzzsaw, not as impact. One play per
+   90ms per element, so laser-on-boss and flame-on-enemy can still overlap but neither machine-guns.
+   ⚠ AND IT GATES ON stateT, NOT performance.now() - the same correction 0811y made to the pellet,
+   so two hits inside one frame cannot both pass. ============================================================ */
+const HITSFX_GAP = 0.09;
+let _hitSfxAt = {};
+function weaponHitSfx(el){
+  if(!el) el='laser';
+  const now = (typeof stateT==='number') ? stateT : 0;
+  if(_hitSfxAt[el]!=null && (now-_hitSfxAt[el]) < HITSFX_GAP) return;
+  _hitSfxAt[el]=now;
+  try{
+    const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null; if(!S) return;
+    if(el==='ice'  && S.shatter) S.shatter();
+    else if(el==='fire' && S.crackle) S.crackle();
+    else if(S.hit) S.hit();
+  }catch(e){}
+}
 function flameHit(f,x,y,ew,eh){
   /* TEST THE TARGET'S BODY, NOT ITS CENTRE POINT (drop 0801ff). Mike: "flamethrower
      doesnt damage crates or minibosses or bosses, fix this immediately."
@@ -10076,7 +10184,13 @@ function flameDraw(f){
      progressively narrower as the weapon levels up, which is the opposite of what a breath
      weapon should do. Kept the flare; flagging the trade. */
   const _isIce = key.indexOf('nib_')===0 || key.indexOf('nibr_')===0;
-  const ICE_W = 0.85, ICE_H = 0.90, ICE_ALPHA = 0.5;
+  /* ⚠ ICE_ALPHA WAS 0.5 ON PURPOSE, AND MIKE HAS OVERRULED IT (drop 0812l). 0801ku halved it "so
+     the player can still see the enemies inside it"; his word now is "Icebreath, its too
+     transparent, fix it." At 0.86 the plume reads as a solid breath weapon and an enemy inside it
+     is still discernible as a silhouette, which is the part of the old reason worth keeping.
+     ⚠ NOT fixed by stacking passes: the note below records that additive copies blow a near-white
+     ice mass out to a featureless slab. One plate, higher alpha. */
+  const ICE_W = 0.85, ICE_H = 0.90, ICE_ALPHA = 0.86;
   /* THE NEW REEL IS SELF-LIT (drop 0805d). Its manifest declares internal_glow_only and the
      handoff says outright "There is no outer glow" — the charge veins and light bands are
      painted into the frames. Passes 2 and 3 below stack two more additive copies on top,
@@ -10718,8 +10832,18 @@ function spawnContainer(type){
        rather than by removing it. Putting 5 in the bag TWICE guarantees two
        fireballs across a run instead of leaving it to the shuffle. */
     if(!run._wbag || !run._wbag.length){
-      run._wbag = (run.stage===3) ? [0,1,2,3,4,5,5] : [0,1,2,3,4,5]; for(let i=run._wbag.length-1;i>0;i--){ const j=(Math.random()*(i+1))|0; const t=run._wbag[i]; run._wbag[i]=run._wbag[j]; run._wbag[j]=t; } }
-    powerups.push({x,y:-30,vy:0.95,t:0,kind:'crate',wtype:run._wbag.pop(),hp:5,flash:0,w:28,h:28,bob:rnd(0,TAU)});
+      /* [!] THE BAG HAS TO RESPECT THE SAME RULES AS THE ICON (drop 0812l). Mike withholds the
+         flame slot from Freezer on stage 3 - "disable ice breath ... for him" - and weaponVariant
+         returns null for exactly that case, so a slot with no variant is simply not in the bag.
+         Driven from the table rather than hand-listed, so stage 3 cannot drop a weapon whose icon
+         and name have nothing to show. */
+      const _pool=[0,1,2,3,4,5].filter(w=>(w!==4 && w!==5) || (typeof weaponVariant!=='function') || weaponVariant(w)!==null);
+      if(run.stage===3 && _pool.indexOf(5)>=0) _pool.push(5);      // the fire orb is the stage-3 event
+      run._wbag = _pool; for(let i=run._wbag.length-1;i>0;i--){ const j=(Math.random()*(i+1))|0; const t=run._wbag[i]; run._wbag[i]=run._wbag[j]; run._wbag[j]=t; } }
+    const _wt0=run._wbag.pop();
+    powerups.push({x,y:-30,vy:0.95,t:0,kind:'crate',wtype:_wt0,
+                   wvar:(typeof weaponVariant==='function')?weaponVariant(_wt0):null,
+                   hp:5,flash:0,w:28,h:28,bob:rnd(0,TAU)});
   }
   else if(type==='scrate') powerups.push({x,y:-30,vy:0.8,t:0,kind:'scrate',hp:6,flash:0,w:30,h:30,bob:rnd(0,TAU)});
   else if(type==='mcrate') powerups.push({x,y:-30,vy:0.85,t:0,kind:'mcrate',hp:6,flash:0,w:48,h:44,bob:rnd(0,TAU)});
@@ -10730,7 +10854,7 @@ function crateBreak(x,y,col){
   floaters.push({x,y,vy:-0.6,t:0,life:0.6,r:18,flashring:true,color:col});
 }
 function breakContainer(p){
-  if(p.kind==='crate'){ crateBreak(p.x,p.y,'#ffcf4a'); powerups.push({x:p.x,y:p.y,vy:0.7,t:0,kind:'weapon',wtype:p.wtype,w:18,h:18,bob:rnd(0,TAU)}); }
+  if(p.kind==='crate'){ crateBreak(p.x,p.y,'#ffcf4a'); powerups.push({x:p.x,y:p.y,vy:0.7,t:0,kind:'weapon',wtype:p.wtype,wvar:p.wvar,w:18,h:18,bob:rnd(0,TAU)}); }
   else if(p.kind==='scrate'){ crateBreak(p.x,p.y,'#ff3a2a'); powerups.push({x:p.x,y:p.y,vy:0.7,t:0,kind:scrateYield(),w:24,h:24,bob:rnd(0,TAU)}); }
   else if(p.kind==='mcrate'){
     /* MISSILE SUPPLY BOX (drop 0801q). Mike: "a new vertical 2 missile box that should be part
@@ -10830,7 +10954,7 @@ function grantCinematicMissiles(x, y){
 }
 
 function applyPowerup(p){
-  if(p.kind==='crate'){ crateBreak(p.x,p.y,'#ffcf4a'); p={kind:'weapon',wtype:p.wtype,x:p.x,y:p.y}; }
+  if(p.kind==='crate'){ crateBreak(p.x,p.y,'#ffcf4a'); p={kind:'weapon',wtype:p.wtype,wvar:p.wvar,x:p.x,y:p.y}; }
   else if(p.kind==='scrate'){ crateBreak(p.x,p.y,'#ff3a2a'); p={kind:scrateYield(),x:p.x,y:p.y}; }
   else if(p.kind==='mcrate'){ crateBreak(p.x,p.y,'#5ab4ff');
     p={kind:(p._pack||mslPackRoll()),x:p.x,y:p.y}; }
@@ -10893,7 +11017,7 @@ function applyPowerup(p){
       run.weapon=_wt; run.wlevels[_wt]=clamp(_cur+1,1,5); run.wlevel=run.wlevels[_wt];
       /* the announcement replaces floatText here — a pickup is an EVENT, and a small tinted
          string drifting up from the crate reads as a damage number */
-      if(typeof arcadeBanner==='function') arcadeBanner(arcWeaponAnnounce(_wt, run.wlevel));
+      if(typeof arcadeBanner==='function') arcadeBanner(arcWeaponAnnounce(_wt, run.wlevel, p.wvar?{fixed:p.wvar}:null));
       Audio.SFX.weapon(); break;
     }
     case 'bomb':
@@ -10994,8 +11118,11 @@ function drawArcadeBanner(){
 }
 /* the name a pickup announces itself by — WEAPONS carries the full label, and Mike's example
    ("LVL 1 Machine Gun!") is level first, then the weapon */
-function arcWeaponAnnounce(slot, lv){
-  const nm=(typeof WEAPONS!=='undefined' && WEAPONS[slot]) ? WEAPONS[slot] : 'WEAPON';
+function arcWeaponAnnounce(slot, lv, opt){
+  /* [!] THIS READ A FLAT WEAPONS[] ARRAY while the icon knew about the pilot and the stage, which
+     is how Freezer picked up an ICE BREATH icon that announced itself as LVL 1 FLAMETHROWER. */
+  const nm=(typeof weaponDisplayName==='function') ? weaponDisplayName(slot, opt)
+          : ((typeof WEAPONS!=='undefined' && WEAPONS[slot]) ? WEAPONS[slot] : 'WEAPON');
   return 'LVL '+lv+' '+nm;
 }
 
@@ -14936,7 +15063,7 @@ function updatePlay(dt){
       for(const e of enemies){
         if(e.dead) continue;
         if(e.y<=b.bot && Math.abs(b.x-e.x)<(e.w/2+b.w/2)){
-          if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg); b._hit.push(e);
+          if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg); weaponHitSfx('laser'); b._hit.push(e);
             /* MARK THE IMPACT (drop 0806i). The charged helix ball detonates on CONTACT
                now rather than on a position line. Only the full charged BALL reacts — the
                fan strands it throws must not chain-detonate off their own hits, which is
@@ -14946,12 +15073,12 @@ function updatePlay(dt){
       }
       if(boss && bossActive && !boss.dead){
         b._bt=(b._bt||0)-dt;
-        if(b._bt<=0 && boss.y<=b.bot && Math.abs(b.x-boss.x)<(boss.w/2+b.w/2)){ hitBoss(b.dmg); b._bt=0.05; }
+        if(b._bt<=0 && boss.y<=b.bot && Math.abs(b.x-boss.x)<(boss.w/2+b.w/2)){ hitBoss(b.dmg); weaponHitSfx('laser'); b._bt=0.05; }
       }
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
         b._sbt=(b._sbt||0)-dt;
         const sy=(subBoss._drawY||subBoss.y);
-        if(b._sbt<=0 && sy<=b.bot && Math.abs(b.x-subBoss.x)<(subBoss.w/2+b.w/2)){ hitSubBoss(b.dmg, b.x, sy); b._sbt=0.05; }
+        if(b._sbt<=0 && sy<=b.bot && Math.abs(b.x-subBoss.x)<(subBoss.w/2+b.w/2)){ hitSubBoss(b.dmg, b.x, sy); weaponHitSfx('laser'); b._sbt=0.05; }
       }
       for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate')) continue;
         if(p.y<=b.bot && Math.abs(b.x-p.x)<(p.w/2+b.w/2)){ if(b._hit.indexOf(p)<0){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; b._hit.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } } }
@@ -14968,7 +15095,7 @@ function updatePlay(dt){
         if(e.dead) continue;
         if(flameHit(b, e.x, e.y, e.w, e.h)){
           if(b._hit.indexOf(e)<0){
-            hitEnemy(e, b.dmg*elementMultiplier(attackElement('flame'))); if(typeof stageStats!=='undefined') stageStats.hits++; b._hit.push(e);
+            hitEnemy(e, b.dmg*elementMultiplier(attackElement('flame'))); if(typeof stageStats!=='undefined') weaponHitSfx(attackElement('flame')); stageStats.hits++; b._hit.push(e);
             /* ICE BREATH FREEZES (drop 0801fl). Mike: "when it hits enemies,
                flashes white/ice blue and turns them into ice variants when they
                die." The flash is the standard hit flash retinted; _frozen marks
@@ -14987,12 +15114,12 @@ function updatePlay(dt){
       }
       if(boss && bossActive && !boss.dead){
         b._bt=(b._bt||0)-dt;
-        if(b._bt<=0 && flameHit(b, boss.x, (boss._drawY!=null?boss._drawY:boss.y), boss.w, boss.h)){ hitBoss(b.dmg); b._bt=FLAME_TICK; }
+        if(b._bt<=0 && flameHit(b, boss.x, (boss._drawY!=null?boss._drawY:boss.y), boss.w, boss.h)){ hitBoss(b.dmg); weaponHitSfx(attackElement('flame')); b._bt=FLAME_TICK; }
       }
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
         b._sbt=(b._sbt||0)-dt;
         const sy=(subBoss._drawY||subBoss.y);
-        if(b._sbt<=0 && flameHit(b, subBoss.x, sy, (subBoss._drawW||subBoss.w), (subBoss._drawH||subBoss.h))){ hitSubBoss(b.dmg); b._sbt=FLAME_TICK; }
+        if(b._sbt<=0 && flameHit(b, subBoss.x, sy, (subBoss._drawW||subBoss.w), (subBoss._drawH||subBoss.h))){ hitSubBoss(b.dmg); weaponHitSfx(attackElement('flame')); b._sbt=FLAME_TICK; }
       }
       for(const p of powerups){
         if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate')) continue;

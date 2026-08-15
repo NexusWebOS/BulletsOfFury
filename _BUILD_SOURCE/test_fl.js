@@ -6904,7 +6904,11 @@ console.log("=== 161. new art packs wired ===");
        'ice stays SMALLER than the flamethrower in both dimensions ('+_iw+' x '+_ih+')');
     ok(_iw>=0.75 && _ih>=0.80,
        'but only a little smaller — not back to the 0.62/0.80 that read as too small');
-    ok(_ia===0.5, 'and the 50% translucency from 0801ku is untouched ('+_ia+')');
+    /* ⚠ 0801ku's 50% IS OVERRULED (drop 0812l). Mike: "Icebreath, its too transparent, fix it."
+       The reason 0801ku gave — seeing enemies inside the plume — is kept in spirit at 0.86, where
+       a unit inside still reads as a silhouette. Pinned so it cannot drift back to a slab at 1.0
+       or back to a ghost at 0.5. */
+    ok(_ia>=0.80 && _ia<=0.92, 'ice breath is solid but not opaque ('+_ia+')');
   }
   ok((_g161.match(/const ICE_W = /g)||[]).length===1,
      'only ONE ICE_W declaration survives — a second const in the same block is a SyntaxError');
@@ -7817,10 +7821,30 @@ console.log("=== 178. stage-3 orb + thaw ===");
    +"return JSON.stringify(o);})()", ctxv));
   ok(_ico.yuri3.orb==='micon_fireorb_3', 'stage 3 shows the FIREBALL icon, not the ice orb');
   ok(_ico.freezer3.orb==='micon_thermoshock_3', "and Freezer shows his own fire/ice ball icon");
-  ok(_ico.yuri5.orb==='micon_iceorb_3' && _ico.freezer5.orb==='micon_iceorb_3',
-     'every other stage still shows the ice orb');
-  ok(_ico.freezer3.flame==='micon_icebreath_3' && _ico.freezer5.flame==='micon_icebreath_3',
-     "Freezer's flamethrower slot is ICE BREATH on every stage — his kit, not a stage rule");
+  /* ⚠ MIKE REWROTE THIS SPEC (drop 0812l), and these two pinned the old one:
+       "on lvl 3, disable ice breath and ice orb for him and everyone, enable fireorb for everyone,
+        enable fireiceball for freezer. past level 3 - freezer ... keeps the new fireice orb, he no
+        longer gets ice orb or fire orb. Everyone else - rest of the game lvl 4 onward its ice orb."
+     So Freezer does NOT return to the ice orb after stage 3, and his flame slot is NOT icebreath
+     on every stage — it is flamethrower on 1, icebreath from 2, withheld on 3. */
+  ok(_ico.yuri5.orb==='micon_iceorb_3', 'everyone else is back on the ice orb from stage 4');
+  ok(_ico.freezer5.orb==='micon_thermoshock_3', 'and Freezer KEEPS the fire-ice orb');
+  ok(_ico.freezer5.flame==='micon_icebreath_3' || _ico.freezer5.flame==='micon_firewall_3',
+     "past stage 3 Freezer can hold either flame variant ("+_ico.freezer5.flame+")");
+  /* ⚠ "WITHHELD" IS A PROPERTY OF THE DROP, NOT OF THE ICON. weaponIconKey still answers with the
+     firewall plate for a slot that has no variant, which is harmless because the slot never
+     reaches the bag — and the bag is what to assert. My first cut tested the icon and failed on
+     correct code. */
+  var _bag=JSON.parse(vm.runInContext("(function(){ var o={};"
+   +"[['freezer',2],['freezer',3],['freezer',4],['yuri',3]].forEach(function(p){"
+   +"  run.pilot=p[0]; run.stage=p[1];"
+   +"  o[p[0]+p[1]]=[0,1,2,3,4,5].filter(function(w){"
+   +"     return (w!==4 && w!==5) || weaponVariant(w)!==null; }); });"
+   +"return JSON.stringify(o);})()", ctxv));
+  ok(_bag.freezer3.indexOf(4)<0, 'the flame slot cannot DROP for Freezer on stage 3');
+  ok(_bag.freezer2.indexOf(4)>=0, 'it can on stage 2 (as ice breath)');
+  ok(_bag.freezer4.indexOf(4)>=0, 'and again from stage 4');
+  ok(_bag.yuri3.indexOf(4)>=0, 'and every other pilot keeps it on stage 3');
   ok(_ico.yuri3.flame==='micon_firewall_3', 'and every other pilot keeps the firewall icon');
 
   /* The thaw: ship narrates, then the portrait cuts in smiling. */
