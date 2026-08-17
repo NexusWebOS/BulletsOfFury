@@ -2785,7 +2785,19 @@ function drawCutscene(sc){
   const bgk=sc.bg || cutsceneFor(sc.pilot);
   if(!bgk || !XART.rdy(bgk)) return false;
   const SW=640, SH=480;
-  const s=Math.min(VW/SW, VH/SH), ox=(VW-SW*s)/2, oy=(VH-SH*s)/2;
+  /* ⚠ COVER, NOT CONTAIN (drop 0813w). Mike: "cinematics should be full sized screen not 640x480
+     window."
+
+     This was Math.min(VW/SW, VH/SH) - a CONTAIN fit. At VW 480 / VH 512 that is 0.75, so a 640x480
+     plate drew 480x360 and sat in the middle of the screen with 76px of black above and below it.
+     That letterbox IS the "window" he is describing.
+
+     Math.max fills the frame instead: 1.067, so the plate covers the full 512 height and overhangs
+     the sides, which the negative ox crops symmetrically. Aspect is preserved either way - the
+     difference is whether the leftover goes to bars or to crop, and he wants it filled. Every
+     coordinate in this function already goes through X/Y/S, so the portraits, the text box and the
+     panels all follow the same fit without touching another line. */
+  const s=Math.max(VW/SW, VH/SH), ox=(VW-SW*s)/2, oy=(VH-SH*s)/2;
   const X=(x)=>ox+x*s, Y=(y)=>oy+y*s, S=(v)=>v*s;
   ctx.save();
   ctx.imageSmoothingEnabled=false;                        // nearest-neighbour, per the contract
@@ -18294,7 +18306,16 @@ function drawPlayer(){
   ctx.restore();
 }
 /* per-pilot thruster mounts and plume scale — see assets/data/thruster_mounts.json (drop 0808e) */
-const THRUSTER_MOUNTS={"axel":{"mounts":[0.0],"scale":0.3,"note":"middle only, not the sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)","dy":-0.0223},"cole":{"mounts":[-0.1641,0.1406],"scale":0.16,"note":"twin thrusters, measured by brightness"},"decker":{"mounts":[-0.0035],"scale":0.26,"note":"already correct"},"falva":{"mounts":[0.0],"scale":0.28,"note":"middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)","dy":-0.0223},"freezer":{"mounts":[0.0],"scale":0.28,"note":"one middle, no sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)","dy":-0.0223},"juggernaut":{"mounts":[-0.1687,0.0,0.1627],"scale":0.16,"note":"three"},"lizzie":{"mounts":[0.0],"scale":0.3,"flip":true,"note":"centred and tucked just under the tail; her reel is a warbird flame, not a star burst, so it is flipped | dy +10px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)","dy":0.0446},"maverick":{"mounts":[0.0],"scale":0.26,"note":"ONE, centred \u2014 Mike: 'maverick gets one, not double'"},"yuri":{"mounts":[0.0],"scale":0.28,"note":"one middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)","dy":-0.0223}};
+/* ⚠ THIS INLINE TABLE IS WHAT THE GAME READS. assets/data/thruster_mounts.json is the source
+   doc and editing it alone changes NOTHING - measured: the JSON said 9/9 flipped while the
+   running game still reported 1/9. Keep both in step.
+
+   Drop 0813w. Mike: "my thursters look right in cinematics, they should be mirrored in game
+   for all pilots." Only lizzie had flip:true, and her note explains it as art-specific - her
+   reel is a warbird flame rather than a star burst. Flipping the other eight is his explicit
+   call, so it is applied to all nine; if a star-burst plume reads wrong mirrored, the fix is
+   to unset it per pilot here, not to change the draw. */
+const THRUSTER_MOUNTS={"axel": {"mounts": [0.0], "scale": 0.3, "note": "middle only, not the sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223, "flip": true}, "cole": {"mounts": [-0.1641, 0.1406], "scale": 0.16, "note": "twin thrusters, measured by brightness", "flip": true}, "decker": {"mounts": [-0.0035], "scale": 0.26, "note": "already correct", "flip": true}, "falva": {"mounts": [0.0], "scale": 0.28, "note": "middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223, "flip": true}, "freezer": {"mounts": [0.0], "scale": 0.28, "note": "one middle, no sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223, "flip": true}, "juggernaut": {"mounts": [-0.1687, 0.0, 0.1627], "scale": 0.16, "note": "three", "flip": true}, "lizzie": {"mounts": [0.0], "scale": 0.3, "flip": true, "note": "centred and tucked just under the tail; her reel is a warbird flame, not a star burst, so it is flipped | dy +10px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": 0.0446}, "maverick": {"mounts": [0.0], "scale": 0.26, "note": "ONE, centred \u2014 Mike: 'maverick gets one, not double'", "flip": true}, "yuri": {"mounts": [0.0], "scale": 0.28, "note": "one middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223, "flip": true}};
 function _drawPlayerCore(){
   if(player.dead) return;
   const x=player.x, y=player.y;
@@ -24340,6 +24361,14 @@ let campPause=null;   // {sel, mode:'root'|'save'|'load', t, msg, msgT}
    second campaign re-gates rather than inheriting the first one's latch. */
 let campHubSeen=false;
 function campPauseIsCampaignScreen(){
+  /* ⚠ AND NOT WHILE THE MAP IS STILL COMING UP (drop 0813w). Mike: "when the campaign map is
+     loading, do not lalow me to enter the save menu."
+
+     campHubSeen latches once the hub has been drawn, which was enough to stop the menu opening
+     BEFORE the map - but not during the map's own boot animation. sselBoot>0 is that phase (the
+     flags sequencing in), and drawStageSelect already refuses input while it runs; the save menu
+     was the one thing that did not. */
+  if(typeof sselBoot!=='undefined' && sselBoot>0) return false;
   return campHubSeen &&
          (state===GS.STAGESEL || state===GS.CAMPHUB || state===GS.PILOT) &&
          (typeof run!=='undefined' && run && run.mode==='campaign');

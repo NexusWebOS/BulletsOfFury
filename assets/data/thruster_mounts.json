@@ -6,7 +6,8 @@
     ],
     "scale": 0.3,
     "note": "middle only, not the sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)",
-    "dy": -0.0223
+    "dy": -0.0223,
+    "flip": true
   },
   "cole": {
     "mounts": [
@@ -14,14 +15,16 @@
       0.1406
     ],
     "scale": 0.16,
-    "note": "twin thrusters, measured by brightness"
+    "note": "twin thrusters, measured by brightness",
+    "flip": true
   },
   "decker": {
     "mounts": [
       -0.0035
     ],
     "scale": 0.26,
-    "note": "already correct"
+    "note": "already correct",
+    "flip": true
   },
   "falva": {
     "mounts": [
@@ -29,7 +32,8 @@
     ],
     "scale": 0.28,
     "note": "middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)",
-    "dy": -0.0223
+    "dy": -0.0223,
+    "flip": true
   },
   "freezer": {
     "mounts": [
@@ -37,7 +41,8 @@
     ],
     "scale": 0.28,
     "note": "one middle, no sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)",
-    "dy": -0.0223
+    "dy": -0.0223,
+    "flip": true
   },
   "juggernaut": {
     "mounts": [
@@ -46,7 +51,8 @@
       0.1627
     ],
     "scale": 0.16,
-    "note": "three"
+    "note": "three",
+    "flip": true
   },
   "lizzie": {
     "mounts": [
@@ -62,7 +68,8 @@
       0.0
     ],
     "scale": 0.26,
-    "note": "ONE, centred \u2014 Mike: 'maverick gets one, not double'"
+    "note": "ONE, centred \u2014 Mike: 'maverick gets one, not double'",
+    "flip": true
   },
   "yuri": {
     "mounts": [
@@ -70,7 +77,9 @@
     ],
     "scale": 0.28,
     "note": "one middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)",
-    "dy": -0.0223
+    "dy": -0.0223,
+    "flip": true
   },
-  "_DY_README": "dy is a FRACTION OF HULL HEIGHT, positive = downward. Mike gave these in pixels against the 224px hull in the 0808e render; storing the ratio means they stay correct when the ship draws at 44px in play or 128px in the launch cinematic. Do not convert these back to raw pixels."
+  "_DY_README": "dy is a FRACTION OF HULL HEIGHT, positive = downward. Mike gave these in pixels against the 224px hull in the 0808e render; storing the ratio means they stay correct when the ship draws at 44px in play or 128px in the launch cinematic. Do not convert these back to raw pixels.",
+  "_FLIP_NOTE": "Drop 0813w. Mike: \"my thursters look right in cinematics, they should be mirrored in game for all pilots.\" Only lizzie carried flip:true, so hers was the one that read correctly in play and the other eight drew the plume unmirrored. drawShipThruster applies scale(1,-1) only when flip is set, so this is the whole switch. Set for all nine rather than removing the flag, because the flag is what the draw reads."
 }
