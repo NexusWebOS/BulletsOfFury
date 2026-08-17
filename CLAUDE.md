@@ -146,6 +146,22 @@ loads on entry.
 
 ---
 
+## Stage biomes are AUTHORED — do not "fix" them
+
+Mike, 2026-08-17, asked directly about stages 1, 2 and 7: **"this is totally fine. I design the
+stages this way."**
+
+- **Stage 1 "RUMBLE IN THE JUNGLE"** opens on water and islands and becomes ORANGE DESERT for most
+  of its length. Intended.
+- **Stage 2 "IT'S HOT IN HERE"** is pale sand and tan rock nearly end to end, with only a couple of
+  small lava vents. Intended — the heat builds, it is not a lava field.
+- **Stage 7 "NOT ANOTHER SEWER LEVEL"** reads as green swamp with stone aqueducts. Intended.
+
+A subtitle is not a promise about the whole stage. Do not repoint a master because the biome drifts
+from the stage name — that is the design. **Stage 5 was different**: `storm800_rc2_master` was a
+literal storm plate on a space stage, which Mike DID want changed. The test is whether the art is
+wrong for the stage, not whether it matches the title.
+
 ## Current state (2026-08-15)
 
 **0813g — MAGMA VENT is stage 2's miniboss; the roster said 40px, the ART is 223px.**
