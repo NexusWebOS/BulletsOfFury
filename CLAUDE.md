@@ -162,7 +162,58 @@ from the stage name — that is the design. **Stage 5 was different**: `storm800
 literal storm plate on a space stage, which Mike DID want changed. The test is whether the art is
 wrong for the stage, not whether it matches the title.
 
-## Current state (2026-08-15)
+## Current state (2026-08-17)
+
+**0813x — the stage-2 boss floor, and a spawn offset measured from a moving edge.** Two of Mike's
+reports; both measured in pixels. Full writeup: `docs/PASSOVER_0813X.md`.
+
+⚠ **`arenaLiquid` DOES NOT PUT THE FLOOR BEHIND THE LAVA — IT STOPS THE FLOOR BEING DRAWN.** The bed
+is painted UNDER the master (0801dp), so returning before the master blit leaves the lava that was
+always underneath as the only thing on screen. Nothing occludes it; nothing draws it.
+⚠ **IT WAS AUTHORED IN 0806f FOR THE MAGMA COLOSSUS, WHO RISES OUT OF THE LAVA** and needs an open
+surface to break. 0810q/0810s scrapped him; stage 2 fields the INFERNO REAVER, a gunship that never
+touches the ground, and **the flag stayed on the STAGE**. Now gated on the boss carrying `_gen` or
+`_mech`. The cfg flag is untouched, so re-casting the Colossus anywhere restores the corridor.
+⚠ **SAME SHAPE AS THE 0810m SPLIT LOGGED BESIDE IT** — one flag standing in for a unit's requirement,
+left pointing at whatever unit arrives next. 0810m caught the miniboss half; the replaced-boss half
+survived because its symptom is only an absence, not a teleport.
+⚠ **THE FLOOR NOW TRAVELS BACK DOWN INTO FRAME** (Mike's call): open lava for `ARENA_FLOOR_HOLD`
+(1.1s) while the boss arrives, then a smoothstep down over `ARENA_FLOOR_IN` (1.6s), then the held
+level. Downward is the level's own direction, so it reads as the level catching up, not a wipe.
+⚠ **DELETING THE EARLY RETURN IS THE WRONG FIX** — it drops stage 2 into `_loopDraw`, which is
+0810m's teleport. **`_loopDraw` is still the boss backdrop on stages 1/3/4/6/8 — unmeasured, its
+own drop.**
+⚠ **`_masterSrcY` CARRIES `srcY - _floorDy`** so the blit and the props share ONE number; an offset
+only the blit knew about would re-open 0813c exactly. **`_arenaFloorT` is ABOVE `spawnEnemy`** or
+its unclosed `if` would make it per-spawn state and restart the slide on every wave.
+
+⚠ **THE SPAWN OFFSET WAS STATIC; THE EDGE IT WAS MEASURED FROM WAS NOT.** `offLeftX`/`offRightX`
+returned constants — in WORLD space — while `drawWorld` runs under `translate(-camX)` with camX
+following the player. Measured stage 1: **left runway 6px vs right 326px, a 54x swing from nothing
+but the player's x**, always collapsing on the side the player stands on. Now anchored to
+`camLeftX()`/`camRightX()` with `ENTRY_CLEAR` (64) as the guaranteed screen runway: **64px both
+sides at camX 0/160/320, at w=95 and w=29.**
+⚠ **EVERY STAGE IS 800 WIDE WITH camX 0..320 — MEASURED, ALL EIGHT.** The "wide stages are 1, 5 and
+6" line below predates the stacked art pack and is **STALE**. That staleness is why this was only
+ever hunted on stage 1.
+⚠ **THIS IS WHY EVERY POP-IN PROBE PASSED IT** — the camera window is a strict subset of the world,
+so outside-the-world is always outside-the-camera. **The fault was the SIZE of the runway, not its
+sign, and only a screen-space measurement sees it.**
+⚠ **A HALF-MIGRATED COORDINATE SYSTEM IS WORSE THAN EITHER WHOLE ONE** — helpers on the camera with
+the clamp's trigger still on the world edge measured **−19px**, i.e. hull on screen at spawn.
+⚠ **`inPlace` IS NOW EXEMPT EXPLICITLY**; guarded at 240 / 700 / inPlace-500, all moved=0.
+⚠ **IT ONLY HELPS UNITS THAT MOVE HORIZONTALLY.** A traced bare `s1jetDelta` sat at −6px for 24
+frames. **If pop-ins persist, that and the `_edgeM = w*0.66` pin (0811o/0811t, untouched) are next.**
+
+⚠ **THIS DROP WAS FIRST WRITTEN AGAINST AN 0813g ZIP WHILE TRUNK WAS AT 0813w** and was nearly
+copied over wholesale, which would have erased sixteen drops. **Check the remote's HEAD before
+writing a line, not before pushing** — `git ls-remote` plus one `git log -1` is the whole cost. The
+first pass also labelled itself 0813h/i/j, all three of which already existed on trunk as different
+work: **a drop letter is not a private namespace.**
+⚠ **NO `node` ON THAT MACHINE — headless Edge ran both the parse check and the real game.** See
+§9 of the passover for the exact invocation and its three traps. **The suite was NOT run**, and the
+0806f-era §180 assertions are expected to FAIL: they pin the exact line this drop replaces. Read
+them before fixing them.
 
 **0813g — MAGMA VENT is stage 2's miniboss; the roster said 40px, the ART is 223px.**
 ⚠ **`lavamaw` READS AS w:40,h:38 IN THE VOLC ROSTER AND ITS ART IS 223x220** (`nvl_maw_0..5`, six

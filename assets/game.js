@@ -910,8 +910,58 @@ const MASTER_W = 800;
 
    On any stage whose world IS the viewport width these return exactly what VW+n did, so this is
    a no-op there rather than a behaviour change. ============================================================ */
-function offRightX(pad){ return ((typeof worldWidth==='function')?worldWidth():VW) + (pad==null?28:pad); }
-function offLeftX(pad){ return -(pad==null?28:pad); }
+/* ============================================================
+   ⚠ THE WORLD EDGE IS NOT THE SCREEN EDGE, AND THE CAMERA MOVES (drop 0813x)
+
+   Mike: "some enemies look like they're teleporting into the map ... could the spawn offset be
+   changing because the player is going left and right causing the screen to scroll? Can we give
+   the offset a static value?"
+
+   He is right about the effect, and the mechanism is one step to the side of how he put it: the
+   offset itself was NOT dynamic — it is the constant below. What moved is the thing it is
+   measured FROM.
+
+   These returned WORLD coordinates, and `drawWorld` renders under `translate(-camX)` with camX
+   easing to follow the player across `0 .. WORLD_W-VW`. So a fixed world x buys a RUNWAY — the gap
+   between the spawn point and the VISIBLE edge — that changes with where the player is standing.
+
+   Measured on stage 1 with `probe_spawnoffset_0813x.html`, one unit per side, w=95:
+
+       player HARD LEFT    camX   0    left runway   6px     right runway 326px
+       player CENTRE       camX 160    left runway 166px     right runway 166px
+       player HARD RIGHT   camX 320    left runway 326px     right runway   6px
+
+   **6px against 326px — a 54x swing, from nothing but the player's x**, and it always collapses on
+   the side the player is standing on. At 6px the unit is not entering; it is already at the edge
+   with no approach to be seen making. That is "appearing out of thin air".
+
+   ⚠ EVERY STAGE IS AFFECTED. Measured all eight: worldW 800, camX 0..320, every one. The "wide
+   stages are 1, 5 and 6" line in CLAUDE.md predates the stacked art pack (which made every master
+   800) and is STALE — which is why this was only ever hunted on stage 1.
+
+   ⚠ AND THIS IS WHY EVERY POP-IN PROBE PASSED IT. The camera window is a strict subset of the
+   world, so a unit outside the WORLD is always outside the CAMERA — nothing ever spawned ON
+   screen, and probe_popin's "is the box inside the play area" was correctly NO at 6px and at 326px
+   alike. **The fault is the SIZE of the runway, not its sign, and only a screen-space measurement
+   can see it.**
+
+   So the offset is made static where being static means something: against the CAMERA.
+   `ENTRY_CLEAR` is the guaranteed screen runway and is the one number to tune. On a stage whose
+   world IS the viewport these collapse to the old values, so such a stage is a no-op.
+   ============================================================ */
+const ENTRY_CLEAR = 64;         // px of SCREEN an entering unit must cross before it can be seen
+/* the camera window in WORLD coordinates — what is actually on screen right now */
+function camLeftX(){
+  const w=(typeof worldWidth==='function')?worldWidth():VW;
+  if(w<=VW) return 0;
+  return (typeof camX==='number')?camX:0;
+}
+function camRightX(){
+  const w=(typeof worldWidth==='function')?worldWidth():VW;
+  return (w<=VW) ? w : camLeftX()+VW;
+}
+function offRightX(pad){ return camRightX() + (pad==null?28:pad); }
+function offLeftX(pad){  return camLeftX()  - (pad==null?28:pad); }
 function worldWidth(){
   const st=(typeof run!=='undefined'&&run)?run.stage:1;
   const hit=_wwCache[st];
@@ -3068,6 +3118,13 @@ function drawRoadSigns(){
 /* the top master row currently on screen. drawLevelMaster publishes it every frame and ground props
    read it, so a prop and the ground it stands on share ONE mapping. See the note at the assignment. */
 let _masterSrcY = 0;
+/* HOW LONG THE OPEN-LAVA ARENA HAS BEEN RUNNING, in seconds. Drives the terrain travelling back DOWN
+   into frame after the boss's arrival — see the arena branch in drawLevelMaster. Module scope because
+   it must survive between frames, and ABOVE spawnEnemy because anything below its unclosed `if` is
+   function-scoped and would be re-initialised on every spawn. */
+let _arenaFloorT = 0;
+const ARENA_FLOOR_HOLD = 1.1;   // seconds of open lava while the boss makes his entrance
+const ARENA_FLOOR_IN   = 1.6;   // seconds for the terrain to travel back down into place
 function drawLevelMaster(dt){
   if(typeof XART==='undefined') return false;
   const cfg=_levelCfg(); if(!cfg) return false;
@@ -3142,6 +3199,11 @@ function drawLevelMaster(dt){
      and Mike's "it teleports me to a animated lava tileset section from where i was". */
   const _realBossRun = (typeof bossActive!=='undefined' && bossActive && boss && !boss.dead);
   const _bossRun = _realBossRun || _sbRun;
+  /* The arena re-entry belongs to ONE boss run. Cleared the moment the run ends so a retry, a
+     continue or the next stage cannot inherit a part-finished slide — and so the beat plays again
+     if the player dies and fights him a second time. */
+  if(!_realBossRun) _arenaFloorT = 0;
+  let _floorDy = 0;        // screen offset of the master; non-zero only while it slides back in
   if(_bossRun){
     _bossHold = Math.min(1, (_bossHold||0) + dt*1.6);            // 0 -> 1 over ~0.6s
     mapScroll = Math.min(range, mapScroll + dt*40*(1-_bossHold));
@@ -3192,15 +3254,69 @@ function drawLevelMaster(dt){
      So a miniboss now falls through to the normal draw and the level simply stops where it stands,
      with the player still looking at the piece of the level they were fighting over. */
   if(_bossRun && _realBossRun){
-    /* arenaLiquid: the stage's own liquid IS the arena. It was already drawn above and it
-       already loops, so returning here simply stops the master covering it — the player flies
-       out past the mountain and over open lava while the boss makes his entrance. */
-    if(cfg.arenaLiquid && frames) return true;
-    // dedicated BOSS ARENA backdrop loops if the stage kit ships one; else loop the master
-    const arenaImg=(cfg.arena && XART.rdy(cfg.arena)) ? XART.get(cfg.arena) : img;
-    _loopDraw(arenaImg, mapScroll);
-    if(cfg.par && XART.rdy(cfg.par)) _loopDraw(XART.get(cfg.par), mapScroll*1.18);   // clouds ride slightly faster
-    return true;
+    /* ⚠ THE OPEN-LAVA ARENA BELONGS TO THE BOSS THAT RISES OUT OF IT, NOT TO THE STAGE (drop 0813x).
+       Mike: "during the final boss for the second level the floor in the background disappears
+       (probably falls behind the lava backdrop). This should not happen."
+
+       His guess is close but one layer off: the bed is drawn UNDERNEATH the master, further up this
+       function. Dropping the master does not put the floor behind the lava — it takes the floor out
+       of the frame entirely, and the lava that was under there the whole time is all that is left.
+       Nothing is occluding it; nothing is drawing it.
+
+       arenaLiquid: the stage's own liquid IS the arena. It was already drawn above and it already
+       loops, so returning here simply stops the master covering it — the player flies out past the
+       mountain and over open lava while the boss makes his entrance. That is 0806f, and Mike's
+       words for THAT drop say who it was built for: "we should be traveling past this mountain,
+       flying over just lava that repeats, and HE APPEARS AND DOES HIS INTRO." The MAGMA COLOSSUS
+       hauls itself up out of the lava, so it needs an open liquid surface to break, and the
+       mountain was being drawn over the surface it breaks.
+
+       0810q/0810s scrapped him. Stage 2 fields the INFERNO REAVER now — a gunship that flies in and
+       never touches the ground — and the flag stayed behind on the STAGE. Same shape as the 0810m
+       split logged above: one flag standing in for a particular unit's requirement, left pointing
+       at whatever unit arrives next.
+
+       So it is gated on the boss actually emerging from the liquid — a genesis haul (`_gen`) or a
+       mech assembly (`_mech`), which is what both lava/ice risers carry and what no ship boss does.
+       The cfg flag is untouched, so re-casting the Colossus on any stage brings the corridor back
+       with no further wiring. */
+    if(cfg.arenaLiquid){
+      if(frames && (boss._gen || boss._mech)) return true;
+      /* ⚠ AND IT MUST NOT FALL INTO _loopDraw INSTEAD. That maps the master by `mapScroll % H`
+         rather than by scrollFrac through rangeSrc — a different mapping of the same plate, so it
+         jumps the terrain to an unrelated part of the level. 0810m identified exactly that as the
+         miniboss "teleport"; swapping one visible fault for the other is not a fix.
+
+         THE FLOOR COMES BACK BY TRAVELLING DOWN INTO FRAME. Mike, on the fix above: "anyway to have
+         that floor render back in by scrolling downward once the fight starts?" Better than simply
+         never dropping it, and it costs nothing to keep both: the boss still arrives over open lava
+         — 0806f's beat, which he asked for in the first place — and then the terrain follows him in
+         instead of the arena staying an empty bed for the whole fight.
+
+         DOWNWARD IS THE LEVEL'S OWN DIRECTION, which is why this reads as the level catching up
+         rather than as a wipe. srcY DECREASES as a stage runs, so a master row travels DOWN the
+         screen (the 0813c note at the windowed draw below spells this out). New terrain therefore
+         always enters at the TOP edge. Starting the plate a full screen high and easing it to 0
+         re-enters it exactly the way the level would have delivered it.
+
+         mapScroll is held by _bossHold, so srcY is pinned at the point the fight triggered: the
+         floor that slides back down is the same ground the player was flying over. */
+      if(frames){
+        _arenaFloorT += dt;
+        const _p = Math.max(0, Math.min(1, (_arenaFloorT-ARENA_FLOOR_HOLD)/ARENA_FLOOR_IN));
+        if(_p<=0) return true;                          // the arrival: open lava, exactly as authored
+        _floorDy = -(1 - _p*_p*(3-2*_p))*VH;            // smoothstep in from the top edge
+      }
+      /* ⚠ NO `frames` MEANS NO BED TO ARRIVE OVER. The liquid streams in lazily like everything
+         else, and holding an empty screen waiting for it would be the 0801dp bug again — so with no
+         lava there is nothing to hold for, and the floor is simply drawn. _floorDy stays 0. */
+    } else {
+      // dedicated BOSS ARENA backdrop loops if the stage kit ships one; else loop the master
+      const arenaImg=(cfg.arena && XART.rdy(cfg.arena)) ? XART.get(cfg.arena) : img;
+      _loopDraw(arenaImg, mapScroll);
+      if(cfg.par && XART.rdy(cfg.par)) _loopDraw(XART.get(cfg.par), mapScroll*1.18);   // clouds ride slightly faster
+      return true;
+    }
   }
   /* A MASTER THAT LOOPS INSTEAD OF WINDOWING (drop 0813c)
      Mike: "your using a skybackground level 5 when its space the whole time."
@@ -3263,12 +3379,19 @@ function drawLevelMaster(dt){
      105px - the sign slides across the ground at twice the scroll rate. That is the bug, and the
      0810h note claiming they "already stay put" was reasoning about the offset instead of
      measuring it. Sharing srcY is what makes it impossible for the two to disagree again. */
-  _masterSrcY = srcY;
-  ctx.drawImage(img, 0, srcY, drawW, winH, 0, 0, drawW, VH);
+  /* ⚠ AND THE PROPS MUST FOLLOW THE OFFSET TOO (drop 0813x). _floorDy slides the whole plate down
+     into frame during the stage-2 boss arrival, so master row R lands at screen `R - srcY + _floorDy`.
+     Publishing plain srcY there would leave every sign and prop hanging at its un-slid position while
+     the ground moved out from under it — the exact detachment 0813c fixed, reintroduced by an offset
+     the props could not see. Folding it into the PUBLISHED value is what keeps the two inseparable:
+     there is one number, and both the blit and the props are expressed in terms of it. */
+  const _srcYPub = srcY - _floorDy;
+  _masterSrcY = _srcYPub;
+  ctx.drawImage(img, 0, srcY, drawW, winH, 0, _floorDy, drawW, VH);
   /* WIDE LIQUID FALLS sit ABOVE the terrain and below the player — the handoff's layer order:
      lower terrain, liquid flat, fall overlay, then player. Drawn after the master so the curtain
      covers the shelf edge rather than being hidden behind it. */
-  if(typeof drawLiquidFalls==='function') drawLiquidFalls(srcY);
+  if(typeof drawLiquidFalls==='function') drawLiquidFalls(_srcYPub);
   // PARALLAX cloud layer (stage-6 sky kit): transparent layer looping a touch faster for depth
   if(cfg.par && XART.rdy(cfg.par)) _loopDraw(XART.get(cfg.par), mapScroll*1.18);
   return true;
@@ -7312,10 +7435,34 @@ const SHIPS=[];
      branch that owns the finished object: `c.w` is final by this point, which it is not at the
      `offRightX()` call. ============================================================ */
   {
-    const _W=(typeof worldWidth==='function')?worldWidth():VW;
-    const _clr=(c.w||32)/2 + 6;
-    if(c.x>=_W && c.x<_W+_clr)      c.x=_W+_clr;
-    else if(c.x<=0 && c.x>-_clr)    c.x=-_clr;
+    /* ⚠ AND THE CLEARANCE MUST BE MEASURED OFF THE CAMERA, NOT THE WORLD (drop 0813x).
+       Mike: "can we give the offset a static value?"
+
+       This cleared the sprite of the WORLD edge by 6px. Every stage is an 800 world against a 480
+       camera, so when the player is hard over on one side the world edge and the screen edge
+       COINCIDE — and 6px of clearance is 6px of runway. Measured 6px on the player's side against
+       326px on the far side, purely from camX. See the long note at offLeftX.
+
+       ⚠ THE TRIGGER HAS TO MOVE TO THE VISIBLE EDGE TOO, AND A HALF-MIGRATION IS WORSE THAN EITHER
+       WHOLE ONE. Moving the helpers to the camera while leaving this trigger on the WORLD edge
+       measured -19px on the right at camX=0: `offRightX()` is camRight+28 = 508, which is INSIDE an
+       800 world, so a world-edge trigger never fired — and 28px of centre offset does not clear a
+       95px sprite, so 19px of hull was on screen at spawn. That is 0812k's "a side entry has to
+       clear the SPRITE, not just the world edge" arriving by a new route.
+
+       So: fire when the CENTRE is already beyond the visible edge — the unit declaring itself an
+       ENTRY rather than a placement — and only while it lacks ENTRY_CLEAR of runway. Both halves
+       matter. Without the first, a mid-screen placement gets shoved; without the second, a wave
+       that authored a long approach has it shortened.
+
+       ⚠ AND `inPlace` IS EXEMPT. A splitter's halves and a surfacing maw are authored to appear
+       where they are (0811o). The old world-edge trigger could never reach them because their x is
+       in-world; a visible-edge trigger can, so the declaration has to be honoured explicitly. */
+    if(!c.inPlace){
+      const _L=camLeftX(), _R=camRightX(), _half=(c.w||32)/2;
+      if(c.x>=_R && c.x-_half <  _R+ENTRY_CLEAR)      c.x = _R + _half + ENTRY_CLEAR;
+      else if(c.x<=_L && c.x+_half > _L-ENTRY_CLEAR)  c.x = _L - _half - ENTRY_CLEAR;
+    }
   }
   enemies.push(c);
   return c;
