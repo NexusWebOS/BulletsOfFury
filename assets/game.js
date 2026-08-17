@@ -8304,6 +8304,26 @@ const SHIPBOSS = {
        rimewall    -> stage 3, the slot thorn rime vacated
        olivewarden -> stage 4, the slot blacksteel vacated on its way to stage 6
      Authored at 256; run just under it so nothing is ever upscaled. */
+  /* ============================================================
+     CF_BOF_Bosses_Compatibility - LEVEL 5/6/7 BOSSES (drop 0813n)
+
+     Mike: "heres new BOSSES for level 5 - 6 and 7. use the blue doomsday carrier, not the
+     gray/tan one." Checked before importing: all four carrier frames measure 28-47% blue pixels
+     and 0.0% tan, so the pack ships only the blue variant - there is no wrong one to pick up.
+
+     These arrive with real alpha (no magenta key), so they are trimmed to their bounding box and
+     scaled down only - nothing is upscaled. The carrier is 2:1 and keeps that; the other two are
+     roughly square.
+
+     DAMAGE STATES come named in the pack rather than being guessed at from pixel counts, which is
+     how the 0813h import got its ordering wrong. f01/f02/f03(/f04) is the author's own sequence. */
+  xenoregent:    {key:'nsb_xenoregent_intact',      name:'XENO REGENT',    w:216,h:208, hpMul:1.42, pat:'void',  cd:1.28,
+                  pats:['void','chargebeam','mslfan'], dmg:['nsb_xenoregent_damaged','nsb_xenoregent_critical']},
+  doomsdaycarrier:{key:'nsb_doomsdaycarrier_intact',name:'DOOMSDAY CARRIER',w:300,h:146, hpMul:1.50, pat:'mslfan',cd:1.24,
+                  pats:['mslfan','ember','beamfan'], dmg:['nsb_doomsdaycarrier_damaged','nsb_doomsdaycarrier_critical'],
+                  bays:'nsb_doomsdaycarrier_open'},
+  sludgeemperor: {key:'nsb_sludgeemperor_intact',   name:'SLUDGE EMPEROR', w:220,h:216, hpMul:1.46, pat:'lance', cd:1.30,
+                  pats:['lance','ember','mslfan'], dmg:['nsb_sludgeemperor_damaged','nsb_sludgeemperor_critical']},
   magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:240, pat:'ember', cd:1.28, mini:true,
                   pats:['ember','mslfan'], dmg:['nsb_magmaward_damaged','nsb_magmaward_critical']},
   rimewall:      {key:'nsb_rimewall_intact',   name:'RIME WALL',        w:204,h:216, hp:232, pat:'lance', cd:1.22, mini:true,
@@ -9083,6 +9103,7 @@ function spawnSubBoss__inner(kind){
   switch(kind){
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
     case 'magmaward': case 'rimewall': case 'olivewarden':   // Mike's 0813h minis
+    case 'xenoregent': case 'doomsdaycarrier': case 'sludgeemperor':   // Vol.2 bosses
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
     case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
       b.mini=true; shipBossInit(b, kind); break;
@@ -25864,10 +25885,34 @@ function l6ObjsDraw(){
     ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
   }
 }
+/* how far the sky is dimmed, per weather band. 'clear' is 0 so the stage opens on the lit sky. */
+const L6_DIM={clear:0, windy:0.20, squall:0.38, storm:0.55};
 function l6WeatherDraw(){
   if(typeof XART==='undefined') return;
   const w=l6Wx;
   const band=w.band;
+  /* ⚠ THE DARKENING WAS NEVER ACTUALLY WRITTEN (drop 0813m). Mike in 0801gm: "when it goes to rain
+     and lightning, we simply fade/darken it in game", and again now: "you should start with the lit
+     up sky and then darken with the rain."
+
+     This function drew the rain sheets and the lightning flash and nothing else. It LOOKED right
+     only because skyfort800_rc2_master had a night sky painted into it - the art was doing the job
+     the code was supposed to do. Once 0813i put the stage back on the clean daytime plate that Mike
+     approved, rain fell out of a sunny sky.
+
+     A dim pass, scaled by band and eased so it fades rather than snaps, drawn UNDER the rain sheets
+     so the streaks stay bright against the darkened sky. Clear is 0, so the level still opens lit. */
+  w.dim = (w.dim==null) ? 0 : w.dim;
+  const wantDim = L6_DIM[band]||0;
+  /* eased per FRAME, not per second - l6WeatherDraw takes no dt and there is no global one to
+     borrow, so a fixed rate is honest. ~0.02 settles a band change over roughly a second. */
+  w.dim += (wantDim - w.dim) * 0.02;
+  if(w.dim>0.004){
+    ctx.save();
+    ctx.globalAlpha=w.dim; ctx.fillStyle='#0a1424';
+    ctx.fillRect(0,0,worldWidth(),VH);
+    ctx.restore();
+  }
   if(band!=='clear'){
     const key = band==='windy' ? 'nwx_rainL' : (band==='squall' ? 'nwx_rainD' : 'nwx_rainH');
     const alpha = band==='windy' ? 0.30 : (band==='squall' ? 0.5 : 0.68);
