@@ -26139,11 +26139,24 @@ function l5FieldDraw(near){
        damage the player, but they were drawn at full brightness and full size — so they competed
        with the things that actually matter and the player kept dodging scenery. Dimmed and
        darkened so they sit behind the fight instead of in it. */
-    ctx.save(); ctx.globalAlpha=o.a*0.55; ctx.translate(o.x,o.y); ctx.rotate(o.rot);
+    /* ⚠ THE DARKENING PASS WAS PAINTING A BOX (drop 0813s). Mike: "the objects in the bakcground
+       have weird square arounds them in the space and sky levels."
+
+       It was `globalCompositeOperation='source-atop'` then a fillRect over the whole w x h. The
+       intent was to darken only the sprite - but source-atop clips to the DESTINATION, and the
+       destination here is the finished canvas with an opaque starfield already on it. So the fill
+       landed everywhere inside that rect, not just on the satellite, and because it sits inside the
+       translate/rotate it came out as a ROTATED dark rectangle around every piece of scenery. That
+       rotation is what proved it was drawn with the sprite rather than baked into the art.
+
+       Same intent, no box: the darkening now rides the sprite's own alpha. Multiply only affects
+       pixels the sprite actually put down, so nothing bleeds past the silhouette. */
+    ctx.save(); ctx.translate(o.x,o.y); ctx.rotate(o.rot);
+    ctx.globalAlpha=o.a*0.55;
     ctx.drawImage(im,-w*0.78/2,-h*0.78/2,w*0.78,h*0.78);
-    ctx.globalCompositeOperation='source-atop';
-    ctx.globalAlpha=0.34; ctx.fillStyle='#0a0f1e';
-    ctx.fillRect(-w/2,-h/2,w,h);
+    ctx.globalCompositeOperation='multiply';
+    ctx.globalAlpha=o.a*0.34;
+    ctx.drawImage(im,-w*0.78/2,-h*0.78/2,w*0.78,h*0.78);
     ctx.restore();
   }
 }
