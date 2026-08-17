@@ -1091,7 +1091,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      glacier rail is NOT, deliberately. It was replaced rather than reported broken, and retiring
      the rig would empty section 105's sectional-damage coverage, which protects machinery other
      rigs still use. It is simply no longer named by any stage. */
-  ok(vm.runInContext("SUBBOSS[2].kind==='siegeember'", ctxv), 'level 2 miniboss is the EMBER SIEGECARRIER (ship hull, fire-red swap)');
+  /* ⚠ MIKE PULLED SIEGE EMBER (drop 0813g): "remove siege ember find a different mini boss for
+     stage 2 out of unused enemies and minibosses we have." He picked lavamaw off the unused sweep.
+     The assertion tracks HIS choice - it is not defending the old one. What it still guards is the
+     part that matters: stage 2 has a miniboss, and it resolves REAL art rather than the generic
+     130x120 fallback that any unknown kind produces. */
+  ok(vm.runInContext("SUBBOSS[2].kind==='lavamaw'", ctxv), 'level 2 miniboss is the MAGMA VENT');
+  ok(vm.runInContext("!!SHIPBOSS.lavamaw && SHIPBOSS.lavamaw.mini===true", ctxv),
+     'and it is a real miniboss entry, not an unknown kind falling back to the generic sub-boss');
+  ok(vm.runInContext("SHIPBOSS.lavamaw.key==='nvl_maw_0'", ctxv),
+     'drawing nvl_maw — the 223x220 six-frame caldera whose art 0801ip deliberately KEPT when the enemy spawn was deleted');
+  ok(vm.runInContext("SHIPBOSS.lavamaw.w>150 && SHIPBOSS.lavamaw.w<=223", ctxv),
+     'sized UNDER its authored 223px, so the vent is scaled down and never upscaled');
   ok(vm.runInContext("SUBBOSS[3].kind==='thornrime'", ctxv), 'level 3 miniboss is the RIME THORN (ship hull, black/ice-blue swap)');
 
   // ===== 25. stage-transition camera reset + robo drones on stage 2 =====
@@ -5599,7 +5610,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("arsenalMiniFor(4)==='dambreaker'",ctxv), 'stage 4 fields DAMBREAKER');
   /* the tier displaces nothing: the real minibosses are still where they were */
   ok(vm.runInContext("SUBBOSS[1].kind==='junglecruiser'", ctxv), 'and SUBBOSS[1] is the JUNGLE CRUISER');
-  ok(vm.runInContext("SUBBOSS[2].kind==='siegeember'", ctxv), 'SUBBOSS[2] is the EMBER SIEGECARRIER');
+  ok(vm.runInContext("SUBBOSS[2].kind==='lavamaw'", ctxv), 'SUBBOSS[2] is the MAGMA VENT (0813g)');
   ok(vm.runInContext("SUBBOSS[3].kind==='thornrime'", ctxv), 'SUBBOSS[3] is the RIME THORN');
   /* order down a level: mini -> sub-boss -> boss, each heavier than the last */
   var _amEarly=[];
@@ -6896,8 +6907,18 @@ console.log("=== 161. new art packs wired ===");
      Both dimensions must stay UNDER 1.0 (never larger than the flame) and above the old
      values (it was too small). The 50% alpha is the part that stopped it blotting the
      screen and must not drift. */
-  var _iceM=_g161.match(/const ICE_W = ([0-9.]+), ICE_H = ([0-9.]+), ICE_ALPHA = ([0-9.]+);/);
+  /* ⚠ THE NUMBERS MOVED, THE RULE DID NOT (drop 0813a). This used to parse the literals out of
+     flameDraw's own `const ICE_W = 0.85, ICE_H = 0.90, ICE_ALPHA = 0.86;`. They now live at module
+     scope as FLAME_ICE_W/H so that flameHIT can measure against the same column flameDRAW paints —
+     the taper between them is what made the flamethrower miss what it was visibly touching. The
+     bounds below are unchanged; only where the digits are read from moved. Parsing the declaration
+     site rather than the numbers is the pin-a-literal trap this file has hit before. */
+  var _iceD=_g161.match(/const FLAME_ICE_W = ([0-9.]+), FLAME_ICE_H = ([0-9.]+);/);
+  var _iceA=_g161.match(/ICE_ALPHA = ([0-9.]+);/);
+  var _iceM=(_iceD&&_iceA)?[null,_iceD[1],_iceD[2],_iceA[1]]:null;
   ok(!!_iceM, 'the ice size constants are declared exactly once and parseable');
+  ok(_g161.indexOf('const ICE_W = FLAME_ICE_W, ICE_H = FLAME_ICE_H')>0,
+     'and flameDraw takes its scale FROM them, so the drawn plume and the hitbox cannot drift apart');
   if(_iceM){
     var _iw=parseFloat(_iceM[1]), _ih=parseFloat(_iceM[2]), _ia=parseFloat(_iceM[3]);
     ok(_iw<1.0 && _ih<1.0,
@@ -10342,6 +10363,86 @@ console.log("=== 228. roll cooldown + HUD corners ===");
      'and in NEITHER other store — asking them is always false');
 }
 
+
+// ===== 229. THE PLUME THAT KILLS WHAT IT TOUCHES, AND THE STAGE-2 RED (drop 0813a) =====
+console.log("=== 229. flame/ice hitbox + reaver colour + fire orb ===");
+{
+  var _g229=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+
+  /* Mike: "Flamethrower and Ice breath - improve hitboxes to be from where they start t owhere
+     they end."
+
+     flameDraw lays the plate down as a UNIFORM column flameHalfW(lv,1) wide; flameHit evaluated
+     flameHalfW at the TRAVEL FRACTION, which tapers to flameBase at the nozzle. At lv5 that is 96px
+     drawn against 35px tested, so an enemy inside the visible fire beside the ship took nothing.
+     Asserted as a PROPERTY - the boundary is the same at both ends - rather than by pinning the
+     expression, because the expression is what changed. */
+  var _f229=JSON.parse(vm.runInContext("(function(){"
+    +"var f={kind:'flame',lv:5,x:240,top:90,bot:360};"
+    +"function bound(yy){ if(!flameHit(f,f.x,yy,0,0)) return -1;"
+    +"  var lo=0,hi=400; for(var i=0;i<40;i++){ var m=(lo+hi)/2; if(flameHit(f,f.x+m,yy,0,0)) lo=m; else hi=m; } return lo; }"
+    +"var top=flameSpanTop(f);"
+    +"return JSON.stringify({drawn:flameHalfWDrawn(5), noz:bound(f.bot-6), mid:bound((top+f.bot)/2),"
+    +"  tip:bound(top+8), top:top, bot:f.bot, icy:flameIsIce()});"
+    +"})()", ctxv));
+  ok(_f229.noz>0, 'the flamethrower hits at the NOZZLE at all');
+  ok(Math.abs(_f229.noz-_f229.drawn)<2,
+     'and its hitbox there is the width that is DRAWN ('+_f229.noz.toFixed(1)+' vs '+_f229.drawn.toFixed(1)+')');
+  ok(Math.abs(_f229.noz-_f229.tip)<2,
+     'the column is uniform end to end — no taper the art does not have');
+  ok(Math.abs(_f229.mid-_f229.drawn)<2, 'and the middle matches too');
+  /* the plume is anchored at the NOZZLE. ICE_H shortens the reel, and the draw used to hold f.top
+     and pull the BOTTOM up — which shortens it at the ship, so the frost floated 27px clear of its
+     own emitter and nothing could be hit point-blank. */
+  ok(_f229.top<=_f229.bot, 'the span runs tip -> nozzle');
+  ok(_g229.indexOf('ctx.translate(f.x, f.bot-dh/2);')>0,
+     'the plate is anchored at the NOZZLE, so a shortened ice reel pulls its TIP back, never its start');
+
+  /* Mike: "Stop using that annoying beep noise wehn homing missiles are shot off at us too." */
+  var _lockFn=_g229.slice(_g229.indexOf('function enemyLockOn'),
+                          _g229.indexOf('function updatePlayerLocks'));
+  ok(_lockFn.length>0, 'enemyLockOn is bounded for reading');
+  /* the CALL, not the word — the comment above the removal names lockAlert to explain why it went,
+     and a bare substring search reads that comment as the bug it is documenting. */
+  ok(_lockFn.indexOf('Audio.SFX.lockAlert()')<0 && _lockFn.indexOf('SFX.lockAlert(')<0,
+     'a missile lock no longer beeps — the shrinking reticle is the telegraph');
+  ok(_g229.indexOf('lockAlert')>0,
+     'but lockAlert still exists for the wall-of-fire announce, which Mike did not ask to change');
+
+  /* Mike: "Do not use red pellets or effects for his attacks ... It will look bad with the lava." */
+  var _fam=_g229.match(/const PELLET_FAM=\{([^}]*)\}/);
+  ok(!!_fam, 'PELLET_FAM is parseable');
+  if(_fam){
+    var _m2=_fam[1].match(/2:\s*(\d)/);
+    ok(!!_m2 && _m2[1]!=='0',
+       'stage 2 is no longer pellet family 0 (#ff6b5a, red) on the lava stage');
+    ok(!!_m2 && _m2[1]==='2', 'it is family 2 — the yellow already proven on stage 1');
+  }
+  ok(_g229.indexOf("2:'red'")<0, 'and no stage maps plasma to red any more');
+
+  /* Mike: "a big ass fire orb comes flying andh homing at us, if we dodge out of its path as it
+     gets near us, it goes off screen and does not continue to home on the player." */
+  ok(_g229.indexOf('function reaverOrbTick')>0, 'the charged fire orb exists');
+  ok(_g229.indexOf('fireorb:{type:')>0,
+     'and fireorb is in PROJ — a kind with no entry is a wiring bug, not something to paper over');
+  ok(_g229.indexOf("pal:'orange'")>0, 'the orb is orange, not red');
+  ok(_g229.indexOf('b._committed=true')>0,
+     'it COMMITS — the heading locks once it is close, so breaking late makes it miss');
+  var _orbFn=_g229.slice(_g229.indexOf("if(b.kind==='fireorb')"));
+  _orbFn=_orbFn.slice(0, _orbFn.indexOf("if(b.kind==='groundup')"));
+  ok(_orbFn.indexOf('if(!b._committed){')>0,
+     'and the turn is gated on that latch, so it can never re-acquire');
+
+  /* Mike: "do not allow us to pull up the pause/save game menu until we reach this point when
+     selecting campaign." */
+  ok(_g229.indexOf('let campHubSeen=false;')>0, 'the save menu is latched on the map being reached');
+  ok(_g229.indexOf('return campHubSeen &&')>0, 'and campPauseIsCampaignScreen requires it');
+  ok(_g229.indexOf('case GS.CAMPHUB: { campHubSeen=true;')>0, 'the map sets it');
+  ok(_g229.indexOf('case GS.TITLE:   campHubSeen=false;')>0,
+     'and the title clears it, so a second campaign re-gates rather than inheriting the first');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
+
 console.log('==== FALVA/LIZZIE BUILD OK, 0 ERRORS ====');

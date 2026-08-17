@@ -8,3 +8,6 @@ __pycache__/
 # capture output — regenerate with shoot.py rather than committing pixels
 _shots/
 /tmp/
+
+# art backups written by the one-off conversion scripts
+*.bak

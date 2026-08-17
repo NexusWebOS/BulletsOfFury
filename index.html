@@ -32,8 +32,12 @@
   /* The canvas is sized in JS by fitCanvas() (aspect-locked) and CENTRED here. It used to be
      forced to width:100%;height:100%, which stretched it to whatever shape #screen-area was and
      made fitCanvas's own sizing pointless — that is why fullscreen was off-centre and distorted. */
+  /* image-rendering was `auto`, i.e. the browser bilinear-scaled the backing canvas AGAIN on the
+     way to the display — a second blur on top of the one imageSmoothingEnabled was adding. The
+     equip-box canvas below already had `pixelated`; the game canvas is the one the player looks
+     at, so it is the one that needed it. */
   #screen-area canvas{display:block;position:absolute;left:50%;top:50%;
-    transform:translate(-50%,-50%);image-rendering:auto;background:#000;}
+    transform:translate(-50%,-50%);image-rendering:pixelated;background:#000;}
   #hint{position:fixed;left:8px;bottom:6px;font-size:11px;color:#3a4350;opacity:.55;pointer-events:none;}
 
   /* ---- FULLSCREEN button ---- */

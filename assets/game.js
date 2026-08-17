@@ -2381,8 +2381,11 @@ function _levelCfg(){
        nebula and descends to a planet under aurora. Flipped on the way in like every plate in
        this pack (see the note on case 4), magenta punched to alpha. The BOSS ARENA is untouched:
        norb5_arena is a separate loop plate and has nothing to do with the scroll master. */
-    case 5: return {master:'storm800_rc2_master', liquid:null,  fill:'#05060a', tile:1.0, wide:true,
-                    arena:'norb5_arena'};
+    /* STAGE 5 IS SPACE THE WHOLE WAY (drop 0813c). Was storm800_rc2_master — a STORM plate, not a
+       space one; see the note at drawLevelMaster's loopMaster branch. norb5_arena is stage 5's own
+       orbital art and tiles cleanly, so it now carries the level as well as the boss arena. */
+    case 5: return {master:'norb5_arena', liquid:null,  fill:'#05060a', tile:1.0, wide:true,
+                    loopMaster:true, arena:'norb5_arena'};
     // 6 HEAVY TURBULENCE — dedicated sky kit (env pack v1.0): 800x4000 base sky + separate
     // parallax cloud layer + 800x1000 boss arena. WIDE level (800px world, camera scrolls).
     /* STAGE 6 IS ONE SKY (drop 0801gm). Mike: "delete all of stage 6's backgrounds.
@@ -2921,7 +2924,7 @@ function drawStageProps(){
     if(XART._touch) XART._touch(pr.k);
     if(!XART.rdy(pr.k)) continue;
     const im=XART.get(pr.k);
-    const sy=pr.y-(mapScroll||0);
+    const sy=pr.y-(_masterSrcY||0);   // same master-row mapping as the signs - see _masterSrcY
     if(sy>VH+40 || sy+im.naturalHeight< -40) continue;
     ctx.drawImage(im, pr.x|0, Math.round(sy), im.naturalWidth, im.naturalHeight);
   }
@@ -2960,12 +2963,18 @@ function drawRoadSigns(){
     if(XART._touch) XART._touch(k);
     if(!XART.rdy(k)) continue;
     const im=XART.get(k);
-    const sy=sn.y-(mapScroll||0);
+    /* sn.y is a MASTER ROW - the signs were authored against the 800-wide plate - so it maps the
+       way every other master row does: screen = row - windowTop. It was `sn.y - mapScroll`, which
+       runs the opposite way and slid the signs across the ground. See _masterSrcY. */
+    const sy=sn.y-(_masterSrcY||0);
     if(sy<-120 || sy>VH+120) continue;          // offscreen, skip
     const h=Math.max(18, im.naturalHeight*0.5), w=h*(im.naturalWidth/im.naturalHeight);
     ctx.drawImage(im, Math.round(sn.x-w/2), Math.round(sy-h), Math.round(w), Math.round(h));
   }
 }
+/* the top master row currently on screen. drawLevelMaster publishes it every frame and ground props
+   read it, so a prop and the ground it stands on share ONE mapping. See the note at the assignment. */
+let _masterSrcY = 0;
 function drawLevelMaster(dt){
   if(typeof XART==='undefined') return false;
   const cfg=_levelCfg(); if(!cfg) return false;
@@ -3063,6 +3072,7 @@ function drawLevelMaster(dt){
     const H=image.naturalHeight;
     let sY=H - ((scroll % H) + H) % H - winH;
     sY=((sY % H)+H)%H;
+    _masterSrcY=sY;                 // ground props follow the SAME window - see _masterSrcY
     const h1=Math.min(winH, H-sY);
     ctx.drawImage(image, 0, sY, drawW, h1, 0, 0, drawW, h1);
     if(h1<winH) ctx.drawImage(image, 0, 0, drawW, winH-h1, 0, h1, drawW, winH-h1);
@@ -3099,8 +3109,38 @@ function drawLevelMaster(dt){
     if(cfg.par && XART.rdy(cfg.par)) _loopDraw(XART.get(cfg.par), mapScroll*1.18);   // clouds ride slightly faster
     return true;
   }
+  /* A MASTER THAT LOOPS INSTEAD OF WINDOWING (drop 0813c)
+     Mike: "your using a skybackground level 5 when its space the whole time."
+
+     He was right and the NAME was the trap. Stage 5's master is `storm800_rc2_master`, which
+     sounds like weather and is weather: rendered end to end it is storm cloud, rain and lightning
+     for essentially all 5120px, with one brief orbital band around 45% that is the only reason it
+     ever looked like space. The stage is meant to be orbital throughout.
+
+     Its own authored orbital plate is `norb5_arena` (norb5 = orbital, stage 5) — measured dark
+     (edge luminance 11/7) and it TILES: first row against last row differs by 12.5/765, so looping
+     it shows no join. It is only 1000px though, and the windowing path below maps the whole level
+     across `rangeSrc = H - winH`, which for a short plate would crawl through 488px and read as
+     nearly static. Looping is the correct mapping for a starfield, so `loopMaster` picks it. */
+  if(cfg.loopMaster){
+    _loopDraw(img, mapScroll);
+    if(typeof drawLiquidFalls==='function') drawLiquidFalls(0);
+    if(cfg.par && XART.rdy(cfg.par)) _loopDraw(XART.get(cfg.par), mapScroll*1.18);
+    return true;
+  }
   const scrollFrac=range>0?(mapScroll/range):0;    // 0..1 progress through the level
   const srcY=Math.max(0, rangeSrc-scrollFrac*rangeSrc);
+  /* THE WINDOW TOP IS PUBLISHED so ground props can use the SAME mapping (drop 0813c).
+     Mike: "the signs are scrolling."
+
+     They were, and in the wrong direction. The terrain shows master rows [srcY, srcY+VH], and srcY
+     DECREASES as the level runs, so a feature at master row R sits at screen `R - srcY` and travels
+     DOWN. drawRoadSigns used `sn.y - mapScroll`, which travels UP. Measured on stage 4 between
+     mapScroll 900 and 1020: a crater moved DOWN 105px while the RESTRICTED AREA sign moved UP
+     105px - the sign slides across the ground at twice the scroll rate. That is the bug, and the
+     0810h note claiming they "already stay put" was reasoning about the offset instead of
+     measuring it. Sharing srcY is what makes it impossible for the two to disagree again. */
+  _masterSrcY = srcY;
   ctx.drawImage(img, 0, srcY, drawW, winH, 0, 0, drawW, VH);
   /* WIDE LIQUID FALLS sit ABOVE the terrain and below the player — the handoff's layer order:
      lower terrain, liquid flat, fall overlay, then player. Drawn after the master so the curtain
@@ -4173,7 +4213,21 @@ function drawHUDFramed(){
 
 const SS = 2;                       /* supersample backing for crisp detailed art */
 cv.width = VW*SS; cv.height = VH*SS;
-ctx.imageSmoothingEnabled = true; ctx.imageSmoothingQuality = 'high';
+/* ⚠ NEAREST-NEIGHBOUR IS THE DEFAULT, NOT AN OPT-IN (drop 0813b)
+   Mike: "Its likke you've upscaled my levels in-game and they dont look as clear ... the stages
+   were already graphic at 800 wide my man, hwat are you doing?"
+
+   He is right, and this line was the cause. The masters are 800px wide and were drawn 1:1 into
+   virtual space - but SS=2 means the backing canvas is VW*2, so every one of those 800 columns was
+   resampled to 1600 under `imageSmoothingQuality='high'`. A high-quality bilinear DOUBLE of pixel
+   art invents a blended pixel between every authored pair, which is precisely "not as clear".
+
+   This file already states the pack contract as nearest-neighbour and sets it at a dozen individual
+   draws - drawCutscene, the mech pieces, the arcade plates, the boss rigs, the ship blit. Every one
+   of those is a site that had to opt OUT of this default. The backdrops never did, so the levels
+   wore the blur. Making it the default is what the contract always said; the local `=false` lines
+   are now redundant rather than load-bearing, and the save/restore pairs restore to false. */
+ctx.imageSmoothingEnabled = false;
 function fitCanvas(){
   /* ASPECT-LOCKED + CENTRED.
      This used to stretch the canvas to EXACTLY #screen-area's box (width=clientWidth,
@@ -5002,7 +5056,7 @@ const SUBBOSS={
      the beach tanks and the grass jets, and that sequencing is about the STAGE, not the unit. */
   1:{at:0.62, kind:'junglecruiser', afterScroll:2100},
                                   // Flipped so its turrets face you; crawls up/down only; quad MGs.
-  2:{at:0.45, kind:'siegeember', afterScroll:961},      // EMBER SIEGECARRIER (0810s) — replaces the obsidian drill Mike retired
+  2:{at:0.45, kind:'lavamaw',    afterScroll:961},      // MAGMA VENT (0813g) — Mike pulled siege ember; picked out of the unused pool
   6:{at:0.45, kind:'olivecarrier', afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
   7:{at:0.45, kind:'ratking', afterScroll:1161},    // RAT KING EXCAVATOR — level 7 sub-boss
   8:{at:0.45, kind:'herald', afterScroll:1201},     // HERALD OF DEATH (venom-reaver, retitled per the phase manifest)
@@ -5262,6 +5316,18 @@ const ENTRY_DUR = 1.05, ENTRY_SWEEP = 96;
    ============================================================ */
 function enemyEntrySweep(e, dt){
   if(!e || e._dr || e._boss || e._amini || e.dead) return;
+  /* ⚠ AND NOTHING THAT DRIVES ON TRACKS (drop 0813d). Mike: "tanks do not go sideways."
+
+     This is a lateral arc laid on top of whatever the pattern does, and `tankpatrol` deliberately
+     moves only in y. Traced with a setter trap on a roadtank's x: 62 lateral writes after entry,
+     EVERY ONE of them from this call at updatePlay:14580 - not from the pattern case at all. That
+     is the same shape as the standing jet-displacement note ("something outside jetTick displaces
+     them; a rescale inside jetTick does not fix it - the other mover runs after"), and it is why
+     removing the lane-drift block inside tankpatrol changed the number without stopping the slide.
+
+     A sweep is an aircraft's entrance. A tracked hull turns and drives; it does not slide sideways
+     onto its mark. Gated on _vkind, which every ground vehicle sets at spawn. */
+  if(e._vkind==='tank') return;
   /* ⚠ AND NOTHING THAT ALREADY HAS AN AUTHORED ENTRANCE (drop 0810f). A jet carrying a `route`
      — straight / curveL / curveR / cornerLR / cornerRL — is flying a path someone drew. Laying a
      decaying lateral arc on top of that is a second entrance fighting the first.
@@ -8112,7 +8178,7 @@ const SHIPBOSS = {
      reason, not shuffled " ember teaches "find the gap", then lance closes lanes so the gap-hunting
      habit gets you hit, then ember again, faster. */
   infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'ember', cd:1.45,
-                  pats:['ember','chargebeam','mslfan','beamfan']},
+                  pats:['ember','fireorb','chargebeam','mslfan','fireorb','beamfan']},
   cryospear:     {key:'nsb_cryo_spear',     name:'CRYO SPEAR',          w:195,h:195, hpMul:1.25, pat:'lance', cd:1.35,
                   pats:['lance','beamfan','chargebeam','mslhome']},
   voidbat:       {key:'nsb_void_bat',       name:'VOID BAT',            w:210,h:210, hpMul:1.45, pat:'void',  cd:1.30,
@@ -8125,6 +8191,19 @@ const SHIPBOSS = {
   /* the minis get TWO phases, not three " they die faster and a third would never be seen */
   siegeember:    {key:'nsb_siege_ember',    name:'EMBER SIEGECARRIER',  w:165,h:165, hp:235, pat:'siege', cd:1.25, mini:true,
                   pats:['siege','mslfan']},
+  /* MAGMA VENT takes stage 2's miniboss slot (drop 0813g). Mike pulled siege ember and picked
+     lavamaw out of the unused pool.
+
+     ⚠ IT WAS NEVER TOO SMALL - IT WAS BEING SHRUNK. The VOLC roster lists lavamaw as w:40,h:38,
+     which reads like a pebble. The ART is `nvl_maw_0..5` at 223x220 - a six-frame caldera that
+     fills with magma and then erupts and shatters. The stage was drawing a miniboss-sized plate at
+     40px. Here it runs near its authored size, so nothing is upscaled; if anything it is still
+     scaled DOWN slightly to sit under the stage-2 boss.
+
+     'ember' is the wall-with-a-walking-gap pattern, which suits a vent that erupts upward far
+     better than a ship's missile fan. */
+  lavamaw:       {key:'nvl_maw_0',          name:'MAGMA VENT',          w:196,h:194, hp:230, pat:'ember', cd:1.30, mini:true,
+                  pats:['ember','mslfan']},
   thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true,
                   pats:['rime','chargebeam']},
   /* STAGE 4 HAD NO MINIBOSS AT ALL (drop 0811b). SUBBOSS[4] named 'subreactor', which is in
@@ -8310,6 +8389,46 @@ function shipBossPickMove(b){
                       : [SBM_XSTRIKE, SBM_RAM, SBM_CHARGE, SBM_RAM];
   return pool[(b._sbmN=(b._sbmN|0)+1) % pool.length];
 }
+/* ============================================================
+   THE CHARGED FIRE ORB (drop 0813a)
+
+   Mike: "You need to wire up fire attacks from this boss, likes hes charging up a fire attack as an
+   aura surrounds him, and then he releases it like maverick would and a big ass fire orb comes
+   flying andh homing at us, if we dodge out of its path as it gets near us, it goes off screen and
+   does not continue to home on the player."
+
+   The last clause is the whole mechanic. A homing shot that never stops homing is not dodgeable,
+   it is a timer - you can only outrun it. This one homes while it is FAR and COMMITS once it is
+   close: inside FIREORB_COMMIT it keeps whatever heading it had and flies that line out of the
+   world. So the counterplay is to bait it, hold, and break late, which is the Mega Man read Mike
+   keeps asking for rather than a shmup one.
+
+   THE AURA IS THE BOSS, NOT A NEW SPRITE. b.flash already routes through xartTint on the boss's own
+   authored plate, so driving it during the wind-up makes him glow without inventing art - the
+   standing rule is that nothing procedural gets drawn.
+
+   ⚠ NO RED. Stage 2 is the lava stage; the orb is the authored comet reel at pal 'orange' with
+   szMul doing the "big ass" part. See PELLET_FAM for why red is off the table here. */
+const FIREORB_COMMIT = 96;     // px from the player at which the heading locks
+const FIREORB_TURN   = 0.055;  // rad/frame while it is still tracking
+const FIREORB_CHARGE = 1.15;   // wind-up, long enough to read as a tell
+function reaverOrbStart(b){ if(!b._orb) b._orb={t:0, fired:false}; }
+function reaverOrbTick(b, dt){
+  if(!b._orb) return;
+  b._orb.t+=dt;
+  if(!b._orb.fired){
+    b.flash=Math.max(b.flash||0, 0.02+0.02*Math.sin(b._orb.t*18));   // the aura, on his own plate
+    if(b._orb.t>=FIREORB_CHARGE){
+      b._orb.fired=true;
+      const y=(b._drawY!=null?b._drawY:b.y)+(b.h||120)*0.30;
+      const a=Math.atan2(player.y-y, player.x-b.x);
+      const sp=2.6*((typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1);
+      eBullets.push({x:b.x, y:y, vx:Math.cos(a)*sp, vy:Math.sin(a)*sp, ang:a, spd:2.6,
+                     w:42, h:42, dmg:1, t:0, kind:'fireorb', _fx:'comet', pal:'orange', szMul:2.6});
+      if(Audio.SFX && Audio.SFX.crackle) Audio.SFX.crackle();
+    }
+  } else if(b._orb.t>=FIREORB_CHARGE+0.30){ b._orb=null; }
+}
 function shipBossManoeuvre(b, dt){
   if(!b || !b._ship || b.dead || b.enter) return false;
   const W=(typeof worldWidth==='function')?worldWidth():VW;
@@ -8320,6 +8439,26 @@ function shipBossManoeuvre(b, dt){
      decrements _brkCd, so gating the call on `b._brk` alone would leave the cooldown frozen the
      moment the sweep ended - and no rake would ever arm again for the rest of the fight. */
   if(b._brk || b._brkCd>0) beamRakeTick(b, dt);
+  if(b._orb) reaverOrbTick(b, dt);            // the wind-up runs on the frame clock, not the volley beat
+  /* WOBBLE UNDER THE RAKE. Mike: "He needs to have those laser attacks continue to rotate as he
+     wobbles side to side and shoots out rockets we shoot down." The spokes already rotate; this is
+     the hull drifting across them so the corridor keeps moving, and emissile is already shootable
+     down in the eBullet loop, so the rockets it fires are the ones he means. */
+  if(b._brk){
+    b._wob=(b._wob||0)+dt;
+    b.x += Math.cos(b._wob*1.7)*26*dt;
+    b.x = clamp(b.x, (b.w||120)*0.35, VW-(b.w||120)*0.35);
+    b._rkt=(b._rkt||0)-dt;
+    if(b._rkt<=0){
+      b._rkt=1.25;
+      const ry=(b._drawY!=null?b._drawY:b.y)+(b.h||120)*0.28;
+      for(const sx of [-0.30, 0.30]){
+        const rx=b.x+(b.w||120)*sx;
+        eBullets.push({x:rx, y:ry, vx:0, vy:2.3, ang:Math.PI/2, spd:2.3, turn:0.030,
+                       w:16, h:26, dmg:1, t:0, kind:'emissile'});
+      }
+    }
+  }
   if(b._sbm==null){ b._sbm=SBM_HOLD; b._sbmT=rnd(1.2,2.2); b._sbmLeg=0; }
   b._sbmT-=dt;
   b._sbmAge=(b._sbmAge||0)+dt;
@@ -8486,6 +8625,9 @@ function shipBossAttack(b){
       const a3=aimPlayer(b.x,y);
       for(const o of [-0.08,0.08]) _shipShot(b.x, y, Math.cos(a3+o)*2.4, Math.sin(a3+o)*2.4, 10);
     }
+  } else if(pat==='fireorb'){
+    /* the wind-up is state, not a volley - reaverOrbTick advances it every frame and launches */
+    reaverOrbStart(b);
   } else if(pat==='beamfan'){
     /* SPREAD LASER — three dense columns from the hull, angled. Dense because a "laser" made of
        sparse rounds reads as a machine gun; tight spacing along the same vector is what makes the
@@ -8834,6 +8976,7 @@ function spawnSubBoss__inner(kind){
            flash:0, dead:false, dying:0, fireCd:1.4, drift:0, atkPhase:0, phaseT:1.2, sub:true, name:'SUB-BOSS'};
   switch(kind){
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
+    case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
     case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
       b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {
@@ -10226,6 +10369,41 @@ function flameFlare(lv){ return 2.0 + clamp(lv,1,5)*0.15; }      // tip width as
 /* half-width at travel fraction t (0 = nozzle, 1 = tip) */
 function flameHalfW(lv,t){ const f=clamp(t,0,1); return flameBase(lv)*(1+(flameFlare(lv)-1)*f); }
 /* ============================================================
+   THE PLUME'S SHAPE LIVES HERE, BECAUSE THE HIT TEST HAS TO USE IT TOO (drop 0813a)
+
+   Mike: "Flamethrower and Ice breath - improve hitboxes to be from where they start to where
+   they end."
+
+   ⚠ THE DRAW AND THE HIT TEST DISAGREED, AND NOT SLIGHTLY. flameDraw lays the plate down as a
+   UNIFORM column `flameHalfW(lv,1)` wide - the flare width - for the plume's whole length.
+   flameHit instead evaluated flameHalfW at the travel fraction, which TAPERS to flameBase at the
+   nozzle. At level 5 that is 96px half-width drawn against 35px tested: an enemy sitting inside
+   the visible fire, right beside the ship, took nothing. The taper was invisible art-side, so it
+   read as "the flamethrower does not hit what it is touching" rather than as a width bug.
+
+   Both numbers now come from these two helpers, so the column that is drawn is the column that
+   kills. ICE_W/ICE_H stay the ice reel's own scale - the ice plate is drawn slightly shorter and
+   narrower than fire, so its hitbox ends where the frost visibly ends rather than 10% past it. */
+const FLAME_ICE_W = 0.85, FLAME_ICE_H = 0.90;
+function flameIsIce(){
+  return ((typeof _pilotKey==='function') && _pilotKey()==='freezer')
+      || !!(typeof run!=='undefined' && run && run._dbgIce);
+}
+/* the drawn column, in world units: half-width, and the far TIP.
+
+   ⚠ THE PLUME IS ANCHORED AT THE NOZZLE. f.bot is the emitter, at the ship; f.top is the far tip.
+   ICE_H shortens the ice reel, and the draw used to apply it by holding f.top and pulling the
+   BOTTOM up - which shortens it at the ship, not at the tip. Measured at lv5: fire spanned 87..355
+   with the ship at 355, ice spanned 87..328, so the frost floated 27px clear of its own nozzle and
+   nothing could be hit point-blank. Anchoring at f.bot and letting the TIP pull back is what a
+   breath weapon does, and it makes fire's geometry bit-identical (dh===reach, so f.bot-dh/2 is the
+   same centre it always had). */
+function flameHalfWDrawn(lv){ return flameHalfW(lv,1) * (flameIsIce()?FLAME_ICE_W:1); }
+function flameSpanTop(f){
+  const reach=f.bot-f.top;
+  return f.bot - reach*(flameIsIce()?FLAME_ICE_H:1);
+}
+/* ============================================================
    A CONTINUOUS WEAPON HAS TO BE HEARD LANDING (drop 0812l)
 
    Mike: "We also need sound when lasers, flame thrower and ice hits enemies, bosses, mini bosses."
@@ -10269,10 +10447,10 @@ function flameHit(f,x,y,ew,eh){
      a centre that may be off the end of the flame. */
   const half=(eh||ew||0)/2;
   const y0=y-half, y1=y+half;
-  if(y0>f.bot || y1<f.top) return false;              // no vertical overlap at all
-  const yc=Math.max(f.top, Math.min(f.bot, y));       // nearest point of the overlap
-  const t=(f.bot-yc)/Math.max(1,f.bot-f.top);
-  return Math.abs(x-f.x) < flameHalfW(f.lv,t)+(ew||0)/2;
+  const top=flameSpanTop(f);                          // the plate's far tip, which ice pulls back
+  if(y0>f.bot || y1<top) return false;                // no vertical overlap at all
+  /* one uniform column, start to end - see flameHalfWDrawn. No taper: the art has none. */
+  return Math.abs(x-f.x) < flameHalfWDrawn(f.lv)+(ew||0)/2;
 }
 function flameFire(lv){
   lv=clamp(lv,1,5);
@@ -10547,7 +10725,9 @@ function flameDraw(f){
      is still discernible as a silhouette, which is the part of the old reason worth keeping.
      ⚠ NOT fixed by stacking passes: the note below records that additive copies blow a near-white
      ice mass out to a featureless slab. One plate, higher alpha. */
-  const ICE_W = 0.85, ICE_H = 0.90, ICE_ALPHA = 0.86;
+  /* these two are the SAME constants flameHit measures against - see flameHalfWDrawn. Changing
+     the drawn plume's scale here now moves its hitbox with it, which is the whole point. */
+  const ICE_W = FLAME_ICE_W, ICE_H = FLAME_ICE_H, ICE_ALPHA = 0.86;
   /* THE NEW REEL IS SELF-LIT (drop 0805d). Its manifest declares internal_glow_only and the
      handoff says outright "There is no outer glow" — the charge veins and light bands are
      painted into the frames. Passes 2 and 3 below stack two more additive copies on top,
@@ -10568,7 +10748,9 @@ function flameDraw(f){
      No rotation, and the rect is dw wide by dh tall the way any upright sprite
      is. FLAME_ROT is left alone so nothing else that reads it changes. */
   ctx.save();
-  ctx.translate(f.x, f.top+dh/2);
+  /* anchor at the NOZZLE, not the tip - see flameSpanTop. For fire dh===reach so this is the exact
+     centre it has always used; only the shortened ice reel moves, and it moves onto the ship. */
+  ctx.translate(f.x, f.bot-dh/2);
   // 1. the plate itself — upright, no rotation. Ice draws at half opacity so the
   //    player can still see the enemies inside it (drop 0801ku).
   ctx.globalAlpha=_isIce?ICE_ALPHA:1;
@@ -11505,7 +11687,13 @@ function enemyLockOn(srcEnemy, delay){
 
   // start a lock: reticle appears on the player, shrinks/blinks for `delay`s, then the missile fires
   playerLocks.push({src:srcEnemy, t:0, delay:(delay||0.7), fired:false});
-  if(Audio.SFX.lockAlert) Audio.SFX.lockAlert();   // alert noise
+  /* NO ALARM ON A MISSILE LOCK (drop 0813a)
+     Mike: "Stop using that annoying beep noise wehn homing missiles are shot off at us too."
+     lockAlert is a rising triple-beep and enemyLockOn is called by every racer flight phase, so a
+     busy screen stacked it into a continuous siren. The shrinking reticle updatePlayerLocks draws
+     on the player is the telegraph now - it carries the same warning without the noise.
+     The three remaining lockAlert calls are the WALL-OF-FIRE announce, a different mechanic that
+     has no reticle to read and that Mike did not ask to change. */
 }
 function updatePlayerLocks(dt){
   for(const L of playerLocks){
@@ -14636,19 +14824,20 @@ function updatePlay(dt){
         } else {
           e._lvlY = nlv; e.y += step;                  // moving in level space moves it on screen too
         }
-        // ---- stay on the tarmac laterally, and drift toward the player's lane while doing it
-        e._mvT=(e._mvT==null?rnd(0.8,2.0):e._mvT)-dt;
-        if(e._mvT<=0){
-          e._mvT=rnd(1.6,3.2);
-          const want = clamp(e.x + clamp(player.x-e.x,-1,1)*rnd(30,80), 40, worldWidth()-40);
-          e._tgx = tankDrivable(want, e._lvlY) ? want : null;
-        }
-        if(e._tgx!=null){
-          const d=e._tgx-e.x; e.vx=clamp(d,-1,1)*0.6;
-          const nx=e.x+e.vx*dt*34;
-          if(tankDrivable(nx, e._lvlY)) e.x=nx; else { e.vx=0; e._tgx=null; }
-          if(Math.abs(d)<3){ e.vx=0; e._tgx=null; }
-        }
+        /* ⚠ THE LANE-DRIFT IS GONE (drop 0813d). Mike: "tanks do not go sideways."
+
+           A block here used to re-target e.x every 1.6-3.2s, 30-80px toward the player's lane, and
+           ease the hull across to it. Measured on stage 4: 56px of lateral travel per roadtank
+           after its entry finished. That is a tracked vehicle strafing, which is what he is
+           objecting to - a tank turns and drives, it does not slide.
+
+           ⚠ IT WAS NOT KEEPING THEM ON THE TARMAC. That job belongs to the y-drive above, which
+           already refuses a step onto non-drivable ground, and to the spawn snap, which guarantees
+           the column it starts on is drivable. Removing this leaves the tank in its lane, driving
+           up and back down the road, which is the whole point of `tankpatrol`.
+
+           e.vx is left at 0 so nothing downstream reads a stale sideways velocity. */
+        e.vx=0;
         break;
       }
       case 'spin':   e.y += (e.y<VH*0.24? e.vy : e.vy*0.25 + Math.sin(e.t*0.9)*6*dt); e.x += Math.sin(e.t*1.2+(e.phase||0))*e.amp*dt*3.0; break;
@@ -15452,7 +15641,10 @@ function updatePlay(dt){
         if(e.dead) continue;
         if(flameHit(b, e.x, e.y, e.w, e.h)){
           if(b._hit.indexOf(e)<0){
-            hitEnemy(e, b.dmg*elementMultiplier(attackElement('flame'))); if(typeof stageStats!=='undefined') weaponHitSfx(attackElement('flame')); stageStats.hits++; b._hit.push(e);
+            /* the guard belongs on stageStats, NOT on the sound - it was landing on weaponHitSfx,
+               so the flame's hit sound rode on an unrelated variable while stageStats.hits++ ran
+               unguarded right next to it. Both were wrong in the same line. */
+            hitEnemy(e, b.dmg*elementMultiplier(attackElement('flame'))); weaponHitSfx(attackElement('flame')); if(typeof stageStats!=='undefined') stageStats.hits++; b._hit.push(e);
             /* ICE BREATH FREEZES (drop 0801fl). Mike: "when it hits enemies,
                flashes white/ice blue and turns them into ice variants when they
                die." The flash is the standard hit flash retinted; _frozen marks
@@ -15684,6 +15876,21 @@ function updatePlay(dt){
         else if(Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2)){ b.dead=true; explode(b.x,b.y,7,'red'); if(!pb.pierce) pb.dead=true; break; }
       }
       if(b.dead) continue;
+    }
+    if(b.kind==='fireorb'){
+      /* HOMES FAR, COMMITS NEAR - see reaverOrbTick. Once it is inside FIREORB_COMMIT the heading
+         is frozen for good, so breaking late sends it past and off the world instead of hooking
+         back onto the player. _committed latches; it must never re-acquire. */
+      const dx=player.x-b.x, dy=player.y-b.y;
+      if(!b._committed && Math.sqrt(dx*dx+dy*dy)<=FIREORB_COMMIT) b._committed=true;
+      if(!b._committed){
+        let ang=Math.atan2(b.vy,b.vx);
+        const ta=Math.atan2(dy,dx); let da=((ta-ang+Math.PI*3)%(Math.PI*2))-Math.PI;
+        ang+=clamp(da,-FIREORB_TURN,FIREORB_TURN);
+        const spd=(b.spd||2.6)*((typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1);
+        b.vx=Math.cos(ang)*spd; b.vy=Math.sin(ang)*spd; b.ang=ang;
+      }
+      if(typeof addTrail==='function' && ((b.t*60)|0)%3===0) addTrail(b.x, b.y, null, 'missile');
     }
     if(b.kind==='groundup'){
       b.t=(b.t||0)+dt;
@@ -19760,7 +19967,17 @@ function _bossProjKey(b){
    identity the rest of the file already gives it — "a level-3 shot is ice, a level-8 shot is
    necro". ============================================================ */
 const PELLET_GLOW=['#ff6b5a','#7fb0ff','#ffd36b','#8fe07a','#dfe8ff'];
-const PELLET_FAM={1:2, 2:0, 3:1, 4:2, 5:4, 6:1, 7:3, 8:0, 9:4};
+/* ⚠ STAGE 2 IS THE LAVA STAGE AND WAS FIRING RED (drop 0813a)
+   Mike: "Do not use red pellets or effects for his attacks. bad move here. It will look bad with
+   the lava. Use yellow/white, orange/white, white/red with the red being inside if anything."
+
+   This table is where that came from, not the boss. The INFERNO REAVER fires `eshot`, which is
+   FIRETYPES.pellet, whose family and glow both come from PELLET_FAM[run.stage] - and stage 2 was
+   family 0, glow #ff6b5a. Red pellets on an orange-red lava field, which is exactly the wash he is
+   describing. Family 2 (#ffd36b) is the yellow already proven on stage 1, so it is a colour that
+   has shipped rather than a new guess.
+   _PLASMA_PAL below carried the same red for the same stage and moves to orange with it. */
+const PELLET_FAM={1:2, 2:2, 3:1, 4:2, 5:4, 6:1, 7:3, 8:0, 9:4};
 function pelletFam(b){
   if(b && b._pfam!=null) return clamp(b._pfam|0,0,4);
   const st=(typeof run!=='undefined'&&run)?run.stage:1;
@@ -19873,6 +20090,7 @@ const PROJ = {
   flare:{type:'flare',slot:1}, groundup:{type:'flare',slot:1},
   // ---- comet: boss plasma, per-stage palette (PASSOVER.md)
   comet:{type:'comet',slot:2}, plasma:{type:'comet',slot:2},
+  fireorb:{type:'comet',slot:2},   // the reaver's charged orb - authored comet reel, pal 'orange'
   railshot:{type:'comet',slot:2}, shell:{type:'comet',slot:2}, mechshot:{type:'comet',slot:2},
   frostComet:{type:'comet',slot:2,pal:'blue',tint:'#9fe6ff'},
   // ---- blast: Leviathan triple burst (PASSOVER.md)
@@ -19895,7 +20113,7 @@ const PROJ = {
   eglaser:{type:'missile',slot:5,tint:'#8fff9f'},
   mechmortar:{type:'blast',slot:3},
 };
-const _PLASMA_PAL={1:'orange',2:'red',3:'blue',4:'purple',5:'purple'};
+const _PLASMA_PAL={1:'orange',2:'orange',3:'blue',4:'purple',5:'purple'};   // 2 was 'red' - see PELLET_FAM
 /* A kind with no PROJ entry is a WIRING BUG, not something to paper over. The old
    code hashed the name into a random plate, which is how 357 of 626 shots ended up
    drawing whatever their letter-count happened to pick. Unknowns are collected so
@@ -23808,8 +24026,18 @@ const CAMP_PAUSE_BTN=[
 ];
 let campPause=null;   // {sel, mode:'root'|'save'|'load', t, msg, msgT}
 
+/* NOT UNTIL THE MAP IS ON SCREEN (drop 0813a)
+   Mike: "do not allow us to pull up the pause/save game menu until we reach this point when
+   selecting campaign."
+
+   The state test alone was not the gate he wanted - run.mode is set the moment CAMPAIGN is picked,
+   so every screen on the way to the map already satisfied it. This latches on the map itself
+   having been DRAWN, which is exactly "this point", and clears on the way back to the title so a
+   second campaign re-gates rather than inheriting the first one's latch. */
+let campHubSeen=false;
 function campPauseIsCampaignScreen(){
-  return (state===GS.STAGESEL || state===GS.CAMPHUB || state===GS.PILOT) &&
+  return campHubSeen &&
+         (state===GS.STAGESEL || state===GS.CAMPHUB || state===GS.PILOT) &&
          (typeof run!=='undefined' && run && run.mode==='campaign');
 }
 function campPauseOpen(){
@@ -23947,7 +24175,7 @@ function drawScene(dt){
     case GS.ATTRACT: return drawAttract(dt);
     case GS.CUTSCENE: return drawCutsceneState(dt);
     case GS.LOADING: return drawLoading(dt);
-    case GS.TITLE:   return drawTitle(dt);
+    case GS.TITLE:   campHubSeen=false; return drawTitle(dt);   // a new campaign re-gates the save menu
     case GS.DIFF:    return drawDiff(dt);
     /* ⚠ PILOT COULD OPEN THE PAUSE MENU AND NEVER DRAW IT (drop 0810o). campPauseIsCampaignScreen
        claims GS.PILOT, so backspace there sets campPause — and this arm never called campPauseDraw,
@@ -23972,7 +24200,7 @@ function drawScene(dt){
     case GS.FLYOVER: return drawFlyover(dt);
     case GS.STAGESEL: { drawStageSelect(dt); campPauseDraw(dt); return; }
     case GS.MODESEL: return drawModeSelect(dt);
-    case GS.CAMPHUB: { drawCampaignHub(dt); campPauseDraw(dt); return; }
+    case GS.CAMPHUB: { campHubSeen=true; drawCampaignHub(dt); campPauseDraw(dt); return; }
   }
 }
 
@@ -37565,7 +37793,13 @@ function loop(now){
      the whole class. */
   dt=Math.max(0, Math.min(dt,0.05)); stateT+=dt;
   if(!(stateT>=0)) stateT=0;                 // belt and braces: never let it go bad at all
-  ctx.setTransform(SS,0,0,SS,0,0); ctx.imageSmoothingEnabled=true;
+  /* ⚠ THIS LINE IS WHY THE INIT DEFAULT NEVER MATTERED (drop 0813b). It ran EVERY FRAME and set
+     smoothing back on, so the `=false` at init was overwritten before the first backdrop was ever
+     drawn — and the only art that escaped was the handful of blits that set the flag themselves.
+     Under SS=2 that meant every 800-wide master was bilinear-doubled to 1600. Nearest-neighbour
+     here is the pack contract, and being on the frame setup is what makes it hold for everything
+     downstream instead of per-draw. */
+  ctx.setTransform(SS,0,0,SS,0,0); ctx.imageSmoothingEnabled=false;
   /* A THROWN FRAME MUST NOT END THE GAME. The frame is rescheduled at the BOTTOM of this function,
      so any exception escaping the update or the draw stops that reschedule and the game locks up
      forever — no error on screen, just a frozen picture with the music still playing. That is the

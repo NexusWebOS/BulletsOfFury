@@ -1,0 +1,50 @@
+[
+ {
+  "stage": 1,
+  "kind": "junglecruiser",
+  "px": 92345,
+  "verdict": "ok"
+ },
+ {
+  "stage": 2,
+  "kind": "lavamaw",
+  "px": 62808,
+  "verdict": "ok"
+ },
+ {
+  "stage": 3,
+  "kind": "thornrime",
+  "px": 19748,
+  "verdict": "ok"
+ },
+ {
+  "stage": 4,
+  "kind": "blacksteel",
+  "px": 40684,
+  "verdict": "ok"
+ },
+ {
+  "stage": 5,
+  "kind": "subcore",
+  "px": 64088,
+  "verdict": "ok"
+ },
+ {
+  "stage": 6,
+  "kind": "olivecarrier",
+  "px": 21727,
+  "verdict": "ok"
+ },
+ {
+  "stage": 7,
+  "kind": "ratking",
+  "px": 100869,
+  "verdict": "ok"
+ },
+ {
+  "stage": 8,
+  "kind": "herald",
+  "px": 121077,
+  "verdict": "ok"
+ }
+]

@@ -146,9 +146,94 @@ loads on entry.
 
 ---
 
-## Current state (2026-08-13)
+## Current state (2026-08-15)
 
-**→ START HERE: `docs/PASSOVER_0812G.md`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**0813g — MAGMA VENT is stage 2's miniboss; the roster said 40px, the ART is 223px.**
+⚠ **`lavamaw` READS AS w:40,h:38 IN THE VOLC ROSTER AND ITS ART IS 223x220** (`nvl_maw_0..5`, six
+frames). The stage was shrinking a miniboss-sized caldera to a speck. At 196x194 it is scaled DOWN.
+⚠ **`spawnEnemy('lavamaw')` RETURNING NOTHING PREDATES THIS** — it is in `_DELETE` from 0801ip, and
+that note says the ART was kept on purpose. Check whether a behaviour is yours before owning it.
+⚠ **`spawnSubBoss__inner` VALIDATES NOTHING** — any string builds a generic 130x120 sub-boss with no
+art. Eight candidates at identical w/h all drawing a red box is the FALLBACK, not a roster.
+⚠ Two assertions pinned siege ember; Mike overruled it, so they now track his choice.
+
+**0813e — level 7's purple halos are black edges; stage 5's MAP NODE is a volcano.**
+⚠ **`BOFFI` RECTS ARE `[sheetIndex, x, y, w, h]` — FIVE elements.** Reading them as `[x,y,w,h]` made
+every rect `None` and the halo script edited nothing — which SAVED it, because `nca_74.png` is shared
+and a wrong rect corrupts art well outside level 7. Cell-bounded, alias-deduped, `.bak` per sheet.
+1,577px converted (`nsw_circ/ring/dist/distr`, the level-7 shock effects). Alpha untouched.
+⚠ **INTERIOR magenta is NOT a halo** — `nsw_barge_0`/`nsw_sentry_0` keep theirs; so do the RC2
+masters, whose magenta is punched to alpha for the sludge. Only OUTER-BOUNDARY pixels convert.
+⚠ **`nsw_combined` (598px) is UNUSED** — 0 references; its halo cannot reach the screen.
+⚠ **STAGE 5'S MAP REGION IS THE "CENTRAL CITADEL — EMBER RISE"** (game.js:32843) but the level is
+`bg:'space'` / voidbat / orbital. The ring layout and index mapping are both sound; the mismatch is
+thematic and is MIKE'S map-design call. The map plate would not resolve, so polys were plotted on a
+blank field — do not move one off that alone.
+
+**0813d — the tanks were displaced from OUTSIDE their own pattern, and only 3 of 8 stages have new bosses.**
+⚠ **`enemyEntrySweep` (updatePlay:14580) MOVED THE TANKS, NOT `tankpatrol`.** A setter trap on a
+roadtank's `x` caught all 62 lateral writes coming from there — the pattern case moved them zero.
+Removing the obvious lane-drift block inside `tankpatrol` first changed the numbers WITHOUT stopping
+the slide, which is the tell. Same shape as the standing jet-displacement note. Now gated on
+`_vkind==='tank'`. Residual: one unit still shows ~2px steps, not chased.
+⚠ **WHEN A "FIX" CHANGES THE NUMBER BUT NOT THE BEHAVIOUR, IT IS NOT THE CAUSE.** Trap the write.
+⚠ **ONLY STAGES 2/3/5 RUN `nsb_*` BOSSES** (item 5). Stages 1/4/6/7/8 still draw legacy art via
+`spawnBoss`'s switch (`damkeeper` → `ovbody_intact`). FIVE unassigned new-pack bosses exist —
+blacksteel, jungle_cruiser, olive_carrier, siege_ember, thorn_rime — all resolving, none wired.
+The stage mapping is MIKE'S call; not guessed.
+⚠ **`probe_bossart.py`'s "8 minibosses have no art key" IS A PROBE FAULT** — `SUBBOSS` is keyed by
+stage number and stores art under another field. That audit is unfinished; do not quote it.
+
+**0813c — stage 5 is space now, and the roadside signs were scrolling the WRONG WAY.**
+⚠ **`storm800_rc2_master` IS A STORM PLATE.** Stage 5's master was cloud, rain and lightning for
+essentially all 5120px, with ONE orbital band at ~45% — sample that band alone and it looks like
+space, which is how it survived. Stage 5 now loops `norb5_arena` (its own orbital art, measured dark
+and seamless: first row vs last differs 12.5/765) via the new `loopMaster` flag.
+⚠ **GROUND PROPS AND THE GROUND USED DIFFERENT MAPPINGS.** Terrain shows rows `[srcY, srcY+VH]` with
+srcY DECREASING, so features travel DOWN; `drawRoadSigns`/`drawStageProps` used `y - mapScroll`,
+which travels UP. Measured: crater down 105px while the sign moved up 105px. `drawLevelMaster` now
+publishes `_masterSrcY` and both prop draws read it. The 0810h note saying they "already stay put"
+compared the two PROPS to each other and never to the terrain.
+⚠ **`XART.rdy()` AND UNDECODED MASTERS FAKED THREE "NO BUG HERE" RESULTS** before this was measured —
+and one probe printed a PASS having measured zero stages. Check that a probe measured something.
+⚠ **THERE IS NO BRIDGE ASSET** (item 3): `cfg.props` holds exactly ONE prop game-wide,
+`nst4_crash_overlay`, an 800x600 pileup drawn 1:1 — the crash object Mike approved. Not deleted.
+
+**0813b — the levels were bilinear-doubled EVERY FRAME, and that is why they looked upscaled.**
+⚠ **`ctx.imageSmoothingEnabled=true` sat on the FRAME SETUP** (game.js:37729), so it overwrote the
+init default before the first backdrop ever drew. `SS=2` puts the 800-wide masters on a 1600px
+backing, so a high-quality bilinear DOUBLE invented a pixel between every authored pair. The
+`drawLevelMaster` geometry was innocent — it draws 1:1 (`drawW→drawW`, `winH=VH`).
+⚠ **AND `image-rendering:auto` BLURRED IT AGAIN** on the way to the display (index.html:36).
+⚠ **THIS IS WHY A DOZEN DRAWS SET THE FLAG LOCALLY.** Sprites opted out; backdrops never did, so the
+art split into crisp sprites over soft levels. Those local `=false` lines are now redundant.
+⚠ **CHANGING THE INIT LINE ALONE DOES NOTHING** — measure the flag at runtime, not the edit.
+Measured: stage 1 backdrop crop 21,423 colours → 13,927, and 192/192 2px column pairs uniform.
+`_BUILD_SOURCE/probe_sharp.py`.
+⚠ **NINE ITEMS FROM MIKE'S 0813B MESSAGE ARE STILL OPEN** — see the tail of `PASSOVER_0813B.md`
+(stage-5 sky vs space, scrolling signs, the highway bridge, sideways tanks, un-replaced
+bosses/minibosses, level-7 purple halos, wrong level-5 map region, background squares on space/sky,
+stage-8 chain lightning). The stage-6 "door/side sky overlay" he ordered deleted was **not** deleted:
+the obvious key renders as a flat blue noise field, not an overlay. Rule 1, third save.
+
+**→ START HERE: `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+
+**0813a — the flamethrower now hits what it visibly touches.**
+⚠ **`flameDraw` PAINTS A UNIFORM COLUMN; `flameHit` TAPERED.** The draw is `flameHalfW(lv,1)` wide
+for the plume's whole length; the hit test evaluated `flameHalfW` at the travel fraction, which
+narrows to `flameBase` at the nozzle — **96px drawn against 35px tested at lv5**. An enemy inside
+the visible fire beside the ship took nothing, and because the taper is invisible art-side it read
+as a damage bug, not a width one.
+⚠ **AND THE PLUME IS ANCHORED AT THE NOZZLE, NOT THE TIP.** `f.bot` is the emitter (at the ship);
+`f.top` is the far tip. `ICE_H` shortened the ice reel by holding `f.top` and pulling the BOTTOM up
+— shortening it *at the ship*, so the frost floated 27px clear of its own nozzle. Anchor at `f.bot`
+and the TIP pulls back. Fire is bit-identical (`dh===reach`).
+The shape is now in one place — `FLAME_ICE_W/H`, `flameHalfWDrawn`, `flameSpanTop` — and
+`flameDraw` reads its scale from those, so the two cannot drift apart again.
+Also: stage 2 fired **red pellets on the lava stage** via `PELLET_FAM[2]=0` (`#ff6b5a`) — not the
+boss, the stage table; the reaver's charged **fire orb** (homes far, commits inside 96px, never
+re-acquires); wobble + shootable rockets under the rake; the missile-lock **beep removed**; the
+save menu gated on the map actually being reached.
 
 **0812g — the muzzle flash now matches the round it fires, all 8 tiers, both weapons.**
 ⚠ **THE FLASH WAS CLAMPED TO FIVE TIERS** (`_mgMuzLv=min(5,lv)` at all five assignment sites), so
@@ -573,7 +658,7 @@ and reports settled burial. **The 839 / 71.9% baselines quoted in the handoff ar
 ⚠ **The recurring failure this stretch was systems that were declared and never fired** — the quad-laser's muzzles, `_qlChg`, `enemyVolley` sharing a `fireCd` its unit's tick owns, `micon_` asked of the wrong store, `lordshadows` registered and referenced nowhere. In every case the state looked right and no pixel moved. **Render it, then believe it.**
 
 
-Suite: **2,613 assertions / 233 sections / 5 failures** (drop 0812p) — the preload count, the two
+Suite: **2,636 assertions / 234 sections / 5 failures** (drop 0813a) — the preload count, the two
 `_superseded` ones, the volley round count and the naval flash families. ⚠ **If you see more than
 five, check `git status` for deleted art before you debug anything** — a missing file trips nine
 assertions across four sections and reads as an unrelated pile of failures.
