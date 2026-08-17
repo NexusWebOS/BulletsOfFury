@@ -1096,14 +1096,22 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      The assertion tracks HIS choice - it is not defending the old one. What it still guards is the
      part that matters: stage 2 has a miniboss, and it resolves REAL art rather than the generic
      130x120 fallback that any unknown kind produces. */
-  ok(vm.runInContext("SUBBOSS[2].kind==='lavamaw'", ctxv), 'level 2 miniboss is the MAGMA VENT');
+  /* Mike replaced lavamaw with his own MAGMA WARD plates in 0813h - the third choice for this
+     slot in two drops (siege ember -> lavamaw -> magmaward). The assertion tracks HIS pick; what it
+     guards is that the slot is filled by a REAL unit with art, not the generic 130x120 fallback. */
+  ok(vm.runInContext("SUBBOSS[2].kind==='magmaward'", ctxv), 'level 2 miniboss is the MAGMA WARD');
+  ok(vm.runInContext("!!SHIPBOSS.magmaward && SHIPBOSS.magmaward.mini===true", ctxv),
+     'and it is a real miniboss entry, not an unknown kind falling through to the generic sub-boss');
   ok(vm.runInContext("!!SHIPBOSS.lavamaw && SHIPBOSS.lavamaw.mini===true", ctxv),
      'and it is a real miniboss entry, not an unknown kind falling back to the generic sub-boss');
   ok(vm.runInContext("SHIPBOSS.lavamaw.key==='nvl_maw_0'", ctxv),
      'drawing nvl_maw — the 223x220 six-frame caldera whose art 0801ip deliberately KEPT when the enemy spawn was deleted');
   ok(vm.runInContext("SHIPBOSS.lavamaw.w>150 && SHIPBOSS.lavamaw.w<=223", ctxv),
      'sized UNDER its authored 223px, so the vent is scaled down and never upscaled');
-  ok(vm.runInContext("SUBBOSS[3].kind==='thornrime'", ctxv), 'level 3 miniboss is the RIME THORN (ship hull, black/ice-blue swap)');
+  /* thorn rime pulled at Mike's instruction; RIME WALL is his replacement art (0813h). */
+  ok(vm.runInContext("SUBBOSS[3].kind==='rimewall'", ctxv), 'level 3 miniboss is the RIME WALL');
+  ok(vm.runInContext("!!SHIPBOSS.rimewall && SHIPBOSS.rimewall.mini===true", ctxv),
+     'and stage 3 is not left with an empty miniboss slot');
 
   // ===== 25. stage-transition camera reset + robo drones on stage 2 =====
   console.log('=== 25. camera reset + robo drones ===');
@@ -1902,8 +1910,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      The check that matters is that it is NOT still on 2124, the coordinate derived from the
      retired 4800px plate's scorch. That number is the bug this guards against: a prop placed by
      measuring a plate the stage no longer uses. */
-  ok(vm.runInContext("(_levelCfg().props||[]).some(function(p){return p.k==='nst4_crash_overlay';})", ctxv),
-     'the car crash pileup is placed on the map as a fixed prop');
+  /* ⚠ MIKE RETIRED THE PILEUP (drop 0813j): "get rid of the signs and car cash and crater for
+     stage 4. we dont need em anymore." It was the only entry in cfg.props game-wide, so this now
+     asserts the REMOVAL - and that the prop list is empty rather than undefined, which is what
+     drawStageProps iterates. */
+  ok(vm.runInContext("!(_levelCfg().props||[]).some(function(p){return p.k==='nst4_crash_overlay';})", ctxv),
+     'the car crash pileup is GONE from stage 4 (0813j)');
+  ok(vm.runInContext("Array.isArray(_levelCfg().props) && _levelCfg().props.length===0", ctxv),
+     'and stage 4 carries an empty prop list, not a missing one');
+  ok(vm.runInContext("typeof SIGNS_OFF==='object' && !!SIGNS_OFF[4]", ctxv),
+     'the roadside signs are gated off for stage 4 too - the BOFRS data stays, only the draw stops');
   ok(vm.runInContext("(_levelCfg().props||[]).every(function(p){return p.y!==2124;})", ctxv),
      'and NOT at 2124 — that was measured on the retired 4800px plate');
   ok(vm.runInContext("(function(){var im=XART.rdy(_levelCfg().master)?XART.get(_levelCfg().master):null; if(!im) return true; var r=im.naturalHeight-VH; return (_levelCfg().props||[]).every(function(p){return p.y>0 && p.y<r;});})()", ctxv),
@@ -4379,7 +4395,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
 
      THE REAL GUARD IS THE ONE BELOW IT: no scrollLen. That is what made it crawl, and it is the
      mistake worth preventing, not the filename. */
-  ok(vm.runInContext("_levelCfg().master==='skyfort800_rc2_master'", ctxv), 'and stage 6 points at the RC2 night sky fortress');
+  /* ⚠ STAGE 6 IS ONE SKY AGAIN (drop 0813i). The RC2 rebuild reintroduced the fortress - a door
+     and platform decks painted into the plate - and Mike flagged every one: "they gota go dude".
+     nsky6_sky is the plate he approved back in 0801gm, looped. */
+  ok(vm.runInContext("_levelCfg().master==='nsky6_sky'", ctxv), 'stage 6 is the clean sky plate, not the RC2 fortress');
+  ok(vm.runInContext("_levelCfg().loopMaster===true", ctxv), 'and it loops, because 800x2400 cannot window a whole stage');
   ok(vm.runInContext("_levelCfg().scrollLen===undefined", ctxv),
      'with NO scrollLen — the master height sets the length 1:1, or the sky crawls');
   ok(vm.runInContext("run.stage=6; XART.rdy('skyfort800_rc2_master') && XART.get('skyfort800_rc2_master').naturalHeight>=VH*4", ctxv),
@@ -5610,8 +5630,15 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("arsenalMiniFor(4)==='dambreaker'",ctxv), 'stage 4 fields DAMBREAKER');
   /* the tier displaces nothing: the real minibosses are still where they were */
   ok(vm.runInContext("SUBBOSS[1].kind==='junglecruiser'", ctxv), 'and SUBBOSS[1] is the JUNGLE CRUISER');
-  ok(vm.runInContext("SUBBOSS[2].kind==='lavamaw'", ctxv), 'SUBBOSS[2] is the MAGMA VENT (0813g)');
-  ok(vm.runInContext("SUBBOSS[3].kind==='thornrime'", ctxv), 'SUBBOSS[3] is the RIME THORN');
+  ok(vm.runInContext("SUBBOSS[2].kind==='magmaward'", ctxv), 'SUBBOSS[2] is the MAGMA WARD (0813h)');
+  ok(vm.runInContext("SUBBOSS[3].kind==='rimewall'", ctxv), 'SUBBOSS[3] is the RIME WALL (0813h)');
+  ok(vm.runInContext("SUBBOSS[4].kind==='olivewarden'", ctxv), 'SUBBOSS[4] is the OLIVE WARDEN (0813h)');
+  ok(vm.runInContext("SUBBOSS[6].kind==='blacksteel'", ctxv), 'SUBBOSS[6] is the BLACKSTEEL, moved from stage 4');
+  /* ⚠ STAGE 7 STAYED ON ratking. Mike asked for olive carrier here, but swapping it in stopped the
+     stage-7 sub-boss TRIGGERING at all - the soak observation `_sbSeen` went false and the boss gate
+     behind it failed with it. Reverted in 0813h; this pins that it stays reverted until whatever
+     ratking has that olivecarrier lacks is understood. */
+  ok(vm.runInContext("SUBBOSS[7].kind==='ratking'", ctxv), 'SUBBOSS[7] is still the ratking - see the 0813h note');
   /* order down a level: mini -> sub-boss -> boss, each heavier than the last */
   var _amEarly=[];
   [2,3].forEach(function(n){
@@ -10030,7 +10057,7 @@ console.log("=== 220. named minibosses ===");
   ok(_generic.length===0,
      'every stage 1-8 fields a NAMED miniboss'+(_generic.length?(' — generic: '+_generic.join(', ')):''));
   ok(_f220[1].ship==='junglecruiser', "stage 1 is the JUNGLE CRUISER (Mike's word, 0812e)");
-  ok(_f220[6].ship==='olivecarrier',  'stage 6 is the OLIVE CARRIER, not the old placeholder');
+  ok(_f220[6].ship==='blacksteel',  'stage 6 is the BLACKSTEEL - Mike moved it here from stage 4 (0813h)');
 
   /* ⚠ NO MINIBOSS OR BOSS IS RECOLOURED AT DRAW TIME (drop 0812h). Mike: "The minibosses, dont
      ever color overaly them." 0812e had themed stage 1 and stage 6 with a `pal` field on SHIPBOSS

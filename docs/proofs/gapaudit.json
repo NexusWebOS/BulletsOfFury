@@ -2,25 +2,25 @@
  {
   "stage": 1,
   "kind": "junglecruiser",
-  "px": 92345,
+  "px": 82843,
   "verdict": "ok"
  },
  {
   "stage": 2,
-  "kind": "lavamaw",
-  "px": 62808,
+  "kind": "magmaward",
+  "px": 19674,
   "verdict": "ok"
  },
  {
   "stage": 3,
-  "kind": "thornrime",
-  "px": 19748,
+  "kind": "rimewall",
+  "px": 20282,
   "verdict": "ok"
  },
  {
   "stage": 4,
-  "kind": "blacksteel",
-  "px": 40684,
+  "kind": "olivewarden",
+  "px": 44310,
   "verdict": "ok"
  },
  {
@@ -31,14 +31,14 @@
  },
  {
   "stage": 6,
-  "kind": "olivecarrier",
-  "px": 21727,
+  "kind": "blacksteel",
+  "px": 21623,
   "verdict": "ok"
  },
  {
   "stage": 7,
-  "kind": "ratking",
-  "px": 100869,
+  "kind": "olivecarrier",
+  "px": 45587,
   "verdict": "ok"
  },
  {

@@ -2376,7 +2376,11 @@ function _levelCfg(){
        just be more mess. x=0 because the overlay is authored full-width in the same 800 world
        space as the master. */
     case 4: return {master:'airbase800_rc2_master', liquid:null, fill:'#101820', tile:1, fps:5, wide:true,
-                    props:[{k:'nst4_crash_overlay', x:0, y:3100}]};
+                    /* ⚠ CAR CRASH REMOVED (drop 0813j). Mike: "get rid of the signs and car
+                       cash and crater for stage 4. we dont need em anymore." The pileup was the
+                       only entry in cfg.props game-wide, so drawStageProps now has nothing to
+                       draw on stage 4. Put the array back to restore it. */
+                    props:[]};
     /* RC2 REBUILD (drop 0810g) — Stage_05_Storm_To_Upper_Atmosphere, 800x5120. Starts in the
        nebula and descends to a planet under aurora. Flipped on the way in like every plate in
        this pack (see the note on case 4), magenta punched to alpha. The BOSS ARENA is untouched:
@@ -2427,7 +2431,19 @@ function _levelCfg(){
        ⚠ nsky6_sky and the 51 quarantined files in _superseded/stage6_bg are untouched. Mike's
        "delete all of stage 6's backgrounds ... this is the only one we'll need" stands as the
        reason THOSE are gone; this replaces the one that survived, at his word. */
-    case 6: return {master:'skyfort800_rc2_master', liquid:null, fill:'#01031c', tile:1.0, wide:true};
+    /* ⚠ STAGE 6 IS ONE SKY, AND THE RC2 REBUILD UNDID THAT (drop 0813i). Mike, in 0801gm:
+       "delete all of stage 6's backgrounds. this is the only one we'll need, when it goes to
+       rain and lightning, we simply fade/darken it in game." skyfort800_rc2_master brought the
+       fortress back - a door at ~2270..2650 and platform decks further up - and he flagged
+       every one of them again: "they gota go dude".
+
+       Skipping bands was the wrong tool: the structures are scattered through the plate, so
+       cutting them all would gut the level. nsky6_sky is the plate he approved - 800x2400,
+       measured 0.00% metal-like pixels and a first-vs-last row seam of 21.9/765, so it loops
+       forever with no join and carries no structure at all. Looping it is the 0801gm intent
+       restored, and the rain/lightning still darken over it in code. */
+    case 6: return {master:'nsky6_sky', liquid:null, fill:'#01031c', tile:1.0, wide:true,
+                    loopMaster:true};
     // 7 NOT ANOTHER SEWER LEVEL — dedicated sewer kit (CF_LevelPack-Lvl7): 800x3616 gameplay
     // scroll + 800x1000 boss arena, with the 256px sludge surface animating through the
     // master's keyed channels. WIDE level (800px world, camera scrolls).
@@ -2465,7 +2481,9 @@ function _levelCfg(){
        the VOID: the plate is deliberately see-through where space should be, so `fill` shows
        through. That is why fill stays #0a0406 rather than becoming a texture. wide:true added
        because this master is 800 across; the old one was not. */
-    case 8: return {master:'blackhole800_rc2_master', liquid:null, fill:'#0a0406', tile:1.0, wide:true};
+    /* skipRows: the BRIDGE, a horizontal platform measured at rows ~2530..2620. */
+    case 8: return {master:'blackhole800_rc2_master', liquid:null, fill:'#0a0406', tile:1.0, wide:true,
+                    skipRows:[2500,2650]};
     /* 9 BONUS STAGE — entered from Level 5. Mike: "stage 9 was the bonus stage, yes.
        This is accesible through Level 5", and "wire it to 800 wide."
 
@@ -2953,8 +2971,48 @@ function roadSignY(stage, y){
   const [a,b]=R.from, [c,d]=R.to;
   return (b===a) ? c : (c + (y-a)*(d-c)/(b-a));
 }
+/* ============================================================
+   THE BOTTOM HINT BAR (drop 0813k)
+
+   Mike's collaborator on the pilot-select bar: "Just mess with the transparency and font / maybe
+   add a drop shadow / I'll mess with it to clean it up".
+
+   ⚠ THE OLD ALPHA WAS THE WHOLE PROBLEM. `0.55+0.45*sin(stateT*5)` swings 0.10 -> 1.00 five times a
+   second, so for part of every cycle the line is essentially gone, and it strobes over whatever art
+   is behind it. That reads as unfinished rather than as an attract-mode pulse. Now a shallow
+   breathe around a floor that stays legible at its dimmest.
+
+   ⚠ AND IT HAD NOTHING BEHIND IT. Light grey text straight onto the pilot art has no separation.
+   A soft dark pad plus a one-pixel drop shadow gives it an edge on any background without a box.
+
+   Both call sites - mode select and pilot select - go through here so they cannot drift apart. */
+function drawHintBar(text){
+  const y=VH-18;
+  const breathe=0.86+0.10*Math.sin(stateT*2.2);      // 0.76..0.96, slow. was 0.10..1.00 at 5/s
+  ctx.save();
+  ctx.textAlign='center';
+  ctx.font='10px "BOFmil", monospace';
+  const w=ctx.measureText(text).width;
+  /* a soft pad under the line - wide enough to clear the text, faded at the alpha it sits on */
+  ctx.globalAlpha=0.34*breathe;
+  ctx.fillStyle='#05070c';
+  ctx.fillRect(VW/2-w/2-10, y-11, w+20, 15);
+  /* drop shadow, then the face */
+  ctx.globalAlpha=0.55*breathe; ctx.fillStyle='#000000';
+  ctx.fillText(text, VW/2+1, y+1);
+  ctx.globalAlpha=breathe;      ctx.fillStyle='#dfe6f0';
+  ctx.fillText(text, VW/2, y);
+  ctx.restore();
+  ctx.globalAlpha=1; ctx.textAlign='left';
+}
+
+/* stages whose roadside signs Mike has retired. Drop 0813j: "get rid of the signs ... for stage
+   4". The BOFRS data stays in the manifest - only the drawing stops - so this is one line to
+   undo, and no other stage is affected. */
+const SIGNS_OFF={4:1};
 function drawRoadSigns(){
   if(typeof XART==='undefined' || typeof window==='undefined' || !window.BOFRS) return;
+  if(SIGNS_OFF[run.stage]) return;
   let list=window.BOFRS[String(run.stage)]; if(!list) return;
   if(SIGN_REMAP[run.stage]) list=list.map(s=>({k:s.k, x:s.x, y:roadSignY(run.stage, s.y)}));
   for(const sn of list){
@@ -3129,7 +3187,37 @@ function drawLevelMaster(dt){
     return true;
   }
   const scrollFrac=range>0?(mapScroll/range):0;    // 0..1 progress through the level
-  const srcY=Math.max(0, rangeSrc-scrollFrac*rangeSrc);
+  let srcY=Math.max(0, rangeSrc-scrollFrac*rangeSrc);
+  /* SKIP A BAND OF THE MASTER (drop 0813i)
+     Mike: "get rid of that door on level 6. get rid of that bridge on level 8" -> "dont use those
+     parts of the stage."
+
+     Both are PAINTED INTO the master plate, not drawn as overlays - pulled straight out of
+     skyfort800_rc2_master and blackhole800_rc2_master at rows 2208..2720. So there is no draw call
+     to delete, and repainting them would mean inventing the sky and starfield underneath, which the
+     standing rule forbids. Skipping the rows is the option that touches no art.
+
+     The level's progress is mapped across the master MINUS the band, then any row at or above the
+     band's start is pushed past it. The band is therefore never inside the window. This does cut
+     the visible length of the stage by the band height, and the join is a hard cut rather than a
+     blend - that is inherent to skipping and is the trade Mike accepted. */
+  if(cfg.skipRows && cfg.skipRows.length===2){
+    const b0=cfg.skipRows[0], b1=cfg.skipRows[1], bh=Math.max(0, b1-b0);
+    /* ⚠ THE WINDOW IS winH TALL, SO HOPPING ITS TOP IS NOT ENOUGH. The first version jumped srcY
+       past the band only once srcY itself reached b0 - but a window whose TOP is just below b0 still
+       has its BOTTOM inside the band. Measured on stage 8: at mapScroll 2400 srcY came out 2136 and
+       the window ran 2136..2648, straddling the bridge at ~2530, so the thing being skipped was
+       still on screen. The legal top rows are therefore [0, b0-winH] and [b1, rangeSrc], and the
+       level's progress is mapped across those two runs. */
+    const lowTop=Math.max(0, b0-winH);               // last top row that keeps the band out of view
+    const highRun=Math.max(0, rangeSrc-b1);
+    const usable=lowTop+highRun;
+    if(usable>0){
+      const c=Math.max(0, usable-scrollFrac*usable);
+      srcY = (c<=lowTop) ? c : (b1 + (c-lowTop));
+      srcY = Math.max(0, Math.min(rangeSrc, srcY));
+    }
+  }
   /* THE WINDOW TOP IS PUBLISHED so ground props can use the SAME mapping (drop 0813c).
      Mike: "the signs are scrolling."
 
@@ -5056,12 +5144,16 @@ const SUBBOSS={
      the beach tanks and the grass jets, and that sequencing is about the STAGE, not the unit. */
   1:{at:0.62, kind:'junglecruiser', afterScroll:2100},
                                   // Flipped so its turrets face you; crawls up/down only; quad MGs.
-  2:{at:0.45, kind:'lavamaw',    afterScroll:961},      // MAGMA VENT (0813g) — Mike pulled siege ember; picked out of the unused pool
-  6:{at:0.45, kind:'olivecarrier', afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
-  7:{at:0.45, kind:'ratking', afterScroll:1161},    // RAT KING EXCAVATOR — level 7 sub-boss
+  2:{at:0.45, kind:'magmaward',  afterScroll:961},      // MAGMA VENT (0813g) — Mike pulled siege ember; picked out of the unused pool
+  6:{at:0.45, kind:'blacksteel',   afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
+  7:{at:0.45, kind:'ratking', afterScroll:1161}   /* ⚠ REVERTED 0813h. Mike asked for olive
+     carrier here, but swapping it in stopped the stage-7 sub-boss TRIGGERING at all - the
+     soak assertion `_sbSeen` (a runtime observation, not a name pin) went false, and the
+     stage-7 boss gate behind it failed with it. ratking is a SEWER unit and stage 7 appears
+     to rely on that; olivecarrier needs whatever ratking has before it can take this slot. */,    // RAT KING EXCAVATOR — level 7 sub-boss
   8:{at:0.45, kind:'herald', afterScroll:1201},     // HERALD OF DEATH (venom-reaver, retitled per the phase manifest)
-  3:{at:0.45, kind:'thornrime', afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
-  4:{at:0.45, kind:'blacksteel', afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
+  3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
+  4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
   5:{at:0.45, kind:'subcore', afterScroll:1121},
 };
 
@@ -8204,6 +8296,20 @@ const SHIPBOSS = {
      better than a ship's missile fan. */
   lavamaw:       {key:'nvl_maw_0',          name:'MAGMA VENT',          w:196,h:194, hp:230, pat:'ember', cd:1.30, mini:true,
                   pats:['ember','mslfan']},
+  /* MIKE'S THREE NEW MINIBOSSES (drop 0813h). Each ships intact / damaged / critical plates,
+     imported off a magenta key by FLOOD FILL from the borders - a colour threshold would have eaten
+     the blue highlights on the rime hull and the orange lava veins on the other two. Magenta left on
+     the rim was converted to a BLACK EDGE, never deleted, per the standing rule.
+       magmaward   -> stage 2, replacing lavamaw (Mike: "heres level 2's")
+       rimewall    -> stage 3, the slot thorn rime vacated
+       olivewarden -> stage 4, the slot blacksteel vacated on its way to stage 6
+     Authored at 256; run just under it so nothing is ever upscaled. */
+  magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:240, pat:'ember', cd:1.28, mini:true,
+                  pats:['ember','mslfan'], dmg:['nsb_magmaward_damaged','nsb_magmaward_critical']},
+  rimewall:      {key:'nsb_rimewall_intact',   name:'RIME WALL',        w:204,h:216, hp:232, pat:'lance', cd:1.22, mini:true,
+                  pats:['lance','chargebeam'], dmg:['nsb_rimewall_damaged','nsb_rimewall_critical']},
+  olivewarden:   {key:'nsb_olivewarden_intact',name:'OLIVE WARDEN',     w:210,h:216, hp:238, pat:'mslfan',cd:1.26, mini:true,
+                  pats:['mslfan','ember'], dmg:['nsb_olivewarden_damaged','nsb_olivewarden_critical']},
   thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true,
                   pats:['rime','chargebeam']},
   /* STAGE 4 HAD NO MINIBOSS AT ALL (drop 0811b). SUBBOSS[4] named 'subreactor', which is in
@@ -8976,6 +9082,7 @@ function spawnSubBoss__inner(kind){
            flash:0, dead:false, dying:0, fireCd:1.4, drift:0, atkPhase:0, phaseT:1.2, sub:true, name:'SUB-BOSS'};
   switch(kind){
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
+    case 'magmaward': case 'rimewall': case 'olivewarden':   // Mike's 0813h minis
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
     case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
       b.mini=true; shipBossInit(b, kind); break;
@@ -32450,8 +32557,7 @@ function drawModeSelect(dt){
     }
     ctx.restore();
   }
-  ctx.globalAlpha=0.55+0.45*Math.sin(stateT*5); ctx.fillStyle='#cfd6e0'; ctx.font='10px "BOFmil", monospace'; ctx.textAlign='center';
-  ctx.fillText('ARROWS: SELECT   FIRE: CONFIRM   BACK: TITLE',VW/2,VH-18); ctx.globalAlpha=1; ctx.textAlign='left';
+  drawHintBar('ARROWS: SELECT   FIRE: CONFIRM   BACK: TITLE');
   if(Input.tap('up')||Input.tap('w')){ modeIndex=(modeIndex+MODE_ITEMS.length-1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   if(Input.tap('down')||Input.tap('s')){ modeIndex=(modeIndex+1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   /* ONE ACTIVATION PATH, shared by the keyboard and the mouse (drop 0812a). Duplicating this
@@ -33762,7 +33868,6 @@ function _drawStageSelectInner(dt){
     }
   }
   // prompt
-  ctx.globalAlpha=0.55+0.45*Math.sin(stateT*5); ctx.fillStyle='#cfd6e0'; ctx.font='10px "BOFmil", monospace'; ctx.textAlign='center';
   /* THE HINT SITS AT THE BOTTOM OF THE SCREEN, NOT UNDER THE MAP (drop 0806h). Mike: "campaign
      map, move the message about how to scroll down to the bottom of the screen."
 
@@ -33770,7 +33875,7 @@ function _drawStageSelectInner(dt){
      and scale, so on a tall map it landed in the middle of the briefing text and overlapped it.
      Anchoring to VH-18 puts it where the title screen's identical hint already lives, so the two
      agree and it never collides with the map content. */
-  ctx.fillText('ARROWS: SELECT   FIRE: DEPLOY', VW/2, VH-18); ctx.globalAlpha=1; ctx.textAlign='left';
+  drawHintBar('ARROWS: SELECT   FIRE: DEPLOY');
   /* LOCK ONCE COMMITTED (drop 0801fe). Mike: "when we select a level to go to
      being our j/a button, do not allow me to keep moving or pressing stuff. lock
      that ability until we enter the level so it doesnt bug out."
