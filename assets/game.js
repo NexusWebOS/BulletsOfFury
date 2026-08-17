@@ -208,10 +208,24 @@ function connectorSurface(st, joinY, ww){
     return true;
   }
   if(cc.clouds && typeof XART!=='undefined'){
-    /* ncl_ are the nine authored cloud plates. nl6c_high_altitude_bank_ is NOT registered — the
-       opening's SKY phase asks for it and has been drawing nothing for it, so do not copy that. */
+    /* ⚠ ncl_ IS CHAIN LIGHTNING, NOT CLOUDS (drop 0813t). Mike: "why is the old chain lightning
+       graphics part of our scrolling on a stage? level 8 especially."
+
+       0801ek already caught and documented this exact mistake - "I picked ncl_1..11 for the cloud
+       layer in 0801cy on the strength of the name ... they are Yuri's chain lightning plates" - and
+       the note is sitting a couple of thousand lines below in this same file. This CALL SITE was
+       never changed, so gold lightning bolts have been scrolling as scenery on every stage since.
+       Rendered to confirm before touching it: ncl_1/3/5/10 are 235x366 and mean rgb(233,186,95),
+       matching the 0801ek measurement to a couple of points.
+
+       nl6c_low_rolling_bank_ is a real cloud - 256x192, mean rgb(137,140,162), neutral. Note the
+       old comment's claim about nl6c_high_altitude_bank_ being unregistered is about a DIFFERENT
+       family; the low rolling bank is registered and decodes.
+
+       Fixing the name here rather than deleting the layer, because the parallax itself is wanted -
+       it was only ever drawing the wrong art. */
     for(let i=0;i<6;i++){
-      const k='ncl_'+(1+(i%9));
+      const k='nl6c_low_rolling_bank_'+(i%6);
       if(!XART.rdy(k)) continue;
       const cim=XART.get(k), dep=0.45+((i%3)*0.28), w=200+((i%3)*70), h=w*(cim.naturalHeight/cim.naturalWidth);
       let sy=(((i*173)%(VH+h)) + joinY*dep)%(VH+h); if(sy<0) sy+=VH+h;
@@ -2559,10 +2573,19 @@ function stageMasterKey(cfg){
 /* CLOUD LAYER (drop 0801cy). Mike: "clouds, should be in most levels except
    space and the sewers."
 
-   ncl_1..11 are nine 235x366 cloud plates that have been registered and never
-   drawn once. They now form a slow parallax layer ABOVE the terrain and BELOW
-   everything that moves, so a cloud passes over the ground without ever hiding
-   a bullet or an enemy.
+   ⚠ THIS PARAGRAPH WAS WRONG AND IT COST TWO DROPS (corrected 0813t). ncl_1..11 are NOT cloud
+   plates - they are Yuri's CHAIN LIGHTNING, 235x366 at mean rgb(233,186,95), gold. 0801ek caught
+   that and wrote it up thirty lines below, but this paragraph was left standing and the call site
+   up at the cloud layer was never repointed, so gold bolts scrolled as scenery on every stage
+   until Mike flagged them again: "why is the old chain lightning graphics part of our scrolling
+   on a stage? level 8 especially."
+
+   The parallax layer itself is wanted and still runs - it just draws nl6c_low_rolling_bank_0..5
+   now, which are real clouds (256x192, mean rgb(137,140,162)). A slow layer ABOVE the terrain and
+   BELOW everything that moves, so a cloud passes over the ground without ever hiding a bullet or
+   an enemy.
+
+   The lesson is the file's own first rule: a contradicting comment is not a tie. RENDER the key.
 
    OFF on 5 (space), 7 (sewer) and 9 (space void) — you cannot have weather in
    orbit or underground. On everywhere else.
