@@ -8890,7 +8890,14 @@ function spawnBoss(kind){
   };
   switch(kind){
     /* the ship bosses (drop 0810s) take their whole stat line from SHIPBOSS */
+    /* ⚠ THIS IS spawnBoss's SWITCH - the STAGE-BOSS path. There is a near-identical
+       `case 'siegeember': ... shipBossInit(b,kind)` inside spawnSubBoss__inner, and 0813n added
+       the Vol.2 kinds THERE by mistake: they were built as minibosses and spawnBoss fell through
+       to its default, so all three came back 160x120 with no name and drew a placeholder.
+       shipBossInit itself was never the problem - probed directly it sets w/h/name correctly.
+       Two spawners, two switches; a kind must be registered in the one that matches its ROLE. */
     case 'infernoreaver': case 'cryospear': case 'voidbat':
+    case 'xenoregent': case 'doomsdaycarrier': case 'sludgeemperor':
       shipBossInit(b, kind); break;
     case 'damkeeper': b.name='JUNGLE OVERLORD-X'; b.w=170; b.h=130; break;
     case 'dreadnought': b.name='HELLFIRE GUNSHIP'; b.w=190; b.h=150; break;
@@ -9115,7 +9122,6 @@ function spawnSubBoss__inner(kind){
   switch(kind){
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
     case 'magmaward': case 'rimewall': case 'olivewarden':   // Mike's 0813h minis
-    case 'xenoregent': case 'doomsdaycarrier': case 'sludgeemperor':   // Vol.2 bosses
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
     case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
       b.mini=true; shipBossInit(b, kind); break;
