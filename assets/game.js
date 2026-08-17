@@ -5044,16 +5044,16 @@ const STAGES = [
       it takes the slot and Unity Breaker steps aside. Unity Breaker still draws
       and its spawn case is untouched — putting 'unitybreaker' back here restores
       it exactly as it was. */
-   length:56, boss:'voidbat'},          // bottom-right of the fleet sheet, per Mike 0810s
+   length:56, boss:'xenoregent'},          // bottom-right of the fleet sheet, per Mike 0810s
   {n:6, name:'STAGE 6', sub:'HEAVY TURBULENCE',         bg:'sky',    music:'deathtrap',
    /* STAGE 6 (drop 0801cf): leviathan's sectional code is not in the registered
       nsx_ set — it drew nothing, measured. STORM SOVEREIGN is the pack's stage-6
       boss. */
-   length:56, boss:'stormsovereign'},
+   length:56, boss:'doomsdaycarrier'},
   {n:7, name:'STAGE 7', sub:'NOT ANOTHER SEWER LEVEL',  bg:'sewer',  music:'stage7mus',
    /* STAGE 7 (drop 0801cf): cesspool drew no art at all — 0 image blits, purely
       procedural shapes. TOXIC LEVIATHAN is the pack's stage-7 boss. */
-   length:58, boss:'toxicleviathan'},
+   length:58, boss:'sludgeemperor'},
   {n:8, name:'STAGE 8', sub:'FURIOUS DEATH',            bg:'space',  music:'lvl6',
    length:60, boss:'vileexistence'},
 ];

@@ -586,7 +586,18 @@ console.log('\n=== 17. level environment pack (6 masters + liquid) ===');
   ok(vm.runInContext("STAGES[6].sub", ctxv) === 'NOT ANOTHER SEWER LEVEL', 'stage 7 is NOT ANOTHER SEWER LEVEL (new)');
   /* the stage-6 boss was repointed to STORM SOVEREIGN in drop 0801cf, when the
      eight new mech bosses were wired. RUNWAY LEVIATHAN is not in STAGES any more. */
-  ok(vm.runInContext("STAGES[5].boss", ctxv) === 'stormsovereign', 'stage 6 boss = STORM SOVEREIGN');
+  /* CF_BOF_Bosses_Compatibility (drop 0813q). Mike: "heres new BOSSES for level 5 - 6 and 7."
+     What this guards is not the name but that the boss RESOLVES ITS ART: shipBossDraw falls back to
+     a deliberate hull silhouette when XART.rdy is false, and for a while all three Vol.2 bosses were
+     drawing that polygon because their plates were never registered in the manifest. A key that is
+     absent from window.BOFX can never decode, so assert the registration too. */
+  var _g229q=fs.readFileSync(ROOT+'/assets/manifest.js','utf8');
+  ok(vm.runInContext("STAGES[5].boss", ctxv) === 'doomsdaycarrier', 'stage 6 boss = DOOMSDAY CARRIER');
+  /* ⚠ BOFX[key] IS NOT THE TEST. In the page it reads false even for nsb_siege_ember, which has
+     been registered for weeks - so it says nothing about whether art resolves. The manifest TEXT is
+     what was actually edited and what lets XART find a loose plate at all, so check that. */
+  ok(_g229q.indexOf('"' + vm.runInContext("SHIPBOSS.doomsdaycarrier.key", ctxv) + '"') > 0,
+     'the carrier plate is registered in the manifest, so it can decode');
   ok(vm.runInContext("!!LEVIATHAN_SPEC && LEVIATHAN_SPEC.modules.length===9", ctxv), 'leviathan spec has 9 modules');
   ok(vm.runInContext("LEVIATHAN_SPEC.modules.some(m=>m.role==='door')", ctxv), 'leviathan has a door module');
   // every stage resolves a master that is loaded
@@ -1479,7 +1490,15 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* CESSPOOL was culled at Mike's own instruction ("the gator can go. delete all")
      and stage 7 was repointed to TOXIC LEVIATHAN. The very next assertion in this
      file checks the cesspool ART is gone, so this one contradicted it. */
-  ok(vm.runInContext("STAGES[6].boss==='toxicleviathan'", ctxv), 'stage 7 boss = TOXIC LEVIATHAN');
+  ok(vm.runInContext("STAGES[6].boss==='sludgeemperor'", ctxv), 'stage 7 boss = SLUDGE EMPEROR (0813q)');
+  ok(_g229q.indexOf('"' + vm.runInContext("SHIPBOSS.sludgeemperor.key", ctxv) + '"') > 0 &&
+     _g229q.indexOf('"' + vm.runInContext("SHIPBOSS.xenoregent.key", ctxv) + '"') > 0,
+     'the stage 5 + 7 plates are registered too');
+  ok(vm.runInContext("STAGES[4].boss==='xenoregent'", ctxv), 'stage 5 boss = XENO REGENT (0813q)');
+  /* the carrier ships a 16-frame launch cycle; every frame must be registered or it stutters */
+  ok(Array.from({length:16},function(_,i){return 'nsb_dcarrier_'+String(i).padStart(2,'0');})
+       .every(function(k){ return _g229q.indexOf('"'+k+'"') > 0; }),
+     'all 16 doomsday carrier launch frames are registered');
   /* CESSPOOL LEVIATHAN was CULLED at Mike's instruction ("the gator can go. delete all") — its 21
      mba_cl_ keys are in _quarantine. These assertions used to prove it built as a 5-part modular
      boss; they now prove the OPPOSITE, which is the behaviour that matters after a cull: the art

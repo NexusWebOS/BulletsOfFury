@@ -2,7 +2,7 @@
  {
   "stage": 1,
   "kind": "junglecruiser",
-  "px": 82843,
+  "px": 82437,
   "verdict": "ok"
  },
  {
@@ -37,8 +37,8 @@
  },
  {
   "stage": 7,
-  "kind": "olivecarrier",
-  "px": 45587,
+  "kind": "ratking",
+  "px": 100869,
   "verdict": "ok"
  },
  {
