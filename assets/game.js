@@ -8319,9 +8319,21 @@ const SHIPBOSS = {
      how the 0813h import got its ordering wrong. f01/f02/f03(/f04) is the author's own sequence. */
   xenoregent:    {key:'nsb_xenoregent_intact',      name:'XENO REGENT',    w:216,h:208, hpMul:1.42, pat:'void',  cd:1.28,
                   pats:['void','chargebeam','mslfan'], dmg:['nsb_xenoregent_damaged','nsb_xenoregent_critical']},
-  doomsdaycarrier:{key:'nsb_doomsdaycarrier_intact',name:'DOOMSDAY CARRIER',w:300,h:146, hpMul:1.50, pat:'mslfan',cd:1.24,
-                  pats:['mslfan','ember','beamfan'], dmg:['nsb_doomsdaycarrier_damaged','nsb_doomsdaycarrier_critical'],
-                  bays:'nsb_doomsdaycarrier_open'},
+  /* THE CARRIER IS A 16-FRAME LAUNCH CYCLE (drop 0813o). CF_DoomsdayCarrierAnimation-Lvl6:
+     closed -> opening -> loaded -> launch -> empty -> closing -> closed, `loop:false` in the
+     pack's own json, so it plays ONCE per launch rather than idling.
+
+     ⚠ CROPPED ON A SHARED BOX, NOT PER FRAME. Every frame's own bbox differs - the bay doors
+     change the silhouette as they open - so trimming each one individually would make the hull
+     jitter across the cycle. One union box for all 16 keeps it locked.
+
+     The warhead that emerges at f07..f10 is nfx_omegawarhead_in; nfx_omegawarhead_ref is the
+     same round after the player reflects it. */
+  doomsdaycarrier:{key:'nsb_dcarrier_00', name:'DOOMSDAY CARRIER', w:300,h:146, hpMul:1.50, pat:'mslfan',cd:1.24,
+                  pats:['mslfan','ember','beamfan'],
+                  dmg:['nsb_doomsdaycarrier_damaged','nsb_doomsdaycarrier_critical'],
+                  launch:{frames:16, pre:'nsb_dcarrier_', fps:14, loop:false,
+                          release:10, warhead:'nfx_omegawarhead_in'}},
   sludgeemperor: {key:'nsb_sludgeemperor_intact',   name:'SLUDGE EMPEROR', w:220,h:216, hpMul:1.46, pat:'lance', cd:1.30,
                   pats:['lance','ember','mslfan'], dmg:['nsb_sludgeemperor_damaged','nsb_sludgeemperor_critical']},
   magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:240, pat:'ember', cd:1.28, mini:true,
