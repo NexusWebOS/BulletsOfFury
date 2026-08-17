@@ -10089,8 +10089,25 @@ console.log("=== 220. named minibosses ===");
   ok(_f220b.length===0,
      'no ship boss or miniboss carries a draw-time palette'+(_f220b.length?(' — '+_f220b.join(', ')):''));
   var _g220=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g220.indexOf('const im=XART.get(D.key);')>0,
-     'and shipBossDraw takes the plate as authored');
+  /* ⚠ THIS PINNED THE LINE, NOT THE RULE (rewritten 0813u). It required the literal
+     `const im=XART.get(D.key);`, which broke the moment the Doomsday Carrier started driving its
+     own 16-frame launch reel through _animKey. The RULE this section is about is the one stated
+     just above - no ship boss is recoloured at draw time - and selecting a different AUTHORED
+     FRAME does not breach it. So: the plate still comes straight from XART with no tint applied,
+     and any per-frame override must resolve through XART.rdy rather than being invented. */
+  ok(_g220.indexOf('XART.get(_ak)')>0 && _g220.indexOf("b._animKey && XART.rdy(b._animKey)")>0,
+     'shipBossDraw takes an authored plate, and an animated boss picks a frame that must be decoded');
+  /* bound the function by LENGTH rather than by a newline escape - writing '
+' through a
+     generator mangled it into a real line break and broke the file. */
+  var _sbd=_g220.substr(_g220.indexOf('function shipBossDraw'), 4000);
+  /* ⚠ xartTint IS ALLOWED HERE and my first version of this wrongly banned it: the white flash on
+     hit is Mike's standing rule for every unit ("glow white when shot etc.") and it goes through
+     xartTint. What is banned is RECOLOURING - xartPalette and the `pal` field 0812h removed. */
+  ok(_sbd.indexOf('xartPalette')<0,
+     'and it never palette-swaps at draw time - recolouring happens at import, never here');
+  ok(_sbd.indexOf('xartTint(')>0,
+     'while the white hit flash is still applied, which is the standing rule for every unit');
 }
 
 // ===== 221. THE STAGE'S BOSS ART IS WARMED TOO (drop 0812f) =====

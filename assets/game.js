@@ -8600,7 +8600,10 @@ function shipBossManoeuvre(b, dt){
      decrements _brkCd, so gating the call on `b._brk` alone would leave the cooldown frozen the
      moment the sweep ended - and no rake would ever arm again for the rest of the fight. */
   if(b._brk || b._brkCd>0) beamRakeTick(b, dt);
-  if(b._orb) reaverOrbTick(b, dt);            // the wind-up runs on the frame clock, not the volley beat
+  if(b._orb) reaverOrbTick(b, dt);
+  /* the carrier's reel runs on the FRAME clock, not the volley beat - the round leaves on the
+     animation frame that shows it clearing the bay. See carrierTick. */
+  if(b._ship==='doomsdaycarrier' && typeof carrierTick==='function') carrierTick(b, dt);            // the wind-up runs on the frame clock, not the volley beat
   /* WOBBLE UNDER THE RAKE. Mike: "He needs to have those laser attacks continue to rotate as he
      wobbles side to side and shoots out rockets we shoot down." The spokes already rotate; this is
      the hull drifting across them so the corridor keeps moving, and emissile is already shootable
@@ -8844,6 +8847,94 @@ function shipBossAttack(b){
 }
 /* south-facing 256 cell, pivot centre. White flash on hit is Mike's standing rule for every unit
    and he asked for it again by name: "glow white when shot etc." */
+/* ============================================================
+   THE DOOMSDAY CARRIER — BAY LAUNCH, DEFLECTION, AND THE RISING TIDE (drop 0813u)
+
+   Mike: "those rockets should be projectiles that shoot forward via the animation finish so it
+   looks part of it and fluid ... the missle bays are to be destroyable, the missiles can be shot
+   and deflected back at the boss, as this is the only way to destroy the missile bays, and through
+   gravity as it constantly shoots missiles, they begin to float and row up and fill the screen if
+   you dont."
+
+   THE ROUND LEAVES ON THE ANIMATION, NOT ON A TIMER. The reel is closed -> opening -> loaded ->
+   launch -> empty -> closing, and the warhead is spawned on the frame where the art shows it
+   clearing the bay (LAUNCH_RELEASE). So the projectile is the animation continuing, not a separate
+   event that happens to overlap it.
+
+   THREE SECTIONS, TWO OF THEM DESTRUCTIBLE. Mike asked for the boss split into a middle and two
+   missile bays, with the bays taking their own hits and the side boxes being DIMENSIONAL ONLY -
+   "you wont be removing or adding those, your just making dimensional hit boxes". So the art is
+   never cut: CARRIER_BAY is a pair of fractions of the hull box, and a bay is a hitbox plus hp
+   over the existing plate.
+
+   ⚠ THE BAYS ARE IMMUNE TO ORDINARY FIRE. Deflected warheads are the ONLY thing that damages them,
+   exactly as asked. Shooting the hull does nothing to a bay, so the fight cannot be brute-forced.
+
+   THE TIDE IS THE PRESSURE. A warhead the player never deflects does not leave: it slows at the
+   bottom, turns buoyant and rises, and the screen fills. That is the fail state Mike describes -
+   ignore the mechanic and you drown in your own uncleared rounds. */
+const CARRIER_BAY = {                       // fractions of the hull box, left and right
+  L:{x0:-0.46, x1:-0.17, y0:-0.34, y1:0.30},
+  R:{x0: 0.17, x1: 0.46, y0:-0.34, y1:0.30}
+};
+const CARRIER_BAY_HP   = 6;                 // deflected warheads needed per bay
+const CARRIER_FLOAT_Y  = 0.86;              // fraction of VH where an ignored round starts to rise
+function carrierBayBox(b, side){
+  const f=CARRIER_BAY[side]; if(!f) return null;
+  const y=(b._drawY!=null?b._drawY:b.y);
+  return {x0:b.x+b.w*f.x0, x1:b.x+b.w*f.x1, y0:y+b.h*f.y0, y1:y+b.h*f.y1};
+}
+function carrierInit(b){
+  if(b._bay) return;
+  b._bay={L:CARRIER_BAY_HP, R:CARRIER_BAY_HP};
+  b._lc={t:0, f:0, playing:false, side:'L', fired:false};
+}
+function carrierTick(b, dt){
+  const D=SHIPBOSS[b&&b._ship]; if(!D||!D.launch) return;
+  carrierInit(b);
+  const L=D.launch, S=b._lc;
+  if(!S.playing){
+    /* both bays gone -> no more launches. The fight is decided by then. */
+    if(b._bay.L<=0 && b._bay.R<=0){ b._animKey=L.pre+'00'; return; }
+    S.cd=(S.cd==null? 1.2 : S.cd)-dt;
+    if(S.cd<=0){
+      S.playing=true; S.t=0; S.f=0; S.fired=false;
+      /* alternate bays, and skip one that is already destroyed */
+      S.side = (S.side==='L') ? 'R' : 'L';
+      if(b._bay[S.side]<=0) S.side = (S.side==='L') ? 'R' : 'L';
+    }
+  }
+  if(S.playing){
+    S.t+=dt;
+    S.f=Math.floor(S.t*L.fps);
+    if(S.f>=L.frames){ S.playing=false; S.f=L.frames-1; S.cd=1.1+Math.random()*0.7; }
+    if(!S.fired && S.f>=L.release && b._bay[S.side]>0){
+      S.fired=true;
+      const box=carrierBayBox(b, S.side);
+      const sx=box?(box.x0+box.x1)/2:b.x;
+      const sy=box?box.y1:((b._drawY!=null?b._drawY:b.y)+b.h*0.30);
+      eBullets.push({x:sx, y:sy, vx:0, vy:1.35, ang:Math.PI/2, w:22, h:56,
+                     dmg:1, t:0, kind:'omegawarhead', _fx:'missile', _side:S.side});
+      if(Audio.SFX && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+    }
+  }
+  b._animKey = L.pre + String(Math.max(0,Math.min(L.frames-1,S.f))).padStart(2,'0');
+}
+/* a deflected round landing on a bay is the only thing that hurts one */
+function carrierBayHit(b, wx, wy){
+  if(!b||!b._bay) return false;
+  for(const side of ('LR')){
+    if(b._bay[side]<=0) continue;
+    const box=carrierBayBox(b, side); if(!box) continue;
+    if(wx>=box.x0 && wx<=box.x1 && wy>=box.y0 && wy<=box.y1){
+      b._bay[side]--; b.flash=0.12;
+      if(typeof explode==='function') explode(wx, wy, b._bay[side]<=0?16:9, 'orange');
+      if(b._bay[side]<=0 && typeof floatText==='function') floatText(wx, wy-14, side+' BAY DOWN', '#ffd36b');
+      return true;
+    }
+  }
+  return false;
+}
 function shipBossDraw(b){
   const D=SHIPBOSS[b&&b._ship]; if(!D) return false;
   if(typeof XART==='undefined' || !XART.rdy(D.key)){
@@ -8875,7 +8966,9 @@ function shipBossDraw(b){
      the plate gets themed and imported, not tinted here. */
   /* the rake draws UNDER the hull, so the spokes read as coming out of the ship */
   if(b._brk && typeof beamRakeDraw==='function') beamRakeDraw(b);
-  const im=XART.get(D.key);
+  /* a boss running an authored reel drives its own frame; everything else keeps its single plate */
+  const _ak=(b._animKey && XART.rdy(b._animKey)) ? b._animKey : D.key;
+  const im=XART.get(_ak);
   const s=b.w/256, w=256*s, h=256*s;
   const x=b.x-w/2, y=(b._drawY!=null?b._drawY:b.y)-h/2;
   ctx.save();
@@ -16046,6 +16139,45 @@ function updatePlay(dt){
       }
       if(b.dead) continue;
     }
+    if(b.kind==='omegawarhead'){
+      /* THREE LIVES: inbound -> deflected -> or never dealt with, and then it rises.
+         The pack ships exactly two frames for this round, enemy_inbound and player_reflected, so
+         the art was authored for this mechanic; _ref picks between them. */
+      if(!b._ref){
+        for(const pb of pBullets){
+          if(pb.dead) continue;
+          const hit = (pb.kind==='beam')
+            ? (Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y))
+            : (Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2));
+          if(!hit) continue;
+          /* DEFLECTED, not destroyed. Mike: "the missiles can be shot and deflected back at the
+             boss, as this is the only way to destroy the missile bays." */
+          b._ref=true; b._fx='missile'; b.vy=-3.1; b.vx*=0.3; b.ang=-Math.PI/2; b.t=0;
+          if(!pb.pierce) pb.dead=true;
+          if(typeof addTrail==='function') addTrail(b.x,b.y,null,'missile');
+          if(Audio.SFX && Audio.SFX.clank) Audio.SFX.clank();
+          break;
+        }
+      }
+      if(b._ref){
+        b.vy=Math.max(-5.4, b.vy-3.4*dt);          // accelerates back up the screen
+        if(boss && bossActive && !boss.dead && typeof carrierBayHit==='function'){
+          if(carrierBayHit(boss, b.x, b.y)){ b.dead=true; continue; }
+        }
+        if(b.y < PLAY.y-40){ b.dead=true; continue; }
+      } else {
+        /* THE TIDE. An ignored round does not leave the screen - near the floor it turns buoyant
+           and rises, so uncleared missiles stack up and fill the play field. */
+        if(b.y > VH*CARRIER_FLOAT_Y){
+          b._buoy=true; b.vx*=0.94;
+        }
+        if(b._buoy){
+          b.vy=Math.max(-0.85, b.vy-1.5*dt);
+          b.ang=-Math.PI/2;
+          b.x += Math.sin((b.t||0)*1.6 + (b.x*0.03))*8*dt;   // slow drift so the raft is not a grid
+        }
+      }
+    }
     if(b.kind==='fireorb'){
       /* HOMES FAR, COMMITS NEAR - see reaverOrbTick. Once it is inside FIREORB_COMMIT the heading
          is frozen for good, so breaking late sends it past and off the world instead of hooking
@@ -20163,7 +20295,9 @@ const FIRETYPES={
   comet: { art:(b)=>eaCometKey(b.pal||'red', ((b.t||0)*12)|0), align:true, h:20, glow:'#ff8a4a'},
   blast: { art:(b)=>'mfx_bpow_'+({red:0,blue:1,white:2}[b.pal||'red']||0)+'_0', align:false, h:26, glow:'#ffd36b'},
   homing:{ art:(b)=>'mfx_hom_0_'+(((b.t||0)*14|0)%10), align:true, h:18, glow:'#ff6ba0'},
-  missile:{art:(b)=>'mfx_emr_0_'+(((b.t||0)*12|0)%4), align:true, h:20, glow:'#ffb04a'},
+  missile:{art:(b)=>(b&&b.kind==='omegawarhead')
+              ? (b._ref?'nfx_omegawarhead_ref':'nfx_omegawarhead_in')   // authored pair
+              : 'mfx_emr_0_'+(((b.t||0)*12|0)%4), align:true, h:20, glow:'#ffb04a'},
   /* the four Mike scrapped now ALIAS onto survivors, so any call site I have not
      found yet still draws something correct rather than nothing:
        dart -> pellet (both are the small aimed round)
@@ -20260,6 +20394,7 @@ const PROJ = {
   // ---- comet: boss plasma, per-stage palette (PASSOVER.md)
   comet:{type:'comet',slot:2}, plasma:{type:'comet',slot:2},
   fireorb:{type:'comet',slot:2},   // the reaver's charged orb - authored comet reel, pal 'orange'
+  omegawarhead:{type:'missile',slot:5},   // the carrier's round; _ref picks the reflected plate
   railshot:{type:'comet',slot:2}, shell:{type:'comet',slot:2}, mechshot:{type:'comet',slot:2},
   frostComet:{type:'comet',slot:2,pal:'blue',tint:'#9fe6ff'},
   // ---- blast: Leviathan triple burst (PASSOVER.md)
