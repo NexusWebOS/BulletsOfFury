@@ -33247,7 +33247,12 @@ const CMAP_FX={
   stage02:{fx:'smoke', n:8, tint:'#ffc79a'},   // volcano — a real plume off the caldera
   stage03:{fx:'snow',  n:9, tint:'#cfe8ff'},   // ice shelf — drifting snow
   stage04:{fx:'ember', n:4, tint:'#ffd36b'},   // airbase — runway lights / heat
-  stage05:{fx:'ember', n:6, tint:'#ff8a5a'},   // the central citadel — ember rise
+  /* ⚠ NO FX ON STAGE 5 (drop 0813v). Mike: "no we dont need that anymore. Idk where this ember
+     is even coming from." It was authored when stage 5 was 'the central citadel' - a volcanic
+     node - and the stage is orbital space now, so six orange embers were rising off a starfield.
+     n:0 rather than deleting the row, so the node still has an entry and nothing downstream has
+     to special-case a missing key. */
+  stage05:{fx:'ember', n:0, tint:'#ff8a5a'},   // was the citadel's ember rise - retired
   stage06:{fx:'cloud', n:3, tint:'#c8d4ff'},   // turbulence — storm cells rolling
   stage07:{fx:'smoke', n:4, tint:'#9fe86a'},   // sewer — toxic haze
   stage08:{fx:'ember', n:6, tint:'#ff5a5a'},   // furious death — red ember
