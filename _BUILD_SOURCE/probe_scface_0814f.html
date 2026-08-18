@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>probe 0814f — which portrait the stage-clear screen actually shows</title>
+<base href="../">
+<style>
+  html,body{margin:0;padding:0;background:#000;overflow:hidden;}
+  #screen-area{position:absolute;left:0;top:0;width:480px;height:512px;overflow:hidden;}
+  #screen{display:block;position:absolute;left:0;top:0;width:480px;height:512px;image-rendering:pixelated;}
+  #hud-wrap,#equip-dom{position:absolute;left:-9999px;top:-9999px;}
+  #tag{position:absolute;left:0;top:520px;color:#0f0;font:11px monospace;white-space:pre;}
+</style></head>
+<body>
+<div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+<div id="hud-wrap"><canvas id="hud" width="480" height="62"></canvas></div>
+<div id="equip-dom"><canvas id="equipcv" width="128" height="128"></canvas></div>
+<div id="tag">boot</div>
+<script src="assets/manifest.js"></script>
+<script src="assets/section_geom.js"></script>
+<script src="assets/game.js"></script>
+<script>
+/* PROBE 0814f — "Cole's portrait shows crash at rank B; the table says laugh" (Known open).
+   ?cold=1   build the results the way a REAL run reaches them: no pre-warm, one-shot scPortrait.
+   ?cold=0   poll the portrait keys ready first, then build.
+
+   The suspicion is CLAUDE.md's own top-listed trap: XART.rdy(k) is false on its FIRST call, and
+   scPortrait is a one-shot readiness chain cached into _res.face at results-build time. Cold vs
+   warm tells us whether the bug is the table (never) or the timing (rdy fallthrough). */
+(function(){
+  var Q = new URLSearchParams(location.search);
+  var COLD = Q.get('cold') !== '0';
+  var tag = document.getElementById('tag');
+
+  var tries = 0;
+  function boot(){
+    tries++;
+    if (typeof XART === 'undefined'){ if(tries<200) setTimeout(boot,25); return; }
+    run.pilot = 'cole'; run.stage = 1; curStage = STAGES[0];
+
+    /* rank B by construction: good-but-not-great stats through the real computeStageResults */
+    stageStats.spawned=20; stageStats.kills=16; stageStats.shots=100; stageStats.hits=70;
+    stageStats.missiles=0; stageStats.mslHits=0; stageStats.dmgDealt=900; stageStats.deaths=1;
+    stageStats.spShots=0; stageStats.spHits=0; stageStats.spDmg=0;
+
+    function build(){
+      computeStageResults();
+      var R = drawStageClear._res || {};
+      /* draw the screen a few frames so the pixels exist too */
+      try { setState(GS.STAGECLEAR); } catch(e){}
+      var f=0; (function step(){
+        try { drawStageClear(1/60); } catch(e){}
+        if (++f<40){ setTimeout(step,0); return; }
+        tag.textContent = JSON.stringify({
+          mode: COLD ? 'COLD (as a real run reaches it)' : 'WARM (keys polled ready first)',
+          rank: R.rank, face: R.face,
+          want: (typeof SC_FACE!=='undefined') ? SC_FACE[R.rank] : '?',
+          rdyNow: ['port_cole_laugh','port_cole_idle','port_cole','card_cole','port_cole_crash']
+            .map(function(k){ return k+'='+(XART.rdy(k)?1:0); }).join(' ')
+        });
+      })();
+    }
+
+    if (COLD){ build(); return; }
+    var keys=['port_cole_laugh','port_cole_idle'];
+    keys.forEach(function(k){ XART.rdy(k); });
+    var w=0; (function wait(){
+      if (keys.every(function(k){ return XART.rdy(k); }) || ++w>200){ build(); return; }
+      setTimeout(wait, 25);
+    })();
+  }
+  boot();
+})();
+</script>
+</body></html>

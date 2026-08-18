@@ -1234,7 +1234,12 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
   wrong scheme for either and picking one is Mike's call.
 - The stats screen is misaligned in the browser — labels sit ~half a row above their bars, and
   COLE/RANK collide with the first two rows. Correct in a Python render, wrong in the game.
-- Cole's portrait shows the `crash` emotion at rank B; the table says `laugh`.
+- ~~Cole's portrait shows the `crash` emotion at rank B; the table says `laugh`.~~ **CLOSED as
+  stale, measured (0814f).** `SC_FACE.B='laugh'`, `scPortrait` returns `port_cole_laugh` both COLD
+  (one-shot, the way a real run reaches it) and warm, the stage-clear screen draws it, and the ART
+  under that key rendered IS a laugh — all seven cole emotions contact-sheeted in
+  `probe_coleface_0814f.html`, none swapped. Fixed by the 0807o stage-clear rebuild; the entry
+  outlived the fix.
 - Two 404s at boot.
 - The `validate_antipatterns.py` hook errors on every write — its script path does not exist.
 - ~~Jets: observed speed varies 96–138 even on `straight`.~~ **CLOSED and MEASURED in 0811t**
@@ -1862,8 +1867,11 @@ caller.
 4. Move 1→2 and 3→4 onto `exitConnectorDraw`; then the 5→6, 6→7, 7→8 outbound joins.
 
 **Waiting on Mike** (both from the beta tester's list, 0812a/b):
-- **The barrel roll fires on micro-adjustments.** Tester wants hold/toggle **shift** to suppress it;
-  Mike wanted a cooldown. Feel change to core movement — his call on which, not both.
+- ~~**The barrel roll fires on micro-adjustments.**~~ **CLOSED — Mike decided and it SHIPPED**
+  (0814f, reading the code): `BR_COOL=5.0` with his words quoted at the constant ("lets do a 5
+  second cooldown on barrel rolling") and the re-arm bar drawn on the HUD. Shift-suppress was NOT
+  added, per "his call on which, not both". The trigger itself is still double-tap within
+  `BR_WINDOW=0.26s` — if accidental rolls get re-reported, tune the WINDOW, not the cooldown.
 - **A `%` in the BOF face.** There is none in any of the eight BOF sheets; the stats screen borrows
   stage 2's molten one, tinted to match. Authored art, so his call. `§217` pins the borrow and will
   fail the moment a real one exists, which is how it gets removed.

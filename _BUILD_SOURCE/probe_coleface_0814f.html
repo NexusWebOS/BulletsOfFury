@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>probe 0814f — cole's seven emotion portraits, labelled</title>
+<base href="../">
+<style>html,body{margin:0;padding:0;background:#202028;} #tag{color:#0f0;font:11px monospace;}</style>
+</head>
+<body>
+<div style="position:absolute;left:-9999px;top:-9999px;">
+  <div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+</div>
+<canvas id="sheet" width="1400" height="360"></canvas>
+<div id="tag">boot</div>
+<script src="assets/manifest.js"></script>
+<script src="assets/section_geom.js"></script>
+<script src="assets/game.js"></script>
+<script>
+/* Rule 1: the key says laugh — does the ART? All seven cole emotions on one labelled sheet. */
+(function(){
+  var tag=document.getElementById('tag');
+  var cvs=document.getElementById('sheet'), g=cvs.getContext('2d');
+  g.imageSmoothingEnabled=false;
+  var emos=['idle','smile','anger','laugh','sad','victory','crash'];
+  var keys=emos.map(function(e){ return 'port_cole_'+e; });
+  keys.forEach(function(k){ try{ XART.rdy(k); }catch(e){} });
+  var tries=0;
+  (function draw(){
+    tries++;
+    if (!keys.every(function(k){ return XART.rdy(k); }) && tries<200){ setTimeout(draw,30); return; }
+    g.fillStyle='#202028'; g.fillRect(0,0,cvs.width,cvs.height);
+    g.font='14px monospace';
+    var x=10;
+    keys.forEach(function(k,i){
+      if(!XART.rdy(k)){ g.fillStyle='#f66'; g.fillText(emos[i]+' MISSING', x, 20); x+=190; return; }
+      var im=XART.get(k), s=Math.min(180/im.naturalWidth, 300/im.naturalHeight);
+      var w=im.naturalWidth*s, h=im.naturalHeight*s;
+      g.fillStyle='#9f9'; g.fillText(emos[i], x, 20);
+      g.strokeStyle='#555'; g.strokeRect(x-1,27,w+2,h+2);
+      g.drawImage(im, x, 28, w, h);
+      x+=195;
+    });
+    tag.textContent='DONE '+keys.filter(function(k){return XART.rdy(k);}).length+'/7';
+  })();
+})();
+</script>
+</body></html>
