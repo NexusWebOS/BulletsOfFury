@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>probe 0814e — which miniboss is the hitbox square</title>
+<!-- relative asset URLs resolve against the project root; see probe_arenafloor_0813x.html -->
+<base href="../">
+<style>
+  html,body{margin:0;padding:0;background:#000;overflow:hidden;}
+  #screen-area{position:absolute;left:0;top:0;width:480px;height:512px;overflow:hidden;}
+  #screen{display:block;position:absolute;left:0;top:0;width:480px;height:512px;image-rendering:pixelated;}
+  #hud-wrap,#equip-dom{position:absolute;left:-9999px;top:-9999px;}
+  #tag{position:absolute;left:0;top:520px;color:#0f0;font:11px monospace;white-space:pre;}
+</style></head>
+<body>
+<div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+<div id="hud-wrap"><canvas id="hud" width="480" height="62"></canvas></div>
+<div id="equip-dom"><canvas id="equipcv" width="128" height="128"></canvas></div>
+<div id="tag">boot</div>
+<script src="assets/manifest.js"></script>
+<script src="assets/section_geom.js"></script>
+<script src="assets/game.js"></script>
+<script>
+/* PROBE 0814e — the tester's "miniboss is still a hitbox square", stage never identified.
+   ?stage=<n>   spawns that stage's own SUBBOSS kind and holds the fight on screen.
+
+   Two lessons this probe exists to respect:
+   - 0812c: an UNWARMED hull photographs as the placeholder if you spawn and shoot in one
+     synchronous block. So the frames here run on setTimeout, yielding between every frame, and the
+     screenshot lands ~6 SIMULATED seconds in — long past any decode that is ever going to land.
+   - 0810l: a blit count on a hand-called draw lies. The verdict here is the SCREENSHOT plus the
+     unit's own state read off the live object, not a wrapped drawImage. */
+(function(){
+  var Q  = new URLSearchParams(location.search);
+  var SN = parseInt(Q.get('stage') || '1', 10);
+  var tag = document.getElementById('tag');
+
+  var tries = 0;
+  function ready(){
+    if (typeof XART === 'undefined' || typeof _levelCfg !== 'function') return false;
+    var c = _levelCfg(); if (!c) return false;
+    return XART.rdy(c.master);
+  }
+  function boot(){
+    tries++;
+    if (!ready()){
+      if (tries > 400){ tag.textContent = 'ART NEVER ARRIVED stage ' + SN; return; }
+      if (tries === 1){ try{ run.stage=SN; curStage=STAGES[SN-1]; beginStage(SN); setState(GS.PLAY); }catch(e){} }
+      setTimeout(boot, 25); return;
+    }
+    player.reset(); player.x = worldWidth()/2;
+    var kindTable = (typeof SUBBOSS!=='undefined') ? SUBBOSS[SN] : null;
+    var kind = kindTable && kindTable.kind;
+    if (!kind){ tag.textContent = JSON.stringify({stage:SN, kind:null, note:'NO SUBBOSS ENTRY'}); return; }
+    try { spawnSubBoss(kind); } catch(e){ tag.textContent = JSON.stringify({stage:SN, kind:kind, spawnThrew:e.message}); return; }
+    if (typeof subBoss==='undefined' || !subBoss){ tag.textContent = JSON.stringify({stage:SN, kind:kind, note:'SPAWN REFUSED (retired?)'}); return; }
+    subBoss.enter = false; subBoss.y = 150;   // parked in frame so the screenshot is about the ART
+
+    var DT = 1/60, f = 0, FRAMES = 360;      // ~6 simulated seconds, yielding every frame
+    (function step(){
+      player.dead = false; player.invuln = 0; player.hp = 99;   // the fight must not end the probe
+      try { updatePlay(DT); } catch(e){}
+      try { drawWorld(DT); } catch(e){}
+      if (++f < FRAMES){ setTimeout(step, 0); return; }
+      var b = subBoss || {};
+      tag.textContent = JSON.stringify({
+        stage: SN, kind: kind,
+        alive: !!(b && !b.dead), w: b.w, h: b.h, hp: Math.round(b.hp||0),
+        x: Math.round(b.x||0), y: Math.round(b.y||0),
+        art: b.art||null, shipKey: b._shipKey||b.key||null,
+        flags: ['_ship','_mech','_sx','_gen','_ql','_ratking','_herald'].filter(function(k){return !!b[k];})
+      });
+    })();
+  }
+  boot();
+})();
+</script>
+</body></html>

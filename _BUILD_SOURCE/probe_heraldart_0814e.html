@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>probe 0814e — what nev_venom and mba_vr actually are</title>
+<base href="../">
+<style>
+  html,body{margin:0;padding:0;background:#202028;}
+  #sheet{display:block;}
+  #tag{color:#0f0;font:11px monospace;white-space:pre;}
+</style></head>
+<body>
+<!-- game.js dereferences these at load; without them it dies before XART exists -->
+<div style="position:absolute;left:-9999px;top:-9999px;">
+  <div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+</div>
+<canvas id="sheet" width="1200" height="640"></canvas>
+<div id="tag">boot</div>
+<script src="assets/manifest.js"></script>
+<script src="assets/section_geom.js"></script>
+<script src="assets/game.js"></script>
+<script>
+/* Rule 1: filenames lie — render the art before trusting it. This draws every nev_venom_0_* frame
+   at native size on a labelled contact sheet, and reports which mba_vr_* / nvr_* keys are even
+   REGISTERED (XART._src), separately from which have decoded. */
+(function(){
+  var tag=document.getElementById('tag');
+  var cvs=document.getElementById('sheet'), g=cvs.getContext('2d');
+  g.imageSmoothingEnabled=false;
+
+  var names=[];
+  for(var i=0;i<=12;i++) names.push('nev_venom_0_'+i);
+  // touch everything so lazy decode starts
+  names.forEach(function(k){ try{ XART.rdy(k); }catch(e){} });
+
+  var reg={ nev:[], mba_vr:[], nvr:[] };
+  for(var k in (XART._src||{})){
+    if(k.indexOf('nev_venom')===0) reg.nev.push(k);
+    if(k.indexOf('mba_vr')===0)    reg.mba_vr.push(k);
+    if(k.indexOf('nvr_')===0)      reg.nvr.push(k);
+  }
+  reg.nev.sort(); reg.mba_vr.sort(); reg.nvr.sort();
+
+  var tries=0;
+  (function draw(){
+    tries++;
+    var readyCount=names.filter(function(k){ return XART.rdy(k); }).length;
+    if(readyCount < Math.min(reg.nev.length, names.length) && tries<200){ setTimeout(draw,30); return; }
+    g.fillStyle='#202028'; g.fillRect(0,0,cvs.width,cvs.height);
+    var x=10,y=30,rowH=0;
+    g.fillStyle='#9f9';g.font='12px monospace';
+    names.forEach(function(k){
+      if(!XART.rdy(k)) return;
+      var im=XART.get(k); if(!im) return;
+      var w=im.naturalWidth||im.width, h=im.naturalHeight||im.height;
+      if(x+w+10>cvs.width){ x=10; y+=rowH+34; rowH=0; }
+      g.strokeStyle='#555'; g.strokeRect(x-1,y-1,w+2,h+2);
+      g.drawImage(im,x,y);
+      g.fillText(k+'  '+w+'x'+h, x, y-4);
+      x+=w+14; rowH=Math.max(rowH,h);
+    });
+    tag.textContent = JSON.stringify({
+      registered_nev: reg.nev,
+      registered_mba_vr_count: reg.mba_vr.length,
+      registered_mba_vr_sample: reg.mba_vr.slice(0,6),
+      registered_nvr_count: reg.nvr.length,
+      decoded_nev: names.filter(function(k){ return XART.rdy(k); })
+    }, null, 1);
+  })();
+})();
+</script>
+</body></html>

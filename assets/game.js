@@ -5680,7 +5680,13 @@ const SUBBOSS={
      soak assertion `_sbSeen` (a runtime observation, not a name pin) went false, and the
      stage-7 boss gate behind it failed with it. ratking is a SEWER unit and stage 7 appears
      to rely on that; olivecarrier needs whatever ratking has before it can take this slot. */,    // RAT KING EXCAVATOR — level 7 sub-boss
-  8:{at:0.45, kind:'herald', afterScroll:1201},     // HERALD OF DEATH (venom-reaver, retitled per the phase manifest)
+  /* SPAWN CARRIER replaces the HERALD OF DEATH (drop 0814e). The herald never had body art —
+     mba_vr_* is 0 keys, nvr_* was never built — so it wore frames 0-3 of its own venom attack
+     stream as a hull: the tester's "miniboss that is still a hitbox square", finally identified by
+     spawning all eight minis and reading the pixels. The lock pack ships the slot's authored unit
+     (Enemies/Stage08/spawn_carrier_miniboss); the herald code stays, unassigned, like the
+     magma/cryo rigs. */
+  8:{at:0.45, kind:'spawncarrier', afterScroll:1201},
   3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
   5:{at:0.45, kind:'subcore', afterScroll:1121},
@@ -9040,6 +9046,26 @@ const SHIPBOSS = {
                   pats:['lance','chargebeam'], dmg:['nsb_rimewall_damaged','nsb_rimewall_critical']},
   olivewarden:   {key:'nsb_olivewarden_intact',name:'OLIVE WARDEN',     w:210,h:216, hp:238, pat:'mslfan',cd:1.26, mini:true,
                   pats:['mslfan','ember'], dmg:['nsb_olivewarden_damaged','nsb_olivewarden_critical']},
+  /* STAGE 8'S MINIBOSS FINALLY HAS A BODY (drop 0814e). The HERALD OF DEATH was drawing frames 0-3
+     of its own venom ATTACK stream as its hull — `mba_vr_*` is 0 registered keys, `nvr_*` was never
+     built (0801ga), and `heraldAnimKey`'s "11-frame flight loop" is, rendered, twin venom droplets
+     twisting into a 203x314 spray. The "silhouette IoU 1.0000 against the composited clean
+     components" in its own comment was measured against components that have NO art — an IoU
+     against nothing. Rule 1, again: the family is named nev_VENOM and its one comment upstream
+     (ENEMY fire table) correctly calls it "the Herald's attack reel".
+
+     CF_BOFFinalArtLock-Vol.2 ships the slot's authored unit: Enemies/Stage08/spawn_carrier_miniboss,
+     256px canvas, facing down, intact/damaged/critical — the SAME triplet convention magmaward /
+     rimewall / olivewarden already integrated from this pack, which is why stage 8 was the last
+     miniboss still broken: it was the last one not yet migrated. Same table, same build path, so
+     warmStage warms it via SHIPBOSS[kind].key with no new code.
+
+     hp is ABSOLUTE like every mini since 0810s (the flat-100 seed trap); 340 sits above ratking's
+     effective 456-at-DIFF and blacksteel's 327 is stage 6 — the mini curve is Mike's to retune.
+     pat/pats are MY pick (stage-8 flavour, converging Vs) — the herald's venom stream stays with
+     the herald code below, unassigned, exactly like the magma/cryo rigs. */
+  spawncarrier:  {key:'nsb_spawncarrier_intact',name:'SPAWN CARRIER',   w:210,h:216, hp:340, pat:'void', cd:1.22, mini:true,
+                  pats:['void','mslfan'], dmg:['nsb_spawncarrier_damaged','nsb_spawncarrier_critical']},
   thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true,
                   pats:['rime','chargebeam']},
   /* STAGE 4 HAD NO MINIBOSS AT ALL (drop 0811b). SUBBOSS[4] named 'subreactor', which is in
@@ -9960,6 +9986,7 @@ function spawnSubBoss__inner(kind){
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
     case 'magmaward': case 'rimewall': case 'olivewarden':   // Mike's 0813h minis
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
+    case 'spawncarrier':                               // stage 8's lock mini (0814e) — replaces the herald
     case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
       b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {

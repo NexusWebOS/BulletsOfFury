@@ -263,6 +263,24 @@ environmental (`_superseded/` is not committed, so it cannot pass on a fresh clo
 
 ## Previous state (2026-08-18)
 
+**0814e — the "hitbox square" miniboss is STAGE 8, and it was wearing its own projectile.**
+Full writeup: `docs/PASSOVER_0814E.md`. Spawned all eight stages' minis and read the pixels
+(`probe_minibosshull_0814e.html`): 1–7 draw full hulls; the HERALD OF DEATH drew two green blobs.
+⚠ **THE HERALD NEVER HAD A BODY** — `mba_vr_*` is 0 registered keys anywhere (0812c's "routed
+around" understated it), `nvr_*` was never built, and `heraldAnimKey` mapped the hull onto
+`nev_venom_0_*`, which RENDERED is the venom ATTACK stream: droplets → helix → 203x314 spray. The
+body was frames 0–3 of its own projectile at 165px.
+⚠ **"SILHOUETTE IoU 1.0000" WAS MEASURED AGAINST EMPTY COMPONENTS** — any overlay scores 1.0 against
+nothing. A verification whose reference set can be empty is not a verification.
+⚠ **STAGE 8 IS NOW THE SPAWN CARRIER** from `CF_BOFFinalArtLock-Vol.2` — the same
+intact/damaged/critical triplet convention magmaward/rimewall/olivewarden came from; stage 8 was
+simply the last slot not yet migrated, which is why it was the last one broken. Same table, same
+build path, warmed via `SHIPBOSS[kind].key` by existing code. Herald code stays, unassigned.
+⚠ **SEVEN ART PACKS ARE NOW IN `~/Downloads`** — the full stages-4–9 lock (104 enemies, boss
+rebuilds incl. stage 8's FOUR authored forms, stage-9 boss chain, Sky Citadel contract, Shadow
+Blast), both stage-9 packs, both cutscene packs, thermoshock, and the Vol.2 sources. Inventoried in
+the passover; each is its own drop. **Read each pack's own CLAUDE_HANDOFF/README first.**
+
 **0814d — item 5: the dam swap has been correct, and a thousand rows off screen.**
 Full writeup: `docs/PASSOVER_0814D.md`.
 
