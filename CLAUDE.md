@@ -164,6 +164,58 @@ wrong for the stage, not whether it matches the title.
 
 ## Current state (2026-08-18)
 
+**0814b — item 10: the right dialogue box was built inside a function nothing else could reach.**
+Full writeup: `docs/PASSOVER_0814B.md`.
+
+⚠ **0811m BUILT EXACTLY THE PANEL MIKE WANTS AND BUILT IT INSIDE `storyDraw`.** A hundred lines of
+local code, unreachable, while `thawDraw` drew a `fillRect`+`strokeRect` box in canvas BOFmil with
+a hand-rolled wrap and `freezerL3Draw` drew **no box at all**. Measured on the pre-drop tree: thaw
+**0 panels / 16 faux rects / 32 canvas fillText / 0 BOF glyphs**; freezerL3 **0 and 0** — not even
+a bad box. `dlgBox(o)` is that body lifted out unchanged; `storyDraw` is nine lines now.
+⚠ **THERE ARE TWO LEGITIMATE DIALOGUE RENDERERS, NOT THREE** — `drawCommWindow` is the MODAL one
+(it dims the whole screen) and `dlgBox` is the in-play one. 0811m's note says why; it is still the
+reason.
+⚠ **`freezerL3Draw` USED `setTransform(1,0,0,1,0,0)` TO ESCAPE THE CAMERA**, which also throws away
+the 2x backing store — it rendered at half the size of every other glyph in the game. Undo the
+camera by translating `camX`, never by resetting the transform.
+
+⚠⚠ **THE COUNTERS WENT 4/4 GREEN ON A PICTURE THAT WAS WRONG THREE WAYS.** Rule 2, inside the probe
+written to enforce rule 2. All three were invisible to "authored panel + authored face + no faux
+rect" and obvious in the saved frame:
+  1. **the text ran off its rail** — 196x96 was sized for canvas BOFmil; the BOF face is far wider,
+     and the portrait bay left a 96px column. Now every line is re-measured with `msgMeasure` at
+     the height it was drawn at, against the rect `drawPanel` was HANDED.
+  2. **two panels stacked** — `thawStart` fires from `beginStage(3)` for everyone and
+     `freezerL3Begin` fires on the same stage for Freezer. Invisible while both were small faux
+     boxes in different corners. The narration QUEUES now; the probe counts distinct panel rects.
+  3. **bottom-right is spoken for** — the panel ran UNDER the EQUIPPED box, which draws after it:
+     `SHOW TH`, `FEEL`, tails hidden rather than missing. ⚠ **THE OVERRUN CHECK SAID 0 AND WAS
+     RIGHT — occlusion is not overrun**, and only the picture distinguishes them. 0806d's
+     bottom-right was correct for a 196px box; `nequipbox` did not exist until 0812p.
+⚠ **AND THE LAST ROW SAT ON THE BOTTOM RAIL** — the draw tested a row's TOP and drew its full height
+below it. **Fixing that meant fixing the SOLVER in the same breath**: it counted row TOPS while the
+drawer required the FOOT to clear, so it would have believed in a row the drawer refused and the
+tail would have vanished silently — 0811m's truncation bug by a new route. `rowsFit(h)` is one
+definition used by both.
+⚠ **A FIX THAT ADDS ORDERING BREAKS EVERY TEST THAT ASSUMED THERE WAS NONE** — after the queue, the
+freezerL3 probe case measured zero panels and read as a regression. It was the queue working; the
+case drives the real sequence now.
+⚠ **AN ASSERTION PINNED A STRING LITERAL, NOT THE RULE** — "the pilot beat uses the smiling
+portrait" was `indexOf("'port_'+thaw.pk+'_smile'")`, so asking `pilotPortrait(pk,'smile')` instead
+failed it on code where the pilot beat still uses the smiling portrait. Behavioural now: it wraps
+`pilotPortrait` and records what the draw asks for (`yuri/smile`).
+⚠ **THE PROBE WAS RUN AGAINST THE PRE-DROP TREE AND FAILED 3 OF 4.** A probe that has only ever
+been green is not evidence. The fourth is the control.
+
+⚠ **OPEN, FOUND NOT FIXED: THE APOSTROPHE RENDERS AS A COMMA** — "THEN LET,S SHOW THEM" in the proof
+frame. The glyph RESOLVES (`sfont1_p39`/`sfont3_p39` are registered), so this is not the missing-
+punctuation case `fontGlyph` handles. `glyphBox` bottom-aligns EVERY glyph in the cap box, and an
+apostrophe is a TOP-hanging mark — 0809q added `FONT_DESC` for glyphs that hang BELOW the baseline
+and there is no counterpart for ones that hang ABOVE it. ⚠ **DO NOT WRITE THAT TABLE FROM THE
+ARGUMENT.** Rendered, `p39` and `p44` are both chunky carved slabs and which way up each is meant
+to sit is not readable off the plates. Settle it with one render: `'` and `,` through
+`msgTextLeft` at dialogue size beside a `.`, with and without a `dy=0` override.
+
 **0814a — Mike's items 1, 2 and 3 are ONE defect, and it is now closed.** Full writeup:
 `docs/PASSOVER_0814A.md`.
 
@@ -352,7 +404,7 @@ bosses/minibosses, level-7 purple halos, wrong level-5 map region, background sq
 stage-8 chain lightning). The stage-6 "door/side sky overlay" he ordered deleted was **not** deleted:
 the obvious key renders as a flat blue noise field, not an overlay. Rule 1, third save.
 
-**→ START HERE: `docs/PASSOVER_0814A.md`, then `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0814B.md`, then `docs/PASSOVER_0814A.md`, then `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
 
 **0813a — the flamethrower now hits what it visibly touches.**
 ⚠ **`flameDraw` PAINTS A UNIFORM COLUMN; `flameHit` TAPERED.** The draw is `flameHalfW(lv,1)` wide

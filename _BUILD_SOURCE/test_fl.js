@@ -7949,7 +7949,21 @@ console.log("=== 178. stage-3 orb + thaw ===");
   ok(vm.runInContext("(function(){ run.pilot='yuri'; beginStage(5); return thaw===null; })()", ctxv),
      'it does not fire on any other stage');
   var _g178=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g178.indexOf("'port_'+thaw.pk+'_smile'")>0, 'the pilot beat uses the smiling portrait');
+  /* ⚠ THIS PINNED A STRING LITERAL, NOT THE RULE (drop 0814b). It read
+     `indexOf("'port_'+thaw.pk+'_smile'")` — so the moment thawDraw asked `pilotPortrait(pk,
+     'smile')` instead of concatenating the key itself, an assertion named "the pilot beat uses
+     the smiling portrait" failed on code where the pilot beat still uses the smiling portrait.
+     CLAUDE.md's own line: a source assertion a docstring can defeat is not measuring anything.
+
+     Behavioural now — run the pilot beat and record what the draw ASKS FOR. */
+  var _sm=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true; run.pilot='yuri';"
+   +" beginStage(3); setState(GS.PLAY); player.reset(); thawStart(); thaw.i=1; thaw.t=0.4;"
+   +" var seen=[]; var _pp=pilotPortrait;"
+   +" pilotPortrait=function(k,e){ seen.push(k+'/'+(e||'idle')); return _pp(k,e); };"
+   +" try{ thawDraw(); } catch(e){} pilotPortrait=_pp;"
+   +" return JSON.stringify(seen);})()", ctxv));
+  ok(_sm.indexOf('yuri/smile')>=0,
+     'the pilot beat asks for the SMILING portrait ('+(_sm.join(',')||'nothing')+')');
   ok(_g178.indexOf('const THAW_CARD_SCALE = 0.5;')>0, 'and the panel is half the select-card scale');
 }
 

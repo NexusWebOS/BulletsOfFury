@@ -13650,36 +13650,42 @@ function thawTick(dt){
 function thawDraw(){
   if(!thaw || thaw.done || typeof XART==='undefined') return;
   const L=thaw.lines[thaw.i]; if(!L) return;
-  const pw=Math.round(196*THAW_CARD_SCALE*2), ph=Math.round(96*THAW_CARD_SCALE*2);
-  const x=PLAY.x+PLAY.w-pw-10, y=PLAY.y+PLAY.h-ph-10;
+  /* ⚠ THIS WAS A FAUX BOX (drop 0814b) — Mike's item 10. A `fillRect` plus a `strokeRect`, canvas
+     BOFmil, and a hand-rolled `measureText` word wrap: the exact three things 0811m removed from
+     `storyDraw` one screen away, still here because that fix was private to that function.
+     Same panel now, same face, same wrap. What is KEPT is everything Mike specified for this beat
+     in 0806d: it sits bottom-RIGHT (the ship flies the left and centre on entry), the SHIP beat
+     has NO portrait so the pilot cutting in lands, and the pilot's is the SMILE. */
+  /* ⚠ AND IT CANNOT KEEP THE OLD BOX'S SIZE (drop 0814b). 196x96 was sized for canvas BOFmil at
+     11px. The BOF bitmap face is much wider per glyph, and with the portrait bay taking 58 of
+     those 196 the body was wrapping into a 96px column — rendered, "Then let's show them what
+     BURNING feels like." came out as "THEN L / SHOW T / WHAT" running off the right rail and over
+     the EQUIPPED box. The COUNTERS were green for that frame: authored panel, authored face, no
+     faux rect. Rule 2 — the box was right and the picture was wrong.
+     ⚠ AND IT CANNOT STAY BOTTOM-RIGHT EITHER, WHICH TOOK A SECOND RENDER TO SEE. Anchored right
+     at the standard width, the panel runs under the EQUIPPED box, which is drawn after it and on
+     top: "show them" read as "SHOW TH" and "feels" as "FEEL", with the tails hidden rather than
+     missing. **The overrun check said 0 and was RIGHT** — occlusion is not overrun, and only the
+     picture could tell me which of the two I was looking at.
+
+     0806d put this panel bottom-right so it stayed clear of the ship, and that was correct for a
+     196px box on 2026-08-06. `nequipbox` did not exist then: 0812p found it registered and drawn
+     by nothing, and put it in that corner. The corner is spoken for now, and bottom-LEFT is where
+     every other in-play dialogue box already lives (storyDraw, 0811m, signed off). One position
+     for all of them, and the queue below is what stops them stacking. */
   const a=clamp(thaw.t/0.22,0,1)*clamp((2.6+L.t.length*0.018-thaw.t)/0.25,0,1);
-  ctx.save(); ctx.globalAlpha=a;
-  ctx.fillStyle='rgba(8,12,18,0.88)'; ctx.fillRect(x,y,pw,ph);
-  ctx.strokeStyle=(L.who==='ship')?'#4ea0ff':'#8de23a'; ctx.lineWidth=2;
-  ctx.strokeRect(x+0.5,y+0.5,pw-1,ph-1);
-  let tx=x+8;
-  /* the SHIP beat has no portrait — that is what makes the pilot cutting in land */
-  if(L.who==='pilot'){
-    const pk='port_'+thaw.pk+'_smile';
-    if(XART.rdy(pk)){
-      const im=XART.get(pk), h=ph-12, w=h*(im.naturalWidth/im.naturalHeight);
-      ctx.drawImage(im, x+6, y+6, w, h); tx=x+6+w+8;
-    }
-  }
-  ctx.fillStyle=(L.who==='ship')?'#bcd8ff':'#eaffea';
-  ctx.font='bold 11px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
-  const words=L.t.split(' '); let line='', ly=y+20;
-  for(const w of words){
-    const test=line?(line+' '+w):w;
-    if(ctx.measureText(test).width > pw-(tx-x)-10){ ctx.fillText(line,tx,ly); line=w; ly+=14; }
-    else line=test;
-  }
-  if(line) ctx.fillText(line,tx,ly);
-  ctx.fillStyle=(L.who==='ship')?'#4ea0ff':'#8de23a';
-  ctx.font='bold 8px "BOFmil", monospace';
-  ctx.fillText(L.who==='ship'?'SHIP':thaw.pk.toUpperCase(), tx, y+ph-8);
-  ctx.restore();
+  dlgBox({
+    who:   (L.who==='ship') ? 'SHIP' : thaw.pk.toUpperCase(),
+    tint:  (L.who==='ship') ? '#4ea0ff' : '#8de23a',
+    bodyCol:(L.who==='ship') ? '#bcd8ff' : '#eaffea',
+    full:  L.t,
+    fade:  a,
+    portrait: (L.who==='pilot') ? thaw.pk : false,
+    emo:   'smile'
+  });
 }
+/* is the thaw panel currently holding the bottom band? freezerL3 defers to it — see below */
+function thawOnScreen(){ return !!(thaw && !thaw.done && thaw.lines[thaw.i]); }
 function nukeAt(x,y){
   explode(x,y,86,'red'); explode(x,y,54,'red'); shake=Math.max(shake,18); flashScreen=Math.max(flashScreen||0,0.6); Audio.SFX.bomb();
   nukeImpacts.push({x,y,t:0,dur:0.5});
@@ -14524,6 +14530,14 @@ function freezerL3End(){
 }
 function freezerL3Tick(dt){
   if(!_frzNarr || _frzNarr.done) return;
+  /* ⚠ TWO SYSTEMS NARRATE STAGE 3 AND THEY WERE NEVER SEQUENCED (drop 0814b). thawStart fires
+     from beginStage(3) for everyone, and freezerL3Begin fires on the same stage when Freezer
+     takes the flamethrower — so as Freezer BOTH run, and both now draw a full-width authored
+     panel. Rendered, they sat on top of each other, which is worse than the faux boxes were: the
+     old ones were small and in different places, so the collision was invisible until the boxes
+     became the right size. This narration WAITS, rather than being cut — it is Mike's copy and
+     both halves should be read. */
+  if(thawOnScreen()) return;
   _frzNarr.t += dt;
   if(_frzNarr.t >= _frzNarr.hold){
     _frzNarr.t = 0; _frzNarr.i++;
@@ -14532,26 +14546,25 @@ function freezerL3Tick(dt){
 }
 function freezerL3Draw(){
   if(!_frzNarr || _frzNarr.done) return;
+  if(thawOnScreen()) return;                 // one panel in the bottom band at a time
   const line = FREEZER_L3_LINES[_frzNarr.i];
   if(!line) return;
   // fade each line in and out rather than snapping between them
   const f = Math.min(1, _frzNarr.t/0.35) * Math.min(1, (_frzNarr.hold-_frzNarr.t)/0.45);
   if(f <= 0) return;
-  const y = VH*0.30;
-  ctx.save();
-  ctx.setTransform(1,0,0,1,0,0);
-  ctx.globalAlpha = clamp(f,0,1);
-  // his portrait, small, to the left of the line
-  const pk = 'port_freezer_idle';
-  if(typeof XART!=='undefined' && XART.rdy(pk)){
-    const im=XART.get(pk), S=46;
-    ctx.drawImage(im, VW*0.5-150, y-S*0.62, S, S);
-  }
-  ctx.font='bold 11px "BOFmil", monospace';
-  ctx.textAlign='left';
-  ctx.fillStyle='#0a1420'; ctx.fillText(line, VW*0.5-96, y+1);
-  ctx.fillStyle='#9fe4ff'; ctx.fillText(line, VW*0.5-97, y);
-  ctx.restore();
+  /* ⚠ THIS HAD NO BOX AT ALL (drop 0814b) — Mike's item 10, and the worst case of it in the game.
+     Floating canvas-BOFmil text mid-screen with a hand-drawn drop shadow, a loose portrait beside
+     it, and `setTransform(1,0,0,1,0,0)` to escape the camera — which also throws away the 2x
+     backing-store scale, so it rendered at half the size of every other glyph in the game.
+     `dlgBox` handles the camera properly (translate by camX, not a reset) and this is his
+     narration, so it takes the same panel everything else does.
+
+     ⚠ BOTTOM LEFT, NOT BOTTOM RIGHT: this fires on stage 3 and so does the thaw, which owns the
+     right. Two panels can be up at once here and they must not stack. */
+  dlgBox({
+    who:'FREEZER', tint:'#9fe4ff', bodyCol:'#dfeeff',
+    full:line, fade:clamp(f,0,1), portrait:'freezer', emo:'idle'
+  });
 }
 function beginStage(num){
   try{ window.sselCommitted=false; }catch(e){}
@@ -20075,6 +20088,122 @@ function storySpeakerAllowed(who){
   const aff=(typeof run!=='undefined'&&run&&run.affiliation)?run.affiliation[P.key]:null;
   return aff==='ally';                                // only pilots he has actually allied with
 }
+/* ============================================================
+   THE IN-PLAY DIALOGUE BOX — ONE OF THEM (drop 0814b)
+
+   Mike, item 10, asked twice: "Still using plain dialogue where the game has its own boxes."
+
+   0811m built exactly the box he wants — authored `dlg_window`, the BOF face, the body wrapped
+   and SIZED to the frame, the speaker's portrait mirrored in the left bay — and built it INSIDE
+   `storyDraw`, where nothing else could reach it. So every other thing that speaks during play
+   went on drawing its own:
+
+     thawDraw        a fillRect + strokeRect box, canvas BOFmil, hand-rolled word wrap
+     freezerL3Draw   NO BOX AT ALL - floating text with a manual drop shadow
+
+   Both are stage 3. Both are the "faux box" this project has a standing rule against, and the
+   0811m note is written against that exact rule while the two functions beside it kept doing it.
+
+   ⚠ THIS IS NOT `drawCommWindow`, DELIBERATELY, AND THE 0811m NOTE BELOW EXPLAINS WHY: that
+   helper opens with `fillRect(0,0,VW,VH)` at 0.66 alpha — it is a MODAL, and the delivery rule
+   is "never hold the player in a dialogue box during active combat". There are two legitimate
+   dialogue renderers in this game, a modal one and an in-play one, and this is the in-play one.
+   There is no longer a third.
+
+   ⚠ AND IT DRAWS IN SCREEN SPACE. `drawWorld` runs under `translate(-camX)`; anything drawn
+   inside it slides with the terrain, which is what made the old strip drift off a wide stage.
+   `camx` is undone here for every caller rather than once per caller — the world-vs-screen fault
+   this file records four separate times.
+   ============================================================ */
+function dlgBox(o){
+  if(typeof ctx==='undefined') return;
+  const fade  = (o.fade==null) ? 1 : o.fade;
+  if(fade<=0) return;
+  const who   = o.who || '';
+  const full  = o.full || '';
+  const shown = (o.shown!=null) ? o.shown : full;
+  const tint  = o.tint || '#cfd6e6';
+
+  ctx.save();
+  ctx.globalAlpha = fade;
+  if(o.screenSpace !== false){
+    const camx=(typeof camX!=='undefined')?camX:0;
+    ctx.translate(camx, 0);                     // out of world space, into screen space
+  }
+
+  /* the portrait: pilotPortrait falls back idle -> face_ on its own. ⚠ MIRRORED — every portrait
+     in the pack is authored facing SCREEN-LEFT, so one in a panel's LEFT bay faces away from its
+     own words. drawCutscene mirrors its left slot for the same reason; this is the same slot. */
+  const _pk=String(o.portrait || who || '').toLowerCase();
+  const _isPilot = o.portrait!==false && (
+        (typeof PILOTS!=='undefined' && PILOTS && PILOTS[_pk]) ||
+        ['cole','axel','yuri','falva','decker','freezer','juggernaut','lizzie','maverick'].indexOf(_pk)>=0);
+  const _portK=(_isPilot && typeof pilotPortrait==='function') ? pilotPortrait(_pk, o.emo||'idle') : null;
+  const _hasPort=!!(_portK && typeof XART!=='undefined' && XART.rdy(_portK));
+
+  const PAD=10;
+  const pw=Math.min(VW-PAD*2, o.pw || (_hasPort?344:300));
+  const ph=o.ph || Math.round(VH*0.17);
+  const x=(o.x!=null) ? o.x : PAD;
+  const y=(o.y!=null) ? o.y : (VH-ph-PAD);
+
+  /* drawPanel already tries XART itself and returns false only when the plate has not decoded,
+     so the fallback here is for that one case and nothing else. */
+  if(!(typeof drawPanel==='function' && drawPanel('dlg_window', null, x, y, pw, ph))){
+    ctx.fillStyle='rgba(6,9,14,0.90)'; ctx.fillRect(x,y,pw,ph);
+    ctx.strokeStyle=tint; ctx.lineWidth=2; ctx.strokeRect(x,y,pw,ph);
+  }
+  let bay=0;
+  if(_hasPort){
+    const im=XART.get(_portK);
+    const bh=Math.round(ph*0.74), bw=Math.round(bh*((im.naturalWidth||1)/(im.naturalHeight||1)));
+    const bx=x+12, by=y+Math.round(ph*0.13);
+    ctx.save();
+    ctx.globalAlpha=fade;
+    ctx.beginPath(); ctx.rect(bx, by, Math.min(bw, Math.round(pw*0.30)), bh); ctx.clip();
+    ctx.translate(bx+bw, by); ctx.scale(-1,1);            // authored facing LEFT: face the words
+    ctx.drawImage(im, 0, 0, bw, bh);
+    ctx.restore();
+    bay=Math.min(bw, Math.round(pw*0.30))+10;
+  }
+  /* dlg_window has a deep machined frame — the inset is the frame, not taste. Text laid out to
+     the panel's outer edge sits on the rivets. */
+  const ix=x+16+bay, iw=pw-32-bay;
+  if(who){
+    const nameH=Math.round(ph*0.20);
+    const _nh=(typeof msgFitH==='function')?msgFitH(who, iw, nameH, 7):nameH;
+    if(typeof msgTextLeft==='function') msgTextLeft(who, ix, y+Math.round(ph*0.24), _nh, tint, 1, fade);
+  }
+
+  /* ⚠ FIT THE TEXT, DO NOT TRUNCATE IT. 0811m's first cut clipped any line that would land past
+     the bottom rail, which turned "CIVILIAN EVACUATION IS BLOCKED ON THREE SIDES." into "...ON
+     THREE". The body SIZE is solved against the box instead: the largest height whose wrap fits
+     the rows available, down to a floor. The typed-in prefix is wrapped at the FULL line's size
+     so the block does not reflow letter by letter as it types. */
+  const yTop=y+Math.round(ph*(who?0.46:0.30)), yBot=y+ph-Math.round(ph*0.12);
+  /* ⚠ THE SOLVER AND THE DRAWER MUST COUNT ROWS THE SAME WAY. The loop below draws a row only if
+     its FOOT clears yBot; if this asked how many row TOPS fit it would believe in a row the
+     drawer then refuses, and the tail would vanish silently — which is 0811m's truncation bug
+     arriving by a new route. `rowsFit` is the one definition, used by both. */
+  const rowsFit=(h)=>Math.max(1, Math.floor((yBot-yTop-h)/Math.round(h*1.42))+1);
+  let bodyH=Math.round(ph*0.17); const minH=Math.max(7, Math.round(ph*0.10));
+  if(typeof msgWrap==='function'){
+    for(; bodyH>minH; bodyH--){
+      if(msgWrap(full, iw, bodyH).length<=rowsFit(bodyH)) break;
+    }
+  }
+  const lines=(typeof msgWrap==='function')?msgWrap(shown, iw, bodyH):[shown];
+  let yy=yTop;
+  for(const L of lines){
+    /* ⚠ THE ROW'S FOOT, NOT ITS TOP. `yy>yBot` lets a line that STARTS one pixel above the limit
+       draw its full height below it, so the last row sat on the bottom rail — visible in the
+       0814b proof frame before this line changed, and invisible to a horizontal overrun check. */
+    if(yy+bodyH>yBot) break;
+    if(typeof msgTextLeft==='function') msgTextLeft(L, ix, yy, bodyH, o.bodyCol||'#dfe6f2', 1, fade);
+    yy += Math.round(bodyH*1.42);
+  }
+  ctx.restore();
+}
 function storyDraw(){
   const S=story; if(!S || typeof ctx==='undefined') return;
   const cur=S.lines[S.i]; if(!cur) return;
@@ -20082,8 +20211,6 @@ function storyDraw(){
   const who=cur[0], full=subst(cur[1]);
   const shown=full.slice(0, Math.max(0,S.typed|0));
   const tint=STORY_TINT[who]||'#cfd6e6';
-  ctx.save();
-  ctx.globalAlpha=S.fade;
   /* ============================================================
      ONE PANEL, BOTTOM LEFT, AUTHORED ART, AUTHORED FONT (drop 0811m)
 
@@ -20110,95 +20237,13 @@ function storyDraw(){
      translate(-camX); anything drawn inside it slides with the terrain. This is why the strip
      appeared to drift off on a wide stage. The panel is drawn in SCREEN space — the camera
      translate is undone for the duration — which is the same rule the file already enforces for
-     every cinematic that draws player.x. It has bitten three times; this is the fourth. */
-  const camx=(typeof camX!=='undefined')?camX:0;
-  ctx.translate(camx, 0);                       // out of world space, into screen space
+     every cinematic that draws player.x. It has bitten three times; this is the fourth.
 
-  /* ============================================================
-     THE SPEAKER'S PORTRAIT (drop 0811n)
-
-     Mike: "use their portraits for the stage 1 and onward texts when the portraits appear."
-
-     ⚠ NOT drawCommWindow. That helper already does frame + portrait + typed text and it was the
-     obvious thing to reuse — but it opens with fillRect(0,0,VW,VH) at 0.66 alpha, i.e. it dims
-     the whole screen and is a MODAL. This file's own delivery rule is "never hold the player in a
-     dialogue box during active combat", which is why the combat path was a bare strip in the
-     first place. Reusing it here would have traded one of Mike's complaints for a worse one.
-
-     So: pilotPortrait() for the art (it already falls back idle -> face_ on its own), inside the
-     bottom-left panel, with the text column shifted clear of it.
-
-     ⚠ AND IT IS MIRRORED. Every portrait in the pack is authored facing SCREEN-LEFT — the note on
-     drawCutscene records it, and Axel's drawn pistol is the giveaway. A portrait on the LEFT of a
-     panel facing left is facing away from its own words. drawCutscene mirrors its left slot for
-     exactly this reason; this is the same slot. */
-  const _pk=String(who||'').toLowerCase();
-  const _isPilot=(typeof PILOTS!=='undefined' && PILOTS && PILOTS[_pk]) ||
-                 ['cole','axel','yuri','falva','decker','freezer','juggernaut','lizzie','maverick'].indexOf(_pk)>=0;
-  const _portK=(_isPilot && typeof pilotPortrait==='function') ? pilotPortrait(_pk,'idle') : null;
-  const _hasPort=!!(_portK && typeof XART!=='undefined' && XART.rdy(_portK));
-
-  const PAD=10;
-  const pw=Math.min(VW-PAD*2, _hasPort?344:300);
-  const ph=Math.round(VH*0.17);
-  const x=PAD, y=VH-ph-PAD;                     // bottom left, and it stays there
-
-  /* drawPanel already tries XART itself and returns false only when the plate has not decoded,
-     so the fallback here is for that one case and nothing else. */
-  if(!(typeof drawPanel==='function' && drawPanel('dlg_window', null, x, y, pw, ph))){
-    ctx.fillStyle='rgba(6,9,14,0.90)'; ctx.fillRect(x,y,pw,ph);
-    ctx.strokeStyle=tint; ctx.lineWidth=2; ctx.strokeRect(x,y,pw,ph);
-  }
-  /* dlg_window has a deep machined frame — the inset is the frame, not taste. Text laid out to
-     the panel's outer edge sits on the rivets. */
-  /* the portrait sits in the panel's left bay, sized to the inner height and clipped to it so a
-     tall bust cannot ride over the frame's top rail */
-  let bay=0;
-  if(_hasPort){
-    const im=XART.get(_portK);
-    const bh=Math.round(ph*0.74), bw=Math.round(bh*((im.naturalWidth||1)/(im.naturalHeight||1)));
-    const bx=x+12, by=y+Math.round(ph*0.13);
-    ctx.save();
-    ctx.globalAlpha=S.fade;
-    ctx.beginPath(); ctx.rect(bx, by, Math.min(bw, Math.round(pw*0.30)), bh); ctx.clip();
-    ctx.translate(bx+bw, by); ctx.scale(-1,1);            // authored facing LEFT: face the words
-    ctx.drawImage(im, 0, 0, bw, bh);
-    ctx.restore();
-    bay=Math.min(bw, Math.round(pw*0.30))+10;
-  }
-  const ix=x+16+bay, iw=pw-32-bay;
-  const nameH=Math.round(ph*0.20);
-  const _nh=(typeof msgFitH==='function')?msgFitH(who, iw, nameH, 7):nameH;
-  if(typeof msgTextLeft==='function') msgTextLeft(who, ix, y+Math.round(ph*0.24), _nh, tint, 1, S.fade);
-
-  /* ⚠ FIT THE TEXT, DO NOT TRUNCATE IT. The first cut clipped any line that would land past the
-     bottom rail, on the reasoning that overlong copy is a content problem. Rendered, that turned
-     "CIVILIAN EVACUATION IS BLOCKED ON THREE SIDES." into "...ON THREE" — the player loses the
-     end of the sentence, which is worse than small text and is not what "scale and fit the text
-     inside the window" asks for.
-
-     So the body SIZE is solved against the box instead: take the largest height whose wrap fits
-     the rows available, down to a floor. Below the floor it wraps at the floor and the tail is
-     dropped, because a line too small to read is not a fix either — but at 300px wide that takes
-     roughly twenty words, and Mike's own rule ("try not to use too much text") lands well inside
-     it. The typed-in prefix is wrapped at the FULL line's size so the block does not reflow
-     letter by letter as it types. */
-  const yTop=y+Math.round(ph*0.46), yBot=y+ph-Math.round(ph*0.12);
-  let bodyH=Math.round(ph*0.17); const minH=Math.max(7, Math.round(ph*0.10));
-  if(typeof msgWrap==='function'){
-    for(; bodyH>minH; bodyH--){
-      const rows=Math.max(1, Math.floor((yBot-yTop)/Math.round(bodyH*1.42))+1);
-      if(msgWrap(full, iw, bodyH).length<=rows) break;
-    }
-  }
-  const lines=(typeof msgWrap==='function')?msgWrap(shown, iw, bodyH):[shown];
-  let yy=yTop;
-  for(const L of lines){
-    if(yy>yBot) break;
-    if(typeof msgTextLeft==='function') msgTextLeft(L, ix, yy, bodyH, '#dfe6f2', 1, S.fade);
-    yy += Math.round(bodyH*1.42);
-  }
-  ctx.restore();
+     ⚠ THE WHOLE BODY OF THIS FUNCTION IS NOW `dlgBox` (drop 0814b) — see the note there. It was
+     the right box built in the wrong place: private to this function, so `thawDraw` and
+     `freezerL3Draw`, two screens away and on the same stage, went on drawing faux ones. Nothing
+     about the panel changed; it moved. Its portrait rule (0811n) moved with it. */
+  dlgBox({who, tint, full, shown, fade:S.fade});
 }
 
 /* ============================================================
