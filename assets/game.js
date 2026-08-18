@@ -2847,7 +2847,17 @@ function drawCutscene(sc){
      difference is whether the leftover goes to bars or to crop, and he wants it filled. Every
      coordinate in this function already goes through X/Y/S, so the portraits, the text box and the
      panels all follow the same fit without touching another line. */
-  const s=Math.max(VW/SW, VH/SH), ox=(VW-SW*s)/2, oy=(VH-SH*s)/2;
+  /* ⚠ COVER CROPPED THE SIDES (reverted 0813z). 0813w switched this to Math.max to kill the
+     letterbox Mike called a "640x480 window". It filled the frame by overhanging the width and
+     cutting it off - names and dialogue lost their first characters. Mike: "Cutscenes are now
+     cutoff instead of being wide/full screen."
+
+     Back to CONTAIN so nothing is lost. ⚠ THIS CANNOT BE SOLVED BY A SCALE ALONE: the plates are
+     640x480 (4:3) and the screen is 480x512 (taller than wide). Filling that frame REQUIRES
+     either bars or a crop. Showing everything at maximum size means fitting to WIDTH, which is
+     this. Genuinely full-screen cutscenes need either wider plates or a wider canvas for the
+     cutscene state - both are Mike's call, not something to fake with a transform. */
+  const s=Math.min(VW/SW, VH/SH), ox=(VW-SW*s)/2, oy=(VH-SH*s)/2;
   const X=(x)=>ox+x*s, Y=(y)=>oy+y*s, S=(v)=>v*s;
   ctx.save();
   ctx.imageSmoothingEnabled=false;                        // nearest-neighbour, per the contract
@@ -5196,7 +5206,9 @@ const STAGES = [
    /* STAGE 4 (drop 0801cf): ironrev's mbp_ir prefix has ZERO registered keys —
       it drew nothing, measured. WARHAWK ARSENAL is the stage-4 boss in the pack
       and is fully registered. Revert = change this one string back. */
-   length:52, boss:'warhawk'},
+   /* was warhawk. Mike 0813z: "Stage 4 boss was not replaced as requested" - nca_56's blue hull
+      is the one he named. Revert = change this string back. */
+   length:52, boss:'glacierfortress'},
   {n:5, name:'STAGE 5', sub:'ALL FOR ONE, NONE FOR ALL', bg:'space', music:'lvl5x',
    /* STAGE 5 (drop 0801cf): the pack lists RAMPART ZERO as the stage-5 boss, so
       it takes the slot and Unity Breaker steps aside. Unity Breaker still draws
@@ -8499,6 +8511,18 @@ const SHIPBOSS = {
 
      DAMAGE STATES come named in the pack rather than being guessed at from pixel counts, which is
      how the 0813h import got its ordering wrong. f01/f02/f03(/f04) is the author's own sequence. */
+  /* STAGE 4's BOSS, AS ONE PLATE (drop 0813z). Mike, pointing at nca_56: "Use ONLY use this
+     graphic. do not split him or seperate him. Thats your boss 4."
+
+     mbg3f is the Glacier Rail Fortress and the engine normally builds it through mechInit as a
+     SECTIONAL boss - 61 keys, breakup frames, destructible parts. That is exactly the splitting he
+     ruled out, so it goes through the ship-boss path instead: one authored plate, drawn whole,
+     damaged/critical swapped in as states rather than pieces coming off.
+
+     Verified before wiring: the cell at 1544,0 on sheet 56 measures rgb(89,107,136) - the blue hull
+     he sent - while its neighbour mbm4_master is rgb(58,59,58) grey. Rendered and eyeballed too. */
+  glacierfortress:{key:'mbg3f_master',            name:'GLACIER FORTRESS', w:214,h:214, hpMul:1.44, pat:'lance', cd:1.26,
+                  pats:['lance','mslfan','ember'], dmg:['mbg3f_dmgov_0','mbg3f_dmgov_1']},
   xenoregent:    {key:'nsb_xenoregent_intact',      name:'XENO REGENT',    w:216,h:208, hpMul:1.42, pat:'void',  cd:1.28,
                   pats:['void','chargebeam','mslfan'], dmg:['nsb_xenoregent_damaged','nsb_xenoregent_critical']},
   /* THE CARRIER IS A 16-FRAME LAUNCH CYCLE (drop 0813o). CF_DoomsdayCarrierAnimation-Lvl6:
@@ -9173,6 +9197,7 @@ function spawnBoss(kind){
        Two spawners, two switches; a kind must be registered in the one that matches its ROLE. */
     case 'infernoreaver': case 'cryospear': case 'voidbat':
     case 'xenoregent': case 'doomsdaycarrier': case 'sludgeemperor':
+    case 'glacierfortress':
       shipBossInit(b, kind); break;
     case 'damkeeper': b.name='JUNGLE OVERLORD-X'; b.w=170; b.h=130; break;
     case 'dreadnought': b.name='HELLFIRE GUNSHIP'; b.w=190; b.h=150; break;
@@ -18462,7 +18487,14 @@ function drawPlayer(){
    reel is a warbird flame rather than a star burst. Flipping the other eight is his explicit
    call, so it is applied to all nine; if a star-burst plume reads wrong mirrored, the fix is
    to unset it per pilot here, not to change the draw. */
-const THRUSTER_MOUNTS={"axel": {"mounts": [0.0], "scale": 0.3, "note": "middle only, not the sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223, "flip": true}, "cole": {"mounts": [-0.1641, 0.1406], "scale": 0.16, "note": "twin thrusters, measured by brightness", "flip": true}, "decker": {"mounts": [-0.0035], "scale": 0.26, "note": "already correct", "flip": true}, "falva": {"mounts": [0.0], "scale": 0.28, "note": "middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223, "flip": true}, "freezer": {"mounts": [0.0], "scale": 0.28, "note": "one middle, no sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223, "flip": true}, "juggernaut": {"mounts": [-0.1687, 0.0, 0.1627], "scale": 0.16, "note": "three", "flip": true}, "lizzie": {"mounts": [0.0], "scale": 0.3, "flip": true, "note": "centred and tucked just under the tail; her reel is a warbird flame, not a star burst, so it is flipped | dy +10px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": 0.0446}, "maverick": {"mounts": [0.0], "scale": 0.26, "note": "ONE, centred \u2014 Mike: 'maverick gets one, not double'", "flip": true}, "yuri": {"mounts": [0.0], "scale": 0.28, "note": "one middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223, "flip": true}};
+/* ⚠ flip IS AN ART-ORIENTATION FLAG, NOT A POSITION MIRROR (reverted 0813z). 0813w set it on
+   all nine on the reading that Mike wanted the plumes "mirrored in game". He did not - he
+   wants the ANCHOR POINTS to match what the cinematic uses. What flip actually does is
+   scale(1,-1) about the mount, so the plume extends UP INTO THE HULL instead of down behind
+   the tail. lizzie's reel is a warbird flame authored to be drawn that way; the other eight
+   are star bursts and came out visibly wrong - Mike: "ingame they are all positioned off
+   which looks bad". Back to lizzie only. The anchor mismatch is a separate, unfixed issue. */
+const THRUSTER_MOUNTS={"axel": {"mounts": [0.0], "scale": 0.3, "note": "middle only, not the sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223}, "cole": {"mounts": [-0.1641, 0.1406], "scale": 0.16, "note": "twin thrusters, measured by brightness"}, "decker": {"mounts": [-0.0035], "scale": 0.26, "note": "already correct"}, "falva": {"mounts": [0.0], "scale": 0.28, "note": "middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223}, "freezer": {"mounts": [0.0], "scale": 0.28, "note": "one middle, no sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223}, "juggernaut": {"mounts": [-0.1687, 0.0, 0.1627], "scale": 0.16, "note": "three"}, "lizzie": {"mounts": [0.0], "scale": 0.3, "flip": true, "note": "centred and tucked just under the tail; her reel is a warbird flame, not a star burst, so it is flipped | dy +10px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": 0.0446}, "maverick": {"mounts": [0.0], "scale": 0.26, "note": "ONE, centred \u2014 Mike: 'maverick gets one, not double'"}, "yuri": {"mounts": [0.0], "scale": 0.28, "note": "one middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223}};
 function _drawPlayerCore(){
   if(player.dead) return;
   const x=player.x, y=player.y;
