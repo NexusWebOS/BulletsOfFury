@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>probe 0814g — the ui_layout fetch chain, end to end</title>
+<base href="../">
+<style>html,body{margin:0;padding:0;background:#000;} #tag{color:#0f0;font:11px monospace;white-space:pre;}</style>
+</head>
+<body>
+<div style="position:absolute;left:-9999px;top:-9999px;">
+  <div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+</div>
+<div id="tag">boot</div>
+<script src="assets/manifest.js"></script>
+<script src="assets/section_geom.js"></script>
+<script src="assets/game.js"></script>
+<script>
+/* PROBE 0814g — proves the shipped `null` default does what the fix claims:
+   1. the file exists and parses as JSON (so an http boot gets 200, not 404)
+   2. it parses to null, so the game's `if(d)` guard no-ops
+   3. UI_LAYOUT_OVERRIDE stays unset and uiRect returns the fallback untouched
+   Fetched via XHR because the game's own fetch is (correctly) gated off file://. */
+(function(){
+  var tag=document.getElementById('tag');
+  var out={};
+  try{
+    var x=new XMLHttpRequest();
+    x.open('GET','assets/data/ui_layout.json',false); x.send();
+    out.fileReadable = (x.responseText!==undefined && x.responseText.length>0);
+    var parsed; var ok=true;
+    try{ parsed=JSON.parse(x.responseText); }catch(e){ ok=false; out.parseError=e.message; }
+    out.parsesAsJSON = ok;
+    out.parsedValue = String(parsed);
+    out.guardWouldSet = !!parsed;                       // the game's `if(d)` — must be false
+  }catch(e){ out.fetchError=e.message; }
+  try{
+    out.overrideUnset = (typeof UI_LAYOUT_OVERRIDE==='undefined') || (UI_LAYOUT_OVERRIDE==null);
+    var fb={x:1,y:2,w:3,h:4};
+    var r=(typeof uiRect==='function') ? uiRect('anyScreen','anyEl',fb) : null;
+    out.uiRectReturnsFallback = !!(r && r.x===1 && r.y===2 && r.w===3 && r.h===4);
+  }catch(e){ out.uiRectError=e.message; }
+  tag.textContent=JSON.stringify(out);
+})();
+</script>
+</body></html>

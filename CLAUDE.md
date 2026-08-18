@@ -1240,8 +1240,16 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
   under that key rendered IS a laugh — all seven cole emotions contact-sheeted in
   `probe_coleface_0814f.html`, none swapped. Fixed by the 0807o stage-clear rebuild; the entry
   outlived the fix.
-- Two 404s at boot.
-- The `validate_antipatterns.py` hook errors on every write — its script path does not exist.
+- ~~Two 404s at boot.~~ **CLOSED (0814g).** The font was fixed in 0811z (`assets/game/`, file on
+  disk, measured). `ui_layout.json` now SHIPS as a literal-`null` JSON default — 200 over http, the
+  game's `if(d)` guard no-ops, `uiRect` returns its fallback; all six links measured in
+  `probe_uilayout_0814g.html`. **And the 404 was hiding a real bug:** the UI editor loaded AND
+  saved `assets/ui_layout.json` — one directory up from the `assets/data/` path the game fetches —
+  so every layout Mike saved went to a file the game never reads. Both editor paths fixed.
+- ~~The `validate_antipatterns.py` hook errors on every write — its script path does not exist.~~
+  **CLOSED as stale (0814g)** — no hook config referencing it exists anywhere on this machine
+  (user-level or project settings, both checked); the broken hook was removed at some point and the
+  entry outlived it.
 - ~~Jets: observed speed varies 96–138 even on `straight`.~~ **CLOSED and MEASURED in 0811t**
   (`probe_jetspeed.py`). **`straight` is exactly 96 — min, median and max.** The residual on
   CURVED routes is fully attributed and every part of it is deliberate: the >96 excursions
@@ -1252,8 +1260,8 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
   one bug. `enemyEntrySweep`'s blanket exclusion of routed jets dodges the *old* banking coupling
   (removed in 0811l) and can now be reconsidered on its own merits.
 - Stage 1 pop-in: **CLOSED in 0811o**, 0 on all eight stages.
-- Two 404s at boot: **identified** — `assets/data/ui_layout.json` and
-  `assets/fonts/BlackOpsOne.ttf`.
+- Two 404s at boot: **CLOSED** — the font in 0811z, `ui_layout.json` in 0814g (shipped `null`
+  default + the editor's wrong save path fixed; see the entry above).
 - Stage 1: 2 of 29 units still appear on screen rather than entering, both at (21,67).
 - `mfx_` (252 cells) is marked DELETE in the taxonomy but is the **live** art for every enemy
   pellet and missile. Confirm with Mike before removing.

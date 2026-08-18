@@ -591,14 +591,25 @@ async function pickGameFolder(){
     }
 
     // if the game already has a ui_layout.json (from a previous save), load its REAL live values in
+    /* ⚠ THE GAME READS assets/data/ui_layout.json — WITH THE data/ (drop 0814g). This editor was
+       loading AND saving assets/ui_layout.json, one directory up, so every layout Mike saved went
+       to a file the game never fetches: the editor said saved, the game showed defaults, and the
+       boot 404 stayed because the file the game DOES ask for was never written. Both paths now go
+       through the data/ dir, matching where every other data JSON lives (ART_TAXONOMY.json,
+       thruster_mounts.json). */
     try{
       const assetsDir = await gameDirHandle.getDirectoryHandle('assets');
-      const fh = await assetsDir.getFileHandle('ui_layout.json');
+      const dataDir = await assetsDir.getDirectoryHandle('data');
+      const fh = await dataDir.getFileHandle('ui_layout.json');
       const f = await fh.getFile();
       const json = JSON.parse(await f.text());
-      applyLiveLayoutToStore(json);
-      saveStore(); renderAll();
-      alert('Loaded the current live UI layout from this game folder — you are now editing the real, in-game values.');
+      /* the shipped default is literal `null` (a valid JSON document) so the game's fetch stops
+         404ing over http while changing nothing — treat it exactly like "no file yet" */
+      if(json){
+        applyLiveLayoutToStore(json);
+        saveStore(); renderAll();
+        alert('Loaded the current live UI layout from this game folder — you are now editing the real, in-game values.');
+      }
     }catch(e){
       // no existing ui_layout.json yet — that's fine, this'll be the first save
     }
@@ -610,13 +621,16 @@ async function pickGameFolder(){
 async function saveToGameFolder(){
   if(!gameDirHandle){ alert('Select a game folder first.'); return; }
   try{
+    /* the game fetches assets/data/ui_layout.json — the data/ dir, not assets/ root (drop 0814g,
+       see the matching note at the load path above) */
     const assetsDir = await gameDirHandle.getDirectoryHandle('assets', {create:true});
-    const fh = await assetsDir.getFileHandle('ui_layout.json', {create:true});
+    const dataDir = await assetsDir.getDirectoryHandle('data', {create:true});
+    const fh = await dataDir.getFileHandle('ui_layout.json', {create:true});
     const writable = await fh.createWritable();
     await writable.write(JSON.stringify(layoutJSONFromStore(), null, 2));
     await writable.close();
     document.getElementById('folderStatus').textContent = `linked: ${gameDirHandle.name} — saved ${new Date().toLocaleTimeString()}`;
-    alert('Saved! assets/ui_layout.json has been written to your game folder.\n\nReload the game (served over http/https — not a bare file:// open) and it will pick up these positions automatically.');
+    alert('Saved! assets/data/ui_layout.json has been written to your game folder.\n\nReload the game (served over http/https — not a bare file:// open) and it will pick up these positions automatically.');
   }catch(e){
     alert('Could not save to that folder: '+e.message);
   }
