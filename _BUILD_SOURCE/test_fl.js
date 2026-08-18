@@ -8003,12 +8003,21 @@ console.log("=== 180. stage-2 lava arena ===");
   ok(_s3.arenaLiquid!==true, 'no other stage is changed — stage 3 still uses its master');
 
   var _g180=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g180.indexOf('if(cfg.arenaLiquid && frames) return true;')>0,
-     'the boss branch returns before the master is drawn over the lava');
-  /* The guard on `frames` matters: without a liquid to fall back on this would leave the arena
-     as a flat fill colour, which is worse than the mountain it replaced. */
-  ok(/if\(cfg\.arenaLiquid && frames\)/.test(_g180),
-     'and it only does so when there IS a liquid — otherwise the master still covers the screen');
+  /* ⚠ REWRITTEN FOR 0813x. These pinned the literal `if(cfg.arenaLiquid && frames) return true;`.
+     Brian's finding: arenaLiquid does not put the floor BEHIND the lava, it stops the floor being
+     drawn at all - the bed is painted UNDER the master, so returning early leaves only the lava.
+     The flag was authored for the MAGMA COLOSSUS, who rises out of the lava; he was scrapped in
+     0810q/0810s and stage 2 now fields the INFERNO REAVER, a gunship that never touches the ground.
+     So the return is gated on the BOSS carrying _gen/_mech rather than on the stage, and recasting
+     the Colossus anywhere restores the corridor with no further wiring.
+
+     What is asserted now is the RULE, not the line: the stage still declares its arena liquid, and
+     the early return is conditional on the boss rather than unconditional on the flag. */
+  ok(_g180.indexOf('cfg.arenaLiquid')>0, 'the arena-liquid branch still exists');
+  ok(/arenaLiquid[\s\S]{0,400}?(_gen|_mech)/.test(_g180),
+     'and it is gated on the BOSS type, not on the stage alone - a gunship boss keeps its floor');
+  ok(_g180.indexOf('ARENA_FLOOR_HOLD')>0 && _g180.indexOf('ARENA_FLOOR_IN')>0,
+     'the floor travels back down into frame rather than never returning');
 }
 
 // ===== 181. THE GENESIS RED COLUMN (drop 0806g) =====
@@ -10282,10 +10291,29 @@ console.log("=== 225. entry, not materialisation ===");
     +"var a=spawnEnemy('s1jetdelta', offRightX(28), 120, {});"
     +"var b=spawnEnemy('s1jetbomber', offLeftX(28), 120, {});"
     +"return JSON.stringify({W:W, ax:a.x, aw:a.w, bx:b.x, bw:b.w});})()", ctxv));
-  ok(_f225.ax >= _f225.W + _f225.aw/2,
-     'a right-side spawn starts fully outside ('+Math.round(_f225.ax)+' vs world '+_f225.W+' + half '+Math.round(_f225.aw/2)+')');
-  ok(_f225.bx <= -_f225.bw/2,
-     'and a left-side spawn too ('+Math.round(_f225.bx)+' vs half '+Math.round(_f225.bw/2)+')');
+  /* ⚠ REWRITTEN FOR 0813x. These measured the spawn against the WORLD edge, which was the whole
+     bug Brian found: offLeftX/offRightX returned world-space constants while drawWorld runs under
+     translate(-camX). The offset never changed - the edge it was measured from did. On stage 1 the
+     runway swung 6px to 326px on nothing but the player's x, and always collapsed on the side the
+     player stood on. That is the "enemies appearing out of thin air" report.
+
+     The visible edge is the CAMERA edge, so that is what a side entry must clear. Measured at three
+     camera positions rather than one, because a single camX is exactly what hid this. */
+  var _f225b=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true; run.stage=1;"
+    +"try{ beginStage(1); }catch(e){} setState(GS.PLAY);"
+    +"var out=[];"
+    +"[0,160,320].forEach(function(cx){ camX=cx; enemies.length=0;"
+    +"  var a=spawnEnemy('s1jetdelta', offRightX(28), 120, {});"
+    +"  var b=spawnEnemy('s1jetbomber', offLeftX(28), 120, {});"
+    +"  out.push({cx:cx, rGap:a.x-(camX+VW)+a.w/2, lGap:(camX)-b.x+b.w/2, aw:a.w, bw:b.w}); });"
+    +"return JSON.stringify(out);})()", ctxv));
+  _f225b.forEach(function(r){
+    ok(r.rGap>0, 'right spawn clears the camera edge at camX '+r.cx+' (gap '+Math.round(r.rGap)+'px)');
+    ok(r.lGap>0, 'left spawn clears it too at camX '+r.cx+' (gap '+Math.round(r.lGap)+'px)');
+  });
+  var _rg=_f225b.map(function(r){return Math.round(r.rGap);});
+  ok(Math.max.apply(null,_rg)-Math.min.apply(null,_rg) < 8,
+     'and the runway is the SAME at every camera position ('+_rg.join('/')+') - it no longer collapses toward the player');
 }
 
 // ===== 226. SHIP BOSSES MANOEUVRE, THEY DO NOT DRIFT (drop 0812m) =====
