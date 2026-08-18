@@ -7908,7 +7908,23 @@ console.log("=== 178. stage-3 orb + thaw ===");
    +"  o[p[0]+p[1]]=[0,1,2,3,4,5].filter(function(w){"
    +"     return (w!==4 && w!==5) || weaponVariant(w)!==null; }); });"
    +"return JSON.stringify(o);})()", ctxv));
-  ok(_bag.freezer3.indexOf(4)<0, 'the flame slot cannot DROP for Freezer on stage 3');
+  /* ⚠ REPOINTED, NOT DELETED (drop 0814a). This read `_bag.freezer3.indexOf(4)<0` — the flame
+     slot cannot drop for him on stage 3 at all — and it was pinning a LIMITATION, not the rule.
+
+     0812l had to implement "on lvl 3, disable ice breath ... for him" by returning null for the
+     whole slot, because at the time the flamethrower and the ice breath WERE one weapon and
+     there was no way to withhold one without withholding both. Mike has now separated them
+     ("They are SEPARATE attacks"), so the rule can finally be honoured as written: the slot
+     drops, and what it drops is never ice breath. Stage 3 is also where freezerL3Begin hands him
+     a flamethrower off the magma mech as an authored story beat, which the old reading made
+     unreachable from a crate.
+
+     The claim is about the ELEMENT now, sampled over the coin arm, which is what Mike said. */
+  ok(_bag.freezer3.indexOf(4)>=0, 'Freezer CAN still be dropped the flame slot on stage 3');
+  var _f3=JSON.parse(vm.runInContext("(function(){ run.pilot='freezer'; run.stage=3;"
+   +" var s={}; for(var i=0;i<200;i++) s[weaponVariant(4)]=1; return JSON.stringify(Object.keys(s));})()", ctxv));
+  ok(_f3.length===1 && _f3[0]==='flamethrower',
+     'and over 200 rolls it is ONLY ever the flamethrower — ice breath is disabled on 3, per Mike ('+_f3.join(',')+')');
   ok(_bag.freezer2.indexOf(4)>=0, 'it can on stage 2 (as ice breath)');
   ok(_bag.freezer4.indexOf(4)>=0, 'and again from stage 4');
   ok(_bag.yuri3.indexOf(4)>=0, 'and every other pilot keeps it on stage 3');

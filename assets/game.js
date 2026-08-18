@@ -2032,6 +2032,12 @@ function debugEquip(slot, opts){
   if(run.wlevels) run.wlevels[slot] = 5;
   if(opts && opts.forceIce)  run._dbgIce  = true;  else run._dbgIce  = false;
   if(opts && opts.forceFire) run._dbgFire = true;  else run._dbgFire = false;
+  /* a debug grant is a grant: it has to write the HELD variant too, or the slot keeps whatever
+     the last pickup put there and the debug key silently does half its job (drop 0814a).
+     `opts.variant` lets a key ask for a specific one; otherwise take the dispenser's answer. */
+  if(!run.wvars) run.wvars=[null,null,null,null,null,null];
+  run.wvars[slot] = (opts && opts.variant) ||
+                    ((typeof weaponVariant==='function') ? weaponVariant(slot) : null);
   if(typeof floatText==='function' && typeof player!=='undefined')
     floatText(player.x, player.y-26, (opts&&opts.label)||'DEBUG', '#9fe4ff');
   /* there is no 'pickup' cue - my fourth invented sound name today, after glass,
@@ -3941,9 +3947,9 @@ function hudPanel(x,y,w,h){
      FLAME SLOT (4)
        freezer, stage 1        flamethrower       (icebreath is not his yet)
        freezer, stage 2        ICEBREATH          and from here on
-       freezer, stage 3        NOT AVAILABLE      "disable ice breath ... for him"
+       freezer, stage 3        flamethrower       "disable ice breath ... for him" on the ice level
        freezer, stage 4+       either             "he can obtain both"
-       everyone else           flamethrower
+       everyone else           flamethrower       icebreath is EXCLUSIVE to Freezer
      ORB SLOT (5)
        freezer, stage 3+       FIREICE            "he keeps the new fireice orb"
        everyone, stage 3       FIREORB            a one-off for them
@@ -3951,7 +3957,31 @@ function hudPanel(x,y,w,h){
 
    ⚠ THE VARIANT IS BAKED ONTO THE PICKUP AT SPAWN, not recomputed at draw. Stage 4+ lets Freezer
    roll either flame variant, and a variant re-rolled per frame would flicker between two icons
-   while the crate is falling. ============================================================ */
+   while the crate is falling.
+
+   ⚠⚠ AND THAT WARNING WAS WRITTEN, THEN NOT HONOURED ANYWHERE (drop 0814a).
+
+   Mike, items 1-3: "Freezer picks up flamethrower but uses ice breath. They are SEPARATE attacks"
+   / "Fire orb and ice orb keep swapping icons, and fire randomly one or the other" / "fireiceorb
+   fires a basic fireorb."
+
+   Three reports, ONE defect: **the variant a pilot is HOLDING was never recorded anywhere.**
+   `weaponVariant` answers "what should the next crate dispense" and every runtime surface — the
+   HUD icon, the world pickup, the equipped box, the element, the projectile, the flame art — was
+   asking THAT question instead and getting an answer that moves under them:
+
+     - it re-rolls `Math.random()` on stage 4+, and `drawPowerups` calls it once per FRAME, so the
+       crate's icon flickers between flamethrower and ice breath while it falls. Literally
+       "keep swapping icons", and the comment above predicted it.
+     - it reads `run.stage`, so carrying a FIRE ORB off stage 3 silently turns it into an ICE ORB
+       — icon, element and projectile all at once. "fire randomly one or the other."
+     - the flame path never asked it at all: it asked `_pilotKey()==='freezer'`, so Freezer
+       breathed ice out of a flamethrower he picked up. The two attacks were one attack.
+
+   `heldVariant(w)` is the missing half — read from `run.wvars`, which `applyPowerup` writes from
+   the pickup's own baked `wvar`. `weaponVariant` keeps its job (what a crate dispenses) and is
+   now the FALLBACK only, for a slot granted without a pickup (debug, a loaded save, arcade).
+   ============================================================ */
 const WVAR_NAME = {flamethrower:'FLAMETHROWER', icebreath:'ICE BREATH',
                    iceorb:'ICE ORB', fireorb:'FIRE ORB', fireice:'FIRE-ICE ORB'};
 const WVAR_ICON = {flamethrower:'micon_firewall_', icebreath:'micon_icebreath_',
@@ -3963,10 +3993,13 @@ function weaponVariant(w, opt){
   const pk  = (opt && opt.pilot) ? opt.pilot : ((typeof _pilotKey==='function') ? _pilotKey() : '');
   const frz = (pk==='freezer') || !!(run && run._dbgIce && w===4);
   if(w===4){
-    if(!frz) return 'flamethrower';
+    if(!frz) return 'flamethrower';               // ice breath is EXCLUSIVE to Freezer
     if(st<=1) return 'flamethrower';
     if(st===2) return 'icebreath';
-    if(st===3) return null;                       // withheld on 3, per Mike
+    /* stage 3 withholds ICE BREATH, not the SLOT. Before they were separated the two were one
+       weapon, so "disable ice breath for him" could only be honoured by returning null — which
+       took his flamethrower away too and left slot 4 out of the stage-3 crate bag entirely. */
+    if(st===3) return 'flamethrower';
     return (opt && opt.roll!=null ? opt.roll : Math.random()) < 0.5 ? 'flamethrower' : 'icebreath';
   }
   if(w===5){
@@ -3976,16 +4009,30 @@ function weaponVariant(w, opt){
   }
   return null;                                    // slots 0-3 have no variants
 }
+/* WHAT THE PILOT IS ACTUALLY HOLDING — the answer every runtime surface wants.
+   `run.wvars[w]` is written by applyPowerup from the pickup's baked variant and is the only
+   thing that may decide element, art or projectile. weaponVariant is the fallback for a slot
+   that was never picked up (debugEquip, a loaded save, the attract demo) so nothing regresses. */
+function heldVariant(w){
+  if(typeof run==='undefined' || !run) return null;
+  const v = run.wvars && run.wvars[w];
+  if(v) return v;
+  return (typeof weaponVariant==='function') ? weaponVariant(w) : null;
+}
 /* the display name, from the same table the icon uses - this is the fix for the mismatch */
 function weaponDisplayName(w, opt){
-  const v=weaponVariant(w, opt);
+  const v = opt ? weaponVariant(w, opt) : heldVariant(w);
   if(v && WVAR_NAME[v]) return WVAR_NAME[v];
   return (typeof WEAPONS!=='undefined' && WEAPONS[w]) ? WEAPONS[w] : 'WEAPON';
 }
 function weaponIconKey(w, lv, opt){
   const base = ({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[w] || 'mg';
   const _pk = (typeof _pilotKey==='function') ? _pilotKey() : '';
-  const _v = weaponVariant(w, opt);
+  /* ⚠ WITH an opt this is a question about a PICKUP (opt.fixed carries its baked variant);
+     WITHOUT one it is a question about the weapon in the player's hands. Asking the dispenser
+     rule for the second is what made the HUD icon change stage by stage and the falling crate
+     flicker frame by frame. */
+  const _v = opt ? weaponVariant(w, opt) : heldVariant(w);
   if(_v && WVAR_ICON[_v]) return WVAR_ICON[_v]+lv;
   /* ============================================================
      THE ICON MUST MATCH WHAT THE SLOT ACTUALLY DISPENSES (drop 0806d)
@@ -4026,9 +4073,11 @@ function weaponIconKey(w, lv, opt){
    That is deliberate: the caller then draws nothing for a frame rather than the wrong weapon.
    There is no fire_icon_ and no icebreath_icon_ family — micon_ IS that art. ============ */
 function weaponLegacyName(w, lv){
-  const _pk=(typeof _pilotKey==='function')?_pilotKey():'';
-  if(w===4 && (_pk==='freezer' || (run&&run._dbgIce))) return null;        // ice breath
-  if(w===5 && typeof orbIsFire==='function' && orbIsFire()) return null;   // the fireball
+  /* ⚠ ASKS THE HELD VARIANT, NOT THE PILOT (drop 0814a). The pilot test refused the legacy
+     flamethrower icon for Freezer even when a FLAMETHROWER is what he is holding, so his own
+     weapon had no fallback art at all. */
+  if(w===4 && flameIsIce()) return null;                                   // ice breath
+  if(w===5 && typeof orbIsFire==='function' && orbIsFire()) return null;   // fire / fire-ice
   return 'pw_'+(({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[w]||'mg')+'_'+lv;
 }
 function drawHUDCustom(){
@@ -10745,8 +10794,21 @@ function eTankBlast(e){ // STRONG shell fired from the END OF THE BARREL, scalin
     _gscale:0.45, mg:false, blast:true, dmg:1 });
   if(Audio.SFX.enemyBig) Audio.SFX.enemyBig(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
-function pShard(x,y,ang,lv){ const spd=3.4+lv*0.25; pBullets.push({kind:'shard', x, y, vx:Math.cos(ang)*spd, vy:Math.sin(ang)*spd, w:8, h:16, dmg:1, lv, ang, life:1.3}); }
-function iceBurst(x,y,n,lv){ for(let i=0;i<n;i++) pShard(x,y, i*(TAU/n)+Math.random()*0.3, lv); if(typeof explode==='function') explode(x,y,10,'#bfe8ff'); }
+/* ⚠ THE ORB AND ITS SHARDS NEVER TOOK THE ELEMENTAL BONUS (drop 0814a).
+
+   `attackElement` has answered for kind 'orb' and kind 'shard' since 0801fn and NOTHING ever
+   asked it: grep `elementMultiplier` and its only call sites were the fireball and the flame.
+   So Mike's own rule — "all fireattacks do 2x damage to ice enmies, vice versa on stage 2",
+   the entire reason the fireball exists on the ice level — has never once applied to the weapon
+   it was written for. The shards fall through to the GENERIC bullet collide, which knows nothing
+   about elements, so the multiplier is baked onto the projectile at spawn instead: element and
+   stage are both fixed by then and it costs the hot path nothing.
+
+   ⚠ THIS RAISES ORB DAMAGE ON STAGES 2 AND 3 ONLY, and it is a declared rule finally firing
+   rather than a balance change I chose. If the orb now reads too strong there, the dial is
+   elementMultiplier, not this. */
+function pShard(x,y,ang,lv,opt){ const spd=3.4+lv*0.25; pBullets.push({kind:'shard', x, y, vx:Math.cos(ang)*spd, vy:Math.sin(ang)*spd, w:8, h:16, dmg:1*((opt&&opt.mul)||1), lv, ang, life:1.3, _ts:(opt&&opt.ts)?1:0}); }
+function iceBurst(x,y,n,lv,opt){ for(let i=0;i<n;i++) pShard(x,y, i*(TAU/n)+Math.random()*0.3, lv, opt); if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':'#bfe8ff'); }
 /* RAIDEN-STYLE AUTO HOMING MISSILES — auto-fires alongside the primary weapon.
    Count + tracking scale with run.missileLevel (1..5). Pilot-colored art. */
 function autoFireMissiles(){
@@ -10831,9 +10893,19 @@ function flameHalfW(lv,t){ const f=clamp(t,0,1); return flameBase(lv)*(1+(flameF
    kills. ICE_W/ICE_H stay the ice reel's own scale - the ice plate is drawn slightly shorter and
    narrower than fire, so its hitbox ends where the frost visibly ends rather than 10% past it. */
 const FLAME_ICE_W = 0.85, FLAME_ICE_H = 0.90;
+/* ⚠ THE FLAME SLOT'S ELEMENT IS THE HELD VARIANT, NOT THE PILOT (drop 0814a).
+
+   Mike: "Freezer picks up flamethrower but uses ice breath. They are SEPARATE attacks, and ice
+   breath is exclusive to Freezer from level 2 onward."
+
+   This returned true for Freezer unconditionally, so every flamethrower he ever touched came out
+   of the nozzle as frost — the two attacks could not be told apart because nothing in the engine
+   distinguished them. `heldVariant(4)` is what he actually picked up. Every flame-gated site in
+   the file now routes through this ONE function (the draw, the hit width, the element, the
+   freeze-on-hit, the legacy icon), so they cannot disagree again. */
 function flameIsIce(){
-  return ((typeof _pilotKey==='function') && _pilotKey()==='freezer')
-      || !!(typeof run!=='undefined' && run && run._dbgIce);
+  if(typeof run!=='undefined' && run && run._dbgIce) return true;   // DEBUG 9 forces ice
+  return (typeof heldVariant==='function') && heldVariant(4)==='icebreath';
 }
 /* the drawn column, in world units: half-width, and the far TIP.
 
@@ -10874,6 +10946,8 @@ function weaponHitSfx(el){
     const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null; if(!S) return;
     if(el==='ice'  && S.shatter) S.shatter();
     else if(el==='fire' && S.crackle) S.crackle();
+    /* thermoshock is both, so it is heard as both — one gate, so it still cannot machine-gun */
+    else if(el==='fireice'){ if(S.crackle) S.crackle(); if(S.shatter) S.shatter(); }
     else if(S.hit) S.hit();
   }catch(e){}
 }
@@ -11079,8 +11153,8 @@ function flameDraw(f){
      white core and every falloff the flame cleanup produced survive intact. It
      scrolls into itself exactly the same way; only the colour changed. */
   const _nf=8;
-  /* DEBUG 9 forces ice on any pilot (drop 0801ha) */
-  const _icy = ((typeof _pilotKey==='function') && _pilotKey()==='freezer') || !!(run && run._dbgIce);
+  /* DEBUG 9 forces ice on any pilot (drop 0801ha) — via flameIsIce, which owns that rule now */
+  const _icy = flameIsIce();
   let _fk;
   if(_icy){
     /* ICE BREATH ROLLS OUT (drop 0801hh). Mike: "make ice breath appear to roll out
@@ -11545,7 +11619,11 @@ function pShoot(){
     if(live<maxOrbs){
       const shardN=({1:3,2:5,3:7,4:9,5:9})[lv]||3;
       const vx=(maxOrbs>1)?(live===0?-1.5:1.5):0;
-      pBullets.push({kind:'orb', x:player.x, y:player.y-16, vx, vy:-2.7, w:34, h:34, dmg:2, lv, spin:0, life:2.6, shardN, shardCd:0.06, frame:0, _hit:[], _ht:0, _bt:0});
+      /* `_ts` rides on the orb rather than being re-asked at draw time — an orb already in
+         flight when the slot changes must keep being the orb it was launched as. Same reason
+         `lv` is captured here and not read off `run` by the draw. */
+      const _ts=(typeof orbIsFireIce==='function') && orbIsFireIce();
+      pBullets.push({kind:'orb', x:player.x, y:player.y-16, vx, vy:-2.7, w:34, h:34, dmg:2, lv, spin:0, life:2.6, shardN, shardCd:0.06, frame:0, _ts:_ts?1:0, _hit:[], _ht:0, _bt:0});
       (Audio.SFX.spread||Audio.SFX.shoot)();  // ice orb launch
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
@@ -12000,6 +12078,13 @@ function applyPowerup(p){
       // First time acquiring this weapon (level 0/undefined) -> level 1. Otherwise level up.
       const _cur=(run.wlevels[_wt]|0);
       run.weapon=_wt; run.wlevels[_wt]=clamp(_cur+1,1,5); run.wlevel=run.wlevels[_wt];
+      /* ⚠ THE PICKUP'S BAKED VARIANT WAS READ FOR THE BANNER AND THEN THROWN AWAY (drop 0814a).
+         `p.wvar` is decided once, at spawn, in spawnContainer — that is the whole design, and
+         this was the only place it could have been kept. Without it every surface downstream
+         had to guess from pilot+stage, and all three of Mike's weapon reports are that guess
+         being wrong in a different way. Recorded here, read via heldVariant everywhere else. */
+      if(!run.wvars) run.wvars=[null,null,null,null,null,null];
+      run.wvars[_wt] = p.wvar || ((typeof weaponVariant==='function')?weaponVariant(_wt):null);
       /* the announcement replaces floatText here — a pickup is an EVENT, and a small tinted
          string drifting up from the crate reads as a damage number */
       if(typeof arcadeBanner==='function') arcadeBanner(arcWeaponAnnounce(_wt, run.wlevel, p.wvar?{fixed:p.wvar}:null));
@@ -13968,7 +14053,7 @@ function startRun(fromStage=1){
   if(typeof hqSeen!=='undefined') hqSeen={};      // a fresh run plays the HQ scenes again
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
   if(typeof lzMount!=='undefined') lzMount=null;
-  run.weapon=0; run.wlevel=0; run.wlevels=[0,0,0,0,0,0]; run.speed=0; run.speedT=0; run.speedLevel=0; run.shield=0; run.power=0; run.missileLevel=0; run._mslCd=0;   // 0 = basic MG (pilot stat-card fire rate); other weapons not yet acquired
+  run.weapon=0; run.wlevel=0; run.wlevels=[0,0,0,0,0,0]; run.wvars=[null,null,null,null,null,null]; run.speed=0; run.speedT=0; run.speedLevel=0; run.shield=0; run.power=0; run.missileLevel=0; run._mslCd=0;   // 0 = basic MG (pilot stat-card fire rate); other weapons not yet acquired
   if(run.mode==='arcade'){ beginStage(fromStage); }
   else {
     // CAMPAIGN: first entry runs the full military-computer boot -> map -> flags sequence
@@ -14235,20 +14320,44 @@ const STAGE_ELEMENT = {2:'fire', 3:'ice'};
 function elementMultiplier(atkElem){
   const st=STAGE_ELEMENT[run.stage];
   if(!st || !atkElem) return 1;
+  /* THERMOSHOCK CARRIES BOTH (drop 0814a). Freezer's fire-ice orb is fire AND ice in one
+     projectile — the art is a ball split down the middle and it sprays four fire shards and
+     four ice ones — so on an elemental stage the half that counts is always the opposing half.
+     ⚠ THIS IS MY CALL, NOT MIKE'S. He specified the weapon, not its multiplier. It is one line
+     to make it 1 if he wants the two halves to cancel instead. */
+  if(atkElem==='fireice') return 2;
   if(atkElem===st) return 1;              // fire on the volcano, ice on the ice
   return 2;                                // the opposite element: double
 }
 function attackElement(kind){
   if(kind==='fireball'||kind==='firray') return 'fire';
-  if(kind==='flame') return ((typeof _pilotKey==='function' && _pilotKey()==='freezer') || (run&&run._dbgIce)) ? 'ice' : 'fire';
-  if(kind==='orb'||kind==='shard') return (typeof orbIsFire==='function' && orbIsFire()) ? 'fire' : 'ice';
+  if(kind==='flame') return flameIsIce() ? 'ice' : 'fire';
+  if(kind==='orb'||kind==='shard'){
+    if(typeof orbIsFireIce==='function' && orbIsFireIce()) return 'fireice';
+    return (typeof orbIsFire==='function' && orbIsFire()) ? 'fire' : 'ice';
+  }
   if(kind==='iceorb'||kind==='iceshard') return 'ice';
   return null;
 }
 const ORB_FIRE_ON_L3 = true;
+/* ⚠ THE ORB'S ELEMENT IS THE ORB YOU PICKED UP, NOT THE STAGE YOU ARE STANDING ON (drop 0814a).
+
+   Mike: "Fire orb and ice orb keep swapping icons, and fire randomly one or the other."
+
+   This was `run.stage===3`, so the SAME orb was fire on stage 3 and ice on stage 4 — icon,
+   element, ball art and shard art all flipping under the player at a stage boundary, with no
+   pickup involved. ORB_FIRE_ON_L3 is still honoured, but where it belongs: in weaponVariant, so
+   stage 3 DISPENSES the fireball ("never spawn ice orb on this level for anyone"). What you then
+   carry off the level stays what it was. */
 function orbIsFire(){
   /* DEBUG 0 forces the fire orb on any stage (drop 0801ha) */
-  return (ORB_FIRE_ON_L3 && run.stage===3) || !!(run && run._dbgFire);
+  if(run && run._dbgFire) return true;
+  const v=(typeof heldVariant==='function') ? heldVariant(5) : null;
+  return v==='fireorb' || v==='fireice';
+}
+/* Freezer's THERMOSHOCK orb — its own weapon, not a fireball. See launchThermoshock. */
+function orbIsFireIce(){
+  return (typeof heldVariant==='function') && heldVariant(5)==='fireice';
 }
 const FRZ_ORB_FULL = 1.5;                 // seconds to a full charge
 const FRZ_RAY_GAP  = 0.30;                // Mike's 35*1 tics
@@ -14310,25 +14419,57 @@ function launchFireball(charge, forceTier){
     if(typeof Snd!=='undefined' && Snd && Snd.play) Snd.play('arcFlameLoop', full?1.0:(tier==='half'?0.85:0.7));
     else Audio.SFX.arcFlameLoop();
   }
+  /* ⚠ IS THIS THE FIREBALL OR THE THERMOSHOCK? (drop 0814a)
+
+     Mike, item 3: "fireiceorb fires a basic fireorb."
+
+     Literally true and it had never been otherwise — the FIRE-ICE ORB had an icon, a name and a
+     table row and NO PROJECTILE, so this function was the whole of it and it launched the plain
+     fireball. `nts_` is the pack that was already sitting in the manifest for it: 45 registered
+     keys, **zero references anywhere in this file** — a 12-frame split fire/ice ball, eight
+     shards (four flame, four frost), a charge reel, a release ring, an impact and an 8-point
+     burst star that is exactly the eight-way discharge Mike specified in 0801fj.
+
+     Same flight, same three tiers, same brake-and-unload beat — only the identity changes, so
+     the weapon he signed off on is untouched and the one he says is missing now exists. */
+  const _ts = (typeof orbIsFireIce==='function') && orbIsFireIce();
   pBullets.push({
     kind:'fireball', x:player.x, y:player.y-18,
     vx:0, vy: SPD,
     w: full?44:(tier==='half'?36:30), h: full?44:(tier==='half'?36:30),
     dmg: full?(45+lv*8):(tier==='half'?(26+lv*5):(18+lv*4)),
     spin:0, spinSp: SPIN,                // the whole ball turns, every tier
-    lv: clamp(lv,1,5), tier,
+    lv: clamp(lv,1,5), tier, _ts: _ts?1:0,
     pierce:true, t:0, _lt:0,             // _lt drives the launch reel
     _rays: full?8:0, _rayI:0, _rayT:0, _burst:false
   });
   if(Audio.SFX.nsp_charge_release) Audio.SFX.nsp_charge_release();
-  explode(player.x, player.y-16, full?30:20, 'red');
+  explode(player.x, player.y-16, full?30:20, _ts?'#7fe0ff':'red');
   shake=Math.max(shake, full?8:4);
-  floatText(player.x,player.y-30, full?'FIREBALL!':'fireball', '#ff8a3a');
+  if(_ts) floatText(player.x,player.y-30, full?'THERMOSHOCK!':'thermoshock', '#9fd8ff');
+  else    floatText(player.x,player.y-30, full?'FIREBALL!':'fireball', '#ff8a3a');
 }
 
 function freezerOrbDraw(){
   if(!_frzOrb || !_frzOrb.charging || typeof XART==='undefined') return;
   const p=clamp(_frzOrb.ch/FRZ_ORB_FULL,0,1);
+  /* THE THERMOSHOCK HAS ITS OWN CHARGE (drop 0814a). `nts_chg_0..3` is authored as the build:
+     sparks converging, then a swirl, then the split fire/ice sphere at full. Driven by the
+     CHARGE FRACTION rather than by a clock, so what is on screen is the state of the charge —
+     the whole point of a held weapon — and it holds on the last frame at full. */
+  if(orbIsFireIce()){
+    const _ci=clamp(Math.floor(p*TS_REEL_N.chg), 0, TS_REEL_N.chg-1);
+    const _ck='nts_chg_'+_ci;
+    if(XART.rdy(_ck)){
+      const im=XART.get(_ck), S=26+58*p;
+      ctx.save(); ctx.globalCompositeOperation='lighter';
+      ctx.globalAlpha=0.55+0.45*p;
+      ctx.translate(player.x, player.y-18); ctx.rotate(_frzOrb.ph*1.7);
+      ctx.drawImage(im,-S/2,-S/2,S,S);
+      ctx.restore();
+      return;
+    }
+  }
   /* THE SURROUND, like Falva's aura and Maverick's orbs, in fire red. Built from
      the fire-orb reel so it is the same material as the projectile. */
   const N=6;
@@ -14365,6 +14506,13 @@ function freezerL3Begin(){
   run._frzPrevWlevel = run.wlevel;
   run.weapon = 4;                                  // 4 = firewall, the flamethrower
   run.wlevel = Math.max(3, run.wlevel||1);         // usable, not a token
+  /* ⚠ AND IT IS A FLAMETHROWER, EXPLICITLY (drop 0814a). The lines above are about him pulling
+     a FIRE weapon off the magma mech — "Weapon cooler... offline" — and before ice breath was
+     separated from the flamethrower this beat handed him a weapon that came out as frost, on
+     the ice level, contradicting its own narration. Stated here rather than left to the
+     dispenser default so the story beat cannot drift if that table changes. */
+  if(!run.wvars) run.wvars=[null,null,null,null,null,null];
+  run.wvars[4]='flamethrower';
   _frzNarr = { i:0, t:0, hold:2.6, done:false };
 }
 function freezerL3End(){
@@ -15739,7 +15887,8 @@ function updatePlay(dt){
       for(const e of enemies){
         if(e.dead) continue;
         if(Math.abs(e.x-b.x)<(e.w+b.w)/2 && Math.abs(e.y-b.y)<(e.h+b.h)/2){
-          b._et=(b._et||0)-dt; if(b._et<=0){ hitEnemy(e,b.dmg*elementMultiplier('fire')); b._et=0.15;
+          b._et=(b._et||0)-dt; if(b._et<=0){ hitEnemy(e,b.dmg*elementMultiplier(b._ts?'fireice':'fire')); b._et=0.15;
+            if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; }   // thermoshock freezes as well as burns
             if(typeof stageStats!=='undefined') stageStats.hits++; }
         }
       }
@@ -15753,9 +15902,14 @@ function updatePlay(dt){
         if(b._rayT<=0 && b._rayI<b._rays){
           const a=(b._rayI/b._rays)*TAU + (b.spin||0)*0.35;
           const sp=7.6;
+          /* THE THERMOSHOCK'S EIGHT ALTERNATE (drop 0814a). nts_shard_0..3 are the flame shards
+             and 4..7 the frost ones — the pack is authored as four of each, which is why the
+             burst star has alternating arms. `_el` carries which one this ray is so the draw and
+             the damage agree; the plain fireball keeps its single fire ray untouched. */
           pBullets.push({kind:'firray', x:b.x, y:b.y,
             vx:Math.cos(a)*sp, vy:Math.sin(a)*sp,
-            w:18, h:18, dmg:Math.round(b.dmg*0.45), pierce:false, t:0, _ang:a});
+            w:18, h:18, dmg:Math.round(b.dmg*0.45), pierce:false, t:0, _ang:a,
+            _ts: b._ts?1:0, _el: b._ts ? ((b._rayI%2)?'ice':'fire') : 'fire'});
           if(Audio.SFX && Audio.SFX.spread) Audio.SFX.spread();
           b._rayI++; b._rayT=FRZ_RAY_GAP;
         }
@@ -15764,13 +15918,15 @@ function updatePlay(dt){
              attack with explosions, decals and fire-ish rings." Three rings from
              fxBurst, a real explode on top, and the pack's flame decal scattered
              where it went off so the ground keeps a mark. */
-          if(typeof fxBurst==='function') fxBurst(b.x,b.y,72,{color:'#ff8a3a',rings:3});
-          if(typeof explode==='function') explode(b.x,b.y,58,'red','fireball');
+          if(typeof fxBurst==='function') fxBurst(b.x,b.y,72,{color:b._ts?'#9fd8ff':'#ff8a3a',rings:3});
+          if(typeof explode==='function') explode(b.x,b.y,58,b._ts?'#8fd0ff':'red','fireball');
           for(let _d=0;_d<7;_d++){
             particles.push({x:b.x+rnd(-30,30), y:b.y+rnd(-30,30), vx:rnd(-0.5,0.5), vy:rnd(-0.4,0.4),
               life:rnd(0.6,1.4), t:0, r:rnd(6,15), _fbDecal:1, _fbRot:Math.random()*TAU,
-              color:'#ff8a3a'});
+              color: b._ts ? (chance(0.5)?'#ff8a3a':'#9fd8ff') : '#ff8a3a'});
           }
+          /* the thermoshock's own impact reel, over the shared rings — nts_imp_0..3 */
+          if(b._ts) tsFx(b.x, b.y, 'imp', 150);
           atomFlash=Math.max(atomFlash||0,0.4);
           shake=Math.max(shake,11);
           b.dead=true;
@@ -15783,7 +15939,10 @@ function updatePlay(dt){
       b.t=(b.t||0)+dt; b.x+=b.vx; b.y+=b.vy;
       for(const e of enemies){
         if(e.dead) continue;
-        if(Math.abs(e.x-b.x)<(e.w+b.w)/2 && Math.abs(e.y-b.y)<(e.h+b.h)/2){ hitEnemy(e,b.dmg*elementMultiplier('fire')); b.dead=true; break; }
+        if(Math.abs(e.x-b.x)<(e.w+b.w)/2 && Math.abs(e.y-b.y)<(e.h+b.h)/2){
+          hitEnemy(e,b.dmg*elementMultiplier(b._ts?'fireice':'fire'));
+          if(b._ts && b._el==='ice'){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; }
+          b.dead=true; break; }
       }
       const _fw=(typeof worldWidth==='function')?worldWidth():VW;
       if(b.y<-40||b.y>VH+40||b.x<-40||b.x>_fw+40) b.dead=true;
@@ -16095,8 +16254,10 @@ function updatePlay(dt){
                flashes white/ice blue and turns them into ice variants when they
                die." The flash is the standard hit flash retinted; _frozen marks
                the unit so its death and any later hit read as ice. */
-/* the debug keys must reach EVERY freezer-gated path, not just the draw (drop 0801hh) */
-            if((typeof _pilotKey==='function' && _pilotKey()==='freezer') || (run&&run._dbgIce)){
+/* the debug keys must reach EVERY freezer-gated path, not just the draw (drop 0801hh)
+   — and 0814a moved the whole question onto flameIsIce(), so a FLAMETHROWER in Freezer's
+   hands no longer freezes what it burns. */
+            if(flameIsIce()){
               e._frozen=(e._frozen||0)+1;
               e._frzFlash=0.18;
               if(chance(0.5)) particles.push({x:e.x+rnd(-e.w*0.4,e.w*0.4), y:e.y+rnd(-e.h*0.4,e.h*0.4),
@@ -16129,11 +16290,15 @@ function updatePlay(dt){
       b.life-=dt; b.spin+=dt*7; b.frame=(b.frame+dt*12)%4;
       b.x+=b.vx; b.y+=b.vy; b.vy*=0.986;
       b.shardCd-=dt;
-      if(b.shardCd<=0){ b.shardCd=0.10; const n=b.shardN; for(let i=0;i<n;i++){ pShard(b.x,b.y, b.spin + i*(TAU/n), b.lv); } b.sfxCd=(b.sfxCd||0)-1; if(b.sfxCd<=0){ b.sfxCd=3; if(Audio.SFX.spread)Audio.SFX.spread(); } }
+      /* the orb's element is fixed at LAUNCH (b._ts), never re-asked here — see the note at
+         pShoot. The multiplier is solved once per volley rather than per shard. */
+      const _om=elementMultiplier(b._ts?'fireice':(orbIsFire()?'fire':'ice'));
+      const _sopt={mul:_om, ts:b._ts};
+      if(b.shardCd<=0){ b.shardCd=0.10; const n=b.shardN; for(let i=0;i<n;i++){ pShard(b.x,b.y, b.spin + i*(TAU/n), b.lv, _sopt); } b.sfxCd=(b.sfxCd||0)-1; if(b.sfxCd<=0){ b.sfxCd=3; if(Audio.SFX.spread)Audio.SFX.spread(); } }
       b._ht-=dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.16; }
-      for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg); b._hit.push(e); } } }
-      if(boss&&bossActive&&!boss.dead && Math.abs(boss.x-b.x)<(boss.w/2+b.w/2)&&Math.abs(boss.y-b.y)<(boss.h/2+b.h/2)){ b._bt-=dt; if(b._bt<=0){ hitBoss(b.dmg); b._bt=0.16; } }
-      if(b.life<=0 || b.y<PLAY.y-16){ b.dead=true; iceBurst(b.x,b.y,b.shardN,b.lv); }
+      for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg*_om); if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; } b._hit.push(e); } } }
+      if(boss&&bossActive&&!boss.dead && Math.abs(boss.x-b.x)<(boss.w/2+b.w/2)&&Math.abs(boss.y-b.y)<(boss.h/2+b.h/2)){ b._bt-=dt; if(b._bt<=0){ hitBoss(b.dmg*_om); b._bt=0.16; } }
+      if(b.life<=0 || b.y<PLAY.y-16){ b.dead=true; iceBurst(b.x,b.y,b.shardN,b.lv,_sopt); if(b._ts) tsFx(b.x,b.y,'imp',110); }
       continue;
     }
     if(b.kind==='missile'){
@@ -16771,7 +16936,7 @@ function playerHit(){
   for(let _k=0;_k<7;_k++) explode(player.x+rnd(-16,16), player.y+rnd(-14,14), rnd(26,50), 'red');
   shake=18; flashScreen=0.7; Audio.SFX.death();
   // lose some powerup state on death
-  run.weapon=0; run.wlevels=[0,0,0,0,0,0]; run.wlevel=0; run.power=0;
+  run.weapon=0; run.wlevels=[0,0,0,0,0,0]; run.wvars=[null,null,null,null,null,null]; run.wlevel=0; run.power=0;
   run.speed=0; run.speedLevel=0; run.speedT=0;
   run.missileLevel=0;   // die -> lose ALL auto-missiles; next missile powerup is level 1 again
   // lose the active special on death (Maverick venom, Yuri chain, etc.)
@@ -16912,6 +17077,25 @@ function fxBurst(x, y, size, opts){
                     color: chance(0.5)?'#ffffff':col, grav:-0.012});
   }
   if(typeof shake!=='undefined') shake=Math.max(shake, clamp(S*0.07, 1.5, 11));
+}
+/* ============================================================
+   THE THERMOSHOCK'S ONE-SHOT REELS (drop 0814a)
+
+   `nts_` ships five short reels beside its orb and shards — chg (charge), rel (release), imp
+   (impact), burst (the eight-point star) and cmp — and there is no generic "play this reel once
+   here" system in the file, only particles. So they ARE particles, with one draw branch, the
+   same shape `_fbDecal` and `_iceChip` already use.
+
+   ⚠ FRAME OFF `p.t`, NEVER `performance.now()`. 0811y and 0812g both record what the wall clock
+   does to a short reel: which frame you see depends on when the effect happened to start, so two
+   impacts a frame apart animate out of step with themselves. `p.t/p.life` is monotonic and holds
+   on the last frame by construction.
+   ⚠ AND IT MUST NOT OUTLIVE ITS REEL — see the expiry note in the particle loop. ============ */
+const TS_REEL_N = {chg:4, rel:4, imp:4, burst:8, cmp:5, orb:12, shard:8};
+function tsFx(x, y, reel, size, life){
+  const N = TS_REEL_N[reel] || 4;
+  particles.push({x, y, vx:0, vy:0, t:0, life: life || N*0.045,
+                  r: size || 128, _tsFx: reel, _tsN: N});
 }
 function bossDie(){
   boss.dead=true; boss.dying=0; boss._blasted=false; bossActive=false; bossDefeated=true;
@@ -17768,6 +17952,31 @@ function updateEffects(dt){
        whole frame (drop 0801ew). */
     if(p._delay>0){ p._delay-=dt; continue; }
     p.t+=dt; p.x+=(p.vx||0); p.y+=(p.vy||0); if(p.grav)p.vy=(p.vy||0)+p.grav; if(p.vx)p.vx*=0.98;
+    /* ⚠ THE EXPIRY TEST HAS TO RUN BEFORE ANYTHING CAN SKIP IT (re-fixed drop 0814a).
+
+       0810a found and fixed exactly this and it is back: the test sat at the BOTTOM of the loop,
+       after the `_fbDecal` and `_iceChip` branches, and both of those draw and `continue`. So
+       neither kind was ever marked dead and neither was ever filtered out — they lived forever,
+       and `_iceChip` re-tints its sprite every frame, per particle. The measured cost when this
+       last happened was 32.58ms of frame against 2.88ms without.
+
+       It is at the TOP now, and it is in the FIRE/ICE weapons again, which is why it turned up
+       while wiring the thermoshock. Setting `dead` here does not skip this frame's draw — the
+       branches below still run; the filter at the end of the loop is what removes it. */
+    if(p.t>=p.life) p.dead=true;
+    if(p._tsFx){
+      /* the thermoshock's own reels — see tsFx. Frame from p.t, additive, over everything. */
+      const _i=clamp(Math.floor((p.t/p.life)*p._tsN), 0, p._tsN-1);
+      const _k='nts_'+p._tsFx+'_'+_i;
+      if(typeof XART!=='undefined' && XART.rdy(_k)){
+        const im=XART.get(_k), S=p.r||128;
+        ctx.save(); ctx.globalCompositeOperation='lighter';
+        ctx.globalAlpha=clamp(1-(p.t/p.life)*0.4,0,1);
+        ctx.drawImage(im, p.x-S/2, p.y-S/2, S, S);
+        ctx.restore();
+      }
+      continue;
+    }
     /* helix debris tumbles and slows, the way a thrown chip of metal does */
     if(p._fbDecal){
       const im=(typeof XART!=='undefined' && XART.rdy('nfb_decal'))?XART.get('nfb_decal'):null;
@@ -17797,7 +18006,8 @@ function updateEffects(dt){
     if(p._hxdeb){ p._hxrot=(p._hxrot||0)+(p._hxspin||0)*dt; p.vx*=0.985; p.vy*=0.992; }
     if(p._iceChip){ p._icRot=(p._icRot||0)+(p._icSpin||0)*dt; p.vx*=0.978; p.vy*=0.99; }
     if(p.smoke){ p.r+=dt*4; }
-    if(p.t>=p.life)p.dead=true;
+    /* the expiry test that used to be here is at the TOP of the loop now — read the note there
+       before moving it back; two branches above `continue` past this point. */
   }
   particles=particles.filter(p=>!p.dead);
   for(const f of floaters){ f.t+=dt; f.y-=0.5; if(f.t>=f.life)f.dead=true; }
@@ -22573,6 +22783,42 @@ function drawBullets(){
          Level picks the reel: a level-5 fireball is a visibly bigger ball than a
          level-1 one, which is what the five folders are for. */
       const _lv=clamp(b.lv||1,1,5);
+      /* ============================================================
+         THE THERMOSHOCK BALL (drop 0814a) — Mike's item 3, "fireiceorb fires a basic fireorb".
+
+         Its own 12-frame reel, not the fireball's 8. `nts_orb_*` is drawn split fire/ice with
+         flame and frost tongues already turning around it, so there is no counter-rotating
+         second layer here — the fireball needs `nfb_fl` over `nfb_orb` because its ball is
+         plain; this one is not. `nts_rel_*` is the release ring, standing in for `nfb_launch_*`.
+
+         ⚠ 12 FRAMES, NOT 8. `%8` on a 12-frame reel silently drops a third of the animation and
+         reads as a stutter at the wrap. TS_REEL_N carries the length. */
+      if(b._ts){
+        ctx.save(); ctx.globalCompositeOperation='lighter';
+        if(typeof XART!=='undefined' && (b._lt||0)<0.24){
+          const _rk='nts_rel_'+Math.min(3,((b._lt||0)*17)|0);
+          if(XART.rdy(_rk)){ const im=XART.get(_rk), S=b.w*2.2;
+            ctx.globalAlpha=1-((b._lt||0)/0.24);
+            ctx.drawImage(im, b.x-S/2, b.y-S/2, S, S); }
+        }
+        ctx.globalAlpha=1;
+        const _tk='nts_orb_'+(((b.t*14)|0)%TS_REEL_N.orb);
+        if(typeof XART!=='undefined' && XART.rdy(_tk)){
+          const im=XART.get(_tk);
+          ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(b.spin||0);
+          ctx.drawImage(im,-b.w/2,-b.h/2,b.w,b.h); ctx.restore();
+        }
+        /* the eight-point star, ONE ARM PER RAY as it comes apart — the reel is exactly the
+           eight-way discharge Mike specified, so it is driven by _rayI rather than by a clock */
+        if(b._rays>0 && b._rayI>0 && typeof XART!=='undefined'){
+          const _bk='nts_burst_'+clamp(b._rayI-1,0,TS_REEL_N.burst-1);
+          if(XART.rdy(_bk)){ const im=XART.get(_bk), S=b.w*2.6;
+            ctx.save(); ctx.globalAlpha=0.85; ctx.translate(b.x,b.y); ctx.rotate((b.spin||0)*0.35);
+            ctx.drawImage(im,-S/2,-S/2,S,S); ctx.restore(); }
+        }
+        ctx.restore();
+        continue;
+      }
       ctx.save(); ctx.globalCompositeOperation='lighter';
       // 1. launch flare
       if(typeof XART!=='undefined' && (b._lt||0)<0.22){
@@ -22603,6 +22849,20 @@ function drawBullets(){
       continue;
     }
     if(b.kind==='firray'){
+      /* the thermoshock's rays are its own shards, and WHICH shard says which element it is:
+         nts_shard_0..3 flame, 4..7 frost. `_el` was decided when the ray was fired so the
+         picture and the damage cannot disagree. */
+      if(b._ts && typeof XART!=='undefined'){
+        const _base=(b._el==='ice')?4:0;
+        const _tk='nts_shard_'+(_base+(((b.t*16)|0)%4));
+        if(XART.rdy(_tk)){
+          const im=XART.get(_tk), S=b.w*1.6;
+          ctx.save(); ctx.globalCompositeOperation='lighter';
+          ctx.translate(b.x,b.y); ctx.rotate((b._ang||0)+Math.PI/2);
+          ctx.drawImage(im,-S/2,-S/2,S,S);
+          ctx.restore(); continue;
+        }
+      }
       const _k='fireshard_'+(((b.t*16)|0)%4);
       if(typeof XART!=='undefined' && XART.rdy(_k)){
         const im=XART.get(_k);
@@ -22791,6 +23051,20 @@ function drawBullets(){
         else { ctx.fillStyle=(b.kind==='nukem')?'#ffe14a':'#ffb04a'; ctx.fillRect(-3,-10,6,20); }
       }
       ctx.restore(); continue; }
+    if(b.kind==='orb' && b._ts){
+      /* THE FIRE-ICE ORB (drop 0814a) — the uncharged half of Mike's item 3. `nts_orb_*` is a
+         12-frame split fire/ice ball authored for this weapon and never referenced until now.
+         Checked BEFORE the fire branch: orbIsFire() is true for fireice too (it IS half fire),
+         so a fireice orb would otherwise fall into the fireball's art. */
+      const _tk='nts_orb_'+((((b.t||0)*14)|0)%TS_REEL_N.orb);
+      if(typeof XART!=='undefined' && XART.rdy(_tk)){
+        const im=XART.get(_tk);
+        ctx.save(); ctx.globalCompositeOperation='lighter';
+        ctx.translate(b.x,b.y); ctx.rotate((b.spin||0)*0.9);
+        ctx.drawImage(im,-b.w,-b.w,b.w*2,b.w*2);
+        ctx.restore(); continue;
+      }
+    }
     if(b.kind==='orb' && typeof orbIsFire==='function' && orbIsFire()){
       /* FIRE ORB ON STAGE 3 (drop 0801fs). Mike: "ice orb keeps spawing on the ice
          level and I cannot get fireball."
@@ -22835,6 +23109,20 @@ function drawBullets(){
          nfb_fl<lv>_* is the fireball pack's own per-level flame reel — the direct counterpart
          to the ice pack's nio_<lv>_*, same shape of asset, so this is the art that was always
          meant to be here. */
+      /* THERMOSHOCK SHARDS ALTERNATE (drop 0814a). The pack is four flame plates and four
+         frost ones and the orb throws both — the shard's own index decides which, taken off
+         its authored angle so a given arm of the spray keeps its element instead of strobing. */
+      if(b._ts && typeof XART!=='undefined'){
+        const _si=((((b.ang||0)*4)|0)%8+8)%8;
+        const _tk='nts_shard_'+_si;
+        if(XART.rdy(_tk)){
+          const im=XART.get(_tk), S=(20+(b.lv||1)*2.4);
+          ctx.save(); ctx.globalCompositeOperation='lighter';
+          ctx.translate(b.x,b.y); ctx.rotate((b.ang||0)+Math.PI/2);
+          ctx.drawImage(im,-S/2,-S/2,S,S);
+          ctx.restore(); continue;
+        }
+      }
       const _fire = (typeof orbIsFire==='function' && orbIsFire());
       ctx.save(); ctx.translate(b.x,b.y); ctx.rotate((b.ang||0)+Math.PI/2);
       ctx.shadowColor=_fire?'#ffb347':'#dff4ff'; ctx.shadowBlur=_fire?8:6;
@@ -24008,16 +24296,26 @@ function drawPowerups(){
          for this exact reason. Asking it FIRST makes weaponIconKey's element rules the only
          element rules in the path, so no fallback can contradict them any more.
          ============================================================ */
+      /* ⚠ AND IT HAS TO PASS THE PICKUP'S OWN BAKED VARIANT (drop 0814a). Mike: "Fire orb and
+         ice orb keep swapping icons." This called weaponIconKey with NO opt, so the crate asked
+         the dispenser rule — which calls Math.random() for Freezer's flame slot on stage 4+ —
+         once per FRAME. The icon on a falling crate genuinely alternated between flamethrower
+         and ice breath at 60Hz. The comment at WVAR_NAME predicted this exact failure ("a
+         variant re-rolled per frame would flicker between two icons while the crate is
+         falling") and then no call site honoured it. `p.wvar` was baked at spawn for this. */
+      const _pvOpt = p.wvar ? {fixed:p.wvar} : null;
       ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=6;
-      const _drew=(typeof iconBlit==='function') && iconBlit(ctx, weaponIconKey(_w2,_l2), p.x, yb, 36, true);
+      const _drew=(typeof iconBlit==='function') && iconBlit(ctx, weaponIconKey(_w2,_l2,_pvOpt), p.x, yb, 36, true);
       ctx.restore();
       if(_drew) continue;
       /* Legacy fallback, and ONLY where the legacy family carries the same element the resolver
          does. A pickup may look plain for a frame; it must never advertise the wrong weapon. */
       let _xk=null;
-      const _pkNow=(typeof _pilotKey==='function')?_pilotKey():'';
-      const _iceB=(_pkNow==='freezer' || (run&&run._dbgIce));
-      const _fire=(typeof orbIsFire==='function' && orbIsFire());
+      /* the same question as above, off the same baked variant — a legacy fallback that
+         disagreed with the resolver is the bug this whole block exists to prevent */
+      const _pvar = p.wvar || ((typeof weaponVariant==='function')?weaponVariant(_w2):null);
+      const _iceB=(_pvar==='icebreath') || !!(run&&run._dbgIce);
+      const _fire=(_pvar==='fireorb') || (_pvar==='fireice') || !!(run&&run._dbgFire);
       if(_w2===5 && !_fire)      _xk='ice_icon_'+_l2;
       else if(_w2===4 && !_iceB) _xk='firewall_icon_'+_l2;
       else if(_w2===3)           _xk='laser_icon_'+_l2;
@@ -33191,6 +33489,12 @@ function campSnapshot(){
     pilot:run.pilot, pilotIndex:(typeof pilotIndex==='number'?pilotIndex:0), diff:diffKey,
     stage:run.stage, score:run.score, lives:run.lives, bombs:run.bombs,
     weapon:run.weapon, wlevel:run.wlevel, wlevels:(run.wlevels||[]).slice(),
+    /* WHICH VARIANT OF EACH SLOT (drop 0814a) — a save that carries the level but not the
+       identity restores a fire orb as an ice one. ⚠ CAM_SAVE_VER is deliberately NOT bumped:
+       an older slot simply has no wvars and heldVariant falls back to weaponVariant, which is
+       exactly the pre-0814a behaviour. Bumping would have invalidated every existing save to
+       add an optional field. */
+    wvars:(run.wvars||[]).slice(),
     unlockedMax:campaign.unlockedMax||1, rank:Object.assign({},campaign.rank||{}) };
 }
 /* A slot written by an older build must never half-apply — version out, or nothing. */
@@ -33204,6 +33508,7 @@ function campApply(s){
   run.bombs=(s.bombs==null?2:s.bombs);
   run.weapon=s.weapon||0; run.wlevel=s.wlevel||1;
   if(Array.isArray(s.wlevels)) run.wlevels=s.wlevels.slice();
+  run.wvars = Array.isArray(s.wvars) ? s.wvars.slice() : [null,null,null,null,null,null];
   if(typeof s.pilotIndex==='number') pilotIndex=s.pilotIndex;
   if(s.diff) diffKey=s.diff;
   campaign.unlockedMax=Math.max(1, s.unlockedMax||1);

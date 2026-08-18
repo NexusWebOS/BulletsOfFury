@@ -162,7 +162,76 @@ from the stage name — that is the design. **Stage 5 was different**: `storm800
 literal storm plate on a space stage, which Mike DID want changed. The test is whether the art is
 wrong for the stage, not whether it matches the title.
 
-## Current state (2026-08-17)
+## Current state (2026-08-18)
+
+**0814a — Mike's items 1, 2 and 3 are ONE defect, and it is now closed.** Full writeup:
+`docs/PASSOVER_0814A.md`.
+
+⚠ **THE VARIANT A PILOT IS HOLDING WAS NEVER RECORDED ANYWHERE.** `weaponVariant(w, opt)` answers
+"what should the next crate dispense" — it reads the stage, and for Freezer's flame slot it calls
+`Math.random()`. **Every runtime surface was asking it "what am I holding?"** The pickup's variant
+IS baked at spawn (`spawnContainer` -> `wvar`); `applyPowerup` read it for the announce banner and
+**threw it away**. `heldVariant(w)` / `run.wvars[]` is the missing half. `weaponVariant` is the
+FALLBACK now, for a slot granted with no pickup behind it.
+⚠ **"KEEP SWAPPING ICONS" WAS `drawPowerups` CALLING `weaponIconKey` WITH NO OPT, ONCE PER FRAME**
+— re-rolling `Math.random()` at 60Hz, so a falling crate really did alternate between the
+flamethrower and ice breath icons. **The comment above `WVAR_NAME` predicted this exact failure
+and no call site honoured it.** A warning in a comment is not a mechanism.
+⚠ **"FIRE RANDOMLY ONE OR THE OTHER" WAS `orbIsFire()` BEING `run.stage===3`** — the same orb was
+fire on 3 and ice on 4, icon/element/ball/shards all flipping at a stage boundary with no pickup
+involved. It reads the held variant now; `ORB_FIRE_ON_L3` is enforced where it belongs, in what
+the level DISPENSES.
+⚠ **FLAMETHROWER AND ICE BREATH ARE SEPARATE ATTACKS.** `flameIsIce()` was `_pilotKey()==='freezer'`
+unconditionally. Every flame-gated site routes through that ONE function now. Ice breath is
+exclusive to Freezer, from stage 2 (proved exhaustively: 9 stages x 8 pilots x 200 rolls).
+**Stage 3 no longer returns `null` for the slot** — that withheld his flamethrower too, and stage 3
+is where `freezerL3Begin` hands him one off the magma mech as an authored beat that had been
+coming out as frost against its own narration.
+⚠ **`nts_` IS A COMPLETE THERMOSHOCK WEAPON — 45 KEYS, ZERO REFERENCES.** A 12-frame split
+fire/ice ball, **four flame shard plates and four frost ones**, an 8-point burst star that IS
+0801fj's eight-way discharge, a charge reel, a release ring, an impact. "fireiceorb fires a basic
+fireorb" was literal: the weapon had an icon, a name and a table row and **no projectile**.
+⚠ **TEST THE FIREICE CASE BEFORE THE FIRE ONE IN `drawBullets`** — `orbIsFire()` is true for
+fireice too (it IS half fire), so it would otherwise fall into the fireball's art.
+⚠ **12 FRAMES, NOT 8** on `nts_orb_`. `TS_REEL_N` carries every reel's length; `%8` silently drops
+a third of it and reads as a stutter.
+⚠ **THE ORB AND ITS SHARDS HAVE NEVER TAKEN THE ELEMENTAL BONUS.** `attackElement` has answered
+for `'orb'`/`'shard'` since 0801fn and **nothing ever asked it** — `elementMultiplier`'s only call
+sites were the fireball and the flame. Mike's "all fireattacks do 2x to ice enemies" has never
+applied to the weapon it was written for. Now baked onto the projectile at spawn (the shards fall
+through the GENERIC collide, which knows nothing about elements). **This raises orb damage on
+stages 2 and 3 — a declared rule firing, but Mike should see it.** Thermoshock at 2x on both is
+MY call, not his.
+⚠ **THE 0810a PARTICLE LEAK IS BACK IN `assets/game.js`, IN THESE SAME TWO WEAPONS.** The expiry
+test sat at the BOTTOM of the particle loop, after the `_fbDecal` and `_iceChip` branches, and
+both draw and `continue` — so neither was ever marked dead. `FIRE_ICE_FIX.md` records this as
+fixed; it crossed to `gamecode.js` and not to the authoritative file. **A fix recorded as landed
+is not a fix observed landing.** Test is at the top now; all three kinds drain to 0.
+⚠ **AN ASSERTION FAILED AND WAS DEFENDING A LIMITATION, NOT A RULE** — "the flame slot cannot DROP
+for Freezer on stage 3" pinned `weaponVariant(4)===null`, which was the only way to withhold ice
+breath while it and the flamethrower were one weapon. Repointed onto Mike's actual words.
+⚠ **THE SUITE BASELINE WAS RUN, NOT ASSUMED** — a clean `git worktree` at HEAD: **2,659/5/2,664**
+against this drop's **2,660/5/2,665**. The first run came back 2,658/6 with the total unchanged,
+so the delta was one assertion and findable in one line. Rule 3's COUNT check only works if you
+know what the count was.
+
+**New tools.** `_BUILD_SOURCE/probe_scope_0814a.js` answers **"is this identifier actually global,
+or did `spawnEnemy`'s unclosed `if` swallow it?"** by asking the engine instead of the source —
+CLAUDE.md records that brace-matching and line-bounding both give wrong answers there. It
+correctly identifies `liveType` as swallowed. ⚠ **It also reports `ARSENAL_DRONES` as GLOBAL,
+contradicting the note below — re-measure that rather than quoting it.**
+⚠ **`updateBullets` IS NOT A NAME IN THIS ENGINE** — the player-bullet loop is inline in
+`updatePlay`, so a bullet test needs a live stage under it.
+
+⚠ **AND THE PIXEL PROBE'S FIRST CUT MEASURED THE LEVEL, NOT THE WEAPON.** It classified every lit
+pixel in a 180x230 band and reported **143,194 warm pixels with the ICE BREATH equipped**, failing
+on correct code — the stage-2 desert. **153,866 "lit" pixels in a 165,600-pixel band is the tell.**
+The fix is not a better threshold: **the claim is about the ART, so sample the PLATE the draw path
+asked for, alpha-masked.** Now flamethrower 60.2% warm / 0.0% cold, ice breath 0.0/79.3, fire orb
+97.3/0.0, ice orb 0.3/58.5, **fire-ice 42.8 AND 28.7**.
+⚠ **A QUANTITY THAT IS CONSUMED CANNOT BE MEASURED AFTER IT IS GONE** — the ray test flew the ball
+200 frames then read `pBullets`, which is correctly EMPTY by then, and called that "no rays
+fired". Accumulate as they appear.
 
 **0813x — the stage-2 boss floor, and a spawn offset measured from a moving edge.** Two of Mike's
 reports; both measured in pixels. Full writeup: `docs/PASSOVER_0813X.md`.
@@ -283,7 +352,7 @@ bosses/minibosses, level-7 purple halos, wrong level-5 map region, background sq
 stage-8 chain lightning). The stage-6 "door/side sky overlay" he ordered deleted was **not** deleted:
 the obvious key renders as a flat blue noise field, not an overlay. Rule 1, third save.
 
-**→ START HERE: `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/PASSOVER_0814A.md`, then `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
 
 **0813a — the flamethrower now hits what it visibly touches.**
 ⚠ **`flameDraw` PAINTS A UNIFORM COLUMN; `flameHit` TAPERED.** The draw is `flameHalfW(lv,1)` wide
