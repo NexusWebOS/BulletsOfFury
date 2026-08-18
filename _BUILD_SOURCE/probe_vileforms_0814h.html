@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>probe 0814h — the four vile forms: hp and pixels</title>
+<base href="../">
+<style>
+  html,body{margin:0;padding:0;background:#000;overflow:hidden;}
+  #screen-area{position:absolute;left:0;top:0;width:480px;height:512px;overflow:hidden;}
+  #screen{display:block;position:absolute;left:0;top:0;width:480px;height:512px;image-rendering:pixelated;}
+  #hud-wrap,#equip-dom{position:absolute;left:-9999px;top:-9999px;}
+  #tag{position:absolute;left:0;top:520px;color:#0f0;font:11px monospace;white-space:pre;}
+</style></head>
+<body>
+<div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+<div id="hud-wrap"><canvas id="hud" width="480" height="62"></canvas></div>
+<div id="equip-dom"><canvas id="equipcv" width="128" height="128"></canvas></div>
+<div id="tag">boot</div>
+<script src="assets/manifest.js"></script>
+<script src="assets/section_geom.js"></script>
+<script src="assets/game.js"></script>
+<script>
+/* PROBE 0814h — "stage 8 boss: 4 forms, same pattern, very tanky."
+   The PATTERN half landed in 0812o (four per-form identities in vileAttack). This measures the
+   other two claims on the current build:
+   - ?form=0..3 parks that form in frame and screenshots it (do all four draw, distinctly?)
+   - every run also reports ALL four forms' hp so the "very tanky" half finally has a number. */
+(function(){
+  var Q=new URLSearchParams(location.search);
+  var FORM=Math.max(0,Math.min(3,parseInt(Q.get('form')||'0',10)));
+  var tag=document.getElementById('tag');
+  var tries=0;
+  function ready(){
+    if (typeof XART==='undefined' || typeof _levelCfg!=='function') return false;
+    var c=_levelCfg(); return c && XART.rdy(c.master);
+  }
+  function boot(){
+    tries++;
+    if(!ready()){
+      if(tries>400){ tag.textContent='ART NEVER ARRIVED'; return; }
+      if(tries===1){ try{ run.stage=8; curStage=STAGES[7]; beginStage(8); setState(GS.PLAY); player.reset(); }catch(e){} }
+      setTimeout(boot,25); return;
+    }
+    spawnBoss('vileexistence');
+    boss.enter=false; boss.y=150;
+    /* hp ledger across all four forms, read off the REAL builder */
+    var ledger=[];
+    for(var f=0;f<4;f++){
+      vileBuildForm(boss, f);
+      var comp=0; try{ for(var c in (boss.parts||{})) comp+=(boss.parts[c].hp||0); }catch(e){}
+      ledger.push({form:f, name:boss.name, maxhp:Math.round(boss.maxhp||0), comps:Math.round(comp)});
+    }
+    var total=ledger.reduce(function(a,r){ return a+r.maxhp; },0);
+    /* now park the REQUESTED form and draw it for the screenshot */
+    vileBuildForm(boss, FORM);
+    boss.hp=boss.maxhp;
+    var fr=0; (function step(){
+      player.dead=false; player.invuln=0; player.hp=99;
+      try{ updatePlay(1/60); }catch(e){}
+      try{ drawWorld(1/60); }catch(e){}
+      if(++fr<300){ setTimeout(step,0); return; }
+      tag.textContent=JSON.stringify({showing:FORM, name:boss.name,
+        ledger:ledger, totalAllForms:total,
+        refShipBoss:'infernoreaver hpBase*1.30 for comparison',
+        hpBaseStage8:Math.round((220+8*120)*DIFF.eHp*(1.06+8*0.09))});
+    })();
+  }
+  boot();
+})();
+</script>
+</body></html>

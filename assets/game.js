@@ -30202,7 +30202,20 @@ function vileAttack(b){
 }
 function vileBuildForm(b, idx){
   const F=VILE_FORMS[idx];
-  buildModularBoss(b, _vileSpec(F.scale), F.art, Math.ceil(b._vBase*F.hpx));
+  /* ⚠ hpx IS A SHARE, NOT A MULTIPLIER (drop 0814h). The tester: "the stage 8 boss ... very
+     tanky." Measured: each form was taking _vBase × its OWN hpx as a full health bar —
+     4,067 / 4,962 / 6,020 / 7,321, a 22,370-hp fight against a stage-8 hpBase of 1,848. **12.1×
+     hpBase**, where every other late boss totals 1.4–1.5× (doomsdaycarrier ~2,256, sludgeemperor
+     ~2,615). The finale was EIGHT TIMES the hp of the bosses either side of it.
+
+     `_vBase = hpBase*2.2` reads as the whole fight's budget — 2.2× is exactly the band the other
+     modular finales sit in — and the hpx column (1.00→1.80, summing to 5.5) is the ESCALATION
+     SHAPE across forms. Applying hpx to the full base handed every form its own boss-sized pool.
+     Normalised by the hpx sum, both authored knobs keep their meaning: the fight totals
+     hpBase*2.2 ≈ 4,066 and the forms still grow 739 → 902 → 1,094 → 1,331. The 0812o attack
+     identities are untouched — the fight escalates in pressure while each bar stays killable. */
+  const _hpxSum=VILE_FORMS.reduce((a,f)=>a+f.hpx,0);
+  buildModularBoss(b, _vileSpec(F.scale), F.art, Math.ceil(b._vBase*F.hpx/_hpxSum));
   b._vForm=idx; b.name=F.name;
   b.flash=0.3; shake=Math.max(shake,14);
 }

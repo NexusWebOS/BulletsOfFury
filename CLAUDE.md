@@ -1884,9 +1884,13 @@ caller.
   stage 2's molten one, tinted to match. Authored art, so his call. `§217` pins the borrow and will
   fail the moment a real one exists, which is how it gets removed.
 
-Still owed from the tester's list, no decision needed: the miniboss that is still a hitbox square
-(stage not identified), the stage 8 boss (4 forms, same pattern, very tanky), signs that scroll
-when told not to, and a waterfall in the middle of the road.
+Still owed from the tester's list, no decision needed: ~~the miniboss that is still a hitbox
+square~~ (**stage 8, CLOSED 0814e** — the herald wearing its own venom stream; now the SPAWN
+CARRIER), ~~the stage 8 boss (4 forms, same pattern, very tanky)~~ (**CLOSED 0812o + 0814h** —
+the four attack identities landed in 0812o; "very tanky" measured at **22,370 hp, 12.1× hpBase**,
+because `hpx` was applied as a multiplier of the full `_vBase` instead of a share of it; normalised
+to the 4,070 total the 2.2× budget always described, forms 740→1,332), signs that scroll when told
+not to, and a waterfall in the middle of the road.
 
 **The `o.px` camera fix (0810c), for the record.**
 `outboundStart` captures `o.px = player.x`, which is a **world** coordinate, and all three
