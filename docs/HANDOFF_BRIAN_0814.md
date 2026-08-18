@@ -1,25 +1,25 @@
 # BULLETS OF FURY — PATCH NOTES FOR BRIAN
 
 **Supersedes `Updates_Notes4Brian-Love you booboo.pdf` (main @ e8f8e62).**
-Everything below is on `main`. Three drops: **0814a, 0814b, 0814c**.
+Everything below is on `main`. Four drops: **0814a, 0814b, 0814c, 0814d**.
 
 ---
 
-## MIKE'S LIST — 6 OF THE 8 OPEN ITEMS ARE CLOSED
+## MIKE'S LIST — ALL 8 OPEN ITEMS ARE CLOSED
 
 | # | item | state |
 |---|---|---|
 | 1 | Freezer picks up flamethrower but uses ice breath — they are SEPARATE attacks | **DONE** 0814a |
 | 2 | Fire orb and ice orb keep swapping icons, and fire randomly one or the other | **DONE** 0814a |
 | 3 | fireiceorb fires a basic fireorb | **DONE** 0814a |
-| 5 | Stage 1 does not move the camera to the blown-up dam | **open** |
+| 5 | Stage 1 does not move the camera to the blown-up dam | **DONE** 0814d |
 | 6 | Stage 2 boss projectiles — "awful" | **DONE** 0814c |
 | 7 | Stage came sliding in instead of the lava continuing | **DONE** 0814c |
 | 8 | Bosses do not die into explosions; only stage 1 does | **DONE** 0814c |
 | 10 | Still using plain dialogue where the game has its own boxes | **DONE** 0814b |
 
-Plus, not on his list and not started: **level 9 reached through level 5**, the full-size
-cutscenes, and the stage-9 bonus/portal packs.
+Not on his list and not started: **level 9 reached through level 5**, the full-size cutscenes, and
+the stage-9 bonus/portal packs.
 
 ---
 
@@ -179,10 +179,18 @@ All four are behavioural now.
     python _BUILD_SOURCE/probe_dialogue_0814b.py         item 10
     python _BUILD_SOURCE/probe_bossfade_0814c.py         item 8, all 8 stages
     python _BUILD_SOURCE/probe_stage2arena_0814c.py      items 6 and 7
+    python _BUILD_SOURCE/probe_dam_0814d.py              item 5
 
-**The five suite failures are the long-standing ones** — preload count, two `_superseded` ledger
-checks, the volley round count, the flash families. More than five: check `git status` for deleted
+**The suite failures are the long-standing ones** — preload count, two `_superseded` ledger
+checks, the volley round count, the flash families. More than that: check `git status` for deleted
 art before debugging anything.
+
+⚠ **IT IS 4 OR 5, NOT ALWAYS 5, AND THE "DETERMINISTIC — EVERY RUN" LINE IN CLAUDE.MD IS NOW
+WRONG.** Two runs of 0814d with **no code change between them** gave `2,662 / 4` then
+`2,661 / 5`. The mover is *"every volley fired is 5-8 rounds"*, the order-dependent fixture that
+is documented as meaningless in isolation. **Do not read a 4 as that volley bug being fixed.**
+What is new is that it moves at all — 0811x's `seedWaves()` was supposed to have pinned it. Read
+the assertion NAMES, not the count alone; the count alone is what would have hidden this.
 
 **Zero failures can also mean a crash.** Check the assertion COUNT.
 
@@ -191,11 +199,39 @@ Chromium, and each one found something the state checks could not see.
 
 ---
 
+## 0814d — ITEM 5
+
+**The dam swap has been correct, and a thousand rows off screen.**
+
+⚠ **CLAUDE.MD IS STALE ON THIS AND IT MATTERS.** `jungle800_v3_destroyed` **is registered and on
+disk** — the "RC2 does not ship a destroyed master" warning is wrong, and the `ndam_*` object-art
+plan that follows from it should not be acted on.
+
+The dam is **master rows 0..949** — the TOP of the plate, which is the END of the level (srcY
+decreases as a stage runs). At the boss trigger the visible window is rows **1537..2049**, so the
+dam is 588px above the screen before the fight starts. The level does resume scrolling when the
+boss dies, at 40px/s — **1,537px at 40px/s is 38 seconds**, and the flyover took over at 6.4.
+
+So `damBroken` has been flipping on schedule and swapping terrain **1,089 rows below the only part
+of the plate that differs**. Every check since 0809m confirmed the swap was *happening*. Nobody
+asked whether it happened anywhere the player could see. The flyover also started at 6.4 while the
+swap fires at 6.7 — the camera left before the dam was even swapped.
+
+Fixed with a run-in (`DAM_RUN_IN` 3.2s) so the dam arrives, the whiteout peaks over it, the swap
+lands under the white and the breach is revealed as it fades. `endT` for stage 1 is 9.2 so the
+reveal can be watched — 2.8s longer, one number if Mike wants it tighter. Gated on
+`cfg.destroyed`, so a later stage with a destroyed plate inherits it.
+
+Measured after: dam in frame from 2s, srcY reaches 0 by 5s, the swap lands at 8s with the dam on
+screen. `docs/proofs/dam_0814d.png`.
+
+⚠ **THE MINIBOSS FREEZES STAGE PROGRESSION**, so a probe that shoots nothing never reaches the
+boss — 333s of simulated play returned `reached=false`, which reads as a broken trigger and is not.
+
+---
+
 ## STILL OPEN
 
-- **#5 — the stage-1 dam.** Read CLAUDE.md's note first: there are TWO dams, `ndam_*` is OBJECT
-  art (222×290, four staged variants) and does **not** overlay the dam painted into the plate —
-  that was template-matched and disproved, do not repeat the test.
 - **level 9 through level 5** — no mechanism yet. Stage 9 has a `_levelCfg` case and a connector
   entry but **no `STAGES[]` entry**, so `beginStage(9)` has no `curStage`.
 - **the new packs** — `CF_StoryCutscenes-Vol.1`, `CF_FuryHQCutscenes-Vol.1` (full-size cinematics),

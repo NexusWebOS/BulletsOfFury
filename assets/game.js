@@ -3164,6 +3164,11 @@ let _masterSrcY = 0;
    ============================================================ */
 const ARENA_LAVA_SPD = 40;      // px/sec — the level's own scroll rate, so the join is seamless
 let _arenaLavaScroll = 0;
+/* THE FINALE RUN-IN (drop 0814d) — see the block in drawLevelMaster. 3.2s puts the dam in frame
+   well before the whiteout peaks at 6.0s, so the plate swap at 6.7s happens under the white with
+   the dam ON SCREEN and the breach is revealed as the white fades back over 7.3-8.6s. */
+const DAM_RUN_IN = 3.2;
+let _damRunT = 0, _damRunFrom = null;
 function drawLevelMaster(dt){
   /* ⚠ A MISSING dt POISONS THE SCROLL SILENTLY (drop 0814c). `mapScroll + dt*40` with dt
      undefined is NaN, and NaN propagates: every subsequent frame stays NaN, the master maps
@@ -3260,6 +3265,46 @@ function drawLevelMaster(dt){
   } else {
     _bossHold = 0;
     mapScroll = Math.min(range, mapScroll + dt*40);
+  }
+  /* ============================================================
+     THE FINALE RUN-IN — FLY THE LAST OF THE LEVEL (drop 0814d)
+
+     Mike, item 5: "Stage 1 does not move the camera to the blown-up dam after the helicopter
+     boss dies."
+
+     Measured, and it is worse than it sounds. The dam is master rows **0..949** — the TOP of the
+     plate, which is the END of the level, because srcY decreases as a stage runs. At the boss
+     trigger the visible window is rows **1537..2049**, so the dam is **588px above the top of the
+     screen** before the fight even begins.
+
+     The level DOES resume scrolling when the boss dies (`bossActive` goes false, so `_bossRun`
+     stops holding it) — at the normal 40px/s. Covering 1,537px at 40px/s takes **38 seconds**,
+     and `stageEnding` hands over to the flyover at 6.4. Measured across the whole death: srcY
+     went 1454 -> 1089. It never gets within 1,000px of the dam.
+
+     ⚠ SO `damBroken` HAS BEEN CORRECT AND INVISIBLE FOR DROPS. It flips on schedule, the plate
+     swaps on schedule, and it swaps a piece of terrain a thousand rows below the thing that
+     changed. The blown dam has never once been on screen. 0801cr's "swap under the peak white,
+     camera held" was right about the swap and wrong that the camera should stay where it was:
+     there was nothing to hide, because there was nothing in frame to change.
+
+     So: run the remaining scroll out over DAM_RUN_IN, smoothstepped, starting when the boss dies.
+     The dam is in frame well before the whiteout peaks, the swap happens under the white exactly
+     as 0801cr intended, and the breach is revealed as the white fades back.
+
+     ⚠ GATED ON `cfg.destroyed`, NOT ON `run.stage===1`. A stage that ships a destroyed plate has
+     a finale worth flying to; one that does not is untouched. Stage 1 is the only declarer today.
+     ⚠ AND IT NEVER RUNS BACKWARDS — `Math.max` against the current scroll, so if the fight
+     happened to end near the top the ordinary scroll keeps it and this adds nothing.
+     ============================================================ */
+  if(bossDefeated && cfg.destroyed && mapScroll < range){
+    if(_damRunFrom == null) _damRunFrom = mapScroll;
+    _damRunT += dt;
+    const _p = Math.max(0, Math.min(1, _damRunT/DAM_RUN_IN));
+    const _sm = _p*_p*(3-2*_p);
+    mapScroll = Math.max(mapScroll, _damRunFrom + (range-_damRunFrom)*_sm);
+  } else if(!bossDefeated){
+    _damRunT = 0; _damRunFrom = null;      // one run-in per boss kill, cleared for a retry
   }
   _lastScrollDy = mapScroll - _prevMapScroll; _prevMapScroll = mapScroll;
   // base fill across the FULL world width first (so magenta-socket gaps never reveal black bg)
@@ -16674,7 +16719,15 @@ function updatePlay(dt){
        ship in it. The spectacle is not cut: the fly-off now begins once the whiteout has
        resolved and the wreck is coming apart, so the debris burns on under the departing ship.
        One constant, easy to dial if Mike wants more or less overlap. */
-    const endT = (run.stage===1) ? 6.4 : 5.8;
+    /* ⚠ STAGE 1 HAS TO OUTLAST ITS OWN REVEAL NOW (drop 0814d). 6.4 handed over to the flyover
+       BEFORE `damBroken` even flipped (that is at `dying >= 6.7`), so the plate swapped after the
+       camera had already left. With the run-in bringing the dam into frame, the beat is: dam
+       arrives by 3.2s, white peaks 6.0-6.7, swap under it at 6.7, white fades back 7.3-8.6 and
+       the breach is revealed. Leaving at 9.2 lets that reveal be watched.
+       This is 2.8s longer than before and it is the only stage affected. Mike's "stop taking
+       screen pauses" (0809v) is about dead air; this is the payoff he asked for — but it is one
+       number if he wants it tighter. */
+    const endT = (run.stage===1) ? 9.2 : 5.8;
     if(stageEnding>endT){
       whiteBlast=0;
       if(run.stage>=5){ if(run.score>highScore){ highScore=run.score; try{localStorage.setItem('bof_hi',highScore);}catch(e){} } }

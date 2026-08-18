@@ -164,6 +164,52 @@ wrong for the stage, not whether it matches the title.
 
 ## Current state (2026-08-18)
 
+**0814d — item 5: the dam swap has been correct, and a thousand rows off screen.**
+Full writeup: `docs/PASSOVER_0814D.md`.
+
+⚠ **TWO NOTES IN THIS FILE ABOUT THE DAM ARE STALE.** `jungle800_v3_destroyed` **is registered and
+on disk** — the "RC2 does not ship a destroyed master" warning below is wrong, and the `ndam_*`
+object-art recommendation that follows from it should NOT be acted on: the master swap has its
+plate. Rendered, the destroyed plate is the same level with the dam breached, rubble down the
+channel and water through the gap.
+⚠ **THE DAM IS MASTER ROWS 0..949 — THE TOP OF THE PLATE, WHICH IS THE END OF THE LEVEL** (srcY
+DECREASES as a stage runs). At the boss trigger the visible window is rows **1537..2049**, so the
+dam sits **588px above the top of the screen before the fight starts**. Position taken by DIFFING
+the two plates: the rows that change ARE the dam.
+⚠ **THE LEVEL DOES RESUME SCROLLING WHEN THE BOSS DIES** — `bossActive` goes false so `_bossRun`
+stops holding it — at the ordinary 40px/s. **1,537px at 40px/s is 38 seconds** and the flyover
+took over at 6.4. Measured across the whole death, srcY went 1454 -> 1089: never within a thousand
+rows of it.
+⚠ **SO `damBroken` HAS BEEN FIRING PERFECTLY AND INVISIBLY FOR DROPS.** It flips on schedule, the
+plate swaps on schedule, and it swaps terrain 1,089 rows below the only part that differs. 0801cr's
+"swap under the peak white, camera held" was right about the swap and wrong that the camera should
+stay: there was nothing to hide, because nothing in frame changed. **Every check since confirmed
+the swap was HAPPENING. Nobody asked whether it happened anywhere the player could see.**
+⚠ **AND THE FLYOVER STARTED BEFORE THE SWAP FIRED** — `endT` 6.4 against `damBroken` at
+`dying>=6.7`, both clocks starting at `bossDie`.
+**Fixed by a run-in**: `DAM_RUN_IN` (3.2s) eases the remaining scroll out when the boss dies, so the
+dam arrives, the whiteout peaks over it, the swap lands under the white and the breach is revealed
+as it fades. `endT` for stage 1 is **9.2** so the reveal can be watched (2.8s longer; one number).
+⚠ **GATED ON `cfg.destroyed`, NOT ON `run.stage===1`** — a stage that ships a destroyed plate has a
+finale worth flying to, and a later one inherits this with no wiring.
+
+⚠ **THE MINIBOSS FREEZES STAGE PROGRESSION (`stageTimer -= dt`), SO A PROBE THAT SHOOTS NOTHING
+NEVER REACHES THE BOSS.** 20,000 frames — 333s of simulated play — returned `reached=false`, which
+reads as a broken boss trigger and is not.
+⚠ **A LOW DIFF THRESHOLD SPREADS THE ANSWER ACROSS THE WHOLE PLATE** — at `rows>20` the dam
+measured as rows 0..2332, half the level. Threshold against the SIGNAL (a quarter of the peak row),
+not against zero.
+
+⚠⚠ **THE SUITE IS NOT DETERMINISTIC AND THE "EVERY RUN" CLAIM BELOW IS FALSIFIED.** Two runs of
+0814d with **no code change between them**: `2,662 ok / 4 fail` then `2,661 ok / 5 fail`. The
+mover is *"every volley fired is 5-8 rounds"* — the order-dependent fixture this file already
+documents as meaningless in isolation. **Do not read a 4 as that volley bug being fixed** (I
+nearly did). What is NEW is that it moves at all: 0811x wrapped three fixtures in `seedWaves()`
+and recorded three identical consecutive runs. Either the seeding does not cover the path this
+fixture now takes, or something since reintroduced an unseeded source. **Treat 4-or-5 as the
+expected band until that is chased, and read the assertion NAMES, not the count alone** — the
+count alone is what would have hidden it.
+
 **0814c — items 6, 7 and 8.** Full writeup: `docs/PASSOVER_0814C.md`.
 
 ⚠ **ITEM 8: THE BOSS DEATH SET-PIECE WAS NEVER THE PROBLEM.** `updateBoss` runs 9.4s of blasts,
@@ -452,7 +498,7 @@ stage-8 chain lightning). The stage-6 "door/side sky overlay" he ordered deleted
 the obvious key renders as a flat blue noise field, not an overlay. Rule 1, third save.
 
 **→ START HERE: `docs/HANDOFF_BRIAN_0814.md` (the current patch notes), then
-`docs/PASSOVER_0814C.md`, `docs/PASSOVER_0814B.md`, `docs/PASSOVER_0814A.md`, then `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+`docs/PASSOVER_0814D.md`, `0814C`, `0814B`, `0814A`, then `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
 
 **0813a — the flamethrower now hits what it visibly touches.**
 ⚠ **`flameDraw` PAINTS A UNIFORM COLUMN; `flameHit` TAPERED.** The draw is `flameHalfW(lv,1)` wide
