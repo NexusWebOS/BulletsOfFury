@@ -1781,11 +1781,12 @@ function drawBossSprite(b){
     const ri=(Math.round(_spinDeg/5)%72+72)%72;
     const rim=XART.get('ovrotor_'+String(ri).padStart(2,'0'));
     if(b.dead){
-      const T=b.dying||0, alpha=T<1.8?1:(T<2.6?1-(T-1.8)/0.8:0); if(alpha<=0) return;
-      ctx.save(); ctx.globalAlpha=alpha;
+      /* the FADE is drawBoss's now (0814c) — this branch keeps only the char, which is art. */
+      const T=b.dying||0;
+      ctx.save();
       ctx.drawImage(bim,b.x-w/2,yy-h/2,w,h);
       if(rim) ctx.drawImage(rim,b.x-w/2,yy-h/2,w,h);
-      const tc=xartTint(bodyKey,'#140f0a',Math.min(0.7,T*0.3)); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h);
+      const tc=xartTint(bodyKey,'#140f0a',bossDeathChar(T)); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h);
       ctx.restore(); return;
     }
     // body first, then the spinning rotor overlay (same rect = shared 192 center anchor)
@@ -1826,10 +1827,10 @@ function drawBossSprite(b){
     const yy=b.y+Math.sin((b.t||0)*1.5)*6; b._drawY=yy; b._drawW=w; b._drawH=h;
     // face the player: the art natively points UP (away) — flip it vertically so the nose points DOWN.
     if(b.dead){
-      const T=b.dying||0, alpha=T<1.8?1:(T<2.6?1-(T-1.8)/0.8:0); if(alpha<=0) return;
-      ctx.save(); ctx.globalAlpha=alpha; ctx.translate(b.x,yy); ctx.scale(1,-1); ctx.translate(-b.x,-yy);
+      const T=b.dying||0;                       // fade: drawBoss (0814c). char: here.
+      ctx.save(); ctx.translate(b.x,yy); ctx.scale(1,-1); ctx.translate(-b.x,-yy);
       ctx.drawImage(im,b.x-w/2,yy-h/2,w,h);
-      const tc=xartTint(key,'#140f0a',Math.min(0.7,T*0.3)); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h);
+      const tc=xartTint(key,'#140f0a',bossDeathChar(T)); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h);
       ctx.restore(); return;
     }
     ctx.save(); ctx.translate(b.x,yy); ctx.scale(1,-1); ctx.translate(-b.x,-yy);
@@ -1850,10 +1851,11 @@ function drawBossSprite(b){
     const yy=b.y+Math.sin(b.t*1.7)*7;   // levitation bob
     b._drawY=yy; b._drawW=w; b._drawH=h;
     if(b.dead){
-      const T=b.dying||0, alpha=T<2.6?1:(T<4.1?1-(T-2.6)/1.5:0);
-      if(alpha<=0) return;
-      ctx.save(); ctx.globalAlpha=alpha; ASSETS.blit(nm,b.x,yy,w,h);
-      ASSETS.blitTint(nm,b.x,yy,w,h,'#140f0a',Math.min(0.7,T*0.26)); ctx.restore(); return;
+      /* ⚠ THIS RAN 2.6->4.1 WHILE THE CHOPPER RAN 1.8->2.6, AND CHARRED AT 0.26 AGAINST 0.30
+         (drop 0814c). Two curves for one behaviour, in one function. One curve now. */
+      const T=b.dying||0;
+      ctx.save(); ASSETS.blit(nm,b.x,yy,w,h);
+      ASSETS.blitTint(nm,b.x,yy,w,h,'#140f0a',bossDeathChar(T)); ctx.restore(); return;
     }
     ASSETS.blit(nm,b.x,yy,w,h);
     const tn=b.flash>0?(b.flash>0.04?'#ffffff':'#ff8a4a'):null;
@@ -1868,11 +1870,9 @@ function drawBossSprite(b){
     if(b.dead){
       const T=b.dying||0, nm=bset+'0';
       const fr=ASSETS.dims(nm), w=b.w*1.18, h=w*(fr.h/fr.w);
-      const alpha = T<2.6?1 : (T<4.1? 1-(T-2.6)/1.5 : 0);   // disintegrate/fade 2.6->4.1s
-      if(alpha<=0) return;
-      ctx.save(); ctx.globalAlpha=alpha;
+      ctx.save();                                     // fade: drawBoss (0814c). char: here.
       ASSETS.blit(nm,b.x,b.y,w,h);
-      ASSETS.blitTint(nm,b.x,b.y,w,h,'#140f0a', Math.min(0.7, T*0.26));   // char to black as it dies
+      ASSETS.blitTint(nm,b.x,b.y,w,h,'#140f0a', bossDeathChar(T));   // char to black as it dies
       ctx.restore();
       return;
     }
@@ -3138,10 +3138,40 @@ let _masterSrcY = 0;
    into frame after the boss's arrival — see the arena branch in drawLevelMaster. Module scope because
    it must survive between frames, and ABOVE spawnEnemy because anything below its unclosed `if` is
    function-scoped and would be re-initialised on every spawn. */
-let _arenaFloorT = 0;
-const ARENA_FLOOR_HOLD = 1.1;   // seconds of open lava while the boss makes his entrance
-const ARENA_FLOOR_IN   = 1.6;   // seconds for the terrain to travel back down into place
+/* ============================================================
+   THE FIRE BOSS FIGHTS OVER LAVA THAT KEEPS MOVING (drop 0814c)
+
+   Mike, item 7: "Stage came sliding in instead of the lava continuing. Needs a constant-scrolling
+   lava section for the fire boss."
+
+   That is a correction of 0813x, and the part it corrects is the SOLUTION, not the diagnosis.
+   0806f made the stage-2 boss fight happen over open lava — the master stops being drawn and the
+   animated bed underneath becomes the arena. 0813x read Mike's follow-up ("anyway to have that
+   floor render back in by scrolling downward once the fight starts?") as a request to bring the
+   TERRAIN back, and slid the whole master down into frame over 1.6s. He has now seen it and named
+   it exactly: the stage came sliding in.
+
+   ⚠ WHAT HE IS ACTUALLY POINTING AT IS THAT THE LAVA STOPS. `_bossHold` pins `mapScroll` the
+   moment the fight starts — correctly, so the player cannot outrun the boss — and the bed is drawn
+   at `drawAnimTerrain(frames, mapScroll, ...)`. So the lava keeps CYCLING ITS FRAMES while
+   travelling nowhere: it boils on the spot. A dead-still arena is what made the open corridor
+   read as broken, and sliding the mountain back over it was treating the symptom.
+
+   The bed gets its own clock. `mapScroll` stays held (the fight still holds the level), and
+   `_arenaLavaScroll` advances at the level's own rate for as long as the arena is up, so the lava
+   flows past underneath the whole fight. Same speed as the stage, so entering the arena is
+   continuous rather than a change of pace.
+   ============================================================ */
+const ARENA_LAVA_SPD = 40;      // px/sec — the level's own scroll rate, so the join is seamless
+let _arenaLavaScroll = 0;
 function drawLevelMaster(dt){
+  /* ⚠ A MISSING dt POISONS THE SCROLL SILENTLY (drop 0814c). `mapScroll + dt*40` with dt
+     undefined is NaN, and NaN propagates: every subsequent frame stays NaN, the master maps
+     nowhere and the level simply stops, with nothing thrown and nothing logged. A probe calling
+     `drawWorld()` instead of `drawWorld(1/60)` produced exactly that and reported the arena lava
+     as "+nan px". Same class as the stateT clamp at the head of `loop`, and the same fix: refuse
+     the bad value at the boundary rather than letting it spread. */
+  if(!(dt>=0)) dt=0;
   if(typeof XART==='undefined') return false;
   const cfg=_levelCfg(); if(!cfg) return false;
   const _mk=stageMasterKey(cfg);
@@ -3218,8 +3248,12 @@ function drawLevelMaster(dt){
   /* The arena re-entry belongs to ONE boss run. Cleared the moment the run ends so a retry, a
      continue or the next stage cannot inherit a part-finished slide — and so the beat plays again
      if the player dies and fights him a second time. */
-  if(!_realBossRun) _arenaFloorT = 0;
-  let _floorDy = 0;        // screen offset of the master; non-zero only while it slides back in
+  /* THE ARENA'S OWN LAVA CLOCK (drop 0814c) — see ARENA_LAVA_SPD. Reset with the run so a retry
+     or the next stage cannot inherit a part-run flow. */
+  const _arenaLava = _realBossRun && cfg.arenaLiquid;
+  if(!_realBossRun) _arenaLavaScroll = 0;
+  else if(_arenaLava) _arenaLavaScroll += dt * ARENA_LAVA_SPD;
+  let _floorDy = 0;        // kept at 0: the master is not slid any more (0814c). See the arena block.
   if(_bossRun){
     _bossHold = Math.min(1, (_bossHold||0) + dt*1.6);            // 0 -> 1 over ~0.6s
     mapScroll = Math.min(range, mapScroll + dt*40*(1-_bossHold));
@@ -3232,7 +3266,11 @@ function drawLevelMaster(dt){
   ctx.fillStyle=cfg.fill; ctx.fillRect(0,0,drawW,VH);
   // 1) animated liquid backing (shows through the master's transparent channels) — spans the world width
   const frames=cfg.liquid?_liquidFrames(cfg.liquid):null;
-  if(frames) drawAnimTerrain(frames, mapScroll, 1.5, cfg.tile, cfg.fps||6, drawW);
+  /* ⚠ THE BED TRAVELS ON ITS OWN SCROLL IN THE ARENA (drop 0814c). `mapScroll` is pinned by
+     `_bossHold` for the whole fight, so drawing the bed against it left the lava cycling its
+     frames while going nowhere — boiling on the spot. That is Mike's "instead of the lava
+     continuing". The level still holds; only the liquid keeps flowing. */
+  if(frames) drawAnimTerrain(frames, mapScroll + (_arenaLava?_arenaLavaScroll:0), 1.5, cfg.tile, cfg.fps||6, drawW);
   // 2) the keyed master, scrolling up (bottom = level start). The master is drawn at its native pixel
   //    scale so drawW screen px == drawW master px (1:1 horizontally). The visible window is VH screen px
   //    tall, which is exactly VH master px tall (also 1:1). srcY scrolls from the bottom of the image up.
@@ -3297,35 +3335,28 @@ function drawLevelMaster(dt){
        The cfg flag is untouched, so re-casting the Colossus on any stage brings the corridor back
        with no further wiring. */
     if(cfg.arenaLiquid){
-      if(frames && (boss._gen || boss._mech)) return true;
+      /* ⚠ 0813x's SLIDE IS GONE, ON MIKE'S OWN CORRECTION (drop 0814c). "Stage came sliding in
+         instead of the lava continuing. Needs a constant-scrolling lava section for the fire
+         boss." The arena is open lava for whoever fights in it — which is 0806f restored — and
+         the bed above now travels on `_arenaLavaScroll`, so the corridor reads as a section of
+         the level rather than as a hole in it.
+
+         ⚠ THE `_gen || _mech` GATE GOES WITH IT. 0813x added that because the only thing it
+         could think of to justify open lava was a boss RISING out of it, and the Inferno Reaver
+         does not — so a ship boss got the slide instead. Mike has now said plainly that the fire
+         boss is the one who wants the open lava, so the requirement is the ARENA's, not the
+         unit's. The riser case is unaffected: it needs the same open surface and now gets it. */
+      if(frames) return true;
       /* ⚠ AND IT MUST NOT FALL INTO _loopDraw INSTEAD. That maps the master by `mapScroll % H`
          rather than by scrollFrac through rangeSrc — a different mapping of the same plate, so it
          jumps the terrain to an unrelated part of the level. 0810m identified exactly that as the
-         miniboss "teleport"; swapping one visible fault for the other is not a fix.
+         miniboss "teleport"; swapping one visible fault for the other is not a fix. It is still
+         the reason this branch falls through to the WINDOWED draw below rather than to _loopDraw.
 
-         THE FLOOR COMES BACK BY TRAVELLING DOWN INTO FRAME. Mike, on the fix above: "anyway to have
-         that floor render back in by scrolling downward once the fight starts?" Better than simply
-         never dropping it, and it costs nothing to keep both: the boss still arrives over open lava
-         — 0806f's beat, which he asked for in the first place — and then the terrain follows him in
-         instead of the arena staying an empty bed for the whole fight.
-
-         DOWNWARD IS THE LEVEL'S OWN DIRECTION, which is why this reads as the level catching up
-         rather than as a wipe. srcY DECREASES as a stage runs, so a master row travels DOWN the
-         screen (the 0813c note at the windowed draw below spells this out). New terrain therefore
-         always enters at the TOP edge. Starting the plate a full screen high and easing it to 0
-         re-enters it exactly the way the level would have delivered it.
-
-         mapScroll is held by _bossHold, so srcY is pinned at the point the fight triggered: the
-         floor that slides back down is the same ground the player was flying over. */
-      if(frames){
-        _arenaFloorT += dt;
-        const _p = Math.max(0, Math.min(1, (_arenaFloorT-ARENA_FLOOR_HOLD)/ARENA_FLOOR_IN));
-        if(_p<=0) return true;                          // the arrival: open lava, exactly as authored
-        _floorDy = -(1 - _p*_p*(3-2*_p))*VH;            // smoothstep in from the top edge
-      }
-      /* ⚠ NO `frames` MEANS NO BED TO ARRIVE OVER. The liquid streams in lazily like everything
-         else, and holding an empty screen waiting for it would be the 0801dp bug again — so with no
-         lava there is nothing to hold for, and the floor is simply drawn. _floorDy stays 0. */
+         ⚠ NO `frames` MEANS NO BED TO FIGHT OVER. The liquid streams in lazily like everything
+         else, and holding an empty screen waiting for it would be the 0801dp bug again — so with
+         no lava decoded there is nothing to open onto, and the floor is simply drawn as normal.
+         That is the ONLY case that now reaches this point. */
     } else {
       // dedicated BOSS ARENA backdrop loops if the stage kit ships one; else loop the master
       const arenaImg=(cfg.arena && XART.rdy(cfg.arena)) ? XART.get(cfg.arena) : img;
@@ -17110,6 +17141,46 @@ function tsFx(x, y, reel, size, life){
   particles.push({x, y, vx:0, vy:0, t:0, life: life || N*0.045,
                   r: size || 128, _tsFx: reel, _tsN: N});
 }
+/* ============================================================
+   A BOSS VANISHES INTO ITS OWN EXPLOSION (drop 0814c)
+
+   Mike, item 8: "Bosses do not die into explosions - they should vanish with the explosion
+   taking over. Only stage 1 does this."
+
+   The death SET-PIECE was never the problem — `updateBoss`'s dead branch runs 9.4 seconds of
+   scaled blasts, falling debris, screen shake and the whiteout, for every boss on every stage.
+   What only stage 1 had was the other half: a DRAW that gets out of the way.
+
+   `drawBossSprite`'s `damkeeper` branch fades the hull out between 1.8s and 2.6s and chars it
+   toward black on the way. Nothing else does. `shipBossDraw` (stages 2, 3 and 5 — the ships Mike
+   cast himself), `mechDraw`, `sxDraw`, `genesisDraw` and `drawModularBoss` have **no `b.dead`
+   handling at all**: they keep drawing an intact hull at full opacity for the whole nine seconds,
+   so the boss sits inside its own explosion instead of being consumed by it.
+
+   ⚠ AND drawBossSprite ALONE HELD FOUR COPIES OF THE FADE, ON TWO DIFFERENT CURVES — 1.8->2.6 in
+   two branches and 2.6->4.1 in the other two, charring at 0.30 and 0.26. Every one of them was
+   written to do the same thing. That is the drift this file keeps recording, so the curve is a
+   function now and there is exactly one of it.
+
+   ⚠ IT IS APPLIED AT `drawBoss`, THE SINGLE ENTRY POINT, not in each rig. Five draw paths that
+   each remember to fade is five that can forget; a boss added later would arrive with the bug
+   already in it. `_bossFade` carries the value so the handful of places that hard-set
+   `globalAlpha = 1` can say "back to the boss's base opacity" instead — which is what those
+   lines always meant, and it was only ever correct while the base happened to be 1.
+
+   Stage 1's timing is the reference because stage 1 is the one Mike says is right. Gone at 2.6s,
+   with ~6.8s of explosion left to own the screen. ============================================ */
+const BOSS_FADE_HOLD = 1.8;      // fully solid while the first blasts land
+const BOSS_FADE_OUT  = 0.8;      // then dissolve
+function bossDeathAlpha(T){
+  T = T || 0;
+  if(T < BOSS_FADE_HOLD) return 1;
+  if(T < BOSS_FADE_HOLD + BOSS_FADE_OUT) return 1 - (T - BOSS_FADE_HOLD) / BOSS_FADE_OUT;
+  return 0;
+}
+/* how far the hull has charred toward black — the same curve the stage-1 chopper used */
+function bossDeathChar(T){ return Math.min(0.7, (T||0) * 0.3); }
+let _bossFade = 1;
 function bossDie(){
   boss.dead=true; boss.dying=0; boss._blasted=false; bossActive=false; bossDefeated=true;
   /* the biggest blast in the game had no debris and no ring at all */
@@ -20367,6 +20438,22 @@ function attractDraw(){
 }
 
 function drawBoss(){
+  /* ⚠ THE FADE LIVES HERE, AT THE ONE ENTRY POINT (drop 0814c) — see bossDeathAlpha. Five rigs
+     draw bosses and only one of them ever handled death; putting it in each is five places that
+     can forget, and a rig added later would arrive with the bug already in it.
+     `_bossFade` is published so the few draws that hard-set `globalAlpha = 1` can restore to the
+     boss's base opacity rather than to solid. */
+  const _b = boss;
+  _bossFade = (_b && _b.dead) ? bossDeathAlpha(_b.dying || 0) : 1;
+  if(_bossFade <= 0) return;                 // gone: the explosion has the screen to itself now
+  if(_bossFade >= 1) return drawBossInner();
+  ctx.save();
+  ctx.globalAlpha = _bossFade;
+  drawBossInner();
+  ctx.restore();
+  _bossFade = 1;
+}
+function drawBossInner(){
   /* the rake draws under the hull, and like the tick it has to reach the non-ship paths too */
   if(boss && !boss._ship && boss._brk && typeof beamRakeDraw==='function') beamRakeDraw(boss);
   /* TELEGRAPH FIRST, under everything else — the wind-up ring has to be visible before the shots
@@ -20382,7 +20469,20 @@ function drawBoss(){
   if(boss && boss._gen && typeof genesisDraw==='function' && genesisDraw(boss)){ return; }
   if(boss && boss._mech && typeof mechDraw==='function' && mechDraw(boss)){ if(boss.flash>0)boss.flash-=0.016; return; }
   if(boss && boss._sx && typeof sxDraw==='function'){ sxDraw(boss, _sxDt); if(boss.flash>0)boss.flash-=0.016; return; }
-  if(boss && boss.modular && !boss.dead){ drawModularBoss(boss); if(boss.flash>0)boss.flash-=0.016; return; }
+  /* ⚠ THE 0724bx GATE WAS NEVER REMOVED FROM THIS LINE (drop 0814c). The note four lines above
+     says it in full — "This was gated on !boss.dead, so the moment a sectional boss died it fell
+     out of the modular path and drawBossSprite picked up the LEGACY body art" — and the fix was
+     applied to the `_ship` branch and not to this one, which is the branch the note is ABOUT.
+
+     Measured: on stage 8 the VILE boss issues **zero drawImage calls on the frame after it dies**.
+     It has no `bset` and no legacy plate, so falling through lands it on the vector fallback and
+     the boss simply ceases to exist the instant it is killed — no dissolve, no wreck, nothing for
+     the explosion to consume. That is the sharpest possible version of Mike's item 8, and it was
+     one stage away from the thing being fixed.
+
+     A sectional unit already HAS its death art: every component's `destroyed` state. Keep drawing
+     it, and let drawBoss's fade take it out. */
+  if(boss && boss.modular){ drawModularBoss(boss); if(boss.flash>0)boss.flash-=0.016; return; }
   const b=boss; if(!b) return;
   if(b.mega){ drawBossSprite(b); return; }   // mega bosses always use their art
   const _hasNewBoss = (typeof NEWBOSS!=='undefined' && NEWBOSS[run.stage] && typeof XART!=='undefined' && XART.rdy(NEWBOSS[run.stage].idle+'_0'));
@@ -20782,6 +20882,38 @@ deriveFireType('voidOrb','orb',{tint:'#a24aff', glow:'#c46bff'});
 deriveFireType('emberGem','gem',{tint:'#ff8a2e', glow:'#ffb04a'});
 deriveFireType('frostComet','comet',{pal:'blue', glow:'#9fe6ff'});
 deriveFireType('kingPellet','pellet',{szMul:1.5, glow:'#ffe06b'});
+/* ============================================================
+   ⚠ `eshot` WAS NOT IN THIS TABLE, AND IT IS WHAT EVERY SHIP BOSS FIRES (drop 0814c)
+
+   Mike, item 6: "Stage 2 boss projectiles - Mike calls them awful."
+
+   `_shipShot` — the muzzle for EVERY pattern of EVERY ship boss and ship miniboss in the game
+   (ember, lance, void, siege, rime, mslfan, beamfan; infernoreaver, cryospear, voidbat,
+   siegeember, thornrime, lavamaw, magmaward, sludgeemperor) — pushes `kind:'eshot'`. There is no
+   `eshot` in FIRETYPES and none in PROJ, so every one of those rounds fell through the entire
+   draw chain to its last rung:
+
+       else if(ASSETS.has('ebullet')) ASSETS.blit('ebullet', b.x, b.y, 12, 11);
+       else { fillStyle='#ff5a2a'; circle(3.4); fillStyle='#ffd36b'; circle(1.6); }
+
+   `ebullet` is not a registered key, so it is the second line: **two flat circles**, one size, one
+   colour, no animation, no rotation, no stage identity — in a game holding 252 authored `mfx_`
+   projectile cells. That is the whole of "awful", and it is not a stage-2 problem: stage 2 is
+   simply where Mike met it.
+
+   Routed through `pellet`, which is the type built for exactly this round and already solves the
+   three things a hand-drawn circle cannot:
+     - `mfx_mg_<fam>_0..4` is an authored BIRTH SEQUENCE, driven MONOTONICALLY off `b.t` (0811y)
+       rather than a wall clock, so it grows into a flame instead of strobing between shapes
+     - the family comes from `PELLET_FAM[run.stage]`, so the round is the colour MIKE ALREADY
+       CHOSE for that stage — 0813a set stage 2 to family 2 precisely so it stopped firing red on
+       the lava — and stages 3 and 5 pick up theirs for free
+     - the glow follows the plate, because `pellet`'s glow is a function of the family
+
+   ⚠ h:18 AGAINST THE PELLET'S 16 IS MY CALL, NOT MIKE'S. A boss round should read heavier than a
+   strafer's, and `_shipShot` already asks for w 10-13 against a strafer's ~8. One number.
+   ============================================================ */
+deriveFireType('eshot','pellet',{h:18});
 function drawFireType(b){
   const T=FIRETYPES[b.kind]; if(!T) return false;
   const key=T.art(b); if(typeof XART==='undefined'||!XART.rdy(key)) return false;
@@ -29672,9 +29804,11 @@ function genesisDraw(b){
         const pim=XART.get(kk);
         const w=pim.naturalWidth*S*0.85, h=pim.naturalHeight*S*0.85;
         const off=(cur.socks[i][0]-cur.socks[0][0])*S, offy=(cur.socks[i][1]-cur.socks[0][1])*S;
-        ctx.globalAlpha=(G.phase==='grab')?clamp(G.hook*1.4,0,1):1;
+        /* back to the BOSS's base opacity, not to solid — a dying boss is being faded out by
+           drawBoss and this line used to overwrite that (drop 0814c) */
+        ctx.globalAlpha=((G.phase==='grab')?clamp(G.hook*1.4,0,1):1)*_bossFade;
         ctx.drawImage(pim, hx+off-w/2, hy+offy+h*0.35, w, h);
-        ctx.globalAlpha=1;
+        ctx.globalAlpha=_bossFade;
       });
     }
   }

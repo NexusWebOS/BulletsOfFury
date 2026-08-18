@@ -164,6 +164,53 @@ wrong for the stage, not whether it matches the title.
 
 ## Current state (2026-08-18)
 
+**0814c — items 6, 7 and 8.** Full writeup: `docs/PASSOVER_0814C.md`.
+
+⚠ **ITEM 8: THE BOSS DEATH SET-PIECE WAS NEVER THE PROBLEM.** `updateBoss` runs 9.4s of blasts,
+debris, shake and the whiteout for every boss on every stage. Only stage 1 had the other half — a
+DRAW that gets out of the way. `shipBossDraw`, `mechDraw`, `sxDraw`, `genesisDraw` and
+`drawModularBoss` have **no `b.dead` handling at all**. ⚠ **AND `drawBossSprite` ALONE HELD FOUR
+COPIES OF THE FADE ON TWO CURVES** (1.8→2.6 and 2.6→4.1, charring 0.30 vs 0.26). One curve now
+(`bossDeathAlpha`/`bossDeathChar`), applied at **`drawBoss`, the single entry point** — five rigs
+that each remember to fade is five that can forget. `_bossFade` is published so the few draws that
+hard-set `globalAlpha=1` can restore to the boss's base opacity instead of to solid.
+⚠ **STAGE 8'S BOSS DID NOT FADE — IT CEASED TO EXIST.** Measured **zero drawImage calls on the
+frame after it dies**. `drawBoss` gated the modular path on `!boss.dead`, and the 0724bx note four
+lines above describes exactly that bug — the fix was applied to the `_ship` branch and **not to
+the branch the note is about**. Stage 8 has no legacy plate, so it landed on the vector fallback.
+⚠ **`hitBoss` CANNOT KILL A MODULAR BOSS** — `if(boss.modular){ modularHit(dmg); return; }`
+returns before the `hp<=0 -> bossDie()` check. My probe killed bosses that way and reported stage
+8 as refusing to die; it was the probe refusing to kill it. Force-kill is `boss.hp=0; bossDie();`.
+
+⚠ **ITEM 6: `kind:'eshot'` IS IN NEITHER `FIRETYPES` NOR `PROJ`, AND IT IS WHAT EVERY SHIP BOSS
+FIRES.** `_shipShot` is the muzzle for every pattern of every ship boss and mini (ember, lance,
+void, siege, rime, mslfan, beamfan). Every round fell through the whole draw chain to the last
+rung — and `ebullet` is not a registered key, so that is `circle(3.4)` + `circle(1.6)`: **two flat
+vector circles**, one size, one colour, no animation, in a game holding 252 authored `mfx_` cells.
+That is the whole of "awful", and it is **not a stage-2 problem** — stage 2 is where Mike met it.
+Now `deriveFireType('eshot','pellet',{h:18})`: authored birth reel off `b.t`, and the family comes
+from `PELLET_FAM[run.stage]`, so the round is **the colour Mike already chose for the stage**.
+⚠ **`flare` WAS THE OBVIOUS PICK AND THE CONTACT SHEET DISQUALIFIED IT** — `mfx_ea_3_` frames 0-4
+are a bead and 5-7 are thin streaks, so cycling it swings the shape (0811y's trap). Render first.
+
+⚠ **ITEM 7 CORRECTS 0813x, AND IT CORRECTS THE SOLUTION, NOT THE DIAGNOSIS.** "Stage came sliding
+in instead of the lava continuing." 0813x read Mike's "have that floor render back in by scrolling
+downward" as wanting the TERRAIN back and slid the master into frame. **What he is pointing at is
+that the lava STOPS**: `_bossHold` pins `mapScroll`, and the bed is drawn against it, so the lava
+cycled its frames while travelling nowhere. `_arenaLavaScroll` is its own clock at `ARENA_LAVA_SPD`
+(40px/s, the level's own rate). **The `_gen||_mech` gate goes with the slide** — the open lava is
+the ARENA's requirement, not the unit's.
+
+⚠ **THE SCROLL LIVES IN THE DRAW, NOT THE UPDATE.** `mapScroll` is advanced inside
+`drawLevelMaster`, so a fixture looping bare `updatePlay` measures it as +0 and reports the level
+as dead. Drive `drawWorld` too. ⚠ **AND `drawWorld` TAKES `dt` — CALLING IT BARE MAKES `mapScroll`
+NaN**, silently and permanently (NaN propagates; the level just stops). `drawLevelMaster` refuses a
+bad dt now, same as the `stateT` clamp. ⚠ **NaN COMPARES FALSE AGAINST EVERYTHING**, so the probe
+printed "+nan px OK" — a probe that cannot fail on a broken number is not measuring one.
+
+⚠ **TWO 0813x ASSERTIONS PINNED THE FIX MIKE OVERRULED**, both describing 0813x's solution rather
+than the requirement. Repointed and made behavioural (the lava advances while the level does not).
+
 **0814b — item 10: the right dialogue box was built inside a function nothing else could reach.**
 Full writeup: `docs/PASSOVER_0814B.md`.
 
@@ -404,7 +451,8 @@ bosses/minibosses, level-7 purple halos, wrong level-5 map region, background sq
 stage-8 chain lightning). The stage-6 "door/side sky overlay" he ordered deleted was **not** deleted:
 the obvious key renders as a flat blue noise field, not an overlay. Rule 1, third save.
 
-**→ START HERE: `docs/PASSOVER_0814B.md`, then `docs/PASSOVER_0814A.md`, then `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
+**→ START HERE: `docs/HANDOFF_BRIAN_0814.md` (the current patch notes), then
+`docs/PASSOVER_0814C.md`, `docs/PASSOVER_0814B.md`, `docs/PASSOVER_0814A.md`, then `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
 
 **0813a — the flamethrower now hits what it visibly touches.**
 ⚠ **`flameDraw` PAINTS A UNIFORM COLUMN; `flameHit` TAPERED.** The draw is `flameHalfW(lv,1)` wide

@@ -8042,12 +8042,40 @@ console.log("=== 180. stage-2 lava arena ===");
      the Colossus anywhere restores the corridor with no further wiring.
 
      What is asserted now is the RULE, not the line: the stage still declares its arena liquid, and
-     the early return is conditional on the boss rather than unconditional on the flag. */
+     the early return is conditional on the boss rather than unconditional on the flag.
+
+     ⚠⚠ REWRITTEN AGAIN FOR 0814c, AND THIS TIME MIKE OVERRULED THE FIX RATHER THAN THE BUG.
+     Item 7: "Stage came sliding in instead of the lava continuing. Needs a constant-scrolling
+     lava section for the fire boss." So both of the claims below were wrong in the same way -
+     they described 0813x's SOLUTION rather than the requirement:
+
+       "gated on the BOSS type, a gunship boss keeps its floor"  -> he does NOT want the floor.
+                     The arena is open lava for whoever fights in it, which is 0806f restored.
+       "the floor travels back down into frame"                  -> that IS the sliding stage.
+
+     What he is actually pointing at is that the lava STOPS: _bossHold pins mapScroll for the
+     fight, so the bed cycled its frames while travelling nowhere. So the rule to pin is that the
+     LIQUID KEEPS MOVING WHILE THE LEVEL IS HELD, and that is measurable rather than grepped. */
   ok(_g180.indexOf('cfg.arenaLiquid')>0, 'the arena-liquid branch still exists');
-  ok(/arenaLiquid[\s\S]{0,400}?(_gen|_mech)/.test(_g180),
-     'and it is gated on the BOSS type, not on the stage alone - a gunship boss keeps its floor');
-  ok(_g180.indexOf('ARENA_FLOOR_HOLD')>0 && _g180.indexOf('ARENA_FLOOR_IN')>0,
-     'the floor travels back down into frame rather than never returning');
+  ok(!/arenaLiquid[\s\S]{0,300}?if\(frames && \(boss\._gen \|\| boss\._mech\)\)/.test(_g180),
+     'the arena is no longer gated on the boss rising out of the lava - it is the ARENA\'s requirement');
+  /* ⚠ THE SCROLL LIVES IN THE DRAW, NOT THE UPDATE. `drawLevelMaster` is where `mapScroll` is
+     advanced (and now `_arenaLavaScroll` beside it), so a fixture that only calls `updatePlay`
+     measures BOTH as +0 and reports the lava as dead. That is what the first cut of this
+     assertion did. Drive drawWorld too — which is what the real frame does. */
+  var _lava=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true; run.pilot='cole'; run.stage=2;"
+   +" curStage=STAGES[1]; beginStage(2); setState(GS.PLAY); player.reset();"
+   +" enemies.length=0; spawnBoss(curStage.boss); if(boss) boss.enter=false;"
+   +" for(var w=0;w<20;w++){ updatePlay(1/60); drawWorld(1/60); }"    // settle _bossHold
+   +" var a0=(typeof _arenaLavaScroll!=='undefined')?_arenaLavaScroll:null, m0=mapScroll;"
+   +" for(var i=0;i<180;i++){ updatePlay(1/60); drawWorld(1/60); }"
+   +" return JSON.stringify({lava0:a0, lava1:(typeof _arenaLavaScroll!=='undefined')?_arenaLavaScroll:null,"
+   +"   map0:m0, map1:mapScroll});})()", ctxv));
+  ok(_lava.lava1!==null && _lava.lava1 > (_lava.lava0||0) + 50,
+     'the lava bed keeps travelling through the boss fight ('+_lava.lava0+' -> '+_lava.lava1+')');
+  ok((_lava.map1-_lava.map0) < (_lava.lava1-(_lava.lava0||0)),
+     'while the LEVEL is held, which is what stops the player outrunning the fight'
+     +' (map +'+Math.round(_lava.map1-_lava.map0)+' vs lava +'+Math.round(_lava.lava1-(_lava.lava0||0))+')');
 }
 
 // ===== 181. THE GENESIS RED COLUMN (drop 0806g) =====
