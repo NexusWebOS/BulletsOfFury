@@ -1896,8 +1896,17 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
         if(vm.runInContext("enemies.some(function(e){return e._el8&&e._rollT!=null;})", ctxv)) _rolls++;
         if(vm.runInContext("!!subBoss", ctxv)){
           _sbAny=true;
-          if(vm.runInContext("!!subBoss._herald", ctxv)) _herald8=true;
-          else if(!_sbKind) _sbKind=vm.runInContext("String(subBoss.name||subBoss.kind||'?')", ctxv);
+          /* ⚠ REPOINTED 0821 (merging Brian's 0814e). This keyed on subBoss._herald, a flag that
+             belongs to the RETIRED art path — 0814e recast stage 8's mini onto the lock pack's
+             SPAWN CARRIER because the herald had no body art and was wearing frames 0-3 of its own
+             venom stream as a hull. The mini still triggers; only the costume changed, so the
+             assertion failed on a rename while the behaviour it cared about was intact.
+             SUBBOSS is the game's own declaration of what stage 8 fields, so this now observes
+             that the declared unit actually turns up — which is what the stage-7 row next to it
+             already argues for: "a runtime observation, not a name pin". A future recast changes
+             the table and this follows it. */
+          if(vm.runInContext("subBoss.kind===SUBBOSS[8].kind || !!subBoss._herald", ctxv)) _herald8=true;
+          if(!_sbKind) _sbKind=vm.runInContext("String(subBoss.name||subBoss.kind||'?')", ctxv);
         }
         if(vm.runInContext("!!(boss&&boss._vile)", ctxv)){ _boss8=true; _forms[vm.runInContext("boss._vForm",ctxv)]=1; }
         vm.runInContext("if(subBoss&&!subBoss.dead){subBoss.hp=0;subBoss.dead=true;subBoss.dying=0;}", ctxv);
@@ -1909,7 +1918,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _sv8=_e8.filter(function(k){return _seen8[k];});
   ok(_sv8.length===4, 'all 4 elites appeared in the finale ('+_sv8.join(',')+')');
   ok(_rolls>0, 'elites actually rolled during the run ('+_rolls+' sampled roll frames)');
-  ok(_herald8, 'HERALD OF DEATH triggered mid-stage'+(_herald8?'':(' [sub-boss seen: '+_sbAny+', kind: '+_sbKind+']')));
+  ok(_herald8, "stage 8's declared sub-boss triggered mid-stage"+(_herald8?' ('+_sbKind+')':(' [sub-boss seen: '+_sbAny+', kind: '+_sbKind+']')));
   ok(_boss8, 'VILE EXISTENCE reached the boss slot');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y);})", ctxv), 'no non-finite enemies after the stage-8 soak');
   ok(vm.runInContext("eBullets.every(function(b){return isFinite(b.x)&&isFinite(b.y);})", ctxv), 'no NaN bullets in the finale');
