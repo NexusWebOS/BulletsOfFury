@@ -627,9 +627,16 @@ console.log('\n=== 17. level environment pack (6 masters + liquid) ===');
      same reasoning that let RC2 replace the original in 0809m, recorded there in the same
      words. Asserted on what actually has to hold: a wide 800x4800 plate with a destroyed
      variant and the water bed it shows through. */
-  ok(l1master==='jungle800_v3_intact' && l1wide===true, `L1 uses the wide jungle master: ${l1master} (wide=${l1wide})`);
+  /* ⚠ REPOINTED 0821. This pinned the PLATE NAME, so swapping stage 1 to Mike's
+     CF_CoastlineDam plate failed it while nothing was actually wrong. The rule is that stage 1
+     flies a wide master with a breached twin — not which picture that is. */
+  ok(!!l1master && l1wide===true, `L1 uses a wide master: ${l1master} (wide=${l1wide})`);
   ok(vm.runInContext("XART.rdy('jungle800_master')", ctxv), 'jungle800 master art present');
-  ok(vm.runInContext('worldWidth()', ctxv)===800, 'stage 1 world is 800px wide (horizontal scroll)');
+  /* ⚠ REPOINTED 0821: 800 was this plate's width, not a law. The RULE is that the world is
+     exactly as wide as the plate the stage declares — that agreement is the thing worth pinning,
+     and it is what makes the horizontal scroll span real art instead of empty world. */
+  ok(vm.runInContext('worldWidth()===_levelCfg(1).plateW', ctxv),
+     'stage 1 world width equals its declared plate width ('+vm.runInContext('worldWidth()',ctxv)+')');
   vm.runInContext('damBroken=false; run.stage=1; curStage=STAGES[0];', ctxv);
   // drawLevelMaster returns true (draws) for a ready stage
   vm.runInContext('run.stage=6; curStage=STAGES[5]; mapScroll=0;', ctxv);
@@ -1971,12 +1978,27 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'and every prop sits inside the levels actual travel range');
   vm.runInContext("run.stage=1; curStage=STAGES[0];", ctxv);
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'stage 1 now runs the seam-healed water (swapped on explicit go-ahead)');
-  ok(vm.runInContext("_levelCfg().master==='jungle800_v3_intact' && _levelCfg().wide===true", ctxv), 'stage-1 flies Mike 0811 plate, wide');
+  ok(vm.runInContext("!!_levelCfg().master && _levelCfg().wide===true", ctxv), 'stage-1 flies a wide master plate');   // repointed 0821: was pinned to the 0811 plate name
   /* ⚠ h IS LOAD-BEARING AND ITS ABSENCE IS SILENT: every reader of cfg.h falls back to 4800.
      This plate IS 4800, so the fallback happens to be right — which means a wrong h would not
      show up here at all. Pinned explicitly so the two can never drift apart. */
-  ok(vm.runInContext("_levelCfg().h===4800", ctxv), 'stage-1 declares its plate height (4800)');
-  ok(vm.runInContext("_levelCfg().destroyed==='jungle800_v3_destroyed'", ctxv), 'and the DAM-BREACHED variant exists at last (missing since 0801cr)');
+  /* ⚠ REPOINTED 0821, AND MADE STRONGER. It pinned 4800 — the old plate's height — so it broke
+     on a legitimate swap and, worse, it could never have caught the failure that actually
+     matters: a cfg height that DISAGREES with the art. Measured off the installed PNG now, so
+     the two cannot drift apart whatever plate stage 1 is flying. */
+  {
+    const _cfg1=vm.runInContext("JSON.stringify({m:_levelCfg(1).master,h:_levelCfg(1).h,w:_levelCfg(1).plateW})", ctxv);
+    const _c=JSON.parse(_cfg1);
+    const _rel='assets/game/'+_c.m+'.png';
+    let _dim=null;
+    try{ const b=fs.readFileSync(ROOT+'/'+_rel); _dim=[b.readUInt32BE(16), b.readUInt32BE(20)]; }catch(e){}
+    ok(!!_dim, 'stage-1 master resolves to a real PNG on disk ('+_rel+')');
+    if(_dim){
+      ok(_c.h===_dim[1], 'stage-1 declared height matches the plate ('+_c.h+' vs '+_dim[1]+')');
+      ok(_c.w===_dim[0], 'stage-1 declared plateW matches the plate ('+_c.w+' vs '+_dim[0]+')');
+    }
+  }
+  ok(vm.runInContext("!!_levelCfg().destroyed && _levelCfg().destroyed!==_levelCfg().master", ctxv), 'and the DAM-BREACHED variant exists at last (missing since 0801cr)');   // repointed 0821: the twin must exist and differ, not be one named plate
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'water still paints through the plate own alpha');
   ok(vm.runInContext("XART.rdy('nlq2_water_0')", ctxv), 'stage-1 replacement water is registered and ready to switch');
   // frame count: _liquidFrames collects up to 8, these families ship 6
@@ -2339,8 +2361,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("run.stage=1; curStage=STAGES[0];", ctxv);
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_water'", ctxv), 'stage 1 runs the seam-healed water');
   ok(vm.runInContext("_levelCfg().tile===0.5", ctxv), 'and tiles it at 0.5 (drop 0801fs: native 800x256 read as huge smears on a 480 camera)');
-  ok(vm.runInContext("_levelCfg().master==='jungle800_v3_intact'", ctxv), 'stage-1 MASTER is Mike 0811 plate');
-  ok(vm.runInContext("worldWidth()===800", ctxv), 'stage 1 still an 800px world');
+  ok(vm.runInContext("!!_levelCfg().master", ctxv), 'stage-1 declares a MASTER plate');   // repointed 0821: was pinned to the 0811 plate name
+  ok(vm.runInContext("worldWidth()===_levelCfg(1).plateW", ctxv), 'stage 1 world still matches its plate width');   // repointed 0821
   ok(vm.runInContext("(function(){for(var i=0;i<6;i++) if(!XART.rdy('nlq2_water_'+i)) return false; return true;})()", ctxv), 'all 6 water frames present');
   // LEVEL-6 JETS: full animation sets, verified DRIVEN (keys are built with template literals, so
   // a plain text search for the family name shows a false negative — check behaviour instead).
@@ -2574,7 +2596,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_sawBurst, 'the glow resolves into a BURST that spawns the laser flurry');
   var _nfl=vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).length", ctxv);
   ok(_nfl>=8, 'the volley is 8-9 big lances, not a cloud of thin ones ('+_nfl+' bolts)');
-  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).every(function(b){return b.vy<-14;})", ctxv), 'the flurry races — every bolt is fast');
+  /* ⚠ REPOINTED 0821: this measured b.vy, which is only the bolt's SPEED while every bolt flies
+     straight up. Mike asked for volleys "in multiple directions", so the ring now includes bolts
+     travelling sideways and down, whose vy is small while their speed is unchanged. The rule was
+     always that the flurry RACES — so it measures the speed. */
+  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).every(function(b){return Math.hypot(b.vx,b.vy)>14;})", ctxv), 'the flurry races — every bolt is fast');
+  ok(vm.runInContext("new Set(pBullets.filter(function(b){return b.kind==='hfl';}).map(function(b){return Math.round((b._hdir||0)*57.3);})).size>=4", ctxv), 'and the volley goes out in MULTIPLE DIRECTIONS, not one upward fan — Mike 0821');
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).every(function(b){return b.x>=0 && b.x<=worldWidth();})", ctxv), 'and every bolt stays inside the world');
   // it DELETES ordinary enemies
   vm.runInContext("enemies.length=0; pBullets.length=0; var _by=260; helixFlurrySpawn(240,_by,3); spawnEnemy('drone', 240, _by-40, {}); spawnEnemy('drone', 248, _by-70, {});", ctxv);
@@ -5010,9 +5037,17 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // ROLLERBALL IS EXCLUSIVE
   ok(vm.runInContext("pShoot.toString().indexOf('ROLLERBALL IS EXCLUSIVE')>0", ctxv), 'the rollerball locks out her other weapons');
   vm.runInContext("run.pilot='falva'; pBullets.length=0; rollers.length=0; player.dead=false; player.fireCd=0; pShoot(); globalThis.__noBall=pBullets.length;", ctxv);
-  vm.runInContext("pBullets.length=0; rollers.push({x:240,y:300,r:14,t:0,dead:false}); player.fireCd=0; pShoot(); globalThis.__withBall=pBullets.length;", ctxv);
+  /* ⚠ REPOINTED 0821. This pushed a roller with NO SPECIAL RUNNING and called that "equipped".
+     That state cannot occur in play — rollers.push lives only in falvaCharge, which only
+     updateSpecial calls — so the assertion pinned a situation the game cannot reach, and in
+     doing so it locked in Mike's bug: "after rollerball runs out she cannot attack while ball
+     keeps bouncing." EQUIPPED means the special is running. Both halves are pinned now. */
+  vm.runInContext("pBullets.length=0; special={pilot:'falva',t:5,dur:5}; rollers.push({x:240,y:300,r:14,t:0,dead:false}); player.fireCd=0; pShoot(); globalThis.__withBall=pBullets.length;", ctxv);
+  vm.runInContext("pBullets.length=0; special=null; player.fireCd=0; pShoot(); globalThis.__leftover=pBullets.length;", ctxv);
+  vm.runInContext("rollers.length=0; special=null;", ctxv);
   ok(vm.runInContext("__noBall>0", ctxv), 'without the ball she fires normally ('+vm.runInContext("__noBall",ctxv)+' shots)');
   ok(vm.runInContext("__withBall===0", ctxv), 'WITH the ball equipped she fires nothing else ('+vm.runInContext("__withBall",ctxv)+' shots)');
+  ok(vm.runInContext("__leftover>0", ctxv), 'and once the special ENDS a still-bouncing ball no longer disarms her ('+vm.runInContext("__leftover",ctxv)+' shots) — Mike 0821');
   vm.runInContext("rollers.length=0; pBullets.length=0; run.pilot='cole';", ctxv);
 
 

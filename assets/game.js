@@ -894,6 +894,17 @@ const _wwCache=Object.create(null);
    1-8 all measure 800 across). Used as the pre-decode world width so nothing
    has to wait on a download to know the map is wider than the camera. */
 const MASTER_W = 800;
+/* ⚠ THE STAGE-1 COASTLINE HAS ONE OWNER NOW (0821). It was written out at THREE sites as the
+   bare literal 4605 — the naval swap, the wave gate, and the beaching test inside the naval
+   tick. Swapping in CF_CoastlineDam updated the two that were named constants and MISSED the
+   third, because it was an inline `4605-60` that no grep for _COAST could find. The result was
+   that every naval unit beached on its first tick, drifted down the screen and died without
+   firing a shot — which the suite caught as "every volley fired is 5-8 rounds (1)".
+
+   3412 IS THE PACK'S OWN NUMBER, NOT AN EYEBALLED ONE: the runtime map declares
+   full_scroll_height 4212 with open_water_height 800, so terrain begins exactly 3412 from the
+   top. Any future plate swap changes this line and nothing else. */
+const S1_COAST = 3412;
 /* ============================================================
    "JUST OFF THE EDGE" MEANS THE WORLD'S EDGE, NOT THE VIEWPORT'S (drop 0811o)
 
@@ -1094,7 +1105,13 @@ function worldWidth(){
         if(im && im.naturalWidth) w=Math.max(VW, im.naturalWidth);
         _wwCache[st]=w;               // cache only once the art is authoritative
       } else if(XART._src && XART._src[mk]){
-        w=Math.max(VW, MASTER_W);     // authored width, no decode required
+        /* ⚠ MASTER_W IS 800 AND FOUR STAGES ARE NOT (0821). 1/4/5/6 all ship 680-wide plates
+           now, so this fallback answered 800 for the opening frames and then SNAPPED to 680
+           once the art decoded — reintroducing, from the other direction, the exact fault
+           0801bb fixed: the engine believing a wrong world width while it places the player
+           and the camera. The stage's own cfg is the authority; MASTER_W is only the default
+           for the plates still authored at 800 (stages 2 and 3). */
+        w=Math.max(VW, (cfg && cfg.plateW) || MASTER_W);   // authored width, no decode required
       }
     }
   }catch(e){}
@@ -2481,8 +2498,15 @@ function _levelCfg(){
 
        `destroyed` is the dam-breached variant, which this project has recorded as "RC2 does
        not ship" since 0801cr. stageMasterKey swaps to it on damBroken. */
-  case 1: return {master:'jungle800_v3_intact', destroyed:'jungle800_v3_destroyed',
-                  liquid:'nlq2_water', fill:'#0a1607', tile:0.5, fps:5, wide:true, h:4800};
+  /* ⚠ STAGE 1 IS CF_CoastlineDam-Lvl1 (Mike, 0821): "here is the proper and extended stage 1
+     replacement." Authored NATIVE at 680 — the plate width the game standardised on — so unlike
+     stages 4/5/6 nothing was resized. 680x4212: 800px of open water at the start, then coast,
+     sandy combat coast, and the DAM at the top, which is the end of the level.
+     The pack ships BOTH states, so `destroyed` maps onto the damBroken swap the engine already has.
+     Water is carried AS ALPHA, which is what lets the animated bed show through and what
+     _buildLandMask reads — see the mask block, which prefers the plate over the old map images. */
+  case 1: return {master:'bg_stage01_intact', destroyed:'bg_stage01_destroyed', plateW:680,
+                  liquid:'nlq2_water', fill:'#0a1607', tile:0.5, fps:5, wide:true, h:4212};
     /* THE FIRE BOSS FIGHTS OVER OPEN LAVA (drop 0806f). Mike: "the stage did not connect a
        tiled looped lava section of its own where he has his intro, we should be traveling past
        this mountain, flying over just lava that repeats, and he appears and does his intro."
@@ -2575,7 +2599,7 @@ function _levelCfg(){
        strip — desert highway, then the airbase approach, then the mega airbase with its hangar
        bays. Authored 640x3840 and installed at 680x4080, uniform, so nothing is distorted.
        The old airbase plate and its objects are quarantined, not referenced. */
-    case 4: return {master:'bg_stage04_master', liquid:null, fill:'#101820', tile:1, fps:5, wide:true,
+    case 4: return {master:'bg_stage04_master', plateW:680, liquid:null, fill:'#101820', tile:1, fps:5, wide:true,
                     /* ⚠ CAR CRASH REMOVED (drop 0813j). Mike: "get rid of the signs and car
                        cash and crater for stage 4. we dont need em anymore." The pileup was the
                        only entry in cfg.props game-wide, so drawStageProps now has nothing to
@@ -2591,7 +2615,7 @@ function _levelCfg(){
     /* ⚠ STAGE 5 TAKES THE PACK'S SEAMLESS SPACE LOOP (Mike, 0819e). It is a LOOP, not a scroll
        strip — the pack names it the base layer and hangs the planets, comets and wisps over it —
        so loopMaster stays on. Installed at 680 wide to match 4 and 6. */
-    case 5: return {master:'bg_stage05_loop', liquid:null,  fill:'#05060a', tile:1.0, wide:true,
+    case 5: return {master:'bg_stage05_loop', plateW:680, liquid:null,  fill:'#05060a', tile:1.0, wide:true,
                     loopMaster:true, arena:'norb5_arena'};
     // 6 HEAVY TURBULENCE — dedicated sky kit (env pack v1.0): 800x4000 base sky + separate
     // parallax cloud layer + 800x1000 boss arena. WIDE level (800px world, camera scrolls).
@@ -2650,7 +2674,7 @@ function _levelCfg(){
        -> storm night -> the sewer approach, which is both the dark sky he asked for and the
        hand-off into stage 7. A looping sky cannot express that progression, so loopMaster is off
        and this scrolls like stages 4 and 7. */
-    case 6: return {master:'bg_stage06_master', liquid:null, fill:'#01031c', tile:1.0, wide:true};
+    case 6: return {master:'bg_stage06_master', plateW:680, liquid:null, fill:'#01031c', tile:1.0, wide:true};
     // 7 NOT ANOTHER SEWER LEVEL — dedicated sewer kit (CF_LevelPack-Lvl7): 800x3616 gameplay
     // scroll + 800x1000 boss arena, with the 256px sludge surface animating through the
     // master's keyed channels. WIDE level (800px world, camera scrolls).
@@ -4009,6 +4033,30 @@ function miniTerrainOK(kind, x, y, footW){
          terrainPass(M.key, kind, x,   M.mapY) &&
          terrainPass(M.key, kind, x+h, M.mapY);
 }
+/* ⚠ THE STAGE-1 MASK BUILD USED TO LIVE INSIDE drawStageMap, WHICH STAGE 1 STOPPED CALLING
+   (found 0821 while swapping in CF_CoastlineDam). drawBG tries drawLevelMaster FIRST and
+   returns on success, and stage 1 has carried a `master:` since 0811h — so that whole block
+   was DEAD CODE. _landMasks stayed empty, and _isLand fell through to its "no mask yet ->
+   don't block spawns" default, which means EVERY POINT ON STAGE 1 COUNTED AS LAND. The mask
+   was not disagreeing with the plate; it did not exist.
+
+   ⚠ It reads the keys OUT OF THE STAGE CFG rather than naming the plates a second time, so it
+   follows the master by construction — the same reasoning as 0811h, applied one level up.
+   Cheap to call every frame: _buildLandMask early-returns once a key is built. */
+function ensureS1LandMasks(){
+  if(typeof _levelCfg!=='function' || typeof XART==='undefined') return;
+  if(_landMasks.mapJungle && _landMasks.mapJungleDam) return;
+  const c=_levelCfg(1); if(!c) return;
+  const A=(typeof ASSETS!=='undefined')?ASSETS:null;
+  const pick=(key,fb)=>{
+    if(key && XART.rdy(key)) return XART.get(key);        // the plate is its own mask
+    return (A && fb && A.rdy(fb)) ? fb : null;            // fallback: the old map images
+  };
+  const m=pick(c.master,    A?A.mapJungle:null);
+  const d=pick(c.destroyed, A?A.mapJungleDam:null);
+  if(m) _buildLandMask(m,'mapJungle');
+  if(d) _buildLandMask(d,'mapJungleDam');
+}
 function _isLand(key,x,mapY){
   const m=_landMasks[key]; if(!m) return true;   // no mask yet -> don't block spawns
   const xi=Math.max(0,Math.min(m.w-1,Math.round(x))), yi=Math.max(0,Math.min(m.h-1,Math.round(mapY)));
@@ -4136,12 +4184,10 @@ function drawStageMap(dt){
      So the plate is its own mask, exactly, and the two can no longer disagree by construction.
      The old mapJungle images stay registered and are the fallback for any plate that has no
      alpha of its own. */
-  const _jm = (typeof XART!=='undefined' && XART.rdy('jungle800_v3_intact')) ? XART.get('jungle800_v3_intact') : null;
-  const _jd = (typeof XART!=='undefined' && XART.rdy('jungle800_v3_destroyed')) ? XART.get('jungle800_v3_destroyed') : null;
-  if(_jm) _buildLandMask(_jm,'mapJungle');
-  else if(ASSETS.rdy(ASSETS.mapJungle)) _buildLandMask(ASSETS.mapJungle,'mapJungle');
-  if(_jd) _buildLandMask(_jd,'mapJungleDam');
-  else if(ASSETS.rdy(ASSETS.mapJungleDam)) _buildLandMask(ASSETS.mapJungleDam,'mapJungleDam');
+  /* one owner for this now — see ensureS1LandMasks. This path is not the live one (drawBG
+     returns on drawLevelMaster first), which is exactly how it went stale; delegating means
+     it cannot go stale a second time. */
+  if(typeof ensureS1LandMasks==='function') ensureS1LandMasks();
   // stage 1: Base -> Island -> River -> Temple-gate DAM (waterfall behind gate);
   // copter dies -> white flash -> swap to mapJungleDam (temple blown open)
   const img = (damBroken && ASSETS.rdy(ASSETS.mapJungleDam)) ? ASSETS.mapJungleDam : ASSETS.mapJungle;
@@ -6937,7 +6983,10 @@ function spawnEnemy(type, x, y, opt={}){
            water, above it 0% - a cleaner split than the old plate ever had. Note the sea leg
            is much SHORTER than it was, 527px against 1416, so the naval opening is a brief
            run before the beach. That is how RC2 authored the route, not a bug to tune out. */
-        const _COAST=4605;                       // measured on jungle800_rc2_master
+        /* ⚠ 3412 IS THE PACK'S OWN NUMBER, NOT AN EYEBALLED ONE (0821): the runtime map declares
+           full_scroll_height 4212 with open_water_height 800, so terrain begins exactly 3412
+           from the top. Both coastline tests must agree — see S1_COAST_Y. */
+        const _COAST=S1_COAST;                   // see S1_COAST — one owner for the coastline
         const _camY=_H-(mapScroll||0);           // scroll runs bottom -> top
         if(_camY > _COAST){                      // still out over the sea
           /* picked from the spawn POSITION, not Math.random(): the same wave lays
@@ -7986,7 +8035,7 @@ function buildStagePlan(stageNum){
        halfway cutoff killed them and the sand tanks never reached the beach at all. The
        suite caught it as "stage 1: the sand tanks spawn (scroll never)".
        Kept as a named constant so the pair cannot drift apart again. */
-    const S1_COAST_Y = 4605;                         // == the _COAST used by the naval swap
+    const S1_COAST_Y = S1_COAST;                     // == the _COAST used by the naval swap (0821)
     const _s1OnLand = () => {
       const cfg = (typeof _levelCfg==='function') ? _levelCfg() : null;
       const H = (cfg && cfg.h) || 4800;
@@ -8629,7 +8678,7 @@ const ENEMY_VOLLEY = {
   // stage 4
   assault:       {alt:['fan','rake'],        every:3},
   // stage 5 — the first screen-filling shapes
-  octo:          {alt:['fan','pincer','rake'], every:2},
+  octo:          {alt:['fan','pincer','rake'], every:2, pause:2.0},   // measured 9.30/unit/sec
   // stage 6
   raptor:        {alt:['fan','rake'],        every:3},
   bcarrier:      {alt:['wall','salvo'],      every:3},
@@ -8647,7 +8696,7 @@ const ENEMY_VOLLEY = {
   lance:         {pat:'pincer',  every:3},
   skim:          {pat:'wall',    every:3},
   disc:          {pat:'pincer',  every:3},
-  eye:           {pat:'fan',     every:2},
+  eye:           {pat:'fan',     every:2, pause:2.2},   // measured 12.93/unit/sec - the worst on any stage
   cruc:          {pat:'wall',    every:3},
   miner:         {pat:'wall',    every:4},
   carrier:       {pat:'wall',    every:2},
@@ -8667,7 +8716,7 @@ const ENEMY_VOLLEY = {
   oracle:        {pat:'pincer',  every:3},
   crescent:      {alt:['wall','ripple'],     every:7},
   hauler:        {alt:['wall','salvo'],      every:3},
-  talon:         {alt:['fan','rake'],        every:3},
+  talon:         {alt:['fan','rake'],        every:3, pause:2.0},   // stage 6's heaviest emitter: 496 rounds in 40s across 12 units
   hell:          {alt:['pincer','salvo'],    every:3},
   cdisc:         {alt:['stagger','curtain'], every:8},
 };
@@ -8693,6 +8742,33 @@ const ENEMY_VOLLEY = {
    screen. The gates that remain are the ones that exist for fairness rather than bookkeeping: not
    while entering, and only from inside the play band, so nothing shoots from off the top edge.
    ============================================================ */
+/* ============================================================
+   THE VOLLEY LOOP IS A BURST AND A SILENCE, NOT A METRONOME (Mike, 0821)
+
+   Mike: the enemies are "too chaotic with projectiles". Measured before touching anything, over
+   40s of real play, in rounds per unit per second:
+
+       stage 1 (the stage he is happy with)   0.69 - 2.52
+       eye     12.93     octo   9.30     l6x_tf 7.25     talon 6.87
+       shieldd  5.77     disc   5.76     skim   5.50     icegun 5.25
+
+   So the fodder is firing three to five times the rate of the stage he already signed off on.
+   The cause is one line below, and its own comment says so: 0.16 was chosen when stage 7 "read
+   as empty" because its units were off-camera in an 800-wide world. Density has since gone to
+   1.00 and the on-screen cap up with it, so the same metronome that was feeding an empty screen
+   is now feeding a full one. Nothing about it was wrong when it was written.
+
+   The fix is the rhythm Mike already specified and approved for the naval guns: "burst fires
+   with 2 second delays before the next and again. Back to the loop", and "pauses in between to
+   give you enough time to shoot them". A burst weapon reads as one because the SILENCE is as
+   fixed as the volley — you learn the window and you move in it.
+
+   ⚠ THE SHAPES ARE UNTOUCHED. fan/rake/pincer and the alt cycling are what make a volley
+   learnable (drop 0811s), and they were never the problem — the problem is that there was no
+   gap between them. Per-type overrides live in the ENEMY_VOLLEY row so this stays a TABLE,
+   which is the standing rule here: anything added is covered without editing this function. */
+const VOLLEY_BURST = 2;     // volleys fired back-to-back
+const VOLLEY_PAUSE = 1.5;   // then a FIXED silence - fixed, so it can be learned
 function enemyVolleyTick(e, dt){
   if(!e || e.dead || !ENEMY_VOLLEY[e.type]) return;
   /* ⚠ A DISARMED UNIT IS DISARMED HERE TOO (Mike, 0819). This tick is keyed on e.TYPE and runs on
@@ -8715,7 +8791,12 @@ function enemyVolleyTick(e, dt){
      Measured at the old 0.42 factor stage 7 produced 14 volleys in 15s across ~2.5 live units
      spread over an 800-wide world against a 480 camera, so most of it happened off-screen and
      the screen read as empty. 0.16 puts roughly one volley per unit per half-second. */
-  e._volCd = (V.every||3)*0.16*rnd(0.85,1.25);
+  /* in-burst cadence is UNCHANGED - the volleys inside a burst come as fast as they always did */
+  const _bn = V.burst || VOLLEY_BURST, _bp = V.pause || VOLLEY_PAUSE;
+  if(e._volB==null) e._volB = _bn;
+  e._volB--;
+  if(e._volB<=0){ e._volB = _bn; e._volCd = _bp; }              // the window the player moves in
+  else           e._volCd = (V.every||3)*0.16*rnd(0.85,1.25);
   enemyVolley(e, true);
 }
 function enemyVolley(e, force){
@@ -11972,8 +12053,19 @@ function pShoot(){
   }
   /* ROLLERBALL IS EXCLUSIVE (drop 0724cf). While Falva has it equipped she fires the ball and
      NOTHING else — no primary gun, no spread, no laser. Her helper balls keep their straight
-     lasers; that is the special, not a weapon slot. */
-  if(run.pilot==='falva' && typeof rollers!=='undefined' && rollers && rollers.length>0) return;
+     lasers; that is the special, not a weapon slot.
+
+     ⚠ "EQUIPPED" IS THE SPECIAL, NOT A BALL THAT HAPPENS TO BE ALIVE (Mike, 0821): "after
+     rollerball runs out she cannot attack while ball keeps bouncing."
+
+     The gate keyed on rollers.length alone. A full ball carries life:10 against a 15s special,
+     so any ball thrown in her last ten seconds OUTLIVES the special — and every one of those
+     seconds left her primary gun silent with no way to get it back. The exclusivity was meant
+     to last as long as she is holding the weapon, and it lasted as long as the debris did.
+     Bounded by specialActive now, so the leftover ball is what it should be: a hazard still in
+     play, not a weapon lockout. */
+  if(run.pilot==='falva' && typeof specialActive==='function' && specialActive('falva')
+     && typeof rollers!=='undefined' && rollers && rollers.length>0) return;
   // FALVA: her side laser-balls fire on their own; she keeps her normal weapon too (no suppression)
   if(specialActive('maverick')){   // VENOM HELIX LANCE — green helix that swirls as it travels.
     // While the fire button is HELD the shot charges instead (see mavCharge/releaseHelix):
@@ -13550,7 +13642,14 @@ function drawAtomBooms(){
   if(atomFlash>0){
     ctx.save(); ctx.globalAlpha=clamp(atomFlash,0,1);   // clamped: the >1 headroom is the blinding hold
     ctx.fillStyle='#ffffff';
-    ctx.fillRect(-48,-48,VW+96,VH+96);                  // oversized so the screen-shake translate can't reveal an edge
+    /* ⚠ VW/VH IS NOT THE VIEW (0821). Mike: "light flash fills entire screen". The world is
+       680 wide and the camera pans, so a rect drawn 480 wide left the panned remainder of the
+       screen unflashed — the same class of miss as the stage-6 weather not covering the top.
+       Painted across the WORLD and down the whole view instead, so no pan or zoom can reveal
+       an edge. */
+    const _fw=(typeof worldWidth==='function')?worldWidth():VW;
+    const _fy=(typeof viewFillY==='function')?viewFillY():0;
+    ctx.fillRect(-64, _fy-64, _fw+128, (VH-_fy)+128);
     ctx.restore();
   }
 }
@@ -15074,6 +15173,7 @@ function beginStage(num){
   if(typeof aiQueue!=='undefined') aiQueue.length=0;
   if(typeof orbBeams!=='undefined') orbBeams.length=0;
   if(typeof helixBursts!=='undefined') helixBursts.length=0;
+  if(typeof helixVolleyQ!=='undefined') helixVolleyQ.length=0;   // 0821: a queued volley must not survive a stage change
   if(typeof l6GMissiles!=='undefined') l6GMissiles.length=0;
   l6Objs=[];   /* the stage-6 weather reset went with the old system (0819f) */
   camX=0; WORLD_W=worldWidth();   // reset camera state: stage-1's 800px h-scroll camX must never leak into other stages (broke the stage-2 level display)
@@ -16619,7 +16719,10 @@ function updatePlay(dt){
            strands are the same _child venomx the doubling already spawns, so they inherit the
            helix art, the piercing and the damage falloff that were already tuned. */
         {
-          const SPREAD=[-0.87,-0.44,0,0.44,0.87], SPD=10.4;
+          /* ⚠ NO CENTRE STRAND (Mike, 0821): "remove centre laser". The 0 entry fired one
+             lance straight up the middle out of every burst, which is the centre laser as it
+             reads on screen — the fan now opens around the ball instead of through it. */
+          const SPREAD=[-0.87,-0.44,0.44,0.87], SPD=10.4;
           for(const a of SPREAD){
             pBullets.push({kind:'venomx', _child:true, _fan:true,
               x:b.x, y:b.y, vx:Math.sin(a)*SPD, vy:-Math.cos(a)*SPD,
@@ -16904,13 +17007,29 @@ function updatePlay(dt){
        opens with climb, and _hz (cos of the same angle) is the depth cue the draw sorts on. */
     if(b.kind==='hfl'){
       b._ht=(b._ht||0)+dt;
-      b.y+=b.vy;
-      const climb=clamp((b._hy0-b.y)/Math.max(1,VH*0.9),0,1);
+      /* ⚠ THE STRAND TRAVELS A HEADING NOW, NOT A COLUMN (0821). Mike: the burst should throw
+         "lasers out in volleys in multiple directions". This path advanced a CENTRE LINE in y
+         and put the sine on x, which hardwires every bolt to fly straight up — the reason the
+         old burst was one upward spray however it was aimed.
+         It advances along _hdir and puts the sine PERPENDICULAR to it instead. For the default
+         heading (straight up) the arithmetic is the same line for line: cos(-PI/2)=0 so the
+         centre line only moves in y, and the perpendicular is +x. Nothing about the existing
+         single-volley look changes; the burst just gained 23 more directions to use.
+         The 24-way art needs no help — drawBullets already picks its sprite from the tangent. */
+      if(b._hspd==null) b._hspd=Math.abs(b.vy||17);
+      const _hd=(b._hdir==null)? -Math.PI/2 : b._hdir;
+      if(b._hcx==null){ b._hcx=b._hx0; b._hcy=b._hy0; }
+      b._hcx+=Math.cos(_hd)*b._hspd;
+      b._hcy+=Math.sin(_hd)*b._hspd;
+      b._hrun=(b._hrun||0)+b._hspd;               // distance flown == the old (_hy0 - y) when vertical
+      const climb=clamp(b._hrun/Math.max(1,VH*0.9),0,1);
+      b._hclimb=climb;                            // the draw reads this rather than re-deriving from y
       const amp=10+climb*46;                      // helix opens out as it rises
       const ang=b._hph + climb*10.5;              // ~1.7 twists over a full screen
-      const nx=b._hx0 + Math.sin(ang)*amp;
-      b.vx=nx-b.x;                                // keep vx meaningful for the tangent
-      b.x=nx;
+      const nx=b._hcx + Math.cos(_hd+Math.PI/2)*Math.sin(ang)*amp;
+      const ny=b._hcy + Math.sin(_hd+Math.PI/2)*Math.sin(ang)*amp;
+      b.vx=nx-b.x; b.vy=ny-b.y;                   // keep the tangent meaningful for the art
+      b.x=nx; b.y=ny;
       b._hz=Math.cos(ang);                        // +1 near side, -1 far side
     } else { b.x+=b.vx; b.y+=b.vy; }
     if(b.kind==='nade'){ b.t+=dt; b.vy*=0.985; }
@@ -18614,6 +18733,7 @@ function updateEffects(dt){
   if(typeof l6GMUpdate==='function') l6GMUpdate(dt);
   if(typeof aiQueueTick==='function') aiQueueTick(dt);
   if(typeof speedPadsUpdate==='function') speedPadsUpdate(dt);
+  if(typeof helixVolleysUpdate==='function') helixVolleysUpdate(dt);   // 0821: the queued volleys
   if(typeof helixBurstsUpdate==='function') helixBurstsUpdate(dt);
   if(typeof helixBallsUpdate==='function') helixBallsUpdate(dt);
   if(typeof orbBeamsUpdate==='function') orbBeamsUpdate(dt);
@@ -18742,6 +18862,9 @@ for(let i=0;i<90;i++) starField.push({x:rnd(0,VW),y:rnd(0,VH),z:rnd(0.3,1.6),s:r
 let jungleBlobs=[]; for(let i=0;i<24;i++) jungleBlobs.push({x:rnd(0,VW),y:rnd(0,VH),s:rnd(14,40),h:rnd(60,120)});
 
 function drawBG(dt){
+  // stage 1 places its tanks and boats off this mask, and the master path below RETURNS —
+  // so the build has to happen before it, not inside a branch it never reaches (0821)
+  if(run.stage===1 && typeof ensureS1LandMasks==='function') ensureS1LandMasks();
   // New Level Environment Pack masters (all 6 stages). Falls through if art isn't ready.
   if(ASSETS.ready && drawLevelMaster(dt)){
     if(typeof drawStageProps==='function') drawStageProps();  // fixed world props (stage-4 car pileup)
@@ -22706,8 +22829,10 @@ function navalTick(e, dt){
      flotilla falling behind as you push inland. Same constant as both other coastline tests. */
   if(run.stage===1 && !e._beached){
     const _c=(typeof _levelCfg==='function')?_levelCfg():null;
-    const _H=(_c&&_c.h)||4800;
-    if((_H-(mapScroll||0)) <= 4605-60) e._beached=1;
+    const _H=(_c&&_c.h)||4212;
+    /* ⚠ THIS LITERAL IS WHY EVERY BOAT DIED (0821) — see S1_COAST. It read 4605-60 against a
+       4212-tall plate, so the test was true on frame one and every naval unit beached at sea. */
+    if((_H-(mapScroll||0)) <= S1_COAST-60) e._beached=1;
   }
   if(e._beached){
     e.y += 74*dt;
@@ -23131,7 +23256,14 @@ function mavHelixTick(b, dt){
     // first — a lance that flies off-screen mid-glow would swallow the payoff entirely.
     // burst on the tell, or as soon as it nears the top edge — whichever comes first, so the
     // payoff is never lost off-camera.
-    if(b._hT>=HELIX_TELL || b.y<=VH*0.16){ b._hphase='burst'; helixDetonate(b); b.dead=true; }
+    /* ⚠ THE GLOW IS A LOOK, NOT A FUSE (0821). This also burst on b._hT>=HELIX_TELL — 0.34s
+       after crossing mid-screen, by which point the ball has been eased to 0.42 speed and has
+       barely moved. So it detonated in empty air near the middle of the screen EVERY time, and
+       "it shouldn't explode until contact" could never hold no matter how correct the contact
+       path above was. Two detonators owned one ball; the timer always won.
+       The top-edge test stays: a ball that reaches the top has run out of flight, which is the
+       same thing as hangtime expiring, and without it the payload leaves the screen. */
+    if(b.y<=VH*0.16){ b._hphase='burst'; helixDetonate(b); b.dead=true; }
   }
 }
 function helixDetonate(b){
@@ -23152,13 +23284,36 @@ function helixDetonate(b){
      through from the bullet rather than hardcoded so a future half-charge burst stays correct. */
   helixBalls.push({x:b.x, y:b.y, t:0, life:0.34, lv:lv, full:(b._full!==false)});
   explode(b.x, b.y, 40, 'blue');
-  atomFlash=Math.max(atomFlash, 0.7);
+  /* the blinding hold, not a 0.7 wash — "light flash fills entire screen" (Mike, 0821).
+     ATOM_HOLD is >1 on purpose: alpha clamps, so the excess is time spent at pure white. */
+  atomFlash=Math.max(atomFlash, (typeof ATOM_HOLD!=='undefined')?ATOM_HOLD:1.34);
   shake=Math.max(shake, 12);
   if(Audio.SFX) (Audio.SFX.bomb||Audio.SFX.expBig)();
   floatText(b.x, b.y-28, 'HELIX BURST!', '#ffffff');
   helixFlurrySpawn(b.x, b.y, lv, (b._full!==false));
 }
+/* ⚠ VOLLEYS, PLURAL, IN MULTIPLE DIRECTIONS (Mike, 0821): "on break lasers shoot out in
+   volleys in multiple directions". It fired ONE upward fan, so there was only ever one volley
+   and only ever one direction. Three waves go out now, each a full ring, each rotated a third
+   of a step off the last so the rings interleave instead of landing on top of each other.
+   The waves are queued rather than spawned together: 24 bolts on one frame is a flashbulb,
+   while three rings 0.13s apart is something you watch happen. */
+const HELIX_WAVES    = 3;
+const HELIX_WAVE_GAP = 0.13;
+let helixVolleyQ=[];
+function helixVolleysUpdate(dt){
+  if(!helixVolleyQ.length) return;
+  for(const q of helixVolleyQ) q.t-=dt;
+  const due=helixVolleyQ.filter(q=>q.t<=0);
+  if(!due.length) return;
+  helixVolleyQ=helixVolleyQ.filter(q=>q.t>0);
+  for(const q of due) helixWaveSpawn(q.x,q.y,q.lv,q.full,q.k);
+}
 function helixFlurrySpawn(x, y, lv, full){
+  helixWaveSpawn(x, y, lv, full, 0);
+  for(let k=1;k<HELIX_WAVES;k++) helixVolleyQ.push({x:x,y:y,lv:lv,full:full,k:k,t:k*HELIX_WAVE_GAP});
+}
+function helixWaveSpawn(x, y, lv, full, wave){
   if(Audio.SFX.helixVolley) Audio.SFX.helixVolley();
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   // Mike: "8-9 of em", scaling up. 31 thin bolts read as confetti; a small number of BIG lances
@@ -23182,17 +23337,22 @@ function helixFlurrySpawn(x, y, lv, full){
      volley sprite whose authored angle is nearest the bolt's own tangent, so the art actually
      leans into the curve instead of being a vertical sprite slid sideways. */
   const N=8+((lv>=4)?1:0);
+  /* a full ring, and each successive volley starts a third of a step around it */
+  const _step=TAU/N, _base=-Math.PI/2 + (wave||0)*(_step/HELIX_WAVES);
   for(let i=0;i<N;i++){
     const t=(i/(N-1))-0.5;
+    const _hd=_base + i*_step;
+    const _sp=17+Math.random()*6;
     const _strand=i%2, _phase=_strand*Math.PI + (i>>1)*0.55;
     pBullets.push({
+      _hdir:_hd, _hspd:_sp, _hcx:clamp(x+t*10, 6, W-6), _hcy:y,
       // MERGED LAUNCH. Every bolt leaves from essentially the same point so the burst reads as one
       // mass of light, and the fan comes from VELOCITY as it climbs. Spreading them across 118px
       // at spawn is what made it look like the lasers had been split apart instead of bursting.
       kind:'hfl', _full:(full!==false), x:clamp(x+t*10, 6, W-6), y:y+rnd(-5,5),
       _hx0:clamp(x+t*10, 6, W-6),           // helix centre line for this bolt
       _hstr:_strand, _hph:_phase, _hy0:y,   // strand id, phase offset, launch height
-      vx:0, vy:-(17+Math.random()*6),       // x is driven by the helix, not a fixed sideways push
+      vx:Math.cos(_hd)*_sp, vy:Math.sin(_hd)*_sp,   // seeds the tangent; the mover drives it from _hdir
       w:26, h:64, dmg:9999,                 // deletes ordinary enemies outright
       _grow:1,                              // scales UP as it travels (see the hfl draw)
       _bossDmg:HELIX_FLURRY_BOSS,           // bosses take heavy but CAPPED damage
@@ -23624,7 +23784,7 @@ function drawBullets(){
          first the near one crosses OVER it. Without that the two strands just overlap flatly. */
       const lv=clamp(b.lv||1,1,5);
       const col=(b._full!==false)?'p':'g';   // full charge = purple/blue, uncharged = green
-      const climb=clamp((b._hy0-b.y)/Math.max(1,VH*0.9),0,1);
+      const climb=(b._hclimb!=null)?b._hclimb:clamp((b._hy0-b.y)/Math.max(1,VH*0.9),0,1);   // 0821: y is not the run any more
       const lt=climb<0.25?'s':climb<0.5?'m':climb<0.78?'l':'h';
       const di=((Math.round(Math.atan2(b.vx,-b.vy)/(Math.PI/12))%24)+24)%24;
       const vk='nhxv_'+col+'_'+lt+'_'+String(di).padStart(2,'0');
@@ -27423,7 +27583,16 @@ function l5FieldReset(){
   const decks=[
     {pre:'np5_orb', n:4, sc:0.55, spd:22, a:0.55, near:false},   // far orbital hardware, slow
     {pre:'np5_ast', n:5, sc:0.42, spd:38, a:0.60, near:false},   // mid asteroid belt
-    {pre:'np5_orb', n:3, sc:0.80, spd:78, a:0.80, near:true },   // near hardware sweeping over (rocks are real objects now)
+    /* ⚠ THIS DECK USED TO BE near:true AND IT IS WHY MIKE COULD NOT SEE HIS ENEMIES (0821).
+       Three pieces of orbital HARDWARE at 0.80 scale swept OVER the fight, and 0819g raised
+       L5_FIELD_ALPHA to 0.92 to answer "the transparency of the satelittes is too much" — which
+       made that occluder near-solid. Both reports were the same object: solid is right for
+       BACKGROUND hardware and fatal for a foreground one.
+       A satellite is a big opaque silhouette, so it can never pass over the play field. It keeps
+       its bigger scale and faster drift, so it is still the nearest deck and still reads as depth
+       — it just reads it from BEHIND. If a foreground deck is ever wanted here it must be small
+       fast dust, never hardware. */
+    {pre:'np5_orb', n:3, sc:0.80, spd:78, a:0.80, near:false},   // nearest deck — still BEHIND the fight
   ];
   for(const d of decks){
     for(let i=0;i<d.n;i++){
@@ -28830,8 +28999,19 @@ function releaseHelix(charge){
 
        And the ball is not carried up - the bare laser travels, then the ball FORMS
        at the stop. _ballOff suppresses it until then. */
-    _detonY: full ? ((player.y-18) * 0.5) : null,
-    _ballOff: full ? 1 : 0,
+    /* ⚠ REMOVE THE CENTRE LASER (Mike, 0821): "remove centre laser, ball shouldn't explode
+       until contact". Both halves of that were one flag each, and both were still set.
+
+       _ballOff:1 SUPPRESSED THE BALL ART, so a full charge drew as a travelling LANCE and only
+       became a ball at the stop — that lance IS the centre laser he keeps seeing. 0806k already
+       decided he launches a ball, not a lance; the flag that enforced the old behaviour simply
+       outlived the decision.
+
+       _detonY was the mid-screen detonation LINE. mavHelixTick owns both real triggers now
+       (contact, and hangtime running out), so a position trigger can only fire early and rob
+       the contact of its payoff. There is no line any more. */
+    _detonY: null,
+    _ballOff: 0,
     _spiral: 0,
     x:player.x, y:player.y-18, cx:player.x, vy: full?-11.5:-10.2,
     dir:1, ph:Math.random()*TAU,
@@ -38246,7 +38426,9 @@ function drawWorld(dt){
   /* ⚠ THE NEAR CLOUD LAYER IS GONE TOO (0819f), and it is worth saying why: it drew OVER the
      fight. A full-canvas sheet on top of gameplay is the same shape as the stage-5 near-debris
      layer Mike reported enemies vanishing behind. The pack's clouds all sit UNDER gameplay. */
-  if(run.stage===5 && typeof l5FieldDraw==='function') l5FieldDraw(true);     // near debris sweeps OVER the fight
+  /* [removed 0821: nothing in the stage-5 field may draw over the fight — see l5FieldReset.
+     The far pass above draws every deck; this call is gone rather than left drawing zero
+     objects, so a future near:true deck cannot silently start swallowing enemies again.] */
   /* the old rain/squall/lightning sheet is replaced by bg6Draw, which draws under gameplay (0819f) */
   if(typeof wfxUpdate==='function'){ wfxUpdate(dt); wfxDraw(); }   // WEATHER FX: L2 firewave / L3 snow / L6 bolts
   if(typeof allyUpdate==='function') allyUpdate(dt);                 // spared-rival wingman
