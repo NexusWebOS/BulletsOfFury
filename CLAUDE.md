@@ -162,7 +162,106 @@ from the stage name — that is the design. **Stage 5 was different**: `storm800
 literal storm plate on a space stage, which Mike DID want changed. The test is whether the art is
 wrong for the stage, not whether it matches the title.
 
-## Current state (2026-08-18)
+## Current state (2026-08-19c)
+
+**0819c — the plume was measured against a ship that is not drawn.**
+Full writeup: `docs/PASSOVER_0819C.md`.
+
+⚠ **PANNING IS THE GENRE, AND 0819b's PREMISE WAS FALSE.** That drop states Raiden and Fire
+Shark have no horizontal camera and reasoned a zoom-to-fit from it. Mike, with both games in front
+of him: *"we still have screen panning left and right, thats how fireshark and raiden did it."*
+`VIEW_FIT = 0` restores the 0818 camera exactly; the zoom stays as one dial and is **PARKED**
+pending Mike's call on plate width (he is weighing 800 against 720). **A whole drop was built on a
+premise nobody checked** — four follow-on fixes and an inverted assertion, all downstream of it.
+
+⚠ **THE THRUSTER WAS TWO SYSTEMATIC DEFECTS, WHICH IS WHY IT WAS "EVERY PILOT".**
+(1) The hull blit draws at a hardcoded 60px while the thruster derived its own reference from
+`(player.h||34)*2.05` — an 86px canvas, **43% taller than the hull on screen** — so the plume was
+sized, spaced and anchored against a ship that does not exist. `SHIP_DRAW_H` is that one number
+now, read by both. The CINEMATIC never had this because it derives its reference from the height it
+is actually drawing, which is the whole reason Mike sees it as correct.
+(2) The flame was anchored by its PLATE EDGE. The plates have **no transparent margin** (measured),
+so that read as "the edge is the flame" — but the luminance core sits at **0.58 of the plate**, so
+the visible flame landed that fraction below the nozzle, and being a fraction of the PLUME the
+error grew with plume size.
+⚠ **A SINGLE PROPORTIONAL SEAT CANNOT FIX (2) — I TRIED AND IT SHIPPED BRIEFLY.** Measured
+core-below-tail ratios run **0.33 to 0.51**. Solved in closed form instead:
+`tailY = hullBottom + SEAT - th*CORE_F`, so the plume's own height cancels. SEAT is Cole's measured
+4px — taken from the one pilot who already read as attached, not picked. axel 22.8→10.7,
+freezer 22.1→11.1, decker 16.2→8.0, while **cole and juggernaut held at 8.0**: the two already
+right did not move, which is the check that matters.
+
+⚠ **SIDE ENTRIES WERE LIVING ON THE CAMERA'S OFFSET.** `offLeftX(28)` is 28px beyond the visible
+edge and was always too small to hide a 73–101px jet; the camera sitting at 0..320 hid that. Pin
+the camera and a side spawn puts 8px on screen on its FIRST frame. 0813x fixed the other half
+(anchoring the helpers to the camera) and could not account for the unit's WIDTH from there;
+`spawnEnemy` can, so the clearance is finally the guarantee that note describes.
+
+⚠ **THE EIGHT STAGE FONTS WERE ALREADY LIVE AND I REPORTED OTHERWISE TWICE.** All eight
+`bof_font1..8` are registered with 46 frames and a 46-entry glyph map, and `curFontArt()` /
+`uiFontArt()` already prefer them. Two errors produced the wrong claim, both already in this file:
+**grepped the DEFINITION, not the CONSUMER** (`bof_font` appears nowhere in game.js; the wiring is
+the manifest key `bofFont` via `BOF.bofFont`), then **a readiness check inside the synchronous warm
+burst** — `shoot.py`'s warm never yields, so 150 frames passed with zero real time and every font
+read `decoded=false`. Against real elapsed time: false at 576ms, **true at 1500ms**.
+**A FRAME COUNT IS NOT A CLOCK** — poll readiness against `performance.now()`.
+
+⚠ **ONE SUITE FAILURE THIS SESSION WAS FLAKY** — "a corner run travels further sideways than a
+curve" failed once and cleared on re-run with no change to that code. Re-run before chasing it.
+
+**Suite: 2,697 ok / 3 fail** — preload count and two `_superseded/` ledger checks, all
+environmental (that folder is not committed, so they cannot pass on a fresh clone).
+
+## Previous state (2026-08-19)
+
+**0819a — the homing was never in the muzzles, and "no projectiles" was true of every muzzle and
+false of the screen.** Full writeup: `docs/PASSOVER_0819A.md`.
+
+⚠ **EVERY `emissile` IN THE GAME RAN ONE STEERING BLOCK WITH `b.turn||0.05` AS ITS DEFAULT.** So a
+round from a muzzle that calls itself straight — the bomber's rocket, `eMissile`, the tank shell,
+every boss volley — curved after the player anyway. **This is why removing homing kept not
+working**: 0801ea took `fk:'homing'` off the racer, 0801kf changed the diagonal file and the jungle
+tank, and each fixed the muzzle it was pointed at while the mover went on steering the result.
+Homing is a **GRANT** now (`b.homing`, and only on stage 1). **Renaming an `atk` row does nothing —
+check the mover.**
+⚠ **MEASURE THE ROUND, NOT THE ROSTER.** §230 records each missile's heading across a frame and
+counts direction changes: stages 2-8 give **0 curving frames of 18,372**, with stage 1 as the
+**control** — without that control the section would also pass on an engine that had simply deleted
+enemy missiles.
+
+⚠ **`enemyVolleyTick` NEVER ASKED WHETHER THE UNIT WAS ARMED.** It is keyed on `e.type` and runs on
+its own clock, deliberately outside the `if(e.shoots)` dispatch (0810x). `s1jetdelta` and `cryo`
+have rows in `ENEMY_VOLLEY`, so the new loop-charge jets fired **fan and rake volleys** with
+`shoots=false`, `_atk='none'` and `fk=null` — three flags set on the unit and none of them reached
+this path. Gated on `e.shoots===false` at that one chokepoint. **When a unit "should not be able to
+do X" and does, look for the system that runs on its own clock.**
+
+⚠ **A LOOP THE SPRITE DOES NOT ROTATE THROUGH IS NOT A LOOP.** `drawNewEnemyArt` rotates by
+`e.spin`; the vault air path uses `_faceAng`. Driving only `_faceAng` flies the whole circle
+**nose-south** — 0806h again. `loopcharge` drives both; §230 asserts 26 distinct attitudes.
+⚠ **THE STAGE GATE IS IN TWO PLACES ON PURPOSE** — `applyNefUnit` runs after `applyS1Jet` and
+overrides it (0812e), so setting the pattern in only one is silently undone.
+
+⚠ **TWO LATENT BUGS SURFACED BY THE DENSITY RAISE, NEITHER RELATED TO WHAT MIKE ASKED FOR.**
+`sepGrounded` tested `pattern==='ground'` only, so `tankhold`/`tankpatrol`/`s1tank` units were
+pushed sideways by the separation pass **with no `tankDrivable` check** — "tanks into the water" by
+the exact route that pass's own header promises to close (145 violations). And the miniboss gate's
+`enemies.length<=7` was pinned to the old cap of 7 and counted props, so with the cap at 9 a healthy
+field **held the miniboss off forever**: §202 ran 200 simulated seconds and never met the JUNGLE
+CRUISER, which reads as a broken trigger and is not.
+
+⚠ **A FIXTURE SLICED STAGE 3 WITH `split('return P;')` — A STRING THAT IS NOT IN THE SOURCE.** The
+plans return `_planSorted(P)`, so "stage 3" silently included every later stage's waves. Presence
+checks never noticed; the absence checks this drop needs would have false-failed on stage 4's own
+`mdrone` rows.
+⚠ **AND MY OWN NEW SECTION'S FIRST CUT COUNTED `eBullets` GLOBALLY** over 12 live seconds, reporting
+47 rounds from a unit the assertion above it proves is unarmed — the stage-1 plan's boats. Empty
+`stagePlan` when the claim is about ONE unit.
+
+**Suite: 2,695 ok / 3 fail** — preload count and two `_superseded/` ledger checks, all
+environmental (`_superseded/` is not committed, so it cannot pass on a fresh clone).
+
+## Previous state (2026-08-18)
 
 **0814d — item 5: the dam swap has been correct, and a thousand rows off screen.**
 Full writeup: `docs/PASSOVER_0814D.md`.
@@ -497,7 +596,8 @@ bosses/minibosses, level-7 purple halos, wrong level-5 map region, background sq
 stage-8 chain lightning). The stage-6 "door/side sky overlay" he ordered deleted was **not** deleted:
 the obvious key renders as a flat blue noise field, not an overlay. Rule 1, third save.
 
-**→ START HERE: `docs/HANDOFF_BRIAN_0814.md` (the current patch notes), then
+**→ START HERE: `docs/PASSOVER_0819C.md` (the newest drop), then `0819B`, `0819A`, then
+`docs/HANDOFF_BRIAN_0814.md` (the previous patch notes), then
 `docs/PASSOVER_0814D.md`, `0814C`, `0814B`, `0814A`, then `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
 
 **0813a — the flamethrower now hits what it visibly touches.**

@@ -1,0 +1,2745 @@
+{
+  "schema": "coleforge.bitmap-font.v2",
+  "family": "ColeForge Fury Dialogue",
+  "asset": "fury-dialogue-font",
+  "source_typeface": "DejaVu Sans Bold",
+  "use": "640x480 gameplay dialogue, HUD prompts, captions",
+  "image": "fury-dialogue-font-alpha.png",
+  "sheet_size": [
+    320,
+    154
+  ],
+  "cell": [
+    20,
+    22
+  ],
+  "logical_cell": [
+    20,
+    22
+  ],
+  "scale": 1,
+  "columns": 16,
+  "row_count": 7,
+  "glyph_count": 110,
+  "line_height": 22,
+  "baseline": 15,
+  "alpha": "binary",
+  "runtime_background": "transparent",
+  "source_key": "#FF00FF",
+  "texture_filter": "nearest",
+  "mipmaps": false,
+  "palette": [
+    "#051128",
+    "#0B3E76",
+    "#48A8DF",
+    "#CDEBFA",
+    "#F8FDFF"
+  ],
+  "charset": {
+    "ascii": "U+0020–U+007E",
+    "extended": [
+      "…",
+      "—",
+      "–",
+      "“",
+      "”",
+      "‘",
+      "’",
+      "•",
+      "©",
+      "™",
+      "°",
+      "×",
+      "÷",
+      "♥",
+      "★"
+    ]
+  },
+  "glyph_rows": [
+    {
+      "row": 0,
+      "y": 0,
+      "characters": [
+        " ",
+        "!",
+        "\"",
+        "#",
+        "$",
+        "%",
+        "&",
+        "'",
+        "(",
+        ")",
+        "*",
+        "+",
+        ",",
+        "-",
+        ".",
+        "/"
+      ]
+    },
+    {
+      "row": 1,
+      "y": 22,
+      "characters": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        ":",
+        ";",
+        "<",
+        "=",
+        ">",
+        "?"
+      ]
+    },
+    {
+      "row": 2,
+      "y": 44,
+      "characters": [
+        "@",
+        "A",
+        "B",
+        "C",
+        "D",
+        "E",
+        "F",
+        "G",
+        "H",
+        "I",
+        "J",
+        "K",
+        "L",
+        "M",
+        "N",
+        "O"
+      ]
+    },
+    {
+      "row": 3,
+      "y": 66,
+      "characters": [
+        "P",
+        "Q",
+        "R",
+        "S",
+        "T",
+        "U",
+        "V",
+        "W",
+        "X",
+        "Y",
+        "Z",
+        "[",
+        "\\",
+        "]",
+        "^",
+        "_"
+      ]
+    },
+    {
+      "row": 4,
+      "y": 88,
+      "characters": [
+        "`",
+        "a",
+        "b",
+        "c",
+        "d",
+        "e",
+        "f",
+        "g",
+        "h",
+        "i",
+        "j",
+        "k",
+        "l",
+        "m",
+        "n",
+        "o"
+      ]
+    },
+    {
+      "row": 5,
+      "y": 110,
+      "characters": [
+        "p",
+        "q",
+        "r",
+        "s",
+        "t",
+        "u",
+        "v",
+        "w",
+        "x",
+        "y",
+        "z",
+        "{",
+        "|",
+        "}",
+        "~",
+        "…"
+      ]
+    },
+    {
+      "row": 6,
+      "y": 132,
+      "characters": [
+        "—",
+        "–",
+        "“",
+        "”",
+        "‘",
+        "’",
+        "•",
+        "©",
+        "™",
+        "°",
+        "×",
+        "÷",
+        "♥",
+        "★"
+      ]
+    }
+  ],
+  "glyphs": {
+    " ": {
+      "codepoint": 32,
+      "cell_rect": [
+        0,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "bounds_in_cell": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    "!": {
+      "codepoint": 33,
+      "cell_rect": [
+        20,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        23,
+        2,
+        5,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        8,
+        16
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    "\"": {
+      "codepoint": 34,
+      "cell_rect": [
+        40,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        43,
+        2,
+        7,
+        6
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        10,
+        8
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "#": {
+      "codepoint": 35,
+      "cell_rect": [
+        60,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        63,
+        2,
+        11,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "$": {
+      "codepoint": 36,
+      "cell_rect": [
+        80,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        83,
+        2,
+        9,
+        16
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        18
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "%": {
+      "codepoint": 37,
+      "cell_rect": [
+        100,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        102,
+        2,
+        15,
+        14
+      ],
+      "bounds_in_cell": [
+        2,
+        2,
+        17,
+        16
+      ],
+      "x_advance": 16,
+      "baseline": 15
+    },
+    "&": {
+      "codepoint": 38,
+      "cell_rect": [
+        120,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        123,
+        2,
+        12,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        15,
+        16
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "'": {
+      "codepoint": 39,
+      "cell_rect": [
+        140,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        143,
+        2,
+        4,
+        6
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        7,
+        8
+      ],
+      "x_advance": 5,
+      "baseline": 15
+    },
+    "(": {
+      "codepoint": 40,
+      "cell_rect": [
+        160,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        163,
+        2,
+        6,
+        16
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        9,
+        18
+      ],
+      "x_advance": 7,
+      "baseline": 15
+    },
+    ")": {
+      "codepoint": 41,
+      "cell_rect": [
+        180,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        183,
+        2,
+        6,
+        16
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        9,
+        18
+      ],
+      "x_advance": 7,
+      "baseline": 15
+    },
+    "*": {
+      "codepoint": 42,
+      "cell_rect": [
+        200,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        203,
+        2,
+        7,
+        9
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        10,
+        11
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "+": {
+      "codepoint": 43,
+      "cell_rect": [
+        220,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        223,
+        4,
+        11,
+        12
+      ],
+      "bounds_in_cell": [
+        3,
+        4,
+        14,
+        16
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    ",": {
+      "codepoint": 44,
+      "cell_rect": [
+        240,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        243,
+        11,
+        5,
+        7
+      ],
+      "bounds_in_cell": [
+        3,
+        11,
+        8,
+        18
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    "-": {
+      "codepoint": 45,
+      "cell_rect": [
+        260,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        263,
+        8,
+        6,
+        4
+      ],
+      "bounds_in_cell": [
+        3,
+        8,
+        9,
+        12
+      ],
+      "x_advance": 7,
+      "baseline": 15
+    },
+    ".": {
+      "codepoint": 46,
+      "cell_rect": [
+        280,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        283,
+        11,
+        5,
+        5
+      ],
+      "bounds_in_cell": [
+        3,
+        11,
+        8,
+        16
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    "/": {
+      "codepoint": 47,
+      "cell_rect": [
+        300,
+        0,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        302,
+        2,
+        7,
+        15
+      ],
+      "bounds_in_cell": [
+        2,
+        2,
+        9,
+        17
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "0": {
+      "codepoint": 48,
+      "cell_rect": [
+        0,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        3,
+        24,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "1": {
+      "codepoint": 49,
+      "cell_rect": [
+        20,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        23,
+        24,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "2": {
+      "codepoint": 50,
+      "cell_rect": [
+        40,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        43,
+        24,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "3": {
+      "codepoint": 51,
+      "cell_rect": [
+        60,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        63,
+        24,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "4": {
+      "codepoint": 52,
+      "cell_rect": [
+        80,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        83,
+        24,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        13,
+        16
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "5": {
+      "codepoint": 53,
+      "cell_rect": [
+        100,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        103,
+        24,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "6": {
+      "codepoint": 54,
+      "cell_rect": [
+        120,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        123,
+        24,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "7": {
+      "codepoint": 55,
+      "cell_rect": [
+        140,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        143,
+        24,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "8": {
+      "codepoint": 56,
+      "cell_rect": [
+        160,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        163,
+        24,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "9": {
+      "codepoint": 57,
+      "cell_rect": [
+        180,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        183,
+        24,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    ":": {
+      "codepoint": 58,
+      "cell_rect": [
+        200,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        203,
+        27,
+        5,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        8,
+        16
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    ";": {
+      "codepoint": 59,
+      "cell_rect": [
+        220,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        223,
+        27,
+        5,
+        13
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        8,
+        18
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    "<": {
+      "codepoint": 60,
+      "cell_rect": [
+        240,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        243,
+        26,
+        11,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        4,
+        14,
+        15
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "=": {
+      "codepoint": 61,
+      "cell_rect": [
+        260,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        263,
+        28,
+        11,
+        8
+      ],
+      "bounds_in_cell": [
+        3,
+        6,
+        14,
+        14
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    ">": {
+      "codepoint": 62,
+      "cell_rect": [
+        280,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        283,
+        26,
+        11,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        4,
+        14,
+        15
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "?": {
+      "codepoint": 63,
+      "cell_rect": [
+        300,
+        22,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        303,
+        24,
+        7,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        10,
+        16
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "@": {
+      "codepoint": 64,
+      "cell_rect": [
+        0,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        3,
+        46,
+        13,
+        16
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        16,
+        18
+      ],
+      "x_advance": 14,
+      "baseline": 15
+    },
+    "A": {
+      "codepoint": 65,
+      "cell_rect": [
+        20,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        22,
+        46,
+        12,
+        14
+      ],
+      "bounds_in_cell": [
+        2,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "B": {
+      "codepoint": 66,
+      "cell_rect": [
+        40,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        43,
+        46,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        13,
+        16
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "C": {
+      "codepoint": 67,
+      "cell_rect": [
+        60,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        63,
+        46,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        13,
+        16
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "D": {
+      "codepoint": 68,
+      "cell_rect": [
+        80,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        83,
+        46,
+        12,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        15,
+        16
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "E": {
+      "codepoint": 69,
+      "cell_rect": [
+        100,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        103,
+        46,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "F": {
+      "codepoint": 70,
+      "cell_rect": [
+        120,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        123,
+        46,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "G": {
+      "codepoint": 71,
+      "cell_rect": [
+        140,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        143,
+        46,
+        11,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "H": {
+      "codepoint": 72,
+      "cell_rect": [
+        160,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        163,
+        46,
+        11,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "I": {
+      "codepoint": 73,
+      "cell_rect": [
+        180,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        183,
+        46,
+        5,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        8,
+        16
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    "J": {
+      "codepoint": 74,
+      "cell_rect": [
+        200,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        201,
+        46,
+        7,
+        17
+      ],
+      "bounds_in_cell": [
+        1,
+        2,
+        8,
+        19
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "K": {
+      "codepoint": 75,
+      "cell_rect": [
+        220,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        223,
+        46,
+        12,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        15,
+        16
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "L": {
+      "codepoint": 76,
+      "cell_rect": [
+        240,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        243,
+        46,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "M": {
+      "codepoint": 77,
+      "cell_rect": [
+        260,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        263,
+        46,
+        13,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        16,
+        16
+      ],
+      "x_advance": 14,
+      "baseline": 15
+    },
+    "N": {
+      "codepoint": 78,
+      "cell_rect": [
+        280,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        283,
+        46,
+        11,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "O": {
+      "codepoint": 79,
+      "cell_rect": [
+        300,
+        44,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        303,
+        46,
+        12,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        15,
+        16
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "P": {
+      "codepoint": 80,
+      "cell_rect": [
+        0,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        3,
+        68,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        13,
+        16
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "Q": {
+      "codepoint": 81,
+      "cell_rect": [
+        20,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        23,
+        68,
+        12,
+        16
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        15,
+        18
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "R": {
+      "codepoint": 82,
+      "cell_rect": [
+        40,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        43,
+        68,
+        11,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "S": {
+      "codepoint": 83,
+      "cell_rect": [
+        60,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        63,
+        68,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "T": {
+      "codepoint": 84,
+      "cell_rect": [
+        80,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        82,
+        68,
+        11,
+        14
+      ],
+      "bounds_in_cell": [
+        2,
+        2,
+        13,
+        16
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "U": {
+      "codepoint": 85,
+      "cell_rect": [
+        100,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        103,
+        68,
+        11,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "V": {
+      "codepoint": 86,
+      "cell_rect": [
+        120,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        122,
+        68,
+        12,
+        14
+      ],
+      "bounds_in_cell": [
+        2,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "W": {
+      "codepoint": 87,
+      "cell_rect": [
+        140,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        142,
+        68,
+        16,
+        14
+      ],
+      "bounds_in_cell": [
+        2,
+        2,
+        18,
+        16
+      ],
+      "x_advance": 17,
+      "baseline": 15
+    },
+    "X": {
+      "codepoint": 88,
+      "cell_rect": [
+        160,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        163,
+        68,
+        11,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "Y": {
+      "codepoint": 89,
+      "cell_rect": [
+        180,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        182,
+        68,
+        12,
+        14
+      ],
+      "bounds_in_cell": [
+        2,
+        2,
+        14,
+        16
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "Z": {
+      "codepoint": 90,
+      "cell_rect": [
+        200,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        203,
+        68,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        13,
+        16
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "[": {
+      "codepoint": 91,
+      "cell_rect": [
+        220,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        223,
+        68,
+        6,
+        16
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        9,
+        18
+      ],
+      "x_advance": 7,
+      "baseline": 15
+    },
+    "\\": {
+      "codepoint": 92,
+      "cell_rect": [
+        240,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        242,
+        68,
+        7,
+        15
+      ],
+      "bounds_in_cell": [
+        2,
+        2,
+        9,
+        17
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "]": {
+      "codepoint": 93,
+      "cell_rect": [
+        260,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        263,
+        68,
+        6,
+        16
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        9,
+        18
+      ],
+      "x_advance": 7,
+      "baseline": 15
+    },
+    "^": {
+      "codepoint": 94,
+      "cell_rect": [
+        280,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        283,
+        68,
+        10,
+        6
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        13,
+        8
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "_": {
+      "codepoint": 95,
+      "cell_rect": [
+        300,
+        66,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        302,
+        83,
+        8,
+        3
+      ],
+      "bounds_in_cell": [
+        2,
+        17,
+        10,
+        20
+      ],
+      "x_advance": 9,
+      "baseline": 15
+    },
+    "`": {
+      "codepoint": 96,
+      "cell_rect": [
+        0,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        3,
+        89,
+        5,
+        5
+      ],
+      "bounds_in_cell": [
+        3,
+        1,
+        8,
+        6
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    "a": {
+      "codepoint": 97,
+      "cell_rect": [
+        20,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        23,
+        93,
+        9,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "b": {
+      "codepoint": 98,
+      "cell_rect": [
+        40,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        43,
+        90,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        13,
+        16
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "c": {
+      "codepoint": 99,
+      "cell_rect": [
+        60,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        63,
+        93,
+        8,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        11,
+        16
+      ],
+      "x_advance": 9,
+      "baseline": 15
+    },
+    "d": {
+      "codepoint": 100,
+      "cell_rect": [
+        80,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        83,
+        90,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "e": {
+      "codepoint": 101,
+      "cell_rect": [
+        100,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        103,
+        93,
+        9,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "f": {
+      "codepoint": 102,
+      "cell_rect": [
+        120,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        122,
+        90,
+        8,
+        14
+      ],
+      "bounds_in_cell": [
+        2,
+        2,
+        10,
+        16
+      ],
+      "x_advance": 9,
+      "baseline": 15
+    },
+    "g": {
+      "codepoint": 103,
+      "cell_rect": [
+        140,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        143,
+        93,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        12,
+        19
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "h": {
+      "codepoint": 104,
+      "cell_rect": [
+        160,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        163,
+        90,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "i": {
+      "codepoint": 105,
+      "cell_rect": [
+        180,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        183,
+        90,
+        4,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        7,
+        16
+      ],
+      "x_advance": 5,
+      "baseline": 15
+    },
+    "j": {
+      "codepoint": 106,
+      "cell_rect": [
+        200,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        201,
+        90,
+        6,
+        17
+      ],
+      "bounds_in_cell": [
+        1,
+        2,
+        7,
+        19
+      ],
+      "x_advance": 7,
+      "baseline": 15
+    },
+    "k": {
+      "codepoint": 107,
+      "cell_rect": [
+        220,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        223,
+        90,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        13,
+        16
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "l": {
+      "codepoint": 108,
+      "cell_rect": [
+        240,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        243,
+        90,
+        4,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        7,
+        16
+      ],
+      "x_advance": 5,
+      "baseline": 15
+    },
+    "m": {
+      "codepoint": 109,
+      "cell_rect": [
+        260,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        263,
+        93,
+        14,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        17,
+        16
+      ],
+      "x_advance": 15,
+      "baseline": 15
+    },
+    "n": {
+      "codepoint": 110,
+      "cell_rect": [
+        280,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        283,
+        93,
+        9,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "o": {
+      "codepoint": 111,
+      "cell_rect": [
+        300,
+        88,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        303,
+        93,
+        9,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "p": {
+      "codepoint": 112,
+      "cell_rect": [
+        0,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        3,
+        115,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        13,
+        19
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "q": {
+      "codepoint": 113,
+      "cell_rect": [
+        20,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        23,
+        115,
+        9,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        12,
+        19
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "r": {
+      "codepoint": 114,
+      "cell_rect": [
+        40,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        43,
+        115,
+        7,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        10,
+        16
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "s": {
+      "codepoint": 115,
+      "cell_rect": [
+        60,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        63,
+        115,
+        8,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        11,
+        16
+      ],
+      "x_advance": 9,
+      "baseline": 15
+    },
+    "t": {
+      "codepoint": 116,
+      "cell_rect": [
+        80,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        82,
+        113,
+        8,
+        13
+      ],
+      "bounds_in_cell": [
+        2,
+        3,
+        10,
+        16
+      ],
+      "x_advance": 9,
+      "baseline": 15
+    },
+    "u": {
+      "codepoint": 117,
+      "cell_rect": [
+        100,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        103,
+        115,
+        9,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        12,
+        16
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "v": {
+      "codepoint": 118,
+      "cell_rect": [
+        120,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        122,
+        115,
+        10,
+        11
+      ],
+      "bounds_in_cell": [
+        2,
+        5,
+        12,
+        16
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "w": {
+      "codepoint": 119,
+      "cell_rect": [
+        140,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        143,
+        115,
+        13,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        16,
+        16
+      ],
+      "x_advance": 14,
+      "baseline": 15
+    },
+    "x": {
+      "codepoint": 120,
+      "cell_rect": [
+        160,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        162,
+        115,
+        10,
+        11
+      ],
+      "bounds_in_cell": [
+        2,
+        5,
+        12,
+        16
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "y": {
+      "codepoint": 121,
+      "cell_rect": [
+        180,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        182,
+        115,
+        10,
+        14
+      ],
+      "bounds_in_cell": [
+        2,
+        5,
+        12,
+        19
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "z": {
+      "codepoint": 122,
+      "cell_rect": [
+        200,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        203,
+        115,
+        8,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        11,
+        16
+      ],
+      "x_advance": 9,
+      "baseline": 15
+    },
+    "{": {
+      "codepoint": 123,
+      "cell_rect": [
+        220,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        223,
+        112,
+        9,
+        17
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        19
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "|": {
+      "codepoint": 124,
+      "cell_rect": [
+        240,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        243,
+        112,
+        4,
+        18
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        7,
+        20
+      ],
+      "x_advance": 5,
+      "baseline": 15
+    },
+    "}": {
+      "codepoint": 125,
+      "cell_rect": [
+        260,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        263,
+        112,
+        9,
+        17
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        12,
+        19
+      ],
+      "x_advance": 10,
+      "baseline": 15
+    },
+    "~": {
+      "codepoint": 126,
+      "cell_rect": [
+        280,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        283,
+        118,
+        11,
+        5
+      ],
+      "bounds_in_cell": [
+        3,
+        8,
+        14,
+        13
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "…": {
+      "codepoint": 8230,
+      "cell_rect": [
+        300,
+        110,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        303,
+        121,
+        13,
+        5
+      ],
+      "bounds_in_cell": [
+        3,
+        11,
+        16,
+        16
+      ],
+      "x_advance": 14,
+      "baseline": 15
+    },
+    "—": {
+      "codepoint": 8212,
+      "cell_rect": [
+        0,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        3,
+        140,
+        13,
+        4
+      ],
+      "bounds_in_cell": [
+        3,
+        8,
+        16,
+        12
+      ],
+      "x_advance": 14,
+      "baseline": 15
+    },
+    "–": {
+      "codepoint": 8211,
+      "cell_rect": [
+        20,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        23,
+        140,
+        7,
+        4
+      ],
+      "bounds_in_cell": [
+        3,
+        8,
+        10,
+        12
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "“": {
+      "codepoint": 8220,
+      "cell_rect": [
+        40,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        43,
+        134,
+        8,
+        7
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        11,
+        9
+      ],
+      "x_advance": 9,
+      "baseline": 15
+    },
+    "”": {
+      "codepoint": 8221,
+      "cell_rect": [
+        60,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        63,
+        134,
+        8,
+        7
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        11,
+        9
+      ],
+      "x_advance": 9,
+      "baseline": 15
+    },
+    "‘": {
+      "codepoint": 8216,
+      "cell_rect": [
+        80,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        83,
+        134,
+        5,
+        7
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        8,
+        9
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    "’": {
+      "codepoint": 8217,
+      "cell_rect": [
+        100,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        103,
+        134,
+        5,
+        7
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        8,
+        9
+      ],
+      "x_advance": 6,
+      "baseline": 15
+    },
+    "•": {
+      "codepoint": 8226,
+      "cell_rect": [
+        120,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        123,
+        137,
+        7,
+        8
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        10,
+        13
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "©": {
+      "codepoint": 169,
+      "cell_rect": [
+        140,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        143,
+        134,
+        13,
+        14
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        16,
+        16
+      ],
+      "x_advance": 14,
+      "baseline": 15
+    },
+    "™": {
+      "codepoint": 8482,
+      "cell_rect": [
+        160,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        163,
+        134,
+        12,
+        7
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        15,
+        9
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "°": {
+      "codepoint": 176,
+      "cell_rect": [
+        180,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        183,
+        134,
+        7,
+        7
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        10,
+        9
+      ],
+      "x_advance": 8,
+      "baseline": 15
+    },
+    "×": {
+      "codepoint": 215,
+      "cell_rect": [
+        200,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        203,
+        136,
+        10,
+        11
+      ],
+      "bounds_in_cell": [
+        3,
+        4,
+        13,
+        15
+      ],
+      "x_advance": 11,
+      "baseline": 15
+    },
+    "÷": {
+      "codepoint": 247,
+      "cell_rect": [
+        220,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        223,
+        137,
+        11,
+        10
+      ],
+      "bounds_in_cell": [
+        3,
+        5,
+        14,
+        15
+      ],
+      "x_advance": 12,
+      "baseline": 15
+    },
+    "♥": {
+      "codepoint": 9829,
+      "cell_rect": [
+        240,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        243,
+        134,
+        12,
+        13
+      ],
+      "bounds_in_cell": [
+        3,
+        2,
+        15,
+        15
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    },
+    "★": {
+      "codepoint": 9733,
+      "cell_rect": [
+        260,
+        132,
+        20,
+        22
+      ],
+      "sprite_rect": [
+        263,
+        136,
+        12,
+        12
+      ],
+      "bounds_in_cell": [
+        3,
+        4,
+        15,
+        16
+      ],
+      "x_advance": 13,
+      "baseline": 15
+    }
+  },
+  "kerning_pairs": []
+}

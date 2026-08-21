@@ -901,7 +901,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     if(vm.runInContext("playerLocks.length>0",ctxv))tgl=true; }
   /* SUPERSEDED (drop 0801kf) - see the note above. */
   ok(true, 'topgun strafes with TWIN machine guns ('+twin+' tracers in the air)');
-  ok(tgl, 'topgun fires a lock-on missile mid-dive');
+  /* INVERTED (Mike, 0819): "homing missiles via fodder enemies. CUT." The mid-dive lock-on is
+     gone — a topgun that places a lock now is the regression. */
+  ok(!tgl, 'topgun fires NO lock-on — fodder homing is CUT (Mike, 0819)');
   ok(vm.runInContext("window.__tg.dead",ctxv), 'topgun exits off the bottom (culled)');
   // sideswirl: side entry -> ONE swirl -> dive at the player
   vm.runInContext("enemies.length=0; playerLocks=[]; var sw=spawnEnemy('sideswirl',-30,190,{}); window.__sw=sw;", ctxv);
@@ -1153,14 +1155,30 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
 
   // ===== 26. stage-transition camera reset + robo kamikaze drones (live sim) =====
   console.log('=== 26. stage-2 camera + robo drones (live sim) ===');
+  /* ⚠ INVERTED IN 0819b, AND PUT BACK HERE. 0819b fitted the world to the viewport, which removed
+     the pan, and this assertion was inverted to match. Mike, with both games in front of him:
+     "we still have screen panning left and right, thats how fireshark and raiden did it." The
+     premise 0819b argued from was wrong, so the pan is the shipping behaviour again and this is
+     the original claim once more. The zoom survives as VIEW_FIT and is PARKED, pending Mike's
+     call on plate width (he is weighing 800 against 720). */
   vm.runInContext("beginStage(1); setState(GS.PLAY); player.reset(); player.x=760; player.y=430;", ctxv);
   for(let f=0;f<120;f++) vm.runInContext("player.x=760; updatePlay(1/60); drawWorld(1/60);", ctxv);
-  ok(vm.runInContext("camX", ctxv) > 250, 'stage 1 camera pans right (camX '+Math.round(vm.runInContext("camX", ctxv))+')');
+  /* ⚠ THE THRESHOLD IS A FUNCTION OF VIEW_SCALE (0819d). Max pan is world - visible width, so at
+     800/480 it was 320 and a >250 bar was comfortable; at Mike's 680-equivalent scale the visible
+     width is 480/0.85 = 565 and the max pan is 235. The RULE is that the camera follows the player
+     to the right edge, so it is asserted against the stage's OWN limit rather than a number that
+     silently encodes one plate width. */
+  {
+    const _max=vm.runInContext("Math.max(0, worldWidth()-viewW())", ctxv);
+    const _cx=vm.runInContext("camX", ctxv);
+    ok(_max>0 && _cx > _max*0.9,
+       'stage 1 camera pans right, to its own limit (camX '+Math.round(_cx)+' of '+Math.round(_max)+')');
+  }
   vm.runInContext("beginStage(2);", ctxv);
   /* the live-sim twin of the check above: stage 1 has genuinely panned to camX>250 here, so a leak
      is a real value to catch rather than a synthetic one. Tests the same intent — re-aimed at the
      new stage, not carried over — instead of the literal 0 (drop 0810a). */
-  ok(vm.runInContext("camX === clamp(player.x - VW/2, 0, Math.max(0, worldWidth()-VW))", ctxv)
+  ok(vm.runInContext("camX <= Math.max(0, worldWidth()-viewW()) + 0.01", ctxv)
        && vm.runInContext("camX", ctxv) < 250,
      'beginStage(2) re-aims camX at the new stage — stage-1 camera must not leak into the level display');
   vm.runInContext("setState(GS.PLAY); enemies.length=0; vKamikazePair(1);", ctxv);
@@ -1656,15 +1674,20 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     for(var i=0;i<_wsets[k];i++){ _wN++; if(!vm.runInContext("XART.rdy('"+k+"_"+i+"')", ctxv)) _wOK=false; }
   });
   ok(_wOK, 'all 74 weather frames registered ('+_wN+' checked)');
-  // REGRESSION GUARD: the pre-existing stage-6 nwx_ storm must survive intact. A first pass of
-  // this drop clobbered nwx_rainH/rainL with sprite-sized art and orphaned 62 keys.
-  var _nwxOK=true;
-  ['nwx_rainL','nwx_rainD','nwx_rainH','nwx_squall'].forEach(function(k){
-    for(var i=0;i<8;i++) if(!vm.runInContext("XART.rdy('"+k+"_"+i+"')", ctxv)) _nwxOK=false;
-  });
-  ok(_nwxOK, 'existing stage-6 storm keys (nwx_ rainL/rainD/rainH/squall 8f) still intact');
-  ok(vm.runInContext("XART.rdy('nwx_flash_0')", ctxv), 'stage-6 exposure flash still intact');
-  ok(vm.runInContext("l6WeatherDraw.toString().indexOf('nwx_rain')>0", ctxv), 'stage-6 storm still drives the nwx_ full-screen sheets');
+  /* ⚠ INVERTED (Mike, 0819f): "use the new weather system for stage 6 we have, delete the old one
+     and old graphics immediately." These three guarded the nwx_ storm sheets and the function that
+     drew them; all of it is deliberately gone, replaced by the CF_StageBackgrounds layers through
+     bg6Draw. The third one did not merely fail — it CRASHED the whole run with "l6WeatherDraw is
+     not defined", which is why the suite stopped at 372 assertions and looked like a hang.
+     What is worth guarding now is the opposite: none of the old keys may come back, and the new
+     system must actually be the thing stage 6 draws. */
+  var _nwxGone = vm.runInContext(
+    "Object.keys(BOFX.img).filter(function(k){return k.indexOf('nwx_')===0;}).length===0", ctxv);
+  ok(_nwxGone, 'the old stage-6 nwx_ storm sheets are gone (0 keys registered)');
+  ok(vm.runInContext("typeof l6WeatherDraw==='undefined' && typeof l6CloudsDraw==='undefined'", ctxv),
+     'and the old stage-6 weather + cloud draws are gone with them');
+  ok(vm.runInContext("typeof bg6Draw==='function' && bg6Draw.toString().indexOf('bg6_rain')>0", ctxv),
+     'stage 6 draws the new pack weather (clouds, rain, wind, lightning) instead');
   // the two systems must not share keys
     /* 74 -> 68. Mike had the 6 nwf_splash frames removed ("get rid of the slash and snow burst"),
      and the 12 liquid FALLS that briefly landed in this namespace moved out to nlf_ — nwf_ is
@@ -1720,7 +1743,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     for(var i=0;i<6;i++) if(!vm.runInContext("XART.rdy('nvl_"+a+"_"+i+"')", ctxv)) _artOK=false;
   });
   ok(_artOK, 'all 12 volcanic units have 6 state frames registered (72 keys)');
-  ok(vm.runInContext("Object.keys(VOLC).length===12", ctxv), 'VOLC roster defines 12 units');
+  /* 12 + the three 0819 kinds (magmagun / spinner / dodger) — Mike's "sevveral different styled
+     enemies for level 2". They ride existing nvl_ art families, so the 72-key art check above is
+     unchanged: this is a behaviour roster, not new art. */
+  ok(vm.runInContext("Object.keys(VOLC).length===15", ctxv), 'VOLC roster defines 15 units');
   // name-collision guard: 'maw' is the level-7 BUBBLE MAW, 'cruc' is the level-2 vent
   ok(vm.runInContext("!!SEWER['maw'] && !VOLC['maw'] && !!VOLC['cruc']", ctxv), "'maw' stays the sewer unit; the volcanic vent is 'cruc'");
   vm.runInContext("run.stage=2; enemies.length=0; spawnEnemy('maw', 200, 60, {});", ctxv);
@@ -1748,8 +1774,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      pod) were the entire 'vent' family. What remains is eight ships, of which
      seven can spawn. Worth knowing before any vent behaviour is written against
      a family with nothing in it. */
-  ok(vm.runInContext("Object.keys(VOLC).filter(function(k){return VOLC[k].fam==='ship';}).length===8", ctxv),
-     'eight volcanic SHIPS remain');
+  ok(vm.runInContext("Object.keys(VOLC).filter(function(k){return VOLC[k].fam==='ship';}).length===10", ctxv),
+     'ten volcanic SHIPS — the original eight plus the 0819 spinner and dodger');
   /* _DELETE is scoped inside spawnEnemy, so the context cannot see it. Asking the
      spawner directly is the honest test anyway: can a vent unit still be made? */
   ok(vm.runInContext("(function(){ run.stage=2; var made=0; ['golem','lavamaw','crawl','pod'].forEach(function(k){ enemies.length=0; spawnEnemy(k,240,200,{}); if(enemies.length) made++; }); return made===0; })()", ctxv),
@@ -1972,9 +1998,17 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("run.stage=4; curStage=STAGES[3];", ctxv);
   /* the nst4b plates are still REGISTERED but stage 4 fields the crash pack now
      (drop 0801gd) - _levelCfg().master is nst4_master. */
-  ok(vm.runInContext("_levelCfg().master==='airbase800_rc2_master' && _levelCfg().wide===true", ctxv), 'stage 4 runs the RC2 AIRBASE master, wide (replaced the crash plate, 0810g)');
+  /* ⚠ REPOINTED (Mike, 0819e). Stage 4's airbase plate and stage 6's sky loop were REPLACED
+     by CF_StageBackgrounds-Lvl4-6 on Mike's instruction ("delete all previous stage 4 level
+     background assets and objects ... you are using these moving forward"). These assertions
+     described the plates that are now deleted, so they pinned a design rather than a rule.
+     What is worth asserting is that each stage points at its NEW master and that the master
+     is a real, registered plate — which is what would actually break if a repoint went wrong. */
+  ok(vm.runInContext("_levelCfg().master==='bg_stage04_master' && _levelCfg().wide===true", ctxv), 'stage 4 runs the 0819e airbase scroll master, wide');
   // THE recurring bug class: wide:true is meaningless without worldWidth()
-  ok(vm.runInContext("run.stage=4; worldWidth()===800", ctxv), 'stage 4 reports WORLD width 800 — wide:true and worldWidth() agree');
+  /* ⚠ 680, NOT 800 — the new plate IS 680 wide, which is the plate width Mike is standardising
+     on. worldWidth() measures the art, so this tracks the art rather than a frozen number. */
+  ok(vm.runInContext("run.stage=4; worldWidth()===680", ctxv), 'stage 4 reports WORLD width 680 — the new plate width');
   ok(vm.runInContext("buildStagePlan.toString().indexOf('const W4=worldWidth()')>0", ctxv), 'stage-4 roster spans the 800px world, not the 480 camera');
   /* the slice used to end at 'return P;' — the plan is now returned through _planSorted(), so
      that marker no longer appears and the slice ran past the stage-4 block into the rest of the
@@ -2019,7 +2053,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   console.log("=== 45. level 4 remix route ===");
   var _rx=null; try{ _rx=JSON.parse(fs.readFileSync(fxJson('_lvl4remix_report.json'),'utf8')); }catch(e){}
   ok(_rx!==null, 'remix composition report present');
-  ok(vm.runInContext("XART.rdy('nst4b_remix')", ctxv), 'remix master registered');
+  /* ⚠ DELETED WITH THE REST OF THE OLD STAGE-4 ART (Mike, 0819e). The remix route belongs to a
+     plate that no longer exists, so the claim is inverted: nothing may still register it. The
+     composition report above is left alone — it is history of how that plate was built. */
+  ok(!vm.runInContext("XART.rdy('nst4b_remix')", ctxv), 'the remix master is gone, and nothing registers it');
   if(_rx){
     ok(_rx.order.length===6 && _rx.order[_rx.order.length-1]===4, 'route uses 6 plates and ends on sec4 (its tail leads nowhere)');
     ok(new Set(_rx.order).size===4, 'all four section plates are used — not one plate walked repeatedly');
@@ -2042,8 +2079,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("run.stage=4; curStage=STAGES[3];", ctxv);
   /* nst4_master aliases the CLEAN plate — the one without the scorch. The crash
      variant existed unused the whole time (drop 0801ku). */
-  ok(vm.runInContext("_levelCfg().master==='airbase800_rc2_master'", ctxv), 'stage 4 runs the RC2 airbase rebuild; nst4_master_crash/_clean stay registered but unused');
-  ok(vm.runInContext("!!BOFX.img['nst4_master_crash'] && !!BOFX.img['nst4_master_clean']", ctxv), 'and both its clean and crash plates are registered');
+  ok(vm.runInContext("_levelCfg().master==='bg_stage04_master'", ctxv), 'stage 4 runs the 0819e airbase scroll master');
+  /* the crash/clean plates are DELETED (0819e); what must be registered is the plate that replaced
+     them, and nothing may still point at the two that are gone. */
+  ok(vm.runInContext("!!BOFX.img['bg_stage04_master'] && !BOFX.img['nst4_master_crash'] && !BOFX.img['nst4_master_clean']", ctxv),
+     'the new master is registered and neither deleted plate is');
   ok(vm.runInContext("_levelCfg().wide===true && _levelCfg().liquid===null", ctxv), 'the crash route keeps the wide world, with no water on the road');
   vm.runInContext("run.remix4=false;", ctxv);
 
@@ -3388,12 +3428,19 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     } return JSON.stringify(out);})()", ctxv);
   ok(JSON.parse(_miss).length===0, 'every phase of every bullet family resolves to real art'+(JSON.parse(_miss).length?(' — MISSING '+_miss):''));
   ok(vm.runInContext("eShoot.toString().indexOf('_ph:')>0", ctxv), 'the fix is in eShoot itself, not patched at each call site');
-  // L3 DRONES
-  var _s3=vm.runInContext("buildStagePlan.toString().split('if(stageNum===3)')[1].split('return P;')[0]", ctxv);
-  ['mdrone','minidrone','turdrone','shieldd'].forEach(function(d){
-    ok(_s3.indexOf("'"+d+"'")>0, 'stage 3 fields the drone type '+d);
+  // L3 DRONES — INVERTED (Mike, 0819): "remove all Drone enemies from level 3 please. they look
+  // janky." A drone-named type back in the stage-3 plan is now the regression. shieldd stays: its
+  // live art is nef_s3_shard_mine — a mine, not a drone — and Mike's complaint was the drones.
+  /* ⚠ bounded by the NEXT stage arm, not 'return P;' — that string is not in the source (the
+     plans return _planSorted(P)), so the old slice silently ran to the end of buildStagePlan
+     and "stage 3" included every later stage's waves. Presence checks never noticed; absence
+     checks would false-fail on stage 4's own mdrone rows. */
+  var _s3=vm.runInContext("buildStagePlan.toString().split('if(stageNum===3)')[1].split('if(stageNum===4)')[0]", ctxv);
+  ['drone','mdrone','minidrone','turdrone'].forEach(function(d){
+    ok(_s3.indexOf("'"+d+"'")<0, 'stage 3 fields NO '+d+' — drones are off the ice (Mike, 0819)');
   });
-  ok(_s3.indexOf("vRow('mdrone'")>0, 'in full rows, not just single spawns');
+  ok(_s3.indexOf("'shieldd'")>0, 'the shard mine (shieldd) survives the drone cull — it is a mine, not a drone');
+  ok(_s3.indexOf("'loopcharge'")>0, 'and the ice interceptors fly loopcharge — the Fire Shark mechanic (Mike, 0819)');
   vm.runInContext("run.stage=3; curStage=STAGES[2]; stagePlan=buildStagePlan(3);", ctxv);
   ok(vm.runInContext("stagePlan.length>0", ctxv), 'the stage-3 plan still builds ('+vm.runInContext("stagePlan.length",ctxv)+' events)');
   vm.runInContext("eBullets.length=0; run.stage=1;", ctxv);
@@ -3780,7 +3827,13 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_o.hauler.score===1500 && _o.oracle.score===1200, 'scores unchanged — the stage is no less rewarding');
   // BACKGROUND FURNITURE
   ok(vm.runInContext("l5FieldDraw.toString().indexOf('BACKGROUND FURNITURE READS AS BACKGROUND')>0", ctxv), 'non-damaging field objects are pushed back');
-  ok(vm.runInContext("l5FieldDraw.toString().indexOf('o.a*0.55')>0", ctxv), 'dimmed to 55% alpha');
+  /* ⚠ THE NUMBER MOVED (Mike, 0819e): "the transparency of the satelittes and stuff is too
+     much." 0.55 base plus a 0.34 multiply left the orbital hardware at about a third of its
+     authored presence. The RULE is that background furniture is dimmed so it does not compete
+     with the fight — that still holds — so this pins the named constants rather than a value
+     Mike is tuning. */
+  ok(vm.runInContext("l5FieldDraw.toString().indexOf('L5_FIELD_ALPHA')>0 && L5_FIELD_ALPHA<1 && L5_FIELD_SHADE>0", ctxv),
+     'the stage-5 field is dimmed through named constants, and still dimmed at all');
   ok(vm.runInContext("l5FieldDraw.toString().indexOf('w*0.78')>0", ctxv), 'and scaled to 78%, so they stop competing with real threats');
   vm.runInContext("l5Rocks=[]; run.stage=1;", ctxv);
 
@@ -4417,13 +4470,20 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* ⚠ STAGE 6 IS ONE SKY AGAIN (drop 0813i). The RC2 rebuild reintroduced the fortress - a door
      and platform decks painted into the plate - and Mike flagged every one: "they gota go dude".
      nsky6_sky is the plate he approved back in 0801gm, looped. */
-  ok(vm.runInContext("_levelCfg().master==='nsky6_sky'", ctxv), 'stage 6 is the clean sky plate, not the RC2 fortress');
-  ok(vm.runInContext("_levelCfg().loopMaster===true", ctxv), 'and it loops, because 800x2400 cannot window a whole stage');
+  ok(vm.runInContext("_levelCfg().master==='bg_stage06_master'", ctxv), 'stage 6 runs the 0819e sky scroll master (day -> night -> sewer approach)');
+  /* ⚠ IT NO LONGER LOOPS, ON PURPOSE. The new plate is a complete 4080-row scroll that runs day
+     -> dusk -> storm night -> the sewer approach; looping it would destroy that progression and
+     the hand-off into stage 7. */
+  ok(vm.runInContext("!_levelCfg().loopMaster", ctxv), 'and it does NOT loop — the plate carries a whole-stage progression');
   ok(vm.runInContext("_levelCfg().scrollLen===undefined", ctxv),
      'with NO scrollLen — the master height sets the length 1:1, or the sky crawls');
   ok(vm.runInContext("run.stage=6; XART.rdy('skyfort800_rc2_master') && XART.get('skyfort800_rc2_master').naturalHeight>=VH*4", ctxv),
      'and the plate is tall enough to actually scroll ('+vm.runInContext("XART.rdy('skyfort800_rc2_master')?XART.get('skyfort800_rc2_master').naturalHeight:0", ctxv)+'px vs the old 2400)');
-  ok(vm.runInContext("typeof l6CloudsDraw==='function' && l6CloudsDraw.toString().indexOf('l6SkyMood')>0", ctxv), 'weather darkens the sky in code, with no cloud art');
+  /* ⚠ INVERTED (Mike, 0819f). "with no cloud art" was true of the OLD system — it tinted the sky
+     in code because there were no cloud plates. The pack ships four cloud families, so the
+     absence this asserted is now the thing that would be wrong. */
+  ok(vm.runInContext("typeof l6CloudsDraw==='undefined' && XART.rdy('bg6_cloud_storm_0')", ctxv),
+     'the code-tinted sky is gone and stage 6 has real cloud art');
   ok(vm.runInContext("XART.rdy('nl6sky_stage06_sky_scroll_640x960')", ctxv), 'and the stage-6 scrolling sky plate');
   // chroma
   var _sh=null; try{ _sh=JSON.parse(fs.readFileSync(fxJson('_sectional_halo.json'),'utf8')); }catch(e){}
@@ -4779,12 +4839,21 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      moved sideways. */
   ok(vm.runInContext("typeof screenBar==='function'", ctxv), 'there is a single screen-space wrapper');
   vm.runInContext("run.stage=1; curStage=STAGES[0]; WORLD_W=800;", ctxv);
-  var _off=[];
+  /* ⚠ REPOINTED (0819d): this asserted that screenBar ALWAYS adds +camX. That was right while the
+     bars were drawn INSIDE the camera transform; 0819b moved them below drawWorld's restore and
+     the leftover shift became the bug Mike reported ("the special ability bar is scrolling when I
+     move"). The rule worth pinning is not "it adds camX" — it is "a bar lands in the same place
+     whatever the camera is doing", which has to hold from BOTH sides of the restore. So both are
+     measured: inside the world transform it must CANCEL the camera, outside it must add NOTHING. */
+  var _in=[], _out=[];
   [0,80,160,240,320].forEach(function(c){
-    var shift=vm.runInContext("(function(){camX="+c+"; var got=0; var _t=ctx.translate; ctx.translate=function(x,y){got+=x;}; screenBar(function(){}); ctx.translate=_t; return got;})()", ctxv);
-    _off.push(c-shift);
+    _in.push(c-vm.runInContext("(function(){camX="+c+"; _inWorldXform=true; var got=0; var _t=ctx.translate; ctx.translate=function(x,y){got+=x;}; screenBar(function(){}); ctx.translate=_t; _inWorldXform=false; return got;})()", ctxv));
+    _out.push(vm.runInContext("(function(){camX="+c+"; _inWorldXform=false; var got=0; var _t=ctx.translate; ctx.translate=function(x,y){got+=x;}; screenBar(function(){}); ctx.translate=_t; return got;})()", ctxv));
   });
-  ok(_off.every(function(o){return Math.abs(o)<0.01;}), 'it cancels the camera exactly at every scroll position (net offsets: '+_off.join(', ')+')');
+  ok(_in.every(function(o){return Math.abs(o)<0.01;}),
+     'inside the world transform it cancels the camera exactly (net: '+_in.join(', ')+')');
+  ok(_out.every(function(o){return Math.abs(o)<0.01;}),
+     'and outside it adds nothing, so a bar drawn after the restore holds still (net: '+_out.join(', ')+')');
   // and it must do NOTHING on stages that do not scroll, or it would shift the bars the wrong way
   vm.runInContext("WORLD_W=480; camX=0;", ctxv);
   var _noScroll=vm.runInContext("(function(){var got=0; var _t=ctx.translate; ctx.translate=function(x,y){got+=x;}; screenBar(function(){}); ctx.translate=_t; return got;})()", ctxv);
@@ -5072,7 +5141,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     ok(spread>0.05, 'and they genuinely differ (spread '+spread.toFixed(3)+') — a constant offset would float one plume and bury another');
     ok(vals.every(function(v){ return v>0.8 && v<0.95; }), 'every anchor sits near the tail, not mid-fuselage');
   }
-  ok(_gC.indexOf('POSITION: just under the bottom tip')>0, 'tucked just under the bottom tip rather than hanging off it');
+  /* ⚠ REPOINTED (0819c): this pinned the words 'POSITION: just under the bottom tip' — a COMMENT,
+     not a behaviour, so it failed the moment the anchor it described was improved. The rule it was
+     defending is that the plume tucks under the tail instead of hanging off it, and that is now
+     enforced by geometry rather than asserted by prose: the anchor solves for the flame's CORE
+     sitting PLUME_SEAT behind the hull bottom, so the plume's own height cancels out and a big
+     plume can no longer hang lower than a small one. Measured in play, core-below-tail in screen
+     px went axel 22.8->10.7, freezer 22.1->11.1, decker 16.2->8.0, while cole and juggernaut
+     (already correct) held at 8.0. */
+  ok(/tailY = \(y - _dh\/2\) \+ _dh\*hb \+ PLUME_SEAT - _thA\*PLUME_CORE_F/.test(_gC),
+     'the plume is seated by its FLAME CORE a fixed distance behind the tail, not by its plate edge');
+  ok(/const PLUME_SEAT\s*=\s*\d/.test(_gC) && /const PLUME_CORE_F\s*=\s*0\.\d/.test(_gC),
+     'and both halves of that seat are named constants, measured rather than tuned');
   ok(_gC.indexOf('SIZE BY HEIGHT, NOT WIDTH')>0, 'ships are normalised on CONTENT HEIGHT so every pilot draws the same size');
 
 
@@ -5127,7 +5207,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     ok(vals.length===9, 'one per pilot ('+vals.length+')');
     ok(vals.every(function(v){ return v>0.7 && v<0.9; }), 'each is a plausible content fraction');
   }
-  ok(_gD.indexOf('_dh=_targetContent/_cf')>0, 'the canvas height is derived from the target hull height');
+  /* ⚠ REPOINTED (0819c): this pinned the exact expression `_dh=_targetContent/_cf`, which is the
+     line the thruster fix had to change. The RULE it defends — that the plume's canvas and its
+     content height are related by the per-pilot content fraction — is intact; what changed is
+     WHERE the canvas comes from. It used to be invented here (`player.h*2.05`), 43% larger than
+     the hull actually drawn, which is why every pilot's plume hung below its tail. It now comes
+     from the hull's own drawn height, so the two cannot disagree. */
+  ok(_gD.indexOf('_dh=SHIP_DRAW_H')>0 && _gD.indexOf('_targetContent=_dh*_cf')>0,
+     'the plume measures from the hull own drawn height (SHIP_DRAW_H), with the content fraction relating the two');
+  ok(/const h=SHIP_DRAW_H, w=h\*/.test(_gD),
+     'and the hull blit draws at that same number — one value, both uses');
   ok(_gD.indexOf('_dw=_shi ? _dh*(_shi.naturalWidth/_shi.naturalHeight)')>0, 'and the width follows the aspect, instead of driving it');
   // the point of the change: every pilot ends up the same on-screen height
   var _CFv={}; _cf[1].split(',').forEach(function(x){ var p2=x.split(':'); _CFv[p2[0].trim()]=parseFloat(p2[1]); });
@@ -6206,7 +6295,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(!_M5.img.cabinet_frame, 'the cabinet frame stays gone — the cabinet itself was removed');
   /* And the ones the ORACLE REFUSED to let me remove — each is reached through a path no scan
      found. These assertions exist so a future sweep does not try again. */
-  ['fx_lava_0','nmb_fill_1_0','nwx_rainD_0','n6e_sky_cf_crit','mfx_bshot_0_0'].forEach(function(k){
+  /* nwx_rainD_0 left this list with the old stage-6 weather (0819f) — it was kept because the
+     suite failed without it, and the thing that reached it was l6WeatherDraw, now deleted. */
+  ['fx_lava_0','nmb_fill_1_0','n6e_sky_cf_crit','mfx_bshot_0_0'].forEach(function(k){
     ok(!!_M5.img[k], k+' was KEPT — the suite failed without it, so something reaches it that no static scan sees');
   });
   /* nxp_fall / nxp_roll LEFT THIS LIST IN 0805o, on Mike's explicit instruction, and only after
@@ -6649,11 +6740,19 @@ console.log('=== 157. no background swaps while a master decodes (drop 0801kr) =
      proportionally to 800x2400 (no distortion) with the vertical wrap seam preserved
      at 7.31 against 7.29 before, because that sky tiles vertically for its 7324
      scroll. Asserted so a future master cannot reintroduce a narrow world. */
-  var _narrow=JSON.parse(vm.runInContext(
-    "JSON.stringify([1,2,3,4,5,6,7,8,9].filter(function(st){run.stage=st;"+
+  /* ⚠ THE GAME IS MID-CONVERSION AND THAT IS DELIBERATE (Mike, 0819e). Plates are moving from
+     800 to 680 — stages 4, 5 and 6 arrived that way in CF_StageBackgrounds-Lvl4-6 — so "every
+     stage is 800" is no longer the rule. What still matters, and is what this check was
+     protecting, is that no stage falls back to the 480 CAMERA width: that was the bug (a world
+     narrower than the plate crowds every spawn into the left of the screen). Asserted as "wider
+     than the camera, and one of the two authored plate widths". */
+  var _widths=JSON.parse(vm.runInContext(
+    "JSON.stringify([1,2,3,4,5,6,7,8,9].map(function(st){run.stage=st;"+
     "for(var q in _wwCache) delete _wwCache[q];"+   /* const object: clear it, do not reassign */
-    "return worldWidth()!==800;}))", ctxv));
-  ok(_narrow.length===0, 'every stage including the stage-9 bonus has an 800px world'+(_narrow.length?(' — narrow: '+_narrow.join(', ')):''));
+    "return worldWidth();}))", ctxv));
+  var _bad=_widths.filter(function(w){ return !(w===800 || w===680); });
+  ok(_bad.length===0, 'every stage has an authored plate width (800 or 680) — none falls back to the camera'
+     +(_bad.length?(' — got '+_widths.join(', ')):''));
 
   var _amb=JSON.parse(vm.runInContext("JSON.stringify(AMB_KEY)", ctxv));
   var _missA=Object.keys(_amb).filter(function(st){
@@ -8262,8 +8361,12 @@ console.log("=== 186. player / enemy / game ===");
   /* fonts/ joins them (drop 0809g) — the eight BOF font sheets are their own thing, not
      packed into an atlas, because they are sliced by frame rect at load and a repack would
      invalidate every rect. */
-  ok(_sub.sort().join(',')==='atlas,fonts,music,sounds',
-     'game/ holds music, sounds, fonts and the packed atlases ('+_sub.join(',')+')');
+  /* bg5/ joins them (0819e) — the stage-5 celestial layers from CF_StageBackgrounds-Lvl4-6.
+     They are NOT atlas material: each is a full-canvas 680x510 alpha layer drawn whole at the
+     view rect, so packing them would add a rect lookup and save nothing, and 24 loose plates in
+     a flat game/ is exactly the sprawl Mike asked to be cleaned up. Same reasoning fonts/ got. */
+  ok(_sub.sort().join(',')==='atlas,bg5,bg6,fonts,music,sounds',
+     'game/ holds music, sounds, fonts, the packed atlases and the stage-5/6 layers ('+_sub.join(',')+')');
 
   /* PROTECT THE ART, NOT THE FOLDER IT USED TO SIT IN (drop 0806r).
 
@@ -9383,9 +9486,13 @@ console.log("=== 210. jet table ===");
   ok(vm.runInContext("MUZZLE_JET_MG==='nmz_3' && MUZZLE_JET_ORD==='nmz_9'", ctxv),
      'and on their own muzzle flashes, distinct from boats and tanks');
 
+  /* ⚠ RUN ON STAGE 4, NOT STAGE 1 (Mike, 0819). Stage 1's deltas fly 'loopcharge' now — loop,
+     then a silent charge — so the jet pattern, the dodge and the player-cadence guns live on
+     stages 4 and 6, and that is where they must be measured. The bombers still fly s1jet on
+     stage 1; the delta rows only convert on stages 1 and 3. */
   var _j=JSON.parse(vm.runInContext("(function(){"
-    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
-    +"beginStage(1); setState(GS.PLAY); player.reset();"
+    +"ASSETS.ready=true; run.stage=4; curStage=STAGES[3];"
+    +"beginStage(4); setState(GS.PLAY); player.reset();"
     +"var o={};"
     +"for(var k in S1_JETS){"
     +"  enemies.length=0; eBullets.length=0; pBullets.length=0;"
@@ -9541,9 +9648,19 @@ console.log("=== 212. jet routes ===");
      'and there are TWO of them, firing together');
 
   seedWaves(20260811);                // 7 seconds of the LIVE plan per route
+  /* stage 4: the routes live where the deltas still fly s1jet (Mike 0819 made stage 1's deltas
+     silent loopchargers — see §210's note) */
   var _r212=JSON.parse(vm.runInContext("(function(){"
-    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
-    +"beginStage(1); setState(GS.PLAY); player.reset();"
+    +"ASSETS.ready=true; run.stage=4; curStage=STAGES[3];"
+    +"beginStage(4); setState(GS.PLAY); player.reset();"
+    /* ISOLATE THE UNIT — three wrong readings came from not doing this (0819d). The claim is
+       about ONE jet route, but the live plan kept dispatching waves underneath it and
+       enemySeparate shoved the test jet sideways: cornerRL read -124 at a 7s window (measured
+       MID-RUN, since VIEW_SCALE starts spawns ~90px higher and a corner run needs ~540 frames),
+       then +81 when the window was widened (more seconds, more crowding, sign flipped).
+       Measured in isolation the route is healthy at both scales — cornerRL -377 at scale 1 vs
+       -362 at 0.85 — so the ROUTE was never the problem. Same correction 230 needed. */
+    +"stagePlan=[]; waveIdx=0;"
     +"var o={};"
     +"JET_ROUTES.forEach(function(rt){"
     +"  enemies.length=0; eBullets.length=0; pBullets.length=0;"
@@ -9551,7 +9668,7 @@ console.log("=== 212. jet routes ===");
     +"  var sx=(rt==='cornerLR')?40:(rt==='cornerRL')?440:240;"
     +"  var e=spawnEnemy('s1jetdelta',sx,-30,{route:rt});"
     +"  var x0=e.x, twin=0, y0=e.y;"
-    +"  for(var f=0;f<60*7;f++){ player.hp=99; e._dodge=0;"
+    +"  for(var f=0;f<60*11;f++){ player.hp=99; e._dodge=0;"
     +"    var nb=eBullets.length;"
     +"    updatePlay(1/60); try{ drawWorld(1/60); }catch(err){}"
     +"    if(eBullets.length-nb===2) twin++;"
@@ -9606,8 +9723,8 @@ console.log("=== 213. jet banking ===");
      all. It pins both halves of the channel: banking off intent, and sepShift carrying the lane
      with the unit. Drop either and this goes red. */
   var _push213=JSON.parse(vm.runInContext("(function(){"
-    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
-    +"beginStage(1); setState(GS.PLAY); player.reset();"
+    +"ASSETS.ready=true; run.stage=4; curStage=STAGES[3];"
+    +"beginStage(4); setState(GS.PLAY); player.reset();"
     +"enemies.length=0; eBullets.length=0; pBullets.length=0;"
     +"player.x=240; player.y=470; player.invuln=999999;"
     +"var e=spawnEnemy('s1jetdelta',240,-30,{route:'straight'});"
@@ -9625,8 +9742,8 @@ console.log("=== 213. jet banking ===");
      'and an external push produces NO lean whatsoever ('+_push213.maxLean+' rad) — separation has its own channel');
 
   var _b213=JSON.parse(vm.runInContext("(function(){"
-    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
-    +"beginStage(1); setState(GS.PLAY); player.reset();"
+    +"ASSETS.ready=true; run.stage=4; curStage=STAGES[3];"
+    +"beginStage(4); setState(GS.PLAY); player.reset();"
     +"var o={};"
     +"['straight','curveL','curveR','cornerLR','cornerRL'].forEach(function(rt){"
     +"  enemies.length=0; eBullets.length=0; pBullets.length=0;"
@@ -9634,6 +9751,8 @@ console.log("=== 213. jet banking ===");
     +"  var sx=(rt==='cornerLR')?40:(rt==='cornerRL')?440:240;"
     +"  var e=spawnEnemy('s1jetdelta',sx,-30,{route:rt});"
     +"  var mn=0, mx=0;"
+    /* the BANKING fixture measures LEAN, which settles in a second or two, so 7s is ample.
+       It is deliberately not the ROUTES fixture above — that one needed the plan emptied. */
     +"  for(var f=0;f<60*7;f++){ player.hp=99; e._dodge=0;"
     +"    updatePlay(1/60); try{ drawWorld(1/60); }catch(err){}"
     +"    var sp=e.spin||0; if(sp<mn) mn=sp; if(sp>mx) mx=sp;"
@@ -9816,8 +9935,13 @@ console.log("=== 213c. roster key spelling ===");
        '  '+up+' gets the jet box, not the 26x26 default ('+U.w+'x'+U.h+')');
     ok(U.hp===L.hp && U.atk===L.atk && U.spd===L.spd,
        '  and the jet stats — hp '+U.hp+', atk '+U.atk+', speed '+U.spd);
-    ok(U.pat==='s1jet',
-       '  and its pattern SURVIVES the generic block as s1jet, not '+U.pat+' — _selfPat knows the spelling');
+    /* on STAGE 1 (this fixture's stage) the deltas convert to 'loopcharge' — the Fire Shark
+       loop-then-charge Mike ordered on 0819 — and the bombers keep s1jet. The claim under test is
+       unchanged: BOTH spellings must come out on the SAME pattern, because a spelling that missed
+       the roster would land on 'sine'. */
+    var _want=(up==='s1jetDelta'||up==='s1jetDeltaB')?'loopcharge':'s1jet';
+    ok(U.pat===_want && L.pat===_want,
+       '  and its pattern SURVIVES the generic block as '+_want+' (got '+L.pat+'/'+U.pat+') — _selfPat knows the spelling');
   });
 }
 
@@ -10313,7 +10437,9 @@ console.log("=== 224. pilot screen font ===");
 
   /* ⚠ AND msgMeasure RETURNS 0 FOR "UNKNOWN", NOT "ZERO WIDE" — passing that straight into a
      half-width centres a left-anchored line on its own left edge. */
-  var _mtl=_g224.slice(_g224.indexOf('function msgTextLeft('), _g224.indexOf('function msgTextLeft(')+900);
+  /* 900 chars stopped short of the fallback once msgTextLeft gained its bitmap-face branch —
+   the slice was the artefact, not the fallback (0819c). */
+  var _mtl=_g224.slice(_g224.indexOf('function msgTextLeft('), _g224.indexOf('function msgTextLeft(')+1600);
   ok(/if\(!w\)/.test(_mtl), 'msgTextLeft falls back to a real measure when the sheet is not up');
 
   /* the menus run before any stage, so nothing else would start the face */
@@ -10363,7 +10489,13 @@ console.log("=== 225. entry, not materialisation ===");
     +"[0,160,320].forEach(function(cx){ camX=cx; enemies.length=0;"
     +"  var a=spawnEnemy('s1jetdelta', offRightX(28), 120, {});"
     +"  var b=spawnEnemy('s1jetbomber', offLeftX(28), 120, {});"
-    +"  out.push({cx:cx, rGap:a.x-(camX+VW)+a.w/2, lGap:(camX)-b.x+b.w/2, aw:a.w, bw:b.w}); });"
+    /* ⚠ MEASURED AGAINST THE CAMERA'S OWN EDGES, NOT camX+VW (0819). The view zoom made the
+       visible window wider than VW, so the old formula compared a spawn placed by camRightX()
+       against an edge 320px to the left of it and reported a runway that was not the one the
+       spawn used. The CLAIM is unchanged — a side entry must clear the visible edge, and by the
+       same margin wherever the camera is — and asking the same helpers the spawn asked is what
+       makes the two impossible to disagree. */
+    +"  out.push({cx:cx, rGap:a.x-camRightX()+a.w/2, lGap:camLeftX()-b.x+b.w/2, aw:a.w, bw:b.w}); });"
     +"return JSON.stringify(out);})()", ctxv));
   _f225b.forEach(function(r){
     ok(r.rGap>0, 'right spawn clears the camera edge at camX '+r.cx+' (gap '+Math.round(r.rGap)+'px)');
@@ -10589,6 +10721,153 @@ console.log("=== 229. flame/ice hitbox + reaver colour + fire orb ===");
   ok(_g229.indexOf('case GS.CAMPHUB: { campHubSeen=true;')>0, 'the map sets it');
   ok(_g229.indexOf('case GS.TITLE:   campHubSeen=false;')>0,
      'and the title clears it, so a second campaign re-gates rather than inheriting the first');
+}
+
+// ===== 230. FIRE SHARK JETS, AND HOMING IS A GRANT (Mike, 0819) =====
+console.log("=== 230. loopcharge jets + no homing ===");
+{
+  /* Mike, 0819: "In Fireshark and Raiden Trad, Raiden II ... jets doing some circular motion
+     where they do some circle motions and then chage at the player with no bullets or
+     projectiles. The goal is to shoot them down befroe they hit you ... immediately change the
+     level 1 and level 3 jets to follow this mechanic. Two, homing missiles via fodder enemies.
+     CUT ... missiles that DO NOT home, and remove homing missiles from all bosses past level 1."
+
+     ⚠ THE HOMING WAS NEVER IN THE MUZZLES, IT WAS IN THE MOVER. Every `emissile` ran one
+     steering block with `b.turn||0.05` as its default, so rounds fired by muzzles that call
+     themselves straight — the bomber's rocket, the tank shell, every boss volley — curved after
+     the player anyway. Renaming an atk row would have changed nothing. Homing is a GRANT now
+     (b.homing, and only on stage 1), which is why this section measures ROUNDS IN FLIGHT rather
+     than reading the roster tables. */
+
+  /* --- the loop-charge airframes: phases, and not one projectile --- */
+  var _lc=JSON.parse(vm.runInContext("(function(){"
+    +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
+    +"beginStage(1); setState(GS.PLAY); player.reset();"
+    +"enemies.length=0; eBullets.length=0; pBullets.length=0;"
+    +"player.x=240; player.y=470; player.invuln=999999;"
+    /* ⚠ SILENCE THE WAVE PLAN OR THIS MEASURES THE LEVEL, NOT THE UNIT. First cut counted
+       eBullets globally over 12 live seconds and reported 47 rounds from a jet that is provably
+       unarmed (shoots=false, one assertion up) — the patrol boats and gunboats the stage-1 plan
+       dispatches alongside it. Exactly CLAUDE.md's "colour-classifying a band of the canvas
+       measures the LEVEL". With the plan emptied, the only unit alive is this one, so any round
+       in eBullets can only have come from it. */
+    +"stagePlan=[]; waveIdx=0;"
+    +"var e=spawnEnemy('s1jetdelta',240,-30,{});"
+    +"if(!e) return JSON.stringify({bad:1});"
+    +"var ph={}, shots=0, spins={}, minY=1e9;"
+    +"for(var f=0;f<60*12;f++){ player.hp=99;"
+    +"  updatePlay(1/60); try{ drawWorld(1/60); }catch(err){}"
+    +"  if(e._phase) ph[e._phase]=(ph[e._phase]||0)+1;"
+    +"  if(e.spin) spins[Math.round(e.spin*4)]=1;"
+    +"  shots=Math.max(shots, eBullets.length);"
+    +"  if(!e.dead && e.y<minY) minY=e.y;"
+    +"  if(e.dead) break; }"
+    +"return JSON.stringify({pat:e.pattern, ph:Object.keys(ph), shots:shots,"
+    +" spinPoses:Object.keys(spins).length, fires:!!e.shoots});})()", ctxv));
+
+  ok(!_lc.bad && _lc.pat==='loopcharge',
+     'a stage-1 delta flies loopcharge, not the gun pattern (got '+_lc.pat+')');
+  ok(!_lc.bad && _lc.ph.indexOf('in')>=0 && _lc.ph.indexOf('loop')>=0 && _lc.ph.indexOf('charge')>=0,
+     'and it walks run-in -> LOOP -> charge ['+(_lc.ph||[]).join('>')+']');
+  ok(!_lc.bad && _lc.shots===0,
+     'it fires NOTHING for its whole life — the airframe IS the attack ('+_lc.shots+' rounds)');
+  ok(!_lc.bad && !_lc.fires, 'and it is not even armed (shoots=false)');
+  /* the circle must be VISIBLE: drawNewEnemyArt rotates by e.spin, so a jet that carves a loop
+     while spin stays at one value is flying the circle nose-south — 0806h's bug exactly. */
+  ok(!_lc.bad && _lc.spinPoses>=8,
+     'the sprite actually ROTATES through the loop ('+_lc.spinPoses+' distinct attitudes), rather than sliding round nose-south');
+
+  /* --- stage 3 converts too, and stage 4 does NOT --- */
+  var _st=JSON.parse(vm.runInContext("(function(){"
+    +"var o={};"
+    +"[[3,2],[4,3],[6,5]].forEach(function(p){"
+    +"  ASSETS.ready=true; run.stage=p[0]; curStage=STAGES[p[1]];"
+    +"  beginStage(p[0]); setState(GS.PLAY); player.reset();"
+    +"  enemies.length=0; var e=spawnEnemy('s1jetdelta',240,-30,{route:'straight'});"
+    +"  o[p[0]]=e?{pat:e.pattern, shoots:!!e.shoots}:null; });"
+    +"return JSON.stringify(o);})()", ctxv));
+  ok(_st['3'] && _st['3'].pat==='loopcharge' && !_st['3'].shoots,
+     'stage 3 converts its jets as well — Mike named 1 and 3');
+  ok(_st['4'] && _st['4'].pat==='s1jet' && _st['4'].shoots,
+     'but stage 4 keeps its gunfighters (pat '+(_st['4']||{}).pat+') — the waves there are tuned around them');
+  ok(_st['6'] && _st['6'].pat==='s1jet',
+     'and so does stage 6');
+
+  /* --- NOTHING a boss fires past stage 1 may steer --- */
+  var _hom=JSON.parse(vm.runInContext("(function(){"
+    +"var o={};"
+    +"[[1,0],[2,1],[3,2],[4,3],[5,4],[6,5],[7,6],[8,7]].forEach(function(p){"
+    +"  ASSETS.ready=true; run.stage=p[0]; curStage=STAGES[p[1]];"
+    +"  beginStage(p[0]); setState(GS.PLAY); player.reset();"
+    +"  enemies.length=0; eBullets.length=0; pBullets.length=0;"
+    +"  player.x=140; player.y=470; player.invuln=999999;"
+    +"  if(curStage.boss) spawnBoss(curStage.boss); else { o[p[0]]={noboss:1}; return; }"
+    +"  var homing=0, seen=0, curve=0;"
+    +"  for(var f=0;f<60*30;f++){ player.hp=99;"
+    +"    var pre={};"
+    +"    for(var i=0;i<eBullets.length;i++){ var b=eBullets[i];"
+    +"      if(b.kind==='emissile') pre[i]=Math.atan2(b.vy,b.vx); }"
+    +"    updatePlay(1/60); try{ drawWorld(1/60); }catch(err){}"
+    +"    for(var j=0;j<eBullets.length;j++){ var c=eBullets[j];"
+    +"      if(c.kind!=='emissile' || pre[j]===undefined) continue;"
+    +"      seen++;"
+    +"      if(c.homing) homing++;"
+    +"      var d=Math.abs(Math.atan2(Math.sin(Math.atan2(c.vy,c.vx)-pre[j]),"
+    +"                                Math.cos(Math.atan2(c.vy,c.vx)-pre[j])));"
+    +"      if(d>0.004) curve++; } }"
+    +"  o[p[0]]={seen:seen, homing:homing, curve:curve}; });"
+    +"return JSON.stringify(o);})()", ctxv));
+
+  [2,3,4,5,6,7,8].forEach(function(s){
+    var R=_hom[s]; if(!R || R.noboss){ ok(true, 'stage '+s+' has no boss to measure'); return; }
+    ok(R.homing===0,
+       'stage '+s+"'s boss launches ZERO homing rounds ("+R.homing+' of '+R.seen+' missile-frames)');
+    ok(R.curve===0,
+       '  and not one of them bends in flight ('+R.curve+' curving frames) — measured on the ROUND, not the roster');
+  });
+  /* the control: stage 1's helicopter KEEPS its swerving torpedoes, or this whole section would
+     also pass on an engine that simply deleted enemy missiles */
+  ok(_hom[1] && _hom[1].seen>0 && _hom[1].curve>0,
+     'CONTROL: stage 1 still fields tracking ordnance ('+((_hom[1]||{}).curve||0)+' curving frames) — the cut is scoped, not a deletion');
+
+  /* --- fodder: a lock-on may still be TELEGRAPHED, but the round flies straight --- */
+  var _fod=JSON.parse(vm.runInContext("(function(){"
+    +"ASSETS.ready=true; run.stage=3; curStage=STAGES[2];"
+    +"beginStage(3); setState(GS.PLAY); player.reset();"
+    +"enemies.length=0; eBullets.length=0; playerLocks=[];"
+    +"player.x=120; player.y=470; player.invuln=999999;"
+    +"eHomingMissile(240,120);"
+    +"var b=eBullets[eBullets.length-1], a0=Math.atan2(b.vy,b.vx), mx=0;"
+    +"for(var f=0;f<60*4 && !b.dead;f++){ player.hp=99; updatePlay(1/60);"
+    +"  var d=Math.abs(Math.atan2(Math.sin(Math.atan2(b.vy,b.vx)-a0),"
+    +"                            Math.cos(Math.atan2(b.vy,b.vx)-a0)));"
+    +"  if(d>mx) mx=d; }"
+    +"return JSON.stringify({drift:+mx.toFixed(4), homing:!!b.homing});})()", ctxv));
+  ok(_fod.homing===false && _fod.drift<0.01,
+     'a fodder lock-on round holds the vector it launched on ('+_fod.drift+' rad of drift) — CUT means the missile, not the reticle');
+
+  /* --- the burst guns leave a window, which is the whole ask --- */
+  var _g230=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(_g230.indexOf("e.fireCd = (e._fireCycle % 8 === 0) ? 1.4 : 0.085;")>0,
+     'the raking machine gun bursts and then PAUSES — "pauses in between to give you enough time to shoot them"');
+  ok(_g230.indexOf("e.fireCd = (e._fireCycle % 4 === 0) ? 1.5 : 0.12;")>0,
+     'and so does the twin-gun strafer');
+  ok(_g230.indexOf("case 'laser':")>0, 'the beam gunner exists as its own fire mode');
+
+  /* --- stage 3 is drone-free, and denser --- */
+  var _p3=JSON.parse(vm.runInContext("(function(){"
+    +"ASSETS.ready=true; run.stage=3; curStage=STAGES[2];"
+    +"beginStage(3); var n=stagePlan.length;"
+    +"run.stage=1; curStage=STAGES[0]; beginStage(1);"
+    +"return JSON.stringify({s3:n, s1:stagePlan.length});})()", ctxv));
+  /* measured, not guessed: stage 3 is 26 waves after the cull (the drone waves were replaced,
+     not deleted) and stage 1 is 24 — 22 before this drop, plus the two loop-charge waves. */
+  ok(_p3.s3>=26, 'stage 3 still fields a full plan after the drone cull ('+_p3.s3+' waves)');
+  ok(_p3.s1>=24, 'and stage 1 gained waves rather than losing them ('+_p3.s1+')');
+  ok(vm.runInContext("DIFFS.normal.density===1.00", ctxv),
+     'NORMAL density is raised to 1.00 — "increase the amount of enemies"');
+  ok(_g230.indexOf("const _liveCap = (run.stage===1)? 9 : 6;")>0,
+     'and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)');
 }
 
 console.log('\n============================================');

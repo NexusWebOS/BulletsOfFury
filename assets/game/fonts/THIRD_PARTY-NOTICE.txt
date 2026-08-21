@@ -1,0 +1,7 @@
+Third-party typeface notice
+
+Structural typeface reference: DejaVu Sans Bold.
+Upstream: DejaVu Fonts, https://dejavu-fonts.github.io/
+Copyright (c) 2003 by Bitstream, Inc. All Rights Reserved. Bitstream Vera is a trademark of Bitstream, Inc. DejaVu changes are in the public domain.
+
+This package redistributes no TTF or OTF font software. It contains only ColeForge-authored bitmap atlas renderings transformed into a distinct pixel-art dialogue family. DejaVu Sans Bold is licensed for use, modification, and distribution under the Bitstream Vera license; the system copyright notice is preserved here for attribution.
