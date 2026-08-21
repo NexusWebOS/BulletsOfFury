@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>probe 0821b — spawn safety</title>
+<base href="../">
+<style>html,body{margin:0;padding:0;background:#000;} #tag{color:#0f0;font:11px monospace;white-space:pre;}</style>
+</head>
+<body>
+<div style="position:absolute;left:-9999px;top:-9999px;">
+  <div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+</div>
+<div id="tag">boot</div>
+<script src="assets/manifest.js"></script>
+<script src="assets/section_geom.js"></script>
+<script src="assets/game.js"></script>
+<script>
+/* PROBE 0821b — "if the player spawns on top of an enemy, kill that enemy unless it's a miniboss
+   or boss."
+
+   Four cases, and the last two are the ones that matter — a sweep that also removes set pieces
+   would silently delete the fight. */
+(function(){
+  var tag=document.getElementById('tag');
+  var tries=0;
+  function ready(){
+    if(typeof XART==='undefined'||typeof _levelCfg!=='function') return false;
+    var c=_levelCfg(); return c && XART.rdy(c.master);
+  }
+  function boot(){
+    tries++;
+    if(!ready()){
+      if(tries>400){ tag.textContent='ART NEVER ARRIVED'; return; }
+      if(tries===1){ try{ run.stage=1; curStage=STAGES[0]; beginStage(1); setState(GS.PLAY); }catch(e){} }
+      setTimeout(boot,25); return;
+    }
+    var out={};
+    function seed(mut){
+      enemies.length=0;
+      player.reset();                       // fixes the spawn point we will aim at
+      var e=spawnEnemy('drone', player.x, player.y, {});   // exactly on top
+      if(e && mut) mut(e);
+      return e;
+    }
+
+    /* ⚠ IS THE FUNCTION EVEN REACHABLE? spawnEnemy's unclosed `if` swallows top-level
+       declarations, and `typeof x==='function'` guards fail SILENTLY — the exact shape that made
+       DEAD_SUBBOSS inert for two drops. Ask the engine before blaming the geometry. */
+    out.reachable={
+      isSetPiece:typeof isSetPiece, clearSpawnZone:typeof clearSpawnZone,
+      SPAWN_CLEAR_PAD:typeof SPAWN_CLEAR_PAD, NAVAL_HOLD_T:typeof NAVAL_HOLD_T
+    };
+
+    // 1. ordinary enemy sitting exactly on the spawn point -> cleared
+    var e1=seed(null); var alive1=!!(e1&&!e1.dead);
+    var where1={ex:Math.round(e1?e1.x:-1), ey:Math.round(e1?e1.y:-1),
+                px:Math.round(player.x), py:Math.round(player.y),
+                ew:e1?e1.w:null, eh:e1?e1.h:null};
+    /* ⚠ `e.dead` IS THE WRONG PREDICATE AND ASSERTING IT REPORTED A WORKING FIX AS BROKEN.
+       killEnemy starts a death: `_dyingT=0, shoots=false, vx=vy=0, _frozen=true` ("stop dead the
+       instant it dies"), and the collision pass skips anything with `_dyingT!=null` ("dying wrecks
+       don't collide"). `dead` only flips ~0.35s later when the animation ends. What the player
+       needs is NEUTRALISED — cannot shoot, cannot move, cannot collide — and that is true on the
+       same frame. Measure the property that matters, not the flag that is easiest to read. */
+    var neutral=function(e){ return !!e && (e.dead || e._dyingT!=null); };
+    var direct = (typeof clearSpawnZone==='function') ? clearSpawnZone() : 'NOT A FUNCTION';
+    out.ordinaryOnTop={wasAlive:alive1, geometry:where1, cleared:direct,
+                       neutralised:neutral(e1),
+                       cannotShoot:(e1?e1.shoots===false:null),
+                       notMoving:(e1?(e1.vx===0&&e1.vy===0):null),
+                       collisionSkipped:(e1?e1._dyingT!=null:null)};
+
+    // 2. ordinary enemy far away -> untouched
+    enemies.length=0; player.reset();
+    var e2=spawnEnemy('drone', player.x, player.y-260, {});
+    player.reset();
+    out.ordinaryFarAway={survives:!!(e2&&!e2.dead), y:e2?Math.round(e2.y):null};
+
+    // 3. ARSENAL MINI on top -> must SURVIVE (it is in `enemies`, and it is a set piece)
+    enemies.length=0; player.reset();
+    var e3=spawnEnemy('drone', player.x, player.y, {});
+    if(e3) e3._mini='caldera';
+    player.reset();
+    out.arsenalMiniOnTop={survives:!!(e3&&!e3.dead), isSetPiece:(typeof isSetPiece==='function')?isSetPiece(e3):null};
+
+    // 4. a real MINIBOSS spawned on the player -> must SURVIVE
+    enemies.length=0; player.reset();
+    try{ spawnSubBoss('junglecruiser'); }catch(err){}
+    if(typeof subBoss!=='undefined' && subBoss){ subBoss.x=player.x; subBoss.y=player.y; subBoss.enter=false; }
+    player.reset();
+    out.minibossOnTop={
+      exists: (typeof subBoss!=='undefined' && !!subBoss),
+      survives: (typeof subBoss!=='undefined' && !!subBoss && !subBoss.dead),
+      inEnemiesArray: (typeof subBoss!=='undefined' && subBoss) ? enemies.indexOf(subBoss)>=0 : null
+    };
+    enemies.length=0;
+    out.padUsed=(typeof SPAWN_CLEAR_PAD!=='undefined')?SPAWN_CLEAR_PAD:null;
+    tag.textContent=JSON.stringify(out,null,1);
+  }
+  boot();
+})();
+</script>
+</body></html>

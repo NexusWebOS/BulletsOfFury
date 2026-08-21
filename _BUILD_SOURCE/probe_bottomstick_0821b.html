@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="utf-8"><title>probe 0821b — which enemies stick at the bottom</title>
+<base href="../">
+<style>html,body{margin:0;padding:0;background:#000;} #tag{color:#0f0;font:11px monospace;white-space:pre;}</style>
+</head>
+<body>
+<div style="position:absolute;left:-9999px;top:-9999px;">
+  <div id="screen-area"><canvas id="screen" width="480" height="512"></canvas></div>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+</div>
+<div id="tag">boot</div>
+<script src="assets/manifest.js"></script>
+<script src="assets/section_geom.js"></script>
+<script src="assets/game.js"></script>
+<script>
+/* PROBE 0821b — Mike: "enemies do not scroll past the bottom of the screen. They reach the bottom
+   and stay there ... causes the player to be spawn trapped."
+
+   The cull is `e.y > VH+80 -> dead`. Anything that CLAMPS y to VH+80 can never satisfy a strict
+   `>` and lives forever at the boundary. This spawns one of each type per stage, runs 12 simulated
+   seconds, and reports every unit still alive with y past the play area — the stuck set.
+
+   ?stage=N   which stage's roster to sweep. */
+(function(){
+  var Q=new URLSearchParams(location.search);
+  var SN=parseInt(Q.get('stage')||'1',10);
+  var tag=document.getElementById('tag');
+  var tries=0;
+  function ready(){
+    if(typeof XART==='undefined'||typeof _levelCfg!=='function') return false;
+    var c=_levelCfg(); return c && XART.rdy(c.master);
+  }
+  function boot(){
+    tries++;
+    if(!ready()){
+      if(tries>400){ tag.textContent='ART NEVER ARRIVED'; return; }
+      if(tries===1){ try{ run.stage=SN; curStage=STAGES[SN-1]; beginStage(SN); setState(GS.PLAY); player.reset(); }catch(e){} }
+      setTimeout(boot,25); return;
+    }
+    /* Collect the type names this stage actually fields, from the game's own tables. */
+    var types={};
+    try{ for(var k in ENEMY_ART) types[k]=1; }catch(e){}
+    ['tank','htank','roadtank','sandtank','s1tankheavy','drone','mdrone','assault','gunship',
+     'scout','bomber','frost','octo','icegun','cryo','mine','ash','skim','lance','disc','eye',
+     'cruc','carrier','needle','oracle','crescent','hauler','talon','hell','cdisc','skimmer',
+     'sentry','crawler','shambler','stationship','gunboat','s1boatgun','raptor','fang','bcarrier'
+    ].forEach(function(t){ types[t]=1; });
+
+    var names=Object.keys(types), results=[];
+    var DT=1/60;
+    names.forEach(function(t){
+      enemies.length=0;
+      var e=null;
+      try{ e=spawnEnemy(t, worldWidth()/2, 100, {}); }catch(err){}
+      if(!e) return;                                    // refused (culled kind) — not our concern
+      var born=e, diedAt=-1, FRAMES=3600;               // 60 simulated seconds
+      /* ⚠ HOLD THE SCROLL, which is the condition Mike is describing: a miniboss or boss pins
+         mapScroll, so _lastScrollDy is 0 and anything relying on the world moving under it stops
+         advancing. HOLD=1 reproduces that; HOLD=0 is free scrolling. */
+      var HOLD = Q.get('hold')==='1';
+      for(var f=0; f<FRAMES; f++){
+        player.dead=false; player.invuln=0; player.hp=99;
+        try{ updatePlay(DT); }catch(err){}
+        if(HOLD && typeof _lastScrollDy!=='undefined') _lastScrollDy=0;
+        if(diedAt<0 && (born.dead || enemies.indexOf(born)<0)){ diedAt=f; break; }
+      }
+      var alive = diedAt<0;
+      if(alive){
+        results.push({type:t, y:Math.round(born.y), pattern:born.pattern||null,
+                      belowPlay: born.y > VH, atCull: Math.abs(born.y-(VH+80))<1.5});
+      }
+    });
+    enemies.length=0;
+    /* where does the player actually sit? that is what "spawn trapped" is measured against */
+    player.reset();
+    var pY=Math.round(player.y), pH=Math.round(player.h||0);
+    results.sort(function(a,b){ return b.y-a.y; });
+    tag.textContent=JSON.stringify({
+      stage:SN, VH:VH, cullAt:'y > VH+80 = '+(VH+80),
+      playerSpawnY:pY, playerH:pH, playerTop:pY-Math.round(pH/2),
+      survivorsAfter60s: results.length,
+      /* anything parked at or below the player's own row is what traps them */
+      INTHE_PLAYER_ROW: results.filter(function(r){ return r.y > pY-60; }),
+      allSurvivors: results.map(function(r){ return r.type+'@'+r.y+' ('+r.pattern+')'; })
+    }, null, 1);
+  }
+  boot();
+})();
+</script>
+</body></html>

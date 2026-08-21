@@ -5466,6 +5466,54 @@ let pwTimer=0, spTimer=6;
 /* ============================================================
    PLAYER
    ============================================================ */
+/* ============================================================
+   SET PIECES — "except for mini bosses and bosses" (drop 0821b)
+
+   `dkIgnite` already carried this exact predicate under that exact quoted rule, hand-written. It is
+   now in ONE place because a second copy is a second thing to forget: this file's own standing
+   lesson is to drive a rule from one table rather than hand-list it twice. Both callers read this.
+
+   ⚠ BOSSES AND MINIBOSSES ARE NOT IN `enemies` AT ALL — `boss` and `subBoss` are their own globals
+   and only `spawnEnemy` ever pushes to the array. So iterating `enemies` already excludes them
+   structurally. This predicate is for the ones that ARE in the array and still must not be swept:
+   the arsenal mini tier (`_mini`, spawned through spawnEnemy), modular set pieces, and anything
+   flagged `sub`. ============================================================ */
+function isSetPiece(e){
+  return !!(e && (e._boss || e.modular || e.mini || e._mini || e._sub || e.sub));
+}
+/* ============================================================
+   SPAWN SAFETY (drop 0821b)
+
+   Mike: "if the player spawns on top of an enemy, kill that enemy unless it's a miniboss or boss."
+
+   `reset()` is the ONE funnel every spawn and respawn passes through — fresh stage, lost life,
+   continue — so the check belongs here rather than at the three call sites, which is how the 0810f
+   `beginStage` clear went stale by living in only one of them.
+
+   ⚠ AND `reset(keepPos)` RESPAWNS YOU WHERE YOU DIED, which is precisely where the thing that
+   killed you still is. That path needs this more than the centre-spawn does, not less.
+
+   The zone is the player's own box grown by SPAWN_CLEAR_PAD on each side — derived from the hull
+   rather than a typed-in radius, so a future ship of another size is covered without anyone
+   remembering this. AABB, because every hitbox in this file is one. ============================================================ */
+const SPAWN_CLEAR_PAD = 26;      // px of clearance around the hull the player must materialise into
+function clearSpawnZone(){
+  if(typeof enemies==='undefined' || !enemies || !enemies.length) return 0;
+  const px=player.x, py=player.y;
+  const hw=(player.w||24)/2 + SPAWN_CLEAR_PAD, hh=(player.h||30)/2 + SPAWN_CLEAR_PAD;
+  let cleared=0;
+  for(const e of enemies){
+    if(!e || e.dead || isSetPiece(e)) continue;
+    const ew=(e.w||24)/2, eh=(e.h||24)/2;
+    if(Math.abs(e.x-px) > hw+ew) continue;
+    if(Math.abs(e.y-py) > hh+eh) continue;
+    /* killEnemy, not e.dead=true: the unit gets its authored death — shock ring, debris, white
+       flash, smoke — so a cleared spawn reads as a kill rather than an enemy blinking out. */
+    if(typeof killEnemy==='function') killEnemy(e); else e.dead=true;
+    cleared++;
+  }
+  return cleared;
+}
 const player = {
   x:VW/2, y:VH*0.78, w:24, h:30, alive:true,
   fireCd:0, invuln:0, dead:false, deathT:0, respawnT:0,
@@ -5475,7 +5523,10 @@ const player = {
   /* keepPos=true respawns you WHERE YOU DIED instead of teleporting to the centre. Losing a life
      mid-stage should not also relocate you across the screen — especially during a boss fight,
      where the centre may be the worst place to reappear. Fresh stage starts still centre you. */
-  reset(keepPos){ if(!keepPos){ this.x=(typeof worldWidth==='function'?worldWidth():VW)/2; this.y=VH*0.78; } this.alive=true; this.invuln=120; this.dead=false; this.fireCd=0; this.roll=null; this._tapL=-9; this._tapR=-9; this._bank=0; this._hx=9; this._hy=10; },
+  reset(keepPos){ if(!keepPos){ this.x=(typeof worldWidth==='function'?worldWidth():VW)/2; this.y=VH*0.78; } this.alive=true; this.invuln=120; this.dead=false; this.fireCd=0; this.roll=null; this._tapL=-9; this._tapR=-9; this._bank=0; this._hx=9; this._hy=10;
+    /* AFTER the position is set, never before — the zone has to be measured where the player is
+       actually going to appear. See clearSpawnZone. */
+    if(typeof clearSpawnZone==='function') clearSpawnZone(); },
 };
 
 /* ---- BARREL ROLL ----------------------------------------------------------
@@ -14126,8 +14177,9 @@ function dkTick(dt){
    second status system — a counter on the unit plus a flash timer, ticked where it is hit. */
 function dkIgnite(e){
   if(!e) return;
-  /* "except for mini bosses and bosses" — set pieces do not catch fire */
-  if(e._boss || e.modular || e.mini || e._mini || e._sub || e.sub) return;
+  /* "except for mini bosses and bosses" — set pieces do not catch fire. The predicate moved to
+     isSetPiece (0821b) so this and the spawn-safety sweep cannot drift apart. */
+  if(isSetPiece(e)) return;
   e._burn = DK_BURN_TIME;
   e._burnTick = e._burnTick || 0;
 }
@@ -21915,6 +21967,10 @@ const NAVAL_ARC = 0.62;          // radians either side of the bow that counts a
    travel at this speed is a bit under a second - long enough to read as an approach, short enough
    that the flotilla is in position for the beat the wave script timed it for. */
 const NAVAL_ENTRY_SPD = 110;
+/* seconds a naval unit may hold station before the floor releases it to ride the scroll off the
+   bottom — the SAME 9s the enemy loop's catch-all exit push starts at, so the two act together.
+   See the long note at the floor in navalTick. */
+const NAVAL_HOLD_T = 9.0;
 const NAVAL_WET_PULL = 64;       // px/sec a hull steers back toward the channel — a correction, not a snap
 const NAVAL_DIRS = [0,1,2,3,4,5,6,7].map(i=>i*Math.PI/4);   // the eight headings
 
@@ -21973,7 +22029,33 @@ function navalSteer(e, dt){
     if(e.y<40) e.y=Math.min(40, e.y + NAVAL_ENTRY_SPD*dt);
     if(e.y>=40) e._navIn=1;
   }
-  e.y = e._navIn ? clamp(e.y, 40, VH-60) : Math.min(e.y, VH-60);
+  /* ============================================================
+     ⚠ THE FLOOR IS A HOLD, NOT A CAGE (drop 0821b)
+
+     Mike: "enemies do not scroll past the bottom of the screen. They reach the bottom and stay
+     there ... causes the player to be spawn trapped. Enemies should be scrolling down and off."
+
+     Measured, and it is this line. `VH-60` is **452**, and the probe found the flotilla parked at
+     exactly 453 after SIXTY simulated seconds with the scroll held — while the player spawns at
+     `VH*0.78` = **399**. Three boats camped 54px under the spawn point, permanently, inside the
+     one band the player cannot leave.
+
+     ⚠ AND THE CATCH-ALL EXIT PUSH COULD NEVER WIN. The enemy loop's "ensure everyone eventually
+     exits" adds 0.7/frame after t>9 — and this clamp undid it on the very same frame, every
+     frame. The cull (`y > VH+80`) was therefore unreachable for anything naval: not a slow exit,
+     no exit. A unit whose position is re-asserted after the exit push is exempt from it by
+     construction, which is invisible unless you measure where it ends up.
+
+     The floor still does its authored job (0812k: without it the flotilla crawls in over thirteen
+     seconds) — it just stops being permanent. `NAVAL_HOLD_T` is deliberately the SAME 9s the
+     catch-all uses, so release and push begin together and the boat rides its own drift plus the
+     scroll off the bottom. The top guard stays: released does not mean it may float back up.
+
+     "They move, not scroll" (0808k) is preserved for the boat's whole combat window; what changes
+     is that the window now ends. ============================================================ */
+  const _navHeld = (e.t||0) <= NAVAL_HOLD_T;
+  e.y = e._navIn ? (_navHeld ? clamp(e.y, 40, VH-60) : Math.max(e.y, 40))
+                 : Math.min(e.y, VH-60);
 }
 /* THE BARREL, NOT THE HULL CENTRE (drop 0808o). Mike: "Ensure your using muzzle flash anchored
    to the barrel of the turret of the ship, same with the rockets."

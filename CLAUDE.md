@@ -162,7 +162,31 @@ from the stage name — that is the design. **Stage 5 was different**: `storm800
 literal storm plate on a space stage, which Mike DID want changed. The test is whether the art is
 wrong for the stage, not whether it matches the title.
 
+
 ## Current state (2026-08-19c)
+**0821b — the spawn trap was ONE CLAMP, and the spawn safety Mike asked for.** Full writeup:
+`docs/PASSOVER_0821B.md`.
+⚠ **`navalTick` ENDED ON `clamp(e.y, 40, VH-60)` — 452 — AND THE PLAYER SPAWNS AT 399.** Measured:
+three boats parked at y 453 after SIXTY simulated seconds, 54px under the spawn point, in the one
+band the player cannot leave. Now a HOLD (`NAVAL_HOLD_T` 9.0, the same 9s the catch-all uses), not
+a cage: after it, the bottom cap lifts and the boat rides the scroll off. `INTHE_PLAYER_ROW` is now
+empty; survivors sit at y 115..136.
+⚠ **A UNIT THAT RE-ASSERTS ITS POSITION AFTER THE EXIT PUSH IS EXEMPT FROM IT BY CONSTRUCTION.** The
+loop's `e.y+=0.7` at t>9 was undone by the clamp on the same frame, every frame, so the cull
+(`y > VH+80`) was unreachable for anything naval. Invisible to any check that reads the push instead
+of where the unit ends up.
+⚠ **A MEASUREMENT WINDOW TOO SHORT REPORTS A STALL THAT DOES NOT EXIST** — at 12s, five units looked
+stuck below the playfield; at 60s every one had culled. Only the long run isolated the real case.
+⚠ **SPAWN SAFETY: `clearSpawnZone()` in `reset()`**, the one funnel every spawn/respawn passes
+through — and `reset(keepPos)` respawns you WHERE YOU DIED, which needs it most. Bosses/minibosses
+are excluded STRUCTURALLY (they are not in `enemies`; only spawnEnemy pushes) — measured, not
+assumed. `isSetPiece` is now one function read by both this and `dkIgnite`, which carried the same
+list hand-written.
+⚠ **`e.dead` IS THE WRONG PREDICATE** — killEnemy starts a death (`_dyingT=0, shoots=false, vx=vy=0`)
+and collision skips `_dyingT!=null`; `dead` flips ~0.35s later. The first probe called a WORKING fix
+broken by asserting the flag that was easiest to read instead of the property that matters.
+⚠ **IT CREDITS A KILL** — `stageStats.kills++` fires on a safety clear. Mike's call; one flag to gate.
+
 
 **0819c — the plume was measured against a ship that is not drawn.**
 Full writeup: `docs/PASSOVER_0819C.md`.
