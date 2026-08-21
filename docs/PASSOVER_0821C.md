@@ -6,6 +6,7 @@ BADGE is the icon, the SQUARE ARMOURED CRATE is the box.
 | item | state |
 |---|---|
 | the proper pickup icon | **INSTALLED** — `nsw_icon_decker` |
+| the six effect families | **ALREADY THE PACK ART — 0 of 35 cells differ** |
 | the pickup box | **INSTALLED** — `nsw_box_decker` |
 | shells eject each side of the plane | **ALREADY CORRECT — verified** |
 | buckshot sound on fire | **NEW** — `dkBuck` |
@@ -95,16 +96,40 @@ The 3 failures are environmental: the preload key count (now 9805 — the two ne
 
 ---
 
-## STILL OPEN FROM THIS PACK
+## THE EFFECTS RESKIN WAS ALREADY DONE — ALL 35 CELLS
 
-The pack ships six more effect families that nothing references yet — **muzzle blast, buckshot,
-7-way spread, impact fire, scorch decals, and Vol.3's projectile trails + pre-angled travel
-shots**. Decker already has `ndk_muz_*`, `ndk_shot_*`, `ndk_ang_*`, `ndk_imp_*`, `ndk_scorch_*`
-and `ndk_trail_*` wired to older art, so swapping them is a re-skin of a working weapon rather
-than new plumbing — a drop of its own, and worth doing with Mike watching since it changes how
-the gun reads in play.
+I told Mike the six effect families still needed swapping and raised a balance caveat with it.
+**Both halves of that were wrong**, and he said so: *"its not a hitscan weapon by any means."*
 
-⚠ Vol.3's map declares the trail art is for **non-hitscan pellets** with a stated collision rule
-("use only the leading metal pellet; exclude the flame trail from the hitbox") and a speed band of
-360-480 px/s. Current `DK_SPD` is 11.0 px/frame = 660 px/s, so adopting that art properly is a
-BALANCE change too, not just an art swap. Do not take it as a drop-in.
+⚠ **THE SHOTGUN WAS NEVER HITSCAN.** `dkFire` pushes seven real `dkshot` projectiles with
+velocities — the code I had read myself two edits earlier. The speed-band note built on that
+premise collapses with it: there was no balance decision here, only a reskin.
+
+⚠ **AND THE RESKIN WAS ALREADY IN.** Measured before touching anything: the pack's plates match
+the live atlas cells at EXACTLY the authored sizes —
+
+    ndk_muz_    64x96     ndk_shell_  32x32     ndk_shot_   24x32     ndk_ang_  24x32
+    ndk_imp_    64x64     ndk_scorch_ 96x72     ndk_trail_  32x64
+
+— and a cell-by-cell diff against HEAD came back **0 of 35 changed**. Decker's effects have been
+this pack's art the whole time. The only things genuinely missing were the pickup icon, the box,
+and the sounds, which is what this drop is.
+
+⚠ **PASTING THEM ANYWAY LEFT A TRAP, AND IT IS WORTH KNOWING.** Re-encoding `nca_76`/`nca_77`
+through PIL produced a git diff of 8.6KB and -24KB against **zero pixel change**. A shared atlas
+that reports as modified for nothing is noise at best and an encoding change to other pilots' art
+at worst. Reverted. *If a reskin does not change pixels, it must not change bytes.*
+
+⚠ **TWO NAMING TRAPS CAUGHT BY RENDERING, per rule 1.** Vol.3 ships both `BuckshotSpread` and
+`ShotgunProjectileSpread`, each seven angles. The name says the second is the travelling round —
+the pixels say otherwise: `BuckshotSpread` is 24x32 and matches `ndk_ang_` exactly, while
+`ShotgunProjectileSpread` is 64x64 and matches nothing. And `ndk_shot_0` shares its atlas cell
+with `ndk_ang_3`, which looks like a collision until you hash the pack's two plates: the straight
+buckshot and the straight angle are **byte-identical there too**. The pack aliases them the same
+way the atlas does.
+
+## STILL OPEN
+
+Nothing from this pack. `ndk_shot_*` and `ndk_trail_*` are registered and drawn from real art but
+no longer referenced anywhere in `game.js` — worth a look at whether the trail reel should be
+riding the pellets, but that is a feature question, not an install.
