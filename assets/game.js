@@ -4930,6 +4930,29 @@ const Audio = (()=>{
        way; a rising one reads as something refusing to. Shorter and quieter too, so a wall of
        blocked pellets does not drown the fight. */
     blocked(){ tone(2350,0.022,'square',0.045,+420); },
+    /* ============================================================
+       DECKER'S SHOTGUN GETS ITS OWN THREE SOUNDS (Mike, 0821c): "make a buckshot sound when he
+       shoots, eject sounds for the shells, and then a reload sound."
+
+       He had ONE sound for the whole weapon — spread(), a single 660Hz sawtooth shared with every
+       other spread gun in the game. Nothing marked the casings and nothing marked the pump, so a
+       0.62s reload the player cannot hear is just an unexplained dead trigger.
+
+       Synthesised from tone/noise like every other entry rather than added as assets — the same
+       route blocked() took. The three land as a rhythm you can learn, which is the point of
+       DK_RELOAD existing at all:
+
+           BOOM .......... tink-tink .......... chk-CHK
+           0ms            ~70ms               620ms (trigger live again)
+
+       dkBuck sits between expSmall and expBig on purpose: a shotgun is a small explosion, not a
+       laser. dkShell is deliberately THIN and high so a pair of casings reads over the blast's
+       tail instead of fighting it. */
+    dkBuck(){ noise(0.26,0.50,2800,-2400); tone(110,0.22,'triangle',0.28,-60); tone(300,0.09,'sawtooth',0.13,-240); },
+    dkShell(){ const tink=()=>{ tone(2550,0.028,'triangle',0.065,-850); tone(3350,0.018,'square',0.035,-1150); noise(0.025,0.05,7200,-3200); };
+               setTimeout(tink,70); setTimeout(tink,125); },      // two casings, one per side
+    dkReload(){ noise(0.045,0.11,1900,-950); tone(150,0.055,'square',0.10,-130);
+                setTimeout(()=>{ noise(0.055,0.13,1500,-780); tone(105,0.075,'square',0.12,-95); },105); },
     expSmall(){ noise(0.18,0.35,1600,-1200); tone(160,0.16,'triangle',0.18,-100); },
     expBig(){ noise(0.5,0.6,2200,-1900); tone(90,0.5,'triangle',0.3,-60); tone(200,0.3,'sawtooth',0.18,-150); },
     bomb(){ noise(0.9,0.7,3000,-2600); tone(70,0.9,'sine',0.4,-30); tone(260,0.5,'square',0.2,-200); },
@@ -14156,12 +14179,23 @@ function dkFire(){
   }
   player._dkMuz=0;                               // arms the muzzle blast reel
   shake=Math.max(shake,4);
-  if(Audio&&Audio.SFX&&Audio.SFX.spread) Audio.SFX.spread();
+  /* his own blast, not the shared spread() every other scatter gun uses (Mike, 0821c) */
+  if(Audio&&Audio.SFX){
+    (Audio.SFX.dkBuck||Audio.SFX.spread||function(){})();
+    if(Audio.SFX.dkShell) Audio.SFX.dkShell();     // the pair pushed above, heard
+  }
   return true;
 }
 function dkTick(dt){
   if(run && run.dkT>0) run.dkT=Math.max(0,run.dkT-dt);
-  if(run && run._dkCd>0) run._dkCd=Math.max(0,run._dkCd-dt);
+  /* THE PUMP IS THE MOMENT THE TRIGGER GOES LIVE AGAIN (Mike, 0821c). Played on the TRANSITION
+     to 0, so it fires exactly once per reload and lands on the frame the weapon is ready —
+     which makes the 0.62s dead trigger something the player can time instead of something that
+     just happens to them. */
+  if(run && run._dkCd>0){
+    run._dkCd=Math.max(0,run._dkCd-dt);
+    if(run._dkCd===0 && Audio&&Audio.SFX&&Audio.SFX.dkReload) Audio.SFX.dkReload();
+  }
   if(player._dkMuz!=null){ player._dkMuz+=dt; if(player._dkMuz>0.22) player._dkMuz=null; }
   for(let i=dkShells.length-1;i>=0;i--){
     const s=dkShells[i]; s.t+=dt;
@@ -19483,7 +19517,22 @@ function _shipThrRig(pk){
    "He automatically will get nuclear warheads to replace his bombs AND the sonic boom effect."
    What changes is what the player SEES on the box and the icon. A rename map rather than an
    art swap, so the old plates stay on disk and this is one line to reverse. */
-const SPECIAL_ART_OVERRIDE = { spicon_cole:'nsw_icon_cole', special_cole:'nsw_box_cole' };
+/* ⚠ DECKER JOINS THE RENAME MAP (Mike, 0821c). He supplied CF_DeckerShotgunGenerations, and
+   the two plates map onto the two slots the same way Cole's do — he labelled them himself:
+   the HEX BADGE is the icon, the SQUARE ARMOURED CRATE is the box.
+
+   Both slots were wrong before, not merely plain: `spicon_decker` resolves to NO ART AT ALL
+   (rendered, it comes back missing), and `special_decker` is a blue crate with a generic jet
+   blueprint on it — nothing to do with a shotgun. The new plates are also exactly the sibling
+   sizes, 160 and 400, so nothing is being scaled to fit.
+
+   ⚠ THE BOX IS SQUARE WHERE cole/lizzie ARE HEX. That is Mike's call, not a mismatch I missed —
+   Vol.3 of the pack is "final square armored yellow pickup box" and he attached that one as the
+   box. The ICON stays hex, which is what keeps it in family on the pickup field beside the
+   other two. Same as Cole's: a rename map, so the old plates stay on disk and this is one line
+   to reverse. */
+const SPECIAL_ART_OVERRIDE = { spicon_cole:'nsw_icon_cole', special_cole:'nsw_box_cole',
+                               spicon_decker:'nsw_icon_decker', special_decker:'nsw_box_decker' };
 function specialArtKey(k){ return SPECIAL_ART_OVERRIDE[k] || k; }
 function iconDraw(key, x, y, h, centred){
   key = specialArtKey(key);
