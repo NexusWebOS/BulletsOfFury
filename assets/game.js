@@ -14133,6 +14133,10 @@ const DK_RELOAD    = 0.62;     // the pause that makes it a shotgun and not a sp
 const DK_DMG       = 5;
 const DK_SPD       = 11.0;
 const DK_BURN_TIME = 2.6;      // how long a hit enemy stays alight
+/* ⚠ THE PACK'S OWN NUMBER, NOT A GUESS (0821d). CF_DeckerIncendiaryShotgun-Vol.3's map declares
+   the projectile trail as 4 frames at fps 11, looping, facing up, with its origin — the NOSE —
+   at [16,4] of the 32x64 plate. All three of those are honoured in the draw. */
+const DK_TRAIL_FPS = 11;
 let dkShells=[];               // ejected casings, purely cosmetic
 let dkDecals=[];               // bullet-hole bursts riding on the units they hit
 
@@ -17146,6 +17150,11 @@ function updatePlay(dt){
       b._hz=Math.cos(ang);                        // +1 near side, -1 far side
     } else { b.x+=b.vx; b.y+=b.vy; }
     if(b.kind==='nade'){ b.t+=dt; b.vy*=0.985; }
+    /* the pellet needs a clock of its own for the trail reel. ⚠ NOT performance.now() — a wall
+       clock driving a 4-frame loop is the anti-pattern CLAUDE.md keeps a standing rule about,
+       because the reel then runs at a rate nothing in the game controls. Nothing else reads
+       dkshot's t; it has sat at 0 since the pellet was written. */
+    if(b.kind==='dkshot'){ b.t=(b.t||0)+dt; }
     if(b.anim!=null) b.anim+=dt;
     const pierce=!!b.pierce;
     // collide enemies
@@ -24665,6 +24674,39 @@ function drawBullets(){
       /* EACH PELLET DRAWS ITS OWN PRE-ANGLED PLATE. The pack ships seven (ndk_ang_0..6) and the
          blast fires seven, so pellet i uses plate i — the art is authored for that angle rather
          than one sprite rotated seven times. */
+      /* ============================================================
+         THE TRAIL RIDES BEHIND THE PELLET (Mike, 0821d: "yes wire them up")
+
+         ndk_trail_0..3 was registered, drawn from real art, and referenced NOWHERE. It is a
+         32x64 comet — twice the height of the pellet — with a grey slug at the nose and a
+         forked fire tail shedding sparks.
+
+         ⚠ IT DOES NOT REPLACE THE HEAD, IT SITS UNDER IT. Composed all three ways at game scale
+         before writing this: trail-only loses the metal slug entirely (its own nose is faint and
+         the pellet position ends up above the visible fire), while trail-plus-head puts the
+         authored angle plate's crisp slug exactly on the trail's nose. So the head keeps its job
+         — seven authored tilts, no rotation loss — and the trail supplies the length and the
+         motion the pellet never had.
+
+         SCALE is inherited, not chosen: the head draws at h=20 from a 32-tall plate, so one
+         pixel scale (20/32) applied to the trail keeps the two in proportion by construction.
+
+         ROTATION comes from the pellet's OWN velocity rather than its lane index, so it stays
+         correct if the spread is ever re-tuned. atan2(vx,-vy) is 0 for straight up, which is
+         the facing the pack authored the trail in. */
+      const _sc=20/32, _rot=Math.atan2(b.vx||0, -(b.vy||-1));
+      if(typeof XART!=='undefined'){
+        const tk='ndk_trail_'+((((b.t||0)*DK_TRAIL_FPS)|0)%4);
+        if(XART.rdy(tk)){
+          const tm=XART.get(tk);
+          ctx.save();
+          ctx.translate(b.x,b.y); ctx.rotate(_rot);
+          ctx.shadowColor='#ff8a2e'; ctx.shadowBlur=10;
+          // the pack's origin [16,4] IS the nose — put it on the pellet so the tail streams behind
+          ctx.drawImage(tm, -16*_sc, -4*_sc, tm.naturalWidth*_sc, tm.naturalHeight*_sc);
+          ctx.restore();
+        }
+      }
       const k='ndk_ang_'+clamp(b._ang||0,0,6);
       if(typeof XART!=='undefined' && XART.rdy(k)){
         const im=XART.get(k), h=20, w=h*(im.naturalWidth/im.naturalHeight);
