@@ -15686,6 +15686,20 @@ function updatePlay(dt){
        tap and fires one shot; still held past it is a hold and charges, firing nothing. So a
        charge pilot can still snap off a single round, which moving the threshold would have
        removed. ============================================================ */
+    /* ============================================================
+       A TAP IS NOT A MACHINE GUN (Mike, 0821e): "add a short delay to his laser if you tap the
+       button instead of charge, and a similar delay to Yuri's Chain Lightning."
+
+       Measured before changing anything — a tap fell through to `_weaponCadence()`, which is
+       0.085s at weapon 0. So tapping fired MAVERICK'S LASER ELEVEN TIMES A SECOND, the same
+       cadence as the basic pellet gun, while his HELD lance is 0.38. Tap-spam was strictly
+       better than the weapon's own design.
+
+       These two are deliberately adjacent and share a value: Mike asked for Yuri's to be
+       "similar", so making them one number means they cannot drift apart later. The shot still
+       leaves on the frame you press — a tap that fires LATE reads as input lag, which is a worse
+       problem than the one being fixed. What is delayed is the NEXT tap. */
+    const SPECIAL_TAP_CD = 0.28;      // the beat between tapped shots for a charge weapon
     const TAP_WINDOW = 0.14;
     const _chgPilot = (typeof chargePilotActive==='function') && chargePilotActive();
     if(_chgPilot){
@@ -15696,7 +15710,13 @@ function updatePlay(dt){
         /* released — if it was inside the window it was a TAP, so let exactly one shot go */
         const wasTap = (player._tapT||0) < TAP_WINDOW;
         player._tapHeld=false; player._tapT=null;
-        if(wasTap && player.fireCd<=0 && !player.dead){ player.fireCd=_weaponCadence()||0.2; pShoot(); }
+        if(wasTap && player.fireCd<=0 && !player.dead){
+          /* scoped to Maverick, who is who Mike named — Falva's tap is her ordinary gun and
+             Cole's is the fusion cannon, and neither was reported */
+          player.fireCd = (typeof specialActive==='function' && specialActive('maverick'))
+                          ? SPECIAL_TAP_CD : (_weaponCadence()||0.2);
+          pShoot();
+        }
       }
     } else { player._tapT=null; player._tapHeld=false; }
     /* FUSION CANNON owns the trigger at tier 8: holding CHARGES rather than firing, and releasing
@@ -15708,7 +15728,7 @@ function updatePlay(dt){
     else if(firing && player.fireCd<=0){
       let cd;
       if(specialActive('maverick')) cd=0.38;        // heavy helix-lance cadence (was 0.05 rapid strands)
-      else if(specialActive('yuri')) cd=0.14;       // steady chain-lightning cadence
+      else if(specialActive('yuri')) cd=SPECIAL_TAP_CD;   // 0821e: was 0.14 — "a similar delay to Yuri's Chain Lightning"
       else cd = _weaponCadence();
       player.fireCd=(cd!=null?cd:0.2)*(specialActive('maverick')||specialActive('yuri')?1:(1-(PILOTMOD?PILOTMOD.fire:0))); pShoot();
     }
