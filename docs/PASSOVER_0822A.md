@@ -242,3 +242,44 @@ overlay went with the old stage-4 plate. Measured: props 0 on all eight stages.
     node _BUILD_SOURCE/test_fl.js       # 2,702 ok / 3 fail, unchanged - no code changed in 0822b
 
 0822b is measurement and documentation only. The only edits are to CLAUDE.md.
+
+---
+
+# 0822c — VERIFYING 0822a ON THE REAL SCREENS, NOT A SYNTHETIC ROW
+
+0822a proved `FONT_RIDE` on a probe row and one string. But it moves glyphs for EVERY `stageText`
+caller, and that is the whole UI. Checked the composed screens.
+
+    node _BUILD_SOURCE/verify_atlas_0806z.js
+      all 8 stages play 100s without throwing · no blank placeholders
+      9,960 keys from 87 sheets · 157 loose        RESULT: PASS
+
+⚠ **THE PILOT CARD IS WHERE THE HYPHEN FIX ACTUALLY PAYS.** Axel's bio carries "HIGH-SPEED
+ENGAGEMENTS" and "HIT-AND-RUN TACTICS". Bottom-aligned those read `HIGH_SPEED` and `HIT_AND_RUN`
+— an underscore in the middle of Mike's own copy, on the first screen of the game, and nobody had
+reported it. They render as hyphens now. **The bug was always in front of us; the synthetic row is
+only what made it legible.**
+
+Only three strings in the build contain an apostrophe — `"IT'S HOT IN HERE"` (stage 2's subtitle),
+`"ICE STILL CAN'T SEE"` (stage 3's) and `"FREEZER'S ORB"`. Two of the three are STAGE SUBTITLES, so
+the "LET,S" defect was on a banner every run, not only in one dialogue frame.
+
+## THE 0809-ERA PILOT CARD AND STATS COMPLAINTS DO NOT REPRODUCE
+
+The pre-import CLAUDE.md carried four; captured at `--state PILOT` and `--state STAGECLEAR`:
+
+| complaint | now |
+|---|---|
+| bio wraps mid-hyphen | wraps at SPACES; HIGH-SPEED and HIT-AND-RUN stay intact |
+| periods render as `▪` | **not a defect** — p46 IS a 64x66 carved square, measured |
+| emblem overlaps its text | emblem sits beside AFTERBURNER, no overlap |
+| stats labels half a row above their bars, COLE/RANK collide | labels sit on their bars; COLE/RANK/C is its own column |
+
+⚠ **"PERIODS RENDER AS ▪" IS THE SAME MISTAKE THIS FILE WARNS ABOUT FROM THE OTHER DIRECTION** — a
+carved stone face's period IS a block, and reading it as a rendering fault would have "fixed" the
+artist's own glyph. Measure the plate before calling a shape wrong.
+
+The `%` borrow (closed in 0821j) also confirmed live: ACCURACY, MISSILE HITS and SPECIAL HITS all
+render `0%` in the same khaki as their digits.
+
+No code changed in 0822c.
