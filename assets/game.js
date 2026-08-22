@@ -4948,6 +4948,12 @@ const Audio = (()=>{
        dkBuck sits between expSmall and expBig on purpose: a shotgun is a small explosion, not a
        laser. dkShell is deliberately THIN and high so a pair of casings reads over the blast's
        tail instead of fighting it. */
+    /* ⚠ SFX.missile WAS CALLED IN THREE PLACES AND NEVER DEFINED (found 0821f). Two callers fell
+       through to grenade()/shoot() and the third, `if(Audio.SFX.missile)`, was simply silent.
+       Mike: "cut the alert sound from homing missiles, use a missile sound instead" — the sound a
+       launch made was enemyShoot(), a 320Hz sawtooth blip that reads as an alert tone, not as
+       ordnance. A missile is a LAUNCH: a low body with a rising hiss over it, not a beep. */
+    missile(){ noise(0.34,0.30,900,+1400); tone(150,0.30,'triangle',0.16,+220); tone(70,0.22,'sine',0.12,+90); },
     dkBuck(){ noise(0.26,0.50,2800,-2400); tone(110,0.22,'triangle',0.28,-60); tone(300,0.09,'sawtooth',0.13,-240); },
     dkShell(){ const tink=()=>{ tone(2550,0.028,'triangle',0.065,-850); tone(3350,0.018,'square',0.035,-1150); noise(0.025,0.05,7200,-3200); };
                setTimeout(tink,70); setTimeout(tink,125); },      // two casings, one per side
@@ -9022,6 +9028,17 @@ function enemyVolley(e, force){
 
    All five scale by DIFF.ebSpeed exactly like every other pattern in the file. */
 const SHIPBOSS = {
+  /* ⚠ STAGE 4'S BOSS IS ONE FULL-FORMED PLATE (Mike, 0821f): "level 4 boss - do not wire up with
+     seperate frames - use full formed frame only and do not do breaks or cracks."
+
+     It was running through mechInit('mbs6'), the modular component rig — separate anchored parts
+     with their own damage states and a breakup reel. Moved onto the SHIPBOSS path, which draws the
+     single `mbs6_master` hull, and given NO `dmg` array: that field is what adds the damaged and
+     critical plates, so omitting it is exactly "no breaks or cracks". glacierfortress next door
+     already fields an `mb*_master` this way, so this is the established route rather than a new one.
+     The old mechInit rig and `mba_ss` fallback stay on disk, unassigned. */
+  stormsovereign:{key:'mbs6_master',           name:'STORM SOVEREIGN', w:236,h:236, hpMul:1.44, pat:'beamfan', cd:1.28,
+                  pats:['beamfan','chargebeam','pincer2']},
   /* `pats` IS THE FIGHT'S ARC (drop 0811c). Mike: "upgrade the new bosses ... make them
      challenging". One pattern for a whole healthbar is a puzzle you solve once and then hold a
      spot for ninety seconds. Three phases at 100/60/30% give it a shape: the opener teaches the
@@ -9030,11 +9047,11 @@ const SHIPBOSS = {
      reason, not shuffled " ember teaches "find the gap", then lance closes lanes so the gap-hunting
      habit gets you hit, then ember again, faster. */
   infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'ember', cd:1.45,
-                  pats:['ember','fireorb','chargebeam','mslfan','fireorb','beamfan']},
+                  pats:['ember','fireorb','chargebeam','fireorb','beamfan']},
   cryospear:     {key:'nsb_cryo_spear',     name:'CRYO SPEAR',          w:195,h:195, hpMul:1.25, pat:'lance', cd:1.35,
-                  pats:['lance','beamfan','chargebeam','mslhome']},
+                  pats:['lance','rime','chargebeam','beamfan']},
   voidbat:       {key:'nsb_void_bat',       name:'VOID BAT',            w:210,h:210, hpMul:1.45, pat:'void',  cd:1.30,
-                  pats:['void','mslhome','chargebeam','beamfan']},
+                  pats:['void','pincer2','chargebeam','beamfan']},
   /* ⚠ the two MINIS carry an ABSOLUTE hp, not a multiplier. spawnBoss seeds maxhp from the stage
      ((220+n*120)*eHp, so 460 on stage 2) but spawnSubBoss__inner seeds a flat 100, so the same
      multiplier means two completely different fights. Measured: hpMul 0.42 gave these two 42 HP
@@ -9042,7 +9059,7 @@ const SHIPBOSS = {
      what Mike asked for. Absolute, scaled by difficulty, in line with the quad-laser. */
   /* the minis get TWO phases, not three " they die faster and a third would never be seen */
   siegeember:    {key:'nsb_siege_ember',    name:'EMBER SIEGECARRIER',  w:165,h:165, hp:235, pat:'siege', cd:1.25, mini:true,
-                  pats:['siege','mslfan']},
+                  pats:['siege','fireorb']},
   /* MAGMA VENT takes stage 2's miniboss slot (drop 0813g). Mike pulled siege ember and picked
      lavamaw out of the unused pool.
 
@@ -9054,8 +9071,8 @@ const SHIPBOSS = {
 
      'ember' is the wall-with-a-walking-gap pattern, which suits a vent that erupts upward far
      better than a ship's missile fan. */
-  lavamaw:       {key:'nvl_maw_0',          name:'MAGMA VENT',          w:196,h:194, hp:230, pat:'ember', cd:1.30, mini:true,
-                  pats:['ember','mslfan']},
+  lavamaw:       {key:'nvl_maw_0',          name:'MAGMA VENT',          w:196,h:194, hp:230, pat:'fireorb', cd:1.30, mini:true,
+                  pats:['fireorb','ember']},
   /* MIKE'S THREE NEW MINIBOSSES (drop 0813h). Each ships intact / damaged / critical plates,
      imported off a magenta key by FLOOD FILL from the borders - a colour threshold would have eaten
      the blue highlights on the rime hull and the orange lava veins on the other two. Magenta left on
@@ -9087,10 +9104,10 @@ const SHIPBOSS = {
 
      Verified before wiring: the cell at 1544,0 on sheet 56 measures rgb(89,107,136) - the blue hull
      he sent - while its neighbour mbm4_master is rgb(58,59,58) grey. Rendered and eyeballed too. */
-  glacierfortress:{key:'mbg3f_master',            name:'GLACIER FORTRESS', w:214,h:214, hpMul:1.44, pat:'lance', cd:1.26,
-                  pats:['lance','mslfan','ember'], dmg:['mbg3f_dmgov_0','mbg3f_dmgov_1']},
-  xenoregent:    {key:'nsb_xenoregent_intact',      name:'XENO REGENT',    w:216,h:208, hpMul:1.42, pat:'void',  cd:1.28,
-                  pats:['void','chargebeam','mslfan'], dmg:['nsb_xenoregent_damaged','nsb_xenoregent_critical']},
+  glacierfortress:{key:'mbg3f_master',            name:'GLACIER FORTRESS', w:214,h:214, hpMul:1.44, pat:'rime', cd:1.26,
+                  pats:['rime','lance','siege'], dmg:['mbg3f_dmgov_0','mbg3f_dmgov_1']},
+  xenoregent:    {key:'nsb_xenoregent_intact',      name:'XENO REGENT',    w:216,h:208, hpMul:1.42, pat:'pincer2',  cd:1.28,
+                  pats:['pincer2','void','chargebeam'], dmg:['nsb_xenoregent_damaged','nsb_xenoregent_critical']},
   /* THE CARRIER IS A 16-FRAME LAUNCH CYCLE (drop 0813o). CF_DoomsdayCarrierAnimation-Lvl6:
      closed -> opening -> loaded -> launch -> empty -> closing -> closed, `loop:false` in the
      pack's own json, so it plays ONCE per launch rather than idling.
@@ -9108,18 +9125,18 @@ const SHIPBOSS = {
      pans across rather than a ship parked at the top. The bay boxes and the modular hit tests all
      derive from w/h, so they scale with it. */
   doomsdaycarrier:{key:'nsb_dcarrier_00', name:'DOOMSDAY CARRIER', w:640,h:310, hpMul:1.50, pat:'mslfan',cd:1.24,
-                  pats:['mslfan','ember','beamfan'],
+                  pats:['mslfan','beamfan','mslfan'],
                   dmg:['nsb_doomsdaycarrier_damaged','nsb_doomsdaycarrier_critical'],
                   launch:{frames:16, pre:'nsb_dcarrier_', fps:14, loop:false,
                           release:10, warhead:'nfx_omegawarhead_in'}},
-  sludgeemperor: {key:'nsb_sludgeemperor_intact',   name:'SLUDGE EMPEROR', w:220,h:216, hpMul:1.46, pat:'lance', cd:1.30,
-                  pats:['lance','ember','mslfan'], dmg:['nsb_sludgeemperor_damaged','nsb_sludgeemperor_critical']},
+  sludgeemperor: {key:'nsb_sludgeemperor_intact',   name:'SLUDGE EMPEROR', w:220,h:216, hpMul:1.46, pat:'siege', cd:1.30,
+                  pats:['siege','ember','fan2'], dmg:['nsb_sludgeemperor_damaged','nsb_sludgeemperor_critical']},
   magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:240, pat:'ember', cd:1.28, mini:true,
-                  pats:['ember','mslfan'], dmg:['nsb_magmaward_damaged','nsb_magmaward_critical']},
-  rimewall:      {key:'nsb_rimewall_intact',   name:'RIME WALL',        w:204,h:216, hp:232, pat:'lance', cd:1.22, mini:true,
-                  pats:['lance','chargebeam'], dmg:['nsb_rimewall_damaged','nsb_rimewall_critical']},
-  olivewarden:   {key:'nsb_olivewarden_intact',name:'OLIVE WARDEN',     w:210,h:216, hp:238, pat:'mslfan',cd:1.26, mini:true,
-                  pats:['mslfan','ember'], dmg:['nsb_olivewarden_damaged','nsb_olivewarden_critical']},
+                  pats:['ember','chargebeam'], dmg:['nsb_magmaward_damaged','nsb_magmaward_critical']},
+  rimewall:      {key:'nsb_rimewall_intact',   name:'RIME WALL',        w:204,h:216, hp:232, pat:'rime', cd:1.22, mini:true,
+                  pats:['rime','beamfan'], dmg:['nsb_rimewall_damaged','nsb_rimewall_critical']},
+  olivewarden:   {key:'nsb_olivewarden_intact',name:'OLIVE WARDEN',     w:210,h:216, hp:238, pat:'pincer2',cd:1.26, mini:true,
+                  pats:['pincer2','ember'], dmg:['nsb_olivewarden_damaged','nsb_olivewarden_critical']},
   /* STAGE 8'S MINIBOSS FINALLY HAS A BODY (drop 0814e). The HERALD OF DEATH was drawing frames 0-3
      of its own venom ATTACK stream as its hull — `mba_vr_*` is 0 registered keys, `nvr_*` was never
      built (0801ga), and `heraldAnimKey`'s "11-frame flight loop" is, rendered, twin venom droplets
@@ -9181,8 +9198,8 @@ const SHIPBOSS = {
 
      Same treatment: the Blacksteel silhouette is the pack's interceptor shape, and stage 6 is the
      sky fortress, so it flies in storm-steel. Late stage, so it is the toughest of the minis. */
-  olivecarrier:  {key:'nsb_olive_carrier', name:'OLIVE CARRIER',  w:172,h:172, hp:265, pat:'lance', cd:1.12, mini:true,
-                  pats:['lance','mslfan']},
+  olivecarrier:  {key:'nsb_olive_carrier', name:'OLIVE CARRIER',  w:172,h:172, hp:265, pat:'mslfan', cd:1.12, mini:true,
+                  pats:['mslfan','lance']},
 };
 function shipBossInit(b, kind){
   const D=SHIPBOSS[kind]; if(!D) return false;
@@ -9358,6 +9375,25 @@ function shipBossPickMove(b){
     const f=pool.filter(m=>m!==SBM_RAM);
     pool = f.length ? f : [SBM_CHARGE];
   }
+  /* ⚠ NOTHING CHARGES OR RAMS THE PLAYER ANY MORE (Mike, 0821f): "They should not be charging or
+     shooting homing missiles at the player with the exception of the helicopter boss."
+
+     0819d took the RAM off the minis; this takes both moves off EVERYONE that runs this pool.
+     SBM_CHARGE dives at the player's own position at 430px/s and SBM_RAM crosses their column at
+     520 — both are "at the player" by construction, and with seventeen units sharing them they
+     were the house style rather than anybody's signature.
+
+     SBM_XSTRIKE stays: it is a fixed X through the OFF-SCREEN corners, so it crosses the field
+     without ever aiming at where the player is standing. What distinguishes these fights now is
+     the `pats` set, which is the point of the table.
+
+     ⚠ THE HELICOPTER IS EXEMPT FOR FREE. JUNGLE OVERLORD-X is not a SHIPBOSS — it runs its own
+     health-gated AI and never reaches this pool — so the one exception Mike keeps naming needs no
+     special case here. */
+  {
+    const f2=pool.filter(m=>m!==SBM_RAM && m!==SBM_CHARGE);
+    pool = f2.length ? f2 : [SBM_XSTRIKE];
+  }
   return pool[(b._sbmN=(b._sbmN|0)+1) % pool.length];
 }
 /* ============================================================
@@ -9501,7 +9537,13 @@ function shipBossManoeuvre(b, dt){
     case SBM_RECOVER: {
       b.x+=((W/2)-b.x)*Math.min(1,dt*1.6);
       b.y+=(sy-b.y)*Math.min(1,dt*2.2);
-      if(b._sbmT<=0 && Math.abs(b.y-sy)<24){ b._sbm=SBM_HOLD; b._sbmT=rnd(1.0,2.0)-((typeof shipBossPhase==='function'?shipBossPhase(b):0)*0.28); b._sbmAge=0; }
+      /* ⚠ THE STATION TIME HAD TO GROW WHEN TWO OF THE THREE MOVES LEFT (0821f). Measured right
+         after the charge/ram cut: XSTRIKE ran 938 of 1500 frames — 62% of the fight — because
+         with the pool down to one entry EVERY move pick is an X-sweep. A boss that is crossing
+         the screen most of the time cannot express the `pats` set that is now supposed to be its
+         identity, so removing the ram would have quietly cost the thing it was meant to serve.
+         Holding longer puts the fight back on the guns. Still shortens as it gets hurt. */
+      if(b._sbmT<=0 && Math.abs(b.y-sy)<24){ b._sbm=SBM_HOLD; b._sbmT=rnd(3.0,4.4)-((typeof shipBossPhase==='function'?shipBossPhase(b):0)*0.50); b._sbmAge=0; }
       break;
     }
   }
@@ -9947,9 +9989,7 @@ function spawnBoss(kind){
   if(kind==='legiontank'){   b.name='LEGION COMMAND TANK'; b.ty=150;
     if(!mechInit(b, 'mbl5', Math.ceil(hpBase*1.6)))
       buildModularBoss(b, _body1(192,192,0.95,3000), 'mba_lt', Math.ceil(hpBase*1.6)); }
-  if(kind==='stormsovereign'){ b.name='STORM SOVEREIGN'; b.ty=150;
-    if(!mechInit(b, 'mbs6', Math.ceil(hpBase*1.75)))
-      buildModularBoss(b, _body1(192,256,1.0,3600), 'mba_ss', Math.ceil(hpBase*1.6)); }
+  if(kind==='stormsovereign'){ b.ty=150; shipBossInit(b, kind); }   // 0821f: one full plate, no damage states
   if(kind==='cycloneescort'){ b.name='CYCLONE INTERCEPTOR CARRIER'; b.ty=140;
     if(!mechInit(b, 'mbc6', Math.ceil(hpBase*1.6)))
       buildModularBoss(b, _body1(192,192,0.95,3000), 'mba_ci', Math.ceil(hpBase*1.6)); }
@@ -11325,7 +11365,7 @@ function eMissileHoming(x,y,dir){
     eBullets.push({x, y, kind:'emissile', hp:1,
       vx:Math.cos(a)*2.6, vy:Math.sin(a)*2.6, ang:a,
       w:12, h:18, spd:2.6, _accel:0.05, _maxspd:4.6, t:0});
-    Audio.SFX.enemyShoot();
+    (Audio.SFX.missile||Audio.SFX.enemyShoot)();
     return;
   }
   const d = (dir!=null) ? dir : ((eMissileHoming._alt=-(eMissileHoming._alt||1)));
@@ -11341,7 +11381,7 @@ function eMissileHoming(x,y,dir){
     homing:true,                           // the steering gate requires the grant now — see the emissile mover
     t:0
   });
-  Audio.SFX.enemyShoot();
+  (Audio.SFX.missile||Audio.SFX.enemyShoot)();
 }
 function eHomingMissile(x,y,src){
   /* ============================================================
@@ -11360,7 +11400,7 @@ function eHomingMissile(x,y,src){
   const a=(typeof aimPlayer==='function')? aimPlayer(x,y) : Math.PI/2;
   const hom=(typeof run!=='undefined' && run.stage===1
              && typeof boss!=='undefined' && boss && !boss.dead && src===boss);
-  eBullets.push({x,y,vx:Math.cos(a)*3.2,vy:Math.sin(a)*3.2,w:12,h:18,kind:'emissile',hp:1,spd:3.2,turn:0.11,t:0,ang:a,homing:hom,_bright:true}); Audio.SFX.enemyShoot();
+  eBullets.push({x,y,vx:Math.cos(a)*3.2,vy:Math.sin(a)*3.2,w:12,h:18,kind:'emissile',hp:1,spd:3.2,turn:0.11,t:0,ang:a,homing:hom,_bright:true}); (Audio.SFX.missile||Audio.SFX.enemyShoot)();
 }
 function eTwinGuns(e, ang){
   // twin machine-gun cannons: two parallel tracer rounds from the wingtips/barrels, fired toward `ang`.
