@@ -19592,15 +19592,32 @@ function drawShield(x,y){
              one, otherwise a single centre mount. Banked frames often lose symmetry, and a
              centre mount is right there rather than guessed.
    ============================================================ */
+/* ⚠ THREE NEUTRAL-FRAME TAIL CENTRES WERE SIMPLY WRONG (Mike, 0819c: Lizzie's flame "sits
+   slightly left of her spine" — and measuring it found two more, one of them worse than hers).
+
+   `nf` is the LEVEL-FLIGHT frame, and `tailX = x + (cxF-0.5)*_dw` puts the plume there. Measured
+   each pilot's own hull — alpha centroid of the bottom 30% of the plate, which is the tail — and
+   compared it to what the rig claimed:
+
+       axel .4942/.4973   cole .4955/.4954   decker .4973/.4973   falva .4949/.4955
+       juggernaut .4955/.4955   yuri .4982/.4981          <- six agree within 0.2px
+       freezer .4961 / .2703    -> plume 13.6px LEFT of the tail
+       lizzie  .5031 / .3686    -> 8.1px LEFT
+       maverick .4945 / .3717   -> 7.4px LEFT
+
+   Every hull's tail sits within 0.494-0.503, so these three were not compensating for off-centre
+   art — they were bad measurements. Replaced with each ship's own measured tail, by the same
+   method the six correct ones already match. The BARREL-ROLL frames are untouched: a rolling
+   aircraft's tail genuinely does swing off the spine, which is what those values are for. */
 const SHIP_THR={
   axel:{br0:[0.495,0.8303,-0.0038,[-0.1786,0.1786]],br1:[0.6073,0.8413,-0.1008,[-0.1786,0.1786]],br2:[0.4892,0.8708,-0.1246,[-0.1786,0.1786]],br3:[0.4786,0.8487,-0.133,[-0.1786,0.1786]],br4:[0.4955,0.8118,-0.0006,[-0.1786,0.1786]],br5:[0.4553,0.8745,-0.0267,[-0.1786,0.1786]],br6:[0.5058,0.8708,0.1246,[-0.1786,0.1786]],br7:[0.4971,0.8229,0.0019,[-0.1786,0.1786]],l:[0.4335,0.9483,0.1932,[-0.1786,0.1786]],nf:[0.4973,0.9041,0.0012,[-0.1786,0.1786]],pv0:[0.6601,0.9077,-0.1385,[-0.1786,0.1786]],pv1:[0.624,0.9077,-0.1134,[-0.1786,0.1786]],pv2:[0.4954,0.8819,-0.0005,[-0.1786,0.1786]],pv3:[0.3626,0.9077,0.119,[-0.1786,0.1786]],pv4:[0.3288,0.9077,0.1182,[-0.1786,0.1786]],r:[0.5464,0.9483,-0.1434,[-0.1786,0.1786]],t:[0.4969,0.9779,-0.0013,[-0.1786,0.1786]]},
   cole:{br0:[0.4985,0.8856,-0.0117,[-0.1256,0.1256]],br1:[0.4614,0.893,-0.1789,[-0.1256,0.1256]],br2:[0.3992,0.9077,0.0134,[-0.1256,0.1256]],br3:[0.3992,0.9077,0.0134,[-0.1256,0.1256]],br4:[0.4583,0.8339,-0.0378,[-0.1256,0.1256]],br5:[0.4899,0.9077,0.2902,[-0.1256,0.1256]],br6:[0.5964,0.9077,-0.0134,[-0.1256,0.1256]],br7:[0.4936,0.8856,0.0088,[-0.1256,0.1256]],l:[0.6183,0.9446,0.4717,[-0.1256,0.1256]],nf:[0.4954,0.9041,0.0016,[-0.1256,0.1256]],pv0:[0.4674,0.893,0.304,[-0.1256,0.1256]],pv1:[0.4672,0.893,0.2467,[-0.1256,0.1256]],pv2:[0.4951,0.893,-0.002,[-0.1256,0.1256]],pv3:[0.5254,0.8967,-0.248,[-0.1256,0.1256]],pv4:[0.5251,0.8967,-0.3106,[-0.1256,0.1256]],r:[0.3737,0.9446,-0.4779,[-0.1256,0.1256]],t:[0.4956,0.9446,-0.0017,[-0.1256,0.1256]]},
   decker:{br0:[0.4963,0.8782,-0.0007,[-0.1232,0.1232]],br1:[0.5164,0.8708,0.1049,[-0.1232,0.1232]],br2:[0.4994,0.8782,0.0316,[-0.1232,0.1232]],br3:[0.5951,0.8708,0.2942,[-0.1232,0.1232]],br4:[0.4925,0.8672,-0.0011,[-0.1232,0.1232]],br5:[0.4928,0.8782,-0.0304,[-0.1232,0.1232]],br6:[0.495,0.8782,-0.0316,[-0.1232,0.1232]],br7:[0.4943,0.8782,-0.0013,[-0.1232,0.1232]],l:[0.5715,0.9384,0.3756,[-0.1232,0.1232]],nf:[0.4973,0.8949,-0.0011,[-0.1232,0.1232]],pv0:[0.5992,0.893,-0.2461,[-0.1232,0.1232]],pv1:[0.5991,0.9077,-0.2116,[-0.1232,0.1232]],pv2:[0.498,0.893,0.0004,[-0.1232,0.1232]],pv3:[0.3974,0.9077,0.2111,[-0.1232,0.1232]],pv4:[0.3919,0.893,0.2432,[-0.1232,0.1232]],r:[0.4621,0.9384,-0.308,[-0.1232,0.1232]],t:[0.5054,1,0.0096,[-0.1232,0.1232]]},
   falva:{br0:[0.4962,0.8967,0.0019,[0]],br1:[0.5464,0.9041,-0.1986,[0]],br2:[0.5113,0.9077,0.0026,[0]],br3:[0.4578,0.9041,0.1919,[0]],br4:[0.5327,0.9004,-0.0483,[0]],br5:[0.5826,0.9041,-0.2551,[0]],br6:[0.4829,0.9077,-0.0026,[0]],br7:[0.4499,0.9041,0.2141,[0]],l:[0.5531,0.9429,0.3349,[0]],nf:[0.4955,0.8964,0.0036,[0]],pv0:[0.5444,0.9214,0.2975,[0]],pv1:[0.5474,0.9321,0.3263,[0]],pv2:[0.4955,0.8964,0.0035,[0]],pv3:[0.4426,0.9286,-0.3124,[0]],pv4:[0.446,0.9179,-0.2865,[0]],r:[0.4457,0.9393,-0.3163,[0]],t:[0.4934,1,-0.0011,[0]]},
-  freezer:{br0:[0.4974,0.8635,-0.0006,[0]],br1:[0.3666,0.8635,0.0285,[0]],br2:[0.5666,0.8819,0.2772,[0]],br3:[0.5666,0.8819,0.2772,[0]],br4:[0.4976,0.8598,0.0001,[0]],br5:[0.476,0.8819,-0.0351,[0]],br6:[0.4289,0.8819,-0.2772,[0]],br7:[0.4995,0.8635,0.0016,[0]],l:[0.3872,0.9225,0.1208,[0]],nf:[0.2703,0.9077,0.0053,[0]],pv0:[0.7224,0.9077,-0.0038,[0]],pv1:[0.6552,0.9077,-0.0088,[0]],pv2:[0.497,0.9004,0.0024,[0]],pv3:[0.3362,0.9077,0.0237,[0]],pv4:[0.2687,0.9077,0.0031,[0]],r:[0.5977,0.9225,-0.0995,[0]],t:[0.4978,0.9483,-0.0012,[0]]},
+  freezer:{br0:[0.4974,0.8635,-0.0006,[0]],br1:[0.3666,0.8635,0.0285,[0]],br2:[0.5666,0.8819,0.2772,[0]],br3:[0.5666,0.8819,0.2772,[0]],br4:[0.4976,0.8598,0.0001,[0]],br5:[0.476,0.8819,-0.0351,[0]],br6:[0.4289,0.8819,-0.2772,[0]],br7:[0.4995,0.8635,0.0016,[0]],l:[0.3872,0.9225,0.1208,[0]],nf:[0.4961,0.9077,0.0053,[0]],pv0:[0.7224,0.9077,-0.0038,[0]],pv1:[0.6552,0.9077,-0.0088,[0]],pv2:[0.497,0.9004,0.0024,[0]],pv3:[0.3362,0.9077,0.0237,[0]],pv4:[0.2687,0.9077,0.0031,[0]],r:[0.5977,0.9225,-0.0995,[0]],t:[0.4978,0.9483,-0.0012,[0]]},
   juggernaut:{br0:[0.4954,0.8413,0.0017,[-0.16,0.16]],br1:[0.4664,0.8303,-0.2431,[-0.16,0.16]],br2:[0.452,0.8192,-0.287,[-0.16,0.16]],br3:[0.4777,0.8229,-0.1232,[-0.16,0.16]],br4:[0.4924,0.8192,-0.0031,[-0.16,0.16]],br5:[0.5471,0.8155,0.3222,[-0.16,0.16]],br6:[0.526,0.8303,0.2267,[-0.16,0.16]],br7:[0.4939,0.8413,0.002,[-0.16,0.16]],l:[0.5483,0.9418,0.3219,[-0.16,0.16]],nf:[0.4955,0.8982,0.0009,[-0.16,0.16]],pv0:[0.4352,0.9041,0.2206,[-0.16,0.16]],pv1:[0.4451,0.9077,0.1769,[-0.16,0.16]],pv2:[0.494,0.9041,-0.002,[-0.16,0.16]],pv3:[0.5488,0.9077,-0.1745,[-0.16,0.16]],pv4:[0.5536,0.9041,-0.2287,[-0.16,0.16]],r:[0.4745,0.9418,-0.2625,[-0.16,0.16]],t:[0.4962,1,0.0009,[-0.16,0.16]]},
-  lizzie:{br0:[0.5567,0.9004,0.0008,[0]],br1:[0.587,0.8155,0.0162,[0]],br2:[0.4808,0.8376,-0.0238,[0]],br3:[0.4854,0.8413,-0.047,[0]],br4:[0.6915,0.9077,0.0011,[0]],br5:[0.6405,0.8155,0.0565,[0]],br6:[0.5144,0.8376,0.0238,[0]],br7:[0.4808,0.8376,-0.0238,[0]],l:[0.2846,0.8714,-0.1189,[0]],nf:[0.3686,0.8893,-0.0253,[0]],pv0:[0.3686,0.8893,-0.0253,[0]],pv1:[0.3239,0.8786,-0.0661,[0]],pv2:[0.5026,0.9214,0.0014,[0]],pv3:[0.6774,0.8857,0.117,[0]],pv4:[0.6302,0.8964,0.0739,[0]],r:[0.7229,0.8786,0.1676,[0]],t:[0.4992,1,0,[0]]},
-  maverick:{br0:[0.4943,0.8376,-0.0011,[-0.1647,0.1647]],br1:[0.4088,0.8487,0.0783,[-0.1647,0.1647]],br2:[0.4934,0.8561,0.0357,[-0.1647,0.1647]],br3:[0.4681,0.8561,-0.1581,[-0.1647,0.1647]],br4:[0.4971,0.8266,0,[-0.1647,0.1647]],br5:[0.5145,0.8561,-0.0233,[-0.1647,0.1647]],br6:[0.5021,0.8561,-0.0357,[-0.1647,0.1647]],br7:[0.495,0.8376,-0.0008,[-0.1647,0.1647]],l:[0.4284,0.9597,0.1991,[-0.1647,0.1647]],nf:[0.3717,0.9077,0.0766,[-0.1647,0.1647]],pv0:[0.3606,0.9077,0.1165,[-0.1647,0.1647]],pv1:[0.3691,0.9077,0.0725,[-0.1647,0.1647]],pv2:[0.4928,0.8598,-0.0027,[-0.1647,0.1647]],pv3:[0.629,0.9077,-0.072,[-0.1647,0.1647]],pv4:[0.6275,0.9004,-0.1275,[-0.1647,0.1647]],r:[0.5668,0.956,-0.1954,[-0.1647,0.1647]],t:[0.4941,1,-0.0027,[-0.1647,0.1647]]},
+  lizzie:{br0:[0.5567,0.9004,0.0008,[0]],br1:[0.587,0.8155,0.0162,[0]],br2:[0.4808,0.8376,-0.0238,[0]],br3:[0.4854,0.8413,-0.047,[0]],br4:[0.6915,0.9077,0.0011,[0]],br5:[0.6405,0.8155,0.0565,[0]],br6:[0.5144,0.8376,0.0238,[0]],br7:[0.4808,0.8376,-0.0238,[0]],l:[0.2846,0.8714,-0.1189,[0]],nf:[0.5031,0.8893,-0.0253,[0]],pv0:[0.3686,0.8893,-0.0253,[0]],pv1:[0.3239,0.8786,-0.0661,[0]],pv2:[0.5026,0.9214,0.0014,[0]],pv3:[0.6774,0.8857,0.117,[0]],pv4:[0.6302,0.8964,0.0739,[0]],r:[0.7229,0.8786,0.1676,[0]],t:[0.4992,1,0,[0]]},
+  maverick:{br0:[0.4943,0.8376,-0.0011,[-0.1647,0.1647]],br1:[0.4088,0.8487,0.0783,[-0.1647,0.1647]],br2:[0.4934,0.8561,0.0357,[-0.1647,0.1647]],br3:[0.4681,0.8561,-0.1581,[-0.1647,0.1647]],br4:[0.4971,0.8266,0,[-0.1647,0.1647]],br5:[0.5145,0.8561,-0.0233,[-0.1647,0.1647]],br6:[0.5021,0.8561,-0.0357,[-0.1647,0.1647]],br7:[0.495,0.8376,-0.0008,[-0.1647,0.1647]],l:[0.4284,0.9597,0.1991,[-0.1647,0.1647]],nf:[0.4945,0.9077,0.0766,[-0.1647,0.1647]],pv0:[0.3606,0.9077,0.1165,[-0.1647,0.1647]],pv1:[0.3691,0.9077,0.0725,[-0.1647,0.1647]],pv2:[0.4928,0.8598,-0.0027,[-0.1647,0.1647]],pv3:[0.629,0.9077,-0.072,[-0.1647,0.1647]],pv4:[0.6275,0.9004,-0.1275,[-0.1647,0.1647]],r:[0.5668,0.956,-0.1954,[-0.1647,0.1647]],t:[0.4941,1,-0.0027,[-0.1647,0.1647]]},
   yuri:{br0:[0.4942,0.8856,0.0005,[0]],br1:[0.5518,0.8967,-0.2362,[0]],br2:[0.4901,0.8967,-0.0159,[0]],br3:[0.4606,0.8893,0.2454,[0]],br4:[0.4929,0.8893,-0.006,[0]],br5:[0.5326,0.8893,-0.2456,[0]],br6:[0.5026,0.8967,0.0225,[0]],br7:[0.458,0.8672,0.276,[0]],l:[0.5065,0.9077,0.3851,[0]],nf:[0.4981,0.8339,-0.0028,[0]],pv0:[0.6168,0.9077,-0.2224,[0]],pv1:[0.631,0.8708,-0.2273,[0]],pv2:[0.4959,0.9041,-0.0008,[0]],pv3:[0.3623,0.8708,0.2232,[0]],pv4:[0.3779,0.9077,0.2266,[0]],r:[0.4806,0.9077,-0.3904,[0]],t:[0.4983,0.9077,-0.0002,[0]]}
 };
 
@@ -25319,9 +25336,15 @@ function drawBullets(){
   ctx.imageSmoothingEnabled = _ebSmooth;   // see the note at the head of this pass (drop 0811v)
 }
 
+/* ⚠ ONE DIAL FOR EVERY PICKUP (Mike, 0819d: "pickups should be scaled up a little bit").
+   Five separate drawers carried five hardcoded sizes — 50 / 46 / 40 / 34 / 30 — so scaling them
+   by hand would have been five edits that drift apart the moment one is retuned. They are all
+   multiplied by this instead, which means the pickups keep their relative proportions to each
+   other by construction and there is exactly one number to change. */
+const PICKUP_SCALE = 1.22;
 function drawMcrate(x,y,t,flash){
   if(typeof XART!=='undefined' && XART.rdy('missilecrate')){
-    const im=XART.get('missilecrate'), w=50, h=50*(im.naturalHeight/im.naturalWidth);
+    const im=XART.get('missilecrate'), w=50*PICKUP_SCALE, h=50*PICKUP_SCALE*(im.naturalHeight/im.naturalWidth);
     ctx.save();
     ctx.drawImage(im, x-w/2, y-h/2+Math.sin(t*2.2)*2, w, h);
     ctx.restore(); return;
@@ -25357,7 +25380,7 @@ function drawScrate(x,y,t,flash){
   const pk=(typeof _pilotKey==='function')?_pilotKey():'cole';
   const boxKey='special_'+pk;
   if(typeof XART!=='undefined' && XART.rdy(boxKey)){
-    const im=XART.get(boxKey), h=40+(flash>0?4:0), w=h*(im.naturalWidth/im.naturalHeight);
+    const im=XART.get(boxKey), h=(40+(flash>0?4:0))*PICKUP_SCALE, w=h*(im.naturalWidth/im.naturalHeight);
     ctx.save(); ctx.translate(x,y+Math.sin(t*3)*1.5);
     ctx.shadowColor=(typeof _pilotTint==='function')?_pilotTint():'#ff2a1a'; ctx.shadowBlur=8+(flash>0?12:0);
     if(flash>0){ ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.5; ctx.drawImage(im,-w/2,-h/2,w,h); ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over'; }
@@ -25444,7 +25467,7 @@ function drawCrate(x,y,t,flash){
   const _X0=(typeof XART!=='undefined')?XART:null;
   if(_X0 && run.stage>=6 && run.stage<=9 && _X0.rdy('nlc'+run.stage+'_0')){
     const fi=Math.floor(t*8)%4, im=_X0.get('nlc'+run.stage+'_'+fi);
-    if(im&&im.complete&&im.naturalWidth){ const s=46/Math.max(im.naturalWidth,im.naturalHeight), w=im.naturalWidth*s, h=im.naturalHeight*s;
+    if(im&&im.complete&&im.naturalWidth){ const s=46*PICKUP_SCALE/Math.max(im.naturalWidth,im.naturalHeight), w=im.naturalWidth*s, h=im.naturalHeight*s;
       ctx.save(); ctx.shadowColor='#ffcf4a'; ctx.shadowBlur=7+(flash>0?10:0);
       ctx.drawImage(im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
   }
@@ -25452,7 +25475,7 @@ function drawCrate(x,y,t,flash){
   if(_X && _ck && _X.rdy(_ck+'_0')){
     const _nspin=(_ck==='crate6')?3:4;                                  // wooden spin_gold: frames 0-2 spin, 3 = sunburst flash
     const fi=(flash>0)?(_ck==='crate6'?3:0):(Math.floor(t*8)%_nspin), im=_X.get(_ck+'_'+fi);
-    if(im&&im.complete&&im.naturalWidth){ const s=46/Math.max(im.naturalWidth,im.naturalHeight), w=im.naturalWidth*s, h=im.naturalHeight*s;
+    if(im&&im.complete&&im.naturalWidth){ const s=46*PICKUP_SCALE/Math.max(im.naturalWidth,im.naturalHeight), w=im.naturalWidth*s, h=im.naturalHeight*s;
       ctx.save(); ctx.shadowColor=(run.stage===1?'#8de23a':run.stage===2?'#ff7a2a':run.stage===3?'#7fe0ff':'#ffcf4a'); ctx.shadowBlur=7+(flash>0?10:0);
       ctx.drawImage(im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
   }
@@ -25555,7 +25578,7 @@ function drawPowerups(){
              : (p.kind==='lzmgbox') ?'nsw_icon_lizzie'
              : (XART.rdy('nsw_icon_decker')?'nsw_icon_decker':'ndk_shell_0');
       if(typeof XART!=='undefined' && XART.rdy(_k)){
-        const im=XART.get(_k), h=34+2*Math.sin(performance.now()/240), w=h*(im.naturalWidth/im.naturalHeight);
+        const im=XART.get(_k), h=(34+2*Math.sin(performance.now()/240))*PICKUP_SCALE, w=h*(im.naturalWidth/im.naturalHeight);
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
         ctx.shadowColor=(p.kind==='sonicbox')?'#8de23a':'#ffc21a'; ctx.shadowBlur=14;
         ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
@@ -25568,7 +25591,7 @@ function drawPowerups(){
       const iconKey='spicon_'+pk, boxKey=(typeof specialArtKey==='function')?specialArtKey('special_'+pk):('special_'+pk);
       if(typeof XART!=='undefined' && XART.rdy(animKey)){
         // the original special ability icon floats out of the broken box (spins + bob)
-        const im=XART.get(animKey), s2=40/Math.max(im.naturalWidth,im.naturalHeight);
+        const im=XART.get(animKey), s2=40*PICKUP_SCALE/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4); ctx.rotate(performance.now()/560);
         ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12;
         ctx.drawImage(im,-im.naturalWidth*s2/2,-im.naturalHeight*s2/2,im.naturalWidth*s2,im.naturalHeight*s2); ctx.restore();
@@ -25577,18 +25600,18 @@ function drawPowerups(){
            path and deleting the spicon_ keys would have left THIS branch failing XART.rdy and
            silently falling through to the plain box — the icon would just stop appearing on the
            pickup, with nothing reporting it. Both paths use the sheet or neither does. */
-        const h=30+2*Math.sin(performance.now()/240);
+        const h=(30+2*Math.sin(performance.now()/240))*PICKUP_SCALE;
         ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
         ctx.globalCompositeOperation='lighter'; ctx.shadowColor=_pilotTint(); ctx.shadowBlur=14;
         iconDraw(iconKey, 0, 0, h, true);
         ctx.restore();
       } else if(typeof XART!=='undefined' && XART.rdy(iconKey)){
-        const im=XART.get(iconKey), h=30+2*Math.sin(performance.now()/240), w=h*(im.naturalWidth/im.naturalHeight);
+        const im=XART.get(iconKey), h=(30+2*Math.sin(performance.now()/240))*PICKUP_SCALE, w=h*(im.naturalWidth/im.naturalHeight);
         ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
         ctx.globalCompositeOperation='lighter'; ctx.shadowColor=_pilotTint(); ctx.shadowBlur=14;
         ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
       } else if(typeof XART!=='undefined' && XART.rdy(boxKey)){
-        const im=XART.get(boxKey), h=40, w=h*(im.naturalWidth/im.naturalHeight);
+        const im=XART.get(boxKey), h=40*PICKUP_SCALE, w=h*(im.naturalWidth/im.naturalHeight);
         ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/380)*2.4);
         ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12; ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
       } else { ctx.save(); ctx.translate(p.x,yb); ctx.rotate(performance.now()/420); ctx.fillStyle=_pilotTint(); ctx.fillRect(-9,-9,18,18); ctx.restore(); }
@@ -36006,21 +36029,29 @@ function _drawStageSelectInner(dt){
   // wait -> zoom in on the flag -> it flashes and unfurls to true colors -> zoom back -> yours to pick.
   if(cine){
     cine.t+=dt;
+    /* ⚠ ONE DIAL, AND IT WAS WRITTEN OUT FIVE TIMES (Mike, 0819d: "Cinematics, too zoomed in").
+       The peak 2.15 and the delta 1.15 appeared across all four phases, so changing the framing
+       meant changing five numbers that had to agree or the zoom would jump between phases.
+       CINE_ZOOM is the peak and every phase derives from it. 1.65 still reads as a deliberate
+       push-in onto the flag, but leaves the neighbouring stages visible so you can see WHERE on
+       the map the thing you just unlocked actually is — which is the point of the shot. */
+    const CINE_ZOOM = 1.65;
+    const _cd = CINE_ZOOM - 1;
     const ease=(x)=>x<0.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;   // easeInOutCubic
     if(cine.phase==null || cine.phase==='wait'){ cine.phase='wait'; cine.z=1;
       if(cine.t>0.45){ cine.phase='zoomin'; cine.t=0; } }
-    else if(cine.phase==='zoomin'){ cine.z=1+ease(clamp(cine.t/0.8,0,1))*1.15;      // 1 -> 2.15
+    else if(cine.phase==='zoomin'){ cine.z=1+ease(clamp(cine.t/0.8,0,1))*_cd;      // 1 -> CINE_ZOOM
       if(cine.t>0.8){ cine.phase='ding'; cine.t=0; } }
-    else if(cine.phase==='ding'){ cine.z=2.15;
+    else if(cine.phase==='ding'){ cine.z=CINE_ZOOM;
       cine._d=cine._d||0;
       const dtimes=[0.12,0.42,0.72];
       for(let di=0;di<3;di++){ if(cine.t>=dtimes[di] && !(cine._d&(1<<di))){ cine._d|=(1<<di); Audio.SFX&&Audio.SFX.blip&&Audio.SFX.blip(); } }
       if(cine.t>1.0){ cine.phase='unfurl'; cine.t=0;
         campaign.unlockedMax=Math.max(campaign.unlockedMax, cine.stage);   // the flag lands in true colors
         Audio.SFX&&Audio.SFX.powerup&&Audio.SFX.powerup(); } }
-    else if(cine.phase==='unfurl'){ cine.z=2.15;
+    else if(cine.phase==='unfurl'){ cine.z=CINE_ZOOM;
       if(cine.t>0.8){ cine.phase='zoomout'; cine.t=0; } }
-    else if(cine.phase==='zoomout'){ cine.z=2.15-ease(clamp(cine.t/0.7,0,1))*1.15;
+    else if(cine.phase==='zoomout'){ cine.z=CINE_ZOOM-ease(clamp(cine.t/0.7,0,1))*_cd;
       if(cine.t>0.7){ sselUnlockCine=null; sselCursor=clamp(cine.stage,1,8); } }
     // UNLOCKED banner while zoomed on the flag
     if(cine.phase==='ding'||cine.phase==='unfurl'){
