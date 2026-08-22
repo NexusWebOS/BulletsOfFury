@@ -618,3 +618,41 @@ flight time and therefore lead grow; moving left shortens both. 158 vs 120 is th
 error.
 
 Suite **2,732 ok / 3 fail**.
+
+---
+
+# 0822j — NO BOSS SPLITS, AND THE THREAD IS CLOSED
+
+I proposed multi-part destructible bosses off the Raiden II battleships. Mike, asked directly:
+**"No bosses split, at all."** Recorded as a standing rule rather than left as a chat answer,
+because it is now the SECOND time he has ruled it — 0813z already routed stage 4 off the sectional
+rig on *"do not split him or seperate him"*, and I proposed it again anyway.
+
+⚠ **THE RULE WAS ALREADY HONOURED AT THE BOSS TIER — CHECKED BEFORE CHANGING ANYTHING.** The four
+live `mechInit` calls are `magmacolossus` and `cryobehemoth` (both SCRAPPED in 0810q, dead code),
+and `glacierrail` / `mbw4`, which are SUB-BOSSES. No live boss is sectional. Nothing had to be
+undone, which is worth saying plainly: the correct action after a ruling is sometimes zero code.
+
+⚠ **AND TWO THINGS MUST NOT BE MISTAKEN FOR SPLITS.** The stage-6 carrier's L/R bays are Mike's own
+mechanic — immune to ordinary fire, damaged only by deflected warheads, and the note at
+`CARRIER_BAY` records it as built *exactly as asked*. The quad-laser miniboss's four cannons ship
+that way in the authored pack. A future session reading "no boss splits" could gut both in good
+faith. The rule says so at the rule.
+
+## ⚠ MY TWO BOSS SURVEYS WERE BOTH INVALID AND I ALMOST REPORTED THE FIRST ONE
+
+Worth recording as method, not apology:
+
+1. **Measured at frame zero.** It broke out of the drive loop the instant `boss` existed, then read
+   `_bay` / `_mech` / sections — all of which initialise on the boss's FIRST TICK. It reported "no
+   boss has any parts" for all eight. `carrierTick` is wired and does initialise bays; the survey
+   simply looked before it ran.
+2. **Killed the bosses.** Removing the break let the probe keep firing `pShoot()` every 6 frames,
+   so stage 1 measured at **-1.92 hp** and stage 2 at **-1**. It measured corpses.
+
+Three probes this session have now failed the same way — the scorch drift test that passed on
+0 vs 0, and these two. The common fault is never the game: it is **a probe whose result is
+readable even when the thing under test never happened**. State the precondition, assert it, and
+make the probe fail loudly when it is not met.
+
+No code changed in 0822j. CLAUDE.md only.

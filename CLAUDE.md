@@ -141,6 +141,20 @@ loads on entry.
 - One thruster system. `nthp_<pilot>_0..3`, mounted per `assets/data/thruster_mounts.json`.
   The flame-baked `ship_*_t` variants are deleted; never reintroduce them.
 - No propellered enemies except the helicopter boss.
+- **NO BOSS SPLITS. AT ALL.** (Mike, 2026-08-22, asked directly and answered flatly.) A boss is
+  ONE authored plate, drawn whole, with damaged/critical swapped in as STATES — never pieces
+  coming off, never sections with their own hitboxes. This is the second time he has ruled it:
+  0813z already routed stage 4 off the sectional rig on *"do not split him or seperate him"*.
+  The Raiden II battleships are not a licence to revisit it — that comparison is exactly what
+  prompted the question, and the answer was no.
+  ⚠ **THE SECTIONAL RIG STAYS ON DISK AND STAYS UNUSED BY BOSSES.** `mechInit` is still called
+  by `glacierrail` and `mbw4`, which are SUB-BOSSES, and by `magmacolossus`/`cryobehemoth`,
+  which he scrapped in 0810q. Leave those; deleting the rig is not what he asked for.
+  ⚠ **AND DO NOT MISTAKE THESE FOR SPLITS:** the stage-6 carrier's L/R bays are HIS OWN
+  mechanic (bays immune to ordinary fire, damaged only by deflected warheads — the note at
+  `CARRIER_BAY` records it as built *exactly as asked*), and the quad-laser miniboss's four
+  cannons ship that way in the authored pack. Neither is a boss coming apart. Ripping them out
+  in the name of this rule would delete work he specifically wanted.
 - Mike gives high-level direction. **Measure before changing** — pixel positions, frame sizes,
   mount offsets. Do not stop to ask; continue and fix. His approvals are direct: "Ding ding ding."
 
