@@ -723,3 +723,28 @@ Also corrected: the plate-width note still said PARKED pending a call between 80
 0822d at 680.
 
 No code changed in 0822l — the system was already correct.
+
+---
+
+# 0822m — THE FAR SCENERY BELONGED TO drawBG ALL ALONG
+
+Stage 5's orbital hardware and asteroid field, stage 6's weather and far decks, and stage 5's
+planetary setpiece all lived in `drawWorld` — one line AFTER its own `drawBG(dt)` call. The
+connectors draw their frame with `drawBG(0)` and nothing else, so an arriving player got terrain
+with the sky missing and the whole field switched on at PLAY's first tick.
+
+    l5FieldDraw from a CONNECTOR frame   0  ->  1
+    l5FieldDraw from a PLAY frame        1  ->  1   (not 2 — no double draw)
+
+⚠ **ORDER IS PRESERVED EXACTLY.** drawWorld ran `drawBG(dt)` and then this block immediately, so
+running it at the tail of drawBG is the same sequence. A frame that was already correct is
+unchanged, which is the property worth having when moving draw calls.
+
+⚠ **IT IS A WRAPPER BECAUSE drawBG RETURNS EARLY.** The master path returns before the end, so a
+call inserted before that return would be skipped by every other exit. `drawBG` is now
+`_drawBGCore(dt)` plus `stageSceneryDraw(dt)`, which covers all of them.
+
+⚠ **dt IS 0 FROM A CONNECTOR AND THAT IS DELIBERATE** — the field DRAWS but does not ADVANCE, so
+the arrival frame matches the first play frame instead of jumping past it.
+
+Suite **2,732 ok / 3 fail**. Atlas verifier PASS.

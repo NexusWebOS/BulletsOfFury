@@ -19376,7 +19376,30 @@ function l6CloudReset(){ _l6cb=null; }
 for(let i=0;i<90;i++) starField.push({x:rnd(0,VW),y:rnd(0,VH),z:rnd(0.3,1.6),s:rnd(1,2.4)});
 let jungleBlobs=[]; for(let i=0;i<24;i++) jungleBlobs.push({x:rnd(0,VW),y:rnd(0,VH),s:rnd(14,40),h:rnd(60,120)});
 
-function drawBG(dt){
+/* FAR SCENERY IS BACKGROUND, SO IT BELONGS TO drawBG (drop 0822m).
+
+   Stage 5's orbital hardware and asteroid field, stage 6's weather and far decks, and stage 5's
+   planetary setpiece all lived in drawWorld, one line AFTER its drawBG call. The connectors draw
+   their frame with `drawBG(0)` and nothing else — so an arriving player got the terrain with the
+   sky missing, and the whole field switched on at PLAY's first tick.
+
+   ⚠ ORDER IS PRESERVED EXACTLY. drawWorld ran drawBG(dt) and then this block immediately; running
+   it at the tail of drawBG is the same sequence, so nothing changes for a frame that was already
+   correct. drawBG returns early on the master path, hence the wrapper — a call added before that
+   return would be skipped by every other exit.
+
+   ⚠ dt IS 0 FROM A CONNECTOR, which is deliberate: the field DRAWS but does not advance, so the
+   arrival frame matches the first play frame instead of jumping. */
+function stageSceneryDraw(dt){
+  try{
+    if(run.stage===6 && typeof l6ObjsDraw==='function') l6ObjsDraw();   // far decks behind everything
+    if(run.stage===5) { try{ bg5Draw(dt); }catch(_b5){} }               // planetary setpiece (0819e)
+    if(run.stage===6) { try{ bg6Draw(dt); }catch(_b6){} }               // clouds, rain, lightning (0819f)
+    if(run.stage===5 && typeof l5FieldDraw==='function'){ l5FieldUpdate(dt); l5FieldDraw(false); }
+  }catch(_s){}
+}
+function drawBG(dt){ _drawBGCore(dt); stageSceneryDraw(dt); }
+function _drawBGCore(dt){
   // stage 1 places its tanks and boats off this mask, and the master path below RETURNS —
   // so the build has to happen before it, not inside a branch it never reaches (0821)
   if(run.stage===1 && typeof ensureS1LandMasks==='function') ensureS1LandMasks();
@@ -39090,10 +39113,7 @@ function drawWorld(dt){
   /* ⚠ THE OLD PARALLAX CLOUD LAYER IS GONE (0819f) — the pack ships four cloud families and
      bg6Draw cross-fades them across the stage. The far scenery objects are NOT weather and
      stay. */
-  if(run.stage===6 && typeof l6ObjsDraw==='function') l6ObjsDraw();   // far decks behind everything
-  if(run.stage===5){ try{ bg5Draw(dt); }catch(_b5){} }   // planetary setpiece + celestial reel (0819e)
-  if(run.stage===6){ try{ bg6Draw(dt); }catch(_b6){} }   // clouds, rain, wind, lightning (0819f)
-  if(run.stage===5 && typeof l5FieldDraw==='function'){ l5FieldUpdate(dt); l5FieldDraw(false); }   // far orbital hardware + asteroid belt
+  // far scenery moved into drawBG so the connectors get it too — see stageSceneryDraw (0822m)
   drawPowerups();
   if(typeof drawScenery==='function') drawScenery();
   /* DAMAGE STATES RIDE ON TOP OF THE SPRITE (drop 0807f). Hooked at the loop rather than inside
