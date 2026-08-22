@@ -15756,6 +15756,16 @@ function setState(s){
       the whole correction to its partner. Without that this pass reintroduces "tanks into the
       water" from a new direction.
    ============================================================ */
+/* ⚠ MIKE WANTS 0 HERE AND ONE OF HIS OWN ASSERTIONS WANTS 0.20 (drop 0822p, UNRESOLVED).
+   He said: "no units should ever overlap, they have unit boxes for a reason." Setting this to
+   0 does help — stage 1's stacked frames fell 28.8% -> 20.4% on a comparable run — but it
+   fails §213's `touchMoved === 0`: "an authored formation keeps the shape it was drawn as".
+   That assertion is defending a DESIGN CHOICE, not a bug, so it is his call which wins, and
+   the value stays where it shipped until he makes it.
+   ⚠ AND DO NOT CHASE THE REMAINDER WITH SEP_CAP. Swept 260/420/700: 40%, 70.5%, 3.8% —
+   non-monotonic, because a stronger push moves units into DIFFERENT POSITIONS so the stage
+   plays out differently (frames with 2+ units 3446 -> 4080, boss stopped being reached). A
+   parameter that changes the scenario cannot be A/B'd by replaying the scenario. */
 const SEP_MIN  = 0.20;   // burial fraction below which a contact is left alone
 const SEP_GAIN = 0.5;    // share of the EXCESS burial taken out per pass
 const SEP_CAP  = 130;    // px/sec ceiling per unit, so nothing ever snaps apart

@@ -840,3 +840,48 @@ reads as having vanished. The fix above should move both.
 `drawVolc` for volcanic units and the accounting may simply not see it. Needs its own pass.
 
 Suite **2,732 ok / 3 fail**. Atlas verifier PASS.
+
+---
+
+# 0822p — "NO UNITS SHOULD EVER OVERLAP" COLLIDES WITH ONE OF MIKE'S OWN ASSERTIONS
+
+Mike, on the 0822o result: *"no units should ever overlap, they have unit boxes for a reason."*
+
+`SEP_MIN` is the deadzone below which a contact is deliberately left alone. Taking it to 0 does
+help — stage 1's stacked frames fell **28.8% -> 20.4%** on a comparable run — but it fails §213:
+
+    ok(_s213.touchMoved === 0,
+       'and separation leaves it alone — an authored formation keeps the shape it was drawn as');
+
+⚠ **THAT ASSERTION DEFENDS A DESIGN CHOICE, NOT A BUG.** The formations are AUTHORED to touch, and
+the deadzone is what preserves the shape they were drawn as. Blowing them apart is a visible change
+he did not ask for — his complaint was stage 1's pile-ups. So the value stays where it shipped and
+the conflict is recorded at the constant for him to settle. **When an assertion and an instruction
+disagree, the one who wrote both decides.**
+
+## ⚠ AND DO NOT CHASE THE REMAINDER BY RAISING SEP_CAP
+
+Swept 260/420/700 against the shipped 130:
+
+    SEP_CAP    130     260     420     700
+    stacked   20.4%   40.0%   70.5%    3.8%
+    frames     3446    3489    4080    4080   <- the tell
+
+Non-monotonic, and the frame count is why: a stronger push moves units into DIFFERENT POSITIONS,
+so the stage plays out differently, the boss stops being reached, and the runs are not comparable.
+**A parameter that changes the scenario cannot be A/B'd by replaying the scenario.** Picking 700
+off that table would have been picking the luckiest divergence.
+
+## WHAT THE REMAINING 20-29% ACTUALLY IS
+
+`s1jetdelta` in six of seven remaining pairs, overlapping SURFACE units — mines, patrol boats,
+landing craft. A jet crossing over a boat is an altitude difference; forcing them apart means
+deflecting jets off the routes Mike authored. Enemy boxes do not collide with each other in this
+engine either — only the player collides with them — so this is a VISUAL question about whether a
+jet passing over a boat reads as clipping or as altitude.
+
+Two things need his call, and neither is a number I should pick:
+  1. formations touching — keep the drawn shape, or separate them anyway?
+  2. air over surface — deflect jets off their routes, or treat it as altitude?
+
+Suite **2,732 ok / 3 fail** at the shipped value.
