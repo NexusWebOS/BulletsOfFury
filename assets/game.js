@@ -893,7 +893,12 @@ const _wwCache=Object.create(null);
 /* Every stage master in assets/levels is authored 800px wide (verified: stages
    1-8 all measure 800 across). Used as the pre-decode world width so nothing
    has to wait on a download to know the map is wider than the camera. */
-const MASTER_W = 800;
+/* ⚠ 680 SINCE 0822d, AND IT IS A FALLBACK NOBODY SHOULD REACH. Every stage 1-8 now ships a
+   680-wide plate and declares plateW explicitly; stage 9 is 800 and declares that. So this value
+   is only what an UNDECLARED stage would inherit, and the canonical width of the game is 680 —
+   leaving it at 800 would have handed a new stage the one width no playable plate has. A suite
+   sweep now asserts every cfg with a master declares plateW, so nothing reaches this silently. */
+const MASTER_W = 680;
 /* ⚠ THE STAGE-1 COASTLINE HAS ONE OWNER NOW (0821). It was written out at THREE sites as the
    bare literal 4605 — the naval swap, the wave gate, and the beaching test inside the naval
    tick. Swapping in CF_CoastlineDam updated the two that were named constants and MISSED the
@@ -1137,7 +1142,10 @@ function worldWidth(){
         if(im && im.naturalWidth) w=Math.max(VW, im.naturalWidth);
         _wwCache[st]=w;               // cache only once the art is authoritative
       } else if(XART._src && XART._src[mk]){
-        /* ⚠ MASTER_W IS 800 AND FOUR STAGES ARE NOT (0821). 1/4/5/6 all ship 680-wide plates
+        /* ⚠ SUPERSEDED 0822d: ALL EIGHT PLAYABLE STAGES ARE 680 NOW and each declares plateW,
+           so this fallback is unreachable for them; MASTER_W is 680 and stage 9 (800) is explicit.
+           The original note, kept because the failure mode it describes is the real one:
+           ⚠ MASTER_W IS 800 AND FOUR STAGES ARE NOT (0821). 1/4/5/6 all ship 680-wide plates
            now, so this fallback answered 800 for the opening frames and then SNAPPED to 680
            once the art decoded — reintroducing, from the other direction, the exact fault
            0801bb fixed: the engine believing a wrong world width while it places the player
@@ -2775,7 +2783,14 @@ function _levelCfg(){
        it is entered; the entry point from Level 5 is a separate piece of wiring. */
     /* RC2 REBUILD (drop 0810g) — Stage_09_Water_World_Naval_War, 800x5120. Open ocean with island
        fortresses and naval emplacements down both flanks. */
-    case 9: return {master:'waterworld800_rc2_master', liquid:null, fill:'#020220', tile:1.0, wide:true};
+    /* ⚠ STAGE 9 IS THE ONLY 800-WIDE PLATE LEFT (drop 0822e), and it was the ONLY stage relying
+       on the MASTER_W fallback. Its plate really is 800x5120 — it was not rescaled with 1-8
+       because stage 9 has no STAGES[] entry and cannot be reached, so there was nothing to verify
+       a conversion against. Declared EXPLICITLY rather than left to the default: the default is
+       680 now, and a silent fallback is what mismaps a stage without throwing. Whenever stage 9
+       is wired up, either rescale the plate to 680 or keep this line honest. */
+    case 9: return {master:'waterworld800_rc2_master', liquid:null, fill:'#020220', tile:1.0, wide:true,
+                    plateW:800, h:5120};
     default: return null;
   }
 }

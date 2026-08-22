@@ -362,3 +362,34 @@ columns — it is baked now rather than applied live. The gain is that it is app
 fixed phase, instead of recomputed every frame against an eased fractional camX. `CAM_SNAP` is
 now moot for these stages: at 680 the device factor is an integer 2.00, which is the stable case
 0822a measured.
+
+---
+
+# 0822e — WHAT THE RESCALE INVALIDATED
+
+Converting 1-8 to 680 left a default behind that now describes nothing in the game.
+
+⚠ **`MASTER_W` WAS STILL 800, AND IT IS THE SILENT FALLBACK FOR ANY STAGE THAT OMITS `plateW`.**
+Every stage 1-8 declares 680 now, so none of them reach it — but the value a NEW stage would
+inherit was the one width no playable plate has. It is 680 now.
+
+⚠ **AND I NEARLY CHANGED IT WITHOUT LOOKING AT STAGE 9.** `waterworld800_rc2_master` is genuinely
+**800x5120** — measured, not assumed — and stage 9 was the ONLY consumer of the fallback. Setting
+MASTER_W to 680 while stage 9 leaned on it would have mismapped that stage silently, which is
+precisely the failure mode the `cfg.h`/4800 note already describes. Stage 9 declares `plateW:800,
+h:5120` explicitly now, so the default and the odd stage are independent.
+
+**Stage 9 was NOT rescaled**, deliberately: it has no `STAGES[]` entry (the two `n:9,` hits in the
+file are `szMin:9` and a snow-effect row, not a stage), so it cannot be reached and a conversion
+could not be verified against anything. When it is wired up, either rescale it to 680 or keep that
+cfg line honest.
+
+## THE RULE, NOT THE NUMBER
+
+    for stg 1..9: a cfg with a master MUST declare plateW
+
+Nine new assertions. A stage that omits it inherits a width and mismaps without throwing — there
+is no exception worth the silence, and the previous drop's two stale literals are the argument for
+asserting rules instead of values.
+
+Suite **2,732 ok / 3 fail** — the same three environmental `_superseded/` checks.

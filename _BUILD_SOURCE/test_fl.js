@@ -1508,6 +1508,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     ok(vm.runInContext("run.stage="+stg+"; worldWidth()", ctxv)===px.w,
        'stage '+stg+' worldWidth() resolves to its plate width '+px.w);
   }
+  /* ⚠ NO STAGE MAY RELY ON THE MASTER_W FALLBACK (drop 0822e). It is a silent default: a stage
+     that omits plateW inherits it and mismaps without throwing, which is the exact failure the
+     cfg.h/4800 note describes. Stage 9 was the last one leaning on it and now declares 800
+     explicitly. This asserts the RULE, so a new stage cannot quietly inherit a width. */
+  for(let stg=1; stg<=9; stg++){
+    const master = vm.runInContext("run.stage="+stg+"; (_levelCfg("+stg+")&&_levelCfg("+stg+").master)||null", ctxv);
+    if(!master) continue;
+    const pw = vm.runInContext("run.stage="+stg+"; (_levelCfg("+stg+")&&_levelCfg("+stg+").plateW)||null", ctxv);
+    ok(pw!==null, 'stage '+stg+" declares plateW explicitly ("+pw+") - it does not inherit MASTER_W");
+  }
   ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv), 'and the sludge bed it shows through the plate');
   ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv),
      'and it KEEPS its sludge — the RC2 plate is magenta-punched to alpha and the sludge is what shows through');
