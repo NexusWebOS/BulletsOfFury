@@ -885,3 +885,55 @@ Two things need his call, and neither is a number I should pick:
   2. air over surface — deflect jets off their routes, or treat it as altitude?
 
 Suite **2,732 ok / 3 fail** at the shipped value.
+
+---
+
+# 0822q — THREE STAGE-2 ENEMIES WERE INVISIBLE, AND ONE WAS SHOOTING AT YOU BLIND
+
+Chasing Mike's "enemies disappearing" from stage 1 turned up nothing there — but the same probe on
+stage 2 found 34.2% of unit-frames drawing NOTHING:
+
+    unit        frames on screen   blits   art
+    magmagun    3,230                  0   undefined
+    spinner     2,235                117   undefined
+    dodger        870                  0   undefined
+    every other unit                ~1+/f   a real cell key
+
+All three spawned, moved, shot and collided while drawing nothing — the fallthrough CLAUDE.md
+describes, reached by a route it does not name: `nefRow(type)` finds no row, so `e.art` is never
+set at all.
+
+## ⚠ I FIXED THE WRONG TABLE FIRST, AND THE MEASUREMENT CAUGHT IT
+
+`VOLC` carries `art:'pod'` / `'disc'` / `'ash'` for exactly these three, which reads like the
+answer. It is not: those are UNIT-TYPE names, `ENEMY_ART` holds none of them, and the spawn branch
+that owns these units copies `w/h/hp/score` off VOLC and **never reads `.art` at all**. Editing it
+changed the numbers not one blit — and re-running the probe is the only reason I know that instead
+of having shipped it. **The branch that owns the object was `NEF_S2`**, which is what `nefRow()`
+resolves. That is the same lesson `spawnEnemy`'s switch teaches, met from a new direction.
+
+Art resolved to what those aliases were pointing at rather than picking something new: 'pod' is the
+eruption pod (what `eye` draws), 'disc' the volcanic mine, 'ash' the molten drone. `w/h/hp/score`
+mirror VOLC exactly, so no behaviour moves.
+
+    magmagun  3,230 frames -> 3,230 blits   (1.00/frame)
+    spinner   2,390        -> 2,390         (1.00)
+    dodger      772        ->   772         (1.00)
+
+## ⚠ SPINNER'S TELEGRAPH WAS THE INVISIBLE PART
+
+Its own comment says it: *"THE SPIN IS DRAWN, NOT IMPLIED: `e.spin` is what drawNewEnemyArt rotates
+by."* The wind-up before its ring of 10 IS the sprite rotating — so with no sprite there was no
+tell at all, and the ring landed out of nowhere. A disc is also the shape that reads best spinning,
+which is what its own alias was asking for.
+
+## AND I DESCRIBED BOTH UNITS WRONG BEFORE READING THE RIGHT BLOCKS
+
+Told Mike magmagun "holds a lane and fires a single bolt" and that spinner's aimed salvo
+contradicted its "rings you" design note. Both wrong: I read `sed` ranges without confirming which
+`K===` block owned them. magmagun fires a 3-round salvo twice then withdraws upward; spinner
+already fires the ring exactly as designed. **A line range is not a scope.** Two authored families
+(`nef_s2_drill_buggy`, `nef_s2_tracked_flame_turret`) remain unused — neither suits a unit that
+leaves upward, so they stay on disk.
+
+Suite **2,732 ok / 3 fail**. Atlas verifier PASS.

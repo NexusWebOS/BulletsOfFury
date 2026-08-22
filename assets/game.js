@@ -22949,6 +22949,21 @@ const NEF_S1 = {
    and difficulty do not move; widths follow each sprite's own aspect so nothing is squashed.
    ============================================================ */
 const NEF_S2 = {
+  /* THREE STAGE-2 UNITS HAD NO ROW HERE AND WERE THEREFORE INVISIBLE (drop 0822q).
+     Measured on stage 2: magmagun 3,230 frames on screen with ZERO blits, spinner 2,235 with 117,
+     dodger 870 with zero. They spawned, moved, shot and collided while drawing nothing.
+     THE VOLC ROSTER LOOKS LIKE IT FIXES THIS AND DOES NOT. It carries art:'pod' / 'disc' / 'ash',
+     but those are UNIT-TYPE names, ENEMY_ART holds neither, and the spawn branch that owns these
+     units copies w/h/hp/score off VOLC and never reads .art at all. Editing VOLC changed nothing -
+     measured, not assumed. nefRow(type) is what sets art, and it looks HERE.
+     Resolved to what those aliases pointed at rather than picking new art: 'pod' is the eruption
+     pod (what eye draws), 'disc' the volcanic mine, 'ash' the molten drone. w/h/hp/score mirror
+     VOLC exactly so no behaviour moves.
+     SPINNER'S TELEGRAPH DEPENDED ON THIS: its wind-up is e.spin rotating the sprite, so with no
+     art its ring of 10 arrived with no tell at all. A disc is also what reads best spinning. */
+  magmagun:{art:'nef_s2_eruption_pod',              w:38, h:38, hp:30, score:900},
+  spinner: {art:'nef_s2_volcanic_mine',             w:36, h:34, hp:22, score:840},
+  dodger:  {art:'nef_s2_molten_drone',              w:32, h:30, hp:16, score:700},
   ash:     {art:'nef_s2_molten_drone',               w:46, h:39, hp: 7, score:480},
   skim:    {art:'nef_s2_magma_skimmer',              w:43, h:39, hp: 8, score:520},
   disc:    {art:'nef_s2_volcanic_mine',              w:53, h:44, hp: 6, score:760},
