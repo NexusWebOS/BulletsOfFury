@@ -208,8 +208,11 @@ Full writeup: `docs/PASSOVER_0819C.md`.
 ⚠ **PANNING IS THE GENRE, AND 0819b's PREMISE WAS FALSE.** That drop states Raiden and Fire
 Shark have no horizontal camera and reasoned a zoom-to-fit from it. Mike, with both games in front
 of him: *"we still have screen panning left and right, thats how fireshark and raiden did it."*
-`VIEW_FIT = 0` restores the 0818 camera exactly; the zoom stays as one dial and is **PARKED**
-pending Mike's call on plate width (he is weighing 800 against 720). **A whole drop was built on a
+`VIEW_FIT = 0` restores the 0818 camera exactly. ~~the zoom stays as one dial and is **PARKED**
+pending Mike's call on plate width (he is weighing 800 against 720)~~ — **SETTLED 0822d at 680.**
+All four remaining 800 plates were rescaled on disk, so every stage is a true 680 world at zoom
+1.00 and nothing is resampled at runtime. `CAM_SNAP` is moot as a result (integer 2.00 device
+factor everywhere) and stays at 0. **A whole drop was built on a
 premise nobody checked** — four follow-on fixes and an inverted assertion, all downstream of it.
 
 ⚠ **THE THRUSTER WAS TWO SYSTEMATIC DEFECTS, WHICH IS WHY IT WAS "EVERY PILOT".**
@@ -1635,8 +1638,16 @@ is missing.**
 3. **More projectiles, and patterns that force the player to hold specific spots.** Five new boss
    patterns and the quad-laser's four lanes land this for BOSSES. The ordinary enemy roster is
    still the stage-3 change only, and is the rest of the ask.
-4. **Enemies still appearing out of thin air on level 1** — the long-standing pop-in; 2 of 29
-   units were last measured entering at (21,67).
+4. ~~**Enemies still appearing out of thin air on level 1**~~ — **CLOSED 0822l, MEASURED CLEAN.**
+   Drove all eight stages and recorded every unit on the frame it was born, in SCREEN space:
+   **zero ENTERING units are on screen at birth, on any stage.** 0812k + 0813x did the job. The
+   only units that appear in view are declared `inPlace` — stage 2's `ash` SPLIT halves (6) and
+   stage 7's surfacing `maw` (2) — which the clamp exempts on purpose and which Mike authored to
+   appear where they are (0811o).
+   ⚠ **AND THE FIRST RUN OF THAT PROBE "FOUND" 17 POP-INS ACROSS FOUR STAGES.** It compared WORLD
+   x against 0..VW without subtracting camX — the exact confusion this file already records as
+   having bitten three times. A jet measured at x=-26 was 111.5px clear of a camera whose left edge
+   was at world 100. **Before reporting a pop-in, subtract the camera.**
 
 ## STAGE 7 IS MIKE'S CORRECTED PLATE (drop 0810t)
 

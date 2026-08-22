@@ -692,3 +692,34 @@ under test never happened.** The fix is not more care — it is a precondition a
 probe say INCONCLUSIVE instead of PASS.
 
 Suite **2,732 ok / 3 fail**.
+
+---
+
+# 0822l — THE LEVEL-1 POP-IN DOES NOT EXIST, AND MY FIRST PROBE INVENTED 17 OF THEM
+
+Long-standing item: *"enemies still appearing out of thin air on level 1 — 2 of 29 units last
+measured entering at (21,67)."* Drove all eight stages, recording every unit on the frame it was
+born:
+
+    stage   units   ENTERING units on screen at birth
+    1..8    305     0
+
+Zero, on every stage. 0812k (clear the SPRITE, not the world edge) and 0813x (measure it off the
+CAMERA) did the job. The only units in view at birth declare `inPlace` — stage 2's `ash` SPLIT
+halves (6) and stage 7's surfacing `maw` (2) — which the clamp exempts deliberately and which Mike
+authored to appear where they are (0811o).
+
+⚠ **THE FIRST RUN OF THIS PROBE REPORTED 17 POP-INS ACROSS FOUR STAGES, AND I ALMOST FIXED THEM.**
+It compared WORLD x against `0..VW` without subtracting camX — the exact confusion this file
+already records as having bitten three times. A jet flagged at x=-26 was 111.5px clear of a camera
+whose left edge was at world 100. I then built a second theory on top of the bad number (that `c.w`
+was not final at the clamp, so `_half` fell back to 16) and measured THAT before acting: `w` is 95
+at spawn and unchanged. Both the finding and the follow-up theory were wrong.
+
+**Before reporting a pop-in, subtract the camera.** Second entry in this passover's running tally
+of probes that read as meaningful when nothing happened.
+
+Also corrected: the plate-width note still said PARKED pending a call between 800 and 720. Settled
+0822d at 680.
+
+No code changed in 0822l — the system was already correct.
