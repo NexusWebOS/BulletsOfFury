@@ -1003,6 +1003,38 @@ const ENTRY_CLEAR = 64;         // px of SCREEN an entering unit must cross befo
 let VIEW_FIT = 0;
 const VIEW_PLATE_W = 680;   // the plate width the game is standardising on (Mike, 0819d/0819e)
 const VIEW_Z_MIN = 0.55;        // never shrink past this, whatever a future stage's width is
+/* CAMERA PIXEL SNAP (drop 0822a) — OFF BY DEFAULT, and it is Mike's dial, not mine.
+
+   `ctx.translate(-camX)` is never rounded and camX is eased (`+= (want-camX)*0.12`), so it is
+   permanently fractional. On a stage whose zoom is not 1 that is a moving SAMPLING PHASE: the
+   world->device factor is viewZoom()*2, which is 1.70 on the 800-wide plates, so which source
+   columns survive the nearest-neighbour reduction changes as the camera eases. Measured on
+   stage 2, one textured row, camX stepped by sub-pixels:
+
+       raw      1px-runs 136 139 134 140 139 140   (spread 6)   5 distinct distributions
+       snapped  1px-runs 136 136 135 135 137 137   (spread 2)   identical camX now reproduces
+
+   ⚠ IT IMPROVES THE CRAWL, IT DOES NOT ABOLISH IT, AND I AM NOT PRETENDING OTHERWISE. The
+   residual 2 is window CLIPPING at the canvas edge and is the same order as stage 1 measures at
+   its stable integer scale, so it is the floor rather than a leftover bug.
+
+   ⚠ AND IT BUYS THAT BY QUANTISING THE CAMERA to 1/1.70 = 0.588 world px per step. That is a
+   FEEL change — crawl traded for possible judder — and this file says plainly that how panning
+   feels is Mike's call ("Mike is weighing 640x480 against 800-wide plates"). So it ships as a
+   dial at 0, which is the current camera line for line, and he flips it to compare.
+
+   Verified live on stage 2, 174 frames: at 0 every frame is OFF the device lattice (worst error
+   0.492 device px); at 1 every frame is ON it (worst 2.8e-14).
+
+   The 680 plates (1/4/5/6) are already at an integer factor of 2.00 and measure stable, so this
+   only ever moves stages 2, 3, 7 and 8 — the ones still authored 800. */
+let CAM_SNAP = 0;
+function camSnap(x){
+  let S;
+  try{ S = ((ctx && ctx.canvas && ctx.canvas.width) ? ctx.canvas.width/VW : 1) * viewZoom(); }
+  catch(e){ S = 1; }
+  return (S > 0) ? Math.round(x*S)/S : x;
+}
 function viewZoom(){
   /* ============================================================
      THE 680 PLATE, WITHOUT RE-AUTHORING THE PLATES (Mike, 0819d): "Lets try 680 instead."
@@ -1110,7 +1142,10 @@ function worldWidth(){
            once the art decoded — reintroducing, from the other direction, the exact fault
            0801bb fixed: the engine believing a wrong world width while it places the player
            and the camera. The stage's own cfg is the authority; MASTER_W is only the default
-           for the plates still authored at 800 (stages 2 and 3). */
+           for the plates still authored at 800 — which is stages 2, 3, 7 AND 8, measured:
+           nst2_master_v2 and nst3_master_v2 are 800x4800, nst7_master_v2 800x4062 and
+           blackhole800_rc2_master 800x5120. This comment said "2 and 3" and silently omitted
+           the two widest plates in the game. */
         w=Math.max(VW, (cfg && cfg.plateW) || MASTER_W);   // authored width, no decode required
       }
     }
@@ -1129,6 +1164,7 @@ function updateCamX(){
   const want = clamp((player?player.x:_vw/2) - _vw/2, 0, WORLD_W - _vw);
   camX += (want - camX) * 0.12;
   camX = clamp(camX, 0, WORLD_W - _vw);
+  if(CAM_SNAP) camX = camSnap(camX);        // see the note at CAM_SNAP — off by default
 }
 const HUDH = 62;                           // HUD strip height (separate canvas)
 const cv = document.getElementById('screen');
@@ -37821,12 +37857,35 @@ function bmfDraw(k,text,x,yTop,H,alpha){
 let _msgFace = null;
 function msgFaceUse(k){ _msgFace = (k && bmfReady(k)) ? k : null; return _msgFace; }
 const FONT_DESC = {',':1, ';':1};
+/* WHERE A MARK RIDES IN THE CAP BOX (drop 0822a) — the counterpart FONT_DESC never had.
+
+   glyphBox bottom-aligned EVERY glyph, so a mark that hangs above the baseline was dropped onto
+   it. That is the "THEN LET,S SHOW THEM" bug: the apostrophe resolves fine, lands on the
+   baseline, and is then indistinguishable from the comma sitting next to it. The hyphen had the
+   same disease and nobody had named it — bottom-aligned, it reads as an UNDERSCORE.
+
+   FONT_RIDE is the fraction of the leftover cap-box space that belongs ABOVE the glyph.
+   1 = on the baseline (the default, and correct for . : ! ? / and the brackets), 0 = hung from
+   cap height.
+
+   ⚠ THESE NUMBERS ARE MEASURED OFF MIKE'S OWN DIALOGUE PACK, NOT CHOSEN — and CLAUDE.md is
+   explicit that writing this table from the argument is how you lift a mark that was already
+   correct. The stage face cannot answer it: all three punctuation cells are TIGHT slices with a
+   zero-pixel margin on every side (measured), so the plate carries no vertical placement at all.
+   fury-dialogue-font-map.json does carry it. Against 'A' spanning y 2..16:
+       '  2..8    slack 8   above 0   -> 0.00
+       -  8..12   slack 10  above 6   -> 0.60
+       .  11..16  slack 9   above 9   -> 1.00   <- falls out as the existing default
+       ,  11..18  slack 7   above 9   -> 1.29   <- >1, i.e. below the baseline = FONT_DESC
+   The two glyphs this code ALREADY got right derive to exactly what it already does, which is
+   the check that matters: the same formula that moves ' and - leaves . and , untouched. */
+const FONT_RIDE = {"'":0.00, '-':0.60};
 function glyphBox(art, f, H, ch){
   const cap = fontCapH(art);
   if(!(cap > 0)) return {w: f[2]*(H/f[3]), h: H, dy: 0};
   const sc = H / cap;
   const gh = f[3]*sc;
-  let dy = H - gh;
+  let dy = (H - gh) * (ch && FONT_RIDE[ch] != null ? FONT_RIDE[ch] : 1);
   if(ch && FONT_DESC[ch] && art.font){
     const pn = art.font['.'], pf = pn && art.frames[pn];
     if(pf && f[3] > pf[3]) dy += (f[3]-pf[3])*sc;

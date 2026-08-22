@@ -441,14 +441,29 @@ failed it on code where the pilot beat still uses the smiling portrait. Behaviou
 ⚠ **THE PROBE WAS RUN AGAINST THE PRE-DROP TREE AND FAILED 3 OF 4.** A probe that has only ever
 been green is not evidence. The fourth is the control.
 
-⚠ **OPEN, FOUND NOT FIXED: THE APOSTROPHE RENDERS AS A COMMA** — "THEN LET,S SHOW THEM" in the proof
-frame. The glyph RESOLVES (`sfont1_p39`/`sfont3_p39` are registered), so this is not the missing-
-punctuation case `fontGlyph` handles. `glyphBox` bottom-aligns EVERY glyph in the cap box, and an
-apostrophe is a TOP-hanging mark — 0809q added `FONT_DESC` for glyphs that hang BELOW the baseline
-and there is no counterpart for ones that hang ABOVE it. ⚠ **DO NOT WRITE THAT TABLE FROM THE
-ARGUMENT.** Rendered, `p39` and `p44` are both chunky carved slabs and which way up each is meant
-to sit is not readable off the plates. Settle it with one render: `'` and `,` through
-`msgTextLeft` at dialogue size beside a `.`, with and without a `dy=0` override.
+~~⚠ **OPEN, FOUND NOT FIXED: THE APOSTROPHE RENDERS AS A COMMA**~~ — **CLOSED 0822a**, and it was
+TWO glyphs. `FONT_RIDE` is the counterpart `FONT_DESC` never had: the fraction of leftover cap-box
+space belonging ABOVE a mark (1 = baseline default, 0 = hung from cap height). Full writeup:
+`docs/PASSOVER_0822A.md`.
+
+⚠ **THE HYPHEN WAS BROKEN THE SAME WAY AND WAS ON NO LIST** — bottom-aligned, `-` reads as an
+UNDERSCORE (`MID_AIR`). Only the apostrophe was ever reported. Rendering the whole punctuation row
+costs the same as rendering the one complaint and is what found it. **Render the set, not the
+complaint.**
+
+⚠ **THE "DO NOT WRITE IT FROM THE ARGUMENT" WARNING WAS RIGHT FOR A HARDER REASON THAN CAUTION** —
+the stage-face punctuation cells are TIGHT slices, ink bbox == full cell, zero margin on all four
+sides (measured, p39/p44/p46). A tight slice carries NO vertical placement. The plate cannot answer
+the question at all. `fury-dialogue-font-map.json` can, and did: against `A` at y 2..16, `'` rides
+0.00, `-` 0.60, `.` 1.00, `,` 1.29. ⚠ **THE TWO ALREADY-CORRECT GLYPHS DERIVE TO WHAT THE CODE
+ALREADY DID** — `.` to the bottom-align default, `,` to above 1.0 which is exactly `FONT_DESC`'s
+existing drop. A table that reproduces the correct cases before it touches the broken ones is the
+only kind worth trusting, and the after-render confirms `.` `,` `:` did not move by a pixel.
+
+⚠ **STAGE 2 IS CALLED "IT'S HOT IN HERE"** — this was never only a dialogue bug. Every `stageText`
+caller has it (banners, stats, menus, password), plus dialogue during the decode window, since
+`msgFaceUse` returns null while `bmfReady` is false and the BMF face is the only one with real
+per-glyph metrics.
 
 **0814a — Mike's items 1, 2 and 3 are ONE defect, and it is now closed.** Full writeup:
 `docs/PASSOVER_0814A.md`.
