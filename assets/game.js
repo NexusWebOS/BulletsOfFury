@@ -38860,6 +38860,15 @@ function drawLaunch(dt){
       ctx.save();
       ctx.globalCompositeOperation='lighter';
       ctx.globalAlpha=(ph==='run')?0.95:0.55;      // full burn on the run, banked on the brake
+      /* ⚠ THE LAUNCH PLUME IS SEATED DIFFERENTLY FROM PLAY, AND UNIFYING IT NEEDS THE
+         SIZING UNIFIED FIRST (drop 0822n, attempted and reverted). PLAY seats the flame with
+         0819c's closed form and flips it so the wide end meets the nozzle; this draws it
+         straight at a hardcoded 0.30 of the hull. Porting the seat ALONE moved it wrong twice
+         — once above the aircraft, once over the hull — because PLAY sizes the plume from the
+         per-pilot MOUNT scale while this sizes it to shipH*1.15 against the reel's largest
+         frame, so the `- _th*PLUME_CORE_F` term over-corrects at this scale.
+         The real fix is one sizing rule and one seat, read by both. Left as it shipped until
+         that is done properly — a wrong flame is worse than a differently-seated one. */
       ctx.drawImage(im, shipX-_tw/2, shipY+shipH*0.30, _tw, _th);
       ctx.restore();
     }

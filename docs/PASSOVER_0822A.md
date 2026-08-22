@@ -748,3 +748,40 @@ call inserted before that return would be skipped by every other exit. `drawBG` 
 the arrival frame matches the first play frame instead of jumping past it.
 
 Suite **2,732 ok / 3 fail**. Atlas verifier PASS.
+
+---
+
+# 0822n — THE LAUNCH JOIN: ATTEMPTED, REVERTED, AND WHY
+
+The last item on the list: *"the craft draws twice at the launch join — drawLaunch rolls its own
+ship and `nthp_` plume, PLAY draws the player through its own path, nothing forces them to agree."*
+
+Captured `--state LAUNCH` first, and the defect is real and VISIBLE, not the 2.5-4.3% probe
+abstraction it was filed as: the plume's mass floats clear of the tail, taper toward the hull,
+where PLAY seats it at 8px with the wide end on the nozzle.
+
+⚠ **THERE ARE TWO DIFFERENCES, NOT ONE.** `drawLaunch` seats at a hardcoded `shipY + shipH*0.30`
+AND never flips. 0801fp flipped the PLAY plume so the large section contacts the back of the ship;
+0819c then derived the closed-form seat so the plume's own height cancels. The launch has neither.
+
+⚠ **PORTING THE SEAT ALONE FAILED TWICE, AND BOTH WERE WORSE THAN SHIPPED.** First attempt put the
+flame ABOVE the aircraft — under `scale(1,-1)` local +y maps to screen -y, so drawing at local 0
+runs it up the screen. Second attempt, corrected to `-_th`, put the flare ON the hull.
+
+⚠ **THE ROOT CAUSE IS SIZING, NOT SEATING.** PLAY sizes the plume from the per-pilot MOUNT scale;
+the launch sizes it to `shipH*1.15` against the reel's largest frame. The seat's
+`- _th*PLUME_CORE_F` term is calibrated to PLAY's proportions, so at the launch's much larger `_th`
+it over-corrects and drags the flame over the ship. **One formula cannot be ported into a context
+that sizes its input differently.** The real fix is one sizing rule AND one seat, read by both.
+
+**Reverted to exactly what shipped.** A wrong flame is worse than a differently-seated one, and the
+launch is a cinematic where a mistake is unmissable. The finding is recorded at the call site so
+the next attempt starts from the sizing.
+
+⚠ **AND THE HOIST CAME OUT TOO.** `_HB` was lifted to module scope to let the launch read it; once
+the fix reverted it bought nothing, and §120 greps the SOURCE for a literal `_HB={...}` and parses
+the values to check they span the measured 0.834-0.921. The hoist failed that assertion and
+silently skipped three more inside its `if`. **A source-scanning assertion turns a harmless
+refactor into a real failure** — worth knowing before moving any table this suite reads by regex.
+
+game.js is comment-only against HEAD. Suite **2,732 ok / 3 fail**.
