@@ -525,3 +525,48 @@ day the real per-path scroll number is identified.
 Still queued and NOT started: Maverick's tappable laser as Fire Shark's widening arc (frames
 captured — narrow at the nose, spans the screen by the top, discrete segments, ~12-frame cycle),
 and the boss / enemy behaviour work.
+
+---
+
+# 0822h — MAVERICK'S TAP IS A WIDENING ARC
+
+Mike: *"The helix beam in fire shark goes across the screen, that should be how mavericks tappable
+laser should operate."*
+
+Read off the capture frame by frame, that weapon is not a beam. Each tap emits a tight arc just
+above the nose which WIDENS as it climbs, until near the top it spans a broad band of the screen.
+It is discrete segments along the arc, not a column, cycling roughly every 12 frames.
+
+    before   one persistent kind:'beam', a solid column, width 14+lv*4
+    after    a volley of 5+lv segments fanning from ~one point
+             lv1: 6 segments   lv5: 10 segments
+
+Measured on the real fire path, level 1: span **14px at the nose -> 152.7px after 150.6px of
+climb**, and the bolts are still alive at the end. Over the full 512px column that is the band he
+described.
+
+⚠ **THE FAN COMES FROM VELOCITY, NOT FROM SPAWN SPACING.** The bolts leave from essentially one
+point and separate as they fly. The charged flurry's own spawn already carries this note — spread
+across a wide row at launch, a volley reads as "split apart" rather than "bursting".
+
+⚠ **IT REUSES kind 'hfl' RATHER THAN ADDING A KIND.** That mover already advances a bolt along its
+own `_hdir` with the sine PERPENDICULAR to the heading, and its draw already picks the lzr_ reel
+and scales it with `_grow` as the bolt climbs. The widening, the segmenting and the growth all
+existed; a new kind would have meant re-wiring a mover, a draw and a collision path to arrive back
+here.
+
+⚠ **AND IT IS NOT THE CHARGED FLURRY.** No `_full`, no `_pierceAll`, no `_bossDmg`; dmg stays the
+old laser's `2+lv/2`. Pierce is OFF — one beam piercing everything is one thing, ten segments each
+doing it is another, and that is a POWER call for Mike, not a shape one. One line if he wants it.
+
+## THE ASSERTION THAT FAILED WAS PINNING THE OLD SHAPE
+
+    ASSERT FAIL: laser fire spawns a level-tagged beam
+
+It checked `kind==='beam' && lv===3`. The comment directly above the block states the rule it is
+really there for — *"firing spawns bullets that carry the level for tinting"* — so the KIND was
+incidental, naming whatever the laser happened to be that day. Repointed at the rule: the lv tag is
+still asserted, and the segment COUNT is asserted too, because a fan that silently collapsed to one
+bolt would otherwise sail through.
+
+Suite **2,732 ok / 3 fail** — the usual environmental three.

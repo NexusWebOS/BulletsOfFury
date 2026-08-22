@@ -12453,11 +12453,46 @@ function pShoot(){
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv||1));
-  } else if(w===3){ // LASER — solid continuous beam that burns straight up the column
-    const dmg = 2 + Math.floor(lv/2);            // lv1:2 lv2:3 lv3:3 lv4:4 lv5:4
-    let beam=null; for(const b of pBullets){ if(b.kind==='beam'){ beam=b; break; } }
-    if(!beam){ beam={kind:'beam', pierce:true, lv, dmg, x:player.x, y:player.y, w:0, h:0, vx:0, vy:0, life:0.15, _hit:[], _ht:0, _bt:0}; pBullets.push(beam); }
-    beam.dmg=dmg; beam.lv=lv; beam.life=0.15; beam.w=14+lv*4;   // width grows with level; refreshed while firing
+  } else if(w===3){ // LASER — each TAP throws a WIDENING ARC (drop 0822h)
+    /* Mike, from the Fire Shark tape: "The helix beam in fire shark goes across the screen, that
+       should be how mavericks tappable laser should operate."
+
+       Read off the capture frame by frame: it is not a beam at all. Each tap emits a tight arc
+       just above the nose that WIDENS as it climbs, until near the top it spans a broad band of
+       the screen. It is built of discrete segments along that arc, not a solid column, and it
+       cycles roughly every 12 frames.
+
+       So the fan comes from VELOCITY, not from spawn spacing — the bolts leave from essentially
+       one point and separate as they fly. That is the same note the charged flurry already
+       carries at its own spawn, and it is why spreading them across a wide row at launch reads as
+       "split apart" rather than "bursting".
+
+       ⚠ IT REUSES kind 'hfl' RATHER THAN ADDING A KIND. That mover already advances a bolt along
+       its own `_hdir` with a sine PERPENDICULAR to the heading, and its draw already picks the
+       lzr_ reel and scales it up with `_grow` as the bolt climbs — the widening, the segmenting
+       and the growth all exist. A new kind would have meant re-wiring a mover, a draw and a
+       collision path to arrive at what this already does.
+
+       ⚠ AND IT IS DELIBERATELY NOT THE CHARGED FLURRY. No `_full`, no `_pierceAll`, no
+       `_bossDmg`, and dmg stays the old laser's 2+lv/2 — the charge weapon keeps its identity.
+       Pierce is OFF: one beam piercing everything is one thing, six to ten segments each doing it
+       is another, and that is a power call rather than a shape one. */
+    const dmg = 2 + Math.floor(lv/2);            // lv1:2 lv2:3 lv3:3 lv4:4 lv5:4 — unchanged
+    const n = 5 + lv;                            // lv1:6 segments .. lv5:10
+    const spread = 0.30 + lv*0.035;              // half-angle off vertical; the arc widens with level
+    const sp = 7.2;
+    for(let i=0;i<n;i++){
+      const t = (n===1) ? 0 : ((i/(n-1))*2 - 1);           // -1 .. +1 across the fan
+      const a = -Math.PI/2 + t*spread;
+      const x0 = clamp(player.x + t*7, 6, VW-6);           // merged launch, a hand's width across
+      const y0 = player.y - 14 - (1-Math.abs(t))*5;        // centre leads, so the row reads convex-up
+      pBullets.push({
+        kind:'hfl', x:x0, y:y0, _hx0:x0, _hy0:y0, _hcx:x0, _hcy:y0,
+        _hdir:a, _hspd:sp, vx:Math.cos(a)*sp, vy:Math.sin(a)*sp,
+        _hstr:(i%2), _hph:i*0.9, _fl:i%7,
+        w:18, h:44, dmg, lv, _grow:1, _hs:[], _ht:0, _bt:0
+      });
+    }
     (Audio.SFX.laser||Audio.SFX.spread||Audio.SFX.shoot)();
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */

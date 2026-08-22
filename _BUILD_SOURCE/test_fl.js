@@ -691,7 +691,13 @@ ok(shOk, 'floating shield art present (fallback) for all 5 levels');
   vm.runInContext("run.weapon=1; run.wlevel=5; pBullets.length=0; player.fireCd=0; pShoot();", ctxv);
   ok(vm.runInContext("pBullets.some(b=>b.kind==='spread' && b.lv===5)", ctxv), 'spread fire spawns level-tagged bullets');
   vm.runInContext("run.weapon=3; run.wlevel=3; pBullets.length=0; player.fireCd=0; pShoot();", ctxv);
-  ok(vm.runInContext("pBullets.some(b=>b.kind==='beam' && b.lv===3)", ctxv), 'laser fire spawns a level-tagged beam');
+  /* ⚠ REPOINTED 0822h. This pinned kind==='beam', but the rule the block is protecting is the
+     one in the comment above it - firing spawns bullets that CARRY THE LEVEL for tinting. The kind
+     was incidental, naming whatever the laser happened to be that day, and the laser is a widening
+     arc of 'hfl' segments now. The lv tag is the load-bearing half and it is still asserted; the
+     count is asserted too, because a fan that silently became one bolt would otherwise pass. */
+  ok(vm.runInContext("pBullets.filter(b=>b.kind==='hfl' && b.lv===3).length>=6", ctxv),
+     'laser fire spawns a level-tagged ARC of segments, not a single column');
 }
 
 console.log('\n=== 19. vault vehicle arsenal (tanks/aircraft/bosses) ===');
