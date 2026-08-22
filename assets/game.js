@@ -16329,6 +16329,7 @@ function updatePlay(dt){
         // FIRE SHARK / RAIDEN TRAD JETS (Mike, 0819): fly in, carve ONE full circle, then CHARGE
         // the player. No guns, no missiles — the airframe is the ordnance, and the generic
         // body-contact check below is the threat. Kill it before it commits.
+        e._chgTellT=(e._chgTellT||0)+dt;      // the warning clock — see CHARGE_TELL
         if(e._phase==null){
           e._phase='in'; e._faceAng=Math.PI; e._faT=1;
           e.shoots=false; e.fk=null;                              // whatever the roster said: silent
@@ -16361,7 +16362,11 @@ function updatePlay(dt){
             }
           }
         } else if(e._phase==='loop'){
-          if(curlStep(e,dt,1)){                                   // ONE revolution, then commit
+          /* ⚠ THE COMMIT WAITS FOR THE WARNING, NOT THE OTHER WAY ROUND. On the shortest run-in
+             measured the circle finishes at 2.97s, a hair inside the three seconds Mike asked
+             for, so the floor holds it a few frames longer. It almost never fires — which is the
+             point: the choreography is unchanged in the common case. */
+          if(curlStep(e,dt,1) && (e._chgTellT||0)>=CHARGE_TELL){    // ONE revolution, then commit
             e._phase='charge'; e._faT=0;
             const a=Math.atan2(player.y-e.y, player.x-e.x);
             e._cvx=Math.cos(a); e._cvy=Math.sin(a); e._cSpd=3.0;
@@ -17670,6 +17675,50 @@ function dmgVent(e, i){
    is the same reason drawEnemyDamage is hooked there (0807f). */
 const LASER_TELL = 0.55;
 const LASER_TELL_COL = {spread:'#ffb02e', straight:'#5fe0ff'};
+/* ============================================================
+   A CHARGE HAS TO BE ANNOUNCED (Mike, 0821f): "give enemies who charge at you some indicator to
+   the player that they are going to 3 seconds before to get out of the way."
+
+   `loopcharge` is the only pattern in the game whose airframe IS the weapon — it flies in, carves
+   one circle, then commits at the player with no shot to dodge. Measured before designing this:
+   the run-in is 1.8-2.6s and the circle is a flat 1.17s, so the charge lands 3.0-3.7s after the
+   unit appears. That is why the tell starts at SPAWN rather than at the loop — it is the only
+   placement that buys three seconds WITHOUT touching the choreography Mike asked for in 0819
+   ("ONE full circle"). Gating it on the loop instead would have meant circling ~3 times.
+
+   The floor below guarantees the three seconds even on the shortest run-in measured (2.97s). */
+const CHARGE_TELL = 3.0;
+const CHARGE_TELL_COL = {far:'#ffd23a', near:'#ff3a2e'};
+function drawChargeTell(e){
+  if(!e || e.dead || e.pattern!=='loopcharge' || e._phase==='charge' || typeof ctx==='undefined') return;
+  const k=Math.max(0, Math.min(1, (e._chgTellT||0)/CHARGE_TELL));   // 0 at spawn, 1 at the commit
+  const col=(k<0.6)?CHARGE_TELL_COL.far:CHARGE_TELL_COL.near;
+  const r=Math.max(12,(e.w||30)*0.95)*(1.55-0.55*k);
+  ctx.save();
+  ctx.globalCompositeOperation='lighter';
+  /* it PULSES, and the pulse quickens as the commit nears — a static ring reads as decoration,
+     a quickening one reads as a countdown.
+     ⚠ THE FLOOR IS THE WHOLE POINT AND MY FIRST CUT GOT IT WRONG. 0.55+0.45*sin bottoms out at
+     0.10, so rendered in play the ring was a dark maroon smudge you could easily miss — measured
+     at t=2.62 the alpha was 0.11, less than a fifth of a second before the jet committed. A
+     warning that periodically disappears is not a warning. It pulses between BRIGHT and BRIGHTER
+     now, never between invisible and bright. */
+  const pulse=0.76+0.24*Math.sin((e._chgTellT||0)*(6+14*k));
+  ctx.globalAlpha=Math.min(1,(0.34+0.55*k)*pulse);
+  ctx.strokeStyle=col; ctx.lineWidth=1.5+2.5*k;
+  ctx.shadowColor=col; ctx.shadowBlur=7+12*k;
+  ctx.beginPath(); ctx.arc(e.x, e.y, r, 0, Math.PI*2); ctx.stroke();
+  /* and it says WHERE: a lead line toward the player, which is the whole point of the warning */
+  if(typeof player!=='undefined' && player && !player.dead){
+    const a=Math.atan2(player.y-e.y, player.x-e.x);
+    ctx.globalAlpha=Math.min(1,(0.20+0.5*k)*pulse);
+    ctx.beginPath();
+    ctx.moveTo(e.x+Math.cos(a)*r, e.y+Math.sin(a)*r);
+    ctx.lineTo(e.x+Math.cos(a)*(r+16+46*k), e.y+Math.sin(a)*(r+16+46*k));
+    ctx.stroke();
+  }
+  ctx.restore();
+}
 function drawLaserTell(e){
   if(!e || e.dead || !(e._lzChg>0) || typeof ctx==='undefined') return;
   const k=Math.max(0, Math.min(1, 1-(e._lzChg/LASER_TELL)));   // 0 at the arm, 1 at the release
@@ -38677,7 +38726,7 @@ function drawWorld(dt){
   /* DAMAGE STATES RIDE ON TOP OF THE SPRITE (drop 0807f). Hooked at the loop rather than inside
      drawEnemy, because that function has a dozen early returns for sandtanks, drones, L6
      fighters and the zap flash — a unit taking any of those paths would silently never smoke. */
-  for(const e of enemies){ drawEnemy(e); try{ drawEnemyDamage(e, _lastDt||1/60); }catch(_de){} try{ drawLaserTell(e); }catch(_lt){} }
+  for(const e of enemies){ drawEnemy(e); try{ drawEnemyDamage(e, _lastDt||1/60); }catch(_de){} try{ drawLaserTell(e); }catch(_lt){} try{ drawChargeTell(e); }catch(_ct){} }
   try{ drawSmokeRings(); }catch(_sr){}
   try{ drawNavalFlashes(); }catch(_nf){}
   /* NO FADE-OUTS (drop 0806j). Mike: "stop fading them out. there should be no fade out effects
