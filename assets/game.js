@@ -12586,7 +12586,39 @@ function maulerVolley(b){
   if(b._volN>=count){ b._volN=0; b._volI++; b._salvoGap=0.7; }   // pause between salvos
   else b._salvoGap=0.16;                                          // quick 1-2 within a salvo
 }
-function aimPlayer(x,y){ return Math.atan2(player.y-y, player.x-x); }
+/* AIM AT WHERE THE PLAYER WILL BE, NOT WHERE HE IS (drop 0822i).
+
+   Mike, from the Raiden II / Fire Shark tapes: their enemy fire is slow, fat and readable, and
+   still dangerous. That combination is not achievable by adding bullets — it comes from AIMING.
+   A round fired at your current position is dodged by simply continuing to move; a round fired at
+   the intercept has to be reacted to. It is the lever that lets bullet COUNT come down while
+   pressure goes up, which is the parked stage 3/7 density problem stated from the other side.
+
+   ENEMY_LEAD is the fraction of the solved intercept actually used:
+       0    = fire at where he is  — the behaviour every one of the 50 callers had before this
+       1    = perfect prediction, which reads as unfair and punishes movement itself
+       0.55 = shipped. Leading enough that drifting in one direction gets you hit, forgiving
+              enough that a direction change beats it. That is the shape both tapes have.
+
+   ⚠ THE DEFAULT ARGUMENT IS WHAT KEEPS THIS SAFE. All 50 existing callers pass (x,y) only, so
+   they take the dial; a caller that wants a straight shot passes 0 explicitly. Nothing had to be
+   hand-edited at 50 sites, which is exactly how _selfPat went wrong.
+
+   Two solver passes: flight time depends on the aim point and the aim point depends on flight
+   time. Two iterations converge well inside a pixel at these speeds, and it is cheap enough to
+   run per shot. */
+let ENEMY_LEAD = 0.55;
+function aimPlayer(x,y,spd,k){
+  const L = (k==null) ? (ENEMY_LEAD||0) : k;
+  if(!(L>0) || !(spd>0)) return Math.atan2(player.y-y, player.x-x);
+  const pvx=player._vx||0, pvy=player._vy||0;
+  let t = Math.hypot(player.x-x, player.y-y)/spd;
+  for(let i=0;i<2;i++){
+    const tx=player.x+pvx*t*L, ty=player.y+pvy*t*L;
+    t = Math.hypot(tx-x, ty-y)/spd;
+  }
+  return Math.atan2((player.y+pvy*t*L)-y, (player.x+pvx*t*L)-x);
+}
 
 /* ============================================================
    EXPLOSIONS & PARTICLES
@@ -15876,6 +15908,14 @@ function updatePlay(dt){
       player.y+=mvy*sp*0.9;                       // you can still climb/dive a little while rolling
     }
     player.x=clamp(player.x,10,worldWidth()-10); player.y=clamp(player.y,PLAY.y+12,PLAY.y+PLAY.h-6);
+    /* THE PLAYER'S VELOCITY, MEASURED RATHER THAN INFERRED (drop 0822i). Nothing tracked it,
+       so no enemy could aim anywhere but at where you already are. Taken AFTER the clamp so a
+       ship pinned against an edge reads as stopped - which it is - instead of reporting the
+       input it did not get to use. Units are px per frame, the same units enemy bullet speeds
+       are in, so a flight time in frames multiplies straight through. */
+    player._vx = player.x - (player._px==null?player.x:player._px);
+    player._vy = player.y - (player._py==null?player.y:player._py);
+    player._px = player.x; player._py = player.y;
     if(player.invuln>0) player.invuln-=1;
 
     // ---- PIVOT bank ramp (drives the pv frame choice AND the hitbox) ----

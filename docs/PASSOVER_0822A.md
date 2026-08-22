@@ -570,3 +570,51 @@ still asserted, and the segment COUNT is asserted too, because a fan that silent
 bolt would otherwise sail through.
 
 Suite **2,732 ok / 3 fail** — the usual environmental three.
+
+---
+
+# 0822i — ENEMIES AIM WHERE YOU WILL BE
+
+From the tapes: enemy fire in both reference games is slow, fat and readable, and still dangerous.
+That combination does not come from adding bullets. It comes from AIMING. A round sent at your
+current position is beaten by continuing to move; a round sent at the intercept has to be reacted
+to. **It is the lever that lets bullet COUNT come down while pressure goes up** — the parked stage
+3/7 density problem stated from the other side.
+
+⚠ **NOTHING TRACKED THE PLAYER'S VELOCITY**, so no enemy could aim anywhere but at where he
+already was. It is measured now, AFTER the position clamp so a ship pinned on an edge reads as
+stopped — which it is — rather than reporting input it never got to use. Units are px/frame, the
+same units enemy bullet speeds use, so a flight time in frames multiplies straight through.
+
+    ENEMY_LEAD   0     fire at where he is   — what all 50 aimPlayer callers did before this
+                 1     perfect prediction    — reads as unfair, punishes movement itself
+                 0.55  SHIPPED
+
+⚠ **THE DEFAULT ARGUMENT IS WHAT MADE THIS SAFE.** `aimPlayer(x,y,spd,k)` — all fifty existing
+callers pass `(x,y)` and inherit the dial; a caller wanting a straight shot passes 0 explicitly.
+No hand-editing of fifty sites, which is precisely how `_selfPat` went wrong.
+
+Two solver passes: flight time depends on the aim point, the aim point depends on flight time.
+Two iterations converge inside a pixel at these speeds.
+
+## MEASURED
+
+    enemy (140,90) firing at 4.0 px/f, player at x=240, y=380
+
+    player moving RIGHT +3px/f    no-lead crosses x=240   led crosses x=398.4   +158.4px
+    player moving LEFT  -3px/f    no-lead crosses x=240   led crosses x=120.1   -119.9px
+    player STATIONARY             no-lead crosses x=240   led crosses x=240      +0.0px
+
+Leads into the motion both directions, and **exactly zero when stationary** — a standing player
+gets the old behaviour bit for bit, which is the property that makes the dial safe to ship on.
+
+⚠ **158px IS A LARGE LEAD AND MIKE SHOULD FEEL IT BEFORE IT STAYS.** It is arithmetically right —
+3px/f over a ~77-frame flight really does intercept that far ahead — but long-range shots now
+swing a long way. `MG_CONE` (0.62rad off vertical) bounds the worst case, so nothing crosses the
+screen sideways. If it plays as harsh, the fix is one number, not a rework.
+
+⚠ **THE ASYMMETRY IS CORRECT, NOT A BUG.** Moving right increases range from an enemy at x=140, so
+flight time and therefore lead grow; moving left shortens both. 158 vs 120 is that, not a sign
+error.
+
+Suite **2,732 ok / 3 fail**.
