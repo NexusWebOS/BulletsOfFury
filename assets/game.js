@@ -3250,6 +3250,91 @@ function volcGlowDraw(e,key,x,y,w,h){
    like the roadsigns beside it, so a prop authored against the 800-wide master lands
    where it was authored. Culled off-screen so an 800x600 plate is not composited for
    the 95% of the level it is nowhere near. */
+let scorches=[];
+/* KILL SCORCH THAT STAYS ON THE GROUND (drop 0822g). Mike, from the Fire Shark / Raiden II tapes:
+   the battlefield there REMEMBERS. Kills leave black craters on the terrain and a dozen of them
+   are still on screen a stage-length later, so the ground reads as fought-over rather than clean.
+
+   ⚠ IT RIDES THE MAP THE WAY A TANK DOES. A scorch left in screen space slides against the
+   terrain the moment the level scrolls. The first cut pinned it to `_masterSrcY`, the mapping the
+   signs and props use — measured, that number is FROZEN on every stage in a driven probe, so it
+   could not be trusted. `_lastScrollDy` is the scroll that actually happened this frame
+   (`mapScroll - _prevMapScroll`), and it is already what ground units add to their own y to stay
+   planted (see the naval and tank ticks). A burn is a thing lying on the ground, so it does what
+   the things on the ground do. One idiom, not a second mapping to keep in step.
+
+   ⚠ AND THE ART IS AUTHORED, NOT PROCEDURAL. ndk_scorch_0..5 are Decker's bullet-hole burns, six
+   frames, already in the build. The standing rule is search the existing art first; a hand-rolled
+   dark ellipse would have been a placeholder sprite.
+
+   The frame is picked FROM POSITION, not Math.random(), so a given kill always burns the same
+   mark - shoot.py screenshots stay comparable run to run. */
+/* â  OFF AT 0 AND IT MUST STAY OFF UNTIL THE ANCHOR IS PROVEN (drop 0822g).
+   The burns draw and persist correctly â measured, 3 added, 3 blits, 3 alive. What is NOT
+   proven is that they hold their spot on the ground, and the evidence says they do not:
+     â¢ `_masterSrcY` measures FROZEN on all 8 stages in a driven probe
+     â¢ `_lastScrollDy` accumulates to 0 on stage 1 over 180 driven frames, while
+       `mapScroll` over the SAME frames advances 250.3px â it is assigned inside
+       drawLevelMaster, so it is dead on whatever path is actually scrolling
+   â  AND THE TEST THAT SAID `LOCKED TO THE GROUND` WAS VACUOUS: ground moved 0, scorch
+   moved 0, drift 0, pass. A drift check is meaningless unless the ground demonstrably MOVED
+   in the same run â assert the precondition, not just the difference.
+   Settle it by finding the number each draw path actually scrolls by, then flip this to 1. */
+let SCORCH_ON = 0;
+const SCORCH_MAX=40, SCORCH_LIFE=11.0, SCORCH_HOLD=0.72;
+function addScorch(x, screenY, size){
+  if(!SCORCH_ON) return;
+  if(typeof XART==='undefined' || !XART._src || !XART._src['ndk_scorch_0']) return;
+  const fi=(Math.abs(Math.round(x)*7 + Math.round(screenY)*13))%6;
+  scorches.push({x:x, y:screenY, t:0, fi:fi, s:Math.max(14, size||22)});
+  if(scorches.length>SCORCH_MAX) scorches.shift();      // oldest burns out first
+}
+function tickScorches(dt){
+  if(!scorches.length) return;
+  const dy=(typeof _lastScrollDy==='number')?_lastScrollDy:0;
+  for(const s of scorches){
+    s.y += dy;                                          // ride the map, same as a tank
+    s.t += dt;
+    if(s.t>=SCORCH_LIFE || s.y>VH+120) s.dead=true;     // burnt out, or scrolled off the bottom
+  }
+  scorches=scorches.filter(s=>!s.dead);
+}
+function drawScorches(){
+  if(!scorches.length || typeof XART==='undefined') return;
+  ctx.save();
+  for(const s of scorches){
+    const sy=s.y;
+    if(sy<-90 || sy>VH+90) continue;                     // off the window, skip the blit
+    const k='ndk_scorch_'+s.fi;
+    if(XART._touch) XART._touch(k);
+    if(!XART.rdy(k)) continue;
+    const im=XART.get(k); if(!im||!im.naturalWidth) continue;
+    const f=s.t/SCORCH_LIFE;
+    const a=(f<SCORCH_HOLD)?0.58:0.58*(1-(f-SCORCH_HOLD)/(1-SCORCH_HOLD));
+    if(a<=0.01) continue;
+    const w=s.s, h=w*(im.naturalHeight/im.naturalWidth);
+    ctx.globalAlpha=a;
+    ctx.drawImage(im, Math.round(s.x-w/2), Math.round(sy-h/2), Math.round(w), Math.round(h));
+  }
+  ctx.restore();
+}
+/* ONE PLACE THAT ANSWERS "I KILLED SOMETHING" (drop 0822g). Kills awarded score in three
+   separate branches and NONE of them told the player - run.score just moved. Both reference games
+   pop the value off the wreck, which is the whole feedback loop for a scoring game.
+
+   ⚠ THE SCORCH IS GROUND-ONLY, ON PURPOSE. A jet dying at altitude does not burn the map, and
+   putting a crater under every airburst is how the ground ends up uniformly black by mid-stage.
+   Tanks, turrets, bunkers and ships mark the terrain; aircraft do not. */
+const SCORCH_GROUND={tank:1,htank:1,jungletank:1,mgturret:1,rockturret:1,turret:1,microturret:1,
+                     turdrone:1,boat:1,naval:1,stationship:1,bunker:1};
+function killFeedback(e, sc){
+  if(!e) return;
+  if(sc>0 && typeof floatText==='function') floatText(e.x, e.y-16, String(sc), '#ffe07a');
+  const ground = SCORCH_GROUND[e.type] || e._bunker || e._tur;
+  if(ground && typeof addScorch==='function'){
+    addScorch(e.x, e.y, Math.max(18, (Math.max(e.w||20, e.h||20))*1.15));
+  }
+}
 function drawStageProps(){
   if(typeof XART==='undefined') return;
   const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
@@ -15419,6 +15504,7 @@ function beginStage(num){
   camX=0; WORLD_W=worldWidth();   // reset camera state: stage-1's 800px h-scroll camX must never leak into other stages (broke the stage-2 level display)
   enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0;
   explosions.length=0; particles.length=0; floaters.length=0; boss=null;
+  if(typeof scorches!=='undefined') scorches.length=0;   // burns belong to the stage that made them
   /* a death chain must not survive the stage that spawned it — this is the whole reason the
      chain is tick-driven rather than setTimeout (drop 0807c) */
   if(typeof _xChain!=='undefined') _xChain.length=0;
@@ -17900,6 +17986,7 @@ function killEnemy(e){
     e._dieT=0; e.hp=0;
     explode(e.x,e.y, Math.max(12, Math.max(e.w||18,e.h||18)*0.6), 'red','fireball'); shake=Math.max(shake,5);
     run.score+=(e.score||0); if(typeof stageStats!=='undefined') stageStats.kills++;
+    killFeedback(e, e.score||0);
     if(e.dropOk && typeof dropPowerup==='function') dropPowerup(e.x,e.y);
     return;                       // not dead yet — the collapse plays first
   }
@@ -17919,6 +18006,7 @@ function killEnemy(e){
     e._dyingT=0; e.shoots=false; e.vx=0; e.vy=0; e._frozen=true;   // stop dead the instant it dies (no drifting at the player)
     e.flash=0;   // clear the hit-flash NOW — otherwise the fading wreck gets drawn through the red tint band (pink ghost smear)
     run.score+=e.score;
+    killFeedback(e, e.score||0);
     // UNIFORM DEATH FX BY UNIT CLASS. unitDeathFX() was written but never wired — the death path
     // still called explodeAircraft/explode directly, which is why deaths bloomed far bigger than
     // the unit and why a turret died like a jet. One entry point now: it picks the family from
@@ -17957,6 +18045,7 @@ function killEnemy(e){
   }
   e.dead=true;
   run.score+=e.score;
+  killFeedback(e, e.score||0);
   // tanks: play their dedicated destruction frames on top of the normal blast
   /* ONE DEATH VISUAL, AND IT IS THE EXPLOSION (drop 0724ca).
      Two things were still drawing on top of the class explosion and that is why deaths never read
@@ -19121,6 +19210,7 @@ function updateEffects(dt){
        before moving it back; two branches above `continue` past this point. */
   }
   particles=particles.filter(p=>!p.dead);
+  if(typeof tickScorches==='function') tickScorches(dt);
   for(const f of floaters){ f.t+=dt; f.y-=0.5; if(f.t>=f.life)f.dead=true; }
   floaters=floaters.filter(f=>!f.dead);
   if(typeof arcadeBannerTick==='function') arcadeBannerTick(dt);   // the pickup announcement
@@ -19181,6 +19271,7 @@ function drawBG(dt){
   if(run.stage===1 && typeof ensureS1LandMasks==='function') ensureS1LandMasks();
   // New Level Environment Pack masters (all 6 stages). Falls through if art isn't ready.
   if(ASSETS.ready && drawLevelMaster(dt)){
+    if(typeof drawScorches==='function') drawScorches();      // kill burns, ON the terrain, under everything
     if(typeof drawStageProps==='function') drawStageProps();  // fixed world props (stage-4 car pileup)
     if(typeof drawRoadSigns==='function') drawRoadSigns();   // roadside props, above terrain, below units
     if(typeof drawClouds==='function') drawClouds(dt);      // cloud layer, above terrain, below units
@@ -29567,8 +29658,12 @@ const EXPLODE_FILL = {
    Scale lives on COVER_TARGET, not on per-unit size — this is the VISIBLE coverage after the
    EXPLODE_FILL padding is divided out, so changing it here moves every blast in the game at once
    rather than needing a per-unit pass. */
-const COVER_TARGET = 2.69;          // visible blast width as a multiple of the unit
-const COVER_TARGET_BIG = 3.29;      // bosses and minibosses
+/* ⚠ RAISED 0822g (2.69 -> 3.20, 3.29 -> 4.05). Mike, from the tapes: the blasts in Raiden II
+   and Fire Shark are far larger relative to the unit than ours, and they are what sells a kill.
+   These two are the only dials - per-unit size is untouched, so the whole game moves together
+   and the relative weighting between a turret and a boss is preserved by construction. */
+const COVER_TARGET = 3.20;          // visible blast width as a multiple of the unit
+const COVER_TARGET_BIG = 4.05;      // bosses and minibosses
 function explodeScaleFor(fam, cls){
   const fill = EXPLODE_FILL[fam] || 0.80;
   const tgt  = (cls==='boss'||cls==='mini') ? COVER_TARGET_BIG : COVER_TARGET;

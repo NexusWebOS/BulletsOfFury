@@ -466,3 +466,62 @@ per-cell list, never as a family.
 Also recorded from this pass: lava/sludge FALLS are dropped (Mike: the levels work on animated
 flats alone), the Colossus is confirmed already scrapped, `CAM_SNAP` stays 0, the `%` glyph is
 closed, and cutscenes/dialogue are left untouched pending a full rebuild.
+
+---
+
+# 0822g — BIGGER BLASTS, SCORE FEEDBACK, AND A SCORCH THAT IS NOT READY
+
+From Mike's Raiden II / Fire Shark tapes: *"the effects of the explosions, the bosses, the score,
+kill scorch, explosion sizes."* Two of those land here. The third does not, and the reason is
+worth more than the feature.
+
+## 1. EXPLOSION SIZE — the third raise, and the assertion said to expect it
+
+    COVER_TARGET      2.69 -> 3.20
+    COVER_TARGET_BIG  3.29 -> 4.05
+
+Two dials, no per-unit sizes touched, so the whole game moves together and a turret still reads
+smaller than a boss by construction. The suite's ceiling failed at 3.0 — and its own comment
+records being raised twice already (1.6 -> 2.1 -> 3.0), calling itself "a SANITY bound, not a
+design opinion". Raised a third time to 4.2 rather than deleted, which is what that note asks for.
+
+## 2. SCORE FEEDBACK — three kill paths, none of them told the player
+
+`run.score` moved in three separate branches and nothing appeared on screen. Both reference games
+pop the value off the wreck; that IS the loop for a scoring game. One `killFeedback()` now serves
+all three.
+
+## 3. ⚠ SCORCH IS BUILT, GATED OFF, AND HONESTLY NOT WORKING
+
+The burns draw and persist — 3 added, 3 blits, 3 alive, authored art (`ndk_scorch_0..5`, not a
+procedural blob). What is NOT true is that they stay on the ground, and three separate probes
+told me they did before I caught each one.
+
+⚠ **`_masterSrcY` IS FROZEN.** The signs/props mapping, the obvious anchor, measures unchanged on
+ALL EIGHT stages across 240 driven frames (2-5 all at 3220.8, 7 at 3568, 1 at 0).
+
+⚠ **`_lastScrollDy` IS DEAD ON THE PATH THAT SCROLLS.** Switching to the tank idiom
+(`e.y += _lastScrollDy`) looked right — it is what ground units already use. Measured on stage 1
+over 180 driven frames: `_lastScrollDy` accumulates to **0** while `mapScroll` over the SAME
+frames advances **250.3px**. It is assigned inside `drawLevelMaster`, so on whatever path is
+actually moving the ground it never updates.
+
+⚠ **AND THE TEST THAT BLESSED IT WAS VACUOUS.** It compared scorch displacement against ground
+displacement and reported "LOCKED TO THE GROUND" — from ground 0, scorch 0, drift 0. **A drift
+check proves nothing unless the thing it drifts against demonstrably MOVED in the same run.**
+Assert the precondition, not just the difference. That is the third measurement error on this one
+feature: the first probe measured animation instead of the camera, the second failed on its own
+`toFixed` rounding, the third passed on nothing happening.
+
+`SCORCH_ON = 0`. The work is on the branch, the evidence is at the constant, and it flips to 1 the
+day the real per-path scroll number is identified.
+
+## VERIFIED
+
+    node --check                       clean
+    node _BUILD_SOURCE/test_fl.js      2,732 ok / 3 fail (the usual environmental three)
+    shoot.py stage 1                   blasts visibly heavier; 64px pickups reading well
+
+Still queued and NOT started: Maverick's tappable laser as Fire Shark's widening arc (frames
+captured — narrow at the nose, spans the screen by the top, discrete segments, ~12-frame cycle),
+and the boss / enemy behaviour work.

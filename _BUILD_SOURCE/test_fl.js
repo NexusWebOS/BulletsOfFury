@@ -4789,7 +4789,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      now moved twice in the same direction — 1.6, then 2.1, now 3.0 — so the assertion is a
      SANITY bound, not a design opinion. The lower bound is the one that matters: a blast still
      has to cover the sprite it is hiding. */
-  ok(vm.runInContext("COVER_TARGET>1.2 && COVER_TARGET<3.0", ctxv), 'fodder covers '+vm.runInContext("COVER_TARGET",ctxv)+'x the unit — enough to hide the sprite vanishing');
+  /* ⚠ CEILING RAISED A THIRD TIME (drop 0822g), 3.0 -> 4.2. Mike, with Raiden II and Fire
+     Shark on screen: their blasts are far larger relative to the unit than ours and that is what
+     sells a kill. Same move as 0807c and 0808r - the window follows the direction he keeps
+     asking for, and the LOWER bound is still the one carrying meaning: a blast has to cover the
+     sprite it is hiding. */
+  ok(vm.runInContext("COVER_TARGET>1.2 && COVER_TARGET<4.2", ctxv), 'fodder covers '+vm.runInContext("COVER_TARGET",ctxv)+'x the unit — enough to hide the sprite vanishing');
   ok(vm.runInContext("COVER_TARGET>=2.6 && COVER_TARGET_BIG>=3.2", ctxv),
      'and both targets carry the 25-50% scale-up ('+vm.runInContext("COVER_TARGET",ctxv)+'x / '+vm.runInContext("COVER_TARGET_BIG",ctxv)+'x)');
   ok(vm.runInContext("COVER_TARGET_BIG>COVER_TARGET", ctxv), 'bosses and minis read bigger ('+vm.runInContext("COVER_TARGET_BIG",ctxv)+'x) — a set-piece death should not match a drone');
