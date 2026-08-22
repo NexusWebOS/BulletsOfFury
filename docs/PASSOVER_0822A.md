@@ -937,3 +937,42 @@ already fires the ring exactly as designed. **A line range is not a scope.** Two
 leaves upward, so they stay on disk.
 
 Suite **2,732 ok / 3 fail**. Atlas verifier PASS.
+
+---
+
+# 0822r — "STAGE 7'S WHOLE CAST IS INVISIBLE" WAS MY PROBE, NOT THE GAME
+
+Sweeping all eight stages for the 0822q gap reported:
+
+    stage 7   100% of unit-frames drawing nothing   (all six types, 18,836 frames)
+    stage 8   20.1%                                 (cdisc, spiral)
+
+Both false. **The art is registered and loads fine; my probe never let it.**
+
+⚠ **A SYNCHRONOUS BURST NEVER YIELDS, SO LAZY ART NEVER ARRIVES.** The sweep ran 4,800
+`updatePlay/drawWorld` iterations inside ONE `evaluate`. Zero real time passed, so nothing lazily
+loaded could decode. Stages 1-6 read clean only because their art is PRELOADED; `nsw_` (stage 7)
+and `nel_` (stage 8) are not. This is the `--warm` trap this file already documents — *"1400 warm
+frames still showed a black screen where 200 warm plus --seconds 2 showed the scene"* — met from a
+probe rather than from shoot.py.
+
+Measured properly, with real time allowed to pass:
+
+    key               registered   rdy 1st call   rdy after time
+    nsw_skimmer_0        True         False           True
+    nsw_sentry_0         True         False           True
+    nsw_maw_0            True         False           True
+    nsw_barge_0          True         False           True
+    nel_cdisc_0          True         False           True
+    nel_spiral_0         True         False           True
+
+`rdy` false on the FIRST call is the documented behaviour — that call is what starts the load. And
+`shoot.py --state PLAY --stage 7` shows a sewer unit drawn plainly at the top of frame.
+
+⚠ **WHAT MAKES 0822q'S FIX GENUINE BY CONTRAST.** Stage 2's three units did not have unready art —
+they had **`e.art` undefined**, because `nefRow()` found no row. That is structural, not timing,
+which is why the fix moved them 0 -> 1.00 blits/frame *inside the same synchronous probe* that
+"found" stage 7. **A unit with no art name and a unit whose art has not decoded look identical to a
+blit counter and are nothing alike.** Check which one you have before writing a fix.
+
+No code changed in 0822r. Stages 7 and 8 were never broken.
