@@ -393,3 +393,76 @@ is no exception worth the silence, and the previous drop's two stale literals ar
 asserting rules instead of values.
 
 Suite **2,732 ok / 3 fail** — the same three environmental `_superseded/` checks.
+
+---
+
+# 0822f — ONE PICKUP FOOTPRINT, AND MFX_ RESOLVED THE OTHER WAY
+
+Mike: *"The crates should be scaled up to 64x64, the mcrates to 64x64, the boxes to 64x64, the
+capsules are fine, and the bombs to 64x64."*
+
+    type                        before          after
+    mcrate                      61x61           64x64
+    sonicbox/lzmgbox/dkshotbox  41.5x41.5       64x64
+    crate                       44x46           61x64
+    bomb                        42x43           62.5x64
+    scrate                      ~45x48.8        54.8-59.8 x 64
+    special icon                27-48 minor     36-64 minor
+    capsule (pill)              48x16           48x16  - left alone, as asked
+
+`PICKUP_BOX = 64` is the one dial; `pickupFit()` replaced nine scattered size expressions.
+
+⚠ **THE CRATE DID NOT MOVE ON THE FIRST PASS, AND THE REASON IS ALREADY IN THIS FILE.**
+`drawCrate` has FIVE exits and the atlas-cell one is FIRST — `drawBoxPillCell('box_'+st+'_'+fi, x,
+y, 46, flash)` with a hardcoded 46, returning early. Every fit applied to the branches below was
+dead code for it, and the measurement said 44x46 while every sibling had moved. **Find the branch
+that OWNS the object** — the same lesson `spawnEnemy`'s switch teaches, one function over.
+
+⚠ **THE BOMB WAS THE ONE PICKUP THAT NEVER TOOK `PICKUP_SCALE`** — a raw `w=42` while every
+sibling rode the shared multiplier. Invisible in code review because it was internally consistent.
+
+⚠ **THREE DRAWERS BREATHED BY CHANGING SIZE** (`(N + 2*Math.sin(now/240))`). That makes "the same
+size" untrue two frames in three, and it is what made the FIRST measurement of this read as
+per-pilot variance — the pulse sampled at different moments, not a real difference. Dropped; the
+positional bob is a separate translate and still reads as float. **A probe that does not freeze an
+animation measures the animation.**
+
+## FIT, NOT STRETCH — AND THE REMAINDER IS THE ART
+
+Four types land exactly 64x64. The rest fall short on one axis because the PLATES ARE NOT SQUARE.
+Forcing an exact 64x64 would stretch hand-authored art — crate 5%, bomb 2%, and freezer's special
+icon by nearly 80% to fill the square. Fitting keeps every pickup on the same 64px footprint with
+its authored proportions intact, which is the standing rule's side of the trade.
+
+The scrate spread (54.8-59.8) and the special icons (36-64 minor axis) are entirely the nine
+per-pilot plates having nine different aspect ratios. **Exact 64x64 there needs the art padded to
+square canvases, not a code change.**
+
+## MFX_ — ASKED TO DELETE, AND THE EVIDENCE SAYS DO NOT
+
+Mike re-issued *"Delete MFX"*. Not done, and the record is now resolved rather than left carrying a
+contradiction. `ART_TAXONOMY.json` had `mfx_` marked **DELETE** *and* a `_WARNING_mfx` telling the
+next reader not to act on it — the mark and the warning have disagreed since 0807y.
+
+    audited 0821j    52 cells LIVE, 200 unexercised, removal frees ZERO bytes (aliased into
+                     shared atlases)
+    suite pins       mfx_mg_2_0 / mfx_mg_2_2  - the assertion itself calls them "Mike pick"
+                     the pellet firetype cycling mfx_mg_2
+                     boss volley keys mfx_ea_ / mfx_bshot_
+                     drawMfx('mfx_hom_0_7')   - the missile's one fixed frame
+
+⚠ **UNEXERCISED IS NOT DEAD, AND THIS REPO ALREADY PROVED IT.** A live assertion reads
+*"mfx_bshot_0_0 was KEPT — the suite failed without it, so something reaches it that no static scan
+sees."* Deleting the 200 "unexercised" cells on a static count is the exact move that assertion
+exists to stop. Role is **KEEP** now, with the measurement in the note; re-open only with a
+per-cell list, never as a family.
+
+## VERIFIED
+
+    node --check assets/game.js                 clean
+    node _BUILD_SOURCE/test_fl.js               2,732 ok / 3 fail (the usual environmental three)
+    node _BUILD_SOURCE/verify_atlas_0806z.js    PASS - all 8 stages, every graphic resolves
+
+Also recorded from this pass: lava/sludge FALLS are dropped (Mike: the levels work on animated
+flats alone), the Colossus is confirmed already scrapped, `CAM_SNAP` stays 0, the `%` glyph is
+closed, and cutscenes/dialogue are left untouched pending a full rebuild.

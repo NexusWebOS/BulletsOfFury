@@ -6,9 +6,9 @@
     "note": "the boot graphic without its text"
   },
   "mfx_": {
-    "role": "DELETE",
+    "role": "KEEP",
     "sheet": null,
-    "note": "Mike: delete. SEE THE WARNING BELOW before acting."
+    "note": "RESOLVED 0822f - Mike re-issued 'delete MFX' and the evidence says do not. Audited 0821j: 52 cells LIVE, 200 unexercised, and removal frees ZERO bytes because they are aliased into shared atlases. The suite pins four: mfx_mg_2_0 and mfx_mg_2_2 (its own assertion calls them a Mike pick for the boss MG pellet), the pellet firetype cycling mfx_mg_2, the boss volley keys mfx_ea_/mfx_bshot_, and drawMfx(mfx_hom_0_7) for the missile. This is the live ordnance set for enemy pellets and missiles. UNEXERCISED IS NOT DEAD: the suite already records mfx_bshot_0_0 being KEPT because removing it failed the run, so something reaches it that no static scan sees. Deleting breaks ordnance and gains nothing."
   },
   "bfx_": {
     "role": "enemyprojectiles",
@@ -104,7 +104,7 @@
     "role": "miniboss",
     "sheet": "miniboss_stage4"
   },
-  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set \u2014 pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr \u2014 blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRM WITH HIM before deleting 252 cells.",
+  "_WARNING_mfx": "Mike said DELETE mfx_ (252 cells) from the 0807y sheet. But the passover history records mfx_ as an APPROVED player projectile set \u2014 pellet/mfx_mg, flare/mfx_ea_3, comet/mfx_ea_1, blast/mfx_bpow, homing/mfx_hom, missile/mfx_emr \u2014 blocked from drawing only by the nep_ per-stage override. The sample he saw may therefore have been one unused member of a family that is otherwise wanted. CONFIRMED 0822f: he said delete, the measurement says the family is live and removal frees nothing, so it is KEPT and the role above is now KEEP. Re-open only with a per-cell list, never as a family.",
   "n6": {
     "role": "enemy",
     "sheet": "stage6roster"

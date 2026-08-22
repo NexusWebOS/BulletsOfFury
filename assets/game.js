@@ -25397,9 +25397,36 @@ function drawBullets(){
    multiplied by this instead, which means the pickups keep their relative proportions to each
    other by construction and there is exactly one number to change. */
 const PICKUP_SCALE = 1.22;
+/* ONE FOOTPRINT FOR EVERY PICKUP (drop 0822f). Mike: "The crates should be scaled up to 64x64,
+   the mcrates to 64x64, the boxes to 64x64, the capsules are fine, and the bombs to 64x64."
+
+   The five hardcoded sizes below (50 / 46 / 40 / 34 / 30) were RELATIVE proportions between the
+   pickup types, all riding PICKUP_SCALE. Measured on the real drawers, that produced crate 44x46,
+   mcrate 61x61, the weapon boxes 41.5x41.5 and bomb 42x43 — every type a different footprint, and
+   the bomb was not even multiplied by PICKUP_SCALE (raw 42). They are one box now.
+
+   ⚠ FIT, DO NOT STRETCH. Forcing an exact 64x64 would distort any plate that is not square, and
+   these are hand-authored. pickupFit scales so the LARGER side is 64, so every pickup occupies the
+   same 64x64 footprint with its authored proportions intact. Near-square art (all the crates and
+   boxes) lands at or within a pixel or two of 64x64.
+
+   ⚠ AND THE SIZE PULSE IS GONE, DELIBERATELY. Three drawers breathed with
+   `(N + 2*Math.sin(now/240))`, which is a SIZE oscillation — it makes "the same size" untrue for
+   2 frames in 3 and is what made the first measurement of this read as per-pilot variance when it
+   was really the pulse sampled at different moments. The positional bob is untouched: it is a
+   separate translate and still reads as float.
+
+   PICKUP_BOX is the one dial now. PICKUP_SCALE is kept only for anything outside this family. */
+const PICKUP_BOX = 64;
+function pickupFit(im, box){
+  const B = box || PICKUP_BOX;
+  const w = (im && im.naturalWidth) || 1, h = (im && im.naturalHeight) || 1;
+  const s = B / Math.max(w, h);
+  return { w: w * s, h: h * s };
+}
 function drawMcrate(x,y,t,flash){
   if(typeof XART!=='undefined' && XART.rdy('missilecrate')){
-    const im=XART.get('missilecrate'), w=50*PICKUP_SCALE, h=50*PICKUP_SCALE*(im.naturalHeight/im.naturalWidth);
+    const im=XART.get('missilecrate'), _f=pickupFit(im), w=_f.w, h=_f.h;
     ctx.save();
     ctx.drawImage(im, x-w/2, y-h/2+Math.sin(t*2.2)*2, w, h);
     ctx.restore(); return;
@@ -25435,7 +25462,7 @@ function drawScrate(x,y,t,flash){
   const pk=(typeof _pilotKey==='function')?_pilotKey():'cole';
   const boxKey='special_'+pk;
   if(typeof XART!=='undefined' && XART.rdy(boxKey)){
-    const im=XART.get(boxKey), h=(40+(flash>0?4:0))*PICKUP_SCALE, w=h*(im.naturalWidth/im.naturalHeight);
+    const im=XART.get(boxKey), _f=pickupFit(im), w=_f.w, h=_f.h;   // flash reads through the lighter pass, not a size bump
     ctx.save(); ctx.translate(x,y+Math.sin(t*3)*1.5);
     ctx.shadowColor=(typeof _pilotTint==='function')?_pilotTint():'#ff2a1a'; ctx.shadowBlur=8+(flash>0?12:0);
     if(flash>0){ ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.5; ctx.drawImage(im,-w/2,-h/2,w,h); ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over'; }
@@ -25515,14 +25542,17 @@ function drawCrate(x,y,t,flash){
     const _st=clamp(run.stage||1,1,9), _fi=Math.floor(t*8)%4;
     ctx.save(); ctx.shadowColor=(_st===1?'#8de23a':_st===2?'#ff7a2a':_st===3?'#7fe0ff':'#ffcf4a');
     ctx.shadowBlur=7+(flash>0?10:0);
-    const _hit=drawBoxPillCell('box_'+_st+'_'+_fi, x, y, 46, flash);
+    /* ⚠ THIS IS THE BRANCH THAT OWNS THE CRATE (drop 0822f). drawCrate has FIVE exits and
+       this atlas-cell one is FIRST, so the 64 fits applied to the branches below never ran for
+       it — the crate stayed 44x46 while every sibling moved. Same shape as spawnEnemy's switch. */
+    const _hit=drawBoxPillCell('box_'+_st+'_'+_fi, x, y, PICKUP_BOX, flash);
     ctx.restore();
     if(_hit) return;
   }
   const _X0=(typeof XART!=='undefined')?XART:null;
   if(_X0 && run.stage>=6 && run.stage<=9 && _X0.rdy('nlc'+run.stage+'_0')){
     const fi=Math.floor(t*8)%4, im=_X0.get('nlc'+run.stage+'_'+fi);
-    if(im&&im.complete&&im.naturalWidth){ const s=46*PICKUP_SCALE/Math.max(im.naturalWidth,im.naturalHeight), w=im.naturalWidth*s, h=im.naturalHeight*s;
+    if(im&&im.complete&&im.naturalWidth){ const _f=pickupFit(im), w=_f.w, h=_f.h;
       ctx.save(); ctx.shadowColor='#ffcf4a'; ctx.shadowBlur=7+(flash>0?10:0);
       ctx.drawImage(im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
   }
@@ -25530,7 +25560,7 @@ function drawCrate(x,y,t,flash){
   if(_X && _ck && _X.rdy(_ck+'_0')){
     const _nspin=(_ck==='crate6')?3:4;                                  // wooden spin_gold: frames 0-2 spin, 3 = sunburst flash
     const fi=(flash>0)?(_ck==='crate6'?3:0):(Math.floor(t*8)%_nspin), im=_X.get(_ck+'_'+fi);
-    if(im&&im.complete&&im.naturalWidth){ const s=46*PICKUP_SCALE/Math.max(im.naturalWidth,im.naturalHeight), w=im.naturalWidth*s, h=im.naturalHeight*s;
+    if(im&&im.complete&&im.naturalWidth){ const _f=pickupFit(im), w=_f.w, h=_f.h;
       ctx.save(); ctx.shadowColor=(run.stage===1?'#8de23a':run.stage===2?'#ff7a2a':run.stage===3?'#7fe0ff':'#ffcf4a'); ctx.shadowBlur=7+(flash>0?10:0);
       ctx.drawImage(im,Math.round(x-w/2),Math.round(y-h/2),Math.round(w),Math.round(h)); ctx.restore(); return; }
   }
@@ -25633,7 +25663,7 @@ function drawPowerups(){
              : (p.kind==='lzmgbox') ?'nsw_icon_lizzie'
              : (XART.rdy('nsw_icon_decker')?'nsw_icon_decker':'ndk_shell_0');
       if(typeof XART!=='undefined' && XART.rdy(_k)){
-        const im=XART.get(_k), h=(34+2*Math.sin(performance.now()/240))*PICKUP_SCALE, w=h*(im.naturalWidth/im.naturalHeight);
+        const im=XART.get(_k), _f=pickupFit(im), w=_f.w, h=_f.h;
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
         ctx.shadowColor=(p.kind==='sonicbox')?'#8de23a':'#ffc21a'; ctx.shadowBlur=14;
         ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
@@ -25646,7 +25676,7 @@ function drawPowerups(){
       const iconKey='spicon_'+pk, boxKey=(typeof specialArtKey==='function')?specialArtKey('special_'+pk):('special_'+pk);
       if(typeof XART!=='undefined' && XART.rdy(animKey)){
         // the original special ability icon floats out of the broken box (spins + bob)
-        const im=XART.get(animKey), s2=40*PICKUP_SCALE/Math.max(im.naturalWidth,im.naturalHeight);
+        const im=XART.get(animKey), s2=PICKUP_BOX/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4); ctx.rotate(performance.now()/560);
         ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12;
         ctx.drawImage(im,-im.naturalWidth*s2/2,-im.naturalHeight*s2/2,im.naturalWidth*s2,im.naturalHeight*s2); ctx.restore();
@@ -25655,18 +25685,18 @@ function drawPowerups(){
            path and deleting the spicon_ keys would have left THIS branch failing XART.rdy and
            silently falling through to the plain box — the icon would just stop appearing on the
            pickup, with nothing reporting it. Both paths use the sheet or neither does. */
-        const h=(30+2*Math.sin(performance.now()/240))*PICKUP_SCALE;
+        const h=PICKUP_BOX;
         ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
         ctx.globalCompositeOperation='lighter'; ctx.shadowColor=_pilotTint(); ctx.shadowBlur=14;
         iconDraw(iconKey, 0, 0, h, true);
         ctx.restore();
       } else if(typeof XART!=='undefined' && XART.rdy(iconKey)){
-        const im=XART.get(iconKey), h=(30+2*Math.sin(performance.now()/240))*PICKUP_SCALE, w=h*(im.naturalWidth/im.naturalHeight);
+        const im=XART.get(iconKey), _f=pickupFit(im), w=_f.w, h=_f.h;
         ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
         ctx.globalCompositeOperation='lighter'; ctx.shadowColor=_pilotTint(); ctx.shadowBlur=14;
         ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
       } else if(typeof XART!=='undefined' && XART.rdy(boxKey)){
-        const im=XART.get(boxKey), h=40*PICKUP_SCALE, w=h*(im.naturalWidth/im.naturalHeight);
+        const im=XART.get(boxKey), _f=pickupFit(im), w=_f.w, h=_f.h;
         ctx.save(); ctx.translate(p.x,yb+Math.sin((p.bob||0)+performance.now()/380)*2.4);
         ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12; ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
       } else { ctx.save(); ctx.translate(p.x,yb); ctx.rotate(performance.now()/420); ctx.fillStyle=_pilotTint(); ctx.fillRect(-9,-9,18,18); ctx.restore(); }
@@ -25674,7 +25704,7 @@ function drawPowerups(){
     }
     if(p.kind==='capsule'){ drawCapsule(p.x,yb,p.t,p.flash||0); continue; }
     if(p.kind==='bomb' && typeof XART!=='undefined' && XART.rdy('missilebox')){
-      const im=XART.get('missilebox'), w=42, h=42*(im.naturalHeight/im.naturalWidth);
+      const im=XART.get('missilebox'), _f=pickupFit(im), w=_f.w, h=_f.h;   // was a raw 42, the one pickup that never took PICKUP_SCALE
       const _bob=Math.sin((p.t||0)*2.4)*2;
       ctx.save(); ctx.shadowColor='#9fe0ff'; ctx.shadowBlur=7;
       ctx.drawImage(im,p.x-w/2,yb-h/2+_bob,w,h); ctx.restore(); continue;   // upright + readable, no spin
