@@ -2287,6 +2287,7 @@ function drawScrollLevel(img, frames, dt, base, tileScale){
   mapScroll=Math.min(range, mapScroll+dt*40);
   if(!drawAnimTerrain(frames, mapScroll, 1.5, tileScale)){ ctx.fillStyle=base; ctx.fillRect(0,0,VW,VH); }
   const srcY=Math.max(0, range-mapScroll);
+  _groundPublish(srcY);
   ctx.drawImage(img,0,srcY,VW,VH,0,0,VW,VH);
   return true;
 }
@@ -3279,8 +3280,11 @@ let scorches=[];
    â  AND THE TEST THAT SAID `LOCKED TO THE GROUND` WAS VACUOUS: ground moved 0, scorch
    moved 0, drift 0, pass. A drift check is meaningless unless the ground demonstrably MOVED
    in the same run â assert the precondition, not just the difference.
-   Settle it by finding the number each draw path actually scrolls by, then flip this to 1. */
-let SCORCH_ON = 0;
+   SOLVED 0822k and ON. It stopped asking which variable drives the scroll and measures the
+   RESULT instead: `_groundPublish(srcY)` at every master blit, so the delta is the ground's own
+   displacement on whatever path drew it. Verified with the precondition asserted — ground moved
+   125.16px, scorch moved 125.16px, drift 0.0. */
+let SCORCH_ON = 1;
 const SCORCH_MAX=40, SCORCH_LIFE=11.0, SCORCH_HOLD=0.72;
 function addScorch(x, screenY, size){
   if(!SCORCH_ON) return;
@@ -3291,7 +3295,7 @@ function addScorch(x, screenY, size){
 }
 function tickScorches(dt){
   if(!scorches.length) return;
-  const dy=(typeof _lastScrollDy==='number')?_lastScrollDy:0;
+  const dy=(typeof _groundDy==='number')?_groundDy:0;     // measured at the blit, every draw path
   for(const s of scorches){
     s.y += dy;                                          // ride the map, same as a tank
     s.t += dt;
@@ -3334,6 +3338,30 @@ function killFeedback(e, sc){
   if(ground && typeof addScorch==='function'){
     addScorch(e.x, e.y, Math.max(18, (Math.max(e.w||20, e.h||20))*1.15));
   }
+}
+/* HOW FAR THE GROUND MOVED THIS FRAME, MEASURED AT THE BLIT (drop 0822k).
+
+   Anything lying ON the terrain — a burn, a crater — has to move exactly as much as the terrain
+   does. Three attempts to read that from a variable all failed, and each failure was instructive:
+     · `_masterSrcY` measures FROZEN on all eight stages in a driven probe
+     · `_lastScrollDy` accumulates to 0 on stage 1 while `mapScroll` over the same frames moves 250px
+     · and `mapScroll` itself only advances on stage 1 in that harness
+   Measured against the PIXELS rather than any variable, stage 1's rendered terrain shifts 39
+   sample-units with 95% of the column changing, while stages 2-8 match at ZERO shift with 9-30%
+   changing — they were animating in place, not scrolling. Every variable reading zero was telling
+   the truth.
+
+   So this stops asking which variable drives the scroll and measures the RESULT. `srcY` is the
+   master row at the top of the window and it is what the blit consumes; the frame-to-frame change
+   in it IS the ground's displacement, on every draw path, whatever moved it. srcY DECREASES as the
+   level advances (features travel down), so the screen-space delta is prev - now.
+
+   ⚠ RESET IT ON STAGE CHANGE. A fresh stage starts at a completely different srcY, and the first
+   frame would otherwise report a jump of thousands of pixels and fling every decal off screen. */
+let _groundSrcPrev=null, _groundDy=0;
+function _groundPublish(srcY){
+  _groundDy = (_groundSrcPrev==null) ? 0 : (_groundSrcPrev - srcY);
+  _groundSrcPrev = srcY;
 }
 function drawStageProps(){
   if(typeof XART==='undefined') return;
@@ -3816,6 +3844,7 @@ function drawLevelMaster(dt){
      from the ground it sits on, which is precisely 0813c. */
   const _srcYPub = srcY - _floorDy - _winTop;
   _masterSrcY = _srcYPub;
+  _groundPublish(srcY);
   ctx.drawImage(img, 0, srcY, drawW, winH, 0, _floorDy + _winTop, drawW, winH);
   /* WIDE LIQUID FALLS sit ABOVE the terrain and below the player — the handoff's layer order:
      lower terrain, liquid flat, fall overlay, then player. Drawn after the master so the curtain
@@ -3957,6 +3986,7 @@ function drawStage2(dt){
   drawLavafalls(dt);
   // 3) keyed terrain on top (mountains/side-walls/islands) — lava shows through transparent channels
   const srcY=Math.max(0, range-mapScroll);
+  _groundPublish(srcY);
   ctx.drawImage(img,0,srcY,VW,VH,0,0,VW,VH);
   updateDrawClouds(dt);
   return true;
@@ -3975,6 +4005,7 @@ function drawStage3(dt){
   const iw=(ASSETS.iceWater&&ASSETS.iceWater.length)?ASSETS.iceWater:_legacyWater();
   if(!drawAnimTerrain(iw, mapScroll, 1.2)){ ctx.fillStyle='#0c1c2e'; ctx.fillRect(0,0,VW,VH); }
   const srcY=Math.max(0, range-mapScroll);
+  _groundPublish(srcY);
   ctx.drawImage(img,0,srcY,VW,VH,0,0,VW,VH);
   return true;
 }
@@ -4349,6 +4380,10 @@ function drawStageMap(dt){
   // layer (drawn above) shows straight through — no separate on-top waterfall overlay needed.
   // 800-wide world maps pan with the camera (old 480 maps drew a static window)
   const _sx=Math.max(0, Math.min((img.naturalWidth||VW)-VW, (typeof camX!=='undefined'?camX:0)));
+  /* ⚠ STAGE 1's TERRAIN BLIT, AND IT WAS THE ONE _groundDy MISSED (0822k). It pans the
+     SOURCE X with the camera, so it does not match the shape the other four blits share and a
+     grep for those found everything except the only stage that was actually scrolling. */
+  _groundPublish(srcY);
   ctx.drawImage(img,_sx,srcY,VW,VH,0,0,VW,VH);
   updateDrawClouds(dt);
   return true;
@@ -15572,6 +15607,7 @@ function beginStage(num){
   enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0;
   explosions.length=0; particles.length=0; floaters.length=0; boss=null;
   if(typeof scorches!=='undefined') scorches.length=0;   // burns belong to the stage that made them
+  _groundSrcPrev=null; _groundDy=0;                      // a new stage starts at a different srcY
   /* a death chain must not survive the stage that spawned it — this is the whole reason the
      chain is tick-driven rather than setTimeout (drop 0807c) */
   if(typeof _xChain!=='undefined') _xChain.length=0;

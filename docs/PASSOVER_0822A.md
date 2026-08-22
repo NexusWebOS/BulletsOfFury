@@ -656,3 +656,39 @@ readable even when the thing under test never happened**. State the precondition
 make the probe fail loudly when it is not met.
 
 No code changed in 0822j. CLAUDE.md only.
+
+---
+
+# 0822k — SCORCH IS ON, AND THE ANSWER WAS TO STOP ASKING WHICH VARIABLE
+
+Three attempts read the scroll from a variable and all three were wrong:
+`_masterSrcY` frozen on all eight stages, `_lastScrollDy` accumulating to 0 on stage 1 while
+`mapScroll` moved 250px over the same frames, and `mapScroll` itself only advancing on stage 1.
+
+⚠ **THE PIXELS SETTLED IT.** Sampling a rendered column, stage 1 shifts 39 sample-units with 95%
+of the column changing; stages 2-8 match at **zero shift** with 9-30% changing. They were
+ANIMATING IN PLACE, not scrolling. Every variable reading zero had been telling the truth, and
+three probes' worth of "the anchor is broken" was really "the ground was not moving".
+
+`_groundPublish(srcY)` now runs at every master blit and publishes `_groundDy` — the frame-to-frame
+change in the master row the blit consumes. That is the ground's own displacement, on whatever
+path drew it, without naming a driver.
+
+⚠ **AND THE FIRST PASS MISSED THE ONLY STAGE THAT SCROLLS.** Four blits matched the two shapes I
+grepped for; stage 1's is `drawImage(img,_sx,srcY,...)` — it pans the SOURCE X with the camera, so
+it matched neither. The verification came back INCONCLUSIVE rather than passing, which is the
+whole reason the miss was caught: **the precondition guard did its job.**
+
+    ground moved 125.16px   scorch moved 125.16px   drift 0.0   precondition MET
+
+`SCORCH_ON = 1`.
+
+## THE METHOD LESSON, STATED ONCE
+
+Four probes this session produced confident wrong answers: one measured animation instead of the
+camera, one failed on its own `toFixed` rounding, one passed on 0-vs-0, one measured bosses at
+frame zero and then a rerun measured their corpses. **Every one was readable even though the thing
+under test never happened.** The fix is not more care — it is a precondition assert that makes the
+probe say INCONCLUSIVE instead of PASS.
+
+Suite **2,732 ok / 3 fail**.
