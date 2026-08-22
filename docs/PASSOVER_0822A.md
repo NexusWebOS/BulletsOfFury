@@ -785,3 +785,58 @@ silently skipped three more inside its `if`. **A source-scanning assertion turns
 refactor into a real failure** — worth knowing before moving any table this suite reads by regex.
 
 game.js is comment-only against HEAD. Suite **2,732 ok / 3 fail**.
+
+---
+
+# 0822o — ENEMIES STACKING IN STAGE 1: A NAVAL MINE NOTHING AVOIDED
+
+Mike: *"what about enemies stacking and also disappearing in stage 1?"*
+
+    stage   frames with 2+ units   pair buried >35%   worst overlap
+    1       3365                   51.8%              1.00  (complete)
+    2       4009                    3.8%              0.77
+    3       3701                    7.3%              0.99
+
+Stage 1 was the outlier by an order of magnitude, and one name sat in four of the top pairs:
+**`s1rivermine`** — 797 stacked frames against corvettes, landing craft, patrol boats and jets.
+
+⚠ **THE GATE EXCLUDED IT FROM BEING AN OBSTACLE AT ALL.** `sepEligible` — whose own comment reads
+"counts as an obstacle" — dropped anything flagged `prop`, and the mine is `prop:true` **and**
+`pat:'prop'`, so it tripped both halves. Eligible on 0% of its 2,215 frames. Boats sailed through a
+naval mine as if it were painted on the water.
+
+⚠ **AND IT IS NOT SCENERY.** `PROP_BLAST` gives it `r:70, dmg:14, shake:6` and the roster gives it
+`hp:3` — a shootable hazard the player is meant to dodge. So is every other entry in that table.
+**That table IS the definition of "this one hurts"**, so it drives the rule instead of a hand-listed
+type name.
+
+Hazards are obstacles now and no prop is movable — a mine shoved by a passing boat would drift off
+the lane its wave script placed it in, which is worse than being ignored.
+
+    stage 1 stacked frames   51.8%  ->  28.8%
+    corvette + rivermine       361  ->  0
+
+What remains is `s1jetdelta` in six of seven pairs, overlapping SURFACE units — a jet passing over
+a boat is an altitude difference, not a pile-up. Jet-on-jet is 54 frames and looks like the
+formation flying `SEP_MIN` deliberately allows. **Mike's eye, not a number, decides whether that
+reads wrong.**
+
+## DISAPPEARING: NOT REPRODUCED ON STAGE 1, AND TWO PROBES LIED FIRST
+
+    units leaving while alive AND inside the visible box — stages 1/2/3:  0, 0, 0
+    alive, on screen, drawing nothing — stage 1:                          0 of 12,844 unit-frames
+
+⚠ **THE FIRST VANISH PROBE REPORTED 11 ON STAGE 1.** Its cull line was `VH+40` while VH is 512, so
+units at y 546-551 — already below the visible bottom — were classified as VANISHING rather than
+culled. Off screen is off screen; the boundary has to be the visible box, not a padded one.
+⚠ **AND THE `ENEMY_ART` THEORY WAS WRONG TOO** — zero units on stage 1 carry an art name that
+misses `ENEMY_ART`, so this is not the documented draws-nothing fallthrough.
+
+**Most likely the stacking WAS the disappearing**: a unit buried under another is drawn over and
+reads as having vanished. The fix above should move both.
+
+⚠ **UNVERIFIED, FOUND IN PASSING: STAGE 2 SHOWS 34.2% OF UNIT-FRAMES DRAWING NOTHING**
+(`magmagun` 3230, `spinner` 2100). NOT reported as a bug — `drawEnemy` early-returns into
+`drawVolc` for volcanic units and the accounting may simply not see it. Needs its own pass.
+
+Suite **2,732 ok / 3 fail**. Atlas verifier PASS.

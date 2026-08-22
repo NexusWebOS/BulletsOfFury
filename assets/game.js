@@ -15777,11 +15777,38 @@ function sepLandRef(y){
    A mini is an obstacle that does not yield: it should shoulder ordinary units aside on its
    arrival beat, not be shoved off its own line by a drone. So it participates in every test and
    takes none of the correction, and its partner takes the whole of it. */
+/* ⚠ A PROP THAT CAN KILL YOU IS AN OBSTACLE (drop 0822o). Mike: "enemies stacking in stage 1."
+
+   Measured on stage 1: 51.8% of frames with two or more units had a pair buried past 35%, worst
+   case a FULL 1.00 overlap — against 3.8% on stage 2 and 7.3% on stage 3. One name was in four of
+   the top pairs: `s1rivermine`, 797 stacked frames between it, corvettes, landing craft, patrol
+   boats and jets.
+
+   The cause is this gate. `sepEligible` excluded anything flagged `prop`, and the mine is
+   `prop:true` AND `pat:'prop'` — so it tripped both halves and counted as an obstacle to NOTHING.
+   Boats sailed through a naval mine as if it were painted on.
+
+   ⚠ IT IS NOT SCENERY. `PROP_BLAST` gives it r:70, dmg:14, shake:6, and the roster gives it hp:3
+   — it is a shootable hazard the player is meant to dodge, and so is every other entry in that
+   table (fuel barrels, the big fuel tank, ammo crates, the stage-2 heat barrel, the stage-3
+   canister). That table IS the definition of "this one hurts", so it drives the rule rather than
+   a hand-listed type name.
+
+   ⚠ OBSTACLE, NEVER DISPLACED. A mine that gets shoved by a passing boat is a worse bug than one
+   that gets ignored — it would drift off its authored lane and out of the hazard the wave script
+   placed. So hazards enter the test as things to steer AROUND, and `sepMovable` now refuses to
+   move any prop at all. Two immovables still cost nothing: the loop already skips a pair where
+   neither side can move. */
+function sepPropHazard(e){
+  return !!e && !!e.type && typeof PROP_BLAST!=='undefined' && !!PROP_BLAST[e.type];
+}
 function sepEligible(e){    // counts as an obstacle
-  return !!e && !e.dead && e._dyingT==null && !e.prop && e.pattern!=='prop' && !e.enter;
+  if(!e || e.dead || e._dyingT!=null || e.enter) return false;
+  if(sepPropHazard(e)) return true;                 // a live hazard is something to avoid
+  return !e.prop && e.pattern!=='prop';
 }
 function sepMovable(e){     // ...and may actually be displaced by one
-  return !e._boss && !e._amini;
+  return !e._boss && !e._amini && !e.prop && e.pattern!=='prop';
 }
 /* ⚠ EVERY tank pattern counts as grounded, not just 'ground' (0819). tankhold / tankpatrol /
    s1tank drive their own terrain anchor, and missing them here meant sepShift pushed a crowded
