@@ -2552,8 +2552,10 @@ function _levelCfg(){
        spanning the world width — drawStageBG paints it first and then covers it with the
        master. So the corridor Mike is describing was underneath the mountain the whole time;
        it only needed the mountain to stop being drawn over it. No new art. */
-    case 2: return {master:'nst2_master', liquid:'nlq2_lava',    fill:'#241008', tile:0.5, fps:6, arenaLiquid:true};
-    case 3: return {master:'nst3_master', liquid:'nlq2_ice',     fill:'#0c1c2e', tile:0.5, fps:5};
+    case 2: return {master:'nst2_master', liquid:'nlq2_lava',    fill:'#241008', tile:0.5, fps:6, arenaLiquid:true,
+                    plateW:680, h:4080};   // 0822d: plate rescaled 800x4800 -> 680x4080
+    case 3: return {master:'nst3_master', liquid:'nlq2_ice',     fill:'#0c1c2e', tile:0.5, fps:5,
+                    plateW:680, h:4080};   // 0822d: plate rescaled 800x4800 -> 680x4080
     /* 4 CROUCHING MISSILES, HIDDEN DEATH — REORDERED (drop 0801ai).
 
        Mike: "the coastal approach may have to be the first image... you can use water and add
@@ -2739,7 +2741,7 @@ function _levelCfg(){
        ⚠ h:4062 IS LOAD-BEARING. Every reader of cfg.h falls back to 4800 when it is absent
        and this plate is 4062, so omitting it mismaps the entire stage. Same note as stage 1. */
     case 7: return {master:'nst7_master_v2', liquid:'nlq_sludgeF', fill:'#232b12', tile:0.5, fps:5, wide:true,
-                    h:4062, arena:'nst7_arena'};
+                    plateW:680, h:3453, arena:'nst7_arena'};   // 0822d: 800x4062 -> 680x3453
     // 8 FURIOUS DEATH — the true-16bit necro master (this art is the finale's, not stage 6's).
     /* RC2 REBUILD (drop 0810g) — Stage_08_Deep_Space_Black_Hole, 800x5120. Starfield running down
        into a spiral black hole, which is what TRANS[7] has always described the 7->8 join as:
@@ -2750,7 +2752,9 @@ function _levelCfg(){
        because this master is 800 across; the old one was not. */
     /* skipRows: the BRIDGE, a horizontal platform measured at rows ~2530..2620. */
     case 8: return {master:'blackhole800_rc2_master', liquid:null, fill:'#0a0406', tile:1.0, wide:true,
-                    skipRows:[2500,2650]};
+                    plateW:680, h:4352, skipRows:[2125,2253]};   // 0822d: 800x5120 -> 680x4352;
+    /* ⚠ skipRows ARE ABSOLUTE MASTER ROWS and were rescaled with the plate (x0.85): 2500->2125,
+       2650->2253. A band left at its old rows would skip the wrong 150px of a shorter plate. */
     /* 9 BONUS STAGE — entered from Level 5. Mike: "stage 9 was the bonus stage, yes.
        This is accesible through Level 5", and "wire it to 800 wide."
 

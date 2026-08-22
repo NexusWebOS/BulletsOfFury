@@ -9,6 +9,20 @@ const path = require('path');
    OLD game.js and reported green against a build hours out of date. Resolved from this
    file's own location now, so the harness can only ever test the tree it lives in. */
 const ROOT = require('path').resolve(__dirname, '..');
+/* A PLATE'S OWN DIMENSIONS, READ FROM ITS IHDR (drop 0822d).
+
+   Stage-geometry assertions carried LITERALS — `worldWidth()===800`, `_levelCfg().h===4062` — and
+   a literal is only ever true of the plate that was on disk the day it was written. Rescaling
+   stages 2, 3, 7 and 8 to 680 wide went stale on both in the same commit, and one of them was
+   pinned with a comment explaining how load-bearing it is. That comment was right; the number was
+   the wrong way to defend it.
+
+   Driven off the PNG header now: a stage cannot declare a size its own art does not have, whatever
+   the art becomes. Bytes 16..23 of a PNG are the IHDR width and height, big-endian. */
+function pngSize(rel){
+  const b = fs.readFileSync(path.join(ROOT, rel));
+  return { w: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+}
 
 let errors = [];
 const calls = { drawImage: 0 };
@@ -1458,7 +1472,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("XART.rdy('nst7_master') && XART.rdy('nst7_arena')", ctxv), 'stage-7 master + boss arena registered');
   ok(vm.runInContext("(function(){for(var i=0;i<6;i++){if(!XART.rdy('nlq_sludge_'+i))return false;}return true;})()", ctxv), 'sludge surface 6f registered (256px)');
   ok(vm.runInContext("(function(){for(var i=0;i<6;i++){if(!XART.rdy('nlqf_sludge_'+i))return false;}return true;})()", ctxv), 'sludge FALL 6f registered');
-  ok(vm.runInContext("run.stage=7; worldWidth()===800", ctxv), 'stage 7 reports WORLD width 800, not camera width 480');
+  {
+    const p7 = pngSize('assets/game/nst7_master_v2.png');
+    ok(vm.runInContext("run.stage=7; worldWidth()==="+p7.w, ctxv),
+       'stage 7 reports WORLD width '+p7.w+' — the width of its own plate, wider than the 480 camera');
+    ok(p7.w > 480, 'and stage 7 is still a WIDE stage: the plate exceeds the camera, so the level pans');
+  }
   /* master renamed to the RC2 rebuild in 0810g; the STRUCTURE is what this was protecting and
      it is unchanged — a wide master plus a dedicated boss arena that is NOT the scroll plate. */
   /* STAGE 7 IS MIKE'S CORRECTED PLATE (drop 0810t) — "replace stage 7 with that sheet as an
@@ -1467,7 +1486,28 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* ⚠ h IS LOAD-BEARING and its absence is SILENT: every reader of cfg.h falls back to 4800,
      and this plate is 4062, so omitting it mismaps the whole stage rather than throwing. Stage 1
      carries the same note for the same reason. Pinned so it cannot be dropped in a later edit. */
-  ok(vm.runInContext("run.stage=7; _levelCfg().h===4062", ctxv), 'stage-7 declares its true plate height (4062, not the 4800 fallback)');
+  {
+    const p7 = pngSize('assets/game/nst7_master_v2.png');
+    ok(vm.runInContext("run.stage=7; _levelCfg().h==="+p7.h, ctxv),
+       'stage-7 declares its true plate height ('+p7.h+', not the 4800 fallback)');
+    ok(vm.runInContext("run.stage=7; _levelCfg().h!==4800", ctxv),
+       'and it is NOT the silent 4800 fallback — the failure this pins is a mismap, not a throw');
+  }
+  /* EVERY STAGE THAT DECLARES ITS GEOMETRY MUST MATCH ITS OWN PLATE (drop 0822d). The four
+     rescaled stages each needed plateW AND h changed in step with the PNG; missing either is
+     silent. This sweep is the mechanism, so the next rescale cannot half-land. */
+  for(const [stg, file] of [[1,'bg_stage01_intact.png'], [2,'nst2_master_v2.png'],
+                            [3,'nst3_master_v2.png'],   [4,'bg_stage04_master.png'],
+                            [6,'bg_stage06_master.png'],[7,'nst7_master_v2.png'],
+                            [8,'blackhole800_rc2_master.png']]){
+    const px = pngSize('assets/game/'+file);
+    const cw = vm.runInContext("run.stage="+stg+"; (_levelCfg().plateW||null)", ctxv);
+    const ch = vm.runInContext("run.stage="+stg+"; (_levelCfg().h||null)", ctxv);
+    if(cw!=null) ok(cw===px.w, 'stage '+stg+' plateW ('+cw+') matches '+file+' ('+px.w+')');
+    if(ch!=null) ok(ch===px.h, 'stage '+stg+' cfg.h ('+ch+') matches '+file+' ('+px.h+')');
+    ok(vm.runInContext("run.stage="+stg+"; worldWidth()", ctxv)===px.w,
+       'stage '+stg+' worldWidth() resolves to its plate width '+px.w);
+  }
   ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv), 'and the sludge bed it shows through the plate');
   ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv),
      'and it KEEPS its sludge — the RC2 plate is magenta-punched to alpha and the sludge is what shows through');

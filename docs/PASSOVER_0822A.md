@@ -283,3 +283,82 @@ The `%` borrow (closed in 0821j) also confirmed live: ACCURACY, MISSILE HITS and
 render `0%` in the same khaki as their digits.
 
 No code changed in 0822c.
+
+---
+
+# 0822d — THE FOUR PLATES ARE 680 NOW, ON DISK
+
+Mike: *"just scale our stages down to 680 width via the actual image, not in-game."* Done. Every
+stage is now a true 680 world at zoom 1.00 — no runtime rescale anywhere in the game.
+
+    stage        WORLD_W  zoom  viewW  pan  ratio        before
+    1..8            680   1.00    480  200  1.417        2,3,7,8 were 800 @ 0.85
+
+    nst2_master_v2          800x4800 -> 680x4080
+    nst3_master_v2          800x4800 -> 680x4080
+    nst7_master_v2          800x4062 -> 680x3453
+    blackhole800_rc2_master 800x5120 -> 680x4352
+
+## 1. ⚠ NEAREST, AND THE PRETTIER FILTER WOULD HAVE BROKEN THE KEYING
+
+The obvious call is a smooth downscale — BOX or LANCZOS both look cleaner than NEAREST on a crop,
+and I nearly took one. **These plates key by ALPHA**, and the liquid layers show through it:
+stage 2's lava, stage 3's ice, stage 7's sludge at 68% of the plate. Measured partial-alpha pixels
+(neither opaque art nor fully keyed) on a 1-in-3 sample:
+
+    variant     stage 2 fringe   stage 7 fringe
+    ORIGINAL                 0                0     <- hard-edged by construction
+    NEAREST                  0                0
+    BOX                    121              749
+    LANCZOS              2,445           12,045
+
+⚠ **A SOFT FILTER PUTS A SEMI-TRANSPARENT FRINGE ON EVERY TERRAIN EDGE, AND THE LIQUID BLEEDS
+THROUGH IT.** That is a halo along every boundary in the level — the artifact class this repo's
+own rules exist to prevent. LANCZOS would have added roughly 108,000 fringe pixels to stage 7
+alone at full resolution. **The filter was chosen by measuring the key, not by looking at a crop**,
+and the crop is exactly what would have chosen wrong.
+
+Every converted plate re-measured at **0 partial alpha**. The key is as hard as it was authored.
+
+## 2. WHAT ELSE HAD TO MOVE — THREE THINGS, ALL SILENT IF MISSED
+
+⚠ **`cfg.h` FALLS BACK TO 4800 AND THE FALLBACK DOES NOT THROW.** Stages 2 and 3 were 4800, so
+they matched the fallback by accident and declared nothing. At 4080 they no longer do, so both
+now declare `h`. Stage 7's `h:4062` was already flagged load-bearing and became 3453. Stage 8 got
+`h:4352`. A missed one mismaps the whole stage silently.
+
+⚠ **STAGE 8's `skipRows:[2500,2650]` ARE ABSOLUTE MASTER ROWS** and were rescaled to
+`[2125,2253]`. Left alone they would skip the wrong 150px of a shorter plate.
+
+⚠ **THE MASKS NEEDED NOTHING, AND THAT IS WORTH KNOWING.** `_buildTankMask` builds from
+`img.naturalWidth/naturalHeight` and `_isLand` indexes world x 1:1 into the mask's own width, so
+both rescaled themselves with the art. The old comment warning that narrowing the world would put
+"every tank and boat on the wrong pixel" was about narrowing the WORLD under an 800 plate — not
+about scaling both together, which is self-consistent.
+
+## 3. THE TWO SUITE FAILURES WERE ASSERTIONS DEFENDING THE OLD PLATE
+
+    ASSERT FAIL: stage 7 reports WORLD width 800, not camera width 480
+    ASSERT FAIL: stage-7 declares its true plate height (4062, not the 4800 fallback)
+
+Both correct before this drop and both literals. **Repointed at the ART instead of at a new
+number**: `pngSize()` reads the PNG's own IHDR, and the assertions now compare `plateW` and
+`cfg.h` against the actual file for all seven stages that declare geometry. A literal is only ever
+true of the plate that was on disk the day it was written — the second of those two even carried a
+comment explaining how load-bearing it was, and the comment was right while the number went stale.
+
+Suite **2,723 ok / 3 fail** — up 21 assertions, and the 3 are the same environmental
+`_superseded/` checks as every run this session.
+
+## 4. VERIFIED
+
+    verify_atlas_0806z.js    PASS - all 8 stages play 100s, boss reached, 0 blank placeholders
+    measured live            all 8: WORLD_W 680, zoom 1.00, pan 200, ratio 1.417
+    shoot.py                 stages 2, 3, 7, 8 captured - keyed liquid still shows through,
+                             hard terrain edges, no fringe, no halo
+
+⚠ **WHAT THIS DID NOT BUY, STATED PLAINLY:** the 0.85 reduction still dropped the same ~15% of
+columns — it is baked now rather than applied live. The gain is that it is applied ONCE, at a
+fixed phase, instead of recomputed every frame against an eased fractional camX. `CAM_SNAP` is
+now moot for these stages: at 680 the device factor is an integer 2.00, which is the stable case
+0822a measured.
