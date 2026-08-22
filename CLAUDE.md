@@ -633,7 +633,10 @@ publishes `_masterSrcY` and both prop draws read it. The 0810h note saying they 
 compared the two PROPS to each other and never to the terrain.
 ⚠ **`XART.rdy()` AND UNDECODED MASTERS FAKED THREE "NO BUG HERE" RESULTS** before this was measured —
 and one probe printed a PASS having measured zero stages. Check that a probe measured something.
-⚠ **THERE IS NO BRIDGE ASSET** (item 3): `cfg.props` holds exactly ONE prop game-wide,
+⚠ **STALE — CORRECTED 0822b: `cfg.props` is now `props:[]` and NO stage has a prop.** The crash
+overlay went with the old stage-4 plate (see the note at that cfg). Measured live on all eight
+stages: props 0 everywhere. The paragraph below is kept for the reasoning, not the count.
+⚠ **THERE IS NO BRIDGE ASSET** (item 3): `cfg.props` held exactly ONE prop game-wide,
 `nst4_crash_overlay`, an 800x600 pileup drawn 1:1 — the crash object Mike approved. Not deleted.
 
 **0813b — the levels were bilinear-doubled EVERY FRAME, and that is why they looked upscaled.**
@@ -1928,8 +1931,12 @@ square~~ (**stage 8, CLOSED 0814e** — the herald wearing its own venom stream;
 CARRIER), ~~the stage 8 boss (4 forms, same pattern, very tanky)~~ (**CLOSED 0812o + 0814h** —
 the four attack identities landed in 0812o; "very tanky" measured at **22,370 hp, 12.1× hpBase**,
 because `hpx` was applied as a multiplier of the full `_vBase` instead of a share of it; normalised
-to the 4,070 total the 2.2× budget always described, forms 740→1,332), signs that scroll when told
-not to, and a waterfall in the middle of the road.
+to the 4,070 total the 2.2× budget always described, forms 740→1,332), ~~signs that scroll when told
+not to~~, and ~~a waterfall in the middle of the road~~ — **BOTH CLOSED 0822b, by measurement.**
+Zero fall blits on any of the eight stages; stage 4 is the ONLY stage with signs and they are
+already retired via `SIGNS_OFF` (0813j), drawing nothing, with their master row measured INVARIANT
+across 200 frames. That is six of the last eleven open-list entries found already dead. See
+`docs/PASSOVER_0822A.md`.
 
 **The `o.px` camera fix (0810c), for the record.**
 `outboundStart` captures `o.px = player.x`, which is a **world** coordinate, and all three

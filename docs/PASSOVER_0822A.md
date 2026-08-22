@@ -154,3 +154,91 @@ Suite with the dial added: **2,702 ok / 3 fail, failure list identical to baseli
 
 `worldWidth()`'s comment claimed MASTER_W was "only the default for the plates still authored at
 800 (stages 2 and 3)". It is 2, 3, 7 AND 8 — the note omitted the two widest plates in the game.
+
+---
+
+# 0822b — THE LAST TWO TESTER ITEMS ARE BOTH ALREADY DEAD
+
+Re-measured before working them, per the pattern this file keeps recording. Both are closed, and
+the measuring turned up one thing that IS live and was on no list.
+
+| item | verdict |
+|---|---|
+| a waterfall in the middle of the road | **DEAD** — zero fall blits on any of the eight stages |
+| signs that scroll when told not to | **DEAD** — the only signs are stage 4's, already switched off |
+| the `+` glyph not rendering | **NOT A BUG** — no game text contains one |
+| stage 2 lava fall / stage 7 sludge fall | ⚠ **NEVER RENDERED, and that is new** |
+
+## 1. THE WATERFALL — GONE TWICE OVER
+
+`FALL_FOR` is `{2:'nlf_lava', 7:'nlf_sludge'}`. Stage 4's entry went in 0810f (Mike, twice: "why
+the waterfall is still on level 4") and stage 1's in 0819d. Instrumented `ctx.drawImage` inside
+`drawLiquidFalls` and drove all eight stages: **0 blits everywhere.** The road cannot have a
+waterfall on it because nothing draws one anywhere in the game.
+
+⚠ **AND THE `drawLiquidFalls(0)` CALL SITE IS NOT THE BUG IT LOOKS LIKE.** The `loopMaster` branch
+passes a hard-coded 0 instead of the scroll position, which reads as an obvious defect. It is
+stage 5 only, stage 5 has no `FALL_FOR` entry, and the function bails on `!fam` before the 0 is
+ever used. Worth writing down because it will look like the answer to the next person too.
+
+⚠ **THE OTHER CALL SITE PASSES `_srcYPub`, NOT RAW `srcY`, AND THAT IS CORRECT** — despite the
+function's own comment calling its parameter "the master-space y of the top of the visible
+window". The blit puts master row `srcY` at `_floorDy + _winTop`, so row R lands at
+`R - srcY + _floorDy + _winTop`; with `_srcYPub = srcY - _floorDy - _winTop`, `d.y - _srcYPub`
+expands to exactly that. It is the same mapping the props use. **Read the arithmetic, not the
+parameter name.**
+
+## 2. ⚠ THE FALL SYSTEM IS INERT IN BOTH DIRECTIONS — THE TWO HALVES NEVER MEET
+
+    FALL_FOR (art)      2 -> nlf_lava,  7 -> nlf_sludge
+    liquids.drops       1 -> {y764, x139..660},  4 -> {y2904, x0..799}
+
+**The two stages with fall ART have no PLACEMENT, and the two stages with placement have had their
+art removed.** So stage 2's lava fall and stage 7's sludge fall have never drawn a pixel. The art
+is registered and present (`nlf_lava_0/1`, `nlf_sludge_0/1` all resolve), so this is authored work
+that never ships.
+
+Whether stages 2 and 7 SHOULD have falls is Mike's call, and the fix is data, not code: an
+authored span per stage. 0810f already set the rule — *"if stage 4 ever wants a fall it needs an
+authored span, not the full width"* — and stage 1's `{y:764, x139..660}` is the shape of a real
+one. **Do not invent spans**; a full-width entry is the signature of something derived from a keyed
+region rather than placed by hand, which is exactly what got stage 4 removed.
+
+## 3. THE SIGNS — ONE STAGE, ALREADY OFF, AND PINNED ANYWAY
+
+Signs live in `window.BOFRS[stage]`, NOT `cfg.signs` — a first probe read the cfg, got zero on all
+eight stages and would have "proved" there are no signs at all. **Zero is not a result until you
+know you read the right table.** Measured properly:
+
+    stage 4   10 signs   SIGNS_OFF true   0 blits   master row 2760 INVARIANT over 200 frames
+    all others  0 signs
+
+Stage 4 is the only stage that ever had them and Mike retired them in 0813j. They draw nothing.
+And the mapping is locked regardless: signs, props and terrain all read the single published
+`_masterSrcY` (`sy = y - _masterSrcY`), so a sign cannot drift from the ground by construction —
+that is 0813c, and the invariant row confirms it.
+
+⚠ **WHAT "SCROLL" MEANS IS STILL MIKE'S, AND IT IS THE ONLY LIVE PART OF THIS ITEM.** His words
+were *"they do not scroll ever, they are objects that stay put"*. Objects that stay put ON THE MAP
+travel up the screen as the level advances, which is what the code now does. If he means
+SCREEN-fixed, that is a different design and a different fix.
+
+## 4. THE `+` GLYPH IS NOT A BUG
+
+0822a flagged `+` rendering as a gap. It is not in the face's glyph map, but no rendered string
+contains one — the only `+` in a text call is `'STAGE '+run.stage+' CLEAR'`, which is JavaScript
+concatenation. Nothing to fix.
+
+## 5. ALSO CORRECTED IN CLAUDE.md
+
+`cfg.props` "holds exactly ONE prop game-wide, nst4_crash_overlay" — it is `props:[]` now and the
+overlay went with the old stage-4 plate. Measured: props 0 on all eight stages.
+
+---
+
+## HOW TO VERIFY
+
+    node --check assets/game.js
+    node _BUILD_SOURCE/test_fl.js       # 2,702 ok / 3 fail, unchanged - no code changed in 0822b
+
+0822b is measurement and documentation only. The only edits are to CLAUDE.md.
