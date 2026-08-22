@@ -11875,8 +11875,14 @@ function flameFire(lv){
    would have silently dropped the lowpass and level cut that drop 0730a added after
    Mike said "the missile and firewave sounds are harsh to the ears." A matching
    TAME entry is registered for 'flamewall' alongside this, or the harshness returns. */
-function flameSndStart(){ if(typeof Snd!=='undefined' && Snd && Snd.loopOn) Snd.loopOn('flamewall',0.85); }
-function flameSndStop(){ if(typeof Snd!=='undefined' && Snd && Snd.loopOff) Snd.loopOff('flamewall'); }
+/* ⚠ THE FLAMETHROWER'S VOICE IS arc_flame_loop.wav (drop 0822s). Mike, naming the files:
+   "wire up sounds for flame thrower, flamewalls/waves that come at us". It had been looping
+   'flamewall' (flame_wall.wav) since 0801km — that sample is the FIREWAVE's, and it was on the
+   held weapon while the wave that crosses the caldera played a generic flare whoosh. The two are
+   swapped to the files he named. arc_flame_loop is authored to loop; flame_wall is a 3.18s
+   one-shot, which is why the held weapon is the one that gets the loop. */
+function flameSndStart(){ if(typeof Snd!=='undefined' && Snd && Snd.loopOn) Snd.loopOn('arcFlameLoop',0.85); }
+function flameSndStop(){ if(typeof Snd!=='undefined' && Snd && Snd.loopOff) Snd.loopOff('arcFlameLoop'); }
 
 /* --- THE MIRRORED FLAME (Mike's spec) ---------------------------------------
    "flip the firewall vertically, duplicate it, and flip the other duplicate horizontally so the
@@ -12362,7 +12368,11 @@ function coleFuseRelease(){
     pBullets.push({x:player.x+off, y:player.y-16, vx:0, vy:-13,
                    w:14, h:56, dmg:FUSE_DMG, kind:'colefuse', pierce:true, t:0});
   }
-  if(Audio.SFX){ (Audio.SFX.laser||Audio.SFX.shoot||function(){})(); }
+  /* ⚠ lz_stack.wav IS THE FUSION CANNON (drop 0822s). Mike: "the lz_stack is for cole's fusion
+     cannon /lvl 8". It had been borrowing the generic pulse laser, which is the same cue an
+     ordinary laser shot uses — so the release of a charged two-lance piercing shot sounded like
+     a normal trigger pull. Falls back down the old chain if the sample has not decoded. */
+  if(Audio.SFX){ (Audio.SFX.lzStack||Audio.SFX.laser||Audio.SFX.shoot||function(){})(); }
   shake=Math.max(shake,7);
   flashScreen=Math.max(flashScreen||0,0.22);
 }
@@ -27989,7 +27999,11 @@ function wfxUpdate(dt){
              stinger summing into one peak, which is the other half of what Mike is hearing on the
              firewave. Alert first, flame a beat behind it, so they read as two events. */
           if(Audio.SFX.dangerAlert) Audio.SFX.dangerAlert();
-          setTimeout(()=>{ try{ if(Audio.SFX && Audio.SFX.firewall) Audio.SFX.firewall(); }catch(_){} }, 150);
+          /* ⚠ flame_wall.wav IS THIS CUE (drop 0822s) — the wave crossing the caldera is what Mike
+             authored it for. It had been playing 'firewall' = nsp_solar_flare.mp3, a generic flare
+             whoosh, while its own sample sat on the flamethrower. The 150ms offset from the alert
+             stays: 0730a put it there so the stinger and the flame read as two events. */
+          setTimeout(()=>{ try{ if(Audio.SFX && (Audio.SFX.flamewall||Audio.SFX.firewall)) (Audio.SFX.flamewall||Audio.SFX.firewall)(); }catch(_){} }, 150);
           shake=Math.max(shake,6);
         }
         if(F.wave){
@@ -41011,6 +41025,12 @@ const Snd=(function(){
        Same shaping as the sound it replaces. It runs as a sustained loop rather than
        a retrigger, so `min` does nothing here and is left off. */
     flamewall: {g:0.58, lp:3400},
+    /* ⚠ TAME IS KEYED BY NAME, so moving a sample to a different trigger moves its shaping with
+       it and leaves the NEW occupant raw (drop 0822s). arc_flame_loop now carries the held
+       flamethrower and needs the same softening the sample it replaced had; lz_stack is a single
+       heavy release rather than a sustain, so it takes a gentler cut and keeps its top end. */
+    arcFlameLoop: {g:0.58, lp:3400},
+    lzStack: {g:0.72, lp:6200},
   };
   A._ctx=null; A._nodes={}; A._bad={}; A._last={};
   A._audioCtx=function(){

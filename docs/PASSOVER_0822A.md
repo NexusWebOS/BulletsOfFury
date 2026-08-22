@@ -976,3 +976,56 @@ which is why the fix moved them 0 -> 1.00 blits/frame *inside the same synchrono
 blit counter and are nothing alike.** Check which one you have before writing a fix.
 
 No code changed in 0822r. Stages 7 and 8 were never broken.
+
+---
+
+# 0822s — FOUR SOUNDS WIRED, AND TWO OF THEM WERE ON EACH OTHER'S TRIGGERS
+
+Mike: *"wire up sounds for flame thrower, flamewalls/waves that come at us, barrrel rolls and the
+lz_stack is for cole's fusion cannon /lvl 8."*
+
+    file                  was                                    now
+    arc_flame_loop.wav    fireball launch one-shot only          FLAMETHROWER (held loop)
+    flame_wall.wav        looping on the flamethrower            stage-2 FIREWAVE
+    arc_barrel_roll.wav   startRoll()                            unchanged - already correct
+    lz_stack.wav          not in the build at all                cole's LV8 FUSION CANNON
+
+⚠ **THE FIRST TWO WERE SWAPPED.** `flame_wall.wav` had been looping on the held flamethrower since
+0801km, while the wave that crosses the caldera played `nsp_solar_flare.mp3` — a generic flare
+whoosh. Each sample was on the other's trigger. The file names say which is which, and the
+durations agree: arc_flame_loop is authored to loop, flame_wall is a 3.18s one-shot, so the held
+weapon is the one that takes the loop.
+
+⚠ **THE BARREL ROLL WAS ALREADY DONE** (0813-era `startRoll`), verified rather than assumed:
+`startRoll(1)` fires `arcBarrelRoll`. No change.
+
+⚠ **`lz_stack.wav` WAS NOT IN THE BUILD.** Copied to `assets/game/sounds/` and registered. The
+fusion cannon had been borrowing the generic pulse laser — the same cue an ordinary laser shot
+uses, so releasing a charged two-lance piercing shot sounded like a normal trigger pull.
+
+⚠ **TAME IS KEYED BY NAME, SO SHAPING FOLLOWS THE SAMPLE, NOT THE TRIGGER.** Moving flame_wall off
+the flamethrower would have left arc_flame_loop playing RAW and undone 0730a's fix for *"the
+missile and firewave sounds are harsh to the ears."* `arcFlameLoop` takes the same shaping the
+sample it replaced had; `lzStack` is one heavy release rather than a sustain, so a gentler cut.
+
+## VERIFIED AT RUNTIME, NOT BY READING
+
+    registered + on disk   all four, correct paths
+    Audio.SFX fn exists    all four
+    flamethrower           loopOn:arcFlameLoop / loopOff:arcFlameLoop
+    fusion cannon          lzStack
+    barrel roll            arcBarrelRoll
+
+## ⚠ AND THE SUITE CRASHED WEARING A PASS
+
+My first repointing reported **1,853 ok / 0 fail** — count down ~880, failures zero. That is rule
+3 exactly: a `String(wfxTick||...)` line I added referenced an identifier that does not exist in
+that context, threw, and killed the run at test_fl.js:6541. **Zero failures with a fallen count is
+a crash, never a pass.** Removed; the line was an unused leftover.
+
+§ the flamethrower assertion pinned `loopOn('flamewall')`, so Mike's own instruction failed it. Its
+comment states the real rule — *"must actually LOOP the new bed, not the old flare one-shot"* —
+which arc_flame_loop still satisfies. Repointed at the rule, the guard against the old flare kept,
+and a new guard added that the flamethrower does NOT take the firewave's sample.
+
+Suite **2,737 ok / 3 fail** (+5 assertions), both runs ending at section 230.

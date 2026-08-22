@@ -6518,17 +6518,30 @@ console.log('=== 153. new sounds + the 20/35/50/100 missile crates (drop 0801km)
      assertion's. Matching on the filename keeps the real guarantee and survives a move. */
   var _snd={flamewall:'flame_wall.wav',
             arcFlameLoop:'arc_flame_loop.wav',
-            arcBarrelRoll:'arc_barrel_roll.wav'};
+            arcBarrelRoll:'arc_barrel_roll.wav',
+            lzStack:'lz_stack.wav'};
   Object.keys(_snd).forEach(function(k){
     var v=vm.runInContext("window.BOFA.sfx['"+k+"']||''", ctxv);
     ok(v.slice(-_snd[k].length)===_snd[k] && fs.existsSync(ROOT+'/'+v), 'sfx '+k+' registered and on disk ('+v+')');
     ok(vm.runInContext("typeof Audio!=='undefined'&&Audio.SFX&&typeof Audio.SFX['"+k+"']==='function'", ctxv),
        'Audio.SFX.'+k+' is callable');
   });
-  /* The flamethrower must actually LOOP the new bed, not the old flare one-shot. */
+  /* The flamethrower must actually LOOP a flame BED, not the old flare one-shot. That is the
+     rule; the filename is not. Mike reassigned the samples in 0822s - "wire up sounds for flame
+     thrower, flamewalls/waves that come at us" - so the held weapon takes arc_flame_loop (authored
+     to loop) and flame_wall.wav goes to the wave that crosses the caldera, which is what it was
+     authored for. This pinned the literal 'flamewall' and so failed on his own instruction.
+     Repointed at the rule, and the guard against the old flare one-shot is kept because that is
+     the failure the block exists to prevent. */
   var _fsrc=vm.runInContext("String(flameSndStart)", ctxv);
-  ok(/loopOn\('flamewall'/.test(_fsrc), 'the flamethrower loops flame_wall.wav');
+  ok(/loopOn\('arcFlameLoop'/.test(_fsrc), 'the flamethrower loops arc_flame_loop.wav');
   ok(!/loopOn\('firewall'/.test(_fsrc), 'and no longer loops the old firewall flare');
+  ok(!/loopOn\('flamewall'/.test(_fsrc), "and not flame_wall.wav either - that is the firewave's");
+  /* the samples Mike named must reach the triggers he named them for */
+  ok(vm.runInContext("String(coleFuseRelease).indexOf('lzStack')>0", ctxv),
+     "cole's LV8 fusion cannon fires lz_stack.wav");
+  ok(vm.runInContext("String(startRoll).indexOf('arcBarrelRoll')>0", ctxv),
+     'a barrel roll fires arc_barrel_roll.wav');
   /* Taming is keyed by NAME. Without an entry the new sample plays raw and undoes
      drop 0730a's fix for "the missile and firewave sounds are harsh to the ears." */
   ok(vm.runInContext("!!(Snd&&Snd.TAME&&Snd.TAME.flamewall&&Snd.TAME.flamewall.lp)", ctxv),
