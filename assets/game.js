@@ -8853,6 +8853,7 @@ const ENEMY_VOLLEY = {
    learnable (drop 0811s), and they were never the problem — the problem is that there was no
    gap between them. Per-type overrides live in the ENEMY_VOLLEY row so this stays a TABLE,
    which is the standing rule here: anything added is covered without editing this function. */
+const VOLLEY_SHAPE_HOLD = 4.0;   // seconds a type holds one shape before rotating (0821h)
 const VOLLEY_BURST = 2;     // volleys fired back-to-back
 const VOLLEY_PAUSE = 1.5;   // then a FIXED silence - fixed, so it can be learned
 function enemyVolleyTick(e, dt){
@@ -8913,9 +8914,36 @@ function enemyVolley(e, force){
      whole point is lost if a row of four all fire the identical shape on the identical beat. It
      is seeded off the unit's own spawn x, not Math.random, so a replay of the same wave produces
      the same fight. */
-  if(e._volSeed==null) e._volSeed = (Math.abs((e.x|0)*7 + (e.y|0)*13)) % 97;
-  const _step = ((e._volN/(V.every||1))|0);
-  const _pat = (V.alt && V.alt.length) ? V.alt[(_step + e._volSeed) % V.alt.length] : V.pat;
+  /* ============================================================
+     ⚠ THE ROTATION WAS DEAD, AND THE DE-SYNC WAS PERMANENT (Mike, 0821h: "still chaotic/unsensual
+     projectile patterns"). Measured over 30s of stage 6 before changing anything:
+
+         e._volN is 0 for EVERY unit of EVERY type, the whole run
+
+     `_step` is derived from `_volN`, and `_volN` is only incremented on the `!force` path — but
+     enemyVolleyTick, which is what actually fires these, always passes force=true. So `_step` was
+     permanently 0 and `alt` never advanced: each unit picked ONE shape at spawn from its position
+     seed and fired only that for its entire life.
+
+     That is the worst of both ends, and it is exactly what "chaotic" describes. 0811s intended
+     ROTATION between clean shapes; what shipped was no rotation at all, plus a per-unit seed that
+     guaranteed two talons on screen together were firing two DIFFERENT shapes at once. Measured:
+     up to 6 distinct type+shape combinations live simultaneously, averaging 3.8. Nothing on
+     screen was a formation, so there was nothing to read.
+
+     The shape is now a function of the TYPE and the stage CLOCK, not of where a unit happened to
+     spawn. Every talon alive at a given moment fires the same shape, so a wave reads as one
+     pattern; the shape rotates every VOLLEY_SHAPE_HOLD seconds, so it still stops being
+     monotonous. The per-type offset keeps two different rosters from switching on the same beat.
+
+     ⚠ STILL DETERMINISTIC, which 0811s requires: stageTimer drives the wave table, so the same
+     replay produces the same fight. And the TIME stagger is untouched — `_volCd` still starts at
+     rnd(0.25,0.8), so a row of four ripples rather than firing on one frame. What is shared is
+     the SHAPE, not the beat. ============================================================ */
+  if(V._tOff==null){ let h=0; const _n=String(e.type||''); for(let i=0;i<_n.length;i++) h=(h*31+_n.charCodeAt(i))|0; V._tOff=Math.abs(h)%7; }
+  const _clk = (typeof stageTimer!=='undefined') ? stageTimer : 0;
+  const _step = ((_clk/VOLLEY_SHAPE_HOLD)|0) + V._tOff;
+  const _pat = (V.alt && V.alt.length) ? V.alt[_step % V.alt.length] : V.pat;
   switch(_pat){
     case 'fan':
       /* a wide fixed fan. The gaps OPEN as it travels, so there is always a lane — but it is a

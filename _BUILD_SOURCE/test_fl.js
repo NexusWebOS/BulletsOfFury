@@ -9851,11 +9851,25 @@ console.log("=== 213a. volley patterns ===");
     +"});"
     /* and rotation: consecutive volleys of alt:['fan','rake'] must not all be the same shape */
     +"enemies.length=0;"
+    /* ⚠ REPOINTED 0821h, AND IT WAS PASSING WHILE THE FEATURE WAS DEAD. This drove `r._volN=i`
+       by hand and watched the shape change — but `_volN` is only incremented on enemyVolley's
+       `!force` path, and enemyVolleyTick (which is what actually fires every one of these) always
+       passes force=true. Measured in play: _volN is 0 for every unit of every type for a whole
+       run, so `alt` never rotated once. The assertion set the variable the game never set, and so
+       validated a MECHANISM instead of the behaviour.
+       It drives stageTimer now, which is what the rotation is keyed to, and a second check pins
+       the half that was actually broken on screen: two units of one type must be firing the SAME
+       shape at the same moment, or a wave is several unrelated patterns at once. */
     +"var r=spawnEnemy('s1jetdelta',240,120,{}), seq=[];"
-    +"if(r){ var sv=ENEMY_VOLLEY[r.type]; ENEMY_VOLLEY[r.type]={alt:['fan','rake'],every:1}; r._volSeed=0;"
-    +"  for(var i=0;i<6;i++){ eBullets.length=0; r._volN=i; enemyVolley(r,true); seq.push(eBullets.length); }"
-    +"  ENEMY_VOLLEY[r.type]=sv; }"
-    +"return JSON.stringify({o:o, seq:seq, VW:VW});})()", ctxv));
+    +"var sameShape=null;"
+    +"if(r){ var sv=ENEMY_VOLLEY[r.type]; ENEMY_VOLLEY[r.type]={alt:['fan','rake'],every:1};"
+    +"  var svT=stageTimer;"
+    +"  for(var i=0;i<6;i++){ eBullets.length=0; stageTimer=svT+i*VOLLEY_SHAPE_HOLD; enemyVolley(r,true); seq.push(eBullets.length); }"
+    +"  var r2=spawnEnemy('s1jetdelta',80,140,{});"
+    +"  if(r2){ stageTimer=svT; eBullets.length=0; enemyVolley(r,true);  var n1=eBullets.length;"
+    +"          eBullets.length=0; enemyVolley(r2,true); var n2=eBullets.length; sameShape=(n1===n2); }"
+    +"  stageTimer=svT; ENEMY_VOLLEY[r.type]=sv; }"
+    +"return JSON.stringify({o:o, seq:seq, sameShape:sameShape, VW:VW});})()", ctxv));
 
   ['fan','wall','pincer','stagger','rake','salvo','curtain','ripple'].forEach(function(p){
     ok(_v213.o[p] && _v213.o[p].n>0, 'volley pattern "'+p+'" actually fires ('+((_v213.o[p]||{}).n||0)+' rounds)');
@@ -9870,7 +9884,9 @@ console.log("=== 213a. volley patterns ===");
      'and a screen-filling pattern is far wider than the unit-frontage ones ('+_v213.o.curtain.span+' vs wall '+_v213.o.wall.span+')');
   var _uniq={}; _v213.seq.forEach(function(v){ _uniq[v]=1; });
   ok(Object.keys(_uniq).length>1,
-     'alt:[...] rotates a unit between shapes rather than repeating one ('+_v213.seq.join(',')+')');
+     'alt:[...] rotates over the stage clock rather than repeating one shape ('+_v213.seq.join(',')+')');
+  ok(_v213.sameShape===true,
+     'and two units of one type fire the SAME shape at the same moment — a wave is one pattern, not several (Mike 0821h)');
 }
 
 // ===== 213b. NOTHING STACKS (drop 0811l) =====
