@@ -5872,7 +5872,22 @@ const STAGES = [
    length:58, boss:'sludgeemperor'},
   {n:8, name:'STAGE 8', sub:'FURIOUS DEATH',            bg:'space',  music:'lvl6',
    length:60, boss:'vileexistence'},
+  /* ── STAGE 9 IS THE BONUS STAGE, AND IT IS NOT PART OF THE CAMPAIGN ───────────
+     Mike: "stage 9 was the bonus stage, yes. This is accesible through Level 5", and the
+     pack README: "a purple/cyan velocity void reached through the massive Stage 5 gate".
+
+     ⚠ IT HAD TO JOIN STAGES[] AND THAT IS DANGEROUS — read this before touching it.
+     beginStage does `curStage=STAGES[num-1]`, so stage 9 could not be entered at all while
+     the array held eight. But the stage-clear exit reads `run.stage>=STAGES.length` to roll
+     credits, so simply appending a ninth entry makes clearing stage 8 advance INTO the bonus
+     stage instead of finishing the game. That is why the campaign end is now counted from
+     CAMPAIGN_STAGES (entries without bonus:true) rather than from the array length.
+     Any future bonus stage just sets the flag and both behaviours stay correct. */
+  {n:9, name:'STAGE 9', sub:'THE VELOCITY VOID',       bg:'space',  music:'bonus',
+   length:42, boss:'tidalsovereign', bonus:true},
 ];
+/* the campaign is stages 1..8; a bonus stage lives in the table but not in the run order */
+const CAMPAIGN_STAGES = STAGES.filter(function(s){ return !s.bonus; }).length;
 let curStage=null;
 let stageTimer=0, spawnClock=0, _waveGap=0, bossActive=false, bossDefeated=false, stageEnding=0, lifeUpRolled=false;
 let subBoss=null, subBossActive=false, subBossDone=false, subBossTriggered=false, _sbMusicResumed=false;
@@ -5974,6 +5989,7 @@ const SUBBOSS={
      (Enemies/Stage08/spawn_carrier_miniboss); the herald code stays, unassigned, like the
      magma/cryo rigs. */
   8:{at:0.45, kind:'spawncarrier', afterScroll:1201},
+  9:{at:0.45, kind:'warpsentinel', afterScroll:1201},   // WARP SENTINEL — the bonus stage's miniboss (0822ab)
   3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
   5:{at:0.45, kind:'subcore', afterScroll:1121},
@@ -7550,6 +7566,7 @@ const SHIPS=[];
      last point before the enemy is finalised, and these types carry NO case in the switch
      below, so nothing downstream reassigns art/pattern/size. See NEF_S1. */
   if(typeof applyNefUnit==='function') applyNefUnit(c, _rk);   // no-op unless a row matches
+  if(typeof applyS9Unit==='function') applyS9Unit(c, _rk);    // stage 9's velocity-void roster (0822ab)
 
   /* ---- STAGE 1 NAVAL ROSTER (drop 0808l) ----------------------------------------------------
      ⚠ THIS HAS TO BE HERE, not up at `const base = {...}` where it belongs logically.
@@ -8833,6 +8850,42 @@ function buildStagePlan(stageNum){
                                   vRow('mine', Math.round(4*D), {pattern:'straight'}); });
     return _planSorted(P);
   }
+  if(stageNum===9){ // BONUS STAGE — THE VELOCITY VOID (drop 0822ab)
+    /* Mike's roster: "Stage 9 is a purple/cyan velocity void reached through the massive Stage 5
+       gate." A BONUS stage, so it is built to be fast and generous rather than attritional —
+       dense, low-hp waves that read as a score run, not a wall.
+
+       ⚠ THIS RETURN MUST EXIST OR STAGE 9 IS AN EMPTY CORRIDOR. Every other stage has a
+       block here; 9 had none, so even once it became reachable it would have scrolled for a
+       minute with nothing in it and then run its boss. The tail below adds generic waves to any
+       stage that does NOT return, and generic jungle jets in a velocity void is the clip-show
+       mistake stage 8's note is about — hence an explicit return. */
+    const W9=worldWidth();
+    // ---- I: THE GATE RUN — skimmers and needles, fast and light
+    add(1.2, ()=> { spawnEnemy('wskim', W9*0.30, -40, {}); spawnEnemy('wskim', W9*0.70, -40, {}); });
+    add(3.0, ()=> { spawnEnemy('pneedle', W9*0.50, -40, {}); });
+    add(4.6, ()=> { spawnEnemy('wskim', W9*0.18, -40, {}); spawnEnemy('wskim', W9*0.50, -40, {});
+                    spawnEnemy('wskim', W9*0.82, -40, {}); });
+    add(6.8, ()=> { spawnEnemy('pmine', W9*0.35, -40, {}); spawnEnemy('pmine', W9*0.65, -40, {}); });
+    add(8.8, ()=> { spawnEnemy('vmanta', W9*0.50, -46, {}); });
+    // ---- II: THE LEECHES AND THE ECHOES
+    add(11.0,()=> { spawnEnemy('gleech', W9*0.22, -40, {}); spawnEnemy('gleech', W9*0.78, -40, {}); });
+    add(13.2,()=> { spawnEnemy('echof', W9*0.40, -44, {}); spawnEnemy('echof', W9*0.60, -44, {}); });
+    add(15.5,()=> { spawnEnemy('pneedle', W9*0.28, -40, {}); spawnEnemy('pneedle', W9*0.72, -40, {}); });
+    add(17.8,()=> { spawnEnemy('tsplit', W9*0.50, -46, {}); });
+    add(20.0,()=> { spawnEnemy('vmanta', W9*0.25, -46, {}); spawnEnemy('vmanta', W9*0.75, -46, {}); });
+    // ---- III: THE BREAKERS — armour arrives, the void closes up
+    add(23.0,()=> { spawnEnemy('cbreak', W9*0.50, -52, {}); });
+    add(25.5,()=> { spawnEnemy('wskim', W9*0.15, -40, {}); spawnEnemy('wskim', W9*0.85, -40, {});
+                    spawnEnemy('pmine', W9*0.50, -40, {}); });
+    add(28.0,()=> { spawnEnemy('tsplit', W9*0.32, -46, {}); spawnEnemy('tsplit', W9*0.68, -46, {}); });
+    add(30.5,()=> { spawnEnemy('cbreak', W9*0.30, -52, {}); spawnEnemy('cbreak', W9*0.70, -52, {}); });
+    add(33.0,()=> { spawnEnemy('echof', W9*0.50, -44, {}); spawnEnemy('gleech', W9*0.20, -40, {});
+                    spawnEnemy('gleech', W9*0.80, -40, {}); });
+    add(36.0,()=> { spawnEnemy('vmanta', W9*0.50, -46, {}); spawnEnemy('pneedle', W9*0.35, -40, {});
+                    spawnEnemy('pneedle', W9*0.65, -40, {}); });
+    return _planSorted(P);
+  }
   /* "COMMON EARLY" IS NOT COMMON TO STAGE 1 (drop 0801jw). Mike: "Jets randomly
      spawned at the beach line, no tanks were shown or visible."
 
@@ -9386,6 +9439,19 @@ const SHIPBOSS = {
                   launch:{frames:18, pre:'nsb_dcarrmk2_', fps:14, loop:false,
                           release:11, warhead:'nfx_omegamk2_in'},
                   cannon:{frames:14, pre:'nsb_dcarrmk2_cn_', fps:12, hMul:1.5, fire:6, last:11}},
+  /* ── STAGE 9's PAIR (drop 0822ab, pack CF_BonusBosses-Lvl9) ─────────────────
+     Both ship three AUTHORED states, which is why dmg is filled in here and was left off the
+     Carrier Mk II — there the plates do not exist. Recording them costs nothing and is
+     accurate; it does not make them draw, because SHIPBOSS.dmg is dead data (nothing reads
+     D.dmg, measured 0822y, and Mike has confirmed it). If damage states are ever wired,
+     these two are the units that already have the art for it.
+     w/h are the authored canvases: Tidal Sovereign 320x256, Warp Sentinel 256x192. */
+  tidalsovereign:{key:'ns9_tidal_intact', name:'TIDAL SOVEREIGN', w:320,h:256, hpMul:1.35,
+                  pat:'fan2', cd:1.22, pats:['fan2','beamfan','siege'],
+                  dmg:['ns9_tidal_damaged','ns9_tidal_critical']},
+  warpsentinel:  {key:'ns9_warpsen_intact', name:'WARP SENTINEL', w:256,h:192, hp:236,
+                  pat:'beamfan', cd:1.26, mini:true, pats:['beamfan','fan2'],
+                  dmg:['ns9_warpsen_damaged','ns9_warpsen_critical']},
   sludgeemperor: {key:'nsb_sludgeemperor_intact',   name:'SLUDGE EMPEROR', w:220,h:216, hpMul:1.46, pat:'siege', cd:1.30,
                   pats:['siege','ember','fan2'], dmg:['nsb_sludgeemperor_damaged','nsb_sludgeemperor_critical']},
   magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:240, pat:'ember', cd:1.28, mini:true,
@@ -10196,6 +10262,7 @@ function spawnBoss(kind){
        shipBossInit itself was never the problem - probed directly it sets w/h/name correctly.
        Two spawners, two switches; a kind must be registered in the one that matches its ROLE. */
     case 'infernoreaver': case 'cryospear': case 'voidbat':
+    case 'tidalsovereign': case 'warpsentinel':   // stage 9's bonus pair (0822ab)
     case 'xenoregent': case 'doomsdaycarrier': case 'doomsdaycarriermk2': case 'sludgeemperor':
     case 'glacierfortress':
       shipBossInit(b, kind); break;
@@ -15724,6 +15791,7 @@ function beginStage(num){
   if(typeof l6CloudsReset==='function'){ if(num===6) l6CloudsReset(); else l6Clouds=[]; }
   if(typeof l5FieldReset==='function'){ if(num===5) l5FieldReset(); else l5Field=[]; }
   if(typeof l8FieldReset==='function'){ if(num===8) l8FieldReset(); else l8Field=[]; }
+  if(typeof s5GateReset==='function') s5GateReset();
   if(typeof l5RocksReset==='function'){ if(num===5) l5RocksReset(); else l5Rocks=[]; }
   if(typeof speedPadsReset==='function') speedPadsReset();
   if(typeof aiQueue!=='undefined') aiQueue.length=0;
@@ -16039,6 +16107,9 @@ function enemySeparate(dt){
    ============================================================ */
 function updatePlay(dt){
   _lastDt=dt;
+  /* the warp gate sets this from the DRAW pass; entering the bonus stage tears down the
+     world, so it happens here at the top of a frame and nowhere else (0822ab) */
+  if(run && run._s9pending){ run._s9pending=0; run._s9return=6; beginStage(9); return; }
   try{ if(typeof freezerL3Tick==='function') freezerL3Tick(dt); }catch(e){}
   tickBlastChains(dt);          // pending blasts in a death chain (drop 0807c)
   tickSmokeRings(dt);           // rising smoke rings off heavy deaths (drop 0807k)
@@ -19571,6 +19642,7 @@ function stageSceneryDraw(dt){
     if(run.stage===5) { try{ bg5Draw(dt); }catch(_b5){} }               // planetary setpiece (0819e)
     if(run.stage===6) { try{ bg6Draw(dt); }catch(_b6){} }               // clouds, rain, lightning (0819f)
     if(run.stage===5 && typeof l5FieldDraw==='function'){ l5FieldUpdate(dt); l5FieldDraw(false); }
+    if(run.stage===5 && typeof s5GateTick==='function'){ s5GateTick(dt); s5GateDraw(); }   // the door to stage 9 (0822ab)
     if(run.stage===8 && typeof l8ObjsDraw==='function'){ l8FieldUpdate(dt); l8ObjsDraw(); }   // Furious Death scenery (0822aa)
   }catch(_s){}
 }
@@ -23154,6 +23226,103 @@ if(typeof ENEMY_ART!=='undefined' && typeof window!=='undefined' && window.BOFX 
     if(k.lastIndexOf('nef_',0)!==0 || /_idle$/.test(k)) continue;
     ENEMY_ART[k]=k;
   }
+}
+/* ============================================================
+   STAGE-9 ROSTER — THE VELOCITY VOID (drop 0822ab, pack CF_Stage9BonusPack-Lvl9)
+
+   Mike's roster README defines eight units by BEHAVIOUR, and the honest thing is to say which
+   part of each spec is live now and which is art-only. These rows give every unit its authored
+   art, its measured size, hp, score and a MOVEMENT PATTERN chosen to match the written
+   behaviour as closely as the existing movers allow. The signature tricks — the needle drone's
+   phase-out, the prism mine's six-lane refraction, the echo fighter's delayed ghost, the
+   interceptor's split at half health — are NOT implemented yet and are listed in the passover.
+   A unit that flies and shoots on the right art is worth shipping; a unit that claims a trick
+   it does not have is not.
+
+   ⚠ e.art IS A NAME, NOT A FILE KEY — the 0809l lesson. drawNewEnemyArt does
+   ENEMY_ART[e.art] and then base+'_'+state, so each unit needs an ENEMY_ART entry AND an
+   `<base>_idle` alias in the manifest or it spawns, moves, shoots and never draws.
+
+   THE PACK SHIPS TWO FRAMES PER UNIT, mapped idle/fire rather than run as a loop: a firing unit
+   that changes pose is a TELL, which is what this engine keeps learning it needs (see the
+   spinner's wind-up note in NEF_S2). Nothing else in the roster reads frame 1.
+
+   ⚠ THE TYPE NAMES ARE UNIQUE ON PURPOSE. nefRow() walks NEF_S1, S2 then S3 and is NOT
+   stage-gated, so a stage-9 unit called 'racer' would silently inherit stage-3 art. These eight
+   names appear nowhere else in the file. */
+const S9_UNITS = {
+  wskim:   {art:'ns9e_wskim',   w:44, h:44, hp:14, score:600, pat:'weave'},    // fast S-curve entry
+  pneedle: {art:'ns9e_pneedle', w:34, h:40, hp:12, score:640, pat:'dive'},     // needle charge
+  pmine:   {art:'ns9e_pmine',   w:38, h:38, hp:26, score:720, pat:'spin'},     // stationary spin mine
+  gleech:  {art:'ns9e_gleech',  w:40, h:40, hp:20, score:680, pat:'sine'},     // clings near the rims
+  vmanta:  {art:'ns9e_vmanta',  w:52, h:40, hp:24, score:760, pat:'strafe'},   // wide sweeping arc
+  echof:   {art:'ns9e_echof',   w:42, h:44, hp:16, score:700, pat:'hunt'},     // shadows the player
+  tsplit:  {art:'ns9e_tsplit',  w:46, h:46, hp:22, score:820, pat:'sine'},     // twin offset paths
+  cbreak:  {art:'ns9e_cbreak',  w:50, h:50, hp:34, score:900, pat:'straight'}  // armoured rammer
+};
+/* the stage-9 roster is loose PNGs, not sheet cells, so it seeds off BOFX.img rather than
+   BOFX.cells like the nef_ loop below. Driven off the manifest either way, so a unit added to
+   the pack cannot be forgotten here. */
+if(typeof ENEMY_ART!=='undefined' && typeof window!=='undefined' && window.BOFX && BOFX.img){
+  for(const k in BOFX.img){
+    if(k.lastIndexOf('ns9e_',0)!==0) continue;
+    const _b=k.replace(/_(idle|fire)$/,'');
+    if(_b!==k) ENEMY_ART[_b]=_b;
+  }
+}
+/* ============================================================
+   THE MASSIVE WARP GATE — STAGE 5's DOOR INTO THE BONUS STAGE (drop 0822ab)
+
+   Mike: "stage 9 was the bonus stage... This is accesible through Level 5." The pack ships the
+   door as its own 640x768 four-frame asset (Stage5-MassiveWarpGate) and states the rule:
+   "Portal centers are open; collide with the ring only. Use the center opening as the travel
+   trigger." So the OPENING is the trigger and the ring is not a hazard — flying into the middle
+   is the reward, not a death.
+
+   ⚠ THE TRANSITION IS DEFERRED, NOT IMMEDIATE. This ticks from stageSceneryDraw, which runs
+   inside the DRAW pass — calling beginStage() there would tear down enemies, bullets and the
+   plan while the frame is still walking them. It sets a flag and updatePlay consumes it at the
+   top of the next frame, which is the only safe point.
+
+   ONCE PER RUN. run._s9taken latches, so a player who re-enters stage 5 after the bonus does
+   not loop back into it forever. */
+const S5GATE_R = 92;                  // radius of the OPENING, measured off the 640x768 frame
+let s5Gate=null;
+function s5GateReset(){ s5Gate=null; }
+function s5GateTick(dt){
+  if(typeof run==='undefined' || !run || run.stage!==5) { s5Gate=null; return; }
+  if(bossActive || run._s9taken) return;
+  const _len=(curStage && curStage.length) ? curStage.length : 56;
+  if(!s5Gate && stageTimer > _len*0.55){
+    s5Gate={x:(typeof worldWidth==='function'?worldWidth():VW)*0.5, y:-460, t:0};
+    if(Audio && Audio.SFX && Audio.SFX.mapDeploy) Audio.SFX.mapDeploy();
+  }
+  if(!s5Gate) return;
+  s5Gate.t+=dt; s5Gate.y += 40*dt;
+  if(s5Gate.y > VH+520){ s5Gate=null; return; }
+  if(typeof player!=='undefined' && player && !player.dead){
+    const dx=player.x-s5Gate.x, dy=player.y-s5Gate.y;
+    if(dx*dx+dy*dy < S5GATE_R*S5GATE_R){
+      run._s9taken=1; run._s9pending=1; s5Gate=null;
+      if(Audio && Audio.SFX && Audio.SFX.nsp_warp_jump) Audio.SFX.nsp_warp_jump();
+    }
+  }
+}
+function s5GateDraw(){
+  if(!s5Gate || typeof XART==='undefined') return;
+  const k='ns9_s5gate_'+((((s5Gate.t*8)|0)%4));
+  if(!XART.rdy(k)) return;                      // decodes on a later frame; never block
+  const im=XART.get(k); if(!im) return;
+  const w=(im.naturalWidth||im.width), h=(im.naturalHeight||im.height);
+  ctx.save(); ctx.drawImage(im, s5Gate.x-w/2, s5Gate.y-h/2, w, h); ctx.restore();
+}
+function applyS9Unit(c, type){
+  const d=(typeof S9_UNITS!=='undefined') && S9_UNITS[type]; if(!d) return false;
+  c.art=d.art;                       // the NAME; ENEMY_ART maps it to the base key
+  c.w=d.w; c.h=d.h;
+  c.hp=EHP(d.hp); c.maxhp=c.hp; c.score=d.score;
+  if(d.pat) c.pattern=d.pat;
+  return true;
 }
 /* hp fraction -> which baked state. Same breakpoints as DMG_TIER so the two systems agree. */
 function nefArtFor(e){
@@ -40916,7 +41085,10 @@ function drawStageClear(dt){
       run.lives=clamp(run.lives,0,9);
       drawStageClear._init=false; drawStageClear._res=null;
       Audio.stopMusic();
-      if(run.stage>=STAGES.length){ triggerVictory(); }
+      /* ⚠ THE BONUS STAGE RETURNS, IT DOES NOT END THE GAME (0822ab). run.stage 9 is >= the
+         campaign length, so without this branch clearing the bonus stage would roll credits. */
+      if(curStage && curStage.bonus){ var _rb=(run._s9return||6); run._s9return=0; beginStage(_rb); }
+      else if(run.stage>=CAMPAIGN_STAGES){ triggerVictory(); }
       else if(typeof RACE_AFTER!=='undefined' && RACE_AFTER[run.stage] && rollRivalEncounter()){ startRivalSequence(); }
       else if(run.mode==='arcade'){
         if(typeof outboundStart==='function'){ outboundStart(run.stage); setState(GS.OUTBOUND); }

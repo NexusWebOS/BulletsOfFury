@@ -607,7 +607,14 @@ console.log('\n=== 16. pivot: angled turns animate into the twist ===');
 
 console.log('\n=== 17. level environment pack (6 masters + liquid) ===');
 {
-  ok(vm.runInContext("STAGES.length", ctxv) === 8, 'game has 8 stages');
+  /* ⚠ THE TABLE AND THE CAMPAIGN ARE NO LONGER THE SAME NUMBER (0822ab). Stage 9 is the bonus
+     stage and had to join STAGES[] to be enterable at all (beginStage reads STAGES[num-1]), so the
+     array is 9 while the campaign is still 8. Both are pinned, because conflating them is exactly
+     what would make clearing stage 8 fall into the bonus stage instead of rolling credits. */
+  ok(vm.runInContext("CAMPAIGN_STAGES", ctxv) === 8, 'the campaign is 8 stages');
+  ok(vm.runInContext("STAGES.length", ctxv) === 9, 'and the table holds 9 - the bonus stage lives in it too');
+  ok(vm.runInContext("STAGES.filter(function(s){return s.bonus;}).length", ctxv) === 1,
+     'exactly one entry is flagged bonus');
   ok(vm.runInContext("STAGES[7].sub", ctxv) === 'FURIOUS DEATH', 'stage 8 is FURIOUS DEATH (the finale)');
   ok(vm.runInContext("STAGES[5].sub", ctxv) === 'HEAVY TURBULENCE', 'stage 6 is HEAVY TURBULENCE (new)');
   ok(vm.runInContext("STAGES[6].sub", ctxv) === 'NOT ANOTHER SEWER LEVEL', 'stage 7 is NOT ANOTHER SEWER LEVEL (new)');
@@ -4948,8 +4955,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      STAGES.length correctly; the patches.js OVERRIDE did not, and the override is what runs. */
   var _g6=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok(_g6.indexOf('if(run.stage>=5){ triggerVictory(); }')<0, 'the hardcoded stage-5 ending is gone');
-  ok(_g6.indexOf('run.stage>=STAGES.length){ triggerVictory')>0, 'victory is gated on the STAGE TABLE, so it cannot desync when stages are added');
-  ok(vm.runInContext("STAGES.length===8", ctxv), 'and there are 8 stages — clearing 6 continues to 7');
+  /* ⚠ REPOINTED 0822ab. This read the literal 'run.stage>=STAGES.length){ triggerVictory'. The
+     RULE it protects is that victory is DERIVED FROM THE TABLE and cannot desync when stages are
+     added - not that it uses that exact expression. Adding the bonus stage made the array length
+     the wrong number to derive it from, so it now counts non-bonus entries. */
+  ok(_g6.indexOf('run.stage>=CAMPAIGN_STAGES){ triggerVictory')>0,
+     'victory is gated on the STAGE TABLE, so it cannot desync when stages are added');
+  ok(/const CAMPAIGN_STAGES = STAGES\.filter/.test(_g6),
+     'and CAMPAIGN_STAGES is derived from the table, not typed as a number');
+  ok(vm.runInContext("CAMPAIGN_STAGES===8", ctxv), 'and the campaign is 8 stages — clearing 6 continues to 7');
+  /* the bonus stage must RETURN rather than end the game: run.stage 9 is >= CAMPAIGN_STAGES, so
+     without its own branch first, clearing it would roll credits. */
+  ok(_g6.indexOf('curStage && curStage.bonus')>0, 'and clearing the bonus stage returns instead of rolling credits');
   // MINIBOSS HIT FLASH — one guaranteed pass covering every draw branch
   var _i2=_g6.indexOf('function drawSubBoss()');
   var _d=0,_e=_i2;
@@ -6891,10 +6908,19 @@ console.log('=== 156. protected assets — planned content, not dead weight (dro
     ok(missKey.length===0, g+': every protected key still registered'+(missKey.length?(' — MISSING '+missKey.slice(0,4).join(', ')):''));
     ok(missPath.length===0, g+': every protected folder still present and non-empty'+(missPath.length?(' — MISSING '+missPath.join(', ')):''));
   });
-  /* Stage 9 is absent from STAGES[] on purpose — that absence is what makes it look
-     dead to a static audit, so it is asserted rather than left as a surprise. */
-  ok(vm.runInContext("STAGES.length===8 || STAGES.every(function(s){return s.n!==9;})", ctxv),
-     'stage 9 is intentionally not in STAGES[] yet (entered from Level 5, wiring outstanding)');
+  /* ⚠ STAGE 9 IS WIRED NOW (0822ab) — this used to assert its ABSENCE. Mike asked for it, so
+     the assertion flips to pinning that it is reachable and correctly flagged. */
+  ok(vm.runInContext("!!STAGES.find(function(s){return s.n===9;})", ctxv), 'stage 9 is in STAGES[] and enterable');
+  ok(vm.runInContext("!!STAGES.find(function(s){return s.n===9;}).bonus", ctxv),
+     'and it is flagged bonus, so it is out of the campaign run order');
+  ok(vm.runInContext("(function(){run.stage=9;var c=_levelCfg();return !!(c&&c.master);})()", ctxv),
+     'and it resolves a level cfg with a master plate');
+  /* an empty plan is the failure mode here: reachable but nothing in it */
+  ok(vm.runInContext("buildStagePlan(9).length>=12", ctxv),
+     'and it fields a real wave plan rather than scrolling empty ('+vm.runInContext("buildStagePlan(9).length", ctxv)+' waves)');
+  ok(vm.runInContext("Object.keys(S9_UNITS).length===8", ctxv), 'its eight-unit roster is registered');
+  ok(vm.runInContext("Object.keys(S9_UNITS).every(function(k){return !!ENEMY_ART[S9_UNITS[k].art];})", ctxv),
+     'and every unit resolves through ENEMY_ART - the 0809l trap, where a unit flies and never draws');
 }
 
 console.log('=== 157. no background swaps while a master decodes (drop 0801kr) ===');

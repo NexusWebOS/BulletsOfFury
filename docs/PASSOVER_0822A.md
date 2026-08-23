@@ -1319,3 +1319,100 @@ Suite **2,752 ok / 3 fail** (the same pre-existing three). Atlas verify PASS.
 Worth noting, because it was the point of 0822z's refactor: the seven-stage geometry sweep picked
 up the new 680×4716 plate on its own and passed, because it now resolves `cfg.master` through the
 manifest instead of naming a file. That change paid for itself one drop later.
+
+---
+
+## 0822ab — STAGE 9 IS REACHABLE: the Velocity Void
+
+**Stage 9 was not in `STAGES[]` and could not be entered at all.** It now exists, is entered through
+the massive Level 5 warp gate, fields an eight-unit roster, a miniboss and a boss, and returns to
+stage 6 instead of ending the game. 126 art keys installed.
+
+`docs/proofs/s9_contact.png`, `s9_roster.png`, `s9_tidal_sovereign.png`.
+
+### The dangerous part, first
+
+`beginStage` does `curStage=STAGES[num-1]`, so stage 9 had to join the table to be enterable.
+But the stage-clear exit read:
+
+```js
+if(run.stage>=STAGES.length){ triggerVictory(); }
+```
+
+**Appending a ninth entry would therefore make clearing stage 8 advance into the bonus stage
+instead of rolling credits.** The campaign end is now counted from `CAMPAIGN_STAGES` — entries
+without `bonus:true` — and the bonus stage gets its own branch *before* the victory check, because
+`run.stage` 9 is `>= 8` and would otherwise roll credits on clearing it. Any future bonus stage
+sets the flag and both behaviours stay correct.
+
+### The door
+
+The pack ships it as its own 640×768 four-frame asset and states the rule: *"Portal centers are
+open; collide with the ring only. Use the center opening as the travel trigger."* So the opening is
+the trigger and the ring is not a hazard — flying into the middle is the reward.
+
+**The transition is deferred, not immediate.** The gate ticks from `stageSceneryDraw`, which runs in
+the *draw* pass; calling `beginStage()` there would tear down enemies, bullets and the plan while
+the frame is still walking them. It sets a flag and `updatePlay` consumes it at the top of the next
+frame. It latches on `run._s9taken`, so a player back in stage 5 does not loop into it forever.
+
+Proven end to end in a browser, not asserted from source:
+
+```
+after arming:      stage 5, gate at (340,-370)
+on contact:        taken=True, stage=9
+after transition:  STAGE 9 / THE VELOCITY VOID / bonus / return=6 / 16-wave plan
+```
+
+### The roster
+
+Eight units, each with its authored art, measured size, hp, score and a movement pattern chosen to
+match its written behaviour. They go through a new `S9_UNITS` table and `applyS9Unit`, mirroring
+the `S1_TANKS` / `NEF_S*` appliers.
+
+- **`e.art` is a NAME, not a file key** — the 0809l trap. Each unit needs an `ENEMY_ART` entry *and*
+  an `<base>_idle` alias, or it spawns, moves, shoots and never draws. Seeded off `BOFX.img`
+  because this roster is loose PNGs rather than sheet cells, and asserted.
+- **The type names are unique on purpose.** `nefRow()` walks NEF_S1/S2/S3 and is *not* stage-gated,
+  so a stage-9 unit called `racer` would silently inherit stage-3 art.
+- **The pack's second frame is mapped `fire`, not run as a loop** — a firing unit that changes pose
+  is a tell, which is the lesson in NEF_S2's spinner note.
+
+**An explicit `return` in `buildStagePlan`.** Stage 9 had no block, and the tail below adds generic
+waves to any stage that does not return — generic jungle jets in a velocity void is exactly the
+clip-show mistake stage 8's note is about. 16 waves in three movements.
+
+### The bosses
+
+`tidalsovereign` (320×256) is the boss, `warpsentinel` (256×192) the miniboss in `SUBBOSS[9]`. Both
+are in `spawnBoss`'s switch — absent from it they spawn with no `_ship` and draw nothing.
+
+Both ship **three authored damage states**, so `dmg` is filled in here where the Mk II deliberately
+has none. It still does not draw anything — `SHIPBOSS.dmg` is dead data, which you confirmed — but
+these two are the units that already have the art if it is ever wired.
+
+> A single screenshot showed the Tidal Sovereign missing. The probe showed it sweeping — on screen
+> in **23 of 30 samples**, x tracking 970 → −151 → 485. Working as designed; the frame just caught
+> it mid-sweep. That also confirms the Mk I carrier case was genuinely different: a 640-wide wall
+> that spent most of its time off-field.
+
+Suite **2,761 ok / 3 pre-existing fail**. Atlas verify PASS.
+
+### Two things for Mike
+
+1. **The packs ship no stage 9 BACKGROUND.** The plate is still `waterworld800_rc2_master` — Water
+   World Naval War. The Tidal Sovereign suits it exactly; the purple/cyan warp roster does not. I
+   did not invent a void backdrop. If you want the velocity void to look like one, that is an art
+   drop, and it should be 680-wide to match everything else.
+2. **Stage 9 is still the only 800-wide plate.** It is declared explicitly so nothing silently
+   inherits, but it is now reachable, so the question the old comment deferred is live: rescale to
+   680, or keep 800 deliberately?
+
+### Not implemented, stated plainly
+
+The roster README gives each unit a signature trick. The units fly, shoot and draw on the right art;
+these specific tricks are **not** in yet — the needle drone's phase-out, the prism mine's six-lane
+refraction, the gate leech's rim-clinging, the echo fighter's delayed ghost, the interceptor's split
+at half health, the comet breaker shattering comets. Also unwired: the Twin Portal Wardens, the
+Velocity Gate Core, the 64 comet-debris frames, the six in-stage warp gates, and the two bosses'
+signature attack families from CF_BossAttacks-Lvl9.
