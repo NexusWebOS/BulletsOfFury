@@ -1029,3 +1029,88 @@ which arc_flame_loop still satisfies. Repointed at the rule, the guard against t
 and a new guard added that the flamethrower does NOT take the firewave's sample.
 
 Suite **2,737 ok / 3 fail** (+5 assertions), both runs ending at section 230.
+
+---
+
+## 0822x — atlas halo sweep, and the four heuristics that were wrong
+
+**Result: 13,467 halo px converted to a black edge across 21 sheets I rendered and looked at.
+861 px restored on the four masters, where 0822w had blackened the rim of magenta ART.**
+
+### The masters needed a repair first
+
+0822w converted 21,177 edge px on the four stage masters. Re-checked each converted pixel against
+its neighbourhood in the backup: 861 of them (4%) sat on magenta *art* — nebula and toxic-glow
+rims — not on a halo. Blackening those puts a black outline around a glow. Restored, keeping the
+20,316 genuine conversions.
+
+nst7 422 · nst3 209 · nst2 157 · blackhole800 73.
+
+> A stage-8 before/after screenshot showed 144,336 changed pixels. That number is worthless — the
+> stage scrolls and animates, so frame 3 differs for reasons unrelated to the edit. The plate
+> against its own backup is the only deterministic comparison. Same trap as the eight invalid probes.
+
+### The atlas is not the masters
+
+A coarse pass said 72 of 87 sheets carried halos. That was wrong four times over, and each
+refinement only surfaced the next failure:
+
+| gate | why it was added | what it still got wrong |
+|---|---|---|
+| magenta adjacent to alpha | the master rule | flagged the rim of magenta art |
+| + neighbourhood <60% magenta | protect magenta art | flagged dark maroon volcanic rock (nca_21, 1,987 px) |
+| + strict saturation | rock is desaturated, residue is vivid | flagged thin magenta beams, both edges on alpha |
+| + must fringe real art | protect beams | flagged pink ribbon art with its own dark edge (nca_53, 2,571 px) |
+
+**The atlas holds ~4.0M interior magenta ART px against ~48k suspected halo.** At that ratio a
+classifier cannot be trusted, so I stopped writing heuristics and rendered a crop of the densest
+flagged cluster on all 55 candidate sheets — `docs/proofs/halo/contact_1..4.png`.
+
+Looking at them settled it. The high-count sheets are **authored art**, not halo:
+
+- `nca_88` `nca_89` fire bursts · `nca_53` `nca_54` hot-pink ribbons · `nca_73` purple beam
+- `nca_66` `nca_72` `nca_87` energy glows · `nca_74` green/purple smoke · `nca_7` `nca_67` purple platforms
+- `nca_57` pink ornament · `nca_20` purple tree · `nca_68` `nca_24` pink/blue FX
+
+A blanket conversion would have defaced every one of them.
+
+### What was converted
+
+Only sheets rendered and confirmed as hull / mech / structure / portrait carrying vivid key
+residue on an alpha edge:
+
+```
+nca_4  9311   nca_22 938   nca_16 720   nca_75 311   nca_12 309   nca_28 240
+nca_44  226   nca_45 195   nca_77 193   nca_43 185   nca_15 137   nca_52 114
+nca_29  105   nca_47 101   nca_60 101   nca_2   77   nca_42  70   nca_62  50
+nca_46   48   nca_51  30   nca_71   6
+```
+
+`nca_4` is the clearest case — the same dome sprite appears twice, one copy still wearing a purple
+rim and the other already carrying the black edge. Half-converted at some point; now consistent.
+
+Vivid edge residue on those 21 sheets: **16,296 → 2,829**. Alpha preserved everywhere — converted,
+never deleted.
+
+### On screen
+
+| stage | vivid magenta per frame |
+|---|---|
+| 7 | **0** (was 517 before 0822w, 112 after) |
+| 5 | 0 |
+| 1 | 0,0,0,0,11,97 |
+
+Suite **2,737 ok / 3 fail** (the same pre-existing preload + quarantine-ledger failures, nothing
+to do with pixels). Atlas verify PASS — 9,960 keys from 87 sheets, 8 stages to boss, 0 blanks.
+
+### Open, and it needs Mike
+
+1. **Stage 1's ~97 px.** Scattered singles on hull edges over blue water. The "is the art beside it
+   already blue?" gate protects them, because the water is blue. Loosening that gate is what
+   defaced the nebula. **Want me to hand-fix stage 1's hull sheets specifically?**
+2. **2,829 vivid px left across the 21 sheets** — thin magenta elements where I can't tell a
+   1px highlight from residue without you looking.
+3. **The effect sheets above.** I read their magenta as authored and left them entirely alone.
+   If any of those are actually haloed, say which and I'll do them by hand.
+
+Backups: `scratchpad/atlas_halo_backup/` and `scratchpad/halo_backup/`. Every step is reversible.
