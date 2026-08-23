@@ -15360,6 +15360,10 @@ function warmStage(n){
        same for whatever the stage fields as its miniboss. ============================================================ */
     const _bk = S && S.boss;
     if(_bk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_bk]) addPrefix(SHIPBOSS[_bk].key);
+    /* the stage-7 exit portal. Warmed WITH THE STAGE because the cutscene has no time to wait
+       for a decode: XART.rdy starts the load and returns false on that first call, so the
+       flyover would draw nothing on the one frame that matters (0822ac). */
+    if(n===7 && typeof addPrefix==='function') addPrefix('nfx_l7portal_');
     if(typeof NEWBOSS!=='undefined' && NEWBOSS[n] && NEWBOSS[n].idle) addPrefix(NEWBOSS[n].idle);
     const _mk = (typeof SUBBOSS!=='undefined' && SUBBOSS[n]) ? SUBBOSS[n].kind : null;
     if(_mk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_mk]) addPrefix(SHIPBOSS[_mk].key);
@@ -40507,12 +40511,51 @@ function drawFlyover(dt){
   const _climb=Math.max(0,(flyoverT-HOVER));
   const _ce=(typeof _ease==='function')?_ease(clamp(_climb/CLIMB_T,0,1)):clamp(_climb/CLIMB_T,0,1);
   const _base=(flyoverStartY!=null)?flyoverStartY:VH*0.78;
+  /* ── STAGE 7 DOES NOT FLY OFF THE TOP — IT ENTERS THE PORTAL (drop 0822ac) ────────
+     Mike's sequence for the end of the sewer: "pilot enters black hole, stage ends". The
+     CF_ToxicSewerPortal-Lvl7 pack ships the door for it and names the beat exactly:
+     "hide or dissolve during frame 06; frame 07 closes behind the player".
+
+     It RIDES the existing flyover rather than replacing it, so the hover, the music cut, the
+     live world underneath and the fade to STAGECLEAR are all unchanged and every other stage
+     is untouched. Only the climb target and one overlay differ.
+
+     ⚠ THIS IS THE ONE PLACE player.x IS DRIVEN, AND IT IS DELIBERATE. The note above is
+     emphatic that x is never touched — that rule exists so the ship does not slide sideways
+     to centre itself on an ordinary exit. Flying INTO a gate is the exception that proves it:
+     a portal you miss is not a portal. It eases across only on stage 7, only during the
+     climb, and every other stage still leaves straight up from where it was. */
+  const _l7p = (run.stage===7 && typeof XART!=='undefined' && XART.rdy && XART.rdy('nfx_l7portal_0'));
+  const _l7x = VW*0.5, _l7y = VH*0.26;          // where the gate opens, in SCREEN space
   player.y=(flyoverT<HOVER)
       ? _base+Math.sin(flyoverT*4.2)*3           // hovering
-      : lerp(_base, -80, _ce);
+      : lerp(_base, (_l7p? _l7y : -80), _ce);
+  /* frame 0..7 paced across the WHOLE climb, so 06 (the dissolve) and 07 (the close) land on
+     the ship's arrival instead of finishing early and leaving it flying at a shut gate. */
+  const _l7f = _l7p ? clamp(Math.floor((_climb/CLIMB_T)*8), 0, 7) : -1;
+  let _l7hid=false;
+  if(_l7p && flyoverT>=HOVER){
+    player.x = lerp((flyoverStartX!=null?flyoverStartX:player.x), _l7x, _ce);
+    if(_l7f>=6){ _l7hid=true; player.y=-600; }   // hidden: the gate has taken him
+  }
   drawWorld(dt);                                 // live, not a snapshot — and it draws the ship
+  /* the swirl goes ON TOP so it engulfs the ship as it arrives — which is the shot. It is
+     drawn from the authored 512 frames at their own aspect, never stretched. */
+  if(_l7p && flyoverT>=HOVER){
+    const _k='nfx_l7portal_'+_l7f;
+    if(XART.rdy(_k)){
+      const im=XART.get(_k);
+      if(im){
+        const _iw=(im.naturalWidth||im.width)||512, _ih=(im.naturalHeight||im.height)||512;
+        const _s=(VW*0.92)/_iw, _w=_iw*_s, _h=_ih*_s;
+        ctx.save();
+        ctx.drawImage(im, _l7x-_w/2, _l7y-_h/2, _w, _h);
+        ctx.restore();
+      }
+    }
+  }
   /* exhaust, in WORLD space because that is where drawWorld's particle pass reads it */
-  if(player.y>-40 && Math.random()<0.9){
+  if(!_l7hid && player.y>-40 && Math.random()<0.9){
     const theme=['#8de23a','#ff5a2a','#6fd0ff','#d8c068','#d07a3a'][clamp(run.stage-1,0,4)];
     particles.push({x:player.x+rnd(-4,4), y:player.y+20, vx:rnd(-0.2,0.2), vy:rnd(2.5,4.5),
                     life:rnd(0.2,0.4), t:0, r:rnd(1,2), color:theme});

@@ -1554,6 +1554,26 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     ok(pw!==null, 'stage '+stg+" declares plateW explicitly ("+pw+") - it does not inherit MASTER_W");
   }
   ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv), 'and the sludge bed it shows through the plate');
+  /* ===== THE STAGE-7 EXIT PORTAL (drop 0822ac) =========================================
+     Mike: "pilot enters black hole, stage ends". The pack names the beat exactly — "hide or
+     dissolve during frame 06; frame 07 closes behind the player" — so the frame COUNT is
+     load-bearing: with seven frames the dissolve would land on the close and the ship would
+     still be visible when the gate shut. */
+  var _g7p = fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(Array.from({length:8},function(_,i){return 'nfx_l7portal_'+i;})
+       .every(function(k){ return _g229q.indexOf('"'+k+'"') > 0; }),
+     'all 8 portal frames are registered, or the dissolve lands on the wrong beat');
+  /* ⚠ WARMED WITH THE STAGE. XART.rdy STARTS the load and returns false on that first call, so
+     a cutscene that asks for the art at the moment it needs it draws NOTHING. This is the
+     0801kd/0801dp trap and it is invisible in a green suite. */
+  ok(/addPrefix\('nfx_l7portal_'\)/.test(_g7p), 'and they are warmed with stage 7, not fetched mid-cutscene');
+  ok(/run\.stage===7 && typeof XART!=='undefined'/.test(_g7p), 'the flyover has a stage-7 portal branch');
+  /* the exception to "player.x is never touched": you cannot fly into a gate you are not aimed
+     at. It must stay gated on the portal being live, or every stage starts sliding sideways. */
+  ok(/player\.x = lerp\(\(flyoverStartX/.test(_g7p) && /const _l7p = \(run\.stage===7/.test(_g7p),
+     'and x is only driven while the portal is live - every other stage still leaves straight up');
+  ok(/_l7f>=6/.test(_g7p), 'the ship is hidden on frame 06, per the pack contract');
+
   ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv),
      'and it KEEPS its sludge — the RC2 plate is magenta-punched to alpha and the sludge is what shows through');
   /* THE SLUDGE FAMILY IS nlq_sludgeF (drop 0801go) - the 'F' variant, which is what

@@ -1416,3 +1416,53 @@ refraction, the gate leech's rim-clinging, the echo fighter's delayed ghost, the
 at half health, the comet breaker shattering comets. Also unwired: the Twin Portal Wardens, the
 Velocity Gate Core, the 64 comet-debris frames, the six in-stage warp gates, and the two bosses'
 signature attack families from CF_BossAttacks-Lvl9.
+
+---
+
+## 0822ac — THE STAGE 7 EXIT: pilot enters the black hole
+
+Mike's sequence for the end of the sewer: *"pilot enters black hole, stage ends."* The
+CF_ToxicSewerPortal-Lvl7 pack ships the door and names the beat exactly: *"hide or dissolve during
+frame 06; frame 07 closes behind the player."*
+
+`docs/proofs/l7_portal_enter.png`, `docs/proofs/l7_portal_closed.png`.
+
+### It rides the flyover rather than replacing it
+
+The stage exit already runs hover 1.35s → climb 1.7s → fade 0.75s → STAGECLEAR. Stage 7 changes
+exactly two things inside it: the **climb target** and one **overlay**. The hover, the music cut,
+the live world scrolling underneath and the fade are all untouched, so every other stage is
+byte-for-byte the same exit it had.
+
+Measured on stage 7, then on stage 2 to prove nothing else moved:
+
+```
+stage 7   hover y~400 x=340  →  climb y=196 x=263  →  y hidden, x=240  →  stageclear
+stage 2   hover y~400 x=340  →  climb y=261 x=340  →  y=-80,     x=340  →  stageclear
+```
+
+Stage 2's x never moves and it still leaves through the top. Stage 7 eases across to the gate and
+is gone.
+
+### The one deliberate exception
+
+`drawFlyover` carries an emphatic note that **player.x is never touched** — that rule exists so the
+ship does not slide sideways to centre itself on an ordinary exit. Flying *into* a gate is the
+exception that proves it: **a portal you miss is not a portal.** So x eases across only on stage 7,
+only during the climb, and only while the portal art is actually live. Asserted, because an
+ungated version would make every stage start sliding.
+
+### Two traps avoided
+
+1. **The frames are warmed with the stage.** `XART.rdy` starts the load and returns false on that
+   first call, so a cutscene that asks for its art at the moment it needs it draws **nothing**.
+   That is the 0801kd/0801dp trap and it is completely invisible to a green suite.
+2. **The frame count is load-bearing.** The pack puts the dissolve on 06 and the close on 07. With
+   seven frames the dissolve would land on the close and the ship would still be visible when the
+   gate shut. The frames are paced across the whole climb, so 06 and 07 land on the ship's arrival
+   rather than finishing early and leaving it flying at a shut gate.
+
+The exhaust is also suppressed once the ship is hidden — otherwise particles keep puffing out of a
+ship that has already gone through.
+
+Suite **2,766 ok / 3 pre-existing fail**. Atlas verify PASS.
