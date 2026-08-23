@@ -1114,3 +1114,84 @@ to do with pixels). Atlas verify PASS — 9,960 keys from 87 sheets, 8 stages to
    If any of those are actually haloed, say which and I'll do them by hand.
 
 Backups: `scratchpad/atlas_halo_backup/` and `scratchpad/halo_backup/`. Every step is reversible.
+
+---
+
+## 0822y — DOOMSDAY CARRIER Mk II, and the square-draw bug it exposed
+
+**Stage 6 now fields the Mk II. The Mk I is untouched in the build — one word in STAGES[5]
+restores the old fight.**
+
+Mike, on the carrier as it was: *"holy shit god no. delete this boss, well use the MK2 variant
+instead."* Driving stage 6 to the boss showed exactly why.
+
+### The boss was drawn as a square
+
+`shipBossDraw` computed `const s=b.w/256, w=256*s, h=256*s` — `h` is `b.w`. **Every ship boss was
+drawn `w × w` and its declared `h` ignored.** Harmless while a plate was square, and most are. But
+the carrier is authored 320×155 and declares 640×310, so it drew **640×640**: stretched to 2.06×
+its height, filling the screen top to bottom. `docs/proofs/mk1_squaredraw_before.png` is that boss.
+
+Fixed to honour the declared box. Every square entry is unchanged, because for those `h` already
+equals `w` — checked all 18 ship bosses before touching a shared path.
+
+### A wall cannot sweep off the field
+
+With the aspect fixed the carrier still vanished. The probe, not a guess:
+
+```
+rdy=true   shipBossDraw returned true   hull 640x320 decoded
+boss.x = 1046.7        world width = 680        camX = 100
+```
+
+The boss was drawing perfectly, 466px past the right edge of a 680-wide world. `shipBossManoeuvre`
+ends with `clamp(b.x, -b.w*0.7, W+b.w*0.7)` — correct for a boss that flies in and out, but a
+640-wide hull in a 680-wide world spends that range off-screen. Now held on the field when
+`b.w >= W*0.70`; stated as a rule about width, so a future wall-sized boss is covered and every
+other ship boss (all under a third of the world) is untouched.
+
+### The Mk II itself
+
+46 frames installed and registered, verified **0 magenta** before copying: 18-frame bay cycle,
+14-frame cannon cycle, 3 static states, 9 beam frames, 2 warheads.
+
+**Two reels.** `launch` drives the existing bay/warhead mechanic unchanged — bays still take
+deflected warheads only, still alternate, still 6 hits each. `cannon` is new: authored 640×480
+against a 640×320 hull, where the extra 160px **is the beam**. `_animH` grows the drawn box so it
+is not squashed; every other boss leaves `_animH` null.
+
+Cannon numbers are measured off the frames, not chosen:
+
+| | measured |
+|---|---|
+| ink first appears below the hull | index 6 |
+| widest | index 8–10, x304–336 |
+| collapsed | index 12, gone at 13 |
+| centre | exactly 320 = hull centre, so the column sits on `b.x` |
+
+So it hurts only on 6–11, and follows the beam rake's convention (perpendicular distance, respects
+invuln, calls `playerHit`) rather than spawning bullets — the beam is continuous while drawn.
+
+**The cannon takes every third turn, and every turn once both bays are gone.** Previously, clearing
+both bays parked the boss on frame 00 and it did nothing for the rest of the fight. Right when the
+bays were its only weapon; wrong now it has a cannon. The Mk I still parks — it has no cannon.
+
+**The two carriers fire visibly different rounds** — a slim olive shell vs a silver canister — so
+the round carries the art its owner declares instead of the draw hardcoding one pair.
+
+Proof: `docs/proofs/mk2_cannon.png` (beam at full length), `docs/proofs/mk2_bays.png` (both bays
+open, two silver warheads emerging, cannon muzzle charged).
+
+Suite **2,751 ok / 3 fail** (+14 assertions, same three pre-existing failures). Atlas verify PASS.
+
+### Worth knowing
+
+1. **`SHIPBOSS.dmg` is dead data.** Nothing in the file reads `D.dmg` — measured. Every ship boss
+   declares `damaged`/`critical` plates that **have never been drawn**. The Mk II deliberately has
+   no `dmg` array: its pack ships three bay states and no damage plate, and inventing one would be
+   a procedural sprite. Costs nothing today, but if you want visible damage states on bosses,
+   that is a real feature that was never wired — say the word.
+2. **The stage-6 assertion was repointed, not deleted.** It pinned `'doomsdaycarrier'`, which is
+   the choice you just changed, so it now pins the Mk II.
+3. **The three suite failures are pre-existing and untouched** — a preload bound that wants
+   `<600` against a set of 602, and two about a quarantine ledger. Not caused by this drop.

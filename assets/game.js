@@ -5833,7 +5833,7 @@ const STAGES = [
    /* STAGE 6 (drop 0801cf): leviathan's sectional code is not in the registered
       nsx_ set — it drew nothing, measured. STORM SOVEREIGN is the pack's stage-6
       boss. */
-   length:56, boss:'doomsdaycarrier'},
+   length:56, boss:'doomsdaycarriermk2'},   // Mk II from 0822; 'doomsdaycarrier' restores the old fight
   {n:7, name:'STAGE 7', sub:'NOT ANOTHER SEWER LEVEL',  bg:'sewer',  music:'stage7mus',
    /* STAGE 7 (drop 0801cf): cesspool drew no art at all — 0 image blits, purely
       procedural shapes. TOXIC LEVIATHAN is the pack's stage-7 boss. */
@@ -9332,6 +9332,28 @@ const SHIPBOSS = {
                   dmg:['nsb_doomsdaycarrier_damaged','nsb_doomsdaycarrier_critical'],
                   launch:{frames:16, pre:'nsb_dcarrier_', fps:14, loop:false,
                           release:10, warhead:'nfx_omegawarhead_in'}},
+  /* ============================================================
+     DOOMSDAY CARRIER Mk II — the stage 6 boss from 0822 (pack CF_DoomsdayCarrierMkII-Lvl6).
+     Mike, on the carrier as it was: "holy shit god no. delete this boss, well use the MK2
+     variant instead." The Mk I entry above is LEFT INTACT — putting 'doomsdaycarrier' back
+     in STAGES[5] restores the old fight exactly, so this is reversible in one word.
+
+     640x320 is the AUTHORED frame size, drawn 1:1. The Mk I was 320x155 declaring 640x310,
+     which is what exposed the square-draw bug in shipBossDraw (see 0822y there).
+
+     ⚠ NO dmg ARRAY, DELIBERATELY. The pack ships three bay states and no damaged/critical
+     plate, and inventing one would be a procedural sprite. It costs nothing today because
+     SHIPBOSS.dmg is DEAD DATA — measured: nothing in the file reads D.dmg, so the damaged and
+     critical plates every other ship boss declares have never once been drawn.
+
+     TWO REELS, NOT ONE. `launch` is the 18-frame bay cycle and drives the existing warhead
+     mechanic unchanged. `cannon` is new: a 14-frame charge-and-fire authored 640x480, where
+     the extra 160px below the hull IS the beam. hMul carries that to _animH. */
+  doomsdaycarriermk2:{key:'nsb_dcarrmk2_closed', name:'DOOMSDAY CARRIER MK II', w:640,h:320,
+                  hpMul:1.50, pat:'mslfan', cd:1.24, pats:['mslfan','beamfan','mslfan'],
+                  launch:{frames:18, pre:'nsb_dcarrmk2_', fps:14, loop:false,
+                          release:11, warhead:'nfx_omegamk2_in'},
+                  cannon:{frames:14, pre:'nsb_dcarrmk2_cn_', fps:12, hMul:1.5, fire:6, last:11}},
   sludgeemperor: {key:'nsb_sludgeemperor_intact',   name:'SLUDGE EMPEROR', w:220,h:216, hpMul:1.46, pat:'siege', cd:1.30,
                   pats:['siege','ember','fan2'], dmg:['nsb_sludgeemperor_damaged','nsb_sludgeemperor_critical']},
   magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:240, pat:'ember', cd:1.28, mini:true,
@@ -9652,7 +9674,7 @@ function shipBossManoeuvre(b, dt){
   if(b._orb) reaverOrbTick(b, dt);
   /* the carrier's reel runs on the FRAME clock, not the volley beat - the round leaves on the
      animation frame that shows it clearing the bay. See carrierTick. */
-  if(b._ship==='doomsdaycarrier' && typeof carrierTick==='function') carrierTick(b, dt);            // the wind-up runs on the frame clock, not the volley beat
+  if((b._ship==='doomsdaycarrier'||b._ship==='doomsdaycarriermk2') && typeof carrierTick==='function') carrierTick(b, dt);            // the wind-up runs on the frame clock, not the volley beat
   /* WOBBLE UNDER THE RAKE. Mike: "He needs to have those laser attacks continue to rotate as he
      wobbles side to side and shoots out rockets we shoot down." The spokes already rotate; this is
      the hull drifting across them so the corridor keeps moving, and emissile is already shootable
@@ -9751,6 +9773,14 @@ function shipBossManoeuvre(b, dt){
     }
   }
   b.x=clamp(b.x, -b.w*0.7, W+b.w*0.7);
+  /* ⚠ A WALL CANNOT SWEEP OFF THE FIELD (drop 0822y). The clamp above lets a boss travel
+     almost entirely out of view, which is correct for one that flies in and out — but the
+     Doomsday Carrier is 640 wide in a 680 world, so the same manoeuvre parked it at x=1046
+     with the camera at 100 and the fight happened off-screen. Measured in a browser probe,
+     not guessed: rdy was true, shipBossDraw returned true, and the hull was simply nowhere
+     near the view. Stated as a RULE about width rather than a name, so any future wall-sized
+     boss is covered — every other ship boss is under a third of the world and untouched. */
+  if(b.w >= W*0.70) b.x=clamp(b.x, W*0.5-b.w*0.15, W*0.5+b.w*0.15);
   return true;
 }
 function shipBossPhase(b){
@@ -9944,15 +9974,54 @@ function carrierInit(b){
   b._bay={L:CARRIER_BAY_HP, R:CARRIER_BAY_HP};
   b._lc={t:0, f:0, playing:false, side:'L', fired:false};
 }
+/* ── THE Mk II's ENERGY CANNON (drop 0822y) ─────────────────────
+   The reel is authored 640x480 against a 640x320 hull, so the art DRAWS THE WHOLE ATTACK and
+   the hazard only has to agree with it. Every number here was measured off the frames, not
+   chosen: ink first appears below the hull at index 6, is widest at 8-10 (x304-336), has
+   collapsed by 12 and is gone at 13 — always about a centre of exactly 320, which is the hull
+   centre, so the column sits on b.x with no offset.
+   Damage follows the RAKE's convention (perp distance, respects invuln, calls playerHit)
+   rather than spawning bullets, because the beam is continuous while it is drawn. */
+const CARRIER_BEAM_HALF = 17;          // widest measured half-width, authored px
+function carrierCannonTick(b, dt, C){
+  const S=b._cn;
+  S.t+=dt; S.f=Math.floor(S.t*C.fps);
+  if(S.f>=C.frames){ b._cn=null; b._animH=0; return false; }
+  b._animKey = C.pre + String(S.f).padStart(2,'0');
+  b._animH   = b.h * (C.hMul||1);
+  /* hurt ONLY while the beam is actually on screen — a hazard the player cannot see is the
+     kind of thing a green suite never catches. */
+  if(S.f>=C.fire && S.f<=C.last && typeof player!=='undefined' && player &&
+     !player.dead && !(player.invuln>0)){
+    const _top=(b._drawY!=null?b._drawY:b.y)-b.h/2;
+    const half=CARRIER_BEAM_HALF + (player._hx||9)*0.5;
+    if(player.y>=_top+b.h && player.y<=_top+b._animH && Math.abs(player.x-b.x)<half){
+      if(typeof playerHit==='function') playerHit();
+    }
+  }
+  return true;
+}
 function carrierTick(b, dt){
   const D=SHIPBOSS[b&&b._ship]; if(!D||!D.launch) return;
   carrierInit(b);
-  const L=D.launch, S=b._lc;
+  const L=D.launch, S=b._lc, C=D.cannon;
+  /* a cannon reel owns the frame for its whole duration */
+  if(b._cn && C){ if(carrierCannonTick(b, dt, C)) return; }
   if(!S.playing){
-    /* both bays gone -> no more launches. The fight is decided by then. */
-    if(b._bay.L<=0 && b._bay.R<=0){ b._animKey=L.pre+'00'; return; }
+    const _bothGone = (b._bay.L<=0 && b._bay.R<=0);
+    /* ⚠ BOTH BAYS GONE USED TO MEAN THE BOSS WENT QUIET — it parked on frame 00 and did
+       nothing for the rest of the fight. That was right when the bays were its only weapon.
+       The Mk II has a cannon, so it keeps fighting; the Mk I has none and still parks. */
+    if(_bothGone && !C){ b._animKey=L.pre+'00'; return; }
     S.cd=(S.cd==null? 1.2 : S.cd)-dt;
     if(S.cd<=0){
+      /* the cannon takes every third turn, and every turn once the bays are gone */
+      S.turn=(S.turn||0)+1;
+      if(C && (_bothGone || S.turn%3===0)){
+        b._cn={t:0,f:0}; S.cd=1.0+Math.random()*0.6;
+        b._animKey=C.pre+'00'; b._animH=b.h*(C.hMul||1);
+        return;
+      }
       S.playing=true; S.t=0; S.f=0; S.fired=false;
       /* alternate bays, and skip one that is already destroyed */
       S.side = (S.side==='L') ? 'R' : 'L';
@@ -9979,10 +10048,15 @@ function carrierTick(b, dt){
       const _wa=(typeof aimPlayer==='function')?aimPlayer(sx,sy):Math.PI/2;
       const _wsp=1.55;
       eBullets.push({x:sx, y:sy, vx:Math.cos(_wa)*_wsp, vy:Math.sin(_wa)*_wsp, ang:_wa, w:22, h:56,
-                     dmg:1, t:0, kind:'omegawarhead', _fx:'missile', _side:S.side});
+                     dmg:1, t:0, kind:'omegawarhead', _fx:'missile', _side:S.side,
+                     /* the Mk I and Mk II fire visibly different rounds — a slim olive shell
+                        vs a silver canister — so the round carries the art its OWNER declares
+                        instead of the draw hardcoding one pair. */
+                     _wart:(L.warhead||'nfx_omegawarhead_in')});
       if(Audio.SFX && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
     }
   }
+  b._animH=0;                             // the bay reel is hull-height; only the cannon grows the box
   b._animKey = L.pre + String(Math.max(0,Math.min(L.frames-1,S.f))).padStart(2,'0');
 }
 /* a deflected round landing on a bay is the only thing that hurts one */
@@ -10034,14 +10108,26 @@ function shipBossDraw(b){
   /* a boss running an authored reel drives its own frame; everything else keeps its single plate */
   const _ak=(b._animKey && XART.rdy(b._animKey)) ? b._animKey : D.key;
   const im=XART.get(_ak);
-  const s=b.w/256, w=256*s, h=256*s;
+  /* ⚠ THE BOX IS w x h, NOT w x w (drop 0822y). This read `h=256*s` — i.e. b.w — so every
+     ship boss drew SQUARE and its declared h was ignored. Harmless while a plate was square,
+     but the Doomsday Carrier is authored 320x155 and declares 640x310, so it drew 640x640:
+     stretched to 2.06x its height and filling the screen. Measured in shoot.py, not guessed.
+     That is the boss Mike said 'holy shit god no' to. Honour the declared box — every square
+     entry is unchanged, because for those h already equals w. */
+  const s=b.w/256, w=256*s, h=(b.h>0 ? b.h : 256*s);
   const x=b.x-w/2, y=(b._drawY!=null?b._drawY:b.y)-h/2;
+  /* ⚠ A REEL MAY BE TALLER THAN THE HULL BOX. The Mk II cannon frames are authored
+     640x480 against a 640x320 hull, and the pack is explicit that every frame shares the
+     same origin — the extra 160 is the BEAM, hanging below. So the hull box still places
+     the sprite (y is unchanged, the hull does not jump when the cannon opens) and only the
+     drawn height grows. _animH is set by carrierTick and left null by every other boss. */
+  const dh=(b._animH>0 ? b._animH : h);
   ctx.save();
   ctx.imageSmoothingEnabled=false;
-  ctx.drawImage(im, x, y, w, h);
+  ctx.drawImage(im, x, y, w, dh);
   if((b.flash||0)>0 && typeof xartTint==='function'){
     const t=xartTint(D.key, '#ffffff', 0.9);
-    if(t){ ctx.globalAlpha=Math.min(1,(b.flash/0.18))*0.85; ctx.drawImage(t, x, y, w, h); ctx.globalAlpha=1; }
+    if(t){ ctx.globalAlpha=Math.min(1,(b.flash/0.18))*0.85; ctx.drawImage(t, x, y, w, dh); ctx.globalAlpha=1; }
   }
   ctx.restore();
   return true;
@@ -10078,7 +10164,7 @@ function spawnBoss(kind){
        shipBossInit itself was never the problem - probed directly it sets w/h/name correctly.
        Two spawners, two switches; a kind must be registered in the one that matches its ROLE. */
     case 'infernoreaver': case 'cryospear': case 'voidbat':
-    case 'xenoregent': case 'doomsdaycarrier': case 'sludgeemperor':
+    case 'xenoregent': case 'doomsdaycarrier': case 'doomsdaycarriermk2': case 'sludgeemperor':
     case 'glacierfortress':
       shipBossInit(b, kind); break;
     case 'damkeeper': b.name='JUNGLE OVERLORD-X'; b.w=170; b.h=130; break;
@@ -22278,7 +22364,8 @@ const FIRETYPES={
   blast: { art:(b)=>'mfx_bpow_'+({red:0,blue:1,white:2}[b.pal||'red']||0)+'_0', align:false, h:26, glow:'#ffd36b'},
   homing:{ art:(b)=>'mfx_hom_0_'+(((b.t||0)*14|0)%10), align:true, h:18, glow:'#ff6ba0'},
   missile:{art:(b)=>(b&&b.kind==='omegawarhead')
-              ? (b._ref?'nfx_omegawarhead_ref':'nfx_omegawarhead_in')   // authored pair
+              ? (function(_s){ return b._ref ? _s.replace(/_in$/,'_ref') : _s; })
+                  (b._wart||'nfx_omegawarhead_in')                      // authored pair, per carrier
               : 'mfx_emr_0_'+(((b.t||0)*12|0)%4), align:true, h:20, glow:'#ffb04a'},
   /* the four Mike scrapped now ALIAS onto survivors, so any call site I have not
      found yet still draws something correct rather than nothing:

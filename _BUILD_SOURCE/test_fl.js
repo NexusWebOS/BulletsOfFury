@@ -606,7 +606,10 @@ console.log('\n=== 17. level environment pack (6 masters + liquid) ===');
      drawing that polygon because their plates were never registered in the manifest. A key that is
      absent from window.BOFX can never decode, so assert the registration too. */
   var _g229q=fs.readFileSync(ROOT+'/assets/manifest.js','utf8');
-  ok(vm.runInContext("STAGES[5].boss", ctxv) === 'doomsdaycarrier', 'stage 6 boss = DOOMSDAY CARRIER');
+  /* ⚠ THIS PINNED THE Mk I AND MIKE REPLACED IT (0822y). "holy shit god no. delete this boss,
+     well use the MK2 variant instead." So it now pins the RULE — stage 6 fields a Doomsday
+     Carrier — and the Mk II specifically, rather than a name that was already superseded. */
+  ok(vm.runInContext("STAGES[5].boss", ctxv) === 'doomsdaycarriermk2', 'stage 6 boss = DOOMSDAY CARRIER MK II');
   /* ⚠ BOFX[key] IS NOT THE TEST. In the page it reads false even for nsb_siege_ember, which has
      been registered for weeks - so it says nothing about whether art resolves. The manifest TEXT is
      what was actually edited and what lets XART find a loose plate at all, so check that. */
@@ -1580,6 +1583,48 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(Array.from({length:16},function(_,i){return 'nsb_dcarrier_'+String(i).padStart(2,'0');})
        .every(function(k){ return _g229q.indexOf('"'+k+'"') > 0; }),
      'all 16 doomsday carrier launch frames are registered');
+
+  /* ===== DOOMSDAY CARRIER Mk II (drop 0822y) =====================================
+     The Mk I above is deliberately left in the build and still asserted: putting
+     'doomsdaycarrier' back in STAGES[5] restores the old fight, and these assertions are
+     what prove that escape hatch still works. */
+  var _g2mk2 = fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(vm.runInContext("!!SHIPBOSS.doomsdaycarriermk2", ctxv), 'the Mk II is a registered ship boss');
+  ok(vm.runInContext("!!SHIPBOSS.doomsdaycarrier", ctxv),
+     'and the Mk I is still there, so the swap is one word to undo');
+  ok(Array.from({length:18},function(_,i){return 'nsb_dcarrmk2_'+String(i).padStart(2,'0');})
+       .every(function(k){ return _g229q.indexOf('"'+k+'"') > 0; }),
+     'all 18 Mk II bay frames are registered');
+  ok(Array.from({length:14},function(_,i){return 'nsb_dcarrmk2_cn_'+String(i).padStart(2,'0');})
+       .every(function(k){ return _g229q.indexOf('"'+k+'"') > 0; }),
+     'and all 14 cannon frames, or the beam stutters mid-fire');
+  ok(_g229q.indexOf('"'+vm.runInContext("SHIPBOSS.doomsdaycarriermk2.key", ctxv)+'"') > 0,
+     'the Mk II hull plate is registered, so it can decode');
+  /* ⚠ BOTH SWITCHES. A kind absent from spawnBoss's switch spawns with no _ship and draws
+     nothing; absent from the tick gate it draws but never opens a bay. Both cost a session
+     before, on other units. */
+  ok(/case 'doomsdaycarriermk2':/.test(_g2mk2), "the Mk II is in spawnBoss's switch");
+  ok(/_ship==='doomsdaycarriermk2'/.test(_g2mk2), 'and in the carrierTick gate');
+  /* the cannon window is MEASURED off the frames: ink first appears below the hull at index 6
+     and has collapsed by 12, so firing outside 6..11 would hurt through an invisible beam. */
+  ok(vm.runInContext("SHIPBOSS.doomsdaycarriermk2.cannon.fire", ctxv) === 6 &&
+     vm.runInContext("SHIPBOSS.doomsdaycarriermk2.cannon.last", ctxv) === 11,
+     'the cannon only hurts while the beam is drawn (frames 6-11, measured)');
+  ok(vm.runInContext("SHIPBOSS.doomsdaycarriermk2.cannon.hMul", ctxv) === 1.5,
+     'and the 640x480 reel grows the drawn box to 1.5x the hull, so the beam is not squashed');
+  ok(/const dh=\(b\._animH>0 \? b\._animH : h\);/.test(_g2mk2),
+     'shipBossDraw honours that taller frame');
+  /* ⚠ THE SQUARE-DRAW BUG. This read h=256*s, i.e. b.w, so the 640x310 carrier drew 640x640
+     and filled the screen. Pin the declared box, not the square. */
+  ok(/w=256\*s, h=\(b\.h>0 \? b\.h : 256\*s\)/.test(_g2mk2),
+     'a ship boss is drawn w x h, never w x w');
+  /* a boss nearly as wide as the world must not sweep off it - measured at x=1046 in a 680 world */
+  ok(/b\.w >= W\*0\.70/.test(_g2mk2), 'a wall-sized boss is held on the field');
+  /* the two carriers fire visibly different rounds, so the art follows the OWNER */
+  ok(/_wart:\(L\.warhead\|\|'nfx_omegawarhead_in'\)/.test(_g2mk2),
+     'the warhead carries the art its carrier declares');
+  ok(['nfx_omegamk2_in','nfx_omegamk2_ref'].every(function(k){ return _g229q.indexOf('"'+k+'"')>0; }),
+     'and both Mk II warhead plates are registered');
   /* CESSPOOL LEVIATHAN was CULLED at Mike's instruction ("the gator can go. delete all") — its 21
      mba_cl_ keys are in _quarantine. These assertions used to prove it built as a 5-part modular
      boss; they now prove the OPPOSITE, which is the behaviour that matters after a cull: the art
