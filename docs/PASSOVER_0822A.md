@@ -1195,3 +1195,70 @@ Suite **2,751 ok / 3 fail** (+14 assertions, same three pre-existing failures). 
    the choice you just changed, so it now pins the Mk II.
 3. **The three suite failures are pre-existing and untouched** — a preload bound that wants
    `<600` against a set of 602, and two about a quarantine ledger. Not caused by this drop.
+
+---
+
+## 0822z — Mike's new sewer, and the L7 boss teleport is gone
+
+**Stage 7 now runs on `nst7_master_v3` — the CF_ToxicSewerPortal-Lvl7 full scroll, 680×4716,
+authored at plate width so nothing is resampled. `arena:'nst7_arena'` is removed.**
+
+### The teleport was a real thing, and this was it
+
+Mike: *"Do NOT teleport to a different map for the L7 boss."*
+
+`drawLevelMaster` has an arena branch: when the boss run starts it **stops drawing the scroll** and
+loops a separate plate instead. Stage 7 pointed at `nst7_arena` — a walled olive stone chamber
+(`docs/proofs/l7_arena_removed.png`) that looks nothing like the channel the player just flew
+through. It was also still **800 wide**, a leftover the 680 pass missed, because it lives as an
+atlas cell rather than a file.
+
+Removed. With no `arena` the branch falls back to looping the master, so the fight happens where
+the player actually flew to. `docs/proofs/l7_boss_no_teleport.png` is the Sludge Emperor in the
+sewer.
+
+### The new plate keeps Mike's own architecture
+
+Stage 7 is not a background — it is an **overlay** over an animated sludge bed, which is what Mike
+asked for in 0810t: *"replace stage 7 with that sheet as an overlay ... and use the sludge for the
+background."* An opaque plate would have destroyed that, so I measured before swapping:
+
+| | alpha-0 |
+|---|---|
+| new scroll | 9.6% |
+| the pack's own liquid mask | 90.4% |
+
+**Exact complements** — the holes in the plate are the channel and nothing else. Same architecture,
+narrower channel (v2 was 68% open). `docs/proofs/l7_new_channel.png` shows the sludge coming
+through the side channels.
+
+New plate carries **0 vivid magenta**; the outgoing v2 still had 26. v2 stays registered — swapping
+the name back restores it.
+
+### The portal frames are ART, and I did not clean them
+
+`nfx_l7portal_0..7` (8 frames, 512×512, 12fps one-shot) tripped the halo test at 45–587px per
+frame. They are an authored green/cyan vortex **with violet arms**; the test fires because the
+swirl is thin filaments that all touch transparency. Installed untouched, and the exclusion is
+written down in `docs/proofs/l7_portal_is_art.txt` so a later sweep cannot eat them.
+
+This is exactly the ambiguous class I flagged after the atlas pass — here the answer was
+unambiguous once rendered.
+
+### Three assertions were measuring a plate the stage no longer uses
+
+They named `nst7_master_v2.png` directly. Two pinned the height and width; one **required**
+`arena==='nst7_arena'` — it was defending the very thing Mike asked to be rid of. A hardcoded
+filename that silently measures the wrong plate is worse than no assertion.
+
+All of them, plus the seven-stage geometry sweep, now resolve the plate from `cfg.master` through
+the manifest via a new `stagePlate()` helper. The next plate swap is covered by code that already
+exists, and there is a new assertion that stage 7 has **no** arena.
+
+Suite **2,752 ok / 3 fail** (the same pre-existing three). Atlas verify PASS.
+
+### Still open on this pack
+
+The 8 portal frames and `nst7_portal_gate` are **installed and registered but not yet sequenced**.
+The end-of-stage cutscene — fly up, portal opens, ship dissolves on frame 06, frame 07 closes
+behind, stage ends into Furious Death — is the next piece of work.

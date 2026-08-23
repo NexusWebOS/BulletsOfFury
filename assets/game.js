@@ -2749,8 +2749,26 @@ function _levelCfg(){
 
        ⚠ h:4062 IS LOAD-BEARING. Every reader of cfg.h falls back to 4800 when it is absent
        and this plate is 4062, so omitting it mismaps the entire stage. Same note as stage 1. */
-    case 7: return {master:'nst7_master_v2', liquid:'nlq_sludgeF', fill:'#232b12', tile:0.5, fps:5, wide:true,
-                    plateW:680, h:3453, arena:'nst7_arena'};   // 0822d: 800x4062 -> 680x3453
+    /* ── 0822z: MIKE'S NEW SEWER, AND NO MORE BOSS TELEPORT ────────────────────
+       nst7_master_v3 is the CF_ToxicSewerPortal-Lvl7 full scroll, 680x4716, authored at plate
+       width so nothing is resampled. It keeps the overlay architecture Mike asked for in
+       0810t — the plate is transparent where the sludge belongs and nlq_sludgeF shows through.
+       Measured before swapping: the plate is 9.6% alpha-0 and the pack's own liquid mask is
+       90.4% alpha-0, i.e. EXACT COMPLEMENTS, so the holes are the channel and nothing else.
+       (v2 was 68% alpha — far more open. This is a built-out sewer with a narrower channel,
+       which is what the new art is.) v2 stays registered; swapping the name back restores it.
+
+       ⚠ arena:'nst7_arena' IS GONE, DELIBERATELY. Mike: "Do NOT teleport to a different map
+       for the L7 boss." That is exactly what it did — drawLevelMaster's arena branch stops
+       drawing the scroll when the boss run starts and loops a separate plate instead, and
+       nst7_arena is a walled stone chamber that looks nothing like the channel (and was
+       still 800 wide, a leftover from the 680 pass). With no arena the branch falls back to
+       looping the master, so the fight now happens where the player actually flew to — which
+       on this plate is the void portal at the top. Do not put it back.
+
+       ⚠ h:4716 IS LOAD-BEARING, same as every other stage: readers fall back to 4800. */
+    case 7: return {master:'nst7_master_v3', liquid:'nlq_sludgeF', fill:'#232b12', tile:0.5, fps:5, wide:true,
+                    plateW:680, h:4716};   // 0822z: Mike's new 680x4716 sewer scroll
     // 8 FURIOUS DEATH — the true-16bit necro master (this art is the finale's, not stage 6's).
     /* RC2 REBUILD (drop 0810g) — Stage_08_Deep_Space_Black_Hole, 800x5120. Starfield running down
        into a spiral black hole, which is what TRANS[7] has always described the 7->8 join as:
