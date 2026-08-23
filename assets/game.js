@@ -38933,8 +38933,15 @@ function drawLaunch(dt){
          — once above the aircraft, once over the hull — because PLAY sizes the plume from the
          per-pilot MOUNT scale while this sizes it to shipH*1.15 against the reel's largest
          frame, so the `- _th*PLUME_CORE_F` term over-corrects at this scale.
-         The real fix is one sizing rule and one seat, read by both. Left as it shipped until
-         that is done properly — a wrong flame is worse than a differently-seated one. */
+         ⚠ AND IT IS NOT A DUPLICATE DRAW EITHER — attempt 3 (0822t) deleted this block on the
+         reading that drawShipSprite already calls drawShipThruster() one line above, so the
+         launch was drawing two plumes. Measured in pixels: with this block gone the launch has
+         essentially NO flame, just two specks. drawShipThruster renders tiny at launch scale,
+         so THIS block is the visible plume and that one contributes almost nothing here.
+         Three attempts, three reverts. What is actually needed is to work out why
+         drawShipThruster comes out that small at shipH 62-128 when it is correct at PLAY's
+         SHIP_DRAW_H of 60 — start there, not at this block. Until then it ships as it is:
+         a badly-seated flame beats no flame and beats a flame in front of the aircraft. */
       ctx.drawImage(im, shipX-_tw/2, shipY+shipH*0.30, _tw, _th);
       ctx.restore();
     }
