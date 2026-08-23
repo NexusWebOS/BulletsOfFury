@@ -18016,7 +18016,16 @@ const LASER_TELL_COL = {spread:'#ffb02e', straight:'#5fe0ff'};
    The floor below guarantees the three seconds even on the shortest run-in measured (2.97s). */
 const CHARGE_TELL = 3.0;
 const CHARGE_TELL_COL = {far:'#ffd23a', near:'#ff3a2e'};
+/* ⚠ OFF (drop 0822u). Mike: "Idk what these rings are but get rid of them."
+   They are this — the 0821f charge warning he asked for ("give enemies who charge at you some
+   indicator... 3 seconds before"). That he did not recognise them is the finding: as a ring
+   plus a lead line they read as decoration or as a bug, not as a countdown. The MECHANIC he
+   asked for still has a real need behind it (loopcharge has no shot to dodge), so the timing
+   and the phase machine below are left intact and only the DRAW is gated — a different
+   telegraph can be hung on the same 3.0s window without rebuilding any of it. */
+let CHARGE_TELL_DRAW = 0;
 function drawChargeTell(e){
+  if(!CHARGE_TELL_DRAW) return;
   if(!e || e.dead || e.pattern!=='loopcharge' || e._phase==='charge' || typeof ctx==='undefined') return;
   const k=Math.max(0, Math.min(1, (e._chgTellT||0)/CHARGE_TELL));   // 0 at spawn, 1 at the commit
   const col=(k<0.6)?CHARGE_TELL_COL.far:CHARGE_TELL_COL.near;
@@ -24135,7 +24144,15 @@ function _hxvKey(tag, lt, vx, vy){
   return 'nhxv_'+tag+'_'+lt+'_'+String(di).padStart(2,'0');
 }
 /* m = merge progress 0..1. At 1 the strands are coincident and the ball takes over. */
-function drawHelixLance(x, y, len, full, phase, alpha, m){
+/* ⚠ A BALL HAS NO LANCE THROUGH IT (drop 0822u). Mike, for the tenth time by his count:
+   "mavericks full charged helix ball should not have that laser in the middle."
+   0806i fixed the DETONATION (contact, not a line) and 0801fu fixed the lance FORMING, but
+   neither touched the draw: this one function renders the winding strands AND the ball, and
+   the strands are sized off `m`. A ball in flight has m<1 until it reaches HELIX_LINE, so the
+   strands kept drawing straight through it — which is the laser he keeps seeing. The previous
+   fixes were all upstream of the thing actually putting it on screen.
+   `isBall` skips the strand pass outright rather than relying on m reaching 1. */
+function drawHelixLance(x, y, len, full, phase, alpha, m, isBall){
   if(typeof XART==='undefined') return false;
   const tag = full ? 'p' : 'g';
   /* RACE-FREE (drop 0801be). This returned false whenever the first helix frame
@@ -24162,6 +24179,7 @@ function drawHelixLance(x, y, len, full, phase, alpha, m){
     }
   }
   segs.sort((p,q)=>p.z-q.z);                              // far side first
+  if(isBall) segs.length=0;      // 0822u: the ball is the whole shot - no strands through it
   ctx.save();
   ctx.globalCompositeOperation='lighter';
   ctx.imageSmoothingEnabled=false;
@@ -24641,7 +24659,7 @@ function drawBullets(){
            the instant the two strands become one. During the glow beat it is pinned at 1. */
         const _m = (b._hphase==='glow') ? 1
                  : clamp((VH-b.y)/Math.max(1,VH*(1-HELIX_LINE)), 0, 1);
-        if(drawHelixLance(b.x, b.y, b.h*1.9, !!b._full, fi, 1, _m)) continue;
+        if(drawHelixLance(b.x, b.y, b.h*1.9, !!b._full, fi, 1, _m, !!b._isBall)) continue;
         if(drawHelixPair(b.x, b.y, b.h*1.9, b._full?'classic':'green', fi, 0, null, 1)) continue;
       }
       // NORMAL shot — green double-helix LASER; both strands animate continuously in flight.
