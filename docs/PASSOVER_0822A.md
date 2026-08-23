@@ -1262,3 +1262,60 @@ Suite **2,752 ok / 3 fail** (the same pre-existing three). Atlas verify PASS.
 The 8 portal frames and `nst7_portal_gate` are **installed and registered but not yet sequenced**.
 The end-of-stage cutscene — fly up, portal opens, ship dissolves on frame 06, frame 07 closes
 behind, stage ends into Furious Death — is the next piece of work.
+
+---
+
+## 0822aa — FURIOUS DEATH: the modular stage 8
+
+**Stage 8 runs on `nst8_sky_master` (680×4716) with 24 pieces of scenery drifting in parallax
+decks.** `docs/proofs/l8_furious_death.png`, `docs/proofs/l8_families.png`.
+
+The pack states its own contract and this follows it exactly: *"opaque sky contains no
+environmental objects; all alien scenery is spawned from independent alpha frames."* So the plate
+is only the backdrop, and 6 biomech cliffs, 6 portal rims and 12 bone rocks drift in from a new
+`l8ObjsDraw` — the same model as the stage-5 orbital field and the stage-6 clouds.
+
+**Every deck is background. There is deliberately no near deck.** This is the 0821 lesson written
+down one function up: a big opaque silhouette drifting over the play field is what made Mike unable
+to see his own enemies on stage 5. The L8 structures are 680×1020 biomech cliffs — far bigger and
+far more solid than a satellite — so they draw from `stageSceneryDraw` (tail of `drawBG`) and there
+is nothing to promote them to.
+
+Cliffs are pinned to the **edges** rather than scattered, so they read as terrain the player flies
+past instead of clutter in the lane. Scale is measured off the art, not chosen: they are authored
+680 wide against a 680 plate, so 1.0 would wall off the screen.
+
+**`skipRows` is gone and must not come back for this plate.** It named absolute master rows
+2125–2253 — the bridge on the *blackhole* plate. Those rows mean nothing on a different image, so
+carrying them over would blank 128 arbitrary rows of the new sky.
+
+`blackhole800_rc2_master` stays registered; swapping the name back restores the old stage exactly.
+
+> The black-hole spiral is retired from stage 8, but that beat is not lost — it moves to the L7
+> void portal at the *end* of stage 7, which is precisely Mike's "pilot enters black hole, stage
+> ends". The two packs were built to pair: the L7 manifest explicitly **excludes** "Stage 8 sky and
+> Furious Death space set pieces" because this pack carries them.
+
+**Another never-dehalo family.** The whole L8 set is crimson-and-violet bone by design. Same class
+as the L7 portal swirl — recorded so a later sweep cannot eat it.
+
+### A flaky assertion, found and fixed
+
+The stage-8 run surfaced `the flurry races — every bolt is fast` failing, then passing three runs
+in a row. It was not a regression — it was **luck**, failing about one run in four.
+
+`hypot(vx,vy)` is the *instantaneous* tangent, and the mover re-derives it from `_hdir` every frame
+with the helix corkscrew applied, so it dips below 14 at certain phases. The test sampled on
+whatever frame the burst was first seen.
+
+Repointed at `_hspd` (17–23 at spawn; both hfl spawn sites set it), which is the quantity the rule
+is actually about. **A flaky assertion is worse than none — it teaches you to ignore a red run.**
+Now stable: 2,752 ok across four consecutive runs.
+
+Suite **2,752 ok / 3 fail** (the same pre-existing three). Atlas verify PASS.
+
+### The stage-8 cfg assertions did not need touching
+
+Worth noting, because it was the point of 0822z's refactor: the seven-stage geometry sweep picked
+up the new 680×4716 plate on its own and passed, because it now resolves `cfg.master` through the
+manifest instead of naming a file. That change paid for itself one drop later.

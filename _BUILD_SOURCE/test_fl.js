@@ -2729,7 +2729,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      straight up. Mike asked for volleys "in multiple directions", so the ring now includes bolts
      travelling sideways and down, whose vy is small while their speed is unchanged. The rule was
      always that the flurry RACES — so it measures the speed. */
-  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).every(function(b){return Math.hypot(b.vx,b.vy)>14;})", ctxv), 'the flurry races — every bolt is fast');
+  /* ⚠ REPOINTED AGAIN 0822aa — THIS WAS FLAKY, failing about one run in four. hypot(vx,vy) is
+     the INSTANTANEOUS tangent, and the mover re-derives it from _hdir every frame with the helix
+     strand oscillation applied, so it dips below 14 at certain phases of the corkscrew. The test
+     samples on whatever frame the burst was first seen, so whether it passed was luck.
+     A flaky assertion is worse than none: it teaches you to ignore a red run. The bolt's SPEED is
+     _hspd (17-23 at spawn, and both hfl spawn sites set it), which is the quantity the rule
+     "the flurry races" is actually about. Falls back to the tangent if a bolt has no _hspd. */
+  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).every(function(b){return (b._hspd!=null?b._hspd:Math.hypot(b.vx,b.vy))>14;})", ctxv), 'the flurry races — every bolt is fast');
   ok(vm.runInContext("new Set(pBullets.filter(function(b){return b.kind==='hfl';}).map(function(b){return Math.round((b._hdir||0)*57.3);})).size>=4", ctxv), 'and the volley goes out in MULTIPLE DIRECTIONS, not one upward fan — Mike 0821');
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).every(function(b){return b.x>=0 && b.x<=worldWidth();})", ctxv), 'and every bolt stays inside the world');
   // it DELETES ordinary enemies

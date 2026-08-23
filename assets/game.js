@@ -2778,8 +2778,22 @@ function _levelCfg(){
        through. That is why fill stays #0a0406 rather than becoming a texture. wide:true added
        because this master is 800 across; the old one was not. */
     /* skipRows: the BRIDGE, a horizontal platform measured at rows ~2530..2620. */
-    case 8: return {master:'blackhole800_rc2_master', liquid:null, fill:'#0a0406', tile:1.0, wide:true,
-                    plateW:680, h:4352, skipRows:[2125,2253]};   // 0822d: 800x5120 -> 680x4352;
+    /* ── 0822aa: THE FURIOUS DEATH SKY ─────────────────────────────
+       nst8_sky_master is CF_FuriousDeathModular-Lvl8's sky, 680x4716 and OPAQUE by design:
+       the pack's own contract is "opaque sky contains no environmental objects; all alien
+       scenery is spawned from independent alpha frames". So the plate is only the backdrop
+       and every cliff, gate and bone rock drifts in from l8ObjsDraw.
+
+       ⚠ skipRows IS GONE AND MUST NOT COME BACK FOR THIS PLATE. It named ABSOLUTE master
+       rows 2125..2253 — the bridge on the blackhole plate. Those rows mean nothing on a
+       different image, so carrying them over would blank 128 arbitrary rows of the new sky.
+
+       ⚠ fill IS NOW COSMETIC. The old plate was 2.76% transparent and fill was the void
+       showing through; this one is opaque, so fill only paints letterbox. Left as it was
+       rather than removed, because it costs nothing and blackhole800_rc2_master stays
+       registered — swapping the name back restores the old stage exactly. */
+    case 8: return {master:'nst8_sky_master', liquid:null, fill:'#0a0406', tile:1.0, wide:true,
+                    plateW:680, h:4716};   // 0822aa: Mike's Furious Death sky
     /* ⚠ skipRows ARE ABSOLUTE MASTER ROWS and were rescaled with the plate (x0.85): 2500->2125,
        2650->2253. A band left at its old rows would skip the wrong 150px of a shorter plate. */
     /* 9 BONUS STAGE — entered from Level 5. Mike: "stage 9 was the bonus stage, yes.
@@ -15709,6 +15723,7 @@ function beginStage(num){
   if(typeof spawnSceneryPlan==='function') spawnSceneryPlan();
   if(typeof l6CloudsReset==='function'){ if(num===6) l6CloudsReset(); else l6Clouds=[]; }
   if(typeof l5FieldReset==='function'){ if(num===5) l5FieldReset(); else l5Field=[]; }
+  if(typeof l8FieldReset==='function'){ if(num===8) l8FieldReset(); else l8Field=[]; }
   if(typeof l5RocksReset==='function'){ if(num===5) l5RocksReset(); else l5Rocks=[]; }
   if(typeof speedPadsReset==='function') speedPadsReset();
   if(typeof aiQueue!=='undefined') aiQueue.length=0;
@@ -19556,6 +19571,7 @@ function stageSceneryDraw(dt){
     if(run.stage===5) { try{ bg5Draw(dt); }catch(_b5){} }               // planetary setpiece (0819e)
     if(run.stage===6) { try{ bg6Draw(dt); }catch(_b6){} }               // clouds, rain, lightning (0819f)
     if(run.stage===5 && typeof l5FieldDraw==='function'){ l5FieldUpdate(dt); l5FieldDraw(false); }
+    if(run.stage===8 && typeof l8ObjsDraw==='function'){ l8FieldUpdate(dt); l8ObjsDraw(); }   // Furious Death scenery (0822aa)
   }catch(_s){}
 }
 function drawBG(dt){ _drawBGCore(dt); stageSceneryDraw(dt); }
@@ -28461,6 +28477,71 @@ function l5FieldReset(){
         rot:rnd(0,TAU), spin:rnd(-0.35,0.35)});
     }
   }
+}
+/* ============================================================
+   STAGE-8 FURIOUS DEATH — MODULAR SCENERY (drop 0822aa, pack CF_FuriousDeathModular-Lvl8)
+
+   The pack states its own contract and this follows it exactly: "opaque sky contains no
+   environmental objects; all alien scenery is spawned from independent alpha frames". So the
+   sky is the master plate and every cliff, gate and bone rock is a separate frame drifting in
+   parallax decks — the same model as the stage-5 orbital field and the stage-6 clouds.
+
+   ⚠ EVERY DECK IS BACKGROUND. NONE OF IT PASSES OVER THE FIGHT. This is the 0821 lesson
+   written down one deck up: a big opaque silhouette drifting over the play field is what made
+   Mike unable to see his own enemies on stage 5. The L8 structures are 680x1020 biomech cliffs
+   — far bigger and far more solid than a satellite — so they are drawn from stageSceneryDraw,
+   which runs at the tail of drawBG, and there is deliberately NO near deck to promote them to.
+
+   Scale is measured off the art, not chosen: the cliffs are authored 680 wide against a 680
+   plate, so 1.0 would wall off the screen. 0.42-0.58 puts one against the edge as terrain the
+   player flies past, which is what the family is for. */
+const L8_DECKS=[
+  {pre:'nl8_lg_',   n:6,  count:3, sc:0.50, spd:14, a:0.90, edge:true },  // biomech cliffs — far, slow, hugging the sides
+  {pre:'nl8_rim_',  n:6,  count:2, sc:0.46, spd:24, a:0.85, edge:false},  // portal rims as landmarks
+  {pre:'nl8_prop_', n:12, count:8, sc:0.40, spd:46, a:0.95, edge:false}   // bone rocks and wreckage
+];
+let l8Field=[];
+function l8FieldReset(){
+  l8Field=[];
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  for(const d of L8_DECKS){
+    for(let i=0;i<d.count;i++){
+      /* a cliff belongs against a wall, not in the middle of the lane the player flies down */
+      const x = d.edge ? ((i%2) ? rnd(W*0.80, W+60) : rnd(-60, W*0.20))
+                       : rnd(-50, W+50);
+      l8Field.push({pre:d.pre, idx:(Math.random()*d.n)|0,
+        x:x, y:rnd(-VH, VH),
+        sc:d.sc*rnd(0.82,1.18), spd:d.spd*rnd(0.85,1.15), a:d.a,
+        rot:d.edge?0:rnd(0,TAU), spin:d.edge?0:rnd(-0.22,0.22), n:d.n, edge:d.edge});
+    }
+  }
+}
+function l8FieldUpdate(dt){
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  for(const o of l8Field){
+    o.y+=o.spd*(dt||0); o.rot+=o.spin*(dt||0);
+    if(o.y>VH+320){
+      o.y=-320-rnd(0,200);
+      o.idx=(Math.random()*o.n)|0;
+      o.x = o.edge ? ((Math.random()<0.5) ? rnd(-60, W*0.20) : rnd(W*0.80, W+60)) : rnd(-50, W+50);
+    }
+  }
+}
+function l8ObjsDraw(){
+  if(typeof XART==='undefined') return;
+  for(const o of l8Field){
+    const k=o.pre+o.idx;
+    /* ⚠ rdy() STARTS THE LOAD AND RETURNS FALSE THE FIRST TIME. Skipping the frame is correct —
+       it decodes and appears on a later one. Never block on it. */
+    if(!XART.rdy(k)) continue;
+    const im=XART.get(k); if(!im) continue;
+    const w=(im.naturalWidth||im.width)*o.sc, h=(im.naturalHeight||im.height)*o.sc;
+    ctx.save(); ctx.globalAlpha=o.a; ctx.translate(o.x, o.y);
+    if(o.spin) ctx.rotate(o.rot);
+    ctx.drawImage(im, -w/2, -h/2, w, h);
+    ctx.restore();
+  }
+  ctx.globalAlpha=1;
 }
 function l5FieldUpdate(dt){
   for(const o of l5Field){
