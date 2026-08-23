@@ -41116,7 +41116,24 @@ const Snd=(function(){
   A.loopTick=function(dt){
     for(const n in A.loops){
       const L=A.loops[n], cfg=A.TAME[n], gm=cfg?cfg.g:1;
-      if(L.hold>0){ L.hold--; L.lvl=Math.min(1, L.lvl+dt*7); }
+      /* ⚠ A LOOP THAT FAILED TO START MUST KEEP TRYING (drop 0822v). Mike: "flamethrower and
+         ice breath still play no sound when used or hitting enemies." Measured: readyState 0
+         when loopOn fired, paused TRUE afterwards, currentTime 0.004 - it never ran. loopOn
+         calls play() exactly once, guarded by `if(!L.on)`; the trigger is pulled the instant
+         the weapon fires, which is before a lazily-fetched .wav has decoded, so the promise
+         rejects, is swallowed by the .catch, and `on` stays true - latching the sound off for
+         the rest of the session with every other value looking correct.
+         Same shape as XART.rdy() being false on its first call, one subsystem over: the first
+         attempt is the one guaranteed to be too early, so it cannot be the only attempt. */
+      if(L.hold>0){ L.hold--; L.lvl=Math.min(1, L.lvl+dt*7);
+        /* ⚠ ONLY ONCE THERE IS DATA, AND NOT EVERY FRAME. Retrying play() unconditionally at
+           60Hz thrashes the fetch - measured, readyState stayed pinned at 1 (metadata only)
+           for 90 frames and currentTime never moved. readyState>=3 (HAVE_FUTURE_DATA) is the
+           point a retry can actually succeed, and the 6-frame stride keeps it from hammering. */
+        if(L.on && L.el.paused && L.el.readyState>=3 && ((L._rt=(L._rt||0)+1)%6)===0){
+          try{ const _pr=L.el.play(); if(_pr&&_pr.catch)_pr.catch(function(){}); }catch(e){}
+        }
+      }
       else { L.lvl=Math.max(0, L.lvl-dt*5); if(L.lvl<=0 && L.on){ L.on=false; try{ L.el.pause(); }catch(e){} } }
       try{ L.el.volume=c01(L.lvl*L.want*gm*A.vol.sfx*A.vol.master); }catch(e){}
     }
