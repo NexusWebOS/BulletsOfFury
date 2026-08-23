@@ -1560,13 +1560,15 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      load-bearing: with seven frames the dissolve would land on the close and the ship would
      still be visible when the gate shut. */
   var _g7p = fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(Array.from({length:8},function(_,i){return 'nfx_l7portal_'+i;})
+  /* the WHITE set is what the cutscenes draw now - Mike: "should be white 16-bit styled fading".
+     The authored l7 frames stay registered, so the sewer-green original is one key away. */
+  ok(Array.from({length:8},function(_,i){return 'nfx_wportal_'+i;})
        .every(function(k){ return _g229q.indexOf('"'+k+'"') > 0; }),
      'all 8 portal frames are registered, or the dissolve lands on the wrong beat');
   /* ⚠ WARMED WITH THE STAGE. XART.rdy STARTS the load and returns false on that first call, so
      a cutscene that asks for the art at the moment it needs it draws NOTHING. This is the
      0801kd/0801dp trap and it is invisible in a green suite. */
-  ok(/addPrefix\('nfx_l7portal_'\)/.test(_g7p), 'and they are warmed with stage 7, not fetched mid-cutscene');
+  ok(/addPrefix\('nfx_wportal_'\)/.test(_g7p), 'and they are warmed with the stage, not fetched mid-cutscene');
   ok(/run\.stage===7 && typeof XART!=='undefined'/.test(_g7p), 'the flyover has a stage-7 portal branch');
   /* the exception to "player.x is never touched": you cannot fly into a gate you are not aimed
      at. It must stay gated on the portal being live, or every stage starts sliding sideways. */
@@ -6938,7 +6940,38 @@ console.log('=== 156. protected assets — planned content, not dead weight (dro
   /* an empty plan is the failure mode here: reachable but nothing in it */
   ok(vm.runInContext("buildStagePlan(9).length>=12", ctxv),
      'and it fields a real wave plan rather than scrolling empty ('+vm.runInContext("buildStagePlan(9).length", ctxv)+' waves)');
-  ok(vm.runInContext("Object.keys(S9_UNITS).length===8", ctxv), 'its eight-unit roster is registered');
+  /* the table also carries the comets now, so this pins the EIGHT ROSTER UNITS by name rather
+     than the table's length, which would break every time a hazard is added. */
+  ok(vm.runInContext("['wskim','pneedle','pmine','gleech','vmanta','echof','tsplit','cbreak'].every(function(k){return !!S9_UNITS[k];})", ctxv),
+     'its eight-unit roster is registered');
+  ok(vm.runInContext("['cometsm','cometbig','cometmega'].every(function(k){return !!S9_UNITS[k];})", ctxv),
+     'and the three comet hazards the stage-5 gate run needs');
+  /* ===== THE STAGE-5 SECRET (drop 0822ad) ==============================================
+     Mike: nine gates, "9 signaling the 9th level", the ninth glows once the first eight are
+     clean, and the speed effect starts on the FIRST gate. Each of those is a number or a gate
+     condition that would be invisible if it drifted. */
+  var _g5r = fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(vm.runInContext("S5R_N===9", ctxv), 'the run is NINE gates - one per the ninth level');
+  /* the openings are read off the art: 192x256 speed portal has a +/-36 hole, the 256x320
+     segment gate +/-45. Chosen by eye they would make the run impossible or trivial. */
+  ok(vm.runInContext("S5R_OPEN===36 && S5R_OPEN9===45", ctxv),
+     'and its openings are the MEASURED holes in the gate art, not chosen radii');
+  ok(/if\(!s5run\.armed\)\{ s5run\.armed=true;/.test(_g5r),
+     'the speed effect arms on the FIRST gate, per Mike, not at the start of the run');
+  ok(/s5run\.idx>=8 && !s5run\.failed\) g\.glow/.test(_g5r),
+     'the ninth gate only glows after eight clean passes');
+  ok(/g\.missed=true; s5run\.failed=true;/.test(_g5r),
+     'and missing one fails the run - there is no partial credit');
+  /* the bonus is a LATCH, not campaign.unlockedMax: stage 9 is outside the linear progression
+     and putting it on unlockedMax would make the arrows walk into it. */
+  ok(/campaign\.bonusUnlocked=1/.test(_g5r), 'the unlock is its own latch, not campaign.unlockedMax');
+  ok(/if\(num===9 && typeof campaign!=='undefined'\) campaign\.bonusUnlocked=0;/.test(_g5r),
+     'and it is SPENT on entry, so the map is not stuck on stage 9 forever');
+  ok(/const _lo = _bonus \? 9 : 1;/.test(_g5r), 'while it is live the map allows ONLY stage 9 - Mike');
+  /* Mike: "the portal is already built into the campaign map, dont place one" */
+  ok(_g5r.indexOf("ns9_gate0_'+((((performance.now()")<0,
+     'and the map draws NO portal sprite - the map art already has one');
+
   ok(vm.runInContext("Object.keys(S9_UNITS).every(function(k){return !!ENEMY_ART[S9_UNITS[k].art];})", ctxv),
      'and every unit resolves through ENEMY_ART - the 0809l trap, where a unit flies and never draws');
 }

@@ -1466,3 +1466,83 @@ The exhaust is also suppressed once the ship is hidden — otherwise particles k
 ship that has already gone through.
 
 Suite **2,766 ok / 3 pre-existing fail**. Atlas verify PASS.
+
+---
+
+## 0822ad — THE SECRET: nine gates, a warp-out, and the map unlock
+
+Mike's design, replacing the single gate 0822ab put in stage 5:
+
+> "Place warp portals in a kind of left right shimmy pattern... if they successfully manage to
+> shimmy through all 9 — 9 signaling the 9th level — once they shimmy through the first 8, the 9th
+> will begin to glow and our portal will form in it and the screen will be doing a speed effect...
+> once they touch the first warp gate."
+
+`docs/proofs/s9_warpout.png`, `s9_map_unlock.png`, `s9_map_card.png`, `s9_white_portal.png`.
+
+### The run
+
+Nine gates as a **convoy, not a timer** — all nine exist at once and drift down together, so the
+player can see the next one and plan the shimmy. Passed by crossing the gate's line inside the
+opening, missed by crossing it outside. No partial credit, no going back.
+
+**The openings are measured, not chosen.** The speed-portal frame is 192×256 with a ±36px hole and
+the segment gate 256×320 with ±45. A radius picked by eye would make the run either impossible or
+impossible to fail. The shimmy amplitude **tightens** gate by gate, so the last few are precision
+rather than travel.
+
+Hazards between gates are **roster units, not props**, so they can be shot — "skillful enough with
+your shots, missiles" only means something if they can be. Sizes measured: the mega comet draws
+~211px on a 480 screen, which is the HUGE asked for. The one at 8.4s comes straight down the lane
+at 70hp — not shootable in time, so the barrel roll's i-frames are the answer, which is the "know
+how to barrel roll once" beat. The clash pair is scripted, because "two that clash into each other
+and bounce away" is a set piece no generic mover produces.
+
+### The chain, verified end to end in a browser
+
+```
+gate 1 passed      armed=True (speed effect starts here, per Mike)
+gates 2-8 passed   idx=8
+ninth gate         glow 0 -> 0.30 -> 0.69 -> 1.00
+ninth gate passed  taken=True -> warp 'draw' -> warp 'white'
+                   -> state 'stagesel' -> streak 'fly' -> 'flash'
+                   -> bonusUnlocked=True, cursor=9
+```
+
+### Both of Mike's corrections
+
+1. **"clean up that purple in the portal... should be white 16-bit styled fading."** The portal
+   frames are re-derived through a **6-step white ramp** with a faint cool cast at the dim end and
+   an alpha falloff, so it steps rather than blurs. `nfx_wportal_0..7`. The authored `nfx_l7portal_`
+   frames stay registered — the sewer-green original is one key away.
+2. **"the portal is already built into the campaign map, dont place one."** Correct, and I checked
+   the plate: `nss_map` has a ringed crater with a lit centre at exactly `SSEL_POS[9]` = [575,75].
+   The sprite I was drawing over it is gone. What is left is **light on the art that is already
+   there** — a soft radial bloom while it flashes, nothing once it settles.
+
+### The map
+
+`SSEL_POS[9]` has been in the table all along with nothing drawing it, because the flag loop is
+deliberately `st<=8` ("SECRET level (9) never gets a flag"). That stays true — 9 never becomes a
+flag. What it gets is the streak from stage 5's node, the bloom, and the unlock.
+
+**The unlock is its own latch, not `campaign.unlockedMax`.** Stage 9 is outside the linear
+progression; putting it on unlockedMax would make the arrows walk into it and the frontier logic
+treat it as the next campaign stage. While the latch is live the map allows **only** stage 9, and
+entering **spends** it, so the map is not stuck on the bonus stage forever.
+
+### An assertion caught my own bug, one drop after it was written
+
+`every unit resolves through ENEMY_ART` failed. The comets are `ns9c_` and the seeding loop only
+matched `ns9e_`, so **every comet would have spawned, moved, collided and drawn nothing** — the
+0809l trap, reintroduced by me in this drop and caught by the assertion written for it.
+
+Suite **2,776 ok / 3 pre-existing fail**. Atlas verify PASS.
+
+### Open
+
+**There is no stage-9 card art.** `nss_panel_`/`nss_label_` exist for 1–8 only, so selecting the
+bonus stage left the bottom of the screen empty. Rather than invent a panel sprite, it draws the
+same information as text through the screen's own font helper — the fallback the hub already uses.
+**Drop `nss_panel_9` / `nss_label_9` in and that branch stops running**; it is keyed on the art
+being absent, not on the stage number.

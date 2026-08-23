@@ -15363,7 +15363,7 @@ function warmStage(n){
     /* the stage-7 exit portal. Warmed WITH THE STAGE because the cutscene has no time to wait
        for a decode: XART.rdy starts the load and returns false on that first call, so the
        flyover would draw nothing on the one frame that matters (0822ac). */
-    if(n===7 && typeof addPrefix==='function') addPrefix('nfx_l7portal_');
+    if((n===5||n===7) && typeof addPrefix==='function') addPrefix('nfx_wportal_');
     if(typeof NEWBOSS!=='undefined' && NEWBOSS[n] && NEWBOSS[n].idle) addPrefix(NEWBOSS[n].idle);
     const _mk = (typeof SUBBOSS!=='undefined' && SUBBOSS[n]) ? SUBBOSS[n].kind : null;
     if(_mk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_mk]) addPrefix(SHIPBOSS[_mk].key);
@@ -15753,6 +15753,8 @@ function beginStage(num){
   try{ window.sselCommitted=false; }catch(e){}
   try{ if(typeof warmStage==='function') warmStage(arguments[0]); }catch(e){}
   curStage=STAGES[num-1];
+  /* the secret is SPENT once it is entered, so the map is not stuck on stage 9 forever (0822ad) */
+  if(num===9 && typeof campaign!=='undefined') campaign.bonusUnlocked=0;
   run.stage=num; mapScroll=0; damBroken=false;
   thaw=null; if(num===3 && typeof thawStart==='function') thawStart();   // the stage-3 thaw (0806d)
   run.sonicT=0; run._sonicCd=0; run._lzCd=0;          // pickup weapons do not ride between stages
@@ -15795,7 +15797,7 @@ function beginStage(num){
   if(typeof l6CloudsReset==='function'){ if(num===6) l6CloudsReset(); else l6Clouds=[]; }
   if(typeof l5FieldReset==='function'){ if(num===5) l5FieldReset(); else l5Field=[]; }
   if(typeof l8FieldReset==='function'){ if(num===8) l8FieldReset(); else l8Field=[]; }
-  if(typeof s5GateReset==='function') s5GateReset();
+  if(typeof s5RunReset==='function') s5RunReset();
   if(typeof l5RocksReset==='function'){ if(num===5) l5RocksReset(); else l5Rocks=[]; }
   if(typeof speedPadsReset==='function') speedPadsReset();
   if(typeof aiQueue!=='undefined') aiQueue.length=0;
@@ -16111,9 +16113,12 @@ function enemySeparate(dt){
    ============================================================ */
 function updatePlay(dt){
   _lastDt=dt;
-  /* the warp gate sets this from the DRAW pass; entering the bonus stage tears down the
-     world, so it happens here at the top of a frame and nowhere else (0822ab) */
-  if(run && run._s9pending){ run._s9pending=0; run._s9return=6; beginStage(9); return; }
+  /* ⚠ THE RUN DOES NOT DROP STRAIGHT INTO STAGE 9 (0822ad supersedes 0822ab). Mike's
+     sequence goes through a warp-out, a fade to white, and the campaign map unlocking the
+     bonus node — the player never teleports mid-level. s5RunTick sets run._s9warp and the
+     warp-out below owns everything after that. */
+  if(run && run._s9warp && !s9warp){ run._s9warp=0; s9WarpStart(); }
+  if(s9warp){ s9WarpTick(dt); return; }   // the warp-out owns the frame
   try{ if(typeof freezerL3Tick==='function') freezerL3Tick(dt); }catch(e){}
   tickBlastChains(dt);          // pending blasts in a death chain (drop 0807c)
   tickSmokeRings(dt);           // rising smoke rings off heavy deaths (drop 0807k)
@@ -19646,7 +19651,7 @@ function stageSceneryDraw(dt){
     if(run.stage===5) { try{ bg5Draw(dt); }catch(_b5){} }               // planetary setpiece (0819e)
     if(run.stage===6) { try{ bg6Draw(dt); }catch(_b6){} }               // clouds, rain, lightning (0819f)
     if(run.stage===5 && typeof l5FieldDraw==='function'){ l5FieldUpdate(dt); l5FieldDraw(false); }
-    if(run.stage===5 && typeof s5GateTick==='function'){ s5GateTick(dt); s5GateDraw(); }   // the door to stage 9 (0822ab)
+    if(run.stage===5 && typeof s5RunTick==='function'){ s5RunTick(dt); s5RunDraw(); }   // the nine-gate secret run (0822ad)
     if(run.stage===8 && typeof l8ObjsDraw==='function'){ l8FieldUpdate(dt); l8ObjsDraw(); }   // Furious Death scenery (0822aa)
   }catch(_s){}
 }
@@ -23262,63 +23267,330 @@ const S9_UNITS = {
   vmanta:  {art:'ns9e_vmanta',  w:52, h:40, hp:24, score:760, pat:'strafe'},   // wide sweeping arc
   echof:   {art:'ns9e_echof',   w:42, h:44, hp:16, score:700, pat:'hunt'},     // shadows the player
   tsplit:  {art:'ns9e_tsplit',  w:46, h:46, hp:22, score:820, pat:'sine'},     // twin offset paths
-  cbreak:  {art:'ns9e_cbreak',  w:50, h:50, hp:34, score:900, pat:'straight'}  // armoured rammer
+  cbreak:  {art:'ns9e_cbreak',  w:50, h:50, hp:34, score:900, pat:'straight'}, // armoured rammer
+  /* THE COMETS (drop 0822ad). Mike: "make some comets HUGE like 150% larger in scale that come
+     at us and we have to avoid". They are ROSTER UNITS rather than scripted props so they are
+     shootable and collide like anything else — "if you are skillful enough with your shots,
+     missiles" only means something if they can be shot.
+     `foot` is an explicit draw multiplier: ENEMY_ART_FOOT of 2.15 compensates for the wide
+     margin on the stock uniform canvases, and these are the pack's own tighter frames, so
+     the default would oversize them. Drawn size is w*foot, measured: mega ~211px on a 480
+     screen, which is the HUGE Mike asked for. */
+  cometsm:  {art:'ns9c_sm',   w:44,  h:44,  hp:14, score:180, pat:'straight', foot:1.70},
+  cometbig: {art:'ns9c_big',  w:92,  h:92,  hp:40, score:400, pat:'straight', foot:1.65},
+  cometmega:{art:'ns9c_mega', w:128, h:128, hp:70, score:800, pat:'straight', foot:1.65}
 };
 /* the stage-9 roster is loose PNGs, not sheet cells, so it seeds off BOFX.img rather than
    BOFX.cells like the nef_ loop below. Driven off the manifest either way, so a unit added to
    the pack cannot be forgotten here. */
 if(typeof ENEMY_ART!=='undefined' && typeof window!=='undefined' && window.BOFX && BOFX.img){
   for(const k in BOFX.img){
-    if(k.lastIndexOf('ns9e_',0)!==0) continue;
+    /* ⚠ ns9c_ (the comets) MUST BE HERE TOO. They were added to the roster in 0822ad and this
+       loop only matched ns9e_, so every comet spawned, moved, collided and drew NOTHING — the
+       0809l trap again, one drop later. Caught by the assertion written for it. */
+    if(k.lastIndexOf('ns9e_',0)!==0 && k.lastIndexOf('ns9c_',0)!==0) continue;
     const _b=k.replace(/_(idle|fire)$/,'');
     if(_b!==k) ENEMY_ART[_b]=_b;
   }
 }
 /* ============================================================
-   THE MASSIVE WARP GATE — STAGE 5's DOOR INTO THE BONUS STAGE (drop 0822ab)
+   THE STAGE-5 SECRET — NINE GATES TO THE BONUS STAGE (drop 0822ad)
 
-   Mike: "stage 9 was the bonus stage... This is accesible through Level 5." The pack ships the
-   door as its own 640x768 four-frame asset (Stage5-MassiveWarpGate) and states the rule:
-   "Portal centers are open; collide with the ring only. Use the center opening as the travel
-   trigger." So the OPENING is the trigger and the ring is not a hazard — flying into the middle
-   is the reward, not a death.
+   Mike's spec, and this follows it beat for beat:
+     "Place warp portals in a kind of left right shimmy pattern on the screen that if you are
+      skillful enough with your shots, missiles, the pattern of shimmying back and forth, and
+      know how to barrel roll once to avoid a giant comet... if they successfully manage to
+      shimmy through all 9 - 9 signaling the 9th level - once they shimmy through the first 8,
+      the 9th will begin to glow and our portal will form in it and the screen will be doing a
+      speed effect... once they touch the first warp gate."
 
-   ⚠ THE TRANSITION IS DEFERRED, NOT IMMEDIATE. This ticks from stageSceneryDraw, which runs
-   inside the DRAW pass — calling beginStage() there would tear down enemies, bullets and the
-   plan while the frame is still walking them. It sets a flag and updatePlay consumes it at the
-   top of the next frame, which is the only safe point.
+   THE RUN IS A CONVOY, NOT A TIMER. All nine gates exist at once and drift down together, so the
+   player can SEE the next one and plan the shimmy. A gate is passed by crossing its line inside
+   the opening and missed by crossing it outside — no partial credit and no going back, which is
+   what makes it a skill run rather than a collectathon.
 
-   ONCE PER RUN. run._s9taken latches, so a player who re-enters stage 5 after the bonus does
-   not loop back into it forever. */
-const S5GATE_R = 92;                  // radius of the OPENING, measured off the 640x768 frame
-let s5Gate=null;
-function s5GateReset(){ s5Gate=null; }
-function s5GateTick(dt){
-  if(typeof run==='undefined' || !run || run.stage!==5) { s5Gate=null; return; }
-  if(bossActive || run._s9taken) return;
-  const _len=(curStage && curStage.length) ? curStage.length : 56;
-  if(!s5Gate && stageTimer > _len*0.55){
-    s5Gate={x:(typeof worldWidth==='function'?worldWidth():VW)*0.5, y:-460, t:0};
-    if(Audio && Audio.SFX && Audio.SFX.mapDeploy) Audio.SFX.mapDeploy();
+   ⚠ THE OPENINGS ARE MEASURED, NOT CHOSEN. The speed-portal frame is 192x256 with a hole of
+   ±36px, and the segment gate 256x320 with ±45. Those are the numbers below. Picking a radius by
+   eye would either make the run impossible or make missing impossible.
+
+   ⚠ THE SHIMMY TIGHTENS. Early gates sit far apart so the move is obvious; the amplitude closes
+   gate by gate so the last few are precision rather than travel. One constant.
+   ============================================================ */
+const S5R_N      = 9;        // nine gates for the ninth level — Mike's own reason
+const S5R_START  = 0.52;     // fraction of stage 5 where the convoy arrives (after the miniboss)
+const S5R_SPEED  = 118;      // px/s the convoy drifts down
+const S5R_GAP    = 2.05;     // seconds between gates
+const S5R_OPEN   = 36;       // MEASURED opening of the speed portal, half-width
+const S5R_OPEN9  = 45;       // MEASURED opening of the segment gate
+let s5run=null;
+function s5RunReset(){ s5run=null; }
+function s5RunInit(){
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  const gates=[];
+  for(let i=0;i<S5R_N;i++){
+    const side=(i%2)?1:-1;
+    const amp=0.30 - i*0.020;                       // the shimmy closes up as it goes
+    gates.push({i:i, x:W*0.5 + side*W*amp, y:-160 - i*(S5R_GAP*S5R_SPEED), py:-9999,
+                passed:false, missed:false, glow:0});
   }
-  if(!s5Gate) return;
-  s5Gate.t+=dt; s5Gate.y += 40*dt;
-  if(s5Gate.y > VH+520){ s5Gate=null; return; }
-  if(typeof player!=='undefined' && player && !player.dead){
-    const dx=player.x-s5Gate.x, dy=player.y-s5Gate.y;
-    if(dx*dx+dy*dy < S5GATE_R*S5GATE_R){
-      run._s9taken=1; run._s9pending=1; s5Gate=null;
-      if(Audio && Audio.SFX && Audio.SFX.nsp_warp_jump) Audio.SFX.nsp_warp_jump();
+  s5run={t:0, armed:false, idx:0, failed:false, done:false, gates:gates, clash:null, spawned:{}};
+}
+/* the two that clash. Scripted rather than roster units because their motion IS the set piece:
+   Mike asked for "two that clash into each other and bounce away and we can manuever through
+   the middle", which no generic mover produces. */
+function s5ClashSpawn(){
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  return {a:{x:W*0.16, y:-150, vx: 96, vy:70}, b:{x:W*0.84, y:-150, vx:-96, vy:70}, hit:false, t:0};
+}
+function s5RunTick(dt){
+  if(typeof run==='undefined' || !run || run.stage!==5 || run._s9taken){ s5run=null; return; }
+  if(typeof bossActive!=='undefined' && bossActive) return;
+  const len=(curStage && curStage.length) ? curStage.length : 56;
+  if(!s5run && stageTimer > len*S5R_START) s5RunInit();
+  if(!s5run || s5run.done) return;
+  s5run.t+=dt;
+  const _pl=(typeof player!=='undefined')?player:null;
+  for(const g of s5run.gates){
+    g.py=g.y; g.y += S5R_SPEED*dt;
+    if(g.i===8 && s5run.idx>=8 && !s5run.failed) g.glow=Math.min(1, g.glow+dt*1.6);
+    if(g.passed || g.missed || !_pl || _pl.dead) continue;
+    /* the pass test fires on the frame the gate's line crosses the ship, so it cannot be
+       double-counted and cannot be dodged by sitting still */
+    if(g.py < _pl.y && g.y >= _pl.y){
+      const open=(g.i===8)?S5R_OPEN9:S5R_OPEN;
+      if(Math.abs(_pl.x-g.x) <= open){
+        g.passed=true; s5run.idx++;
+        if(!s5run.armed){ s5run.armed=true;   // the speed effect starts on the FIRST gate, per Mike
+          if(Audio.SFX && Audio.SFX.dash) Audio.SFX.dash(); }
+        if(Audio.SFX && Audio.SFX.blip) Audio.SFX.blip();
+        if(g.i===8 && !s5run.failed && s5run.idx>=S5R_N){
+          s5run.done=true; run._s9taken=1; run._s9warp=1;   // the warp-out picks it up
+        }
+      } else {
+        g.missed=true; s5run.failed=true;
+        if(Audio.SFX && Audio.SFX.dangerAlert) Audio.SFX.dangerAlert();
+      }
+    }
+  }
+  /* HAZARDS BETWEEN THE GATES. Roster comets so they can be shot; the clash pair is scripted. */
+  if(s5run.armed){
+    const W=(typeof worldWidth==='function')?worldWidth():VW;
+    const _once=function(k,at,fn){ if(!s5run.spawned[k] && s5run.t>=at){ s5run.spawned[k]=1; fn(); } };
+    _once('c1', 1.6, function(){ if(typeof spawnEnemy==='function') spawnEnemy('cometbig', W*0.50, -120, {pattern:'straight'}); });
+    _once('c2', 5.0, function(){ if(typeof spawnEnemy==='function'){ spawnEnemy('cometsm', W*0.30, -100, {pattern:'straight'});
+                                                                    spawnEnemy('cometsm', W*0.70, -100, {pattern:'straight'}); } });
+    /* THE ONE YOU MUST ROLL. A mega comet straight down the lane the shimmy is about to cross:
+       shooting it out in time is not realistic at 70hp, so the barrel roll's i-frames are the
+       answer, which is exactly the "know how to barrel roll once" beat. */
+    _once('mega', 8.4, function(){ if(typeof spawnEnemy==='function') spawnEnemy('cometmega', W*0.50, -150, {pattern:'straight'}); });
+    _once('clash',12.0, function(){ s5run.clash=s5ClashSpawn(); });
+  }
+  /* the clash: they close, meet, and bounce apart leaving a gap in the middle to fly through */
+  const C=s5run.clash;
+  if(C){
+    C.t+=dt;
+    C.a.x+=C.a.vx*dt; C.a.y+=C.a.vy*dt;
+    C.b.x+=C.b.vx*dt; C.b.y+=C.b.vy*dt;
+    if(!C.hit && (C.b.x - C.a.x) < 150){
+      C.hit=true; C.a.vx=-Math.abs(C.a.vx)*0.8; C.b.vx=Math.abs(C.b.vx)*0.8;
+      if(typeof shake!=='undefined') shake=Math.max(shake,7);
+      if(Audio.SFX && Audio.SFX.crash) Audio.SFX.crash();
+      if(typeof explode==='function') explode((C.a.x+C.b.x)/2, (C.a.y+C.b.y)/2, 46, 'white');
+    }
+    /* they are solid until they have bounced clear */
+    if(_pl && !_pl.dead && !(_pl.invuln>0)){
+      for(const o of [C.a,C.b]){
+        const dx=_pl.x-o.x, dy=_pl.y-o.y;
+        if(dx*dx+dy*dy < 78*78){ if(typeof playerHit==='function') playerHit(); break; }
+      }
+    }
+    if(C.a.y>VH+220) s5run.clash=null;
+  }
+}
+function s5RunDraw(){
+  if(!s5run || typeof XART==='undefined') return;
+  /* THE SPEED EFFECT, once the first gate is touched. Mike: "the screen will be doing a speed
+     effect I give you permission to wire in for the this entire sequence". Reuses the existing
+     _speedLines rather than a second implementation of the same thing. */
+  if(s5run.armed && typeof _speedLines==='function'){
+    const ramp=clamp(s5run.idx/(S5R_N-1), 0, 1);
+    _speedLines(0.55 + ramp*0.9);
+  }
+  for(const g of s5run.gates){
+    if(g.y < -260 || g.y > VH+260) continue;
+    const last=(g.i===8);
+    const fam = last ? (g.glow>0 ? 5 : 4) : (2 + (g.i%2));      // speed portals, then the segment gate
+    const k='ns9_gate'+fam+'_'+((((s5run.t*8)|0)+g.i)%4);
+    if(!XART.rdy(k)) continue;
+    const im=XART.get(k); if(!im) continue;
+    const w=(im.naturalWidth||im.width), h=(im.naturalHeight||im.height);
+    ctx.save();
+    if(g.missed) ctx.globalAlpha=0.35;                          // a missed gate visibly dies
+    else if(g.passed) ctx.globalAlpha=0.55;
+    if(last && g.glow>0){ ctx.shadowColor='#7ef0ff'; ctx.shadowBlur=26*g.glow; }
+    ctx.drawImage(im, g.x-w/2, g.y-h/2, w, h);
+    ctx.restore();
+    /* the portal FORMS in the ninth gate once the first eight are clean */
+    if(last && g.glow>0){
+      const pk='nfx_wportal_'+clamp(Math.floor(g.glow*7),0,7);
+      if(XART.rdy(pk)){ const pim=XART.get(pk);
+        if(pim){ const pw=S5R_OPEN9*2.6, ph=pw;
+          ctx.save(); ctx.globalAlpha=g.glow; ctx.drawImage(pim, g.x-pw/2, g.y-ph/2, pw, ph); ctx.restore(); } }
+    }
+  }
+  const C=s5run.clash;
+  if(C){
+    for(const o of [C.a,C.b]){
+      const k='ns9c_mega_idle';
+      if(!XART.rdy(k)) continue;
+      const im=XART.get(k); if(!im) continue;
+      const w=(im.naturalWidth||im.width)*1.65, h=(im.naturalHeight||im.height)*1.65;
+      ctx.save(); ctx.drawImage(im, o.x-w/2, o.y-h/2, w, h); ctx.restore();
+    }
+  }
+  /* the counter, so the run is legible: nine pips, one per gate */
+  if(s5run.armed && !s5run.done){
+    ctx.save();
+    for(let i=0;i<S5R_N;i++){
+      const g=s5run.gates[i];
+      ctx.fillStyle = g.passed ? '#7ef0ff' : (g.missed ? '#ff4a4a' : 'rgba(255,255,255,0.28)');
+      ctx.fillRect(VW/2 - (S5R_N*11)/2 + i*11, 8, 8, 4);
+    }
+    ctx.restore();
+  }
+}
+/* ============================================================
+   THE WARP-OUT, AND THE MAP UNLOCK (drop 0822ad)
+
+   Mike: "once they go throug hthe 9th portal, do an awesome portal warp sequence on screen and
+   our ship goes through it and we fade to white with sound and everything, then we fade back to
+   the campaign map, the bonus stage flashes and unlocks, and we do a cool warp effect on the map
+   from where we were on stage 5 to stage 9. we can ONLY select stage 9 and then enter it."
+
+   Four phases, and the player never teleports mid-level:
+     draw    the ship is pulled into the ninth gate while the speed effect peaks
+     white   a hard flash out, with the ultra-blast voice under it
+     (hand over to the campaign map, which runs the bonus unlock cinematic)
+
+   ⚠ THIS OWNS THE FRAME. updatePlay returns immediately once a warp is live, so nothing spawns,
+   nothing shoots and nothing can kill the player during the cutscene. It is the same reason the
+   stage-7 portal defers its transition: a sequence that runs while the world is still simulating
+   is a sequence that can be interrupted by a stray bullet.
+   ============================================================ */
+const S9W_DRAW = 1.35, S9W_WHITE = 1.25;
+let s9warp=null;
+function s9WarpStart(){
+  s9warp={ph:'draw', t:0, x:(player?player.x:VW/2), y:(player?player.y:VH*0.7)};
+  if(Audio.SFX && (Audio.SFX.mapDeploy||Audio.SFX.dash)) (Audio.SFX.mapDeploy||Audio.SFX.dash)();
+}
+function s9WarpTick(dt){
+  if(!s9warp) return;
+  s9warp.t+=dt;
+  if(s9warp.ph==='draw'){
+    if(s9warp.t>=S9W_DRAW){
+      s9warp.ph='white'; s9warp.t=0;
+      if(Audio.SFX && (Audio.SFX.bossWhiteout||Audio.SFX.powerup)) (Audio.SFX.bossWhiteout||Audio.SFX.powerup)();
+      try{ if(Audio.stopMusic) Audio.stopMusic(); }catch(e){}
+    }
+  } else if(s9warp.ph==='white'){
+    if(s9warp.t>=S9W_WHITE){
+      s9warp=null;
+      /* hand over to the map, which flashes the bonus node and unlocks it */
+      if(typeof openStageSelect==='function') openStageSelect(5, {bonusUnlock:true});
     }
   }
 }
-function s5GateDraw(){
-  if(!s5Gate || typeof XART==='undefined') return;
-  const k='ns9_s5gate_'+((((s5Gate.t*8)|0)%4));
-  if(!XART.rdy(k)) return;                      // decodes on a later frame; never block
-  const im=XART.get(k); if(!im) return;
-  const w=(im.naturalWidth||im.width), h=(im.naturalHeight||im.height);
-  ctx.save(); ctx.drawImage(im, s5Gate.x-w/2, s5Gate.y-h/2, w, h); ctx.restore();
+function s9WarpDraw(){
+  if(!s9warp) return;
+  const k=clamp(s9warp.t/(s9warp.ph==='draw'?S9W_DRAW:S9W_WHITE),0,1);
+  if(s9warp.ph==='draw'){
+    /* the speed effect peaks as the gate takes him */
+    if(typeof _speedLines==='function') _speedLines(1.4+k*1.4);
+    /* the ship is pulled up into the portal and shrinks into it */
+    const px=lerp(s9warp.x, VW/2, k), py=lerp(s9warp.y, VH*0.30, k);
+    const pk='nfx_wportal_'+clamp(Math.floor(k*7),0,7);
+    if(typeof XART!=='undefined' && XART.rdy(pk)){
+      const im=XART.get(pk);
+      if(im){ const s=(120+k*260); ctx.save(); ctx.globalAlpha=0.55+0.45*k;
+        ctx.drawImage(im, VW/2-s/2, VH*0.30-s/2, s, s); ctx.restore(); }
+    }
+    if(player){ player.x=px; player.y=py; }
+    ctx.save(); ctx.globalAlpha=clamp(k*1.2,0,1); ctx.fillStyle='#ffffff';
+    ctx.globalAlpha=Math.max(0,(k-0.75)/0.25); ctx.fillRect(0,0,VW,VH); ctx.restore();
+  } else {
+    ctx.save(); ctx.fillStyle='#ffffff'; ctx.globalAlpha=(k<0.55)?1:(1-(k-0.55)/0.45);
+    ctx.fillRect(0,0,VW,VH); ctx.restore();
+  }
+}
+/* ============================================================
+   THE BONUS NODE ON THE MAP
+
+   SSEL_POS[9] is [575,75] — the upper-right corner Mike describes as "that portal off the upper
+   right corner of the map". It has been in the table all along with nothing drawing it, because
+   the flag loop is deliberately `st<=8` ("SECRET level (9) never gets a flag").
+
+   ⚠ IT IS NOT A FLAG AND IT IS NOT campaign.unlockedMax. Stage 9 is not part of the linear
+   progression, so putting it on unlockedMax would make the arrows walk into it and the
+   frontier logic treat it as the next campaign stage. It gets its own latch.
+   ============================================================ */
+let s9MapCine=null;     // {t, ph} the flash/unlock/warp-across on the map
+function s9MapCineStart(){
+  s9MapCine={t:0, ph:'fly'};
+  if(Audio.SFX && Audio.SFX.mapMove) Audio.SFX.mapMove();
+}
+function s9MapCineTick(dt){
+  if(!s9MapCine) return;
+  s9MapCine.t+=dt;
+  if(s9MapCine.ph==='fly'){
+    if(s9MapCine.t>1.15){ s9MapCine.ph='flash'; s9MapCine.t=0;
+      if(Audio.SFX && Audio.SFX.powerup) Audio.SFX.powerup(); }
+  } else if(s9MapCine.ph==='flash'){
+    if(s9MapCine.t>1.30){ s9MapCine.ph='done'; s9MapCine.t=0;
+      campaign.bonusUnlocked=1; sselCursor=9; }
+  } else if(s9MapCine.ph==='done'){
+    if(s9MapCine.t>0.45) s9MapCine=null;
+  }
+}
+/* the warp streak from stage 5's node to stage 9's, plus the node itself */
+function s9MapDraw(MX, MY, S){
+  const p9=SSEL_POS[9], p5=SSEL_POS[5];
+  if(!p9) return;
+  const x9=MX+p9[0]*S, y9=MY+p9[1]*S;
+  const on=!!(campaign && campaign.bonusUnlocked);
+  const C=s9MapCine;
+  /* the trail across the map, from where the player was to where the secret is */
+  if(C && (C.ph==='fly'||C.ph==='flash') && p5){
+    const x5=MX+p5[0]*S, y5=MY+p5[1]*S;
+    const k=(C.ph==='fly')?clamp(C.t/1.15,0,1):1;
+    const e=k*k*(3-2*k);
+    const hx=lerp(x5,x9,e), hy=lerp(y5,y9,e);
+    ctx.save();
+    ctx.strokeStyle='rgba(126,240,255,0.75)'; ctx.lineWidth=2;
+    ctx.beginPath(); ctx.moveTo(x5,y5); ctx.lineTo(hx,hy); ctx.stroke();
+    ctx.fillStyle='#dffcff';
+    ctx.beginPath(); ctx.arc(hx,hy,4+2*Math.sin(performance.now()/60),0,TAU); ctx.fill();
+    ctx.restore();
+  }
+  if(!on && !C) return;                     // a secret nobody has earned is not on the map
+  /* ⚠ DO NOT DRAW A PORTAL HERE. Mike: "the portal is already built into the campaign map,
+     dont place one." It is authored into nss_map at this exact corner — a ringed crater with
+     a lit centre — so a sprite on top of it would be a second portal sitting on the first.
+     What this adds is LIGHT on the art that is already there: a soft bloom while it flashes,
+     and nothing at all once it has settled. */
+  if(C && C.ph==='flash'){
+    const fl=0.45+0.55*Math.abs(Math.sin(performance.now()/70));
+    const rr=30*S;
+    const gr=ctx.createRadialGradient(x9,y9,0,x9,y9,rr);
+    gr.addColorStop(0,   'rgba(255,255,255,'+(0.55*fl).toFixed(3)+')');
+    gr.addColorStop(0.55,'rgba(206,236,255,'+(0.28*fl).toFixed(3)+')');
+    gr.addColorStop(1,   'rgba(206,236,255,0)');
+    ctx.save(); ctx.fillStyle=gr; ctx.beginPath(); ctx.arc(x9,y9,rr,0,TAU); ctx.fill(); ctx.restore();
+    /* the label sits INSIDE the map band — at [575,75] a centred string runs off the plate */
+    ctx.save(); ctx.fillStyle='#dff4ff'; ctx.font='bold 11px "BOFmil", monospace';
+    ctx.textAlign='right'; ctx.globalAlpha=0.75+0.25*Math.sin(performance.now()/110);
+    ctx.fillText('BONUS STAGE UNLOCKED', Math.min(x9+34, MX+632*S), y9+40);
+    ctx.restore();
+  }
 }
 function applyS9Unit(c, type){
   const d=(typeof S9_UNITS!=='undefined') && S9_UNITS[type]; if(!d) return false;
@@ -23326,6 +23598,7 @@ function applyS9Unit(c, type){
   c.w=d.w; c.h=d.h;
   c.hp=EHP(d.hp); c.maxhp=c.hp; c.score=d.score;
   if(d.pat) c.pattern=d.pat;
+  if(d.foot!=null) c._foot=d.foot;   // explicit draw multiplier; see the comet rows
   return true;
 }
 /* hp fraction -> which baked state. Same breakpoints as DMG_TIER so the two systems agree. */
@@ -27106,7 +27379,7 @@ function drawScene(dt){
     case GS.INTRO:   return drawIntro(dt);
     case GS.LAUNCH:  return drawLaunch(dt);
     case GS.OUTBOUND: return drawOutbound(dt);
-    case GS.PLAY:    return drawWorld(dt);
+    case GS.PLAY:    { drawWorld(dt); if(typeof s9WarpDraw==='function') s9WarpDraw(); return; }
     case 'paused':   drawWorld(0); return drawPaused();
     case GS.STAGECLEAR: return drawStageClear(dt);
     case GS.GAMEOVER:return drawGameOver(dt);
@@ -35905,6 +36178,11 @@ function openStageSelect(nextStage, opts){
     campaign.unlockedMax=Math.max(campaign.unlockedMax||1, clamp(opts.unlock-1,1,8));
     sselCursor=clamp(opts.unlock-1,1,8);
     sselUnlockCine={ stage:opts.unlock, t:0, phase:null, z:1, done:false };
+  } else if(opts.bonusUnlock){
+    /* the SECRET. Not unlockedMax — stage 9 is outside the linear progression, so it gets its
+       own latch and its own cinematic (0822ad). */
+    campaign.unlockedMax=Math.max(campaign.unlockedMax||1, sselMax);
+    if(typeof s9MapCineStart==='function') s9MapCineStart();
   } else {
     campaign.unlockedMax=Math.max(campaign.unlockedMax||1, sselMax);
   }
@@ -36754,6 +37032,13 @@ function _drawStageSelectInner(dt){
     }
     }catch(_flagErr){ /* one bad flag must never cost the player the screen */ }
   }
+  /* THE SECRET NINTH NODE (0822ad). Guarded like the flags above, for the same reason: this
+     screen's INPUT lives at the bottom of the function, so anything that throws while
+     drawing would make the whole map unresponsive rather than merely wrong. */
+  try{
+    if(typeof s9MapCineTick==='function') s9MapCineTick(dt||0);
+    if(typeof s9MapDraw==='function') s9MapDraw(MX, MY, S);
+  }catch(_s9Err){}
   if(typeof sselZoomTick==='function') sselZoomTick(dt||0);
   // THE PILOT'S SHIP — flies in from off the left once the flags have landed, then travels to
   // whichever stage the cursor is on. Guarded like the flags: it must never cost the screen.
@@ -36833,6 +37118,24 @@ function _drawStageSelectInner(dt){
   const _backOut=(x)=>{ const c1=1.70158,c3=c1+1; return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2); };
   const bScale=0.45+_backOut(clamp(BT/0.28,0,1))*0.55;    // 0.45 -> 1.0 with a little overshoot
   const gp='nss_panel_'+_selStage, gl='nss_label_'+_selStage;   // ditto: the banner read STAGE 5 under "LEVEL 6 UNLOCKED"
+  /* ⚠ THE BONUS STAGE HAS NO CARD ART (0822ad). nss_panel_/nss_label_ exist for 1-8 only, so
+     selecting stage 9 left the bottom of the screen EMPTY — no title, no briefing, nothing to
+     confirm what you are about to deploy into. Rather than invent a panel sprite, this draws
+     the same information as TEXT through the screen's own font helper, which is the fallback
+     the hub already uses when its button art has not decoded.
+     → DROP nss_panel_9 / nss_label_9 IN AND THIS BRANCH STOPS RUNNING. It is keyed on the art
+       being absent, not on the stage number. */
+  if(sselBoot===0 && !rdy(gp) && STAGES[_selStage-1]){
+    const _st=STAGES[_selStage-1];
+    ctx.save();
+    ctx.fillStyle='rgba(8,10,26,0.88)'; ctx.fillRect(24, VH-96, VW-48, 74);
+    ctx.strokeStyle='rgba(126,240,255,0.55)'; ctx.lineWidth=2; ctx.strokeRect(24, VH-96, VW-48, 74);
+    if(typeof campText==='function'){
+      campText(_st.name+'  '+_st.sub, VW/2, VH-64, 15, '#dff4ff');
+      if(_st.bonus) campText('SECRET - EARNED THROUGH THE STAGE 5 GATE RUN', VW/2, VH-38, 10, '#7ef0ff');
+    }
+    ctx.restore();
+  }
   if(sselBoot===0 && rdy(gp)){
     const im=XART.get(gp), pw=456*bScale, ph=pw*(im.naturalHeight/im.naturalWidth);
     ctx.drawImage(im,(VW-pw)/2, VH-ph-10-(1-bScale)*20, pw, ph);
@@ -36881,9 +37184,17 @@ function _drawStageSelectInner(dt){
      already sit under `if(!locked)` — so one token stops the level launching AND stops the cursor
      walking around behind an open menu. Verified A/B: with the gate, Enter and j reach SAVE/LOAD
      and deploy stays 0; without it, deploy=1 and the stage card is on screen 3.2s later. */
-  const locked = campPause || sselBoot>0 || (sselUnlockCine!=null) || !!window.sselCommitted;
+  /* ⚠ THE BONUS CINEMATIC LOCKS THE MAP TOO (0822ad). Without it the player could walk the
+     cursor away, or deploy, while the secret node was still flashing itself unlocked. */
+  const locked = campPause || sselBoot>0 || (sselUnlockCine!=null) || (typeof s9MapCine!=='undefined' && s9MapCine!=null) || !!window.sselCommitted;
   if(!locked){
-    const _lo=1, _hi=Math.max(1, Math.min(8, campaign.unlockedMax||1));   // only navigate UNLOCKED stages (max 8)
+    /* ⚠ ONLY THE BONUS STAGE, ONCE IT IS EARNED. Mike: "we can ONLY select stage 9 and then
+       enter it." The latch clears when stage 9 is entered, so the map goes back to normal
+       afterwards rather than stranding the player on a stage they have already played. */
+    const _bonus = !!(campaign && campaign.bonusUnlocked);
+    const _lo = _bonus ? 9 : 1;
+    const _hi = _bonus ? 9 : Math.max(1, Math.min(8, campaign.unlockedMax||1));   // only navigate UNLOCKED stages
+    if(_bonus) sselCursor=9;
     if(Input.tap('left')||Input.tap('a')){ sselCursor = sselCursor<=_lo ? _hi : sselCursor-1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
     if(Input.tap('right')||Input.tap('d')){ sselCursor = sselCursor>=_hi ? _lo : sselCursor+1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
     /* ============================================================
@@ -40525,7 +40836,7 @@ function drawFlyover(dt){
      to centre itself on an ordinary exit. Flying INTO a gate is the exception that proves it:
      a portal you miss is not a portal. It eases across only on stage 7, only during the
      climb, and every other stage still leaves straight up from where it was. */
-  const _l7p = (run.stage===7 && typeof XART!=='undefined' && XART.rdy && XART.rdy('nfx_l7portal_0'));
+  const _l7p = (run.stage===7 && typeof XART!=='undefined' && XART.rdy && XART.rdy('nfx_wportal_0'));
   const _l7x = VW*0.5, _l7y = VH*0.26;          // where the gate opens, in SCREEN space
   player.y=(flyoverT<HOVER)
       ? _base+Math.sin(flyoverT*4.2)*3           // hovering
@@ -40542,7 +40853,7 @@ function drawFlyover(dt){
   /* the swirl goes ON TOP so it engulfs the ship as it arrives — which is the shot. It is
      drawn from the authored 512 frames at their own aspect, never stretched. */
   if(_l7p && flyoverT>=HOVER){
-    const _k='nfx_l7portal_'+_l7f;
+    const _k='nfx_wportal_'+_l7f;
     if(XART.rdy(_k)){
       const im=XART.get(_k);
       if(im){
@@ -41130,7 +41441,15 @@ function drawStageClear(dt){
       Audio.stopMusic();
       /* ⚠ THE BONUS STAGE RETURNS, IT DOES NOT END THE GAME (0822ab). run.stage 9 is >= the
          campaign length, so without this branch clearing the bonus stage would roll credits. */
-      if(curStage && curStage.bonus){ var _rb=(run._s9return||6); run._s9return=0; beginStage(_rb); }
+      /* ⚠ THE BONUS STAGE RETURNS TO THE MAP (0822ad supersedes 0822ab). It used to jump
+         straight to stage 6 because the only way in was mid-stage-5; the player now enters it
+         FROM the campaign map, so that is where clearing it puts them back. run.stage 9 is >=
+         CAMPAIGN_STAGES, so without this branch it would roll credits. */
+      if(curStage && curStage.bonus){
+        run._s9return=0;
+        if(typeof openStageSelect==='function') openStageSelect(clamp(campaign.unlockedMax||1,1,8), {});
+        else beginStage(6);
+      }
       else if(run.stage>=CAMPAIGN_STAGES){ triggerVictory(); }
       else if(typeof RACE_AFTER!=='undefined' && RACE_AFTER[run.stage] && rollRivalEncounter()){ startRivalSequence(); }
       else if(run.mode==='arcade'){
