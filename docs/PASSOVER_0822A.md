@@ -1591,3 +1591,68 @@ Two dials, no call sites to hunt:
 - `ESHOOT_GAP` widens or tightens the volley throttle
 
 Suite **2,776 ok / 3 pre-existing fail**. Atlas verify PASS.
+
+---
+
+## 0822af — MENU INPUT: the controller was locked out of half the game
+
+Mike's first ask off the video. Four separate faults, each measured before and after.
+
+### 1. `'up'` is not a key name
+
+`keyName()` returns `e.key.toLowerCase()`, so an arrow key is **`'arrowup'`**. Four menus tested
+`Input.tap('up')` / `'down'` / `'left'` / `'right'` — **strings that have never matched anything** —
+alongside `'w'`/`'s'`/`'a'`/`'d'`, which do. So those screens moved on WASD alone: no arrow keys, no
+d-pad, and no respect for a rebind.
+
+> Mike: *"I cannot move up with my controller at all or my keyboard... my keyboard yes, w a s d."*
+
+A/B measured in a browser by stashing the fix:
+
+| screen | arrow | d-pad | WASD |
+|---|---|---|---|
+| mode select | **stuck** → MOVED | **stuck** → MOVED | moved |
+| campaign hub | **stuck** → MOVED | **stuck** → MOVED | moved |
+| campaign map | **stuck** → MOVED | **stuck** → MOVED | moved |
+
+All now route through `menuUp/menuDown/menuLeft/menuRight`, which read `keybind.*` — one call covers
+the key, the arrow, the pad, **and** whatever the player rebinds it to.
+
+### 2. There was no way to APPLY options without a mouse
+
+> *"I have no way to apply in the options menu with my controller or a keyboard. I have to do it
+> with the mouse."*
+
+Exactly right. CANCEL and APPLY are drawn **outside** the row list and only ever fired on
+`m.down && overA`. `menuBack()` reached CANCEL — so a pad could throw settings away but never keep
+them. They are now the last two entries of the same cursor the rows use.
+
+Verified: 20 d-pad downs lands on slot 12 (APPLY), pad confirm applies and exits to title with the
+changed volume kept; keyboard walks to CANCEL and fires.
+
+### 3. The stick had no hysteresis
+
+> *"It's very sensitive and if you're not careful, you'll double click. It happened to me a lot."*
+
+One threshold at 0.35 for **both** engage and release, so a single flick fired a tap on the way out
+and fired **again** as the stick sprang back through 0.35 — sometimes more than once while it
+oscillated. Now engage at 0.55, release at 0.28: one flick is one tap, and the stick must return
+most of the way to centre before it can fire again.
+
+Buttons never had this problem — `setk` already edge-detects them. A bare threshold is the thing an
+analog axis cannot be read with.
+
+### 4. The password keypad refused a bound button
+
+> *"Pressing the button does not let me do that."*
+
+`_padFire` hand-listed `pad_b0` and `pad_b9`. `keybind.fire` is
+`['j','mouse0','pad_b0','pad_b7']` — so **`pad_b7` is a bound confirm button that this screen
+refused**, while `pad_b9` was accepted and is bound to nothing. Which physical button a pad reports
+as b0 versus b7 varies by controller, so hand-listing is guesswork. It now reads the binding.
+
+⚠ Pad buttons only, deliberately — **not** `menuConfirm()`. That also carries the keyboard fire key,
+and letters type into the password on this screen, so accepting `'j'` would press the highlighted
+keypad key as well as typing it. That is the "stuck on B" bug already noted in this function.
+
+Suite **2,783 ok / 3 pre-existing fail**. Atlas verify PASS.

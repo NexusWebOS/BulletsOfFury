@@ -6951,6 +6951,43 @@ console.log('=== 156. protected assets — planned content, not dead weight (dro
      clean, and the speed effect starts on the FIRST gate. Each of those is a number or a gate
      condition that would be invisible if it drifted. */
   var _g5r = fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  /* ===== MENU INPUT (drop 0822af) ====================================================
+     Mike, on the mode select: "I cannot move up with my controller at all or my keyboard...
+     my keyboard yes, w a s d."
+
+     keyName() returns e.key.toLowerCase(), so an arrow key is 'arrowup' - there is NO key named
+     'up'. Four menus tested Input.tap('up')/'down'/'left'/'right', which matched nothing, and so
+     moved on WASD alone: no arrows, no d-pad, and no respect for a rebind. A/B measured in a
+     browser: mode select, campaign hub and the campaign map were all arrow AND pad dead.
+
+     Two assertions, because they fail differently: the first catches the dead NAME coming back,
+     the second catches a menu hand-listing its keys again instead of reading the bindings. */
+  var _gmi = fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(!/Input\.tap\('(up|down|left|right)'\)/.test(_gmi.replace(/\/\*[\s\S]*?\*\//g,'')),
+     "no menu tests Input.tap('up') - that key name does not exist");
+  ok(/if\(Input\.menuUp\(\)\)\{ modeIndex/.test(_gmi) && /if\(Input\.menuDown\(\)\)\{ campHubIndex/.test(_gmi)
+     && /if\(Input\.menuLeft\(\)\)\{ sselCursor/.test(_gmi),
+     'and the mode select, campaign hub and campaign map all navigate through the keybind-aware helpers');
+  /* the helpers must keep reading the BINDINGS, or a rebind silently stops working */
+  ok(vm.runInContext("KEYBIND_DEFAULT.up.indexOf('arrowup')>=0 && KEYBIND_DEFAULT.up.indexOf('pad_up')>=0", ctxv),
+     'and keybind.up still covers the arrow key and the d-pad');
+  /* Mike: "I have no way to apply in the options menu with my controller or a keyboard."
+     CANCEL and APPLY were drawn outside the row list and only fired on m.down, so a pad could
+     reach CANCEL through menuBack() but could never KEEP a setting. They are now the last two
+     entries of the same cursor - verified in a browser: 20 d-pad downs lands on APPLY and a pad
+     confirm applies and exits. */
+  ok(/const OPT_NBTN=2;/.test(_gmi) && /optSelIdx=clamp\(optSelIdx,0,optTotal-1\)/.test(_gmi),
+     'options: CANCEL and APPLY are part of the keyboard cursor, not mouse-only');
+  ok(/if\(onBtn && !rebindAction && Input\.menuConfirm\(\)\)/.test(_gmi),
+     'and a pad or keyboard confirm presses whichever of them is selected');
+  /* Mike, on pilot select: "it's very sensitive and if you're not careful you'll double click."
+     A single stick threshold fires again as the stick springs back through it. Engage high,
+     release low. Buttons are edge-detected by setk already; only the analog axis needed this. */
+  ok(/const DZ_ON=0\.55, DZ_OFF=0\.28;/.test(_gmi) && /_padHeld\[name\] \? mag>DZ_OFF : mag>DZ_ON/.test(_gmi),
+     'the analog stick has hysteresis, so one flick is one tap');
+  /* and the password keypad must read the BINDING rather than a hand-listed pad button */
+  ok(/_padFire=Input\.tapAny\(\(keybind\.fire\|\|\[\]\)\.filter/.test(_gmi),
+     'the password keypad accepts any BOUND pad confirm button, not just pad_b0');
   ok(vm.runInContext("S5R_N===9", ctxv), 'the run is NINE gates - one per the ninth level');
   /* the openings are read off the art: 192x256 speed portal has a +/-36 hole, the 256x320
      segment gate +/-45. Chosen by eye they would make the run impossible or trivial. */

@@ -5466,13 +5466,23 @@ const Input = (()=>{
       _padHeld[name]=held; keys[name]=held;
     };
     // left stick + d-pad -> directional virtual keys
-    const ax=gp.axes[0]||0, ay=gp.axes[1]||0, dz=0.35;
+    /* ⚠ THE STICK NEEDS HYSTERESIS (drop 0822af). Mike, on pilot select: "it's very sensitive
+       and if you're not careful you'll double click. It happened to me a lot."
+       There was ONE threshold at 0.35 for both engage and release, so a single flick fired a
+       tap on the way out and fired AGAIN as the stick sprang back through 0.35 — sometimes
+       more than once while it oscillated around the line. Buttons never had this because
+       setk already edge-detects them; an analog axis is what a bare threshold cannot handle.
+       Engage high, release low: one flick is one tap, and the stick has to come most of the
+       way back to centre before it can fire again. The d-pad is digital and is unaffected. */
+    const ax=gp.axes[0]||0, ay=gp.axes[1]||0;
+    const DZ_ON=0.55, DZ_OFF=0.28;
+    const stickOn=(name,mag)=> (_padHeld[name] ? mag>DZ_OFF : mag>DZ_ON);
     const dpUp=gp.buttons[12]&&gp.buttons[12].pressed, dpDn=gp.buttons[13]&&gp.buttons[13].pressed;
     const dpLf=gp.buttons[14]&&gp.buttons[14].pressed, dpRt=gp.buttons[15]&&gp.buttons[15].pressed;
-    setk('pad_up',    ay<-dz || !!dpUp);
-    setk('pad_down',  ay> dz || !!dpDn);
-    setk('pad_left',  ax<-dz || !!dpLf);
-    setk('pad_right', ax> dz || !!dpRt);
+    setk('pad_up',    stickOn('pad_up',   -ay) || !!dpUp);
+    setk('pad_down',  stickOn('pad_down',  ay) || !!dpDn);
+    setk('pad_left',  stickOn('pad_left', -ax) || !!dpLf);
+    setk('pad_right', stickOn('pad_right', ax) || !!dpRt);
     // face + shoulder buttons -> pad_b0..pad_b15 (all bindable via the options "press a key" flow)
     for(let i=0;i<gp.buttons.length;i++){ setk('pad_b'+i, !!gp.buttons[i].pressed); }
   }
@@ -35811,8 +35821,14 @@ function drawModeSelect(dt){
     ctx.restore();
   }
   drawHintBar('ARROWS: SELECT   FIRE: CONFIRM   BACK: TITLE');
-  if(Input.tap('up')||Input.tap('w')){ modeIndex=(modeIndex+MODE_ITEMS.length-1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(Input.tap('down')||Input.tap('s')){ modeIndex=(modeIndex+1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  /* ⚠ 'up' IS NOT A KEY NAME (drop 0822af). keyName() returns e.key.toLowerCase(), so the arrow
+     key is 'arrowup' — Input.tap('up') has never matched anything. These menus therefore moved
+     on W/S only: no arrow keys, no d-pad, and no respect for a rebind. Mike, on this screen:
+     "I cannot move up with my controller at all or my keyboard... my keyboard yes, w a s d."
+     menuUp/menuDown read keybind.up/.down, which is ['w','arrowup','pad_up'] by default, so one
+     call covers the key, the arrow, the pad AND whatever the player rebinds it to. */
+  if(Input.menuUp()){ modeIndex=(modeIndex+MODE_ITEMS.length-1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.menuDown()){ modeIndex=(modeIndex+1)%MODE_ITEMS.length; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   /* ONE ACTIVATION PATH, shared by the keyboard and the mouse (drop 0812a). Duplicating this
      block for the pointer is how the two drift apart — campaign's hub branch is the sort of
      thing that gets fixed in one copy and not the other. */
@@ -36162,8 +36178,8 @@ function drawCampSlots(dt){
 }
 function campHubInput(){
   const n=CAMPHUB_ITEMS.length;
-  if(Input.tap('up')||Input.tap('w')){ campHubIndex=(campHubIndex+n-1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(Input.tap('down')||Input.tap('s')){ campHubIndex=(campHubIndex+1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.menuUp()){ campHubIndex=(campHubIndex+n-1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }        // 0822af: was tap('up'), a dead key name
+  if(Input.menuDown()){ campHubIndex=(campHubIndex+1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){
     const it=CAMPHUB_ITEMS[campHubIndex];
     if(!campHubEnabled(it.act)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip();
@@ -36179,8 +36195,8 @@ function campHubInput(){
   if(Input.tap('backspace')||(typeof backButton==='function'&&backButton())){ campPauseOpen(); }
 }
 function campSlotInput(){
-  if(Input.tap('up')||Input.tap('w')){ campHubIndex=(campHubIndex+CAMP_SLOTS-1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(Input.tap('down')||Input.tap('s')){ campHubIndex=(campHubIndex+1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  if(Input.menuUp()){ campHubIndex=(campHubIndex+CAMP_SLOTS-1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }   // 0822af
+  if(Input.menuDown()){ campHubIndex=(campHubIndex+1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){
     const i=campHubIndex, mode=campPick;
     if(mode==='load' && !campSlotUsed(i)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); campHubSay('THAT SLOT IS EMPTY'); return; }
@@ -37234,8 +37250,9 @@ function _drawStageSelectInner(dt){
     const _lo = _bonus ? 9 : 1;
     const _hi = _bonus ? 9 : Math.max(1, Math.min(8, campaign.unlockedMax||1));   // only navigate UNLOCKED stages
     if(_bonus) sselCursor=9;
-    if(Input.tap('left')||Input.tap('a')){ sselCursor = sselCursor<=_lo ? _hi : sselCursor-1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-    if(Input.tap('right')||Input.tap('d')){ sselCursor = sselCursor>=_hi ? _lo : sselCursor+1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+    /* 0822af: 'left'/'right' are not key names either — the map walked on A/D alone */
+    if(Input.menuLeft()){ sselCursor = sselCursor<=_lo ? _hi : sselCursor-1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+    if(Input.menuRight()){ sselCursor = sselCursor>=_hi ? _lo : sselCursor+1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
     /* ============================================================
        MOUSE ON THE MAP (drop 0812b) — the last pointer-dead screen.
 
@@ -38158,10 +38175,12 @@ function drawPassword(dt){
   /* WASD *AND* the arrows drive the keypad now. They are only password letters
      while TYPE mode is on, and navigation is disabled in that mode anyway. */
   if(!drawPassword.typing){
-    if(Input.tap('arrowleft')||Input.tap('pad_left')||Input.tap('a')) _navDir(-1,0);
-    if(Input.tap('arrowright')||Input.tap('pad_right')||Input.tap('d')) _navDir(1,0);
-    if(Input.tap('arrowup')||Input.tap('pad_up')||Input.tap('w')) _navDir(0,-1);
-    if(Input.tap('arrowdown')||Input.tap('pad_down')||Input.tap('s')) _navDir(0,1);
+    /* 0822af: hand-listed the three sources and so ignored a rebind; menuLeft/Right/Up/Down
+       read the bindings themselves and stay correct after the player remaps them. */
+    if(Input.menuLeft())  _navDir(-1,0);
+    if(Input.menuRight()) _navDir(1,0);
+    if(Input.menuUp())    _navDir(0,-1);
+    if(Input.menuDown())  _navDir(0,1);
   }
   const mx=Input.mouse.x, my=Input.mouse.y; let hover=null;
   for(let hi=0; hi<HS.length; hi++){ const h=HS[hi];
@@ -38183,7 +38202,16 @@ function drawPassword(dt){
   drawPassword._md=Input.mouse.down;
   // GAMEPAD only: the A/confirm button presses the highlighted on-screen keypad key (or BACK).
   // (Keyboard fire keys are NOT used here — the keyboard types directly below, and Enter submits.)
-  const _padFire=Input.tap('pad_b0')||Input.tap('pad_b9');
+  /* ⚠ READ THE BINDING, DO NOT HAND-LIST THE PAD (drop 0822af). Mike, on this screen with a
+     controller: "pressing the button does not let me do that."
+     keybind.fire is ['j','mouse0','pad_b0','pad_b7'] — pad_b7 is a BOUND confirm button and
+     this refused it, while accepting pad_b9 which is bound to nothing. Which physical button
+     a pad reports as b0 vs b7 varies by controller, so hand-listing them is guesswork.
+     ⚠ PAD BUTTONS ONLY, NOT menuConfirm(). menuConfirm also carries the KEYBOARD fire key,
+     and on this screen letters type into the password — accepting 'j' here would press the
+     highlighted keypad key as well as typing, which is the 'stuck on B' bug noted above. */
+  const _padFire=Input.tapAny((keybind.fire||[]).filter(function(k){ return /^pad_/.test(k); }))
+                 || Input.tap('pad_b9');
   if(_padFire){ const t=NAV[drawPassword.sel!=null?drawPassword.sel:0];
     if(t && t.isBack){ setState(GS.TITLE); menuIndex=0; pwInput=''; drawPassword.typing=false; Audio.SFX.select(); return; }
     if(t && t.isType){ drawPassword.typing=!drawPassword.typing; Audio.SFX.select(); return; }
@@ -38366,23 +38394,38 @@ function drawOptions(dt){
   rows.push({t:'head',label:'CONTROLS'});
   for(let i=0;i<7;i++) rows.push({t:'ctrl',act:CTRL_ACTS[i],label:CTRL_LABELS[i]});
   const selectable=rows.map((r,i)=>({r,i})).filter(o=>o.r.t!=='head');
+  /* ⚠ CANCEL AND APPLY JOIN THE CURSOR LIST (drop 0822af). Mike: "I have no way to apply in
+     the options menu with my controller or a keyboard. I have to do it with the mouse."
+     He was exactly right: the two buttons are drawn OUTSIDE the row list and only ever fired
+     on `m.down && overA`. menuBack() reached CANCEL, so a pad could throw settings away but
+     never keep them. They are now the last two entries of the same cursor the rows use, so
+     down from the final control lands on them and confirm presses them. */
+  const OPT_NBTN=2;                                   // CANCEL, APPLY
+  const optTotal=selectable.length+OPT_NBTN;
   if(optSelIdx==null||optSelIdx<0) optSelIdx=0;
-  optSelIdx=clamp(optSelIdx,0,selectable.length-1);
+  optSelIdx=clamp(optSelIdx,0,optTotal-1);
+  const onBtn=(optSelIdx>=selectable.length);
+  const btnIdx=optSelIdx-selectable.length;           // 0 CANCEL, 1 APPLY
   const rh=32, pad=8, contentH=rows.length*rh+pad*2, maxScroll=Math.max(0,contentH-wh);
   if(m.wheel){ optScroll=clamp(optScroll+m.wheel*0.6,0,maxScroll); m.wheel=0; }
   // keyboard navigation: up/down (w/s) move the selection, auto-scrolling into view
   if(!rebindAction){
-    if(Input.menuDown()){ optSelIdx=clamp(optSelIdx+1,0,selectable.length-1); }
-    if(Input.menuUp()){ optSelIdx=clamp(optSelIdx-1,0,selectable.length-1); }
+    if(Input.menuDown()){ optSelIdx=clamp(optSelIdx+1,0,optTotal-1); }
+    if(Input.menuUp()){ optSelIdx=clamp(optSelIdx-1,0,optTotal-1); }
   }
   const sx0=wx+120, sx1=wx+ww-64, SEG=10, segW=(sx1-sx0)/SEG;
   function adjustVol(k,delta){ let v=(k==='voice')?voiceVol:Audio.getVol(k); v=clamp(Math.round((v+delta)*SEG)/SEG,0,1); if(k==='voice'){voiceVol=v; Audio.setVol('voice',v);} else Audio.setVol(k,v); Audio.SFX.blip(); }
-  const selRow=selectable[optSelIdx].r, selY=selectable[optSelIdx].i;
-  if(!rebindAction && selRow.t==='vol'){
+  const selRow=onBtn?null:selectable[optSelIdx].r, selY=onBtn?-1:selectable[optSelIdx].i;
+  if(!rebindAction && selRow && selRow.t==='vol'){
     if(Input.menuLeft()) adjustVol(selRow.k,-1/SEG);
     if(Input.menuRight()) adjustVol(selRow.k, 1/SEG);
   }
-  if(!rebindAction && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){ rebindAction=selRow.act; Audio.SFX.blip(); }
+  if(!rebindAction && selRow && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){ rebindAction=selRow.act; Audio.SFX.blip(); }
+  /* on the buttons: left/right picks between them, confirm presses the one you are on */
+  if(!rebindAction && onBtn){
+    if(Input.menuLeft()  && btnIdx>0){ optSelIdx--; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+    if(Input.menuRight() && btnIdx<OPT_NBTN-1){ optSelIdx++; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+  }
   // keep the selected row scrolled into view
   { const targetY=pad+selY*rh; if(targetY-optScroll<0) optScroll=clamp(targetY,0,maxScroll); if(targetY-optScroll>wh-rh) optScroll=clamp(targetY-wh+rh,0,maxScroll); }
   /* ⚠ THE CLIP IS WIDER THAN THE PANEL, ON PURPOSE (drop 0812a). It exists to hide rows that
@@ -38394,7 +38437,7 @@ function drawOptions(dt){
   let y=wy+pad-optScroll;
   for(const r of rows){ const cy=y+rh/2, rowIdx=rows.indexOf(r);
     if(y+rh>wy-2 && y<wy+wh+2){
-      const isSel = r.t!=='head' && selectable[optSelIdx].r===r;
+      const isSel = !onBtn && r.t!=='head' && selectable[optSelIdx].r===r;
       if(isSel){ ctx.fillStyle='rgba(255,180,60,0.10)'; ctx.fillRect(wx+2,y,ww-4,rh); }
       if(r.t==='head'){ ctx.fillStyle='#ffb347'; ctx.font='bold 12px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='middle'; ctx.fillText(r.label,wx+14,cy); ctx.strokeStyle='rgba(255,150,60,0.28)'; ctx.lineWidth=1; ctx.beginPath(); ctx.moveTo(wx+92,cy); ctx.lineTo(wx+ww-14,cy); ctx.stroke(); }
       else if(r.t==='vol'){
@@ -38526,8 +38569,12 @@ function drawOptions(dt){
     ctx.fillStyle=hot?'#ffffff':col; ctx.fillText(label,bx+bw2/2,by+bh2/2);
     ctx.restore(); ctx.textBaseline='alphabetic';
   }
-  btn(cbx,'CANCEL','#e0563a',overC); btn(abx,'APPLY','#6ac04a',overA);
+  btn(cbx,'CANCEL','#e0563a',overC||(onBtn&&btnIdx===0)); btn(abx,'APPLY','#6ac04a',overA||(onBtn&&btnIdx===1));
   if(m.down && !drawOptions._md){ if(overC){ optCancel(); return; } if(overA){ optApply(); return; } }
+  if(onBtn && !rebindAction && Input.menuConfirm()){
+    if(btnIdx===1){ optApply(); } else { optCancel(); }
+    return;
+  }
   drawOptions._md=m.down; if(!m.down){ optDrag=-1; optSbDrag=false; }
   if(Input.menuBack()&&!rebindAction){ optCancel(); }
 }
@@ -38545,8 +38592,8 @@ function drawOptionsLegacy(dt){
   const bIdx=N-1, bsel=bIdx===menuIndex, byy=startY+bIdx*gap;
   ctx.textAlign='left'; ctx.fillStyle=bsel?'#fff':'#cfd6e0'; ctx.font='bold 12px "BOFmil", monospace'; ctx.fillText((bsel?'> ':'  ')+'BACK',44,byy);
   if(rebindAction){ for(const k in Input.keys){ if(Input.tap(k)){ if(k!=='escape'){ keybind[rebindAction]=[k]; saveKeybind(); } rebindAction=null; Audio.SFX.select(); break; } } if(Input.tap('backspace')){ rebindAction=null; } return; }
-  if(Input.tap('arrowdown')||Input.tap('s')){menuIndex=(menuIndex+1)%N;Audio.SFX.blip();}
-  if(Input.tap('arrowup')||Input.tap('w')){menuIndex=(menuIndex+N-1)%N;Audio.SFX.blip();}
+  if(Input.menuDown()){menuIndex=(menuIndex+1)%N;Audio.SFX.blip();}   // 0822af: was arrows+wasd, no pad
+  if(Input.menuUp()){menuIndex=(menuIndex+N-1)%N;Audio.SFX.blip();}
   if(menuIndex<3){ if(Input.tap('arrowleft')){ Audio.setVol(kinds[menuIndex],clamp(vols[menuIndex]-0.1,0,1)); } if(Input.tap('arrowright')){ Audio.setVol(kinds[menuIndex],clamp(vols[menuIndex]+0.1,0,1)); } }
   if(Input.tap('enter')||Input.tap('j')){ if(menuIndex>=3 && menuIndex<3+OPT_CTRL.length){ rebindAction=OPT_CTRL[menuIndex-3][0]; } else if(menuIndex===N-1){ setState(GS.TITLE); menuIndex=2; } }
   if(Input.tap('backspace')){ setState(GS.TITLE); menuIndex=2; }
