@@ -5123,11 +5123,39 @@ const Audio = (()=>{
     src.connect(bp); bp.connect(g); g.connect(dest||sfxGain); src.start(); src.stop(now()+dur+0.02);
   }
   // ---- named sfx ----
+  /* ⚠ NO REPEATING UI BEEP (drop 0822ae). Mike: "stop the annoying BEEP BEEP BEEP noise from
+     the game permanently."
+
+     The blip itself is fine as a SINGLE confirmation — a menu move, a selection. What grated
+     is that seven places fired it as a STREAM, and two of them are constant:
+       stage-select label typewriter   14 blips PER SECOND, every time the cursor moves
+       retina acquire ticks             one every 0.11s for the whole 0.45s lock
+       loading bar, flag reveal, dialogue typewriter, retina index, kill counter
+
+     Those now go through uiBlipRep() and are OFF. Single confirmation blips are untouched,
+     so menus still answer you.
+       UI_BLIP_REPEAT = 1  brings the streams back
+       UI_BLIP        = 0  silences the blip EVERYWHERE, including single taps
+     Two constants, no call sites to hunt. */
   const SFX = {
     shoot(){ tone(880,0.06,'square',0.10,-300); tone(1320,0.04,'square',0.05,-200); },
     spread(){ tone(660,0.07,'sawtooth',0.09,-260); },
     grenade(){ tone(180,0.12,'square',0.16,-60); noise(0.07,0.10,800,-400); },
-    enemyShoot(){ tone(320,0.08,'sawtooth',0.06,-120); },
+    /* ⚠ ONE TONE PER VOLLEY, NOT PER BULLET (drop 0822ae). Mike: "stop doing the beep beep
+       beep noise with all these bosses."
+       That is this sound. It fires from 20 call sites, and several of them are PER ROUND —
+       eMG plays it for every machine-gun pellet, and the boss blast fan calls it inside its
+       own k=-1..1 loop — so a boss opening up produced a burst of discrete square-ish tones,
+       which is exactly the beep-beep-beep he is describing.
+       Throttled at the SOURCE rather than at the call sites: whatever route a volley takes,
+       repeats inside the window collapse into the first one. A single shot is unchanged, and
+       sustained fire now reads as a rhythm instead of a stutter. */
+    enemyShoot(){
+      const _n=(typeof performance!=='undefined'?performance.now():Date.now());
+      if(_n - (SFX._esLast||0) < ESHOOT_GAP) return;
+      SFX._esLast=_n;
+      tone(320,0.08,'sawtooth',0.06,-120);
+    },
     hit(){ tone(1400,0.03,'square',0.06,-600); },
     /* THE BLOCKED-SHOT SOUND (drop 0807b). Mike: "make a different sound that sounds like it
        blocked the shot, like a pitched version of one of our sounds."
@@ -5173,7 +5201,7 @@ const Audio = (()=>{
     weapon(){ tone(440,0.06,'square',0.2); setTimeout(()=>tone(660,0.06,'square',0.2),60); setTimeout(()=>tone(880,0.1,'square',0.22),120); },
     life(){ tone(660,0.1,'triangle',0.25); setTimeout(()=>tone(880,0.1,'triangle',0.25),100); setTimeout(()=>tone(1100,0.1,'triangle',0.25),200); setTimeout(()=>tone(1320,0.18,'triangle',0.28),300); },
     death(){ noise(0.7,0.6,1800,-1600); tone(300,0.6,'sawtooth',0.3,-260); },
-    blip(){ tone(740,0.04,'square',0.16); },
+    blip(){ if(typeof UI_BLIP!=='undefined' && !UI_BLIP) return; tone(740,0.04,'square',0.16); },
     select(){ tone(523,0.05,'square',0.18); setTimeout(()=>tone(784,0.07,'square',0.2),50); },
     boot(){ // sega-style chord rise
       tone(220,0.5,'triangle',0.25); tone(330,0.5,'triangle',0.2,0); 
@@ -5490,6 +5518,16 @@ const Input = (()=>{
    GLOBAL STATE
    ============================================================ */
 let PENDING_STAGE=1;   // stage the next run starts at (password sets this, pilot-select consumes it)
+/* how close together two enemy shots may each get their own tone, in ms. Below this they
+   collapse into one — the difference between a volley and a beeping alarm (drop 0822ae). */
+const ESHOOT_GAP = 90;
+/* the two UI-beep dials — see the note above the SFX table (drop 0822ae) */
+const UI_BLIP = 1;            // the single confirmation blip: menu move, selection
+const UI_BLIP_REPEAT = 0;     // the STREAMS: typewriters, acquire ticks, flag reveals
+function uiBlipRep(){
+  if(!UI_BLIP_REPEAT) return;
+  try{ if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.blip) Audio.SFX.blip(); }catch(e){}
+}
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
   PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIVAL:'rival', FLYOVER:'flyover', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene' };
@@ -14300,7 +14338,7 @@ function updateRetina(dt){
     r.x=lerp(r.ox,t.x,e); r.y=lerp(r.oy,ty,e);
     r.scale=2.2-(2.2-1.0)*e;
     r.spin=(r.spin||0)+dt*14;                       // fast true-retina spin while travelling
-    r._tick-=dt; if(r._tick<=0){ r._tick=0.11; Audio.SFX.blip(); }   // acquire ticks
+    r._tick-=dt; if(r._tick<=0){ r._tick=0.11; uiBlipRep(); }   // acquire ticks (0822ae: off by default)
     if(p>=1){ r.phase='locked'; r.lockT=5; r.lockSpin=7; Audio.SFX.select(); }
   } else if(r.phase==='locked'){
     r.x=t.x; r.y=ty;
@@ -19431,7 +19469,8 @@ function bossAttack(){
         break;
       case 2: // aimed triple burst — heavy blast streams (master power-attack art)
         b.fireCd=0.18;
-        for(let k=-1;k<=1;k++){ eBullets.push({x:b.x+k*18,y:b.y+b.h*0.3,vx:Math.cos(aimPlayer(b.x,b.y)+k*0.07)*3.5,vy:Math.sin(aimPlayer(b.x,b.y)+k*0.07)*3.5,w:9,h:9,kind:'blast',pal:(k===0?'red':'blue'),t:0,_ph:(Math.random()*8)|0}); Audio.SFX.enemyShoot(); }
+        for(let k=-1;k<=1;k++){ eBullets.push({x:b.x+k*18,y:b.y+b.h*0.3,vx:Math.cos(aimPlayer(b.x,b.y)+k*0.07)*3.5,vy:Math.sin(aimPlayer(b.x,b.y)+k*0.07)*3.5,w:9,h:9,kind:'blast',pal:(k===0?'red':'blue'),t:0,_ph:(Math.random()*8)|0}); }
+      if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();   // once for the fan, not once per shell
         b._n=(b._n||0)+1; if(b._n>=4){ b._n=0; b.fireCd=0.9*rage; b.atkPhase=(ph+1)%6; }
         break;
       case 3: // homing brood — 3 seekers
@@ -27888,7 +27927,7 @@ function drawCutsceneState(dt){
     const _now=Math.min(n, Math.floor(hqChars));
     if(_now>_was){
       for(let c=_was+1;c<=_now;c++){
-        if(c%3===0 && typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.blip){ Audio.SFX.blip(); break; }
+        if(c%3===0){ uiBlipRep(); break; }
       }
     }
   }
@@ -28010,7 +28049,7 @@ function drawLoading(dt){
   ctx.fillStyle='#ffe9b0'; ctx.font='bold 11px "BOFmil", monospace'; ctx.textAlign='left'; ctx.fillText('LOADING',bx,by-7);
   ctx.textAlign='right'; ctx.fillText(Math.round(pct*100)+'%',bx+bw,by-7);
   ctx.restore();
-  const step=Math.floor(pct*12); if(drawLoading._s!==step && pct<1 && pct>0){ drawLoading._s=step; Audio.SFX.blip(); }
+  const step=Math.floor(pct*12); if(drawLoading._s!==step && pct<1 && pct>0){ drawLoading._s=step; uiBlipRep(); }
   if(t>=DONE){ drawLoading._s=-1; goTitle(); }
 }
 function goTitle(){ Audio.init(); Audio.startMusic('title'); setState(GS.TITLE); menuIndex=0; }
@@ -33731,7 +33770,7 @@ function pcUpdate(dt){
   if(C.phase==='type'){
     const total=pcLines(C.p).join('').length;
     C.typed += PC_TYPE_CPS*dt;
-    if((C.typed|0)%3===0 && Audio.SFX && Audio.SFX.blip && Math.random()<0.5) Audio.SFX.blip();
+    if((C.typed|0)%3===0 && Math.random()<0.5) uiBlipRep();
     if(C.typed>=total){ C.typed=total; C.phase='bars'; C.t=0; C.bar=0; C.seg=0; C.segT=0; }
     return;
   }
@@ -36823,12 +36862,12 @@ function _drawStageSelectInner(dt){
     drawStageSelect._flash = T<2.0 ? clamp(1-(T-1.7)/0.3,0,1) : 0;
     // Phase D (4.05s+): flags drop 1-by-1 (SECRET level 9 excluded)
     if(T>4.05){ const n=Math.min(8, Math.floor((T-4.05)/0.20)+1);
-      if(n>sselFlagsShown){ sselFlagsShown=n; Audio.SFX&&Audio.SFX.blip&&Audio.SFX.blip(); } }
+      if(n>sselFlagsShown){ sselFlagsShown=n; uiBlipRep(); } }
     // Phase E: retina sweeps each placed flag 1-by-1, locks on the playable one, music in
     const RET0=4.05+8*0.20+0.25;
     if(T>RET0){
       const hop=0.16, idx=Math.floor((T-RET0)/hop)+1;         // 1..8 then lock
-      if(idx<=8){ if(idx!==drawStageSelect._retAt){ drawStageSelect._retAt=idx; Audio.SFX&&Audio.SFX.blip&&Audio.SFX.blip(); } drawStageSelect._retLock=false; }
+      if(idx<=8){ if(idx!==drawStageSelect._retAt){ drawStageSelect._retAt=idx; uiBlipRep(); } drawStageSelect._retLock=false; }
       else {
         drawStageSelect._retAt=clamp(sselCursor,1,8);
         if(!drawStageSelect._retLock){ drawStageSelect._retLock=true; Audio.SFX&&Audio.SFX.select&&Audio.SFX.select();
@@ -37148,7 +37187,7 @@ function _drawStageSelectInner(dt){
         ctx.drawImage(lm, lx, ly, lw, lh); ctx.restore();
         if(rev<1){ ctx.fillStyle='rgba(180,240,255,'+(0.5+0.5*Math.sin(performance.now()/60))+')';
           ctx.fillRect(lx+lw*rev, ly, 3, lh);
-          if(((BT*14)|0)!==drawStageSelect._typeTick){ drawStageSelect._typeTick=(BT*14)|0; Audio.SFX&&Audio.SFX.blip&&Audio.SFX.blip(); } }
+          if(((BT*14)|0)!==drawStageSelect._typeTick){ drawStageSelect._typeTick=(BT*14)|0; uiBlipRep(); } }
       }
     }
   }

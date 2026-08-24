@@ -1546,3 +1546,48 @@ bonus stage left the bottom of the screen empty. Rather than invent a panel spri
 same information as text through the screen's own font helper — the fallback the hub already uses.
 **Drop `nss_panel_9` / `nss_label_9` in and that branch stops running**; it is keyed on the art
 being absent, not on the stage number.
+
+---
+
+## 0822ae — THE BEEPING, and a 33-minute walkthrough transcribed
+
+Mike sent a 33-minute video walking through the game. I can't hear video, so I extracted the audio
+and transcribed it locally (faster-whisper, small.en) — the full transcript is in
+`docs/feedback/0823_video_walkthrough.txt`, 183 timestamped segments. **Use it as the source of
+truth for the current bug list**; it is Mike's own words with timestamps that map straight to the
+video.
+
+### The beeping was not the UI blip
+
+My first swing at "stop the annoying BEEP BEEP BEEP" went after the UI blip. The transcript settled
+it — at 17:55, over a boss fight:
+
+> "Stop doing the beep beep beep noise with all these bosses."
+
+It is **`enemyShoot`**, and it fires **per bullet**. `eMG` plays it for every machine-gun pellet,
+and the boss blast fan called it *inside* its own `k=-1..1` loop. Measured on the real fight:
+
+| | tone requests / 10s | tones played |
+|---|---|---|
+| stage 6 boss, before | 124 | 124 (12.4/s) |
+| stage 6 boss, after | 124 | **11 (1.1/s)** |
+| stage 2 boss | 13 | 7 |
+
+Throttled at the SOURCE (`ESHOOT_GAP = 90ms`) rather than at 20 call sites, so whatever route a
+volley takes, repeats inside the window collapse into the first. A single shot is unchanged;
+sustained fire reads as a rhythm instead of a stutter. The fan also now plays once rather than
+three times.
+
+### The UI blip work stands, separately
+
+Seven places fired the UI blip as a *stream*, two of them constantly — the stage-select label
+typewriter at **14 blips per second** every time the cursor moves, and the retina acquire tick every
+0.11s through the whole lock. Those now go through `uiBlipRep()` and are off; single confirmation
+blips are untouched, so menus still answer you.
+
+Two dials, no call sites to hunt:
+- `UI_BLIP_REPEAT = 1` brings the streams back
+- `UI_BLIP = 0` silences the blip everywhere, including single taps
+- `ESHOOT_GAP` widens or tightens the volley throttle
+
+Suite **2,776 ok / 3 pre-existing fail**. Atlas verify PASS.

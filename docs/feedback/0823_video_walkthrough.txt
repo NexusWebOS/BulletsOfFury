@@ -1,0 +1,183 @@
+[00:00] Hello Claude, it's me Mike. Okay the forage
+[00:05] I felt like this would be easier because we're having a lot of problems bullets of fury
+[00:21] So first things first
+[00:24] the password menu in my
+[00:27] Do this and then I go to
+[00:31] to press the uh mouse button it'll start to fall into this key and then i gotta like you know move it
+[00:41] and i'm doing this with my controller um as you know um i can show you i am using a controller
+[00:51] just so you know so i have to like you know do that and then of course uh pressing the button
+[01:01] does not let me do that. So that's a problem. I have no way to apply in the options
+[01:11] menu like this with my controller or a keyword. I have to do it with the mouse.
+[01:17] Pullins of the year. Entering a password is also a problem. I'll show you your SPRM.
+[01:26] And you push enter.
+[01:29] Choose your player level.
+[01:34] It's very sensitive and if you're not careful, you'll double click.
+[01:39] It happened to me a lot.
+[01:42] So yeah, fine.
+[01:44] I'm gonna get out of here.
+[01:48] The music should not be playing from that if we go back to the main menu, by the way.
+[01:52] In this menu, I cannot move up with my controller at all or my keyboard.
+[02:00] my keyboard yes um w a f d again uh my p-tab which is assigned or the keyboard i can't
+[02:09] anyway um button works but i can't you know again can't do it here i'm really here
+[02:19] button works but the if you didn't notice something look at my button flash
+[02:24] Flash, right? Flashes, but if you do it here, this flash is green, but the flash is button.
+[02:32] That's a little clean, that needs to be fixed. I gave you a dialogue zip, because some of
+[02:44] these cards could use a better font, so that dialogue font might help. And you can just
+[02:49] a palette swap of colors for each pilot. That might help out. Lizzie's icon in the bottom right corner
+[03:01] needs to be centered. You also need to let the player know that her special ability is Adam Bomb
+[03:09] and the Heavy Turret. You got to move the text up from Fala's right side card so everything fits.
+[03:23] Axle's icon is cut off on the left wing side and needs to be centered. I don't know what happened
+[03:29] there. You could probably take his afterburner symbol that you have, but his special ability is
+[03:33] not an afterburner. It's a Mega Shield one, so you need to change that right away. And also move his
+[03:39] card on the right side of the text box to make everything fit properly.
+[03:46] Decker, you can move his stuff up. Maverick, you can move his stuff up. Definitely need to move his
+[03:51] stuff up. Everybody else looks good. Alright, we're gonna play his Maverick because I wanted to check
+[04:01] We're going to stay toward the snow on the kind of advance to the game a little bit.
+[04:09] It's going to be a long video so you know you're going to take the time to get this.
+[04:13] You saw a little finicky thing that just happened right there that should be fixed.
+[04:17] I don't know what that was but they even fixed the game.
+[04:20] His direction that he's moving when he twists along.
+[04:24] You see these projectiles that are coming at me and flipping things that are looking like that.
+[04:32] Um, this section, you know, is cool, but with the planes flying in on the side, and facing the south, it says the way the flying in.
+[04:42] I'm gonna say, this is cool.
+[04:51] Um, not all the enemies were mini-bosses to be like, coming at me like that.
+[04:55] That was supposed to be like, a one-off thing with the boss.
+[05:00] On your pattern, it doesn't even make any sense.
+[05:02] You know, you should be anchoring and doing muzzle flashes where these enemies are.
+[05:08] Trying to get a good idea of how a mini-wast is formed to be operating based on the image
+[05:14] and the turret's arm stuff.
+[05:20] Now I'm getting level 2.
+[05:22] It should not be a level 1 bullet icon.
+[05:25] I don't know why I keep doing that.
+[05:29] You did fix the helix ball with the drape.
+[05:31] I love that.
+[05:34] uh laser but I cast the helix laser it's not going all the way across the screen
+[05:43] he hits one and then of course he's got you know level icon to be upgraded when i get him
+[05:52] his patterns don't make any sense he's done have any lasers
+[05:57] but then you'll see that these lasers are also impossible to escape from time
+[06:04] I'm not on the floor now, but I'm actually on the floor.
+[06:18] If you'll see, notice Maverick, his avatar here is kind of like cut off on the top.
+[06:25] I don't know what happened there.
+[06:26] We want to fix that.
+[06:28] The space background, it looks great here, but now we're going to a different background.
+[06:36] I told you to have the same background in the beginning and here, or here.
+[06:40] You should be the background.
+[06:41] Get rid of these objects in the background that are looking bad.
+[06:44] Look at the enemies, they're like hiding, like they're disappearing behind some of these objects.
+[06:49] I'm supposed to be able to get comments, but still there, they look bad.
+[06:54] See, that enemy was totally invisible, I didn't even know he was there.
+[07:09] The enemy's doing the same deal.
+[07:12] This section does not work right, you know, at all, and I have no way to actually do it without any comments.
+[07:21] No, no possible way
+[07:27] I like those
+[07:30] Fire sound does not sound right. I love that
+[07:59] I'm gonna show you the next major issue here is gonna be stage six
+[08:06] right here, I told you to make your own background and make it blend in with this and
+[08:12] you know do the recoloring the batch you know like like kind of do like a fade as
+[08:17] we're going through the level to progress time but this just looks bad
+[08:23] no animated clouds please
+[08:26] get rid of that you have not so
+[08:30] get rid of those small planes and stop making them touch the tournament
+[08:36] now this laser that you gave for Maverick I'm gonna let it slide
+[08:40] But you change the laser beam overall for all the other players.
+[08:45] And that's not a bit.
+[08:47] You need to go back to the regular laser beam for all the other players.
+[08:50] Maverick can get those only laser beams, because he's able to control healers lasers in general.
+[08:57] I'll let you keep him on that.
+[08:59] Actually, that's kind of a cool gameplay change right there.
+[09:06] His patterns don't make sense.
+[09:13] They're shooting missiles.
+[09:15] And when these enemies are coming at you like that, you know, they should be like flying in the direction of faith in the direction of flying.
+[09:25] I love this by the way, but if you're gonna let them upgrade it, change the color.
+[09:29] Uh, per level, let me upgrade it.
+[09:36] Get rid of those stars. I don't know why they're here.
+[09:40] Get rid of them.
+[09:42] And I told you to stop putting them here. This is like gonna be the end of the level.
+[09:45] like when you're done beating the boss.
+[09:49] Now, he looks great, the animation is a little janky,
+[09:55] and those missiles that he's shooting should be an actual projectile,
+[09:58] it'll come back. Otherwise it doesn't make no sense.
+[10:04] You need to have those turrets shooting like you're seeing on film,
+[10:07] like, doo doo doo doo doo doo doo doo.
+[10:10] You know, that's how you do it.
+[10:12] Have those missiles coming at you too,
+[10:14] 2 and then his laser beam should be doing like a literally charges a shoot day stop
+[10:25] make it go down here I can't survive that I mean you can make up get a little
+[10:30] close we're like we have to avoid the laser like that like give me enough
+[10:34] room to Sounds awesome right but you know I got to move side to side and he kind
+[10:38] of like 120 I gotta move side to side with them that's very
+[10:46] like
+[10:50] I'm gonna stop this part of it though because it's obviously broke
+[10:55] Thank you to the rest of the game just you know show you things I'm noticing bullets of fury
+[11:12] Some of the select Yuri
+[11:16] Stop allowing me to do that
+[11:21] While I'm in the campaign mode, there should be a softlock, especially right here until it's complete.
+[11:30] Stop facing Decker away.
+[11:44] Alright, so pay attention to the stage transition here.
+[11:51] Looks great. Looks really solid.
+[11:55] But then right here, you bump the ball.
+[11:58] He should still be moving. He just starts slowing down.
+[12:01] The stage should be moving. He should be moving.
+[12:05] I like to sit here, off of the boats, you know they gotta have actual moving patterns.
+[12:15] Alright, you did fix the chain lighting, that was cool.
+[12:32] Stop making the barrels wobble and scroll in.
+[12:45] They should be set at a certain point and they do not move.
+[12:48] Make this guy attack with his first please.
+[13:13] See how you gave everybody that laser?
+[13:15] you know just for this one avenue okay you need to go back to the laser beam. This right
+[13:42] here is broken it should not pause the screen and make me fly out it should be
+[13:46] live time when I fly out. Nobody should be facing away they should be facing the
+[13:54] player I don't know why you keep having one player and one player appear like all
+[13:59] of them should be in Fury HQ I told you that like five times you're gonna have
+[14:03] scale and like place them back and make them appear like they're behind the monitor or behind little
+[14:08] console or something. You know level two I think so far is pretty good, pretty functional.
+[14:26] You should put the fire wave sound again you end for those fire waves.
+[14:49] Hell that is. Get rid of that projectile. Uh he's using laser beam. Uh do not let him do the laser
+[15:19] thing please. Again stop making the projectile spin like that please. Um stop using it. Uh see right
+[15:46] Right there, right there, it should be extending the stage to a lava section, not just cutting to it.
+[15:52] The scrolling is good, but the stack patterns make no sense.
+[15:57] If you use the Bag of All Projector, you have .bat, whatever the hell that is.
+[16:02] You should not be homing. You should not be doing that.
+[16:06] The way you make it impossible for us to get out of you if we barrel roll.
+[16:26] And if possible to avoid these projectiles as they are.
+[16:32] Hey, good luck!
+[16:38] No bosses should be fading.
+[16:51] They should just blow up.
+[16:53] I've told you that like sometimes.
+[16:55] Keep making them fade over time.
+[16:58] I don't know why.
+[16:59] This guy needs to be like a mega laser boss.
+[17:52] Not doing this weird charge stuff.
+[17:55] Stop doing the beep beep beep noise with all these bosses.
+[17:59] And then hold me missile to stop please.
+[18:02] Here's the one.
+[18:05] And the one that suggests...
+[18:38] Uh, this guy should be shooting like ice projectiles and... and ice lasers at you.
+[18:50] From here on out, after level 3, Fire Orb and Ice Orb can both be different attacks.
+[19:10] And you can pick up from power up boxes. Um, we kinda gained that ability, I would say.
+[19:16] Um, and that's pretty much it. Let's see, one last thing.
+[19:32] I just want to try something really quick bullets of fury bullets of fury
+[19:49] Let's see what you've done with all those special abilities
+[20:22] Decker shoot way too fast
+[20:25] Trying to get a shotgun. Thank God you can see the red fire from level two onward
+[22:53] We got two more checks, we got to check cold, and then we're going to check freezer.
+[23:47] And that'll conclude this bug fixing adventure.
+[23:55] You're also going to have to change, you're going to have to move his text up on the right
+[24:22] card side and also add Sonic Boom slash Warhead and center his icon in the bottom right corner.
+[24:29] Good luck! Full screen it. We'll see how we're doing. That's cool but it needs to go across the
+[25:27] screen and it was supposed to be a charge tab and I don't see my charge uh my little box uh
+[25:48] a lot of right man at the bottom of the screen like everyone else. So that needs to work.
+[26:06] Like you should be you should be charging it and you need a needle. Yeah, I'm just like that.
+[26:15] Ah, so you can you're just not doing a charge thing around him. And that should like those
+[26:23] should like fade out instead of animating as they go. We need a sound and we need like you know,
+[26:33] We need to make a ring around the hole, a 16-bit ring that glows like Falva and Maverick when they do their charges.
+[26:43] And like a sound like a woooooohh until he releases it.
+[26:49] Alright, so it's not terrible.
+[26:53] It's Freezer.
+[26:57] A fury.
+[27:04] A fury.
+[27:05] A fury.
+[27:08] white, fade back to normal, and then you're blowing up and you're in the same spot as you were.
+[29:42] I'm not ice breath yet, so I don't know what's going on. Ice breath should have started appearing
+[31:18] on this level. I can't. It would be very hard to get out of. If you take a damage like that,
+[31:52] that wasn't my fault. Alright, let's see what happens. Not bad. Alright, we're gonna do these things.
