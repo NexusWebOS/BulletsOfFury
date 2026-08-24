@@ -1,0 +1,44 @@
+{
+  "canvas": [
+    1672,
+    941
+  ],
+  "coordinate_system": "top-left pixel coordinates [x, y, width, height]",
+  "shared_recommended_zones": {
+    "foreground_full_cast": [
+      64,
+      635,
+      1544,
+      266
+    ],
+    "left_actor": [
+      80,
+      430,
+      430,
+      455
+    ],
+    "center_actor": [
+      621,
+      430,
+      430,
+      455
+    ],
+    "right_actor": [
+      1162,
+      430,
+      430,
+      455
+    ],
+    "dialogue_lower_third": [
+      64,
+      740,
+      1544,
+      150
+    ]
+  },
+  "notes": [
+    "Zones are placement suggestions, not collision bounds.",
+    "Stage 5 and Stage 6 intentionally preserve large open upper regions for runtime aircraft or spacecraft overlays.",
+    "All supplied PNGs contain environment only; add every actor, vehicle, enemy, effect and interactive prop at runtime."
+  ]
+}

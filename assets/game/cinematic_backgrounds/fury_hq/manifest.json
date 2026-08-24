@@ -1,0 +1,118 @@
+{
+  "collection": "FURY HQ cinematic backgrounds",
+  "scene_count": 9,
+  "master_policy": "Native generated masters are preserved at 1672x941; only the contact sheet is resized.",
+  "style": "Neo-Geo / late-1990s arcade military science-fiction pixel-art cinematic plates",
+  "character_policy": "Environment plates intentionally contain no characters for later compositing.",
+  "contact_sheet": "assets/game/cinematic_backgrounds/fury_hq/fury_hq_contact_sheet.jpg",
+  "scenes": [
+    {
+      "id": "01_launch_bay_runway",
+      "title": "Launch Bay / Runway",
+      "file": "assets/game/cinematic_backgrounds/fury_hq/01_launch_bay_runway.png",
+      "native_size": [
+        1672,
+        941
+      ],
+      "resampled": false,
+      "staging": "wide team staging; aircraft launch",
+      "sha256": "c3a5ad9af797867ea09dd172ab084b1b6966802091b2982d67bb334db5198dcd"
+    },
+    {
+      "id": "02_command_deck_nine",
+      "title": "Command Deck",
+      "file": "assets/game/cinematic_backgrounds/fury_hq/02_command_deck_nine.png",
+      "native_size": [
+        1672,
+        941
+      ],
+      "resampled": false,
+      "staging": "nine stations; full-team command scene",
+      "sha256": "608b574a62b80368acb1421420a2a7b7b35865b9e830f6c2158df0fcdb77c8fa"
+    },
+    {
+      "id": "03_briefing_classroom",
+      "title": "Briefing Classroom",
+      "file": "assets/game/cinematic_backgrounds/fury_hq/03_briefing_classroom.png",
+      "native_size": [
+        1672,
+        941
+      ],
+      "resampled": false,
+      "staging": "left podium; Cole instructor staging",
+      "sha256": "13f5bf8e75292ea658c9700d1ef5657d98c248e6c394ca12a3f04743c9e714a1"
+    },
+    {
+      "id": "04_strategic_war_room",
+      "title": "Strategic War Room",
+      "file": "assets/game/cinematic_backgrounds/fury_hq/04_strategic_war_room.png",
+      "native_size": [
+        1672,
+        941
+      ],
+      "resampled": false,
+      "staging": "holographic table; threat briefing",
+      "sha256": "53da5f11d934d2e528530b5977b7bd7478c7a8ba70dc23f04bf82a958e8e2e04"
+    },
+    {
+      "id": "05_armory_gear_bay",
+      "title": "Armory / Gear Bay",
+      "file": "assets/game/cinematic_backgrounds/fury_hq/05_armory_gear_bay.png",
+      "native_size": [
+        1672,
+        941
+      ],
+      "resampled": false,
+      "staging": "gear-up scenes; open center aisle",
+      "sha256": "e34e42a7bf7ab3a59102c0d301665c31d503c1e1d575009af3e575cae521d881"
+    },
+    {
+      "id": "06_medical_decon_wing",
+      "title": "Medical / Decon",
+      "file": "assets/game/cinematic_backgrounds/fury_hq/06_medical_decon_wing.png",
+      "native_size": [
+        1672,
+        941
+      ],
+      "resampled": false,
+      "staging": "treatment, recovery, containment",
+      "sha256": "2a1a3eb1cb058691b5ec27d28209be87eba727cf298396fc8d9587d2c21bfe39"
+    },
+    {
+      "id": "07_engineering_reactor",
+      "title": "Engineering / Reactor",
+      "file": "assets/game/cinematic_backgrounds/fury_hq/07_engineering_reactor.png",
+      "native_size": [
+        1672,
+        941
+      ],
+      "resampled": false,
+      "staging": "technical crisis; power-core scenes",
+      "sha256": "1d07bf6be58032a56939b7e31e5141cfbb17b286326545e526ce69a0b09c37a6"
+    },
+    {
+      "id": "08_squad_ready_room",
+      "title": "Squad Ready Room",
+      "file": "assets/game/cinematic_backgrounds/fury_hq/08_squad_ready_room.png",
+      "native_size": [
+        1672,
+        941
+      ],
+      "resampled": false,
+      "staging": "character dialogue; downtime scenes",
+      "sha256": "ebd07b4377d002abcbff3f9e78ed35bb9df03a6c7030ec2a01c66703b6ab1ddf"
+    },
+    {
+      "id": "09_observation_deck",
+      "title": "Observation Deck",
+      "file": "assets/game/cinematic_backgrounds/fury_hq/09_observation_deck.png",
+      "native_size": [
+        1672,
+        941
+      ],
+      "resampled": false,
+      "staging": "quiet dialogue; storm/runway vista",
+      "sha256": "11279db44894570eb9cc6c8c2d7fc4a9b837ebf1f008df93bf78208eba9cd793"
+    }
+  ]
+}

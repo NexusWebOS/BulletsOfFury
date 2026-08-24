@@ -1,0 +1,1873 @@
+{
+  "pack": "BulletsOfFury generated cinematic effects v2",
+  "style": "neo-geo / late-1990s arcade shooter pixel art",
+  "explosions": {
+    "airburst": {
+      "description": "Spherical white-hot airburst rolling into an ember ring.",
+      "source_keyframes": "assets/game/generated_cinematic/explosions/sources/airburst_keyframes_6.png",
+      "source_keyframe_count": 6,
+      "runtime_frame_count": 32,
+      "recommended_fps": 30,
+      "whole_sprite_fade": false,
+      "final_frame_policy": "persistent authored ember/smoke breakup; engine removes effect after playback",
+      "visibility_256x256": [
+        {
+          "frame": 0,
+          "visible_pixels": 8012,
+          "opaque_pixels": 7,
+          "max_alpha": 255
+        },
+        {
+          "frame": 1,
+          "visible_pixels": 21089,
+          "opaque_pixels": 7,
+          "max_alpha": 255
+        },
+        {
+          "frame": 2,
+          "visible_pixels": 22937,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 3,
+          "visible_pixels": 23380,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 4,
+          "visible_pixels": 23679,
+          "opaque_pixels": 38,
+          "max_alpha": 255
+        },
+        {
+          "frame": 5,
+          "visible_pixels": 36952,
+          "opaque_pixels": 38,
+          "max_alpha": 255
+        },
+        {
+          "frame": 6,
+          "visible_pixels": 39031,
+          "opaque_pixels": 1,
+          "max_alpha": 255
+        },
+        {
+          "frame": 7,
+          "visible_pixels": 40045,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 8,
+          "visible_pixels": 40781,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 9,
+          "visible_pixels": 40781,
+          "opaque_pixels": 73,
+          "max_alpha": 255
+        },
+        {
+          "frame": 10,
+          "visible_pixels": 40875,
+          "opaque_pixels": 8,
+          "max_alpha": 255
+        },
+        {
+          "frame": 11,
+          "visible_pixels": 40590,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 12,
+          "visible_pixels": 40171,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 13,
+          "visible_pixels": 39318,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 14,
+          "visible_pixels": 37826,
+          "opaque_pixels": 84,
+          "max_alpha": 255
+        },
+        {
+          "frame": 15,
+          "visible_pixels": 34477,
+          "opaque_pixels": 108,
+          "max_alpha": 255
+        },
+        {
+          "frame": 16,
+          "visible_pixels": 34521,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 17,
+          "visible_pixels": 34247,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 18,
+          "visible_pixels": 34002,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 19,
+          "visible_pixels": 33821,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 20,
+          "visible_pixels": 33246,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 21,
+          "visible_pixels": 32651,
+          "opaque_pixels": 109,
+          "max_alpha": 255
+        },
+        {
+          "frame": 22,
+          "visible_pixels": 31351,
+          "opaque_pixels": 112,
+          "max_alpha": 255
+        },
+        {
+          "frame": 23,
+          "visible_pixels": 24521,
+          "opaque_pixels": 113,
+          "max_alpha": 255
+        },
+        {
+          "frame": 24,
+          "visible_pixels": 24796,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 25,
+          "visible_pixels": 24540,
+          "opaque_pixels": 0,
+          "max_alpha": 253
+        },
+        {
+          "frame": 26,
+          "visible_pixels": 24231,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 27,
+          "visible_pixels": 24006,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 28,
+          "visible_pixels": 23351,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 29,
+          "visible_pixels": 22648,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 30,
+          "visible_pixels": 20987,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 31,
+          "visible_pixels": 10414,
+          "opaque_pixels": 22,
+          "max_alpha": 255
+        }
+      ],
+      "anchor": "center",
+      "palette": "orange",
+      "variant_of": null,
+      "preview": "assets/game/generated_cinematic/explosions/airburst/previews/airburst_32frames_30fps.webp",
+      "sizes": {
+        "128x128": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst/128x128/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst/128x128/airburst_32frames_strip.png"
+        },
+        "192x192": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst/192x192/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst/192x192/airburst_32frames_strip.png"
+        },
+        "256x256": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst/256x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst/256x256/airburst_32frames_strip.png"
+        },
+        "320x256": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst/320x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst/320x256/airburst_32frames_strip.png"
+        },
+        "320x320": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst/320x320/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst/320x320/airburst_32frames_strip.png"
+        }
+      }
+    },
+    "ground_blast": {
+      "description": "Grounded fire dome rising into a tall combustion column.",
+      "source_keyframes": "assets/game/generated_cinematic/explosions/sources/ground_blast_keyframes_6.png",
+      "source_keyframe_count": 6,
+      "runtime_frame_count": 32,
+      "recommended_fps": 30,
+      "whole_sprite_fade": false,
+      "final_frame_policy": "persistent authored ember/smoke breakup; engine removes effect after playback",
+      "visibility_256x256": [
+        {
+          "frame": 0,
+          "visible_pixels": 1313,
+          "opaque_pixels": 44,
+          "max_alpha": 255
+        },
+        {
+          "frame": 1,
+          "visible_pixels": 6109,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 2,
+          "visible_pixels": 6203,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 3,
+          "visible_pixels": 6229,
+          "opaque_pixels": 0,
+          "max_alpha": 253
+        },
+        {
+          "frame": 4,
+          "visible_pixels": 6246,
+          "opaque_pixels": 149,
+          "max_alpha": 255
+        },
+        {
+          "frame": 5,
+          "visible_pixels": 12592,
+          "opaque_pixels": 80,
+          "max_alpha": 255
+        },
+        {
+          "frame": 6,
+          "visible_pixels": 12801,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 7,
+          "visible_pixels": 12887,
+          "opaque_pixels": 3,
+          "max_alpha": 255
+        },
+        {
+          "frame": 8,
+          "visible_pixels": 12961,
+          "opaque_pixels": 34,
+          "max_alpha": 255
+        },
+        {
+          "frame": 9,
+          "visible_pixels": 12906,
+          "opaque_pixels": 174,
+          "max_alpha": 255
+        },
+        {
+          "frame": 10,
+          "visible_pixels": 19188,
+          "opaque_pixels": 162,
+          "max_alpha": 255
+        },
+        {
+          "frame": 11,
+          "visible_pixels": 19525,
+          "opaque_pixels": 14,
+          "max_alpha": 255
+        },
+        {
+          "frame": 12,
+          "visible_pixels": 19680,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 13,
+          "visible_pixels": 19754,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 14,
+          "visible_pixels": 19802,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 15,
+          "visible_pixels": 19795,
+          "opaque_pixels": 303,
+          "max_alpha": 255
+        },
+        {
+          "frame": 16,
+          "visible_pixels": 19795,
+          "opaque_pixels": 36,
+          "max_alpha": 255
+        },
+        {
+          "frame": 17,
+          "visible_pixels": 19754,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 18,
+          "visible_pixels": 19700,
+          "opaque_pixels": 11,
+          "max_alpha": 255
+        },
+        {
+          "frame": 19,
+          "visible_pixels": 19663,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 20,
+          "visible_pixels": 19542,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 21,
+          "visible_pixels": 19386,
+          "opaque_pixels": 259,
+          "max_alpha": 255
+        },
+        {
+          "frame": 22,
+          "visible_pixels": 18973,
+          "opaque_pixels": 291,
+          "max_alpha": 255
+        },
+        {
+          "frame": 23,
+          "visible_pixels": 10111,
+          "opaque_pixels": 291,
+          "max_alpha": 255
+        },
+        {
+          "frame": 24,
+          "visible_pixels": 10115,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 25,
+          "visible_pixels": 10063,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 26,
+          "visible_pixels": 10020,
+          "opaque_pixels": 11,
+          "max_alpha": 255
+        },
+        {
+          "frame": 27,
+          "visible_pixels": 9982,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 28,
+          "visible_pixels": 9841,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 29,
+          "visible_pixels": 9604,
+          "opaque_pixels": 40,
+          "max_alpha": 255
+        },
+        {
+          "frame": 30,
+          "visible_pixels": 8857,
+          "opaque_pixels": 45,
+          "max_alpha": 255
+        },
+        {
+          "frame": 31,
+          "visible_pixels": 2092,
+          "opaque_pixels": 46,
+          "max_alpha": 255
+        }
+      ],
+      "anchor": "bottom-center",
+      "palette": "orange",
+      "variant_of": null,
+      "preview": "assets/game/generated_cinematic/explosions/ground_blast/previews/ground_blast_32frames_30fps.webp",
+      "sizes": {
+        "128x128": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast/128x128/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast/128x128/ground_blast_32frames_strip.png"
+        },
+        "192x192": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast/192x192/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast/192x192/ground_blast_32frames_strip.png"
+        },
+        "256x256": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast/256x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast/256x256/ground_blast_32frames_strip.png"
+        },
+        "320x256": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast/320x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast/320x256/ground_blast_32frames_strip.png"
+        },
+        "320x320": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast/320x320/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast/320x320/ground_blast_32frames_strip.png"
+        }
+      }
+    },
+    "airburst_blue": {
+      "description": "Blue spherical airburst energy variant.",
+      "source_keyframes": "assets/game/generated_cinematic/explosions/sources/airburst_blue_keyframes_6.png",
+      "source_keyframe_count": 6,
+      "runtime_frame_count": 32,
+      "recommended_fps": 30,
+      "whole_sprite_fade": false,
+      "final_frame_policy": "persistent authored ember/smoke breakup; engine removes effect after playback",
+      "visibility_256x256": [
+        {
+          "frame": 0,
+          "visible_pixels": 8012,
+          "opaque_pixels": 7,
+          "max_alpha": 255
+        },
+        {
+          "frame": 1,
+          "visible_pixels": 21089,
+          "opaque_pixels": 7,
+          "max_alpha": 255
+        },
+        {
+          "frame": 2,
+          "visible_pixels": 22937,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 3,
+          "visible_pixels": 23380,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 4,
+          "visible_pixels": 23679,
+          "opaque_pixels": 38,
+          "max_alpha": 255
+        },
+        {
+          "frame": 5,
+          "visible_pixels": 36952,
+          "opaque_pixels": 38,
+          "max_alpha": 255
+        },
+        {
+          "frame": 6,
+          "visible_pixels": 39031,
+          "opaque_pixels": 1,
+          "max_alpha": 255
+        },
+        {
+          "frame": 7,
+          "visible_pixels": 40045,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 8,
+          "visible_pixels": 40781,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 9,
+          "visible_pixels": 40781,
+          "opaque_pixels": 73,
+          "max_alpha": 255
+        },
+        {
+          "frame": 10,
+          "visible_pixels": 40875,
+          "opaque_pixels": 8,
+          "max_alpha": 255
+        },
+        {
+          "frame": 11,
+          "visible_pixels": 40590,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 12,
+          "visible_pixels": 40171,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 13,
+          "visible_pixels": 39318,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 14,
+          "visible_pixels": 37826,
+          "opaque_pixels": 84,
+          "max_alpha": 255
+        },
+        {
+          "frame": 15,
+          "visible_pixels": 34477,
+          "opaque_pixels": 108,
+          "max_alpha": 255
+        },
+        {
+          "frame": 16,
+          "visible_pixels": 34521,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 17,
+          "visible_pixels": 34247,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 18,
+          "visible_pixels": 34002,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 19,
+          "visible_pixels": 33821,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 20,
+          "visible_pixels": 33246,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 21,
+          "visible_pixels": 32651,
+          "opaque_pixels": 109,
+          "max_alpha": 255
+        },
+        {
+          "frame": 22,
+          "visible_pixels": 31351,
+          "opaque_pixels": 112,
+          "max_alpha": 255
+        },
+        {
+          "frame": 23,
+          "visible_pixels": 24521,
+          "opaque_pixels": 113,
+          "max_alpha": 255
+        },
+        {
+          "frame": 24,
+          "visible_pixels": 24796,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 25,
+          "visible_pixels": 24540,
+          "opaque_pixels": 0,
+          "max_alpha": 253
+        },
+        {
+          "frame": 26,
+          "visible_pixels": 24231,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 27,
+          "visible_pixels": 24006,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 28,
+          "visible_pixels": 23351,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 29,
+          "visible_pixels": 22648,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 30,
+          "visible_pixels": 20987,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 31,
+          "visible_pixels": 10414,
+          "opaque_pixels": 22,
+          "max_alpha": 255
+        }
+      ],
+      "anchor": "center",
+      "palette": "blue",
+      "variant_of": "airburst",
+      "preview": "assets/game/generated_cinematic/explosions/airburst_blue/previews/airburst_blue_32frames_30fps.webp",
+      "sizes": {
+        "128x128": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_blue/128x128/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_blue/128x128/airburst_blue_32frames_strip.png"
+        },
+        "192x192": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_blue/192x192/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_blue/192x192/airburst_blue_32frames_strip.png"
+        },
+        "256x256": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_blue/256x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_blue/256x256/airburst_blue_32frames_strip.png"
+        },
+        "320x256": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_blue/320x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_blue/320x256/airburst_blue_32frames_strip.png"
+        },
+        "320x320": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_blue/320x320/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_blue/320x320/airburst_blue_32frames_strip.png"
+        }
+      }
+    },
+    "airburst_green": {
+      "description": "Green spherical airburst energy variant.",
+      "source_keyframes": "assets/game/generated_cinematic/explosions/sources/airburst_green_keyframes_6.png",
+      "source_keyframe_count": 6,
+      "runtime_frame_count": 32,
+      "recommended_fps": 30,
+      "whole_sprite_fade": false,
+      "final_frame_policy": "persistent authored ember/smoke breakup; engine removes effect after playback",
+      "visibility_256x256": [
+        {
+          "frame": 0,
+          "visible_pixels": 8012,
+          "opaque_pixels": 7,
+          "max_alpha": 255
+        },
+        {
+          "frame": 1,
+          "visible_pixels": 21089,
+          "opaque_pixels": 7,
+          "max_alpha": 255
+        },
+        {
+          "frame": 2,
+          "visible_pixels": 22937,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 3,
+          "visible_pixels": 23380,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 4,
+          "visible_pixels": 23679,
+          "opaque_pixels": 38,
+          "max_alpha": 255
+        },
+        {
+          "frame": 5,
+          "visible_pixels": 36952,
+          "opaque_pixels": 38,
+          "max_alpha": 255
+        },
+        {
+          "frame": 6,
+          "visible_pixels": 39031,
+          "opaque_pixels": 1,
+          "max_alpha": 255
+        },
+        {
+          "frame": 7,
+          "visible_pixels": 40045,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 8,
+          "visible_pixels": 40781,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 9,
+          "visible_pixels": 40781,
+          "opaque_pixels": 73,
+          "max_alpha": 255
+        },
+        {
+          "frame": 10,
+          "visible_pixels": 40875,
+          "opaque_pixels": 8,
+          "max_alpha": 255
+        },
+        {
+          "frame": 11,
+          "visible_pixels": 40590,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 12,
+          "visible_pixels": 40171,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 13,
+          "visible_pixels": 39318,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 14,
+          "visible_pixels": 37826,
+          "opaque_pixels": 84,
+          "max_alpha": 255
+        },
+        {
+          "frame": 15,
+          "visible_pixels": 34477,
+          "opaque_pixels": 108,
+          "max_alpha": 255
+        },
+        {
+          "frame": 16,
+          "visible_pixels": 34521,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 17,
+          "visible_pixels": 34247,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 18,
+          "visible_pixels": 34002,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 19,
+          "visible_pixels": 33821,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 20,
+          "visible_pixels": 33246,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 21,
+          "visible_pixels": 32651,
+          "opaque_pixels": 109,
+          "max_alpha": 255
+        },
+        {
+          "frame": 22,
+          "visible_pixels": 31351,
+          "opaque_pixels": 112,
+          "max_alpha": 255
+        },
+        {
+          "frame": 23,
+          "visible_pixels": 24521,
+          "opaque_pixels": 113,
+          "max_alpha": 255
+        },
+        {
+          "frame": 24,
+          "visible_pixels": 24796,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 25,
+          "visible_pixels": 24540,
+          "opaque_pixels": 0,
+          "max_alpha": 253
+        },
+        {
+          "frame": 26,
+          "visible_pixels": 24231,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 27,
+          "visible_pixels": 24006,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 28,
+          "visible_pixels": 23351,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 29,
+          "visible_pixels": 22648,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 30,
+          "visible_pixels": 20987,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 31,
+          "visible_pixels": 10414,
+          "opaque_pixels": 22,
+          "max_alpha": 255
+        }
+      ],
+      "anchor": "center",
+      "palette": "green",
+      "variant_of": "airburst",
+      "preview": "assets/game/generated_cinematic/explosions/airburst_green/previews/airburst_green_32frames_30fps.webp",
+      "sizes": {
+        "128x128": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_green/128x128/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_green/128x128/airburst_green_32frames_strip.png"
+        },
+        "192x192": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_green/192x192/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_green/192x192/airburst_green_32frames_strip.png"
+        },
+        "256x256": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_green/256x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_green/256x256/airburst_green_32frames_strip.png"
+        },
+        "320x256": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_green/320x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_green/320x256/airburst_green_32frames_strip.png"
+        },
+        "320x320": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_green/320x320/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_green/320x320/airburst_green_32frames_strip.png"
+        }
+      }
+    },
+    "airburst_purple": {
+      "description": "Purple spherical airburst energy variant.",
+      "source_keyframes": "assets/game/generated_cinematic/explosions/sources/airburst_purple_keyframes_6.png",
+      "source_keyframe_count": 6,
+      "runtime_frame_count": 32,
+      "recommended_fps": 30,
+      "whole_sprite_fade": false,
+      "final_frame_policy": "persistent authored ember/smoke breakup; engine removes effect after playback",
+      "visibility_256x256": [
+        {
+          "frame": 0,
+          "visible_pixels": 8012,
+          "opaque_pixels": 7,
+          "max_alpha": 255
+        },
+        {
+          "frame": 1,
+          "visible_pixels": 21089,
+          "opaque_pixels": 7,
+          "max_alpha": 255
+        },
+        {
+          "frame": 2,
+          "visible_pixels": 22937,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 3,
+          "visible_pixels": 23380,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 4,
+          "visible_pixels": 23679,
+          "opaque_pixels": 38,
+          "max_alpha": 255
+        },
+        {
+          "frame": 5,
+          "visible_pixels": 36952,
+          "opaque_pixels": 38,
+          "max_alpha": 255
+        },
+        {
+          "frame": 6,
+          "visible_pixels": 39031,
+          "opaque_pixels": 1,
+          "max_alpha": 255
+        },
+        {
+          "frame": 7,
+          "visible_pixels": 40045,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 8,
+          "visible_pixels": 40781,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 9,
+          "visible_pixels": 40781,
+          "opaque_pixels": 73,
+          "max_alpha": 255
+        },
+        {
+          "frame": 10,
+          "visible_pixels": 40875,
+          "opaque_pixels": 8,
+          "max_alpha": 255
+        },
+        {
+          "frame": 11,
+          "visible_pixels": 40590,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 12,
+          "visible_pixels": 40171,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 13,
+          "visible_pixels": 39318,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 14,
+          "visible_pixels": 37826,
+          "opaque_pixels": 84,
+          "max_alpha": 255
+        },
+        {
+          "frame": 15,
+          "visible_pixels": 34477,
+          "opaque_pixels": 108,
+          "max_alpha": 255
+        },
+        {
+          "frame": 16,
+          "visible_pixels": 34521,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 17,
+          "visible_pixels": 34247,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 18,
+          "visible_pixels": 34002,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 19,
+          "visible_pixels": 33821,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 20,
+          "visible_pixels": 33246,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 21,
+          "visible_pixels": 32651,
+          "opaque_pixels": 109,
+          "max_alpha": 255
+        },
+        {
+          "frame": 22,
+          "visible_pixels": 31351,
+          "opaque_pixels": 112,
+          "max_alpha": 255
+        },
+        {
+          "frame": 23,
+          "visible_pixels": 24521,
+          "opaque_pixels": 113,
+          "max_alpha": 255
+        },
+        {
+          "frame": 24,
+          "visible_pixels": 24796,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 25,
+          "visible_pixels": 24540,
+          "opaque_pixels": 0,
+          "max_alpha": 253
+        },
+        {
+          "frame": 26,
+          "visible_pixels": 24231,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 27,
+          "visible_pixels": 24006,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 28,
+          "visible_pixels": 23351,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 29,
+          "visible_pixels": 22648,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 30,
+          "visible_pixels": 20987,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 31,
+          "visible_pixels": 10414,
+          "opaque_pixels": 22,
+          "max_alpha": 255
+        }
+      ],
+      "anchor": "center",
+      "palette": "purple",
+      "variant_of": "airburst",
+      "preview": "assets/game/generated_cinematic/explosions/airburst_purple/previews/airburst_purple_32frames_30fps.webp",
+      "sizes": {
+        "128x128": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_purple/128x128/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_purple/128x128/airburst_purple_32frames_strip.png"
+        },
+        "192x192": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_purple/192x192/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_purple/192x192/airburst_purple_32frames_strip.png"
+        },
+        "256x256": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_purple/256x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_purple/256x256/airburst_purple_32frames_strip.png"
+        },
+        "320x256": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_purple/320x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_purple/320x256/airburst_purple_32frames_strip.png"
+        },
+        "320x320": {
+          "frames": "assets/game/generated_cinematic/explosions/airburst_purple/320x320/frames",
+          "strip": "assets/game/generated_cinematic/explosions/airburst_purple/320x320/airburst_purple_32frames_strip.png"
+        }
+      }
+    },
+    "ground_blast_blue": {
+      "description": "Blue grounded combustion column energy variant.",
+      "source_keyframes": "assets/game/generated_cinematic/explosions/sources/ground_blast_blue_keyframes_6.png",
+      "source_keyframe_count": 6,
+      "runtime_frame_count": 32,
+      "recommended_fps": 30,
+      "whole_sprite_fade": false,
+      "final_frame_policy": "persistent authored ember/smoke breakup; engine removes effect after playback",
+      "visibility_256x256": [
+        {
+          "frame": 0,
+          "visible_pixels": 1313,
+          "opaque_pixels": 44,
+          "max_alpha": 255
+        },
+        {
+          "frame": 1,
+          "visible_pixels": 6109,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 2,
+          "visible_pixels": 6203,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 3,
+          "visible_pixels": 6229,
+          "opaque_pixels": 0,
+          "max_alpha": 253
+        },
+        {
+          "frame": 4,
+          "visible_pixels": 6246,
+          "opaque_pixels": 149,
+          "max_alpha": 255
+        },
+        {
+          "frame": 5,
+          "visible_pixels": 12592,
+          "opaque_pixels": 80,
+          "max_alpha": 255
+        },
+        {
+          "frame": 6,
+          "visible_pixels": 12801,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 7,
+          "visible_pixels": 12887,
+          "opaque_pixels": 3,
+          "max_alpha": 255
+        },
+        {
+          "frame": 8,
+          "visible_pixels": 12961,
+          "opaque_pixels": 34,
+          "max_alpha": 255
+        },
+        {
+          "frame": 9,
+          "visible_pixels": 12906,
+          "opaque_pixels": 174,
+          "max_alpha": 255
+        },
+        {
+          "frame": 10,
+          "visible_pixels": 19188,
+          "opaque_pixels": 162,
+          "max_alpha": 255
+        },
+        {
+          "frame": 11,
+          "visible_pixels": 19525,
+          "opaque_pixels": 14,
+          "max_alpha": 255
+        },
+        {
+          "frame": 12,
+          "visible_pixels": 19680,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 13,
+          "visible_pixels": 19754,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 14,
+          "visible_pixels": 19802,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 15,
+          "visible_pixels": 19795,
+          "opaque_pixels": 303,
+          "max_alpha": 255
+        },
+        {
+          "frame": 16,
+          "visible_pixels": 19795,
+          "opaque_pixels": 36,
+          "max_alpha": 255
+        },
+        {
+          "frame": 17,
+          "visible_pixels": 19754,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 18,
+          "visible_pixels": 19700,
+          "opaque_pixels": 11,
+          "max_alpha": 255
+        },
+        {
+          "frame": 19,
+          "visible_pixels": 19663,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 20,
+          "visible_pixels": 19542,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 21,
+          "visible_pixels": 19386,
+          "opaque_pixels": 259,
+          "max_alpha": 255
+        },
+        {
+          "frame": 22,
+          "visible_pixels": 18973,
+          "opaque_pixels": 291,
+          "max_alpha": 255
+        },
+        {
+          "frame": 23,
+          "visible_pixels": 10111,
+          "opaque_pixels": 291,
+          "max_alpha": 255
+        },
+        {
+          "frame": 24,
+          "visible_pixels": 10115,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 25,
+          "visible_pixels": 10063,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 26,
+          "visible_pixels": 10020,
+          "opaque_pixels": 11,
+          "max_alpha": 255
+        },
+        {
+          "frame": 27,
+          "visible_pixels": 9982,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 28,
+          "visible_pixels": 9841,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 29,
+          "visible_pixels": 9604,
+          "opaque_pixels": 40,
+          "max_alpha": 255
+        },
+        {
+          "frame": 30,
+          "visible_pixels": 8857,
+          "opaque_pixels": 45,
+          "max_alpha": 255
+        },
+        {
+          "frame": 31,
+          "visible_pixels": 2092,
+          "opaque_pixels": 46,
+          "max_alpha": 255
+        }
+      ],
+      "anchor": "bottom-center",
+      "palette": "blue",
+      "variant_of": "ground_blast",
+      "preview": "assets/game/generated_cinematic/explosions/ground_blast_blue/previews/ground_blast_blue_32frames_30fps.webp",
+      "sizes": {
+        "128x128": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_blue/128x128/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_blue/128x128/ground_blast_blue_32frames_strip.png"
+        },
+        "192x192": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_blue/192x192/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_blue/192x192/ground_blast_blue_32frames_strip.png"
+        },
+        "256x256": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_blue/256x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_blue/256x256/ground_blast_blue_32frames_strip.png"
+        },
+        "320x256": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_blue/320x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_blue/320x256/ground_blast_blue_32frames_strip.png"
+        },
+        "320x320": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_blue/320x320/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_blue/320x320/ground_blast_blue_32frames_strip.png"
+        }
+      }
+    },
+    "ground_blast_green": {
+      "description": "Green grounded combustion column energy variant.",
+      "source_keyframes": "assets/game/generated_cinematic/explosions/sources/ground_blast_green_keyframes_6.png",
+      "source_keyframe_count": 6,
+      "runtime_frame_count": 32,
+      "recommended_fps": 30,
+      "whole_sprite_fade": false,
+      "final_frame_policy": "persistent authored ember/smoke breakup; engine removes effect after playback",
+      "visibility_256x256": [
+        {
+          "frame": 0,
+          "visible_pixels": 1313,
+          "opaque_pixels": 44,
+          "max_alpha": 255
+        },
+        {
+          "frame": 1,
+          "visible_pixels": 6109,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 2,
+          "visible_pixels": 6203,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 3,
+          "visible_pixels": 6229,
+          "opaque_pixels": 0,
+          "max_alpha": 253
+        },
+        {
+          "frame": 4,
+          "visible_pixels": 6246,
+          "opaque_pixels": 149,
+          "max_alpha": 255
+        },
+        {
+          "frame": 5,
+          "visible_pixels": 12592,
+          "opaque_pixels": 80,
+          "max_alpha": 255
+        },
+        {
+          "frame": 6,
+          "visible_pixels": 12801,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 7,
+          "visible_pixels": 12887,
+          "opaque_pixels": 3,
+          "max_alpha": 255
+        },
+        {
+          "frame": 8,
+          "visible_pixels": 12961,
+          "opaque_pixels": 34,
+          "max_alpha": 255
+        },
+        {
+          "frame": 9,
+          "visible_pixels": 12906,
+          "opaque_pixels": 174,
+          "max_alpha": 255
+        },
+        {
+          "frame": 10,
+          "visible_pixels": 19188,
+          "opaque_pixels": 162,
+          "max_alpha": 255
+        },
+        {
+          "frame": 11,
+          "visible_pixels": 19525,
+          "opaque_pixels": 14,
+          "max_alpha": 255
+        },
+        {
+          "frame": 12,
+          "visible_pixels": 19680,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 13,
+          "visible_pixels": 19754,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 14,
+          "visible_pixels": 19802,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 15,
+          "visible_pixels": 19795,
+          "opaque_pixels": 303,
+          "max_alpha": 255
+        },
+        {
+          "frame": 16,
+          "visible_pixels": 19795,
+          "opaque_pixels": 36,
+          "max_alpha": 255
+        },
+        {
+          "frame": 17,
+          "visible_pixels": 19754,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 18,
+          "visible_pixels": 19700,
+          "opaque_pixels": 11,
+          "max_alpha": 255
+        },
+        {
+          "frame": 19,
+          "visible_pixels": 19663,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 20,
+          "visible_pixels": 19542,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 21,
+          "visible_pixels": 19386,
+          "opaque_pixels": 259,
+          "max_alpha": 255
+        },
+        {
+          "frame": 22,
+          "visible_pixels": 18973,
+          "opaque_pixels": 291,
+          "max_alpha": 255
+        },
+        {
+          "frame": 23,
+          "visible_pixels": 10111,
+          "opaque_pixels": 291,
+          "max_alpha": 255
+        },
+        {
+          "frame": 24,
+          "visible_pixels": 10115,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 25,
+          "visible_pixels": 10063,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 26,
+          "visible_pixels": 10020,
+          "opaque_pixels": 11,
+          "max_alpha": 255
+        },
+        {
+          "frame": 27,
+          "visible_pixels": 9982,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 28,
+          "visible_pixels": 9841,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 29,
+          "visible_pixels": 9604,
+          "opaque_pixels": 40,
+          "max_alpha": 255
+        },
+        {
+          "frame": 30,
+          "visible_pixels": 8857,
+          "opaque_pixels": 45,
+          "max_alpha": 255
+        },
+        {
+          "frame": 31,
+          "visible_pixels": 2092,
+          "opaque_pixels": 46,
+          "max_alpha": 255
+        }
+      ],
+      "anchor": "bottom-center",
+      "palette": "green",
+      "variant_of": "ground_blast",
+      "preview": "assets/game/generated_cinematic/explosions/ground_blast_green/previews/ground_blast_green_32frames_30fps.webp",
+      "sizes": {
+        "128x128": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_green/128x128/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_green/128x128/ground_blast_green_32frames_strip.png"
+        },
+        "192x192": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_green/192x192/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_green/192x192/ground_blast_green_32frames_strip.png"
+        },
+        "256x256": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_green/256x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_green/256x256/ground_blast_green_32frames_strip.png"
+        },
+        "320x256": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_green/320x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_green/320x256/ground_blast_green_32frames_strip.png"
+        },
+        "320x320": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_green/320x320/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_green/320x320/ground_blast_green_32frames_strip.png"
+        }
+      }
+    },
+    "ground_blast_purple": {
+      "description": "Purple grounded combustion column energy variant.",
+      "source_keyframes": "assets/game/generated_cinematic/explosions/sources/ground_blast_purple_keyframes_6.png",
+      "source_keyframe_count": 6,
+      "runtime_frame_count": 32,
+      "recommended_fps": 30,
+      "whole_sprite_fade": false,
+      "final_frame_policy": "persistent authored ember/smoke breakup; engine removes effect after playback",
+      "visibility_256x256": [
+        {
+          "frame": 0,
+          "visible_pixels": 1313,
+          "opaque_pixels": 44,
+          "max_alpha": 255
+        },
+        {
+          "frame": 1,
+          "visible_pixels": 6109,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 2,
+          "visible_pixels": 6203,
+          "opaque_pixels": 0,
+          "max_alpha": 254
+        },
+        {
+          "frame": 3,
+          "visible_pixels": 6229,
+          "opaque_pixels": 0,
+          "max_alpha": 253
+        },
+        {
+          "frame": 4,
+          "visible_pixels": 6246,
+          "opaque_pixels": 149,
+          "max_alpha": 255
+        },
+        {
+          "frame": 5,
+          "visible_pixels": 12592,
+          "opaque_pixels": 80,
+          "max_alpha": 255
+        },
+        {
+          "frame": 6,
+          "visible_pixels": 12801,
+          "opaque_pixels": 2,
+          "max_alpha": 255
+        },
+        {
+          "frame": 7,
+          "visible_pixels": 12887,
+          "opaque_pixels": 3,
+          "max_alpha": 255
+        },
+        {
+          "frame": 8,
+          "visible_pixels": 12961,
+          "opaque_pixels": 34,
+          "max_alpha": 255
+        },
+        {
+          "frame": 9,
+          "visible_pixels": 12906,
+          "opaque_pixels": 174,
+          "max_alpha": 255
+        },
+        {
+          "frame": 10,
+          "visible_pixels": 19188,
+          "opaque_pixels": 162,
+          "max_alpha": 255
+        },
+        {
+          "frame": 11,
+          "visible_pixels": 19525,
+          "opaque_pixels": 14,
+          "max_alpha": 255
+        },
+        {
+          "frame": 12,
+          "visible_pixels": 19680,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 13,
+          "visible_pixels": 19754,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 14,
+          "visible_pixels": 19802,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 15,
+          "visible_pixels": 19795,
+          "opaque_pixels": 303,
+          "max_alpha": 255
+        },
+        {
+          "frame": 16,
+          "visible_pixels": 19795,
+          "opaque_pixels": 36,
+          "max_alpha": 255
+        },
+        {
+          "frame": 17,
+          "visible_pixels": 19754,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 18,
+          "visible_pixels": 19700,
+          "opaque_pixels": 11,
+          "max_alpha": 255
+        },
+        {
+          "frame": 19,
+          "visible_pixels": 19663,
+          "opaque_pixels": 15,
+          "max_alpha": 255
+        },
+        {
+          "frame": 20,
+          "visible_pixels": 19542,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 21,
+          "visible_pixels": 19386,
+          "opaque_pixels": 259,
+          "max_alpha": 255
+        },
+        {
+          "frame": 22,
+          "visible_pixels": 18973,
+          "opaque_pixels": 291,
+          "max_alpha": 255
+        },
+        {
+          "frame": 23,
+          "visible_pixels": 10111,
+          "opaque_pixels": 291,
+          "max_alpha": 255
+        },
+        {
+          "frame": 24,
+          "visible_pixels": 10115,
+          "opaque_pixels": 21,
+          "max_alpha": 255
+        },
+        {
+          "frame": 25,
+          "visible_pixels": 10063,
+          "opaque_pixels": 12,
+          "max_alpha": 255
+        },
+        {
+          "frame": 26,
+          "visible_pixels": 10020,
+          "opaque_pixels": 11,
+          "max_alpha": 255
+        },
+        {
+          "frame": 27,
+          "visible_pixels": 9982,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 28,
+          "visible_pixels": 9841,
+          "opaque_pixels": 17,
+          "max_alpha": 255
+        },
+        {
+          "frame": 29,
+          "visible_pixels": 9604,
+          "opaque_pixels": 40,
+          "max_alpha": 255
+        },
+        {
+          "frame": 30,
+          "visible_pixels": 8857,
+          "opaque_pixels": 45,
+          "max_alpha": 255
+        },
+        {
+          "frame": 31,
+          "visible_pixels": 2092,
+          "opaque_pixels": 46,
+          "max_alpha": 255
+        }
+      ],
+      "anchor": "bottom-center",
+      "palette": "purple",
+      "variant_of": "ground_blast",
+      "preview": "assets/game/generated_cinematic/explosions/ground_blast_purple/previews/ground_blast_purple_32frames_30fps.webp",
+      "sizes": {
+        "128x128": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_purple/128x128/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_purple/128x128/ground_blast_purple_32frames_strip.png"
+        },
+        "192x192": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_purple/192x192/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_purple/192x192/ground_blast_purple_32frames_strip.png"
+        },
+        "256x256": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_purple/256x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_purple/256x256/ground_blast_purple_32frames_strip.png"
+        },
+        "320x256": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_purple/320x256/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_purple/320x256/ground_blast_purple_32frames_strip.png"
+        },
+        "320x320": {
+          "frames": "assets/game/generated_cinematic/explosions/ground_blast_purple/320x320/frames",
+          "strip": "assets/game/generated_cinematic/explosions/ground_blast_purple/320x320/ground_blast_purple_32frames_strip.png"
+        }
+      }
+    }
+  },
+  "backgrounds": {
+    "storm_bridge": {
+      "master": "assets/game/generated_cinematic/backgrounds/masters/storm_bridge_master_1448x1086.png",
+      "master_size": [
+        1448,
+        1086
+      ],
+      "exports": {
+        "680x510": "assets/game/generated_cinematic/backgrounds/game_plates/storm_bridge_680x510.png",
+        "1360x1020": "assets/game/generated_cinematic/backgrounds/game_plates/storm_bridge_1360x1020.png"
+      }
+    },
+    "toxic_reactor": {
+      "master": "assets/game/generated_cinematic/backgrounds/masters/toxic_reactor_master_1448x1086.png",
+      "master_size": [
+        1448,
+        1086
+      ],
+      "exports": {
+        "680x510": "assets/game/generated_cinematic/backgrounds/game_plates/toxic_reactor_680x510.png",
+        "1360x1020": "assets/game/generated_cinematic/backgrounds/game_plates/toxic_reactor_1360x1020.png"
+      }
+    },
+    "ruined_hangar": {
+      "master": "assets/game/generated_cinematic/backgrounds/masters/ruined_hangar_master_1448x1086.png",
+      "master_size": [
+        1448,
+        1086
+      ],
+      "exports": {
+        "680x510": "assets/game/generated_cinematic/backgrounds/game_plates/ruined_hangar_680x510.png",
+        "1360x1020": "assets/game/generated_cinematic/backgrounds/game_plates/ruined_hangar_1360x1020.png"
+      }
+    }
+  }
+}

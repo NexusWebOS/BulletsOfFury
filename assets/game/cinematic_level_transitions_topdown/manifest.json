@@ -1,0 +1,191 @@
+{
+  "pack": "Bullets of Fury top-down interactive cinematic transitions",
+  "native_size": [
+    1672,
+    941
+  ],
+  "stage_count": 9,
+  "campaign_stages": 8,
+  "bonus_stages": 1,
+  "camera": "true top-down / near-orthographic / 85-90 degrees / no horizon",
+  "flow": "bottom_to_top",
+  "global_constraints": {
+    "environment_only": true,
+    "no_baked_ships_or_aircraft": true,
+    "no_baked_vehicles": true,
+    "no_baked_enemies_or_creatures": true,
+    "no_baked_characters": true,
+    "no_baked_projectiles_or_explosions": true,
+    "no_baked_text_logos_or_ui": true
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "title": "RUMBLE IN THE JUNGLE",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_transitions_topdown/stage01_rumble_in_the_jungle_topdown.png",
+      "source_reference": "assets/game/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "camera": "true top-down near-orthographic 85-90 degrees",
+      "flow": "bottom_to_top",
+      "route_visual": "river islands, stone causeway and dam threshold",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic transition staging",
+      "sha256": "df35ac2dfc66156a442b4855e5ab6f31b73ee0a479a35100e1c51030d81ef4d1"
+    },
+    {
+      "stage": 2,
+      "title": "IT'S HOT IN HERE",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_transitions_topdown/stage02_its_hot_in_here_topdown.png",
+      "source_reference": "assets/game/cinematic_level_approaches/stage02_its_hot_in_here_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "camera": "true top-down near-orthographic 85-90 degrees",
+      "flow": "bottom_to_top",
+      "route_visual": "armored desert road through a volcanic combat zone",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic transition staging",
+      "sha256": "a20bb8af6df997cad623697685a36ca1964c6053758067debaf5b586aeff9419"
+    },
+    {
+      "stage": 3,
+      "title": "ICE STILL CAN'T SEE",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_transitions_topdown/stage03_ice_still_cant_see_topdown.png",
+      "source_reference": "assets/game/cinematic_level_approaches/stage03_ice_still_cant_see_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "camera": "true top-down near-orthographic 85-90 degrees",
+      "flow": "bottom_to_top",
+      "route_visual": "ice-shelf route into a frozen research cavern",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic transition staging",
+      "sha256": "4b8cea12f80b89122b5047bfbb64d536ab36654c1a263303d65cb1addcd6b28f"
+    },
+    {
+      "stage": 4,
+      "title": "CROUCHING MISSILES, HIDDEN DEATH",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_transitions_topdown/stage04_crouching_missiles_hidden_death_topdown.png",
+      "source_reference": "assets/game/cinematic_level_approaches/stage04_crouching_missiles_hidden_death_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "camera": "true top-down near-orthographic 85-90 degrees",
+      "flow": "bottom_to_top",
+      "route_visual": "coastal checkpoint highway leading to an airbase threshold",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic transition staging",
+      "sha256": "711405e20f87d678d883e03518d5fbc3a55ebcca10a3ba9e136efefe319dc551"
+    },
+    {
+      "stage": 5,
+      "title": "ALL FOR ONE, NONE FOR ALL",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_transitions_topdown/stage05_all_for_one_none_for_all_topdown.png",
+      "source_reference": "assets/game/cinematic_level_approaches/stage05_all_for_one_none_for_all_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "camera": "true top-down near-orthographic 85-90 degrees",
+      "flow": "bottom_to_top",
+      "route_visual": "orbital launch causeway and circular transit gate",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic transition staging",
+      "sha256": "5024f65b0598a00023e0117b6107db01d7f7783c076626813e05ab94aff35c99"
+    },
+    {
+      "stage": 6,
+      "title": "HEAVY TURBULENCE",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_transitions_topdown/stage06_heavy_turbulence_topdown.png",
+      "source_reference": "assets/game/cinematic_level_approaches/stage06_heavy_turbulence_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "camera": "true top-down near-orthographic 85-90 degrees",
+      "flow": "bottom_to_top",
+      "route_visual": "weather deck and daylight-to-supercell cloud route",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic transition staging",
+      "sha256": "be22d009aa19623795c191896c653af8b91eab4188dd9bdfc4e93ab0360cbedd"
+    },
+    {
+      "stage": 7,
+      "title": "NOT ANOTHER SEWER LEVEL",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_transitions_topdown/stage07_not_another_sewer_level_topdown.png",
+      "source_reference": "assets/game/cinematic_level_approaches/stage07_not_another_sewer_level_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "camera": "true top-down near-orthographic 85-90 degrees",
+      "flow": "bottom_to_top",
+      "route_visual": "toxic sewer canal, maintenance causeway and intake",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic transition staging",
+      "sha256": "f19fdcce61523eee4f47b8430c3a5d41bfefbb7de55101d647127aa12004bd28"
+    },
+    {
+      "stage": 8,
+      "title": "FURIOUS DEATH",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_transitions_topdown/stage08_furious_death_topdown.png",
+      "source_reference": "assets/game/cinematic_level_approaches/stage08_furious_death_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "camera": "true top-down near-orthographic 85-90 degrees",
+      "flow": "bottom_to_top",
+      "route_visual": "obsidian route across necrotic geology to a gravity abyss",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic transition staging",
+      "sha256": "d48f861cc499fe11e0995eec3863611660dd4fe1b3b998e442d9998a0bfffc45"
+    },
+    {
+      "stage": 9,
+      "title": "THE VELOCITY VOID",
+      "bonus": true,
+      "file": "assets/game/cinematic_level_transitions_topdown/stage09_the_velocity_void_bonus_topdown.png",
+      "source_reference": "assets/game/cinematic_level_approaches/stage09_the_velocity_void_bonus_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "camera": "true top-down near-orthographic 85-90 degrees",
+      "flow": "bottom_to_top",
+      "route_visual": "violet-cyan transit-gate corridor",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic transition staging",
+      "sha256": "4c234f105fb4c6c86ebf92436d3f8da6ee3e14d131e1c0b35988f14673e9911e"
+    }
+  ],
+  "interaction_zones": "assets/game/cinematic_level_transitions_topdown/interaction_zones.json",
+  "preview": "assets/game/cinematic_level_transitions_topdown/previews/topdown_transitions_contact.jpg",
+  "generation": {
+    "mode": "built-in ImageGen reference workflow",
+    "prompt_record": "assets/game/cinematic_level_transitions_topdown/GENERATION_PROMPTS.md"
+  }
+}

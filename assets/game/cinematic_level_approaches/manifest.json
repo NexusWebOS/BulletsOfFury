@@ -1,0 +1,161 @@
+{
+  "pack": "Bullets of Fury interactive cinematic level approaches",
+  "native_size": [
+    1672,
+    941
+  ],
+  "stage_count": 9,
+  "campaign_stages": 8,
+  "bonus_stages": 1,
+  "global_constraints": {
+    "environment_only": true,
+    "no_baked_ships": true,
+    "no_baked_enemies": true,
+    "no_baked_characters": true,
+    "no_baked_projectiles": true,
+    "no_baked_text_or_ui": true
+  },
+  "stages": [
+    {
+      "stage": 1,
+      "title": "RUMBLE IN THE JUNGLE",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "route_visual": "tropical coast, river causeway and distant dam",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic staging",
+      "sha256": "659bb865febd69646a6c341dcebf43c9d161473533f8bed343147f114bddc5d9"
+    },
+    {
+      "stage": 2,
+      "title": "IT'S HOT IN HERE",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_approaches/stage02_its_hot_in_here_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "route_visual": "desert observation apron leading into a volcanic caldera",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic staging",
+      "sha256": "095bfd4a050e52c7c7a15851b0b7993bd816588a88ddba87adbbb47fcb3360a8"
+    },
+    {
+      "stage": 3,
+      "title": "ICE STILL CAN'T SEE",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_approaches/stage03_ice_still_cant_see_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "route_visual": "polar research terrace leading toward a glacial canyon",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic staging",
+      "sha256": "dd02a3c3e37c345bc430b1a0b84b6af8676a9d41899e44ddc184403cc21a2265"
+    },
+    {
+      "stage": 4,
+      "title": "CROUCHING MISSILES, HIDDEN DEATH",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_approaches/stage04_crouching_missiles_hidden_death_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "route_visual": "empty coastal highway and open-airbase approach",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic staging",
+      "sha256": "5e8ca8bc608cbb9ebceb5f96bdcbda8a71bf4e77ae066411df5dfd064c582af2"
+    },
+    {
+      "stage": 5,
+      "title": "ALL FOR ONE, NONE FOR ALL",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_approaches/stage05_all_for_one_none_for_all_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "route_visual": "unoccupied orbital deck facing Earth and the asteroid route",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic staging",
+      "sha256": "f047ccbd8348facb5f69f894ccd6c1e7e7bfca616fd805ad592d0e99c371d079"
+    },
+    {
+      "stage": 6,
+      "title": "HEAVY TURBULENCE",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_approaches/stage06_heavy_turbulence_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "route_visual": "weather platform facing a day-to-night supercell corridor",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic staging",
+      "sha256": "116b703a570e8dafefba355f3546923e5c38f5bb121280543ca046f2b70e486b"
+    },
+    {
+      "stage": 7,
+      "title": "NOT ANOTHER SEWER LEVEL",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_approaches/stage07_not_another_sewer_level_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "route_visual": "dry maintenance platform overlooking the toxic sewer intake",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic staging",
+      "sha256": "c3004d117f5959e101f36ef803dc805cbb88da31ca23cc293fcb9961850cd4b6"
+    },
+    {
+      "stage": 8,
+      "title": "FURIOUS DEATH",
+      "bonus": false,
+      "file": "assets/game/cinematic_level_approaches/stage08_furious_death_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "route_visual": "empty observation dais facing the necrotic deep-space frontier",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic staging",
+      "sha256": "cce103307bcc4d4eb4a958958b369684d6e74a40259e9f13a468eb2a0503d2d0"
+    },
+    {
+      "stage": 9,
+      "title": "THE VELOCITY VOID",
+      "bonus": true,
+      "file": "assets/game/cinematic_level_approaches/stage09_the_velocity_void_bonus_approach.png",
+      "size": [
+        1672,
+        941
+      ],
+      "route_visual": "deserted bonus gate platform and nine-ring velocity corridor",
+      "baked_entities": [],
+      "environment_only": true,
+      "overlay_intent": "interactive cinematic staging",
+      "sha256": "c144a5fe771e5ae513a612cd925f7d503d6065c8d7958183177b75bcd372409e"
+    }
+  ],
+  "interaction_zones": "assets/game/cinematic_level_approaches/interaction_zones.json",
+  "preview": "assets/game/cinematic_level_approaches/previews/level_approaches_contact.jpg",
+  "generation": {
+    "mode": "built-in ImageGen reference workflow",
+    "prompt_record": "assets/game/cinematic_level_approaches/GENERATION_PROMPTS.md"
+  }
+}

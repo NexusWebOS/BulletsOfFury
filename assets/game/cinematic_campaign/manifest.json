@@ -1,0 +1,379 @@
+{
+  "pack": "FURY HQ \u2014 Earth Division campaign cinematics",
+  "native_cutscene_size": [
+    1672,
+    941
+  ],
+  "branding": {
+    "master_insignia": "assets/game/cinematic_campaign/branding_generated_official/fury_hq_earth_division_master_generated.png",
+    "horizontal_banner": "assets/game/cinematic_campaign/branding_generated_official/fury_hq_earth_division_horizontal_generated.png",
+    "vertical_banner": "assets/game/cinematic_campaign/branding_generated_official/fury_hq_earth_division_vertical_generated.png"
+  },
+  "exteriors": {
+    "01_fury_hq_island_aerial_banner": {
+      "file": "assets/game/cinematic_campaign/exteriors_generated_official/01_fury_hq_island_aerial_official_generated.png",
+      "size": [
+        1672,
+        941
+      ],
+      "banner_text": "FURY HQ \u2014 EARTH DIVISION",
+      "branding_method": "fully generated in-scene architectural insignia",
+      "sha256": "43664f427b95513a406af80e7e4cc59fea384a1b09b751e4a02cbc19fa9b293a"
+    },
+    "02_fury_hq_beach_approach_banner": {
+      "file": "assets/game/cinematic_campaign/exteriors_generated_official/02_fury_hq_beach_approach_official_generated.png",
+      "size": [
+        1672,
+        941
+      ],
+      "banner_text": "FURY HQ \u2014 EARTH DIVISION",
+      "branding_method": "fully generated in-scene architectural insignia",
+      "sha256": "6bfb1c39ef0b9eb6cb250e1b51f69de2459f05e815b37d82837c6be21b12a927"
+    },
+    "03_fury_hq_jungle_gate_banner": {
+      "file": "assets/game/cinematic_campaign/exteriors_generated_official/03_fury_hq_jungle_gate_official_generated.png",
+      "size": [
+        1672,
+        941
+      ],
+      "banner_text": "FURY HQ \u2014 EARTH DIVISION",
+      "branding_method": "fully generated in-scene architectural insignia",
+      "sha256": "04a933bfb40aff5a54bdba59f4b177608e8a0f3ff7f29b6334610a1f1e12ed8e"
+    }
+  },
+  "seated_poses": {
+    "axel": {
+      "file": "assets/game/cinematic_campaign/seated_poses/axel_seated_rgba.png",
+      "native_size": [
+        1022,
+        1294
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "7177e970effd3c0303dc4f77e856926ccd03294dfd640f5c569562cc4bca5309"
+    },
+    "freezer": {
+      "file": "assets/game/cinematic_campaign/seated_poses/freezer_seated_rgba.png",
+      "native_size": [
+        778,
+        1323
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "054985be6cc971fd55f3f06294c532970f705197f75d940834003241b41f28c9"
+    },
+    "falva": {
+      "file": "assets/game/cinematic_campaign/seated_poses/falva_seated_rgba.png",
+      "native_size": [
+        637,
+        1445
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "36fb55044befea00b31a34bae1efdd1c08c1117acdadb8e33ae9e9efa0373b48"
+    },
+    "lizzie": {
+      "file": "assets/game/cinematic_campaign/seated_poses/lizzie_seated_rgba.png",
+      "native_size": [
+        973,
+        1258
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "8aafd027069332be9ad8a18659d99da997728efdf4100f8bb4d2fb52630a81f0"
+    },
+    "yuri": {
+      "file": "assets/game/cinematic_campaign/seated_poses/yuri_seated_rgba.png",
+      "native_size": [
+        840,
+        1385
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "7b108f73bfcd136b8358e017b47aa22cba8bd21f78ee44017d40a02d8b6bb700"
+    },
+    "maverick": {
+      "file": "assets/game/cinematic_campaign/seated_poses/maverick_seated_rgba.png",
+      "native_size": [
+        851,
+        1368
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "e7311f82435d0bb8aa5f2f82de08d55e5e5dcc1e455e94c701abf73cd8fb0982"
+    },
+    "juggernaut": {
+      "file": "assets/game/cinematic_campaign/seated_poses/juggernaut_seated_rgba.png",
+      "native_size": [
+        1041,
+        1115
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "c802fd46b10b125c12c3fc3830456b7582ff14009dbf1a040af638987c0c7113"
+    },
+    "decker": {
+      "file": "assets/game/cinematic_campaign/seated_poses/decker_seated_rgba.png",
+      "native_size": [
+        737,
+        1361
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "d38c01a897ce64b8dd4f5dcf4074dbf713ade770eb2167adeb9b41c0e498fe47"
+    },
+    "cole": {
+      "file": "assets/game/cinematic_campaign/seated_poses/cole_seated_rgba.png",
+      "native_size": [
+        825,
+        1293
+      ],
+      "corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "sha256": "ee8f2cfb85078a2b4982b381507f5430518fbf01e0e5453cead01f256b95890b"
+    }
+  },
+  "lounge_and_alliance_cutscenes": {
+    "01_brotherhood_axel_freezer_lounge": {
+      "file": "assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/01_brotherhood_axel_freezer_lounge.png",
+      "size": [
+        1672,
+        941
+      ],
+      "title": "BROTHERHOOD OF FLIGHT",
+      "subtitle": "Axel commands. Freezer never leaves his wing."
+    },
+    "02_princesses_falva_lizzie_lounge": {
+      "file": "assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/02_princesses_falva_lizzie_lounge.png",
+      "size": [
+        1672,
+        941
+      ],
+      "title": "PRINCESSES OF THE SKY",
+      "subtitle": "Falva and Lizzie \u2014 sisters in blood and altitude."
+    },
+    "03_lone_wolves_yuri_maverick_lounge": {
+      "file": "assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/03_lone_wolves_yuri_maverick_lounge.png",
+      "size": [
+        1672,
+        941
+      ],
+      "title": "TWO LONE WOLVES",
+      "subtitle": "A lost cadet and a mercenary find unexpected camaraderie."
+    },
+    "04_command_table_cole_decker_juggernaut": {
+      "file": "assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/04_command_table_cole_decker_juggernaut.png",
+      "size": [
+        1672,
+        941
+      ],
+      "title": "COMMAND, CODE & CHAOS",
+      "subtitle": "Cole manages the division. Decker builds it. Juggernaut keeps it alive."
+    },
+    "05_juggernaut_storytime": {
+      "file": "assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/05_juggernaut_storytime.png",
+      "size": [
+        1672,
+        941
+      ],
+      "title": "THE LOUDEST MAN IN THE ROOM",
+      "subtitle": "Everybody gets along with Juggernaut \u2014 eventually at full volume."
+    },
+    "06_full_earth_division_lounge": {
+      "file": "assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/06_full_earth_division_lounge.png",
+      "size": [
+        1672,
+        941
+      ],
+      "title": "FURY HQ \u2014 EARTH DIVISION",
+      "subtitle": "Nine pilots. One headquarters. The campaign begins here."
+    },
+    "07_cole_decker_restricted_prototype_lab": {
+      "file": "assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/07_cole_decker_restricted_prototype_lab.png",
+      "size": [
+        1672,
+        941
+      ],
+      "title": "RESTRICTED PROTOTYPES",
+      "subtitle": "Decker built the lasers and photon cannon. Cole alone holds access."
+    }
+  },
+  "pilot_campaign_cutscenes": {
+    "axel": {
+      "file": "assets/game/cinematic_campaign/cutscenes/pilots/01_axel_campaign_intro.png",
+      "role": "AIR COMMANDER",
+      "tagline": "Brotherhood forged in flight.",
+      "background": "launch",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "freezer": {
+      "file": "assets/game/cinematic_campaign/cutscenes/pilots/02_freezer_campaign_intro.png",
+      "role": "RIGHT HAND",
+      "tagline": "The commander's wingman never breaks formation.",
+      "background": "launch",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "falva": {
+      "file": "assets/game/cinematic_campaign/cutscenes/pilots/03_falva_campaign_intro.png",
+      "role": "PRINCESS OF THE SKY",
+      "tagline": "Falva reads the horizon before anyone else.",
+      "background": "observation",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "lizzie": {
+      "file": "assets/game/cinematic_campaign/cutscenes/pilots/04_lizzie_campaign_intro.png",
+      "role": "ELDER PRINCESS",
+      "tagline": "The eldest sister always takes point.",
+      "background": "briefing",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "yuri": {
+      "file": "assets/game/cinematic_campaign/cutscenes/pilots/05_yuri_campaign_intro.png",
+      "role": "LOST CADET",
+      "tagline": "He joined seeking answers \u2014 and found a division.",
+      "background": "jungle",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "maverick": {
+      "file": "assets/game/cinematic_campaign/cutscenes/pilots/06_maverick_campaign_intro.png",
+      "role": "MERCENARY",
+      "tagline": "A lone contract becomes a cause.",
+      "background": "beach",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "juggernaut": {
+      "file": "assets/game/cinematic_campaign/cutscenes/pilots/07_juggernaut_campaign_intro.png",
+      "role": "HEAVY ASSAULT",
+      "tagline": "The loudest laugh and biggest heart in FURY HQ.",
+      "background": "ready",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "decker": {
+      "file": "assets/game/cinematic_campaign/cutscenes/pilots/08_decker_campaign_intro.png",
+      "role": "SYSTEMS ARCHITECT",
+      "tagline": "Code, circuits and weapons nobody else is cleared to see.",
+      "background": "lab",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    "cole": {
+      "file": "assets/game/cinematic_campaign/cutscenes/pilots/09_cole_campaign_intro.png",
+      "role": "COMMANDING OFFICER",
+      "tagline": "Earth Division answers to one command.",
+      "background": "command",
+      "size": [
+        1672,
+        941
+      ]
+    }
+  },
+  "narrative": {
+    "division": "FURY HQ \u2014 Earth Division",
+    "alliances": {
+      "brotherhood_of_flight": [
+        "axel",
+        "freezer"
+      ],
+      "princesses_of_the_sky": [
+        "falva",
+        "lizzie"
+      ],
+      "lone_wolf_camaraderie": [
+        "yuri",
+        "maverick"
+      ],
+      "restricted_command_technology": [
+        "cole",
+        "decker"
+      ],
+      "team_heart": [
+        "juggernaut",
+        "everyone"
+      ]
+    },
+    "command": {
+      "commanding_officer": "cole",
+      "air_commander": "axel",
+      "right_hand": "freezer"
+    },
+    "secrets": {
+      "builder": "decker",
+      "authorized_user": "cole",
+      "systems": [
+        "prototype lasers",
+        "photon cannon"
+      ]
+    }
+  },
+  "previews": {
+    "official_branding": "assets/game/cinematic_campaign/previews/fury_hq_official_generated_branding_contact.jpg",
+    "exteriors": "assets/game/cinematic_campaign/previews/fury_hq_exteriors_contact.jpg",
+    "seated_edge_qa": "assets/game/cinematic_campaign/previews/seated_pose_edge_qa.jpg",
+    "campaign": "assets/game/cinematic_campaign/previews/campaign_cutscenes_contact.jpg"
+  },
+  "generation": {
+    "mode": "built-in ImageGen reference mode for official branding and exterior signage; deterministic Pillow compositing for character staging",
+    "identity_policy": "seated poses generated from the approved six-pose character masters",
+    "text_policy": "official FURY HQ and EARTH DIVISION lettering is generated as an integrated physical part of every approved insignia and exterior sign",
+    "prompt_record": "assets/game/cinematic_campaign/GENERATION_PROMPTS.md"
+  }
+}

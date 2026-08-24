@@ -1,0 +1,45 @@
+{
+  "canvas": [
+    1672,
+    941
+  ],
+  "coordinate_system": "top-left pixel coordinates [x, y, width, height]",
+  "flow": "bottom_to_top",
+  "shared_recommended_zones": {
+    "entry_bottom": [
+      520,
+      700,
+      632,
+      220
+    ],
+    "travel_center": [
+      550,
+      60,
+      572,
+      821
+    ],
+    "left_interaction": [
+      70,
+      260,
+      430,
+      430
+    ],
+    "right_interaction": [
+      1172,
+      260,
+      430,
+      430
+    ],
+    "exit_top": [
+      520,
+      0,
+      632,
+      190
+    ]
+  },
+  "notes": [
+    "Zones are placement suggestions, not collision bounds.",
+    "Travel is composed for bottom entry and top exit; individual scenes may support additional side staging.",
+    "All PNGs contain environment only. Add every ship, aircraft, pilot, enemy, projectile, explosion and interactive object at runtime."
+  ]
+}

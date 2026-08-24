@@ -1,0 +1,1500 @@
+{
+  "pack": "FURY cinematic character pose masters",
+  "character_count": 9,
+  "poses_per_character": 6,
+  "total_frames": 54,
+  "pose_order": [
+    "01_front_neutral",
+    "02_front_left_3q",
+    "03_front_right_3q",
+    "04_back_neutral",
+    "05_back_left_3q",
+    "06_back_right_3q"
+  ],
+  "pipeline": {
+    "resizing": "none",
+    "alpha": "binary straight alpha",
+    "matte_extraction": "connected bright-neutral flood from sheet border",
+    "matte_luma_min": 218,
+    "matte_chroma_max": 18,
+    "crop_padding": 24
+  },
+  "characters": [
+    {
+      "character": "axel",
+      "input": "_BUILD_SOURCE/cinematic_character_pose_inputs/axel_master_rgb.png",
+      "input_sha256": "9cc9a872be632f60537cce131ad3155734fc6d8aeb26f8daea3c3cbced607c36",
+      "master": "assets/game/cinematic_characters/axel/axel_poses_master_rgba.png",
+      "master_size": [
+        2043,
+        770
+      ],
+      "master_mode": "RGBA",
+      "master_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "preview": "assets/game/cinematic_characters/axel/axel_edge_qa_preview.png",
+      "frames": [
+        {
+          "pose": "01_front_neutral",
+          "file": "assets/game/cinematic_characters/axel/poses/01_front_neutral.png",
+          "size": [
+            314,
+            612
+          ],
+          "source_crop": [
+            38,
+            48,
+            352,
+            660
+          ],
+          "connected_component_pixels": 89085,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "90a6190a889afd66a42f39e418c4f06eb026153ca3385c83c61798252fbe7e69"
+        },
+        {
+          "pose": "02_front_left_3q",
+          "file": "assets/game/cinematic_characters/axel/poses/02_front_left_3q.png",
+          "size": [
+            333,
+            614
+          ],
+          "source_crop": [
+            355,
+            48,
+            688,
+            662
+          ],
+          "connected_component_pixels": 87520,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "1a8caa8df9eedbe25f2a5391ead3c5e4e82da1be3e1077dce85d75f6c20beb6c"
+        },
+        {
+          "pose": "03_front_right_3q",
+          "file": "assets/game/cinematic_characters/axel/poses/03_front_right_3q.png",
+          "size": [
+            318,
+            620
+          ],
+          "source_crop": [
+            669,
+            54,
+            987,
+            674
+          ],
+          "connected_component_pixels": 81721,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "912ab1420279021258c4d13075e8ed1b21eb22b16f5a6b5677d265f8e26e6977"
+        },
+        {
+          "pose": "04_back_neutral",
+          "file": "assets/game/cinematic_characters/axel/poses/04_back_neutral.png",
+          "size": [
+            301,
+            619
+          ],
+          "source_crop": [
+            1018,
+            48,
+            1319,
+            667
+          ],
+          "connected_component_pixels": 86546,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "a2ba181ca6533db4830969a05158204022a4d4aaa68d7f20a8dc6abca8506534"
+        },
+        {
+          "pose": "05_back_left_3q",
+          "file": "assets/game/cinematic_characters/axel/poses/05_back_left_3q.png",
+          "size": [
+            315,
+            616
+          ],
+          "source_crop": [
+            1334,
+            48,
+            1649,
+            664
+          ],
+          "connected_component_pixels": 80250,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "bcfbdbd855aef3420f89b14579c9678ce512e263fe2f7f81c13451796a800a72"
+        },
+        {
+          "pose": "06_back_right_3q",
+          "file": "assets/game/cinematic_characters/axel/poses/06_back_right_3q.png",
+          "size": [
+            353,
+            609
+          ],
+          "source_crop": [
+            1633,
+            59,
+            1986,
+            668
+          ],
+          "connected_component_pixels": 84185,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "c07e49402492c000460ffda22cf9be95fd74f0ce2d73ec968ded8cdf9f30b32a"
+        }
+      ]
+    },
+    {
+      "character": "cole",
+      "input": "_BUILD_SOURCE/cinematic_character_pose_inputs/cole_master_rgb.png",
+      "input_sha256": "ff3a76c3c1ced8e2a35d63c12b5db499bde78a0e609dca001e84fd19951828e9",
+      "master": "assets/game/cinematic_characters/cole/cole_poses_master_rgba.png",
+      "master_size": [
+        1927,
+        816
+      ],
+      "master_mode": "RGBA",
+      "master_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "preview": "assets/game/cinematic_characters/cole/cole_edge_qa_preview.png",
+      "frames": [
+        {
+          "pose": "01_front_neutral",
+          "file": "assets/game/cinematic_characters/cole/poses/01_front_neutral.png",
+          "size": [
+            320,
+            710
+          ],
+          "source_crop": [
+            26,
+            36,
+            346,
+            746
+          ],
+          "connected_component_pixels": 108284,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "91c4190422fc7df87705915111143b367a7172a5a72390d4decafdd8bf92d223"
+        },
+        {
+          "pose": "02_front_left_3q",
+          "file": "assets/game/cinematic_characters/cole/poses/02_front_left_3q.png",
+          "size": [
+            289,
+            714
+          ],
+          "source_crop": [
+            336,
+            35,
+            625,
+            749
+          ],
+          "connected_component_pixels": 93236,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "1b58ed4d4245f171bba899072442440532a18ced9867da3c7aa059fa79e2c6bd"
+        },
+        {
+          "pose": "03_front_right_3q",
+          "file": "assets/game/cinematic_characters/cole/poses/03_front_right_3q.png",
+          "size": [
+            331,
+            711
+          ],
+          "source_crop": [
+            625,
+            38,
+            956,
+            749
+          ],
+          "connected_component_pixels": 102923,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "312f5c63ebf6f9befafad21c4b0a48ae30c8753852e559d4a0840d3084d92bbf"
+        },
+        {
+          "pose": "04_back_neutral",
+          "file": "assets/game/cinematic_characters/cole/poses/04_back_neutral.png",
+          "size": [
+            318,
+            707
+          ],
+          "source_crop": [
+            977,
+            40,
+            1295,
+            747
+          ],
+          "connected_component_pixels": 109097,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "1b68b14a6ab8234354d3b46e6ff0e0d06176f664d8ff01279060f96f3ede829f"
+        },
+        {
+          "pose": "05_back_left_3q",
+          "file": "assets/game/cinematic_characters/cole/poses/05_back_left_3q.png",
+          "size": [
+            314,
+            699
+          ],
+          "source_crop": [
+            1282,
+            47,
+            1596,
+            746
+          ],
+          "connected_component_pixels": 99608,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "1ea8429d8f850262835f9ede378ec7a5305ee775d237de7b68a5293c0669e9cf"
+        },
+        {
+          "pose": "06_back_right_3q",
+          "file": "assets/game/cinematic_characters/cole/poses/06_back_right_3q.png",
+          "size": [
+            336,
+            699
+          ],
+          "source_crop": [
+            1580,
+            48,
+            1916,
+            747
+          ],
+          "connected_component_pixels": 102845,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "3dbac033e41c8cbcccb73cfaf1120cf7d1b5522ac68dfd867003c9a632aea7ae"
+        }
+      ]
+    },
+    {
+      "character": "decker",
+      "input": "_BUILD_SOURCE/cinematic_character_pose_inputs/decker_master_rgb.png",
+      "input_sha256": "f06421fbdc82459006407bf72d6f175b9025bb4f57979ddd07b66943d8093981",
+      "master": "assets/game/cinematic_characters/decker/decker_poses_master_rgba.png",
+      "master_size": [
+        1812,
+        868
+      ],
+      "master_mode": "RGBA",
+      "master_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "preview": "assets/game/cinematic_characters/decker/decker_edge_qa_preview.png",
+      "frames": [
+        {
+          "pose": "01_front_neutral",
+          "file": "assets/game/cinematic_characters/decker/poses/01_front_neutral.png",
+          "size": [
+            332,
+            748
+          ],
+          "source_crop": [
+            4,
+            63,
+            336,
+            811
+          ],
+          "connected_component_pixels": 98633,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "2bdf58351fd7c7414793652c413dec3d3bc8ee86dbd4ae5930a7370e1fdf2078"
+        },
+        {
+          "pose": "02_front_left_3q",
+          "file": "assets/game/cinematic_characters/decker/poses/02_front_left_3q.png",
+          "size": [
+            318,
+            742
+          ],
+          "source_crop": [
+            325,
+            69,
+            643,
+            811
+          ],
+          "connected_component_pixels": 97418,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "9256c7cc9557a6cbe168158ff03253eed24540aa7822d70ff563e195aa123df3"
+        },
+        {
+          "pose": "03_front_right_3q",
+          "file": "assets/game/cinematic_characters/decker/poses/03_front_right_3q.png",
+          "size": [
+            328,
+            740
+          ],
+          "source_crop": [
+            623,
+            71,
+            951,
+            811
+          ],
+          "connected_component_pixels": 102460,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "2a111d41ab3840f6463d577a86e4916d0d283dc4be1a1e183ccbcb19e4714abe"
+        },
+        {
+          "pose": "04_back_neutral",
+          "file": "assets/game/cinematic_characters/decker/poses/04_back_neutral.png",
+          "size": [
+            303,
+            737
+          ],
+          "source_crop": [
+            932,
+            66,
+            1235,
+            803
+          ],
+          "connected_component_pixels": 108210,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "8b6aa941a8b78663a7c74881a98c5a5d7f1fbc49ece6120b0a42031f60ad705a"
+        },
+        {
+          "pose": "05_back_left_3q",
+          "file": "assets/game/cinematic_characters/decker/poses/05_back_left_3q.png",
+          "size": [
+            299,
+            735
+          ],
+          "source_crop": [
+            1226,
+            72,
+            1525,
+            807
+          ],
+          "connected_component_pixels": 97795,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "22b649dbcd8ebae53a2ecd2d013c1f0b2b0085e90dba76267d5ac746619188bb"
+        },
+        {
+          "pose": "06_back_right_3q",
+          "file": "assets/game/cinematic_characters/decker/poses/06_back_right_3q.png",
+          "size": [
+            313,
+            737
+          ],
+          "source_crop": [
+            1499,
+            71,
+            1812,
+            808
+          ],
+          "connected_component_pixels": 105173,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "8df79c62b4fa82d26fe7d528b0377a4906fe96f159fa55a233035ab1b0b546af"
+        }
+      ]
+    },
+    {
+      "character": "falva",
+      "input": "_BUILD_SOURCE/cinematic_character_pose_inputs/falva_master_rgb.png",
+      "input_sha256": "418b605242eff0ba91574a98a81953b69f25fb14b887a08f7f3040bb381c6a83",
+      "master": "assets/game/cinematic_characters/falva/falva_poses_master_rgba.png",
+      "master_size": [
+        1774,
+        887
+      ],
+      "master_mode": "RGBA",
+      "master_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "preview": "assets/game/cinematic_characters/falva/falva_edge_qa_preview.png",
+      "frames": [
+        {
+          "pose": "01_front_neutral",
+          "file": "assets/game/cinematic_characters/falva/poses/01_front_neutral.png",
+          "size": [
+            275,
+            651
+          ],
+          "source_crop": [
+            37,
+            114,
+            312,
+            765
+          ],
+          "connected_component_pixels": 81798,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "e1fb7b82f0c1cda0f84678d4ebeab48055e2a41c07e31af480fee3ee5b87365c"
+        },
+        {
+          "pose": "02_front_left_3q",
+          "file": "assets/game/cinematic_characters/falva/poses/02_front_left_3q.png",
+          "size": [
+            272,
+            657
+          ],
+          "source_crop": [
+            299,
+            114,
+            571,
+            771
+          ],
+          "connected_component_pixels": 80005,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "49473e575e457d5b1274f987d7174b230e97f0bfd3950d8ae5e258e231438a45"
+        },
+        {
+          "pose": "03_front_right_3q",
+          "file": "assets/game/cinematic_characters/falva/poses/03_front_right_3q.png",
+          "size": [
+            294,
+            657
+          ],
+          "source_crop": [
+            569,
+            114,
+            863,
+            771
+          ],
+          "connected_component_pixels": 80095,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "0a7630b1f2d0aceef8db02c9b13b7f79697d0c403e518bc787a8e4019bba5ee2"
+        },
+        {
+          "pose": "04_back_neutral",
+          "file": "assets/game/cinematic_characters/falva/poses/04_back_neutral.png",
+          "size": [
+            267,
+            649
+          ],
+          "source_crop": [
+            874,
+            113,
+            1141,
+            762
+          ],
+          "connected_component_pixels": 82686,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "6ba8e63ab26880473568c5fbe703b19165531a6e301f6fd0940713d5028b8a51"
+        },
+        {
+          "pose": "05_back_left_3q",
+          "file": "assets/game/cinematic_characters/falva/poses/05_back_left_3q.png",
+          "size": [
+            274,
+            651
+          ],
+          "source_crop": [
+            1141,
+            114,
+            1415,
+            765
+          ],
+          "connected_component_pixels": 77753,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "4685b4273b6889eb60a0ca4bbe70c380d2044ca720631f2c23bf4785a63598e0"
+        },
+        {
+          "pose": "06_back_right_3q",
+          "file": "assets/game/cinematic_characters/falva/poses/06_back_right_3q.png",
+          "size": [
+            329,
+            647
+          ],
+          "source_crop": [
+            1406,
+            121,
+            1735,
+            768
+          ],
+          "connected_component_pixels": 80934,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "9ea399cbc03318ea1df0b05ab74f518a1006f1589fd010aa57ae934df812eb84"
+        }
+      ]
+    },
+    {
+      "character": "freezer",
+      "input": "_BUILD_SOURCE/cinematic_character_pose_inputs/freezer_master_rgb.png",
+      "input_sha256": "95fce836e7c72968188ef8a2da88f5349a0cbb3735879cb955ab9ddbdc18ee76",
+      "master": "assets/game/cinematic_characters/freezer/freezer_poses_master_rgba.png",
+      "master_size": [
+        1774,
+        887
+      ],
+      "master_mode": "RGBA",
+      "master_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "preview": "assets/game/cinematic_characters/freezer/freezer_edge_qa_preview.png",
+      "frames": [
+        {
+          "pose": "01_front_neutral",
+          "file": "assets/game/cinematic_characters/freezer/poses/01_front_neutral.png",
+          "size": [
+            335,
+            724
+          ],
+          "source_crop": [
+            3,
+            91,
+            338,
+            815
+          ],
+          "connected_component_pixels": 117322,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "10e21a58949e88612990dea7beb9125216a69cfb1a2b7eea646ab340172b08f6"
+        },
+        {
+          "pose": "02_front_left_3q",
+          "file": "assets/game/cinematic_characters/freezer/poses/02_front_left_3q.png",
+          "size": [
+            324,
+            722
+          ],
+          "source_crop": [
+            310,
+            93,
+            634,
+            815
+          ],
+          "connected_component_pixels": 112124,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "764814c6be4cf54ac57ce8bfc21065b7161b2cc3f6c534aef8dab3abf26748b1"
+        },
+        {
+          "pose": "03_front_right_3q",
+          "file": "assets/game/cinematic_characters/freezer/poses/03_front_right_3q.png",
+          "size": [
+            310,
+            724
+          ],
+          "source_crop": [
+            590,
+            93,
+            900,
+            817
+          ],
+          "connected_component_pixels": 105836,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "218ae443abc7b69f0730046cb436f66a3913f9aed274bccb3e7f6938c12ef4d7"
+        },
+        {
+          "pose": "04_back_neutral",
+          "file": "assets/game/cinematic_characters/freezer/poses/04_back_neutral.png",
+          "size": [
+            322,
+            719
+          ],
+          "source_crop": [
+            881,
+            91,
+            1203,
+            810
+          ],
+          "connected_component_pixels": 113903,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "39c44c85448077a47bf29faf6829f6ffcdc680e66e94dc9e3b262790658d7234"
+        },
+        {
+          "pose": "05_back_left_3q",
+          "file": "assets/game/cinematic_characters/freezer/poses/05_back_left_3q.png",
+          "size": [
+            296,
+            712
+          ],
+          "source_crop": [
+            1154,
+            98,
+            1450,
+            810
+          ],
+          "connected_component_pixels": 102406,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "38968ec4ab940561a518872243d8fdd29314ab5fce271b6319602e6edad678b5"
+        },
+        {
+          "pose": "06_back_right_3q",
+          "file": "assets/game/cinematic_characters/freezer/poses/06_back_right_3q.png",
+          "size": [
+            324,
+            712
+          ],
+          "source_crop": [
+            1427,
+            99,
+            1751,
+            811
+          ],
+          "connected_component_pixels": 99008,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "c10078b03a4f203382ce0d775dee9d00268b08ecdd9fb9b6b8e4295eb6408775"
+        }
+      ]
+    },
+    {
+      "character": "juggernaut",
+      "input": "_BUILD_SOURCE/cinematic_character_pose_inputs/juggernaut_master_rgb.png",
+      "input_sha256": "a580848c94992dabb47080da9aa8eae797b83970780a9807f57a61b66e653ba7",
+      "master": "assets/game/cinematic_characters/juggernaut/juggernaut_poses_master_rgba.png",
+      "master_size": [
+        1774,
+        887
+      ],
+      "master_mode": "RGBA",
+      "master_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "preview": "assets/game/cinematic_characters/juggernaut/juggernaut_edge_qa_preview.png",
+      "frames": [
+        {
+          "pose": "01_front_neutral",
+          "file": "assets/game/cinematic_characters/juggernaut/poses/01_front_neutral.png",
+          "size": [
+            305,
+            569
+          ],
+          "source_crop": [
+            0,
+            189,
+            305,
+            758
+          ],
+          "connected_component_pixels": 89094,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "322215e65ce59c1c3673990f2d8f2cd9b30aaec6a909928a40f594ce0a42a7da"
+        },
+        {
+          "pose": "02_front_left_3q",
+          "file": "assets/game/cinematic_characters/juggernaut/poses/02_front_left_3q.png",
+          "size": [
+            334,
+            626
+          ],
+          "source_crop": [
+            267,
+            133,
+            601,
+            759
+          ],
+          "connected_component_pixels": 86951,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "707825c6d1aef684eb39700a809642c8ef1874e3fdef1c16bd3306da5abcc6d7"
+        },
+        {
+          "pose": "03_front_right_3q",
+          "file": "assets/game/cinematic_characters/juggernaut/poses/03_front_right_3q.png",
+          "size": [
+            328,
+            562
+          ],
+          "source_crop": [
+            567,
+            197,
+            895,
+            759
+          ],
+          "connected_component_pixels": 79730,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "a7c63cab6987cab5c52569937ec0656afbd8e9a58acb4ba3f3cbfde6ca97e7d2"
+        },
+        {
+          "pose": "04_back_neutral",
+          "file": "assets/game/cinematic_characters/juggernaut/poses/04_back_neutral.png",
+          "size": [
+            311,
+            567
+          ],
+          "source_crop": [
+            899,
+            189,
+            1210,
+            756
+          ],
+          "connected_component_pixels": 89324,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "4aa8ba9ca3c6103ae2762a27a59da7ce0e512a132326b4e1a7b0fbc4c01fc0b9"
+        },
+        {
+          "pose": "05_back_left_3q",
+          "file": "assets/game/cinematic_characters/juggernaut/poses/05_back_left_3q.png",
+          "size": [
+            294,
+            564
+          ],
+          "source_crop": [
+            1204,
+            195,
+            1498,
+            759
+          ],
+          "connected_component_pixels": 77300,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "df4e55767ffe9c83c01824296a5c00ae4ffd8dab09de1c0e18b1ad79dcc325bb"
+        },
+        {
+          "pose": "06_back_right_3q",
+          "file": "assets/game/cinematic_characters/juggernaut/poses/06_back_right_3q.png",
+          "size": [
+            317,
+            548
+          ],
+          "source_crop": [
+            1457,
+            211,
+            1774,
+            759
+          ],
+          "connected_component_pixels": 69034,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "2280d7206f0f1a9fd71facc5f1d5b56a2e610686e817ad843c7b8e3b1733cddd"
+        }
+      ]
+    },
+    {
+      "character": "lizzie",
+      "input": "_BUILD_SOURCE/cinematic_character_pose_inputs/lizzie_master_rgb.png",
+      "input_sha256": "8acbb156f35deaac9bec0514d896275a1e1d820ea28c0e7250d4363a50fc9777",
+      "master": "assets/game/cinematic_characters/lizzie/lizzie_poses_master_rgba.png",
+      "master_size": [
+        1933,
+        814
+      ],
+      "master_mode": "RGBA",
+      "master_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "preview": "assets/game/cinematic_characters/lizzie/lizzie_edge_qa_preview.png",
+      "frames": [
+        {
+          "pose": "01_front_neutral",
+          "file": "assets/game/cinematic_characters/lizzie/poses/01_front_neutral.png",
+          "size": [
+            291,
+            700
+          ],
+          "source_crop": [
+            43,
+            46,
+            334,
+            746
+          ],
+          "connected_component_pixels": 91344,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "9cd3585e39cf4711934cc5ae1273545b2d1aa8ff9bdf3c7fa5b3fc279b46b48e"
+        },
+        {
+          "pose": "02_front_left_3q",
+          "file": "assets/game/cinematic_characters/lizzie/poses/02_front_left_3q.png",
+          "size": [
+            412,
+            709
+          ],
+          "source_crop": [
+            309,
+            44,
+            721,
+            753
+          ],
+          "connected_component_pixels": 94852,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "e699cf93cedf1875b0434af98f4077b5414aa52ab3ac2ef4f5cca61c8fffb57a"
+        },
+        {
+          "pose": "03_front_right_3q",
+          "file": "assets/game/cinematic_characters/lizzie/poses/03_front_right_3q.png",
+          "size": [
+            295,
+            715
+          ],
+          "source_crop": [
+            726,
+            44,
+            1021,
+            759
+          ],
+          "connected_component_pixels": 89503,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "b71076158ee719e0a2cbfbda7e205dc94cc82d0ff6071347e50d051e7a770636"
+        },
+        {
+          "pose": "04_back_neutral",
+          "file": "assets/game/cinematic_characters/lizzie/poses/04_back_neutral.png",
+          "size": [
+            285,
+            702
+          ],
+          "source_crop": [
+            1045,
+            46,
+            1330,
+            748
+          ],
+          "connected_component_pixels": 90664,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "0be3a112c5017fdf97e5c325f591b15abd33b0cf7ee82968f59b140c9dc48f3e"
+        },
+        {
+          "pose": "05_back_left_3q",
+          "file": "assets/game/cinematic_characters/lizzie/poses/05_back_left_3q.png",
+          "size": [
+            289,
+            697
+          ],
+          "source_crop": [
+            1323,
+            50,
+            1612,
+            747
+          ],
+          "connected_component_pixels": 80890,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "bfe7a21c6dc9efd41ab1a141d5cac2e37e404bc27baca1b6791a249b8b33bfee"
+        },
+        {
+          "pose": "06_back_right_3q",
+          "file": "assets/game/cinematic_characters/lizzie/poses/06_back_right_3q.png",
+          "size": [
+            315,
+            696
+          ],
+          "source_crop": [
+            1606,
+            50,
+            1921,
+            746
+          ],
+          "connected_component_pixels": 85208,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "389fff07dd226ade3c3c056034966276aa8b3ba2eb6f51f9d1cec95bffa1aa91"
+        }
+      ]
+    },
+    {
+      "character": "maverick",
+      "input": "_BUILD_SOURCE/cinematic_character_pose_inputs/maverick_master_rgb.png",
+      "input_sha256": "539ed2287fce77d235f3fd13524ae867dae76c61ad51211f842711182f3bd67f",
+      "master": "assets/game/cinematic_characters/maverick/maverick_poses_master_rgba.png",
+      "master_size": [
+        1915,
+        821
+      ],
+      "master_mode": "RGBA",
+      "master_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "preview": "assets/game/cinematic_characters/maverick/maverick_edge_qa_preview.png",
+      "frames": [
+        {
+          "pose": "01_front_neutral",
+          "file": "assets/game/cinematic_characters/maverick/poses/01_front_neutral.png",
+          "size": [
+            301,
+            670
+          ],
+          "source_crop": [
+            13,
+            72,
+            314,
+            742
+          ],
+          "connected_component_pixels": 98866,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "bff5716b4f76c0bac1c8ddbb2ad8fee4ecc0acddc45c575c9db6974ae3270b60"
+        },
+        {
+          "pose": "02_front_left_3q",
+          "file": "assets/game/cinematic_characters/maverick/poses/02_front_left_3q.png",
+          "size": [
+            328,
+            674
+          ],
+          "source_crop": [
+            308,
+            75,
+            636,
+            749
+          ],
+          "connected_component_pixels": 94137,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "63c094a9b046e2b8db4bc254624092fdf7d94e00338619a42e8db7302b0b915b"
+        },
+        {
+          "pose": "03_front_right_3q",
+          "file": "assets/game/cinematic_characters/maverick/poses/03_front_right_3q.png",
+          "size": [
+            348,
+            655
+          ],
+          "source_crop": [
+            630,
+            90,
+            978,
+            745
+          ],
+          "connected_component_pixels": 84495,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "0d3812492fdedb2a8f17ebe331bbbb2dd93a40359a8f955de45c0f0a20662df4"
+        },
+        {
+          "pose": "04_back_neutral",
+          "file": "assets/game/cinematic_characters/maverick/poses/04_back_neutral.png",
+          "size": [
+            301,
+            670
+          ],
+          "source_crop": [
+            969,
+            77,
+            1270,
+            747
+          ],
+          "connected_component_pixels": 98124,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "3534e297fa0cf7dd934e5ea11748a4ed645c69dfb7a52c60abc0d690c1256b9b"
+        },
+        {
+          "pose": "05_back_left_3q",
+          "file": "assets/game/cinematic_characters/maverick/poses/05_back_left_3q.png",
+          "size": [
+            285,
+            665
+          ],
+          "source_crop": [
+            1283,
+            82,
+            1568,
+            747
+          ],
+          "connected_component_pixels": 87697,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "340b85bb66dbdf0e20cfe574318b21f0534d210093de036dfb474e9d8fe00c0d"
+        },
+        {
+          "pose": "06_back_right_3q",
+          "file": "assets/game/cinematic_characters/maverick/poses/06_back_right_3q.png",
+          "size": [
+            365,
+            667
+          ],
+          "source_crop": [
+            1545,
+            80,
+            1910,
+            747
+          ],
+          "connected_component_pixels": 93094,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "60b07d1fa0e0f5698ba1055d688c3dcd66c5d4ad8cd1788d7259ffcc5d406872"
+        }
+      ]
+    },
+    {
+      "character": "yuri",
+      "input": "_BUILD_SOURCE/cinematic_character_pose_inputs/yuri_master_rgb.png",
+      "input_sha256": "691dc6af0f1041f3923d36f354a95863e379595553993cfa6a8dd07d54645a30",
+      "master": "assets/game/cinematic_characters/yuri/yuri_poses_master_rgba.png",
+      "master_size": [
+        1934,
+        813
+      ],
+      "master_mode": "RGBA",
+      "master_corner_alpha": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "preview": "assets/game/cinematic_characters/yuri/yuri_edge_qa_preview.png",
+      "frames": [
+        {
+          "pose": "01_front_neutral",
+          "file": "assets/game/cinematic_characters/yuri/poses/01_front_neutral.png",
+          "size": [
+            304,
+            678
+          ],
+          "source_crop": [
+            38,
+            51,
+            342,
+            729
+          ],
+          "connected_component_pixels": 95302,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "b3cb521954344a92f576fb27f99631627620c4cc545fce0814817aa7f3f01f41"
+        },
+        {
+          "pose": "02_front_left_3q",
+          "file": "assets/game/cinematic_characters/yuri/poses/02_front_left_3q.png",
+          "size": [
+            397,
+            679
+          ],
+          "source_crop": [
+            283,
+            57,
+            680,
+            736
+          ],
+          "connected_component_pixels": 89360,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "6d2ef874034203e6e3e11c07c54ed4f3a3a084f138f71e6d9528cb9e82edb95a"
+        },
+        {
+          "pose": "03_front_right_3q",
+          "file": "assets/game/cinematic_characters/yuri/poses/03_front_right_3q.png",
+          "size": [
+            355,
+            669
+          ],
+          "source_crop": [
+            642,
+            67,
+            997,
+            736
+          ],
+          "connected_component_pixels": 86444,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "3265bdda3216bd72c7f62d5f7c3a5fb1a39083615c52a81d8a0d380bfd19e4e8"
+        },
+        {
+          "pose": "04_back_neutral",
+          "file": "assets/game/cinematic_characters/yuri/poses/04_back_neutral.png",
+          "size": [
+            292,
+            673
+          ],
+          "source_crop": [
+            991,
+            59,
+            1283,
+            732
+          ],
+          "connected_component_pixels": 93044,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "ff2fb9554e3345fe26f015563d012284340b03bbecfdc90dfafa7f73c05f0c16"
+        },
+        {
+          "pose": "05_back_left_3q",
+          "file": "assets/game/cinematic_characters/yuri/poses/05_back_left_3q.png",
+          "size": [
+            293,
+            664
+          ],
+          "source_crop": [
+            1275,
+            67,
+            1568,
+            731
+          ],
+          "connected_component_pixels": 80969,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "b737cc687ae935bde93fd5f4e558fbb19e5426009ff020945e15d000948cc150"
+        },
+        {
+          "pose": "06_back_right_3q",
+          "file": "assets/game/cinematic_characters/yuri/poses/06_back_right_3q.png",
+          "size": [
+            362,
+            657
+          ],
+          "source_crop": [
+            1541,
+            75,
+            1903,
+            732
+          ],
+          "connected_component_pixels": 80428,
+          "resampled": false,
+          "corner_alpha": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "exposed_bright_matte_pixels": 0,
+          "sha256": "d73725cb31abe3e01f1abf85dd68dd693a55f06bdf0cfb37299564499f87db6d"
+        }
+      ]
+    }
+  ]
+}

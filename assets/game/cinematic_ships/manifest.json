@@ -1,0 +1,1029 @@
+{
+  "pack": "Bullets of Fury pilot cinematic ship views",
+  "pilot_count": 9,
+  "views_per_pilot": 6,
+  "total_frames": 54,
+  "master_size": [
+    1536,
+    1024
+  ],
+  "fixed_frame_size": [
+    512,
+    512
+  ],
+  "background": "transparent RGBA",
+  "edge_contract": "decontaminated alpha; transparent RGB is zero; no matte or halo",
+  "generation": "built-in ImageGen reference workflow followed by deterministic chroma decontamination and frame extraction",
+  "continuity_repair_count": 8,
+  "continuity_repairs": [
+    {
+      "pilot": "falva",
+      "view": "02_front_left_3q"
+    },
+    {
+      "pilot": "falva",
+      "view": "03_front_right_3q"
+    },
+    {
+      "pilot": "falva",
+      "view": "06_hard_bank"
+    },
+    {
+      "pilot": "lizzie",
+      "view": "04_rear_left_3q"
+    },
+    {
+      "pilot": "lizzie",
+      "view": "05_rear_right_3q"
+    },
+    {
+      "pilot": "decker",
+      "view": "02_front_left_3q"
+    },
+    {
+      "pilot": "decker",
+      "view": "03_front_right_3q"
+    },
+    {
+      "pilot": "decker",
+      "view": "06_hard_bank"
+    }
+  ],
+  "view_order": [
+    {
+      "id": "01_top_down",
+      "description": "strict top-down neutral"
+    },
+    {
+      "id": "02_front_left_3q",
+      "description": "front-left three-quarter pseudo-3D"
+    },
+    {
+      "id": "03_front_right_3q",
+      "description": "front-right three-quarter pseudo-3D"
+    },
+    {
+      "id": "04_rear_left_3q",
+      "description": "rear-left three-quarter"
+    },
+    {
+      "id": "05_rear_right_3q",
+      "description": "rear-right three-quarter"
+    },
+    {
+      "id": "06_hard_bank",
+      "description": "dramatic hard-bank upper-side"
+    }
+  ],
+  "pilots": [
+    {
+      "pilot": "axel",
+      "master": "assets/game/cinematic_ships/axel/axel_cinematic_views_master_rgba.png",
+      "master_size": [
+        1536,
+        1024
+      ],
+      "master_sha256": "982a2e3a76ad67f619b289fd72141db2511c21023ed33ad7e81ea37158feead6",
+      "canonical_reference": "_BUILD_SOURCE/cinematic_ship_inputs/axel_canonical_ship_reference_rgba.png",
+      "chroma_source": "_BUILD_SOURCE/cinematic_ship_chroma/axel_cinematic_views_chroma_green.png",
+      "chroma_key": "green",
+      "continuity_repairs": [],
+      "edge_qa": "assets/game/cinematic_ships/axel/axel_edge_qa_checker.jpg",
+      "edge_metrics": {
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.845577,
+        "opaque_fraction": 0.147905,
+        "semi_transparent_key_dominance_p95": 5.0,
+        "transparent_rgb_zero": true
+      },
+      "views": [
+        {
+          "id": "01_top_down",
+          "description": "strict top-down neutral",
+          "frame_512": "assets/game/cinematic_ships/axel/frames_512/01_top_down.png",
+          "cutout_native": "assets/game/cinematic_ships/axel/cutouts_native/01_top_down.png",
+          "cutout_size": [
+            260,
+            334
+          ],
+          "frame_sha256": "9760b4e0521c316bb499d82aafa0d244a4fbf60a500e20c6dac219ba906551e4",
+          "cutout_sha256": "e637bc82eac7b2ccbb853d6c43eee8fb0ced69b54c7f04c754afde3310da993c",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "02_front_left_3q",
+          "description": "front-left three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/axel/frames_512/02_front_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/axel/cutouts_native/02_front_left_3q.png",
+          "cutout_size": [
+            318,
+            317
+          ],
+          "frame_sha256": "226538130b4f7ae5171c95cc94a436d28e349e3ba06d313167e5ba25422c2bda",
+          "cutout_sha256": "4ef19c7f121a4f3880ec34f9609c4375b8df890f85ae5ccf6683ba5275c5bb42",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "03_front_right_3q",
+          "description": "front-right three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/axel/frames_512/03_front_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/axel/cutouts_native/03_front_right_3q.png",
+          "cutout_size": [
+            292,
+            313
+          ],
+          "frame_sha256": "c5acfab2dd713cc942287332e07aad7ad7ddb9f5e3c028ecb1e6bb91b7aa66a5",
+          "cutout_sha256": "be7583f5250d57b642fc5ab748ee2328348ce8842b8cb0ce8930bcce444dc8b1",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "04_rear_left_3q",
+          "description": "rear-left three-quarter",
+          "frame_512": "assets/game/cinematic_ships/axel/frames_512/04_rear_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/axel/cutouts_native/04_rear_left_3q.png",
+          "cutout_size": [
+            408,
+            405
+          ],
+          "frame_sha256": "c881dad2d6812dd5a95083aa64cead8e8405b0e05b953b4f16a21220ea2a6e60",
+          "cutout_sha256": "6010e68dc230f069517d32d1678e9a2683826947a9df32b230087c57570643dd",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "05_rear_right_3q",
+          "description": "rear-right three-quarter",
+          "frame_512": "assets/game/cinematic_ships/axel/frames_512/05_rear_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/axel/cutouts_native/05_rear_right_3q.png",
+          "cutout_size": [
+            323,
+            278
+          ],
+          "frame_sha256": "069f6bc106f6fa9a7b7fd46128de03818ec17d231ff3627788ea6b30dd8594fe",
+          "cutout_sha256": "0b97f43672fc9e56376baf7517dd38c8bf847809e87b4d0be1e45c5960463ee1",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "06_hard_bank",
+          "description": "dramatic hard-bank upper-side",
+          "frame_512": "assets/game/cinematic_ships/axel/frames_512/06_hard_bank.png",
+          "cutout_native": "assets/game/cinematic_ships/axel/cutouts_native/06_hard_bank.png",
+          "cutout_size": [
+            283,
+            374
+          ],
+          "frame_sha256": "d1a45731d14b3697047c03a966259c6ebfce9896c5f0781faa9439804c177c23",
+          "cutout_sha256": "aed09277cab88d75e2f40400660bd186e2348259a06dcb52063d3a547f4d7285",
+          "continuity_repair_source": null
+        }
+      ]
+    },
+    {
+      "pilot": "freezer",
+      "master": "assets/game/cinematic_ships/freezer/freezer_cinematic_views_master_rgba.png",
+      "master_size": [
+        1536,
+        1024
+      ],
+      "master_sha256": "b58e09006379bd7c815c5a310ce74b73ef4d930260bde7450c09b67840a0bdbe",
+      "canonical_reference": "_BUILD_SOURCE/cinematic_ship_inputs/freezer_canonical_ship_reference_rgba.png",
+      "chroma_source": "_BUILD_SOURCE/cinematic_ship_chroma/freezer_cinematic_views_chroma_green.png",
+      "chroma_key": "green",
+      "continuity_repairs": [],
+      "edge_qa": "assets/game/cinematic_ships/freezer/freezer_edge_qa_checker.jpg",
+      "edge_metrics": {
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.826015,
+        "opaque_fraction": 0.167462,
+        "semi_transparent_key_dominance_p95": 5.0,
+        "transparent_rgb_zero": true
+      },
+      "views": [
+        {
+          "id": "01_top_down",
+          "description": "strict top-down neutral",
+          "frame_512": "assets/game/cinematic_ships/freezer/frames_512/01_top_down.png",
+          "cutout_native": "assets/game/cinematic_ships/freezer/cutouts_native/01_top_down.png",
+          "cutout_size": [
+            290,
+            331
+          ],
+          "frame_sha256": "330798e8de151dbb4fc0f0fdba5ecb8b1ce1fc88c99653c2d42cbb3e64dd9715",
+          "cutout_sha256": "b6982cbbbb24e583df18199c5473e3518d2ca001f4d7f914c892baba50c20f14",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "02_front_left_3q",
+          "description": "front-left three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/freezer/frames_512/02_front_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/freezer/cutouts_native/02_front_left_3q.png",
+          "cutout_size": [
+            296,
+            364
+          ],
+          "frame_sha256": "69f29f644168503e65169cdf49de72b0ae890c7e37a42ef436fa9daf5c91051a",
+          "cutout_sha256": "c75cef6792fd2da423d99541c77ed0d7bda9f31a0b8c87e0d07abe760f3acf6e",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "03_front_right_3q",
+          "description": "front-right three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/freezer/frames_512/03_front_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/freezer/cutouts_native/03_front_right_3q.png",
+          "cutout_size": [
+            284,
+            342
+          ],
+          "frame_sha256": "40e743dce162a0bef7115dacb611ce9dbca7646fe6558d46bc752a5fa7f7234c",
+          "cutout_sha256": "5963b6883fdf25c09fcdad2923ddc09460ad65d0e02dd7d6cd60183e05940c14",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "04_rear_left_3q",
+          "description": "rear-left three-quarter",
+          "frame_512": "assets/game/cinematic_ships/freezer/frames_512/04_rear_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/freezer/cutouts_native/04_rear_left_3q.png",
+          "cutout_size": [
+            307,
+            339
+          ],
+          "frame_sha256": "67a84166e17a1a037888915b072bff2ba2e6d834afb4412e18c293490b5d567b",
+          "cutout_sha256": "121ccaecba21c1519a8a12b74f53e4e38c7d757474ea3a72bb26b326887664df",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "05_rear_right_3q",
+          "description": "rear-right three-quarter",
+          "frame_512": "assets/game/cinematic_ships/freezer/frames_512/05_rear_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/freezer/cutouts_native/05_rear_right_3q.png",
+          "cutout_size": [
+            310,
+            293
+          ],
+          "frame_sha256": "364232fbdab5a79a2547fdbbaf3b00aed2fae521c88e54e18abf68ba2bd7ac41",
+          "cutout_sha256": "2e54ad064d69f44f6ada51479a986141a7817ad7bafcaa6ad245ec5200785f9e",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "06_hard_bank",
+          "description": "dramatic hard-bank upper-side",
+          "frame_512": "assets/game/cinematic_ships/freezer/frames_512/06_hard_bank.png",
+          "cutout_native": "assets/game/cinematic_ships/freezer/cutouts_native/06_hard_bank.png",
+          "cutout_size": [
+            338,
+            368
+          ],
+          "frame_sha256": "04444a92efa5e984d085a6ffb03c7d61e03e6ce723d09cd90ed5efcf4e9a6339",
+          "cutout_sha256": "f5afd67190134ff21612360618a5c5c73b68bc591bae8cb9b8085d6c6e83e4e5",
+          "continuity_repair_source": null
+        }
+      ]
+    },
+    {
+      "pilot": "falva",
+      "master": "assets/game/cinematic_ships/falva/falva_cinematic_views_master_rgba.png",
+      "master_size": [
+        1536,
+        1024
+      ],
+      "master_sha256": "412c5f08455615ab59e402cb6b8aebc4cc1e43f4315284a5d5cfafef9366b067",
+      "canonical_reference": "_BUILD_SOURCE/cinematic_ship_inputs/falva_canonical_ship_reference_rgba.png",
+      "chroma_source": "_BUILD_SOURCE/cinematic_ship_chroma/falva_cinematic_views_chroma_green.png",
+      "chroma_key": "green",
+      "continuity_repairs": [
+        "02_front_left_3q",
+        "03_front_right_3q",
+        "06_hard_bank"
+      ],
+      "edge_qa": "assets/game/cinematic_ships/falva/falva_edge_qa_checker.jpg",
+      "edge_metrics": {
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.8511,
+        "opaque_fraction": 0.142257,
+        "semi_transparent_key_dominance_p95": 6.0,
+        "transparent_rgb_zero": true
+      },
+      "views": [
+        {
+          "id": "01_top_down",
+          "description": "strict top-down neutral",
+          "frame_512": "assets/game/cinematic_ships/falva/frames_512/01_top_down.png",
+          "cutout_native": "assets/game/cinematic_ships/falva/cutouts_native/01_top_down.png",
+          "cutout_size": [
+            415,
+            438
+          ],
+          "frame_sha256": "5cbf762bceed3c5d260a233c584dda74fe3684aec3fd2f952f60567150715310",
+          "cutout_sha256": "182bf051b1bd928f9343a794d3db66893c224d082b9a43d048d271b17e9be3d8",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "02_front_left_3q",
+          "description": "front-left three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/falva/frames_512/02_front_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/falva/cutouts_native/02_front_left_3q.png",
+          "cutout_size": [
+            298,
+            351
+          ],
+          "frame_sha256": "8b0e5b7b2bf676075a9c92be779b32e6395b330c5a141dce66f985d937fd610b",
+          "cutout_sha256": "f6cbc03b1dea592b1d551897762f3534e003b87e92db4933b9d9dbd4cd71ff40",
+          "continuity_repair_source": "_BUILD_SOURCE/cinematic_ship_repairs/falva/02_front_left_3q_chroma_green.png"
+        },
+        {
+          "id": "03_front_right_3q",
+          "description": "front-right three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/falva/frames_512/03_front_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/falva/cutouts_native/03_front_right_3q.png",
+          "cutout_size": [
+            302,
+            325
+          ],
+          "frame_sha256": "3822902eb7035dc6f544792070f975e3d9cc73706f5b83ae20a218d1efbfde3d",
+          "cutout_sha256": "f607bc139a49880f17cee0df7273cc65573389c62b8b00cec778b26f14539c76",
+          "continuity_repair_source": "_BUILD_SOURCE/cinematic_ship_repairs/falva/03_front_right_3q_chroma_green.png"
+        },
+        {
+          "id": "04_rear_left_3q",
+          "description": "rear-left three-quarter",
+          "frame_512": "assets/game/cinematic_ships/falva/frames_512/04_rear_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/falva/cutouts_native/04_rear_left_3q.png",
+          "cutout_size": [
+            394,
+            367
+          ],
+          "frame_sha256": "1d39352d3d74ff82c5e2d60767448daff1a39ed2824479f8dd1de54fede03c2b",
+          "cutout_sha256": "1f5811e3c47a52fce35807b3a39608706e15c84f5deb7666d8a55e051899f66d",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "05_rear_right_3q",
+          "description": "rear-right three-quarter",
+          "frame_512": "assets/game/cinematic_ships/falva/frames_512/05_rear_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/falva/cutouts_native/05_rear_right_3q.png",
+          "cutout_size": [
+            303,
+            253
+          ],
+          "frame_sha256": "ee1d97461aaba683bbe718bd4e011e3b874b16fc79a5cfd6d623b9cee5cc224f",
+          "cutout_sha256": "5f8c95795d39cbb240272f0d0fbbd6e78f802a88cbc4cacbb646d3816dd5b36d",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "06_hard_bank",
+          "description": "dramatic hard-bank upper-side",
+          "frame_512": "assets/game/cinematic_ships/falva/frames_512/06_hard_bank.png",
+          "cutout_native": "assets/game/cinematic_ships/falva/cutouts_native/06_hard_bank.png",
+          "cutout_size": [
+            307,
+            348
+          ],
+          "frame_sha256": "684904ca43279446c650a11169a3390ff68b3ed8c8884ff395b5f6710197d908",
+          "cutout_sha256": "3bcd0702755247f162d1faca6859101a3dc90827dc905c6f93616c4b2dc6007e",
+          "continuity_repair_source": "_BUILD_SOURCE/cinematic_ship_repairs/falva/06_hard_bank_chroma_green.png"
+        }
+      ]
+    },
+    {
+      "pilot": "lizzie",
+      "master": "assets/game/cinematic_ships/lizzie/lizzie_cinematic_views_master_rgba.png",
+      "master_size": [
+        1536,
+        1024
+      ],
+      "master_sha256": "a931ee179fc77c87a573e9f4d2ff2d705e12f4ab371762bc6abbfc642cf30fed",
+      "canonical_reference": "_BUILD_SOURCE/cinematic_ship_inputs/lizzie_canonical_ship_reference_rgba.png",
+      "chroma_source": "_BUILD_SOURCE/cinematic_ship_chroma/lizzie_cinematic_views_chroma_green.png",
+      "chroma_key": "green",
+      "continuity_repairs": [
+        "04_rear_left_3q",
+        "05_rear_right_3q"
+      ],
+      "edge_qa": "assets/game/cinematic_ships/lizzie/lizzie_edge_qa_checker.jpg",
+      "edge_metrics": {
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.842927,
+        "opaque_fraction": 0.15134,
+        "semi_transparent_key_dominance_p95": 1.0,
+        "transparent_rgb_zero": true
+      },
+      "views": [
+        {
+          "id": "01_top_down",
+          "description": "strict top-down neutral",
+          "frame_512": "assets/game/cinematic_ships/lizzie/frames_512/01_top_down.png",
+          "cutout_native": "assets/game/cinematic_ships/lizzie/cutouts_native/01_top_down.png",
+          "cutout_size": [
+            336,
+            356
+          ],
+          "frame_sha256": "4cc93b859fa5cde4edecc4968ab579309465d9582c3a53cf67b04bbd5b441166",
+          "cutout_sha256": "b553a829ccde315c24f3d6b304ecc693c498f0d240c060af00894d58faf1fb5a",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "02_front_left_3q",
+          "description": "front-left three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/lizzie/frames_512/02_front_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/lizzie/cutouts_native/02_front_left_3q.png",
+          "cutout_size": [
+            398,
+            251
+          ],
+          "frame_sha256": "556a74acd8b0f25fa2d25bd601850aff4c9b194fcb66281634d4aa1eed58902e",
+          "cutout_sha256": "9b34292713f56910b68834fcd90ddefe25d69ab3478742965f362d64aa283e07",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "03_front_right_3q",
+          "description": "front-right three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/lizzie/frames_512/03_front_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/lizzie/cutouts_native/03_front_right_3q.png",
+          "cutout_size": [
+            410,
+            275
+          ],
+          "frame_sha256": "0a93ee6514ae19a1db1d5d10b13d8972cf9a73007a98077e20b61607b10be704",
+          "cutout_sha256": "67c0272fd181da8c28d5383d96f67511e2d98c1b8fc34c34c7adf796bef02eda",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "04_rear_left_3q",
+          "description": "rear-left three-quarter",
+          "frame_512": "assets/game/cinematic_ships/lizzie/frames_512/04_rear_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/lizzie/cutouts_native/04_rear_left_3q.png",
+          "cutout_size": [
+            390,
+            236
+          ],
+          "frame_sha256": "d267e19d21e553421ae2d802a523b7728c2eaec1c9b4a77bfcd70e6b5d3dedc4",
+          "cutout_sha256": "878a102c9578975df210d8807c8dbe28d9f565bedc91e2e3d61e2e7530d5fa12",
+          "continuity_repair_source": "_BUILD_SOURCE/cinematic_ship_repairs/lizzie/04_rear_left_3q_chroma_green.png"
+        },
+        {
+          "id": "05_rear_right_3q",
+          "description": "rear-right three-quarter",
+          "frame_512": "assets/game/cinematic_ships/lizzie/frames_512/05_rear_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/lizzie/cutouts_native/05_rear_right_3q.png",
+          "cutout_size": [
+            394,
+            241
+          ],
+          "frame_sha256": "c582c6a90e34fb2e191b9e91d55dd0687ab267ad08091cba65a1d74213165202",
+          "cutout_sha256": "381c35241a778b646118c662f12f4cbbf7841efff4fdd573dcc842db147b3d34",
+          "continuity_repair_source": "_BUILD_SOURCE/cinematic_ship_repairs/lizzie/05_rear_right_3q_chroma_green.png"
+        },
+        {
+          "id": "06_hard_bank",
+          "description": "dramatic hard-bank upper-side",
+          "frame_512": "assets/game/cinematic_ships/lizzie/frames_512/06_hard_bank.png",
+          "cutout_native": "assets/game/cinematic_ships/lizzie/cutouts_native/06_hard_bank.png",
+          "cutout_size": [
+            370,
+            319
+          ],
+          "frame_sha256": "a7b893778f5bf505a7bf3bdbd1da87b5c6dff24e6b20305e7bece3994fd6e9bb",
+          "cutout_sha256": "0ec32ecdc75b0f6b394a1936f396c013d8183cf7d17448d63c8dec979a41968e",
+          "continuity_repair_source": null
+        }
+      ]
+    },
+    {
+      "pilot": "yuri",
+      "master": "assets/game/cinematic_ships/yuri/yuri_cinematic_views_master_rgba.png",
+      "master_size": [
+        1536,
+        1024
+      ],
+      "master_sha256": "db5cda8390d74f487f7d5c8230af42a957a6a7b0edacb42edbc2db83b41861fd",
+      "canonical_reference": "_BUILD_SOURCE/cinematic_ship_inputs/yuri_canonical_ship_reference_rgba.png",
+      "chroma_source": "_BUILD_SOURCE/cinematic_ship_chroma/yuri_cinematic_views_chroma_green.png",
+      "chroma_key": "green",
+      "continuity_repairs": [],
+      "edge_qa": "assets/game/cinematic_ships/yuri/yuri_edge_qa_checker.jpg",
+      "edge_metrics": {
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.844174,
+        "opaque_fraction": 0.149681,
+        "semi_transparent_key_dominance_p95": 4.0,
+        "transparent_rgb_zero": true
+      },
+      "views": [
+        {
+          "id": "01_top_down",
+          "description": "strict top-down neutral",
+          "frame_512": "assets/game/cinematic_ships/yuri/frames_512/01_top_down.png",
+          "cutout_native": "assets/game/cinematic_ships/yuri/cutouts_native/01_top_down.png",
+          "cutout_size": [
+            350,
+            353
+          ],
+          "frame_sha256": "f497634abe775a4b91c20eb319379cc8c6fa3e0b77379b5f36bb57552effd8d8",
+          "cutout_sha256": "99d85949de4280854f2f42ad5381eab63ff50b164c40b19ba4d16a605460a363",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "02_front_left_3q",
+          "description": "front-left three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/yuri/frames_512/02_front_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/yuri/cutouts_native/02_front_left_3q.png",
+          "cutout_size": [
+            310,
+            326
+          ],
+          "frame_sha256": "695346009e1fe47eb51fc2006ba3bd5f7599b96e4010ba65cdc95de982fb78dc",
+          "cutout_sha256": "b3130c5418a08e4ecf47fc31e43118fcb1178f5d27567f87029a9d5a26b3c0bb",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "03_front_right_3q",
+          "description": "front-right three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/yuri/frames_512/03_front_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/yuri/cutouts_native/03_front_right_3q.png",
+          "cutout_size": [
+            283,
+            316
+          ],
+          "frame_sha256": "e405d105b1af79dde430f644fa79b6677de1b9b805fd23c98390b307c54046fa",
+          "cutout_sha256": "ee25b792461aacfbafce6a545a1a2f0532f7e389ee2438c7f30b4012a6ff5561",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "04_rear_left_3q",
+          "description": "rear-left three-quarter",
+          "frame_512": "assets/game/cinematic_ships/yuri/frames_512/04_rear_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/yuri/cutouts_native/04_rear_left_3q.png",
+          "cutout_size": [
+            314,
+            227
+          ],
+          "frame_sha256": "c1d2f48efe23ad26a190c843ca746fa07f74074f4a46da640248423e21c7f128",
+          "cutout_sha256": "1976abba70887029c61a9f7b31d28680242df8eb1c0a6c870ae8c7a2876609bd",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "05_rear_right_3q",
+          "description": "rear-right three-quarter",
+          "frame_512": "assets/game/cinematic_ships/yuri/frames_512/05_rear_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/yuri/cutouts_native/05_rear_right_3q.png",
+          "cutout_size": [
+            311,
+            227
+          ],
+          "frame_sha256": "5b29851efde31a3c9ac716d6ba69fbea8e7fb064dd8e267c0bbcbfe71b823ca6",
+          "cutout_sha256": "d20299615ebdb6f7763bc54af1b98b0c9ae0317fc03fa89c3c598c1722d75fcb",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "06_hard_bank",
+          "description": "dramatic hard-bank upper-side",
+          "frame_512": "assets/game/cinematic_ships/yuri/frames_512/06_hard_bank.png",
+          "cutout_native": "assets/game/cinematic_ships/yuri/cutouts_native/06_hard_bank.png",
+          "cutout_size": [
+            364,
+            300
+          ],
+          "frame_sha256": "0b40fd89a9b0d9ae587588f3161f6b8c207ccee2eabb569dd9549afa8e7a09da",
+          "cutout_sha256": "8db957f1400e6a8b0aab02b580011fecf1885e8ec481e3fa67b32aed15a0a011",
+          "continuity_repair_source": null
+        }
+      ]
+    },
+    {
+      "pilot": "maverick",
+      "master": "assets/game/cinematic_ships/maverick/maverick_cinematic_views_master_rgba.png",
+      "master_size": [
+        1536,
+        1024
+      ],
+      "master_sha256": "3bee10042f8c42ae19171a0ca2e55d860a60d00cc4dd9221a5f71a5215fa0372",
+      "canonical_reference": "_BUILD_SOURCE/cinematic_ship_inputs/maverick_canonical_ship_reference_rgba.png",
+      "chroma_source": "_BUILD_SOURCE/cinematic_ship_chroma/maverick_cinematic_views_chroma_magenta.png",
+      "chroma_key": "magenta",
+      "continuity_repairs": [],
+      "edge_qa": "assets/game/cinematic_ships/maverick/maverick_edge_qa_checker.jpg",
+      "edge_metrics": {
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.822723,
+        "opaque_fraction": 0.167059,
+        "semi_transparent_key_dominance_p95": 6.0,
+        "transparent_rgb_zero": true
+      },
+      "views": [
+        {
+          "id": "01_top_down",
+          "description": "strict top-down neutral",
+          "frame_512": "assets/game/cinematic_ships/maverick/frames_512/01_top_down.png",
+          "cutout_native": "assets/game/cinematic_ships/maverick/cutouts_native/01_top_down.png",
+          "cutout_size": [
+            346,
+            387
+          ],
+          "frame_sha256": "d846b43bc4a1be0554dfa71e5c8fc19cc2f06ac3b54b6c1bb233c10a9f7dc821",
+          "cutout_sha256": "5c1196795f6506110e97396b2cd84a8310765de312cb2e0368b6cb886e0cd57c",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "02_front_left_3q",
+          "description": "front-left three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/maverick/frames_512/02_front_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/maverick/cutouts_native/02_front_left_3q.png",
+          "cutout_size": [
+            306,
+            369
+          ],
+          "frame_sha256": "7e9df6927f6339edd2fdc438545806e2c95c952125c1bb26029d0fc9b9fbd3ec",
+          "cutout_sha256": "a16fd85c1f30510674d287e754bd503eba7f3a27daf6431f11a64d54b6af57fc",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "03_front_right_3q",
+          "description": "front-right three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/maverick/frames_512/03_front_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/maverick/cutouts_native/03_front_right_3q.png",
+          "cutout_size": [
+            302,
+            365
+          ],
+          "frame_sha256": "92e0210388016ce09a15f9145dd7bde4578fcb3c080a789243cdc7e70a019df0",
+          "cutout_sha256": "bfce7d4c35384450d8d72b43e5d39f30462d7e038be0285e6aee8e1fa9e048c6",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "04_rear_left_3q",
+          "description": "rear-left three-quarter",
+          "frame_512": "assets/game/cinematic_ships/maverick/frames_512/04_rear_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/maverick/cutouts_native/04_rear_left_3q.png",
+          "cutout_size": [
+            420,
+            382
+          ],
+          "frame_sha256": "eff01a0ba4b5a6ec2c34743e96f760de6487a735d21eca4b9d8749c6d4feebc8",
+          "cutout_sha256": "114842e0fb392e03368045f2f995e00309303230d95490be80dcd9cb86206712",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "05_rear_right_3q",
+          "description": "rear-right three-quarter",
+          "frame_512": "assets/game/cinematic_ships/maverick/frames_512/05_rear_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/maverick/cutouts_native/05_rear_right_3q.png",
+          "cutout_size": [
+            333,
+            306
+          ],
+          "frame_sha256": "a71945f6d3a0a2b4ca891d8b76616ada2ea5cf47accf9c7b41ee6295de046844",
+          "cutout_sha256": "8f4cef4ed17a45eded42df76e959d5c6735994805fdfba3791bc8e880b46010c",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "06_hard_bank",
+          "description": "dramatic hard-bank upper-side",
+          "frame_512": "assets/game/cinematic_ships/maverick/frames_512/06_hard_bank.png",
+          "cutout_native": "assets/game/cinematic_ships/maverick/cutouts_native/06_hard_bank.png",
+          "cutout_size": [
+            488,
+            441
+          ],
+          "frame_sha256": "dda8cdda8cfe6b1caeb3989eb7736c1951cde1818ce2c6a02a52f1ec72e1853b",
+          "cutout_sha256": "d547d94c1d9b84b367752018dddee8563e53c5e86f833aec419ae55af24713df",
+          "continuity_repair_source": null
+        }
+      ]
+    },
+    {
+      "pilot": "juggernaut",
+      "master": "assets/game/cinematic_ships/juggernaut/juggernaut_cinematic_views_master_rgba.png",
+      "master_size": [
+        1536,
+        1024
+      ],
+      "master_sha256": "4a8c72cf6b8de254c9fb34c7749b993ff6b3ca97e73a81aefc4853e469fd5af1",
+      "canonical_reference": "_BUILD_SOURCE/cinematic_ship_inputs/juggernaut_canonical_ship_reference_rgba.png",
+      "chroma_source": "_BUILD_SOURCE/cinematic_ship_chroma/juggernaut_cinematic_views_chroma_green.png",
+      "chroma_key": "green",
+      "continuity_repairs": [],
+      "edge_qa": "assets/game/cinematic_ships/juggernaut/juggernaut_edge_qa_checker.jpg",
+      "edge_metrics": {
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.763599,
+        "opaque_fraction": 0.228542,
+        "semi_transparent_key_dominance_p95": 8.0,
+        "transparent_rgb_zero": true
+      },
+      "views": [
+        {
+          "id": "01_top_down",
+          "description": "strict top-down neutral",
+          "frame_512": "assets/game/cinematic_ships/juggernaut/frames_512/01_top_down.png",
+          "cutout_native": "assets/game/cinematic_ships/juggernaut/cutouts_native/01_top_down.png",
+          "cutout_size": [
+            293,
+            396
+          ],
+          "frame_sha256": "685dcc60b18a7ed8345b3319ba9403a9c41e72f0833935139150b6fd5a168bde",
+          "cutout_sha256": "edb96025024588d9f13ecef2ce082e0e2f2a3a7b217481f848e69d0f2474fcf8",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "02_front_left_3q",
+          "description": "front-left three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/juggernaut/frames_512/02_front_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/juggernaut/cutouts_native/02_front_left_3q.png",
+          "cutout_size": [
+            310,
+            371
+          ],
+          "frame_sha256": "f2414bfd912fadb65b41403b08569d6c14aa236619afa433f2f5f6f0637355ba",
+          "cutout_sha256": "7f3b3fe58a59aac3f9fab22987772c8ae557f06c64e583c58bfecd30355405ac",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "03_front_right_3q",
+          "description": "front-right three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/juggernaut/frames_512/03_front_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/juggernaut/cutouts_native/03_front_right_3q.png",
+          "cutout_size": [
+            300,
+            379
+          ],
+          "frame_sha256": "7db0f22ace0a2cab536202aca14dd7a2e9daeb3afc44295107f7ca3800fd7c31",
+          "cutout_sha256": "ce8da3214cc8e7c7614683aa049816cf632ddd6ccc5d8b5e1844daaa873f9e9f",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "04_rear_left_3q",
+          "description": "rear-left three-quarter",
+          "frame_512": "assets/game/cinematic_ships/juggernaut/frames_512/04_rear_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/juggernaut/cutouts_native/04_rear_left_3q.png",
+          "cutout_size": [
+            329,
+            282
+          ],
+          "frame_sha256": "6320f5e5e92ccdf13488226424ef0bcd0df02547b776f4cd8ca2b3c6f2e9b0f4",
+          "cutout_sha256": "1a0a6fe23ed34a65e8aa5524fb32b7753bbbf63c514df0fdf9f9673fe6b88e38",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "05_rear_right_3q",
+          "description": "rear-right three-quarter",
+          "frame_512": "assets/game/cinematic_ships/juggernaut/frames_512/05_rear_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/juggernaut/cutouts_native/05_rear_right_3q.png",
+          "cutout_size": [
+            350,
+            276
+          ],
+          "frame_sha256": "8498eaac5b87ba3aa0444b7e44552eea9971307701e2ff41a3bf49ab114cdb48",
+          "cutout_sha256": "d8fadc8794328451b06c0b6e97c52b1d1773a503f7852bf2e333ada4d77461ab",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "06_hard_bank",
+          "description": "dramatic hard-bank upper-side",
+          "frame_512": "assets/game/cinematic_ships/juggernaut/frames_512/06_hard_bank.png",
+          "cutout_native": "assets/game/cinematic_ships/juggernaut/cutouts_native/06_hard_bank.png",
+          "cutout_size": [
+            321,
+            383
+          ],
+          "frame_sha256": "a8e3d07de1cd655e2b5ae0ca271e43e1a934283e36b6a28665e4179bae9ab98c",
+          "cutout_sha256": "3954127e4a2788ebb36c93d65e5b3bf77606a1ea0d1a27da0f696743b56583b7",
+          "continuity_repair_source": null
+        }
+      ]
+    },
+    {
+      "pilot": "decker",
+      "master": "assets/game/cinematic_ships/decker/decker_cinematic_views_master_rgba.png",
+      "master_size": [
+        1536,
+        1024
+      ],
+      "master_sha256": "546a3290a74c21a10f27137ceec38b8c3db06b823c4ae1168081a668b60145c9",
+      "canonical_reference": "_BUILD_SOURCE/cinematic_ship_inputs/decker_canonical_ship_reference_rgba.png",
+      "chroma_source": "_BUILD_SOURCE/cinematic_ship_chroma/decker_cinematic_views_chroma_green.png",
+      "chroma_key": "green",
+      "continuity_repairs": [
+        "02_front_left_3q",
+        "03_front_right_3q",
+        "06_hard_bank"
+      ],
+      "edge_qa": "assets/game/cinematic_ships/decker/decker_edge_qa_checker.jpg",
+      "edge_metrics": {
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.869266,
+        "opaque_fraction": 0.124968,
+        "semi_transparent_key_dominance_p95": 2.0,
+        "transparent_rgb_zero": true
+      },
+      "views": [
+        {
+          "id": "01_top_down",
+          "description": "strict top-down neutral",
+          "frame_512": "assets/game/cinematic_ships/decker/frames_512/01_top_down.png",
+          "cutout_native": "assets/game/cinematic_ships/decker/cutouts_native/01_top_down.png",
+          "cutout_size": [
+            211,
+            329
+          ],
+          "frame_sha256": "c6bfd0d8cf8c03eea00f85e7b4c3dd96251ce8a9c3e4f66847d5c776cb75f8a2",
+          "cutout_sha256": "b1ee587f05c957853174278484b15d4f0ed37ad5907d0581154e3b3569de5a5a",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "02_front_left_3q",
+          "description": "front-left three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/decker/frames_512/02_front_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/decker/cutouts_native/02_front_left_3q.png",
+          "cutout_size": [
+            343,
+            303
+          ],
+          "frame_sha256": "a04f6473527ceaf4ebbe43edf0865332a6809c34e1864292d3b8f1e5ab34fe4f",
+          "cutout_sha256": "832cfaf9f43aed7973240d17058a68ed79fbbecc9e57c76a3f5edc299e335a74",
+          "continuity_repair_source": "_BUILD_SOURCE/cinematic_ship_repairs/decker/02_front_left_3q_chroma_green.png"
+        },
+        {
+          "id": "03_front_right_3q",
+          "description": "front-right three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/decker/frames_512/03_front_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/decker/cutouts_native/03_front_right_3q.png",
+          "cutout_size": [
+            346,
+            318
+          ],
+          "frame_sha256": "4b8bcba4b1a1c4176aabc0e9ce0fc252daba7c6bf5f0042039f6b0d049614c10",
+          "cutout_sha256": "c1cd244f2da9c6db9cc9d1d022a5147e26dc447cb97d4d22370fa9a3eda8e07f",
+          "continuity_repair_source": "_BUILD_SOURCE/cinematic_ship_repairs/decker/03_front_right_3q_chroma_green.png"
+        },
+        {
+          "id": "04_rear_left_3q",
+          "description": "rear-left three-quarter",
+          "frame_512": "assets/game/cinematic_ships/decker/frames_512/04_rear_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/decker/cutouts_native/04_rear_left_3q.png",
+          "cutout_size": [
+            332,
+            249
+          ],
+          "frame_sha256": "5c8a6d9b3bee7ae0f50bc397bf1752614ff8ce00edfbfb4950af0f1269da5d25",
+          "cutout_sha256": "b2f1408019ceceba4b4ef1b83d01685621b4d0e858c03adca2771a75bd7bf133",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "05_rear_right_3q",
+          "description": "rear-right three-quarter",
+          "frame_512": "assets/game/cinematic_ships/decker/frames_512/05_rear_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/decker/cutouts_native/05_rear_right_3q.png",
+          "cutout_size": [
+            328,
+            248
+          ],
+          "frame_sha256": "f4a32de65ef06fd5233a999a5a232dcf92b08a6e4a0048ee4e78d57f3ea8cd7c",
+          "cutout_sha256": "bb7deb50b24ca5e4edc5fb1b12631bc537e8e1952231431252c4db2e3db3771d",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "06_hard_bank",
+          "description": "dramatic hard-bank upper-side",
+          "frame_512": "assets/game/cinematic_ships/decker/frames_512/06_hard_bank.png",
+          "cutout_native": "assets/game/cinematic_ships/decker/cutouts_native/06_hard_bank.png",
+          "cutout_size": [
+            345,
+            311
+          ],
+          "frame_sha256": "d3fd555fac4e53c7108dabc2431501f399a3286918461b6763615b6b4483cefe",
+          "cutout_sha256": "13e7916111c8e4335ff346ee3866a08cd46baf1bbbc065c14e2873e929a7c0bc",
+          "continuity_repair_source": "_BUILD_SOURCE/cinematic_ship_repairs/decker/06_hard_bank_chroma_green.png"
+        }
+      ]
+    },
+    {
+      "pilot": "cole",
+      "master": "assets/game/cinematic_ships/cole/cole_cinematic_views_master_rgba.png",
+      "master_size": [
+        1536,
+        1024
+      ],
+      "master_sha256": "91efa44fb83025174accbc74d4422d407cf12c9f295e2b806fb6e2edd8946b92",
+      "canonical_reference": "_BUILD_SOURCE/cinematic_ship_inputs/cole_canonical_ship_reference_rgba.png",
+      "chroma_source": "_BUILD_SOURCE/cinematic_ship_chroma/cole_cinematic_views_chroma_magenta.png",
+      "chroma_key": "magenta",
+      "continuity_repairs": [],
+      "edge_qa": "assets/game/cinematic_ships/cole/cole_edge_qa_checker.jpg",
+      "edge_metrics": {
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.813679,
+        "opaque_fraction": 0.179525,
+        "semi_transparent_key_dominance_p95": 0.0,
+        "transparent_rgb_zero": true
+      },
+      "views": [
+        {
+          "id": "01_top_down",
+          "description": "strict top-down neutral",
+          "frame_512": "assets/game/cinematic_ships/cole/frames_512/01_top_down.png",
+          "cutout_native": "assets/game/cinematic_ships/cole/cutouts_native/01_top_down.png",
+          "cutout_size": [
+            302,
+            355
+          ],
+          "frame_sha256": "b30ae437aa10a99ee995dfe1385ba502e94fab1d35be018b55d63cfd9d20a892",
+          "cutout_sha256": "f6834f36944764a886e1df683d185b36e4e716829bdc2abab046ee7b86db71b0",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "02_front_left_3q",
+          "description": "front-left three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/cole/frames_512/02_front_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/cole/cutouts_native/02_front_left_3q.png",
+          "cutout_size": [
+            330,
+            300
+          ],
+          "frame_sha256": "21d4743ebfd1a826299b8e3c07c6e5a049ecaaffce26d2e73813e7d134bf9355",
+          "cutout_sha256": "ef405f5360d9e6942df520560f1d2f498b012bedeee9f74a78b741b2069fab70",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "03_front_right_3q",
+          "description": "front-right three-quarter pseudo-3D",
+          "frame_512": "assets/game/cinematic_ships/cole/frames_512/03_front_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/cole/cutouts_native/03_front_right_3q.png",
+          "cutout_size": [
+            324,
+            298
+          ],
+          "frame_sha256": "8496cb8786999999e1564742ab2e7dea2eb7577a5c0df67f47baf24b75badfd4",
+          "cutout_sha256": "d4e50b29a45d22d9cd6bd182a87659de8af11709dfdbb989886eb91dc684068d",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "04_rear_left_3q",
+          "description": "rear-left three-quarter",
+          "frame_512": "assets/game/cinematic_ships/cole/frames_512/04_rear_left_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/cole/cutouts_native/04_rear_left_3q.png",
+          "cutout_size": [
+            420,
+            401
+          ],
+          "frame_sha256": "c19083069cfd0c2d8f17fe1c2b0725444cc8978ed60d41ebaad4831be2f97241",
+          "cutout_sha256": "89619c5528b71c12060817f4b433e2d84bb7dbc1078aba684d7419570959693c",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "05_rear_right_3q",
+          "description": "rear-right three-quarter",
+          "frame_512": "assets/game/cinematic_ships/cole/frames_512/05_rear_right_3q.png",
+          "cutout_native": "assets/game/cinematic_ships/cole/cutouts_native/05_rear_right_3q.png",
+          "cutout_size": [
+            346,
+            279
+          ],
+          "frame_sha256": "51fd952587d96c5da142979545ec71b8982f750690b3d057ceff1c9c454c7e87",
+          "cutout_sha256": "9e3a5001cd7e1a97e7723674f0e8e685baafe05c5ea503882772ff4b5f0d7d09",
+          "continuity_repair_source": null
+        },
+        {
+          "id": "06_hard_bank",
+          "description": "dramatic hard-bank upper-side",
+          "frame_512": "assets/game/cinematic_ships/cole/frames_512/06_hard_bank.png",
+          "cutout_native": "assets/game/cinematic_ships/cole/cutouts_native/06_hard_bank.png",
+          "cutout_size": [
+            443,
+            408
+          ],
+          "frame_sha256": "fe668806feb403bd28eba31923e9bf7448873977236ec05729b53dbd204d0e00",
+          "cutout_sha256": "d1bdf977054c2e13a62c404aa448d04812668da80cb84d1ec13f636eee8690af",
+          "continuity_repair_source": null
+        }
+      ]
+    }
+  ],
+  "preview": "assets/game/cinematic_ships/previews/cinematic_ships_9pilots_contact.jpg",
+  "continuity_repair_preview": "assets/game/cinematic_ships/previews/cinematic_ships_tail_repairs_contact.jpg"
+}
