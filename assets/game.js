@@ -5703,7 +5703,7 @@ const PILOTS=[
 ];
 // per-pilot special ability: name + short readable description (shown on the select screen)
 const SPECIAL_INFO={
-  axel:      {name:'AEGIS SHIELD',   desc:'Summons a 5-orb energy shield. Each hit burns one orb.'},
+  axel:      {name:'MEGA SHIELD',    desc:'Summons a 5-orb energy shield. Each hit burns one orb.'},   // 0823: was AEGIS SHIELD here and AFTERBURNER on the card
   decker:    {name:'OVERCLOCK',      desc:'Tech surge boosts fire rate and spread for 15s.'},
   maverick:  {name:'VENOM STRIKE',   desc:'Twin venom missiles wind a deadly double-helix.'},
   freezer:   {name:'TIME FREEZE',    desc:'Slows the whole battlefield to half speed for 15s.'},
@@ -11929,7 +11929,17 @@ function eTankBlast(e){ // STRONG shell fired from the END OF THE BARREL, scalin
    rather than a balance change I chose. If the orb now reads too strong there, the dial is
    elementMultiplier, not this. */
 function pShard(x,y,ang,lv,opt){ const spd=3.4+lv*0.25; pBullets.push({kind:'shard', x, y, vx:Math.cos(ang)*spd, vy:Math.sin(ang)*spd, w:8, h:16, dmg:1*((opt&&opt.mul)||1), lv, ang, life:1.3, _ts:(opt&&opt.ts)?1:0}); }
-function iceBurst(x,y,n,lv,opt){ for(let i=0;i<n;i++) pShard(x,y, i*(TAU/n)+Math.random()*0.3, lv, opt); if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':'#bfe8ff'); }
+function iceBurst(x,y,n,lv,opt){
+  for(let i=0;i<n;i++) pShard(x,y, i*(TAU/n)+Math.random()*0.3, lv, opt);
+  if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':'#bfe8ff');
+  const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null;
+  if(S){
+    const el=(opt&&opt.el)||((opt&&opt.ts)?'fireice':'ice');
+    const fn=el==='fireice'?(S.fireIceOrbImpact||S.shatter):
+             el==='fire'?(S.fireOrbImpact||S.crackle):(S.iceOrbImpact||S.shatter);
+    if(fn) fn();
+  }
+}
 /* RAIDEN-STYLE AUTO HOMING MISSILES — auto-fires alongside the primary weapon.
    Count + tracking scale with run.missileLevel (1..5). Pilot-colored art. */
 function autoFireMissiles(){
@@ -12065,10 +12075,13 @@ function weaponHitSfx(el){
   _hitSfxAt[el]=now;
   try{
     const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null; if(!S) return;
-    if(el==='ice'  && S.shatter) S.shatter();
-    else if(el==='fire' && S.crackle) S.crackle();
+    if(el==='ice'  && (S.iceBreathHit||S.shatter)) (S.iceBreathHit||S.shatter)();
+    else if(el==='fire' && (S.flameHit||S.crackle)) (S.flameHit||S.crackle)();
     /* thermoshock is both, so it is heard as both — one gate, so it still cannot machine-gun */
-    else if(el==='fireice'){ if(S.crackle) S.crackle(); if(S.shatter) S.shatter(); }
+    else if(el==='fireice'){
+      if(S.flameHit||S.crackle) (S.flameHit||S.crackle)();
+      if(S.iceBreathHit||S.shatter) (S.iceBreathHit||S.shatter)();
+    }
     else if(S.hit) S.hit();
   }catch(e){}
 }
@@ -12097,13 +12110,18 @@ function flameFire(lv){
   lv=clamp(lv,1,5);
   let f=null; for(const b of pBullets){ if(b.kind==='flame'){ f=b; break; } }
   if(!f){
+    const _el=flameIsIce()?'ice':'fire';
     f={kind:'flame', pierce:true, lv, x:player.x, y:player.y, w:flameBase(lv)*2, h:flameReach(lv),
        vx:0, vy:0, life:FLAME_LIFE, anim:0, _hit:[], _ht:0, _bt:0, _sbt:0};
+    f._el=_el;
     pBullets.push(f);
-    if(Audio.SFX.crackle) Audio.SFX.crackle();          // ignition tick, once, on the leading edge
+    const _start=_el==='ice'?(Audio.SFX.iceBreathStart||Audio.SFX.shatter):(Audio.SFX.flameIgnite||Audio.SFX.crackle);
+    if(_start) _start();                                // one leading-edge ignition / frost intake
   }
-  f.lv=lv; f.life=FLAME_LIFE; f.dmg=3+lv;
-  flameSndStart();
+  const _nextEl=flameIsIce()?'ice':'fire';
+  if(f._el && f._el!==_nextEl) flameSndStop(f._el);
+  f.lv=lv; f.life=FLAME_LIFE; f.dmg=3+lv; f._el=_nextEl;
+  flameSndStart(f._el);
 }
 /* SUSTAINED AUDIO, NOT A RETRIGGER.
    The old firewall re-played its whole sample every 0.30s for as long as fire was held. Three
@@ -12129,8 +12147,17 @@ function flameFire(lv){
    held weapon while the wave that crosses the caldera played a generic flare whoosh. The two are
    swapped to the files he named. arc_flame_loop is authored to loop; flame_wall is a 3.18s
    one-shot, which is why the held weapon is the one that gets the loop. */
-function flameSndStart(){ if(typeof Snd!=='undefined' && Snd && Snd.loopOn) Snd.loopOn('arcFlameLoop',0.85); }
-function flameSndStop(){ if(typeof Snd!=='undefined' && Snd && Snd.loopOff) Snd.loopOff('arcFlameLoop'); }
+function flameSndStart(el){
+  if(typeof Snd!=='undefined' && Snd && Snd.loopOn){
+    const n=el==='ice'&&Snd.pools&&Snd.pools.iceBreathLoop?'iceBreathLoop':'arcFlameLoop';
+    Snd.loopOn(n,0.85);
+  }
+}
+function flameSndStop(el){
+  if(typeof Snd!=='undefined' && Snd && Snd.loopOff){ Snd.loopOff('arcFlameLoop'); Snd.loopOff('iceBreathLoop'); }
+  const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null; if(!S) return;
+  const fn=el==='ice'?(S.iceBreathStop||S.shatter):(S.flameOut||S.crackle); if(fn) fn();
+}
 
 /* --- THE MIRRORED FLAME (Mike's spec) ---------------------------------------
    "flip the firewall vertically, duplicate it, and flip the other duplicate horizontally so the
@@ -12596,11 +12623,24 @@ function _coleNearest(x,y){
 const FUSE_FULL = 1.15;        // seconds to full charge
 const FUSE_DMG  = 40;
 function coleFuseTick(dt, firing){
-  if(!colePilot() || (run.wlevel||0) < 8){ player._fuse=0; return false; }
+  if(!colePilot() || (run.wlevel||0) < 8){
+    if(player._fuseSnd && typeof Snd!=='undefined'&&Snd&&Snd.loopOff) Snd.loopOff(player._fuseLoop||'fusionChargeLoop');
+    player._fuse=0; player._fuseSnd=0; return false;
+  }
   if(firing){
+    if(!player._fuseSnd){
+      player._fuseSnd=1;
+      if(Audio.SFX && (Audio.SFX.chargeStart||Audio.SFX.select)) (Audio.SFX.chargeStart||Audio.SFX.select)();
+    }
     player._fuse = Math.min(FUSE_FULL, (player._fuse||0) + dt);
+    if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn){
+      player._fuseLoop=(Snd.pools&&Snd.pools.fusionChargeLoop)?'fusionChargeLoop':'helixCharge';
+      Snd.loopOn(player._fuseLoop,0.30+0.52*(player._fuse/FUSE_FULL));
+    }
     return true;                              // held: suppress normal MG fire entirely
   }
+  if(player._fuseSnd && typeof Snd!=='undefined'&&Snd&&Snd.loopOff) Snd.loopOff(player._fuseLoop||'fusionChargeLoop');
+  player._fuseSnd=0;
   if((player._fuse||0) > 0){
     const k=(player._fuse||0)/FUSE_FULL;
     if(k>=1) coleFuseRelease();
@@ -12800,8 +12840,12 @@ function pShoot(){
          flight when the slot changes must keep being the orb it was launched as. Same reason
          `lv` is captured here and not read off `run` by the draw. */
       const _ts=(typeof orbIsFireIce==='function') && orbIsFireIce();
-      pBullets.push({kind:'orb', x:player.x, y:player.y-16, vx, vy:-2.7, w:34, h:34, dmg:2, lv, spin:0, life:2.6, shardN, shardCd:0.06, frame:0, _ts:_ts?1:0, _hit:[], _ht:0, _bt:0});
-      (Audio.SFX.spread||Audio.SFX.shoot)();  // ice orb launch
+      const _ov=(typeof heldVariant==='function')?heldVariant(5):null;
+      const _el=_ts?'fireice':(_ov==='fireorb'?'fire':'ice');
+      pBullets.push({kind:'orb', x:player.x, y:player.y-16, vx, vy:-2.7, w:34, h:34, dmg:2, lv, spin:0, life:2.6, shardN, shardCd:0.06, frame:0, _ts:_ts?1:0, _el, _hit:[], _ht:0, _bt:0});
+      const _launch=_el==='fireice'?(Audio.SFX.fireIceOrbLaunch||Audio.SFX.spread):
+                    _el==='fire'?(Audio.SFX.fireOrbLaunch||Audio.SFX.spread):(Audio.SFX.iceOrbLaunch||Audio.SFX.spread||Audio.SFX.shoot);
+      if(_launch) _launch();
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv||1));
@@ -14216,7 +14260,7 @@ function lizzieFire(){
     const t=(retina.target && !retina.target.dead)?retina.target:null;
     pBullets.push({kind:'atom', x:player.x, y:player.y-16, vx:0, vy:-3.4, w:14,h:26,
       dmg:0, lv:5, t:0, spin:0, tgt:t, fuse:t?2.4:0.85});
-    Audio.SFX.weapon(); shake=Math.max(shake,3);
+    (Audio.SFX.atomicLaunch||Audio.SFX.weapon)(); shake=Math.max(shake,3);
     const holding=keybind.retina.some(k=>Input.down(k))||Input.down('c');
     if(!holding && t){ retina.target=null; retina.phase=null; }
     return true;                 // an atom launched — the key is consumed here
@@ -14256,7 +14300,7 @@ function atomBlast(x,y){
   shake=Math.max(shake,26);
   atomFlash=ATOM_HOLD;   // NOT whiteBlast: that one is driven by the boss-death sequence and never self-decays
   // deliberately NOT flashScreen: that paints a full-screen orange wash (rgba(255,120,60)) over the art
-  Audio.SFX.bomb(); if(Audio.SFX.expBig) Audio.SFX.expBig();
+  (Audio.SFX.atomicDetonate||Audio.SFX.bomb||Audio.SFX.expBig)();
   spawnShards(x,y,4,1);
   for(const e of enemies){ if(e.dead) continue;
     const d2=dist2(e.x,e.y,x,y);
@@ -14454,9 +14498,21 @@ const SONIC_WAKE = 2.8;       // seconds the distorted air lingers after the bla
 const SONIC_MAX  = 1.15;      // seconds to a full charge
 const SONIC_ARM  = 0.18;      // below this a release is treated as a tap, not a dud
 function sonicCharge(dt, held){
-  if(!sonicActive()) return false;
+  if(!sonicActive() || player.dead){
+    if(run._sonicSnd && typeof Snd!=='undefined'&&Snd&&Snd.loopOff) Snd.loopOff(run._sonicLoopName||'sonicChargeLoop');
+    run._sonicSnd=false; run._sonicChg=0; run._sonicPing=false;
+    return false;
+  }
   if(held){
+    if(!run._sonicSnd){
+      run._sonicSnd=true;
+      const S=Audio&&Audio.SFX; if(S&&(S.sonicChargeStart||S.chargeStart)) (S.sonicChargeStart||S.chargeStart)();
+    }
     run._sonicChg = Math.min(SONIC_MAX, (run._sonicChg||0) + dt);
+    if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn&&Snd.pools&&Snd.pools.sonicChargeLoop){
+      run._sonicLoopName='sonicChargeLoop';
+      Snd.loopOn(run._sonicLoopName,0.30+0.52*(run._sonicChg/SONIC_MAX));
+    }
     /* the wind-up is visible on the ship rather than only audible: pressure rings pull inward */
     if(Math.random() < 0.10 + 0.30*(run._sonicChg/SONIC_MAX)){
       const a=rnd(0,TAU), R=46-22*(run._sonicChg/SONIC_MAX);
@@ -14472,6 +14528,8 @@ function sonicCharge(dt, held){
   }
   if((run._sonicChg||0)>0){            // released
     const p = clamp((run._sonicChg||0)/SONIC_MAX, 0, 1);
+    if(typeof Snd!=='undefined'&&Snd&&Snd.loopOff) Snd.loopOff(run._sonicLoopName||'sonicChargeLoop');
+    run._sonicSnd=false;
     run._sonicChg=0; run._sonicPing=false;
     sonicRelease(Math.max(p, SONIC_ARM/SONIC_MAX));
     return true;
@@ -14505,7 +14563,10 @@ function sonicRelease(p){
                  _p:p, pierce:true, dead:false});
   sonicTrail.push({x:player.x, y:player.y-14, t:0, dur:0.26+p*0.18, circ:true});
   shake=Math.max(shake, 2+p*7);
-  if(Audio&&Audio.SFX&&Audio.SFX.laser) Audio.SFX.laser();
+  if(Audio&&Audio.SFX){
+    const S=Audio.SFX, fn=p>=0.98?(S.sonicBoomFull||S.sonicWave||S.laser):(S.sonicBoomHalf||S.sonicWave||S.laser);
+    if(fn) fn();
+  }
 }
 /* ONE OWNER FOR THE SHOT (drop 0805v). pShoot still calls this, but it must NOT fire: the
    release path in sonicCharge already handles BOTH cases — a short hold releases at the armed
@@ -14929,7 +14990,7 @@ function thawDraw(){
 /* is the thaw panel currently holding the bottom band? freezerL3 defers to it — see below */
 function thawOnScreen(){ return !!(thaw && !thaw.done && thaw.lines[thaw.i]); }
 function nukeAt(x,y){
-  explode(x,y,86,'red'); explode(x,y,54,'red'); shake=Math.max(shake,18); flashScreen=Math.max(flashScreen||0,0.6); Audio.SFX.bomb();
+  explode(x,y,86,'red'); explode(x,y,54,'red'); shake=Math.max(shake,18); flashScreen=Math.max(flashScreen||0,0.6); (Audio.SFX.nuclearDetonate||Audio.SFX.bomb||Audio.SFX.expBig)();
   nukeImpacts.push({x,y,t:0,dur:0.5});
   for(const e of enemies){ if(!e.dead && dist2(e.x,e.y,x,y)<140*140) hitEnemy(e,40); }
   if(typeof subBoss!=='undefined' && subBoss && !subBoss.dead && dist2(subBoss.x,subBoss.y,x,y)<160*160) hitSubBoss(60);
@@ -14944,7 +15005,7 @@ function retinaFire(){
   if(t && special.strikes>0){
     special.strikes--; run.bombs=special.strikes; if(typeof stageStats!=='undefined') stageStats.missiles++;
     pBullets.push({kind:'nukem', x:player.x, y:player.y-14, tgt:t, spd:8.5, w:12,h:22, dmg:0, lv:5});
-    Audio.SFX.weapon();
+    (Audio.SFX.nuclearLaunch||Audio.SFX.weapon)();
     const holding=keybind.retina.some(k=>Input.down(k))||Input.down('c');
     if(!holding){ retina.target=null; retina.phase=null; }
     return true;                 // a strike launched — the key is consumed here
@@ -15621,7 +15682,10 @@ function freezerOrbCharge(dt){
      ice orb, at the slow tier. */
   /* DEBUG 7 grants his chargeable orb to whoever is flying (drop 0801ha) */
   const _mayCharge = (_pilotKey()==='freezer') || !!(run && run._dbgFrzOrb);
-  if(!_mayCharge || !orbIsFire() || run.weapon!==5) { _frzOrb=null; return; }
+  if(!_mayCharge || !orbIsFire() || run.weapon!==5) {
+    if(_frzOrb&&_frzOrb.charging&&typeof Snd!=='undefined'&&Snd&&Snd.loopOff) Snd.loopOff(_frzOrb.sndName||'fireIceChargeLoop');
+    _frzOrb=null; return;
+  }
   const holding = !player.dead && keybind.fire.some(k=>Input.down(k));
   if(!_frzOrb) _frzOrb={ch:0, charging:false, ph:0};
   _frzOrb.ph += dt;
@@ -15629,9 +15693,12 @@ function freezerOrbCharge(dt){
     _frzOrb.charging=true;
     _frzOrb.ch=Math.min(FRZ_ORB_FULL, _frzOrb.ch+dt);
     const p=_frzOrb.ch/FRZ_ORB_FULL;
-    if(typeof Snd!=='undefined' && Snd && Snd.loopOn) Snd.loopOn('helixCharge', 0.30+p*0.5);
+    if(typeof Snd!=='undefined' && Snd && Snd.loopOn){
+      _frzOrb.sndName=(Snd.pools&&Snd.pools.fireIceChargeLoop)?'fireIceChargeLoop':'helixCharge';
+      Snd.loopOn(_frzOrb.sndName, 0.30+p*0.5);
+    }
   } else if(_frzOrb.charging){
-    if(typeof Snd!=='undefined' && Snd && Snd.loopOff) Snd.loopOff('helixCharge');
+    if(typeof Snd!=='undefined' && Snd && Snd.loopOff) Snd.loopOff(_frzOrb.sndName||'fireIceChargeLoop');
     const c=_frzOrb.ch; _frzOrb.ch=0; _frzOrb.charging=false;
     if(c>=FRZ_ORB_FULL*0.45) launchFireball(c);
   }
@@ -15667,9 +15734,13 @@ function launchFireball(charge, forceTier){
      this is deliberately a one-shot and not Snd.loopOn. If he wants it burning for as
      long as the ball is alive, that is loopOn keyed on the fireball's lifetime instead.
      Volume rises with the tier so a full-charge launch lands harder than the slow one. */
-  if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.arcFlameLoop){
-    if(typeof Snd!=='undefined' && Snd && Snd.play) Snd.play('arcFlameLoop', full?1.0:(tier==='half'?0.85:0.7));
-    else Audio.SFX.arcFlameLoop();
+  const _ts = (typeof orbIsFireIce==='function') && orbIsFireIce();
+  if(typeof Audio!=='undefined' && Audio.SFX){
+    const _name=_ts?'fireIceOrbLaunch':'fireOrbLaunch';
+    if(typeof Snd!=='undefined' && Snd && Snd.play){
+      Snd.play(Snd.pools&&Snd.pools[_name]?_name:'arcFlameLoop', full?1.0:(tier==='half'?0.85:0.7));
+    }
+    else { const _fn=Audio.SFX[_name]||Audio.SFX.arcFlameLoop; if(_fn) _fn(); }
   }
   /* ⚠ IS THIS THE FIREBALL OR THE THERMOSHOCK? (drop 0814a)
 
@@ -15684,7 +15755,6 @@ function launchFireball(charge, forceTier){
 
      Same flight, same three tiers, same brake-and-unload beat — only the identity changes, so
      the weapon he signed off on is untouched and the one he says is missing now exists. */
-  const _ts = (typeof orbIsFireIce==='function') && orbIsFireIce();
   pBullets.push({
     kind:'fireball', x:player.x, y:player.y-18,
     vx:0, vy: SPD,
@@ -17389,6 +17459,8 @@ function updatePlay(dt){
           if(b._ts) tsFx(b.x, b.y, 'imp', 150);
           atomFlash=Math.max(atomFlash||0,0.4);
           shake=Math.max(shake,11);
+          const _impact=b._ts?(Audio.SFX.fireIceOrbImpact||Audio.SFX.expBig):(Audio.SFX.fireOrbImpact||Audio.SFX.expBig);
+          if(_impact) _impact();
           b.dead=true;
         }
       }
@@ -17658,7 +17730,7 @@ function updatePlay(dt){
         b.dead=true;
         if(b.kind==='nukem'){ nukeAt(b.x,b.y); }
         else {
-          explode(b.x,b.y,30,'red'); Audio.SFX.expBig(); shake=Math.max(shake,5);
+          explode(b.x,b.y,30,'red'); (Audio.SFX.missileHit||Audio.SFX.expBig)(); shake=Math.max(shake,5);
           if(t&&!t.dead){ if(t===boss) hitBoss(b.dmg); else if(typeof subBoss!=='undefined'&&t===subBoss) hitSubBoss(b.dmg, b.x, b.y); else hitEnemy(t,b.dmg); }
           // missile blast AOE
           for(const e of enemies){ if(!e.dead && e!==t && dist2(e.x,e.y,b.x,b.y)<90*90) hitEnemy(e,10); }
@@ -17701,7 +17773,7 @@ function updatePlay(dt){
     }
     if(b.kind==='flame'){   // FLAMETHROWER: a held cone anchored to the nose, re-burning on a tick
       b.life-=dt; b.anim=(b.anim||0)+dt;
-      if(b.life<=0 || player.dead){ b.dead=true; flameSndStop(); continue; }
+      if(b.life<=0 || player.dead){ b.dead=true; flameSndStop(b._el); continue; }
       b.x=player.x; b.bot=player.y-14; b.top=b.bot-flameReach(b.lv);
       b.w=flameBase(b.lv)*2; b.h=flameReach(b.lv);
       b._ht=(b._ht||0)-dt; if(b._ht<=0){ b._hit.length=0; b._ht=FLAME_TICK; }
@@ -17755,8 +17827,9 @@ function updatePlay(dt){
       b.shardCd-=dt;
       /* the orb's element is fixed at LAUNCH (b._ts), never re-asked here — see the note at
          pShoot. The multiplier is solved once per volley rather than per shard. */
-      const _om=elementMultiplier(b._ts?'fireice':(orbIsFire()?'fire':'ice'));
-      const _sopt={mul:_om, ts:b._ts};
+      const _oel=b._el||(b._ts?'fireice':(orbIsFire()?'fire':'ice'));
+      const _om=elementMultiplier(_oel);
+      const _sopt={mul:_om, ts:b._ts, el:_oel};
       if(b.shardCd<=0){ b.shardCd=0.10; const n=b.shardN; for(let i=0;i<n;i++){ pShard(b.x,b.y, b.spin + i*(TAU/n), b.lv, _sopt); } b.sfxCd=(b.sfxCd||0)-1; if(b.sfxCd<=0){ b.sfxCd=3; if(Audio.SFX.spread)Audio.SFX.spread(); } }
       b._ht-=dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.16; }
       for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg*_om); if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; } b._hit.push(e); } } }
@@ -18154,6 +18227,7 @@ function updatePlay(dt){
 
 function nadeBlast(b){
   explode(b.x,b.y,b.aoe,'red'); shake=Math.max(shake,4);
+  if(Audio.SFX && (Audio.SFX.grenadeHit||Audio.SFX.expSmall)) (Audio.SFX.grenadeHit||Audio.SFX.expSmall)();
   for(const e of enemies){ if(!e.dead && dist2(e.x,e.y,b.x,b.y)<(b.aoe*b.aoe)){ hitEnemy(e,2); } }
   if(boss&&bossActive&&!boss.dead && dist2(boss.x,boss.y,b.x,b.y)<(b.aoe*1.5)*(b.aoe*1.5)) hitBoss(2);
 }
@@ -33742,7 +33816,15 @@ const PC_MAX_SEG    = 20;      // the pack's bars are 20 segments
 /* Each pilot's special, with the icon key to show beside it. Mike named several of these
    directly; the rest follow the weapon each pilot actually carries. */
 const PC_SPECIAL = {
-  cole:      {name:'WARHEAD',          icon:'cole_warhead_A'},
+  /* ⚠ THESE THREE ARE MIKE'S 0823 CORRECTIONS, AND TWO TABLES HAD DRIFTED APART.
+     SPECIAL_INFO (the select-screen blurb) and PC_SPECIAL (the card) disagreed on almost every
+     pilot; for the three Mike named they are now made to AGREE, using his words.
+       cole   "add Sonic Boom slash Warhead"
+       lizzie "let the player know that her special ability is Adam Bomb and the Heavy Turret"
+       axel   "his special ability is not an afterburner. It's a Mega Shield one"
+     The other six still disagree between the two tables and are left alone — renaming a
+     pilot's ability is Mike's call, not a tidy-up. Listed in the passover. */
+  cole:      {name:'SONIC BOOM / WARHEAD', icon:'cole_warhead_A'},
   falva:     {name:'ROLLER-BALL',      icon:'fball_0'},
   maverick:  {name:'HELIX BEAM',       icon:'nhxb_p_2'},
   yuri:      {name:'CHAIN LIGHTNING',  icon:'nchp_4'},
@@ -33750,8 +33832,11 @@ const PC_SPECIAL = {
   /* ATOM BOMB (drop 0801bx). Mike: "lizzie's special ability is atom bomb". The
      ICON was already right - lz_nuke_0 is the nuke - it was the NAME that read
      TIME-DISTORTION, which is not her ability at all. */
-  lizzie:    {name:'ATOM BOMB',        icon:'lz_nuke_0'},
-  axel:      {name:'AFTERBURNER',      icon:'sp_axel_0'},
+  lizzie:    {name:'ATOM BOMB + HEAVY TURRET', icon:'lz_nuke_0'},   // the turret mount is real: lzMountGrant, and it is why she cannot barrel roll
+  /* the winged-A emblem STAYS — Mike: "you could probably take his afterburner symbol that you
+     have". It is a pilot badge, not an afterburner; only the NAME was wrong. And the code has
+     always agreed it is a shield: activating gives special.orbs=5 and run.shield=5. */
+  axel:      {name:'MEGA SHIELD',      icon:'sp_axel_0'},
   freezer:   {name:'ICE ORB',          icon:'nio_3_0'},
   juggernaut:{name:'SIEGE MODE',       icon:'sp_juggernaut_0'},
 };
@@ -40679,16 +40764,25 @@ function hitRival(dmg){
 /* MEASURED INK RECTS for the affiliation emblems (drop 0801ba):
    [srcX, srcY, srcW, srcH, canvasW, canvasH]. Regenerate with the bbox pass in
    fix_menucard_0801ba.py if the emblem art is ever redrawn. */
+/* ⚠ RE-MEASURED FROM THE ART (drop 0822ah). Mike: "Axel's icon is cut off on the left wing
+   side and needs to be centered."
+   These were measured offline once and ALL NINE had drifted from the emblems they describe.
+   Axel's said x:28 w:200 (28..228) while the ink actually runs 23..233 — the source rect was
+   slicing 5px off EACH WING, which is exactly what he is looking at. Decker's and
+   Juggernaut's were the opposite: a rect LARGER than the ink, so those two drew shrunken
+   and off-centre inside the socket.
+   Re-derived by reading the alpha bounding box of every emblem, so the numbers now come from
+   the art rather than from a note about the art. The suite re-measures them on every run. */
 const PEMB_INK={
-  pemb_axel:[28,72,200,112,256,256],
-  pemb_cole:[28,71,200,113,256,256],
-  pemb_decker:[29,28,198,200,256,256],
-  pemb_falva:[28,46,200,164,256,256],
-  pemb_freezer:[28,82,200,92,256,256],
-  pemb_juggernaut:[29,28,198,200,256,256],
-  pemb_lizzie:[28,62,200,131,256,256],
-  pemb_maverick:[28,77,200,101,256,256],
-  pemb_yuri:[28,77,200,101,256,256]
+  pemb_axel:[23,69,210,118,256,256],
+  pemb_cole:[23,67,210,121,256,256],
+  pemb_decker:[44,43,168,170,256,256],
+  pemb_falva:[39,43,177,170,256,256],
+  pemb_freezer:[23,81,210,94,256,256],
+  pemb_juggernaut:[44,43,168,170,256,256],
+  pemb_lizzie:[23,59,210,138,256,256],
+  pemb_maverick:[23,75,210,106,256,256],
+  pemb_yuri:[23,75,210,106,256,256]
 };
 function affiliationName(key){ const P=PILOTS.find(p=>p.key===key); return P?P.name:key.toUpperCase(); }
 function typewriter(text,frac,x,y,size,col){
@@ -41847,8 +41941,13 @@ const Snd=(function(){
   // music at full level, SFX mixed LOWER so music is clearly audible over the effects
   const A={ vol:{master:1.0,music:1.0,sfx:0.42,voice:0.85}, pools:{}, music:{}, cur:null };
   function _au(v){ return (typeof v==='string'&&v.lastIndexOf('assets/',0)===0)?v:('data:audio/mpeg;base64,'+v); }
-  for(const name in BOFA.sfx){ const uri=_au(BOFA.sfx[name]);
-    const list=[]; for(let i=0;i<3;i++){ const a=new window.Audio(); a.src=uri; a.preload='auto'; list.push(a); }
+  /* ROUND-ROBIN SOURCE SETS. A BOFA entry may be one legacy URI or an array of authored
+     variations. The pool used to clone one identical element three times, which prevented
+     overlap clipping but made an 11.8-round/sec machine gun reveal the exact same waveform on
+     every shot. Arrays rotate the actual sources while preserving the old three-clone behavior
+     for every untouched cue. */
+  for(const name in BOFA.sfx){ const raw=BOFA.sfx[name], uris=(Array.isArray(raw)?raw:[raw]).map(_au);
+    const list=[], poolN=Math.max(3,uris.length); for(let i=0;i<poolN;i++){ const a=new window.Audio(); a.src=uris[i%uris.length]; a.preload='auto'; list.push(a); }
     A.pools[name]={list,i:0}; }
   for(const name in BOFA.music){ const m=new window.Audio(); m.src=_au(BOFA.music[name]); m.loop=true; m.preload='auto'; A.music[name]=m; }
   A.VOICE_SET={continueVO:1,countdown:1,restrictedarea:1,enemyunits:1,enemyunit:1,over:1,goodluck:1,announce:1,selectpilot:1};
@@ -41888,6 +41987,11 @@ const Snd=(function(){
     arcFlameLoop: {g:0.58, lp:3400},
     lzStack: {g:0.72, lp:6200},
   };
+  /* The optional ColeForge overlay owns only its newly-routed cues. Merging its shaping here
+     keeps the original runtime behavior bit-identical when the overlay is disabled. */
+  if(window.CF_ARCADE_AUDIO && window.CF_ARCADE_AUDIO.tame){
+    for(const _tn in window.CF_ARCADE_AUDIO.tame) A.TAME[_tn]=window.CF_ARCADE_AUDIO.tame[_tn];
+  }
   A._ctx=null; A._nodes={}; A._bad={}; A._last={};
   A._audioCtx=function(){
     if(A._ctx) return A._ctx;

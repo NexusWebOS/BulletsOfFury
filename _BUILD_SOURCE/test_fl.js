@@ -7020,6 +7020,34 @@ function _wv(st,pk,w,roll){ return vm.runInContext("weaponVariant("+w+",{stage:"
      'all five weapon-variant icon families are registered at all 5 levels');
   ok(vm.runInContext("Object.keys(WVAR_ICON).every(function(v){ return [1,2,3,4,5].every(function(l){ return !!window.BOFX.img[WVAR_ICON[v]+l]; }); })", ctxv),
      'and every variant WVAR_ICON names resolves to real art');
+  /* ===== PILOT CARDS (drop 0822ah) ==================================================
+     Mike's corrections off the video. Two tables described the same abilities and disagreed on
+     almost every pilot - SPECIAL_INFO (the select blurb) and PC_SPECIAL (the card). For the three
+     he named they are now made to AGREE, in his words. */
+  ok(vm.runInContext("PC_SPECIAL.axel.name==='MEGA SHIELD' && SPECIAL_INFO.axel.name==='MEGA SHIELD'", ctxv),
+     "axel's special is MEGA SHIELD on both surfaces - it was AFTERBURNER on the card and AEGIS SHIELD on the blurb");
+  /* and the code has always agreed it is a shield: the special grants orbs and run.shield */
+  ok(/k==='axel'\)\{ special\.orbs=5;.*run\.shield/.test(_gmi), 'and the ability it names is the one the code gives him');
+  ok(vm.runInContext("/HEAVY TURRET/.test(PC_SPECIAL.lizzie.name) && /ATOM BOMB/.test(PC_SPECIAL.lizzie.name)", ctxv),
+     "lizzie's card names BOTH the atom bomb and the heavy turret");
+  ok(/lzMountGrant\(\)/.test(_gmi), 'and the heavy turret is a real mechanic, not just a label');
+  ok(vm.runInContext("/SONIC BOOM/.test(PC_SPECIAL.cole.name) && /WARHEAD/.test(PC_SPECIAL.cole.name)", ctxv),
+     "cole's card names SONIC BOOM and WARHEAD");
+  /* the winged-A emblem STAYS - Mike: "you could probably take his afterburner symbol that you have" */
+  ok(vm.runInContext("PC_SPECIAL.axel.icon==='sp_axel_0'", ctxv), "and axel keeps his winged-A emblem");
+  /* \u26a0 THE EMBLEM INK RECTS WERE ALL WRONG (0822ah). Mike: "Axel's icon is cut off on the left
+     wing side." PEMB_INK is the SOURCE rect drawn out of each 256x256 emblem, measured offline
+     once - and every one of the nine had drifted. Axel's said x:28 w:200 (28..228) while the ink
+     runs 23..233, so the draw sliced 5px off EACH WING. Decker and Juggernaut were the opposite:
+     a rect LARGER than their ink, so they drew shrunken and off-centre in the socket.
+     Re-derived by reading each emblem's alpha bounding box. Pinned exactly, because these can only
+     be re-measured from the art - if an emblem is ever redrawn, these numbers must be redone. */
+  ok(vm.runInContext("JSON.stringify(PEMB_INK.pemb_axel.slice(0,4))==='[23,69,210,118]'", ctxv),
+     "axel's emblem ink rect is the measured one, so both wings survive the crop");
+  ok(vm.runInContext("JSON.stringify(PEMB_INK.pemb_decker.slice(0,4))==='[44,43,168,170]'", ctxv),
+     'and decker/juggernaut no longer carry a rect bigger than their own ink');
+  ok(vm.runInContext("Object.keys(PEMB_INK).every(function(k){ var r=PEMB_INK[k]; return r[0]+r[2]<=r[4] && r[1]+r[3]<=r[5] && r[2]>0 && r[3]>0; })", ctxv),
+     'and every emblem ink rect fits inside its own canvas');
   ok(vm.runInContext("S5R_N===9", ctxv), 'the run is NINE gates - one per the ninth level');
   /* the openings are read off the art: 192x256 speed portal has a +/-36 hole, the 256x320
      segment gate +/-45. Chosen by eye they would make the run impossible or trivial. */
