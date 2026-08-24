@@ -6988,6 +6988,38 @@ console.log('=== 156. protected assets — planned content, not dead weight (dro
   /* and the password keypad must read the BINDING rather than a hand-listed pad button */
   ok(/_padFire=Input\.tapAny\(\(keybind\.fire\|\|\[\]\)\.filter/.test(_gmi),
      'the password keypad accepts any BOUND pad confirm button, not just pad_b0');
+  /* ===== FREEZER'S KIT, PER STAGE (drop 0822ag) ======================================
+     Mike's rule, verbatim: "He should NEVER get a flamethrower on level 2 either... level 3 you
+     turn ice breath to false and ice orb to false, fireiceorb and flamethrower to on/true, then
+     the rest of the game he has access to all of them - ice breath, flame thrower, ice orb and
+     his fireiceball... He doesnt get fireorb. everyone else does though during level 3 and rest
+     of the game."
+     He is the only pilot whose fire and ice systems merged, so the combination ball replaces the
+     fire orb for him permanently. */
+function _wv(st,pk,w,roll){ return vm.runInContext("weaponVariant("+w+",{stage:"+st+",pilot:'"+pk+"',roll:"+roll+"})", ctxv); }
+  ok(_wv(2,'freezer',4,0.0)==='icebreath' && _wv(2,'freezer',4,0.99)==='icebreath',
+     'stage 2 Freezer: ICE BREATH only - he never gets a flamethrower there');
+  ok(_wv(3,'freezer',4,0.0)==='flamethrower' && _wv(3,'freezer',5,0.0)==='fireice' && _wv(3,'freezer',5,0.99)==='fireice',
+     'stage 3 Freezer: flamethrower + the merged orb, with ice breath and ice orb withheld');
+  ok(_wv(4,'freezer',5,0.0)==='iceorb' && _wv(4,'freezer',5,0.99)==='fireice',
+     'stage 4+ Freezer: the orb slot gives ICE ORB or the fireice ball - both, not just the ball');
+  ok(_wv(5,'freezer',4,0.0)==='flamethrower' && _wv(5,'freezer',4,0.99)==='icebreath',
+     'and the flame slot gives flamethrower or ice breath - he has all four');
+  ok([1,2,3,4,5,6,7,8].every(function(st){ return _wv(st,'freezer',5,0.0)!=='fireorb' && _wv(st,'freezer',5,0.99)!=='fireorb'; }),
+     'Freezer NEVER gets the fire orb, at any stage');
+  ok(_wv(3,'cole',5,0.0)==='fireorb' && _wv(3,'axel',5,0.99)==='fireorb',
+     'while everyone else does get the fire orb on stage 3');
+  /* \u26a0 AND THE ICONS HAVE TO EXIST. Mike: "I could not get a ice freeze icon to spawn out of a
+     powerupbox on level 2 for me at all." The DROP was fine - measured, 20 of 120 crates - but
+     WVAR_ICON named micon_icebreath_, micon_fireorb_ and micon_thermoshock_ and NONE of the five
+     families were registered, so the pickup had no icon to draw. The art was authored and sitting
+     in _ART_SOURCES the whole time. */
+  var _mmf = fs.readFileSync(ROOT+'/assets/manifest.js','utf8');
+  ok(['micon_icebreath_','micon_thermoshock_','micon_fireorb_','micon_firewall_','micon_iceorb_']
+       .every(function(pre){ return [1,2,3,4,5].every(function(l){ return _mmf.indexOf('"'+pre+l+'"')>0; }); }),
+     'all five weapon-variant icon families are registered at all 5 levels');
+  ok(vm.runInContext("Object.keys(WVAR_ICON).every(function(v){ return [1,2,3,4,5].every(function(l){ return !!window.BOFX.img[WVAR_ICON[v]+l]; }); })", ctxv),
+     'and every variant WVAR_ICON names resolves to real art');
   ok(vm.runInContext("S5R_N===9", ctxv), 'the run is NINE gates - one per the ninth level');
   /* the openings are read off the art: 192x256 speed portal has a +/-36 hole, the 256x320
      segment gate +/-45. Chosen by eye they would make the run impossible or trivial. */
@@ -8299,7 +8331,15 @@ console.log("=== 178. stage-3 orb + thaw ===");
      So Freezer does NOT return to the ice orb after stage 3, and his flame slot is NOT icebreath
      on every stage — it is flamethrower on 1, icebreath from 2, withheld on 3. */
   ok(_ico.yuri5.orb==='micon_iceorb_3', 'everyone else is back on the ice orb from stage 4');
-  ok(_ico.freezer5.orb==='micon_thermoshock_3', 'and Freezer KEEPS the fire-ice orb');
+  /* \u26a0 MIKE REWROTE THIS AGAIN (drop 0822ag). The note above records 0812l: "past level 3 -
+     freezer ... keeps the new fireice orb, he NO LONGER GETS ICE ORB or fire orb." Today he
+     said the opposite for the back half: "then the rest of the game he has access to all of
+     them - ice breath, flame thrower, ICE ORB and his fireiceball." Both quotes are kept so
+     the reversal is visible rather than silently overwritten; the newer one is implemented.
+     What did NOT change: stage 3 is the merge and dispenses ONLY the fireice ball, and the
+     fire orb is never his at any stage. */
+  ok(_ico.freezer5.orb==='micon_thermoshock_3' || _ico.freezer5.orb==='micon_iceorb_3',
+     'and from stage 4 Freezer rolls the fire-ice orb OR the ice orb - never the fire orb');
   ok(_ico.freezer5.flame==='micon_icebreath_3' || _ico.freezer5.flame==='micon_firewall_3',
      "past stage 3 Freezer can hold either flame variant ("+_ico.freezer5.flame+")");
   /* ⚠ "WITHHELD" IS A PROPERTY OF THE DROP, NOT OF THE ICON. weaponIconKey still answers with the

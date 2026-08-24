@@ -4505,8 +4505,23 @@ function weaponVariant(w, opt){
     return (opt && opt.roll!=null ? opt.roll : Math.random()) < 0.5 ? 'flamethrower' : 'icebreath';
   }
   if(w===5){
-    if(frz && st>=3) return 'fireice';
-    if(st===3 || (run && run._dbgFire)) return 'fireorb';
+    /* ⚠ FREEZER'S ORB SLOT, PER MIKE (drop 0822ag). His words:
+         "level 3 you turn ice breath to false and ice orb to false, fireiceorb and
+          flamethrower to on/true, then the rest of the game he has access to all of them -
+          ice breath, flame thrower, ice orb and his fireiceball. He doesnt get fireorb.
+          everyone else does though during level 3 and rest of the game."
+       Stage 3 is the MERGE: the combination orb is the event, so the slot dispenses only
+       fireice and ice orb is withheld. From stage 4 he has both, so the slot rolls between
+       them — it used to return fireice forever, which locked his ice orb out of the entire
+       back half of the game.
+       FIREORB IS NEVER HIS, at any stage: he is the only pilot whose fire and ice systems
+       merged, and the merged ball is what he gets instead. */
+    if(frz){
+      if(st<=2) return 'iceorb';
+      if(st===3) return 'fireice';                                  // the merge, on its own level
+      return (opt && opt.roll!=null ? opt.roll : Math.random()) < 0.5 ? 'iceorb' : 'fireice';
+    }
+    if(st===3 || (run && run._dbgFire)) return 'fireorb';           // everyone else: the fire orb is theirs
     return 'iceorb';
   }
   return null;                                    // slots 0-3 have no variants
@@ -36109,6 +36124,14 @@ function drawCampaignHub(dt){
     const cy=CAMPHUB_Y0+i*CAMPHUB_GAP;
     if(XART.rdy(it.key)){
       const im=XART.get(it.key), w=sel?CAMPHUB_W*1.04:CAMPHUB_W, h=w*(im.naturalHeight/im.naturalWidth);
+      /* ⚠ REMEMBER WHERE THE HIGHLIGHTED BUTTON LANDED (drop 0822ag). Mike: "at one point new
+         game or campaign or something flashes the whole screen instead of the button like all
+         else." This screen. selFlash falls back to a FULL-SCREEN strobe when no rect is handed
+         in, and this one passed null, so confirming NEW GAME / CONTINUE / LOAD / SAVE wiped the
+         whole screen white while mode select — which does pass a rect — lit only its pill.
+         Mike's standing rule, 0801bu: "ensure when you select game mode, the BUTTON itself
+         flashes, not the screen." Same shape as drawModeSelect._selRect, deliberately. */
+      if(sel) drawCampaignHub._selRect={x:VW/2-w/2, y:cy-h/2, w:w, h:h, key:it.key};
       ctx.save();
       if(!on) ctx.globalAlpha=0.32;                       // locked reads dim, never hidden
       else if(sel){ ctx.shadowColor='#ffd24a'; ctx.shadowBlur=18; }
@@ -36120,6 +36143,7 @@ function drawCampaignHub(dt){
           ctx.fillStyle='#ffe682'; ctx.font='bold 16px "BOFmil", monospace';
           ctx.fillText('▶', VW/2-w/2-12-p, cy+5); ctx.fillText('◀', VW/2+w/2+12+p, cy+5); } }
     } else {
+      if(sel) drawCampaignHub._selRect={x:VW/2-125, y:cy-20, w:250, h:40, key:null};   // 0822ag: the fallback flashes too
       drawMenuButton(VW/2, cy, 250, 40, it.label, sel, 'ship');
     }
   }
@@ -36141,6 +36165,7 @@ function drawCampSlots(dt){
     const cy=170+i*54, sel=(i===campHubIndex), used=campSlotUsed(i);
     const on=(campPick==='save') || used;                  // loading an empty slot is not an action
     const w=330, h=42, x=VW/2-w/2, y=cy-h/2;
+    if(sel) drawCampSlots._selRect={x:x, y:y, w:w, h:h, key:null};   // 0822ag: flash the slot, not the screen
     /* ⚠ THE AUTHORED FRAME, NOT A DRAWN ONE (drop 0809p). Mike: "no faux boxes. use the
        dialogue windows we have if needed." These rows were an octFill plus a strokeRect,
        which is exactly the hand-drawn panel that rule exists to stop, sitting under art
@@ -36189,7 +36214,7 @@ function campHubInput(){
       if(act==='new'){ campSession=null; setState(GS.DIFF); }
       else if(act==='continue'){ if(campApply(campSession)) openStageSelect(run.stage,{}); else setState(GS.DIFF); }
       else { campPick=act; campHubIndex=0; }
-    }, null, null);
+    }, null, drawCampaignHub._selRect||null);   // 0822ag: the button, not the screen
   }
   /* was: setState(GS.MODESEL). Mike: k/b must not back you out of the campaign menu. */
   if(Input.tap('backspace')||(typeof backButton==='function'&&backButton())){ campPauseOpen(); }
@@ -36210,7 +36235,7 @@ function campSlotInput(){
         if(campApply(s)){ campSession=campSnapshot(); campPick=null; openStageSelect(run.stage,{}); }
         else { campPick=null; campHubSay('THAT SAVE IS FROM AN OLDER BUILD'); }
       }
-    }, null, null);
+    }, null, drawCampSlots._selRect||null);   // 0822ag
   }
   if(Input.tap('backspace')||(typeof backButton==='function'&&backButton())){ campPick=null; campHubIndex=0; }
 }

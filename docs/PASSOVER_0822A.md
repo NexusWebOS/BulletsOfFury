@@ -1656,3 +1656,76 @@ and letters type into the password on this screen, so accepting `'j'` would pres
 keypad key as well as typing it. That is the "stuck on B" bug already noted in this function.
 
 Suite **2,783 ok / 3 pre-existing fail**. Atlas verify PASS.
+
+---
+
+## 0822ag — THE BUTTON FLASH, AND WHY ICE BREATH NEVER APPEARED
+
+### The whole screen was flashing on one menu
+
+> Mike: *"not all buttons are flashing when we select them in the menus. At one point new game or
+> campaign or something flashes the whole screen instead of the button like all else."*
+
+`selFlash(after, dur, rect)` falls back to a **full-screen** strobe when handed no rect — deliberately,
+so screens could opt in one at a time. Mode select opted in. The campaign hub and the save slots
+never did and passed `null`:
+
+| screen | rect | result |
+|---|---|---|
+| mode select | `drawModeSelect._selRect` | button flashes |
+| **campaign hub** | `null` | **whole screen** |
+| **save slots** | `null` | **whole screen** |
+
+Both now record where the highlighted button landed, same shape as mode select. Measured after the
+fix: **0 of 256 sampled rows are majority-white** — the strobe is confined to the pill.
+`docs/proofs/hub_button_flash.png`. The no-art fallback records a rect too, or the bug returns
+whenever the button art is slow to decode.
+
+The map deploy still flashes full-screen; it has its own zoom transition and Mike did not name it.
+
+### Ice breath: the drop was fine, the ICON did not exist
+
+> *"I could not get a ice freeze icon to spawn out of a powerupbox on level 2 for me at all."*
+
+The drop table was **innocent** — measured, 120 crates as Freezer on stage 2 produce
+`slot 4 : icebreath ×20`, one per bag cycle. The fault was that **`WVAR_ICON` names five icon
+families and not one of them was registered**:
+
+```
+micon_icebreath_    *** NONE REGISTERED ***
+micon_thermoshock_  *** NONE REGISTERED ***
+micon_fireorb_      *** NONE REGISTERED ***
+micon_firewall_     *** NONE REGISTERED ***
+micon_iceorb_       *** NONE REGISTERED ***
+```
+
+So the pickup spawned with nothing to draw. A comment in `weaponIconKey` claims "all three icons
+already existed and were simply unreachable" — they existed, but in `_ART_SOURCES`, never in the
+build. All five are authored 5-level hex icons (`CF_IceBreathIcons-Vol.1`,
+`CF_ThermoshockPowerIcons-Vol.1`, `CF_FireballPowerSystem-Vol.1`, and the v22 set).
+
+**25 icons installed and registered, 0 edge halos.** `docs/proofs/weapon_icons.png`.
+
+### Freezer's kit now matches the spec
+
+Measured, 120 crates per stage:
+
+| stage | slot 4 | slot 5 |
+|---|---|---|
+| 2 | **icebreath only** — never a flamethrower | iceorb |
+| 3 | flamethrower only | **fireice only** — ice breath and ice orb withheld |
+| 4+ | flamethrower **or** icebreath | **iceorb or fireice** |
+| any | — | **never fireorb** |
+
+Only one rule actually needed changing: the slot-5 branch returned `fireice` for Freezer at every
+stage ≥3, which locked his ice orb out of the entire back half of the game.
+
+> ⚠ **This reverses a recorded spec.** Drop 0812l pinned Mike's earlier words: *"past level 3 -
+> freezer ... keeps the new fireice orb, he no longer gets ice orb or fire orb."* Today he said
+> *"the rest of the game he has access to all of them - ice breath, flame thrower, ice orb and his
+> fireiceball."* The newer one is implemented and **both quotes are kept in the assertion** so the
+> reversal is visible rather than silently overwritten. Unchanged either way: stage 3 is the merge
+> and dispenses only the ball, and the fire orb is never his — he is the only pilot whose fire and
+> ice systems merged.
+
+Suite **2,791 ok / 3 pre-existing fail**. Atlas verify PASS.
