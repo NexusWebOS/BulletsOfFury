@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fury Forge — AI Entity & Level Builder</title>
+  <link rel="stylesheet" href="styles.css?v=2.0.0">
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">FF</div>
+      <div><h1>FURY FORGE</h1><p>AI BEHAVIOUR BUILDER</p></div>
+    </div>
+    <nav class="modes" aria-label="Builder modes">
+      <button class="mode active" data-mode="live"><span>01</span> LIVE PREVIEW</button>
+      <button class="mode" data-mode="frame"><span>02</span> FRAME EDIT</button>
+      <button class="mode" data-mode="wave"><span>03</span> AI PATTERN</button>
+      <button class="mode" data-mode="level"><span>04</span> LEVEL SPAWNS</button>
+    </nav>
+    <div class="top-actions">
+      <span class="save-state"><i></i><b id="saveState">LOCAL DRAFT</b></span>
+      <button class="button ghost icon-button import-action" id="importBtn">IMPORT</button>
+      <button class="button hot icon-button export-action" id="exportBtn">EXPORT JSON</button>
+      <input id="importFile" type="file" accept="application/json,.json" hidden>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <aside class="roster panel">
+      <div class="panel-title"><span class="panel-heading unit-heading-icon">UNIT LIBRARY</span><b id="entityCount">0 UNITS</b></div>
+      <label class="search"><span>⌕</span><input id="search" placeholder="SEARCH UNITS / ASSETS"></label>
+      <div class="filters" id="filters">
+        <button class="active" data-filter="all">ALL</button>
+        <button data-filter="wired">WIRED</button>
+        <button data-filter="unwired">UNWIRED</button>
+        <button data-filter="pilot">PILOTS</button>
+        <button data-filter="miniboss">MINI-BOSSES</button>
+        <button data-filter="boss">BOSSES</button>
+      </div>
+      <div class="roster-summary" id="rosterSummary"></div>
+      <div class="group-label"><span>GAME ROSTER</span><button id="newEntity">+ NEW</button></div>
+      <div class="entity-list" id="entityList"></div>
+      <details class="asset-drawer" id="assetDrawer">
+        <summary><span>UNWIRED ASSET VAULT</span><b id="assetCount">0</b></summary>
+        <div class="asset-help">Select any unused image or extracted atlas frame and turn it into a new unit draft.</div>
+        <div class="asset-list" id="assetList"></div>
+      </details>
+    </aside>
+
+    <section class="stage panel">
+      <div class="stage-head">
+        <div><span class="eyebrow" id="modeEyebrow">1:1 RUNTIME REPLICA</span><h2 id="stageTitle">LIVE COMBAT LAB</h2></div>
+        <div class="transport">
+          <button class="transport-reset" id="resetPreview" title="Reset" aria-label="Reset preview">↺</button>
+          <button class="play transport-play" id="playPreview" title="Play / pause" aria-label="Play or pause">Ⅱ</button>
+          <label><span>SPEED</span><select id="previewSpeed"><option value="0.5">0.5×</option><option value="1" selected>1×</option><option value="2">2×</option></select></label>
+        </div>
+      </div>
+      <div class="canvas-shell" id="canvasShell">
+        <canvas id="preview" width="480" height="720" aria-label="Live game preview"></canvas>
+        <div class="canvas-badge top-left" id="canvasBadge">480 × 720 GAME SPACE</div>
+        <div class="canvas-badge top-right" id="fpsBadge">60 FPS</div>
+        <button class="canvas-badge zoom-badge" id="zoomBadge" title="Mouse wheel zoom · click to reset">ZOOM 100% · RESET</button>
+        <div class="canvas-help" id="canvasHelp">Drag to reposition · Space to pause · R to reset</div>
+      </div>
+      <div class="frame-strip" id="frameStripWrap">
+        <div class="strip-head"><span>FRAME SELECTION</span><div><button id="addFrame">+ IMAGE REF</button><button id="copyRef">COPY REF</button></div></div>
+        <div class="frame-strip-list" id="frameStrip"></div>
+      </div>
+      <div class="timeline-wrap hidden" id="timelineWrap">
+        <div class="strip-head"><span>SPAWN TIMELINE</span><div><b id="timeReadout">00:00.0</b><button id="addSpawn">+ SPAWN</button></div></div>
+        <div class="timeline" id="timeline"><div class="timeline-ruler" id="timelineRuler"></div><div class="timeline-events" id="timelineEvents"></div><div class="playhead" id="playhead"></div></div>
+      </div>
+    </section>
+
+    <aside class="inspector panel">
+      <div class="panel-title"><span class="panel-heading inspector-heading-icon">INSPECTOR</span><b id="dirtyBadge">SYNCED</b></div>
+      <div class="unit-heading">
+        <div class="status-orb wired" id="statusOrb"></div>
+        <div><input id="entityName" value="Scout"><span id="entityMeta">ENEMY · WIRED</span></div>
+        <button id="duplicateEntity" title="Duplicate">⧉</button>
+      </div>
+
+      <div id="entityInspector">
+        <section class="inspector-section">
+          <h3>COMBAT PROFILE <button class="recommend" id="recommendAI">AI RECOMMEND</button></h3>
+          <label class="select-field"><span>UNIT TYPE</span><select id="category">
+            <option value="enemy">Enemy</option><option value="jet">Enemy Jet</option><option value="drone">Drone</option>
+            <option value="lava">Lava Drone</option><option value="ice">Ice Drone</option><option value="sludge">Sludge Drone</option>
+            <option value="alienoid">Alienoid</option><option value="tank">Tank</option><option value="turret">Turret</option>
+            <option value="boat">Boat / Ship</option><option value="plane">Player Plane</option><option value="pilot">Pilot Ship</option>
+            <option value="miniboss">Mini-Boss</option><option value="boss">Boss</option>
+          </select></label>
+          <div class="field-grid three">
+            <label><span>HP</span><input id="hp" type="number" min="0" step="1"></label>
+            <label><span>DAMAGE</span><input id="damage" type="number" min="0" step="0.1"></label>
+            <label><span>SCORE</span><input id="score" type="number" min="0" step="10"></label>
+          </div>
+          <div class="field-grid two">
+            <label><span>SPEED PX/S</span><input id="speed" type="number" min="0"></label>
+            <label><span>FIRE DELAY</span><input id="fireRate" type="number" min="0.05" step="0.05"></label>
+          </div>
+        </section>
+
+        <section class="inspector-section">
+          <h3>FRAME SCALE</h3>
+          <div class="field-grid two">
+            <label><span>WIDTH</span><input id="width" type="number" min="1"></label>
+            <label><span>HEIGHT</span><input id="height" type="number" min="1"></label>
+          </div>
+          <label class="slider"><span>DISPLAY SCALE <b id="scaleValue">100%</b></span><input id="displayScale" type="range" min="20" max="300" step="1"></label>
+          <label class="check"><input id="lockAspect" type="checkbox" checked><span>Lock source aspect ratio</span></label>
+        </section>
+
+        <section class="inspector-section movement-section">
+          <h3>MOVEMENT AI</h3>
+          <label class="select-field"><span>PATTERN</span><select id="pattern"></select></label>
+          <div class="pattern-card" id="patternCard"></div>
+          <div class="field-grid two">
+            <label><span>AMPLITUDE</span><input id="amplitude" type="number" min="0"></label>
+            <label><span>FREQUENCY</span><input id="frequency" type="number" min="0" step="0.1"></label>
+          </div>
+        </section>
+
+        <section class="inspector-section frame-tools hidden" id="frameTools">
+          <h3>DRAW / POINT TOOLS</h3>
+          <div class="tool-grid" id="toolGrid">
+            <button data-tool="select" class="active">↖<span>SELECT</span></button>
+            <button data-tool="muzzle">✦<span>MUZZLE</span></button>
+            <button data-tool="anchor">＋<span>ANCHOR</span></button>
+            <button data-tool="box">□<span>DAMAGE BOX</span></button>
+            <button data-tool="ellipse">○<span>DAMAGE OVAL</span></button>
+            <button data-tool="diamond">◇<span>DIAMOND</span></button>
+            <button data-tool="x">×<span>X POINT</span></button>
+            <button data-tool="erase">⌫<span>ERASE</span></button>
+          </div>
+          <div class="annotation-list" id="annotationList"></div>
+        </section>
+
+        <section class="inspector-section wave-tools hidden" id="waveTools">
+          <h3>DRAW PATTERN</h3>
+          <p class="mini-copy">Draw directly on the game field. The path is stored as normalized points and can be reused at any resolution.</p>
+          <div class="row-actions"><button class="button ghost" id="clearPath">CLEAR PATH</button><button class="button hot" id="useDrawnPath">USE DRAWN AI</button></div>
+          <label class="slider"><span>WAVE COUNT <b id="waveCountValue">6</b></span><input id="waveCount" type="range" min="1" max="20" value="6"></label>
+          <label class="slider"><span>SPACING <b id="waveSpacingValue">0.22s</b></span><input id="waveSpacing" type="range" min="0" max="1.5" step="0.05" value="0.22"></label>
+        </section>
+      </div>
+
+      <div id="levelInspector" class="hidden">
+        <section class="inspector-section">
+          <h3>LEVEL</h3>
+          <label class="select-field"><span>STAGE</span><select id="stageSelect"></select></label>
+          <div class="field-grid two">
+            <label><span>DURATION S</span><input id="stageDuration" type="number" min="1"></label>
+            <label><span>SCROLL PX/S</span><input id="stageScroll" type="number" min="0"></label>
+          </div>
+        </section>
+        <section class="inspector-section" id="spawnInspector">
+          <h3>SELECTED SPAWN <button class="danger-link" id="deleteSpawn">REMOVE</button></h3>
+          <div id="noSpawn" class="empty-state">Click the playfield to add a spawn or choose a marker on the timeline.</div>
+          <div id="spawnFields" class="hidden">
+            <label class="select-field"><span>WHAT SPAWNS</span><select id="spawnEntity"></select></label>
+            <div class="field-grid two">
+              <label><span>TIME S</span><input id="spawnTime" type="number" min="0" step="0.1"></label>
+              <label><span>COUNT</span><input id="spawnCount" type="number" min="1" max="50"></label>
+              <label><span>X</span><input id="spawnX" type="number" min="0" max="480"></label>
+              <label><span>Y</span><input id="spawnY" type="number" min="-200" max="720"></label>
+              <label><span>INTERVAL</span><input id="spawnInterval" type="number" min="0" step="0.05"></label>
+              <label><span>HP ×</span><input id="spawnHp" type="number" min="0.1" step="0.1"></label>
+            </div>
+            <label class="select-field"><span>MOVEMENT OVERRIDE</span><select id="spawnPattern"></select></label>
+          </div>
+        </section>
+        <section class="inspector-section">
+          <h3>DIRECTOR ACTIONS</h3>
+          <div class="row-actions stack"><button class="button hot" id="previewLevel">PLAY FROM SELECTED</button><button class="button ghost" id="exportLevel">EXPORT LEVEL JSON</button></div>
+        </section>
+      </div>
+    </aside>
+  </main>
+
+  <footer class="statusbar">
+    <span class="project-chip">PROJECT: <b>FURY_FORGE</b></span>
+    <span><i class="green"></i> RUNTIME <b>480×720 / 60HZ</b></span>
+    <span class="runtime-metrics"><b id="unitMetric">0</b> UNITS · <b id="spawnMetric">0</b> SPAWNS · <b id="patternMetric">0</b> PATTERNS</span>
+    <span id="selectionStatus">SCOUT · FRAME 1/1</span>
+    <span class="key-hints">UNDO <b>CTRL+Z</b> · SAVE <b>CTRL+S</b> · DELETE <b>DEL</b></span>
+  </footer>
+
+  <script src="data/default-data.js?v=1.2.0"></script>
+  <script src="data/catalog.js?v=3"></script>
+  <script src="app.js?v=2.1.0"></script>
+</body>
+</html>

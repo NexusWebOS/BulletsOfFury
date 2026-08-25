@@ -1,0 +1,49 @@
+{
+  "schema_version": "1.0",
+  "pack": "CF_AIBuilderUI-Vol.1",
+  "purpose": "16-bit UI production pack for the ColeForge AI Behavior Builder",
+  "background_policy": {
+    "preserved_source": "corrected pure #FF00FF boards stored outside shipping ZIP",
+    "runtime": "hard-alpha RGBA; transparent RGB cleared to 0,0,0"
+  },
+  "concept": "concept/coleforge-ai-builder-concept.png",
+  "audit": "CF_AIBuilderUI-Vol.1-audit.json",
+  "categories": {
+    "buttons": {
+      "count": 20,
+      "map": "buttons/buttons-map.json"
+    },
+    "interface_icons": {
+      "count": 24,
+      "map": "interface-icons/interface-icons-map.json"
+    },
+    "core_cursors": {
+      "count": 14,
+      "map": "core-cursors/core-cursors-map.json"
+    },
+    "editor_cursors": {
+      "count": 14,
+      "map": "editor-cursors/editor-cursors-map.json"
+    },
+    "window_frames": {
+      "count": 26,
+      "map": "window-frames/window-frames-map.json"
+    },
+    "text_buttons": {
+      "count": 60,
+      "state": "normal",
+      "map": "text-buttons/text-buttons-map.json"
+    },
+    "full_size_windows": {
+      "count": 10,
+      "window_families": 5,
+      "map": "full-size-windows/full-size-windows-map.json"
+    }
+  },
+  "recommended_import": {
+    "texture_filter": "nearest",
+    "mipmaps": false,
+    "premultiply_alpha": false,
+    "color_space": "sRGB"
+  }
+}

@@ -1,0 +1,271 @@
+{
+  "atlas": "buttons-atlas.png",
+  "source_grid": {
+    "columns": 5,
+    "rows": 4,
+    "x_boundaries": [
+      0,
+      340,
+      620,
+      900,
+      1183,
+      1536
+    ],
+    "y_boundaries": [
+      0,
+      266,
+      478,
+      721,
+      1024
+    ]
+  },
+  "states": [
+    "normal",
+    "hover",
+    "pressed",
+    "selected",
+    "disabled"
+  ],
+  "assets": [
+    {
+      "name": "button-small-normal",
+      "file": "button-small-normal.png",
+      "width": 235,
+      "height": 109,
+      "source_rect": [
+        93,
+        118,
+        311,
+        215
+      ]
+    },
+    {
+      "name": "button-small-hover",
+      "file": "button-small-hover.png",
+      "width": 235,
+      "height": 109,
+      "source_rect": [
+        369,
+        118,
+        589,
+        215
+      ]
+    },
+    {
+      "name": "button-small-pressed",
+      "file": "button-small-pressed.png",
+      "width": 235,
+      "height": 109,
+      "source_rect": [
+        649,
+        119,
+        872,
+        215
+      ]
+    },
+    {
+      "name": "button-small-selected",
+      "file": "button-small-selected.png",
+      "width": 235,
+      "height": 109,
+      "source_rect": [
+        930,
+        119,
+        1153,
+        215
+      ]
+    },
+    {
+      "name": "button-small-disabled",
+      "file": "button-small-disabled.png",
+      "width": 235,
+      "height": 109,
+      "source_rect": [
+        1214,
+        118,
+        1431,
+        214
+      ]
+    },
+    {
+      "name": "button-medium-normal",
+      "file": "button-medium-normal.png",
+      "width": 265,
+      "height": 125,
+      "source_rect": [
+        68,
+        318,
+        318,
+        431
+      ]
+    },
+    {
+      "name": "button-medium-hover",
+      "file": "button-medium-hover.png",
+      "width": 265,
+      "height": 125,
+      "source_rect": [
+        354,
+        318,
+        602,
+        431
+      ]
+    },
+    {
+      "name": "button-medium-pressed",
+      "file": "button-medium-pressed.png",
+      "width": 265,
+      "height": 125,
+      "source_rect": [
+        639,
+        318,
+        886,
+        431
+      ]
+    },
+    {
+      "name": "button-medium-selected",
+      "file": "button-medium-selected.png",
+      "width": 265,
+      "height": 125,
+      "source_rect": [
+        922,
+        318,
+        1172,
+        431
+      ]
+    },
+    {
+      "name": "button-medium-disabled",
+      "file": "button-medium-disabled.png",
+      "width": 265,
+      "height": 125,
+      "source_rect": [
+        1208,
+        318,
+        1461,
+        431
+      ]
+    },
+    {
+      "name": "button-large-normal",
+      "file": "button-large-normal.png",
+      "width": 288,
+      "height": 159,
+      "source_rect": [
+        52,
+        526,
+        325,
+        671
+      ]
+    },
+    {
+      "name": "button-large-hover",
+      "file": "button-large-hover.png",
+      "width": 288,
+      "height": 159,
+      "source_rect": [
+        340,
+        526,
+        611,
+        671
+      ]
+    },
+    {
+      "name": "button-large-pressed",
+      "file": "button-large-pressed.png",
+      "width": 288,
+      "height": 159,
+      "source_rect": [
+        627,
+        526,
+        897,
+        671
+      ]
+    },
+    {
+      "name": "button-large-selected",
+      "file": "button-large-selected.png",
+      "width": 288,
+      "height": 159,
+      "source_rect": [
+        912,
+        526,
+        1183,
+        671
+      ]
+    },
+    {
+      "name": "button-large-disabled",
+      "file": "button-large-disabled.png",
+      "width": 288,
+      "height": 159,
+      "source_rect": [
+        1201,
+        525,
+        1477,
+        672
+      ]
+    },
+    {
+      "name": "button-square-normal",
+      "file": "button-square-normal.png",
+      "width": 278,
+      "height": 153,
+      "source_rect": [
+        231,
+        769,
+        340,
+        910
+      ]
+    },
+    {
+      "name": "button-square-hover",
+      "file": "button-square-hover.png",
+      "width": 278,
+      "height": 153,
+      "source_rect": [
+        340,
+        769,
+        606,
+        910
+      ]
+    },
+    {
+      "name": "button-square-pressed",
+      "file": "button-square-pressed.png",
+      "width": 278,
+      "height": 153,
+      "source_rect": [
+        684,
+        769,
+        834,
+        910
+      ]
+    },
+    {
+      "name": "button-square-selected",
+      "file": "button-square-selected.png",
+      "width": 278,
+      "height": 153,
+      "source_rect": [
+        917,
+        769,
+        1183,
+        910
+      ]
+    },
+    {
+      "name": "button-square-disabled",
+      "file": "button-square-disabled.png",
+      "width": 278,
+      "height": 153,
+      "source_rect": [
+        1183,
+        769,
+        1290,
+        909
+      ]
+    }
+  ]
+}

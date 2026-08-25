@@ -1,0 +1,1126 @@
+{
+  "schema_version": "1.0",
+  "family": "ColeForge AI Builder text buttons",
+  "count": 60,
+  "state": "normal",
+  "background": "hard-alpha RGBA",
+  "source_key": "#FF00FF",
+  "button_size": [
+    434,
+    146
+  ],
+  "atlases": [
+    {
+      "group": "navigation",
+      "file": "text-buttons-navigation-atlas.png",
+      "columns": 3,
+      "rows": 4
+    },
+    {
+      "group": "editing-tools",
+      "file": "text-buttons-editing-tools-atlas.png",
+      "columns": 3,
+      "rows": 4
+    },
+    {
+      "group": "unit-playback",
+      "file": "text-buttons-unit-playback-atlas.png",
+      "columns": 3,
+      "rows": 4
+    },
+    {
+      "group": "ai-level",
+      "file": "text-buttons-ai-level-atlas.png",
+      "columns": 3,
+      "rows": 4
+    },
+    {
+      "group": "unit-presets",
+      "file": "text-buttons-unit-presets-atlas.png",
+      "columns": 3,
+      "rows": 4
+    }
+  ],
+  "assets": [
+    {
+      "label": "UNIT LIBRARY",
+      "slug": "unit-library",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        93,
+        113,
+        510,
+        243
+      ],
+      "accent": "system",
+      "order": 1,
+      "file": "btn-unit-library-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "LIVE PREVIEW",
+      "slug": "live-preview",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        564,
+        113,
+        972,
+        243
+      ],
+      "accent": "system",
+      "order": 2,
+      "file": "btn-live-preview-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "FRAME EDIT",
+      "slug": "frame-edit",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        1024,
+        113,
+        1437,
+        243
+      ],
+      "accent": "system",
+      "order": 3,
+      "file": "btn-frame-edit-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "AI PATTERN",
+      "slug": "ai-pattern",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        93,
+        325,
+        510,
+        454
+      ],
+      "accent": "system",
+      "order": 4,
+      "file": "btn-ai-pattern-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "LEVEL SPAWNS",
+      "slug": "level-spawns",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        563,
+        325,
+        972,
+        454
+      ],
+      "accent": "system",
+      "order": 5,
+      "file": "btn-level-spawns-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "INSPECTOR",
+      "slug": "inspector",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        1024,
+        325,
+        1437,
+        454
+      ],
+      "accent": "system",
+      "order": 6,
+      "file": "btn-inspector-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "NEW UNIT",
+      "slug": "new-unit",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        93,
+        536,
+        510,
+        666
+      ],
+      "accent": "system",
+      "order": 7,
+      "file": "btn-new-unit-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "IMPORT SPRITE",
+      "slug": "import-sprite",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        563,
+        536,
+        972,
+        666
+      ],
+      "accent": "system",
+      "order": 8,
+      "file": "btn-import-sprite-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "LOAD JSON",
+      "slug": "load-json",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        1024,
+        536,
+        1437,
+        666
+      ],
+      "accent": "system",
+      "order": 9,
+      "file": "btn-load-json-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "SAVE JSON",
+      "slug": "save-json",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        93,
+        768,
+        510,
+        878
+      ],
+      "accent": "system",
+      "order": 10,
+      "file": "btn-save-json-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "EXPORT JSON",
+      "slug": "export-json",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        563,
+        768,
+        972,
+        878
+      ],
+      "accent": "system",
+      "order": 11,
+      "file": "btn-export-json-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "TEST PLAY",
+      "slug": "test-play",
+      "group": "navigation",
+      "atlas": "text-buttons-navigation-atlas.png",
+      "source_rect": [
+        1024,
+        768,
+        1437,
+        878
+      ],
+      "accent": "system",
+      "order": 12,
+      "file": "btn-test-play-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "SELECT",
+      "slug": "select",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        92,
+        106,
+        510,
+        236
+      ],
+      "accent": "system",
+      "order": 13,
+      "file": "btn-select-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "BOX TOOL",
+      "slug": "box-tool",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        564,
+        106,
+        972,
+        236
+      ],
+      "accent": "system",
+      "order": 14,
+      "file": "btn-box-tool-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "CIRCLE TOOL",
+      "slug": "circle-tool",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        1024,
+        106,
+        1437,
+        236
+      ],
+      "accent": "system",
+      "order": 15,
+      "file": "btn-circle-tool-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "OVAL TOOL",
+      "slug": "oval-tool",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        92,
+        331,
+        510,
+        459
+      ],
+      "accent": "system",
+      "order": 16,
+      "file": "btn-oval-tool-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "DIAMOND TOOL",
+      "slug": "diamond-tool",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        564,
+        331,
+        972,
+        459
+      ],
+      "accent": "system",
+      "order": 17,
+      "file": "btn-diamond-tool-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "X POINT",
+      "slug": "x-point",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        1024,
+        331,
+        1437,
+        459
+      ],
+      "accent": "system",
+      "order": 18,
+      "file": "btn-x-point-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "MUZZLE POINT",
+      "slug": "muzzle-point",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        92,
+        555,
+        510,
+        683
+      ],
+      "accent": "system",
+      "order": 19,
+      "file": "btn-muzzle-point-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "ANCHOR POINT",
+      "slug": "anchor-point",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        564,
+        555,
+        972,
+        683
+      ],
+      "accent": "system",
+      "order": 20,
+      "file": "btn-anchor-point-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "DAMAGE REGION",
+      "slug": "damage-region",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        1024,
+        555,
+        1437,
+        683
+      ],
+      "accent": "system",
+      "order": 21,
+      "file": "btn-damage-region-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "WEAK POINT",
+      "slug": "weak-point",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        92,
+        776,
+        510,
+        905
+      ],
+      "accent": "system",
+      "order": 22,
+      "file": "btn-weak-point-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "DRAW PATH",
+      "slug": "draw-path",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        564,
+        776,
+        972,
+        905
+      ],
+      "accent": "system",
+      "order": 23,
+      "file": "btn-draw-path-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "ERASE",
+      "slug": "erase",
+      "group": "editing-tools",
+      "atlas": "text-buttons-editing-tools-atlas.png",
+      "source_rect": [
+        1024,
+        776,
+        1437,
+        905
+      ],
+      "accent": "system",
+      "order": 24,
+      "file": "btn-erase-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "WIRE UNIT",
+      "slug": "wire-unit",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        93,
+        113,
+        510,
+        243
+      ],
+      "accent": "confirm",
+      "order": 25,
+      "file": "btn-wire-unit-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "UNWIRE UNIT",
+      "slug": "unwire-unit",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        564,
+        113,
+        972,
+        243
+      ],
+      "accent": "caution",
+      "order": 26,
+      "file": "btn-unwire-unit-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "DUPLICATE",
+      "slug": "duplicate",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        1024,
+        113,
+        1437,
+        243
+      ],
+      "accent": "system",
+      "order": 27,
+      "file": "btn-duplicate-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "DELETE",
+      "slug": "delete",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        93,
+        325,
+        510,
+        454
+      ],
+      "accent": "danger",
+      "order": 28,
+      "file": "btn-delete-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "PLAY",
+      "slug": "play",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        564,
+        325,
+        972,
+        454
+      ],
+      "accent": "confirm",
+      "order": 29,
+      "file": "btn-play-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "PAUSE",
+      "slug": "pause",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        1024,
+        325,
+        1437,
+        454
+      ],
+      "accent": "caution",
+      "order": 30,
+      "file": "btn-pause-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "STOP",
+      "slug": "stop",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        93,
+        537,
+        510,
+        666
+      ],
+      "accent": "danger",
+      "order": 31,
+      "file": "btn-stop-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "REWIND",
+      "slug": "rewind",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        564,
+        537,
+        972,
+        666
+      ],
+      "accent": "system",
+      "order": 32,
+      "file": "btn-rewind-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "STEP FRAME",
+      "slug": "step-frame",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        1024,
+        537,
+        1437,
+        666
+      ],
+      "accent": "system",
+      "order": 33,
+      "file": "btn-step-frame-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "PREV FRAME",
+      "slug": "prev-frame",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        93,
+        768,
+        510,
+        878
+      ],
+      "accent": "system",
+      "order": 34,
+      "file": "btn-prev-frame-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "NEXT FRAME",
+      "slug": "next-frame",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        564,
+        768,
+        972,
+        878
+      ],
+      "accent": "system",
+      "order": 35,
+      "file": "btn-next-frame-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "RESET VALUES",
+      "slug": "reset-values",
+      "group": "unit-playback",
+      "atlas": "text-buttons-unit-playback-atlas.png",
+      "source_rect": [
+        1024,
+        768,
+        1437,
+        878
+      ],
+      "accent": "system",
+      "order": 36,
+      "file": "btn-reset-values-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "RECOMMEND AI",
+      "slug": "recommend-ai",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        93,
+        113,
+        510,
+        243
+      ],
+      "accent": "system",
+      "order": 37,
+      "file": "btn-recommend-ai-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "APPLY PATTERN",
+      "slug": "apply-pattern",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        564,
+        113,
+        972,
+        243
+      ],
+      "accent": "confirm",
+      "order": 38,
+      "file": "btn-apply-pattern-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "SAVE PATTERN",
+      "slug": "save-pattern",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        1024,
+        113,
+        1437,
+        243
+      ],
+      "accent": "system",
+      "order": 39,
+      "file": "btn-save-pattern-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "LOAD PATTERN",
+      "slug": "load-pattern",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        93,
+        325,
+        510,
+        454
+      ],
+      "accent": "system",
+      "order": 40,
+      "file": "btn-load-pattern-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "RANDOMIZE",
+      "slug": "randomize",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        564,
+        325,
+        972,
+        454
+      ],
+      "accent": "caution",
+      "order": 41,
+      "file": "btn-randomize-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "ADD SPAWN",
+      "slug": "add-spawn",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        1024,
+        325,
+        1437,
+        454
+      ],
+      "accent": "confirm",
+      "order": 42,
+      "file": "btn-add-spawn-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "EDIT SPAWN",
+      "slug": "edit-spawn",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        93,
+        536,
+        510,
+        665
+      ],
+      "accent": "caution",
+      "order": 43,
+      "file": "btn-edit-spawn-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "REMOVE SPAWN",
+      "slug": "remove-spawn",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        564,
+        536,
+        972,
+        666
+      ],
+      "accent": "danger",
+      "order": 44,
+      "file": "btn-remove-spawn-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "SPAWN NOW",
+      "slug": "spawn-now",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        1024,
+        536,
+        1437,
+        665
+      ],
+      "accent": "confirm",
+      "order": 45,
+      "file": "btn-spawn-now-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "COPY WAVE",
+      "slug": "copy-wave",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        93,
+        768,
+        510,
+        878
+      ],
+      "accent": "system",
+      "order": 46,
+      "file": "btn-copy-wave-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "CLEAR WAVE",
+      "slug": "clear-wave",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        564,
+        768,
+        972,
+        878
+      ],
+      "accent": "danger",
+      "order": 47,
+      "file": "btn-clear-wave-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "PREVIEW WAVE",
+      "slug": "preview-wave",
+      "group": "ai-level",
+      "atlas": "text-buttons-ai-level-atlas.png",
+      "source_rect": [
+        1024,
+        768,
+        1437,
+        878
+      ],
+      "accent": "system",
+      "order": 48,
+      "file": "btn-preview-wave-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "JET PATTERN",
+      "slug": "jet-pattern",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        93,
+        113,
+        510,
+        243
+      ],
+      "accent": "system",
+      "order": 49,
+      "file": "btn-jet-pattern-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "BOAT PATTERN",
+      "slug": "boat-pattern",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        564,
+        113,
+        972,
+        243
+      ],
+      "accent": "system",
+      "order": 50,
+      "file": "btn-boat-pattern-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "PLANE PATTERN",
+      "slug": "plane-pattern",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        1024,
+        113,
+        1437,
+        243
+      ],
+      "accent": "system",
+      "order": 51,
+      "file": "btn-plane-pattern-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "TANK PATTERN",
+      "slug": "tank-pattern",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        93,
+        325,
+        510,
+        454
+      ],
+      "accent": "system",
+      "order": 52,
+      "file": "btn-tank-pattern-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "LAVA DRONE",
+      "slug": "lava-drone",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        564,
+        325,
+        972,
+        454
+      ],
+      "accent": "lava",
+      "order": 53,
+      "file": "btn-lava-drone-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "ICE DRONE",
+      "slug": "ice-drone",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        1024,
+        325,
+        1437,
+        454
+      ],
+      "accent": "ice",
+      "order": 54,
+      "file": "btn-ice-drone-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "SLUDGE DRONE",
+      "slug": "sludge-drone",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        93,
+        536,
+        510,
+        665
+      ],
+      "accent": "toxic",
+      "order": 55,
+      "file": "btn-sludge-drone-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "ALIENOID",
+      "slug": "alienoid",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        564,
+        536,
+        972,
+        665
+      ],
+      "accent": "alien",
+      "order": 56,
+      "file": "btn-alienoid-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "MINI BOSS",
+      "slug": "mini-boss",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        1024,
+        536,
+        1437,
+        665
+      ],
+      "accent": "danger",
+      "order": 57,
+      "file": "btn-mini-boss-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "BOSS PATTERN",
+      "slug": "boss-pattern",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        93,
+        768,
+        510,
+        878
+      ],
+      "accent": "danger",
+      "order": 58,
+      "file": "btn-boss-pattern-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "PILOT SHIP",
+      "slug": "pilot-ship",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        564,
+        768,
+        972,
+        878
+      ],
+      "accent": "confirm",
+      "order": 59,
+      "file": "btn-pilot-ship-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    },
+    {
+      "label": "CUSTOM UNIT",
+      "slug": "custom-unit",
+      "group": "unit-presets",
+      "atlas": "text-buttons-unit-presets-atlas.png",
+      "source_rect": [
+        1024,
+        768,
+        1437,
+        878
+      ],
+      "accent": "system",
+      "order": 60,
+      "file": "btn-custom-unit-normal.png",
+      "state": "normal",
+      "width": 434,
+      "height": 146
+    }
+  ]
+}
