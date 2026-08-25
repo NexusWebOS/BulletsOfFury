@@ -1,0 +1,365 @@
+{
+  "project": "Bullets of Fury",
+  "level": 5,
+  "view": "top-down three-quarter",
+  "facing": "down",
+  "source_key": "#FF00FF",
+  "runtime_alpha": "hard binary RGBA",
+  "pixel_scale": "source reduced 2x with nearest-neighbor",
+  "asset": "Chaos Harrier detached weapon VFX",
+  "atlas": "chaosharrier-vfx-atlas.png",
+  "atlas_grid": [
+    4,
+    3
+  ],
+  "frame_canvas": [
+    224,
+    224
+  ],
+  "frames": [
+    {
+      "name": "chaosharrier-vfx-01-sideflash-1.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        97,
+        76,
+        39,
+        42
+      ],
+      "padding": {
+        "left": 97,
+        "top": 76,
+        "right": 88,
+        "bottom": 106
+      },
+      "opaque_pixels": 828,
+      "index": 0,
+      "state": "sideflash-1",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-02-sideflash-2.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        80,
+        68,
+        59,
+        81
+      ],
+      "padding": {
+        "left": 80,
+        "top": 68,
+        "right": 85,
+        "bottom": 75
+      },
+      "opaque_pixels": 2360,
+      "index": 1,
+      "state": "sideflash-2",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-03-sideflash-3.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        72,
+        62,
+        68,
+        100
+      ],
+      "padding": {
+        "left": 72,
+        "top": 62,
+        "right": 84,
+        "bottom": 62
+      },
+      "opaque_pixels": 3714,
+      "index": 2,
+      "state": "sideflash-3",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-04-sideflash-4.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        72,
+        68,
+        46,
+        74
+      ],
+      "padding": {
+        "left": 72,
+        "top": 68,
+        "right": 106,
+        "bottom": 82
+      },
+      "opaque_pixels": 1008,
+      "index": 3,
+      "state": "sideflash-4",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-05-launchflash-1.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        92,
+        59,
+        50,
+        67
+      ],
+      "padding": {
+        "left": 92,
+        "top": 59,
+        "right": 82,
+        "bottom": 98
+      },
+      "opaque_pixels": 1922,
+      "index": 4,
+      "state": "launchflash-1",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-06-launchflash-2.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        73,
+        42,
+        72,
+        109
+      ],
+      "padding": {
+        "left": 73,
+        "top": 42,
+        "right": 79,
+        "bottom": 73
+      },
+      "opaque_pixels": 4610,
+      "index": 5,
+      "state": "launchflash-2",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-07-launchflash-3.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        57,
+        38,
+        98,
+        159
+      ],
+      "padding": {
+        "left": 57,
+        "top": 38,
+        "right": 69,
+        "bottom": 27
+      },
+      "opaque_pixels": 5205,
+      "index": 6,
+      "state": "launchflash-3",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-08-launchflash-4.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        69,
+        46,
+        52,
+        103
+      ],
+      "padding": {
+        "left": 69,
+        "top": 46,
+        "right": 103,
+        "bottom": 75
+      },
+      "opaque_pixels": 2283,
+      "index": 7,
+      "state": "launchflash-4",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-09-corecharge-1.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        71,
+        49,
+        90,
+        85
+      ],
+      "padding": {
+        "left": 71,
+        "top": 49,
+        "right": 63,
+        "bottom": 90
+      },
+      "opaque_pixels": 4516,
+      "index": 8,
+      "state": "corecharge-1",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-10-corecharge-2.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        42,
+        27,
+        132,
+        130
+      ],
+      "padding": {
+        "left": 42,
+        "top": 27,
+        "right": 50,
+        "bottom": 67
+      },
+      "opaque_pixels": 9614,
+      "index": 9,
+      "state": "corecharge-2",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-11-corecharge-3.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        21,
+        26,
+        172,
+        146
+      ],
+      "padding": {
+        "left": 21,
+        "top": 26,
+        "right": 31,
+        "bottom": 52
+      },
+      "opaque_pixels": 15658,
+      "index": 10,
+      "state": "corecharge-3",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-12-corecharge-4.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        53,
+        52,
+        85,
+        81
+      ],
+      "padding": {
+        "left": 53,
+        "top": 52,
+        "right": 86,
+        "bottom": 91
+      },
+      "opaque_pixels": 3260,
+      "index": 11,
+      "state": "corecharge-4",
+      "origin": [
+        112,
+        112
+      ]
+    }
+  ],
+  "animation_groups": {
+    "side_cannon_flash": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "missile_launch_flash": {
+      "indices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "fps": 14,
+      "loop": false
+    },
+    "core_charge_discharge": {
+      "indices": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "fps": 12,
+      "loop": false
+    }
+  }
+}

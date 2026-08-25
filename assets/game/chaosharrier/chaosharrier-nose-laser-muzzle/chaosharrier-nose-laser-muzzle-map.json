@@ -1,0 +1,205 @@
+{
+  "project": "Bullets of Fury",
+  "level": 5,
+  "view": "top-down three-quarter",
+  "facing": "down",
+  "source_key": "#FF00FF",
+  "runtime_alpha": "hard binary RGBA",
+  "asset": "Chaos Harrier giant nose-laser muzzle flash",
+  "atlas": "chaosharrier-nose-laser-muzzle-atlas.png",
+  "atlas_grid": [
+    3,
+    2
+  ],
+  "frame_canvas": [
+    256,
+    256
+  ],
+  "frames": [
+    {
+      "name": "chaosharrier-nose-laser-muzzle-01-ignition.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        112,
+        48,
+        32,
+        36
+      ],
+      "padding": {
+        "left": 112,
+        "top": 48,
+        "right": 112,
+        "bottom": 172
+      },
+      "opaque_pixels": 209,
+      "index": 0,
+      "state": "chaosharrier-nose-laser-muzzle-01-ignition",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-02-charge.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        90,
+        48,
+        76,
+        116
+      ],
+      "padding": {
+        "left": 90,
+        "top": 48,
+        "right": 90,
+        "bottom": 92
+      },
+      "opaque_pixels": 3586,
+      "index": 1,
+      "state": "chaosharrier-nose-laser-muzzle-02-charge",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-03-flare.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        71,
+        48,
+        115,
+        144
+      ],
+      "padding": {
+        "left": 71,
+        "top": 48,
+        "right": 70,
+        "bottom": 64
+      },
+      "opaque_pixels": 6971,
+      "index": 2,
+      "state": "chaosharrier-nose-laser-muzzle-03-flare",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-04-peak.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        50,
+        48,
+        156,
+        189
+      ],
+      "padding": {
+        "left": 50,
+        "top": 48,
+        "right": 50,
+        "bottom": 19
+      },
+      "opaque_pixels": 12590,
+      "index": 3,
+      "state": "chaosharrier-nose-laser-muzzle-04-peak",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-05-recoil.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        68,
+        48,
+        120,
+        193
+      ],
+      "padding": {
+        "left": 68,
+        "top": 48,
+        "right": 68,
+        "bottom": 15
+      },
+      "opaque_pixels": 7155,
+      "index": 4,
+      "state": "chaosharrier-nose-laser-muzzle-05-recoil",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-06-residue.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        81,
+        48,
+        95,
+        150
+      ],
+      "padding": {
+        "left": 81,
+        "top": 48,
+        "right": 80,
+        "bottom": 58
+      },
+      "opaque_pixels": 2409,
+      "index": 5,
+      "state": "chaosharrier-nose-laser-muzzle-06-residue",
+      "origin": [
+        128,
+        48
+      ]
+    }
+  ],
+  "animation_groups": {
+    "nose_laser_muzzle": {
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "frame_ms": [
+        70,
+        70,
+        70,
+        110,
+        80,
+        80
+      ],
+      "loop": false
+    }
+  },
+  "draw": {
+    "layer": "above_ship_and_beam",
+    "pivot": [
+      128,
+      48
+    ],
+    "hardpoint": "nose_laser"
+  }
+}

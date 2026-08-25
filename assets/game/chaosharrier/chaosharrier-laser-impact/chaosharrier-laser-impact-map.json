@@ -1,0 +1,137 @@
+{
+  "project": "Bullets of Fury",
+  "level": 5,
+  "view": "top-down three-quarter",
+  "facing": "down",
+  "source_key": "#FF00FF",
+  "runtime_alpha": "hard binary RGBA",
+  "pixel_scale": "source reduced 2x with nearest-neighbor",
+  "asset": "Chaos Harrier laser impact",
+  "atlas": "chaosharrier-laser-impact-atlas.png",
+  "atlas_grid": [
+    4,
+    1
+  ],
+  "frame_canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    {
+      "name": "chaosharrier-laser-impact-01-impact-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        80,
+        68,
+        61,
+        46
+      ],
+      "padding": {
+        "left": 80,
+        "top": 68,
+        "right": 51,
+        "bottom": 78
+      },
+      "opaque_pixels": 691,
+      "index": 0,
+      "state": "impact-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-laser-impact-02-impact-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        49,
+        49,
+        92,
+        86
+      ],
+      "padding": {
+        "left": 49,
+        "top": 49,
+        "right": 51,
+        "bottom": 57
+      },
+      "opaque_pixels": 3451,
+      "index": 1,
+      "state": "impact-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-laser-impact-03-impact-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        20,
+        29,
+        132,
+        132
+      ],
+      "padding": {
+        "left": 20,
+        "top": 29,
+        "right": 40,
+        "bottom": 31
+      },
+      "opaque_pixels": 10775,
+      "index": 2,
+      "state": "impact-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-laser-impact-04-impact-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        50,
+        65,
+        64,
+        61
+      ],
+      "padding": {
+        "left": 50,
+        "top": 65,
+        "right": 78,
+        "bottom": 66
+      },
+      "opaque_pixels": 484,
+      "index": 3,
+      "state": "impact-4",
+      "origin": [
+        96,
+        96
+      ]
+    }
+  ],
+  "animation_groups": {
+    "impact": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 15.385,
+      "loop": false
+    }
+  }
+}

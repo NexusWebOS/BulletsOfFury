@@ -1,0 +1,44 @@
+{
+  "format": "coleforge.enemy-difficulty.v1",
+  "asset": "Chaos Harrier",
+  "presets": {
+    "easy": {
+      "health": 1250,
+      "damage_multiplier": 0.72,
+      "projectile_speed_multiplier": 0.86,
+      "cooldown_multiplier": 1.22,
+      "warp_chain_max": 1,
+      "reactor_laser_sweep": false
+    },
+    "normal": {
+      "health": 1800,
+      "damage_multiplier": 1.0,
+      "projectile_speed_multiplier": 1.0,
+      "cooldown_multiplier": 1.0,
+      "warp_chain_max": 1,
+      "reactor_laser_sweep": true
+    },
+    "hard": {
+      "health": 2350,
+      "damage_multiplier": 1.18,
+      "projectile_speed_multiplier": 1.13,
+      "cooldown_multiplier": 0.84,
+      "warp_chain_max": 2,
+      "reactor_laser_sweep": true
+    },
+    "furious": {
+      "health": 3000,
+      "damage_multiplier": 1.32,
+      "projectile_speed_multiplier": 1.25,
+      "cooldown_multiplier": 0.7,
+      "warp_chain_max": 2,
+      "reactor_laser_sweep": true
+    }
+  },
+  "fairness_caps": {
+    "minimum_reactor_charge_ms": 560,
+    "maximum_simultaneous_homing_missiles": 6,
+    "minimum_safe_lane_px": 64,
+    "maximum_teleport_chain": 2
+  }
+}
