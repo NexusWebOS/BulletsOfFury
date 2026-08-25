@@ -1,0 +1,298 @@
+{
+  "frames": {
+    "yuri-idle.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 1,
+      "action": "idle"
+    },
+    "yuri-happy.png": {
+      "frame": {
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 2,
+      "action": "happy"
+    },
+    "yuri-laugh.png": {
+      "frame": {
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 3,
+      "action": "laugh"
+    },
+    "yuri-anger.png": {
+      "frame": {
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 4,
+      "action": "anger"
+    },
+    "yuri-sad.png": {
+      "frame": {
+        "x": 0,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 5,
+      "action": "sad"
+    },
+    "yuri-crash.png": {
+      "frame": {
+        "x": 256,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 6,
+      "action": "crash"
+    },
+    "yuri-victory.png": {
+      "frame": {
+        "x": 512,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 7,
+      "action": "victory"
+    },
+    "yuri-talk-closed.png": {
+      "frame": {
+        "x": 768,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 8,
+      "action": "talk-closed"
+    },
+    "yuri-talk-small.png": {
+      "frame": {
+        "x": 0,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 9,
+      "action": "talk-small"
+    },
+    "yuri-talk-medium.png": {
+      "frame": {
+        "x": 256,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 10,
+      "action": "talk-medium"
+    },
+    "yuri-talk-wide.png": {
+      "frame": {
+        "x": 512,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 11,
+      "action": "talk-wide"
+    },
+    "yuri-talk-o.png": {
+      "frame": {
+        "x": 768,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 12,
+      "action": "talk-o"
+    }
+  },
+  "animations": {
+    "expressions": [
+      "yuri-idle.png",
+      "yuri-happy.png",
+      "yuri-laugh.png",
+      "yuri-anger.png",
+      "yuri-sad.png",
+      "yuri-crash.png",
+      "yuri-victory.png"
+    ],
+    "talk": [
+      "yuri-talk-closed.png",
+      "yuri-talk-small.png",
+      "yuri-talk-medium.png",
+      "yuri-talk-wide.png",
+      "yuri-talk-o.png"
+    ]
+  },
+  "meta": {
+    "app": "ColeForge Sprite Studio normalization",
+    "image": "yuri-portraits-atlas.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1024,
+      "h": 768
+    },
+    "scale": "1",
+    "cell": {
+      "w": 256,
+      "h": 256
+    },
+    "portraitBox": {
+      "w": 224,
+      "h": 224
+    },
+    "cellMargin": 16,
+    "sourceRowGap": 32,
+    "frameOrder": [
+      "idle",
+      "happy",
+      "laugh",
+      "anger",
+      "sad",
+      "crash",
+      "victory",
+      "talk-closed",
+      "talk-small",
+      "talk-medium",
+      "talk-wide",
+      "talk-o"
+    ],
+    "backgroundPolicy": "transparent runtime; normalized source uses #FF00FF",
+    "talkTiming": "mouth-pose palette; suggested 8 FPS when cycled"
+  }
+}

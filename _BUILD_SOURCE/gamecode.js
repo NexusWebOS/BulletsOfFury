@@ -2605,7 +2605,7 @@ const STAGES = [
    /* STAGE 7 (drop 0801cf): cesspool drew no art at all — 0 image blits, purely
       procedural shapes. TOXIC LEVIATHAN is the pack's stage-7 boss. */
    length:58, boss:'toxicleviathan'},
-  {n:8, name:'STAGE 8', sub:'FURIOUS DEATH',            bg:'space',  music:'lvl6',
+  {n:8, name:'STAGE 8', sub:'FURIOUS DEATH',            bg:'space',  music:'lordshadows',
    length:60, boss:'vileexistence'},
 ];
 let curStage=null;
@@ -10011,7 +10011,7 @@ function playerHit(){
 
 function triggerGameOver(){ setState(GS.GAMEOVER); Audio.stopMusic(); Audio.SFX.gameover();
   if(run.score>=highScore){ highScore=run.score; try{localStorage.setItem('bof_hi',highScore);}catch(e){} } }
-function triggerVictory(){ drawVictory._t=0; drawVictory._scroll=0; setState(GS.VICTORY); Audio.stopMusic(); Audio.SFX.victory();
+function triggerVictory(){ drawVictory._t=0; drawVictory._scroll=0; setState(GS.VICTORY); Audio.stopMusic(); Audio.startMusic('lvl6'); Audio.SFX.victory();
   if(run.score>highScore){ highScore=run.score; } try{localStorage.setItem('bof_hi',highScore);}catch(e){} }
 
 /* ============================================================
@@ -24707,5 +24707,3 @@ function drawContinue(dt){
     setState(GS.PLAY);
   }
 }
-
-

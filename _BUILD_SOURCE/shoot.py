@@ -90,6 +90,7 @@ STEP = r"""
     try {
       if (typeof loop === 'function') loop(performance.now() + i*16.7);
       else if (typeof frame === 'function') frame(16.7);
+      if (typeof window.__qaTick === 'function') window.__qaTick(i);
     } catch(e) { return String(e && e.message || e); }
   }
   return null;
@@ -143,6 +144,13 @@ def main():
             for x in errs[:6]:
                 print('   ', x)
             b.close(); stop(); sys.exit(1)
+
+        # Freeze the browser-owned rAF chain before deterministic stepping. Calling loop() by hand
+        # while its final requestAnimationFrame(loop) is still live creates another chain on every
+        # step; a nominal three-second capture was measured at 60,000+ frames and short muzzle FX
+        # vanished between samples. The game has already proven that its natural loop booted above.
+        # From here the harness is the sole clock, exactly as this file's contract promises.
+        pg.evaluate("() => { window.requestAnimationFrame = () => 0; }")
 
         res = pg.evaluate(SETUP, {'state': args.state, 'pilot': args.pilot,
                                   'stage': args.stage, 'invuln': args.invuln})
@@ -198,7 +206,19 @@ def main():
         import base64
         n = 1 if args.seconds <= 0 else max(1, int(args.seconds * args.fps))
         step = max(1, int(60 / args.fps))
+        max_ebullets = 0
+        max_boss_bullets = 0
+        seen_boss_families = set()
+        seen_muzzle_slots = set()
         for i in range(n):
+            probe = pg.evaluate("() => { const a=(typeof eBullets!=='undefined'?eBullets:[]),"
+                                " bb=a.filter(b=>b&&b._boss);"
+                                " return {e:a.length,b:bb.length,f:bb.map(b=>b._bfam||''),"
+                                " m:(typeof subBoss!=='undefined'&&subBoss&&subBoss._smz?subBoss._smz.slots:[])}; }")
+            max_ebullets = max(max_ebullets, probe['e'])
+            max_boss_bullets = max(max_boss_bullets, probe['b'])
+            seen_boss_families.update(probe['f'])
+            seen_muzzle_slots.update(probe['m'])
             data = pg.evaluate(GRAB)
             if not data:
                 print('no canvas found'); break
@@ -212,11 +232,20 @@ def main():
 
         info = pg.evaluate("() => ({state:(typeof state!=='undefined'?state:'?'),"
                            "frames:(window.__bofFrames|0),"
-                           "enemies:(typeof enemies!=='undefined'?enemies.length:-1)})")
+                           "enemies:(typeof enemies!=='undefined'?enemies.length:-1),"
+                           "ebullets:(typeof eBullets!=='undefined'?eBullets.length:-1),"
+                           "bossBullets:(typeof eBullets!=='undefined'?eBullets.filter(b=>b&&b._boss).length:-1),"
+                           "bossFamilies:(typeof eBullets!=='undefined'?[...new Set(eBullets.filter(b=>b&&b._boss).map(b=>b._bfam||''))]:[]),"
+                           "subMuzzle:(typeof subBoss!=='undefined'&&subBoss&&subBoss._smz?subBoss._smz.slots:[])})")
         b.close()
     stop()
 
-    print('state=%s  frames=%d  enemies=%d' % (info['state'], info['frames'], info['enemies']))
+    print('state=%s  frames=%d  enemies=%d  ebullets=%d  bossBullets=%d  bossFamilies=%s  subMuzzle=%s' %
+          (info['state'], info['frames'], info['enemies'], info['ebullets'], info['bossBullets'],
+           ','.join(info['bossFamilies']), ','.join(info['subMuzzle'])))
+    print('capture peaks: ebullets=%d bossBullets=%d bossFamilies=%s muzzleSlots=%s' %
+          (max_ebullets, max_boss_bullets, ','.join(sorted(seen_boss_families)),
+           ','.join(sorted(seen_muzzle_slots))))
     print('captured %d shot(s) -> %s' % (len(shots), args.out))
     if errs:
         print('page errors (%d):' % len(errs))

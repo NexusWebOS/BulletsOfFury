@@ -1305,7 +1305,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // ===== 30. Mike's art assignments: mfx_mg pellets, venom helix lance, waf jets, mslB torpedo =====
   console.log("=== 30. art assignments ===");
   ok(vm.runInContext("XART.rdy('mfx_mg_2_0')&&XART.rdy('mfx_mg_2_2')", ctxv), 'boss MG pellet art loaded (mfx_mg_2_0/2_2 — Mike pick)');
-  ok(vm.runInContext("FIRETYPES.pellet.art({_ph:0}).indexOf('mfx_mg_2')===0", ctxv), 'pellet firetype cycles the mfx_mg_2 art');
+  ok(vm.runInContext("FIRETYPES.pellet.art({_ph:0,t:0}).indexOf('mgcf_1_')===0", ctxv), 'pellet firetype uses the approved orange MG frames');
   // venom helix lance: single heavy piercing bolt, massive damage, slow cadence (base tier)
   vm.runInContext("run.pilot='maverick'; run.wlevel=1; setState(GS.PLAY); player.reset(); player.x=240; player.y=440; special={pilot:'maverick',t:99}; pBullets.length=0; pShoot();", ctxv);
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='venomx';}).length===1", ctxv), 'venom special fires ONE heavy helix lance (not the rapid pair)');
@@ -1560,21 +1560,26 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      load-bearing: with seven frames the dissolve would land on the close and the ship would
      still be visible when the gate shut. */
   var _g7p = fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  /* the WHITE set is what the cutscenes draw now - Mike: "should be white 16-bit styled fading".
-     The authored l7 frames stay registered, so the sewer-green original is one key away. */
-  ok(Array.from({length:8},function(_,i){return 'nfx_wportal_'+i;})
+  ok(Array.from({length:8},function(_,i){return 'nfx_l7portal_'+i;})
        .every(function(k){ return _g229q.indexOf('"'+k+'"') > 0; }),
      'all 8 portal frames are registered, or the dissolve lands on the wrong beat');
   /* ⚠ WARMED WITH THE STAGE. XART.rdy STARTS the load and returns false on that first call, so
      a cutscene that asks for the art at the moment it needs it draws NOTHING. This is the
      0801kd/0801dp trap and it is invisible in a green suite. */
-  ok(/addPrefix\('nfx_wportal_'\)/.test(_g7p), 'and they are warmed with the stage, not fetched mid-cutscene');
-  ok(/run\.stage===7 && typeof XART!=='undefined'/.test(_g7p), 'the flyover has a stage-7 portal branch');
-  /* the exception to "player.x is never touched": you cannot fly into a gate you are not aimed
-     at. It must stay gated on the portal being live, or every stage starts sliding sideways. */
-  ok(/player\.x = lerp\(\(flyoverStartX/.test(_g7p) && /const _l7p = \(run\.stage===7/.test(_g7p),
-     'and x is only driven while the portal is live - every other stage still leaves straight up');
-  ok(/_l7f>=6/.test(_g7p), 'the ship is hidden on frame 06, per the pack contract');
+  ok(/addPrefix\('nfx_l7portal_'\)/.test(_g7p), 'and the sewer reel is warmed with stages 7 and 8, not fetched mid-cutscene');
+  ok(/const _l7p = \(run\.stage===7 && l7PortalReady\(\)\)/.test(_g7p), 'the flyover has a stage-7 portal branch');
+  ok(/const _sx=lerp\(_startX,_l7x,_pull\)/.test(_g7p) && !/player\.x\s*=\s*lerp\(\(flyoverStartX/.test(_g7p),
+     'the cinematic craft is pulled into the portal without mutating every stage exit');
+  ok(/_l7t<0\.98/.test(_g7p), 'the ship disappears inside the aperture before frames 5-7 close it');
+  ok(/run\.stage===7\)\{ run\._l78Entry=1; beginStage\(8\)/.test(_g7p),
+     'Stage 7 results go straight to the Stage 8 card with the portal-entry latch set');
+  ok(/run\.stage===8 && run\._l78Entry/.test(_g7p) && /setState\(GS\.WARPENTRY\)/.test(_g7p),
+     'the Stage 8 card hands to the portal exit instead of the traditional launch');
+  ok(/function drawL78Entry\(dt\)/.test(_g7p) && /run\._l78Entry=0; l78entry=null; setState\(GS\.PLAY\)/.test(_g7p),
+     'the portal exit lands on the live play pose and immediately enables action');
+  ok(/_cinematicHidePlayer=true; drawWorld\(dt\)/.test(_g7p) &&
+     !/const _wasDead=player\.dead; player\.dead=true; drawWorld\(dt\)/.test(_g7p),
+     'the portal owns the ship sprite without triggering the SHIP DESTROYED death overlay');
 
   ok(vm.runInContext("run.stage=7; _levelCfg().liquid==='nlq_sludgeF'", ctxv),
      'and it KEEPS its sludge — the RC2 plate is magenta-punched to alpha and the sludge is what shows through');
@@ -3419,6 +3424,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok((white[8]||0)<(white[7]||1), 'the white then fades back toward normal');
   ok((booms[7]||0)>0 && (booms[8]||0)>0, 'and the boss keeps exploding through the fade and after it');
   ok((booms[9]||0)>0, 'still coming apart into the 9th second');
+  ok(vm.runInContext('bossDeathAlpha(0)===1 && bossDeathAlpha(1.9)===1 && bossDeathAlpha(2.59)===1', ctxv),
+     'the boss hull stays fully opaque while the destruction sequence covers it');
+  ok(vm.runInContext('bossDeathAlpha(2.6)===0 && bossDeathAlpha(8)===0', ctxv),
+     'then it is removed in one hard cut — there is no translucent boss interval');
   // the stage must not cut away before it finishes
   ok(vm.runInContext("updatePlay.toString().indexOf('const endT')>0", ctxv), 'stage-end timing is explicit');
   vm.runInContext("boss=null; bossActive=false; bossDefeated=false; whiteBlast=0; explosions.length=0;", ctxv);
@@ -3924,7 +3933,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok((_ds.match(/switch\s*\(/g)||[]).length===1, 'the dispatch is ONE switch, not split in two');
   // every state the game can be in must map to a draw call INSIDE that switch
   var _states=['BOOT','LOADING','TITLE','DIFF','PILOT','PASSWORD','CREDITS','OPTIONS','INTRO',
-               'LAUNCH','OUTBOUND','PLAY','STAGECLEAR','GAMEOVER','CONTINUE','VICTORY','RIVAL',
+               'LAUNCH','WARPENTRY','OUTBOUND','PLAY','STAGECLEAR','GAMEOVER','CONTINUE','VICTORY','RIVAL',
                'FLYOVER','STAGESEL','MODESEL'];
   var _body=_ds.slice(_ds.indexOf('switch'), _ds.lastIndexOf('}'));
   var _unreached=_states.filter(function(st){ return _body.indexOf('GS.'+st)<0; });
@@ -3933,7 +3942,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _nofn=[];
   [['PLAY','drawWorld'],['MODESEL','drawModeSelect'],['STAGESEL','drawStageSelect'],
    ['TITLE','drawTitle'],['GAMEOVER','drawGameOver'],['VICTORY','drawVictory'],
-   ['CONTINUE','drawContinue'],['STAGECLEAR','drawStageClear'],['FLYOVER','drawFlyover']].forEach(function(pr){
+   ['CONTINUE','drawContinue'],['STAGECLEAR','drawStageClear'],['FLYOVER','drawFlyover'],
+   ['WARPENTRY','drawL78Entry']].forEach(function(pr){
     if(!vm.runInContext("typeof "+pr[1]+"==='function'", ctxv)) _nofn.push(pr[1]);
     if(_body.indexOf(pr[1])<0) _nofn.push(pr[0]+'->'+pr[1]+' not wired');
   });
@@ -4017,16 +4027,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_o.needle.hp<=14 && _o.crescent.hp<=26 && _o.hauler.hp<=40 && _o.oracle.hp<=32,
      'orbital cast de-beefed (needle '+_o.needle.hp+', crescent '+_o.crescent.hp+', hauler '+_o.hauler.hp+', oracle '+_o.oracle.hp+')');
   ok(_o.hauler.score===1500 && _o.oracle.score===1200, 'scores unchanged — the stage is no less rewarding');
-  // BACKGROUND FURNITURE
-  ok(vm.runInContext("l5FieldDraw.toString().indexOf('BACKGROUND FURNITURE READS AS BACKGROUND')>0", ctxv), 'non-damaging field objects are pushed back');
-  /* ⚠ THE NUMBER MOVED (Mike, 0819e): "the transparency of the satelittes and stuff is too
-     much." 0.55 base plus a 0.34 multiply left the orbital hardware at about a third of its
-     authored presence. The RULE is that background furniture is dimmed so it does not compete
-     with the fight — that still holds — so this pins the named constants rather than a value
-     Mike is tuning. */
-  ok(vm.runInContext("l5FieldDraw.toString().indexOf('L5_FIELD_ALPHA')>0 && L5_FIELD_ALPHA<1 && L5_FIELD_SHADE>0", ctxv),
-     'the stage-5 field is dimmed through named constants, and still dimmed at all');
-  ok(vm.runInContext("l5FieldDraw.toString().indexOf('w*0.78')>0", ctxv), 'and scaled to 78%, so they stop competing with real threats');
+  // BACKGROUND SCENERY — 0825: supplied space master plus OUR ASTEROIDS, nothing else.
+  vm.runInContext("l5FieldReset();", ctxv);
+  ok(vm.runInContext("l5Field.length===5 && l5Field.every(function(o){return o.pre==='np5_ast';})", ctxv),
+     'Level 5 retains one five-piece authored asteroid deck');
+  ok(vm.runInContext("l5Field.every(function(o){return o.pre!=='np5_orb';})", ctxv),
+     'satellites and miscellaneous orbital hardware are absent');
+  ok(vm.runInContext("stageSceneryDraw.toString().indexOf('bg5Draw(dt)')<0", ctxv),
+     'the retired random planet/comet overlay is not stacked over the supplied master');
+  ok(vm.runInContext("_levelCfg(5).master==='bg_stage05_loop' && !_levelCfg(5).arena", ctxv),
+     'the supplied space master remains visible through the Stage 5 boss fight');
   vm.runInContext("l5Rocks=[]; run.stage=1;", ctxv);
 
 
@@ -5237,7 +5247,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _bad=Object.keys(_M).filter(function(k){ return !fs.existsSync(ROOT+'/'+_M[k]); });
   ok(_bad.length===0, 'every music key resolves after the re-folder ('+Object.keys(_M).length+' keys)');
   // every stage points at its NEW track
-  var _want={1:'stage1_',2:'stage2_',3:'stage3_',4:'stage4_',5:'stage5_',6:'stage6_',7:'stage7_',8:'stage8_'};
+  var _want={1:'stage1_',2:'stage2_',3:'stage3_',4:'stage4_',5:'lvl3-alt.mp3',6:'stage6_',7:'stage7_',8:'stage5_egypt.mp3'};
   var _g9=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   var _blk=_g9.slice(_g9.indexOf('const STAGES'), _g9.indexOf('const STAGES')+3000);
   var _re=/n:(\d)[^}]*?music:'([\w-]+)'/g, _m, _got={};
@@ -5248,6 +5258,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     if(!f || f.indexOf(_want[n])<0) _wrong.push(n+':'+key+'->'+(f||'none'));
   });
   ok(_wrong.length===0, 'all 8 stages play their reassigned track'+(_wrong.length?(' — '+_wrong.join(', ')):''));
+  ok(String(_M['lvl6']).indexOf('stage8_furious_death')>0, 'the former Stage 8 theme is retained for credits');
   ok(String(_M['boss6mus']).indexOf('battle_in_the_sky')>0, 'level 6 boss = Battle in the Sky');
   ok(String(_M['boss7mus']).indexOf('boss7')>0, 'level 7 boss = the old boss-6 track');
   ok(String(_M['rival']).indexOf('stage9')>0, 'stage 9 / bonus = the old rival track');
@@ -5521,8 +5532,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     });
   });
   ok(_pm3.length===0, 'all 63 emotion portraits resolve');
-  ok(vm.runInContext("typeof pilotPortrait==='function' && pilotPortrait('falva','anger')==='port_falva_anger'", ctxv), 'and the resolver picks the right one per emotion');
-  ok(vm.runInContext("pilotPortrait('falva','nonsense')==='port_falva_idle'", ctxv), 'falling back to idle for an unknown emotion rather than to a head-crop');
+  ok(vm.runInContext("typeof pilotPortrait==='function' && pilotPortrait('falva','anger')==='port_cf_falva_anger'", ctxv), 'and the resolver picks the approved frame per emotion');
+  ok(vm.runInContext("pilotPortrait('falva','nonsense')==='port_cf_falva_idle'", ctxv), 'falling back to approved idle for an unknown emotion rather than to a head-crop');
 
 
   // ===== 126. SPRITE GAME FONT (drop 0724cq) =====
@@ -8738,8 +8749,9 @@ console.log("=== 186. player / enemy / game ===");
      They are NOT atlas material: each is a full-canvas 680x510 alpha layer drawn whole at the
      view rect, so packing them would add a rect lookup and save nothing, and 24 loose plates in
      a flat game/ is exactly the sprawl Mike asked to be cleaned up. Same reasoning fonts/ got. */
-  ok(_sub.sort().join(',')==='atlas,bg5,bg6,fonts,music,sounds',
-     'game/ holds music, sounds, fonts, the packed atlases and the stage-5/6 layers ('+_sub.join(',')+')');
+  var _reqSub=['atlas','bg5','bg6','fonts','music','sounds','fx_0825','l6_fleet','pilot_portraits'];
+  ok(_reqSub.every(function(n){return _sub.indexOf(n)>=0;}),
+     'game/ holds every required runtime asset bucket ('+_sub.join(',')+')');
 
   /* PROTECT THE ART, NOT THE FOLDER IT USED TO SIT IN (drop 0806r).
 
@@ -9044,6 +9056,19 @@ console.log("=== 192. pilot card layout + reveal ===");
      'and stops short of the emblem socket, which begins at 0.767');
   ok(_g192.indexOf('const bwAt=')>0 && _g192.indexOf('RW_X1_SOCK')>0,
      'and steps back only where the emblem is actually in the way');
+
+  /* 0823 walkthrough: Falva, Axel, Decker, Maverick and Cole all left the top of the right bay
+     empty while their last rows were pressed against the bottom. This is intentionally a
+     per-card measurement: Cole has the tallest body, while changing every pilot would disturb
+     cards that Mike explicitly said were already good. */
+  ok(vm.runInContext("['axel','falva','decker','maverick','cole'].every(function(p){ return pcBodyY(p)<0.190 && pcBodyY(p)>0.070; })", ctxv),
+     'the five named cards lift their right-column body into the measured empty space');
+  ok(vm.runInContext("pcBodyY('cole')<pcBodyY('decker') && pcBodyY('decker')<pcBodyY('maverick')", ctxv),
+     "Cole's long bio + five stats receive more room than the shorter cards");
+  ok(vm.runInContext("pcBodyY('lizzie')===0.190 && pcBodyY('freezer')===0.190 && pcBodyY('juggernaut')===0.190 && pcBodyY('yuri')===0.190", ctxv),
+     'pilots the walkthrough said were good keep the established body origin');
+  ok((_g192.match(/bx\+ch\*0\.155/g)||[]).length>=2,
+     'long stat and ability labels stay inside the right bay instead of crossing the pilot divider');
 
   /* "ensure the special ability is visible without going off the card" */
   ok(_g192.indexOf('cy+ch*0.935 - ch*0.100')>0,
@@ -10415,6 +10440,8 @@ console.log("=== 215. menu navigation ===");
      'all four use authored button art that actually resolves');
   ok(vm.runInContext("(function(){ run.mode='campaign'; campaignEnd(); return run.mode; })()", ctxv)==='arcade',
      'campaignEnd is the one place that registers leaving campaign mode');
+  ok(vm.runInContext("(function(){ var hit=[]; var old=Audio.startMusic; Audio.startMusic=function(n){hit.push(n);}; setState(GS.TITLE); Audio.startMusic=old; return hit.join(','); })()", ctxv)==='title',
+     'every route back to TITLE replaces campaign/gameplay music with the title theme');
   ok(vm.runInContext("Input.menuBack.toString().indexOf(\"'k'\")>0", ctxv),
      'the K key is one of the back bindings');
 
@@ -10702,6 +10729,10 @@ console.log("=== 221. boss art warming ===");
   ok(/addPrefix\(SHIPBOSS\[_bk\]\.key\)/.test(_g221), "warmStage warms the stage boss's own hull key");
   ok(/addPrefix\(SHIPBOSS\[_mk\]\.key\)/.test(_g221), 'and the miniboss hull the same way');
   ok(/addPrefix\(NEWBOSS\[n\]\.idle\)/.test(_g221),   'and any NEWBOSS idle reel');
+  ok(/_bk==='vileexistence'[\s\S]{0,250}for\(const _vf of VILE_FORMS\) addPrefix\(_vf\.art\+'_'/m.test(_g221),
+     'Stage 8 warms every VILE shell instead of trying the unrelated vileexistence prefix');
+  ok(/addPrefix\('nvx_morph'\)/.test(_g221) && /addPrefix\('nvx_imp_'\)/.test(_g221),
+     'and warms its morph and final implosion overlays before the boss cinematic');
 
   /* ⚠ THE ENTIRE NEWBOSS TABLE POINTS AT ART THAT IS NOT REGISTERED. All four idle keys
      (chopper_/fboss_/iboss_/tankboss_) are absent from every namespace, so `_hasNewBoss` in
@@ -11257,6 +11288,120 @@ console.log("=== 230. loopcharge jets + no homing ===");
      'NORMAL density is raised to 1.00 — "increase the amount of enemies"');
   ok(_g230.indexOf("const _liveCap = (run.stage===1)? 9 : 6;")>0,
      'and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)');
+}
+
+// ===== 231. STAGE-8 SPAWN CARRIER IDENTITY + BOSS PROJECTILE OWNERSHIP =====
+console.log("=== 231. spawn carrier identity + boss projectiles ===");
+{
+  var _sc=JSON.parse(vm.runInContext("(function(){"
+    +"run.stage=8; curStage=STAGES[7]; enemies.length=0; eBullets.length=0;"
+    +"var b={_ship:'spawncarrier',x:240,y:120,_drawY:120,w:210,h:216,hp:340,maxhp:340,_sbStep:0,_sbPhase:0};"
+    +"var L=shipBossMount(b,'L'), C=shipBossMount(b,'C'), R=shipBossMount(b,'R');"
+    +"shipBossAttack(b); var first=eBullets.map(function(q){return {x:q.x,y:q.y,boss:q._boss,f:q._bfam};});"
+    +"eBullets.length=0; shipBossAttack(b); var second=eBullets.map(function(q){return {x:q.x,y:q.y};});"
+    +"eBullets.length=0; b.hp=80; shipBossAttack(b); var final=eBullets.map(function(q){return {x:q.x,y:q.y,boss:q._boss,f:q._bfam};});"
+    +"return JSON.stringify({key:SHIPBOSS.spawncarrier.key,L:L,C:C,R:R,first:first,second:second,final:final,mz:b._smz&&b._smz.slots.slice(),"
+    +" dmg:SHIPBOSS.spawncarrier.dmg.slice(),pats:SHIPBOSS.spawncarrier.pats.slice()});})()", ctxv));
+  function _near(a,b){ return Math.abs(a-b)<0.01; }
+  ok(_sc.key==='nsb_spawncarrier_intact_v2',
+     'Stage-8 now loads the regenerated complete two-wing carrier');
+  ok(_near((_sc.L.x-240),-(_sc.R.x-240)) && _near(_sc.L.y,_sc.R.y),
+     'left and right muzzle anchors are mirrored across the rebuilt hull');
+  ok(_sc.first.length===3 && _sc.first.every(function(q){return q.boss&&q.f==='spawn';}),
+     'Spawn Carrier phase 1 emits three boss-owned purple rounds');
+  ok(_sc.first.every(function(q){return _near(q.x,_sc.L.x)&&_near(q.y,_sc.L.y);}),
+     'its first burst begins on the measured LEFT claw muzzle');
+  ok(_sc.second.length===3 && _sc.second.every(function(q){return _near(q.x,_sc.C.x)&&_near(q.y,_sc.C.y);}),
+     'and the next burst advances to the measured CENTRE emitter');
+  ok((_sc.final.length===6||_sc.final.length===8) && _sc.final.every(function(q){return q.boss&&q.f==='spawn';}),
+     'critical-health death lattice is a distinct 6/8-round cross-weave, still using boss art');
+  ok(_sc.mz && _sc.mz.indexOf('L')>=0 && _sc.mz.indexOf('R')>=0,
+     'the death lattice opens muzzle flashes on both claw cannons');
+  ok(_sc.pats.join(',')==='spawnpods,deathlattice',
+     'the Stage-8 mini owns two named phases instead of a reused generic pair');
+  ok(_sc.dmg.join(',')==='nsb_spawncarrier_damaged_v2,nsb_spawncarrier_critical_v2',
+     'damage tiers point at the clean, registered replacement hulls');
+
+  var _escort=JSON.parse(vm.runInContext("(function(){"
+    +"run.stage=8; curStage=STAGES[7]; enemies.length=0; eBullets.length=0;"
+    +"var b={_ship:'spawncarrier',x:240,y:120,_drawY:120,w:210,h:216,hp:340,maxhp:340,_sbStep:0,_sbPhase:0};"
+    +"for(var i=0;i<12;i++) shipBossAttack(b);"
+    +"var es=enemies.filter(function(e){return e._spawnCarrierEscort;});"
+    +"return JSON.stringify({n:es.length,allHell:es.every(function(e){return e._el8==='hell';}),"
+    +" allSolo:es.every(function(e){return !e.shoots&&e.pattern==='elite8';})});})()", ctxv));
+  ok(_escort.n===2, 'spawn-pod escorts are capped at two live ships ('+_escort.n+')');
+  ok(_escort.allHell && _escort.allSolo,
+     'those escorts keep Hell\'s exclusive elite8 AI and do not stack the generic shooter');
+
+  var _bossFamilies=JSON.parse(vm.runInContext("(function(){"
+    +"var miss=[],bad=[]; Object.keys(SHIPBOSS).forEach(function(k){var d=SHIPBOSS[k];"
+    +" if(!d.proj) miss.push(k); else if(!XART._src['bfx_'+d.proj+'_p_0']) bad.push(k+':'+d.proj); });"
+    +"return JSON.stringify({miss:miss,bad:bad,n:Object.keys(SHIPBOSS).length});})()",ctxv));
+  ok(_bossFamilies.miss.length===0,
+     'every SHIPBOSS boss/miniboss now declares a boss-owned projectile family ('+_bossFamilies.n+' profiles)');
+  ok(_bossFamilies.bad.length===0,
+     'every declared family resolves to shipped projectile art');
+
+  var _elites=JSON.parse(vm.runInContext("(function(){"
+    +"run.stage=8; curStage=STAGES[7]; var o={};"
+    +"['talon','hell','cdisc','spiral'].forEach(function(k){enemies.length=0; eBullets.length=0;"
+    +" var e=spawnEnemy(k,240,100,{}); o[k]={pat:e.pattern,shoots:!!e.shoots,owner:e._el8};});"
+    +"return JSON.stringify(o);})()",ctxv));
+  ['talon','hell','cdisc','spiral'].forEach(function(k){
+    ok(_elites[k] && _elites[k].pat==='elite8' && !_elites[k].shoots && _elites[k].owner===k,
+       k+' owns one exclusive Stage-8 behavior/fire controller');
+  });
+}
+
+// ===== 232. EVERY SHIP BOSS FIRES FROM ITS OWN HULL =====
+console.log("=== 232. ship boss muzzle hardpoints ===");
+{
+  var _mountAudit=JSON.parse(vm.runInContext("(function(){var miss=[],bad=[];"
+    +"Object.keys(SHIPBOSS).forEach(function(k){var d=SHIPBOSS[k],m=d.mounts;"
+    +" if(!m||!m.L||!m.C||!m.R){miss.push(k);return;}"
+    +" if(Math.abs(m.L[0]+m.R[0])>0.001||Math.abs(m.L[1]-m.R[1])>0.001||"
+    +"    Math.abs(m.L[0])>0.5||Math.abs(m.R[0])>0.5||Math.abs(m.C[1])>0.5) bad.push(k);});"
+    +"return JSON.stringify({miss:miss,bad:bad,n:Object.keys(SHIPBOSS).length});})()",ctxv));
+  ok(_mountAudit.miss.length===0,
+     'all '+_mountAudit.n+' ship bosses and minibosses declare left, centre and right weapon hardpoints');
+  ok(_mountAudit.bad.length===0,
+     'every hardpoint set is mirrored and remains inside its authored hull');
+
+  var _mountFire=JSON.parse(vm.runInContext("(function(){"
+    +"run.stage=5;curStage=STAGES[4];eBullets.length=0;player.x=240;player.y=560;"
+    +"var b={_ship:'xenoregent',x:240,y:120,_drawY:120,w:216,h:208,hp:100,maxhp:100,_sbStep:0,_sbPhase:0};"
+    +"var L=shipBossMount(b,'L'),R=shipBossMount(b,'R');shipBossAttack(b);"
+    +"return JSON.stringify({slots:b._smz&&b._smz.slots.slice(),"
+    +" left:eBullets.filter(function(q){return Math.abs(q.x-L.x)<0.01&&Math.abs(q.y-L.y)<0.01;}).length,"
+    +" right:eBullets.filter(function(q){return Math.abs(q.x-R.x)<0.01&&Math.abs(q.y-R.y)<0.01;}).length});})()",ctxv));
+  ok(_mountFire.left===3 && _mountFire.right===3,
+     'Xeno Regent pincer rounds physically begin on its measured left/right cannons');
+  ok(_mountFire.slots && _mountFire.slots.join(',')==='L,R',
+     'and the matching muzzle-flash reel opens on those same two cannons');
+}
+
+// ===== 233. CUSTOM MINIBOSSES OWN THEIR ROUNDS AND FLASH ORIGINS =====
+console.log("=== 233. custom miniboss projectile ownership ===");
+{
+  var _customMini=JSON.parse(vm.runInContext("(function(){var o={};"
+    +"run.stage=5;curStage=STAGES[4];eBullets.length=0;spawnSubBoss__inner('subcore');"
+    +"subBoss.enter=false;subBoss.x=240;subBoss.y=140;subBoss._drawY=140;subBoss.atkPhase=0;"
+    +"subBossAttack();o.core={n:eBullets.length,owned:eBullets.every(function(q){return q._boss&&q._bfam==='cyclone';}),"
+    +" point:subBoss._cmz&&subBoss._cmz.points[0],first:eBullets[0]&&{x:eBullets[0].x,y:eBullets[0].y}};"
+    +"run.stage=7;curStage=STAGES[6];eBullets.length=0;spawnSubBoss__inner('ratking');"
+    +"subBoss.enter=false;subBoss.x=240;subBoss.y=140;subBoss._drawY=140;subBoss.atkPhase=1;"
+    +"subBossAttack();o.exca={n:eBullets.length,owned:eBullets.every(function(q){return q._boss&&q._bfam==='sludge';}),"
+    +" points:subBoss._cmz&&subBoss._cmz.points.length};return JSON.stringify(o);})()",ctxv));
+  ok(_customMini.core.n===7 && _customMini.core.owned,
+     'Stage-5 Energy Core owns seven animated cyclone rounds instead of generic pellets');
+  ok(_customMini.core.point && _customMini.core.first &&
+     Math.abs(_customMini.core.point.x-_customMini.core.first.x)<0.01 &&
+     Math.abs(_customMini.core.point.y-_customMini.core.first.y)<0.01,
+     'its muzzle flash is anchored to the exact emitter coordinate that launched the volley');
+  ok(_customMini.exca.n===8 && _customMini.exca.owned,
+     'Overflow Excavator owns eight sludge rounds instead of borrowing the stage arsenal');
+  ok(_customMini.exca.points===2,
+     'and lights both physical cannon mouths for its twin-gun phase');
 }
 
 console.log('\n============================================');

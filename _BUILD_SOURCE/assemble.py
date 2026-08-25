@@ -365,7 +365,7 @@ src=replace(src, "bg:'ice',    music:'stage'", "bg:'ice',    music:'lvl3'", "sta
 # gamecode.js (stage 4 -> lvl4, stage 6 -> deathtrap), so this step is gone rather than re-aimed.
 # MUSIC REASSIGNMENT (drop 0724cg). Set here, not in gamecode.js, because these anchors already
 # own the stage rows — editing gamecode directly consumed the anchors and broke the build twice.
-src=replace(src, "music:'stage5mus'", "music:'lvl5x'", "stage5 music -> Lord of the Shadows")
+src=replace(src, "music:'stage5mus'", "music:'lvl3-alt'", "stage5 music -> lvl3-alt")
 src=replace(src, "bg:'sewer',  music:'stage'", "bg:'sewer',  music:'stage7mus'", "stage7 music -> Fierce Planes")
 # stage5 sub uses the pack's canonical name "ALL FOR ONE, NONE FOR ALL" (no override)
 src=replace(src, "Audio.startMusic('boss');", "Audio.startMusic('boss'+run.stage);", "per-stage boss music")

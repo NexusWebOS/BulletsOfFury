@@ -1,0 +1,298 @@
+{
+  "frames": {
+    "cole-idle.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 1,
+      "action": "idle"
+    },
+    "cole-happy.png": {
+      "frame": {
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 2,
+      "action": "happy"
+    },
+    "cole-laugh.png": {
+      "frame": {
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 3,
+      "action": "laugh"
+    },
+    "cole-anger.png": {
+      "frame": {
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 4,
+      "action": "anger"
+    },
+    "cole-sad.png": {
+      "frame": {
+        "x": 0,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 5,
+      "action": "sad"
+    },
+    "cole-crash.png": {
+      "frame": {
+        "x": 256,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 6,
+      "action": "crash"
+    },
+    "cole-victory.png": {
+      "frame": {
+        "x": 512,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 7,
+      "action": "victory"
+    },
+    "cole-talk-closed.png": {
+      "frame": {
+        "x": 768,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 8,
+      "action": "talk-closed"
+    },
+    "cole-talk-small.png": {
+      "frame": {
+        "x": 0,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 9,
+      "action": "talk-small"
+    },
+    "cole-talk-medium.png": {
+      "frame": {
+        "x": 256,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 10,
+      "action": "talk-medium"
+    },
+    "cole-talk-wide.png": {
+      "frame": {
+        "x": 512,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 11,
+      "action": "talk-wide"
+    },
+    "cole-talk-o.png": {
+      "frame": {
+        "x": 768,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 12,
+      "action": "talk-o"
+    }
+  },
+  "animations": {
+    "expressions": [
+      "cole-idle.png",
+      "cole-happy.png",
+      "cole-laugh.png",
+      "cole-anger.png",
+      "cole-sad.png",
+      "cole-crash.png",
+      "cole-victory.png"
+    ],
+    "talk": [
+      "cole-talk-closed.png",
+      "cole-talk-small.png",
+      "cole-talk-medium.png",
+      "cole-talk-wide.png",
+      "cole-talk-o.png"
+    ]
+  },
+  "meta": {
+    "app": "ColeForge Sprite Studio normalization",
+    "image": "cole-portraits-atlas.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1024,
+      "h": 768
+    },
+    "scale": "1",
+    "cell": {
+      "w": 256,
+      "h": 256
+    },
+    "portraitBox": {
+      "w": 224,
+      "h": 224
+    },
+    "cellMargin": 16,
+    "sourceRowGap": 32,
+    "frameOrder": [
+      "idle",
+      "happy",
+      "laugh",
+      "anger",
+      "sad",
+      "crash",
+      "victory",
+      "talk-closed",
+      "talk-small",
+      "talk-medium",
+      "talk-wide",
+      "talk-o"
+    ],
+    "backgroundPolicy": "transparent runtime; normalized source uses #FF00FF",
+    "talkTiming": "mouth-pose palette; suggested 8 FPS when cycled"
+  }
+}

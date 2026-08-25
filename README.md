@@ -27,6 +27,9 @@ and gameplay instructions.
   widening laser behavior.
 - Corrects the reversed diagonal art used by upgraded spread fire.
 - Uses the Stage 5 master background throughout its arrival transition.
+- Replaces Level 5's former space loop with the supplied full-length blue/violet nebula scroll;
+  satellite hardware, random planets, comets, and miscellaneous orbital scenery are disabled so
+  only the authored asteroid field and interactive asteroid hazards remain over it.
 - Removes the conflicting legacy Stage 6 cloud/background layers and synchronizes its weather to
   the authored master scroll.
 - Replaces abnormal offscreen ship-boss fly-ins with readable, bounded arcade manoeuvres.
@@ -34,6 +37,14 @@ and gameplay instructions.
   without loading those packages directly at runtime.
 - Adds repaired Spawn Carrier graphics and matching spawn/muzzle effects.
 - Installs the supplied official **BONUS STAGE** card with its embedded lettering intact.
+- Types **STAGE X CLEAR** letter by letter over the live post-boss battlefield, starts the stage-clear
+  music during that beat, and carries the same uninterrupted track through the fly-off into stats.
+- Runs Stage 7 on the supplied Toxic Sewer master and gives its boss clear a bespoke eight-frame
+  sewer-portal handoff: the portal forms, pulls the live pilot ship inside, closes, yields to the
+  Stage 8 card, then opens over Stage 8 and releases the ship directly into combat. This route
+  deliberately skips the ordinary outbound, runway, countdown, and `GO` transition.
+- Reassigns Stage 5 to `lvl3-alt`, Stage 8 to the former Stage 5 Egyptian track, and the former
+  Stage 8 theme to both the ending and menu credits.
 
 ## Cinematic and visual libraries
 
@@ -63,10 +74,11 @@ This edition was checked with the project’s browser and gameplay probes:
 - Stage 5 and Stage 6 background handoffs measured zero differing pixels at the join.
 - Ship-boss manoeuvre simulation completed without the former repeated offscreen fly-ins.
 - The Bonus Stage card was captured successfully from the live intro renderer.
+- The complete Stage 7 results-to-Stage 8 portal handoff was captured deterministically; it reached
+  live Stage 8 play without browser errors, a duplicate player ship, or a stale death overlay.
 
 ## Repository policy
 
 `codex/codex-edition` is intentionally separate from `main`. Scratch captures, extracted review
 packages, temporary generation inputs, and local QA workspaces are not part of the published build.
 Runtime assets and their manifests remain in `assets/game/`.
-

@@ -1,0 +1,61 @@
+{
+  "pack": "CF_PilotPortraits-Vol.1",
+  "project": "Bullets of Fury",
+  "pilotCount": 9,
+  "pilots": [
+    "axel",
+    "cole",
+    "decker",
+    "falva",
+    "freezer",
+    "juggernaut",
+    "lizzie",
+    "maverick",
+    "yuri"
+  ],
+  "framesPerPilot": 12,
+  "totalFrames": 108,
+  "frameDimensions": {
+    "width": 256,
+    "height": 256
+  },
+  "portraitBoxDimensions": {
+    "width": 224,
+    "height": 224
+  },
+  "cellMargin": 16,
+  "atlasDimensions": {
+    "width": 1024,
+    "height": 768,
+    "columns": 4,
+    "rows": 3
+  },
+  "frameOrder": [
+    "idle",
+    "happy",
+    "laugh",
+    "anger",
+    "sad",
+    "crash",
+    "victory",
+    "talk-closed",
+    "talk-small",
+    "talk-medium",
+    "talk-wide",
+    "talk-o"
+  ],
+  "animationGroups": {
+    "expressions": {
+      "frames": [1, 2, 3, 4, 5, 6, 7],
+      "mode": "static portrait selections"
+    },
+    "talk": {
+      "frames": [8, 9, 10, 11, 12],
+      "mode": "mouth-pose palette",
+      "suggestedPreviewFps": 8
+    }
+  },
+  "backgroundPolicy": "transparent hard-alpha runtime art",
+  "sourcePolicy": "untouched and normalized magenta sources preserved outside the runtime archive",
+  "format": "RGBA PNG plus atlas JSON"
+}

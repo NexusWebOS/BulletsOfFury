@@ -1,0 +1,298 @@
+{
+  "frames": {
+    "juggernaut-idle.png": {
+      "frame": {
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 1,
+      "action": "idle"
+    },
+    "juggernaut-happy.png": {
+      "frame": {
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 2,
+      "action": "happy"
+    },
+    "juggernaut-laugh.png": {
+      "frame": {
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 3,
+      "action": "laugh"
+    },
+    "juggernaut-anger.png": {
+      "frame": {
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 4,
+      "action": "anger"
+    },
+    "juggernaut-sad.png": {
+      "frame": {
+        "x": 0,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 5,
+      "action": "sad"
+    },
+    "juggernaut-crash.png": {
+      "frame": {
+        "x": 256,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 6,
+      "action": "crash"
+    },
+    "juggernaut-victory.png": {
+      "frame": {
+        "x": 512,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 7,
+      "action": "victory"
+    },
+    "juggernaut-talk-closed.png": {
+      "frame": {
+        "x": 768,
+        "y": 256,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 8,
+      "action": "talk-closed"
+    },
+    "juggernaut-talk-small.png": {
+      "frame": {
+        "x": 0,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 9,
+      "action": "talk-small"
+    },
+    "juggernaut-talk-medium.png": {
+      "frame": {
+        "x": 256,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 10,
+      "action": "talk-medium"
+    },
+    "juggernaut-talk-wide.png": {
+      "frame": {
+        "x": 512,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 11,
+      "action": "talk-wide"
+    },
+    "juggernaut-talk-o.png": {
+      "frame": {
+        "x": 768,
+        "y": 512,
+        "w": 256,
+        "h": 256
+      },
+      "rotated": false,
+      "trimmed": false,
+      "sourceSize": {
+        "w": 256,
+        "h": 256
+      },
+      "pivot": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "index": 12,
+      "action": "talk-o"
+    }
+  },
+  "animations": {
+    "expressions": [
+      "juggernaut-idle.png",
+      "juggernaut-happy.png",
+      "juggernaut-laugh.png",
+      "juggernaut-anger.png",
+      "juggernaut-sad.png",
+      "juggernaut-crash.png",
+      "juggernaut-victory.png"
+    ],
+    "talk": [
+      "juggernaut-talk-closed.png",
+      "juggernaut-talk-small.png",
+      "juggernaut-talk-medium.png",
+      "juggernaut-talk-wide.png",
+      "juggernaut-talk-o.png"
+    ]
+  },
+  "meta": {
+    "app": "ColeForge Sprite Studio normalization",
+    "image": "juggernaut-portraits-atlas.png",
+    "format": "RGBA8888",
+    "size": {
+      "w": 1024,
+      "h": 768
+    },
+    "scale": "1",
+    "cell": {
+      "w": 256,
+      "h": 256
+    },
+    "portraitBox": {
+      "w": 224,
+      "h": 224
+    },
+    "cellMargin": 16,
+    "sourceRowGap": 32,
+    "frameOrder": [
+      "idle",
+      "happy",
+      "laugh",
+      "anger",
+      "sad",
+      "crash",
+      "victory",
+      "talk-closed",
+      "talk-small",
+      "talk-medium",
+      "talk-wide",
+      "talk-o"
+    ],
+    "backgroundPolicy": "transparent runtime; normalized source uses #FF00FF",
+    "talkTiming": "mouth-pose palette; suggested 8 FPS when cycled"
+  }
+}
