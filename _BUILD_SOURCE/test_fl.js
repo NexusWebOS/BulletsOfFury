@@ -8778,7 +8778,7 @@ console.log("=== 194. enemy damage states ===");
   /* hooked at the LOOP, not inside drawEnemy — that function has a dozen early returns for
      sandtanks, drones, L6 fighters and the zap flash, and a unit taking any of them would
      silently never smoke */
-  ok(/for\(const e of enemies\)\{ drawEnemy\(e\); try\{ drawEnemyDamage/.test(_g194),
+  ok(/for\(const e of enemies\)\{[\s\S]{0,300}drawEnemy\(e\);[\s\S]{0,300}drawEnemyDamage/.test(_g194),
      'and is drawn for EVERY enemy, past drawEnemy\'s early returns');
 
   var _d=JSON.parse(vm.runInContext(`(function(){
@@ -9033,7 +9033,7 @@ console.log("=== 199. stats v2 ===");
   });
   ok(_g199.indexOf("_dmgSrc = (b.kind==='missile') ? 'missile'")>0,
      'attribution is set ONCE per bullet, not per damage call site');
-  ok(_g199.indexOf('_dmgSrc=null;                 // attribution ends')>0,
+  ok(_g199.indexOf('_dmgSrc=null; _dmgBullet=null;')>0,
      'and cleared after the loop so nothing outside it is mis-attributed');
 
   /* the score gets its own larger bar, and both it and the password flash with sound */
@@ -11110,6 +11110,43 @@ console.log("=== 236. Chaos Harrier replacement ===");
      'warp anchors keep the complete hull inside the live camera frame');
   ok(_g234.indexOf('The separate Level-8 teleport families are not loaded here')>0,
      'the Harrier private warp stays isolated from the reserved Level-8 enemy teleport pack');
+}
+
+// ===== 237. ENEMY SHIELD FX VOL.1 RUNTIME =====
+console.log("=== 237. enemy shield FX runtime ===");
+{
+  var _keys237=JSON.parse(vm.runInContext("JSON.stringify(Object.keys(XART._src).filter(function(k){return k.indexOf('nes_ion_')===0||k.indexOf('nes_crimson_')===0||k.indexOf('nes_violet_')===0||k.indexOf('nes_hex_')===0||k.indexOf('nes_gold_')===0||k.indexOf('nes_prism_')===0||k.indexOf('nes_hit_')===0;}))",ctxv));
+  var _missing237=_keys237.filter(function(k){
+    var rel=vm.runInContext("XART._src["+JSON.stringify(k)+"]",ctxv);
+    return !rel || !fs.existsSync(ROOT+'/'+rel);
+  });
+  ok(_keys237.length===84 && _missing237.length===0,
+     'all 84 authored shield layers, deflectors and impact frames are registered and present');
+  ok(vm.runInContext("Object.keys(ENEMY_SHIELD_FAMILY).length===6 && Object.keys(ENEMY_SHIELD_LOADOUT).length===6",ctxv),
+     'all six shield families have one deliberate ordinary-enemy loadout');
+
+  var _sim237=JSON.parse(vm.runInContext("(function(){"
+    +"enemyShieldFx.length=0;var out={};"
+    +"var f={type:'shieldd',x:240,y:120,w:46,h:44,hp:8,maxhp:8,flash:0};enemyShieldInit(f);f._esh.phase='active';"
+    +"var fb={kind:'mg',x:240,y:150,vx:0,vy:-9,w:4,h:12,dmg:1};_dmgBullet=fb;var fh=f.hp;out.field=hitEnemy(f,1)===true&&f.hp===fh&&f._esh.energy===3;"
+    +"var d={type:'htank',x:240,y:120,w:46,h:44,hp:12,maxhp:12,flash:0};enemyShieldInit(d);d._esh.phase='active';"
+    +"var rb={kind:'mg',x:240,y:154,vx:0,vy:-9,w:4,h:12,dmg:1};_dmgBullet=rb;var dh=d.hp;out.reflect=hitEnemy(d,1)===true&&d.hp===dh&&rb.vy>0&&rb._enemyReflected===1;"
+    +"var back={kind:'mg',x:240,y:80,vx:0,vy:9,w:4,h:12,dmg:1};_dmgBullet=back;var before=d.hp;out.back=hitEnemy(d,1)!==true&&d.hp===before-1;"
+    +"d._esh.energy=1;d._esh.phase='active';var br={kind:'mg',x:240,y:154,vx:0,vy:-9,w:4,h:12,dmg:1};_dmgBullet=br;hitEnemy(d,1);out.broke=d._esh.phase==='broken'&&d._esh.breakT===1.4;"
+    +"enemyShieldTick(d,1.41);out.redeploy=d._esh.phase==='deploy'&&d._esh.energy>0;_dmgBullet=null;"
+    +"return JSON.stringify(out);})()",ctxv));
+  ok(_sim237.field===true,
+     'an omnidirectional field spends energy and prevents hull damage');
+  ok(_sim237.reflect===true,
+     'a front-arc directional hit reflects the eligible round back downfield');
+  ok(_sim237.back===true,
+     'the same directional plate leaves its rear arc open to damage');
+  ok(_sim237.broke===true && _sim237.redeploy===true,
+     'a depleted shield overloads, observes the 1.4s lockout, then begins redeploying');
+  var _dw237=vm.runInContext('drawWorld.toString()',ctxv);
+  ok(_dw237.indexOf('drawEnemyShieldBack(e)')<_dw237.indexOf('drawEnemy(e)') &&
+     _dw237.indexOf('drawEnemy(e)')<_dw237.indexOf('drawEnemyShieldFront(e)'),
+     'full fields retain the authored back / enemy / front draw order across every hull renderer');
 }
 
 console.log('\n============================================');
