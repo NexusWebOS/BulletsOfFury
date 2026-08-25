@@ -2407,7 +2407,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
 
   // ===== 51. STAGE-8 AUTHORED ROSTER (drop 0724m) =====
   console.log("=== 51. stage 8 authored roster ===");
-  var _s8=vm.runInContext("buildStagePlan.toString().split('if(stageNum===8)')[1].split('return P;')[0]", ctxv);
+  var _s8=vm.runInContext("buildStagePlan.toString().split('if(stageNum===8)')[1].split('return _planSorted(P);')[0]", ctxv);
   // the clip-show cast is GONE — these all belong to other stages and were on a SPACE background
   ['jetflyby','racer','bomber','topgun','sideswirl','mech','turdrone','minicarrier','minidrone','shieldd','gunship','mdrone'].forEach(function(k){
     ok(_s8.indexOf("'"+k+"'")<0, 'stage 8 no longer re-spawns '+k+' (belonged to another stage)');
@@ -2416,11 +2416,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ['needle','crescent','hauler','oracle'].forEach(function(k){
     ok(_s8.indexOf("'"+k+"'")>0, 'stage 8 uses the deep-space unit '+k);
   });
-  // all four elites, and the carrier
+  // all four elites, and the two intact deep-space carriers
   ['talon','cdisc','hell','spiral'].forEach(function(k){
     ok(_s8.indexOf("'"+k+"'")>0, 'elite '+k+' appears in the finale');
   });
-  ok(_s8.indexOf("'el_hd'")>0, 'HELLWING DEATH CARRIER anchors the middle movement');
+  ok(_s8.indexOf("spawnEnemy('el_hd'")<0, 'culled el_hd never spawns as an invisible carrier');
+  ok((_s8.match(/spawnEnemy\('hauler'/g)||[]).length>=5, 'live Void Haulers anchor both carrier lanes');
   ok(_s8.indexOf('W8=worldWidth()')>0, 'stage-8 spawns span the WORLD, not the camera width');
   ok(_s8.indexOf('VW*')<0, 'no VW* left in the stage-8 roster');
   // three movements, escalating
@@ -9932,6 +9933,12 @@ console.log("=== 213b. enemy separation ===");
     +"o.touch=+burial(e1,e2).toFixed(3); var tx=e2.x;"
     +"for(var f3=0;f3<60;f3++) enemySeparate(1/60);"
     +"o.touchMoved=+Math.abs(e2.x-tx).toFixed(2);"
+    /* Two large Stage-8 carriers overlap on the offscreen runway. The separation pass may queue
+       them farther upward or split them sideways, but it must never push either into view. */
+    +"run.stage=8; curStage=STAGES[7]; beginStage(8); enemies.length=0;"
+    +"var q1=spawnEnemy('hauler',400,-60,{}), q2=spawnEnemy('hauler',400,-60,{});"
+    +"for(var f4=0;f4<90;f4++) enemySeparate(1/60);"
+    +"o.entryHidden=enemies.every(function(q){return q.y+q.h*0.5<=viewTopY();});"
     +"return JSON.stringify(o);})()", ctxv));
 
   ok(_s213.before >= 1,
@@ -9944,6 +9951,8 @@ console.log("=== 213b. enemy separation ===");
      'a shallow formation contact still registers as overlap ('+_s213.touch+')');
   ok(_s213.touchMoved > 0,
      'and the shallow contact is moved apart instead of being preserved ('+_s213.touchMoved+'px)');
+  ok(_s213.entryHidden===true,
+     'separating stacked entrants never pushes a hidden hull across the camera entry line');
 }
 
 // ===== 213c. ONE ROSTER ROW, WHATEVER THE WAVE SPELLED IT (drop 0811l) =====
@@ -11122,14 +11131,14 @@ console.log("=== 237. enemy shield FX runtime ===");
   });
   ok(_keys237.length===84 && _missing237.length===0,
      'all 84 authored shield layers, deflectors and impact frames are registered and present');
-  ok(vm.runInContext("Object.keys(ENEMY_SHIELD_FAMILY).length===6 && Object.keys(ENEMY_SHIELD_LOADOUT).length===6",ctxv),
-     'all six shield families have one deliberate ordinary-enemy loadout');
+  ok(vm.runInContext("Object.keys(ENEMY_SHIELD_FAMILY).length===6 && Object.keys(ENEMY_SHIELD_LOADOUT).length===0 && spawnEnemy.toString().indexOf('enemyShieldEquip')<0",ctxv),
+     'all six shield families are reserved — ordinary enemies never auto-equip one');
 
   var _sim237=JSON.parse(vm.runInContext("(function(){"
     +"enemyShieldFx.length=0;var out={};"
-    +"var f={type:'shieldd',x:240,y:120,w:46,h:44,hp:8,maxhp:8,flash:0};enemyShieldInit(f);f._esh.phase='active';"
+    +"var f={type:'shieldd',x:240,y:120,w:46,h:44,hp:8,maxhp:8,flash:0};enemyShieldEquip(f,'ion',4);f._esh.phase='active';"
     +"var fb={kind:'mg',x:240,y:150,vx:0,vy:-9,w:4,h:12,dmg:1};_dmgBullet=fb;var fh=f.hp;out.field=hitEnemy(f,1)===true&&f.hp===fh&&f._esh.energy===3;"
-    +"var d={type:'htank',x:240,y:120,w:46,h:44,hp:12,maxhp:12,flash:0};enemyShieldInit(d);d._esh.phase='active';"
+    +"var d={type:'htank',x:240,y:120,w:46,h:44,hp:12,maxhp:12,flash:0};enemyShieldEquip(d,'gold',6);d._esh.phase='active';"
     +"var rb={kind:'mg',x:240,y:154,vx:0,vy:-9,w:4,h:12,dmg:1};_dmgBullet=rb;var dh=d.hp;out.reflect=hitEnemy(d,1)===true&&d.hp===dh&&rb.vy>0&&rb._enemyReflected===1;"
     +"var back={kind:'mg',x:240,y:80,vx:0,vy:9,w:4,h:12,dmg:1};_dmgBullet=back;var before=d.hp;out.back=hitEnemy(d,1)!==true&&d.hp===before-1;"
     +"d._esh.energy=1;d._esh.phase='active';var br={kind:'mg',x:240,y:154,vx:0,vy:-9,w:4,h:12,dmg:1};_dmgBullet=br;hitEnemy(d,1);out.broke=d._esh.phase==='broken'&&d._esh.breakT===1.4;"

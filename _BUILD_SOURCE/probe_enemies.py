@@ -29,7 +29,7 @@ eyeballed.
 land; a single synchronous burst never yields and would report every unit as invisible. That would
 look like a catastrophic finding and be an artefact of the harness.
 """
-import argparse, http.server, socketserver, threading, os, sys, functools, json
+import argparse, http.server, threading, os, sys, functools, json
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 GAME = os.path.abspath(os.path.join(ROOT, '..'))
@@ -38,7 +38,10 @@ GAME = os.path.abspath(os.path.join(ROOT, '..'))
 def serve(directory, port=0):
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=directory)
     handler.log_message = lambda *a, **k: None
-    httpd = socketserver.TCPServer(("127.0.0.1", port), handler)
+    # The game requests hundreds of independent art/audio files during a late-stage audit.
+    # Serving them serially can stall Chromium for minutes before the probe reaches gameplay.
+    httpd = http.server.ThreadingHTTPServer(("127.0.0.1", port), handler)
+    httpd.daemon_threads = True
     port = httpd.server_address[1]
     threading.Thread(target=httpd.serve_forever, daemon=True).start()
     return port, httpd.shutdown
@@ -73,8 +76,13 @@ INSTRUMENT = r"""
       for (const e of enemies) {
         if (e.__pid) continue;
         e.__pid = window.__nid++;
-        window.__seen[e.__pid] = {type: e.type || e._amini || '?',
+        const vl = (typeof camLeftX==='function') ? camLeftX() : 0;
+        const vr = (typeof camRightX==='function') ? camRightX() : worldWidth();
+        const vt = (typeof viewTopY==='function') ? viewTopY() : 0;
+        window.__seen[e.__pid] = {type: e.type || e._amini || '?', inPlace: !!e.inPlace,
                                   sx: Math.round(e.x), sy: Math.round(e.y),
+                                  w: e.w||0, h: e.h||0, vl:vl, vr:vr, vt:vt,
+                                  at: Number(stageTimer||0),
                                   blits: 0, onscreen: 0, frames: 0};
       }
     } catch (err) {}
@@ -89,14 +97,34 @@ INSTRUMENT = r"""
     finally {
       const n = counting.n; counting = prev;
       rec.blits += n; rec.frames++;
-      if (e.y > 0 && e.y < VH && !e.dead) rec.onscreen++;
+      const vl = (typeof camLeftX==='function') ? camLeftX() : 0;
+      const vr = (typeof camRightX==='function') ? camRightX() : worldWidth();
+      const vt = (typeof viewTopY==='function') ? viewTopY() : 0;
+      if (e.x+e.w/2 > vl && e.x-e.w/2 < vr && e.y+e.h/2 > vt && e.y-e.h/2 < VH && !e.dead) rec.onscreen++;
     }
   };
   return null;
 }
 """
 
-STEP = "(n) => { const t=performance.now(); for(let i=0;i<n;i++){ try{ loop(t+i*16.7); }catch(e){ return String(e&&e.message||e);} } return null; }"
+STEP = """(n) => {
+  if (!Number.isFinite(window.__bofStepNow)) window.__bofStepNow = performance.now();
+  for (let i=0;i<n;i++) {
+    window.__bofStepNow += 1000/60;
+    try { loop(window.__bofStepNow); }
+    catch(e) { return String(e&&e.message||e); }
+  }
+  return null;
+}"""
+
+TRAP_RAF = """() => {
+  window.__bofRealRAF = window.requestAnimationFrame;
+  window.__bofPendingRAF = null;
+  window.requestAnimationFrame = function(cb) {
+    window.__bofPendingRAF = cb;
+    return 0;
+  };
+}"""
 
 
 def main():
@@ -109,7 +137,7 @@ def main():
     from playwright.sync_api import sync_playwright
     port, stop = serve(GAME)
     url = 'http://127.0.0.1:%d/index.html' % port
-    errs, out = [], {}
+    errs, out, timers = [], {}, {}
 
     with sync_playwright() as p:
         b = p.chromium.launch(args=['--disable-gpu', '--no-sandbox', '--mute-audio'])
@@ -118,6 +146,10 @@ def main():
         pg.goto(url, wait_until='load', timeout=60000)
         pg.wait_for_function("() => typeof ASSETS!=='undefined' && typeof drawEnemy==='function'", timeout=45000)
         pg.wait_for_function("() => (window.__bofFrames|0) > 4", timeout=45000)
+        # Manual loop() calls must not create more live rAF chains. Wait once so the callback that
+        # was already queued by the real browser rAF can run and park its successor in the trap.
+        pg.evaluate(TRAP_RAF)
+        pg.wait_for_timeout(50)
         pg.evaluate(INSTRUMENT)
 
         for st in stages:
@@ -136,18 +168,28 @@ def main():
                 if err:
                     errs.append('stage %d: %s' % (st, err)); break
                 pg.wait_for_timeout(45)
+                # This is a roster-entry audit, not a combat soak. Clear an encounter miniboss
+                # after it has had a batch to render so its gate cannot hide the rest of the stage.
+                pg.evaluate("""() => {
+                  if (subBoss && !subBoss.dead) {
+                    subBoss.hp=0; subBoss.dead=true; subBoss.dying=0;
+                    subBossActive=false; subBossDone=true; subBossTriggered=true;
+                  }
+                }""")
             out[st] = pg.evaluate("() => window.__seen")
+            timers[st] = pg.evaluate("() => ({timer: Number(stageTimer||0), state: String(state), frames: window.__bofFrames|0})")
         b.close()
     stop()
 
     def tally(rs):
         d = {}
         for r in rs:
-            k = '%s@(%d,%d)' % (r['type'], r['sx'], r['sy'])
+            k = ('%s@(%d,%d; viewTop=%d size=%dx%d)' %
+                 (r['type'], r['sx'], r['sy'], r.get('vt', 0), r.get('w', 0), r.get('h', 0)))
             d[k] = d.get(k, 0) + 1
         return ', '.join('%s x%d' % (k, v) for k, v in sorted(d.items()))
 
-    print('%-6s %-7s %-8s %-9s %-9s' % ('stage', 'spawned', 'invisible', 'vanished', 'pop-in'))
+    print('%-6s %-7s %-8s %-9s %-9s %-8s' % ('stage', 'spawned', 'invisible', 'vanished', 'pop-in', 'timer'))
     print('-' * 60)
     rows = []
     for st in stages:
@@ -156,12 +198,21 @@ def main():
         # never drew a single image while alive and inside the playfield
         blind = [r for r in onscreen if r['blits'] == 0]
         # entered the array and never once reached the playfield — spawned and quietly removed
-        vanished = [r for r in recs if r['onscreen'] == 0]
+        # Give a newly spawned heavy six seconds to travel from the guaranteed offscreen runway.
+        end_t = timers.get(st, {}).get('timer', 0)
+        vanished = [r for r in recs if r['onscreen'] == 0 and end_t-r.get('at', 0) >= 6]
         # SPAWNED inside the playfield: not an entry at all, it simply appeared.
         # A side entry (x off either edge) is legitimate and is NOT counted.
-        popped = [r for r in recs if 0 < r['sy'] < 512 and 0 <= r['sx'] <= 800]
+        # inPlace is an authored reveal (for example, a sewer maw surfacing through sludge), not
+        # an entering craft materialising in open air. spawnEnemy deliberately preserves the flag.
+        popped = [r for r in recs if not r.get('inPlace') and
+                  r['sx']+r.get('w', 0)/2 > r.get('vl', 0) and
+                  r['sx']-r.get('w', 0)/2 < r.get('vr', 800) and
+                  r['sy']+r.get('h', 0)/2 > r.get('vt', 0) and
+                  r['sy']-r.get('h', 0)/2 < 512]
         rows.append((st, recs, blind, vanished, popped))
-        print('%-6d %-7d %-8d %-9d %-9d' % (st, len(recs), len(blind), len(vanished), len(popped)))
+        print('%-6d %-7d %-8d %-9d %-9d %-8.2f' %
+              (st, len(recs), len(blind), len(vanished), len(popped), timers.get(st, {}).get('timer', -1)))
 
     for st, recs, blind, vanished, popped in rows:
         if not (blind or vanished or popped):

@@ -36,7 +36,7 @@ WHAT IT DELIBERATELY DOES NOT DO
   canvas. That is the entire point — the moment this file starts approximating the renderer it
   becomes another thing that can be green while the game is broken.
 """
-import argparse, http.server, socketserver, threading, os, sys, time, json, functools
+import argparse, http.server, threading, os, sys, time, json, functools
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 GAME = os.path.abspath(os.path.join(ROOT, '..'))
@@ -46,7 +46,11 @@ def serve(directory, port=0):
     """A quiet static server. Returns (port, shutdown)."""
     handler = functools.partial(http.server.SimpleHTTPRequestHandler, directory=directory)
     handler.log_message = lambda *a, **k: None
-    httpd = socketserver.TCPServer(("127.0.0.1", port), handler)
+    # Loose XART families (bosses, weather, shields) arrive as many independent PNGs. A serial
+    # server makes a visual proof wait behind its own asset queue and can remove live units before
+    # the first frame is captured. Match a real web server and service those requests concurrently.
+    httpd = http.server.ThreadingHTTPServer(("127.0.0.1", port), handler)
+    httpd.daemon_threads = True
     port = httpd.server_address[1]
     t = threading.Thread(target=httpd.serve_forever, daemon=True)
     t.start()
@@ -86,13 +90,29 @@ SETUP = r"""
 # rather than a snapshot of a moment.
 STEP = r"""
 (n) => {
+  if (!Number.isFinite(window.__bofStepNow)) window.__bofStepNow = performance.now();
   for (let i=0;i<n;i++) {
     try {
-      if (typeof loop === 'function') loop(performance.now() + i*16.7);
+      window.__bofStepNow += 1000/60;
+      if (typeof loop === 'function') loop(window.__bofStepNow);
       else if (typeof frame === 'function') frame(16.7);
     } catch(e) { return String(e && e.message || e); }
   }
   return null;
+}
+"""
+
+# Stop the browser-owned animation chain before stepping loop() ourselves. loop() queues its next
+# rAF at the end of every call, so deterministic stepping without this trap silently creates one
+# additional live animation chain per manual frame and eventually overwhelms the renderer.
+TRAP_RAF = r"""
+() => {
+  window.__bofRealRAF = window.requestAnimationFrame;
+  window.__bofPendingRAF = null;
+  window.requestAnimationFrame = function(cb) {
+    window.__bofPendingRAF = cb;
+    return 0;
+  };
 }
 """
 
@@ -144,6 +164,10 @@ def main():
                 print('   ', x)
             b.close(); stop(); sys.exit(1)
 
+        pg.evaluate(TRAP_RAF)
+        # Let the one frame already queued by the real rAF run and park its successor in the trap.
+        pg.wait_for_timeout(50)
+
         res = pg.evaluate(SETUP, {'state': args.state, 'pilot': args.pilot,
                                   'stage': args.stage, 'invuln': args.invuln})
         if not res.get('ok'):
@@ -153,9 +177,17 @@ def main():
         if args.script and os.path.exists(args.script):
             pg.evaluate(open(args.script).read())
 
-        err = pg.evaluate(STEP, args.warm)
-        if err:
-            print('threw while warming:', err)
+        # Yield between deterministic batches so images first touched by XART can decode before
+        # the next batch draws them. This keeps the simulation fixed without starving lazy assets.
+        remaining = args.warm
+        while remaining > 0:
+            batch = min(60, remaining)
+            err = pg.evaluate(STEP, batch)
+            if err:
+                print('threw while warming:', err)
+                break
+            pg.wait_for_timeout(30)
+            remaining -= batch
 
         # ⚠ TAKE THE PIXELS FROM THE CANVAS, NOT A SCREENSHOT OF THE ELEMENT.
         # index.html centres the canvas with a CSS transform, and Locator.screenshot hangs waiting
@@ -209,14 +241,17 @@ def main():
                 err = pg.evaluate(STEP, step)
                 if err:
                     print('threw at frame %d: %s' % (i, err)); break
+                pg.wait_for_timeout(30)
 
         info = pg.evaluate("() => ({state:(typeof state!=='undefined'?state:'?'),"
                            "frames:(window.__bofFrames|0),"
+                           "stageTimer:(typeof stageTimer!=='undefined'?stageTimer:-1),"
                            "enemies:(typeof enemies!=='undefined'?enemies.length:-1)})")
         b.close()
     stop()
 
-    print('state=%s  frames=%d  enemies=%d' % (info['state'], info['frames'], info['enemies']))
+    print('state=%s  frames=%d  stageTimer=%.2f  enemies=%d' %
+          (info['state'], info['frames'], info['stageTimer'], info['enemies']))
     print('captured %d shot(s) -> %s' % (len(shots), args.out))
     if errs:
         print('page errors (%d):' % len(errs))
