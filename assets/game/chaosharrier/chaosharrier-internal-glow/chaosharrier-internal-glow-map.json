@@ -1,0 +1,217 @@
+{
+  "project": "Bullets of Fury",
+  "level": 5,
+  "view": "top-down three-quarter",
+  "facing": "down",
+  "source_key": "#FF00FF",
+  "runtime_alpha": "hard binary RGBA",
+  "asset": "Chaos Harrier internal emissive overlay",
+  "atlas": "chaosharrier-internal-glow-atlas.png",
+  "atlas_grid": [
+    6,
+    1
+  ],
+  "frame_canvas": [
+    352,
+    320
+  ],
+  "frames": [
+    {
+      "name": "chaosharrier-internal-glow-01.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 0,
+      "state": "pulse-1",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.12,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-02.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 1,
+      "state": "pulse-2",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.32,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-03.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 2,
+      "state": "pulse-3",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.58,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-04.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 3,
+      "state": "pulse-4",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 1.0,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-05.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 4,
+      "state": "pulse-5",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.58,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-06.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 5,
+      "state": "pulse-6",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.32,
+      "opaque_emissive_pixels": 2592
+    }
+  ],
+  "animation_groups": {
+    "internal_glow": {
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "frame_ms": [
+        95,
+        95,
+        95,
+        95,
+        95,
+        95
+      ],
+      "loop": true
+    }
+  },
+  "draw": {
+    "layer": "above_ship_below_weapon_vfx",
+    "pivot": [
+      176,
+      160
+    ],
+    "sync_transform_to_ship": true
+  }
+}

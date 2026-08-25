@@ -1,0 +1,1730 @@
+{
+  "pack": "CF_ChaosHarrierMiniBoss-Lvl5",
+  "source_audits": {
+    "chaosharrier-source.png": {
+      "width": 1536,
+      "height": 1024,
+      "background_pixels": 934747,
+      "foreground_pixels": 638117,
+      "background_fraction": 0.594296,
+      "defringe_edge_repairs": 248
+    },
+    "chaosharrier-projectiles-source.png": {
+      "width": 1536,
+      "height": 1024,
+      "background_pixels": 1432247,
+      "foreground_pixels": 140617,
+      "background_fraction": 0.910598,
+      "defringe_edge_repairs": 148
+    },
+    "chaosharrier-vfx-source.png": {
+      "width": 1536,
+      "height": 1024,
+      "background_pixels": 1353110,
+      "foreground_pixels": 219754,
+      "background_fraction": 0.860284,
+      "defringe_edge_repairs": 6270
+    },
+    "chaosharrier-warp-source.png": {
+      "width": 1536,
+      "height": 1024,
+      "background_pixels": 1319770,
+      "foreground_pixels": 253094,
+      "background_fraction": 0.839087,
+      "defringe_edge_repairs": 4808
+    },
+    "chaosharrier-lasers-source.png": {
+      "width": 1254,
+      "height": 1254,
+      "background_pixels": 1265322,
+      "foreground_pixels": 307194,
+      "background_fraction": 0.804648,
+      "defringe_edge_repairs": 2945
+    }
+  },
+  "ship_frames": [
+    {
+      "name": "chaosharrier-01-hover-a.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        55,
+        32,
+        242,
+        236
+      ],
+      "padding": {
+        "left": 55,
+        "top": 32,
+        "right": 55,
+        "bottom": 52
+      },
+      "opaque_pixels": 24990,
+      "index": 0,
+      "state": "hover-a",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-02-hover-b.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        56,
+        33,
+        242,
+        236
+      ],
+      "padding": {
+        "left": 56,
+        "top": 33,
+        "right": 54,
+        "bottom": 51
+      },
+      "opaque_pixels": 24955,
+      "index": 1,
+      "state": "hover-b",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-03-attack-open.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        56,
+        32,
+        242,
+        236
+      ],
+      "padding": {
+        "left": 56,
+        "top": 32,
+        "right": 54,
+        "bottom": 52
+      },
+      "opaque_pixels": 26927,
+      "index": 2,
+      "state": "attack-open",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-04-bank-left.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        65,
+        21,
+        237,
+        242
+      ],
+      "padding": {
+        "left": 65,
+        "top": 21,
+        "right": 50,
+        "bottom": 57
+      },
+      "opaque_pixels": 26716,
+      "index": 3,
+      "state": "bank-left",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-05-bank-right.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        52,
+        20,
+        240,
+        243
+      ],
+      "padding": {
+        "left": 52,
+        "top": 20,
+        "right": 60,
+        "bottom": 57
+      },
+      "opaque_pixels": 27090,
+      "index": 4,
+      "state": "bank-right",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-06-critical.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        56,
+        11,
+        245,
+        262
+      ],
+      "padding": {
+        "left": 56,
+        "top": 11,
+        "right": 51,
+        "bottom": 47
+      },
+      "opaque_pixels": 28860,
+      "index": 5,
+      "state": "critical",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    }
+  ],
+  "projectile_frames": [
+    {
+      "name": "chaosharrier-projectile-01-plasma-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        129,
+        40,
+        29,
+        85
+      ],
+      "padding": {
+        "left": 129,
+        "top": 40,
+        "right": 34,
+        "bottom": 67
+      },
+      "opaque_pixels": 1835,
+      "index": 0,
+      "state": "plasma-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-02-plasma-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        97,
+        40,
+        29,
+        91
+      ],
+      "padding": {
+        "left": 97,
+        "top": 40,
+        "right": 66,
+        "bottom": 61
+      },
+      "opaque_pixels": 1947,
+      "index": 1,
+      "state": "plasma-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-03-plasma-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        65,
+        40,
+        29,
+        94
+      ],
+      "padding": {
+        "left": 65,
+        "top": 40,
+        "right": 98,
+        "bottom": 58
+      },
+      "opaque_pixels": 1990,
+      "index": 2,
+      "state": "plasma-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-04-plasma-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        33,
+        40,
+        29,
+        96
+      ],
+      "padding": {
+        "left": 33,
+        "top": 40,
+        "right": 130,
+        "bottom": 56
+      },
+      "opaque_pixels": 2022,
+      "index": 3,
+      "state": "plasma-4",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-05-missile-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        121,
+        26,
+        45,
+        155
+      ],
+      "padding": {
+        "left": 121,
+        "top": 26,
+        "right": 26,
+        "bottom": 11
+      },
+      "opaque_pixels": 2669,
+      "index": 4,
+      "state": "missile-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-06-missile-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        89,
+        26,
+        45,
+        155
+      ],
+      "padding": {
+        "left": 89,
+        "top": 26,
+        "right": 58,
+        "bottom": 11
+      },
+      "opaque_pixels": 2756,
+      "index": 5,
+      "state": "missile-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-07-missile-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        57,
+        26,
+        45,
+        155
+      ],
+      "padding": {
+        "left": 57,
+        "top": 26,
+        "right": 90,
+        "bottom": 11
+      },
+      "opaque_pixels": 2801,
+      "index": 6,
+      "state": "missile-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-08-missile-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        25,
+        26,
+        45,
+        155
+      ],
+      "padding": {
+        "left": 25,
+        "top": 26,
+        "right": 122,
+        "bottom": 11
+      },
+      "opaque_pixels": 2728,
+      "index": 7,
+      "state": "missile-4",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-09-reactor-lance-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        120,
+        10,
+        47,
+        137
+      ],
+      "padding": {
+        "left": 120,
+        "top": 10,
+        "right": 25,
+        "bottom": 45
+      },
+      "opaque_pixels": 4027,
+      "index": 8,
+      "state": "reactor-lance-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-10-reactor-lance-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        88,
+        10,
+        47,
+        138
+      ],
+      "padding": {
+        "left": 88,
+        "top": 10,
+        "right": 57,
+        "bottom": 44
+      },
+      "opaque_pixels": 4055,
+      "index": 9,
+      "state": "reactor-lance-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-11-reactor-lance-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        56,
+        10,
+        47,
+        138
+      ],
+      "padding": {
+        "left": 56,
+        "top": 10,
+        "right": 89,
+        "bottom": 44
+      },
+      "opaque_pixels": 4084,
+      "index": 10,
+      "state": "reactor-lance-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-12-reactor-lance-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        24,
+        10,
+        47,
+        138
+      ],
+      "padding": {
+        "left": 24,
+        "top": 10,
+        "right": 121,
+        "bottom": 44
+      },
+      "opaque_pixels": 4102,
+      "index": 11,
+      "state": "reactor-lance-4",
+      "origin": [
+        96,
+        96
+      ]
+    }
+  ],
+  "vfx_frames": [
+    {
+      "name": "chaosharrier-vfx-01-sideflash-1.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        97,
+        76,
+        39,
+        42
+      ],
+      "padding": {
+        "left": 97,
+        "top": 76,
+        "right": 88,
+        "bottom": 106
+      },
+      "opaque_pixels": 828,
+      "index": 0,
+      "state": "sideflash-1",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-02-sideflash-2.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        80,
+        68,
+        59,
+        81
+      ],
+      "padding": {
+        "left": 80,
+        "top": 68,
+        "right": 85,
+        "bottom": 75
+      },
+      "opaque_pixels": 2360,
+      "index": 1,
+      "state": "sideflash-2",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-03-sideflash-3.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        72,
+        62,
+        68,
+        100
+      ],
+      "padding": {
+        "left": 72,
+        "top": 62,
+        "right": 84,
+        "bottom": 62
+      },
+      "opaque_pixels": 3714,
+      "index": 2,
+      "state": "sideflash-3",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-04-sideflash-4.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        72,
+        68,
+        46,
+        74
+      ],
+      "padding": {
+        "left": 72,
+        "top": 68,
+        "right": 106,
+        "bottom": 82
+      },
+      "opaque_pixels": 1008,
+      "index": 3,
+      "state": "sideflash-4",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-05-launchflash-1.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        92,
+        59,
+        50,
+        67
+      ],
+      "padding": {
+        "left": 92,
+        "top": 59,
+        "right": 82,
+        "bottom": 98
+      },
+      "opaque_pixels": 1922,
+      "index": 4,
+      "state": "launchflash-1",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-06-launchflash-2.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        73,
+        42,
+        72,
+        109
+      ],
+      "padding": {
+        "left": 73,
+        "top": 42,
+        "right": 79,
+        "bottom": 73
+      },
+      "opaque_pixels": 4610,
+      "index": 5,
+      "state": "launchflash-2",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-07-launchflash-3.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        57,
+        38,
+        98,
+        159
+      ],
+      "padding": {
+        "left": 57,
+        "top": 38,
+        "right": 69,
+        "bottom": 27
+      },
+      "opaque_pixels": 5205,
+      "index": 6,
+      "state": "launchflash-3",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-08-launchflash-4.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        69,
+        46,
+        52,
+        103
+      ],
+      "padding": {
+        "left": 69,
+        "top": 46,
+        "right": 103,
+        "bottom": 75
+      },
+      "opaque_pixels": 2283,
+      "index": 7,
+      "state": "launchflash-4",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-09-corecharge-1.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        71,
+        49,
+        90,
+        85
+      ],
+      "padding": {
+        "left": 71,
+        "top": 49,
+        "right": 63,
+        "bottom": 90
+      },
+      "opaque_pixels": 4516,
+      "index": 8,
+      "state": "corecharge-1",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-10-corecharge-2.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        42,
+        27,
+        132,
+        130
+      ],
+      "padding": {
+        "left": 42,
+        "top": 27,
+        "right": 50,
+        "bottom": 67
+      },
+      "opaque_pixels": 9614,
+      "index": 9,
+      "state": "corecharge-2",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-11-corecharge-3.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        21,
+        26,
+        172,
+        146
+      ],
+      "padding": {
+        "left": 21,
+        "top": 26,
+        "right": 31,
+        "bottom": 52
+      },
+      "opaque_pixels": 15658,
+      "index": 10,
+      "state": "corecharge-3",
+      "origin": [
+        112,
+        112
+      ]
+    },
+    {
+      "name": "chaosharrier-vfx-12-corecharge-4.png",
+      "canvas": [
+        224,
+        224
+      ],
+      "bbox": [
+        53,
+        52,
+        85,
+        81
+      ],
+      "padding": {
+        "left": 53,
+        "top": 52,
+        "right": 86,
+        "bottom": 91
+      },
+      "opaque_pixels": 3260,
+      "index": 11,
+      "state": "corecharge-4",
+      "origin": [
+        112,
+        112
+      ]
+    }
+  ],
+  "warp_frames": [
+    {
+      "name": "chaosharrier-warp-01-sparks.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        178,
+        98,
+        171,
+        298
+      ],
+      "padding": {
+        "left": 178,
+        "top": 98,
+        "right": 163,
+        "bottom": 116
+      },
+      "opaque_pixels": 2810,
+      "index": 0,
+      "state": "sparks",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-02-slit-open.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        210,
+        102,
+        102,
+        301
+      ],
+      "padding": {
+        "left": 210,
+        "top": 102,
+        "right": 200,
+        "bottom": 109
+      },
+      "opaque_pixels": 8212,
+      "index": 1,
+      "state": "slit-open",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-03-aperture-open.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        144,
+        92,
+        197,
+        317
+      ],
+      "padding": {
+        "left": 144,
+        "top": 92,
+        "right": 171,
+        "bottom": 103
+      },
+      "opaque_pixels": 18360,
+      "index": 2,
+      "state": "aperture-open",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-04-aperture-full.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        112,
+        70,
+        271,
+        362
+      ],
+      "padding": {
+        "left": 112,
+        "top": 70,
+        "right": 129,
+        "bottom": 80
+      },
+      "opaque_pixels": 45673,
+      "index": 3,
+      "state": "aperture-full",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-05-phase-flash.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        153,
+        76,
+        219,
+        330
+      ],
+      "padding": {
+        "left": 153,
+        "top": 76,
+        "right": 140,
+        "bottom": 106
+      },
+      "opaque_pixels": 37230,
+      "index": 4,
+      "state": "phase-flash",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-06-aperture-collapse.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        182,
+        98,
+        169,
+        290
+      ],
+      "padding": {
+        "left": 182,
+        "top": 98,
+        "right": 161,
+        "bottom": 124
+      },
+      "opaque_pixels": 18670,
+      "index": 5,
+      "state": "aperture-collapse",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-07-slit-collapse.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        185,
+        98,
+        117,
+        284
+      ],
+      "padding": {
+        "left": 185,
+        "top": 98,
+        "right": 210,
+        "bottom": 130
+      },
+      "opaque_pixels": 8404,
+      "index": 6,
+      "state": "slit-collapse",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-08-residue.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        159,
+        95,
+        170,
+        298
+      ],
+      "padding": {
+        "left": 159,
+        "top": 95,
+        "right": 183,
+        "bottom": 119
+      },
+      "opaque_pixels": 2749,
+      "index": 7,
+      "state": "residue",
+      "origin": [
+        256,
+        256
+      ]
+    }
+  ],
+  "reactor_laser_frames": [
+    {
+      "name": "chaosharrier-reactor-laser-01-beam-1.png",
+      "canvas": [
+        192,
+        384
+      ],
+      "bbox": [
+        71,
+        8,
+        50,
+        299
+      ],
+      "padding": {
+        "left": 71,
+        "top": 8,
+        "right": 71,
+        "bottom": 77
+      },
+      "opaque_pixels": 11871,
+      "index": 0,
+      "state": "chaosharrier-reactor-laser-01-beam-1",
+      "origin": [
+        96,
+        8
+      ]
+    },
+    {
+      "name": "chaosharrier-reactor-laser-02-beam-2.png",
+      "canvas": [
+        192,
+        384
+      ],
+      "bbox": [
+        71,
+        8,
+        50,
+        299
+      ],
+      "padding": {
+        "left": 71,
+        "top": 8,
+        "right": 71,
+        "bottom": 77
+      },
+      "opaque_pixels": 12003,
+      "index": 1,
+      "state": "chaosharrier-reactor-laser-02-beam-2",
+      "origin": [
+        96,
+        8
+      ]
+    },
+    {
+      "name": "chaosharrier-reactor-laser-03-beam-3.png",
+      "canvas": [
+        192,
+        384
+      ],
+      "bbox": [
+        71,
+        8,
+        50,
+        299
+      ],
+      "padding": {
+        "left": 71,
+        "top": 8,
+        "right": 71,
+        "bottom": 77
+      },
+      "opaque_pixels": 11935,
+      "index": 2,
+      "state": "chaosharrier-reactor-laser-03-beam-3",
+      "origin": [
+        96,
+        8
+      ]
+    },
+    {
+      "name": "chaosharrier-reactor-laser-04-beam-4.png",
+      "canvas": [
+        192,
+        384
+      ],
+      "bbox": [
+        71,
+        8,
+        50,
+        299
+      ],
+      "padding": {
+        "left": 71,
+        "top": 8,
+        "right": 71,
+        "bottom": 77
+      },
+      "opaque_pixels": 11932,
+      "index": 3,
+      "state": "chaosharrier-reactor-laser-04-beam-4",
+      "origin": [
+        96,
+        8
+      ]
+    }
+  ],
+  "side_laser_frames": [
+    {
+      "name": "chaosharrier-side-lasers-01-travel-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        90,
+        29,
+        45,
+        118
+      ],
+      "padding": {
+        "left": 90,
+        "top": 29,
+        "right": 57,
+        "bottom": 45
+      },
+      "opaque_pixels": 3307,
+      "index": 0,
+      "state": "travel-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-side-lasers-02-travel-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        82,
+        29,
+        45,
+        120
+      ],
+      "padding": {
+        "left": 82,
+        "top": 29,
+        "right": 65,
+        "bottom": 43
+      },
+      "opaque_pixels": 3398,
+      "index": 1,
+      "state": "travel-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-side-lasers-03-travel-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        64,
+        29,
+        45,
+        121
+      ],
+      "padding": {
+        "left": 64,
+        "top": 29,
+        "right": 83,
+        "bottom": 42
+      },
+      "opaque_pixels": 3378,
+      "index": 2,
+      "state": "travel-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-side-lasers-04-travel-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        56,
+        29,
+        45,
+        121
+      ],
+      "padding": {
+        "left": 56,
+        "top": 29,
+        "right": 91,
+        "bottom": 42
+      },
+      "opaque_pixels": 3394,
+      "index": 3,
+      "state": "travel-4",
+      "origin": [
+        96,
+        96
+      ]
+    }
+  ],
+  "laser_impact_frames": [
+    {
+      "name": "chaosharrier-laser-impact-01-impact-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        80,
+        68,
+        61,
+        46
+      ],
+      "padding": {
+        "left": 80,
+        "top": 68,
+        "right": 51,
+        "bottom": 78
+      },
+      "opaque_pixels": 691,
+      "index": 0,
+      "state": "impact-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-laser-impact-02-impact-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        49,
+        49,
+        92,
+        86
+      ],
+      "padding": {
+        "left": 49,
+        "top": 49,
+        "right": 51,
+        "bottom": 57
+      },
+      "opaque_pixels": 3451,
+      "index": 1,
+      "state": "impact-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-laser-impact-03-impact-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        20,
+        29,
+        132,
+        132
+      ],
+      "padding": {
+        "left": 20,
+        "top": 29,
+        "right": 40,
+        "bottom": 31
+      },
+      "opaque_pixels": 10775,
+      "index": 2,
+      "state": "impact-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-laser-impact-04-impact-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        50,
+        65,
+        64,
+        61
+      ],
+      "padding": {
+        "left": 50,
+        "top": 65,
+        "right": 78,
+        "bottom": 66
+      },
+      "opaque_pixels": 484,
+      "index": 3,
+      "state": "impact-4",
+      "origin": [
+        96,
+        96
+      ]
+    }
+  ],
+  "blockers": [],
+  "warnings": [],
+  "nose_laser_muzzle_source_audit": {
+    "width": 1536,
+    "height": 1024,
+    "background_pixels": 1441166,
+    "foreground_pixels": 131698,
+    "background_fraction": 0.916269,
+    "defringe_edge_repairs": 1662
+  },
+  "internal_glow_frames": [
+    {
+      "name": "chaosharrier-internal-glow-01.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 0,
+      "state": "pulse-1",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.12,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-02.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 1,
+      "state": "pulse-2",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.32,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-03.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 2,
+      "state": "pulse-3",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.58,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-04.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 3,
+      "state": "pulse-4",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 1.0,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-05.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 4,
+      "state": "pulse-5",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.58,
+      "opaque_emissive_pixels": 2592
+    },
+    {
+      "name": "chaosharrier-internal-glow-06.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        63,
+        34,
+        226,
+        216
+      ],
+      "padding": {
+        "left": 63,
+        "top": 34,
+        "right": 63,
+        "bottom": 70
+      },
+      "opaque_pixels": 2592,
+      "index": 5,
+      "state": "pulse-6",
+      "origin": [
+        176,
+        160
+      ],
+      "intensity": 0.32,
+      "opaque_emissive_pixels": 2592
+    }
+  ],
+  "nose_laser_muzzle_frames": [
+    {
+      "name": "chaosharrier-nose-laser-muzzle-01-ignition.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        112,
+        48,
+        32,
+        36
+      ],
+      "padding": {
+        "left": 112,
+        "top": 48,
+        "right": 112,
+        "bottom": 172
+      },
+      "opaque_pixels": 209,
+      "index": 0,
+      "state": "chaosharrier-nose-laser-muzzle-01-ignition",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-02-charge.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        90,
+        48,
+        76,
+        116
+      ],
+      "padding": {
+        "left": 90,
+        "top": 48,
+        "right": 90,
+        "bottom": 92
+      },
+      "opaque_pixels": 3586,
+      "index": 1,
+      "state": "chaosharrier-nose-laser-muzzle-02-charge",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-03-flare.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        71,
+        48,
+        115,
+        144
+      ],
+      "padding": {
+        "left": 71,
+        "top": 48,
+        "right": 70,
+        "bottom": 64
+      },
+      "opaque_pixels": 6971,
+      "index": 2,
+      "state": "chaosharrier-nose-laser-muzzle-03-flare",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-04-peak.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        50,
+        48,
+        156,
+        189
+      ],
+      "padding": {
+        "left": 50,
+        "top": 48,
+        "right": 50,
+        "bottom": 19
+      },
+      "opaque_pixels": 12590,
+      "index": 3,
+      "state": "chaosharrier-nose-laser-muzzle-04-peak",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-05-recoil.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        68,
+        48,
+        120,
+        193
+      ],
+      "padding": {
+        "left": 68,
+        "top": 48,
+        "right": 68,
+        "bottom": 15
+      },
+      "opaque_pixels": 7155,
+      "index": 4,
+      "state": "chaosharrier-nose-laser-muzzle-05-recoil",
+      "origin": [
+        128,
+        48
+      ]
+    },
+    {
+      "name": "chaosharrier-nose-laser-muzzle-06-residue.png",
+      "canvas": [
+        256,
+        256
+      ],
+      "bbox": [
+        81,
+        48,
+        95,
+        150
+      ],
+      "padding": {
+        "left": 81,
+        "top": 48,
+        "right": 80,
+        "bottom": 58
+      },
+      "opaque_pixels": 2409,
+      "index": 5,
+      "state": "chaosharrier-nose-laser-muzzle-06-residue",
+      "origin": [
+        128,
+        48
+      ]
+    }
+  ],
+  "v2_contract": {
+    "idle_hull_is_static": true,
+    "internal_glow_is_separate_overlay": true,
+    "all_side_cannon_projectiles_are_lasers": true,
+    "missiles_use_only_open_bays": true,
+    "giant_beam_uses_nose": true,
+    "nose_muzzle_is_dedicated": true,
+    "no_active_plasma_animation": true
+  }
+}

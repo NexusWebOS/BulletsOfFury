@@ -1,0 +1,19 @@
+{
+  "status": "passed",
+  "states": 15,
+  "animations": 17,
+  "attack_patterns": 4,
+  "manifest_files": 5,
+  "dependencies": 9,
+  "blockers": [],
+  "warnings": [],
+  "v2_weapon_and_animation_contract": {
+    "idle_hull_is_static": true,
+    "internal_glow_is_separate_overlay": true,
+    "all_side_cannon_projectiles_are_lasers": true,
+    "missiles_use_only_open_bays": true,
+    "giant_beam_uses_nose": true,
+    "nose_muzzle_is_dedicated": true,
+    "no_active_plasma_animation": true
+  }
+}

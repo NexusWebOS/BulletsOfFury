@@ -1,0 +1,306 @@
+{
+  "format": "coleforge.animation-set.v1",
+  "asset": "Chaos Harrier",
+  "clock": "milliseconds",
+  "simulation_tick_hz": 60,
+  "draw_order": [
+    "background",
+    "warp_back",
+    "projectiles",
+    "laser_beam",
+    "ship",
+    "internal_glow",
+    "muzzle_flashes",
+    "warp_front",
+    "impact_vfx",
+    "hud"
+  ],
+  "animations": {
+    "ship_hover": {
+      "atlas": "../chaosharrier/chaosharrier-atlas.png",
+      "indices": [
+        0
+      ],
+      "frame_ms": [
+        1000
+      ],
+      "loop": false,
+      "hold": true
+    },
+    "ship_attack_open": {
+      "atlas": "../chaosharrier/chaosharrier-atlas.png",
+      "indices": [
+        2
+      ],
+      "frame_ms": [
+        1
+      ],
+      "loop": false
+    },
+    "ship_bank_left": {
+      "atlas": "../chaosharrier/chaosharrier-atlas.png",
+      "indices": [
+        3
+      ],
+      "frame_ms": [
+        1
+      ],
+      "loop": false
+    },
+    "ship_bank_right": {
+      "atlas": "../chaosharrier/chaosharrier-atlas.png",
+      "indices": [
+        4
+      ],
+      "frame_ms": [
+        1
+      ],
+      "loop": false
+    },
+    "ship_critical": {
+      "atlas": "../chaosharrier/chaosharrier-atlas.png",
+      "indices": [
+        5
+      ],
+      "frame_ms": [
+        1
+      ],
+      "loop": true
+    },
+    "side_muzzle_flash": {
+      "atlas": "../chaosharrier-vfx/chaosharrier-vfx-atlas.png",
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_ms": [
+        55,
+        55,
+        55,
+        55
+      ],
+      "loop": false
+    },
+    "missile_launch_flash": {
+      "atlas": "../chaosharrier-vfx/chaosharrier-vfx-atlas.png",
+      "indices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "frame_ms": [
+        60,
+        60,
+        60,
+        60
+      ],
+      "loop": false
+    },
+    "reactor_charge": {
+      "atlas": "../chaosharrier-vfx/chaosharrier-vfx-atlas.png",
+      "indices": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "frame_ms": [
+        180,
+        220,
+        260,
+        260
+      ],
+      "loop": false
+    },
+    "missile_travel": {
+      "atlas": "../chaosharrier-projectiles/chaosharrier-projectile-atlas.png",
+      "indices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "frame_ms": [
+        90,
+        90,
+        90,
+        90
+      ],
+      "loop": true
+    },
+    "reactor_lance_travel": {
+      "atlas": "../chaosharrier-projectiles/chaosharrier-projectile-atlas.png",
+      "indices": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "frame_ms": [
+        80,
+        80,
+        80,
+        80
+      ],
+      "loop": true
+    },
+    "warp_out": {
+      "atlas": "../chaosharrier-warp/chaosharrier-warp-atlas.png",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "frame_ms": [
+        75,
+        75,
+        75,
+        75,
+        75,
+        75,
+        75,
+        75
+      ],
+      "loop": false
+    },
+    "warp_in": {
+      "atlas": "../chaosharrier-warp/chaosharrier-warp-atlas.png",
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "frame_ms": [
+        75,
+        75,
+        75,
+        75,
+        75,
+        75,
+        75,
+        75
+      ],
+      "loop": false
+    },
+    "side_lasers_travel": {
+      "atlas": "../chaosharrier-side-lasers/chaosharrier-side-lasers-atlas.png",
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_ms": [
+        75,
+        75,
+        75,
+        75
+      ],
+      "loop": true
+    },
+    "laser_impact": {
+      "atlas": "../chaosharrier-laser-impact/chaosharrier-laser-impact-atlas.png",
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_ms": [
+        65,
+        65,
+        65,
+        65
+      ],
+      "loop": false
+    },
+    "internal_glow": {
+      "atlas": "../chaosharrier-internal-glow/chaosharrier-internal-glow-atlas.png",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "frame_ms": [
+        95,
+        95,
+        95,
+        95,
+        95,
+        95
+      ],
+      "loop": true,
+      "sync_transform_to_ship": true
+    },
+    "nose_laser_muzzle": {
+      "atlas": "../chaosharrier-nose-laser-muzzle/chaosharrier-nose-laser-muzzle-atlas.png",
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "frame_ms": [
+        70,
+        70,
+        70,
+        110,
+        80,
+        80
+      ],
+      "loop": false
+    },
+    "giant_nose_laser_active": {
+      "atlas": "../chaosharrier-reactor-laser/chaosharrier-reactor-laser-atlas.png",
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_ms": [
+        70,
+        70,
+        70,
+        70
+      ],
+      "loop": true
+    }
+  },
+  "ship_state_selection": {
+    "velocity_x_less_than_-8": "ship_bank_left",
+    "velocity_x_greater_than_8": "ship_bank_right",
+    "missile_bays_open": "ship_attack_open",
+    "health_percent_at_or_below_35": "ship_critical",
+    "otherwise": "ship_hover"
+  },
+  "persistent_overlays": [
+    {
+      "animation": "internal_glow",
+      "when_visible": true,
+      "enabled_ship_animations": [
+        "ship_hover",
+        "ship_attack_open"
+      ],
+      "restart_on_state_change": false
+    }
+  ]
+}

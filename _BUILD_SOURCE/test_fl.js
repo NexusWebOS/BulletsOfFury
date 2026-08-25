@@ -8408,8 +8408,8 @@ console.log("=== 186. player / enemy / game ===");
      They are NOT atlas material: each is a full-canvas 680x510 alpha layer drawn whole at the
      view rect, so packing them would add a rect lookup and save nothing, and 24 loose plates in
      a flat game/ is exactly the sprawl Mike asked to be cleaned up. Same reasoning fonts/ got. */
-  ok(_sub.sort().join(',')==='atlas,bg5,bg6,fonts,music,sounds',
-     'game/ holds music, sounds, fonts, the packed atlases and the stage-5/6 layers ('+_sub.join(',')+')');
+  ok(_sub.sort().join(',')==='atlas,bg5,bg6,chaosharrier,fonts,music,sounds',
+     'game/ holds music, sounds, fonts, the packed atlases, stage layers and Chaos Harrier pack ('+_sub.join(',')+')');
 
   /* PROTECT THE ART, NOT THE FOLDER IT USED TO SIT IN (drop 0806r).
 
@@ -11087,6 +11087,29 @@ console.log("=== 235. solid spacing and vehicle motion ===");
      'tank hull art remains south-facing even while its path vector moves east, west or diagonally');
   ok(vm.runInContext("NEF_S1.s1rivermine.drift===undefined && applyNefUnit.toString().indexOf('c.vy = 0')>0",ctxv),
      'river mines and every barrel/canister use the same zero-drift prop rule');
+}
+
+// ===== 236. CHAOS HARRIER STAGE-5 REPLACEMENT PACK =====
+console.log("=== 236. Chaos Harrier replacement ===");
+{
+  ok(vm.runInContext("SUBBOSS[5].kind==='chaosharrier' && SHIPBOSS.chaosharrier.mini===true",ctxv),
+     'Stage 5 miniboss slot is the complete Chaos Harrier replacement');
+  ok(vm.runInContext("SHIPBOSS.chaosharrier.key==='nch_hull_hover' && SHIPBOSS.chaosharrier.hp===360",ctxv),
+     'its authored hull and miniboss health profile are live');
+  ok(vm.runInContext("['nch_hull_open','nch_hull_left','nch_hull_right','nch_hull_critical','nch_beam_0','nch_missile_0','nch_warp_0'].every(function(k){return !!XART._src[k];})",ctxv),
+     'open bays, banks, damage, beam, missile and private warp art all resolve');
+  var _ch236=JSON.parse(vm.runInContext("(function(){run.stage=5;player.x=240;player.y=440;eBullets.length=0;"
+    +"var b={x:240,y:135,w:144,h:174,hp:360,maxhp:360};chaosHarrierInit(b,SHIPBOSS.chaosharrier);b._chaos.visible=true;"
+    +"chaosHarrierMissile(b,'left_missile_bay',-12);var m=eBullets[0];"
+    +"var a=chaosHarrierChooseAnchor(b),L=camLeftX(),R=camRightX();"
+    +"return JSON.stringify({missile:!!m&&m._chaosMissile===true&&m.homing===false&&m._noTrail===true,"
+    +"safe:a.x-b._chaos.dw*.52>=L-0.01&&a.x+b._chaos.dw*.52<=R+0.01});})()",ctxv));
+  ok(_ch236.missile===true,
+     'open bays launch the clean authored non-homing missile without the generic smoke stack');
+  ok(_ch236.safe===true,
+     'warp anchors keep the complete hull inside the live camera frame');
+  ok(_g234.indexOf('The separate Level-8 teleport families are not loaded here')>0,
+     'the Harrier private warp stays isolated from the reserved Level-8 enemy teleport pack');
 }
 
 console.log('\n============================================');

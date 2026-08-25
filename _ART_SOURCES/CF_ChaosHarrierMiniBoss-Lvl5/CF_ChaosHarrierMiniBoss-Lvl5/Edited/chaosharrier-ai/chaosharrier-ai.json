@@ -1,0 +1,316 @@
+{
+  "format": "coleforge.enemy-ai.v1",
+  "asset": "Chaos Harrier",
+  "initial_state": "spawn_warp_in",
+  "files": {
+    "animations": "chaosharrier-animations.json",
+    "attacks": "chaosharrier-attacks.json",
+    "teleport": "chaosharrier-teleport.json",
+    "difficulty": "chaosharrier-difficulty.json"
+  },
+  "blackboard_defaults": {
+    "phase": 1,
+    "health_percent": 100,
+    "attack_count": 0,
+    "last_attack": null,
+    "last_warp_anchor": null,
+    "queued_attack_after_warp": null,
+    "missile_bays_open": false,
+    "collision_enabled": false,
+    "visible": false,
+    "aim_locked": false
+  },
+  "phases": [
+    {
+      "id": 1,
+      "health_percent": [
+        100,
+        71
+      ],
+      "ship_animation": "ship_hover",
+      "movement": {
+        "pattern": "horizontal_sine",
+        "center": [
+          320,
+          116
+        ],
+        "amplitude_x": 170,
+        "amplitude_y": 22,
+        "period_ms": 3300
+      },
+      "attack_weights": {
+        "alternating_laser_burst": 0.55,
+        "missile_fan": 0.35,
+        "warp_then_laser_burst": 0.1
+      },
+      "minimum_attacks_before_warp": 2,
+      "overlay_animation": "internal_glow"
+    },
+    {
+      "id": 2,
+      "health_percent": [
+        70,
+        36
+      ],
+      "ship_animation": "ship_hover",
+      "movement": {
+        "pattern": "banked_cross_sweep",
+        "x_range": [
+          132,
+          508
+        ],
+        "y_range": [
+          90,
+          176
+        ],
+        "speed_px_s": 118
+      },
+      "attack_weights": {
+        "alternating_laser_burst": 0.25,
+        "missile_fan": 0.24,
+        "twin_laser_salvo": 0.16,
+        "giant_nose_laser": 0.22,
+        "warp_then_laser_burst": 0.13
+      },
+      "minimum_attacks_before_warp": 1,
+      "overlay_animation": "internal_glow"
+    },
+    {
+      "id": 3,
+      "health_percent": [
+        35,
+        0
+      ],
+      "ship_animation": "ship_critical",
+      "movement": {
+        "pattern": "short_aggressive_sine",
+        "center": [
+          320,
+          138
+        ],
+        "amplitude_x": 188,
+        "amplitude_y": 38,
+        "period_ms": 2200
+      },
+      "attack_weights": {
+        "alternating_laser_burst": 0.18,
+        "missile_fan": 0.2,
+        "twin_laser_salvo": 0.19,
+        "giant_nose_laser": 0.23,
+        "warp_then_twin_lasers": 0.2
+      },
+      "minimum_attacks_before_warp": 0,
+      "overlay_animation": null
+    }
+  ],
+  "states": {
+    "spawn_warp_in": {
+      "duration_ms": 1200,
+      "enter": [
+        "set_visible_false",
+        "set_collision_false",
+        "play_warp_in"
+      ],
+      "timeline": [
+        {
+          "at_ms": 600,
+          "event": "set_visible_true"
+        },
+        {
+          "at_ms": 1050,
+          "event": "set_collision_true"
+        }
+      ],
+      "next": "track"
+    },
+    "track": {
+      "duration_ms_range": [
+        520,
+        900
+      ],
+      "actions": [
+        "update_phase",
+        "follow_phase_movement",
+        "select_weighted_attack"
+      ],
+      "next": "selected_attack"
+    },
+    "selected_attack": {
+      "dispatch": {
+        "alternating_laser_burst": "attack_laser_burst",
+        "missile_fan": "attack_missiles",
+        "twin_laser_salvo": "attack_twin_lasers",
+        "giant_nose_laser": "attack_nose_laser",
+        "warp_then_laser_burst": "queue_warp_laser_burst",
+        "warp_then_twin_lasers": "queue_warp_twin_lasers"
+      }
+    },
+    "attack_missiles": {
+      "enter": [
+        "set_missile_bays_open_true",
+        "hold_ship_attack_open"
+      ],
+      "run_pattern": "missile_fan",
+      "exit": [
+        "set_missile_bays_open_false",
+        "release_ship_attack_open"
+      ],
+      "next": "recover"
+    },
+    "warp_out": {
+      "duration_ms": 600,
+      "enter": [
+        "choose_safe_anchor",
+        "play_warp_out"
+      ],
+      "timeline": [
+        {
+          "at_ms": 225,
+          "event": "set_collision_false"
+        },
+        {
+          "at_ms": 300,
+          "event": "set_visible_false"
+        },
+        {
+          "at_ms": 375,
+          "event": "move_to_selected_anchor"
+        }
+      ],
+      "next": "warp_in"
+    },
+    "warp_in": {
+      "duration_ms": 600,
+      "enter": [
+        "play_warp_in"
+      ],
+      "timeline": [
+        {
+          "at_ms": 300,
+          "event": "set_visible_true"
+        },
+        {
+          "at_ms": 525,
+          "event": "set_collision_true"
+        }
+      ],
+      "next": "queued_attack_or_recover"
+    },
+    "queued_attack_or_recover": {
+      "dispatch_blackboard": {
+        "key": "queued_attack_after_warp",
+        "null": "recover",
+        "attack_laser_burst": "attack_laser_burst",
+        "attack_twin_lasers": "attack_twin_lasers"
+      },
+      "exit": [
+        {
+          "set_blackboard": {
+            "queued_attack_after_warp": null
+          }
+        }
+      ]
+    },
+    "recover": {
+      "duration_ms_range": [
+        480,
+        820
+      ],
+      "actions": [
+        "follow_phase_movement",
+        "increment_attack_count"
+      ],
+      "next": "track"
+    },
+    "critical_enter": {
+      "enter": [
+        "set_phase_3",
+        "set_ship_critical",
+        "force_warp_to_safe_anchor"
+      ],
+      "next": "track"
+    },
+    "dead": {
+      "enter": [
+        "set_collision_false",
+        "cancel_all_attacks",
+        "emit_death_sequence_request"
+      ],
+      "terminal": true
+    },
+    "attack_laser_burst": {
+      "run_pattern": "alternating_laser_burst",
+      "next": "recover"
+    },
+    "attack_twin_lasers": {
+      "run_pattern": "twin_laser_salvo",
+      "next": "recover"
+    },
+    "attack_nose_laser": {
+      "enter": [
+        "stop_movement",
+        "clear_pending_missile_spawns"
+      ],
+      "run_pattern": "giant_nose_laser",
+      "exit": [
+        "unlock_aim",
+        "resume_movement"
+      ],
+      "next": "recover"
+    },
+    "queue_warp_laser_burst": {
+      "enter": [
+        {
+          "set_blackboard": {
+            "queued_attack_after_warp": "attack_laser_burst"
+          }
+        }
+      ],
+      "next": "warp_out"
+    },
+    "queue_warp_twin_lasers": {
+      "enter": [
+        {
+          "set_blackboard": {
+            "queued_attack_after_warp": "attack_twin_lasers"
+          }
+        }
+      ],
+      "next": "warp_out"
+    }
+  },
+  "global_transitions": [
+    {
+      "condition": "health_percent <= 0",
+      "to": "dead",
+      "priority": 100
+    },
+    {
+      "condition": "health_percent <= 35 and phase < 3",
+      "to": "critical_enter",
+      "priority": 80
+    },
+    {
+      "condition": "health_percent <= 70 and phase < 2",
+      "actions": [
+        "set_phase_2"
+      ],
+      "priority": 70
+    }
+  ],
+  "anti_repeat": {
+    "maximum_same_attack_in_row": 1,
+    "giant_nose_laser_cannot_repeat": true,
+    "warp_cannot_repeat_without_attack_between": true
+  },
+  "readability_rules": [
+    "Never overlap giant-nose-laser telegraph with missile launch.",
+    "Never spawn a projectile while the ship is invisible.",
+    "Missile spawns require attack_open and one of the two visible red bay hardpoints.",
+    "Side pod weapons use laser projectiles only.",
+    "The giant beam and dedicated muzzle flash share the nose_laser hardpoint.",
+    "The relocation occurs only while the peak warp frame covers the ship.",
+    "Keep one player escape lane at least 64 pixels wide.",
+    "Idle animation holds one hull frame; internal lights animate as a registered overlay."
+  ]
+}

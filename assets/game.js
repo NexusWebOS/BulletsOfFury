@@ -1594,6 +1594,35 @@ const XART=(function(){
      code is the same registration by a route that survives the next regeneration. ============================================================ */
   X._src['nsb_jungle_cruiser'] = 'assets/game/nsb_jungle_cruiser.png';
   X._src['nsb_olive_carrier']  = 'assets/game/nsb_olive_carrier.png';
+  /* CHAOS HARRIER (Level 5 miniboss pack, 0825a).
+     Keep this out of manifest.js: that file is generated.  The pack deliberately ships loose,
+     fixed-canvas frames plus engine-neutral maps, so register the runtime plates here and retain
+     the complete package under _ART_SOURCES.  `nch_` is one private namespace; warming it cannot
+     accidentally pull in the separate Level-8 enemy teleport volume. */
+  {
+    const R='assets/game/chaosharrier/';
+    const put=(k,p)=>{ X._src[k]=R+p; };
+    put('nch_hull_hover', 'chaosharrier/chaosharrier-01-hover-a.png');
+    put('nch_hull_hover_b','chaosharrier/chaosharrier-02-hover-b.png');
+    put('nch_hull_open',  'chaosharrier/chaosharrier-03-attack-open.png');
+    put('nch_hull_left',  'chaosharrier/chaosharrier-04-bank-left.png');
+    put('nch_hull_right', 'chaosharrier/chaosharrier-05-bank-right.png');
+    put('nch_hull_critical','chaosharrier/chaosharrier-06-critical.png');
+    for(let i=1;i<=6;i++) put('nch_glow_'+(i-1),'chaosharrier-internal-glow/chaosharrier-internal-glow-'+String(i).padStart(2,'0')+'.png');
+    const impact=['impact-1','impact-2','impact-3','impact-4'];
+    for(let i=0;i<4;i++) put('nch_impact_'+i,'chaosharrier-laser-impact/chaosharrier-laser-impact-'+String(i+1).padStart(2,'0')+'-'+impact[i]+'.png');
+    const nose=['ignition','charge','flare','peak','recoil','residue'];
+    for(let i=0;i<6;i++) put('nch_nose_'+i,'chaosharrier-nose-laser-muzzle/chaosharrier-nose-laser-muzzle-'+String(i+1).padStart(2,'0')+'-'+nose[i]+'.png');
+    for(let i=0;i<4;i++) put('nch_missile_'+i,'chaosharrier-projectiles/chaosharrier-projectile-'+String(i+5).padStart(2,'0')+'-missile-'+(i+1)+'.png');
+    for(let i=0;i<4;i++) put('nch_lance_'+i,'chaosharrier-projectiles/chaosharrier-projectile-'+String(i+9).padStart(2,'0')+'-reactor-lance-'+(i+1)+'.png');
+    for(let i=0;i<4;i++) put('nch_beam_'+i,'chaosharrier-reactor-laser/chaosharrier-reactor-laser-'+String(i+1).padStart(2,'0')+'-beam-'+(i+1)+'.png');
+    for(let i=0;i<4;i++) put('nch_side_'+i,'chaosharrier-side-lasers/chaosharrier-side-lasers-'+String(i+1).padStart(2,'0')+'-travel-'+(i+1)+'.png');
+    for(let i=0;i<4;i++) put('nch_sideflash_'+i,'chaosharrier-vfx/chaosharrier-vfx-'+String(i+1).padStart(2,'0')+'-sideflash-'+(i+1)+'.png');
+    for(let i=0;i<4;i++) put('nch_launchflash_'+i,'chaosharrier-vfx/chaosharrier-vfx-'+String(i+5).padStart(2,'0')+'-launchflash-'+(i+1)+'.png');
+    for(let i=0;i<4;i++) put('nch_charge_'+i,'chaosharrier-vfx/chaosharrier-vfx-'+String(i+9).padStart(2,'0')+'-corecharge-'+(i+1)+'.png');
+    const warp=['sparks','slit-open','aperture-open','aperture-full','phase-flash','aperture-collapse','slit-collapse','residue'];
+    for(let i=0;i<8;i++) put('nch_warp_'+i,'chaosharrier-warp/chaosharrier-warp-'+String(i+1).padStart(2,'0')+'-'+warp[i]+'.png');
+  }
   /* get() MUST NEVER HAND drawImage A NULL (drop 0724dq).
      Mike is seeing THOUSANDS of draw errors mentioning HTMLImageElement. That is this:
          ctx.drawImage(XART.get(k), ...)   with k missing or not yet decoded
@@ -5856,7 +5885,9 @@ const SUBBOSS={
   8:{at:0.45, kind:'spawncarrier', afterScroll:1201},
   3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
-  5:{at:0.45, kind:'subcore', afterScroll:1121},
+  /* The generic ENERGY CORE placeholder is replaced by Mike's complete Chaos Harrier package.
+     The encounter stays on the same Level-5 trigger: no section cut, no map teleport. */
+  5:{at:0.45, kind:'chaosharrier', afterScroll:1121},
 };
 
 /* ============================================================
@@ -9273,6 +9304,11 @@ const SHIPBOSS = {
      sky fortress, so it flies in storm-steel. Late stage, so it is the toughest of the minis. */
   olivecarrier:  {key:'nsb_olive_carrier', name:'OLIVE CARRIER',  w:172,h:172, hp:265, pat:'mslfan', cd:1.12, mini:true,
                   pats:['mslfan','lance']},
+  /* CF_ChaosHarrierMiniBoss-Lvl5. `w/h` is the pack's recommended BODY hitbox scaled to the
+     264x240 draw, not the transparent 352x320 canvas.  The custom runner below owns movement,
+     state plates, open-bay missiles, twin lasers, reactor beam and the Harrier's private warp. */
+  chaosharrier:  {key:'nch_hull_hover', name:'CHAOS HARRIER', w:144,h:174, drawW:264,drawH:240,
+                  hp:360, pat:'chaos', cd:1.0, mini:true, pats:['chaos']},
 };
 function shipBossInit(b, kind){
   const D=SHIPBOSS[kind]; if(!D) return false;
@@ -9286,6 +9322,155 @@ function shipBossInit(b, kind){
      false on that first call, so the first frame the boss exists is the first frame anything asks
      for its art. Asking here, at spawn, gives it the whole entry to decode. */
   try{ if(typeof XART!=='undefined'){ XART.rdy(D.key); if(XART._touch) XART._touch(D.key); } }catch(_sb){}
+  if(kind==='chaosharrier' && typeof chaosHarrierInit==='function') chaosHarrierInit(b,D);
+  return true;
+}
+/* ============================================================
+   CHAOS HARRIER — LEVEL 5 MINIBOSS (CF_ChaosHarrierMiniBoss-Lvl5, 0825a)
+
+   This is the pack's v2 contract translated into the game's one-file runtime.  The hull never
+   flips or pulses between idle plates: hover-a is held, the six-frame internal-light overlay is
+   the idle animation, and bank/open/critical are explicit states.  Side pods fire the authored
+   side-laser reel; missiles exist only while the red bays are visibly open; the reactor charges
+   into the authored nose beam.  The separate CF_EnemyTeleportFX volume is NOT referenced here —
+   it remains reserved for Level 8.  Only the Harrier's own private phase-rift frames are used.
+
+   Standing game rule wins over the engine-neutral sample AI: these missiles launch on authored
+   fan vectors and never home.  Likewise the nose laser locks during its tell and never follows
+   the player after it becomes lethal. ============================================================ */
+const CHAOS_HARRIER_HP={
+  hover:{left_cannon:[76,145],right_cannon:[275,145],central_reactor:[176,110],nose_laser:[176,267]},
+  open:{left_cannon:[64,130],right_cannon:[289,130],left_missile_bay:[128,146],right_missile_bay:[224,146],central_reactor:[176,110],nose_laser:[176,267]}
+};
+/* The map bbox joins two disconnected authored elements: the missile at the top and a separate
+   lower impact orb. Runtime travel must crop only the missile body/exhaust or the orb appears to
+   teleport beneath every round. */
+const CHAOS_MSL_CROP=[[121,26,45,110],[89,26,45,110],[57,26,45,110],[25,26,45,110]];
+const CHAOS_SIDE_CROP=[[90,29,45,118],[82,29,45,120],[64,29,45,121],[56,29,45,121]];
+let chaosHarrierImpacts=[];
+function chaosHarrierInit(b,D){
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  b.mini=true; b.enter=true; b.x=W/2; b.y=(b.ty!=null?b.ty:132);
+  b._chaos={state:'warp_in',t:0,clock:0,visible:false,phase:1,seq:0,cool:0.45,
+            vx:0,bank:0,dir:1,queued:null,muzzles:[],dw:D.drawW||264,dh:D.drawH||240,
+            anchorN:0,moved:false,lastAttack:null};
+}
+function chaosHarrierPhase(b){ const f=b.hp/(b.maxhp||1); return f>0.70?1:(f>0.35?2:3); }
+function chaosHarrierPoint(b,name,open){
+  const C=b._chaos, p=(open?CHAOS_HARRIER_HP.open:CHAOS_HARRIER_HP.hover)[name]||CHAOS_HARRIER_HP.hover[name]||[176,160];
+  return {x:b.x+(p[0]-176)*(C.dw/352), y:b.y+(p[1]-160)*(C.dh/320)};
+}
+function chaosHarrierOnce(C,id,at,fn){ if(C.t>=at && !C.fired[id]){ C.fired[id]=1; fn(); } }
+function chaosHarrierMuzzle(b,kind,hp){ b._chaos.muzzles.push({kind,hp,t:0}); }
+function chaosHarrierAimDown(x,y){
+  const a=Math.atan2(player.y-y,player.x-x), d=clamp(a-Math.PI/2,-Math.PI/10,Math.PI/10);
+  return Math.PI/2+d;
+}
+function chaosHarrierLaser(b,hp,offset){
+  const p=chaosHarrierPoint(b,hp,false), a=chaosHarrierAimDown(p.x,p.y)+(offset||0);
+  const sp=7.83*((typeof DIFF!=='undefined'&&DIFF)?DIFF.ebSpeed:1);
+  eBullets.push({x:p.x,y:p.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,ang:a,w:14,h:58,dmg:1,t:0,
+                 kind:'eshot',_chaosLaser:true,_noArsenal:true});
+  chaosHarrierMuzzle(b,'side',hp);
+  if(Audio.SFX&&Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+}
+function chaosHarrierMissile(b,hp,deg){
+  const p=chaosHarrierPoint(b,hp,true), a=Math.PI/2+deg*Math.PI/180, sp=2.42;
+  eBullets.push({x:p.x,y:p.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,ang:a,w:20,h:32,dmg:1,t:0,
+                 kind:'emissile',spd:sp,_accel:0.029,_maxspd:4.75,_chaosMissile:true,_noTrail:true,homing:false});
+  chaosHarrierMuzzle(b,'launch',hp);
+  if(Audio.SFX&&(Audio.SFX.missile||Audio.SFX.enemyShoot)) (Audio.SFX.missile||Audio.SFX.enemyShoot)();
+}
+function chaosHarrierChooseAnchor(b){
+  const C=b._chaos,L=(typeof camLeftX==='function')?camLeftX():0;
+  const R=(typeof camRightX==='function')?camRightX():((typeof worldWidth==='function')?worldWidth():VW),W=R-L;
+  const xs=[0.22,0.78,0.50,0.68,0.32], ys=[0.25,0.31,0.22,0.27,0.29];
+  for(let k=0;k<xs.length;k++){
+    const i=(C.anchorN+k)%xs.length, x=clamp(L+W*xs[i],L+C.dw*0.52,R-C.dw*0.52), y=VH*ys[i];
+    if(!player || Math.hypot(player.x-x,player.y-y)>150){ C.anchorN=i+1; return {x,y}; }
+  }
+  return {x:(L+R)/2,y:VH*0.25};
+}
+function chaosHarrierBegin(b,kind){
+  const C=b._chaos;
+  if(kind.indexOf('warp_')===0){ C.queued=kind.slice(5); C.state='warp_out'; C.t=0; C.fired={}; C.moved=false; C.anchor=chaosHarrierChooseAnchor(b); return; }
+  C.state='attack'; C.attack=kind; C.lastAttack=kind; C.t=0; C.fired={};
+}
+function chaosHarrierPick(b){
+  const C=b._chaos,ph=C.phase;
+  const seq=ph===1 ? ['laser','missile','laser','warp_laser']
+           : ph===2 ? ['laser','missile','twin','beam','warp_laser']
+                    : ['twin','missile','beam','warp_twin','laser'];
+  chaosHarrierBegin(b,seq[(C.seq++)%seq.length]);
+}
+function chaosHarrierEndAttack(b,cool){
+  const C=b._chaos; C.state='track'; C.attack=null; C.t=0; C.fired={};
+  C.cool=(cool||1.0)/Math.max(0.5,(typeof DIFF!=='undefined'&&DIFF)?DIFF.eFire:1);
+}
+function chaosHarrierMove(b,dt){
+  const C=b._chaos,L=(typeof camLeftX==='function')?camLeftX():0;
+  const R=(typeof camRightX==='function')?camRightX():((typeof worldWidth==='function')?worldWidth():VW);
+  const W=R-L,mid=(L+R)/2,edge=C.dw*0.52,amp=Math.max(0,(W-C.dw)*0.5-8),old=b.x;
+  if(C.phase===1){
+    const q=C.clock*Math.PI*2/3.3; b.x=mid+Math.sin(q)*Math.min(170,amp); b.y=VH*0.255+Math.sin(q*0.5)*22;
+  }else if(C.phase===2){
+    b.x+=C.dir*118*dt;
+    if(b.x<L+edge){b.x=L+edge;C.dir=1;} else if(b.x>R-edge){b.x=R-edge;C.dir=-1;}
+    b.y=VH*0.27+Math.sin(C.clock*2.2)*28;
+  }else{
+    const q=C.clock*Math.PI*2/2.2; b.x=mid+Math.sin(q)*Math.min(188,amp); b.y=VH*0.285+Math.sin(q*2)*30;
+  }
+  b.x=clamp(b.x,L+edge,R-edge); // keep the complete authored hull inside the live camera frame
+  C.vx=dt>0?(b.x-old)/dt:0; C.bank=C.vx<-8?-1:(C.vx>8?1:0);
+}
+function chaosHarrierAttackTick(b,dt){
+  const C=b._chaos,a=C.attack;
+  if(a!=='beam') chaosHarrierMove(b,dt);
+  if(a==='laser'){
+    for(const q of [[0.055,'left_cannon'],[0.205,'right_cannon'],[0.385,'left_cannon'],[0.535,'right_cannon']])
+      chaosHarrierOnce(C,'l'+q[0],q[0],()=>chaosHarrierLaser(b,q[1],0));
+    if(C.t>=0.92) chaosHarrierEndAttack(b,1.05);
+  }else if(a==='missile'){
+    for(const q of [[0.24,'left_missile_bay',-18],[0.34,'right_missile_bay',18],[0.56,'left_missile_bay',-7],[0.66,'right_missile_bay',7]])
+      chaosHarrierOnce(C,'m'+q[0],q[0],()=>chaosHarrierMissile(b,q[1],q[2]));
+    if(C.t>=1.32) chaosHarrierEndAttack(b,1.75);
+  }else if(a==='twin'){
+    for(const q of [[0.09,'left_cannon',-4],[0.09,'right_cannon',4],[0.38,'left_cannon',4],[0.38,'right_cannon',-4]])
+      chaosHarrierOnce(C,'t'+q[0]+q[1],q[0],()=>chaosHarrierLaser(b,q[1],q[2]*Math.PI/180));
+    if(C.t>=1.05) chaosHarrierEndAttack(b,1.25);
+  }else if(a==='beam'){
+    chaosHarrierOnce(C,'lock',0.65,()=>{ const p=chaosHarrierPoint(b,'nose_laser',false); C.beamAng=chaosHarrierAimDown(p.x,p.y); });
+    if(C.t>=0.90 && C.t<2.15 && C.beamAng!=null && player && !player.dead && player.invuln<=0){
+      const p=chaosHarrierPoint(b,'nose_laser',false),dx=Math.cos(C.beamAng),dy=Math.sin(C.beamAng);
+      const px=player.x-p.x,py=player.y-p.y,along=px*dx+py*dy,across=Math.abs(px*dy-py*dx);
+      if(along>=0 && along<Math.max(VW,VH)*1.4 && across<24+(player._hx||9)*0.5) playerHit();
+    }
+    if(C.t>=2.55){ C.beamAng=null; chaosHarrierEndAttack(b,3.5); }
+  }
+}
+function chaosHarrierTick(b,dt){
+  const C=b&&b._chaos; if(!C) return false;
+  C.t+=dt; C.clock+=dt;
+  for(const m of C.muzzles) m.t+=dt; C.muzzles=C.muzzles.filter(m=>m.t<0.34);
+  const ph=chaosHarrierPhase(b);
+  if(ph!==C.phase){ C.phase=ph; C.seq=0; b.flash=Math.max(b.flash||0,0.30); }
+  if(C.state==='warp_out'){
+    if(C.t>=0.225) b.enter=true;
+    if(C.t>=0.300) C.visible=false;
+    if(C.t>=0.375 && !C.moved){ b.x=C.anchor.x;b.y=C.anchor.y;C.moved=true; }
+    if(C.t>=0.600){ C.state='warp_in';C.t=0;C.fired={};C.moved=false; }
+    return true;
+  }
+  if(C.state==='warp_in'){
+    if(C.t>=0.300) C.visible=true;
+    if(C.t>=0.525) b.enter=false;
+    if(C.t>=0.600){ const q=C.queued;C.queued=null;C.state='track';C.t=0;C.cool=0.35;if(q)chaosHarrierBegin(b,q); }
+    return true;
+  }
+  C.visible=true; b.enter=false;
+  if(C.state==='attack'){ chaosHarrierAttackTick(b,dt); return true; }
+  chaosHarrierMove(b,dt); C.cool-=dt;
+  if(C.cool<=0) chaosHarrierPick(b);
   return true;
 }
 /* FIRE/LAVA SHIP BOSSES OWN THE MAGMA ROUND (Mike, 0824). The Stage-2 Inferno Reaver was still
@@ -9889,8 +10074,64 @@ function carrierBayHit(b, wx, wy){
   }
   return false;
 }
+function chaosHarrierPlate(key,x,y,w,h,alpha){
+  if(typeof XART==='undefined'||!XART.rdy(key)) return false;
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=(alpha==null?1:alpha);
+  ctx.drawImage(XART.get(key),x-w/2,y-h/2,w,h);ctx.restore();return true;
+}
+function chaosHarrierDrawBeam(b){
+  const C=b._chaos;if(C.attack!=='beam'||C.t<0.90||C.t>=2.15||C.beamAng==null)return;
+  const p=chaosHarrierPoint(b,'nose_laser',false),key='nch_beam_'+(((C.t-0.90)*14|0)%4);
+  if(typeof XART==='undefined'||!XART.rdy(key))return;
+  const im=XART.get(key),len=Math.max(VW,VH)*1.35,visW=38;
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalCompositeOperation='lighter';ctx.translate(p.x,p.y);ctx.rotate(C.beamAng-Math.PI/2);
+  /* crop the authored 50x299 live strip; drawing the 192px transparent canvas would shrink it */
+  ctx.drawImage(im,71,8,50,299,-visW/2,0,visW,len);ctx.restore();
+  const ik='nch_impact_'+(((C.t-0.90)*15|0)%4);
+  if(XART.rdy(ik)){
+    const reach=(VH-p.y)/Math.max(0.1,Math.sin(C.beamAng)),ix=p.x+Math.cos(C.beamAng)*reach,iy=Math.min(VH-8,p.y+Math.sin(C.beamAng)*reach);
+    chaosHarrierPlate(ik,ix,iy,72,72,0.95);
+  }
+}
+function chaosHarrierDraw(b){
+  const C=b&&b._chaos;if(!C)return false;
+  chaosHarrierDrawBeam(b);                         // pack order: beam below ship
+  if(C.visible){
+    let key='nch_hull_hover';
+    if(C.attack==='missile')key='nch_hull_open';
+    else if(C.phase===3)key='nch_hull_critical';
+    else if(C.bank<0)key='nch_hull_left';else if(C.bank>0)key='nch_hull_right';
+    if(!chaosHarrierPlate(key,b.x,b.y,C.dw,C.dh,1)) chaosHarrierPlate('nch_hull_hover',b.x,b.y,C.dw,C.dh,1);
+    /* The glow is the idle animation.  Never swap hover-a/hover-b to fake motion. */
+    if(C.phase<3 && (C.attack!=='beam')){
+      const gk='nch_glow_'+(((C.clock*10.526)|0)%6);chaosHarrierPlate(gk,b.x,b.y,C.dw,C.dh,0.92);
+    }
+    if((b.flash||0)>0 && typeof xartTint==='function'){
+      const t=xartTint(key,'#ffffff',0.9);if(t){ctx.save();ctx.globalAlpha=Math.min(0.85,b.flash/0.18);ctx.drawImage(t,b.x-C.dw/2,b.y-C.dh/2,C.dw,C.dh);ctx.restore();}
+    }
+    if(C.attack==='beam'&&C.t<0.90){
+      const p=chaosHarrierPoint(b,'central_reactor',false),fi=Math.min(3,Math.floor(C.t/0.225));
+      chaosHarrierPlate('nch_charge_'+fi,p.x,p.y,124,124,0.95);
+    }
+    if(C.attack==='beam'&&C.t>=0.76&&C.t<1.21){
+      const p=chaosHarrierPoint(b,'nose_laser',false),fi=Math.min(5,Math.floor((C.t-0.76)/0.075));
+      chaosHarrierPlate('nch_nose_'+fi,p.x,p.y,96,96,1);
+    }
+    for(const m of C.muzzles){
+      const open=m.kind==='launch',p=chaosHarrierPoint(b,m.hp,open),fi=Math.min(3,(m.t*14)|0);
+      chaosHarrierPlate((open?'nch_launchflash_':'nch_sideflash_')+fi,p.x,p.y,92,92,1-m.t/0.34);
+    }
+  }
+  /* Harrier-private phase rift. The separate Level-8 teleport families are not loaded here. */
+  if(C.state==='warp_out'||C.state==='warp_in'){
+    let fi=Math.min(7,Math.floor(C.t/0.075));if(C.state==='warp_in')fi=7-fi;
+    chaosHarrierPlate('nch_warp_'+fi,b.x,b.y,360,360,1);
+  }
+  return true;
+}
 function shipBossDraw(b){
   const D=SHIPBOSS[b&&b._ship]; if(!D) return false;
+  if(b._chaos && typeof chaosHarrierDraw==='function') return chaosHarrierDraw(b);
   if(typeof XART==='undefined' || !XART.rdy(D.key)){
     /* ⚠ NEVER FALL THROUGH TO NOTHING. Returning false here sent the draw down a chain of
        early-returns for _gen / _mech / _sx / modular / mega, and a ship boss is none of those " so
@@ -10200,7 +10441,7 @@ function spawnSubBoss__inner(kind){
     case 'magmaward': case 'rimewall': case 'olivewarden':   // Mike's 0813h minis
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
     case 'spawncarrier':                               // stage 8's lock mini (0814e) — replaces the herald
-    case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
+    case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier': case 'chaosharrier':
       b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {
       /* Built from the pack's own map rather than eyeballed: BOFQL carries the
@@ -10303,6 +10544,7 @@ function updateSubBoss(dt){
     if(T>=1.9){ subBoss=null; subBossActive=false; subBossDone=true; if(typeof dropPowerup==='function') dropPowerup(b.x,b.y,'weapon'); }
     return;
   }
+  if(b._chaos && typeof chaosHarrierTick==='function' && chaosHarrierTick(b,dt)) return;
   if(b.enter){
     b._entT=(b._entT||0)+dt;
     b.y=lerp(b.y,b.ty,0.05);
@@ -15032,6 +15274,7 @@ function warmStage(n){
     if(_mk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_mk]){
       const _md=SHIPBOSS[_mk]; add(_md.key);
       if(_md.dmg) for(const _dk of _md.dmg) add(_dk);
+      if(_mk==='chaosharrier') addPrefix('nch_');   // hull + registered overlays/projectiles/VFX
     }
   }catch(e){}
   /* 5. THE FAMILIES THAT DO NOT MATCH A FOLDER OR A KIND NAME (drop 0801kd).
@@ -15469,7 +15712,7 @@ function beginStage(num){
   if(typeof l6GMissiles!=='undefined') l6GMissiles.length=0;
   l6Objs=[];   /* the stage-6 weather reset went with the old system (0819f) */
   camX=0; WORLD_W=worldWidth();   // reset camera state: stage-1's 800px h-scroll camX must never leak into other stages (broke the stage-2 level display)
-  enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0;
+  enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0; chaosHarrierImpacts.length=0;
   explosions.length=0; particles.length=0; floaters.length=0; boss=null;
   /* a death chain must not survive the stage that spawned it — this is the whole reason the
      chain is tick-driven rather than setTimeout (drop 0807c) */
@@ -15527,7 +15770,7 @@ function beginStage(num){
 function coleSceneApply(num){
   const want=_coleScene; _coleScene=0;
   try{
-    enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0;
+    enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0; chaosHarrierImpacts.length=0;
     subBossDone=true; subBossTriggered=true; subBossActive=false; subBoss=null;
     stageTimer=9999; spawnClock=9999;            // the wave script is already spent
     if(typeof waveIdx!=='undefined') waveIdx=999;
@@ -17452,7 +17695,7 @@ function updatePlay(dt){
     if(b.kind==='emissile'){
       // (b.t already advanced at the loop head — do not double-count)
       // white exhaust smoke trailing the missile
-      if(typeof addTrail==='function' && (b.t*60|0)%2===0) addTrail(b.x - Math.cos(b.ang||Math.PI/2)*b.h*0.4, b.y - Math.sin(b.ang||Math.PI/2)*b.h*0.4, null, 'missile');
+      if(!b._noTrail && typeof addTrail==='function' && (b.t*60|0)%2===0) addTrail(b.x - Math.cos(b.ang||Math.PI/2)*b.h*0.4, b.y - Math.sin(b.ang||Math.PI/2)*b.h*0.4, null, 'missile');
       let ang=Math.atan2(b.vy,b.vx);
       /* ============================================================
          HOMING IS A GRANT, NOT A DEFAULT (Mike, 0819): "missiles that DO NOT home, and remove
@@ -17570,12 +17813,20 @@ function updatePlay(dt){
            plate of the set, a burst that scatters into cooling debris. explode() counts a named
            family's frames itself, so the 6-frame reel needs no table row. */
         if(b.kind==='magma' && typeof explode==='function') explode(b.x,b.y,34,'red','bfx_magma_i');
+        if(b._chaosLaser) chaosHarrierImpacts.push({x:b.x,y:b.y,t:0});
         playerHit(); b.dead=true;
       }
     }
-    { const _mw=(typeof worldWidth==='function')?worldWidth():VW; if(b.y<-16||b.y>VH+16||b.x<-16||b.x>_mw+16) b.dead=true; }
+    { const _mw=(typeof worldWidth==='function')?worldWidth():VW;
+      if(b.y<-16||b.y>VH+16||b.x<-16||b.x>_mw+16){
+        if(b._chaosLaser && b.y>VH) chaosHarrierImpacts.push({x:clamp(b.x,8,_mw-8),y:VH-8,t:0});
+        b.dead=true;
+      }
+    }
   }
   eBullets=eBullets.filter(b=>!b.dead);
+  for(const f of chaosHarrierImpacts) f.t+=dt;
+  chaosHarrierImpacts=chaosHarrierImpacts.filter(f=>f.t<0.28);
 
   // ---- enemy body collision w/ player (ram) ----
   if(!player.dead && player.invuln<=0){
@@ -25295,6 +25546,24 @@ function drawBullets(){
        Now: a boss bullet draws its own boss's animated plate; everything else falls through to
        FIRETYPES and gets the approved six. nep_/nbp_ stays registered but is no longer
        consulted — deleting 126 keys is Mike's call, not mine. */
+    /* Chaos Harrier projectiles use their replacement art before the shared arsenal can claim
+       them. Crop each fixed canvas by the supplied map bbox so the four animation frames stay
+       centred instead of appearing to teleport sideways with their source-sheet column. */
+    if(b._chaosLaser){
+      const fi=((b.t||0)*13.333|0)%4,key='nch_side_'+fi,c=CHAOS_SIDE_CROP[fi];
+      if(typeof XART!=='undefined'&&XART.rdy(key)){
+        ctx.save();ctx.translate(b.x,b.y);ctx.rotate((b.ang!=null?b.ang:Math.atan2(b.vy,b.vx))-Math.PI/2);
+        ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(key),c[0],c[1],c[2],c[3],-11,-29,22,58);ctx.restore();continue;
+      }
+    }
+    if(b._chaosMissile){
+      const fi=((b.t||0)*11|0)%4,key='nch_missile_'+fi,c=CHAOS_MSL_CROP[fi];
+      if(typeof XART!=='undefined'&&XART.rdy(key)){
+        /* source points north (nose up, exhaust down); rotate its north axis onto travel */
+        ctx.save();ctx.translate(b.x,b.y);ctx.rotate((b.ang!=null?b.ang:Math.atan2(b.vy,b.vx))+Math.PI/2);
+        ctx.drawImage(XART.get(key),c[0],c[1],c[2],c[3],-8,-25,16,50);ctx.restore();continue;
+      }
+    }
     if(b._boss && !b._noArsenal){
       const _bk=_bossProjKey(b);
       if(_bk && typeof XART!=='undefined' && XART.rdy(_bk)){
@@ -25453,6 +25722,10 @@ function drawBullets(){
       ctx.restore(); }
     else if(ASSETS.has('ebullet')){ ASSETS.blit('ebullet', b.x, b.y, 12, 11); }
     else { ctx.fillStyle='#ff5a2a'; circle(b.x,b.y,3.4); ctx.fillStyle='#ffd36b'; circle(b.x,b.y,1.6); }
+  }
+  for(const f of chaosHarrierImpacts){
+    const fi=Math.min(3,(f.t*15)|0),key='nch_impact_'+fi;
+    if(typeof XART!=='undefined'&&XART.rdy(key)) chaosHarrierPlate(key,f.x,f.y,72,72,1-f.t/0.28);
   }
   ctx.imageSmoothingEnabled = _ebSmooth;   // see the note at the head of this pass (drop 0811v)
 }

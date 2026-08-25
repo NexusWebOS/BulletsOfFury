@@ -1,0 +1,370 @@
+{
+  "project": "Bullets of Fury",
+  "level": 5,
+  "view": "top-down three-quarter",
+  "facing": "down",
+  "source_key": "#FF00FF",
+  "runtime_alpha": "hard binary RGBA",
+  "pixel_scale": "source reduced 2x with nearest-neighbor",
+  "asset": "Chaos Harrier projectiles",
+  "atlas": "chaosharrier-projectile-atlas.png",
+  "atlas_grid": [
+    4,
+    3
+  ],
+  "frame_canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    {
+      "name": "chaosharrier-projectile-01-plasma-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        129,
+        40,
+        29,
+        85
+      ],
+      "padding": {
+        "left": 129,
+        "top": 40,
+        "right": 34,
+        "bottom": 67
+      },
+      "opaque_pixels": 1835,
+      "index": 0,
+      "state": "plasma-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-02-plasma-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        97,
+        40,
+        29,
+        91
+      ],
+      "padding": {
+        "left": 97,
+        "top": 40,
+        "right": 66,
+        "bottom": 61
+      },
+      "opaque_pixels": 1947,
+      "index": 1,
+      "state": "plasma-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-03-plasma-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        65,
+        40,
+        29,
+        94
+      ],
+      "padding": {
+        "left": 65,
+        "top": 40,
+        "right": 98,
+        "bottom": 58
+      },
+      "opaque_pixels": 1990,
+      "index": 2,
+      "state": "plasma-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-04-plasma-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        33,
+        40,
+        29,
+        96
+      ],
+      "padding": {
+        "left": 33,
+        "top": 40,
+        "right": 130,
+        "bottom": 56
+      },
+      "opaque_pixels": 2022,
+      "index": 3,
+      "state": "plasma-4",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-05-missile-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        121,
+        26,
+        45,
+        155
+      ],
+      "padding": {
+        "left": 121,
+        "top": 26,
+        "right": 26,
+        "bottom": 11
+      },
+      "opaque_pixels": 2669,
+      "index": 4,
+      "state": "missile-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-06-missile-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        89,
+        26,
+        45,
+        155
+      ],
+      "padding": {
+        "left": 89,
+        "top": 26,
+        "right": 58,
+        "bottom": 11
+      },
+      "opaque_pixels": 2756,
+      "index": 5,
+      "state": "missile-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-07-missile-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        57,
+        26,
+        45,
+        155
+      ],
+      "padding": {
+        "left": 57,
+        "top": 26,
+        "right": 90,
+        "bottom": 11
+      },
+      "opaque_pixels": 2801,
+      "index": 6,
+      "state": "missile-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-08-missile-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        25,
+        26,
+        45,
+        155
+      ],
+      "padding": {
+        "left": 25,
+        "top": 26,
+        "right": 122,
+        "bottom": 11
+      },
+      "opaque_pixels": 2728,
+      "index": 7,
+      "state": "missile-4",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-09-reactor-lance-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        120,
+        10,
+        47,
+        137
+      ],
+      "padding": {
+        "left": 120,
+        "top": 10,
+        "right": 25,
+        "bottom": 45
+      },
+      "opaque_pixels": 4027,
+      "index": 8,
+      "state": "reactor-lance-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-10-reactor-lance-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        88,
+        10,
+        47,
+        138
+      ],
+      "padding": {
+        "left": 88,
+        "top": 10,
+        "right": 57,
+        "bottom": 44
+      },
+      "opaque_pixels": 4055,
+      "index": 9,
+      "state": "reactor-lance-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-11-reactor-lance-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        56,
+        10,
+        47,
+        138
+      ],
+      "padding": {
+        "left": 56,
+        "top": 10,
+        "right": 89,
+        "bottom": 44
+      },
+      "opaque_pixels": 4084,
+      "index": 10,
+      "state": "reactor-lance-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-projectile-12-reactor-lance-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        24,
+        10,
+        47,
+        138
+      ],
+      "padding": {
+        "left": 24,
+        "top": 10,
+        "right": 121,
+        "bottom": 44
+      },
+      "opaque_pixels": 4102,
+      "index": 11,
+      "state": "reactor-lance-4",
+      "origin": [
+        96,
+        96
+      ]
+    }
+  ],
+  "animation_groups": {
+    "plasma": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 11,
+      "loop": true
+    },
+    "missile": {
+      "indices": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "fps": 11,
+      "loop": true
+    },
+    "reactor_lance": {
+      "indices": [
+        8,
+        9,
+        10,
+        11
+      ],
+      "fps": 12,
+      "loop": true
+    }
+  },
+  "usage_notes": {
+    "plasma": "legacy art retained but not referenced by Chaos Harrier AI v2",
+    "missile": "spawned only from open missile bays",
+    "reactor_lance": "legacy art retained; giant attack now uses the continuous nose beam"
+  }
+}

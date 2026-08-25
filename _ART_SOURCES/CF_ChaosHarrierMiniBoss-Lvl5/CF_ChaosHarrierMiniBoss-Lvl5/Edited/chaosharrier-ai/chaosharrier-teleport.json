@@ -1,0 +1,93 @@
+{
+  "format": "coleforge.teleport-rules.v1",
+  "asset": "Chaos Harrier",
+  "viewport": [
+    640,
+    480
+  ],
+  "anchors": [
+    {
+      "id": "top_left",
+      "position": [
+        142,
+        112
+      ]
+    },
+    {
+      "id": "top_center",
+      "position": [
+        320,
+        92
+      ]
+    },
+    {
+      "id": "top_right",
+      "position": [
+        498,
+        112
+      ]
+    },
+    {
+      "id": "mid_left",
+      "position": [
+        150,
+        174
+      ]
+    },
+    {
+      "id": "mid_center",
+      "position": [
+        320,
+        158
+      ]
+    },
+    {
+      "id": "mid_right",
+      "position": [
+        490,
+        174
+      ]
+    }
+  ],
+  "selection": {
+    "avoid_last_anchor_count": 2,
+    "minimum_distance_from_player_px": 176,
+    "minimum_horizontal_escape_lane_px": 72,
+    "reject_if_ship_bounds_leave_viewport": true,
+    "score": [
+      "distance_from_player",
+      "distance_from_last_anchor",
+      "open_escape_lane",
+      "not_directly_above_player"
+    ],
+    "fallback_anchor": "top_center"
+  },
+  "sequence": {
+    "warp_out_animation": "warp_out",
+    "warp_in_animation": "warp_in",
+    "frame_ms": 75,
+    "disable_collision_at_ms": 225,
+    "hide_ship_at_ms": 300,
+    "relocate_at_ms": 375,
+    "show_ship_at_destination_ms": 900,
+    "enable_collision_at_ms": 1125,
+    "total_duration_ms": 1200,
+    "invulnerable_window_ms": [
+      225,
+      1125
+    ],
+    "cancel_projectile_spawns_on_begin": true,
+    "preserve_existing_enemy_projectiles": true,
+    "draw_warp_above_ship": true
+  },
+  "cooldowns_ms": {
+    "phase_1": 6500,
+    "phase_2": 4400,
+    "phase_3": 2900
+  },
+  "critical_chain": {
+    "enabled": true,
+    "maximum_consecutive_warps": 2,
+    "pause_between_warps_ms": 260
+  }
+}

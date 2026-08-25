@@ -1,0 +1,286 @@
+{
+  "format": "coleforge.attack-patterns.v2",
+  "asset": "Chaos Harrier",
+  "coordinate_system": {
+    "origin": "top-left",
+    "positive_y": "down",
+    "angle_zero": "down",
+    "angle_units": "degrees"
+  },
+  "patterns": {
+    "alternating_laser_burst": {
+      "ship_state": "ship_hover",
+      "duration_ms": 920,
+      "cooldown_ms": 1050,
+      "aim": {
+        "mode": "snapshot_player",
+        "clamp_degrees": [
+          -18,
+          18
+        ]
+      },
+      "projectile": {
+        "animation": "side_lasers_travel",
+        "speed_px_s": 470,
+        "damage": 12,
+        "hitbox": [
+          14,
+          58
+        ],
+        "lifetime_ms": 1700
+      },
+      "timeline": [
+        {
+          "at_ms": 0,
+          "event": "play_vfx",
+          "animation": "side_muzzle_flash",
+          "hardpoint": "left_cannon"
+        },
+        {
+          "at_ms": 55,
+          "event": "spawn_projectile",
+          "hardpoint": "left_cannon"
+        },
+        {
+          "at_ms": 150,
+          "event": "play_vfx",
+          "animation": "side_muzzle_flash",
+          "hardpoint": "right_cannon"
+        },
+        {
+          "at_ms": 205,
+          "event": "spawn_projectile",
+          "hardpoint": "right_cannon"
+        },
+        {
+          "at_ms": 330,
+          "event": "play_vfx",
+          "animation": "side_muzzle_flash",
+          "hardpoint": "left_cannon"
+        },
+        {
+          "at_ms": 385,
+          "event": "spawn_projectile",
+          "hardpoint": "left_cannon"
+        },
+        {
+          "at_ms": 480,
+          "event": "play_vfx",
+          "animation": "side_muzzle_flash",
+          "hardpoint": "right_cannon"
+        },
+        {
+          "at_ms": 535,
+          "event": "spawn_projectile",
+          "hardpoint": "right_cannon"
+        }
+      ]
+    },
+    "missile_fan": {
+      "ship_state": "ship_attack_open",
+      "duration_ms": 1320,
+      "cooldown_ms": 1750,
+      "telegraph_ms": 300,
+      "requires_flags": [
+        "missile_bays_open"
+      ],
+      "allowed_spawn_hardpoints": [
+        "left_missile_bay",
+        "right_missile_bay"
+      ],
+      "projectile": {
+        "animation": "missile_travel",
+        "launch_speed_px_s": 145,
+        "max_speed_px_s": 285,
+        "acceleration_px_s2": 105,
+        "damage": 18,
+        "hit_radius": 10,
+        "lifetime_ms": 4200,
+        "homing": {
+          "delay_ms": 320,
+          "turn_rate_deg_s": 92,
+          "stop_homing_after_ms": 1800
+        }
+      },
+      "timeline": [
+        {
+          "at_ms": 0,
+          "event": "set_flag",
+          "name": "missile_bays_open",
+          "value": true
+        },
+        {
+          "at_ms": 180,
+          "event": "play_vfx",
+          "animation": "missile_launch_flash",
+          "hardpoint": "left_missile_bay"
+        },
+        {
+          "at_ms": 240,
+          "event": "spawn_projectile",
+          "hardpoint": "left_missile_bay",
+          "angle": -18,
+          "requires_flag": "missile_bays_open"
+        },
+        {
+          "at_ms": 280,
+          "event": "play_vfx",
+          "animation": "missile_launch_flash",
+          "hardpoint": "right_missile_bay"
+        },
+        {
+          "at_ms": 340,
+          "event": "spawn_projectile",
+          "hardpoint": "right_missile_bay",
+          "angle": 18,
+          "requires_flag": "missile_bays_open"
+        },
+        {
+          "at_ms": 500,
+          "event": "play_vfx",
+          "animation": "missile_launch_flash",
+          "hardpoint": "left_missile_bay"
+        },
+        {
+          "at_ms": 560,
+          "event": "spawn_projectile",
+          "hardpoint": "left_missile_bay",
+          "angle": -7,
+          "requires_flag": "missile_bays_open"
+        },
+        {
+          "at_ms": 600,
+          "event": "play_vfx",
+          "animation": "missile_launch_flash",
+          "hardpoint": "right_missile_bay"
+        },
+        {
+          "at_ms": 660,
+          "event": "spawn_projectile",
+          "hardpoint": "right_missile_bay",
+          "angle": 7,
+          "requires_flag": "missile_bays_open"
+        },
+        {
+          "at_ms": 1080,
+          "event": "set_flag",
+          "name": "missile_bays_open",
+          "value": false
+        }
+      ]
+    },
+    "twin_laser_salvo": {
+      "ship_state": "ship_hover",
+      "duration_ms": 1050,
+      "cooldown_ms": 1250,
+      "telegraph_ms": 220,
+      "projectile": {
+        "animation": "side_lasers_travel",
+        "speed_px_s": 510,
+        "damage": 15,
+        "hitbox": [
+          14,
+          58
+        ],
+        "lifetime_ms": 1600
+      },
+      "timeline": [
+        {
+          "at_ms": 0,
+          "event": "play_vfx",
+          "animation": "side_muzzle_flash",
+          "hardpoint": "left_cannon"
+        },
+        {
+          "at_ms": 0,
+          "event": "play_vfx",
+          "animation": "side_muzzle_flash",
+          "hardpoint": "right_cannon"
+        },
+        {
+          "at_ms": 90,
+          "event": "spawn_projectile",
+          "hardpoint": "left_cannon",
+          "angle": -4
+        },
+        {
+          "at_ms": 90,
+          "event": "spawn_projectile",
+          "hardpoint": "right_cannon",
+          "angle": 4
+        },
+        {
+          "at_ms": 380,
+          "event": "spawn_projectile",
+          "hardpoint": "left_cannon",
+          "angle": 4
+        },
+        {
+          "at_ms": 380,
+          "event": "spawn_projectile",
+          "hardpoint": "right_cannon",
+          "angle": -4
+        }
+      ]
+    },
+    "giant_nose_laser": {
+      "ship_state": "ship_hover",
+      "duration_ms": 2550,
+      "cooldown_ms": 3500,
+      "movement_lock": true,
+      "telegraph": {
+        "animation": "reactor_charge",
+        "duration_ms": 900,
+        "aim_lock_at_ms": 650,
+        "warning_line_width_px": 8,
+        "energy_route": "central_reactor_to_nose"
+      },
+      "beam": {
+        "animation": "giant_nose_laser_active",
+        "muzzle_animation": "nose_laser_muzzle",
+        "impact_animation": "laser_impact",
+        "origin_hardpoint": "nose_laser",
+        "duration_ms": 1250,
+        "width_px": 38,
+        "damage_per_second": 68,
+        "aim_mode": "lock_then_slow_sweep",
+        "max_sweep_deg": 16,
+        "sweep_deg_s": 12,
+        "minimum_safe_lane_px": 76,
+        "scale_y_to_bottom_of_viewport": true
+      },
+      "timeline": [
+        {
+          "at_ms": 0,
+          "event": "play_vfx",
+          "animation": "reactor_charge",
+          "hardpoint": "central_reactor"
+        },
+        {
+          "at_ms": 650,
+          "event": "lock_aim_to_player"
+        },
+        {
+          "at_ms": 760,
+          "event": "play_vfx",
+          "animation": "nose_laser_muzzle",
+          "hardpoint": "nose_laser"
+        },
+        {
+          "at_ms": 900,
+          "event": "start_beam",
+          "hardpoint": "nose_laser"
+        },
+        {
+          "at_ms": 2150,
+          "event": "stop_beam"
+        }
+      ],
+      "exclusion_rules": [
+        "missile_fan_active",
+        "warp_active",
+        "another_beam_active"
+      ]
+    }
+  }
+}

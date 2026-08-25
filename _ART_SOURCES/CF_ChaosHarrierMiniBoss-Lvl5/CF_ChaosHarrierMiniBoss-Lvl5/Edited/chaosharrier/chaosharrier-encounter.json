@@ -1,0 +1,5 @@
+{
+  "asset": "Chaos Harrier",
+  "runtime_manifest": "../chaosharrier-ai/chaosharrier-runtime-manifest.json",
+  "status": "AI v2 wired: laser cannons, open-bay missiles, static hull glow overlay, nose beam, and teleport behavior"
+}
