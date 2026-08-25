@@ -1,0 +1,106 @@
+{
+  "asset": "lvl5-enemy-projectile-05-asymmetric-missile",
+  "stage": 5,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-01",
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-02",
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-03",
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-04",
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-05",
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-01",
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-02",
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-03",
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-04",
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-05",
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl5-enemy-projectile-05-asymmetric-missile-combat-atlas.png",
+    "rects": {
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-01": [
+        65,
+        45,
+        42,
+        82
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-02": [
+        231,
+        45,
+        42,
+        82
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-03": [
+        397,
+        45,
+        42,
+        82
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-04": [
+        563,
+        45,
+        42,
+        82
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-05": [
+        729,
+        45,
+        42,
+        82
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-travel-06": [
+        895,
+        45,
+        42,
+        82
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-05-asymmetric-missile-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

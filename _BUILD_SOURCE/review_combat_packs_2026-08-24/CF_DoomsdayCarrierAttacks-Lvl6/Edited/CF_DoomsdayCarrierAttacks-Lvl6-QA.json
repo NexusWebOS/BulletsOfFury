@@ -1,0 +1,12 @@
+{
+  "png_files": 317,
+  "gif_files": 36,
+  "json_files": 31,
+  "partial_alpha_pixels": 0,
+  "magenta_pixels": 0,
+  "cyan_key_pixels": 0,
+  "edge_contact_runtime": [],
+  "decode_failures": [],
+  "atlas_parity_failures": [],
+  "blockers": []
+}

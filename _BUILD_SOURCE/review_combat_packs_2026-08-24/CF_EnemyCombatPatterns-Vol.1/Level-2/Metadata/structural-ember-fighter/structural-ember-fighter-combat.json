@@ -1,0 +1,305 @@
+{
+  "asset": "structural-ember-fighter",
+  "project": "Bullets of Fury I",
+  "stage": 2,
+  "theme": "Volcanic Depths",
+  "source_set": "structural",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    314,
+    301
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      107,
+      226
+    ],
+    "right_weapon": [
+      212,
+      226
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-ember-fighter-intact-power-01",
+          "structural-ember-fighter-intact-power-02",
+          "structural-ember-fighter-intact-power-03",
+          "structural-ember-fighter-intact-power-04",
+          "structural-ember-fighter-intact-power-05",
+          "structural-ember-fighter-intact-power-06"
+        ],
+        "damaged": [
+          "structural-ember-fighter-damaged-power-01",
+          "structural-ember-fighter-damaged-power-02",
+          "structural-ember-fighter-damaged-power-03",
+          "structural-ember-fighter-damaged-power-04",
+          "structural-ember-fighter-damaged-power-05",
+          "structural-ember-fighter-damaged-power-06"
+        ],
+        "critical": [
+          "structural-ember-fighter-critical-power-01",
+          "structural-ember-fighter-critical-power-02",
+          "structural-ember-fighter-critical-power-03",
+          "structural-ember-fighter-critical-power-04",
+          "structural-ember-fighter-critical-power-05",
+          "structural-ember-fighter-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-ember-fighter-attack-01",
+        "structural-ember-fighter-attack-02",
+        "structural-ember-fighter-attack-03",
+        "structural-ember-fighter-attack-04",
+        "structural-ember-fighter-attack-05",
+        "structural-ember-fighter-attack-06",
+        "structural-ember-fighter-attack-07",
+        "structural-ember-fighter-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-ember-fighter-combat-atlas.png",
+    "size": [
+      1606,
+      1848
+    ],
+    "rects": {
+      "structural-ember-fighter-intact-power-01": [
+        6,
+        6,
+        314,
+        301
+      ],
+      "structural-ember-fighter-intact-power-02": [
+        326,
+        6,
+        314,
+        301
+      ],
+      "structural-ember-fighter-intact-power-03": [
+        646,
+        6,
+        314,
+        301
+      ],
+      "structural-ember-fighter-intact-power-04": [
+        966,
+        6,
+        314,
+        301
+      ],
+      "structural-ember-fighter-intact-power-05": [
+        1286,
+        6,
+        314,
+        301
+      ],
+      "structural-ember-fighter-intact-power-06": [
+        6,
+        313,
+        314,
+        301
+      ],
+      "structural-ember-fighter-damaged-power-01": [
+        326,
+        313,
+        314,
+        301
+      ],
+      "structural-ember-fighter-damaged-power-02": [
+        646,
+        313,
+        314,
+        301
+      ],
+      "structural-ember-fighter-damaged-power-03": [
+        966,
+        313,
+        314,
+        301
+      ],
+      "structural-ember-fighter-damaged-power-04": [
+        1286,
+        313,
+        314,
+        301
+      ],
+      "structural-ember-fighter-damaged-power-05": [
+        6,
+        620,
+        314,
+        301
+      ],
+      "structural-ember-fighter-damaged-power-06": [
+        326,
+        620,
+        314,
+        301
+      ],
+      "structural-ember-fighter-critical-power-01": [
+        646,
+        620,
+        314,
+        301
+      ],
+      "structural-ember-fighter-critical-power-02": [
+        966,
+        620,
+        314,
+        301
+      ],
+      "structural-ember-fighter-critical-power-03": [
+        1286,
+        620,
+        314,
+        301
+      ],
+      "structural-ember-fighter-critical-power-04": [
+        6,
+        927,
+        314,
+        301
+      ],
+      "structural-ember-fighter-critical-power-05": [
+        326,
+        927,
+        314,
+        301
+      ],
+      "structural-ember-fighter-critical-power-06": [
+        646,
+        927,
+        314,
+        301
+      ],
+      "structural-ember-fighter-attack-01": [
+        966,
+        927,
+        314,
+        301
+      ],
+      "structural-ember-fighter-attack-02": [
+        1286,
+        927,
+        314,
+        301
+      ],
+      "structural-ember-fighter-attack-03": [
+        6,
+        1234,
+        314,
+        301
+      ],
+      "structural-ember-fighter-attack-04": [
+        326,
+        1234,
+        314,
+        301
+      ],
+      "structural-ember-fighter-attack-05": [
+        646,
+        1234,
+        314,
+        301
+      ],
+      "structural-ember-fighter-attack-06": [
+        966,
+        1234,
+        314,
+        301
+      ],
+      "structural-ember-fighter-attack-07": [
+        1286,
+        1234,
+        314,
+        301
+      ],
+      "structural-ember-fighter-attack-08": [
+        6,
+        1541,
+        314,
+        301
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "ember-fighter-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-enemy-projectile-02",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl2-enemy-projectile-02",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-enemy-projectile-02",
+          "aim": "player",
+          "speed": 184
+        }
+      ]
+    },
+    {
+      "id": "ember-fighter-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "count": 5,
+          "spread_degrees": 52,
+          "speed": 142
+        }
+      ]
+    },
+    {
+      "id": "ember-fighter-eruption-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 92,
+          "speed": 132
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-elite-eruption-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

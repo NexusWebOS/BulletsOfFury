@@ -1,0 +1,301 @@
+{
+  "asset": "roster-tracked-flame-turret",
+  "project": "Bullets of Fury I",
+  "stage": 2,
+  "theme": "Volcanic Depths",
+  "source_set": "roster",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      128,
+      212
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "roster-tracked-flame-turret-intact-power-01",
+          "roster-tracked-flame-turret-intact-power-02",
+          "roster-tracked-flame-turret-intact-power-03",
+          "roster-tracked-flame-turret-intact-power-04",
+          "roster-tracked-flame-turret-intact-power-05",
+          "roster-tracked-flame-turret-intact-power-06"
+        ],
+        "damaged": [
+          "roster-tracked-flame-turret-damaged-power-01",
+          "roster-tracked-flame-turret-damaged-power-02",
+          "roster-tracked-flame-turret-damaged-power-03",
+          "roster-tracked-flame-turret-damaged-power-04",
+          "roster-tracked-flame-turret-damaged-power-05",
+          "roster-tracked-flame-turret-damaged-power-06"
+        ],
+        "critical": [
+          "roster-tracked-flame-turret-critical-power-01",
+          "roster-tracked-flame-turret-critical-power-02",
+          "roster-tracked-flame-turret-critical-power-03",
+          "roster-tracked-flame-turret-critical-power-04",
+          "roster-tracked-flame-turret-critical-power-05",
+          "roster-tracked-flame-turret-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "roster-tracked-flame-turret-attack-01",
+        "roster-tracked-flame-turret-attack-02",
+        "roster-tracked-flame-turret-attack-03",
+        "roster-tracked-flame-turret-attack-04",
+        "roster-tracked-flame-turret-attack-05",
+        "roster-tracked-flame-turret-attack-06",
+        "roster-tracked-flame-turret-attack-07",
+        "roster-tracked-flame-turret-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "roster-tracked-flame-turret-combat-atlas.png",
+    "size": [
+      1316,
+      1578
+    ],
+    "rects": {
+      "roster-tracked-flame-turret-intact-power-01": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-intact-power-02": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-intact-power-03": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-intact-power-04": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-intact-power-05": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-damaged-power-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-damaged-power-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-damaged-power-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-damaged-power-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-damaged-power-05": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-damaged-power-06": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-critical-power-01": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-critical-power-02": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-critical-power-03": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-critical-power-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-critical-power-05": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-critical-power-06": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-attack-01": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-attack-02": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-attack-03": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-attack-04": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-attack-05": [
+        530,
+        1054,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-attack-06": [
+        792,
+        1054,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-attack-07": [
+        1054,
+        1054,
+        256,
+        256
+      ],
+      "roster-tracked-flame-turret-attack-08": [
+        6,
+        1316,
+        256,
+        256
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "tracked-flame-turret-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "aim": "player",
+          "speed": 184
+        }
+      ]
+    },
+    {
+      "id": "tracked-flame-turret-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 52,
+          "speed": 142
+        }
+      ]
+    },
+    {
+      "id": "tracked-flame-turret-eruption-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-03",
+          "count": 5,
+          "spread_degrees": 92,
+          "speed": 132
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl2-elite-eruption-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

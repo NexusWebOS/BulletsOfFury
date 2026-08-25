@@ -1,0 +1,106 @@
+{
+  "asset": "lvl9-enemy-projectile-05-comet-missile",
+  "stage": 9,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl9-enemy-projectile-05-comet-missile-travel-01",
+      "lvl9-enemy-projectile-05-comet-missile-travel-02",
+      "lvl9-enemy-projectile-05-comet-missile-travel-03",
+      "lvl9-enemy-projectile-05-comet-missile-travel-04",
+      "lvl9-enemy-projectile-05-comet-missile-travel-05",
+      "lvl9-enemy-projectile-05-comet-missile-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl9-enemy-projectile-05-comet-missile-impact-01",
+      "lvl9-enemy-projectile-05-comet-missile-impact-02",
+      "lvl9-enemy-projectile-05-comet-missile-impact-03",
+      "lvl9-enemy-projectile-05-comet-missile-impact-04",
+      "lvl9-enemy-projectile-05-comet-missile-impact-05",
+      "lvl9-enemy-projectile-05-comet-missile-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl9-enemy-projectile-05-comet-missile-combat-atlas.png",
+    "rects": {
+      "lvl9-enemy-projectile-05-comet-missile-travel-01": [
+        64,
+        43,
+        44,
+        86
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-travel-02": [
+        230,
+        43,
+        44,
+        86
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-travel-03": [
+        396,
+        43,
+        44,
+        86
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-travel-04": [
+        562,
+        43,
+        44,
+        86
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-travel-05": [
+        728,
+        43,
+        44,
+        86
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-travel-06": [
+        894,
+        43,
+        44,
+        86
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-05-comet-missile-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

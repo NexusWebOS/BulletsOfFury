@@ -1,0 +1,323 @@
+{
+  "asset": "furious-void-razor",
+  "display_name": "Furious Void Razor",
+  "stage": 8,
+  "category": "razor",
+  "tier": "elite",
+  "source_file": "nca_18.png",
+  "source_notes": "",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision_box_px": [
+    58,
+    60,
+    139,
+    136
+  ],
+  "weapon_anchors_px": {
+    "left": [
+      88,
+      173
+    ],
+    "right": [
+      167,
+      173
+    ]
+  },
+  "vfx": {
+    "muzzle": "cosmic-warp-star-muzzle",
+    "projectile": "cosmic-crystal-spike",
+    "secondary": "cosmic-lattice-fan",
+    "impact": "cosmic-rift-collapse"
+  },
+  "animations": {
+    "power": {
+      "frames_per_state": 6,
+      "fps": 10,
+      "loop": true
+    },
+    "attack": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false,
+      "spawn_event_frame": 4
+    },
+    "hit": {
+      "frames": 4,
+      "fps": 15,
+      "loop": false
+    },
+    "death": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "states": [
+    "intact"
+  ],
+  "attack_patterns": [
+    {
+      "id": "furious-void-razor-aimed-burst",
+      "cooldown_ms": 1450,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "cosmic-crystal-spike",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 110,
+          "anchor": "right",
+          "projectile": "cosmic-crystal-spike",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 220,
+          "anchor": "left",
+          "projectile": "cosmic-crystal-spike",
+          "aim": "player",
+          "speed": 226
+        }
+      ]
+    },
+    {
+      "id": "furious-void-razor-bracket-fan",
+      "cooldown_ms": 2350,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "cosmic-crystal-spike",
+          "count": 7,
+          "spread_degrees": 54,
+          "speed": 184
+        }
+      ]
+    },
+    {
+      "id": "furious-void-razor-razor-spiral",
+      "cooldown_ms": 3400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "cosmic-lattice-fan",
+          "count": 8,
+          "spread_degrees": 104,
+          "speed": 176
+        },
+        {
+          "time_ms": 340,
+          "anchor": "left",
+          "projectile": "cosmic-crystal-spike",
+          "count": 2,
+          "aim": "player",
+          "speed": 242
+        }
+      ]
+    },
+    {
+      "id": "furious-void-razor-critical-rage",
+      "cooldown_ms": 4700,
+      "health_gate": 0.35,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "cosmic-lattice-fan",
+          "count": 12,
+          "spread_degrees": 360,
+          "speed": 166
+        },
+        {
+          "time_ms": 520,
+          "anchor": "left",
+          "projectile": "cosmic-crystal-spike",
+          "count": 5,
+          "spread_degrees": 38,
+          "aim": "player",
+          "speed": 249
+        }
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "furious-void-razor-combat-atlas.png",
+    "rects": {
+      "furious-void-razor-intact": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "furious-void-razor-intact-power-01": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "furious-void-razor-intact-power-02": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "furious-void-razor-intact-power-03": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "furious-void-razor-intact-power-04": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "furious-void-razor-intact-power-05": [
+        1316,
+        6,
+        256,
+        256
+      ],
+      "furious-void-razor-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "furious-void-razor-attack-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "furious-void-razor-attack-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "furious-void-razor-attack-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "furious-void-razor-attack-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "furious-void-razor-attack-05": [
+        1316,
+        268,
+        256,
+        256
+      ],
+      "furious-void-razor-attack-06": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "furious-void-razor-attack-07": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "furious-void-razor-attack-08": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "furious-void-razor-hit-01": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "furious-void-razor-hit-02": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "furious-void-razor-hit-03": [
+        1316,
+        530,
+        256,
+        256
+      ],
+      "furious-void-razor-hit-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "furious-void-razor-death-01": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "furious-void-razor-death-02": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "furious-void-razor-death-03": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "furious-void-razor-death-04": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "furious-void-razor-death-05": [
+        1316,
+        792,
+        256,
+        256
+      ],
+      "furious-void-razor-death-06": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "furious-void-razor-death-07": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "furious-void-razor-death-08": [
+        530,
+        1054,
+        256,
+        256
+      ]
+    }
+  },
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

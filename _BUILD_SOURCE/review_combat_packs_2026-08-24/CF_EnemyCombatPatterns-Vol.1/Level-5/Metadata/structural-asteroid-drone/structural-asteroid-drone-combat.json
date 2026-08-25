@@ -1,0 +1,305 @@
+{
+  "asset": "structural-asteroid-drone",
+  "project": "Bullets of Fury I",
+  "stage": 5,
+  "theme": "Orbital Chaos",
+  "source_set": "structural",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    304,
+    286
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      134,
+      214
+    ],
+    "right_weapon": [
+      219,
+      214
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-asteroid-drone-intact-power-01",
+          "structural-asteroid-drone-intact-power-02",
+          "structural-asteroid-drone-intact-power-03",
+          "structural-asteroid-drone-intact-power-04",
+          "structural-asteroid-drone-intact-power-05",
+          "structural-asteroid-drone-intact-power-06"
+        ],
+        "damaged": [
+          "structural-asteroid-drone-damaged-power-01",
+          "structural-asteroid-drone-damaged-power-02",
+          "structural-asteroid-drone-damaged-power-03",
+          "structural-asteroid-drone-damaged-power-04",
+          "structural-asteroid-drone-damaged-power-05",
+          "structural-asteroid-drone-damaged-power-06"
+        ],
+        "critical": [
+          "structural-asteroid-drone-critical-power-01",
+          "structural-asteroid-drone-critical-power-02",
+          "structural-asteroid-drone-critical-power-03",
+          "structural-asteroid-drone-critical-power-04",
+          "structural-asteroid-drone-critical-power-05",
+          "structural-asteroid-drone-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-asteroid-drone-attack-01",
+        "structural-asteroid-drone-attack-02",
+        "structural-asteroid-drone-attack-03",
+        "structural-asteroid-drone-attack-04",
+        "structural-asteroid-drone-attack-05",
+        "structural-asteroid-drone-attack-06",
+        "structural-asteroid-drone-attack-07",
+        "structural-asteroid-drone-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-asteroid-drone-combat-atlas.png",
+    "size": [
+      1556,
+      1758
+    ],
+    "rects": {
+      "structural-asteroid-drone-intact-power-01": [
+        6,
+        6,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-intact-power-02": [
+        316,
+        6,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-intact-power-03": [
+        626,
+        6,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-intact-power-04": [
+        936,
+        6,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-intact-power-05": [
+        1246,
+        6,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-intact-power-06": [
+        6,
+        298,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-damaged-power-01": [
+        316,
+        298,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-damaged-power-02": [
+        626,
+        298,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-damaged-power-03": [
+        936,
+        298,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-damaged-power-04": [
+        1246,
+        298,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-damaged-power-05": [
+        6,
+        590,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-damaged-power-06": [
+        316,
+        590,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-critical-power-01": [
+        626,
+        590,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-critical-power-02": [
+        936,
+        590,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-critical-power-03": [
+        1246,
+        590,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-critical-power-04": [
+        6,
+        882,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-critical-power-05": [
+        316,
+        882,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-critical-power-06": [
+        626,
+        882,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-attack-01": [
+        936,
+        882,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-attack-02": [
+        1246,
+        882,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-attack-03": [
+        6,
+        1174,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-attack-04": [
+        316,
+        1174,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-attack-05": [
+        626,
+        1174,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-attack-06": [
+        936,
+        1174,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-attack-07": [
+        1246,
+        1174,
+        304,
+        286
+      ],
+      "structural-asteroid-drone-attack-08": [
+        6,
+        1466,
+        304,
+        286
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "asteroid-drone-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        }
+      ]
+    },
+    {
+      "id": "asteroid-drone-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 58,
+          "speed": 160
+        }
+      ]
+    },
+    {
+      "id": "asteroid-drone-fracture-halo",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-06",
+          "count": 6,
+          "spread_degrees": 92,
+          "speed": 147
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-elite-fracture-halo",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

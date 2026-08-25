@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-flak-blossom",
+  "kind": "impact",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-flak-blossom-01",
+    "heavy-flak-blossom-02",
+    "heavy-flak-blossom-03",
+    "heavy-flak-blossom-04",
+    "heavy-flak-blossom-05",
+    "heavy-flak-blossom-06"
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-flak-blossom-atlas.png",
+    "rects": {
+      "heavy-flak-blossom-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-flak-blossom-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-flak-blossom-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-flak-blossom-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-flak-blossom-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-flak-blossom-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

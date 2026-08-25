@@ -1,0 +1,106 @@
+{
+  "asset": "lvl1-enemy-projectile-01-brass-pellet",
+  "stage": 1,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl1-enemy-projectile-01-brass-pellet-travel-01",
+      "lvl1-enemy-projectile-01-brass-pellet-travel-02",
+      "lvl1-enemy-projectile-01-brass-pellet-travel-03",
+      "lvl1-enemy-projectile-01-brass-pellet-travel-04",
+      "lvl1-enemy-projectile-01-brass-pellet-travel-05",
+      "lvl1-enemy-projectile-01-brass-pellet-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl1-enemy-projectile-01-brass-pellet-impact-01",
+      "lvl1-enemy-projectile-01-brass-pellet-impact-02",
+      "lvl1-enemy-projectile-01-brass-pellet-impact-03",
+      "lvl1-enemy-projectile-01-brass-pellet-impact-04",
+      "lvl1-enemy-projectile-01-brass-pellet-impact-05",
+      "lvl1-enemy-projectile-01-brass-pellet-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl1-enemy-projectile-01-brass-pellet-combat-atlas.png",
+    "rects": {
+      "lvl1-enemy-projectile-01-brass-pellet-travel-01": [
+        65,
+        50,
+        42,
+        72
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-travel-02": [
+        231,
+        50,
+        42,
+        72
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-travel-03": [
+        397,
+        50,
+        42,
+        72
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-travel-04": [
+        563,
+        50,
+        42,
+        72
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-travel-05": [
+        729,
+        50,
+        42,
+        72
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-travel-06": [
+        895,
+        50,
+        42,
+        72
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-01-brass-pellet-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

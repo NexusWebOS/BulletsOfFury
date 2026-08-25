@@ -1,0 +1,106 @@
+{
+  "asset": "lvl2-enemy-projectile-03-cinder-orb",
+  "stage": 2,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl2-enemy-projectile-03-cinder-orb-travel-01",
+      "lvl2-enemy-projectile-03-cinder-orb-travel-02",
+      "lvl2-enemy-projectile-03-cinder-orb-travel-03",
+      "lvl2-enemy-projectile-03-cinder-orb-travel-04",
+      "lvl2-enemy-projectile-03-cinder-orb-travel-05",
+      "lvl2-enemy-projectile-03-cinder-orb-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl2-enemy-projectile-03-cinder-orb-impact-01",
+      "lvl2-enemy-projectile-03-cinder-orb-impact-02",
+      "lvl2-enemy-projectile-03-cinder-orb-impact-03",
+      "lvl2-enemy-projectile-03-cinder-orb-impact-04",
+      "lvl2-enemy-projectile-03-cinder-orb-impact-05",
+      "lvl2-enemy-projectile-03-cinder-orb-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl2-enemy-projectile-03-cinder-orb-combat-atlas.png",
+    "rects": {
+      "lvl2-enemy-projectile-03-cinder-orb-travel-01": [
+        59,
+        44,
+        53,
+        84
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-travel-02": [
+        225,
+        44,
+        53,
+        84
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-travel-03": [
+        391,
+        44,
+        53,
+        84
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-travel-04": [
+        557,
+        44,
+        53,
+        84
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-travel-05": [
+        723,
+        44,
+        53,
+        84
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-travel-06": [
+        889,
+        44,
+        53,
+        84
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-03-cinder-orb-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

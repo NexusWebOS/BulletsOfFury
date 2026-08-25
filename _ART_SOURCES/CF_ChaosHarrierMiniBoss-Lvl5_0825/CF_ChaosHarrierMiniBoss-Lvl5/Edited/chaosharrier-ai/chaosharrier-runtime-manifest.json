@@ -1,0 +1,34 @@
+{
+  "format": "coleforge.enemy-runtime-manifest.v1",
+  "asset": "Chaos Harrier",
+  "entrypoint": "chaosharrier-ai.json",
+  "files": [
+    "chaosharrier-ai.json",
+    "chaosharrier-animations.json",
+    "chaosharrier-attacks.json",
+    "chaosharrier-teleport.json",
+    "chaosharrier-difficulty.json"
+  ],
+  "dependencies": {
+    "ship_hardpoints_and_hitbox": "../chaosharrier/chaosharrier-map.json",
+    "projectile_atlas_map": "../chaosharrier-projectiles/chaosharrier-projectiles-map.json",
+    "weapon_vfx_atlas_map": "../chaosharrier-vfx/chaosharrier-vfx-map.json",
+    "warp_atlas_map": "../chaosharrier-warp/chaosharrier-warp-map.json",
+    "reactor_laser_atlas_map": "../chaosharrier-reactor-laser/chaosharrier-reactor-laser-map.json",
+    "side_laser_atlas_map": "../chaosharrier-side-lasers/chaosharrier-side-lasers-map.json",
+    "laser_impact_atlas_map": "../chaosharrier-laser-impact/chaosharrier-laser-impact-map.json"
+  },
+  "target_viewport": [
+    640,
+    480
+  ],
+  "required_runtime_features": [
+    "atlas animation",
+    "timed events",
+    "weighted state selection",
+    "hardpoint spawning",
+    "beam collision",
+    "safe-anchor teleport"
+  ],
+  "death_sequence_status": "event hook supplied; dedicated breakup/explosion art is deferred"
+}

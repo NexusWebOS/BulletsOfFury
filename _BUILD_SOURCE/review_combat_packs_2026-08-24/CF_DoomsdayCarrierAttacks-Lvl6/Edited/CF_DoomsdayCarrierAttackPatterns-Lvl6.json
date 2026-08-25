@@ -1,0 +1,353 @@
+{
+  "project": "Bullets of Fury I",
+  "level": 6,
+  "boss": "Doomsday Carrier Mk II",
+  "coordinate_system": {
+    "origin": "top-left",
+    "x": "right",
+    "y": "down",
+    "screen": [
+      640,
+      480
+    ]
+  },
+  "boss_origin": [
+    0,
+    0
+  ],
+  "anchors": {
+    "upper_left_outer": [
+      247,
+      91
+    ],
+    "upper_left_inner": [
+      257,
+      91
+    ],
+    "upper_right_inner": [
+      383,
+      91
+    ],
+    "upper_right_outer": [
+      393,
+      91
+    ],
+    "lower_left_outer": [
+      138,
+      244
+    ],
+    "lower_left_inner": [
+      147,
+      244
+    ],
+    "lower_right_inner": [
+      493,
+      244
+    ],
+    "lower_right_outer": [
+      502,
+      244
+    ],
+    "left_bay": [
+      160,
+      190
+    ],
+    "right_bay": [
+      480,
+      190
+    ],
+    "energy_cannon": [
+      320,
+      290
+    ]
+  },
+  "patterns": [
+    {
+      "id": "cyclone_barrage",
+      "phase": 1,
+      "telegraph_ms": 220,
+      "cycle_ms": 1280,
+      "boss_animation": "boss-cyclonebarrage",
+      "muzzle": "cyclonemuzzle",
+      "projectile": "cyclonetracer",
+      "behavior": "Alternate lower pods. Each trigger emits a three-way fan; angle sweeps outside-to-center-to-outside.",
+      "events": [
+        {
+          "time_ms": 240,
+          "type": "spawn_fan",
+          "anchor": "lower_left_inner",
+          "angles_deg_from_down": [
+            -18,
+            0,
+            18
+          ],
+          "speed_px_s": 276
+        },
+        {
+          "time_ms": 420,
+          "type": "spawn_fan",
+          "anchor": "lower_right_inner",
+          "angles_deg_from_down": [
+            -18,
+            0,
+            18
+          ],
+          "speed_px_s": 276
+        },
+        {
+          "time_ms": 600,
+          "type": "spawn_fan",
+          "anchor": "lower_left_inner",
+          "angles_deg_from_down": [
+            -18,
+            0,
+            18
+          ],
+          "speed_px_s": 276
+        },
+        {
+          "time_ms": 780,
+          "type": "spawn_fan",
+          "anchor": "lower_right_inner",
+          "angles_deg_from_down": [
+            -18,
+            0,
+            18
+          ],
+          "speed_px_s": 276
+        },
+        {
+          "time_ms": 960,
+          "type": "spawn_fan",
+          "anchor": "lower_left_inner",
+          "angles_deg_from_down": [
+            -18,
+            0,
+            18
+          ],
+          "speed_px_s": 276
+        },
+        {
+          "time_ms": 1140,
+          "type": "spawn_fan",
+          "anchor": "lower_right_inner",
+          "angles_deg_from_down": [
+            -18,
+            0,
+            18
+          ],
+          "speed_px_s": 276
+        }
+      ]
+    },
+    {
+      "id": "prism_crossfire",
+      "phase": 1,
+      "telegraph_ms": 360,
+      "cycle_ms": 1680,
+      "boss_animation": "boss-prismcrossfire",
+      "muzzle": "prismmuzzle",
+      "projectile": "prismbolt",
+      "behavior": "Four upper barrels fire mirrored diagonal lanes, then reverse the crossing angle on the next volley.",
+      "events": [
+        {
+          "time_ms": 420,
+          "type": "spawn_cross",
+          "anchors": [
+            "upper_left_outer",
+            "upper_left_inner",
+            "upper_right_inner",
+            "upper_right_outer"
+          ],
+          "angles_deg_from_down": [
+            22,
+            8,
+            -8,
+            -22
+          ],
+          "speed_px_s": 240
+        },
+        {
+          "time_ms": 840,
+          "type": "spawn_cross",
+          "anchors": [
+            "upper_left_outer",
+            "upper_left_inner",
+            "upper_right_inner",
+            "upper_right_outer"
+          ],
+          "angles_deg_from_down": [
+            -22,
+            -8,
+            8,
+            22
+          ],
+          "speed_px_s": 240
+        },
+        {
+          "time_ms": 1260,
+          "type": "spawn_cross",
+          "anchors": [
+            "upper_left_outer",
+            "upper_left_inner",
+            "upper_right_inner",
+            "upper_right_outer"
+          ],
+          "angles_deg_from_down": [
+            22,
+            8,
+            -8,
+            -22
+          ],
+          "speed_px_s": 240
+        }
+      ]
+    },
+    {
+      "id": "omega_bomb_run",
+      "phase": 2,
+      "telegraph_ms": 720,
+      "cycle_ms": 2340,
+      "boss_animation": "boss-omegabombrun",
+      "projectile": "omegabomb-hostile",
+      "reflect_projectile": "omegabomb-reflected",
+      "impact": "bombimpact",
+      "behavior": "Both bays open and release reflectable Omega bombs. Bombs bob slightly, accelerate after 600 ms, and detonate on impact or fuse expiry.",
+      "events": [
+        {
+          "time_ms": 1010,
+          "type": "spawn",
+          "anchor": "left_bay",
+          "speed_px_s": 156,
+          "fuse_ms": 1900
+        },
+        {
+          "time_ms": 1010,
+          "type": "spawn",
+          "anchor": "right_bay",
+          "speed_px_s": 156,
+          "fuse_ms": 1900
+        }
+      ]
+    },
+    {
+      "id": "chrome_flak_fan",
+      "phase": 2,
+      "telegraph_ms": 260,
+      "cycle_ms": 1460,
+      "boss_animation": "boss-chromeflakfan",
+      "muzzle": "cyclonemuzzle",
+      "projectile": "flakshell",
+      "impact": "flakburst",
+      "behavior": "Arcing chrome shells airburst at staggered depths. Each burst spawns five short-lived fragments.",
+      "events": [
+        {
+          "time_ms": 300,
+          "type": "spawn_flak",
+          "anchor": "lower_left_inner",
+          "angle_deg_from_down": -18,
+          "speed_px_s": 216,
+          "airburst_ms": 640,
+          "child_angles_deg": [
+            -48,
+            -24,
+            0,
+            24,
+            48
+          ]
+        },
+        {
+          "time_ms": 480,
+          "type": "spawn_flak",
+          "anchor": "lower_right_inner",
+          "angle_deg_from_down": 18,
+          "speed_px_s": 216,
+          "airburst_ms": 640,
+          "child_angles_deg": [
+            -48,
+            -24,
+            0,
+            24,
+            48
+          ]
+        },
+        {
+          "time_ms": 660,
+          "type": "spawn_flak",
+          "anchor": "lower_left_inner",
+          "angle_deg_from_down": 10,
+          "speed_px_s": 216,
+          "airburst_ms": 640,
+          "child_angles_deg": [
+            -48,
+            -24,
+            0,
+            24,
+            48
+          ]
+        },
+        {
+          "time_ms": 840,
+          "type": "spawn_flak",
+          "anchor": "lower_right_inner",
+          "angle_deg_from_down": -10,
+          "speed_px_s": 216,
+          "airburst_ms": 640,
+          "child_angles_deg": [
+            -48,
+            -24,
+            0,
+            24,
+            48
+          ]
+        }
+      ]
+    },
+    {
+      "id": "storm_cage",
+      "phase": 2,
+      "telegraph_ms": 520,
+      "cycle_ms": 2900,
+      "boss_animation": "boss-stormcage",
+      "projectile": "stormnode",
+      "link": "stormlink",
+      "behavior": "Four nodes deploy to the lower playfield, then link clockwise into a pulsing enclosure with one rotating escape gap.",
+      "node_targets": [
+        [
+          92,
+          350
+        ],
+        [
+          548,
+          350
+        ],
+        [
+          154,
+          446
+        ],
+        [
+          486,
+          446
+        ]
+      ],
+      "link_start_ms": 1460,
+      "link_active_ms": 900,
+      "safe_gap_rotation": "clockwise"
+    },
+    {
+      "id": "doomsday_fusion",
+      "phase": 3,
+      "telegraph_ms": 900,
+      "cycle_ms": 3600,
+      "boss_animation": "boss-doomsdayfusion",
+      "behavior": "Final-phase desperation attack: outer Omega bomb corridors, alternating lower tracers, upper prism pressure, then the center cannon opens the middle lane.",
+      "components": [
+        "omegabomb-hostile",
+        "cyclonetracer",
+        "prismbolt",
+        "energybeam"
+      ],
+      "implementation_note": "Keep projectiles and beam collision separate from the assembled boss preview; the preview is choreography reference only."
+    }
+  ]
+}

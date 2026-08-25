@@ -1,0 +1,301 @@
+{
+  "asset": "structural-sewer-tracked-artillery",
+  "project": "Bullets of Fury I",
+  "stage": 7,
+  "theme": "Toxic Sewer",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    290,
+    296
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      143,
+      245
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-sewer-tracked-artillery-intact-power-01",
+          "structural-sewer-tracked-artillery-intact-power-02",
+          "structural-sewer-tracked-artillery-intact-power-03",
+          "structural-sewer-tracked-artillery-intact-power-04",
+          "structural-sewer-tracked-artillery-intact-power-05",
+          "structural-sewer-tracked-artillery-intact-power-06"
+        ],
+        "damaged": [
+          "structural-sewer-tracked-artillery-damaged-power-01",
+          "structural-sewer-tracked-artillery-damaged-power-02",
+          "structural-sewer-tracked-artillery-damaged-power-03",
+          "structural-sewer-tracked-artillery-damaged-power-04",
+          "structural-sewer-tracked-artillery-damaged-power-05",
+          "structural-sewer-tracked-artillery-damaged-power-06"
+        ],
+        "critical": [
+          "structural-sewer-tracked-artillery-critical-power-01",
+          "structural-sewer-tracked-artillery-critical-power-02",
+          "structural-sewer-tracked-artillery-critical-power-03",
+          "structural-sewer-tracked-artillery-critical-power-04",
+          "structural-sewer-tracked-artillery-critical-power-05",
+          "structural-sewer-tracked-artillery-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-sewer-tracked-artillery-attack-01",
+        "structural-sewer-tracked-artillery-attack-02",
+        "structural-sewer-tracked-artillery-attack-03",
+        "structural-sewer-tracked-artillery-attack-04",
+        "structural-sewer-tracked-artillery-attack-05",
+        "structural-sewer-tracked-artillery-attack-06",
+        "structural-sewer-tracked-artillery-attack-07",
+        "structural-sewer-tracked-artillery-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-sewer-tracked-artillery-combat-atlas.png",
+    "size": [
+      1486,
+      1818
+    ],
+    "rects": {
+      "structural-sewer-tracked-artillery-intact-power-01": [
+        6,
+        6,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-intact-power-02": [
+        302,
+        6,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-intact-power-03": [
+        598,
+        6,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-intact-power-04": [
+        894,
+        6,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-intact-power-05": [
+        1190,
+        6,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-intact-power-06": [
+        6,
+        308,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-damaged-power-01": [
+        302,
+        308,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-damaged-power-02": [
+        598,
+        308,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-damaged-power-03": [
+        894,
+        308,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-damaged-power-04": [
+        1190,
+        308,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-damaged-power-05": [
+        6,
+        610,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-damaged-power-06": [
+        302,
+        610,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-critical-power-01": [
+        598,
+        610,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-critical-power-02": [
+        894,
+        610,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-critical-power-03": [
+        1190,
+        610,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-critical-power-04": [
+        6,
+        912,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-critical-power-05": [
+        302,
+        912,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-critical-power-06": [
+        598,
+        912,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-attack-01": [
+        894,
+        912,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-attack-02": [
+        1190,
+        912,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-attack-03": [
+        6,
+        1214,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-attack-04": [
+        302,
+        1214,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-attack-05": [
+        598,
+        1214,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-attack-06": [
+        894,
+        1214,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-attack-07": [
+        1190,
+        1214,
+        290,
+        296
+      ],
+      "structural-sewer-tracked-artillery-attack-08": [
+        6,
+        1516,
+        290,
+        296
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "sewer-tracked-artillery-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "aim": "player",
+          "speed": 219
+        }
+      ]
+    },
+    {
+      "id": "sewer-tracked-artillery-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 62,
+          "speed": 172
+        }
+      ]
+    },
+    {
+      "id": "sewer-tracked-artillery-spore-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-03",
+          "count": 7,
+          "spread_degrees": 92,
+          "speed": 157
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl7-elite-spore-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

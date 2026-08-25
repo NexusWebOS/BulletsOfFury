@@ -1,0 +1,106 @@
+{
+  "asset": "lvl5-enemy-projectile-01-fracture-bolt",
+  "stage": 5,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-01",
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-02",
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-03",
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-04",
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-05",
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-01",
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-02",
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-03",
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-04",
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-05",
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl5-enemy-projectile-01-fracture-bolt-combat-atlas.png",
+    "rects": {
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-01": [
+        66,
+        44,
+        39,
+        84
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-02": [
+        232,
+        44,
+        39,
+        84
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-03": [
+        398,
+        44,
+        39,
+        84
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-04": [
+        564,
+        44,
+        39,
+        84
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-05": [
+        730,
+        44,
+        39,
+        84
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-travel-06": [
+        896,
+        44,
+        39,
+        84
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl5-enemy-projectile-01-fracture-bolt-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

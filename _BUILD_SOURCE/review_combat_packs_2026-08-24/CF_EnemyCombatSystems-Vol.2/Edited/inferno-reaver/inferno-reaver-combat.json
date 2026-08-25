@@ -1,0 +1,323 @@
+{
+  "asset": "inferno-reaver",
+  "display_name": "Inferno Reaver",
+  "stage": 2,
+  "category": "carrier",
+  "tier": "elite",
+  "source_file": "nsb_inferno_reaver.png",
+  "source_notes": "",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision_box_px": [
+    41,
+    31,
+    173,
+    194
+  ],
+  "weapon_anchors_px": {
+    "left": [
+      78,
+      193
+    ],
+    "right": [
+      177,
+      193
+    ]
+  },
+  "vfx": {
+    "muzzle": "heavy-rotary-cannon-muzzle",
+    "projectile": "heavy-incendiary-plasma",
+    "secondary": "heavy-inferno-micro-missile",
+    "impact": "heavy-inferno-impact"
+  },
+  "animations": {
+    "power": {
+      "frames_per_state": 6,
+      "fps": 10,
+      "loop": true
+    },
+    "attack": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false,
+      "spawn_event_frame": 4
+    },
+    "hit": {
+      "frames": 4,
+      "fps": 15,
+      "loop": false
+    },
+    "death": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "states": [
+    "intact"
+  ],
+  "attack_patterns": [
+    {
+      "id": "inferno-reaver-aimed-burst",
+      "cooldown_ms": 1450,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-incendiary-plasma",
+          "aim": "player",
+          "speed": 178
+        },
+        {
+          "time_ms": 110,
+          "anchor": "right",
+          "projectile": "heavy-incendiary-plasma",
+          "aim": "player",
+          "speed": 178
+        },
+        {
+          "time_ms": 220,
+          "anchor": "left",
+          "projectile": "heavy-incendiary-plasma",
+          "aim": "player",
+          "speed": 178
+        }
+      ]
+    },
+    {
+      "id": "inferno-reaver-bracket-fan",
+      "cooldown_ms": 2350,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-incendiary-plasma",
+          "count": 7,
+          "spread_degrees": 54,
+          "speed": 136
+        }
+      ]
+    },
+    {
+      "id": "inferno-reaver-turret-lattice",
+      "cooldown_ms": 3400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-inferno-micro-missile",
+          "count": 8,
+          "spread_degrees": 104,
+          "speed": 128
+        },
+        {
+          "time_ms": 340,
+          "anchor": "left",
+          "projectile": "heavy-incendiary-plasma",
+          "count": 2,
+          "aim": "player",
+          "speed": 194
+        }
+      ]
+    },
+    {
+      "id": "inferno-reaver-critical-rage",
+      "cooldown_ms": 4700,
+      "health_gate": 0.35,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-inferno-micro-missile",
+          "count": 12,
+          "spread_degrees": 360,
+          "speed": 118
+        },
+        {
+          "time_ms": 520,
+          "anchor": "left",
+          "projectile": "heavy-incendiary-plasma",
+          "count": 5,
+          "spread_degrees": 38,
+          "aim": "player",
+          "speed": 201
+        }
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "inferno-reaver-combat-atlas.png",
+    "rects": {
+      "inferno-reaver-intact": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "inferno-reaver-intact-power-01": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "inferno-reaver-intact-power-02": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "inferno-reaver-intact-power-03": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "inferno-reaver-intact-power-04": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "inferno-reaver-intact-power-05": [
+        1316,
+        6,
+        256,
+        256
+      ],
+      "inferno-reaver-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "inferno-reaver-attack-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "inferno-reaver-attack-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "inferno-reaver-attack-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "inferno-reaver-attack-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "inferno-reaver-attack-05": [
+        1316,
+        268,
+        256,
+        256
+      ],
+      "inferno-reaver-attack-06": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "inferno-reaver-attack-07": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "inferno-reaver-attack-08": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "inferno-reaver-hit-01": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "inferno-reaver-hit-02": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "inferno-reaver-hit-03": [
+        1316,
+        530,
+        256,
+        256
+      ],
+      "inferno-reaver-hit-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "inferno-reaver-death-01": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "inferno-reaver-death-02": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "inferno-reaver-death-03": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "inferno-reaver-death-04": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "inferno-reaver-death-05": [
+        1316,
+        792,
+        256,
+        256
+      ],
+      "inferno-reaver-death-06": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "inferno-reaver-death-07": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "inferno-reaver-death-08": [
+        530,
+        1054,
+        256,
+        256
+      ]
+    }
+  },
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><base href="../"><title>Chaos Harrier QA</title>
+<style>html,body{margin:0;background:#05060a;height:100%;display:grid;place-items:center}canvas{image-rendering:pixelated}#hud,#equipcv{display:none}</style>
+</head><body>
+<canvas id="screen" width="480" height="512"></canvas><canvas id="hud" width="480" height="62"></canvas><canvas id="equipcv" width="128" height="128"></canvas>
+<script src="assets/manifest.js"></script>
+<script src="assets/section_geom.js"></script>
+<script src="assets/game.js"></script>
+<script>
+(() => {
+  run.stage=5; curStage=STAGES[4]; state=GS.PLAY;
+  stageTimer=0; mapScroll=1500; stagePlan=[]; waveIdx=0;
+  enemies.length=0; eBullets.length=0; pBullets.length=0;
+  boss=null; bossActive=false; bossWarned=true;
+  subBoss=null; subBossActive=false; subBossDone=false; subBossTriggered=true;
+  player.reset(); player.x=VW/2; player.y=VH*0.84; player.invuln=1e9;
+  spawnSubBoss__inner('chaosharrier');
+  const attack=new URLSearchParams(location.search).get('attack');
+  if(attack){ subBoss._chState=attack; subBoss._chT=0; subBoss._chStep=0;
+    subBoss._chVisible=true; subBoss._chCollision=true; subBoss._chPhase=2; }
+  window.__qaChaos=subBoss;
+})();
+</script>
+</body></html>

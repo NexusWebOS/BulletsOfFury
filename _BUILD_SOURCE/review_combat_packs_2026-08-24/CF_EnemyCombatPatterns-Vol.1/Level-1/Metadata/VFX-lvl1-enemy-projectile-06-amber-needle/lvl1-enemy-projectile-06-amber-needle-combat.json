@@ -1,0 +1,106 @@
+{
+  "asset": "lvl1-enemy-projectile-06-amber-needle",
+  "stage": 1,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl1-enemy-projectile-06-amber-needle-travel-01",
+      "lvl1-enemy-projectile-06-amber-needle-travel-02",
+      "lvl1-enemy-projectile-06-amber-needle-travel-03",
+      "lvl1-enemy-projectile-06-amber-needle-travel-04",
+      "lvl1-enemy-projectile-06-amber-needle-travel-05",
+      "lvl1-enemy-projectile-06-amber-needle-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl1-enemy-projectile-06-amber-needle-impact-01",
+      "lvl1-enemy-projectile-06-amber-needle-impact-02",
+      "lvl1-enemy-projectile-06-amber-needle-impact-03",
+      "lvl1-enemy-projectile-06-amber-needle-impact-04",
+      "lvl1-enemy-projectile-06-amber-needle-impact-05",
+      "lvl1-enemy-projectile-06-amber-needle-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl1-enemy-projectile-06-amber-needle-combat-atlas.png",
+    "rects": {
+      "lvl1-enemy-projectile-06-amber-needle-travel-01": [
+        69,
+        46,
+        34,
+        80
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-travel-02": [
+        235,
+        46,
+        34,
+        80
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-travel-03": [
+        401,
+        46,
+        34,
+        80
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-travel-04": [
+        567,
+        46,
+        34,
+        80
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-travel-05": [
+        733,
+        46,
+        34,
+        80
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-travel-06": [
+        899,
+        46,
+        34,
+        80
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-06-amber-needle-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "pack": "CF_EnemyCombatPatterns-Vol.2",
+  "purpose": "lightweight review and behavior implementation companion",
+  "enemy_count": 48,
+  "attack_pattern_count": 192,
+  "vfx_family_count": 32,
+  "metadata_files": 80,
+  "full_runtime_pack": "CF_EnemyCombatSystems-Vol.2.zip"
+}

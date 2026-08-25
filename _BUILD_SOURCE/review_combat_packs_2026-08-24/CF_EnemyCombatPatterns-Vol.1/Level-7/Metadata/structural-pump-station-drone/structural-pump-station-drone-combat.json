@@ -1,0 +1,305 @@
+{
+  "asset": "structural-pump-station-drone",
+  "project": "Bullets of Fury I",
+  "stage": 7,
+  "theme": "Toxic Sewer",
+  "source_set": "structural",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    297,
+    306
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      101,
+      230
+    ],
+    "right_weapon": [
+      199,
+      230
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-pump-station-drone-intact-power-01",
+          "structural-pump-station-drone-intact-power-02",
+          "structural-pump-station-drone-intact-power-03",
+          "structural-pump-station-drone-intact-power-04",
+          "structural-pump-station-drone-intact-power-05",
+          "structural-pump-station-drone-intact-power-06"
+        ],
+        "damaged": [
+          "structural-pump-station-drone-damaged-power-01",
+          "structural-pump-station-drone-damaged-power-02",
+          "structural-pump-station-drone-damaged-power-03",
+          "structural-pump-station-drone-damaged-power-04",
+          "structural-pump-station-drone-damaged-power-05",
+          "structural-pump-station-drone-damaged-power-06"
+        ],
+        "critical": [
+          "structural-pump-station-drone-critical-power-01",
+          "structural-pump-station-drone-critical-power-02",
+          "structural-pump-station-drone-critical-power-03",
+          "structural-pump-station-drone-critical-power-04",
+          "structural-pump-station-drone-critical-power-05",
+          "structural-pump-station-drone-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-pump-station-drone-attack-01",
+        "structural-pump-station-drone-attack-02",
+        "structural-pump-station-drone-attack-03",
+        "structural-pump-station-drone-attack-04",
+        "structural-pump-station-drone-attack-05",
+        "structural-pump-station-drone-attack-06",
+        "structural-pump-station-drone-attack-07",
+        "structural-pump-station-drone-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-pump-station-drone-combat-atlas.png",
+    "size": [
+      1521,
+      1878
+    ],
+    "rects": {
+      "structural-pump-station-drone-intact-power-01": [
+        6,
+        6,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-intact-power-02": [
+        309,
+        6,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-intact-power-03": [
+        612,
+        6,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-intact-power-04": [
+        915,
+        6,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-intact-power-05": [
+        1218,
+        6,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-intact-power-06": [
+        6,
+        318,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-damaged-power-01": [
+        309,
+        318,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-damaged-power-02": [
+        612,
+        318,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-damaged-power-03": [
+        915,
+        318,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-damaged-power-04": [
+        1218,
+        318,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-damaged-power-05": [
+        6,
+        630,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-damaged-power-06": [
+        309,
+        630,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-critical-power-01": [
+        612,
+        630,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-critical-power-02": [
+        915,
+        630,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-critical-power-03": [
+        1218,
+        630,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-critical-power-04": [
+        6,
+        942,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-critical-power-05": [
+        309,
+        942,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-critical-power-06": [
+        612,
+        942,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-attack-01": [
+        915,
+        942,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-attack-02": [
+        1218,
+        942,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-attack-03": [
+        6,
+        1254,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-attack-04": [
+        309,
+        1254,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-attack-05": [
+        612,
+        1254,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-attack-06": [
+        915,
+        1254,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-attack-07": [
+        1218,
+        1254,
+        297,
+        306
+      ],
+      "structural-pump-station-drone-attack-08": [
+        6,
+        1566,
+        297,
+        306
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "pump-station-drone-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        }
+      ]
+    },
+    {
+      "id": "pump-station-drone-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 62,
+          "speed": 172
+        }
+      ]
+    },
+    {
+      "id": "pump-station-drone-spore-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 92,
+          "speed": 157
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-elite-spore-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

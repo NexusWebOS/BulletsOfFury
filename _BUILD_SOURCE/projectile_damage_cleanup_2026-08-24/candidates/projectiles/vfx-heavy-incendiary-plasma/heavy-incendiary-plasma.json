@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-incendiary-plasma",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-incendiary-plasma-01",
+    "heavy-incendiary-plasma-02",
+    "heavy-incendiary-plasma-03",
+    "heavy-incendiary-plasma-04",
+    "heavy-incendiary-plasma-05",
+    "heavy-incendiary-plasma-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-incendiary-plasma-atlas.png",
+    "rects": {
+      "heavy-incendiary-plasma-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-incendiary-plasma-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-incendiary-plasma-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-incendiary-plasma-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-incendiary-plasma-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-incendiary-plasma-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

@@ -1,0 +1,282 @@
+{
+  "asset": "structural-flying-arsenal-pod",
+  "project": "Bullets of Fury I",
+  "stage": 6,
+  "theme": "Heavy Turbulence",
+  "source_set": "structural",
+  "category": "hazard",
+  "weapon_profile": "radial",
+  "canvas": [
+    348,
+    246
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "core": [
+      185,
+      123
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-flying-arsenal-pod-intact-power-01",
+          "structural-flying-arsenal-pod-intact-power-02",
+          "structural-flying-arsenal-pod-intact-power-03",
+          "structural-flying-arsenal-pod-intact-power-04",
+          "structural-flying-arsenal-pod-intact-power-05",
+          "structural-flying-arsenal-pod-intact-power-06"
+        ],
+        "damaged": [
+          "structural-flying-arsenal-pod-damaged-power-01",
+          "structural-flying-arsenal-pod-damaged-power-02",
+          "structural-flying-arsenal-pod-damaged-power-03",
+          "structural-flying-arsenal-pod-damaged-power-04",
+          "structural-flying-arsenal-pod-damaged-power-05",
+          "structural-flying-arsenal-pod-damaged-power-06"
+        ],
+        "critical": [
+          "structural-flying-arsenal-pod-critical-power-01",
+          "structural-flying-arsenal-pod-critical-power-02",
+          "structural-flying-arsenal-pod-critical-power-03",
+          "structural-flying-arsenal-pod-critical-power-04",
+          "structural-flying-arsenal-pod-critical-power-05",
+          "structural-flying-arsenal-pod-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-flying-arsenal-pod-attack-01",
+        "structural-flying-arsenal-pod-attack-02",
+        "structural-flying-arsenal-pod-attack-03",
+        "structural-flying-arsenal-pod-attack-04",
+        "structural-flying-arsenal-pod-attack-05",
+        "structural-flying-arsenal-pod-attack-06",
+        "structural-flying-arsenal-pod-attack-07",
+        "structural-flying-arsenal-pod-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-flying-arsenal-pod-combat-atlas.png",
+    "size": [
+      1776,
+      1518
+    ],
+    "rects": {
+      "structural-flying-arsenal-pod-intact-power-01": [
+        6,
+        6,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-intact-power-02": [
+        360,
+        6,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-intact-power-03": [
+        714,
+        6,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-intact-power-04": [
+        1068,
+        6,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-intact-power-05": [
+        1422,
+        6,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-intact-power-06": [
+        6,
+        258,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-damaged-power-01": [
+        360,
+        258,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-damaged-power-02": [
+        714,
+        258,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-damaged-power-03": [
+        1068,
+        258,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-damaged-power-04": [
+        1422,
+        258,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-damaged-power-05": [
+        6,
+        510,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-damaged-power-06": [
+        360,
+        510,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-critical-power-01": [
+        714,
+        510,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-critical-power-02": [
+        1068,
+        510,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-critical-power-03": [
+        1422,
+        510,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-critical-power-04": [
+        6,
+        762,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-critical-power-05": [
+        360,
+        762,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-critical-power-06": [
+        714,
+        762,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-attack-01": [
+        1068,
+        762,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-attack-02": [
+        1422,
+        762,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-attack-03": [
+        6,
+        1014,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-attack-04": [
+        360,
+        1014,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-attack-05": [
+        714,
+        1014,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-attack-06": [
+        1068,
+        1014,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-attack-07": [
+        1422,
+        1014,
+        348,
+        246
+      ],
+      "structural-flying-arsenal-pod-attack-08": [
+        6,
+        1266,
+        348,
+        246
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "flying-arsenal-pod-proximity-bloom",
+      "cooldown_ms": 2600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl6-enemy-projectile-02",
+          "count": 8,
+          "spread_degrees": 360,
+          "speed": 92
+        }
+      ]
+    },
+    {
+      "id": "flying-arsenal-pod-delayed-cross",
+      "cooldown_ms": 3200,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl6-enemy-projectile-05",
+          "count": 4,
+          "spread_degrees": 270,
+          "speed": 118,
+          "delay_ms": 420
+        }
+      ]
+    },
+    {
+      "id": "flying-arsenal-pod-thunder-cyclone",
+      "cooldown_ms": 4800,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl6-elite-thunder-cyclone",
+          "count": 1,
+          "speed": 42,
+          "burst_on_timeout_ms": 900
+        }
+      ]
+    }
+  ]
+}

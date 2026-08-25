@@ -1,0 +1,167 @@
+{
+  "pack": "CF_ToxicSewerPortal-Lvl7",
+  "revision": "Indoor Black Exterior / Transparent Inner Sludge",
+  "status": "passed",
+  "summary": {
+    "environment_assets_revised": 15,
+    "outer_black_pixels_written": 1244668,
+    "inner_key_pixels_retained": 1349996,
+    "stack_cutout_pixels_preserved": 270416,
+    "images_decoded": 62,
+    "json_files_parsed": 3,
+    "portal_frames": 8
+  },
+  "asset_conversions": [
+    {
+      "asset": "stage07-segment-01-sewer-entry",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 93164,
+      "inner_key_pixels": 100052,
+      "stack_cutout_pixels_preserved": 0
+    },
+    {
+      "asset": "stage07-segment-02-pumping-complex",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 92076,
+      "inner_key_pixels": 32828,
+      "stack_cutout_pixels_preserved": 0
+    },
+    {
+      "asset": "stage07-segment-03-deep-sewer",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 93164,
+      "inner_key_pixels": 100052,
+      "stack_cutout_pixels_preserved": 0
+    },
+    {
+      "asset": "stage07-segment-04-pressure-vault",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 92076,
+      "inner_key_pixels": 32828,
+      "stack_cutout_pixels_preserved": 0
+    },
+    {
+      "asset": "stage07-segment-05-void-portal",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 107664,
+      "inner_key_pixels": 84396,
+      "stack_cutout_pixels_preserved": 0
+    },
+    {
+      "asset": "stage07-segment-04-pressure-vault-overlap",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 70588,
+      "inner_key_pixels": 68388,
+      "stack_cutout_pixels_preserved": 33864
+    },
+    {
+      "asset": "stage07-connector-05-void-portal-to-04-pressure-vault",
+      "size": [
+        680,
+        192
+      ],
+      "outer_black_pixels": 5208,
+      "inner_key_pixels": 47104,
+      "stack_cutout_pixels_preserved": 33864
+    },
+    {
+      "asset": "stage07-segment-03-deep-sewer-overlap",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 68988,
+      "inner_key_pixels": 134584,
+      "stack_cutout_pixels_preserved": 35216
+    },
+    {
+      "asset": "stage07-connector-04-pressure-vault-to-03-deep-sewer",
+      "size": [
+        680,
+        192
+      ],
+      "outer_black_pixels": 8304,
+      "inner_key_pixels": 52108,
+      "stack_cutout_pixels_preserved": 35216
+    },
+    {
+      "asset": "stage07-segment-02-pumping-complex-overlap",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 70588,
+      "inner_key_pixels": 64296,
+      "stack_cutout_pixels_preserved": 25708
+    },
+    {
+      "asset": "stage07-connector-03-deep-sewer-to-02-pumping-complex",
+      "size": [
+        680,
+        192
+      ],
+      "outer_black_pixels": 5208,
+      "inner_key_pixels": 43012,
+      "stack_cutout_pixels_preserved": 25708
+    },
+    {
+      "asset": "stage07-segment-01-sewer-entry-overlap",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 68988,
+      "inner_key_pixels": 140428,
+      "stack_cutout_pixels_preserved": 40420
+    },
+    {
+      "asset": "stage07-connector-02-pumping-complex-to-01-sewer-entry",
+      "size": [
+        680,
+        192
+      ],
+      "outer_black_pixels": 8304,
+      "inner_key_pixels": 57952,
+      "stack_cutout_pixels_preserved": 40420
+    },
+    {
+      "asset": "stage07-full-scroll",
+      "size": [
+        680,
+        4716
+      ],
+      "outer_black_pixels": 352684,
+      "inner_key_pixels": 307572,
+      "stack_cutout_pixels_preserved": 0
+    },
+    {
+      "asset": "stage07-to-stage08-furious-death-void-portal-transition",
+      "size": [
+        680,
+        1020
+      ],
+      "outer_black_pixels": 107664,
+      "inner_key_pixels": 84396,
+      "stack_cutout_pixels_preserved": 0
+    }
+  ],
+  "failures": []
+}

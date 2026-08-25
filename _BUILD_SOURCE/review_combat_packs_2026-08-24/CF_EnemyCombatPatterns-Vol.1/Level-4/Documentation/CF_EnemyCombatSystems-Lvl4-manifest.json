@@ -1,0 +1,52 @@
+{
+  "pack": "CF_EnemyCombatSystems-Lvl4",
+  "stage": 4,
+  "theme": "Blacksite Air War",
+  "enemy_count": 29,
+  "enemy_ids": [
+    "roster-airfield-tank",
+    "roster-armored-tractor",
+    "roster-blacksite-interceptor",
+    "roster-command-plane",
+    "roster-explosive-barrel",
+    "roster-fuel-tanker",
+    "roster-gunship-bomber",
+    "roster-heavy-attack-jet",
+    "roster-missile-vehicle",
+    "roster-rocket-plane",
+    "roster-runway-mini-tank",
+    "roster-sam-carrier",
+    "roster-scout-car",
+    "roster-stealth-delta",
+    "roster-twin-tail-fighter",
+    "roster-vtol-striker",
+    "structural-armored-personnel-carrier",
+    "structural-attack-helicopter",
+    "structural-attack-jet",
+    "structural-bunker-turret",
+    "structural-combat-drone",
+    "structural-explosive-ammo-fuel-truck",
+    "structural-heavy-gunship",
+    "structural-main-battle-tank",
+    "structural-missile-carrier",
+    "structural-mobile-sam",
+    "structural-self-propelled-artillery",
+    "structural-stealth-bomber",
+    "structural-urban-mini-tank"
+  ],
+  "patterns": 87,
+  "vfx": {
+    "muzzle_frames": 4,
+    "projectile_families": [
+      "lvl4-enemy-projectile-01-steel-pellet",
+      "lvl4-enemy-projectile-02-twin-brass",
+      "lvl4-enemy-projectile-03-small-rocket",
+      "lvl4-enemy-projectile-04-guided-missile",
+      "lvl4-enemy-projectile-05-aircraft-bomb",
+      "lvl4-enemy-projectile-06-rail-needle"
+    ]
+  },
+  "elite_signature": "missile-star",
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

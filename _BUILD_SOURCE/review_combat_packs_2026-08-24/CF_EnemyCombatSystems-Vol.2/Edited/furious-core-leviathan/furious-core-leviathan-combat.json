@@ -1,0 +1,327 @@
+{
+  "asset": "furious-core-leviathan",
+  "display_name": "Furious Core Leviathan",
+  "stage": 8,
+  "category": "fortress",
+  "tier": "boss",
+  "source_file": "nca_18.png",
+  "source_notes": "",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision_box_px": [
+    60,
+    31,
+    135,
+    194
+  ],
+  "weapon_anchors_px": {
+    "left": [
+      89,
+      192
+    ],
+    "right": [
+      166,
+      192
+    ],
+    "center": [
+      128,
+      202
+    ]
+  },
+  "vfx": {
+    "muzzle": "cosmic-warp-star-muzzle",
+    "projectile": "cosmic-warden-beam-head",
+    "secondary": "cosmic-singularity-mine",
+    "impact": "cosmic-rift-collapse"
+  },
+  "animations": {
+    "power": {
+      "frames_per_state": 6,
+      "fps": 10,
+      "loop": true
+    },
+    "attack": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false,
+      "spawn_event_frame": 4
+    },
+    "hit": {
+      "frames": 4,
+      "fps": 15,
+      "loop": false
+    },
+    "death": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "states": [
+    "intact"
+  ],
+  "attack_patterns": [
+    {
+      "id": "furious-core-leviathan-aimed-burst",
+      "cooldown_ms": 1450,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "cosmic-warden-beam-head",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 110,
+          "anchor": "right",
+          "projectile": "cosmic-warden-beam-head",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 220,
+          "anchor": "center",
+          "projectile": "cosmic-warden-beam-head",
+          "aim": "player",
+          "speed": 226
+        }
+      ]
+    },
+    {
+      "id": "furious-core-leviathan-bracket-fan",
+      "cooldown_ms": 2350,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "cosmic-warden-beam-head",
+          "count": 7,
+          "spread_degrees": 54,
+          "speed": 184
+        }
+      ]
+    },
+    {
+      "id": "furious-core-leviathan-section-barrage",
+      "cooldown_ms": 3400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "cosmic-singularity-mine",
+          "count": 8,
+          "spread_degrees": 104,
+          "speed": 176
+        },
+        {
+          "time_ms": 340,
+          "anchor": "left",
+          "projectile": "cosmic-warden-beam-head",
+          "count": 2,
+          "aim": "player",
+          "speed": 242
+        }
+      ]
+    },
+    {
+      "id": "furious-core-leviathan-critical-rage",
+      "cooldown_ms": 4700,
+      "health_gate": 0.35,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "cosmic-singularity-mine",
+          "count": 18,
+          "spread_degrees": 360,
+          "speed": 166
+        },
+        {
+          "time_ms": 520,
+          "anchor": "left",
+          "projectile": "cosmic-warden-beam-head",
+          "count": 5,
+          "spread_degrees": 38,
+          "aim": "player",
+          "speed": 249
+        }
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "furious-core-leviathan-combat-atlas.png",
+    "rects": {
+      "furious-core-leviathan-intact": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "furious-core-leviathan-intact-power-01": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "furious-core-leviathan-intact-power-02": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "furious-core-leviathan-intact-power-03": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "furious-core-leviathan-intact-power-04": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "furious-core-leviathan-intact-power-05": [
+        1316,
+        6,
+        256,
+        256
+      ],
+      "furious-core-leviathan-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "furious-core-leviathan-attack-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "furious-core-leviathan-attack-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "furious-core-leviathan-attack-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "furious-core-leviathan-attack-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "furious-core-leviathan-attack-05": [
+        1316,
+        268,
+        256,
+        256
+      ],
+      "furious-core-leviathan-attack-06": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "furious-core-leviathan-attack-07": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "furious-core-leviathan-attack-08": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "furious-core-leviathan-hit-01": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "furious-core-leviathan-hit-02": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "furious-core-leviathan-hit-03": [
+        1316,
+        530,
+        256,
+        256
+      ],
+      "furious-core-leviathan-hit-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "furious-core-leviathan-death-01": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "furious-core-leviathan-death-02": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "furious-core-leviathan-death-03": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "furious-core-leviathan-death-04": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "furious-core-leviathan-death-05": [
+        1316,
+        792,
+        256,
+        256
+      ],
+      "furious-core-leviathan-death-06": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "furious-core-leviathan-death-07": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "furious-core-leviathan-death-08": [
+        530,
+        1054,
+        256,
+        256
+      ]
+    }
+  },
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

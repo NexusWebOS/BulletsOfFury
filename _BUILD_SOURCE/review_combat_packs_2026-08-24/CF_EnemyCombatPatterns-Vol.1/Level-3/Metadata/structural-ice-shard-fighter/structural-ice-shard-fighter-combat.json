@@ -1,0 +1,305 @@
+{
+  "asset": "structural-ice-shard-fighter",
+  "project": "Bullets of Fury I",
+  "stage": 3,
+  "theme": "Frozen Stronghold",
+  "source_set": "structural",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    299,
+    334
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      104,
+      251
+    ],
+    "right_weapon": [
+      202,
+      251
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-ice-shard-fighter-intact-power-01",
+          "structural-ice-shard-fighter-intact-power-02",
+          "structural-ice-shard-fighter-intact-power-03",
+          "structural-ice-shard-fighter-intact-power-04",
+          "structural-ice-shard-fighter-intact-power-05",
+          "structural-ice-shard-fighter-intact-power-06"
+        ],
+        "damaged": [
+          "structural-ice-shard-fighter-damaged-power-01",
+          "structural-ice-shard-fighter-damaged-power-02",
+          "structural-ice-shard-fighter-damaged-power-03",
+          "structural-ice-shard-fighter-damaged-power-04",
+          "structural-ice-shard-fighter-damaged-power-05",
+          "structural-ice-shard-fighter-damaged-power-06"
+        ],
+        "critical": [
+          "structural-ice-shard-fighter-critical-power-01",
+          "structural-ice-shard-fighter-critical-power-02",
+          "structural-ice-shard-fighter-critical-power-03",
+          "structural-ice-shard-fighter-critical-power-04",
+          "structural-ice-shard-fighter-critical-power-05",
+          "structural-ice-shard-fighter-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-ice-shard-fighter-attack-01",
+        "structural-ice-shard-fighter-attack-02",
+        "structural-ice-shard-fighter-attack-03",
+        "structural-ice-shard-fighter-attack-04",
+        "structural-ice-shard-fighter-attack-05",
+        "structural-ice-shard-fighter-attack-06",
+        "structural-ice-shard-fighter-attack-07",
+        "structural-ice-shard-fighter-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-ice-shard-fighter-combat-atlas.png",
+    "size": [
+      1531,
+      2046
+    ],
+    "rects": {
+      "structural-ice-shard-fighter-intact-power-01": [
+        6,
+        6,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-intact-power-02": [
+        311,
+        6,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-intact-power-03": [
+        616,
+        6,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-intact-power-04": [
+        921,
+        6,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-intact-power-05": [
+        1226,
+        6,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-intact-power-06": [
+        6,
+        346,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-damaged-power-01": [
+        311,
+        346,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-damaged-power-02": [
+        616,
+        346,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-damaged-power-03": [
+        921,
+        346,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-damaged-power-04": [
+        1226,
+        346,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-damaged-power-05": [
+        6,
+        686,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-damaged-power-06": [
+        311,
+        686,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-critical-power-01": [
+        616,
+        686,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-critical-power-02": [
+        921,
+        686,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-critical-power-03": [
+        1226,
+        686,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-critical-power-04": [
+        6,
+        1026,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-critical-power-05": [
+        311,
+        1026,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-critical-power-06": [
+        616,
+        1026,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-attack-01": [
+        921,
+        1026,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-attack-02": [
+        1226,
+        1026,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-attack-03": [
+        6,
+        1366,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-attack-04": [
+        311,
+        1366,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-attack-05": [
+        616,
+        1366,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-attack-06": [
+        921,
+        1366,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-attack-07": [
+        1226,
+        1366,
+        299,
+        334
+      ],
+      "structural-ice-shard-fighter-attack-08": [
+        6,
+        1706,
+        299,
+        334
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "ice-shard-fighter-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl3-enemy-projectile-02",
+          "aim": "player",
+          "speed": 191
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl3-enemy-projectile-02",
+          "aim": "player",
+          "speed": 191
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl3-enemy-projectile-02",
+          "aim": "player",
+          "speed": 191
+        }
+      ]
+    },
+    {
+      "id": "ice-shard-fighter-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl3-enemy-projectile-01",
+          "count": 5,
+          "spread_degrees": 54,
+          "speed": 148
+        }
+      ]
+    },
+    {
+      "id": "ice-shard-fighter-crystal-guillotine",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl3-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 92,
+          "speed": 137
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl3-elite-crystal-guillotine",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,305 @@
+{
+  "asset": "structural-swarm-drone",
+  "project": "Bullets of Fury I",
+  "stage": 8,
+  "theme": "Furious Death",
+  "source_set": "structural",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    255,
+    233
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      91,
+      171
+    ],
+    "right_weapon": [
+      172,
+      171
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-swarm-drone-intact-power-01",
+          "structural-swarm-drone-intact-power-02",
+          "structural-swarm-drone-intact-power-03",
+          "structural-swarm-drone-intact-power-04",
+          "structural-swarm-drone-intact-power-05",
+          "structural-swarm-drone-intact-power-06"
+        ],
+        "damaged": [
+          "structural-swarm-drone-damaged-power-01",
+          "structural-swarm-drone-damaged-power-02",
+          "structural-swarm-drone-damaged-power-03",
+          "structural-swarm-drone-damaged-power-04",
+          "structural-swarm-drone-damaged-power-05",
+          "structural-swarm-drone-damaged-power-06"
+        ],
+        "critical": [
+          "structural-swarm-drone-critical-power-01",
+          "structural-swarm-drone-critical-power-02",
+          "structural-swarm-drone-critical-power-03",
+          "structural-swarm-drone-critical-power-04",
+          "structural-swarm-drone-critical-power-05",
+          "structural-swarm-drone-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-swarm-drone-attack-01",
+        "structural-swarm-drone-attack-02",
+        "structural-swarm-drone-attack-03",
+        "structural-swarm-drone-attack-04",
+        "structural-swarm-drone-attack-05",
+        "structural-swarm-drone-attack-06",
+        "structural-swarm-drone-attack-07",
+        "structural-swarm-drone-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-swarm-drone-combat-atlas.png",
+    "size": [
+      1311,
+      1440
+    ],
+    "rects": {
+      "structural-swarm-drone-intact-power-01": [
+        6,
+        6,
+        255,
+        233
+      ],
+      "structural-swarm-drone-intact-power-02": [
+        267,
+        6,
+        255,
+        233
+      ],
+      "structural-swarm-drone-intact-power-03": [
+        528,
+        6,
+        255,
+        233
+      ],
+      "structural-swarm-drone-intact-power-04": [
+        789,
+        6,
+        255,
+        233
+      ],
+      "structural-swarm-drone-intact-power-05": [
+        1050,
+        6,
+        255,
+        233
+      ],
+      "structural-swarm-drone-intact-power-06": [
+        6,
+        245,
+        255,
+        233
+      ],
+      "structural-swarm-drone-damaged-power-01": [
+        267,
+        245,
+        255,
+        233
+      ],
+      "structural-swarm-drone-damaged-power-02": [
+        528,
+        245,
+        255,
+        233
+      ],
+      "structural-swarm-drone-damaged-power-03": [
+        789,
+        245,
+        255,
+        233
+      ],
+      "structural-swarm-drone-damaged-power-04": [
+        1050,
+        245,
+        255,
+        233
+      ],
+      "structural-swarm-drone-damaged-power-05": [
+        6,
+        484,
+        255,
+        233
+      ],
+      "structural-swarm-drone-damaged-power-06": [
+        267,
+        484,
+        255,
+        233
+      ],
+      "structural-swarm-drone-critical-power-01": [
+        528,
+        484,
+        255,
+        233
+      ],
+      "structural-swarm-drone-critical-power-02": [
+        789,
+        484,
+        255,
+        233
+      ],
+      "structural-swarm-drone-critical-power-03": [
+        1050,
+        484,
+        255,
+        233
+      ],
+      "structural-swarm-drone-critical-power-04": [
+        6,
+        723,
+        255,
+        233
+      ],
+      "structural-swarm-drone-critical-power-05": [
+        267,
+        723,
+        255,
+        233
+      ],
+      "structural-swarm-drone-critical-power-06": [
+        528,
+        723,
+        255,
+        233
+      ],
+      "structural-swarm-drone-attack-01": [
+        789,
+        723,
+        255,
+        233
+      ],
+      "structural-swarm-drone-attack-02": [
+        1050,
+        723,
+        255,
+        233
+      ],
+      "structural-swarm-drone-attack-03": [
+        6,
+        962,
+        255,
+        233
+      ],
+      "structural-swarm-drone-attack-04": [
+        267,
+        962,
+        255,
+        233
+      ],
+      "structural-swarm-drone-attack-05": [
+        528,
+        962,
+        255,
+        233
+      ],
+      "structural-swarm-drone-attack-06": [
+        789,
+        962,
+        255,
+        233
+      ],
+      "structural-swarm-drone-attack-07": [
+        1050,
+        962,
+        255,
+        233
+      ],
+      "structural-swarm-drone-attack-08": [
+        6,
+        1201,
+        255,
+        233
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "swarm-drone-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-enemy-projectile-02",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl8-enemy-projectile-02",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-enemy-projectile-02",
+          "aim": "player",
+          "speed": 226
+        }
+      ]
+    },
+    {
+      "id": "swarm-drone-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 64,
+          "speed": 178
+        }
+      ]
+    },
+    {
+      "id": "swarm-drone-void-razor",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-enemy-projectile-06",
+          "count": 8,
+          "spread_degrees": 92,
+          "speed": 162
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-elite-void-razor",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

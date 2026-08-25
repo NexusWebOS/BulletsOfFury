@@ -1,0 +1,48 @@
+{
+  "pack": "CF_EnemyCombatSystems-Lvl6",
+  "stage": 6,
+  "theme": "Heavy Turbulence",
+  "enemy_count": 25,
+  "enemy_ids": [
+    "roster-cloud-lancer",
+    "roster-cyclone-interceptor",
+    "roster-four-engine-bomber",
+    "roster-lightning-mine",
+    "roster-lightning-skimmer",
+    "roster-nuclear-carrier",
+    "roster-reactor-storm-bomber-miniboss",
+    "roster-storm-buoy",
+    "roster-storm-dart",
+    "roster-thunder-fighter",
+    "roster-turbine-drone",
+    "roster-weather-probe",
+    "structural-airborne-curved-turret-platform",
+    "structural-airfare-attack-helicopter",
+    "structural-armored-refueling-tanker",
+    "structural-awacs-radar-plane",
+    "structural-flying-arsenal-pod",
+    "structural-heavy-bomber",
+    "structural-interceptor",
+    "structural-missile-drone",
+    "structural-missile-vtol",
+    "structural-radar-weapon-platform",
+    "structural-supersonic-fighter",
+    "structural-swarm-leader-drone",
+    "structural-twin-rotor-gunship"
+  ],
+  "patterns": 75,
+  "vfx": {
+    "muzzle_frames": 4,
+    "projectile_families": [
+      "lvl6-enemy-projectile-01-wind-blade",
+      "lvl6-enemy-projectile-02-lightning-bolt",
+      "lvl6-enemy-projectile-03-air-missile",
+      "lvl6-enemy-projectile-04-pressure-orb",
+      "lvl6-enemy-projectile-05-silver-tracers",
+      "lvl6-enemy-projectile-06-homing-missile"
+    ]
+  },
+  "elite_signature": "thunder-cyclone",
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

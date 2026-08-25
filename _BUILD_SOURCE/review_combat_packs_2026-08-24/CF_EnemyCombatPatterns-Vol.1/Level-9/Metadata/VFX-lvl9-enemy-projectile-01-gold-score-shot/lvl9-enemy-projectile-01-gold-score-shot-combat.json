@@ -1,0 +1,106 @@
+{
+  "asset": "lvl9-enemy-projectile-01-gold-score-shot",
+  "stage": 9,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-01",
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-02",
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-03",
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-04",
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-05",
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-01",
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-02",
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-03",
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-04",
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-05",
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl9-enemy-projectile-01-gold-score-shot-combat-atlas.png",
+    "rects": {
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-01": [
+        59,
+        44,
+        54,
+        83
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-02": [
+        225,
+        44,
+        54,
+        83
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-03": [
+        391,
+        44,
+        54,
+        83
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-04": [
+        557,
+        44,
+        54,
+        83
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-05": [
+        723,
+        44,
+        54,
+        83
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-travel-06": [
+        889,
+        44,
+        54,
+        83
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-01-gold-score-shot-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

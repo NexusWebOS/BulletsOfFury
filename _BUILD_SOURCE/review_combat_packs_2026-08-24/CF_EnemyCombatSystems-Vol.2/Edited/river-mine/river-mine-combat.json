@@ -1,0 +1,375 @@
+{
+  "asset": "river-mine",
+  "display_name": "River Mine",
+  "stage": 1,
+  "category": "hazard",
+  "tier": "standard",
+  "source_file": "nca_80.png",
+  "source_notes": "three supplied structural states",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision_box_px": [
+    37,
+    34,
+    182,
+    188
+  ],
+  "weapon_anchors_px": {
+    "core": [
+      128,
+      128
+    ]
+  },
+  "vfx": {
+    "muzzle": "heavy-military-cannon-muzzle",
+    "projectile": "heavy-heavy-fuse-bomb",
+    "secondary": "heavy-flak-blossom",
+    "impact": "heavy-inferno-impact"
+  },
+  "animations": {
+    "power": {
+      "frames_per_state": 6,
+      "fps": 10,
+      "loop": true
+    },
+    "attack": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false,
+      "spawn_event_frame": 4
+    },
+    "hit": {
+      "frames": 4,
+      "fps": 15,
+      "loop": false
+    },
+    "death": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "states": [
+    "intact",
+    "damaged",
+    "critical"
+  ],
+  "attack_patterns": [
+    {
+      "id": "river-mine-proximity-bloom",
+      "cooldown_ms": 2600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "heavy-flak-blossom",
+          "count": 8,
+          "spread_degrees": 360,
+          "speed": 88
+        }
+      ]
+    },
+    {
+      "id": "river-mine-fuse-burst",
+      "cooldown_ms": 3200,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "heavy-heavy-fuse-bomb",
+          "count": 1,
+          "speed": 42,
+          "detonate_ms": 850
+        }
+      ]
+    },
+    {
+      "id": "river-mine-chain-detonation",
+      "cooldown_ms": 4400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "heavy-inferno-impact",
+          "count": 3,
+          "ring_radius_px": 52,
+          "delay_ms": 220
+        }
+      ]
+    },
+    {
+      "id": "river-mine-rage-ring",
+      "cooldown_ms": 5200,
+      "health_gate": 0.35,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "heavy-flak-blossom",
+          "count": 16,
+          "spread_degrees": 360,
+          "speed": 126
+        }
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "river-mine-combat-atlas.png",
+    "rects": {
+      "river-mine-intact": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "river-mine-intact-power-01": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "river-mine-intact-power-02": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "river-mine-intact-power-03": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "river-mine-intact-power-04": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "river-mine-intact-power-05": [
+        1316,
+        6,
+        256,
+        256
+      ],
+      "river-mine-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "river-mine-damaged": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "river-mine-damaged-power-01": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "river-mine-damaged-power-02": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "river-mine-damaged-power-03": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "river-mine-damaged-power-04": [
+        1316,
+        268,
+        256,
+        256
+      ],
+      "river-mine-damaged-power-05": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "river-mine-damaged-power-06": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "river-mine-critical": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "river-mine-critical-power-01": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "river-mine-critical-power-02": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "river-mine-critical-power-03": [
+        1316,
+        530,
+        256,
+        256
+      ],
+      "river-mine-critical-power-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "river-mine-critical-power-05": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "river-mine-critical-power-06": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "river-mine-attack-01": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "river-mine-attack-02": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "river-mine-attack-03": [
+        1316,
+        792,
+        256,
+        256
+      ],
+      "river-mine-attack-04": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "river-mine-attack-05": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "river-mine-attack-06": [
+        530,
+        1054,
+        256,
+        256
+      ],
+      "river-mine-attack-07": [
+        792,
+        1054,
+        256,
+        256
+      ],
+      "river-mine-attack-08": [
+        1054,
+        1054,
+        256,
+        256
+      ],
+      "river-mine-hit-01": [
+        1316,
+        1054,
+        256,
+        256
+      ],
+      "river-mine-hit-02": [
+        6,
+        1316,
+        256,
+        256
+      ],
+      "river-mine-hit-03": [
+        268,
+        1316,
+        256,
+        256
+      ],
+      "river-mine-hit-04": [
+        530,
+        1316,
+        256,
+        256
+      ],
+      "river-mine-death-01": [
+        792,
+        1316,
+        256,
+        256
+      ],
+      "river-mine-death-02": [
+        1054,
+        1316,
+        256,
+        256
+      ],
+      "river-mine-death-03": [
+        1316,
+        1316,
+        256,
+        256
+      ],
+      "river-mine-death-04": [
+        6,
+        1578,
+        256,
+        256
+      ],
+      "river-mine-death-05": [
+        268,
+        1578,
+        256,
+        256
+      ],
+      "river-mine-death-06": [
+        530,
+        1578,
+        256,
+        256
+      ],
+      "river-mine-death-07": [
+        792,
+        1578,
+        256,
+        256
+      ],
+      "river-mine-death-08": [
+        1054,
+        1578,
+        256,
+        256
+      ]
+    }
+  },
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

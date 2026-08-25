@@ -1,0 +1,106 @@
+{
+  "asset": "lvl2-enemy-projectile-01-ember-pellet",
+  "stage": 2,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl2-enemy-projectile-01-ember-pellet-travel-01",
+      "lvl2-enemy-projectile-01-ember-pellet-travel-02",
+      "lvl2-enemy-projectile-01-ember-pellet-travel-03",
+      "lvl2-enemy-projectile-01-ember-pellet-travel-04",
+      "lvl2-enemy-projectile-01-ember-pellet-travel-05",
+      "lvl2-enemy-projectile-01-ember-pellet-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl2-enemy-projectile-01-ember-pellet-impact-01",
+      "lvl2-enemy-projectile-01-ember-pellet-impact-02",
+      "lvl2-enemy-projectile-01-ember-pellet-impact-03",
+      "lvl2-enemy-projectile-01-ember-pellet-impact-04",
+      "lvl2-enemy-projectile-01-ember-pellet-impact-05",
+      "lvl2-enemy-projectile-01-ember-pellet-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl2-enemy-projectile-01-ember-pellet-combat-atlas.png",
+    "rects": {
+      "lvl2-enemy-projectile-01-ember-pellet-travel-01": [
+        64,
+        52,
+        44,
+        67
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-travel-02": [
+        230,
+        52,
+        44,
+        67
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-travel-03": [
+        396,
+        52,
+        44,
+        67
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-travel-04": [
+        562,
+        52,
+        44,
+        67
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-travel-05": [
+        728,
+        52,
+        44,
+        67
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-travel-06": [
+        894,
+        52,
+        44,
+        67
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-01-ember-pellet-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

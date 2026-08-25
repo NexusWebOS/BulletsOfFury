@@ -1,0 +1,39 @@
+{
+  "pack": "CF_EnemyCombatSystems-Lvl1",
+  "stage": 1,
+  "theme": "Jungle Assault",
+  "enemy_count": 16,
+  "enemy_ids": [
+    "roster-ammo-crate",
+    "roster-camo-attack-jet",
+    "roster-fuel-barrel",
+    "roster-fuel-tank",
+    "roster-jungle-apc",
+    "roster-jungle-bomber",
+    "roster-jungle-mini-tank",
+    "roster-jungle-tank",
+    "roster-landing-craft",
+    "roster-missile-gunboat",
+    "roster-prop-attack-plane",
+    "roster-river-corvette",
+    "roster-river-mine",
+    "roster-river-patrol-boat",
+    "roster-rocket-buggy",
+    "roster-vtol-gunship"
+  ],
+  "patterns": 48,
+  "vfx": {
+    "muzzle_frames": 4,
+    "projectile_families": [
+      "lvl1-enemy-projectile-01-brass-pellet",
+      "lvl1-enemy-projectile-02-twin-bullets",
+      "lvl1-enemy-projectile-03-micro-missile",
+      "lvl1-enemy-projectile-04-depth-bomb",
+      "lvl1-enemy-projectile-05-hydro-orb",
+      "lvl1-enemy-projectile-06-amber-needle"
+    ]
+  },
+  "elite_signature": "flak-blossom",
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

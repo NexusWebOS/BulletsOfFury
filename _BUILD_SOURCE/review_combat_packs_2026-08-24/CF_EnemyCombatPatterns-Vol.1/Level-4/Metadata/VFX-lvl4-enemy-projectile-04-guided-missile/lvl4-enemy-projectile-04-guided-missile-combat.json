@@ -1,0 +1,106 @@
+{
+  "asset": "lvl4-enemy-projectile-04-guided-missile",
+  "stage": 4,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl4-enemy-projectile-04-guided-missile-travel-01",
+      "lvl4-enemy-projectile-04-guided-missile-travel-02",
+      "lvl4-enemy-projectile-04-guided-missile-travel-03",
+      "lvl4-enemy-projectile-04-guided-missile-travel-04",
+      "lvl4-enemy-projectile-04-guided-missile-travel-05",
+      "lvl4-enemy-projectile-04-guided-missile-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl4-enemy-projectile-04-guided-missile-impact-01",
+      "lvl4-enemy-projectile-04-guided-missile-impact-02",
+      "lvl4-enemy-projectile-04-guided-missile-impact-03",
+      "lvl4-enemy-projectile-04-guided-missile-impact-04",
+      "lvl4-enemy-projectile-04-guided-missile-impact-05",
+      "lvl4-enemy-projectile-04-guided-missile-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl4-enemy-projectile-04-guided-missile-combat-atlas.png",
+    "rects": {
+      "lvl4-enemy-projectile-04-guided-missile-travel-01": [
+        60,
+        45,
+        51,
+        82
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-travel-02": [
+        226,
+        45,
+        51,
+        82
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-travel-03": [
+        392,
+        45,
+        51,
+        82
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-travel-04": [
+        558,
+        45,
+        51,
+        82
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-travel-05": [
+        724,
+        45,
+        51,
+        82
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-travel-06": [
+        890,
+        45,
+        51,
+        82
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-04-guided-missile-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

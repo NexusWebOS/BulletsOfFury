@@ -1,0 +1,106 @@
+{
+  "asset": "lvl2-enemy-projectile-05-paired-embers",
+  "stage": 2,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl2-enemy-projectile-05-paired-embers-travel-01",
+      "lvl2-enemy-projectile-05-paired-embers-travel-02",
+      "lvl2-enemy-projectile-05-paired-embers-travel-03",
+      "lvl2-enemy-projectile-05-paired-embers-travel-04",
+      "lvl2-enemy-projectile-05-paired-embers-travel-05",
+      "lvl2-enemy-projectile-05-paired-embers-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl2-enemy-projectile-05-paired-embers-impact-01",
+      "lvl2-enemy-projectile-05-paired-embers-impact-02",
+      "lvl2-enemy-projectile-05-paired-embers-impact-03",
+      "lvl2-enemy-projectile-05-paired-embers-impact-04",
+      "lvl2-enemy-projectile-05-paired-embers-impact-05",
+      "lvl2-enemy-projectile-05-paired-embers-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl2-enemy-projectile-05-paired-embers-combat-atlas.png",
+    "rects": {
+      "lvl2-enemy-projectile-05-paired-embers-travel-01": [
+        57,
+        44,
+        58,
+        84
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-travel-02": [
+        223,
+        44,
+        58,
+        84
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-travel-03": [
+        389,
+        44,
+        58,
+        84
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-travel-04": [
+        555,
+        44,
+        58,
+        84
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-travel-05": [
+        721,
+        44,
+        58,
+        84
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-travel-06": [
+        887,
+        44,
+        58,
+        84
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-05-paired-embers-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

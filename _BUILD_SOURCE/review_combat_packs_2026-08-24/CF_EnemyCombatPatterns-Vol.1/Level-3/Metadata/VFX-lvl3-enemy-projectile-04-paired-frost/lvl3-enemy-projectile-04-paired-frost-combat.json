@@ -1,0 +1,106 @@
+{
+  "asset": "lvl3-enemy-projectile-04-paired-frost",
+  "stage": 3,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl3-enemy-projectile-04-paired-frost-travel-01",
+      "lvl3-enemy-projectile-04-paired-frost-travel-02",
+      "lvl3-enemy-projectile-04-paired-frost-travel-03",
+      "lvl3-enemy-projectile-04-paired-frost-travel-04",
+      "lvl3-enemy-projectile-04-paired-frost-travel-05",
+      "lvl3-enemy-projectile-04-paired-frost-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl3-enemy-projectile-04-paired-frost-impact-01",
+      "lvl3-enemy-projectile-04-paired-frost-impact-02",
+      "lvl3-enemy-projectile-04-paired-frost-impact-03",
+      "lvl3-enemy-projectile-04-paired-frost-impact-04",
+      "lvl3-enemy-projectile-04-paired-frost-impact-05",
+      "lvl3-enemy-projectile-04-paired-frost-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl3-enemy-projectile-04-paired-frost-combat-atlas.png",
+    "rects": {
+      "lvl3-enemy-projectile-04-paired-frost-travel-01": [
+        49,
+        44,
+        74,
+        84
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-travel-02": [
+        215,
+        44,
+        74,
+        84
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-travel-03": [
+        381,
+        44,
+        74,
+        84
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-travel-04": [
+        547,
+        44,
+        74,
+        84
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-travel-05": [
+        713,
+        44,
+        74,
+        84
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-travel-06": [
+        879,
+        44,
+        74,
+        84
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl3-enemy-projectile-04-paired-frost-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

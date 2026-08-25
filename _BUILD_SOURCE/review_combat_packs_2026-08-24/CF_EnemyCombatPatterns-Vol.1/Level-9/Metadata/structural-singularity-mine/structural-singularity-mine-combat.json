@@ -1,0 +1,282 @@
+{
+  "asset": "structural-singularity-mine",
+  "project": "Bullets of Fury I",
+  "stage": 9,
+  "theme": "Warp Galaxy",
+  "source_set": "structural",
+  "category": "hazard",
+  "weapon_profile": "radial",
+  "canvas": [
+    283,
+    296
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "core": [
+      140,
+      146
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-singularity-mine-intact-power-01",
+          "structural-singularity-mine-intact-power-02",
+          "structural-singularity-mine-intact-power-03",
+          "structural-singularity-mine-intact-power-04",
+          "structural-singularity-mine-intact-power-05",
+          "structural-singularity-mine-intact-power-06"
+        ],
+        "damaged": [
+          "structural-singularity-mine-damaged-power-01",
+          "structural-singularity-mine-damaged-power-02",
+          "structural-singularity-mine-damaged-power-03",
+          "structural-singularity-mine-damaged-power-04",
+          "structural-singularity-mine-damaged-power-05",
+          "structural-singularity-mine-damaged-power-06"
+        ],
+        "critical": [
+          "structural-singularity-mine-critical-power-01",
+          "structural-singularity-mine-critical-power-02",
+          "structural-singularity-mine-critical-power-03",
+          "structural-singularity-mine-critical-power-04",
+          "structural-singularity-mine-critical-power-05",
+          "structural-singularity-mine-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-singularity-mine-attack-01",
+        "structural-singularity-mine-attack-02",
+        "structural-singularity-mine-attack-03",
+        "structural-singularity-mine-attack-04",
+        "structural-singularity-mine-attack-05",
+        "structural-singularity-mine-attack-06",
+        "structural-singularity-mine-attack-07",
+        "structural-singularity-mine-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-singularity-mine-combat-atlas.png",
+    "size": [
+      1451,
+      1818
+    ],
+    "rects": {
+      "structural-singularity-mine-intact-power-01": [
+        6,
+        6,
+        283,
+        296
+      ],
+      "structural-singularity-mine-intact-power-02": [
+        295,
+        6,
+        283,
+        296
+      ],
+      "structural-singularity-mine-intact-power-03": [
+        584,
+        6,
+        283,
+        296
+      ],
+      "structural-singularity-mine-intact-power-04": [
+        873,
+        6,
+        283,
+        296
+      ],
+      "structural-singularity-mine-intact-power-05": [
+        1162,
+        6,
+        283,
+        296
+      ],
+      "structural-singularity-mine-intact-power-06": [
+        6,
+        308,
+        283,
+        296
+      ],
+      "structural-singularity-mine-damaged-power-01": [
+        295,
+        308,
+        283,
+        296
+      ],
+      "structural-singularity-mine-damaged-power-02": [
+        584,
+        308,
+        283,
+        296
+      ],
+      "structural-singularity-mine-damaged-power-03": [
+        873,
+        308,
+        283,
+        296
+      ],
+      "structural-singularity-mine-damaged-power-04": [
+        1162,
+        308,
+        283,
+        296
+      ],
+      "structural-singularity-mine-damaged-power-05": [
+        6,
+        610,
+        283,
+        296
+      ],
+      "structural-singularity-mine-damaged-power-06": [
+        295,
+        610,
+        283,
+        296
+      ],
+      "structural-singularity-mine-critical-power-01": [
+        584,
+        610,
+        283,
+        296
+      ],
+      "structural-singularity-mine-critical-power-02": [
+        873,
+        610,
+        283,
+        296
+      ],
+      "structural-singularity-mine-critical-power-03": [
+        1162,
+        610,
+        283,
+        296
+      ],
+      "structural-singularity-mine-critical-power-04": [
+        6,
+        912,
+        283,
+        296
+      ],
+      "structural-singularity-mine-critical-power-05": [
+        295,
+        912,
+        283,
+        296
+      ],
+      "structural-singularity-mine-critical-power-06": [
+        584,
+        912,
+        283,
+        296
+      ],
+      "structural-singularity-mine-attack-01": [
+        873,
+        912,
+        283,
+        296
+      ],
+      "structural-singularity-mine-attack-02": [
+        1162,
+        912,
+        283,
+        296
+      ],
+      "structural-singularity-mine-attack-03": [
+        6,
+        1214,
+        283,
+        296
+      ],
+      "structural-singularity-mine-attack-04": [
+        295,
+        1214,
+        283,
+        296
+      ],
+      "structural-singularity-mine-attack-05": [
+        584,
+        1214,
+        283,
+        296
+      ],
+      "structural-singularity-mine-attack-06": [
+        873,
+        1214,
+        283,
+        296
+      ],
+      "structural-singularity-mine-attack-07": [
+        1162,
+        1214,
+        283,
+        296
+      ],
+      "structural-singularity-mine-attack-08": [
+        6,
+        1516,
+        283,
+        296
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "singularity-mine-proximity-bloom",
+      "cooldown_ms": 2600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl9-enemy-projectile-02",
+          "count": 8,
+          "spread_degrees": 360,
+          "speed": 92
+        }
+      ]
+    },
+    {
+      "id": "singularity-mine-delayed-cross",
+      "cooldown_ms": 3200,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl9-enemy-projectile-05",
+          "count": 4,
+          "spread_degrees": 270,
+          "speed": 118,
+          "delay_ms": 420
+        }
+      ]
+    },
+    {
+      "id": "singularity-mine-warp-lattice",
+      "cooldown_ms": 4800,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl9-elite-warp-lattice",
+          "count": 1,
+          "speed": 42,
+          "burst_on_timeout_ms": 900
+        }
+      ]
+    }
+  ]
+}

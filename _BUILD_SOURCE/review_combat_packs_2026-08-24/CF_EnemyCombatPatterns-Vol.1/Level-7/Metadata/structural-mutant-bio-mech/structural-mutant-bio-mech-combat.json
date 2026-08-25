@@ -1,0 +1,305 @@
+{
+  "asset": "structural-mutant-bio-mech",
+  "project": "Bullets of Fury I",
+  "stage": 7,
+  "theme": "Toxic Sewer",
+  "source_set": "structural",
+  "category": "bio",
+  "weapon_profile": "dual",
+  "canvas": [
+    337,
+    254
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      116,
+      187
+    ],
+    "right_weapon": [
+      229,
+      187
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-mutant-bio-mech-intact-power-01",
+          "structural-mutant-bio-mech-intact-power-02",
+          "structural-mutant-bio-mech-intact-power-03",
+          "structural-mutant-bio-mech-intact-power-04",
+          "structural-mutant-bio-mech-intact-power-05",
+          "structural-mutant-bio-mech-intact-power-06"
+        ],
+        "damaged": [
+          "structural-mutant-bio-mech-damaged-power-01",
+          "structural-mutant-bio-mech-damaged-power-02",
+          "structural-mutant-bio-mech-damaged-power-03",
+          "structural-mutant-bio-mech-damaged-power-04",
+          "structural-mutant-bio-mech-damaged-power-05",
+          "structural-mutant-bio-mech-damaged-power-06"
+        ],
+        "critical": [
+          "structural-mutant-bio-mech-critical-power-01",
+          "structural-mutant-bio-mech-critical-power-02",
+          "structural-mutant-bio-mech-critical-power-03",
+          "structural-mutant-bio-mech-critical-power-04",
+          "structural-mutant-bio-mech-critical-power-05",
+          "structural-mutant-bio-mech-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-mutant-bio-mech-attack-01",
+        "structural-mutant-bio-mech-attack-02",
+        "structural-mutant-bio-mech-attack-03",
+        "structural-mutant-bio-mech-attack-04",
+        "structural-mutant-bio-mech-attack-05",
+        "structural-mutant-bio-mech-attack-06",
+        "structural-mutant-bio-mech-attack-07",
+        "structural-mutant-bio-mech-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-mutant-bio-mech-combat-atlas.png",
+    "size": [
+      1721,
+      1566
+    ],
+    "rects": {
+      "structural-mutant-bio-mech-intact-power-01": [
+        6,
+        6,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-intact-power-02": [
+        349,
+        6,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-intact-power-03": [
+        692,
+        6,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-intact-power-04": [
+        1035,
+        6,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-intact-power-05": [
+        1378,
+        6,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-intact-power-06": [
+        6,
+        266,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-damaged-power-01": [
+        349,
+        266,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-damaged-power-02": [
+        692,
+        266,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-damaged-power-03": [
+        1035,
+        266,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-damaged-power-04": [
+        1378,
+        266,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-damaged-power-05": [
+        6,
+        526,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-damaged-power-06": [
+        349,
+        526,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-critical-power-01": [
+        692,
+        526,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-critical-power-02": [
+        1035,
+        526,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-critical-power-03": [
+        1378,
+        526,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-critical-power-04": [
+        6,
+        786,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-critical-power-05": [
+        349,
+        786,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-critical-power-06": [
+        692,
+        786,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-attack-01": [
+        1035,
+        786,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-attack-02": [
+        1378,
+        786,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-attack-03": [
+        6,
+        1046,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-attack-04": [
+        349,
+        1046,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-attack-05": [
+        692,
+        1046,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-attack-06": [
+        1035,
+        1046,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-attack-07": [
+        1378,
+        1046,
+        337,
+        254
+      ],
+      "structural-mutant-bio-mech-attack-08": [
+        6,
+        1306,
+        337,
+        254
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "mutant-bio-mech-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        }
+      ]
+    },
+    {
+      "id": "mutant-bio-mech-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 62,
+          "speed": 172
+        }
+      ]
+    },
+    {
+      "id": "mutant-bio-mech-spore-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 92,
+          "speed": 157
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-elite-spore-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

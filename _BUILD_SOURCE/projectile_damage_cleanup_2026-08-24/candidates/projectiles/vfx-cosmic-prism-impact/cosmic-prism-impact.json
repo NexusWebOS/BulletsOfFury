@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-prism-impact",
+  "kind": "impact",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-prism-impact-01",
+    "cosmic-prism-impact-02",
+    "cosmic-prism-impact-03",
+    "cosmic-prism-impact-04",
+    "cosmic-prism-impact-05",
+    "cosmic-prism-impact-06"
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-prism-impact-atlas.png",
+    "rects": {
+      "cosmic-prism-impact-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-prism-impact-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-prism-impact-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-prism-impact-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-prism-impact-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-prism-impact-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-gravity-leech-orb",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-gravity-leech-orb-01",
+    "cosmic-gravity-leech-orb-02",
+    "cosmic-gravity-leech-orb-03",
+    "cosmic-gravity-leech-orb-04",
+    "cosmic-gravity-leech-orb-05",
+    "cosmic-gravity-leech-orb-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-gravity-leech-orb-atlas.png",
+    "rects": {
+      "cosmic-gravity-leech-orb-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-gravity-leech-orb-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-gravity-leech-orb-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-gravity-leech-orb-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-gravity-leech-orb-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-gravity-leech-orb-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

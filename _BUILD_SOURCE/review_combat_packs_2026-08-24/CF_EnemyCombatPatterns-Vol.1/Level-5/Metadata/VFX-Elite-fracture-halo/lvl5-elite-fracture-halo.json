@@ -1,0 +1,88 @@
+{
+  "asset": "lvl5-elite-fracture-halo",
+  "stage": 5,
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision": "spawn controller; use projectile children for discrete collision",
+  "atlas": {
+    "file": "lvl5-elite-fracture-halo-atlas.png",
+    "rects": {
+      "lvl5-elite-fracture-halo-01": [
+        6,
+        6,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-02": [
+        373,
+        6,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-03": [
+        740,
+        6,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-04": [
+        1107,
+        6,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-05": [
+        6,
+        373,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-06": [
+        373,
+        373,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-07": [
+        740,
+        373,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-08": [
+        1107,
+        373,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-09": [
+        6,
+        740,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-10": [
+        373,
+        740,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-11": [
+        740,
+        740,
+        361,
+        361
+      ],
+      "lvl5-elite-fracture-halo-12": [
+        1107,
+        740,
+        361,
+        361
+      ]
+    }
+  }
+}

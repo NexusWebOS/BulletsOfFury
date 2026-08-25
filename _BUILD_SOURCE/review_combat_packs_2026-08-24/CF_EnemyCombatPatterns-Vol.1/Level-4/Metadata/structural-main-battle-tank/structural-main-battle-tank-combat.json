@@ -1,0 +1,301 @@
+{
+  "asset": "structural-main-battle-tank",
+  "project": "Bullets of Fury I",
+  "stage": 4,
+  "theme": "Blacksite Air War",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    275,
+    397
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      138,
+      334
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-main-battle-tank-intact-power-01",
+          "structural-main-battle-tank-intact-power-02",
+          "structural-main-battle-tank-intact-power-03",
+          "structural-main-battle-tank-intact-power-04",
+          "structural-main-battle-tank-intact-power-05",
+          "structural-main-battle-tank-intact-power-06"
+        ],
+        "damaged": [
+          "structural-main-battle-tank-damaged-power-01",
+          "structural-main-battle-tank-damaged-power-02",
+          "structural-main-battle-tank-damaged-power-03",
+          "structural-main-battle-tank-damaged-power-04",
+          "structural-main-battle-tank-damaged-power-05",
+          "structural-main-battle-tank-damaged-power-06"
+        ],
+        "critical": [
+          "structural-main-battle-tank-critical-power-01",
+          "structural-main-battle-tank-critical-power-02",
+          "structural-main-battle-tank-critical-power-03",
+          "structural-main-battle-tank-critical-power-04",
+          "structural-main-battle-tank-critical-power-05",
+          "structural-main-battle-tank-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-main-battle-tank-attack-01",
+        "structural-main-battle-tank-attack-02",
+        "structural-main-battle-tank-attack-03",
+        "structural-main-battle-tank-attack-04",
+        "structural-main-battle-tank-attack-05",
+        "structural-main-battle-tank-attack-06",
+        "structural-main-battle-tank-attack-07",
+        "structural-main-battle-tank-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-main-battle-tank-combat-atlas.png",
+    "size": [
+      1411,
+      2424
+    ],
+    "rects": {
+      "structural-main-battle-tank-intact-power-01": [
+        6,
+        6,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-intact-power-02": [
+        287,
+        6,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-intact-power-03": [
+        568,
+        6,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-intact-power-04": [
+        849,
+        6,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-intact-power-05": [
+        1130,
+        6,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-intact-power-06": [
+        6,
+        409,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-damaged-power-01": [
+        287,
+        409,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-damaged-power-02": [
+        568,
+        409,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-damaged-power-03": [
+        849,
+        409,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-damaged-power-04": [
+        1130,
+        409,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-damaged-power-05": [
+        6,
+        812,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-damaged-power-06": [
+        287,
+        812,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-critical-power-01": [
+        568,
+        812,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-critical-power-02": [
+        849,
+        812,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-critical-power-03": [
+        1130,
+        812,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-critical-power-04": [
+        6,
+        1215,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-critical-power-05": [
+        287,
+        1215,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-critical-power-06": [
+        568,
+        1215,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-attack-01": [
+        849,
+        1215,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-attack-02": [
+        1130,
+        1215,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-attack-03": [
+        6,
+        1618,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-attack-04": [
+        287,
+        1618,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-attack-05": [
+        568,
+        1618,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-attack-06": [
+        849,
+        1618,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-attack-07": [
+        1130,
+        1618,
+        275,
+        397
+      ],
+      "structural-main-battle-tank-attack-08": [
+        6,
+        2021,
+        275,
+        397
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "main-battle-tank-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-01",
+          "aim": "player",
+          "speed": 198
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-01",
+          "aim": "player",
+          "speed": 198
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-01",
+          "aim": "player",
+          "speed": 198
+        }
+      ]
+    },
+    {
+      "id": "main-battle-tank-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 56,
+          "speed": 154
+        }
+      ]
+    },
+    {
+      "id": "main-battle-tank-missile-star",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-03",
+          "count": 6,
+          "spread_degrees": 92,
+          "speed": 142
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl4-elite-missile-star",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,319 @@
+{
+  "asset": "ember-interceptor",
+  "display_name": "Ember Interceptor",
+  "stage": 6,
+  "category": "scout",
+  "tier": "standard",
+  "source_file": "nca_16.png",
+  "source_notes": "",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision_box_px": [
+    88,
+    71,
+    79,
+    113
+  ],
+  "weapon_anchors_px": {
+    "center": [
+      128,
+      165
+    ]
+  },
+  "vfx": {
+    "muzzle": "heavy-blacksteel-rail-muzzle",
+    "projectile": "heavy-blacksteel-penetrator",
+    "secondary": "heavy-heavy-cannon-shell",
+    "impact": "heavy-emp-shock-ring"
+  },
+  "animations": {
+    "power": {
+      "frames_per_state": 6,
+      "fps": 10,
+      "loop": true
+    },
+    "attack": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false,
+      "spawn_event_frame": 4
+    },
+    "hit": {
+      "frames": 4,
+      "fps": 15,
+      "loop": false
+    },
+    "death": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "states": [
+    "intact"
+  ],
+  "attack_patterns": [
+    {
+      "id": "ember-interceptor-aimed-burst",
+      "cooldown_ms": 1450,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "center",
+          "projectile": "heavy-blacksteel-penetrator",
+          "aim": "player",
+          "speed": 210
+        },
+        {
+          "time_ms": 110,
+          "anchor": "center",
+          "projectile": "heavy-blacksteel-penetrator",
+          "aim": "player",
+          "speed": 210
+        },
+        {
+          "time_ms": 220,
+          "anchor": "center",
+          "projectile": "heavy-blacksteel-penetrator",
+          "aim": "player",
+          "speed": 210
+        }
+      ]
+    },
+    {
+      "id": "ember-interceptor-bracket-fan",
+      "cooldown_ms": 2350,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "center",
+          "projectile": "heavy-blacksteel-penetrator",
+          "count": 5,
+          "spread_degrees": 54,
+          "speed": 168
+        }
+      ]
+    },
+    {
+      "id": "ember-interceptor-dash-burst",
+      "cooldown_ms": 3400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "center",
+          "projectile": "heavy-heavy-cannon-shell",
+          "count": 4,
+          "spread_degrees": 104,
+          "speed": 160
+        },
+        {
+          "time_ms": 340,
+          "anchor": "center",
+          "projectile": "heavy-blacksteel-penetrator",
+          "count": 2,
+          "aim": "player",
+          "speed": 226
+        }
+      ]
+    },
+    {
+      "id": "ember-interceptor-critical-rage",
+      "cooldown_ms": 4700,
+      "health_gate": 0.35,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "center",
+          "projectile": "heavy-heavy-cannon-shell",
+          "count": 12,
+          "spread_degrees": 360,
+          "speed": 150
+        },
+        {
+          "time_ms": 520,
+          "anchor": "center",
+          "projectile": "heavy-blacksteel-penetrator",
+          "count": 5,
+          "spread_degrees": 38,
+          "aim": "player",
+          "speed": 233
+        }
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "ember-interceptor-combat-atlas.png",
+    "rects": {
+      "ember-interceptor-intact": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "ember-interceptor-intact-power-01": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "ember-interceptor-intact-power-02": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "ember-interceptor-intact-power-03": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "ember-interceptor-intact-power-04": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "ember-interceptor-intact-power-05": [
+        1316,
+        6,
+        256,
+        256
+      ],
+      "ember-interceptor-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "ember-interceptor-attack-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "ember-interceptor-attack-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "ember-interceptor-attack-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "ember-interceptor-attack-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "ember-interceptor-attack-05": [
+        1316,
+        268,
+        256,
+        256
+      ],
+      "ember-interceptor-attack-06": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "ember-interceptor-attack-07": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "ember-interceptor-attack-08": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "ember-interceptor-hit-01": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "ember-interceptor-hit-02": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "ember-interceptor-hit-03": [
+        1316,
+        530,
+        256,
+        256
+      ],
+      "ember-interceptor-hit-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "ember-interceptor-death-01": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "ember-interceptor-death-02": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "ember-interceptor-death-03": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "ember-interceptor-death-04": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "ember-interceptor-death-05": [
+        1316,
+        792,
+        256,
+        256
+      ],
+      "ember-interceptor-death-06": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "ember-interceptor-death-07": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "ember-interceptor-death-08": [
+        530,
+        1054,
+        256,
+        256
+      ]
+    }
+  },
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

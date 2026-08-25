@@ -1,0 +1,106 @@
+{
+  "asset": "lvl9-enemy-projectile-02-warp-bolt",
+  "stage": 9,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl9-enemy-projectile-02-warp-bolt-travel-01",
+      "lvl9-enemy-projectile-02-warp-bolt-travel-02",
+      "lvl9-enemy-projectile-02-warp-bolt-travel-03",
+      "lvl9-enemy-projectile-02-warp-bolt-travel-04",
+      "lvl9-enemy-projectile-02-warp-bolt-travel-05",
+      "lvl9-enemy-projectile-02-warp-bolt-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl9-enemy-projectile-02-warp-bolt-impact-01",
+      "lvl9-enemy-projectile-02-warp-bolt-impact-02",
+      "lvl9-enemy-projectile-02-warp-bolt-impact-03",
+      "lvl9-enemy-projectile-02-warp-bolt-impact-04",
+      "lvl9-enemy-projectile-02-warp-bolt-impact-05",
+      "lvl9-enemy-projectile-02-warp-bolt-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl9-enemy-projectile-02-warp-bolt-combat-atlas.png",
+    "rects": {
+      "lvl9-enemy-projectile-02-warp-bolt-travel-01": [
+        66,
+        43,
+        39,
+        86
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-travel-02": [
+        232,
+        43,
+        39,
+        86
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-travel-03": [
+        398,
+        43,
+        39,
+        86
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-travel-04": [
+        564,
+        43,
+        39,
+        86
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-travel-05": [
+        730,
+        43,
+        39,
+        86
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-travel-06": [
+        896,
+        43,
+        39,
+        86
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-02-warp-bolt-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

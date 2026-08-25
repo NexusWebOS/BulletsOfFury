@@ -1,0 +1,305 @@
+{
+  "asset": "structural-space-interceptor",
+  "project": "Bullets of Fury I",
+  "stage": 5,
+  "theme": "Orbital Chaos",
+  "source_set": "structural",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    285,
+    326
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      127,
+      246
+    ],
+    "right_weapon": [
+      205,
+      246
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-space-interceptor-intact-power-01",
+          "structural-space-interceptor-intact-power-02",
+          "structural-space-interceptor-intact-power-03",
+          "structural-space-interceptor-intact-power-04",
+          "structural-space-interceptor-intact-power-05",
+          "structural-space-interceptor-intact-power-06"
+        ],
+        "damaged": [
+          "structural-space-interceptor-damaged-power-01",
+          "structural-space-interceptor-damaged-power-02",
+          "structural-space-interceptor-damaged-power-03",
+          "structural-space-interceptor-damaged-power-04",
+          "structural-space-interceptor-damaged-power-05",
+          "structural-space-interceptor-damaged-power-06"
+        ],
+        "critical": [
+          "structural-space-interceptor-critical-power-01",
+          "structural-space-interceptor-critical-power-02",
+          "structural-space-interceptor-critical-power-03",
+          "structural-space-interceptor-critical-power-04",
+          "structural-space-interceptor-critical-power-05",
+          "structural-space-interceptor-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-space-interceptor-attack-01",
+        "structural-space-interceptor-attack-02",
+        "structural-space-interceptor-attack-03",
+        "structural-space-interceptor-attack-04",
+        "structural-space-interceptor-attack-05",
+        "structural-space-interceptor-attack-06",
+        "structural-space-interceptor-attack-07",
+        "structural-space-interceptor-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-space-interceptor-combat-atlas.png",
+    "size": [
+      1461,
+      1998
+    ],
+    "rects": {
+      "structural-space-interceptor-intact-power-01": [
+        6,
+        6,
+        285,
+        326
+      ],
+      "structural-space-interceptor-intact-power-02": [
+        297,
+        6,
+        285,
+        326
+      ],
+      "structural-space-interceptor-intact-power-03": [
+        588,
+        6,
+        285,
+        326
+      ],
+      "structural-space-interceptor-intact-power-04": [
+        879,
+        6,
+        285,
+        326
+      ],
+      "structural-space-interceptor-intact-power-05": [
+        1170,
+        6,
+        285,
+        326
+      ],
+      "structural-space-interceptor-intact-power-06": [
+        6,
+        338,
+        285,
+        326
+      ],
+      "structural-space-interceptor-damaged-power-01": [
+        297,
+        338,
+        285,
+        326
+      ],
+      "structural-space-interceptor-damaged-power-02": [
+        588,
+        338,
+        285,
+        326
+      ],
+      "structural-space-interceptor-damaged-power-03": [
+        879,
+        338,
+        285,
+        326
+      ],
+      "structural-space-interceptor-damaged-power-04": [
+        1170,
+        338,
+        285,
+        326
+      ],
+      "structural-space-interceptor-damaged-power-05": [
+        6,
+        670,
+        285,
+        326
+      ],
+      "structural-space-interceptor-damaged-power-06": [
+        297,
+        670,
+        285,
+        326
+      ],
+      "structural-space-interceptor-critical-power-01": [
+        588,
+        670,
+        285,
+        326
+      ],
+      "structural-space-interceptor-critical-power-02": [
+        879,
+        670,
+        285,
+        326
+      ],
+      "structural-space-interceptor-critical-power-03": [
+        1170,
+        670,
+        285,
+        326
+      ],
+      "structural-space-interceptor-critical-power-04": [
+        6,
+        1002,
+        285,
+        326
+      ],
+      "structural-space-interceptor-critical-power-05": [
+        297,
+        1002,
+        285,
+        326
+      ],
+      "structural-space-interceptor-critical-power-06": [
+        588,
+        1002,
+        285,
+        326
+      ],
+      "structural-space-interceptor-attack-01": [
+        879,
+        1002,
+        285,
+        326
+      ],
+      "structural-space-interceptor-attack-02": [
+        1170,
+        1002,
+        285,
+        326
+      ],
+      "structural-space-interceptor-attack-03": [
+        6,
+        1334,
+        285,
+        326
+      ],
+      "structural-space-interceptor-attack-04": [
+        297,
+        1334,
+        285,
+        326
+      ],
+      "structural-space-interceptor-attack-05": [
+        588,
+        1334,
+        285,
+        326
+      ],
+      "structural-space-interceptor-attack-06": [
+        879,
+        1334,
+        285,
+        326
+      ],
+      "structural-space-interceptor-attack-07": [
+        1170,
+        1334,
+        285,
+        326
+      ],
+      "structural-space-interceptor-attack-08": [
+        6,
+        1666,
+        285,
+        326
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "space-interceptor-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        }
+      ]
+    },
+    {
+      "id": "space-interceptor-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 58,
+          "speed": 160
+        }
+      ]
+    },
+    {
+      "id": "space-interceptor-fracture-halo",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-06",
+          "count": 6,
+          "spread_degrees": 92,
+          "speed": 147
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-elite-fracture-halo",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

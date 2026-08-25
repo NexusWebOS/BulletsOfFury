@@ -1,0 +1,106 @@
+{
+  "asset": "lvl4-enemy-projectile-03-small-rocket",
+  "stage": 4,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl4-enemy-projectile-03-small-rocket-travel-01",
+      "lvl4-enemy-projectile-03-small-rocket-travel-02",
+      "lvl4-enemy-projectile-03-small-rocket-travel-03",
+      "lvl4-enemy-projectile-03-small-rocket-travel-04",
+      "lvl4-enemy-projectile-03-small-rocket-travel-05",
+      "lvl4-enemy-projectile-03-small-rocket-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl4-enemy-projectile-03-small-rocket-impact-01",
+      "lvl4-enemy-projectile-03-small-rocket-impact-02",
+      "lvl4-enemy-projectile-03-small-rocket-impact-03",
+      "lvl4-enemy-projectile-03-small-rocket-impact-04",
+      "lvl4-enemy-projectile-03-small-rocket-impact-05",
+      "lvl4-enemy-projectile-03-small-rocket-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl4-enemy-projectile-03-small-rocket-combat-atlas.png",
+    "rects": {
+      "lvl4-enemy-projectile-03-small-rocket-travel-01": [
+        66,
+        44,
+        39,
+        84
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-travel-02": [
+        232,
+        44,
+        39,
+        84
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-travel-03": [
+        398,
+        44,
+        39,
+        84
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-travel-04": [
+        564,
+        44,
+        39,
+        84
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-travel-05": [
+        730,
+        44,
+        39,
+        84
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-travel-06": [
+        896,
+        44,
+        39,
+        84
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-03-small-rocket-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

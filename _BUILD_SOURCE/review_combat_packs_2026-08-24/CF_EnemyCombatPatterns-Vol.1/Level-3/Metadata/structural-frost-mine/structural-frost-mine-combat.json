@@ -1,0 +1,282 @@
+{
+  "asset": "structural-frost-mine",
+  "project": "Bullets of Fury I",
+  "stage": 3,
+  "theme": "Frozen Stronghold",
+  "source_set": "structural",
+  "category": "hazard",
+  "weapon_profile": "radial",
+  "canvas": [
+    259,
+    219
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "core": [
+      143,
+      109
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-frost-mine-intact-power-01",
+          "structural-frost-mine-intact-power-02",
+          "structural-frost-mine-intact-power-03",
+          "structural-frost-mine-intact-power-04",
+          "structural-frost-mine-intact-power-05",
+          "structural-frost-mine-intact-power-06"
+        ],
+        "damaged": [
+          "structural-frost-mine-damaged-power-01",
+          "structural-frost-mine-damaged-power-02",
+          "structural-frost-mine-damaged-power-03",
+          "structural-frost-mine-damaged-power-04",
+          "structural-frost-mine-damaged-power-05",
+          "structural-frost-mine-damaged-power-06"
+        ],
+        "critical": [
+          "structural-frost-mine-critical-power-01",
+          "structural-frost-mine-critical-power-02",
+          "structural-frost-mine-critical-power-03",
+          "structural-frost-mine-critical-power-04",
+          "structural-frost-mine-critical-power-05",
+          "structural-frost-mine-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-frost-mine-attack-01",
+        "structural-frost-mine-attack-02",
+        "structural-frost-mine-attack-03",
+        "structural-frost-mine-attack-04",
+        "structural-frost-mine-attack-05",
+        "structural-frost-mine-attack-06",
+        "structural-frost-mine-attack-07",
+        "structural-frost-mine-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-frost-mine-combat-atlas.png",
+    "size": [
+      1331,
+      1356
+    ],
+    "rects": {
+      "structural-frost-mine-intact-power-01": [
+        6,
+        6,
+        259,
+        219
+      ],
+      "structural-frost-mine-intact-power-02": [
+        271,
+        6,
+        259,
+        219
+      ],
+      "structural-frost-mine-intact-power-03": [
+        536,
+        6,
+        259,
+        219
+      ],
+      "structural-frost-mine-intact-power-04": [
+        801,
+        6,
+        259,
+        219
+      ],
+      "structural-frost-mine-intact-power-05": [
+        1066,
+        6,
+        259,
+        219
+      ],
+      "structural-frost-mine-intact-power-06": [
+        6,
+        231,
+        259,
+        219
+      ],
+      "structural-frost-mine-damaged-power-01": [
+        271,
+        231,
+        259,
+        219
+      ],
+      "structural-frost-mine-damaged-power-02": [
+        536,
+        231,
+        259,
+        219
+      ],
+      "structural-frost-mine-damaged-power-03": [
+        801,
+        231,
+        259,
+        219
+      ],
+      "structural-frost-mine-damaged-power-04": [
+        1066,
+        231,
+        259,
+        219
+      ],
+      "structural-frost-mine-damaged-power-05": [
+        6,
+        456,
+        259,
+        219
+      ],
+      "structural-frost-mine-damaged-power-06": [
+        271,
+        456,
+        259,
+        219
+      ],
+      "structural-frost-mine-critical-power-01": [
+        536,
+        456,
+        259,
+        219
+      ],
+      "structural-frost-mine-critical-power-02": [
+        801,
+        456,
+        259,
+        219
+      ],
+      "structural-frost-mine-critical-power-03": [
+        1066,
+        456,
+        259,
+        219
+      ],
+      "structural-frost-mine-critical-power-04": [
+        6,
+        681,
+        259,
+        219
+      ],
+      "structural-frost-mine-critical-power-05": [
+        271,
+        681,
+        259,
+        219
+      ],
+      "structural-frost-mine-critical-power-06": [
+        536,
+        681,
+        259,
+        219
+      ],
+      "structural-frost-mine-attack-01": [
+        801,
+        681,
+        259,
+        219
+      ],
+      "structural-frost-mine-attack-02": [
+        1066,
+        681,
+        259,
+        219
+      ],
+      "structural-frost-mine-attack-03": [
+        6,
+        906,
+        259,
+        219
+      ],
+      "structural-frost-mine-attack-04": [
+        271,
+        906,
+        259,
+        219
+      ],
+      "structural-frost-mine-attack-05": [
+        536,
+        906,
+        259,
+        219
+      ],
+      "structural-frost-mine-attack-06": [
+        801,
+        906,
+        259,
+        219
+      ],
+      "structural-frost-mine-attack-07": [
+        1066,
+        906,
+        259,
+        219
+      ],
+      "structural-frost-mine-attack-08": [
+        6,
+        1131,
+        259,
+        219
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "frost-mine-proximity-bloom",
+      "cooldown_ms": 2600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl3-enemy-projectile-02",
+          "count": 8,
+          "spread_degrees": 360,
+          "speed": 92
+        }
+      ]
+    },
+    {
+      "id": "frost-mine-delayed-cross",
+      "cooldown_ms": 3200,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl3-enemy-projectile-05",
+          "count": 4,
+          "spread_degrees": 270,
+          "speed": 118,
+          "delay_ms": 420
+        }
+      ]
+    },
+    {
+      "id": "frost-mine-crystal-guillotine",
+      "cooldown_ms": 4800,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl3-elite-crystal-guillotine",
+          "count": 1,
+          "speed": 42,
+          "burst_on_timeout_ms": 900
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "root": "/workspace/scratch/96963642d6e4/level5_chaos_harrier/release/CF_ChaosHarrierMiniBoss-Lvl5",
+  "summary": {
+    "image_files": 80,
+    "png_files": 67,
+    "gif_files": 13,
+    "images_decoded": 80,
+    "json_files": 16,
+    "jsons_parsed": 16,
+    "asset_groups": 0,
+    "source_sheet_groups": 0,
+    "repairs": 0,
+    "blockers": 0,
+    "warnings": 0
+  },
+  "repairs": [],
+  "blockers": [],
+  "warnings": [],
+  "flagged_images": [],
+  "gate_status": "passed"
+}

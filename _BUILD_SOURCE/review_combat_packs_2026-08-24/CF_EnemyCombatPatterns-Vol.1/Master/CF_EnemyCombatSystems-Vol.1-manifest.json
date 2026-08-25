@@ -1,0 +1,36 @@
+{
+  "pack": "CF_EnemyCombatSystems-Vol.1",
+  "project": "Bullets of Fury I",
+  "regular_enemy_count": 208,
+  "source_sets": {
+    "roster_upgrades_lvl1_8": 104,
+    "structural_variants_lvl2_9": 104
+  },
+  "patterns_per_enemy": 3,
+  "total_enemy_patterns": 624,
+  "stage_packs": [
+    "CF_EnemyCombatSystems-Lvl1.zip",
+    "CF_EnemyCombatSystems-Lvl2.zip",
+    "CF_EnemyCombatSystems-Lvl3.zip",
+    "CF_EnemyCombatSystems-Lvl4.zip",
+    "CF_EnemyCombatSystems-Lvl5.zip",
+    "CF_EnemyCombatSystems-Lvl6.zip",
+    "CF_EnemyCombatSystems-Lvl7.zip",
+    "CF_EnemyCombatSystems-Lvl8.zip",
+    "CF_EnemyCombatSystems-Lvl9.zip"
+  ],
+  "existing_boss_systems_not_duplicated": [
+    "CF_DoomsdayCarrierAttacks-Lvl6.zip",
+    "CF_BonusBosses-Lvl9.zip",
+    "CF_BossAttacks-Lvl9.zip"
+  ],
+  "unassigned_addendum": "Barrage Talon included with provisional Level 4 military VFX because its original stage metadata was not recoverable",
+  "runtime": {
+    "resolution": [
+      640,
+      480
+    ],
+    "alpha": "hard RGBA",
+    "facing": "down-screen"
+  }
+}

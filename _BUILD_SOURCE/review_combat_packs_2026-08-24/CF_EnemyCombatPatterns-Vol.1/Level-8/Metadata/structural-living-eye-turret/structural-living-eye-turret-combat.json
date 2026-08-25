@@ -1,0 +1,301 @@
+{
+  "asset": "structural-living-eye-turret",
+  "project": "Bullets of Fury I",
+  "stage": 8,
+  "theme": "Furious Death",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    328,
+    345
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      163,
+      284
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-living-eye-turret-intact-power-01",
+          "structural-living-eye-turret-intact-power-02",
+          "structural-living-eye-turret-intact-power-03",
+          "structural-living-eye-turret-intact-power-04",
+          "structural-living-eye-turret-intact-power-05",
+          "structural-living-eye-turret-intact-power-06"
+        ],
+        "damaged": [
+          "structural-living-eye-turret-damaged-power-01",
+          "structural-living-eye-turret-damaged-power-02",
+          "structural-living-eye-turret-damaged-power-03",
+          "structural-living-eye-turret-damaged-power-04",
+          "structural-living-eye-turret-damaged-power-05",
+          "structural-living-eye-turret-damaged-power-06"
+        ],
+        "critical": [
+          "structural-living-eye-turret-critical-power-01",
+          "structural-living-eye-turret-critical-power-02",
+          "structural-living-eye-turret-critical-power-03",
+          "structural-living-eye-turret-critical-power-04",
+          "structural-living-eye-turret-critical-power-05",
+          "structural-living-eye-turret-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-living-eye-turret-attack-01",
+        "structural-living-eye-turret-attack-02",
+        "structural-living-eye-turret-attack-03",
+        "structural-living-eye-turret-attack-04",
+        "structural-living-eye-turret-attack-05",
+        "structural-living-eye-turret-attack-06",
+        "structural-living-eye-turret-attack-07",
+        "structural-living-eye-turret-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-living-eye-turret-combat-atlas.png",
+    "size": [
+      1676,
+      2112
+    ],
+    "rects": {
+      "structural-living-eye-turret-intact-power-01": [
+        6,
+        6,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-intact-power-02": [
+        340,
+        6,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-intact-power-03": [
+        674,
+        6,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-intact-power-04": [
+        1008,
+        6,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-intact-power-05": [
+        1342,
+        6,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-intact-power-06": [
+        6,
+        357,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-damaged-power-01": [
+        340,
+        357,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-damaged-power-02": [
+        674,
+        357,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-damaged-power-03": [
+        1008,
+        357,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-damaged-power-04": [
+        1342,
+        357,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-damaged-power-05": [
+        6,
+        708,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-damaged-power-06": [
+        340,
+        708,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-critical-power-01": [
+        674,
+        708,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-critical-power-02": [
+        1008,
+        708,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-critical-power-03": [
+        1342,
+        708,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-critical-power-04": [
+        6,
+        1059,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-critical-power-05": [
+        340,
+        1059,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-critical-power-06": [
+        674,
+        1059,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-attack-01": [
+        1008,
+        1059,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-attack-02": [
+        1342,
+        1059,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-attack-03": [
+        6,
+        1410,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-attack-04": [
+        340,
+        1410,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-attack-05": [
+        674,
+        1410,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-attack-06": [
+        1008,
+        1410,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-attack-07": [
+        1342,
+        1410,
+        328,
+        345
+      ],
+      "structural-living-eye-turret-attack-08": [
+        6,
+        1761,
+        328,
+        345
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "living-eye-turret-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-01",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-01",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-01",
+          "aim": "player",
+          "speed": 226
+        }
+      ]
+    },
+    {
+      "id": "living-eye-turret-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 64,
+          "speed": 178
+        }
+      ]
+    },
+    {
+      "id": "living-eye-turret-void-razor",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-03",
+          "count": 8,
+          "spread_degrees": 92,
+          "speed": 162
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl8-elite-void-razor",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

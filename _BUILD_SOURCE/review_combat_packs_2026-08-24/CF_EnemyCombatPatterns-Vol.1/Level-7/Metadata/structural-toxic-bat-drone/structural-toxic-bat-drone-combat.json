@@ -1,0 +1,305 @@
+{
+  "asset": "structural-toxic-bat-drone",
+  "project": "Bullets of Fury I",
+  "stage": 7,
+  "theme": "Toxic Sewer",
+  "source_set": "structural",
+  "category": "bio",
+  "weapon_profile": "dual",
+  "canvas": [
+    407,
+    178
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      133,
+      130
+    ],
+    "right_weapon": [
+      275,
+      130
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-toxic-bat-drone-intact-power-01",
+          "structural-toxic-bat-drone-intact-power-02",
+          "structural-toxic-bat-drone-intact-power-03",
+          "structural-toxic-bat-drone-intact-power-04",
+          "structural-toxic-bat-drone-intact-power-05",
+          "structural-toxic-bat-drone-intact-power-06"
+        ],
+        "damaged": [
+          "structural-toxic-bat-drone-damaged-power-01",
+          "structural-toxic-bat-drone-damaged-power-02",
+          "structural-toxic-bat-drone-damaged-power-03",
+          "structural-toxic-bat-drone-damaged-power-04",
+          "structural-toxic-bat-drone-damaged-power-05",
+          "structural-toxic-bat-drone-damaged-power-06"
+        ],
+        "critical": [
+          "structural-toxic-bat-drone-critical-power-01",
+          "structural-toxic-bat-drone-critical-power-02",
+          "structural-toxic-bat-drone-critical-power-03",
+          "structural-toxic-bat-drone-critical-power-04",
+          "structural-toxic-bat-drone-critical-power-05",
+          "structural-toxic-bat-drone-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-toxic-bat-drone-attack-01",
+        "structural-toxic-bat-drone-attack-02",
+        "structural-toxic-bat-drone-attack-03",
+        "structural-toxic-bat-drone-attack-04",
+        "structural-toxic-bat-drone-attack-05",
+        "structural-toxic-bat-drone-attack-06",
+        "structural-toxic-bat-drone-attack-07",
+        "structural-toxic-bat-drone-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-toxic-bat-drone-combat-atlas.png",
+    "size": [
+      2071,
+      1110
+    ],
+    "rects": {
+      "structural-toxic-bat-drone-intact-power-01": [
+        6,
+        6,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-intact-power-02": [
+        419,
+        6,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-intact-power-03": [
+        832,
+        6,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-intact-power-04": [
+        1245,
+        6,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-intact-power-05": [
+        1658,
+        6,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-intact-power-06": [
+        6,
+        190,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-damaged-power-01": [
+        419,
+        190,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-damaged-power-02": [
+        832,
+        190,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-damaged-power-03": [
+        1245,
+        190,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-damaged-power-04": [
+        1658,
+        190,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-damaged-power-05": [
+        6,
+        374,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-damaged-power-06": [
+        419,
+        374,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-critical-power-01": [
+        832,
+        374,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-critical-power-02": [
+        1245,
+        374,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-critical-power-03": [
+        1658,
+        374,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-critical-power-04": [
+        6,
+        558,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-critical-power-05": [
+        419,
+        558,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-critical-power-06": [
+        832,
+        558,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-attack-01": [
+        1245,
+        558,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-attack-02": [
+        1658,
+        558,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-attack-03": [
+        6,
+        742,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-attack-04": [
+        419,
+        742,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-attack-05": [
+        832,
+        742,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-attack-06": [
+        1245,
+        742,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-attack-07": [
+        1658,
+        742,
+        407,
+        178
+      ],
+      "structural-toxic-bat-drone-attack-08": [
+        6,
+        926,
+        407,
+        178
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "toxic-bat-drone-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        }
+      ]
+    },
+    {
+      "id": "toxic-bat-drone-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 62,
+          "speed": 172
+        }
+      ]
+    },
+    {
+      "id": "toxic-bat-drone-spore-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 92,
+          "speed": 157
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-elite-spore-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

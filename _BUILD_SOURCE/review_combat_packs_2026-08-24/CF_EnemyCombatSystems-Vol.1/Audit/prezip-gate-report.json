@@ -1,0 +1,27 @@
+{
+  "root": "/workspace/scratch/6447d4fe2ecb/output/CF_EnemyCombatSystems-Vol.1",
+  "summary": {
+    "image_files": 14,
+    "png_files": 14,
+    "gif_files": 0,
+    "images_decoded": 14,
+    "json_files": 4,
+    "jsons_parsed": 4,
+    "asset_groups": 0,
+    "source_sheet_groups": 0,
+    "repairs": 0,
+    "blockers": 0,
+    "warnings": 0
+  },
+  "repairs": [],
+  "blockers": [],
+  "warnings": [],
+  "flagged_images": [],
+  "zip": {
+    "file": "/workspace/scratch/6447d4fe2ecb/output/CF_EnemyCombatSystems-Vol.1.zip",
+    "bytes": 3771504,
+    "entries": 19,
+    "sha256": "762472d0eea33dc96482c9008926d9ba957e5c0ec1d8672d04c502aac2159567"
+  },
+  "gate_status": "passed-and-zipped"
+}

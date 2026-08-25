@@ -1,0 +1,305 @@
+{
+  "asset": "roster-heavy-interceptor",
+  "project": "Bullets of Fury I",
+  "stage": 5,
+  "theme": "Orbital Chaos",
+  "source_set": "roster",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      85,
+      184
+    ],
+    "right_weapon": [
+      171,
+      184
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "roster-heavy-interceptor-intact-power-01",
+          "roster-heavy-interceptor-intact-power-02",
+          "roster-heavy-interceptor-intact-power-03",
+          "roster-heavy-interceptor-intact-power-04",
+          "roster-heavy-interceptor-intact-power-05",
+          "roster-heavy-interceptor-intact-power-06"
+        ],
+        "damaged": [
+          "roster-heavy-interceptor-damaged-power-01",
+          "roster-heavy-interceptor-damaged-power-02",
+          "roster-heavy-interceptor-damaged-power-03",
+          "roster-heavy-interceptor-damaged-power-04",
+          "roster-heavy-interceptor-damaged-power-05",
+          "roster-heavy-interceptor-damaged-power-06"
+        ],
+        "critical": [
+          "roster-heavy-interceptor-critical-power-01",
+          "roster-heavy-interceptor-critical-power-02",
+          "roster-heavy-interceptor-critical-power-03",
+          "roster-heavy-interceptor-critical-power-04",
+          "roster-heavy-interceptor-critical-power-05",
+          "roster-heavy-interceptor-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "roster-heavy-interceptor-attack-01",
+        "roster-heavy-interceptor-attack-02",
+        "roster-heavy-interceptor-attack-03",
+        "roster-heavy-interceptor-attack-04",
+        "roster-heavy-interceptor-attack-05",
+        "roster-heavy-interceptor-attack-06",
+        "roster-heavy-interceptor-attack-07",
+        "roster-heavy-interceptor-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "roster-heavy-interceptor-combat-atlas.png",
+    "size": [
+      1316,
+      1578
+    ],
+    "rects": {
+      "roster-heavy-interceptor-intact-power-01": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-intact-power-02": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-intact-power-03": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-intact-power-04": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-intact-power-05": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-damaged-power-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-damaged-power-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-damaged-power-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-damaged-power-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-damaged-power-05": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-damaged-power-06": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-critical-power-01": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-critical-power-02": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-critical-power-03": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-critical-power-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-critical-power-05": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-critical-power-06": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-attack-01": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-attack-02": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-attack-03": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-attack-04": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-attack-05": [
+        530,
+        1054,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-attack-06": [
+        792,
+        1054,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-attack-07": [
+        1054,
+        1054,
+        256,
+        256
+      ],
+      "roster-heavy-interceptor-attack-08": [
+        6,
+        1316,
+        256,
+        256
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "heavy-interceptor-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        }
+      ]
+    },
+    {
+      "id": "heavy-interceptor-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 58,
+          "speed": 160
+        }
+      ]
+    },
+    {
+      "id": "heavy-interceptor-fracture-halo",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-06",
+          "count": 6,
+          "spread_degrees": 92,
+          "speed": 147
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-elite-fracture-halo",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

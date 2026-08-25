@@ -1,0 +1,301 @@
+{
+  "asset": "structural-toxic-mini-tank",
+  "project": "Bullets of Fury I",
+  "stage": 7,
+  "theme": "Toxic Sewer",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    251,
+    240
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      118,
+      195
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-toxic-mini-tank-intact-power-01",
+          "structural-toxic-mini-tank-intact-power-02",
+          "structural-toxic-mini-tank-intact-power-03",
+          "structural-toxic-mini-tank-intact-power-04",
+          "structural-toxic-mini-tank-intact-power-05",
+          "structural-toxic-mini-tank-intact-power-06"
+        ],
+        "damaged": [
+          "structural-toxic-mini-tank-damaged-power-01",
+          "structural-toxic-mini-tank-damaged-power-02",
+          "structural-toxic-mini-tank-damaged-power-03",
+          "structural-toxic-mini-tank-damaged-power-04",
+          "structural-toxic-mini-tank-damaged-power-05",
+          "structural-toxic-mini-tank-damaged-power-06"
+        ],
+        "critical": [
+          "structural-toxic-mini-tank-critical-power-01",
+          "structural-toxic-mini-tank-critical-power-02",
+          "structural-toxic-mini-tank-critical-power-03",
+          "structural-toxic-mini-tank-critical-power-04",
+          "structural-toxic-mini-tank-critical-power-05",
+          "structural-toxic-mini-tank-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-toxic-mini-tank-attack-01",
+        "structural-toxic-mini-tank-attack-02",
+        "structural-toxic-mini-tank-attack-03",
+        "structural-toxic-mini-tank-attack-04",
+        "structural-toxic-mini-tank-attack-05",
+        "structural-toxic-mini-tank-attack-06",
+        "structural-toxic-mini-tank-attack-07",
+        "structural-toxic-mini-tank-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-toxic-mini-tank-combat-atlas.png",
+    "size": [
+      1291,
+      1482
+    ],
+    "rects": {
+      "structural-toxic-mini-tank-intact-power-01": [
+        6,
+        6,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-intact-power-02": [
+        263,
+        6,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-intact-power-03": [
+        520,
+        6,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-intact-power-04": [
+        777,
+        6,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-intact-power-05": [
+        1034,
+        6,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-intact-power-06": [
+        6,
+        252,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-damaged-power-01": [
+        263,
+        252,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-damaged-power-02": [
+        520,
+        252,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-damaged-power-03": [
+        777,
+        252,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-damaged-power-04": [
+        1034,
+        252,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-damaged-power-05": [
+        6,
+        498,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-damaged-power-06": [
+        263,
+        498,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-critical-power-01": [
+        520,
+        498,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-critical-power-02": [
+        777,
+        498,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-critical-power-03": [
+        1034,
+        498,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-critical-power-04": [
+        6,
+        744,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-critical-power-05": [
+        263,
+        744,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-critical-power-06": [
+        520,
+        744,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-attack-01": [
+        777,
+        744,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-attack-02": [
+        1034,
+        744,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-attack-03": [
+        6,
+        990,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-attack-04": [
+        263,
+        990,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-attack-05": [
+        520,
+        990,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-attack-06": [
+        777,
+        990,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-attack-07": [
+        1034,
+        990,
+        251,
+        240
+      ],
+      "structural-toxic-mini-tank-attack-08": [
+        6,
+        1236,
+        251,
+        240
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "toxic-mini-tank-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "aim": "player",
+          "speed": 219
+        }
+      ]
+    },
+    {
+      "id": "toxic-mini-tank-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 62,
+          "speed": 172
+        }
+      ]
+    },
+    {
+      "id": "toxic-mini-tank-spore-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl7-enemy-projectile-03",
+          "count": 7,
+          "spread_degrees": 92,
+          "speed": 157
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl7-elite-spore-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

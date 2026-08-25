@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-crescent-arc-muzzle",
+  "kind": "muzzle",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-crescent-arc-muzzle-01",
+    "cosmic-crescent-arc-muzzle-02",
+    "cosmic-crescent-arc-muzzle-03",
+    "cosmic-crescent-arc-muzzle-04",
+    "cosmic-crescent-arc-muzzle-05",
+    "cosmic-crescent-arc-muzzle-06"
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-crescent-arc-muzzle-atlas.png",
+    "rects": {
+      "cosmic-crescent-arc-muzzle-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-crescent-arc-muzzle-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-crescent-arc-muzzle-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-crescent-arc-muzzle-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-crescent-arc-muzzle-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-crescent-arc-muzzle-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

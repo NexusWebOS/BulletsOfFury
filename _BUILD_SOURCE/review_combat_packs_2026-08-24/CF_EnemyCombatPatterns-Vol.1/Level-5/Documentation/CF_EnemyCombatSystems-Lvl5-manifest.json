@@ -1,0 +1,48 @@
+{
+  "pack": "CF_EnemyCombatSystems-Lvl5",
+  "stage": 5,
+  "theme": "Orbital Chaos",
+  "enemy_count": 25,
+  "enemy_ids": [
+    "roster-beam-frigate",
+    "roster-comet-rammer",
+    "roster-debris-skimmer",
+    "roster-gravity-orb",
+    "roster-heavy-interceptor",
+    "roster-mine-layer",
+    "roster-missile-satellite",
+    "roster-portal-mine",
+    "roster-repair-drone",
+    "roster-salvage-tug",
+    "roster-shield-leech",
+    "roster-twin-station-miniboss",
+    "structural-antimatter-mine",
+    "structural-asteroid-drone",
+    "structural-attack-satellite",
+    "structural-chaos-bomber",
+    "structural-orbital-skimmer",
+    "structural-orbital-turret-platform",
+    "structural-plasma-crawler-artillery",
+    "structural-reactor-pod",
+    "structural-satellite-mini-tank",
+    "structural-space-interceptor",
+    "structural-space-rover-tank",
+    "structural-star-gunship",
+    "structural-zero-g-siege-carrier"
+  ],
+  "patterns": 75,
+  "vfx": {
+    "muzzle_frames": 4,
+    "projectile_families": [
+      "lvl5-enemy-projectile-01-fracture-bolt",
+      "lvl5-enemy-projectile-02-split-orb",
+      "lvl5-enemy-projectile-03-prism-shot",
+      "lvl5-enemy-projectile-04-null-laser",
+      "lvl5-enemy-projectile-05-asymmetric-missile",
+      "lvl5-enemy-projectile-06-paired-chaos"
+    ]
+  },
+  "elite_signature": "fracture-halo",
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

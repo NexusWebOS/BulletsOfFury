@@ -1,0 +1,301 @@
+{
+  "asset": "structural-urban-mini-tank",
+  "project": "Bullets of Fury I",
+  "stage": 4,
+  "theme": "Blacksite Air War",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    244,
+    278
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      123,
+      230
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-urban-mini-tank-intact-power-01",
+          "structural-urban-mini-tank-intact-power-02",
+          "structural-urban-mini-tank-intact-power-03",
+          "structural-urban-mini-tank-intact-power-04",
+          "structural-urban-mini-tank-intact-power-05",
+          "structural-urban-mini-tank-intact-power-06"
+        ],
+        "damaged": [
+          "structural-urban-mini-tank-damaged-power-01",
+          "structural-urban-mini-tank-damaged-power-02",
+          "structural-urban-mini-tank-damaged-power-03",
+          "structural-urban-mini-tank-damaged-power-04",
+          "structural-urban-mini-tank-damaged-power-05",
+          "structural-urban-mini-tank-damaged-power-06"
+        ],
+        "critical": [
+          "structural-urban-mini-tank-critical-power-01",
+          "structural-urban-mini-tank-critical-power-02",
+          "structural-urban-mini-tank-critical-power-03",
+          "structural-urban-mini-tank-critical-power-04",
+          "structural-urban-mini-tank-critical-power-05",
+          "structural-urban-mini-tank-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-urban-mini-tank-attack-01",
+        "structural-urban-mini-tank-attack-02",
+        "structural-urban-mini-tank-attack-03",
+        "structural-urban-mini-tank-attack-04",
+        "structural-urban-mini-tank-attack-05",
+        "structural-urban-mini-tank-attack-06",
+        "structural-urban-mini-tank-attack-07",
+        "structural-urban-mini-tank-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-urban-mini-tank-combat-atlas.png",
+    "size": [
+      1256,
+      1710
+    ],
+    "rects": {
+      "structural-urban-mini-tank-intact-power-01": [
+        6,
+        6,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-intact-power-02": [
+        256,
+        6,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-intact-power-03": [
+        506,
+        6,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-intact-power-04": [
+        756,
+        6,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-intact-power-05": [
+        1006,
+        6,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-intact-power-06": [
+        6,
+        290,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-damaged-power-01": [
+        256,
+        290,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-damaged-power-02": [
+        506,
+        290,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-damaged-power-03": [
+        756,
+        290,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-damaged-power-04": [
+        1006,
+        290,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-damaged-power-05": [
+        6,
+        574,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-damaged-power-06": [
+        256,
+        574,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-critical-power-01": [
+        506,
+        574,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-critical-power-02": [
+        756,
+        574,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-critical-power-03": [
+        1006,
+        574,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-critical-power-04": [
+        6,
+        858,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-critical-power-05": [
+        256,
+        858,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-critical-power-06": [
+        506,
+        858,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-attack-01": [
+        756,
+        858,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-attack-02": [
+        1006,
+        858,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-attack-03": [
+        6,
+        1142,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-attack-04": [
+        256,
+        1142,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-attack-05": [
+        506,
+        1142,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-attack-06": [
+        756,
+        1142,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-attack-07": [
+        1006,
+        1142,
+        244,
+        278
+      ],
+      "structural-urban-mini-tank-attack-08": [
+        6,
+        1426,
+        244,
+        278
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "urban-mini-tank-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-01",
+          "aim": "player",
+          "speed": 198
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-01",
+          "aim": "player",
+          "speed": 198
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-01",
+          "aim": "player",
+          "speed": 198
+        }
+      ]
+    },
+    {
+      "id": "urban-mini-tank-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 56,
+          "speed": 154
+        }
+      ]
+    },
+    {
+      "id": "urban-mini-tank-missile-star",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl4-enemy-projectile-03",
+          "count": 6,
+          "spread_degrees": 92,
+          "speed": 142
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl4-elite-missile-star",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

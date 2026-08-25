@@ -1,0 +1,327 @@
+{
+  "asset": "magmaward-critical",
+  "display_name": "Magmaward — Critical",
+  "stage": 2,
+  "category": "fortress",
+  "tier": "boss",
+  "source_file": "nsb_magmaward_critical.png",
+  "source_notes": "critical-state master supplied",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision_box_px": [
+    37,
+    31,
+    181,
+    194
+  ],
+  "weapon_anchors_px": {
+    "left": [
+      75,
+      193
+    ],
+    "right": [
+      180,
+      193
+    ],
+    "center": [
+      128,
+      202
+    ]
+  },
+  "vfx": {
+    "muzzle": "heavy-rotary-cannon-muzzle",
+    "projectile": "heavy-incendiary-plasma",
+    "secondary": "heavy-inferno-micro-missile",
+    "impact": "heavy-inferno-impact"
+  },
+  "animations": {
+    "power": {
+      "frames_per_state": 6,
+      "fps": 10,
+      "loop": true
+    },
+    "attack": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false,
+      "spawn_event_frame": 4
+    },
+    "hit": {
+      "frames": 4,
+      "fps": 15,
+      "loop": false
+    },
+    "death": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "states": [
+    "critical"
+  ],
+  "attack_patterns": [
+    {
+      "id": "magmaward-critical-aimed-burst",
+      "cooldown_ms": 1450,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-incendiary-plasma",
+          "aim": "player",
+          "speed": 178
+        },
+        {
+          "time_ms": 110,
+          "anchor": "right",
+          "projectile": "heavy-incendiary-plasma",
+          "aim": "player",
+          "speed": 178
+        },
+        {
+          "time_ms": 220,
+          "anchor": "center",
+          "projectile": "heavy-incendiary-plasma",
+          "aim": "player",
+          "speed": 178
+        }
+      ]
+    },
+    {
+      "id": "magmaward-critical-bracket-fan",
+      "cooldown_ms": 2350,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-incendiary-plasma",
+          "count": 7,
+          "spread_degrees": 54,
+          "speed": 136
+        }
+      ]
+    },
+    {
+      "id": "magmaward-critical-section-barrage",
+      "cooldown_ms": 3400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-inferno-micro-missile",
+          "count": 8,
+          "spread_degrees": 104,
+          "speed": 128
+        },
+        {
+          "time_ms": 340,
+          "anchor": "left",
+          "projectile": "heavy-incendiary-plasma",
+          "count": 2,
+          "aim": "player",
+          "speed": 194
+        }
+      ]
+    },
+    {
+      "id": "magmaward-critical-critical-rage",
+      "cooldown_ms": 4700,
+      "health_gate": 0.35,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-inferno-micro-missile",
+          "count": 18,
+          "spread_degrees": 360,
+          "speed": 118
+        },
+        {
+          "time_ms": 520,
+          "anchor": "left",
+          "projectile": "heavy-incendiary-plasma",
+          "count": 5,
+          "spread_degrees": 38,
+          "aim": "player",
+          "speed": 201
+        }
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "magmaward-critical-combat-atlas.png",
+    "rects": {
+      "magmaward-critical-critical": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "magmaward-critical-critical-power-01": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "magmaward-critical-critical-power-02": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "magmaward-critical-critical-power-03": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "magmaward-critical-critical-power-04": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "magmaward-critical-critical-power-05": [
+        1316,
+        6,
+        256,
+        256
+      ],
+      "magmaward-critical-critical-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "magmaward-critical-attack-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "magmaward-critical-attack-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "magmaward-critical-attack-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "magmaward-critical-attack-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "magmaward-critical-attack-05": [
+        1316,
+        268,
+        256,
+        256
+      ],
+      "magmaward-critical-attack-06": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "magmaward-critical-attack-07": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "magmaward-critical-attack-08": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "magmaward-critical-hit-01": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "magmaward-critical-hit-02": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "magmaward-critical-hit-03": [
+        1316,
+        530,
+        256,
+        256
+      ],
+      "magmaward-critical-hit-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "magmaward-critical-death-01": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "magmaward-critical-death-02": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "magmaward-critical-death-03": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "magmaward-critical-death-04": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "magmaward-critical-death-05": [
+        1316,
+        792,
+        256,
+        256
+      ],
+      "magmaward-critical-death-06": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "magmaward-critical-death-07": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "magmaward-critical-death-08": [
+        530,
+        1054,
+        256,
+        256
+      ]
+    }
+  },
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

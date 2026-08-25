@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-phase-split-bolt",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-phase-split-bolt-01",
+    "cosmic-phase-split-bolt-02",
+    "cosmic-phase-split-bolt-03",
+    "cosmic-phase-split-bolt-04",
+    "cosmic-phase-split-bolt-05",
+    "cosmic-phase-split-bolt-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-phase-split-bolt-atlas.png",
+    "rects": {
+      "cosmic-phase-split-bolt-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-phase-split-bolt-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-phase-split-bolt-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-phase-split-bolt-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-phase-split-bolt-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-phase-split-bolt-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

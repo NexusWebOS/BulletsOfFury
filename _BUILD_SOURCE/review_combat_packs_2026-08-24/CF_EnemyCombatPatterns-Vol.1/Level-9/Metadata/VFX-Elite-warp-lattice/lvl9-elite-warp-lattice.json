@@ -1,0 +1,88 @@
+{
+  "asset": "lvl9-elite-warp-lattice",
+  "stage": 9,
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision": "spawn controller; use projectile children for discrete collision",
+  "atlas": {
+    "file": "lvl9-elite-warp-lattice-atlas.png",
+    "rects": {
+      "lvl9-elite-warp-lattice-01": [
+        6,
+        6,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-02": [
+        382,
+        6,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-03": [
+        758,
+        6,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-04": [
+        1134,
+        6,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-05": [
+        6,
+        382,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-06": [
+        382,
+        382,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-07": [
+        758,
+        382,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-08": [
+        1134,
+        382,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-09": [
+        6,
+        758,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-10": [
+        382,
+        758,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-11": [
+        758,
+        758,
+        370,
+        370
+      ],
+      "lvl9-elite-warp-lattice-12": [
+        1134,
+        758,
+        370,
+        370
+      ]
+    }
+  }
+}

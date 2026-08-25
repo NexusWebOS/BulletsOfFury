@@ -1,0 +1,106 @@
+{
+  "asset": "lvl8-enemy-projectile-04-black-red-missile",
+  "stage": 8,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl8-enemy-projectile-04-black-red-missile-travel-01",
+      "lvl8-enemy-projectile-04-black-red-missile-travel-02",
+      "lvl8-enemy-projectile-04-black-red-missile-travel-03",
+      "lvl8-enemy-projectile-04-black-red-missile-travel-04",
+      "lvl8-enemy-projectile-04-black-red-missile-travel-05",
+      "lvl8-enemy-projectile-04-black-red-missile-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl8-enemy-projectile-04-black-red-missile-impact-01",
+      "lvl8-enemy-projectile-04-black-red-missile-impact-02",
+      "lvl8-enemy-projectile-04-black-red-missile-impact-03",
+      "lvl8-enemy-projectile-04-black-red-missile-impact-04",
+      "lvl8-enemy-projectile-04-black-red-missile-impact-05",
+      "lvl8-enemy-projectile-04-black-red-missile-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl8-enemy-projectile-04-black-red-missile-combat-atlas.png",
+    "rects": {
+      "lvl8-enemy-projectile-04-black-red-missile-travel-01": [
+        57,
+        43,
+        58,
+        86
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-travel-02": [
+        223,
+        43,
+        58,
+        86
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-travel-03": [
+        389,
+        43,
+        58,
+        86
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-travel-04": [
+        555,
+        43,
+        58,
+        86
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-travel-05": [
+        721,
+        43,
+        58,
+        86
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-travel-06": [
+        887,
+        43,
+        58,
+        86
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-04-black-red-missile-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

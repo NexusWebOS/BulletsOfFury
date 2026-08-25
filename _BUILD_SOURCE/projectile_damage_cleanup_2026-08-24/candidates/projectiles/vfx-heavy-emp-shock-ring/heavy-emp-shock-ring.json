@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-emp-shock-ring",
+  "kind": "impact",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-emp-shock-ring-01",
+    "heavy-emp-shock-ring-02",
+    "heavy-emp-shock-ring-03",
+    "heavy-emp-shock-ring-04",
+    "heavy-emp-shock-ring-05",
+    "heavy-emp-shock-ring-06"
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-emp-shock-ring-atlas.png",
+    "rects": {
+      "heavy-emp-shock-ring-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-emp-shock-ring-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-emp-shock-ring-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-emp-shock-ring-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-emp-shock-ring-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-emp-shock-ring-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

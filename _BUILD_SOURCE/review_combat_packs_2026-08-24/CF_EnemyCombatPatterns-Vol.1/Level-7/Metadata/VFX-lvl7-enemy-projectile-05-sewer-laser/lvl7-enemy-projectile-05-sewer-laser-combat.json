@@ -1,0 +1,106 @@
+{
+  "asset": "lvl7-enemy-projectile-05-sewer-laser",
+  "stage": 7,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl7-enemy-projectile-05-sewer-laser-travel-01",
+      "lvl7-enemy-projectile-05-sewer-laser-travel-02",
+      "lvl7-enemy-projectile-05-sewer-laser-travel-03",
+      "lvl7-enemy-projectile-05-sewer-laser-travel-04",
+      "lvl7-enemy-projectile-05-sewer-laser-travel-05",
+      "lvl7-enemy-projectile-05-sewer-laser-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl7-enemy-projectile-05-sewer-laser-impact-01",
+      "lvl7-enemy-projectile-05-sewer-laser-impact-02",
+      "lvl7-enemy-projectile-05-sewer-laser-impact-03",
+      "lvl7-enemy-projectile-05-sewer-laser-impact-04",
+      "lvl7-enemy-projectile-05-sewer-laser-impact-05",
+      "lvl7-enemy-projectile-05-sewer-laser-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl7-enemy-projectile-05-sewer-laser-combat-atlas.png",
+    "rects": {
+      "lvl7-enemy-projectile-05-sewer-laser-travel-01": [
+        66,
+        43,
+        39,
+        85
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-travel-02": [
+        232,
+        43,
+        39,
+        85
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-travel-03": [
+        398,
+        43,
+        39,
+        85
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-travel-04": [
+        564,
+        43,
+        39,
+        85
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-travel-05": [
+        730,
+        43,
+        39,
+        85
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-travel-06": [
+        896,
+        43,
+        39,
+        85
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl7-enemy-projectile-05-sewer-laser-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

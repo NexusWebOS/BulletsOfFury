@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-lattice-fan",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-lattice-fan-01",
+    "cosmic-lattice-fan-02",
+    "cosmic-lattice-fan-03",
+    "cosmic-lattice-fan-04",
+    "cosmic-lattice-fan-05",
+    "cosmic-lattice-fan-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-lattice-fan-atlas.png",
+    "rects": {
+      "cosmic-lattice-fan-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-lattice-fan-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-lattice-fan-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-lattice-fan-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-lattice-fan-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-lattice-fan-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

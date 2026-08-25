@@ -1,0 +1,301 @@
+{
+  "asset": "structural-flame-mini-tank",
+  "project": "Bullets of Fury I",
+  "stage": 2,
+  "theme": "Volcanic Depths",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    296,
+    283
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      175,
+      235
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-flame-mini-tank-intact-power-01",
+          "structural-flame-mini-tank-intact-power-02",
+          "structural-flame-mini-tank-intact-power-03",
+          "structural-flame-mini-tank-intact-power-04",
+          "structural-flame-mini-tank-intact-power-05",
+          "structural-flame-mini-tank-intact-power-06"
+        ],
+        "damaged": [
+          "structural-flame-mini-tank-damaged-power-01",
+          "structural-flame-mini-tank-damaged-power-02",
+          "structural-flame-mini-tank-damaged-power-03",
+          "structural-flame-mini-tank-damaged-power-04",
+          "structural-flame-mini-tank-damaged-power-05",
+          "structural-flame-mini-tank-damaged-power-06"
+        ],
+        "critical": [
+          "structural-flame-mini-tank-critical-power-01",
+          "structural-flame-mini-tank-critical-power-02",
+          "structural-flame-mini-tank-critical-power-03",
+          "structural-flame-mini-tank-critical-power-04",
+          "structural-flame-mini-tank-critical-power-05",
+          "structural-flame-mini-tank-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-flame-mini-tank-attack-01",
+        "structural-flame-mini-tank-attack-02",
+        "structural-flame-mini-tank-attack-03",
+        "structural-flame-mini-tank-attack-04",
+        "structural-flame-mini-tank-attack-05",
+        "structural-flame-mini-tank-attack-06",
+        "structural-flame-mini-tank-attack-07",
+        "structural-flame-mini-tank-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-flame-mini-tank-combat-atlas.png",
+    "size": [
+      1516,
+      1740
+    ],
+    "rects": {
+      "structural-flame-mini-tank-intact-power-01": [
+        6,
+        6,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-intact-power-02": [
+        308,
+        6,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-intact-power-03": [
+        610,
+        6,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-intact-power-04": [
+        912,
+        6,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-intact-power-05": [
+        1214,
+        6,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-intact-power-06": [
+        6,
+        295,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-damaged-power-01": [
+        308,
+        295,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-damaged-power-02": [
+        610,
+        295,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-damaged-power-03": [
+        912,
+        295,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-damaged-power-04": [
+        1214,
+        295,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-damaged-power-05": [
+        6,
+        584,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-damaged-power-06": [
+        308,
+        584,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-critical-power-01": [
+        610,
+        584,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-critical-power-02": [
+        912,
+        584,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-critical-power-03": [
+        1214,
+        584,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-critical-power-04": [
+        6,
+        873,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-critical-power-05": [
+        308,
+        873,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-critical-power-06": [
+        610,
+        873,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-attack-01": [
+        912,
+        873,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-attack-02": [
+        1214,
+        873,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-attack-03": [
+        6,
+        1162,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-attack-04": [
+        308,
+        1162,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-attack-05": [
+        610,
+        1162,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-attack-06": [
+        912,
+        1162,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-attack-07": [
+        1214,
+        1162,
+        296,
+        283
+      ],
+      "structural-flame-mini-tank-attack-08": [
+        6,
+        1451,
+        296,
+        283
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "flame-mini-tank-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "aim": "player",
+          "speed": 184
+        }
+      ]
+    },
+    {
+      "id": "flame-mini-tank-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 52,
+          "speed": 142
+        }
+      ]
+    },
+    {
+      "id": "flame-mini-tank-eruption-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-03",
+          "count": 5,
+          "spread_degrees": 92,
+          "speed": 132
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl2-elite-eruption-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

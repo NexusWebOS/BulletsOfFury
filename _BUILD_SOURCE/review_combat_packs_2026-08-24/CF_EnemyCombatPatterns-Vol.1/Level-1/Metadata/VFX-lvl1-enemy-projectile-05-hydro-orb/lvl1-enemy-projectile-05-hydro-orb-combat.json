@@ -1,0 +1,106 @@
+{
+  "asset": "lvl1-enemy-projectile-05-hydro-orb",
+  "stage": 1,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl1-enemy-projectile-05-hydro-orb-travel-01",
+      "lvl1-enemy-projectile-05-hydro-orb-travel-02",
+      "lvl1-enemy-projectile-05-hydro-orb-travel-03",
+      "lvl1-enemy-projectile-05-hydro-orb-travel-04",
+      "lvl1-enemy-projectile-05-hydro-orb-travel-05",
+      "lvl1-enemy-projectile-05-hydro-orb-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl1-enemy-projectile-05-hydro-orb-impact-01",
+      "lvl1-enemy-projectile-05-hydro-orb-impact-02",
+      "lvl1-enemy-projectile-05-hydro-orb-impact-03",
+      "lvl1-enemy-projectile-05-hydro-orb-impact-04",
+      "lvl1-enemy-projectile-05-hydro-orb-impact-05",
+      "lvl1-enemy-projectile-05-hydro-orb-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl1-enemy-projectile-05-hydro-orb-combat-atlas.png",
+    "rects": {
+      "lvl1-enemy-projectile-05-hydro-orb-travel-01": [
+        60,
+        45,
+        52,
+        82
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-travel-02": [
+        226,
+        45,
+        52,
+        82
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-travel-03": [
+        392,
+        45,
+        52,
+        82
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-travel-04": [
+        558,
+        45,
+        52,
+        82
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-travel-05": [
+        724,
+        45,
+        52,
+        82
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-travel-06": [
+        890,
+        45,
+        52,
+        82
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-05-hydro-orb-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

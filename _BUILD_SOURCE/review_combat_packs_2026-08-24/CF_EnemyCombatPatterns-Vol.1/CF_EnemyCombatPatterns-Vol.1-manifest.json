@@ -1,0 +1,65 @@
+{
+  "pack": "CF_EnemyCombatPatterns-Vol.1",
+  "purpose": "lightweight review and implementation reference; full sprite frames are in the nine level runtime packs",
+  "enemy_count": 208,
+  "attack_pattern_count": 624,
+  "metadata_file_count": 280,
+  "stages": {
+    "1": {
+      "enemy_pattern_files": 16,
+      "vfx_metadata_files": 8,
+      "signature": "flak-blossom"
+    },
+    "2": {
+      "enemy_pattern_files": 25,
+      "vfx_metadata_files": 8,
+      "signature": "eruption-crown"
+    },
+    "3": {
+      "enemy_pattern_files": 25,
+      "vfx_metadata_files": 8,
+      "signature": "crystal-guillotine"
+    },
+    "4": {
+      "enemy_pattern_files": 29,
+      "vfx_metadata_files": 8,
+      "signature": "missile-star"
+    },
+    "5": {
+      "enemy_pattern_files": 25,
+      "vfx_metadata_files": 8,
+      "signature": "fracture-halo"
+    },
+    "6": {
+      "enemy_pattern_files": 25,
+      "vfx_metadata_files": 8,
+      "signature": "thunder-cyclone"
+    },
+    "7": {
+      "enemy_pattern_files": 25,
+      "vfx_metadata_files": 8,
+      "signature": "spore-crown"
+    },
+    "8": {
+      "enemy_pattern_files": 25,
+      "vfx_metadata_files": 8,
+      "signature": "void-razor"
+    },
+    "9": {
+      "enemy_pattern_files": 13,
+      "vfx_metadata_files": 8,
+      "signature": "warp-lattice"
+    }
+  },
+  "runtime_pack_names": [
+    "CF_EnemyCombatSystems-Lvl1.zip",
+    "CF_EnemyCombatSystems-Lvl2.zip",
+    "CF_EnemyCombatSystems-Lvl3.zip",
+    "CF_EnemyCombatSystems-Lvl4.zip",
+    "CF_EnemyCombatSystems-Lvl5.zip",
+    "CF_EnemyCombatSystems-Lvl6.zip",
+    "CF_EnemyCombatSystems-Lvl7.zip",
+    "CF_EnemyCombatSystems-Lvl8.zip",
+    "CF_EnemyCombatSystems-Lvl9.zip"
+  ]
+}

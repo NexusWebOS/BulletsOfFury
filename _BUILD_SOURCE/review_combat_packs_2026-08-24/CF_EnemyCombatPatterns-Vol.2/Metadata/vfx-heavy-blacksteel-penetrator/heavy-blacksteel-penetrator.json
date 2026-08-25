@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-blacksteel-penetrator",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-blacksteel-penetrator-01",
+    "heavy-blacksteel-penetrator-02",
+    "heavy-blacksteel-penetrator-03",
+    "heavy-blacksteel-penetrator-04",
+    "heavy-blacksteel-penetrator-05",
+    "heavy-blacksteel-penetrator-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-blacksteel-penetrator-atlas.png",
+    "rects": {
+      "heavy-blacksteel-penetrator-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-blacksteel-penetrator-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-blacksteel-penetrator-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-blacksteel-penetrator-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-blacksteel-penetrator-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-blacksteel-penetrator-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

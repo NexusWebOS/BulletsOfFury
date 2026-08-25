@@ -1,0 +1,106 @@
+{
+  "asset": "lvl8-enemy-projectile-01-plasma-needle",
+  "stage": 8,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl8-enemy-projectile-01-plasma-needle-travel-01",
+      "lvl8-enemy-projectile-01-plasma-needle-travel-02",
+      "lvl8-enemy-projectile-01-plasma-needle-travel-03",
+      "lvl8-enemy-projectile-01-plasma-needle-travel-04",
+      "lvl8-enemy-projectile-01-plasma-needle-travel-05",
+      "lvl8-enemy-projectile-01-plasma-needle-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl8-enemy-projectile-01-plasma-needle-impact-01",
+      "lvl8-enemy-projectile-01-plasma-needle-impact-02",
+      "lvl8-enemy-projectile-01-plasma-needle-impact-03",
+      "lvl8-enemy-projectile-01-plasma-needle-impact-04",
+      "lvl8-enemy-projectile-01-plasma-needle-impact-05",
+      "lvl8-enemy-projectile-01-plasma-needle-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl8-enemy-projectile-01-plasma-needle-combat-atlas.png",
+    "rects": {
+      "lvl8-enemy-projectile-01-plasma-needle-travel-01": [
+        62,
+        43,
+        48,
+        85
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-travel-02": [
+        228,
+        43,
+        48,
+        85
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-travel-03": [
+        394,
+        43,
+        48,
+        85
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-travel-04": [
+        560,
+        43,
+        48,
+        85
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-travel-05": [
+        726,
+        43,
+        48,
+        85
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-travel-06": [
+        892,
+        43,
+        48,
+        85
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-01-plasma-needle-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

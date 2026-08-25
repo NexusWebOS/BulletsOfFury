@@ -1,0 +1,106 @@
+{
+  "asset": "lvl2-enemy-projectile-06-fire-needle",
+  "stage": 2,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl2-enemy-projectile-06-fire-needle-travel-01",
+      "lvl2-enemy-projectile-06-fire-needle-travel-02",
+      "lvl2-enemy-projectile-06-fire-needle-travel-03",
+      "lvl2-enemy-projectile-06-fire-needle-travel-04",
+      "lvl2-enemy-projectile-06-fire-needle-travel-05",
+      "lvl2-enemy-projectile-06-fire-needle-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl2-enemy-projectile-06-fire-needle-impact-01",
+      "lvl2-enemy-projectile-06-fire-needle-impact-02",
+      "lvl2-enemy-projectile-06-fire-needle-impact-03",
+      "lvl2-enemy-projectile-06-fire-needle-impact-04",
+      "lvl2-enemy-projectile-06-fire-needle-impact-05",
+      "lvl2-enemy-projectile-06-fire-needle-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl2-enemy-projectile-06-fire-needle-combat-atlas.png",
+    "rects": {
+      "lvl2-enemy-projectile-06-fire-needle-travel-01": [
+        70,
+        45,
+        32,
+        82
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-travel-02": [
+        236,
+        45,
+        32,
+        82
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-travel-03": [
+        402,
+        45,
+        32,
+        82
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-travel-04": [
+        568,
+        45,
+        32,
+        82
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-travel-05": [
+        734,
+        45,
+        32,
+        82
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-travel-06": [
+        900,
+        45,
+        32,
+        82
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-06-fire-needle-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

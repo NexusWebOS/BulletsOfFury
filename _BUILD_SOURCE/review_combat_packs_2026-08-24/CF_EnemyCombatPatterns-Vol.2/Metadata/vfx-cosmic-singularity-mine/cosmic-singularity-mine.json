@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-singularity-mine",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-singularity-mine-01",
+    "cosmic-singularity-mine-02",
+    "cosmic-singularity-mine-03",
+    "cosmic-singularity-mine-04",
+    "cosmic-singularity-mine-05",
+    "cosmic-singularity-mine-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-singularity-mine-atlas.png",
+    "rects": {
+      "cosmic-singularity-mine-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-singularity-mine-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-singularity-mine-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-singularity-mine-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-singularity-mine-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-singularity-mine-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

@@ -1,0 +1,106 @@
+{
+  "asset": "lvl4-enemy-projectile-02-twin-brass",
+  "stage": 4,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl4-enemy-projectile-02-twin-brass-travel-01",
+      "lvl4-enemy-projectile-02-twin-brass-travel-02",
+      "lvl4-enemy-projectile-02-twin-brass-travel-03",
+      "lvl4-enemy-projectile-02-twin-brass-travel-04",
+      "lvl4-enemy-projectile-02-twin-brass-travel-05",
+      "lvl4-enemy-projectile-02-twin-brass-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl4-enemy-projectile-02-twin-brass-impact-01",
+      "lvl4-enemy-projectile-02-twin-brass-impact-02",
+      "lvl4-enemy-projectile-02-twin-brass-impact-03",
+      "lvl4-enemy-projectile-02-twin-brass-impact-04",
+      "lvl4-enemy-projectile-02-twin-brass-impact-05",
+      "lvl4-enemy-projectile-02-twin-brass-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl4-enemy-projectile-02-twin-brass-combat-atlas.png",
+    "rects": {
+      "lvl4-enemy-projectile-02-twin-brass-travel-01": [
+        61,
+        45,
+        50,
+        82
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-travel-02": [
+        227,
+        45,
+        50,
+        82
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-travel-03": [
+        393,
+        45,
+        50,
+        82
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-travel-04": [
+        559,
+        45,
+        50,
+        82
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-travel-05": [
+        725,
+        45,
+        50,
+        82
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-travel-06": [
+        891,
+        45,
+        50,
+        82
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-02-twin-brass-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

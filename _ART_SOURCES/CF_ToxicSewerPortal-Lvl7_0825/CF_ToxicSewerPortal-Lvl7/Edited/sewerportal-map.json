@@ -1,0 +1,403 @@
+{
+  "asset": "sewerportal",
+  "title": "Sewer Portal Entry",
+  "game": "Bullets of Fury",
+  "levels": [
+    7
+  ],
+  "role": "Independent energy interior for the Stage 7 sewer-side portal entrance",
+  "style": "16-bit Sega Mega Drive / Raiden-era pixel VFX",
+  "frame_count": 8,
+  "frame_size": [
+    512,
+    512
+  ],
+  "pivot": [
+    256,
+    256
+  ],
+  "alpha": "binary",
+  "source_key": "#FF00FF",
+  "fps": 12,
+  "frame_duration_ms": 83,
+  "loop": "one-shot",
+  "player_event": "hide or dissolve the player during frame 06; frame 07 closes behind it",
+  "draw_order_back_to_front": [
+    "stage-7-background",
+    "sewerportal-energy",
+    "portal-rim",
+    "player-ship",
+    "foreground-effects"
+  ],
+  "frames": [
+    {
+      "frame": 1,
+      "file": "sewerportal-alpha-01.png",
+      "event": "arrival spark",
+      "content_bounds": [
+        224,
+        245,
+        285,
+        306
+      ]
+    },
+    {
+      "frame": 2,
+      "file": "sewerportal-alpha-02.png",
+      "event": "partial ring",
+      "content_bounds": [
+        137,
+        171,
+        362,
+        380
+      ]
+    },
+    {
+      "frame": 3,
+      "file": "sewerportal-alpha-03.png",
+      "event": "spiral growth",
+      "content_bounds": [
+        125,
+        154,
+        371,
+        400
+      ]
+    },
+    {
+      "frame": 4,
+      "file": "sewerportal-alpha-04.png",
+      "event": "aperture nearly open",
+      "content_bounds": [
+        102,
+        138,
+        365,
+        412
+      ]
+    },
+    {
+      "frame": 5,
+      "file": "sewerportal-alpha-05.png",
+      "event": "full suction vortex",
+      "content_bounds": [
+        112,
+        74,
+        398,
+        369
+      ]
+    },
+    {
+      "frame": 6,
+      "file": "sewerportal-alpha-06.png",
+      "event": "traversal flash",
+      "content_bounds": [
+        107,
+        78,
+        385,
+        365
+      ]
+    },
+    {
+      "frame": 7,
+      "file": "sewerportal-alpha-07.png",
+      "event": "implosion",
+      "content_bounds": [
+        123,
+        101,
+        369,
+        346
+      ]
+    },
+    {
+      "frame": 8,
+      "file": "sewerportal-alpha-08.png",
+      "event": "fading particles",
+      "content_bounds": [
+        118,
+        98,
+        359,
+        347
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "sewerportal-atlas-alpha.png",
+    "columns": 8,
+    "rows": 1,
+    "cell": [
+      512,
+      512
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      {
+        "frame": 2,
+        "x": 512,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      {
+        "frame": 3,
+        "x": 1024,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      {
+        "frame": 4,
+        "x": 1536,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      {
+        "frame": 5,
+        "x": 2048,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      {
+        "frame": 6,
+        "x": 2560,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      {
+        "frame": 7,
+        "x": 3072,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      },
+      {
+        "frame": 8,
+        "x": 3584,
+        "y": 0,
+        "w": 512,
+        "h": 512
+      }
+    ]
+  },
+  "source": {
+    "original_dimensions": [
+      1536,
+      1024
+    ],
+    "detected_key_seed": [
+      247,
+      5,
+      250
+    ],
+    "key_distance": 100.0,
+    "source_cells": [
+      {
+        "frame": 1,
+        "rect": [
+          0,
+          0,
+          384,
+          512
+        ]
+      },
+      {
+        "frame": 2,
+        "rect": [
+          384,
+          0,
+          384,
+          512
+        ]
+      },
+      {
+        "frame": 3,
+        "rect": [
+          768,
+          0,
+          384,
+          512
+        ]
+      },
+      {
+        "frame": 4,
+        "rect": [
+          1152,
+          0,
+          384,
+          512
+        ]
+      },
+      {
+        "frame": 5,
+        "rect": [
+          0,
+          512,
+          384,
+          512
+        ]
+      },
+      {
+        "frame": 6,
+        "rect": [
+          384,
+          512,
+          384,
+          512
+        ]
+      },
+      {
+        "frame": 7,
+        "rect": [
+          768,
+          512,
+          384,
+          512
+        ]
+      },
+      {
+        "frame": 8,
+        "rect": [
+          1152,
+          512,
+          384,
+          512
+        ]
+      }
+    ],
+    "runtime_palette": [
+      [
+        246,
+        253,
+        246
+      ],
+      [
+        233,
+        252,
+        220
+      ],
+      [
+        178,
+        249,
+        195
+      ],
+      [
+        161,
+        237,
+        185
+      ],
+      [
+        111,
+        232,
+        169
+      ],
+      [
+        120,
+        195,
+        172
+      ],
+      [
+        57,
+        209,
+        159
+      ],
+      [
+        45,
+        189,
+        146
+      ],
+      [
+        31,
+        173,
+        138
+      ],
+      [
+        24,
+        154,
+        127
+      ],
+      [
+        21,
+        134,
+        115
+      ],
+      [
+        4,
+        139,
+        120
+      ],
+      [
+        115,
+        76,
+        158
+      ],
+      [
+        37,
+        78,
+        102
+      ],
+      [
+        122,
+        22,
+        152
+      ],
+      [
+        44,
+        24,
+        95
+      ],
+      [
+        8,
+        112,
+        98
+      ],
+      [
+        8,
+        89,
+        81
+      ],
+      [
+        8,
+        66,
+        68
+      ],
+      [
+        10,
+        33,
+        57
+      ],
+      [
+        2,
+        102,
+        92
+      ],
+      [
+        2,
+        69,
+        60
+      ],
+      [
+        1,
+        43,
+        33
+      ],
+      [
+        1,
+        20,
+        13
+      ]
+    ]
+  },
+  "implementation": {
+    "portal_energy": "draw beneath the existing physical portal rim; never bake the rim into these frames",
+    "blend": "normal alpha; optional additive pass may be used only for the brightest flash frame",
+    "scale": "authoring scale is 1.0; preserve the 256,256 pivot when resizing"
+  },
+  "destination": "Stage 8 \u2014 Furious Death"
+}

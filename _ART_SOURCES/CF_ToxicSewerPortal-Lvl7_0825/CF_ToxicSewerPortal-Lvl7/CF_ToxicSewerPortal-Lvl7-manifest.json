@@ -1,0 +1,66 @@
+{
+  "pack": "CF_ToxicSewerPortal-Lvl7",
+  "game": "Bullets of Fury",
+  "stage": 7,
+  "title": "Toxic Sewer and Furious Death Gate",
+  "viewpoint": "top-down vertical shmup",
+  "style": "16-bit Sega Mega Drive / Raiden-era overhead terrain and pixel VFX",
+  "stage_scroll": {
+    "width": 680,
+    "height": 4716,
+    "segment_count": 5,
+    "segment_size": [
+      680,
+      1020
+    ],
+    "overlap_pixels": 96,
+    "travel_direction": "bottom-to-top",
+    "runtime_map": "Edited/stage07-runtime-map.json"
+  },
+  "portal_transition": {
+    "role": "Level 7 sewer-side entrance into Furious Death",
+    "physical_rim": "Edited/stage07-to-stage08-furious-death-void-portal-transition-alpha.png",
+    "rim_mask": "Edited/stage07-to-stage08-furious-death-void-portal-transition-portal-mask.png",
+    "energy_frames": "Edited/sewerportal-alpha-01.png through sewerportal-alpha-08.png",
+    "atlas": "Edited/sewerportal-atlas-alpha.png",
+    "animation_map": "Edited/sewerportal-map.json",
+    "preview": "Edited/sewerportal-preview.gif",
+    "frame_count": 8,
+    "frame_size": [
+      512,
+      512
+    ],
+    "fps": 12,
+    "loop": "one-shot",
+    "draw_order_back_to_front": [
+      "stage07-background",
+      "sewerportal-energy",
+      "physical-portal-rim",
+      "player-ship",
+      "foreground-effects"
+    ],
+    "player_event": "hide or dissolve during frame 06; frame 07 closes behind the player"
+  },
+  "folder_contract": {
+    "Source": "untouched full-resolution generated source boards",
+    "Edited": "engine-ready hard-alpha runtime images, masks, animation, and JSON",
+    "Edited/Master Edit": "exact-#FF00FF keyed masters and shared stage palette"
+  },
+  "exclusions": [
+    "Stage 8 space portal exit",
+    "reusable light-green random dimensional rift",
+    "Stage 8 sky and Furious Death space set pieces"
+  ],
+  "revision": "Indoor Black Exterior / Transparent Inner Sludge",
+  "background_policy": {
+    "outer": "opaque pure #000000",
+    "inner_master": "exact #FF00FF",
+    "inner_runtime": "fully transparent hard alpha",
+    "stacking": "jagged connector cutouts remain transparent"
+  },
+  "conversion_summary": {
+    "environment_assets_revised": 15,
+    "outer_black_pixels": 1244668,
+    "inner_key_pixels": 1349996
+  }
+}

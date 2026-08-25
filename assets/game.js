@@ -1682,6 +1682,14 @@ const XART=(function(){
   X._src['fx0825_ice_shard']='assets/game/fx_0825/ice_shard.png';
   X._src['fx0825_ice_orb']='assets/game/fx_0825/ice_orb.png';
   X._src['bg_stage01_runway_transition']='assets/game/bg_stage01_runway_transition.jpg';
+  /* CHAOS HARRIER — the authored Level-5 miniboss.  These are state frames and detached weapon
+     layers, not one interchangeable idle reel.  The hull stays on ship_0 while ship_glow pulses;
+     ship_2 is used only while the missile bays are actually open. */
+  const _CH_GROUP_COUNTS={ship:6,plasma:4,missile:4,lance:4,sideflash:4,
+                          launchflash:4,charge:4,warp:8,beam:4,sidelaser:4,impact:4};
+  for(const _cg in _CH_GROUP_COUNTS) for(let _ci=0;_ci<_CH_GROUP_COUNTS[_cg];_ci++)
+    X._src['ch_'+_cg+'_'+_ci]='assets/game/chaos_harrier/ch_'+_cg+'_'+_ci+'.png';
+  X._src['ch_ship_glow']='assets/game/chaos_harrier/ch_ship_glow.png';
   /* The supplied official BONUS STAGE card. Keep this registration beside the other code-owned
      assets so regenerating manifest.js cannot silently replace it with the text fallback again. */
   X._src['scard_9'] = 'assets/game/bonus_stage_card.png';
@@ -6109,7 +6117,7 @@ const SUBBOSS={
   9:{at:0.45, kind:'warpsentinel', afterScroll:1201},   // WARP SENTINEL — the bonus stage's miniboss (0822ab)
   3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
-  5:{at:0.45, kind:'subcore', afterScroll:1121},
+  5:{at:0.45, kind:'chaosharrier', afterScroll:1121}, // CHAOS HARRIER — authored space interceptor, replaces retired ENERGY CORE
 };
 
 /* ============================================================
@@ -10793,6 +10801,23 @@ function spawnSubBoss__inner(kind){
       break;
     }
     case 'subtank':    b.name='ARMORED BRUTE';   b.w=150; b.h=140; b.hp=b.maxhp=Math.ceil(150*DIFF.eHp); b.art='sub_tank'; break;
+    case 'chaosharrier': {
+      b.name='CHAOS HARRIER'; b.w=220; b.h=200; b.hp=b.maxhp=Math.ceil(360*DIFF.eHp);
+      b.ty=132; b.y=b.ty; b.enter=false; b._harrier=true;
+      b._chState='spawn'; b._chT=0; b._chVisible=false; b._chCollision=false;
+      b._chAttackN=0; b._chPattern=0; b._chQueued=null; b._chBank=0; b._chCd=0.75;
+      /* Decode the whole encounter during the warp-in instead of discovering each frame on the
+         first shot.  The pack is loose-frame art by design, so all hardpoints remain stable. */
+      try{ if(typeof XART!=='undefined'){
+        const C={ship:6,plasma:4,missile:4,lance:4,sideflash:4,
+                 launchflash:4,charge:4,warp:8,beam:4,sidelaser:4,impact:4};
+        for(const g in C) for(let i=0;i<C[g];i++){
+          const k='ch_'+g+'_'+i; XART.rdy(k); if(XART._touch)XART._touch(k);
+        }
+        XART.rdy('ch_ship_glow'); if(XART._touch)XART._touch('ch_ship_glow');
+      } }catch(_chload){}
+      break;
+    }
     case 'subcore':    b.name='ENERGY CORE';      b.w=150; b.h=150; b.hp=b.maxhp=Math.ceil(150*DIFF.eHp); b.art='sub_core'; break;
     case 'subreactor': b.name='OVERLOAD REACTOR'; b.w=120; b.h=170; b.hp=b.maxhp=Math.ceil(160*DIFF.eHp); b.art='sub_reactor'; break;
     case 'subdread':   b.name='DREAD PROTOTYPE';  b.w=150; b.h=150; b.hp=b.maxhp=Math.ceil(170*DIFF.eHp); b.art='sub_dread_idle'; break;
@@ -10849,6 +10874,146 @@ function spawnSubBoss__inner(kind){
   }
   subBoss=b; subBossActive=true; Audio.SFX.bossAlarm();
 }
+
+/* ================= CHAOS HARRIER — LEVEL 5 MINI-BOSS =================
+   The supplied JSON is engine-neutral design data; this is the native BOF state machine.  Every
+   projectile and VFX layer uses the pack's measured 352x320 hardpoints.  Missile tracking is
+   intentionally omitted: the game's standing rule reserves homing boss missiles for the Level-1
+   helicopter, so the Harrier's fan wins through spacing and acceleration instead. */
+function chaosHarrierPoint(b, slot){
+  const s=b.w/352, y=(b._drawY!=null?b._drawY:b.y);
+  const p={
+    left_cannon:[-100,-15], right_cannon:[99,-15],
+    left_missile_bay:[-48,-14], right_missile_bay:[48,-14],
+    central_reactor:[0,-50], nose:[0,91]
+  }[slot]||[0,0];
+  return {x:b.x+p[0]*s,y:y+p[1]*s};
+}
+function chaosHarrierFlash(b, family, point){ b._chFlash={family,point,t:0,life:0.24}; }
+function chaosHarrierShot(b, family, slot, angle, speed){
+  const p=chaosHarrierPoint(b,slot), sp=(DIFF&&DIFF.ebSpeed)||1;
+  const size=family==='sidelaser'?[16,44]:(family==='missile'?[18,30]:[16,24]);
+  const knd=family==='missile'?'ch_missile':(family==='sidelaser'?'ch_sidelaser':'ch_plasma');
+  eBullets.push({x:p.x,y:p.y,vx:Math.cos(angle)*speed*sp,vy:Math.sin(angle)*speed*sp,
+    w:size[0],h:size[1],kind:knd,_chKind:family,t:0,_ph:0,dmg:1,ang:angle,
+    _boss:true,_noArsenal:true});
+  chaosHarrierFlash(b,family==='missile'?'launchflash':'sideflash',p);
+  if(family==='missile' && Audio.SFX&&Audio.SFX.missile) Audio.SFX.missile();
+  else if(Audio.SFX&&Audio.SFX.laserShot) Audio.SFX.laserShot();
+  else if(Audio.SFX&&Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+}
+function chaosHarrierFinish(b){
+  b._chState='idle'; b._chT=0; b._chStep=0; b._chBeamActive=false;
+  b._chCd=(b._chPhase===3?0.52:(b._chPhase===2?0.68:0.82))/Math.max(0.75,DIFF.eFire||1);
+}
+function chaosHarrierBegin(b, attack){
+  b._chStep=0; b._chT=0; b._chAttackN=(b._chAttackN||0)+1;
+  if(attack.indexOf('warp_')===0){ b._chQueued=attack.slice(5); b._chState='warpout'; b._chCollision=false; }
+  else b._chState=attack;
+}
+function chaosHarrierSelect(b){
+  const f=b.hp/Math.max(1,b.maxhp), phase=f>0.70?1:(f>0.35?2:3);
+  b._chPhase=phase;
+  const seq=phase===1
+    ?['plasma','missile','plasma','warp_plasma']
+    :(phase===2?['missile','side','plasma','beam','warp_side']
+                :['side','beam','missile','warp_plasma','beam']);
+  const attack=seq[(b._chPattern||0)%seq.length]; b._chPattern=(b._chPattern||0)+1;
+  chaosHarrierBegin(b,attack);
+}
+function chaosHarrierWarpTarget(b){
+  const ww=(typeof worldWidth==='function')?worldWidth():VW, cx=ww/2;
+  const dx=Math.min(178,Math.max(80,cx-b.w*0.58));
+  const pts=[[cx-dx,112],[cx,94],[cx+dx,112],[cx-dx*0.92,172],[cx,158],[cx+dx*0.92,172]];
+  let best=pts[0], score=-1;
+  for(const p of pts){
+    const fromPlayer=Math.hypot(p[0]-player.x,p[1]-player.y);
+    const fromLast=b._chLastWarp?Math.hypot(p[0]-b._chLastWarp[0],p[1]-b._chLastWarp[1]):999;
+    const s=fromPlayer+Math.min(180,fromLast)*0.65;
+    if(s>score){ score=s; best=p; }
+  }
+  b._chLastWarp=best.slice(); return best;
+}
+function chaosHarrierBeamHit(b){
+  if(!b._chBeamActive || player.dead || player.invuln>0) return;
+  const p=chaosHarrierPoint(b,'nose'), a=Math.PI/2+(b._chBeamAng||0);
+  const ux=Math.cos(a),uy=Math.sin(a),dx=player.x-p.x,dy=player.y-p.y;
+  const along=dx*ux+dy*uy, across=Math.abs(dx*uy-dy*ux);
+  if(along>0 && along<VH+120 && across<24+(player._hx||9)) playerHit();
+}
+function chaosHarrierUpdate(b,dt){
+  b._chT=(b._chT||0)+dt;
+  if(b._chFlash){ b._chFlash.t+=dt; if(b._chFlash.t>=b._chFlash.life)b._chFlash=null; }
+  const f=b.hp/Math.max(1,b.maxhp), phase=f>0.70?1:(f>0.35?2:3);
+  if(phase!==b._chPhase){ b._chPhase=phase; b._chPattern=0; if(phase===3 && b._chState==='idle')chaosHarrierBegin(b,'warp_side'); }
+  const st=b._chState;
+  if(st==='spawn'){
+    b._chVisible=b._chT>=0.52; b._chCollision=b._chT>=1.05;
+    if(b._chT>=1.20)chaosHarrierFinish(b);
+    return;
+  }
+  if(st==='warpout'){
+    if(b._chT>=0.22)b._chCollision=false;
+    if(b._chT>=0.30)b._chVisible=false;
+    if(b._chT>=0.37 && !b._chWarpDest)b._chWarpDest=chaosHarrierWarpTarget(b);
+    if(b._chT>=0.60){ const p=b._chWarpDest||chaosHarrierWarpTarget(b); b.x=p[0];b.y=p[1];
+      b._chWarpDest=null;b._chState='warpin';b._chT=0;b._chVisible=false; }
+    return;
+  }
+  if(st==='warpin'){
+    if(b._chT>=0.30)b._chVisible=true;
+    if(b._chT>=0.525)b._chCollision=true;
+    if(b._chT>=0.60){ const q=b._chQueued;b._chQueued=null; if(q)chaosHarrierBegin(b,q); else chaosHarrierFinish(b); }
+    return;
+  }
+  if(st==='idle'){
+    const ww=(typeof worldWidth==='function')?worldWidth():VW, amp=Math.max(36,Math.min(170,ww/2-b.w*0.58));
+    const tx=ww/2+Math.sin((b.t||0)*(phase===3?2.85:1.90))*amp;
+    const dx=tx-b.x; b.x+=dx*Math.min(1,dt*(phase===3?4.2:3.0)); b.x=clamp(b.x,b.w*0.53,ww-b.w*0.53);
+    b.y=b.ty+Math.sin((b.t||0)*2.15)*((phase===3)?23:14);
+    b._chBank=Math.abs(dx)<1?0:(dx<0?-1:1);
+    b._chCd-=dt; if(b._chCd<=0)chaosHarrierSelect(b);
+    return;
+  }
+  if(st==='plasma'){
+    const times=[0.05,0.20,0.38,0.53], slots=['left_cannon','right_cannon','left_cannon','right_cannon'];
+    while(b._chStep<times.length && b._chT>=times[b._chStep]){
+      const slot=slots[b._chStep],p=chaosHarrierPoint(b,slot),a=eAimDown(aimPlayer(p.x,p.y,4.4));
+      chaosHarrierShot(b,'plasma',slot,a,4.25); b._chStep++;
+    }
+    if(b._chT>=0.92)chaosHarrierFinish(b); return;
+  }
+  if(st==='missile'){
+    const times=[0.24,0.34,0.56,0.66],slots=['left_missile_bay','right_missile_bay','left_missile_bay','right_missile_bay'];
+    const fan=[-0.32,0.32,-0.12,0.12];
+    while(b._chStep<times.length && b._chT>=times[b._chStep]){
+      chaosHarrierShot(b,'missile',slots[b._chStep],Math.PI/2+fan[b._chStep],2.45); b._chStep++;
+    }
+    if(b._chT>=1.32)chaosHarrierFinish(b); return;
+  }
+  if(st==='side'){
+    const times=[0.09,0.38];
+    while(b._chStep<times.length && b._chT>=times[b._chStep]){
+      chaosHarrierShot(b,'sidelaser','left_cannon',Math.PI/2+(b._chStep?0.07:-0.07),5.0);
+      chaosHarrierShot(b,'sidelaser','right_cannon',Math.PI/2+(b._chStep?-0.07:0.07),5.0); b._chStep++;
+    }
+    if(b._chT>=1.05)chaosHarrierFinish(b); return;
+  }
+  if(st==='beam'){
+    const nose=chaosHarrierPoint(b,'nose');
+    if(b._chT<0.65){
+      const want=clamp(Math.atan2(player.y-nose.y,player.x-nose.x)-Math.PI/2,-0.28,0.28);
+      b._chBeamAng=want;
+    }
+    if(b._chT>=0.90 && b._chT<2.15){
+      if(!b._chBeamActive){ b._chBeamActive=true; shake=Math.max(shake,7);
+        if(Audio.SFX&&Audio.SFX.helixCharge)Audio.SFX.helixCharge(); }
+      const want=clamp(Math.atan2(player.y-nose.y,player.x-nose.x)-Math.PI/2,-0.28,0.28);
+      b._chBeamAng+=(clamp(want-(b._chBeamAng||0),-0.16*dt,0.16*dt)); chaosHarrierBeamHit(b);
+    }else b._chBeamActive=false;
+    if(b._chT>=2.55)chaosHarrierFinish(b); return;
+  }
+}
 function updateSubBoss(dt){
   /* the per-cannon flashes and the hull's armour trace tick down here, next to the
      boss's own timers (drop 0801kf) */
@@ -10871,6 +11036,7 @@ function updateSubBoss(dt){
     if(T>=1.9){ subBoss=null; subBossActive=false; subBossDone=true; if(typeof dropPowerup==='function') dropPowerup(b.x,b.y,'weapon'); }
     return;
   }
+  if(b._harrier){ chaosHarrierUpdate(b,dt); return; }
   if(b.enter){
     b._entT=(b._entT||0)+dt;
     b.y=lerp(b.y,b.ty,0.05);
@@ -11517,9 +11683,78 @@ function screenBar(fn){
   else if(typeof camX==='number' && typeof worldWidth==='function' && worldWidth()>VW) ctx.translate(camX,0);
   try{ fn(); } finally { ctx.restore(); }
 }
+function chaosHarrierImage(key,x,y,w,h,alpha,blend,rot){
+  if(typeof XART==='undefined'||!XART.rdy(key))return false;
+  const im=XART.get(key); ctx.save(); ctx.imageSmoothingEnabled=false;
+  if(alpha!=null)ctx.globalAlpha=alpha; if(blend)ctx.globalCompositeOperation=blend;
+  ctx.translate(x,y); if(rot)ctx.rotate(rot); ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore(); return true;
+}
+function chaosHarrierWarpFrame(b){
+  const t=b._chT||0;
+  if(b._chState==='warpout')return clamp(Math.floor((t/0.60)*8),0,7);
+  if(b._chState==='warpin')return 7-clamp(Math.floor((t/0.60)*8),0,7);
+  if(b._chState==='spawn'&&t<1.05)return 7-clamp(Math.floor((t/1.05)*8),0,7);
+  return -1;
+}
+function chaosHarrierDraw(b){
+  if(!b||!b._harrier)return false;
+  const yy=(b._drawY!=null?b._drawY:b.y), wf=chaosHarrierWarpFrame(b);
+  if(wf>=0)chaosHarrierImage('ch_warp_'+wf,b.x,yy,b.w*1.48,b.w*1.48,0.88,'lighter',0);
+  if(b._chVisible){
+    let si=0;
+    if(b._chState==='missile')si=2;
+    else if(b.hp/Math.max(1,b.maxhp)<=0.35)si=5;
+    else if(b._chBank<0)si=3;
+    else if(b._chBank>0)si=4;
+    const key='ch_ship_'+si, h=b.w*(320/352);
+    chaosHarrierImage(key,b.x,yy,b.w,h,1,null,0);
+    /* Stable hull, animated internals: only the cyan delta pixels from hover-B are composited. */
+    const glow=0.22+(0.36*(0.5+0.5*Math.sin((b.t||0)*8.5)));
+    chaosHarrierImage('ch_ship_glow',b.x,yy,b.w,h,glow,'lighter',0);
+    if(b.flash>0 && typeof xartTint==='function' && XART.rdy(key)){
+      const im=xartTint(key,'#ffffff',0.9);
+      if(im){ctx.save();ctx.globalAlpha=Math.min(0.86,b.flash/0.18);ctx.drawImage(im,b.x-b.w/2,yy-h/2,b.w,h);ctx.restore();}
+    }
+  }
+  const F=b._chFlash;
+  if(F){
+    const fi=clamp(Math.floor((F.t/F.life)*4),0,3), a=Math.max(0,1-F.t/F.life);
+    chaosHarrierImage('ch_'+F.family+'_'+fi,F.point.x,F.point.y,b.w*0.54,b.w*0.54,a,'lighter',0);
+  }
+  if(b._chState==='beam'){
+    const nose=chaosHarrierPoint(b,'nose');
+    if((b._chT||0)<0.92){
+      const fi=clamp(Math.floor(((b._chT||0)/0.92)*4),0,3);
+      chaosHarrierImage('ch_charge_'+fi,nose.x,nose.y,b.w*0.50,b.w*0.50,0.90,'lighter',0);
+    }
+    if(b._chBeamActive){
+      const fi=Math.floor((b.t||0)*14)%4, ang=b._chBeamAng||0, len=VH-nose.y+110;
+      ctx.save();ctx.translate(nose.x,nose.y);ctx.rotate(ang);ctx.globalCompositeOperation='lighter';
+      /* The authored beam cells carry 46 transparent pixels above the lance. Crop that
+         padding so the first live pixel seats directly inside the Harrier's nose flash. */
+      if(XART.rdy('ch_beam_'+fi))ctx.drawImage(XART.get('ch_beam_'+fi),0,46,192,299,-39,-7,78,len);
+      ctx.restore();
+      const a=Math.PI/2+ang, ex=nose.x+Math.cos(a)*(VH-nose.y+20),ey=nose.y+Math.sin(a)*(VH-nose.y+20);
+      chaosHarrierImage('ch_impact_'+fi,ex,ey,96,96,0.92,'lighter',0);
+    }
+  }
+  if(wf>=0)chaosHarrierImage('ch_warp_'+wf,b.x,yy,b.w*1.48,b.w*1.48,0.28,'lighter',0);
+  return true;
+}
+function chaosHarrierProjectileDraw(b){
+  if(!b||!b._chKind||typeof XART==='undefined')return false;
+  const fi=Math.floor((b.t||0)*(b._chKind==='missile'?11:13))%4;
+  const key='ch_'+b._chKind+'_'+fi; if(!XART.rdy(key))return false;
+  const im=XART.get(key), ang=Math.atan2(b.vy,b.vx)+Math.PI/2;
+  const h=b._chKind==='sidelaser'?60:(b._chKind==='missile'?36:31);
+  const w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
+  ctx.save();ctx.translate(b.x,b.y);ctx.rotate(ang);ctx.imageSmoothingEnabled=false;
+  ctx.globalCompositeOperation='lighter';ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
+}
 function drawSubBoss(){
   const b=subBoss; if(!b) return;
   if(typeof drawSubBossBar==='function') drawSubBossBar(b);
+  if(b._harrier){ chaosHarrierDraw(b); return; }
   if(b._ship && typeof shipBossDraw==='function' && shipBossDraw(b)){
     if(b.flash>0) b.flash-=0.016; return; }
   /* THE QUAD-LASER GUNSHIP (drop 0801em). Body plate first, then the damaged
@@ -11911,6 +12146,7 @@ function hitSubBoss(dmg, hx, hy){
     sxHit(subBoss, dmg, (_lastHitX!=null?_lastHitX:subBoss.x), (_lastHitY!=null?_lastHitY:subBoss.y));
   }
   const b=subBoss; if(!b||b.dead) return;
+  if(b._harrier && !b._chCollision) return;   // the hull is absent inside the authored warp aperture
 
   /* THE CANNONS TAKE THE HIT FIRST (drop 0801jw). Mike: "Level 1 miniboss, I cannot
      kill it at all nor are the turrets seperately atttackable."
@@ -18239,6 +18475,12 @@ function updatePlay(dt){
   for(const b of eBullets){
     if(_tslow) continue;
     b.t=(b.t||0)+dt;
+    if(b._chKind==='missile'){
+      /* Readable launch, then a committed straight-line burn.  No post-launch steering: Level 5
+         gets pressure from the four-lane fan without violating the helicopter-only homing rule. */
+      const a=Math.atan2(b.vy,b.vx),sp=Math.min(4.65,Math.hypot(b.vx,b.vy)+1.05*dt);
+      b.vx=Math.cos(a)*sp;b.vy=Math.sin(a)*sp;b.ang=a;
+    }
     /* ⚠ THE SWIRL (drop 0808w). Mike, on the black bomber's quad launch: "the missiles swirl and
        spread out 4 ways."
 
@@ -18420,7 +18662,7 @@ function updatePlay(dt){
       if(specialActive('juggernaut')){ player._ramT=(player._ramT||0)-dt; if(player._ramT<=0){ hitBoss(6); player._ramT=0.2; explode(player.x,player.y-10,20,'red'); shake=Math.max(shake,6); } }
       else playerHit();
     }
-    if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter && Math.abs(subBoss.x-player.x)<(subBoss.w/2+10) && Math.abs((subBoss._drawY||subBoss.y)-player.y)<(subBoss.h/2+10)){
+    if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter && (!subBoss._harrier||subBoss._chCollision) && Math.abs(subBoss.x-player.x)<(subBoss.w/2+10) && Math.abs((subBoss._drawY||subBoss.y)-player.y)<(subBoss.h/2+10)){
       if(specialActive('juggernaut')){ player._ramT=(player._ramT||0)-dt; if(player._ramT<=0){ hitSubBoss(6); player._ramT=0.2; explode(player.x,player.y-10,20,'red'); shake=Math.max(shake,6); } }
       else playerHit();
     }
@@ -26534,6 +26776,7 @@ function drawBullets(){
   ctx.imageSmoothingEnabled = false;
   // enemy — master fire-type art first (legacy kinds alias onto shared FIRETYPES)
   for(const b of eBullets){
+    if(b._chKind && typeof chaosHarrierProjectileDraw==='function' && chaosHarrierProjectileDraw(b)) continue;
     /* PER-LEVEL ENEMY PROJECTILES (drop 0801am). Mike: "brand new master projectiles for all
        enemies and bosses. erase all current projectiles you're using for enemies, keep the
        exclusive ones for the other bosses we provided."

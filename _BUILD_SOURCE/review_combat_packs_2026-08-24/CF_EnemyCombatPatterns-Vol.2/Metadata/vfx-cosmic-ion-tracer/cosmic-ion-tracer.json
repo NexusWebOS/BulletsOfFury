@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-ion-tracer",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-ion-tracer-01",
+    "cosmic-ion-tracer-02",
+    "cosmic-ion-tracer-03",
+    "cosmic-ion-tracer-04",
+    "cosmic-ion-tracer-05",
+    "cosmic-ion-tracer-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-ion-tracer-atlas.png",
+    "rects": {
+      "cosmic-ion-tracer-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-ion-tracer-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-ion-tracer-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-ion-tracer-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-ion-tracer-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-ion-tracer-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

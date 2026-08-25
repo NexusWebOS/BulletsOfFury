@@ -1,0 +1,301 @@
+{
+  "asset": "structural-stealth-bomber",
+  "project": "Bullets of Fury I",
+  "stage": 4,
+  "theme": "Blacksite Air War",
+  "source_set": "structural",
+  "category": "bomber",
+  "weapon_profile": "bomb",
+  "canvas": [
+    340,
+    247
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "bomb_bay": [
+      172,
+      149
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-stealth-bomber-intact-power-01",
+          "structural-stealth-bomber-intact-power-02",
+          "structural-stealth-bomber-intact-power-03",
+          "structural-stealth-bomber-intact-power-04",
+          "structural-stealth-bomber-intact-power-05",
+          "structural-stealth-bomber-intact-power-06"
+        ],
+        "damaged": [
+          "structural-stealth-bomber-damaged-power-01",
+          "structural-stealth-bomber-damaged-power-02",
+          "structural-stealth-bomber-damaged-power-03",
+          "structural-stealth-bomber-damaged-power-04",
+          "structural-stealth-bomber-damaged-power-05",
+          "structural-stealth-bomber-damaged-power-06"
+        ],
+        "critical": [
+          "structural-stealth-bomber-critical-power-01",
+          "structural-stealth-bomber-critical-power-02",
+          "structural-stealth-bomber-critical-power-03",
+          "structural-stealth-bomber-critical-power-04",
+          "structural-stealth-bomber-critical-power-05",
+          "structural-stealth-bomber-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-stealth-bomber-attack-01",
+        "structural-stealth-bomber-attack-02",
+        "structural-stealth-bomber-attack-03",
+        "structural-stealth-bomber-attack-04",
+        "structural-stealth-bomber-attack-05",
+        "structural-stealth-bomber-attack-06",
+        "structural-stealth-bomber-attack-07",
+        "structural-stealth-bomber-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-stealth-bomber-combat-atlas.png",
+    "size": [
+      1736,
+      1524
+    ],
+    "rects": {
+      "structural-stealth-bomber-intact-power-01": [
+        6,
+        6,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-intact-power-02": [
+        352,
+        6,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-intact-power-03": [
+        698,
+        6,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-intact-power-04": [
+        1044,
+        6,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-intact-power-05": [
+        1390,
+        6,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-intact-power-06": [
+        6,
+        259,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-damaged-power-01": [
+        352,
+        259,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-damaged-power-02": [
+        698,
+        259,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-damaged-power-03": [
+        1044,
+        259,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-damaged-power-04": [
+        1390,
+        259,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-damaged-power-05": [
+        6,
+        512,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-damaged-power-06": [
+        352,
+        512,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-critical-power-01": [
+        698,
+        512,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-critical-power-02": [
+        1044,
+        512,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-critical-power-03": [
+        1390,
+        512,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-critical-power-04": [
+        6,
+        765,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-critical-power-05": [
+        352,
+        765,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-critical-power-06": [
+        698,
+        765,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-attack-01": [
+        1044,
+        765,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-attack-02": [
+        1390,
+        765,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-attack-03": [
+        6,
+        1018,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-attack-04": [
+        352,
+        1018,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-attack-05": [
+        698,
+        1018,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-attack-06": [
+        1044,
+        1018,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-attack-07": [
+        1390,
+        1018,
+        340,
+        247
+      ],
+      "structural-stealth-bomber-attack-08": [
+        6,
+        1271,
+        340,
+        247
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "stealth-bomber-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "bomb_bay",
+          "projectile": "lvl4-enemy-projectile-04",
+          "aim": "player",
+          "speed": 198
+        },
+        {
+          "time_ms": 120,
+          "anchor": "bomb_bay",
+          "projectile": "lvl4-enemy-projectile-04",
+          "aim": "player",
+          "speed": 198
+        },
+        {
+          "time_ms": 240,
+          "anchor": "bomb_bay",
+          "projectile": "lvl4-enemy-projectile-04",
+          "aim": "player",
+          "speed": 198
+        }
+      ]
+    },
+    {
+      "id": "stealth-bomber-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "bomb_bay",
+          "projectile": "lvl4-enemy-projectile-05",
+          "count": 5,
+          "spread_degrees": 56,
+          "speed": 154
+        }
+      ]
+    },
+    {
+      "id": "stealth-bomber-missile-star",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "bomb_bay",
+          "projectile": "lvl4-enemy-projectile-02",
+          "count": 6,
+          "spread_degrees": 92,
+          "speed": 142
+        },
+        {
+          "time_ms": 360,
+          "anchor": "bomb_bay",
+          "projectile": "lvl4-elite-missile-star",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

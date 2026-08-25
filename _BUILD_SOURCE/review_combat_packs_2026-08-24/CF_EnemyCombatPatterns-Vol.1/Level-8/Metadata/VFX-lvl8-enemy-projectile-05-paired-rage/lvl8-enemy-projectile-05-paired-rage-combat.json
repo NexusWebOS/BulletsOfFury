@@ -1,0 +1,106 @@
+{
+  "asset": "lvl8-enemy-projectile-05-paired-rage",
+  "stage": 8,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl8-enemy-projectile-05-paired-rage-travel-01",
+      "lvl8-enemy-projectile-05-paired-rage-travel-02",
+      "lvl8-enemy-projectile-05-paired-rage-travel-03",
+      "lvl8-enemy-projectile-05-paired-rage-travel-04",
+      "lvl8-enemy-projectile-05-paired-rage-travel-05",
+      "lvl8-enemy-projectile-05-paired-rage-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl8-enemy-projectile-05-paired-rage-impact-01",
+      "lvl8-enemy-projectile-05-paired-rage-impact-02",
+      "lvl8-enemy-projectile-05-paired-rage-impact-03",
+      "lvl8-enemy-projectile-05-paired-rage-impact-04",
+      "lvl8-enemy-projectile-05-paired-rage-impact-05",
+      "lvl8-enemy-projectile-05-paired-rage-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl8-enemy-projectile-05-paired-rage-combat-atlas.png",
+    "rects": {
+      "lvl8-enemy-projectile-05-paired-rage-travel-01": [
+        56,
+        43,
+        59,
+        86
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-travel-02": [
+        222,
+        43,
+        59,
+        86
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-travel-03": [
+        388,
+        43,
+        59,
+        86
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-travel-04": [
+        554,
+        43,
+        59,
+        86
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-travel-05": [
+        720,
+        43,
+        59,
+        86
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-travel-06": [
+        886,
+        43,
+        59,
+        86
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-05-paired-rage-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

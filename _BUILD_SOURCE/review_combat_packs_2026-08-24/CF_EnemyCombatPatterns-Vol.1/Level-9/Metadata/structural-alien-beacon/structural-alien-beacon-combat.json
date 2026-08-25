@@ -1,0 +1,282 @@
+{
+  "asset": "structural-alien-beacon",
+  "project": "Bullets of Fury I",
+  "stage": 9,
+  "theme": "Warp Galaxy",
+  "source_set": "structural",
+  "category": "hazard",
+  "weapon_profile": "radial",
+  "canvas": [
+    258,
+    343
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "core": [
+      135,
+      171
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-alien-beacon-intact-power-01",
+          "structural-alien-beacon-intact-power-02",
+          "structural-alien-beacon-intact-power-03",
+          "structural-alien-beacon-intact-power-04",
+          "structural-alien-beacon-intact-power-05",
+          "structural-alien-beacon-intact-power-06"
+        ],
+        "damaged": [
+          "structural-alien-beacon-damaged-power-01",
+          "structural-alien-beacon-damaged-power-02",
+          "structural-alien-beacon-damaged-power-03",
+          "structural-alien-beacon-damaged-power-04",
+          "structural-alien-beacon-damaged-power-05",
+          "structural-alien-beacon-damaged-power-06"
+        ],
+        "critical": [
+          "structural-alien-beacon-critical-power-01",
+          "structural-alien-beacon-critical-power-02",
+          "structural-alien-beacon-critical-power-03",
+          "structural-alien-beacon-critical-power-04",
+          "structural-alien-beacon-critical-power-05",
+          "structural-alien-beacon-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-alien-beacon-attack-01",
+        "structural-alien-beacon-attack-02",
+        "structural-alien-beacon-attack-03",
+        "structural-alien-beacon-attack-04",
+        "structural-alien-beacon-attack-05",
+        "structural-alien-beacon-attack-06",
+        "structural-alien-beacon-attack-07",
+        "structural-alien-beacon-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-alien-beacon-combat-atlas.png",
+    "size": [
+      1326,
+      2100
+    ],
+    "rects": {
+      "structural-alien-beacon-intact-power-01": [
+        6,
+        6,
+        258,
+        343
+      ],
+      "structural-alien-beacon-intact-power-02": [
+        270,
+        6,
+        258,
+        343
+      ],
+      "structural-alien-beacon-intact-power-03": [
+        534,
+        6,
+        258,
+        343
+      ],
+      "structural-alien-beacon-intact-power-04": [
+        798,
+        6,
+        258,
+        343
+      ],
+      "structural-alien-beacon-intact-power-05": [
+        1062,
+        6,
+        258,
+        343
+      ],
+      "structural-alien-beacon-intact-power-06": [
+        6,
+        355,
+        258,
+        343
+      ],
+      "structural-alien-beacon-damaged-power-01": [
+        270,
+        355,
+        258,
+        343
+      ],
+      "structural-alien-beacon-damaged-power-02": [
+        534,
+        355,
+        258,
+        343
+      ],
+      "structural-alien-beacon-damaged-power-03": [
+        798,
+        355,
+        258,
+        343
+      ],
+      "structural-alien-beacon-damaged-power-04": [
+        1062,
+        355,
+        258,
+        343
+      ],
+      "structural-alien-beacon-damaged-power-05": [
+        6,
+        704,
+        258,
+        343
+      ],
+      "structural-alien-beacon-damaged-power-06": [
+        270,
+        704,
+        258,
+        343
+      ],
+      "structural-alien-beacon-critical-power-01": [
+        534,
+        704,
+        258,
+        343
+      ],
+      "structural-alien-beacon-critical-power-02": [
+        798,
+        704,
+        258,
+        343
+      ],
+      "structural-alien-beacon-critical-power-03": [
+        1062,
+        704,
+        258,
+        343
+      ],
+      "structural-alien-beacon-critical-power-04": [
+        6,
+        1053,
+        258,
+        343
+      ],
+      "structural-alien-beacon-critical-power-05": [
+        270,
+        1053,
+        258,
+        343
+      ],
+      "structural-alien-beacon-critical-power-06": [
+        534,
+        1053,
+        258,
+        343
+      ],
+      "structural-alien-beacon-attack-01": [
+        798,
+        1053,
+        258,
+        343
+      ],
+      "structural-alien-beacon-attack-02": [
+        1062,
+        1053,
+        258,
+        343
+      ],
+      "structural-alien-beacon-attack-03": [
+        6,
+        1402,
+        258,
+        343
+      ],
+      "structural-alien-beacon-attack-04": [
+        270,
+        1402,
+        258,
+        343
+      ],
+      "structural-alien-beacon-attack-05": [
+        534,
+        1402,
+        258,
+        343
+      ],
+      "structural-alien-beacon-attack-06": [
+        798,
+        1402,
+        258,
+        343
+      ],
+      "structural-alien-beacon-attack-07": [
+        1062,
+        1402,
+        258,
+        343
+      ],
+      "structural-alien-beacon-attack-08": [
+        6,
+        1751,
+        258,
+        343
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "alien-beacon-proximity-bloom",
+      "cooldown_ms": 2600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl9-enemy-projectile-02",
+          "count": 8,
+          "spread_degrees": 360,
+          "speed": 92
+        }
+      ]
+    },
+    {
+      "id": "alien-beacon-delayed-cross",
+      "cooldown_ms": 3200,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl9-enemy-projectile-05",
+          "count": 4,
+          "spread_degrees": 270,
+          "speed": 118,
+          "delay_ms": 420
+        }
+      ]
+    },
+    {
+      "id": "alien-beacon-warp-lattice",
+      "cooldown_ms": 4800,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl9-elite-warp-lattice",
+          "count": 1,
+          "speed": 42,
+          "burst_on_timeout_ms": 900
+        }
+      ]
+    }
+  ]
+}

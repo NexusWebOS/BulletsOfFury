@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-heavy-fuse-bomb",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-heavy-fuse-bomb-01",
+    "heavy-heavy-fuse-bomb-02",
+    "heavy-heavy-fuse-bomb-03",
+    "heavy-heavy-fuse-bomb-04",
+    "heavy-heavy-fuse-bomb-05",
+    "heavy-heavy-fuse-bomb-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-heavy-fuse-bomb-atlas.png",
+    "rects": {
+      "heavy-heavy-fuse-bomb-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-heavy-fuse-bomb-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-heavy-fuse-bomb-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-heavy-fuse-bomb-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-heavy-fuse-bomb-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-heavy-fuse-bomb-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "pack": "CF_EnemyCombatSystems-Lvl3",
+  "stage": 3,
+  "theme": "Frozen Stronghold",
+  "enemy_count": 25,
+  "enemy_ids": [
+    "roster-aa-sled",
+    "roster-cryo-barge",
+    "roster-elite-ice-interceptor",
+    "roster-explosive-cryo-canister",
+    "roster-frozen-turret",
+    "roster-glacier-drone",
+    "roster-ice-crawler",
+    "roster-ice-skimmer",
+    "roster-shard-mine",
+    "roster-snow-tank",
+    "roster-snowmobile-gunner",
+    "roster-tracked-frost-artillery",
+    "structural-blizzard-bomber",
+    "structural-cryo-mini-tank",
+    "structural-cryo-skimmer",
+    "structural-freezer-reactor-transport",
+    "structural-frost-battle-tank",
+    "structural-frost-mine",
+    "structural-frozen-attack-helicopter",
+    "structural-glacial-tracked-artillery",
+    "structural-glacier-gunship",
+    "structural-ice-shard-fighter",
+    "structural-icebreaker-crawler",
+    "structural-icicle-turret",
+    "structural-snowstorm-drone"
+  ],
+  "patterns": 75,
+  "vfx": {
+    "muzzle_frames": 4,
+    "projectile_families": [
+      "lvl3-enemy-projectile-01-ice-needle",
+      "lvl3-enemy-projectile-02-freeze-orb",
+      "lvl3-enemy-projectile-03-icicle-missile",
+      "lvl3-enemy-projectile-04-paired-frost",
+      "lvl3-enemy-projectile-05-cold-slug",
+      "lvl3-enemy-projectile-06-ice-shard"
+    ]
+  },
+  "elite_signature": "crystal-guillotine",
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

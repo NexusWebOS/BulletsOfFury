@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-rift-collapse",
+  "kind": "impact",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-rift-collapse-01",
+    "cosmic-rift-collapse-02",
+    "cosmic-rift-collapse-03",
+    "cosmic-rift-collapse-04",
+    "cosmic-rift-collapse-05",
+    "cosmic-rift-collapse-06"
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-rift-collapse-atlas.png",
+    "rects": {
+      "cosmic-rift-collapse-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-rift-collapse-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-rift-collapse-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-rift-collapse-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-rift-collapse-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-rift-collapse-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

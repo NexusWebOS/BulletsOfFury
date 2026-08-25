@@ -1,0 +1,144 @@
+{
+  "project": "Bullets of Fury I",
+  "level": 6,
+  "boss": "Doomsday Carrier Mk II",
+  "style": "authored 16-bit arcade pixel art",
+  "source_policy": "normalized pure #FF00FF boards in Source; hard-alpha runtime in Edited",
+  "runtime_effect_families": [
+    "cyclonemuzzle",
+    "prismmuzzle",
+    "bombignition",
+    "cyclonetracer",
+    "prismbolt",
+    "flakshell",
+    "stormnode",
+    "ricochetimpact",
+    "crystalimpact",
+    "flakburst",
+    "empimpact",
+    "omegabomb-hostile",
+    "omegabomb-reflected",
+    "bombwarning",
+    "bombdeflect",
+    "bombshield",
+    "bombimpact",
+    "clusterbomblet",
+    "clusterburst",
+    "gravitymine",
+    "gravityripple",
+    "prismbeam",
+    "stormlink"
+  ],
+  "boss_cycles": {
+    "boss-cyclonebarrage": 16,
+    "boss-prismcrossfire": 16,
+    "boss-chromeflakfan": 14,
+    "boss-stormcage": 16,
+    "boss-omegabombrun": 18,
+    "boss-doomsdayfusion": 18
+  },
+  "patterns": [
+    "cyclone_barrage",
+    "prism_crossfire",
+    "omega_bomb_run",
+    "chrome_flak_fan",
+    "storm_cage",
+    "doomsday_fusion"
+  ],
+  "anchors": {
+    "upper_left_outer": [
+      247,
+      91
+    ],
+    "upper_left_inner": [
+      257,
+      91
+    ],
+    "upper_right_inner": [
+      383,
+      91
+    ],
+    "upper_right_outer": [
+      393,
+      91
+    ],
+    "lower_left_outer": [
+      138,
+      244
+    ],
+    "lower_left_inner": [
+      147,
+      244
+    ],
+    "lower_right_inner": [
+      493,
+      244
+    ],
+    "lower_right_outer": [
+      502,
+      244
+    ],
+    "left_bay": [
+      160,
+      190
+    ],
+    "right_bay": [
+      480,
+      190
+    ],
+    "energy_cannon": [
+      320,
+      290
+    ]
+  },
+  "palette": [
+    "#030305",
+    "#0E0E16",
+    "#1D2130",
+    "#252F35",
+    "#2C364C",
+    "#364459",
+    "#465470",
+    "#505B6D",
+    "#6E7786",
+    "#8F9CB3",
+    "#394B6E",
+    "#3E5386",
+    "#526890",
+    "#5777AE",
+    "#6181B4",
+    "#6786B7",
+    "#6F93C9",
+    "#7AA5DD",
+    "#82ACE3",
+    "#8DB4E7",
+    "#92ACD1",
+    "#ADCBED",
+    "#C9DAEC",
+    "#E1ECF6",
+    "#F7FBFF",
+    "#16627A",
+    "#29DFE5",
+    "#B8FAFF",
+    "#6E1418",
+    "#BC3E30",
+    "#FF7A18",
+    "#FFD24A",
+    "#FFFFFF",
+    "#FFF5B8",
+    "#FFA62B",
+    "#E24A18",
+    "#961F1A",
+    "#092B64",
+    "#0756A8",
+    "#087FD4",
+    "#12B7F1",
+    "#66E6FF",
+    "#D8FBFF",
+    "#132544",
+    "#223B69",
+    "#E3352B",
+    "#FF5B32",
+    "#FFE36A"
+  ]
+}

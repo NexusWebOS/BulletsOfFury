@@ -1,0 +1,106 @@
+{
+  "asset": "lvl6-enemy-projectile-01-wind-blade",
+  "stage": 6,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl6-enemy-projectile-01-wind-blade-travel-01",
+      "lvl6-enemy-projectile-01-wind-blade-travel-02",
+      "lvl6-enemy-projectile-01-wind-blade-travel-03",
+      "lvl6-enemy-projectile-01-wind-blade-travel-04",
+      "lvl6-enemy-projectile-01-wind-blade-travel-05",
+      "lvl6-enemy-projectile-01-wind-blade-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl6-enemy-projectile-01-wind-blade-impact-01",
+      "lvl6-enemy-projectile-01-wind-blade-impact-02",
+      "lvl6-enemy-projectile-01-wind-blade-impact-03",
+      "lvl6-enemy-projectile-01-wind-blade-impact-04",
+      "lvl6-enemy-projectile-01-wind-blade-impact-05",
+      "lvl6-enemy-projectile-01-wind-blade-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl6-enemy-projectile-01-wind-blade-combat-atlas.png",
+    "rects": {
+      "lvl6-enemy-projectile-01-wind-blade-travel-01": [
+        56,
+        43,
+        59,
+        85
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-travel-02": [
+        222,
+        43,
+        59,
+        85
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-travel-03": [
+        388,
+        43,
+        59,
+        85
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-travel-04": [
+        554,
+        43,
+        59,
+        85
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-travel-05": [
+        720,
+        43,
+        59,
+        85
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-travel-06": [
+        886,
+        43,
+        59,
+        85
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-01-wind-blade-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

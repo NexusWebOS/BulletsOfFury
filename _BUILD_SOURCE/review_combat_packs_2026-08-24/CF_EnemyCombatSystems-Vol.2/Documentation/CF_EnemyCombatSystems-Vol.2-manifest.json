@@ -1,0 +1,29 @@
+{
+  "pack": "CF_EnemyCombatSystems-Vol.2",
+  "project": "Bullets of Fury I",
+  "enemy_count": 48,
+  "attack_pattern_count": 192,
+  "vfx_family_count": 32,
+  "stage_counts": {
+    "9": 7,
+    "6": 9,
+    "3": 2,
+    "2": 2,
+    "1": 17,
+    "4": 6,
+    "8": 5
+  },
+  "canvas": [
+    256,
+    256
+  ],
+  "animations_per_enemy": [
+    "power",
+    "attack",
+    "hit",
+    "death"
+  ],
+  "source_policy": "untouched uploaded and generated sources preserved outside the runtime ZIP; cleaned masters ship in Edited",
+  "runtime_alpha": "hard RGBA",
+  "facing": "down-screen"
+}

@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-cryo-missile",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-cryo-missile-01",
+    "heavy-cryo-missile-02",
+    "heavy-cryo-missile-03",
+    "heavy-cryo-missile-04",
+    "heavy-cryo-missile-05",
+    "heavy-cryo-missile-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-cryo-missile-atlas.png",
+    "rects": {
+      "heavy-cryo-missile-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-cryo-missile-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-cryo-missile-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-cryo-missile-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-cryo-missile-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-cryo-missile-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

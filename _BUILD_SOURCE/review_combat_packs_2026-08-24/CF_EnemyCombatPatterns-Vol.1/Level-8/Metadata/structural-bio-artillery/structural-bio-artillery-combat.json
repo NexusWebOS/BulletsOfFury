@@ -1,0 +1,301 @@
+{
+  "asset": "structural-bio-artillery",
+  "project": "Bullets of Fury I",
+  "stage": 8,
+  "theme": "Furious Death",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    300,
+    361
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      150,
+      302
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-bio-artillery-intact-power-01",
+          "structural-bio-artillery-intact-power-02",
+          "structural-bio-artillery-intact-power-03",
+          "structural-bio-artillery-intact-power-04",
+          "structural-bio-artillery-intact-power-05",
+          "structural-bio-artillery-intact-power-06"
+        ],
+        "damaged": [
+          "structural-bio-artillery-damaged-power-01",
+          "structural-bio-artillery-damaged-power-02",
+          "structural-bio-artillery-damaged-power-03",
+          "structural-bio-artillery-damaged-power-04",
+          "structural-bio-artillery-damaged-power-05",
+          "structural-bio-artillery-damaged-power-06"
+        ],
+        "critical": [
+          "structural-bio-artillery-critical-power-01",
+          "structural-bio-artillery-critical-power-02",
+          "structural-bio-artillery-critical-power-03",
+          "structural-bio-artillery-critical-power-04",
+          "structural-bio-artillery-critical-power-05",
+          "structural-bio-artillery-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-bio-artillery-attack-01",
+        "structural-bio-artillery-attack-02",
+        "structural-bio-artillery-attack-03",
+        "structural-bio-artillery-attack-04",
+        "structural-bio-artillery-attack-05",
+        "structural-bio-artillery-attack-06",
+        "structural-bio-artillery-attack-07",
+        "structural-bio-artillery-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-bio-artillery-combat-atlas.png",
+    "size": [
+      1536,
+      2208
+    ],
+    "rects": {
+      "structural-bio-artillery-intact-power-01": [
+        6,
+        6,
+        300,
+        361
+      ],
+      "structural-bio-artillery-intact-power-02": [
+        312,
+        6,
+        300,
+        361
+      ],
+      "structural-bio-artillery-intact-power-03": [
+        618,
+        6,
+        300,
+        361
+      ],
+      "structural-bio-artillery-intact-power-04": [
+        924,
+        6,
+        300,
+        361
+      ],
+      "structural-bio-artillery-intact-power-05": [
+        1230,
+        6,
+        300,
+        361
+      ],
+      "structural-bio-artillery-intact-power-06": [
+        6,
+        373,
+        300,
+        361
+      ],
+      "structural-bio-artillery-damaged-power-01": [
+        312,
+        373,
+        300,
+        361
+      ],
+      "structural-bio-artillery-damaged-power-02": [
+        618,
+        373,
+        300,
+        361
+      ],
+      "structural-bio-artillery-damaged-power-03": [
+        924,
+        373,
+        300,
+        361
+      ],
+      "structural-bio-artillery-damaged-power-04": [
+        1230,
+        373,
+        300,
+        361
+      ],
+      "structural-bio-artillery-damaged-power-05": [
+        6,
+        740,
+        300,
+        361
+      ],
+      "structural-bio-artillery-damaged-power-06": [
+        312,
+        740,
+        300,
+        361
+      ],
+      "structural-bio-artillery-critical-power-01": [
+        618,
+        740,
+        300,
+        361
+      ],
+      "structural-bio-artillery-critical-power-02": [
+        924,
+        740,
+        300,
+        361
+      ],
+      "structural-bio-artillery-critical-power-03": [
+        1230,
+        740,
+        300,
+        361
+      ],
+      "structural-bio-artillery-critical-power-04": [
+        6,
+        1107,
+        300,
+        361
+      ],
+      "structural-bio-artillery-critical-power-05": [
+        312,
+        1107,
+        300,
+        361
+      ],
+      "structural-bio-artillery-critical-power-06": [
+        618,
+        1107,
+        300,
+        361
+      ],
+      "structural-bio-artillery-attack-01": [
+        924,
+        1107,
+        300,
+        361
+      ],
+      "structural-bio-artillery-attack-02": [
+        1230,
+        1107,
+        300,
+        361
+      ],
+      "structural-bio-artillery-attack-03": [
+        6,
+        1474,
+        300,
+        361
+      ],
+      "structural-bio-artillery-attack-04": [
+        312,
+        1474,
+        300,
+        361
+      ],
+      "structural-bio-artillery-attack-05": [
+        618,
+        1474,
+        300,
+        361
+      ],
+      "structural-bio-artillery-attack-06": [
+        924,
+        1474,
+        300,
+        361
+      ],
+      "structural-bio-artillery-attack-07": [
+        1230,
+        1474,
+        300,
+        361
+      ],
+      "structural-bio-artillery-attack-08": [
+        6,
+        1841,
+        300,
+        361
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "bio-artillery-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-01",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-01",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-01",
+          "aim": "player",
+          "speed": 226
+        }
+      ]
+    },
+    {
+      "id": "bio-artillery-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 64,
+          "speed": 178
+        }
+      ]
+    },
+    {
+      "id": "bio-artillery-void-razor",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl8-enemy-projectile-03",
+          "count": 8,
+          "spread_degrees": 92,
+          "speed": 162
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl8-elite-void-razor",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

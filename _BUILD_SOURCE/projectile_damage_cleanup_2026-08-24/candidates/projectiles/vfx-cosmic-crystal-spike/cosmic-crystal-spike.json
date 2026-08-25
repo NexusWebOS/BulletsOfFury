@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-crystal-spike",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-crystal-spike-01",
+    "cosmic-crystal-spike-02",
+    "cosmic-crystal-spike-03",
+    "cosmic-crystal-spike-04",
+    "cosmic-crystal-spike-05",
+    "cosmic-crystal-spike-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-crystal-spike-atlas.png",
+    "rects": {
+      "cosmic-crystal-spike-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-crystal-spike-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-crystal-spike-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-crystal-spike-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-crystal-spike-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-crystal-spike-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

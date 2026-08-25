@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-toxic-jungle-missile",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-toxic-jungle-missile-01",
+    "heavy-toxic-jungle-missile-02",
+    "heavy-toxic-jungle-missile-03",
+    "heavy-toxic-jungle-missile-04",
+    "heavy-toxic-jungle-missile-05",
+    "heavy-toxic-jungle-missile-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-toxic-jungle-missile-atlas.png",
+    "rects": {
+      "heavy-toxic-jungle-missile-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-toxic-jungle-missile-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-toxic-jungle-missile-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-toxic-jungle-missile-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-toxic-jungle-missile-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-toxic-jungle-missile-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

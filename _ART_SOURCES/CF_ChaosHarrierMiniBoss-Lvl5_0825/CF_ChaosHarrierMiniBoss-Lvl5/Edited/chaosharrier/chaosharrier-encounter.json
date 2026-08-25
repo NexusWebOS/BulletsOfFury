@@ -1,0 +1,5 @@
+{
+  "asset": "Chaos Harrier",
+  "runtime_manifest": "../chaosharrier-ai/chaosharrier-runtime-manifest.json",
+  "status": "AI, animation events, projectiles, missiles, lasers, and teleport behavior wired"
+}

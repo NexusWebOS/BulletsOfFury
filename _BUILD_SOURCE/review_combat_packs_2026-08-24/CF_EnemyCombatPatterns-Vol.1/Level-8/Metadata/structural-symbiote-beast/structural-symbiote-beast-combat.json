@@ -1,0 +1,305 @@
+{
+  "asset": "structural-symbiote-beast",
+  "project": "Bullets of Fury I",
+  "stage": 8,
+  "theme": "Furious Death",
+  "source_set": "structural",
+  "category": "bio",
+  "weapon_profile": "dual",
+  "canvas": [
+    330,
+    337
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      108,
+      254
+    ],
+    "right_weapon": [
+      221,
+      254
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-symbiote-beast-intact-power-01",
+          "structural-symbiote-beast-intact-power-02",
+          "structural-symbiote-beast-intact-power-03",
+          "structural-symbiote-beast-intact-power-04",
+          "structural-symbiote-beast-intact-power-05",
+          "structural-symbiote-beast-intact-power-06"
+        ],
+        "damaged": [
+          "structural-symbiote-beast-damaged-power-01",
+          "structural-symbiote-beast-damaged-power-02",
+          "structural-symbiote-beast-damaged-power-03",
+          "structural-symbiote-beast-damaged-power-04",
+          "structural-symbiote-beast-damaged-power-05",
+          "structural-symbiote-beast-damaged-power-06"
+        ],
+        "critical": [
+          "structural-symbiote-beast-critical-power-01",
+          "structural-symbiote-beast-critical-power-02",
+          "structural-symbiote-beast-critical-power-03",
+          "structural-symbiote-beast-critical-power-04",
+          "structural-symbiote-beast-critical-power-05",
+          "structural-symbiote-beast-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-symbiote-beast-attack-01",
+        "structural-symbiote-beast-attack-02",
+        "structural-symbiote-beast-attack-03",
+        "structural-symbiote-beast-attack-04",
+        "structural-symbiote-beast-attack-05",
+        "structural-symbiote-beast-attack-06",
+        "structural-symbiote-beast-attack-07",
+        "structural-symbiote-beast-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-symbiote-beast-combat-atlas.png",
+    "size": [
+      1686,
+      2064
+    ],
+    "rects": {
+      "structural-symbiote-beast-intact-power-01": [
+        6,
+        6,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-intact-power-02": [
+        342,
+        6,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-intact-power-03": [
+        678,
+        6,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-intact-power-04": [
+        1014,
+        6,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-intact-power-05": [
+        1350,
+        6,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-intact-power-06": [
+        6,
+        349,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-damaged-power-01": [
+        342,
+        349,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-damaged-power-02": [
+        678,
+        349,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-damaged-power-03": [
+        1014,
+        349,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-damaged-power-04": [
+        1350,
+        349,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-damaged-power-05": [
+        6,
+        692,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-damaged-power-06": [
+        342,
+        692,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-critical-power-01": [
+        678,
+        692,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-critical-power-02": [
+        1014,
+        692,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-critical-power-03": [
+        1350,
+        692,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-critical-power-04": [
+        6,
+        1035,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-critical-power-05": [
+        342,
+        1035,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-critical-power-06": [
+        678,
+        1035,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-attack-01": [
+        1014,
+        1035,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-attack-02": [
+        1350,
+        1035,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-attack-03": [
+        6,
+        1378,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-attack-04": [
+        342,
+        1378,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-attack-05": [
+        678,
+        1378,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-attack-06": [
+        1014,
+        1378,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-attack-07": [
+        1350,
+        1378,
+        330,
+        337
+      ],
+      "structural-symbiote-beast-attack-08": [
+        6,
+        1721,
+        330,
+        337
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "symbiote-beast-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-enemy-projectile-02",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl8-enemy-projectile-02",
+          "aim": "player",
+          "speed": 226
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-enemy-projectile-02",
+          "aim": "player",
+          "speed": 226
+        }
+      ]
+    },
+    {
+      "id": "symbiote-beast-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 64,
+          "speed": 178
+        }
+      ]
+    },
+    {
+      "id": "symbiote-beast-void-razor",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-enemy-projectile-06",
+          "count": 8,
+          "spread_degrees": 92,
+          "speed": 162
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl8-elite-void-razor",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "pack": "CF_EnemyCombatSystems-Lvl9",
+  "stage": 9,
+  "theme": "Warp Galaxy",
+  "enemy_count": 13,
+  "enemy_ids": [
+    "structural-alien-beacon",
+    "structural-chronal-crawler-tank",
+    "structural-comet-skimmer",
+    "structural-dimensional-gunship",
+    "structural-galaxy-interceptor",
+    "structural-gate-carrier",
+    "structural-gate-turret",
+    "structural-gravity-artillery",
+    "structural-hyperspace-prism",
+    "structural-mini-warp-tank",
+    "structural-ring-drone",
+    "structural-singularity-mine",
+    "structural-warp-bomber"
+  ],
+  "patterns": 39,
+  "vfx": {
+    "muzzle_frames": 4,
+    "projectile_families": [
+      "lvl9-enemy-projectile-01-gold-score-shot",
+      "lvl9-enemy-projectile-02-warp-bolt",
+      "lvl9-enemy-projectile-03-turbo-dart",
+      "lvl9-enemy-projectile-04-star-needle",
+      "lvl9-enemy-projectile-05-comet-missile",
+      "lvl9-enemy-projectile-06-paired-warp"
+    ]
+  },
+  "elite_signature": "warp-lattice",
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

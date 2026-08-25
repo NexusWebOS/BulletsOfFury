@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-ice-shatter-impact",
+  "kind": "impact",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-ice-shatter-impact-01",
+    "heavy-ice-shatter-impact-02",
+    "heavy-ice-shatter-impact-03",
+    "heavy-ice-shatter-impact-04",
+    "heavy-ice-shatter-impact-05",
+    "heavy-ice-shatter-impact-06"
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-ice-shatter-impact-atlas.png",
+    "rects": {
+      "heavy-ice-shatter-impact-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-ice-shatter-impact-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-ice-shatter-impact-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-ice-shatter-impact-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-ice-shatter-impact-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-ice-shatter-impact-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

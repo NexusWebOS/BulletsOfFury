@@ -1,0 +1,88 @@
+{
+  "asset": "lvl8-elite-void-razor",
+  "stage": 8,
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision": "spawn controller; use projectile children for discrete collision",
+  "atlas": {
+    "file": "lvl8-elite-void-razor-atlas.png",
+    "rects": {
+      "lvl8-elite-void-razor-01": [
+        6,
+        6,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-02": [
+        340,
+        6,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-03": [
+        674,
+        6,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-04": [
+        1008,
+        6,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-05": [
+        6,
+        340,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-06": [
+        340,
+        340,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-07": [
+        674,
+        340,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-08": [
+        1008,
+        340,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-09": [
+        6,
+        674,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-10": [
+        340,
+        674,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-11": [
+        674,
+        674,
+        328,
+        328
+      ],
+      "lvl8-elite-void-razor-12": [
+        1008,
+        674,
+        328,
+        328
+      ]
+    }
+  }
+}

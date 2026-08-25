@@ -1,0 +1,106 @@
+{
+  "asset": "lvl2-enemy-projectile-02-lava-bolt",
+  "stage": 2,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl2-enemy-projectile-02-lava-bolt-travel-01",
+      "lvl2-enemy-projectile-02-lava-bolt-travel-02",
+      "lvl2-enemy-projectile-02-lava-bolt-travel-03",
+      "lvl2-enemy-projectile-02-lava-bolt-travel-04",
+      "lvl2-enemy-projectile-02-lava-bolt-travel-05",
+      "lvl2-enemy-projectile-02-lava-bolt-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl2-enemy-projectile-02-lava-bolt-impact-01",
+      "lvl2-enemy-projectile-02-lava-bolt-impact-02",
+      "lvl2-enemy-projectile-02-lava-bolt-impact-03",
+      "lvl2-enemy-projectile-02-lava-bolt-impact-04",
+      "lvl2-enemy-projectile-02-lava-bolt-impact-05",
+      "lvl2-enemy-projectile-02-lava-bolt-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl2-enemy-projectile-02-lava-bolt-combat-atlas.png",
+    "rects": {
+      "lvl2-enemy-projectile-02-lava-bolt-travel-01": [
+        63,
+        45,
+        45,
+        82
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-travel-02": [
+        229,
+        45,
+        45,
+        82
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-travel-03": [
+        395,
+        45,
+        45,
+        82
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-travel-04": [
+        561,
+        45,
+        45,
+        82
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-travel-05": [
+        727,
+        45,
+        45,
+        82
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-travel-06": [
+        893,
+        45,
+        45,
+        82
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl2-enemy-projectile-02-lava-bolt-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

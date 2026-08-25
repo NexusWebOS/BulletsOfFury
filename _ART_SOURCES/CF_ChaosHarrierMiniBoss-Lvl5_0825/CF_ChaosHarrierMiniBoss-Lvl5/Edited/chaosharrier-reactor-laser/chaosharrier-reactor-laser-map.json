@@ -1,0 +1,149 @@
+{
+  "project": "Bullets of Fury",
+  "level": 5,
+  "view": "top-down three-quarter",
+  "facing": "down",
+  "source_key": "#FF00FF",
+  "runtime_alpha": "hard binary RGBA",
+  "pixel_scale": "source reduced 2x with nearest-neighbor",
+  "asset": "Chaos Harrier reactor laser",
+  "atlas": "chaosharrier-reactor-laser-atlas.png",
+  "atlas_grid": [
+    4,
+    1
+  ],
+  "frame_canvas": [
+    192,
+    384
+  ],
+  "frames": [
+    {
+      "name": "chaosharrier-reactor-laser-01-beam-1.png",
+      "canvas": [
+        192,
+        384
+      ],
+      "bbox": [
+        88,
+        46,
+        50,
+        299
+      ],
+      "padding": {
+        "left": 88,
+        "top": 46,
+        "right": 54,
+        "bottom": 39
+      },
+      "opaque_pixels": 11871,
+      "index": 0,
+      "state": "beam-1",
+      "origin": [
+        96,
+        192
+      ]
+    },
+    {
+      "name": "chaosharrier-reactor-laser-02-beam-2.png",
+      "canvas": [
+        192,
+        384
+      ],
+      "bbox": [
+        80,
+        46,
+        50,
+        299
+      ],
+      "padding": {
+        "left": 80,
+        "top": 46,
+        "right": 62,
+        "bottom": 39
+      },
+      "opaque_pixels": 12003,
+      "index": 1,
+      "state": "beam-2",
+      "origin": [
+        96,
+        192
+      ]
+    },
+    {
+      "name": "chaosharrier-reactor-laser-03-beam-3.png",
+      "canvas": [
+        192,
+        384
+      ],
+      "bbox": [
+        62,
+        46,
+        50,
+        299
+      ],
+      "padding": {
+        "left": 62,
+        "top": 46,
+        "right": 80,
+        "bottom": 39
+      },
+      "opaque_pixels": 11935,
+      "index": 2,
+      "state": "beam-3",
+      "origin": [
+        96,
+        192
+      ]
+    },
+    {
+      "name": "chaosharrier-reactor-laser-04-beam-4.png",
+      "canvas": [
+        192,
+        384
+      ],
+      "bbox": [
+        54,
+        46,
+        50,
+        299
+      ],
+      "padding": {
+        "left": 54,
+        "top": 46,
+        "right": 88,
+        "bottom": 39
+      },
+      "opaque_pixels": 11932,
+      "index": 3,
+      "state": "beam-4",
+      "origin": [
+        96,
+        192
+      ]
+    }
+  ],
+  "animation_groups": {
+    "beam_active": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 14,
+      "loop": true
+    }
+  },
+  "draw": {
+    "layer": "below_ship_above_projectiles",
+    "pivot": [
+      96,
+      22
+    ],
+    "stretch_y_allowed": true,
+    "recommended_scale_y_range": [
+      1.0,
+      1.55
+    ]
+  }
+}

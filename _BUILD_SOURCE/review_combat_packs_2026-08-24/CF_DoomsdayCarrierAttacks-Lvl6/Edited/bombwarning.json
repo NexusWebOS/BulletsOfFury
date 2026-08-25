@@ -1,0 +1,189 @@
+{
+  "asset": "bombwarning",
+  "frame_size": [
+    144,
+    144
+  ],
+  "frame_count": 8,
+  "pivot": [
+    72,
+    72
+  ],
+  "loop": true,
+  "alpha": "binary",
+  "palette_colors": 40,
+  "collision": {
+    "type": "circle",
+    "radius": 38
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "frame_01",
+      "duration_ms": 90,
+      "rect": {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      }
+    },
+    {
+      "index": 1,
+      "name": "frame_02",
+      "duration_ms": 90,
+      "rect": {
+        "frame": 2,
+        "x": 152,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      }
+    },
+    {
+      "index": 2,
+      "name": "frame_03",
+      "duration_ms": 90,
+      "rect": {
+        "frame": 3,
+        "x": 304,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      }
+    },
+    {
+      "index": 3,
+      "name": "frame_04",
+      "duration_ms": 90,
+      "rect": {
+        "frame": 4,
+        "x": 456,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      }
+    },
+    {
+      "index": 4,
+      "name": "frame_05",
+      "duration_ms": 90,
+      "rect": {
+        "frame": 5,
+        "x": 608,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      }
+    },
+    {
+      "index": 5,
+      "name": "frame_06",
+      "duration_ms": 90,
+      "rect": {
+        "frame": 6,
+        "x": 760,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      }
+    },
+    {
+      "index": 6,
+      "name": "frame_07",
+      "duration_ms": 90,
+      "rect": {
+        "frame": 7,
+        "x": 912,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      }
+    },
+    {
+      "index": 7,
+      "name": "frame_08",
+      "duration_ms": 90,
+      "rect": {
+        "frame": 8,
+        "x": 1064,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      }
+    }
+  ],
+  "atlas": {
+    "file": "bombwarning-atlas-alpha.png",
+    "columns": 8,
+    "rows": 1,
+    "cell": [
+      144,
+      144
+    ],
+    "gutter": [
+      8,
+      32
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      },
+      {
+        "frame": 2,
+        "x": 152,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      },
+      {
+        "frame": 3,
+        "x": 304,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      },
+      {
+        "frame": 4,
+        "x": 456,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      },
+      {
+        "frame": 5,
+        "x": 608,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      },
+      {
+        "frame": 6,
+        "x": 760,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      },
+      {
+        "frame": 7,
+        "x": 912,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      },
+      {
+        "frame": 8,
+        "x": 1064,
+        "y": 0,
+        "w": 144,
+        "h": 144
+      }
+    ]
+  },
+  "role": "warning_overlay"
+}

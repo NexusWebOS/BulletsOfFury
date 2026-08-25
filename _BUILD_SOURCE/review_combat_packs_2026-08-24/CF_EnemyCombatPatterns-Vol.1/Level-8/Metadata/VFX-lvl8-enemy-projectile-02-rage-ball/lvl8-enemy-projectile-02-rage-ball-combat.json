@@ -1,0 +1,106 @@
+{
+  "asset": "lvl8-enemy-projectile-02-rage-ball",
+  "stage": 8,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl8-enemy-projectile-02-rage-ball-travel-01",
+      "lvl8-enemy-projectile-02-rage-ball-travel-02",
+      "lvl8-enemy-projectile-02-rage-ball-travel-03",
+      "lvl8-enemy-projectile-02-rage-ball-travel-04",
+      "lvl8-enemy-projectile-02-rage-ball-travel-05",
+      "lvl8-enemy-projectile-02-rage-ball-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl8-enemy-projectile-02-rage-ball-impact-01",
+      "lvl8-enemy-projectile-02-rage-ball-impact-02",
+      "lvl8-enemy-projectile-02-rage-ball-impact-03",
+      "lvl8-enemy-projectile-02-rage-ball-impact-04",
+      "lvl8-enemy-projectile-02-rage-ball-impact-05",
+      "lvl8-enemy-projectile-02-rage-ball-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl8-enemy-projectile-02-rage-ball-combat-atlas.png",
+    "rects": {
+      "lvl8-enemy-projectile-02-rage-ball-travel-01": [
+        61,
+        43,
+        49,
+        85
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-travel-02": [
+        227,
+        43,
+        49,
+        85
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-travel-03": [
+        393,
+        43,
+        49,
+        85
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-travel-04": [
+        559,
+        43,
+        49,
+        85
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-travel-05": [
+        725,
+        43,
+        49,
+        85
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-travel-06": [
+        891,
+        43,
+        49,
+        85
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl8-enemy-projectile-02-rage-ball-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

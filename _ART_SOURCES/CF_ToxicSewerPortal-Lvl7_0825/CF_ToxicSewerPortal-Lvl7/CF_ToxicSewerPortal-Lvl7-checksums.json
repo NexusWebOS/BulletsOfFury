@@ -1,0 +1,274 @@
+{
+  "CF_ToxicSewerPortal-Lvl7-RELEASE.md": {
+    "bytes": 547,
+    "sha256": "548b1b2d0f9ab4c071b2f4f9af715a7dee418254a6a84b4d65bf2d2b77166871"
+  },
+  "CF_ToxicSewerPortal-Lvl7-build-validation.json": {
+    "bytes": 3953,
+    "sha256": "b38c775e69f2c845b34080f43d420d8331d12672ae6672f59185219cdad474cd"
+  },
+  "CF_ToxicSewerPortal-Lvl7-manifest.json": {
+    "bytes": 2255,
+    "sha256": "f9e5c1fffcbffca82e860aec51f6b3b3a4c162e6a41e0d6f32a221a2abd9f39f"
+  },
+  "Edited/Master Edit/stage07-connector-02-pumping-complex-to-01-sewer-entry-magenta.png": {
+    "bytes": 37179,
+    "sha256": "7072f805ac63308e9ca571e5c43389041695fa722c53891248a632b88a4f78c0"
+  },
+  "Edited/Master Edit/stage07-connector-03-deep-sewer-to-02-pumping-complex-magenta.png": {
+    "bytes": 48245,
+    "sha256": "bc9d0f1f6108e611afe80ba7d4c9b9ce5b799319b5fc26fc94a9c167dd278952"
+  },
+  "Edited/Master Edit/stage07-connector-04-pressure-vault-to-03-deep-sewer-magenta.png": {
+    "bytes": 40773,
+    "sha256": "93a791d939b01b2465922ecc173d371a0106d94fddda8508bd0f57fdea274f23"
+  },
+  "Edited/Master Edit/stage07-connector-05-void-portal-to-04-pressure-vault-magenta.png": {
+    "bytes": 46503,
+    "sha256": "ea5e9c5e835098b500296fbb13ed371164dfe7f74e518e54b372564b3fe4536b"
+  },
+  "Edited/Master Edit/stage07-full-scroll-magenta.png": {
+    "bytes": 1423795,
+    "sha256": "a71534a143a142aae546d8d142db520728b2b16679ea432cfbf0503c8d060fab"
+  },
+  "Edited/Master Edit/stage07-segment-01-sewer-entry-magenta.png": {
+    "bytes": 270168,
+    "sha256": "17a586f178a6bbdaabec9fc9022a0b9531635652fa3762771c1aba18ef9b67df"
+  },
+  "Edited/Master Edit/stage07-segment-01-sewer-entry-overlap-magenta.png": {
+    "bytes": 262478,
+    "sha256": "1336406d8bf26d936e3506b03b8565e689092a64f547491656b255aef3adb3e5"
+  },
+  "Edited/Master Edit/stage07-segment-02-pumping-complex-magenta.png": {
+    "bytes": 323141,
+    "sha256": "b560758cc2b2ef19577ea2f3a5a9d5765765fb6a46eec66a1fe485bff1259d82"
+  },
+  "Edited/Master Edit/stage07-segment-02-pumping-complex-overlap-magenta.png": {
+    "bytes": 318720,
+    "sha256": "df558b4e107bf45b8ccc57ceda40c839746aa66365b95cb679413f771091e1f6"
+  },
+  "Edited/Master Edit/stage07-segment-03-deep-sewer-magenta.png": {
+    "bytes": 270375,
+    "sha256": "c3181c585fb244d2e834256c422800bd515b894667a5d9c64e639b954b25df15"
+  },
+  "Edited/Master Edit/stage07-segment-03-deep-sewer-overlap-magenta.png": {
+    "bytes": 266027,
+    "sha256": "f09506d306ec729bdbae406a3dc2adee55ef409e75acae09286088bbb852d99d"
+  },
+  "Edited/Master Edit/stage07-segment-04-pressure-vault-magenta.png": {
+    "bytes": 324327,
+    "sha256": "bc018547563b78ce43cc1ff4c57fc89af2421a3ca36ea5793fd456eb126e02a7"
+  },
+  "Edited/Master Edit/stage07-segment-04-pressure-vault-overlap-magenta.png": {
+    "bytes": 317935,
+    "sha256": "d5c756f5f982251808af5614ad61f943641e106476a3e884d815c8d1c3cfff92"
+  },
+  "Edited/Master Edit/stage07-segment-05-void-portal-magenta.png": {
+    "bytes": 286190,
+    "sha256": "08dd262b6a7205a2345c536dc7410e3ad9fd1af7d738a41049ddbe9cfe7caba9"
+  },
+  "Edited/Master Edit/stage07-sewerportal-energy-generated-source-pure-magenta.png": {
+    "bytes": 608277,
+    "sha256": "74f5ab44db4946c99a613fcd6ecbf530e30d5da478b03892211020431caba984"
+  },
+  "Edited/Master Edit/stage07-sewerportal-energy-source-pure-magenta.png": {
+    "bytes": 366906,
+    "sha256": "6687dc1c9f74bd27cddf8c2a668b3ce0911cfa5bc9685cbad72d15cf0c12174b"
+  },
+  "Edited/Master Edit/stage07-shared-64-colour-palette.png": {
+    "bytes": 565,
+    "sha256": "558fa9e797d4bb2726e25ca026f56a22f32ec8d3125b49deceb13faa86c49ee0"
+  },
+  "Edited/Master Edit/stage07-to-stage08-furious-death-void-portal-transition-magenta.png": {
+    "bytes": 286190,
+    "sha256": "08dd262b6a7205a2345c536dc7410e3ad9fd1af7d738a41049ddbe9cfe7caba9"
+  },
+  "Edited/sewerportal-alpha-01.png": {
+    "bytes": 4138,
+    "sha256": "8bb70ab60be693085c80c38e054c76d5fd8af787b8ff38467e62bf67aa6aeee2"
+  },
+  "Edited/sewerportal-alpha-02.png": {
+    "bytes": 26255,
+    "sha256": "e609fa7a9b7eb7a9da027fc6c4bae7b56546563fab0eb60ee6fe26a8c5cc9d04"
+  },
+  "Edited/sewerportal-alpha-03.png": {
+    "bytes": 61932,
+    "sha256": "b410cc1db3764787ffb9a08d56f591675cb50a78f96fbcc39210b6102142c9de"
+  },
+  "Edited/sewerportal-alpha-04.png": {
+    "bytes": 69956,
+    "sha256": "37e6c8437ef891fc9add2ca530b9a02b06a6a4a50a673c05dc2eaecaa1819ad4"
+  },
+  "Edited/sewerportal-alpha-05.png": {
+    "bytes": 72200,
+    "sha256": "71edb2e8b0dd233765c8d97ad795a168b87091a01624bafe0879d9e80b98bf90"
+  },
+  "Edited/sewerportal-alpha-06.png": {
+    "bytes": 74367,
+    "sha256": "cd19232dd327eb62583ef61838a2e5fedf7e4e969fdd23b80f44a79f67225577"
+  },
+  "Edited/sewerportal-alpha-07.png": {
+    "bytes": 59537,
+    "sha256": "e2cd495a25ea3f97851ba8491930fb72058be883005b07f53ef50c5eb8641154"
+  },
+  "Edited/sewerportal-alpha-08.png": {
+    "bytes": 6985,
+    "sha256": "556699bc6eba3cec2d4cfc1f6b62da776e3c76a88ba045a60cc7dc63fc318530"
+  },
+  "Edited/sewerportal-atlas-alpha.png": {
+    "bytes": 411447,
+    "sha256": "cbc9ec8783e9323fab1acfaa223d65050e3392a021bd5cd90331d739e7c35e2e"
+  },
+  "Edited/sewerportal-map.json": {
+    "bytes": 6114,
+    "sha256": "d01878699f025c881f4827722247693481f1132e4d4a44a7315690f6097d8f3c"
+  },
+  "Edited/sewerportal-preview.gif": {
+    "bytes": 129108,
+    "sha256": "f8fb3c1ea30085cf9c539ebcb2f4d966860baafb8dcd28934207c20768224b3a"
+  },
+  "Edited/stage07-connector-02-pumping-complex-to-01-sewer-entry-alpha.png": {
+    "bytes": 39578,
+    "sha256": "901f50c4a4f5a67c93b013a9545220d5500233adb83e91cb2d1c3d5fc62f4457"
+  },
+  "Edited/stage07-connector-02-pumping-complex-to-01-sewer-entry-cutout-mask.png": {
+    "bytes": 1108,
+    "sha256": "4369a23690d508a9b76b754cd801f3e846ea1d7460b6d8fafa0701245bad99b0"
+  },
+  "Edited/stage07-connector-03-deep-sewer-to-02-pumping-complex-alpha.png": {
+    "bytes": 51022,
+    "sha256": "06064af1f50241ffa7a36e5febd6abeacc1c3ab5b98c2dbd99ecc3693dd72edd"
+  },
+  "Edited/stage07-connector-03-deep-sewer-to-02-pumping-complex-cutout-mask.png": {
+    "bytes": 1183,
+    "sha256": "82277ff7c0ffdc6394cd53df5590f734a91f278536cf2b8ca2c636e2448017e5"
+  },
+  "Edited/stage07-connector-04-pressure-vault-to-03-deep-sewer-alpha.png": {
+    "bytes": 43444,
+    "sha256": "b990ea441fe6d49cac7dc86af813c8eedda6e741f0e387425bb05374c2f015bc"
+  },
+  "Edited/stage07-connector-04-pressure-vault-to-03-deep-sewer-cutout-mask.png": {
+    "bytes": 1181,
+    "sha256": "926ed6278e79f1971439fb7de057af1001f46ef9ea10e07a5f61518735e305bd"
+  },
+  "Edited/stage07-connector-05-void-portal-to-04-pressure-vault-alpha.png": {
+    "bytes": 49119,
+    "sha256": "02cb906bbcdd4b64325100e1fb6d4ecf6a5cfc55fb7f1488a34418f465577554"
+  },
+  "Edited/stage07-connector-05-void-portal-to-04-pressure-vault-cutout-mask.png": {
+    "bytes": 1178,
+    "sha256": "c75398b326d32ca3c39c36b01a77510b0b777d7affaadf7737e473762e94f859"
+  },
+  "Edited/stage07-full-scroll-alpha.png": {
+    "bytes": 1501821,
+    "sha256": "eae452dbc6fade0c8e26edb5d6e3f92cbd569e27710baf93642b3e675e1ca132"
+  },
+  "Edited/stage07-full-scroll-liquid-mask.png": {
+    "bytes": 23677,
+    "sha256": "7fffac1cfd778ce0ab24ecbe23a548d2edee50acfb50a7af6b4f0808e55a87a8"
+  },
+  "Edited/stage07-runtime-map.json": {
+    "bytes": 8565,
+    "sha256": "ce2dac36154d63b9ffbd9063247801ea9afb00d4e741c9897af53307d2f6af0b"
+  },
+  "Edited/stage07-segment-01-sewer-entry-alpha.png": {
+    "bytes": 285777,
+    "sha256": "667c785c6d45e0c213051a2a1a6c5bb80ee785dce8763c4a68bc1b81730ce8ca"
+  },
+  "Edited/stage07-segment-01-sewer-entry-liquid-mask.png": {
+    "bytes": 5797,
+    "sha256": "8696c540a92eeca932554d9ae1c317ee9a70a5418c37b8fabe544b4e95115e75"
+  },
+  "Edited/stage07-segment-01-sewer-entry-overlap-alpha.png": {
+    "bytes": 277762,
+    "sha256": "fe1624e3b40626bdb4acf54d991927e246fe86b3472adb18153d66836e1dd322"
+  },
+  "Edited/stage07-segment-01-sewer-entry-overlap-cutout-mask.png": {
+    "bytes": 3290,
+    "sha256": "db5954c53919f5728639d9c1c5aa155c089cb92833e77bb3a5d3da1b180123a3"
+  },
+  "Edited/stage07-segment-02-pumping-complex-alpha.png": {
+    "bytes": 339152,
+    "sha256": "23a1887c63baab21b9f6f595f566b87a30368eaba91179bb3a1ab8b19a655cb4"
+  },
+  "Edited/stage07-segment-02-pumping-complex-liquid-mask.png": {
+    "bytes": 4441,
+    "sha256": "e38d8a14194ed25f26a4789da4763d97b1b05190549328ea928300e15c6d20a0"
+  },
+  "Edited/stage07-segment-02-pumping-complex-overlap-alpha.png": {
+    "bytes": 334654,
+    "sha256": "8ecc2a11ac64cfecc18bc7d66f2087f41efb52c785a14f4a2f635ffc713ce434"
+  },
+  "Edited/stage07-segment-02-pumping-complex-overlap-cutout-mask.png": {
+    "bytes": 3366,
+    "sha256": "e4b49ecee7eed6bd7d2062008417a7aee1dd72c01508b9ac366c2a71b047a5b3"
+  },
+  "Edited/stage07-segment-03-deep-sewer-alpha.png": {
+    "bytes": 286347,
+    "sha256": "201fe4cfb4d8494b25ef4009afbdeee9753b5f08aa90252bf06b2155543be6b1"
+  },
+  "Edited/stage07-segment-03-deep-sewer-liquid-mask.png": {
+    "bytes": 5789,
+    "sha256": "70c7e91fe422948f43ed192fb8b245dfd1bee118c4b9248fd40c5bdfae8e1cae"
+  },
+  "Edited/stage07-segment-03-deep-sewer-overlap-alpha.png": {
+    "bytes": 281809,
+    "sha256": "7e6729c9ca07e387a7c9f64b678e8d37ee478281778456918a62ab28da88ed0e"
+  },
+  "Edited/stage07-segment-03-deep-sewer-overlap-cutout-mask.png": {
+    "bytes": 3361,
+    "sha256": "3b121f51a4ebeaee7ee7c3361a58b3656d04ed5d8aced5cb23644665489ed968"
+  },
+  "Edited/stage07-segment-04-pressure-vault-alpha.png": {
+    "bytes": 340200,
+    "sha256": "7f453a401e758b7755489cc3cd30ea0e255bfe8c6257c1bc9be052d9ce2ed9a4"
+  },
+  "Edited/stage07-segment-04-pressure-vault-liquid-mask.png": {
+    "bytes": 4430,
+    "sha256": "8b05fcfa98a0654037ee6e83f598489c2ffb1f26f764bcb21bed3cc2735a30e2"
+  },
+  "Edited/stage07-segment-04-pressure-vault-overlap-alpha.png": {
+    "bytes": 333569,
+    "sha256": "2eed16893253580f94030688c6d17ee641562d7900d372600167428caa420917"
+  },
+  "Edited/stage07-segment-04-pressure-vault-overlap-cutout-mask.png": {
+    "bytes": 3360,
+    "sha256": "311a304ddefefd85b86ab6fafc7f45f476c38bc4d5cc7a91057a39ca1d4f8b3b"
+  },
+  "Edited/stage07-segment-05-void-portal-alpha.png": {
+    "bytes": 304592,
+    "sha256": "779d891ebfbb6b03affd942bcfc1196c330db59668738898287ba6f207d93fb7"
+  },
+  "Edited/stage07-segment-05-void-portal-liquid-mask.png": {
+    "bytes": 5565,
+    "sha256": "9a0c390f1d05261ae679692587111232cd3d446d6bd1e102a8392caa55c40d6b"
+  },
+  "Edited/stage07-to-stage08-furious-death-void-portal-transition-alpha.png": {
+    "bytes": 304592,
+    "sha256": "779d891ebfbb6b03affd942bcfc1196c330db59668738898287ba6f207d93fb7"
+  },
+  "Edited/stage07-to-stage08-furious-death-void-portal-transition-portal-mask.png": {
+    "bytes": 5565,
+    "sha256": "9a0c390f1d05261ae679692587111232cd3d446d6bd1e102a8392caa55c40d6b"
+  },
+  "README.md": {
+    "bytes": 950,
+    "sha256": "1a282faeb56a7d07df89a0fcd39fe2a51df24735384fd27f8dd25f16980430f8"
+  },
+  "Source/stage07-furious-death-portal-source.png": {
+    "bytes": 3351968,
+    "sha256": "10a85477a0963de70e167dede05084e0f11a4097554de8618d5cf88441c1394d"
+  },
+  "Source/stage07-pumping-complex-source.png": {
+    "bytes": 3306435,
+    "sha256": "98c0a880162fb1e498b69387a8492ff4548760bf5c697f44544be0b5a0995dbf"
+  },
+  "Source/stage07-sewer-channel-source.png": {
+    "bytes": 3086866,
+    "sha256": "b22cc670530c65ff3c19769ad5b2715d95547ff9dd6c269f945bd2cfc161fb97"
+  },
+  "Source/stage07-sewerportal-energy-generated-source.png": {
+    "bytes": 1712527,
+    "sha256": "67ccd40e31279353f90b94ea3a9d951b4bf925bf44cda55d7a7e6e09654763a2"
+  }
+}

@@ -1,0 +1,137 @@
+{
+  "project": "Bullets of Fury",
+  "level": 5,
+  "view": "top-down three-quarter",
+  "facing": "down",
+  "source_key": "#FF00FF",
+  "runtime_alpha": "hard binary RGBA",
+  "pixel_scale": "source reduced 2x with nearest-neighbor",
+  "asset": "Chaos Harrier twin side lasers",
+  "atlas": "chaosharrier-side-lasers-atlas.png",
+  "atlas_grid": [
+    4,
+    1
+  ],
+  "frame_canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    {
+      "name": "chaosharrier-side-lasers-01-travel-1.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        90,
+        29,
+        45,
+        118
+      ],
+      "padding": {
+        "left": 90,
+        "top": 29,
+        "right": 57,
+        "bottom": 45
+      },
+      "opaque_pixels": 3307,
+      "index": 0,
+      "state": "travel-1",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-side-lasers-02-travel-2.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        82,
+        29,
+        45,
+        120
+      ],
+      "padding": {
+        "left": 82,
+        "top": 29,
+        "right": 65,
+        "bottom": 43
+      },
+      "opaque_pixels": 3398,
+      "index": 1,
+      "state": "travel-2",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-side-lasers-03-travel-3.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        64,
+        29,
+        45,
+        121
+      ],
+      "padding": {
+        "left": 64,
+        "top": 29,
+        "right": 83,
+        "bottom": 42
+      },
+      "opaque_pixels": 3378,
+      "index": 2,
+      "state": "travel-3",
+      "origin": [
+        96,
+        96
+      ]
+    },
+    {
+      "name": "chaosharrier-side-lasers-04-travel-4.png",
+      "canvas": [
+        192,
+        192
+      ],
+      "bbox": [
+        56,
+        29,
+        45,
+        121
+      ],
+      "padding": {
+        "left": 56,
+        "top": 29,
+        "right": 91,
+        "bottom": 42
+      },
+      "opaque_pixels": 3394,
+      "index": 3,
+      "state": "travel-4",
+      "origin": [
+        96,
+        96
+      ]
+    }
+  ],
+  "animation_groups": {
+    "travel": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "fps": 13.333,
+      "loop": true
+    }
+  }
+}

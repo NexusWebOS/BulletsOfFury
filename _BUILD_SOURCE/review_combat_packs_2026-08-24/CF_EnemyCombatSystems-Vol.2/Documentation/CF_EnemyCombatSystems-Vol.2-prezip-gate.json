@@ -1,0 +1,21 @@
+{
+  "root": "/workspace/scratch/6447d4fe2ecb/output/CF_EnemyCombatSystems-Vol.2",
+  "summary": {
+    "image_files": 1875,
+    "png_files": 1794,
+    "gif_files": 81,
+    "images_decoded": 1875,
+    "json_files": 82,
+    "jsons_parsed": 82,
+    "asset_groups": 0,
+    "source_sheet_groups": 0,
+    "repairs": 0,
+    "blockers": 0,
+    "warnings": 0
+  },
+  "repairs": [],
+  "blockers": [],
+  "warnings": [],
+  "flagged_images": [],
+  "gate_status": "passed"
+}

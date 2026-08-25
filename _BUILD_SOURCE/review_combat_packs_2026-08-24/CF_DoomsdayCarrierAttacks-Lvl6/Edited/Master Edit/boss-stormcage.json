@@ -1,0 +1,391 @@
+{
+  "asset": "boss-stormcage",
+  "frame_size": [
+    640,
+    320
+  ],
+  "frame_count": 16,
+  "pivot": [
+    320,
+    160
+  ],
+  "loop": false,
+  "alpha": "binary",
+  "palette_colors": 41,
+  "collision": {
+    "type": "none",
+    "note": "Use component hitboxes from the original MK II pack"
+  },
+  "frames": [
+    {
+      "index": 0,
+      "name": "boss_01",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 1,
+      "name": "boss_02",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 2,
+        "x": 648,
+        "y": 0,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 2,
+      "name": "boss_03",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 3,
+        "x": 1296,
+        "y": 0,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 3,
+      "name": "boss_04",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 4,
+        "x": 1944,
+        "y": 0,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 4,
+      "name": "boss_05",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 5,
+        "x": 0,
+        "y": 352,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 5,
+      "name": "boss_06",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 6,
+        "x": 648,
+        "y": 352,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 6,
+      "name": "boss_07",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 7,
+        "x": 1296,
+        "y": 352,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 7,
+      "name": "boss_08",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 8,
+        "x": 1944,
+        "y": 352,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 8,
+      "name": "boss_09",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 9,
+        "x": 0,
+        "y": 704,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 9,
+      "name": "boss_10",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 10,
+        "x": 648,
+        "y": 704,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 10,
+      "name": "boss_11",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 11,
+        "x": 1296,
+        "y": 704,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 11,
+      "name": "boss_12",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 12,
+        "x": 1944,
+        "y": 704,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 12,
+      "name": "boss_13",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 13,
+        "x": 0,
+        "y": 1056,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 13,
+      "name": "boss_14",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 14,
+        "x": 648,
+        "y": 1056,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 14,
+      "name": "boss_15",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 15,
+        "x": 1296,
+        "y": 1056,
+        "w": 640,
+        "h": 320
+      }
+    },
+    {
+      "index": 15,
+      "name": "boss_16",
+      "duration_ms": 100,
+      "rect": {
+        "frame": 16,
+        "x": 1944,
+        "y": 1056,
+        "w": 640,
+        "h": 320
+      }
+    }
+  ],
+  "atlas": {
+    "file": "boss-stormcage-atlas-alpha.png",
+    "columns": 4,
+    "rows": 4,
+    "cell": [
+      640,
+      320
+    ],
+    "gutter": [
+      8,
+      32
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 2,
+        "x": 648,
+        "y": 0,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 3,
+        "x": 1296,
+        "y": 0,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 4,
+        "x": 1944,
+        "y": 0,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 352,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 6,
+        "x": 648,
+        "y": 352,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 7,
+        "x": 1296,
+        "y": 352,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 8,
+        "x": 1944,
+        "y": 352,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 704,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 10,
+        "x": 648,
+        "y": 704,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 11,
+        "x": 1296,
+        "y": 704,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 12,
+        "x": 1944,
+        "y": 704,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 1056,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 14,
+        "x": 648,
+        "y": 1056,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 15,
+        "x": 1296,
+        "y": 1056,
+        "w": 640,
+        "h": 320
+      },
+      {
+        "frame": 16,
+        "x": 1944,
+        "y": 1056,
+        "w": 640,
+        "h": 320
+      }
+    ]
+  },
+  "boss_origin": [
+    0,
+    0
+  ],
+  "weapon_anchors": {
+    "upper_left_outer": [
+      247,
+      91
+    ],
+    "upper_left_inner": [
+      257,
+      91
+    ],
+    "upper_right_inner": [
+      383,
+      91
+    ],
+    "upper_right_outer": [
+      393,
+      91
+    ],
+    "lower_left_outer": [
+      138,
+      244
+    ],
+    "lower_left_inner": [
+      147,
+      244
+    ],
+    "lower_right_inner": [
+      493,
+      244
+    ],
+    "lower_right_outer": [
+      502,
+      244
+    ],
+    "left_bay": [
+      160,
+      190
+    ],
+    "right_bay": [
+      480,
+      190
+    ],
+    "energy_cannon": [
+      320,
+      290
+    ]
+  },
+  "projectiles_separate": true
+}

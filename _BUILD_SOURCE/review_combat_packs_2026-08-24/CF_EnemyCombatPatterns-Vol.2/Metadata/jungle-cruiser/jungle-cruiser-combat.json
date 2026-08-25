@@ -1,0 +1,323 @@
+{
+  "asset": "jungle-cruiser",
+  "display_name": "Jungle Cruiser",
+  "stage": 1,
+  "category": "carrier",
+  "tier": "elite",
+  "source_file": "nsb_jungle_cruiser.png",
+  "source_notes": "",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision_box_px": [
+    44,
+    31,
+    167,
+    194
+  ],
+  "weapon_anchors_px": {
+    "left": [
+      79,
+      193
+    ],
+    "right": [
+      176,
+      193
+    ]
+  },
+  "vfx": {
+    "muzzle": "heavy-military-cannon-muzzle",
+    "projectile": "heavy-heavy-cannon-shell",
+    "secondary": "heavy-toxic-jungle-missile",
+    "impact": "heavy-flak-blossom"
+  },
+  "animations": {
+    "power": {
+      "frames_per_state": 6,
+      "fps": 10,
+      "loop": true
+    },
+    "attack": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false,
+      "spawn_event_frame": 4
+    },
+    "hit": {
+      "frames": 4,
+      "fps": 15,
+      "loop": false
+    },
+    "death": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "states": [
+    "intact"
+  ],
+  "attack_patterns": [
+    {
+      "id": "jungle-cruiser-aimed-burst",
+      "cooldown_ms": 1450,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "aim": "player",
+          "speed": 170
+        },
+        {
+          "time_ms": 110,
+          "anchor": "right",
+          "projectile": "heavy-heavy-cannon-shell",
+          "aim": "player",
+          "speed": 170
+        },
+        {
+          "time_ms": 220,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "aim": "player",
+          "speed": 170
+        }
+      ]
+    },
+    {
+      "id": "jungle-cruiser-bracket-fan",
+      "cooldown_ms": 2350,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "count": 7,
+          "spread_degrees": 54,
+          "speed": 128
+        }
+      ]
+    },
+    {
+      "id": "jungle-cruiser-turret-lattice",
+      "cooldown_ms": 3400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-toxic-jungle-missile",
+          "count": 8,
+          "spread_degrees": 104,
+          "speed": 120
+        },
+        {
+          "time_ms": 340,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "count": 2,
+          "aim": "player",
+          "speed": 186
+        }
+      ]
+    },
+    {
+      "id": "jungle-cruiser-critical-rage",
+      "cooldown_ms": 4700,
+      "health_gate": 0.35,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-toxic-jungle-missile",
+          "count": 12,
+          "spread_degrees": 360,
+          "speed": 110
+        },
+        {
+          "time_ms": 520,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "count": 5,
+          "spread_degrees": 38,
+          "aim": "player",
+          "speed": 193
+        }
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "jungle-cruiser-combat-atlas.png",
+    "rects": {
+      "jungle-cruiser-intact": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "jungle-cruiser-intact-power-01": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "jungle-cruiser-intact-power-02": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "jungle-cruiser-intact-power-03": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "jungle-cruiser-intact-power-04": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "jungle-cruiser-intact-power-05": [
+        1316,
+        6,
+        256,
+        256
+      ],
+      "jungle-cruiser-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "jungle-cruiser-attack-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "jungle-cruiser-attack-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "jungle-cruiser-attack-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "jungle-cruiser-attack-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "jungle-cruiser-attack-05": [
+        1316,
+        268,
+        256,
+        256
+      ],
+      "jungle-cruiser-attack-06": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "jungle-cruiser-attack-07": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "jungle-cruiser-attack-08": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "jungle-cruiser-hit-01": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "jungle-cruiser-hit-02": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "jungle-cruiser-hit-03": [
+        1316,
+        530,
+        256,
+        256
+      ],
+      "jungle-cruiser-hit-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "jungle-cruiser-death-01": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "jungle-cruiser-death-02": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "jungle-cruiser-death-03": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "jungle-cruiser-death-04": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "jungle-cruiser-death-05": [
+        1316,
+        792,
+        256,
+        256
+      ],
+      "jungle-cruiser-death-06": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "jungle-cruiser-death-07": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "jungle-cruiser-death-08": [
+        530,
+        1054,
+        256,
+        256
+      ]
+    }
+  },
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

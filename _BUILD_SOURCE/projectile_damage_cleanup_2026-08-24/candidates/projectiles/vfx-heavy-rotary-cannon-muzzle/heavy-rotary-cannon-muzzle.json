@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-rotary-cannon-muzzle",
+  "kind": "muzzle",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-rotary-cannon-muzzle-01",
+    "heavy-rotary-cannon-muzzle-02",
+    "heavy-rotary-cannon-muzzle-03",
+    "heavy-rotary-cannon-muzzle-04",
+    "heavy-rotary-cannon-muzzle-05",
+    "heavy-rotary-cannon-muzzle-06"
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-rotary-cannon-muzzle-atlas.png",
+    "rects": {
+      "heavy-rotary-cannon-muzzle-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-rotary-cannon-muzzle-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-rotary-cannon-muzzle-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-rotary-cannon-muzzle-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-rotary-cannon-muzzle-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-rotary-cannon-muzzle-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "asset": "structural-zero-g-siege-carrier",
+  "project": "Bullets of Fury I",
+  "stage": 5,
+  "theme": "Orbital Chaos",
+  "source_set": "structural",
+  "category": "missile",
+  "weapon_profile": "dual",
+  "canvas": [
+    328,
+    333
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      120,
+      251
+    ],
+    "right_weapon": [
+      226,
+      251
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-zero-g-siege-carrier-intact-power-01",
+          "structural-zero-g-siege-carrier-intact-power-02",
+          "structural-zero-g-siege-carrier-intact-power-03",
+          "structural-zero-g-siege-carrier-intact-power-04",
+          "structural-zero-g-siege-carrier-intact-power-05",
+          "structural-zero-g-siege-carrier-intact-power-06"
+        ],
+        "damaged": [
+          "structural-zero-g-siege-carrier-damaged-power-01",
+          "structural-zero-g-siege-carrier-damaged-power-02",
+          "structural-zero-g-siege-carrier-damaged-power-03",
+          "structural-zero-g-siege-carrier-damaged-power-04",
+          "structural-zero-g-siege-carrier-damaged-power-05",
+          "structural-zero-g-siege-carrier-damaged-power-06"
+        ],
+        "critical": [
+          "structural-zero-g-siege-carrier-critical-power-01",
+          "structural-zero-g-siege-carrier-critical-power-02",
+          "structural-zero-g-siege-carrier-critical-power-03",
+          "structural-zero-g-siege-carrier-critical-power-04",
+          "structural-zero-g-siege-carrier-critical-power-05",
+          "structural-zero-g-siege-carrier-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-zero-g-siege-carrier-attack-01",
+        "structural-zero-g-siege-carrier-attack-02",
+        "structural-zero-g-siege-carrier-attack-03",
+        "structural-zero-g-siege-carrier-attack-04",
+        "structural-zero-g-siege-carrier-attack-05",
+        "structural-zero-g-siege-carrier-attack-06",
+        "structural-zero-g-siege-carrier-attack-07",
+        "structural-zero-g-siege-carrier-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-zero-g-siege-carrier-combat-atlas.png",
+    "size": [
+      1676,
+      2040
+    ],
+    "rects": {
+      "structural-zero-g-siege-carrier-intact-power-01": [
+        6,
+        6,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-intact-power-02": [
+        340,
+        6,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-intact-power-03": [
+        674,
+        6,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-intact-power-04": [
+        1008,
+        6,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-intact-power-05": [
+        1342,
+        6,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-intact-power-06": [
+        6,
+        345,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-damaged-power-01": [
+        340,
+        345,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-damaged-power-02": [
+        674,
+        345,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-damaged-power-03": [
+        1008,
+        345,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-damaged-power-04": [
+        1342,
+        345,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-damaged-power-05": [
+        6,
+        684,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-damaged-power-06": [
+        340,
+        684,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-critical-power-01": [
+        674,
+        684,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-critical-power-02": [
+        1008,
+        684,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-critical-power-03": [
+        1342,
+        684,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-critical-power-04": [
+        6,
+        1023,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-critical-power-05": [
+        340,
+        1023,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-critical-power-06": [
+        674,
+        1023,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-attack-01": [
+        1008,
+        1023,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-attack-02": [
+        1342,
+        1023,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-attack-03": [
+        6,
+        1362,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-attack-04": [
+        340,
+        1362,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-attack-05": [
+        674,
+        1362,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-attack-06": [
+        1008,
+        1362,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-attack-07": [
+        1342,
+        1362,
+        328,
+        333
+      ],
+      "structural-zero-g-siege-carrier-attack-08": [
+        6,
+        1701,
+        328,
+        333
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "zero-g-siege-carrier-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-02",
+          "aim": "player",
+          "speed": 205
+        }
+      ]
+    },
+    {
+      "id": "zero-g-siege-carrier-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 58,
+          "speed": 160
+        }
+      ]
+    },
+    {
+      "id": "zero-g-siege-carrier-fracture-halo",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-enemy-projectile-06",
+          "count": 6,
+          "spread_degrees": 92,
+          "speed": 147
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl5-elite-fracture-halo",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

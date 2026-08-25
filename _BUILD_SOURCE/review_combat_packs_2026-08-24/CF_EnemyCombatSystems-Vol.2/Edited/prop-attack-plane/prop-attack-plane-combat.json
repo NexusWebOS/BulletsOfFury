@@ -1,0 +1,409 @@
+{
+  "asset": "prop-attack-plane",
+  "display_name": "Prop Attack Plane",
+  "stage": 1,
+  "category": "air",
+  "tier": "standard",
+  "source_file": "nca_80.png",
+  "source_notes": "three supplied structural states",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision_box_px": [
+    37,
+    57,
+    182,
+    141
+  ],
+  "weapon_anchors_px": {
+    "left": [
+      76,
+      174
+    ],
+    "right": [
+      180,
+      174
+    ]
+  },
+  "vfx": {
+    "muzzle": "heavy-military-cannon-muzzle",
+    "projectile": "heavy-heavy-cannon-shell",
+    "secondary": "heavy-toxic-jungle-missile",
+    "impact": "heavy-flak-blossom"
+  },
+  "animations": {
+    "power": {
+      "frames_per_state": 6,
+      "fps": 10,
+      "loop": true
+    },
+    "attack": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false,
+      "spawn_event_frame": 4
+    },
+    "hit": {
+      "frames": 4,
+      "fps": 15,
+      "loop": false
+    },
+    "death": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "states": [
+    "intact",
+    "damaged",
+    "critical"
+  ],
+  "attack_patterns": [
+    {
+      "id": "prop-attack-plane-aimed-burst",
+      "cooldown_ms": 1450,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "aim": "player",
+          "speed": 170
+        },
+        {
+          "time_ms": 110,
+          "anchor": "right",
+          "projectile": "heavy-heavy-cannon-shell",
+          "aim": "player",
+          "speed": 170
+        },
+        {
+          "time_ms": 220,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "aim": "player",
+          "speed": 170
+        }
+      ]
+    },
+    {
+      "id": "prop-attack-plane-bracket-fan",
+      "cooldown_ms": 2350,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "count": 5,
+          "spread_degrees": 54,
+          "speed": 128
+        }
+      ]
+    },
+    {
+      "id": "prop-attack-plane-weaving-fan",
+      "cooldown_ms": 3400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-toxic-jungle-missile",
+          "count": 4,
+          "spread_degrees": 104,
+          "speed": 120
+        },
+        {
+          "time_ms": 340,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "count": 2,
+          "aim": "player",
+          "speed": 186
+        }
+      ]
+    },
+    {
+      "id": "prop-attack-plane-critical-rage",
+      "cooldown_ms": 4700,
+      "health_gate": 0.35,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-toxic-jungle-missile",
+          "count": 12,
+          "spread_degrees": 360,
+          "speed": 110
+        },
+        {
+          "time_ms": 520,
+          "anchor": "left",
+          "projectile": "heavy-heavy-cannon-shell",
+          "count": 5,
+          "spread_degrees": 38,
+          "aim": "player",
+          "speed": 193
+        }
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "prop-attack-plane-combat-atlas.png",
+    "rects": {
+      "prop-attack-plane-intact": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "prop-attack-plane-intact-power-01": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "prop-attack-plane-intact-power-02": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "prop-attack-plane-intact-power-03": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "prop-attack-plane-intact-power-04": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "prop-attack-plane-intact-power-05": [
+        1316,
+        6,
+        256,
+        256
+      ],
+      "prop-attack-plane-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "prop-attack-plane-damaged": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "prop-attack-plane-damaged-power-01": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "prop-attack-plane-damaged-power-02": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "prop-attack-plane-damaged-power-03": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "prop-attack-plane-damaged-power-04": [
+        1316,
+        268,
+        256,
+        256
+      ],
+      "prop-attack-plane-damaged-power-05": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "prop-attack-plane-damaged-power-06": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "prop-attack-plane-critical": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "prop-attack-plane-critical-power-01": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "prop-attack-plane-critical-power-02": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "prop-attack-plane-critical-power-03": [
+        1316,
+        530,
+        256,
+        256
+      ],
+      "prop-attack-plane-critical-power-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "prop-attack-plane-critical-power-05": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "prop-attack-plane-critical-power-06": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "prop-attack-plane-attack-01": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "prop-attack-plane-attack-02": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "prop-attack-plane-attack-03": [
+        1316,
+        792,
+        256,
+        256
+      ],
+      "prop-attack-plane-attack-04": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "prop-attack-plane-attack-05": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "prop-attack-plane-attack-06": [
+        530,
+        1054,
+        256,
+        256
+      ],
+      "prop-attack-plane-attack-07": [
+        792,
+        1054,
+        256,
+        256
+      ],
+      "prop-attack-plane-attack-08": [
+        1054,
+        1054,
+        256,
+        256
+      ],
+      "prop-attack-plane-hit-01": [
+        1316,
+        1054,
+        256,
+        256
+      ],
+      "prop-attack-plane-hit-02": [
+        6,
+        1316,
+        256,
+        256
+      ],
+      "prop-attack-plane-hit-03": [
+        268,
+        1316,
+        256,
+        256
+      ],
+      "prop-attack-plane-hit-04": [
+        530,
+        1316,
+        256,
+        256
+      ],
+      "prop-attack-plane-death-01": [
+        792,
+        1316,
+        256,
+        256
+      ],
+      "prop-attack-plane-death-02": [
+        1054,
+        1316,
+        256,
+        256
+      ],
+      "prop-attack-plane-death-03": [
+        1316,
+        1316,
+        256,
+        256
+      ],
+      "prop-attack-plane-death-04": [
+        6,
+        1578,
+        256,
+        256
+      ],
+      "prop-attack-plane-death-05": [
+        268,
+        1578,
+        256,
+        256
+      ],
+      "prop-attack-plane-death-06": [
+        530,
+        1578,
+        256,
+        256
+      ],
+      "prop-attack-plane-death-07": [
+        792,
+        1578,
+        256,
+        256
+      ],
+      "prop-attack-plane-death-08": [
+        1054,
+        1578,
+        256,
+        256
+      ]
+    }
+  },
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

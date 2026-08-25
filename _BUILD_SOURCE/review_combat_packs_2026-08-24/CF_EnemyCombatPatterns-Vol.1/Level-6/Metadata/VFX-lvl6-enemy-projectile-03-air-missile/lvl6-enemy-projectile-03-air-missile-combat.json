@@ -1,0 +1,106 @@
+{
+  "asset": "lvl6-enemy-projectile-03-air-missile",
+  "stage": 6,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl6-enemy-projectile-03-air-missile-travel-01",
+      "lvl6-enemy-projectile-03-air-missile-travel-02",
+      "lvl6-enemy-projectile-03-air-missile-travel-03",
+      "lvl6-enemy-projectile-03-air-missile-travel-04",
+      "lvl6-enemy-projectile-03-air-missile-travel-05",
+      "lvl6-enemy-projectile-03-air-missile-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl6-enemy-projectile-03-air-missile-impact-01",
+      "lvl6-enemy-projectile-03-air-missile-impact-02",
+      "lvl6-enemy-projectile-03-air-missile-impact-03",
+      "lvl6-enemy-projectile-03-air-missile-impact-04",
+      "lvl6-enemy-projectile-03-air-missile-impact-05",
+      "lvl6-enemy-projectile-03-air-missile-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl6-enemy-projectile-03-air-missile-combat-atlas.png",
+    "rects": {
+      "lvl6-enemy-projectile-03-air-missile-travel-01": [
+        69,
+        43,
+        34,
+        85
+      ],
+      "lvl6-enemy-projectile-03-air-missile-travel-02": [
+        235,
+        43,
+        34,
+        85
+      ],
+      "lvl6-enemy-projectile-03-air-missile-travel-03": [
+        401,
+        43,
+        34,
+        85
+      ],
+      "lvl6-enemy-projectile-03-air-missile-travel-04": [
+        567,
+        43,
+        34,
+        85
+      ],
+      "lvl6-enemy-projectile-03-air-missile-travel-05": [
+        733,
+        43,
+        34,
+        85
+      ],
+      "lvl6-enemy-projectile-03-air-missile-travel-06": [
+        899,
+        43,
+        34,
+        85
+      ],
+      "lvl6-enemy-projectile-03-air-missile-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-03-air-missile-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-03-air-missile-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-03-air-missile-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-03-air-missile-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl6-enemy-projectile-03-air-missile-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

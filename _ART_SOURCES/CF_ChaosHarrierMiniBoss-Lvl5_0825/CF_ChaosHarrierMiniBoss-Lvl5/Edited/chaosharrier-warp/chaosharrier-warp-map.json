@@ -1,0 +1,271 @@
+{
+  "project": "Bullets of Fury",
+  "level": 5,
+  "view": "top-down three-quarter",
+  "facing": "down",
+  "source_key": "#FF00FF",
+  "runtime_alpha": "hard binary RGBA",
+  "pixel_scale": "source reduced 2x with nearest-neighbor",
+  "asset": "Chaos Harrier teleport warp",
+  "atlas": "chaosharrier-warp-atlas.png",
+  "atlas_grid": [
+    4,
+    2
+  ],
+  "frame_canvas": [
+    512,
+    512
+  ],
+  "frames": [
+    {
+      "name": "chaosharrier-warp-01-sparks.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        178,
+        98,
+        171,
+        298
+      ],
+      "padding": {
+        "left": 178,
+        "top": 98,
+        "right": 163,
+        "bottom": 116
+      },
+      "opaque_pixels": 2810,
+      "index": 0,
+      "state": "sparks",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-02-slit-open.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        210,
+        102,
+        102,
+        301
+      ],
+      "padding": {
+        "left": 210,
+        "top": 102,
+        "right": 200,
+        "bottom": 109
+      },
+      "opaque_pixels": 8212,
+      "index": 1,
+      "state": "slit-open",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-03-aperture-open.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        144,
+        92,
+        197,
+        317
+      ],
+      "padding": {
+        "left": 144,
+        "top": 92,
+        "right": 171,
+        "bottom": 103
+      },
+      "opaque_pixels": 18360,
+      "index": 2,
+      "state": "aperture-open",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-04-aperture-full.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        112,
+        70,
+        271,
+        362
+      ],
+      "padding": {
+        "left": 112,
+        "top": 70,
+        "right": 129,
+        "bottom": 80
+      },
+      "opaque_pixels": 45673,
+      "index": 3,
+      "state": "aperture-full",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-05-phase-flash.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        153,
+        76,
+        219,
+        330
+      ],
+      "padding": {
+        "left": 153,
+        "top": 76,
+        "right": 140,
+        "bottom": 106
+      },
+      "opaque_pixels": 37230,
+      "index": 4,
+      "state": "phase-flash",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-06-aperture-collapse.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        182,
+        98,
+        169,
+        290
+      ],
+      "padding": {
+        "left": 182,
+        "top": 98,
+        "right": 161,
+        "bottom": 124
+      },
+      "opaque_pixels": 18670,
+      "index": 5,
+      "state": "aperture-collapse",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-07-slit-collapse.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        185,
+        98,
+        117,
+        284
+      ],
+      "padding": {
+        "left": 185,
+        "top": 98,
+        "right": 210,
+        "bottom": 130
+      },
+      "opaque_pixels": 8404,
+      "index": 6,
+      "state": "slit-collapse",
+      "origin": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "chaosharrier-warp-08-residue.png",
+      "canvas": [
+        512,
+        512
+      ],
+      "bbox": [
+        159,
+        95,
+        170,
+        298
+      ],
+      "padding": {
+        "left": 159,
+        "top": 95,
+        "right": 183,
+        "bottom": 119
+      },
+      "opaque_pixels": 2749,
+      "index": 7,
+      "state": "residue",
+      "origin": [
+        256,
+        256
+      ]
+    }
+  ],
+  "animation_groups": {
+    "warp_out": {
+      "indices": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "fps": 13.333,
+      "loop": false,
+      "hide_ship_at_index": 4,
+      "disable_collision_at_index": 3
+    },
+    "warp_in": {
+      "indices": [
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "fps": 13.333,
+      "loop": false,
+      "show_ship_at_index": 4,
+      "enable_collision_after_index": 6
+    }
+  },
+  "draw": {
+    "layer": "above_ship",
+    "pivot": [
+      256,
+      256
+    ],
+    "recommended_scale": 1.05
+  }
+}

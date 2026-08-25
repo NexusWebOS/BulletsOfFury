@@ -1,0 +1,305 @@
+{
+  "asset": "structural-purifier-gunship",
+  "project": "Bullets of Fury I",
+  "stage": 7,
+  "theme": "Toxic Sewer",
+  "source_set": "structural",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    349,
+    214
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      115,
+      156
+    ],
+    "right_weapon": [
+      233,
+      156
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-purifier-gunship-intact-power-01",
+          "structural-purifier-gunship-intact-power-02",
+          "structural-purifier-gunship-intact-power-03",
+          "structural-purifier-gunship-intact-power-04",
+          "structural-purifier-gunship-intact-power-05",
+          "structural-purifier-gunship-intact-power-06"
+        ],
+        "damaged": [
+          "structural-purifier-gunship-damaged-power-01",
+          "structural-purifier-gunship-damaged-power-02",
+          "structural-purifier-gunship-damaged-power-03",
+          "structural-purifier-gunship-damaged-power-04",
+          "structural-purifier-gunship-damaged-power-05",
+          "structural-purifier-gunship-damaged-power-06"
+        ],
+        "critical": [
+          "structural-purifier-gunship-critical-power-01",
+          "structural-purifier-gunship-critical-power-02",
+          "structural-purifier-gunship-critical-power-03",
+          "structural-purifier-gunship-critical-power-04",
+          "structural-purifier-gunship-critical-power-05",
+          "structural-purifier-gunship-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-purifier-gunship-attack-01",
+        "structural-purifier-gunship-attack-02",
+        "structural-purifier-gunship-attack-03",
+        "structural-purifier-gunship-attack-04",
+        "structural-purifier-gunship-attack-05",
+        "structural-purifier-gunship-attack-06",
+        "structural-purifier-gunship-attack-07",
+        "structural-purifier-gunship-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-purifier-gunship-combat-atlas.png",
+    "size": [
+      1781,
+      1326
+    ],
+    "rects": {
+      "structural-purifier-gunship-intact-power-01": [
+        6,
+        6,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-intact-power-02": [
+        361,
+        6,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-intact-power-03": [
+        716,
+        6,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-intact-power-04": [
+        1071,
+        6,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-intact-power-05": [
+        1426,
+        6,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-intact-power-06": [
+        6,
+        226,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-damaged-power-01": [
+        361,
+        226,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-damaged-power-02": [
+        716,
+        226,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-damaged-power-03": [
+        1071,
+        226,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-damaged-power-04": [
+        1426,
+        226,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-damaged-power-05": [
+        6,
+        446,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-damaged-power-06": [
+        361,
+        446,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-critical-power-01": [
+        716,
+        446,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-critical-power-02": [
+        1071,
+        446,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-critical-power-03": [
+        1426,
+        446,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-critical-power-04": [
+        6,
+        666,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-critical-power-05": [
+        361,
+        666,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-critical-power-06": [
+        716,
+        666,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-attack-01": [
+        1071,
+        666,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-attack-02": [
+        1426,
+        666,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-attack-03": [
+        6,
+        886,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-attack-04": [
+        361,
+        886,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-attack-05": [
+        716,
+        886,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-attack-06": [
+        1071,
+        886,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-attack-07": [
+        1426,
+        886,
+        349,
+        214
+      ],
+      "structural-purifier-gunship-attack-08": [
+        6,
+        1106,
+        349,
+        214
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "purifier-gunship-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-02",
+          "aim": "player",
+          "speed": 219
+        }
+      ]
+    },
+    {
+      "id": "purifier-gunship-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 62,
+          "speed": 172
+        }
+      ]
+    },
+    {
+      "id": "purifier-gunship-spore-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 92,
+          "speed": 157
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl7-elite-spore-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

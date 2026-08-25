@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-manta-wave",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-manta-wave-01",
+    "cosmic-manta-wave-02",
+    "cosmic-manta-wave-03",
+    "cosmic-manta-wave-04",
+    "cosmic-manta-wave-05",
+    "cosmic-manta-wave-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-manta-wave-atlas.png",
+    "rects": {
+      "cosmic-manta-wave-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-manta-wave-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-manta-wave-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-manta-wave-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-manta-wave-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-manta-wave-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

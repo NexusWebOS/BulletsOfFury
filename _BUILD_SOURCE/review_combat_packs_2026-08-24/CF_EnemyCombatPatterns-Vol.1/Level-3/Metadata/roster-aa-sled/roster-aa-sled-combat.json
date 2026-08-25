@@ -1,0 +1,301 @@
+{
+  "asset": "roster-aa-sled",
+  "project": "Bullets of Fury I",
+  "stage": 3,
+  "theme": "Frozen Stronghold",
+  "source_set": "roster",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      127,
+      212
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "roster-aa-sled-intact-power-01",
+          "roster-aa-sled-intact-power-02",
+          "roster-aa-sled-intact-power-03",
+          "roster-aa-sled-intact-power-04",
+          "roster-aa-sled-intact-power-05",
+          "roster-aa-sled-intact-power-06"
+        ],
+        "damaged": [
+          "roster-aa-sled-damaged-power-01",
+          "roster-aa-sled-damaged-power-02",
+          "roster-aa-sled-damaged-power-03",
+          "roster-aa-sled-damaged-power-04",
+          "roster-aa-sled-damaged-power-05",
+          "roster-aa-sled-damaged-power-06"
+        ],
+        "critical": [
+          "roster-aa-sled-critical-power-01",
+          "roster-aa-sled-critical-power-02",
+          "roster-aa-sled-critical-power-03",
+          "roster-aa-sled-critical-power-04",
+          "roster-aa-sled-critical-power-05",
+          "roster-aa-sled-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "roster-aa-sled-attack-01",
+        "roster-aa-sled-attack-02",
+        "roster-aa-sled-attack-03",
+        "roster-aa-sled-attack-04",
+        "roster-aa-sled-attack-05",
+        "roster-aa-sled-attack-06",
+        "roster-aa-sled-attack-07",
+        "roster-aa-sled-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "roster-aa-sled-combat-atlas.png",
+    "size": [
+      1316,
+      1578
+    ],
+    "rects": {
+      "roster-aa-sled-intact-power-01": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "roster-aa-sled-intact-power-02": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "roster-aa-sled-intact-power-03": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "roster-aa-sled-intact-power-04": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "roster-aa-sled-intact-power-05": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "roster-aa-sled-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "roster-aa-sled-damaged-power-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "roster-aa-sled-damaged-power-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "roster-aa-sled-damaged-power-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "roster-aa-sled-damaged-power-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "roster-aa-sled-damaged-power-05": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "roster-aa-sled-damaged-power-06": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "roster-aa-sled-critical-power-01": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "roster-aa-sled-critical-power-02": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "roster-aa-sled-critical-power-03": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "roster-aa-sled-critical-power-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "roster-aa-sled-critical-power-05": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "roster-aa-sled-critical-power-06": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "roster-aa-sled-attack-01": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "roster-aa-sled-attack-02": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "roster-aa-sled-attack-03": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "roster-aa-sled-attack-04": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "roster-aa-sled-attack-05": [
+        530,
+        1054,
+        256,
+        256
+      ],
+      "roster-aa-sled-attack-06": [
+        792,
+        1054,
+        256,
+        256
+      ],
+      "roster-aa-sled-attack-07": [
+        1054,
+        1054,
+        256,
+        256
+      ],
+      "roster-aa-sled-attack-08": [
+        6,
+        1316,
+        256,
+        256
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "aa-sled-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl3-enemy-projectile-01",
+          "aim": "player",
+          "speed": 191
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl3-enemy-projectile-01",
+          "aim": "player",
+          "speed": 191
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl3-enemy-projectile-01",
+          "aim": "player",
+          "speed": 191
+        }
+      ]
+    },
+    {
+      "id": "aa-sled-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl3-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 54,
+          "speed": 148
+        }
+      ]
+    },
+    {
+      "id": "aa-sled-crystal-guillotine",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl3-enemy-projectile-03",
+          "count": 5,
+          "spread_degrees": 92,
+          "speed": 137
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl3-elite-crystal-guillotine",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

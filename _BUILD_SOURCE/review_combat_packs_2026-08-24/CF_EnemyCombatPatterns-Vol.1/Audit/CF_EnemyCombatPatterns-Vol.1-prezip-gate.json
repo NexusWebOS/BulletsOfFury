@@ -1,0 +1,21 @@
+{
+  "root": "/workspace/scratch/6447d4fe2ecb/output/CF_EnemyCombatPatterns-Vol.1",
+  "summary": {
+    "image_files": 29,
+    "png_files": 10,
+    "gif_files": 19,
+    "images_decoded": 29,
+    "json_files": 301,
+    "jsons_parsed": 301,
+    "asset_groups": 0,
+    "source_sheet_groups": 0,
+    "repairs": 0,
+    "blockers": 0,
+    "warnings": 0
+  },
+  "repairs": [],
+  "blockers": [],
+  "warnings": [],
+  "flagged_images": [],
+  "gate_status": "passed"
+}

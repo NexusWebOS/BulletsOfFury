@@ -1,0 +1,48 @@
+{
+  "pack": "CF_EnemyCombatSystems-Lvl7",
+  "stage": 7,
+  "theme": "Toxic Sewer",
+  "enemy_count": 25,
+  "enemy_ids": [
+    "roster-armored-lamprey",
+    "roster-armored-sludge-barge",
+    "roster-dual-scoop-dredger-miniboss",
+    "roster-pipe-crawler",
+    "roster-piston-pump-walker",
+    "roster-sampling-drone",
+    "roster-sewer-serpent",
+    "roster-sludge-mine",
+    "roster-toxic-canister",
+    "roster-toxic-mini-tank",
+    "roster-toxic-skimmer",
+    "roster-valve-turret",
+    "structural-mutant-bio-mech",
+    "structural-pipe-crawler",
+    "structural-pipe-turret",
+    "structural-pump-station-drone",
+    "structural-purifier-gunship",
+    "structural-sewer-maintenance-drone",
+    "structural-sewer-tracked-artillery",
+    "structural-sludge-barrel-cluster",
+    "structural-sludge-battle-tank",
+    "structural-toxic-bat-drone",
+    "structural-toxic-mine",
+    "structural-toxic-mini-tank",
+    "structural-waste-skimmer"
+  ],
+  "patterns": 75,
+  "vfx": {
+    "muzzle_frames": 4,
+    "projectile_families": [
+      "lvl7-enemy-projectile-01-acid-drop",
+      "lvl7-enemy-projectile-02-sludge-orb",
+      "lvl7-enemy-projectile-03-corroded-shard",
+      "lvl7-enemy-projectile-04-bio-missile",
+      "lvl7-enemy-projectile-05-sewer-laser",
+      "lvl7-enemy-projectile-06-chemical-grenade"
+    ]
+  },
+  "elite_signature": "spore-crown",
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

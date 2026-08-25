@@ -1,0 +1,301 @@
+{
+  "asset": "structural-magma-battle-tank",
+  "project": "Bullets of Fury I",
+  "stage": 2,
+  "theme": "Volcanic Depths",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    332,
+    379
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      193,
+      317
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-magma-battle-tank-intact-power-01",
+          "structural-magma-battle-tank-intact-power-02",
+          "structural-magma-battle-tank-intact-power-03",
+          "structural-magma-battle-tank-intact-power-04",
+          "structural-magma-battle-tank-intact-power-05",
+          "structural-magma-battle-tank-intact-power-06"
+        ],
+        "damaged": [
+          "structural-magma-battle-tank-damaged-power-01",
+          "structural-magma-battle-tank-damaged-power-02",
+          "structural-magma-battle-tank-damaged-power-03",
+          "structural-magma-battle-tank-damaged-power-04",
+          "structural-magma-battle-tank-damaged-power-05",
+          "structural-magma-battle-tank-damaged-power-06"
+        ],
+        "critical": [
+          "structural-magma-battle-tank-critical-power-01",
+          "structural-magma-battle-tank-critical-power-02",
+          "structural-magma-battle-tank-critical-power-03",
+          "structural-magma-battle-tank-critical-power-04",
+          "structural-magma-battle-tank-critical-power-05",
+          "structural-magma-battle-tank-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-magma-battle-tank-attack-01",
+        "structural-magma-battle-tank-attack-02",
+        "structural-magma-battle-tank-attack-03",
+        "structural-magma-battle-tank-attack-04",
+        "structural-magma-battle-tank-attack-05",
+        "structural-magma-battle-tank-attack-06",
+        "structural-magma-battle-tank-attack-07",
+        "structural-magma-battle-tank-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-magma-battle-tank-combat-atlas.png",
+    "size": [
+      1696,
+      2316
+    ],
+    "rects": {
+      "structural-magma-battle-tank-intact-power-01": [
+        6,
+        6,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-intact-power-02": [
+        344,
+        6,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-intact-power-03": [
+        682,
+        6,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-intact-power-04": [
+        1020,
+        6,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-intact-power-05": [
+        1358,
+        6,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-intact-power-06": [
+        6,
+        391,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-damaged-power-01": [
+        344,
+        391,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-damaged-power-02": [
+        682,
+        391,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-damaged-power-03": [
+        1020,
+        391,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-damaged-power-04": [
+        1358,
+        391,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-damaged-power-05": [
+        6,
+        776,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-damaged-power-06": [
+        344,
+        776,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-critical-power-01": [
+        682,
+        776,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-critical-power-02": [
+        1020,
+        776,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-critical-power-03": [
+        1358,
+        776,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-critical-power-04": [
+        6,
+        1161,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-critical-power-05": [
+        344,
+        1161,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-critical-power-06": [
+        682,
+        1161,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-attack-01": [
+        1020,
+        1161,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-attack-02": [
+        1358,
+        1161,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-attack-03": [
+        6,
+        1546,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-attack-04": [
+        344,
+        1546,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-attack-05": [
+        682,
+        1546,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-attack-06": [
+        1020,
+        1546,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-attack-07": [
+        1358,
+        1546,
+        332,
+        379
+      ],
+      "structural-magma-battle-tank-attack-08": [
+        6,
+        1931,
+        332,
+        379
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "magma-battle-tank-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "aim": "player",
+          "speed": 184
+        }
+      ]
+    },
+    {
+      "id": "magma-battle-tank-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 52,
+          "speed": 142
+        }
+      ]
+    },
+    {
+      "id": "magma-battle-tank-eruption-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl2-enemy-projectile-03",
+          "count": 5,
+          "spread_degrees": 92,
+          "speed": 132
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl2-elite-eruption-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

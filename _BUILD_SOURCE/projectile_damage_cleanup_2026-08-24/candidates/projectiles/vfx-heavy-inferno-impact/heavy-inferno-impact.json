@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-inferno-impact",
+  "kind": "impact",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-inferno-impact-01",
+    "heavy-inferno-impact-02",
+    "heavy-inferno-impact-03",
+    "heavy-inferno-impact-04",
+    "heavy-inferno-impact-05",
+    "heavy-inferno-impact-06"
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-inferno-impact-atlas.png",
+    "rects": {
+      "heavy-inferno-impact-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-inferno-impact-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-inferno-impact-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-inferno-impact-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-inferno-impact-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-inferno-impact-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

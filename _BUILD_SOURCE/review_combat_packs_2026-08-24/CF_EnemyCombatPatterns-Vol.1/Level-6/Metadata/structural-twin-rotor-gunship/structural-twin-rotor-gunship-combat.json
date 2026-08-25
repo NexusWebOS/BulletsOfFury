@@ -1,0 +1,305 @@
+{
+  "asset": "structural-twin-rotor-gunship",
+  "project": "Bullets of Fury I",
+  "stage": 6,
+  "theme": "Heavy Turbulence",
+  "source_set": "structural",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    276,
+    315
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      113,
+      237
+    ],
+    "right_weapon": [
+      194,
+      237
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-twin-rotor-gunship-intact-power-01",
+          "structural-twin-rotor-gunship-intact-power-02",
+          "structural-twin-rotor-gunship-intact-power-03",
+          "structural-twin-rotor-gunship-intact-power-04",
+          "structural-twin-rotor-gunship-intact-power-05",
+          "structural-twin-rotor-gunship-intact-power-06"
+        ],
+        "damaged": [
+          "structural-twin-rotor-gunship-damaged-power-01",
+          "structural-twin-rotor-gunship-damaged-power-02",
+          "structural-twin-rotor-gunship-damaged-power-03",
+          "structural-twin-rotor-gunship-damaged-power-04",
+          "structural-twin-rotor-gunship-damaged-power-05",
+          "structural-twin-rotor-gunship-damaged-power-06"
+        ],
+        "critical": [
+          "structural-twin-rotor-gunship-critical-power-01",
+          "structural-twin-rotor-gunship-critical-power-02",
+          "structural-twin-rotor-gunship-critical-power-03",
+          "structural-twin-rotor-gunship-critical-power-04",
+          "structural-twin-rotor-gunship-critical-power-05",
+          "structural-twin-rotor-gunship-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-twin-rotor-gunship-attack-01",
+        "structural-twin-rotor-gunship-attack-02",
+        "structural-twin-rotor-gunship-attack-03",
+        "structural-twin-rotor-gunship-attack-04",
+        "structural-twin-rotor-gunship-attack-05",
+        "structural-twin-rotor-gunship-attack-06",
+        "structural-twin-rotor-gunship-attack-07",
+        "structural-twin-rotor-gunship-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-twin-rotor-gunship-combat-atlas.png",
+    "size": [
+      1416,
+      1932
+    ],
+    "rects": {
+      "structural-twin-rotor-gunship-intact-power-01": [
+        6,
+        6,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-intact-power-02": [
+        288,
+        6,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-intact-power-03": [
+        570,
+        6,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-intact-power-04": [
+        852,
+        6,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-intact-power-05": [
+        1134,
+        6,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-intact-power-06": [
+        6,
+        327,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-damaged-power-01": [
+        288,
+        327,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-damaged-power-02": [
+        570,
+        327,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-damaged-power-03": [
+        852,
+        327,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-damaged-power-04": [
+        1134,
+        327,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-damaged-power-05": [
+        6,
+        648,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-damaged-power-06": [
+        288,
+        648,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-critical-power-01": [
+        570,
+        648,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-critical-power-02": [
+        852,
+        648,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-critical-power-03": [
+        1134,
+        648,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-critical-power-04": [
+        6,
+        969,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-critical-power-05": [
+        288,
+        969,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-critical-power-06": [
+        570,
+        969,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-attack-01": [
+        852,
+        969,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-attack-02": [
+        1134,
+        969,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-attack-03": [
+        6,
+        1290,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-attack-04": [
+        288,
+        1290,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-attack-05": [
+        570,
+        1290,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-attack-06": [
+        852,
+        1290,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-attack-07": [
+        1134,
+        1290,
+        276,
+        315
+      ],
+      "structural-twin-rotor-gunship-attack-08": [
+        6,
+        1611,
+        276,
+        315
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "twin-rotor-gunship-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl6-enemy-projectile-02",
+          "aim": "player",
+          "speed": 212
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl6-enemy-projectile-02",
+          "aim": "player",
+          "speed": 212
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl6-enemy-projectile-02",
+          "aim": "player",
+          "speed": 212
+        }
+      ]
+    },
+    {
+      "id": "twin-rotor-gunship-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl6-enemy-projectile-01",
+          "count": 7,
+          "spread_degrees": 60,
+          "speed": 166
+        }
+      ]
+    },
+    {
+      "id": "twin-rotor-gunship-thunder-cyclone",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl6-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 92,
+          "speed": 152
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl6-elite-thunder-cyclone",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

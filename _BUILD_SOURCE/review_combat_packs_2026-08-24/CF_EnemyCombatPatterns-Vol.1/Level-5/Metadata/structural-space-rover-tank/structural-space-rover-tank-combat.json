@@ -1,0 +1,301 @@
+{
+  "asset": "structural-space-rover-tank",
+  "project": "Bullets of Fury I",
+  "stage": 5,
+  "theme": "Orbital Chaos",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    310,
+    347
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      164,
+      290
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-space-rover-tank-intact-power-01",
+          "structural-space-rover-tank-intact-power-02",
+          "structural-space-rover-tank-intact-power-03",
+          "structural-space-rover-tank-intact-power-04",
+          "structural-space-rover-tank-intact-power-05",
+          "structural-space-rover-tank-intact-power-06"
+        ],
+        "damaged": [
+          "structural-space-rover-tank-damaged-power-01",
+          "structural-space-rover-tank-damaged-power-02",
+          "structural-space-rover-tank-damaged-power-03",
+          "structural-space-rover-tank-damaged-power-04",
+          "structural-space-rover-tank-damaged-power-05",
+          "structural-space-rover-tank-damaged-power-06"
+        ],
+        "critical": [
+          "structural-space-rover-tank-critical-power-01",
+          "structural-space-rover-tank-critical-power-02",
+          "structural-space-rover-tank-critical-power-03",
+          "structural-space-rover-tank-critical-power-04",
+          "structural-space-rover-tank-critical-power-05",
+          "structural-space-rover-tank-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-space-rover-tank-attack-01",
+        "structural-space-rover-tank-attack-02",
+        "structural-space-rover-tank-attack-03",
+        "structural-space-rover-tank-attack-04",
+        "structural-space-rover-tank-attack-05",
+        "structural-space-rover-tank-attack-06",
+        "structural-space-rover-tank-attack-07",
+        "structural-space-rover-tank-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-space-rover-tank-combat-atlas.png",
+    "size": [
+      1586,
+      2124
+    ],
+    "rects": {
+      "structural-space-rover-tank-intact-power-01": [
+        6,
+        6,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-intact-power-02": [
+        322,
+        6,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-intact-power-03": [
+        638,
+        6,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-intact-power-04": [
+        954,
+        6,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-intact-power-05": [
+        1270,
+        6,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-intact-power-06": [
+        6,
+        359,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-damaged-power-01": [
+        322,
+        359,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-damaged-power-02": [
+        638,
+        359,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-damaged-power-03": [
+        954,
+        359,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-damaged-power-04": [
+        1270,
+        359,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-damaged-power-05": [
+        6,
+        712,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-damaged-power-06": [
+        322,
+        712,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-critical-power-01": [
+        638,
+        712,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-critical-power-02": [
+        954,
+        712,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-critical-power-03": [
+        1270,
+        712,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-critical-power-04": [
+        6,
+        1065,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-critical-power-05": [
+        322,
+        1065,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-critical-power-06": [
+        638,
+        1065,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-attack-01": [
+        954,
+        1065,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-attack-02": [
+        1270,
+        1065,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-attack-03": [
+        6,
+        1418,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-attack-04": [
+        322,
+        1418,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-attack-05": [
+        638,
+        1418,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-attack-06": [
+        954,
+        1418,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-attack-07": [
+        1270,
+        1418,
+        310,
+        347
+      ],
+      "structural-space-rover-tank-attack-08": [
+        6,
+        1771,
+        310,
+        347
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "space-rover-tank-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl5-enemy-projectile-01",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl5-enemy-projectile-01",
+          "aim": "player",
+          "speed": 205
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl5-enemy-projectile-01",
+          "aim": "player",
+          "speed": 205
+        }
+      ]
+    },
+    {
+      "id": "space-rover-tank-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl5-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 58,
+          "speed": 160
+        }
+      ]
+    },
+    {
+      "id": "space-rover-tank-fracture-halo",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl5-enemy-projectile-03",
+          "count": 6,
+          "spread_degrees": 92,
+          "speed": 147
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl5-elite-fracture-halo",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

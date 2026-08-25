@@ -1,0 +1,301 @@
+{
+  "asset": "structural-airborne-curved-turret-platform",
+  "project": "Bullets of Fury I",
+  "stage": 6,
+  "theme": "Heavy Turbulence",
+  "source_set": "structural",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    387,
+    307
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      201,
+      255
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-airborne-curved-turret-platform-intact-power-01",
+          "structural-airborne-curved-turret-platform-intact-power-02",
+          "structural-airborne-curved-turret-platform-intact-power-03",
+          "structural-airborne-curved-turret-platform-intact-power-04",
+          "structural-airborne-curved-turret-platform-intact-power-05",
+          "structural-airborne-curved-turret-platform-intact-power-06"
+        ],
+        "damaged": [
+          "structural-airborne-curved-turret-platform-damaged-power-01",
+          "structural-airborne-curved-turret-platform-damaged-power-02",
+          "structural-airborne-curved-turret-platform-damaged-power-03",
+          "structural-airborne-curved-turret-platform-damaged-power-04",
+          "structural-airborne-curved-turret-platform-damaged-power-05",
+          "structural-airborne-curved-turret-platform-damaged-power-06"
+        ],
+        "critical": [
+          "structural-airborne-curved-turret-platform-critical-power-01",
+          "structural-airborne-curved-turret-platform-critical-power-02",
+          "structural-airborne-curved-turret-platform-critical-power-03",
+          "structural-airborne-curved-turret-platform-critical-power-04",
+          "structural-airborne-curved-turret-platform-critical-power-05",
+          "structural-airborne-curved-turret-platform-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-airborne-curved-turret-platform-attack-01",
+        "structural-airborne-curved-turret-platform-attack-02",
+        "structural-airborne-curved-turret-platform-attack-03",
+        "structural-airborne-curved-turret-platform-attack-04",
+        "structural-airborne-curved-turret-platform-attack-05",
+        "structural-airborne-curved-turret-platform-attack-06",
+        "structural-airborne-curved-turret-platform-attack-07",
+        "structural-airborne-curved-turret-platform-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-airborne-curved-turret-platform-combat-atlas.png",
+    "size": [
+      1971,
+      1884
+    ],
+    "rects": {
+      "structural-airborne-curved-turret-platform-intact-power-01": [
+        6,
+        6,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-intact-power-02": [
+        399,
+        6,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-intact-power-03": [
+        792,
+        6,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-intact-power-04": [
+        1185,
+        6,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-intact-power-05": [
+        1578,
+        6,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-intact-power-06": [
+        6,
+        319,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-damaged-power-01": [
+        399,
+        319,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-damaged-power-02": [
+        792,
+        319,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-damaged-power-03": [
+        1185,
+        319,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-damaged-power-04": [
+        1578,
+        319,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-damaged-power-05": [
+        6,
+        632,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-damaged-power-06": [
+        399,
+        632,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-critical-power-01": [
+        792,
+        632,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-critical-power-02": [
+        1185,
+        632,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-critical-power-03": [
+        1578,
+        632,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-critical-power-04": [
+        6,
+        945,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-critical-power-05": [
+        399,
+        945,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-critical-power-06": [
+        792,
+        945,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-attack-01": [
+        1185,
+        945,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-attack-02": [
+        1578,
+        945,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-attack-03": [
+        6,
+        1258,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-attack-04": [
+        399,
+        1258,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-attack-05": [
+        792,
+        1258,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-attack-06": [
+        1185,
+        1258,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-attack-07": [
+        1578,
+        1258,
+        387,
+        307
+      ],
+      "structural-airborne-curved-turret-platform-attack-08": [
+        6,
+        1571,
+        387,
+        307
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "airborne-curved-turret-platform-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl6-enemy-projectile-01",
+          "aim": "player",
+          "speed": 212
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl6-enemy-projectile-01",
+          "aim": "player",
+          "speed": 212
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl6-enemy-projectile-01",
+          "aim": "player",
+          "speed": 212
+        }
+      ]
+    },
+    {
+      "id": "airborne-curved-turret-platform-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl6-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 60,
+          "speed": 166
+        }
+      ]
+    },
+    {
+      "id": "airborne-curved-turret-platform-thunder-cyclone",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl6-enemy-projectile-03",
+          "count": 7,
+          "spread_degrees": 92,
+          "speed": 152
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl6-elite-thunder-cyclone",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

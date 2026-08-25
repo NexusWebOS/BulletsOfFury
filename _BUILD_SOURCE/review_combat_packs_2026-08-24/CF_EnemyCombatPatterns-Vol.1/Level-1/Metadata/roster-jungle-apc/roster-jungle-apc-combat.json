@@ -1,0 +1,301 @@
+{
+  "asset": "roster-jungle-apc",
+  "project": "Bullets of Fury I",
+  "stage": 1,
+  "theme": "Jungle Assault",
+  "source_set": "roster",
+  "category": "ground",
+  "weapon_profile": "single",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      128,
+      212
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "roster-jungle-apc-intact-power-01",
+          "roster-jungle-apc-intact-power-02",
+          "roster-jungle-apc-intact-power-03",
+          "roster-jungle-apc-intact-power-04",
+          "roster-jungle-apc-intact-power-05",
+          "roster-jungle-apc-intact-power-06"
+        ],
+        "damaged": [
+          "roster-jungle-apc-damaged-power-01",
+          "roster-jungle-apc-damaged-power-02",
+          "roster-jungle-apc-damaged-power-03",
+          "roster-jungle-apc-damaged-power-04",
+          "roster-jungle-apc-damaged-power-05",
+          "roster-jungle-apc-damaged-power-06"
+        ],
+        "critical": [
+          "roster-jungle-apc-critical-power-01",
+          "roster-jungle-apc-critical-power-02",
+          "roster-jungle-apc-critical-power-03",
+          "roster-jungle-apc-critical-power-04",
+          "roster-jungle-apc-critical-power-05",
+          "roster-jungle-apc-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "roster-jungle-apc-attack-01",
+        "roster-jungle-apc-attack-02",
+        "roster-jungle-apc-attack-03",
+        "roster-jungle-apc-attack-04",
+        "roster-jungle-apc-attack-05",
+        "roster-jungle-apc-attack-06",
+        "roster-jungle-apc-attack-07",
+        "roster-jungle-apc-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "roster-jungle-apc-combat-atlas.png",
+    "size": [
+      1316,
+      1578
+    ],
+    "rects": {
+      "roster-jungle-apc-intact-power-01": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "roster-jungle-apc-intact-power-02": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "roster-jungle-apc-intact-power-03": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "roster-jungle-apc-intact-power-04": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "roster-jungle-apc-intact-power-05": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "roster-jungle-apc-intact-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "roster-jungle-apc-damaged-power-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "roster-jungle-apc-damaged-power-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "roster-jungle-apc-damaged-power-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "roster-jungle-apc-damaged-power-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "roster-jungle-apc-damaged-power-05": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "roster-jungle-apc-damaged-power-06": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "roster-jungle-apc-critical-power-01": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "roster-jungle-apc-critical-power-02": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "roster-jungle-apc-critical-power-03": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "roster-jungle-apc-critical-power-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "roster-jungle-apc-critical-power-05": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "roster-jungle-apc-critical-power-06": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "roster-jungle-apc-attack-01": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "roster-jungle-apc-attack-02": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "roster-jungle-apc-attack-03": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "roster-jungle-apc-attack-04": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "roster-jungle-apc-attack-05": [
+        530,
+        1054,
+        256,
+        256
+      ],
+      "roster-jungle-apc-attack-06": [
+        792,
+        1054,
+        256,
+        256
+      ],
+      "roster-jungle-apc-attack-07": [
+        1054,
+        1054,
+        256,
+        256
+      ],
+      "roster-jungle-apc-attack-08": [
+        6,
+        1316,
+        256,
+        256
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "jungle-apc-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl1-enemy-projectile-01",
+          "aim": "player",
+          "speed": 177
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl1-enemy-projectile-01",
+          "aim": "player",
+          "speed": 177
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl1-enemy-projectile-01",
+          "aim": "player",
+          "speed": 177
+        }
+      ]
+    },
+    {
+      "id": "jungle-apc-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl1-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 50,
+          "speed": 136
+        }
+      ]
+    },
+    {
+      "id": "jungle-apc-flak-blossom",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl1-enemy-projectile-03",
+          "count": 4,
+          "spread_degrees": 92,
+          "speed": 127
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl1-elite-flak-blossom",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

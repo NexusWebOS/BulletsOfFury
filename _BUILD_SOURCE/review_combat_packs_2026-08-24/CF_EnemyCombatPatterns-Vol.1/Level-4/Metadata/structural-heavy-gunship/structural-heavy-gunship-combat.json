@@ -1,0 +1,305 @@
+{
+  "asset": "structural-heavy-gunship",
+  "project": "Bullets of Fury I",
+  "stage": 4,
+  "theme": "Blacksite Air War",
+  "source_set": "structural",
+  "category": "air",
+  "weapon_profile": "dual",
+  "canvas": [
+    309,
+    341
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      105,
+      257
+    ],
+    "right_weapon": [
+      208,
+      257
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-heavy-gunship-intact-power-01",
+          "structural-heavy-gunship-intact-power-02",
+          "structural-heavy-gunship-intact-power-03",
+          "structural-heavy-gunship-intact-power-04",
+          "structural-heavy-gunship-intact-power-05",
+          "structural-heavy-gunship-intact-power-06"
+        ],
+        "damaged": [
+          "structural-heavy-gunship-damaged-power-01",
+          "structural-heavy-gunship-damaged-power-02",
+          "structural-heavy-gunship-damaged-power-03",
+          "structural-heavy-gunship-damaged-power-04",
+          "structural-heavy-gunship-damaged-power-05",
+          "structural-heavy-gunship-damaged-power-06"
+        ],
+        "critical": [
+          "structural-heavy-gunship-critical-power-01",
+          "structural-heavy-gunship-critical-power-02",
+          "structural-heavy-gunship-critical-power-03",
+          "structural-heavy-gunship-critical-power-04",
+          "structural-heavy-gunship-critical-power-05",
+          "structural-heavy-gunship-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-heavy-gunship-attack-01",
+        "structural-heavy-gunship-attack-02",
+        "structural-heavy-gunship-attack-03",
+        "structural-heavy-gunship-attack-04",
+        "structural-heavy-gunship-attack-05",
+        "structural-heavy-gunship-attack-06",
+        "structural-heavy-gunship-attack-07",
+        "structural-heavy-gunship-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-heavy-gunship-combat-atlas.png",
+    "size": [
+      1581,
+      2088
+    ],
+    "rects": {
+      "structural-heavy-gunship-intact-power-01": [
+        6,
+        6,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-intact-power-02": [
+        321,
+        6,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-intact-power-03": [
+        636,
+        6,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-intact-power-04": [
+        951,
+        6,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-intact-power-05": [
+        1266,
+        6,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-intact-power-06": [
+        6,
+        353,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-damaged-power-01": [
+        321,
+        353,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-damaged-power-02": [
+        636,
+        353,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-damaged-power-03": [
+        951,
+        353,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-damaged-power-04": [
+        1266,
+        353,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-damaged-power-05": [
+        6,
+        700,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-damaged-power-06": [
+        321,
+        700,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-critical-power-01": [
+        636,
+        700,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-critical-power-02": [
+        951,
+        700,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-critical-power-03": [
+        1266,
+        700,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-critical-power-04": [
+        6,
+        1047,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-critical-power-05": [
+        321,
+        1047,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-critical-power-06": [
+        636,
+        1047,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-attack-01": [
+        951,
+        1047,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-attack-02": [
+        1266,
+        1047,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-attack-03": [
+        6,
+        1394,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-attack-04": [
+        321,
+        1394,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-attack-05": [
+        636,
+        1394,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-attack-06": [
+        951,
+        1394,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-attack-07": [
+        1266,
+        1394,
+        309,
+        341
+      ],
+      "structural-heavy-gunship-attack-08": [
+        6,
+        1741,
+        309,
+        341
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "heavy-gunship-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl4-enemy-projectile-02",
+          "aim": "player",
+          "speed": 198
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl4-enemy-projectile-02",
+          "aim": "player",
+          "speed": 198
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl4-enemy-projectile-02",
+          "aim": "player",
+          "speed": 198
+        }
+      ]
+    },
+    {
+      "id": "heavy-gunship-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl4-enemy-projectile-01",
+          "count": 5,
+          "spread_degrees": 56,
+          "speed": 154
+        }
+      ]
+    },
+    {
+      "id": "heavy-gunship-missile-star",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl4-enemy-projectile-06",
+          "count": 6,
+          "spread_degrees": 92,
+          "speed": 142
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl4-elite-missile-star",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

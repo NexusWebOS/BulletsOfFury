@@ -1,0 +1,294 @@
+{
+  "project": "Bullets of Fury",
+  "level": 5,
+  "view": "top-down three-quarter",
+  "facing": "down",
+  "source_key": "#FF00FF",
+  "runtime_alpha": "hard binary RGBA",
+  "pixel_scale": "source reduced 2x with nearest-neighbor",
+  "asset": "Chaos Harrier mini-boss",
+  "working_name": true,
+  "atlas": "chaosharrier-atlas.png",
+  "atlas_grid": [
+    3,
+    2
+  ],
+  "frame_canvas": [
+    352,
+    320
+  ],
+  "frames": [
+    {
+      "name": "chaosharrier-01-hover-a.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        55,
+        32,
+        242,
+        236
+      ],
+      "padding": {
+        "left": 55,
+        "top": 32,
+        "right": 55,
+        "bottom": 52
+      },
+      "opaque_pixels": 24990,
+      "index": 0,
+      "state": "hover-a",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-02-hover-b.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        56,
+        33,
+        242,
+        236
+      ],
+      "padding": {
+        "left": 56,
+        "top": 33,
+        "right": 54,
+        "bottom": 51
+      },
+      "opaque_pixels": 24955,
+      "index": 1,
+      "state": "hover-b",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-03-attack-open.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        56,
+        32,
+        242,
+        236
+      ],
+      "padding": {
+        "left": 56,
+        "top": 32,
+        "right": 54,
+        "bottom": 52
+      },
+      "opaque_pixels": 26927,
+      "index": 2,
+      "state": "attack-open",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-04-bank-left.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        65,
+        21,
+        237,
+        242
+      ],
+      "padding": {
+        "left": 65,
+        "top": 21,
+        "right": 50,
+        "bottom": 57
+      },
+      "opaque_pixels": 26716,
+      "index": 3,
+      "state": "bank-left",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-05-bank-right.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        52,
+        20,
+        240,
+        243
+      ],
+      "padding": {
+        "left": 52,
+        "top": 20,
+        "right": 60,
+        "bottom": 57
+      },
+      "opaque_pixels": 27090,
+      "index": 4,
+      "state": "bank-right",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    },
+    {
+      "name": "chaosharrier-06-critical.png",
+      "canvas": [
+        352,
+        320
+      ],
+      "bbox": [
+        56,
+        11,
+        245,
+        262
+      ],
+      "padding": {
+        "left": 56,
+        "top": 11,
+        "right": 51,
+        "bottom": 47
+      },
+      "opaque_pixels": 28860,
+      "index": 5,
+      "state": "critical",
+      "origin": [
+        176,
+        160
+      ],
+      "reactor_pivot": [
+        176,
+        110
+      ]
+    }
+  ],
+  "animation_groups": {
+    "hover": {
+      "indices": [
+        0,
+        1,
+        1,
+        0
+      ],
+      "fps": 5.5,
+      "loop": true
+    },
+    "attack_ready": {
+      "indices": [
+        2
+      ],
+      "loop": false
+    },
+    "bank_left": {
+      "indices": [
+        3
+      ],
+      "loop": false
+    },
+    "bank_right": {
+      "indices": [
+        4
+      ],
+      "loop": false
+    },
+    "critical": {
+      "indices": [
+        5
+      ],
+      "loop": true
+    }
+  },
+  "hardpoints": {
+    "hover": {
+      "left_cannon": [
+        76,
+        145
+      ],
+      "right_cannon": [
+        275,
+        145
+      ],
+      "central_reactor": [
+        176,
+        110
+      ],
+      "reactor_shot_origin": [
+        176,
+        131
+      ]
+    },
+    "attack_open": {
+      "left_cannon": [
+        64,
+        130
+      ],
+      "right_cannon": [
+        289,
+        130
+      ],
+      "left_missile_bay": [
+        128,
+        146
+      ],
+      "right_missile_bay": [
+        224,
+        146
+      ],
+      "central_reactor": [
+        176,
+        110
+      ],
+      "reactor_shot_origin": [
+        176,
+        131
+      ]
+    }
+  },
+  "recommended_body_hitbox": [
+    80,
+    32,
+    192,
+    232
+  ],
+  "notes": [
+    "The six ship images are state frames, not one continuous six-frame animation.",
+    "Spawn projectiles and VFX as separate layers at the listed hardpoints."
+  ]
+}

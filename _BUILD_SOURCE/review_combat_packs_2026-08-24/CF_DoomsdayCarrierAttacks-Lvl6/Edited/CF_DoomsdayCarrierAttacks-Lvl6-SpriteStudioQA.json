@@ -1,0 +1,26 @@
+{
+  "root": "/workspace/scratch/6447d4fe2ecb/output/CF_DoomsdayCarrierAttacks-Lvl6",
+  "summary": {
+    "image_files": 353,
+    "png_files": 317,
+    "gif_files": 36,
+    "images_decoded": 353,
+    "json_files": 32,
+    "jsons_parsed": 32,
+    "asset_groups": 29,
+    "source_sheet_groups": 0,
+    "repairs": 4,
+    "blockers": 0,
+    "warnings": 0
+  },
+  "repairs": [
+    "reboxed prismbeam with 4px added on every side",
+    "rebuilt prismbeam alpha atlas and metadata from standalone frames",
+    "reboxed stormlink with 4px added on every side",
+    "rebuilt stormlink alpha atlas and metadata from standalone frames"
+  ],
+  "blockers": [],
+  "warnings": [],
+  "flagged_images": [],
+  "gate_status": "passed"
+}

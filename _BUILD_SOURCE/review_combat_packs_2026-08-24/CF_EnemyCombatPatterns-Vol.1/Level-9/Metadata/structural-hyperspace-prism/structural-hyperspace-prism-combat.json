@@ -1,0 +1,301 @@
+{
+  "asset": "structural-hyperspace-prism",
+  "project": "Bullets of Fury I",
+  "stage": 9,
+  "theme": "Warp Galaxy",
+  "source_set": "structural",
+  "category": "energy",
+  "weapon_profile": "single",
+  "canvas": [
+    297,
+    315
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "cannon": [
+      148,
+      262
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-hyperspace-prism-intact-power-01",
+          "structural-hyperspace-prism-intact-power-02",
+          "structural-hyperspace-prism-intact-power-03",
+          "structural-hyperspace-prism-intact-power-04",
+          "structural-hyperspace-prism-intact-power-05",
+          "structural-hyperspace-prism-intact-power-06"
+        ],
+        "damaged": [
+          "structural-hyperspace-prism-damaged-power-01",
+          "structural-hyperspace-prism-damaged-power-02",
+          "structural-hyperspace-prism-damaged-power-03",
+          "structural-hyperspace-prism-damaged-power-04",
+          "structural-hyperspace-prism-damaged-power-05",
+          "structural-hyperspace-prism-damaged-power-06"
+        ],
+        "critical": [
+          "structural-hyperspace-prism-critical-power-01",
+          "structural-hyperspace-prism-critical-power-02",
+          "structural-hyperspace-prism-critical-power-03",
+          "structural-hyperspace-prism-critical-power-04",
+          "structural-hyperspace-prism-critical-power-05",
+          "structural-hyperspace-prism-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-hyperspace-prism-attack-01",
+        "structural-hyperspace-prism-attack-02",
+        "structural-hyperspace-prism-attack-03",
+        "structural-hyperspace-prism-attack-04",
+        "structural-hyperspace-prism-attack-05",
+        "structural-hyperspace-prism-attack-06",
+        "structural-hyperspace-prism-attack-07",
+        "structural-hyperspace-prism-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-hyperspace-prism-combat-atlas.png",
+    "size": [
+      1521,
+      1932
+    ],
+    "rects": {
+      "structural-hyperspace-prism-intact-power-01": [
+        6,
+        6,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-intact-power-02": [
+        309,
+        6,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-intact-power-03": [
+        612,
+        6,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-intact-power-04": [
+        915,
+        6,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-intact-power-05": [
+        1218,
+        6,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-intact-power-06": [
+        6,
+        327,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-damaged-power-01": [
+        309,
+        327,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-damaged-power-02": [
+        612,
+        327,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-damaged-power-03": [
+        915,
+        327,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-damaged-power-04": [
+        1218,
+        327,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-damaged-power-05": [
+        6,
+        648,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-damaged-power-06": [
+        309,
+        648,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-critical-power-01": [
+        612,
+        648,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-critical-power-02": [
+        915,
+        648,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-critical-power-03": [
+        1218,
+        648,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-critical-power-04": [
+        6,
+        969,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-critical-power-05": [
+        309,
+        969,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-critical-power-06": [
+        612,
+        969,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-attack-01": [
+        915,
+        969,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-attack-02": [
+        1218,
+        969,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-attack-03": [
+        6,
+        1290,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-attack-04": [
+        309,
+        1290,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-attack-05": [
+        612,
+        1290,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-attack-06": [
+        915,
+        1290,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-attack-07": [
+        1218,
+        1290,
+        297,
+        315
+      ],
+      "structural-hyperspace-prism-attack-08": [
+        6,
+        1611,
+        297,
+        315
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "hyperspace-prism-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl9-enemy-projectile-01",
+          "aim": "player",
+          "speed": 233
+        },
+        {
+          "time_ms": 120,
+          "anchor": "cannon",
+          "projectile": "lvl9-enemy-projectile-01",
+          "aim": "player",
+          "speed": 233
+        },
+        {
+          "time_ms": 240,
+          "anchor": "cannon",
+          "projectile": "lvl9-enemy-projectile-01",
+          "aim": "player",
+          "speed": 233
+        }
+      ]
+    },
+    {
+      "id": "hyperspace-prism-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl9-enemy-projectile-06",
+          "count": 7,
+          "spread_degrees": 66,
+          "speed": 184
+        }
+      ]
+    },
+    {
+      "id": "hyperspace-prism-warp-lattice",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "cannon",
+          "projectile": "lvl9-enemy-projectile-03",
+          "count": 8,
+          "spread_degrees": 92,
+          "speed": 167
+        },
+        {
+          "time_ms": 360,
+          "anchor": "cannon",
+          "projectile": "lvl9-elite-warp-lattice",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

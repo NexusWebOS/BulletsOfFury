@@ -1,0 +1,10 @@
+{
+  "status": "passed",
+  "states": 15,
+  "animations": 16,
+  "attack_patterns": 4,
+  "manifest_files": 5,
+  "dependencies": 7,
+  "blockers": [],
+  "warnings": []
+}

@@ -1,0 +1,106 @@
+{
+  "asset": "lvl4-enemy-projectile-01-steel-pellet",
+  "stage": 4,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl4-enemy-projectile-01-steel-pellet-travel-01",
+      "lvl4-enemy-projectile-01-steel-pellet-travel-02",
+      "lvl4-enemy-projectile-01-steel-pellet-travel-03",
+      "lvl4-enemy-projectile-01-steel-pellet-travel-04",
+      "lvl4-enemy-projectile-01-steel-pellet-travel-05",
+      "lvl4-enemy-projectile-01-steel-pellet-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl4-enemy-projectile-01-steel-pellet-impact-01",
+      "lvl4-enemy-projectile-01-steel-pellet-impact-02",
+      "lvl4-enemy-projectile-01-steel-pellet-impact-03",
+      "lvl4-enemy-projectile-01-steel-pellet-impact-04",
+      "lvl4-enemy-projectile-01-steel-pellet-impact-05",
+      "lvl4-enemy-projectile-01-steel-pellet-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl4-enemy-projectile-01-steel-pellet-combat-atlas.png",
+    "rects": {
+      "lvl4-enemy-projectile-01-steel-pellet-travel-01": [
+        67,
+        46,
+        37,
+        80
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-travel-02": [
+        233,
+        46,
+        37,
+        80
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-travel-03": [
+        399,
+        46,
+        37,
+        80
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-travel-04": [
+        565,
+        46,
+        37,
+        80
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-travel-05": [
+        731,
+        46,
+        37,
+        80
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-travel-06": [
+        897,
+        46,
+        37,
+        80
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl4-enemy-projectile-01-steel-pellet-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

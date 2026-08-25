@@ -1,0 +1,186 @@
+{
+  "pack": "CF_ToxicSewerVoidGate-Lvl7",
+  "game": "Bullets of Fury",
+  "stage": 7,
+  "title": "Toxic Sewer and Void Gate \u2014 Indoor Black Exterior",
+  "viewpoint": "top-down vertical shmup",
+  "style": "16-bit Sega Mega Drive / Raiden-era overhead terrain",
+  "canvas": {
+    "width": 680,
+    "segment_height": 1020,
+    "segment_count": 5,
+    "overlap_pixels": 96,
+    "full_scroll_height": 4716
+  },
+  "travel_direction": "bottom-to-top",
+  "segments_bottom_to_top": [
+    "stage07-segment-01-sewer-entry",
+    "stage07-segment-02-pumping-complex",
+    "stage07-segment-03-deep-sewer",
+    "stage07-segment-04-pressure-vault",
+    "stage07-segment-05-void-portal"
+  ],
+  "draw_order_top_to_bottom": [
+    "stage07-segment-05-void-portal",
+    "stage07-segment-04-pressure-vault",
+    "stage07-segment-03-deep-sewer",
+    "stage07-segment-02-pumping-complex",
+    "stage07-segment-01-sewer-entry"
+  ],
+  "offsets_top_to_bottom": {
+    "stage07-segment-05-void-portal": 0,
+    "stage07-segment-04-pressure-vault": 924,
+    "stage07-segment-03-deep-sewer": 1848,
+    "stage07-segment-02-pumping-complex": 2772,
+    "stage07-segment-01-sewer-entry": 3696
+  },
+  "stack_rule": "lower board draws last; remove its exact-magenta/cutout top edge so irregular terrain reveals and interlocks with the board above",
+  "liquid_policy": {
+    "meaning": "inner toxic-sludge channels and portal apertures only",
+    "source_key": "#FF00FF",
+    "runtime": "binary transparency with zero hidden RGB",
+    "outer_background": "opaque pure #000000",
+    "mask": "white inner liquid/portal; transparent terrain and outer black"
+  },
+  "palette": "one shared maximum-64-colour stage palette including exact magenta",
+  "pixel_grid": "exact 2x authored-pixel grid",
+  "assets": [
+    {
+      "id": "stage07-segment-01-sewer-entry",
+      "source_role": "foundation",
+      "mirrored": false,
+      "master": "Master Edit/stage07-segment-01-sewer-entry-magenta.png",
+      "alpha": "stage07-segment-01-sewer-entry-alpha.png",
+      "liquid_mask": "stage07-segment-01-sewer-entry-liquid-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-segment-02-pumping-complex",
+      "source_role": "middle",
+      "mirrored": false,
+      "master": "Master Edit/stage07-segment-02-pumping-complex-magenta.png",
+      "alpha": "stage07-segment-02-pumping-complex-alpha.png",
+      "liquid_mask": "stage07-segment-02-pumping-complex-liquid-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-segment-03-deep-sewer",
+      "source_role": "foundation",
+      "mirrored": true,
+      "master": "Master Edit/stage07-segment-03-deep-sewer-magenta.png",
+      "alpha": "stage07-segment-03-deep-sewer-alpha.png",
+      "liquid_mask": "stage07-segment-03-deep-sewer-liquid-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-segment-04-pressure-vault",
+      "source_role": "middle",
+      "mirrored": true,
+      "master": "Master Edit/stage07-segment-04-pressure-vault-magenta.png",
+      "alpha": "stage07-segment-04-pressure-vault-alpha.png",
+      "liquid_mask": "stage07-segment-04-pressure-vault-liquid-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-segment-05-void-portal",
+      "source_role": "finale",
+      "mirrored": false,
+      "master": "Master Edit/stage07-segment-05-void-portal-magenta.png",
+      "alpha": "stage07-segment-05-void-portal-alpha.png",
+      "liquid_mask": "stage07-segment-05-void-portal-liquid-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-segment-04-pressure-vault-overlap",
+      "master": "Master Edit/stage07-segment-04-pressure-vault-overlap-magenta.png",
+      "alpha": "stage07-segment-04-pressure-vault-overlap-alpha.png",
+      "cutout_mask": "stage07-segment-04-pressure-vault-overlap-cutout-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-connector-05-void-portal-to-04-pressure-vault",
+      "master": "Master Edit/stage07-connector-05-void-portal-to-04-pressure-vault-magenta.png",
+      "alpha": "stage07-connector-05-void-portal-to-04-pressure-vault-alpha.png",
+      "cutout_mask": "stage07-connector-05-void-portal-to-04-pressure-vault-cutout-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-segment-03-deep-sewer-overlap",
+      "master": "Master Edit/stage07-segment-03-deep-sewer-overlap-magenta.png",
+      "alpha": "stage07-segment-03-deep-sewer-overlap-alpha.png",
+      "cutout_mask": "stage07-segment-03-deep-sewer-overlap-cutout-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-connector-04-pressure-vault-to-03-deep-sewer",
+      "master": "Master Edit/stage07-connector-04-pressure-vault-to-03-deep-sewer-magenta.png",
+      "alpha": "stage07-connector-04-pressure-vault-to-03-deep-sewer-alpha.png",
+      "cutout_mask": "stage07-connector-04-pressure-vault-to-03-deep-sewer-cutout-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-segment-02-pumping-complex-overlap",
+      "master": "Master Edit/stage07-segment-02-pumping-complex-overlap-magenta.png",
+      "alpha": "stage07-segment-02-pumping-complex-overlap-alpha.png",
+      "cutout_mask": "stage07-segment-02-pumping-complex-overlap-cutout-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-connector-03-deep-sewer-to-02-pumping-complex",
+      "master": "Master Edit/stage07-connector-03-deep-sewer-to-02-pumping-complex-magenta.png",
+      "alpha": "stage07-connector-03-deep-sewer-to-02-pumping-complex-alpha.png",
+      "cutout_mask": "stage07-connector-03-deep-sewer-to-02-pumping-complex-cutout-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-segment-01-sewer-entry-overlap",
+      "master": "Master Edit/stage07-segment-01-sewer-entry-overlap-magenta.png",
+      "alpha": "stage07-segment-01-sewer-entry-overlap-alpha.png",
+      "cutout_mask": "stage07-segment-01-sewer-entry-overlap-cutout-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-connector-02-pumping-complex-to-01-sewer-entry",
+      "master": "Master Edit/stage07-connector-02-pumping-complex-to-01-sewer-entry-magenta.png",
+      "alpha": "stage07-connector-02-pumping-complex-to-01-sewer-entry-alpha.png",
+      "cutout_mask": "stage07-connector-02-pumping-complex-to-01-sewer-entry-cutout-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-full-scroll",
+      "master": "Master Edit/stage07-full-scroll-magenta.png",
+      "alpha": "stage07-full-scroll-alpha.png",
+      "liquid_mask": "stage07-full-scroll-liquid-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    },
+    {
+      "id": "stage07-to-stage08-furious-death-void-portal-transition",
+      "role": "standalone fly-in transition and Stage 7 final board",
+      "master": "Master Edit/stage07-to-stage08-furious-death-void-portal-transition-magenta.png",
+      "alpha": "stage07-to-stage08-furious-death-void-portal-transition-alpha.png",
+      "portal_mask": "stage07-to-stage08-furious-death-void-portal-transition-portal-mask.png",
+      "outer_background": "opaque pure #000000",
+      "inner_key": "#FF00FF master / transparent runtime"
+    }
+  ],
+  "background_policy": {
+    "outer": "opaque pure #000000 beyond physical sewer walls",
+    "inner_master": "exact #FF00FF toxic sludge and portal apertures",
+    "inner_runtime": "fully transparent hard alpha",
+    "stacking": "96px jagged connector cutouts remain transparent"
+  }
+}

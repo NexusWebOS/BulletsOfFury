@@ -1,0 +1,106 @@
+{
+  "asset": "lvl9-enemy-projectile-04-star-needle",
+  "stage": 9,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl9-enemy-projectile-04-star-needle-travel-01",
+      "lvl9-enemy-projectile-04-star-needle-travel-02",
+      "lvl9-enemy-projectile-04-star-needle-travel-03",
+      "lvl9-enemy-projectile-04-star-needle-travel-04",
+      "lvl9-enemy-projectile-04-star-needle-travel-05",
+      "lvl9-enemy-projectile-04-star-needle-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl9-enemy-projectile-04-star-needle-impact-01",
+      "lvl9-enemy-projectile-04-star-needle-impact-02",
+      "lvl9-enemy-projectile-04-star-needle-impact-03",
+      "lvl9-enemy-projectile-04-star-needle-impact-04",
+      "lvl9-enemy-projectile-04-star-needle-impact-05",
+      "lvl9-enemy-projectile-04-star-needle-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl9-enemy-projectile-04-star-needle-combat-atlas.png",
+    "rects": {
+      "lvl9-enemy-projectile-04-star-needle-travel-01": [
+        65,
+        47,
+        41,
+        78
+      ],
+      "lvl9-enemy-projectile-04-star-needle-travel-02": [
+        231,
+        47,
+        41,
+        78
+      ],
+      "lvl9-enemy-projectile-04-star-needle-travel-03": [
+        397,
+        47,
+        41,
+        78
+      ],
+      "lvl9-enemy-projectile-04-star-needle-travel-04": [
+        563,
+        47,
+        41,
+        78
+      ],
+      "lvl9-enemy-projectile-04-star-needle-travel-05": [
+        729,
+        47,
+        41,
+        78
+      ],
+      "lvl9-enemy-projectile-04-star-needle-travel-06": [
+        895,
+        47,
+        41,
+        78
+      ],
+      "lvl9-enemy-projectile-04-star-needle-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-04-star-needle-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-04-star-needle-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-04-star-needle-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-04-star-needle-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl9-enemy-projectile-04-star-needle-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}

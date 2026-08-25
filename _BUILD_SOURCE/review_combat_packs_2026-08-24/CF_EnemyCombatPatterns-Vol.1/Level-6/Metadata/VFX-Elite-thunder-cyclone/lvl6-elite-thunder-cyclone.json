@@ -1,0 +1,88 @@
+{
+  "asset": "lvl6-elite-thunder-cyclone",
+  "stage": 6,
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision": "spawn controller; use projectile children for discrete collision",
+  "atlas": {
+    "file": "lvl6-elite-thunder-cyclone-atlas.png",
+    "rects": {
+      "lvl6-elite-thunder-cyclone-01": [
+        6,
+        6,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-02": [
+        354,
+        6,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-03": [
+        702,
+        6,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-04": [
+        1050,
+        6,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-05": [
+        6,
+        354,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-06": [
+        354,
+        354,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-07": [
+        702,
+        354,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-08": [
+        1050,
+        354,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-09": [
+        6,
+        702,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-10": [
+        354,
+        702,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-11": [
+        702,
+        702,
+        342,
+        342
+      ],
+      "lvl6-elite-thunder-cyclone-12": [
+        1050,
+        702,
+        342,
+        342
+      ]
+    }
+  }
+}

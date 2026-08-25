@@ -1,0 +1,88 @@
+{
+  "asset": "lvl2-elite-eruption-crown",
+  "stage": 2,
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision": "spawn controller; use projectile children for discrete collision",
+  "atlas": {
+    "file": "lvl2-elite-eruption-crown-atlas.png",
+    "rects": {
+      "lvl2-elite-eruption-crown-01": [
+        6,
+        6,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-02": [
+        357,
+        6,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-03": [
+        708,
+        6,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-04": [
+        1059,
+        6,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-05": [
+        6,
+        357,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-06": [
+        357,
+        357,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-07": [
+        708,
+        357,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-08": [
+        1059,
+        357,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-09": [
+        6,
+        708,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-10": [
+        357,
+        708,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-11": [
+        708,
+        708,
+        345,
+        345
+      ],
+      "lvl2-elite-eruption-crown-12": [
+        1059,
+        708,
+        345,
+        345
+      ]
+    }
+  }
+}

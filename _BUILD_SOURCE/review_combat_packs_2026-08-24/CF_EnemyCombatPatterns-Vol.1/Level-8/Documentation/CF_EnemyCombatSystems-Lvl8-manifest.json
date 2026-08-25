@@ -1,0 +1,48 @@
+{
+  "pack": "CF_EnemyCombatSystems-Lvl8",
+  "stage": 8,
+  "theme": "Furious Death",
+  "enemy_count": 25,
+  "enemy_ids": [
+    "roster-armored-leech",
+    "roster-bone-interceptor",
+    "roster-bone-manta",
+    "roster-hunter-pod",
+    "roster-multi-eye-death-orb",
+    "roster-parasite-drone",
+    "roster-razor-disc",
+    "roster-skull-mine",
+    "roster-spawn-carrier-miniboss",
+    "roster-symbiote-fighter",
+    "roster-tentacle-cannon",
+    "roster-void-bomber",
+    "structural-alien-fury-fighter",
+    "structural-alien-mini-crawler",
+    "structural-alien-tank-crawler",
+    "structural-bio-artillery",
+    "structural-blade-skimmer",
+    "structural-chaos-alien-bomber",
+    "structural-chaos-incubation-pod",
+    "structural-living-eye-turret",
+    "structural-rage-carrier",
+    "structural-rage-mine",
+    "structural-swarm-drone",
+    "structural-symbiote-beast",
+    "structural-tentacle-gunship"
+  ],
+  "patterns": 75,
+  "vfx": {
+    "muzzle_frames": 4,
+    "projectile_families": [
+      "lvl8-enemy-projectile-01-plasma-needle",
+      "lvl8-enemy-projectile-02-rage-ball",
+      "lvl8-enemy-projectile-03-fusion-slug",
+      "lvl8-enemy-projectile-04-black-red-missile",
+      "lvl8-enemy-projectile-05-paired-rage",
+      "lvl8-enemy-projectile-06-energy-blade"
+    ]
+  },
+  "elite_signature": "void-razor",
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

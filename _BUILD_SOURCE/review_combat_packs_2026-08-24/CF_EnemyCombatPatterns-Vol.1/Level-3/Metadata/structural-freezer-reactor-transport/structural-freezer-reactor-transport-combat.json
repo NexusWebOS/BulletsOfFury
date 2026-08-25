@@ -1,0 +1,282 @@
+{
+  "asset": "structural-freezer-reactor-transport",
+  "project": "Bullets of Fury I",
+  "stage": 3,
+  "theme": "Frozen Stronghold",
+  "source_set": "structural",
+  "category": "hazard",
+  "weapon_profile": "radial",
+  "canvas": [
+    228,
+    414
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "core": [
+      127,
+      207
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-freezer-reactor-transport-intact-power-01",
+          "structural-freezer-reactor-transport-intact-power-02",
+          "structural-freezer-reactor-transport-intact-power-03",
+          "structural-freezer-reactor-transport-intact-power-04",
+          "structural-freezer-reactor-transport-intact-power-05",
+          "structural-freezer-reactor-transport-intact-power-06"
+        ],
+        "damaged": [
+          "structural-freezer-reactor-transport-damaged-power-01",
+          "structural-freezer-reactor-transport-damaged-power-02",
+          "structural-freezer-reactor-transport-damaged-power-03",
+          "structural-freezer-reactor-transport-damaged-power-04",
+          "structural-freezer-reactor-transport-damaged-power-05",
+          "structural-freezer-reactor-transport-damaged-power-06"
+        ],
+        "critical": [
+          "structural-freezer-reactor-transport-critical-power-01",
+          "structural-freezer-reactor-transport-critical-power-02",
+          "structural-freezer-reactor-transport-critical-power-03",
+          "structural-freezer-reactor-transport-critical-power-04",
+          "structural-freezer-reactor-transport-critical-power-05",
+          "structural-freezer-reactor-transport-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-freezer-reactor-transport-attack-01",
+        "structural-freezer-reactor-transport-attack-02",
+        "structural-freezer-reactor-transport-attack-03",
+        "structural-freezer-reactor-transport-attack-04",
+        "structural-freezer-reactor-transport-attack-05",
+        "structural-freezer-reactor-transport-attack-06",
+        "structural-freezer-reactor-transport-attack-07",
+        "structural-freezer-reactor-transport-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-freezer-reactor-transport-combat-atlas.png",
+    "size": [
+      1176,
+      2526
+    ],
+    "rects": {
+      "structural-freezer-reactor-transport-intact-power-01": [
+        6,
+        6,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-intact-power-02": [
+        240,
+        6,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-intact-power-03": [
+        474,
+        6,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-intact-power-04": [
+        708,
+        6,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-intact-power-05": [
+        942,
+        6,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-intact-power-06": [
+        6,
+        426,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-damaged-power-01": [
+        240,
+        426,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-damaged-power-02": [
+        474,
+        426,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-damaged-power-03": [
+        708,
+        426,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-damaged-power-04": [
+        942,
+        426,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-damaged-power-05": [
+        6,
+        846,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-damaged-power-06": [
+        240,
+        846,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-critical-power-01": [
+        474,
+        846,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-critical-power-02": [
+        708,
+        846,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-critical-power-03": [
+        942,
+        846,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-critical-power-04": [
+        6,
+        1266,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-critical-power-05": [
+        240,
+        1266,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-critical-power-06": [
+        474,
+        1266,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-attack-01": [
+        708,
+        1266,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-attack-02": [
+        942,
+        1266,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-attack-03": [
+        6,
+        1686,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-attack-04": [
+        240,
+        1686,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-attack-05": [
+        474,
+        1686,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-attack-06": [
+        708,
+        1686,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-attack-07": [
+        942,
+        1686,
+        228,
+        414
+      ],
+      "structural-freezer-reactor-transport-attack-08": [
+        6,
+        2106,
+        228,
+        414
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "freezer-reactor-transport-proximity-bloom",
+      "cooldown_ms": 2600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl3-enemy-projectile-02",
+          "count": 8,
+          "spread_degrees": 360,
+          "speed": 92
+        }
+      ]
+    },
+    {
+      "id": "freezer-reactor-transport-delayed-cross",
+      "cooldown_ms": 3200,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl3-enemy-projectile-05",
+          "count": 4,
+          "spread_degrees": 270,
+          "speed": 118,
+          "delay_ms": 420
+        }
+      ]
+    },
+    {
+      "id": "freezer-reactor-transport-crystal-guillotine",
+      "cooldown_ms": 4800,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl3-elite-crystal-guillotine",
+          "count": 1,
+          "speed": 42,
+          "burst_on_timeout_ms": 900
+        }
+      ]
+    }
+  ]
+}

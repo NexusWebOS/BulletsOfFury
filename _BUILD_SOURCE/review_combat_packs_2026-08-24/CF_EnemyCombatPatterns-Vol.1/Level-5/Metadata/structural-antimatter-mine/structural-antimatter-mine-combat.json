@@ -1,0 +1,282 @@
+{
+  "asset": "structural-antimatter-mine",
+  "project": "Bullets of Fury I",
+  "stage": 5,
+  "theme": "Orbital Chaos",
+  "source_set": "structural",
+  "category": "hazard",
+  "weapon_profile": "radial",
+  "canvas": [
+    316,
+    280
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "core": [
+      170,
+      139
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-antimatter-mine-intact-power-01",
+          "structural-antimatter-mine-intact-power-02",
+          "structural-antimatter-mine-intact-power-03",
+          "structural-antimatter-mine-intact-power-04",
+          "structural-antimatter-mine-intact-power-05",
+          "structural-antimatter-mine-intact-power-06"
+        ],
+        "damaged": [
+          "structural-antimatter-mine-damaged-power-01",
+          "structural-antimatter-mine-damaged-power-02",
+          "structural-antimatter-mine-damaged-power-03",
+          "structural-antimatter-mine-damaged-power-04",
+          "structural-antimatter-mine-damaged-power-05",
+          "structural-antimatter-mine-damaged-power-06"
+        ],
+        "critical": [
+          "structural-antimatter-mine-critical-power-01",
+          "structural-antimatter-mine-critical-power-02",
+          "structural-antimatter-mine-critical-power-03",
+          "structural-antimatter-mine-critical-power-04",
+          "structural-antimatter-mine-critical-power-05",
+          "structural-antimatter-mine-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-antimatter-mine-attack-01",
+        "structural-antimatter-mine-attack-02",
+        "structural-antimatter-mine-attack-03",
+        "structural-antimatter-mine-attack-04",
+        "structural-antimatter-mine-attack-05",
+        "structural-antimatter-mine-attack-06",
+        "structural-antimatter-mine-attack-07",
+        "structural-antimatter-mine-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-antimatter-mine-combat-atlas.png",
+    "size": [
+      1616,
+      1722
+    ],
+    "rects": {
+      "structural-antimatter-mine-intact-power-01": [
+        6,
+        6,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-intact-power-02": [
+        328,
+        6,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-intact-power-03": [
+        650,
+        6,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-intact-power-04": [
+        972,
+        6,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-intact-power-05": [
+        1294,
+        6,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-intact-power-06": [
+        6,
+        292,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-damaged-power-01": [
+        328,
+        292,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-damaged-power-02": [
+        650,
+        292,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-damaged-power-03": [
+        972,
+        292,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-damaged-power-04": [
+        1294,
+        292,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-damaged-power-05": [
+        6,
+        578,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-damaged-power-06": [
+        328,
+        578,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-critical-power-01": [
+        650,
+        578,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-critical-power-02": [
+        972,
+        578,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-critical-power-03": [
+        1294,
+        578,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-critical-power-04": [
+        6,
+        864,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-critical-power-05": [
+        328,
+        864,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-critical-power-06": [
+        650,
+        864,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-attack-01": [
+        972,
+        864,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-attack-02": [
+        1294,
+        864,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-attack-03": [
+        6,
+        1150,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-attack-04": [
+        328,
+        1150,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-attack-05": [
+        650,
+        1150,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-attack-06": [
+        972,
+        1150,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-attack-07": [
+        1294,
+        1150,
+        316,
+        280
+      ],
+      "structural-antimatter-mine-attack-08": [
+        6,
+        1436,
+        316,
+        280
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "antimatter-mine-proximity-bloom",
+      "cooldown_ms": 2600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl5-enemy-projectile-02",
+          "count": 8,
+          "spread_degrees": 360,
+          "speed": 92
+        }
+      ]
+    },
+    {
+      "id": "antimatter-mine-delayed-cross",
+      "cooldown_ms": 3200,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl5-enemy-projectile-05",
+          "count": 4,
+          "spread_degrees": 270,
+          "speed": 118,
+          "delay_ms": 420
+        }
+      ]
+    },
+    {
+      "id": "antimatter-mine-fracture-halo",
+      "cooldown_ms": 4800,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "core",
+          "projectile": "lvl5-elite-fracture-halo",
+          "count": 1,
+          "speed": 42,
+          "burst_on_timeout_ms": 900
+        }
+      ]
+    }
+  ]
+}

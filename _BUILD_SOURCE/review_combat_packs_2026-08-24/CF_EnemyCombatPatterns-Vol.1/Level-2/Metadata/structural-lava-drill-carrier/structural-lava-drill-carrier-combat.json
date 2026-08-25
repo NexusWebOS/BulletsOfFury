@@ -1,0 +1,305 @@
+{
+  "asset": "structural-lava-drill-carrier",
+  "project": "Bullets of Fury I",
+  "stage": 2,
+  "theme": "Volcanic Depths",
+  "source_set": "structural",
+  "category": "missile",
+  "weapon_profile": "dual",
+  "canvas": [
+    323,
+    344
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "facing": "down-screen",
+  "hard_alpha": true,
+  "weapon_anchors_px": {
+    "left_weapon": [
+      144,
+      259
+    ],
+    "right_weapon": [
+      234,
+      259
+    ]
+  },
+  "animation": {
+    "power": {
+      "fps": 8,
+      "loop": true,
+      "states": {
+        "intact": [
+          "structural-lava-drill-carrier-intact-power-01",
+          "structural-lava-drill-carrier-intact-power-02",
+          "structural-lava-drill-carrier-intact-power-03",
+          "structural-lava-drill-carrier-intact-power-04",
+          "structural-lava-drill-carrier-intact-power-05",
+          "structural-lava-drill-carrier-intact-power-06"
+        ],
+        "damaged": [
+          "structural-lava-drill-carrier-damaged-power-01",
+          "structural-lava-drill-carrier-damaged-power-02",
+          "structural-lava-drill-carrier-damaged-power-03",
+          "structural-lava-drill-carrier-damaged-power-04",
+          "structural-lava-drill-carrier-damaged-power-05",
+          "structural-lava-drill-carrier-damaged-power-06"
+        ],
+        "critical": [
+          "structural-lava-drill-carrier-critical-power-01",
+          "structural-lava-drill-carrier-critical-power-02",
+          "structural-lava-drill-carrier-critical-power-03",
+          "structural-lava-drill-carrier-critical-power-04",
+          "structural-lava-drill-carrier-critical-power-05",
+          "structural-lava-drill-carrier-critical-power-06"
+        ]
+      }
+    },
+    "attack": {
+      "fps": 12,
+      "loop": false,
+      "frames": [
+        "structural-lava-drill-carrier-attack-01",
+        "structural-lava-drill-carrier-attack-02",
+        "structural-lava-drill-carrier-attack-03",
+        "structural-lava-drill-carrier-attack-04",
+        "structural-lava-drill-carrier-attack-05",
+        "structural-lava-drill-carrier-attack-06",
+        "structural-lava-drill-carrier-attack-07",
+        "structural-lava-drill-carrier-attack-08"
+      ],
+      "spawn_event_frame": 4
+    }
+  },
+  "atlas": {
+    "file": "structural-lava-drill-carrier-combat-atlas.png",
+    "size": [
+      1651,
+      2106
+    ],
+    "rects": {
+      "structural-lava-drill-carrier-intact-power-01": [
+        6,
+        6,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-intact-power-02": [
+        335,
+        6,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-intact-power-03": [
+        664,
+        6,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-intact-power-04": [
+        993,
+        6,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-intact-power-05": [
+        1322,
+        6,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-intact-power-06": [
+        6,
+        356,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-damaged-power-01": [
+        335,
+        356,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-damaged-power-02": [
+        664,
+        356,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-damaged-power-03": [
+        993,
+        356,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-damaged-power-04": [
+        1322,
+        356,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-damaged-power-05": [
+        6,
+        706,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-damaged-power-06": [
+        335,
+        706,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-critical-power-01": [
+        664,
+        706,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-critical-power-02": [
+        993,
+        706,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-critical-power-03": [
+        1322,
+        706,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-critical-power-04": [
+        6,
+        1056,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-critical-power-05": [
+        335,
+        1056,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-critical-power-06": [
+        664,
+        1056,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-attack-01": [
+        993,
+        1056,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-attack-02": [
+        1322,
+        1056,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-attack-03": [
+        6,
+        1406,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-attack-04": [
+        335,
+        1406,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-attack-05": [
+        664,
+        1406,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-attack-06": [
+        993,
+        1406,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-attack-07": [
+        1322,
+        1406,
+        323,
+        344
+      ],
+      "structural-lava-drill-carrier-attack-08": [
+        6,
+        1756,
+        323,
+        344
+      ]
+    }
+  },
+  "attack_patterns": [
+    {
+      "id": "lava-drill-carrier-aimed-burst",
+      "cooldown_ms": 1600,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-enemy-projectile-02",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 120,
+          "anchor": "right_weapon",
+          "projectile": "lvl2-enemy-projectile-02",
+          "aim": "player",
+          "speed": 184
+        },
+        {
+          "time_ms": 240,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-enemy-projectile-02",
+          "aim": "player",
+          "speed": 184
+        }
+      ]
+    },
+    {
+      "id": "lava-drill-carrier-bracket-fan",
+      "cooldown_ms": 2400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-enemy-projectile-01",
+          "count": 5,
+          "spread_degrees": 52,
+          "speed": 142
+        }
+      ]
+    },
+    {
+      "id": "lava-drill-carrier-eruption-crown",
+      "cooldown_ms": 4300,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-enemy-projectile-06",
+          "count": 5,
+          "spread_degrees": 92,
+          "speed": 132
+        },
+        {
+          "time_ms": 360,
+          "anchor": "left_weapon",
+          "projectile": "lvl2-elite-eruption-crown",
+          "count": 1,
+          "speed": 58
+        }
+      ]
+    }
+  ]
+}

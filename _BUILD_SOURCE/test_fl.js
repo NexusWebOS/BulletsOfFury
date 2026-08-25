@@ -2660,7 +2660,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // SWEEP: a stuck entry flag = a permanently invulnerable, mute boss. Every sub-boss in the table
   // must arrive, on every stage. This is the class of bug, not just the one instance of it.
   var _sbFail=[];
-  [[1,'quadlaser'],[2,'esB_big6'],[3,'subcore'],[4,'subreactor'],[5,'subcore'],[6,'ss'],[7,'ratking'],[8,'herald']].forEach(function(pair){
+  [[1,'quadlaser'],[2,'esB_big6'],[3,'subcore'],[4,'subreactor'],[5,'chaosharrier'],[6,'ss'],[7,'ratking'],[8,'herald']].forEach(function(pair){
     var st=pair[0], kind=pair[1];
     if(sbRetired(kind)) return;          // retired on purpose — not a stuck entry flag
     vm.runInContext("run.stage="+st+"; curStage=STAGES["+(st-1)+"]; subBoss=null; subBossActive=false; eBullets.length=0; spawnSubBoss('"+kind+"');", ctxv);

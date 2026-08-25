@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-void-shock-ring",
+  "kind": "impact",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-void-shock-ring-01",
+    "cosmic-void-shock-ring-02",
+    "cosmic-void-shock-ring-03",
+    "cosmic-void-shock-ring-04",
+    "cosmic-void-shock-ring-05",
+    "cosmic-void-shock-ring-06"
+  ],
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-void-shock-ring-atlas.png",
+    "rects": {
+      "cosmic-void-shock-ring-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-void-shock-ring-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-void-shock-ring-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-void-shock-ring-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-void-shock-ring-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-void-shock-ring-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

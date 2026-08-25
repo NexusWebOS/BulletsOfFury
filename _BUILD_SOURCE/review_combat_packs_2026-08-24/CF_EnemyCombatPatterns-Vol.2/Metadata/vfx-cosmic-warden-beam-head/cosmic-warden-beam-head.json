@@ -1,0 +1,63 @@
+{
+  "asset": "cosmic-warden-beam-head",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "cosmic-warden-beam-head-01",
+    "cosmic-warden-beam-head-02",
+    "cosmic-warden-beam-head-03",
+    "cosmic-warden-beam-head-04",
+    "cosmic-warden-beam-head-05",
+    "cosmic-warden-beam-head-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "cosmic-warden-beam-head-atlas.png",
+    "rects": {
+      "cosmic-warden-beam-head-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "cosmic-warden-beam-head-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "cosmic-warden-beam-head-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "cosmic-warden-beam-head-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "cosmic-warden-beam-head-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "cosmic-warden-beam-head-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

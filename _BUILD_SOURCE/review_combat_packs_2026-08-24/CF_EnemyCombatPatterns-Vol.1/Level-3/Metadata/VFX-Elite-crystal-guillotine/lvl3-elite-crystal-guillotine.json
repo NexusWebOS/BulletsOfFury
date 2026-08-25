@@ -1,0 +1,88 @@
+{
+  "asset": "lvl3-elite-crystal-guillotine",
+  "stage": 3,
+  "fps": 12,
+  "loop": false,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision": "spawn controller; use projectile children for discrete collision",
+  "atlas": {
+    "file": "lvl3-elite-crystal-guillotine-atlas.png",
+    "rects": {
+      "lvl3-elite-crystal-guillotine-01": [
+        6,
+        6,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-02": [
+        362,
+        6,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-03": [
+        718,
+        6,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-04": [
+        1074,
+        6,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-05": [
+        6,
+        362,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-06": [
+        362,
+        362,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-07": [
+        718,
+        362,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-08": [
+        1074,
+        362,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-09": [
+        6,
+        718,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-10": [
+        362,
+        718,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-11": [
+        718,
+        718,
+        350,
+        350
+      ],
+      "lvl3-elite-crystal-guillotine-12": [
+        1074,
+        718,
+        350,
+        350
+      ]
+    }
+  }
+}

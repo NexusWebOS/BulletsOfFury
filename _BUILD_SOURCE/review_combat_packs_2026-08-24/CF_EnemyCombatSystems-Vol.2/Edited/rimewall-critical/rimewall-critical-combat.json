@@ -1,0 +1,327 @@
+{
+  "asset": "rimewall-critical",
+  "display_name": "Rimewall — Critical",
+  "stage": 3,
+  "category": "fortress",
+  "tier": "boss",
+  "source_file": "nsb_rimewall_critical.png",
+  "source_notes": "critical-state master supplied",
+  "canvas": [
+    256,
+    256
+  ],
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "collision_box_px": [
+    40,
+    31,
+    175,
+    194
+  ],
+  "weapon_anchors_px": {
+    "left": [
+      77,
+      193
+    ],
+    "right": [
+      178,
+      193
+    ],
+    "center": [
+      128,
+      202
+    ]
+  },
+  "vfx": {
+    "muzzle": "heavy-cryo-cannon-muzzle",
+    "projectile": "heavy-cryogenic-lance",
+    "secondary": "heavy-cryo-missile",
+    "impact": "heavy-ice-shatter-impact"
+  },
+  "animations": {
+    "power": {
+      "frames_per_state": 6,
+      "fps": 10,
+      "loop": true
+    },
+    "attack": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false,
+      "spawn_event_frame": 4
+    },
+    "hit": {
+      "frames": 4,
+      "fps": 15,
+      "loop": false
+    },
+    "death": {
+      "frames": 8,
+      "fps": 12,
+      "loop": false
+    }
+  },
+  "states": [
+    "critical"
+  ],
+  "attack_patterns": [
+    {
+      "id": "rimewall-critical-aimed-burst",
+      "cooldown_ms": 1450,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-cryogenic-lance",
+          "aim": "player",
+          "speed": 186
+        },
+        {
+          "time_ms": 110,
+          "anchor": "right",
+          "projectile": "heavy-cryogenic-lance",
+          "aim": "player",
+          "speed": 186
+        },
+        {
+          "time_ms": 220,
+          "anchor": "center",
+          "projectile": "heavy-cryogenic-lance",
+          "aim": "player",
+          "speed": 186
+        }
+      ]
+    },
+    {
+      "id": "rimewall-critical-bracket-fan",
+      "cooldown_ms": 2350,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-cryogenic-lance",
+          "count": 7,
+          "spread_degrees": 54,
+          "speed": 144
+        }
+      ]
+    },
+    {
+      "id": "rimewall-critical-section-barrage",
+      "cooldown_ms": 3400,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-cryo-missile",
+          "count": 8,
+          "spread_degrees": 104,
+          "speed": 136
+        },
+        {
+          "time_ms": 340,
+          "anchor": "left",
+          "projectile": "heavy-cryogenic-lance",
+          "count": 2,
+          "aim": "player",
+          "speed": 202
+        }
+      ]
+    },
+    {
+      "id": "rimewall-critical-critical-rage",
+      "cooldown_ms": 4700,
+      "health_gate": 0.35,
+      "events": [
+        {
+          "time_ms": 0,
+          "anchor": "left",
+          "projectile": "heavy-cryo-missile",
+          "count": 18,
+          "spread_degrees": 360,
+          "speed": 126
+        },
+        {
+          "time_ms": 520,
+          "anchor": "left",
+          "projectile": "heavy-cryogenic-lance",
+          "count": 5,
+          "spread_degrees": 38,
+          "aim": "player",
+          "speed": 209
+        }
+      ]
+    }
+  ],
+  "atlas": {
+    "file": "rimewall-critical-combat-atlas.png",
+    "rects": {
+      "rimewall-critical-critical": [
+        6,
+        6,
+        256,
+        256
+      ],
+      "rimewall-critical-critical-power-01": [
+        268,
+        6,
+        256,
+        256
+      ],
+      "rimewall-critical-critical-power-02": [
+        530,
+        6,
+        256,
+        256
+      ],
+      "rimewall-critical-critical-power-03": [
+        792,
+        6,
+        256,
+        256
+      ],
+      "rimewall-critical-critical-power-04": [
+        1054,
+        6,
+        256,
+        256
+      ],
+      "rimewall-critical-critical-power-05": [
+        1316,
+        6,
+        256,
+        256
+      ],
+      "rimewall-critical-critical-power-06": [
+        6,
+        268,
+        256,
+        256
+      ],
+      "rimewall-critical-attack-01": [
+        268,
+        268,
+        256,
+        256
+      ],
+      "rimewall-critical-attack-02": [
+        530,
+        268,
+        256,
+        256
+      ],
+      "rimewall-critical-attack-03": [
+        792,
+        268,
+        256,
+        256
+      ],
+      "rimewall-critical-attack-04": [
+        1054,
+        268,
+        256,
+        256
+      ],
+      "rimewall-critical-attack-05": [
+        1316,
+        268,
+        256,
+        256
+      ],
+      "rimewall-critical-attack-06": [
+        6,
+        530,
+        256,
+        256
+      ],
+      "rimewall-critical-attack-07": [
+        268,
+        530,
+        256,
+        256
+      ],
+      "rimewall-critical-attack-08": [
+        530,
+        530,
+        256,
+        256
+      ],
+      "rimewall-critical-hit-01": [
+        792,
+        530,
+        256,
+        256
+      ],
+      "rimewall-critical-hit-02": [
+        1054,
+        530,
+        256,
+        256
+      ],
+      "rimewall-critical-hit-03": [
+        1316,
+        530,
+        256,
+        256
+      ],
+      "rimewall-critical-hit-04": [
+        6,
+        792,
+        256,
+        256
+      ],
+      "rimewall-critical-death-01": [
+        268,
+        792,
+        256,
+        256
+      ],
+      "rimewall-critical-death-02": [
+        530,
+        792,
+        256,
+        256
+      ],
+      "rimewall-critical-death-03": [
+        792,
+        792,
+        256,
+        256
+      ],
+      "rimewall-critical-death-04": [
+        1054,
+        792,
+        256,
+        256
+      ],
+      "rimewall-critical-death-05": [
+        1316,
+        792,
+        256,
+        256
+      ],
+      "rimewall-critical-death-06": [
+        6,
+        1054,
+        256,
+        256
+      ],
+      "rimewall-critical-death-07": [
+        268,
+        1054,
+        256,
+        256
+      ],
+      "rimewall-critical-death-08": [
+        530,
+        1054,
+        256,
+        256
+      ]
+    }
+  },
+  "alpha": "hard RGBA",
+  "facing": "down-screen"
+}

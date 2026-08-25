@@ -1,0 +1,63 @@
+{
+  "asset": "heavy-heavy-cannon-shell",
+  "kind": "projectile",
+  "canvas": [
+    192,
+    192
+  ],
+  "frames": [
+    "heavy-heavy-cannon-shell-01",
+    "heavy-heavy-cannon-shell-02",
+    "heavy-heavy-cannon-shell-03",
+    "heavy-heavy-cannon-shell-04",
+    "heavy-heavy-cannon-shell-05",
+    "heavy-heavy-cannon-shell-06"
+  ],
+  "fps": 12,
+  "loop": true,
+  "pivot": [
+    0.5,
+    0.5
+  ],
+  "atlas": {
+    "file": "heavy-heavy-cannon-shell-atlas.png",
+    "rects": {
+      "heavy-heavy-cannon-shell-01": [
+        6,
+        6,
+        192,
+        192
+      ],
+      "heavy-heavy-cannon-shell-02": [
+        204,
+        6,
+        192,
+        192
+      ],
+      "heavy-heavy-cannon-shell-03": [
+        402,
+        6,
+        192,
+        192
+      ],
+      "heavy-heavy-cannon-shell-04": [
+        6,
+        204,
+        192,
+        192
+      ],
+      "heavy-heavy-cannon-shell-05": [
+        204,
+        204,
+        192,
+        192
+      ],
+      "heavy-heavy-cannon-shell-06": [
+        402,
+        204,
+        192,
+        192
+      ]
+    }
+  }
+}

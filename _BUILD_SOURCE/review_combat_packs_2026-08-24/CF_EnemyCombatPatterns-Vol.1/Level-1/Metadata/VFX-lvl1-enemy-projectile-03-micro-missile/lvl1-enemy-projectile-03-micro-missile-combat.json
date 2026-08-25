@@ -1,0 +1,106 @@
+{
+  "asset": "lvl1-enemy-projectile-03-micro-missile",
+  "stage": 1,
+  "facing": "down-screen",
+  "travel": {
+    "fps": 12,
+    "loop": true,
+    "frames": [
+      "lvl1-enemy-projectile-03-micro-missile-travel-01",
+      "lvl1-enemy-projectile-03-micro-missile-travel-02",
+      "lvl1-enemy-projectile-03-micro-missile-travel-03",
+      "lvl1-enemy-projectile-03-micro-missile-travel-04",
+      "lvl1-enemy-projectile-03-micro-missile-travel-05",
+      "lvl1-enemy-projectile-03-micro-missile-travel-06"
+    ]
+  },
+  "impact": {
+    "fps": 14,
+    "loop": false,
+    "frames": [
+      "lvl1-enemy-projectile-03-micro-missile-impact-01",
+      "lvl1-enemy-projectile-03-micro-missile-impact-02",
+      "lvl1-enemy-projectile-03-micro-missile-impact-03",
+      "lvl1-enemy-projectile-03-micro-missile-impact-04",
+      "lvl1-enemy-projectile-03-micro-missile-impact-05",
+      "lvl1-enemy-projectile-03-micro-missile-impact-06"
+    ]
+  },
+  "atlas": {
+    "file": "lvl1-enemy-projectile-03-micro-missile-combat-atlas.png",
+    "rects": {
+      "lvl1-enemy-projectile-03-micro-missile-travel-01": [
+        64,
+        45,
+        43,
+        82
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-travel-02": [
+        230,
+        45,
+        43,
+        82
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-travel-03": [
+        396,
+        45,
+        43,
+        82
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-travel-04": [
+        562,
+        45,
+        43,
+        82
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-travel-05": [
+        728,
+        45,
+        43,
+        82
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-travel-06": [
+        894,
+        45,
+        43,
+        82
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-impact-01": [
+        6,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-impact-02": [
+        172,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-impact-03": [
+        338,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-impact-04": [
+        504,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-impact-05": [
+        670,
+        172,
+        160,
+        160
+      ],
+      "lvl1-enemy-projectile-03-micro-missile-impact-06": [
+        836,
+        172,
+        160,
+        160
+      ]
+    }
+  }
+}
