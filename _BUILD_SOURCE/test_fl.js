@@ -741,7 +741,7 @@ console.log('\n=== 19. vault vehicle arsenal (tanks/aircraft/bosses) ===');
   vm.runInContext("window.__ve.vx=0;", ctxv);
   ok(vm.runInContext("(Math.abs(window.__ve.vx)>0.35?(window.__ve.vx<0?'w':'e'):'s')",ctxv)==='s', 'stationary tank faces south (toward player)');
   vm.runInContext("window.__ve.vx=-1.5;", ctxv);
-  ok(vm.runInContext("(Math.abs(window.__ve.vx)>0.35?(window.__ve.vx<0?'w':'e'):'s')",ctxv)==='w', 'tank moving left shows west side view');
+  ok(vm.runInContext("drawVaultVehicle.toString().indexOf(\"const dir='s'\")>0",ctxv), 'tank moving left still shows the south-facing hull and fixed barrel');
   // drawVaultVehicle returns true for a tank and an aircraft
   vm.runInContext("enemies.length=0; var t=spawnEnemy('tank',200,150,{}); t.variant=0; window.__vt=t;", ctxv);
   ok(vm.runInContext("(function(){ctx.save();var r=drawVaultVehicle(window.__vt);ctx.restore();return r;})()",ctxv)===true, 'drawVaultVehicle renders a tank');
@@ -1632,7 +1632,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      _g229q.indexOf('"' + vm.runInContext("SHIPBOSS.xenoregent.key", ctxv) + '"') > 0,
      'the stage 5 + 7 plates are registered too');
   ok(vm.runInContext("STAGES[4].boss==='xenoregent'", ctxv), 'stage 5 boss = XENO REGENT (0813q)');
-  /* the carrier ships a 16-frame launch cycle; every frame must be registered or it stutters */
+  /* the legacy MKI launch reel remains registered for reversibility, but Stage 6 no longer uses it */
   ok(Array.from({length:16},function(_,i){return 'nsb_dcarrier_'+String(i).padStart(2,'0');})
        .every(function(k){ return _g229q.indexOf('"'+k+'"') > 0; }),
      'all 16 doomsday carrier launch frames are registered');
@@ -2291,7 +2291,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // The patrol logic lives inside updatePlay's pattern switch, so drive updatePlay with an EMPTY
   // spawn plan — otherwise the stage roster keeps adding enemies and enemies[0] stops being ours.
   vm.runInContext("run.stage=4; curStage=STAGES[3]; enemies.length=0; eBullets.length=0; stagePlan=[]; waveIdx=0; stageTimer=0; boss=null; subBoss=null; subBossActive=false; bossActive=false; player.dead=false; player.invuln=999999; spawnEnemy('roadtank', 300, 200, {});", ctxv);
-  var _lv=[], _lastd=null, _rev=0;
+  var _lv=[], _xy=[], _dirs={};
   /* 900 frames (15s) was not always long enough for a full patrol leg — the tank starts at a random
      point on the road heading a random way, so the test failed intermittently on CORRECT behaviour.
      A flaky assertion is worse than no assertion: it trains you to ignore failures. 2400 frames
@@ -2300,15 +2300,13 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     vm.runInContext("updatePlay(1/60);", ctxv);
     var lv=vm.runInContext("enemies.length?enemies[0]._lvlY:null", ctxv);
     if(lv==null) break;
-    if(_lv.length){
-      var d=lv-_lv[_lv.length-1];
-      if(d!==0){ if(_lastd!=null && (d>0)!==(_lastd>0)) _rev++; _lastd=d; }
-    }
+    var _pos=vm.runInContext("enemies.length?{x:enemies[0].x,y:enemies[0].y,d:enemies[0]._tankPathDir}:null",ctxv);
+    if(_pos){ _xy.push(_pos); if(_pos.d!=null)_dirs[_pos.d]=1; }
     _lv.push(lv);
   }
-  var _span = _lv.length? (Math.max.apply(null,_lv)-Math.min.apply(null,_lv)) : 0;
-  ok(_span > 40, 'road tank drives a real distance along the road (level-space span '+Math.round(_span)+'px)');
-  ok(_rev >= 1, 'road tank reverses direction — it patrols UP and DOWN, not one-way ('+_rev+' reversals)');
+  var _span=0; if(_xy.length){var _x0=_xy[0].x,_y0=_xy[0].y;_xy.forEach(function(v){_span=Math.max(_span,Math.hypot(v.x-_x0,v.y-_y0));});}
+  ok(_span > 40, 'road tank rolls a real distance along its path ('+Math.round(_span)+'px)');
+  ok(Object.keys(_dirs).length>=2, 'road tank changes among the eight drive headings instead of sliding on one axis ('+Object.keys(_dirs).join(',')+')');
   ok(vm.runInContext("enemies.length===0 || (isFinite(enemies[0].x)&&isFinite(enemies[0].y))", ctxv), 'road tank stays finite');
 
   // PRE-DEFINED JET WAVES
@@ -4001,9 +3999,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("for(var f=0;f<60*40;f++) updatePlay(1/60);", ctxv);
   ok(vm.runInContext("powerups.length", ctxv)>_pu0 || vm.runInContext("pwTimer<11", ctxv), 'containers still spawn while a boss is alive');
   // BARS STAY CENTRED ON SCREEN
-  ok(vm.runInContext("drawSubBossBar.toString().indexOf('screen-fixed via the same shift')>0", ctxv), 'the miniboss bar uses the same screen-space shift as every other overlay');
-  ok(vm.runInContext("drawSubBossBar.toString().indexOf('ctx.translate(camX, 0)')>0", ctxv), 'cancelling the camera so it cannot drift on 800px stages');
-  ok(vm.runInContext("drawSubBossBar.toString().indexOf('(VW-w)/2')>0", ctxv), 'and centred on the viewport');
+  ok(vm.runInContext("drawSubBossBar.toString().indexOf('screenBar(function()')>0", ctxv), 'the miniboss bar escapes the complete world transform');
+  ok(vm.runInContext("drawSubBossBar.toString().indexOf('ctx.translate(camX')<0", ctxv), 'so neither camera motion nor view zoom can drag it into the playfield');
+  ok(vm.runInContext("drawSubBossBar.toString().indexOf('(VW-w)/2')>0", ctxv), 'and it remains centred on the viewport');
   // FACING
   ok(vm.runInContext("ASSIGNED_FLIP.ss===1", ctxv), 'the Storm Sovereign is flipped to face the player');
   vm.runInContext("boss=null; bossActive=false; powerups.length=0;", ctxv);
@@ -9890,7 +9888,7 @@ console.log("=== 210. jet table ===");
      stage 1; the delta rows only convert on stages 1 and 3. */
   var _j=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=4; curStage=STAGES[3];"
-    +"beginStage(4); setState(GS.PLAY); player.reset();"
+    +"beginStage(4); setState(GS.PLAY); player.reset(); stagePlan=[]; waveIdx=0; stageTimer=0;"
     +"var o={};"
     +"for(var k in S1_JETS){"
     +"  enemies.length=0; eBullets.length=0; pBullets.length=0;"
@@ -10262,8 +10260,8 @@ console.log("=== 213b. enemy separation ===");
   var _s213=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
     +"beginStage(1); setState(GS.PLAY); player.reset(); player.invuln=999999;"
-    /* the same box test probe_stack.py and enemySeparate both use */
-    +"function burial(A,B){ var ox=(A.w+B.w)*0.42-Math.abs(B.x-A.x), oy=(A.h+B.h)*0.42-Math.abs(B.y-A.y);"
+    /* the same full-footprint box test enemySeparate uses */
+    +"function burial(A,B){ var ox=(A.w+B.w)*0.5+SEP_GAP-Math.abs(B.x-A.x), oy=(A.h+B.h)*0.5+SEP_GAP-Math.abs(B.y-A.y);"
     +"  if(ox<=0||oy<=0) return 0; return Math.min(ox/Math.min(A.w,B.w), oy/Math.min(A.h,B.h)); }"
     +"var o={};"
     +"enemies.length=0;"
@@ -10280,33 +10278,25 @@ console.log("=== 213b. enemy separation ===");
     +"window.__sepOff=true;"
     +"for(var f2=0;f2<90;f2++) enemySeparate(1/60);"
     +"o.offAfter=+burial(c,d).toFixed(3); window.__sepOff=false;"
-    /* a formation contact UNDER the deadzone must be left exactly where it was drawn */
+    /* even a shallow formation contact must be cleared — there is no overlap deadzone */
     +"enemies.length=0;"
     +"var e1=spawnEnemy('s1jetdelta',240,200,{route:'straight'});"
-    +"var e2=spawnEnemy('s1jetdelta',240+e1.w*0.84-4,200,{route:'straight'});"
+    +"var e2=spawnEnemy('s1jetdelta',240+(e1.w+e1.w)*0.5+SEP_GAP-4,200,{route:'straight'});"
     +"o.touch=+burial(e1,e2).toFixed(3); var tx=e2.x;"
     +"for(var f3=0;f3<60;f3++) enemySeparate(1/60);"
     +"o.touchMoved=+Math.abs(e2.x-tx).toFixed(2);"
     +"return JSON.stringify(o);})()", ctxv));
 
-  /* ⚠ 0.84 IS THIS METRIC'S CEILING FOR TWO IDENTICAL UNITS, not 1.0, and my first cut of these
-     three thresholds was written as though it were 1.0 — all three went red against a pass that
-     was behaving exactly as designed. The box test compares |dx| against (A.w+B.w)*0.42, so two
-     units sharing a point give (95+95)*0.42/95 = 0.84 on both axes. Burial only exceeds 1.0 when
-     a SMALL unit sits inside a large one, which is what stage 4's 150.7% was.
-     Thresholds are stated against the metric's real range now. */
-  ok(_s213.before > 0.8,
-     'two units dropped on one point start fully buried ('+_s213.before+' — 0.84 is this metric\'s ceiling for a matched pair)');
-  ok(_s213.after < 0.2,
-     'and separation pushes them out to the deadzone ('+_s213.after+')');
-  ok(_s213.after < _s213.before*0.3,
-     'which is most of the burial gone ('+_s213.before+' -> '+_s213.after+')');
-  ok(_s213.offAfter > 0.8,
+  ok(_s213.before >= 1,
+     'two units dropped on one point start fully buried ('+_s213.before+')');
+  ok(_s213.after === 0,
+     'and separation clears the complete UNIT footprint, including its gap ('+_s213.after+')');
+  ok(_s213.offAfter >= 1,
      'with the pass switched off the same pair stays buried ('+_s213.offAfter+') — the change is attributable to the code under test');
-  ok(_s213.touch > 0 && _s213.touch <= 0.2,
-     'a formation contact under the deadzone reads as a touch ('+_s213.touch+')');
-  ok(_s213.touchMoved === 0,
-     'and separation leaves it alone ('+_s213.touchMoved+'px) — an authored formation keeps the shape it was drawn as');
+  ok(_s213.touch > 0,
+     'a shallow formation contact still registers as overlap ('+_s213.touch+')');
+  ok(_s213.touchMoved > 0,
+     'and the shallow contact is moved apart instead of being preserved ('+_s213.touchMoved+'px)');
 }
 
 // ===== 213c. ONE ROSTER ROW, WHATEVER THE WAVE SPELLED IT (drop 0811l) =====
@@ -10726,8 +10716,8 @@ console.log("=== 221. boss art warming ===");
      and 3 opened their boss fight on the hull-silhouette fallback. Warming is driven off the
      tables now, so a boss added later is covered by existing code; these pin that it stays that
      way rather than reverting to a hand-list. */
-  ok(/addPrefix\(SHIPBOSS\[_bk\]\.key\)/.test(_g221), "warmStage warms the stage boss's own hull key");
-  ok(/addPrefix\(SHIPBOSS\[_mk\]\.key\)/.test(_g221), 'and the miniboss hull the same way');
+  ok(/const _bd=SHIPBOSS\[_bk\]; add\(_bd\.key\)/.test(_g221), "warmStage warms the stage boss's own hull key");
+  ok(/const _md=SHIPBOSS\[_mk\]; add\(_md\.key\)/.test(_g221), 'and the miniboss hull the same way');
   ok(/addPrefix\(NEWBOSS\[n\]\.idle\)/.test(_g221),   'and any NEWBOSS idle reel');
   ok(/_bk==='vileexistence'[\s\S]{0,250}for\(const _vf of VILE_FORMS\) addPrefix\(_vf\.art\+'_'/m.test(_g221),
      'Stage 8 warms every VILE shell instead of trying the unrelated vileexistence prefix');
@@ -11123,16 +11113,17 @@ console.log("=== 229. flame/ice hitbox + reaver colour + fire orb ===");
 
   /* Mike: "a big ass fire orb comes flying andh homing at us, if we dodge out of its path as it
      gets near us, it goes off screen and does not continue to home on the player." */
-  ok(_g229.indexOf('function reaverOrbTick')>0, 'the charged fire orb exists');
-  ok(_g229.indexOf('fireorb:{type:')>0,
-     'and fireorb is in PROJ — a kind with no entry is a wiring bug, not something to paper over');
-  ok(_g229.indexOf("pal:'orange'")>0, 'the orb is orange, not red');
+  ok(_g229.indexOf('function reaverOrbTick')>0, 'the charged Reaver orb exists');
+  ok(_g229.indexOf("kind:'magma', _reaverOrb:true")>0,
+     'and it launches the authored magma projectile rather than the green/white placeholder');
+  ok(_g229.indexOf("infernoreaver:1")>0 && _g229.indexOf("return src && MAGMA_SHIP_SHOT[src._ship] ? 'magma' : 'eshot'")>0,
+     'the Reaver normal volleys use magma too, without changing the other ship bosses');
   ok(_g229.indexOf('b._committed=true')>0,
      'it COMMITS — the heading locks once it is close, so breaking late makes it miss');
-  var _orbFn=_g229.slice(_g229.indexOf("if(b.kind==='fireorb')"));
+  var _orbFn=_g229.slice(_g229.indexOf("if(b.kind==='fireorb' || b._reaverOrb)"));
   _orbFn=_orbFn.slice(0, _orbFn.indexOf("if(b.kind==='groundup')"));
-  ok(_orbFn.indexOf('if(!b._committed){')>0,
-     'and the turn is gated on that latch, so it can never re-acquire');
+  ok(_orbFn.indexOf('if(!b._committed){')>0 && _orbFn.indexOf('b._reaverOrb')>0,
+     'and the magma orb turn is gated on that latch, so it can never re-acquire');
 
   /* Mike: "do not allow us to pull up the pause/save game menu until we reach this point when
      selecting campaign." */

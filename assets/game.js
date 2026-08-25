@@ -2776,12 +2776,15 @@ function _levelCfg(){
        measured 0.00% metal-like pixels and a first-vs-last row seam of 21.9/765, so it loops
        forever with no join and carries no structure at all. Looping it is the 0801gm intent
        restored, and the rain/lightning still darken over it in code. */
-    /* ⚠ STAGE 6 IS THE NEW PACK AND IS NO LONGER A LOOP (Mike, 0819e): "that is not the dark
-       background I told you to use." The pack ships a complete SCROLL strip that runs day -> dusk
-       -> storm night -> the sewer approach, which is both the dark sky he asked for and the
-       hand-off into stage 7. A looping sky cannot express that progression, so loopMaster is off
-       and this scrolls like stages 4 and 7. */
-    case 6: return {master:'bg_stage06_master', plateW:680, liquid:null, fill:'#01031c', tile:1.0, wide:true};
+    /* STAGE 6 IS ONE FIXED SKY AGAIN (Mike, 0824). The later bg_stage06_master strip was the
+       wrong abstraction: it baked several sky bands and the Stage-7 sewer mouth into Stage 6,
+       while the separate cloud reels animated a giant purple cloud over the fight. Use the clean
+       structure-free nsky6_sky plate as one stationary field for the whole level. bg6Draw performs
+       the night -> storm -> dusk -> dawn -> daylight palette fades in code; the sewer remains only
+       in the 6->7 handoff and Stage 7 itself. The played 2240px span matches its 56-second clock,
+       so the palette reaches daylight and the carrier arrives without a hidden second leg. */
+    case 6: return {master:'nsky6_sky', plateW:680, liquid:null, fill:'#061126', tile:1.0, wide:true,
+                    staticMaster:true, staticY:760, scrollLen:2240, continuousBoss:true};
     // 7 NOT ANOTHER SEWER LEVEL — dedicated sewer kit (CF_LevelPack-Lvl7): 800x3616 gameplay
     // scroll + 800x1000 boss arena, with the 256px sludge surface animating through the
     // master's keyed channels. WIDE level (800px world, camera scrolls).
@@ -3096,6 +3099,20 @@ const CUT_BG = {axel:'cut_axel_formation_simulator', cole:'cut_cole_manual_comma
   lizzie:'cut_lizzie_ordnance_control', maverick:'cut_maverick_highg_cage',
   yuri:'cut_yuri_storm_tower'};
 const CUT_HQ = 'cut_furyhq_command_center';
+/* Dialogue has two palette jobs and they must never bleed together: the NAME takes the pilot's
+   authored colour, while every spoken sentence stays in the same pale gray/white ramp. */
+const DIALOGUE_BODY_COLOR='#e7ebf2';
+function dialogueNameColor(who, fallback){
+  const id=String(who||'').trim().toLowerCase();
+  if(typeof PILOTS!=='undefined' && PILOTS && PILOTS.find){
+    const p=PILOTS.find(q=>q && (q.key===id || String(q.name||'').toLowerCase()===id));
+    if(p && p.tint) return p.tint;
+  }
+  if(typeof STORY_TINT!=='undefined' && STORY_TINT){
+    const c=STORY_TINT[String(who||'').toUpperCase()]; if(c) return c;
+  }
+  return fallback || '#cfd6e6';
+}
 function cutsceneFor(pilotKey){
   if(!run || run.mode!=='campaign') return null;          // campaign only, per Mike
   const k=CUT_BG[pilotKey];
@@ -3242,11 +3259,7 @@ function drawCutscene(sc){
      re-mask) precisely because a source-atop flood repainted this face's opaque drop shadow the
      same colour as its face and turned every E into a B. Passing a colour here is safe only
      because that fix is in place. */
-  const _spkTint=(function(){
-    if(!spk || typeof PILOTS==='undefined') return null;
-    const P=PILOTS.find(p=>p.key===spk.pilot);
-    return (P && P.tint) || null;
-  })();
+  const _spkTint=spk ? dialogueNameColor(spk.name||spk.pilot, null) : null;
   if(spk){
     const ek='pemb_'+spk.pilot;
     if(XART._src && XART._src[ek] && XART.rdy(ek)){
@@ -3288,10 +3301,10 @@ function drawCutscene(sc){
         if(stageWrapCount(_cf2, sc.text, _H, _inW, 0.05)*_H*1.40 <= _room) break;
         _H*=0.94;
       }
-      /* the body carries the speaker's colour too — Mike asked for the character's colours, not
-         just a coloured name plate. If it reads too strong, _spkTint here is the one argument to
-         drop back to null and the name keeps the colour on its own. */
-      stageWrap(_cf2, sc.text, _inX, _bodyTop+_H*0.7, _H, _inW, 1.40, 1, 0.05, _spkTint, _spkTint?1:null);
+      /* Only the speaker's NAME carries the character palette. Body copy stays on the shared
+         gray/white dialogue ramp so a long exchange remains readable over every background. */
+      stageWrap(_cf2, sc.text, _inX, _bodyTop+_H*0.7, _H, _inW, 1.40, 1, 0.05,
+                DIALOGUE_BODY_COLOR, 1);
     }
   }
   ctx.restore();
@@ -3596,6 +3609,42 @@ let _masterSrcY = 0;
 const ARENA_LAVA_SPD = 150;     // px/sec — the ARENA's own rate, deliberately faster than the level
 let _arenaHold = false;
 let _arenaLavaScroll = 0;
+/* STAGE 7 TERRAIN DESPILL (Mike, 0824). The corrected sewer plate already carries real alpha for
+   the sludge channels, so those pixels must remain transparent. What is still visible in-game is
+   a separate set of OPAQUE purple/magenta edge pixels baked into the masonry and pipework. Clean
+   only that residue, once per decoded Stage-7 plate, and fold it into the sewer's dirty olive
+   palette. No other stage or effect art passes through this filter. */
+const _stage7TerrainCache = Object.create(null);
+function stage7CleanTerrain(img, key){
+  if(!img || img._stage7TerrainClean) return img;
+  const ck=String(key||'stage7');
+  if(_stage7TerrainCache[ck]) return _stage7TerrainCache[ck];
+  try{
+    const w=(img.naturalWidth||img.width)|0, h=(img.naturalHeight||img.height)|0;
+    if(!(w>0 && h>0)) return img;
+    const c=document.createElement('canvas'); c.width=w; c.height=h;
+    const x=c.getContext('2d'); x.drawImage(img,0,0);
+    const D=x.getImageData(0,0,w,h), P=D.data;
+    let changed=0;
+    for(let o=0;o<P.length;o+=4){
+      if(P[o+3]===0) continue;                 // authored sludge opening: never touch alpha
+      const r=P[o], g=P[o+1], b=P[o+2], rb=Math.min(r,b);
+      if(r>55 && b>55 && rb>g+18 && r>g*1.25 && b>g*1.25){
+        const grime=Math.max(g, Math.round(Math.max(r,b)*0.38));
+        P[o]  =Math.min(255,Math.round(grime*0.82));
+        P[o+1]=Math.min(255,Math.round(grime*1.05));
+        P[o+2]=Math.min(255,Math.round(grime*0.42));
+        changed++;
+      }
+    }
+    if(!changed){ _stage7TerrainCache[ck]=img; return img; }
+    x.putImageData(D,0,0);
+    c.naturalWidth=w; c.naturalHeight=h;
+    c._stage7TerrainClean=changed;
+    _stage7TerrainCache[ck]=c;
+    return c;
+  }catch(_){ _stage7TerrainCache[ck]=img; return img; }
+}
 /* THE FINALE RUN-IN (drop 0814d) — see the block in drawLevelMaster. 3.2s puts the dam in frame
    well before the whiteout peaks at 6.0s, so the plate swap at 6.7s happens under the white with
    the dam ON SCREEN and the breach is revealed as the white fades back over 7.3-8.6s. */
@@ -3638,7 +3687,8 @@ function drawLevelMaster(dt){
     }
   }
   if(!XART.rdy(_mk)) return false;
-  const img=XART.get(_mk);
+  let img=XART.get(_mk);
+  if(run.stage===7) img=stage7CleanTerrain(img,_mk);
   /* THE HALL OF MIRRORS (drop 0801ba). Mike: "your not centering the other levels, we've got
      HOM's."
 
@@ -3806,7 +3856,11 @@ function drawLevelMaster(dt){
      is all the rule asks for — "stop vertically scrolling the level, do not allow player to pass".
      So a miniboss now falls through to the normal draw and the level simply stops where it stands,
      with the player still looking at the piece of the level they were fighting over. */
-  if((_bossRun && _realBossRun) || (_arenaHold && cfg.arenaLiquid)){   // the arena outlives the boss (0819d)
+  /* STAGES 5-8 NEVER CHANGE TERRAIN MAPPINGS FOR A BOSS (Mike, 0825). They fly one continuous
+     master to its authored end and fight there. The old branch swapped 5/7 to arena plates and
+     remapped 8 through `_loopDraw`, so activating the boss changed location on a single frame.
+     Earlier stages keep their authored special-arena behaviour. */
+  if(!cfg.staticMaster && !cfg.continuousBoss && ((_bossRun && _realBossRun) || (_arenaHold && cfg.arenaLiquid))){   // the arena outlives the boss (0819d)
     /* ⚠ THE OPEN-LAVA ARENA BELONGS TO THE BOSS THAT RISES OUT OF IT, NOT TO THE STAGE (drop 0813x).
        Mike: "during the final boss for the second level the floor in the background disappears
        (probably falls behind the lava backdrop). This should not happen."
@@ -3858,11 +3912,26 @@ function drawLevelMaster(dt){
          That is the ONLY case that now reaches this point. */
     } else {
       // dedicated BOSS ARENA backdrop loops if the stage kit ships one; else loop the master
-      const arenaImg=(cfg.arena && XART.rdy(cfg.arena)) ? XART.get(cfg.arena) : img;
+      let arenaImg=(cfg.arena && XART.rdy(cfg.arena)) ? XART.get(cfg.arena) : img;
+      if(run.stage===7) arenaImg=stage7CleanTerrain(arenaImg,cfg.arena||_mk);
       _loopDraw(arenaImg, mapScroll);
       if(cfg.par && XART.rdy(cfg.par)) _loopDraw(XART.get(cfg.par), mapScroll*1.18);   // clouds ride slightly faster
       return true;
     }
+  }
+  /* A STATIONARY MASTER STILL ADVANCES THE LEVEL CLOCK (Stage 6, 0824). mapScroll above drives
+     wave/boss pacing and the time-of-day palette, but the source window never changes: Mike wants
+     one solid sky, not a background strip moving behind the aircraft. Stage 6 gets its palette
+     copies through bg6SkyBaseDraw; the generic fallback is here so staticMaster remains a real
+     level capability instead of a stage-number special case. */
+  if(cfg.staticMaster){
+    const sy=clamp(cfg.staticY||0, 0, Math.max(0,img.naturalHeight-winH));
+    _masterSrcY=sy-_winTop;
+    if(run.stage===6 && typeof bg6SkyBaseDraw==='function')
+      bg6SkyBaseDraw(img, _mk, sy, winH, drawW, _winTop);
+    else
+      ctx.drawImage(img, 0,sy,drawW,winH, 0,_winTop,drawW,winH);
+    return true;
   }
   /* A MASTER THAT LOOPS INSTEAD OF WINDOWING (drop 0813c)
      Mike: "your using a skybackground level 5 when its space the whole time."
@@ -4380,16 +4449,16 @@ const NAVAL_KEEL = 0.28;
 
    So the search itself now refuses an x that another hull already occupies, on the same row only —
    traffic 90px up or down the river is not in the way. */
-const NAVAL_LANE_GAP = 10;   // clear water between two keels, on top of both half-widths
+const NAVAL_LANE_GAP = 10;   // clear water between two full visible hulls
 const NAVAL_LANE_Y   = 90;   // rows further apart than this are not competing for the same lane
 function navalBusy(x, footW, self){
   if(typeof enemies==='undefined') return false;
-  const half=footW*NAVAL_KEEL, sy=(self&&self.y)||0;
+  const half=footW*0.5, sy=(self&&self.y)||0;
   for(const e of enemies){
     if(e===self || e.dead) continue;
     if(!(e._naval || e.pattern==='naval')) continue;
     if(Math.abs((e.y||0)-sy) > NAVAL_LANE_Y) continue;
-    if(Math.abs(e.x-x) < half + (e.w||48)*NAVAL_KEEL + NAVAL_LANE_GAP) return true;
+    if(Math.abs(e.x-x) < half + (e.w||48)*0.5 + NAVAL_LANE_GAP) return true;
   }
   return false;
 }
@@ -5007,14 +5076,20 @@ function drawHUDOverlay(){
   let ix=VW-10;
   // shield/speed shown as HUD EQUIPMENT pips now — no overlay icons
   if(boss && bossActive && !boss.dead){
-    const by=6, bw=VW-44, bxs=22, r=clamp(boss.hp/boss.maxhp,0,1);
+    const bw=VW-44, r=clamp(boss.hp/boss.maxhp,0,1);
     /* ONE GAUGE, EVERY PATH (drop 0810n). This was a third hand-rolled boss bar — the red-to-amber
        gradient with nine divider lines — and it is what actually reaches the screen whenever the
        HUD art has not decoded, which in a cold boot is most of the opening seconds. Three
        renderings of one gauge, picked by whichever art had landed, is why the boss bar has been
-       reported wrong in a different way each time. They all call the drawn gauge now. */
-    drawHealthBarV2('boss', r, VW/2, by+6, bw);
-    ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText((boss.name||'BOSS'),VW/2,by-4); ctx.textAlign='left';
+       reported wrong in a different way each time. They all call the drawn gauge now.
+
+       The name used to sit at y=2 while the gauge began at y=5, so the top edge clipped the text
+       and the bar covered what remained. Reserve a real name row, then put the gauge beneath it. */
+    const nameY=13, barY=27;
+    ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center';
+    ctx.fillText((boss.name||'BOSS'),VW/2,nameY);
+    drawHealthBarV2('boss', r, VW/2, barY, bw);
+    ctx.textAlign='left';
   }
 }
 
@@ -5933,7 +6008,11 @@ function updateRoll(dt){
   // ease-out lateral dash: fast at the start, settling at the end
   const ez=t=>1-(1-t)*(1-t);
   player.x += r.dir*(ez(k)-ez(kp))*BR_DASH;
-  player.x = clamp(player.x, PLAY.x+10, PLAY.x+PLAY.w-10);
+  /* A roll crosses the WORLD, not the old 480px play rectangle. Normal movement below already
+     clamps against worldWidth(); keeping the roll on PLAY.w trapped wide stages inside their
+     left 480px and made the horizontal camera appear dead whenever the player traversed by
+     double-tapping. */
+  player.x = clamp(player.x, PLAY.x+10, worldWidth()-10);
   if(r.t>=r.dur){ player.roll=null; player._rollCool=BR_COOL; }
 }
 function rollFrameKey(){
@@ -8007,7 +8086,7 @@ const SHIPS=[];
 
      Driven from the tables rather than hand-listed, which is the standing rule for _selfPat: any
      row flagged prop:true is scenery, holds its pattern, and only moves with the terrain. Note
-     s1rivermine opts INTO drift with its own flag, so bobbing mines still bob. */
+     Mines and barrels both remain anchored; water animation supplies the motion around a mine. */
   for(const _tbl of [(typeof NEF_S1!=='undefined')&&NEF_S1, (typeof NEF_S2!=='undefined')&&NEF_S2,
                      (typeof NEF_S3!=='undefined')&&NEF_S3]){
     if(!_tbl) continue;
@@ -8814,62 +8893,25 @@ function buildStagePlan(stageNum){
     return _planSorted(P);
   }
   if(stageNum===6){
-    /* ⚠ NO SPEED ARROWS AND NO NUCLEAR MISSILES ON THIS LEVEL (Mike, 0819d): "remove the
-       nuclear missiles from the level and the speed arrows from the level as well please."
-       Every speedPadSpawn and l6GMSpawn wave is gone from the plan. The SYSTEMS are left
-       intact and unreferenced by this stage — they are wired for the giant-missile set piece
-       and a future stage may want a pad — but nothing on level 6 fields them any more. */
- // HEAVY TURBULENCE — storm-front air war above the cloud deck.
-    /* EXPANSION FIGHTERS. Six new families with full state animation, slotted between the
-       existing waves rather than replacing them. */
-    const W6X=worldWidth();
-    add(9.0, ()=> vRow('l6x_st', Math.round(4*D), {pattern:'sine', amp:32}));
-    add(17.0,()=> { spawnEnemy('l6x_tf', W6X*0.28, -40, {}); spawnEnemy('l6x_tf', W6X*0.72, -40, {}); });
-    add(25.0,()=> vRow('l6x_cr', Math.round(4*D), {pattern:'weave', amp:28}));
-    add(34.0,()=> { spawnEnemy('l6x_cw', W6X*0.35, -44, {}); spawnEnemy('l6x_cw', W6X*0.65, -44, {}); });
-    add(43.0,()=> vRow('l6x_tl', Math.round(3*D), {pattern:'dive', amp:24}));
-    add(53.0,()=> spawnEnemy('l6x_hw', W6X*0.50, -60, {}));
-    // Three attack styles: HIGH DIVES (scale in from altitude), FROM BEHIND (close fast
-    // from your six), and CROSSERS (scream sideways — dodge fore/aft, not left/right).
-    add(2.0, ()=> { l6HighDive('talon', VW*0.30); l6HighDive('talon', VW*0.70); });
-    // ---- NEW STORM FLEET INTRO. No re-homed Stage-5 carriers: the recovered Level-6 hulls own it.
-    add(3.2, ()=> spawnEnemy('l6v_s1', VW*0.5, -80, {pattern:'straight'}));
-    add(7.5, ()=> spawnEnemy('l6v_b2', VW*0.30, -80, {pattern:'straight'}));
-
-    add(5.0, ()=> { l6HighDive('raptor', VW*0.20); l6HighDive('raptor', VW*0.50); l6HighDive('raptor', VW*0.80); });
-    // ---- LEVEL 6 JET WING: 7 airframes, none shared with level 4 ----
-    /* stage 6 loses 5 of 28 the same way (jet_raf x3, jet_grp x2, and jet_kaw at t=50 beyond the
-       45s I measured). Repointed to the BLACK variants of the same two airframes: stage 6 is the
-       NIGHT cloud sky fortress, and the camo pair reads as daylight against it. Same art family,
-       correct scheme, no new sprites. */
-    add(11.0,()=> { spawnEnemy('l6v_r0', VW*0.30, -50, {pattern:'sine'}); spawnEnemy('l6v_r0', VW*0.70, -50, {pattern:'sine', phase:1.2}); });
-    // SPEED BOOSTER PADS laid through the run — ride one to slip an incoming asteroid or missile
-    add(17.0,()=> aiWaveSweep('l6v_b1', 3, {dir:-1}));
-    add(23.0,()=> { spawnEnemy('l6v_s0', VW*0.25, -50, {pattern:'weave'}); spawnEnemy('l6v_s0', VW*0.75, -50, {pattern:'weave', phase:1.1}); });
-    add(31.0,()=> aiWaveRush('l6v_b0', 3, {}));
-    add(37.0,()=> spawnEnemy('l6v_r1', VW*0.5, -60, {pattern:'straight'}));
-    add(44.0,()=> { spawnEnemy('l6v_b2', VW*0.32, -50, {pattern:'dive'}); spawnEnemy('l6v_b2', VW*0.68, -50, {pattern:'dive'}); });
-    add(50.0,()=> { spawnEnemy('l6v_s2', VW*0.5, -50, {pattern:'sine'}); spawnEnemy('l6v_r2', VW*0.20, -50, {pattern:'weave'}); spawnEnemy('l6v_r2', VW*0.80, -50, {pattern:'weave'}); });
-    add(13.0,()=> aiWaveRush('talon', 4, {}));                    // sheet 1
-    add(29.0,()=> aiWaveSweep('fang', 4, {dir:1}));               // pattern #1
-    add(41.0,()=> aiWaveSplit('raptor', {}));
-    // --- first crosser run: sideways, dodge forward/back
-    add(9.0, ()=> { l6Crosser('talon', +1, VH*0.30); l6Crosser('talon', +1, VH*0.44); });
-    add(12.0,()=> { l6Crosser('fang', -1, VH*0.36); l6Crosser('fang', -1, VH*0.52); });
-    // --- first attack from behind
-    add(15.5,()=> { l6FromBehind('talon', VW*0.35); l6FromBehind('talon', VW*0.65); });
-    // --- first GIANT DRIFTER: shoot it for a screen-clearing blast, touch it and die, or let it pass
-    add(19.0,()=> { l6HighDive('widow', VW*0.5); l6Crosser('raptor', +1, VH*0.26); });
-    add(23.0,()=> { l6HighDive('warden', VW*0.5); l6HighDive('talon', VW*0.18); l6HighDive('talon', VW*0.82); });
-    // --- first INTERCEPTOR: drops fast on your lane — shoot it down or roll aside
-    add(27.0,()=> { l6Crosser('fang', +1, VH*0.32); l6Crosser('fang', -1, VH*0.48); l6Crosser('talon', +1, VH*0.62); });
-    add(31.0,()=> { l6FromBehind('widow', VW*0.28); l6FromBehind('widow', VW*0.72); l6HighDive('raptor', VW*0.5); });
-    add(35.0,()=> { l6HighDive('lance', VW*0.35); l6HighDive('lance', VW*0.65); });
-    add(39.0,()=> { l6Crosser('raptor', -1, VH*0.28); l6Crosser('raptor', -1, VH*0.42); l6FromBehind('fang', VW*0.5); });
-    add(43.0,()=> { l6HighDive('warden', VW*0.5); l6Crosser('talon', +1, VH*0.36); l6Crosser('talon', -1, VH*0.54); });
-    add(47.0,()=> { l6FromBehind('lance', VW*0.30); l6FromBehind('lance', VW*0.70); l6HighDive('widow', VW*0.5); });
-    add(curStage.length-4, ()=> { l6HighDive('warden', VW*0.32); l6HighDive('warden', VW*0.68);
-      l6Crosser('fang', +1, VH*0.40); l6Crosser('fang', -1, VH*0.56); });
+    /* HEAVY TURBULENCE — LARGE AIRCRAFT ONLY. The small storm fighters and modular jets are
+       deliberately excluded. Night/storm waves use black camo; daylight paint takes over as
+       the fixed sky fades through dusk and dawn. No speed arrows or nuclear-missile pickups. */
+    add(2.0, ()=> aiWaveSweep('s1jetDeltaB', 3, {dir:1, gap:0.75}));
+    add(5.5, ()=> aiWaveCross('s1jetBomberB', {gap:0.9}));
+    add(9.0, ()=> aiWaveColumns('s1jetDeltaB', {dir:-1, gap:0.75}));
+    add(12.5,()=> aiWaveRush('s1jetBomberB', Math.round(2+D), {dir:1, gap:0.8}));
+    add(16.5,()=> aiWaveSplit('s1jetDeltaB', {gap:0.8}));
+    add(20.5,()=> aiWaveSweep('s1jetBomberB', 3, {dir:-1, gap:0.9}));
+    add(24.5,()=> aiWaveLoopCurved('s1jetDeltaB', {dir:1, gap:0.75}));
+    add(28.5,()=> aiWaveCross('s1jetBomberB', {gap:0.8}));
+    add(32.5,()=> aiWaveColumns('s1jetDelta', {dir:1, gap:0.75}));
+    add(36.5,()=> aiWaveRush('s1jetBomber', Math.round(2+D), {dir:-1, gap:0.85}));
+    add(40.5,()=> aiWaveLoop('s1jetDelta', {dir:-1, gap:0.75}));
+    add(44.5,()=> aiWaveSweep('s1jetBomber', 3, {dir:1, gap:0.9}));
+    add(48.5,()=> aiWaveSplit('s1jetDelta', {gap:0.75}));
+    add(52.0,()=> aiWaveCross('s1jetBomber', {gap:0.8}));
+    add(curStage.length-4, ()=> { aiWaveColumns('s1jetDelta', {dir:-1, gap:0.7});
+                                  aiWaveRush('s1jetBomber', 2, {dir:1, gap:0.9}); });
     return _planSorted(P);
   }
   if(stageNum===7){ // NOT ANOTHER SEWER LEVEL — the sludge run. Wide 800px world.
@@ -9693,6 +9735,7 @@ const SHIPBOSS = {
 function shipBossInit(b, kind){
   const D=SHIPBOSS[kind]; if(!D) return false;
   b._ship=kind; b._profile='ship'; b.name=D.name; b.w=D.w; b.h=D.h;
+  if(D.ty!=null) b.ty=D.ty;
   b.hp=b.maxhp = D.hp ? Math.ceil(D.hp*DIFF.eHp) : Math.ceil((b.maxhp||200)*D.hpMul);
   b.fireCd=D.cd; b._sbT=0; b._sbStep=0;
   b._entryDur=1.05;                // package contract: readable, bounded 1050ms entrance
@@ -9967,7 +10010,8 @@ function reaverOrbTick(b, dt){
       const a=Math.atan2(player.y-y, player.x-b.x);
       const sp=2.6*((typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1);
       eBullets.push({x:b.x, y:y, vx:Math.cos(a)*sp, vy:Math.sin(a)*sp, ang:a, spd:2.6,
-                     w:42, h:42, dmg:1, t:0, kind:'fireorb', _fx:'comet', pal:'orange', szMul:2.6});
+                     w:42, h:42, dmg:1, t:0, kind:'magma', _reaverOrb:true, szMul:2.6});
+      if(typeof magmaMuzzle==='function') magmaMuzzle(b.x,y,1.45);
       if(Audio.SFX && Audio.SFX.crackle) Audio.SFX.crackle();
     }
   } else if(b._orb.t>=FIREORB_CHARGE+0.30){ b._orb=null; }
@@ -11622,36 +11666,25 @@ function drawSubBossBar(b){
      below only if the art for this stage is not loaded. */
   if(typeof drawHealthBarV2==='function'){
     const _fr=clamp(b.hp/(b.maxhp||b.hp||1),0,1);
-    /* THE BAR WAS SHIFTED TWICE (drop 0801el). Mike: "boss bar must remain
-       centered at all times, never scrolls."
-
-       This did ctx.translate(camX,0) AND passed inWorld:true, and inWorld makes
-       drawHealthBarV2 apply camX a second time internally. On an 800-wide stage
-       that is double the camera offset, so the bar slid off centre and kept
-       sliding as the camera moved - which is exactly what Mike photographed.
-
-       One shift, applied here, and inWorld:false so the function does not add
-       another. The bar now sits dead centre of the screen at all times. */
-    ctx.save();
-    if(typeof camX==='number' && typeof worldWidth==='function' && worldWidth()>VW) ctx.translate(camX,0);
-    const _ok=drawHealthBarV2('mini', _fr, VW/2, 20, VW*0.62, false);
-    ctx.restore();
+    /* This is called from inside drawWorld's camera+zoom transform. A camX-only
+       correction still leaves the zoom attached, which is why the photographed
+       bar sat over the miniboss instead of directly below the HUD. */
+    let _ok=false;
+    screenBar(function(){ _ok=drawHealthBarV2('mini', _fr, VW/2, 20, VW*0.62, false); });
     if(_ok) return;
   }
-  ctx.save();
-  // screen-fixed via the same shift every other overlay uses (see screenBar)
-  if(typeof camX==='number' && typeof worldWidth==='function' && worldWidth()>VW) ctx.translate(camX, 0);
-  ctx.fillStyle='rgba(6,8,12,0.78)'; ctx.fillRect(x-2,y-2,w+4,h+4);
-  ctx.strokeStyle='#c8963c'; ctx.lineWidth=1; ctx.strokeRect(x-2,y-2,w+4,h+4);
-  ctx.fillStyle='#3a2c14'; ctx.fillRect(x,y,w,h);
-  const g=ctx.createLinearGradient(x,0,x+w,0);
-  g.addColorStop(0,'#ffcf6a'); g.addColorStop(1,'#e0761f');
-  ctx.fillStyle=g; ctx.fillRect(x,y,Math.round(w*frac),h);
-  if(frac<=0.25 && (Math.floor(stateT*8)%2)===0){ ctx.globalAlpha=0.55; ctx.fillStyle='#fff'; ctx.fillRect(x,y,Math.round(w*frac),h); }
-  ctx.globalAlpha=1;
-  ctx.fillStyle='#ffe9a8'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='left';
-  ctx.fillText(String(b.name||'MINIBOSS'), x, y-4);
-  ctx.restore();
+  screenBar(function(){
+    ctx.fillStyle='rgba(6,8,12,0.78)'; ctx.fillRect(x-2,y-2,w+4,h+4);
+    ctx.strokeStyle='#c8963c'; ctx.lineWidth=1; ctx.strokeRect(x-2,y-2,w+4,h+4);
+    ctx.fillStyle='#3a2c14'; ctx.fillRect(x,y,w,h);
+    const g=ctx.createLinearGradient(x,0,x+w,0);
+    g.addColorStop(0,'#ffcf6a'); g.addColorStop(1,'#e0761f');
+    ctx.fillStyle=g; ctx.fillRect(x,y,Math.round(w*frac),h);
+    if(frac<=0.25 && (Math.floor(stateT*8)%2)===0){ ctx.globalAlpha=0.55; ctx.fillStyle='#fff'; ctx.fillRect(x,y,Math.round(w*frac),h); }
+    ctx.globalAlpha=1;
+    ctx.fillStyle='#ffe9a8'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='left';
+    ctx.fillText(String(b.name||'MINIBOSS'), x, y-4);
+  });
 }
 /* ============================================================
    SCREEN-SPACE OVERLAYS (drop 0724cc)
@@ -12368,7 +12401,7 @@ function eTwinGuns(e, ang){
     eBullets.push({x:bx+px*s, y:by+py*s, vx:Math.cos(ang)*4.6, vy:Math.sin(ang)*4.6,
       w:5, h:12, kind:'mg', _ph:(Math.random()*4)|0, _pfam:e._pfam, hp:1, t:0, ang});
   }
-  if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+  if(Audio.SFX.enemyMachineGunLight) Audio.SFX.enemyMachineGunLight(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
 function eGroundUp(x,y,mg){
   /* THE TANK ROUND IS A FLARE (drop 0801kf). Mike's approved set is pellet / flare
@@ -12378,12 +12411,12 @@ function eGroundUp(x,y,mg){
   eBullets.push({x,y,vx:(player.x-x)*0.010, vy: mg? 3.4 : 2.6, w: mg?9:12, h: mg?9:16,
     kind:'groundup', _fx:'flare', hp:1, t:0, ang:Math.atan2(player.y-y,player.x-x),
     _gscale:0.4, mg:!!mg, dmg:1 });
-  if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+  if(mg && Audio.SFX.enemyMachineGunHeavy) Audio.SFX.enemyMachineGunHeavy();
+  else if(Audio.SFX.enemyBossCannon) Audio.SFX.enemyBossCannon();
+  else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
-function tankMuzzle(e){ // the END of the barrel: the hull is drawn flipped to face the player, so the
-  // barrel points AT them — the muzzle sits along the aim line, half a hull-length out.
-  const px=(typeof player!=='undefined'&&player)?player.x:VW/2, py=(typeof player!=='undefined'&&player)?player.y:VH-40;
-  const aim=Math.atan2(py-e.y, px-e.x);
+function tankMuzzle(e){ // fixed south-facing barrel: the art has no independently rotating turret
+  const aim=Math.PI/2;
   const r=(e.h||40)*0.62;
   return {x:e.x+Math.cos(aim)*r, y:e.y+Math.sin(aim)*r, aim};
 }
@@ -12392,7 +12425,7 @@ function eTankBlast(e){ // STRONG shell fired from the END OF THE BARREL, scalin
   eBullets.push({x:m.x, y:m.y, vx:(player.x-m.x)*0.006, vy:2.8, w:18, h:22,
     kind:'groundup', _fx:'blast', hp:1, t:0, ang:m.aim,
     _gscale:0.45, mg:false, blast:true, dmg:1 });
-  if(Audio.SFX.enemyBig) Audio.SFX.enemyBig(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+  if(Audio.SFX.enemyBossCannon) Audio.SFX.enemyBossCannon(); else if(Audio.SFX.enemyBig) Audio.SFX.enemyBig(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
 /* ⚠ THE ORB AND ITS SHARDS NEVER TOOK THE ELEMENTAL BONUS (drop 0814a).
 
@@ -12594,7 +12627,7 @@ function flameFire(lv){
        vx:0, vy:0, life:FLAME_LIFE, anim:0, _hit:[], _ht:0, _bt:0, _sbt:0};
     f._el=_el;
     pBullets.push(f);
-    const _start=_el==='ice'?(Audio.SFX.iceBreathStart||Audio.SFX.shatter):(Audio.SFX.flameIgnite||Audio.SFX.crackle);
+    const _start=_el==='ice'?(Audio.SFX.iceBreathStart||Audio.SFX.shatter):(Audio.SFX.flameThrowerStart||Audio.SFX.flameIgnite||Audio.SFX.crackle);
     if(_start) _start();                                // one leading-edge ignition / frost intake
   }
   const _nextEl=flameIsIce()?'ice':'fire';
@@ -12628,14 +12661,15 @@ function flameFire(lv){
    one-shot, which is why the held weapon is the one that gets the loop. */
 function flameSndStart(el){
   if(typeof Snd!=='undefined' && Snd && Snd.loopOn){
-    const n=el==='ice'&&Snd.pools&&Snd.pools.iceBreathLoop?'iceBreathLoop':'arcFlameLoop';
-    Snd.loopOn(n,0.85);
+    const n=el==='ice'?'iceBreathLoop':'flameThrowerLoop';
+    if(Snd.pools&&Snd.pools[n]) Snd.loopOn(n,el==='ice'?0.72:0.78);
+    else Snd.loopOn(el==='ice'?'iceBreathLoop':'arcFlameLoop',0.85);
   }
 }
 function flameSndStop(el){
-  if(typeof Snd!=='undefined' && Snd && Snd.loopOff){ Snd.loopOff('arcFlameLoop'); Snd.loopOff('iceBreathLoop'); }
+  if(typeof Snd!=='undefined' && Snd && Snd.loopOff){ Snd.loopOff('flameThrowerLoop'); Snd.loopOff('arcFlameLoop'); Snd.loopOff('iceBreathLoop'); }
   const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null; if(!S) return;
-  const fn=el==='ice'?(S.iceBreathStop||S.shatter):(S.flameOut||S.crackle); if(fn) fn();
+  const fn=el==='ice'?(S.iceBreathEnd||S.iceBreathStop||S.shatter):(S.flameThrowerEnd||S.flameOut||S.crackle); if(fn) fn();
 }
 
 /* --- THE MIRRORED FLAME (Mike's spec) ---------------------------------------
@@ -13169,7 +13203,7 @@ function pShoot(){
         dmg:LZ_SLUG_DMG, _bossDmg:LZ_SLUG_DMG, w:9, h:20, lv:Math.max(1,lv), t:0, dead:false});
     }
     shake=Math.max(shake,1.2);            // a mounted gun has weight
-    if(Audio&&Audio.SFX&&Audio.SFX.shoot) Audio.SFX.shoot();
+    if(Audio&&Audio.SFX){ (Audio.SFX.heavyMachineGun||Audio.SFX.shoot||function(){})(); }
     return;
   }
   /* ROLLERBALL IS EXCLUSIVE (drop 0724cf). While Falva has it equipped she fires the ball and
@@ -13238,7 +13272,7 @@ function pShoot(){
       pBullets.push({x:player.x+off, y:player.y-14, vx:0, vy:-9, w:4,h:12, dmg:_bdmg, kind:'mg', lv:_blv});
     }
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lvv));   // real machinefx muzzle flash at the nose
-    Audio.SFX.shoot();
+    (Audio.SFX.machineGun||Audio.SFX.shoot)();
   } else if(w===1){ // spread fire
     const n=2+lv;
     const sprd=0.22+lv*0.05;
@@ -13346,7 +13380,16 @@ function pShoot(){
 const MG_CONE = 0.62;
 function eAimDown(ang){ return clamp(ang, Math.PI/2-MG_CONE, Math.PI/2+MG_CONE); }
 
-function eMG(x,y,ang,spd,col){ ang=eAimDown(ang); eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, w:4,h:14, kind:'mg', _ph:(Math.random()*4)|0, col:col||'#bfe8ff'}); Audio.SFX.enemyShoot(); }
+function eMG(x,y,ang,spd,col){ ang=eAimDown(ang); eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, w:4,h:14, kind:'mg', _ph:(Math.random()*4)|0, col:col||'#bfe8ff'}); (Audio.SFX.enemyMachineGunLight||Audio.SFX.enemyShoot)(); }
+function enemyShotSfx(kind){
+  const S=Audio&&Audio.SFX; if(!S) return;
+  if(kind==='mg' || kind==='pellet') (S.enemyMachineGunLight||S.enemyShoot||function(){})();
+  else if(kind==='ice' || kind==='frost') (S.enemyIceBolt||S.enemyShoot||function(){})();
+  else if(kind==='fire' || kind==='flare' || kind==='magma') (S.enemyFlameBolt||S.enemyShoot||function(){})();
+  else if(kind==='laser' || kind==='eglaser') (S.enemyPulseLaserRed||S.laserShot||S.enemyShoot||function(){})();
+  else if(kind==='electric' || kind==='arc') (S.enemyElectricBolt||S.enemyShoot||function(){})();
+  else (S.enemyShoot||function(){})();
+}
 function eShoot(x,y,ang,spd,kind='mg'){
   /* MACHINE GUNS NEVER CROSS THE SCREEN (drop 0801kn). Mike: "fix the sideway shots".
 
@@ -13370,11 +13413,11 @@ function eShoot(x,y,ang,spd,kind='mg'){
      t is set here too, for the same reason. */
   eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, w:6,h:6, kind,
     t:0, _ph:(Math.random()*8)|0});
-  Audio.SFX.enemyShoot();
+  enemyShotSfx(kind);
 }
 function eGreenLaser(x,y,ang,spd){ // fast green enemy laser bolt (white-cored)
   eBullets.push({x,y,vx:Math.cos(ang)*spd, vy:Math.sin(ang)*spd, w:6,h:14, kind:'eglaser', t:0, _f:(Math.random()*8)|0, dmg:1});
-  if(Audio.SFX.laserShot) Audio.SFX.laserShot(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+  if(Audio.SFX.enemyPulseLaserAlien) Audio.SFX.enemyPulseLaserAlien(); else if(Audio.SFX.laserShot) Audio.SFX.laserShot(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
 // alternating back-mounted homing launcher: right fires 1,2 -> left fires 1,2 -> 1,2,3,4 -> repeat.
 // Each missile launches from the BACK (top edge, since the gunship faces the player) and locks a reticle.
@@ -15035,7 +15078,7 @@ function sonicRelease(p){
   sonicTrail.push({x:player.x, y:player.y-14, t:0, dur:0.26+p*0.18, circ:true});
   shake=Math.max(shake, 2+p*7);
   if(Audio&&Audio.SFX){
-    const S=Audio.SFX, fn=p>=0.98?(S.sonicBoomFull||S.sonicWave||S.laser):(S.sonicBoomHalf||S.sonicWave||S.laser);
+    const S=Audio.SFX, fn=S.coleSonicBoom||(p>=0.98?(S.sonicBoomFull||S.sonicWave||S.laser):(S.sonicBoomHalf||S.sonicWave||S.laser));
     if(fn) fn();
   }
 }
@@ -15179,6 +15222,20 @@ function lzMountDraw(){
   if(!lzMount.docked) ctx.rotate((1-clamp(lzMount.t/LZM_DOCK_T,0,1))*0.8);
   ctx.drawImage(im, -ax, -ay, w, h);
   ctx.restore();
+}
+function drawHeavyTurretHUD(){
+  if(!lzMount || !lzMount.docked) return;
+  screenBar(function(){
+    /* Stack above a simultaneous pilot special; both meters stay locked to the
+       viewport instead of inheriting the scrolling playfield. */
+    const y=specialActive()?VH-55:VH-34;
+    const frac=clamp((lzMount.life||0)/LZ_LIFE,0,1), col='#ffc21a';
+    ctx.fillStyle='rgba(0,0,0,0.68)'; ctx.fillRect(VW/2-81,y,162,8);
+    ctx.fillStyle='#3d2b05'; ctx.fillRect(VW/2-80,y+1,160,6);
+    ctx.fillStyle=col; ctx.fillRect(VW/2-80,y+1,160*frac,6);
+    ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillStyle=col;
+    ctx.fillText('HEAVY TURRET  '+Math.max(0,Math.ceil(lzMount.life))+'s',VW/2,y-4);
+  });
 }
 
 /* WHAT THE SPECIAL CRATE YIELDS, PER PILOT (drop 0805i)
@@ -15971,7 +16028,10 @@ function warmStage(n){
     if((n===7||n===8) && typeof addPrefix==='function') addPrefix('nfx_l7portal_');
     if(typeof NEWBOSS!=='undefined' && NEWBOSS[n] && NEWBOSS[n].idle) addPrefix(NEWBOSS[n].idle);
     const _mk = (typeof SUBBOSS!=='undefined' && SUBBOSS[n]) ? SUBBOSS[n].kind : null;
-    if(_mk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_mk]) addPrefix(SHIPBOSS[_mk].key);
+    if(_mk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_mk]){
+      const _md=SHIPBOSS[_mk]; add(_md.key);
+      if(_md.dmg) for(const _dk of _md.dmg) add(_dk);
+    }
   }catch(e){}
   /* 5. THE FAMILIES THAT DO NOT MATCH A FOLDER OR A KIND NAME (drop 0801kd).
 
@@ -16565,36 +16625,23 @@ function setState(s){
 
    Three rules, and the last two are what let this push harder than the reverted nudge did.
 
-   1. HALF EACH, ALONG X. Two air units may also ease apart on Y; anything on the ground or the
-      water is only ever moved sideways, because its Y is its station in the world and its
-      movement model is written against it.
+   1. HALF EACH, OUT THE SHORTEST LEGAL AXIS. Aircraft may use either axis, tanks stay on proven
+      ground, and boats queue fore/aft so the solver never creates lateral hull wobble.
 
-   2. A DEADZONE. Waves are authored in formation and some of them touch by design — the bomber
-      echelon at (VW*0.08+i*12, -32-i*68) overlaps by 0.04px on Y and counted as a stacked pair
-      on every frame it was on screen. Under SEP_MIN burial nothing moves, so a formation keeps
-      the shape it was drawn as and only real stacking is resolved. This is also why the
-      pair-frame count and the WORST-BURIAL figure move differently: the second one is the one
-      that describes what Mike is looking at.
+   2. NO DEADZONE. Formation coordinates are starting lanes, not permission to merge silhouettes.
+      Every intersecting UNIT footprint is resolved through to a visible gap.
 
    3. THE TERRAIN STILL OWNS THE UNIT. A tank is re-checked against tankDrivable and a boat
       against the land mask before it is allowed to move, and a unit the terrain refuses leaves
       the whole correction to its partner. Without that this pass reintroduces "tanks into the
       water" from a new direction.
    ============================================================ */
-/* ⚠ MIKE WANTS 0 HERE AND ONE OF HIS OWN ASSERTIONS WANTS 0.20 (drop 0822p, UNRESOLVED).
-   He said: "no units should ever overlap, they have unit boxes for a reason." Setting this to
-   0 does help — stage 1's stacked frames fell 28.8% -> 20.4% on a comparable run — but it
-   fails §213's `touchMoved === 0`: "an authored formation keeps the shape it was drawn as".
-   That assertion is defending a DESIGN CHOICE, not a bug, so it is his call which wins, and
-   the value stays where it shipped until he makes it.
-   ⚠ AND DO NOT CHASE THE REMAINDER WITH SEP_CAP. Swept 260/420/700: 40%, 70.5%, 3.8% —
-   non-monotonic, because a stronger push moves units into DIFFERENT POSITIONS so the stage
-   plays out differently (frames with 2+ units 3446 -> 4080, boss stopped being reached). A
-   parameter that changes the scenario cannot be A/B'd by replaying the scenario. */
-const SEP_MIN  = 0.20;   // burial fraction below which a contact is left alone
-const SEP_GAIN = 0.5;    // share of the EXCESS burial taken out per pass
-const SEP_CAP  = 130;    // px/sec ceiling per unit, so nothing ever snaps apart
-const SEP_PASS = 2;      // relaxation passes per frame
+/* A unit is a solid footprint. Resolve every contact through to a small readable gap instead of
+   preserving a deadzone that allowed one sprite to remain visibly buried in another. */
+const SEP_GAP  = 4;
+const SEP_GAIN = 0.78;
+const SEP_CAP  = 220;
+const SEP_PASS = 4;
 /* the land mask under the CURRENT stage, in the same terms the ground units' own hold uses.
    Returns null when the stage has no mask built, in which case nothing here constrains anything. */
 function sepLandRef(y){
@@ -16650,7 +16697,7 @@ function sepMovable(e){     // ...and may actually be displaced by one
    tank sideways with NO tankDrivable check — "tanks into the water" by the exact route rule 3 of
    this pass's header promises to close. Latent until the 0819 density raise made fields crowded
    enough to shove them; the suite's drivable-band fixture caught it at 145 violations. */
-function sepGrounded(e){ return !!(e.ground || e.microturret || e.pattern==='ground'
+function sepGrounded(e){ return !!(e.ground || e.microturret || e._vkind==='tank' || e.pattern==='ground'
   || e.pattern==='tankhold' || e.pattern==='tankpatrol' || e.pattern==='s1tank'); }
 /* Move a unit sideways, TAKING ITS LANE WITH IT. A jet that is pushed is now flying the same
    route from a different lane rather than clawing its way back to the old one — which is both
@@ -16670,7 +16717,25 @@ function sepShift(e, dx){
   }
   e.x=nx;
   if(e._lane!=null) e._lane+=dx;
+  if(e._apX0!=null) e._apX0+=dx;
+  if(e._apX1!=null) e._apX1+=dx;
   return dx;
+}
+/* Fore/aft counterpart. Boats use this instead of lateral shoves, so two hulls queue within a
+   narrow channel without either one wagging across the water. Tanks update their level-space row
+   and refuse the correction if the new footprint is not drivable. */
+function sepShiftY(e, dy){
+  if(!dy) return 0;
+  const ny=clamp(e.y+dy, -100, VH+100);
+  dy=ny-e.y; if(!dy) return 0;
+  if(sepGrounded(e)){
+    const src=(typeof levelSrcY==='function')?levelSrcY():0;
+    const ly=(e._lvlY!=null)?e._lvlY:(src+e.y), nly=ly+dy;
+    if(typeof tankDrivable==='function' && !tankDrivable(e.x,nly)) return 0;
+    e._lvlY=nly;
+  }
+  e.y=ny;
+  return dy;
 }
 function enemySeparate(dt){
   if(typeof window!=='undefined' && window.__sepOff) return;      // probe_stack.py's A/B switch
@@ -16686,29 +16751,21 @@ function enemySeparate(dt){
         /* THE SAME BOX TEST probe_stack.py MEASURES WITH, deliberately — a fix and its
            measurement that compute overlap differently can both be green and disagree. */
         const dx=B.x-A.x, dy=B.y-A.y;
-        const ox=(A.w+B.w)*0.42-Math.abs(dx), oy=(A.h+B.h)*0.42-Math.abs(dy);
+        const ox=(A.w+B.w)*0.5+SEP_GAP-Math.abs(dx), oy=(A.h+B.h)*0.5+SEP_GAP-Math.abs(dy);
         if(ox<=0 || oy<=0) continue;
-        const burial=Math.min(ox/Math.min(A.w,B.w), oy/Math.min(A.h,B.h));
-        if(burial<=SEP_MIN) continue;                   // formations are allowed to touch
-
-        /* ⚠ ENGAGE AT THE DEADZONE, THEN RESOLVE ALL THE WAY OUT. Taking only the EXCESS over
-           SEP_MIN parks every contact at exactly the threshold, where it still counts as an
-           overlapping pair — measured: stage 1's worst settled burial fell 49.6% -> 20.8% (the
-           deadzone, to the decimal) while pair-frames ROSE 386 -> 615, because units that used to
-           cross through each other now loiter in contact instead. The deadzone decides WHETHER to
-           push; it must not decide how far. */
         const bothAir = !sepGrounded(A) && !sepGrounded(B) && !A._naval && !B._naval;
+        const eitherNaval=!!(A._naval||B._naval||A.pattern==='naval'||B.pattern==='naval');
         /* an immovable partner does not halve the correction, it hands over the whole of it */
         const shA = movA ? (movB?0.5:1) : 0, shB = movB ? (movA?0.5:1) : 0;
         /* OUT THE SHORT SIDE. A column of jets is a few pixels deep and half a screen wide on the
            box test; shoving it sideways is the long way out of a shallow overlap and reads as the
            formation being blown apart. Only air units may take the Y exit — a tank or a boat's Y
            is its station in the world and its movement model is written against it. */
-        if(bothAir && oy<ox){
+        if((bothAir && oy<ox) || eitherNaval){
           const vs=(dy===0) ? (((a+b)&1)?1:-1) : Math.sign(dy);
           const vp=Math.min(oy*SEP_GAIN, step);
-          B.y+=vs*vp*shB; A.y-=vs*vp*shA;
-          continue;
+          const mBy=movB?sepShiftY(B,vs*vp*shB):0, mAy=movA?sepShiftY(A,-vs*vp*shA):0;
+          if(mBy!==0 || mAy!==0) continue;
         }
         const full=Math.min(ox*SEP_GAIN, step);
         /* exactly stacked gives Math.sign 0 and no direction at all; split on the pair's own
@@ -16720,10 +16777,11 @@ function enemySeparate(dt){
         /* BOTH REFUSED and both in the air is impossible — sepShift only refuses on terrain — so
            this is two ground units or two boats wedged where neither can legally give way. Air
            units get the vertical exit instead of staying buried. */
-        else if(mA===0 && mB===0 && bothAir){
+        else if(mA===0 && mB===0){
           const vs=(dy===0) ? (((a+b)&1)?1:-1) : Math.sign(dy);
           const vp=Math.min(oy*SEP_GAIN, step);
-          B.y+=vs*vp*shB; A.y-=vs*vp*shA;
+          if(movB) sepShiftY(B,vs*vp*shB);
+          if(movA) sepShiftY(A,-vs*vp*shA);
         }
       }
     }
@@ -17144,10 +17202,12 @@ function updatePlay(dt){
       case 'ai':     if(typeof aiTick==='function') aiTick(e,dt); break;   // AI pattern library (behaviour sheets)
       /* naval units steer themselves and hold station (drop 0808k) */
       case 'naval':  navalTick(e, dt); break;
-      case 's1tank': tankTick(e, dt); break;         // tracked: forward/back only (drop 0808r)
+      case 's1tank': tankTick(e, dt); break;         // tracked: eight legal drive headings, south-facing guns
       case 's1jet':  jetTick(e, dt); break;          // straight, dodges missiles (drop 0808t)
+      case 'prop':   e.vx=0; e.vy=0; e.y+=emplaceStep(e,dt); break; // map-anchored mines/barrels
       case 'ground': e.y += emplaceStep(e, dt); break;   // bolted to the terrain
-      case 'sine':   e.x += Math.sin(e.t*2.6+(e.phase||0))*e.amp*dt*4.0; e.y+=e.vy; break;
+      case 'sine':   if(isJetEnemy(e)) airPatternTick(e,dt,'swerve');
+                     else { e.x += Math.sin(e.t*2.6+(e.phase||0))*e.amp*dt*4.0; e.y+=e.vy; } break;
       /* SIDE ENTRY, NO LOOP (drop 0801kn). Mike: "I told you no more circular loop
          patterns with the jets ... when they come in sideways they are facing the
          direction they come in."
@@ -17172,7 +17232,7 @@ function updatePlay(dt){
         const dx = e._siX - e.x;
         if(Math.abs(dx) > 3 && e._siT < 4.0){
           e.x += Math.sign(dx)*Math.min(Math.abs(dx), 3.4)*dt*60*0.055;   // ease in, no overshoot
-          e.y += Math.sin(e._siT*1.6)*0.35;                                // slight lift, not a loop
+          e.y += e.vy*0.12;                                                // committed entry, no oscillation
         } else {
           /* THE HOVER MUST NOT CURVE. First attempt bobbed y on sin(t*1.1) AND drifted
              x on sin(t*0.7) — two sines at DIFFERENT frequencies is a Lissajous figure,
@@ -17182,23 +17242,22 @@ function updatePlay(dt){
              Bobbing on ONE axis cannot curve — it only reverses, so net turning stays
              at zero. The station itself eases sideways on a linear ramp, not a sine. */
           e._siHold = true;
-          e.y += Math.sin(e._siT*1.1+(e.phase||0))*0.5;
+          e.y += e.vy*0.05;
           e._siX += e._siDir*0.18*dt*60*0.02;                                // slow linear creep
           e.x += (e._siX-e.x)*0.04;
         }
         break;
       }
-      case 'weave':  e.x += Math.sin(e.t*2.0+(e.phase||0))*e.amp*dt*5.0; e.y+=e.vy*0.95; break;
+      case 'weave':  if(isJetEnemy(e)) airPatternTick(e,dt,'curve');
+                     else { e.x += Math.sin(e.t*2.0+(e.phase||0))*e.amp*dt*5.0; e.y+=e.vy*0.95; } break;
       case 'dive':   e.y+=e.vy*1.5; e.x += clamp(dxp,-1,1)*52*dt; break;
       case 'gunboat': {
-        // descend to the patrol line, then never again — it works the water sideways
+        // descend to the patrol line, then bob on the swell without lateral wobble
         if(e.y < e._gbHoldY){ e.y += e.vy*1.1; }
         else {
-          e.y += Math.sin(e.t*1.7)*4*dt;                       // ride the swell only
-          e.x += e._gbDir*52*dt;
-          const _w=(typeof worldWidth==='function')?worldWidth():VW;
-          if(e.x < e.w+18){ e.x=e.w+18; e._gbDir=1; }
-          else if(e.x > _w-e.w-18){ e.x=_w-e.w-18; e._gbDir=-1; }
+          if(e._gbBaseY==null) e._gbBaseY=e.y;
+          e.y=e._gbBaseY+Math.sin(e.t*1.7)*1.8;                // vertical water bob only
+          e.vx=0;
         }
         // TURRET tracks separately from the hull
         if(player && !player.dead){
@@ -17275,74 +17334,11 @@ function updatePlay(dt){
         break;
       }
       case 'tankhold': {
-        // GROUND TANK: sits ON the terrain and scrolls DOWN with the map (so it looks planted on the
-        // ground, not floating). It can make slow lateral tank moves while scrolling. Turret tracks player.
-        const groundSpeed = 40*dt;   // matches the map scroll (mapScroll advances dt*40)
-        e.y += groundSpeed;          // scroll down with the terrain
-        // terrain anchor: the tank rides the scroll, so its LEVEL-space row is constant
-        if(e._lvlY==null){ e._lvlY = e.y + levelSrcY();
-          // spawn snap: if the drop point is off the drivable path (keyed channel / vegetation / cliff),
-          // slide to the nearest drivable x on this row
-          if(!tankDrivable(e.x, e._lvlY, true)){
-            for(let st=8; st<=400; st+=8){
-              if(tankDrivable(e.x-st, e._lvlY)){ e.x-=st; break; }
-              if(tankDrivable(e.x+st, e._lvlY)){ e.x+=st; break; }
-            }
-          }
-        }
-        // slow lateral reposition (tank crawling along the ground) — targets must stay ON the path
-        e._mvT=(e._mvT||rnd(1,3))-dt;
-        if(e._mvT<=0){ e._mvT=rnd(2.2,4.5);
-          for(let tries=0; tries<6; tries++){
-            const cand=clamp(e.x+rnd(-60,60), 40, worldWidth()-40);
-            if(tankDrivable(cand, e._lvlY)){ e._tgx=cand; break; }
-          }
-        }
-        if(e._tgx!=null){ const d=e._tgx-e.x; e.vx=clamp(d,-1,1)*0.5; const nx=e.x+e.vx*dt*30;
-          if(tankDrivable(nx, e._lvlY)) e.x=nx; else { e.vx=0; e._tgx=null; }   // HARD boundary: never leaves the path
-          if(Math.abs(d)<3) e.vx=0; }
+        tankCruiseTick(e,dt,22);
         break;
       }
       case 'tankpatrol': {
-        // ROAD PATROL (stage 4). tankhold plants a tank on the terrain and lets the scroll carry it;
-        // this one actually DRIVES the road, up-screen and back, so the airbase reads as defended
-        // rather than decorated. It rides the same terrain anchor, but its LEVEL-space row moves.
-        const groundSpeed = 40*dt;
-        e.y += groundSpeed;
-        if(e._lvlY==null){
-          e._lvlY = e.y + levelSrcY();
-          e._pdir = (Math.random()<0.5) ? -1 : 1;      // -1 drives UP the road, +1 drives back down
-          e._pRange = rnd(70, 150);                    // how far it patrols from its post
-          e._pHome = e._lvlY;
-          if(!tankDrivable(e.x, e._lvlY, true)){             // spawn snap, same as tankhold
-            for(let st=8; st<=400; st+=8){
-              if(tankDrivable(e.x-st, e._lvlY)){ e.x-=st; break; }
-              if(tankDrivable(e.x+st, e._lvlY)){ e.x+=st; break; }
-            }
-          }
-        }
-        // ---- drive along the road
-        const step = e._pdir * 46 * dt;
-        const nlv = e._lvlY + step;
-        if(Math.abs(nlv - e._pHome) > e._pRange || !tankDrivable(e.x, nlv, true)){
-          e._pdir = -e._pdir;                          // hit the end of the beat, or the tarmac ran out
-        } else {
-          e._lvlY = nlv; e.y += step;                  // moving in level space moves it on screen too
-        }
-        /* ⚠ THE LANE-DRIFT IS GONE (drop 0813d). Mike: "tanks do not go sideways."
-
-           A block here used to re-target e.x every 1.6-3.2s, 30-80px toward the player's lane, and
-           ease the hull across to it. Measured on stage 4: 56px of lateral travel per roadtank
-           after its entry finished. That is a tracked vehicle strafing, which is what he is
-           objecting to - a tank turns and drives, it does not slide.
-
-           ⚠ IT WAS NOT KEEPING THEM ON THE TARMAC. That job belongs to the y-drive above, which
-           already refuses a step onto non-drivable ground, and to the spawn snap, which guarantees
-           the column it starts on is drivable. Removing this leaves the tank in its lane, driving
-           up and back down the road, which is the whole point of `tankpatrol`.
-
-           e.vx is left at 0 so nothing downstream reads a stale sideways velocity. */
-        e.vx=0;
+        tankCruiseTick(e,dt,34);
         break;
       }
       case 'spin':   e.y += (e.y<VH*0.24? e.vy : e.vy*0.25 + Math.sin(e.t*0.9)*6*dt); e.x += Math.sin(e.t*1.2+(e.phase||0))*e.amp*dt*3.0; break;
@@ -17579,17 +17575,17 @@ function updatePlay(dt){
       }
       case 'stationgun': {
         // STATION SHIP: comes in at a regular pace, holds a mid-screen station and plinks — fodder, but not free.
-        if(e.y<VH*0.30){ e.y+=e.vy; }
-        else { e.y+=Math.sin(e.t*1.4)*8*dt; e.x += Math.sin(e.t*0.9+(e.phase||0))*26*dt; }
+        airPatternTick(e,dt,'station');
         break;
       }
-      default:       e.y+=e.vy; e.x+=e.vx + Math.sin(e.t*1.7+(e.phase||0))*14*dt;
+      default:       if(isJetEnemy(e)) airPatternTick(e,dt,'swerve');
+                     else { e.y+=e.vy; e.x+=e.vx + Math.sin(e.t*1.7+(e.phase||0))*14*dt; }
     }
     if(e.type==='octo'||e.pattern==='spin'||e.type==='mine') e.spin=(e.spin||0)+dt*(e.type==='mine'?6:2.4);
     /* the catch-all exit push. A gunboat is a STATION - it holds its patrol line
        for its whole life, so it is exempt (drop 0801ee). Everything else still
        drifts off eventually. */
-    if(e.t>9 && e.pattern!=='gunboat') e.y+=0.7;           // ensure everyone eventually exits
+    if(e.t>9 && e.pattern!=='gunboat' && e.pattern!=='prop') e.y+=0.7; // scenery remains map-anchored
     const _edgeM=Math.max(14, e.w*0.66);
     // AI-library craft that are SUPPOSED to cross and leave (sweeps, straight diagonals, peel-offs)
     // must not be pinned to the edge — otherwise a "straight across" run bends and rides the wall.
@@ -18140,7 +18136,7 @@ function updatePlay(dt){
         if(Math.abs(b.x-p.x)<(p.w/2+6) && Math.abs(b.y-p.y)<(p.h/2+8)){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; b._hs.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
       }
       const _vw=(typeof worldWidth==='function')?worldWidth():VW;
-      if(b.y<PLAY.y-10 || b.x<-30 || b.x>_vw+30) b.dead=true;
+      if(b.y<-40 || b.x<-30 || b.x>_vw+30) b.dead=true;
       continue;
     }
     if(b.kind==='coletri'){
@@ -18180,7 +18176,7 @@ function updatePlay(dt){
         }
       }
       if(hit) b.dead=true;
-      if(b.y<PLAY.y-10) b.dead=true;
+      if(b.y<-40) b.dead=true;
       continue;
     }
     if(b.kind==='atom'){
@@ -18232,7 +18228,12 @@ function updatePlay(dt){
     }
     if(b.kind==='beam'){   // solid laser beam: anchored to the ship, burns the whole column above it
       b.life-=dt;
-      if(b.life<=0 || player.dead){ b.dead=true; continue; }
+      if(b.life<=0 || player.dead){
+        b.dead=true;
+        if(typeof Snd!=='undefined' && Snd && Snd.loopOff) Snd.loopOff('laserBeamLoop');
+        if(!player.dead && Audio.SFX.laserBeamEnd) Audio.SFX.laserBeamEnd();
+        continue;
+      }
       b.x=player.x; b.bot=player.y-14; b.top=-20;   // project past the top edge — keeps full reach as the ship advances
       b._ht=(b._ht||0)-dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.05; }   // re-burn along the beam periodically
       for(const e of enemies){
@@ -18323,7 +18324,7 @@ function updatePlay(dt){
       b._ht-=dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.16; }
       for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg*_om); if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; } b._hit.push(e); } } }
       if(boss&&bossActive&&!boss.dead && Math.abs(boss.x-b.x)<(boss.w/2+b.w/2)&&Math.abs(boss.y-b.y)<(boss.h/2+b.h/2)){ b._bt-=dt; if(b._bt<=0){ hitBoss(b.dmg*_om); b._bt=0.16; } }
-      if(b.life<=0 || b.y<PLAY.y-16){ b.dead=true; iceBurst(b.x,b.y,b.shardN,b.lv,_sopt); if(b._ts) tsFx(b.x,b.y,'imp',110); }
+      if(b.life<=0 || b.y<-40){ b.dead=true; iceBurst(b.x,b.y,b.shardN,b.lv,_sopt); if(b._ts) tsFx(b.x,b.y,'imp',110); }
       continue;
     }
     if(b.kind==='missile'){
@@ -18591,7 +18592,7 @@ function updatePlay(dt){
         }
       }
     }
-    if(b.kind==='fireorb'){
+    if(b.kind==='fireorb' || b._reaverOrb){
       /* HOMES FAR, COMMITS NEAR - see reaverOrbTick. Once it is inside FIREORB_COMMIT the heading
          is frozen for good, so breaking late sends it past and off the world instead of hooking
          back onto the player. _committed latches; it must never re-acquire. */
@@ -19080,13 +19081,15 @@ function playerHit(){
   // AXEL aegis special: each hit pops one orb + shifts the shield colour; no life lost until orbs gone
   if(specialActive('axel') && (special.orbs||0)>0){
     special.orbs--; special.orbColor=(special.orbColor+1)%AXEL_ORB_COLS.length;
-    player.invuln=40; flashScreen=0.35; Audio.SFX.hit();
+    player.invuln=40; flashScreen=0.35; (Audio.SFX.shieldHitLight||Audio.SFX.hit)();
     explode(player.x,player.y,24,'blue');
     floatText(player.x,player.y-16, special.orbs>0?('AEGIS x'+special.orbs):'AEGIS DOWN', AXEL_ORB_COLS[special.orbColor]);
     return;
   }
   if(typeof stageStats!=='undefined') stageStats.dmgTaken++;
-  if(run.shield>0){ run.shield--; player.invuln=70; flashScreen=0.5; Audio.SFX.hit(); if(Audio.SFX.nsp_shield_down) Audio.SFX.nsp_shield_down();
+  if(run.shield>0){ run.shield--; player.invuln=70; flashScreen=0.5;
+    if(run.shield<=0) (Audio.SFX.shieldBreakCombat||Audio.SFX.nsp_shield_down||Audio.SFX.hit)();
+    else (Audio.SFX.shieldHitHeavy||Audio.SFX.hit)();
     floatText(player.x,player.y-16, run.shield>0?('SHIELD L'+run.shield):'SHIELD DOWN','#4ea0ff');
     explode(player.x,player.y,26,'blue');
     if(typeof fxBurst==='function') fxBurst(player.x, player.y, 34, {color:'#7fd4ff', rings:1});
@@ -19209,7 +19212,7 @@ function iceShatter(e){
      started firing on every kill it became the sound of the whole game. Mike: "the explosive
      sounds are good enough." The shatter keeps its chips and its shake; the explosion carries the
      audio. A real glass sample is the only thing that should go back here. */
-  if(Audio.SFX && Audio.SFX.hit) Audio.SFX.hit();
+  if(Audio.SFX && Audio.SFX.expIce) Audio.SFX.expIce(); else if(Audio.SFX && Audio.SFX.hit) Audio.SFX.hit();
   shake=Math.max(shake, clamp(S*0.06,1.5,8));
 }
 function fxBurst(x, y, size, opts){
@@ -19316,7 +19319,7 @@ function bossDie(){
     else explode(e.x, e.y, Math.max(12, Math.max(e.w||18, e.h||18)), 'red');
   }
   enemies.length=0;
-  Audio.SFX.expBig();
+  (Audio.SFX.expBoss||Audio.SFX.expBig)();
 }
 // ===== JUNGLE OVERLORD-X — smart health-gated helicopter boss AI =====
 // Weapon mounts on the 192px body (scaled by b.w*1.15/192): nose twin chainguns (0,+54),
@@ -19333,7 +19336,7 @@ function ovTwinMG(b){
   eBullets.push({x:nz[0],y:nz[1],vx:Math.cos(a1)*s*DIFF.ebSpeed, vy:Math.sin(a1)*s*DIFF.ebSpeed, w:5,h:12, kind:'mg', _ph:(Math.random()*4)|0});
   eBullets.push({x:nz2[0],y:nz2[1],vx:Math.cos(a2)*s*DIFF.ebSpeed, vy:Math.sin(a2)*s*DIFF.ebSpeed, w:5,h:12, kind:'mg', _ph:(Math.random()*4)|0});
   b._muzL=0.12; b._muzR=0.12;
-  if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+  if(Audio.SFX.enemyMachineGunBurst) Audio.SFX.enemyMachineGunBurst(); else if(Audio.SFX.enemyMachineGunHeavy) Audio.SFX.enemyMachineGunHeavy(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
 function ovRocketSide(b, side, fan){
   // one wing pod blasts a homing torpedo (side=-1 left, +1 right); alternate sides with a gap.
@@ -20411,27 +20414,15 @@ function _drawBGCore(dt){
     for(const s of starField){ s.y=(s.y+(0.6+s.z)*dt*60)%VH; const sx=(s.x+Math.sin((s.y+s.x)*0.03)*6)|0; ctx.globalAlpha=0.5*s.z; ctx.fillRect(sx,s.y|0,Math.ceil(s.s*0.8),Math.ceil(s.s*0.8)); }
     ctx.globalAlpha=1;
   } else if(bg==='sky'){
-    /* STAGE 6 — HEAVY TURBULENCE, real environment art (drop 0724ce).
-       The 640x960 scrolling sky plate and the eight authored cloud types were registered when the
-       pack landed but NEVER DRAWN — the stage was still running the two-colour gradient and ten
-       procedural circles below. That is the "old stage graphics".
-       Three parallax layers: the sky plate scrolling slowly, high-altitude banks above the fight,
-       and low rolling banks + storm cells sweeping across it. */
-    let _drewSky=false;
-    if(run.stage===6 && typeof XART!=='undefined' && XART.rdy('nl6sky_stage06_sky_scroll_640x960')){
-      const im=XART.get('nl6sky_stage06_sky_scroll_640x960');
-      const sc=VW/im.naturalWidth, th=im.naturalHeight*sc;
-      let off=((bgScroll*0.55)%th); if(off<0) off+=th;
-      for(let y=off-th; y<VH; y+=th) ctx.drawImage(im, 0, Math.round(y), VW, Math.ceil(th));
-      _drewSky=true;
-    }
-    if(!_drewSky){
+    /* Stage 6's master normally owns this branch. While it is still decoding, hold the same
+       fixed night colour instead of resurrecting the old scrolling plate, procedural cloud
+       circles, or animated l6CloudBed for a few frames. */
+    if(run.stage===6){
+      ctx.fillStyle='#061126'; ctx.fillRect(0,viewFillY(),worldWidth(),viewFillH());
+    } else {
       const g=ctx.createLinearGradient(0,0,0,VH); g.addColorStop(0,'#1a2540'); g.addColorStop(1,'#3a2a4a');
       ctx.fillStyle=g; ctx.fillRect(0,0,VW,VH);
-      for(let i=0;i<10;i++){ const y=((bgScroll*1.2)+i*70)%(VH+80)-50; ctx.globalAlpha=0.2; ctx.fillStyle='#cfd6ff';
-        circle(((i*97)%VW),y,rnd(18,30)+ (i%3)*4); } ctx.globalAlpha=1;
     }
-    if(run.stage===6 && typeof l6CloudBed==='function') l6CloudBed(dt, false);
   } else if(bg==='sewer'){
     // STAGE 7 — Not Another Sewer Level: dark green-grey channel with a flowing central sludge canal
     const g=ctx.createLinearGradient(0,0,0,VH); g.addColorStop(0,'#1c2620'); g.addColorStop(1,'#141b16');
@@ -21737,7 +21728,7 @@ function drawNewEnemyArt(e){
   const _foot = TURRET_ART.has(base) ? TURRET_FOOT : ((e._foot!=null)?e._foot:ENEMY_ART_FOOT);
   const dw=e.w*_foot, dh=dw*(im.naturalHeight/im.naturalWidth);
   const t=tintColor(e);
-  ctx.save(); ctx.translate(e.x, e.y + (typeof volcHover==='function'?volcHover(e):0));   // volcanic units levitate
+  ctx.save(); ctx.translate(e.x, e.y + (e._navBob||0) + (typeof volcHover==='function'?volcHover(e):0));   // boats bob vertically; volcanic units levitate
   if(e.spin) ctx.rotate(e.spin);
   /* fade removed: opacity held at 1 */
   if(t){
@@ -21834,9 +21825,9 @@ function drawVaultVehicle(e){
   const px0=(typeof player!=='undefined'&&player?player.x:VW/2), py0=(typeof player!=='undefined'&&player?player.y:VH-40);
   if(e._vkind==='tank'){
     // Face the player: hull art faces "up" natively, flip vertically so it points down-screen toward the player.
-    // When moving laterally show the side view (also flipped is fine; e/w read as side profiles).
-    let dir='s';
-    if(Math.abs(e.vx)>0.35) dir=(e.vx<0)?'w':'e';
+    /* The vault has no independently rotating turret. Keep the complete hull/barrel silhouette
+       facing south even while its tracks drive diagonally or across the road. */
+    const dir='s';
     let key=k+'_'+st+'_'+dir;
     if(!XART.rdy(key)) key=k+'_inta_'+dir;
     if(!XART.rdy(key)) key=k+'_inta_s';
@@ -21847,7 +21838,8 @@ function drawVaultVehicle(e){
     // Some hull art natively points the barrel DOWN (toward the player) and some points UP. Flip only the
     // ones that need it so every tank ends up facing the player. tk0/tk1/tk4 (jungle set) already face down.
     const _facesDownNatively = /^(tk0|tk1|tk4)$/.test(k);
-    ctx.save(); ctx.translate(e.x,e.y); if(!_facesDownNatively) ctx.scale(1,-1);
+    const _kick=(e._recoil>0)?-2:0;
+    ctx.save(); ctx.translate(e.x,e.y+_kick); if(!_facesDownNatively) ctx.scale(1,-1);
     /* fade removed: opacity held at 1 */
     if(t){ const tc=xartTint(key,t,(t==='#ffffff'?0.85:0.55)); ctx.drawImage(tc||im,-dw/2,-dh/2,dw,dh); }
     else ctx.drawImage(im,-dw/2,-dh/2,dw,dh);
@@ -22431,8 +22423,8 @@ function storyTick(dt){
       if(S.i>=S.lines.length) story=null; } }catch(e){}
   }
 }
-const STORY_TINT={COLE:'#ff6b3a',FALVA:'#ff9de0',AXEL:'#4a9eff',YURI:'#ffd36b',DECKER:'#d8c068',
-  LIZZIE:'#8de23a',MAVERICK:'#b26bff',FREEZER:'#9fe8ff',JUGGERNAUT:'#ff5a48',
+const STORY_TINT={COLE:'#7ad63a',FALVA:'#ff2a8f',AXEL:'#3a8aff',YURI:'#e23a3a',DECKER:'#ffd24a',
+  LIZZIE:'#ffc21a',MAVERICK:'#8de23a',FREEZER:'#6fd0ff',JUGGERNAUT:'#c08a3a',
   SYSTEM:'#ff4a4a','BLACK SIGNAL':'#a05cff',RIVAL:'#ff8a4a',EVERYONE:'#cfd6e6'};
 /* WHO ACTUALLY TALKS (drop 0801cb). Mike: "remember my alliegance system in this
    game, some players are neutral and dont talk to noone. in maverick's case, hes
@@ -22577,7 +22569,7 @@ function dlgBox(o){
        draw its full height below it, so the last row sat on the bottom rail — visible in the
        0814b proof frame before this line changed, and invisible to a horizontal overrun check. */
     if(yy+bodyH>yBot) break;
-    if(typeof msgTextLeft==='function') msgTextLeft(L, ix, yy, bodyH, o.bodyCol||'#dfe6f2', 1, fade);
+    if(typeof msgTextLeft==='function') msgTextLeft(L, ix, yy, bodyH, DIALOGUE_BODY_COLOR, 1, fade);
     yy += Math.round(bodyH*1.42);
   }
   msgFaceUse(null);        // ⚠ the ONLY exit past the opt-in above; leaving it set would repaint every banner
@@ -22589,7 +22581,7 @@ function storyDraw(){
   if(typeof storySpeakerAllowed==='function' && !storySpeakerAllowed(cur[0])) return;
   const who=cur[0], full=subst(cur[1]);
   const shown=full.slice(0, Math.max(0,S.typed|0));
-  const tint=STORY_TINT[who]||'#cfd6e6';
+  const tint=dialogueNameColor(who, '#cfd6e6');
   /* ============================================================
      ONE PANEL, BOTTOM LEFT, AUTHORED ART, AUTHORED FONT (drop 0811m)
 
@@ -23189,7 +23181,8 @@ const FIRETYPES={
      not ordnance. Rule 1, and it would have put a boss-sized machine on screen as a bullet.
      ⚠ FRAME OFF `b.t`, NEVER THE WALL CLOCK (0811y/0812g). The reel is a travelling loop, so it
      cycles; `%6` is its true length. */
-  magma: { art:(b)=>'fx0825_lava_fireball', align:true, h:28, glow:'#ff7a1e', glow2:'#ffd36b'},
+  /* Use the authored molten-orb reel; the old electrical star was the wrong visual language. */
+  magma: { art:(b)=>'ndc_magmaorb_'+(((b.t||0)*12|0)%4), align:false, h:26, glow:'#ff4a00', glow2:'#ffd36b'},
   lavaComet:{art:(b)=>'fx0825_lava_comet', align:true, h:25, glow:'#ff9a24', glow2:'#fff0a0'},
 }
 ;
@@ -23409,34 +23402,15 @@ const NAVAL_DIRS = [0,1,2,3,4,5,6,7].map(i=>i*Math.PI/4);   // the eight heading
 function navalInit(e, kind){
   e._naval=kind; e._hdg=Math.PI/2;         // bows south, toward the player, on arrival
   e._steerCd=0; e._burst=0; e._burstCd=rnd(0.8,2.2); e._shotCd=0;
-  e._idle=0; e._recoil=0; e._holdY=e.y;
+  e._idle=0; e._recoil=0; e._holdY=e.y; e._navX=e.x; e._navPhase=rnd(0,TAU);
 }
 function navalSteer(e, dt){
-  /* pick a heading and commit to it for a beat — a boat does not jitter between directions */
-  /* ⚠ BOWS STAY VERTICAL (drop 0808m). Mike: "the boat should be facing vertical generally and
-     only fire vertically."
-
-     The first cut picked freely from all eight compass headings, so a boat could end up broadside
-     or facing away and its guns pointed across the screen. A warship in a vertical shmup reads
-     as a threat because it is bearing DOWN on you — it holds its bow south and manoeuvres
-     laterally, it does not pirouette. The heading now only ever drifts a little either side of
-     straight down, and the guns fire straight down regardless. */
-  e._steerCd-=dt;
-  if(e._steerCd<=0){
-    e._steerCd=rnd(1.1,2.4);
-    e._hdgT=Math.PI/2 + rnd(-0.30, 0.30);      // south, with a little yaw
-    e._driftX=rnd(-1,1);                        // the lateral part of the manoeuvre
-  }
-  if(e._hdgT!=null){
-    let d=((e._hdgT-e._hdg+Math.PI*3)%(Math.PI*2))-Math.PI;
-    const turn=1.9*dt;
-    e._hdg += Math.abs(d)<turn ? d : Math.sign(d)*turn;
-  }
-  const spd=(e._naval==='gun')?26:20;
-  /* it strafes across the water while keeping its bow down-screen */
-  e.x += (e._driftX||0)*spd*1.5*dt;
-  e.y += Math.sin(e._hdg)*spd*0.34*dt;
-  /* HOLD STATION AGAINST THE SCROLL — it moves, it does not ride the map */
+  /* Water carries the hull; it does not wag it. Keep physics centred on one x and put the small
+     swell motion in the draw offset, so the collision footprint itself stays stable. */
+  e._hdg=Math.PI/2; e._hdgT=Math.PI/2; e._driftX=0;
+  e._navBob=Math.sin(e.t*2.0+(e._navPhase||0))*1.8;
+  /* Ride the same terrain delta as the river. No own x/y drift means the level-space coordinate
+     remains fixed while the visible hull gets its draw-only bob. */
   if(typeof _lastScrollDy!=='undefined') e.y += _lastScrollDy;
   e.x=clamp(e.x, 26, (typeof worldWidth==='function'?worldWidth():VW)-26);
   /* ============================================================
@@ -23825,11 +23799,11 @@ const NEF_S1 = {
      live and addressable; placing them in the stage 1 plan is the next pass. */
   s1corvette:      {art:'nef_s1_river_corvette',   pat:'naval',  atk:'mg',      w:48, h:76, hp:24, score:720, blk:true},
   s1landingcraft:  {art:'nef_s1_landing_craft',    pat:'naval',  atk:'none',    w:46, h:72, hp:20, score:600, blk:true},
-  /* scenery. river_mine rides the current rather than sitting still, so it keeps a vy. */
+  /* scenery is bolted to its authored map coordinate; water motion belongs to the water art. */
   s1fuelbarrel:    {art:'nef_s1_fuel_barrel',      pat:'prop',   atk:'none',    w:25, h:40, hp:4,  score:150, prop:true},
   s1fueltank:      {art:'nef_s1_fuel_tank',        pat:'prop',   atk:'none',    w:27, h:42, hp:6,  score:200, prop:true},
   s1ammocrate:     {art:'nef_s1_ammo_crate',       pat:'prop',   atk:'none',    w:39, h:34, hp:4,  score:150, prop:true},
-  s1rivermine:     {art:'nef_s1_river_mine',       pat:'prop',   atk:'none',    w:37, h:36, hp:3,  score:180, prop:true, drift:true},
+  s1rivermine:     {art:'nef_s1_river_mine',       pat:'prop',   atk:'none',    w:37, h:36, hp:3,  score:180, prop:true},
 };
 /* ============================================================
    STAGE 2 AND 3 ROSTERS FROM THE ART LOCK (drop 0809m)
@@ -24317,7 +24291,7 @@ function applyNefUnit(c, type){
   if(d.fireMul) c._fmul=d.fireMul;
   if(c.route && typeof JET_ROUTES!=='undefined' && JET_ROUTES.indexOf(c.route)>=0) c._route=c.route;
   c.shoots = d.atk!=='none';
-  c.vy = d.drift ? 0.35 : 0;                    // a mine rides the current; everything else holds station
+  c.vy = 0;                                      // every prop stays at its authored map coordinate
   /* FIRE SHARK JETS, SECOND GATE (Mike, 0819). This table runs AFTER applyS1Jet and overrides it
      (0812e), so the delta rows' pat:'s1jet' would undo the loopcharge handoff without this. Same
      stage gate, same reason: stages 4/6 keep their gunfighters. */
@@ -24608,33 +24582,118 @@ function jetTick(e, dt){
     }
   }
 }
+/* AIRCRAFT PATHS — a jet commits to a lane change, completes the curve, levels out, then flies a
+   straight beat before it chooses another. This replaces the generic per-frame sine nudge that
+   made an airframe wag left/right without ever reading as a flown manoeuvre. */
+function isJetEnemy(e){
+  if(!e) return false;
+  if(e._vkind==='air' || e.e1 || e._jet || e.pattern==='s1jet') return true;
+  return /jet|fighter|bomber|intcp|interceptor|scout|gunship|assault|stationship|strafer|topgun|racer/i.test(String(e.type||''));
+}
+function airPatternTick(e,dt,mode){
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  if(!e._apPhase){
+    e._apPhase='run'; e._apT=rnd(1.2,2.5); e._apDir=((e.phase||e.x)&1)?1:-1;
+    e._apX0=e.x; e._apX1=e.x;
+  }
+  const station=(mode==='station' && e.y>=VH*0.30);
+  e.y += station ? e.vy*0.05 : e.vy*(mode==='curve'?0.95:1);
+  if(e._apPhase==='curve'){
+    e._apP=Math.min(1,e._apP+dt/e._apDur);
+    const p=e._apP, ease=p*p*(3-2*p);                 // one clean S-curve, zero snap at either end
+    e.x=lerp(e._apX0,e._apX1,ease);
+    if(p>=1){
+      e._apPhase='run'; e._apT=rnd(station?2.2:1.4,station?3.8:3.0);
+      e._lane=e.x; e._apX0=e.x; e._apX1=e.x;
+    }
+    return;
+  }
+  e._apT-=dt;
+  if(e._apT<=0){
+    const span=clamp((e.amp||52)*(mode==='curve'?1.15:0.8),32,96);
+    let dir=-(e._apDir||1), tx=e.x+dir*span;
+    if(tx<e.w*0.7+10 || tx>W-e.w*0.7-10){ dir=-dir; tx=e.x+dir*span; }
+    e._apDir=dir; e._apX0=e.x; e._apX1=clamp(tx,e.w*0.7+10,W-e.w*0.7-10);
+    e._apP=0; e._apDur=(mode==='curve'?1.25:1.0); e._apPhase='curve';
+  }
+}
+
 const TANK_SPD   = 22;
 const TANK_SHIFT = 0.45;         // how long it sits still changing gear
 const MUZZLE_TANK_MG  = 'nmz_1';
 const MUZZLE_TANK_ORD = 'nmz_8';
+const TANK_DIR8=[
+  {x:0,y:1},{x:Math.SQRT1_2,y:Math.SQRT1_2},{x:1,y:0},{x:Math.SQRT1_2,y:-Math.SQRT1_2},
+  {x:0,y:-1},{x:-Math.SQRT1_2,y:-Math.SQRT1_2},{x:-1,y:0},{x:-Math.SQRT1_2,y:Math.SQRT1_2}
+];
+function tankRoadOK(x,y){
+  if(typeof tankDrivable!=='function') return true;
+  /* Stage 4 is one continuous paved airbase and its legacy patrol already failed open when the
+     classifier was unavailable. Water/cliff stages remain fail-closed. */
+  return tankDrivable(x,y,typeof run!=='undefined'&&run.stage===4);
+}
 function tankInit(e){
   e._tank=1; e._gear=1; e._phase='drive'; e._phT=rnd(1.6,3.2);
   e._spd=0; e._burst=0; e._burstCd=rnd(0.5,1.8); e._shotCd=0; e._recoil=0; e._wheelT=0;
+  e._dir8=(Math.random()*8)|0;
+  if(e._lvlY==null) e._lvlY=((typeof levelSrcY==='function')?levelSrcY():0)+e.y;
 }
-function tankTick(e, dt){
-  if(e.dead) return;
+function tankPickDir(e){
+  const base=(e._dir8==null?0:e._dir8), turns=[1,-1,2,-2,3,-3,4,0];
+  for(const turn of turns){
+    const d=(base+turn+8)%8, v=TANK_DIR8[d];
+    const nx=e.x+v.x*4, ny=e._lvlY+v.y*4;
+    if(nx>18 && nx<worldWidth()-18 && tankRoadOK(nx,ny)){
+      e._dir8=d; e._gear=1; return true;
+    }
+  }
+  return false;
+}
+function tankDriveStep(e,dist){
+  let actual=(e._dir8+(e._gear<0?4:0)+8)%8, v=TANK_DIR8[actual];
+  let nx=e.x+v.x*dist, nly=e._lvlY+v.y*dist;
+  const legal=nx>18 && nx<worldWidth()-18 && tankRoadOK(nx,nly);
+  if(!legal){
+    if(!tankPickDir(e)){ e.vx=0; return false; }
+    actual=e._dir8; v=TANK_DIR8[actual]; nx=e.x+v.x*dist; nly=e._lvlY+v.y*dist;
+    if(!tankRoadOK(nx,nly)){ e.vx=0; return false; }
+  }
+  e.x=nx; e.y+=v.y*dist; e._lvlY=nly;
+  e.vx=v.x*e._spd; e._tankPathDir=actual;             // path telemetry; art deliberately ignores it
+  return true;
+}
+function tankMotionTick(e,dt,maxSpd){
   if(!e._tank) tankInit(e);
   e._phT-=dt;
   if(e._phase==='drive'){
-    e._spd += (TANK_SPD-e._spd)*Math.min(1, dt*2.2);
+    e._spd += ((maxSpd||TANK_SPD)-e._spd)*Math.min(1, dt*2.2);
     if(e._phT<=0){ e._phase='brake'; }
   } else if(e._phase==='brake'){
     e._spd *= Math.max(0, 1-dt*3.4);                 // decelerate, do not stop dead
     if(e._spd<1.2){ e._spd=0; e._phase='shift'; e._phT=TANK_SHIFT; }
   } else {                                            // shift: stopped, changing gear
     e._spd=0;
-    if(e._phT<=0){ e._gear=-e._gear; e._phase='drive'; e._phT=rnd(1.6,3.2); }
+    if(e._phT<=0){
+      /* Sometimes reverse on the same tracks; otherwise turn onto another one of the eight legal
+         headings. Either way it rolls — there is never a sideways position nudge. */
+      if(Math.random()<0.45) e._gear=-e._gear;
+      else { const turn=[-3,-2,-1,1,2,3][(Math.random()*6)|0]; e._dir8=(e._dir8+turn+8)%8; e._gear=1; }
+      e._phase='drive'; e._phT=rnd(1.6,3.2);
+    }
   }
-  e.y += e._gear*e._spd*dt;
   if(typeof _lastScrollDy!=='undefined') e.y += _lastScrollDy;
-  if(e._recoil>0){ e._recoil-=dt; e.y -= e._gear*54*dt; }   // kicks back along its own axis
+  tankDriveStep(e,e._spd*dt);
+  if(e._recoil>0) e._recoil-=dt;                         // draw-only kick; never moves the footprint
   e._wheelT += Math.abs(e._spd)*dt*0.25;                    // wheels/tracks roll with the hull
   e.y=clamp(e.y, -80, VH+80);
+}
+function tankCruiseTick(e,dt,maxSpd){
+  if(e.dead) return;
+  tankMotionTick(e,dt,maxSpd);
+}
+function tankTick(e, dt){
+  if(e.dead) return;
+  tankMotionTick(e,dt,TANK_SPD);
 
   /* FIRING — the same burst rhythm as the boats, per Mike's "similar attack" */
   const canFire = player.y > e.y+8 && Math.abs(player.x-e.x) < 120;
@@ -24731,13 +24790,7 @@ function navalTick(e, dt){
         if(best===null) best=pickWaterX(L.key, L.mapY, e.x, (e.w||48)*0.9, e);   // `e` so it does not avoid itself
         if(best===null) e._beached=1;                   // genuinely no channel: withdraw, per 0809n
         else if(!e._wetFix){ e.x=best; e._wetFix=1; }   // ARRIVAL: place it cleanly, once
-        else {
-          /* afterwards it STEERS back rather than snapping — a hull that teleports sideways
-             every time the coastline wanders reads as a sprite being dragged, which is the same
-             complaint the jet banking work was about */
-          const step=NAVAL_WET_PULL*dt;
-          e.x += clamp(best-e.x, -step, step);
-        }
+        else e._beached=1;                              // never drag a placed hull sideways
       } else e._wetFix=1;
     }
   }
@@ -24828,7 +24881,7 @@ const SWIRL_HZ = 7.4, SWIRL_AMP = 1.9*60/7.4;
 function eShootT(x,y,ang,spd,kind,opts){
   eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, w:7,h:7, kind:kind||'bolt',
     t:0, _ph:(Math.random()*8)|0, pal:opts&&opts.pal, tint:opts&&opts.tint, szMul:opts&&opts.szMul});
-  Audio.SFX.enemyShoot();
+  enemyShotSfx(kind);
 }
 
 
@@ -26873,7 +26926,12 @@ function drawBullets(){
          PROJ for the master type and animates THAT, so the two systems agree by
          construction rather than by whichever ran first. */
       const _pd2=PROJ[b._fx||b.kind];
-      const _fk=(_pd2 && FIRETYPES[_pd2.type]) ? _pd2.type : (FIRETYPES[b.kind]?b.kind:null);
+      /* `magma` has its own bfx_magma_p reel. PROJ classifies it as a comet for registry/behaviour
+         purposes, but drawing the base type here replaced that authored reel with the generic
+         comet—the exact projectile Mike asked to delete. Exact magma art wins; other kinds retain
+         the existing base-family resolution. */
+      const _fk=(b.kind==='magma' && FIRETYPES.magma) ? 'magma'
+               : ((_pd2 && FIRETYPES[_pd2.type]) ? _pd2.type : (FIRETYPES[b.kind]?b.kind:null));
       if(_fk){
         if(b.kind==='plasma'&&!b.pal) b.pal=_PLASMA_PAL[run.stage]||'red';
         const _sv={kind:b.kind}; b.kind=_fk;
@@ -29208,6 +29266,9 @@ const L6_PAROBJ=['npo_wind','npo_wind','npo_wind','npo_turbine','npo_radar','npo
 const WFX = {
   2: {kind:'fire'},
   3: {kind:'snow',  beds:['nwf_snowL','nwf_snowD'], gusts:['nwf_snowB','nwf_bliz']},
+  /* Kept as the owner of the real nwf_ bolt lifecycle. bg6Draw owns the visible Stage-6
+     weather now; the WFX bolt remains headless there so the established event/audio contract and
+     its regression probes stay intact without putting a second lightning layer over the fight. */
   6: {kind:'storm'},
 };
 const FIRE_ALERT_STEP = 0.75;   // gap between the 1st, 2nd and 3rd alert appearing
@@ -29382,10 +29443,16 @@ function wfxUpdate(dt){
         wfx.boltCd = rnd(2.2, 6.5);
         const set = (Math.random()<0.34) ? 'nwf_ltS' : (Math.random()<0.5 ? 'nwf_ltC' : 'nwf_ltF');
         wfx.bolt = {key:set, x:rnd(W*0.10,W*0.90), y:rnd(-30,VH*0.34), sc:rnd(1.4,2.6), t:0};
-        atomFlash = Math.max(atomFlash||0, 0.35);
-        shake = Math.max(shake, 4);
-        if(Audio.SFX && (Audio.SFX.crackle||Audio.SFX.expBig)) (Audio.SFX.crackle||Audio.SFX.expBig)();
-        if(typeof l6Wx!=='undefined' && l6Wx) l6Wx.flash=Math.max(l6Wx.flash||0, 1);
+        /* The lifecycle continues throughout the run, but exposure/shake/sound only exist during
+           the actual rain interval. Without this gate an invisible legacy bolt kept flashing the
+           supposedly clear dusk, dawn and daylight palettes. */
+        const _wet=(typeof bg6StormStrength==='function')?bg6StormStrength():1;
+        if(_wet>0.05){
+          atomFlash = Math.max(atomFlash||0, 0.35);
+          shake = Math.max(shake, 4);
+          if(Audio.SFX && (Audio.SFX.crackle||Audio.SFX.expBig)) (Audio.SFX.crackle||Audio.SFX.expBig)();
+          if(typeof l6Wx!=='undefined' && l6Wx) l6Wx.flash=Math.max(l6Wx.flash||0, 1);
+        }
       }
     } else {
       wfx.bolt.t += dt;
@@ -29578,7 +29645,7 @@ function wfxDraw(){
   }
 
   /* ---- stage 6: the bolt ---- */
-  if(wfx.bolt){
+  if(wfx.bolt && !(run.stage===6 && typeof bg6Draw==='function')){
     const b=wfx.bolt, fi=clamp(Math.floor(b.t/0.075),0,5), k=b.key+'_'+fi;
     if(XART.rdy(k)){
       const im=XART.get(k), w=im.naturalWidth*b.sc, h=im.naturalHeight*b.sc;
@@ -38448,12 +38515,12 @@ function drawCommWindow(o){
       let _yy=inT+50;                       // msgTextLeft centres on cy; the old call sat on a baseline
       for(const _ln of _lines){
         if(_budget<=0) break;
-        msgTextLeft(_budget>=_ln.length ? _ln : _ln.slice(0,_budget), rx, _yy, _bH, '#eaf2ff', 1, 1, _bSP);
+        msgTextLeft(_budget>=_ln.length ? _ln : _ln.slice(0,_budget), rx, _yy, _bH, DIALOGUE_BODY_COLOR, 1, 1, _bSP);
         _budget-=_ln.length+1;              // +1 for the space the wrap consumed
         _yy+=_lead;
       }
     } else {
-      ctx.fillStyle='#eaf2ff'; ctx.font=_bH+'px "BOFmil", monospace';
+      ctx.fillStyle=DIALOGUE_BODY_COLOR; ctx.font=_bH+'px "BOFmil", monospace';
       let shown=o.text;
       if(o.charsShown!=null){ shown=o.text.slice(0, Math.max(0, Math.floor(o.charsShown))); }
       const words=(shown||'').split(' '); let line='', yy=inT+54;
@@ -39585,8 +39652,8 @@ function fontCapH(art){
    ⚠ AND IT IS A BRIGHT FACE OVER AN OPAQUE DARK DROP SHADOW — five palette colours, measured.
    That is exactly the construction CLAUDE.md records as costing three drops: a flat `source-atop`
    tint repaints the shadow the same colour as the face and the letterforms fill in (`ENTER` came
-   out `BNTBR`). So this face is drawn AS AUTHORED and is never flat-tinted; the colour is already
-   Mike's. Any future recolour must go through the `'color'` composite path, not an overlay.
+   out `BNTBR`). Untinted copy is drawn AS AUTHORED; requested dialogue colours go through the
+   existing `'color'` composite palette path so the face/shadow luminance survives.
 
    ⚠ REAL LOWERCASE. Every existing text path calls `.toUpperCase()` because the stage face is
    caps-only. The BMF path deliberately does NOT — sentence case is the reason this pack exists.
@@ -39631,21 +39698,22 @@ function bmfMeasure(k,text,H){
 }
 /* Draws with the line's TOP at yTop. `bounds_in_cell` is [x0,y0,x1,y1] inside the cell, so the
    glyph's own offsets place it — no baseline arithmetic at the call site, and no bottom-align. */
-function bmfDraw(k,text,x,yTop,H,alpha){
+function bmfDraw(k,text,x,yTop,H,alpha,tintC,tintA){
   if(!bmfReady(k)) return false;
   const r=BMF[k], m=r.map, s=bmfScale(k,H), sp=m.glyphs[' '];
   ctx.save();
   const _sm=ctx.imageSmoothingEnabled;
   ctx.imageSmoothingEnabled=false;              // the pack's own requirement: nearest, no mips
-  if(alpha!=null) ctx.globalAlpha=alpha;
+  if(alpha!=null && !tintC) ctx.globalAlpha=alpha;
   let pen=x;
   for(const ch of String(text)){
     const g=bmfGlyph(r,ch);
     if(g && g.sprite_rect && g.sprite_rect[2]>0){
       const q=g.sprite_rect, b=g.bounds_in_cell;
-      ctx.drawImage(r.img, q[0],q[1],q[2],q[3],
-        Math.round(pen+b[0]*s), Math.round(yTop+b[1]*s),
-        Math.max(1,Math.round(q[2]*s)), Math.max(1,Math.round(q[3]*s)));
+      const dx=Math.round(pen+b[0]*s), dy=Math.round(yTop+b[1]*s);
+      const dw=Math.max(1,Math.round(q[2]*s)), dh=Math.max(1,Math.round(q[3]*s));
+      if(tintC) drawFrameTinted(r.img, q, dx,dy,dw,dh,tintC,tintA,alpha);
+      else ctx.drawImage(r.img, q[0],q[1],q[2],q[3],dx,dy,dw,dh);
     }
     pen += ((g||sp) ? (g||sp).x_advance : 6)*s;
   }
@@ -39820,10 +39888,9 @@ function msgWrap(text, maxW, H, spacingMul){
 /* Draw in the authored face, LEFT-aligned at x. msgText centres on cx and there is no left
    variant, which is why panels that wanted a text column used canvas text instead. */
 function msgTextLeft(text,x,cy,H,tintC,tintA,alpha,spacingMul){
-  /* the authored face carries its own colour, so the tint is deliberately dropped here rather
-     than passed through — see the drop-shadow note at BMF_FACES. cy is a CENTRE, as every caller
-     expects; the BMF box is a line, so its top is half a line up. */
-  if(_msgFace && bmfDraw(_msgFace, text, x, cy-H/2, H, alpha)) return bmfMeasure(_msgFace,text,H);
+  /* cy is a CENTRE, as every caller expects; the BMF box is a line, so its top is half a line up.
+     Tint travels through bmfDraw's luminance-preserving palette swap — never a flat overlay. */
+  if(_msgFace && bmfDraw(_msgFace, text, x, cy-H/2, H, alpha,tintC,tintA)) return bmfMeasure(_msgFace,text,H);
   let w=msgMeasure(text,H,spacingMul);
   /* ⚠ msgMeasure RETURNS 0 WHEN THE GLYPH SHEET IS NOT UP — deliberately, it means "unknown", not
      "zero wide". Passing that through put the half-width at 0, and msgText CENTRES on what it is
@@ -40563,23 +40630,26 @@ function bg5Draw(dt){
 }
 
 /* ============================================================
-   STAGE 6 WEATHER — CF_StageBackgrounds-Lvl4-6 (Mike, 0819f)
+   STAGE 6 — ONE SKY, FIVE PALETTES (Mike, 0824)
 
-   "use the new weather system for stage 6 we have, delete the old one and old graphics."
+   The background itself never scrolls and the cloud never animates. Progress through the level
+   only changes palette, in the After Burner style Mike referenced:
 
-   The plate is a complete scroll that runs DAY -> DUSK -> STORM NIGHT -> the sewer approach, so
-   the weather is not a mood the stage picks once: it is a progression the stage travels through.
-   This drives every layer off the same scroll fraction the master is drawn from, which is what
-   keeps the rain arriving as the sky darkens rather than at some unrelated timer.
+      NIGHT -> DARK RAIN -> DUSK -> DAWN -> SUNLIGHT
 
-   Layer order is the pack's own:  cloud-bank -> weather-field -> celestial-or-lightning -> flash,
-   all of it UNDER gameplay, so no layer here can hide an enemy.
-
-   ⚠ REELS RUN OFF THEIR OWN CLOCK, NEVER performance.now(). 0811y and 0812g both record what the
-   wall clock does to a short reel — which frame you see depends on when it happened to start. The
-   bolt is a one-shot driven by its own timer and the cloud drift is a continuous phase.
+   Every transition is an eased cross-fade between tinted copies of the SAME nsky6_sky source and
+   the SAME clean bg6_cloud_day_0 cloud. None of the purple sunset/dawn cloud reels are used. Rain
+   and lightning exist only in the second, darkest interval; the sewer art exists only after this
+   level. All weather remains under gameplay so aircraft and bullets stay legible.
    ============================================================ */
-const BG6_CLOUD_FAMS = ['bg6_cloud_day','bg6_cloud_sunset','bg6_cloud_storm'];
+const BG6_CLOUD_KEY = 'bg6_cloud_day_0';
+const BG6_MOOD = [
+  {at:0.00, name:'night',    tint:'#07142f', amt:0.82},
+  {at:0.27, name:'storm',    tint:'#010611', amt:0.93},
+  {at:0.49, name:'dusk',     tint:'#713044', amt:0.62},
+  {at:0.72, name:'dawn',     tint:'#d17a59', amt:0.38},
+  {at:1.00, name:'sunlight', tint:'#d9f0ff', amt:0.10},
+];
 const BG6_BOLT_N = 8, BG6_FLASH_N = 4;
 const BG6_BOLT_FPS = 22, BG6_FLASH_FPS = 14;
 let _bg6T=0, _bg6Stage=-1, _bg6BoltT=-1, _bg6BoltGap=4.5, _bg6Moon=null;
@@ -40587,18 +40657,42 @@ let _bg6T=0, _bg6Stage=-1, _bg6BoltT=-1, _bg6BoltGap=4.5, _bg6Moon=null;
 function bg6Reset(){ _bg6T=0; _bg6Stage=-1; _bg6BoltT=-1; _bg6Moon=null; }
 
 function bg6Phase(){
-  /* the same 0..1 the master is windowed by, so sky and weather cannot drift apart */
-  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
-  let range=(cfg && cfg.scrollLen) ? cfg.scrollLen : 0;
-  /* drawLevelMaster derives a strip's travel from its decoded height. The weather used a stale
-     3400px estimate instead, so sunset, rain and lightning arrived at different terrain rows than
-     the authored Stage 6 strip. Use the exact same decoded range as the background renderer. */
-  if(!range && cfg && cfg.master && typeof XART!=='undefined'){
-    const mk=(typeof stageMasterKey==='function')?stageMasterKey(cfg):cfg.master;
-    if(XART.rdy(mk)) range=Math.max(1,(XART.get(mk).naturalHeight||VH)-VH);
+  /* The sky is fixed; the stage clock owns the complete night-to-day palette journey. */
+  const len=(typeof curStage!=='undefined' && curStage && curStage.length) ? curStage.length : 60;
+  return clamp((typeof stageTimer!=='undefined'?stageTimer:0)/Math.max(1,len), 0, 1);
+}
+
+function bg6StormStrength(){
+  const p=bg6Phase();
+  return clamp((p-0.11)/0.10,0,1) * clamp((0.48-p)/0.11,0,1);
+}
+
+function bg6Mood(p){
+  p=clamp(p,0,1);
+  let i=0;
+  while(i<BG6_MOOD.length-2 && p>BG6_MOOD[i+1].at) i++;
+  const a=BG6_MOOD[i], b=BG6_MOOD[Math.min(BG6_MOOD.length-1,i+1)];
+  let mix=clamp((p-a.at)/Math.max(0.0001,b.at-a.at),0,1);
+  mix=mix*mix*(3-2*mix);
+  return {a,b,mix};
+}
+
+function bg6MoodImage(key, mood, which){
+  const s=which?mood.b:mood.a;
+  return (typeof xartTint==='function' && xartTint(key,s.tint,s.amt)) || XART.get(key);
+}
+
+function bg6SkyBaseDraw(img, key, sy, winH, drawW, dstY){
+  const mood=bg6Mood(bg6Phase());
+  const a=bg6MoodImage(key,mood,0), b=bg6MoodImage(key,mood,1);
+  ctx.save();
+  ctx.globalAlpha=1-mood.mix;
+  ctx.drawImage(a,0,sy,drawW,winH,0,dstY,drawW,winH);
+  if(mood.mix>0){
+    ctx.globalAlpha=mood.mix;
+    ctx.drawImage(b,0,sy,drawW,winH,0,dstY,drawW,winH);
   }
-  if(!range) range=3400;             // only while the master is still decoding
-  return clamp((mapScroll||0)/Math.max(1,range), 0, 1);
+  ctx.restore();
 }
 
 function bg6Draw(dt){
@@ -40606,9 +40700,7 @@ function bg6Draw(dt){
   if(!(dt>=0)) dt=0;
   if(_bg6Stage!==run.stage){
     _bg6Stage=run.stage; _bg6T=0; _bg6BoltT=-1;
-    const moons=['bg6_moon_full','bg6_moon_red','bg6_moon_half_blue','bg6_moon_crescent_gold']
-                .filter(k=>XART.rdy(k));
-    _bg6Moon = moons.length ? moons[(Math.random()*moons.length)|0] : null;   // picked ONCE
+    _bg6Moon = XART.rdy('bg6_moon_full') ? 'bg6_moon_full' : null;
   }
   _bg6T+=dt;
   const p=bg6Phase();
@@ -40619,29 +40711,28 @@ function bg6Draw(dt){
     ctx.save(); ctx.globalAlpha=a; if(comp) ctx.globalCompositeOperation=comp;
     ctx.drawImage(XART.get(k), 0, top, W, hgt); ctx.restore(); };
 
-  /* ---- cloud bank: cross-fade day -> sunset -> storm across the run ---- */
-  const band=clamp(p*2, 0, 1.999);            // 0..1 day->sunset, 1..2 sunset->storm
-  const i0=Math.min(1,Math.floor(band)), mix=band-Math.floor(band);
-  const fi=Math.floor(_bg6T*1.1)%3;           // slow drift through each family's three plates
-  blit(BG6_CLOUD_FAMS[i0]+'_'+fi, 0.85*(1-mix));
-  blit(BG6_CLOUD_FAMS[Math.min(2,i0+1)]+'_'+fi, 0.85*mix);
+  /* ---- one fixed clean cloud, palette-swapped with the base sky ---- */
+  if(XART.rdy(BG6_CLOUD_KEY)){
+    const mood=bg6Mood(p);
+    const ca=bg6MoodImage(BG6_CLOUD_KEY,mood,0), cb=bg6MoodImage(BG6_CLOUD_KEY,mood,1);
+    const cloudA=0.64+0.08*p;
+    ctx.save(); ctx.globalAlpha=cloudA*(1-mood.mix);
+    ctx.drawImage(ca,0,top,W,hgt);
+    if(mood.mix>0){ ctx.globalAlpha=cloudA*mood.mix; ctx.drawImage(cb,0,top,W,hgt); }
+    ctx.restore();
+  }
 
-  /* ---- night sky: the moon and a star field, only while it is actually dark ---- */
-  const night=clamp((p-0.34)/0.30, 0, 1) * clamp((0.92-p)/0.18, 0, 1);
+  /* ---- night sky: present at the start, gone before dusk ---- */
+  const night=clamp((0.47-p)/0.16, 0, 1);
   if(night>0.02){
     if(_bg6Moon) blit(_bg6Moon, 0.9*night);
     blit('bg6_star_cluster', 0.55*night, 'lighter');
   }
 
-  /* ---- weather field: rain and wind arrive with the storm, and build ---- */
-  const wet=clamp((p-0.46)/0.22, 0, 1);
+  /* ---- rain arrives after the night opening, peaks at the darkest palette, then clears for dusk ---- */
+  const wet=bg6StormStrength();
   if(wet>0.02){
-    /* ⚠ RAIN AND WIND ARE BOTH BRIGHT STREAKS ON TRANSPARENT, SO THEY STACK. Rendered at the
-       pack's full strength with wind on 'lighter' they blew out into hard white bands across the
-       whole screen — three layers of white adding together. Rain carries the weather; wind is a
-       hint of direction UNDER it, on a normal blend, not an additive one. */
     blit(wet<0.55?'bg6_rain_light':(wet<0.85?'bg6_rain_heavy':'bg6_rain_turbulent'), 0.22+0.26*wet);
-    blit(wet<0.6?'bg6_wind_light':'bg6_wind_heavy', 0.06+0.10*wet);
   }
 
   /* ---- lightning: storm band only, a one-shot bolt then its flash ---- */
@@ -40656,7 +40747,7 @@ function bg6Draw(dt){
       if(ff<BG6_FLASH_N) blit('bg6_flash_'+ff, 0.30*(1-ff/BG6_FLASH_N), 'lighter');
       if(bf>=BG6_BOLT_N && ff>=BG6_FLASH_N) _bg6BoltT=-1;
     }
-  }
+  } else _bg6BoltT=-1;
 }
 function drawWorld(dt){
 
@@ -40691,7 +40782,7 @@ function drawWorld(dt){
   /* DAMAGE STATES RIDE ON TOP OF THE SPRITE (drop 0807f). Hooked at the loop rather than inside
      drawEnemy, because that function has a dozen early returns for sandtanks, drones, L6
      fighters and the zap flash — a unit taking any of those paths would silently never smoke. */
-  for(const e of enemies){ drawEnemy(e); try{ drawEnemyDamage(e, _lastDt||1/60); }catch(_de){} try{ drawLaserTell(e); }catch(_lt){} try{ drawChargeTell(e); }catch(_ct){} }
+  for(const e of enemies){ drawEnemy(e); try{ drawEnemyDamage(e, _lastDt||1/60); }catch(_de){} try{ drawLaserTell(e); }catch(_lt){} }
   try{ drawSmokeRings(); }catch(_sr){}
   try{ drawNavalFlashes(); }catch(_nf){}
   /* NO FADE-OUTS (drop 0806j). Mike: "stop fading them out. there should be no fade out effects
@@ -40785,6 +40876,7 @@ function drawWorld(dt){
      ============================================================ */
   drawWarning();
   drawMissileRushHUD();
+  drawHeavyTurretHUD();
   drawSpecialHUD();
   /* RADIO. Drawn last so it sits over the HUD, ducked automatically while a boss is alive so a
      line never competes with a bullet pattern (delivery rule 5). */
@@ -41667,8 +41759,8 @@ function drawFlyover(dt){
        CUT TO ANOTHER SCENE - it threw away the stage the player was standing on
        and substituted a scrolling liquid bed, or a starfield on stage 5, or a
        blue gradient on everything else. That is the "other scene".  Now it
-       redraws the REAL world, frozen, so the level you just beat is what you
-       are looking at as you leave it.
+       redraws the REAL world live, so the level you just beat is what you are
+       looking at as you leave it and its final effects keep resolving.
 
        FOLLOWED THE SHIP - sx lerped from wherever the player was to VW/2, so the
        ship slid sideways to centre itself on the way out. The player's x is now
@@ -41683,6 +41775,7 @@ function drawFlyover(dt){
      The exit is: accelerate up and out (eased, so it reads as a takeoff rather
      than a constant slide), then the screen fades to black, then STAGECLEAR. */
   flyoverT+=dt;
+  updateFlyoverLiveFx(dt);
   /* ⚠ THE FADE STARTED BEFORE THE SHIP LEFT (drop 0810f). FLY was 1.25 and DUR 2.0, while the
      beats below are a 1.35s HOVER followed by a 1.7s climb — so the screen began fading to black
      at 1.25s, while the ship was still HOVERING, and the state flipped to STAGECLEAR at 2.0s with
@@ -41835,6 +41928,29 @@ function drawFlyover(dt){
     ctx.fillRect(0,0,VW,VH);
   }
   if(flyoverT>DUR){ flyoverT=0; setState(GS.STAGECLEAR); }
+}
+/* FLYOVER is deliberately not PLAY, so updatePlay no longer advances any of
+   the final explosions, smoke or debris. Keep only the visual aftermath alive:
+   no controls, spawns, enemy attacks or collision run during the exit. */
+function updateFlyoverLiveFx(dt){
+  for(const ex of explosions){
+    ex.t+=dt; ex.r=lerp(0,ex.max,Math.min(1,ex.t/(ex.dur*0.4)));
+    if(ex.t>=ex.dur) ex.dead=true;
+  }
+  explosions=explosions.filter(ex=>!ex.dead);
+  for(const p of particles){
+    if(p._delay>0){ p._delay-=dt; continue; }
+    p.t+=dt; p.x+=(p.vx||0); p.y+=(p.vy||0);
+    if(p.grav) p.vy=(p.vy||0)+p.grav;
+    if(p.vx) p.vx*=0.98;
+    if(p.t>=p.life) p.dead=true;
+  }
+  particles=particles.filter(p=>!p.dead);
+  try{ updateSmokeTrails(dt); }catch(_st){}
+  try{ tickSmokeRings(dt); }catch(_sr){}
+  try{ tickNavalFlashes(dt); }catch(_nf){}
+  try{ tickBlastChains(dt); }catch(_bc){}
+  try{ updateShockRings(dt); }catch(_sh){}
 }
 /* STAGE CLEAR — arcade stats + rank */
 function stageTextMixed(prim, fb, text, cx, cy, H, fbTint, alpha, sm){
@@ -42693,6 +42809,55 @@ requestAnimationFrame(loop);
 window.addEventListener('keydown',()=>{ try{ Audio.init(); }catch(_){} },{once:true});
 window.addEventListener('pointerdown',()=>{ try{ Audio.init(); }catch(_){} },{once:true});
 
+/* ===== V3/V4 GENERATED COMBAT BANK =========================================== */
+if(window.BOFA && BOFA.sfx){
+  Object.assign(BOFA.sfx, {
+    machineGun:'assets/game/sounds/jet_machinegun_shot_01.wav',
+    heavyMachineGun:'assets/game/sounds/jet_machinegun_shot_03.wav',
+    enemyMachineGunLight:'assets/game/sounds/enemy_machine_shot_light.wav',
+    enemyMachineGunHeavy:'assets/game/sounds/enemy_machine_shot_heavy.wav',
+    enemyMachineGunBurst:'assets/game/sounds/enemy_machine_burst.wav',
+    coleSonicBoom:'assets/game/sounds/cole_sonic_boom.wav',
+    laserBeamStart:'assets/game/sounds/laser_beam_start.wav',
+    laserBeamLoop:'assets/game/sounds/laser_beam_loop.wav',
+    laserBeamEnd:'assets/game/sounds/laser_beam_end.wav',
+    flameThrowerStart:'assets/game/sounds/flamethrower_ignite.wav',
+    flameThrowerLoop:'assets/game/sounds/flamethrower_loop.wav',
+    flameThrowerEnd:'assets/game/sounds/flamethrower_release.wav',
+    iceBreathStart:'assets/game/sounds/ice_breath_start.wav',
+    iceBreathLoop:'assets/game/sounds/ice_breath_loop.wav',
+    iceBreathEnd:'assets/game/sounds/ice_breath_release.wav',
+    enemyPulseLaserBlue:'assets/game/sounds/enemy_pulse_laser_blue.wav',
+    enemyPulseLaserRed:'assets/game/sounds/enemy_pulse_laser_red.wav',
+    enemyPulseLaserAlien:'assets/game/sounds/enemy_pulse_laser_alien.wav',
+    enemyHeavyLaser:'assets/game/sounds/enemy_heavy_laser.wav',
+    enemyScatterLaser:'assets/game/sounds/enemy_scatter_laser.wav',
+    enemyFlameBolt:'assets/game/sounds/enemy_flame_bolt.wav',
+    enemyIceBolt:'assets/game/sounds/enemy_ice_bolt.wav',
+    enemyElectricBolt:'assets/game/sounds/enemy_electric_bolt.wav',
+    enemyRailCannon:'assets/game/sounds/enemy_rail_cannon.wav',
+    enemyBossCannon:'assets/game/sounds/enemy_boss_cannon.wav',
+    explosionAirSmall01:'assets/game/sounds/explosion_air_small_01.wav',
+    explosionAirSmall02:'assets/game/sounds/explosion_air_small_02.wav',
+    explosionAirMedium:'assets/game/sounds/explosion_air_medium.wav',
+    explosionAirLarge:'assets/game/sounds/explosion_air_large.wav',
+    explosionTankCookoff:'assets/game/sounds/explosion_tank_cookoff.wav',
+    explosionJetBreakup:'assets/game/sounds/explosion_jet_breakup.wav',
+    explosionFuelAir:'assets/game/sounds/explosion_fuel_air.wav',
+    explosionBossCore:'assets/game/sounds/explosion_boss_core.wav',
+    explosionPlasma:'assets/game/sounds/explosion_plasma.wav',
+    explosionElectrical:'assets/game/sounds/explosion_electrical.wav',
+    explosionIceBurst:'assets/game/sounds/explosion_ice_burst.wav',
+    explosionChain:'assets/game/sounds/explosion_chain_sequence.wav',
+    bossWeaponCharge:'assets/game/sounds/boss_weapon_charge.wav',
+    shieldHitLight:'assets/game/sounds/shield_hit_light.wav',
+    shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.wav',
+    shieldBreakCombat:'assets/game/sounds/shield_break_combat.wav',
+    debrisMetal:'assets/game/sounds/debris_scatter_metal.wav',
+    projectileRicochet:'assets/game/sounds/projectile_ricochet.wav'
+  });
+}
+
 /* ===== real-sample audio (samples + music), re-points Audio.SFX + startMusic ===== */
 const Snd=(function(){
   if(!window.BOFA||!window.Audio) return null;
@@ -42745,6 +42910,28 @@ const Snd=(function(){
        heavy release rather than a sustain, so it takes a gentler cut and keeps its top end. */
     arcFlameLoop: {g:0.58, lp:3400},
     lzStack: {g:0.72, lp:6200},
+    machineGun:          {g:0.48, min:0.045},
+    heavyMachineGun:     {g:0.58, min:0.050},
+    enemyMachineGunLight:{g:0.32, min:0.050},
+    enemyMachineGunHeavy:{g:0.40, min:0.060},
+    enemyMachineGunBurst:{g:0.34, min:0.48},
+    coleSonicBoom:       {g:0.72, min:0.16},
+    laserBeamStart:      {g:0.58, lp:5200},
+    laserBeamLoop:       {g:0.42, lp:4300},
+    laserBeamEnd:        {g:0.50, lp:5200},
+    flameThrowerStart:   {g:0.54, lp:3800},
+    flameThrowerLoop:    {g:0.48, lp:3400},
+    flameThrowerEnd:     {g:0.46, lp:3800},
+    iceBreathStart:      {g:0.52, lp:6800},
+    iceBreathLoop:       {g:0.44, lp:6200},
+    iceBreathEnd:        {g:0.48, lp:6800},
+    explosionAirSmall01: {g:0.54},
+    explosionAirSmall02: {g:0.54},
+    explosionAirMedium:  {g:0.56},
+    explosionAirLarge:   {g:0.52},
+    explosionFuelAir:    {g:0.48},
+    explosionBossCore:   {g:0.58},
+    explosionIceBurst:   {g:0.52},
   };
   A._ctx=null; A._nodes={}; A._bad={}; A._last={};
   A._audioCtx=function(){
@@ -42846,6 +43033,21 @@ if(Snd){
      does not exist. That is why "very few from the pack made it through".
      Driven off BOFA.sfx now, so registering a sound is all it takes. */
   for(const m in BOFA.sfx){ if(Audio.SFX){ Audio.SFX[m]=(function(n){ return function(){ Snd.play(n); }; })(m); } }
+  /* The expansion bank is a VARIATION bank. A small or large death should not replay one identical
+     file for an entire stage, so the two legacy engine handles now choose inside their own weight
+     class. Boss and frozen deaths keep dedicated, deterministic cues below. */
+  const _sfxVariantAt={};
+  const _sfxVariant=function(names,family,gap){
+    const t=(window.performance&&performance.now?performance.now():Date.now())/1000;
+    if(family && _sfxVariantAt[family]!=null && t-_sfxVariantAt[family]<(gap||0)) return;
+    if(family) _sfxVariantAt[family]=t;
+    const live=names.filter(function(n){ return !!Snd.pools[n]; });
+    if(live.length) Snd.play(live[(Math.random()*live.length)|0]);
+  };
+  Audio.SFX.expSmall=function(){ _sfxVariant(['explosionAirSmall01','explosionAirSmall02'],'small',0.045); };
+  Audio.SFX.expBig=function(){ _sfxVariant(['explosionAirMedium','explosionAirLarge','explosionFuelAir','explosionJetBreakup'],'big',0.11); };
+  Audio.SFX.expBoss=function(){ _sfxVariant(['explosionBossCore'],'boss',0.5); };
+  Audio.SFX.expIce=function(){ _sfxVariant(['explosionIceBurst'],'ice',0.08); };
   const _synthMusic=Audio.startMusic;
   Audio.startMusic=function(n){ if(Snd.music[n]){ Snd.startMusic(n); } else { try{Snd.stopMusic();}catch(e){} if(_synthMusic)_synthMusic(n); } };
   Audio.stopMusic=function(){ Snd.stopMusic(); };
