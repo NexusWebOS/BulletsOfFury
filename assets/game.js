@@ -5932,9 +5932,9 @@ let pwTimer=0, spTimer=6;
 /* ============================================================
    ENEMY ENERGY SHIELDS (Enemy Shield FX Vol.1, 0825b)
 
-   Six authored families, six deliberate ordinary-enemy loadouts. No boss or movement path is
-   changed here. Full fields sandwich the hull between back/front plates; directional deflectors
-   sit on the south-facing side of the unit, where this game's enemies face the player.
+   Six authored families, reserved for explicit miniboss/boss encounter wiring. Nothing in the
+   ordinary spawn roster equips one automatically. Full fields sandwich a hull between back/front
+   plates; directional deflectors sit on the south-facing side of the unit.
    ============================================================ */
 const ENEMY_SHIELD_FAMILY={
   ion:    {kind:'field', prefix:'nes_ion',    hit:0},
@@ -5944,19 +5944,12 @@ const ENEMY_SHIELD_FAMILY={
   gold:   {kind:'plate', prefix:'nes_gold',   hit:9},
   prism:  {kind:'plate', prefix:'nes_prism',  hit:9}
 };
-const ENEMY_SHIELD_LOADOUT={
-  carrier:{family:'crimson', energy:12},       // volcanic artillery carrier
-  shieldd:{family:'ion',     energy:4, drawScale:6.4}, // its displayed E1 hull is much larger than its legacy hitbox
-  hauler: {family:'violet',  energy:10},       // orbital heavy gunship
-  gunship:{family:'hex',     energy:4},
-  htank:  {family:'gold',    energy:6},
-  oracle: {family:'prism',   energy:6}
-};
-function enemyShieldInit(e){
-  if(!e || e._esh) return e&&e._esh;
-  const L=ENEMY_SHIELD_LOADOUT[e.type], F=L&&ENEMY_SHIELD_FAMILY[L.family];
-  if(!L||!F) return null;
-  e._esh={family:L.family, kind:F.kind, energy:L.energy, max:L.energy, drawScale:L.drawScale||0,
+const ENEMY_SHIELD_LOADOUT=Object.freeze({}); // explicit reservation: no rank-and-file assignments
+function enemyShieldEquip(e,family,energy,opt={}){
+  if(!e) return null;
+  const F=ENEMY_SHIELD_FAMILY[family]; if(!F) return null;
+  const cap=Math.max(1,Number(energy)||1);
+  e._esh={family, kind:F.kind, energy:cap, max:cap, drawScale:Number(opt.drawScale)||0,
           phase:'deploy', animT:0, hitT:0, sinceHit:99, breakT:0, impactCd:0};
   /* Touch every frame in this one family at spawn. The decode begins before the unit reaches the
      playfield, without putting all six shield volumes on the boot path. */
@@ -8564,7 +8557,6 @@ const SHIPS=[];
       else if(c.x<=_L && c.x+_half > _L-ENTRY_CLEAR)  c.x = _L - _half - ENTRY_CLEAR;
     }
   }
-  if(typeof enemyShieldInit==='function') enemyShieldInit(c);
   enemies.push(c);
   return c;
 }
@@ -9164,8 +9156,7 @@ function buildStagePlan(stageNum){
 
     // ---- MOVEMENT II: THE CARRIERS
     /* el_hd is one of the 25 culled elites (0801bl: every mbj_/el_ prefix resolves 0 of its parts).
-       'hauler' is stage 8's own live carrier and is already fielded two lines up, so the carrier
-       beat survives on art that exists rather than on a name that draws nothing. */
+       'hauler' is Stage 8's live carrier, so carrier beats use art that actually exists. */
     add(20.5,()=> spawnEnemy('hauler', W8*0.5, -60, {pattern:'straight'}));      // CARRIER (was el_hd, culled)
     add(23.0,()=> spawnEnemy('hell', W8*0.5, -60, {}));                         // ELITE 3
     add(25.5,()=> { spawnEnemy('octo', W8*0.24, -40, {pattern:'weave'});
@@ -9174,8 +9165,11 @@ function buildStagePlan(stageNum){
                     spawnEnemy('oracle', W8*0.60, -50, {}); });
     add(30.5,()=> aiWaveSplit('crescent', {}));
     add(33.0,()=> { spawnEnemy('talon', W8*0.24, -50, {}); spawnEnemy('talon', W8*0.76, -50, {}); });
+    /* `el_hd` is one of the quarantined multipart elites: its named parts resolve no drawable
+       hull, so the right-hand carrier existed, fired and collided while remaining invisible.
+       Mirror the live Void Hauler used for the left carrier; the pair now has intact art. */
     add(35.5,()=> { spawnEnemy('hauler', W8*0.28, -60, {pattern:'straight'});
-                    spawnEnemy('el_hd', W8*0.72, -60, {pattern:'straight'}); });
+                    spawnEnemy('hauler', W8*0.72, -60, {pattern:'straight'}); });
     add(38.0,()=> { spawnEnemy('hauler', W8*0.34, -60, {}); spawnEnemy('hauler', W8*0.66, -60, {}); });
 
     // ---- MOVEMENT III: ALL FOUR
@@ -9185,7 +9179,7 @@ function buildStagePlan(stageNum){
     add(45.0,()=> { spawnEnemy('cdisc', W8*0.30, -50, {}); spawnEnemy('hell', W8*0.70, -60, {}); });
     add(47.5,()=> { spawnEnemy('oracle', W8*0.22, -50, {}); spawnEnemy('oracle', W8*0.78, -50, {}); });
     add(50.0,()=> { spawnEnemy('spiral', W8*0.34, -60, {}); spawnEnemy('spiral', W8*0.66, -60, {}); });
-    add(52.5,()=> { spawnEnemy('el_hd', W8*0.5, -60, {pattern:'straight'});
+    add(52.5,()=> { spawnEnemy('hauler', W8*0.5, -60, {pattern:'straight'});
                     aiWaveSplit('crescent', {}); });
     add(55.0,()=> { spawnEnemy('talon', W8*0.20, -50, {}); spawnEnemy('cdisc', W8*0.50, -50, {});
                     spawnEnemy('hell', W8*0.80, -60, {}); });
@@ -16900,7 +16894,16 @@ function sepShift(e, dx){
    and refuse the correction if the new footprint is not drivable. */
 function sepShiftY(e, dy){
   if(!dy) return 0;
-  const ny=clamp(e.y+dy, -100, VH+100);
+  const vt=(typeof viewTopY==='function')?viewTopY():0;
+  const half=(e.h||0)*0.5;
+  const wasAbove=(e.y+half)<=vt;
+  const minY=vt-Math.max(160,(e.h||0)+((typeof ENTRY_CLEAR!=='undefined')?ENTRY_CLEAR:64));
+  let ny=clamp(e.y+dy, minY, VH+100);
+  /* Separation used to clamp every negative correction to y=-100. At fitted view the camera top
+     is about -90, so a 75px carrier parked safely above it was snapped DOWN until 27px of hull
+     appeared. An entrant that is still fully hidden may queue farther up, but separation cannot
+     be the system that crosses the reveal line. Its own movement remains responsible for entry. */
+  if(wasAbove) ny=Math.min(ny, vt-half-6);
   dy=ny-e.y; if(!dy) return 0;
   if(sepGrounded(e)){
     const src=(typeof levelSrcY==='function')?levelSrcY():0;
@@ -16928,6 +16931,8 @@ function enemySeparate(dt){
         const ox=(A.w+B.w)*0.5+SEP_GAP-Math.abs(dx), oy=(A.h+B.h)*0.5+SEP_GAP-Math.abs(dy);
         if(ox<=0 || oy<=0) continue;
         const bothAir = !sepGrounded(A) && !sepGrounded(B) && !A._naval && !B._naval;
+        const vt=(typeof viewTopY==='function')?viewTopY():0;
+        const eitherHidden=(A.y+(A.h||0)*0.5<=vt)||(B.y+(B.h||0)*0.5<=vt);
         const eitherNaval=!!(A._naval||B._naval||A.pattern==='naval'||B.pattern==='naval');
         /* an immovable partner does not halve the correction, it hands over the whole of it */
         const shA = movA ? (movB?0.5:1) : 0, shB = movB ? (movA?0.5:1) : 0;
@@ -16935,7 +16940,10 @@ function enemySeparate(dt){
            box test; shoving it sideways is the long way out of a shallow overlap and reads as the
            formation being blown apart. Only air units may take the Y exit — a tank or a boat's Y
            is its station in the world and its movement model is written against it. */
-        if((bothAir && oy<ox) || eitherNaval){
+        /* On the offscreen runway, split a stacked air column sideways. A fore/aft correction can
+           queue the upper craft, starve later waves behind the enemy cap, or push the lower craft
+           across the reveal line. Once both hulls are visible, shortest-axis separation resumes. */
+        if((bothAir && !eitherHidden && oy<ox) || eitherNaval){
           const vs=(dy===0) ? (((a+b)&1)?1:-1) : Math.sign(dy);
           const vp=Math.min(oy*SEP_GAIN, step);
           const mBy=movB?sepShiftY(B,vs*vp*shB):0, mAy=movA?sepShiftY(A,-vs*vp*shA):0;

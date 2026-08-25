@@ -15,13 +15,14 @@ async () => {
      their labelled grid while their lazily loaded shield frames settle. */
   window.__sepOff=true;
   const rows=[
-    ['carrier',280,145], ['shieldd',400,145], ['hauler',520,145],
-    ['gunship',280,300], ['htank',400,300], ['oracle',520,300]
+    ['carrier',280,145,'crimson',12], ['shieldd',400,145,'ion',4,6.4], ['hauler',520,145,'violet',10],
+    ['gunship',280,300,'hex',4], ['htank',400,300,'gold',6], ['oracle',520,300,'prism',6]
   ];
   rows.forEach((r,i)=>{
     const e=spawnEnemy(r[0],r[1],r[2],{inPlace:1});
     if(!e) return;
     e.x=r[1]; e.y=r[2]; e.vx=0; e.vy=0; e.pattern='straight'; e.shoots=false; e.fireCd=999;
+    enemyShieldEquip(e,r[3],r[4],{drawScale:r[5]||0});
     /* XART requests the 84 loose shield frames lazily.  The browser keeps the
        real rAF loop alive while those requests finish, so an ordinary unit can
        age out before the first capture.  Pin only these proof specimens. */
