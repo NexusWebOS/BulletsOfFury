@@ -1,0 +1,741 @@
+{
+  "format": "coleforge.enemy-shield-vfx.v1",
+  "asset": "Violet Phase Shell",
+  "shield_type": "force_field",
+  "source_key": "#00FFFF",
+  "runtime_alpha": "hard binary RGBA",
+  "palette": "violet, purple, fuchsia, lavender, white",
+  "gameplay_role": "omnidirectional phase absorption",
+  "frame_canvas": [
+    384,
+    384
+  ],
+  "atlas": "violet-phase-shell-atlas.png",
+  "atlas_grid": [
+    4,
+    2
+  ],
+  "frames": [
+    {
+      "name": "violet-phase-shell-01-phase-motes.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        125,
+        74,
+        150,
+        246
+      ],
+      "padding": {
+        "left": 125,
+        "top": 74,
+        "right": 109,
+        "bottom": 64
+      },
+      "opaque_pixels": 2879,
+      "index": 0,
+      "state": "phase-motes",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-02-segments-form.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        109,
+        70,
+        159,
+        251
+      ],
+      "padding": {
+        "left": 109,
+        "top": 70,
+        "right": 116,
+        "bottom": 63
+      },
+      "opaque_pixels": 10579,
+      "index": 1,
+      "state": "segments-form",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-03-shell-close.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        102,
+        71,
+        154,
+        250
+      ],
+      "padding": {
+        "left": 102,
+        "top": 71,
+        "right": 128,
+        "bottom": 63
+      },
+      "opaque_pixels": 13174,
+      "index": 2,
+      "state": "shell-close",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-04-stable-a.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        91,
+        70,
+        152,
+        252
+      ],
+      "padding": {
+        "left": 91,
+        "top": 70,
+        "right": 141,
+        "bottom": 62
+      },
+      "opaque_pixels": 14292,
+      "index": 3,
+      "state": "stable-a",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-05-stable-b.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        124,
+        47,
+        153,
+        257
+      ],
+      "padding": {
+        "left": 124,
+        "top": 47,
+        "right": 107,
+        "bottom": 80
+      },
+      "opaque_pixels": 17205,
+      "index": 4,
+      "state": "stable-b",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-06-hit-echo.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        100,
+        47,
+        178,
+        259
+      ],
+      "padding": {
+        "left": 100,
+        "top": 47,
+        "right": 106,
+        "bottom": 78
+      },
+      "opaque_pixels": 18481,
+      "index": 5,
+      "state": "hit-echo",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-07-phase-overload.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        97,
+        47,
+        161,
+        259
+      ],
+      "padding": {
+        "left": 97,
+        "top": 47,
+        "right": 126,
+        "bottom": 78
+      },
+      "opaque_pixels": 17104,
+      "index": 6,
+      "state": "phase-overload",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-08-implode.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        87,
+        47,
+        156,
+        259
+      ],
+      "padding": {
+        "left": 87,
+        "top": 47,
+        "right": 141,
+        "bottom": 78
+      },
+      "opaque_pixels": 4975,
+      "index": 7,
+      "state": "implode",
+      "origin": [
+        192,
+        192
+      ]
+    }
+  ],
+  "animations": {
+    "deploy": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_ms": [
+        80,
+        80,
+        90,
+        110
+      ],
+      "loop": false
+    },
+    "hold": {
+      "indices": [
+        3,
+        4,
+        3,
+        4
+      ],
+      "frame_ms": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": true
+    },
+    "collapse": {
+      "indices": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "frame_ms": [
+        70,
+        70,
+        70,
+        70,
+        90
+      ],
+      "loop": false
+    },
+    "impact": {
+      "indices": [
+        3,
+        5,
+        3,
+        4
+      ],
+      "frame_ms": [
+        45,
+        85,
+        55,
+        85
+      ],
+      "loop": false
+    },
+    "overload": {
+      "indices": [
+        3,
+        6,
+        7
+      ],
+      "frame_ms": [
+        70,
+        110,
+        120
+      ],
+      "loop": false
+    }
+  },
+  "draw": {
+    "origin": [
+      192,
+      192
+    ],
+    "order": [
+      "shield_back",
+      "enemy",
+      "shield_front",
+      "impact_vfx"
+    ],
+    "back_atlas": "violet-phase-shell-back-atlas.png",
+    "front_atlas": "violet-phase-shell-front-atlas.png",
+    "split_y": 192,
+    "full_atlas_usage": "collision preview or single-layer fallback"
+  },
+  "back_frames": [
+    {
+      "name": "violet-phase-shell-back-01-phase-motes.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        125,
+        74,
+        150,
+        118
+      ],
+      "padding": {
+        "left": 125,
+        "top": 74,
+        "right": 109,
+        "bottom": 192
+      },
+      "opaque_pixels": 1267,
+      "index": 0,
+      "state": "phase-motes",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-back-02-segments-form.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        109,
+        70,
+        157,
+        122
+      ],
+      "padding": {
+        "left": 109,
+        "top": 70,
+        "right": 118,
+        "bottom": 192
+      },
+      "opaque_pixels": 4944,
+      "index": 1,
+      "state": "segments-form",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-back-03-shell-close.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        102,
+        71,
+        152,
+        121
+      ],
+      "padding": {
+        "left": 102,
+        "top": 71,
+        "right": 130,
+        "bottom": 192
+      },
+      "opaque_pixels": 6284,
+      "index": 2,
+      "state": "shell-close",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-back-04-stable-a.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        91,
+        70,
+        151,
+        122
+      ],
+      "padding": {
+        "left": 91,
+        "top": 70,
+        "right": 142,
+        "bottom": 192
+      },
+      "opaque_pixels": 6715,
+      "index": 3,
+      "state": "stable-a",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-back-05-stable-b.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        124,
+        47,
+        153,
+        145
+      ],
+      "padding": {
+        "left": 124,
+        "top": 47,
+        "right": 107,
+        "bottom": 192
+      },
+      "opaque_pixels": 9569,
+      "index": 4,
+      "state": "stable-b",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-back-06-hit-echo.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        100,
+        47,
+        178,
+        145
+      ],
+      "padding": {
+        "left": 100,
+        "top": 47,
+        "right": 106,
+        "bottom": 192
+      },
+      "opaque_pixels": 10287,
+      "index": 5,
+      "state": "hit-echo",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-back-07-phase-overload.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        97,
+        47,
+        161,
+        145
+      ],
+      "padding": {
+        "left": 97,
+        "top": 47,
+        "right": 126,
+        "bottom": 192
+      },
+      "opaque_pixels": 9574,
+      "index": 6,
+      "state": "phase-overload",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-back-08-implode.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        87,
+        47,
+        156,
+        145
+      ],
+      "padding": {
+        "left": 87,
+        "top": 47,
+        "right": 141,
+        "bottom": 192
+      },
+      "opaque_pixels": 2844,
+      "index": 7,
+      "state": "implode",
+      "origin": [
+        192,
+        192
+      ]
+    }
+  ],
+  "front_frames": [
+    {
+      "name": "violet-phase-shell-front-01-phase-motes.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        129,
+        192,
+        145,
+        128
+      ],
+      "padding": {
+        "left": 129,
+        "top": 192,
+        "right": 110,
+        "bottom": 64
+      },
+      "opaque_pixels": 1612,
+      "index": 0,
+      "state": "phase-motes",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-front-02-segments-form.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        112,
+        192,
+        156,
+        129
+      ],
+      "padding": {
+        "left": 112,
+        "top": 192,
+        "right": 116,
+        "bottom": 63
+      },
+      "opaque_pixels": 5635,
+      "index": 1,
+      "state": "segments-form",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-front-03-shell-close.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        102,
+        192,
+        154,
+        129
+      ],
+      "padding": {
+        "left": 102,
+        "top": 192,
+        "right": 128,
+        "bottom": 63
+      },
+      "opaque_pixels": 6890,
+      "index": 2,
+      "state": "shell-close",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-front-04-stable-a.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        91,
+        192,
+        152,
+        130
+      ],
+      "padding": {
+        "left": 91,
+        "top": 192,
+        "right": 141,
+        "bottom": 62
+      },
+      "opaque_pixels": 7577,
+      "index": 3,
+      "state": "stable-a",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-front-05-stable-b.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        125,
+        192,
+        152,
+        112
+      ],
+      "padding": {
+        "left": 125,
+        "top": 192,
+        "right": 107,
+        "bottom": 80
+      },
+      "opaque_pixels": 7636,
+      "index": 4,
+      "state": "stable-b",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-front-06-hit-echo.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        104,
+        192,
+        170,
+        114
+      ],
+      "padding": {
+        "left": 104,
+        "top": 192,
+        "right": 110,
+        "bottom": 78
+      },
+      "opaque_pixels": 8194,
+      "index": 5,
+      "state": "hit-echo",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-front-07-phase-overload.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        97,
+        192,
+        161,
+        114
+      ],
+      "padding": {
+        "left": 97,
+        "top": 192,
+        "right": 126,
+        "bottom": 78
+      },
+      "opaque_pixels": 7530,
+      "index": 6,
+      "state": "phase-overload",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "violet-phase-shell-front-08-implode.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        91,
+        192,
+        152,
+        114
+      ],
+      "padding": {
+        "left": 91,
+        "top": 192,
+        "right": 141,
+        "bottom": 78
+      },
+      "opaque_pixels": 2131,
+      "index": 7,
+      "state": "implode",
+      "origin": [
+        192,
+        192
+      ]
+    }
+  ]
+}

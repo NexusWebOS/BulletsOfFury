@@ -1,0 +1,741 @@
+{
+  "format": "coleforge.enemy-shield-vfx.v1",
+  "asset": "Crimson Plasma Field",
+  "shield_type": "force_field",
+  "source_key": "#00FFFF",
+  "runtime_alpha": "hard binary RGBA",
+  "palette": "crimson, scarlet, orange, amber, white",
+  "gameplay_role": "high-durability plasma absorption",
+  "frame_canvas": [
+    384,
+    384
+  ],
+  "atlas": "crimson-plasma-field-atlas.png",
+  "atlas_grid": [
+    4,
+    2
+  ],
+  "frames": [
+    {
+      "name": "crimson-plasma-field-01-red-sparks.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        125,
+        86,
+        151,
+        228
+      ],
+      "padding": {
+        "left": 125,
+        "top": 86,
+        "right": 108,
+        "bottom": 70
+      },
+      "opaque_pixels": 2478,
+      "index": 0,
+      "state": "red-sparks",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-02-lower-arc.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        117,
+        85,
+        148,
+        232
+      ],
+      "padding": {
+        "left": 117,
+        "top": 85,
+        "right": 119,
+        "bottom": 67
+      },
+      "opaque_pixels": 6307,
+      "index": 1,
+      "state": "lower-arc",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-03-facets-close.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        108,
+        84,
+        153,
+        238
+      ],
+      "padding": {
+        "left": 108,
+        "top": 84,
+        "right": 123,
+        "bottom": 62
+      },
+      "opaque_pixels": 11253,
+      "index": 2,
+      "state": "facets-close",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-04-stable-a.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        105,
+        84,
+        154,
+        238
+      ],
+      "padding": {
+        "left": 105,
+        "top": 84,
+        "right": 125,
+        "bottom": 62
+      },
+      "opaque_pixels": 12563,
+      "index": 3,
+      "state": "stable-a",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-05-stable-b.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        126,
+        28,
+        157,
+        239
+      ],
+      "padding": {
+        "left": 126,
+        "top": 28,
+        "right": 101,
+        "bottom": 117
+      },
+      "opaque_pixels": 13152,
+      "index": 4,
+      "state": "stable-b",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-06-hit-ripple.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        107,
+        33,
+        175,
+        229
+      ],
+      "padding": {
+        "left": 107,
+        "top": 33,
+        "right": 102,
+        "bottom": 122
+      },
+      "opaque_pixels": 13691,
+      "index": 5,
+      "state": "hit-ripple",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-07-overload-cracks.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        111,
+        31,
+        148,
+        235
+      ],
+      "padding": {
+        "left": 111,
+        "top": 31,
+        "right": 125,
+        "bottom": 118
+      },
+      "opaque_pixels": 15685,
+      "index": 6,
+      "state": "overload-cracks",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-08-ember-collapse.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        102,
+        35,
+        147,
+        221
+      ],
+      "padding": {
+        "left": 102,
+        "top": 35,
+        "right": 135,
+        "bottom": 128
+      },
+      "opaque_pixels": 3390,
+      "index": 7,
+      "state": "ember-collapse",
+      "origin": [
+        192,
+        192
+      ]
+    }
+  ],
+  "animations": {
+    "deploy": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_ms": [
+        80,
+        80,
+        90,
+        110
+      ],
+      "loop": false
+    },
+    "hold": {
+      "indices": [
+        3,
+        4,
+        3,
+        4
+      ],
+      "frame_ms": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": true
+    },
+    "collapse": {
+      "indices": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "frame_ms": [
+        70,
+        70,
+        70,
+        70,
+        90
+      ],
+      "loop": false
+    },
+    "impact": {
+      "indices": [
+        3,
+        5,
+        3,
+        4
+      ],
+      "frame_ms": [
+        45,
+        85,
+        55,
+        85
+      ],
+      "loop": false
+    },
+    "overload": {
+      "indices": [
+        3,
+        6,
+        7
+      ],
+      "frame_ms": [
+        70,
+        110,
+        120
+      ],
+      "loop": false
+    }
+  },
+  "draw": {
+    "origin": [
+      192,
+      192
+    ],
+    "order": [
+      "shield_back",
+      "enemy",
+      "shield_front",
+      "impact_vfx"
+    ],
+    "back_atlas": "crimson-plasma-field-back-atlas.png",
+    "front_atlas": "crimson-plasma-field-front-atlas.png",
+    "split_y": 192,
+    "full_atlas_usage": "collision preview or single-layer fallback"
+  },
+  "back_frames": [
+    {
+      "name": "crimson-plasma-field-back-01-red-sparks.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        135,
+        86,
+        139,
+        106
+      ],
+      "padding": {
+        "left": 135,
+        "top": 86,
+        "right": 110,
+        "bottom": 192
+      },
+      "opaque_pixels": 1097,
+      "index": 0,
+      "state": "red-sparks",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-back-02-lower-arc.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        122,
+        85,
+        139,
+        107
+      ],
+      "padding": {
+        "left": 122,
+        "top": 85,
+        "right": 123,
+        "bottom": 192
+      },
+      "opaque_pixels": 1858,
+      "index": 1,
+      "state": "lower-arc",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-back-03-facets-close.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        117,
+        84,
+        144,
+        108
+      ],
+      "padding": {
+        "left": 117,
+        "top": 84,
+        "right": 123,
+        "bottom": 192
+      },
+      "opaque_pixels": 5131,
+      "index": 2,
+      "state": "facets-close",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-back-04-stable-a.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        113,
+        84,
+        146,
+        108
+      ],
+      "padding": {
+        "left": 113,
+        "top": 84,
+        "right": 125,
+        "bottom": 192
+      },
+      "opaque_pixels": 5785,
+      "index": 3,
+      "state": "stable-a",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-back-05-stable-b.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        126,
+        28,
+        157,
+        164
+      ],
+      "padding": {
+        "left": 126,
+        "top": 28,
+        "right": 101,
+        "bottom": 192
+      },
+      "opaque_pixels": 9100,
+      "index": 4,
+      "state": "stable-b",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-back-06-hit-ripple.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        107,
+        33,
+        175,
+        159
+      ],
+      "padding": {
+        "left": 107,
+        "top": 33,
+        "right": 102,
+        "bottom": 192
+      },
+      "opaque_pixels": 10007,
+      "index": 5,
+      "state": "hit-ripple",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-back-07-overload-cracks.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        111,
+        31,
+        148,
+        161
+      ],
+      "padding": {
+        "left": 111,
+        "top": 31,
+        "right": 125,
+        "bottom": 192
+      },
+      "opaque_pixels": 10816,
+      "index": 6,
+      "state": "overload-cracks",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-back-08-ember-collapse.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        102,
+        35,
+        147,
+        157
+      ],
+      "padding": {
+        "left": 102,
+        "top": 35,
+        "right": 135,
+        "bottom": 192
+      },
+      "opaque_pixels": 2383,
+      "index": 7,
+      "state": "ember-collapse",
+      "origin": [
+        192,
+        192
+      ]
+    }
+  ],
+  "front_frames": [
+    {
+      "name": "crimson-plasma-field-front-01-red-sparks.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        125,
+        192,
+        151,
+        122
+      ],
+      "padding": {
+        "left": 125,
+        "top": 192,
+        "right": 108,
+        "bottom": 70
+      },
+      "opaque_pixels": 1381,
+      "index": 0,
+      "state": "red-sparks",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-front-02-lower-arc.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        117,
+        192,
+        148,
+        125
+      ],
+      "padding": {
+        "left": 117,
+        "top": 192,
+        "right": 119,
+        "bottom": 67
+      },
+      "opaque_pixels": 4449,
+      "index": 1,
+      "state": "lower-arc",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-front-03-facets-close.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        108,
+        192,
+        151,
+        130
+      ],
+      "padding": {
+        "left": 108,
+        "top": 192,
+        "right": 125,
+        "bottom": 62
+      },
+      "opaque_pixels": 6122,
+      "index": 2,
+      "state": "facets-close",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-front-04-stable-a.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        105,
+        192,
+        151,
+        130
+      ],
+      "padding": {
+        "left": 105,
+        "top": 192,
+        "right": 128,
+        "bottom": 62
+      },
+      "opaque_pixels": 6778,
+      "index": 3,
+      "state": "stable-a",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-front-05-stable-b.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        143,
+        192,
+        131,
+        75
+      ],
+      "padding": {
+        "left": 143,
+        "top": 192,
+        "right": 110,
+        "bottom": 117
+      },
+      "opaque_pixels": 4052,
+      "index": 4,
+      "state": "stable-b",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-front-06-hit-ripple.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        118,
+        192,
+        149,
+        70
+      ],
+      "padding": {
+        "left": 118,
+        "top": 192,
+        "right": 117,
+        "bottom": 122
+      },
+      "opaque_pixels": 3684,
+      "index": 5,
+      "state": "hit-ripple",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-front-07-overload-cracks.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        122,
+        192,
+        129,
+        74
+      ],
+      "padding": {
+        "left": 122,
+        "top": 192,
+        "right": 133,
+        "bottom": 118
+      },
+      "opaque_pixels": 4869,
+      "index": 6,
+      "state": "overload-cracks",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "crimson-plasma-field-front-08-ember-collapse.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        109,
+        192,
+        124,
+        64
+      ],
+      "padding": {
+        "left": 109,
+        "top": 192,
+        "right": 151,
+        "bottom": 128
+      },
+      "opaque_pixels": 1007,
+      "index": 7,
+      "state": "ember-collapse",
+      "origin": [
+        192,
+        192
+      ]
+    }
+  ]
+}

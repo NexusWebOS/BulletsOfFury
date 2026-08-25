@@ -1,0 +1,23 @@
+{
+  "format": "coleforge.vfx-pack-manifest.v1",
+  "pack": "CF_EnemyShieldFX-Vol.1",
+  "families": [
+    "ion-bubble",
+    "crimson-plasma-field",
+    "violet-phase-shell",
+    "forward-hex-deflector",
+    "gold-kinetic-mirror",
+    "alien-prism-deflector"
+  ],
+  "force_field_families": 3,
+  "directional_deflector_families": 3,
+  "shield_state_frames": 48,
+  "detached_impact_frames": 12,
+  "source_key_policy": {
+    "teal": "#008080",
+    "cyan": "#00FFFF",
+    "selection_rule": "chosen per palette to protect effect colors"
+  },
+  "runtime": "hard binary RGBA",
+  "entrypoint": "Edited/enemy-shield-behaviors.json"
+}

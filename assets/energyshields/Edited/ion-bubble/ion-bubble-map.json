@@ -1,0 +1,741 @@
+{
+  "format": "coleforge.enemy-shield-vfx.v1",
+  "asset": "Ion Bubble",
+  "shield_type": "force_field",
+  "source_key": "#008080",
+  "runtime_alpha": "hard binary RGBA",
+  "palette": "blue, cyan, ice white, indigo",
+  "gameplay_role": "omnidirectional energy absorption",
+  "frame_canvas": [
+    384,
+    384
+  ],
+  "atlas": "ion-bubble-atlas.png",
+  "atlas_grid": [
+    4,
+    2
+  ],
+  "frames": [
+    {
+      "name": "ion-bubble-01-charge-motes.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        119,
+        65,
+        140,
+        258
+      ],
+      "padding": {
+        "left": 119,
+        "top": 65,
+        "right": 125,
+        "bottom": 61
+      },
+      "opaque_pixels": 420,
+      "index": 0,
+      "state": "charge-motes",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-02-arcs-form.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        90,
+        65,
+        218,
+        257
+      ],
+      "padding": {
+        "left": 90,
+        "top": 65,
+        "right": 76,
+        "bottom": 62
+      },
+      "opaque_pixels": 3721,
+      "index": 1,
+      "state": "arcs-form",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-03-shell-close.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        76,
+        60,
+        231,
+        271
+      ],
+      "padding": {
+        "left": 76,
+        "top": 60,
+        "right": 77,
+        "bottom": 53
+      },
+      "opaque_pixels": 6166,
+      "index": 2,
+      "state": "shell-close",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-04-stable-a.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        76,
+        60,
+        178,
+        270
+      ],
+      "padding": {
+        "left": 76,
+        "top": 60,
+        "right": 130,
+        "bottom": 54
+      },
+      "opaque_pixels": 10681,
+      "index": 3,
+      "state": "stable-a",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-05-stable-b.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        107,
+        43,
+        176,
+        254
+      ],
+      "padding": {
+        "left": 107,
+        "top": 43,
+        "right": 101,
+        "bottom": 87
+      },
+      "opaque_pixels": 10930,
+      "index": 4,
+      "state": "stable-b",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-06-hit-ripple.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        91,
+        42,
+        173,
+        255
+      ],
+      "padding": {
+        "left": 91,
+        "top": 42,
+        "right": 120,
+        "bottom": 87
+      },
+      "opaque_pixels": 9784,
+      "index": 5,
+      "state": "hit-ripple",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-07-overload-cracks.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        81,
+        41,
+        188,
+        263
+      ],
+      "padding": {
+        "left": 81,
+        "top": 41,
+        "right": 115,
+        "bottom": 80
+      },
+      "opaque_pixels": 9612,
+      "index": 6,
+      "state": "overload-cracks",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-08-collapse.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        88,
+        34,
+        174,
+        274
+      ],
+      "padding": {
+        "left": 88,
+        "top": 34,
+        "right": 122,
+        "bottom": 76
+      },
+      "opaque_pixels": 1843,
+      "index": 7,
+      "state": "collapse",
+      "origin": [
+        192,
+        192
+      ]
+    }
+  ],
+  "animations": {
+    "deploy": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_ms": [
+        80,
+        80,
+        90,
+        110
+      ],
+      "loop": false
+    },
+    "hold": {
+      "indices": [
+        3,
+        4,
+        3,
+        4
+      ],
+      "frame_ms": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": true
+    },
+    "collapse": {
+      "indices": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "frame_ms": [
+        70,
+        70,
+        70,
+        70,
+        90
+      ],
+      "loop": false
+    },
+    "impact": {
+      "indices": [
+        3,
+        5,
+        3,
+        4
+      ],
+      "frame_ms": [
+        45,
+        85,
+        55,
+        85
+      ],
+      "loop": false
+    },
+    "overload": {
+      "indices": [
+        3,
+        6,
+        7
+      ],
+      "frame_ms": [
+        70,
+        110,
+        120
+      ],
+      "loop": false
+    }
+  },
+  "draw": {
+    "origin": [
+      192,
+      192
+    ],
+    "order": [
+      "shield_back",
+      "enemy",
+      "shield_front",
+      "impact_vfx"
+    ],
+    "back_atlas": "ion-bubble-back-atlas.png",
+    "front_atlas": "ion-bubble-front-atlas.png",
+    "split_y": 192,
+    "full_atlas_usage": "collision preview or single-layer fallback"
+  },
+  "back_frames": [
+    {
+      "name": "ion-bubble-back-01-charge-motes.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        119,
+        65,
+        135,
+        127
+      ],
+      "padding": {
+        "left": 119,
+        "top": 65,
+        "right": 130,
+        "bottom": 192
+      },
+      "opaque_pixels": 176,
+      "index": 0,
+      "state": "charge-motes",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-back-02-arcs-form.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        92,
+        65,
+        149,
+        123
+      ],
+      "padding": {
+        "left": 92,
+        "top": 65,
+        "right": 143,
+        "bottom": 196
+      },
+      "opaque_pixels": 1921,
+      "index": 1,
+      "state": "arcs-form",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-back-03-shell-close.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        77,
+        60,
+        163,
+        132
+      ],
+      "padding": {
+        "left": 77,
+        "top": 60,
+        "right": 144,
+        "bottom": 192
+      },
+      "opaque_pixels": 3010,
+      "index": 2,
+      "state": "shell-close",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-back-04-stable-a.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        76,
+        60,
+        171,
+        132
+      ],
+      "padding": {
+        "left": 76,
+        "top": 60,
+        "right": 137,
+        "bottom": 192
+      },
+      "opaque_pixels": 4880,
+      "index": 3,
+      "state": "stable-a",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-back-05-stable-b.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        107,
+        43,
+        176,
+        149
+      ],
+      "padding": {
+        "left": 107,
+        "top": 43,
+        "right": 101,
+        "bottom": 192
+      },
+      "opaque_pixels": 6460,
+      "index": 4,
+      "state": "stable-b",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-back-06-hit-ripple.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        91,
+        42,
+        173,
+        150
+      ],
+      "padding": {
+        "left": 91,
+        "top": 42,
+        "right": 120,
+        "bottom": 192
+      },
+      "opaque_pixels": 5881,
+      "index": 5,
+      "state": "hit-ripple",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-back-07-overload-cracks.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        81,
+        41,
+        188,
+        151
+      ],
+      "padding": {
+        "left": 81,
+        "top": 41,
+        "right": 115,
+        "bottom": 192
+      },
+      "opaque_pixels": 5644,
+      "index": 6,
+      "state": "overload-cracks",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-back-08-collapse.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        88,
+        34,
+        174,
+        156
+      ],
+      "padding": {
+        "left": 88,
+        "top": 34,
+        "right": 122,
+        "bottom": 194
+      },
+      "opaque_pixels": 1072,
+      "index": 7,
+      "state": "collapse",
+      "origin": [
+        192,
+        192
+      ]
+    }
+  ],
+  "front_frames": [
+    {
+      "name": "ion-bubble-front-01-charge-motes.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        122,
+        192,
+        137,
+        131
+      ],
+      "padding": {
+        "left": 122,
+        "top": 192,
+        "right": 125,
+        "bottom": 61
+      },
+      "opaque_pixels": 244,
+      "index": 0,
+      "state": "charge-motes",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-front-02-arcs-form.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        90,
+        195,
+        218,
+        127
+      ],
+      "padding": {
+        "left": 90,
+        "top": 195,
+        "right": 76,
+        "bottom": 62
+      },
+      "opaque_pixels": 1800,
+      "index": 1,
+      "state": "arcs-form",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-front-03-shell-close.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        76,
+        192,
+        231,
+        139
+      ],
+      "padding": {
+        "left": 76,
+        "top": 192,
+        "right": 77,
+        "bottom": 53
+      },
+      "opaque_pixels": 3156,
+      "index": 2,
+      "state": "shell-close",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-front-04-stable-a.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        76,
+        192,
+        178,
+        138
+      ],
+      "padding": {
+        "left": 76,
+        "top": 192,
+        "right": 130,
+        "bottom": 54
+      },
+      "opaque_pixels": 5801,
+      "index": 3,
+      "state": "stable-a",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-front-05-stable-b.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        120,
+        192,
+        152,
+        105
+      ],
+      "padding": {
+        "left": 120,
+        "top": 192,
+        "right": 112,
+        "bottom": 87
+      },
+      "opaque_pixels": 4470,
+      "index": 4,
+      "state": "stable-b",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-front-06-hit-ripple.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        107,
+        192,
+        152,
+        105
+      ],
+      "padding": {
+        "left": 107,
+        "top": 192,
+        "right": 125,
+        "bottom": 87
+      },
+      "opaque_pixels": 3903,
+      "index": 5,
+      "state": "hit-ripple",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-front-07-overload-cracks.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        89,
+        192,
+        157,
+        112
+      ],
+      "padding": {
+        "left": 89,
+        "top": 192,
+        "right": 138,
+        "bottom": 80
+      },
+      "opaque_pixels": 3968,
+      "index": 6,
+      "state": "overload-cracks",
+      "origin": [
+        192,
+        192
+      ]
+    },
+    {
+      "name": "ion-bubble-front-08-collapse.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        91,
+        193,
+        164,
+        115
+      ],
+      "padding": {
+        "left": 91,
+        "top": 193,
+        "right": 129,
+        "bottom": 76
+      },
+      "opaque_pixels": 771,
+      "index": 7,
+      "state": "collapse",
+      "origin": [
+        192,
+        192
+      ]
+    }
+  ]
+}

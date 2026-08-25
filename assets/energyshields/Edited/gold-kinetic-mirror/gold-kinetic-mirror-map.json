@@ -1,0 +1,314 @@
+{
+  "format": "coleforge.enemy-shield-vfx.v1",
+  "asset": "Gold Kinetic Mirror",
+  "shield_type": "directional_deflector",
+  "source_key": "#00FFFF",
+  "runtime_alpha": "hard binary RGBA",
+  "palette": "gold, amber, orange, ivory",
+  "gameplay_role": "front-arc kinetic reflection",
+  "frame_canvas": [
+    384,
+    384
+  ],
+  "atlas": "gold-kinetic-mirror-atlas.png",
+  "atlas_grid": [
+    4,
+    2
+  ],
+  "frames": [
+    {
+      "name": "gold-kinetic-mirror-01-gold-spark.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        174,
+        36,
+        36,
+        98
+      ],
+      "padding": {
+        "left": 174,
+        "top": 36,
+        "right": 174,
+        "bottom": 250
+      },
+      "opaque_pixels": 629,
+      "index": 0,
+      "state": "gold-spark",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "gold-kinetic-mirror-02-narrow-plate.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        172,
+        36,
+        40,
+        207
+      ],
+      "padding": {
+        "left": 172,
+        "top": 36,
+        "right": 172,
+        "bottom": 141
+      },
+      "opaque_pixels": 5348,
+      "index": 1,
+      "state": "narrow-plate",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "gold-kinetic-mirror-03-plate-expand.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        79,
+        36,
+        227,
+        224
+      ],
+      "padding": {
+        "left": 79,
+        "top": 36,
+        "right": 78,
+        "bottom": 124
+      },
+      "opaque_pixels": 19195,
+      "index": 2,
+      "state": "plate-expand",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "gold-kinetic-mirror-04-full-mirror.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        92,
+        36,
+        200,
+        223
+      ],
+      "padding": {
+        "left": 92,
+        "top": 36,
+        "right": 92,
+        "bottom": 125
+      },
+      "opaque_pixels": 30182,
+      "index": 3,
+      "state": "full-mirror",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "gold-kinetic-mirror-05-catch.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        92,
+        36,
+        201,
+        228
+      ],
+      "padding": {
+        "left": 92,
+        "top": 36,
+        "right": 91,
+        "bottom": 120
+      },
+      "opaque_pixels": 29787,
+      "index": 4,
+      "state": "catch",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "gold-kinetic-mirror-06-ricochet.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        85,
+        36,
+        215,
+        229
+      ],
+      "padding": {
+        "left": 85,
+        "top": 36,
+        "right": 84,
+        "bottom": 119
+      },
+      "opaque_pixels": 30267,
+      "index": 5,
+      "state": "ricochet",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "gold-kinetic-mirror-07-recovery.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        96,
+        36,
+        192,
+        228
+      ],
+      "padding": {
+        "left": 96,
+        "top": 36,
+        "right": 96,
+        "bottom": 120
+      },
+      "opaque_pixels": 28380,
+      "index": 6,
+      "state": "recovery",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "gold-kinetic-mirror-08-gold-dust.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        95,
+        36,
+        194,
+        225
+      ],
+      "padding": {
+        "left": 95,
+        "top": 36,
+        "right": 95,
+        "bottom": 123
+      },
+      "opaque_pixels": 3823,
+      "index": 7,
+      "state": "gold-dust",
+      "origin": [
+        192,
+        36
+      ]
+    }
+  ],
+  "animations": {
+    "deploy": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_ms": [
+        80,
+        80,
+        90,
+        110
+      ],
+      "loop": false
+    },
+    "hold": {
+      "indices": [
+        3,
+        4,
+        3,
+        4
+      ],
+      "frame_ms": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": true
+    },
+    "collapse": {
+      "indices": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "frame_ms": [
+        70,
+        70,
+        70,
+        70,
+        90
+      ],
+      "loop": false
+    },
+    "deflect": {
+      "indices": [
+        3,
+        4,
+        5,
+        6,
+        3
+      ],
+      "frame_ms": [
+        45,
+        55,
+        70,
+        65,
+        80
+      ],
+      "loop": false
+    },
+    "fade": {
+      "indices": [
+        6,
+        7
+      ],
+      "frame_ms": [
+        80,
+        110
+      ],
+      "loop": false
+    }
+  },
+  "draw": {
+    "pivot": [
+      192,
+      36
+    ],
+    "layer": "above_enemy_below_detached_impact",
+    "facing": "down",
+    "rotate_with_enemy": true
+  }
+}

@@ -1,0 +1,314 @@
+{
+  "format": "coleforge.enemy-shield-vfx.v1",
+  "asset": "Alien Prism Deflector",
+  "shield_type": "directional_deflector",
+  "source_key": "#00FFFF",
+  "runtime_alpha": "hard binary RGBA",
+  "palette": "emerald, lime, celadon, violet, white",
+  "gameplay_role": "front-arc split reflection",
+  "frame_canvas": [
+    384,
+    384
+  ],
+  "atlas": "alien-prism-deflector-atlas.png",
+  "atlas_grid": [
+    4,
+    2
+  ],
+  "frames": [
+    {
+      "name": "alien-prism-deflector-01-green-mote.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        147,
+        36,
+        91,
+        204
+      ],
+      "padding": {
+        "left": 147,
+        "top": 36,
+        "right": 146,
+        "bottom": 144
+      },
+      "opaque_pixels": 6619,
+      "index": 0,
+      "state": "green-mote",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "alien-prism-deflector-02-single-prism.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        130,
+        36,
+        124,
+        218
+      ],
+      "padding": {
+        "left": 130,
+        "top": 36,
+        "right": 130,
+        "bottom": 130
+      },
+      "opaque_pixels": 8419,
+      "index": 1,
+      "state": "single-prism",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "alien-prism-deflector-03-prisms-form.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        87,
+        36,
+        211,
+        227
+      ],
+      "padding": {
+        "left": 87,
+        "top": 36,
+        "right": 86,
+        "bottom": 121
+      },
+      "opaque_pixels": 9682,
+      "index": 2,
+      "state": "prisms-form",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "alien-prism-deflector-04-full-fan.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        93,
+        36,
+        198,
+        248
+      ],
+      "padding": {
+        "left": 93,
+        "top": 36,
+        "right": 93,
+        "bottom": 100
+      },
+      "opaque_pixels": 12829,
+      "index": 3,
+      "state": "full-fan",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "alien-prism-deflector-05-catch.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        100,
+        36,
+        185,
+        242
+      ],
+      "padding": {
+        "left": 100,
+        "top": 36,
+        "right": 99,
+        "bottom": 106
+      },
+      "opaque_pixels": 12016,
+      "index": 4,
+      "state": "catch",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "alien-prism-deflector-06-split-ricochet.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        104,
+        36,
+        176,
+        233
+      ],
+      "padding": {
+        "left": 104,
+        "top": 36,
+        "right": 104,
+        "bottom": 115
+      },
+      "opaque_pixels": 10254,
+      "index": 5,
+      "state": "split-ricochet",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "alien-prism-deflector-07-reseal.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        145,
+        36,
+        94,
+        200
+      ],
+      "padding": {
+        "left": 145,
+        "top": 36,
+        "right": 145,
+        "bottom": 148
+      },
+      "opaque_pixels": 6791,
+      "index": 6,
+      "state": "reseal",
+      "origin": [
+        192,
+        36
+      ]
+    },
+    {
+      "name": "alien-prism-deflector-08-shard-residue.png",
+      "canvas": [
+        384,
+        384
+      ],
+      "bbox": [
+        145,
+        36,
+        94,
+        198
+      ],
+      "padding": {
+        "left": 145,
+        "top": 36,
+        "right": 145,
+        "bottom": 150
+      },
+      "opaque_pixels": 6609,
+      "index": 7,
+      "state": "shard-residue",
+      "origin": [
+        192,
+        36
+      ]
+    }
+  ],
+  "animations": {
+    "deploy": {
+      "indices": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "frame_ms": [
+        80,
+        80,
+        90,
+        110
+      ],
+      "loop": false
+    },
+    "hold": {
+      "indices": [
+        3,
+        4,
+        3,
+        4
+      ],
+      "frame_ms": [
+        100,
+        100,
+        100,
+        100
+      ],
+      "loop": true
+    },
+    "collapse": {
+      "indices": [
+        4,
+        3,
+        2,
+        1,
+        0
+      ],
+      "frame_ms": [
+        70,
+        70,
+        70,
+        70,
+        90
+      ],
+      "loop": false
+    },
+    "deflect": {
+      "indices": [
+        3,
+        4,
+        5,
+        6,
+        3
+      ],
+      "frame_ms": [
+        45,
+        55,
+        70,
+        65,
+        80
+      ],
+      "loop": false
+    },
+    "fade": {
+      "indices": [
+        6,
+        7
+      ],
+      "frame_ms": [
+        80,
+        110
+      ],
+      "loop": false
+    }
+  },
+  "draw": {
+    "pivot": [
+      192,
+      36
+    ],
+    "layer": "above_enemy_below_detached_impact",
+    "facing": "down",
+    "rotate_with_enemy": true
+  }
+}
