@@ -1,0 +1,83 @@
+{
+  "format": "coleforge.enemy-defense-behaviors.v1",
+  "asset": "Enemy Shield FX Volume 1",
+  "target_viewport": [
+    640,
+    480
+  ],
+  "force_field_defaults": {
+    "coverage": "omnidirectional",
+    "energy_max": 100,
+    "energy_regen_per_second": 7,
+    "regen_delay_after_hit_ms": 900,
+    "break_lockout_ms": 1400,
+    "on_hit_animation": "impact",
+    "on_break_animation": "overload",
+    "draw_order": [
+      "shield_back",
+      "enemy",
+      "shield_front",
+      "impact_vfx"
+    ]
+  },
+  "directional_deflector_defaults": {
+    "coverage_arc_degrees": 110,
+    "facing": "enemy_forward",
+    "eligible_projectiles": [
+      "bullets",
+      "orbs",
+      "small_lasers"
+    ],
+    "missiles": "detonate_on_contact_unless_enemy_override_allows_reflection",
+    "beam_weapons": "block_damage_but_do_not reflect continuous beams",
+    "reflection_speed_multiplier": 0.88,
+    "reflection_formula": "v_reflected = v - 2 * dot(v, normal) * normal",
+    "impact_cooldown_ms": 55,
+    "on_deflect_animation": "deflect"
+  },
+  "families": [
+    {
+      "id": "ion-bubble",
+      "type": "force_field",
+      "map": "../ion-bubble/ion-bubble-map.json",
+      "impact_animation": "cyan"
+    },
+    {
+      "id": "crimson-plasma-field",
+      "type": "force_field",
+      "map": "../crimson-plasma-field/crimson-plasma-field-map.json",
+      "impact_animation": "crimson"
+    },
+    {
+      "id": "violet-phase-shell",
+      "type": "force_field",
+      "map": "../violet-phase-shell/violet-phase-shell-map.json",
+      "impact_animation": "violet"
+    },
+    {
+      "id": "forward-hex-deflector",
+      "type": "directional_deflector",
+      "map": "../forward-hex-deflector/forward-hex-deflector-map.json",
+      "impact_animation": "cyan"
+    },
+    {
+      "id": "gold-kinetic-mirror",
+      "type": "directional_deflector",
+      "map": "../gold-kinetic-mirror/gold-kinetic-mirror-map.json",
+      "impact_animation": "green_gold"
+    },
+    {
+      "id": "alien-prism-deflector",
+      "type": "directional_deflector",
+      "map": "../alien-prism-deflector/alien-prism-deflector-map.json",
+      "impact_animation": "green_gold"
+    }
+  ],
+  "detached_impact_map": "../shield-impact-ricochets/shield-impact-ricochets-map.json",
+  "implementation_notes": [
+    "Force fields use registered back and front atlases so enemies render inside the shell.",
+    "Directional deflectors rotate with enemy facing and evaluate only hits inside the forward coverage arc.",
+    "Spawn detached impact VFX at the actual collision point and rotate ricochet streaks to the reflected velocity.",
+    "Tune energy, arc, and reflection eligibility per enemy without changing the art."
+  ]
+}

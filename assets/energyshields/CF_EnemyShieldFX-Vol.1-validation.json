@@ -1,0 +1,126 @@
+{
+  "png_files": 128,
+  "json_files": 9,
+  "binary_alpha": true,
+  "zero_hidden_rgb": true,
+  "blockers": [],
+  "warnings": [],
+  "pack": "CF_EnemyShieldFX-Vol.1",
+  "source_audits": {
+    "ion-bubble": {
+      "source": "exec-a1a08598-09c5-472a-bc1c-95513ad48255.png",
+      "width": 1402,
+      "height": 1122,
+      "requested_key": "teal",
+      "normalized_key_rgb": [
+        0,
+        128,
+        128
+      ],
+      "background_pixels": 1451019,
+      "foreground_pixels": 122025,
+      "background_fraction": 0.922427,
+      "connected_components_examined": 963,
+      "edge_defringe_repairs": 13601
+    },
+    "crimson-plasma-field": {
+      "source": "exec-39422faa-c116-47e2-b6b4-5c7dd1c0c2d6.png",
+      "width": 1402,
+      "height": 1122,
+      "requested_key": "cyan",
+      "normalized_key_rgb": [
+        0,
+        255,
+        255
+      ],
+      "background_pixels": 1392686,
+      "foreground_pixels": 180358,
+      "background_fraction": 0.885345,
+      "connected_components_examined": 34,
+      "edge_defringe_repairs": 2550
+    },
+    "violet-phase-shell": {
+      "source": "exec-6c8166de-28c6-4597-8286-dc412edd7aab.png",
+      "width": 1402,
+      "height": 1122,
+      "requested_key": "cyan",
+      "normalized_key_rgb": [
+        0,
+        255,
+        255
+      ],
+      "background_pixels": 1346959,
+      "foreground_pixels": 226085,
+      "background_fraction": 0.856275,
+      "connected_components_examined": 80,
+      "edge_defringe_repairs": 3627
+    },
+    "forward-hex-deflector": {
+      "source": "exec-5a7cfcdb-1d2a-45ed-ab77-90b69624f70c.png",
+      "width": 1402,
+      "height": 1122,
+      "requested_key": "teal",
+      "normalized_key_rgb": [
+        0,
+        128,
+        128
+      ],
+      "background_pixels": 1422693,
+      "foreground_pixels": 150351,
+      "background_fraction": 0.90442,
+      "connected_components_examined": 732,
+      "edge_defringe_repairs": 4364
+    },
+    "gold-kinetic-mirror": {
+      "source": "exec-e2ef2a46-099c-4537-b17d-5967e81e6360.png",
+      "width": 1449,
+      "height": 1085,
+      "requested_key": "cyan",
+      "normalized_key_rgb": [
+        0,
+        255,
+        255
+      ],
+      "background_pixels": 1233508,
+      "foreground_pixels": 338657,
+      "background_fraction": 0.784592,
+      "connected_components_examined": 5,
+      "edge_defringe_repairs": 1268
+    },
+    "alien-prism-deflector": {
+      "source": "exec-a0ad2ee9-483d-4829-aaca-547b863b2e3d.png",
+      "width": 1402,
+      "height": 1122,
+      "requested_key": "cyan",
+      "normalized_key_rgb": [
+        0,
+        255,
+        255
+      ],
+      "background_pixels": 1405078,
+      "foreground_pixels": 167966,
+      "background_fraction": 0.893222,
+      "connected_components_examined": 649,
+      "edge_defringe_repairs": 2364
+    },
+    "shield-impact-ricochets": {
+      "source": "exec-53811ed7-1377-4bd3-8d60-84615c049fc7.png",
+      "width": 1254,
+      "height": 1254,
+      "requested_key": "teal",
+      "normalized_key_rgb": [
+        0,
+        128,
+        128
+      ],
+      "background_pixels": 1456683,
+      "foreground_pixels": 115833,
+      "background_fraction": 0.926339,
+      "connected_components_examined": 147,
+      "edge_defringe_repairs": 5212
+    }
+  },
+  "shield_state_frames": 48,
+  "detached_impact_frames": 12,
+  "force_field_back_front_registration": true
+}
