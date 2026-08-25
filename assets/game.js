@@ -1693,6 +1693,34 @@ const XART=(function(){
   /* The supplied official BONUS STAGE card. Keep this registration beside the other code-owned
      assets so regenerating manifest.js cannot silently replace it with the text fallback again. */
   X._src['scard_9'] = 'assets/game/bonus_stage_card.png';
+  /* ENEMY SHIELD FX VOL.1 (0825b). The complete source pack stays under assets/energyshields;
+     only the loose authored runtime frames are registered here. manifest.js is generated. */
+  {
+    const R='assets/energyshields/Edited/';
+    const put=(k,p)=>{ X._src[k]=R+p; };
+    const fields=[
+      ['ion','ion-bubble',['charge-motes','arcs-form','shell-close','stable-a','stable-b','hit-ripple','overload-cracks','collapse']],
+      ['crimson','crimson-plasma-field',['red-sparks','lower-arc','facets-close','stable-a','stable-b','hit-ripple','overload-cracks','ember-collapse']],
+      ['violet','violet-phase-shell',['phase-motes','segments-form','shell-close','stable-a','stable-b','hit-echo','phase-overload','implode']]
+    ];
+    for(const F of fields){
+      for(let i=0;i<8;i++){
+        const n=String(i+1).padStart(2,'0')+'-'+F[2][i]+'.png';
+        put('nes_'+F[0]+'_b_'+i,F[1]+'/'+F[1]+'-back-'+n);
+        put('nes_'+F[0]+'_f_'+i,F[1]+'/'+F[1]+'-front-'+n);
+      }
+    }
+    const plates=[
+      ['hex','forward-hex-deflector',['ignition','hex-pair','half-wall','full-wall','catch','ricochet','recovery','scan-fade']],
+      ['gold','gold-kinetic-mirror',['gold-spark','narrow-plate','plate-expand','full-mirror','catch','ricochet','recovery','gold-dust']],
+      ['prism','alien-prism-deflector',['green-mote','single-prism','prisms-form','full-fan','catch','split-ricochet','reseal','shard-residue']]
+    ];
+    for(const F of plates) for(let i=0;i<8;i++)
+      put('nes_'+F[0]+'_'+i,F[1]+'/'+F[1]+'-'+String(i+1).padStart(2,'0')+'-'+F[2][i]+'.png');
+    const hits=['cyan-contact','cyan-spread','cyan-ricochet','crimson-contact','crimson-spread','crimson-ricochet',
+                'violet-contact','violet-split','violet-ricochet','green-gold-contact','green-gold-split','green-gold-ricochet'];
+    for(let i=0;i<hits.length;i++) put('nes_hit_'+i,'shield-impact-ricochets/shield-impact-ricochets-'+String(i+1).padStart(2,'0')+'-'+hits[i]+'.png');
+  }
   /* get() MUST NEVER HAND drawImage A NULL (drop 0724dq).
      Mike is seeing THOUSANDS of draw errors mentioning HTMLImageElement. That is this:
          ctx.drawImage(XART.get(k), ...)   with k missing or not yet decoded
@@ -5886,9 +5914,11 @@ const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','IC
 let stageStats={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0,
                 mslHits:0, spShots:0, spHits:0, spDmg:0};
 let _dmgSrc=null;                  // 'missile' | 'special' | null, for the frame of a damage call
+let _dmgBullet=null;               // the live player round, for directional enemy deflectors
 
 /* entity pools */
 let pBullets=[], eBullets=[], enemies=[], powerups=[], explosions=[], particles=[], floaters=[], decals=[], sprAnims=[], fadeOuts=[], pilotFx=[];
+let enemyShieldFx=[];
 /* PLAYER IMPACT FX (drop 0809m). Declared HERE with the other pools, deliberately: this is
    provably top-level, whereas anything declared further down can land inside spawnEnemy's
    never-closed if-block and be re-initialised on every spawn - which is what silently emptied
@@ -5898,6 +5928,149 @@ let pImpacts=[];
 let boss=null;
 let shake=0, flashScreen=0, bombFlash=0, whiteBlast=0;
 let pwTimer=0, spTimer=6;
+
+/* ============================================================
+   ENEMY ENERGY SHIELDS (Enemy Shield FX Vol.1, 0825b)
+
+   Six authored families, six deliberate ordinary-enemy loadouts. No boss or movement path is
+   changed here. Full fields sandwich the hull between back/front plates; directional deflectors
+   sit on the south-facing side of the unit, where this game's enemies face the player.
+   ============================================================ */
+const ENEMY_SHIELD_FAMILY={
+  ion:    {kind:'field', prefix:'nes_ion',    hit:0},
+  crimson:{kind:'field', prefix:'nes_crimson',hit:3},
+  violet: {kind:'field', prefix:'nes_violet', hit:6},
+  hex:    {kind:'plate', prefix:'nes_hex',    hit:0},
+  gold:   {kind:'plate', prefix:'nes_gold',   hit:9},
+  prism:  {kind:'plate', prefix:'nes_prism',  hit:9}
+};
+const ENEMY_SHIELD_LOADOUT={
+  carrier:{family:'crimson', energy:12},       // volcanic artillery carrier
+  shieldd:{family:'ion',     energy:4, drawScale:6.4}, // its displayed E1 hull is much larger than its legacy hitbox
+  hauler: {family:'violet',  energy:10},       // orbital heavy gunship
+  gunship:{family:'hex',     energy:4},
+  htank:  {family:'gold',    energy:6},
+  oracle: {family:'prism',   energy:6}
+};
+function enemyShieldInit(e){
+  if(!e || e._esh) return e&&e._esh;
+  const L=ENEMY_SHIELD_LOADOUT[e.type], F=L&&ENEMY_SHIELD_FAMILY[L.family];
+  if(!L||!F) return null;
+  e._esh={family:L.family, kind:F.kind, energy:L.energy, max:L.energy, drawScale:L.drawScale||0,
+          phase:'deploy', animT:0, hitT:0, sinceHit:99, breakT:0, impactCd:0};
+  /* Touch every frame in this one family at spawn. The decode begins before the unit reaches the
+     playfield, without putting all six shield volumes on the boot path. */
+  if(typeof XART!=='undefined' && XART._touch){
+    for(let i=0;i<8;i++){
+      if(F.kind==='field'){ XART._touch(F.prefix+'_b_'+i); XART._touch(F.prefix+'_f_'+i); }
+      else XART._touch(F.prefix+'_'+i);
+    }
+    for(let i=0;i<3;i++) XART._touch('nes_hit_'+(F.hit+i));
+  }
+  return e._esh;
+}
+function enemyShieldTick(e,dt){
+  const s=e&&e._esh; if(!s||e._dyingT!=null) return;
+  s.animT+=dt; s.sinceHit+=dt;
+  if(s.hitT>0) s.hitT=Math.max(0,s.hitT-dt);
+  if(s.impactCd>0) s.impactCd=Math.max(0,s.impactCd-dt);
+  if(s.phase==='deploy'){
+    if(s.animT>=0.34){ s.phase='active'; s.animT=0; }
+    return;
+  }
+  if(s.phase==='broken'){
+    s.breakT-=dt;
+    if(s.breakT<=0){ s.energy=Math.max(1,s.max*0.45); s.phase='deploy'; s.animT=0; }
+    return;
+  }
+  if(s.sinceHit>=0.9 && s.energy<s.max) s.energy=Math.min(s.max,s.energy+s.max*0.07*dt);
+}
+function enemyShieldFrame(s){
+  if(s.phase==='deploy') return Math.min(3,Math.floor(s.animT/0.085));
+  if(s.phase==='broken') return s.animT<0.13?6:(s.animT<0.28?7:-1);
+  if(s.hitT>0){
+    if(s.kind==='field') return 5;
+    const p=1-s.hitT/0.18; return p<0.34?4:(p<0.68?5:6);
+  }
+  return s.kind==='field' ? (3+(Math.floor(s.animT*8)&1)) : 3;
+}
+function enemyShieldFacing(e){
+  /* All six initial loadouts use upright south-facing art. Their movement may curve or roll, but
+     none of those hull renderers rotates the nose away from the player. */
+  return Math.PI/2;
+}
+function enemyShieldInArc(e,b){
+  if(!b) return false;
+  const facing=enemyShieldFacing(e), at=Math.atan2(b.y-e.y,b.x-e.x);
+  const d=Math.atan2(Math.sin(at-facing),Math.cos(at-facing));
+  return Math.abs(d)<=55*Math.PI/180;
+}
+function enemyShieldReflectable(b){
+  if(!b || b.dead || b.pierce) return false;
+  return b.kind==='mg'||b.kind==='spread'||b.kind==='shard'||b.kind==='lzslug'||b.kind==='flaser';
+}
+function enemyShieldImpact(e,b,F,reflected){
+  const a=enemyShieldFacing(e), x=b&&isFinite(b.x)?b.x:e.x+Math.cos(a)*(e.w||30)*0.55,
+        y=b&&isFinite(b.y)?b.y:e.y+Math.sin(a)*(e.h||30)*0.55;
+  enemyShieldFx.push({x,y,t:0,dur:0.20,base:F.hit,ang:reflected&&b?Math.atan2(b.vy,b.vx):a});
+}
+function enemyShieldIntercept(e,dmg,b){
+  const s=e&&e._esh; if(!s || s.phase!=='active' || s.energy<=0) return false;
+  if(b && b._shieldIgnore===e && b._shieldIgnoreT>0) return false;
+  if(s.kind==='plate' && !enemyShieldInArc(e,b)) return false;
+  const F=ENEMY_SHIELD_FAMILY[s.family];
+  let reflected=false;
+  if(s.kind==='plate' && enemyShieldReflectable(b)){
+    const a=enemyShieldFacing(e), nx=Math.cos(a), ny=Math.sin(a), dot=b.vx*nx+b.vy*ny;
+    b.vx=(b.vx-2*dot*nx)*0.88; b.vy=(b.vy-2*dot*ny)*0.88;
+    b.ang=Math.atan2(b.vy,b.vx); b._enemyReflected=1; b._shieldReflected=1;
+    b._shieldIgnore=e; b._shieldIgnoreT=0.16;
+    const gap=(e.h||30)*0.58+(b.h||10)*0.5+3;
+    b.x=e.x+nx*gap; b.y=e.y+ny*gap;
+    reflected=true;
+  }
+  s.energy=Math.max(0,s.energy-Math.max(0,dmg||0));
+  s.sinceHit=0; s.hitT=0.18; s.animT=0;
+  if(s.impactCd<=0){ enemyShieldImpact(e,b,F,reflected); s.impactCd=0.055; }
+  if(reflected){
+    if(Audio.SFX.projectileRicochet) Audio.SFX.projectileRicochet(); else if(Audio.SFX.shieldHitLight) Audio.SFX.shieldHitLight();
+  } else if(Audio.SFX.shieldHitLight) Audio.SFX.shieldHitLight();
+  if(s.energy<=0){
+    s.phase='broken'; s.breakT=1.4; s.animT=0; s.hitT=0;
+    if(Audio.SFX.shieldBreakCombat) Audio.SFX.shieldBreakCombat();
+  }
+  return true;
+}
+function drawEnemyShieldLayer(e,front){
+  const s=e&&e._esh; if(!s||e._dyingT!=null) return;
+  const fi=enemyShieldFrame(s); if(fi<0) return;
+  const F=ENEMY_SHIELD_FAMILY[s.family]; if(!F||typeof XART==='undefined') return;
+  if(F.kind==='field'){
+    const k=F.prefix+'_'+(front?'f':'b')+'_'+fi; if(!XART.rdy(k)) return;
+    const z=Math.max(e.w||30,e.h||30)*(s.drawScale||2.55);
+    ctx.drawImage(XART.get(k),e.x-z/2,e.y-z/2,z,z);
+  } else if(front){
+    const k=F.prefix+'_'+fi; if(!XART.rdy(k)) return;
+    const z=Math.max(e.w||30,e.h||30)*2.9, a=enemyShieldFacing(e)-Math.PI/2;
+    ctx.save(); ctx.translate(e.x,e.y+(e.h||30)*0.12); ctx.rotate(a);
+    ctx.drawImage(XART.get(k),-z/2,-z*(36/384),z,z); ctx.restore();
+  }
+}
+function drawEnemyShieldBack(e){ drawEnemyShieldLayer(e,false); }
+function drawEnemyShieldFront(e){ drawEnemyShieldLayer(e,true); }
+function enemyShieldFxUpdate(dt){
+  for(const f of enemyShieldFx) f.t+=dt;
+  enemyShieldFx=enemyShieldFx.filter(f=>f.t<f.dur);
+}
+function enemyShieldFxDraw(){
+  if(typeof XART==='undefined') return;
+  for(const f of enemyShieldFx){
+    const fi=Math.min(2,Math.floor(f.t/f.dur*3)), k='nes_hit_'+(f.base+fi); if(!XART.rdy(k)) continue;
+    const z=58, alpha=clamp(1-f.t/f.dur,0,1);
+    ctx.save(); ctx.translate(f.x,f.y); ctx.rotate(f.ang-Math.PI/2); ctx.globalAlpha=alpha;
+    ctx.drawImage(XART.get(k),-z/2,-z/2,z,z); ctx.restore();
+  }
+}
 
 /* ============================================================
    PLAYER
@@ -8391,6 +8564,7 @@ const SHIPS=[];
       else if(c.x<=_L && c.x+_half > _L-ENTRY_CLEAR)  c.x = _L - _half - ENTRY_CLEAR;
     }
   }
+  if(typeof enemyShieldInit==='function') enemyShieldInit(c);
   enemies.push(c);
   return c;
 }
@@ -16481,7 +16655,7 @@ function beginStage(num){
   if(typeof l6GMissiles!=='undefined') l6GMissiles.length=0;
   l6Objs=[];   /* the stage-6 weather reset went with the old system (0819f) */
   camX=0; WORLD_W=worldWidth();   // reset camera state: stage-1's 800px h-scroll camX must never leak into other stages (broke the stage-2 level display)
-  enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0;
+  enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0; enemyShieldFx.length=0;
   explosions.length=0; particles.length=0; floaters.length=0; boss=null;
   if(typeof scorches!=='undefined') scorches.length=0;   // burns belong to the stage that made them
   _groundSrcPrev=null; _groundDy=0;                      // a new stage starts at a different srcY
@@ -16541,7 +16715,7 @@ function beginStage(num){
 function coleSceneApply(num){
   const want=_coleScene; _coleScene=0;
   try{
-    enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0;
+    enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0; enemyShieldFx.length=0;
     subBossDone=true; subBossTriggered=true; subBossActive=false; subBoss=null;
     stageTimer=9999; spawnClock=9999;            // the wave script is already spent
     if(typeof waveIdx!=='undefined') waveIdx=999;
@@ -17149,6 +17323,7 @@ function updatePlay(dt){
   for(const e of enemies){
     if(_tslow) continue;
     e.t+=dt;
+    if(typeof enemyShieldTick==='function') enemyShieldTick(e,dt);
     if(e._dr && typeof droneTick==='function'){ droneTick(e, dt); }   // arsenal drone: hover, bank, glow, fire
     /* ⚠ AND STOCK ENEMIES GET THE ARC TOO (drop 0810f). Mike: "find out why enemies are appearing
        on stage 1 out of thin air instead of flying in."
@@ -17851,6 +18026,13 @@ function updatePlay(dt){
   const _SPECIAL_KINDS={atom:1,venomx:1,colefuse:1,helix:1,hxspiral:1,chain:1,orb:1,firray:1,sonic:1,roller:1};
   for(const b of pBullets){
     _dmgSrc = (b.kind==='missile') ? 'missile' : (_SPECIAL_KINDS[b.kind] ? 'special' : null);
+    _dmgBullet=b;
+    if(b._shieldIgnoreT>0){ b._shieldIgnoreT-=dt; if(b._shieldIgnoreT<=0) b._shieldIgnore=null; }
+    /* A reflected player round stays visually identical, but becomes hostile on its return trip. */
+    if(b._enemyReflected && !b.dead && !player.dead && player.invuln<=0 &&
+       Math.abs(b.x-player.x)<((b.w||6)/2+(player.w||24)/2) && Math.abs(b.y-player.y)<((b.h||10)/2+(player.h||30)/2)){
+      playerHit(); b.dead=true; continue;
+    }
     if(b.kind==='hxspiral'){
       /* CORKSCREW + SEEK. The angle turns every frame, which is the spiral, and a
          gentle pull toward the nearest enemy makes them read as homing rather
@@ -18373,6 +18555,13 @@ function updatePlay(dt){
        dkshot's t; it has sat at 0 since the pellet was written. */
     if(b.kind==='dkshot'){ b.t=(b.t||0)+dt; }
     if(b.anim!=null) b.anim+=dt;
+    /* Once a directional plate turns a round around, it belongs to the enemy. Keep the original
+       player art, but do not let it strike another enemy or a boss on its way back down. */
+    if(b._enemyReflected){
+      const _rw=(typeof worldWidth==='function')?worldWidth():VW;
+      if(b.y>VH+50||b.y<-50||b.x<-50||b.x>_rw+50) b.dead=true;
+      continue;
+    }
     const pierce=!!b.pierce;
     // collide enemies
     for(const e of enemies){
@@ -18383,7 +18572,12 @@ function updatePlay(dt){
           if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg); if(typeof stageStats!=='undefined')stageStats.hits++; b._hit.push(e);
             if(chance(0.6)) particles.push({x:b.x,y:e.y,vx:0,vy:0,life:0.12,t:0,r:b.kind==='fire'?7:4,color:b.kind==='fire'?'#ffd36b':'#eafcff',flashring:true}); }
         } else {
-          hitEnemy(e,b.dmg); stageStats.hits++;
+          const _shielded=hitEnemy(e,b.dmg); stageStats.hits++;
+          if(_shielded){
+            const _reflected=!!b._shieldReflected; b._shieldReflected=0;
+            if(!_reflected) b.dead=true;
+            break;
+          }
           if(b.kind==='nade'){ nadeBlast(b); }
           /* INCENDIARY PELLETS SET THE UNIT ALIGHT AND LEAVE A HOLE (drop 0805w).
              dkIgnite refuses bosses and minibosses itself — "except for mini bosses and
@@ -18471,7 +18665,7 @@ function updatePlay(dt){
   }
   pBullets=pBullets.filter(b=>!b.dead);
 
-  _dmgSrc=null;                 // attribution ends with the player-bullet loop (drop 0807o)
+  _dmgSrc=null; _dmgBullet=null;  // attribution and shield context end with the player-bullet loop
   // ---- enemy bullets ----
   for(const b of eBullets){
     if(_tslow) continue;
@@ -18959,6 +19153,7 @@ function _hitEnemyCore(e,dmg){
   // SUBMERGED / PHASED units (level-7 BUBBLE MAW mid-dive) absorb nothing: the trade only
   // happens on their terms. Kept as a generic flag so later units can reuse it.
   if(e._noHit){ e.flash=Math.max(e.flash||0, 0.05); return; }
+  if(typeof enemyShieldIntercept==='function' && enemyShieldIntercept(e,dmg,_dmgBullet)) return true;
   e.hp-=dmg; e.flash=0.12; Audio.SFX.hit();
   if(typeof stageStats!=='undefined'){
     stageStats.dmgDealt+=dmg;
@@ -40782,7 +40977,14 @@ function drawWorld(dt){
   /* DAMAGE STATES RIDE ON TOP OF THE SPRITE (drop 0807f). Hooked at the loop rather than inside
      drawEnemy, because that function has a dozen early returns for sandtanks, drones, L6
      fighters and the zap flash — a unit taking any of those paths would silently never smoke. */
-  for(const e of enemies){ drawEnemy(e); try{ drawEnemyDamage(e, _lastDt||1/60); }catch(_de){} try{ drawLaserTell(e); }catch(_lt){} }
+  for(const e of enemies){
+    try{ drawEnemyShieldBack(e); }catch(_esb){}
+    drawEnemy(e);
+    try{ drawEnemyShieldFront(e); }catch(_esf){}
+    try{ drawEnemyDamage(e, _lastDt||1/60); }catch(_de){}
+    try{ drawLaserTell(e); }catch(_lt){}
+  }
+  try{ enemyShieldFxUpdate(dt); enemyShieldFxDraw(); }catch(_esfx){}
   try{ drawSmokeRings(); }catch(_sr){}
   try{ drawNavalFlashes(); }catch(_nf){}
   /* NO FADE-OUTS (drop 0806j). Mike: "stop fading them out. there should be no fade out effects
