@@ -20,8 +20,8 @@ Full writeups: `PASSOVER_0814E/F/G/H.md`. Merge is a fast-forward; nothing on ma
 
 1. **Stage-8 boss hp.** 4,070 total is a fivefold cut in the direction of your own "very tanky",
    but you have not played it. Too easy now → raise the `2.2` in `_vBase`; the shape follows.
-2. **Spawn Carrier stats/name.** hp 340, `pat:'void'`, and the pack's name "SPAWN CARRIER" over
-   the phase manifest's "HERALD OF DEATH" — all mine, all flagged in the SHIPBOSS row.
+2. **RESOLVED 0825c — Spawn Carrier stats/name.** The intact Spawn Carrier hull remains, and Mike
+   restored the encounter's authored name **HERALD OF DEATH**. hp 340 and `pat:'void'` are unchanged.
 3. **The herald's venom stream** (`nev_venom_0_*`, a genuinely good 11-frame attack reel) is now
    unused. It could become a Spawn Carrier attack; nothing references it today.
 4. **The lock pack ships an alternative 4-form stage-8 boss** (symbiote_carrier → winged_predator

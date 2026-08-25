@@ -1,24 +1,21 @@
-# TO-DO: Emotion Portraits (waiting on Mike's re-upload)
+# Emotion Portraits — Complete
 
-## What's needed
-Dedicated emotion portrait sheets for the pilots that DON'T have them yet:
-- **Maverick, Decker, Freezer** — confirmed WRONG/missing (currently head-crops of full-body card art)
-- **Axel, Cole** — also only have card composites, no real portraits
-- Emotions to cover: **sad / anger / happy / laugh / crash** (+ victory) per character, including Cole
+The previously listed missing source portraits were uploaded on the GitHub
+`codex/codex-edition` branch and are now preserved in this branch.
 
-## What already exists (the target quality/format)
-- `assets/ui/portraits/jugg_{sad,crash,victory}.png` — framed bust portraits w/ expression + name banner
-- `assets/ui/portraits/yuri_{sad,crash,victory}.png` — same format
-These are the standard. New sheets should match this framed-portrait style.
+## Verified coverage
 
-## When Mike sends them, ask/confirm:
-1. Layout: one pilot per row, emotions across columns? Get exact grid (rows x cols) + column order of emotions.
-2. Combined sheet vs per-pilot files?
-3. Are they pre-framed (like jugg/yuri) or raw busts needing the frame?
+- Pilots: `axel`, `cole`, `decker`, `freezer`, `maverick`
+- States: `idle`, `smile`, `anger`, `laugh`, `sad`, `victory`, `crash`
+- Total supplied portraits: 35
+- Live keys: `port_<pilot>_<state>`
 
-## Wiring plan once received
-- Slice each cell, box on atlas, key as `port_<pilot>_<emotion>` (match existing jugg/yuri naming; jugg uses 'jugg' not 'juggernaut').
-- Add to manifest BOFX img map.
-- Extend `rivalPortrait(kind)` + dialogue calls so comm windows pick the right emotion per beat.
-- Replace the face_* head-crops for maverick/decker/freezer/axel/cole in dialogue boxes with proper portraits.
-- Strip any baked emote/"emoji" elements from portrait cells if present.
+The source PNGs were compared with the corresponding packed atlas cells and are
+pixel-for-pixel identical. No atlas or manifest replacement is required.
+
+The production originals and contact-sheet proof are preserved in:
+
+`_ART_SOURCES/BOF_EmotionPortraits_0825/`
+
+Together with the four already-complete pilots, the game has all nine pilots ×
+seven emotion portraits (63 total). This is no longer an open asset task.

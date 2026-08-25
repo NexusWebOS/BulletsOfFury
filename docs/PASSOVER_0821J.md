@@ -45,31 +45,23 @@ all. They were there — I had cropped too small and captured the reveal mid-ani
 step the REAL loop so the sequence's own timers advance, and zoom before concluding. *A value that
 has not finished animating in is not a missing value.*
 
-## 3. ORB DAMAGE ON STAGES 2/3 — THE NUMBERS
+## 3. ORB DAMAGE ON STAGES 2/3 — HISTORICAL, SUPERSEDED 0825C
 
-Brian: *"orb damage on stages 2/3 is higher since 0814a (the elemental bonus finally reaches it —
-you have not seen the numbers)."* Measured as damage actually dealt to a dummy, weapon level 5:
+The table below records the old 0814a behavior; it is retained only as historical evidence of the
+rule Mike corrected on 0825c. It is no longer the runtime behavior.
 
     stage element:   2 = fire,  3 = ice,  all others = none
 
-| | orb element | multiplier | damage dealt |
+| old behavior | orb element | multiplier | damage dealt |
 |---|---|---|---|
 | stages **2 and 3** | opposite the stage | **x2** | **4** |
 | stages 1, 4, 5, 6, 7, 8 | n/a | x1 | 2 |
 
-⚠ **IT IS GUARANTEED, NOT SITUATIONAL — which is the part worth Mike's eye.** Cole's orb is ICE,
-so it is the opposing element on fire stage 2; and 0814a made it correctly count as FIRE on ice
-stage 3, so it is the opposing element there too. **The orb auto-matches whatever the stage is
-weak to, so it can never NOT double on 2 or 3.** It is strictly the best weapon on both elemental
-stages, by construction rather than by choice of loadout.
-
-That is the intended "opposite element" rule working exactly as written — but the rule was designed
-for a weapon that might be the wrong element, and this one never is. If Mike wants the orb to be a
-choice rather than an answer on those two stages, the dial is `elementMultiplier` (one line).
-
-Freezer's thermoshock reads `fireice` and takes the same x2 on 2/3 — and correctly x1 elsewhere,
-because `elementMultiplier` returns 1 for any stage with no element before the `fireice` branch is
-reached. No bug there.
+⚠ **SUPERSEDED 0825c BY MIKE'S EXACT KIT RULE.** Cole has no elemental damage addition and no
+special orb; his authored specials are Sonic Boom and nuclear missiles. Generic orbs stay at x1
+for Cole and every other pilot. The two approved bonuses are Freezer-only and attack-specific:
+Stage 2 ICE BREATH x2, and Stage 3 FIRE-ICE / thermoshock ball x2. `elementMultiplier` now requires
+the pilot, stage, element, and attack identity to match, so a generic orb can never inherit either.
 
 ---
 
