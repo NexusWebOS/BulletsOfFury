@@ -1,0 +1,3899 @@
+{
+  "pack": "CF_AIBuilderUI-Vol.1",
+  "summary": {
+    "runtime_pngs": 178,
+    "maps": 7,
+    "map_assets_checked": 168,
+    "map_assets_pixel_matched": 168,
+    "exact_magenta_pixels": 0,
+    "partial_alpha_pixels": 0,
+    "hidden_rgb_pixels": 0,
+    "probable_magenta_edge_pixels": 100,
+    "blockers": 0
+  },
+  "blockers": [],
+  "fringe_review": [
+    {
+      "file": "editor-cursors/damage-rectangle.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        19,
+        31,
+        173,
+        152
+      ],
+      "padding": [
+        19,
+        31,
+        20,
+        31
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 5
+    },
+    {
+      "file": "editor-cursors/editor-cursors-atlas.png",
+      "width": 1672,
+      "height": 941,
+      "bbox": [
+        88,
+        266,
+        1584,
+        676
+      ],
+      "padding": [
+        88,
+        266,
+        88,
+        265
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 50
+    },
+    {
+      "file": "editor-cursors/muzzle-hardpoint.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        12,
+        27,
+        181,
+        155
+      ],
+      "padding": [
+        12,
+        27,
+        12,
+        28
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 32
+    },
+    {
+      "file": "editor-cursors/spawn-point.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        24,
+        21,
+        169,
+        161
+      ],
+      "padding": [
+        24,
+        21,
+        24,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 1
+    },
+    {
+      "file": "editor-cursors/weakpoint-circle.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        26,
+        21,
+        167,
+        161
+      ],
+      "padding": [
+        26,
+        21,
+        26,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 12
+    }
+  ],
+  "map_checks": [
+    {
+      "map": "buttons/buttons-map.json",
+      "declared_assets": 20,
+      "pixel_matched_assets": 20
+    },
+    {
+      "map": "core-cursors/core-cursors-map.json",
+      "declared_assets": 14,
+      "pixel_matched_assets": 14
+    },
+    {
+      "map": "editor-cursors/editor-cursors-map.json",
+      "declared_assets": 14,
+      "pixel_matched_assets": 14
+    },
+    {
+      "map": "full-size-windows/full-size-windows-map.json",
+      "declared_assets": 10,
+      "pixel_matched_assets": 10
+    },
+    {
+      "map": "interface-icons/interface-icons-map.json",
+      "declared_assets": 24,
+      "pixel_matched_assets": 24
+    },
+    {
+      "map": "text-buttons/text-buttons-map.json",
+      "declared_assets": 60,
+      "pixel_matched_assets": 60
+    },
+    {
+      "map": "window-frames/window-frames-map.json",
+      "declared_assets": 26,
+      "pixel_matched_assets": 26
+    }
+  ],
+  "images": [
+    {
+      "file": "buttons/button-large-disabled.png",
+      "width": 288,
+      "height": 159,
+      "bbox": [
+        12,
+        12,
+        276,
+        147
+      ],
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-large-hover.png",
+      "width": 288,
+      "height": 159,
+      "bbox": [
+        13,
+        13,
+        273,
+        146
+      ],
+      "padding": [
+        13,
+        13,
+        15,
+        13
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-large-normal.png",
+      "width": 288,
+      "height": 159,
+      "bbox": [
+        13,
+        13,
+        274,
+        146
+      ],
+      "padding": [
+        13,
+        13,
+        14,
+        13
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-large-pressed.png",
+      "width": 288,
+      "height": 159,
+      "bbox": [
+        15,
+        13,
+        273,
+        146
+      ],
+      "padding": [
+        15,
+        13,
+        15,
+        13
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-large-selected.png",
+      "width": 288,
+      "height": 159,
+      "bbox": [
+        14,
+        13,
+        273,
+        146
+      ],
+      "padding": [
+        14,
+        13,
+        15,
+        13
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-medium-disabled.png",
+      "width": 265,
+      "height": 125,
+      "bbox": [
+        12,
+        12,
+        253,
+        113
+      ],
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-medium-hover.png",
+      "width": 265,
+      "height": 125,
+      "bbox": [
+        14,
+        12,
+        250,
+        113
+      ],
+      "padding": [
+        14,
+        12,
+        15,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-medium-normal.png",
+      "width": 265,
+      "height": 125,
+      "bbox": [
+        13,
+        12,
+        251,
+        113
+      ],
+      "padding": [
+        13,
+        12,
+        14,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-medium-pressed.png",
+      "width": 265,
+      "height": 125,
+      "bbox": [
+        15,
+        12,
+        250,
+        113
+      ],
+      "padding": [
+        15,
+        12,
+        15,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-medium-selected.png",
+      "width": 265,
+      "height": 125,
+      "bbox": [
+        13,
+        12,
+        251,
+        113
+      ],
+      "padding": [
+        13,
+        12,
+        14,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-small-disabled.png",
+      "width": 235,
+      "height": 109,
+      "bbox": [
+        15,
+        12,
+        220,
+        96
+      ],
+      "padding": [
+        15,
+        12,
+        15,
+        13
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-small-hover.png",
+      "width": 235,
+      "height": 109,
+      "bbox": [
+        13,
+        12,
+        221,
+        97
+      ],
+      "padding": [
+        13,
+        12,
+        14,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-small-normal.png",
+      "width": 235,
+      "height": 109,
+      "bbox": [
+        14,
+        12,
+        220,
+        97
+      ],
+      "padding": [
+        14,
+        12,
+        15,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-small-pressed.png",
+      "width": 235,
+      "height": 109,
+      "bbox": [
+        12,
+        12,
+        223,
+        96
+      ],
+      "padding": [
+        12,
+        12,
+        12,
+        13
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-small-selected.png",
+      "width": 235,
+      "height": 109,
+      "bbox": [
+        12,
+        12,
+        223,
+        96
+      ],
+      "padding": [
+        12,
+        12,
+        12,
+        13
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-square-disabled.png",
+      "width": 278,
+      "height": 153,
+      "bbox": [
+        85,
+        12,
+        186,
+        140
+      ],
+      "padding": [
+        85,
+        12,
+        92,
+        13
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-square-hover.png",
+      "width": 278,
+      "height": 153,
+      "bbox": [
+        6,
+        12,
+        266,
+        141
+      ],
+      "padding": [
+        6,
+        12,
+        12,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-square-normal.png",
+      "width": 278,
+      "height": 153,
+      "bbox": [
+        90,
+        12,
+        193,
+        141
+      ],
+      "padding": [
+        90,
+        12,
+        85,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-square-pressed.png",
+      "width": 278,
+      "height": 153,
+      "bbox": [
+        70,
+        12,
+        208,
+        141
+      ],
+      "padding": [
+        70,
+        12,
+        70,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/button-square-selected.png",
+      "width": 278,
+      "height": 153,
+      "bbox": [
+        12,
+        12,
+        272,
+        141
+      ],
+      "padding": [
+        12,
+        12,
+        6,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "buttons/buttons-atlas.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        58,
+        124,
+        1471,
+        904
+      ],
+      "padding": [
+        58,
+        124,
+        65,
+        120
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/busy.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        14,
+        15,
+        178,
+        186
+      ],
+      "padding": [
+        14,
+        15,
+        14,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/context-help.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        38,
+        15,
+        154,
+        186
+      ],
+      "padding": [
+        38,
+        15,
+        38,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/core-cursors-atlas.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        70,
+        255,
+        1473,
+        751
+      ],
+      "padding": [
+        70,
+        255,
+        63,
+        273
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/default.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        46,
+        15,
+        146,
+        187
+      ],
+      "padding": [
+        46,
+        15,
+        46,
+        15
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/grab.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        27,
+        20,
+        165,
+        182
+      ],
+      "padding": [
+        27,
+        20,
+        27,
+        20
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/grabbing.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        38,
+        35,
+        154,
+        166
+      ],
+      "padding": [
+        38,
+        35,
+        38,
+        36
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/move.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        12,
+        12,
+        180,
+        190
+      ],
+      "padding": [
+        12,
+        12,
+        12,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/precision-crosshair.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        27,
+        24,
+        164,
+        177
+      ],
+      "padding": [
+        27,
+        24,
+        28,
+        25
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/resize-horizontal.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        30,
+        62,
+        161,
+        139
+      ],
+      "padding": [
+        30,
+        62,
+        31,
+        63
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/resize-nesw.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        34,
+        34,
+        158,
+        168
+      ],
+      "padding": [
+        34,
+        34,
+        34,
+        34
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/resize-nwse.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        31,
+        33,
+        161,
+        169
+      ],
+      "padding": [
+        31,
+        33,
+        31,
+        33
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/resize-vertical.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        61,
+        16,
+        131,
+        185
+      ],
+      "padding": [
+        61,
+        16,
+        61,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/select-hand.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        35,
+        16,
+        157,
+        185
+      ],
+      "padding": [
+        35,
+        16,
+        35,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/text-ibeam.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        56,
+        24,
+        135,
+        177
+      ],
+      "padding": [
+        56,
+        24,
+        57,
+        25
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "core-cursors/unavailable.png",
+      "width": 192,
+      "height": 202,
+      "bbox": [
+        40,
+        21,
+        151,
+        181
+      ],
+      "padding": [
+        40,
+        21,
+        41,
+        21
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/anchor-point.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        25,
+        21,
+        168,
+        161
+      ],
+      "padding": [
+        25,
+        21,
+        25,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/damage-rectangle.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        19,
+        31,
+        173,
+        152
+      ],
+      "padding": [
+        19,
+        31,
+        20,
+        31
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 5
+    },
+    {
+      "file": "editor-cursors/draw-pencil.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        25,
+        18,
+        167,
+        164
+      ],
+      "padding": [
+        25,
+        18,
+        26,
+        19
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/editor-cursors-atlas.png",
+      "width": 1672,
+      "height": 941,
+      "bbox": [
+        88,
+        266,
+        1584,
+        676
+      ],
+      "padding": [
+        88,
+        266,
+        88,
+        265
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 50
+    },
+    {
+      "file": "editor-cursors/eraser.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        32,
+        25,
+        161,
+        158
+      ],
+      "padding": [
+        32,
+        25,
+        32,
+        25
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/eyedropper.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        30,
+        22,
+        162,
+        161
+      ],
+      "padding": [
+        30,
+        22,
+        31,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/fill.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        26,
+        12,
+        166,
+        171
+      ],
+      "padding": [
+        26,
+        12,
+        27,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/movement-path.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        27,
+        26,
+        165,
+        157
+      ],
+      "padding": [
+        27,
+        26,
+        28,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/muzzle-hardpoint.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        12,
+        27,
+        181,
+        155
+      ],
+      "padding": [
+        12,
+        27,
+        12,
+        28
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 32
+    },
+    {
+      "file": "editor-cursors/rotate.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        34,
+        18,
+        159,
+        164
+      ],
+      "padding": [
+        34,
+        18,
+        34,
+        19
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/selection-marquee.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        20,
+        15,
+        172,
+        167
+      ],
+      "padding": [
+        20,
+        15,
+        21,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/spawn-point.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        24,
+        21,
+        169,
+        161
+      ],
+      "padding": [
+        24,
+        21,
+        24,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 1
+    },
+    {
+      "file": "editor-cursors/valid-place.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        23,
+        30,
+        170,
+        153
+      ],
+      "padding": [
+        23,
+        30,
+        23,
+        30
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "editor-cursors/weakpoint-circle.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        26,
+        21,
+        167,
+        161
+      ],
+      "padding": [
+        26,
+        21,
+        26,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 12
+    },
+    {
+      "file": "editor-cursors/zoom.png",
+      "width": 193,
+      "height": 183,
+      "bbox": [
+        27,
+        19,
+        166,
+        164
+      ],
+      "padding": [
+        27,
+        19,
+        27,
+        19
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/dialog-medium-expanded-master.png",
+      "width": 1365,
+      "height": 963,
+      "bbox": [
+        24,
+        24,
+        1341,
+        939
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/dialog-medium-faithful-4x.png",
+      "width": 1312,
+      "height": 908,
+      "bbox": [
+        24,
+        24,
+        1288,
+        884
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/panel-inspector-expanded-master.png",
+      "width": 776,
+      "height": 1438,
+      "bbox": [
+        24,
+        24,
+        752,
+        1414
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/panel-inspector-faithful-4x.png",
+      "width": 1108,
+      "height": 2216,
+      "bbox": [
+        24,
+        24,
+        1084,
+        2192
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/panel-utility-expanded-master.png",
+      "width": 1034,
+      "height": 1058,
+      "bbox": [
+        24,
+        24,
+        1010,
+        1034
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/panel-utility-faithful-4x.png",
+      "width": 856,
+      "height": 908,
+      "bbox": [
+        24,
+        24,
+        832,
+        884
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/viewport-wide-expanded-master.png",
+      "width": 1460,
+      "height": 851,
+      "bbox": [
+        24,
+        24,
+        1436,
+        827
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/viewport-wide-faithful-4x.png",
+      "width": 2252,
+      "height": 1244,
+      "bbox": [
+        24,
+        24,
+        2228,
+        1220
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/window-primary-expanded-master.png",
+      "width": 1221,
+      "height": 1116,
+      "bbox": [
+        24,
+        24,
+        1197,
+        1092
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "full-size-windows/window-primary-faithful-4x.png",
+      "width": 2328,
+      "height": 2212,
+      "bbox": [
+        24,
+        24,
+        2304,
+        2188
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/add.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        25,
+        22,
+        163,
+        163
+      ],
+      "padding": [
+        25,
+        22,
+        26,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/ai-behavior.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        12,
+        16,
+        177,
+        169
+      ],
+      "padding": [
+        12,
+        16,
+        12,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/delete.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        35,
+        20,
+        154,
+        165
+      ],
+      "padding": [
+        35,
+        20,
+        35,
+        20
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/duplicate.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        25,
+        20,
+        164,
+        165
+      ],
+      "padding": [
+        25,
+        20,
+        25,
+        20
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/frame-edit.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        15,
+        16,
+        173,
+        169
+      ],
+      "padding": [
+        15,
+        16,
+        16,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/grid.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        26,
+        24,
+        163,
+        160
+      ],
+      "padding": [
+        26,
+        24,
+        26,
+        25
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/import-sprite.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        21,
+        17,
+        168,
+        167
+      ],
+      "padding": [
+        21,
+        17,
+        21,
+        18
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/inspector.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        19,
+        19,
+        169,
+        166
+      ],
+      "padding": [
+        19,
+        19,
+        20,
+        19
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/interface-icons-atlas.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        62,
+        86,
+        1447,
+        930
+      ],
+      "padding": [
+        62,
+        86,
+        89,
+        94
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/json-export.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        35,
+        18,
+        154,
+        167
+      ],
+      "padding": [
+        35,
+        18,
+        35,
+        18
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/level-spawns.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        16,
+        14,
+        173,
+        171
+      ],
+      "padding": [
+        16,
+        14,
+        16,
+        14
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/live-preview.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        18,
+        21,
+        171,
+        163
+      ],
+      "padding": [
+        18,
+        21,
+        18,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/lock.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        38,
+        21,
+        151,
+        163
+      ],
+      "padding": [
+        38,
+        21,
+        38,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/open.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        13,
+        25,
+        175,
+        160
+      ],
+      "padding": [
+        13,
+        25,
+        14,
+        25
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/pause.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        24,
+        21,
+        164,
+        163
+      ],
+      "padding": [
+        24,
+        21,
+        25,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/play.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        23,
+        22,
+        165,
+        163
+      ],
+      "padding": [
+        23,
+        22,
+        24,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/rewind.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        26,
+        22,
+        163,
+        163
+      ],
+      "padding": [
+        26,
+        22,
+        26,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/save.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        25,
+        21,
+        164,
+        163
+      ],
+      "padding": [
+        25,
+        21,
+        25,
+        22
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/settings.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        24,
+        24,
+        165,
+        161
+      ],
+      "padding": [
+        24,
+        24,
+        24,
+        24
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/snap.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        39,
+        11,
+        150,
+        170
+      ],
+      "padding": [
+        39,
+        11,
+        39,
+        15
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/stop.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        26,
+        22,
+        163,
+        162
+      ],
+      "padding": [
+        26,
+        22,
+        26,
+        23
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/unit-library.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        22,
+        12,
+        166,
+        173
+      ],
+      "padding": [
+        22,
+        12,
+        23,
+        12
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/unwired-warning.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        14,
+        19,
+        174,
+        165
+      ],
+      "padding": [
+        14,
+        19,
+        15,
+        20
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/visibility.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        18,
+        41,
+        170,
+        144
+      ],
+      "padding": [
+        18,
+        41,
+        19,
+        41
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "interface-icons/wired.png",
+      "width": 189,
+      "height": 185,
+      "bbox": [
+        22,
+        25,
+        167,
+        160
+      ],
+      "padding": [
+        22,
+        25,
+        22,
+        25
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-add-spawn-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-ai-pattern-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        129
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-alienoid-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        129
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-anchor-point-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        17,
+        413,
+        129
+      ],
+      "padding": [
+        21,
+        17,
+        21,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-apply-pattern-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        130
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-boat-pattern-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        130
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-boss-pattern-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        18,
+        417,
+        120
+      ],
+      "padding": [
+        16,
+        18,
+        17,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-box-tool-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        130
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-circle-tool-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        130
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-clear-wave-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        18,
+        413,
+        120
+      ],
+      "padding": [
+        21,
+        18,
+        21,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-copy-wave-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        18,
+        417,
+        120
+      ],
+      "padding": [
+        16,
+        18,
+        17,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-custom-unit-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        18,
+        415,
+        120
+      ],
+      "padding": [
+        18,
+        18,
+        19,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-damage-region-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        17,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        17,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-delete-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        129
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-diamond-tool-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        17,
+        413,
+        129
+      ],
+      "padding": [
+        21,
+        17,
+        21,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-draw-path-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        129
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-duplicate-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        130
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-edit-spawn-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        129
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-erase-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-export-json-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        20,
+        18,
+        413,
+        120
+      ],
+      "padding": [
+        20,
+        18,
+        21,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-frame-edit-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        130
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-ice-drone-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-import-sprite-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        20,
+        16,
+        413,
+        130
+      ],
+      "padding": [
+        20,
+        16,
+        21,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-inspector-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-jet-pattern-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        130
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-lava-drone-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        129
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-level-spawns-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        20,
+        16,
+        413,
+        129
+      ],
+      "padding": [
+        20,
+        16,
+        21,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-live-preview-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        130
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-load-json-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        130
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-load-pattern-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        129
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-mini-boss-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-muzzle-point-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        17,
+        418,
+        129
+      ],
+      "padding": [
+        16,
+        17,
+        16,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-new-unit-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        130
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-next-frame-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        18,
+        413,
+        120
+      ],
+      "padding": [
+        21,
+        18,
+        21,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-oval-tool-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        17,
+        418,
+        129
+      ],
+      "padding": [
+        16,
+        17,
+        16,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-pause-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-pilot-ship-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        18,
+        413,
+        120
+      ],
+      "padding": [
+        21,
+        18,
+        21,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-plane-pattern-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        130
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-play-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        129
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-prev-frame-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        18,
+        417,
+        120
+      ],
+      "padding": [
+        16,
+        18,
+        17,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-preview-wave-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        18,
+        415,
+        120
+      ],
+      "padding": [
+        18,
+        18,
+        19,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-randomize-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        129
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-recommend-ai-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        130
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-remove-spawn-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        130
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-reset-values-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        18,
+        415,
+        120
+      ],
+      "padding": [
+        18,
+        18,
+        19,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-rewind-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        129
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-save-json-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        18,
+        417,
+        120
+      ],
+      "padding": [
+        16,
+        18,
+        17,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-save-pattern-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        130
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-select-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        418,
+        130
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-sludge-drone-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        129
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-spawn-now-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-step-frame-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        16,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        16,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-stop-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        129
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-tank-pattern-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        129
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-test-play-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        18,
+        415,
+        120
+      ],
+      "padding": [
+        18,
+        18,
+        19,
+        26
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-unit-library-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        130
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-unwire-unit-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        21,
+        16,
+        413,
+        130
+      ],
+      "padding": [
+        21,
+        16,
+        21,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-weak-point-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        418,
+        129
+      ],
+      "padding": [
+        16,
+        16,
+        16,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-wire-unit-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        16,
+        16,
+        417,
+        130
+      ],
+      "padding": [
+        16,
+        16,
+        17,
+        16
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/btn-x-point-normal.png",
+      "width": 434,
+      "height": 146,
+      "bbox": [
+        18,
+        17,
+        415,
+        129
+      ],
+      "padding": [
+        18,
+        17,
+        19,
+        17
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/text-buttons-ai-level-atlas.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        101,
+        121,
+        1429,
+        870
+      ],
+      "padding": [
+        101,
+        121,
+        107,
+        154
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/text-buttons-editing-tools-atlas.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        100,
+        114,
+        1429,
+        897
+      ],
+      "padding": [
+        100,
+        114,
+        107,
+        127
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/text-buttons-navigation-atlas.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        101,
+        121,
+        1429,
+        870
+      ],
+      "padding": [
+        101,
+        121,
+        107,
+        154
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/text-buttons-unit-playback-atlas.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        101,
+        121,
+        1429,
+        870
+      ],
+      "padding": [
+        101,
+        121,
+        107,
+        154
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "text-buttons/text-buttons-unit-presets-atlas.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        101,
+        121,
+        1429,
+        870
+      ],
+      "padding": [
+        101,
+        121,
+        107,
+        154
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/dialog-medium.png",
+      "width": 328,
+      "height": 227,
+      "bbox": [
+        6,
+        6,
+        322,
+        221
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/field-dropdown.png",
+      "width": 281,
+      "height": 79,
+      "bbox": [
+        6,
+        6,
+        275,
+        73
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/field-numeric.png",
+      "width": 197,
+      "height": 84,
+      "bbox": [
+        6,
+        6,
+        191,
+        78
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/panel-inspector.png",
+      "width": 277,
+      "height": 554,
+      "bbox": [
+        6,
+        6,
+        271,
+        548
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/panel-utility.png",
+      "width": 214,
+      "height": 227,
+      "bbox": [
+        6,
+        6,
+        208,
+        221
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/scrollbar-track.png",
+      "width": 325,
+      "height": 47,
+      "bbox": [
+        6,
+        6,
+        319,
+        41
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-center.png",
+      "width": 77,
+      "height": 76,
+      "bbox": [
+        6,
+        6,
+        71,
+        70
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-corner-bl.png",
+      "width": 79,
+      "height": 75,
+      "bbox": [
+        6,
+        6,
+        73,
+        69
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-corner-br.png",
+      "width": 79,
+      "height": 75,
+      "bbox": [
+        6,
+        6,
+        73,
+        69
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-corner-tl.png",
+      "width": 79,
+      "height": 76,
+      "bbox": [
+        6,
+        6,
+        73,
+        70
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-corner-tr.png",
+      "width": 79,
+      "height": 76,
+      "bbox": [
+        6,
+        6,
+        73,
+        70
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-edge-h1.png",
+      "width": 103,
+      "height": 39,
+      "bbox": [
+        6,
+        6,
+        97,
+        33
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-edge-h2.png",
+      "width": 103,
+      "height": 39,
+      "bbox": [
+        6,
+        6,
+        97,
+        33
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-edge-h3.png",
+      "width": 102,
+      "height": 38,
+      "bbox": [
+        6,
+        6,
+        96,
+        32
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-edge-h4.png",
+      "width": 102,
+      "height": 38,
+      "bbox": [
+        6,
+        6,
+        96,
+        32
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-edge-left.png",
+      "width": 39,
+      "height": 115,
+      "bbox": [
+        6,
+        6,
+        33,
+        109
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slice-edge-right.png",
+      "width": 40,
+      "height": 115,
+      "bbox": [
+        6,
+        6,
+        34,
+        109
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/slider-segmented.png",
+      "width": 148,
+      "height": 51,
+      "bbox": [
+        6,
+        6,
+        142,
+        45
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/tab-active.png",
+      "width": 269,
+      "height": 72,
+      "bbox": [
+        6,
+        6,
+        263,
+        66
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/tab-alert.png",
+      "width": 277,
+      "height": 72,
+      "bbox": [
+        6,
+        6,
+        271,
+        66
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/tab-hover.png",
+      "width": 271,
+      "height": 72,
+      "bbox": [
+        6,
+        6,
+        265,
+        66
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/tab-inactive.png",
+      "width": 280,
+      "height": 72,
+      "bbox": [
+        6,
+        6,
+        274,
+        66
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/timeline-rail.png",
+      "width": 1162,
+      "height": 96,
+      "bbox": [
+        6,
+        6,
+        1156,
+        90
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/toolbar-rail.png",
+      "width": 1162,
+      "height": 57,
+      "bbox": [
+        6,
+        6,
+        1156,
+        51
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/viewport-live.png",
+      "width": 563,
+      "height": 311,
+      "bbox": [
+        6,
+        6,
+        557,
+        305
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/window-frames-atlas.png",
+      "width": 1536,
+      "height": 1024,
+      "bbox": [
+        30,
+        30,
+        1489,
+        980
+      ],
+      "padding": [
+        30,
+        30,
+        47,
+        44
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    },
+    {
+      "file": "window-frames/window-primary.png",
+      "width": 582,
+      "height": 553,
+      "bbox": [
+        6,
+        6,
+        576,
+        547
+      ],
+      "padding": [
+        6,
+        6,
+        6,
+        6
+      ],
+      "exact_magenta": 0,
+      "partial_alpha": 0,
+      "hidden_rgb_under_zero_alpha": 0,
+      "probable_magenta_edge_pixels": 0
+    }
+  ]
+}

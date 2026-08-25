@@ -1,0 +1,280 @@
+{
+  "schema_version": "1.0",
+  "asset_family": "full-size-window-masters",
+  "count": 10,
+  "window_families": 5,
+  "alpha_policy": "hard_alpha",
+  "transparent_rgb": [
+    0,
+    0,
+    0
+  ],
+  "recommended_resize_filter": "nearest",
+  "mipmaps": false,
+  "variant_notes": {
+    "expanded_redraw": "Large newly reconstructed master preserving the approved UI language.",
+    "pixel_exact_nearest_neighbor_4x": "Exact four-times enlargement of the approved original frame; use when geometry must remain identical."
+  },
+  "assets": [
+    {
+      "name": "window-primary-expanded-master",
+      "family": "window-primary",
+      "role": "primary_window",
+      "variant": "expanded_redraw",
+      "file": "window-primary-expanded-master.png",
+      "atlas": "window-primary-expanded-master.png",
+      "width": 1221,
+      "height": 1116,
+      "source_rect": [
+        0,
+        0,
+        1221,
+        1116
+      ],
+      "content_bbox": [
+        24,
+        24,
+        1197,
+        1092
+      ],
+      "source_canvas": [
+        1315,
+        1197
+      ]
+    },
+    {
+      "name": "window-primary-faithful-4x",
+      "family": "window-primary",
+      "role": "primary_window",
+      "variant": "pixel_exact_nearest_neighbor_4x",
+      "file": "window-primary-faithful-4x.png",
+      "atlas": "window-primary-faithful-4x.png",
+      "width": 2328,
+      "height": 2212,
+      "source_rect": [
+        0,
+        0,
+        2328,
+        2212
+      ],
+      "content_bbox": [
+        24,
+        24,
+        2304,
+        2188
+      ],
+      "source_canvas": [
+        582,
+        553
+      ]
+    },
+    {
+      "name": "viewport-wide-expanded-master",
+      "family": "viewport-wide",
+      "role": "live_preview_viewport",
+      "variant": "expanded_redraw",
+      "file": "viewport-wide-expanded-master.png",
+      "atlas": "viewport-wide-expanded-master.png",
+      "width": 1460,
+      "height": 851,
+      "source_rect": [
+        0,
+        0,
+        1460,
+        851
+      ],
+      "content_bbox": [
+        24,
+        24,
+        1436,
+        827
+      ],
+      "source_canvas": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "name": "viewport-wide-faithful-4x",
+      "family": "viewport-wide",
+      "role": "live_preview_viewport",
+      "variant": "pixel_exact_nearest_neighbor_4x",
+      "file": "viewport-wide-faithful-4x.png",
+      "atlas": "viewport-wide-faithful-4x.png",
+      "width": 2252,
+      "height": 1244,
+      "source_rect": [
+        0,
+        0,
+        2252,
+        1244
+      ],
+      "content_bbox": [
+        24,
+        24,
+        2228,
+        1220
+      ],
+      "source_canvas": [
+        563,
+        311
+      ]
+    },
+    {
+      "name": "panel-inspector-expanded-master",
+      "family": "panel-inspector",
+      "role": "inspector_panel",
+      "variant": "expanded_redraw",
+      "file": "panel-inspector-expanded-master.png",
+      "atlas": "panel-inspector-expanded-master.png",
+      "width": 776,
+      "height": 1438,
+      "source_rect": [
+        0,
+        0,
+        776,
+        1438
+      ],
+      "content_bbox": [
+        24,
+        24,
+        752,
+        1414
+      ],
+      "source_canvas": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "name": "panel-inspector-faithful-4x",
+      "family": "panel-inspector",
+      "role": "inspector_panel",
+      "variant": "pixel_exact_nearest_neighbor_4x",
+      "file": "panel-inspector-faithful-4x.png",
+      "atlas": "panel-inspector-faithful-4x.png",
+      "width": 1108,
+      "height": 2216,
+      "source_rect": [
+        0,
+        0,
+        1108,
+        2216
+      ],
+      "content_bbox": [
+        24,
+        24,
+        1084,
+        2192
+      ],
+      "source_canvas": [
+        277,
+        554
+      ]
+    },
+    {
+      "name": "dialog-medium-expanded-master",
+      "family": "dialog-medium",
+      "role": "medium_dialog",
+      "variant": "expanded_redraw",
+      "file": "dialog-medium-expanded-master.png",
+      "atlas": "dialog-medium-expanded-master.png",
+      "width": 1365,
+      "height": 963,
+      "source_rect": [
+        0,
+        0,
+        1365,
+        963
+      ],
+      "content_bbox": [
+        24,
+        24,
+        1341,
+        939
+      ],
+      "source_canvas": [
+        1470,
+        1070
+      ]
+    },
+    {
+      "name": "dialog-medium-faithful-4x",
+      "family": "dialog-medium",
+      "role": "medium_dialog",
+      "variant": "pixel_exact_nearest_neighbor_4x",
+      "file": "dialog-medium-faithful-4x.png",
+      "atlas": "dialog-medium-faithful-4x.png",
+      "width": 1312,
+      "height": 908,
+      "source_rect": [
+        0,
+        0,
+        1312,
+        908
+      ],
+      "content_bbox": [
+        24,
+        24,
+        1288,
+        884
+      ],
+      "source_canvas": [
+        328,
+        227
+      ]
+    },
+    {
+      "name": "panel-utility-expanded-master",
+      "family": "panel-utility",
+      "role": "compact_utility_panel",
+      "variant": "expanded_redraw",
+      "file": "panel-utility-expanded-master.png",
+      "atlas": "panel-utility-expanded-master.png",
+      "width": 1034,
+      "height": 1058,
+      "source_rect": [
+        0,
+        0,
+        1034,
+        1058
+      ],
+      "content_bbox": [
+        24,
+        24,
+        1010,
+        1034
+      ],
+      "source_canvas": [
+        1254,
+        1254
+      ]
+    },
+    {
+      "name": "panel-utility-faithful-4x",
+      "family": "panel-utility",
+      "role": "compact_utility_panel",
+      "variant": "pixel_exact_nearest_neighbor_4x",
+      "file": "panel-utility-faithful-4x.png",
+      "atlas": "panel-utility-faithful-4x.png",
+      "width": 856,
+      "height": 908,
+      "source_rect": [
+        0,
+        0,
+        856,
+        908
+      ],
+      "content_bbox": [
+        24,
+        24,
+        832,
+        884
+      ],
+      "source_canvas": [
+        214,
+        227
+      ]
+    }
+  ]
+}

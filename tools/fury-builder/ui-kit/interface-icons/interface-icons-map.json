@@ -1,0 +1,297 @@
+{
+  "atlas": "interface-icons-atlas.png",
+  "source_grid": {
+    "columns": 6,
+    "rows": 4
+  },
+  "assets": [
+    {
+      "name": "unit-library",
+      "file": "unit-library.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        65,
+        80,
+        221,
+        253
+      ]
+    },
+    {
+      "name": "live-preview",
+      "file": "live-preview.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        292,
+        93,
+        457,
+        247
+      ]
+    },
+    {
+      "name": "frame-edit",
+      "file": "frame-edit.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        537,
+        88,
+        707,
+        253
+      ]
+    },
+    {
+      "name": "ai-behavior",
+      "file": "ai-behavior.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        788,
+        88,
+        965,
+        253
+      ]
+    },
+    {
+      "name": "level-spawns",
+      "file": "level-spawns.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        1037,
+        86,
+        1206,
+        255
+      ]
+    },
+    {
+      "name": "inspector",
+      "file": "inspector.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        1290,
+        96,
+        1452,
+        255
+      ]
+    },
+    {
+      "name": "json-export",
+      "file": "json-export.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        74,
+        325,
+        205,
+        486
+      ]
+    },
+    {
+      "name": "import-sprite",
+      "file": "import-sprite.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        298,
+        330,
+        457,
+        492
+      ]
+    },
+    {
+      "name": "save",
+      "file": "save.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        544,
+        331,
+        695,
+        485
+      ]
+    },
+    {
+      "name": "open",
+      "file": "open.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        788,
+        338,
+        962,
+        485
+      ]
+    },
+    {
+      "name": "play",
+      "file": "play.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        1044,
+        332,
+        1198,
+        485
+      ]
+    },
+    {
+      "name": "pause",
+      "file": "pause.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        1295,
+        333,
+        1447,
+        487
+      ]
+    },
+    {
+      "name": "stop",
+      "file": "stop.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        67,
+        559,
+        216,
+        711
+      ]
+    },
+    {
+      "name": "rewind",
+      "file": "rewind.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        301,
+        559,
+        450,
+        712
+      ]
+    },
+    {
+      "name": "add",
+      "file": "add.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        544,
+        559,
+        694,
+        712
+      ]
+    },
+    {
+      "name": "duplicate",
+      "file": "duplicate.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        789,
+        555,
+        940,
+        712
+      ]
+    },
+    {
+      "name": "delete",
+      "file": "delete.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        1049,
+        557,
+        1180,
+        714
+      ]
+    },
+    {
+      "name": "wired",
+      "file": "wired.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        1296,
+        559,
+        1453,
+        706
+      ]
+    },
+    {
+      "name": "unwired-warning",
+      "file": "unwired-warning.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        56,
+        777,
+        228,
+        935
+      ]
+    },
+    {
+      "name": "grid",
+      "file": "grid.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        301,
+        784,
+        450,
+        932
+      ]
+    },
+    {
+      "name": "snap",
+      "file": "snap.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        557,
+        768,
+        680,
+        936
+      ]
+    },
+    {
+      "name": "visibility",
+      "file": "visibility.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        789,
+        803,
+        953,
+        918
+      ]
+    },
+    {
+      "name": "lock",
+      "file": "lock.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        1059,
+        778,
+        1184,
+        932
+      ]
+    },
+    {
+      "name": "settings",
+      "file": "settings.png",
+      "width": 189,
+      "height": 185,
+      "source_rect": [
+        1292,
+        786,
+        1445,
+        935
+      ]
+    }
+  ]
+}

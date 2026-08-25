@@ -1,0 +1,82 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://bullets-of-fury.local/fury-forge.schema.json",
+  "title": "Fury Forge Project",
+  "type": "object",
+  "required": ["version", "runtime", "patterns", "entities", "levels"],
+  "properties": {
+    "version": { "type": "string" },
+    "runtime": {
+      "type": "object",
+      "required": ["width", "height", "tickRate"],
+      "properties": {
+        "width": { "const": 480 },
+        "height": { "const": 720 },
+        "tickRate": { "type": "number", "minimum": 1 },
+        "source": { "type": "string" }
+      }
+    },
+    "patterns": { "type": "array", "items": { "$ref": "#/$defs/pattern" } },
+    "entities": { "type": "array", "items": { "$ref": "#/$defs/entity" } },
+    "levels": { "type": "array", "items": { "$ref": "#/$defs/level" } }
+  },
+  "$defs": {
+    "point": {
+      "type": "object",
+      "required": ["id", "kind", "x", "y"],
+      "properties": {
+        "id": { "type": "string" },
+        "kind": { "enum": ["anchor", "muzzle", "x", "damage", "box", "ellipse", "diamond"] },
+        "x": { "type": "number", "minimum": 0, "maximum": 1 },
+        "y": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w": { "type": "number", "minimum": 0, "maximum": 1 },
+        "h": { "type": "number", "minimum": 0, "maximum": 1 },
+        "name": { "type": "string" }
+      }
+    },
+    "frame": {
+      "type": "object",
+      "required": ["id", "image", "annotations"],
+      "properties": {
+        "id": { "type": "string" }, "label": { "type": "string" }, "image": { "type": ["string", "null"] },
+        "procedural": { "type": "string" },
+        "sourceRect": {
+          "type": ["object", "null"],
+          "properties": { "x": {"type":"number"}, "y": {"type":"number"}, "w": {"type":"number","minimum":1}, "h": {"type":"number","minimum":1} },
+          "required": ["x", "y", "w", "h"]
+        },
+        "annotations": { "type": "array", "items": { "$ref": "#/$defs/point" } }
+      }
+    },
+    "pattern": {
+      "type": "object",
+      "required": ["id", "name", "description", "params"],
+      "properties": {
+        "id": { "type": "string" }, "name": { "type": "string" }, "description": { "type": "string" },
+        "tags": { "type": "array", "items": { "type": "string" } },
+        "params": { "type": "object", "properties": { "amplitude": {"type":"number"}, "frequency": {"type":"number"} } }
+      }
+    },
+    "entity": {
+      "type": "object",
+      "required": ["id", "name", "category", "wired", "frames", "size", "combat", "movement"],
+      "properties": {
+        "id": { "type": "string" }, "name": { "type": "string" }, "category": { "type": "string" }, "wired": { "type": "boolean" },
+        "frames": { "type": "array", "minItems": 1, "items": { "$ref": "#/$defs/frame" } },
+        "size": { "type": "object", "required": ["width","height","displayScale"], "properties": { "width":{"type":"number","minimum":1}, "height":{"type":"number","minimum":1}, "displayScale":{"type":"number","minimum":1}, "lockAspect":{"type":"boolean"} } },
+        "combat": { "type": "object", "required": ["hp","damage","score","speed","fireRate"], "properties": { "hp":{"type":"number","minimum":0}, "damage":{"type":"number","minimum":0}, "score":{"type":"number","minimum":0}, "speed":{"type":"number","minimum":0}, "fireRate":{"type":"number","exclusiveMinimum":0} } },
+        "movement": { "type": "object", "required": ["pattern","amplitude","frequency"], "properties": { "pattern":{"type":"string"}, "amplitude":{"type":"number"}, "frequency":{"type":"number"}, "customPath":{"type":"array","items":{"type":"object","required":["x","y"],"properties":{"x":{"type":"number","minimum":0,"maximum":1},"y":{"type":"number","minimum":0,"maximum":1}}}} } }
+      }
+    },
+    "spawn": {
+      "type": "object",
+      "required": ["id","time","entityId","x","y","count","interval","pattern","hpMultiplier"],
+      "properties": { "id":{"type":"string"}, "time":{"type":"number","minimum":0}, "entityId":{"type":"string"}, "x":{"type":"number"}, "y":{"type":"number"}, "count":{"type":"integer","minimum":1}, "interval":{"type":"number","minimum":0}, "pattern":{"type":"string"}, "hpMultiplier":{"type":"number","exclusiveMinimum":0} }
+    },
+    "level": {
+      "type": "object",
+      "required": ["id","name","duration","scroll","spawns"],
+      "properties": { "id":{"type":"string"}, "name":{"type":"string"}, "duration":{"type":"number","exclusiveMinimum":0}, "scroll":{"type":"number","minimum":0}, "background":{"type":"string"}, "boss":{"type":"string"}, "spawns":{"type":"array","items":{"$ref":"#/$defs/spawn"}} }
+    }
+  }
+}

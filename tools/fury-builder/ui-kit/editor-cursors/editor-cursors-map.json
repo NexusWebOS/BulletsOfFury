@@ -1,0 +1,248 @@
+{
+  "atlas": "editor-cursors-atlas.png",
+  "source_grid": {
+    "columns": 7,
+    "rows": 2,
+    "x_boundaries": [
+      0,
+      290,
+      512,
+      721,
+      950,
+      1173,
+      1400,
+      1672
+    ],
+    "y_boundaries": [
+      0,
+      478,
+      941
+    ]
+  },
+  "assets": [
+    {
+      "name": "selection-marquee",
+      "file": "selection-marquee.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        91,
+        267,
+        255,
+        431
+      ],
+      "hotspot": {
+        "x": 23,
+        "y": 18
+      }
+    },
+    {
+      "name": "draw-pencil",
+      "file": "draw-pencil.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        326,
+        267,
+        480,
+        425
+      ],
+      "hotspot": {
+        "x": 23,
+        "y": 161
+      }
+    },
+    {
+      "name": "eraser",
+      "file": "eraser.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        545,
+        273,
+        686,
+        418
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "fill",
+      "file": "fill.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        756,
+        260,
+        908,
+        431
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "eyedropper",
+      "file": "eyedropper.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        992,
+        267,
+        1136,
+        418
+      ],
+      "hotspot": {
+        "x": 23,
+        "y": 161
+      }
+    },
+    {
+      "name": "zoom",
+      "file": "zoom.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        1211,
+        267,
+        1362,
+        424
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "rotate",
+      "file": "rotate.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        1438,
+        266,
+        1575,
+        424
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "muzzle-hardpoint",
+      "file": "muzzle-hardpoint.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        82,
+        529,
+        263,
+        669
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "anchor-point",
+      "file": "anchor-point.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        306,
+        524,
+        461,
+        676
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "damage-rectangle",
+      "file": "damage-rectangle.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        526,
+        534,
+        692,
+        667
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "weakpoint-circle",
+      "file": "weakpoint-circle.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        751,
+        524,
+        904,
+        676
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "spawn-point",
+      "file": "spawn-point.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        965,
+        524,
+        1122,
+        676
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "movement-path",
+      "file": "movement-path.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        1211,
+        533,
+        1361,
+        676
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 91
+      }
+    },
+    {
+      "name": "valid-place",
+      "file": "valid-place.png",
+      "width": 193,
+      "height": 183,
+      "source_rect": [
+        1431,
+        547,
+        1590,
+        682
+      ],
+      "hotspot": {
+        "x": 23,
+        "y": 18
+      }
+    }
+  ]
+}

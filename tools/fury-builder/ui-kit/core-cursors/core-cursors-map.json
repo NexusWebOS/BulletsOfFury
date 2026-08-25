@@ -1,0 +1,248 @@
+{
+  "atlas": "core-cursors-atlas.png",
+  "source_grid": {
+    "columns": 7,
+    "rows": 2,
+    "x_boundaries": [
+      0,
+      240,
+      454,
+      663,
+      883,
+      1127,
+      1324,
+      1536
+    ],
+    "y_boundaries": [
+      0,
+      505,
+      1024
+    ]
+  },
+  "assets": [
+    {
+      "name": "default",
+      "file": "default.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        85,
+        250,
+        197,
+        434
+      ],
+      "hotspot": {
+        "x": 23,
+        "y": 20
+      }
+    },
+    {
+      "name": "select-hand",
+      "file": "select-hand.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        276,
+        253,
+        410,
+        434
+      ],
+      "hotspot": {
+        "x": 23,
+        "y": 20
+      }
+    },
+    {
+      "name": "text-ibeam",
+      "file": "text-ibeam.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        514,
+        258,
+        605,
+        423
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "precision-crosshair",
+      "file": "precision-crosshair.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        704,
+        258,
+        853,
+        423
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "move",
+      "file": "move.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        924,
+        249,
+        1104,
+        439
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "resize-horizontal",
+      "file": "resize-horizontal.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        1151,
+        299,
+        1294,
+        388
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "resize-vertical",
+      "file": "resize-vertical.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        1367,
+        252,
+        1449,
+        433
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "resize-nwse",
+      "file": "resize-nwse.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        64,
+        590,
+        206,
+        738
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "resize-nesw",
+      "file": "resize-nesw.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        276,
+        588,
+        412,
+        734
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "grab",
+      "file": "grab.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        481,
+        572,
+        631,
+        746
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "grabbing",
+      "file": "grabbing.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        713,
+        603,
+        841,
+        746
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "busy",
+      "file": "busy.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        914,
+        574,
+        1090,
+        757
+      ],
+      "hotspot": {
+        "x": 96,
+        "y": 101
+      }
+    },
+    {
+      "name": "unavailable",
+      "file": "unavailable.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        1162,
+        585,
+        1285,
+        757
+      ],
+      "hotspot": {
+        "x": 23,
+        "y": 20
+      }
+    },
+    {
+      "name": "context-help",
+      "file": "context-help.png",
+      "width": 192,
+      "height": 202,
+      "source_rect": [
+        1351,
+        574,
+        1479,
+        757
+      ],
+      "hotspot": {
+        "x": 23,
+        "y": 20
+      }
+    }
+  ]
+}

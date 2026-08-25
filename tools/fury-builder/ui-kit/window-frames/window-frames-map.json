@@ -1,0 +1,344 @@
+{
+  "atlas": "window-frames-atlas.png",
+  "alpha_policy": "hard_alpha",
+  "assets": [
+    {
+      "name": "window-primary",
+      "role": "primary_window",
+      "file": "window-primary.png",
+      "width": 582,
+      "height": 553,
+      "source_rect": [
+        25,
+        25,
+        607,
+        578
+      ]
+    },
+    {
+      "name": "viewport-live",
+      "role": "live_preview",
+      "file": "viewport-live.png",
+      "width": 563,
+      "height": 311,
+      "source_rect": [
+        631,
+        24,
+        1194,
+        335
+      ]
+    },
+    {
+      "name": "panel-inspector",
+      "role": "inspector",
+      "file": "panel-inspector.png",
+      "width": 277,
+      "height": 554,
+      "source_rect": [
+        1218,
+        24,
+        1495,
+        578
+      ]
+    },
+    {
+      "name": "dialog-medium",
+      "role": "dialog",
+      "file": "dialog-medium.png",
+      "width": 328,
+      "height": 227,
+      "source_rect": [
+        631,
+        351,
+        959,
+        578
+      ]
+    },
+    {
+      "name": "panel-utility",
+      "role": "utility_panel",
+      "file": "panel-utility.png",
+      "width": 214,
+      "height": 227,
+      "source_rect": [
+        980,
+        351,
+        1194,
+        578
+      ]
+    },
+    {
+      "name": "timeline-rail",
+      "role": "timeline",
+      "file": "timeline-rail.png",
+      "width": 1162,
+      "height": 96,
+      "source_rect": [
+        25,
+        597,
+        1187,
+        693
+      ]
+    },
+    {
+      "name": "toolbar-rail",
+      "role": "toolbar",
+      "file": "toolbar-rail.png",
+      "width": 1162,
+      "height": 57,
+      "source_rect": [
+        25,
+        707,
+        1187,
+        764
+      ]
+    },
+    {
+      "name": "tab-inactive",
+      "role": "tab",
+      "file": "tab-inactive.png",
+      "width": 280,
+      "height": 72,
+      "source_rect": [
+        24,
+        786,
+        304,
+        858
+      ]
+    },
+    {
+      "name": "tab-hover",
+      "role": "tab",
+      "file": "tab-hover.png",
+      "width": 271,
+      "height": 72,
+      "source_rect": [
+        315,
+        786,
+        586,
+        858
+      ]
+    },
+    {
+      "name": "tab-active",
+      "role": "tab",
+      "file": "tab-active.png",
+      "width": 269,
+      "height": 72,
+      "source_rect": [
+        598,
+        787,
+        867,
+        859
+      ]
+    },
+    {
+      "name": "tab-alert",
+      "role": "tab",
+      "file": "tab-alert.png",
+      "width": 277,
+      "height": 72,
+      "source_rect": [
+        881,
+        788,
+        1158,
+        860
+      ]
+    },
+    {
+      "name": "field-numeric",
+      "role": "input_field",
+      "file": "field-numeric.png",
+      "width": 197,
+      "height": 84,
+      "source_rect": [
+        25,
+        890,
+        222,
+        974
+      ]
+    },
+    {
+      "name": "field-dropdown",
+      "role": "dropdown",
+      "file": "field-dropdown.png",
+      "width": 281,
+      "height": 79,
+      "source_rect": [
+        260,
+        894,
+        541,
+        973
+      ]
+    },
+    {
+      "name": "scrollbar-track",
+      "role": "scrollbar",
+      "file": "scrollbar-track.png",
+      "width": 325,
+      "height": 47,
+      "source_rect": [
+        580,
+        912,
+        905,
+        959
+      ]
+    },
+    {
+      "name": "slider-segmented",
+      "role": "slider",
+      "file": "slider-segmented.png",
+      "width": 148,
+      "height": 51,
+      "source_rect": [
+        925,
+        912,
+        1073,
+        963
+      ]
+    },
+    {
+      "name": "slice-corner-tl",
+      "role": "nine_slice",
+      "file": "slice-corner-tl.png",
+      "width": 79,
+      "height": 76,
+      "source_rect": [
+        1248,
+        597,
+        1327,
+        673
+      ]
+    },
+    {
+      "name": "slice-corner-tr",
+      "role": "nine_slice",
+      "file": "slice-corner-tr.png",
+      "width": 79,
+      "height": 76,
+      "source_rect": [
+        1356,
+        597,
+        1435,
+        673
+      ]
+    },
+    {
+      "name": "slice-corner-bl",
+      "role": "nine_slice",
+      "file": "slice-corner-bl.png",
+      "width": 79,
+      "height": 75,
+      "source_rect": [
+        1248,
+        687,
+        1327,
+        762
+      ]
+    },
+    {
+      "name": "slice-corner-br",
+      "role": "nine_slice",
+      "file": "slice-corner-br.png",
+      "width": 79,
+      "height": 75,
+      "source_rect": [
+        1356,
+        687,
+        1435,
+        762
+      ]
+    },
+    {
+      "name": "slice-edge-left",
+      "role": "nine_slice",
+      "file": "slice-edge-left.png",
+      "width": 39,
+      "height": 115,
+      "source_rect": [
+        1242,
+        773,
+        1281,
+        888
+      ]
+    },
+    {
+      "name": "slice-center",
+      "role": "nine_slice",
+      "file": "slice-center.png",
+      "width": 77,
+      "height": 76,
+      "source_rect": [
+        1305,
+        792,
+        1382,
+        868
+      ]
+    },
+    {
+      "name": "slice-edge-right",
+      "role": "nine_slice",
+      "file": "slice-edge-right.png",
+      "width": 40,
+      "height": 115,
+      "source_rect": [
+        1406,
+        773,
+        1446,
+        888
+      ]
+    },
+    {
+      "name": "slice-edge-h1",
+      "role": "nine_slice",
+      "file": "slice-edge-h1.png",
+      "width": 103,
+      "height": 39,
+      "source_rect": [
+        1235,
+        902,
+        1338,
+        941
+      ]
+    },
+    {
+      "name": "slice-edge-h2",
+      "role": "nine_slice",
+      "file": "slice-edge-h2.png",
+      "width": 103,
+      "height": 39,
+      "source_rect": [
+        1350,
+        902,
+        1453,
+        941
+      ]
+    },
+    {
+      "name": "slice-edge-h3",
+      "role": "nine_slice",
+      "file": "slice-edge-h3.png",
+      "width": 102,
+      "height": 38,
+      "source_rect": [
+        1234,
+        948,
+        1336,
+        986
+      ]
+    },
+    {
+      "name": "slice-edge-h4",
+      "role": "nine_slice",
+      "file": "slice-edge-h4.png",
+      "width": 102,
+      "height": 38,
+      "source_rect": [
+        1351,
+        948,
+        1453,
+        986
+      ]
+    }
+  ]
+}
