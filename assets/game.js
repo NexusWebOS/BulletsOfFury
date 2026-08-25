@@ -6352,11 +6352,12 @@ const SUBBOSS={
      soak assertion `_sbSeen` (a runtime observation, not a name pin) went false, and the
      stage-7 boss gate behind it failed with it. ratking is a SEWER unit and stage 7 appears
      to rely on that; olivecarrier needs whatever ratking has before it can take this slot. */,    // RAT KING EXCAVATOR — level 7 sub-boss
-  /* SPAWN CARRIER replaces the HERALD OF DEATH (drop 0814e). The herald never had body art —
+  /* The intact SPAWN CARRIER hull carries the HERALD OF DEATH identity (0825c). The old herald
+     runtime never had body art —
      mba_vr_* is 0 keys, nvr_* was never built — so it wore frames 0-3 of its own venom attack
      stream as a hull: the tester's "miniboss that is still a hitbox square", finally identified by
      spawning all eight minis and reading the pixels. The lock pack ships the slot's authored unit
-     (Enemies/Stage08/spawn_carrier_miniboss); the herald code stays, unassigned, like the
+     (Enemies/Stage08/spawn_carrier_miniboss); the old herald code stays, unassigned, like the
      magma/cryo rigs. */
   8:{at:0.45, kind:'spawncarrier', afterScroll:1201},
   9:{at:0.45, kind:'warpsentinel', afterScroll:1201},   // WARP SENTINEL — the bonus stage's miniboss (0822ab)
@@ -9847,7 +9848,7 @@ const SHIPBOSS = {
      effective 456-at-DIFF and blacksteel's 327 is stage 6 — the mini curve is Mike's to retune.
      pat/pats are MY pick (stage-8 flavour, converging Vs) — the herald's venom stream stays with
      the herald code below, unassigned, exactly like the magma/cryo rigs. */
-  spawncarrier:  {key:'nsb_spawncarrier_intact_v2',name:'SPAWN CARRIER', w:210,h:216, hp:340, pat:'spawnpods', cd:1.22, mini:true,
+  spawncarrier:  {key:'nsb_spawncarrier_intact_v2',name:'HERALD OF DEATH', w:210,h:216, hp:340, pat:'spawnpods', cd:1.22, mini:true,
                   pats:['spawnpods','deathlattice'], proj:'spawn',
                   /* measured from the complete 256px plate: mirrored outboard barrels + nose */
                   mounts:{L:[-0.316,0.234], C:[0,0.414], R:[0.316,0.234]},
@@ -16327,29 +16328,20 @@ function warmStage(n){
    The eight-way discharge fires ONE ray every 0.3s rather than all eight at
    once, which is the Doom 35-tic cadence he asked for: it reads as the orb
    coming apart in sequence instead of a single burst. */
-/* STAGE ELEMENTS (drop 0801fn). Mike: "On level 3 - you need to spawn fireball
-   twice no matter what during the game. never spawn ice orb on this level for
-   anyone ... all fireattacks do 2x damage to ice enmies, vice versa on stage 2
-   with ice vs fire."
+/* FREEZER'S AUTHORED ELEMENTAL BONUSES (0825c).
 
-   Stage 2 is the volcano and stage 3 is the ice field, so each level's own
-   element is the WEAK one there - you bring the opposite and it pays off. That
-   is the whole reason the fireball exists on the ice level.
+   Mike's exact correction overrides the earlier generic opposing-element interpretation:
+     - Stage 2: Freezer's ICE BREATH deals x2.
+     - Stage 3: Freezer's FIRE-ICE / thermoshock ball deals x2.
+     - Cole has no elemental damage addition. His specials are Sonic Boom and nuclear missiles.
 
-   STAGE_ELEMENT says what a level is MADE of. An attack of the opposing element
-   does double; an attack of the same element does not. */
-const STAGE_ELEMENT = {2:'fire', 3:'ice'};
-function elementMultiplier(atkElem){
-  const st=STAGE_ELEMENT[run.stage];
-  if(!st || !atkElem) return 1;
-  /* THERMOSHOCK CARRIES BOTH (drop 0814a). Freezer's fire-ice orb is fire AND ice in one
-     projectile — the art is a ball split down the middle and it sprays four fire shards and
-     four ice ones — so on an elemental stage the half that counts is always the opposing half.
-     ⚠ THIS IS MY CALL, NOT MIKE'S. He specified the weapon, not its multiplier. It is one line
-     to make it 1 if he wants the two halves to cancel instead. */
-  if(atkElem==='fireice') return 2;
-  if(atkElem===st) return 1;              // fire on the volcano, ice on the ice
-  return 2;                                // the opposite element: double
+   The attack identity is required as well as the element. This prevents a generic ice/fire orb
+   carried by Cole (or any other pilot) from silently becoming a special elemental bonus. */
+function elementMultiplier(atkElem, attackKind){
+  if(!run || typeof _pilotKey!=='function' || _pilotKey()!=='freezer') return 1;
+  if(run.stage===2 && atkElem==='ice' && attackKind==='icebreath') return 2;
+  if(run.stage===3 && atkElem==='fireice' && attackKind==='fireice') return 2;
+  return 1;
 }
 function attackElement(kind){
   if(kind==='fireball'||kind==='firray') return 'fire';
@@ -18092,7 +18084,7 @@ function updatePlay(dt){
       for(const e of enemies){
         if(e.dead) continue;
         if(Math.abs(e.x-b.x)<(e.w+b.w)/2 && Math.abs(e.y-b.y)<(e.h+b.h)/2){
-          b._et=(b._et||0)-dt; if(b._et<=0){ hitEnemy(e,b.dmg*elementMultiplier(b._ts?'fireice':'fire')); b._et=0.15;
+          b._et=(b._et||0)-dt; if(b._et<=0){ hitEnemy(e,b.dmg*elementMultiplier(b._ts?'fireice':'fire',b._ts?'fireice':'fireball')); b._et=0.15;
             if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; }   // thermoshock freezes as well as burns
             if(typeof stageStats!=='undefined') stageStats.hits++; }
         }
@@ -18100,7 +18092,7 @@ function updatePlay(dt){
       if(boss && bossActive && !boss.dead &&
          Math.abs(boss.x-b.x)<(boss.w+b.w)/2 &&
          Math.abs((boss._drawY!=null?boss._drawY:boss.y)-b.y)<(boss.h+b.h)/2){
-        b._bt=(b._bt||0)-dt; if(b._bt<=0){ hitBoss(b.dmg*0.5); b._bt=0.15; }
+        b._bt=(b._bt||0)-dt; if(b._bt<=0){ hitBoss(b.dmg*0.5*elementMultiplier(b._ts?'fireice':'fire',b._ts?'fireice':'fireball')); b._bt=0.15; }
       }
       if(b._rays>0){
         b._rayT=(b._rayT||0)-dt;
@@ -18147,7 +18139,7 @@ function updatePlay(dt){
       for(const e of enemies){
         if(e.dead) continue;
         if(Math.abs(e.x-b.x)<(e.w+b.w)/2 && Math.abs(e.y-b.y)<(e.h+b.h)/2){
-          hitEnemy(e,b.dmg*elementMultiplier(b._ts?'fireice':'fire'));
+          hitEnemy(e,b.dmg*elementMultiplier(b._ts?'fireice':'fire',b._ts?'fireice':'fireball'));
           if(b._ts && b._el==='ice'){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; }
           b.dead=true; break; }
       }
@@ -18464,7 +18456,7 @@ function updatePlay(dt){
             /* the guard belongs on stageStats, NOT on the sound - it was landing on weaponHitSfx,
                so the flame's hit sound rode on an unrelated variable while stageStats.hits++ ran
                unguarded right next to it. Both were wrong in the same line. */
-            hitEnemy(e, b.dmg*elementMultiplier(attackElement('flame'))); weaponHitSfx(attackElement('flame')); if(typeof stageStats!=='undefined') stageStats.hits++; b._hit.push(e);
+            hitEnemy(e, b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower')); weaponHitSfx(attackElement('flame')); if(typeof stageStats!=='undefined') stageStats.hits++; b._hit.push(e);
             /* ICE BREATH FREEZES (drop 0801fl). Mike: "when it hits enemies,
                flashes white/ice blue and turns them into ice variants when they
                die." The flash is the standard hit flash retinted; _frozen marks
@@ -18485,12 +18477,12 @@ function updatePlay(dt){
       }
       if(boss && bossActive && !boss.dead){
         b._bt=(b._bt||0)-dt;
-        if(b._bt<=0 && flameHit(b, boss.x, (boss._drawY!=null?boss._drawY:boss.y), boss.w, boss.h)){ hitBoss(b.dmg); weaponHitSfx(attackElement('flame')); b._bt=FLAME_TICK; }
+        if(b._bt<=0 && flameHit(b, boss.x, (boss._drawY!=null?boss._drawY:boss.y), boss.w, boss.h)){ hitBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower')); weaponHitSfx(attackElement('flame')); b._bt=FLAME_TICK; }
       }
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
         b._sbt=(b._sbt||0)-dt;
         const sy=(subBoss._drawY||subBoss.y);
-        if(b._sbt<=0 && flameHit(b, subBoss.x, sy, (subBoss._drawW||subBoss.w), (subBoss._drawH||subBoss.h))){ hitSubBoss(b.dmg); weaponHitSfx(attackElement('flame')); b._sbt=FLAME_TICK; }
+        if(b._sbt<=0 && flameHit(b, subBoss.x, sy, (subBoss._drawW||subBoss.w), (subBoss._drawH||subBoss.h))){ hitSubBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower')); weaponHitSfx(attackElement('flame')); b._sbt=FLAME_TICK; }
       }
       for(const p of powerups){
         if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate')) continue;
@@ -18508,7 +18500,7 @@ function updatePlay(dt){
       /* the orb's element is fixed at LAUNCH (b._ts), never re-asked here — see the note at
          pShoot. The multiplier is solved once per volley rather than per shard. */
       const _oel=b._el||(b._ts?'fireice':(orbIsFire()?'fire':'ice'));
-      const _om=elementMultiplier(_oel);
+      const _om=elementMultiplier(_oel,b._ts?'fireice':'orb');
       const _sopt={mul:_om, ts:b._ts, el:_oel};
       if(b.shardCd<=0){ b.shardCd=0.10; const n=b.shardN; for(let i=0;i<n;i++){ pShard(b.x,b.y, b.spin + i*(TAU/n), b.lv, _sopt); } b.sfxCd=(b.sfxCd||0)-1; if(b.sfxCd<=0){ b.sfxCd=3; if(Audio.SFX.spread)Audio.SFX.spread(); } }
       b._ht-=dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.16; }

@@ -11441,6 +11441,25 @@ console.log("=== 237. enemy shield FX runtime ===");
      'full fields retain the authored back / enemy / front draw order across every hull renderer');
 }
 
+// ===== 238. 0825C EXACT PILOT ELEMENT RULES + STAGE-8 MINIBOSS NAME =====
+console.log("=== 238. exact pilot kit rules ===");
+{
+  var _m238=JSON.parse(vm.runInContext("(function(){var o={};"
+    +"run.pilot='cole';run.stage=2;o.coleIce=elementMultiplier('ice','orb');"
+    +"run.stage=3;o.coleFire=elementMultiplier('fire','orb');o.coleFireIce=elementMultiplier('fireice','fireice');"
+    +"run.pilot='freezer';run.stage=2;o.f2breath=elementMultiplier('ice','icebreath');o.f2orb=elementMultiplier('ice','orb');o.f2thermo=elementMultiplier('fireice','fireice');"
+    +"run.stage=3;o.f3thermo=elementMultiplier('fireice','fireice');o.f3fire=elementMultiplier('fire','fireball');o.f3breath=elementMultiplier('ice','icebreath');"
+    +"run.stage=4;o.f4thermo=elementMultiplier('fireice','fireice');return JSON.stringify(o);})()",ctxv));
+  ok(_m238.coleIce===1 && _m238.coleFire===1 && _m238.coleFireIce===1,
+     'Cole has no elemental damage bonus; Sonic Boom and nuclear missiles remain his specials');
+  ok(_m238.f2breath===2 && _m238.f2orb===1 && _m238.f2thermo===1,
+     "Stage 2 doubles only Freezer's ICE BREATH, not an orb or thermoshock");
+  ok(_m238.f3thermo===2 && _m238.f3fire===1 && _m238.f3breath===1 && _m238.f4thermo===1,
+     "Stage 3 doubles only Freezer's FIRE-ICE ball, and the bonus does not leak to Stage 4");
+  ok(vm.runInContext("SUBBOSS[8].kind==='spawncarrier' && SHIPBOSS.spawncarrier.name==='HERALD OF DEATH'",ctxv),
+     'Stage 8 keeps the intact Spawn Carrier hull under the authored HERALD OF DEATH name');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

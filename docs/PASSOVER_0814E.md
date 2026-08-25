@@ -54,8 +54,8 @@ name banner, the health bar, and its `void` volley in flight. Parse: game.js and
 - **The herald code stays, unassigned** — spawn arm, `heraldAnimTick/Key`, all of it — the
   magma/cryo precedent. Retiring it via `DEAD_SUBBOSS` would be wrong: that clears the gate and
   skips the fight entirely.
-- **Name per the pack** ("SPAWN CARRIER"). If Mike wants the HERALD OF DEATH name kept on the new
-  hull, it is one string in the SHIPBOSS row.
+- **SUPERSEDED 0825c:** Mike kept the intact Spawn Carrier hull and restored the encounter name
+  **HERALD OF DEATH** in the SHIPBOSS row.
 
 ## 5. WHAT THE PACKS CHANGE ABOUT THE OPEN LIST — INVENTORIED, NOT INTEGRATED
 
