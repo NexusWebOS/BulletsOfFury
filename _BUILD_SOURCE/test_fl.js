@@ -698,7 +698,7 @@ console.log('\n=== 19. vault vehicle arsenal (tanks/aircraft/bosses) ===');
   vm.runInContext("window.__ve.vx=0;", ctxv);
   ok(vm.runInContext("(Math.abs(window.__ve.vx)>0.35?(window.__ve.vx<0?'w':'e'):'s')",ctxv)==='s', 'stationary tank faces south (toward player)');
   vm.runInContext("window.__ve.vx=-1.5;", ctxv);
-  ok(vm.runInContext("(Math.abs(window.__ve.vx)>0.35?(window.__ve.vx<0?'w':'e'):'s')",ctxv)==='w', 'tank moving left shows west side view');
+  ok(vm.runInContext("drawVaultVehicle.toString().indexOf(\"const dir='s'\")>0",ctxv), 'tank moving left still shows the south-facing hull and fixed barrel');
   // drawVaultVehicle returns true for a tank and an aircraft
   vm.runInContext("enemies.length=0; var t=spawnEnemy('tank',200,150,{}); t.variant=0; window.__vt=t;", ctxv);
   ok(vm.runInContext("(function(){ctx.save();var r=drawVaultVehicle(window.__vt);ctx.restore();return r;})()",ctxv)===true, 'drawVaultVehicle renders a tank');
@@ -1520,10 +1520,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      _g229q.indexOf('"' + vm.runInContext("SHIPBOSS.xenoregent.key", ctxv) + '"') > 0,
      'the stage 5 + 7 plates are registered too');
   ok(vm.runInContext("STAGES[4].boss==='xenoregent'", ctxv), 'stage 5 boss = XENO REGENT (0813q)');
-  /* the carrier ships a 16-frame launch cycle; every frame must be registered or it stutters */
+  /* the legacy MKI launch reel remains registered for reversibility, but Stage 6 no longer uses it */
   ok(Array.from({length:16},function(_,i){return 'nsb_dcarrier_'+String(i).padStart(2,'0');})
        .every(function(k){ return _g229q.indexOf('"'+k+'"') > 0; }),
-     'all 16 doomsday carrier launch frames are registered');
+     'all 16 legacy MKI carrier frames remain registered (unassigned, not deleted)');
   /* CESSPOOL LEVIATHAN was CULLED at Mike's instruction ("the gator can go. delete all") — its 21
      mba_cl_ keys are in _quarantine. These assertions used to prove it built as a 5-part modular
      boss; they now prove the OPPOSITE, which is the behaviour that matters after a cull: the art
@@ -2137,7 +2137,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // The patrol logic lives inside updatePlay's pattern switch, so drive updatePlay with an EMPTY
   // spawn plan — otherwise the stage roster keeps adding enemies and enemies[0] stops being ours.
   vm.runInContext("run.stage=4; curStage=STAGES[3]; enemies.length=0; eBullets.length=0; stagePlan=[]; waveIdx=0; stageTimer=0; boss=null; subBoss=null; subBossActive=false; bossActive=false; player.dead=false; player.invuln=999999; spawnEnemy('roadtank', 300, 200, {});", ctxv);
-  var _lv=[], _lastd=null, _rev=0;
+  var _lv=[], _xy=[], _dirs={};
   /* 900 frames (15s) was not always long enough for a full patrol leg — the tank starts at a random
      point on the road heading a random way, so the test failed intermittently on CORRECT behaviour.
      A flaky assertion is worse than no assertion: it trains you to ignore failures. 2400 frames
@@ -2146,15 +2146,13 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     vm.runInContext("updatePlay(1/60);", ctxv);
     var lv=vm.runInContext("enemies.length?enemies[0]._lvlY:null", ctxv);
     if(lv==null) break;
-    if(_lv.length){
-      var d=lv-_lv[_lv.length-1];
-      if(d!==0){ if(_lastd!=null && (d>0)!==(_lastd>0)) _rev++; _lastd=d; }
-    }
+    var _pos=vm.runInContext("enemies.length?{x:enemies[0].x,y:enemies[0].y,d:enemies[0]._tankPathDir}:null",ctxv);
+    if(_pos){ _xy.push(_pos); if(_pos.d!=null)_dirs[_pos.d]=1; }
     _lv.push(lv);
   }
-  var _span = _lv.length? (Math.max.apply(null,_lv)-Math.min.apply(null,_lv)) : 0;
-  ok(_span > 40, 'road tank drives a real distance along the road (level-space span '+Math.round(_span)+'px)');
-  ok(_rev >= 1, 'road tank reverses direction — it patrols UP and DOWN, not one-way ('+_rev+' reversals)');
+  var _span=0; if(_xy.length){var _x0=_xy[0].x,_y0=_xy[0].y;_xy.forEach(function(v){_span=Math.max(_span,Math.hypot(v.x-_x0,v.y-_y0));});}
+  ok(_span > 40, 'road tank rolls a real distance along its path ('+Math.round(_span)+'px)');
+  ok(Object.keys(_dirs).length>=2, 'road tank changes among the eight drive headings instead of sliding on one axis ('+Object.keys(_dirs).join(',')+')');
   ok(vm.runInContext("enemies.length===0 || (isFinite(enemies[0].x)&&isFinite(enemies[0].y))", ctxv), 'road tank stays finite');
 
   // PRE-DEFINED JET WAVES
@@ -3835,9 +3833,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("for(var f=0;f<60*40;f++) updatePlay(1/60);", ctxv);
   ok(vm.runInContext("powerups.length", ctxv)>_pu0 || vm.runInContext("pwTimer<11", ctxv), 'containers still spawn while a boss is alive');
   // BARS STAY CENTRED ON SCREEN
-  ok(vm.runInContext("drawSubBossBar.toString().indexOf('screen-fixed via the same shift')>0", ctxv), 'the miniboss bar uses the same screen-space shift as every other overlay');
-  ok(vm.runInContext("drawSubBossBar.toString().indexOf('ctx.translate(camX, 0)')>0", ctxv), 'cancelling the camera so it cannot drift on 800px stages');
-  ok(vm.runInContext("drawSubBossBar.toString().indexOf('(VW-w)/2')>0", ctxv), 'and centred on the viewport');
+  ok(vm.runInContext("drawSubBossBar.toString().indexOf('screenBar(function()')>0", ctxv), 'the miniboss bar escapes the complete world transform');
+  ok(vm.runInContext("drawSubBossBar.toString().indexOf('ctx.translate(camX')<0", ctxv), 'so neither camera motion nor view zoom can drag it into the playfield');
+  ok(vm.runInContext("drawSubBossBar.toString().indexOf('(VW-w)/2')>0", ctxv), 'and it remains centred on the viewport');
   // FACING
   ok(vm.runInContext("ASSIGNED_FLIP.ss===1", ctxv), 'the Storm Sovereign is flipped to face the player');
   vm.runInContext("boss=null; bossActive=false; powerups.length=0;", ctxv);
@@ -6466,7 +6464,8 @@ console.log('=== 153. new sounds + the 20/35/50/100 missile crates (drop 0801km)
   });
   /* The flamethrower must actually LOOP the new bed, not the old flare one-shot. */
   var _fsrc=vm.runInContext("String(flameSndStart)", ctxv);
-  ok(/loopOn\('flamewall'/.test(_fsrc), 'the flamethrower loops flame_wall.wav');
+  ok(/loopOn\(isIce\?'iceBreathLoop':'flameThrowerLoop'/.test(_fsrc),
+     'flamethrower and ice breath select their dedicated generated loops');
   ok(!/loopOn\('firewall'/.test(_fsrc), 'and no longer loops the old firewall flare');
   /* Taming is keyed by NAME. Without an entry the new sample plays raw and undoes
      drop 0730a's fix for "the missile and firewave sounds are harsh to the ears." */
@@ -9536,7 +9535,7 @@ console.log("=== 210. jet table ===");
      stage 1; the delta rows only convert on stages 1 and 3. */
   var _j=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=4; curStage=STAGES[3];"
-    +"beginStage(4); setState(GS.PLAY); player.reset();"
+    +"beginStage(4); setState(GS.PLAY); player.reset(); stagePlan=[]; waveIdx=0; stageTimer=0;"
     +"var o={};"
     +"for(var k in S1_JETS){"
     +"  enemies.length=0; eBullets.length=0; pBullets.length=0;"
@@ -9908,8 +9907,8 @@ console.log("=== 213b. enemy separation ===");
   var _s213=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
     +"beginStage(1); setState(GS.PLAY); player.reset(); player.invuln=999999;"
-    /* the same box test probe_stack.py and enemySeparate both use */
-    +"function burial(A,B){ var ox=(A.w+B.w)*0.42-Math.abs(B.x-A.x), oy=(A.h+B.h)*0.42-Math.abs(B.y-A.y);"
+    /* the same full-footprint box test enemySeparate uses */
+    +"function burial(A,B){ var ox=(A.w+B.w)*0.5+SEP_GAP-Math.abs(B.x-A.x), oy=(A.h+B.h)*0.5+SEP_GAP-Math.abs(B.y-A.y);"
     +"  if(ox<=0||oy<=0) return 0; return Math.min(ox/Math.min(A.w,B.w), oy/Math.min(A.h,B.h)); }"
     +"var o={};"
     +"enemies.length=0;"
@@ -9926,33 +9925,25 @@ console.log("=== 213b. enemy separation ===");
     +"window.__sepOff=true;"
     +"for(var f2=0;f2<90;f2++) enemySeparate(1/60);"
     +"o.offAfter=+burial(c,d).toFixed(3); window.__sepOff=false;"
-    /* a formation contact UNDER the deadzone must be left exactly where it was drawn */
+    /* even a shallow formation contact must be cleared — there is no overlap deadzone */
     +"enemies.length=0;"
     +"var e1=spawnEnemy('s1jetdelta',240,200,{route:'straight'});"
-    +"var e2=spawnEnemy('s1jetdelta',240+e1.w*0.84-4,200,{route:'straight'});"
+    +"var e2=spawnEnemy('s1jetdelta',240+(e1.w+e1.w)*0.5+SEP_GAP-4,200,{route:'straight'});"
     +"o.touch=+burial(e1,e2).toFixed(3); var tx=e2.x;"
     +"for(var f3=0;f3<60;f3++) enemySeparate(1/60);"
     +"o.touchMoved=+Math.abs(e2.x-tx).toFixed(2);"
     +"return JSON.stringify(o);})()", ctxv));
 
-  /* ⚠ 0.84 IS THIS METRIC'S CEILING FOR TWO IDENTICAL UNITS, not 1.0, and my first cut of these
-     three thresholds was written as though it were 1.0 — all three went red against a pass that
-     was behaving exactly as designed. The box test compares |dx| against (A.w+B.w)*0.42, so two
-     units sharing a point give (95+95)*0.42/95 = 0.84 on both axes. Burial only exceeds 1.0 when
-     a SMALL unit sits inside a large one, which is what stage 4's 150.7% was.
-     Thresholds are stated against the metric's real range now. */
-  ok(_s213.before > 0.8,
-     'two units dropped on one point start fully buried ('+_s213.before+' — 0.84 is this metric\'s ceiling for a matched pair)');
-  ok(_s213.after < 0.2,
-     'and separation pushes them out to the deadzone ('+_s213.after+')');
-  ok(_s213.after < _s213.before*0.3,
-     'which is most of the burial gone ('+_s213.before+' -> '+_s213.after+')');
-  ok(_s213.offAfter > 0.8,
+  ok(_s213.before >= 1,
+     'two units dropped on one point start fully buried ('+_s213.before+')');
+  ok(_s213.after === 0,
+     'and separation clears the complete UNIT footprint, including its gap ('+_s213.after+')');
+  ok(_s213.offAfter >= 1,
      'with the pass switched off the same pair stays buried ('+_s213.offAfter+') — the change is attributable to the code under test');
-  ok(_s213.touch > 0 && _s213.touch <= 0.2,
-     'a formation contact under the deadzone reads as a touch ('+_s213.touch+')');
-  ok(_s213.touchMoved === 0,
-     'and separation leaves it alone ('+_s213.touchMoved+'px) — an authored formation keeps the shape it was drawn as');
+  ok(_s213.touch > 0,
+     'a shallow formation contact still registers as overlap ('+_s213.touch+')');
+  ok(_s213.touchMoved > 0,
+     'and the shallow contact is moved apart instead of being preserved ('+_s213.touchMoved+'px)');
 }
 
 // ===== 213c. ONE ROSTER ROW, WHATEVER THE WAVE SPELLED IT (drop 0811l) =====
@@ -10370,8 +10361,8 @@ console.log("=== 221. boss art warming ===");
      and 3 opened their boss fight on the hull-silhouette fallback. Warming is driven off the
      tables now, so a boss added later is covered by existing code; these pin that it stays that
      way rather than reverting to a hand-list. */
-  ok(/addPrefix\(SHIPBOSS\[_bk\]\.key\)/.test(_g221), "warmStage warms the stage boss's own hull key");
-  ok(/addPrefix\(SHIPBOSS\[_mk\]\.key\)/.test(_g221), 'and the miniboss hull the same way');
+  ok(/const _bd=SHIPBOSS\[_bk\]; add\(_bd\.key\)/.test(_g221), "warmStage warms the stage boss's own hull key");
+  ok(/const _md=SHIPBOSS\[_mk\]; add\(_md\.key\)/.test(_g221), 'and the miniboss hull the same way');
   ok(/addPrefix\(NEWBOSS\[n\]\.idle\)/.test(_g221),   'and any NEWBOSS idle reel');
 
   /* ⚠ THE ENTIRE NEWBOSS TABLE POINTS AT ART THAT IS NOT REGISTERED. All four idle keys
@@ -10763,16 +10754,17 @@ console.log("=== 229. flame/ice hitbox + reaver colour + fire orb ===");
 
   /* Mike: "a big ass fire orb comes flying andh homing at us, if we dodge out of its path as it
      gets near us, it goes off screen and does not continue to home on the player." */
-  ok(_g229.indexOf('function reaverOrbTick')>0, 'the charged fire orb exists');
-  ok(_g229.indexOf('fireorb:{type:')>0,
-     'and fireorb is in PROJ — a kind with no entry is a wiring bug, not something to paper over');
-  ok(_g229.indexOf("pal:'orange'")>0, 'the orb is orange, not red');
+  ok(_g229.indexOf('function reaverOrbTick')>0, 'the charged Reaver orb exists');
+  ok(_g229.indexOf("kind:'magma', _reaverOrb:true")>0,
+     'and it launches the authored magma projectile rather than the green/white placeholder');
+  ok(_g229.indexOf("infernoreaver:1")>0 && _g229.indexOf("return src && MAGMA_SHIP_SHOT[src._ship] ? 'magma' : 'eshot'")>0,
+     'the Reaver normal volleys use magma too, without changing the other ship bosses');
   ok(_g229.indexOf('b._committed=true')>0,
      'it COMMITS — the heading locks once it is close, so breaking late makes it miss');
-  var _orbFn=_g229.slice(_g229.indexOf("if(b.kind==='fireorb')"));
+  var _orbFn=_g229.slice(_g229.indexOf("if(b.kind==='fireorb' || b._reaverOrb)"));
   _orbFn=_orbFn.slice(0, _orbFn.indexOf("if(b.kind==='groundup')"));
-  ok(_orbFn.indexOf('if(!b._committed){')>0,
-     'and the turn is gated on that latch, so it can never re-acquire');
+  ok(_orbFn.indexOf('if(!b._committed){')>0 && _orbFn.indexOf('b._reaverOrb')>0,
+     'and the magma orb turn is gated on that latch, so it can never re-acquire');
 
   /* Mike: "do not allow us to pull up the pause/save game menu until we reach this point when
      selecting campaign." */
@@ -10928,6 +10920,173 @@ console.log("=== 230. loopcharge jets + no homing ===");
      'NORMAL density is raised to 1.00 — "increase the amount of enemies"');
   ok(_g230.indexOf("const _liveCap = (run.stage===1)? 9 : 6;")>0,
      'and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)');
+}
+
+// ===== 231. 0824 LIVE EXIT / LOCKED HUD / MAGMA ORB CLEANUP =====
+console.log("=== 231. live exit and HUD cleanup ===");
+{
+  var _g231=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  var _world231=_g231.slice(_g231.indexOf('function drawWorld('),_g231.indexOf('function drawFlyover('));
+  ok(_world231.indexOf('drawChargeTell(e)')<0,
+     'charging jets no longer paint the huge route rings');
+  ok(_g231.indexOf("'ndc_magmaorb_'+(((b.t||0)*12|0)%4)")>0,
+     'lava bosses use the dedicated molten-orb reel, not the red electrical star');
+  ok(_g231.indexOf("'bfx_magma_p_'+(((b.t||0)*12|0)%6)")<0,
+     'the rejected electrical projectile reel is no longer a live FIRETYPE');
+  ok(_g231.indexOf('function drawHeavyTurretHUD()')>0 &&
+     _g231.indexOf("'HEAVY TURRET  '+Math.max(0,Math.ceil(lzMount.life))+'s'")>0,
+     'the Heavy Turret owns a visible seconds countdown');
+  ok(_g231.indexOf('drawHeavyTurretHUD();')>0 &&
+     vm.runInContext("drawHeavyTurretHUD.toString().indexOf('screenBar(function()')>0",ctxv),
+     'and its ability meter is locked to the screen');
+  ok(vm.runInContext("drawFlyover.toString().indexOf('updateFlyoverLiveFx(dt)')>0",ctxv),
+     'the stage exit advances live effects before drawing the fly-off');
+  ok(vm.runInContext("updateFlyoverLiveFx.toString().indexOf('particles=particles.filter')>0",ctxv),
+     'and final explosions/particles continue aging instead of freezing');
+  ok(vm.runInContext("drawSubBossBar.toString().indexOf('screenBar(function()')>0",ctxv),
+     'the miniboss bar is fixed below the HUD in screen space');
+}
+
+// ===== 232. 0824 SPREAD POSE + DOOMSDAY CARRIER MKII =====
+console.log("=== 232. spread pose and carrier MKII ===");
+{
+  var _g232=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  var _p232=JSON.parse(vm.runInContext("JSON.stringify(P87_POSE.map(function(p){return p.rc;}))",ctxv));
+  ok(_p232[0][0]===3 && _p232[0][1]===1,
+     'the authored up-left spread cell is assigned to up-left travel');
+  ok(_p232[2][0]===3 && _p232[2][1]===2,
+     'and the authored up-right cell is assigned to up-right travel');
+  var _c232=JSON.parse(vm.runInContext("(function(){var D=SHIPBOSS.doomsdaycarrier;return JSON.stringify({key:D.key,name:D.name,w:D.w,h:D.h,open:D.launch.open,pre:D.launch.pre||null});})()",ctxv));
+  ok(_c232.key==='nsb_doomsdaycarrier_intact' && _c232.name==='DOOMSDAY CARRIER MKII',
+     'Stage 6 is explicitly wired to the MKII intact hull');
+  ok(_c232.open==='nsb_doomsdaycarrier_open' && _c232.pre===null,
+     'its bay cycle uses the MKII open plate and cannot enter the MKI reel');
+  ok(_c232.w===640 && _c232.h===310,
+     'the carrier keeps its authored doubled 640x310 aspect');
+  var _sd232=_g232.slice(_g232.indexOf('function shipBossDraw'),_g232.indexOf('function spawnBoss'));
+  ok(_sd232.indexOf('const w=b.w, h=b.h;')>0 && _sd232.indexOf('const s=b.w/256')<0,
+     'shipBossDraw no longer stretches the MKII into a 640x640 square');
+  ok(_sd232.indexOf('D.dmg && _frac<=0.33')>0,
+     'the MKII damaged and critical authored plates are now reachable');
+  var _tick232=JSON.parse(vm.runInContext("(function(){var b={_ship:'doomsdaycarrier',x:240,y:100,w:640,h:310,_bay:{L:6,R:6},_lc:{t:0,f:0,playing:true,side:'L',fired:false}};carrierTick(b,1/14);var active=b._animKey;b._lc.playing=false;b._lc.cd=1;carrierTick(b,1/60);return JSON.stringify({active:active,idle:b._animKey});})()",ctxv));
+  ok(_tick232.active==='nsb_doomsdaycarrier_open' && _tick232.idle===null,
+     'the live launch opens MKII, then returns to the MKII health-state hull');
+}
+
+// ===== 233. 0825 GENERATED V3/V4 COMBAT AUDIO =====
+console.log("=== 233. generated combat audio routing ===");
+{
+  var _g233=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  var _keys233=['machineGun','heavyMachineGun','enemyMachineGunLight','enemyMachineGunHeavy',
+    'coleSonicBoom','laserBeamStart','laserBeamLoop','laserBeamEnd',
+    'flameThrowerStart','flameThrowerLoop','flameThrowerEnd',
+    'iceBreathStart','iceBreathLoop','iceBreathEnd',
+    'explosionAirSmall01','explosionAirSmall02','explosionAirMedium','explosionAirLarge',
+    'explosionBossCore','explosionIceBurst'];
+  var _miss233=_keys233.filter(function(k){
+    var rel=vm.runInContext("BOFA.sfx['"+k+"']||''",ctxv);
+    return !rel || !fs.existsSync(ROOT+'/'+rel);
+  });
+  ok(_miss233.length===0,
+     'all signature/continuous/explosion cues are registered and present ('+(_keys233.length-_miss233.length)+'/'+_keys233.length+')');
+  ok(vm.runInContext("sonicRelease.toString().indexOf('coleSonicBoom')>0",ctxv),
+     "Cole's sonic boom owns its generated pressure-wave cue instead of borrowing pulse laser");
+  var _ps233=vm.runInContext('pShoot.toString()',ctxv);
+  ok(_ps233.indexOf('heavyMachineGun')>0 && _ps233.indexOf('machineGun')>0,
+     "Lizzie's mounted gun and the regular player gun have separate reports");
+  ok(_ps233.indexOf('laserBeamStart')>0 && _ps233.indexOf("loopOn('laserBeamLoop'")>0,
+     'the held laser uses a start plus one sustained loop instead of retriggering a pulse each cadence');
+  ok(vm.runInContext("flameSndStart.toString().indexOf(\"isIce?'iceBreathLoop':'flameThrowerLoop'\")>0",ctxv),
+     'flamethrower and ice breath route to different sustained loops');
+  ok(vm.runInContext("flameSndStop.toString().indexOf('iceBreathEnd')>0 && flameSndStop.toString().indexOf('flameThrowerEnd')>0",ctxv),
+     'both breath weapons own their generated release cue');
+  ok(vm.runInContext("enemyShotSfx.toString().indexOf('enemyMachineGunLight')>0 && enemyShotSfx.toString().indexOf('enemyFlameBolt')>0 && enemyShotSfx.toString().indexOf('enemyIceBolt')>0",ctxv),
+     'enemy projectile audio follows machine/fire/ice projectile kind at the shared muzzle');
+  ok(_g233.indexOf("Audio.SFX.expSmall=function(){ _sfxVariant(['explosionAirSmall01','explosionAirSmall02'],'small',0.045)")>0 &&
+     _g233.indexOf("Audio.SFX.expBig=function(){ _sfxVariant(['explosionAirMedium','explosionAirLarge','explosionFuelAir','explosionJetBreakup'],'big',0.11)")>0,
+     'small and large deaths rotate only within their own generated weight class');
+  ok(_g233.indexOf('enemyMachineGunBurst:{g:0.34, min:0.48}')>0,
+     'the authored enemy burst clip is throttled as one burst, not retriggered on every pellet');
+  ok(_g233.indexOf('(Audio.SFX.expBoss||Audio.SFX.expBig)();')>0 &&
+     _g233.indexOf('Audio.SFX.expIce) Audio.SFX.expIce()')>0,
+     'boss-core and frozen-shatter deaths use their dedicated expansion cues');
+}
+
+// ===== 234. 0825 STAGES 5-8 ARE ONE CONTINUOUS SCROLL =====
+console.log("=== 234. continuous late-stage boss runs ===");
+{
+  var _g234=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  var _cfg234=JSON.parse(vm.runInContext("(function(){var o={};[5,6,7,8].forEach(function(s){run.stage=s;var c=_levelCfg();o[s]={span:c.scrollLen,continuous:!!c.continuousBoss,skip:!!c.skipRows};});return JSON.stringify(o);})()",ctxv));
+  [5,6,7,8].forEach(function(s){
+    ok(_cfg234[s].continuous===true,
+       'stage '+s+' keeps its gameplay master under the boss — no arena destination');
+    ok(_cfg234[s].span===vm.runInContext('STAGES['+(s-1)+'].length*40',ctxv),
+       'stage '+s+' reaches the end of its one scroll exactly when its boss is due ('+_cfg234[s].span+'px)');
+  });
+  ok(_cfg234[8].skip===false,
+     'stage 8 no longer jumps over a source-row band mid-level');
+  ok(vm.runInContext("drawLevelMaster.toString().indexOf('!cfg.continuousBoss')>0",ctxv),
+     'the boss arena/remap branch explicitly excludes continuous stages');
+
+  /* Runtime proof: draw each stage at its final scroll coordinate, engage a live boss, and draw
+     the same frame again. `_masterSrcY` is the source row backing the top of the view. Before this
+     change stages 5/7 swapped plates and stage 8 changed to modulo mapping here. */
+  var _same234=JSON.parse(vm.runInContext("(function(){var o={};[5,6,7,8].forEach(function(s){"
+    +"run.stage=s;curStage=STAGES[s-1];boss=null;bossActive=false;bossDefeated=false;subBoss=null;subBossActive=false;"
+    +"mapScroll=_levelCfg().scrollLen;drawLevelMaster(0);var y0=_masterSrcY,m0=mapScroll;"
+    +"boss={dead:false};bossActive=true;drawLevelMaster(0);o[s]={y0:y0,y1:_masterSrcY,m0:m0,m1:mapScroll};"
+    +"});boss=null;bossActive=false;return JSON.stringify(o);})()",ctxv));
+  [5,6,7,8].forEach(function(s){
+    var R=_same234[s];
+    ok(R && Math.abs(R.y1-R.y0)<0.01 && R.m1===R.m0,
+       'stage '+s+' boss activation preserves the exact terrain coordinate ('+R.y0+' -> '+R.y1+')');
+  });
+}
+
+// ===== 235. 0825 SOLID UNIT SPACING + CLASS-SPECIFIC MOTION =====
+console.log("=== 235. solid spacing and vehicle motion ===");
+{
+  var _v235=JSON.parse(vm.runInContext("(function(){"
+    +"var o={};"
+    /* scenery is an immovable obstacle: the aircraft must take the whole correction */
+    +"var p={x:240,y:200,w:36,h:36,pattern:'prop',_prop:true,dead:false};"
+    +"var j={x:240,y:200,w:72,h:72,pattern:'s1jet',dead:false}; enemies=[p,j];"
+    +"var px=p.x,py=p.y; for(var n=0;n<120;n++) enemySeparate(1/60);"
+    +"o.propStill=(p.x===px&&p.y===py);"
+    +"o.propClear=(Math.abs(j.x-p.x)>=(j.w+p.w)*0.5+SEP_GAP || Math.abs(j.y-p.y)>=(j.h+p.h)*0.5+SEP_GAP);"
+    /* naval physics has a fixed x; only the draw offset bobs */
+    +"var b={x:210,y:140,w:48,h:76,t:0,dead:false}; navalInit(b,'patrol'); _lastScrollDy=0;"
+    +"var bx0=b.x,bmn=99,bmx=-99; for(var f=0;f<360;f++){b.t+=1/60;navalSteer(b,1/60);bmn=Math.min(bmn,b._navBob);bmx=Math.max(bmx,b._navBob);}"
+    +"o.boatX=+(b.x-bx0).toFixed(4);o.boatBob=+(bmx-bmn).toFixed(2);"
+    /* a jet flies straight beats joined by authored smooth lane changes */
+    +"var a={type:'scout',_vkind:'air',x:240,y:20,w:40,h:40,vy:1,amp:58,phase:0};"
+    +"var amn=a.x,amx=a.x,rev=0,lastDx=0,ph={}; for(var q=0;q<600;q++){var ox=a.x;airPatternTick(a,1/60,'curve');"
+    +"  var dx=a.x-ox;if(Math.abs(dx)>0.02&&Math.abs(lastDx)>0.02&&Math.sign(dx)!==Math.sign(lastDx))rev++;if(Math.abs(dx)>0.02)lastDx=dx;"
+    +"  amn=Math.min(amn,a.x);amx=Math.max(amx,a.x);ph[a._apPhase]=1;}"
+    +"o.airSpan=+(amx-amn).toFixed(1);o.airReversals=rev;o.airPhases=Object.keys(ph).sort();"
+    /* drive on an all-road fixture long enough to see roll, brake/pause and a second heading */
+    +"var oldTD=tankDrivable;tankDrivable=function(){return true;};_lastScrollDy=0;"
+    +"var t={x:240,y:180,w:46,h:60,dead:false,_atk:'mg',t:0};tankInit(t);var dirs={},stops=0;"
+    +"for(var z=0;z<1500;z++){tankMotionTick(t,1/60,28);if(t._tankPathDir!=null)dirs[t._tankPathDir]=1;if(t._spd<0.2)stops++;}"
+    +"o.tankDirs=Object.keys(dirs).map(Number);o.tankStops=stops;o.dirCount=TANK_DIR8.length;"
+    +"eBullets.length=0;t.x=240;t.y=120;t._atk='mg';t._burst=1;t._shotCd=0;t._burstCd=0;player.x=360;player.y=440;tankTick(t,1/60);"
+    +"var shot=eBullets[eBullets.length-1];o.shotDown=!!shot&&Math.abs(shot.vx)<0.0001&&shot.vy>0;"
+    +"tankDrivable=oldTD;return JSON.stringify(o);})()",ctxv));
+
+  ok(_v235.propStill===true && _v235.propClear===true,
+     'mines/barrels remain map-anchored obstacles while moving units take the full spacing correction');
+  ok(_v235.boatX===0 && _v235.boatBob>=3.4,
+     'boats have zero lateral wobble and retain a small vertical water bob ('+_v235.boatX+'px x, '+_v235.boatBob+'px bob)');
+  ok(_v235.airSpan>=40 && _v235.airReversals<=5 && _v235.airPhases.indexOf('curve')>=0 && _v235.airPhases.indexOf('run')>=0,
+     'jets alternate straight flight with committed curves instead of frame-by-frame wobble ('+_v235.airSpan+'px span, '+_v235.airReversals+' reversals)');
+  ok(_v235.dirCount===8 && _v235.tankDirs.length>=2 && _v235.tankStops>0,
+     'tanks expose all eight legal headings and execute roll / brake / pause cycles ('+_v235.tankDirs.join(',')+')');
+  ok(_v235.shotDown===true,
+     'tank fire leaves the fixed south-facing barrel vertically toward the player');
+  ok(vm.runInContext("drawVaultVehicle.toString().indexOf(\"const dir='s'\")>0",ctxv),
+     'tank hull art remains south-facing even while its path vector moves east, west or diagonally');
+  ok(vm.runInContext("NEF_S1.s1rivermine.drift===undefined && applyNefUnit.toString().indexOf('c.vy = 0')>0",ctxv),
+     'river mines and every barrel/canister use the same zero-drift prop rule');
 }
 
 console.log('\n============================================');
