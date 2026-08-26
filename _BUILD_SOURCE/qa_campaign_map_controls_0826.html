@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base href="../">
+  <title>Campaign Map Horizontal Controls QA</title>
+  <style>
+    html,body{margin:0;min-height:100%;background:#03070b;display:grid;place-items:center}
+    canvas{image-rendering:pixelated}
+    #hud,#equipcv{display:none}
+  </style>
+</head>
+<body>
+  <canvas id="screen" width="480" height="512"></canvas>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+  <pre id="qa-state" hidden></pre>
+  <script>window.__qaErrors=[];addEventListener('error',e=>window.__qaErrors.push(String(e.error||e.message)));</script>
+  <script src="assets/manifest.js"></script>
+  <script src="assets/game/fonts/bmf_maps.js"></script>
+  <script src="assets/section_geom.js"></script>
+  <script src="assets/game.js"></script>
+  <script>
+  (()=>{
+    const dir=new URLSearchParams(location.search).get('dir')==='right'?1:-1;
+    run.mode='campaign'; run.pilot='maverick'; campaign.unlockedMax=8;
+    openStageSelect(6,{boot:false}); stateT=1; sselCursor=6; sselFlagsShown=9; sselBoot=0;
+    const p=sselFlagXY(6);
+    sselShip={x:p.x,y:p.y,tx:p.x,ty:p.y,t:0,phase:'idle',bank:0,trail:0,head:0,moving:false};
+    if(Audio&&Audio.SFX) Object.keys(Audio.SFX).forEach(k=>Audio.SFX[k]=()=>{});
+    setTimeout(()=>Input.injectTap(dir<0?'arrowleft':'arrowright'),650);
+    setInterval(()=>{
+      window.__qaMapControls={dir:dir<0?'left':'right',from:6,to:sselCursor,
+        fromX:SSEL_POS[6][0],toX:SSEL_POS[sselCursor][0],shipX:sselShip&&sselShip.x,
+        correct:dir<0?SSEL_POS[sselCursor][0]<SSEL_POS[6][0]:SSEL_POS[sselCursor][0]>SSEL_POS[6][0],
+        errors:window.__qaErrors.slice()};
+      document.getElementById('qa-state').textContent=JSON.stringify(window.__qaMapControls);
+    },50);
+  })();
+  </script>
+</body>
+</html>

@@ -3787,7 +3787,8 @@ function drawLevelMaster(dt){
      replace the level", which is the BOSS's alone — see the long note at the arena block below,
      and Mike's "it teleports me to a animated lava tileset section from where i was". */
   const _realBossRun = (typeof bossActive!=='undefined' && bossActive && boss && !boss.dead);
-  const _bossRun = _realBossRun || _sbRun;
+  const _directorRun = (typeof _s1GroundHold!=='undefined' && _s1GroundHold && run.stage===1);
+  const _bossRun = _realBossRun || _sbRun || _directorRun;
   /* The arena re-entry belongs to ONE boss run. Cleared the moment the run ends so a retry, a
      continue or the next stage cannot inherit a part-finished slide — and so the beat plays again
      if the player dies and fights him a second time. */
@@ -6373,7 +6374,7 @@ const SUBBOSS={
   /* the JUNGLE CRUISER replaces the quad-laser here (drop 0812e, Mike's word). `at` and
      afterScroll are UNTOUCHED: 0801ke moved this trigger three times to land the fight after
      the beach tanks and the grass jets, and that sequencing is about the STAGE, not the unit. */
-  1:{at:0.62, kind:'junglecruiser', afterScroll:2100},
+  1:{at:0.62, kind:'junglecruiser', afterScroll:2100, afterWaveTime:52},
                                   // Flipped so its turrets face you; crawls up/down only; quad MGs.
   2:{at:0.45, kind:'magmaward',  afterScroll:961},      // MAGMA VENT (0813g) — Mike pulled siege ember; picked out of the unused pool
   6:{at:0.45, kind:'blacksteel',   afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
@@ -8622,7 +8623,7 @@ function vKamikazePair(pairs, opt={}){
    STAGE SPAWN DIRECTOR
    builds enemy waves over time, scaled by difficulty density
    ============================================================ */
-let nextWave=0, waveIdx=0;
+let nextWave=0, waveIdx=0, _s1GroundHold=false;
 /* BUNKERS AND TURRETS DELETED FROM THE LEVELS (drop 0801dw). Mike: "delete the
    bunkers. delete the turrets."
 
@@ -8755,14 +8756,20 @@ function buildStagePlan(stageNum){
       const H = (cfg && cfg.h) || 4800;
       return (H - (mapScroll||0)) <= S1_COAST_Y - 60;   // clear of the water, with margin
     };
-    const _s1Ground = (fn) => function _g(){
-      if(_s1Past()) return;                          // past halfway: no ground at all
-      if(!_s1OnLand()){                              // still at sea - wait, do not convert
-        if(typeof stagePlan!=='undefined' && stagePlan && waveIdx>0) waveIdx--;
-        _waveGap = 0.5;
-        return;
-      }
-      fn();
+    const _s1Ground = (fn) => {
+      const wrapped=function _g(){
+        if(_s1Past()) return;                        // past halfway: no ground at all
+        if(!_s1OnLand()){                            // still at sea - wait, do not convert
+          if(typeof stagePlan!=='undefined' && stagePlan && waveIdx>0) waveIdx--;
+          _waveGap = 0.5;
+          return;
+        }
+        fn();
+      };
+      /* The director reads this marker before dispatch. A due shore wave is allowed to
+         hold the terrain while pressure clears instead of silently aging out at halfway. */
+      wrapped._s1Ground=true;
+      return wrapped;
     };
 
     /* --- the opening pass: two jets tear by, one down each side --- */
@@ -9090,25 +9097,25 @@ function buildStagePlan(stageNum){
     return _planSorted(P);
   }
   if(stageNum===6){
-    /* HEAVY TURBULENCE — LARGE AIRCRAFT ONLY. The small storm fighters and modular jets are
-       deliberately excluded. Night/storm waves use black camo; daylight paint takes over as
-       the fixed sky fades through dusk and dawn. No speed arrows or nuclear-missile pickups. */
-    add(2.0, ()=> aiWaveSweep('s1jetDeltaB', 3, {dir:1, gap:0.75}));
-    add(5.5, ()=> aiWaveCross('s1jetBomberB', {gap:0.9}));
-    add(9.0, ()=> aiWaveColumns('s1jetDeltaB', {dir:-1, gap:0.75}));
-    add(12.5,()=> aiWaveRush('s1jetBomberB', Math.round(2+D), {dir:1, gap:0.8}));
-    add(16.5,()=> aiWaveSplit('s1jetDeltaB', {gap:0.8}));
-    add(20.5,()=> aiWaveSweep('s1jetBomberB', 3, {dir:-1, gap:0.9}));
-    add(24.5,()=> aiWaveLoopCurved('s1jetDeltaB', {dir:1, gap:0.75}));
-    add(28.5,()=> aiWaveCross('s1jetBomberB', {gap:0.8}));
-    add(32.5,()=> aiWaveColumns('s1jetDelta', {dir:1, gap:0.75}));
-    add(36.5,()=> aiWaveRush('s1jetBomber', Math.round(2+D), {dir:-1, gap:0.85}));
-    add(40.5,()=> aiWaveLoop('s1jetDelta', {dir:-1, gap:0.75}));
-    add(44.5,()=> aiWaveSweep('s1jetBomber', 3, {dir:1, gap:0.9}));
-    add(48.5,()=> aiWaveSplit('s1jetDelta', {gap:0.75}));
-    add(52.0,()=> aiWaveCross('s1jetBomber', {gap:0.8}));
-    add(curStage.length-4, ()=> { aiWaveColumns('s1jetDelta', {dir:-1, gap:0.7});
-                                  aiWaveRush('s1jetBomber', 2, {dir:1, gap:0.9}); });
+    /* HEAVY TURBULENCE now fields its recovered native fleet exclusively. Black-ice owns the
+       storm opening, royal blue takes the electrical middle, and steel closes the daylight leg;
+       no borrowed Stage-1 delta/bomber hulls remain in this level. */
+    add(2.0, ()=> aiWaveSweep('l6v_b0', 3, {dir:1, gap:0.75}));
+    add(5.5, ()=> aiWaveCross('l6v_b1', {gap:0.9}));
+    add(9.0, ()=> aiWaveColumns('l6v_b2', {dir:-1, gap:0.75}));
+    add(12.5,()=> aiWaveRush('l6v_b1', Math.round(2+D), {dir:1, gap:0.8}));
+    add(16.5,()=> aiWaveSplit('l6v_b0', {gap:0.8}));
+    add(20.5,()=> aiWaveSweep('l6v_b2', 3, {dir:-1, gap:0.9}));
+    add(24.5,()=> aiWaveLoopCurved('l6v_r0', {dir:1, gap:0.75}));
+    add(28.5,()=> aiWaveCross('l6v_r1', {gap:0.8}));
+    add(32.5,()=> aiWaveColumns('l6v_r2', {dir:1, gap:0.75}));
+    add(36.5,()=> aiWaveRush('l6v_r1', Math.round(2+D), {dir:-1, gap:0.85}));
+    add(40.5,()=> aiWaveLoop('l6v_s0', {dir:-1, gap:0.75}));
+    add(44.5,()=> aiWaveSweep('l6v_s1', 3, {dir:1, gap:0.9}));
+    add(48.5,()=> aiWaveSplit('l6v_s2', {gap:0.75}));
+    add(52.0,()=> aiWaveCross('l6v_s1', {gap:0.8}));
+    add(curStage.length-4, ()=> { aiWaveColumns('l6v_s2', {dir:-1, gap:0.7});
+                                  aiWaveRush('l6v_s1', 2, {dir:1, gap:0.9}); });
     return _planSorted(P);
   }
   if(stageNum===7){ // NOT ANOTHER SEWER LEVEL — the sludge run. Wide 800px world.
@@ -9706,9 +9713,18 @@ const SHIPBOSS = {
      critical plates, so omitting it is exactly "no breaks or cracks". glacierfortress next door
      already fields an `mb*_master` this way, so this is the established route rather than a new one.
      The old mechInit rig and `mba_ss` fallback stay on disk, unassigned. */
-  stormsovereign:{key:'mbs6_master',           name:'STORM SOVEREIGN', w:236,h:236, hpMul:1.44, pat:'beamfan', cd:1.28, proj:'storm',
-                  mounts:{L:[-0.21,0.27],C:[0,0.43],R:[0.21,0.27]},
-                  pats:['beamfan','chargebeam','pincer2']},
+  /* STORM SOVEREIGN'S HARDPOINTS COME FROM THE PLATE, not a generic three-point boss template.
+     The two compact barrel pods sit at native (128,219)/(256,219), the blue coil emitters at
+     (152,293)/(232,293), and the nose emitter ends at (192,357) on the 384px master.  Expressing
+     those measurements as hull fractions keeps every flash attached when the boss is resized.
+
+     There is deliberately NO `chargebeam` phase here.  Stage 4 is a jet fight: the barrel pods
+     chatter machine-gun tracers and the authored blue storm rounds are discrete energy bolts.
+     Neither attack creates the rotating continuous beam rake that used to read as a laser boss. */
+  stormsovereign:{key:'mbs6_master',           name:'STORM SOVEREIGN', w:236,h:236, hpMul:1.44, pat:'stormmg', cd:0.82, proj:'storm',
+                  mounts:{MG_L:[-0.167,0.070],MG_R:[0.167,0.070],
+                          L:[-0.104,0.263],EL:[-0.104,0.263],C:[0,0.430],ER:[0.104,0.263],R:[0.104,0.263]},
+                  pats:['stormmg','stormbolts','pincer2']},
   /* `pats` IS THE FIGHT'S ARC (drop 0811c). Mike: "upgrade the new bosses ... make them
      challenging". One pattern for a whole healthbar is a puzzle you solve once and then hold a
      spot for ninety seconds. Three phases at 100/60/30% give it a shape: the opener teaches the
@@ -9955,6 +9971,7 @@ function shipBossInit(b, kind){
         XART.rdy('bfx_'+D.proj+'_p_'+i); XART.rdy('bfx_'+D.proj+'_m_'+i);
       }
     }
+    if(kind==='stormsovereign') for(let i=0;i<4;i++) XART.rdy('nmz_3_'+i);
   } }catch(_sb){}
   if(kind==='heralddeath' && typeof heraldDeathInit==='function') heraldDeathInit(b,D);
   return true;
@@ -9980,18 +9997,127 @@ function shipBossMount(b, slot){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null;
   const M=D&&D.mounts&&D.mounts[slot];
   const y=(b&&b._drawY!=null)?b._drawY:(b?b.y:0);
-  return M ? {x:b.x+b.w*M[0], y:y+b.h*M[1]} : {x:b.x, y:y+b.h*0.30};
+  const P=(typeof shipBossVisualPose==='function')?shipBossVisualPose(b):{x:0,y:0,rot:0,sx:1,sy:1};
+  const lx=M?b.w*M[0]*P.sx:0, ly=(M?b.h*M[1]:b.h*0.30)*P.sy;
+  const c=Math.cos(P.rot||0), s=Math.sin(P.rot||0);
+  return {x:b.x+P.x+lx*c-ly*s, y:y+P.y+lx*s+ly*c};
 }
-function shipBossMuzzleStart(b, slots){
+function shipBossMuzzleStart(b, slots, opts){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null;
   if(!D||!D.proj||!D.mounts) return;
-  b._smz={t:0, life:0.16, slots:(slots&&slots.length?slots:['C'])};
+  b._smz={t:0, life:(opts&&opts.life)||0.16, slots:(slots&&slots.length?slots:['C']),
+          fam:(opts&&opts.fam)||null, n:(opts&&opts.n)||6,
+          hpx:(opts&&opts.hpx)||null, anchor:(opts&&opts.anchor)};
 }
 function shipBossPatternSlots(pat, step){
+  if(pat==='stormmg') return ['MG_L','MG_R'];
+  if(pat==='stormbolts') return ['EL','C','ER'];
   if(pat==='void'||pat==='pincer2'||pat==='lance'||pat==='mslhome') return ['L','R'];
   if(pat==='beamfan'||pat==='mslfan'||pat==='ember') return ['L','C','R'];
   if(pat==='siege') return (step%2)===0?['L']:['R'];
   return ['C'];
+}
+/* ============================================================
+   SHIP-BOSS PERFORMANCE LAYER (0826)
+
+   The attack tables already give every hull its own gameplay. What most of the static plates
+   lacked was PERFORMANCE: the shot simply existed one frame with no anticipation, weight or
+   recovery. This layer is intentionally presentation-only until the release beat. It never
+   replaces a pattern, recolours a plate, fades a blast, adds homing or makes a boss ram the
+   player. The same transformed pose drives both the hull and every hardpoint, so a muzzle flash
+   cannot slide off its cannon while the ship banks or recoils.
+
+   Carriers are excluded because their supplied opening/launch/cannon reels already perform the
+   weapon and release the projectile on an authored frame. Chaos Harrier has its own action-reel
+   controller and never enters this SHIPBOSS path. */
+const SHIP_ACTION_PROFILE={
+  stormmg:{tell:0.14,recover:0.16,kick:3,shake:1},
+  stormbolts:{tell:0.28,recover:0.22,kick:6,shake:2},
+  ember:{tell:0.36,recover:0.24,kick:7,shake:2},
+  siege:{tell:0.34,recover:0.22,kick:7,shake:2},
+  lance:{tell:0.30,recover:0.20,kick:6,shake:2},
+  rime:{tell:0.32,recover:0.22,kick:5,shake:1},
+  void:{tell:0.32,recover:0.22,kick:6,shake:2},
+  pincer2:{tell:0.27,recover:0.19,kick:5,shake:1},
+  fan2:{tell:0.28,recover:0.20,kick:5,shake:1},
+  beamfan:{tell:0.43,recover:0.28,kick:9,shake:3},
+  chargebeam:{tell:0.52,recover:0.31,kick:9,shake:3},
+  fireorb:{tell:0.24,recover:0.18,kick:4,shake:1},
+  mslfan:{tell:0.30,recover:0.23,kick:6,shake:2},
+  mslhome:{tell:0.32,recover:0.23,kick:6,shake:2},
+  spawnpods:{tell:0.27,recover:0.20,kick:4,shake:1},
+  deathlattice:{tell:0.31,recover:0.23,kick:6,shake:2}
+};
+function shipBossCurrentPattern(b){
+  const D=b&&b._ship?SHIPBOSS[b._ship]:null; if(!D) return null;
+  const ph=shipBossPhase(b);
+  return (D.pats&&D.pats[ph])||D.pat||'fan2';
+}
+function shipBossActionProfile(b, pat){
+  const D=b&&b._ship?SHIPBOSS[b._ship]:null;
+  const src=SHIP_ACTION_PROFILE[pat]||{tell:0.28,recover:0.20,kick:5,shake:1};
+  /* Minis are brisker; full bosses get the complete readable wind-up. */
+  const k=(D&&D.mini)?0.82:1;
+  return {tell:src.tell*k,recover:src.recover*k,kick:src.kick*k,shake:src.shake};
+}
+function shipBossQueueAttack(b){
+  const D=b&&b._ship?SHIPBOSS[b._ship]:null; if(!D||b.dead||b.enter) return false;
+  /* Authored carrier reels own both timing and release. Do not put a synthetic tell in front. */
+  if(D.launch){ shipBossAttack(b); return true; }
+  if(b._sba) return false;
+  const pat=shipBossCurrentPattern(b), A=shipBossActionProfile(b,pat);
+  b._sba={pat:pat,t:0,tell:A.tell,recover:A.recover,kick:A.kick,shake:A.shake,fired:false};
+  b.fireCd=Math.max(b.fireCd||0,A.tell+A.recover+0.04);
+  /* The charge is the boss's own muzzle family, already anchored to its measured cannons. */
+  shipBossMuzzleStart(b,shipBossPatternSlots(pat,(b._sbStep|0)+1),{life:A.tell,n:6});
+  if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossWeaponCharge) Audio.SFX.bossWeaponCharge();
+  return true;
+}
+function shipBossActionTick(b,dt){
+  if(!b) return;
+  const ph=shipBossPhase(b);
+  if(b._sbaPhase==null) b._sbaPhase=ph;
+  else if(ph!==b._sbaPhase){
+    b._sbaPhase=ph; b._sbPhase=ph; b._sbStep=0; b._sba=null;
+    b._sbaPhaseT=0.72; b.fireCd=Math.max(b.fireCd||0,0.52);
+    if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossPhase) Audio.SFX.bossPhase();
+  }
+  b._sbaPhaseT=Math.max(0,(b._sbaPhaseT||0)-dt);
+  if(b._sbaLastHp==null) b._sbaLastHp=b.hp;
+  else if(b.hp<b._sbaLastHp){ b._sbaHitT=0.12; b._sbaLastHp=b.hp; }
+  else b._sbaLastHp=b.hp;
+  b._sbaHitT=Math.max(0,(b._sbaHitT||0)-dt);
+  b._sbaKick=Math.max(0,(b._sbaKick||0)-dt*5.5);
+  const dx=b.x-(b._sbaLastX==null?b.x:b._sbaLastX); b._sbaLastX=b.x;
+  const target=clamp(dx/Math.max(dt,0.001)/260,-1,1);
+  b._sbaBank=lerp(b._sbaBank||0,target,Math.min(1,dt*7));
+  const A=b._sba; if(!A) return;
+  A.t+=dt;
+  if(!A.fired&&A.t>=A.tell){
+    A.fired=true; b._sbaKick=1;
+    shipBossAttack(b);                         // the actual authored volley, unchanged
+    b.fireCd=Math.max(0.35,(b.fireCd||0)-A.tell*0.45); // anticipation must not make combat sleepy
+    if(typeof shake!=='undefined') shake=Math.max(shake,A.shake||1);
+  }
+  if(A.t>=A.tell+A.recover) b._sba=null;
+}
+function shipBossVisualPose(b){
+  if(!b) return {x:0,y:0,rot:0,sx:1,sy:1};
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  const wall=(b.w||0)>=W*0.70;
+  let x=0,y=0,rot=wall?0:(b._sbaBank||0)*0.055,sx=1,sy=1;
+  const A=b._sba;
+  if(A&&!A.fired){
+    const p=clamp(A.t/Math.max(0.01,A.tell),0,1), pulse=Math.sin(p*Math.PI);
+    y-=pulse*3; sx+=pulse*0.012; sy-=pulse*0.008;
+  }
+  if((b._sbaKick||0)>0){ const q=b._sbaKick; y-=q*((A&&A.kick)||6); sy-=q*0.018; sx+=q*0.012; }
+  if((b._sbaPhaseT||0)>0){
+    const p=b._sbaPhaseT/0.72, wave=Math.sin((1-p)*Math.PI*8)*p;
+    x+=wall?0:wave*4; y-=Math.sin((1-p)*Math.PI)*7; sx+=0.035*p; sy+=0.035*p;
+  }
+  if((b._sbaHitT||0)>0){ const h=b._sbaHitT/0.12; x+=(wall?0:Math.sin(h*Math.PI*5)*2.5); }
+  return {x:x,y:y,rot:rot,sx:sx,sy:sy};
 }
 function shipBossMuzzleTick(b, dt){
   if(!b||!b._smz) return;
@@ -10001,16 +10127,49 @@ function shipBossMuzzleTick(b, dt){
 function shipBossMuzzleDraw(b){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null, F=b&&b._smz;
   if(!D||!D.proj||!F||typeof XART==='undefined') return;
-  const fi=clamp(Math.floor((F.t/F.life)*6),0,5), key='bfx_'+D.proj+'_m_'+fi;
+  const fi=clamp(Math.floor((F.t/F.life)*F.n),0,F.n-1);
+  const key=F.fam ? F.fam+'_'+fi : 'bfx_'+D.proj+'_m_'+fi;
   if(!XART.rdy(key)) return;
-  const im=XART.get(key), h=clamp(b.w*0.18,28,60);
+  const im=XART.get(key), h=F.hpx||clamp(b.w*0.18,28,60);
   const w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
   ctx.save(); ctx.globalCompositeOperation='lighter';
   for(const slot of F.slots){
     const p=shipBossMount(b,slot);
-    ctx.drawImage(im,p.x-w/2,p.y-h*0.34,w,h);
+    ctx.drawImage(im,p.x-w/2,p.y-h*(F.anchor==null?0.34:F.anchor),w,h);
   }
   ctx.restore();
+}
+
+/* STAGE 4 TWIN-TURRET BURST.  The burst is clocked per frame so it reads as an actual machine
+   gun rather than six pellets materialising on one simulation tick.  Every round owns a blue
+   five-family tracer and every beat restarts the jet muzzle reel on the measured barrel tips. */
+function stormMgStart(b){
+  if(!b._stormMg) b._stormMg={t:0, step:0};
+}
+function stormMgTick(b, dt){
+  const F=b&&b._stormMg; if(!F) return;
+  F.t+=dt;
+  const beat=0.075, count=6;
+  while(F.step<count && F.t+0.0001>=F.step*beat){
+    const slots=['MG_L','MG_R'];
+    for(let i=0;i<slots.length;i++){
+      const p=shipBossMount(b,slots[i]);
+      const target=(typeof player!=='undefined'&&player)?player:{x:b.x,y:VH*0.86};
+      const base=Math.atan2(target.y-p.y,target.x-p.x);
+      /* the barrels track, but stay forward-facing like guns mounted in a jet's fixed pods */
+      const a=(typeof eAimDown==='function'?eAimDown(base):base)+(i?0.018:-0.018);
+      const sp=5.15*((typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1);
+      eBullets.push({x:p.x,y:p.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,w:5,h:13,dmg:1,t:0,
+                     kind:'mg',_pfam:1,_stormMg:true,ang:a});
+    }
+    shipBossMuzzleStart(b,slots,{fam:'nmz_3',n:4,hpx:34,life:0.105,anchor:0.30});
+    if(typeof Audio!=='undefined'&&Audio.SFX){
+      if(Audio.SFX.enemyMachineGunHeavy) Audio.SFX.enemyMachineGunHeavy();
+      else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+    }
+    F.step++;
+  }
+  if(F.step>=count && F.t>=count*beat+0.08) b._stormMg=null;
 }
 /* which phase is this boss in, 0-based, and has it just changed? */
 /* ============================================================
@@ -10233,6 +10392,7 @@ function reaverOrbTick(b, dt){
 function shipBossManoeuvre(b, dt){
   if(!b || !b._ship || b.dead || b.enter) return false;
   shipBossMuzzleTick(b, dt);
+  shipBossActionTick(b,dt);
   if(b._herald && typeof heraldDeathTick==='function') heraldDeathTick(b,dt);
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const sy=shipBossStationY(b);
@@ -10244,6 +10404,7 @@ function shipBossManoeuvre(b, dt){
      moment the sweep ended - and no rake would ever arm again for the rest of the fight. */
   if(b._brk || b._brkCd>0) beamRakeTick(b, dt);
   if(b._orb) reaverOrbTick(b, dt);
+  if(b._stormMg) stormMgTick(b, dt);
   /* the carrier's reel runs on the FRAME clock, not the volley beat - the round leaves on the
      animation frame that shows it clearing the bay. See carrierTick. */
   if((b._ship==='doomsdaycarrier'||b._ship==='doomsdaycarriermk2') && typeof carrierTick==='function') carrierTick(b, dt);            // the wind-up runs on the frame clock, not the volley beat
@@ -10503,6 +10664,24 @@ function shipBossAttack(b){
   } else if(pat==='fireorb'){
     /* the wind-up is state, not a volley - reaverOrbTick advances it every frame and launches */
     reaverOrbStart(b);
+  } else if(pat==='stormmg'){
+    /* Storm Sovereign's visible twin barrel pods fire a six-beat burst.  Tick zero launches the
+       first pair immediately; shipBossManoeuvre carries the other five pairs across real time. */
+    stormMgStart(b);
+    stormMgTick(b,0);
+  } else if(pat==='stormbolts'){
+    /* The supplied blue storm projectiles remain this boss's energy identity, but they are
+       separate bolts — not a continuous beam.  They leave the two blue coil emitters and nose
+       in a clean five-lane fan, with the middle lane alternating a slight aimed correction. */
+    const lanes=[[-0.28,mL],[-0.12,mL],[0,mC],[0.12,mR],[0.28,mR]];
+    for(const it of lanes){
+      const a2=it[0], m=it[1], sp=3.35;
+      _shipShot(m.x,m.y,Math.sin(a2)*sp,Math.cos(a2)*sp,10,b);
+    }
+    if((step%2)===0 && typeof player!=='undefined' && player){
+      const a3=aimPlayer(mC.x,mC.y);
+      _shipShot(mC.x,mC.y,Math.cos(a3)*3.15,Math.sin(a3)*3.15,11,b);
+    }
   } else if(pat==='beamfan'){
     /* SPREAD LASER — three dense columns from the hull, angled. Dense because a "laser" made of
        sparse rounds reads as a machine gun; tight spacing along the same vector is what makes the
@@ -10551,7 +10730,7 @@ function shipBossAttack(b){
      So the geometry is untouched and an AIMED pair is added on top, on every other volley. That is
      what turns "bullets are happening" into "it is shooting at me" without flattening the authored
      shape, and the every-other cadence leaves the pattern legible between aimed beats. */
-  if(pat!=='spawnpods' && pat!=='deathlattice' && (step%2)===0 && typeof player!=='undefined' && player && player.alive!==false){
+  if(pat!=='spawnpods' && pat!=='deathlattice' && pat!=='stormmg' && pat!=='stormbolts' && (step%2)===0 && typeof player!=='undefined' && player && player.alive!==false){
     const dx=player.x-b.x, dy=Math.max(40,(player.y-y));
     const d=Math.hypot(dx,dy)||1, spd=2.35;
     for(const off of [-0.10, 0.10]){
@@ -10560,9 +10739,9 @@ function shipBossAttack(b){
       _shipShot(mC.x,mC.y,(ux*ca-uy*sa)*spd,(ux*sa+uy*ca)*spd,10,b);
     }
   }
-  if(pat!=='spawnpods' && pat!=='deathlattice') shipBossMuzzleStart(b,shipBossPatternSlots(pat,step));
+  if(pat!=='spawnpods' && pat!=='deathlattice' && pat!=='stormmg') shipBossMuzzleStart(b,shipBossPatternSlots(pat,step));
   b.fireCd = (D.cd||1.3) * cdMul;
-  if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+  if(pat!=='stormmg' && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
 /* south-facing 256 cell, pivot centre. White flash on hit is Mike's standing rule for every unit
    and he asked for it again by name: "glow white when shot etc." */
@@ -10771,16 +10950,18 @@ function shipBossDraw(b){
        invisible boss that still shoots is the worst failure this file can produce, and it is
        exactly what Mike saw on stage 2. A hull silhouette is drawn until the plate decodes: wrong
        art is recoverable, no art is not. */
-    const w=b.w, h=b.h, x=b.x, y=(b._drawY!=null?b._drawY:b.y);
+    const w=b.w, h=b.h, x=b.x, y=(b._drawY!=null?b._drawY:b.y), P=shipBossVisualPose(b);
     ctx.save();
+    ctx.translate(x+P.x,y+P.y); ctx.rotate(P.rot); ctx.scale(P.sx,P.sy);
     ctx.globalAlpha=0.92;
     ctx.fillStyle='#14161c'; ctx.strokeStyle=(b.flash>0)?'#ffffff':'#6d7a8c'; ctx.lineWidth=2;
     ctx.beginPath();
-    ctx.moveTo(x, y+h*0.50); ctx.lineTo(x-w*0.42, y-h*0.10);
-    ctx.lineTo(x-w*0.16, y-h*0.46); ctx.lineTo(x+w*0.16, y-h*0.46);
-    ctx.lineTo(x+w*0.42, y-h*0.10); ctx.closePath();
+    ctx.moveTo(0, h*0.50); ctx.lineTo(-w*0.42, -h*0.10);
+    ctx.lineTo(-w*0.16, -h*0.46); ctx.lineTo(w*0.16, -h*0.46);
+    ctx.lineTo(w*0.42, -h*0.10); ctx.closePath();
     ctx.fill(); ctx.stroke();
     ctx.restore(); ctx.globalAlpha=1;
+    shipBossMuzzleDraw(b);
     return true;
   }
   /* ⚠ NEVER RECOLOUR A MINIBOSS OR A BOSS AT DRAW TIME (drop 0812h). Mike: "The minibosses, dont
@@ -10812,7 +10993,7 @@ function shipBossDraw(b){
      That is the boss Mike said 'holy shit god no' to. Honour the declared box — every square
      entry is unchanged, because for those h already equals w. */
   const s=b.w/256, w=256*s, h=(b.h>0 ? b.h : 256*s);
-  const x=b.x-w/2, y=(b._drawY!=null?b._drawY:b.y)-h/2;
+  const cy=(b._drawY!=null?b._drawY:b.y), P=shipBossVisualPose(b);
   /* ⚠ A REEL MAY BE TALLER THAN THE HULL BOX. The Mk II cannon frames are authored
      640x480 against a 640x320 hull, and the pack is explicit that every frame shares the
      same origin — the extra 160 is the BEAM, hanging below. So the hull box still places
@@ -10821,10 +11002,11 @@ function shipBossDraw(b){
   const dh=(b._animH>0 ? b._animH : h);
   ctx.save();
   ctx.imageSmoothingEnabled=false;
-  ctx.drawImage(im, x, y, w, dh);
+  ctx.translate(b.x+P.x,cy+P.y); ctx.rotate(P.rot); ctx.scale(P.sx,P.sy);
+  ctx.drawImage(im, -w/2, -h/2, w, dh);
   if((b.flash||0)>0 && typeof xartTint==='function'){
     const t=xartTint(_ak, '#ffffff', 0.9);
-    if(t){ ctx.globalAlpha=Math.min(1,(b.flash/0.18))*0.85; ctx.drawImage(t, x, y, w, dh); ctx.globalAlpha=1; }
+    if(t){ ctx.globalAlpha=Math.min(1,(b.flash/0.18))*0.85; ctx.drawImage(t, -w/2, -h/2, w, dh); ctx.globalAlpha=1; }
   }
   ctx.restore();
   shipBossMuzzleDraw(b);
@@ -11194,12 +11376,13 @@ function spawnSubBoss__inner(kind){
    The supplied JSON is engine-neutral design data; this is the native BOF state machine.  Every
    projectile and VFX layer uses the pack's measured 352x320 hardpoints.  Missile tracking is
    intentionally omitted: the game's standing rule reserves homing boss missiles for the Level-1
-   helicopter, so the Harrier's fan wins through spacing and acceleration instead. */
+   helicopter.  The Harrier instead commits one readable centerline missile that accelerates after
+   launch without bending away from its lane. */
 function chaosHarrierPoint(b, slot){
   const s=b.w/352, y=(b._drawY!=null?b._drawY:b.y);
   const p={
     left_cannon:[-100,-15], right_cannon:[99,-15],
-    left_missile_bay:[-48,-14], right_missile_bay:[48,-14],
+    left_missile_bay:[-48,-14], right_missile_bay:[48,-14], missile_bay:[0,-14],
     central_reactor:[0,-50], nose:[0,91]
   }[slot]||[0,0];
   return {x:b.x+p[0]*s,y:y+p[1]*s};
@@ -11209,9 +11392,17 @@ function chaosHarrierShot(b, family, slot, angle, speed){
   const p=chaosHarrierPoint(b,slot), sp=(DIFF&&DIFF.ebSpeed)||1;
   const size=family==='sidelaser'?[16,44]:(family==='missile'?[18,30]:[16,24]);
   const knd=family==='missile'?'ch_missile':(family==='sidelaser'?'ch_sidelaser':'ch_plasma');
-  eBullets.push({x:p.x,y:p.y,vx:Math.cos(angle)*speed*sp,vy:Math.sin(angle)*speed*sp,
+  const shot={x:p.x,y:p.y,vx:Math.cos(angle)*speed*sp,vy:Math.sin(angle)*speed*sp,
     w:size[0],h:size[1],kind:knd,_chKind:family,t:0,_ph:0,dmg:1,ang:angle,
-    _boss:true,_noArsenal:true});
+    _boss:true,_noArsenal:true};
+  if(family==='missile'){
+    /* This reel was authored as four exhaust states, not four flight headings.  Lock the round to
+       one screen lane and build speed in the updater so neither difficulty scaling nor frame
+       animation can make it sidestep on the way to the player. */
+    shot.vx=0; shot.vy=speed*sp; shot.ang=Math.PI/2;
+    shot._chLaneX=p.x; shot._chAccel=1.35*sp; shot._chMaxspd=5.25*sp;
+  }
+  eBullets.push(shot);
   chaosHarrierFlash(b,family==='missile'?'launchflash':'sideflash',p);
   if(family==='missile' && Audio.SFX&&Audio.SFX.missile) Audio.SFX.missile();
   else if(Audio.SFX&&Audio.SFX.laserShot) Audio.SFX.laserShot();
@@ -11299,12 +11490,11 @@ function chaosHarrierUpdate(b,dt){
     if(b._chT>=0.92)chaosHarrierFinish(b); return;
   }
   if(st==='missile'){
-    const times=[0.24,0.34,0.56,0.66],slots=['left_missile_bay','right_missile_bay','left_missile_bay','right_missile_bay'];
-    const fan=[-0.32,0.32,-0.12,0.12];
+    const times=[0.28];
     while(b._chStep<times.length && b._chT>=times[b._chStep]){
-      chaosHarrierShot(b,'missile',slots[b._chStep],Math.PI/2+fan[b._chStep],2.45); b._chStep++;
+      chaosHarrierShot(b,'missile','missile_bay',Math.PI/2,1.70); b._chStep++;
     }
-    if(b._chT>=1.32)chaosHarrierFinish(b); return;
+    if(b._chT>=1.12)chaosHarrierFinish(b); return;
   }
   if(st==='side'){
     const times=[0.09,0.38];
@@ -11391,7 +11581,11 @@ function updateSubBoss(dt){
     b.drift+=dt; b.x=worldWidth()/2+Math.sin(b.drift*0.9)*96;   // WORLD centre: wide stages are 800px
   }
   if(!b.mini){ b.phaseT-=dt; if(b.phaseT<=0){ b.atkPhase=(b.atkPhase+1)%4; b.phaseT=rnd(1.0,1.7); } }
-  b.fireCd-=dt*DIFF.eFire; if(b.fireCd<=0) subBossAttack();
+  b.fireCd-=dt*DIFF.eFire;
+  if(b.fireCd<=0){
+    if(b._ship&&typeof shipBossQueueAttack==='function') shipBossQueueAttack(b);
+    else subBossAttack();
+  }
 }
 
 /* ===== OLIVE MAULER — smart evasive miniboss AI =====
@@ -12055,6 +12249,14 @@ function chaosHarrierProjectileDraw(b){
   const fi=Math.floor((b.t||0)*(b._chKind==='missile'?11:13))%4;
   const key='ch_'+b._chKind+'_'+fi; if(!XART.rdy(key))return false;
   const im=XART.get(key), ang=Math.atan2(b.vy,b.vx)+Math.PI/2;
+  if(b._chKind==='missile'){
+    /* Each supplied 192px plate places the same missile 32px farther left, and also contains an
+       unrelated partial orb at the bottom.  Crop the missile itself from each plate and re-center
+       it, leaving only the exhaust animation while the projectile flies perfectly straight. */
+    const sx=[124,92,60,28][fi];
+    ctx.save();ctx.translate(b.x,b.y);ctx.rotate(ang);ctx.imageSmoothingEnabled=false;
+    ctx.globalCompositeOperation='lighter';ctx.drawImage(im,sx,22,40,100,-10,-25,20,50);ctx.restore();return true;
+  }
   const h=b._chKind==='sidelaser'?60:(b._chKind==='missile'?36:31);
   const w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
   ctx.save();ctx.translate(b.x,b.y);ctx.rotate(ang);ctx.imageSmoothingEnabled=false;
@@ -16764,7 +16966,7 @@ function beginStage(num){
   if(specialActive('freezer')){ timeScale=1; try{ if(Snd&&Snd.cur) Snd.cur.playbackRate=1; }catch(e){} }
   special=null; retina.target=null; timeScale=1; zaps.length=0; missileRush=null; clearPilotFX();
   warnT=0; warnKind=null; bossWarned=false; _sc1=false; _sc2=false; _mc1=false; _mc2=false;
-  waveIdx=0; stagePlan=buildStagePlan(num);
+  waveIdx=0; _s1GroundHold=false; stagePlan=buildStagePlan(num);
   /* SORT AT THE ONE PLACE THE PLAN IS BUILT (drop 0801jx). The dispatcher walks
      stagePlan in ARRAY order, holding waveIdx and waiting for stagePlan[waveIdx].t
      - so an entry whose time is later than the ones after it blocks the whole
@@ -17331,8 +17533,16 @@ function updatePlay(dt){
       if(_e.pattern==='naval') continue;
       _liveN++;
     }
-    if(waveIdx<stagePlan.length && stageTimer>=stagePlan[waveIdx].t && _waveGap<=0 && _liveN<=_dispatchAt){
+    const _nextStageWave=(waveIdx<stagePlan.length)?stagePlan[waveIdx]:null;
+    const _s1GroundDue=!!(run.stage===1 && _nextStageWave && _nextStageWave.fn &&
+                          _nextStageWave.fn._s1Ground && stageTimer>=_nextStageWave.t);
+    /* Ground armour has a finite terrain window. If normal fighter pressure blocks a due
+       shore wave, hold position while that pressure clears; never discard the tanks merely
+       because the clock continued beyond the beach. */
+    _s1GroundHold=!!(_s1GroundDue && (_waveGap>0 || _liveN>_dispatchAt));
+    if(_nextStageWave && stageTimer>=_nextStageWave.t && _waveGap<=0 && _liveN<=_dispatchAt){
       stagePlan[waveIdx].fn(); waveIdx++; _waveGap=(run.stage===1?0.9:1.1);
+      _s1GroundHold=false;
     }
     // special crates: 1 before the sub-boss, 1 between sub-boss and boss
     if(!_sc1 && stageTimer>=curStage.length*0.22){ _sc1=true; spawnContainer('scrate'); }
@@ -17372,6 +17582,8 @@ function updatePlay(dt){
     const _sbLate = stageTimer >= curStage.length*0.85;
     const _sbScrollOK = !SB || SB.afterScroll==null || _sbLate ||
       (typeof mapScroll!=='undefined' && mapScroll>=SB.afterScroll);
+    const _sbWaveOK = !SB || SB.afterWaveTime==null || !stagePlan ||
+      !stagePlan.slice(waveIdx).some(function(w){ return w.t<=SB.afterWaveTime; });
     /* ⚠ THE CROWD GATE COUNTS FIGHTERS, NOT SCENERY, AND TRACKS THE RAISED CAP (0819). The old
        `enemies.length<=7` was written against a live cap of 7; the cap is 9 now, so a perfectly
        healthy field could hold the miniboss off forever — measured: the §202 play-through ran 200
@@ -17379,7 +17591,7 @@ function updatePlay(dt){
        so counting them against this gate let a surviving barrel dump do the same. */
     let _sbLive=0;
     for(const _se of enemies){ if(_se.dead || _se._dyingT!=null || _se._prop) continue; _sbLive++; }
-    if(SB && _sbScrollOK && !subBossTriggered && !subBossDone && stageTimer>=curStage.length*SB.at && _sbLive<=9){
+    if(SB && _sbScrollOK && _sbWaveOK && !subBossTriggered && !subBossDone && stageTimer>=curStage.length*SB.at && _sbLive<=9){
       subBossTriggered=true; warnT=2.4; warnKind='sub'; Audio.SFX.bossAlarm();
       if(typeof storyPlay==='function') storyPlay(run.stage,'miniboss'); if(Audio.SFX.enemyApproach) Audio.SFX.enemyApproach(); shake=Math.max(shake,4);
     }
@@ -18779,10 +18991,12 @@ function updatePlay(dt){
     if(_tslow) continue;
     b.t=(b.t||0)+dt;
     if(b._chKind==='missile'){
-      /* Readable launch, then a committed straight-line burn.  No post-launch steering: Level 5
-         gets pressure from the four-lane fan without violating the helicopter-only homing rule. */
-      const a=Math.atan2(b.vy,b.vx),sp=Math.min(4.65,Math.hypot(b.vx,b.vy)+1.05*dt);
-      b.vx=Math.cos(a)*sp;b.vy=Math.sin(a)*sp;b.ang=a;
+      /* One centerline missile, readable at release and increasingly urgent as it approaches.
+         Reassert the launch lane/angle every tick so it cannot inherit steering, fan or animation
+         offsets from another projectile family. */
+      const sp=Math.min(b._chMaxspd||5.25,Math.max(0,b.vy)+(b._chAccel||1.35)*dt);
+      if(b._chLaneX!=null)b.x=b._chLaneX;
+      b.vx=0;b.vy=sp;b.ang=Math.PI/2;
     }
     /* ⚠ THE SWIRL (drop 0808w). Mike, on the black bomber's quad launch: "the missiles swirl and
        spread out 4 ways."
@@ -19966,7 +20180,7 @@ function updateBoss(dt){
      of b.x. Everything non-ship falls through untouched. */
   if(b._ship && typeof shipBossManoeuvre==='function' && shipBossManoeuvre(b, dt)){
     b.fireCd -= dt*DIFF.eFire*(run.stage>=2?1.35:1);
-    if(b.fireCd<=0) bossAttack();
+    if(b.fireCd<=0) shipBossQueueAttack(b);
     return;
   }
   // drift (erratic + faster on stage 2+)
@@ -22021,6 +22235,8 @@ function drawNewEnemyArt(e){
   const t=tintColor(e);
   ctx.save(); ctx.translate(e.x, e.y + (e._navBob||0) + (typeof volcHover==='function'?volcHover(e):0));   // boats bob vertically; volcanic units levitate
   if(e.spin) ctx.rotate(e.spin);
+  if(e._navLean) ctx.rotate(e._navLean);       // naval weapon recoil / broadside weight
+  if(e._navPulse){ const _np=Math.sin(clamp(e._navPulse,0,1)*Math.PI); ctx.scale(1+_np*0.035,1-_np*0.025); }
   /* fade removed: opacity held at 1 */
   if(t){
     // tint ONLY the sprite: draw a cached tinted copy (never a rect over the scene)
@@ -23531,6 +23747,15 @@ function drawFireType(b){
   /* glow may be a FUNCTION now — the pellet picks its colour from the stage's family, so the
      glow has to follow the plate or a green tracer sits inside an orange halo (drop 0811y) */
   const _gl=(typeof T.glow==='function')?T.glow(b):T.glow;
+  /* Stage 2's boss rounds cross a red/orange animated lava bed. Yellow alone still loses its
+     silhouette in the white-hot cells, so the boss family gets a hard eight-neighbour black rim
+     before its brighter yellow body. This is restricted to boss-owned Stage-2 fire. */
+  if(typeof run!=='undefined' && run.stage===2 && b._boss){
+    const readH=Math.max(36,h*1.2), edge=3, dark='#050200';
+    for(const o of [[-edge,0],[edge,0],[0,-edge],[0,edge],[-edge,-edge],[edge,-edge],[-edge,edge],[edge,edge]])
+      drawMfx(key,b.x+o[0],b.y+o[1],ang,readH,dark,1,null,null);
+    return drawMfx(key,b.x,b.y,ang,readH,b.tint||'#ffd21f',1,'#fff4a8','#ffd21f');
+  }
   return drawMfx(key,b.x,b.y,ang,h,b.tint||T._tint||null,1,_gl,_gl);
 }
 /* ============================================================
@@ -23692,6 +23917,7 @@ function navalInit(e, kind){
   e._naval=kind; e._hdg=Math.PI/2;         // bows south, toward the player, on arrival
   e._steerCd=0; e._burst=0; e._burstCd=rnd(0.8,2.2); e._shotCd=0;
   e._idle=0; e._recoil=0; e._holdY=e.y; e._navX=e.x; e._navPhase=rnd(0,TAU);
+  e._navLean=0; e._navPulse=0; e._deployT=null; e._deployed=0;
 }
 function navalSteer(e, dt){
   /* Water carries the hull; it does not wag it. Keep physics centred on one x and put the small
@@ -23761,6 +23987,11 @@ function navalSteer(e, dt){
 function navalMuzzle(e){
   return { x: e.x, y: e.y + (e.h||64)*0.46 };
 }
+function navalHardpoint(e, ox, oy){
+  const a=e._navLean||0, c=Math.cos(a),s=Math.sin(a);
+  const lx=(e.w||48)*(ox||0),ly=(e.h||64)*(oy==null?0.46:oy);
+  return {x:e.x+lx*c-ly*s,y:e.y+(e._navBob||0)+lx*s+ly*c};
+}
 /* ⚠ fxBurst IS A PARTICLE BURST, NOT A SPRITE PLAYER (drop 0808o) — its third argument is a
    SIZE, and I first passed it a reel name, which would have produced a burst of size NaN. The
    nmz_ reels are five-frame animations and need their own short-lived effect that plays them.
@@ -23786,7 +24017,8 @@ function navalFlash(e, mz, scale, fam, opts){
   const f=fam||MUZZLE_MG;
   if(!XART.rdy(f+'_0')) return;
   _navalFlashes.push({fam:f, x:mz.x, y:mz.y, t:0, life:(opts&&opts.life)||0.13, s:(scale||1.0),
-                      n:(opts&&opts.n)||4, hpx:(opts&&opts.hpx)||28, owner:e});
+                      n:(opts&&opts.n)||4, hpx:(opts&&opts.hpx)||28, owner:e,
+                      ox:(opts&&opts.ox)||0,oy:(opts&&opts.oy)});
 }
 /* THE MAGMA MUZZLE (Mike, 0819) — `bfx_magma_m`, the 6-frame starburst authored beside the round
    and never once fired. It has NO owner: a magma gunner is not a boat and its barrel does not
@@ -23803,7 +24035,7 @@ function tickNavalFlashes(dt){
     const f=_navalFlashes[i];
     f.t+=dt;
     /* it rides the barrel — if the boat moves mid-flash the flash moves with it */
-    if(f.owner && !f.owner.dead){ const m=navalMuzzle(f.owner); f.x=m.x; f.y=m.y; }
+    if(f.owner && !f.owner.dead){ const m=navalHardpoint(f.owner,f.ox,f.oy); f.x=m.x; f.y=m.y; }
     if(f.t>=f.life) _navalFlashes.splice(i,1);
   }
 }
@@ -24413,7 +24645,7 @@ function s5RunDraw(){
    from where we were on stage 5 to stage 9. we can ONLY select stage 9 and then enter it."
 
    Four phases, and the player never teleports mid-level:
-     draw    the ship is pulled into the ninth gate while the speed effect peaks
+     draw    the ship is pulled into the ninth gate while the portal glow peaks
      white   a hard flash out, with the ultra-blast voice under it
      (hand over to the campaign map, which runs the bonus unlock cinematic)
 
@@ -24449,9 +24681,7 @@ function s9WarpDraw(){
   if(!s9warp) return;
   const k=clamp(s9warp.t/(s9warp.ph==='draw'?S9W_DRAW:S9W_WHITE),0,1);
   if(s9warp.ph==='draw'){
-    /* the speed effect peaks as the gate takes him */
-    if(typeof _speedLines==='function') _speedLines(1.4+k*1.4);
-    /* the ship is pulled up into the portal and shrinks into it */
+    /* the ship is pulled up into the portal and shrinks into it; no white speed-line overlay */
     const px=lerp(s9warp.x, VW/2, k), py=lerp(s9warp.y, VH*0.30, k);
     const pk='nfx_wportal_'+clamp(Math.floor(k*7),0,7);
     if(typeof XART!=='undefined' && XART.rdy(pk)){
@@ -25105,11 +25335,55 @@ function navalTick(e, dt){
   /* LAZY INIT (drop 0808k). spawnEnemy has more than one exit, so hooking a single push site
      leaves a boat spawned through another path with no heading and no timers. Initialising on the
      first tick means every naval unit is configured regardless of how it got here. */
-  if(!e._naval) navalInit(e, e.type==='s1boatgun' ? 'gun' : 'patrol');
+  if(!e._naval){
+    const nk=e.type==='s1boatgun'?'gun':(e.type==='s1corvette'?'corvette':(e.type==='s1landingcraft'?'landing':'patrol'));
+    navalInit(e,nk);
+  }
   navalSteer(e, dt);
   if(e._recoil>0){ e._recoil-=dt; e.y -= 46*dt; }        // knocked back by its own launch
+  e._navLean=lerp(e._navLean||0,0,Math.min(1,dt*7));
+  e._navPulse=Math.max(0,(e._navPulse||0)-dt*2.4);
   const canFire=navalInSix(e);
-  if(e._naval==='gun'){
+  if(e._naval==='corvette'){
+    /* CORVETTE: five-round alternating broadside. The visible port/starboard barrels fire one
+       after another, so this reads as a heavy combat ship rather than the patrol controller in
+       a larger collision box. Its fan is fixed and dodgeable; no hidden homing is introduced. */
+    if(e._burst>0){
+      e._shotCd-=dt;
+      if(e._shotCd<=0){
+        e._shotCd=0.14;
+        const k=5-e._burst, side=(k&1)?1:-1, a=(-0.28+k*0.14);
+        const mz=navalHardpoint(e,side*0.18,0.37);
+        eShootT(mz.x,mz.y,Math.PI/2+a,4.45,'mg',{});
+        navalFlash(e,mz,0.95,MUZZLE_MG,{ox:side*0.18,oy:0.37});
+        e._navLean=side*0.055; e._recoil=Math.max(e._recoil,0.06); e._burst--;
+        if(e._burst<=0) e._burstCd=3.2;
+      }
+    } else {
+      e._burstCd-=dt;
+      if(e._burstCd<=0&&canFire){ e._burst=5;e._shotCd=0;e._navPulse=1; }
+    }
+  } else if(e._naval==='landing'){
+    /* LANDING CRAFT: an unarmed battlefield shaper. It opens once, drops two destructible river
+       mines into separated lanes, and then rides out. Previously it inherited patrol and fired a
+       rocket despite the roster declaring atk:'none'. */
+    if(!e._deployed&&e._navIn&&e.t>1.1){
+      if(e._deployT==null){ e._deployT=0.58;e._navPulse=1; }
+      else {
+        e._deployT-=dt;
+        if(e._deployT<=0){
+          for(const side of [-1,1]){
+            const m=navalHardpoint(e,side*0.25,0.34);
+            const mine=spawnEnemy('s1rivermine',m.x,m.y,{inPlace:1});
+            if(mine){ mine._deployed=1;mine.vy=0;mine.t=0; }
+          }
+          e._deployed=1;e._navPulse=1;e._recoil=0.18;
+          if(typeof shake!=='undefined') shake=Math.max(shake,2);
+        }
+      }
+    }
+    if(e._deployed&&e.t>4.2) e._beached=1;       // mission complete: leave the playfield
+  } else if(e._naval==='gun'){
     /* ⚠ BURST, THEN A CLEAN 2-SECOND SILENCE, THEN BURST AGAIN — LOOPING (drop 0808n).
        Mike: "Should be burst fires with 2 second delays before the next and again. Then a 2
        second delay. Back to the loop for the machine gun boat."
@@ -27213,7 +27487,11 @@ function drawBullets(){
           const _round = Math.abs(sw0-sh0) <= Math.max(sw0,sh0)*0.22;
           if(!_round && (b.vx||b.vy)){
             const _ang=Math.atan2(b.vx, b.vy);
-            ctx.rotate(Math.max(-0.42, Math.min(0.42, _ang)));
+            /* Point the authored nose along the actual velocity. The old +/-24 degree clamp
+               left wide fan rounds visibly crooked and let a homing round curve while its
+               sprite stayed stuck sideways. Reading velocity every draw also means a steering
+               projectile rotates continuously as its heading changes. */
+            ctx.rotate(_ang);
           }
         }
         ctx.drawImage(im, sx0, sy0, sw0, sh0, -w/2, -h/2, w, h);
@@ -36964,6 +37242,24 @@ function sselFlagXY(st){
   const S=0.75, MX=0, MY=64;
   return {x:MX+p[0]*S, y:MY+p[1]*S};
 }
+/* Screen-direction navigation for the campaign map. Stage numbers run clockwise around the
+   islands, so numeric +/- reverses on the lower half: from Stage 6, decrementing to Stage 5
+   visibly flies RIGHT even though the player pressed Left. Pick the nearest unlocked flag whose
+   authored X coordinate is actually in the requested direction. At the left/right edge we hold
+   instead of wrapping across the entire map in the opposite direction. */
+function sselMoveHorizontal(dir, lo, hi, from){
+  const cur=(from==null)?sselCursor:from, cp=SSEL_POS[cur];
+  if(!cp || !dir) return cur;
+  let best=cur, bestD=Infinity;
+  for(let st=lo; st<=hi; st++){
+    if(st===cur || !SSEL_POS[st]) continue;
+    const p=SSEL_POS[st], dx=p[0]-cp[0], dy=p[1]-cp[1];
+    if(dx*dir<=0) continue;
+    const d=Math.hypot(dx,dy);
+    if(d<bestD){ bestD=d; best=st; }
+  }
+  return best;
+}
 function sselShipUpdate(dt){
   if(typeof sselBoot!=='undefined' && sselBoot>0){ return; }   // wait for the flags to finish
   const dest=sselFlagXY(sselCursor); if(!dest) return;
@@ -38294,9 +38590,13 @@ function _drawStageSelectInner(dt){
     const _lo = _bonus ? 9 : 1;
     const _hi = _bonus ? 9 : Math.max(1, Math.min(8, campaign.unlockedMax||1));   // only navigate UNLOCKED stages
     if(_bonus) sselCursor=9;
-    /* 0822af: 'left'/'right' are not key names either — the map walked on A/D alone */
-    if(Input.menuLeft()){ sselCursor = sselCursor<=_lo ? _hi : sselCursor-1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-    if(Input.menuRight()){ sselCursor = sselCursor>=_hi ? _lo : sselCursor+1; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+    /* 0822af: 'left'/'right' are not key names either — the map walked on A/D alone.
+       Movement is screen-relative as well: the clockwise stage numbering reverses direction
+       across the bottom of the map, so numeric +/- is not a valid Left/Right mapping. */
+    const _beforeL=sselCursor;
+    if(Input.menuLeft()){ sselCursor=sselMoveHorizontal(-1,_lo,_hi,sselCursor); if(sselCursor!==_beforeL&&Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
+    const _beforeR=sselCursor;
+    if(Input.menuRight()){ sselCursor=sselMoveHorizontal(1,_lo,_hi,sselCursor); if(sselCursor!==_beforeR&&Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
     /* ============================================================
        MOUSE ON THE MAP (drop 0812b) — the last pointer-dead screen.
 
@@ -39958,12 +40258,13 @@ function bmfInit(){
   if(typeof Image==='undefined') return;
   for(const k in BMF_FACES){
     if(BMF[k]) continue;
-    const base=BMF_FACES[k], rec={img:new Image(), map:null};
+    const base=BMF_FACES[k], embedded=(typeof window!=='undefined'&&window.BOF_BMF_MAPS)?window.BOF_BMF_MAPS[k]:null;
+    const rec={img:new Image(), map:(embedded&&embedded.glyphs)?embedded:null};
     rec.img.src=base+'-alpha.png';
     BMF[k]=rec;
     /* same shape as the ui_layout.json load: optional, guarded, and a failure simply leaves the
        authored stage face in place rather than taking the dialogue down with it */
-    if(typeof fetch==='function'){
+    if(!rec.map && typeof fetch==='function'){
       fetch(base+'-map.json',{cache:'no-store'})
         .then(r=>r.ok?r.json():null).then(d=>{ if(d&&d.glyphs) rec.map=d; }).catch(()=>{});
     }
@@ -40640,13 +40941,28 @@ function launchConnDy(){
   const raw=Math.max(0, LAND-(drawLaunch._dist||0));
   const ph=drawLaunch._phase;
   if(ph==='run' || ph==='brake') return raw;
-  /* _dist is frozen from 'settle' onward (spd is 0), so raw is constant here and the ease is clean */
+  /* The join finishes during settle, then the live level itself begins its slow countdown crawl. */
   if(ph==='settle') return raw*(1-_ease(clamp((drawLaunch._pt||0)/0.45,0,1)));
-  return 0;                     // 'cd': the 3-2-1 always counts down over the LANDED level
+  return 0;
+}
+const LAUNCH_COUNTDOWN_SCROLL=16;  // deliberately below PLAY's 40px/s; GO hands off to normal speed
+const STAGE6_TRANSITION_SKY='nl6sky_stage06_sky_scroll_640x960';
+/* Stage 6 owns an authored 640x960 transition plate. Keep it as one continuously moving strip
+   for the entire launch instead of handing the countdown to the stationary gameplay master.
+   That handoff was why GET READY appeared to freeze even though mapScroll was still advancing. */
+function stage6TransitionBackgroundDraw(scroll){
+  ctx.fillStyle='#061126'; ctx.fillRect(0,0,VW,VH);
+  if(typeof XART==='undefined' || !XART.rdy(STAGE6_TRANSITION_SKY)) return true;
+  const im=XART.get(STAGE6_TRANSITION_SKY), iw=Math.max(1,im.naturalWidth||640), ih=Math.max(1,im.naturalHeight||960);
+  const sc=VW/iw, dh=Math.max(1,ih*sc);
+  const off=((((scroll||0)*0.35)%dh)+dh)%dh;
+  let y=off-dh;
+  for(; y<VH; y+=dh) ctx.drawImage(im,0,Math.round(y),VW,Math.ceil(dh));
+  return true;
 }
 function drawLaunch(dt){
   if(drawLaunch._phase===undefined || stateT < (drawLaunch._lastT||0)-0.001){ drawLaunch._dist=0; drawLaunch._spd=110; drawLaunch._phase='run'; drawLaunch._pt=0;
-    drawLaunch._eng=false; drawLaunch._thr=false; drawLaunch._brk=false; drawLaunch._go=false; drawLaunch._num=99; drawLaunch._mus=false; }
+    drawLaunch._eng=false; drawLaunch._thr=false; drawLaunch._brk=false; drawLaunch._go=false; drawLaunch._num=99; drawLaunch._mus=false; drawLaunch._bgScroll=0; }
   drawLaunch._lastT=stateT;
   const t=stateT;
   if(!drawLaunch._mus){ drawLaunch._mus=true; Audio.startMusic((curStage&&curStage.music)||'stage'); }
@@ -40669,12 +40985,20 @@ function drawLaunch(dt){
     drawLaunch._dist+=drawLaunch._spd*dt;                          /* level keeps scrolling in smoothly while braking */
     if(drawLaunch._pt>=2.0){ drawLaunch._phase='settle'; drawLaunch._pt=0; }
   } else if(ph==='settle'){
-    /* WAS 'reverse': it shoved dist backwards by up to 300px, which read as the player being
-       yanked back just before GO. Mike flagged it. Now the world simply comes to REST — no
-       negative travel, no drift — and the ship holds the exact spot it will start play from. */
-    drawLaunch._pt+=dt; drawLaunch._spd=0;
+    drawLaunch._pt+=dt; drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;
     if(drawLaunch._pt>=0.45){ drawLaunch._phase='cd'; drawLaunch._pt=0; }
-  } else { drawLaunch._pt+=dt; drawLaunch._spd=0; }
+  } else {
+    /* The old countdown set speed to zero for the entire 3-2-1-GO beat. On bright water this
+       looked like the game had stalled. Consume a small, real slice of the level while counting;
+       finishLaunch preserves mapScroll, so PLAY continues from this exact frame at 40px/s. */
+    drawLaunch._pt+=dt; drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;
+    const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
+    mapScroll=_rng>0 ? Math.min(_rng, mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt)
+                     : mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt;
+  }
+  /* One accumulator spans every phase. Stage 6 reads this instead of phase-local distance, so its
+     sky cannot reset at brake/settle/countdown boundaries and never stops behind the numerals. */
+  drawLaunch._bgScroll=(drawLaunch._bgScroll||0)+Math.max(LAUNCH_COUNTDOWN_SCROLL,drawLaunch._spd||0)*dt;
   const dist=drawLaunch._dist, nrm=clamp(drawLaunch._spd/1750,0,1);
   const art=(typeof curArt==='function')&&curArt();
   /* ---- THE ENTRY CONNECTOR (drop 0810j): one continuous strip — the stage's own animated flat,
@@ -40706,13 +41030,12 @@ function drawLaunch(dt){
      and a stale colour. The connector takes its fill from _levelCfg, the live one, so the entry and
      the level cannot disagree about what the stage looks like again. */
   const rum=nrm*4; ctx.save(); if(rum>0.2) ctx.translate(rnd(-rum,rum),rnd(-rum,rum));
-  entryConnectorDraw(run.stage, launchConnDy());
+  if(run.stage===6) stage6TransitionBackgroundDraw(drawLaunch._bgScroll);
+  else entryConnectorDraw(run.stage, launchConnDy());
   ctx.restore();
-  /* Speed streaks belong to motion, not to the stage artwork. The old expression kept a
-     permanent 0.25/0.10 layer alive after the craft had fully settled, so the last launch frame
-     could never equal PLAY's first frame on stages 5 and 6 even though both drew the same master.
-     Drive the whole layer from velocity: it now naturally reaches zero before GET READY/GO. */
-  _speedLines(nrm*(run.stage===5?1.55:0.95));
+  /* No white speed-line overlay on level transitions. Motion comes from the continuously
+     scrolling stage connector and ship movement; the streaks obscured the approved art and
+     read as rain against industrial floors. */
   /* ---- sfx cues ---- */
   /* NO LAUNCH OR THRUSTER CUES (drop 0801fd). Mike: "no more thruster or launch
      sounds." Both were one-shots fired from the transition; the music carries it.
@@ -40727,16 +41050,15 @@ function drawLaunch(dt){
   }
   else if(ph==='brake'){ shipY=lerp(VH*0.42, VH*0.60, _ease(clamp(drawLaunch._pt/2.0,0,1))); if(_space) shipH=lerp(128,62,_ease(clamp(drawLaunch._pt/2.0,0,1))); }
   else if(ph==='settle'){
-    /* SETTLE ONTO THE POSE, don't just stop moving (drop 0810a). This phase's comment already
-       claimed the ship "holds the exact spot it will start play from" — it held VH*0.60 at 62px
-       while play began at VH*0.78 and 76.1px, so the claim was true of the intent and false of
-       the numbers. It now eases onto playShipPose() over the 0.45s the phase already had, which
-       reads as the ship settling into its flying position instead of snapping there at GO.
-       Both endpoints of the brake beat are untouched: this only replaces the dead hold. */
+    /* Reach the bottom flight lane in two continuous beats: settle gets most of the way there,
+       then the countdown carries the hull the final few pixels instead of pinning it in place. */
     const k=_ease(clamp(drawLaunch._pt/0.45,0,1));
-    shipX=lerp(VW/2, POSE.x, k); shipY=lerp(VH*0.60, POSE.y, k); shipH=lerp(62, POSE.h, k);
+    shipX=lerp(VW/2, POSE.x, k); shipY=lerp(VH*0.60, POSE.y-18, k); shipH=lerp(62, POSE.h, k);
   }
-  else { shipX=POSE.x; shipY=POSE.y; shipH=POSE.h; suf=''; }  // 3-2-1-GO: hold the play pose exactly
+  else {
+    const k=_ease(clamp(drawLaunch._pt/3.0,0,1));
+    shipX=POSE.x; shipY=lerp(POSE.y-18,POSE.y,k); shipH=POSE.h; suf='';
+  }
   drawShipSprite(shipX, shipY, shipH, suf);
   /* THE PILOT'S OWN ANIMATED PLUME (drop 0801fd). Mike: "start using our pilots
      with the animated thruster during the stage transitions, no more static
@@ -41013,11 +41335,12 @@ function bg6Draw(dt){
     ctx.restore();
   }
 
-  /* ---- night sky: present at the start, gone before dusk ---- */
+  /* ---- night sky: present at the start, gone before dusk ----
+     The old bg6_star_cluster layer was a group of giant cross-shaped glints over the countdown
+     and gameplay. It was an effect overlay, not part of the approved sky, so it stays removed. */
   const night=clamp((0.47-p)/0.16, 0, 1);
   if(night>0.02){
     if(_bg6Moon) blit(_bg6Moon, 0.9*night);
-    blit('bg6_star_cluster', 0.55*night, 'lighter');
   }
 
   /* ---- rain arrives after the night opening, peaks at the darkest palette, then clears for dusk ---- */
@@ -43122,6 +43445,7 @@ if(window.BOFA && BOFA.sfx){
     flameThrowerStart:'assets/game/sounds/flamethrower_ignite.wav',
     flameThrowerLoop:'assets/game/sounds/flamethrower_loop.wav',
     flameThrowerEnd:'assets/game/sounds/flamethrower_release.wav',
+    flameHit:'assets/game/sounds/explosion_air_small_01.wav',
     iceBreathStart:'assets/game/sounds/ice_breath_start.wav',
     iceBreathLoop:'assets/game/sounds/ice_breath_loop.wav',
     iceBreathEnd:'assets/game/sounds/ice_breath_release.wav',
@@ -43220,6 +43544,7 @@ const Snd=(function(){
     flameThrowerStart:   {g:0.54, lp:3800},
     flameThrowerLoop:    {g:0.48, lp:3400},
     flameThrowerEnd:     {g:0.46, lp:3800},
+    flameHit:            {g:0.28, lp:4300, min:0.09},
     iceBreathStart:      {g:0.52, lp:6800},
     iceBreathLoop:       {g:0.44, lp:6200},
     iceBreathEnd:        {g:0.48, lp:6800},
@@ -43331,21 +43656,13 @@ if(Snd){
      does not exist. That is why "very few from the pack made it through".
      Driven off BOFA.sfx now, so registering a sound is all it takes. */
   for(const m in BOFA.sfx){ if(Audio.SFX){ Audio.SFX[m]=(function(n){ return function(){ Snd.play(n); }; })(m); } }
-  /* The expansion bank is a VARIATION bank. A small or large death should not replay one identical
-     file for an entire stage, so the two legacy engine handles now choose inside their own weight
-     class. Boss and frozen deaths keep dedicated, deterministic cues below. */
-  const _sfxVariantAt={};
-  const _sfxVariant=function(names,family,gap){
-    const t=(window.performance&&performance.now?performance.now():Date.now())/1000;
-    if(family && _sfxVariantAt[family]!=null && t-_sfxVariantAt[family]<(gap||0)) return;
-    if(family) _sfxVariantAt[family]=t;
-    const live=names.filter(function(n){ return !!Snd.pools[n]; });
-    if(live.length) Snd.play(live[(Math.random()*live.length)|0]);
-  };
-  Audio.SFX.expSmall=function(){ _sfxVariant(['explosionAirSmall01','explosionAirSmall02'],'small',0.045); };
-  Audio.SFX.expBig=function(){ _sfxVariant(['explosionAirMedium','explosionAirLarge','explosionFuelAir','explosionJetBreakup'],'big',0.11); };
-  Audio.SFX.expBoss=function(){ _sfxVariant(['explosionBossCore'],'boss',0.5); };
-  Audio.SFX.expIce=function(){ _sfxVariant(['explosionIceBurst'],'ice',0.08); };
+  /* Restore the original shipped explosion pair. The expansion bank was taking over every death
+     and changed the game's whole sound identity. Its small-air sample remains intentionally used
+     only by flameHit above, where the held weapon needs a distinct, throttled contact transient. */
+  Audio.SFX.expSmall=function(){ Snd.play('expSmall'); };
+  Audio.SFX.expBig=function(){ Snd.play('expBig'); };
+  Audio.SFX.expBoss=function(){ Snd.play('expBig'); };
+  Audio.SFX.expIce=function(){ Snd.play('expSmall'); };
   const _synthMusic=Audio.startMusic;
   Audio.startMusic=function(n){ if(Snd.music[n]){ Snd.startMusic(n); } else { try{Snd.stopMusic();}catch(e){} if(_synthMusic)_synthMusic(n); } };
   Audio.stopMusic=function(){ Snd.stopMusic(); };

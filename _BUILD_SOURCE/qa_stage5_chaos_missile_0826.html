@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base href="../">
+  <title>Stage 5 Chaos Harrier Missile QA</title>
+  <style>
+    html,body{margin:0;min-height:100%;background:#03020a;display:grid;place-items:center}
+    canvas{image-rendering:pixelated}
+    #hud,#equipcv{display:none}
+  </style>
+</head>
+<body>
+  <canvas id="screen" width="480" height="512"></canvas>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+  <pre id="qa-state" hidden></pre>
+  <script>window.__qaErrors=[];addEventListener('error',e=>window.__qaErrors.push(String(e.error||e.message)));</script>
+  <script src="assets/manifest.js"></script>
+  <script src="assets/game/fonts/bmf_maps.js"></script>
+  <script src="assets/section_geom.js"></script>
+  <script src="assets/game.js"></script>
+  <script>
+  (()=>{
+    run.stage=5;run.pilot='maverick';curStage=STAGES[4];mapScroll=900;camX=0;stageTimer=1;
+    enemies.length=0;eBullets.length=0;pBullets.length=0;stagePlan=[];waveIdx=0;
+    boss=null;bossActive=false;subBoss=null;subBossActive=false;
+    player.reset();player.x=VW/2;player.y=VH*0.88;player.invuln=1e9;
+    spawnSubBoss('chaosharrier');subBoss.enter=false;subBoss.x=VW/2;subBoss.y=128;subBoss.ty=128;
+    subBoss._drawY=128;subBoss._chState='missile';subBoss._chT=0;subBoss._chStep=0;
+    subBoss._chVisible=true;subBoss._chCollision=true;subBoss._chPhase=1;subBoss._chCd=999;
+    state=GS.PLAY;
+    if(Audio&&Audio.SFX)Object.keys(Audio.SFX).forEach(k=>Audio.SFX[k]=()=>{});
+
+    const samples=[];
+    setInterval(()=>{
+      const missiles=eBullets.filter(q=>q._chKind==='missile');
+      if(missiles[0]){
+        const m=missiles[0];samples.push({x:+m.x.toFixed(3),y:+m.y.toFixed(3),speed:+m.vy.toFixed(3),ang:+m.ang.toFixed(4)});
+        if(samples.length>20)samples.shift();
+      }
+      const xs=samples.map(s=>s.x),speeds=samples.map(s=>s.speed);
+      window.__qaStage5Missile={ready:XART.rdy('ch_ship_2')&&XART.rdy('ch_missile_0'),errors:window.__qaErrors.slice(),
+        count:missiles.length,missiles:missiles.map(m=>({x:m.x,y:m.y,vx:m.vx,vy:m.vy,ang:m.ang,lane:m._chLaneX,max:m._chMaxspd})),
+        samples:samples.slice(),xRange:xs.length?Math.max(...xs)-Math.min(...xs):0,
+        speedGain:speeds.length?speeds[speeds.length-1]-speeds[0]:0,
+        boss:subBoss&&{x:subBoss.x,y:subBoss.y,state:subBoss._chState,visible:subBoss._chVisible}};
+      document.getElementById('qa-state').textContent=JSON.stringify(window.__qaStage5Missile);
+    },50);
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base href="../">
+  <title>Stage 6 Transition QA</title>
+  <style>
+    html,body{margin:0;min-height:100%;background:#000;display:grid;place-items:center}
+    canvas{image-rendering:pixelated}
+    #hud,#equipcv{display:none}
+  </style>
+</head>
+<body>
+  <canvas id="screen" width="480" height="512"></canvas>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+  <pre id="qa-state" hidden></pre>
+  <script>window.__qaErrors=[];addEventListener('error',e=>window.__qaErrors.push(String(e.error||e.message)));</script>
+  <script src="assets/manifest.js"></script>
+  <script src="assets/game/fonts/bmf_maps.js"></script>
+  <script src="assets/section_geom.js"></script>
+  <script src="assets/game.js"></script>
+  <script>
+  (()=>{
+    run.stage=6; run.pilot='maverick'; curStage=STAGES[5];
+    mapScroll=420; camX=0; stageTimer=1; state=GS.LAUNCH; stateT=20;
+    enemies.length=0; eBullets.length=0; pBullets.length=0;
+    player.reset(); player.x=VW/2; player.y=VH*0.84; player.invuln=1e9;
+    drawLaunch._phase='cd'; drawLaunch._pt=0.12; drawLaunch._dist=SEG_B3+1800;
+    drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL; drawLaunch._lastT=20;
+    drawLaunch._bgScroll=160; drawLaunch._mus=true; drawLaunch._num=99;
+    if(Audio&&Audio.SFX) Object.keys(Audio.SFX).forEach(k=>Audio.SFX[k]=()=>{});
+    let first=null;
+    setInterval(()=>{
+      if(first===null) first=drawLaunch._bgScroll||0;
+      window.__qaStage6={ready:XART.rdy(STAGE6_TRANSITION_SKY),phase:drawLaunch._phase,
+        bgScroll:drawLaunch._bgScroll||0,advanced:(drawLaunch._bgScroll||0)-first,
+        mapScroll,starOverlayDrawn:bg6Draw.toString().includes("blit('bg6_star_cluster'"),
+        transitionKey:STAGE6_TRANSITION_SKY,errors:window.__qaErrors.slice()};
+      document.getElementById('qa-state').textContent=JSON.stringify(window.__qaStage6);
+    },50);
+  })();
+  </script>
+</body>
+</html>

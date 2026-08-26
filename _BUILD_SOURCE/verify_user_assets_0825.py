@@ -18,6 +18,27 @@ require(len(portraits) == 108, "nine pilots x twelve approved portrait poses")
 require(all(Image.open(p).size == (256, 256) for p in portraits), "all portraits retain full 256px source resolution")
 require("port_cf_" in SRC and "_talking?'talk'" in SRC, "menus/dialogue resolve the approved portraits and type-on mouth poses")
 
+
+def edge_purple(path: Path) -> int:
+    im = Image.open(path).convert("RGBA")
+    px = im.load()
+    count = 0
+    for y in range(im.height):
+        for x in range(im.width):
+            r, g, b, a = px[x, y]
+            if not a:
+                continue
+            edge = any(
+                0 <= nx < im.width and 0 <= ny < im.height and px[nx, ny][3] == 0
+                for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
+            )
+            if edge and min(r, b) > 10 and g < min(r, b) * 0.78 and abs(r - b) < 145:
+                count += 1
+    return count
+
+
+require(sum(edge_purple(p) for p in portraits) == 0, "all 108 new portraits have zero transparency-edge purple halo pixels")
+
 fleet = sorted((GAME / "l6_fleet").glob("*.png"))
 require(len(fleet) == 27, "three Level-6 hulls x three palettes x three damage states")
 require(all(set(Image.open(p).convert("RGBA").getchannel("A").get_flattened_data()) <= {0, 255} for p in fleet), "fleet silhouettes use hard alpha")

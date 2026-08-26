@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base href="../">
+  <title>Boss Performance Layer QA</title>
+  <style>
+    html,body{margin:0;min-height:100%;background:#05080b;display:grid;place-items:center}
+    canvas{image-rendering:pixelated} #hud,#equipcv{display:none}
+  </style>
+</head>
+<body>
+  <canvas id="screen" width="480" height="512"></canvas>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+  <pre id="qa-state" hidden></pre>
+  <script>window.__qaErrors=[];addEventListener('error',e=>window.__qaErrors.push(String(e.error||e.message)));</script>
+  <script src="assets/manifest.js"></script>
+  <script src="assets/game/fonts/bmf_maps.js"></script>
+  <script src="assets/section_geom.js"></script>
+  <script src="assets/game.js"></script>
+  <script>
+  (()=>{
+    run.stage=2;curStage=STAGES[1];mapScroll=940;camX=0;stageTimer=1;
+    enemies.length=0;eBullets.length=0;pBullets.length=0;stagePlan=[];waveIdx=0;
+    player.reset();player.x=VW/2;player.y=VH*0.84;player.invuln=1e9;
+    state=GS.PLAY;bossWarned=true;warnT=0;
+    spawnBoss('infernoreaver');boss.enter=false;boss.x=VW/2;boss.y=138;boss.ty=138;
+    boss._drawY=138;boss._sbm='hold';boss._sbmT=999;boss.drift=0;boss.fireCd=999;
+    boss.hp=boss.maxhp;boss._sbPhase=0;boss._sbaPhase=0;boss._sbStep=0;
+    setTimeout(()=>{
+      shipBossAttack(boss);
+      boss._sba={pat:'ember',t:0.39,tell:0.36,recover:0.24,kick:7,shake:2,fired:true};
+      boss._sbaKick=0.92;boss._sbaBank=0.58;
+      shipBossMuzzleStart(boss,['L','C','R'],{life:10,n:6});
+      eBullets.forEach((q,i)=>{const age=18+(i%4)*5;q.x+=q.vx*age;q.y+=q.vy*age;q.t=age/60;});
+      updatePlay=function(){};
+      window.__qaReady=true;
+    },750);
+    setInterval(()=>{
+      const P=shipBossVisualPose(boss),L=shipBossMount(boss,'L'),C=shipBossMount(boss,'C'),R=shipBossMount(boss,'R');
+      window.__qaBossPerformance={ready:!!window.__qaReady,errors:window.__qaErrors.slice(),pose:P,
+        mounts:{L,C,R},muzzle:boss._smz,bullets:eBullets.length,ship:boss._ship};
+      document.getElementById('qa-state').textContent=JSON.stringify(window.__qaBossPerformance);
+    },50);
+  })();
+  </script>
+</body>
+</html>

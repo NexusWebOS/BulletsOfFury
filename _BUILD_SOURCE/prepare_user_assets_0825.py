@@ -7,6 +7,7 @@ into six actual projectile frames.  No runtime colour overlay is used for the ai
 from __future__ import annotations
 
 import colorsys
+import json
 from pathlib import Path
 from PIL import Image, ImageDraw
 
@@ -17,6 +18,58 @@ OUT = ROOT / "assets" / "game"
 L6_OUT = OUT / "l6_fleet"
 FX_OUT = OUT / "fx_0825"
 PREVIEW = ROOT / "_BUILD_SOURCE" / "previews_0825"
+
+
+def neutralize_portrait_halos() -> tuple[int, int]:
+    """Turn only transparency-adjacent purple spill into the project's dark neutral edge."""
+    portrait_dir = OUT / "pilot_portraits"
+    changed = 0
+    files = 0
+    for path in sorted(portrait_dir.glob("*.png")):
+        im = Image.open(path).convert("RGBA")
+        px = im.load()
+        w, h = im.size
+        near = {(x, y) for y in range(h) for x in range(w) if px[x, y][3] == 0}
+        for _ in range(4):
+            near |= {
+                (nx, ny)
+                for x, y in tuple(near)
+                for nx, ny in ((x - 1, y), (x + 1, y), (x, y - 1), (x, y + 1))
+                if 0 <= nx < w and 0 <= ny < h
+            }
+        local = 0
+        for y in range(h):
+            for x in range(w):
+                r, g, b, a = px[x, y]
+                if not a:
+                    if r or g or b:
+                        px[x, y] = (0, 0, 0, 0)
+                    continue
+                if (x, y) not in near:
+                    continue
+                lo = min(r, b)
+                if lo > 10 and g < lo * 0.78 and abs(r - b) < 145:
+                    # Keep the silhouette solid; remove the purple cast, not the edge pixel.
+                    v = min(24, round((r + g + b) / 12))
+                    px[x, y] = (v, v, v, a)
+                    local += 1
+        if local:
+            im.save(path, optimize=True)
+            files += 1
+            changed += local
+    return files, changed
+
+
+def build_bmf_maps() -> Path:
+    """Embed BMF metrics so dialogue fonts also work when the game is launched from file://."""
+    fonts = OUT / "fonts"
+    maps = {}
+    for name, folder in (("dialogue", "fury-dialogue-font"), ("cutscene", "fury-cutscene-font")):
+        src = fonts / folder / f"{folder}-map.json"
+        maps[name] = json.loads(src.read_text(encoding="utf-8"))
+    dst = fonts / "bmf_maps.js"
+    dst.write_text("window.BOF_BMF_MAPS=" + json.dumps(maps, separators=(",", ":")) + ";\n", encoding="utf-8")
+    return dst
 
 
 def dehalo_magenta(im: Image.Image, passes: int = 4) -> Image.Image:
@@ -203,7 +256,9 @@ def make_preview() -> Path:
 
 
 if __name__ == "__main__":
+    portrait_files, portrait_pixels = neutralize_portrait_halos()
+    bmf = build_bmf_maps()
     fleet = build_l6_fleet()
     fx = build_fx()
     preview = make_preview()
-    print(f"fleet={len(fleet)} fx={len(fx)} preview={preview.relative_to(ROOT)}")
+    print(f"portraits={portrait_files}/{portrait_pixels}px bmf={bmf.relative_to(ROOT)} fleet={len(fleet)} fx={len(fx)} preview={preview.relative_to(ROOT)}")

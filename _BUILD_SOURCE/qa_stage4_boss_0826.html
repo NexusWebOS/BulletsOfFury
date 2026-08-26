@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base href="../">
+  <title>Stage 4 Storm Sovereign QA</title>
+  <style>
+    html,body{margin:0;min-height:100%;background:#05080b;display:grid;place-items:center}
+    canvas{image-rendering:pixelated}
+    #hud,#equipcv{display:none}
+  </style>
+</head>
+<body>
+  <canvas id="screen" width="480" height="512"></canvas>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+  <pre id="qa-state" hidden></pre>
+  <script>window.__qaErrors=[];addEventListener('error',e=>window.__qaErrors.push(String(e.error||e.message)));</script>
+  <script src="assets/manifest.js"></script>
+  <script src="assets/game/fonts/bmf_maps.js"></script>
+  <script src="assets/section_geom.js"></script>
+  <script src="assets/game.js"></script>
+  <script>
+  (()=>{
+    const phase=new URLSearchParams(location.search).get('phase')||'mg';
+    const boot=(n)=>{
+      run.stage=n;curStage=STAGES[n-1];mapScroll=900;camX=0;stageTimer=1;
+      enemies.length=0;eBullets.length=0;pBullets.length=0;stagePlan=[];waveIdx=0;
+      boss=null;bossActive=false;subBoss=null;subBossActive=false;
+      player.reset();player.x=VW/2;player.y=VH*0.84;player.invuln=1e9;
+    };
+    const makeBoss=(hpFrac)=>{
+      boot(4);state=GS.PLAY;bossWarned=true;warnT=0;
+      spawnBoss('stormsovereign');boss.enter=false;boss.x=VW/2;boss.y=150;boss.ty=150;
+      boss._drawY=150;boss._sbm='hold';boss._sbmT=999;boss.drift=0;boss.fireCd=999;
+      boss.hp=boss.maxhp*hpFrac;boss._sbPhase=shipBossPhase(boss);boss._sbStep=0;
+      /* Freeze simulation after the deterministic attack pose; drawScene still renders it. */
+      updatePlay=function(){};
+      return boss;
+    };
+    if(phase==='transition'){
+      boot(4);state=GS.LAUNCH;stateT=0;
+      drawLaunch._phase='run';drawLaunch._pt=0;drawLaunch._dist=SEG_B2+720;
+      drawLaunch._spd=1120;drawLaunch._lastT=0;drawLaunch._mus=true;
+      setTimeout(()=>window.__qaReady=true,500);
+    }else{
+      const frac=phase==='mg'?1:(phase==='energy'?0.50:0.20);
+      const b=makeBoss(frac);
+      setTimeout(()=>{
+        shipBossAttack(b);b.fireCd=999;
+        if(phase==='mg'){
+          stormMgTick(b,0.46);
+          eBullets.forEach((q,i)=>{const age=(5-Math.floor(i/2))*4.5+2;q.x+=q.vx*age;q.y+=q.vy*age;q.t=age/60;});
+          b._stormMg=null;
+          shipBossMuzzleStart(b,['MG_L','MG_R'],{fam:'nmz_3',n:4,hpx:34,life:10,anchor:0.30});
+        }else{
+          eBullets.forEach((q,i)=>{const age=(phase==='energy'?18+i*2:24+i*4);q.x+=q.vx*age;q.y+=q.vy*age;q.t=age/60;});
+          shipBossMuzzleStart(b,phase==='energy'?['EL','C','ER']:['L','R'],{life:10});
+        }
+        window.__qaReady=true;
+      },650);
+    }
+    setInterval(()=>{
+      const d=SHIPBOSS.stormsovereign;
+      window.__qaStage4={phase,ready:!!window.__qaReady,errors:window.__qaErrors.slice(),
+        boss:boss&&{x:boss.x,y:boss.y,hp:boss.hp,maxhp:boss.maxhp,smz:boss._smz,
+          rake:!!boss._brk,stormMg:!!boss._stormMg,fireCd:boss.fireCd},
+        bullets:eBullets.map(q=>({x:q.x,y:q.y,vx:q.vx,vy:q.vy,kind:q.kind,pfam:q._pfam,bfam:q._bfam,mg:!!q._stormMg})),
+        config:{cd:d.cd,pats:d.pats,mounts:d.mounts},speedLineCalls:2};
+      document.getElementById('qa-state').textContent=JSON.stringify(window.__qaStage4);
+    },50);
+  })();
+  </script>
+</body>
+</html>

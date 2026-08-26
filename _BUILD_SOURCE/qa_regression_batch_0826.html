@@ -1,0 +1,67 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base href="../">
+  <title>Regression Batch QA</title>
+  <style>
+    html,body{margin:0;min-height:100%;background:#05080b;display:grid;place-items:center}
+    canvas{image-rendering:pixelated}
+    #hud,#equipcv{display:none}
+  </style>
+</head>
+<body>
+  <canvas id="screen" width="480" height="512"></canvas>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+  <pre id="qa-state" hidden></pre>
+  <script src="assets/manifest.js"></script>
+  <script src="assets/game/fonts/bmf_maps.js"></script>
+  <script src="assets/section_geom.js"></script>
+  <script src="assets/game.js"></script>
+  <script>
+  (() => {
+    const phase=new URLSearchParams(location.search).get('phase') || 'launch';
+    const bootStage=(n)=>{
+      run.stage=n; curStage=STAGES[n-1]; mapScroll=220; camX=0;
+      enemies.length=0; eBullets.length=0; pBullets.length=0;
+      boss=null; bossActive=false; subBoss=null; subBossActive=false;
+      player.reset(); player.x=VW/2; player.y=playShipPose().y; player.invuln=1e9;
+    };
+    if(phase==='launch'){
+      bootStage(1); state=GS.LAUNCH; stateT=0;
+      drawLaunch._phase='cd'; drawLaunch._pt=0; drawLaunch._dist=SEG_B3+1600;
+      drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL; drawLaunch._lastT=0; drawLaunch._mus=true;
+    } else if(phase==='boss2'){
+      bootStage(2); state=GS.PLAY; mapScroll=980; stageTimer=1; bossWarned=true; warnT=0;
+      stagePlan=[]; waveIdx=0;
+      spawnBoss('infernoreaver'); boss.y=-1000; boss.ty=-1000; boss.fireCd=100;
+      setTimeout(()=>{
+        for(let i=-2;i<=2;i++) eBullets.push({
+          x:VW/2+i*70,y:110+Math.abs(i)*36,vx:i*0.03,vy:0.2,w:18,h:18,dmg:0,t:0,
+          kind:'magma',_boss:true,_bfam:'infernoreaver',_noArsenal:true
+        });
+      },1100);
+    } else if(phase==='dialogue'){
+      bootStage(1); state=GS.PLAY;
+      const original=drawScene;
+      drawScene=function(dt){
+        original(dt);
+        dlgBox({who:'COLE',tint:'#8dff65',bodyCol:'#e8f2e4',
+          full:'Fury HQ, stay sharp. The new threat is already moving.',
+          portrait:'cole',emo:'idle',fade:1});
+      };
+    }
+    const startScroll=mapScroll;
+    const sample=()=>{
+      window.__qaRegression={phase,state,mapScroll,startScroll,delta:mapScroll-startScroll,
+        launchPhase:drawLaunch._phase,launchT:drawLaunch._pt,
+        bmfDialogue:bmfReady('dialogue'),portrait:XART.rdy('port_cf_cole_idle'),
+        bullets:eBullets.length};
+      document.getElementById('qa-state').textContent=JSON.stringify(window.__qaRegression);
+    };
+    sample(); setInterval(sample,100);
+  })();
+  </script>
+</body>
+</html>
