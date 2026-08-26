@@ -1,21 +1,27 @@
-# Emotion Portraits — Complete
+# Emotion Portraits — Recovery Required
 
-The previously listed missing source portraits were uploaded on the GitHub
-`codex/codex-edition` branch and are now preserved in this branch.
+Do not mark the portrait task complete on `codex/bugfix-continuation` yet.
 
-## Verified coverage
+## What is preserved locally
 
-- Pilots: `axel`, `cole`, `decker`, `freezer`, `maverick`
-- States: `idle`, `smile`, `anger`, `laugh`, `sad`, `victory`, `crash`
-- Total supplied portraits: 35
-- Live keys: `port_<pilot>_<state>`
+- `_ART_SOURCES/BOF_EmotionPortraits_0825/` contains 36 source PNGs plus `SOURCE.md`.
+- These are source/reference portraits, not the complete live portrait installation.
 
-The source PNGs were compared with the corresponding packed atlas cells and are
-pixel-for-pixel identical. No atlas or manifest replacement is required.
+## What is missing from the current runtime tree
 
-The production originals and contact-sheet proof are preserved in:
+- `assets/game/pilot_portraits/` is absent from `codex/bugfix-continuation`.
+- The live game therefore does not have the 108 runtime portrait files installed by the house/Codex branch.
+- The prior text saying the portraits were "preserved in this branch" was misleading: the source subset is here, but the complete runtime pack is not.
 
-`_ART_SOURCES/BOF_EmotionPortraits_0825/`
+## Where the missing portrait work exists
 
-Together with the four already-complete pilots, the game has all nine pilots ×
-seven emotion portraits (63 total). This is no longer an open asset task.
+GitHub branch `origin/codex/codex-edition`, commit `747424493156ba1d0ca63c8c3a0c06071521cfe3`, contains:
+
+- 108 files under `assets/game/pilot_portraits/`;
+- 127 files under `_ART_SOURCES/CF_PilotPortraits-Vol1_0825/`;
+- the manifest/runtime wiring in `assets/game.js`;
+- the updated portrait verification tests.
+
+Recover this work by content-aware reconciliation with the current repairs. Do not replace `assets/game.js` wholesale and do not reset either branch to the other.
+
+See `docs/RECOVERY_AUDIT_0825.md` for the protected branch tips and the complete recovery warning.
