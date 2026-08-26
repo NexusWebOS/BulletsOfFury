@@ -1152,6 +1152,13 @@ function worldWidth(){
          yields the authored width immediately and the decoded art only REFINES
          it. Nothing waits on a download to know how wide the map is. */
       if(XART._src && XART._src[mk] && XART._touch) XART._touch(mk);   // begin the decode
+      /* A master may be one CELL inside an atlas. XART.get() then returns the atlas image, whose
+         naturalWidth is not the world's width (Stage 6's 680px sky lives in a 3904px sheet).
+         Every playable stage declares plateW, so that authored geometry stays authoritative both
+         before and after decode. This also prevents the camera from suddenly widening mid-stage. */
+      if(cfg && cfg.plateW){
+        w=Math.max(VW,cfg.plateW); _wwCache[st]=w; return w;
+      }
       if(XART.rdy(mk)){
         const im=XART.get(mk);
         if(im && im.naturalWidth) w=Math.max(VW, im.naturalWidth);
@@ -9878,7 +9885,8 @@ const SHIPBOSS = {
                   dmg:['nsb_spawncarrier_damaged_v2','nsb_spawncarrier_critical_v2']},
   /* Generated Hellwing Death Carrier: fixed 192x256 action canvas with its own draw runner. */
   heralddeath:   {key:'nhd_idle_0', name:'HERALD OF DEATH', w:150,h:200, drawW:192,drawH:256,
-                  ty:168, hp:340, pat:'void', cd:1.22, mini:true, pats:['void','mslfan']},
+                  ty:168, hp:340, pat:'void', cd:1.22, mini:true, proj:'herald',
+                  mounts:{L:[-0.29,0.24],C:[0,0.42],R:[0.29,0.24]}, pats:['void','mslfan']},
   thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true, proj:'cryo',
                   mounts:{L:[-0.27,0.27],C:[0,0.43],R:[0.27,0.27]},
                   pats:['rime','chargebeam']},
@@ -9951,12 +9959,22 @@ function shipBossInit(b, kind){
   if(kind==='heralddeath' && typeof heraldDeathInit==='function') heraldDeathInit(b,D);
   return true;
 }
+/* Fire/lava hulls own the authored magma orb on every volley, not only on their signature attack.
+   This is deliberately keyed by ship identity: changing the whole Stage-2 palette would also turn
+   unrelated bullets into magma. */
+const MAGMA_SHIP_SHOT={infernoreaver:1,magmaward:1,siegeember:1,lavamaw:1};
+function shipShotKind(owner){
+  return owner && MAGMA_SHIP_SHOT[owner._ship] ? 'magma' : 'eshot';
+}
 /* one bullet, on the file's own contract: slow, readable, scaled by difficulty SPEED */
 function _shipShot(x,y,vx,vy,w,owner){
   const sp=(typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1;
   const D=owner&&owner._ship?SHIPBOSS[owner._ship]:null;
-  eBullets.push({x:x, y:y, vx:vx*sp, vy:vy*sp, w:w||11, h:w||11, dmg:1, t:0, kind:'eshot',
-                 _boss:!!(owner&&D&&D.proj), _bfam:(D&&D.proj)||null});
+  const kind=shipShotKind(owner), herald=owner&&owner._herald;
+  eBullets.push({x:x, y:y, vx:vx*sp, vy:vy*sp, w:w||11, h:w||11, dmg:1, t:0, kind:kind,
+                 _boss:!!(owner&&D&&D.proj), _bfam:(D&&D.proj)||null,
+                 _noArsenal:kind==='magma'||!!herald,
+                 _heraldProjectile:herald ? (herald.attack==='special_attack'?'special':'primary') : null});
 }
 function shipBossMount(b, slot){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null;
@@ -16264,7 +16282,9 @@ function warmStage(n){
        code: any ship boss warms its own hull key, any NEWBOSS stage warms its idle reel, and the
        same for whatever the stage fields as its miniboss. ============================================================ */
     const _bk = S && S.boss;
-    if(_bk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_bk]) addPrefix(SHIPBOSS[_bk].key);
+    if(_bk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_bk]){
+      const _bd=SHIPBOSS[_bk]; add(_bd.key);
+    }
     /* VILE EXISTENCE is a four-form modular boss whose runtime kind does not match any of its
        art prefixes. Warm every shell plus the transition/implosion overlays before Stage 8 can
        spawn it; otherwise the first cinematic frame contains a health bar and an invisible boss. */
@@ -27099,6 +27119,18 @@ function drawBullets(){
   // enemy — master fire-type art first (legacy kinds alias onto shared FIRETYPES)
   for(const b of eBullets){
     if(b._chKind && typeof chaosHarrierProjectileDraw==='function' && chaosHarrierProjectileDraw(b)) continue;
+    /* Hellwing's generated pack includes its own two projectile reels. They are not members of
+       the shared bfx arsenal, so draw them before that fallback can replace them. */
+    if(b._heraldProjectile && typeof XART!=='undefined'){
+      const _hk='nhd_'+b._heraldProjectile+'_projectile_'+((((b.t||0)*12)|0)%6);
+      if(XART.rdy(_hk)){
+        const _hi=XART.get(_hk), _hs=b._heraldProjectile==='special'?48:36;
+        ctx.save(); ctx.translate(b.x,b.y);
+        if(b.vx||b.vy) ctx.rotate(Math.atan2(b.vy,b.vx)+Math.PI/2);
+        ctx.drawImage(_hi,-_hs/2,-_hs/2,_hs,_hs); ctx.restore();
+        continue;
+      }
+    }
     /* PER-LEVEL ENEMY PROJECTILES (drop 0801am). Mike: "brand new master projectiles for all
        enemies and bosses. erase all current projectiles you're using for enemies, keep the
        exclusive ones for the other bosses we provided."

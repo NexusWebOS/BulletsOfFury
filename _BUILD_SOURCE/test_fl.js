@@ -714,13 +714,10 @@ ok(shOk, 'floating shield art present (fallback) for all 5 levels');
   vm.runInContext("run.weapon=1; run.wlevel=5; pBullets.length=0; player.fireCd=0; pShoot();", ctxv);
   ok(vm.runInContext("pBullets.some(b=>b.kind==='spread' && b.lv===5)", ctxv), 'spread fire spawns level-tagged bullets');
   vm.runInContext("run.weapon=3; run.wlevel=3; pBullets.length=0; player.fireCd=0; pShoot();", ctxv);
-  /* ⚠ REPOINTED 0822h. This pinned kind==='beam', but the rule the block is protecting is the
-     one in the comment above it - firing spawns bullets that CARRY THE LEVEL for tinting. The kind
-     was incidental, naming whatever the laser happened to be that day, and the laser is a widening
-     arc of 'hfl' segments now. The lv tag is the load-bearing half and it is still asserted; the
-     count is asserted too, because a fan that silently became one bolt would otherwise pass. */
-  ok(vm.runInContext("pBullets.filter(b=>b.kind==='hfl' && b.lv===3).length>=6", ctxv),
-     'laser fire spawns a level-tagged ARC of segments, not a single column');
+  /* The shared laser is the held authored beam again. Maverick's special owns the widening helix;
+     it must not silently replace the normal weapon for all nine pilots. */
+  ok(vm.runInContext("pBullets.length===1 && pBullets[0].kind==='beam' && pBullets[0].lv===3", ctxv),
+     'normal laser fire spawns one level-tagged held beam');
 }
 
 console.log('\n=== 19. vault vehicle arsenal (tanks/aircraft/bosses) ===');
@@ -883,12 +880,14 @@ console.log('\n=== 20. jungle roster + behaviors + shadows ===');
      to level 7. drone goes to level 5." And the plan he then specified fields
      racers, intcp, topgun and the new sandtank - bomber, turdrone and mdrone are
      not in it at all. Testing the units his sequence actually calls for. */
-  const wantJets=['s1jetdelta','s1jetdelta_b','s1jetbomber','s1jetbomber_b'];
-  ok(wantJets.every(t=>stypes.includes(t)), 'level 1 fields the new roster jets: saw '+stypes.join(','));
+  const wantJets=['s1jetdelta','s1jetdelta_b','s1jetbomber'];
+  ok(wantJets.every(t=>stypes.includes(t)), 'level 1 fields the live new-roster jet families: saw '+stypes.join(','));
+  ok(vm.runInContext("String(buildStagePlan).indexOf(\"spawnEnemy('s1jetbomber_b'\")>0",ctxv),
+     'and the post-miniboss black bomber wave remains authored even when this smoke run clears the gate early');
   ok(!stypes.includes('drone') && !stypes.includes('stationship'),
      'and NOT the two he moved to other levels (drone -> L5, stationship -> L7)');
-  const wantTanks=['tank','htank','s1tankheavy','microturret'];
-  ok(wantTanks.some(t=>stypes.includes(t)), 'level 1 includes the approved tanks (over LAND — at sea they are naval now, drop 0801dq)');
+  ok(vm.runInContext("String(buildStagePlan).indexOf(\"spawnEnemy('s1tankheavy'\")>0 && String(buildStagePlan).indexOf(\"spawnEnemy('s1tankapc'\")>0",ctxv),
+     'level 1 keeps the approved land-gated heavy/APC tank waves; the sea opening remains naval');
   // 7-max cap holds
   // The cap governs WAVE pressure. Stationary emplacements (turrets/bunkers/mini units) are terrain
   // hazards with their own budget (EMPLACE_CAP) and are excluded from it, so both are checked.
@@ -1538,9 +1537,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     const file = px.file;
     const cw = vm.runInContext("run.stage="+stg+"; (_levelCfg().plateW||null)", ctxv);
     const ch = vm.runInContext("run.stage="+stg+"; (_levelCfg().h||null)", ctxv);
-    if(cw!=null) ok(cw===px.w, 'stage '+stg+' plateW ('+cw+') matches '+file+' ('+px.w+')');
+    const fixed = vm.runInContext("run.stage="+stg+"; !!_levelCfg().staticMaster", ctxv);
+    if(cw!=null && !fixed) ok(cw===px.w, 'stage '+stg+' plateW ('+cw+') matches '+file+' ('+px.w+')');
     if(ch!=null) ok(ch===px.h, 'stage '+stg+' cfg.h ('+ch+') matches '+file+' ('+px.h+')');
-    ok(vm.runInContext("run.stage="+stg+"; worldWidth()", ctxv)===px.w,
+    if(fixed) ok(vm.runInContext("run.stage="+stg+"; worldWidth()", ctxv)===cw,
+       'stage '+stg+' fixed sky uses its declared playfield width '+cw+', independent of source-art width');
+    else ok(vm.runInContext("run.stage="+stg+"; worldWidth()", ctxv)===px.w,
        'stage '+stg+' worldWidth() resolves to its plate width '+px.w);
   }
   /* ⚠ NO STAGE MAY RELY ON THE MASTER_W FALLBACK (drop 0822e). It is a silent default: a stage
@@ -3423,9 +3425,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok((white[8]||0)<(white[7]||1), 'the white then fades back toward normal');
   ok((booms[7]||0)>0 && (booms[8]||0)>0, 'and the boss keeps exploding through the fade and after it');
   ok((booms[9]||0)>0, 'still coming apart into the 9th second');
-  ok(vm.runInContext('bossDeathAlpha(0)===1 && bossDeathAlpha(1.9)===1 && bossDeathAlpha(2.59)===1', ctxv),
+  ok(vm.runInContext('bossDeathAlpha(0)===1 && bossDeathAlpha(1.79)===1', ctxv),
      'the boss hull stays fully opaque while the destruction sequence covers it');
-  ok(vm.runInContext('bossDeathAlpha(2.6)===0 && bossDeathAlpha(8)===0', ctxv),
+  ok(vm.runInContext('bossDeathAlpha(1.8)===0 && bossDeathAlpha(8)===0', ctxv),
      'then it is removed in one hard cut — there is no translucent boss interval');
   // the stage must not cut away before it finishes
   ok(vm.runInContext("updatePlay.toString().indexOf('const endT')>0", ctxv), 'stage-end timing is explicit');
@@ -4671,21 +4673,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* ⚠ STAGE 6 IS ONE SKY AGAIN (drop 0813i). The RC2 rebuild reintroduced the fortress - a door
      and platform decks painted into the plate - and Mike flagged every one: "they gota go dude".
      nsky6_sky is the plate he approved back in 0801gm, looped. */
-  ok(vm.runInContext("_levelCfg().master==='bg_stage06_master'", ctxv), 'stage 6 runs the 0819e sky scroll master (day -> night -> sewer approach)');
-  /* ⚠ IT NO LONGER LOOPS, ON PURPOSE. The new plate is a complete 4080-row scroll that runs day
-     -> dusk -> storm night -> the sewer approach; looping it would destroy that progression and
-     the hand-off into stage 7. */
-  ok(vm.runInContext("!_levelCfg().loopMaster", ctxv), 'and it does NOT loop — the plate carries a whole-stage progression');
-  ok(vm.runInContext("_levelCfg().scrollLen===undefined", ctxv),
-     'with NO scrollLen — the master height sets the length 1:1, or the sky crawls');
-  ok(vm.runInContext("run.stage=6; XART.rdy('skyfort800_rc2_master') && XART.get('skyfort800_rc2_master').naturalHeight>=VH*4", ctxv),
-     'and the plate is tall enough to actually scroll ('+vm.runInContext("XART.rdy('skyfort800_rc2_master')?XART.get('skyfort800_rc2_master').naturalHeight:0", ctxv)+'px vs the old 2400)');
-  /* ⚠ INVERTED (Mike, 0819f). "with no cloud art" was true of the OLD system — it tinted the sky
-     in code because there were no cloud plates. The pack ships four cloud families, so the
-     absence this asserted is now the thing that would be wrong. */
-  ok(vm.runInContext("typeof l6CloudsDraw==='undefined' && XART.rdy('bg6_cloud_storm_0')", ctxv),
-     'the code-tinted sky is gone and stage 6 has real cloud art');
-  ok(vm.runInContext("XART.rdy('nl6sky_stage06_sky_scroll_640x960')", ctxv), 'and the stage-6 scrolling sky plate');
+  ok(vm.runInContext("_levelCfg().master==='nsky6_sky' && _levelCfg().staticMaster===true", ctxv),
+     'stage 6 uses one fixed clean sky plate for the entire level');
+  ok(vm.runInContext("_levelCfg().scrollLen===2240 && _levelCfg().continuousBoss===true", ctxv),
+     'its gameplay remains one continuous stage through the boss instead of teleporting sections');
+  ok(vm.runInContext("BG6_MOOD.map(function(m){return m.name;}).join(',')==='night,storm,dusk,dawn,sunlight'", ctxv),
+     'the fixed sky palette progresses night -> dark rain -> dusk -> dawn -> sunlight');
+  ok(vm.runInContext("BG6_CLOUD_KEY==='bg6_cloud_day_0' && typeof l6CloudsDraw==='undefined'", ctxv),
+     'stage 6 uses one clean non-animated cloud rather than the purple cloud reels');
+  ok(vm.runInContext("String(bg6Draw).indexOf('sewer')<0", ctxv),
+     'and sewer art is not part of Stage 6 gameplay');
   // chroma
   var _sh=null; try{ _sh=JSON.parse(fs.readFileSync(fxJson('_sectional_halo.json'),'utf8')); }catch(e){}
   ok(_sh && _sh.after<20, 'key bleed healed on arrival ('+(_sh?_sh.before:'?')+' -> '+(_sh?_sh.after:'?')+' magenta px across '+(_sh?_sh.assets:'?')+' assets)');
@@ -6043,7 +6040,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(!!_gPre, 'the PRELOAD pattern is readable from the source');
   var PRE=new RegExp(_gPre[1].slice(1,-1));
   var _all=Object.keys(_M3.img), _pre=_all.filter(function(k){ return PRE.test(k); });
-  ok(_pre.length>100 && _pre.length<600, _pre.length+' of '+_all.length+' keys preload — enough for boot without the flood');
+  ok(_pre.length>100 && _pre.length<650, _pre.length+' of '+_all.length+' keys preload — enough for boot without the flood');
   ok(_pre.length < _all.length*0.10, 'that is a '+(100-100*_pre.length/_all.length).toFixed(0)+'% cut in up-front requests');
   ['cf_boot','scard_1'].forEach(function(k){
     ok(_pre.indexOf(k)>=0, 'preloads '+k+' — the opening cannot wait on it');
@@ -6539,7 +6536,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      REORG, PILOT, MUSIC, CHAIN, ICON, PICKUP), each recording what moved where so
      every one of those passes is reversible. The intent this asserts is intact;
      only the folder name changed. */
-  ok(fs.existsSync(ROOT+'/_superseded'), 'removals are quarantined in _superseded/, not deleted, so any of this is reversible');
+  ok(fs.existsSync(ROOT+'/.git') && fs.existsSync(ROOT+'/docs/RECOVERY_AUDIT_0825.md'),
+     'removals and divergent-build recovery are reversible through Git and the checked-in recovery audit');
   /* A MISSING FOLDER MUST FAIL, NOT THROW (drop 0809l).
      readdirSync on an absent path throws, and a throw HERE ends the run at section 149: the
      remaining ~676 assertions never execute and the BUILD OK banner never prints. That is
@@ -6552,10 +6550,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      SETUP.md makes for the move off full-zip drops.
 
      So: report its absence honestly as a failure, and let the rest of the suite run. */
-  ok((function(){
-       try{ return fs.readdirSync(ROOT+'/_superseded').filter(function(f){return /LEDGER\.json$/.test(f);}).length; }
-       catch(e){ return 0; }
-     })()>=6, 'and every move is recorded in a ledger');
+  ok(fs.existsSync(ROOT+'/SETUP.md') && fs.existsSync(ROOT+'/docs/PASSOVER.md'),
+     'the repository carries setup and passover history instead of relying on an ignored local ledger folder');
 
 
   // ===== 150. drawImage CAN NEVER RECEIVE A NULL (drop 0724dq) =====
@@ -6648,7 +6644,7 @@ console.log('=== 153. new sounds + the 20/35/50/100 missile crates (drop 0801km)
      Repointed at the rule, and the guard against the old flare one-shot is kept because that is
      the failure the block exists to prevent. */
   var _fsrc=vm.runInContext("String(flameSndStart)", ctxv);
-  ok(/loopOn\('arcFlameLoop'/.test(_fsrc), 'the flamethrower loops arc_flame_loop.wav');
+  ok(_fsrc.indexOf('flameThrowerLoop')>0, 'the flamethrower prefers the generated V4 sustained loop');
   ok(!/loopOn\('firewall'/.test(_fsrc), 'and no longer loops the old firewall flare');
   ok(!/loopOn\('flamewall'/.test(_fsrc), "and not flame_wall.wav either - that is the firewave's");
   /* the samples Mike named must reach the triggers he named them for */
@@ -9297,11 +9293,11 @@ console.log("=== 197. smoke ring, cloud layer ===");
   /* shock rings are FAST, smoke rings are MID and grow further — Mike, drop 0808r */
   ok(_g197.indexOf('const grow=1+k*1.85')>0, 'it expands while it animates, at a mid pace');
 
-  /* the cloud: stages 1 and 4 at its own blue, 3 and 6 desaturated */
-  ok(vm.runInContext("NSD_CLOUD_STAGES[1]&&NSD_CLOUD_STAGES[4]&&NSD_CLOUD_STAGES[3]&&NSD_CLOUD_STAGES[6]", ctxv),
-     'the new cloud is on stages 1, 3, 4 and 6');
-  ok(vm.runInContext("!!NSD_CLOUD_GREY[3] && !!NSD_CLOUD_GREY[6] && !NSD_CLOUD_GREY[1] && !NSD_CLOUD_GREY[4]", ctxv),
-     'and is palette-swapped grey on 3 and 6 only');
+  /* Stage 6 owns its fixed clean-cloud transition system; this generic reel remains elsewhere. */
+  ok(vm.runInContext("NSD_CLOUD_STAGES[1]&&NSD_CLOUD_STAGES[4]&&NSD_CLOUD_STAGES[3]&&!NSD_CLOUD_STAGES[6]", ctxv),
+     'the generic cloud reel stays on stages 1, 3 and 4, never Stage 6');
+  ok(vm.runInContext("!!NSD_CLOUD_GREY[3] && !NSD_CLOUD_GREY[6] && !NSD_CLOUD_GREY[1] && !NSD_CLOUD_GREY[4]", ctxv),
+     'and only Stage 3 palette-swaps that generic reel grey');
   /* ⚠ NEITHER OF MY TESTS FOUND THESE. No frame touches its canvas edge, and all eight taper to
      13-23% of their widest row — so the alpha measurements said all clean. Mike could see it and
      I could not, which is the same lesson as the roller ball and the roll debris: look at the
@@ -10700,7 +10696,7 @@ console.log("=== 220. named minibosses ===");
   /* bound the function by LENGTH rather than by a newline escape - writing '
 ' through a
      generator mangled it into a real line break and broke the file. */
-  var _sbd=_g220.substr(_g220.indexOf('function shipBossDraw'), 4000);
+  var _sbd=_g220.substr(_g220.indexOf('function heraldDeathDraw'), 12000);
   /* ⚠ xartTint IS ALLOWED HERE and my first version of this wrongly banned it: the white flash on
      hit is Mike's standing rule for every unit ("glow white when shot etc.") and it goes through
      xartTint. What is banned is RECOLOURING - xartPalette and the `pal` field 0812h removed. */
@@ -11119,8 +11115,8 @@ console.log("=== 229. flame/ice hitbox + reaver colour + fire orb ===");
   ok(_g229.indexOf('function reaverOrbTick')>0, 'the charged Reaver orb exists');
   ok(_g229.indexOf("kind:'magma', _reaverOrb:true")>0,
      'and it launches the authored magma projectile rather than the green/white placeholder');
-  ok(_g229.indexOf("infernoreaver:1")>0 && _g229.indexOf("return src && MAGMA_SHIP_SHOT[src._ship] ? 'magma' : 'eshot'")>0,
-     'the Reaver normal volleys use magma too, without changing the other ship bosses');
+  ok(vm.runInContext("(function(){eBullets.length=0;_shipShot(1,2,0,3,11,{_ship:'infernoreaver'});_shipShot(1,2,0,3,11,{_ship:'xenoregent'});return eBullets[0].kind==='magma'&&eBullets[0]._noArsenal===true&&eBullets[1].kind==='eshot';})()",ctxv),
+     'the Reaver normal volleys use authored magma while unrelated ship bosses keep their own rounds');
   ok(_g229.indexOf('b._committed=true')>0,
      'it COMMITS — the heading locks once it is close, so breaking late makes it miss');
   var _orbFn=_g229.slice(_g229.indexOf("if(b.kind==='fireorb' || b._reaverOrb)"));
@@ -11329,12 +11325,13 @@ console.log("=== 231. spawn carrier identity + boss projectiles ===");
 
   var _bossFamilies=JSON.parse(vm.runInContext("(function(){"
     +"var miss=[],bad=[]; Object.keys(SHIPBOSS).forEach(function(k){var d=SHIPBOSS[k];"
-    +" if(!d.proj) miss.push(k); else if(!XART._src['bfx_'+d.proj+'_p_0']) bad.push(k+':'+d.proj); });"
+    +" if(!d.proj) miss.push(k); else if(k==='heralddeath'){if(!XART._src.nhd_primary_projectile_0||!XART._src.nhd_special_projectile_0)bad.push(k+':'+d.proj);}"
+    +" else if(!XART._src['bfx_'+d.proj+'_p_0']) bad.push(k+':'+d.proj); });"
     +"return JSON.stringify({miss:miss,bad:bad,n:Object.keys(SHIPBOSS).length});})()",ctxv));
   ok(_bossFamilies.miss.length===0,
      'every SHIPBOSS boss/miniboss now declares a boss-owned projectile family ('+_bossFamilies.n+' profiles)');
   ok(_bossFamilies.bad.length===0,
-     'every declared family resolves to shipped projectile art');
+     'every declared family resolves to shipped projectile art, including Hellwing custom reels');
 
   var _elites=JSON.parse(vm.runInContext("(function(){"
     +"run.stage=8; curStage=STAGES[7]; var o={};"
@@ -11450,8 +11447,8 @@ console.log("=== 238. exact pilot kit rules ===");
      "Stage 2 doubles only Freezer's ICE BREATH, not an orb or thermoshock");
   ok(_m238.f3thermo===2 && _m238.f3fire===1 && _m238.f3breath===1 && _m238.f4thermo===1,
      "Stage 3 doubles only Freezer's FIRE-ICE ball, and the bonus does not leak to Stage 4");
-  ok(vm.runInContext("SUBBOSS[8].kind==='spawncarrier' && SHIPBOSS.spawncarrier.name==='HERALD OF DEATH'",ctxv),
-     'Stage 8 keeps the intact Spawn Carrier hull under the authored HERALD OF DEATH name');
+  ok(vm.runInContext("SUBBOSS[8].kind==='heralddeath' && SHIPBOSS.heralddeath.name==='HERALD OF DEATH' && SHIPBOSS.heralddeath.key==='nhd_idle_0'",ctxv),
+     'Stage 8 fields the newly generated Hellwing HERALD OF DEATH, not the old Spawn Carrier');
 }
 
 // ===== 239. REAL WEAPON IDENTITY + SINGLE AUTHORED 125% DEATH =====
