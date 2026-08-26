@@ -1,21 +1,19 @@
-# Emotion Portraits — Complete
+# Emotion Portraits — Recovered and Complete
 
-The previously listed missing portraits for Axel, Cole, Decker, Freezer, and
-Maverick are present and wired.
+The missing house-build portrait work has been reconciled with the repair line. The approved
+runtime pack is present under `assets/game/pilot_portraits/`, its code-owned mappings remain in
+`assets/game.js`, and the original source/reference material remains preserved under
+`_ART_SOURCES/`.
 
 ## Verified coverage
 
-- Pilots: `axel`, `cole`, `decker`, `freezer`, `maverick`
-- States: `idle`, `smile`, `anger`, `laugh`, `sad`, `victory`, `crash`
-- Total supplied portraits: 35
-- Live keys: `port_<pilot>_<state>`
+- Pilots: all nine Fury pilots
+- Emotion states: idle, smile/happy, anger, laugh, sad, victory, and crash
+- Dialogue talk poses: closed, small, medium, wide, and O
+- Runtime naming: `port_cf_<pilot>_<pose>`
 
-The PNGs supplied in `emotion sheets.zip` were compared directly against the
-corresponding packed atlas cells. All 35 images are pixel-for-pixel identical,
-so no runtime atlas or manifest replacement was necessary.
+The 35 legacy emotion PNGs were also compared with their packed atlas cells and were
+pixel-for-pixel identical. No portrait task remains open in this reconciled repository.
 
-The unpacked production sources and contact-sheet proof are preserved in:
-
-`_ART_SOURCES/BOF_EmotionPortraits_0825/`
-
-The game therefore has all nine pilots × seven emotion portraits (63 total).
+The historical divergence and protected recovery references remain documented in
+`docs/RECOVERY_AUDIT_0825.md`.
