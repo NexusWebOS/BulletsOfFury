@@ -2992,7 +2992,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("deathClassOf(enemies[0])==='jet'", ctxv), 'a jet dies as a jet');
   // the blast is sized to the UNIT — this is the "very large sprites" complaint
   ok(vm.runInContext("EXPLODE_SCALE>1.4 && EXPLODE_SCALE<2.0", ctxv), 'explosion draw scale is '+vm.runInContext("EXPLODE_SCALE",ctxv)+' — sized from the unit and drawn LARGER than it');
-  ok(vm.runInContext("unitDeathFX.toString().indexOf('Math.max(e.w||18, e.h||18)')>0", ctxv), 'the primary blast is sized from the unit frame');
+  ok(vm.runInContext("unitDeathFX.toString().indexOf('e._drawW||e.w')>0", ctxv), 'the primary blast is sized from the actual drawn unit frame');
   vm.runInContext("run.stage=1; curStage=STAGES[0]; enemies.length=0; explosions.length=0; aircraftBursts.length=0; spawnEnemy('drone',240,200,{pattern:'ground'}); var _t=enemies[0]; _t.w=18; _t.h=18; unitDeathFX(_t,null,'red');", ctxv);
   var _mx=vm.runInContext("explosions.length?Math.max.apply(null,explosions.map(function(x){return x.max||x.r||0;})):0", ctxv);
   ok(_mx<=40, 'a small turret produces a small blast ('+Math.round(_mx)+'px for an 18px unit), not a screen-filler');
@@ -3547,7 +3547,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     if(!vm.runInContext("enemies.length>0", ctxv)) return;
     var w=vm.runInContext("Math.max(enemies[0].w,enemies[0].h)", ctxv);
     vm.runInContext("enemies[0].hp=1; hitEnemy(enemies[0],999);", ctxv);
-    var mx=vm.runInContext("explosions.length?explosions[0].max:0", ctxv);
+    var mx=vm.runInContext("explosions.length?explosions[0].max*1.25:0", ctxv);
     _scales.push(pr[0]+' '+w+'px->'+Math.round(mx)+'px');
     ok(Math.abs(mx-w*1.25)<=3, pr[0]+' blast is 1.25x its unit ('+w+'px unit, '+Math.round(mx)+'px blast)');
   });
@@ -4229,7 +4229,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("spawnEnemy('drone',100,200,{}); spawnEnemy('tank',200,200,{}); spawnEnemy('racer',300,200,{});", ctxv);
   var _u=JSON.parse(vm.runInContext("JSON.stringify(enemies.map(function(e){return Math.max(e.w,e.h);}))", ctxv));
   vm.runInContext("explosions.length=0; bossDie();", ctxv);
-  var _b=JSON.parse(vm.runInContext("JSON.stringify(explosions.map(function(x){return Math.round(x.max);}))", ctxv));
+  var _b=JSON.parse(vm.runInContext("JSON.stringify(explosions.filter(function(x){return x.cls!=='boss';}).map(function(x){return Math.round(x.max*1.25);}))", ctxv));
   ok(_b.length===_u.length, 'every surviving enemy still explodes ('+_b.length+' of '+_u.length+')');
   ok(new Set(_b).size>1, 'and NOT all at the same size — units '+JSON.stringify(_u)+' give blasts '+JSON.stringify(_b));
   /* THE CHECK CONTRADICTED ITS OWN MESSAGE (drop 0801gw). It tested
@@ -4904,15 +4904,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      now moved twice in the same direction — 1.6, then 2.1, now 3.0 — so the assertion is a
      SANITY bound, not a design opinion. The lower bound is the one that matters: a blast still
      has to cover the sprite it is hiding. */
-  /* ⚠ CEILING RAISED A THIRD TIME (drop 0822g), 3.0 -> 4.2. Mike, with Raiden II and Fire
-     Shark on screen: their blasts are far larger relative to the unit than ours and that is what
-     sells a kill. Same move as 0807c and 0808r - the window follows the direction he keeps
-     asking for, and the LOWER bound is still the one carrying meaning: a blast has to cover the
-     sprite it is hiding. */
-  ok(vm.runInContext("COVER_TARGET>1.2 && COVER_TARGET<4.2", ctxv), 'fodder covers '+vm.runInContext("COVER_TARGET",ctxv)+'x the unit — enough to hide the sprite vanishing');
-  ok(vm.runInContext("COVER_TARGET>=2.6 && COVER_TARGET_BIG>=3.2", ctxv),
-     'and both targets carry the 25-50% scale-up ('+vm.runInContext("COVER_TARGET",ctxv)+'x / '+vm.runInContext("COVER_TARGET_BIG",ctxv)+'x)');
-  ok(vm.runInContext("COVER_TARGET_BIG>COVER_TARGET", ctxv), 'bosses and minis read bigger ('+vm.runInContext("COVER_TARGET_BIG",ctxv)+'x) — a set-piece death should not match a drone');
+  ok(vm.runInContext("COVER_TARGET>1.2 && COVER_TARGET<3.0", ctxv), 'fodder covers '+vm.runInContext("COVER_TARGET",ctxv)+'x the unit — enough to hide the sprite vanishing');
+  ok(vm.runInContext("COVER_TARGET===1.25 && COVER_TARGET_BIG===1.25", ctxv),
+     'every class follows the exact 125%-of-unit death-frame rule ('+vm.runInContext("COVER_TARGET",ctxv)+'x / '+vm.runInContext("COVER_TARGET_BIG",ctxv)+'x)');
   // measured VISIBLE coverage must now be identical across classes
   var _cov=[];
   [['crate',1],['drone',1],['microturret',1],['fang',6],['tank',1]].forEach(function(pr){
@@ -4925,7 +4919,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   });
   var _spread=Math.max.apply(null,_cov)-Math.min.apply(null,_cov);
   ok(_spread<0.02, 'every class lands on the SAME visible coverage (spread '+_spread.toFixed(3)+') — no class looks oversized because of its art padding');
-  ok(_cov.every(function(c){return c>1.3;}), 'and all of them cover the sprite ('+_cov.map(function(c){return c.toFixed(2);}).join(', ')+')');
+  ok(_cov.every(function(c){return Math.abs(c-1.25)<0.02;}), 'and all of them are exactly 25% larger than the sprite ('+_cov.map(function(c){return c.toFixed(2);}).join(', ')+')');
   // THE SWAPS
   ok(vm.runInContext("DEATH_CLASS.tank.fam==='nxp_smoke' && DEATH_CLASS.boat.fam==='nxp_upward'", ctxv), 'tank and boat swapped families');
   ok(vm.runInContext("DEATH_CLASS.crate.fam==='nxp_radial' && DEATH_CLASS.mboat.fam==='nxp_clus'", ctxv), 'crate and mboat swapped families');
@@ -8339,8 +8333,8 @@ console.log("=== 177. fireball shards ===");
   ok(_s3.fire===true && _s3.el==='fire', 'on stage 3 the orb and its shards are BOTH fire');
   ok(_s5.fire===false && _s5.el==='ice', 'and elsewhere they are both ice');
   var _g177=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g177.indexOf("const _fire = (typeof orbIsFire==='function' && orbIsFire());")>0,
-     'the shard DRAW consults orbIsFire, not just the element');
+  ok(_g177.indexOf("const _fire = !!b._fire;")>0,
+     'the shard draw uses the projectile identity captured at launch, not mutable global state');
   ok(_g177.indexOf("'nfb_fl'+_flv+'_'+_ff")>0,
      "and uses the fireball pack's own per-level flame reel — the counterpart to the ice nio_ set");
 }
@@ -11458,6 +11452,47 @@ console.log("=== 238. exact pilot kit rules ===");
      "Stage 3 doubles only Freezer's FIRE-ICE ball, and the bonus does not leak to Stage 4");
   ok(vm.runInContext("SUBBOSS[8].kind==='spawncarrier' && SHIPBOSS.spawncarrier.name==='HERALD OF DEATH'",ctxv),
      'Stage 8 keeps the intact Spawn Carrier hull under the authored HERALD OF DEATH name');
+}
+
+// ===== 239. REAL WEAPON IDENTITY + SINGLE AUTHORED 125% DEATH =====
+console.log("=== 239. weapon identity and authored death contract ===");
+{
+  var _w239=JSON.parse(vm.runInContext("(function(){var o={};"
+    +"run.pilot='axel';run.stage=8;run.wlevels=[0,0,0,0,0,0];run.wvars=[null,null,null,null,null,null];"
+    +"run._dbgIce=true;applyPowerup({kind:'weapon',wtype:4,wvar:'flamethrower',x:0,y:0});"
+    +"o.flame=heldVariant(4);o.ice=flameIsIce();o.iceDebug=run._dbgIce;"
+    +"run._dbgFire=true;applyPowerup({kind:'weapon',wtype:5,wvar:'iceorb',x:0,y:0});"
+    +"o.orb=heldVariant(5);o.fire=orbIsFire();o.fireDebug=run._dbgFire;"
+    +"run.wvars[5]='fireorb';run.weapon=5;run.wlevels[5]=1;run.wlevel=1;pBullets.length=0;pShoot();"
+    +"var b=pBullets.filter(function(q){return q.kind==='orb';})[0];run.wvars[5]='iceorb';"
+    +"o.flight=!!b&&b._wvar==='fireorb'&&b._fire===1&&b._ts===0;return JSON.stringify(o);})()",ctxv));
+  ok(_w239.flame==='flamethrower' && _w239.ice===false && _w239.iceDebug===false,
+     "Axel's real flamethrower pickup clears the debug ice override and stays fire");
+  ok(_w239.orb==='iceorb' && _w239.fire===false && _w239.fireDebug===false,
+     'a real ice-orb pickup clears the debug fire override and keeps its own graphics');
+  ok(_w239.flight===true,
+     'an orb captures fire / ice / thermoshock identity at launch and cannot swap art in flight');
+
+  var _d239=JSON.parse(vm.runInContext("(function(){explosions.length=0;_xChain.length=0;aircraftBursts.length=0;"
+    +"var e={x:240,y:200,w:40,h:50,_drawW:80,_drawH:100,type:'talon'};"
+    +"unitDeathFX(e,'jet','red');var n=explosions.length,m=explosions[0]&&explosions[0].max,c=explosions[0]&&explosions[0].cls;"
+    +"unitDeathFX(e,'jet','red');return JSON.stringify({n:n,n2:explosions.length,max:m,cls:c,latched:e._deathFxStarted});})()",ctxv));
+  ok(_d239.n===1 && _d239.n2===1 && _d239.latched===true,
+     'a unit can start its class death animation only once — no impact/disintegrate/timer triple stack');
+  ok(_d239.max===100 && _d239.cls==='jet',
+     'death sizing uses the actual drawn frame, not the smaller collision box');
+  ok(vm.runInContext("_drawEffectsInner.toString().indexOf('(ex.cls?1.25:EXPLODE_SCALE)')>0",ctxv),
+     'the authored death animation frame is drawn at exactly 125% of the unit frame');
+  ok(vm.runInContext("_drawEffectsInner.toString().indexOf('if(ex.cls) continue')>0",ctxv),
+     'a classed enemy/miniboss/boss death can never fall back to basic canvas-circle explosions');
+
+  var _h239=JSON.parse(vm.runInContext("(function(){run.stage=8;curStage=STAGES[7];explosions.length=0;"
+    +"spawnSubBoss('heralddeath');subBoss.enter=false;subBoss.dead=true;subBoss.dying=0;updateSubBoss(0.1);"
+    +"return JSON.stringify({generic:explosions.length,latched:subBoss._deathFxStarted});})()",ctxv));
+  ok(_h239.generic===0 && _h239.latched===true && vm.runInContext("heraldDeathDraw.toString().indexOf('b.dead?1.25:1')>0",ctxv),
+     'HERALD OF DEATH uses its own opaque 125% destruction reel with no generic blast spray');
+  ok(vm.runInContext("bossDeathAlpha(1.0)===1 && bossDeathAlpha(1.9)===0 && BOSS_FADE_OUT===0",ctxv),
+     'boss death art stays opaque and is replaced by the explosion without a dissolve');
 }
 
 console.log('\n============================================');

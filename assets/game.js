@@ -1504,11 +1504,9 @@ function drawNewBoss(b){
   // DEATH
   if(b.dead){
     const T=b.dying||0;
-    // Keep the hull solid while the rolling blasts destroy it. A fading wreck reads like
-    // transparency rather than destruction; bossDeathAlpha deliberately makes this a hard cut
-    // only after the explosions have had time to cover the silhouette.
-    const alpha = bossDeathAlpha(T);
-    if(alpha<=0) return true;
+    /* No per-rig dissolve. drawBoss keeps the authored death reel fully opaque, then removes it
+       in one transition when the explosion takes over. */
+    const alpha = 1;
     if(cfg.death && XART.rdy(cfg.death+'_0')){
       // dedicated death sheet (chopper/fboss)
       const dN=6, prog=clamp(T/1.6,0,1), di=Math.min(dN-1, Math.floor(prog*dN)), dk=cfg.death+'_'+di;
@@ -2317,6 +2315,8 @@ function debugEquip(slot, opts){
      `opts.variant` lets a key ask for a specific one; otherwise take the dispenser's answer. */
   if(!run.wvars) run.wvars=[null,null,null,null,null,null];
   run.wvars[slot] = (opts && opts.variant) ||
+                    ((opts && opts.forceIce) ? 'icebreath' : null) ||
+                    ((opts && opts.forceFire) ? 'fireorb' : null) ||
                     ((typeof weaponVariant==='function') ? weaponVariant(slot) : null);
   if(typeof floatText==='function' && typeof player!=='undefined')
     floatText(player.x, player.y-26, (opts&&opts.label)||'DEBUG', '#9fe4ff');
@@ -4672,7 +4672,10 @@ function weaponVariant(w, opt){
   if(opt && opt.fixed) return opt.fixed;
   const st  = (opt && opt.stage!=null) ? opt.stage : (run ? run.stage : 1);
   const pk  = (opt && opt.pilot) ? opt.pilot : ((typeof _pilotKey==='function') ? _pilotKey() : '');
-  const frz = (pk==='freezer') || !!(run && run._dbgIce && w===4);
+  /* Debug state is not dispenser state. Letting _dbgIce/_dbgFire into this table meant a debug
+     key could silently rebake the next real pickup as the wrong weapon. Debug grants now write an
+     explicit held variant in debugEquip; the production dispenser depends only on pilot+stage. */
+  const frz = (pk==='freezer');
   if(w===4){
     if(!frz) return 'flamethrower';               // ice breath is EXCLUSIVE to Freezer
     if(st<=1) return 'flamethrower';
@@ -10702,11 +10705,12 @@ function heraldDeathTick(b,dt){
   const f=clamp(b.hp/(b.maxhp||1),0,1),tier=f<=0.33?2:(f<=0.66?1:0);
   if(tier>H.tier){ H.tier=tier; H.damageT=0.72; }
 }
-function heraldDeathPlate(key,b,alpha){
+function heraldDeathPlate(key,b,alpha,scale){
   if(typeof XART==='undefined'||!XART.rdy(key))return false;
   const H=b._herald,im=XART.get(key),y=(b._drawY!=null?b._drawY:b.y);
+  const s=(scale==null?1:scale),dw=H.dw*s,dh=H.dh*s;
   ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=(alpha==null?1:alpha);
-  ctx.drawImage(im,b.x-H.dw/2,y-H.dh/2,H.dw,H.dh);ctx.restore();
+  ctx.drawImage(im,b.x-dw/2,y-dh/2,dw,dh);ctx.restore();
   return true;
 }
 function heraldDeathDraw(b){
@@ -10727,11 +10731,15 @@ function heraldDeathDraw(b){
   }
   fi=clamp(fi|0,0,count-1);
   const key='nhd_'+action+'_'+fi;
-  if(!heraldDeathPlate(key,b,1) && !heraldDeathPlate('nhd_idle_0',b,1)) return false;
-  if(overlay) heraldDeathPlate('nhd_'+overlay+'_'+fi,b,1);
+  /* The destruction reel is the explosion for this authored miniboss. It replaces the intact
+     frame at full opacity and is exactly 25% larger than its 192x256 unit canvas. */
+  const deathScale=b.dead?1.25:1;
+  if(!heraldDeathPlate(key,b,1,deathScale) && !heraldDeathPlate('nhd_idle_0',b,1,deathScale)) return false;
+  if(overlay) heraldDeathPlate('nhd_'+overlay+'_'+fi,b,1,deathScale);
   if((b.flash||0)>0 && typeof xartTint==='function'){
     const t=xartTint(key,'#ffffff',0.9),y=(b._drawY!=null?b._drawY:b.y);
-    if(t){ctx.save();ctx.globalAlpha=Math.min(0.65,(b.flash||0)*3.2);ctx.drawImage(t,b.x-H.dw/2,y-H.dh/2,H.dw,H.dh);ctx.restore();}
+    const dw=H.dw*deathScale,dh=H.dh*deathScale;
+    if(t){ctx.save();ctx.globalAlpha=Math.min(0.65,(b.flash||0)*3.2);ctx.drawImage(t,b.x-dw/2,y-dh/2,dw,dh);ctx.restore();}
   }
   return true;
 }
@@ -11321,7 +11329,12 @@ function updateSubBoss(dt){
   if(b._cmz){ b._cmz.t+=dt; if(b._cmz.t>=b._cmz.life) b._cmz=null; }
   if(b.dead){
     b.dying+=dt; const T=b.dying;
-    if(T<2.0){ b._exT=(b._exT||0)-dt; if(b._exT<=0){ b._exT=0.12; explode(b.x+rnd(-b.w*0.5,b.w*0.5), (b._drawY||b.y)+rnd(-b.h*0.4,b.h*0.4), Math.max(16, Math.max(b.w,b.h)*rnd(0.20,0.38)), (curStage&&curStage.bg==='ice')?'blue':'red', 'fireball'); if(Math.random()<0.4)Audio.SFX.expBig(); } }
+    /* The Hellwing owns its complete destruction reel. Every other miniboss gets one authored,
+       class-sized death takeover instead of a spray of generic fireballs. */
+    if(!b._deathFxStarted){
+      if(b._herald) b._deathFxStarted=true;
+      else if(typeof unitDeathFX==='function') unitDeathFX(b,'mini',(curStage&&curStage.bg==='ice')?'blue':'red');
+    }
     if(T>=1.9){ subBoss=null; subBossActive=false; subBossDone=true; if(typeof dropPowerup==='function') dropPowerup(b.x,b.y,'weapon'); }
     return;
   }
@@ -12685,7 +12698,8 @@ function eTankBlast(e){ // STRONG shell fired from the END OF THE BARREL, scalin
    ⚠ THIS RAISES ORB DAMAGE ON STAGES 2 AND 3 ONLY, and it is a declared rule finally firing
    rather than a balance change I chose. If the orb now reads too strong there, the dial is
    elementMultiplier, not this. */
-function pShard(x,y,ang,lv,opt){ const spd=3.4+lv*0.25; pBullets.push({kind:'shard', x, y, vx:Math.cos(ang)*spd, vy:Math.sin(ang)*spd, w:8, h:16, dmg:1*((opt&&opt.mul)||1), lv, ang, life:1.3, _ts:(opt&&opt.ts)?1:0}); }
+function pShard(x,y,ang,lv,opt){ const spd=3.4+lv*0.25; pBullets.push({kind:'shard', x, y, vx:Math.cos(ang)*spd, vy:Math.sin(ang)*spd, w:8, h:16, dmg:1*((opt&&opt.mul)||1), lv, ang, life:1.3,
+  _wvar:(opt&&opt.wvar)||'iceorb', _el:(opt&&opt.el)||'ice', _fire:(opt&&opt.fire)?1:0, _ts:(opt&&opt.ts)?1:0}); }
 function iceBurst(x,y,n,lv,opt){
   for(let i=0;i<n;i++) pShard(x,y, i*(TAU/n)+Math.random()*0.3, lv, opt);
   if(typeof explode==='function') explode(x,y,10,(opt&&opt.ts)?'#9fd8ff':'#bfe8ff');
@@ -12792,7 +12806,9 @@ const FLAME_ICE_W = 0.85, FLAME_ICE_H = 0.90;
    the file now routes through this ONE function (the draw, the hit width, the element, the
    freeze-on-hit, the legacy icon), so they cannot disagree again. */
 function flameIsIce(){
-  if(typeof run!=='undefined' && run && run._dbgIce) return true;   // DEBUG 9 forces ice
+  const v=(typeof run!=='undefined' && run && run.wvars) ? run.wvars[4] : null;
+  if(v) return v==='icebreath';
+  if(typeof run!=='undefined' && run && run._dbgIce) return true;   // legacy debug fallback only
   return (typeof heldVariant==='function') && heldVariant(4)==='icebreath';
 }
 /* the drawn column, in world units: half-width, and the far TIP.
@@ -13589,10 +13605,11 @@ function pShoot(){
       /* `_ts` rides on the orb rather than being re-asked at draw time — an orb already in
          flight when the slot changes must keep being the orb it was launched as. Same reason
          `lv` is captured here and not read off `run` by the draw. */
-      const _ts=(typeof orbIsFireIce==='function') && orbIsFireIce();
-      const _ov=(typeof heldVariant==='function')?heldVariant(5):null;
+      const _ov=(typeof heldVariant==='function' && heldVariant(5)) || 'iceorb';
+      const _ts=_ov==='fireice', _fire=(_ov==='fireorb'||_ts);
       const _el=_ts?'fireice':(_ov==='fireorb'?'fire':'ice');
-      pBullets.push({kind:'orb', x:player.x, y:player.y-16, vx, vy:-2.7, w:34, h:34, dmg:2, lv, spin:0, life:2.6, shardN, shardCd:0.06, frame:0, _ts:_ts?1:0, _el, _hit:[], _ht:0, _bt:0});
+      pBullets.push({kind:'orb', x:player.x, y:player.y-16, vx, vy:-2.7, w:34, h:34, dmg:2, lv, spin:0, life:2.6, shardN, shardCd:0.06, frame:0,
+        _wvar:_ov, _fire:_fire?1:0, _ts:_ts?1:0, _el, _hit:[], _ht:0, _bt:0});
       const _launch=_el==='fireice'?(Audio.SFX.fireIceOrbLaunch||Audio.SFX.spread):
                     _el==='fire'?(Audio.SFX.fireOrbLaunch||Audio.SFX.spread):(Audio.SFX.iceOrbLaunch||Audio.SFX.spread||Audio.SFX.shoot);
       if(_launch) _launch();
@@ -13775,8 +13792,8 @@ function explode(x,y,size,palette='red',kind=null,fam=null,_cls=null,_hold=null)
   /* EXPLICIT FAMILY WINS. A death class names the exact explosion set it wants (the ColeForge
      reference pack), so a turret, a jet, a tank, a miniboss and a boss each get their own uniform
      look instead of everything falling through to the same generic fire. */
-  if(fam && typeof XART!=='undefined' && XART.rdy(fam+'_0')){
-    let n=0; while(XART.rdy(fam+'_'+n)) n++;
+  if(fam && typeof XART!=='undefined' && ((XART._src&&XART._src[fam+'_0'])||XART.rdy(fam+'_0'))){
+    let n=0; while((XART._src&&XART._src[fam+'_'+n])||XART.rdy(fam+'_'+n)) n++;
     _xb=fam; _nf=n;
   }
   if(!_xb){
@@ -13858,7 +13875,6 @@ function explode(x,y,size,palette='red',kind=null,fam=null,_cls=null,_hold=null)
 }
 /* enemy death disintegration: split halves up & down + chunks */
 function disintegrate(e){
-  const cx=e.x, cy=e.y, col=e.color;
   /* SIZED TO THE UNIT. This used to pass an inflated multiple of the hull width, so a 44px jet
      detonated at 62px and then got multiplied
      again by EXPLODE_SCALE on the way to the screen: roughly 1.6x the airframe. Mike flagged this
@@ -13866,19 +13882,7 @@ function disintegrate(e){
      unitDeathFX entirely. Route it through the class system like every other death so the family,
      the size and the secondaries all match the unit. */
   if(typeof unitDeathFX==='function'){ unitDeathFX(e, null, 'red'); }
-  else explode(cx,cy, Math.max(12, Math.max(e.w||18,e.h||18)), 'red');
-  // upper & lower body shards flung apart from the middle
-  for(let i=0;i<14;i++){
-    const up = i<7;
-    const px = cx + rnd(-e.w*0.4, e.w*0.4);
-    const py = cy + (up? rnd(-e.h*0.4,0) : rnd(0,e.h*0.4));
-    particles.push({x:px,y:py,
-      vx:rnd(-1.4,1.4), vy: up? rnd(-3.5,-1.2) : rnd(1.2,3.5),
-      life:rnd(0.35,0.8), t:0, r:rnd(2,4), color: chance(.6)?col:'#cfcfcf', chunk:true, grav:0.06,
-      sw:rnd(2,5), sh:rnd(2,6)});
-  }
-  // white flash spark at center
-  particles.push({x:cx,y:cy,vx:0,vy:0,life:0.12,t:0,r:e.w*0.6,color:'#ffffff',flashring:true});
+  else explode(e.x,e.y, Math.max(12, Math.max(e.w||18,e.h||18))*1.25, 'red');
 }
 
 /* ============================================================
@@ -14097,6 +14101,10 @@ function applyPowerup(p){
          being wrong in a different way. Recorded here, read via heldVariant everywhere else. */
       if(!run.wvars) run.wvars=[null,null,null,null,null,null];
       run.wvars[_wt] = p.wvar || ((typeof weaponVariant==='function')?weaponVariant(_wt):null);
+      /* Debug weapon keys are temporary grants, not sticky palette switches. A real pickup owns
+         the slot from this frame forward and clears every override that could redraw it. */
+      if(_wt===4) run._dbgIce=false;
+      if(_wt===5){ run._dbgFire=false; run._dbgFrzOrb=false; }
       /* the announcement replaces floatText here — a pickup is an EVENT, and a small tinted
          string drifting up from the crate reads as a damage number */
       if(typeof arcadeBanner==='function') arcadeBanner(arcWeaponAnnounce(_wt, run.wlevel, p.wvar?{fixed:p.wvar}:null));
@@ -16441,7 +16449,10 @@ const ORB_FIRE_ON_L3 = true;
    stage 3 DISPENSES the fireball ("never spawn ice orb on this level for anyone"). What you then
    carry off the level stays what it was. */
 function orbIsFire(){
-  /* DEBUG 0 forces the fire orb on any stage (drop 0801ha) */
+  /* A real held variant wins over every debug override. This is what stops an old DEBUG 0 press
+     from repainting a later ice-orb pickup as fire (and the mirror bug on the flame slot). */
+  const fixed=(run && run.wvars) ? run.wvars[5] : null;
+  if(fixed) return fixed==='fireorb' || fixed==='fireice';
   if(run && run._dbgFire) return true;
   const v=(typeof heldVariant==='function') ? heldVariant(5) : null;
   return v==='fireorb' || v==='fireice';
@@ -17428,7 +17439,7 @@ function updatePlay(dt){
     if(e._dyingT!=null){
       e._dyingT+=dt;
       if(e._dyingT>=(e._dieDur||0.35)){ e.dead=true;
-        if(typeof unitDeathFX==='function') unitDeathFX(e); else explode(e.x,e.y,Math.max(14,e.w*0.5),'red'); }
+        if(!e._deathFxStarted){ if(typeof unitDeathFX==='function') unitDeathFX(e); else explode(e.x,e.y,Math.max(14,e.w,e.h)*1.25,'red'); } }
       e.flash=0;   // never tint a dying wreck (pink-ghost fix)
       continue;
     }
@@ -18578,7 +18589,7 @@ function updatePlay(dt){
          pShoot. The multiplier is solved once per volley rather than per shard. */
       const _oel=b._el||(b._ts?'fireice':(orbIsFire()?'fire':'ice'));
       const _om=elementMultiplier(_oel,b._ts?'fireice':'orb');
-      const _sopt={mul:_om, ts:b._ts, el:_oel};
+      const _sopt={mul:_om, ts:b._ts, fire:b._fire, wvar:b._wvar, el:_oel};
       if(b.shardCd<=0){ b.shardCd=0.10; const n=b.shardN; for(let i=0;i<n;i++){ pShard(b.x,b.y, b.spin + i*(TAU/n), b.lv, _sopt); } b.sfxCd=(b.sfxCd||0)-1; if(b.sfxCd<=0){ b.sfxCd=3; if(Audio.SFX.spread)Audio.SFX.spread(); } }
       b._ht-=dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.16; }
       for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg*_om); if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; } b._hit.push(e); } } }
@@ -19539,7 +19550,7 @@ function tsFx(x, y, reel, size, life){
                   r: size || 128, _tsFx: reel, _tsN: N});
 }
 /* ============================================================
-   A BOSS VANISHES INTO ITS OWN EXPLOSION (drop 0814c)
+   A BOSS IS REPLACED BY ITS OWN EXPLOSION (drop 0814c)
 
    Mike, item 8: "Bosses do not die into explosions - they should vanish with the explosion
    taking over. Only stage 1 does this."
@@ -19548,38 +19559,23 @@ function tsFx(x, y, reel, size, life){
    scaled blasts, falling debris, screen shake and the whiteout, for every boss on every stage.
    What only stage 1 had was the other half: a DRAW that gets out of the way.
 
-   `drawBossSprite`'s `damkeeper` branch fades the hull out between 1.8s and 2.6s and chars it
-   toward black on the way. Nothing else does. `shipBossDraw` (stages 2, 3 and 5 — the ships Mike
-   cast himself), `mechDraw`, `sxDraw`, `genesisDraw` and `drawModularBoss` have **no `b.dead`
-   handling at all**: they keep drawing an intact hull at full opacity for the whole nine seconds,
-   so the boss sits inside its own explosion instead of being consumed by it.
-
-   ⚠ AND drawBossSprite ALONE HELD FOUR COPIES OF THE FADE, ON TWO DIFFERENT CURVES — 1.8->2.6 in
-   two branches and 2.6->4.1 in the other two, charring at 0.30 and 0.26. Every one of them was
-   written to do the same thing. That is the drift this file keeps recording, so the curve is a
-   function now and there is exactly one of it.
-
-   ⚠ IT IS APPLIED AT `drawBoss`, THE SINGLE ENTRY POINT, not in each rig. Five draw paths that
-   each remember to fade is five that can forget; a boss added later would arrive with the bug
-   already in it. `_bossFade` carries the value so the handful of places that hard-set
-   `globalAlpha = 1` can say "back to the boss's base opacity" instead — which is what those
-   lines always meant, and it was only ever correct while the base happened to be 1.
-
-   A boss must never become a translucent ghost. It stays solid while the rolling blasts cover
-   the hull, then is removed in one hard cut at 2.6s with ~6.8s of explosion still owning the
-   screen. ================================================================================ */
-const BOSS_DEATH_VISIBLE = 2.6;
+   The hull remains fully opaque while the authored destruction begins. At the takeover point it
+   is removed in one frame: there is no alpha fade or dissolve. Keeping this decision in drawBoss,
+   the single entry point, makes that rule apply to every boss rig added later. ================= */
+const BOSS_FADE_HOLD = 1.8;      // fully solid while the authored death reel plays
+const BOSS_FADE_OUT  = 0;        // units never dissolve; the explosion replaces them
 function bossDeathAlpha(T){
-  return (T||0) < BOSS_DEATH_VISIBLE ? 1 : 0;
+  T = T || 0;
+  return T < BOSS_FADE_HOLD ? 1 : 0;
 }
 /* how far the hull has charred toward black — the same curve the stage-1 chopper used */
 function bossDeathChar(T){ return Math.min(0.7, (T||0) * 0.3); }
 let _bossFade = 1;
 function bossDie(){
   boss.dead=true; boss.dying=0; boss._blasted=false; bossActive=false; bossDefeated=true;
-  /* the biggest blast in the game had no debris and no ring at all */
-  if(typeof fxBurst==='function') fxBurst(boss.x, boss.y, Math.max(90, boss.w||120),
-                                          {rings:3, color:(curStage&&curStage.bg==='ice')?'#9fe4ff':'#ffb347'});
+  /* One authored boss-class origin blast, sized from the boss frame. The longer cook-off below
+     adds waves, but it no longer begins with the old generic fxBurst placeholder. */
+  if(typeof unitDeathFX==='function') unitDeathFX(boss,'boss',(curStage&&curStage.bg==='ice')?'blue':'red');
   run.score+=5000*run.stage; eBullets.length=0;
   /* THE STAGE END. Every enemy still alive when the boss dies was detonated at a FIXED 38px —
      a 20px turret and a 58px hauler produced identical blasts, which is exactly the mismatched
@@ -19909,7 +19905,8 @@ function updateBoss(dt){
         const ey=onB?b.y+rnd(-b.h*0.6,b.h*0.6):rnd(PLAY.y+10, VH-26);
         /* SCALED TO THE BOSS. This used a fixed random range whatever the hull size, so a small
            boss bloomed and a huge one looked under-powered. Tie it to the hull. */
-        explode(ex,ey, Math.max(18, Math.max(b.w,b.h)*rnd(0.18,0.34)), (curStage&&curStage.bg==='ice')?(chance(.5)?'red':'blue'):'red');
+        const _bf=(typeof BOSS_COMBO!=='undefined'&&BOSS_COMBO.length)?BOSS_COMBO[Math.floor(T*20)%BOSS_COMBO.length]:'nxp_ring';
+        explode(ex,ey, Math.max(18, Math.max(b.w,b.h)*rnd(0.18,0.34)), (curStage&&curStage.bg==='ice')?(chance(.5)?'red':'blue'):'red', null, _bf, 'boss');
         if(Math.random()<0.30) Audio.SFX.expBig();
       }
       // disintegration debris falling off the hull
@@ -21970,6 +21967,7 @@ function drawL6XFighter(e){
   if(!XART.rdy(k)){ k='n6x_'+e._l6x+'_idle_0'; if(!XART.rdy(k)) return false; }
   const im=XART.get(k);
   const h=e.h*1.45, w=h*(im.naturalWidth/im.naturalHeight);
+  e._drawW=w; e._drawH=h;
   ctx.save(); ctx.translate(e.x,e.y);
   /* NO ENEMY EVER FADES (drop 0801cw). Mike, engine rule: "no enemy fades away,
      ever. they all die into an explosion animation." A dying unit stays at FULL
@@ -21999,6 +21997,7 @@ function drawNewEnemyArt(e){
   // uniform canvas: draw at e.w footprint; height from canvas aspect (1:1)
   const _foot = TURRET_ART.has(base) ? TURRET_FOOT : ((e._foot!=null)?e._foot:ENEMY_ART_FOOT);
   const dw=e.w*_foot, dh=dw*(im.naturalHeight/im.naturalWidth);
+  e._drawW=dw; e._drawH=dh;
   const t=tintColor(e);
   ctx.save(); ctx.translate(e.x, e.y + (e._navBob||0) + (typeof volcHover==='function'?volcHover(e):0));   // boats bob vertically; volcanic units levitate
   if(e.spin) ctx.rotate(e.spin);
@@ -22210,6 +22209,7 @@ function drawBCarrier(e){
   if(!XART.rdy(key)) return false;
   const im=XART.get(key);
   const h=e.h*1.5, w=h*(im.naturalWidth/im.naturalHeight);
+  e._drawW=w; e._drawH=h;
   ctx.save(); ctx.translate(e.x,e.y);
   ctx.drawImage(im,-w/2,-h/2,w,h);
   /* HIT FLASH via xartTint, never ctx.filter. Canvas filters are an HTML/CSS effect: they render
@@ -23010,11 +23010,8 @@ function attractDraw(){
 }
 
 function drawBoss(){
-  /* ⚠ THE FADE LIVES HERE, AT THE ONE ENTRY POINT (drop 0814c) — see bossDeathAlpha. Five rigs
-     draw bosses and only one of them ever handled death; putting it in each is five places that
-     can forget, and a rig added later would arrive with the bug already in it.
-     `_bossFade` is published so the few draws that hard-set `globalAlpha = 1` can restore to the
-     boss's base opacity rather than to solid. */
+  /* The death-visibility rule lives here at the one entry point. bossDeathAlpha is deliberately
+     binary: full-opacity hull, then authored explosion takeover; never a dissolve. */
   const _b = boss;
   _bossFade = (_b && _b.dead) ? bossDeathAlpha(_b.dying || 0) : 1;
   if(_bossFade <= 0) return;                 // gone: the explosion has the screen to itself now
@@ -23053,7 +23050,7 @@ function drawBossInner(){
      one stage away from the thing being fixed.
 
      A sectional unit already HAS its death art: every component's `destroyed` state. Keep drawing
-     it, and let drawBoss's fade take it out. */
+     it, and let drawBoss's binary explosion takeover remove it. */
   if(boss && boss.modular){ drawModularBoss(boss); if(boss.flash>0)boss.flash-=0.016; return; }
   const b=boss; if(!b) return;
   if(b.mega){ drawBossSprite(b); return; }   // mega bosses always use their art
@@ -26395,7 +26392,7 @@ function drawBullets(){
         ctx.restore(); continue;
       }
     }
-    if(b.kind==='orb' && typeof orbIsFire==='function' && orbIsFire()){
+    if(b.kind==='orb' && b._fire){
       /* FIRE ORB ON STAGE 3 (drop 0801fs). Mike: "ice orb keeps spawing on the ice
          level and I cannot get fireball."
 
@@ -26461,7 +26458,7 @@ function drawBullets(){
           ctx.restore(); continue;
         }
       }
-      const _fire = (typeof orbIsFire==='function' && orbIsFire());
+      const _fire = !!b._fire;
       ctx.save(); ctx.translate(b.x,b.y); ctx.rotate((b.ang||0)+Math.PI/2);
       ctx.shadowColor=_fire?'#ffb347':'#dff4ff'; ctx.shadowBlur=_fire?8:6;
       if(_fire){
@@ -27818,14 +27815,19 @@ function _drawEffectsInner(){
     if(ex.xb){
       const fi=Math.min(ex.nf-1,Math.floor(k*ex.nf)), key=ex.xb+'_'+fi;
       if(typeof XART!=='undefined' && XART.rdy(key)){
-        const sz=(ex.max||ex.r)*EXPLODE_SCALE;   // was *1.9 — that is why deaths bloomed into huge sprites
+        /* A death owns a literal 125%-of-unit animation frame. Ordinary impact/set-piece calls
+           retain their existing presentation scale; only classed unit deaths use this contract. */
+        const sz=(ex.max||ex.r)*(ex.cls?1.25:EXPLODE_SCALE);
         ctx.save(); ctx.globalAlpha=_fade;
         const im=XART.get(key), s2=sz/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.drawImage(im, ex.x-im.naturalWidth*s2/2, ex.y-im.naturalHeight*s2/2, im.naturalWidth*s2, im.naturalHeight*s2);
         ctx.restore(); continue;
       }
     }
-    if(ASSETS.ready){ const fam=ex.fam||(ex.palette==='blue'?'expb':'expr'); if(ASSETS.has(fam+'0')){ const _n=ex.nf||5; const fi=Math.min(_n-1,Math.floor(k*_n)); const sz=(ex.max||ex.r)*EXPLODE_SCALE; ctx.globalAlpha=_fade; ASSETS.blit(fam+fi,ex.x,ex.y,sz,sz); ctx.globalAlpha=1; continue; } }
+    if(ASSETS.ready){ const fam=ex.fam||(ex.palette==='blue'?'expb':'expr'); if(ASSETS.has(fam+'0')){ const _n=ex.nf||5; const fi=Math.min(_n-1,Math.floor(k*_n)); const sz=(ex.max||ex.r)*(ex.cls?1.25:EXPLODE_SCALE); ctx.globalAlpha=_fade; ASSETS.blit(fam+fi,ex.x,ex.y,sz,sz); ctx.globalAlpha=1; continue; } }
+    /* Unit deaths never fall back to the old canvas circles. Their authored family may still be
+       decoding, but a missing frame must not turn a boss into the basic placeholder explosion. */
+    if(ex.cls) continue;
     const r=ex.r*(1+k*0.4);
     const inner = ex.palette==='blue'? '#dff3ff':'#fff4c0';
     const mid   = ex.palette==='blue'? '#3a8fff':'#ff6a1e';
@@ -28007,7 +28009,7 @@ function _drawEffectsInner(){
   if(typeof rbShardsDraw==='function') rbShardsDraw();   // rollerball shrapnel, over the field
   for(const sa of sprAnims){
     const k=clamp(sa.t/sa.dur,0,1); const fi=Math.min(sa.n-1, Math.floor(k*sa.n)); const nm=sa.base+fi;
-    if(ASSETS.has(nm)){ const d=ASSETS.dims(nm), s=sa.size/Math.max(d.w,d.h); ctx.globalAlpha=clamp(1-(k-0.7)/0.3,0,1); ASSETS.blit(nm,sa.x,sa.y,d.w*s,d.h*s); ctx.globalAlpha=1; }
+    if(ASSETS.has(nm)){ const d=ASSETS.dims(nm), s=sa.size/Math.max(d.w,d.h); ASSETS.blit(nm,sa.x,sa.y,d.w*s,d.h*s); }
   }
   /* PLAYER IMPACTS (drop 0809m). One frame each, so the life is carried by scale and alpha
      rather than a reel: it punches out to full size fast and fades, which reads as a hit
@@ -30620,7 +30622,7 @@ function drawElite8(e){
   const E=ELITE8[e._el8]; if(!E) return false;
   let k;
   if(e._dyingT!=null){
-    // destruction reel: one pass at 12fps, holding the last frame while the wreck fades
+    // destruction reel: one pass at 12fps, holding the last frame at full opacity
     const fi=clamp(Math.floor(e._dyingT*12), 0, 5);
     k='nel_'+E.art+'_d'+fi;
   } else if(e._rollT!=null){
@@ -30639,6 +30641,7 @@ function drawElite8(e){
   if(!XART.rdy(k)){ k='nel_'+E.art+'_0'; if(!XART.rdy(k)) return false; }
   const im=XART.get(k);
   const h=e.h*2.0, w=h*(im.naturalWidth/im.naturalHeight);
+  e._drawW=w; e._drawH=h;
   ctx.save(); ctx.translate(e.x,e.y);
   const _fl = (e.flash>0 && e._dyingT==null);
   /* fade removed (drop 0801cw): no enemy fades, ever — it explodes instead */
@@ -30890,6 +30893,7 @@ function drawVolc(e){
   if(!XART.rdy(k)){ k='nvl_'+V.art+'_0'; if(!XART.rdy(k)) return false; }
   const im=XART.get(k);
   const h=e.h*1.9, w=h*(im.naturalWidth/im.naturalHeight);
+  e._drawW=w; e._drawH=h;
   ctx.save(); ctx.translate(e.x, e.y + (typeof volcHover==='function'?volcHover(e):0));   // levitate
   ctx.drawImage(im,-w/2,-h/2,w,h);
   if(typeof volcGlowDraw==='function' && typeof k!=='undefined') volcGlowDraw(e,k,-w/2,-h/2,w,h);   // hot parts lift
@@ -31255,6 +31259,7 @@ function drawL6Jet(e){
   // PERSPECTIVE: craft entering from high altitude start small and grow into the play plane.
   const ps = e._pScale!=null ? e._pScale : 1;
   const h=e.h*1.5*ps, w=h*(im.naturalWidth/im.naturalHeight);
+  e._drawW=w; e._drawH=h;
   ctx.save(); ctx.translate(e.x,e.y);
   // BARREL ROLL / TWIST — no roll art in the pack, so the roll is rendered:
   // the airframe rotates and squashes through X as it spins over.
@@ -31511,49 +31516,27 @@ function emplaceStep(e, dt){
   return (typeof _tsPx==='number' && isFinite(_tsPx)) ? _tsPx : 0.34;
 }
 /* ============================================================
-   EXPLOSION COVERAGE — NORMALISED PER FAMILY
+   EXPLOSION COVERAGE — EXACT UNIT-FRAME RULE
 
-   A single global multiplier could never look consistent, because the families do not fill their
-   own frames equally. MEASURED across all 8 frames of each set, the visible blast spans:
+   The authored explosion families contain different transparent padding. Their measured visible
+   spans are retained below for diagnostic tests and non-death effects:
        ring 0.75   white 0.76   radial 0.77   clus 0.81   barrage 0.81
        dense 0.82  upward 0.86  smoke 0.89
    of the frame. So at one fixed scale, a ring death covered 1.21x the unit while a smoke death
    covered 1.44x — a 19% swing caused purely by transparent padding in the art, which is why some
    deaths read "about right" and others read oversized.
 
-   EXPLODE_FILL holds each family's measured span. The draw divides by it, so every class lands on
-   the SAME visible coverage of the unit regardless of which art it uses.
-
-   COVER_TARGET is that coverage: 1.38x the unit. Chosen so the fireball comfortably hides the
-   sprite vanishing underneath it (the whole point Mike raised) with a margin either side, without
-   swamping neighbouring units. Bosses and minibosses get more, because a set-piece death should
-   read bigger than a fodder one.
+   Unit deaths use a more literal contract: the explosion plate is drawn at exactly 1.25 times the
+   unit's last rendered frame, including bosses and minibosses. That keeps the takeover centered,
+   large enough to cover the unit, and independent of collision-box size.
    ============================================================ */
 const EXPLODE_FILL = {
   nxp_ring:0.747, nxp_white:0.758, nxp_radial:0.773, nxp_clus:0.805,
   nxp_barrage:0.812, nxp_dense:0.823, nxp_upward:0.857, nxp_smoke:0.885,
 };
-/* MIKE'S SCALE-UP LIVES HERE (drop 0807c). "dont be afraid to scale up the size of the
-   explosions used on enemies by 25-50%."
-
-   These are the numbers that decide what the player SEES: the visible blast width as a multiple
-   of the unit, after EXPLODE_FILL has divided out the transparent padding baked into each
-   explosion sprite. Raising them scales every class together and keeps the coverage identical
-   across families, which is the property the 0801cw work established and which scaling the
-   per-unit nominal size would have destroyed.
-
-       fodder   1.38 -> 1.79   (+30%)
-       big      1.62 -> 2.19   (+35%, the set-pieces get the top of his range) */
-/* ⚠ +50% (drop 0808r). Mike: "Scale up explosion frames 50%." 1.79 -> 2.69 and 2.19 -> 3.29.
-   Scale lives on COVER_TARGET, not on per-unit size — this is the VISIBLE coverage after the
-   EXPLODE_FILL padding is divided out, so changing it here moves every blast in the game at once
-   rather than needing a per-unit pass. */
-/* ⚠ RAISED 0822g (2.69 -> 3.20, 3.29 -> 4.05). Mike, from the tapes: the blasts in Raiden II
-   and Fire Shark are far larger relative to the unit than ours, and they are what sells a kill.
-   These two are the only dials - per-unit size is untouched, so the whole game moves together
-   and the relative weighting between a turret and a boss is preserved by construction. */
-const COVER_TARGET = 3.20;          // visible blast width as a multiple of the unit
-const COVER_TARGET_BIG = 4.05;      // bosses and minibosses
+/* Exact unit-death scale requested by Mike: authored explosion frame = unit frame +25%. */
+const COVER_TARGET = 1.25;          // authored death frame is exactly 25% larger than the unit
+const COVER_TARGET_BIG = 1.25;      // the same engine rule applies to bosses and minibosses
 function explodeScaleFor(fam, cls){
   const fill = EXPLODE_FILL[fam] || 0.80;
   const tgt  = (cls==='boss'||cls==='mini') ? COVER_TARGET_BIG : COVER_TARGET;
@@ -31901,6 +31884,10 @@ function tickBlastChains(dt){
 
 function unitDeathFX(e, cls, palette){
   if(!e) return;
+  /* Idempotent by construction. The old path called this on impact, through disintegrate(), and
+     once more when the destruction timer expired, stacking three blasts on one unit. */
+  if(e._deathFxStarted) return;
+  e._deathFxStarted=true;
   cls = cls || deathClassOf(e);
   const D = DEATH_CLASS[cls] || DEATH_CLASS.jet;
   palette = palette || ((curStage && curStage.bg==='ice') ? 'blue' : 'red');
@@ -31916,7 +31903,7 @@ function unitDeathFX(e, cls, palette){
      out each explosion sprite's transparent padding via EXPLODE_FILL so every class lands on
      the same visible coverage. Scaling here scales the nominal and desynchronises the classes.
      The scale-up belongs on COVER_TARGET, where it is applied once for everything. */
-  const unit = Math.max(12, Math.max(e.w||18, e.h||18)) * 1.25;
+  const unit = Math.max(12, Math.max(e._drawW||e.w||18, e._drawH||e.h||18));
   // Secondary COUNT also scales with the unit: a 20px turret getting a 44px tank's four
   // overlapping blasts is what made small deaths look enormous. Below 28px it gets one.
   const _sizeK = clamp((unit-16)/34, 0, 1);
