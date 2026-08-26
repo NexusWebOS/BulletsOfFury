@@ -1623,6 +1623,29 @@ const XART=(function(){
     const warp=['sparks','slit-open','aperture-open','aperture-full','phase-flash','aperture-collapse','slit-collapse','residue'];
     for(let i=0;i<8;i++) put('nch_warp_'+i,'chaosharrier-warp/chaosharrier-warp-'+String(i+1).padStart(2,'0')+'-'+warp[i]+'.png');
   }
+  /* HERALD OF DEATH — the generated Stage 8 Hellwing Death Carrier pack.
+     This is intentionally a separate namespace from the retired Spawn Carrier plates and from
+     the 96px Venom Reaver enemy. The pack metadata identifies this 192x256 unit as Stage 8's
+     miniboss and supplies fixed-canvas action reels, overlays and projectile frames. */
+  {
+    const R='assets/game/herald_of_death/';
+    const put=(k,p)=>{ X._src[k]=R+p; };
+    const actions=[['idle',6],['movement',7],['primary_attack',6],['special_attack',6],
+                   ['hit_reaction',4],['damage_transition',6],['destruction',8]];
+    for(const A of actions) for(let i=0;i<A[1];i++){
+      const f=String(i+1).padStart(2,'0');
+      put('nhd_'+A[0]+'_'+i,'Frames/'+A[0]+'/hellwing_death_carrier_'+A[0]+'_f'+f+'.png');
+    }
+    const overlays=[['primary_muzzle_overlay',6],['special_charge_overlay',6],['destruction_fx_overlay',8]];
+    for(const A of overlays) for(let i=0;i<A[1];i++){
+      const f=String(i+1).padStart(2,'0');
+      put('nhd_'+A[0]+'_'+i,'Overlay_Frames/'+A[0]+'/hellwing_death_carrier_'+A[0]+'_f'+f+'.png');
+    }
+    for(const kind of ['primary','special']) for(let i=0;i<6;i++){
+      const f=String(i+1).padStart(2,'0');
+      put('nhd_'+kind+'_projectile_'+i,'Projectile_Frames/'+kind+'_projectile/hellwing_death_carrier_'+kind+'_projectile_f'+f+'_64.png');
+    }
+  }
   /* ENEMY SHIELD FX VOL.1 (0825b). The complete source pack stays under assets/energyshields;
      only the loose authored runtime frames are registered here. manifest.js is generated. */
   {
@@ -6042,14 +6065,10 @@ const SUBBOSS={
      soak assertion `_sbSeen` (a runtime observation, not a name pin) went false, and the
      stage-7 boss gate behind it failed with it. ratking is a SEWER unit and stage 7 appears
      to rely on that; olivecarrier needs whatever ratking has before it can take this slot. */,    // RAT KING EXCAVATOR — level 7 sub-boss
-  /* The intact SPAWN CARRIER hull carries the HERALD OF DEATH identity (0825c). The old herald
-     runtime never had body art —
-     mba_vr_* is 0 keys, nvr_* was never built — so it wore frames 0-3 of its own venom attack
-     stream as a hull: the tester's "miniboss that is still a hitbox square", finally identified by
-     spawning all eight minis and reading the pixels. The lock pack ships the slot's authored unit
-     (Enemies/Stage08/spawn_carrier_miniboss); the old herald code stays, unassigned, like the
-     magma/cryo rigs. */
-  8:{at:0.45, kind:'spawncarrier', afterScroll:1201},
+  /* The generated Hellwing Death Carrier is Stage 8's HERALD OF DEATH (0825d). Its package metadata
+     explicitly says stage 8 / miniboss / 192x256 and supplies the complete action family. The old
+     Spawn Carrier and venom-reel Herald experiments stay on disk, unassigned. */
+  8:{at:0.45, kind:'heralddeath', afterScroll:1201},
   3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
   /* The generic ENERGY CORE placeholder is replaced by Mike's complete Chaos Harrier package.
@@ -9410,27 +9429,11 @@ const SHIPBOSS = {
                   pats:['rime','beamfan'], dmg:['nsb_rimewall_damaged','nsb_rimewall_critical']},
   olivewarden:   {key:'nsb_olivewarden_intact',name:'OLIVE WARDEN',     w:210,h:216, hp:238, pat:'pincer2',cd:1.26, mini:true,
                   pats:['pincer2','ember'], dmg:['nsb_olivewarden_damaged','nsb_olivewarden_critical']},
-  /* STAGE 8'S MINIBOSS FINALLY HAS A BODY (drop 0814e). The HERALD OF DEATH was drawing frames 0-3
-     of its own venom ATTACK stream as its hull — `mba_vr_*` is 0 registered keys, `nvr_*` was never
-     built (0801ga), and `heraldAnimKey`'s "11-frame flight loop" is, rendered, twin venom droplets
-     twisting into a 203x314 spray. The "silhouette IoU 1.0000 against the composited clean
-     components" in its own comment was measured against components that have NO art — an IoU
-     against nothing. Rule 1, again: the family is named nev_VENOM and its one comment upstream
-     (ENEMY fire table) correctly calls it "the Herald's attack reel".
-
-     CF_BOFFinalArtLock-Vol.2 ships the slot's authored unit: Enemies/Stage08/spawn_carrier_miniboss,
-     256px canvas, facing down, intact/damaged/critical — the SAME triplet convention magmaward /
-     rimewall / olivewarden already integrated from this pack, which is why stage 8 was the last
-     miniboss still broken: it was the last one not yet migrated. Same table, same build path, so
-     warmStage warms it via SHIPBOSS[kind].key with no new code.
-
-     hp is ABSOLUTE like every mini since 0810s (the flat-100 seed trap); 340 sits above ratking's
-     effective 456-at-DIFF and blacksteel's 327 is stage 6 — the mini curve is Mike's to retune.
-     pat/pats are MY pick (stage-8 flavour, converging Vs) — the old herald's venom stream stays
-     unassigned, exactly like the magma/cryo rigs. The miniboss name is Mike's authored
-     HERALD OF DEATH; Spawn Carrier describes the intact replacement hull, not the character. */
-  spawncarrier:  {key:'nsb_spawncarrier_intact',name:'HERALD OF DEATH', w:210,h:216, ty:168, hp:340, pat:'void', cd:1.22, mini:true,
-                  pats:['void','mslfan'], dmg:['nsb_spawncarrier_damaged','nsb_spawncarrier_critical']},
+  /* Stage 8's generated miniboss is the Hellwing Death Carrier, not the old Spawn Carrier and not
+     the small Venom Reaver. Keep its authored 192x256 canvas at 1:1 and use its complete action
+     family through heraldDeathDraw below. `w/h` are the collision body inside that fixed canvas. */
+  heralddeath:   {key:'nhd_idle_0', name:'HERALD OF DEATH', w:150,h:200, drawW:192,drawH:256,
+                  ty:168, hp:340, pat:'void', cd:1.22, mini:true, pats:['void','mslfan']},
   thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true,
                   pats:['rime','chargebeam']},
   /* STAGE 4 HAD NO MINIBOSS AT ALL (drop 0811b). SUBBOSS[4] named 'subreactor', which is in
@@ -9493,6 +9496,7 @@ function shipBossInit(b, kind){
      for its art. Asking here, at spawn, gives it the whole entry to decode. */
   try{ if(typeof XART!=='undefined'){ XART.rdy(D.key); if(XART._touch) XART._touch(D.key); } }catch(_sb){}
   if(kind==='chaosharrier' && typeof chaosHarrierInit==='function') chaosHarrierInit(b,D);
+  if(kind==='heralddeath' && typeof heraldDeathInit==='function') heraldDeathInit(b,D);
   return true;
 }
 /* ============================================================
@@ -9878,6 +9882,7 @@ function reaverOrbTick(b, dt){
 }
 function shipBossManoeuvre(b, dt){
   if(!b || !b._ship || b.dead || b.enter) return false;
+  if(b._herald && typeof heraldDeathTick==='function') heraldDeathTick(b,dt);
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const sy=shipBossStationY(b);
   /* the rake is ticked here - the only per-frame hook a ship boss has. It keeps running through
@@ -10003,6 +10008,7 @@ function shipBossAttack(b){
   const D=SHIPBOSS[b._ship]; if(!D) return;
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const step=(b._sbStep=(b._sbStep|0)+1);
+  if(b._herald){ b._herald.attack=(step%3===0)?'special_attack':'primary_attack'; b._herald.attackT=0.72; }
   const y=b.y+b.h*0.30;
   /* PHASE. The pattern comes from pats[] rather than D.pat once a boss has an arc, and crossing a
      threshold is ANNOUNCED " a flash and the alarm " because a pattern that changes silently reads
@@ -10299,9 +10305,61 @@ function chaosHarrierDraw(b){
   }
   return true;
 }
+/* ============================================================
+   HERALD OF DEATH — LEVEL 8 MINIBOSS
+
+   The generated Hellwing pack is a fixed 192x256 canvas: every action shares the same pivot, so
+   switching reels never teleports or resizes the hull. The old Spawn Carrier remains on disk as
+   retired art, but this runner is the only Stage-8 miniboss path. */
+function heraldDeathInit(b,D){
+  b.mini=true;
+  b._herald={clock:0,attack:null,attackT:0,damageT:0,tier:0,dw:D.drawW||192,dh:D.drawH||256};
+}
+function heraldDeathTick(b,dt){
+  const H=b&&b._herald;if(!H)return;
+  H.clock+=dt;
+  H.attackT=Math.max(0,H.attackT-dt);
+  H.damageT=Math.max(0,H.damageT-dt);
+  const f=clamp(b.hp/(b.maxhp||1),0,1),tier=f<=0.33?2:(f<=0.66?1:0);
+  if(tier>H.tier){ H.tier=tier; H.damageT=0.72; }
+}
+function heraldDeathPlate(key,b,alpha){
+  if(typeof XART==='undefined'||!XART.rdy(key))return false;
+  const H=b._herald,im=XART.get(key),y=(b._drawY!=null?b._drawY:b.y);
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=(alpha==null?1:alpha);
+  ctx.drawImage(im,b.x-H.dw/2,y-H.dh/2,H.dw,H.dh);ctx.restore();
+  return true;
+}
+function heraldDeathDraw(b){
+  const H=b&&b._herald;if(!H)return false;
+  let action='idle',count=6,fi=((H.clock*8)|0)%6,overlay=null;
+  if(b.dead){
+    action='destruction';count=8;fi=Math.min(7,Math.floor((b.dying||0)/1.9*8));
+    overlay='destruction_fx_overlay';
+  }else if(H.damageT>0){
+    action='damage_transition';count=6;fi=Math.min(5,Math.floor((0.72-H.damageT)/0.12));
+  }else if((b.flash||0)>0.08){
+    action='hit_reaction';count=4;fi=Math.min(3,Math.floor((b.flash||0)*18)%4);
+  }else if(H.attackT>0){
+    action=H.attack||'primary_attack';count=6;fi=Math.min(5,Math.floor((0.72-H.attackT)/0.12));
+    overlay=(action==='special_attack')?'special_charge_overlay':'primary_muzzle_overlay';
+  }else if(b._sbm!=null && b._sbm!==SBM_HOLD){
+    action='movement';count=7;fi=((H.clock*10)|0)%7;
+  }
+  fi=clamp(fi|0,0,count-1);
+  const key='nhd_'+action+'_'+fi;
+  if(!heraldDeathPlate(key,b,1) && !heraldDeathPlate('nhd_idle_0',b,1)) return false;
+  if(overlay) heraldDeathPlate('nhd_'+overlay+'_'+fi,b,1);
+  if((b.flash||0)>0 && typeof xartTint==='function'){
+    const t=xartTint(key,'#ffffff',0.9),y=(b._drawY!=null?b._drawY:b.y);
+    if(t){ctx.save();ctx.globalAlpha=Math.min(0.65,(b.flash||0)*3.2);ctx.drawImage(t,b.x-H.dw/2,y-H.dh/2,H.dw,H.dh);ctx.restore();}
+  }
+  return true;
+}
 function shipBossDraw(b){
   const D=SHIPBOSS[b&&b._ship]; if(!D) return false;
   if(b._chaos && typeof chaosHarrierDraw==='function') return chaosHarrierDraw(b);
+  if(b._herald && typeof heraldDeathDraw==='function') return heraldDeathDraw(b);
   if(typeof XART==='undefined' || !XART.rdy(D.key)){
     /* ⚠ NEVER FALL THROUGH TO NOTHING. Returning false here sent the draw down a chain of
        early-returns for _gen / _mech / _sx / modular / mega, and a ship boss is none of those " so
@@ -10610,7 +10668,7 @@ function spawnSubBoss__inner(kind){
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
     case 'magmaward': case 'rimewall': case 'olivewarden':   // Mike's 0813h minis
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
-    case 'spawncarrier':                               // stage 8's lock mini (0814e) — replaces the herald
+    case 'heralddeath':                                // generated Hellwing Death Carrier, Stage 8
     case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier': case 'chaosharrier':
       b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {
@@ -15445,6 +15503,7 @@ function warmStage(n){
       const _md=SHIPBOSS[_mk]; add(_md.key);
       if(_md.dmg) for(const _dk of _md.dmg) add(_dk);
       if(_mk==='chaosharrier') addPrefix('nch_');   // hull + registered overlays/projectiles/VFX
+      if(_mk==='heralddeath') addPrefix('nhd_');    // complete authored Stage-8 action family
     }
   }catch(e){}
   /* 5. THE FAMILIES THAT DO NOT MATCH A FOLDER OR A KIND NAME (drop 0801kd).

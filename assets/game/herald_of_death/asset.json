@@ -1,0 +1,63 @@
+{
+  "id": "hellwing_death_carrier",
+  "display_name": "Hellwing Death Carrier",
+  "stage": 8,
+  "role": "miniboss",
+  "canvas": [
+    192,
+    256
+  ],
+  "pivot": [
+    96,
+    128
+  ],
+  "one_action_per_sheet": true,
+  "actions": {
+    "idle": {
+      "frames": 6,
+      "layout": "6x1",
+      "loop": true
+    },
+    "movement": {
+      "frames": 7,
+      "layout": "7x1",
+      "loop": true
+    },
+    "primary_attack": {
+      "frames": 6,
+      "layout": "6x1",
+      "loop": false
+    },
+    "special_attack": {
+      "frames": 6,
+      "layout": "6x1",
+      "loop": false
+    },
+    "hit_reaction": {
+      "frames": 4,
+      "layout": "4x1",
+      "loop": false
+    },
+    "damage_transition": {
+      "frames": 6,
+      "layout": "6x1",
+      "loop": false
+    },
+    "destruction": {
+      "frames": 8,
+      "layout": "8x1",
+      "loop": false
+    }
+  },
+  "separate_overlays": [
+    "primary_muzzle_overlay",
+    "special_charge_overlay",
+    "destruction_fx_overlay"
+  ],
+  "separate_projectiles": [
+    "primary_projectile",
+    "special_projectile"
+  ],
+  "alpha": "binary",
+  "filtering": "nearest-neighbor"
+}

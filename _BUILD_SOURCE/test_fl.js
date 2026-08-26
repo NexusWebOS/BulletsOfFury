@@ -8409,8 +8409,8 @@ console.log("=== 186. player / enemy / game ===");
      They are NOT atlas material: each is a full-canvas 680x510 alpha layer drawn whole at the
      view rect, so packing them would add a rect lookup and save nothing, and 24 loose plates in
      a flat game/ is exactly the sprawl Mike asked to be cleaned up. Same reasoning fonts/ got. */
-  ok(_sub.sort().join(',')==='atlas,bg5,bg6,chaosharrier,fonts,music,sounds',
-     'game/ holds music, sounds, fonts, the packed atlases, stage layers and Chaos Harrier pack ('+_sub.join(',')+')');
+  ok(_sub.sort().join(',')==='atlas,bg5,bg6,chaosharrier,fonts,herald_of_death,music,sounds',
+     'game/ holds music, sounds, fonts, the packed atlases, stage layers and live miniboss packs ('+_sub.join(',')+')');
 
   /* PROTECT THE ART, NOT THE FOLDER IT USED TO SIT IN (drop 0806r).
 
@@ -11158,7 +11158,7 @@ console.log("=== 237. enemy shield FX runtime ===");
      'full fields retain the authored back / enemy / front draw order across every hull renderer');
 }
 
-// ===== 238. 0825C EXACT PILOT ELEMENT RULES + STAGE-8 MINIBOSS NAME =====
+// ===== 238. 0825C EXACT PILOT ELEMENT RULES + STAGE-8 HERALD BODY =====
 console.log("=== 238. exact pilot kit rules ===");
 {
   var _m238=JSON.parse(vm.runInContext("(function(){var o={};"
@@ -11173,8 +11173,12 @@ console.log("=== 238. exact pilot kit rules ===");
      "Stage 2 doubles only Freezer's ICE BREATH, not an orb or thermoshock");
   ok(_m238.f3thermo===2 && _m238.f3fire===1 && _m238.f3breath===1 && _m238.f4thermo===1,
      "Stage 3 doubles only Freezer's FIRE-ICE ball, and the bonus does not leak to Stage 4");
-  ok(vm.runInContext("SUBBOSS[8].kind==='spawncarrier' && SHIPBOSS.spawncarrier.name==='HERALD OF DEATH'",ctxv),
-     'Stage 8 keeps the intact Spawn Carrier hull under the authored HERALD OF DEATH name');
+  ok(vm.runInContext("SUBBOSS[8].kind==='heralddeath' && SHIPBOSS.heralddeath.name==='HERALD OF DEATH' && SHIPBOSS.heralddeath.key==='nhd_idle_0'",ctxv),
+     'Stage 8 routes HERALD OF DEATH to the generated Hellwing carrier, not the retired Spawn Carrier');
+  ok(vm.runInContext("XART._src.nhd_idle_0.indexOf('herald_of_death/Frames/idle/')>=0 && !SHIPBOSS.spawncarrier",ctxv),
+     'the new fixed-canvas Hellwing art is registered and the old Spawn Carrier has no live boss route');
+  ok(vm.runInContext("(function(){run.stage=8;curStage=STAGES[7];spawnSubBoss('heralddeath');return !!(subBoss&&subBoss._herald&&subBoss._herald.dw===192&&subBoss._herald.dh===256);})()",ctxv),
+     'HERALD OF DEATH spawns with the authored 192x256 action runner');
 }
 
 console.log('\n============================================');
