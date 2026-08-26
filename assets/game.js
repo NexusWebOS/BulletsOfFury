@@ -1693,6 +1693,26 @@ const XART=(function(){
   /* The supplied official BONUS STAGE card. Keep this registration beside the other code-owned
      assets so regenerating manifest.js cannot silently replace it with the text fallback again. */
   X._src['scard_9'] = 'assets/game/bonus_stage_card.png';
+  /* HERALD OF DEATH — generated Stage 8 Hellwing Death Carrier action pack. */
+  {
+    const R='assets/game/herald_of_death/';
+    const put=(k,p)=>{ X._src[k]=R+p; };
+    const actions=[['idle',6],['movement',7],['primary_attack',6],['special_attack',6],
+                   ['hit_reaction',4],['damage_transition',6],['destruction',8]];
+    for(const A of actions) for(let i=0;i<A[1];i++){
+      const f=String(i+1).padStart(2,'0');
+      put('nhd_'+A[0]+'_'+i,'Frames/'+A[0]+'/hellwing_death_carrier_'+A[0]+'_f'+f+'.png');
+    }
+    const overlays=[['primary_muzzle_overlay',6],['special_charge_overlay',6],['destruction_fx_overlay',8]];
+    for(const A of overlays) for(let i=0;i<A[1];i++){
+      const f=String(i+1).padStart(2,'0');
+      put('nhd_'+A[0]+'_'+i,'Overlay_Frames/'+A[0]+'/hellwing_death_carrier_'+A[0]+'_f'+f+'.png');
+    }
+    for(const kind of ['primary','special']) for(let i=0;i<6;i++){
+      const f=String(i+1).padStart(2,'0');
+      put('nhd_'+kind+'_projectile_'+i,'Projectile_Frames/'+kind+'_projectile/hellwing_death_carrier_'+kind+'_projectile_f'+f+'_64.png');
+    }
+  }
   /* ENEMY SHIELD FX VOL.1 (0825b). The complete source pack stays under assets/energyshields;
      only the loose authored runtime frames are registered here. manifest.js is generated. */
   {
@@ -6359,7 +6379,7 @@ const SUBBOSS={
      spawning all eight minis and reading the pixels. The lock pack ships the slot's authored unit
      (Enemies/Stage08/spawn_carrier_miniboss); the old herald code stays, unassigned, like the
      magma/cryo rigs. */
-  8:{at:0.45, kind:'spawncarrier', afterScroll:1201},
+  8:{at:0.45, kind:'heralddeath', afterScroll:1201},
   9:{at:0.45, kind:'warpsentinel', afterScroll:1201},   // WARP SENTINEL — the bonus stage's miniboss (0822ab)
   3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
@@ -9853,6 +9873,9 @@ const SHIPBOSS = {
                   /* measured from the complete 256px plate: mirrored outboard barrels + nose */
                   mounts:{L:[-0.316,0.234], C:[0,0.414], R:[0.316,0.234]},
                   dmg:['nsb_spawncarrier_damaged_v2','nsb_spawncarrier_critical_v2']},
+  /* Generated Hellwing Death Carrier: fixed 192x256 action canvas with its own draw runner. */
+  heralddeath:   {key:'nhd_idle_0', name:'HERALD OF DEATH', w:150,h:200, drawW:192,drawH:256,
+                  ty:168, hp:340, pat:'void', cd:1.22, mini:true, pats:['void','mslfan']},
   thornrime:     {key:'nsb_thorn_rime',     name:'RIME THORN',          w:165,h:165, hp:225, pat:'rime',  cd:1.20, mini:true, proj:'cryo',
                   mounts:{L:[-0.27,0.27],C:[0,0.43],R:[0.27,0.27]},
                   pats:['rime','chargebeam']},
@@ -9922,6 +9945,7 @@ function shipBossInit(b, kind){
       }
     }
   } }catch(_sb){}
+  if(kind==='heralddeath' && typeof heraldDeathInit==='function') heraldDeathInit(b,D);
   return true;
 }
 /* one bullet, on the file's own contract: slow, readable, scaled by difficulty SPEED */
@@ -10188,6 +10212,7 @@ function reaverOrbTick(b, dt){
 function shipBossManoeuvre(b, dt){
   if(!b || !b._ship || b.dead || b.enter) return false;
   shipBossMuzzleTick(b, dt);
+  if(b._herald && typeof heraldDeathTick==='function') heraldDeathTick(b,dt);
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const sy=shipBossStationY(b);
   const D=SHIPBOSS[b._ship]||{};
@@ -10335,6 +10360,7 @@ function shipBossAttack(b){
   const D=SHIPBOSS[b._ship]; if(!D) return;
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const step=(b._sbStep=(b._sbStep|0)+1);
+  if(b._herald){ b._herald.attack=(step%3===0)?'special_attack':'primary_attack'; b._herald.attackT=0.72; }
   const y=b.y+b.h*0.30;
   const mL=shipBossMount(b,'L'), mC=shipBossMount(b,'C'), mR=shipBossMount(b,'R');
   /* PHASE. The pattern comes from pats[] rather than D.pat once a boss has an arc, and crossing a
@@ -10661,8 +10687,57 @@ function carrierBayHit(b, wx, wy){
   }
   return false;
 }
+/* ============================================================
+   HERALD OF DEATH — GENERATED STAGE 8 HELLWING MINIBOSS
+   The fixed 192x256 canvas keeps every action on one pivot; no fading or generic hull swap. */
+function heraldDeathInit(b,D){
+  b.mini=true;
+  b._herald={clock:0,attack:null,attackT:0,damageT:0,tier:0,dw:D.drawW||192,dh:D.drawH||256};
+}
+function heraldDeathTick(b,dt){
+  const H=b&&b._herald;if(!H)return;
+  H.clock+=dt;
+  H.attackT=Math.max(0,H.attackT-dt);
+  H.damageT=Math.max(0,H.damageT-dt);
+  const f=clamp(b.hp/(b.maxhp||1),0,1),tier=f<=0.33?2:(f<=0.66?1:0);
+  if(tier>H.tier){ H.tier=tier; H.damageT=0.72; }
+}
+function heraldDeathPlate(key,b,alpha){
+  if(typeof XART==='undefined'||!XART.rdy(key))return false;
+  const H=b._herald,im=XART.get(key),y=(b._drawY!=null?b._drawY:b.y);
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=(alpha==null?1:alpha);
+  ctx.drawImage(im,b.x-H.dw/2,y-H.dh/2,H.dw,H.dh);ctx.restore();
+  return true;
+}
+function heraldDeathDraw(b){
+  const H=b&&b._herald;if(!H)return false;
+  let action='idle',count=6,fi=((H.clock*8)|0)%6,overlay=null;
+  if(b.dead){
+    action='destruction';count=8;fi=Math.min(7,Math.floor((b.dying||0)/1.9*8));
+    overlay='destruction_fx_overlay';
+  }else if(H.damageT>0){
+    action='damage_transition';count=6;fi=Math.min(5,Math.floor((0.72-H.damageT)/0.12));
+  }else if((b.flash||0)>0.08){
+    action='hit_reaction';count=4;fi=Math.min(3,Math.floor((b.flash||0)*18)%4);
+  }else if(H.attackT>0){
+    action=H.attack||'primary_attack';count=6;fi=Math.min(5,Math.floor((0.72-H.attackT)/0.12));
+    overlay=(action==='special_attack')?'special_charge_overlay':'primary_muzzle_overlay';
+  }else if(b._sbm!=null && b._sbm!==SBM_HOLD){
+    action='movement';count=7;fi=((H.clock*10)|0)%7;
+  }
+  fi=clamp(fi|0,0,count-1);
+  const key='nhd_'+action+'_'+fi;
+  if(!heraldDeathPlate(key,b,1) && !heraldDeathPlate('nhd_idle_0',b,1)) return false;
+  if(overlay) heraldDeathPlate('nhd_'+overlay+'_'+fi,b,1);
+  if((b.flash||0)>0 && typeof xartTint==='function'){
+    const t=xartTint(key,'#ffffff',0.9),y=(b._drawY!=null?b._drawY:b.y);
+    if(t){ctx.save();ctx.globalAlpha=Math.min(0.65,(b.flash||0)*3.2);ctx.drawImage(t,b.x-H.dw/2,y-H.dh/2,H.dw,H.dh);ctx.restore();}
+  }
+  return true;
+}
 function shipBossDraw(b){
   const D=SHIPBOSS[b&&b._ship]; if(!D) return false;
+  if(b._herald && typeof heraldDeathDraw==='function') return heraldDeathDraw(b);
   if(typeof XART==='undefined' || !XART.rdy(D.key)){
     /* ⚠ NEVER FALL THROUGH TO NOTHING. Returning false here sent the draw down a chain of
        early-returns for _gen / _mech / _sx / modular / mega, and a ship boss is none of those " so
@@ -10988,6 +11063,7 @@ function spawnSubBoss__inner(kind){
     case 'magmaward': case 'rimewall': case 'olivewarden':   // Mike's 0813h minis
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
     case 'spawncarrier':                               // stage 8's lock mini (0814e) — replaces the herald
+    case 'heralddeath':                                // generated Hellwing Death Carrier, Stage 8
     case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
       b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {
@@ -16200,6 +16276,7 @@ function warmStage(n){
     if(_mk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_mk]){
       const _md=SHIPBOSS[_mk]; add(_md.key);
       if(_md.dmg) for(const _dk of _md.dmg) add(_dk);
+      if(_mk==='heralddeath') addPrefix('nhd_');
     }
   }catch(e){}
   /* 5. THE FAMILIES THAT DO NOT MATCH A FOLDER OR A KIND NAME (drop 0801kd).
