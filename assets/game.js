@@ -10128,7 +10128,10 @@ function s9FusionHit(b,dmg){
   }
 }
 function s9FusionWardenFire(w,phase){
-  const rot=phase+(w.side==='L'?1:-1)*performance.now()/520;
+  /* Simulation time owns the wheel. performance.now() kept moving while paused and made the same
+     encounter produce different lanes in headless runs, replays and slow frames. The Wardens
+     counter-rotate from the encounter clock instead. */
+  const rot=phase+(w.side==='L'?1:-1)*phase*1.85;
   if((Math.floor(phase*2)&1)===0){
     for(let i=0;i<9;i++)eShoot(w.x,w.y+38,rot+i*TAU/9,2.45,'photon');
   }else{
@@ -10156,6 +10159,11 @@ function s9FusionBossTick(b,dt){
     if(F.t>=2.05){
       flashScreen=Math.max(flashScreen,0.85);whiteBlast=Math.max(whiteBlast,0.65);shake=Math.max(shake,13);
       b.maxhp=F.baseHp;b.hp=F.baseHp;shipBossInit(b,'tidalsovereign');
+      /* This object began life as the twin encounter, so shipBossInit cannot inherit the final
+         identity from spawnBoss the way it normally does.  Promote the public kind as well as
+         `_ship`; otherwise death routing, diagnostics and any kind-gated logic still see the
+         already-finished Wardens after the complete Tidal Sovereign is on the field. */
+      b.kind='tidalsovereign';
       b.enter=false;b.x=VW/2;b.y=132;b.tx=VW/2;b.ty=132;F.phase='tidal';F.t=0;
       if(Audio.SFX&&Audio.SFX.explodeBig)Audio.SFX.explodeBig();
     }
@@ -14341,14 +14349,20 @@ function pShoot(){
         beam={kind:'beam', pierce:true, lv, dmg, x:player.x, y:player.y, w:0, h:0,
           vx:0, vy:0, life:0.15, _hit:[], _ht:0, _bt:0};
         pBullets.push(beam);
+        /* The V4 bank has separate attack/body/release parts.  The old route retriggered the
+           legacy laser transient at the weapon cadence and never played either the attack or
+           the sustained body.  Start is creation-owned; updateBullets keeps the body alive and
+           expiry owns the release, so refreshing one held entity cannot stack voices. */
+        (Audio.SFX.laserBeamStart||Audio.SFX.laser||Audio.SFX.spread||Audio.SFX.shoot)();
       }
       beam.dmg=dmg; beam.lv=lv; beam.life=0.15; beam.w=14+lv*4;
     } else {
       /* Exact Maverick progression: 3 purple, 4 blue, 5 green, 6 black/silver,
          then 7 full-charge blue/purple helix lances. Every tier homes. */
       maverickLaserVolley(clamp(lv,1,5),dmg);
+      /* Maverick fires discrete homing lances, not the shared held beam. */
+      (Audio.SFX.laser||Audio.SFX.spread||Audio.SFX.shoot)();
     }
-    (Audio.SFX.laser||Audio.SFX.spread||Audio.SFX.shoot)();
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv||1));
@@ -19432,6 +19446,9 @@ function updatePlay(dt){
         if(!player.dead && Audio.SFX.laserBeamEnd) Audio.SFX.laserBeamEnd();
         continue;
       }
+      /* Refresh every simulation frame, not merely at the weapon's shot cadence. loopOn is
+         idempotent and this keeps its two-frame grace from fading between trigger refreshes. */
+      if(typeof Snd!=='undefined' && Snd && Snd.loopOn) Snd.loopOn('laserBeamLoop',0.74);
       b.x=player.x; b.bot=player.y-14; b.top=-20;   // project past the top edge — keeps full reach as the ship advances
       b._ht=(b._ht||0)-dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.05; }   // re-burn along the beam periodically
       for(const e of enemies){
@@ -25406,14 +25423,11 @@ if(typeof ENEMY_ART!=='undefined' && typeof window!=='undefined' && window.BOFX 
 /* ============================================================
    STAGE-9 ROSTER — THE VELOCITY VOID (drop 0822ab, pack CF_Stage9BonusPack-Lvl9)
 
-   Mike's roster README defines eight units by BEHAVIOUR, and the honest thing is to say which
-   part of each spec is live now and which is art-only. These rows give every unit its authored
-   art, its measured size, hp, score and a MOVEMENT PATTERN chosen to match the written
-   behaviour as closely as the existing movers allow. The signature tricks — the needle drone's
-   phase-out, the prism mine's six-lane refraction, the echo fighter's delayed ghost, the
-   interceptor's split at half health — are NOT implemented yet and are listed in the passover.
-   A unit that flies and shoots on the right art is worth shipping; a unit that claims a trick
-   it does not have is not.
+   Mike's roster README defines eight units by BEHAVIOUR. These rows give every unit its authored
+   art, measured size, hp and score; s9ChaosTick owns the signature mechanics: needle phase-outs,
+   six-lane prism refraction, rim-clinging leeches, delayed echo volleys, half-health splitting,
+   committed pivots and barrel rolls. Keep those mechanics here rather than hiding them in the
+   generic sine mover — Stage 9 is supposed to be the hardest, least predictable roster.
 
    ⚠ e.art IS A NAME, NOT A FILE KEY — the 0809l lesson. drawNewEnemyArt does
    ENEMY_ART[e.art] and then base+'_'+state, so each unit needs an ENEMY_ART entry AND an
@@ -25495,7 +25509,19 @@ function s9ChaosFire(e){
   const aim=Math.atan2(player.y-e.y,player.x-e.x), mode=e._s9;
   if(mode==='laserwheel'){
     e._s9rot=(e._s9rot||0)+0.31;
-    for(let i=0;i<10;i++) eShoot(e.x,e.y,e._s9rot+i*TAU/10,2.25,'photon');
+    /* Six readable, evenly-spaced refraction lanes. Ten spokes filled almost every escape angle
+       and contradicted the prism-mine brief; alternating the wheel offset keeps the gaps moving
+       without making the burst random. */
+    for(let i=0;i<6;i++) eShoot(e.x,e.y,e._s9rot+i*TAU/6,2.25,'photon');
+  } else if(mode==='echo'){
+    for(let i=-1;i<=1;i++) eShoot(e.x,e.y+10,aim+i*0.13,3.15,i===0?'riftshot':'photon');
+    /* The visible afterimages are combatants too: two older positions repeat the volley later. */
+    const hist=e._s9EchoHist||[];
+    e._s9EchoQ=e._s9EchoQ||[];
+    for(const q of [{age:0.18,delay:0.14},{age:0.36,delay:0.28}]){
+      let p=null,err=Infinity; for(const h of hist){ const d=Math.abs(h.age-q.age); if(d<err){err=d;p=h;} }
+      e._s9EchoQ.push({x:p?p.x:e.x,y:p?p.y:e.y-18*(q.delay/0.14),a:aim,t:q.delay});
+    }
   } else if(mode==='event'||mode==='dread'){
     const n=mode==='dread'?7:5;
     for(let i=-(n>>1);i<=(n>>1);i++) eShoot(e.x,e.y+e.h*0.32,aim+i*0.12,3.25,'riftshot');
@@ -25509,6 +25535,7 @@ function s9ChaosTick(e,dt){
   if(e._s9x0==null){
     e._s9x0=e.x; e._s9y0=Math.max(80,rnd(90,VH*0.30)); e._s9fire=rnd(0.65,1.7);
     e._s9vx=e._s9vx||0; e._s9vy=e._s9vy||rnd(68,96); e.shoots=false;
+    if(e._s9==='needle') e._s9PhaseCd=0.34+Math.abs(Number(e.phase)||0)%0.24;
   }
   const m=e._s9;
   if(m==='waterrock'){
@@ -25517,9 +25544,16 @@ function s9ChaosTick(e,dt){
   if(m==='needle'){
     e.y+=e._s9vy*1.35*dt; e.x+=clamp(player.x-e.x,-1,1)*90*dt;
     e.spin=Math.sin(e.t*7)*0.34;
+    e._s9PhaseCd=(e._s9PhaseCd==null?0.42:e._s9PhaseCd)-dt;
+    if((e._s9PhaseT||0)>0){
+      e._s9PhaseT=Math.max(0,e._s9PhaseT-dt); e._noHit=true;
+      if(e._s9PhaseT<=0) e._noHit=false;
+    } else if(e._s9PhaseCd<=0){
+      e._s9PhaseT=0.46; e._s9PhaseCd=1.72+Math.abs(Math.sin(e.t))*0.36; e._noHit=true;
+    }
   } else if(m==='rim'){
     if(e.y<e._s9y0) e.y+=e._s9vy*dt;
-    else { const side=e._s9x0<VW/2?1:-1; e.x=side>0?26:worldWidth()-26; e.y+=22*dt; e.spin+=side*2.4*dt; }
+    else { const side=e._s9x0<worldWidth()/2?1:-1; e.x=side>0?26:worldWidth()-26; e.y+=22*dt; e.spin+=side*2.4*dt; }
   } else if(m==='laserwheel'){
     if(e.y<e._s9y0) e.y+=e._s9vy*dt; else e.y=e._s9y0;
     e.spin=(e.spin||0)+2.9*dt;
@@ -25541,6 +25575,18 @@ function s9ChaosTick(e,dt){
     if(m==='barrel' && (e.t%3.1)<dt*1.1) e._barrelT=0.72;
     if(e._barrelT>0){ e._barrelT-=dt; e.spin+=TAU*dt/0.72; }
   }
+  if(m==='echo'){
+    e._s9EchoHist=e._s9EchoHist||[]; e._s9EchoSample=(e._s9EchoSample||0)-dt;
+    if(e._s9EchoSample<=0){ e._s9EchoHist.unshift({x:e.x,y:e.y,age:0}); e._s9EchoSample=0.055; }
+    for(const h of e._s9EchoHist) h.age+=dt;
+    e._s9EchoHist=e._s9EchoHist.filter(h=>h.age<=0.72).slice(0,14);
+    if(e._s9EchoQ){
+      for(const q of e._s9EchoQ){ q.t-=dt; if(q.t<=0&&!q.fired){
+        q.fired=1; for(let i=-1;i<=1;i++) eShoot(q.x,q.y+10,q.a+i*0.13,2.95,i===0?'riftshot':'photon');
+      } }
+      e._s9EchoQ=e._s9EchoQ.filter(q=>!q.fired);
+    }
+  }
   /* Twin Splitters genuinely split once, at half health, into two independently spaced attackers. */
   if(m==='split' && !e._didSplit && e.hp<=e.maxhp*0.5){
     e._didSplit=1;
@@ -25556,10 +25602,22 @@ function drawS9VoidEnemy(e){
     const key=e.art+'_idle'; if(XART.rdy(key)){
       const im=XART.get(key),z=(e.w||42)*1.65;
       ctx.save();ctx.globalAlpha=0.18;
-      for(let i=1;i<=3;i++) ctx.drawImage(im,e.x-z/2-(e._s9vx||0)*i*0.08,e.y-z/2-i*12,z,z);
+      const hist=e._s9EchoHist||[];
+      for(const age of [0.14,0.28,0.42]){
+        let p=null,err=Infinity; for(const h of hist){const d=Math.abs(h.age-age);if(d<err){err=d;p=h;}}
+        if(p) ctx.drawImage(im,p.x-z/2,p.y-z/2,z,z);
+      }
       ctx.restore();
     }
     return false;
+  }
+  if(e._s9==='needle' && (e._s9PhaseT||0)>0){
+    const key=e.art+'_idle'; if(!XART.rdy(key)) return false;
+    const im=XART.get(key),dw=e.w*((e._foot!=null)?e._foot:ENEMY_ART_FOOT),dh=dw*(im.naturalHeight/im.naturalWidth);
+    const p=clamp(e._s9PhaseT/0.46,0,1);
+    ctx.save();ctx.translate(e.x,e.y);ctx.rotate(e.spin||0);ctx.globalCompositeOperation='lighter';ctx.globalAlpha=0.10+0.22*Math.abs(Math.sin(p*Math.PI*3));
+    for(const d of [-1,0,1]) ctx.drawImage(im,-dw/2+d*5,-dh/2,dw,dh);
+    ctx.restore();e._drawW=dw;e._drawH=dh;return true;
   }
   let key=null,dw=e.w,dh=e.h;
   if(e._s9==='event') key='ns9x_horizon_'+(Math.floor(e.t*10)%7);

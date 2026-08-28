@@ -898,7 +898,7 @@ console.log('\n=== 20. jungle roster + behaviors + shadows ===');
   vm.runInContext("enemies.length=0; waveIdx=0; stagePlan=buildStagePlan(1); stageTimer=0;", ctxv);
   for(let f=0;f<3600;f++){
     vm.runInContext("stageTimer+=1/60; updatePlay(1/60);", ctxv);
-    const n=vm.runInContext("enemies.filter(function(e){return !e.dead&&e._dyingT==null&&!e._tur&&!e._bunker&&!e._mini;}).length",ctxv);
+    const n=vm.runInContext("enemies.filter(function(e){return !e.dead&&e._dyingT==null&&!e._tur&&!e._bunker&&!e._mini&&!e._prop&&e.pattern!=='prop'&&e.pattern!=='naval';}).length",ctxv);
     const m=vm.runInContext("enemies.filter(function(e){return !e.dead&&(e._tur||e._bunker);}).length",ctxv);
     if(n>peak)peak=n; if(m>peakEmp)peakEmp=m;
   }
@@ -9575,7 +9575,7 @@ console.log("=== 203. no shared wave tail ===");
   var _cast=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; var out={};"
     +"[1,2,5,6].forEach(function(sn){"
-    +"  run.stage=sn; curStage=STAGES[sn-1];"
+    +"  run.stage=sn; curStage=STAGES[sn-1]; mapScroll=(sn===1?1000:0);"
     +"  var P=buildStagePlan(sn), seen={}, real=spawnEnemy;"
     +"  spawnEnemy=function(t){ seen[t]=1; return null; };"
     +"  P.forEach(function(w){ try{ (w.fn||w[1]||function(){})(); }catch(e){} });"
@@ -12072,6 +12072,175 @@ console.log("=== 257. Gravity Mode space armory I-V ===");
   var _hud257=vm.runInContext("(function(){run.stage=5;run.spaceMode=true;run.spaceWeapon=1;run.spaceLevels[1]=4;run.wlevel=1;return [weaponDisplayName(run.weapon),weaponIconKey(run.weapon,run.wlevel),spaceWeaponLevel()];})()",ctxv);
   ok(_hud257.join()==='SHADOW ORB,space_shadow_icon_4,4',
      'HUD name, icon and tier read the selected space armory level rather than stale ground state');
+}
+
+// ===== 258. STAGE 9 HEADLESS END-TO-END CONTRACT =====
+console.log("=== 258. Stage 9 Velocity Void headless contract ===");
+{
+  /* This is deliberately non-visual.  Stage 9 used to be "present" while its corridor was empty,
+     and later had individual features which existed only as source declarations.  Exercise each
+     gameplay handoff here so the bonus route can be audited without a browser playtest. */
+  var _cfg258=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var c=_levelCfg(9);return JSON.stringify({bonus:curStage.bonus,boss:curStage.boss,master:c.master,liquid:c.liquid,plateW:c.plateW,h:c.h,scrollLen:c.scrollLen,loopMaster:c.loopMaster,continuousBoss:c.continuousBoss});})()",ctxv));
+  ok(_cfg258.bonus===true && _cfg258.boss==='tidalfusion',
+     'Stage 9 remains an out-of-sequence bonus run ending at the Rift Warden fusion');
+  ok(_cfg258.master==='nst9_voidwater_master' && _cfg258.plateW===680 && _cfg258.h===4096 &&
+     _cfg258.scrollLen===4096 && _cfg258.loopMaster===true && _cfg258.continuousBoss===true && _cfg258.liquid===null,
+     'the Velocity Void is one continuous 680px authored space/water scroll with no arena teleport');
+
+  var _plan258=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var P=buildStagePlan(9),seen=[],real=spawnEnemy;spawnEnemy=function(t){seen.push(t);return null;};P.forEach(function(w){(w.fn||w[1]||function(){})();});spawnEnemy=real;return JSON.stringify({n:P.length,t:P.map(function(w){return w.t;}),cast:Array.from(new Set(seen)).sort()});})()",ctxv));
+  var _cast258=['cbreak','dreadv','echof','gleech','horizon','pmine','pneedle','riftrock','riftrocksm','tsplit','vmanta','wskim'];
+  ok(_plan258.n===20 && JSON.stringify(_plan258.cast)===JSON.stringify(_cast258),
+     'all 20 authored events field only the exact twelve-family Velocity Void cast');
+  ok(_plan258.t.every(function(t,i,a){return Number.isFinite(t) && t>=0 && t<42 && (i===0||t>=a[i-1]);}),
+     'every Stage 9 event is finite, time-sorted and lands before the 42-second boss gate');
+
+  var _unlock258=JSON.parse(vm.runInContext("(function(){campaign.bonusUnlocked=0;campaign.unlockedMax=5;s9warp=null;s9MapCine=null;run.stage=5;player.x=233;player.y=367;s9WarpStart();var born=s9warp&&s9warp.ph;s9WarpTick(S9W_DRAW+0.01);var white=s9warp&&s9warp.ph;s9WarpTick(S9W_WHITE+0.01);var map=state===GS.STAGESEL&&!!s9MapCine;s9MapCineTick(1.16);s9MapCineTick(1.31);return JSON.stringify({born:born,white:white,map:map,bonus:campaign.bonusUnlocked,cursor:sselCursor,unlocked:campaign.unlockedMax});})()",ctxv));
+  ok(_unlock258.born==='draw' && _unlock258.white==='white' && _unlock258.map,
+     'the ninth gate owns its draw/whiteout frames before handing control to the campaign map');
+  ok(_unlock258.bonus===1 && _unlock258.cursor===9 && _unlock258.unlocked===5,
+     'the map cinematic unlocks only the bonus node without corrupting linear campaign progress');
+
+  var _entry258=JSON.parse(vm.runInContext("(function(){campaign.bonusUnlocked=1;run.spaceLevels=[4,3,5];run.spaceWeapon=2;run.gravityShipReady=true;beginStage(9);return JSON.stringify({spent:campaign.bonusUnlocked,space:run.spaceMode,levels:run.spaceLevels,weapon:run.spaceWeapon,gravity:run.gravityShipReady,phase:gravityMode&&gravityMode.phase,retained:gravityMode&&gravityMode.retained});})()",ctxv));
+  ok(_entry258.spent===0 && _entry258.space===true && _entry258.levels.join()==='4,3,5' && _entry258.weapon===2,
+     'entering Stage 9 consumes the one-use latch and retains the earned space-armory levels');
+  ok(_entry258.gravity===true && _entry258.phase==='active' && _entry258.retained===true,
+     'Stage 9 restores the completed Gravity craft instead of replaying its assembly');
+
+  var _water258=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];enemies.length=0;s9WaterReset();var r=spawnEnemy('riftrock',240,120,{pattern:'s9chaos'});r._s9x0=r.x;r._s9y0=r.y;r._s9vx=0;r._s9vy=70;var x0=r.x,y0=r.y,vy0=r._s9vy;s9ChaosTick(r,0.25);var motion={dx:r.x-x0,dy:r.y-y0,dvy:r._s9vy-vy0};killEnemy(r);var born=s9WaterFx.map(function(f){return {main:f.main,x:f.x,y:f.y,vy:f.vy,t:f.t};});var child=enemies.filter(function(e){return e!==r&&e.type==='riftrocksm'&&e._waterChild;}).length;s9WaterTick(0.20);return JSON.stringify({rock:r._waterRock,dead:r.dead,motion:motion,fx0:born.length,drops:born.filter(function(f){return !f.main;}).length,children:child,gravity:s9WaterFx.filter(function(f){return !f.main;}).every(function(f,i){return f.vy>born.filter(function(q){return !q.main;})[i].vy&&Number.isFinite(f.x)&&Number.isFinite(f.y);})});})()",ctxv));
+  ok(_water258.rock===2 && _water258.motion.dx===0 && _water258.motion.dy>0 && _water258.motion.dvy>0,
+     'a large water-rock falls under gravity without side-to-side wobble');
+  ok(_water258.dead===true && _water258.fx0===11 && _water258.drops===10 && _water258.children===2 && _water258.gravity,
+     'destroying it produces one oversized authored burst, ten gravity droplets and two shootable fragments');
+
+  var _fusion258=JSON.parse(vm.runInContext("(function(){var b={x:VW/2,y:-120,t:0,flash:0,enter:true};s9FusionBossInit(b,1000);for(var i=0;i<100;i++){b.t+=1/60;s9FusionBossTick(b,1/60);}var F=b._s9fusion;F.left._esh=null;var hit=s9FusionHitTest(b,F.left.x,F.left.y);s9FusionHit(b,99999);var intact=F.left.hp===1&&F.right.hp>1&&F.phase==='fuse';for(var j=0;j<130;j++){b.t+=1/60;s9FusionBossTick(b,1/60);}return JSON.stringify({hit:hit,intact:intact,phase:F.phase,kind:b.kind,ship:b._ship,name:b.name,hp:b.hp,maxhp:b.maxhp,x:b.x,y:b.y,enter:b.enter});})()",ctxv));
+  ok(_fusion258.hit===true && _fusion258.intact===true,
+     'the twin Wardens take independent hits but neither can disappear before convergence');
+  ok(_fusion258.phase==='tidal' && _fusion258.kind==='tidalsovereign' && _fusion258.ship==='tidalsovereign' && _fusion258.name==='TIDAL SOVEREIGN' &&
+     _fusion258.hp===_fusion258.maxhp && _fusion258.maxhp===1350 && _fusion258.x===vm.runInContext('VW/2',ctxv) && _fusion258.y===132 && _fusion258.enter===false,
+     'the completed convergence hands off to one intact, centred, full-health Tidal Sovereign');
+
+  var _src258=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
+  var _clear258=_src258.slice(_src258.indexOf('function drawStageClear(dt)'),_src258.indexOf('function drawGameOver(dt)'));
+  ok(_clear258.indexOf('if(curStage && curStage.bonus)')>=0 &&
+     _clear258.indexOf("openStageSelect(clamp(campaign.unlockedMax||1,1,8), {})")>=0 &&
+     _clear258.indexOf('if(curStage && curStage.bonus)')<_clear258.indexOf('else if(run.stage>=CAMPAIGN_STAGES)'),
+     'clearing the bonus stage returns to the campaign map before the victory/credits gate');
+}
+
+// ===== 259. GENERATED COMBAT AUDIO ROUTING =====
+console.log("=== 259. generated combat audio routing ===");
+{
+  var _src259=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
+  var _bank259={
+    machineGun:'jet_machinegun_shot_01.wav', heavyMachineGun:'jet_machinegun_shot_03.wav',
+    enemyMachineGunLight:'enemy_machine_shot_light.wav', enemyMachineGunHeavy:'enemy_machine_shot_heavy.wav',
+    enemyMachineGunBurst:'enemy_machine_burst.wav', coleSonicBoom:'cole_sonic_boom.wav',
+    laserBeamStart:'laser_beam_start.wav', laserBeamLoop:'laser_beam_loop.wav', laserBeamEnd:'laser_beam_end.wav',
+    flameThrowerStart:'flamethrower_ignite.wav', flameThrowerLoop:'flamethrower_loop.wav', flameThrowerEnd:'flamethrower_release.wav',
+    iceBreathStart:'ice_breath_start.wav', iceBreathLoop:'ice_breath_loop.wav', iceBreathEnd:'ice_breath_release.wav'
+  };
+  ok(Object.keys(_bank259).every(function(k){
+       var rel=sandbox.window.BOFA.sfx[k];
+       return typeof rel==='string' && rel.endsWith('/'+_bank259[k]) && fs.existsSync(path.join(ROOT,rel));
+     }), 'every signature V4 player/enemy combat cue maps to its shipped file');
+  ok(Object.keys(_bank259).every(function(k){return vm.runInContext("typeof Audio.SFX['"+k+"']==='function'",ctxv);}),
+     'the sample layer exposes a callable Audio.SFX method for every signature combat cue');
+  ok(['machineGun','heavyMachineGun','enemyMachineGunLight','enemyMachineGunHeavy','enemyMachineGunBurst','coleSonicBoom',
+      'laserBeamStart','laserBeamLoop','laserBeamEnd','flameThrowerStart','flameThrowerLoop','flameThrowerEnd',
+      'iceBreathStart','iceBreathLoop','iceBreathEnd'].every(function(k){return vm.runInContext("!!(Snd.TAME['"+k+"'])",ctxv);}),
+     'all high-frequency and sustained signature cues retain explicit mix shaping');
+
+  var _routes259=JSON.parse(vm.runInContext("(function(){var hit={start:0,legacy:0,on:0,off:0,end:0};var keep={start:Audio.SFX.laserBeamStart,legacy:Audio.SFX.laser,on:Snd.loopOn,off:Snd.loopOff,end:Audio.SFX.laserBeamEnd};Audio.SFX.laserBeamStart=function(){hit.start++;};Audio.SFX.laser=function(){hit.legacy++;};Snd.loopOn=function(n){if(n==='laserBeamLoop')hit.on++;};Snd.loopOff=function(n){if(n==='laserBeamLoop')hit.off++;};Audio.SFX.laserBeamEnd=function(){hit.end++;};beginStage(1);state=GS.PLAY;run.spaceMode=false;run.pilot='axel';run.weapon=3;run.wlevel=3;special=null;player.dead=false;player.x=240;player.y=400;pBullets.length=0;pShoot();pShoot();var sharedCount=pBullets.filter(function(b){return b.kind==='beam';}).length;var startAfterRefresh=hit.start;updatePlay(1/60);var onAfterLive=hit.on;pBullets[0].life=0.001;updatePlay(1/60);var shared={count:sharedCount,start:startAfterRefresh,legacy:hit.legacy,on:onAfterLive,off:hit.off,end:hit.end};hit.start=hit.legacy=hit.on=hit.off=hit.end=0;pBullets.length=0;run.spaceMode=false;run.pilot='maverick';run.weapon=3;run.wlevel=3;special=null;player.dead=false;pShoot();var mav={lances:pBullets.filter(function(b){return b.kind==='mavlaser';}).length,start:hit.start,legacy:hit.legacy,on:hit.on};Audio.SFX.laserBeamStart=keep.start;Audio.SFX.laser=keep.legacy;Snd.loopOn=keep.on;Snd.loopOff=keep.off;Audio.SFX.laserBeamEnd=keep.end;return JSON.stringify({shared:shared,mav:mav});})()",ctxv));
+  ok(_routes259.shared.count===1 && _routes259.shared.start===1 && _routes259.shared.legacy===0,
+     'holding the shared laser refreshes one beam and plays its attack exactly once');
+  ok(_routes259.shared.on===1 && _routes259.shared.off===1 && _routes259.shared.end===1,
+     'a live shared beam sustains one loop route and expiry fades it before the release cue');
+  ok(_routes259.mav.lances===5 && _routes259.mav.start===0 && _routes259.mav.on===0 && _routes259.mav.legacy===1,
+     'Maverick Level III keeps five discrete lances and never starts the shared held-beam bed');
+
+  var _flame259=JSON.parse(vm.runInContext("(function(){var hit={start:0,on:[],off:[],end:0};var keep={start:Audio.SFX.flameThrowerStart,on:Snd.loopOn,off:Snd.loopOff,end:Audio.SFX.flameThrowerEnd};Audio.SFX.flameThrowerStart=function(){hit.start++;};Audio.SFX.flameThrowerEnd=function(){hit.end++;};Snd.loopOn=function(n){hit.on.push(n);};Snd.loopOff=function(n){hit.off.push(n);};beginStage(2);state=GS.PLAY;run.pilot='axel';run.weapon=4;pBullets.length=0;flameFire(3);flameFire(3);var f=pBullets[0];f.life=0.001;updatePlay(1/60);Audio.SFX.flameThrowerStart=keep.start;Audio.SFX.flameThrowerEnd=keep.end;Snd.loopOn=keep.on;Snd.loopOff=keep.off;return JSON.stringify({start:hit.start,on:hit.on,off:hit.off,end:hit.end,count:pBullets.filter(function(b){return b.kind==='flame';}).length});})()",ctxv));
+  ok(_flame259.start===1 && _flame259.on.filter(function(n){return n==='flameThrowerLoop';}).length===2,
+     'held flame creates one ignition transient while safely refreshing its authored loop');
+  ok(_flame259.end===1 && _flame259.off.indexOf('flameThrowerLoop')>=0,
+     'flame expiry fades the sustained bed and plays one release cue');
+
+  var _mg259=_src259.slice(_src259.indexOf('function pShoot()'),_src259.indexOf('function updatePlayerLocks'));
+  ok(_mg259.indexOf('Audio.SFX.heavyMachineGun')>=0 && _mg259.indexOf('Audio.SFX.machineGun')>=0 &&
+     _src259.indexOf('coleSonicBoom')>=0 && _src259.indexOf('Audio.SFX.enemyMachineGunLight')>=0 &&
+     _src259.indexOf('Audio.SFX.enemyMachineGunHeavy')>=0 && _src259.indexOf('Audio.SFX.enemyMachineGunBurst')>=0,
+     'player MG, Lizzie heavy MG, Cole boom and all enemy MG families reach their dedicated routes');
+}
+
+// ===== 260. VELOCITY VOID SPECIALIST + WARDEN AI =====
+console.log("=== 260. Velocity Void specialist and Warden AI ===");
+{
+  var _needle260=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];player.dead=false;player.x=240;player.y=440;var e={_s9:'needle',x:220,y:90,t:0,phase:0,spin:0,hp:20,maxhp:20,w:34,h:40,_s9x0:220,_s9y0:100,_s9vx:0,_s9vy:80,_s9fire:99,_s9PhaseCd:0};s9ChaosTick(e,0.01);var on={noHit:e._noHit,t:e._s9PhaseT,x:e.x,y:e.y};e.t+=0.47;s9ChaosTick(e,0.47);return JSON.stringify({on:on,off:!e._noHit&&e._s9PhaseT===0,finite:Number.isFinite(e.x)&&Number.isFinite(e.y)});})()",ctxv));
+  ok(_needle260.on.noHit===true && _needle260.on.t>0 && _needle260.off && _needle260.finite,
+     'Phase Needles enter a short invulnerable phase window, visibly travel, and return hittable');
+
+  var _prism260=JSON.parse(vm.runInContext("(function(){player.dead=false;player.x=240;player.y=440;eBullets.length=0;var e={_s9:'laserwheel',x:240,y:120,h:38,_s9rot:0};s9ChaosFire(e);var a=eBullets.map(function(b){return Math.atan2(b.vy,b.vx);}).sort(function(a,b){return a-b;});var gaps=[];for(var i=0;i<a.length;i++){var n=a[(i+1)%a.length]+(i===a.length-1?TAU:0);gaps.push(n-a[i]);}return JSON.stringify({n:eBullets.length,k:eBullets.map(function(b){return b.kind;}),g:gaps});})()",ctxv));
+  ok(_prism260.n===6 && _prism260.k.every(function(k){return k==='photon';}) &&
+     _prism260.g.every(function(g){return Math.abs(g-Math.PI/3)<0.0001;}),
+     'Prism Mines refract six evenly spaced rotating photon lanes with six readable gaps');
+
+  var _echo260=JSON.parse(vm.runInContext("(function(){player.dead=false;player.x=260;player.y=440;eBullets.length=0;var e={_s9:'echo',x:240,y:120,t:1,phase:0,spin:0,hp:28,maxhp:28,w:42,h:44,_s9x0:240,_s9y0:120,_s9vx:0,_s9vy:0,_s9fire:99,_s9EchoSample:99,_s9EchoHist:[{x:224,y:108,age:.18},{x:208,y:96,age:.36}]};s9ChaosFire(e);var q=e._s9EchoQ.map(function(v){return [v.x,v.y,v.t];});var n0=eBullets.length;s9ChaosTick(e,.15);var n1=eBullets.length;s9ChaosTick(e,.15);var n2=eBullets.length;return JSON.stringify({q:q,n:[n0,n1,n2],left:e._s9EchoQ.length});})()",ctxv));
+  ok(_echo260.q.length===2 && _echo260.q[0][0]===224 && _echo260.q[1][0]===208,
+     'Echo Fighters capture two real historical hull positions instead of drawing fixed-offset ghosts');
+  ok(_echo260.n.join()==='3,6,9' && _echo260.left===0,
+     'the present fighter fires first, then both afterimages repeat separate delayed three-shot volleys');
+
+  var _rim260=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var e={_s9:'rim',x:300,y:120,t:0,phase:0,spin:0,_s9x0:300,_s9y0:100,_s9vx:0,_s9vy:0,_s9fire:99};s9ChaosTick(e,1/60);return JSON.stringify({x:e.x,world:worldWidth()});})()",ctxv));
+  ok(_rim260.world===680 && _rim260.x===26,
+     'a Gate Leech chooses its rim from the full 680px world, not the 480px viewport midpoint');
+
+  var _split260=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];enemies.length=0;var e=spawnEnemy('tsplit',240,120,{pattern:'s9chaos'});e._s9x0=e.x;e._s9y0=e.y;e._s9vy=0;e._s9fire=99;e.hp=e.maxhp*.5;s9ChaosTick(e,1/60);var once=enemies.filter(function(x){return x!==e&&x.type==='pneedle';}).length;s9ChaosTick(e,1/60);var twice=enemies.filter(function(x){return x!==e&&x.type==='pneedle';}).length;return JSON.stringify({once:once,twice:twice,latch:e._didSplit});})()",ctxv));
+  ok(_split260.once===2 && _split260.twice===2 && _split260.latch===1,
+     'Twin Splitters produce exactly two independently spaced Phase Needles once at half health');
+
+  var _warden260=JSON.parse(vm.runInContext("(function(){player.dead=false;player.x=240;player.y=430;var old=performance.now,w={x:180,y:130,side:'L'};performance.now=function(){return 0;};eBullets.length=0;s9FusionWardenFire(w,1.1);var a=eBullets.map(function(b){return [b.vx.toFixed(5),b.vy.toFixed(5),b.kind];});performance.now=function(){return 999999;};eBullets.length=0;s9FusionWardenFire(w,1.1);var b=eBullets.map(function(v){return [v.vx.toFixed(5),v.vy.toFixed(5),v.kind];});performance.now=old;return JSON.stringify({a:a,b:b});})()",ctxv));
+  ok(JSON.stringify(_warden260.a)===JSON.stringify(_warden260.b) && _warden260.a.length===9,
+     'Rift Warden photon wheels are simulation-clock deterministic and cannot rotate while paused');
+  ok(vm.runInContext("SHIPBOSS.tidalsovereign.pats.join(',')==='fan2,beamfan,siege' && SHIPBOSS.tidalsovereign.proj==='cyclone'",ctxv),
+     'the fused Tidal Sovereign retains three distinct attack phases and its exclusive cyclone family');
+}
+
+// ===== 261. STAGE 9 FULL HEADLESS SOAK =====
+console.log("=== 261. Stage 9 full headless soak ===");
+{
+  vm.runInContext("run.stage=9;curStage=STAGES[8];state=GS.PLAY;enemies.length=0;pBullets.length=0;eBullets.length=0;powerups.length=0;boss=null;subBoss=null;subBossActive=false;subBossDone=false;subBossTriggered=false;bossActive=false;bossDefeated=false;bossWarned=false;warnT=0;warnKind=null;_sc1=false;_sc2=false;_mc1=false;_mc2=false;stageEnding=0;stageTimer=0;spawnClock=0;_waveGap=0;mapScroll=0;waveIdx=0;stagePlan=buildStagePlan(9);player.dead=false;player.invuln=999999;player.x=VW/2;player.y=VH-70;window.__s9SoakSeen={};window.__realS9Spawn=spawnEnemy;spawnEnemy=function(t){window.__s9SoakSeen[t]=1;return window.__realS9Spawn.apply(null,arguments);};",ctxv);
+  var _seen261={},_peak261=0,_shots261=0,_sub261=false,_boss261=false,_crash261=null;
+  try{
+    for(var _f261=0;_f261<60*90;_f261++){
+      vm.runInContext("updatePlay(1/60);",ctxv);
+      if(_f261%20===0){
+        JSON.parse(vm.runInContext("JSON.stringify(enemies.map(function(e){return e.type;}))",ctxv)).forEach(function(k){_seen261[k]=1;});
+        _peak261=Math.max(_peak261,vm.runInContext("enemies.length",ctxv));
+        _shots261=Math.max(_shots261,vm.runInContext("eBullets.length",ctxv));
+        if(vm.runInContext("!!(subBoss&&subBoss.kind==='warpsentinel')",ctxv)){
+          _sub261=true;
+          vm.runInContext("if(subBoss&&!subBoss.dead){subBoss.hp=0;subBoss.dead=true;subBoss.dying=0;}",ctxv);
+        }
+        if(vm.runInContext("!!(boss&&boss.kind==='tidalfusion'&&boss._s9fusion)",ctxv)) _boss261=true;
+        /* Once the final act begins, emulate steady player dispatch so the real director can
+           release every late apex wave before the 42-second boss warning closes the wave pump.
+           Leaving the untouched soak field alive until t=45 made the cap randomly starve the
+           34.2-second Dreadnought even though the following clock had already reached the boss. */
+        if(vm.runInContext("stageTimer>32 && !bossActive",ctxv)) vm.runInContext("enemies.length=0;",ctxv);
+      }
+    }
+  }catch(_err261){_crash261=String(_err261&&_err261.message||_err261);}
+  _seen261=JSON.parse(vm.runInContext("JSON.stringify(window.__s9SoakSeen||{})",ctxv));
+  vm.runInContext("spawnEnemy=window.__realS9Spawn;delete window.__realS9Spawn;",ctxv);
+  var _cast261=['cbreak','dreadv','echof','gleech','horizon','pmine','pneedle','riftrock','riftrocksm','tsplit','vmanta','wskim'];
+  ok(_crash261===null,'Stage 9 survives a full 90-second update soak without throwing'+(_crash261?' -> '+_crash261:''));
+  ok(_cast261.every(function(k){return _seen261[k];}),
+     'the soak observes all twelve Velocity Void families in live director order (saw '+Object.keys(_seen261).sort().join(',')+')');
+  ok(_peak261>0 && _shots261>0,
+     'the live field populates and its specialist/boss fire controllers emit rounds');
+  ok(vm.runInContext("enemies.every(function(e){return Number.isFinite(e.x)&&Number.isFinite(e.y);}) && eBullets.every(function(b){return Number.isFinite(b.x)&&Number.isFinite(b.y)&&Number.isFinite(b.vx)&&Number.isFinite(b.vy);})",ctxv),
+     'all surviving enemies and projectiles remain finite after 5,400 simulation frames');
+  ok(_sub261,'Warp Sentinel arrives and clears through the real mid-stage gate');
+  ok(_boss261,'the live director reaches the Rift Warden fusion encounter at the end of the continuous scroll');
 }
 
 console.log('\n============================================');
