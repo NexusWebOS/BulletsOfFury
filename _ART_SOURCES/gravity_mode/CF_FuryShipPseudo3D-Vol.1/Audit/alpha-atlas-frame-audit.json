@@ -1,0 +1,1211 @@
+{
+  "pngCount": 42,
+  "passed": 42,
+  "failed": 0,
+  "uniqueSomersaultFrames": 16,
+  "atlasChecks": [
+    {
+      "asset": "bof2-furyship-somersault",
+      "matchesStandaloneFrames": true
+    },
+    {
+      "asset": "bof2-furyship-somersault-128",
+      "matchesStandaloneFrames": true
+    },
+    {
+      "asset": "bof2-furyship-twin-thrusters",
+      "matchesStandaloneFrames": true
+    }
+  ],
+  "gifChecks": [
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/Previews/bof2-furyship-somersault-preview.gif",
+      "frameCount": 16,
+      "opaque": true,
+      "exactReconstruction": true
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/Previews/bof2-furyship-rear-thrust-preview.gif",
+      "frameCount": 4,
+      "opaque": true,
+      "exactReconstruction": true
+    }
+  ],
+  "files": [
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-01.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        8,
+        37,
+        120,
+        102
+      ],
+      "padding": [
+        8,
+        37,
+        8,
+        26
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "8824e6db289c6eac4d777f922d0c58cf472436a0574b7f3e61859195ccf09685"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-02.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        4,
+        44,
+        123,
+        103
+      ],
+      "padding": [
+        4,
+        44,
+        5,
+        25
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "2783767defd33f4d0896a0a3d043313f1186013f358bbe3708efb87b7e3aaca0"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-03.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        4,
+        35,
+        123,
+        90
+      ],
+      "padding": [
+        4,
+        35,
+        5,
+        38
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "e34c6946fe386a9c0175c1d2dcacd045eef9132478939642fb9382450b174160"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-04.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        21,
+        17,
+        107,
+        113
+      ],
+      "padding": [
+        21,
+        17,
+        21,
+        15
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "790c2eac972799048e4b24c492e0ae345298bffef9ca97a8a30b4f5da27429b5"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-05.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        9,
+        21,
+        119,
+        120
+      ],
+      "padding": [
+        9,
+        21,
+        9,
+        8
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "7ccef4fdf0192ab36f39c3a864e4a4a7c14903c957a2d5b1ea0f29a873c84a05"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-06.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        6,
+        27,
+        117,
+        111
+      ],
+      "padding": [
+        6,
+        27,
+        11,
+        17
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "2e2015cc90cdbf562168cc08ed937440bec4c3080c456536e9ac76f64f3ba31e"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-07.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        9,
+        32,
+        119,
+        102
+      ],
+      "padding": [
+        9,
+        32,
+        9,
+        26
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "46e513a414d4acf890cf08babf2921b26cd2ecde9f1734345a2cfdee08640313"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-08.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        10,
+        43,
+        118,
+        84
+      ],
+      "padding": [
+        10,
+        43,
+        10,
+        44
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "fc8ebc0ddc1f211b543af209827aac74a083c4d706dfaee6ec0ad1cf55dc3aa2"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-09.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        5,
+        45,
+        117,
+        91
+      ],
+      "padding": [
+        5,
+        45,
+        11,
+        37
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "d89f03942b89d8a226fde516d0883950bf86f24ca91351c6b731b4b440523208"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-10.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        4,
+        37,
+        123,
+        97
+      ],
+      "padding": [
+        4,
+        37,
+        5,
+        31
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "46d647b93c380777a843821d349c8a0d580e4ce2c5edc88bee548d76be20ef2e"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-11.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        11,
+        17,
+        117,
+        113
+      ],
+      "padding": [
+        11,
+        17,
+        11,
+        15
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "db24450518b1d33fba72318abddaab7be6f8150ac81d1ead08483bded99a03f8"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-12.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        14,
+        9,
+        114,
+        117
+      ],
+      "padding": [
+        14,
+        9,
+        14,
+        11
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "eab795c8397536a3222973be29d08e6dbf295854c9868af40717b05e0628a71d"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-13.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        19,
+        7,
+        109,
+        121
+      ],
+      "padding": [
+        19,
+        7,
+        19,
+        7
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "95a0afa9fdf7bad73c6303bf9976b8385dc3b7bff0fd87f95515af677d6b1acf"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-14.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        9,
+        21,
+        118,
+        109
+      ],
+      "padding": [
+        9,
+        21,
+        10,
+        19
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "a0fa025e3cc812e31c017e081e04872c4bc11bce4a23f54bb796765087639523"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-15.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        6,
+        21,
+        121,
+        107
+      ],
+      "padding": [
+        6,
+        21,
+        7,
+        21
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "b1a436082be7df1211ee295d8d28fac93ba81eba1fe756190a44e4ae55860c32"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-alpha-16.png",
+      "size": [
+        128,
+        128
+      ],
+      "bbox": [
+        6,
+        21,
+        121,
+        108
+      ],
+      "padding": [
+        6,
+        21,
+        7,
+        20
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "02f3ef19a77abd46dda55ba4a33c8a2a19ab74c590ede9a1dc5042770b1752b8"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip128/bof2-furyship-somersault-128-atlas-alpha.png",
+      "size": [
+        512,
+        512
+      ],
+      "bbox": [
+        5,
+        17,
+        505,
+        505
+      ],
+      "padding": [
+        5,
+        17,
+        7,
+        7
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "4c8cafda069ff11c21e8bdb716c67e3661ac740d5f10fd666ec68a2fc58e71c3"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-01.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        17,
+        74,
+        239,
+        204
+      ],
+      "padding": [
+        17,
+        74,
+        17,
+        52
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "70e04a97a45cca667c540541cd5848b8f450018751a204d1abe895521bf8dca9"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-02.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        8,
+        89,
+        246,
+        206
+      ],
+      "padding": [
+        8,
+        89,
+        10,
+        50
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "486811e376d97df53c866684a72c3c78636ce21447d70442c2f78a3cbc720f1c"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-03.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        9,
+        70,
+        247,
+        180
+      ],
+      "padding": [
+        9,
+        70,
+        9,
+        76
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "b03dada2b81350a5a155e0d189883c48e66f980554aa52f2bd8625ddc7e98869"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-04.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        42,
+        34,
+        214,
+        225
+      ],
+      "padding": [
+        42,
+        34,
+        42,
+        31
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "310aa929be9aade492bd7307134f6d74d1656e166fa51645b6fab2605094fa83"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-05.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        18,
+        41,
+        237,
+        239
+      ],
+      "padding": [
+        18,
+        41,
+        19,
+        17
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "0a2e8e573f90647262e0cc4d4b60e81f6dd765bb2381206a2afb462d33e0ae43"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-06.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        12,
+        55,
+        233,
+        222
+      ],
+      "padding": [
+        12,
+        55,
+        23,
+        34
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "199d95751351cb54396d0589b1abb70f414c0793c95a5235b02c59df5261f5b6"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-07.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        18,
+        65,
+        237,
+        204
+      ],
+      "padding": [
+        18,
+        65,
+        19,
+        52
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "484da719b6b5ceb9aed9bb638dd0a858fa5c04ed843a48932e9e9640f0416ba3"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-08.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        21,
+        87,
+        235,
+        167
+      ],
+      "padding": [
+        21,
+        87,
+        21,
+        89
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "3a4313465cd4a38a13b3271f0c98acbb1736cbc6f5865b4417f5f128ffb36586"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-09.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        10,
+        90,
+        233,
+        183
+      ],
+      "padding": [
+        10,
+        90,
+        23,
+        73
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "bbd570c5d2899f6f3446ac2016b97f267f1638a47b7dd7cb6aff04413f8e5442"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-10.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        8,
+        75,
+        245,
+        193
+      ],
+      "padding": [
+        8,
+        75,
+        11,
+        63
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "8a90bfe3f653a5009d42c094ff54daa147cf38ba74f3febba4b32eb11391789b"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-11.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        22,
+        35,
+        233,
+        226
+      ],
+      "padding": [
+        22,
+        35,
+        23,
+        30
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "68d6711474b9d026409e089f244c652ad4fad5342b0305766fd021593adb3309"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-12.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        28,
+        19,
+        227,
+        233
+      ],
+      "padding": [
+        28,
+        19,
+        29,
+        23
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "801fbe53b1803536c8d673ad7cfc00426e317a8de9584991e629f41ae6603130"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-13.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        38,
+        15,
+        218,
+        241
+      ],
+      "padding": [
+        38,
+        15,
+        38,
+        15
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "e47656948fb978b7ada3628fe67cf8483be3f40d124c71f55348a544d4729c0f"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-14.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        19,
+        42,
+        236,
+        218
+      ],
+      "padding": [
+        19,
+        42,
+        20,
+        38
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "e81784328c6b290a7463399a6a40df8b9f0673e05fef89ac4b39f2e24ce65a85"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-15.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        13,
+        42,
+        242,
+        214
+      ],
+      "padding": [
+        13,
+        42,
+        14,
+        42
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "11e13be516a8528f92519abb5335a15cf3ddcf1c63f9f5dddfa8f4a04e0b7411"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-alpha-16.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        13,
+        42,
+        242,
+        216
+      ],
+      "padding": [
+        13,
+        42,
+        14,
+        40
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "980f9000afbde9ed0bc9b93639680379f2599d558b74849e50cb4db20278cb4f"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryShip256/bof2-furyship-somersault-atlas-alpha.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "bbox": [
+        10,
+        34,
+        1010,
+        1009
+      ],
+      "padding": [
+        10,
+        34,
+        14,
+        15
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "8ad106dd26ab2ab822215890bccaab2ff8ced80a465b115770ed3e8c183f3b7a"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryThrusters256/bof2-furyship-twin-thrusters-alpha-01.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        84,
+        199,
+        171,
+        250
+      ],
+      "padding": [
+        84,
+        199,
+        85,
+        6
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "336a749bc71790caab129f97b92ac11c3d8e2d0b22da50f7254730bfd700c354"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryThrusters256/bof2-furyship-twin-thrusters-alpha-02.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        82,
+        199,
+        172,
+        252
+      ],
+      "padding": [
+        82,
+        199,
+        84,
+        4
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "c031571ce122f406b1a703c8684a5d96d8cfabf36020c43c35b58e8e9756035c"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryThrusters256/bof2-furyship-twin-thrusters-alpha-03.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        88,
+        199,
+        168,
+        252
+      ],
+      "padding": [
+        88,
+        199,
+        88,
+        4
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "88b5104bbf93de046187f4ec989e9a4f9c5e923ba4fa822f9d1266779437ecd9"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryThrusters256/bof2-furyship-twin-thrusters-alpha-04.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        84,
+        199,
+        172,
+        252
+      ],
+      "padding": [
+        84,
+        199,
+        84,
+        4
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "ee625feca36f03e23479e61c29e0fe764119b11495863161ff9bfedc3c15b30d"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/FuryThrusters256/bof2-furyship-twin-thrusters-atlas-alpha.png",
+      "size": [
+        1024,
+        256
+      ],
+      "bbox": [
+        84,
+        199,
+        940,
+        252
+      ],
+      "padding": [
+        84,
+        199,
+        84,
+        4
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "a696eb9cbddc2cc51958384856298c50bcffcfb2f9d84a59ec9c91172fa8fa05"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/Previews/bof2-furyship-rear-approved-reference.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        17,
+        74,
+        239,
+        230
+      ],
+      "padding": [
+        17,
+        74,
+        17,
+        26
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "d31033da13d4e1611916ead0c33969c7b9b8e296c91b785931b94590060e55be"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/Previews/bof2-furyship-rear-powered.png",
+      "size": [
+        256,
+        256
+      ],
+      "bbox": [
+        17,
+        74,
+        239,
+        252
+      ],
+      "padding": [
+        17,
+        74,
+        17,
+        4
+      ],
+      "alphaValues": [
+        0,
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": false,
+      "sha256": "bceac73c1e8d24d1de07cf4e67202f514c7ba4e80d912d288c609c6215a35805"
+    },
+    {
+      "file": "CF_FuryShipPseudo3D-Vol.1/Previews/bof2-furyship-somersault-contact.png",
+      "size": [
+        1280,
+        1280
+      ],
+      "bbox": [
+        0,
+        0,
+        1280,
+        1280
+      ],
+      "padding": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "alphaValues": [
+        255
+      ],
+      "exactMagentaOpaque": 0,
+      "hiddenRgb": 0,
+      "partialAlpha": 0,
+      "edgeContact": true,
+      "sha256": "a18245c0f56d6c6b085ba391312ab5e6d06256c3464d2853f5a37b6ea171f9c3"
+    }
+  ]
+}

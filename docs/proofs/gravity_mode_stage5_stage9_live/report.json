@@ -1,0 +1,36 @@
+{
+  "stage5": {
+    "stage": 5,
+    "pilot": "axel",
+    "line": "AXEL, IT'S TOO DANGEROUS TO TRAVEL TO SPACE! FURY HQ IS DISPATCHING A SPACESHIP KIT YOUR WAY, STAT!",
+    "phase": "drift"
+  },
+  "phaseMachine": {
+    "seen": [
+      "charge",
+      "scatter",
+      "snap",
+      "pixelglow",
+      "whiteout",
+      "reveal",
+      "active"
+    ],
+    "ready": true,
+    "guard": 161
+  },
+  "stage9Entry": {
+    "stage": 9,
+    "space": true,
+    "gravityPhase": "active",
+    "retained": true,
+    "ready": true,
+    "launchPhase": "run"
+  },
+  "stage9Handoff": {
+    "launchPhase": "cd",
+    "gravityPhase": "active",
+    "ready": true
+  },
+  "pageErrors": [],
+  "consoleErrors": []
+}

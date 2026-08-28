@@ -180,6 +180,9 @@
      Must load BEFORE game.js: sxDraw composites the body from its section plates
      using these offsets, and sxHit attributes shots with these centroids. -->
 <script src="assets/section_geom.js"></script>
+<!-- Gravity Mode atlas metadata is a classic script so direct file:// play works too; fetch()
+     cannot read a neighbouring JSON file in that mode. The texture itself is still one atlas. -->
+<script src="assets/game/atlas/bof_gravity_mode_space_weapons.js"></script>
 <script src="assets/game.js"></script>
 <script>
 (function(){

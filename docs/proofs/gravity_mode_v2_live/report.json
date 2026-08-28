@@ -1,0 +1,71 @@
+{
+  "laser": {
+    "name": "LASER CANNON",
+    "icon": "space_laser_icon_5",
+    "count": 12,
+    "delays": [
+      0,
+      0.002,
+      0.004,
+      0.006,
+      0.008,
+      0.01
+    ],
+    "kinds": [
+      "spaceLaser"
+    ]
+  },
+  "shadow": {
+    "name": "SHADOW ORB",
+    "icon": "space_shadow_icon_4",
+    "kind": "shadowOrb",
+    "charge": 0.4839354838709681
+  },
+  "volley": {
+    "name": "VOLLEY MISSILES",
+    "icon": "space_volley_icon_5",
+    "seed": "spaceVolleySeed",
+    "count": 3,
+    "phases": [
+      0,
+      1.5707963267948966,
+      3.141592653589793
+    ],
+    "headings": [
+      -0.7047963267948957,
+      -1.5707963267948966,
+      -2.4367963267948967
+    ]
+  },
+  "loadoutIsolation": {
+    "locked": {
+      "space": true,
+      "weapon": 0,
+      "missiles": 0,
+      "name": "VOLLEY MISSILES"
+    },
+    "restored": {
+      "space": false,
+      "weapon": 4,
+      "wlevel": 3,
+      "levels": [
+        0,
+        0,
+        0,
+        0,
+        3,
+        0
+      ],
+      "variant": "flamethrower",
+      "missiles": 4
+    }
+  },
+  "paletteContract": {
+    "neutralChanged": 0,
+    "neutralSamples": 51184,
+    "accentChanged": 23232,
+    "accentSamples": 23232
+  },
+  "pageErrors": [],
+  "consoleErrors": []
+}

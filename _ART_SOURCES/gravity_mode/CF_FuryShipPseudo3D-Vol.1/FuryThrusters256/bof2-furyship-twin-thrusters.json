@@ -1,0 +1,78 @@
+{
+  "schema": "coleforge.sprite-animation/1.0",
+  "asset": "bof2-furyship-twin-thrusters",
+  "frame_count": 4,
+  "frame_size": [
+    256,
+    256
+  ],
+  "pivot": [
+    128,
+    128
+  ],
+  "alpha": "binary",
+  "tags": [
+    "overlay",
+    "trail",
+    "thruster",
+    "ship-vfx"
+  ],
+  "animation": {
+    "name": "rear_thrust",
+    "frames": [
+      0,
+      1,
+      2,
+      3
+    ],
+    "fps": 12,
+    "loop": true
+  },
+  "drawOrder": "behind ship body",
+  "visibility": "Use only when the current ship frame marks both engine sockets visible.",
+  "atlas": {
+    "file": "bof2-furyship-twin-thrusters-atlas-alpha.png",
+    "columns": 4,
+    "rows": 1,
+    "cell": [
+      256,
+      256
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      {
+        "frame": 2,
+        "x": 256,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      {
+        "frame": 3,
+        "x": 512,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      },
+      {
+        "frame": 4,
+        "x": 768,
+        "y": 0,
+        "w": 256,
+        "h": 256
+      }
+    ]
+  },
+  "frames": [
+    "bof2-furyship-twin-thrusters-alpha-01.png",
+    "bof2-furyship-twin-thrusters-alpha-02.png",
+    "bof2-furyship-twin-thrusters-alpha-03.png",
+    "bof2-furyship-twin-thrusters-alpha-04.png"
+  ]
+}

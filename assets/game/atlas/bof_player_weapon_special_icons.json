@@ -1,0 +1,815 @@
+{
+  "format": "coleforge.player-icon-atlas.v1",
+  "atlas_key": "bof_player_weapon_special_icons_atlas",
+  "atlas": "bof_player_weapon_special_icons.png",
+  "size": [
+    1024,
+    1152
+  ],
+  "count": 66,
+  "aliases": {
+    "spicon_axel": "special_icon_axel_mega_shield",
+    "spicon_cole": "nsw_icon_cole",
+    "spicon_decker": "special_icon_decker_cloaking_system",
+    "spicon_falva": "special_icon_falva_roller_ball",
+    "spicon_freezer": "special_icon_freezer_time_freeze",
+    "spicon_juggernaut": "special_icon_juggernaut_wrecking_ball",
+    "spicon_lizzie": "special_icon_lizzie_atom_bomb",
+    "spicon_maverick": "special_icon_maverick_helix_beam",
+    "spicon_yuri": "special_icon_yuri_chain_lightning"
+  },
+  "entries": [
+    {
+      "key": "micon_mg_1",
+      "id": "micon_mg_1",
+      "category": "weapon",
+      "label": "MACHINE GUN L1",
+      "rect": [
+        35,
+        31,
+        58,
+        66
+      ]
+    },
+    {
+      "key": "micon_mg_2",
+      "id": "micon_mg_2",
+      "category": "weapon",
+      "label": "MACHINE GUN L2",
+      "rect": [
+        162,
+        31,
+        60,
+        66
+      ]
+    },
+    {
+      "key": "micon_mg_3",
+      "id": "micon_mg_3",
+      "category": "weapon",
+      "label": "MACHINE GUN L3",
+      "rect": [
+        280,
+        16,
+        79,
+        96
+      ]
+    },
+    {
+      "key": "micon_mg_4",
+      "id": "micon_mg_4",
+      "category": "weapon",
+      "label": "MACHINE GUN L4",
+      "rect": [
+        408,
+        16,
+        79,
+        96
+      ]
+    },
+    {
+      "key": "micon_mg_5",
+      "id": "micon_mg_5",
+      "category": "weapon",
+      "label": "MACHINE GUN L5",
+      "rect": [
+        536,
+        16,
+        80,
+        96
+      ]
+    },
+    {
+      "key": "micon_mg_6",
+      "id": "micon_mg_6",
+      "category": "weapon",
+      "label": "MACHINE GUN L6",
+      "rect": [
+        656,
+        16,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "micon_mg_7",
+      "id": "micon_mg_7",
+      "category": "weapon",
+      "label": "MACHINE GUN L7",
+      "rect": [
+        784,
+        16,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "micon_mg_8",
+      "id": "micon_mg_8",
+      "category": "weapon",
+      "label": "MACHINE GUN L8",
+      "rect": [
+        912,
+        16,
+        96,
+        96
+      ]
+    },
+    {
+      "key": "micon_spread_1",
+      "id": "micon_spread_1",
+      "category": "weapon",
+      "label": "SPREAD FIRE L1",
+      "rect": [
+        34,
+        159,
+        60,
+        66
+      ]
+    },
+    {
+      "key": "micon_spread_2",
+      "id": "micon_spread_2",
+      "category": "weapon",
+      "label": "SPREAD FIRE L2",
+      "rect": [
+        152,
+        144,
+        79,
+        96
+      ]
+    },
+    {
+      "key": "micon_spread_3",
+      "id": "micon_spread_3",
+      "category": "weapon",
+      "label": "SPREAD FIRE L3",
+      "rect": [
+        281,
+        144,
+        78,
+        96
+      ]
+    },
+    {
+      "key": "micon_spread_4",
+      "id": "micon_spread_4",
+      "category": "weapon",
+      "label": "SPREAD FIRE L4",
+      "rect": [
+        409,
+        144,
+        78,
+        96
+      ]
+    },
+    {
+      "key": "micon_spread_5",
+      "id": "micon_spread_5",
+      "category": "weapon",
+      "label": "SPREAD FIRE L5",
+      "rect": [
+        536,
+        144,
+        79,
+        96
+      ]
+    },
+    {
+      "key": "micon_missile_1",
+      "id": "micon_missile_1",
+      "category": "weapon",
+      "label": "AUTO MISSILES L1",
+      "rect": [
+        679,
+        159,
+        50,
+        66
+      ]
+    },
+    {
+      "key": "micon_missile_2",
+      "id": "micon_missile_2",
+      "category": "weapon",
+      "label": "AUTO MISSILES L2",
+      "rect": [
+        796,
+        144,
+        72,
+        96
+      ]
+    },
+    {
+      "key": "micon_missile_3",
+      "id": "micon_missile_3",
+      "category": "weapon",
+      "label": "AUTO MISSILES L3",
+      "rect": [
+        924,
+        144,
+        72,
+        96
+      ]
+    },
+    {
+      "key": "micon_missile_4",
+      "id": "micon_missile_4",
+      "category": "weapon",
+      "label": "AUTO MISSILES L4",
+      "rect": [
+        28,
+        272,
+        71,
+        96
+      ]
+    },
+    {
+      "key": "micon_missile_5",
+      "id": "micon_missile_5",
+      "category": "weapon",
+      "label": "AUTO MISSILES L5",
+      "rect": [
+        156,
+        272,
+        72,
+        96
+      ]
+    },
+    {
+      "key": "micon_laser_1",
+      "id": "micon_laser_1",
+      "category": "weapon",
+      "label": "LASER BEAM L1",
+      "rect": [
+        290,
+        287,
+        60,
+        66
+      ]
+    },
+    {
+      "key": "micon_laser_2",
+      "id": "micon_laser_2",
+      "category": "weapon",
+      "label": "LASER BEAM L2",
+      "rect": [
+        420,
+        287,
+        56,
+        66
+      ]
+    },
+    {
+      "key": "micon_laser_3",
+      "id": "micon_laser_3",
+      "category": "weapon",
+      "label": "LASER BEAM L3",
+      "rect": [
+        536,
+        272,
+        80,
+        96
+      ]
+    },
+    {
+      "key": "micon_laser_4",
+      "id": "micon_laser_4",
+      "category": "weapon",
+      "label": "LASER BEAM L4",
+      "rect": [
+        665,
+        272,
+        78,
+        96
+      ]
+    },
+    {
+      "key": "micon_laser_5",
+      "id": "micon_laser_5",
+      "category": "weapon",
+      "label": "LASER BEAM L5",
+      "rect": [
+        792,
+        272,
+        80,
+        96
+      ]
+    },
+    {
+      "key": "micon_maverick_laser_1",
+      "id": "micon_maverick_laser_1",
+      "category": "weapon",
+      "label": "MAVERICK HOMING LASER L1",
+      "rect": [
+        904,
+        264,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "micon_maverick_laser_2",
+      "id": "micon_maverick_laser_2",
+      "category": "weapon",
+      "label": "MAVERICK HOMING LASER L2",
+      "rect": [
+        8,
+        392,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "micon_maverick_laser_3",
+      "id": "micon_maverick_laser_3",
+      "category": "weapon",
+      "label": "MAVERICK HOMING LASER L3",
+      "rect": [
+        136,
+        392,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "micon_maverick_laser_4",
+      "id": "micon_maverick_laser_4",
+      "category": "weapon",
+      "label": "MAVERICK HOMING LASER L4",
+      "rect": [
+        264,
+        392,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "micon_maverick_laser_5",
+      "id": "micon_maverick_laser_5",
+      "category": "weapon",
+      "label": "MAVERICK HOMING LASER L5",
+      "rect": [
+        392,
+        392,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "micon_firewall_1",
+      "id": "micon_firewall_1",
+      "category": "weapon",
+      "label": "FLAMETHROWER L1",
+      "rect": [
+        547,
+        415,
+        57,
+        66
+      ]
+    },
+    {
+      "key": "micon_firewall_2",
+      "id": "micon_firewall_2",
+      "category": "weapon",
+      "label": "FLAMETHROWER L2",
+      "rect": [
+        675,
+        415,
+        58,
+        66
+      ]
+    },
+    {
+      "key": "micon_firewall_3",
+      "id": "micon_firewall_3",
+      "category": "weapon",
+      "label": "FLAMETHROWER L3",
+      "rect": [
+        803,
+        414,
+        58,
+        67
+      ]
+    },
+    {
+      "key": "micon_firewall_4",
+      "id": "micon_firewall_4",
+      "category": "weapon",
+      "label": "FLAMETHROWER L4",
+      "rect": [
+        922,
+        400,
+        76,
+        96
+      ]
+    },
+    {
+      "key": "micon_firewall_5",
+      "id": "micon_firewall_5",
+      "category": "weapon",
+      "label": "FLAMETHROWER L5",
+      "rect": [
+        25,
+        528,
+        78,
+        96
+      ]
+    },
+    {
+      "key": "micon_icebreath_1",
+      "id": "micon_icebreath_1",
+      "category": "weapon",
+      "label": "ICE BREATH L1",
+      "rect": [
+        144,
+        520,
+        96,
+        112
+      ]
+    },
+    {
+      "key": "micon_icebreath_2",
+      "id": "micon_icebreath_2",
+      "category": "weapon",
+      "label": "ICE BREATH L2",
+      "rect": [
+        271,
+        520,
+        97,
+        112
+      ]
+    },
+    {
+      "key": "micon_icebreath_3",
+      "id": "micon_icebreath_3",
+      "category": "weapon",
+      "label": "ICE BREATH L3",
+      "rect": [
+        399,
+        520,
+        98,
+        112
+      ]
+    },
+    {
+      "key": "micon_icebreath_4",
+      "id": "micon_icebreath_4",
+      "category": "weapon",
+      "label": "ICE BREATH L4",
+      "rect": [
+        527,
+        520,
+        97,
+        112
+      ]
+    },
+    {
+      "key": "micon_icebreath_5",
+      "id": "micon_icebreath_5",
+      "category": "weapon",
+      "label": "ICE BREATH L5",
+      "rect": [
+        654,
+        520,
+        99,
+        112
+      ]
+    },
+    {
+      "key": "micon_iceorb_1",
+      "id": "micon_iceorb_1",
+      "category": "weapon",
+      "label": "ICE ORB L1",
+      "rect": [
+        807,
+        543,
+        50,
+        66
+      ]
+    },
+    {
+      "key": "micon_iceorb_2",
+      "id": "micon_iceorb_2",
+      "category": "weapon",
+      "label": "ICE ORB L2",
+      "rect": [
+        935,
+        543,
+        50,
+        66
+      ]
+    },
+    {
+      "key": "micon_iceorb_3",
+      "id": "micon_iceorb_3",
+      "category": "weapon",
+      "label": "ICE ORB L3",
+      "rect": [
+        39,
+        671,
+        49,
+        66
+      ]
+    },
+    {
+      "key": "micon_iceorb_4",
+      "id": "micon_iceorb_4",
+      "category": "weapon",
+      "label": "ICE ORB L4",
+      "rect": [
+        157,
+        656,
+        70,
+        96
+      ]
+    },
+    {
+      "key": "micon_iceorb_5",
+      "id": "micon_iceorb_5",
+      "category": "weapon",
+      "label": "ICE ORB L5",
+      "rect": [
+        284,
+        656,
+        71,
+        96
+      ]
+    },
+    {
+      "key": "micon_fireorb_1",
+      "id": "micon_fireorb_1",
+      "category": "weapon",
+      "label": "FIRE ORB L1",
+      "rect": [
+        400,
+        648,
+        96,
+        112
+      ]
+    },
+    {
+      "key": "micon_fireorb_2",
+      "id": "micon_fireorb_2",
+      "category": "weapon",
+      "label": "FIRE ORB L2",
+      "rect": [
+        527,
+        648,
+        97,
+        112
+      ]
+    },
+    {
+      "key": "micon_fireorb_3",
+      "id": "micon_fireorb_3",
+      "category": "weapon",
+      "label": "FIRE ORB L3",
+      "rect": [
+        655,
+        648,
+        98,
+        112
+      ]
+    },
+    {
+      "key": "micon_fireorb_4",
+      "id": "micon_fireorb_4",
+      "category": "weapon",
+      "label": "FIRE ORB L4",
+      "rect": [
+        783,
+        648,
+        97,
+        112
+      ]
+    },
+    {
+      "key": "micon_fireorb_5",
+      "id": "micon_fireorb_5",
+      "category": "weapon",
+      "label": "FIRE ORB L5",
+      "rect": [
+        910,
+        648,
+        99,
+        112
+      ]
+    },
+    {
+      "key": "micon_thermoshock_1",
+      "id": "micon_thermoshock_1",
+      "category": "weapon",
+      "label": "THERMOSHOCK L1",
+      "rect": [
+        8,
+        776,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "micon_thermoshock_2",
+      "id": "micon_thermoshock_2",
+      "category": "weapon",
+      "label": "THERMOSHOCK L2",
+      "rect": [
+        136,
+        776,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "micon_thermoshock_3",
+      "id": "micon_thermoshock_3",
+      "category": "weapon",
+      "label": "THERMOSHOCK L3",
+      "rect": [
+        264,
+        776,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "micon_thermoshock_4",
+      "id": "micon_thermoshock_4",
+      "category": "weapon",
+      "label": "THERMOSHOCK L4",
+      "rect": [
+        392,
+        776,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "micon_thermoshock_5",
+      "id": "micon_thermoshock_5",
+      "category": "weapon",
+      "label": "THERMOSHOCK L5",
+      "rect": [
+        520,
+        776,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_axel_mega_shield",
+      "id": "special_axel_mega_shield",
+      "category": "special",
+      "label": "AXEL \u2014 MEGA SHIELD",
+      "rect": [
+        648,
+        776,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_freezer_time_freeze",
+      "id": "special_freezer_time_freeze",
+      "category": "special",
+      "label": "FREEZER \u2014 TIME FREEZE",
+      "rect": [
+        776,
+        776,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_freezer_thermoshock",
+      "id": "special_freezer_thermoshock",
+      "category": "special",
+      "label": "FREEZER \u2014 THERMOSHOCK",
+      "rect": [
+        904,
+        776,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_juggernaut_wrecking_ball",
+      "id": "special_juggernaut_wrecking_ball",
+      "category": "special",
+      "label": "JUGGERNAUT \u2014 WRECKING BALL",
+      "rect": [
+        8,
+        904,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_maverick_helix_beam",
+      "id": "special_maverick_helix_beam",
+      "category": "special",
+      "label": "MAVERICK \u2014 HELIX BEAM",
+      "rect": [
+        136,
+        904,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_lizzie_atom_bomb",
+      "id": "special_lizzie_atom_bomb",
+      "category": "special",
+      "label": "LIZZIE \u2014 ATOM BOMB",
+      "rect": [
+        264,
+        904,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_falva_roller_ball",
+      "id": "special_falva_roller_ball",
+      "category": "special",
+      "label": "FALVA \u2014 ROLLER BALL",
+      "rect": [
+        392,
+        904,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_cole_nuclear_warheads",
+      "id": "special_cole_nuclear_warheads",
+      "category": "special",
+      "label": "COLE \u2014 NUCLEAR WARHEADS",
+      "rect": [
+        520,
+        904,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_decker_cloaking_system",
+      "id": "special_decker_cloaking_system",
+      "category": "special",
+      "label": "DECKER \u2014 CLOAKING SYSTEM",
+      "rect": [
+        648,
+        904,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "special_icon_yuri_chain_lightning",
+      "id": "special_yuri_chain_lightning",
+      "category": "special",
+      "label": "YURI \u2014 CHAIN LIGHTNING",
+      "rect": [
+        776,
+        904,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "nsw_icon_cole",
+      "id": "special_cole_sonic_boom",
+      "category": "special",
+      "label": "COLE \u2014 SONIC BOOM",
+      "rect": [
+        904,
+        904,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "nsw_icon_decker",
+      "id": "special_decker_shotgun",
+      "category": "special",
+      "label": "DECKER \u2014 INCENDIARY SHOTGUN",
+      "rect": [
+        8,
+        1032,
+        112,
+        112
+      ]
+    },
+    {
+      "key": "nsw_icon_lizzie",
+      "id": "special_lizzie_heavy_gun",
+      "category": "special",
+      "label": "LIZZIE \u2014 HEAVY MACHINE GUN / TURRET",
+      "rect": [
+        136,
+        1032,
+        112,
+        112
+      ]
+    }
+  ]
+}

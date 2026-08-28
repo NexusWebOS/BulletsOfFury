@@ -1,0 +1,1814 @@
+{
+  "files": [
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-00-0deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 173991,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 3,
+          "percent": 0.0002
+        },
+        "cyan": {
+          "pixels": 40,
+          "percent": 0.0025
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 1959,
+          "percent": 0.1246
+        },
+        "black": {
+          "pixels": 14532,
+          "percent": 0.9241
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-01-22.5deg-source-untouched.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 64520,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 306065,
+          "percent": 77.8536
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 169,
+          "percent": 0.043
+        },
+        "black": {
+          "pixels": 2133,
+          "percent": 0.5426
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-02-45deg-source-untouched.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 59227,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 314662,
+          "percent": 80.0404
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 143,
+          "percent": 0.0364
+        },
+        "black": {
+          "pixels": 1950,
+          "percent": 0.496
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-03-67.5deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 181509,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1,
+          "percent": 0.0001
+        },
+        "cyan": {
+          "pixels": 10,
+          "percent": 0.0006
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 2757,
+          "percent": 0.1753
+        },
+        "black": {
+          "pixels": 10151,
+          "percent": 0.6455
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-04-90deg-source-untouched.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 90320,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 265742,
+          "percent": 67.5966
+        },
+        "cyan": {
+          "pixels": 1,
+          "percent": 0.0003
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 279,
+          "percent": 0.071
+        },
+        "black": {
+          "pixels": 2641,
+          "percent": 0.6718
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-05-112.5deg-source-untouched.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 82270,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 281804,
+          "percent": 71.6823
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 287,
+          "percent": 0.073
+        },
+        "black": {
+          "pixels": 1662,
+          "percent": 0.4228
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-06-135deg-source-untouched.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 70506,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 302751,
+          "percent": 77.0106
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 237,
+          "percent": 0.0603
+        },
+        "black": {
+          "pixels": 1326,
+          "percent": 0.3373
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-07-157.5deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 136279,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 2,
+          "percent": 0.0001
+        },
+        "cyan": {
+          "pixels": 2,
+          "percent": 0.0001
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 897,
+          "percent": 0.057
+        },
+        "black": {
+          "pixels": 7056,
+          "percent": 0.4487
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-08-180deg-source-untouched.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 52850,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 328278,
+          "percent": 83.5039
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 187,
+          "percent": 0.0476
+        },
+        "black": {
+          "pixels": 932,
+          "percent": 0.2371
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-09-202.5deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 166711,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 1263,
+          "percent": 0.0803
+        },
+        "black": {
+          "pixels": 7766,
+          "percent": 0.4939
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-10-225deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 185174,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 32,
+          "percent": 0.002
+        },
+        "cyan": {
+          "pixels": 4,
+          "percent": 0.0003
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 2291,
+          "percent": 0.1457
+        },
+        "black": {
+          "pixels": 11240,
+          "percent": 0.7148
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-11-247.5deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 203922,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 15,
+          "percent": 0.001
+        },
+        "cyan": {
+          "pixels": 15,
+          "percent": 0.001
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 2244,
+          "percent": 0.1427
+        },
+        "black": {
+          "pixels": 17837,
+          "percent": 1.1343
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-12-270deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 187274,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1,
+          "percent": 0.0001
+        },
+        "cyan": {
+          "pixels": 3,
+          "percent": 0.0002
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 1394,
+          "percent": 0.0886
+        },
+        "black": {
+          "pixels": 15197,
+          "percent": 0.9664
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-13-292.5deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 198747,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 8,
+          "percent": 0.0005
+        },
+        "cyan": {
+          "pixels": 8,
+          "percent": 0.0005
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 2875,
+          "percent": 0.1828
+        },
+        "black": {
+          "pixels": 16597,
+          "percent": 1.0554
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-14-315deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 215423,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 9,
+          "percent": 0.0006
+        },
+        "cyan": {
+          "pixels": 28,
+          "percent": 0.0018
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 3278,
+          "percent": 0.2085
+        },
+        "black": {
+          "pixels": 17275,
+          "percent": 1.0986
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-15-337.5deg-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 207045,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 7,
+          "percent": 0.0004
+        },
+        "cyan": {
+          "pixels": 12,
+          "percent": 0.0008
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 3177,
+          "percent": 0.202
+        },
+        "black": {
+          "pixels": 17457,
+          "percent": 1.1101
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-rear-powered-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 187277,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 10,
+          "percent": 0.0006
+        },
+        "cyan": {
+          "pixels": 18,
+          "percent": 0.0011
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 1950,
+          "percent": 0.124
+        },
+        "black": {
+          "pixels": 13890,
+          "percent": 0.8833
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-thrusters-4f-source-untouched.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 52570,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1439728,
+          "percent": 91.5557
+        },
+        "cyan": {
+          "pixels": 3,
+          "percent": 0.0002
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 126,
+          "percent": 0.008
+        },
+        "black": {
+          "pixels": 0,
+          "percent": 0.0
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched-boards/CF_BOF2_Somersault_Pitch_000-0675_Source.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 193963,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1239988,
+          "percent": 78.8538
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 695,
+          "percent": 0.0442
+        },
+        "black": {
+          "pixels": 8498,
+          "percent": 0.5404
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/untouched-boards/CF_BOF2_Somersault_Pitch_090-1575_Source.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 223784,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1178575,
+          "percent": 74.9484
+        },
+        "cyan": {
+          "pixels": 1,
+          "percent": 0.0001
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 990,
+          "percent": 0.063
+        },
+        "black": {
+          "pixels": 6561,
+          "percent": 0.4172
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-00-0deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 167074,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1218696,
+          "percent": 77.4998
+        },
+        "cyan": {
+          "pixels": 40,
+          "percent": 0.0025
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 1959,
+          "percent": 0.1246
+        },
+        "black": {
+          "pixels": 14532,
+          "percent": 0.9241
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-01-22.5deg-source-normalized.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 64520,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 306065,
+          "percent": 77.8536
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 169,
+          "percent": 0.043
+        },
+        "black": {
+          "pixels": 2133,
+          "percent": 0.5426
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-02-45deg-source-normalized.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 59227,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 314662,
+          "percent": 80.0404
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 143,
+          "percent": 0.0364
+        },
+        "black": {
+          "pixels": 1950,
+          "percent": 0.496
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-03-67.5deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 175441,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1218204,
+          "percent": 77.4685
+        },
+        "cyan": {
+          "pixels": 10,
+          "percent": 0.0006
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 2757,
+          "percent": 0.1753
+        },
+        "black": {
+          "pixels": 10151,
+          "percent": 0.6455
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-04-90deg-source-normalized.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 90320,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 265742,
+          "percent": 67.5966
+        },
+        "cyan": {
+          "pixels": 1,
+          "percent": 0.0003
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 279,
+          "percent": 0.071
+        },
+        "black": {
+          "pixels": 2641,
+          "percent": 0.6718
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-05-112.5deg-source-normalized.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 82269,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 281805,
+          "percent": 71.6826
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 287,
+          "percent": 0.073
+        },
+        "black": {
+          "pixels": 1662,
+          "percent": 0.4228
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-06-135deg-source-normalized.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 70506,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 302751,
+          "percent": 77.0106
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 237,
+          "percent": 0.0603
+        },
+        "black": {
+          "pixels": 1326,
+          "percent": 0.3373
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-07-157.5deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 131045,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1343782,
+          "percent": 85.4543
+        },
+        "cyan": {
+          "pixels": 2,
+          "percent": 0.0001
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 897,
+          "percent": 0.057
+        },
+        "black": {
+          "pixels": 7056,
+          "percent": 0.4487
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-08-180deg-source-normalized.png",
+      "width": 627,
+      "height": 627,
+      "mode": "RGBA",
+      "pixels": 393129,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 393129
+      },
+      "content_bbox": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "edge_nontransparent_pixels": 2504,
+      "unique_rgba_colours": 52850,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 328278,
+          "percent": 83.5039
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 187,
+          "percent": 0.0476
+        },
+        "black": {
+          "pixels": 932,
+          "percent": 0.2371
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-09-202.5deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 160931,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1263809,
+          "percent": 80.3686
+        },
+        "cyan": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 1263,
+          "percent": 0.0803
+        },
+        "black": {
+          "pixels": 7766,
+          "percent": 0.4939
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-10-225deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 178597,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1161718,
+          "percent": 73.8764
+        },
+        "cyan": {
+          "pixels": 4,
+          "percent": 0.0003
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 2291,
+          "percent": 0.1457
+        },
+        "black": {
+          "pixels": 11240,
+          "percent": 0.7148
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-11-247.5deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 196993,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1062720,
+          "percent": 67.5809
+        },
+        "cyan": {
+          "pixels": 15,
+          "percent": 0.001
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 2244,
+          "percent": 0.1427
+        },
+        "black": {
+          "pixels": 17837,
+          "percent": 1.1343
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-12-270deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 180049,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1083899,
+          "percent": 68.9277
+        },
+        "cyan": {
+          "pixels": 3,
+          "percent": 0.0002
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 1394,
+          "percent": 0.0886
+        },
+        "black": {
+          "pixels": 15197,
+          "percent": 0.9664
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-13-292.5deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 191540,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1108689,
+          "percent": 70.5041
+        },
+        "cyan": {
+          "pixels": 8,
+          "percent": 0.0005
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 2875,
+          "percent": 0.1828
+        },
+        "black": {
+          "pixels": 16597,
+          "percent": 1.0554
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-14-315deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 208537,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1088375,
+          "percent": 69.2123
+        },
+        "cyan": {
+          "pixels": 28,
+          "percent": 0.0018
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 3278,
+          "percent": 0.2085
+        },
+        "black": {
+          "pixels": 17275,
+          "percent": 1.0986
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-15-337.5deg-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 200097,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1078607,
+          "percent": 68.5912
+        },
+        "cyan": {
+          "pixels": 12,
+          "percent": 0.0008
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 3177,
+          "percent": 0.202
+        },
+        "black": {
+          "pixels": 17457,
+          "percent": 1.1101
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-rear-powered-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 170401,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1205004,
+          "percent": 76.629
+        },
+        "cyan": {
+          "pixels": 18,
+          "percent": 0.0011
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 1950,
+          "percent": 0.124
+        },
+        "black": {
+          "pixels": 13890,
+          "percent": 0.8833
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    },
+    {
+      "file": "/workspace/scratch/3b9338f41578/FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-thrusters-4f-source-normalized.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "pixels": 1572516,
+      "alpha": {
+        "transparent": 0,
+        "semitransparent": 0,
+        "opaque": 1572516
+      },
+      "content_bbox": [
+        0,
+        0,
+        1254,
+        1254
+      ],
+      "edge_nontransparent_pixels": 5012,
+      "unique_rgba_colours": 52088,
+      "exact_colours": {
+        "magenta": {
+          "pixels": 1440293,
+          "percent": 91.5916
+        },
+        "cyan": {
+          "pixels": 3,
+          "percent": 0.0002
+        },
+        "green": {
+          "pixels": 0,
+          "percent": 0.0
+        },
+        "white": {
+          "pixels": 126,
+          "percent": 0.008
+        },
+        "black": {
+          "pixels": 0,
+          "percent": 0.0
+        }
+      },
+      "probable_fringe_pixels": 0,
+      "warnings": [
+        "exact magenta pixels remain",
+        "exact cyan pixels remain",
+        "opaque or semi-transparent content touches the canvas edge"
+      ]
+    }
+  ]
+}

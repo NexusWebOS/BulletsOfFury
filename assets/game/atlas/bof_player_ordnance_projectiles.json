@@ -1,0 +1,7091 @@
+{
+  "format": "coleforge.player-ordnance-projectile-atlas.v1",
+  "atlas_key": "bof_player_ordnance_projectiles_atlas",
+  "atlas": "bof_player_ordnance_projectiles.png",
+  "size": [
+    3808,
+    4036
+  ],
+  "count": 505,
+  "counts": {
+    "flame_ice_thermoshock": 134,
+    "laser_beams": 5,
+    "laser_helix_projectiles": 254,
+    "machine_gun_spread": 31,
+    "pilot_missiles_bombs": 22,
+    "pilot_special_projectiles": 55,
+    "runtime_support": 4
+  },
+  "entries": [
+    {
+      "key": "alert_up",
+      "category": "runtime_support",
+      "rect": [
+        473,
+        908,
+        480,
+        420
+      ],
+      "canvas": [
+        480,
+        420
+      ]
+    },
+    {
+      "key": "chain_bolt_0",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2547,
+        2233,
+        25,
+        182
+      ],
+      "canvas": [
+        25,
+        182
+      ]
+    },
+    {
+      "key": "chain_bolt_1",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2452,
+        2233,
+        27,
+        191
+      ],
+      "canvas": [
+        27,
+        191
+      ]
+    },
+    {
+      "key": "chain_bolt_2",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1504,
+        2233,
+        34,
+        200
+      ],
+      "canvas": [
+        34,
+        200
+      ]
+    },
+    {
+      "key": "chain_bolt_3",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        907,
+        2233,
+        43,
+        206
+      ],
+      "canvas": [
+        43,
+        206
+      ]
+    },
+    {
+      "key": "chain_bolt_4",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        789,
+        2233,
+        63,
+        213
+      ],
+      "canvas": [
+        63,
+        213
+      ]
+    },
+    {
+      "key": "chain_bolt_5",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        700,
+        2233,
+        81,
+        223
+      ],
+      "canvas": [
+        81,
+        223
+      ]
+    },
+    {
+      "key": "chain_bolt_6",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        578,
+        1969,
+        103,
+        234
+      ],
+      "canvas": [
+        103,
+        234
+      ]
+    },
+    {
+      "key": "cole_warhead_A",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        2487,
+        2233,
+        52,
+        190
+      ],
+      "canvas": [
+        52,
+        190
+      ]
+    },
+    {
+      "key": "eglaser_0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        182,
+        2465,
+        25,
+        148
+      ],
+      "canvas": [
+        25,
+        148
+      ]
+    },
+    {
+      "key": "eglaser_2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        215,
+        2465,
+        25,
+        148
+      ],
+      "canvas": [
+        25,
+        148
+      ]
+    },
+    {
+      "key": "enemy_approaching",
+      "category": "runtime_support",
+      "rect": [
+        908,
+        4,
+        1467,
+        798
+      ],
+      "canvas": [
+        1467,
+        798
+      ]
+    },
+    {
+      "key": "fburst",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2999,
+        2233,
+        220,
+        166
+      ],
+      "canvas": [
+        220,
+        166
+      ]
+    },
+    {
+      "key": "fllaser_0",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        248,
+        2465,
+        25,
+        148
+      ],
+      "canvas": [
+        25,
+        148
+      ]
+    },
+    {
+      "key": "fllaser_1",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        413,
+        2465,
+        24,
+        148
+      ],
+      "canvas": [
+        24,
+        148
+      ]
+    },
+    {
+      "key": "fllaser_2",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        281,
+        2465,
+        25,
+        148
+      ],
+      "canvas": [
+        25,
+        148
+      ]
+    },
+    {
+      "key": "fllaser_3",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        314,
+        2465,
+        25,
+        148
+      ],
+      "canvas": [
+        25,
+        148
+      ]
+    },
+    {
+      "key": "fllaser_4",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        347,
+        2465,
+        25,
+        148
+      ],
+      "canvas": [
+        25,
+        148
+      ]
+    },
+    {
+      "key": "fllaser_5",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        445,
+        2465,
+        24,
+        148
+      ],
+      "canvas": [
+        24,
+        148
+      ]
+    },
+    {
+      "key": "fllaser_6",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        380,
+        2465,
+        25,
+        148
+      ],
+      "canvas": [
+        25,
+        148
+      ]
+    },
+    {
+      "key": "fllaser_7",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        477,
+        2465,
+        24,
+        148
+      ],
+      "canvas": [
+        24,
+        148
+      ]
+    },
+    {
+      "key": "flspread_0",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        509,
+        2465,
+        125,
+        141
+      ],
+      "canvas": [
+        125,
+        141
+      ]
+    },
+    {
+      "key": "flspread_1",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        775,
+        2465,
+        124,
+        141
+      ],
+      "canvas": [
+        124,
+        141
+      ]
+    },
+    {
+      "key": "flspread_2",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        907,
+        2465,
+        124,
+        141
+      ],
+      "canvas": [
+        124,
+        141
+      ]
+    },
+    {
+      "key": "flspread_3",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1039,
+        2465,
+        124,
+        141
+      ],
+      "canvas": [
+        124,
+        141
+      ]
+    },
+    {
+      "key": "flspread_4",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1171,
+        2465,
+        124,
+        141
+      ],
+      "canvas": [
+        124,
+        141
+      ]
+    },
+    {
+      "key": "flspread_5",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1303,
+        2465,
+        124,
+        141
+      ],
+      "canvas": [
+        124,
+        141
+      ]
+    },
+    {
+      "key": "flspread_6",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        642,
+        2465,
+        125,
+        141
+      ],
+      "canvas": [
+        125,
+        141
+      ]
+    },
+    {
+      "key": "flspread_7",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1435,
+        2465,
+        124,
+        141
+      ],
+      "canvas": [
+        124,
+        141
+      ]
+    },
+    {
+      "key": "fx0825_ice_orb",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1546,
+        2233,
+        194,
+        192
+      ],
+      "canvas": [
+        194,
+        192
+      ]
+    },
+    {
+      "key": "fx0825_ice_shard",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        124,
+        2465,
+        50,
+        152
+      ],
+      "canvas": [
+        50,
+        152
+      ]
+    },
+    {
+      "key": "laserbeam_0",
+      "category": "laser_beams",
+      "rect": [
+        4,
+        4,
+        178,
+        896
+      ],
+      "canvas": [
+        178,
+        896
+      ]
+    },
+    {
+      "key": "laserbeam_1",
+      "category": "laser_beams",
+      "rect": [
+        190,
+        4,
+        178,
+        896
+      ],
+      "canvas": [
+        178,
+        896
+      ]
+    },
+    {
+      "key": "laserbeam_2",
+      "category": "laser_beams",
+      "rect": [
+        376,
+        4,
+        178,
+        896
+      ],
+      "canvas": [
+        178,
+        896
+      ]
+    },
+    {
+      "key": "laserbeam_3",
+      "category": "laser_beams",
+      "rect": [
+        562,
+        4,
+        166,
+        895
+      ],
+      "canvas": [
+        166,
+        895
+      ]
+    },
+    {
+      "key": "laserbeam_4",
+      "category": "laser_beams",
+      "rect": [
+        736,
+        4,
+        164,
+        895
+      ],
+      "canvas": [
+        164,
+        895
+      ]
+    },
+    {
+      "key": "lz_bomb",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        1404,
+        2233,
+        92,
+        200
+      ],
+      "canvas": [
+        92,
+        200
+      ]
+    },
+    {
+      "key": "lz_nuke_0",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        771,
+        1377,
+        320,
+        256
+      ],
+      "canvas": [
+        320,
+        256
+      ]
+    },
+    {
+      "key": "lz_nuke_1",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        1099,
+        1377,
+        320,
+        256
+      ],
+      "canvas": [
+        320,
+        256
+      ]
+    },
+    {
+      "key": "lz_nuke_2",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        1427,
+        1377,
+        320,
+        256
+      ],
+      "canvas": [
+        320,
+        256
+      ]
+    },
+    {
+      "key": "lz_nuke_3",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        1755,
+        1377,
+        320,
+        256
+      ],
+      "canvas": [
+        320,
+        256
+      ]
+    },
+    {
+      "key": "mavlaser_lance_1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3267,
+        2233,
+        112,
+        160
+      ],
+      "canvas": [
+        112,
+        160
+      ]
+    },
+    {
+      "key": "mavlaser_lance_2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3387,
+        2233,
+        112,
+        160
+      ],
+      "canvas": [
+        112,
+        160
+      ]
+    },
+    {
+      "key": "mavlaser_lance_3",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3507,
+        2233,
+        112,
+        160
+      ],
+      "canvas": [
+        112,
+        160
+      ]
+    },
+    {
+      "key": "mavlaser_lance_4",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3627,
+        2233,
+        112,
+        160
+      ],
+      "canvas": [
+        112,
+        160
+      ]
+    },
+    {
+      "key": "mavlaser_lance_5",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        2465,
+        112,
+        160
+      ],
+      "canvas": [
+        112,
+        160
+      ]
+    },
+    {
+      "key": "mgcf_1_0",
+      "category": "machine_gun_spread",
+      "rect": [
+        2330,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_1_1",
+      "category": "machine_gun_spread",
+      "rect": [
+        2354,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_1_2",
+      "category": "machine_gun_spread",
+      "rect": [
+        2378,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_1_3",
+      "category": "machine_gun_spread",
+      "rect": [
+        2402,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_1_4",
+      "category": "machine_gun_spread",
+      "rect": [
+        2426,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_1_5",
+      "category": "machine_gun_spread",
+      "rect": [
+        2450,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_2_0",
+      "category": "machine_gun_spread",
+      "rect": [
+        2474,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_2_1",
+      "category": "machine_gun_spread",
+      "rect": [
+        2498,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_2_2",
+      "category": "machine_gun_spread",
+      "rect": [
+        2522,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_2_3",
+      "category": "machine_gun_spread",
+      "rect": [
+        2546,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_2_4",
+      "category": "machine_gun_spread",
+      "rect": [
+        2570,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_2_5",
+      "category": "machine_gun_spread",
+      "rect": [
+        2594,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_3_0",
+      "category": "machine_gun_spread",
+      "rect": [
+        2618,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_3_1",
+      "category": "machine_gun_spread",
+      "rect": [
+        2642,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_3_2",
+      "category": "machine_gun_spread",
+      "rect": [
+        2666,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_3_3",
+      "category": "machine_gun_spread",
+      "rect": [
+        2690,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_3_4",
+      "category": "machine_gun_spread",
+      "rect": [
+        2714,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_3_5",
+      "category": "machine_gun_spread",
+      "rect": [
+        2738,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_4_0",
+      "category": "machine_gun_spread",
+      "rect": [
+        2762,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_4_1",
+      "category": "machine_gun_spread",
+      "rect": [
+        2786,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_4_2",
+      "category": "machine_gun_spread",
+      "rect": [
+        2810,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_4_3",
+      "category": "machine_gun_spread",
+      "rect": [
+        2834,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_4_4",
+      "category": "machine_gun_spread",
+      "rect": [
+        2858,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_4_5",
+      "category": "machine_gun_spread",
+      "rect": [
+        2882,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_5_0",
+      "category": "machine_gun_spread",
+      "rect": [
+        2906,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_5_1",
+      "category": "machine_gun_spread",
+      "rect": [
+        2930,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_5_2",
+      "category": "machine_gun_spread",
+      "rect": [
+        2954,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_5_3",
+      "category": "machine_gun_spread",
+      "rect": [
+        2978,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_5_4",
+      "category": "machine_gun_spread",
+      "rect": [
+        3002,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mgcf_5_5",
+      "category": "machine_gun_spread",
+      "rect": [
+        3026,
+        3936,
+        16,
+        20
+      ],
+      "canvas": [
+        16,
+        20
+      ]
+    },
+    {
+      "key": "mslB_0_2",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        1567,
+        2465,
+        382,
+        140
+      ],
+      "canvas": [
+        382,
+        140
+      ]
+    },
+    {
+      "key": "mslB_2_2",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        1191,
+        2633,
+        193,
+        134
+      ],
+      "canvas": [
+        193,
+        134
+      ]
+    },
+    {
+      "key": "msl_0_0",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        1957,
+        2465,
+        371,
+        137
+      ],
+      "canvas": [
+        371,
+        137
+      ]
+    },
+    {
+      "key": "msl_0_1",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        408,
+        2633,
+        371,
+        134
+      ],
+      "canvas": [
+        371,
+        134
+      ]
+    },
+    {
+      "key": "msl_0_2",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        2336,
+        2465,
+        371,
+        137
+      ],
+      "canvas": [
+        371,
+        137
+      ]
+    },
+    {
+      "key": "msl_0_3",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        1591,
+        2633,
+        372,
+        133
+      ],
+      "canvas": [
+        372,
+        133
+      ]
+    },
+    {
+      "key": "msl_1_1",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        3096,
+        2465,
+        371,
+        136
+      ],
+      "canvas": [
+        371,
+        136
+      ]
+    },
+    {
+      "key": "msl_1_2",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        2715,
+        2465,
+        373,
+        136
+      ],
+      "canvas": [
+        373,
+        136
+      ]
+    },
+    {
+      "key": "msl_2_0",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        1392,
+        2633,
+        191,
+        134
+      ],
+      "canvas": [
+        191,
+        134
+      ]
+    },
+    {
+      "key": "msl_2_1",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        4,
+        2633,
+        194,
+        135
+      ],
+      "canvas": [
+        194,
+        135
+      ]
+    },
+    {
+      "key": "msl_2_2",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        3475,
+        2465,
+        196,
+        135
+      ],
+      "canvas": [
+        196,
+        135
+      ]
+    },
+    {
+      "key": "msl_2_3",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        787,
+        2633,
+        194,
+        134
+      ],
+      "canvas": [
+        194,
+        134
+      ]
+    },
+    {
+      "key": "msl_2_4",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        206,
+        2633,
+        194,
+        135
+      ],
+      "canvas": [
+        194,
+        135
+      ]
+    },
+    {
+      "key": "msl_2_5",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        989,
+        2633,
+        194,
+        134
+      ],
+      "canvas": [
+        194,
+        134
+      ]
+    },
+    {
+      "key": "msl_falva",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        613,
+        3936,
+        176,
+        68
+      ],
+      "canvas": [
+        176,
+        68
+      ]
+    },
+    {
+      "key": "msl_lizzie",
+      "category": "pilot_missiles_bombs",
+      "rect": [
+        797,
+        3936,
+        176,
+        68
+      ],
+      "canvas": [
+        176,
+        68
+      ]
+    },
+    {
+      "key": "nadb_0",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1845,
+        3936,
+        53,
+        64
+      ],
+      "canvas": [
+        53,
+        64
+      ]
+    },
+    {
+      "key": "nadb_1",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1500,
+        3592,
+        131,
+        127
+      ],
+      "canvas": [
+        131,
+        127
+      ]
+    },
+    {
+      "key": "nadb_10",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2344,
+        3592,
+        91,
+        103
+      ],
+      "canvas": [
+        91,
+        103
+      ]
+    },
+    {
+      "key": "nadb_11",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2743,
+        3592,
+        106,
+        96
+      ],
+      "canvas": [
+        106,
+        96
+      ]
+    },
+    {
+      "key": "nadb_2",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1831,
+        3592,
+        132,
+        108
+      ],
+      "canvas": [
+        132,
+        108
+      ]
+    },
+    {
+      "key": "nadb_3",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1723,
+        3592,
+        100,
+        118
+      ],
+      "canvas": [
+        100,
+        118
+      ]
+    },
+    {
+      "key": "nadb_4",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        441,
+        3936,
+        164,
+        87
+      ],
+      "canvas": [
+        164,
+        87
+      ]
+    },
+    {
+      "key": "nadb_5",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2226,
+        3592,
+        110,
+        103
+      ],
+      "canvas": [
+        110,
+        103
+      ]
+    },
+    {
+      "key": "nadb_6",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2443,
+        3592,
+        104,
+        101
+      ],
+      "canvas": [
+        104,
+        101
+      ]
+    },
+    {
+      "key": "nadb_7",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1639,
+        3592,
+        76,
+        123
+      ],
+      "canvas": [
+        76,
+        123
+      ]
+    },
+    {
+      "key": "nadb_8",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2601,
+        3592,
+        95,
+        97
+      ],
+      "canvas": [
+        95,
+        97
+      ]
+    },
+    {
+      "key": "nadb_9",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        316,
+        3936,
+        117,
+        93
+      ],
+      "canvas": [
+        117,
+        93
+      ]
+    },
+    {
+      "key": "nba_boxpill",
+      "category": "runtime_support",
+      "rect": [
+        3159,
+        4,
+        496,
+        683
+      ],
+      "canvas": [
+        496,
+        683
+      ]
+    },
+    {
+      "key": "nca_87",
+      "category": "machine_gun_spread",
+      "rect": [
+        2383,
+        4,
+        768,
+        768
+      ],
+      "canvas": [
+        768,
+        768
+      ]
+    },
+    {
+      "key": "ndk_ang_0",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2106,
+        3936,
+        24,
+        32
+      ],
+      "canvas": [
+        24,
+        32
+      ]
+    },
+    {
+      "key": "ndk_ang_1",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2138,
+        3936,
+        24,
+        32
+      ],
+      "canvas": [
+        24,
+        32
+      ]
+    },
+    {
+      "key": "ndk_ang_2",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2170,
+        3936,
+        24,
+        32
+      ],
+      "canvas": [
+        24,
+        32
+      ]
+    },
+    {
+      "key": "ndk_ang_3",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2202,
+        3936,
+        24,
+        32
+      ],
+      "canvas": [
+        24,
+        32
+      ]
+    },
+    {
+      "key": "ndk_ang_4",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2234,
+        3936,
+        24,
+        32
+      ],
+      "canvas": [
+        24,
+        32
+      ]
+    },
+    {
+      "key": "ndk_ang_5",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2266,
+        3936,
+        24,
+        32
+      ],
+      "canvas": [
+        24,
+        32
+      ]
+    },
+    {
+      "key": "ndk_ang_6",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2298,
+        3936,
+        24,
+        32
+      ],
+      "canvas": [
+        24,
+        32
+      ]
+    },
+    {
+      "key": "ndk_trail_0",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1906,
+        3936,
+        32,
+        64
+      ],
+      "canvas": [
+        32,
+        64
+      ]
+    },
+    {
+      "key": "ndk_trail_1",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1946,
+        3936,
+        32,
+        64
+      ],
+      "canvas": [
+        32,
+        64
+      ]
+    },
+    {
+      "key": "ndk_trail_2",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1986,
+        3936,
+        32,
+        64
+      ],
+      "canvas": [
+        32,
+        64
+      ]
+    },
+    {
+      "key": "ndk_trail_3",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2026,
+        3936,
+        32,
+        64
+      ],
+      "canvas": [
+        32,
+        64
+      ]
+    },
+    {
+      "key": "nfb_fl1_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2857,
+        3592,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl1_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2961,
+        3592,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl1_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3065,
+        3592,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl1_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3169,
+        3592,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl1_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3273,
+        3592,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl1_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3377,
+        3592,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl1_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3481,
+        3592,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl1_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3585,
+        3592,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl2_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3689,
+        3592,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl2_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        4,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl2_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        108,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl2_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        212,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl2_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        316,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl2_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        420,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl2_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        524,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl2_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        628,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl3_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        732,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl3_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        836,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl3_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        940,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl3_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1044,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl3_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1148,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl3_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1252,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl3_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1356,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl3_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1460,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl4_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1564,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl4_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1668,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl4_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1772,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl4_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1876,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl4_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1980,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl4_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2084,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl4_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2188,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl4_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2292,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl5_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2396,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl5_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2500,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl5_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2604,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl5_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2708,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl5_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2812,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl5_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2916,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl5_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3020,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_fl5_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3124,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_launch_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        981,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nfb_launch_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1053,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nfb_launch_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1125,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nfb_launch_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1197,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nfb_orb1_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3228,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb1_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3332,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb1_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3436,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb1_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3540,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb1_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3644,
+        3728,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb1_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        4,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb1_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        108,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb1_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        212,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb2_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        316,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb2_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        420,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb2_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        524,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb2_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        628,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb2_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        732,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb2_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        836,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb2_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        940,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb2_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1044,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb3_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1148,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb3_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1252,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb3_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1356,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb3_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1460,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb3_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1564,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb3_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1668,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb3_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1772,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb3_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1876,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb4_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1980,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb4_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2084,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb4_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2188,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb4_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2292,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb4_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2396,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb4_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2500,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb4_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2604,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb4_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2708,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb5_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2812,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb5_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2916,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb5_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3020,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb5_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3124,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb5_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3228,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb5_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3332,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb5_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3436,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfb_orb5_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3540,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nfrb_0",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1661,
+        908,
+        341,
+        358
+      ],
+      "canvas": [
+        341,
+        358
+      ]
+    },
+    {
+      "key": "nfrb_1",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        2010,
+        908,
+        340,
+        358
+      ],
+      "canvas": [
+        340,
+        358
+      ]
+    },
+    {
+      "key": "nfrb_2",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        961,
+        908,
+        342,
+        358
+      ],
+      "canvas": [
+        342,
+        358
+      ]
+    },
+    {
+      "key": "nfrb_3",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        1311,
+        908,
+        342,
+        358
+      ],
+      "canvas": [
+        342,
+        358
+      ]
+    },
+    {
+      "key": "nfw_wall_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        689,
+        1969,
+        115,
+        228
+      ],
+      "canvas": [
+        115,
+        228
+      ]
+    },
+    {
+      "key": "nfw_wall_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        812,
+        1969,
+        115,
+        228
+      ],
+      "canvas": [
+        115,
+        228
+      ]
+    },
+    {
+      "key": "nfw_wall_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        935,
+        1969,
+        115,
+        228
+      ],
+      "canvas": [
+        115,
+        228
+      ]
+    },
+    {
+      "key": "nfw_wall_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1058,
+        1969,
+        115,
+        228
+      ],
+      "canvas": [
+        115,
+        228
+      ]
+    },
+    {
+      "key": "nfw_wall_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1181,
+        1969,
+        115,
+        228
+      ],
+      "canvas": [
+        115,
+        228
+      ]
+    },
+    {
+      "key": "nfw_wall_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1304,
+        1969,
+        115,
+        228
+      ],
+      "canvas": [
+        115,
+        228
+      ]
+    },
+    {
+      "key": "nfw_wall_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1427,
+        1969,
+        115,
+        228
+      ],
+      "canvas": [
+        115,
+        228
+      ]
+    },
+    {
+      "key": "nfw_wall_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1550,
+        1969,
+        115,
+        228
+      ],
+      "canvas": [
+        115,
+        228
+      ]
+    },
+    {
+      "key": "ngm_shock_7",
+      "category": "runtime_support",
+      "rect": [
+        4,
+        908,
+        461,
+        461
+      ],
+      "canvas": [
+        461,
+        461
+      ]
+    },
+    {
+      "key": "nhxb_g_0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2083,
+        1377,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxb_g_1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2347,
+        1377,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxb_g_2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2611,
+        1377,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxb_g_3",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2875,
+        1377,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxb_g_4",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3139,
+        1377,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxb_p_0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3403,
+        1377,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxb_p_1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxb_p_2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        268,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxb_p_3",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        532,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxb_p_4",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        796,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nhxs_g_h",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        724,
+        1377,
+        39,
+        257
+      ],
+      "canvas": [
+        39,
+        257
+      ]
+    },
+    {
+      "key": "nhxs_g_l",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1673,
+        1969,
+        39,
+        228
+      ],
+      "canvas": [
+        39,
+        228
+      ]
+    },
+    {
+      "key": "nhxs_g_m",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2952,
+        2233,
+        39,
+        170
+      ],
+      "canvas": [
+        39,
+        170
+      ]
+    },
+    {
+      "key": "nhxs_g_s",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2555,
+        3592,
+        38,
+        100
+      ],
+      "canvas": [
+        38,
+        100
+      ]
+    },
+    {
+      "key": "nhxs_p_h",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        532,
+        1969,
+        38,
+        254
+      ],
+      "canvas": [
+        38,
+        254
+      ]
+    },
+    {
+      "key": "nhxs_p_l",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        860,
+        2233,
+        39,
+        210
+      ],
+      "canvas": [
+        39,
+        210
+      ]
+    },
+    {
+      "key": "nhxs_p_m",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3227,
+        2233,
+        32,
+        162
+      ],
+      "canvas": [
+        32,
+        162
+      ]
+    },
+    {
+      "key": "nhxs_p_s",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2704,
+        3592,
+        31,
+        97
+      ],
+      "canvas": [
+        31,
+        97
+      ]
+    },
+    {
+      "key": "nhxsb_g_0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1971,
+        3592,
+        120,
+        107
+      ],
+      "canvas": [
+        120,
+        107
+      ]
+    },
+    {
+      "key": "nhxsb_g_1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2580,
+        2233,
+        178,
+        177
+      ],
+      "canvas": [
+        178,
+        177
+      ]
+    },
+    {
+      "key": "nhxsb_g_2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        958,
+        2233,
+        216,
+        202
+      ],
+      "canvas": [
+        216,
+        202
+      ]
+    },
+    {
+      "key": "nhxsb_p_0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2099,
+        3592,
+        119,
+        106
+      ],
+      "canvas": [
+        119,
+        106
+      ]
+    },
+    {
+      "key": "nhxsb_p_1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2766,
+        2233,
+        178,
+        176
+      ],
+      "canvas": [
+        178,
+        176
+      ]
+    },
+    {
+      "key": "nhxsb_p_2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1182,
+        2233,
+        214,
+        202
+      ],
+      "canvas": [
+        214,
+        202
+      ]
+    },
+    {
+      "key": "nhxv_g_h_00",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1971,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_01",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2107,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_02",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2243,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_03",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2379,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_04",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2515,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_05",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2651,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_06",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2787,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_07",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2923,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_08",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3059,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_09",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3195,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_10",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3331,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_11",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3467,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_12",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3603,
+        2633,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_13",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_14",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        140,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_15",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        276,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_16",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        412,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_17",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        548,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_18",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        684,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_19",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        820,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_20",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        956,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_21",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1092,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_22",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1228,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_h_23",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1364,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_00",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1500,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_01",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1636,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_02",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1772,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_03",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1908,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_04",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2044,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_05",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2180,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_06",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2316,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_07",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2452,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_08",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2588,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_09",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2724,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_10",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2860,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_11",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2996,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_12",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3132,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_13",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3268,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_14",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3404,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_15",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3540,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_16",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3676,
+        2776,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_17",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_18",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        140,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_19",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        276,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_20",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        412,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_21",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        548,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_22",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        684,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_l_23",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        820,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_00",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        956,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_01",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1092,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_02",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1228,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_03",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1364,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_04",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1500,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_05",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1636,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_06",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1772,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_07",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1908,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_08",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2044,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_09",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2180,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_10",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2316,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_11",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2452,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_12",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2588,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_13",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2724,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_14",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2860,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_15",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2996,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_16",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3132,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_17",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3268,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_18",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3404,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_19",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3540,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_20",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3676,
+        2912,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_21",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_22",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        140,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_m_23",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        276,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_00",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        412,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_01",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        548,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_02",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        684,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_03",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        820,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_04",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        956,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_05",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1092,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_06",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1228,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_07",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1364,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_08",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1500,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_09",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1636,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_10",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1772,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_11",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1908,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_12",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2044,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_13",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2180,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_14",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2316,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_15",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2452,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_16",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2588,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_17",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2724,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_18",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2860,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_19",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2996,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_20",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3132,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_21",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3268,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_22",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3404,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_g_s_23",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3540,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_00",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3676,
+        3048,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_01",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_02",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        140,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_03",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        276,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_04",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        412,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_05",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        548,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_06",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        684,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_07",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        820,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_08",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        956,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_09",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1092,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_10",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1228,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_11",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1364,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_12",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1500,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_13",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1636,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_14",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1772,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_15",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1908,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_16",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2044,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_17",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2180,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_18",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2316,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_19",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2452,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_20",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2588,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_21",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2724,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_22",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2860,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_h_23",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2996,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_00",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3132,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_01",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3268,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_02",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3404,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_03",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3540,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_04",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3676,
+        3184,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_05",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_06",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        140,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_07",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        276,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_08",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        412,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_09",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        548,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_10",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        684,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_11",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        820,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_12",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        956,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_13",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1092,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_14",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1228,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_15",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1364,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_16",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1500,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_17",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1636,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_18",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1772,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_19",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1908,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_20",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2044,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_21",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2180,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_22",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2316,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_l_23",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2452,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_00",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2588,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_01",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2724,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_02",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2860,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_03",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2996,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_04",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3132,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_05",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3268,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_06",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3404,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_07",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3540,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_08",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3676,
+        3320,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_09",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_10",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        140,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_11",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        276,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_12",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        412,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_13",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        548,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_14",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        684,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_15",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        820,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_16",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        956,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_17",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1092,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_18",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1228,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_19",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1364,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_20",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1500,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_21",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1636,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_22",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1772,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_m_23",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1908,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_00",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2044,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_01",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2180,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_02",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2316,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_03",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2452,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_04",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2588,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_05",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2724,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_06",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2860,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_07",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2996,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_08",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3132,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_09",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3268,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_10",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3404,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_11",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3540,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_12",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3676,
+        3456,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_13",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_14",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        140,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_15",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        276,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_16",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        412,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_17",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        548,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_18",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        684,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_19",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        820,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_20",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        956,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_21",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1092,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_22",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1228,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nhxv_p_s_23",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        1364,
+        3592,
+        128,
+        128
+      ],
+      "canvas": [
+        128,
+        128
+      ]
+    },
+    {
+      "key": "nibr_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1748,
+        2233,
+        80,
+        192
+      ],
+      "canvas": [
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nibr_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1836,
+        2233,
+        80,
+        192
+      ],
+      "canvas": [
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nibr_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1924,
+        2233,
+        80,
+        192
+      ],
+      "canvas": [
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nibr_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2012,
+        2233,
+        80,
+        192
+      ],
+      "canvas": [
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nibr_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2100,
+        2233,
+        80,
+        192
+      ],
+      "canvas": [
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nibr_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2188,
+        2233,
+        80,
+        192
+      ],
+      "canvas": [
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nibr_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2276,
+        2233,
+        80,
+        192
+      ],
+      "canvas": [
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nibr_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2364,
+        2233,
+        80,
+        192
+      ],
+      "canvas": [
+        80,
+        192
+      ]
+    },
+    {
+      "key": "nlz_1_b0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2358,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_1_b1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2430,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_1_b2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2502,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_1_b3",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2574,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_1_b4",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2646,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_1_b5",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2718,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_2_b0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2790,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_2_b1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2862,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_2_b2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2934,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_2_b3",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3006,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_2_b4",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3078,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_2_b5",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3150,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_3_b0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3222,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_3_b1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3294,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_3_b2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3366,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_3_b3",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3438,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_3_b4",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3510,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_3_b5",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3582,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_4_b0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3654,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_4_b1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        3726,
+        908,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_4_b2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        4,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_4_b3",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        76,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_4_b4",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        148,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_4_b5",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        220,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_5_b0",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        292,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_5_b1",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        364,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_5_b2",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        436,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_5_b3",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        508,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_5_b4",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        580,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_5_b5",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        652,
+        1377,
+        64,
+        320
+      ],
+      "canvas": [
+        64,
+        320
+      ]
+    },
+    {
+      "key": "nlz_slug",
+      "category": "laser_helix_projectiles",
+      "rect": [
+        2066,
+        3936,
+        32,
+        56
+      ],
+      "canvas": [
+        32,
+        56
+      ]
+    },
+    {
+      "key": "nsw_ring_0",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        3644,
+        3832,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nsw_ring_1",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        4,
+        3936,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nsw_ring_2",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        108,
+        3936,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nsw_ring_3",
+      "category": "pilot_special_projectiles",
+      "rect": [
+        212,
+        3936,
+        96,
+        96
+      ],
+      "canvas": [
+        96,
+        96
+      ]
+    },
+    {
+      "key": "nts_burst_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1060,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_burst_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1324,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_burst_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1588,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_burst_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1852,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_burst_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2116,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_burst_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2380,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_burst_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2644,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_burst_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2908,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_orb_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1720,
+        1969,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1952,
+        1969,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_10",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2184,
+        1969,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_11",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2416,
+        1969,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2648,
+        1969,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        2880,
+        1969,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3112,
+        1969,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3344,
+        1969,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3576,
+        1969,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        4,
+        2233,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_8",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        236,
+        2233,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_orb_9",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        468,
+        2233,
+        224,
+        224
+      ],
+      "canvas": [
+        224,
+        224
+      ]
+    },
+    {
+      "key": "nts_rel_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3172,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_rel_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        3436,
+        1705,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_rel_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        4,
+        1969,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_rel_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        268,
+        1969,
+        256,
+        256
+      ],
+      "canvas": [
+        256,
+        256
+      ]
+    },
+    {
+      "key": "nts_shard_0",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1269,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nts_shard_1",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1341,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nts_shard_2",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1413,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nts_shard_3",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1485,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nts_shard_4",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1557,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nts_shard_5",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1629,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nts_shard_6",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1701,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    },
+    {
+      "key": "nts_shard_7",
+      "category": "flame_ice_thermoshock",
+      "rect": [
+        1773,
+        3936,
+        64,
+        64
+      ],
+      "canvas": [
+        64,
+        64
+      ]
+    }
+  ]
+}

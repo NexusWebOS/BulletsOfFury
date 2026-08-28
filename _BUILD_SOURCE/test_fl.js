@@ -209,6 +209,7 @@ function fxJson(name){
    SIZE of a key's art must read BOFX.cells instead — that is where the frame's real width and
    height live now. */
 function cellSize(M, k, pngSize){
+  if(M.playercells && M.playercells[k]) return [M.playercells[k][7], M.playercells[k][8]];
   if(M.cells && M.cells[k]) return [M.cells[k][3], M.cells[k][4]];
   return M.img[k] ? pngSize(M.img[k]) : null;
 }
@@ -1315,19 +1316,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("enemies.length=0; for(var k=0;k<3;k++){ spawnEnemy('drone',{x:240,y:360-k*70}); } enemies.forEach(function(e,k){e.x=240;e.y=360-k*70;e.hp=3;});", ctxv);
   for(let f=0;f<100;f++){ vm.runInContext("updatePlay(1/60); enemies.forEach(function(e,k){ if(!e.dead && e._dyingT==null){ e.x=240; e.y=360-k*70; e.vx=0; e.vy=0; } });", ctxv); }
   ok(vm.runInContext("enemies.filter(function(e){return !e.dead && e._dyingT==null && e.hp>0;}).length===0", ctxv), 'one lance pierces and destroys a 3-drone column');
-  // venom splits into a HORIZONTAL ROW of parallel straight-up lasers (not angled)
-  // pin the weapon level: lance COUNT is now an upgrade axis, so this split test must state its tier
+  // the special tap remains ONE animated helix for its entire screen crossing
   vm.runInContext("run.pilot='maverick'; run.wlevel=1; setState(GS.PLAY); player.reset(); player.x=240; player.y=490; special={pilot:'maverick',t:99}; pBullets.length=0; pShoot();", ctxv);
-  var _rowOK=false;
-  for(let f=0;f<30;f++){ vm.runInContext("updatePlay(1/60);", ctxv); if(vm.runInContext("(function(){var ch=pBullets.filter(function(b){return b._child;}); return ch.length===2 && ch.every(function(b){return b.vx===0 && b.vy<0;});})()", ctxv)){ _rowOK=true; break; } }
-  ok(_rowOK, 'venom doubles into exactly TWO parallel straight-up helix lasers (at L1)');
-  // UPGRADE PATH: level adds lances — 1 at L1-2, 2 at L3-4, 3 at L5
+  vm.runInContext("for(var f=0;f<30;f++) updatePlay(1/60);", ctxv);
+  ok(vm.runInContext("pBullets.filter(function(b){return b._child;}).length===0", ctxv),
+     'the tappable helix never hands off to the old two-child graphical duplicate');
+  // normal weapon upgrades scale damage; they never multiply the special-tap graphic
   vm.runInContext("run.wlevel=1; pBullets.length=0; player.fireCd=0; pShoot();", ctxv);
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='venomx'&&!b._child;}).length===1", ctxv), 'maverick L1 fires ONE lance');
   vm.runInContext("run.wlevel=3; pBullets.length=0; player.fireCd=0; pShoot();", ctxv);
-  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='venomx'&&!b._child;}).length===2", ctxv), 'maverick L3 upgrades to TWO lances');
+  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='venomx'&&!b._child;}).length===1", ctxv), 'maverick L3 remains ONE graphical helix');
   vm.runInContext("run.wlevel=5; pBullets.length=0; player.fireCd=0; pShoot();", ctxv);
-  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='venomx'&&!b._child;}).length===3", ctxv), 'maverick L5 upgrades to THREE lances');
+  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='venomx'&&!b._child;}).length===1", ctxv), 'maverick L5 remains ONE graphical helix');
   vm.runInContext("special=null;", ctxv);
   // weapon-level system: basic MG starts at 0, first pickup=1, others start at 1
   vm.runInContext("run.pilot='axel'; run.weapon=0; run.wlevels=[0,0,0,0,0,0]; run.wlevel=0;", ctxv);
@@ -1354,7 +1354,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* FLAMETHROWER (drop 0730a). The assertion that used to sit here searched drawBullets for the
      literal "24+((b.lv||1)*5)" — a STRING test, which is the trap section 146 names eleven times.
      It would have passed on a weapon that never fired. These call through pShoot and updatePlay. */
-  vm.runInContext("run.weapon=4; run.wlevels=[0,0,0,0,5,0]; run.wlevel=5; pBullets.length=0; enemies.length=0; player.dead=false; player.x=240; player.y=430;", ctxv);
+  vm.runInContext("beginStage(2); setState(GS.PLAY); run.pilot='axel'; player.reset(); run.weapon=4; run.wlevels=[0,0,0,0,5,0]; run.wlevel=5; pBullets.length=0; enemies.length=0; player.dead=false; player.x=240; player.y=430;", ctxv);
   vm.runInContext("for(var i=0;i<20;i++){ pShoot(); updatePlay(1/60); }", ctxv);
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='flame';}).length===1", ctxv), 'holding fire keeps exactly ONE flame jet, not a stream of projectiles');
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='fire';}).length===0", ctxv), 'the old firewall projectile is gone — one spawner, no second path');
@@ -1365,7 +1365,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      the flame's reach at level 5 is 268px, so the player has to be at y~430 with
      wlevel 5 for the cone to cover it. Whatever the preceding sections left those
      at, the measurement has to state its own conditions. */
-  vm.runInContext("player.x=240; player.y=430; player.dead=false; run.weapon=4; run.wlevel=5; if(run.wlevels) run.wlevels[4]=5;", ctxv);
+  vm.runInContext("player.x=240; player.y=430; player.dead=false; player.fireCd=0; special=null; run.pilot='axel'; run.weapon=4; run.wlevel=5; if(run.wlevels) run.wlevels[4]=5;", ctxv);
   vm.runInContext("enemies.length=0; for(var i=0;i<7;i++) enemies.push({x:150+i*30,y:300,vx:0,vy:0,w:20,h:20,hp:99999,maxhp:99999,dead:false,t:0,kind:'grunt',pattern:'hold',_lvlY:300,noCull:true,fireT:99,flash:0,score:100,_drawY:300});", ctxv);
   /* _burned WAS A LOCAL IN A DIFFERENT EVAL (drop 0801gv). It was declared with
      `var` inside one runInContext string and read from another - two separate
@@ -1373,7 +1373,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      Measured directly instead: the flame at level 5 reaches 268px with a 96px tip
      half-width, and a rank at y=300 with the player at y=430 takes 5 of 7 hits.
      The crowd control works; the counter never crossed the boundary. */
-  vm.runInContext("window.__hp0=enemies.map(function(e){return e.hp;}); window.__burned=0; for(var f=0;f<40;f++){ pShoot(); updatePlay(1/60); enemies.forEach(function(e,ix){ if(window.__hp0[ix]!=null && e.hp<window.__hp0[ix]) window.__burnSeen=(window.__burnSeen||{}), window.__burnSeen[ix]=1; }); } window.__burned=Object.keys(window.__burnSeen||{}).length;", ctxv);
+  vm.runInContext("window.__hp0=enemies.map(function(e){return e.hp;}); window.__burned=0; window.__burnSeen={}; for(var f=0;f<40;f++){ pShoot(); updatePlay(1/60); enemies.forEach(function(e,ix){ if(window.__hp0[ix]!=null && e.hp<window.__hp0[ix]) window.__burnSeen[ix]=1; }); } window.__burned=Object.keys(window.__burnSeen).length;", ctxv);
   ok(vm.runInContext("window.__burned>=5", ctxv), 'one jet burns a whole rank at once (' + vm.runInContext("window.__burned", ctxv) + ' of 7) — this is the crowd control');
   // damage is measured per SECOND, and it has to beat the projectile it replaced (was 3 dmg/shot at ~3.3/s)
   vm.runInContext("enemies.length=0; enemies.push({x:240,y:320,vx:0,vy:0,w:24,h:24,hp:999999,maxhp:999999,dead:false,t:0,kind:'grunt',pattern:'hold',_lvlY:300,noCull:true,fireT:99,flash:0,score:100,_drawY:320}); var _h0=enemies[0].hp; for(var i=0;i<60;i++){ pShoot(); updatePlay(1/60); } var _dps=_h0-enemies[0].hp;", ctxv);
@@ -2756,12 +2756,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   for(var f=0;f<240;f++){
     vm.runInContext("updatePlay(1/60);", ctxv);
     if(!_sawGlow && vm.runInContext("pBullets.some(function(b){return b.kind==='venomx' && b._hphase==='glow';})", ctxv)) _sawGlow=true;
-    if(!_sawBurst && vm.runInContext("pBullets.some(function(b){return b.kind==='hfl';})", ctxv)){ _sawBurst=true; break; }
+    if(!_sawBurst && vm.runInContext("pBullets.some(function(b){return b.kind==='mavlaser' && b._burstVolley;})", ctxv)){ _sawBurst=true; break; }
   }
   ok(_sawGlow, 'the lance reaches the line and enters its GLOW tell instead of flying off');
   ok(_sawBurst, 'the glow resolves into a BURST that spawns the laser flurry');
-  var _nfl=vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).length", ctxv);
-  ok(_nfl>=8, 'the volley is 8-9 big lances, not a cloud of thin ones ('+_nfl+' bolts)');
+  var _nfl=vm.runInContext("pBullets.filter(function(b){return b.kind==='mavlaser'&&b._burstVolley;}).length", ctxv);
+  ok(_nfl===35, 'the first charged-ball wave is five directions x seven independent lances ('+_nfl+')');
   /* ⚠ REPOINTED 0821: this measured b.vy, which is only the bolt's SPEED while every bolt flies
      straight up. Mike asked for volleys "in multiple directions", so the ring now includes bolts
      travelling sideways and down, whose vy is small while their speed is unchanged. The rule was
@@ -2773,9 +2773,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      A flaky assertion is worse than none: it teaches you to ignore a red run. The bolt's SPEED is
      _hspd (17-23 at spawn, and both hfl spawn sites set it), which is the quantity the rule
      "the flurry races" is actually about. Falls back to the tangent if a bolt has no _hspd. */
-  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).every(function(b){return (b._hspd!=null?b._hspd:Math.hypot(b.vx,b.vy))>14;})", ctxv), 'the flurry races — every bolt is fast');
-  ok(vm.runInContext("new Set(pBullets.filter(function(b){return b.kind==='hfl';}).map(function(b){return Math.round((b._hdir||0)*57.3);})).size>=4", ctxv), 'and the volley goes out in MULTIPLE DIRECTIONS, not one upward fan — Mike 0821');
-  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).every(function(b){return b.x>=0 && b.x<=worldWidth();})", ctxv), 'and every bolt stays inside the world');
+  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='mavlaser'&&b._burstVolley;}).every(function(b){return b._speed>12;})", ctxv), 'the flurry races — every generated volley is fast');
+  ok(vm.runInContext("new Set(pBullets.filter(function(b){return b.kind==='mavlaser'&&b._burstVolley;}).map(function(b){return b._burstDir;})).size===5", ctxv), 'and the independent Level-5 lances are grouped into five different directions');
+  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='mavlaser'&&b._burstVolley;}).every(function(b){return b.x>=0 && b.x<=worldWidth();})", ctxv), 'and every volley starts inside the world');
   // it DELETES ordinary enemies
   vm.runInContext("enemies.length=0; pBullets.length=0; var _by=260; helixFlurrySpawn(240,_by,3); spawnEnemy('drone', 240, _by-40, {}); spawnEnemy('drone', 248, _by-70, {});", ctxv);
   var _e0=vm.runInContext("enemies.length", ctxv);
@@ -3061,12 +3061,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(Math.abs(_l1[0].x-_l1[1].x)===7, 'the L1 pair sits tight at 7px apart, not a wide row');
   // --- HELIX pierces all the way through
   vm.runInContext("run.stage=1; enemies.length=0; pBullets.length=0; helixFlurrySpawn(240,300,3);", ctxv);
-  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).every(function(b){return b.pierce===true && b._pierceAll===true;})", ctxv), 'every flurry bolt pierces all the way through');
+  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='mavlaser';}).every(function(b){return b.pierce===true && b._pierceAll===true;})", ctxv), 'every charged-ball volley pierces all the way through');
   // --- the burst MERGES before it spreads
   ok(vm.runInContext("typeof helixBalls!=='undefined' && typeof helixBallsDraw==='function'", ctxv), 'the merge-ball exists');
   vm.runInContext("helixBalls.length=0; pBullets.length=0; var _b={x:240,y:260,lv:3,kind:'venomx',_charged:true,_full:true,w:42,h:70}; helixDetonate(_b);", ctxv);
   ok(vm.runInContext("helixBalls.length===1", ctxv), 'the burst spawns ONE merged ball, not scattered shards');
-  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).length>=8", ctxv), 'and the volley fans out behind it (8-9 big lances)');
+  ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='mavlaser'&&b._burstVolley;}).length===35", ctxv), 'and five seven-lance Level-5 volleys fan out behind it as individual rounds');
   ok(vm.runInContext("helixBallsDraw.toString().indexOf('lzr_')>0", ctxv), 'the ball is drawn from the laser art, not a plain circle');
   ok(vm.runInContext("helixBallsDraw.toString().indexOf('#5aa8ff')>0 && helixBallsDraw.toString().indexOf('#b48bff')>0 && helixBallsDraw.toString().indexOf('#9fe86a')>0", ctxv), 'and flashes blue -> purple -> green');
   vm.runInContext("helixBalls.length=0; pBullets.length=0;", ctxv);
@@ -3235,10 +3235,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // That spray is what read as "the lasers splitting". It must not fire on a helix detonation.
   ok(vm.runInContext("helixBursts.length===0", ctxv), 'and NO beam-spray bloom — that was the split');
   ok(vm.runInContext("helixDetonate.toString().indexOf('helixBurstSpawn')<0", ctxv), 'helixDetonate no longer calls the bloom at all');
-  var _fl=vm.runInContext("pBullets.filter(function(b){return b.kind==='hfl';}).length", ctxv);
-  ok(_fl>=8, 'the volley launches straight from the ball ('+_fl+' lances)');
+  var _fl=vm.runInContext("pBullets.filter(function(b){return b.kind==='mavlaser'&&b._burstVolley;}).length", ctxv);
+  ok(_fl===35, 'five directions x seven independent lances launch from the ball ('+_fl+')');
   // the volley starts MERGED at the burst point, then fans from velocity
-  var _spread0=vm.runInContext("(function(){var f=pBullets.filter(function(b){return b.kind==='hfl';}); return Math.max.apply(null,f.map(function(b){return b.x;}))-Math.min.apply(null,f.map(function(b){return b.x;}));})()", ctxv);
+  var _spread0=vm.runInContext("(function(){var f=pBullets.filter(function(b){return b.kind==='mavlaser'&&b._burstVolley;}); return Math.max.apply(null,f.map(function(b){return b.x;}))-Math.min.apply(null,f.map(function(b){return b.x;}));})()", ctxv);
   ok(_spread0<70, 'they leave essentially together ('+Math.round(_spread0)+'px spread at launch), not pre-split');
   /* THE LANCES HAVE vx:0 BY DESIGN (drop 0801gt). Their x is driven by the helix
      pattern in the update path - _hx0, _hstr and _hph - not by a sideways push, so
@@ -3248,7 +3248,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* 24 frames at vy=-17 is 408px - they have left the screen and the spread reads
      0px because there is nothing left to measure. 10 frames keeps them in play. */
   vm.runInContext("for(var f=0;f<10;f++){ updatePlay(1/60); }", ctxv);
-  var _spread1=vm.runInContext("(function(){var f=pBullets.filter(function(b){return b.kind==='hfl';}); return f.length? Math.max.apply(null,f.map(function(b){return b.x;}))-Math.min.apply(null,f.map(function(b){return b.x;})):0;})()", ctxv);
+  var _spread1=vm.runInContext("(function(){var f=pBullets.filter(function(b){return b.kind==='mavlaser'&&b._burstVolley;}); return f.length? Math.max.apply(null,f.map(function(b){return b.x;}))-Math.min.apply(null,f.map(function(b){return b.x;})):0;})()", ctxv);
   ok(_spread1>_spread0, 'and fan out as they travel ('+Math.round(_spread0)+'px -> '+Math.round(_spread1)+'px)');
   ok(vm.runInContext("helixBurstsDraw.toString().indexOf('helixBallsDraw')>0", ctxv), 'the ball is still drawn');
   vm.runInContext("helixBalls.length=0; helixBursts.length=0; pBullets.length=0;", ctxv);
@@ -5958,6 +5958,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("arsenalMiniFor(2)==='caldera'",   ctxv), 'stage 2 fields CALDERA');
   ok(vm.runInContext("arsenalMiniFor(3)==='frostbite'", ctxv), 'stage 3 fields FROSTBITE');
   ok(vm.runInContext("arsenalMiniFor(4)==='dambreaker'",ctxv), 'stage 4 fields DAMBREAKER');
+  ok(vm.runInContext("ARSENAL_MINI_DEF.dambreaker.size===180",ctxv),
+     'Dambreaker is scaled up exactly 50% (120px -> 180px) in both rendered and collision size');
   /* the tier displaces nothing: the real minibosses are still where they were */
   ok(vm.runInContext("SUBBOSS[1].kind==='junglecruiser'", ctxv), 'and SUBBOSS[1] is the JUNGLE CRUISER');
   ok(vm.runInContext("SUBBOSS[2].kind==='magmaward'", ctxv), 'SUBBOSS[2] is the MAGMA WARD (0813h)');
@@ -7024,7 +7026,7 @@ function _wv(st,pk,w,roll){ return vm.runInContext("weaponVariant("+w+",{stage:"
   ok(['micon_icebreath_','micon_thermoshock_','micon_fireorb_','micon_firewall_','micon_iceorb_']
        .every(function(pre){ return [1,2,3,4,5].every(function(l){ return _mmf.indexOf('"'+pre+l+'"')>0; }); }),
      'all five weapon-variant icon families are registered at all 5 levels');
-  ok(vm.runInContext("Object.keys(WVAR_ICON).every(function(v){ return [1,2,3,4,5].every(function(l){ return !!window.BOFX.img[WVAR_ICON[v]+l]; }); })", ctxv),
+  ok(vm.runInContext("Object.keys(WVAR_ICON).every(function(v){ return [1,2,3,4,5].every(function(l){ var k=WVAR_ICON[v]+l; return !!(window.BOFX.icons[k]||window.BOFX.img[k]); }); })", ctxv),
      'and every variant WVAR_ICON names resolves to real art');
   /* ===== PILOT CARDS (drop 0822ah) ==================================================
      Mike's corrections off the video. Two tables described the same abilities and disagreed on
@@ -7039,8 +7041,9 @@ function _wv(st,pk,w,roll){ return vm.runInContext("weaponVariant("+w+",{stage:"
   ok(/lzMountGrant\(\)/.test(_gmi), 'and the heavy turret is a real mechanic, not just a label');
   ok(vm.runInContext("/SONIC BOOM/.test(PC_SPECIAL.cole.name) && /WARHEAD/.test(PC_SPECIAL.cole.name)", ctxv),
      "cole's card names SONIC BOOM and WARHEAD");
-  /* the winged-A emblem STAYS - Mike: "you could probably take his afterburner symbol that you have" */
-  ok(vm.runInContext("PC_SPECIAL.axel.icon==='sp_axel_0'", ctxv), "and axel keeps his winged-A emblem");
+  /* 0827: the winged-A was only a placeholder; the generated icon now mirrors MEGA SHIELD. */
+  ok(vm.runInContext("PC_SPECIAL.axel.icon==='special_icon_axel_mega_shield'", ctxv),
+     "and Axel's card uses the weapon-readable Mega Shield plate instead of the wing badge");
   /* \u26a0 THE EMBLEM INK RECTS WERE ALL WRONG (0822ah). Mike: "Axel's icon is cut off on the left
      wing side." PEMB_INK is the SOURCE rect drawn out of each 256x256 emblem, measured offline
      once - and every one of the nine had drifted. Axel's said x:28 w:200 (28..228) while the ink
@@ -7555,9 +7558,13 @@ console.log("=== 164. Cole sonic boom + Lizzie heavy MG ===");
   var _M164=JSON.parse(fs.readFileSync(ROOT+'/assets/manifest.js','utf8').match(/window\.BOFX=([\s\S]*?\});/)[1]);
   var _need164=['nsw_box_cole','nsw_box_lizzie','nsw_icon_cole','nsw_icon_lizzie','nlz_mount','nsw_combined'];
   for(var q=0;q<4;q++){ _need164.push('nsw_ring_'+q,'nsw_circ_'+q,'nsw_dist_'+q,'nsw_distr_'+q); }
-  var _m164=_need164.filter(function(k){ return !_M164.img[k]; });
+  var _m164=_need164.filter(function(k){ return !_M164.img[k] && !(_M164.icons&&_M164.icons[k]); });
   ok(_m164.length===0,'the Vol.3 special-weapon art is registered'+(_m164.length?(' — missing '+_m164.join(',')):''));
-  ok(_need164.filter(function(k){ return _M164.img[k] && !fs.existsSync(ROOT+'/'+_M164.img[k]); }).length===0,
+  ok(_need164.filter(function(k){
+       var rel=_M164.img[k];
+       if(!rel && _M164.icons&&_M164.icons[k]) rel=_M164.img[_M164.icons[k][4]||'nia_icons'];
+       return !rel || !fs.existsSync(ROOT+'/'+rel);
+     }).length===0,
      'and every path resolves on disk');
 
   /* NEITHER SPECIAL WAS TOUCHED. Cole keeps NUKE STRIKE, Lizzie keeps ATOM BOMB — these are
@@ -7801,8 +7808,9 @@ console.log("=== 167. draw-scale discipline ===");
 console.log("=== 168. icon atlas ===");
 {
   var _M168=JSON.parse(fs.readFileSync(ROOT+'/assets/manifest.js','utf8').match(/window\.BOFX=([\s\S]*?\});/)[1]);
-  ok(!!_M168.img['nia_icons'] && fs.existsSync(ROOT+'/'+_M168.img['nia_icons']),
-     'the icon sheet is registered and on disk');
+  var _iconAtlas168='bof_player_weapon_special_icons_atlas';
+  ok(!!_M168.img[_iconAtlas168] && fs.existsSync(ROOT+'/'+_M168.img[_iconAtlas168]),
+     'the named production icon sheet is registered and on disk');
   var _IC=_M168.icons||{};
   /* ⚠ THIS PINNED A BARE COUNT OF 57 and broke the moment icons were ADDED (drop 0810s
      registered micon_iceshard_1..5, taking it to 62). A count is not what this section is
@@ -7810,7 +7818,8 @@ console.log("=== 168. icon atlas ===");
      and on disk, which is the failure that actually costs a drawn icon. Asserted on that
      instead, plus a floor so cells going MISSING is still caught. */
   var _icKeys = Object.keys(_IC);
-  ok(_icKeys.length >= 57, 'the icon cells are all still here (' + _icKeys.length + ', floor 57)');
+  ok(_icKeys.length >= 66 && [1,2,3,4,5].every(function(t){return _IC['micon_thermoshock_'+t][4]===_iconAtlas168;}),
+     'the production icon cells include all five corrected Thermoshock tiers (' + _icKeys.length + ', floor 66)');
   var _icSheets = {}, _icBadSheet = [];
   _icKeys.forEach(function(k){
     var sk = _IC[k][4] || 'nia_icons';
@@ -7824,14 +7833,14 @@ console.log("=== 168. icon atlas ===");
   });
   /* the 5th element is what lets an icon live outside nia_icons (drop 0810s) — without it a
      refresh means repacking a CELL inside nca_28 that holds 668x656 of unrelated art */
-  ok(!!_IC['micon_fireorb_1'] && _IC['micon_fireorb_1'][4]==='nia_icons2',
-     'the refreshed fire orb reads from its own sheet, via the per-entry sheet key');
+  ok(!!_IC['micon_fireorb_1'] && _IC['micon_fireorb_1'][4]===_iconAtlas168,
+     'the refreshed fire orb reads from the named production sheet via its per-entry key');
   /* ⚠ NAMED BY MIKE ON THE RESEND, and the first pass guessed wrong. That row is ICE
      BREATH — Freezer's weapon, a family that already existed — not a new "ice shard" family.
      weaponIconKey already routes w===4 to micon_icebreath_* for him, so the refreshed art
      reaches him purely by being registered under the right name. */
-  ok(!!_IC['micon_icebreath_1'] && _IC['micon_icebreath_1'][4]==='nia_icons2',
-     'the refreshed ice breath reads from the new sheet too');
+  ok(!!_IC['micon_icebreath_1'] && _IC['micon_icebreath_1'][4]===_iconAtlas168,
+     'the refreshed ice breath reads from the production sheet too');
   ok(!_IC['micon_iceshard_1'], 'and the guessed-at iceshard family is gone, not left as a phantom');
   ['falva','lizzie','cole','axel','yuri','decker','freezer','juggernaut','maverick'].forEach(function(p){
     ok(!!_IC['spicon_'+p], 'spicon_'+p+' is a cell in the sheet');
@@ -7864,12 +7873,12 @@ console.log("=== 168. icon atlas ===");
      'an unknown key returns null so the caller falls back instead of throwing');
 
   var _cells=JSON.parse(vm.runInContext(`(function(){
-    ASSETS.ready=true; XART._touch('nia_icons');
+    ASSETS.ready=true; XART._touch('bof_player_weapon_special_icons_atlas');
     var bad=[]; Object.keys(BOFX.icons).forEach(function(k){
       if(!(iconDraw(k,0,0,36)>0)) bad.push(k); });
     return JSON.stringify(bad);
   })()`, ctxv));
-  ok(_cells.length===0, 'all 57 cells resolve out of the sheet'+
+  ok(_cells.length===0, 'all production icon cells resolve out of the sheet'+
      (_cells.length?(' — failed: '+_cells.slice(0,3).join(', ')):''));
 }
 
@@ -7911,7 +7920,7 @@ console.log("=== 169. ship atlas ===");
     return JSON.stringify(bad);
   })()`, ctxv));
   ok(_bad.length===0,
-     'all 162 cells resolve AT THEIR ORIGINAL CANVAS SIZE, so every anchor fraction still lands'+
+     'all 153 cells resolve AT THEIR ORIGINAL CANVAS SIZE, so every anchor fraction still lands'+
      (_bad.length?(' — '+_bad.slice(0,3).join(', ')):''));
 
   /* The frame picker and the thruster rig must still agree through the sheet. */
@@ -7932,7 +7941,7 @@ console.log("=== 169. ship atlas ===");
      (_rig.length?(' — '+_rig.slice(0,3).join(', ')):''));
 
   ok(fs.readFileSync(ROOT+'/assets/game.js','utf8').indexOf('function _shipCell')>0,
-     'cells are built lazily out of the sheet, so one pilot does not decode all 162');
+     'cells are built lazily out of the sheet, so one pilot does not reconstruct all 153 frames');
 }
 
 // ===== 170. CHARGE TAP-vs-HOLD + COLE'S SONIC ART (drop 0805r) =====
@@ -7984,7 +7993,8 @@ console.log("=== 170. charge tap/hold + cole sonic art ===");
   /* Cole's special ART is swapped; his special MECHANIC is not. */
   ok(vm.runInContext("specialArtKey('spicon_cole')==='nsw_icon_cole'", ctxv), "cole's special icon is the sonic boom");
   ok(vm.runInContext("specialArtKey('special_cole')==='nsw_box_cole'", ctxv), "and so is his special box");
-  ok(vm.runInContext("specialArtKey('spicon_yuri')==='spicon_yuri'", ctxv), 'every other pilot is untouched');
+  ok(vm.runInContext("specialArtKey('spicon_yuri')==='special_icon_yuri_chain_lightning'", ctxv),
+     "Yuri now uses the weapon-readable Chain Lightning plate instead of the last wing badge");
   ok(vm.runInContext("SPECIAL_INFO.cole.name==='NUKE STRIKE'", ctxv),
      'and NUKE STRIKE is still his special — art changed, mechanic did not');
   ok(vm.runInContext("iconDraw('spicon_cole',0,0,36,true)>0 && iconDraw('spicon_yuri',0,0,36,true)>0", ctxv),
@@ -8351,7 +8361,7 @@ console.log("=== 178. stage-3 orb + thaw ===");
      orbIsFire() flips its element and art. The ICON was not: weaponIconKey returned
      micon_iceorb_* unconditionally, so the box dropped a fireball wearing an ice-orb icon. All
      three icons already existed and were simply unreachable. */
-  var _ico=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true; var o={};"
+  var _ico=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true; run.spaceMode=false; run._groundLoadout=null; var o={};"
    +"[['yuri',3],['freezer',3],['yuri',5],['freezer',5]].forEach(function(p){"
    +"  run.pilot=p[0]; run.stage=p[1]; curStage=STAGES[p[1]-1];"
    +"  o[p[0]+p[1]]={orb:weaponIconKey(5,3), flame:weaponIconKey(4,3)}; });"
@@ -9062,8 +9072,8 @@ console.log("=== 192. pilot card layout + reveal ===");
      "Cole's long bio + five stats receive more room than the shorter cards");
   ok(vm.runInContext("pcBodyY('lizzie')===0.190 && pcBodyY('freezer')===0.190 && pcBodyY('juggernaut')===0.190 && pcBodyY('yuri')===0.190", ctxv),
      'pilots the walkthrough said were good keep the established body origin');
-  ok((_g192.match(/bx\+ch\*0\.155/g)||[]).length>=2,
-     'long stat and ability labels stay inside the right bay instead of crossing the pilot divider');
+  ok(_g192.indexOf('pcFontLeft(st.label,bx')>0 && _g192.indexOf("pcFontLeft('SPECIAL ABILITY',bx")>0,
+     'long stat and ability labels are left-anchored inside the right bay instead of crossing the pilot divider');
 
   /* "ensure the special ability is visible without going off the card" */
   ok(_g192.indexOf('cy+ch*0.935 - ch*0.100')>0,
@@ -10424,17 +10434,30 @@ console.log("=== 215. menu navigation ===");
   ok((_g215.match(/menuBackTick\(\)\) return;/g)||[]).length===1,
      'exactly one menuBackTick call site');
 
-  /* CAMPAIGN PAUSE (drop 0809t). Mike: k/b must not back you out of the campaign; START opens a
-     window instead, so the game has one place that knows the campaign ended. */
-  ok(_g215.indexOf('campPauseIsCampaignScreen() && Input.menuBack()){ campPauseOpen(); }')>0 ||
-     _g215.indexOf('campPauseIsCampaignScreen() && Input.menuBack()){ campPauseOpen(); return; }')>0,
-     'the campaign back key opens the pause instead of backing out');
-  ok(vm.runInContext("CAMP_PAUSE_BTN.length===4 && CAMP_PAUSE_BTN.map(b=>b.act).join(',')==='save,load,options,exit'", ctxv),
-     'and it offers save, load, options and return-to-main-menu');
+  /* CAMPAIGN INPUT OWNERSHIP (0826). Back is inert; Enter/Start opens the menu only after the
+     authored map sequence has completed. FIRE remains the independent deploy command. */
+  ok(vm.runInContext("Input.menuStart.toString().indexOf(\"'enter'\")>0 && Input.menuStart.toString().indexOf(\"'pad_b9'\")>0 && Input.menuStart.toString().indexOf('keybind.fire')<0", ctxv),
+     'campaign Start is Enter/controller Start and does not steal the assigned FIRE command');
+  var _campInput=JSON.parse(vm.runInContext("(function(){"
+    +"run.mode='campaign'; campPause=null; campPick=null; state=GS.STAGESEL;"
+    +"sselUnlockCine=null; s9MapCine=null; window.sselCommitted=false;"
+    +"sselBoot=1; Input.injectTap('enter'); campaignMenuInputTick(); var during=(campPause===null);"
+    +"sselBoot=0; Input.injectTap('enter'); campaignMenuInputTick(); var live=!!campPause; campPause=null;"
+    +"state=GS.STAGESEL; sselBoot=1; Input.injectTap('k'); campaignMenuInputTick();"
+    +"var escaped=menuBackTick(); var held=(state===GS.STAGESEL&&!escaped);"
+    +"return JSON.stringify({during:during,live:live,held:held});})()", ctxv));
+  ok(_campInput.during, 'Enter/Start cannot open the campaign menu during the map sequence');
+  ok(_campInput.live, 'Enter/Start opens the campaign menu once the map is live');
+  ok(_campInput.held, 'the assigned back button is consumed before generic routing can leave campaign');
+  ok(vm.runInContext("CAMP_PAUSE_BTN.length===3 && CAMP_PAUSE_BTN.map(b=>b.act).join(',')==='save,load,exit'", ctxv),
+     'the campaign menu offers exactly save, load and exit');
   ok(vm.runInContext("CAMP_PAUSE_BTN.every(b=>!!(XART._src&&XART._src[b.key]))", ctxv),
-     'all four use authored button art that actually resolves');
-  ok(vm.runInContext("(function(){ run.mode='campaign'; campaignEnd(); return run.mode; })()", ctxv)==='arcade',
-     'campaignEnd is the one place that registers leaving campaign mode');
+     'all three use authored button art that actually resolves');
+  var _campEnd=JSON.parse(vm.runInContext("(function(){ run.mode='campaign'; campaign._booted=true; campaignEnd(); return JSON.stringify({mode:run.mode,boot:campaign._booted}); })()", ctxv));
+  ok(_campEnd.mode==='arcade' && _campEnd.boot===false,
+     'campaignEnd registers the exit and re-arms the opening sequence for the next new campaign');
+  ok(_g215.indexOf('campaignEnd(); menuIndex=0; goTitle();')>0,
+     'Exit Game is the only campaign-menu action that returns directly to the main screen');
   ok(vm.runInContext("(function(){ var hit=[]; var old=Audio.startMusic; Audio.startMusic=function(n){hit.push(n);}; setState(GS.TITLE); Audio.startMusic=old; return hit.join(','); })()", ctxv)==='title',
      'every route back to TITLE replaces campaign/gameplay music with the title theme');
   ok(vm.runInContext("Input.menuBack.toString().indexOf(\"'k'\")>0", ctxv),
@@ -11131,12 +11154,14 @@ console.log("=== 229. flame/ice hitbox + reaver colour + fire orb ===");
      'and the magma orb turn is gated on that latch, so it can never re-acquire');
 
   /* Mike: "do not allow us to pull up the pause/save game menu until we reach this point when
-     selecting campaign." */
-  ok(_g229.indexOf('let campHubSeen=false;')>0, 'the save menu is latched on the map being reached');
-  ok(_g229.indexOf('return campHubSeen &&')>0, 'and campPauseIsCampaignScreen requires it');
-  ok(_g229.indexOf('case GS.CAMPHUB: { campHubSeen=true;')>0, 'the map sets it');
-  ok(_g229.indexOf('case GS.TITLE:   campHubSeen=false;')>0,
-     'and the title clears it, so a second campaign re-gates rather than inheriting the first');
+     selecting campaign." The live map conditions are now the gate itself, not a stale latch. */
+  ok(_g229.indexOf("state===GS.STAGESEL &&")>0 && _g229.indexOf("sselBoot==='undefined' || sselBoot===0")>0,
+     'the campaign menu requires the actual stage map with its boot sequence finished');
+  ok(_g229.indexOf("sselUnlockCine==='undefined' || sselUnlockCine==null")>0 &&
+     _g229.indexOf("s9MapCine==='undefined' || s9MapCine==null")>0,
+     'unlock cinematics keep the campaign menu gated too');
+  ok(_g229.indexOf("if(state===GS.STAGESEL && Input.menuStart())")>0,
+     'only the stage map routes Enter/Start into the campaign menu');
 }
 
 // ===== 230. FIRE SHARK JETS, AND HOMING IS A GRANT (Mike, 0819) =====
@@ -11678,6 +11703,367 @@ console.log("=== 245. arcade boss performance and distinct naval identities ==="
   ok(_s245.indexOf("if(b.fireCd<=0) shipBossQueueAttack(b)")>0 &&
      _s245.indexOf("if(b._ship&&typeof shipBossQueueAttack==='function')")>0,
      'both live boss and miniboss runtimes use the performance queue while direct attack tests stay deterministic');
+}
+
+// ===== 246. FURY HQ RETAINS THE FULL PILOT ENSEMBLE =====
+console.log("=== 246. Fury HQ ensemble staging ===");
+{
+  var _hq246=JSON.parse(vm.runInContext("(function(){run.mode='campaign';hqSeen={};hqPlay('HQ_ALL_00');"
+    +"var first={n:hqRoster.length,j:hqRoster.indexOf('juggernaut'),who:hqSc.lines[hqLine][0]};"
+    +"hqPlay('HQ_ALL_04');var reveal={n:hqRoster.length,j:hqRoster.indexOf('juggernaut')};"
+    +"return JSON.stringify({first:first,reveal:reveal});})()",ctxv));
+  ok(_hq246.first.n===8 && _hq246.first.j===-1 && _hq246.first.who==='cole',
+     'the opening HQ briefing keeps all eight established pilots around the command console');
+  ok(_hq246.reveal.n===9 && _hq246.reveal.j>=0,
+     'Juggernaut joins the persistent HQ ensemble at his authored sealed-hangar reveal');
+  var _s246=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
+  ok(_s246.indexOf('ensemble:hqRoster, speakingPilot:ln[0], speakingPose:ln[1]')>0 &&
+     _s246.indexOf("const bottom=344-18*arc")>0,
+     'the live cutscene passes speaker emphasis into the full ensemble and seats them along the curved console');
+}
+
+// ===== 247. CAMPAIGN PILOT SELECT REQUIRES A FRESH INPUT =====
+console.log("=== 247. Campaign pilot-select input lock ===");
+{
+  var _pl247=JSON.parse(vm.runInContext("(function(){run.mode='campaign';stateT=0;drawPilot._entered=false;"
+    +"Input.mouse.down=true;pilotInputArmed=true;drawPilot(1/60);var entry={armed:pilotInputArmed,pending:pilotPending};"
+    +"stateT=0.6;Input.injectTap('enter');var held=pilotInputGateTick();var afterHeld={ready:held,armed:pilotInputArmed,pending:pilotPending};"
+    +"Input.mouse.down=false;var release=pilotInputGateTick();var next=pilotInputGateTick();"
+    +"return JSON.stringify({entry:entry,afterHeld:afterHeld,release:release,next:next});})()",ctxv));
+  ok(!_pl247.entry.armed && _pl247.entry.pending==null,
+     'entering Campaign pilot select disarms input before a held click can choose a pilot');
+  ok(!_pl247.afterHeld.ready && !_pl247.afterHeld.armed && _pl247.afterHeld.pending==null,
+     'held mouse/controller/confirm input remains locked even after the entry delay');
+  ok(!_pl247.release && _pl247.next,
+     'releasing every control arms the screen, and only the following fresh frame accepts input');
+  var _s247=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
+  ok(_s247.indexOf("const _hint=(run && run.mode==='campaign')")>0,
+     'Campaign pilot select no longer advertises a Back command that Campaign intentionally owns');
+}
+
+// ===== 248. DECKER CARD MATCHES HIS LIVE CLOAK =====
+console.log("=== 248. Decker special identity ===");
+{
+  ok(vm.runInContext("SPECIAL_INFO.decker.name==='CLOAKING SYSTEM' && PC_SPECIAL.decker.name===SPECIAL_INFO.decker.name",ctxv),
+     'Decker is labelled CLOAKING SYSTEM consistently on the select metadata and pilot card');
+  var _s248=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
+  ok(_s248.indexOf("specialActive('decker') && Math.random()<0.85")>0,
+     'the label follows the live cloak mechanic that suppresses most enemy firing while active');
+}
+
+// ===== 249. ALL NINE PILOT CARDS USE THE SUPPLIED DIALOGUE FACE =====
+console.log("=== 249. nine-pilot card dialogue typography ===");
+{
+  var _s249=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
+  var _p0=_s249.indexOf('function pcDraw(rect)');
+  var _p1=_s249.indexOf('function mechDraw',_p0);
+  var _card249=_s249.slice(_p0,_p1);
+  ok(_s249.indexOf("bmfDraw('dialogue',text")>0,
+     'pilot-card text renders from the supplied Fury dialogue bitmap face');
+  ok(_card249.indexOf('stageText(')<0 && _card249.indexOf('stageWrap(')<0,
+     'the card runtime no longer mixes the stone stage alphabet into its content');
+  ok(_card249.indexOf('pcFontLeft(reveal(1)')>0 && _card249.indexOf('pcFontLeft(reveal(3)')>0,
+     'title and affiliation rows are drawn instead of being silently skipped');
+  ok(_card249.indexOf('DIALOGUE_BODY_COLOR')>0,
+     'biography copy uses the established neutral gray-white dialogue color');
+  ok(vm.runInContext("PILOTS.every(function(P){ return pcTint(P.key)===P.tint; })",ctxv),
+     'all nine card UI palettes come from their pilot-authored tint');
+  ok(vm.runInContext("['axel','decker','maverick','freezer','juggernaut','yuri','lizzie','falva','cole'].every(function(p){ var L=pcLines(p); return L.length===5 && L[0] && L[1] && L[2] && L[3] && L[4]; })",ctxv),
+     'every pilot supplies name, title, callsign, affiliation, and biography to the reveal');
+}
+
+// ===== 250. DECKER DEFAULT MACHINE-GUN CADENCE =====
+console.log("=== 250. Decker machine-gun cadence ===");
+{
+  var _dk250=JSON.parse(vm.runInContext("(function(){var P=PILOTS.find(function(q){return q.key==='decker';});"
+    +"var base=0.085,interval=base*(1-P.fire),frames=Math.ceil(interval*60),shots=Math.ceil(180/frames);"
+    +"return JSON.stringify({fire:P.fire,interval:interval,frames:frames,shots:shots,hz:1/interval});})()",ctxv));
+  ok(_dk250.fire===0.08 && _dk250.interval>=0.075,
+     'Decker no longer retains the obsolete +22% rapid-fire bonus ('+_dk250.interval.toFixed(4)+'s cadence)');
+  ok(_dk250.frames===5 && _dk250.shots===36 && _dk250.hz<13,
+     'at 60fps his default MG fires 36 times over three seconds, not the broken 45-shot/15Hz stream');
+}
+
+// ===== 251. NON-NAVAL UNIT FRAMES NEVER STACK OR WOBBLE =====
+console.log("=== 251. non-naval movement and unit-frame spacing ===");
+{
+  var _mv251=JSON.parse(vm.runInContext("(function(){"
+    +"function burial(A,B){var ox=(A.w+B.w)*0.5+SEP_GAP-Math.abs(B.x-A.x),oy=(A.h+B.h)*0.5+SEP_GAP-Math.abs(B.y-A.y);return ox>SEP_GAP&&oy>SEP_GAP?Math.min(ox,oy):0;}"
+    /* Reproduce the measured Stage-4 squeeze: a bomber between a road tank and the fixed
+       Dambreaker mini. Pair-only relaxation cycled forever; the final clear-lane pass must solve
+       all three unit frames together. */
+    +"run.stage=4;curStage=STAGES[3];enemies.length=0;"
+    +"var t={type:'roadtank',pattern:'tankpatrol',x:200,y:419,w:52,h:52,dead:false,t:1,_lvlY:419};"
+    +"var m={type:'dambreaker',pattern:'sine',x:349,y:258,w:120,h:120,dead:false,t:1,_amini:true};"
+    +"var j={type:'s1jetBomber',pattern:'ai',x:244,y:380,w:131,h:116,dead:false,t:1};"
+    +"enemies.push(t,m,j);enemySeparate(1/60);var max=0;for(var a=0;a<enemies.length;a++)for(var b=a+1;b<enemies.length;b++)max=Math.max(max,burial(enemies[a],enemies[b]));"
+    /* Two stationary river hazards authored on one point are assigned distinct fixed lanes once,
+       then never displaced by the live separator. */
+    +"run.stage=1;curStage=STAGES[0];enemies.length=0;"
+    +"var p1={type:'s1rivermine',pattern:'prop',x:240,y:180,w:37,h:37,dead:false,t:1};fixedHazardPlace(p1);enemies.push(p1);"
+    +"var p2={type:'s1rivermine',pattern:'prop',x:240,y:180,w:37,h:37,dead:false,t:1};fixedHazardPlace(p2);enemies.push(p2);"
+    +"var px=[p1.x,p2.x],spaced=Math.abs(p2.x-p1.x)>=(p1.w+p2.w)*0.5+SEP_GAP;for(var f=0;f<30;f++)enemySeparate(1/60);"
+    +"return JSON.stringify({max:max,spaced:spaced,fixed:p1.x===px[0]&&p2.x===px[1],jet:isJetEnemy({type:'mdrone',pattern:'sine'}),passes:SEP_PASS});})()",ctxv));
+  ok(_mv251.max===0,
+     'the measured Stage-4 tank / bomber / flying-mini squeeze resolves with no buried unit frames');
+  ok(_mv251.spaced && _mv251.fixed,
+     'stationary mines receive separate authored lanes once and never wobble or drift afterward');
+  ok(_mv251.jet && _mv251.passes>=20,
+     'drone aircraft use committed flight curves and dense formations receive the full solver pass');
+
+  var _src251=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
+  ok(_src251.indexOf("case 'prop':   e.vx=0; e.vy=0")>0,
+     'barrels and water mines are map-anchored instead of receiving lateral movement');
+  ok(_src251.indexOf("case 's1tank': tankTick(e, dt)")>0 && _src251.indexOf('const TANK_DIR8=[')>0,
+     'tracked units remain on their eight-direction drive state with their south-facing weapon model');
+}
+
+// ===== 252. STAGE-4 MISSILE DRONES USE THEIR LOCAL BLACK PALETTE =====
+console.log("=== 252. Stage-4 mdrone palette ===");
+{
+  var _pal252=JSON.parse(vm.runInContext("(function(){var e={type:'mdrone'};var o={};"
+    +"run.stage=4;o.s4=enemyPaletteMode(e);run.stage=3;o.s3=enemyPaletteMode(e);"
+    +"run.stage=4;o.other=enemyPaletteMode({type:'intcp'});return JSON.stringify(o);})()",ctxv));
+  ok(_pal252.s4==='black', 'Stage 4 missile drones request the black/dark-gray palette');
+  ok(_pal252.s3==null && _pal252.other==null,
+     'the palette does not leak to mdrone on another level or to other Stage-4 aircraft');
+  var _src252=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
+  ok(_src252.indexOf("q.globalCompositeOperation='multiply'; q.fillStyle='#292b30'")>0,
+     'the atlas frame is multiply palette-swapped so its shading survives instead of receiving a flat tint');
+  ok(_src252.indexOf('const _pal=enemyPaletteMode(e);')>0 && _src252.indexOf('xartPalette(key,_pal)')>0,
+     'the vault-aircraft renderer applies the Stage-local palette before its early return');
+}
+
+// ===== 253. WEAPON / SPECIAL ICON ATLAS + FINAL ABILITY NAMES =====
+console.log("=== 253. weapon and special icon atlas identity ===");
+{
+  ok(vm.runInContext("SPECIAL_INFO.maverick.name==='HELIX BEAM' && PC_SPECIAL.maverick.name==='HELIX BEAM'",ctxv),
+     'Maverick displays HELIX BEAM on both pilot-facing surfaces');
+  ok(vm.runInContext("SPECIAL_INFO.freezer.name==='TIME FREEZE + THERMOSHOCK' && PC_SPECIAL.freezer.name===SPECIAL_INFO.freezer.name",ctxv),
+     'Freezer displays TIME FREEZE + THERMOSHOCK on both surfaces');
+  ok(vm.runInContext("SPECIAL_INFO.juggernaut.name==='WRECKING BALL' && PC_SPECIAL.juggernaut.name===SPECIAL_INFO.juggernaut.name",ctxv),
+     'Juggernaut displays WRECKING BALL on both surfaces');
+  ok(vm.runInContext("SPECIAL_INFO.falva.name==='ROLLER BALL' && PC_SPECIAL.falva.name===SPECIAL_INFO.falva.name",ctxv),
+     'Falva remains ROLLER BALL everywhere');
+  var _atlas253=path.join(ROOT,'docs','atlases','Bullets_of_Fury_Player_Weapon_and_Special_Icon_Atlas.json');
+  ok(fs.existsSync(_atlas253), 'the complete weapon/special atlas metadata exists');
+  if(fs.existsSync(_atlas253)){
+    var _m253=JSON.parse(fs.readFileSync(_atlas253,'utf8'));
+    ok(_m253.counts.weapon===53 && _m253.counts.special===13 && _m253.counts.pilots===9 &&
+       _m253.counts.generated_powerups===10 && _m253.counts.approved_powerups===3,
+       'the atlas contains 48 shared tiers + 5 Maverick laser tiers and 13 special powerups');
+    ok(_m253.entries.filter(function(e){return e.category==='special';}).every(function(e){
+         return !/^sp(icon)?_/.test(e.source_key);
+       }),
+       'the special section contains no wing-badge or inner-box placeholder keys');
+    ok(['nsw_icon_cole','nsw_icon_decker','nsw_icon_lizzie'].every(function(k){
+         return _m253.entries.some(function(e){return e.kind==='approved_powerup' && e.source_key===k;});
+       }),
+       'the special section includes the authored Sonic Boom, shotgun and heavy-machine-gun/turret plates');
+    ok(['special_icon_axel_mega_shield','special_icon_freezer_time_freeze','special_icon_freezer_thermoshock',
+        'special_icon_juggernaut_wrecking_ball','special_icon_maverick_helix_beam','special_icon_lizzie_atom_bomb',
+        'special_icon_falva_roller_ball','special_icon_cole_nuclear_warheads',
+        'special_icon_decker_cloaking_system','special_icon_yuri_chain_lightning'].every(function(k){
+         return _m253.entries.some(function(e){return e.kind==='generated_powerup' && e.source_key===k;});
+       }),
+       'every remaining pilot powerup has a generated weapon-readable hex icon');
+    ok(_m253.entries.filter(function(e){return /^micon_thermoshock_/.test(e.source_key);}).length===5,
+       'all five corrected Thermoshock orb tiers are present');
+    ok(_m253.entries.filter(function(e){return /^micon_maverick_laser_/.test(e.source_key);}).length===5,
+       'all five Roman-numeral Maverick laser tiers are present in the master atlas');
+    var _gen253=_m253.entries.filter(function(e){return e.kind==='generated_powerup';}).map(function(e){return e.source_key;});
+    ok(_gen253.every(function(k){
+         var rect=sandbox.window.BOFX.icons[k];
+         return rect && rect.length===5 && rect[4]==='bof_player_weapon_special_icons_atlas';
+       }),
+       'all ten generated special plates route to cells in the named production icon atlas');
+    ok([1,2,3,4,5].every(function(t){
+         var k='micon_thermoshock_'+t;
+         var rect=sandbox.window.BOFX.icons[k];
+         return rect && rect[4]==='bof_player_weapon_special_icons_atlas';
+       }),
+       'all five corrected Thermoshock orb tiers load from the production icon atlas');
+    ok([1,2,3,4,5].every(function(t){
+         var ik='micon_maverick_laser_'+t, pk='mavlaser_lance_'+t;
+         var ir=sandbox.window.BOFX.icons[ik], pr=sandbox.window.BOFX.playercells[pk];
+         return ir && ir[4]==='bof_player_weapon_special_icons_atlas' && pr &&
+                pr[0]==='bof_player_ordnance_projectiles_atlas' && pr[7]===112 && pr[8]===160;
+       }),
+       'Maverick ships five tier-icon cells and five independent 112x160 lance cells');
+    ok([1,2,3,4,5].every(function(t){return !sandbox.window.BOFX.img['mavlaser_projectile_'+t];}),
+       'the rigid multi-lance projectile decals are no longer registered');
+    ok(vm.runInContext("(function(){run.pilot='maverick';return [1,2,3,4,5].every(function(t){return weaponIconKey(3,t)==='micon_maverick_laser_'+t;});})()",ctxv),
+       'Maverick laser pickups/HUD route to his Roman-numeral icon family');
+    ok(vm.runInContext("(function(){run.pilot='axel';return weaponIconKey(3,3)==='micon_laser_3';})()",ctxv),
+       'the other pilots keep the shared laser icon family');
+    ok(vm.runInContext("[1,2,3,4,5].every(function(t){return MAV_LASER_TIERS[t].count===t+2;}) && MAV_LASER_TIERS[1].body==='#8f36ff' && MAV_LASER_TIERS[2].body==='#267cff' && MAV_LASER_TIERS[3].body==='#25d84a' && MAV_LASER_TIERS[4].body==='#171b24' && MAV_LASER_TIERS[5].helix===true",ctxv),
+       'Maverick progression is locked to 3 purple, 4 blue, 5 green, 6 black and 7 helix lances');
+    ok(vm.runInContext("(function(){special=null;run.pilot='maverick';run.weapon=3;return [1,2,3,4,5].every(function(t){run.wlevel=t;pBullets.length=0;pShoot();var q=pBullets.filter(function(b){return b.kind==='mavlaser';});return q.length===t+2&&q.every(function(b,i){return b.lv===t&&b._lanceIndex===i&&b._lanceCount===t+2;})&&new Set(q.map(function(b){return b._phase;})).size===t+2;});})()",ctxv),
+       'each trigger launches the exact tier count as independently phased lance entities');
+    ok(vm.runInContext("(function(){enemies.length=0;pBullets.length=0;player.x=240;player.y=400;maverickLaserVolley(5,4);var q=pBullets.slice(),x0=q.map(function(b){return b.x;});for(var f=0;f<12;f++)q.forEach(function(b){maverickLaserTick(b,1/60);});return q.every(function(b,i){return Math.abs(b.x-x0[i])>0.25;})&&new Set(q.map(function(b){return Math.round(b.x*10);})).size===7;})()",ctxv),
+       'all seven Level-V lances animate on separate spiral paths instead of one rigid formation');
+    var _builder253=fs.readFileSync(path.join(ROOT,'_BUILD_SOURCE','build_weapon_special_icon_atlas.py'),'utf8');
+    var _mavBuild253=_builder253.slice(_builder253.indexOf('def normalize_maverick_laser_icons'),_builder253.indexOf('def normalize_maverick_projectiles'));
+    ok(_mavBuild253.indexOf('micon_icebreath_')<0,
+       'Maverick icon construction contains no Ice Breath frame reuse');
+    ok(vm.runInContext("specialArtKey('spicon_axel')==='special_icon_axel_mega_shield' && specialArtKey('spicon_decker')==='special_icon_decker_cloaking_system' && specialArtKey('spicon_maverick')==='special_icon_maverick_helix_beam'",ctxv),
+       'live pilot-card/HUD icon routing uses the new weapon-readable plates');
+    var _src253=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
+    ok(_src253.indexOf("key='mavlaser_lance_'+lv")>=0 && _src253.indexOf("key='mavlaser_projectile_'+lv")<0,
+       'the live renderer draws one lance sprite per entity and contains no rigid volley key');
+    var _pow253=_src253.slice(_src253.indexOf("if(p.kind==='special' || p.kind==='specialicon')"),_src253.indexOf("if(p.kind==='life')"));
+    ok(_pow253.indexOf('XART.rdy(resolvedIcon)')>=0 && _pow253.indexOf('XART.rdy(resolvedIcon)')<_pow253.indexOf('XART.rdy(animKey)'),
+       'floating special pickups draw the real hex powerup before any legacy wing-badge fallback');
+    ok(_m253.entries.every(function(e){return e.source_key && e.rect && e.rect.length===4;}),
+       'every atlas entry records a source key and packed cell rect');
+  }
+}
+
+// ===== 254. PRODUCTION PLAYER ATLASES + RETIRED LOOSE LOCATIONS =====
+console.log("=== 254. production player atlases and frame preservation ===");
+{
+  var _b254=sandbox.window.BOFX;
+  var _iconKey254='bof_player_weapon_special_icons_atlas';
+  var _shotKey254='bof_player_ordnance_projectiles_atlas';
+  var _shipKey254='bof_player_ships_barrel_rolls_atlas';
+  ok([_iconKey254,_shotKey254,_shipKey254].every(function(k){
+       var rel=_b254.img[k]; return rel && fs.existsSync(path.join(ROOT,rel));
+     }), 'all three explicitly named production atlas textures are registered and present');
+  var _shotMeta254=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','bof_player_ordnance_projectiles.json'),'utf8'));
+  var _shipMeta254=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','bof_player_ships_barrel_rolls.json'),'utf8'));
+  ok(_shotMeta254.count===505 && Object.keys(_b254.playercells).length===505,
+     'the ordnance/projectile atlas carries all 505 active animation and support cells');
+  ok(_shipMeta254.count===153 && _shipMeta254.pilots===9 && _shipMeta254.frames_per_pilot===17 && Object.keys(_b254.ships).length===153,
+     'the ship atlas carries all 153 full flight and barrel-roll frames');
+  ok(_shipMeta254.entries.every(function(e){
+       return e.rect[2]>0 && e.rect[3]>0 && e.offset[0]>=0 && e.offset[1]>=0 &&
+              e.offset[0]+e.rect[2]<=e.canvas[0] && e.offset[1]+e.rect[3]<=e.canvas[1];
+     }), 'every trimmed ship cell reconstructs wholly inside its original authored canvas');
+  ok(_b254.shipAtlas===_shipKey254 && _b254.img.nsa_ships===_b254.img[_shipKey254],
+     'ship extraction uses the named atlas while retaining the boot-time compatibility alias');
+  ok(!fs.existsSync(path.join(ROOT,'assets','game','atlas','nca_4.png')) &&
+     !Object.values(_b254.cells).some(function(v){return v[0]===4;}),
+     'the superseded mixed ship sheet and every nca_4 cell registration are gone');
+  ok(!fs.existsSync(path.join(ROOT,'assets','game','nia_icons2.png')) &&
+     !fs.existsSync(path.join(ROOT,'assets','game','micon_thermoshock_1.png')) &&
+     !fs.existsSync(path.join(ROOT,'assets','game','maverick_laser_icons','mavlaser_lance_1.png')) &&
+     !fs.existsSync(path.join(ROOT,'assets','game','special_icons','special_icon_axel_mega_shield.png')),
+     'superseded loose icon and projectile locations are pruned after atlas registration');
+  var _src254=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
+  ok(_src254.indexOf('function _playerCell(k)')>0 && _src254.indexOf('BOFX.playercells && BOFX.playercells[k]')>0,
+     'the runtime resolves ordnance cells lazily before any whole-sheet image fallback');
+  ok(fs.existsSync(path.join(ROOT,'docs','atlases','Bullets_of_Fury_Player_Weapon_and_Special_Icon_Atlas_Labeled.png')) &&
+     fs.existsSync(path.join(ROOT,'docs','atlases','Bullets_of_Fury_Player_Ordnance_and_Projectiles_Atlas_Labeled.png')) &&
+     fs.existsSync(path.join(ROOT,'docs','atlases','Bullets_of_Fury_Player_Ships_and_Barrel_Rolls_Atlas_Labeled.png')),
+     'all three labelled QA contact sheets exist under production names');
+}
+
+// ===== 255. PLAYER ATLAS COLD-START WARMING =====
+console.log("=== 255. player atlas cold-start warming ===");
+{
+  var _warm255=vm.runInContext("(function(){var old=XART._touch,seen=[];_playerAtlasesWarmed=false;XART._touch=function(k){seen.push(k);return null;};var n=warmPlayerAtlases();var latched=_playerAtlasesWarmed;XART._touch=old;return {n:n,seen:seen,latched:latched};})()",ctxv);
+  ok(_warm255.n===3 && _warm255.latched===true,
+     'one warm starts exactly the three shared player textures and latches idempotently');
+  ok(['bof_player_weapon_special_icons_atlas','bof_player_ordnance_projectiles_atlas','bof_player_ships_barrel_rolls_atlas'].every(function(k){return _warm255.seen.indexOf(k)>=0;}),
+     'weapon icons, player ordnance and ship/roll textures all begin decoding before gameplay');
+  var _src255=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
+  var _confirm255=_src255.slice(_src255.indexOf('function confirmPilot()'),_src255.indexOf('/* CREDITS */'));
+  var _start255=_src255.slice(_src255.indexOf('function startRun('),_src255.indexOf('/* WARM WHAT THE STAGE'));
+  var _warmFn255=_src255.slice(_src255.indexOf('function warmPlayerAtlases()'),_src255.indexOf('function warmStage(n)'));
+  ok(_confirm255.indexOf('warmPlayerAtlases()')>=0,
+     'pilot confirmation uses the deployment sequence as the decode runway');
+  ok(_start255.indexOf('warmPlayerAtlases()')>=0,
+     'direct and password run starts retain a warming fallback');
+  ok(_warmFn255.indexOf('_playerCell(')<0 && _warmFn255.indexOf('BOFX.playercells')<0,
+     'the warm touches sheets only; it does not eagerly allocate 658 reconstructed cells');
+}
+
+// ===== 256. GRAVITY MODE BELONGS TO THE STAGE TRANSITION =====
+console.log("=== 256. Gravity Mode transition ownership ===");
+{
+  var _src256=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
+  var _launch256=_src256.slice(_src256.indexOf('function drawLaunch(dt)'),_src256.indexOf('function metalBanner()'));
+  var _finish256=_launch256.slice(_launch256.indexOf('function finishLaunch()'));
+  var _gravityDraw256=_src256.slice(_src256.indexOf('function gravityModeDrawShip('),_src256.indexOf('function drawPlayer()'));
+  ok(_launch256.indexOf("const _space=(run.stage===5||run.stage===9)")>=0,
+     'Stages 5 and 9 both render the retained Gravity craft during their space launches');
+  ok(_launch256.indexOf("const _gravityStage=(run.stage===5)")>=0 &&
+     _launch256.indexOf("run.stage===9 && typeof gravityModeRetain==='function'")>=0,
+     'Stage 5 exclusively owns assembly while Stage 9 restores the already-built craft');
+  ok(_launch256.indexOf("_s5space>=0.10&&!gravityMode")>=0 &&
+     _launch256.indexOf('gravityMode&&gravityMode.dialogueDone')>=0 &&
+     _launch256.indexOf('gravityModeBeginCharge()')>=0,
+     'Stage 5 receives the kit during ascent and waits for the complete HQ warning before charging');
+  ok(_launch256.indexOf("else if(ph==='gravity')")>=0 &&
+     _launch256.indexOf("if(!gravityMode || !gravityModeTick(dt)){ drawLaunch._phase='cd'")>=0,
+     'the launch state owns the complete spiral/scatter/snap/pixel-fusion clock');
+  ok(_launch256.indexOf('stage9PortalEscapeDraw')>=0 &&
+     _launch256.indexOf('if(run.stage===9)stage9PortalEscapeDraw')>=0,
+     'Stage 9 opens behind the retained ship and fades its portal whiteout in front');
+  ok(_finish256.indexOf('gravityModeStart()')<0,
+     'GO no longer starts a second gameplay-side transformation');
+  ok(_launch256.indexOf('const _drawGravityShip=_space&&gravityMode')>=0 &&
+     _launch256.indexOf('gravityModeDrawShip(shipX,shipY,_gravityDrawSize)')>=0,
+     'the completed Gravity craft remains continuous through countdown and GO');
+  ok(_gravityDraw256.indexOf("phase==='snap'||phase==='pixelglow'")<0 &&
+     _gravityDraw256.indexOf("if(phase==='pixelglow')")>=0 &&
+     _gravityDraw256.indexOf("const white=gravityWhiteShipCanvas(pilot)")>=0,
+     'the snap resolves to the completed Fury hull before the pixel glow begins');
+}
+
+// ===== 257. GRAVITY MODE SPACE ARMORY I-V =====
+console.log("=== 257. Gravity Mode space armory I-V ===");
+{
+  var _src257=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
+  var _arm257=_src257.slice(_src257.indexOf('const SPACE_WEAPONS='),_src257.indexOf('function pShoot()'));
+  ok(_arm257.indexOf('const SPACE_SHIP_SIZE=112')>=0 && _arm257.indexOf('function spaceShipHardpoints(')>=0,
+     'the physical shots and visible Fury emitters share one hardpoint geometry');
+  ok(_arm257.indexOf('activeDt=dt-b._launchDelay')>=0 && _arm257.indexOf('const step=activeDt*60')>=0,
+     'the six 2 ms laser beats consume sub-frame time instead of collapsing at 60 Hz');
+  ok(_arm257.indexOf('function spaceVolleyLocks(')>=0 && _arm257.indexOf('return [right,center,left]')>=0 &&
+     _arm257.indexOf("b._target=spaceAcquire(b,range)")>=0,
+     'Volley Missiles cross onto distinct right/center/left locks and only reacquire when required');
+  ok(_arm257.indexOf('SPACE_SHADOW_TIER')>=0 && _arm257.indexOf('blastRad:tier.rad')>=0 &&
+     _arm257.indexOf('pierceAt:tier.pierce')>=0,
+     'Shadow Orb I-V advances damage, blast radius and piercing charge—not just icon art');
+  ok(_src257.indexOf('function spaceWeaponPickupIndex(')>=0 &&
+     _src257.match(/spaceWeaponPickupIndex\(p\)/g).length>=3,
+     'pickup application and every pickup renderer share the same three-weapon routing helper');
+
+  var _atlas257=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','bof_gravity_mode_space_weapons.json'),'utf8')).frames;
+  var _missing257=[];
+  for(var _lv257=1;_lv257<=5;_lv257++){
+    ['laser_icon_','shadow_icon_','volley_icon_'].forEach(function(k){if(!_atlas257[k+_lv257])_missing257.push(k+_lv257);});
+    ['pulse_long','pulse_short'].forEach(function(k){if(!_atlas257['laser_'+_lv257+'_'+k])_missing257.push('laser_'+_lv257+'_'+k);});
+    for(var _i257=0;_i257<4;_i257++){
+      if(!_atlas257['laser_'+_lv257+'_muzzle_'+_i257])_missing257.push('laser muzzle');
+      if(!_atlas257['volley_'+_lv257+'_trail_'+_i257])_missing257.push('volley trail');
+    }
+    for(var _j257=0;_j257<3;_j257++){
+      if(!_atlas257['shadow_'+_lv257+'_charge_'+_j257])_missing257.push('shadow charge');
+      if(!_atlas257['volley_'+_lv257+'_missile_'+_j257])_missing257.push('volley missile');
+    }
+  }
+  ok(_missing257.length===0,'all fifteen icons and their tier-specific charge/muzzle/missile art exist in the production atlas');
+
+  var _laser257=vm.runInContext("(function(){run.stage=5;run.spaceMode=true;run.spaceWeapon=0;run.spaceLevels=[5,0,0];run.wlevel=1;enemies.length=0;boss=null;bossActive=false;subBoss=null;subBossActive=false;pBullets.length=0;spaceLaserFire();var born=pBullets.map(function(b){return [b.x,b.y,b._muzzleX,b._muzzleY,b._launchDelay,b.side,b.pulse];});pBullets.forEach(function(b){spaceBulletTick(b,1/60);});var left=pBullets.filter(function(b){return b.side<0;}).sort(function(a,b){return a.pulse-b.pulse;});return {n:pBullets.length,delays:born.filter(function(x){return x[5]<0;}).map(function(x){return x[4];}),anchors:born.every(function(x){return x[0]===x[2]&&x[1]===x[3];}),ys:left.map(function(b){return b.y;})};})()",ctxv);
+  ok(_laser257.n===12 && _laser257.delays.join()==='0,0.002,0.004,0.006,0.008,0.01',
+     'Laser Cannon V fires six twin-turret beats with the exact authored delays');
+  ok(_laser257.anchors && new Set(_laser257.ys.map(function(y){return y.toFixed(4);})).size===6,
+     'both physical laser columns begin on the visible emitters and remain six positions after one frame');
+
+  var _shadow257=vm.runInContext("(function(){var out=[];run.stage=5;run.spaceMode=true;run.spaceWeapon=1;for(var lv=1;lv<=5;lv++){run.spaceLevels[1]=lv;pBullets.length=0;spaceShadowRelease(.18);var tap=pBullets[0];pBullets.length=0;spaceShadowRelease(1.55);var full=pBullets[0];out.push({td:tap.dmg,fd:full.dmg,tr:tap.blastRad,fr:full.blastRad,pa:full.pierceAt});}return out;})()",ctxv);
+  ok(_shadow257.every(function(t){return t.fd>t.td&&t.fr>t.tr;}),
+     'every Shadow Orb tier rewards a full charge with more damage and a wider blast');
+  ok(_shadow257.every(function(t,i,a){return i===0||(t.fd>a[i-1].fd&&t.fr>a[i-1].fr&&t.pa<a[i-1].pa);}),
+     'Shadow Orb I-V climbs monotonically while its piercing threshold improves');
+
+  var _pick257=vm.runInContext("[0,1,2,3,4,5].map(function(wtype){return spaceWeaponPickupIndex({wtype:wtype});})",ctxv);
+  ok(_pick257.join()==='0,1,2,0,1,2',
+     'all six ordinary crate types map deterministically across Laser Cannon, Shadow Orb and Volley Missiles');
+  var _hud257=vm.runInContext("(function(){run.stage=5;run.spaceMode=true;run.spaceWeapon=1;run.spaceLevels[1]=4;run.wlevel=1;return [weaponDisplayName(run.weapon),weaponIconKey(run.weapon,run.wlevel),spaceWeaponLevel()];})()",ctxv);
+  ok(_hud257.join()==='SHADOW ORB,space_shadow_icon_4,4',
+     'HUD name, icon and tier read the selected space armory level rather than stale ground state');
 }
 
 console.log('\n============================================');

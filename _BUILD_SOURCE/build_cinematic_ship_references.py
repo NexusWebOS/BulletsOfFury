@@ -8,7 +8,6 @@ from PIL import Image, ImageDraw, ImageFont
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "assets" / "game" / "atlas" / "nca_4.png"
 MANIFEST = ROOT / "assets" / "manifest.js"
 OUT = ROOT / "_BUILD_SOURCE" / "cinematic_ship_inputs"
 PILOTS = ("axel", "freezer", "falva", "lizzie", "yuri", "maverick", "juggernaut", "decker", "cole")
@@ -17,11 +16,12 @@ SLOT = (400, 400)
 SHEET = (1200, 800)
 
 
-def read_rect(key: str, source: str) -> list[int]:
-    match = re.search(rf'"{re.escape(key)}":\[([^\]]+)\]', source)
+def read_manifest() -> dict:
+    source = MANIFEST.read_text(encoding="utf-8")
+    match = re.search(r"^window\.BOFX=(.*);$", source, re.MULTILINE)
     if not match:
-        raise KeyError(key)
-    return json.loads("[" + match.group(1) + "]")
+        raise RuntimeError("window.BOFX assignment not found")
+    return json.loads(match.group(1))
 
 
 def restore_frame(atlas: Image.Image, rect: list[int]) -> Image.Image:
@@ -42,14 +42,16 @@ def fit(frame: Image.Image, bounds: tuple[int, int]) -> Image.Image:
 
 def main() -> None:
     OUT.mkdir(parents=True, exist_ok=True)
-    source = MANIFEST.read_text(encoding="utf-8")
-    atlas = Image.open(SOURCE).convert("RGBA")
+    bofx = read_manifest()
+    atlas_key = bofx.get("shipAtlas", "nsa_ships")
+    source = ROOT / bofx["img"][atlas_key]
+    atlas = Image.open(source).convert("RGBA")
     previews: list[tuple[str, Path]] = []
 
     for pilot in PILOTS:
         canvas = Image.new("RGBA", SHEET, (0, 0, 0, 0))
         for index, suffix in enumerate(VARIANTS):
-            frame = restore_frame(atlas, read_rect(f"ship_{pilot}{suffix}", source))
+            frame = restore_frame(atlas, bofx["ships"][f"ship_{pilot}{suffix}"])
             frame = fit(frame, (330, 330))
             col, row = index % 3, index // 3
             x = col * SLOT[0] + (SLOT[0] - frame.width) // 2
@@ -70,7 +72,7 @@ def main() -> None:
         overview.paste(thumb, (x, y), thumb)
         draw.text((x + 10, y + 276), pilot.upper(), font=font, fill=(118, 220, 255))
     overview.save(OUT / "canonical_ship_references_contact.jpg", quality=94, optimize=True)
-    print(f"PASS: built {len(previews)} canonical ship reference canvases from {SOURCE.relative_to(ROOT)}")
+    print(f"PASS: built {len(previews)} canonical ship reference canvases from {source.relative_to(ROOT)}")
 
 
 if __name__ == "__main__":

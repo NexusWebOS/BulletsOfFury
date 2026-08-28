@@ -2,7 +2,7 @@
 
 ## Workflow
 
-Built with the built-in ImageGen reference workflow. The runtime ship atlas `assets/game/atlas/nca_4.png` and `assets/manifest.js` were used to reconstruct six canonical source poses for each pilot in `_BUILD_SOURCE/cinematic_ship_inputs/`.
+Built with the built-in ImageGen reference workflow. The named runtime ship atlas `assets/game/atlas/bof_player_ships_barrel_rolls.png` and `assets/manifest.js` are used to reconstruct six canonical source poses for each pilot in `_BUILD_SOURCE/cinematic_ship_inputs/`.
 
 Each pilot was generated as one complete six-view sheet to keep its proportions and design coherent. The generated chroma masters are retained in `_BUILD_SOURCE/cinematic_ship_chroma/`; deterministic extraction then removed and decontaminated the key color, produced true RGBA, split the fixed frames and created tight cutouts.
 

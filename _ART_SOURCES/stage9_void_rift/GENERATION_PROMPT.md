@@ -1,0 +1,9 @@
+# Stage 9 Void Rift Water Background
+
+Runtime asset: `assets/game/stage9_void_rift/void_rift_water_loop_680x4096.png`
+
+Generated with OpenAI image generation using the recovered Bonus Stage Warp Run background as visual-era and density guidance. The generated source was normalized to 680 pixels wide and mirrored vertically into an exact-seam 4096-pixel loop by `_BUILD_SOURCE/build_stage9_void_rift.py`.
+
+Prompt:
+
+> Use case: stylized-concept. Asset type: production vertical-scrolling 16-bit shooter stage background tile. Create a new seamless void-rift space-and-water fusion dimension background for Bullets of Fury Stage 9. It must feel like the player crossed into another solar system where deep space and an impossible ocean have merged: black/violet cosmic void, cyan and ultramarine liquid ribbons suspended in zero gravity, translucent water currents bending around starfields, distant rift apertures, sparse luminous bubbles and fine stars. Reference image is style/era and vertical-shooter density guidance only; do not copy its platforms or metal structures. Highly polished true 16-bit pixel art, crisp nearest-neighbor pixel clusters, arcade shooter background, dark enough for bullets and enemies to read. Straight top-down vertical playfield, edge-to-edge background only, no horizon, no perspective floor; calmer central flight lanes with richer rift currents toward the outer thirds; designed to repeat vertically. Near-black, navy, indigo and restrained violet with bright cyan, aqua, cobalt and white highlights; space and water equally visible. Vertically seamless top-to-bottom tile; left and right edges also visually continuous; no text, UI, ships, enemies, bullets, planets, platforms, borders, magenta transparency key, photorealism, blur, or modern gradients; background art only.

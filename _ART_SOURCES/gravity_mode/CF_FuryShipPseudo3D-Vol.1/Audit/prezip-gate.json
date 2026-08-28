@@ -1,0 +1,21 @@
+{
+  "root": "/workspace/scratch/3b9338f41578/CF_FuryShipPseudo3D-Vol.1",
+  "summary": {
+    "image_files": 44,
+    "png_files": 42,
+    "gif_files": 2,
+    "images_decoded": 44,
+    "json_files": 7,
+    "jsons_parsed": 7,
+    "asset_groups": 3,
+    "source_sheet_groups": 0,
+    "repairs": 0,
+    "blockers": 0,
+    "warnings": 0
+  },
+  "repairs": [],
+  "blockers": [],
+  "warnings": [],
+  "flagged_images": [],
+  "gate_status": "passed"
+}

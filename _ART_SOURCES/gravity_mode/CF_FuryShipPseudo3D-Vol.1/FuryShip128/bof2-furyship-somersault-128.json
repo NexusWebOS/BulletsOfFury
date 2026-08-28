@@ -1,0 +1,782 @@
+{
+  "schema": "coleforge.sprite-animation/1.0",
+  "asset": "bof2-furyship-somersault-128",
+  "assetId": "bof2-fury-player-pseudo3d",
+  "frame_count": 16,
+  "frame_size": [
+    128,
+    128
+  ],
+  "pivot": [
+    64,
+    64
+  ],
+  "alpha": "binary",
+  "filter": "nearest",
+  "indexing": {
+    "frameObjects": "zero-based",
+    "animationFrames": "zero-based",
+    "atlasRectFrame": "one-based"
+  },
+  "tags": [
+    "player-ship",
+    "ship",
+    "pseudo3d",
+    "somersault"
+  ],
+  "atlas": {
+    "file": "bof2-furyship-somersault-128-atlas-alpha.png",
+    "columns": 4,
+    "rows": 4,
+    "cell": [
+      128,
+      128
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 2,
+        "x": 128,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 3,
+        "x": 256,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 4,
+        "x": 384,
+        "y": 0,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 128,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 6,
+        "x": 128,
+        "y": 128,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 7,
+        "x": 256,
+        "y": 128,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 8,
+        "x": 384,
+        "y": 128,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 256,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 10,
+        "x": 128,
+        "y": 256,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 11,
+        "x": 256,
+        "y": 256,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 12,
+        "x": 384,
+        "y": 256,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 384,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 14,
+        "x": 128,
+        "y": 384,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 15,
+        "x": 256,
+        "y": 384,
+        "w": 128,
+        "h": 128
+      },
+      {
+        "frame": 16,
+        "x": 384,
+        "y": 384,
+        "w": 128,
+        "h": 128
+      }
+    ]
+  },
+  "animations": {
+    "rear_idle": {
+      "frames": [
+        0
+      ],
+      "loop": true
+    },
+    "somersault_forward": {
+      "frames": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "pitchDegrees": [
+        0.0,
+        22.5,
+        45.0,
+        67.5,
+        90.0,
+        112.5,
+        135.0,
+        157.5,
+        180.0,
+        202.5,
+        225.0,
+        247.5,
+        270.0,
+        292.5,
+        315.0,
+        337.5
+      ],
+      "frameMs": 50,
+      "durationMs": 800,
+      "fps": 20,
+      "loop": false,
+      "next": "rear_idle",
+      "rootMotion": false,
+      "collisionRef": "player_ship"
+    },
+    "somersault_backward": {
+      "frames": [
+        0,
+        15,
+        14,
+        13,
+        12,
+        11,
+        10,
+        9,
+        8,
+        7,
+        6,
+        5,
+        4,
+        3,
+        2,
+        1
+      ],
+      "frameMs": 50,
+      "durationMs": 800,
+      "fps": 20,
+      "loop": false,
+      "next": "rear_idle",
+      "rootMotion": false,
+      "collisionRef": "player_ship"
+    }
+  },
+  "collision": {
+    "worldObbHalfExtents": [
+      0.46,
+      0.16,
+      0.5
+    ],
+    "damageCapsule": {
+      "axis": "forward",
+      "radius": 0.2,
+      "halfSegment": 0.28
+    },
+    "targetSphereRadius": 0.55,
+    "note": "Rotate continuous world colliders with ship physics; never derive collision from sprite alpha."
+  },
+  "hardpoints": {
+    "missiles": {
+      "count": 4,
+      "layout": "two recessed beneath each wing",
+      "rearVisibility": "only rear tips/fins peek past the trailing edge",
+      "stateNote": "Create loaded-state swaps before visually removing fired missiles."
+    }
+  },
+  "frames": [
+    {
+      "index": 0,
+      "file": "bof2-furyship-somersault-128-alpha-01.png",
+      "pitchDeg": 0.0,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        8,
+        37,
+        120,
+        102
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": true,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": true,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 1,
+      "file": "bof2-furyship-somersault-128-alpha-02.png",
+      "pitchDeg": 22.5,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        4,
+        44,
+        123,
+        103
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 2,
+      "file": "bof2-furyship-somersault-128-alpha-03.png",
+      "pitchDeg": 45.0,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        4,
+        35,
+        123,
+        90
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 3,
+      "file": "bof2-furyship-somersault-128-alpha-04.png",
+      "pitchDeg": 67.5,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        21,
+        17,
+        107,
+        113
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 4,
+      "file": "bof2-furyship-somersault-128-alpha-05.png",
+      "pitchDeg": 90.0,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        9,
+        21,
+        119,
+        120
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 5,
+      "file": "bof2-furyship-somersault-128-alpha-06.png",
+      "pitchDeg": 112.5,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        6,
+        27,
+        117,
+        111
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 6,
+      "file": "bof2-furyship-somersault-128-alpha-07.png",
+      "pitchDeg": 135.0,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        9,
+        32,
+        119,
+        102
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 7,
+      "file": "bof2-furyship-somersault-128-alpha-08.png",
+      "pitchDeg": 157.5,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        10,
+        43,
+        118,
+        84
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 8,
+      "file": "bof2-furyship-somersault-128-alpha-09.png",
+      "pitchDeg": 180.0,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        5,
+        45,
+        117,
+        91
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 9,
+      "file": "bof2-furyship-somersault-128-alpha-10.png",
+      "pitchDeg": 202.5,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        4,
+        37,
+        123,
+        97
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 10,
+      "file": "bof2-furyship-somersault-128-alpha-11.png",
+      "pitchDeg": 225.0,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        11,
+        17,
+        117,
+        113
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 11,
+      "file": "bof2-furyship-somersault-128-alpha-12.png",
+      "pitchDeg": 247.5,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        14,
+        9,
+        114,
+        117
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 12,
+      "file": "bof2-furyship-somersault-128-alpha-13.png",
+      "pitchDeg": 270.0,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        19,
+        7,
+        109,
+        121
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 13,
+      "file": "bof2-furyship-somersault-128-alpha-14.png",
+      "pitchDeg": 292.5,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        9,
+        21,
+        118,
+        109
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 14,
+      "file": "bof2-furyship-somersault-128-alpha-15.png",
+      "pitchDeg": 315.0,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        6,
+        21,
+        121,
+        107
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    },
+    {
+      "index": 15,
+      "file": "bof2-furyship-somersault-128-alpha-16.png",
+      "pitchDeg": 337.5,
+      "pivot": [
+        64,
+        64
+      ],
+      "trimLTRB": [
+        6,
+        21,
+        121,
+        108
+      ],
+      "sockets": {
+        "engine_left": {
+          "position": [
+            49,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        },
+        "engine_right": {
+          "position": [
+            78,
+            98
+          ],
+          "visible": false,
+          "drawLayer": "behind_ship"
+        }
+      }
+    }
+  ]
+}

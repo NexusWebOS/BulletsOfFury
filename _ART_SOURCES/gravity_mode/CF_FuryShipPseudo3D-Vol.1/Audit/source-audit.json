@@ -1,0 +1,389 @@
+{
+  "sources": [
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-38fedf55-f39a-4fe7-b674-92242212cc99.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-00-0deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-00-0deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1218696,
+      "keyedVisiblePixels": 352250,
+      "removedFringePixels": 1570,
+      "bbox": [
+        85,
+        365,
+        1169,
+        997
+      ],
+      "untouchedSha256": "1ea21cafd8a616b9c46694540e98a94601bf5cf2c17c3bda446571afe151a093"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/CF_BOF2_Somersault_Pitch_000-0675_Source.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-01-22.5deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-01-22.5deg-source-normalized.png",
+      "size": [
+        627,
+        627
+      ],
+      "sourceCrop": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "normalizedExactMagenta": 306065,
+      "keyedVisiblePixels": 86437,
+      "removedFringePixels": 627,
+      "bbox": [
+        21,
+        218,
+        602,
+        505
+      ],
+      "untouchedSha256": "c5e26d34a2d20881598a85d88d664f5af60c72788fcd1d3d022f34acd6fa8f32"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/CF_BOF2_Somersault_Pitch_000-0675_Source.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-02-45deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-02-45deg-source-normalized.png",
+      "size": [
+        627,
+        627
+      ],
+      "sourceCrop": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "normalizedExactMagenta": 314662,
+      "keyedVisiblePixels": 77881,
+      "removedFringePixels": 586,
+      "bbox": [
+        22,
+        173,
+        604,
+        443
+      ],
+      "untouchedSha256": "6d3fb7fed0df8922ebc90ee8c581fa8d5c173d0ec7afd41245914104c87abe20"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-5e7ac977-8a9d-4ad8-a7f2-d028b64cbd0b.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-03-67.5deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-03-67.5deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1218204,
+      "keyedVisiblePixels": 352957,
+      "removedFringePixels": 1355,
+      "bbox": [
+        206,
+        170,
+        1046,
+        1103
+      ],
+      "untouchedSha256": "507c5768a3b8f3d2f2fc8a72e62b4e9c1509e3d970c336cce89c655c3095ca33"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/CF_BOF2_Somersault_Pitch_090-1575_Source.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-04-90deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-04-90deg-source-normalized.png",
+      "size": [
+        627,
+        627
+      ],
+      "sourceCrop": [
+        0,
+        0,
+        627,
+        627
+      ],
+      "normalizedExactMagenta": 265742,
+      "keyedVisiblePixels": 126611,
+      "removedFringePixels": 776,
+      "bbox": [
+        45,
+        102,
+        581,
+        585
+      ],
+      "untouchedSha256": "5bd77e357cdce8ee032c45ba4950f51133846e28f4b92a9cb2c2c69526d16856"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/CF_BOF2_Somersault_Pitch_090-1575_Source.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-05-112.5deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-05-112.5deg-source-normalized.png",
+      "size": [
+        627,
+        627
+      ],
+      "sourceCrop": [
+        627,
+        0,
+        1254,
+        627
+      ],
+      "normalizedExactMagenta": 281805,
+      "keyedVisiblePixels": 110627,
+      "removedFringePixels": 697,
+      "bbox": [
+        30,
+        136,
+        571,
+        544
+      ],
+      "untouchedSha256": "2f707b37cda5c3b85b80899c952886b6572c941a07de96c2349d70296fdd7e6f"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/CF_BOF2_Somersault_Pitch_090-1575_Source.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-06-135deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-06-135deg-source-normalized.png",
+      "size": [
+        627,
+        627
+      ],
+      "sourceCrop": [
+        0,
+        627,
+        627,
+        1254
+      ],
+      "normalizedExactMagenta": 302751,
+      "keyedVisiblePixels": 89677,
+      "removedFringePixels": 701,
+      "bbox": [
+        45,
+        160,
+        581,
+        500
+      ],
+      "untouchedSha256": "4d49508064f20336c869e36f6a3e73181cd56e0bb97c7d7a97cfa938a69f468c"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-fa105fca-0792-49bb-b195-6dab8eb4a211.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-07-157.5deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-07-157.5deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1343782,
+      "keyedVisiblePixels": 227495,
+      "removedFringePixels": 1239,
+      "bbox": [
+        104,
+        426,
+        1150,
+        816
+      ],
+      "untouchedSha256": "6fd00d897a3711cea196cae246abd74e2edb3acadfe4262306cd26460cbad078"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/furyship_transition_refs/pitch180front.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-08-180deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-08-180deg-source-normalized.png",
+      "size": [
+        627,
+        627
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 328278,
+      "keyedVisiblePixels": 64343,
+      "removedFringePixels": 508,
+      "bbox": [
+        25,
+        221,
+        570,
+        447
+      ],
+      "untouchedSha256": "7cad141f1241fd820e6fd58e5818a3b6d2cc1e5ae43d87e1573d0232e84f7dd0"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-1d78d2ff-c515-41e2-ae3d-f32658206165.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-09-202.5deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-09-202.5deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1263809,
+      "keyedVisiblePixels": 307435,
+      "removedFringePixels": 1272,
+      "bbox": [
+        42,
+        368,
+        1200,
+        944
+      ],
+      "untouchedSha256": "a120c32093d1b60f5329baef1138f0f56d6eb0314116dd197e7fcefe8dbd6d4c"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-33b6feea-6ab2-467b-8e6c-f33924235338.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-10-225deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-10-225deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1161718,
+      "keyedVisiblePixels": 409123,
+      "removedFringePixels": 1675,
+      "bbox": [
+        111,
+        171,
+        1139,
+        1107
+      ],
+      "untouchedSha256": "b7476640e4ef2fe4455ec29e4c9e468c56afcf972f85e3601c57d60725611f77"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-2c6377f6-004a-42f3-a910-faaffb6a5725.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-11-247.5deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-11-247.5deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1062720,
+      "keyedVisiblePixels": 507840,
+      "removedFringePixels": 1956,
+      "bbox": [
+        137,
+        94,
+        1112,
+        1141
+      ],
+      "untouchedSha256": "99ab099585f28af7b49c6e6766a7d2e004005132a2274267204d0284a76717a7"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-3e0d40ef-b826-471f-8866-c2e5b1a4c5af.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-12-270deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-12-270deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1083899,
+      "keyedVisiblePixels": 486381,
+      "removedFringePixels": 2236,
+      "bbox": [
+        186,
+        73,
+        1067,
+        1182
+      ],
+      "untouchedSha256": "daa777b154ee7ee4f20c2e5e37664112832b7ae441a19ffa0c3c96987ae66422"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-a5ad7997-1e28-4262-af1e-2cc34d443c65.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-13-292.5deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-13-292.5deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1108689,
+      "keyedVisiblePixels": 462048,
+      "removedFringePixels": 1779,
+      "bbox": [
+        94,
+        209,
+        1155,
+        1069
+      ],
+      "untouchedSha256": "6e2313f2ca3a64decd4900f10e321fca4c15fb8cd961fdc05403b56a1d2e631b"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-30904f67-38f5-4d66-914c-7552f691d434.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-14-315deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-14-315deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1088375,
+      "keyedVisiblePixels": 482392,
+      "removedFringePixels": 1749,
+      "bbox": [
+        66,
+        209,
+        1182,
+        1045
+      ],
+      "untouchedSha256": "797fe6f12d7372241536cd23d723a021a0acad8567712cab760a2bed054b64b3"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-586a9068-0843-4fa3-9434-c9d98603b107.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-pitch-15-337.5deg-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-pitch-15-337.5deg-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1078607,
+      "keyedVisiblePixels": 492184,
+      "removedFringePixels": 1725,
+      "bbox": [
+        63,
+        207,
+        1183,
+        1057
+      ],
+      "untouchedSha256": "f3bde419ec9181d32e968f5407c02f23b3aedc88de2bb96d80580a28144c65cd"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/exec-aa55a514-0204-47b1-aa51-530156869aa3.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-rear-powered-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-rear-powered-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1205004,
+      "keyedVisiblePixels": 364903,
+      "removedFringePixels": 2609,
+      "bbox": [
+        85,
+        365,
+        1169,
+        1155
+      ],
+      "untouchedSha256": "4be4446e0c14a9c371a4f12e6750187c5c889d23b8a2b8864a9814f783f8d25a"
+    },
+    {
+      "source": "/workspace/scratch/3b9338f41578/generated_images/bof2-twin-engine-thruster-overlay-source-4f.png",
+      "untouched": "FuryShipPseudo3D_Source_Work/untouched/bof2-furyship-thrusters-4f-source-untouched.png",
+      "normalized": "FuryShipPseudo3D_Source_Work/normalized-magenta/bof2-furyship-thrusters-4f-source-normalized.png",
+      "size": [
+        1254,
+        1254
+      ],
+      "sourceCrop": null,
+      "normalizedExactMagenta": 1440293,
+      "keyedVisiblePixels": 127200,
+      "removedFringePixels": 5023,
+      "bbox": [
+        169,
+        187,
+        1084,
+        1123
+      ],
+      "untouchedSha256": "2d1abfbaef3c7e40005951bfb4750545c5ee2e54117cb3fe417741c8e2bd5d97"
+    }
+  ]
+}
