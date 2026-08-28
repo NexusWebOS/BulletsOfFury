@@ -9587,7 +9587,15 @@ console.log("=== 203. no shared wave tail ===");
     .forEach(function(t){
       ok(_s6.indexOf(t)<0, 'stage 6 no longer fields '+t+' — that came from the tail');
     });
-  ok((_cast['1']||[]).length<=4, 'stage 1 keeps its small authored cast ('+(_cast['1']||[]).join(', ')+')');
+  /* Stage 1 was deliberately rebuilt after the sparse-tail removal.  Pin the approved families,
+     not the obsolete <=4 placeholder: shrinking the roster to satisfy that count would delete the
+     black-camo jet/tank escalation and the destructible supply-line props. */
+  var _s1Approved=[
+    's1ammocrate','s1fuelbarrel','s1fueltank','s1jetbomber','s1jetbomber_b','s1jetdelta',
+    's1jetdelta_b','s1tankapc','s1tankheavy','s1tanklight','s1truckmissile'
+  ];
+  ok(JSON.stringify(_cast['1']||[])===JSON.stringify(_s1Approved),
+     'stage 1 keeps its exact approved rebuilt cast ('+(_cast['1']||[]).join(', ')+')');
 }
 
 // ===== 204. THE WAVE PLAN IS TIME-SORTED (drop 0807w) =====
