@@ -3178,7 +3178,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* drawEffects IS A WRAPPER NOW (drop 0801gt). In 0801ew I wrapped it in a
      try/catch - one bad particle was taking the whole frame with it - and the body
      moved to _drawEffectsInner. The fade is still there, one level down. */
-  ok(vm.runInContext("_drawEffectsInner.toString().indexOf('_fade')>0", ctxv), 'the explosion draw uses the tail fade');
+  ok(vm.runInContext("_drawEffectsInner.toString().indexOf('_fade')<0", ctxv), 'explosion reels stay opaque through their final authored frame');
   ok(vm.runInContext("drawEffects.toString().indexOf('_drawEffectsInner')>0", ctxv), 'and drawEffects guards it so a bad particle cannot cost the frame');
   ok(vm.runInContext("drawEffects.toString().indexOf('1-k*0.65')<0 && drawEffects.toString().indexOf('1-k*0.7')<0", ctxv), 'and the old truncated curves that left it 30-35% opaque are gone');
   // an explosion still actually expires
@@ -12024,8 +12024,9 @@ console.log("=== 257. Gravity Mode space armory I-V ===");
 {
   var _src257=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
   var _arm257=_src257.slice(_src257.indexOf('const SPACE_WEAPONS='),_src257.indexOf('function pShoot()'));
-  ok(_arm257.indexOf('const SPACE_SHIP_SIZE=112')>=0 && _arm257.indexOf('function spaceShipHardpoints(')>=0,
-     'the physical shots and visible Fury emitters share one hardpoint geometry');
+  ok(_arm257.indexOf('const SPACE_SHIP_SIZE=60')>=0 && _arm257.indexOf('function spaceShipHardpoints(')>=0 &&
+     _arm257.indexOf('spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE)')>=0,
+     'the 60px physical shots and visible Fury emitters share one hardpoint geometry');
   ok(_arm257.indexOf('activeDt=dt-b._launchDelay')>=0 && _arm257.indexOf('const step=activeDt*60')>=0,
      'the six 2 ms laser beats consume sub-frame time instead of collapsing at 60 Hz');
   ok(_arm257.indexOf('function spaceVolleyLocks(')>=0 && _arm257.indexOf('return [right,center,left]')>=0 &&
@@ -12241,6 +12242,30 @@ console.log("=== 261. Stage 9 full headless soak ===");
      'all surviving enemies and projectiles remain finite after 5,400 simulation frames');
   ok(_sub261,'Warp Sentinel arrives and clears through the real mid-stage gate');
   ok(_boss261,'the live director reaches the Rift Warden fusion encounter at the end of the continuous scroll');
+}
+
+// ===== 262. RECONCILED REGRESSION REPAIRS =====
+console.log("=== 262. Reconciled regression repairs ===");
+{
+  ok(vm.runInContext("drawWorld.toString().indexOf('if(run.stage===6) bg6Draw(dt)')>=0",ctxv),
+     'Stage 6 calls its unified time-of-day, rain and lightning overlay from the live world draw');
+  ok(vm.runInContext("_drawSpecialHUDInner.toString().indexOf('iconBlit(ctx,_sk')>=0",ctxv),
+     'the active-special HUD resolves all nine replacement icons through the production icon sheet');
+  ok(vm.runInContext("(function(){var s=drawPowerups.toString();return s.indexOf('iconBlit(ctx,iconKey')>=0&&s.indexOf('iconBlit(ctx,iconKey')<s.indexOf('XART.rdy(animKey)');})()",ctxv),
+     'special pickups prefer the replacement icon before the legacy animated badge');
+  var _space262=JSON.parse(vm.runInContext("(function(){var h=spaceShipHardpoints(240,400,SPACE_SHIP_SIZE);var c={kind:'capsule',x:240,y:180,w:22,h:32,hp:2,flash:0,dead:false};powerups.length=0;powerups.push(c);var before=spaceTargets().indexOf(c)>=0;spaceDamageTarget(c,2,{x:240,y:180});return JSON.stringify({size:SPACE_SHIP_SIZE,lx:h.laser[0].x,rx:h.laser[1].x,y:h.laser[0].y,targeted:before,broken:c.dead,reward:powerups.some(function(p){return p!==c&&!p.dead;})});})()",ctxv));
+  ok(_space262.size===60 && Math.abs(_space262.lx-222.36)<0.02 && Math.abs(_space262.rx-257.64)<0.02 && Math.abs(_space262.y-389.86)<0.02,
+     'the recovered ship is 60px and its twin laser origins sit on the measured outer cannon pods');
+  ok(_space262.targeted && _space262.broken && _space262.reward,
+     'space weapons target, damage and open shootable boxes/capsules through their dedicated collision pass');
+  ok(vm.runInContext("_drawEffectsInner.toString().indexOf('_fade')<0",ctxv),
+     'enemy explosion reels complete at full opacity instead of dissolving');
+  ok(vm.runInContext("BOFA.sfx.enemyShoot.indexOf('enemy_machine_shot_light.wav')>=0 && Snd.TAME.enemyShoot.min>=0.12 && Snd.TAME.bossAlarm.min>=2",ctxv),
+     'enemy fallback fire is mechanical and repeated enemy/boss cues are throttled in the mix layer');
+  var _src262=fs.readFileSync(ROOT+'/assets/game.js','utf8'),
+      _enemyDraw262=_src262.slice(_src262.indexOf('// enemy — master fire-type art first'),_src262.indexOf('ctx.imageSmoothingEnabled = _ebSmooth'));
+  ok(_enemyDraw262.indexOf('ctx.scale(-1')<0 && _enemyDraw262.indexOf('ctx.scale(1,-1')<0,
+     'enemy pellets/projectiles are never canvas-flipped; homing art only turns continuously with velocity');
 }
 
 console.log('\n============================================');

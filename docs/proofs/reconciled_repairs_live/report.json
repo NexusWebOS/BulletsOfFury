@@ -1,0 +1,90 @@
+{
+  "stage6": {
+    "stage": 6,
+    "phase": 0.31,
+    "wet": 1,
+    "liveCall": true,
+    "bolt": -1
+  },
+  "gravity": {
+    "size": 60,
+    "player": {
+      "x": 340,
+      "y": 430
+    },
+    "hardpoints": {
+      "laser": [
+        {
+          "x": 322.36,
+          "y": 419.86,
+          "side": -1
+        },
+        {
+          "x": 357.64,
+          "y": 419.86,
+          "side": 1
+        }
+      ],
+      "nose": {
+        "x": 340,
+        "y": 401.2
+      }
+    },
+    "rounds": [
+      {
+        "x": 322.36,
+        "y": 419.86
+      },
+      {
+        "x": 357.64,
+        "y": 419.86
+      }
+    ]
+  },
+  "container": {
+    "broken": true,
+    "rewards": [
+      "shield"
+    ]
+  },
+  "icons": [
+    {
+      "pilot": "axel",
+      "width": 64
+    },
+    {
+      "pilot": "cole",
+      "width": 64
+    },
+    {
+      "pilot": "decker",
+      "width": 64
+    },
+    {
+      "pilot": "falva",
+      "width": 64
+    },
+    {
+      "pilot": "freezer",
+      "width": 64
+    },
+    {
+      "pilot": "juggernaut",
+      "width": 64
+    },
+    {
+      "pilot": "lizzie",
+      "width": 64
+    },
+    {
+      "pilot": "maverick",
+      "width": 64
+    },
+    {
+      "pilot": "yuri",
+      "width": 64
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": []
+}

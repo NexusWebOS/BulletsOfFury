@@ -5454,7 +5454,9 @@ const Audio = (()=>{
       const _n=(typeof performance!=='undefined'?performance.now():Date.now());
       if(_n - (SFX._esLast||0) < ESHOOT_GAP) return;
       SFX._esLast=_n;
-      tone(320,0.08,'sawtooth',0.06,-120);
+      /* Mechanical fallback, not a pitched notification beep. The real-sample layer normally
+         replaces this, but an unavailable/locked sample must not bring the DOOT back. */
+      noise(0.055,0.055,3800,-2200); tone(92,0.055,'triangle',0.035,-30);
     },
     hit(){ tone(1400,0.03,'square',0.06,-600); },
     /* THE BLOCKED-SHOT SOUND (drop 0807b). Mike: "make a different sound that sounds like it
@@ -5546,7 +5548,7 @@ const Audio = (()=>{
     gravitySnap(){ noise(0.12,0.44,5200,-3300); tone(245,0.13,'square',0.22,-120); },
     gravityFuse(){ tone(190,0.42,'sawtooth',0.18,+1260); tone(760,0.34,'triangle',0.12,+980); noise(0.30,0.18,3300,+2100); },
     gravityLock(){ noise(0.20,0.30,4200,-2800); tone(180,0.24,'square',0.18,-90); },
-    laserCannon(){ for(let i=0;i<6;i++) setTimeout(()=>tone(820+i*55,0.045,'square',0.075,+360),i*2); },
+    laserCannon(){ noise(0.12,0.14,5400,-2400); tone(170,0.13,'sawtooth',0.07,+1050); },
     shadowCharge(){ tone(120,0.55,'sine',0.12,+480); noise(0.48,0.12,900,+2300); },
     shadowRelease(){ tone(620,0.30,'sawtooth',0.18,-510); noise(0.30,0.26,2600,-1900); },
     volleyLaunch(){ noise(0.26,0.24,1700,+900); tone(190,0.24,'triangle',0.15,+260); },
@@ -10684,8 +10686,7 @@ function shipBossManoeuvre(b, dt){
       const oy=mv.orbit?Math.sin(b.drift*rate*2)*(mv.ampY||0):Math.cos(b.drift*rate)*(mv.ampY||0);
       b.y+=(sy+oy-b.y)*Math.min(1,dt*3);
       if(b._sbmT<=0){ b._sbm=SBM_TELL; b._sbmT=0.50; b._sbmNext=shipBossPickMove(b); b._sbmAge=0;
-                      b.flash=Math.max(b.flash||0,0.35);
-                      if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossAlarm) Audio.SFX.bossAlarm(); }
+                      b.flash=Math.max(b.flash||0,0.35); }
       break;
     }
     case SBM_TELL: {
@@ -10984,7 +10985,7 @@ function shipBossAttack(b){
   }
   if(pat!=='spawnpods' && pat!=='deathlattice' && pat!=='stormmg') shipBossMuzzleStart(b,shipBossPatternSlots(pat,step));
   b.fireCd = (D.cd||1.3) * cdMul;
-  if(pat!=='stormmg' && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+  if(pat!=='stormmg' && Audio.SFX.enemyBossCannon) Audio.SFX.enemyBossCannon();
 }
 /* south-facing 256 cell, pivot centre. White flash on hit is Mike's standing rule for every unit
    and he asked for it again by name: "glow white when shot etc." */
@@ -11497,7 +11498,7 @@ function spawnBoss(kind){
   if(_SXMAP[kind] && typeof sxInit==='function') sxInit(b, _SXMAP[kind]);
   if(_ASSEMBLE[kind] && b.modular && b.parts && b.parts.length>=1 && typeof bossEntryStart==="function") bossEntryStart(b);
   boss=b; bossActive=true;
-  Audio.SFX.bossAlarm();
+  /* The warning sequence already owns the one boss alert. Do not fire it again on spawn. */
 }
 
 /* ===================== SUB-BOSS (mid-stage) ===================== */
@@ -11613,7 +11614,7 @@ function spawnSubBoss__inner(kind){
     const _r=(_sn<=0)?1:(1.06+_sn*0.09);
     if(_r>1 && b.maxhp>0){ b.maxhp=Math.ceil(b.maxhp*_r); b.hp=b.maxhp; }
   }
-  subBoss=b; subBossActive=true; Audio.SFX.bossAlarm();
+  subBoss=b; subBossActive=true;
 }
 
 /* ================= CHAOS HARRIER — LEVEL 5 MINI-BOSS =================
@@ -13028,7 +13029,7 @@ function wlvColor(lv){ return WLVL_COL[clamp(lv||1,1,5)]||'#ffffff'; }
 function eMissile(x,y){
   if(typeof _eMslAllow==='function' && !_eMslAllow()) return;   // thinned salvos (early stages hardest hit)
   eBullets.push({x,y,vx:0,vy:2.3,w:11,h:16,kind:'emissile',hp:1,spd:2.7,turn:0.05,t:0,ang:Math.PI/2});
-  Audio.SFX.enemyShoot();
+  if(Audio.SFX&&Audio.SFX.missile)Audio.SFX.missile();
 }
 /* BOSS HOMING MISSILE — fires from up top, sweeps OUT to one side, then swerves
    back in toward the player. Launch alternating dirs so they converge from BOTH sides. */
@@ -13996,7 +13997,10 @@ function maverickLaserTick(b,dt){
    ============================================================ */
 const SPACE_WEAPONS=['LASER CANNON','SHADOW ORB','VOLLEY MISSILES'];
 const SPACE_LASER_COL=['#ff972b','#39a4ff','#48e36c','#f5f7ff','#ff4848'];
-const SPACE_SHIP_SIZE=112;
+/* Keep the recovered Fury craft on the same gameplay footprint as every pilot ship. 112px was
+   the assembly-cinematic reveal size and accidentally leaked into PLAY, making Stages 5/9 nearly
+   twice the normal 60px hull and moving every weapon hardpoint with it. */
+const SPACE_SHIP_SIZE=60;
 const SPACE_SHADOW_TIER=[
   {base:11.0,rad:54,pierce:0.82},{base:13.5,rad:60,pierce:0.78},
   {base:16.5,rad:67,pierce:0.74},{base:20.0,rad:75,pierce:0.70},
@@ -14018,7 +14022,10 @@ function spaceWeaponPickupIndex(p){
 }
 function spaceShipHardpoints(x,y,size){
   const s=size||SPACE_SHIP_SIZE;
-  return {laser:[{x:x-s*0.135,y:y-s*0.32,side:-1},{x:x+s*0.135,y:y-s*0.32,side:1}],
+  /* Measured on ship_base (137x148): the cannon-pod noses are at roughly x 25/112, y 49.
+     Expressed against draw height, that is +/-0.294 and -0.169 from centre. The old anchors
+     (+/-0.135,-0.32) sat beside the cockpit and made the beams visibly originate in empty hull. */
+  return {laser:[{x:x-s*0.294,y:y-s*0.169,side:-1},{x:x+s*0.294,y:y-s*0.169,side:1}],
     nose:{x:x,y:y-s*0.48}};
 }
 function spaceModeStage(num){
@@ -14091,12 +14098,24 @@ function spaceTargets(){
   const a=[];for(const e of enemies)if(!e.dead)a.push(e);
   if(boss&&bossActive&&!boss.dead)a.push(boss);
   if(typeof subBoss!=='undefined'&&subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter)a.push(subBoss);
+  /* Space rounds have their own collision pass, so they used to skip the normal crate/capsule
+     loop completely. Include only shootable containers (not loose rewards) in the same target
+     list used by lasers, shadow blasts and volley missiles. */
+  for(const p of powerups)if(spaceShootableContainer(p))a.push(p);
   return a;
+}
+function spaceShootableContainer(p){
+  return !!(p&&!p.dead&&(p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate'||p.kind==='mcrate'));
 }
 function spaceTargetY(t){return t&&t._drawY!=null?t._drawY:t.y;}
 function spaceDamageTarget(t,dmg,b){
   if(!t||t.dead)return;
-  if(t===boss)hitBoss(dmg);else if(typeof subBoss!=='undefined'&&t===subBoss)hitSubBoss(dmg,b.x,b.y);else hitEnemy(t,dmg);
+  if(spaceShootableContainer(t)){
+    t.hp=(t.hp||5)-dmg;t.flash=0.12;
+    if(t.hp<=0){t.dead=true;breakContainer(t);}
+  }else if(t===boss)hitBoss(dmg);
+  else if(typeof subBoss!=='undefined'&&t===subBoss)hitSubBoss(dmg,b.x,b.y);
+  else hitEnemy(t,dmg);
   if(typeof stageStats!=='undefined')stageStats.hits++;
 }
 function spaceTargetInRange(b,t,range,pad){
@@ -16809,10 +16828,11 @@ function _drawSpecialHUDInner(){
   const _sk=(typeof specialArtKey==='function')
     ? specialArtKey('spicon_'+(special.pilot||''))
     : ('spicon_'+(special.pilot||''));
-  if(typeof XART!=='undefined' && XART.rdy(_sk)){
-    const im=XART.get(_sk), ih=26, iw=ih*(im.naturalWidth/im.naturalHeight);
+  /* The nine replacement icons live in BOFX.icons, not XART. Route through the shared blitter so
+     HUD, pickup field and equipped panel all resolve the same approved art. */
+  if(typeof iconBlit==='function'){
     ctx.save(); ctx.shadowColor=col; ctx.shadowBlur=8;
-    ctx.drawImage(im, VW/2-81-iw-4, VH-40, iw, ih); ctx.restore();
+    iconBlit(ctx,_sk,VW/2-98,VH-27,26,true); ctx.restore();
   }
   ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.fillRect(VW/2-81,VH-34,162,8);
   ctx.fillStyle=col; ctx.fillRect(VW/2-80,VH-33,160*frac,6);
@@ -18307,7 +18327,7 @@ function updatePlay(dt){
     }
     if(warnT>0){
       const _pw=warnT; warnT-=dt;
-      if(_pw>1.25 && warnT<=1.25) Audio.SFX.bossAlarm();
+      /* One warning cue at trigger is enough; the countdown visuals carry the second beat. */
       stageTimer-=dt*timeScale;   // hold stage progression during the alert
       if(warnT<=0){
         if(warnKind==='sub'){ spawnSubBoss(SB?SB.kind:'subcore'); if(Audio.startMusic)Audio.startMusic('boss'+run.stage); }
@@ -20679,7 +20699,7 @@ function updateOverlordX(b, dt){
     // ---- 50% HP gate: fly off by charging the player, then re-enter at 45 deg ----
     if(frac<=0.5 && !b._didCharge){
       b._didCharge=true; b._ovState='chargeOff'; b._chg={t:0};
-      b.fireCd=0.4; if(Audio.SFX.bossAlarm) Audio.SFX.bossAlarm();
+      b.fireCd=0.4; if(Audio.SFX.bossPhase) Audio.SFX.bossPhase();
     }
     return;
   }
@@ -21084,7 +21104,7 @@ function bossAttack(){
   // MEGA BOSSES (bz): profile attack + a telegraphed enrage salvo under 50% HP
   if(b.mega){
     if(!b._enraged && b.hp<=b.maxhp*0.5 && !b.dead){
-      b._enraged=true; shake=Math.max(shake,12); if(Audio.SFX.bossAlarm)Audio.SFX.bossAlarm();
+      b._enraged=true; shake=Math.max(shake,12); if(Audio.SFX.bossPhase)Audio.SFX.bossPhase();
       floatText(b.x,b.y-b.h*0.4,'OVERDRIVE!','#ff5a3a'); b.fireCd=0.7; return;
     }
     bossProfileAttack(b);
@@ -21093,7 +21113,7 @@ function bossAttack(){
   }
   // ---- SIGNATURE ENRAGE: a dramatic, telegraphed move the first time the boss drops below 50% HP ----
   if(!b._enraged && b.hp<=b.maxhp*0.5 && !b.dead){
-    b._enraged=true; b._sigT=0; shake=Math.max(shake,12); if(Audio.SFX.bossAlarm)Audio.SFX.bossAlarm();
+    b._enraged=true; b._sigT=0; shake=Math.max(shake,12); if(Audio.SFX.bossPhase)Audio.SFX.bossPhase();
     /* Stages 6-8 had NO signature name and NO signature attack — clamp(...,0,4) silently reused
        CORE MELTDOWN for all three, and the switch below simply fell through, so the storm boss,
        the sewer boss and the FINALE all fought with nothing but the generic hand patterns. */
@@ -21197,7 +21217,7 @@ function bossAttack(){
         b.atkPhase=(ph+1)%6;
         break;
       case 5: { // 5-missile homing volley
-        b.fireCd=2.6*fast; Audio.SFX.bossAlarm();
+        b.fireCd=2.6*fast;
         const xs=[-0.30,-0.15,0,0.15,0.30];
         for(const fx of xs) eMissile(b.x+b.w*fx, b.y+b.h*0.34);
         b.atkPhase=(ph+1)%6;
@@ -21313,7 +21333,7 @@ function bossAttack(){
         b._n=(b._n||0)+1; if(b._n>=4){ b._n=0; b.fireCd=0.9*rage; b.atkPhase=(ph+1)%6; }
         break;
       case 3: // homing brood — 3 seekers
-        b.fireCd=2.2*rage; Audio.SFX.bossAlarm();
+        b.fireCd=2.2*rage;
         for(const fx of [-0.24,0,0.24]) eMissile(b.x+b.w*fx,b.y+b.h*0.32);
         b.atkPhase=(ph+1)%6;
         break;
@@ -22234,6 +22254,20 @@ function spaceAtlasDraw(g,key,x,y,w,h,centred,pilot){
   const dw=w||im.width, dh=h||im.height;
   g.drawImage(im,centred?x-dw/2:x,centred?y-dh/2:y,dw,dh); return true;
 }
+const _spaceLaserPulseCache={};
+function spaceLaserPulseCanvas(key){
+  if(_spaceLaserPulseCache[key])return _spaceLaserPulseCache[key];
+  const src=spaceAtlasCanvas(key,null);if(!src)return null;
+  /* The generated pulse cells abut an impact on the right (long) or the next long pulse (short).
+     The JSON rectangles therefore contain two pieces of art. Crop to the authored laser component
+     once and cache it; this removes the fused extra projectile without modifying the source atlas. */
+  const short=/_short$/.test(key),sx=short?10:0,sw=short?24:34;
+  let c;try{c=document.createElement('canvas');}catch(e){return null;}
+  c.width=Math.min(sw,Math.max(1,src.width-sx));c.height=src.height;
+  const g=c.getContext('2d');if(!g)return null;g.imageSmoothingEnabled=false;
+  g.drawImage(src,sx,0,c.width,c.height,0,0,c.width,c.height);
+  _spaceLaserPulseCache[key]=c;return c;
+}
 function spaceAtlasIconBlit(g,key,x,y,h,centred){
   let fk=null;
   if(/^space_laser_icon_/.test(key)) fk='laser_icon_'+clamp(parseInt(key.split('_').pop())||1,1,5);
@@ -22335,7 +22369,7 @@ function gravityWhiteShipCanvas(pilot){
 }
 function gravityModeDrawShip(drawX,drawY,drawSize){
   if(!gravityMode||!player||player.dead)return false;
-  const x=(drawX==null)?player.x:drawX,y=(drawY==null)?player.y:drawY,size=drawSize||112;
+  const x=(drawX==null)?player.x:drawX,y=(drawY==null)?player.y:drawY,size=drawSize||SPACE_SHIP_SIZE;
   const pilot=_pilotKey(), phase=gravityMode.phase;
   if(!spaceAtlasCanvas('ship_base',pilot))return false;
   if(phase==='drift'||phase==='charge'||phase==='scatter'||phase==='snap'){
@@ -27481,8 +27515,11 @@ function drawBullets(){
     if(b.kind==='spaceLaser'){
       if(b._launchDelay>0)continue;
       const key='laser_'+clamp(b.lv||1,1,5)+'_pulse_'+(((b.pulse||0)&1)?'short':'long');
+      const _lp=spaceLaserPulseCanvas(key),_lh=clamp((b.h||24)*0.72,20,30),_lw=_lp?_lh*(_lp.width/_lp.height):_lh*0.55;
       ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowColor=SPACE_LASER_COL[clamp((b.lv||1)-1,0,4)];ctx.shadowBlur=7;
-      spaceAtlasDraw(ctx,key,b.x,b.y,b.w*2.0,b.h*1.7,true,null);ctx.restore();continue;
+      /* Preserve the cleaned approved pulse's aspect ratio; never stretch it into a substitute. */
+      if(_lp)ctx.drawImage(_lp,b.x-_lw/2,b.y-_lh/2,_lw,_lh);
+      ctx.restore();continue;
     }
     if(b.kind==='spaceVolleySeed'){
       const lv=clamp(b.lv||1,1,5);
@@ -29113,7 +29150,17 @@ function drawPowerups(){
       const fi=Math.floor(performance.now()/110)%4, animKey='sp_'+pk+'_'+fi;   // the ORIGINAL animated special-ability icon
       const iconKey='spicon_'+pk, resolvedIcon=(typeof specialArtKey==='function')?specialArtKey(iconKey):iconKey;
       const boxKey=(typeof specialArtKey==='function')?specialArtKey('special_'+pk):('special_'+pk);
-      if(typeof XART!=='undefined' && XART.rdy(resolvedIcon)){
+      /* Replacement special icons are icon-sheet cells. Draw them before the legacy sp_* reel;
+         the old order made every new icon unreachable even though all nine were registered. */
+      let _newSpecialIcon=null;
+      if(typeof iconBlit==='function'){
+        ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4); ctx.rotate(performance.now()/560);
+        ctx.shadowColor=_pilotTint(); ctx.shadowBlur=12;
+        _newSpecialIcon=iconBlit(ctx,iconKey,0,0,PICKUP_BOX,true); ctx.restore();
+      }
+      if(_newSpecialIcon){
+        continue;
+      } else if(typeof XART!=='undefined' && XART.rdy(resolvedIcon)){
         // The real weapon-readable hex icon floats out first; wing badges are fallback-only.
         const im=XART.get(resolvedIcon), s2=PICKUP_BOX/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4); ctx.rotate(performance.now()/560);
@@ -29344,24 +29391,22 @@ function _drawEffectsInner(){
   // explosions (layered circles, palette)
   for(const ex of explosions){
     const k=clamp(ex.t/ex.dur,0,1);
-    /* TAIL FADE. Both sprite paths used to bottom out around a third of full alpha, so an explosion
-       was still clearly visible at the instant it was deleted — it played its reel and then POPPED
-       out of existence instead of fading away. Hold full brightness through the animation so the
-       frames keep their punch, then ramp cleanly to zero over the last 35% of its life. */
-    const _fade = (k<=0.65) ? 1 : clamp(1-(k-0.65)/0.35, 0, 1);
+    /* Explosions are frame animation, never opacity animation. The authored breakup/smoke reel
+       remains fully opaque through its last frame and then completes; fading the entire effect
+       made enemies look as though they dissolved instead of exploding. */
     if(ex.xb){
       const fi=Math.min(ex.nf-1,Math.floor(k*ex.nf)), key=ex.xb+'_'+fi;
       if(typeof XART!=='undefined' && XART.rdy(key)){
         /* A death owns a literal 125%-of-unit animation frame. Ordinary impact/set-piece calls
            retain their existing presentation scale; only classed unit deaths use this contract. */
         const sz=(ex.max||ex.r)*(ex.cls?1.25:EXPLODE_SCALE);
-        ctx.save(); ctx.globalAlpha=_fade;
+        ctx.save(); ctx.globalAlpha=1;
         const im=XART.get(key), s2=sz/Math.max(im.naturalWidth,im.naturalHeight);
         ctx.drawImage(im, ex.x-im.naturalWidth*s2/2, ex.y-im.naturalHeight*s2/2, im.naturalWidth*s2, im.naturalHeight*s2);
         ctx.restore(); continue;
       }
     }
-    if(ASSETS.ready){ const fam=ex.fam||(ex.palette==='blue'?'expb':'expr'); if(ASSETS.has(fam+'0')){ const _n=ex.nf||5; const fi=Math.min(_n-1,Math.floor(k*_n)); const sz=(ex.max||ex.r)*(ex.cls?1.25:EXPLODE_SCALE); ctx.globalAlpha=_fade; ASSETS.blit(fam+fi,ex.x,ex.y,sz,sz); ctx.globalAlpha=1; continue; } }
+    if(ASSETS.ready){ const fam=ex.fam||(ex.palette==='blue'?'expb':'expr'); if(ASSETS.has(fam+'0')){ const _n=ex.nf||5; const fi=Math.min(_n-1,Math.floor(k*_n)); const sz=(ex.max||ex.r)*(ex.cls?1.25:EXPLODE_SCALE); ctx.globalAlpha=1; ASSETS.blit(fam+fi,ex.x,ex.y,sz,sz); continue; } }
     /* Unit deaths never fall back to the old canvas circles. Their authored family may still be
        decoding, but a missing frame must not turn a boss into the basic placeholder explosion. */
     if(ex.cls) continue;
@@ -29369,10 +29414,10 @@ function _drawEffectsInner(){
     const inner = ex.palette==='blue'? '#dff3ff':'#fff4c0';
     const mid   = ex.palette==='blue'? '#3a8fff':'#ff6a1e';
     const outer = ex.palette==='blue'? '#1f4fb0':'#a81f0a';
-    ctx.globalAlpha=clamp(1-k,0,1);
+    ctx.globalAlpha=1;
     ctx.fillStyle=outer; circle(ex.x,ex.y,r);
     ctx.fillStyle=mid; circle(ex.x,ex.y,r*0.66);
-    ctx.globalAlpha=clamp(1-k*1.4,0,1);
+    ctx.globalAlpha=1;
     ctx.fillStyle=inner; circle(ex.x,ex.y,r*0.34);
     ctx.globalAlpha=1;
   }
@@ -34509,7 +34554,7 @@ function genesisUpdate(b, dt){
       }
       b._gen=null; b.enter=false;
       shake=Math.max(shake,12); flashScreen=Math.max(flashScreen,0.75);
-      if(Audio.SFX&&Audio.SFX.bossAlarm) Audio.SFX.bossAlarm();
+      if(Audio.SFX&&Audio.SFX.bossPhase) Audio.SFX.bossPhase();
       return true;
     }
   }
@@ -34838,7 +34883,7 @@ function mechUpdate(b, dt){
       K.rage=0;
       shake=Math.max(shake,10);
       floatText(b.x, b.y-60, 'ENRAGED', '#ff4a2a');
-      if(Audio.SFX && Audio.SFX.bossAlarm) Audio.SFX.bossAlarm();
+      if(Audio.SFX && Audio.SFX.bossPhase) Audio.SFX.bossPhase();
     }
     if(K.ram){
       const R=K.ram; R.t+=dt;
@@ -34880,7 +34925,7 @@ function mechUpdate(b, dt){
       if(!p.docked) all=false;
     }
     if(all){ K.phase='fight'; b.enter=false; shake=Math.max(shake,10);
-             if(Audio.SFX&&Audio.SFX.bossAlarm) Audio.SFX.bossAlarm(); }
+             if(Audio.SFX&&Audio.SFX.bossPhase) Audio.SFX.bossPhase(); }
     return;
   }
   /* ---- fight ----
@@ -36132,7 +36177,7 @@ function bossFightTick(b,K,dt){
     K.phase3=(want===3);
     shake=Math.max(shake,10); flashScreen=Math.max(flashScreen,0.35);
     floatText(b.x,(b._drawY!=null?b._drawY:b.y)-70,'PHASE '+want,'#ffd36b');
-    if(Audio.SFX&&Audio.SFX.bossAlarm) Audio.SFX.bossAlarm();
+    if(Audio.SFX&&Audio.SFX.bossPhase) Audio.SFX.bossPhase();
   }
   if(F.vuln>0) F.vuln-=dt;
   F.t+=dt;
@@ -37085,7 +37130,7 @@ function modularHit(dmg){
       boss._morphFrom=boss._vForm; boss._morphT=0;
       vileBuildForm(boss, nx);
       floatText(boss.x, boss.y-60, VILE_FORMS[nx].name+'!', '#c66aff');
-      Audio.SFX.bossAlarm&&Audio.SFX.bossAlarm();
+      Audio.SFX.bossPhase&&Audio.SFX.bossPhase();
       return;
     }
     if(boss._vile){ boss._impT=0; }        // final form -> death implosion overlay
@@ -37095,7 +37140,7 @@ function modularHit(dmg){
       atomFlash=Math.max(atomFlash||0, 0.6);
       furiousBuildForm(boss, nx, boss._fdBase);
       floatText(boss.x, boss.y-60, FURIOUS_FORMS[nx].name+'!', '#ff6a48');
-      Audio.SFX.bossAlarm&&Audio.SFX.bossAlarm();
+      Audio.SFX.bossPhase&&Audio.SFX.bossPhase();
       return;
     }
     boss.hp=0; bossDie();
@@ -37417,7 +37462,7 @@ function bossEntryTick(b, dt){
       E.ph='live'; b._be=null; b.enter=false;                   // the fight starts HERE
       shake=Math.max(shake,12);
       if(typeof atomFlash!=='undefined') atomFlash=Math.max(atomFlash,0.45);
-      if(Audio.SFX && Audio.SFX.bossAlarm) Audio.SFX.bossAlarm();
+      if(Audio.SFX && Audio.SFX.bossPhase) Audio.SFX.bossPhase();
       for(const p of b.parts){ p._exOff=0; p._exT=BE_FLY; }
       return false;
     }
@@ -42369,11 +42414,11 @@ function drawLaunch(dt){
   const POSE=playShipPose();               // the exact pose PLAY starts from — see playShipPose
   let shipX=VW/2, shipY, suf='', shipH=62; // plain hull; the thruster is drawn live (drop 0808g)
   if(ph==='run'){ shipY=lerp(VH*0.66, VH*0.42, _ease(clamp(dist/SEG_B1,0,1)))+Math.sin(t*3)*3;
-    if(run.stage===9){const pe=_ease(clamp(dist/Math.max(1,SEG_B1*0.78),0,1));shipH=lerp(14,112,pe);shipY=lerp(VH*0.30,VH*0.44,pe);}
+    if(run.stage===9){const pe=_ease(clamp(dist/Math.max(1,SEG_B1*0.78),0,1));shipH=lerp(14,SPACE_SHIP_SIZE,pe);shipY=lerp(VH*0.30,VH*0.44,pe);}
     else if(_space){ // lifting off: the ship scales up as it rockets toward space
       const lift=_ease(clamp(dist/(SEG_B3),0,1)); shipH=lerp(62, 128, lift); shipY=lerp(VH*0.66, VH*0.30, lift); }
   }
-  else if(ph==='brake'){ shipY=lerp(VH*0.42, VH*0.60, _ease(clamp(drawLaunch._pt/2.0,0,1))); if(_space) shipH=lerp(run.stage===9?112:128,62,_ease(clamp(drawLaunch._pt/2.0,0,1))); }
+  else if(ph==='brake'){ shipY=lerp(VH*0.42, VH*0.60, _ease(clamp(drawLaunch._pt/2.0,0,1))); if(_space) shipH=lerp(run.stage===9?SPACE_SHIP_SIZE:128,SHIP_DRAW_H,_ease(clamp(drawLaunch._pt/2.0,0,1))); }
   else if(ph==='settle'){
     /* Reach the bottom flight lane in two continuous beats: settle gets most of the way there,
        then the countdown carries the hull the final few pixels instead of pinning it in place. */
@@ -42385,7 +42430,9 @@ function drawLaunch(dt){
     shipX=POSE.x; shipY=lerp(POSE.y-18,POSE.y,k); shipH=POSE.h; suf='';
   }
   const _drawGravityShip=_space&&gravityMode;
-  const _gravityDrawSize=(run.stage===9)?lerp(14,112,_ease(clamp(dist/Math.max(1,SEG_B1*0.78),0,1))):Math.max(112,shipH);
+  const _gravityDrawSize=(run.stage===9 && ph==='run')
+    ?lerp(14,SPACE_SHIP_SIZE,_ease(clamp(dist/Math.max(1,SEG_B1*0.78),0,1)))
+    :Math.max(SPACE_SHIP_SIZE,shipH);
   if(_drawGravityShip){if(!gravityModeDrawShip(shipX,shipY,_gravityDrawSize))drawShipSprite(shipX,shipY,shipH,suf);}
   else drawShipSprite(shipX, shipY, shipH, suf);
   /* THE PILOT'S OWN ANIMATED PLUME (drop 0801fd). Mike: "start using our pilots
@@ -42719,6 +42766,10 @@ function drawWorld(dt){
   }
   if(shake>0){ ctx.translate(rnd(-shake,shake),rnd(-shake,shake)); }
   drawBG(dt);
+  /* Stage 6's unified time-of-day, rain and lightning pass was merged but never called. It is an
+     overlay on the continuously scrolling approved sky, so draw it immediately above drawBG and
+     beneath every gameplay object. */
+  if(run.stage===6) bg6Draw(dt);
   /* ⚠ THE OLD PARALLAX CLOUD LAYER IS GONE (0819f) — the pack ships four cloud families and
      bg6Draw cross-fades them across the stage. The far scenery objects are NOT weather and
      stay. */
@@ -44766,6 +44817,9 @@ window.addEventListener('pointerdown',()=>{ try{ Audio.init(); }catch(_){} },{on
 /* ===== V3/V4 GENERATED COMBAT BANK =========================================== */
 if(window.BOFA && BOFA.sfx){
   Object.assign(BOFA.sfx, {
+    /* Replace the old tonal enemyShoot.mp3 catch-all with a short mechanical weapon transient.
+       Named elemental/boss families below still keep their own sound identities. */
+    enemyShoot:'assets/game/sounds/enemy_machine_shot_light.wav',
     machineGun:'assets/game/sounds/jet_machinegun_shot_01.wav',
     heavyMachineGun:'assets/game/sounds/jet_machinegun_shot_03.wav',
     enemyMachineGunLight:'assets/game/sounds/enemy_machine_shot_light.wav',
@@ -44867,9 +44921,23 @@ const Snd=(function(){
     lzStack: {g:0.72, lp:6200},
     machineGun:          {g:0.48, min:0.045},
     heavyMachineGun:     {g:0.58, min:0.050},
-    enemyMachineGunLight:{g:0.32, min:0.050},
-    enemyMachineGunHeavy:{g:0.40, min:0.060},
-    enemyMachineGunBurst:{g:0.34, min:0.48},
+    enemyMachineGunLight:{g:0.22, lp:5400, min:0.10},
+    enemyMachineGunHeavy:{g:0.30, lp:5200, min:0.11},
+    enemyMachineGunBurst:{g:0.26, lp:5000, min:0.55},
+    enemyShoot:          {g:0.20, lp:4800, min:0.12},
+    enemyPulseLaserBlue: {g:0.24, lp:5600, min:0.14},
+    enemyPulseLaserRed:  {g:0.24, lp:5600, min:0.14},
+    enemyPulseLaserAlien:{g:0.22, lp:5200, min:0.16},
+    enemyHeavyLaser:     {g:0.28, lp:5000, min:0.22},
+    enemyScatterLaser:   {g:0.24, lp:5200, min:0.20},
+    enemyFlameBolt:      {g:0.24, lp:4200, min:0.14},
+    enemyIceBolt:        {g:0.25, lp:6200, min:0.14},
+    enemyElectricBolt:   {g:0.24, lp:5600, min:0.14},
+    enemyRailCannon:     {g:0.30, lp:5200, min:0.24},
+    enemyBossCannon:     {g:0.32, lp:4800, min:0.20},
+    bossWeaponCharge:    {g:0.22, lp:4600, min:0.65},
+    bossPhase:           {g:0.38, lp:5200, min:1.40},
+    bossAlarm:           {g:0.42, lp:5200, min:2.20},
     coleSonicBoom:       {g:0.72, min:0.16},
     laserBeamStart:      {g:0.58, lp:5200},
     laserBeamLoop:       {g:0.42, lp:4300},
