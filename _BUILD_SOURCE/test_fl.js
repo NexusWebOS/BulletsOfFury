@@ -1540,10 +1540,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     const cw = vm.runInContext("run.stage="+stg+"; (_levelCfg().plateW||null)", ctxv);
     const ch = vm.runInContext("run.stage="+stg+"; (_levelCfg().h||null)", ctxv);
     const fixed = vm.runInContext("run.stage="+stg+"; !!_levelCfg().staticMaster", ctxv);
-    if(cw!=null && !fixed) ok(cw===px.w, 'stage '+stg+' plateW ('+cw+') matches '+file+' ('+px.w+')');
+    const looped = vm.runInContext("run.stage="+stg+"; !!_levelCfg().loopMaster", ctxv);
+    if(cw!=null && !fixed && !looped) ok(cw===px.w, 'stage '+stg+' plateW ('+cw+') matches '+file+' ('+px.w+')');
     if(ch!=null) ok(ch===px.h, 'stage '+stg+' cfg.h ('+ch+') matches '+file+' ('+px.h+')');
-    if(fixed) ok(vm.runInContext("run.stage="+stg+"; worldWidth()", ctxv)===cw,
-       'stage '+stg+' fixed sky uses its declared playfield width '+cw+', independent of source-art width');
+    if(fixed || looped) ok(vm.runInContext("run.stage="+stg+"; worldWidth()", ctxv)===cw,
+       'stage '+stg+' fixed/looped sky uses its declared playfield width '+cw+', independent of source-art width');
     else ok(vm.runInContext("run.stage="+stg+"; worldWidth()", ctxv)===px.w,
        'stage '+stg+' worldWidth() resolves to its plate width '+px.w);
   }
@@ -1851,8 +1852,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_nwxGone, 'the old stage-6 nwx_ storm sheets are gone (0 keys registered)');
   ok(vm.runInContext("typeof l6WeatherDraw==='undefined' && typeof l6CloudsDraw==='undefined'", ctxv),
      'and the old stage-6 weather + cloud draws are gone with them');
-  ok(vm.runInContext("typeof bg6Draw==='function' && bg6Draw.toString().indexOf('bg6_rain')>0", ctxv),
-     'stage 6 draws the new pack weather (clouds, rain, wind, lightning) instead');
+  ok(vm.runInContext("typeof bg6Draw==='function' && bg6Draw.toString().indexOf('bg6RainDraw')>0", ctxv),
+     'stage 6 draws the unified animated rain and lightning weather instead');
   // the two systems must not share keys
     /* 74 -> 68. Mike had the 6 nwf_splash frames removed ("get rid of the slash and snow burst"),
      and the 12 liquid FALLS that briefly landed in this namespace moved out to nlf_ — nwf_ is
@@ -4679,8 +4680,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* ⚠ STAGE 6 IS ONE SKY AGAIN (drop 0813i). The RC2 rebuild reintroduced the fortress - a door
      and platform decks painted into the plate - and Mike flagged every one: "they gota go dude".
      nsky6_sky is the plate he approved back in 0801gm, looped. */
-  ok(vm.runInContext("_levelCfg().master==='nsky6_sky' && _levelCfg().staticMaster===true", ctxv),
-     'stage 6 uses one fixed clean sky plate for the entire level');
+  ok(vm.runInContext("_levelCfg().master==='nsky6_sky' && _levelCfg().loopMaster===true", ctxv),
+     'stage 6 continuously loops one clean sky plate for the entire level');
   ok(vm.runInContext("_levelCfg().scrollLen===2240 && _levelCfg().continuousBoss===true", ctxv),
      'its gameplay remains one continuous stage through the boss instead of teleporting sections');
   ok(vm.runInContext("BG6_MOOD.map(function(m){return m.name;}).join(',')==='night,storm,dusk,dawn,sunlight'", ctxv),
@@ -7058,10 +7059,10 @@ function _wv(st,pk,w,roll){ return vm.runInContext("weaponVariant("+w+",{stage:"
   ok(vm.runInContext("Object.keys(PEMB_INK).every(function(k){ var r=PEMB_INK[k]; return r[0]+r[2]<=r[4] && r[1]+r[3]<=r[5] && r[2]>0 && r[3]>0; })", ctxv),
      'and every emblem ink rect fits inside its own canvas');
   ok(vm.runInContext("S5R_N===9", ctxv), 'the run is NINE gates - one per the ninth level');
-  /* the openings are read off the art: 192x256 speed portal has a +/-36 hole, the 256x320
-     segment gate +/-45. Chosen by eye they would make the run impossible or trivial. */
-  ok(vm.runInContext("S5R_OPEN===36 && S5R_OPEN9===45", ctxv),
-     'and its openings are the MEASURED holes in the gate art, not chosen radii');
+  /* The replacement reel is a normalized 96x96 3/4 ring with a 56px visible mouth. */
+  ok(vm.runInContext("S5R_OPEN===28 && S5R_OPEN9===28", ctxv) &&
+     _g5r.indexOf("'nfx_s5gate96_'")>=0 && _g5r.indexOf('96, 96')>=0,
+     'and all nine gates use the measured opening of the normalized 96px 3/4 ring');
   ok(/if\(!s5run\.armed\)\{ s5run\.armed=true;/.test(_g5r),
      'the speed effect arms on the FIRST gate, per Mike, not at the start of the run');
   ok(/s5run\.idx>=8 && !s5run\.failed\) g\.glow/.test(_g5r),
@@ -11538,11 +11539,15 @@ console.log("=== 240. launch, lava, audio and dialogue regressions ===");
   ok(vm.runInContext('LAUNCH_COUNTDOWN_SCROLL>0 && LAUNCH_COUNTDOWN_SCROLL<40',ctxv) &&
      _s240.indexOf('mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt')>0,
      '3-2-1 keeps the stage moving slowly, then hands its preserved scroll to PLAY at normal speed');
-  ok(_s240.indexOf("shipY=lerp(POSE.y-18,POSE.y,k)")>0,
+  ok(_s240.indexOf("shipY=lerp(POSE.y-42,POSE.y,k)")>0,
      'the ship continues flying into its bottom play lane throughout the countdown');
   ok(_s240.indexOf("run.stage===2 && b._boss")>0 && _s240.indexOf("Math.max(36,h*1.2)")>0 &&
      _s240.indexOf("dark='#050200'")>0 && _s240.indexOf("'#ffd21f'")>0,
      'Stage-2 boss rounds are enlarged yellow/white projectiles with a hard black silhouette');
+  ok(_s240.indexOf("const _magmaContrast=b._bfam==='magma'")>0 &&
+     _s240.indexOf("xartTint(_bk,'#080300',1)")>0 &&
+     _s240.indexOf("xartTint(_bk,'#fff1a0',0.92)")>0,
+     'the live boss-arsenal path applies the same dark edge and hot yellow core before it can bypass FIRETYPES');
   ok(_s240.indexOf("Audio.SFX.expSmall=function(){ Snd.play('expSmall'); }")>0 &&
      _s240.indexOf("Audio.SFX.expBig=function(){ Snd.play('expBig'); }")>0 &&
      _s240.indexOf("_sfxVariant(['explosionAirSmall01'")<0,
@@ -11658,6 +11663,16 @@ console.log("=== 244. Stage-5 Chaos Harrier true missile flight ===");
      'all live update ticks preserve the exact same X coordinate and vertical sprite heading');
   ok(_flight244.y1>_flight244.y0 && _flight244.s1>_flight244.s0 && _flight244.s1<=_flight244.cap && _flight244.mono,
      'the missile travels toward the player while smoothly gaining speed up to its authored cap');
+
+  var _arena244=JSON.parse(vm.runInContext("(function(){run.stage=5;curStage=STAGES[4];camX=0;"
+    +"subBoss.x=worldWidth()-8;subBoss._chState='missile';subBoss._chT=0;subBoss._chStep=1;"
+    +"chaosHarrierUpdate(subBoss,1/60);var a=chaosHarrierArena(subBoss),p=chaosHarrierWarpTarget(subBoss);"
+    +"camX=180;var a2=chaosHarrierArena(subBoss),p2=chaosHarrierWarpTarget(subBoss);return JSON.stringify({"
+    +"x:subBoss.x,l:a.left,r:a.right,px:p[0],l2:a2.left,r2:a2.right,p2x:p2[0]});})()",ctxv));
+  ok(_arena244.x>=_arena244.l && _arena244.x<=_arena244.r &&
+     _arena244.px>=_arena244.l && _arena244.px<=_arena244.r &&
+     _arena244.p2x>=_arena244.l2 && _arena244.p2x<=_arena244.r2,
+     'the 220px Harrier hull and every warp target stay inside the current camera, not merely inside the wider world');
 
   var _s244=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
   ok(_s244.indexOf("const sx=[124,92,60,28][fi]")>0 &&
@@ -12024,9 +12039,13 @@ console.log("=== 257. Gravity Mode space armory I-V ===");
 {
   var _src257=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
   var _arm257=_src257.slice(_src257.indexOf('const SPACE_WEAPONS='),_src257.indexOf('function pShoot()'));
-  ok(_arm257.indexOf('const SPACE_SHIP_SIZE=60')>=0 && _arm257.indexOf('function spaceShipHardpoints(')>=0 &&
+  ok(_arm257.indexOf('const SPACE_SHIP_SIZE=48')>=0 && _arm257.indexOf('function spaceShipHardpoints(')>=0 &&
      _arm257.indexOf('spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE)')>=0,
-     'the 60px physical shots and visible Fury emitters share one hardpoint geometry');
+     'the 48px Gravity craft and visible Fury emitters share one hardpoint geometry');
+  ok(_arm257.indexOf("const SPACE_LASER_MUZZLE=['nmz_1','nmz_5','nmz_7','nmz_6','nmz_8']")>=0 &&
+     _src257.indexOf('spaceLaserMuzzleDraw(ctx,lv,f,hp.x,hp.y,size)')>=0 &&
+     _arm257.indexOf('spaceLaserMuzzleCanvas(')<0,
+     'space laser firing uses the five standalone production muzzle reels, never cropped atlas demo cannons');
   ok(_arm257.indexOf('activeDt=dt-b._launchDelay')>=0 && _arm257.indexOf('const step=activeDt*60')>=0,
      'the six 2 ms laser beats consume sub-frame time instead of collapsing at 60 Hz');
   ok(_arm257.indexOf('function spaceVolleyLocks(')>=0 && _arm257.indexOf('return [right,center,left]')>=0 &&
@@ -12247,15 +12266,16 @@ console.log("=== 261. Stage 9 full headless soak ===");
 // ===== 262. RECONCILED REGRESSION REPAIRS =====
 console.log("=== 262. Reconciled regression repairs ===");
 {
-  ok(vm.runInContext("drawWorld.toString().indexOf('if(run.stage===6) bg6Draw(dt)')>=0",ctxv),
-     'Stage 6 calls its unified time-of-day, rain and lightning overlay from the live world draw');
+  ok(vm.runInContext("stageSceneryDraw.toString().indexOf('bg6Draw(dt)')>=0",ctxv) &&
+     vm.runInContext("drawWorld.toString().indexOf('if(run.stage===6) bg6Draw(dt)')<0",ctxv),
+     'Stage 6 calls its unified weather exactly once through the live background pipeline');
   ok(vm.runInContext("_drawSpecialHUDInner.toString().indexOf('iconBlit(ctx,_sk')>=0",ctxv),
      'the active-special HUD resolves all nine replacement icons through the production icon sheet');
   ok(vm.runInContext("(function(){var s=drawPowerups.toString();return s.indexOf('iconBlit(ctx,iconKey')>=0&&s.indexOf('iconBlit(ctx,iconKey')<s.indexOf('XART.rdy(animKey)');})()",ctxv),
      'special pickups prefer the replacement icon before the legacy animated badge');
   var _space262=JSON.parse(vm.runInContext("(function(){var h=spaceShipHardpoints(240,400,SPACE_SHIP_SIZE);var c={kind:'capsule',x:240,y:180,w:22,h:32,hp:2,flash:0,dead:false};powerups.length=0;powerups.push(c);var before=spaceTargets().indexOf(c)>=0;spaceDamageTarget(c,2,{x:240,y:180});return JSON.stringify({size:SPACE_SHIP_SIZE,lx:h.laser[0].x,rx:h.laser[1].x,y:h.laser[0].y,targeted:before,broken:c.dead,reward:powerups.some(function(p){return p!==c&&!p.dead;})});})()",ctxv));
-  ok(_space262.size===60 && Math.abs(_space262.lx-222.36)<0.02 && Math.abs(_space262.rx-257.64)<0.02 && Math.abs(_space262.y-389.86)<0.02,
-     'the recovered ship is 60px and its twin laser origins sit on the measured outer cannon pods');
+  ok(_space262.size===48 && Math.abs(_space262.lx-225.888)<0.02 && Math.abs(_space262.rx-254.112)<0.02 && Math.abs(_space262.y-391.888)<0.02,
+     'the recovered ship is 48px and its twin laser origins sit on the measured outer cannon pods');
   ok(_space262.targeted && _space262.broken && _space262.reward,
      'space weapons target, damage and open shootable boxes/capsules through their dedicated collision pass');
   ok(vm.runInContext("_drawEffectsInner.toString().indexOf('_fade')<0",ctxv),
@@ -12266,6 +12286,30 @@ console.log("=== 262. Reconciled regression repairs ===");
       _enemyDraw262=_src262.slice(_src262.indexOf('// enemy — master fire-type art first'),_src262.indexOf('ctx.imageSmoothingEnabled = _ebSmooth'));
   ok(_enemyDraw262.indexOf('ctx.scale(-1')<0 && _enemyDraw262.indexOf('ctx.scale(1,-1')<0,
      'enemy pellets/projectiles are never canvas-flipped; homing art only turns continuously with velocity');
+}
+
+// ===== 263. UNSKIPPABLE STAGE DIALOGUE + STAGE 5 HQ COPY =====
+console.log("=== 263. unskippable stage dialogue and Stage 5 HQ copy ===");
+{
+  var _cin263=JSON.parse(vm.runInContext("(function(){"
+    +"var out={};"
+    +"story={key:'TEST',when:'safe',lines:[['COLE','FIRST'],['COLE','SECOND']],i:0,t:0,typed:0,done:false,fade:1};storyTick(0);out.storyIndex=story&&story.i;"
+    +"run.pilot='yuri';run.weapon=0;thawStart();thawTick(0);out.thawIndex=thaw.i;"
+    +"thaw=null;_frzNarr={i:0,t:0,hold:2.6,done:false};freezerL3Tick(0);out.freezerIndex=_frzNarr.i;"
+    +"run.stage=5;pilotIndex=0;gravityModeStart();out.line=gravityMode.line;out.expected=PILOTS[0].name+\", Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.\";"
+    +"gravityModeTick(1);out.partial=!gravityMode.dialogueDone&&gravityMode.dialogueT>gravityMode.dialogueDelay;"
+    +"gravityModeTick(0);out.gravityStillOpen=!gravityMode.dialogueDone;"
+    +"return JSON.stringify(out);})()",ctxv));
+  ok(_cin263.storyIndex===0 && _cin263.thawIndex===0 && _cin263.freezerIndex===0,
+     'Stage 2/3 story, ship/pilot thaw and Freezer narration advance only on their authored clocks');
+  ok(_cin263.line===_cin263.expected,
+     'Stage 5 addresses the selected pilot with the approved Fury HQ prototype warning verbatim');
+  ok(_cin263.partial && _cin263.gravityStillOpen,
+     'the Stage 5 warning types on and remains open until its authored completion gate');
+  var _src263=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
+  ok(_src263.indexOf('function cinematicAdvanceTap(')<0 &&
+     _src263.slice(_src263.indexOf('function storyTick(dt)'),_src263.indexOf('const STORY_TINT')).indexOf('Input.tap(')<0,
+     'stage dialogue contains no keyboard, Fire or controller skip path');
 }
 
 console.log('\n============================================');

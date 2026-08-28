@@ -5,6 +5,11 @@
    single self-contained file · ColeForge Studios
    ============================================================ */
 
+/* Register the hand-authored 96px 3/4 warp reel before XART snapshots BOFX.img. */
+if(typeof window!=='undefined' && window.BOFX && BOFX.img){
+  for(let i=0;i<8;i++) BOFX.img['nfx_s5gate96_'+i]='assets/game/warp_gate96/nfx_s5gate96_'+i+'.png';
+}
+
 const VW = 480, VH = 512;                 // internal virtual resolution (camera window)
 // Horizontal-scroll support: some stages (the 800px jungle level) have a play field wider than the camera.
 // WORLD_W is the logical play width; camX is the camera's left edge, following the player.
@@ -2725,8 +2730,8 @@ function _levelCfg(){
        spanning the world width — drawStageBG paints it first and then covers it with the
        master. So the corridor Mike is describing was underneath the mountain the whole time;
        it only needed the mountain to stop being drawn over it. No new art. */
-    case 2: return {master:'nst2_master', liquid:'nlq2_lava',    fill:'#241008', tile:0.5, fps:6, arenaLiquid:true,
-                    plateW:680, h:4080};   // 0822d: plate rescaled 800x4800 -> 680x4080
+    case 2: return {master:'nst2_master', liquid:'nlq2_lava', fill:'#241008', tile:0.5, fps:6,
+                    arenaLiquid:true,continuousBoss:true,plateW:680, h:4080};
     case 3: return {master:'nst3_master', liquid:'nlq2_ice',     fill:'#0c1c2e', tile:0.5, fps:5,
                     plateW:680, h:4080};   // 0822d: plate rescaled 800x4800 -> 680x4080
     /* 4 CROUCHING MISSILES, HIDDEN DEATH — REORDERED (drop 0801ai).
@@ -2815,7 +2820,7 @@ function _levelCfg(){
                        cash and crater for stage 4. we dont need em anymore." The pileup was the
                        only entry in cfg.props game-wide, so drawStageProps now has nothing to
                        draw on stage 4. Put the array back to restore it. */
-                    props:[]};
+                    props:[],continuousBoss:true};
     /* RC2 REBUILD (drop 0810g) — Stage_05_Storm_To_Upper_Atmosphere, 800x5120. Starts in the
        nebula and descends to a planet under aurora. Flipped on the way in like every plate in
        this pack (see the note on case 4), magenta punched to alpha. The BOSS ARENA is untouched:
@@ -2882,15 +2887,11 @@ function _levelCfg(){
        measured 0.00% metal-like pixels and a first-vs-last row seam of 21.9/765, so it loops
        forever with no join and carries no structure at all. Looping it is the 0801gm intent
        restored, and the rain/lightning still darken over it in code. */
-    /* STAGE 6 IS ONE FIXED SKY AGAIN (Mike, 0824). The later bg_stage06_master strip was the
-       wrong abstraction: it baked several sky bands and the Stage-7 sewer mouth into Stage 6,
-       while the separate cloud reels animated a giant purple cloud over the fight. Use the clean
-       structure-free nsky6_sky plate as one stationary field for the whole level. bg6Draw performs
-       the night -> storm -> dusk -> dawn -> daylight palette fades in code; the sewer remains only
-       in the 6->7 handoff and Stage 7 itself. The played 2240px span matches its 56-second clock,
-       so the palette reaches daylight and the carrier arrives without a hidden second leg. */
+    /* Stage 6 owns ONE structure-free sky plate. It scrolls as a seamless field for the entire
+       level while code applies the night -> storm -> dusk -> dawn -> daylight exposure journey;
+       there are no plate swaps and no separate cloud background to pop between. */
     case 6: return {master:'nsky6_sky', plateW:680, liquid:null, fill:'#061126', tile:1.0, wide:true,
-                    staticMaster:true, staticY:760, scrollLen:2240, continuousBoss:true};
+                    loopMaster:true, scrollLen:2240, continuousBoss:true};
     // 7 NOT ANOTHER SEWER LEVEL — dedicated sewer kit (CF_LevelPack-Lvl7): 800x3616 gameplay
     // scroll + 800x1000 boss arena, with the 256px sludge surface animating through the
     // master's keyed channels. WIDE level (800px world, camera scrolls).
@@ -3003,6 +3004,7 @@ function _levelCfg(){
 }
 // returns true if it drew the level; false to let the caller fall back to procedural bg.
 let _bossHold=0;   // eases the terrain to a standstill when a boss engages
+let _stage4BossRoadScroll=0,_stage6BossSkyScroll=0;
 /* stages that keep scrolling through their miniboss. Mike: "unless stated
    differently per level". Empty means the hold applies everywhere. */
 const SUBBOSS_NO_HOLD = {};
@@ -4084,13 +4086,33 @@ function drawLevelMaster(dt){
      across `rangeSrc = H - winH`, which for a short plate would crawl through 488px and read as
      nearly static. Looping is the correct mapping for a starfield, so `loopMaster` picks it. */
   if(cfg.loopMaster){
-    _loopDraw(img, mapScroll);
+    let _loopScroll=mapScroll;
+    if(run.stage===6&&_realBossRun){_stage6BossSkyScroll+=dt*96;_loopScroll+=_stage6BossSkyScroll;}
+    else if(run.stage===6)_stage6BossSkyScroll=0;
+    if(run.stage===6 && typeof bg6LoopDraw==='function')
+      bg6LoopDraw(img,_mk,_loopScroll,drawW,winH,_winTop);
+    else _loopDraw(img, _loopScroll);
     if(typeof drawLiquidFalls==='function') drawLiquidFalls(0);
     if(cfg.par && XART.rdy(cfg.par)) _loopDraw(XART.get(cfg.par), mapScroll*1.18);
     return true;
   }
   const scrollFrac=range>0?(mapScroll/range):0;    // 0..1 progress through the level
   let srcY=Math.max(0, rangeSrc-scrollFrac*rangeSrc);
+  /* The caldera now CONNECTS to its boss arena. Lava is already the continuous backing layer;
+     slide the last terrain window down over it when the boss arrives, revealing that same moving
+     tile bed from the top until the field is fully open lava. No one-frame background swap. */
+  if(run.stage===2&&(_realBossRun||_arenaHold)){
+    drawLevelMaster._l2Join=Math.min(winH,(drawLevelMaster._l2Join||0)+dt*210);
+    _floorDy=drawLevelMaster._l2Join;
+  }else if(run.stage===2)drawLevelMaster._l2Join=0;
+  /* Stage 4's boss is a chase, not a roadblock. Loop the clean upper-highway kilometre at more
+     than four times the stage cruise speed until the boss dies. Restricting the source window to
+     rows 0..1024 keeps hangars/checkpoints from teleporting into the chase loop. */
+  if(run.stage===4&&_realBossRun){
+    const chaseSpan=Math.max(1,Math.min(512,(img.naturalHeight||img.height)-winH));
+    _stage4BossRoadScroll=(_stage4BossRoadScroll+dt*190)%chaseSpan;
+    srcY=chaseSpan-_stage4BossRoadScroll;
+  }else if(run.stage===4)_stage4BossRoadScroll=0;
   /* SKIP A BAND OF THE MASTER (drop 0813i)
      Mike: "get rid of that door on level 6. get rid of that bridge on level 8" -> "dont use those
      parts of the stage."
@@ -9979,8 +10001,8 @@ const SHIPBOSS = {
      mechanic unchanged. `cannon` is new: a 14-frame charge-and-fire authored 640x480, where
      the extra 160px below the hull IS the beam. hMul carries that to _animH. */
   doomsdaycarriermk2:{key:'nsb_dcarrmk2_closed', name:'DOOMSDAY CARRIER MK II', w:640,h:320, proj:'mirv',
-                  mounts:{L:[-0.31,0.17],C:[0,0.43],R:[0.31,0.17]},
-                  hpMul:1.50, pat:'mslfan', cd:1.24, pats:['mslfan','beamfan','mslfan'],
+                  mounts:{L:[-0.31,0.17],C:[0,0.43],R:[0.31,0.17],MG_L:[-0.38,0.31],MG_R:[0.38,0.31]},
+                  hpMul:1.50, pat:'mslfan', cd:1.04, pats:['mslfan','stormmg','beamfan','stormmg'],
                   launch:{frames:18, pre:'nsb_dcarrmk2_', fps:14, loop:false,
                           release:11, warhead:'nfx_omegamk2_in'},
                   cannon:{frames:14, pre:'nsb_dcarrmk2_cn_', fps:12, hMul:1.5, fire:6, last:11}},
@@ -11039,13 +11061,17 @@ function carrierInit(b){
    centre, so the column sits on b.x with no offset.
    Damage follows the RAKE's convention (perp distance, respects invuln, calls playerHit)
    rather than spawning bullets, because the beam is continuous while it is drawn. */
-const CARRIER_BEAM_HALF = 17;          // widest measured half-width, authored px
+const CARRIER_BEAM_HALF = 29;          // matches the separately drawn Mk-II beam column
 function carrierCannonTick(b, dt, C){
   const S=b._cn;
   S.t+=dt; S.f=Math.floor(S.t*C.fps);
-  if(S.f>=C.frames){ b._cn=null; b._animH=0; return false; }
+  if(S.f>=C.frames){ b._cn=null; b._animH=0; b._cnBeamFrame=null; return false; }
   b._animKey = C.pre + String(S.f).padStart(2,'0');
   b._animH   = b.h * (C.hMul||1);
+  b._cnBeamFrame=(S.f>=C.fire&&S.f<=C.last)
+    ?clamp(Math.floor((S.f-C.fire)*9/Math.max(1,C.last-C.fire+1)),0,8):null;
+  if(S.f===C.fire&&!S.sound){S.sound=true;if(Audio.SFX&&(Audio.SFX.enemyHeavyLaser||Audio.SFX.enemyBossCannon))
+    (Audio.SFX.enemyHeavyLaser||Audio.SFX.enemyBossCannon)();}
   /* hurt ONLY while the beam is actually on screen — a hazard the player cannot see is the
      kind of thing a green suite never catches. */
   if(S.f>=C.fire && S.f<=C.last && typeof player!=='undefined' && player &&
@@ -11077,6 +11103,7 @@ function carrierTick(b, dt){
       if(C && (_bothGone || S.turn%3===0)){
         b._cn={t:0,f:0}; S.cd=1.0+Math.random()*0.6;
         b._animKey=C.pre+'00'; b._animH=b.h*(C.hMul||1);
+        if(Audio.SFX&&Audio.SFX.bossWeaponCharge)Audio.SFX.bossWeaponCharge();
         return;
       }
       S.playing=true; S.t=0; S.f=0; S.fired=false;
@@ -11103,14 +11130,16 @@ function carrierTick(b, dt){
          omegawarhead mechanic is that you shoot it or deflect it back into the bays. Leading it
          is the counterplay; chasing him would remove it. */
       const _wa=(typeof aimPlayer==='function')?aimPlayer(sx,sy):Math.PI/2;
-      const _wsp=1.55;
-      eBullets.push({x:sx, y:sy, vx:Math.cos(_wa)*_wsp, vy:Math.sin(_wa)*_wsp, ang:_wa, w:22, h:56,
+      const _wsp=1.15;
+      eBullets.push({x:sx, y:sy, vx:Math.cos(_wa)*_wsp, vy:Math.sin(_wa)*_wsp, ang:_wa,spd:_wsp,
+                     _accel:0.030,_maxspd:4.6,w:22, h:56,
                      dmg:1, t:0, kind:'omegawarhead', _fx:'missile', _side:S.side,
                      /* the Mk I and Mk II fire visibly different rounds — a slim olive shell
                         vs a silver canister — so the round carries the art its OWNER declares
                         instead of the draw hardcoding one pair. */
                      _wart:(L.warhead||'nfx_omegawarhead_in')});
-      if(Audio.SFX && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+      if(Audio.SFX&&(Audio.SFX.spaceVolleyLaunch||Audio.SFX.missile||Audio.SFX.enemyBossCannon))
+        (Audio.SFX.spaceVolleyLaunch||Audio.SFX.missile||Audio.SFX.enemyBossCannon)();
     }
   }
   b._animH=0;                             // the bay reel is hull-height; only the cannon grows the box
@@ -11253,6 +11282,17 @@ function shipBossDraw(b){
     if(t){ ctx.globalAlpha=Math.min(1,(b.flash/0.18))*0.85; ctx.drawImage(t, -w/2, -h/2, w, dh); ctx.globalAlpha=1; }
   }
   ctx.restore();
+  /* The Mk-II pack includes a dedicated nine-frame beam. The 640x480 cannon reel performs the
+     hull, while this continuous column carries the laser visibly from its centre emitter through
+     the player lane; using the supplied beam is what makes the collision above readable. */
+  if(b._ship==='doomsdaycarriermk2'&&b._cnBeamFrame!=null){
+    const bk='nfx_dcarrmk2_beam_'+clamp(b._cnBeamFrame|0,0,8);
+    if(XART.rdy(bk)){
+      const bi=XART.get(bk),start=cy+h/2-10,bw=58,bh=Math.max(80,VH-start+50);
+      ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowColor='#ff9a28';ctx.shadowBlur=14;
+      ctx.drawImage(bi,b.x-bw/2,start,bw,bh);ctx.restore();
+    }
+  }
   shipBossMuzzleDraw(b);
   return true;
 }
@@ -11672,9 +11712,22 @@ function chaosHarrierSelect(b){
   const attack=seq[(b._chPattern||0)%seq.length]; b._chPattern=(b._chPattern||0)+1;
   chaosHarrierBegin(b,attack);
 }
+/* The Stage-5 playfield is wider than the 480px camera.  Using worldWidth() for the Harrier's
+   lateral patrol let it choose x=500-ish while the player/camera were still on the left side,
+   leaving half or all of this 220px hull off-screen during an attack.  Boss movement is staged
+   against what the player can actually see: keep a little over half a hull between its centre and
+   either camera edge.  The world coordinates remain authoritative; only the legal arena changes. */
+function chaosHarrierArena(b){
+  const left=(typeof camLeftX==='function')?camLeftX():0;
+  const right=(typeof camRightX==='function')?camRightX():((typeof worldWidth==='function')?worldWidth():VW);
+  const half=(b&&b.w?b.w:220)*0.53, centre=(left+right)*0.5;
+  const lo=left+half, hi=right-half;
+  return (hi>=lo)?{left:lo,right:hi,centre:centre,span:(hi-lo)*0.5}
+                 :{left:centre,right:centre,centre:centre,span:0};
+}
 function chaosHarrierWarpTarget(b){
-  const ww=(typeof worldWidth==='function')?worldWidth():VW, cx=ww/2;
-  const dx=Math.min(178,Math.max(80,cx-b.w*0.58));
+  const arena=chaosHarrierArena(b), cx=arena.centre;
+  const dx=Math.min(118,Math.max(48,arena.span*0.92));
   const pts=[[cx-dx,112],[cx,94],[cx+dx,112],[cx-dx*0.92,172],[cx,158],[cx+dx*0.92,172]];
   let best=pts[0], score=-1;
   for(const p of pts){
@@ -11717,10 +11770,14 @@ function chaosHarrierUpdate(b,dt){
     if(b._chT>=0.60){ const q=b._chQueued;b._chQueued=null; if(q)chaosHarrierBegin(b,q); else chaosHarrierFinish(b); }
     return;
   }
+  /* The camera can continue easing while an attack is active.  Re-assert the visible arena after
+     a warp/idle handoff so plasma, missile and beam poses never freeze with a clipped hull. */
+  const arena=chaosHarrierArena(b);
+  b.x=clamp(b.x,arena.left,arena.right);
   if(st==='idle'){
-    const ww=(typeof worldWidth==='function')?worldWidth():VW, amp=Math.max(36,Math.min(170,ww/2-b.w*0.58));
-    const tx=ww/2+Math.sin((b.t||0)*(phase===3?2.85:1.90))*amp;
-    const dx=tx-b.x; b.x+=dx*Math.min(1,dt*(phase===3?4.2:3.0)); b.x=clamp(b.x,b.w*0.53,ww-b.w*0.53);
+    const amp=Math.max(0,Math.min(118,arena.span*0.92));
+    const tx=arena.centre+Math.sin((b.t||0)*(phase===3?2.85:1.90))*amp;
+    const dx=tx-b.x; b.x+=dx*Math.min(1,dt*(phase===3?4.2:3.0)); b.x=clamp(b.x,arena.left,arena.right);
     b.y=b.ty+Math.sin((b.t||0)*2.15)*((phase===3)?23:14);
     b._chBank=Math.abs(dx)<1?0:(dx<0?-1:1);
     b._chCd-=dt; if(b._chCd<=0)chaosHarrierSelect(b);
@@ -13323,7 +13380,7 @@ function weaponHitSfx(el){
       if(S.flameHit||S.crackle) (S.flameHit||S.crackle)();
       if(S.iceBreathHit||S.shatter) (S.iceBreathHit||S.shatter)();
     }
-    else if(S.hit) S.hit();
+    else if(S.laserBeamHit||S.hit) (S.laserBeamHit||S.hit)();
   }catch(e){}
 }
 function flameHit(f,x,y,ew,eh){
@@ -13997,16 +14054,25 @@ function maverickLaserTick(b,dt){
    ============================================================ */
 const SPACE_WEAPONS=['LASER CANNON','SHADOW ORB','VOLLEY MISSILES'];
 const SPACE_LASER_COL=['#ff972b','#39a4ff','#48e36c','#f5f7ff','#ff4848'];
-/* Keep the recovered Fury craft on the same gameplay footprint as every pilot ship. 112px was
-   the assembly-cinematic reveal size and accidentally leaked into PLAY, making Stages 5/9 nearly
-   twice the normal 60px hull and moving every weapon hardpoint with it. */
-const SPACE_SHIP_SIZE=60;
+/* Standalone four-frame overlays already shipped in the production muzzle library.  They match
+   the five Laser Cannon palettes and, unlike the Gravity atlas demonstration cells, contain no
+   barrel/cannon pixels: orange, blue, green, white, red. */
+const SPACE_LASER_MUZZLE=['nmz_1','nmz_5','nmz_7','nmz_6','nmz_8'];
+/* Keep the recovered Fury craft on the same VISIBLE footprint as every pilot ship. The ordinary
+   pilot PNGs are drawn in a 60px canvas but average only ~80% opaque hull height because their
+   source cells carry transparent margins. ship_base is tightly cropped, so drawing it at 60px
+   made the actual craft ~25% larger. 48px gives it the same ~48px visible hull as the roster. */
+const SPACE_SHIP_SIZE=48;
 const SPACE_SHADOW_TIER=[
   {base:11.0,rad:54,pierce:0.82},{base:13.5,rad:60,pierce:0.78},
   {base:16.5,rad:67,pierce:0.74},{base:20.0,rad:75,pierce:0.70},
   {base:24.0,rad:84,pierce:0.66}
 ];
 function spaceWeaponsActive(){ return !!(run&&run.spaceMode&&(run.stage===5||run.stage===9)); }
+function spaceLaserMuzzleWarm(){
+  if(typeof XART==='undefined'||!XART._touch)return;
+  for(const fam of SPACE_LASER_MUZZLE)for(let f=0;f<4;f++)XART._touch(fam+'_'+f);
+}
 function spaceWeaponLevel(){
   if(!run.spaceLevels)run.spaceLevels=[1,0,0];
   return clamp(run.spaceLevels[clamp(run.spaceWeapon||0,0,2)]||1,1,5);
@@ -14038,6 +14104,7 @@ function spaceModeStage(num){
     run.spaceWeapon=clamp(run.spaceWeapon||0,0,2);
     run.weapon=0; run.wlevel=spaceWeaponLevel(); run.wlevels=[0,0,0,0,0,0];
     run.wvars=[null,null,null,null,null,null]; run.missileLevel=0; run._mslCd=0;
+    spaceLaserMuzzleWarm();
   }else if(run.spaceMode){
     const s=run._groundLoadout;
     if(s){ run.weapon=s.weapon;run.wlevel=s.wlevel;run.wlevels=s.wlevels;run.wvars=s.wvars;run.missileLevel=s.missileLevel; }
@@ -14056,7 +14123,8 @@ function spaceLaserFire(){
       _muzzleX:hp.x,_muzzleY:hp.y,_launchDelay:pulse*0.002});
   }
   player._spaceMuzzle=0.13;player._spaceMuzzleLv=lv;
-  if(Audio.SFX&&Audio.SFX.laserCannon)Audio.SFX.laserCannon();
+  if(Audio.SFX&&(Audio.SFX.spaceLaserCannon||Audio.SFX.laserCannon))
+    (Audio.SFX.spaceLaserCannon||Audio.SFX.laserCannon)();
 }
 function spaceShadowRelease(charge){
   const p=clamp(charge/1.55,0.12,1),lv=spaceWeaponLevel(),tier=SPACE_SHADOW_TIER[lv-1];
@@ -14068,13 +14136,16 @@ function spaceShadowRelease(charge){
     blastRad:tier.rad+p*(58+lv*4),splash:0.62+p*0.14,pierceAt:tier.pierce,
     full:p>=0.985,_muzzleX:hp.x,_muzzleY:hp.y,_hit:[]});
   if(p>=0.985){shake=Math.max(shake,4+lv*0.7);flashScreen=Math.max(flashScreen,0.12);}
-  player.fireCd=0.32; if(Audio.SFX&&Audio.SFX.shadowRelease)Audio.SFX.shadowRelease();
+  player.fireCd=0.32;
+  if(Audio.SFX&&(Audio.SFX.spaceShadowRelease||Audio.SFX.shadowRelease))
+    (Audio.SFX.spaceShadowRelease||Audio.SFX.shadowRelease)();
 }
 function spaceShadowTick(dt,firing){
   if(!spaceWeaponsActive()||run.spaceWeapon!==1||
      (typeof chargePilotActive==='function'&&chargePilotActive())) return false;
   if(firing){
-    if(!run._spaceShadowHeld&&Audio.SFX&&Audio.SFX.shadowCharge)Audio.SFX.shadowCharge();
+    if(!run._spaceShadowHeld&&Audio.SFX&&(Audio.SFX.spaceShadowCharge||Audio.SFX.shadowCharge))
+      (Audio.SFX.spaceShadowCharge||Audio.SFX.shadowCharge)();
     run._spaceShadowHeld=true;run._spaceShadowCharge=Math.min(1.55,(run._spaceShadowCharge||0)+dt);
     return true;
   }
@@ -14088,7 +14159,8 @@ function spaceVolleyFire(){
   const lv=spaceWeaponLevel(),hp=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE).nose;
   pBullets.push({kind:'spaceVolleySeed',x:hp.x,y:hp.y,vx:0,vy:-7.4,
     w:24,h:28,dmg:4+lv*1.4,lv,t:0,_muzzleX:hp.x,_muzzleY:hp.y});
-  if(Audio.SFX&&Audio.SFX.volleyLaunch)Audio.SFX.volleyLaunch();
+  if(Audio.SFX&&(Audio.SFX.spaceVolleyLaunch||Audio.SFX.volleyLaunch))
+    (Audio.SFX.spaceVolleyLaunch||Audio.SFX.volleyLaunch)();
 }
 function spaceWeaponFire(){
   const w=clamp(run.spaceWeapon||0,0,2);
@@ -14152,6 +14224,13 @@ function spaceVolleyLocks(seed,range){
 function spaceImpact(b,family,lv,size){
   b.kind='spaceImpact';b.family=family;b.lv=lv||1;b.t=0;b.life=family==='shadow'?0.52:0.28;
   b.vx=0;b.vy=0;b.w=b.h=size||42;
+  try{
+    const S=Audio&&Audio.SFX;if(!S)return;
+    const fn=family==='shadow'?(S.spaceShadowHit||S.explosionPlasma):
+             (family==='volley'?(S.spaceVolleyHit||S.explosionAirMedium):
+              (S.spaceLaserHit||S.shieldHitLight));
+    if(fn)fn();
+  }catch(_si){}
 }
 function spaceBulletHit(b,pierce){
   for(const t of spaceTargets()){
@@ -16522,8 +16601,7 @@ function thawTick(dt){
   thaw.t+=dt;
   const L=thaw.lines[thaw.i];
   const dur=2.6 + (L?L.t.length:0)*0.018;
-  const skip = (typeof keybind!=='undefined') && keybind.fire.some(k=>Input.tap(k));
-  if(thaw.t>=dur || skip){
+  if(thaw.t>=dur){
     thaw.i++; thaw.t=0;
     if(thaw.i>=thaw.lines.length) thaw.done=true;
   }
@@ -17106,7 +17184,7 @@ function warmStage(n){
        Stage 7/8 use the CF_ToxicSewerPortal reel. Warming the wrong family was why the sewer
        finale displayed an unrelated bonus portal even though all eight correct frames were
        already installed. Warm both sides of the 7->8 cut before either cinematic begins. */
-    if((n===5||n===9) && typeof addPrefix==='function') addPrefix('nfx_wportal_');
+    if((n===5||n===9) && typeof addPrefix==='function') addPrefix('nfx_s5gate96_');
     if((n===7||n===8) && typeof addPrefix==='function') addPrefix('nfx_l7portal_');
     if(typeof NEWBOSS!=='undefined' && NEWBOSS[n] && NEWBOSS[n].idle) addPrefix(NEWBOSS[n].idle);
     const _mk = (typeof SUBBOSS!=='undefined' && SUBBOSS[n]) ? SUBBOSS[n].kind : null;
@@ -20363,9 +20441,18 @@ function playerHit(){
   player.dead=true; player.deathT=1.4; player.alive=false;
   for(let _k=0;_k<7;_k++) explode(player.x+rnd(-16,16), player.y+rnd(-14,14), rnd(26,50), 'red');
   shake=18; flashScreen=0.7; Audio.SFX.death();
+  /* Gravity Mode is a recovered prototype, not a disposable ground pickup. A lost life must not
+     erase upgrades in its three independent weapon banks. Snapshot them before the generic
+     ground-loadout strip and restore them afterwards, including the selected bank. */
+  const _spaceDeathLoadout=(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive())?{
+    weapon:run.spaceWeapon||0, levels:(run.spaceLevels||[1,0,0]).slice()
+  }:null;
   // lose some powerup state on death
   run.weapon=0; run.wlevels=[0,0,0,0,0,0]; run.wvars=[null,null,null,null,null,null]; run.wlevel=0; run.power=0;
-  if(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()) run.wlevel=spaceWeaponLevel();
+  if(_spaceDeathLoadout){
+    run.spaceWeapon=_spaceDeathLoadout.weapon;run.spaceLevels=_spaceDeathLoadout.levels;
+    run.wlevel=spaceWeaponLevel();
+  }
   run.speed=0; run.speedLevel=0; run.speedT=0;
   run.missileLevel=0;   // die -> lose ALL auto-missiles; next missile powerup is level 1 again
   // lose the active special on death (Maverick venom, Yuri chain, etc.)
@@ -22268,6 +22355,15 @@ function spaceLaserPulseCanvas(key){
   g.drawImage(src,sx,0,c.width,c.height,0,0,c.width,c.height);
   _spaceLaserPulseCache[key]=c;return c;
 }
+function spaceLaserMuzzleDraw(g,lv,frame,x,y,size){
+  const fam=SPACE_LASER_MUZZLE[clamp((lv|0)-1,0,4)],key=fam+'_'+clamp(frame|0,0,3);
+  if(typeof XART==='undefined'||!XART.rdy(key))return false;
+  const im=XART.get(key),h=size*(0.30+clamp(lv|0,1,5)*0.01);
+  const w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
+  /* These reels point upward natively.  Their lower tenth overlaps the real pod mouth so the
+     flash cannot float above the barrel, while the rest blooms cleanly into the firing lane. */
+  g.drawImage(im,x-w/2,y-h*0.90,w,h);return true;
+}
 function spaceAtlasIconBlit(g,key,x,y,h,centred){
   let fk=null;
   if(/^space_laser_icon_/.test(key)) fk='laser_icon_'+clamp(parseInt(key.split('_').pop())||1,1,5);
@@ -22293,9 +22389,9 @@ function gravityModeStart(){
   if(!run || (run.stage!==5 && run.stage!==9)){ gravityMode=null; return false; }
   if(run.stage===9) return gravityModeRetain();
   const P=(typeof PILOTS!=='undefined'&&PILOTS[pilotIndex])?PILOTS[pilotIndex]:null;
-  const name=(P&&P.name)?String(P.name).toUpperCase():'PILOT';
+  const name=(P&&P.name)?String(P.name):'Pilot';
   gravityMode={phase:'drift',t:0,age:0,dialogueT:0,dialogueDelay:0.42,dialogueDone:false,
-    line:name+", IT'S TOO DANGEROUS TO TRAVEL TO SPACE! FURY HQ IS DISPATCHING A SPACESHIP KIT YOUR WAY, STAT!",
+    line:name+", Your ship won't last long in space! HQ is dispatching a kit your way now, bring it back in one piece or the federation's gonna be pissed! It's an expensive prototype we got for special situations like this.",
     chargeBand:-1};
   if(typeof XART!=='undefined'&&XART._touch) XART._touch('ngm_space_atlas');
   return true;
@@ -22437,9 +22533,8 @@ function gravityModeDrawShip(drawX,drawY,drawSize){
   }
   if(phase==='active'&&player._spaceMuzzle>0){
     const lv=clamp(player._spaceMuzzleLv||spaceWeaponLevel(),1,5),f=clamp(Math.floor((0.13-player._spaceMuzzle)*31),0,3);
-    const key='laser_'+lv+'_muzzle_'+f;
     ctx.save();ctx.globalCompositeOperation='lighter';
-    for(const hp of spaceShipHardpoints(x,y,size).laser)spaceAtlasDraw(ctx,key,hp.x,hp.y,size*0.31,size*0.38,true,null);
+    for(const hp of spaceShipHardpoints(x,y,size).laser)spaceLaserMuzzleDraw(ctx,lv,f,hp.x,hp.y,size);
     ctx.restore();
   }
   if(phase==='active'&&(run._spaceShadowCharge||0)>0){
@@ -22454,8 +22549,13 @@ function gravityModeDrawShip(drawX,drawY,drawSize){
     ctx.fillStyle='#f5fbff';ctx.shadowColor=GRAVITY_PILOT_PAL[pilot]||'#348dff';ctx.shadowBlur=12;
     ctx.fillText(phase==='reveal'?'GRAVITY MODE ONLINE':'GRAVITY MODE',x,y-size*0.72);ctx.restore();
   }
-  if(phase==='drift'&&(gravityMode.dialogueT||0)>gravityMode.dialogueDelay){
-    const full=gravityMode.line||'',shown=full.slice(0,Math.max(0,Math.floor(((gravityMode.dialogueT||0)-gravityMode.dialogueDelay)*44)));
+  /* Keep the HQ window on screen through the whole assembly. The line still types only during
+     drift and remains unskippable; after it completes the fully readable panel stays until the
+     transformation hands control to the countdown. */
+  if(phase!=='active'&&(gravityMode.dialogueT||0)>gravityMode.dialogueDelay){
+    const full=gravityMode.line||'',shown=phase==='drift'
+      ?full.slice(0,Math.max(0,Math.floor(((gravityMode.dialogueT||0)-gravityMode.dialogueDelay)*44)))
+      :full;
     const fade=clamp(((gravityMode.dialogueT||0)-gravityMode.dialogueDelay)/0.28,0,1);
     if(typeof dlgBox==='function')dlgBox({who:'FURY HQ',tint:'#ffb347',full,shown,fade,portrait:false,
       /* Keep the dispatch above the aircraft.  The bottom slot masks the incoming side/bottom
@@ -23964,11 +24064,6 @@ function storyTick(dt){
     const wait = (S.when==='safe') ? STORY_HOLD*1.5 : STORY_HOLD;
     if(S.hold>=wait){ S.i++; S.typed=0; S.hold=0; S.t=0; if(S.i>=S.lines.length) story=null; }
   }
-  /* rule 4: any input clears the current line without touching gameplay */
-  if(typeof Input!=='undefined'){
-    try{ if(Input.tap('enter')||Input.tap(' ')||Input.tap('fire')){ S.i++; S.typed=0; S.hold=0;
-      if(S.i>=S.lines.length) story=null; } }catch(e){}
-  }
 }
 const STORY_TINT={COLE:'#7ad63a',FALVA:'#ff2a8f',AXEL:'#3a8aff',YURI:'#e23a3a',DECKER:'#ffd24a',
   LIZZIE:'#ffc21a',MAVERICK:'#8de23a',FREEZER:'#6fd0ff',JUGGERNAUT:'#c08a3a',
@@ -24089,7 +24184,7 @@ function dlgBox(o){
   if(who){
     const nameH=Math.round(ph*0.20);
     const _nh=(typeof msgFitH==='function')?msgFitH(who, iw, nameH, 7):nameH;
-    if(typeof msgTextLeft==='function') msgTextLeft(who, ix, y+Math.round(ph*0.24), _nh, tint, 1, fade);
+    if(typeof msgTextLeft==='function') msgTextLeft(who, ix, y+Math.round(ph*0.24), _nh, tint, 1, fade, null, true);
   }
 
   /* ⚠ FIT THE TEXT, DO NOT TRUNCATE IT. 0811m's first cut clipped any line that would land past
@@ -24116,7 +24211,7 @@ function dlgBox(o){
        draw its full height below it, so the last row sat on the bottom rail — visible in the
        0814b proof frame before this line changed, and invisible to a horizontal overrun check. */
     if(yy+bodyH>yBot) break;
-    if(typeof msgTextLeft==='function') msgTextLeft(L, ix, yy, bodyH, DIALOGUE_BODY_COLOR, 1, fade);
+    if(typeof msgTextLeft==='function') msgTextLeft(L, ix, yy, bodyH, DIALOGUE_BODY_COLOR, 1, fade, null, true);
     yy += Math.round(bodyH*1.42);
   }
   msgFaceUse(null);        // ⚠ the ONLY exit past the opt-in above; leaving it set would repaint every banner
@@ -25693,9 +25788,8 @@ if(typeof ENEMY_ART!=='undefined' && typeof window!=='undefined' && window.BOFX 
    the opening and missed by crossing it outside — no partial credit and no going back, which is
    what makes it a skill run rather than a collectathon.
 
-   ⚠ THE OPENINGS ARE MEASURED, NOT CHOSEN. The speed-portal frame is 192x256 with a hole of
-   ±36px, and the segment gate 256x320 with ±45. Those are the numbers below. Picking a radius by
-   eye would either make the run impossible or make missing impossible.
+   ⚠ The replacement ring is a fixed 96x96 frame with an upright 3/4 opening. The authored
+   opening is roughly 56px wide, so the line-crossing test uses the visible horizontal mouth.
 
    ⚠ THE SHIMMY TIGHTENS. Early gates sit far apart so the move is obvious; the amplitude closes
    gate by gate so the last few are precision rather than travel. One constant.
@@ -25704,8 +25798,8 @@ const S5R_N      = 9;        // nine gates for the ninth level — Mike's own re
 const S5R_START  = 0.52;     // fraction of stage 5 where the convoy arrives (after the miniboss)
 const S5R_SPEED  = 118;      // px/s the convoy drifts down
 const S5R_GAP    = 2.05;     // seconds between gates
-const S5R_OPEN   = 36;       // MEASURED opening of the speed portal, half-width
-const S5R_OPEN9  = 45;       // MEASURED opening of the segment gate
+const S5R_OPEN   = 28;       // visible half-width of the 96px 3/4 portal mouth
+const S5R_OPEN9  = 28;       // the ninth gate uses the same physical ring
 let s5run=null;
 function s5RunReset(){ s5run=null; }
 function s5RunInit(){
@@ -25801,26 +25895,17 @@ function s5RunDraw(){
     _speedLines(0.55 + ramp*0.9);
   }
   for(const g of s5run.gates){
-    if(g.y < -260 || g.y > VH+260) continue;
+    if(g.y < -96 || g.y > VH+96) continue;
     const last=(g.i===8);
-    const fam = last ? (g.glow>0 ? 5 : 4) : (2 + (g.i%2));      // speed portals, then the segment gate
-    const k='ns9_gate'+fam+'_'+((((s5run.t*8)|0)+g.i)%4);
+    const k='nfx_s5gate96_'+((((s5run.t*11)|0)+g.i)%8);
     if(!XART.rdy(k)) continue;
     const im=XART.get(k); if(!im) continue;
-    const w=(im.naturalWidth||im.width), h=(im.naturalHeight||im.height);
     ctx.save();
     if(g.missed) ctx.globalAlpha=0.35;                          // a missed gate visibly dies
     else if(g.passed) ctx.globalAlpha=0.55;
     if(last && g.glow>0){ ctx.shadowColor='#7ef0ff'; ctx.shadowBlur=26*g.glow; }
-    ctx.drawImage(im, g.x-w/2, g.y-h/2, w, h);
+    ctx.drawImage(im, g.x-48, g.y-48, 96, 96);
     ctx.restore();
-    /* the portal FORMS in the ninth gate once the first eight are clean */
-    if(last && g.glow>0){
-      const pk='nfx_wportal_'+clamp(Math.floor(g.glow*7),0,7);
-      if(XART.rdy(pk)){ const pim=XART.get(pk);
-        if(pim){ const pw=S5R_OPEN9*2.6, ph=pw;
-          ctx.save(); ctx.globalAlpha=g.glow; ctx.drawImage(pim, g.x-pw/2, g.y-ph/2, pw, ph); ctx.restore(); } }
-    }
   }
   const C=s5run.clash;
   if(C){
@@ -25840,6 +25925,23 @@ function s5RunDraw(){
       ctx.fillStyle = g.passed ? '#7ef0ff' : (g.missed ? '#ff4a4a' : 'rgba(255,255,255,0.28)');
       ctx.fillRect(VW/2 - (S5R_N*11)/2 + i*11, 8, 8, 4);
     }
+    ctx.restore();
+  }
+}
+/* The main gate is scenery behind the craft. Draw only its thick near/lower rim after the
+   player so crossing the opening has real 3/4 occlusion instead of looking like a flat decal. */
+function s5RunForegroundDraw(){
+  if(!s5run || typeof XART==='undefined') return;
+  for(const g of s5run.gates){
+    if(g.y < -96 || g.y > VH+96) continue;
+    const k='nfx_s5gate96_'+((((s5run.t*11)|0)+g.i)%8);
+    if(!XART.rdy(k)) continue;
+    const im=XART.get(k); if(!im) continue;
+    ctx.save();
+    if(g.missed) ctx.globalAlpha=0.35; else if(g.passed) ctx.globalAlpha=0.55;
+    if(g.i===8 && g.glow>0){ctx.shadowColor='#7ef0ff';ctx.shadowBlur=26*g.glow;}
+    ctx.beginPath(); ctx.rect(g.x-48,g.y+18,96,30); ctx.clip();
+    ctx.drawImage(im,g.x-48,g.y-48,96,96);
     ctx.restore();
   }
 }
@@ -25890,10 +25992,11 @@ function s9WarpDraw(){
   if(s9warp.ph==='draw'){
     /* the ship is pulled up into the portal and shrinks into it; no white speed-line overlay */
     const px=lerp(s9warp.x, VW/2, k), py=lerp(s9warp.y, VH*0.30, k);
-    const pk='nfx_wportal_'+clamp(Math.floor(k*7),0,7);
+    const pk='nfx_s5gate96_'+(Math.floor(s9warp.t*11)%8);
     if(typeof XART!=='undefined' && XART.rdy(pk)){
       const im=XART.get(pk);
-      if(im){ const s=(120+k*260); ctx.save(); ctx.globalAlpha=0.55+0.45*k;
+      if(im){ const s=96; ctx.save(); ctx.globalAlpha=0.72+0.28*k;
+        ctx.shadowColor='#b8f4ff'; ctx.shadowBlur=18*k;
         ctx.drawImage(im, VW/2-s/2, VH*0.30-s/2, s, s); ctx.restore(); }
     }
     if(player){ player.x=px; player.y=py; }
@@ -27534,8 +27637,10 @@ function drawBullets(){
     }
     if(b.kind==='shadowOrb'){
       const lv=clamp(b.lv||1,1,5),key='shadow_'+lv+'_flight_'+(Math.floor((b.t||0)*14)%6),s=b.w*(1.05+0.06*Math.sin((b.t||0)*20));
-      ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowColor='#8e48ff';ctx.shadowBlur=12;
-      spaceAtlasDraw(ctx,key,b.x,b.y,s*1.35,s,true,null);ctx.restore();continue;
+      /* The authored flight cells point left. Rotate that left-facing nose clockwise to NORTH so
+         the visual agrees with the projectile's negative-y velocity. */
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate(Math.PI/2);ctx.globalCompositeOperation='lighter';ctx.shadowColor='#8e48ff';ctx.shadowBlur=12;
+      spaceAtlasDraw(ctx,key,0,0,s*1.35,s,true,null);ctx.restore();continue;
     }
     if(b.kind==='spaceImpact'){
       const p=clamp((b.t||0)/(b.life||0.3),0,0.999),fam=b.family||'laser';let key,n;
@@ -28740,7 +28845,25 @@ function drawBullets(){
             ctx.rotate(_ang);
           }
         }
+        /* Stage 2's authored magma reel is orange/red on an orange/red lava floor.  Preserve the
+           art and its animation, but give it the two contrast layers arcade ammunition needs:
+           a dark silhouette just outside the frame and a yellow-white hot pass inside it.  This
+           is renderer-only readability; trajectory, collision size, cadence and damage do not
+           change. */
+        const _magmaContrast=b._bfam==='magma';
+        if(_magmaContrast && typeof xartTint==='function'){
+          const _rim=xartTint(_bk,'#080300',1);
+          if(_rim){ ctx.globalAlpha=0.96; ctx.drawImage(_rim,-w*0.60,-h*0.60,w*1.20,h*1.20); }
+        }
+        ctx.globalAlpha=1;
         ctx.drawImage(im, sx0, sy0, sw0, sh0, -w/2, -h/2, w, h);
+        if(_magmaContrast && typeof xartTint==='function'){
+          const _hot=xartTint(_bk,'#fff1a0',0.92);
+          if(_hot){
+            ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.58;
+            ctx.drawImage(_hot,-w/2,-h/2,w,h);
+          }
+        }
         ctx.restore();
         continue;
       }
@@ -41604,7 +41727,15 @@ function bmfMeasure(k,text,H){
 }
 /* Draws with the line's TOP at yTop. `bounds_in_cell` is [x0,y0,x1,y1] inside the cell, so the
    glyph's own offsets place it — no baseline arithmetic at the call site, and no bottom-align. */
-function bmfDraw(k,text,x,yTop,H,alpha,tintC,tintA){
+const _bmfStrokeCache={};
+function bmfStrokeGlyph(k,q){
+  const ck=k+':'+q.join(',');if(_bmfStrokeCache[ck])return _bmfStrokeCache[ck];
+  const r=BMF[k],c=document.createElement('canvas');c.width=q[2];c.height=q[3];
+  const g=c.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(r.img,q[0],q[1],q[2],q[3],0,0,q[2],q[3]);
+  g.globalCompositeOperation='source-in';g.fillStyle='#010208';g.fillRect(0,0,c.width,c.height);
+  g.globalCompositeOperation='source-over';_bmfStrokeCache[ck]=c;return c;
+}
+function bmfDraw(k,text,x,yTop,H,alpha,tintC,tintA,outline){
   if(!bmfReady(k)) return false;
   const r=BMF[k], m=r.map, s=bmfScale(k,H), sp=m.glyphs[' '];
   ctx.save();
@@ -41618,6 +41749,12 @@ function bmfDraw(k,text,x,yTop,H,alpha,tintC,tintA){
       const q=g.sprite_rect, b=g.bounds_in_cell;
       const dx=Math.round(pen+b[0]*s), dy=Math.round(yTop+b[1]*s);
       const dw=Math.max(1,Math.round(q[2]*s)), dh=Math.max(1,Math.round(q[3]*s));
+      if(outline){
+        const mask=bmfStrokeGlyph(k,q),op=Math.max(1,outline===true?1:Math.round(outline));
+        ctx.globalAlpha=alpha==null?1:alpha;
+        for(let oy=-op;oy<=op;oy++)for(let ox=-op;ox<=op;ox++)if(ox||oy)
+          ctx.drawImage(mask,dx+ox,dy+oy,dw,dh);
+      }
       if(tintC) drawFrameTinted(r.img, q, dx,dy,dw,dh,tintC,tintA,alpha);
       else ctx.drawImage(r.img, q[0],q[1],q[2],q[3],dx,dy,dw,dh);
     }
@@ -41793,10 +41930,10 @@ function msgWrap(text, maxW, H, spacingMul){
 }
 /* Draw in the authored face, LEFT-aligned at x. msgText centres on cx and there is no left
    variant, which is why panels that wanted a text column used canvas text instead. */
-function msgTextLeft(text,x,cy,H,tintC,tintA,alpha,spacingMul){
+function msgTextLeft(text,x,cy,H,tintC,tintA,alpha,spacingMul,outline){
   /* cy is a CENTRE, as every caller expects; the BMF box is a line, so its top is half a line up.
      Tint travels through bmfDraw's luminance-preserving palette swap — never a flat overlay. */
-  if(_msgFace && bmfDraw(_msgFace, text, x, cy-H/2, H, alpha,tintC,tintA)) return bmfMeasure(_msgFace,text,H);
+  if(_msgFace && bmfDraw(_msgFace, text, x, cy-H/2, H, alpha,tintC,tintA,outline)) return bmfMeasure(_msgFace,text,H);
   let w=msgMeasure(text,H,spacingMul);
   /* ⚠ msgMeasure RETURNS 0 WHEN THE GLYPH SHEET IS NOT UP — deliberately, it means "unknown", not
      "zero wide". Passing that through put the half-width at 0, and msgText CENTRES on what it is
@@ -41809,7 +41946,13 @@ function msgTextLeft(text,x,cy,H,tintC,tintA,alpha,spacingMul){
     w=ctx.measureText(String(text).toUpperCase()).width;
     ctx.restore();
   }
-  msgText(text, x+w/2, cy, H, tintC, tintA, alpha, spacingMul);
+  if(outline){
+    ctx.save();ctx.font='900 '+Math.round(H*0.86)+'px "Arial Black",Impact,sans-serif';
+    ctx.textAlign='left';ctx.textBaseline='middle';ctx.globalAlpha=(alpha==null?1:alpha);
+    ctx.lineJoin='round';ctx.lineWidth=Math.max(2,Math.round(H*0.16));ctx.strokeStyle='#010208';
+    ctx.strokeText(String(text).toUpperCase(),x,cy);ctx.fillStyle=tintC||'#ffce4a';
+    ctx.fillText(String(text).toUpperCase(),x,cy);ctx.restore();
+  }else msgText(text, x+w/2, cy, H, tintC, tintA, alpha, spacingMul);
   return w;
 }
 /* Largest H at or below Hmax that fits `text` in maxW — "scale and fit", as asked. */
@@ -42299,10 +42442,15 @@ function stage5SkyToSpaceDraw(progress,scroll){
 function stage9PortalEscapeDraw(progress,foreground){
   const p=clamp(progress,0,1),cx=VW/2,cy=VH*0.30;
   if(!foreground){
-    const key='nfx_wportal_'+clamp(Math.floor((1-p)*7),0,7);
-    if(typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key),s=lerp(330,86,p);
-      ctx.save();ctx.globalAlpha=1-p*0.72;ctx.shadowColor='#b8f4ff';ctx.shadowBlur=24*(1-p);ctx.drawImage(im,cx-s/2,cy-s/2,s,s);ctx.restore();}
-  }else if(p<0.36)gravityWhite(1-p/0.36);
+    const key='nfx_s5gate96_'+(Math.floor((1-p)*7)%8);
+    if(typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key),s=96;
+      ctx.save();ctx.globalAlpha=1-p*0.72;ctx.shadowColor='#b8f4ff';ctx.shadowBlur=20*(1-p);ctx.drawImage(im,cx-s/2,cy-s/2,s,s);ctx.restore();}
+  }else{
+    const key='nfx_s5gate96_'+(Math.floor((1-p)*7)%8);
+    if(typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key),s=96;
+      ctx.save();ctx.globalAlpha=1-p*0.72;ctx.beginPath();ctx.rect(cx-s/2,cy+18,s,30);ctx.clip();ctx.drawImage(im,cx-s/2,cy-s/2,s,s);ctx.restore();}
+    if(p<0.36)gravityWhite(1-p/0.36);
+  }
 }
 function drawLaunch(dt){
   if(drawLaunch._phase===undefined || stateT < (drawLaunch._lastT||0)-0.001){ drawLaunch._dist=0; drawLaunch._spd=110; drawLaunch._phase='run'; drawLaunch._pt=0;
@@ -42335,6 +42483,9 @@ function drawLaunch(dt){
     if(drawLaunch._pt>=2.0){ drawLaunch._phase='settle'; drawLaunch._pt=0; }
   } else if(ph==='settle'){
     drawLaunch._pt+=dt; drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;
+    const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
+    mapScroll=_rng>0 ? Math.min(_rng,mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt)
+                     : mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt;
     if(drawLaunch._pt>=0.45){
       if(_gravityStage){
         if(!gravityMode)gravityModeStart();
@@ -42423,16 +42574,16 @@ function drawLaunch(dt){
     /* Reach the bottom flight lane in two continuous beats: settle gets most of the way there,
        then the countdown carries the hull the final few pixels instead of pinning it in place. */
     const k=_ease(clamp(drawLaunch._pt/0.45,0,1));
-    shipX=lerp(VW/2, POSE.x, k); shipY=lerp(VH*0.60, POSE.y-18, k); shipH=lerp(62, POSE.h, k);
+    shipX=lerp(VW/2, POSE.x, k); shipY=lerp(VH*0.60, POSE.y-42, k); shipH=lerp(62, POSE.h, k);
   }
   else {
     const k=_ease(clamp(drawLaunch._pt/3.0,0,1));
-    shipX=POSE.x; shipY=lerp(POSE.y-18,POSE.y,k); shipH=POSE.h; suf='';
+    shipX=POSE.x; shipY=lerp(POSE.y-42,POSE.y,k); shipH=POSE.h; suf='';
   }
   const _drawGravityShip=_space&&gravityMode;
   const _gravityDrawSize=(run.stage===9 && ph==='run')
     ?lerp(14,SPACE_SHIP_SIZE,_ease(clamp(dist/Math.max(1,SEG_B1*0.78),0,1)))
-    :Math.max(SPACE_SHIP_SIZE,shipH);
+    :(ph==='cd'?SPACE_SHIP_SIZE:Math.max(SPACE_SHIP_SIZE,shipH));
   if(_drawGravityShip){if(!gravityModeDrawShip(shipX,shipY,_gravityDrawSize))drawShipSprite(shipX,shipY,shipH,suf);}
   else drawShipSprite(shipX, shipY, shipH, suf);
   /* THE PILOT'S OWN ANIMATED PLUME (drop 0801fd). Mike: "start using our pilots
@@ -42686,6 +42837,29 @@ function bg6SkyBaseDraw(img, key, sy, winH, drawW, dstY){
   }
   ctx.restore();
 }
+function bg6LoopDraw(img,key,scroll,drawW,winH,dstY){
+  const H=img.naturalHeight||img.height||1;
+  let sy=H-(((scroll%H)+H)%H)-winH;sy=((sy%H)+H)%H;
+  _masterSrcY=sy-dstY;
+  const h1=Math.min(winH,H-sy);
+  bg6SkyBaseDraw(img,key,sy,h1,drawW,dstY);
+  if(h1<winH)bg6SkyBaseDraw(img,key,0,winH-h1,drawW,dstY+h1);
+}
+function bg6RainDraw(wet,W,top,hgt){
+  if(wet<=0)return;
+  /* Deterministic moving rain: complete streaks translate every frame instead of a static rain
+     photograph being alpha-blended over the sky. The two speeds create depth without changing
+     the approved background plate. */
+  ctx.save();ctx.lineCap='round';ctx.strokeStyle='rgba(174,220,255,'+(0.18+wet*0.30)+')';
+  const count=Math.round(58+wet*92),fall=420+wet*420,wind=44+wet*86,t=_bg6T;
+  for(let i=0;i<count;i++){
+    const seed=(i*97.31)%1,x0=((i*67.73+seed*W+t*wind)%W+W)%W;
+    const y0=top+(((i*43.17+seed*hgt+t*fall)%hgt+hgt)%hgt);
+    const len=7+wet*13+(i%5);ctx.globalAlpha=0.38+0.12*(i%3);ctx.lineWidth=(i%7===0)?1.5:1;
+    ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x0-wind/fall*len,y0+len);ctx.stroke();
+  }
+  ctx.restore();
+}
 
 function bg6Draw(dt){
   if(typeof run==='undefined' || run.stage!==6 || typeof XART==='undefined') return;
@@ -42703,17 +42877,6 @@ function bg6Draw(dt){
     ctx.save(); ctx.globalAlpha=a; if(comp) ctx.globalCompositeOperation=comp;
     ctx.drawImage(XART.get(k), 0, top, W, hgt); ctx.restore(); };
 
-  /* ---- one fixed clean cloud, palette-swapped with the base sky ---- */
-  if(XART.rdy(BG6_CLOUD_KEY)){
-    const mood=bg6Mood(p);
-    const ca=bg6MoodImage(BG6_CLOUD_KEY,mood,0), cb=bg6MoodImage(BG6_CLOUD_KEY,mood,1);
-    const cloudA=0.64+0.08*p;
-    ctx.save(); ctx.globalAlpha=cloudA*(1-mood.mix);
-    ctx.drawImage(ca,0,top,W,hgt);
-    if(mood.mix>0){ ctx.globalAlpha=cloudA*mood.mix; ctx.drawImage(cb,0,top,W,hgt); }
-    ctx.restore();
-  }
-
   /* ---- night sky: present at the start, gone before dusk ----
      The old bg6_star_cluster layer was a group of giant cross-shaped glints over the countdown
      and gameplay. It was an effect overlay, not part of the approved sky, so it stays removed. */
@@ -42725,7 +42888,7 @@ function bg6Draw(dt){
   /* ---- rain arrives after the night opening, peaks at the darkest palette, then clears for dusk ---- */
   const wet=bg6StormStrength();
   if(wet>0.02){
-    blit(wet<0.55?'bg6_rain_light':(wet<0.85?'bg6_rain_heavy':'bg6_rain_turbulent'), 0.22+0.26*wet);
+    bg6RainDraw(wet,W,top,hgt);
   }
 
   /* ---- lightning: storm band only, a one-shot bolt then its flash ---- */
@@ -42766,10 +42929,6 @@ function drawWorld(dt){
   }
   if(shake>0){ ctx.translate(rnd(-shake,shake),rnd(-shake,shake)); }
   drawBG(dt);
-  /* Stage 6's unified time-of-day, rain and lightning pass was merged but never called. It is an
-     overlay on the continuously scrolling approved sky, so draw it immediately above drawBG and
-     beneath every gameplay object. */
-  if(run.stage===6) bg6Draw(dt);
   /* ⚠ THE OLD PARALLAX CLOUD LAYER IS GONE (0819f) — the pack ships four cloud families and
      bg6Draw cross-fades them across the stage. The far scenery objects are NOT weather and
      stay. */
@@ -42838,6 +42997,7 @@ function drawWorld(dt){
   if(typeof dkDraw==='function') dkDraw();            // shells, decals + muzzle blast (drop 0805w)
   if(typeof sonicDraw==='function') sonicDraw();      // distortion sits under the ship (drop 0805i)
   drawPlayer();
+  if(run.stage===5 && typeof s5RunForegroundDraw==='function') s5RunForegroundDraw();
   if(typeof lzMountDraw==='function') lzMountDraw();  // pack: "above ship body"
   drawFalvaOrbs();     // orbs swirling AROUND her + the ball forming at the nose — OVER the ship
   drawMavCoilOver();   // Maverick: the other strand IN FRONT — together they wrap the ship
@@ -44829,6 +44989,7 @@ if(window.BOFA && BOFA.sfx){
     laserBeamStart:'assets/game/sounds/laser_beam_start.wav',
     laserBeamLoop:'assets/game/sounds/laser_beam_loop.wav',
     laserBeamEnd:'assets/game/sounds/laser_beam_end.wav',
+    laserBeamHit:'assets/game/sounds/shield_hit_light.wav',
     flameThrowerStart:'assets/game/sounds/flamethrower_ignite.wav',
     flameThrowerLoop:'assets/game/sounds/flamethrower_loop.wav',
     flameThrowerEnd:'assets/game/sounds/flamethrower_release.wav',
@@ -44836,6 +44997,14 @@ if(window.BOFA && BOFA.sfx){
     iceBreathStart:'assets/game/sounds/ice_breath_start.wav',
     iceBreathLoop:'assets/game/sounds/ice_breath_loop.wav',
     iceBreathEnd:'assets/game/sounds/ice_breath_release.wav',
+    iceBreathHit:'assets/game/sounds/enemy_ice_bolt.wav',
+    spaceLaserCannon:'assets/game/sounds/nsp_pulse_laser.mp3',
+    spaceLaserHit:'assets/game/sounds/shield_hit_light.wav',
+    spaceShadowCharge:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
+    spaceShadowRelease:'assets/game/sounds/nsp_charge_release.mp3',
+    spaceShadowHit:'assets/game/sounds/explosion_plasma.wav',
+    spaceVolleyLaunch:'assets/game/sounds/nsp_rocket_launch.mp3',
+    spaceVolleyHit:'assets/game/sounds/explosion_air_medium.wav',
     enemyPulseLaserBlue:'assets/game/sounds/enemy_pulse_laser_blue.wav',
     enemyPulseLaserRed:'assets/game/sounds/enemy_pulse_laser_red.wav',
     enemyPulseLaserAlien:'assets/game/sounds/enemy_pulse_laser_alien.wav',
@@ -44942,6 +45111,7 @@ const Snd=(function(){
     laserBeamStart:      {g:0.58, lp:5200},
     laserBeamLoop:       {g:0.42, lp:4300},
     laserBeamEnd:        {g:0.50, lp:5200},
+    laserBeamHit:        {g:0.28, lp:5200, min:0.09},
     flameThrowerStart:   {g:0.54, lp:3800},
     flameThrowerLoop:    {g:0.48, lp:3400},
     flameThrowerEnd:     {g:0.46, lp:3800},
@@ -44949,6 +45119,14 @@ const Snd=(function(){
     iceBreathStart:      {g:0.52, lp:6800},
     iceBreathLoop:       {g:0.44, lp:6200},
     iceBreathEnd:        {g:0.48, lp:6800},
+    iceBreathHit:        {g:0.26, lp:6400, min:0.09},
+    spaceLaserCannon:    {g:0.52, lp:6200, min:0.12},
+    spaceLaserHit:       {g:0.24, lp:5600, min:0.07},
+    spaceShadowCharge:   {g:0.42, lp:5000, min:0.45},
+    spaceShadowRelease:  {g:0.52, lp:5200, min:0.18},
+    spaceShadowHit:      {g:0.34, lp:4800, min:0.12},
+    spaceVolleyLaunch:   {g:0.48, lp:4800, min:0.18},
+    spaceVolleyHit:      {g:0.34, lp:4600, min:0.10},
     explosionAirSmall01: {g:0.54},
     explosionAirSmall02: {g:0.54},
     explosionAirMedium:  {g:0.56},
