@@ -8909,7 +8909,7 @@ function buildStagePlan(stageNum){
       const H = (cfg && cfg.h) || 4800;
       return (H - (mapScroll||0)) <= S1_COAST_Y - 60;   // clear of the water, with margin
     };
-    const _s1Ground = (fn) => {
+    const _s1Ground = (fn, pressure) => {
       const wrapped=function _g(){
         if(_s1Past()) return;                        // past halfway: no ground at all
         if(!_s1OnLand()){                            // still at sea - wait, do not convert
@@ -8922,6 +8922,7 @@ function buildStagePlan(stageNum){
       /* The director reads this marker before dispatch. A due shore wave is allowed to
          hold the terrain while pressure clears instead of silently aging out at halfway. */
       wrapped._s1Ground=true;
+      wrapped._s1Pressure=Number.isFinite(pressure)?pressure:4;
       return wrapped;
     };
 
@@ -9048,7 +9049,7 @@ function buildStagePlan(stageNum){
       /* the light tank and the missile truck finally field - both were registered and
          fielded by nothing. Riding this wave rather than adding two more. */
       spawnEnemy('s1tanklight',    VW*0.50, -120, {});
-      spawnEnemy('s1truckmissile', VW*0.84, -150, {}); }));
+      spawnEnemy('s1truckmissile', VW*0.84, -150, {}); }, 5));
 
     /* --- one more air wave before the gate --- */
     add(47.0, ()=>{ spawnEnemy('s1jetdelta', VW*0.30, -30, {route:'curveL'});
@@ -18308,14 +18309,10 @@ function updatePlay(dt){
     // always has a lane to maneuver — never an unavoidable wall.
     _waveGap=(_waveGap||0)-dt;
     // per-stage on-screen cap. Jungle (stage 1) runs the new roster at up to 9 concurrent enemies.
-    // A single wave can add up to ~3, so gate dispatch at (cap-3) to keep the true peak <= cap.
+    // Reserve room for the next authored wave so dispatch can never push pressure past the cap.
     /* RAISED 7→9 and 4→6 (Mike, 0819): "increase the amount of enemies." The dispatch formulas
        below are unchanged, so the wave rhythm holds — the screen just carries more pressure. */
     const _liveCap = (run.stage===1)? 9 : 6;
-    /* A STAGE-1 WAVE CAN ADD FOUR (drop 0801jx). The beach tanks and the diagonal
-       file are four units each, so gating at cap-3 let 4 live + 4 new = 8 through,
-       one over the 7 cap. Gating at cap-4 keeps the true peak inside it. */
-    const _dispatchAt = (run.stage===1)? (_liveCap-4) : (_liveCap-1);
     // Stationary emplacements (turrets, bunkers, mini tanks/ships) are terrain hazards, not wave
     // pressure — they linger by design. Counting them against the dispatch cap starved the later
     // waves on stage 1, so they are excluded here.
@@ -18342,6 +18339,13 @@ function updatePlay(dt){
       _liveN++;
     }
     const _nextStageWave=(waveIdx<stagePlan.length)?stagePlan[waveIdx]:null;
+    /* Most Stage-1 waves top out at four pressure units, but the t=50 APC file carries
+       five. Its wrapper records that authored size so only that wave reserves a fifth
+       slot; globally reserving five starves the time-sensitive shore armour. */
+    const _nextPressure=(run.stage===1)
+      ? ((_nextStageWave && _nextStageWave.fn && _nextStageWave.fn._s1Pressure) || 4)
+      : 1;
+    const _dispatchAt=_liveCap-_nextPressure;
     const _s1GroundDue=!!(run.stage===1 && _nextStageWave && _nextStageWave.fn &&
                           _nextStageWave.fn._s1Ground && stageTimer>=_nextStageWave.t);
     /* Ground armour has a finite terrain window. If normal fighter pressure blocks a due

@@ -891,7 +891,7 @@ console.log('\n=== 20. jungle roster + behaviors + shadows ===');
      'and NOT the two he moved to other levels (drone -> L5, stationship -> L7)');
   ok(vm.runInContext("String(buildStagePlan).indexOf(\"spawnEnemy('s1tankheavy'\")>0 && String(buildStagePlan).indexOf(\"spawnEnemy('s1tankapc'\")>0",ctxv),
      'level 1 keeps the approved land-gated heavy/APC tank waves; the sea opening remains naval');
-  // 7-max cap holds
+  // Approved 9-unit wave-pressure cap holds.
   // The cap governs WAVE pressure. Stationary emplacements (turrets/bunkers/mini units) are terrain
   // hazards with their own budget (EMPLACE_CAP) and are excluded from it, so both are checked.
   let peak=0, peakEmp=0;
@@ -4363,6 +4363,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     ok(sawSub && tank && subScroll>tank.sc, 'stage 1: the miniboss arrives AFTER the tanks');
     ok(vm.runInContext("buildStagePlan(1).filter(function(w){return [36,44,46.5,50,52].indexOf(w.t)>=0;}).every(function(w){return w.fn._s1Ground===true;})",ctxv),
        'stage 1: every terrain-window armour wave is marked for director hold protection');
+    ok(vm.runInContext("buildStagePlan(1).filter(function(w){return w.t===50;})[0].fn._s1Pressure===5",ctxv),
+       'stage 1: the five-vehicle APC wave reserves all five pressure slots');
     ok(vm.runInContext("SUBBOSS[1].afterWaveTime===52",ctxv),
        'stage 1: the miniboss gate waits for the complete shore-armour block');
     ok(order.some(function(o){return o.t==='s1jetdelta';}), 'stage 1 opens with the delta jet');
@@ -4377,7 +4379,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     /* THE SUITE SHARES ONE CONTEXT, so bullets from earlier sections survive into
        this one and get counted as the sand tank's. Everything the boss and the
        waves left behind is cleared first, and the tank is checked in isolation. */
-    vm.runInContext("enemies.length=0; eBullets.length=0; boss=null; bossActive=false; subBoss=null; subBossActive=false; playerLocks=[]; spawnEnemy('s1tankapc',300,150,{});", ctxv);
+    vm.runInContext("enemies.length=0; eBullets.length=0; boss=null; bossActive=false; subBoss=null; subBossActive=false; playerLocks=[]; stagePlan=[]; waveIdx=0; _sc1=true; _sc2=true; aminiTriggered=true; subBossTriggered=true; bossTriggered=true; spawnEnemy('s1tankapc',300,150,{});", ctxv);
     vm.runInContext("for(var i=0;i<260;i++) updatePlay(1/60);", ctxv);
     ok(vm.runInContext("eBullets.every(function(b){return b.kind!=='dart';})", ctxv),
        'the sand tank no longer fires the scrapped DART');
