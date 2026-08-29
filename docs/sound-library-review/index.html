@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bullets of Fury — Sound Library Review</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand-lockup">
+      <span class="eyebrow">COLEFORGE AUDIO LAB</span>
+      <h1>New Sound Library Review</h1>
+      <p>Audition, compare, and assign the new sounds before anything reaches the production bank.</p>
+    </div>
+    <div class="safety-lock"><span class="status-dot"></span> Production audio untouched</div>
+  </header>
+
+  <section class="summary" id="summary"></section>
+
+  <nav class="toolbar" aria-label="Sound review controls">
+    <label class="search-field">
+      <span>Search</span>
+      <input id="search" type="search" placeholder="Name, role, filename…" autocomplete="off">
+    </label>
+    <label>
+      <span>Category</span>
+      <select id="categoryFilter"><option value="all">All categories</option></select>
+    </label>
+    <label>
+      <span>Decision</span>
+      <select id="decisionFilter">
+        <option value="all">All decisions</option>
+        <option value="undecided">Undecided</option>
+        <option value="primary">Primary</option>
+        <option value="alternate">Alternate</option>
+        <option value="layer">Layer</option>
+        <option value="reserve">Reserve</option>
+        <option value="reject">Reject</option>
+      </select>
+    </label>
+    <label>
+      <span>Technical</span>
+      <select id="flagFilter">
+        <option value="all">All levels</option>
+        <option value="clean">No warning</option>
+        <option value="hot-peak">Hot peak</option>
+        <option value="dense">Dense mix</option>
+        <option value="long-form">Long-form</option>
+      </select>
+    </label>
+    <label class="volume-field">
+      <span>Preview volume <b id="volumeReadout">65%</b></span>
+      <input id="masterVolume" type="range" min="0" max="1" step="0.01" value="0.65">
+    </label>
+    <button class="tool-button" id="stopAll" type="button">Stop</button>
+    <button class="tool-button primary" id="exportReview" type="button">Export choices</button>
+  </nav>
+
+  <aside class="help-strip">
+    <span><kbd>Space</kbd> play/pause</span>
+    <span><kbd>J</kbd>/<kbd>K</kbd> previous/next</span>
+    <span><kbd>1–5</kbd> Primary / Alternate / Layer / Reserve / Reject</span>
+    <span>Waveform click seeks</span>
+  </aside>
+
+  <main id="library"></main>
+
+  <footer class="review-footer">
+    <p>Choices and notes save locally in this browser. Export creates a handoff file; it does not replace game audio.</p>
+  </footer>
+
+  <section class="compare-drawer" id="compareDrawer" aria-live="polite">
+    <div>
+      <span class="eyebrow">A/B COMPARE</span>
+      <div id="compareSlots" class="compare-slots"></div>
+    </div>
+    <button id="clearCompare" class="tool-button" type="button">Clear</button>
+  </section>
+
+  <section class="now-playing" id="nowPlaying" aria-live="polite">
+    <button id="globalPlay" class="transport" type="button" aria-label="Play or pause">▶</button>
+    <div class="now-copy">
+      <span class="eyebrow">NOW PLAYING</span>
+      <strong id="nowTitle">Nothing selected</strong>
+      <span id="nowUse">Choose a sound to begin.</span>
+    </div>
+    <span id="nowTime" class="time">0:00 / 0:00</span>
+    <div class="global-progress"><i id="globalProgress"></i></div>
+  </section>
+
+  <audio id="player" preload="metadata"></audio>
+  <script src="manifest.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
