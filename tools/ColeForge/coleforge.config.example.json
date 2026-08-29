@@ -1,0 +1,5 @@
+{
+  "_comment": "Copy to coleforge.config.json to override. Both keys are optional; outputDir defaults to ./downloads next to server.js.",
+  "outputDir": "C:\\path\\to\\where\\you\\want\\files",
+  "concurrency": 2
+}

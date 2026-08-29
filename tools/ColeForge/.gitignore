@@ -1,0 +1,10 @@
+# the vault — downloaded media never belongs in the repo
+downloads/
+
+# machine-specific paths; copy coleforge.config.example.json to create it
+coleforge.config.json
+
+node_modules/
+*.log
+.DS_Store
+Thumbs.db

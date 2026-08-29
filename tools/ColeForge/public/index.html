@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ColeForge — Video Smithy</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%230d0b14'/%3E%3Crect x='2' y='6' width='12' height='3' fill='%238d87b3'/%3E%3Crect x='6' y='9' width='4' height='3' fill='%235a5478'/%3E%3Crect x='3' y='12' width='10' height='2' fill='%238d87b3'/%3E%3Crect x='6' y='2' width='4' height='4' fill='%23f26a1b'/%3E%3Crect x='7' y='1' width='2' height='2' fill='%23ffdd66'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<div class="crt">
+
+  <header class="topbar">
+    <div class="brand">
+      <canvas id="logo-anvil" width="48" height="32" aria-hidden="true"></canvas>
+      <div class="brand-text">
+        <h1>COLEFORGE</h1>
+        <p class="tagline">VIDEO SMITHY &nbsp;·&nbsp; v1.0</p>
+      </div>
+    </div>
+    <div class="chips" id="status-chips">
+      <span class="chip chip-wait" id="chip-ytdlp">yt-dlp ...</span>
+      <span class="chip chip-wait" id="chip-ffmpeg">ffmpeg ...</span>
+      <button class="chip chip-btn" id="chip-vault" title="Open the vault folder">VAULT</button>
+    </div>
+  </header>
+
+  <main class="layout">
+
+    <!-- ============ THE FORGE ============ -->
+    <section class="panel panel-forge">
+      <h2 class="panel-title">THE FORGE</h2>
+      <div class="forge-screen">
+        <canvas id="forge" width="160" height="120"></canvas>
+      </div>
+      <div class="forge-readout">
+        <div class="readout-row">
+          <span class="readout-key">STATE</span>
+          <span class="readout-val" id="forge-state">IDLE</span>
+        </div>
+        <div class="readout-row">
+          <span class="readout-key">INGOT</span>
+          <span class="readout-val readout-title" id="forge-title">— no work on the anvil —</span>
+        </div>
+        <div class="heat-gauge" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" id="heat-gauge">
+          <div class="heat-fill" id="heat-fill"></div>
+          <span class="heat-label" id="heat-label">0%</span>
+        </div>
+        <div class="readout-row readout-stats">
+          <span id="forge-speed">—</span>
+          <span id="forge-eta">—</span>
+          <span id="forge-size">—</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTROLS ============ -->
+    <section class="panel panel-input">
+      <h2 class="panel-title">SUMMON</h2>
+
+      <label class="field-label" for="url">PASTE A YOUTUBE LINK</label>
+      <div class="input-row">
+        <input id="url" type="url" spellcheck="false" autocomplete="off"
+               placeholder="https://www.youtube.com/watch?v=..." >
+        <button class="btn btn-scry" id="btn-scry">SCRY</button>
+      </div>
+      <p class="hint" id="hint">Press ENTER to scry the link, then choose your metal.</p>
+
+      <div class="preview" id="preview" hidden>
+        <div class="preview-thumb"><img id="preview-img" alt=""></div>
+        <div class="preview-meta">
+          <p class="preview-title" id="preview-title"></p>
+          <p class="preview-sub" id="preview-sub"></p>
+        </div>
+      </div>
+
+      <div class="playlist-box" id="playlist-box" hidden>
+        <div class="playlist-head">
+          <span id="playlist-count">0 TRACKS</span>
+          <button class="btn btn-mini" id="btn-select-all">ALL</button>
+          <button class="btn btn-mini" id="btn-select-none">NONE</button>
+        </div>
+        <ul class="playlist-list" id="playlist-list"></ul>
+      </div>
+
+      <label class="field-label">CHOOSE YOUR METAL</label>
+      <div class="metal-grid" id="metal-grid">
+        <button class="metal" data-format="best" data-height="0">
+          <span class="metal-name">BEST</span><span class="metal-sub">video</span>
+        </button>
+        <button class="metal" data-format="2160" data-height="2160">
+          <span class="metal-name">2160p</span><span class="metal-sub">4K</span>
+        </button>
+        <button class="metal" data-format="1440" data-height="1440">
+          <span class="metal-name">1440p</span><span class="metal-sub">2K</span>
+        </button>
+        <button class="metal" data-format="1080" data-height="1080">
+          <span class="metal-name">1080p</span><span class="metal-sub">full hd</span>
+        </button>
+        <button class="metal" data-format="720" data-height="720">
+          <span class="metal-name">720p</span><span class="metal-sub">hd</span>
+        </button>
+        <button class="metal" data-format="480" data-height="480">
+          <span class="metal-name">480p</span><span class="metal-sub">light</span>
+        </button>
+        <button class="metal metal-audio" data-format="mp3" data-height="0">
+          <span class="metal-name">MP3</span><span class="metal-sub">audio</span>
+        </button>
+        <button class="metal metal-audio" data-format="m4a" data-height="0">
+          <span class="metal-name">M4A</span><span class="metal-sub">audio</span>
+        </button>
+        <button class="metal metal-audio" data-format="wav" data-height="0">
+          <span class="metal-name">WAV</span><span class="metal-sub">lossless</span>
+        </button>
+      </div>
+
+      <div class="toggles">
+        <label class="toggle"><input type="checkbox" id="opt-playlist"><span class="tick"></span>WHOLE PLAYLIST</label>
+        <label class="toggle"><input type="checkbox" id="opt-subs"><span class="tick"></span>BURN IN SUBTITLES</label>
+        <label class="toggle"><input type="checkbox" id="opt-sound" checked><span class="tick"></span>FORGE SOUNDS</label>
+      </div>
+
+      <button class="btn btn-forge" id="btn-forge">
+        <span class="btn-forge-hammer">&#9874;</span> STRIKE THE ANVIL
+      </button>
+      <p class="error-line" id="error-line" hidden></p>
+    </section>
+
+    <!-- ============ QUEUE ============ -->
+    <section class="panel panel-queue">
+      <h2 class="panel-title">
+        WORK ORDER
+        <button class="btn btn-mini panel-title-btn" id="btn-clear">CLEAR DONE</button>
+      </h2>
+      <ul class="queue" id="queue">
+        <li class="queue-empty">The order book is empty. Summon something.</li>
+      </ul>
+    </section>
+
+    <!-- ============ VAULT ============ -->
+    <section class="panel panel-vault">
+      <h2 class="panel-title">
+        THE VAULT
+        <button class="btn btn-mini panel-title-btn" id="btn-refresh-vault">REFRESH</button>
+      </h2>
+      <p class="vault-path" id="vault-path">—</p>
+      <ul class="vault" id="vault">
+        <li class="queue-empty">Nothing forged yet.</li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p>ColeForge runs entirely on this machine — nothing is uploaded anywhere.</p>
+    <p class="footer-fine">Only forge what you have the right to keep: your own uploads, licensed or public-domain works, or anything the rights holder permits.</p>
+  </footer>
+
+</div>
+
+<div class="dialogue" id="dialogue" hidden>
+  <p id="dialogue-text"></p>
+  <span class="dialogue-cursor">&#9654;</span>
+</div>
+
+<script src="/forge.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>
