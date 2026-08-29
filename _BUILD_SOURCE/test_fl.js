@@ -1285,9 +1285,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     smoke=Math.max(smoke, vm.runInContext("(smokeTrails.length + particles.filter(function(p){return p.smoke;}).length)", ctxv));
   }
   ok(charge, 'at 50% HP the boss charges off-screen toward the player');
-  ok(reentry, 'the boss re-enters at 45-degree angles from the void');
+  ok(reentry, 'the boss re-enters continuously from a side and begins its corner swirl');
   ok(reticle, 'the boss places a reticle on the player during re-entry');
-  ok(smoke>0, 'tail smoke builds below 50% HP ('+smoke+' particles)');
+  ok(smoke>0, 'rotor-hub smoke builds below 50% HP ('+smoke+' particles)');
   // Measure the SPAWN RATE, not peak concurrent puffs. Smoke now uses authored frames with a
   // lifetime and a hard cap, so "how many exist right now" is throttled by expiry and the cap and
   // is a poor proxy for intensity. Count how many are actually emitted over a fixed window.
@@ -12347,6 +12347,59 @@ console.log("=== 264. Stage-1 platform AI and Jungle command weapons ===");
      'Jungle Overlord-X carries the same biome language from five laser hardpoints and its rotor tempest');
   ok(vm.runInContext("(function(){var b={x:200,y:100,vx:0,vy:4,_curve:0.7,kind:'s1windBlade',w:12,h:18,t:0};var a=Math.atan2(b.vy,b.vx);for(var i=0;i<30;i++){var s=Math.hypot(b.vx,b.vy),q=Math.atan2(b.vy,b.vx)+b._curve/60;b.vx=Math.cos(q)*s;b.vy=Math.sin(q)*s;b.x+=b.vx;b.y+=b.vy;}return Math.abs(Math.atan2(b.vy,b.vx)-a)>0.2;})()",ctxv),
      'wind blades commit to a continuous one-way curve rather than wobbling side to side');
+}
+
+// ===== 265. STAGE-1 VFX EDGE SAFETY + OVERLORD HUNTER FLIGHT =====
+console.log("=== 265. Stage-1 VFX edge safety and Overlord hunter flight ===");
+{
+  var _meta265=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','stage1_combat_fx.json'),'utf8'));
+  var _srcRoot265=path.join(ROOT,'_ART_SOURCES','stage1_ai_fx','spaced_v2');
+  ok(_meta265.source_edge_guard===20&&_meta265.atlas_edge_guard===20,
+     'the atlas builder records both 20px source and packed-cell guards');
+  ok(['green_laser','wind_blade','wind_vortex','green_impact'].every(function(k){return fs.existsSync(path.join(_srcRoot265,k+'_spaced.png'));}),
+     'each generated effect family owns a separately spaced six-frame source strip');
+  var _builder265=fs.readFileSync(path.join(ROOT,'_BUILD_SOURCE','build_stage1_combat_fx.py'),'utf8');
+  ok(_builder265.indexOf('detected {len(runs)}')>=0&&_builder265.indexOf('violates the {ATLAS_EDGE_GUARD}px atlas edge guard')>=0,
+     'atlas rebuilds fail hard on a missing frame group, clipped frame, or leaked edge fragment');
+
+  var _hunt265=JSON.parse(vm.runInContext("(function(){"
+    +"boss=null;bossActive=false;spawnBoss('damkeeper');var b=boss;b.enter=false;b.x=340;b.y=120;b._ovState='fight';b._ovFlight='hunt';b._ovFlightT=0;b._ovChargeCd=999;b.fireCd=999;"
+    +"player.x=90;for(var i=0;i<70;i++)updateOverlordX(b,1/60);var left=b.x;"
+    +"player.x=390;for(var j=0;j<90;j++)updateOverlordX(b,1/60);return JSON.stringify({left:left,right:b.x,pivot:b._pivot});})()",ctxv));
+  ok(_hunt265.left<190&&_hunt265.right>300,
+     'the helicopter actively chases the player from left to right instead of hovering at random offsets');
+  ok(Math.abs(_hunt265.pivot)>0.02,
+     'the pursuit is a banked flight curve, not a horizontal wobble');
+
+  var _charge265=JSON.parse(vm.runInContext("(function(){"
+    +"var b=boss;b.x=240;b.y=110;b._ovState='fight';b._ovChargeCd=999;b.hp=b.maxhp;player.x=125;ovStartChargeTell(b);"
+    +"for(var i=0;i<35;i++)updateOverlordX(b,1/60);var lane=b._chargeTell.lane,locked=b._chargeTell.locked,glow=b._ovChargeGlow;"
+    +"player.x=410;for(var j=0;j<16;j++)updateOverlordX(b,1/60);var held=b._chargeTell.lane;"
+    +"while(b._ovState==='chargeTell')updateOverlordX(b,1/60);player.x=80;for(var k=0;k<14;k++)updateOverlordX(b,1/60);"
+    +"return JSON.stringify({lane:lane,held:held,locked:locked,glow:glow,state:b._ovState,x:b.x});})()",ctxv));
+  ok(_charge265.locked&&_charge265.glow>0.45&&Math.abs(_charge265.held-_charge265.lane)<0.01,
+     'the glow tell tracks early, then visibly locks one lane for a guaranteed dodge window');
+  ok(_charge265.state==='chargeOff'&&Math.abs(_charge265.x-_charge265.lane)<0.01,
+     'the actual charge commits to the warned lane and cannot home onto a late evade');
+
+  var _swirl265=JSON.parse(vm.runInContext("(function(){"
+    +"var b=boss;b._ovState='reentry';b._re={t:0,from:-1,startX:-115,startY:VH*0.70,fire:0.12,rocket:0.72,rkN:0};b.x=-115;b.y=VH*0.70;b._ovChargeCd=999;"
+    +"var minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9,miss=0;for(var i=0;i<250;i++){updateOverlordX(b,1/60);minX=Math.min(minX,b.x);maxX=Math.max(maxX,b.x);minY=Math.min(minY,b.y);maxY=Math.max(maxY,b.y);miss=Math.max(miss,eBullets.filter(function(q){return q.kind==='s1jungleMissile';}).length);}"
+    +"return JSON.stringify({minX:minX,maxX:maxX,minY:minY,maxY:maxY,state:b._ovState,miss:miss});})()",ctxv));
+  ok(_swirl265.minX<0&&_swirl265.maxX>410&&_swirl265.minY<45&&_swirl265.maxY>250,
+     'side re-entry draws one continuous 1.25-turn path around all four playfield corners');
+  ok(_swirl265.state==='fight'&&_swirl265.miss>0,
+     'the corner swirl returns to the hunt while launching shootable Jungle missiles');
+
+  var _rage265=JSON.parse(vm.runInContext("(function(){"
+    +"var b=boss;b.hp=b.maxhp*0.45;b._ovState='fight';b._ovFlight='hunt';b._ovFlightT=0;b._ovChargeCd=999;b.fireCd=999;smokeTrails.length=0;particles.length=0;"
+    +"for(var i=0;i<80;i++)updateOverlordX(b,1/60);var s=smokeTrails[0]||null;return JSON.stringify({rage:b._enraged,jx:b._ovJitterX,jy:b._ovJitterY,smoke:smokeTrails.length,dy:s?Math.abs(s.y-b.y):999});})()",ctxv));
+  ok(_rage265.rage&&_rage265.smoke>0&&_rage265.dy<40,
+     'below half health, authored smoke emits from the rotor hub rather than the tail');
+  ok(Math.abs(_rage265.jx)>0.05||Math.abs(_rage265.jy)>0.05,
+     'the damaged helicopter carries localized aggressive shake without moving its collision path');
+  ok(vm.runInContext("(function(){var s=drawBossSprite.toString();return s.indexOf('_ovChargeGlow')>=0&&s.indexOf(\"'#ff321f'\")>=0;})()",ctxv),
+     'the renderer shows the growing green charge glow and the enraged red hull pulse');
 }
 
 console.log('\n============================================');

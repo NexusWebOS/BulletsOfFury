@@ -17,7 +17,7 @@ from PIL import Image, ImageDraw
 
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "_ART_SOURCES" / "stage1_ai_fx" / "stage1_jungle_ai_fx_generated_rgb.png"
+GENERATED_SOURCE_ROOT = ROOT / "_ART_SOURCES" / "stage1_ai_fx" / "spaced_v2"
 PROJECTILE_ROOT = (
     ROOT
     / "_BUILD_SOURCE"
@@ -40,11 +40,16 @@ APPROVED_ROWS = [
 ]
 
 GENERATED_ROWS = [
-    ("green_laser", 112, True),
-    ("wind_blade", 96, False),
-    ("wind_vortex", 116, False),
-    ("green_impact", 116, False),
+    ("green_laser", "green_laser_spaced.png", 112, True),
+    ("wind_blade", "wind_blade_spaced.png", 96, False),
+    ("wind_vortex", "wind_vortex_spaced.png", 116, False),
+    ("green_impact", "green_impact_spaced.png", 116, False),
 ]
+
+RAW_EDGE_GUARD = 20
+ATLAS_EDGE_GUARD = 20
+SOURCE_GROUP_PADDING = 40
+SOURCE_FRAGMENT_GAP = 64
 
 
 def border_alpha(source: Image.Image) -> Image.Image:
@@ -87,21 +92,54 @@ def normalize_frame(frame: Image.Image, visible_max: int, rotate: bool = False) 
         frame = frame.resize(target, Image.Resampling.NEAREST)
     cell = Image.new("RGBA", (CELL, CELL), (0, 0, 0, 0))
     cell.alpha_composite(frame, ((CELL - frame.width) // 2, (CELL - frame.height) // 2))
+    normalized_bbox = cell.getchannel("A").point(lambda value: 255 if value > 4 else 0).getbbox()
+    if normalized_bbox is None:
+        raise RuntimeError("Normalized Stage-1 VFX frame contains no visible pixels")
+    left, top, right, bottom = normalized_bbox
+    if min(left, top, CELL - right, CELL - bottom) < ATLAS_EDGE_GUARD:
+        raise RuntimeError(
+            f"Normalized Stage-1 VFX frame violates the {ATLAS_EDGE_GUARD}px atlas edge guard: "
+            f"{normalized_bbox}"
+        )
     return cell
 
 
 def generated_frames() -> dict[str, list[Image.Image]]:
-    clean = border_alpha(Image.open(SOURCE))
-    width, height = clean.size
     out: dict[str, list[Image.Image]] = {}
-    for row, (family, visible_max, rotate) in enumerate(GENERATED_ROWS):
+    for family, filename, visible_max, rotate in GENERATED_ROWS:
+        source_path = GENERATED_SOURCE_ROOT / filename
+        clean = border_alpha(Image.open(source_path))
+        width, height = clean.size
+        alpha = np.asarray(clean.getchannel("A"), dtype=np.uint8) > 4
+        occupied_columns = np.flatnonzero(alpha.any(axis=0))
+        runs: list[list[int]] = []
+        for x_value in occupied_columns:
+            x = int(x_value)
+            if not runs or x - runs[-1][1] > SOURCE_FRAGMENT_GAP:
+                runs.append([x, x])
+            else:
+                runs[-1][1] = x
+        if len(runs) != COLS:
+            raise RuntimeError(
+                f"{source_path.name} must contain exactly {COLS} isolated frame groups; "
+                f"detected {len(runs)} at {runs}"
+            )
         frames: list[Image.Image] = []
-        for col in range(COLS):
-            x0 = round(col * width / COLS)
-            x1 = round((col + 1) * width / COLS)
-            y0 = round(row * height / len(GENERATED_ROWS))
-            y1 = round((row + 1) * height / len(GENERATED_ROWS))
-            frames.append(normalize_frame(clean.crop((x0, y0, x1, y1)), visible_max, rotate))
+        for col, (run_left, run_right) in enumerate(runs):
+            x0 = max(0, run_left - SOURCE_GROUP_PADDING)
+            x1 = min(width, run_right + SOURCE_GROUP_PADDING + 1)
+            raw = clean.crop((x0, 0, x1, height))
+            raw_bbox = raw.getchannel("A").point(lambda value: 255 if value > 4 else 0).getbbox()
+            if raw_bbox is None:
+                raise RuntimeError(f"{source_path.name} frame {col} contains no visible pixels")
+            left, top, right, bottom = raw_bbox
+            clearance = min(left, top, raw.width - right, raw.height - bottom)
+            if clearance < RAW_EDGE_GUARD:
+                raise RuntimeError(
+                    f"{source_path.name} frame {col} is unsafe to slice: visible bbox {raw_bbox} "
+                    f"leaves only {clearance}px clearance (need {RAW_EDGE_GUARD}px)"
+                )
+            frames.append(normalize_frame(raw, visible_max, rotate))
         out[family] = frames
     return out
 
@@ -142,9 +180,12 @@ def main() -> None:
         "rows": [name for name, _ in rows],
         "rects": rects,
         "generation": (
-            "approved military VFX plus built-in ImageGen Jungle wind/laser source; "
-            "border-connected neutral-field removal and deterministic frame normalization"
+            "approved military VFX plus four separately generated, widely spaced built-in "
+            "ImageGen Jungle strips; guarded slicing, border-connected neutral-field removal, "
+            "and deterministic frame normalization"
         ),
+        "source_edge_guard": RAW_EDGE_GUARD,
+        "atlas_edge_guard": ATLAS_EDGE_GUARD,
     }
     META.write_text(json.dumps(metadata, indent=2) + "\n", encoding="utf-8")
     print(f"wrote {OUT.relative_to(ROOT)} {atlas.size[0]}x{atlas.size[1]}")

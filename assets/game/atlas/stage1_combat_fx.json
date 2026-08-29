@@ -342,5 +342,7 @@
       192
     ]
   },
-  "generation": "approved military VFX plus built-in ImageGen Jungle wind/laser source; border-connected neutral-field removal and deterministic frame normalization"
+  "generation": "approved military VFX plus four separately generated, widely spaced built-in ImageGen Jungle strips; guarded slicing, border-connected neutral-field removal, and deterministic frame normalization",
+  "source_edge_guard": 20,
+  "atlas_edge_guard": 20
 }

@@ -2125,7 +2125,8 @@ function drawBossSprite(b){
     const bodyKey = frac>0.5 ? 'ovbody_intact' : 'ovbody_critical';
     const bim=XART.get(bodyKey);
     const w=b.w*1.15, h=w*(bim.naturalHeight/bim.naturalWidth);
-    const yy=b.y+Math.sin((b.t||0)*1.6)*6; b._drawY=yy; b._drawW=w; b._drawH=h;
+    const dx=b.x+(b._ovJitterX||0);
+    const yy=b.y+Math.sin((b.t||0)*1.6)*6+(b._ovJitterY||0); b._drawY=yy; b._drawW=w; b._drawH=h;
     // rotor spin: derive angle from the boss clock (b.t advances each update) -> deg, pick nearest 5-deg frame
     const _spinDeg=((b.t||0)*900)%360;                 // ~900 deg/sec = fast chopper blades
     const ri=(Math.round(_spinDeg/5)%72+72)%72;
@@ -2134,10 +2135,27 @@ function drawBossSprite(b){
       /* the FADE is drawBoss's now (0814c) — this branch keeps only the char, which is art. */
       const T=b.dying||0;
       ctx.save();
-      ctx.drawImage(bim,b.x-w/2,yy-h/2,w,h);
-      if(rim) ctx.drawImage(rim,b.x-w/2,yy-h/2,w,h);
-      const tc=xartTint(bodyKey,'#140f0a',bossDeathChar(T)); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h);
+      ctx.drawImage(bim,dx-w/2,yy-h/2,w,h);
+      if(rim) ctx.drawImage(rim,dx-w/2,yy-h/2,w,h);
+      const tc=xartTint(bodyKey,'#140f0a',bossDeathChar(T)); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h);
       ctx.restore(); return;
+    }
+    // Once the charge locks, this fixed lane is the player's guaranteed dodge window.
+    if(b._ovState==='chargeTell' && b._chargeTell && b._chargeTell.locked){
+      const lane=b._chargeTell.lane, p=clamp(b._ovChargeGlow||0,0,1);
+      ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.16+0.30*p;
+      ctx.fillStyle='#57ff79';
+      for(let ly=0;ly<VH;ly+=24) ctx.fillRect(lane-2,ly,4,12);
+      ctx.fillStyle='rgba(225,255,229,0.34)'; ctx.fillRect(lane-11,0,2,VH); ctx.fillRect(lane+9,0,2,VH);
+      ctx.restore();
+    }
+    if((b._ovChargeGlow||0)>0){
+      const p=clamp(b._ovChargeGlow,0,1),gi=Math.min(5,Math.floor(p*6));
+      const gk='s1fx_green_impact_'+gi;
+      if(XART.rdy(gk)){ const gim=XART.get(gk),gd=w*(0.78+p*0.72);
+        ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.34+0.48*p;
+        ctx.drawImage(gim,dx-gd/2,yy-gd/2,gd,gd); ctx.restore();
+      }
     }
     // body first, then the spinning rotor overlay (same rect = shared 192 center anchor)
     const piv=b._pivot||0;
@@ -2153,19 +2171,21 @@ function drawBossSprite(b){
       }
     };
     if(piv!==0){
-      ctx.save(); ctx.translate(b.x,yy); ctx.rotate(piv); ctx.translate(-b.x,-yy);
-      ctx.drawImage(bim,b.x-w/2,yy-h/2,w,h);
-      if(rim){ ctx.save(); ctx.globalAlpha=0.9; ctx.drawImage(rim,b.x-w/2,yy-h/2,w,h); ctx.restore(); }
+      ctx.save(); ctx.translate(dx,yy); ctx.rotate(piv); ctx.translate(-dx,-yy);
+      ctx.drawImage(bim,dx-w/2,yy-h/2,w,h);
+      if(rim){ ctx.save(); ctx.globalAlpha=0.9; ctx.drawImage(rim,dx-w/2,yy-h/2,w,h); ctx.restore(); }
       _drawPodFlash();
-      if(b.flash>0){ const tc=xartTint(bodyKey,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h); }
+      if(b._enraged){ const rage=xartTint(bodyKey,'#ff321f',0.62); if(rage){ ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.10+0.08*Math.sin((b.t||0)*16); ctx.drawImage(rage,dx-w/2,yy-h/2,w,h); ctx.restore(); } }
+      if(b.flash>0){ const tc=xartTint(bodyKey,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h); }
       ctx.restore();
       b._pivot = piv*0.93;                              // ease pivot back to level (per-frame decay)
       return;
     }
-    ctx.drawImage(bim,b.x-w/2,yy-h/2,w,h);
-    if(rim){ ctx.save(); ctx.globalAlpha=0.9; ctx.drawImage(rim,b.x-w/2,yy-h/2,w,h); ctx.restore(); }
+    ctx.drawImage(bim,dx-w/2,yy-h/2,w,h);
+    if(rim){ ctx.save(); ctx.globalAlpha=0.9; ctx.drawImage(rim,dx-w/2,yy-h/2,w,h); ctx.restore(); }
     _drawPodFlash();
-    if(b.flash>0){ const tc=xartTint(bodyKey,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h); }
+    if(b._enraged){ const rage=xartTint(bodyKey,'#ff321f',0.62); if(rage){ ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.10+0.08*Math.sin((b.t||0)*16); ctx.drawImage(rage,dx-w/2,yy-h/2,w,h); ctx.restore(); } }
+    if(b.flash>0){ const tc=xartTint(bodyKey,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h); }
     return;
   }
   // MEGA BOSSES (bz0-6): HP-driven damage-state art (inta/dama/crit) with a levitation bob
@@ -20738,7 +20758,11 @@ function bossDie(){
 // ===== JUNGLE OVERLORD-X — smart health-gated helicopter boss AI =====
 // Weapon mounts on the 192px body (scaled by b.w*1.15/192): nose twin chainguns (0,+54),
 // left/right rocket wings (-48,+41)/(+46,+41). Muzzle helpers use the boss's live x/y + bob.
-function ovMount(b, ox, oy){ const s=(b.w*1.15)/192; return [b.x + ox*s, (b._drawY!=null?b._drawY:b.y) + oy*s]; }
+function ovMount(b, ox, oy){
+  const s=(b.w*1.15)/192;
+  const by=b._drawY!=null?b._drawY:b.y+(b._ovJitterY||0);
+  return [b.x+(b._ovJitterX||0)+ox*s, by+oy*s];
+}
 function ovTwinMG(b){
   // burst twin machine guns from the nose chainguns. kind:'mg' routes through the engine's
   // FIRETYPES alias (mg -> 'pellet') = the REAL mfx_bmg_0..3 orange tracer art with flicker + glow.
@@ -20765,9 +20789,9 @@ function ovRocketSide(b, side, fan){
   /* no launch alarm 0819d */
 }
 function ovReticleVolley(b){
-  // place a reticle on the player then rain 8 homing missiles in a 1-2-1-2 stagger from alternating wings
-  b._ovVolley={n:0, t:0, side:-1};
-  enemyLockOn(b, 0.5);
+  // Jungle missiles own this volley. Do not call enemyLockOn here: that helper launches an
+  // additional generic missile after its reticle, which mixed the wrong projectile into the fight.
+  playerLocks.push({src:b,t:0,delay:0.72,fired:true,_visualOnly:true});
 }
 function ovGreenVolley(b){
   const mounts=[ovMount(b,-48,41),ovMount(b,-10,54),ovMount(b,0,58),ovMount(b,10,54),ovMount(b,46,41)];
@@ -20787,9 +20811,18 @@ function ovRotorTempest(b){
   eShootT(C[0],C[1],Math.PI/2,1.85,'s1windVortex',{w:20,h:20,szMul:1.16,silent:true,impact:'green'});
   navalFlash(null,{x:C[0],y:C[1]},1.2,'s1fx_wind_vortex',{n:6,hpx:104,life:0.32,anchor:0.5});
 }
+function ovStartChargeTell(b){
+  b._ovState='chargeTell';
+  b._chargeTell={t:0,dur:b._enraged?0.86:1.08,lane:clamp(player.x,72,VW-72),locked:false,pulse:0};
+  b._ovChargeGlow=0;
+  b._ovVolley=null;
+  b._mgN=0; b._ovBurstSet=0;
+  if(Audio.SFX.bossPhase) Audio.SFX.bossPhase();
+}
 function updateOverlordX(b, dt){
   if(b._ovInit==null){ b._ovInit=1; b._ovState='fight'; b._ovPhase=0; b._ovT=0; b._ovBob=0;
-    b.fireCd=1.0; b._faceAng=Math.PI; b._enraged=false; b._crit=false; }
+    b.fireCd=0.7; b._faceAng=Math.PI; b._enraged=false; b._crit=false;
+    b._ovFlight='hunt'; b._ovFlightT=0; b._ovChargeCd=6.4; }
   const frac = b.hp/(b.maxhp||b.hp||1);
   b._ovT=(b._ovT||0)+dt;
   b._ovBob=(b._ovBob||0)+dt;
@@ -20798,13 +20831,13 @@ function updateOverlordX(b, dt){
   // gentle hover bob when not dashing
   const bobTargetY = VH*0.22;
 
-  // ---- HP-gated smoke + explosions on the tail (built via effect spawns, anchored to the tail) ----
+  // ---- HP-gated rotor-hub damage: smoke is an overlay at the rotor, never a loose tail puff ----
   if(frac<=0.5){
     b._enraged=true;
-    // tail smoke plume, anchored behind the boss (tail mount ~ (0,-52) relative to the 192 body center)
+    if(!b._rageStarted){ b._rageStarted=true; b._ovChargeCd=Math.min(b._ovChargeCd||9,0.65); }
     b._smokeT=(b._smokeT||0)+dt;
     const rate = frac<=0.25 ? 0.045 : 0.10;
-    if(b._smokeT>=rate){ b._smokeT=0; const tp=ovMount(b, rnd(-14,14), -52);
+    if(b._smokeT>=rate){ b._smokeT=0; const tp=ovMount(b, rnd(-10,10), -6);
       // REAL SMOKE FRAMES. This used to push tinted particle circles ('#0e0e0e' blobs), which
       // read as CSS dots rather than smoke. nx_smoke is an authored 8-frame puff — use it.
       if(typeof smokeTrails!=='undefined' && typeof XART!=='undefined' && XART.rdy(SMOKE_FAM+'_0')){
@@ -20817,40 +20850,53 @@ function updateOverlordX(b, dt){
       }
       if(frac<=0.25 && chance(0.4)) particles.push({x:tp[0],y:tp[1],vx:rnd(-0.4,0.4),vy:-rnd(0.5,1.2),life:rnd(0.4,0.9),t:0,r:rnd(2,4),color:'#ff7a2a',smoke:false});
     }
-    // occasional explosion pops on the tail to "show the smoke start" / desperation at 25%
+    // occasional rotor-deck pops sell escalating structural damage without hiding the guns.
     b._boomT=(b._boomT||0)-dt;
     if(b._boomT<=0){ b._boomT = frac<=0.25 ? rnd(0.5,1.0) : rnd(1.2,2.1);
-      const ep=ovMount(b, rnd(-30,30), rnd(-46,-16));
+      const ep=ovMount(b, rnd(-24,24), rnd(-18,12));
       explode(ep[0],ep[1], frac<=0.25?18:13, 'red');
     }
+    // damage shake belongs to the helicopter, not to its path or collision box.
+    const rageShake=frac<=0.25?2.9:1.45;
+    b._ovJitterX=Math.sin(b._ovT*43)*rageShake;
+    b._ovJitterY=Math.cos(b._ovT*37)*rageShake*0.65;
+  } else {
+    b._ovJitterX=0; b._ovJitterY=0;
   }
   if(frac<=0.25) b._crit=true;
 
   // ================= STATE MACHINE =================
-  // fight -> (at 50%) chargeOff -> reentry (45-deg swoops + reticle 8-rocket) -> fight (enraged) ...
+  // hunt/orbit fight -> glowing lane tell -> committed charge -> continuous corner swirl -> fight.
   const S=b._ovState;
 
   if(S==='fight'){
-    // Attack-helicopter doctrine: dart to a firing position, HOLD to engage, then relocate.
-    // Bank (roll) into the direction of travel — bank angle tracks lateral speed (real cyclic-roll behavior).
-    b.y = lerp(b.y, bobTargetY + Math.sin(b._ovBob*1.4)*8, 0.05);
-    if(!b._dash){
-      b._ovDriftT=(b._ovDriftT||0)-dt;
-      if(b._ovDriftT<=0){
-        // pick a NEW firing position offset to one side of the player, then hold it (hover-and-fire, then relocate)
-        b._ovDriftT=rnd(2.0,3.2);
-        const sidePref = (b.x<VW/2)? 1 : -1;           // relocate to the opposite side we're on
-        b._ovDriftX=clamp(player.x + sidePref*rnd(40,120), 70, VW-70);
-      }
-      const px=b.x;
-      b.x = lerp(b.x, b._ovDriftX||VW/2, 0.035);        // ease toward the firing position
-      const vx=b.x-px;
-      b._pivot = clamp(b._pivot*0.6 + (-vx*0.10), -0.5, 0.5);  // BANK into the lateral move (roll toward travel)
+    // Alternate a predatory left/right chase with a broad upper-screen orbit. This is aircraft
+    // motion: banked curves and pursuit, never a side-to-side wobble.
+    b._ovFlightT=(b._ovFlightT||0)+dt;
+    const flightDur=b._ovFlight==='hunt'?(b._enraged?2.4:3.1):(b._enraged?1.9:2.6);
+    if(b._ovFlightT>=flightDur){ b._ovFlightT=0; b._ovFlight=b._ovFlight==='hunt'?'orbit':'hunt'; }
+    const oldX=b.x;
+    if(b._ovFlight==='hunt'){
+      const lead=Math.sin(b._ovT*(b._enraged?2.8:2.1))*38;
+      const huntX=clamp(player.x+lead,70,VW-70);
+      b.x=lerp(b.x,huntX,b._enraged?0.105:0.072);
+      b.y=lerp(b.y,bobTargetY+Math.sin(b._ovBob*1.7)*10,b._enraged?0.075:0.052);
+    } else {
+      const a=(b._ovFlightT/flightDur)*TAU+(b.x<VW/2?Math.PI:0);
+      const orbitX=VW*0.5+Math.cos(a)*VW*0.34;
+      const orbitY=bobTargetY+Math.sin(a)*VH*0.115;
+      b.x=lerp(b.x,clamp(orbitX,64,VW-64),0.115);
+      b.y=lerp(b.y,orbitY,0.10);
     }
+    const lateral=b.x-oldX;
+    b._pivot=clamp(b._pivot*0.58-lateral*0.11,-0.72,0.72);
+
+    b._ovChargeCd=(b._ovChargeCd==null?7:b._ovChargeCd)-dt;
+    if(b._ovChargeCd<=0){ ovStartChargeTell(b); return; }
     b.fireCd -= dt;
     if(b.fireCd>0) return;
 
-    // phase cycle: TWIN MG BURST (x3 bursts if <50%) -> wait ~3s -> PIVOT -> MG again -> ROCKETS -> repeat
+    // fast MG bursts -> bank reversal -> another burst -> shootable Jungle missiles -> wind weapons.
     const ph=b._ovPhase;
     if(ph===0 || ph===2){
       // twin MG burst
@@ -20860,9 +20906,9 @@ function updateOverlordX(b, dt){
       if(b._mgN>=burstLen){ b._mgN=0;
         b._ovBurstSet=(b._ovBurstSet||0)+1;
         const sets = b._enraged? 3 : 1;               // below half: 3 rapid bursts
-        if(b._ovBurstSet>=sets){ b._ovBurstSet=0; b.fireCd = 3.0; b._ovPhase=(ph+1)%5; b._pivot=0.6; }
-        else { b.fireCd = 0.5; }                       // short gap between the 3 bursts
-      } else { b.fireCd = b._enraged?0.07:0.10; }
+        if(b._ovBurstSet>=sets){ b._ovBurstSet=0; b.fireCd=b._enraged?1.15:1.75; b._ovPhase=(ph+1)%5; b._pivot=0.6; }
+        else { b.fireCd=0.36; }
+      } else { b.fireCd=b._enraged?0.062:0.088; }
     }
     else if(ph===1){
       // PIVOT: a quick side turn/reposition, no fire (telegraph), then next MG
@@ -20877,74 +20923,99 @@ function updateOverlordX(b, dt){
       ovRocketSide(b, b._rkSide, 0.5);                  // a second rocket from the same pod, slight fan = readable volley
       b._muzL = b._rkSide<0?0.2:0; b._muzR = b._rkSide>0?0.2:0;
       b._rkN=(b._rkN||0)+1;
-      if(b._rkN>=4){ b._rkN=0; b.fireCd=1.4; b._ovPhase=4; }
-      else { b.fireCd = 2.4; }                          // ~2.4s between alternating rocket blasts
+      if(b._rkN>=4){ b._rkN=0; b.fireCd=0.9; b._ovPhase=4; }
+      else { b.fireCd=b._enraged?1.15:1.65; }
     }
     else { // ph 4: the helicopter's Jungle signature — green lance volley plus rotor wind
       ovGreenVolley(b); ovRotorTempest(b);
       b.fireCd=b._crit?1.0:1.45; b._ovPhase=0;
     }
 
-    // ---- 50% HP gate: fly off by charging the player, then re-enter at 45 deg ----
-    if(frac<=0.5 && !b._didCharge){
-      b._didCharge=true; b._ovState='chargeOff'; b._chg={t:0};
-      b.fireCd=0.4; if(Audio.SFX.bossPhase) Audio.SFX.bossPhase();
+    return;
+  }
+
+  if(S==='chargeTell'){
+    const T=b._chargeTell; T.t+=dt; T.pulse=(T.pulse||0)-dt;
+    const p=clamp(T.t/T.dur,0,1);
+    // It follows the player only during the first half of the warning, then locks its lane.
+    // The final half-second is a guaranteed dodge window; the charge cannot steer after that.
+    if(p<0.48){ T.lane=lerp(T.lane,clamp(player.x,72,VW-72),0.18); }
+    else if(!T.locked){
+      T.locked=true; T.lane=clamp(T.lane,72,VW-72);
+      const hub=ovMount(b,0,4);
+      navalFlash(null,{x:hub[0],y:hub[1]},1.42,'s1fx_wind_vortex',{n:6,hpx:124,life:T.dur-T.t+0.12,anchor:0.5});
+    }
+    const oldX=b.x;
+    b.x=lerp(b.x,T.lane,p<0.48?0.10:0.035);
+    b.y=lerp(b.y,bobTargetY,0.08);
+    b._pivot=clamp(b._pivot*0.55-(b.x-oldX)*0.12,-0.65,0.65);
+    b._ovChargeGlow=p;
+    const tellShake=1.0+p*(b._enraged?5.0:3.7);
+    b._ovJitterX=Math.sin(T.t*72)*tellShake;
+    b._ovJitterY=Math.cos(T.t*61)*tellShake*0.62;
+    if(T.pulse<=0){ T.pulse=p>0.72?0.075:0.14; const hub=ovMount(b,0,2);
+      navalFlash(null,{x:hub[0],y:hub[1]},0.62+p*0.45,'s1fx_green_impact',{n:6,hpx:76+p*34,life:0.18,anchor:0.5});
+    }
+    if(p>0.82) shake=Math.max(shake,2+p*3);
+    if(T.t>=T.dur){
+      b._ovState='chargeOff'; b._chg={t:0,lane:T.lane,v:b._enraged?225:190};
+      b._ovChargeGlow=0; b._chargeTell=null; b._chgFire=0;
+      if(Audio.SFX.bossPhase) Audio.SFX.bossPhase();
     }
     return;
   }
 
   if(S==='chargeOff'){
-    // Charge run: rush the player's lane, guns blazing on the way in, then commit past them and dive off.
+    // Committed attack run: it may align for 0.16s, then it never tracks the player's new position.
+    // That fixed lane is what makes the violent rush fair and consistently evadable.
     b._chg.t+=dt;
-    const tx=player.x;
-    b.x = lerp(b.x, tx, 0.12);
-    // accelerate down the whole time (a real attack run builds speed toward the target)
-    b._chg.v=(b._chg.v||160)+ 520*dt; b.y += b._chg.v*dt;
-    b._pivot = clamp((tx-b.x)/90, -0.7, 0.7);           // hard bank toward the intercept line
-    // strafe MG on the way in (a strafing pass fires as it closes)
-    if(b.y<VH*0.8){ b._chgFire=(b._chgFire||0)-dt; if(b._chgFire<=0){ b._chgFire=0.09; ovTwinMG(b); } }
-    if(b.y>VH+90){ b._ovState='reentry'; b._re={t:0, pass:0, from:(player.x<VW/2?1:-1)}; b.y=-90; b.x = b._re.from<0? -50 : VW+50; }
+    const tx=b._chg.lane;
+    if(b._chg.t<0.16) b.x=lerp(b.x,tx,0.24); else b.x=tx;
+    b._chg.v=(b._chg.v||190)+640*dt; b.y+=b._chg.v*dt;
+    b._pivot=lerp(b._pivot,0,0.18);
+    if(b.y<VH*0.68){ b._chgFire-=dt; if(b._chgFire<=0){ b._chgFire=b._enraged?0.07:0.095; ovTwinMG(b); } }
+    if(b.y>VH+110){
+      const from=tx<VW/2?-1:1;
+      b._ovState='reentry';
+      b._re={t:0,from:from,startX:from<0?-115:VW+115,startY:VH*0.70,fire:0.12,rocket:0.72,rkN:0};
+      b.x=b._re.startX; b.y=b._re.startY;
+    }
     return;
   }
 
   if(S==='reentry'){
-    // High-yo-yo style reentry: sweep in DIAGONALLY (~45deg) from a void corner, banked hard into the
-    // curve, arc through toward mid-screen, drop a reticle, fire the staggered 8-rocket volley, then
-    // PULL OUT (bank away and climb) — like a fighter pulling up hard off a strafing run.
+    // One continuous side-entry and corner orbit. There are no teleport cuts: the helicopter
+    // curves in from the chosen side, circles 1.25 turns around the playfield corners, then settles.
     const re=b._re; re.t+=dt;
-    const dir = re.from; // -1 came from left, +1 from right
-    const targetX = VW*0.5 - dir*VW*0.16;
-    const targetY = VH*0.24;
-    if(!b._ovVolley && !re.pullout){
-      // diagonal swoop-in: x and y ease in together = a ~45deg entry line
-      const px=b.x;
-      b.x = lerp(b.x, targetX, 0.05);
-      b.y = lerp(b.y, targetY, 0.05);
-      b._pivot = lerp(b._pivot, -dir*0.6, 0.2);          // bank hard into the swoop
-      // gentle S-weave as it lines up (evasive jink)
-      b.x += Math.sin(re.t*5)*1.4;
-      if(Math.abs(b.x-targetX)<40 && Math.abs(b.y-targetY)<40) ovReticleVolley(b);
-    }
-    if(b._ovVolley){
-      b._pivot = lerp(b._pivot, 0, 0.12);                // level out to fire the volley
-      const V=b._ovVolley; V.t-=dt;
-      if(V.t<=0 && V.n<8){
-        const side = (V.n%2===0)? -1 : 1;                // 1-2-1-2 alternating
-        ovRocketSide(b, side);
-        V.n++; V.side=side;
-        V.t = (V.n%2===0)? 0.55 : 0.18;                  // 1 ... gap ... 2 ... gap
-        if(V.n>=8){ b._ovVolley=null; re.pullout=true; re.poT=0; }
+    if(re.t<0.56){
+      const u=clamp(re.t/0.56,0,1),e=u*u*(3-2*u);
+      const cornerX=re.from<0?58:VW-58;
+      b.x=lerp(re.startX,cornerX,e);
+      b.y=lerp(re.startY,VH*0.18,e)-Math.sin(u*Math.PI)*42;
+      b._pivot=lerp(b._pivot,-re.from*0.76,0.22);
+    } else if(re.t<3.16){
+      if(!re.reticle){ re.reticle=true; ovReticleVolley(b); }
+      const u=clamp((re.t-0.56)/2.60,0,1);
+      const startA=re.from<0?Math.PI:0;
+      const a=startA+(-re.from)*TAU*1.25*u;
+      const rx=VW*(0.43-0.05*u), ry=VH*(0.30-0.055*u);
+      b.x=VW*0.5+Math.cos(a)*rx;
+      b.y=VH*0.25+Math.sin(a)*ry;
+      b._pivot=lerp(b._pivot,clamp(Math.cos(a)*(-re.from)*0.76,-0.76,0.76),0.26);
+      re.fire-=dt;
+      if(re.fire<=0){ re.fire=b._enraged?0.085:0.125; ovTwinMG(b); }
+      re.rocket-=dt;
+      if(re.rocket<=0 && re.rkN<4){
+        const side=(re.rkN%2===0)?-1:1; ovRocketSide(b,side,re.rkN===3?0.4:0);
+        re.rkN++; re.rocket=b._enraged?0.48:0.62;
       }
-    }
-    if(re.pullout){
-      // pull up hard and bank away off the top corner (the 4-G pullout after the run)
-      re.poT=(re.poT||0)+dt;
-      b.y -= 340*dt; b.x = lerp(b.x, dir<0? -40 : VW+40, 0.05);
-      b._pivot = lerp(b._pivot, dir*0.7, 0.2);           // bank away as it exits
-      if(b.y< -70 || b.x<-50 || b.x>VW+50){
-        re.pass++;
-        if(re.pass>=2){ b._ovState='fight'; b._ovPhase=0; b.fireCd=1.0; b._pivot=0; }
-        else { b._re={t:0, pass:re.pass, from:-dir}; b.x = -dir<0? -50 : VW+50; b.y=-80; }
+    } else {
+      b.x=lerp(b.x,clamp(player.x,82,VW-82),0.065);
+      b.y=lerp(b.y,bobTargetY,0.085);
+      b._pivot=lerp(b._pivot,0,0.15);
+      if(re.t>=4.02){
+        b._ovState='fight'; b._ovPhase=0; b.fireCd=0.55; b._ovFlight='hunt'; b._ovFlightT=0;
+        b._ovChargeCd=b._enraged?5.1:7.6; b._ovJitterX=0; b._ovJitterY=0;
       }
     }
     return;
