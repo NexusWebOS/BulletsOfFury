@@ -1260,7 +1260,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   let ovmg=0, ovrk=0, ovpiv=0;
   for(let f=0;f<600;f++){ vm.runInContext("player.x=200+Math.sin("+f+"*0.02)*120; updatePlay(1/60);", ctxv);
     ovmg=Math.max(ovmg, vm.runInContext("eBullets.filter(function(b){return b.kind==='emg'||b.kind==='mg';}).length", ctxv));
-    ovrk=Math.max(ovrk, vm.runInContext("eBullets.filter(function(b){return b.kind==='emissile';}).length", ctxv));
+    ovrk=Math.max(ovrk, vm.runInContext("eBullets.filter(function(b){return b.kind==='s1jungleMissile';}).length", ctxv));
     if(Math.abs(vm.runInContext("boss._pivot||0", ctxv))>0.05) ovpiv++;
   }
   ok(ovmg>=4, 'Overlord-X fires twin machine-gun bursts (peak '+ovmg+' pellets)');
@@ -1269,8 +1269,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("eBullets.length=0; boss._ovState='fight'; boss._ovPhase=3; boss.fireCd=0; boss._rkN=0;", ctxv);
   let rkPeak=0, rkMoved=false, ry0=null;
   for(let f=0;f<300;f++){ vm.runInContext("updatePlay(1/60);", ctxv);
-    rkPeak=Math.max(rkPeak, vm.runInContext("eBullets.filter(function(b){return b.kind==='emissile';}).length", ctxv));
-    var ry=vm.runInContext("(eBullets.find(function(b){return b.kind==='emissile';})||{}).y", ctxv);
+    rkPeak=Math.max(rkPeak, vm.runInContext("eBullets.filter(function(b){return b.kind==='s1jungleMissile';}).length", ctxv));
+    var ry=vm.runInContext("(eBullets.find(function(b){return b.kind==='s1jungleMissile';})||{}).y", ctxv);
     if(ry!=null){ if(ry0==null)ry0=ry; if(Math.abs(ry-ry0)>30)rkMoved=true; }
   }
   ok(rkPeak>=2, 'rockets are on screen during the rocket phase (peak '+rkPeak+')');
@@ -9810,9 +9810,9 @@ console.log("=== 208. naval bursts + muzzle ===");
   var _f=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
     +"beginStage(1); setState(GS.PLAY); player.reset();"
-    +"enemies.length=0; eBullets.length=0;"
+    +"enemies.length=0; eBullets.length=0; stagePlan=[]; waveIdx=0;"
     +"player.x=150; player.y=430; player.invuln=999999;"
-    +"var g=spawnEnemy('s1boatgun',150,110,{}); var rounds=[], fams={};"
+    +"var g=spawnEnemy('s1boatpatrol',150,110,{}); var rounds=[], fams={};"
     +"for(var f=0;f<60*14;f++){ player.hp=99; var pb=g._burst||0;"
     +"  updatePlay(1/60); try{ drawWorld(1/60); }catch(e){}"
     +"  if((g._burst||0)<pb) rounds.push(f/60);"
@@ -9823,7 +9823,7 @@ console.log("=== 208. naval bursts + muzzle ===");
   unseedWaves();
   ok(_f.volleys.every(function(n){ return n>=5 && n<=8; }),
      'every volley fired is 5-8 rounds ('+_f.volleys.join(', ')+')');
-  ok(_f.fams.length<=1 || (_f.fams.length===2 && _f.fams.indexOf('nmz_2')>=0),
+  ok(_f.fams.length===1 && _f.fams[0]==='s1fx_rotary_muzzle',
      'and only the assigned flash families appear ('+_f.fams.join(', ')+')');
 }
 
@@ -10365,11 +10365,9 @@ console.log("=== 213c. roster key spelling ===");
        '  '+up+' gets the jet box, not the 26x26 default ('+U.w+'x'+U.h+')');
     ok(U.hp===L.hp && U.atk===L.atk && U.spd===L.spd,
        '  and the jet stats — hp '+U.hp+', atk '+U.atk+', speed '+U.spd);
-    /* on STAGE 1 (this fixture's stage) the deltas convert to 'loopcharge' — the Fire Shark
-       loop-then-charge Mike ordered on 0819 — and the bombers keep s1jet. The claim under test is
-       unchanged: BOTH spellings must come out on the SAME pattern, because a spelling that missed
-       the roster would land on 'sine'. */
-    var _want=(up==='s1jetDelta'||up==='s1jetDeltaB')?'loopcharge':'s1jet';
+    /* Stage 1 now fields every fighter/bomber as a real aircraft with its own weapon role. Both
+       spellings must still resolve to the same s1jet controller rather than generic sine drift. */
+    var _want='s1jet';
     ok(U.pat===_want && L.pat===_want,
        '  and its pattern SURVIVES the generic block as '+_want+' (got '+L.pat+'/'+U.pat+') — _selfPat knows the spelling');
   });
@@ -11175,14 +11173,12 @@ console.log("=== 229. flame/ice hitbox + reaver colour + fire orb ===");
      'only the stage map routes Enter/Start into the campaign menu');
 }
 
-// ===== 230. FIRE SHARK JETS, AND HOMING IS A GRANT (Mike, 0819) =====
-console.log("=== 230. loopcharge jets + no homing ===");
+// ===== 230. STAGE-1 GUNFIGHTERS, STAGE-3 FIRE SHARKS, AND HOMING AS A GRANT =====
+console.log("=== 230. Stage-1 gunfighters + scoped loopcharge/homing ===");
 {
-  /* Mike, 0819: "In Fireshark and Raiden Trad, Raiden II ... jets doing some circular motion
-     where they do some circle motions and then chage at the player with no bullets or
-     projectiles. The goal is to shoot them down befroe they hit you ... immediately change the
-     level 1 and level 3 jets to follow this mechanic. Two, homing missiles via fodder enemies.
-     CUT ... missiles that DO NOT home, and remove homing missiles from all bosses past level 1."
+  /* The final Stage-1 AI pass restores platform identity: Jungle deltas fly committed curves and
+     fire twin guns. Stage 3 retains the silent Fire-Shark loop/charge reuse. Homing remains a
+     grant, and is still forbidden past Stage 1.
 
      ⚠ THE HOMING WAS NEVER IN THE MUZZLES, IT WAS IN THE MOVER. Every `emissile` ran one
      steering block with `b.turn||0.05` as its default, so rounds fired by muzzles that call
@@ -11191,7 +11187,7 @@ console.log("=== 230. loopcharge jets + no homing ===");
      (b.homing, and only on stage 1), which is why this section measures ROUNDS IN FLIGHT rather
      than reading the roster tables. */
 
-  /* --- the loop-charge airframes: phases, and not one projectile --- */
+  /* --- Stage-1 delta: a curving, banked gunfighter with separate twin tracers --- */
   var _lc=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true; run.stage=1; curStage=STAGES[0];"
     +"beginStage(1); setState(GS.PLAY); player.reset();"
@@ -11204,30 +11200,26 @@ console.log("=== 230. loopcharge jets + no homing ===");
        measures the LEVEL". With the plan emptied, the only unit alive is this one, so any round
        in eBullets can only have come from it. */
     +"stagePlan=[]; waveIdx=0;"
-    +"var e=spawnEnemy('s1jetdelta',240,-30,{});"
+    +"var e=spawnEnemy('s1jetdelta',240,-30,{route:'curveL'});"
     +"if(!e) return JSON.stringify({bad:1});"
-    +"var ph={}, shots=0, spins={}, minY=1e9;"
+    +"var ph={}, shots=0, spins={}, minX=1e9,maxX=-1e9;"
     +"for(var f=0;f<60*12;f++){ player.hp=99;"
     +"  updatePlay(1/60); try{ drawWorld(1/60); }catch(err){}"
     +"  if(e._phase) ph[e._phase]=(ph[e._phase]||0)+1;"
     +"  if(e.spin) spins[Math.round(e.spin*4)]=1;"
     +"  shots=Math.max(shots, eBullets.length);"
-    +"  if(!e.dead && e.y<minY) minY=e.y;"
+    +"  if(!e.dead){ minX=Math.min(minX,e.x); maxX=Math.max(maxX,e.x); }"
     +"  if(e.dead) break; }"
     +"return JSON.stringify({pat:e.pattern, ph:Object.keys(ph), shots:shots,"
-    +" spinPoses:Object.keys(spins).length, fires:!!e.shoots});})()", ctxv));
+    +" spinPoses:Object.keys(spins).length, fires:!!e.shoots, span:maxX-minX});})()", ctxv));
 
-  ok(!_lc.bad && _lc.pat==='loopcharge',
-     'a stage-1 delta flies loopcharge, not the gun pattern (got '+_lc.pat+')');
-  ok(!_lc.bad && _lc.ph.indexOf('in')>=0 && _lc.ph.indexOf('loop')>=0 && _lc.ph.indexOf('charge')>=0,
-     'and it walks run-in -> LOOP -> charge ['+(_lc.ph||[]).join('>')+']');
-  ok(!_lc.bad && _lc.shots===0,
-     'it fires NOTHING for its whole life — the airframe IS the attack ('+_lc.shots+' rounds)');
-  ok(!_lc.bad && !_lc.fires, 'and it is not even armed (shoots=false)');
-  /* the circle must be VISIBLE: drawNewEnemyArt rotates by e.spin, so a jet that carves a loop
-     while spin stays at one value is flying the circle nose-south — 0806h's bug exactly. */
-  ok(!_lc.bad && _lc.spinPoses>=8,
-     'the sprite actually ROTATES through the loop ('+_lc.spinPoses+' distinct attitudes), rather than sliding round nose-south');
+  ok(!_lc.bad && _lc.pat==='s1jet',
+     'a Stage-1 delta uses the aircraft controller (got '+_lc.pat+')');
+  ok(!_lc.bad && _lc.shots>=2,
+     'it lays down real twin-gun fire ('+_lc.shots+' rounds observed)');
+  ok(!_lc.bad && _lc.fires, 'and remains armed for the Jungle run');
+  ok(!_lc.bad && _lc.span>35 && _lc.spinPoses>=2,
+     'its committed curve changes lane and banks with it ('+_lc.span.toFixed(1)+'px, '+_lc.spinPoses+' attitudes)');
 
   /* --- stage 3 converts too, and stage 4 does NOT --- */
   var _st=JSON.parse(vm.runInContext("(function(){"
@@ -11239,7 +11231,7 @@ console.log("=== 230. loopcharge jets + no homing ===");
     +"  o[p[0]]=e?{pat:e.pattern, shoots:!!e.shoots}:null; });"
     +"return JSON.stringify(o);})()", ctxv));
   ok(_st['3'] && _st['3'].pat==='loopcharge' && !_st['3'].shoots,
-     'stage 3 converts its jets as well — Mike named 1 and 3');
+     'Stage 3 alone retains the silent Fire-Shark loop/charge reuse');
   ok(_st['4'] && _st['4'].pat==='s1jet' && _st['4'].shoots,
      'but stage 4 keeps its gunfighters (pat '+(_st['4']||{}).pat+') — the waves there are tuned around them');
   ok(_st['6'] && _st['6'].pat==='s1jet',
@@ -11258,10 +11250,10 @@ console.log("=== 230. loopcharge jets + no homing ===");
     +"  for(var f=0;f<60*30;f++){ player.hp=99;"
     +"    var pre={};"
     +"    for(var i=0;i<eBullets.length;i++){ var b=eBullets[i];"
-    +"      if(b.kind==='emissile') pre[i]=Math.atan2(b.vy,b.vx); }"
+    +"      if(b.kind==='emissile'||b.kind==='s1jungleMissile') pre[i]=Math.atan2(b.vy,b.vx); }"
     +"    updatePlay(1/60); try{ drawWorld(1/60); }catch(err){}"
     +"    for(var j=0;j<eBullets.length;j++){ var c=eBullets[j];"
-    +"      if(c.kind!=='emissile' || pre[j]===undefined) continue;"
+    +"      if((c.kind!=='emissile'&&c.kind!=='s1jungleMissile') || pre[j]===undefined) continue;"
     +"      seen++;"
     +"      if(c.homing) homing++;"
     +"      var d=Math.abs(Math.atan2(Math.sin(Math.atan2(c.vy,c.vx)-pre[j]),"
@@ -12312,6 +12304,49 @@ console.log("=== 263. unskippable stage dialogue and Stage 5 HQ copy ===");
   ok(_src263.indexOf('function cinematicAdvanceTap(')<0 &&
      _src263.slice(_src263.indexOf('function storyTick(dt)'),_src263.indexOf('const STORY_TINT')).indexOf('Input.tap(')<0,
      'stage dialogue contains no keyboard, Fire or controller skip path');
+}
+
+// ===== 264. STAGE-1 PLATFORM AI + JUNGLE COMMAND WEAPONS =====
+console.log("=== 264. Stage-1 platform AI and Jungle command weapons ===");
+{
+  var _meta264=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','stage1_combat_fx.json'),'utf8'));
+  ok(fs.existsSync(path.join(ROOT,_meta264.atlas)) && Object.keys(_meta264.rects).length===54,
+     'the production Stage-1 combat atlas packs all 54 transparent projectile/muzzle/impact cells');
+  ok(vm.runInContext("(function(){var n=0;for(var k in BOFX.cells)if(k.indexOf('s1fx_')===0)n++;return n===54&&XART._src.nca_s1combatfx==='assets/game/atlas/stage1_combat_fx.png';})()",ctxv),
+     'all Stage-1 combat cells route through one eager production texture');
+  ok(vm.runInContext("['s1cannon','s1jungleMissile','s1greenLaser','s1windBlade','s1windVortex'].every(function(k){return !!FIRETYPES[k];})",ctxv),
+     'heavy shell, Jungle missile, green laser, wind blade and wind vortex each own animated fire types');
+  ok(vm.runInContext("S1_TANKS.s1tanklight.atk==='cannon'&&S1_TANKS.s1truckmissile.atk==='jungleMissile'&&NEF_S1.s1tanklight_b.atk==='cannon'&&NEF_S1.s1truckmissile_b.atk==='jungleMissile'",ctxv),
+     'light tanks fire cannon shells while rocket vehicles fire toxic Jungle missiles in both palettes');
+
+  var _units264=JSON.parse(vm.runInContext("(function(){"
+    +"ASSETS.ready=true;run.stage=1;curStage=STAGES[0];beginStage(1);setState(GS.PLAY);player.reset();"
+    +"stagePlan=[];waveIdx=0;enemies.length=0;eBullets.length=0;player.x=240;player.y=450;player.invuln=999999;"
+    +"function tankKind(type){eBullets.length=0;var e=spawnEnemy(type,240,120,{});e._tank=1;e._phase='shift';e._phT=99;e._spd=0;e._dir8=0;e._lvlY=120;e._shotCd=0;e._burst=0;e._burstCd=99;e._recoil=0;e._wheelT=0;tankTick(e,1/60);return eBullets[0]&&eBullets[0].kind;}"
+    +"var shell=tankKind('s1tanklight'), missile=tankKind('s1truckmissile');"
+    +"var p=spawnEnemy('s1boatpatrol',180,-10,{}),m=spawnEnemy('s1boatgun',300,-10,{});navalTick(p,0);navalTick(m,0);"
+    +"return JSON.stringify({shell:shell,missile:missile,patrol:p._naval,gunboat:m._naval});})()",ctxv));
+  ok(_units264.shell==='s1cannon'&&_units264.missile==='s1jungleMissile',
+     'the live tank controller launches the platform-correct authored rounds');
+  ok(_units264.patrol==='gun'&&_units264.gunboat==='missile',
+     'river patrol turret and missile-gunboat art now drive the matching controllers');
+
+  var _mini264=JSON.parse(vm.runInContext("(function(){"
+    +"subBoss=null;subBossActive=false;spawnSubBoss('junglecruiser');var b=subBoss;b.enter=false;b.x=240;b.y=120;b._drawY=120;eBullets.length=0;"
+    +"jungleCruiserAttack(b,'jungleburst',2,0,1);for(var i=0;i<60;i++)jungleCruiserTick(b,1/60);"
+    +"var burst=eBullets.map(function(q){return q.kind;});eBullets.length=0;"
+    +"jungleCruiserAttack(b,'jungletempest',1,1,0.82);jungleCruiserAttack(b,'jungletempest',2,1,0.82);"
+    +"return JSON.stringify({burst:burst,tempest:eBullets.map(function(q){return q.kind;})});})()",ctxv));
+  ok(_mini264.burst.filter(function(k){return k==='mg';}).length>=20 && _mini264.burst.indexOf('s1greenLaser')>=0,
+     'Jungle Cruiser fires a timed twin-machine-gun burst punctuated by separate green lances');
+  ok(_mini264.tempest.indexOf('s1greenLaser')>=0&&_mini264.tempest.indexOf('s1windBlade')>=0&&_mini264.tempest.indexOf('s1windVortex')>=0,
+     'its enraged pattern combines green laser volleys, curving wind blades and slow vortex pressure');
+
+  var _boss264=JSON.parse(vm.runInContext("(function(){boss=null;bossActive=false;spawnBoss('damkeeper');boss.enter=false;boss.x=240;boss.y=120;eBullets.length=0;ovGreenVolley(boss);ovRotorTempest(boss);return JSON.stringify(eBullets.map(function(q){return q.kind;}));})()",ctxv));
+  ok(_boss264.filter(function(k){return k==='s1greenLaser';}).length===5&&_boss264.indexOf('s1windBlade')>=0&&_boss264.indexOf('s1windVortex')>=0,
+     'Jungle Overlord-X carries the same biome language from five laser hardpoints and its rotor tempest');
+  ok(vm.runInContext("(function(){var b={x:200,y:100,vx:0,vy:4,_curve:0.7,kind:'s1windBlade',w:12,h:18,t:0};var a=Math.atan2(b.vy,b.vx);for(var i=0;i<30;i++){var s=Math.hypot(b.vx,b.vy),q=Math.atan2(b.vy,b.vx)+b._curve/60;b.vx=Math.cos(q)*s;b.vy=Math.sin(q)*s;b.x+=b.vx;b.y+=b.vy;}return Math.abs(Math.atan2(b.vy,b.vx)-a)>0.2;})()",ctxv),
+     'wind blades commit to a continuous one-way curve rather than wobbling side to side');
 }
 
 console.log('\n============================================');

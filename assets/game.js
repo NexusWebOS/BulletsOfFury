@@ -1663,7 +1663,7 @@ const XART=(function(){
      The BOSS sheets (87, 88) are deliberately NOT here: they are 10MB between them and are not
      needed until the end of a stage, by which point lazy loading has had minutes. Preloading
      them would put that on the boot path for no gain. */
-  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|bof_player_(?:weapon_special_icons|ordnance_projectiles|ships_barrel_rolls)_atlas|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nca_8[0-2]|nca_86|nca_8[7-9]|aintro_)/;
+  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|bof_player_(?:weapon_special_icons|ordnance_projectiles|ships_barrel_rolls)_atlas|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nca_(?:s1combatfx|8[0-2]|86|8[7-9])|aintro_)/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
   /* ============================================================
      TWO AUTHORED HULLS REGISTERED IN CODE, NOT IN THE MANIFEST (drop 0812h)
@@ -1708,6 +1708,15 @@ const XART=(function(){
   X._src['fx0825_lava_comet']='assets/game/fx_0825/lava_comet.png';
   X._src['fx0825_lava_fireball']='assets/game/fx_0825/lava_fireball.png';
   X._src['bg_stage01_runway_transition']='assets/game/bg_stage01_runway_transition.jpg';
+  /* STAGE-1 COMBAT IDENTITY. One 192px-cell sheet replaces loose military rounds and adds the
+     Jungle Cruiser/Overlord wind language. Keep the cell map code-owned: manifest.js is generated. */
+  X._src['nca_s1combatfx']='assets/game/atlas/stage1_combat_fx.png';
+  if(window.BOFX&&BOFX.cells){
+    const _s1fxRows=['jungle_missile','cannon_shell','military_muzzle','rotary_muzzle','flak_impact',
+                     'green_laser','wind_blade','wind_vortex','green_impact'];
+    for(let _r=0;_r<_s1fxRows.length;_r++) for(let _f=0;_f<6;_f++)
+      BOFX.cells['s1fx_'+_s1fxRows[_r]+'_'+_f]=['s1combatfx',_f*192,_r*192,192,192];
+  }
   /* CHAOS HARRIER — the authored Level-5 miniboss.  These are state frames and detached weapon
      layers, not one interchangeable idle reel.  The hull stays on ship_0 while ship_glow pulses;
      ship_2 is used only while the missile bays are actually open. */
@@ -8934,11 +8943,8 @@ function buildStagePlan(stageNum){
                    spawnEnemy('s1jetdelta', VW*0.91, -30, {route:'cornerLR'}); });
     add(8.2, ()=>{ spawnEnemy('s1jetdelta', VW*0.20, -30, {route:'cornerRL'});
                    spawnEnemy('s1jetdelta', VW*0.80, -30, {route:'straight'}); });
-    /* FIRE SHARK JETS (Mike, 0819): every delta on this stage now flies 'loopcharge' — in from
-       the top, one full circle, then a dead-charge at the player, guns silent. The gate lives in
-       applyS1Jet/applyNefUnit, so every existing delta wave above and below converts with no
-       per-wave edit. These EXTRA waves answer "increase the amount of enemies" — placed clear of
-       the terrain-gated ground sequence so the beach and sand armour keep their windows. */
+    /* Additional fighter pressure. Stage 1 deltas now keep their jet routes and twin guns; the
+       silent Fire-Shark loop/charge identity remains reserved for the Stage-3 reuse. */
     add(12.5, ()=>{ spawnEnemy('s1jetdelta', VW*0.35, -30, {});
                     spawnEnemy('s1jetdelta', VW*0.65, -44, {}); });
 
@@ -10095,9 +10101,9 @@ const SHIPBOSS = {
 
      The quad-laser system is NOT deleted, only unassigned: nqx_ art, _qlCan per-cannon hitboxes
      and its charge attack all remain, so it can take another slot without being rebuilt. */
-  junglecruiser: {key:'nsb_jungle_cruiser', name:'JUNGLE CRUISER', w:168,h:168, hp:210, pat:'siege', cd:1.28, mini:true, proj:'warhawk',
+  junglecruiser: {key:'nsb_jungle_cruiser', name:'JUNGLE CRUISER', w:168,h:168, hp:210, pat:'jungleburst', cd:1.05, mini:true, proj:'warhawk',
                   mounts:{L:[-0.22,0.29],C:[0,0.43],R:[0.22,0.29]},
-                  pats:['siege','fan2']},
+                  pats:['jungleburst','jungletempest']},
   /* ⚠ STAGE 6's MINIBOSS WAS A PLACEHOLDER WITH NO CASE AT ALL. SUBBOSS[6] named 'ss', and
      spawnSubBoss__inner's switch has no arm for it — so it fell through to the generic 130x120
      default and spawned literally named "SUB-BOSS", with no art, no attack profile and the stock
@@ -10299,6 +10305,8 @@ function shipBossPatternSlots(pat, step){
    weapon and release the projectile on an authored frame. Chaos Harrier has its own action-reel
    controller and never enters this SHIPBOSS path. */
 const SHIP_ACTION_PROFILE={
+  jungleburst:{tell:0.16,recover:0.14,kick:4,shake:1},
+  jungletempest:{tell:0.38,recover:0.24,kick:6,shake:2},
   stormmg:{tell:0.14,recover:0.16,kick:3,shake:1},
   stormbolts:{tell:0.28,recover:0.22,kick:6,shake:2},
   ember:{tell:0.36,recover:0.24,kick:7,shake:2},
@@ -10336,8 +10344,11 @@ function shipBossQueueAttack(b){
   const pat=shipBossCurrentPattern(b), A=shipBossActionProfile(b,pat);
   b._sba={pat:pat,t:0,tell:A.tell,recover:A.recover,kick:A.kick,shake:A.shake,fired:false};
   b.fireCd=Math.max(b.fireCd||0,A.tell+A.recover+0.04);
-  /* The charge is the boss's own muzzle family, already anchored to its measured cannons. */
-  shipBossMuzzleStart(b,shipBossPatternSlots(pat,(b._sbStep|0)+1),{life:A.tell,n:6});
+  /* The Jungle Cruiser owns a green wind telegraph; other ships use their registered boss reel. */
+  if(b._ship==='junglecruiser'){
+    const _jm=shipBossMount(b,'C');
+    navalFlash(null,_jm,1.0,'s1fx_wind_vortex',{n:6,hpx:76,life:A.tell,anchor:0.5});
+  } else shipBossMuzzleStart(b,shipBossPatternSlots(pat,(b._sbStep|0)+1),{life:A.tell,n:6});
   if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossWeaponCharge) Audio.SFX.bossWeaponCharge();
   return true;
 }
@@ -10673,6 +10684,7 @@ function shipBossManoeuvre(b, dt){
   if(b._brk || b._brkCd>0) beamRakeTick(b, dt);
   if(b._orb) reaverOrbTick(b, dt);
   if(b._stormMg) stormMgTick(b, dt);
+  if(b._jcBurst) jungleCruiserTick(b,dt);
   /* the carrier's reel runs on the FRAME clock, not the volley beat - the round leaves on the
      animation frame that shows it clearing the bay. See carrierTick. */
   if((b._ship==='doomsdaycarrier'||b._ship==='doomsdaycarriermk2') && typeof carrierTick==='function') carrierTick(b, dt);            // the wind-up runs on the frame clock, not the volley beat
@@ -10805,6 +10817,56 @@ function shipBossPhase(b){
   if(i<0) i=0; if(i>n-1) i=n-1;
   return i;
 }
+/* JUNGLE CRUISER — rapid naval guns in real bursts, then emerald laser/wind pressure. The burst
+   is advanced per frame so ten rounds do not appear as one solid graphic or one stacked hitbox. */
+function jungleCruiserTick(b,dt){
+  const B=b&&b._jcBurst; if(!B) return;
+  B.t-=dt;
+  if(B.t>0) return;
+  const L=shipBossMount(b,'L'),R=shipBossMount(b,'R');
+  const beat=10-B.n, bias=(beat&1)?0.035:-0.035, sp=5.05;
+  for(const item of [[L,-0.055+bias],[R,0.055-bias]]){
+    const m=item[0], a=eAimDown(aimPlayer(m.x,m.y)+item[1]);
+    eShootT(m.x,m.y,a,sp,'mg',{w:5,h:13,silent:(beat%3)!==0||m===R});
+    navalFlash(null,m,0.76,S1_MUZZLE_ROTARY,{n:6,hpx:36,life:0.12});
+  }
+  B.n--; B.t=0.075;
+  b._sbaKick=Math.max(b._sbaKick||0,0.32);
+  if(B.n<=0) b._jcBurst=null;
+}
+function jungleCruiserAttack(b,pat,step,ph,cdMul){
+  const D=SHIPBOSS[b._ship],L=shipBossMount(b,'L'),C=shipBossMount(b,'C'),R=shipBossMount(b,'R');
+  if(pat==='jungleburst'){
+    if(!b._jcBurst){ b._jcBurst={n:ph?12:10,t:0}; jungleCruiserTick(b,0); }
+    /* Every other gun run is punctuated by a fast, readable laser triad. */
+    if((step&1)===0){
+      for(const item of [[L,-0.10],[C,0],[R,0.10]]){
+        const m=item[0],a=eAimDown(aimPlayer(m.x,m.y)+item[1]);
+        eShootT(m.x,m.y,a,5.2,'s1greenLaser',{w:7,h:22,silent:m!==C,impact:'green'});
+      }
+    }
+  } else if((step&1)===1){
+    /* White-cored green lances: five separate fast rounds, never a welded beam graphic. */
+    const lanes=[[-0.24,L],[-0.11,L],[0,C],[0.11,R],[0.24,R]];
+    for(let i=0;i<lanes.length;i++){
+      const a=eAimDown(Math.PI/2+lanes[i][0]),m=lanes[i][1];
+      eShootT(m.x,m.y,a,5.45,'s1greenLaser',{w:7,h:22,silent:i>0,impact:'green'});
+    }
+    for(const m of [L,C,R]) navalFlash(null,m,0.9,S1_MUZZLE_MILITARY,{n:6,hpx:37,life:0.15});
+  } else {
+    /* Curving blades leave the centre readable; the slower rings force the next reposition. */
+    const blade=[[-0.48,L,-0.72],[-0.27,L,-0.42],[0.27,R,0.42],[0.48,R,0.72]];
+    for(let i=0;i<blade.length;i++){
+      const row=blade[i],a=Math.PI/2+row[0];
+      eShootT(row[1].x,row[1].y,a,3.95,'s1windBlade',{w:12,h:18,curve:row[2],silent:i>0,impact:'green'});
+    }
+    for(const item of [[L,0.12],[R,-0.12]]){
+      eShootT(item[0].x,item[0].y,Math.PI/2+item[1],1.75,'s1windVortex',{w:18,h:18,szMul:1.08,silent:true,impact:'green'});
+    }
+    navalFlash(null,C,1.15,'s1fx_wind_vortex',{n:6,hpx:92,life:0.30,anchor:0.5});
+  }
+  b.fireCd=(D.cd||1.05)*Math.max(0.62,cdMul||1);
+}
 function shipBossAttack(b){
   const D=SHIPBOSS[b._ship]; if(!D) return;
   const W=(typeof worldWidth==='function')?worldWidth():VW;
@@ -10827,6 +10889,10 @@ function shipBossAttack(b){
   /* and it TIGHTENS as it goes: -18% cooldown per phase, floored so the last phase is still
      readable rather than a wall of bullets. */
   const cdMul = Math.max(0.55, 1 - ph*0.18);
+  if(b._ship==='junglecruiser'){
+    jungleCruiserAttack(b,pat,step,ph,cdMul);
+    return;
+  }
   if(pat==='spawnpods'){
     /* SPAWN CARRIER signature, phase 1: the three authored emitters fire in sequence, and every
        fourth beat launches a PAIR of weakened Stage-8 escorts.  The escort cap prevents the
@@ -14517,7 +14583,9 @@ function enemyShotSfx(kind){
   if(kind==='mg' || kind==='pellet') (S.enemyMachineGunLight||S.enemyShoot||function(){})();
   else if(kind==='ice' || kind==='frost') (S.enemyIceBolt||S.enemyShoot||function(){})();
   else if(kind==='fire' || kind==='flare' || kind==='magma') (S.enemyFlameBolt||S.enemyShoot||function(){})();
-  else if(kind==='laser' || kind==='eglaser') (S.enemyPulseLaserRed||S.laserShot||S.enemyShoot||function(){})();
+  else if(kind==='laser' || kind==='eglaser' || kind==='s1greenLaser') (S.enemyPulseLaserAlien||S.laserShot||S.enemyShoot||function(){})();
+  else if(kind==='s1windBlade' || kind==='s1windVortex') (S.windGust||S.enemyShoot||function(){})();
+  else if(kind==='s1cannon' || kind==='s1jungleMissile') (S.enemyBossCannon||S.enemyShoot||function(){})();
   else if(kind==='electric' || kind==='arc') (S.enemyElectricBolt||S.enemyShoot||function(){})();
   else (S.enemyShoot||function(){})();
 }
@@ -15539,6 +15607,12 @@ function updateRollers(dt){
   for(const b of rollers){
     b.t+=dt; b.life-=dt; b.spin+=dt*(b.full?7:9); b.hitCd=Math.max(0,b.hitCd-dt);
     if(b.burst) b.burst=Math.max(0,b.burst-dt);
+    /* Wind blades commit to one continuous curve. This is steering, not a sine wobble: the
+       rotation sign never reverses and the visible blade follows its live velocity. */
+    if(b._curve){
+      const _sp=Math.hypot(b.vx,b.vy),_a=Math.atan2(b.vy,b.vx)+b._curve*dt;
+      b.vx=Math.cos(_a)*_sp;b.vy=Math.sin(_a)*_sp;
+    }
     b.x+=b.vx; b.y+=b.vy;
     // walls: pinball bounce, shards on every wall strike
     if(b.x-b.r<L){ b.x=L+b.r; b.vx=Math.abs(b.vx); rollerImpact(b,b.x-b.r,b.y); }
@@ -19853,7 +19927,7 @@ function updatePlay(dt){
       b.y += Math.sin(a-Math.PI/2)*d;
       b._swOff=want;
     }
-    if(b.kind==='emissile'){
+    if(b.kind==='emissile' || b.kind==='s1jungleMissile'){
       // (b.t already advanced at the loop head — do not double-count)
       // white exhaust smoke trailing the missile
       if(typeof addTrail==='function' && (b.t*60|0)%2===0) addTrail(b.x - Math.cos(b.ang||Math.PI/2)*b.h*0.4, b.y - Math.sin(b.ang||Math.PI/2)*b.h*0.4, null, 'missile');
@@ -19881,8 +19955,8 @@ function updatePlay(dt){
       if(b._accel){ b.spd=Math.min(b._maxspd||4.0,(b.spd||2.4)+b._accel); }   // missile builds speed after launch (readable then fast)
       const spd=(b.spd||2.7)*(DIFF?DIFF.ebSpeed:1); b.vx=Math.cos(ang)*spd; b.vy=Math.sin(ang)*spd; b.ang=ang;
       for(const pb of pBullets){ if(pb.dead) continue;
-        if(pb.kind==='beam'){ if(Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y)){ b.dead=true; explode(b.x,b.y,7,'red'); break; } }
-        else if(Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2)){ b.dead=true; explode(b.x,b.y,7,'red'); if(!pb.pierce) pb.dead=true; break; }
+        if(pb.kind==='beam'){ if(Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y)){ b.dead=true; if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); break; } }
+        else if(Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2)){ b.dead=true; if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); if(!pb.pierce) pb.dead=true; break; }
       }
       if(b.dead) continue;
     }
@@ -19974,6 +20048,8 @@ function updatePlay(dt){
            plate of the set, a burst that scatters into cooling debris. explode() counts a named
            family's frames itself, so the 6-frame reel needs no table row. */
         if(b.kind==='magma' && typeof explode==='function') explode(b.x,b.y,34,'red','bfx_magma_i');
+        else if((b.kind==='s1greenLaser'||b.kind==='s1windBlade'||b.kind==='s1windVortex') && typeof s1CombatImpact==='function') s1CombatImpact(b.x,b.y,true,54);
+        else if((b.kind==='s1cannon'||b.kind==='s1jungleMissile') && typeof s1CombatImpact==='function') s1CombatImpact(b.x,b.y,false,48);
         playerHit(); b.dead=true;
       }
     }
@@ -20673,6 +20749,8 @@ function ovTwinMG(b){
   const a1=eAimDown(aimPlayer(nz[0],nz[1])-0.05), a2=eAimDown(aimPlayer(nz2[0],nz2[1])+0.05);
   eBullets.push({x:nz[0],y:nz[1],vx:Math.cos(a1)*s*DIFF.ebSpeed, vy:Math.sin(a1)*s*DIFF.ebSpeed, w:5,h:12, kind:'mg', _ph:(Math.random()*4)|0});
   eBullets.push({x:nz2[0],y:nz2[1],vx:Math.cos(a2)*s*DIFF.ebSpeed, vy:Math.sin(a2)*s*DIFF.ebSpeed, w:5,h:12, kind:'mg', _ph:(Math.random()*4)|0});
+  navalFlash(null,{x:nz[0],y:nz[1]},0.74,S1_MUZZLE_ROTARY,{n:6,hpx:35,life:0.12});
+  navalFlash(null,{x:nz2[0],y:nz2[1]},0.74,S1_MUZZLE_ROTARY,{n:6,hpx:35,life:0.12});
   b._muzL=0.12; b._muzR=0.12;
   if(Audio.SFX.enemyMachineGunBurst) Audio.SFX.enemyMachineGunBurst(); else if(Audio.SFX.enemyMachineGunHeavy) Audio.SFX.enemyMachineGunHeavy(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
@@ -20682,13 +20760,32 @@ function ovRocketSide(b, side, fan){
   const m = side<0 ? ovMount(b,-48,41) : ovMount(b,46,41);
   if(side<0) b._mzlT=0.32; else b._mzrT=0.32;             // launch-flash anim timer for that pod
   const f=(fan||0)*side;
-  eBullets.push({x:m[0],y:m[1],vx:(side*0.9+f),vy:0.8,w:14,h:24,kind:'emissile',hp:1,spd:2.4,turn:0.055,t:0,ang:Math.PI/2,homing:true,_bright:true,_accel:0.06,_maxspd:4.0});
+  eBullets.push({x:m[0],y:m[1],vx:(side*0.9+f),vy:0.8,w:14,h:24,kind:'s1jungleMissile',hp:1,spd:2.4,turn:0.055,t:0,ang:Math.PI/2,homing:true,_bright:true,_accel:0.06,_maxspd:4.0});
+  navalFlash(null,{x:m[0],y:m[1]},1.0,S1_MUZZLE_MILITARY,{n:6,hpx:40,life:0.17});
   /* no launch alarm 0819d */
 }
 function ovReticleVolley(b){
   // place a reticle on the player then rain 8 homing missiles in a 1-2-1-2 stagger from alternating wings
   b._ovVolley={n:0, t:0, side:-1};
   enemyLockOn(b, 0.5);
+}
+function ovGreenVolley(b){
+  const mounts=[ovMount(b,-48,41),ovMount(b,-10,54),ovMount(b,0,58),ovMount(b,10,54),ovMount(b,46,41)];
+  const offsets=[-0.22,-0.09,0,0.09,0.22];
+  for(let i=0;i<mounts.length;i++){
+    const m=mounts[i],a=eAimDown(aimPlayer(m[0],m[1])+offsets[i]);
+    eShootT(m[0],m[1],a,5.65,'s1greenLaser',{w:7,h:22,silent:i>0,impact:'green'});
+  }
+}
+function ovRotorTempest(b){
+  const C=ovMount(b,0,12),L=ovMount(b,-48,41),R=ovMount(b,46,41);
+  const blades=[[-0.54,L,-0.8],[-0.31,L,-0.48],[0.31,R,0.48],[0.54,R,0.8]];
+  for(let i=0;i<blades.length;i++){
+    const row=blades[i];
+    eShootT(row[1][0],row[1][1],Math.PI/2+row[0],4.15,'s1windBlade',{w:12,h:18,curve:row[2],silent:i>0,impact:'green'});
+  }
+  eShootT(C[0],C[1],Math.PI/2,1.85,'s1windVortex',{w:20,h:20,szMul:1.16,silent:true,impact:'green'});
+  navalFlash(null,{x:C[0],y:C[1]},1.2,'s1fx_wind_vortex',{n:6,hpx:104,life:0.32,anchor:0.5});
 }
 function updateOverlordX(b, dt){
   if(b._ovInit==null){ b._ovInit=1; b._ovState='fight'; b._ovPhase=0; b._ovT=0; b._ovBob=0;
@@ -20755,7 +20852,7 @@ function updateOverlordX(b, dt){
 
     // phase cycle: TWIN MG BURST (x3 bursts if <50%) -> wait ~3s -> PIVOT -> MG again -> ROCKETS -> repeat
     const ph=b._ovPhase;
-    if(ph===0 || ph===2 || (b._crit && ph===4)){
+    if(ph===0 || ph===2){
       // twin MG burst
       ovTwinMG(b);
       b._mgN=(b._mgN||0)+1;
@@ -20783,8 +20880,9 @@ function updateOverlordX(b, dt){
       if(b._rkN>=4){ b._rkN=0; b.fireCd=1.4; b._ovPhase=4; }
       else { b.fireCd = 2.4; }                          // ~2.4s between alternating rocket blasts
     }
-    else { // ph 4 (non-crit): brief breather then loop; also the point we check the 50% gate
-      b.fireCd=1.2; b._ovPhase=0;
+    else { // ph 4: the helicopter's Jungle signature — green lance volley plus rotor wind
+      ovGreenVolley(b); ovRotorTempest(b);
+      b.fireCd=b._crit?1.0:1.45; b._ovPhase=0;
     }
 
     // ---- 50% HP gate: fly off by charging the player, then re-enter at 45 deg ----
@@ -24828,6 +24926,13 @@ const FIRETYPES={
   /* Use the authored molten-orb reel; the old electrical star was the wrong visual language. */
   magma: { art:(b)=>'ndc_magmaorb_'+(((b.t||0)*12|0)%4), align:false, h:26, glow:'#ff4a00', glow2:'#ffd36b'},
   lavaComet:{art:(b)=>'fx0825_lava_comet', align:true, h:25, glow:'#ff9a24', glow2:'#fff0a0'},
+  /* Stage 1's platforms no longer share anonymous fantasy bolts. Military hulls use metal,
+     launchers use a toxic Jungle warhead, and the two command fights own the emerald wind set. */
+  s1cannon:{art:(b)=>'s1fx_cannon_shell_'+Math.min(5,((b.t||0)*15)|0),align:true,h:31,glow:'#f3d56a'},
+  s1jungleMissile:{art:(b)=>'s1fx_jungle_missile_'+Math.min(5,((b.t||0)*13)|0),align:true,h:39,glow:'#9cff31',glow2:'#fff8a8'},
+  s1greenLaser:{art:(b)=>'s1fx_green_laser_'+Math.min(5,((b.t||0)*18)|0),align:true,h:38,glow:'#41ff72',glow2:'#eaffef'},
+  s1windBlade:{art:(b)=>'s1fx_wind_blade_'+Math.min(5,((b.t||0)*16)|0),align:true,h:42,glow:'#63ff91'},
+  s1windVortex:{art:(b)=>'s1fx_wind_vortex_'+Math.min(5,((b.t||0)*14)|0),spin:2.2,h:62,glow:'#68ff93'},
 }
 ;
 function deriveFireType(name, base, opts){
@@ -25152,13 +25257,16 @@ let _navalFlashes=[];
    is weighted to the front so the flash sits where the art actually is. */
 const MUZZLE_MG     = 'nmz_2';
 const MUZZLE_ROCKET = 'nmz_4';
+const S1_MUZZLE_MILITARY = 's1fx_military_muzzle';
+const S1_MUZZLE_ROTARY   = 's1fx_rotary_muzzle';
 function navalFlash(e, mz, scale, fam, opts){
   if(typeof XART==='undefined') return;
   const f=fam||MUZZLE_MG;
   if(!XART.rdy(f+'_0')) return;
   _navalFlashes.push({fam:f, x:mz.x, y:mz.y, t:0, life:(opts&&opts.life)||0.13, s:(scale||1.0),
                       n:(opts&&opts.n)||4, hpx:(opts&&opts.hpx)||28, owner:e,
-                      ox:(opts&&opts.ox)||0,oy:(opts&&opts.oy)});
+                      ox:(opts&&opts.ox)||0,oy:(opts&&opts.oy),
+                      anchor:(opts&&opts.anchor!=null)?opts.anchor:0.35});
 }
 /* THE MAGMA MUZZLE (Mike, 0819) — `bfx_magma_m`, the 6-frame starburst authored beside the round
    and never once fired. It has NO owner: a magma gunner is not a boat and its barrel does not
@@ -25190,9 +25298,13 @@ function drawNavalFlashes(){
     if(!im || !im.naturalWidth) continue;
     const h=(f.hpx||28)*f.s, w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
     ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=1-k*0.35;
-    ctx.drawImage(im, f.x-w/2, f.y-h*0.35, w, h);
+    ctx.drawImage(im, f.x-w/2, f.y-h*(f.anchor==null?0.35:f.anchor), w, h);
     ctx.restore();
   }
+}
+function s1CombatImpact(x,y,green,size){
+  const family=green?'s1fx_green_impact':'s1fx_flak_impact';
+  navalFlash(null,{x:x,y:y},1,family,{n:6,hpx:size||(green?54:46),life:0.22,anchor:0.5});
 }
 /* ============================================================
    STAGE 1 TANKS (drop 0808r)
@@ -25233,15 +25345,15 @@ function drawNavalFlashes(){
      homing   the same cadence, but the round tracks ============================================================ */
 const S1_TANKS = {
   s1tankheavy:     {art:'s1tankHeavy',    atk:'mg',      w:48, h:64, hp:16, score:460},
-  s1tanklight:     {art:'s1tankLight',    atk:'missile', w:38, h:52, hp:10, score:340},
+  s1tanklight:     {art:'s1tankLight',    atk:'cannon',  w:38, h:52, hp:10, score:340},
   s1tankapc:       {art:'s1tankApc',      atk:'kick',    w:42, h:62, hp:13, score:400},
-  s1truckmissile:  {art:'s1truckMissile', atk:'missile', w:44, h:62, hp:12, score:520, wheels:true},   // straight rocket — fodder homing is CUT (Mike, 0819)
+  s1truckmissile:  {art:'s1truckMissile', atk:'jungleMissile', w:44, h:62, hp:12, score:520, wheels:true},
   /* BLACK CAMO — same vehicles, night paint. Slightly tougher and worth more, because they are
      the later-wave version of the same threat, not a different one. */
   s1tankheavy_b:   {art:'s1tankHeavyB',   atk:'mg',      w:48, h:64, hp:20, score:560, blk:true},
-  s1tanklight_b:   {art:'s1tankLightB',   atk:'missile', w:38, h:52, hp:13, score:420, blk:true},
+  s1tanklight_b:   {art:'s1tankLightB',   atk:'cannon',  w:38, h:52, hp:13, score:420, blk:true},
   s1tankapc_b:     {art:'s1tankApcB',     atk:'kick',    w:42, h:62, hp:16, score:500, blk:true},
-  s1truckmissile_b:{art:'s1truckMissileB',atk:'missile', w:44, h:62, hp:15, score:640, blk:true, wheels:true},
+  s1truckmissile_b:{art:'s1truckMissileB',atk:'jungleMissile', w:44, h:62, hp:15, score:640, blk:true, wheels:true},
 };
 function applyS1Tank(c, type){
   const d=S1_TANKS[type]; if(!d) return false;
@@ -25395,11 +25507,8 @@ function applyS1Jet(c, type){
   /* a wave picks the route: spawnEnemy(type,x,y,{route:'cornerLR'}) */
   if(c.route && JET_ROUTES.indexOf(c.route)>=0) c._route=c.route;
   c.vy=0; c.shoots=true;
-  /* FIRE SHARK JETS (Mike, 0819): "immediately change the level 1 and level 3 jets to follow this
-     mechanic" — loop, then charge, NO projectiles. Gated on the STAGE so the same airframes keep
-     their guns on stages 4 and 6, whose wave scripts were tuned around them. The bombers keep
-     their (now non-homing) ordnance — a bomber is not a fighter. */
-  if((type==='s1jetdelta'||type==='s1jetdelta_b') && typeof run!=='undefined' && (run.stage===1||run.stage===3)){
+  /* Fire-Shark loop/charge remains a Stage-3 identity. Stage 1 now fields true gunfighters. */
+  if((type==='s1jetdelta'||type==='s1jetdelta_b') && typeof run!=='undefined' && run.stage===3){
     c.pattern='loopcharge'; c.shoots=false; c._atk='none'; c.fk=null;
   }
   return true;
@@ -25442,18 +25551,18 @@ function applyS1Jet(c, type){
 const NEF_S1 = {
   //                    art base                          pattern   atk        w    h   hp  score
   s1tankheavy:     {art:'nef_s1_jungle_tank',      pat:'s1tank', atk:'mg',      w:47, h:64, hp:16, score:460},
-  s1tanklight:     {art:'nef_s1_jungle_mini_tank', pat:'s1tank', atk:'missile', w:38, h:52, hp:10, score:340},
+  s1tanklight:     {art:'nef_s1_jungle_mini_tank', pat:'s1tank', atk:'cannon',  w:38, h:52, hp:10, score:340},
   s1tankapc:       {art:'nef_s1_jungle_apc',       pat:'s1tank', atk:'kick',    w:39, h:62, hp:13, score:400},
-  s1truckmissile:  {art:'nef_s1_rocket_buggy',     pat:'s1tank', atk:'missile', w:42, h:62, hp:12, score:520, wheels:true},
+  s1truckmissile:  {art:'nef_s1_rocket_buggy',     pat:'s1tank', atk:'jungleMissile', w:42, h:62, hp:12, score:520, wheels:true},
   s1jetdelta:      {art:'nef_s1_camo_attack_jet',  pat:'s1jet',  atk:'mg',      w:73, h:81, hp:9,  score:380, spd:96},
   s1jetbomber:     {art:'nef_s1_jungle_bomber',    pat:'s1jet',  atk:'missile', w:101,h:89, hp:14, score:520, spd:78},
   s1boatgun:       {art:'nef_s1_missile_gunboat',  pat:'naval',  atk:'missile', w:41, h:64, hp:14, score:420},
   s1boatpatrol:    {art:'nef_s1_river_patrol_boat',pat:'naval',  atk:'mg',      w:43, h:68, hp:18, score:560},
   /* BLACK CAMO — same vehicle, night paint, same stat deltas the old rows carried. */
   s1tankheavy_b:   {art:'nef_s1_jungle_tank',      pat:'s1tank', atk:'mg',      w:47, h:64, hp:20, score:560, blk:true},
-  s1tanklight_b:   {art:'nef_s1_jungle_mini_tank', pat:'s1tank', atk:'missile', w:38, h:52, hp:13, score:420, blk:true},
+  s1tanklight_b:   {art:'nef_s1_jungle_mini_tank', pat:'s1tank', atk:'cannon',  w:38, h:52, hp:13, score:420, blk:true},
   s1tankapc_b:     {art:'nef_s1_jungle_apc',       pat:'s1tank', atk:'kick',    w:39, h:62, hp:16, score:500, blk:true},
-  s1truckmissile_b:{art:'nef_s1_rocket_buggy',     pat:'s1tank', atk:'missile', w:42, h:62, hp:15, score:640, blk:true, wheels:true},
+  s1truckmissile_b:{art:'nef_s1_rocket_buggy',     pat:'s1tank', atk:'jungleMissile', w:42, h:62, hp:15, score:640, blk:true, wheels:true},
   s1jetdelta_b:    {art:'nef_s1_camo_attack_jet',  pat:'s1jet',  atk:'mg',      w:73, h:81, hp:12, score:470, spd:104, blk:true, fireMul:0.75},
   s1jetbomber_b:   {art:'nef_s1_jungle_bomber',    pat:'s1jet',  atk:'salvo',   w:101,h:89, hp:18, score:640, spd:86,  blk:true, fireMul:0.75},
   /* NEW UNITS — no old counterpart, so no wave fields them yet. They exist here so the art is
@@ -26131,10 +26240,8 @@ function applyNefUnit(c, type){
   if(c.route && typeof JET_ROUTES!=='undefined' && JET_ROUTES.indexOf(c.route)>=0) c._route=c.route;
   c.shoots = d.atk!=='none';
   c.vy = 0;                                      // every prop stays at its authored map coordinate
-  /* FIRE SHARK JETS, SECOND GATE (Mike, 0819). This table runs AFTER applyS1Jet and overrides it
-     (0812e), so the delta rows' pat:'s1jet' would undo the loopcharge handoff without this. Same
-     stage gate, same reason: stages 4/6 keep their gunfighters. */
-  if((type==='s1jetdelta'||type==='s1jetdelta_b') && typeof run!=='undefined' && (run.stage===1||run.stage===3)){
+  /* This art-lock table runs after applyS1Jet, so retain the Stage-3-only loop/charge grant here. */
+  if((type==='s1jetdelta'||type==='s1jetdelta_b') && typeof run!=='undefined' && run.stage===3){
     c.pattern='loopcharge'; c.shoots=false; c._atk='none'; c.fk=null;
   }
   return true;
@@ -26354,8 +26461,8 @@ function jetTick(e, dt){
            at any size. */
         const nx=(e.w||60)*JET_GUN_OFF, ny=e.y+(e.h||60)*0.44;
         for(const sx of [e.x-nx, e.x+nx]){
-          eShootT(sx, ny, Math.PI/2, 4.6, 'mg', {});
-          navalFlash(e, {x:sx,y:ny}, 0.6, MUZZLE_JET_MG);
+          eShootT(sx, ny, Math.PI/2, 4.6, 'mg', {silent:sx>e.x});
+          navalFlash(null, {x:sx,y:ny}, 0.58, S1_MUZZLE_ROTARY,{n:6,hpx:31,life:0.13});
         }
         if(e._burst<=0) e._burstCd=JET_BURST_GAP;
       }
@@ -26387,11 +26494,11 @@ function jetTick(e, dt){
       const my=e.y+(e.h||89)*0.40;
       if(st<2){
         const sx=e.x+(st===0 ? -hw : hw);             // LEFT first, then RIGHT
-        eShootT(sx, my, Math.PI/2, 2.9, 'emissile', {szMul:1.4});
+        eShootT(sx, my, Math.PI/2, 3.15, 's1jungleMissile', {szMul:1.15});
         /* record the pylon it left from — the hull keeps flying, so anything measuring the
            offset later would be reading drift rather than the launch point (drop 0808w) */
         if(eBullets.length) eBullets[eBullets.length-1]._bx0 = (st===0 ? -hw : hw);
-        navalFlash(e, {x:sx,y:my}, 1.2, MUZZLE_JET_ORD);
+        navalFlash(null, {x:sx,y:my}, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:36,life:0.16});
         e._shotCd=0.70*(e._fmul||1);
       } else {
         /* THE QUAD — four at once, fanned and swirling out */
@@ -26399,10 +26506,10 @@ function jetTick(e, dt){
           const off=(q-1.5)/1.5;                       // -1, -0.33, +0.33, +1
           const sx=e.x+off*hw;
           const ang=Math.PI/2 + off*0.42;              // spread four ways
-          eShootT(sx, my, ang, 2.7, 'emissile', {szMul:1.5});
+          eShootT(sx, my, ang, 2.9, 's1jungleMissile', {szMul:1.2,silent:q>0});
           const b=eBullets[eBullets.length-1];
           if(b){ b._swirl=1; b._swPh=q*1.57; b._swAmp=1.15; b._bx0=off*hw; }   // own phase, own pylon
-          navalFlash(e, {x:sx,y:my}, 1.0, MUZZLE_JET_ORD);
+          navalFlash(null, {x:sx,y:my}, 0.9, S1_MUZZLE_MILITARY,{n:6,hpx:34,life:0.16});
         }
         shake=Math.max(shake,6);
         if(Audio.SFX.expBig) Audio.SFX.expBig();
@@ -26416,8 +26523,8 @@ function jetTick(e, dt){
     if(e._shotCd<=0 && canFire){
       e._shotCd=2.2*(e._fmul||1);
       const mz={x:e.x, y:e.y+(e.h||50)*0.44};
-      eShootT(mz.x, mz.y, Math.PI/2, 2.9, 'emissile', {szMul:1.4});
-      navalFlash(e, mz, 1.2, MUZZLE_JET_ORD);
+      eShootT(mz.x, mz.y, Math.PI/2, 3.15, 's1jungleMissile', {szMul:1.15});
+      navalFlash(null, mz, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:36,life:0.16});
     }
   }
 }
@@ -26547,8 +26654,8 @@ function tankTick(e, dt){
         e._shotCd=NAVAL_MG_GAP;
         e._burst--;
         const mz={x:e.x, y:e.y+(e.h||60)*0.46};
-        eShootT(mz.x, mz.y, Math.PI/2, 4.2, 'mg', {});
-        navalFlash(e, mz, 0.9, MUZZLE_TANK_MG);
+        eShootT(mz.x, mz.y, Math.PI/2, 4.5, 'mg', {});
+        navalFlash(null, mz, 0.82, S1_MUZZLE_ROTARY,{n:6,hpx:34,life:0.13});
         if(e._atk==='kick'){ e._recoil=0.10; shake=Math.max(shake,2); }   // #3 kicks back
         if(e._burst<=0) e._burstCd=NAVAL_BURST_GAP;
       }
@@ -26562,12 +26669,12 @@ function tankTick(e, dt){
   } else {
     e._shotCd-=dt;
     if(e._shotCd<=0 && canFire){
-      e._shotCd=NAVAL_RELOAD;
+      e._shotCd=(e._atk==='cannon')?2.35:3.75;
       const mz={x:e.x, y:e.y+(e.h||60)*0.46};
-      /* #2 fires a straight missile; #4 is the HOMING one */
-      const kind=(e._atk==='homing')?'homing':'emissile';
-      eShootT(mz.x, mz.y, Math.PI/2, 2.6, kind, {szMul:1.6});
-      navalFlash(e, mz, 1.4, MUZZLE_TANK_ORD);
+      const cannon=e._atk==='cannon';
+      eShootT(mz.x, mz.y, Math.PI/2, cannon?3.8:3.05,
+              cannon?'s1cannon':'s1jungleMissile', {szMul:cannon?1.0:1.18});
+      navalFlash(null, mz, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:cannon?42:38,life:0.17});
       e._recoil=0.18; shake=Math.max(shake,5);
     }
   }
@@ -26660,7 +26767,9 @@ function navalTick(e, dt){
      leaves a boat spawned through another path with no heading and no timers. Initialising on the
      first tick means every naval unit is configured regardless of how it got here. */
   if(!e._naval){
-    const nk=e.type==='s1boatgun'?'gun':(e.type==='s1corvette'?'corvette':(e.type==='s1landingcraft'?'landing':'patrol'));
+    /* The final art lock names the missile craft s1boatgun and the visible turret craft
+       s1boatpatrol. Controller identity follows the hardware on the plate. */
+    const nk=e.type==='s1boatpatrol'?'gun':(e.type==='s1boatgun'?'missile':(e.type==='s1corvette'?'corvette':(e.type==='s1landingcraft'?'landing':'missile')));
     navalInit(e,nk);
   }
   navalSteer(e, dt);
@@ -26678,8 +26787,8 @@ function navalTick(e, dt){
         e._shotCd=0.14;
         const k=5-e._burst, side=(k&1)?1:-1, a=(-0.28+k*0.14);
         const mz=navalHardpoint(e,side*0.18,0.37);
-        eShootT(mz.x,mz.y,Math.PI/2+a,4.45,'mg',{});
-        navalFlash(e,mz,0.95,MUZZLE_MG,{ox:side*0.18,oy:0.37});
+        eShootT(mz.x,mz.y,Math.PI/2+a,4.65,'mg',{});
+        navalFlash(null,mz,0.82,S1_MUZZLE_ROTARY,{n:6,hpx:34,life:0.13});
         e._navLean=side*0.055; e._recoil=Math.max(e._recoil,0.06); e._burst--;
         if(e._burst<=0) e._burstCd=3.2;
       }
@@ -26729,8 +26838,8 @@ function navalTick(e, dt){
         const mz=navalMuzzle(e);
         /* straight from the turret, no arc and no gravity — Mike: "they act like really
            traveling bullets from the turret" */
-        eShootT(mz.x, mz.y, ang, 4.2, 'mg', {});
-        navalFlash(e, mz, 0.8);
+        eShootT(mz.x, mz.y, ang, 4.5, 'mg', {});
+        navalFlash(null, mz, 0.78, S1_MUZZLE_ROTARY,{n:6,hpx:33,life:0.13});
         if(e._burst<=0) e._burstCd=NAVAL_BURST_GAP;   // the fixed silence begins
       }
     } else {
@@ -26741,7 +26850,7 @@ function navalTick(e, dt){
       }
     }
   } else {
-    /* PATROL: move, then stop dead, idle 1.5s, then one big rocket and a shove backwards */
+    /* MISSILE GUNBOAT: move, hold its lane, launch one toxic Jungle warhead, recoil, relocate. */
     e._idle-=dt;
     if(e._idle>0){ e._steerCd=Math.max(e._steerCd,0.1); return; }
     if(canFire && e._shotCd<=0){
@@ -26749,13 +26858,13 @@ function navalTick(e, dt){
       /* ⚠ NAVAL_BURST_LEN was renamed when a burst became a COUNT rather than a duration, and this
          reference was left behind — it threw a ReferenceError on every missile launch, which is
          why the patrol boat never fired once in any capture (drop 0808p). */
-      e._idle=1.5; e._shotCd=NAVAL_RELOAD;
+      e._idle=1.25; e._shotCd=3.8;
       const ang=Math.PI/2;                      // straight down — vertical fire only
       /* 'emissile' is the registered enemy-missile projectile — 'rocket' is not in PROJ and the
          suite caught it, which is exactly what that assertion is for (drop 0808k) */
       const mz=navalMuzzle(e);
-      eShootT(mz.x, mz.y, ang, 2.6, 'emissile', {szMul:1.9});
-      navalFlash(e, mz, 1.6, MUZZLE_ROCKET);     // a launch flash, bigger than the MG's
+      eShootT(mz.x, mz.y, ang, 3.05, 's1jungleMissile', {szMul:1.28});
+      navalFlash(null, mz, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:42,life:0.17});
       e._recoil=0.22;
       shake=Math.max(shake, 6);
       if(Audio.SFX.expBig) Audio.SFX.expBig();
@@ -26769,9 +26878,16 @@ function navalTick(e, dt){
    in it is tunable by accident any more. */
 const SWIRL_HZ = 7.4, SWIRL_AMP = 1.9*60/7.4;
 function eShootT(x,y,ang,spd,kind,opts){
-  eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, w:7,h:7, kind:kind||'bolt',
-    t:0, _ph:(Math.random()*8)|0, pal:opts&&opts.pal, tint:opts&&opts.tint, szMul:opts&&opts.szMul});
-  enemyShotSfx(kind);
+  opts=opts||{};
+  const shot={x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, spd:spd, ang:ang,
+    w:opts.w||7,h:opts.h||7, kind:kind||'bolt',
+    t:0, _ph:(Math.random()*8)|0, pal:opts.pal, tint:opts.tint, szMul:opts.szMul,
+    _curve:opts.curve||0, _s1Impact:opts.impact||null};
+  eBullets.push(shot);
+  /* A twin barrel is one report, not two stacked samples. Burst callers silence the partner
+     round so the fast Stage-1 cadence stays punchy without recreating the ear-splitting overlap. */
+  if(!opts.silent) enemyShotSfx(kind);
+  return shot;
 }
 
 
