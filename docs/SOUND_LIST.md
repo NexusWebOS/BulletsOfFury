@@ -45,7 +45,7 @@ The V4 bank also includes dedicated enemy pulse/heavy/scatter lasers, elemental 
 | pilot select | `pilot_select.mp3` |
 | campaign map | `campaign_map.mp3` |
 | password and stage-clear stats | `password_and_stage_clear.mp3` |
-| stages 1–9 | dedicated `stage1_...mp3` through `stage9_bonus_warp_run.mp3` tracks |
+| stages 1–9 | dedicated `stage1_...mp3` through `stage9_rival_dog_showdown.mp3` tracks |
 | bosses 1–8 | dedicated `boss1_...mp3` through `boss8_vile_existence.mp3` tracks |
 | credits | the retained former Stage 8 theme |
 

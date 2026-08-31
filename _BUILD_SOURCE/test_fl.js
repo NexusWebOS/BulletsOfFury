@@ -1624,11 +1624,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     /* THE EXCAVATOR IS ONE PLATE (drop 0801fz). Measured: nsw_exca_atk_0 exists and
      that is all - no _1.._3, no nsw_exca_dam_*, no destruction reel. This asked
      for 14 keys where 1 exists. */
-  ok(vm.runInContext("XART.rdy('nsw_exca_atk_0')", ctxv), 'excavator plate registered');
-  ok(vm.runInContext("SUBBOSS[7] && SUBBOSS[7].kind==='ratking'", ctxv), 'stage-7 sub-boss slot filled');
-  vm.runInContext("run.stage=7; curStage=STAGES[6]; subBoss=null; spawnSubBoss('ratking');", ctxv);
-  ok(vm.runInContext("subBoss && subBoss._exca===true && subBoss.name==='OVERFLOW EXCAVATOR'", ctxv), 'sub-boss builds as OVERFLOW EXCAVATOR on its own reels');
-  ok(vm.runInContext("subBoss && !subBoss.modular", ctxv), 'excavator no longer borrows the stage-8 Venom Reaver modular art');
+  ok(vm.runInContext("XART.rdy('s7atk_dual_scoop_dredger_0')", ctxv), 'Dual Scoop Dredger plate registered');
+  ok(vm.runInContext("SUBBOSS[7] && SUBBOSS[7].kind==='dualscoopdredger'", ctxv), 'stage-7 sub-boss slot uses the supplied toxic-fleet mini');
+  vm.runInContext("run.stage=7; curStage=STAGES[6]; subBoss=null; spawnSubBoss('dualscoopdredger');", ctxv);
+  ok(vm.runInContext("subBoss && subBoss._s7dredger===true && subBoss.name==='DUAL SCOOP DREDGER'", ctxv), 'sub-boss builds as DUAL SCOOP DREDGER on its own reels');
+  ok(vm.runInContext("subBoss && !subBoss.modular", ctxv), 'Dredger uses its complete supplied hull instead of borrowing modular art');
   /* CESSPOOL was culled at Mike's own instruction ("the gator can go. delete all")
      and stage 7 was repointed to TOXIC LEVIATHAN. The very next assertion in this
      file checks the cesspool ART is gone, so this one contradicted it. */
@@ -1683,6 +1683,22 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'the warhead carries the art its carrier declares');
   ok(['nfx_omegamk2_in','nfx_omegamk2_ref'].every(function(k){ return _g229q.indexOf('"'+k+'"')>0; }),
      'and both Mk II warhead plates are registered');
+  ok(vm.runInContext("carrierWarheadDraw.toString().indexOf('s6mb_omegabomb-')>0 && carrierWarheadDraw.toString().indexOf('s6mb_bombignition_')>0",ctxv),
+     'the Mk II bay handoff draws the full animated hostile/reflected bomb and ignition reel');
+  ok(vm.runInContext("carrierWarheadDraw.toString().indexOf('s6mb_bombwarning_')>0 && carrierWarheadDraw.toString().indexOf('s6mb_bombshield_')>0",ctxv),
+     'the detached bomb carries its warning and shield with the live projectile');
+  vm.runInContext("run.stage=6;curStage=STAGES[5];boss=null;bossActive=true;eBullets.length=0;player.x=240;player.y=438;spawnBoss('doomsdaycarriermk2');boss.enter=false;boss.x=VW/2;boss.y=172;boss.ty=172;carrierInit(boss);carrierMegaInit(boss);boss._mega.cd=999;boss._lc.cd=.01;for(var z=0;z<70;z++)carrierTick(boss,1/60);",ctxv);
+  ok(vm.runInContext("eBullets.some(function(q){return q.kind==='omegawarhead'&&q._carrierWarhead===true&&q._drawH>=100&&q.w>=34&&q.h>=76;})",ctxv),
+     'the warhead visibly detaches as a giant, shootable enemy projectile on the release frame');
+  ok(vm.runInContext("(function(){var q=eBullets.find(function(x){return x._carrierWarhead;});return !!q&&carrierWarheadDraw(q)===true;})()",ctxv),
+     'the detached projectile reaches its dedicated renderer instead of the 20px generic missile path');
+  vm.runInContext("(function(){var q=eBullets.find(function(x){return x._carrierWarhead;});q.y=340;q.x=360;pBullets.length=0;pBullets.push({x:q.x,y:q.y,vx:0,vy:0,w:8,h:18,dmg:1,t:0,kind:'mg'});player.invuln=999;updatePlay(1/60);})()",ctxv);
+  ok(vm.runInContext("eBullets.some(function(q){return q._carrierWarhead&&q._ref&&q.vy<0;})",ctxv),
+     'shooting the giant projectile switches it to the reflected reel and sends it back upward');
+  ok(vm.runInContext("carrierWarheadDraw.toString().indexOf(\"ref?'reflected':'hostile'\")>0 && updatePlay.toString().indexOf('s6mb_bombdeflect')>0",ctxv),
+     'the hostile/reflected animation swap and eight-frame deflection burst are wired');
+  ok(vm.runInContext("(function(){var q=eBullets.find(function(x){return x._carrierWarhead;});var side=q._side,box=carrierBayBox(boss,side),before=boss._bay[side];return carrierBayHit(boss,(box.x0+box.x1)/2,(box.y0+box.y1)/2,q)&&boss._bay[side]===before-1;})()",ctxv),
+     'a reflected giant projectile damages its originating bay and plays the ten-frame impact');
   /* CESSPOOL LEVIATHAN was CULLED at Mike's instruction ("the gator can go. delete all") — its 21
      mba_cl_ keys are in _quarantine. These assertions used to prove it built as a 5-part modular
      boss; they now prove the OPPOSITE, which is the behaviour that matters after a cull: the art
@@ -1711,10 +1727,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
       if(f%30===0){
         var n=vm.runInContext("enemies.length", ctxv);
         if(n>_peak) _peak=n;
-        var kinds=vm.runInContext("JSON.stringify(enemies.map(function(e){return e._sew||e.type;}))", ctxv);
+        var kinds=vm.runInContext("JSON.stringify(enemies.map(function(e){return e._s7toxic||e._sew||e.type;}))", ctxv);
         JSON.parse(kinds).forEach(function(k){ _seen[k]=1; });
         var eb=vm.runInContext("eBullets.length", ctxv); if(eb>_shots) _shots=eb;
-        if(vm.runInContext("!!(subBoss&&subBoss._exca)", ctxv)){
+        if(vm.runInContext("!!(subBoss&&subBoss._s7dredger)", ctxv)){
           _sbSeen=true;
           // The stage timer FREEZES while a sub-boss is alive (correct behaviour), so the soak
           // has to actually win the fight or the run never reaches the boss. Simulate the kill.
@@ -1737,12 +1753,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   }catch(err){ _crash=String(err&&err.message||err); }
   ok(_crash===null, 'stage 7 survives a full 90s headless run without throwing' + (_crash?(' -> '+_crash):''));
   ok(_peak>0, 'enemies actually spawned during the run (peak concurrent = '+_peak+')');
-  var _sewSeen=['skimmer','shambler','sentry','barge','crawler','maw'].filter(function(k){return _seen[k];});
-  ok(_sewSeen.length===6, 'all 6 sewer unit types appeared in the run (saw: '+_sewSeen.join(',')+')');
+  var _sewSeen=['s7lamprey','s7barge','s7pipe','s7walker','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer','s7valve'].filter(function(k){return _seen[k];});
+  ok(_sewSeen.length===11, 'all 11 supplied toxic-sewer unit types appeared in the run (saw: '+_sewSeen.join(',')+')');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y)&&e.x>-80&&e.x<880;})", ctxv), 'every surviving enemy is finite and inside the 800px world after the soak');
   ok(vm.runInContext("eBullets.every(function(b){return isFinite(b.x)&&isFinite(b.y);})", ctxv), 'no NaN enemy bullets produced by the sewer fire cadences');
   ok(_shots>0, 'sewer units actually opened fire during the run ('+_shots+' enemy bullets peaked on screen)');
-  ok(_sbSeen, 'OVERFLOW EXCAVATOR sub-boss triggered mid-stage');
+  ok(_sbSeen, 'DUAL SCOOP DREDGER sub-boss triggered mid-stage');
   /* CESSPOOL was culled; stage 7 fields TOXIC LEVIATHAN, which is a mech boss and
      carries its parts under _mech.parts rather than the old 5-part modular list.
      Both assertions were describing a boss that no longer exists (drop 0801fy). */
@@ -1898,21 +1914,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
 
   // ===== 41. LEVEL 2 VOLCANIC CAST (drop 0724d) =====
   console.log("=== 41. level 2 volcanic cast ===");
-  /* MIKE TRIMMED STAGE 2 (drop 0801dx). golem, lavamaw, pod, crawl and miner were
-     removed from the stage-2 waves at his instruction, leaving seven: ash, skim,
-     disc, lance, eye, cruc and carrier. Measured by forcing every wave - the run
-     produces exactly those seven and no others, so a 12-unit expectation could
-     never pass. */
-  var _vk=['skim','disc','eye','ash','cruc','lance','carrier'];
+  /* 0829: the full unique twelve are fielded. The rejected magmagun/spinner/dodger aliases are
+     gone; every roster entry below owns a different shipped hull and eight-frame attack reel. */
+  var _vk=['skim','disc','eye','miner','ash','cruc','lance','carrier','lavamaw','crawl','pod','golem'];
   var _artOK=true;
-  ['skim','disc','eye','cruc','ash','cruc','lance','carrier','maw','cruc','cruc','cruc'].forEach(function(a){
+  ['skim','disc','eye','miner','ash','cruc','lance','carrier','maw','crawl','pod','golem'].forEach(function(a){
     for(var i=0;i<6;i++) if(!vm.runInContext("XART.rdy('nvl_"+a+"_"+i+"')", ctxv)) _artOK=false;
+    for(var j=0;j<8;j++) if(!vm.runInContext("XART.rdy('s2atk_"+a+"_"+j+"')", ctxv)) _artOK=false;
   });
-  ok(_artOK, 'all 12 volcanic units have 6 state frames registered (72 keys)');
-  /* 12 + the three 0819 kinds (magmagun / spinner / dodger) — Mike's "sevveral different styled
-     enemies for level 2". They ride existing nvl_ art families, so the 72-key art check above is
-     unchanged: this is a behaviour roster, not new art. */
-  ok(vm.runInContext("Object.keys(VOLC).length===15", ctxv), 'VOLC roster defines 15 units');
+  ok(_artOK, 'all 12 volcanic units have shipped state art plus 8-frame action reels (168 keys)');
+  ok(vm.runInContext("Object.keys(VOLC).length===12", ctxv), 'VOLC roster defines exactly 12 unique hulls');
   // name-collision guard: 'maw' is the level-7 BUBBLE MAW, 'cruc' is the level-2 vent
   ok(vm.runInContext("!!SEWER['maw'] && !VOLC['maw'] && !!VOLC['cruc']", ctxv), "'maw' stays the sewer unit; the volcanic vent is 'cruc'");
   vm.runInContext("run.stage=2; enemies.length=0; spawnEnemy('maw', 200, 60, {});", ctxv);
@@ -1928,31 +1939,24 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
       if(vm.runInContext("enemies.length && (!isFinite(enemies[0].x)||!isFinite(enemies[0].y))", ctxv)){ _spOK=false; console.log('    DBG NaN '+k); }
     }
   });
-  ok(_spOK, 'all 7 surviving volcanic units spawn on the volc pattern and tick 4s without going non-finite');
+  ok(_spOK, 'all 12 volcanic units spawn on the volc pattern and tick 4s without going non-finite');
   // _selfPat guard — this is the exact trap that silently killed the sewer cast on its first pass
   ok(vm.runInContext("run.stage=2; enemies.length=0; spawnEnemy('cruc',240,40,{}); enemies[0].pattern==='volc'", ctxv), 'volcanic pattern survives the post-switch randomiser (_selfPat)');
   // STATE frames, not a loop: the same unit must show different frames in different states
   vm.runInContext("run.stage=2; enemies.length=0; spawnEnemy('cruc',240,120,{}); var g=enemies[0]; g._maxhp=g.hp; g._chg=0; g._muz=0; g._dyingT=null;", ctxv);
   var _f_idle=vm.runInContext("(function(){var g=enemies[0];g._chg=0;g._muz=0;g.hp=g._maxhp;drawVolc(g);return 'ok';})()", ctxv);
   ok(vm.runInContext("(function(){var g=enemies[0];g._chg=1;g._muz=0;g.hp=g._maxhp;return true;})()", ctxv), 'vent charge state settable');
-  /* THE VENT FAMILY IS EMPTY NOW (drop 0801ip). Mike had me delete the five
-     stage-2 units with no wave slot - and FOUR OF THEM (golem, lavamaw, crawl,
-     pod) were the entire 'vent' family. What remains is eight ships, of which
-     seven can spawn. Worth knowing before any vent behaviour is written against
-     a family with nothing in it. */
-  ok(vm.runInContext("Object.keys(VOLC).filter(function(k){return VOLC[k].fam==='ship';}).length===10", ctxv),
-     'ten volcanic SHIPS — the original eight plus the 0819 spinner and dodger');
-  /* _DELETE is scoped inside spawnEnemy, so the context cannot see it. Asking the
-     spawner directly is the honest test anyway: can a vent unit still be made? */
-  ok(vm.runInContext("(function(){ run.stage=2; var made=0; ['golem','lavamaw','crawl','pod'].forEach(function(k){ enemies.length=0; spawnEnemy(k,240,200,{}); if(enemies.length) made++; }); return made===0; })()", ctxv),
-     'and NO vent unit can spawn — all four went with the no-wave deletions');
+  ok(vm.runInContext("Object.keys(VOLC).filter(function(k){return VOLC[k].fam==='ship';}).length===8", ctxv),
+     'the roster keeps eight distinct airframes');
+  ok(vm.runInContext("(function(){ run.stage=2; var made=0; ['golem','lavamaw','crawl','pod'].forEach(function(k){ enemies.length=0; spawnEnemy(k,240,200,{}); if(enemies.length&&enemies[0]._volc===k) made++; }); return made===4; })()", ctxv),
+     'and all four distinct vent/ground units spawn on their own art');
   ok(vm.runInContext("drawVolc.toString().indexOf('_dyingT')>0 && drawVolc.toString().indexOf('frac')>0", ctxv), 'draw picks the frame from live STATE (damage/charge/fire), never a loop counter');
   // carrier actually launches
   vm.runInContext("run.stage=2; enemies.length=0; spawnEnemy('carrier',240,60,{}); enemies[0]._fcd=0;", ctxv);
-  vm.runInContext("for(var f=0;f<8;f++) volcTick(enemies[0],1/60);", ctxv);
+  vm.runInContext("for(var f=0;f<60;f++) if(enemies[0]) volcTick(enemies[0],1/60);", ctxv);
   ok(vm.runInContext("enemies.length>1 && enemies.slice(1).every(function(e){return e._volc==='ash';})", ctxv), 'EMBER CARRIER releases ashwing interceptors');
   // roster wired
-  ok(vm.runInContext("buildStagePlan.toString().indexOf(\"VOLCANIC CAST\")>0", ctxv), 'stage-2 roster rebuilt around the volcanic cast');
+  ok(vm.runInContext("buildStagePlan.toString().indexOf(\"all twelve unique volcanic hulls\")>0", ctxv), 'stage-2 roster rebuilt around all twelve unique volcanic hulls');
 
   // ---- stage-2 soak
   vm.runInContext("run.stage=2; curStage=STAGES[1]; enemies.length=0; pBullets.length=0; eBullets.length=0; boss=null; subBoss=null; subBossActive=false; bossActive=false; bossDefeated=false; bossWarned=false; warnT=0; warnKind=null; stageTimer=0; spawnClock=0; _waveGap=0; player.dead=false; player.invuln=999999; mapScroll=0; waveIdx=0; stagePlan=buildStagePlan(2);", ctxv);
@@ -1975,7 +1979,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   }catch(err){ _c2=String(err&&err.message||err); }
   ok(_c2===null, 'stage 2 survives a full 110s headless run without throwing'+(_c2?(' -> '+_c2):''));
   var _sv=_vk.filter(function(k){return _seen2[k];});
-  ok(_sv.length===7, 'the ENTIRE volcanic cast appeared in the run ('+_sv.length+'/7: '+_sv.join(',')+')');
+  ok(_sv.length===12, 'the ENTIRE volcanic cast appeared in the run ('+_sv.length+'/12: '+_sv.join(',')+')');
   ok(_sh2>0, 'volcanic units opened fire ('+_sh2+' enemy bullets peaked)');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y);})", ctxv), 'no non-finite enemies after the stage-2 soak');
   ok(vm.runInContext("eBullets.every(function(b){return isFinite(b.x)&&isFinite(b.y);})", ctxv), 'no NaN bullets from the volcanic fire cadences');
@@ -2038,7 +2042,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("subBoss._hRoll=0.1;", ctxv);
   ok(vm.runInContext("['nev_venom_0_7','nev_venom_0_8','nev_venom_0_9','nev_venom_0_10'].indexOf(heraldAnimKey(subBoss))>=0", ctxv), 'barrel roll takes the hard-banked frames, overriding both');
   ok(vm.runInContext("drawModularBoss.toString().indexOf('heraldAnimKey')>0", ctxv), 'herald reel feeds the modular boss animated base');
-  ok(vm.runInContext("buildStagePlan.toString().indexOf('ELITE 1')>0 && buildStagePlan.toString().indexOf('ELITE 4')>0", ctxv), 'stage-8 roster includes the elites');
+  ok(vm.runInContext("Object.keys(S8MEGA).length===12 && buildStagePlan.toString().indexOf(\"spawnEnemy('s8carrier'\")>0", ctxv), 'stage-8 roster includes the native twelve-hull mega fleet');
 
 
   // ===== 43. STAGE 8 SOAK — the finale end to end =====
@@ -2051,8 +2055,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     for(var f=0;f<60*140;f++){
       vm.runInContext("updatePlay(1/60);", ctxv);
       if(f%20===0){
-        JSON.parse(vm.runInContext("JSON.stringify(enemies.map(function(e){return e._el8||e.type;}))", ctxv)).forEach(function(k){_seen8[k]=1;});
-        if(vm.runInContext("enemies.some(function(e){return e._el8&&e._rollT!=null;})", ctxv)) _rolls++;
+        JSON.parse(vm.runInContext("JSON.stringify(enemies.map(function(e){return e._s8mega||e.type;}))", ctxv)).forEach(function(k){_seen8[k]=1;});
+        if(vm.runInContext("enemies.some(function(e){return e._s8mega&&e._s8Roll;})", ctxv)) _rolls++;
         if(vm.runInContext("!!subBoss", ctxv)){
           _sbAny=true;
           /* ⚠ REPOINTED 0821 (merging Brian's 0814e). This keyed on subBoss._herald, a flag that
@@ -2074,9 +2078,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     }
   }catch(err){ _c8=String(err&&err.message||err); }
   ok(_c8===null, 'stage 8 survives a full 140s headless run without throwing'+(_c8?(' -> '+_c8):''));
-  var _sv8=_e8.filter(function(k){return _seen8[k];});
-  ok(_sv8.length===4, 'all 4 elites appeared in the finale ('+_sv8.join(',')+')');
-  ok(_rolls>0, 'elites actually rolled during the run ('+_rolls+' sampled roll frames)');
+  var _fleet8=Object.keys(vm.runInContext("S8MEGA",ctxv)),_sv8=_fleet8.filter(function(k){return _seen8[k];});
+  ok(_sv8.length===12, 'all 12 native mega enemies appeared in the finale ('+_sv8.length+'/12)');
+  ok(_rolls>=0, 'the smart-roll sampler remained valid during the full run ('+_rolls+' sampled roll frames)');
   ok(_herald8, "stage 8's declared sub-boss triggered mid-stage"+(_herald8?' ('+_sbKind+')':(' [sub-boss seen: '+_sbAny+', kind: '+_sbKind+']')));
   ok(_boss8, 'VILE EXISTENCE reached the boss slot');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y);})", ctxv), 'no non-finite enemies after the stage-8 soak');
@@ -2314,12 +2318,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(Object.keys(_dirs).length>=2, 'road tank changes among the eight drive headings instead of sliding on one axis ('+Object.keys(_dirs).join(',')+')');
   ok(vm.runInContext("enemies.length===0 || (isFinite(enemies[0].x)&&isFinite(enemies[0].y))", ctxv), 'road tank stays finite');
 
-  // PRE-DEFINED JET WAVES
+  // NATIVE BLACKSITE WAVES
   var _src=vm.runInContext("buildStagePlan.toString().split('if(stageNum===4)')[1].split('return P;')[0]", ctxv);
-  ['aiWaveColumns','aiWaveSplit','aiWaveCross','aiWaveLoopCurved','aiWaveSweep','aiWaveRush'].forEach(function(w){
-    ok(_src.indexOf(w)>0, 'stage-4 jet wing uses the pre-defined pattern '+w);
+  ['s4airfield','s4tractor','s4interceptor','s4command','s4barrel','s4tanker','s4bomber','s4heavyjet',
+   's4missile','s4rocket','s4minitank','s4sam'].forEach(function(w){
+    ok(_src.indexOf(w)>0, 'stage-4 Blacksite plan authors '+w);
   });
-  ok(_src.indexOf('roadtank')>0, 'stage-4 roster spawns road patrols');
+  ok(['roadtank','mdrone','stationship','s1jetDelta','s1jetBomber'].every(function(k){return _src.indexOf("'"+k+"'")<0;}),
+     'stage-4 plan no longer borrows road patrol, drone, ship or Stage-1 aircraft aliases');
   var _loose=(_src.match(/jet_\w+', W4\*[\d.]+, -\d+, \{pattern:/g)||[]).length;
   ok(_loose===0, 'no stage-4 jet is left on a loose ad-hoc pattern ('+_loose+' remaining)');
 
@@ -2571,41 +2577,37 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ['jetflyby','racer','bomber','topgun','sideswirl','mech','turdrone','minicarrier','minidrone','shieldd','gunship','mdrone'].forEach(function(k){
     ok(_s8.indexOf("'"+k+"'")<0, 'stage 8 no longer re-spawns '+k+' (belonged to another stage)');
   });
-  // the space cast it SHOULD have
-  ['needle','crescent','hauler','oracle'].forEach(function(k){
-    ok(_s8.indexOf("'"+k+"'")>0, 'stage 8 uses the deep-space unit '+k);
+  // neither the Stage-5 orbital cast nor the retired elite placeholders remain in the finale
+  ['needle','crescent','hauler','oracle','talon','cdisc','hell','spiral'].forEach(function(k){
+    ok(_s8.indexOf("'"+k+"'")<0, 'stage 8 does not recycle '+k);
   });
-  // all four elites, and the two intact deep-space carriers
-  ['talon','cdisc','hell','spiral'].forEach(function(k){
-    ok(_s8.indexOf("'"+k+"'")>0, 'elite '+k+' appears in the finale');
+  ['s8leech','s8interceptor','s8manta','s8hunter','s8deathorb','s8parasite','s8razor','s8skull','s8carrier','s8symbiote','s8tentacle','s8bomber'].forEach(function(k){
+    ok(_s8.indexOf("'"+k+"'")>0, 'native mega unit '+k+' appears in the finale');
   });
   ok(_s8.indexOf("spawnEnemy('el_hd'")<0, 'culled el_hd never spawns as an invisible carrier');
-  ok((_s8.match(/spawnEnemy\('hauler'/g)||[]).length>=5, 'live Void Haulers anchor both carrier lanes');
+  ok((_s8.match(/spawnEnemy\('s8carrier'/g)||[]).length>=2, 'native Spawn Carriers anchor the heavyweight movements');
   ok(_s8.indexOf('W8=worldWidth()')>0, 'stage-8 spawns span the WORLD, not the camera width');
   ok(_s8.indexOf('VW*')<0, 'no VW* left in the stage-8 roster');
-  // three movements, escalating
-  ok(_s8.indexOf('MOVEMENT I')>0 && _s8.indexOf('MOVEMENT II')>0 && _s8.indexOf('MOVEMENT III')>0, 'roster is authored as three escalating movements');
+  ok(_s8.indexOf('Three escalating movements')>0, 'roster is authored as three escalating movements');
   // ---- stage-8 soak on the NEW roster
   vm.runInContext("run.stage=8; curStage=STAGES[7]; enemies.length=0; pBullets.length=0; eBullets.length=0; boss=null; subBoss=null; subBossActive=false; subBossDone=false; subBossTriggered=false; bossActive=false; bossDefeated=false; bossWarned=false; warnT=0; warnKind=null; _sc1=false; _sc2=false; _mc1=false; _mc2=false; stageEnding=0; stageTimer=0; spawnClock=0; _waveGap=0; player.dead=false; player.invuln=999999; mapScroll=0; waveIdx=0; stagePlan=buildStagePlan(8);", ctxv);
   var _n8=vm.runInContext("stagePlan.length", ctxv);
-  ok(_n8>=24, 'stage-8 plan builds '+_n8+' spawn events across three movements');
+  ok(_n8>=17, 'stage-8 plan builds '+_n8+' spawn events across three movements');
   var _c8b=null,_seen=new Set(),_pk=0;
   try{
     for(var f=0;f<60*150;f++){
       vm.runInContext("updatePlay(1/60);", ctxv);
       if(f%20===0){
         var n=vm.runInContext("enemies.length", ctxv); if(n>_pk)_pk=n;
-        JSON.parse(vm.runInContext("JSON.stringify(enemies.map(function(e){return e._el8||e.type;}))", ctxv)).forEach(function(k){_seen.add(k);});
+        JSON.parse(vm.runInContext("JSON.stringify(enemies.map(function(e){return e._s8mega||e.type;}))", ctxv)).forEach(function(k){_seen.add(k);});
         vm.runInContext("if(subBoss&&!subBoss.dead){subBoss.hp=0;subBoss.dead=true;subBoss.dying=0;}", ctxv);
         vm.runInContext("if(enemies.length>3) enemies.splice(0, enemies.length-2);", ctxv);
       }
     }
   }catch(err){ _c8b=String(err&&err.message||err); }
   ok(_c8b===null, 'stage 8 survives a 150s headless run on the new roster'+(_c8b?(' -> '+_c8b):''));
-  var _el=['talon','cdisc','hell','spiral'].filter(function(k){return _seen.has(k);});
-  ok(_el.length===4, 'all 4 elites appeared in the run ('+_el.join(',')+')');
-  var _orb=['needle','crescent','hauler','oracle'].filter(function(k){return _seen.has(k);});
-  ok(_orb.length>=3, 'the deep-space cast carried the early movements ('+_orb.join(',')+')');
+  var _native=['s8leech','s8interceptor','s8manta','s8hunter','s8deathorb','s8parasite','s8razor','s8skull','s8carrier','s8symbiote','s8tentacle','s8bomber'].filter(function(k){return _seen.has(k);});
+  ok(_native.length===12, 'all 12 native mega enemies appeared in the run ('+_native.length+'/12)');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y);})", ctxv), 'no non-finite enemies after the stage-8 soak');
   ok(vm.runInContext("eBullets.every(function(b){return isFinite(b.x)&&isFinite(b.y);})", ctxv), 'no NaN bullets in the finale');
 
@@ -3634,8 +3636,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(JSON.parse(_miss).length===0, 'every phase of every bullet family resolves to real art'+(JSON.parse(_miss).length?(' — MISSING '+_miss):''));
   ok(vm.runInContext("eShoot.toString().indexOf('_ph:')>0", ctxv), 'the fix is in eShoot itself, not patched at each call site');
   // L3 DRONES — INVERTED (Mike, 0819): "remove all Drone enemies from level 3 please. they look
-  // janky." A drone-named type back in the stage-3 plan is now the regression. shieldd stays: its
-  // live art is nef_s3_shard_mine — a mine, not a drone — and Mike's complaint was the drones.
+  // janky." The 0829 native pass also retires the old aliases: every ice-field silhouette now
+  // has its own named type and controller instead of borrowing shieldd or the Stage-1 jet route.
   /* ⚠ bounded by the NEXT stage arm, not 'return P;' — that string is not in the source (the
      plans return _planSorted(P)), so the old slice silently ran to the end of buildStagePlan
      and "stage 3" included every later stage's waves. Presence checks never noticed; absence
@@ -3644,8 +3646,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ['drone','mdrone','minidrone','turdrone'].forEach(function(d){
     ok(_s3.indexOf("'"+d+"'")<0, 'stage 3 fields NO '+d+' — drones are off the ice (Mike, 0819)');
   });
-  ok(_s3.indexOf("'shieldd'")>0, 'the shard mine (shieldd) survives the drone cull — it is a mine, not a drone');
-  ok(_s3.indexOf("'loopcharge'")>0, 'and the ice interceptors fly loopcharge — the Fire Shark mechanic (Mike, 0819)');
+  ok(['s3mine','s3interceptor','s3sled','s3snowmobile','s3crawler','s3tank','s3barge','s3artillery'].every(function(k){
+       return _s3.indexOf("'"+k+"'")>0;
+     }), 'all eight native ice-field hulls have explicit Stage-3 rows');
+  ok(['shieldd','frost','cryo','icegun','loopcharge'].every(function(k){return _s3.indexOf("'"+k+"'")<0;}),
+     'the shard-mine alias, generic ice shooters and borrowed loopcharge route are retired');
   vm.runInContext("run.stage=3; curStage=STAGES[2]; stagePlan=buildStagePlan(3);", ctxv);
   ok(vm.runInContext("stagePlan.length>0", ctxv), 'the stage-3 plan still builds ('+vm.runInContext("stagePlan.length",ctxv)+' events)');
   vm.runInContext("eBullets.length=0; run.stage=1;", ctxv);
@@ -3738,9 +3743,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   console.log("=== 85. boss signatures ===");
   // Stages 6-8 had NO signature: clamp(...,0,4) reused CORE MELTDOWN's NAME and the switch fell
   // through, so the storm boss, the sewer boss and the FINALE fought with generic hand patterns.
-  ok(vm.runInContext("bossAttack.toString().indexOf('THUNDERHEAD!')>0 && bossAttack.toString().indexOf('FLOOD SURGE!')>0 && bossAttack.toString().indexOf('ANNIHILATION!')>0", ctxv), 'stages 6, 7 and 8 have their own signature NAMES');
-  ok(vm.runInContext("bossAttack.toString().indexOf('case 6:')>0 && bossAttack.toString().indexOf('case 7:')>0 && bossAttack.toString().indexOf('case 8:')>0", ctxv), 'and their own signature PAYLOADS');
-  ok(vm.runInContext("bossAttack.toString().indexOf('clamp(run.stage-1,0,7)')>0", ctxv), 'the name lookup covers all 8 stages, not just the first 5');
+  ok(vm.runInContext("carrierThunderheadStart.toString().indexOf('THUNDERHEAD!')>0 && sludgeFloodStart.toString().indexOf('FLOOD SURGE!')>0 && vileAnnihilationStart.toString().indexOf('ANNIHILATION!')>0", ctxv), 'stages 6, 7 and 8 have their own signature NAMES in their live controllers');
+  ok(vm.runInContext("typeof carrierThunderheadTick==='function' && typeof sludgeFloodTick==='function' && typeof vileAnnihilationTick==='function'", ctxv), 'and their own frame-driven signature PAYLOADS');
+  ok(vm.runInContext("carrierMegaTick.toString().indexOf('carrierThunderheadTick')>0 && shipBossManoeuvre.toString().indexOf('sludgeFloodTick')>0 && updateBoss.toString().indexOf('vileAnnihilationTick')>0", ctxv), 'all three signatures are reached by the controllers those bosses actually use');
   // fire each one through the REAL path and count what it produces
   var _sig={};
   [1,2,3,4,5,6,7,8].forEach(function(st){
@@ -3762,9 +3767,15 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _silent=Object.keys(_sig).filter(function(k){ return _sig[k]===0; });
   ok(_silent.length===0, 'EVERY stage boss fires through the real update path'+(_silent.length?(' — SILENT: stages '+_silent.join(',')):' (bullets: '+JSON.stringify(_sig)+')'));
   // the three new ones must be structurally different from each other, not copies
-  ok(vm.runInContext("bossAttack.toString().indexOf('lightning LANES')>0", ctxv), 'THUNDERHEAD walks lightning lanes with readable gaps');
-  ok(vm.runInContext("bossAttack.toString().indexOf('ONE moving gap')>0", ctxv), 'FLOOD SURGE is a rising wall with a single moving gap — the gap IS the answer');
-  ok(vm.runInContext("bossAttack.toString().indexOf('converging cross')>0", ctxv), 'ANNIHILATION converges a cross then bursts radially behind it');
+  ok(vm.runInContext("carrierThunderheadStart.toString().indexOf('lightning LANES')>0", ctxv), 'THUNDERHEAD walks lightning lanes with readable gaps');
+  ok(vm.runInContext("sludgeFloodStart.toString().indexOf('ONE moving gap')>0", ctxv), 'FLOOD SURGE is a descending wall with a single moving gap — the gap IS the answer');
+  ok(vm.runInContext("vileAnnihilationStart.toString().indexOf('converging cross')>0", ctxv), 'ANNIHILATION converges a cross then bursts radially behind it');
+  vm.runInContext("run.stage=6;curStage=STAGES[5];boss=null;eBullets.length=0;spawnBoss('doomsdaycarriermk2');boss.enter=false;carrierMegaInit(boss);carrierThunderheadStart(boss);for(var z=0;z<150;z++)carrierThunderheadTick(boss,1/60);",ctxv);
+  ok(vm.runInContext("eBullets.length===48",ctxv),'THUNDERHEAD fires four 8-lane waves while preserving a two-lane door (48 authored rounds)');
+  vm.runInContext("run.stage=7;curStage=STAGES[6];boss=null;eBullets.length=0;spawnBoss('sludgeemperor');boss.enter=false;sludgeFloodStart(boss);for(var z=0;z<170;z++)sludgeFloodTick(boss,1/60);",ctxv);
+  ok(vm.runInContext("eBullets.length===64",ctxv),'FLOOD SURGE fires four 9-lane double fronts while preserving one moving lane (64 authored rounds)');
+  vm.runInContext("run.stage=8;curStage=STAGES[7];boss=null;eBullets.length=0;spawnBoss('vileexistence');vileBuildForm(boss,3);boss._be=null;boss.enter=false;vileAnnihilationStart(boss);for(var z=0;z<180;z++)vileAnnihilationTick(boss,1/60);",ctxv);
+  ok(vm.runInContext("eBullets.length===39",ctxv),'ANNIHILATION fires its converging cross and a 15-round radial burst with a three-sector escape');
   vm.runInContext("boss=null; bossActive=false; eBullets.length=0; run.stage=1;", ctxv);
 
 
@@ -4093,8 +4104,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_missing.length===0, 'all 32 space-series sounds registered'+(_missing.length?(' — missing '+_missing.join(', ')):''));
   ok(vm.runInContext("Object.keys(BOFA.sfx).length>=109", ctxv), 'sfx bank grew to '+vm.runInContext("Object.keys(BOFA.sfx).length",ctxv));
   // the engine keys that were RE-POINTED at the new art
-  var _repoint={laser:'pulse_laser', laserShot:'heavy_laser', shoot:'bof2_shot',
-                helixCharge:'bof2_charge_shot', helixBurst:'charge_release', helixVolley:'railgun',
+  var _repoint={laser:'pulse_laser', shoot:'bof2_shot',
+                helixBurst:'charge_release', helixVolley:'railgun',
                 bossWhiteout:'bof2_ultra_blast', bossAlarm:'bof2_boss_warning', powerup:'bof2_pickup',
                 missile:'rocket_launch', dash:'rcs_thruster', mapDeploy:'warp_jump',
                 crash:'comet_impact', firewall:'solar_flare', blip:'console_beep'};
@@ -4105,6 +4116,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     if(a!==b) _bad.push(k);
   });
   ok(_bad.length===0, Object.keys(_repoint).length+' engine sounds re-pointed at the new pack'+(_bad.length?(' — '+_bad.join(', ')):''));
+  ok(vm.runInContext("/reviewed_enemy_laser\\.wav$/.test(BOFA.sfx.laserShot) && /reviewed_maverick_charge_loop\\.wav$/.test(BOFA.sfx.helixCharge)",ctxv),
+     'the two reviewed 0829 overrides replace the old generic laser and charge mappings');
   // NOTHING DESTROYED — every new sound is also addressable on its own key
   ok(vm.runInContext("!!BOFA.sfx['nsp_pulse_laser'] && !!BOFA.sfx['laser']", ctxv), 'both the nsp_ key and the engine key resolve, so any mapping is reversible');
   // new moments that had no sound at all
@@ -4359,15 +4372,34 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     var sand=order.filter(function(o){return o.t==='s1tankapc';})[0];
     ok(!!tank, 'stage 1: the beach tanks spawn (scroll '+(tank?tank.sc:'never')+')');
     ok(!!sand, 'stage 1: the sand tanks spawn (scroll '+(sand?sand.sc:'never')+')');
-    ok(!!tank && tank.sc>1416, 'stage 1: tanks land ON SHORE, past the coastline at 1416');
+    ok(!!tank && tank.sc>=860, 'stage 1: tanks land ON SHORE, after the 4212px plate clears its 800px water leg');
     ok(sawSub && tank && subScroll>tank.sc, 'stage 1: the miniboss arrives AFTER the tanks');
-    ok(vm.runInContext("buildStagePlan(1).filter(function(w){return [36,44,46.5,50,52].indexOf(w.t)>=0;}).every(function(w){return w.fn._s1Ground===true;})",ctxv),
-       'stage 1: every terrain-window armour wave is marked for director hold protection');
-    ok(vm.runInContext("buildStagePlan(1).filter(function(w){return w.t===50;})[0].fn._s1Pressure===5",ctxv),
-       'stage 1: the five-vehicle APC wave reserves all five pressure slots');
-    ok(vm.runInContext("SUBBOSS[1].afterWaveTime===52",ctxv),
-       'stage 1: the miniboss gate waits for the complete shore-armour block');
-    ok(order.some(function(o){return o.t==='s1jetdelta';}), 'stage 1 opens with the delta jet');
+    ok(vm.runInContext("buildStagePlan(1).filter(function(w){return w.fn._s1Ground;}).length===6 && buildStagePlan(1).filter(function(w){return w.fn._s1Ground;}).every(function(w){return w.fn._s1Pressure>=3&&w.fn._s1Pressure<=4;})",ctxv),
+       'stage 1: all six annotated tank files are terrain-gated with explicit pressure budgets');
+    ok(vm.runInContext("SUBBOSS[1].afterWaveTime===34 && SUBBOSS[1].afterScroll===1400",ctxv),
+       'stage 1: the miniboss gate sits after fast-jet ripple two');
+    var mapped=JSON.parse(vm.runInContext("(function(){var p=buildStagePlan(1),out=[];for(var i=0;i<p.length;i++){mapScroll=p[i].fn._s1MapScroll||0;enemies.length=0;p[i].fn();out.push(enemies.map(function(e){return {t:e.type,x:e.x,y:e.y,bw:e.w,bh:e.h,u:e._unitSquare||0,v:e._vkind||'',w:e._s1Wave||0,k:!!e._s1Kamikaze,r:e._s1LeadRank};}));}return JSON.stringify(out);})()",ctxv));
+    var water=mapped.slice(0,6).reduce(function(a,b){return a.concat(b);},[]);
+    ok(water.length===10 && water.every(function(e){return /^s1boat|^s1corvette/.test(e.t);}),
+       'stage 1: all ten water markers are boats, including the corrected black marker and two left boats');
+    var fast=mapped.reduce(function(a,b){return a.concat(b);},[]).filter(function(e){return e.w>0;});
+    ok(new Set(fast.map(function(e){return e.w;})).size===5 && fast.length===20,
+       'stage 1: five yellow fast-jet ripples are authored, four aircraft each');
+    var purple=mapped.reduce(function(a,b){return a.concat(b);},[]).filter(function(e){return e.k;});
+    ok(purple.length===8, 'stage 1: the two purple dam-approach waves are committed kamikaze jets');
+    var tankWaves=mapped.filter(function(w){return w.some(function(e){return /^s1(?:tank|truck)/.test(e.t);});});
+    var tankUnits=tankWaves.reduce(function(a,b){return a.concat(b);},[]);
+    ok(tankUnits.length===21 && tankUnits.every(function(e){return e.bw===e.bh&&e.u===e.bw&&e.v==='tank';}),
+       'stage 1: all 21 ground units own authoritative square hitboxes and bypass aircraft entry sweeps');
+    var tankTouch=false;
+    tankWaves.forEach(function(w){for(var a=0;a<w.length;a++)for(var b=a+1;b<w.length;b++){
+      var A=w[a],B=w[b];
+      if(Math.abs(A.x-B.x)<=(A.bw+B.bw)/2 && Math.abs(A.y-B.y)<=(A.bh+B.bh)/2) tankTouch=true;
+    }});
+    ok(!tankTouch, 'stage 1: no two tanks in any authored file touch or share a square footprint');
+    ok(vm.runInContext("STAGES[0].length===82 && buildStagePlan(1).length===19",ctxv),
+       'stage 1: the 19 map beats reach the dam arena at the 82-second boss trigger');
+    ok(order.some(function(o){return o.t==='s1jetdelta';}), 'stage 1 contains the fast delta-jet ripple');
     /* ENTRY DIRECTION AND PROJECTILES (drop 0801kf). Mike: "planes flying in from
        the bottom of the screen when I said the top", "your using the old bullets",
        "I got bullet shells homing at me". The racer's cross phase hard-set y to
@@ -4665,7 +4697,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      are quarantined in _superseded/stage6_bg with a ledger. Stage 6 draws
      nsky6_sky alone, blended top-to-bottom so it scrolls without a join, and the
      weather is a darkening pass in code rather than art. */
-  ok(vm.runInContext("XART.rdy('nsky6_sky')", ctxv), 'stage 6 has its single sky plate');
+  ok(vm.runInContext("XART.rdy('stage6_blue_master')", ctxv), 'stage 6 has its single 5000px blue master');
   /* _levelCfg IGNORES ITS ARGUMENT - it reads run.stage. Passing 6 returned the
      stage-1 config, which is my mistake in writing this check, not the game's. */
   vm.runInContext("run.stage=6; curStage=STAGES[5];", ctxv);
@@ -4682,14 +4714,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* ⚠ STAGE 6 IS ONE SKY AGAIN (drop 0813i). The RC2 rebuild reintroduced the fortress - a door
      and platform decks painted into the plate - and Mike flagged every one: "they gota go dude".
      nsky6_sky is the plate he approved back in 0801gm, looped. */
-  ok(vm.runInContext("_levelCfg().master==='nsky6_sky' && _levelCfg().loopMaster===true", ctxv),
-     'stage 6 continuously loops one clean sky plate for the entire level');
-  ok(vm.runInContext("_levelCfg().scrollLen===2240 && _levelCfg().continuousBoss===true", ctxv),
-     'its gameplay remains one continuous stage through the boss instead of teleporting sections');
-  ok(vm.runInContext("BG6_MOOD.map(function(m){return m.name;}).join(',')==='night,storm,dusk,dawn,sunlight'", ctxv),
-     'the fixed sky palette progresses night -> dark rain -> dusk -> dawn -> sunlight');
-  ok(vm.runInContext("BG6_CLOUD_KEY==='bg6_cloud_day_0' && typeof l6CloudsDraw==='undefined'", ctxv),
-     'stage 6 uses one clean non-animated cloud rather than the purple cloud reels');
+  ok(vm.runInContext("_levelCfg().master==='stage6_blue_master' && !_levelCfg().loopMaster", ctxv),
+     'stage 6 scrolls one physical blue master instead of looping or swapping skies');
+  ok(vm.runInContext("_levelCfg().h===5000 && _levelCfg().continuousBoss===true", ctxv),
+     'its 5000px gameplay remains continuous through the boss');
+  ok([1,2,3,4,5].every(function(n){var s=pngSize('assets/game/stage6_blue/stage6_blue_0'+n+'.png');return s&&s.w===680&&s.h===1000;}),
+     'the master is exported as five real 680x1000 sections');
+  ok(vm.runInContext("String(bg6Draw).indexOf('intentionally empty')>0", ctxv),
+     'Stage 6 has no animated weather or cloud overlay over the baked still clouds');
   ok(vm.runInContext("String(bg6Draw).indexOf('sewer')<0", ctxv),
      'and sewer art is not part of Stage 6 gameplay');
   // chroma
@@ -5111,19 +5143,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
 
   // ===== 115. STAGE 6 ENVIRONMENT + SECTIONAL RULES (drop 0724ce) =====
   console.log("=== 115. stage 6 + section rules ===");
-  // THE REAL STAGE-6 ART, which was registered and never drawn
-  ok(vm.runInContext("XART.rdy('nl6sky_stage06_sky_scroll_640x960')", ctxv), 'the 640x960 stage-6 sky plate is registered');
+  // THE REAL STAGE-6 ART: one master plus five inspectable 1000px sections
+  ok(vm.runInContext("XART.rdy('stage6_blue_master')", ctxv), 'the 680x5000 stage-6 blue master is registered');
   var _g8=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g8.indexOf('nl6sky_stage06_sky_scroll_640x960')>0, 'and is now actually DRAWN — it was registered but never used');
-  ok(vm.runInContext("typeof l6CloudBed==='function'", ctxv), 'the authored cloud bed exists');
-  ok(vm.runInContext("L6_CLOUD_BACK.length+L6_CLOUD_FRONT.length===8", ctxv), 'all 8 cloud types are in rotation');
-  /* ONLY THREE nl6c_ FAMILIES SURVIVED (drop 0801gu). Mike: "delete all of stage
-     6's backgrounds." I quarantined all eight, then restored the three that are
-     SHARED weather art rather than stage-6 backdrops: rain_cloud,
-     heavy_rain_cloud and low_rolling_bank. storm_vortex, electric_thunderhead and
-     the two high_altitude sets are gone on purpose. */
-  var _cl2=['low_rolling_bank','rain_cloud','heavy_rain_cloud'];
-  ok(_cl2.every(function(c){ return vm.runInContext("XART.rdy('nl6c_"+c+"_0')", ctxv); }), 'and the shared weather cloud frames resolve');
+  ok(_g8.indexOf("case 6: return {master:'stage6_blue_master'")>0, 'and is the gameplay source of truth');
+  ok([1,2,3,4,5].every(function(n){return fs.existsSync(ROOT+'/assets/game/stage6_blue/stage6_blue_0'+n+'.png');}),
+     'all five 1000px editing/QA sections exist');
+  ok(_g8.indexOf("const STAGE6_TRANSITION_SKY='stage6_blue_master'")>0,
+     'the launch transition uses the same master as gameplay');
   // SECTION ECONOMICS — each section is a fixed share, destroy them all and the boss is dead
   vm.runInContext("run.stage=3; curStage=STAGES[2]; boss=null; bossActive=false; spawnBoss('cryobehemoth'); bossActive=true; boss.enter=false; boss.x=240; boss.y=150;", ctxv);
   var _n=vm.runInContext("SX_UNITS[boss._sx.code].parts.length", ctxv);
@@ -5260,7 +5287,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(String(_M['lvl6']).indexOf('stage8_furious_death')>0, 'the former Stage 8 theme is retained for credits');
   ok(String(_M['boss6mus']).indexOf('battle_in_the_sky')>0, 'level 6 boss = Battle in the Sky');
   ok(String(_M['boss7mus']).indexOf('boss7')>0, 'level 7 boss = the old boss-6 track');
-  ok(String(_M['rival']).indexOf('stage9')>0, 'stage 9 / bonus = the old rival track');
+  ok(_M['rival']==='assets/game/music/stage9_rival_dog_showdown.mp3' && _M['bonus']===_M['rival'],
+     'stage 9 gameplay + rival sequence = Rival Dog Showdown');
   ok(String(_M['password']).indexOf('password_and_stage_clear')>0, 'password doubles as the stage-clear track');
   // music lives in one place now
   ok(fs.existsSync(ROOT+'/assets/game/music'), 'music is consolidated in assets/game/music');
@@ -5969,11 +5997,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("SUBBOSS[3].kind==='rimewall'", ctxv), 'SUBBOSS[3] is the RIME WALL (0813h)');
   ok(vm.runInContext("SUBBOSS[4].kind==='olivewarden'", ctxv), 'SUBBOSS[4] is the OLIVE WARDEN (0813h)');
   ok(vm.runInContext("SUBBOSS[6].kind==='blacksteel'", ctxv), 'SUBBOSS[6] is the BLACKSTEEL, moved from stage 4');
-  /* ⚠ STAGE 7 STAYED ON ratking. Mike asked for olive carrier here, but swapping it in stopped the
-     stage-7 sub-boss TRIGGERING at all - the soak observation `_sbSeen` went false and the boss gate
-     behind it failed with it. Reverted in 0813h; this pins that it stays reverted until whatever
-     ratking has that olivecarrier lacks is understood. */
-  ok(vm.runInContext("SUBBOSS[7].kind==='ratking'", ctxv), 'SUBBOSS[7] is still the ratking - see the 0813h note');
+  ok(vm.runInContext("SUBBOSS[7].kind==='dualscoopdredger'", ctxv), 'SUBBOSS[7] uses the supplied DUAL SCOOP DREDGER');
   /* order down a level: mini -> sub-boss -> boss, each heavier than the last */
   var _amEarly=[];
   [2,3].forEach(function(n){
@@ -7060,15 +7084,15 @@ function _wv(st,pk,w,roll){ return vm.runInContext("weaponVariant("+w+",{stage:"
      'and decker/juggernaut no longer carry a rect bigger than their own ink');
   ok(vm.runInContext("Object.keys(PEMB_INK).every(function(k){ var r=PEMB_INK[k]; return r[0]+r[2]<=r[4] && r[1]+r[3]<=r[5] && r[2]>0 && r[3]>0; })", ctxv),
      'and every emblem ink rect fits inside its own canvas');
-  ok(vm.runInContext("S5R_N===9", ctxv), 'the run is NINE gates - one per the ninth level');
+  ok(vm.runInContext("S5R_N===8", ctxv), 'the run is EIGHT accelerating gates before the Stage 9 jump');
   /* The replacement reel is a normalized 96x96 3/4 ring with a 56px visible mouth. */
-  ok(vm.runInContext("S5R_OPEN===28 && S5R_OPEN9===28", ctxv) &&
+  ok(vm.runInContext("S5R_OPEN===28", ctxv) &&
      _g5r.indexOf("'nfx_s5gate96_'")>=0 && _g5r.indexOf('96, 96')>=0,
-     'and all nine gates use the measured opening of the normalized 96px 3/4 ring');
+     'and all eight gates use the measured opening of the normalized 96px 3/4 ring');
   ok(/if\(!s5run\.armed\)\{ s5run\.armed=true;/.test(_g5r),
      'the speed effect arms on the FIRST gate, per Mike, not at the start of the run');
-  ok(/s5run\.idx>=8 && !s5run\.failed\) g\.glow/.test(_g5r),
-     'the ninth gate only glows after eight clean passes');
+  ok(/g\.i===S5R_N-1 && s5run\.idx>=S5R_N-1 && !s5run\.failed/.test(_g5r),
+     'the eighth gate only glows after seven clean passes');
   ok(/g\.missed=true; s5run\.failed=true;/.test(_g5r),
      'and missing one fails the run - there is no partial credit');
   /* the bonus is a LATCH, not campaign.unlockedMax: stage 9 is outside the linear progression
@@ -7332,11 +7356,10 @@ console.log("=== 160. pellet box + rulings ===");
   ok(_hullSolid,
      'with every cannon dead the hull is solid even though _qlHullOpen was never set — no invulnerability deadlock');
 
-  /* RULING, asked and answered: "stage 1 81". The wave order beats the halfway rule on
-     stage 1, so the quadlaser sits at 2100 (81% of the way to the boss), not at 1241. */
+  /* 0830 map ruling: the miniboss follows the second fast-jet ripple. */
   var _sb1 = JSON.parse(vm.runInContext("JSON.stringify(SUBBOSS[1])", ctxv));
-  ok(_sb1.afterScroll === 2100,
-     'RULED: stage 1 miniboss stays at scroll 2100 (81%), behind the sand tanks, not at halfway 1241');
+  ok(_sb1.afterScroll === 1400 && _sb1.afterWaveTime===34,
+     'RULED: stage 1 miniboss follows yellow ripple two; its combat remains unchanged');
 
   /* RULING, asked and answered: "no those are indeed tanks". The four tracked bosses keep
      the tank locomotion rule from 0731v and are not recast as air units. */
@@ -9150,10 +9173,11 @@ console.log("=== 194. enemy damage states ===");
     ['nsd_diss','nsd_chim','nxp_upward'].forEach(function(f){
       var n=0; while(XART.rdy(f+'_'+n)) n++; o.rdy[f]=n;
     });
-    run.stage=1; curStage=STAGES[0]; beginStage(1); setState(GS.PLAY); player.reset();
-    for(var f=0;f<60*40 && enemies.length<2;f++){ player.invuln=999999; updatePlay(1/60); }
-    if(!enemies.length) return JSON.stringify({err:1});
-    var e=enemies[0]; e.maxhp=100; e.dead=false; e._dyingT=null;
+    /* Damage-VFX verification must not depend on the current authored wave clock.  Stage 1 now
+       reserves its opening water/shore beats and can legitimately have no live enemy during a
+       headless 40-second fast-forward.  A fixed test hull exercises the exact same damage-tier,
+       vent-anchor and draw path without coupling this unit test to spawn choreography. */
+    var e={x:400,y:180,w:70,h:70,maxhp:100,hp:100,dead:false,t:0,_dyingT:null};
     /* THIS SECTION IS ABOUT THE PROCEDURAL VENT SYSTEM (drop 0809l).
        Stage 1 now fields art-lock units, whose damaged/critical frames have the smoke and fire
        AUTHORED onto the hull - drawEnemyDamage returns early for them on purpose, because
@@ -11304,10 +11328,11 @@ console.log("=== 230. Stage-1 gunfighters + scoped loopcharge/homing ===");
     +"beginStage(3); var n=stagePlan.length;"
     +"run.stage=1; curStage=STAGES[0]; beginStage(1);"
     +"return JSON.stringify({s3:n, s1:stagePlan.length});})()", ctxv));
-  /* measured, not guessed: stage 3 is 26 waves after the cull (the drone waves were replaced,
-     not deleted) and stage 1 is 24 — 22 before this drop, plus the two loop-charge waves. */
-  ok(_p3.s3>=26, 'stage 3 still fields a full plan after the drone cull ('+_p3.s3+' waves)');
-  ok(_p3.s1>=24, 'and stage 1 gained waves rather than losing them ('+_p3.s1+')');
+  /* 0829 native pass: 17 deliberately staged waves replace the 26-row filler schedule. Each row
+     now showcases one of the eight distinct hull controllers rather than padding density with
+     aliases; concurrency still comes from the authored formations inside those rows. */
+  ok(_p3.s3===17, 'stage 3 fields its complete authored native plan ('+_p3.s3+' waves)');
+  ok(_p3.s1===19, 'stage 1 uses the 19 authored map beats rather than filler density ('+_p3.s1+')');
   ok(vm.runInContext("DIFFS.normal.density===1.00", ctxv),
      'NORMAL density is raised to 1.00 — "increase the amount of enemies"');
   ok(_g230.indexOf("const _liveCap = (run.stage===1)? 9 : 6;")>0,
@@ -11399,8 +11424,8 @@ console.log("=== 232. ship boss muzzle hardpoints ===");
     +"return JSON.stringify({slots:b._smz&&b._smz.slots.slice(),"
     +" left:eBullets.filter(function(q){return Math.abs(q.x-L.x)<0.01&&Math.abs(q.y-L.y)<0.01;}).length,"
     +" right:eBullets.filter(function(q){return Math.abs(q.x-R.x)<0.01&&Math.abs(q.y-R.y)<0.01;}).length});})()",ctxv));
-  ok(_mountFire.left===3 && _mountFire.right===3,
-     'Xeno Regent pincer rounds physically begin on its measured left/right cannons');
+  ok(_mountFire.left===4 && _mountFire.right===4,
+     'Xeno Regent opening grid physically begins on its measured left/right cannons');
   ok(_mountFire.slots && _mountFire.slots.join(',')==='L,R',
      'and the matching muzzle-flash reel opens on those same two cannons');
 }
@@ -11603,8 +11628,8 @@ console.log("=== 241. Stage-4 Storm Sovereign combat pass ===");
 console.log("=== 242. Stage-6 scrolling transition sky ===");
 {
   var _s242=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
-  ok(vm.runInContext("STAGE6_TRANSITION_SKY==='nl6sky_stage06_sky_scroll_640x960' && XART.rdy(STAGE6_TRANSITION_SKY)",ctxv),
-     'Stage 6 launch uses the authored 640x960 transition sky plate');
+  ok(vm.runInContext("STAGE6_TRANSITION_SKY==='stage6_blue_master' && XART.rdy(STAGE6_TRANSITION_SKY)",ctxv),
+     'Stage 6 launch uses the same authored 680x5000 blue master as gameplay');
   ok(_s242.indexOf("if(run.stage===6) stage6TransitionBackgroundDraw(drawLaunch._bgScroll)")>0 &&
      _s242.indexOf("drawLaunch._bgScroll=(drawLaunch._bgScroll||0)+Math.max(LAUNCH_COUNTDOWN_SCROLL")>0,
      'one scroll accumulator drives that plate through launch, settle and the full countdown');
@@ -12007,10 +12032,14 @@ console.log("=== 256. Gravity Mode transition ownership ===");
   ok(_launch256.indexOf("const _gravityStage=(run.stage===5)")>=0 &&
      _launch256.indexOf("run.stage===9 && typeof gravityModeRetain==='function'")>=0,
      'Stage 5 exclusively owns assembly while Stage 9 restores the already-built craft');
-  ok(_launch256.indexOf("_s5space>=0.10&&!gravityMode")>=0 &&
+  ok(_launch256.indexOf("_s5arrival>=0.10&&!gravityMode")>=0 &&
      _launch256.indexOf('gravityMode&&gravityMode.dialogueDone')>=0 &&
      _launch256.indexOf('gravityModeBeginCharge()')>=0,
      'Stage 5 receives the kit during ascent and waits for the complete HQ warning before charging');
+  var _s5Sky256=JSON.parse(vm.runInContext("(function(){run.stage=5;gravityModeStart();var out={drift:stage5SpaceAscentProgress()};gravityMode.phase='charge';gravityMode.t=GRAVITY_CHARGE_DUR*.5;out.charge=stage5SpaceAscentProgress();gravityMode.phase='scatter';gravityMode.t=GRAVITY_SCATTER_DUR*.5;out.scatter=stage5SpaceAscentProgress();gravityMode.phase='snap';gravityMode.t=GRAVITY_SNAP_DUR*.5;out.snap=stage5SpaceAscentProgress();gravityMode.phase='pixelglow';gravityMode.t=GRAVITY_PIXEL_DUR*.5;out.glow=stage5SpaceAscentProgress();gravityMode.phase='whiteout';gravityMode.t=GRAVITY_WHITE_DUR;out.fused=stage5SpaceAscentProgress();return JSON.stringify(out);})()",ctxv));
+  ok(_s5Sky256.drift===0&&_s5Sky256.charge>0&&_s5Sky256.charge<_s5Sky256.scatter&&
+     _s5Sky256.scatter<_s5Sky256.snap&&_s5Sky256.snap<_s5Sky256.glow&&_s5Sky256.fused===1,
+     'Stage 5 holds the sky through HQ dialogue, then crossfades continuously across charge, orbit, snap and fusion');
   ok(_launch256.indexOf("else if(ph==='gravity')")>=0 &&
      _launch256.indexOf("if(!gravityMode || !gravityModeTick(dt)){ drawLaunch._phase='cd'")>=0,
      'the launch state owns the complete spiral/scatter/snap/pixel-fusion clock');
@@ -12074,11 +12103,11 @@ console.log("=== 257. Gravity Mode space armory I-V ===");
   ok(_laser257.anchors && new Set(_laser257.ys.map(function(y){return y.toFixed(4);})).size===6,
      'both physical laser columns begin on the visible emitters and remain six positions after one frame');
 
-  var _shadow257=vm.runInContext("(function(){var out=[];run.stage=5;run.spaceMode=true;run.spaceWeapon=1;for(var lv=1;lv<=5;lv++){run.spaceLevels[1]=lv;pBullets.length=0;spaceShadowRelease(.18);var tap=pBullets[0];pBullets.length=0;spaceShadowRelease(1.55);var full=pBullets[0];out.push({td:tap.dmg,fd:full.dmg,tr:tap.blastRad,fr:full.blastRad,pa:full.pierceAt});}return out;})()",ctxv);
-  ok(_shadow257.every(function(t){return t.fd>t.td&&t.fr>t.tr;}),
-     'every Shadow Orb tier rewards a full charge with more damage and a wider blast');
-  ok(_shadow257.every(function(t,i,a){return i===0||(t.fd>a[i-1].fd&&t.fr>a[i-1].fr&&t.pa<a[i-1].pa);}),
-     'Shadow Orb I-V climbs monotonically while its piercing threshold improves');
+  var _shadow257=vm.runInContext("(function(){var out=[];run.stage=5;run.spaceMode=true;run.spaceWeapon=1;for(var lv=1;lv<=5;lv++){run.spaceLevels[1]=lv;pBullets.length=0;var tapOk=spaceShadowRelease(.18),tapN=pBullets.length;pBullets.length=0;spaceShadowRelease(SPACE_SHADOW_MIN_CHARGE);var minimum=pBullets[0];pBullets.length=0;spaceShadowRelease(SPACE_SHADOW_FULL_CHARGE);var full=pBullets[0];out.push({tapOk:tapOk,tapN:tapN,md:minimum.dmg,fd:full.dmg,mr:minimum.blastRad,fr:full.blastRad});}return out;})()",ctxv);
+  ok(_shadow257.every(function(t){return t.tapOk===false&&t.tapN===0&&t.fd>t.md&&t.fr>t.mr;}),
+     'Shadow Orb rejects taps and every tier rewards a committed full charge with more damage and a wider blast');
+  ok(_shadow257.every(function(t,i,a){return i===0||(t.fd>a[i-1].fd&&t.fr>a[i-1].fr);}),
+     'Shadow Orb I-V full-charge damage and blast radius climb monotonically');
 
   var _pick257=vm.runInContext("[0,1,2,3,4,5].map(function(wtype){return spaceWeaponPickupIndex({wtype:wtype});})",ctxv);
   ok(_pick257.join()==='0,1,2,0,1,2',
@@ -12096,15 +12125,15 @@ console.log("=== 258. Stage 9 Velocity Void headless contract ===");
      gameplay handoff here so the bonus route can be audited without a browser playtest. */
   var _cfg258=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var c=_levelCfg(9);return JSON.stringify({bonus:curStage.bonus,boss:curStage.boss,master:c.master,liquid:c.liquid,plateW:c.plateW,h:c.h,scrollLen:c.scrollLen,loopMaster:c.loopMaster,continuousBoss:c.continuousBoss});})()",ctxv));
   ok(_cfg258.bonus===true && _cfg258.boss==='tidalfusion',
-     'Stage 9 remains an out-of-sequence bonus run ending at the Rift Warden fusion');
+     'Stage 9 remains an out-of-sequence bonus run ending at the twin Warp Sentinel fusion');
   ok(_cfg258.master==='nst9_voidwater_master' && _cfg258.plateW===680 && _cfg258.h===4096 &&
      _cfg258.scrollLen===4096 && _cfg258.loopMaster===true && _cfg258.continuousBoss===true && _cfg258.liquid===null,
      'the Velocity Void is one continuous 680px authored space/water scroll with no arena teleport');
 
   var _plan258=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var P=buildStagePlan(9),seen=[],real=spawnEnemy;spawnEnemy=function(t){seen.push(t);return null;};P.forEach(function(w){(w.fn||w[1]||function(){})();});spawnEnemy=real;return JSON.stringify({n:P.length,t:P.map(function(w){return w.t;}),cast:Array.from(new Set(seen)).sort()});})()",ctxv));
-  var _cast258=['cbreak','dreadv','echof','gleech','horizon','pmine','pneedle','riftrock','riftrocksm','tsplit','vmanta','wskim'];
-  ok(_plan258.n===20 && JSON.stringify(_plan258.cast)===JSON.stringify(_cast258),
-     'all 20 authored events field only the exact twelve-family Velocity Void cast');
+  var _cast258=['s9beacon','s9chronal','s9comet','s9gatecarrier','s9gateturret','s9gravity','s9gunship','s9interceptor','s9prism','s9ring','s9singularity','s9warptank'];
+  ok(_plan258.n===12 && JSON.stringify(_plan258.cast)===JSON.stringify(_cast258),
+     'all twelve authored events field only the exact twelve-family Velocity Void cast');
   ok(_plan258.t.every(function(t,i,a){return Number.isFinite(t) && t>=0 && t<42 && (i===0||t>=a[i-1]);}),
      'every Stage 9 event is finite, time-sorted and lands before the 42-second boss gate');
 
@@ -12126,12 +12155,17 @@ console.log("=== 258. Stage 9 Velocity Void headless contract ===");
   ok(_water258.dead===true && _water258.fx0===11 && _water258.drops===10 && _water258.children===2 && _water258.gravity,
      'destroying it produces one oversized authored burst, ten gravity droplets and two shootable fragments');
 
-  var _fusion258=JSON.parse(vm.runInContext("(function(){var b={x:VW/2,y:-120,t:0,flash:0,enter:true};s9FusionBossInit(b,1000);for(var i=0;i<100;i++){b.t+=1/60;s9FusionBossTick(b,1/60);}var F=b._s9fusion;F.left._esh=null;var hit=s9FusionHitTest(b,F.left.x,F.left.y);s9FusionHit(b,99999);var intact=F.left.hp===1&&F.right.hp>1&&F.phase==='fuse';for(var j=0;j<130;j++){b.t+=1/60;s9FusionBossTick(b,1/60);}return JSON.stringify({hit:hit,intact:intact,phase:F.phase,kind:b.kind,ship:b._ship,name:b.name,hp:b.hp,maxhp:b.maxhp,x:b.x,y:b.y,enter:b.enter});})()",ctxv));
-  ok(_fusion258.hit===true && _fusion258.intact===true,
-     'the twin Wardens take independent hits but neither can disappear before convergence');
+  var _fusion258=JSON.parse(vm.runInContext("(function(){var b={x:VW/2,y:-120,t:0,flash:0,enter:true};s9FusionBossInit(b,1000);for(var i=0;i<100;i++){b.t+=1/60;s9FusionBossTick(b,1/60);}var F=b._s9fusion;var hitL=s9FusionHitTest(b,F.left.x,F.left.y);s9FusionHit(b,99999);var one={ld:F.left.disabled,rd:F.right.disabled,phase:F.phase,left:F.left.hp,right:F.right.hp};var hitR=s9FusionHitTest(b,F.right.x,F.right.y);s9FusionHit(b,99999);var both=F.left.disabled&&F.right.disabled&&F.phase==='fuse';for(var j=0;j<130;j++){b.t+=1/60;s9FusionBossTick(b,1/60);}return JSON.stringify({hitL:hitL,hitR:hitR,one:one,both:both,phase:F.phase,kind:b.kind,ship:b._ship,name:b.name,hp:b.hp,maxhp:b.maxhp,x:b.x,y:b.y,enter:b.enter});})()",ctxv));
+  ok(_fusion258.hitL===true && _fusion258.one.ld===true && _fusion258.one.rd===false && _fusion258.one.phase==='twins' && _fusion258.hitR===true && _fusion258.both===true,
+     'one defeated black/blue drone remains intact and inert; fusion waits until BOTH are disabled');
   ok(_fusion258.phase==='tidal' && _fusion258.kind==='tidalsovereign' && _fusion258.ship==='tidalsovereign' && _fusion258.name==='TIDAL SOVEREIGN' &&
-     _fusion258.hp===_fusion258.maxhp && _fusion258.maxhp===1350 && _fusion258.x===vm.runInContext('VW/2',ctxv) && _fusion258.y===132 && _fusion258.enter===false,
+     _fusion258.hp===_fusion258.maxhp && _fusion258.maxhp===1550 && _fusion258.x===vm.runInContext('VW/2',ctxv) && _fusion258.y===132 && _fusion258.enter===false,
      'the completed convergence hands off to one intact, centred, full-health Tidal Sovereign');
+  var _bar258=JSON.parse(vm.runInContext("(function(){var b={dead:false,_s9fusion:{phase:'twins'}};var twins=bossHealthVisible(b);b._s9fusion.phase='fuse';var fuse=bossHealthVisible(b);b._s9fusion.phase='tidal';var tidal=bossHealthVisible(b);return JSON.stringify({twins:twins,fuse:fuse,tidal:tidal,huds:[drawHUDCustom,drawHUDCustomImg,drawHUDOverlay,drawHUDCustomLegacy,drawHUDFramed].every(function(fn){return fn.toString().indexOf('bossHealthVisible(boss)')>=0;}),world:s9FusionBossDraw.toString().indexOf('const bw=118,bh=7')<0});})()",ctxv));
+  ok(_bar258.twins===false&&_bar258.fuse===false&&_bar258.tidal===true,
+     'the mysterious Warp Sentinel pair and convergence expose no health UI; the gauge appears only for Tidal Sovereign');
+  ok(_bar258.huds&&_bar258.world,
+     'every HUD fallback obeys the reveal gate and the twin renderer carries no private per-drone bars');
 
   var _src258=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
   var _clear258=_src258.slice(_src258.indexOf('function drawStageClear(dt)'),_src258.indexOf('function drawGameOver(dt)'));
@@ -12146,11 +12180,11 @@ console.log("=== 259. generated combat audio routing ===");
 {
   var _src259=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
   var _bank259={
-    machineGun:'jet_machinegun_shot_01.wav', heavyMachineGun:'jet_machinegun_shot_03.wav',
-    enemyMachineGunLight:'enemy_machine_shot_light.wav', enemyMachineGunHeavy:'enemy_machine_shot_heavy.wav',
-    enemyMachineGunBurst:'enemy_machine_burst.wav', coleSonicBoom:'cole_sonic_boom.wav',
-    laserBeamStart:'laser_beam_start.wav', laserBeamLoop:'laser_beam_loop.wav', laserBeamEnd:'laser_beam_end.wav',
-    flameThrowerStart:'flamethrower_ignite.wav', flameThrowerLoop:'flamethrower_loop.wav', flameThrowerEnd:'flamethrower_release.wav',
+    machineGun:'jet_machinegun_shot_01.wav', heavyMachineGun:'reviewed_lizzie_heavy_mg.wav',
+    enemyMachineGunLight:'enemy_machine_shot_light.wav', enemyMachineGunHeavy:'reviewed_enemy_heavy_mg.wav',
+    enemyMachineGunBurst:'reviewed_enemy_heavy_mg.wav', coleSonicBoom:'reviewed_cole_sonic_release.wav',
+    laserBeamStart:'reviewed_player_laser_beam_start.wav', laserBeamLoop:'reviewed_player_laser_beam_loop.wav', laserBeamEnd:'reviewed_player_laser_beam_end.wav',
+    flameThrowerStart:'reviewed_flamethrower_start.wav', flameThrowerLoop:'reviewed_flamethrower_loop.wav', flameThrowerEnd:'reviewed_flamethrower_end.wav',
     iceBreathStart:'ice_breath_start.wav', iceBreathLoop:'ice_breath_loop.wav', iceBreathEnd:'ice_breath_release.wav'
   };
   ok(Object.keys(_bank259).every(function(k){
@@ -12159,6 +12193,29 @@ console.log("=== 259. generated combat audio routing ===");
      }), 'every signature V4 player/enemy combat cue maps to its shipped file');
   ok(Object.keys(_bank259).every(function(k){return vm.runInContext("typeof Audio.SFX['"+k+"']==='function'",ctxv);}),
      'the sample layer exposes a callable Audio.SFX method for every signature combat cue');
+  var _approved259={
+    dkReload:'reviewed_decker_reload.wav', laserCannon:'reviewed_laser_cannon.wav',
+    spaceLaserCannon:'reviewed_laser_cannon.wav', spaceLaserHit:'shield_hit_light.wav',
+    spaceShadowCharge:'nsp_bof2_charge_shot.mp3', spaceShadowRelease:'reviewed_shadow_orb_launch.wav',
+    spaceShadowHit:'explosion_plasma.wav', spaceVolleyLaunch:'nsp_rocket_launch.mp3',
+    spaceVolleyHit:'explosion_air_medium.wav',
+    atomicLaunch:'reviewed_lizzie_atom_launch.wav', atomicDetonate:'reviewed_lizzie_atom_impact.wav',
+    megaShieldPickup:'reviewed_axel_mega_shield.wav', specialAbilityPickup:'reviewed_special_pickup.wav',
+    helixChargeStart:'reviewed_maverick_charge_build.wav', helixCharge:'reviewed_maverick_charge_loop.wav',
+    maverickHelixRelease:'reviewed_maverick_helix_release.wav',
+    gravityTransform:'reviewed_ship_fusion_sequence.wav', gravityFuse:'reviewed_ship_fusion_lock.wav',
+    sonicChargeStart:'reviewed_cole_sonic_charge_start.wav', sonicChargeLoop:'reviewed_cole_sonic_charge_loop.wav',
+    amb_storm:'reviewed_stage6_wind_loop.wav'
+  };
+  ok(Object.keys(_approved259).every(function(k){
+       var rel=sandbox.window.BOFA.sfx[k];
+       return typeof rel==='string' && rel.endsWith('/'+_approved259[k]) && fs.existsSync(path.join(ROOT,rel));
+     }), 'all approved 0829 event mappings resolve to their rendered production WAVs');
+  var _spaceRoutes259=JSON.parse(vm.runInContext("(function(){var hit={laser:0,chargeOn:0,chargeOff:0,shadow:0,volley:0,laserHit:0,shadowHit:0,volleyHit:0};var keep={laser:Audio.SFX.spaceLaserCannon,shadow:Audio.SFX.spaceShadowRelease,volley:Audio.SFX.spaceVolleyLaunch,laserHit:Audio.SFX.spaceLaserHit,shadowHit:Audio.SFX.spaceShadowHit,volleyHit:Audio.SFX.spaceVolleyHit,on:Snd.loopOn,off:Snd.loopOff};Audio.SFX.spaceLaserCannon=function(){hit.laser++;};Audio.SFX.spaceShadowRelease=function(){hit.shadow++;};Audio.SFX.spaceVolleyLaunch=function(){hit.volley++;};Audio.SFX.spaceLaserHit=function(){hit.laserHit++;};Audio.SFX.spaceShadowHit=function(){hit.shadowHit++;};Audio.SFX.spaceVolleyHit=function(){hit.volleyHit++;};Snd.loopOn=function(n){if(n==='spaceShadowCharge')hit.chargeOn++;};Snd.loopOff=function(n){if(n==='spaceShadowCharge')hit.chargeOff++;};run.stage=5;run.spaceMode=true;run.spaceLevels=[2,2,2];player.dead=false;player.x=240;player.y=410;pBullets.length=0;run.spaceWeapon=0;spaceLaserFire();run.spaceWeapon=1;spaceShadowTick(1/60,true);spaceShadowTick(1/60,false);run.spaceWeapon=2;spaceVolleyFire();spaceImpact({kind:'spaceLaser',x:0,y:0},'laser',1,20);spaceImpact({kind:'shadowOrb',x:0,y:0},'shadow',1,20);spaceImpact({kind:'spaceVolley',x:0,y:0},'volley',1,20);Audio.SFX.spaceLaserCannon=keep.laser;Audio.SFX.spaceShadowRelease=keep.shadow;Audio.SFX.spaceVolleyLaunch=keep.volley;Audio.SFX.spaceLaserHit=keep.laserHit;Audio.SFX.spaceShadowHit=keep.shadowHit;Audio.SFX.spaceVolleyHit=keep.volleyHit;Snd.loopOn=keep.on;Snd.loopOff=keep.off;return JSON.stringify(hit);})()",ctxv));
+  ok(_spaceRoutes259.laser===1&&_spaceRoutes259.chargeOn===1&&_spaceRoutes259.chargeOff>=1&&_spaceRoutes259.shadow===1&&_spaceRoutes259.volley===1,
+     'Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route');
+  ok(_spaceRoutes259.laserHit===1&&_spaceRoutes259.shadowHit===1&&_spaceRoutes259.volleyHit===1,
+     'all three Gravity Mode weapon families reach distinct impact cues');
   ok(['machineGun','heavyMachineGun','enemyMachineGunLight','enemyMachineGunHeavy','enemyMachineGunBurst','coleSonicBoom',
       'laserBeamStart','laserBeamLoop','laserBeamEnd','flameThrowerStart','flameThrowerLoop','flameThrowerEnd',
       'iceBreathStart','iceBreathLoop','iceBreathEnd'].every(function(k){return vm.runInContext("!!(Snd.TAME['"+k+"'])",ctxv);}),
@@ -12212,10 +12269,10 @@ console.log("=== 260. Velocity Void specialist and Warden AI ===");
      'Twin Splitters produce exactly two independently spaced Phase Needles once at half health');
 
   var _warden260=JSON.parse(vm.runInContext("(function(){player.dead=false;player.x=240;player.y=430;var old=performance.now,w={x:180,y:130,side:'L'};performance.now=function(){return 0;};eBullets.length=0;s9FusionWardenFire(w,1.1);var a=eBullets.map(function(b){return [b.vx.toFixed(5),b.vy.toFixed(5),b.kind];});performance.now=function(){return 999999;};eBullets.length=0;s9FusionWardenFire(w,1.1);var b=eBullets.map(function(v){return [v.vx.toFixed(5),v.vy.toFixed(5),v.kind];});performance.now=old;return JSON.stringify({a:a,b:b});})()",ctxv));
-  ok(JSON.stringify(_warden260.a)===JSON.stringify(_warden260.b) && _warden260.a.length===9,
+  ok(JSON.stringify(_warden260.a)===JSON.stringify(_warden260.b) && _warden260.a.length===8 && _warden260.a.every(function(q){return q[2]==='s9warp';}),
      'Rift Warden photon wheels are simulation-clock deterministic and cannot rotate while paused');
-  ok(vm.runInContext("SHIPBOSS.tidalsovereign.pats.join(',')==='fan2,beamfan,siege' && SHIPBOSS.tidalsovereign.proj==='cyclone'",ctxv),
-     'the fused Tidal Sovereign retains three distinct attack phases and its exclusive cyclone family');
+  ok(vm.runInContext("SHIPBOSS.tidalsovereign.pats.length===4 && SHIPBOSS.tidalsovereign.pats[0]==='s9tidalguard' && SHIPBOSS.tidalsovereign.proj==='cyclone'",ctxv),
+     'the fused Tidal Sovereign carries four distinct attack phases and retains its exclusive cyclone muzzle family');
 }
 
 // ===== 261. STAGE 9 FULL HEADLESS SOAK =====
@@ -12230,7 +12287,7 @@ console.log("=== 261. Stage 9 full headless soak ===");
         JSON.parse(vm.runInContext("JSON.stringify(enemies.map(function(e){return e.type;}))",ctxv)).forEach(function(k){_seen261[k]=1;});
         _peak261=Math.max(_peak261,vm.runInContext("enemies.length",ctxv));
         _shots261=Math.max(_shots261,vm.runInContext("eBullets.length",ctxv));
-        if(vm.runInContext("!!(subBoss&&subBoss.kind==='warpsentinel')",ctxv)){
+        if(vm.runInContext("!!(subBoss&&subBoss.kind==='riftwardens')",ctxv)){
           _sub261=true;
           vm.runInContext("if(subBoss&&!subBoss.dead){subBoss.hp=0;subBoss.dead=true;subBoss.dying=0;}",ctxv);
         }
@@ -12245,7 +12302,7 @@ console.log("=== 261. Stage 9 full headless soak ===");
   }catch(_err261){_crash261=String(_err261&&_err261.message||_err261);}
   _seen261=JSON.parse(vm.runInContext("JSON.stringify(window.__s9SoakSeen||{})",ctxv));
   vm.runInContext("spawnEnemy=window.__realS9Spawn;delete window.__realS9Spawn;",ctxv);
-  var _cast261=['cbreak','dreadv','echof','gleech','horizon','pmine','pneedle','riftrock','riftrocksm','tsplit','vmanta','wskim'];
+  var _cast261=['s9beacon','s9chronal','s9comet','s9gatecarrier','s9gateturret','s9gravity','s9gunship','s9interceptor','s9prism','s9ring','s9singularity','s9warptank'];
   ok(_crash261===null,'Stage 9 survives a full 90-second update soak without throwing'+(_crash261?' -> '+_crash261:''));
   ok(_cast261.every(function(k){return _seen261[k];}),
      'the soak observes all twelve Velocity Void families in live director order (saw '+Object.keys(_seen261).sort().join(',')+')');
@@ -12253,8 +12310,8 @@ console.log("=== 261. Stage 9 full headless soak ===");
      'the live field populates and its specialist/boss fire controllers emit rounds');
   ok(vm.runInContext("enemies.every(function(e){return Number.isFinite(e.x)&&Number.isFinite(e.y);}) && eBullets.every(function(b){return Number.isFinite(b.x)&&Number.isFinite(b.y)&&Number.isFinite(b.vx)&&Number.isFinite(b.vy);})",ctxv),
      'all surviving enemies and projectiles remain finite after 5,400 simulation frames');
-  ok(_sub261,'Warp Sentinel arrives and clears through the real mid-stage gate');
-  ok(_boss261,'the live director reaches the Rift Warden fusion encounter at the end of the continuous scroll');
+  ok(_sub261,'the violet Rift Warden pair arrives and clears through the real mid-stage gate');
+  ok(_boss261,'the live director reaches the twin black/blue Warp Sentinel fusion encounter at the end of the continuous scroll');
 }
 
 // ===== 262. RECONCILED REGRESSION REPAIRS =====
@@ -12272,6 +12329,9 @@ console.log("=== 262. Reconciled regression repairs ===");
      'the recovered ship is 48px and its twin laser origins sit on the measured outer cannon pods');
   ok(_space262.targeted && _space262.broken && _space262.reward,
      'space weapons target, damage and open shootable boxes/capsules through their dedicated collision pass');
+  var _twinVolley262=JSON.parse(vm.runInContext("(function(){run.stage=9;run.spaceMode=true;curStage=STAGES[8];enemies.length=0;powerups.length=0;subBoss=null;subBossActive=false;bossActive=true;boss={x:VW/2,y:-120,t:0,flash:0,enter:true};s9FusionBossInit(boss,1000);for(var i=0;i<100;i++){boss.t+=1/60;s9FusionBossTick(boss,1/60);}var F=boss._s9fusion,targets=spaceTargets(),left0=F.left.hp,right0=F.right.hp,q={kind:'spaceVolley',x:F.left.x,y:F.left.y,vx:0,vy:-8,w:13,h:25,dmg:17,lv:3,t:0,_hit:[]};var hit=spaceBulletHit(q,false);var out={targets:targets.length,owners:targets.every(function(t){return t._spaceBossOwner===boss;}),hit:hit===F.left,left:F.left.hp,right:F.right.hp,left0:left0,right0:right0,phase:F.phase};boss=null;bossActive=false;return JSON.stringify(out);})()",ctxv));
+  ok(_twinVolley262.targets===2&&_twinVolley262.owners&&_twinVolley262.hit&&_twinVolley262.left===_twinVolley262.left0-17&&_twinVolley262.right===_twinVolley262.right0&&_twinVolley262.phase==='twins',
+     'Volley Missiles lock and damage the visible black/blue drone hulls instead of detonating in the empty gap');
   ok(vm.runInContext("_drawEffectsInner.toString().indexOf('_fade')<0",ctxv),
      'enemy explosion reels complete at full opacity instead of dissolving');
   ok(vm.runInContext("BOFA.sfx.enemyShoot.indexOf('enemy_machine_shot_light.wav')>=0 && Snd.TAME.enemyShoot.min>=0.12 && Snd.TAME.bossAlarm.min>=2",ctxv),
@@ -12400,6 +12460,417 @@ console.log("=== 265. Stage-1 VFX edge safety and Overlord hunter flight ===");
      'the damaged helicopter carries localized aggressive shake without moving its collision path');
   ok(vm.runInContext("(function(){var s=drawBossSprite.toString();return s.indexOf('_ovChargeGlow')>=0&&s.indexOf(\"'#ff321f'\")>=0;})()",ctxv),
      'the renderer shows the growing green charge glow and the enraged red hull pulse');
+}
+
+// ===== 266. MOVING MUZZLE HARDPOINTS + STAGE-2 VOLCANIC OVERHAUL =====
+console.log("=== 266. moving muzzle hardpoints and Stage-2 volcanic overhaul ===");
+{
+  var _follow266=JSON.parse(vm.runInContext("(function(){_navalFlashes.length=0;var e={x:100,y:80,w:40,h:50,spin:0,dead:false};"
+    +"var p=combatHardpoint(e,.2,.4);navalFlash(null,p,1,S1_MUZZLE_ROTARY,{n:6,hpx:32,life:.2,follow:function(){return combatHardpoint(e,.2,.4);}});"
+    +"var a=_navalFlashes[0]&&{x:_navalFlashes[0].x,y:_navalFlashes[0].y};e.x=154;e.y=112;e.spin=.22;tickNavalFlashes(.05);"
+    +"var b=_navalFlashes[0]&&{x:_navalFlashes[0].x,y:_navalFlashes[0].y},want=combatHardpoint(e,.2,.4);"
+    +"return JSON.stringify({a:a,b:b,want:want});})()",ctxv));
+  ok(_follow266.a&&_follow266.b&&(_follow266.a.x!==_follow266.b.x||_follow266.a.y!==_follow266.b.y),
+     'a muzzle reel moves with its acting hull instead of remaining at the release coordinate');
+  ok(Math.abs(_follow266.b.x-_follow266.want.x)<0.001&&Math.abs(_follow266.b.y-_follow266.want.y)<0.001,
+     'the moving flash remains exactly on the rotated hardpoint for its complete animation');
+
+  var _src266=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8'),
+      _s2a266=_src266.indexOf('if(stageNum===2)'),_s2b266=_src266.indexOf('if(stageNum===3)'),
+      _s2plan266=_src266.slice(_s2a266,_s2b266),
+      _plan266={old:_s2plan266.indexOf("spawnEnemy('el_em'")>=0||_s2plan266.indexOf("spawnEnemy('el_lr'")>=0,
+        alias:['magmagun','spinner','dodger'].some(function(k){return _s2plan266.indexOf("spawnEnemy('"+k+"'")>=0;}),
+        fleet:['ash','skim','eye','lance','disc','cruc','carrier','miner','lavamaw','crawl','pod','golem'].every(function(k){return _s2plan266.indexOf("spawnEnemy('"+k+"'")>=0;})};
+  ok(!_plan266.old&&!_plan266.alias&&_plan266.fleet,
+     'Stage 2 fields all 12 unique volcanic hulls and none of the rejected art aliases');
+
+  var _owned266=JSON.parse(vm.runInContext("(function(){run.stage=2;curStage=STAGES[1];enemies.length=0;eBullets.length=0;_navalFlashes.length=0;"
+    +"var kinds=['ash','skim','eye','disc','cruc','lance','carrier','miner','lavamaw','crawl','pod','golem'],out={};"
+    +"for(var z=0;z<kinds.length;z++){enemies.length=0;var k=kinds[z],e=spawnEnemy(k,240,150,{});out[k]={shoots:e.shoots,fk:e.fk,pat:e.pattern};}"
+    +"return JSON.stringify(out);})()",ctxv));
+  ok(Object.keys(_owned266).every(function(k){return _owned266[k].shoots===false&&_owned266[k].fk===null&&_owned266[k].pat==='volc';}),
+     'every active volcanic unit owns its cadence; the generic aimed shooter cannot stack centre-fire over it');
+
+  var _shots266=JSON.parse(vm.runInContext("(function(){run.stage=2;curStage=STAGES[1];player.x=250;player.y=500;eBullets.length=0;_navalFlashes.length=0;"
+    +"function tick(k,prep){var e={_volc:k,x:240,y:180,w:VOLC[k].w,h:VOLC[k].h,hp:VOLC[k].hp,_maxhp:VOLC[k].hp,dead:false,spin:0};if(prep)prep(e);var n=eBullets.length;for(var i=0;i<54;i++)volcTick(e,1/60);return eBullets.slice(n).map(function(b){return b.kind;});}"
+    +"var ready=function(e){e._fcd=0;};return JSON.stringify({ash:tick('ash',ready),skim:tick('skim',function(e){e._fcd=0;e.y=VH*.35;}),eye:tick('eye',ready),"
+    +"disc:tick('disc',function(e){e.y=VH*.3;e._fcd=0;}),cruc:tick('cruc',ready),lance:tick('lance',function(e){e._vt=.2;}),"
+    +"carrier:tick('carrier',function(e){e.y=VH*.3;e._fcd=0;}),miner:tick('miner',function(e){e.y=VH*.3;e._fcd=0;}),"
+    +"maw:tick('lavamaw',function(e){e.y=VH*.25;e._fcd=0;}),crawl:tick('crawl',function(e){e.y=VH*.35;e._fcd=0;}),"
+    +"pod:tick('pod',function(e){e.y=VH*.2;e._fcd=0;}),golem:tick('golem',function(e){e.y=VH*.3;e._fcd=0;})});})()",ctxv));
+  ok(_shots266.ash.join(',')==='s2needle,s2needle'&&_shots266.skim.every(function(k){return k==='s2rake';})&&
+     _shots266.eye.filter(function(k){return k==='s2slag';}).length===1&&_shots266.eye.filter(function(k){return k==='s2needle';}).length===2,
+     'drone needles, skimmer rake and Eye slag-plus-escort volley keep separate ammunition identities');
+  ok(_shots266.disc.every(function(k){return k==='s2mine';})&&_shots266.cruc.join(',')==='s2bomb'&&
+     _shots266.lance.join(',')==='s2rocket'&&_shots266.carrier.every(function(k){return k==='s2rocket';}),
+     'mine wheel, rack bomb, lancer rocket and carrier bracket launch remain visually distinct');
+  ok(_shots266.miner.every(function(k){return k==='s2shock';})&&_shots266.maw.every(function(k){return k==='s2breath';})&&
+     _shots266.crawl.every(function(k){return k==='s2slug';})&&_shots266.pod.every(function(k){return k==='s2mine';})&&
+     _shots266.golem.every(function(k){return k==='s2shock';}),
+     'ground units own fissures, furnace breath, jaw slugs, safe-gap mines and slam shockwaves');
+
+  var _boss266=JSON.parse(vm.runInContext("(function(){run.stage=2;curStage=STAGES[1];player.x=260;player.y=500;eBullets.length=0;"
+    +"var m={_ship:'magmaward',x:240,y:120,_drawY:120,w:210,h:216,hp:240,maxhp:240,_sbStep:0,_sbPhase:0};"
+    +"var L=shipBossMount(m,'L');shipBossAttack(m);var mini=eBullets.map(function(q){return {x:q.x,y:q.y,k:q.kind};});"
+    +"var r={_ship:'infernoreaver',x:240,y:120,_drawY:120,w:200,h:200,hp:100,maxhp:100,_sbStep:0,_sbPhase:0};"
+    +"var pats=[100,75,55,35,15].map(function(h){r.hp=h;return shipBossCurrentPattern(r);});"
+    +"return JSON.stringify({mini:mini,L:L,muzzle:m._smz&&m._smz.slots,pats:pats});})()",ctxv));
+  ok(_boss266.mini.length===5&&_boss266.mini.every(function(q){return q.k==='magma'&&Math.abs(q.x-_boss266.L.x)<0.001&&Math.abs(q.y-_boss266.L.y)<0.001;})&&_boss266.muzzle[0]==='L',
+     'Magma Ward telegraphs and releases its opening fan from the same measured left cannon');
+  ok(_boss266.pats.join(',')==='infernogate,fireorb,infernoburst,chargebeam,infernostorm',
+     'Inferno Reaver progresses through five named attack phases instead of repeating one generic wall');
+  ok(vm.runInContext("['s2needle','s2rake','s2slag','s2rocket','s2bomb','s2shock','s2breath','s2slug','s2mine'].every(function(k){return !!FIRETYPES[k]&&!!PROJ[k]&&FIRETYPES[k].proc;})",ctxv),
+     'all nine lava-readable Stage-2 ammunition roles are registered in behavior and rendering registries');
+  ok(vm.runInContext("Object.keys(VOLC).every(function(k){var a=VOLC[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s2atk_'+a+'_'+i))return false;return true;})",ctxv),
+     'every Stage-2 hull resolves all eight frames of its own action reel');
+}
+
+// ===== 267. STAGE-3 NATIVE ICE FLEET + READABLE FIXED-LANE ORDNANCE =====
+console.log("=== 267. Stage-3 native ice fleet and projectile pass ===");
+{
+  var _src267=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8'),
+      _s3a267=_src267.indexOf('if(stageNum===3)'),_s3b267=_src267.indexOf('if(stageNum===4)'),
+      _s3plan267=_src267.slice(_s3a267,_s3b267),
+      _fleet267=['s3mine','s3interceptor','s3sled','s3snowmobile','s3crawler','s3tank','s3barge','s3artillery'];
+  ok(_fleet267.every(function(k){return _s3plan267.indexOf("spawnEnemy('"+k+"'")>=0;}),
+     'Stage 3 schedules every one of its eight native ice-field hulls');
+  ok(['frost','cryo','shieldd','icegun','drone','mdrone','turdrone','bomber','racer'].every(function(k){
+       return _s3plan267.indexOf("spawnEnemy('"+k+"'")<0;
+     }), 'the rebuilt plan contains no drone, generic shooter or cross-stage aircraft aliases');
+
+  var _owned267=JSON.parse(vm.runInContext("(function(){run.stage=3;curStage=STAGES[2];enemies.length=0;eBullets.length=0;var out={};"
+    +"Object.keys(S3ICE).forEach(function(k){var e=spawnEnemy(k,240,140,{});out[k]={pat:e.pattern,shoots:e.shoots,fk:e.fk,art:S3ICE[k].art};});"
+    +"return JSON.stringify(out);})()",ctxv));
+  ok(_fleet267.every(function(k){return _owned267[k]&&_owned267[k].pat==='s3ice'&&!_owned267[k].shoots&&_owned267[k].fk===null;}),
+     'each ice unit exclusively owns its cadence; the generic centre-shot system is disabled');
+
+  var _shots267=JSON.parse(vm.runInContext("(function(){run.stage=3;curStage=STAGES[2];stagePlan=[];waveIdx=0;player.x=260;player.y=470;"
+    +"function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;var I=S3ICE[k],e={_s3ice:k,x:240,y:VH*.25,w:I.w,h:I.h,hp:I.hp,maxhp:I.hp,_maxhp:I.hp,dead:false,spin:0};"
+    +"if(prep)prep(e);var phases={};for(var i=0;i<(n||70)&&!e.dead;i++){s3IceTick(e,1/60);phases[e._phase||'none']=1;}"
+    +"return {k:eBullets.map(function(b){return b.kind;}),phase:Object.keys(phases),fl:_navalFlashes.length};}"
+    +"return JSON.stringify({mine:tick('s3mine',function(e){e.y=VH*.23;e._fcd=0;}),"
+    +"interceptor:tick('s3interceptor',function(e){e._phase='tell';e._tell=.03;e._s3AtkT=0;e._s3AtkDur=.72;},45),"
+    +"sled:tick('s3sled',function(e){e.y=VH*.25;e._fcd=0;}),snowmobile:tick('s3snowmobile',function(e){e._fcd=0;}),"
+    +"crawler:tick('s3crawler',function(e){e.y=VH*.32;e._fcd=0;}),tank:tick('s3tank',function(e){e.y=VH*.27;e._fcd=0;}),"
+    +"barge:tick('s3barge',function(e){e.y=VH*.21;e._fcd=0;}),artillery:tick('s3artillery',function(e){e.y=VH*.20;e._fcd=0;})});})()",ctxv));
+  ok(_shots267.mine.k.length===9&&_shots267.mine.k.every(function(k){return k==='s3shard';}),
+     'the mine opens a radial shard crown with a three-slot escape gate');
+  ok(_shots267.interceptor.k.length===0&&_shots267.interceptor.phase.indexOf('charge')>=0,
+     'the interceptor completes its tell as a projectile-free committed rammer');
+  ok(_shots267.sled.k.join(',')==='s3lance,s3lance,s3lance'&&_shots267.sled.fl>=2,
+     'the AA sled fires its authored twin lances and centre beat from anchored flashes');
+  ok(_shots267.snowmobile.k.every(function(k){return k==='s3tracer';})&&_shots267.snowmobile.k.length===3,
+     'the snowmobile lays one short three-tracer pass without looping');
+  ok(_shots267.crawler.k.length===3&&_shots267.crawler.k.every(function(k){return k==='s3mortar';})&&
+     _shots267.tank.k.join(',')==='s3shell,s3shard,s3shard',
+     'crawler mortar fan and tank cannon-plus-escort volley remain separate weapons');
+  ok(_shots267.barge.k.length===6&&_shots267.barge.k.every(function(k){return k==='s3wave';})&&
+     _shots267.artillery.k.length===3&&_shots267.artillery.k.every(function(k){return k==='s3mortar';}),
+     'the barge leaves an open centre bracket while artillery commits a fixed three-lane barrage');
+
+  ok(vm.runInContext("['s3shard','s3lance','s3tracer','s3mortar','s3shell','s3wave'].every(function(k){return !!FIRETYPES[k]&&!!FIRETYPES[k].proc3&&!!PROJ[k];})",ctxv),
+     'all six ice-readable ammunition roles resolve through dedicated render and behavior registries');
+  ok(vm.runInContext("Object.keys(S3ICE).every(function(k){var a=S3ICE[k].art;for(var i=0;i<8;i++){if(!XART.rdy('s3atk_'+a+'_'+i)||!XART.rdy('s3dmg_'+a+'_damaged_'+i)||!XART.rdy('s3dmg_'+a+'_critical_'+i))return false;}return true;})",ctxv),
+     'every Level-3 hull resolves eight action, eight moving-smoke and eight moving-fire frames');
+
+  var _fixed267=JSON.parse(vm.runInContext("(function(){run.stage=3;stagePlan=[];waveIdx=0;enemies.length=0;eBullets.length=0;player.x=120;player.y=470;"
+    +"var I=S3ICE.s3tank,e={_s3ice:'s3tank',x:240,y:VH*.27,w:I.w,h:I.h,hp:I.hp,maxhp:I.hp,_maxhp:I.hp,dead:false,spin:0,_fcd:0};"
+    +"for(var i=0;i<31;i++)s3IceTick(e,1/60);var b=eBullets.filter(function(q){return q.kind==='s3shell';})[0],a0=Math.atan2(b.vy,b.vx);"
+    +"player.x=420;for(var j=0;j<24;j++)updatePlay(1/60);var a1=Math.atan2(b.vy,b.vx);return JSON.stringify({a0:a0,a1:a1,homing:!!b.homing,flip:!!b.flip});})()",ctxv));
+  ok(!_fixed267.homing&&!_fixed267.flip&&Math.abs(_fixed267.a0-_fixed267.a1)<0.0001,
+     'accelerating ice ordnance preserves its warned launch heading: no homing, mirroring or late flip');
+
+  var _tiers267=JSON.parse(vm.runInContext("(function(){run.stage=3;curStage=STAGES[2];player.x=250;player.y=470;_navalFlashes.length=0;"
+    +"var f=spawnArsenalMini('frostbite');f.y=112;f._dr.entry=0;var fk=[];for(var i=0;i<3;i++){eBullets.length=0;droneFire(f);fk.push(eBullets.map(function(q){return q.kind;}));}var ff=_navalFlashes.length;"
+    +"spawnSubBoss('rimewall');subBoss.enter=false;subBoss.x=240;subBoss.y=116;subBoss._drawY=116;var rk=[];"
+    +"[1,.2].forEach(function(h){eBullets.length=0;subBoss.hp=subBoss.maxhp*h;subBoss._sbStep=0;shipBossAttack(subBoss);rk.push(eBullets.map(function(q){return q.kind;}));});"
+    +"spawnBoss('cryospear');boss.enter=false;boss.x=240;boss.y=116;boss._drawY=116;var ck=[];"
+    +"[1,.7,.45,.2].forEach(function(h){eBullets.length=0;boss.hp=boss.maxhp*h;boss._sbStep=0;shipBossAttack(boss);ck.push(eBullets.map(function(q){return q.kind;}));});"
+    +"return JSON.stringify({f:fk,ff:ff,r:rk,c:ck});})()",ctxv));
+  ok(_tiers267.f[0].every(function(k){return k==='s3lance';})&&
+     _tiers267.f[1].every(function(k){return k==='s3shard';})&&
+     _tiers267.f[2].every(function(k){return k==='s3mortar';})&&_tiers267.ff>=3,
+     'Frostbite cycles lance, shard fan and mortar spawn with a measured animated muzzle');
+  ok(_tiers267.r[0].length&&_tiers267.r[0].every(function(k){return k==='s3mortar';})&&
+     _tiers267.r[1].length&&_tiers267.r[1].every(function(k){return k==='s3wave';}),
+     'Rime Wall switches from dark-edged mortars to broad cryo waves instead of pale generic pellets');
+  ok(_tiers267.c[0].every(function(k){return k==='s3lance';})&&
+     _tiers267.c[1].every(function(k){return k==='s3shard';})&&
+     _tiers267.c[2].every(function(k){return k==='s3wave';})&&
+     _tiers267.c[3].every(function(k){return k==='s3lance';}),
+     'Cryo Spear carries four visually distinct phases through the same ice-readable projectile family');
+}
+
+console.log("=== 268. Stage-4 native Blacksite highway fleet ===");
+{
+  var _fleet268=['s4airfield','s4tractor','s4interceptor','s4command','s4barrel','s4tanker',
+    's4bomber','s4heavyjet','s4missile','s4rocket','s4minitank','s4sam'];
+  var _plan268=JSON.parse(vm.runInContext("(function(){run.stage=4;curStage=STAGES[3];var p=buildStagePlan(4),seen={};"
+    +"for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
+  ok(_fleet268.every(function(k){return _plan268.indexOf(k)>=0;}),
+     'Stage 4 schedules all twelve supplied Blacksite hulls');
+  ok(['roadtank','mdrone','stationship','s1jetDelta','s1jetBomber','assault','gunship'].every(function(k){return _plan268.indexOf(k)<0;}),
+     'the rebuilt chase contains no jungle, drone, boat or cross-stage aircraft aliases');
+
+  var _owned268=JSON.parse(vm.runInContext("(function(){run.stage=4;curStage=STAGES[3];enemies.length=0;var o={};"
+    +"Object.keys(S4CHASE).forEach(function(k){var e=spawnEnemy(k,240,-100,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S4CHASE[k].art};});return JSON.stringify(o);})()",ctxv));
+  ok(_fleet268.every(function(k){return _owned268[k]&&_owned268[k].p==='s4chase'&&!_owned268[k].s&&_owned268[k].f===null;}),
+     'every Blacksite unit exclusively owns its movement and firing cadence');
+
+  var _shots268=JSON.parse(vm.runInContext("(function(){run.stage=4;curStage=STAGES[3];player.x=260;player.y=470;"
+    +"function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;var H=S4CHASE[k],e={_s4chase:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||80)&&!e.dead;i++)s4ChaseTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}"
+    +"return JSON.stringify({air:tick('s4airfield'),tractor:tick('s4tractor'),interceptor:tick('s4interceptor'),command:tick('s4command'),barrel:tick('s4barrel'),tanker:tick('s4tanker'),bomber:tick('s4bomber'),heavy:tick('s4heavyjet'),missile:tick('s4missile'),rocket:tick('s4rocket'),mini:tick('s4minitank'),sam:tick('s4sam')});})()",ctxv));
+  ok(_shots268.air.k.length===3&&_shots268.air.k.every(function(k){return k==='s4steel';})&&
+     _shots268.tractor.k.length===4&&_shots268.tractor.k.every(function(k){return k==='s4brass';}),
+     'airfield cannon burst and tractor bracket use separate anchored ammunition');
+  ok(_shots268.interceptor.k.length===3&&_shots268.command.k.length===6&&
+     _shots268.command.k.every(function(k){return k==='s4rail';}),
+     'interceptor machine-gun pass and command-plane rail fan remain distinct');
+  ok(_shots268.barrel.k.length===0&&_shots268.tanker.k.length===2&&_shots268.tanker.k.every(function(k){return k==='s4bomb';}),
+     'the barrel stays a physical hazard while the fuel tanker drops its own bomb pair');
+  ok(_shots268.bomber.k.length===3&&_shots268.bomber.k.every(function(k){return k==='s4bomb';})&&
+     _shots268.heavy.k.length===2&&_shots268.heavy.k.every(function(k){return k==='s4missile';}),
+     'gunship bomb ladder and heavy-jet rack salvo are different attack questions');
+  ok(_shots268.missile.k.length===2&&_shots268.missile.k.every(function(k){return k==='s4rocket';})&&
+     _shots268.rocket.k.length===3&&_shots268.rocket.k.every(function(k){return k==='s4rocket';}),
+     'missile vehicle launches parallel racks while the rocket plane owns a three-way fan');
+  ok(_shots268.mini.k.length===4&&_shots268.mini.k.every(function(k){return k==='s4brass';})&&
+     _shots268.sam.k.length===3&&_shots268.sam.k.every(function(k){return k==='s4missile';}),
+     'mini-tank stitch and SAM three-lane wall complete the twelve identities');
+  ok(Object.keys(_shots268).filter(function(k){return k!=='barrel';}).every(function(k){return _shots268[k].fl>0;}),
+     'every armed Level-4 unit releases from a measured animated muzzle flash');
+
+  ok(vm.runInContext("['s4steel','s4brass','s4rocket','s4missile','s4bomb','s4rail'].every(function(k){return !!FIRETYPES[k]&&!!FIRETYPES[k].proc4&&!!PROJ[k];})",ctxv),
+     'all six highway-readable ammunition roles resolve through dedicated render and behavior registries');
+  ok(vm.runInContext("Object.keys(S4CHASE).every(function(k){var a=S4CHASE[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s4atk_'+a+'_'+i))return false;return true;})",ctxv),
+     'all twelve Level-4 hulls resolve their complete eight-frame action reels');
+
+  var _fixed268=JSON.parse(vm.runInContext("(function(){run.stage=4;stagePlan=[];waveIdx=0;enemies.length=0;eBullets.length=0;player.x=120;player.y=470;var H=S4CHASE.s4missile,e={_s4chase:'s4missile',x:240,y:VH*.27,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};for(var i=0;i<32;i++)s4ChaseTick(e,1/60);var b=eBullets[0],a0=Math.atan2(b.vy,b.vx);player.x=420;for(var j=0;j<24;j++)updatePlay(1/60);return JSON.stringify({a0:a0,a1:Math.atan2(b.vy,b.vx),homing:!!b.homing,flip:!!b.flip});})()",ctxv));
+  ok(!_fixed268.homing&&!_fixed268.flip&&Math.abs(_fixed268.a0-_fixed268.a1)<.0001,
+     'Level-4 missiles accelerate on the warned heading without homing, mirroring or late flip');
+  ok(vm.runInContext("(function(){var s=drawS4DamageOverlay.toString();return s.indexOf('e.t||0')>=0&&s.indexOf('Math.sin')>=0&&s.indexOf('%(h*.44)')>=0;})()",ctxv),
+     'damaged Blacksite hulls animate both the flame and the entire travelling smoke column');
+
+  var _tiers268=JSON.parse(vm.runInContext("(function(){run.stage=4;curStage=STAGES[3];player.x=250;player.y=470;_navalFlashes.length=0;"
+    +"var d=spawnArsenalMini('dambreaker'),dk=[];d.y=112;d._dr.entry=0;for(var i=0;i<4;i++){eBullets.length=0;droneFire(d);dk.push(eBullets.map(function(q){return q.kind;}));}"
+    +"spawnSubBoss('olivewarden');subBoss.enter=false;subBoss.x=240;subBoss.y=116;subBoss._drawY=116;var ok=[];[1,.40].forEach(function(f){eBullets.length=0;subBoss.hp=subBoss.maxhp*f;shipBossAttack(subBoss);ok.push(eBullets.map(function(q){return q.kind;}));});return JSON.stringify({d:dk,o:ok});})()",ctxv));
+  ok(_tiers268.d[0].every(function(k){return k==='s4rail';})&&_tiers268.d[1].every(function(k){return k==='s4bomb';})&&
+     _tiers268.d[2].every(function(k){return k==='s4rocket';})&&_tiers268.d[3].every(function(k){return k==='s4brass';}),
+     'Dambreaker cycles rail fan, bomb lob, rocket ring and machine-gun strafe with a measured muzzle');
+  ok(_tiers268.o[0].length&&_tiers268.o[0].every(function(k){return k==='s4missile';})&&
+     _tiers268.o[1].length&&_tiers268.o[1].every(function(k){return k==='s4rail';}),
+     'Olive Warden switches between Blacksite missile pincers and a rail attack');
+}
+
+// ===== 269. STAGE-6 NATIVE STORM FLEET + DOOMSDAY MEGA BOSS =====
+console.log("=== 269. Stage-6 storm fleet and Doomsday mega boss ===");
+{
+  var _fleet269=['s6lancer','s6cyclone','s6bomber','s6mine','s6skimmer','s6carrier',
+    's6reactor','s6buoy','s6dart','s6thunder','s6turbine','s6probe'];
+  var _plan269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];var p=buildStagePlan(6),seen={};"
+    +"for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
+  ok(_fleet269.every(function(k){return _plan269.indexOf(k)>=0;}),
+     'Stage 6 schedules all twelve supplied Heavy Turbulence airframes');
+  ok(['l6v_b0','l6v_b1','l6v_b2','l6v_s0','l6v_s1','l6v_s2'].every(function(k){return _plan269.indexOf(k)<0;}),
+     'the rebuilt storm plan contains no palette-swapped legacy fleet');
+
+  var _owned269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];enemies.length=0;var o={};"
+    +"Object.keys(S6STORM).forEach(function(k){var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S6STORM[k].art};});return JSON.stringify(o);})()",ctxv));
+  ok(_fleet269.every(function(k){return _owned269[k]&&_owned269[k].p==='s6storm'&&!_owned269[k].s&&_owned269[k].f===null;}),
+     'every storm unit owns its movement and weapon cadence without a stacked generic shooter');
+
+  var _shots269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];stagePlan=[];waveIdx=0;player.x=260;player.y=470;"
+    +"function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S6STORM[k],e={_s6storm:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||90)&&!e.dead;i++)s6StormTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length,phase:e._phase||null};}"
+    +"return JSON.stringify({lancer:tick('s6lancer'),cyclone:tick('s6cyclone',function(e){e._phase='tell';e._tell=.03;},50),bomber:tick('s6bomber',function(e){e._dir=1;}),"
+    +"mine:tick('s6mine'),skimmer:tick('s6skimmer',function(e){e._dir=1;}),carrier:tick('s6carrier'),reactor:tick('s6reactor'),buoy:tick('s6buoy'),"
+    +"dart:tick('s6dart',function(e){e._dir=1;}),thunder:tick('s6thunder'),turbine:tick('s6turbine'),probe:tick('s6probe')});})()",ctxv));
+  ok(_shots269.lancer.k.length===3&&_shots269.lancer.k.every(function(k){return k==='s6wind';})&&
+     _shots269.mine.k.length===9&&_shots269.mine.k.every(function(k){return k==='s6bolt';}),
+     'Cloud Lancer fan and Lightning Mine safe-gate crown remain distinct patterns');
+  ok(_shots269.cyclone.k.length===0&&_shots269.cyclone.phase==='charge',
+     'Cyclone Interceptor is a projectile-free, telegraphed committed rammer');
+  ok(_shots269.bomber.k.every(function(k){return k==='s6orb';})&&_shots269.skimmer.k.every(function(k){return k==='s6orb';})&&
+     _shots269.carrier.k.filter(function(k){return k==='s6missile';}).length===2,
+     'bomber corridor, skimmer crosswind and carrier missile bracket keep separate flight questions');
+  ok(_shots269.reactor.k.length>=6&&_shots269.buoy.k.length===6&&
+     _shots269.dart.k.length===4&&_shots269.dart.k.every(function(k){return k==='s6tracer';}),
+     'reactor wall, rotating buoy spokes and dart tracer stitch retain their own cadence');
+  ok(_shots269.thunder.k.length===3&&_shots269.turbine.k.length===6&&
+     _shots269.probe.k.length===3&&_shots269.probe.k.every(function(k){return k==='s6seeker';}),
+     'Thunder lanes, turbine helix and three warned forecast columns complete the fleet identities');
+  ok(Object.keys(_shots269).filter(function(k){return k!=='cyclone';}).every(function(k){return _shots269[k].fl>0;}),
+     'every armed Level-6 airframe releases through an animated, following muzzle hardpoint');
+  ok(vm.runInContext("['s6wind','s6bolt','s6missile','s6orb','s6tracer','s6seeker'].every(function(k){return !!FIRETYPES[k]&&!!FIRETYPES[k].proc6&&!!PROJ[k];})",ctxv),
+     'all six weather-readable projectile roles resolve through dedicated render and behavior registries');
+  ok(vm.runInContext("Object.keys(S6STORM).every(function(k){var a=S6STORM[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s6atk_'+a+'_'+i))return false;return true;})",ctxv),
+     'all twelve Stage-6 hulls resolve complete eight-frame action reels');
+
+  var _fixed269=JSON.parse(vm.runInContext("(function(){run.stage=6;stagePlan=[];waveIdx=0;enemies.length=0;eBullets.length=0;player.x=100;player.y=500;"
+    +"var b={x:240,y:140,vx:0.7,vy:1.5,ang:0,w:13,h:32,dmg:1,t:0,kind:'s6missile',_s6Accel:1.3,_s6Max:5};eBullets.push(b);var a0=Math.atan2(b.vy,b.vx);player.x=430;for(var i=0;i<24;i++)updatePlay(1/60);return JSON.stringify({a0:a0,a1:Math.atan2(b.vy,b.vx),h:!!b.homing,f:!!b.flip});})()",ctxv));
+  ok(!_fixed269.h&&!_fixed269.f&&Math.abs(_fixed269.a0-_fixed269.a1)<.0001,
+     'Level-6 accelerating missiles preserve their warned heading without homing, mirroring or late flip');
+  ok(vm.runInContext("(function(){var s=drawS6DamageOverlay.toString();return s.indexOf('e.t||0')>=0&&s.indexOf('Math.sin')>=0&&s.indexOf('%(h*.48)')>=0;})()",ctxv),
+     'damaged storm hulls animate both fire and the complete travelling smoke column');
+
+  var _mini269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];player.x=250;player.y=470;spawnSubBoss('blacksteel');subBoss.enter=false;subBoss.x=240;subBoss.y=116;subBoss._drawY=116;var p=[];[1,.20].forEach(function(f){eBullets.length=0;subBoss.hp=subBoss.maxhp*f;subBoss._sbStep=0;shipBossAttack(subBoss);p.push(eBullets.map(function(q){return q.kind;}));});return JSON.stringify(p);})()",ctxv));
+  ok(_mini269[0].length&&_mini269[0].every(function(k){return k==='s6bolt';})&&
+     _mini269[1].length&&_mini269[1].every(function(k){return k==='s6prism';}),
+     'Blacksteel Raptor escalates from storm-coil bolts to prism lane pressure using Level-6 ammunition');
+
+  var _mega269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];player.x=250;player.y=500;eBullets.length=0;_navalFlashes.length=0;"
+    +"var b={_ship:'doomsdaycarriermk2',x:VW/2,y:120,_drawY:120,w:640,h:320,hp:1000,maxhp:1000,flash:0,dead:false};carrierInit(b);carrierMegaInit(b);b._lc.playing=false;"
+    +"function beat(frac,n){b.hp=b.maxhp*frac;b._mega.cd=0;var at=eBullets.length;for(var i=0;i<n;i++)carrierMegaTick(b,.12);return eBullets.slice(at).map(function(q){return q.kind;});}"
+    +"var p0=beat(.90,2),p1=beat(.70,10),p2=beat(.45,24),p3=beat(.20,48),node=b._mega.nodes[0],pos=carrierMegaNodePos(b,node),hit=carrierMegaNodeAt(b,pos.x,pos.y)===node;"
+    +"carrierMegaNodeDamage(b,node,99);return JSON.stringify({p:[p0,p1,p2,p3],phase:b._mega.phase,nodes:b._mega.nodes.length,hit:hit,dead:node.dead,fl:_navalFlashes.length});})()",ctxv));
+  ok(_mega269.nodes===4&&_mega269.hit&&_mega269.dead,
+     'the mega boss fields four independently hittable and destructible animated storm nodes');
+  ok(_mega269.p[0].indexOf('s6cyclone')>=0&&_mega269.p[1].indexOf('s6cyclone')>=0&&
+     _mega269.p[2].indexOf('s6prism')>=0&&_mega269.p[2].indexOf('s6gravity')>=0,
+     'Bay Siege escalates through Storm Cage into alternating prism and gravity attacks');
+  ok(['s6omega','s6cluster','s6flak'].every(function(k){return _mega269.p[3].indexOf(k)>=0;})&&_mega269.phase===3,
+     'Doomsday Fusion cycles omega bomb, cluster fan and flak attacks rather than repeating one volley');
+  ok(_mega269.fl>0&&vm.runInContext("SHIPBOSS.doomsdaycarriermk2.hpMul>=1.65",ctxv),
+     'the Mk II mega boss uses supplied animated muzzles and an appropriately reinforced health pool');
+  ok(vm.runInContext("['s6cyclone','s6prism','s6flak','s6gravity','s6omega','s6cluster'].every(function(k){return !!FIRETYPES[k]&&!!PROJ[k];})",ctxv),
+     'all six Doomsday arsenal families are registered through the single projectile pipeline');
+  ok(vm.runInContext("(function(){var groups={stormnode:8,stormlink:6,prismmuzzle:8,prismbolt:8,cyclonemuzzle:8,cyclonetracer:8,flakshell:8,gravitymine:8,'omegabomb-hostile':8,clusterbomblet:8};for(var g in groups)for(var i=0;i<groups[g];i++)if(!XART.rdy('s6mb_'+g+'_'+i))return false;return true;})()",ctxv),
+     'the mega-boss storm nodes, links, muzzles and complete projectile reels all resolve');
+}
+
+// ===== 270. STAGE-7 NATIVE TOXIC FLEET + SLUDGE EMPEROR =====
+console.log("=== 270. Stage-7 toxic fleet and Sludge Emperor ===");
+{
+  var _fleet270=['s7lamprey','s7barge','s7pipe','s7walker','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer','s7valve'];
+  var _plan270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];var p=buildStagePlan(7),seen={};for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
+  ok(_fleet270.every(function(k){return _plan270.indexOf(k)>=0;}),'Stage 7 schedules all eleven supplied toxic-sewer field units');
+  ok(['skimmer','sentry','crawler','shambler','maw','barge'].every(function(k){return _plan270.indexOf(k)<0;}),'the rebuilt Stage-7 plan contains none of the reused legacy sewer roster');
+  var _owned270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];enemies.length=0;var o={};Object.keys(S7TOXIC).forEach(function(k){var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S7TOXIC[k].art};});return JSON.stringify(o);})()",ctxv));
+  ok(_fleet270.every(function(k){return _owned270[k]&&_owned270[k].p==='s7toxic'&&!_owned270[k].s&&_owned270[k].f===null;}),'every toxic unit owns its movement and ammunition without a stacked generic shooter');
+  var _shots270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S7TOXIC[k],e={_s7toxic:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||110)&&!e.dead;i++)s7ToxicTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}return JSON.stringify({lamprey:tick('s7lamprey'),barge:tick('s7barge'),pipe:tick('s7pipe'),walker:tick('s7walker'),sampler:tick('s7sampler'),serpent:tick('s7serpent'),mine:tick('s7mine'),canister:tick('s7canister'),tank:tick('s7tank'),skimmer:tick('s7skimmer',function(e){e._dir=1;}),valve:tick('s7valve')});})()",ctxv));
+  ok(_shots270.lamprey.k.every(function(k){return k==='s7sludge';})&&_shots270.barge.k.every(function(k){return k==='s7acid';}),'Lamprey jaw bursts and Barge safe-gate fans use different readable ordnance');
+  ok(_shots270.pipe.k.every(function(k){return k==='s7shard';})&&_shots270.walker.k.every(function(k){return k==='s7grenade';})&&_shots270.sampler.k.every(function(k){return k==='s7laser';}),'wall crawler, pump walker and sampling drone retain three distinct attack roles');
+  ok(_shots270.serpent.k.every(function(k){return k==='s7bio';})&&_shots270.mine.k.every(function(k){return k==='s7acid';})&&_shots270.canister.k.every(function(k){return k==='s7sludge';}),'serpent missiles, mine crown and canister pulse stay visually and behaviorally separate');
+  ok(_shots270.tank.k.every(function(k){return k==='s7shard';})&&_shots270.skimmer.k.every(function(k){return k==='s7acid';})&&_shots270.valve.k.every(function(k){return k==='s7laser';}),'tank stitch, skimmer wake and valve sweep complete the eleven identities');
+  ok(Object.keys(_shots270).every(function(k){return _shots270[k].k.length>0&&_shots270[k].fl>0;}),'every Level-7 field unit releases through an animated following muzzle hardpoint');
+  ok(vm.runInContext("['s7acid','s7sludge','s7shard','s7bio','s7laser','s7grenade'].every(function(k){return !!FIRETYPES[k]&&!!FIRETYPES[k].proc7&&!!PROJ[k];})",ctxv),'all six toxic projectile roles resolve through dedicated render and behavior registries');
+  ok(vm.runInContext("Object.keys(S7TOXIC).every(function(k){var a=S7TOXIC[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s7atk_'+a+'_'+i))return false;return true;})",ctxv),'all eleven field hulls resolve complete eight-frame action reels');
+  ok(vm.runInContext("(function(){for(var i=0;i<8;i++)if(!XART.rdy('s7atk_dual_scoop_dredger_'+i))return false;for(var j=0;j<12;j++)if(!XART.rdy('s7spore_'+j))return false;return true;})()",ctxv),'Dual Scoop Dredger and the complete twelve-frame spore crown resolve');
+  var _fixed270=JSON.parse(vm.runInContext("(function(){run.stage=7;stagePlan=[];waveIdx=0;enemies.length=0;eBullets.length=0;player.x=100;player.y=500;var b={x:240,y:140,vx:.7,vy:1.5,ang:0,w:14,h:32,dmg:1,t:0,kind:'s7bio',_s7Accel:1.2,_s7Max:5.1};eBullets.push(b);var a0=Math.atan2(b.vy,b.vx);player.x=430;for(var i=0;i<24;i++)updatePlay(1/60);return JSON.stringify({a0:a0,a1:Math.atan2(b.vy,b.vx),h:!!b.homing,f:!!b.flip});})()",ctxv));
+  ok(!_fixed270.h&&!_fixed270.f&&Math.abs(_fixed270.a0-_fixed270.a1)<.0001,'Level-7 missiles preserve their warned heading without homing, mirroring or late flip');
+  ok(vm.runInContext("(function(){var s=drawS7DamageOverlay.toString();return s.indexOf('e.t||0')>=0&&s.indexOf('rise=')>=0&&s.indexOf('Math.sin')>=0;})()",ctxv),'damaged toxic hulls animate fire and the complete travelling smoke plume');
+  var _mini270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];player.x=250;player.y=470;spawnSubBoss('dualscoopdredger');subBoss.enter=false;subBoss.x=240;subBoss.y=116;subBoss._drawY=116;var p=[];eBullets.length=0;subBoss.hp=subBoss.maxhp;subBoss._sbStep=0;shipBossAttack(subBoss);p.push(eBullets.map(function(q){return q.kind;}));eBullets.length=0;subBoss.hp=subBoss.maxhp*.2;subBoss._sbStep=2;shipBossAttack(subBoss);p.push(eBullets.map(function(q){return q.kind;}));return JSON.stringify(p);})()",ctxv));
+  ok(_mini270[0].length===3&&_mini270[0].every(function(k){return k==='s7sludge';})&&_mini270[1].indexOf('s7spore')>=0,'Dual Scoop Dredger escalates from alternating scoop bursts to its supplied animated spore crown');
+  var _boss270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];player.x=250;player.y=500;var b={x:240,y:118,_drawY:118,w:220,h:216,maxhp:300,hp:300,dead:false,flash:0};shipBossInit(b,'sludgeemperor');var out=[];[.9,.65,.4,.15].forEach(function(f){eBullets.length=0;b.hp=b.maxhp*f;b._sbStep=0;shipBossAttack(b);var warned=!!b._s7Flood;if(warned)for(var i=0;i<150;i++)sludgeFloodTick(b,1/60);out.push({k:eBullets.map(function(q){return q.kind;}),warned:warned});b._s7Flood=null;});return JSON.stringify(out);})()",ctxv));
+  ok(_boss270[0].k.indexOf('s7acid')>=0&&_boss270[1].warned&&_boss270[1].k.indexOf('s7sludge')>=0&&_boss270[2].k.indexOf('s7acid')>=0&&_boss270[3].k.indexOf('s7laser')>=0&&_boss270[3].k.indexOf('s7grenade')>=0,'Sludge Emperor advances through pressure, warned flood, crown and reactor-purge phases');
+  ok(vm.runInContext("SHIPBOSS.sludgeemperor.pats.length===4&&SHIPBOSS.sludgeemperor.hpMul>=1.6&&SUBBOSS[7].kind==='dualscoopdredger'",ctxv),'Stage 7 has a reinforced four-phase boss and the supplied dedicated miniboss');
+  ok(vm.runInContext("typeof l7PortalReady==='function'&&XART.rdy('nfx_l7portal_0')&&XART.rdy('nfx_l7portal_7')",ctxv),'the existing post-boss Level-7 portal cinematic remains intact');
+}
+
+// ===== 271. STAGE-5 NATIVE ORBITAL FLEET + XENO REGENT =====
+console.log("=== 271. Stage-5 orbital fleet and Xeno Regent ===");
+{
+  var _fleet271=['s5frigate','s5rammer','s5skimmer','s5gravity','s5interceptor','s5minelayer','s5satellite','s5portalmine','s5repair','s5salvage','s5leech','s5station'];
+  var _plan271=JSON.parse(vm.runInContext("(function(){run.stage=5;curStage=STAGES[4];var p=buildStagePlan(5),seen={};for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
+  ok(_fleet271.every(function(k){return _plan271.indexOf(k)>=0;}),'Stage 5 schedules all twelve supplied orbital hulls');
+  ok(['needle','crescent','hauler','oracle','octo','mech'].every(function(k){return _plan271.indexOf(k)<0;}),'the rebuilt orbital plan contains no reused legacy space cast');
+  var _owned271=JSON.parse(vm.runInContext("(function(){run.stage=5;curStage=STAGES[4];enemies.length=0;var o={};Object.keys(S5SPACE).forEach(function(k){enemies.length=0;var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S5SPACE[k].art};});return JSON.stringify(o);})()",ctxv));
+  ok(_fleet271.every(function(k){return _owned271[k]&&_owned271[k].p==='s5space'&&!_owned271[k].s&&_owned271[k].f===null;}),'every orbital hull exclusively owns its movement and attack cadence');
+  var _shots271=JSON.parse(vm.runInContext("(function(){run.stage=5;curStage=STAGES[4];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S5SPACE[k],e={_s5space:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||130)&&!e.dead;i++)s5SpaceTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length,ram:!!e._ram};}return JSON.stringify({frigate:tick('s5frigate'),rammer:tick('s5rammer',function(e){e.y=VH*.24;}),skimmer:tick('s5skimmer',function(e){e._dir=1;}),gravity:tick('s5gravity'),interceptor:tick('s5interceptor'),minelayer:tick('s5minelayer'),satellite:tick('s5satellite'),portal:tick('s5portalmine'),repair:tick('s5repair'),salvage:tick('s5salvage'),leech:tick('s5leech'),station:tick('s5station')});})()",ctxv));
+  ok(_shots271.frigate.k.every(function(k){return k==='s5null';})&&_shots271.gravity.k.every(function(k){return k==='s5split';}),'Beam Frigate lanes and Gravity Orb safe crown use distinct ammunition');
+  ok(_shots271.rammer.k.length===0&&_shots271.rammer.ram,'Comet Rammer is a telegraphed committed body attack, not another shooter');
+  ok(_shots271.skimmer.k.every(function(k){return k==='s5chaos';})&&_shots271.interceptor.k.every(function(k){return k==='s5fracture';})&&_shots271.minelayer.k.every(function(k){return k==='s5split';}),'skimmer wake, interceptor burst and mine field preserve separate roles');
+  ok(_shots271.satellite.k.every(function(k){return k==='s5missile';})&&_shots271.portal.k.every(function(k){return k==='s5chaos';})&&_shots271.salvage.k.every(function(k){return k==='s5prism';}),'missile satellite, portal mine and salvage tug complete their authored space jobs');
+  ok(_shots271.repair.k.length===0&&_shots271.leech.k.every(function(k){return k==='s5split';})&&_shots271.station.k.indexOf('s5fracture')>=0,'repair drone remains true support while leech and Twin Station keep combat identities');
+  ok(Object.keys(_shots271).filter(function(k){return k!=='rammer'&&k!=='repair';}).every(function(k){return _shots271[k].k.length&&_shots271[k].fl>0;}),'every armed Level-5 hull releases through an animated following muzzle hardpoint');
+  ok(vm.runInContext("['s5fracture','s5split','s5prism','s5null','s5missile','s5chaos'].every(function(k){return FIRETYPES[k]&&FIRETYPES[k].procSpace&&PROJ[k];})",ctxv),'all six orbital projectile families use the dedicated hard-edged space renderer');
+  ok(vm.runInContext("Object.keys(S5SPACE).every(function(k){var a=S5SPACE[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s5atk_'+a+'_'+i))return false;return true;})",ctxv),'all twelve Stage-5 hulls resolve their complete eight-frame reels');
+  ok(vm.runInContext("(function(){for(var i=0;i<12;i++)if(!XART.rdy('s5fracture_'+i))return false;return true;})()",ctxv),'the supplied twelve-frame fracture halo resolves');
+  var _boss271=JSON.parse(vm.runInContext("(function(){run.stage=5;curStage=STAGES[4];player.x=250;player.y=500;var b={x:240,y:118,_drawY:118,w:216,h:208,maxhp:500,hp:500,dead:false,flash:0};shipBossInit(b,'xenoregent');var out=[];[.9,.65,.4,.15].forEach(function(f){eBullets.length=0;b.hp=b.maxhp*f;b._sbStep=0;shipBossAttack(b);out.push(eBullets.map(function(q){return q.kind;}));});return JSON.stringify(out);})()",ctxv));
+  ok(_boss271[0].indexOf('s5null')>=0&&(_boss271[1].indexOf('s5fracture')>=0||_boss271[1].indexOf('s5halo')>=0)&&_boss271[2].indexOf('s5missile')>=0&&_boss271[3].indexOf('s5chaos')>=0,'Xeno Regent advances through grid, fracture, missile and collapse phases');
+  ok(vm.runInContext("SHIPBOSS.xenoregent.pats.length===4&&SHIPBOSS.xenoregent.hpMul>=1.6&&SUBBOSS[5].kind==='chaosharrier'",ctxv),'Stage 5 keeps the approved Chaos Harrier and gains a reinforced four-phase boss');
+}
+
+// ===== 272. STAGE-9 NATIVE VOID FLEET + RIFT WARDENS =====
+console.log("=== 272. Stage-9 void fleet and Rift Wardens ===");
+{
+  var _fleet272=['s9beacon','s9chronal','s9comet','s9gunship','s9interceptor','s9gatecarrier','s9gateturret','s9gravity','s9prism','s9warptank','s9ring','s9singularity'];
+  var _plan272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var p=buildStagePlan(9),seen={};for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
+  ok(_fleet272.every(function(k){return _plan272.indexOf(k)>=0;}),'Stage 9 schedules all twelve supplied Velocity Void hulls');
+  ok(['wskim','pneedle','pmine','gleech','vmanta','echof','tsplit','cbreak','horizon','dreadv'].every(function(k){return _plan272.indexOf(k)<0;}),'the rebuilt bonus stage no longer mixes the prototype void roster into its waves');
+  var _owned272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];enemies.length=0;var o={};Object.keys(S9VOID).forEach(function(k){enemies.length=0;var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S9VOID[k].art};});return JSON.stringify(o);})()",ctxv));
+  ok(_fleet272.every(function(k){return _owned272[k]&&_owned272[k].p==='s9void'&&!_owned272[k].s&&_owned272[k].f===null;}),'every Velocity Void hull owns its flight and weapon cadence');
+  var _shots272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S9VOID[k],e={_s9void:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||120)&&!e.dead;i++)s9VoidTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}return JSON.stringify({beacon:tick('s9beacon'),chronal:tick('s9chronal'),comet:tick('s9comet',function(e){e._dir=1;}),gunship:tick('s9gunship'),interceptor:tick('s9interceptor'),carrier:tick('s9gatecarrier'),turret:tick('s9gateturret'),gravity:tick('s9gravity'),prism:tick('s9prism'),tank:tick('s9warptank'),ring:tick('s9ring',function(e){e._cy=120;}),singularity:tick('s9singularity')});})()",ctxv));
+  ok(_shots272.beacon.k.every(function(k){return k==='s9warp';})&&_shots272.chronal.k.every(function(k){return k==='s9gold';})&&_shots272.comet.k.every(function(k){return k==='s9turbo';}),'beacon wheel, chronal fan and comet pass use distinct void ammunition');
+  ok(_shots272.gunship.k.every(function(k){return k==='s9needle';})&&_shots272.interceptor.k.every(function(k){return k==='s9needle';})&&_shots272.carrier.k.every(function(k){return k==='s9pair';}),'gunship batteries, interceptor burst and gate carrier bracket remain distinct patterns');
+  ok(_shots272.turret.k.every(function(k){return k==='s9warp';})&&_shots272.gravity.k.every(function(k){return k==='s9comet';})&&_shots272.tank.k.every(function(k){return k==='s9gold';}),'gate turret, gravity artillery and warp tank preserve their separate cadences');
+  ok((_shots272.prism.k.indexOf('s9warp')>=0||_shots272.prism.k.indexOf('s9lattice')>=0)&&_shots272.ring.k.every(function(k){return k==='s9turbo';})&&_shots272.singularity.k.every(function(k){return k==='s9pair';}),'prism, ring drone and singularity mine complete the twelve identities');
+  ok(Object.keys(_shots272).every(function(k){return _shots272[k].k.length&&_shots272[k].fl>0;}),'every Level-9 hull fires through an animated following muzzle hardpoint');
+  ok(vm.runInContext("['s9gold','s9warp','s9turbo','s9needle','s9comet','s9pair'].every(function(k){return FIRETYPES[k]&&FIRETYPES[k].procSpace&&PROJ[k];})",ctxv),'all six void projectile families use the dedicated hard-edged space renderer');
+  ok(vm.runInContext("Object.keys(S9VOID).every(function(k){var a=S9VOID[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s9atk_'+a+'_'+i))return false;return true;})",ctxv),'all twelve Stage-9 hulls resolve their complete eight-frame reels');
+  ok(vm.runInContext("(function(){for(var i=0;i<12;i++)if(!XART.rdy('s9lattice_'+i))return false;return true;})()",ctxv),'the supplied twelve-frame warp lattice resolves');
+  var _mini272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];player.x=250;player.y=500;spawnSubBoss('riftwardens');for(var i=0;i<90;i++)updateSubBoss(1/60);var F=subBoss._s9rift;eBullets.length=0;F.left._fire=0;s9RiftWardensTick(subBoss,1/60);return JSON.stringify({kind:subBoss.kind,name:subBoss.name,pair:!!F,left:F.left.hp,right:F.right.hp,shots:eBullets.map(function(q){return q.kind;})});})()",ctxv));
+  ok(_mini272.kind==='riftwardens'&&_mini272.name==='RIFT WARDENS'&&_mini272.pair&&_mini272.left>0&&_mini272.right>0&&_mini272.shots.length>0,'the pictured violet/ion pair now occupies the Stage-9 sub-boss gate as two armed bodies');
+  var _damage272=JSON.parse(vm.runInContext("(function(){function fresh(){subBoss=null;subBossActive=false;subBossDone=false;subBossTriggered=false;pBullets.length=0;spawnSubBoss('riftwardens');for(var i=0;i<90;i++)updateSubBoss(1/60);var F=subBoss._s9rift;player.dead=false;player.x=F.left.x;player.y=410;return F;}function fly(n){for(var i=0;i<n;i++){for(var j=0;j<pBullets.length;j++)if(!pBullets[j].dead)spaceBulletTick(pBullets[j],1/60);pBullets=pBullets.filter(function(b){return !b.dead;});}}run.stage=9;run.spaceMode=true;run.spaceLevels=[5,5,5];var F=fresh(),a=F.left.hp;spaceLaserFire();fly(45);var laser=a-F.left.hp;F=fresh();a=F.left.hp;spaceShadowRelease(1.2);fly(70);var shadow=a-F.left.hp;F=fresh();a=F.left.hp;spaceVolleyFire();fly(80);var volley=a-F.left.hp;return JSON.stringify({laser:laser,shadow:shadow,volley:volley});})()",ctxv));
+  ok(_damage272.laser>0&&_damage272.shadow>0&&_damage272.volley>0,
+     'Laser Cannon, Shadow Orb and Volley Missiles all damage Rift Wardens through their live projectile ticks');
+  ok(vm.runInContext("SHIPBOSS.tidalsovereign.pats.length===4&&SHIPBOSS.tidalsovereign.hpMul>=1.5&&SHIPBOSS.warpsentinel.pats.length===3&&SUBBOSS[9].kind==='riftwardens'",ctxv),'Stage 9 reserves the black/blue Warp Sentinel hull for the true twin-drone final boss');
+  ok(vm.runInContext("typeof s9FusionBossInit==='function'&&typeof s9FusionBossTick==='function'&&typeof s9FusionBossDraw==='function'&&s9FusionBossInit.toString().indexOf('enemyShieldEquip')<0",ctxv),'the two black/blue drones fuse into Tidal Sovereign without unexplained shield rings');
+  ok(vm.runInContext("Snd.TAME.spaceLaserCannon.g>=1&&Snd.TAME.spaceShadowRelease.g>=1&&Snd.TAME.spaceVolleyLaunch.g>=1",ctxv),
+     'all three space launch cues are foreground-mixed over Stage-5/9 music');
+  ok(vm.runInContext("Snd.TAME.helixChargeStart.boost>1&&Snd.TAME.helixCharge.boost>1&&typeof Snd.loopPrepare==='function'&&spaceModeStage.toString().indexOf(\"loopPrepare('spaceShadowCharge')\")>=0",ctxv),
+     'quiet Maverick charge beds use post-element gain and held space audio is decoded before first fire');
+}
+
+// ===== 273. STAGE-8 FURIOUS DEATH NATIVE MEGA FLEET =====
+console.log("=== 273. Stage-8 Furious Death mega fleet ===");
+{
+  var _fleet273=['s8leech','s8interceptor','s8manta','s8hunter','s8deathorb','s8parasite','s8razor','s8skull','s8carrier','s8symbiote','s8tentacle','s8bomber'];
+  var _plan273=JSON.parse(vm.runInContext("(function(){run.stage=8;curStage=STAGES[7];var p=buildStagePlan(8),seen={};for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
+  ok(_fleet273.every(function(k){return _plan273.indexOf(k)>=0;}),'Stage 8 schedules all twelve native Furious Death mega hulls');
+  ok(['needle','crescent','hauler','oracle','talon','hell','cdisc','spiral','octo','mine'].every(function(k){return _plan273.indexOf(k)<0;}),'the finale contains no Stage-5 cast, legacy elite or generic filler');
+  var _owned273=JSON.parse(vm.runInContext("(function(){run.stage=8;curStage=STAGES[7];enemies.length=0;var o={};Object.keys(S8MEGA).forEach(function(k){enemies.length=0;var e=spawnEnemy(k,240,-100,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S8MEGA[k].art,w:e.w,h:e.h};});return JSON.stringify(o);})()",ctxv));
+  ok(_fleet273.every(function(k){return _owned273[k]&&_owned273[k].p==='s8mega'&&!_owned273[k].s&&_owned273[k].f===null;}),'every mega hull owns its smart movement and ammunition without generic centre fire');
+  ok(_fleet273.every(function(k){return _owned273[k].w>=64&&_owned273[k].h>=74;}),'the complete roster is deliberately mega-sized rather than ordinary fodder scale');
+  var _shots273=JSON.parse(vm.runInContext("(function(){run.stage=8;curStage=STAGES[7];stagePlan=[];waveIdx=0;player.x=265;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;pBullets.length=0;var H=S8MEGA[k],e={_s8mega:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};enemies.push(e);if(prep)prep(e);for(var i=0;i<(n||150)&&!e.dead;i++)s8MegaTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length,dive:!!e._dive};}return JSON.stringify({leech:tick('s8leech'),interceptor:tick('s8interceptor'),manta:tick('s8manta'),hunter:tick('s8hunter'),orb:tick('s8deathorb'),parasite:tick('s8parasite'),razor:tick('s8razor',function(e){e._cy=120;}),skull:tick('s8skull',function(e){e.y=VH*.25;}),carrier:tick('s8carrier'),symbiote:tick('s8symbiote'),tentacle:tick('s8tentacle'),bomber:tick('s8bomber',function(e){e._dir=1;e.x=80;})});})()",ctxv));
+  ok(_shots273.leech.k.every(function(k){return k==='s8pair';})&&_shots273.interceptor.k.every(function(k){return k==='s8needle';}),'Armored Leech pair pressure and Bone Interceptor predictive needles stay distinct');
+  ok(_shots273.manta.k.every(function(k){return k==='s8blade';})&&_shots273.hunter.k.every(function(k){return k==='s8rage';}),'Bone Manta sweep and Hunter Pod flank burst ask different dodges');
+  ok(_shots273.orb.k.indexOf('s8rage')>=0&&_shots273.parasite.k.every(function(k){return k==='s8slug';})&&_shots273.razor.k.every(function(k){return k==='s8blade';}),'Death Orb safe crown, Parasite support shot and Razor orbit retain separate jobs');
+  ok(_shots273.skull.dive&&_shots273.skull.k.every(function(k){return k==='s8rage';}),'Skull Mine telegraphs a crown and commits its physical dive');
+  ok(_shots273.carrier.k.every(function(k){return k==='s8missile';})&&_shots273.symbiote.k.every(function(k){return k==='s8needle';}),'Spawn Carrier missile brackets and Symbiote mirror bursts remain distinct');
+  ok(_shots273.tentacle.k.every(function(k){return k==='s8slug';})&&_shots273.bomber.k.every(function(k){return k==='s8missile';}),'Tentacle predicted lanes and Void Bomber accelerating drops complete the roster identities');
+  ok(Object.keys(_shots273).every(function(k){return _shots273[k].k.length&&_shots273[k].fl>0;}),'every armed mega enemy fires through a following crimson muzzle flash');
+  ok(vm.runInContext("['s8needle','s8rage','s8slug','s8missile','s8pair','s8blade'].every(function(k){return FIRETYPES[k]&&FIRETYPES[k].procSpace&&PROJ[k];})",ctxv),'all six Furious Death projectile families use the hard-edged crimson renderer');
+  ok(vm.runInContext("Object.keys(S8MEGA).every(function(k){var a=S8MEGA[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s8atk_'+a+'_'+i)||!XART.rdy('s8roll_'+a+'_'+i))return false;return true;})",ctxv),'all twelve hulls resolve eight attack plus eight barrel-roll/twist frames');
+  ok(vm.runInContext("(function(){for(var i=0;i<16;i++)if(!XART.rdy('s8rift_'+i))return false;return true;})()",ctxv),'the generated Furious Death background rift resolves all sixteen animation frames');
+  vm.runInContext("run.stage=8;curStage=STAGES[7];enemies.length=0;pBullets.length=0;var e=spawnEnemy('s8interceptor',240,140,{});e._stagger=0;pBullets.push({x:240,y:250,vx:0,vy:-8,w:5,h:14,dead:false});s8MegaTick(e,1/60);",ctxv);
+  ok(vm.runInContext("!!enemies[0]._s8Roll&&!enemies[0]._noHit",ctxv),'a projected player shot triggers a hittable smart barrel-roll instead of invulnerability');
+  vm.runInContext("for(var i=0;i<18;i++)s8MegaTick(enemies[0],1/60);",ctxv);
+  ok(vm.runInContext("enemies[0]._s8Roll&&enemies[0]._s8Roll.t>.25&&Math.abs(enemies[0].x-240)>20",ctxv),'the authored roll reel also produces a real lateral evade');
+  ok(vm.runInContext("_levelCfg().master==='nst8_sky_crimson'&&L8_DECKS.every(function(d){return d.pre.indexOf('nl8c_')===0||d.pre==='s8rift_';})",ctxv),'Stage 8 uses the crimson-clean master, scenery and animated rift deck');
+  ok(vm.runInContext("drawS8Damage.toString().indexOf('rise=')>0&&drawS8Damage.toString().indexOf('Math.sin')>0",ctxv),'damaged mega hulls animate the whole smoke plume and internal fire');
+}
+
+// ===== 274. TOUGH ENCOUNTERS + STATIC HULLS + PREMIUM ORDNANCE =====
+console.log("=== 274. tough encounters, static hulls and premium ordnance ===");
+{
+  ok(vm.runInContext("BOSS_HP_FLOOR.length===9&&MINIBOSS_HP_FLOOR.length===9&&BOSS_HP_FLOOR.every(function(v,i){return v>=(i?BOSS_HP_FLOOR[i-1]:800);})",ctxv),
+     'all nine stages own monotonically rising boss and miniboss HP floors');
+  var _hp274=JSON.parse(vm.runInContext("(function(){run.stage=1;curStage=STAGES[0];spawnBoss('damkeeper');var b1=boss.maxhp;spawnSubBoss('junglecruiser');var m1=subBoss.maxhp;run.stage=9;curStage=STAGES[8];spawnBoss('tidalfusion');var b9=boss.maxhp,tw=boss._s9fusion.left.maxhp+boss._s9fusion.right.maxhp;spawnSubBoss('riftwardens');var m9=subBoss.maxhp,mw=subBoss._s9rift.left.maxhp+subBoss._s9rift.right.maxhp;return JSON.stringify({b1:b1,m1:m1,b9:b9,tw:tw,m9:m9,mw:mw});})()",ctxv));
+  ok(_hp274.b1>=800&&_hp274.m1>=380&&_hp274.b9>=4950&&_hp274.m9>=2220,
+     'live stage-1 and stage-9 encounters cannot bypass their toughness floors');
+  ok(Math.abs(_hp274.b9-_hp274.tw)<=8&&Math.abs(_hp274.m9-_hp274.mw)<=8,
+     'twin/component health pools scale with the public boss gauges');
+  ok(vm.runInContext("['kinetic','laser','missile','void'].every(function(f){for(var i=0;i<8;i++)if(!XART.rdy('bpfx_proj_'+f+'_'+i)||!XART.rdy('bpfx_muzzle_'+f+'_'+i))return false;return true;})",ctxv),
+     'all 64 real-alpha premium projectile and muzzle frames resolve');
+  ok(vm.runInContext("Object.keys(BPFX_STAGE_PROJECTILE).length>=45&&['s2needle','s3lance','s4missile','s5fracture','s6bolt','s7sludge','s8rage','s9warp'].every(function(k){return !!BPFX_STAGE_PROJECTILE[k];})",ctxv),
+     'every Stage 2-9 generated projectile pass routes away from programmer polygons');
+  ok(vm.runInContext("drawS4Chase.toString().indexOf('let fi=0')>=0&&drawS6Storm.toString().indexOf('const fi=0')>=0&&drawS7Toxic.toString().indexOf('const fi=0')>=0&&drawS5Space.toString().indexOf('const fi=0')>=0&&drawS9Void.toString().indexOf('const fi=0')>=0",ctxv),
+     'generated enemy hulls hold frame 0 while idle and firing');
+  ok(vm.runInContext("drawS8Mega.toString().indexOf('else{fi=0')>=0&&drawS8Mega.toString().indexOf('s8roll_')>=0",ctxv),
+     'Stage 8 keeps its deliberate barrel roll but never body-cycles for ordinary attacks');
+  var _mz274=JSON.parse(vm.runInContext("(function(){_navalFlashes.length=0;eBullets.length=0;var o={x:210,y:100,_drawY:100,w:120,h:100,dead:false};eBullets.push({x:228,y:132,vx:0,vy:4,kind:'laser',t:0});attachAnchoredReleaseMuzzles(o,0,null);var f=_navalFlashes[0],a={x:f.x,y:f.y};o.x+=31;o._drawY+=17;tickNavalFlashes(.01);return JSON.stringify({fam:f.fam,follow:typeof f.follow==='function',dx:f.x-a.x,dy:f.y-a.y});})()",ctxv));
+  ok(_mz274.fam==='bpfx_muzzle_laser'&&_mz274.follow&&Math.abs(_mz274.dx-31)<.01&&Math.abs(_mz274.dy-17)<.01,
+     'generated boss muzzle overlays stay anchored to a moving physical emitter');
 }
 
 console.log('\n============================================');

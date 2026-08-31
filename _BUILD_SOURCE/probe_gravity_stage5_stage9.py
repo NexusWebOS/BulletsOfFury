@@ -69,7 +69,7 @@ def main():
             stage5 = page.evaluate(STAGE5_SETUP)
             canvas = page.locator("#screen")
 
-            # The intro is one continuous sky-to-space climb, not a cut to the space plate.
+            # Distance brings in the kit but no longer exposes space during the HQ warning.
             page.evaluate("""() => {
               drawLaunch._phase='run';drawLaunch._pt=0;drawLaunch._lastT=stateT;
               drawLaunch._dist=SEG_B1*0.10+SEG_B3*0.72*0.42;drawLaunch._spd=220;
@@ -79,12 +79,12 @@ def main():
             page.wait_for_timeout(45)
             canvas.screenshot(path=str(OUT / "00_stage5_sky_to_space_ascent.png"))
 
-            # Kit parts are already travelling with the aircraft while Fury HQ types the warning.
+            # Kit parts travel with the aircraft while Fury HQ types the warning; the sky stays.
             page.evaluate("""() => {
               drawLaunch._phase='settle';drawLaunch._pt=0.12;drawLaunch._lastT=stateT;
               drawLaunch._dist=SEG_B3+1750;drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;
               drawLaunch._bgScroll=SEG_B3+1750;
-              gravityMode.dialogueT=gravityMode.dialogueDelay+(gravityMode.line.length/44)+0.10;
+              gravityMode.dialogueT=gravityMode.dialogueDelay+(gravityMode.line.length/GRAVITY_DIALOGUE_CPS)+0.10;
               gravityMode.dialogueDone=false;
             }""")
             page.wait_for_timeout(55)
@@ -93,6 +93,8 @@ def main():
             # Five authored charge speeds: the first and fifth frames make the acceleration visible.
             for name, tick, band, age in (
                 ("02_stage5_spiral_slow", 0.44, 0, 1.10),
+                ("02b_stage5_spiral_sky_hold", 2.50, 2, 3.10),
+                ("02c_stage5_space_crossfade", 3.32, 4, 3.92),
                 ("03_stage5_spiral_turbo", 3.72, 4, 4.38),
                 ("04_stage5_gravity_scatter", 0.46, 4, 4.72),
                 ("05_stage5_fast_snap", 0.40, 4, 5.34),
@@ -103,6 +105,8 @@ def main():
             ):
                 phase = {
                     "02_stage5_spiral_slow": "charge",
+                    "02b_stage5_spiral_sky_hold": "charge",
+                    "02c_stage5_space_crossfade": "charge",
                     "03_stage5_spiral_turbo": "charge",
                     "04_stage5_gravity_scatter": "scatter",
                     "05_stage5_fast_snap": "snap",
@@ -167,8 +171,8 @@ def main():
     (OUT / "report.json").write_text(json.dumps(report, indent=2), encoding="utf-8")
     print(json.dumps(report, indent=2))
     assert not page_errors and not console_errors
-    assert "TOO DANGEROUS TO TRAVEL TO SPACE" in stage5["line"]
-    assert "FURY HQ IS DISPATCHING A SPACESHIP KIT YOUR WAY, STAT!" in stage5["line"]
+    assert "Your ship won't last long in space!" in stage5["line"]
+    assert "HQ is dispatching a kit your way now" in stage5["line"]
     assert phase_machine["seen"] == ["charge", "scatter", "snap", "pixelglow", "whiteout", "reveal", "active"]
     assert phase_machine["ready"] is True
     assert stage9_entry["gravityPhase"] == "active" and stage9_entry["retained"] is True

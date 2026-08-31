@@ -1,0 +1,77 @@
+{
+  "audit": {
+    "base": {
+      "hp": 1,
+      "fire": 1,
+      "bullet": 1,
+      "bossHp": 1,
+      "bossRate": 1,
+      "bossDensity": 1,
+      "spawn": 1.12,
+      "stage": 1,
+      "build": 0,
+      "survived": 0
+    },
+    "hot": {
+      "hp": 1.1031008,
+      "fire": 1.070296,
+      "bullet": 1.046864,
+      "bossHp": 1.1124736,
+      "bossRate": 1.0843552,
+      "bossDensity": 1.0562368,
+      "spawn": 1.3509232,
+      "stage": 1,
+      "build": 0.808,
+      "survived": 1
+    },
+    "reset": {
+      "hp": 1,
+      "fire": 1,
+      "bullet": 1,
+      "bossHp": 1,
+      "bossRate": 1,
+      "bossDensity": 1,
+      "spawn": 1.12,
+      "stage": 1,
+      "build": 0,
+      "survived": 0
+    },
+    "pickupLevel": 2,
+    "lizzieCadence": 0.06875,
+    "lizzieSpeed": 7.875,
+    "laserNative": true
+  },
+  "rollLive": {
+    "y": 112,
+    "station": 112,
+    "flameOn": true,
+    "angle": 1.5707963267948966,
+    "phase": "roll"
+  },
+  "rollGap": {
+    "y": 112,
+    "station": 112,
+    "flameOn": false,
+    "phase": "roll"
+  },
+  "cannon": {
+    "slots": [
+      "L"
+    ],
+    "width": 44
+  },
+  "giant": {
+    "w": 68,
+    "h": 68,
+    "spin": true,
+    "shootable": false
+  },
+  "laserAudio": {
+    "paused": false,
+    "currentTime": 0.6148,
+    "readyState": 4,
+    "on": true,
+    "volume": 0.5032
+  },
+  "errors": []
+}

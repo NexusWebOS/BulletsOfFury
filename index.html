@@ -83,6 +83,18 @@
   #credit-right .nick{color:#c9a227;}
   @media (max-width:820px){ #credit-left,#credit-right{display:none;} }
   body.fs #credit-left, body.fs #credit-right{display:none;}
+  body.cinematic-full #room{background:#000;display:block;}
+  body.cinematic-full #credit-left,
+  body.cinematic-full #credit-right,
+  body.cinematic-full #hud-row,
+  body.cinematic-full #hud-div,
+  body.cinematic-full #fs-btn,
+  body.cinematic-full #hint{display:none !important;}
+  body.cinematic-full #game-frame{position:fixed !important;inset:0 !important;width:100vw !important;
+    height:100vh !important;background:#000;display:block;overflow:hidden;}
+  body.cinematic-full #screen-area{position:fixed;inset:0;width:100vw !important;height:100vh !important;
+    margin:0 !important;overflow:hidden;}
+  body.cinematic-full #screen{width:100vw !important;height:100vh !important;}
 </style>
 </head>
 <body>
@@ -197,6 +209,13 @@
   function fit(){
     var vw=innerWidth, vh=innerHeight;
     function S(id,w,h){ var e=document.getElementById(id); if(e){ e.style.width=w+'px'; e.style.height=h+'px'; } }
+    if(document.body.classList.contains('cinematic-full')){
+      var gf0=document.getElementById('game-frame'),sa0=document.getElementById('screen-area'),scr0=document.getElementById('screen');
+      if(gf0){gf0.style.position='fixed';gf0.style.left='0px';gf0.style.top='0px';gf0.style.width=vw+'px';gf0.style.height=vh+'px';}
+      if(sa0){sa0.style.width=vw+'px';sa0.style.height=vh+'px';sa0.style.marginLeft='0px';}
+      if(scr0){scr0.style.width=vw+'px';scr0.style.height=vh+'px';}
+      return;
+    }
     var reserve = isFS() ? 0 : Math.min(vw*0.34, 420);      // room for the credit rails
     var availW = Math.max(200, vw - reserve);
     var availH = vh * (isFS()? 1.0 : 0.94);
@@ -217,6 +236,7 @@
   /* The old layout function was named L and the listeners still referenced it; my replacement is
      fit(). Aliasing keeps every existing call site working instead of hunting them all. */
   var L = fit;
+  window.__bofFit=fit;
   window.addEventListener('resize',L); window.addEventListener('load',L);
   fit();
 

@@ -8,6 +8,7 @@
 /* Register the hand-authored 96px 3/4 warp reel before XART snapshots BOFX.img. */
 if(typeof window!=='undefined' && window.BOFX && BOFX.img){
   for(let i=0;i<8;i++) BOFX.img['nfx_s5gate96_'+i]='assets/game/warp_gate96/nfx_s5gate96_'+i+'.png';
+  for(let i=0;i<16;i++) BOFX.img['nfx_warp_tunnel_'+i]='assets/game/warp_fx/warp_tunnel_'+String(i).padStart(2,'0')+'.png';
 }
 
 const VW = 480, VH = 512;                 // internal virtual resolution (camera window)
@@ -1397,6 +1398,11 @@ const ASSETS=(function(){
       A.bofFont[k]={ frames:d.frames, font:d.font, name:d.name, _src:d.atlas, _img:null,
         get img(){ if(!this._img){ this._img=new Image(); this._img.src=this._src; } return this._img; } };
     }
+    /* The corrected compact BOF sheets supersede the 20 MB v3 stage-font set. Keep the old
+       property as a compatibility alias for any downstream extension, but never register or
+       decode the retired atlases. */
+    A.stageFont=Object.assign({},A.bofFont);
+    if(!A.stageFont['9']&&A.bofFont['8']) A.stageFont['9']=A.bofFont['8'];
     /* ============================================================
        STAGE FONTS AND STAGE ART DECODE ON FIRST USE, NOT AT BOOT (drop 0806v)
 
@@ -1421,8 +1427,6 @@ const ASSETS=(function(){
       });
       return obj;
     }
-    if(BOF.stageFont){ for(const _k in BOF.stageFont){ const _sf=BOF.stageFont[_k];
-      A.stageFont[_k]=_lazySheet({frames:_sf.frames, font:_sf.font}, _sf.atlas); } }
     if(BOF.stageArt){ for(const _k in BOF.stageArt){ const _sa=BOF.stageArt[_k];
       A.stageArt[_k]=_lazySheet({frames:_sa.frames, fx:_sa.fx, font:_sa.font, warmFont:_sa.warmFont,
         anchors:_sa.anchors, disintegrate:_sa.disintegrate}, _sa.atlas); } }
@@ -1570,7 +1574,7 @@ function drawNewBoss(b){
   ctx.restore();
   // hit flash: draw a cached tinted copy of THIS frame over it (sprite-only, no rect)
   if(b.flash>0){
-    const tc=xartTint(key, (b.flash>0.04?'#ffffff':'#ff5a5a'), (b.flash>0.04?0.85:0.5));
+    const tc=xartTint(key, hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff5a5a'), (b.flash>0.04?0.85:0.5));
     if(tc){ ctx.drawImage(tc, b.x-w/2, yy-h/2, w, h); }
   }
   return true;
@@ -1663,8 +1667,17 @@ const XART=(function(){
      The BOSS sheets (87, 88) are deliberately NOT here: they are 10MB between them and are not
      needed until the end of a stage, by which point lazy loading has had minutes. Preloading
      them would put that on the boot path for no gain. */
-  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|bof_player_(?:weapon_special_icons|ordnance_projectiles|ships_barrel_rolls)_atlas|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nca_(?:s1combatfx|8[0-2]|86|8[7-9])|aintro_)/;
+  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|bof_player_(?:weapon_special_icons|ordnance_projectiles|ships_barrel_rolls)_atlas|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nfx_(?:warp_tunnel|s5gate96)_|nca_(?:s1combatfx|8[0-2]|86|8[7-9])|aintro_)/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
+  /* Approved close-camera Fury HQ command deck.  Keep the stable runtime key so every existing
+     campaign scene inherits the new room without duplicating story data or carrying the former
+     low-resolution command-centre plate. */
+  X._src['cut_furyhq_command_center']='assets/game/cinematic/hq_command_deck_v2.png';
+  /* Falva's packed dialogue cell was only a faint magenta wireframe. Use the full-strength
+     569x321 machined frame palette-swapped from Axel's matching geometry instead. Removing the
+     generated cell entry is intentional: packed cells win over loose image registrations. */
+  X._src['dlg_falva']='assets/game/ui/dialogue/dlg_falva.png';
+  if(window.BOFX&&BOFX.cells) delete BOFX.cells['dlg_falva'];
   /* ============================================================
      TWO AUTHORED HULLS REGISTERED IN CODE, NOT IN THE MANIFEST (drop 0812h)
 
@@ -1684,6 +1697,30 @@ const XART=(function(){
      code is the same registration by a route that survives the next regeneration. ============================================================ */
   X._src['nsb_jungle_cruiser'] = 'assets/game/nsb_jungle_cruiser.png';
   X._src['nsb_olive_carrier']  = 'assets/game/nsb_olive_carrier.png';
+  /* MAGMA WARD'S AUTHORED STAGE-2 FIRE KIT (0830). Loose registrations are intentional:
+     manifest.js is generated, while these normalized frames live in a source-controlled runtime
+     folder and must survive the next catalog rebuild. Every family has a fixed anchor/box. */
+  for(let _mw=0;_mw<12;_mw++){
+    const _n=String(_mw).padStart(2,'0');
+    X._src['mwfx_flamethrower_'+_mw]='assets/game/stage2_magmaward/magmaward_flamethrower_'+_n+'.png';
+    X._src['mwfx_flame_laser_'+_mw]='assets/game/stage2_magmaward/magmaward_flame_laser_'+_n+'.png';
+  }
+  for(let _mw=0;_mw<8;_mw++){
+    const _n=String(_mw).padStart(2,'0');
+    X._src['mwfx_fireball_charge_'+_mw]='assets/game/stage2_magmaward/magmaward_fireball_charge_'+_n+'.png';
+    X._src['mwfx_fireball_'+_mw]='assets/game/stage2_magmaward/magmaward_fireball_'+_n+'.png';
+    X._src['mwfx_fire_shield_'+_mw]='assets/game/stage2_magmaward/magmaward_fire_shield_'+_n+'.png';
+  }
+  /* INFERNO REAVER / CRYO SPEAR / RIME WALL PROJECTILES (0830). These are independent
+     fixed-anchor travel/beam reels, not palette overlays on the old shared boss rounds. */
+  for(const _l23 of ['inferno_mg','inferno_shotgun','cryo_ball','rime_orb']) for(let _f=0;_f<8;_f++){
+    const _n=String(_f).padStart(2,'0');
+    X._src['l23fx_'+_l23+'_'+_f]='assets/game/boss_projectiles_stage2_stage3/'+_l23+'_'+_n+'.png';
+  }
+  for(const _l23 of ['inferno_laser','rime_laser']) for(let _f=0;_f<12;_f++){
+    const _n=String(_f).padStart(2,'0');
+    X._src['l23fx_'+_l23+'_'+_f]='assets/game/boss_projectiles_stage2_stage3/'+_l23+'_'+_n+'.png';
+  }
   /* CF PILOT PORTRAITS (0825). These are the approved 256px menu/dialogue replacements for all
      nine Fury pilots. Keep them code-owned: manifest.js is generated and has previously reverted
      hand-edited portrait mappings back to the old atlas cells. `smile` is translated to `happy`
@@ -1708,6 +1745,14 @@ const XART=(function(){
   X._src['fx0825_lava_comet']='assets/game/fx_0825/lava_comet.png';
   X._src['fx0825_lava_fireball']='assets/game/fx_0825/lava_fireball.png';
   X._src['bg_stage01_runway_transition']='assets/game/bg_stage01_runway_transition.jpg';
+  /* BOSS/ELITE PROJECTILE OVERHAUL (0829). Four generated Neo-Geo ammunition families and four
+     matching muzzle families, each with a fixed 128px pivot and eight real-alpha frames.  These
+     replace the programmer-drawn polygons used by the Stage 2-9 combat passes. */
+  const _BPFX_FAMILIES=['kinetic','laser','missile','void'];
+  for(const _bf of _BPFX_FAMILIES) for(let _ff=0;_ff<8;_ff++){
+    X._src['bpfx_proj_'+_bf+'_'+_ff]='assets/game/boss_projectile_overhaul/bpfx_proj_'+_bf+'_'+_ff+'.png';
+    X._src['bpfx_muzzle_'+_bf+'_'+_ff]='assets/game/boss_projectile_overhaul/bpfx_muzzle_'+_bf+'_'+_ff+'.png';
+  }
   /* STAGE-1 COMBAT IDENTITY. One 192px-cell sheet replaces loose military rounds and adds the
      Jungle Cruiser/Overlord wind language. Keep the cell map code-owned: manifest.js is generated. */
   X._src['nca_s1combatfx']='assets/game/atlas/stage1_combat_fx.png';
@@ -1716,6 +1761,177 @@ const XART=(function(){
                      'green_laser','wind_blade','wind_vortex','green_impact'];
     for(let _r=0;_r<_s1fxRows.length;_r++) for(let _f=0;_f<6;_f++)
       BOFX.cells['s1fx_'+_s1fxRows[_r]+'_'+_f]=['s1combatfx',_f*192,_r*192,192,192];
+  }
+  /* STAGE-2 ENEMY ATTACK REELS (0829). Every volcanic hull now owns an eight-frame action
+     sequence generated from its exact shipped neutral frame, then normalized to one 128px anchor.
+     These stay as loose code-owned frames because manifest.js is generated. */
+  const _S2_ATTACK_UNITS=['ash','skim','eye','disc','lance','cruc','carrier','miner','maw','crawl','pod','golem'];
+  for(const _s2u of _S2_ATTACK_UNITS) for(let _s2f=0;_s2f<8;_s2f++){
+    const _s2n=String(_s2f+1).padStart(2,'0');
+    X._src['s2atk_'+_s2u+'_'+_s2f]='assets/game/stage2_enemy_attacks/'+_s2u+'/'+_s2n+'.png';
+  }
+  /* STAGE-3 ENEMY ATTACK REELS (0829). Eight native ice hulls, eight authored frames each.
+     Drones stay retired from this stage; the eighth slot is the previously unused tracked frost
+     artillery. Loose code-owned frames keep generated manifest rebuilds from deleting the pass. */
+  const _S3_ATTACK_UNITS=['mine','interceptor','sled','snowmobile','crawler','tank','barge','artillery'];
+  for(const _s3u of _S3_ATTACK_UNITS) for(let _s3f=0;_s3f<8;_s3f++){
+    const _s3n=String(_s3f+1).padStart(2,'0');
+    X._src['s3atk_'+_s3u+'_'+_s3f]='assets/game/stage3_enemy_attacks/'+_s3u+'/'+_s3n+'.png';
+  }
+  for(const _s3u of _S3_ATTACK_UNITS) for(const _s3d of ['damaged','critical'])
+    for(let _s3f=0;_s3f<8;_s3f++){
+      const _s3n=String(_s3f+1).padStart(2,'0');
+      X._src['s3dmg_'+_s3u+'_'+_s3d+'_'+_s3f]=
+        'assets/game/stage3_enemy_damage/'+_s3u+'/'+_s3d+'/'+_s3n+'.png';
+    }
+  /* STAGE-4 BLACKSITE COMBAT REELS (0829). The supplied combat pack carries twelve eight-frame
+     down-screen attack reels. They are recovered losslessly from its approved animated preview,
+     hard-alpha normalized to a stable 256px pivot, and kept code-owned like the Stage 2/3 reels. */
+  const _S4_ATTACK_UNITS=['airfield_tank','armored_tractor','blacksite_interceptor','command_plane',
+    'explosive_barrel','fuel_tanker','gunship_bomber','heavy_attack_jet','missile_vehicle',
+    'rocket_plane','runway_mini_tank','sam_carrier'];
+  for(const _s4u of _S4_ATTACK_UNITS) for(let _s4f=0;_s4f<8;_s4f++){
+    const _s4n=String(_s4f+1).padStart(2,'0');
+    X._src['s4atk_'+_s4u+'_'+_s4f]='assets/game/stage4_enemy_attacks/'+_s4u+'/'+_s4n+'.png';
+  }
+  /* STAGE-4 WARFARE COMMAND (0831). The new boss hull, summoned chaingun drones, separately
+     animated rotary barrels and attack FX are code-owned plates, not atlas fragments. Every
+     frame shares one stable pivot and real alpha; no runtime colour overlay is involved. */
+  X._src.s4w_boss_idle='assets/game/stage4_warfare/s4w_boss_idle.png';
+  X._src.s4w_power_node='assets/game/stage4_warfare/s4w_power_node.png';
+  X._src.s4w_drone_body='assets/game/stage4_warfare/s4w_drone_body.png';
+  X._src.s4w_drone_barrel='assets/game/stage4_warfare/s4w_drone_barrel.png';
+  for(let _s4w=0;_s4w<12;_s4w++){
+    const _n=String(_s4w).padStart(2,'0');
+    X._src['s4w_boss_flight_'+_s4w]='assets/game/stage4_warfare/s4w_boss_flight_'+_n+'.png';
+    X._src['s4w_boss_charge_'+_s4w]='assets/game/stage4_warfare/s4w_boss_charge_'+_n+'.png';
+    X._src['s4w_boss_energized_'+_s4w]='assets/game/stage4_warfare/s4w_boss_energized_'+_n+'.png';
+    X._src['s4w_lightning_orb_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_orb_'+_n+'.png';
+    X._src['s4w_lightning_shield_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_shield_'+_n+'.png';
+    X._src['s4w_node_teleport_'+_s4w]='assets/game/stage4_warfare/s4w_node_teleport_'+_n+'.png';
+  }
+  for(let _s4w=0;_s4w<16;_s4w++){
+    const _n=String(_s4w).padStart(2,'0');
+    X._src['s4w_power_node_'+_s4w]='assets/game/stage4_warfare/s4w_power_node_'+_n+'.png';
+    X._src['s4w_lightning_ball_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_ball_'+_n+'.png';
+  }
+  for(let _s4w=0;_s4w<8;_s4w++){
+    const _n=String(_s4w).padStart(2,'0');
+    X._src['s4w_drone_barrel_'+_s4w]='assets/game/stage4_warfare/s4w_drone_barrel_'+_n+'.png';
+    X._src['s4w_spread_round_'+_s4w]='assets/game/stage4_warfare/s4w_spread_round_'+_n+'.png';
+    X._src['s4w_lightning_lance_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_lance_'+_n+'.png';
+    X._src['s4w_muzzle_mg_'+_s4w]='assets/game/stage4_warfare/s4w_muzzle_mg_'+_n+'.png';
+    X._src['s4w_muzzle_orb_'+_s4w]='assets/game/stage4_warfare/s4w_muzzle_orb_'+_n+'.png';
+    X._src['s4w_muzzle_lightning_'+_s4w]='assets/game/stage4_warfare/s4w_muzzle_lightning_'+_n+'.png';
+    X._src['s4w_final_chaingun_'+_s4w]='assets/game/stage4_warfare/s4w_final_chaingun_'+_n+'.png';
+    X._src['s4w_final_chaingun_core_'+_s4w]='assets/game/stage4_warfare/s4w_final_chaingun_core_'+_n+'.png';
+    X._src['s4w_helper_core_left_'+_s4w]='assets/game/stage4_warfare/s4w_helper_core_left_'+_n+'.png';
+    X._src['s4w_helper_core_right_'+_s4w]='assets/game/stage4_warfare/s4w_helper_core_right_'+_n+'.png';
+    X._src['s4w_helper_dual_'+_s4w]='assets/game/stage4_warfare/s4w_helper_dual_'+_n+'.png';
+    X._src['s4w_helper_dual_hot_'+_s4w]='assets/game/stage4_warfare/s4w_helper_dual_hot_'+_n+'.png';
+    X._src['s4w_lightning_mg_round_'+_s4w]='assets/game/stage4_warfare/s4w_lightning_mg_round_'+_n+'.png';
+  }
+  for(let _s4w=0;_s4w<6;_s4w++){
+    const _n=String(_s4w).padStart(2,'0');
+    X._src['s4w_mg_round_'+_s4w]='assets/game/stage4_warfare/s4w_mg_round_'+_n+'.png';
+  }
+  /* STAGE-6 HEAVY TURBULENCE REELS (0829). The approved pack's animated contact carries the
+     twelve native storm hulls as one lossless eight-frame strip.  They are recovered at one
+     shared 256px pivot, while the separate carrier attack pack supplies its mega-boss arsenal. */
+  /* STAGE-6 CONTINUOUS BLUE SKY (0829). One approved blue plate is extended to a real 680x5000
+     world and exported as five inspectable 1000px sections. Clouds are baked stills: they travel
+     only because the level scrolls, never because an animation or parallax clock moves them. */
+  X._src['stage6_blue_master']='assets/game/stage6_blue_master.png';
+  for(let _s6s=1;_s6s<=5;_s6s++){
+    const _sn=String(_s6s).padStart(2,'0');
+    X._src['stage6_blue_'+_sn]='assets/game/stage6_blue/stage6_blue_'+_sn+'.png';
+  }
+  const _S6_ATTACK_UNITS=['cloud_lancer','cyclone_interceptor','four_engine_bomber','lightning_mine',
+    'lightning_skimmer','nuclear_carrier','reactor_storm_bomber','storm_buoy','storm_dart',
+    'thunder_fighter','turbine_drone','weather_probe'];
+  for(const _s6u of _S6_ATTACK_UNITS) for(let _s6f=0;_s6f<8;_s6f++){
+    const _s6n=String(_s6f+1).padStart(2,'0');
+    X._src['s6atk_'+_s6u+'_'+_s6f]='assets/game/stage6_enemy_attacks/'+_s6u+'/'+_s6n+'.png';
+  }
+  /* STAGE-7 TOXIC-SEWER REELS (0829). Eleven regular units plus the Dual Scoop Dredger
+     miniboss are recovered from the approved combat-pack preview at a stable 256px pivot.
+     The pack's separate twelve-frame spore crown remains a true transparent animation. */
+  const _S7_ATTACK_UNITS=['armored_lamprey','armored_sludge_barge','dual_scoop_dredger','pipe_crawler',
+    'piston_pump_walker','sampling_drone','sewer_serpent','sludge_mine','toxic_canister',
+    'toxic_mini_tank','toxic_skimmer','valve_turret'];
+  for(const _s7u of _S7_ATTACK_UNITS) for(let _s7f=0;_s7f<8;_s7f++){
+    const _s7n=String(_s7f+1).padStart(2,'0');
+    X._src['s7atk_'+_s7u+'_'+_s7f]='assets/game/stage7_enemy_attacks/'+_s7u+'/'+_s7n+'.png';
+  }
+  for(let _s7f=0;_s7f<12;_s7f++){
+    const _s7n=String(_s7f+1).padStart(2,'0');
+    X._src['s7spore_'+_s7f]='assets/game/stage7_spore_crown/'+_s7n+'.png';
+  }
+  /* STAGE-5 ORBITAL WAR + STAGE-9 VELOCITY VOID (0829). These are the complete supplied
+     twelve-hull casts, recovered from their approved eight-frame combat reels.  The separate
+     elite plates are real twelve-frame animations used for readable heavyweight attacks. */
+  const _S5_ATTACK_UNITS=['beam_frigate','comet_rammer','debris_skimmer','gravity_orb',
+    'heavy_interceptor','mine_layer','missile_satellite','portal_mine','repair_drone',
+    'salvage_tug','shield_leech','twin_station'];
+  const _S9_ATTACK_UNITS=['alien_beacon','chronal_crawler_tank','comet_skimmer','dimensional_gunship',
+    'galaxy_interceptor','gate_carrier','gate_turret','gravity_artillery','hyperspace_prism',
+    'mini_warp_tank','ring_drone','singularity_mine'];
+  for(const _s5u of _S5_ATTACK_UNITS) for(let _s5f=0;_s5f<8;_s5f++){
+    const _n=String(_s5f+1).padStart(2,'0');
+    X._src['s5atk_'+_s5u+'_'+_s5f]='assets/game/stage5_enemy_attacks/'+_s5u+'/'+_n+'.png';
+  }
+  for(let _f=0;_f<12;_f++){const _n=String(_f+1).padStart(2,'0');
+    X._src['s5fracture_'+_f]='assets/game/stage5_fracture_halo/'+_n+'.png';}
+  for(const _s9u of _S9_ATTACK_UNITS) for(let _s9f=0;_s9f<8;_s9f++){
+    const _n=String(_s9f+1).padStart(2,'0');
+    X._src['s9atk_'+_s9u+'_'+_s9f]='assets/game/stage9_enemy_attacks/'+_s9u+'/'+_n+'.png';
+  }
+  for(let _f=0;_f<12;_f++){const _n=String(_f+1).padStart(2,'0');
+    X._src['s9lattice_'+_f]='assets/game/stage9_warp_lattice/'+_n+'.png';}
+  /* STAGE-8 FURIOUS DEATH (0829).  The finale now owns a native twelve-hull mega fleet.
+     Attack and barrel-roll/twist reels share a fixed 256px centre pivot, so a roll never makes
+     the collision silhouette jump.  Crimson environment plates replace the old magenta pass. */
+  const _S8_MEGA_UNITS=['armored_leech','bone_interceptor','bone_manta','hunter_pod',
+    'multi_eye_death_orb','parasite_drone','razor_disc','skull_mine','spawn_carrier',
+    'symbiote_fighter','tentacle_cannon','void_bomber'];
+  for(const _s8u of _S8_MEGA_UNITS) for(let _f=0;_f<8;_f++){
+    const _n=String(_f+1).padStart(2,'0');
+    X._src['s8atk_'+_s8u+'_'+_f]='assets/game/stage8_mega_enemies/'+_s8u+'/attack_'+_n+'.png';
+    X._src['s8roll_'+_s8u+'_'+_f]='assets/game/stage8_mega_enemies/'+_s8u+'/roll_'+_n+'.png';
+  }
+  /* STAGE-8 SYMBIOTE REINFORCEMENTS (0830). Six user-supplied silhouettes, hard-keyed and
+     palette-separated without changing their geometry. Each owns ONE idle plate plus its own
+     four-frame muzzle and projectile reels; hulls never mutate just to imply activity. */
+  const _S8_SYM_FLEET=['armored_gunship','needle_interceptor','scout_drone','solar_corvette',
+    'spread_wing_fighter','stealth_crescent'];
+  for(const _u of _S8_SYM_FLEET){
+    X._src['s8nf_'+_u+'_idle']='assets/game/stage8_symbiote_fleet/'+_u+'/idle.png';
+    for(let _f=0;_f<4;_f++){const _n=String(_f+1).padStart(2,'0');
+      X._src['s8nf_'+_u+'_muzzle_'+_f]='assets/game/stage8_symbiote_fleet/'+_u+'/muzzle_'+_n+'.png';
+      X._src['s8nf_'+_u+'_projectile_'+_f]='assets/game/stage8_symbiote_fleet/'+_u+'/projectile_'+_n+'.png';
+    }
+  }
+  for(let _f=0;_f<4;_f++)X._src['s8symboss_form_'+_f]='assets/game/stage8_symbiote_boss/form_'+(_f+1)+'.png';
+  for(let _f=0;_f<16;_f++){
+    const _n=String(_f+1).padStart(2,'0');
+    X._src['s8symboss_entrance_'+_f]='assets/game/stage8_symbiote_boss/entrance_'+_n+'.png';
+  }
+  for(let _f=0;_f<16;_f++){const _n=String(_f+1).padStart(2,'0');
+    X._src['s8rift_'+_f]='assets/game/stage8_furious_rift/'+_n+'.png';}
+  X._src['nst8_sky_crimson']='assets/game/stage8_environment_crimson/nst8_sky_master.png';
+  for(let _f=0;_f<6;_f++){
+    X._src['nl8c_lg_'+_f]='assets/game/stage8_environment_crimson/nl8_lg_'+_f+'.png';
+    X._src['nl8c_rim_'+_f]='assets/game/stage8_environment_crimson/nl8_rim_'+_f+'.png';
+  }
+  for(let _f=0;_f<12;_f++)X._src['nl8c_prop_'+_f]='assets/game/stage8_environment_crimson/nl8_prop_'+_f+'.png';
+  const _S6_MEGA_FRAMES={stormnode:8,stormlink:6,prismmuzzle:8,prismbolt:8,prismbeam:6,
+    cyclonemuzzle:8,cyclonetracer:8,flakshell:8,flakburst:8,gravitymine:8,gravityripple:10,
+    'omegabomb-hostile':8,'omegabomb-reflected':8,bombwarning:8,bombshield:8,bombignition:8,
+    bombdeflect:8,bombimpact:10,clusterbomblet:8,clusterburst:8,crystalimpact:8,
+    empimpact:8,ricochetimpact:8};
+  for(const _s6m in _S6_MEGA_FRAMES) for(let _s6f=0;_s6f<_S6_MEGA_FRAMES[_s6m];_s6f++){
+    const _one=String(_s6f+1).padStart(2,'0');
+    X._src['s6mb_'+_s6m+'_'+_s6f]='assets/game/stage6_mega_boss/'+_s6m+'_f'+_one+'-frame_'+_one+'.png';
   }
   /* CHAOS HARRIER — the authored Level-5 miniboss.  These are state frames and detached weapon
      layers, not one interchangeable idle reel.  The hull stays on ship_0 while ship_glow pulses;
@@ -2176,7 +2392,7 @@ function drawBossSprite(b){
       if(rim){ ctx.save(); ctx.globalAlpha=0.9; ctx.drawImage(rim,dx-w/2,yy-h/2,w,h); ctx.restore(); }
       _drawPodFlash();
       if(b._enraged){ const rage=xartTint(bodyKey,'#ff321f',0.62); if(rage){ ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.10+0.08*Math.sin((b.t||0)*16); ctx.drawImage(rage,dx-w/2,yy-h/2,w,h); ctx.restore(); } }
-      if(b.flash>0){ const tc=xartTint(bodyKey,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h); }
+      if(b.flash>0){ const tc=xartTint(bodyKey,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h); }
       ctx.restore();
       b._pivot = piv*0.93;                              // ease pivot back to level (per-frame decay)
       return;
@@ -2185,7 +2401,7 @@ function drawBossSprite(b){
     if(rim){ ctx.save(); ctx.globalAlpha=0.9; ctx.drawImage(rim,dx-w/2,yy-h/2,w,h); ctx.restore(); }
     _drawPodFlash();
     if(b._enraged){ const rage=xartTint(bodyKey,'#ff321f',0.62); if(rage){ ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.10+0.08*Math.sin((b.t||0)*16); ctx.drawImage(rage,dx-w/2,yy-h/2,w,h); ctx.restore(); } }
-    if(b.flash>0){ const tc=xartTint(bodyKey,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h); }
+    if(b.flash>0){ const tc=xartTint(bodyKey,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); if(tc) ctx.drawImage(tc,dx-w/2,yy-h/2,w,h); }
     return;
   }
   // MEGA BOSSES (bz0-6): HP-driven damage-state art (inta/dama/crit) with a levitation bob
@@ -2208,7 +2424,7 @@ function drawBossSprite(b){
     if(b._enraged){ ctx.globalAlpha=0.18+0.06*Math.sin(b.t*8); ctx.globalCompositeOperation='lighter';
       const tc=xartTint(key,b.accent||'#ff5a3a',0.6); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h);
       ctx.globalAlpha=1; ctx.globalCompositeOperation='source-over'; }
-    if(b.flash>0){ const tc=xartTint(key,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h); }
+    if(b.flash>0){ const tc=xartTint(key,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h); }
     ctx.restore();
     return;
   }
@@ -2288,7 +2504,7 @@ function drawBossSprite(b){
   if(b.dead){ const k=Math.min(2,Math.floor((b.dying||0)*3)); name='boss_dest'+(k+1); if(!ASSETS.has(name))name='boss_dest3'; }
   else name=['boss_idle','boss_d1','boss_d2','boss_d3','boss_core'][Math.min(4,b.dmgState)];
   if(!ASSETS.has(name))name='boss_idle';
-  const tint=b.flash>0?(b.flash>0.04?'#ffffff':'#ff5a5a'):null;
+  const tint=b.flash>0?hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff5a5a'):null;
   ctx.save();ctx.translate(b.x,b.y);ctx.strokeStyle=tint||'#9a9a8a';ctx.lineWidth=3;const rr=b.w*0.5;
   for(let i=0;i<2;i++){const a=b.rotor+i*Math.PI/2;ctx.beginPath();ctx.moveTo(Math.cos(a)*-rr,-b.h*0.42+Math.sin(a)*6);ctx.lineTo(Math.cos(a)*rr,-b.h*0.42-Math.sin(a)*6);ctx.stroke();}
   ctx.restore();
@@ -2916,11 +3132,10 @@ function _levelCfg(){
        measured 0.00% metal-like pixels and a first-vs-last row seam of 21.9/765, so it loops
        forever with no join and carries no structure at all. Looping it is the 0801gm intent
        restored, and the rain/lightning still darken over it in code. */
-    /* Stage 6 owns ONE structure-free sky plate. It scrolls as a seamless field for the entire
-       level while code applies the night -> storm -> dusk -> dawn -> daylight exposure journey;
-       there are no plate swaps and no separate cloud background to pop between. */
-    case 6: return {master:'nsky6_sky', plateW:680, liquid:null, fill:'#061126', tile:1.0, wide:true,
-                    loopMaster:true, scrollLen:2240, continuousBoss:true};
+    /* One physical 5000px master, built from the same blue plate used by the launch. The five
+       1000px exports are QA/editing sections of this exact master, not runtime background swaps. */
+    case 6: return {master:'stage6_blue_master', plateW:680, h:5000, liquid:null,
+                    fill:'#062a8e', tile:1.0, wide:true, loopMaster:true, continuousBoss:true};
     // 7 NOT ANOTHER SEWER LEVEL — dedicated sewer kit (CF_LevelPack-Lvl7): 800x3616 gameplay
     // scroll + 800x1000 boss arena, with the 256px sludge surface animating through the
     // master's keyed channels. WIDE level (800px world, camera scrolls).
@@ -2991,7 +3206,7 @@ function _levelCfg(){
        showing through; this one is opaque, so fill only paints letterbox. Left as it was
        rather than removed, because it costs nothing and blackhole800_rc2_master stays
        registered — swapping the name back restores the old stage exactly. */
-    case 8: return {master:'nst8_sky_master', liquid:null, fill:'#0a0406', tile:1.0, wide:true,
+    case 8: return {master:'nst8_sky_crimson', liquid:null, fill:'#0a0406', tile:1.0, wide:true,
                     plateW:680, h:4716};   // 0822aa: Mike's Furious Death sky
     /* ⚠ skipRows ARE ABSOLUTE MASTER ROWS and were rescaled with the plate (x0.85): 2500->2125,
        2650->2253. A band left at its old rows would skip the wrong 150px of a shorter plate. */
@@ -3034,6 +3249,12 @@ function _levelCfg(){
 // returns true if it drew the level; false to let the caller fall back to procedural bg.
 let _bossHold=0;   // eases the terrain to a standstill when a boss engages
 let _stage4BossRoadScroll=0,_stage6BossSkyScroll=0;
+/* Stage 6's combat timeline still advances at the engine's established 40px/s. The sky is a
+   flight-speed layer, though, and must not inherit that ground-crawl rate. Keeping its travel
+   clock separate gives the storm real velocity without pulling waves, minibosses or the carrier
+   forward in the encounter schedule. */
+const STAGE6_SKY_CRUISE=260, STAGE6_SKY_BOSS_CRUISE=300;
+let _stage6SkyScroll=0;
 /* stages that keep scrolling through their miniboss. Mike: "unless stated
    differently per level". Empty means the hold applies everywhere. */
 const SUBBOSS_NO_HOLD = {};
@@ -3243,7 +3464,7 @@ const CUT_BG = {axel:'cut_axel_formation_simulator', cole:'cut_cole_manual_comma
 const CUT_HQ = 'cut_furyhq_command_center';
 /* Dialogue has two palette jobs and they must never bleed together: the NAME takes the pilot's
    authored colour, while every spoken sentence stays in the same pale gray/white ramp. */
-const DIALOGUE_BODY_COLOR='#e7ebf2';
+const DIALOGUE_BODY_COLOR='#f7f9ff';
 function dialogueNameColor(who, fallback){
   const id=String(who||'').trim().toLowerCase();
   if(typeof PILOTS!=='undefined' && PILOTS && PILOTS.find){
@@ -3310,7 +3531,7 @@ function drawCutscene(sc){
   if(!sc || typeof XART==='undefined') return false;
   const bgk=sc.bg || cutsceneFor(sc.pilot);
   if(!bgk || !XART.rdy(bgk)) return false;
-  const SW=640, SH=480;
+  const SW=640, SH=480, CW=cutsceneViewWidth(), CH=VH;
   /* ⚠ COVER, NOT CONTAIN (drop 0813w). Mike: "cinematics should be full sized screen not 640x480
      window."
 
@@ -3333,13 +3554,36 @@ function drawCutscene(sc){
      either bars or a crop. Showing everything at maximum size means fitting to WIDTH, which is
      this. Genuinely full-screen cutscenes need either wider plates or a wider canvas for the
      cutscene state - both are Mike's call, not something to fake with a transform. */
-  const s=Math.min(VW/SW, VH/SH), ox=(VW-SW*s)/2, oy=(VH-SH*s)/2;
+  const s=Math.min(CW/SW, CH/SH), ox=(CW-SW*s)/2, oy=(CH-SH*s)/2;
   const X=(x)=>ox+x*s, Y=(y)=>oy+y*s, S=(v)=>v*s;
   ctx.save();
   ctx.imageSmoothingEnabled=false;                        // nearest-neighbour, per the contract
   // 1. background
   const bg=XART.get(bgk);
-  ctx.drawImage(bg, X(0), Y(0), S(SW), S(SH));
+  /* Frame the room like a character scene, not a security-camera wide. The dialogue plate keeps
+     its authored 640x480 coordinates; only the room art is cropped toward its command-table
+     focal point, so no text or UI can be lost to the zoom. */
+  /* The generated HQ plate is already framed as a close cinematic shot.  Cropping it a second
+     time would throw away the side architecture and make the room feel like the old zoomed-in
+     low-res plate, so HQ uses its full composition while legacy pilot rooms keep their crop. */
+  const bgZoom=sc.bgZoom || (bgk===CUT_HQ?1.08:(sc.ensemble?1.14:1.08));
+  const cover=Math.max(CW/bg.naturalWidth,CH/bg.naturalHeight)*bgZoom;
+  const bsw=CW/cover,bsh=CH/cover,bsx=(bg.naturalWidth-bsw)*.5,bsy=(bg.naturalHeight-bsh)*.44;
+  ctx.drawImage(bg,bsx,bsy,bsw,bsh,0,0,CW,CH);
+  /* One shared portrait compositor gives every pilot a real black arcade cutout edge.  Drawing
+     the silhouette underneath (rather than stroking a rectangle) follows the alpha contour,
+     survives mirroring, and keeps inactive brightness treatment independent from the edge. */
+  const drawPortraitLayer=(pk,src,dx,dy,dw,dh,mirror)=>{
+    const drawOne=(im,ox2,oy2)=>{
+      if(mirror){ctx.save();ctx.translate(dx+dw+ox2,dy+oy2);ctx.scale(-1,1);ctx.drawImage(im,0,0,dw,dh);ctx.restore();}
+      else ctx.drawImage(im,dx+ox2,dy+oy2,dw,dh);
+    };
+    const edge=(typeof xartTint==='function')?xartTint(pk,'#000000',1):null;
+    if(edge){const ep=Math.max(2,Math.round(S(3)));
+      for(const o of [[-ep,0],[ep,0],[0,-ep],[0,ep],[-ep,-ep],[ep,-ep],[-ep,ep],[ep,ep]])drawOne(edge,o[0],o[1]);
+    }
+    drawOne(src,0,0);
+  };
   // 3-5. portraits, bottom-aligned, inactive dimmed
   /* HQ is an ensemble briefing, not a two-person slideshow. Keep the whole division seated
      around the command console and change only the active pilot's pose/brightness. Their feet
@@ -3349,21 +3593,24 @@ function drawCutscene(sc){
     const n=ensemble.length, activePilot=sc.speakingPilot;
     const order=ensemble.map((pilot,i)=>({pilot,i}));
     order.sort((a,b)=>(a.pilot===activePilot?1:0)-(b.pilot===activePilot?1:0));
+    const hqX={axel:56,lizzie:126,cole:196,falva:258,decker:320,freezer:386,maverick:458,yuri:526,juggernaut:586};
     for(const e of order){
       const active=e.pilot===activePilot;
       const pk=cutPose(e.pilot, active?(sc.speakingPose||0):0);
       if(!pk || !XART.rdy(pk)) continue;
-      const im=XART.get(pk), mw=n>8?84:96, mh=150;
-      const k2=Math.min(mw/im.naturalWidth, mh/im.naturalHeight)*(active?1.06:1);
+      const im=XART.get(pk), centre=e.pilot==='decker',mw=centre?138:(n>8?116:124),mh=centre?274:(n>8?232:246);
+      const k2=Math.min(mw/im.naturalWidth, mh/im.naturalHeight)*(active?1.10:1);
       const w=im.naturalWidth*k2, h=im.naturalHeight*k2;
-      const cx=48+(n===1?272:e.i*(544/(n-1)));
-      const arc=n===1?1:Math.sin(Math.PI*e.i/(n-1));
-      const bottom=344-18*arc;
+      const cx=hqX[e.pilot]!=null?hqX[e.pilot]:(70+(n===1?250:e.i*(500/(n-1))));
+      const bottom=centre?348:350;
       let src=im;
       if(!active && typeof xartTint==='function'){
-        const t=xartTint(pk,'#000000',0.30); if(t) src=t;
+        const t=xartTint(pk,'#000000',0.18); if(t) src=t;
       }
-      ctx.drawImage(src, X(cx-w/2), Y(bottom-h), S(w), S(h));
+      const _dx=X(cx-w/2), _dy=Y(bottom-h), _dw=S(w), _dh=S(h);
+      /* Source poses face screen-left. Anyone seated on the left half must be mirrored to look
+         inward at the team; the right half already faces the centre. */
+      drawPortraitLayer(pk,src,_dx,_dy,_dw,_dh,cx<SW/2-8);
     }
   }
   const slots=[['left',12,464,210,300],['right',418,464,210,300],['center',215,438,210,280]];
@@ -3385,15 +3632,10 @@ function drawCutscene(sc){
        points that way and the rest angle with it - so the RIGHT slot is already looking inward
        and it is the LEFT one that has to mirror. Centre is left alone; it has nobody to face. */
     const _dx=X(px), _dy=Y(py)-S(h), _dw=S(w), _dh=S(h);
-    if(name==='left'){
-      ctx.save(); ctx.translate(_dx+_dw, _dy); ctx.scale(-1,1);
-      ctx.drawImage(src, 0, 0, _dw, _dh); ctx.restore();
-    } else {
-      ctx.drawImage(src, _dx, _dy, _dw, _dh);
-    }
+    drawPortraitLayer(pk,src,_dx,_dy,_dw,_dh,name==='left');
   }
   // 6. dialogue frame  7. name + emblem  8. text
-  const dx=X(18), dy=Y(350), dw=S(604), dh=S(112);
+  const dx=Math.round(CW*.025), dy=Math.round(CH*.715), dw=Math.round(CW*.95), dh=Math.round(CH*.255);
   /* ⚠ THE REAL DIALOGUE WINDOW, NOT A DRAWN RECTANGLE (drop 0809p). Mike: "no faux boxes. use
      the dialogue windows we have if needed." This was a fillRect plus a strokeRect, which is
      why the cutscene frame read as a plain outlined box against hand-painted backgrounds while
@@ -3406,6 +3648,10 @@ function drawCutscene(sc){
     ctx.strokeStyle=sc.tint||'#ffb347'; ctx.lineWidth=Math.max(2,S(2)); ctx.strokeRect(dx,dy,dw,dh);
   }
   const spk=sc[sc.speaking||'left'];
+  /* Full-screen HQ scenes use the same approved dialogue face as gameplay conversations. The
+     former 2x cutscene sheet was a byte-for-byte nearest-neighbour enlargement, so scaling this
+     single source produces identical hard pixels without carrying a duplicate font. */
+  const _dialogueFace=(typeof msgFaceUse==='function' && msgFaceUse('dialogue')==='dialogue');
   /* ============================================================
      THE SPEAKER'S OWN COLOUR (drop 0811r)
 
@@ -3434,15 +3680,21 @@ function drawCutscene(sc){
          outer edge puts the emblem and the name over the top-left rail — visible in
          docs/proofs/cutscene_0811q_before.png. Anchored to the measured interior like the body
          text, so the whole panel reads as one column. */
-      const _nx=dx+dw*DLGW_IN_X, _ny=dy+dh*DLGW_IN_Y;
+      const _ny=dy+dh*DLGW_IN_Y;
       const em=XART.get(ek), eh=S(22), ew=eh*(em.naturalWidth/em.naturalHeight);
+      const _name=String(spk.name||spk.pilot).toUpperCase(), _nameH=S(16);
+      const _nameW=(typeof msgMeasure==='function')?msgMeasure(_name,_nameH,.06):_name.length*_nameH*.62;
+      const _nx=dx+dw*.5-(ew+S(6)+_nameW)*.5;
       ctx.drawImage(em, _nx, _ny, ew, eh);
-      /* the BOF face, like everything else - this was still on the old v3 stage font (drop 0809p) */
-      const _cf=(typeof uiFontArt==='function')?uiFontArt():null;
-      if(_cf && typeof stageWidth==='function')
-        stageText(_cf, String(spk.name||spk.pilot).toUpperCase(),
-                  _nx+ew+S(6)+stageWidth(_cf,String(spk.name||spk.pilot),S(16),0.06)/2,
-                  _ny+eh*0.5, S(16), _spkTint, _spkTint?1:null, 1, 0.06);
+      const _nameX=_nx+ew+S(6);
+      if(_dialogueFace && typeof msgTextLeft==='function')
+        msgTextLeft(_name,_nameX,_ny+eh*0.5,_nameH,_spkTint,_spkTint?1:null,1,0.06,1);
+      else {
+        const _cf=(typeof uiFontArt==='function')?uiFontArt():null;
+        if(_cf && typeof stageWidth==='function')
+          stageText(_cf,_name,_nameX+stageWidth(_cf,_name,_nameH,0.06)/2,
+                    _ny+eh*0.5,_nameH,_spkTint,_spkTint?1:null,1,0.06);
+      }
     }
   }
   {
@@ -3462,18 +3714,37 @@ function drawCutscene(sc){
     const _inY=dy+dh*DLGW_IN_Y, _inH=dh*DLGW_IN_H;
     const _nameH=S(16), _bodyTop=_inY+_nameH*1.55;      // clear of the speaker's name row
     const _room=Math.max(_nameH, _inY+_inH-_bodyTop);
-    if(sc.text && typeof stageWrap==='function' && _cf2){
-      let _H=S(15);
-      for(let i=0;i<16 && _H>S(8); i++){
+    if(sc.text && _dialogueFace && typeof msgWrap==='function' && typeof msgTextLeft==='function'){
+      const _full=String(sc.fullText||sc.text), _shown=String(sc.text).length, _sp=0.045;
+      let _H=S(16), _lines=[];
+      for(let i=0;i<16 && _H>S(10);i++){
+        _lines=msgWrap(_full,_inW,_H,_sp);
+        if(_lines.length*_H*1.34<=_room) break;
+        _H*=0.94;
+      }
+      let _budget=_shown, _yy=_bodyTop+_H*0.52;
+      for(const _line of _lines){
+        if(_budget<=0) break;
+        const _part=_line.slice(0,Math.min(_line.length,_budget));
+        const _cx=_inX+_inW*.5,_edge=Math.max(1,Math.round(_H*.10));
+        msgText(_part,_cx-_edge,_yy,_H,'#000000',1,.94,_sp);
+        msgText(_part,_cx+_edge,_yy,_H,'#000000',1,.94,_sp);
+        msgText(_part,_cx,_yy-_edge,_H,'#000000',1,.94,_sp);
+        msgText(_part,_cx,_yy+_edge,_H,'#000000',1,.94,_sp);
+        msgText(_part,_cx,_yy,_H,DIALOGUE_BODY_COLOR,1,1,_sp);
+        _budget-=_line.length+1;
+        _yy+=_H*1.34;
+      }
+    } else if(sc.text && typeof stageWrap==='function' && _cf2){
+      let _H=S(16);
+      for(let i=0;i<16 && _H>S(10); i++){
         if(stageWrapCount(_cf2, sc.text, _H, _inW, 0.05)*_H*1.40 <= _room) break;
         _H*=0.94;
       }
-      /* Only the speaker's NAME carries the character palette. Body copy stays on the shared
-         gray/white dialogue ramp so a long exchange remains readable over every background. */
-      stageWrap(_cf2, sc.text, _inX, _bodyTop+_H*0.7, _H, _inW, 1.40, 1, 0.05,
-                DIALOGUE_BODY_COLOR, 1);
+      stageWrap(_cf2,sc.text,_inX,_bodyTop+_H*0.7,_H,_inW,1.40,1,0.05,DIALOGUE_BODY_COLOR,1);
     }
   }
+  if(_dialogueFace) msgFaceUse(null);
   ctx.restore();
   return true;
 }
@@ -3491,9 +3762,10 @@ function drawCutscene(sc){
    tied to hull size so a 73px carrier drifts further than a 39px lance.
 
    Applied to the volcanic roster only, so nothing on the other stages moves. */
-const VOLC_GLOW={ash:1, skim:1, disc:1, lance:1, eye:1, cruc:1, carrier:1};
+const VOLC_GLOW={ash:1,skim:1,disc:1,lance:1,eye:1,miner:1,cruc:1,carrier:1,lavamaw:1,crawl:1,pod:1,golem:1};
+const VOLC_HOVER={ash:1,skim:1,disc:1,lance:1,eye:1,miner:1,cruc:1,carrier:1};
 function volcHover(e){
-  if(!VOLC_GLOW[e.type]) return 0;
+  if(!VOLC_HOVER[e.type]) return 0;
   if(e._hovP==null) e._hovP=((Math.abs(e.x|0)*13)%100)/100*Math.PI*2;
   const amp=2.0+Math.min(4.0,(e.h||40)/16);
   return Math.sin((typeof stageTimer!=='undefined'?stageTimer:0)*2.1+e._hovP)*amp;
@@ -4116,8 +4388,13 @@ function drawLevelMaster(dt){
      nearly static. Looping is the correct mapping for a starfield, so `loopMaster` picks it. */
   if(cfg.loopMaster){
     let _loopScroll=mapScroll;
-    if(run.stage===6&&_realBossRun){_stage6BossSkyScroll+=dt*96;_loopScroll+=_stage6BossSkyScroll;}
-    else if(run.stage===6)_stage6BossSkyScroll=0;
+    if(run.stage===6){
+      /* A continuous loop of the ONE approved 5000px master. This is visual travel only: combat
+         continues to read mapScroll, so making the atmosphere feel fast cannot skip a pattern. */
+      _stage6SkyScroll += dt*(_realBossRun?STAGE6_SKY_BOSS_CRUISE:STAGE6_SKY_CRUISE);
+      _loopScroll=_stage6SkyScroll;
+      _stage6BossSkyScroll=0;                 // retired additive clock; kept declared for old probes
+    }
     if(run.stage===6 && typeof bg6LoopDraw==='function')
       bg6LoopDraw(img,_mk,_loopScroll,drawW,winH,_winTop);
     else _loopDraw(img, _loopScroll);
@@ -4139,7 +4416,12 @@ function drawLevelMaster(dt){
      rows 0..1024 keeps hangars/checkpoints from teleporting into the chase loop. */
   if(run.stage===4&&_realBossRun){
     const chaseSpan=Math.max(1,Math.min(512,(img.naturalHeight||img.height)-winH));
-    _stage4BossRoadScroll=(_stage4BossRoadScroll+dt*190)%chaseSpan;
+    /* The Sovereign is a real pursuit now. 460px/s is visibly faster than the level cruise;
+       its fly-away/orb pass pushes to 620px/s so distance opens while the road keeps screaming
+       underneath instead of looking paused behind a moving sprite. */
+    const _s4mode=boss&&boss._s4war?boss._s4war.mode:null;
+    const _s4spd=_s4mode==='flyaway'?620:(_s4mode==='swerve'?560:480);
+    _stage4BossRoadScroll=(_stage4BossRoadScroll+dt*_s4spd)%chaseSpan;
     srcY=chaseSpan-_stage4BossRoadScroll;
   }else if(run.stage===4)_stage4BossRoadScroll=0;
   /* SKIP A BAND OF THE MASTER (drop 0813i)
@@ -4926,6 +5208,14 @@ function weaponLegacyName(w, lv){
   if(w===3 && typeof _pilotKey==='function' && _pilotKey()==='maverick') return null;
   return 'pw_'+(({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[w]||'mg')+'_'+lv;
 }
+/* The twin Warp Sentinels are an unidentified fusion event, not a conventional health check.
+   Their damage state stays in the world presentation.  The boss gauge becomes legal only after
+   convergence completes and the resulting Tidal Sovereign exists. */
+function bossHealthVisible(b){
+  if(!b||b.dead)return false;
+  const F=b._s9fusion;
+  return !(F&&F.phase!=='tidal');
+}
 function drawHUDCustom(){
   // DROP 0720 — new HUD bar (SCORE/HI SCORE/LIVES/BOMBS/EQUIPMENT: SHIELD/SPEED/WEAP)
   if(typeof XART!=='undefined' && XART.rdy('nhud_bar')){
@@ -4991,7 +5281,7 @@ function drawHUDCustom(){
 
        Drawn here before the return, with a plain gauge as the fallback for the
        frames before the bar art decodes, so there is never simply nothing. */
-    if(typeof bossActive!=='undefined' && bossActive && boss && !boss.dead
+    if(typeof bossActive!=='undefined' && bossActive && boss && bossHealthVisible(boss)
        && typeof drawHealthBarV2==='function'){
       const _r=clamp((boss.hp||0)/(boss.maxhp||1),0,1);
       const _bw=VW*0.72, _by=VH-58;
@@ -5064,7 +5354,7 @@ function drawHUDCustomImg(){
   ctx.textBaseline='alphabetic'; ctx.textAlign='left';
   let ix=VW-10;
   // shield/speed/missile now shown as EQUIPMENT pips in the HUD — no below-HUD icons
-  if(boss && bossActive && !boss.dead){
+  if(boss && bossActive && bossHealthVisible(boss)){
     const by=HUDH+6, bw=VW-44, bxs=22, r=clamp(boss.hp/boss.maxhp,0,1);
     // v2.0 per-stage themed boss bar (frame + 8-frame animated fill), legacy gradient fallback
     /* ⚠ THE SECOND BOSS BAR, AND THE LAST nbb_ BLIT (drop 0810n). Mike: "The hud and fills,
@@ -5273,7 +5563,7 @@ function drawHUDOverlay(){
   if(typeof drawEquipCorner==='function') drawEquipCorner();
   let ix=VW-10;
   // shield/speed shown as HUD EQUIPMENT pips now — no overlay icons
-  if(boss && bossActive && !boss.dead){
+  if(boss && bossActive && bossHealthVisible(boss)){
     const bw=VW-44, r=clamp(boss.hp/boss.maxhp,0,1);
     /* ONE GAUGE, EVERY PATH (drop 0810n). This was a third hand-rolled boss bar — the red-to-amber
        gradient with nine divider lines — and it is what actually reaches the screen whenever the
@@ -5333,7 +5623,7 @@ function drawHUDCustomLegacy(){
   // active powerups shown as EQUIPMENT pips now — no top-right icons
 
   // boss bar
-  if(boss && bossActive && !boss.dead){
+  if(boss && bossActive && bossHealthVisible(boss)){
     const by=H+6, bw=VW-44, bxs=22, r=clamp(boss.hp/boss.maxhp,0,1);
     /* ONE GAUGE, EVERY PATH (drop 0810n). This was a third hand-rolled boss bar — the red-to-amber
        gradient with nine divider lines — and it is what actually reaches the screen whenever the
@@ -5357,7 +5647,7 @@ function drawHUDFramed(){
   ctx.fillText(String(run.score).padStart(7,'0'),352,27);
   ctx.fillStyle='#9aa0aa'; ctx.font='bold 8px "BOFmil", monospace';
   ctx.fillText('HI '+String(Math.max(run.score,highScore||0)).padStart(7,'0'),352,42);
-  if(boss && bossActive && !boss.dead){ const w=240*clamp(boss.hp/boss.maxhp,0,1);
+  if(boss && bossActive && bossHealthVisible(boss)){ const w=240*clamp(boss.hp/boss.maxhp,0,1);
     ctx.fillStyle='#3a0a0a'; ctx.fillRect(72,64,240,8); ctx.fillStyle='#ff3a3a'; ctx.fillRect(72,64,w,8); }
   const sh=clamp(run.shield/100,0,1);
   ctx.fillStyle='#0d2030'; ctx.fillRect(23,122,11,248);
@@ -5412,6 +5702,31 @@ window.addEventListener('orientationchange', fitCanvas);
 document.addEventListener('fullscreenchange', fitCanvas);
 document.addEventListener('webkitfullscreenchange', fitCanvas);
 fitCanvas();window.addEventListener('resize', fitCanvas); fitCanvas();
+
+/* HQ cinematics temporarily own a browser-aspect backing store. CSS enlargement alone would
+   stretch the 480x512 gameplay buffer; this preserves the 512px virtual height and derives a
+   true widescreen virtual width. Gameplay restores the original backing on the state change. */
+let CINEMA_VW=VW;
+function cutsceneViewWidth(){return CINEMA_VW;}
+function _setCinematicViewport(on){
+  try{
+    if(on){
+      const ar=Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
+      CINEMA_VW=Math.max(640,Math.round(VH*ar));
+      cv.width=CINEMA_VW*SS;cv.height=VH*SS;
+      document.body.classList.add('cinematic-full');
+    }else{
+      CINEMA_VW=VW;cv.width=VW*SS;cv.height=VH*SS;
+      document.body.classList.remove('cinematic-full');
+    }
+    ctx.imageSmoothingEnabled=false;
+    if(window.__bofFit)window.__bofFit();else fitCanvas();
+  }catch(_cinemaView){}
+}
+window.__bofResizeCinematic=function(){
+  try{if(state===GS.CUTSCENE)_setCinematicViewport(true);}catch(_cinResize){}
+};
+window.addEventListener('resize',window.__bofResizeCinematic);
 
 /* ---- RNG / math helpers ---- */
 const rnd = (a=1,b=0)=> b===0 ? Math.random()*a : a+Math.random()*(b-a);
@@ -5472,6 +5787,39 @@ const Audio = (()=>{
     g.gain.setValueAtTime(vol, now());
     g.gain.exponentialRampToValueAtTime(0.0001, now()+dur);
     src.connect(bp); bp.connect(g); g.connect(dest||sfxGain); src.start(); src.stop(now()+dur+0.02);
+  }
+  /* A procedural warp bed keeps the secret route self-owned and license-free. It is one low
+     engine tone, one detuned harmonic and filtered air, all behind the real music/SFX layer.
+     Gate count controls pitch, filter and gain, so every successful ring audibly increases
+     velocity rather than replaying the same alert eight times. */
+  let warpBed=null;
+  function warpAmbienceStart(level){
+    if(!actx||muted)return false;
+    resume();
+    if(warpBed){warpAmbienceLevel(level==null?0:level);return true;}
+    try{
+      const bus=actx.createGain(),low=actx.createOscillator(),harm=actx.createOscillator();
+      const air=actx.createBufferSource(),bp=actx.createBiquadFilter(),ag=actx.createGain();
+      bus.gain.value=0.0001;bus.connect(sfxGain);
+      low.type='sine';harm.type='triangle';low.frequency.value=43;harm.frequency.value=71;
+      air.buffer=noiseBuf;air.loop=true;bp.type='bandpass';bp.frequency.value=540;bp.Q.value=1.8;ag.gain.value=.035;
+      low.connect(bus);harm.connect(bus);air.connect(bp);bp.connect(ag);ag.connect(bus);
+      low.start();harm.start();air.start();warpBed={bus,low,harm,air,bp,ag,level:0};
+      warpAmbienceLevel(level==null?0:level);return true;
+    }catch(_wa){warpBed=null;return false;}
+  }
+  function warpAmbienceLevel(level){
+    if(!warpBed)return false;const v=clamp(level==null?0:level,0,1),t=now()+.07;warpBed.level=v;
+    try{
+      warpBed.bus.gain.cancelScheduledValues(now());warpBed.bus.gain.linearRampToValueAtTime(.025+v*.075,t);
+      warpBed.low.frequency.linearRampToValueAtTime(43+v*42,t);warpBed.harm.frequency.linearRampToValueAtTime(71+v*116,t);
+      warpBed.bp.frequency.linearRampToValueAtTime(540+v*2450,t);warpBed.bp.Q.linearRampToValueAtTime(1.8+v*4.5,t);
+    }catch(_wl){}return true;
+  }
+  function warpAmbienceStop(){
+    const w=warpBed;if(!w)return;warpBed=null;
+    try{const t=now();w.bus.gain.cancelScheduledValues(t);w.bus.gain.setValueAtTime(Math.max(.0001,w.bus.gain.value),t);w.bus.gain.exponentialRampToValueAtTime(.0001,t+.34);
+      w.low.stop(t+.38);w.harm.stop(t+.38);w.air.stop(t+.38);}catch(_ws){}
   }
   // ---- named sfx ----
   /* ⚠ NO REPEATING UI BEEP (drop 0822ae). Mike: "stop the annoying BEEP BEEP BEEP noise from
@@ -5570,6 +5918,16 @@ const Audio = (()=>{
     go(){ tone(880,0.10,'square',0.22); setTimeout(()=>tone(1320,0.16,'square',0.24),90); },
     douse(){ noise(0.5,0.55,2600,-1300); noise(0.22,0.3,820,-260); tone(170,0.32,'sine',0.08,-110); },
     crackle(){ noise(0.05,0.09,3600,-2200); },
+    /* STORM SOVEREIGN SHIELD KIT.  These are material sounds, not UI alerts: broadband static
+       sells matter appearing, the falling high partial sells the electric lock, and the final
+       low body announces that the bubble is solid again. */
+    bossShieldTeleport(){
+      noise(.62,.22,1100,+6200);tone(180,.54,'sawtooth',.14,+1180);tone(1260,.38,'triangle',.10,-720);
+      setTimeout(()=>{noise(.18,.34,7200,-3900);tone(82,.30,'sine',.22,+48);},430);
+    },
+    bossShieldStatic(){noise(.075,.18,6400,-3100);tone(1540,.065,'square',.055,-620);},
+    shieldDeflect(){noise(.055,.24,7600,-4200);tone(2080,.075,'triangle',.10,-1050);},
+    enemyLightningChaingun(){noise(.070,.30,3900,-2100);tone(215,.065,'square',.11,+270);tone(820,.045,'triangle',.055,-360);},
     freeze(){ tone(300,0.5,'sine',0.07,900); tone(600,0.4,'sine',0.05,1400); noise(0.35,0.4,5000,2200); },
     countdown(){}, continueVO(){}, restrictedarea(){}, enemyunits(){}, enemyunit(){}, over(){},
     shatter(){ noise(0.18,0.6,5200,-2400); for(let k=0;k<7;k++){ setTimeout(()=>tone(1400+Math.random()*1600,0.10,'triangle',0.10),k*22); } },
@@ -5599,6 +5957,8 @@ const Audio = (()=>{
     gravitySnap(){ noise(0.12,0.44,5200,-3300); tone(245,0.13,'square',0.22,-120); },
     gravityFuse(){ tone(190,0.42,'sawtooth',0.18,+1260); tone(760,0.34,'triangle',0.12,+980); noise(0.30,0.18,3300,+2100); },
     gravityLock(){ noise(0.20,0.30,4200,-2800); tone(180,0.24,'square',0.18,-90); },
+    warpGate(stage){ const s=clamp(stage||1,1,8),f=150+s*38;noise(.25,.15,900+s*210,+1200);tone(f,.24,'sine',.15,+f*.72);tone(f*1.51,.18,'triangle',.07,+f*.4); },
+    warpBurst(){ noise(1.15,.55,700,+6200);tone(54,1.1,'sawtooth',.24,+880);tone(320,.72,'sine',.16,+1700);setTimeout(()=>tone(2100,.48,'triangle',.12,-1300),420); },
     laserCannon(){ noise(0.12,0.14,5400,-2400); tone(170,0.13,'sawtooth',0.07,+1050); },
     shadowCharge(){ tone(120,0.55,'sine',0.12,+480); noise(0.48,0.12,900,+2300); },
     shadowRelease(){ tone(620,0.30,'sawtooth',0.18,-510); noise(0.30,0.26,2600,-1900); },
@@ -5656,7 +6016,7 @@ const Audio = (()=>{
      of those guards has always evaluated to "nothing is playing" regardless of the truth. They
      were no-ops wearing the shape of a check. Exposing the real state makes all four work as
      written, which is the root of the campaign-map silence. */
-  return {init,resume,SFX,startMusic,stopMusic,setVol,getVol,toggleMute,isMuted:()=>muted,
+  return {init,resume,SFX,startMusic,stopMusic,setVol,getVol,toggleMute,warpAmbienceStart,warpAmbienceLevel,warpAmbienceStop,setWarpMix:()=>{},isMuted:()=>muted,
           musicPlaying:()=>!!(musicOn && musicTimer)};
 })();
 
@@ -6032,7 +6392,8 @@ function fodderShots(baseHp, stage, dkey){
    the only scaling in the game for this long — there was no single place to change it. */
 function EHP(baseHp){
   const stage = (typeof run!=='undefined' && run && run.stage) ? run.stage : 1;
-  return Math.max(1, fodderShots(baseHp, stage, diffKey) * PLAYER_REF_DMG);
+  const pressure=(typeof combatThreat==='function')?combatThreat(stage):{hp:1};
+  return Math.max(1, Math.round(fodderShots(baseHp, stage, diffKey) * PLAYER_REF_DMG * pressure.hp));
 }
 
 const DIFFS = {
@@ -6053,6 +6414,116 @@ const DIFFS = {
 };
 let diffKey='normal';
 let DIFF = DIFFS.normal;
+
+/* ============================================================
+   CAMPAIGN THREAT CURVE (0829)
+
+   Difficulty selection and campaign progression are different axes. NORMAL should teach in
+   Stages 1-2, then demand more as the player's movement, weapon tiers and missile bank mature.
+   This curve raises pressure, not cheapness: HP is the smallest lever, while cadence, projectile
+   travel and boss pattern density do most of the work. The arsenal contribution is snapshotted
+   on stage entry (`run._threatBuild`) so picking up a weapon never rubber-bands an enemy that is
+   already on screen.
+   ============================================================ */
+const STAGE_THREAT={
+  1:{hp:1.00,fire:1.00,bullet:1.00,bossHp:1.00,bossRate:1.00,bossDensity:1.00},
+  2:{hp:1.00,fire:1.00,bullet:1.00,bossHp:1.04,bossRate:1.03,bossDensity:1.00},
+  3:{hp:1.05,fire:1.07,bullet:1.04,bossHp:1.10,bossRate:1.08,bossDensity:1.05},
+  4:{hp:1.10,fire:1.13,bullet:1.08,bossHp:1.16,bossRate:1.14,bossDensity:1.10},
+  5:{hp:1.15,fire:1.20,bullet:1.12,bossHp:1.22,bossRate:1.20,bossDensity:1.15},
+  6:{hp:1.20,fire:1.27,bullet:1.17,bossHp:1.30,bossRate:1.28,bossDensity:1.20},
+  7:{hp:1.25,fire:1.34,bullet:1.22,bossHp:1.38,bossRate:1.36,bossDensity:1.26},
+  8:{hp:1.30,fire:1.42,bullet:1.27,bossHp:1.48,bossRate:1.45,bossDensity:1.32},
+  9:{hp:1.32,fire:1.46,bullet:1.30,bossHp:1.52,bossRate:1.50,bossDensity:1.35},
+};
+function playerArsenalScore(){
+  if(typeof run==='undefined'||!run)return 0;
+  const levels=(run.wlevels||[]).concat(run.spaceLevels||[]).map(v=>Math.max(0,+v||0));
+  const peak=Math.max(run.wlevel||0,...levels), avg=levels.length?levels.reduce((a,b)=>a+b,0)/levels.length:0;
+  const weapons=clamp(((peak-1)/4)*0.62+(avg/5)*0.18,0,0.80);
+  const support=clamp((run.missileLevel||0)/5,0,1)*0.10+clamp((run.speedLevel||0)/5,0,1)*0.06+
+                (run.shield?0.04:0);
+  return clamp(weapons+support,0,1);
+}
+function combatThreat(stage){
+  stage=clamp(stage||((typeof run!=='undefined'&&run.stage)||1),1,9);
+  const base=STAGE_THREAT[stage]||STAGE_THREAT[8];
+  /* Threat follows the strength the player has demonstrated on this LIFE, but it is only read
+     when a new unit/volley is created. Existing enemies never gain HP under the crosshair. The
+     life peak and survival clock reset on a real death (shields do not count), producing the
+     requested arcade pressure loop: stay alive and powered-up -> reinforcements and tougher new
+     arrivals; die -> the extra pressure drops with the lost loadout. */
+  const snap=(typeof run!=='undefined'&&run&&run._threatBuild!=null)?run._threatBuild:0;
+  const alive=!(typeof player!=='undefined'&&player&&player.dead);
+  const live=alive?playerArsenalScore():0;
+  /* A death is the reset boundary. Rendering a surviving hostile bullet while the respawn timer
+     is running must not silently rebuild the just-cleared life peak from the player's loadout. */
+  if(typeof run!=='undefined'&&run&&alive){run._lifeThreat=Math.max(run._lifeThreat||0,live);}
+  const build=Math.max(snap,live,(typeof run!=='undefined'&&run&&run._lifeThreat)||0);
+  const gate=.58+.42*clamp((stage-1)/7,0,1), power=clamp(build,0,1)*gate;
+  const survived=clamp((((typeof run!=='undefined'&&run&&run._lifeCombatT)||0)-12)/78,0,1);
+  return {
+    hp:base.hp*(1+power*0.22), fire:base.fire*(1+power*0.15),
+    bullet:base.bullet*(1+power*0.10), bossHp:base.bossHp*(1+power*0.24),
+    bossRate:base.bossRate*(1+power*0.18), bossDensity:base.bossDensity*(1+power*0.12),
+    /* Stage 1 also receives the requested extra baseline traffic. The additional survival share
+       rises gradually and is capped, so density pressure cannot become an unavoidable wall. */
+    spawn:1+(stage===1?.12:.04)+power*.13+survived*.17,
+    stage,build,survived
+  };
+}
+function enemyBulletPressure(){return combatThreat().bullet;}
+function bossCadencePressure(b){return (b&&b._threat?b._threat:combatThreat()).bossRate;}
+
+/* ============================================================
+   GAME-WIDE SURVIVAL REINFORCEMENTS (0831)
+
+   Authored wave layouts remain the source of truth. This director adds only one stage-native
+   light unit in the breathing room between those layouts. Player strength and time survived
+   raise the reinforcement percentage; a real death clears both the percentage and its cadence.
+   The strict slot and timing gates keep the system from stacking hitboxes or burying a boss gate.
+   Stage 1 already owns its annotated-map adaptive jet ripples and is intentionally excluded here.
+   ============================================================ */
+const ADAPTIVE_REINFORCEMENT_ROSTER={
+  2:['ash','lance','cinderwasp'],
+  3:['s3interceptor','sharddart','cryoeye'],
+  4:['s4interceptor','s4rocket','s4minitank'],
+  5:['s5interceptor','s5skimmer','s5rammer'],
+  6:['s6dart','s6lancer','s6skimmer'],
+  7:['s7sampler','s7skimmer','s7lamprey'],
+  8:['s8interceptor','s8needlejet','s8scout'],
+  9:['s9interceptor','s9warptank','s9comet']
+};
+function adaptiveSpawnPressure(stage){
+  stage=clamp(stage||((typeof run!=='undefined'&&run.stage)||1),1,9);
+  if(stage===1)return 0;                         // Stage 1 scales inside its mapped jet files.
+  const T=combatThreat(stage),baseline=1.04;
+  return clamp((T.spawn-baseline)/.30,0,1);     // .13 arsenal + .17 survival = one full meter.
+}
+function adaptiveSpawnSlots(stage,pressure){
+  if(stage===8)return pressure>=.66?1:0;        // Furious Death hulls are already heavyweight.
+  return pressure>=.66?2:(pressure>=.16?1:0);
+}
+function adaptiveSpawnCooldown(pressure){return 12.5-6.5*clamp(pressure,0,1);}
+function tryAdaptiveReinforcement(stage,nextWave,liveN,baseCap){
+  const roster=ADAPTIVE_REINFORCEMENT_ROSTER[stage];
+  if(!roster||!roster.length||stageTimer<5||player.dead||subBossActive||bossActive||bossDefeated||
+     warnT>0||stageEnding||(_adaptiveSpawnT||0)>0||(_waveGap||0)>.25)return false;
+  const pressure=adaptiveSpawnPressure(stage),slots=adaptiveSpawnSlots(stage,pressure);
+  if(!slots||liveN>=baseCap+slots)return false;
+  /* Do not put a reinforcement on the same entry row as an authored wave. If that wave is due,
+     it always wins; if it is close, its reserved formation owns the top of the screen. */
+  if(nextWave&&nextWave.t-stageTimer<1.45)return false;
+  const lanes=[.18,.38,.62,.82],seq=_adaptiveSpawnSeq||0,W=worldWidth();
+  const lane=lanes[(seq*3+stage)%lanes.length],type=roster[(seq+stage)%roster.length];
+  const e=spawnEnemy(type,W*lane,-72,{_adaptiveReinforcement:true,_stagger:.08*(seq&1)});
+  /* A few native constructors rebuild their option payload after spawn. Stamp the director tag
+     on the finished enemy as well so diagnostics and later density accounting stay uniform. */
+  if(e)e._adaptiveReinforcement=true;
+  _adaptiveSpawnSeq=seq+1;
+  _adaptiveSpawnT=e?adaptiveSpawnCooldown(pressure):2.0;
+  return !!e;
+}
 
 const PILOTS=[
   {key:'axel',      name:'AXEL',      role:'COMMANDER',        tint:'#3a8aff', font:3, spd:0.10, fire:0.04, range:0.10},
@@ -6410,7 +6881,10 @@ function playerBaseSpeed(){ return (2.6 + run.speed*0.55)*(1+(PILOTMOD?PILOTMOD.
    ============================================================ */
 const STAGES = [
   {n:1, name:'STAGE 1', sub:'RUMBLE IN THE JUNGLE',   bg:'jungle', music:'lvl1',
-   length:62, boss:'damkeeper'},
+   /* The supplied 4212px encounter map places the helicopter at the dam. 82 seconds at the
+      stage's 40px/s scroll reaches that authored arena instead of starting the boss halfway
+      down the jungle strip. */
+   length:82, boss:'damkeeper'},
   {n:2, name:'STAGE 2', sub:"IT'S HOT IN HERE",        bg:'volcano',music:'bullets',
    length:48, boss:'infernoreaver'},   // was magmacolossus - Mike scrapped it, 0810q/0810s
   {n:3, name:'STAGE 3', sub:"ICE STILL CAN'T SEE",     bg:'ice',    music:'lvl3',
@@ -6464,7 +6938,8 @@ const STAGES = [
 /* the campaign is stages 1..8; a bonus stage lives in the table but not in the run order */
 const CAMPAIGN_STAGES = STAGES.filter(function(s){ return !s.bonus; }).length;
 let curStage=null;
-let stageTimer=0, spawnClock=0, _waveGap=0, bossActive=false, bossDefeated=false, stageEnding=0, lifeUpRolled=false;
+let stageTimer=0, spawnClock=0, _waveGap=0, _adaptiveSpawnT=6.5, _adaptiveSpawnSeq=0,
+    bossActive=false, bossDefeated=false, stageEnding=0, lifeUpRolled=false;
 let subBoss=null, subBossActive=false, subBossDone=false, subBossTriggered=false, _sbMusicResumed=false;
 let warnT=0, warnKind=null, bossWarned=false, _sc1=false, _sc2=false, _mc1=false, _mc2=false;
 let aminiTriggered=false;   // the arsenal mini has been sent this stage
@@ -6548,15 +7023,13 @@ const SUBBOSS={
   /* the JUNGLE CRUISER replaces the quad-laser here (drop 0812e, Mike's word). `at` and
      afterScroll are UNTOUCHED: 0801ke moved this trigger three times to land the fight after
      the beach tanks and the grass jets, and that sequencing is about the STAGE, not the unit. */
-  1:{at:0.62, kind:'junglecruiser', afterScroll:2100, afterWaveTime:52},
+  /* 0830 encounter-map pass: the miniboss follows fast-jet ripple two. Its combat is deliberately
+     unchanged until Mike and Codex review it together. */
+  1:{at:0.42, kind:'junglecruiser', afterScroll:1400, afterWaveTime:34},
                                   // Flipped so its turrets face you; crawls up/down only; quad MGs.
   2:{at:0.45, kind:'magmaward',  afterScroll:961},      // MAGMA VENT (0813g) — Mike pulled siege ember; picked out of the unused pool
   6:{at:0.45, kind:'blacksteel',   afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
-  7:{at:0.45, kind:'ratking', afterScroll:1161}   /* ⚠ REVERTED 0813h. Mike asked for olive
-     carrier here, but swapping it in stopped the stage-7 sub-boss TRIGGERING at all - the
-     soak assertion `_sbSeen` (a runtime observation, not a name pin) went false, and the
-     stage-7 boss gate behind it failed with it. ratking is a SEWER unit and stage 7 appears
-     to rely on that; olivecarrier needs whatever ratking has before it can take this slot. */,    // RAT KING EXCAVATOR — level 7 sub-boss
+  7:{at:0.45, kind:'dualscoopdredger', afterScroll:1161}, // supplied Level-7 toxic-fleet miniboss
   /* The intact SPAWN CARRIER hull carries the HERALD OF DEATH identity (0825c). The old herald
      runtime never had body art —
      mba_vr_* is 0 keys, nvr_* was never built — so it wore frames 0-3 of its own venom attack
@@ -6565,7 +7038,10 @@ const SUBBOSS={
      (Enemies/Stage08/spawn_carrier_miniboss); the old herald code stays, unassigned, like the
      magma/cryo rigs. */
   8:{at:0.45, kind:'heralddeath', afterScroll:1201},
-  9:{at:0.45, kind:'warpsentinel', afterScroll:1201},   // WARP SENTINEL — the bonus stage's miniboss (0822ab)
+  /* The violet/ion pair are the Stage-9 SUB-BOSSES.  The black-and-blue Warp Sentinel hull is
+     reserved for the true final encounter, where two of them must be disabled before they fuse
+     into the Tidal Sovereign. */
+  9:{at:0.45, kind:'riftwardens', afterScroll:1201},
   3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
   5:{at:0.45, kind:'chaosharrier', afterScroll:1121}, // CHAOS HARRIER — authored space interceptor, replaces retired ENERGY CORE
@@ -7139,7 +7615,15 @@ function droneFire(e){
      SPEED rather than flooding the screen. That is also why nothing here scales B.n — the pattern
      keeps its shape at every setting, so what the player learned still applies. */
   const _sp=(typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1;
-  const push=(vx,vy,w)=>eBullets.push({x:x,y:y,vx:vx*_sp,vy:vy*_sp,w:w||10,h:w||10,dmg:1,t:0,kind:'eshot'});
+  const _iceMini=e._amini==='frostbite';
+  const _s4Mini=e._amini==='dambreaker';
+  let _iceKind='eshot';
+  const push=(vx,vy,w)=>{
+    const hb=(_iceMini&&typeof S3_PROJECTILE_HIT!=='undefined'&&S3_PROJECTILE_HIT[_iceKind])?S3_PROJECTILE_HIT[_iceKind]:
+      ((_s4Mini&&typeof S4_PROJECTILE_HIT!=='undefined'&&S4_PROJECTILE_HIT[_iceKind])?S4_PROJECTILE_HIT[_iceKind]:[w||10,w||10]);
+    eBullets.push({x:x,y:y,vx:vx*_sp,vy:vy*_sp,w:hb[0],h:hb[1],dmg:1,t:0,kind:_iceKind,
+      _boss:_iceMini||_s4Mini,_bfam:_iceMini?'cryo':(_s4Mini?'storm':null),_noArsenal:_iceMini||_s4Mini});
+  };
   /* ---- THE CYCLE (drop 0810a). A mini runs its level's attacks on a FIXED rotation, so the
      order is learnable. Each entry may override n / spd / arc; anything it omits falls back to the
      unit's own defaults, so a cycle entry only has to state what makes it different. ---- */
@@ -7159,6 +7643,8 @@ function droneFire(e){
   const B_n   = (_C && _C.n   != null) ? _C.n   : B.n;
   const B_spd = (_C && _C.spd != null) ? _C.spd : B.spd;
   const B_arc = (_C && _C.arc != null) ? _C.arc : B.arc;
+  if(_iceMini) _iceKind=(_atk==='lance')?'s3lance':((_atk==='spawn')?'s3mortar':'s3shard');
+  if(_s4Mini) _iceKind=(_atk==='burst')?'s4rail':((_atk==='lob')?'s4bomb':((_atk==='ring')?'s4rocket':'s4brass'));
   if(_C) D.cyc = ((D.cyc||0) + 1) % B.cycle.length;
   switch(_atk){
     case 'lance':                                   // one fast aimed shot
@@ -7238,13 +7724,18 @@ function droneFire(e){
       e.dead=true;                                  // it detonates; it does not linger
       break; }
   }
-  if(Audio.SFX && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
+  if(_iceMini && typeof stage3Muzzle==='function') stage3Muzzle(e,0,.30,1.0,.18,MUZZLE_JET_ORD);
+  if(_s4Mini && typeof stage4Muzzle==='function') stage4Muzzle(e,0,.30,1.08,.18,MUZZLE_JET_ORD);
+  if(typeof enemyShotSfx==='function') enemyShotSfx(_iceKind);
+  else if(Audio.SFX && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
 /* ---- DRAW: thrusters under, body with bank + breath, glow core over ---- */
 function droneDraw(e){
   const D=e._dr; if(!D || typeof XART==='undefined') return false;
   const B=D.b, slug=D.slug;
-  const k='ndr_'+slug+'_idle_'+D.fi;
+  /* Generated drones keep one stable hull plate. Their tell and release are carried by glow,
+     muzzle and projectile layers; cycling the body while idle made them visibly shapeshift. */
+  const k='ndr_'+slug+'_idle_0';
   if(!XART.rdy(k)) return false;
   const im=XART.get(k);
   const yy=e.y+(D.hover||0);
@@ -7325,6 +7816,13 @@ function droneDraw(e){
   ctx.translate(e.x, yy);
   if(D.bank) ctx.rotate(D.bank);
   ctx.drawImage(im, -w/2, -h/2, w, h);
+  /* Every arsenal drone acknowledges damage on the same frame as the hit. The Stage-3 shard
+     files previously returned from drawEnemy through this custom renderer before any of the
+     generic hit-tint paths ran, so their HP changed with no readable hull flash. */
+  if(e.flash>0 && typeof xartTint==='function'){
+    const hit=xartTint(k,hitFlashColor(e,'#ffffff'),0.92);
+    if(hit)ctx.drawImage(hit,-w/2,-h/2,w,h);
+  }
   /* THE INNER CORES GLOW, NOT THE HULL (drop 0801ap). Mike: "the inner cores of the enemies, make
      them glow their color."
 
@@ -7756,12 +8254,8 @@ function spawnEnemy(type, x, y, opt={}){
      function. There is no identifier left that can fail to resolve. */
   {
     const _DELETE = new Set([
-      /* STAGE-2 UNITS WITH NO WAVE SLOT (drop 0801ip). Mike: "delete the ones with
-         no waves, were not using them." Measured: golem, lavamaw, pod, crawl and
-         miner all spawn with stats and full six-frame art, sit at 0 px/s, never
-         fire, and are named by no wave in the stage-2 plan. Five units of dead
-         weight. Their ART stays in the tree - only the ability to spawn goes. */
-      'golem', 'lavamaw', 'pod', 'crawl', 'miner',
+      /* The five formerly unused Stage-2 units are no longer culled: 0829 gives miner, lavamaw,
+         crawl, pod and golem authored waves, action reels and independent attacks. */
 
       /* THE ONES THAT WERE ACTUALLY ON SCREEN (drop 0801dn). Forcing all 29 stage-1
          waves instead of simulating the first thirty seconds surfaced turretMG and
@@ -8375,15 +8869,79 @@ const SHIPS=[];
       c.shoots=false; c.fk=null; c.fireRate=1.5; c.dropOk=true;
       break;
     }
+    case 's5frigate': case 's5rammer': case 's5skimmer': case 's5gravity':
+    case 's5interceptor': case 's5minelayer': case 's5satellite': case 's5portalmine':
+    case 's5repair': case 's5salvage': case 's5leech': case 's5station': {
+      const H=S5SPACE[type]; c.w=H.w;c.h=H.h;c.hp=c._maxhp=EHP(H.hp);c.score=H.score;
+      c.vy=0;c.pattern='s5space';c._s5space=type;c.shoots=false;c.fk=null;c.dropOk=true;
+      c.impact=!!H.impact;break;
+    }
+    case 's8leech': case 's8interceptor': case 's8manta': case 's8hunter':
+    case 's8deathorb': case 's8parasite': case 's8razor': case 's8skull':
+    case 's8carrier': case 's8symbiote': case 's8tentacle': case 's8bomber':
+    case 's8gunship': case 's8needlejet': case 's8scout': case 's8solar':
+    case 's8spread': case 's8crescent': {
+      const H=S8MEGA[type];c.w=H.w;c.h=H.h;c.hp=c._maxhp=EHP(H.hp);c.score=H.score;
+      c.vy=0;c.pattern='s8mega';c._s8mega=type;c.shoots=false;c.fk=null;c.dropOk=true;
+      c.impact=!!H.impact;c._dieDur=.64;break;
+    }
+    case 's9beacon': case 's9chronal': case 's9comet': case 's9gunship':
+    case 's9interceptor': case 's9gatecarrier': case 's9gateturret': case 's9gravity':
+    case 's9prism': case 's9warptank': case 's9ring': case 's9singularity': {
+      const H=S9VOID[type];c.w=H.w;c.h=H.h;c.hp=c._maxhp=EHP(H.hp);c.score=H.score;
+      c.vy=0;c.pattern='s9void';c._s9void=type;c.shoots=false;c.fk=null;c.dropOk=true;
+      c.impact=!!H.impact;break;
+    }
+    case 's3mine': case 's3interceptor': case 's3sled': case 's3snowmobile':
+    case 's3crawler': case 's3tank': case 's3barge': case 's3artillery': {
+      const I=S3ICE[type];
+      c.w=I.w; c.h=I.h; c.hp=c._maxhp=EHP(I.hp); c.score=I.score;
+      c.vy=0; c.pattern='s3ice'; c._s3ice=type;
+      /* s3IceTick owns all movement and ammunition.  This is deliberately false even for armed
+         hulls: the generic timer fires unanchored pellets and would erase the eight identities. */
+      c.shoots=false; c.fk=null; c.fireRate=2.0; c.dropOk=true;
+      break;
+    }
+    case 's4airfield': case 's4tractor': case 's4interceptor': case 's4command':
+    case 's4barrel': case 's4tanker': case 's4bomber': case 's4heavyjet':
+    case 's4missile': case 's4rocket': case 's4minitank': case 's4sam': {
+      const H=S4CHASE[type];
+      c.w=H.w; c.h=H.h; c.hp=c._maxhp=EHP(H.hp); c.score=H.score;
+      c.vy=0; c.pattern='s4chase'; c._s4chase=type;
+      c.shoots=false; c.fk=null; c.fireRate=2.0; c.dropOk=true;
+      c.impact=!!H.impact;
+      break;
+    }
+    case 's6lancer': case 's6cyclone': case 's6bomber': case 's6mine':
+    case 's6skimmer': case 's6carrier': case 's6reactor': case 's6buoy':
+    case 's6dart': case 's6thunder': case 's6turbine': case 's6probe': {
+      const H=S6STORM[type];
+      c.w=H.w; c.h=H.h; c.hp=c._maxhp=EHP(H.hp); c.score=H.score;
+      c.vy=0; c.pattern='s6storm'; c._s6storm=type;
+      c.shoots=false; c.fk=null; c.fireRate=2.0; c.dropOk=true;
+      c.impact=!!H.impact;
+      break;
+    }
+    case 's7lamprey': case 's7barge': case 's7pipe': case 's7walker': case 's7sampler':
+    case 's7serpent': case 's7mine': case 's7canister': case 's7tank': case 's7skimmer': case 's7valve': {
+      const H=S7TOXIC[type];
+      c.w=H.w; c.h=H.h; c.hp=c._maxhp=EHP(H.hp); c.score=H.score;
+      c.vy=0; c.pattern='s7toxic'; c._s7toxic=type;
+      /* The toxic controller owns every release and hardpoint. Generic aim-fire would stack an
+         untelegraphed pellet over the supplied attack reel, so it is explicitly disabled. */
+      c.shoots=false; c.fk=null; c.fireRate=2.0; c.dropOk=true;
+      break;
+    }
     case 'skim': case 'disc': case 'eye': case 'miner': case 'ash': case 'cruc':
     case 'lance': case 'carrier': case 'crawl': case 'pod': case 'golem': case 'lavamaw':
-    case 'magmagun': case 'spinner': case 'dodger': {   // the 0819 stage-2 cast
+    {   // the twelve unique Stage-2 volcanic hulls
       const V=VOLC[type];
       c.w=V.w; c.h=V.h; c.hp=c._maxhp=EHP(V.hp); c.score=V.score;
       c.vy=0; c.pattern='volc'; c._volc=type;
-      /* volcTick keeps its own cadences; this arms them as well (0810w). Stage 2 fielded 19 units
-         and only 3 of them shot. */
-      c.shoots=true; c.fk='aimed'; c.fireRate=2.0; c.dropOk=true;
+      /* volcTick owns BOTH movement and ammunition.  The generic shooter used to stack an aimed
+         dart cycle over every authored routine, flattening the whole cast into the same enemy
+         and spawning rounds without the unit's muzzle tell. */
+      c.shoots=false; c.fk=null; c.fireRate=2.0; c.dropOk=true;
       break;
     }
     case 'skimmer': case 'shambler': case 'sentry': case 'barge': case 'crawler': case 'maw': {
@@ -8444,6 +9002,13 @@ const SHIPS=[];
      instead of through a missing row. Driven from rosterHas, never hand-listed. */
   if(typeof rosterHas==='function' && rosterHas(type)) _selfPat[type]=1;
   for(const _k in VOLC) _selfPat[_k]=1;       // level-2 volcanic units run their own volcTick signatures
+  for(const _k in S3ICE) _selfPat[_k]=1;      // level-3 native ice units run their own s3IceTick signatures
+  for(const _k in S4CHASE) _selfPat[_k]=1;    // level-4 Blacksite units own movement + weapons
+  for(const _k in S6STORM) _selfPat[_k]=1;    // level-6 storm fleet owns movement + weapons
+  for(const _k in S7TOXIC) _selfPat[_k]=1;    // level-7 toxic fleet owns movement + weapons
+  for(const _k in S5SPACE) _selfPat[_k]=1;     // level-5 orbital fleet owns movement + weapons
+  for(const _k in S8MEGA) _selfPat[_k]=1;      // level-8 mega fleet owns smart movement + weapons
+  for(const _k in S9VOID) _selfPat[_k]=1;      // level-9 void fleet owns movement + weapons
   for(const _k in ELITE8) _selfPat[_k]=1;     // level-8 elites run their own elite8Tick signatures
   for(const _k in ELITE_DEF) _selfPat[_k]=1;   // elites keep whatever the roster gives them
   for(const _k in MINI_DEF) _selfPat[_k]=1;    // mini tanks/ships drive themselves
@@ -8506,7 +9071,18 @@ const SHIPS=[];
   else if(type==='gunship'){ c.e1='gunship'; c.e1scale=1.5; }
   else if(type==='drone'){ if(run.stage===1){ c.e1='recon'; c.e1scale=1.15; } }   // stage 1 jungle roster uses recon jets; stage 2+ keeps the classic ROBO drones (drone0-2 atlas art)
   c.maxhp=c.hp;
-  const ES=1.3; c.w=Math.round(c.w*ES); c.h=Math.round(c.h*ES);
+  const ES=1.3;
+  if(c._unitSquare){
+    /* Stage-1 tanks separate rendering from collision. Scale the authored body once, then rebuild
+       one final square AABB around it; never let this generic enemy multiplier turn it rectangular
+       or leave `_unitSquare` disagreeing with the live collision dimensions. */
+    c._bodyW=Math.round((c._bodyW||c.w)*ES);
+    c._bodyH=Math.round((c._bodyH||c.h)*ES);
+    c._unitSquare=Math.ceil(Math.max(c._bodyW,c._bodyH)+S1_TANK_BOX_PAD);
+    c.w=c._unitSquare; c.h=c._unitSquare;
+  } else {
+    c.w=Math.round(c.w*ES); c.h=Math.round(c.h*ES);
+  }
   if(type==='microturret'){ c.w=18; c.h=18; }   // keep the ground turret-tank genuinely small
   if(type==='tank'){ c.w=Math.round(c.w*0.82); c.h=Math.round(c.h*0.82); }
   else if(type==='htank'){ c.w=Math.round(c.w*0.84); c.h=Math.round(c.h*0.84); }
@@ -8572,7 +9148,7 @@ const SHIPS=[];
       }
       /* every marker drawEnemy actually dispatches on, read straight off its own
          branch list — not a guess at which ones matter */
-      if(!_vis && (c._dr||c._l6x||c._bcar||c._el8||c._volc||c._sew||c._orb||c._el||
+      if(!_vis && (c._dr||c._l6x||c._bcar||c._el8||c._volc||c._s3ice||c._s4chase||c._s6storm||c._sew||c._orb||c._el||
                    c._mini||c._bunker||c._tur||c._droid||c._vkind||c._mech||c._sx||
                    c.modular||c.boss||c._veh||c._ship||c._tank)) _vis=true;
       if(!_vis && typeof LEGACY_DRAWN!=='undefined' && LEGACY_DRAWN[c.type]) _vis=true;
@@ -8635,7 +9211,7 @@ const SHIPS=[];
   /* `inPlace` declares that a unit is MEANT to appear where it is rather than fly in from an
      edge — a splitter's halves, a sewer maw surfacing. Without it those read as pop-ins to any
      check and the next person to look at this "fixes" an authored beat (drop 0811o). */
-  for(const _k of ['fk','vy','amp','aimed','shoots','hp','score','_fast','_noFire','_order','_lane','_side','_hold','_stagger','inPlace']){
+  for(const _k of ['fk','vy','amp','aimed','shoots','hp','score','_fast','_noFire','_order','_lane','_side','_hold','_stagger','_atk','inPlace']){
     if(opt[_k]!==undefined) c[_k]=opt[_k];
   }
   if(opt.hp!==undefined) c.maxhp=opt.hp;
@@ -8863,6 +9439,183 @@ function buildStagePlan(stageNum){
   const D=DIFF.density;
   const P=[];
   const add=(t,fn)=>P.push({t,fn});
+  /* ============================================================================
+     STAGE 1 — 0830 ANNOTATED ENCOUNTER MAP
+
+     Source of truth: docs/design/enemy_pattern_library_0830/wave setup.png
+     Read from bottom to top, exactly like the level plate. The other drawings in that folder
+     are a future path library and are not silently assigned to enemies here.
+
+       red water circles  boats (including the one accidentally drawn black)
+       yellow circles     fast attack jets, one-by-one in a 2/3-frame ripple
+       black land circles tanks; south-facing, forward/reverse only
+       purple circles     committed kamikaze jets
+       red borders        forbidden tank terrain, enforced by tankDrivable()
+       large blue circle  the dam/boss arena
+
+     Every beat is gated on mapScroll as well as time. If combat pressure delays a wave, it still
+     waits for its drawn terrain instead of drifting onto the wrong part of the plate.
+     ============================================================================ */
+  if(stageNum===1){
+    const W1=(typeof worldWidth==='function')?worldWidth():VW;
+    const lane=(f)=>{
+      const l=(typeof camLeftX==='function')?camLeftX():0;
+      const r=(typeof camRightX==='function')?camRightX():W1;
+      return l+(r-l)*f;
+    };
+    const C1=(typeof _levelCfg==='function')?_levelCfg(1):null;
+    const H1=(C1&&C1.h)||4212;
+    const RANGE1=Math.max(1,H1-VH);
+    const COAST1=S1_COAST;
+    const scrollForMapY=(mapY)=>clamp(RANGE1-mapY,0,RANGE1);
+    const timeForMapY=(mapY)=>scrollForMapY(mapY)/40;
+    const sourceBottom=()=>H1-(mapScroll||0);
+    const onLand=()=>sourceBottom()<=COAST1-60;
+    const atSea=()=>sourceBottom()>COAST1-60;
+
+    /* A map wave can be due on the clock but not yet at its source row after pressure/holds. It
+       gives its director slot back and tries again on the next beat. Ground markers also publish
+       the existing pressure contract so the camera cannot outrun a tank formation. */
+    const atMap=(mapY,fn,opt={})=>{
+      const target=scrollForMapY(mapY);
+      const wrapped=function _s1MappedWave(){
+        if((mapScroll||0)+5<target){
+          if(typeof stagePlan!=='undefined'&&stagePlan&&waveIdx>0) waveIdx--;
+          _waveGap=0.12;
+          return;
+        }
+        if(opt.sea && !atSea()) return;
+        if(opt.ground && !onLand()){
+          if(typeof stagePlan!=='undefined'&&stagePlan&&waveIdx>0) waveIdx--;
+          _waveGap=0.20;
+          return;
+        }
+        fn();
+      };
+      wrapped._s1MapY=mapY;
+      wrapped._s1MapScroll=target;
+      if(Number.isFinite(opt.pressure)) wrapped._s1Pressure=opt.pressure;
+      if(opt.ground){
+        wrapped._s1Ground=true;
+        if(!Number.isFinite(opt.pressure)) wrapped._s1Pressure=4;
+      }
+      add(timeForMapY(mapY),wrapped);
+    };
+
+    /* The first order is seeded once per run, then all four orders cycle. This prevents one
+       memorised lead lane while guaranteeing that every lane leads once before any repeats. */
+    const ORDERS=[[0,1,2,3],[3,2,1,0],[1,3,0,2],[2,0,3,1]];
+    let rippleNo=0, orderNo=(Math.random()*ORDERS.length)|0;
+    const adaptiveExtras=(maxExtra)=>{
+      const m=(typeof combatThreat==='function'?combatThreat(1).spawn:1.12);
+      /* Baseline Stage 1 gets one more attacker; a powered, long-lived pilot earns a second.
+         Extra craft enter nine rendered frames apart, preserving the user's furious one-by-one
+         rhythm instead of stacking multiple hitboxes on the same spawn row. */
+      return clamp(Math.floor((m-1)*4+.65),1,maxExtra);
+    };
+    const jetRipple=(lanes,types)=>{
+      const order=ORDERS[orderNo%ORDERS.length];
+      const wave=++rippleNo;
+      orderNo++;
+      let delayFrames=0;
+      for(let rank=0;rank<order.length;rank++){
+        if(rank) delayFrames+=(rank&1?2:3);           // 2–3 rendered frames, not invisible 2–3ms
+        const slot=order[rank], type=types[slot%types.length];
+        spawnEnemy(type,lane(lanes[slot]),-44,{route:'straight',_s1DelayFrames:delayFrames,
+          _s1Rush:true,_s1Wave:wave,_s1LeadRank:rank});
+      }
+      const extra=adaptiveExtras(2);
+      for(let i=0;i<extra;i++){
+        delayFrames+=9;
+        const slot=order[(i+wave)%order.length],type=types[(slot+i+1)%types.length];
+        spawnEnemy(type,lane(lanes[slot]),-44,{route:'straight',_s1DelayFrames:delayFrames,
+          _s1Rush:true,_s1Wave:wave,_s1LeadRank:order.length+i,_adaptiveReinforcement:true});
+      }
+    };
+    const kamikazeRipple=(lanes)=>{
+      const order=ORDERS[orderNo%ORDERS.length]; orderNo++;
+      let delayFrames=0;
+      for(let rank=0;rank<order.length;rank++){
+        if(rank) delayFrames+=(rank&1?3:2);
+        const slot=order[rank];
+        spawnEnemy('s1jetdelta_b',lane(lanes[slot]),-46,{route:'straight',_s1DelayFrames:delayFrames,
+          _s1Kamikaze:true,_s1LeadRank:rank});
+      }
+      if(adaptiveExtras(1)>0){
+        delayFrames+=9;const slot=order[(orderNo+rippleNo)%order.length];
+        spawnEnemy('s1jetdelta_b',lane(lanes[slot]),-46,{route:'straight',_s1DelayFrames:delayFrames,
+          _s1Kamikaze:true,_s1LeadRank:order.length,_adaptiveReinforcement:true});
+      }
+    };
+    const tankFile=(rows)=>{
+      /* Every ground unit owns a separate entry cell. spawnEnemy's universal top-entry guard
+         deliberately normalises negative Y, which used to collapse the whole file onto one row.
+         Rebuild the authored file after spawning: one padded square, then a full visible gutter,
+         before the next tank. The positions remain above the camera and enter in order. */
+      const top=(typeof viewTopY==='function')?viewTopY():0;
+      const runway=(typeof ENTRY_CLEAR!=='undefined')?ENTRY_CLEAR:64;
+      let cursor=top-runway;
+      for(let i=0;i<rows.length;i++){
+        const r=rows[i], type=r[1]||'s1tankheavy';
+        const e=spawnEnemy(type,lane(r[0]),-54-i*94,{_order:i,_atk:r[2]||undefined});
+        if(!e) continue;
+        const half=(e._unitSquare||Math.max(e.w||0,e.h||0))*0.5;
+        e.y=cursor-half;
+        e._tankQueueY=e.y;
+        e._lvlY=null;                              // tankInit derives it from this corrected row
+        cursor=e.y-half-24;                        // 24px of daylight between square hitboxes
+      }
+    };
+
+    /* WATER — every marker is a boat. The first pair are the two left-side boats Mike added. */
+    atMap(3660,()=>{ spawnEnemy('s1boatpatrol',lane(.08),-48,{});
+                     spawnEnemy('s1boatgun',lane(.22),-86,{}); },{sea:true});
+    atMap(3510,()=>{ spawnEnemy('s1boatpatrol',lane(.56),-52,{}); },{sea:true});
+    atMap(3360,()=>{ spawnEnemy('s1boatgun',lane(.78),-52,{});
+                     spawnEnemy('s1boatpatrol',lane(.34),-92,{}); },{sea:true});
+    atMap(3200,()=>{ spawnEnemy('s1corvette',lane(.63),-58,{}); },{sea:true});
+    atMap(3050,()=>{ spawnEnemy('s1boatgun',lane(.28),-54,{});
+                     spawnEnemy('s1boatpatrol',lane(.72),-88,{}); },{sea:true});
+    atMap(2910,()=>{ spawnEnemy('s1corvette',lane(.48),-60,{});
+                     spawnEnemy('s1boatgun',lane(.84),-96,{}); },{sea:true});
+
+    /* COAST / JUNGLE — yellow jet ripple one, lane-locked armour, then ripple two. */
+    atMap(2760,()=>jetRipple([.17,.38,.62,.83],
+      ['s1jetdelta','s1jetdelta','s1jetbomber','s1jetdelta']),{pressure:6});
+    atMap(2640,()=>tankFile([[.18,'s1tankheavy','jungleMissile'],[.39,'s1tankheavy','jungleMissile'],
+                             [.62,'s1tankheavy','jungleMissile'],[.83,'s1tankheavy','jungleMissile']]),
+      {ground:true,pressure:4});
+    atMap(2470,()=>tankFile([[.30,'s1tankapc'],[.53,'s1tanklight'],[.74,'s1tankapc']]),
+      {ground:true,pressure:3});
+    atMap(2350,()=>jetRipple([.13,.36,.64,.87],
+      ['s1jetdelta_b','s1jetdelta','s1jetdelta_b','s1jetbomber']),{pressure:6});
+
+    /* The miniboss gate is after the second ripple. Its own fight is intentionally untouched. */
+
+    /* UPPER JUNGLE / SAND — the remaining annotated black and yellow markers. */
+    atMap(2170,()=>tankFile([[.22,'s1tanklight'],[.48,'s1tankapc'],[.76,'s1truckmissile','jungleMissile']]),
+      {ground:true,pressure:3});
+    atMap(1980,()=>jetRipple([.20,.42,.65,.84],
+      ['s1jetdelta','s1jetbomber','s1jetdelta','s1jetdelta_b']),{pressure:6});
+    atMap(1810,()=>tankFile([[.16,'s1tankheavy','jungleMissile'],[.42,'s1tanklight'],
+                             [.68,'s1tankapc'],[.86,'s1truckmissile','jungleMissile']]),
+      {ground:true,pressure:4});
+    atMap(1590,()=>jetRipple([.12,.34,.60,.88],
+      ['s1jetdelta_b','s1jetdelta','s1jetbomber','s1jetdelta']),{pressure:6});
+    atMap(1400,()=>tankFile([[.26,'s1tankapc'],[.52,'s1tankheavy','jungleMissile'],[.78,'s1tanklight']]),
+      {ground:true,pressure:3});
+    atMap(1180,()=>jetRipple([.18,.40,.63,.82],
+      ['s1jetdelta','s1jetdelta_b','s1jetdelta','s1jetbomber']),{pressure:6});
+    atMap(990,()=>tankFile([[.20,'s1truckmissile','jungleMissile'],[.43,'s1tanklight'],
+                            [.67,'s1tankapc'],[.84,'s1tankheavy','jungleMissile']]),
+      {ground:true,pressure:4});
+
+    /* DAM APPROACH — purple circles commit to the player's recorded position and do not home. */
+    atMap(760,()=>kamikazeRipple([.12,.36,.64,.88]),{pressure:5});
+    atMap(555,()=>kamikazeRipple([.20,.42,.66,.82]),{pressure:5});
+
+    return _planSorted(P);
+  }
   // ===== JUNGLE (Stage 1): NEW vault-art enemy roster ONLY. Old generic enemies are stashed/disabled here. =====
   // Enemy cap enforced live in updatePlay (JUNGLE_CAP=7). These waves lean on racers, strafers, station ships,
   // and ground tanks — jungle/green-themed vehicles auto-picked by _jungleJet/_jungleTank.
@@ -8902,7 +9655,9 @@ function buildStagePlan(stageNum){
      the midpoint. Authoring discipline would have been enough today; a guard is
      enough forever.
      ============================================================================ */
-  if(stageNum===1){
+  /* Superseded 0830 by the annotated-map plan above. Retained temporarily as source history while
+     its long incident notes are distilled; this branch is unreachable. */
+  if(false && stageNum===1){
     const S1_HALF = 0.50;
     const _s1Past = () => {
       const cfg = (typeof _levelCfg==='function') ? _levelCfg() : null;
@@ -9043,8 +9798,14 @@ function buildStagePlan(stageNum){
     add(36.0, _s1Ground(()=>{
       for(let i=0;i<3;i++) spawnEnemy('s1fuelbarrel', VW*0.30, -30 - i*46, {});
       spawnEnemy('s1ammocrate', VW*0.30, -168, {});
-      for(let i=0;i<4;i++)
-        spawnEnemy('s1tankheavy', VW*(0.15+i*0.235), -34 - i*58, {_order:i}); }));
+      /* Four distinct road lanes, one tank at a time.  The larger vertical spacing is deliberate:
+         the old 58px file arrived almost as one row, then its generic eight-way controller made
+         the hulls wander sideways.  These are beachfront missile tanks: advance/reverse only,
+         hold their authored x lanes, and launch straight, destructible warheads. */
+      const beachLanes=[0.16,0.38,0.62,0.84];
+      for(let i=0;i<beachLanes.length;i++)
+        spawnEnemy('s1tankheavy', VW*beachLanes[i], -46 - i*112,
+                   {_order:i,_atk:'jungleMissile'}); }));
 
     /* --- grass jets: in off the very edge, turn inward, then hunt --- */
     add(21.0, ()=>{ spawnEnemy('s1jetdelta_b', -28, 96, {route:'cornerLR'}); spawnEnemy('s1jetdelta_b', -28, 150, {route:'cornerLR'}); });
@@ -9101,348 +9862,312 @@ function buildStagePlan(stageNum){
                     spawnEnemy('s1jetbomber', VW*0.80, -30, {route:'straight'}); });
     /* ---- then the helicopter, and the level ends ---- */
   }
-  if(stageNum===2){ // IT'S HOT IN HERE — the twelve-strong VOLCANIC CAST (CF_EnemiesPack-Lvl2).
-    // Replaces the old generic drone/assault timeline. Pacing identity: stage 2 is about HEAT
-    // COMING AT YOU — fast committed divers up front, then vents that hold ground and force you
-    // to move, with the elites as punctuation. The two elites (el_em EMBER MANTIS, el_lr LAVA
-    // MAGMA REAVER) are kept: they were authored for this stage and still fit the new cast.
-    add(2.0, ()=> { spawnEnemy('ash', VW*0.30, -40, {}); spawnEnemy('ash', VW*0.70, -40, {}); });
-    add(4.5, ()=> spawnEnemy('skim', -30, VH*0.10, {}));                    // enters from the LEFT
-    add(6.5, ()=> spawnEnemy('eye', VW*0.50, -40, {}));
-    add(9.0, ()=> { for(let i=0;i<Math.round(3*D);i++) spawnEnemy('ash', VW*0.18+i*VW*0.32, -40-i*20, {}); });
-    add(11.5,()=> spawnEnemy('skim', offRightX(30), VH*0.08, {}));          // mirrored, from the RIGHT
-    add(13.0,()=> spawnEnemy('el_em', VW*0.5, -50, {pattern:'weave', amp:34}));   // EMBER MANTIS
-    add(17.0,()=> spawnEnemy('lance', VW*0.66, -40, {}));
-    add(18.5,()=> { spawnEnemy('disc', VW*0.36, -40, {}); spawnEnemy('disc', VW*0.64, -40, {}); });
-    /* ⚠ THE LAVA REAVERS FLY, THEY DO NOT BOB (drop 0812m). Mike: "you have those lava boats. they
-       need to appear and act like jets or remove them."
+  if(stageNum===2){ // IT'S HOT IN HERE — 0830 layout: volcanic roster ONLY.
+    /* The red/yellow ink on stage2layoutpattern.png marks placement and route families, not an
+       invitation to borrow Stage-3 ice craft.  Every spawn in this block is either one of the
+       twelve native volcanic units or one of the three volcanic arsenal drones.
 
-       They were spawned on `sine` — a slow wobble straight down the middle, which on a volcano
-       stage reads as a boat drifting on lava. Kept rather than removed, because the art is the
-       stage's own authored elite; what was wrong is the movement. They now enter from the sides on
-       the jet routes the stage-1 deltas use, which gives them the bank, the missile dodge and the
-       lane-hold in jetTick for free — measured, the unit keeps its own art and 57x68 footprint and
-       simply changes tick. Mirrored pair, so they cross the middle rather than falling through it. */
-    add(25.0,()=> { spawnEnemy('el_lr', offLeftX(30),  VH*0.16, {pattern:'s1jet', route:'cornerLR'});
-                    spawnEnemy('el_lr', offRightX(30), VH*0.30, {pattern:'s1jet', route:'cornerRL'}); });  // LAVA MAGMA REAVER
-    add(26.5,()=> spawnEnemy('cruc', VW*0.50, -50, {}));                    // seeds bombs down the lanes
-    add(28.5,()=> { spawnEnemy('lance', VW*0.22, -40, {}); spawnEnemy('lance', VW*0.78, -40, {}); });
-    add(30.5,()=> spawnEnemy('carrier', VW*0.44, -60, {}));                 // releases ashwings, then retreats
-    add(34.5,()=> { spawnEnemy('skim', offLeftX(30), VH*0.14, {}); spawnEnemy('skim', offRightX(30), VH*0.20, {}); });
-    add(42.0,()=> { for(let i=0;i<Math.round(4*D);i++) spawnEnemy('ash', VW*0.14+i*VW*0.24, -40-i*16, {}); });
-    /* ============================================================
-       THE 0819 CAST, WOVEN INTO THE EXISTING TIMELINE (Mike): "there should be sevveral different
-       styled enemies for level 2 - the reavers doing what hey do is great."
+       Small numbered marks become quick ordered ripples.  Large side marks become heavier lava
+       hulls entering on separated lanes.  The large centre mark remains the existing miniboss
+       gate (SUBBOSS[2]); its combat is intentionally untouched until the morning review. */
+    add(2.0, ()=> encounterRipple([
+      {type:'ash',fx:.34},{type:'ash',fx:.66}
+    ],.24));
+    add(4.2, ()=> encounterRipple([
+      {type:'skim',x:offLeftX(42),y:VH*.12},{type:'skim',x:offRightX(42),y:VH*.22}
+    ],.42));
+    add(6.6, ()=> encounterRipple([
+      {type:'cinderwasp',fx:.24,ai:{kind:'curve',dir:1,slowY:VH*.24}},
+      {type:'cinderwasp',fx:.50,ai:{kind:'rush',slowY:VH*.32}},
+      {type:'cinderwasp',fx:.76,ai:{kind:'curve',dir:-1,slowY:VH*.40}}
+    ],.24));
+    add(9.4, ()=> encounterRipple([
+      {type:'lance',fx:.26},{type:'eye',fx:.50},{type:'lance',fx:.74}
+    ],.27));
+    add(12.0,()=> encounterRipple([
+      {type:'magmaorb',fx:.34,ai:{kind:'rush',slowY:VH*.24}},
+      {type:'magmaorb',fx:.66,ai:{kind:'rush',slowY:VH*.34}}
+    ],.30));
+    add(14.7,()=> encounterRipple([
+      {type:'basaltbomber',fx:.22,ai:{kind:'curve',dir:1,slowY:VH*.25}},
+      {type:'basaltbomber',fx:.50,ai:{kind:'charge',slowY:VH*.34,forkY:VH*.52}},
+      {type:'basaltbomber',fx:.78,ai:{kind:'curve',dir:-1,slowY:VH*.43}}
+    ],.28));
+    add(17.8,()=> encounterRipple([
+      {type:'cruc',fx:.27},{type:'crawl',fx:.73}
+    ],.36));
+    add(20.3,()=> encounterRipple([
+      {type:'lance',fx:.18},{type:'ash',fx:.39},{type:'ash',fx:.61},{type:'lance',fx:.82}
+    ],.22));
 
-       So the reavers, the mantis and every original wave above are untouched. These SLOT BETWEEN
-       them, which is the same discipline the stage-3 drone pass used, and each new wave answers a
-       different clause of his list:
-
-         SILENT CHARGERS   `lance` on 'loopcharge' — "fast planes that dont shoot but go towards
-                           the player". The volcanic elite interceptor is stage 2's own fast
-                           airframe, so the Fire Shark mechanic arrives on the art that already
-                           reads as an interceptor rather than on a jet imported from stage 1.
-         magmagun          the magma ball, shelled down a lane, with a window between salvos
-         spinner           winds up, rings the screen, leaves
-         dodger            strafes, sidesteps your fire, and is gone if it misses
-       ============================================================ */
-    add(8.0, ()=> { spawnEnemy('lance', VW*0.34, -40, {pattern:'loopcharge', shoots:false});
-                    spawnEnemy('lance', VW*0.66, -54, {pattern:'loopcharge', shoots:false}); });
-    add(15.5,()=> spawnEnemy('magmagun', VW*0.50, -44, {}));
-    add(20.0,()=> { spawnEnemy('dodger', -30, VH*0.20, {}); spawnEnemy('dodger', offRightX(30), VH*0.30, {}); });
-    add(23.0,()=> spawnEnemy('spinner', VW*0.42, -44, {}));
-    add(27.5,()=> { for(let i=0;i<3;i++)
-      spawnEnemy('lance', VW*(0.24+i*0.26), -40-i*46, {pattern:'loopcharge', shoots:false}); });
-    /* ⚠ SIX NEW WAVES, NOT TEN — THE DISPATCHER IS A QUEUE, NOT A CLOCK. A wave only fires when
-       the live count is under the cap, so inserting ten pushed the tail of stage 2's own timeline
-       past the end of the run: the suite's 110s soak measured the cast at 6 of 7, with `skim`
-       never reaching its turn. Same failure 0809n records for stage 1, where five prop waves
-       shoved the sand tanks and the miniboss off the end. The new units are all represented; the
-       duplicates are what went. */
-    add(39.0,()=> { spawnEnemy('dodger', offLeftX(30), VH*0.16, {});
-                    spawnEnemy('lance', VW*0.50, -44, {pattern:'loopcharge', shoots:false}); });
-    add(curStage.length-4, ()=> {
-      spawnEnemy('disc', VW*0.22, -40, {}); spawnEnemy('disc', VW*0.78, -40, {}); });
+    /* Existing centre miniboss gate lands here.  Leave a clean approach so its warning and entry
+       are not buried under a fresh wave; the director resumes after the encounter. */
+    add(24.2,()=> encounterRipple([
+      {type:'miner',fx:.24},{type:'lavamaw',fx:.50},{type:'miner',fx:.76}
+    ],.32));
+    add(27.2,()=> encounterRipple([
+      {type:'cinderwasp',fx:.18,ai:{kind:'diag',slowY:VH*.24}},
+      {type:'magmaorb',fx:.50,ai:{kind:'loop',dir:1,slowY:VH*.28}},
+      {type:'cinderwasp',fx:.82,ai:{kind:'diag',slowY:VH*.36}}
+    ],.25));
+    add(30.5,()=> encounterRipple([
+      {type:'pod',fx:.28},{type:'carrier',fx:.50},{type:'pod',fx:.72}
+    ],.32));
+    add(34.0,()=> encounterRipple([
+      {type:'skim',x:offLeftX(44),y:VH*.16},{type:'golem',fx:.50},
+      {type:'skim',x:offRightX(44),y:VH*.28}
+    ],.40));
+    /* Volcano crown: the eight marked positions arrive as two four-unit files, never one crowded
+       row.  Fast ash craft clear their own hitboxes before the second file reaches the screen. */
+    add(38.0,()=> encounterRipple([
+      {type:'ash',fx:.16},{type:'ash',fx:.38},{type:'ash',fx:.62},{type:'ash',fx:.84}
+    ],.23));
+    add(40.5,()=> encounterRipple([
+      {type:'cinderwasp',fx:.20,ai:{kind:'curve',dir:1,slowY:VH*.22}},
+      {type:'cinderwasp',fx:.42,ai:{kind:'rush',slowY:VH*.30}},
+      {type:'cinderwasp',fx:.64,ai:{kind:'rush',slowY:VH*.38}},
+      {type:'cinderwasp',fx:.82,ai:{kind:'curve',dir:-1,slowY:VH*.46}}
+    ],.23));
+    add(curStage.length-4, ()=> encounterRipple([
+      {type:'disc',fx:.24},{type:'eye',fx:.50},{type:'disc',fx:.76}
+    ],.30));
     return _planSorted(P);
   }
-  if(stageNum===3){ // ICE STILL CAN'T SEE — cryo squadrons: weaving frost walls, strafing iceguns.
+  if(stageNum===3){ // ICE STILL CAN'T SEE — 0830 all-cryo encounter-map director.
     const W3=worldWidth();
-    /* ============================================================
-       THE DRONES ARE OFF THIS STAGE (Mike, 0819): "remove all 'Drone' enemies from level 3
-       please. they look janky." Every wave that fielded drone / mdrone / minidrone / turdrone is
-       gone — REPLACED, not deleted, because the same order asks for MORE enemies, not fewer. The
-       slack goes to the stage's own authored cast (frost, icegun, cryo, shieldd, el_cs) and to
-       the new loop-and-charge interceptors. minishipC also leaves: it has been in _DELETE since
-       the art cull and its wave spawned nothing.
+    /* stage3pattern.png supplies placement and route order, not Stage-2 elemental ownership:
+         RED    fast ice jets — shard darts / native ice interceptors
+         YELLOW cryo support  — shard dart, glacier carrier and cryo eye files
+         GREEN  naval units   — cryo barges in the outside water lanes
+       Numbered circles are released in number order.  The large unnumbered centre circle is the
+       existing Stage-3 miniboss gate. Stage 3 never borrows a volcanic unit. */
 
-       THE JETS ARE FIRE SHARK JETS NOW (Mike, 0819): "jets doing some circle motions and then
-       chage at the player with no bullets or projectiles. The goal is to shoot them down befroe
-       they hit you." cryo — the ELITE ICE INTERCEPTOR, this stage's actual airframe — flies
-       'loopcharge': run in from the top, ONE full circle, then commit at the player. sideswirl
-       keeps its side-entry loop and no longer fires anything. Both die to one burst and kill on
-       contact, which is the whole trade.
+    /* Lower broken-island run: red 1..6, followed by the second red 1..4 file. */
+    add(2.0, ()=> encounterRipple([
+      {type:'sharddart',fx:.16,ai:{kind:'curve',dir:1,slowY:VH*.18}},
+      {type:'sharddart',fx:.64,ai:{kind:'rush',slowY:VH*.24}},
+      {type:'sharddart',fx:.44,ai:{kind:'diag',slowY:VH*.30}},
+      {type:'sharddart',fx:.22,ai:{kind:'curve',dir:-1,slowY:VH*.36}},
+      {type:'sharddart',fx:.52,ai:{kind:'charge',slowY:VH*.42,forkY:VH*.56}},
+      {type:'sharddart',fx:.78,ai:{kind:'curve',dir:-1,slowY:VH*.48}}
+    ],.24));
+    add(5.5, ()=> encounterRipple([
+      {type:'s3interceptor',fx:.20},{type:'s3interceptor',fx:.44},
+      {type:'s3interceptor',fx:.68},{type:'s3interceptor',fx:.84}
+    ],.34));
 
-       icegun waves marked fk:'laser' are the BEAM SLEDS (Mike, 0819: "laser beam ones") — a
-       charged three-bolt lance straight down a lane on a long reload. The others keep the 3-way
-       ice fan ("spread fire ones"). */
-    add(2.5, ()=> vRow('frost', Math.round(3*D), {pattern:'weave', amp:40}));
-    add(5.5, ()=> { spawnEnemy('cryo', W3*0.26, -40, {pattern:'loopcharge', shoots:false});
-                    spawnEnemy('cryo', W3*0.74, -46, {pattern:'loopcharge', shoots:false}); });
-    add(8.0, ()=> { spawnEnemy('shieldd', VW*0.38, -30, {}); spawnEnemy('icegun', VW*0.62, -30, {pattern:'strafe'}); });
-    add(9.0, ()=> { for(let i=0;i<Math.round(4*D);i++) spawnEnemy('frost', 40+i*((VW-80)/Math.max(1,Math.round(4*D)-1)), -20-i*16, {pattern:'sine', phase:i*0.5, amp:34}); });
-    add(12.0,()=> aiWaveRush('frost', 4, {}));                    // sheet 1
-    add(12.5,()=> { spawnEnemy('sideswirl', -30, VH*0.34, {}); });
-    add(14.5,()=> { spawnEnemy('cryo', W3*0.18, -44, {pattern:'loopcharge', shoots:false});
-                    spawnEnemy('cryo', W3*0.50, -60, {pattern:'loopcharge', shoots:false});
-                    spawnEnemy('cryo', W3*0.82, -44, {pattern:'loopcharge', shoots:false}); });
-    add(15.0,()=> spawnEnemy('el_cs', VW*0.5, -50, {pattern:'weave', amp:32}));            // CRYO SCARAB
-    add(16.5,()=> vRow('icegun', Math.round(2*D), {fk:'laser', pattern:'strafe'}));        // BEAM SLEDS
-    add(19.0,()=> vRow('icegun', Math.round(1+stageNum*0.25), {pattern:'strafe'}));
-    add(21.0,()=> { spawnEnemy('sideswirl', W3+30, VH*0.28, {}); vRow('frost', Math.round(3*D), {pattern:'weave', amp:44}); });
-    add(22.5,()=> { spawnEnemy('topgun', VW*0.5, -40, {}); vRow('frost', Math.round(2+D*0.5), {pattern:'sine', amp:28}); });
-    add(24.0,()=> aiWaveSweep('frost', 4, {dir:-1}));             // pattern #1 MIRRORED, from the right
-    add(26.0,()=> { spawnEnemy('sideswirl', worldWidth()+30, VH*0.30, {}); spawnEnemy('bomber', VW*0.5, -34, {}); });
-    add(28.0,()=> { spawnEnemy('cryo', W3*0.30, -40, {pattern:'loopcharge', shoots:false});
-                    spawnEnemy('cryo', W3*0.70, -46, {pattern:'loopcharge', shoots:false});
-                    spawnEnemy('sideswirl', -30, VH*0.36, {}); });
-    add(30.0,()=> { spawnEnemy('el_cs', VW*0.28, -50, {pattern:'dive'}); spawnEnemy('el_cs', VW*0.72, -50, {pattern:'dive', phase:1.4}); });
-    add(32.0,()=> { vRow('frost', Math.round(3*D), {pattern:'weave', amp:44}); spawnEnemy('icegun', VW*0.5, -30, {fk:'laser', pattern:'strafe'}); });
-    add(34.0,()=> vRow('icegun', Math.round(2*D), {pattern:'strafe'}));
-    add(36.0,()=> aiWaveColumns('icegun', {dir:1}));              // pattern #2
-    add(38.0,()=> { spawnEnemy('racer', VW*0.35, VH+40, {}); spawnEnemy('racer', VW*0.65, VH+40, {}); });
-    add(40.0,()=> { for(let i=0;i<4;i++) spawnEnemy('cryo', W3*(0.16+i*0.22), -40-i*46, {pattern:'loopcharge', shoots:false}); });
-    add(42.0,()=> { spawnEnemy('shieldd', VW*0.5, -30, {}); vRow('frost', Math.round(2*D), {pattern:'weave', amp:38}); });
-    add(44.0,()=> { spawnEnemy('shieldd', W3*0.36, -44, {}); spawnEnemy('shieldd', W3*0.64, -44, {});
-                    vRow('frost', Math.round(3*D), {pattern:'straight'}); });
-    add(45.5,()=> { spawnEnemy('cryo', VW*0.3, -30, {pattern:'dive'}); spawnEnemy('cryo', VW*0.7, -30, {pattern:'dive'}); });
-    add(48.0,()=> { spawnEnemy('sideswirl', -30, VH*0.26, {}); spawnEnemy('sideswirl', W3+30, VH*0.38, {}); });
-    add(curStage.length-4, ()=> { vRow('frost', Math.round(4*D), {pattern:'weave', amp:46}); spawnEnemy('icegun', VW*0.5, -30, {pattern:'strafe'}); });
+    /* Green circles live in the outside water lanes.  They are separated left/right rather than
+       stacked, so a pair never shares a hitbox or reads as one fused barge. */
+    add(8.8, ()=> encounterRipple([
+      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}
+    ],.46));
+
+    /* Yellow 1..4 files climb the connected ice path. Their three ICE silhouettes rotate roles,
+       while the numbered route order remains fixed. */
+    add(11.5,()=> encounterRipple([
+      {type:'sharddart',fx:.28,ai:{kind:'curve',dir:1,slowY:VH*.20}},
+      {type:'glaciercarrier',fx:.42,ai:{kind:'rush',slowY:VH*.28}},
+      {type:'cryoeye',fx:.58,ai:{kind:'loop',dir:1,slowY:VH*.32}},
+      {type:'sharddart',fx:.74,ai:{kind:'curve',dir:-1,slowY:VH*.40}}
+    ],.25));
+    add(14.8,()=> encounterRipple([
+      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}
+    ],.48));
+    add(17.2,()=> encounterRipple([
+      {type:'sharddart',fx:.22,ai:{kind:'diag',slowY:VH*.20}},
+      {type:'glaciercarrier',fx:.40,ai:{kind:'curve',dir:1,slowY:VH*.28}},
+      {type:'cryoeye',fx:.60,ai:{kind:'loop',dir:-1,slowY:VH*.34}},
+      {type:'sharddart',fx:.78,ai:{kind:'diag',slowY:VH*.42}}
+    ],.24));
+
+    /* Large centre circle / miniboss gate: deliberately clear for its warning and entrance. */
+    add(25.8,()=> encounterRipple([
+      {type:'sharddart',fx:.24,ai:{kind:'curve',dir:1,slowY:VH*.20}},
+      {type:'cryoeye',fx:.42,ai:{kind:'rush',slowY:VH*.28}},
+      {type:'glaciercarrier',fx:.60,ai:{kind:'rush',slowY:VH*.36}},
+      {type:'sharddart',fx:.78,ai:{kind:'curve',dir:-1,slowY:VH*.44}}
+    ],.24));
+    add(29.2,()=> encounterRipple([
+      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}
+    ],.46));
+    add(32.0,()=> encounterRipple([
+      {type:'sharddart',fx:.20,ai:{kind:'curve',dir:1,slowY:VH*.18}},
+      {type:'glaciercarrier',fx:.32,ai:{kind:'rush',slowY:VH*.24}},
+      {type:'cryoeye',fx:.44,ai:{kind:'loop',dir:1,slowY:VH*.28}},
+      {type:'sharddart',fx:.56,ai:{kind:'charge',slowY:VH*.33,forkY:VH*.50}},
+      {type:'glaciercarrier',fx:.68,ai:{kind:'rush',slowY:VH*.38}},
+      {type:'cryoeye',fx:.80,ai:{kind:'loop',dir:-1,slowY:VH*.42}},
+      {type:'sharddart',fx:.50,ai:{kind:'curve',dir:-1,slowY:VH*.48}}
+    ],.23));
+    add(37.2,()=> encounterRipple([
+      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}
+    ],.48));
+    add(40.0,()=> encounterRipple([
+      {type:'sharddart',fx:.18,ai:{kind:'diag',slowY:VH*.20}},
+      {type:'glaciercarrier',fx:.38,ai:{kind:'curve',dir:1,slowY:VH*.27}},
+      {type:'cryoeye',fx:.62,ai:{kind:'loop',dir:-1,slowY:VH*.34}},
+      {type:'sharddart',fx:.82,ai:{kind:'diag',slowY:VH*.42}}
+    ],.24));
+    add(curStage.length-4,()=> encounterRipple([
+      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'sharddart',fx:.38,ai:{kind:'curve',dir:1,slowY:VH*.24}},
+      {type:'sharddart',fx:.62,ai:{kind:'curve',dir:-1,slowY:VH*.32}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}
+    ],.31));
     return _planSorted(P);
   }
-  if(stageNum===4){ // CROUCHING MISSILES HIDDEN DEATH — airbase: ground armor + missile rain. Tanks live here.
-    // Stage 4 is now a WIDE 800px world. VW is the 480 CAMERA width — every spawn x below
-    // must span the WORLD or the whole roster crowds into the left 60% of the airbase.
+  if(stageNum===4){ // CROUCHING MISSILES HIDDEN DEATH — high-speed Blacksite highway chase.
     const W4=worldWidth();
-    add(5.0, ()=> vRow('drone', Math.round(3*D), {pattern:'sine', amp:34}));
-    // ---- LEVEL 4 JET WING: 9 airframes, none shared with level 6 ----
-    /* ⚠ THESE WAVES WERE FIRING BLANKS (drop 0810p). Mike: "the enemies broken".
-
-       Measured over 45s of real play with spawnEnemy wrapped: stage 4 asked for 36 enemies and
-       got 23. THIRTEEN of its spawn requests were refused outright — a third of the level's
-       enemies never existed. jet_f16 / jet_f18 / jet_m29 are in spawnEnemy's inlined _DELETE set
-       because their mbj_ component art resolves ZERO registered keys, so the cull is right: they
-       would spawn, fly, shoot and kill with nothing drawn.
-
-       What was wrong was that the WAVE SCRIPT still named them. And the two obvious repairs are
-       both wrong: un-culling puts invisible killers back, and DEAD_TYPES' remap-to-'drone' is the
-       one Mike already rejected ("the units he told me to delete were the ones my fix put back").
-
-       So the waves are repointed at aircraft that EXIST. s1_jet_delta and s1_jet_bomber are the
-       RC2 military jets built for stage 1 — rendered before trusting the names, unlike air_air1..7
-       whose `jet1..jet5` aliases are actually alien drone-ships and would have been badly wrong on
-       an airbase. Same wave shapes, same counts, same routes; the units are simply real now. */
-    add(9.0, ()=> aiWaveColumns('s1jetDelta', {dir:1}));                        // pattern #2 — columns down the runway
-    add(14.0,()=> aiWaveSweep('s1jetBomber', 3, {dir:1}));
-    add(19.0,()=> aiWaveSplit('s1jetDelta', {}));                               // sheet 2 — peel L / peel R / charge
-    add(24.0,()=> spawnEnemy('el_gw', W4*0.5, -55, {pattern:'weave', amp:30}));           // GOLDEN WIDOW
-    /* MINI TANKS, ON THE TYPE THAT EXISTS FOR THEM (drop 0810p). minitank/minitank2 are culled —
-       zero registered art, measured drawing nothing for 7746 frames — and 0801im already built
-       'sandtank' on the tnkM_ sprites precisely so Mike's deletion could stand while he still got
-       the tiny tanks he asked for. This wave never got the memo and was firing three blanks. */
-    add(16.0,()=> { spawnEnemy('sandtank', W4*0.24, -40, {}); spawnEnemy('sandtank', W4*0.5, -40, {}); spawnEnemy('sandtank', W4*0.76, -40, {}); });  // MINI TANKS
-    add(39.0,()=> { spawnEnemy('minitank3', W4*0.30, -40, {}); spawnEnemy('minitank3', W4*0.70, -40, {}); });
-    add(28.0,()=> aiWaveRush('jet_f22', 3, {}));
-    add(33.0,()=> spawnEnemy('el_od', W4*0.5, -55, {pattern:'straight'}));                // OBSIDIAN DRILL TANK
-    add(37.0,()=> aiWaveCross('jet_su27', {}));                              // crossing pair over the apron
-    add(40.0,()=> { spawnEnemy('roadtank', W4*0.34, -30, {}); spawnEnemy('roadtank', W4*0.66, -30, {}); });   // the base end is defended
-    add(41.0,()=> spawnEnemy('el_gr', W4*0.5, -55, {pattern:'straight'}));                // GLACIER RAIL FORTRESS
-    add(45.0,()=> { aiWaveLoopCurved('jet_f15', {});                         // pattern #3 curved
-                    aiWaveSweep('jet_hwk', 3, {dir:-1}); });                 // pattern #1 mirrored
-    add(50.0,()=> { spawnEnemy('el_iv', W4*0.5, -55, {pattern:'sine'});      // IRON VULTURE elite keeps its own line
-                    aiWaveCross('jet_shn', {}); aiWaveRush('jet_j20', 3, {}); });
-    add(11.0,()=> aiWaveRush('assault', 4, {}));                  // sheet 1
-    add(23.0,()=> aiWaveSweep('gunship', 4, {dir:1}));            // pattern #1
-    add(35.0,()=> aiWaveLoop('assault', {}));                     // pattern #3
-    add(8.0, ()=> { spawnEnemy('roadtank', W4*0.30, -30, {}); spawnEnemy('roadtank', W4*0.70, -30, {}); });
-    add(11.0,()=> vRow('mdrone', Math.round(2+D), {pattern:'sine', amp:30}));
-    add(14.0,()=> { spawnEnemy('jetflyby', W4*0.42, -40, {}); });
-    add(17.0,()=> { spawnEnemy('assault', W4*0.25, -60, {pattern:'skydive', _tx:W4*0.25}); spawnEnemy('assault', W4*0.75, -60, {pattern:'skydive', _tx:W4*0.75}); });
-    add(23.5,()=> { spawnEnemy('roadtank', W4*0.5, -30, {}); spawnEnemy('intcp', W4*0.3, -30, {}); spawnEnemy('intcp', W4*0.7, -30, {}); });
-    add(27.0,()=> { spawnEnemy('stationship', W4*0.34, -24, {phase:0}); spawnEnemy('stationship', W4*0.66, -24, {phase:1.1}); });
-    add(30.5,()=> { spawnEnemy('topgun', W4*0.4, -40, {}); vRow('mdrone', Math.round(2*D), {pattern:'sine', amp:26}); });
-    add(34.0,()=> { spawnEnemy('gunship', W4*0.5, -60, {pattern:'skydive', _tx:W4*0.5}); });
-    add(37.5,()=> { spawnEnemy('roadtank', W4*0.25, -30, {}); spawnEnemy('htank', W4*0.55, -30, {}); spawnEnemy('roadtank', W4*0.8, -30, {}); });
-    add(44.0,()=> { spawnEnemy('jetflyby', W4*0.5, -40, {}); spawnEnemy('assault', W4*0.35, -60, {pattern:'skydive', _tx:W4*0.35}); });
-    add(curStage.length-4, ()=> { spawnEnemy('htank', W4*0.35, -30, {}); spawnEnemy('htank', W4*0.65, -30, {}); spawnEnemy('jetflyby', W4*0.5, -40, {}); });
+    /* One native cast only. The old plan mixed Stage-1 jets, generic drones, boats and thirteen
+       names that the visibility cull refused. Every event below resolves to one of the twelve
+       supplied Level-4 reels and therefore has its own movement, ammunition and hardpoints. */
+    add(3.0, ()=> { spawnEnemy('s4minitank',W4*.30,-62,{}); spawnEnemy('s4minitank',W4*.70,-62,{_stagger:.25}); });
+    add(6.0, ()=> { spawnEnemy('s4interceptor',-70,VH*.18,{_side:1}); spawnEnemy('s4interceptor',W4+70,VH*.32,{_side:-1,_stagger:.22}); });
+    add(9.0, ()=> spawnEnemy('s4airfield',W4*.50,-86,{}));
+    add(12.0,()=> { spawnEnemy('s4rocket',W4*.27,-72,{_side:1}); spawnEnemy('s4rocket',W4*.73,-94,{_side:-1,_stagger:.30}); });
+    add(15.0,()=> { spawnEnemy('s4barrel',W4*.38,-54,{}); spawnEnemy('s4barrel',W4*.62,-82,{_stagger:.18}); });
+    add(18.0,()=> spawnEnemy('s4bomber',-90,VH*.22,{_side:1}));
+    add(21.0,()=> { spawnEnemy('s4missile',W4*.30,-90,{}); spawnEnemy('s4missile',W4*.70,-112,{_stagger:.28}); });
+    add(24.0,()=> spawnEnemy('s4command',W4*.50,-82,{}));
+    add(27.0,()=> { spawnEnemy('s4tanker',W4*.35,-102,{}); spawnEnemy('s4tractor',W4*.67,-116,{_stagger:.30}); });
+    add(30.0,()=> { spawnEnemy('s4heavyjet',W4*.25,-92,{}); spawnEnemy('s4heavyjet',W4*.75,-116,{_stagger:.34}); });
+    add(34.0,()=> spawnEnemy('s4sam',W4*.50,-100,{}));
+    add(38.0,()=> { spawnEnemy('s4interceptor',-70,VH*.20,{_side:1}); spawnEnemy('s4bomber',W4+90,VH*.34,{_side:-1,_stagger:.34}); });
+    add(42.0,()=> { spawnEnemy('s4airfield',W4*.28,-94,{}); spawnEnemy('s4tractor',W4*.72,-116,{_stagger:.30}); });
+    add(46.0,()=> { spawnEnemy('s4rocket',W4*.23,-76,{_side:1}); spawnEnemy('s4command',W4*.50,-106,{}); spawnEnemy('s4rocket',W4*.77,-76,{_side:-1,_stagger:.26}); });
+    add(curStage.length-4,()=> { spawnEnemy('s4missile',W4*.26,-106,{}); spawnEnemy('s4sam',W4*.50,-130,{_stagger:.24}); spawnEnemy('s4heavyjet',W4*.74,-104,{_stagger:.40}); });
     return _planSorted(P);
   }
   if(stageNum===6){
-    /* HEAVY TURBULENCE now fields its recovered native fleet exclusively. Black-ice owns the
-       storm opening, royal blue takes the electrical middle, and steel closes the daylight leg;
-       no borrowed Stage-1 delta/bomber hulls remain in this level. */
-    add(2.0, ()=> aiWaveSweep('l6v_b0', 3, {dir:1, gap:0.75}));
-    add(5.5, ()=> aiWaveCross('l6v_b1', {gap:0.9}));
-    add(9.0, ()=> aiWaveColumns('l6v_b2', {dir:-1, gap:0.75}));
-    add(12.5,()=> aiWaveRush('l6v_b1', Math.round(2+D), {dir:1, gap:0.8}));
-    add(16.5,()=> aiWaveSplit('l6v_b0', {gap:0.8}));
-    add(20.5,()=> aiWaveSweep('l6v_b2', 3, {dir:-1, gap:0.9}));
-    add(24.5,()=> aiWaveLoopCurved('l6v_r0', {dir:1, gap:0.75}));
-    add(28.5,()=> aiWaveCross('l6v_r1', {gap:0.8}));
-    add(32.5,()=> aiWaveColumns('l6v_r2', {dir:1, gap:0.75}));
-    add(36.5,()=> aiWaveRush('l6v_r1', Math.round(2+D), {dir:-1, gap:0.85}));
-    add(40.5,()=> aiWaveLoop('l6v_s0', {dir:-1, gap:0.75}));
-    add(44.5,()=> aiWaveSweep('l6v_s1', 3, {dir:1, gap:0.9}));
-    add(48.5,()=> aiWaveSplit('l6v_s2', {gap:0.75}));
-    add(52.0,()=> aiWaveCross('l6v_s1', {gap:0.8}));
-    add(curStage.length-4, ()=> { aiWaveColumns('l6v_s2', {dir:-1, gap:0.7});
-                                  aiWaveRush('l6v_s1', 2, {dir:1, gap:0.9}); });
+    /* HEAVY TURBULENCE now fields the twelve supplied storm silhouettes exclusively. Every
+       event has a different flight question and an owned weapon controller; the old nine
+       palette swaps and generic AI-wave wrappers no longer define the stage. */
+    const W6=worldWidth();
+    add(2.0, ()=> { spawnEnemy('s6dart',W6*.22,-64,{_side:1}); spawnEnemy('s6dart',W6*.78,-90,{_side:-1,_stagger:.24}); });
+    add(5.5, ()=> spawnEnemy('s6mine',W6*.50,-74,{}));
+    add(9.0, ()=> { spawnEnemy('s6lancer',W6*.28,-74,{}); spawnEnemy('s6lancer',W6*.72,-102,{_stagger:.30}); });
+    add(12.5,()=> spawnEnemy('s6skimmer',-90,VH*.25,{_side:1}));
+    add(16.0,()=> { spawnEnemy('s6thunder',W6*.30,-76,{}); spawnEnemy('s6thunder',W6*.70,-100,{_stagger:.26}); });
+    add(20.0,()=> spawnEnemy('s6probe',W6*.50,-76,{}));
+    add(24.0,()=> { spawnEnemy('s6cyclone',W6*.27,-78,{_side:1}); spawnEnemy('s6cyclone',W6*.73,-108,{_side:-1,_stagger:.32}); });
+    add(28.0,()=> spawnEnemy('s6bomber',-105,VH*.22,{_side:1}));
+    add(32.0,()=> { spawnEnemy('s6buoy',W6*.30,-82,{}); spawnEnemy('s6buoy',W6*.70,-106,{_stagger:.26}); });
+    add(36.0,()=> spawnEnemy('s6turbine',W6*.50,-96,{}));
+    add(40.0,()=> { spawnEnemy('s6skimmer',W6+90,VH*.20,{_side:-1}); spawnEnemy('s6dart',-70,VH*.34,{_side:1,_stagger:.20}); });
+    add(44.0,()=> spawnEnemy('s6carrier',W6*.50,-112,{}));
+    add(48.0,()=> { spawnEnemy('s6mine',W6*.25,-82,{}); spawnEnemy('s6probe',W6*.75,-104,{_stagger:.32}); });
+    add(52.0,()=> spawnEnemy('s6reactor',W6*.50,-124,{}));
+    add(curStage.length-4,()=> { spawnEnemy('s6cyclone',W6*.18,-92,{_side:1}); spawnEnemy('s6turbine',W6*.50,-126,{_stagger:.22}); spawnEnemy('s6thunder',W6*.82,-98,{_stagger:.38}); });
     return _planSorted(P);
   }
-  if(stageNum===7){ // NOT ANOTHER SEWER LEVEL — the sludge run. Wide 800px world.
-    // Pacing identity: this stage is about SPACE, not volume. The Purge Barge and the Bubble
-    // Maw both deny territory rather than trade shots, so waves are built around routing
-    // pressure. Uses the WORLD width (800), not VW — every x below is a fraction of W.
+  if(stageNum===7){ // TOXIC SEWER PORTAL — eleven supplied silhouettes, eleven combat jobs.
     const W=worldWidth();
-    add(2.0, ()=> { spawnEnemy('skimmer', W*0.30, -40, {}); spawnEnemy('skimmer', W*0.70, -40, {}); });
-    add(5.0, ()=> spawnEnemy('sentry', W*0.50, -50, {}));
-    add(8.0, ()=> { for(let i=0;i<Math.round(3*D);i++) spawnEnemy('skimmer', W*0.20+i*W*0.30, -40-i*22, {}); });
-    add(11.0,()=> spawnEnemy('crawler', W*0.06, -40, {}));            // enters on the LEFT wall
-    add(12.0,()=> spawnEnemy('shambler', W*0.45, -50, {}));
-    add(15.0,()=> spawnEnemy('maw', W*0.50, VH*0.30, {inPlace:1}));   // first surfacing: centre stage
-    add(18.5,()=> { spawnEnemy('crawler', W*0.94, -40, {}); spawnEnemy('sentry', W*0.32, -50, {}); });
-    add(22.0,()=> spawnEnemy('barge', W*0.28, -80, {}));              // THE WALL
-    add(25.0,()=> { spawnEnemy('skimmer', W*0.62, -40, {}); spawnEnemy('skimmer', W*0.78, -40, {}); });
-    add(28.5,()=> { spawnEnemy('shambler', W*0.25, -50, {}); spawnEnemy('shambler', W*0.75, -50, {}); });
-    add(31.0,()=> { spawnEnemy('crawler', W*0.06, -40, {}); spawnEnemy('crawler', W*0.94, -40, {}); });  // both walls close in
-    add(34.0,()=> spawnEnemy('maw', W*0.34, VH*0.28, {inPlace:1}));
-    add(36.5,()=> { spawnEnemy('sentry', W*0.24, -50, {}); spawnEnemy('sentry', W*0.76, -50, {}); });
-    add(40.0,()=> spawnEnemy('barge', W*0.70, -80, {}));
-    add(43.0,()=> { for(let i=0;i<Math.round(4*D);i++) spawnEnemy('skimmer', W*0.14+i*W*0.24, -40-i*18, {}); });
-    add(46.0,()=> { spawnEnemy('maw', W*0.66, VH*0.26, {inPlace:1}); spawnEnemy('shambler', W*0.40, -50, {}); });
-    add(49.5,()=> { spawnEnemy('crawler', W*0.06, -40, {}); spawnEnemy('crawler', W*0.94, -40, {});
-      spawnEnemy('sentry', W*0.50, -50, {}); });
-    add(curStage.length-4, ()=> { spawnEnemy('barge', W*0.50, -80, {});
-      spawnEnemy('maw', W*0.22, VH*0.30, {inPlace:1}); spawnEnemy('maw', W*0.78, VH*0.30, {inPlace:1}); });
+    add(2.0, ()=> { spawnEnemy('s7sampler',W*.28,-72,{}); spawnEnemy('s7sampler',W*.72,-96,{_stagger:.24}); });
+    add(5.5, ()=> { spawnEnemy('s7pipe',W*.06,-76,{}); spawnEnemy('s7pipe',W*.94,-102,{_stagger:.30}); });
+    add(9.0, ()=> spawnEnemy('s7valve',W*.50,-92,{}));
+    add(12.5,()=> spawnEnemy('s7skimmer',-55,VH*.22,{_side:1}));
+    add(16.0,()=> { spawnEnemy('s7lamprey',W*.27,-84,{_side:1}); spawnEnemy('s7lamprey',W*.73,-112,{_side:-1,_stagger:.28}); });
+    add(20.0,()=> spawnEnemy('s7mine',W*.50,-84,{}));
+    add(24.0,()=> { spawnEnemy('s7walker',W*.30,-100,{}); spawnEnemy('s7walker',W*.70,-124,{_stagger:.32}); });
+    add(28.0,()=> { spawnEnemy('s7canister',W*.25,-76,{}); spawnEnemy('s7canister',W*.75,-106,{_stagger:.30}); });
+    add(32.0,()=> spawnEnemy('s7tank',W*.50,-112,{}));
+    add(36.0,()=> spawnEnemy('s7barge',W*.50,-130,{}));
+    add(40.0,()=> spawnEnemy('s7serpent',W*.50,-108,{_side:1}));
+    add(44.0,()=> { spawnEnemy('s7sampler',-55,VH*.24,{_side:1}); spawnEnemy('s7skimmer',W+55,VH*.34,{_side:-1,_stagger:.22}); });
+    add(48.0,()=> { spawnEnemy('s7valve',W*.30,-92,{}); spawnEnemy('s7mine',W*.70,-108,{_stagger:.28}); });
+    add(52.0,()=> { spawnEnemy('s7tank',W*.28,-112,{}); spawnEnemy('s7lamprey',W*.72,-102,{_side:-1,_stagger:.32}); });
+    add(curStage.length-4,()=> { spawnEnemy('s7barge',W*.22,-132,{}); spawnEnemy('s7serpent',W*.50,-116,{_stagger:.20}); spawnEnemy('s7walker',W*.78,-124,{_stagger:.38}); });
     return _planSorted(P);
   }
   if(stageNum===5){ // ALL FOR ONE, NONE FOR ALL — orbital fleet war above the asteroid belt.
-    // The Stage-05 "Black Hole Space" cast carries this level: needle / crescent / hauler / oracle.
-    // octo, mine and mech back them up. No jets, no drone, no minidrone/minicarrier.
-    add(2.0, ()=> { spawnEnemy('needle', VW*0.32, -40, {}); spawnEnemy('needle', VW*0.68, -40, {}); });
-    add(6.0, ()=> vRow('octo', Math.round(2+D), {pattern:'weave', amp:34}));
-    add(9.5, ()=> spawnEnemy('oracle', VW*0.5, -50, {}));                       // pinballs down the field
-    add(13.0,()=> { spawnEnemy('crescent', VW*0.5, -50, {}); vRow('mine', Math.round(3*D), {pattern:'straight'}); });
-    add(17.5,()=> spawnEnemy('hauler', VW*0.5, -60, {}));                       // charged beam gunship
-    add(22.0,()=> { spawnEnemy('needle', VW*0.22, -40, {}); spawnEnemy('needle', VW*0.5, -40, {}); spawnEnemy('needle', VW*0.78, -40, {}); });
-    add(26.5,()=> { spawnEnemy('oracle', VW*0.28, -50, {}); spawnEnemy('oracle', VW*0.72, -50, {}); });
-    add(31.0,()=> { spawnEnemy('crescent', VW*0.30, -50, {}); spawnEnemy('crescent', VW*0.70, -50, {phase:1.2}); });
-    add(35.5,()=> aiWaveSweep('octo', 4, {dir:-1}));                            // pattern #1 mirrored
-    add(40.0,()=> { spawnEnemy('hauler', VW*0.30, -60, {}); spawnEnemy('hauler', VW*0.70, -60, {}); });
-    add(44.5,()=> { spawnEnemy('oracle', VW*0.5, -50, {}); vRow('mine', Math.round(3*D), {pattern:'straight'}); });
-    add(48.5,()=> { spawnEnemy('mech', VW*0.5, -50, {pattern:'strafe'}); spawnEnemy('crescent', VW*0.28, -50, {}); });
-    add(curStage.length-4, ()=> { spawnEnemy('hauler', VW*0.5, -60, {});
-      spawnEnemy('needle', VW*0.22, -40, {}); spawnEnemy('needle', VW*0.78, -40, {});
-      spawnEnemy('oracle', VW*0.5, -50, {}); });
+    /* Twelve native space silhouettes replace the reused octopus/mines/mechs.  Every beat teaches
+       one job before mixing it: committed rams, fixed laser lanes, mine fields, support repair,
+       artillery, then the Twin Station elite.  Chaos Harrier remains the authored formal mini. */
+    const W5=worldWidth();
+    add(1.2,()=>{spawnEnemy('s5frigate',W5*.30,-90,{});spawnEnemy('s5interceptor',W5*.70,-80,{_stagger:.22});});
+    add(5.0,()=>spawnEnemy('s5rammer',W5*.50,-90,{}));
+    add(8.5,()=>{spawnEnemy('s5skimmer',-80,VH*.18,{_side:1});spawnEnemy('s5skimmer',W5+80,VH*.31,{_side:-1,_stagger:.24});});
+    add(12.0,()=>spawnEnemy('s5gravity',W5*.50,-100,{}));
+    add(15.5,()=>{spawnEnemy('s5minelayer',W5*.28,-100,{});spawnEnemy('s5satellite',W5*.72,-90,{_stagger:.30});});
+    add(20.0,()=>{spawnEnemy('s5portalmine',W5*.32,-80,{});spawnEnemy('s5portalmine',W5*.68,-105,{_stagger:.32});});
+    add(24.0,()=>{spawnEnemy('s5repair',W5*.50,-88,{});spawnEnemy('s5frigate',W5*.30,-100,{});spawnEnemy('s5frigate',W5*.70,-100,{});});
+    add(29.0,()=>spawnEnemy('s5salvage',W5*.50,-110,{}));
+    add(33.0,()=>{spawnEnemy('s5leech',W5*.26,-85,{});spawnEnemy('s5leech',W5*.74,-85,{_stagger:.26});});
+    add(38.0,()=>{spawnEnemy('s5interceptor',W5*.22,-80,{});spawnEnemy('s5rammer',W5*.50,-110,{_stagger:.25});spawnEnemy('s5interceptor',W5*.78,-80,{_stagger:.50});});
+    add(43.0,()=>spawnEnemy('s5station',W5*.50,-145,{}));
+    add(48.0,()=>{spawnEnemy('s5satellite',W5*.24,-100,{});spawnEnemy('s5gravity',W5*.50,-118,{_stagger:.22});spawnEnemy('s5minelayer',W5*.76,-100,{_stagger:.44});});
+    add(curStage.length-4,()=>{spawnEnemy('s5station',W5*.50,-150,{});spawnEnemy('s5skimmer',-80,VH*.24,{_side:1,_stagger:.2});spawnEnemy('s5skimmer',W5+80,VH*.36,{_side:-1,_stagger:.4});});
     return _planSorted(P);
   }
-  if(stageNum===8){ // FURIOUS DEATH — the finale. 60s, bg 'space'.
-    // WAS a grab-bag: it re-spawned jungle jetflybys, ground mechs, racers and bombers from every
-    // other stage, on a SPACE background. "Everything the game has" is not an identity, it is an
-    // absence of one — and it made the finale feel like a clip show of levels you already beat.
-    //
-    // Identity now: THE VOID CLOSES IN. Three escalating movements, each ending on an elite, with
-    // the pressure never releasing between them:
-    //   0-20s  ORBITAL SCREEN   the stage-5 deep-space cast (needle/crescent/hauler/oracle) —
-    //                           they belong on a space background and nothing else here does.
-    //   20-40s THE CARRIERS     hellwing death carriers anchor the middle while mines and octos
-    //                           deny space around them.
-    //   40-60s ALL FOUR         every L8 elite on screen in the last movement, overlapping.
-    // The four elites are the only units that ROLL, so each entrance still reads as a step up.
+  if(stageNum===8){ // FURIOUS DEATH — twelve native mega enemies, no recycled stage cast.
+    /* Three escalating movements teach each silhouette before the fleet combines.  These are all
+       heavyweight targets, so counts stay readable while their movement, rolls and authored
+       attacks create the density.  No Stage-5 orbital hull or legacy generic mine is allowed. */
     const W8=worldWidth();
-
-    // ---- MOVEMENT I: ORBITAL SCREEN
-    add(1.5, ()=> { spawnEnemy('needle', W8*0.32, -40, {}); spawnEnemy('needle', W8*0.68, -40, {}); });
-    add(4.0, ()=> spawnEnemy('crescent', W8*0.50, -44, {}));
-    add(6.0, ()=> spawnEnemy('talon', W8*0.50, -50, {}));                       // ELITE 1
-    add(8.5, ()=> { spawnEnemy('needle', W8*0.20, -40, {}); spawnEnemy('needle', W8*0.50, -40, {});
-                    spawnEnemy('needle', W8*0.80, -40, {}); });
-    add(11.0,()=> spawnEnemy('oracle', W8*0.44, -50, {}));
-    add(13.5,()=> { vRow('mine', Math.round(3*D), {pattern:'straight'});
-                    spawnEnemy('crescent', W8*0.28, -44, {}); spawnEnemy('crescent', W8*0.72, -44, {}); });
-    add(16.0,()=> spawnEnemy('cdisc', W8*0.38, -50, {}));                       // ELITE 2
-    add(18.0,()=> spawnEnemy('hauler', W8*0.50, -60, {}));
-
-    // ---- MOVEMENT II: THE CARRIERS
-    /* el_hd is one of the 25 culled elites (0801bl: every mbj_/el_ prefix resolves 0 of its parts).
-       'hauler' is Stage 8's live carrier, so carrier beats use art that actually exists. */
-    add(20.5,()=> spawnEnemy('hauler', W8*0.5, -60, {pattern:'straight'}));      // CARRIER (was el_hd, culled)
-    add(23.0,()=> spawnEnemy('hell', W8*0.5, -60, {}));                         // ELITE 3
-    add(25.5,()=> { spawnEnemy('octo', W8*0.24, -40, {pattern:'weave'});
-                    spawnEnemy('octo', W8*0.76, -40, {pattern:'weave', phase:1.2}); });
-    add(28.0,()=> { vRow('mine', Math.round(4*D), {pattern:'straight'});
-                    spawnEnemy('oracle', W8*0.60, -50, {}); });
-    add(30.5,()=> aiWaveSplit('crescent', {}));
-    add(33.0,()=> { spawnEnemy('talon', W8*0.24, -50, {}); spawnEnemy('talon', W8*0.76, -50, {}); });
-    /* `el_hd` is one of the quarantined multipart elites: its named parts resolve no drawable
-       hull, so the right-hand carrier existed, fired and collided while remaining invisible.
-       Mirror the live Void Hauler used for the left carrier; the pair now has intact art. */
-    add(35.5,()=> { spawnEnemy('hauler', W8*0.28, -60, {pattern:'straight'});
-                    spawnEnemy('hauler', W8*0.72, -60, {pattern:'straight'}); });
-    add(38.0,()=> { spawnEnemy('hauler', W8*0.34, -60, {}); spawnEnemy('hauler', W8*0.66, -60, {}); });
-
-    // ---- MOVEMENT III: ALL FOUR
-    add(40.0,()=> spawnEnemy('spiral', W8*0.5, -60, {}));                       // ELITE 4 arrives
-    add(42.5,()=> { vRow('mine', Math.round(5*D), {pattern:'straight'});
-                    spawnEnemy('needle', W8*0.30, -40, {}); spawnEnemy('needle', W8*0.70, -40, {}); });
-    add(45.0,()=> { spawnEnemy('cdisc', W8*0.30, -50, {}); spawnEnemy('hell', W8*0.70, -60, {}); });
-    add(47.5,()=> { spawnEnemy('oracle', W8*0.22, -50, {}); spawnEnemy('oracle', W8*0.78, -50, {}); });
-    add(50.0,()=> { spawnEnemy('spiral', W8*0.34, -60, {}); spawnEnemy('spiral', W8*0.66, -60, {}); });
-    add(52.5,()=> { spawnEnemy('hauler', W8*0.5, -60, {pattern:'straight'});
-                    aiWaveSplit('crescent', {}); });
-    add(55.0,()=> { spawnEnemy('talon', W8*0.20, -50, {}); spawnEnemy('cdisc', W8*0.50, -50, {});
-                    spawnEnemy('hell', W8*0.80, -60, {}); });
-    add(curStage.length-4, ()=> { spawnEnemy('spiral', W8*0.30, -60, {}); spawnEnemy('spiral', W8*0.70, -60, {});
-                                  vRow('mine', Math.round(4*D), {pattern:'straight'}); });
+    add(1.0,()=>{spawnEnemy('s8interceptor',W8*.27,-100,{});spawnEnemy('s8interceptor',W8*.73,-100,{_stagger:.22});});
+    add(2.5,()=>spawnEnemy('s8needlejet',W8*.50,-105,{}));
+    add(4.0,()=>spawnEnemy('s8leech',W8*.50,-120,{}));
+    add(5.6,()=>{spawnEnemy('s8scout',W8*.32,-96,{});spawnEnemy('s8scout',W8*.68,-112,{_stagger:.24});});
+    add(7.0,()=>{spawnEnemy('s8razor',W8*.25,-90,{});spawnEnemy('s8razor',W8*.75,-90,{phase:Math.PI,_stagger:.24});});
+    add(10.0,()=>spawnEnemy('s8manta',W8*.50,-130,{}));
+    add(11.5,()=>{spawnEnemy('s8spread',-120,VH*.18,{_side:1});spawnEnemy('s8spread',W8+120,VH*.30,{_side:-1,_stagger:.28});});
+    add(13.0,()=>spawnEnemy('s8deathorb',W8*.50,-135,{}));
+    add(16.5,()=>{spawnEnemy('s8parasite',W8*.30,-105,{});spawnEnemy('s8interceptor',W8*.70,-95,{_stagger:.24});});
+    add(18.2,()=>spawnEnemy('s8crescent',W8*.50,-118,{}));
+    add(20.0,()=>{spawnEnemy('s8hunter',W8*.28,-105,{});spawnEnemy('s8hunter',W8*.72,-105,{_stagger:.26});});
+    add(23.5,()=>{spawnEnemy('s8skull',W8*.32,-95,{});spawnEnemy('s8skull',W8*.68,-110,{_stagger:.28});});
+    add(25.2,()=>spawnEnemy('s8solar',W8*.50,-155,{}));
+    add(27.0,()=>spawnEnemy('s8tentacle',W8*.50,-145,{}));
+    add(30.5,()=>{spawnEnemy('s8symbiote',W8*.22,-100,{});spawnEnemy('s8symbiote',W8*.50,-125,{_stagger:.20});spawnEnemy('s8symbiote',W8*.78,-100,{_stagger:.40});});
+    add(34.5,()=>spawnEnemy('s8bomber',W8*.50,-155,{}));
+    add(38.5,()=>spawnEnemy('s8carrier',W8*.50,-180,{}));
+    add(41.0,()=>spawnEnemy('s8gunship',W8*.50,-165,{}));
+    add(43.0,()=>{spawnEnemy('s8deathorb',W8*.28,-140,{});spawnEnemy('s8razor',W8*.72,-95,{_stagger:.25});});
+    add(47.0,()=>{spawnEnemy('s8manta',W8*.24,-140,{});spawnEnemy('s8hunter',W8*.76,-110,{_stagger:.28});});
+    add(51.0,()=>{spawnEnemy('s8carrier',W8*.50,-185,{});spawnEnemy('s8interceptor',W8*.22,-90,{_stagger:.20});spawnEnemy('s8interceptor',W8*.78,-90,{_stagger:.40});});
+    add(55.0,()=>{spawnEnemy('s8bomber',W8*.28,-150,{});spawnEnemy('s8tentacle',W8*.72,-145,{_stagger:.30});});
+    add(curStage.length-4,()=>{spawnEnemy('s8deathorb',W8*.20,-145,{});spawnEnemy('s8symbiote',W8*.50,-110,{_stagger:.18});spawnEnemy('s8bomber',W8*.80,-155,{_stagger:.36});});
     return _planSorted(P);
   }
-  if(stageNum===9){ // BONUS STAGE — THE VELOCITY VOID (drop 0822ab)
-    /* Mike's roster: "Stage 9 is a purple/cyan velocity void reached through the massive Stage 5
-       gate." A BONUS stage, so it is built to be fast and generous rather than attritional —
-       dense, low-hp waves that read as a score run, not a wall.
-
-       ⚠ THIS RETURN MUST EXIST OR STAGE 9 IS AN EMPTY CORRIDOR. Every other stage has a
-       block here; 9 had none, so even once it became reachable it would have scrolled for a
-       minute with nothing in it and then run its boss. The tail below adds generic waves to any
-       stage that does NOT return, and generic jungle jets in a velocity void is the clip-show
-       mistake stage 8's note is about — hence an explicit return. */
-    const W9=worldWidth();
-    // ---- I: ZERO-GRAVITY SURF — teach the breakable water-rocks between rolling skimmers
-    add(0.6, ()=> { spawnEnemy('riftrock',W9*0.24,-70,{}); spawnEnemy('riftrocksm',W9*0.76,-45,{}); });
-    add(1.2, ()=> { spawnEnemy('wskim', W9*0.30, -40, {}); spawnEnemy('wskim', W9*0.70, -40, {}); });
-    add(3.0, ()=> { spawnEnemy('pneedle', W9*0.50, -40, {}); });
-    add(4.6, ()=> { spawnEnemy('wskim', W9*0.18, -40, {}); spawnEnemy('wskim', W9*0.50, -40, {});
-                    spawnEnemy('wskim', W9*0.82, -40, {}); });
-    add(6.8, ()=> { spawnEnemy('pmine', W9*0.35, -40, {}); spawnEnemy('pmine', W9*0.65, -40, {}); });
-    add(8.8, ()=> { spawnEnemy('vmanta', W9*0.50, -46, {}); });
-    // ---- II: THE LEECHES AND THE ECHOES — shields, ghosts and the first apex hull
-    add(11.0,()=> { spawnEnemy('gleech', W9*0.22, -40, {}); spawnEnemy('gleech', W9*0.78, -40, {}); });
-    add(13.2,()=> { spawnEnemy('echof', W9*0.40, -44, {}); spawnEnemy('echof', W9*0.60, -44, {}); });
-    add(15.5,()=> { spawnEnemy('pneedle', W9*0.28, -40, {}); spawnEnemy('pneedle', W9*0.72, -40, {}); });
-    add(16.5,()=> spawnEnemy('horizon', W9*0.50, -120, {}));
-    add(17.8,()=> { spawnEnemy('tsplit', W9*0.50, -46, {}); });
-    add(20.0,()=> { spawnEnemy('vmanta', W9*0.25, -46, {}); spawnEnemy('vmanta', W9*0.75, -46, {}); });
-    // ---- III: THE BREAKERS — armoured water/space formations close every static safe lane
-    add(23.0,()=> { spawnEnemy('cbreak', W9*0.50, -52, {}); });
-    add(25.5,()=> { spawnEnemy('wskim', W9*0.15, -40, {}); spawnEnemy('wskim', W9*0.85, -40, {});
-                    spawnEnemy('pmine', W9*0.50, -40, {}); });
-    add(26.8,()=> { spawnEnemy('riftrock',W9*0.34,-80,{}); spawnEnemy('riftrock',W9*0.66,-80,{}); });
-    add(28.0,()=> { spawnEnemy('tsplit', W9*0.32, -46, {}); spawnEnemy('tsplit', W9*0.68, -46, {}); });
-    add(30.5,()=> { spawnEnemy('cbreak', W9*0.30, -52, {}); spawnEnemy('cbreak', W9*0.70, -52, {}); });
-    add(33.0,()=> { spawnEnemy('echof', W9*0.50, -44, {}); spawnEnemy('gleech', W9*0.20, -40, {});
-                    spawnEnemy('gleech', W9*0.80, -40, {}); });
-    add(34.2,()=> spawnEnemy('dreadv', W9*0.50, -170, {}));
-    add(36.0,()=> { spawnEnemy('vmanta', W9*0.50, -46, {}); spawnEnemy('pneedle', W9*0.35, -40, {});
-                    spawnEnemy('pneedle', W9*0.65, -40, {}); });
+  if(stageNum===9){ // BONUS STAGE — THE VELOCITY VOID
+    /* A 42-second relentless space run. Every beat has a job: kamikaze interceptors force a lane
+       change, jump tanks break the rhythm, sliders cross it, rings spin, gunships beam, and gravity
+       artillery throws accelerating orbs. Giant meteor pairs are physical 300-500% bodies; they
+       collide and rebound around one deliberately preserved squeeze corridor. */
+    const W9=worldWidth(),pair=(kind,a,b,opt)=>{
+      spawnEnemy(kind,W9*a,-100,opt||{});
+      spawnEnemy(kind,W9*b,-118,Object.assign({_stagger:.16},opt||{}));
+    };
+    add(.45,()=>pair('s9interceptor',.25,.75,{_s9Role:'kamikaze'}));
+    add(1.55,()=>{spawnEnemy('s9comet',-86,VH*.17,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.31,{_side:-1,_s9Role:'slider'});});
+    add(2.70,()=>spawnEnemy('s9beacon',W9*.50,-108,{_s9Role:'orb'}));
+    add(4.05,()=>pair('s9ring',.28,.72,{_s9Role:'spinner'}));
+    add(5.55,()=>s9MeteorShower(W9*.33,0));
+    add(6.75,()=>spawnEnemy('s9gunship',W9*.50,-126,{_s9Role:'beam'}));
+    add(8.10,()=>pair('s9chronal',.24,.76,{_s9Role:'jumper'}));
+    add(9.45,()=>pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'}));
+    add(10.70,()=>{spawnEnemy('s9gateturret',W9*.30,-108,{_s9Role:'spinner'});spawnEnemy('s9gravity',W9*.70,-120,{_s9Role:'orb',_stagger:.18});});
+    add(12.25,()=>s9MeteorShower(W9*.67,1));
+    add(13.30,()=>spawnEnemy('s9gatecarrier',W9*.50,-145,{_s9Role:'laser'}));
+    add(14.65,()=>{spawnEnemy('s9comet',-86,VH*.20,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.34,{_side:-1,_s9Role:'slider'});});
+    add(15.80,()=>pair('s9warptank',.27,.73,{_s9Role:'laser'}));
+    add(17.15,()=>spawnEnemy('s9prism',W9*.50,-130,{_s9Role:'beam'}));
+    add(18.35,()=>s9MeteorShower(W9*.48,2));
+    add(19.60,()=>{spawnEnemy('s9interceptor',W9*.16,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-122,{_s9Role:'kamikaze',_stagger:.13});spawnEnemy('s9interceptor',W9*.84,-94,{_s9Role:'kamikaze',_stagger:.26});});
+    add(21.00,()=>pair('s9ring',.25,.75,{_s9Role:'spinner'}));
+    add(22.25,()=>spawnEnemy('s9gunship',W9*.50,-132,{_s9Role:'beam'}));
+    add(23.65,()=>{spawnEnemy('s9chronal',W9*.28,-112,{_s9Role:'jumper'});spawnEnemy('s9gravity',W9*.72,-126,{_s9Role:'orb',_stagger:.16});});
+    add(25.00,()=>s9MeteorShower(W9*.72,3));
+    add(26.20,()=>pair('s9interceptor',.22,.78,{_s9Role:'kamikaze'}));
+    add(27.50,()=>{spawnEnemy('s9comet',-86,VH*.16,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.29,{_side:-1,_s9Role:'slider'});});
+    add(28.75,()=>spawnEnemy('s9singularity',W9*.50,-120,{_s9Role:'orb'}));
+    add(30.10,()=>{spawnEnemy('s9gateturret',W9*.24,-105,{_s9Role:'spinner'});spawnEnemy('s9gateturret',W9*.76,-105,{_s9Role:'spinner',_stagger:.17});});
+    add(31.35,()=>s9MeteorShower(W9*.28,4));
+    add(32.55,()=>{spawnEnemy('s9gunship',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9warptank',W9*.70,-108,{_s9Role:'laser',_stagger:.20});});
+    add(34.00,()=>pair('s9ring',.22,.78,{_s9Role:'spinner'}));
+    add(35.15,()=>{spawnEnemy('s9interceptor',W9*.18,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-124,{_s9Role:'kamikaze',_stagger:.12});spawnEnemy('s9interceptor',W9*.82,-94,{_s9Role:'kamikaze',_stagger:.24});});
+    add(36.40,()=>s9MeteorShower(W9*.55,5));
+    add(37.55,()=>{spawnEnemy('s9prism',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9gravity',W9*.70,-126,{_s9Role:'orb',_stagger:.17});});
+    add(38.75,()=>spawnEnemy('s9gatecarrier',W9*.50,-148,{_s9Role:'laser'}));
+    add(curStage.length-2.1,()=>{pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'});s9MeteorShower(W9*.50,6);});
     return _planSorted(P);
   }
   /* "COMMON EARLY" IS NOT COMMON TO STAGE 1 (drop 0801jw). Mike: "Jets randomly
@@ -9715,7 +10440,8 @@ function enemyVolley(e, force){
     if(e._volN % V.every) return false;
   }
   const y = e.y + e.h*0.30, D = Math.PI/2;      // D = straight down, the spine of every pattern
-  const k = (e.type==='icegun'||e.type==='cryo') ? 'ice' : 'flare';
+  const k = (typeof run!=='undefined'&&run.stage===1)
+    ? 's1bullet' : ((e.type==='icegun'||e.type==='cryo') ? 'ice' : 'flare');
   /* ============================================================
      "RANDOM PATTERNS" IS ROTATION BETWEEN SHAPES, NOT RANDOMNESS INSIDE ONE (drop 0811s).
 
@@ -9803,7 +10529,8 @@ function enemyVolley(e, force){
          "machine gun styled" and another spread. */
       { const steps=5, i=((e._volN/(V.every||1))|0)%(steps*2);
         const s=(i<steps? i : steps*2-1-i) - (steps-1)/2;   // 0..4..0, a there-and-back sweep
-        for(let n=-1;n<=1;n++) eShoot(e.x, y, D + s*0.17 + n*0.045, 3.1, 'mg'); }
+        for(let n=-1;n<=1;n++) eShoot(e.x, y, D + s*0.17 + n*0.045, 3.1,
+                                      (typeof run!=='undefined'&&run.stage===1)?'s1bullet':'mg'); }
       break;
     case 'salvo':
       /* MISSILES, one to each side, on the authored swerve — they sweep OUT before locking, so
@@ -9887,6 +10614,49 @@ if(typeof XART!=='undefined' && XART._src){
     XART._src[_k]='assets/game/boss_fx_spawncarrier/'+_k+'.png';
   }
 }
+
+/* Encounter-map ripple.  Mike's marked layouts use numbered circles as an ORDER, not as a
+   request to dump every unit on one frame.  Each descriptor is released after `gap` seconds,
+   so even the fast 6/7-unit files remain readable and every hull owns a separate collision box.
+
+   Descriptor fields:
+     type        live spawn type
+     fx          normalized world x (0..1); x may be supplied for an absolute/off-side entry
+     y           spawn y (defaults to a staggered top entry)
+     opt         native controller options
+     ai          optional behaviour-sheet route.  Used only by arsenal drones, whose `_dr`
+                 controller continues to own their attacks while the route owns movement.
+
+   This is deliberately stage-agnostic.  The Stage-2/3 blocks below decide the roster; this helper
+   only preserves the placement/order language from the drawings. */
+function encounterRipple(specs, gap){
+  specs=specs||[]; gap=(gap==null)?0.26:Math.max(0.16,gap);
+  for(let i=0;i<specs.length;i++){
+    const s=specs[i]||{};
+    aiDelay(i*gap, ()=>{
+      const W=(typeof worldWidth==='function')?worldWidth():VW;
+      const x=(s.x!=null)?s.x:W*(s.fx==null?.5:s.fx);
+      /* Distinct top rows plus the time ripple prevent two same-lane hitboxes touching at birth. */
+      const y=(s.y!=null)?s.y:(-48-(i%3)*22);
+      const e=spawnEnemy(s.type,x,y,Object.assign({},s.opt||{}));
+      if(e && s.scale!=null){
+        const sc=clamp(s.scale,.5,1.5);
+        e.w=Math.max(16,Math.round(e.w*sc));e.h=Math.max(16,Math.round(e.h*sc));
+      }
+      if(e && s.ai && e._dr && typeof aiAttach==='function'){
+        const route=Object.assign({},s.ai);
+        /* aiAttach snapshots the velocity at attachment time.  A diagonal therefore needs a real
+           lateral component before that snapshot; infer the inward direction from its lane when
+           the layout did not state one explicitly. */
+        if(route.kind==='diag' && !e.vx){
+          route.dir=route.dir||((x<W*.5)?1:-1);
+          e.vx=route.dir*1.15;
+        }
+        aiAttach(e,route);
+      }
+    });
+  }
+}
 const SHIPBOSS = {
   /* ⚠ STAGE 4'S BOSS IS ONE FULL-FORMED PLATE (Mike, 0821f): "level 4 boss - do not wire up with
      seperate frames - use full formed frame only and do not do breaks or cracks."
@@ -9905,10 +10675,17 @@ const SHIPBOSS = {
      There is deliberately NO `chargebeam` phase here.  Stage 4 is a jet fight: the barrel pods
      chatter machine-gun tracers and the authored blue storm rounds are discrete energy bolts.
      Neither attack creates the rotating continuous beam rake that used to read as a laser boss. */
-  stormsovereign:{key:'mbs6_master',           name:'STORM SOVEREIGN', w:236,h:236, hpMul:1.44, pat:'stormmg', cd:0.82, proj:'storm',
-                  mounts:{MG_L:[-0.167,0.070],MG_R:[0.167,0.070],
-                          L:[-0.104,0.263],EL:[-0.104,0.263],C:[0,0.430],ER:[0.104,0.263],R:[0.104,0.263]},
-                  pats:['stormmg','stormbolts','pincer2']},
+  /* STORM SOVEREIGN MK II is a new complete chase plate inspired by the old four-turbine hull.
+     The sockets/racks are measured on the 512px replacement: twin rotary guns, two orb cradles,
+     paired lightning emitters and the nose reactor all get independent release points. */
+  /* The four short generator checks provide the endurance.  A flat 2500 hull keeps this from
+     becoming a fifteen-minute attrition fight while the 75/50/25 gates still guarantee the full
+     mechanic cannot be deleted by one stored super. */
+  stormsovereign:{key:'s4w_boss_idle', name:'STORM SOVEREIGN MK II', w:286,h:286, hp:2500, pat:'s4warburst', cd:0.78, proj:'storm',
+                  mounts:{MG_L:[-0.135,0.315],MG_R:[0.135,0.315],
+                          ORB_L:[-0.315,-0.030],ORB_R:[0.315,-0.030],
+                          L:[-0.235,0.215],EL:[-0.235,0.215],C:[0,0.440],ER:[0.235,0.215],R:[0.235,0.215]},
+                  pats:['s4warburst','s4orblift','s4lightning','s4waroverdrive']},
   /* `pats` IS THE FIGHT'S ARC (drop 0811c). Mike: "upgrade the new bosses ... make them
      challenging". One pattern for a whole healthbar is a puzzle you solve once and then hold a
      spot for ninety seconds. Three phases at 100/60/30% give it a shape: the opener teaches the
@@ -9916,14 +10693,21 @@ const SHIPBOSS = {
      and the last is the boss's own signature at speed. The ORDER is chosen per boss for that
      reason, not shuffled " ember teaches "find the gap", then lance closes lanes so the gap-hunting
      habit gets you hit, then ember again, faster. */
-  infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'ember', cd:1.45, proj:'magma',
+  infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'infernogate', cd:1.20, proj:'magma',
                   move:{ampX:120,ampY:6,period:3.30},
                   mounts:{L:[-0.35,0.28],C:[0,0.40],R:[0.35,0.28]},
-                  pats:['ember','fireorb','chargebeam','fireorb','beamfan']},
-  cryospear:     {key:'nsb_cryo_spear',     name:'CRYO SPEAR',          w:195,h:195, hpMul:1.25, pat:'lance', cd:1.35, proj:'cryo',
-                  move:{ampX:120,ampY:6,period:3.30},
-                  mounts:{L:[-0.24,0.20],C:[0,0.43],R:[0.24,0.20]},
-                  pats:['lance','rime','chargebeam','beamfan']},
+                  pats:['infernogate','fireorb','infernoburst','chargebeam','infernostorm']},
+  /* STAGE 3 ROLE SWAP (0830). The end-stage slot still uses the stable `cryospear` runtime id,
+     but its visible body/name/geometry are now the promoted RIME WALL. Keeping the id prevents
+     the stage timeline, save flags and boss gate from changing while swapping the actual graphic
+     the player fights. The hardpoints are measured from the 256px Rime Wall plate: long lower
+     cannons, the luminous centre core, and the two raised ice batteries. */
+  cryospear:     {key:'nsb_rimewall_intact', name:'RIME WALL',           w:224,h:236, hpMul:1.58, pat:'s3wallcannons', cd:1.05, proj:'glacier',
+                  move:{ampX:74,ampY:4,period:4.20},
+                  mounts:{L:[-0.145,0.430],C:[0,-0.060],R:[0.145,0.430],
+                          TL:[-0.235,-0.105],TR:[0.235,-0.105],V1:[-0.30,-0.06],V2:[0.30,-0.06]},
+                  pats:['s3wallcannons','s3wallgate','s3wallhalo','s3walloverdrive'],
+                  dmg:['nsb_rimewall_damaged','nsb_rimewall_critical']},
   voidbat:       {key:'nsb_void_bat',       name:'VOID BAT',            w:210,h:210, hpMul:1.45, pat:'void',  cd:1.30, proj:'obsid',
                   move:{ampX:150,ampY:24,period:2.70,orbit:true},
                   mounts:{L:[-0.29,0.28],C:[0,0.43],R:[0.29,0.28]},
@@ -9985,9 +10769,9 @@ const SHIPBOSS = {
   glacierfortress:{key:'mbg3f_master',            name:'GLACIER FORTRESS', w:214,h:214, hpMul:1.44, pat:'rime', cd:1.26, proj:'glacier',
                   mounts:{L:[-0.27,0.27],C:[0,0.43],R:[0.27,0.27]},
                   pats:['rime','lance','siege'], dmg:['mbg3f_dmgov_0','mbg3f_dmgov_1']},
-  xenoregent:    {key:'nsb_xenoregent_intact',      name:'XENO REGENT',    w:216,h:208, hpMul:1.42, pat:'pincer2',  cd:1.28, proj:'toxic',
+  xenoregent:    {key:'nsb_xenoregent_intact',      name:'XENO REGENT',    w:216,h:208, hpMul:1.62, pat:'s5regentgrid',  cd:1.12, proj:'toxic',
                   mounts:{L:[-0.22,0.24],C:[0,0.42],R:[0.22,0.24]},
-                  pats:['pincer2','void','chargebeam'], dmg:['nsb_xenoregent_damaged','nsb_xenoregent_critical']},
+                  pats:['s5regentgrid','s5regenthalo','s5regentmissile','s5regentcollapse'], dmg:['nsb_xenoregent_damaged','nsb_xenoregent_critical']},
   /* THE CARRIER IS A 16-FRAME LAUNCH CYCLE (drop 0813o). CF_DoomsdayCarrierAnimation-Lvl6:
      closed -> opening -> loaded -> launch -> empty -> closing -> closed, `loop:false` in the
      pack's own json, so it plays ONCE per launch rather than idling.
@@ -10027,9 +10811,9 @@ const SHIPBOSS = {
      TWO REELS, NOT ONE. `launch` is the 18-frame bay cycle and drives the existing warhead
      mechanic unchanged. `cannon` is new: a 14-frame charge-and-fire authored 640x480, where
      the extra 160px below the hull IS the beam. hMul carries that to _animH. */
-  doomsdaycarriermk2:{key:'nsb_dcarrmk2_closed', name:'DOOMSDAY CARRIER MK II', w:640,h:320, proj:'mirv',
+  doomsdaycarriermk2:{key:'nsb_dcarrmk2_closed', name:'DOOMSDAY CARRIER MK II', w:640,h:320,ty:172, proj:'mirv',
                   mounts:{L:[-0.31,0.17],C:[0,0.43],R:[0.31,0.17],MG_L:[-0.38,0.31],MG_R:[0.38,0.31]},
-                  hpMul:1.50, pat:'mslfan', cd:1.04, pats:['mslfan','stormmg','beamfan','stormmg'],
+                  hpMul:1.65, pat:'mslfan', cd:1.04, pats:['mslfan','stormmg','beamfan','stormmg'],
                   launch:{frames:18, pre:'nsb_dcarrmk2_', fps:14, loop:false,
                           release:11, warhead:'nfx_omegamk2_in'},
                   cannon:{frames:14, pre:'nsb_dcarrmk2_cn_', fps:12, hMul:1.5, fire:6, last:11}},
@@ -10040,26 +10824,33 @@ const SHIPBOSS = {
      D.dmg, measured 0822y, and Mike has confirmed it). If damage states are ever wired,
      these two are the units that already have the art for it.
      w/h are the authored canvases: Tidal Sovereign 320x256, Warp Sentinel 256x192. */
-  tidalsovereign:{key:'ns9_tidal_intact', name:'TIDAL SOVEREIGN', w:320,h:256, hpMul:1.35, proj:'cyclone',
+  tidalsovereign:{key:'ns9_tidal_intact', name:'TIDAL SOVEREIGN', w:320,h:256, hpMul:1.55, proj:'cyclone',
                   mounts:{L:[-0.25,0.36],C:[0,0.43],R:[0.25,0.36]},
-                  pat:'fan2', cd:1.22, pats:['fan2','beamfan','siege'],
+                  pat:'s9tidalguard', cd:1.08, pats:['s9tidalguard','s9tidallattice','s9tidalcomet','s9tidalstorm'],
                   dmg:['ns9_tidal_damaged','ns9_tidal_critical']},
-  warpsentinel:  {key:'ns9_warpsen_intact', name:'WARP SENTINEL', w:256,h:192, hp:236, proj:'warhawk',
+  warpsentinel:  {key:'ns9_warpsen_intact', name:'WARP SENTINEL', w:256,h:192, hp:320, proj:'warhawk',
                   mounts:{L:[-0.17,0.35],C:[0,0.43],R:[0.17,0.35]},
-                  pat:'beamfan', cd:1.26, mini:true, pats:['beamfan','fan2'],
+                  pat:'s9sentinelcross', cd:1.02, mini:true, pats:['s9sentinelcross','s9sentinelgate','s9sentinelrush'],
                   dmg:['ns9_warpsen_damaged','ns9_warpsen_critical']},
-  sludgeemperor: {key:'nsb_sludgeemperor_intact',   name:'SLUDGE EMPEROR', w:220,h:216, hpMul:1.46, pat:'siege', cd:1.30, proj:'sludge',
+  sludgeemperor: {key:'nsb_sludgeemperor_intact',   name:'SLUDGE EMPEROR', w:220,h:216, hpMul:1.62, pat:'s7pressure', cd:1.14, proj:'sludge',
                   mounts:{L:[-0.29,0.28],C:[0,0.42],R:[0.29,0.28]},
-                  pats:['siege','ember','fan2'], dmg:['nsb_sludgeemperor_damaged','nsb_sludgeemperor_critical']},
-  magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:240, pat:'ember', cd:1.28, mini:true, proj:'magma',
+                  pats:['s7pressure','s7flood','s7crown','s7purge'], dmg:['nsb_sludgeemperor_damaged','nsb_sludgeemperor_critical']},
+  dualscoopdredger:{key:'s7atk_dual_scoop_dredger_0',name:'DUAL SCOOP DREDGER',w:240,h:220,hp:360,mini:true,proj:'toxic',
+                  mounts:{L:[-0.145,0.25],C:[0,0.36],R:[0.145,0.25]},pat:'s7dredge',cd:1.02,pats:['s7dredge','s7spore']},
+  magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:1000, pat:'magmaflame', cd:1.12, mini:true, proj:'magma',
                   mounts:{L:[-0.39,0.27],C:[0,0.42],R:[0.39,0.27]},
-                  pats:['ember','chargebeam'], dmg:['nsb_magmaward_damaged','nsb_magmaward_critical']},
-  rimewall:      {key:'nsb_rimewall_intact',   name:'RIME WALL',        w:204,h:216, hp:232, pat:'rime', cd:1.22, mini:true, proj:'glacier',
-                  mounts:{L:[-0.16,0.35],C:[0,0.43],R:[0.16,0.35]},
-                  pats:['rime','beamfan'], dmg:['nsb_rimewall_damaged','nsb_rimewall_critical']},
-  olivewarden:   {key:'nsb_olivewarden_intact',name:'OLIVE WARDEN',     w:210,h:216, hp:238, pat:'pincer2',cd:1.26, mini:true, proj:'legion',
-                  mounts:{L:[-0.28,0.18],C:[0,0.43],R:[0.28,0.18]},
-                  pats:['pincer2','ember'], dmg:['nsb_olivewarden_damaged','nsb_olivewarden_critical']},
+                  pats:['magmaflame','magmaflamelaser','magmafireball','magmafireshield'], dmg:['nsb_magmaward_damaged','nsb_magmaward_critical']},
+  /* The mid-stage slot keeps the `rimewall` runtime id but now fields the former main-boss
+     CRYO SPEAR fighter. It is deliberately faster and narrower than the promoted fortress, with
+     separate wing pods and a nose emitter instead of borrowing the Wall's artillery language. */
+  rimewall:      {key:'nsb_cryo_spear',         name:'CRYO SPEAR',       w:195,h:195, hp:390, pat:'s3spearburst', cd:0.88, mini:true, proj:'cryo',
+                  move:{ampX:142,ampY:12,period:2.65},
+                  mounts:{L:[-0.245,0.205],C:[0,0.435],R:[0.245,0.205],
+                          V1:[-0.29,0.02],V2:[0.29,0.02]},
+                  pats:['s3spearburst','s3spearcross','s3spearcore']},
+  olivewarden:   {key:'nsb_olivewarden_intact',name:'OLIVE WARDEN',     w:210,h:216, hp:1180, pat:'s4warburst',cd:0.92, mini:true, proj:'legion',
+                  mounts:{L:[-0.28,0.18],C:[0,0.43],R:[0.28,0.18],MG_L:[-0.19,0.31],MG_R:[0.19,0.31]},
+                  pats:['s4warburst','s4wargate','s4wardrones'], dmg:['nsb_olivewarden_damaged','nsb_olivewarden_critical']},
   /* STAGE 8'S MINIBOSS FINALLY HAS A BODY (drop 0814e). The HERALD OF DEATH was drawing frames 0-3
      of its own venom ATTACK stream as its hull — `mba_vr_*` is 0 registered keys, `nvr_*` was never
      built (0801ga), and `heraldAnimKey`'s "11-frame flight loop" is, rendered, twin venom droplets
@@ -10097,7 +10888,7 @@ const SHIPBOSS = {
      Blacksteel Raptor takes the slot rather than inventing art. */
   blacksteel:    {key:'nsb_blacksteel',     name:'BLACKSTEEL RAPTOR',   w:170,h:170, hp:245, pat:'lance', cd:1.15, mini:true, proj:'obsid',
                   mounts:{L:[-0.25,0.12],C:[0,0.43],R:[0.25,0.12]},
-                  pats:['lance','beamfan']},
+                  pats:['stormbolts','lance']},
   /* ============================================================
      THE JUNGLE CRUISER TAKES STAGE 1 (drop 0812e)
 
@@ -10114,15 +10905,18 @@ const SHIPBOSS = {
      is how siegeember and thornrime were built in the first place: one silhouette family,
      recoloured per theme.
 
-     ⚠ HP IS THE QUAD-LASER'S 210, DELIBERATELY. This replaces the FIRST miniboss a player ever
-     meets, and Mike tuned that fight's difficulty at 210; a cruiser-sized 245 would quietly make
-     stage 1 harder than stage 4's. The pattern pair is `siege`+`fan2` — a broadside opener, then a
-     spread that punishes the lane the broadside taught you to stand in.
+     HP IS 720 BY DESIGN. This is now a complete multi-phase encounter rather than the old
+     quad-laser placeholder, and it must survive long enough to expose its reversal, beam and
+     critical attacks against a powered-up player. Its sub-50% vulnerability keeps the more
+     dangerous damaged half decisive instead of turning it into a grind.
 
      The quad-laser system is NOT deleted, only unassigned: nqx_ art, _qlCan per-cannon hitboxes
      and its charge attack all remain, so it can take another slot without being rebuilt. */
-  junglecruiser: {key:'nsb_jungle_cruiser', name:'JUNGLE CRUISER', w:168,h:168, hp:210, pat:'jungleburst', cd:1.05, mini:true, proj:'warhawk',
-                  mounts:{L:[-0.22,0.29],C:[0,0.43],R:[0.22,0.29]},
+  junglecruiser: {key:'nsb_jungle_cruiser', name:'JUNGLE CRUISER', w:168,h:168, hp:900, pat:'jungleburst', cd:1.05, mini:true, proj:'warhawk',
+                  /* Mike's three marked release points: the two underslung rocket pods and the
+                     nose emitter.  Damage vents sit on the inner wing roots so smoke remains
+                     bolted to metal while the aircraft banks, dives, reverses and orbits. */
+                  mounts:{L:[-0.22,0.29],C:[0,0.455],R:[0.22,0.29],SL:[-0.17,0.02],SR:[0.17,0.02]},
                   pats:['jungleburst','jungletempest']},
   /* ⚠ STAGE 6's MINIBOSS WAS A PLACEHOLDER WITH NO CASE AT ALL. SUBBOSS[6] named 'ss', and
      spawnSubBoss__inner's switch has no arm for it — so it fell through to the generic 130x120
@@ -10137,45 +10931,121 @@ const SHIPBOSS = {
 };
 
 /* ============================================================
-   STAGE 9 FINAL ENCOUNTER — RIFT WARDENS -> TIDAL SOVEREIGN
+   STAGE 9 MID-BOSS — THE TWO VIOLET/ION RIFT WARDENS
 
-   The two wardens are independent miniboss bodies with independent HP and regenerating authored
-   shields.  Reducing either one to its final hit forces both into the Gate Core before the pair
-   can be erased.  They converge as intact plates under the warp flare, then hand off to the
-   existing complete Tidal Sovereign plate.  This is a fusion of three authored whole units, never
-   a boss assembled from sliced body parts.
+   These are the two units shown in the old final encounter.  They now occupy the mid-stage gate
+   as a real pair: separate bodies, separate HP and separate fire clocks.  There is deliberately
+   no generic shield ring or regenerating shield HP.  Their movement and projectile patterns are
+   the defence; every hit on the visible hull is honest damage.
+   ============================================================ */
+function s9RiftWardensInit(b){
+  const T=(typeof combatThreat==='function')?combatThreat(9):{bossHp:1};
+  const each=Math.ceil(190*DIFF.eHp*(T.bossHp||1));
+  const mk=(side,x)=>({side,x,y:-120,w:172,h:172,hp:each,maxhp:each,disabled:false,
+    spin:side==='L'?-0.06:0.06,_fire:side==='L'?0.72:1.08,flash:0});
+  b.kind='riftwardens';b.name='RIFT WARDENS';b.x=VW/2;b.y=130;b.ty=130;
+  b.w=VW*0.82;b.h=188;b.hp=b.maxhp=each*2;b.enter=true;b.mini=false;
+  b._s9rift={t:0,left:mk('L',VW*.30),right:mk('R',VW*.70),hit:null};
+  if(typeof XART!=='undefined'&&XART._touch){
+    for(let i=0;i<4;i++){XART._touch('ns9_wardenL_'+i);XART._touch('ns9_wardenR_'+i);}
+  }
+  return true;
+}
+function s9RiftWardensPart(b,x,y){
+  const F=b&&b._s9rift;if(!F||b.enter)return null;
+  for(const w of [F.left,F.right]){
+    if(w.disabled)continue;
+    if(Math.abs(x-w.x)<w.w*.40&&Math.abs(y-w.y)<w.h*.40)return w;
+  }
+  return null;
+}
+function s9RiftWardensHit(b,dmg,x,y){
+  const F=b&&b._s9rift,w=s9RiftWardensPart(b,x==null?b.x:x,y==null?b.y:y);if(!F||!w)return false;
+  w.hp=Math.max(0,w.hp-dmg);w.flash=.16;b.hp=F.left.hp+F.right.hp;b.flash=.08;
+  if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
+  if(w.hp<=0&&!w.disabled){
+    w.disabled=true;explode(w.x,w.y,70,w.side==='L'?'purple':'blue');shake=Math.max(shake,8);
+    if(Audio.SFX&&Audio.SFX.expBig)Audio.SFX.expBig();
+  }
+  if(F.left.disabled&&F.right.disabled){b.hp=0;b.dead=true;b.dying=0;shake=Math.max(shake,12);}
+  return true;
+}
+function s9RiftWardensTick(b,dt){
+  const F=b._s9rift;if(!F)return false;F.t+=dt;
+  const p=clamp(F.t/1.35,0,1),ey=lerp(-120,132,p*p*(3-2*p));b.enter=p<1;
+  F.left.y=F.right.y=ey+Math.sin(b.t*1.8)*7;
+  F.left.x=VW*.30+Math.sin(b.t*1.12)*30;F.right.x=VW*.70-Math.sin(b.t*1.12)*30;
+  for(const w of [F.left,F.right]){
+    if(w.flash>0)w.flash=Math.max(0,w.flash-dt);
+    w.spin=Math.sin(b.t*1.7+(w.side==='R'?Math.PI:0))*.20;
+    if(!b.enter&&!w.disabled){w._fire-=dt*DIFF.eFire;if(w._fire<=0){s9FusionWardenFire(w,F.t);w._fire=rnd(.76,1.08);}}
+  }
+  b.hp=F.left.hp+F.right.hp;return true;
+}
+function s9RiftWardensDraw(b){
+  const F=b&&b._s9rift;if(!F||typeof XART==='undefined')return false;
+  for(const w of [F.left,F.right]){
+    const key='ns9_warden'+w.side+'_'+(w.disabled?3:(Math.floor(b.t*9)%4));
+    if(!XART.rdy(key))continue;
+    ctx.save();ctx.translate(w.x,w.y);ctx.rotate(w.spin||0);ctx.globalAlpha=w.disabled ? .58 : 1;
+    ctx.drawImage(XART.get(key),-w.w/2,-w.h/2,w.w,w.h);
+    if(w.flash>0&&typeof xartTint==='function'){
+      const hi=xartTint(key,'#ffffff',.88);if(hi){ctx.globalAlpha=clamp(w.flash/.16,0,1);ctx.drawImage(hi,-w.w/2,-w.h/2,w.w,w.h);}
+    }
+    ctx.restore();
+  }
+  screenBar(function(){
+    const bw=VW*.34,bh=7,y=31;
+    for(const w of [F.left,F.right]){
+      const x=w.side==='L'?VW*.08:VW*.58,r=clamp(w.hp/w.maxhp,0,1);
+      ctx.fillStyle='#06101b';ctx.fillRect(x,y,bw,bh);ctx.fillStyle=w.side==='L'?'#a35cff':'#39d9ff';ctx.fillRect(x+1,y+1,(bw-2)*r,bh-2);
+    }
+    ctx.fillStyle='#e8f6ff';ctx.font='8px "BOFmil", monospace';ctx.textAlign='center';ctx.fillText('RIFT WARDENS',VW/2,52);
+  });
+  return true;
+}
+
+/* ============================================================
+   STAGE 9 FINAL ENCOUNTER — TWIN WARP SENTINELS -> TIDAL SOVEREIGN
+
+   The true boss is the black-and-blue drone pair.  Both bodies have independent HP.  A defeated
+   drone remains visibly present and inert; only after BOTH are disabled do they converge, burst,
+   and forge the complete water-based Tidal Sovereign.  No unexplained shield rings are involved.
    ============================================================ */
 function s9FusionBossInit(b,baseHp){
-  const each=Math.ceil(baseHp*0.43),mk=(side,x,family)=>({side,x,y:-130,w:172,h:172,hp:each,maxhp:each,
-    spin:side==='L'?-0.08:0.08,_fire:rnd(0.75,1.25),_esh:null,family});
-  const L=mk('L',VW*0.31,'violet'),R=mk('R',VW*0.69,'ion');
-  enemyShieldEquip(L,L.family,Math.ceil(each*0.34),{drawScale:1.72});
-  enemyShieldEquip(R,R.family,Math.ceil(each*0.34),{drawScale:1.72});
-  b.kind='tidalfusion';b.name='RIFT WARDENS';b.w=VW*0.78;b.h=190;b.y=128;b.ty=128;b.enter=true;
+  const each=Math.ceil(baseHp*0.48),mk=(side,x)=>({side,x,y:-130,w:188,h:141,hp:each,maxhp:each,
+    spin:side==='L'?-0.06:0.06,_fire:rnd(.70,1.05),disabled:false,flash:0});
+  const L=mk('L',VW*.29),R=mk('R',VW*.71);
+  b.kind='tidalfusion';b.name='WARP SENTINELS';b.w=VW*.86;b.h=170;b.y=128;b.ty=128;b.enter=true;
   b.hp=L.hp+R.hp;b.maxhp=b.hp;
   b._s9fusion={phase:'twins',t:0,left:L,right:R,hit:null,baseHp:baseHp,gate:0};
   if(typeof XART!=='undefined'&&XART._touch){
-    for(let i=0;i<4;i++){XART._touch('ns9_wardenL_'+i);XART._touch('ns9_wardenR_'+i);XART._touch('ns9_gatecore_'+i);}
+    for(const k of ['ns9_warpsen_intact','ns9_warpsen_damaged','ns9_warpsen_critical'])XART._touch(k);
+    for(let i=0;i<4;i++)XART._touch('ns9_gatecore_'+i);
   }
   return true;
 }
 function s9FusionHitTest(b,x,y){
   const F=b&&b._s9fusion;if(!F||F.phase!=='twins'||b.enter)return false;
-  for(const w of [F.left,F.right]) if(Math.abs(x-w.x)<w.w*0.40&&Math.abs(y-w.y)<w.h*0.40){F.hit=w;return true;}
+  for(const w of [F.left,F.right]) if(!w.disabled&&Math.abs(x-w.x)<w.w*.42&&Math.abs(y-w.y)<w.h*.42){F.hit=w;return true;}
   F.hit=null;return false;
 }
 function s9FusionHit(b,dmg){
   const F=b&&b._s9fusion;if(!F||F.phase!=='twins'||!F.hit)return;
   const w=F.hit;F.hit=null;
-  if(enemyShieldIntercept(w,dmg,_dmgBullet))return;
-  w.hp=Math.max(1,w.hp-dmg);b.hp=F.left.hp+F.right.hp;b.flash=0.08;
+  if(w.disabled)return;
+  w.hp=Math.max(1,w.hp-dmg);w.flash=.16;b.hp=F.left.hp+F.right.hp;b.flash=.08;
   if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
-  /* One disabled warden cannot be killed and cannot abandon its partner: the emergency fusion is
-     the encounter's second phase and fires before either sprite could disappear. */
-  if(w.hp<=1 || b.hp<=b.maxhp*0.36){
+  if(w.hp<=1&&!w.disabled){
+    w.disabled=true;explode(w.x,w.y,54,'blue');shake=Math.max(shake,7);
+    if(Audio.SFX&&Audio.SFX.expBig)Audio.SFX.expBig();
+  }
+  /* The fusion is earned only after both drones have been defeated.  Each remains on screen at
+     one HP so neither can fade, despawn or contradict the cinematic before convergence. */
+  if(F.left.disabled&&F.right.disabled){
     F.phase='fuse';F.t=0;F.lx=F.left.x;F.rx=F.right.x;F.ly=F.left.y;F.ry=F.right.y;
-    b.name='RIFT CONVERGENCE';b.hp=Math.max(1,b.hp);shake=Math.max(shake,9);
-    if(Audio.SFX&&(Audio.SFX.warp||Audio.SFX.shieldBreakCombat))(Audio.SFX.warp||Audio.SFX.shieldBreakCombat)();
+    b.name='SENTINEL FUSION';b.hp=2;shake=Math.max(shake,10);
+    if(Audio.SFX&&(Audio.SFX.gravityTransform||Audio.SFX.warp))(Audio.SFX.gravityTransform||Audio.SFX.warp)();
   }
 }
 function s9FusionWardenFire(w,phase){
@@ -10184,11 +11054,13 @@ function s9FusionWardenFire(w,phase){
      counter-rotate from the encounter clock instead. */
   const rot=phase+(w.side==='L'?1:-1)*phase*1.85;
   if((Math.floor(phase*2)&1)===0){
-    for(let i=0;i<9;i++)eShoot(w.x,w.y+38,rot+i*TAU/9,2.45,'photon');
+    for(let i=0;i<10;i++){if(i===2||i===7)continue;eShootT(w.x,w.y+38,rot+i*TAU/10,2.75,'s9warp',{w:18,h:28,silent:i>0});}
   }else{
     const a=Math.atan2(player.y-w.y,player.x-w.x);
-    for(let i=-2;i<=2;i++)eShoot(w.x,w.y+38,a+i*0.13,3.25,'riftshot');
+    for(let i=-2;i<=2;i++)eShootT(w.x,w.y+38,a+i*0.13,3.75,'s9needle',{w:8,h:34,silent:i>-2});
   }
+  navalFlash(null,{x:w.x,y:w.y+38},.84,BPFX_MUZZLE_LASER,{n:8,hpx:52,life:.14,
+    follow:()=>w&&!w.disabled?{x:w.x,y:w.y+38}:null});
 }
 function s9FusionBossTick(b,dt){
   const F=b._s9fusion;if(!F||F.phase==='tidal')return false;F.t+=dt;
@@ -10196,10 +11068,11 @@ function s9FusionBossTick(b,dt){
     const enter=clamp(F.t/1.45,0,1),ey=lerp(-130,132,enter*enter*(3-2*enter));
     b.enter=enter<1;
     F.left.y=F.right.y=ey+Math.sin(b.t*1.7)*8;
-    F.left.x=VW*0.31+Math.sin(b.t*1.15)*34;F.right.x=VW*0.69-Math.sin(b.t*1.15)*34;
+    F.left.x=VW*.29+Math.sin(b.t*1.15)*28;F.right.x=VW*.71-Math.sin(b.t*1.15)*28;
     for(const w of [F.left,F.right]){
-      enemyShieldTick(w,dt);w.spin=Math.sin(b.t*1.65+(w.side==='R'?Math.PI:0))*0.22;
-      if(!b.enter){w._fire-=dt;if(w._fire<=0){s9FusionWardenFire(w,F.t);w._fire=rnd(0.72,1.05);}}
+      if(w.flash>0)w.flash=Math.max(0,w.flash-dt);
+      w.spin=Math.sin(b.t*1.65+(w.side==='R'?Math.PI:0))*.16;
+      if(!b.enter&&!w.disabled){w._fire-=dt*DIFF.eFire;if(w._fire<=0){s9FusionWardenFire(w,F.t);w._fire=rnd(.68,.98);}}
     }
     b.hp=F.left.hp+F.right.hp;
   }else if(F.phase==='fuse'){
@@ -10207,6 +11080,8 @@ function s9FusionBossTick(b,dt){
     F.left.x=lerp(F.lx,cx-22,k);F.right.x=lerp(F.rx,cx+22,k);
     F.left.y=lerp(F.ly,cy,k);F.right.y=lerp(F.ry,cy,k);
     F.left.spin-=dt*(1.8+5*k);F.right.spin+=dt*(1.8+5*k);F.gate=k;
+    if(F.t>=1.42&&!F.burstL){F.burstL=true;explode(F.left.x,F.left.y,92,'blue');if(Audio.SFX&&Audio.SFX.expBig)Audio.SFX.expBig();}
+    if(F.t>=1.64&&!F.burstR){F.burstR=true;explode(F.right.x,F.right.y,92,'blue');if(Audio.SFX&&Audio.SFX.expBig)Audio.SFX.expBig();}
     if(F.t>=2.05){
       flashScreen=Math.max(flashScreen,0.85);whiteBlast=Math.max(whiteBlast,0.65);shake=Math.max(shake,13);
       b.maxhp=F.baseHp;b.hp=F.baseHp;shipBossInit(b,'tidalsovereign');
@@ -10223,23 +11098,19 @@ function s9FusionBossTick(b,dt){
 }
 function s9FusionBossDraw(b){
   const F=b&&b._s9fusion;if(!F||F.phase==='tidal'||typeof XART==='undefined')return false;
-  const core='ns9_gatecore_'+(Math.floor(performance.now()/105)%4);
-  if(XART.rdy(core)){
+  const core='ns9_gatecore_'+(Math.floor(b.t*9)%4);
+  if(F.phase==='fuse'&&XART.rdy(core)){
     const z=145+105*(F.gate||0);ctx.save();ctx.globalCompositeOperation='lighter';
     ctx.drawImage(XART.get(core),VW/2-z/2,142-z/2,z,z);ctx.restore();
   }
   for(const w of [F.left,F.right]){
-    try{drawEnemyShieldBack(w);}catch(_s9b){}
-    const key='ns9_warden'+w.side+'_'+(Math.floor(b.t*9)%4);
+    const ratio=w.hp/w.maxhp,key=ratio>.58?'ns9_warpsen_intact':(ratio>.24?'ns9_warpsen_damaged':'ns9_warpsen_critical');
     if(XART.rdy(key)){
-      ctx.save();ctx.translate(w.x,w.y);ctx.rotate(w.spin||0);
+      ctx.save();ctx.translate(w.x,w.y);ctx.rotate(w.spin||0);ctx.globalAlpha=(w.disabled&&F.phase==='twins') ? .62 : 1;
       ctx.drawImage(XART.get(key),-w.w/2,-w.h/2,w.w,w.h);ctx.restore();
-    }
-    try{drawEnemyShieldFront(w);}catch(_s9f){}
-    if(F.phase==='twins'){
-      const bw=118,bh=7,r=clamp(w.hp/w.maxhp,0,1);
-      ctx.fillStyle='#07121d';ctx.fillRect(w.x-bw/2,w.y-w.h*0.47,bw,bh);
-      ctx.fillStyle=w.side==='L'?'#9f59ff':'#36d8ff';ctx.fillRect(w.x-bw/2+1,w.y-w.h*0.47+1,(bw-2)*r,bh-2);
+      if(w.flash>0&&typeof xartTint==='function'){
+        const hi=xartTint(key,'#ffffff',.9);if(hi){ctx.save();ctx.globalAlpha=clamp(w.flash/.16,0,1);ctx.drawImage(hi,w.x-w.w/2,w.y-w.h/2,w.w,w.h);ctx.restore();}
+      }
     }
   }
   return true;
@@ -10265,26 +11136,99 @@ function shipBossInit(b, kind){
         XART.rdy('bfx_'+D.proj+'_p_'+i); XART.rdy('bfx_'+D.proj+'_m_'+i);
       }
     }
-    if(kind==='stormsovereign') for(let i=0;i<4;i++) XART.rdy('nmz_3_'+i);
+    if(kind==='stormsovereign'||kind==='olivewarden'){
+      XART.rdy('s4w_drone_body');
+      for(let i=0;i<12;i++){
+        XART.rdy('s4w_boss_flight_'+i);XART.rdy('s4w_boss_charge_'+i);XART.rdy('s4w_boss_energized_'+i);
+        XART.rdy('s4w_lightning_orb_'+i);XART.rdy('s4w_lightning_shield_'+i);XART.rdy('s4w_node_teleport_'+i);
+      }
+      for(let i=0;i<16;i++){XART.rdy('s4w_power_node_'+i);XART.rdy('s4w_lightning_ball_'+i);}
+      for(let i=0;i<8;i++){
+        XART.rdy('s4w_drone_barrel_'+i);XART.rdy('s4w_spread_round_'+i);XART.rdy('s4w_lightning_lance_'+i);
+        XART.rdy('s4w_muzzle_mg_'+i);XART.rdy('s4w_muzzle_orb_'+i);XART.rdy('s4w_muzzle_lightning_'+i);
+        XART.rdy('s4w_final_chaingun_'+i);XART.rdy('s4w_final_chaingun_core_'+i);XART.rdy('s4w_lightning_mg_round_'+i);
+      }
+      for(let i=0;i<6;i++)XART.rdy('s4w_mg_round_'+i);
+    }
+    if(kind==='magmaward'){
+      for(let i=0;i<12;i++){ XART.rdy('mwfx_flamethrower_'+i); XART.rdy('mwfx_flame_laser_'+i); }
+      for(let i=0;i<8;i++){
+        XART.rdy('mwfx_fireball_charge_'+i); XART.rdy('mwfx_fireball_'+i); XART.rdy('mwfx_fire_shield_'+i);
+      }
+    }
+    if(kind==='infernoreaver'){
+      for(let i=0;i<8;i++){XART.rdy('l23fx_inferno_mg_'+i);XART.rdy('l23fx_inferno_shotgun_'+i);}
+      for(let i=0;i<12;i++)XART.rdy('l23fx_inferno_laser_'+i);
+      for(let i=0;i<12;i++)XART.rdy('mwfx_flamethrower_'+i);
+      for(let i=0;i<8;i++){XART.rdy('mwfx_fireball_charge_'+i);XART.rdy('mwfx_fire_shield_'+i);}
+    }
+    if(kind==='rimewall'||kind==='cryospear'){
+      for(let i=0;i<8;i++){XART.rdy('l23fx_cryo_ball_'+i);XART.rdy('l23fx_rime_orb_'+i);}
+      for(let i=0;i<12;i++)XART.rdy('l23fx_rime_laser_'+i);
+    }
+    if(kind==='xenoregent'){
+      for(let i=0;i<8;i++){
+        XART.rdy('s5atk_twin_station_'+i);XART.rdy('s5atk_heavy_interceptor_'+i);
+      }
+      for(let i=0;i<12;i++)XART.rdy('s5fracture_'+i);
+    }
+    if(kind==='blacksteel'){
+      for(let i=0;i<8;i++){
+        XART.rdy('s6atk_lightning_mine_'+i);XART.rdy('s6atk_reactor_storm_bomber_'+i);
+        XART.rdy('s6mb_cyclonemuzzle_'+i);
+      }
+    }
   } }catch(_sb){}
   if(kind==='heralddeath' && typeof heraldDeathInit==='function') heraldDeathInit(b,D);
+  if(kind==='dualscoopdredger'){
+    b._s7dredger=true;
+    try{for(let i=0;i<8;i++)XART.rdy('s7atk_dual_scoop_dredger_'+i);for(let i=0;i<12;i++)XART.rdy('s7spore_'+i);}catch(_s7load){}
+  }
+  if(kind==='junglecruiser' && typeof jungleCruiserInit==='function') jungleCruiserInit(b);
+  if((kind==='rimewall'||kind==='cryospear') && typeof stage3BossInit==='function') stage3BossInit(b);
+  if((kind==='stormsovereign'||kind==='olivewarden') && typeof stage4WarfareInit==='function') stage4WarfareInit(b);
+  if(kind==='xenoregent'&&typeof xenoRegentInit==='function')xenoRegentInit(b);
+  if(kind==='blacksteel'&&run.stage===6&&typeof stage6MiniInit==='function')stage6MiniInit(b);
+  if((kind==='magmaward'||kind==='infernoreaver') && typeof magmaWardBarrierInit==='function')magmaWardBarrierInit(b);
   return true;
 }
 /* Fire/lava hulls own the authored magma orb on every volley, not only on their signature attack.
    This is deliberately keyed by ship identity: changing the whole Stage-2 palette would also turn
    unrelated bullets into magma. */
 const MAGMA_SHIP_SHOT={infernoreaver:1,magmaward:1,siegeember:1,lavamaw:1};
+const ICE_SHIP_SHOT={cryospear:1,rimewall:1};
+const S4_SHIP_SHOT={olivewarden:1};
+const S6_SHIP_SHOT={blacksteel:1};
 function shipShotKind(owner){
-  return owner && MAGMA_SHIP_SHOT[owner._ship] ? 'magma' : 'eshot';
+  if(owner&&MAGMA_SHIP_SHOT[owner._ship]) return 'magma';
+  if(owner&&ICE_SHIP_SHOT[owner._ship]){
+    if(owner._sbPat==='rime') return owner._ship==='rimewall'?'s3mortar':'s3shard';
+    if(owner._sbPat==='chargebeam') return 's3wave';
+    if(owner._sbPat==='beamfan') return owner._ship==='rimewall'?'s3wave':'s3lance';
+    return 's3lance';
+  }
+  if(owner&&S4_SHIP_SHOT[owner._ship]) return owner._sbPat==='ember'?'s4rail':'s4missile';
+  if(owner&&S6_SHIP_SHOT[owner._ship]) return owner._sbPat==='stormbolts'?'s6bolt':'s6prism';
+  return 'eshot';
 }
 /* one bullet, on the file's own contract: slow, readable, scaled by difficulty SPEED */
 function _shipShot(x,y,vx,vy,w,owner){
   const sp=(typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1;
+  /* STORM SOVEREIGN is a forward-gun jet. Every ordinary round leaves vertically south and
+     holds that lane; its attack difficulty comes from column placement and cadence, not aimed
+     diagonals that chase the player's last position. This choke point also covers pincer2. */
+  if(owner&&owner._ship==='stormsovereign'){
+    const forward=Math.max(0.01,Math.hypot(vx||0,vy||0));vx=0;vy=forward;
+  }
   const D=owner&&owner._ship?SHIPBOSS[owner._ship]:null;
   const kind=shipShotKind(owner), herald=owner&&owner._herald;
-  eBullets.push({x:x, y:y, vx:vx*sp, vy:vy*sp, w:w||11, h:w||11, dmg:1, t:0, kind:kind,
+  const hb=(typeof S3_PROJECTILE_HIT!=='undefined'&&S3_PROJECTILE_HIT[kind])?S3_PROJECTILE_HIT[kind]:
+    ((typeof S4_PROJECTILE_HIT!=='undefined'&&S4_PROJECTILE_HIT[kind])?S4_PROJECTILE_HIT[kind]:
+    ((typeof S6_PROJECTILE_HIT!=='undefined'&&S6_PROJECTILE_HIT[kind])?S6_PROJECTILE_HIT[kind]:[w||11,w||11]));
+  eBullets.push({x:x, y:y, vx:vx*sp, vy:vy*sp, w:hb[0], h:hb[1], dmg:1, t:0, kind:kind,
                  _boss:!!(owner&&D&&D.proj), _bfam:(D&&D.proj)||null,
-                 _noArsenal:kind==='magma'||!!herald,
+                 _l23fx:(owner&&owner._shotFx)||null,
+                 _noArsenal:!!(owner&&owner._shotFx)||kind==='magma'||!!ICE_SHIP_SHOT[owner&&owner._ship]||!!S4_SHIP_SHOT[owner&&owner._ship]||!!S6_SHIP_SHOT[owner&&owner._ship]||!!herald,
                  _heraldProjectile:herald ? (herald.attack==='special_attack'?'special':'primary') : null});
 }
 function shipBossMount(b, slot){
@@ -10304,8 +11248,22 @@ function shipBossMuzzleStart(b, slots, opts){
           hpx:(opts&&opts.hpx)||null, anchor:(opts&&opts.anchor)};
 }
 function shipBossPatternSlots(pat, step){
+  if(/^s5regent/.test(pat)||/^s9tidal/.test(pat)||/^s9sentinel/.test(pat)) return ['L','C','R'];
+  if(pat==='s3spearburst'||pat==='s3spearcross') return ['L','R'];
+  if(pat==='s3spearcore') return ['C'];
+  if(pat==='s3wallcannons') return ['L','R'];
+  if(pat==='s3wallgate') return ['TL','TR'];
+  if(pat==='s3wallhalo'||pat==='s3walloverdrive') return ['C'];
+  if(pat==='magmaforge') return [['L','R','C'][(step-1)%3]];
+  if(pat==='magmacross'||pat==='infernogate'||pat==='infernoburst'||pat==='infernostorm') return ['L','C','R'];
+  if(pat==='magmaflamelaser') return ['L','R'];
+  if(pat==='magmaflame'||pat==='magmafireball'||pat==='magmafireshield') return ['C'];
   if(pat==='stormmg') return ['MG_L','MG_R'];
   if(pat==='stormbolts') return ['EL','C','ER'];
+  if(pat==='s4warburst'||pat==='s4waroverdrive') return ['MG_L','MG_R'];
+  if(pat==='s4orblift') return ['ORB_L','ORB_R'];
+  if(pat==='s4lightning') return ['EL','C','ER'];
+  if(pat==='s4wargate'||pat==='s4wardrones') return ['L','C','R'];
   if(pat==='void'||pat==='pincer2'||pat==='lance'||pat==='mslhome') return ['L','R'];
   if(pat==='beamfan'||pat==='mslfan'||pat==='ember') return ['L','C','R'];
   if(pat==='siege') return (step%2)===0?['L']:['R'];
@@ -10327,8 +11285,25 @@ function shipBossPatternSlots(pat, step){
 const SHIP_ACTION_PROFILE={
   jungleburst:{tell:0.16,recover:0.14,kick:4,shake:1},
   jungletempest:{tell:0.38,recover:0.24,kick:6,shake:2},
+  magmaforge:{tell:0.30,recover:0.20,kick:6,shake:2},
+  magmacross:{tell:0.38,recover:0.24,kick:8,shake:3},
+  /* These profiles only introduce the hull's anticipation beat. The authored effect controller
+     below owns the longer visible charge/sustain/recovery timing for each weapon. */
+  magmaflame:{tell:0.16,recover:0.12,kick:7,shake:2},
+  magmaflamelaser:{tell:0.18,recover:0.14,kick:9,shake:3},
+  magmafireball:{tell:0.18,recover:0.14,kick:8,shake:3},
+  magmafireshield:{tell:0.16,recover:0.13,kick:6,shake:2},
+  infernogate:{tell:0.34,recover:0.22,kick:7,shake:2},
+  infernoburst:{tell:0.25,recover:0.18,kick:5,shake:2},
+  infernostorm:{tell:0.42,recover:0.27,kick:9,shake:3},
   stormmg:{tell:0.14,recover:0.16,kick:3,shake:1},
   stormbolts:{tell:0.28,recover:0.22,kick:6,shake:2},
+  s4warburst:{tell:0.16,recover:0.13,kick:4,shake:2},
+  s4wargate:{tell:0.30,recover:0.20,kick:6,shake:2},
+  s4wardrones:{tell:0.36,recover:0.24,kick:5,shake:2},
+  s4orblift:{tell:0.42,recover:0.28,kick:8,shake:3},
+  s4lightning:{tell:0.64,recover:0.32,kick:11,shake:5},
+  s4waroverdrive:{tell:0.12,recover:0.10,kick:5,shake:3},
   ember:{tell:0.36,recover:0.24,kick:7,shake:2},
   siege:{tell:0.34,recover:0.22,kick:7,shake:2},
   lance:{tell:0.30,recover:0.20,kick:6,shake:2},
@@ -10343,6 +11318,30 @@ const SHIP_ACTION_PROFILE={
   mslhome:{tell:0.32,recover:0.23,kick:6,shake:2},
   spawnpods:{tell:0.27,recover:0.20,kick:4,shake:1},
   deathlattice:{tell:0.31,recover:0.23,kick:6,shake:2}
+  ,s3spearburst:{tell:.18,recover:.16,kick:4,shake:1}
+  ,s3spearcross:{tell:.30,recover:.22,kick:6,shake:2}
+  ,s3spearcore:{tell:.48,recover:.28,kick:8,shake:3}
+  ,s3wallcannons:{tell:.26,recover:.22,kick:7,shake:2}
+  ,s3wallgate:{tell:.38,recover:.25,kick:8,shake:3}
+  ,s3wallhalo:{tell:.54,recover:.30,kick:9,shake:3}
+  ,s3walloverdrive:{tell:.62,recover:.34,kick:11,shake:4}
+  ,s7dredge:{tell:0.30,recover:0.21,kick:6,shake:2}
+  ,s7spore:{tell:0.48,recover:0.28,kick:8,shake:3}
+  ,s7pressure:{tell:0.31,recover:0.22,kick:6,shake:2}
+  ,s7flood:{tell:0.39,recover:0.25,kick:8,shake:3}
+  ,s7crown:{tell:0.48,recover:0.28,kick:9,shake:3}
+  ,s7purge:{tell:0.34,recover:0.23,kick:8,shake:3}
+  ,s5regentgrid:{tell:.30,recover:.21,kick:6,shake:2}
+  ,s5regenthalo:{tell:.48,recover:.28,kick:9,shake:3}
+  ,s5regentmissile:{tell:.36,recover:.24,kick:8,shake:3}
+  ,s5regentcollapse:{tell:.28,recover:.19,kick:7,shake:3}
+  ,s9sentinelcross:{tell:.24,recover:.17,kick:5,shake:2}
+  ,s9sentinelgate:{tell:.38,recover:.23,kick:7,shake:3}
+  ,s9sentinelrush:{tell:.20,recover:.15,kick:6,shake:2}
+  ,s9tidalguard:{tell:.31,recover:.21,kick:7,shake:2}
+  ,s9tidallattice:{tell:.49,recover:.28,kick:10,shake:4}
+  ,s9tidalcomet:{tell:.38,recover:.24,kick:9,shake:3}
+  ,s9tidalstorm:{tell:.27,recover:.18,kick:8,shake:4}
 };
 function shipBossCurrentPattern(b){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null; if(!D) return null;
@@ -10358,6 +11357,13 @@ function shipBossActionProfile(b, pat){
 }
 function shipBossQueueAttack(b){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null; if(!D||b.dead||b.enter) return false;
+  if(b._s7Flood){b.fireCd=Math.max(b.fireCd||0,.22);return false;}
+  if(b._mwAttack||b._irRoll||b._irPass){b.fireCd=Math.max(b.fireCd||0,.18);return false;}
+  if(b._s3boss&&(b._s3boss.volley||b._s3boss.charge||b._s3boss.cannonSeq)){
+    /* A delayed Stage-3 volley is one authored action. Never let the next cooldown overwrite its
+       final release beat; wait for the muzzle/charge sequence to finish, then queue the next tell. */
+    b.fireCd=Math.max(b.fireCd||0,.14);return false;
+  }
   /* Authored carrier reels own both timing and release. Do not put a synthetic tell in front. */
   if(D.launch){ shipBossAttack(b); return true; }
   if(b._sba) return false;
@@ -10367,7 +11373,8 @@ function shipBossQueueAttack(b){
   /* The Jungle Cruiser owns a green wind telegraph; other ships use their registered boss reel. */
   if(b._ship==='junglecruiser'){
     const _jm=shipBossMount(b,'C');
-    navalFlash(null,_jm,1.0,'s1fx_wind_vortex',{n:6,hpx:76,life:A.tell,anchor:0.5});
+    navalFlash(null,_jm,1.0,'s1fx_wind_vortex',{n:6,hpx:76,life:A.tell,anchor:0.5,
+      follow:()=>shipBossMount(b,'C')});
   } else shipBossMuzzleStart(b,shipBossPatternSlots(pat,(b._sbStep|0)+1),{life:A.tell,n:6});
   if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossWeaponCharge) Audio.SFX.bossWeaponCharge();
   return true;
@@ -10416,6 +11423,28 @@ function shipBossVisualPose(b){
     x+=wall?0:wave*4; y-=Math.sin((1-p)*Math.PI)*7; sx+=0.035*p; sy+=0.035*p;
   }
   if((b._sbaHitT||0)>0){ const h=b._sbaHitT/0.12; x+=(wall?0:Math.sin(h*Math.PI*5)*2.5); }
+  if(b._s3boss){
+    /* Spear attacks bank harder; Wall attacks brace and swell around the core charge. The same
+       transform continues into shipBossMount, keeping all flashes locked to the moving plate. */
+    const S=b._s3boss;
+    if(S.role==='spear') rot+=(b._sbaBank||0)*.055;
+    if(S.charge){const q=clamp(S.charge.t/Math.max(.01,S.charge.dur),0,1),pulse=Math.sin(q*Math.PI);
+      y-=pulse*(S.role==='wall'?4:7);sx+=pulse*(S.role==='wall'?.018:.028);sy-=pulse*.012;}
+  }
+  if(b._mwAttack&&b._mwAttack.poseRot)rot+=b._mwAttack.poseRot;
+  if(b._irRoll&&b._irRoll.poseRot)rot+=b._irRoll.poseRot;
+  if(b._irPass&&b._irPass.poseRot)rot+=b._irPass.poseRot;
+  /* The Jungle Cruiser's northbound pass is the same authored aircraft physically turning
+     around, not a flipped projectile or a second sprite.  Its dedicated director owns this
+     rotation; every hardpoint is transformed by this same pose, so the marked muzzles cannot
+     detach during the reversal, beam sweep or enraged orbit. */
+  if(b._ship==='junglecruiser' && b._jc){
+    rot+=(b._jc.rot||0);
+    if(b._jc.thrust){ const q=clamp(b._jc.thrust,0,1); sy-=q*0.025; sx+=q*0.018; }
+  }
+  if(b._s4war){
+    rot+=(b._s4war.poseRot||0);const z=b._s4war.scale||1;sx*=z;sy*=z;
+  }
   return {x:x,y:y,rot:rot,sx:sx,sy:sy};
 }
 function shipBossMuzzleTick(b, dt){
@@ -10439,6 +11468,244 @@ function shipBossMuzzleDraw(b){
   ctx.restore();
 }
 
+/* ============================================================
+   STAGE 3 — CRYO SPEAR / RIME WALL ROLE-SWAP COMBAT (0830)
+
+   The encounter ids remain `rimewall` (mid-stage) and `cryospear` (end-stage), but their
+   SHIPBOSS plates above are intentionally exchanged. This controller makes the promoted bodies
+   fight like what they now look like:
+
+     CRYO SPEAR miniboss  fast alternating wing bursts, crossing lances, charged nose volley
+     RIME WALL main boss  twin siege cannons, raised-battery gate, core halo, overdrive fan
+
+   Every projectile is an existing Stage-3 physics family wearing the boss's authored cryo or
+   glacier bfx reel. Every release starts at a measured mount and owns a following muzzle reel.
+   There is no homing and no post-launch turn: the tell always predicts the dodge lane. */
+function stage3BossInit(b){
+  if(!b||(b._ship!=='rimewall'&&b._ship!=='cryospear'))return;
+  b._s3boss={role:b._ship==='rimewall'?'spear':'wall',volley:null,charge:null,cannonSeq:null,cannonGlow:null,
+    damaged:false,critical:false,blastCd:.18,blasts:[],shots:0,muzzles:0,lastPattern:null,
+    patternsSeen:Object.create(null),kinds:Object.create(null),releaseLog:[]};
+  try{if(typeof XART!=='undefined'&&XART._touch){
+    const D=SHIPBOSS[b._ship];
+    for(let i=0;i<6;i++){XART._touch('bfx_'+D.proj+'_p_'+i);XART._touch('bfx_'+D.proj+'_m_'+i);}
+    for(let i=0;i<8;i++){XART._touch((typeof SMOKE_FAM!=='undefined'?SMOKE_FAM:'nsd_chim')+'_'+i);XART._touch('nxp_dense_'+i);}
+  }}catch(_s3bl){}
+}
+function stage3BossMuzzle(b,slot,kind,scale,life){
+  if(!b||!b._s3boss||typeof navalFlash!=='function')return;
+  const D=SHIPBOSS[b._ship],p=shipBossMount(b,slot);
+  const kinetic=kind==='s3tracer',fam=kinetic?BPFX_MUZZLE_KINETIC:'bfx_'+D.proj+'_m',n=kinetic?8:6;
+  navalFlash(null,p,scale||.88,fam,{n:n,hpx:kinetic?42:(b._s3boss.role==='wall'?62:48),
+    life:life||.16,anchor:.36,follow:()=>b&&!b.dead?shipBossMount(b,slot):null});
+  b._s3boss.muzzles++;
+  b._s3boss.releaseLog.push({type:'muzzle',slot:slot,x:p.x,y:p.y,t:b.t||0});
+  if(b._s3boss.releaseLog.length>80)b._s3boss.releaseLog.shift();
+}
+function stage3BossShot(b,slot,ang,spd,kind,opt){
+  opt=opt||{};const D=SHIPBOSS[b._ship],p=shipBossMount(b,slot),hb=S3_PROJECTILE_HIT[kind]||[10,18];
+  const q=eShootT(p.x,p.y,ang,spd,kind,{w:opt.w||hb[0],h:opt.h||hb[1],szMul:opt.szMul||1,silent:!!opt.silent});
+  q._boss=true;q._bfam=D.proj;q._s3BossRole=b._s3boss.role;
+  /* CRYO SPEAR owns compact rotating ice balls; RIME WALL owns the heavier reactor orbs.
+     Physics and hitboxes remain per attack kind, only the boss-authored visual family changes. */
+  q._l23fx=b._s3boss.role==='spear'?'cryo_ball':'rime_orb';q._noArsenal=true;
+  if(opt.accel){q._s3Accel=opt.accel;q._s3Max=opt.max||spd*1.9;}
+  /* RIME WALL'S ORBS ARE DODGE HAZARDS, NOT MISSILES. Keep one authored plate and rotate that
+     plate as a rigid ice mechanism; frame cycling made the silhouette pulse, while `_shootable`
+     also injected missile exhaust and let player fire erase the pattern shown by the muzzle. */
+  if(b._s3boss.role==='wall'){
+    q._s3StaticSpin=true;q._shootable=false;q.hp=undefined;
+  }else if(opt.shootable){q._shootable=true;q.hp=opt.hp||1;}
+  b._s3boss.shots++;
+  b._s3boss.kinds[kind]=(b._s3boss.kinds[kind]||0)+1;
+  b._s3boss.releaseLog.push({type:'shot',slot:slot,x:p.x,y:p.y,t:b.t||0});
+  if(b._s3boss.releaseLog.length>80)b._s3boss.releaseLog.shift();
+  return q;
+}
+function stage3BossQueueVolley(b,events,duration){
+  if(!b||!b._s3boss)return;
+  b._s3boss.volley={t:0,i:0,events:events||[],duration:duration||1};
+}
+function stage3BossFireEvent(b,e){
+  const p=shipBossMount(b,e.slot||'C');
+  if(e.ring){
+    const n=e.n||16,step=TAU/n,base=e.base||0,target=aimPlayer(p.x,p.y);
+    const gap=Math.round((target-base)/step),half=e.gap==null?1:e.gap;
+    let first=true;
+    for(let i=0;i<n;i++){
+      let d=Math.abs((i-gap+n*4)%n);d=Math.min(d,n-d);if(d<=half)continue;
+      stage3BossShot(b,e.slot||'C',base+i*step,e.sp||2.4,e.kind||'s3mortar',
+        {silent:!first||e.audio===false,szMul:e.szMul||1,accel:e.accel,max:e.max});first=false;
+    }
+  }else{
+    const base=e.aim?aimPlayer(p.x,p.y):(e.base==null?Math.PI/2:e.base),offs=e.offs||[0];
+    for(let i=0;i<offs.length;i++)stage3BossShot(b,e.slot||'C',base+offs[i],e.sp||3,e.kind||'s3shard',
+      {silent:i>0||e.audio===false,szMul:e.szMul||1,accel:e.accel,max:e.max,shootable:e.shootable,hp:e.hp});
+  }
+  stage3BossMuzzle(b,e.slot||'C',e.kind,e.muzzleScale,e.muzzleLife);
+}
+function stage3BossTick(b,dt){
+  const S=b&&b._s3boss;if(!S)return;
+  const frac=clamp(b.hp/Math.max(1,b.maxhp),0,1);
+  S.damaged=frac<=.52;S.critical=frac<=.25;
+  if(S.volley){
+    const V=S.volley;V.t+=dt;
+    while(V.i<V.events.length&&V.t+0.0001>=V.events[V.i].at){stage3BossFireEvent(b,V.events[V.i]);V.i++;}
+    if(V.i>=V.events.length&&V.t>=V.duration)S.volley=null;
+  }
+  /* RIME WALL'S visible left/right cannons speak one at a time. Each laser locks its line during
+     the charge, finishes fully, then hands the attack channel to the opposite cannon. */
+  if(S.cannonSeq){
+    const C=S.cannonSeq;C.t+=dt;
+    if(C.beamLive&&!b._l23Beam){C.beamLive=false;C.next=C.t+.14;}
+    if(!C.beamLive&&C.i<C.count&&!b._l23Beam&&C.t>=C.next){
+      /* Mike's blue diagram is literal lane geometry: each cannon speaks separately and its beam
+         travels due south. It never samples the player's x position, so the line shown during the
+         tell is the line that becomes dangerous. */
+      const order=C.slots&&C.slots.length?C.slots:['L','R'],slot=order[C.i%order.length],a=Math.PI/2;
+      if(l23BossBeamStart(b,'rime',[slot],[a],C.warm||.24,C.active||.38,C.retract||.14,C.width||27)){
+        S.cannonGlow={slot:slot,t:(C.warm||.24)+(C.active||.38)};C.i++;C.beamLive=true;
+      }
+    }
+    if(!C.beamLive&&C.i>=C.count&&!b._l23Beam&&C.t>=C.next){
+      const giant=!!C.finishCharge;S.cannonSeq=null;
+      if(giant){S.charge={t:0,dur:1.12,slot:'C',kind:'giantOrb',released:false};
+        if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyElectricBolt))(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyElectricBolt)();}
+    }
+  }
+  if(S.cannonGlow){S.cannonGlow.t-=dt;if(S.cannonGlow.t<=0)S.cannonGlow=null;}
+  if(S.charge){
+    const C=S.charge;C.t+=dt;
+    if(C.kind==='giantOrb'&&!C.released&&C.t>=C.dur){
+      C.released=true;const p=shipBossMount(b,C.slot||'C'),a=aimPlayer(p.x,p.y);
+      const q=stage3BossShot(b,C.slot||'C',a,1.38,'s3mortar',{w:68,h:68,szMul:2.25,accel:.92,max:5.35,silent:true});
+      q._s3Giant=true;q._s3StaticSpin=true;q._shootable=false;q.hp=undefined;
+      stage3BossMuzzle(b,C.slot||'C','s3mortar',1.72,.28);
+      if(Audio.SFX&&(Audio.SFX.enemyElectricBolt||Audio.SFX.enemyIceBolt||Audio.SFX.enemyBossCannon))
+        (Audio.SFX.enemyElectricBolt||Audio.SFX.enemyIceBolt||Audio.SFX.enemyBossCannon)();
+      shake=Math.max(shake,8);
+    }
+    if(C.t>=C.dur+.38)S.charge=null;
+  }
+  for(const z of S.blasts)z.t+=dt;
+  S.blasts=S.blasts.filter(z=>z.t<z.life);
+  if(S.critical&&!b.dead){
+    S.blastCd-=dt;
+    if(S.blastCd<=0){
+      S.blastCd=S.role==='wall'?.34:.43;
+      S.blasts.push({ox:rnd(-.31,.31),oy:rnd(-.18,.28),t:0,life:rnd(.42,.64),s:rnd(.72,1.08)});
+      if(S.blasts.length>7)S.blasts.shift();
+    }
+  }
+}
+function stage3BossAttack(b,pat,step,ph,cdMul){
+  const S=b._s3boss;if(!S)return false;S.lastPattern=pat;S.patternsSeen[pat]=(S.patternsSeen[pat]||0)+1;
+  const ev=[];
+  if(pat==='s3spearburst'){
+    /* CRYO SPEAR follows the small blue diagram: left, centre, right (or the mirrored order), one
+       straight laser at a time. The compact miniboss gets shorter holds than Rime Wall, but the
+       same readable no-tracking contract. */
+    S.cannonSeq={t:0,i:0,next:0,count:3,finishCharge:false,
+      slots:(step&1)?['L','C','R']:['R','C','L'],warm:.18,active:.28,retract:.12,width:22};
+    b.fireCd=2.42*cdMul;
+  }else if(pat==='s3spearcross'){
+    /* Mirrored lances cross once, then reopen. Their acceleration is strictly along the launch
+       ray, so the two announced corridors never bend after the flash. */
+    ev.push({at:0,slot:'L',base:Math.PI/2,offs:[-.10,-.25,-.40],sp:2.10,kind:'s3lance',accel:1.55,max:5.8,shootable:true});
+    ev.push({at:0,slot:'R',base:Math.PI/2,offs:[.10,.25,.40],sp:2.10,kind:'s3lance',accel:1.55,max:5.8,shootable:true,audio:false});
+    ev.push({at:.34,slot:'L',base:Math.PI/2,offs:[.05,.20,.35],sp:2.35,kind:'s3lance',accel:1.35,max:5.5,shootable:true});
+    ev.push({at:.34,slot:'R',base:Math.PI/2,offs:[-.05,-.20,-.35],sp:2.35,kind:'s3lance',accel:1.35,max:5.5,shootable:true,audio:false});
+    stage3BossQueueVolley(b,ev,.72);b.fireCd=1.12*cdMul;
+  }else if(pat==='s3spearcore'){
+    S.charge={t:0,dur:.78,slot:'C'};
+    /* The nose now releases a real continuous ice laser after the charge rather than three
+       oversized pellets pretending to be a beam. Aim commits at charge start and never tracks. */
+    {const C=shipBossMount(b,'C');l23BossBeamStart(b,'rime',['C'],[aimPlayer(C.x,C.y)],.78,.78,.20,34);}
+    ev.push({at:.91,slot:'L',base:Math.PI/2,offs:[-.24,-.08],sp:4.20,kind:'s3lance',accel:1.0,max:5.9,shootable:true,audio:false});
+    ev.push({at:.91,slot:'R',base:Math.PI/2,offs:[.08,.24],sp:4.20,kind:'s3lance',accel:1.0,max:5.9,shootable:true,audio:false});
+    stage3BossQueueVolley(b,ev,1.76);b.fireCd=1.92*cdMul;
+  }else if(pat==='s3wallcannons'){
+    /* Five individually timed vertical lanes mirror the supplied boss pattern. Direction alternates
+       on repeat so the player cannot camp the lane that fired first, then the centre reactor forges
+       the giant orb already approved in the previous pass. */
+    S.cannonSeq={t:0,i:0,next:0,count:5,finishCharge:true,
+      slots:(step&1)?['L','C','R','C','L']:['R','C','L','C','R'],warm:.28,active:.46,retract:.16,width:44};
+    b.fireCd=5.02*cdMul;
+  }else if(pat==='s3wallgate'){
+    /* Raised batteries weave three fixed X-gates. The centre opening changes width, not direction,
+       so the player reads one geometry and moves with it instead of reacting to homing. */
+    const shifts=[-.06,.08,-.13];
+    for(let k=0;k<3;k++){
+      ev.push({at:k*.31,slot:'TL',base:Math.PI/2+shifts[k],offs:[-.42,-.27,-.12],sp:3.05,kind:'s3lance',accel:.65,max:4.8,shootable:true,audio:true});
+      ev.push({at:k*.31,slot:'TR',base:Math.PI/2-shifts[k],offs:[.12,.27,.42],sp:3.05,kind:'s3lance',accel:.65,max:4.8,shootable:true,audio:false});
+    }
+    stage3BossQueueVolley(b,ev,.96);b.fireCd=1.24*cdMul;
+  }else if(pat==='s3wallhalo'){
+    S.charge={t:0,dur:1.02,slot:'C',kind:'giantOrb',released:false};
+    if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyElectricBolt))(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyElectricBolt)();
+    b.fireCd=1.62*cdMul;
+  }else if(pat==='s3walloverdrive'){
+    /* Final form: the core visibly charges, releases a seven-crescent denial fan, then the twin
+       barrels punch a fast shell pair through the gap. Dense, but every layer has its own beat. */
+    S.charge={t:0,dur:.94,slot:'C'};
+    l23BossBeamStart(b,'rime',['TL','C','TR'],[Math.PI/2-.31,Math.PI/2,Math.PI/2+.31],.94,.84,.22,46);
+    ev.push({at:1.16,slot:'L',aim:true,offs:[-.09],sp:4.65,kind:'s3shell',accel:1.75,max:7.0,shootable:true,hp:2});
+    ev.push({at:1.16,slot:'R',aim:true,offs:[.09],sp:4.65,kind:'s3shell',accel:1.75,max:7.0,shootable:true,hp:2,audio:false});
+    stage3BossQueueVolley(b,ev,2.02);b.fireCd=2.12*cdMul;
+  }else return false;
+  return true;
+}
+function stage3BossDrawOver(b){
+  const S=b&&b._s3boss,D=b&&SHIPBOSS[b._ship];if(!S||!D||typeof XART==='undefined')return;
+  /* The charge is an authored animated boss muzzle centred on the real luminous core/nose. */
+  if(S.charge){
+    const q=clamp(S.charge.t/Math.max(.01,S.charge.dur),0,1),fi=clamp(Math.floor(q*6),0,5);
+    const key='bfx_'+D.proj+'_m_'+fi,p=shipBossMount(b,S.charge.slot||'C');
+    if(XART.rdy(key)){
+      const im=XART.get(key),base=S.role==='wall'?92:66,sz=base*(.56+.52*q)+Math.sin((b.t||0)*18)*3;
+      ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.46+.46*q;ctx.drawImage(im,p.x-sz/2,p.y-sz*.38,sz,sz);ctx.restore();
+    }
+    if(S.charge.kind==='giantOrb'){
+      /* Crisp internal circuitry climbing toward the reactor. These are deliberately unblurred
+         pixel blocks inside the hull silhouette—not a procedural halo around the sprite. */
+      const core=shipBossMount(b,'C'),phase=(b.t||0)*13;
+      const paths=[[-.31,.20],[-.23,.10],[-.15,.02],[-.08,-.07],[.31,.20],[.23,.10],[.15,.02],[.08,-.07],[-.05,.25],[.05,.25]];
+      ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalCompositeOperation='lighter';
+      for(let i=0;i<paths.length;i++){
+        const on=clamp(q*1.35-(i%5)*.14,0,1);if(on<=0)continue;
+        const x=b.x+b.w*paths[i][0],y=(b._drawY!=null?b._drawY:b.y)+b.h*paths[i][1];
+        const s=3+((i+Math.floor(phase))&1)*2;ctx.globalAlpha=.45+.50*on;
+        ctx.fillStyle=(i&1)?'#d9fbff':'#5cecff';ctx.fillRect(Math.round(x-s/2),Math.round(y-s/2),s,s);
+      }
+      const cs=10+q*18+Math.sin(phase)*2;ctx.globalAlpha=.62+.34*q;ctx.fillStyle='#eaffff';
+      ctx.fillRect(Math.round(core.x-cs*.5),Math.round(core.y-cs*.5),Math.round(cs),Math.round(cs));ctx.restore();
+    }
+  }
+  if(S.cannonGlow){
+    const p=shipBossMount(b,S.cannonGlow.slot),q=clamp(S.cannonGlow.t/.48,0,1),s=4+Math.round((1-q)*8);
+    ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalCompositeOperation='lighter';ctx.fillStyle='#bffaff';ctx.globalAlpha=.55+.4*q;
+    for(let i=-2;i<=2;i++)ctx.fillRect(Math.round(p.x+i*5-s/2),Math.round(p.y-6-Math.abs(i)*3),s,s);ctx.restore();
+  }
+  /* Damage smoke is a moving two-puff stream at each physical vent. The cloud rises, expands and
+     dissipates; it is never a stationary damage-frame sticker. */
+  if(S.damaged){
+    const sk=(typeof SMOKE_FAM!=='undefined'?SMOKE_FAM:'nsd_chim')+'_'+(Math.floor((b.t||0)*8)%8);
+    if(XART.rdy(sk)){
+      const im=XART.get(sk),vents=['V1','V2'],base=S.role==='wall'?58:48;
+      for(const slot of vents){const p0=shipBossMount(b,slot);for(let k=0;k<2;k++){
+        const q=(((b.t||0)*.68+k*.5)%1),grow=1+q*.38,rise=q*(S.critical?46:34);
+        ctx.save();ctx.globalAlpha=(1-q)*.72;ctx.drawImage(im,p0.x-base*grow*.5,p0.y-base*.35-rise,base*grow,base*grow);ctx.restore();
+      }}
+    }
+  }
+  for(const z of S.blasts){
+    const q=clamp(z.t/z.life,0,1),key='nxp_dense_'+clamp(Math.floor(q*8),0,7);if(!XART.rdy(key))continue;
+    const im=XART.get(key),sz=(S.role==='wall'?50:38)*z.s*(.72+.55*Math.sin(q*Math.PI));
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1-q*.18;
+    ctx.drawImage(im,b.x+b.w*z.ox-sz/2,(b._drawY!=null?b._drawY:b.y)+b.h*z.oy-sz/2,sz,sz);ctx.restore();
+  }
+}
+
 /* STAGE 4 TWIN-TURRET BURST.  The burst is clocked per frame so it reads as an actual machine
    gun rather than six pellets materialising on one simulation tick.  Every round owns a blue
    five-family tracer and every beat restarts the jet muzzle reel on the measured barrel tips. */
@@ -10453,12 +11720,10 @@ function stormMgTick(b, dt){
     const slots=['MG_L','MG_R'];
     for(let i=0;i<slots.length;i++){
       const p=shipBossMount(b,slots[i]);
-      const target=(typeof player!=='undefined'&&player)?player:{x:b.x,y:VH*0.86};
-      const base=Math.atan2(target.y-p.y,target.x-p.x);
-      /* the barrels track, but stay forward-facing like guns mounted in a jet's fixed pods */
-      const a=(typeof eAimDown==='function'?eAimDown(base):base)+(i?0.018:-0.018);
+      /* Fixed barrel pods do not traverse. Twin lanes move straight south from the visible guns. */
+      const a=Math.PI/2;
       const sp=5.15*((typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1);
-      eBullets.push({x:p.x,y:p.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,w:5,h:13,dmg:1,t:0,
+      eBullets.push({x:p.x,y:p.y,vx:0,vy:sp,w:5,h:13,dmg:1,t:0,
                      kind:'mg',_pfam:1,_stormMg:true,ang:a});
     }
     shipBossMuzzleStart(b,slots,{fam:'nmz_3',n:4,hpx:34,life:0.105,anchor:0.30});
@@ -10469,6 +11734,659 @@ function stormMgTick(b, dt){
     F.step++;
   }
   if(F.step>=count && F.t>=count*beat+0.08) b._stormMg=null;
+}
+/* ============================================================
+   STAGE 4 — WARFARE COMMAND ENCOUNTERS (0831)
+
+   OLIVE WARDEN is now a military fire-support miniboss instead of another generic ship table:
+     • readable left/right hull slide with a real alternating rotary burst
+     • fixed fan gates with an authored two-lane opening
+     • two summoned chaingun drones whose BODY and SPINNING BARREL are separate plates
+
+   STORM SOVEREIGN MK II owns the high-speed chase:
+     • twin rotary-gun pursuit
+     • fly-away orb racks; each orb lifts first, then commits once toward the player's lower lane
+     • one visible swerve back into position
+     • internal reactor charge followed by alternating lightning cannons and a heavy core release
+
+   No projectile flips, post-release homing, anonymous centre spawns or full-screen rotating beam
+   are used. Dense patterns alternate a centre refuge with side refuges, so survival is movement
+   and reading rather than luck. */
+function stage4WarfareInit(b){
+  if(!b)return;
+  const mini=b._ship==='olivewarden';
+  b._s4war={mini:mini,mode:mini?'burst':'shield',t:0,shot:-.02,wave:0,event:0,round:0,poseRot:0,scale:1,
+    homeY:b.ty!=null?b.ty:(mini?132:150),summoned:false,drones:[],shieldThresholds:[.75,.50,.25],
+    shieldThresholdIndex:0,finalGuns:'off',finalGunT:0,finalGunSpin:0,finalGunShot:0,finalGunWave:0,
+    finalGunAimL:Math.PI/2,finalGunAimR:Math.PI/2,finalGunSweepL:0,finalGunSweepR:0,
+    coreTurrets:[],coreUnlocked:false,coreGeneration:0,coreBurstSerial:0,coreShots:0,
+    coreBarrelShots:{'-1':0,'1':0},coreBlockedHits:0,coreVulnerableHits:0,
+    coreCycleSeen:{windup:false,fire:false,overheat:false},coreSpreadCd:0,coreSpreadWave:0,
+    coreSpreadShots:0,coreSpreadLast:null};
+  if(mini){
+    for(const side of [-1,1])b._s4war.drones.push({side:side,x:b.x+side*142,y:b.y+26,ang:Math.PI/2,
+      active:0,spin:0,shot:side<0?0:.065,flash:0,shieldFlash:0,dead:false,
+      hp:150,maxhp:150,shield:70,maxShield:70});
+  }else{
+    const nodeHp=Math.max(70,Math.ceil((b.maxhp||2500)*.023));
+    b._s4war.shield={active:true,rearming:false,rearmT:0,cycle:0,hit:0,breakT:0,sfx:0,nodes:[
+      {side:-1,row:-1,hp:nodeHp,maxhp:nodeHp,dead:false,x:b.x-210,y:b.y-62,spin:0,flash:0,materialize:1},
+      {side: 1,row:-1,hp:nodeHp,maxhp:nodeHp,dead:false,x:b.x+210,y:b.y-62,spin:4,flash:0,materialize:1},
+      {side:-1,row: 1,hp:nodeHp,maxhp:nodeHp,dead:false,x:b.x-210,y:b.y+72,spin:8,flash:0,materialize:1},
+      {side: 1,row: 1,hp:nodeHp,maxhp:nodeHp,dead:false,x:b.x+210,y:b.y+72,spin:12,flash:0,materialize:1},
+    ]};
+  }
+  b.fireCd=999;
+}
+function stage4MiniDroneAt(b,x,y,pad){
+  const S=b&&b._s4war;if(!S||!S.mini||!S.summoned)return null;pad=pad||0;
+  for(const d of S.drones)if(!d.dead&&d.active>=.82&&Math.abs(x-d.x)<48+pad&&Math.abs(y-d.y)<48+pad)return d;
+  return null;
+}
+function stage4MiniDroneDamage(b,d,dmg){
+  if(!b||!d||d.dead)return false;dmg=Math.max(1,dmg||1);
+  if(d.shield>0){const use=Math.min(d.shield,dmg);d.shield-=use;dmg-=use;d.shieldFlash=.14;
+    if(d.shield<=0){explode(d.x,d.y,24,'blue');stage4WarfareSound('shieldBreak','enemyElectricBolt');}}
+  if(dmg>0){d.hp-=dmg;d.flash=.15;if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;}
+  if(d.hp<=0){d.hp=0;d.dead=true;explode(d.x,d.y,62,'blue');
+    if(typeof fxBurst==='function')fxBurst(d.x,d.y,70,{color:'#39d7ff',rings:2,chunks:12,sparks:20});
+    stage4WarfareSound('enemyElectricBolt','expBig');shake=Math.max(shake,7);}
+  return true;
+}
+function stage4CoreTurretTarget(b,side){
+  const viewX=(typeof camX!=='undefined'?camX:0),cy=(b._drawY!=null?b._drawY:b.y);
+  /* These helpers are independent targets, so they hold the two outer combat lanes while the
+     carrier strafes between them. Following the hull would push one under the wide boss sprite
+     at either screen edge and make it impossible to shoot separately. */
+  return {x:viewX+(side<0?72:VW-72),y:clamp(cy+28,82,VH-112)};
+}
+function stage4CoreTurretSpawnMissing(b,threshold){
+  const S=b&&b._s4war;if(!S||S.mini)return 0;S.coreUnlocked=true;S.coreGeneration++;
+  let spawned=0;
+  for(const side of [-1,1]){
+    const old=S.coreTurrets.find(q=>q.side===side);
+    if(old&&!old.dead)continue;
+    const p=stage4CoreTurretTarget(b,side),hp=170+S.coreGeneration*20,shield=90+S.coreGeneration*12,
+          t={side:side,x:p.x,y:p.y,hp:hp,maxhp:hp,shield:shield,maxShield:shield,dead:false,spawnT:0,materialize:0,
+             flash:0,deflectFlash:0,deflectSfx:0,ang:Math.PI/2,spin:side<0?0:4,
+             /* The right helper is one half-cycle behind the left. Their fire and orange punish
+                windows alternate, so the intended rhythm is usually one target at a time. */
+             state:'windup',stateT:side>0?-3.05:0,heat:0,reelSpeed:0,fireShot:0,
+             barrelNext:side<0?-1:1,windupSfx:false,vulnerable:false,
+             generation:S.coreGeneration,threshold:threshold};
+    if(old)S.coreTurrets[S.coreTurrets.indexOf(old)]=t;else S.coreTurrets.push(t);spawned++;
+  }
+  if(spawned){stage4WarfareSound('bossShieldTeleport','warpBurst');shake=Math.max(shake,7);}
+  return spawned;
+}
+function stage4CoreTurretAt(b,x,y,pad){
+  const S=b&&b._s4war;if(!S||!S.coreUnlocked)return null;pad=pad||0;
+  for(const t of S.coreTurrets)if(!t.dead&&t.materialize>=.92&&
+    Math.abs(x-t.x)<58+pad&&Math.abs(y-t.y)<54+pad)return t;
+  return null;
+}
+function stage4CoreTurretBeamAt(b,x,halfW,top,bot){
+  const S=b&&b._s4war;if(!S||!S.coreUnlocked)return null;let best=null,bestY=-Infinity;
+  for(const t of S.coreTurrets){
+    if(t.dead||t.materialize<.92||t.y<top-54||t.y>bot+54||Math.abs(x-t.x)>58+(halfW||0))continue;
+    if(t.y>bestY){best=t;bestY=t.y;}
+  }
+  return best;
+}
+function stage4CoreTurretFlameAt(b,flame){
+  const S=b&&b._s4war;if(!S||!S.coreUnlocked||typeof flameHit!=='function')return null;
+  let best=null,bestY=-Infinity;
+  for(const t of S.coreTurrets)if(!t.dead&&t.materialize>=.92&&flameHit(flame,t.x,t.y,72,76)&&t.y>bestY){best=t;bestY=t.y;}
+  return best;
+}
+function stage4CoreTurretDamage(b,t,dmg){
+  if(!b||!t||t.dead||t.materialize<.92)return false;
+  /* Each helper owns a visible blue capacitor bar and a separate green hull bar.  Its shield is
+     independent of the carrier's bubble, so the helper can always be fought after it appears;
+     overheat remains a bonus damage window rather than the only time hits are accepted. */
+  dmg=Math.max(1,dmg||1);
+  if(t.shield>0){const use=Math.min(t.shield,dmg);t.shield-=use;dmg-=use;t.deflectFlash=.13;b._s4war.coreBlockedHits++;
+    if(t.deflectSfx<=0){t.deflectSfx=.16;stage4WarfareSound('shieldHitLight','enemyElectricBolt');}
+    if(t.shield<=0){explode(t.x,t.y,28,'blue');stage4WarfareSound('shieldBreak','enemyElectricBolt');}
+  }
+  if(dmg<=0)return true;
+  if(t.state==='overheat')dmg*=1.25;
+  t.hp-=dmg;t.flash=.15;
+  b._s4war.coreVulnerableHits++;
+  if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
+  explode(t.x,t.y,9,'blue');
+  if(t.hp<=0){
+    t.hp=0;t.dead=true;explode(t.x,t.y,76,'blue');
+    if(typeof fxBurst==='function')fxBurst(t.x,t.y,76,{color:'#32c8ff',rings:2,chunks:16,sparks:28});
+    stage4WarfareSound('enemyElectricBolt','expBig');shake=Math.max(shake,8);
+  }
+  return true;
+}
+function stage4CoreTurretAbsorbHit(b,dmg){
+  const t=b&&b._s4CoreHit;if(b)b._s4CoreHit=null;
+  return t?stage4CoreTurretDamage(b,t,dmg):false;
+}
+function stage4CoreTurretTip(t,barrelSide){
+  /* Approved helper is permanently south-facing. These are the two baked socket locations. */
+  return {x:t.x+(barrelSide||-1)*36,y:t.y+51,angle:Math.PI/2};
+}
+function stage4CoreTurretMuzzle(b,t,barrelSide){
+  if(typeof navalFlash!=='function')return;
+  const follow=()=>!b||b.dead||!t||t.dead?null:stage4CoreTurretTip(t,barrelSide),p=follow();if(!p)return;
+  navalFlash(null,p,.70,'s4w_muzzle_lightning',{n:8,hpx:42,life:.095,anchor:.27,angle:Math.PI/2,follow:follow});
+}
+function stage4CoreTurretTick(b,dt,phase){
+  const S=b&&b._s4war;if(!S||!S.coreUnlocked)return;
+  for(const t of S.coreTurrets){
+    if(t.dead)continue;const p=stage4CoreTurretTarget(b,t.side);
+    t.spawnT+=dt;t.materialize=clamp(t.spawnT/.62,0,1);t.flash=Math.max(0,t.flash-dt);
+    t.deflectFlash=Math.max(0,(t.deflectFlash||0)-dt);t.deflectSfx=Math.max(0,(t.deflectSfx||0)-dt);
+    t.x+=(p.x-t.x)*Math.min(1,dt*8);t.y+=(p.y-t.y)*Math.min(1,dt*8);
+    t.ang=Math.PI/2;
+    if(t.materialize<1)continue;
+    t.stateT+=dt;t.vulnerable=t.state==='overheat';S.coreCycleSeen[t.state]=true;
+    if(t.state==='windup'){
+      if(t.stateT<0){t.reelSpeed=0;t.heat=0;continue;}
+      if(!t.windupSfx){t.windupSfx=true;stage4WarfareSound('bossWeaponCharge','enemyElectricBolt');}
+      const q=clamp(t.stateT/1.35,0,1);
+      t.reelSpeed=2.5+(31+phase*2.5)*q*q;t.heat=.04+.12*q;
+      if(t.stateT>=1.35){t.state='fire';t.stateT=0;t.fireShot=0;t.heat=.16;
+        t.barrelNext=t.side<0?-1:1;S.coreBurstSerial++;
+        stage4WarfareSound('enemyLightningChaingun','enemyMachineGunHeavy');}
+    }else if(t.state==='fire'){
+      const q=clamp(t.stateT/2.0,0,1);t.reelSpeed=42+phase*3;t.heat=.16+.34*q;
+      t.fireShot-=dt;
+      while(t.fireShot<=0&&t.stateT<2.0){
+        t.fireShot+=(phase>=3?.028:.034);
+        const barrelSide=t.barrelNext;t.barrelNext=-t.barrelNext;
+        const tip=stage4CoreTurretTip(t,barrelSide),shot=stage4WarfareShot(
+          b,tip,Math.PI/2,7.10+phase*.20,'lightningmg',{accel:.22,max:8.70,szMul:.80});
+        shot._s4CoreSide=t.side;shot._s4CoreBarrel=barrelSide;shot._s4CoreGeneration=t.generation;
+        S.coreLastShot={helperSide:t.side,barrelSide:barrelSide,angle:Math.PI/2,x:tip.x,y:tip.y};
+        S.coreShots++;S.coreBarrelShots[barrelSide]++;stage4CoreTurretMuzzle(b,t,barrelSide);
+        if((S.coreShots%14)===0)stage4WarfareSound('enemyLightningChaingun','enemyMachineGunHeavy');
+      }
+      if(t.stateT>=2.0){t.state='overheat';t.stateT=0;t.heat=1;t.vulnerable=true;
+        stage4WarfareSound('bossShieldStatic','enemyElectricBolt');}
+    }else{
+      const q=clamp(t.stateT/2.65,0,1);t.reelSpeed=18*(1-q)+2.0;t.heat=1-q*.92;
+      if(t.stateT>=2.65){t.state='windup';t.stateT=0;t.heat=0;t.reelSpeed=2.5;
+        t.vulnerable=false;t.windupSfx=false;}
+    }
+    t.spin=(t.spin+dt*t.reelSpeed)%8;
+  }
+}
+function stage4CoreSpreadOffsets(leftAlive,rightAlive){
+  /* Positive offsets travel left from the carrier; negative offsets travel right. Losing one
+     helper lets the carrier occupy that newly-open lane. Losing both produces the full fan. */
+  /* Keep the carrier's medium-speed screen control readable while the two destructible helpers
+     are firing. Five-to-ten simultaneous spread rounds plus both chainguns left no practical
+     route to shoot the helpers even though collision correctly allowed it through the shield. */
+  if(leftAlive&&rightAlive)return [-.14,0,.14];
+  if(!leftAlive&&rightAlive)return [0,.18,.36];
+  if(leftAlive&&!rightAlive)return [-.36,-.18,0];
+  return [-.42,-.21,0,.21,.42];
+}
+function stage4CoreBossSpreadTick(b,dt,phase){
+  const S=b&&b._s4war;if(!S||!S.coreUnlocked)return;
+  const materialized=S.coreTurrets.filter(t=>t.materialize>=.92);
+  if(materialized.length<2)return;
+  S.coreSpreadCd-=dt;if(S.coreSpreadCd>0)return;
+  S.coreSpreadCd=Math.max(.82,1.04-phase*.045);
+  const left=S.coreTurrets.find(t=>t.side<0),right=S.coreTurrets.find(t=>t.side>0),
+        leftAlive=!!(left&&!left.dead),rightAlive=!!(right&&!right.dead),
+        offsets=stage4CoreSpreadOffsets(leftAlive,rightAlive),C=shipBossMount(b,'C');
+  for(const off of offsets){
+    const shot=stage4WarfareShot(b,C,Math.PI/2+off,3.20+phase*.08,'spread',{szMul:.92});
+    shot._s4CoreSpread=true;S.coreSpreadShots++;
+  }
+  stage4WarfareMuzzle(b,'C','orb',.92,.14);stage4WarfareSound('enemyBossCannon','enemyShoot');
+  S.coreSpreadLast={leftAlive:leftAlive,rightAlive:rightAlive,offsets:offsets.slice(),count:offsets.length,
+    min:Math.min.apply(null,offsets),max:Math.max.apply(null,offsets),serial:++S.coreSpreadWave};
+}
+function stage4ShieldNodeAt(b,x,y,pad){
+  const H=b&&b._s4war&&b._s4war.shield;if(!H||!H.active)return null;pad=pad||0;
+  for(const n of H.nodes)if(!n.dead&&Math.abs(x-n.x)<34+pad&&Math.abs(y-n.y)<34+pad)return n;
+  return null;
+}
+function stage4ShieldBeamNode(b,x,halfW,top,bot){
+  const H=b&&b._s4war&&b._s4war.shield;if(!H||!H.active)return null;
+  let best=null,bestY=-Infinity;
+  for(const n of H.nodes){
+    if(n.dead||n.y<top-34||n.y>bot+34||Math.abs(x-n.x)>34+(halfW||0))continue;
+    if(n.y>bestY){best=n;bestY=n.y;}
+  }
+  return best;
+}
+function stage4ShieldFlameNode(b,flame){
+  const H=b&&b._s4war&&b._s4war.shield;if(!H||!H.active||typeof flameHit!=='function')return null;
+  let best=null,bestY=-Infinity;
+  for(const n of H.nodes)if(!n.dead&&flameHit(flame,n.x,n.y,60,60)&&n.y>bestY){best=n;bestY=n.y;}
+  return best;
+}
+function stage4ShieldDestroyNode(b,n){
+  const H=b&&b._s4war&&b._s4war.shield;if(!H||!n||n.dead)return;
+  n.dead=true;n.hp=0;n.flash=.3;explode(n.x,n.y,54,'blue');
+  if(typeof fxBurst==='function')fxBurst(n.x,n.y,54,{color:'#42d9ff',rings:2});
+  stage4WarfareSound('enemyElectricBolt','expBig');shake=Math.max(shake,7);
+  if(H.nodes.every(q=>q.dead)){
+    H.active=false;H.breakT=1.15;H.hit=.45;flashScreen=Math.max(flashScreen||0,.22);
+    explode(b.x,b.y,96,'blue');stage4WarfareSound('bossPhase','enemyHeavyLaser');shake=Math.max(shake,12);
+    stage4WarfareSetMode(b,'burst');
+  }
+}
+function stage4ShieldBeginRearm(b,threshold){
+  const S=b&&b._s4war,H=S&&S.shield;if(!H||H.active||H.rearming)return false;
+  H.rearming=true;H.rearmT=0;H.cycle++;H.hit=.22;H.breakT=0;S.mode='rearm';S.t=0;S.shot=999;
+  const hp=Math.max(70,Math.ceil((b.maxhp||2500)*(.023+H.cycle*.0015)));
+  for(let i=0;i<H.nodes.length;i++){
+    const n=H.nodes[i];n.dead=false;n.hp=n.maxhp=hp;n.flash=0;n.materialize=0;
+  }
+  /* The helper pair begins at 50%, not as a 25% central overlay. At 25% only destroyed
+     helpers are replaced; surviving turrets keep their HP and cadence. */
+  if(threshold<=.501)stage4CoreTurretSpawnMissing(b,threshold);
+  b._phaseInvuln=Math.max(b._phaseInvuln||0,1.05);
+  stage4WarfareSound('bossShieldTeleport','warpBurst');shake=Math.max(shake,8);flashScreen=Math.max(flashScreen||0,.10);
+  return true;
+}
+function stage4WarfareClampDamage(b,dmg){
+  const S=b&&b._s4war;if(!S||S.mini||!S.shieldThresholds)return dmg;
+  const threshold=S.shieldThresholds[S.shieldThresholdIndex];if(threshold==null)return dmg;
+  const floor=(b.maxhp||1)*threshold;
+  if(b.hp>floor&&b.hp-dmg<floor)return Math.max(0,b.hp-floor);
+  return dmg;
+}
+function stage4WarfareAfterDamage(b){
+  const S=b&&b._s4war;if(!S||S.mini||!S.shieldThresholds)return false;
+  const threshold=S.shieldThresholds[S.shieldThresholdIndex];if(threshold==null)return false;
+  if(b.hp>(b.maxhp||1)*threshold+.01)return false;
+  S.shieldThresholdIndex++;return stage4ShieldBeginRearm(b,threshold);
+}
+function stage4ShieldAbsorbHit(b,dmg,x,y){
+  const H=b&&b._s4war&&b._s4war.shield;if(!H||(!H.active&&!H.rearming))return false;
+  const n=b._s4ShieldHit||null;b._s4ShieldHit=null;
+  H.hit=.13;H.sfx-=1/60;
+  if(H.active&&n&&!n.dead){
+    n.hp-=Math.max(1,dmg||1);n.flash=.16;explode(x==null?n.x:x,y==null?n.y:y,8,'blue');
+    if(n.hp<=0)stage4ShieldDestroyNode(b,n);
+  }else{
+    b.flash=Math.max(b.flash||0,.045);
+    if(H.sfx<=0){H.sfx=.10;stage4WarfareSound(H.rearming?'bossShieldStatic':'shieldDeflect','enemyElectricBolt');}
+  }
+  return true;
+}
+function stage4ShieldDeflectBullet(b,shot){
+  const S=b&&b._s4war,H=S&&S.shield;if(!H||(!H.active&&!H.rearming)||!shot)return false;
+  /* A circle hit remains damageable. Only shots meeting the field itself ricochet. */
+  if(b._s4ShieldHit)return false;
+  if(shot._s4DeflectedBy===b)return true;
+  const cy=(b._drawY!=null?b._drawY:b.y),dx=shot.x-b.x,dy=shot.y-cy,d=Math.max(1,Math.hypot(dx,dy)),nx=dx/d,ny=dy/d;
+  let vx=shot.vx||0,vy=shot.vy==null?-8:shot.vy,dot=vx*nx+vy*ny;
+  if(dot>=0)dot=-Math.max(3,Math.hypot(vx,vy));
+  shot.vx=vx-2*dot*nx;shot.vy=vy-2*dot*ny;shot.x+=nx*12;shot.y+=ny*12;
+  shot._s4DeflectedBy=b;shot._bossDmg=0;shot._enemyReflected=true;H.hit=.18;
+  explode(shot.x,shot.y,11,'blue');if(typeof fxBurst==='function')fxBurst(shot.x,shot.y,18,{color:'#9ef7ff',rings:1});
+  stage4WarfareSound('shieldDeflect','shieldHit');shake=Math.max(shake,2.5);return true;
+}
+function stage4ShieldTick(b,dt){
+  const S=b&&b._s4war,H=S&&S.shield;if(!H)return;
+  H.hit=Math.max(0,H.hit-dt);H.breakT=Math.max(0,H.breakT-dt);H.sfx=Math.max(0,H.sfx-dt);
+  const W=worldWidth(),xoff=Math.min(W*.5-54,b.w*.55+58),yoff=b.h*.235;
+  for(const n of H.nodes){
+    n.spin=(n.spin+dt*(13.0+n.row*.7+n.side*.45))%16;n.flash=Math.max(0,n.flash-dt);
+    if(n.dead)continue;
+    const tx=clamp(b.x+n.side*xoff,46,W-46),ty=clamp(b.y+n.row*yoff,58,VH-82);
+    n.x+=(tx-n.x)*Math.min(1,dt*8);n.y+=(ty-n.y)*Math.min(1,dt*8);
+  }
+  if(H.rearming){
+    H.rearmT+=dt;
+    for(let i=0;i<H.nodes.length;i++)H.nodes[i].materialize=clamp((H.rearmT-(.28+i*.055))/.34,0,1);
+    if(S.finalGuns==='deploying'){
+      S.finalGunT+=dt;
+      if(S.finalGunT>=.92){
+        /* Lock in one complete, opposing 360-degree gimbal calibration before live tracking.
+           The active aim settles from this same orientation, so neither gun pops or teleports. */
+        S.finalGunAimL=Math.PI/2-TAU;S.finalGunAimR=Math.PI/2+TAU;
+        S.finalGunSweepL=S.finalGunSweepR=TAU;S.finalGuns='active';
+        stage4WarfareSound('enemyLightningChaingun','enemyMachineGunHeavy');
+      }
+    }
+    if(H.rearmT>=1.08){
+      H.rearming=false;H.active=true;H.hit=.34;flashScreen=Math.max(flashScreen||0,.18);
+      stage4WarfareSound('bossPhase','enemyElectricBolt');shake=Math.max(shake,10);stage4WarfareSetMode(b,'shield');
+    }
+  }
+}
+function stage4WarfareSound(primary,fallback){
+  try{if(typeof Audio!=='undefined'&&Audio.SFX){const fn=Audio.SFX[primary]||Audio.SFX[fallback];if(fn)fn();}}catch(_s4ws){}
+}
+function stage4WarfareSetMode(b,mode){
+  const S=b&&b._s4war;if(!S)return;S.mode=mode;S.t=0;S.shot=-.02;S.event=0;S.wave=0;S.round++;
+  if(mode==='drones'){S.summoned=true;stage4WarfareSound('bossWeaponCharge','enemyBossCannon');}
+  if(mode==='flyaway')stage4WarfareSound('bossPhase','bossWeaponCharge');
+  if(mode==='lightning')stage4WarfareSound('bossWeaponCharge','enemyElectricBolt');
+}
+function stage4WarfareMuzzle(b,slot,fam,scale,life){
+  if(!b||typeof navalFlash!=='function')return;const p=shipBossMount(b,slot),pre='s4w_muzzle_'+(fam||'mg');
+  navalFlash(null,p,scale||.78,pre,{n:8,hpx:fam==='lightning'?74:(fam==='orb'?62:42),life:life||.13,anchor:.30,
+    follow:()=>b&&!b.dead?shipBossMount(b,slot):null});
+}
+function stage4WarfareDroneMuzzle(b,d){
+  if(!b||!d||typeof navalFlash!=='function')return;const p={x:d.x+Math.cos(d.ang)*40,y:d.y+Math.sin(d.ang)*40};
+  navalFlash(null,p,.64,'s4w_muzzle_mg',{n:8,hpx:38,life:.105,anchor:.28,
+    follow:()=>b&&!b.dead&&d.active?{x:d.x+Math.cos(d.ang)*40,y:d.y+Math.sin(d.ang)*40}:null});
+}
+function stage4WarfareShot(b,slot,ang,spd,role,opt){
+  opt=opt||{};const p=(typeof slot==='string')?shipBossMount(b,slot):slot;
+  const kind=role==='mg'?'s4brass':(role==='spread'?'s4rail':(role==='orb'?'s4bomb':'s4rail'));
+  const size=role==='orb'?[28,28]:(role==='lightning'?[13,30]:(role==='spread'?[10,22]:[7,18]));
+  const q=eShootT(p.x,p.y,ang,spd,kind,{w:opt.w||size[0],h:opt.h||size[1],silent:true,szMul:opt.szMul||1});
+  q._s4wKind=role;q._noArsenal=true;q._boss=true;q._bfam='storm';q.ang=ang;
+  if(opt.accel){q._s4Accel=opt.accel;q._s4Max=opt.max||spd*1.9;}
+  if(opt.lift){q._s4wLift={t:0,dur:opt.lift,targetX:player?player.x:p.x,targetY:player?player.y:VH*.82,
+      speed:opt.launchSpeed||2.25,accel:opt.launchAccel||1.5,max:opt.max||6.2,side:opt.side||0};}
+  if(opt.shootable){q._shootable=true;q.hp=opt.hp||2;}
+  return q;
+}
+function stage4WarfareWall(b,wide){
+  /* Once the two helper turrets are active they ARE the bullet-pressure layer.  Stacking the old
+     eleven-column spread wall with helper chainguns and lightning balls made the fight a screen
+     seal rather than a dodge pattern. */
+  if(b&&b._s4war&&!b._s4war.mini&&b._s4war.coreUnlocked)return;
+  const C=shipBossMount(b,'C'),cols=11,safe=wide?5:((b._s4war.wave&1)?2:8),step=.105;
+  for(let i=0;i<cols;i++){
+    if(Math.abs(i-safe)<=1)continue;
+    stage4WarfareShot(b,C,Math.PI/2+(i-(cols-1)/2)*step,3.35,'spread',{accel:.36,max:4.8});
+  }
+  stage4WarfareMuzzle(b,'C','mg',1.04,.18);stage4WarfareSound('enemyBossCannon','enemyShoot');b._s4war.wave++;
+}
+function stage4FinalGunMount(b,side){
+  /* The normalized core is 224px. Its authored aperture centres are x=20/204, y=112.
+     The in-game plate is 110px, centred at (boss.x, drawY+21), so these exact ratios keep
+     rendering, muzzle flashes and projectile origins welded to the same two holes. */
+  const cy=(b._drawY!=null?b._drawY:b.y),coreSize=110,socketOffset=(92/224)*coreSize;
+  return {x:b.x+side*socketOffset,y:cy+21};
+}
+function stage4FinalGunAngle(b,side){
+  const S=b&&b._s4war;if(!S)return Math.PI/2;
+  return side<0?S.finalGunAimL:S.finalGunAimR;
+}
+function stage4FinalGunTip(b,side,angle){
+  const p=stage4FinalGunMount(b,side),a=angle==null?stage4FinalGunAngle(b,side):angle,reach=76;
+  return {x:p.x+Math.cos(a)*reach,y:p.y+Math.sin(a)*reach,angle:a};
+}
+function stage4AngleDelta(from,to){return Math.atan2(Math.sin(to-from),Math.cos(to-from));}
+function stage4FinalGunMuzzle(b,side,spread){
+  if(typeof navalFlash!=='function')return;spread=spread||0;
+  const follow=()=>{
+    if(!b||b.dead)return null;const a=stage4FinalGunAngle(b,side)+spread;
+    return stage4FinalGunTip(b,side,a);
+  },p=follow();if(!p)return;
+  navalFlash(null,p,.72,'s4w_muzzle_lightning',{n:8,hpx:44,life:.085,anchor:.27,angle:p.angle,follow:follow});
+}
+function stage4FinalChaingunTick(b,dt,phase){
+  const S=b&&b._s4war;if(!S||S.finalGuns==='off')return;
+  S.finalGunSpin=(S.finalGunSpin+dt*(24+phase*2.5))%8;
+  if(S.finalGuns==='deploying'){
+    const q=clamp(S.finalGunT/.92,0,1),ease=q*q*(3-2*q),turn=ease*TAU;
+    S.finalGunAimL=Math.PI/2-turn;S.finalGunAimR=Math.PI/2+turn;
+    S.finalGunSweepL=S.finalGunSweepR=turn;return;
+  }
+  if(S.finalGuns!=='active')return;
+  /* Once calibrated, both sockets have unrestricted traverse.  Shortest-arc interpolation keeps
+     them smart and readable without snapping across the core when the player crosses behind. */
+  for(const side of [-1,1]){
+    const p=stage4FinalGunMount(b,side),want=player?Math.atan2(player.y-p.y,player.x-p.x):Math.PI/2,
+          key=side<0?'finalGunAimL':'finalGunAimR',gain=Math.min(1,dt*(6.2+phase*.35));
+    S[key]+=stage4AngleDelta(S[key],want)*gain;
+  }
+  S.finalGunShot-=dt*(1+phase*.08);
+  while(S.finalGunShot<=0){
+    S.finalGunShot+=phase>=3?.060:.073;
+    const side=(S.finalGunWave&1)?1:-1,seq=[-.14,-.09,-.04,0,.04,.09,.14,.07,0,-.07],
+          off=seq[S.finalGunWave%seq.length],ang=stage4FinalGunAngle(b,side)+off,
+          p=stage4FinalGunTip(b,side,ang);
+    const shot=stage4WarfareShot(b,p,ang,7.05+phase*.22,'lightningmg',{accel:.32,max:8.35,szMul:.82}),
+          socket=stage4FinalGunMount(b,side);
+    shot._s4GunSide=side;shot._s4GunAngle=ang;shot._s4GunOrigin={x:p.x,y:p.y};
+    S.finalGunLastShot={side:side,angle:ang,reach:Math.hypot(p.x-socket.x,p.y-socket.y)};
+    stage4FinalGunMuzzle(b,side,off);
+    if((S.finalGunWave%5)===0)stage4WarfareSound('enemyLightningChaingun','enemyMachineGunHeavy');
+    S.finalGunWave++;
+  }
+}
+function stage4WarfareMiniTick(b,dt){
+  const S=b._s4war,W=worldWidth(),phase=shipBossPhase(b),rate=1+phase*.13;S.t+=dt*rate;b.fireCd=999;
+  const margin=Math.max(116,b.w*.55),amp=Math.max(35,(W*.5-margin));
+  b.y+=(S.homeY-b.y)*Math.min(1,dt*5.5);S.poseRot=0;S.scale=1;
+  if(S.mode==='burst'){
+    b.x=W*.5+Math.sin(S.t*1.50)*amp;
+    while(S.shot<=S.t){
+      S.shot+=phase>=2?.064:.078;const seq=[-.30,-.20,-.10,0,.10,.20,.30,.20,.10,0,-.10,-.20];
+      const slot=(S.wave&1)?'MG_R':'MG_L',o=seq[S.wave%seq.length];
+      stage4WarfareShot(b,slot,Math.PI/2+o,5.35+(phase*.35),'mg',{});
+      stage4WarfareMuzzle(b,slot,'mg',.62,.095);if((S.wave%4)===0)stage4WarfareSound('enemyMachineGunHeavy','enemyShoot');S.wave++;
+    }
+    /* Get to the support-drone reveal inside one brisk arcade attack cycle.  The previous
+       7.7-second preamble hid the signature mechanic in an ordinary encounter capture. */
+    if(S.t>=3.60)stage4WarfareSetMode(b,'gate');
+  }else if(S.mode==='gate'){
+    b.x+=(W*.5-b.x)*Math.min(1,dt*6.2);
+    if(S.shot<=S.t){S.shot+=.62;stage4WarfareWall(b,(S.wave&2)!==0);}
+    if(S.t>=2.40)stage4WarfareSetMode(b,'drones');
+  }else{
+    b.x=W*.5+Math.sin(S.t*.82)*amp*.42;S.summoned=true;
+    for(const d of S.drones){
+      if(d.dead)continue;
+      d.flash=Math.max(0,d.flash-dt);d.shieldFlash=Math.max(0,d.shieldFlash-dt);
+      d.active=Math.min(1,d.active+dt*2.8);d.spin+=dt*(18+phase*3);
+      /* Each helper owns a separate square and never clips through the playfield edge even
+         while the carrier is at the extreme end of its strafe. */
+      const tx=clamp(b.x+d.side*(b.w*.50+54),58,W-58),ty=b.y+38+Math.sin(S.t*2+d.side)*12;
+      d.x+=(tx-d.x)*Math.min(1,dt*6);d.y+=(ty-d.y)*Math.min(1,dt*6);
+      const want=player?clamp(Math.atan2(player.y-d.y,player.x-d.x),Math.PI/2-.48,Math.PI/2+.48):Math.PI/2;
+      d.ang+=(want-d.ang)*Math.min(1,dt*4.5);d.shot-=dt*rate;
+      if(d.shot<=0){d.shot=phase>=2?.082:.105;const cross=((S.wave>>3)&1)?d.side*.12:-d.side*.08;
+        stage4WarfareShot(b,{x:d.x+Math.cos(d.ang)*34,y:d.y+Math.sin(d.ang)*34},d.ang+cross,5.55,'mg',{});
+        stage4WarfareDroneMuzzle(b,d);if((S.wave%8)===0)stage4WarfareSound('enemyMachineGunHeavy','enemyShoot');S.wave++;}
+    }
+    if(S.shot<=S.t){S.shot+=.78;stage4WarfareWall(b,(S.wave&1)===0);}
+    if(S.t>=5.20)stage4WarfareSetMode(b,'burst');
+  }
+  return true;
+}
+function stage4WarfareBossTick(b,dt){
+  const S=b._s4war,W=worldWidth(),phase=shipBossPhase(b),rate=1+phase*.12;S.t+=dt*rate;b.fireCd=999;
+  stage4ShieldTick(b,dt);
+  stage4FinalChaingunTick(b,dt,phase);
+  stage4CoreTurretTick(b,dt,phase);
+  /* Helper chainguns replace the carrier spread once unlocked; do not layer both attacks. */
+  const sy=S.homeY,margin=Math.max(154,b.w*.54),amp=Math.max(34,W*.5-margin);S.poseRot=0;S.scale=1;
+  if(S.mode==='rearm'){
+    b.y+=(sy-b.y)*Math.min(1,dt*7.5);b.x+=(W*.5-b.x)*Math.min(1,dt*7.5);
+    S.poseRot=Math.sin(S.t*28)*.018;S.scale=1+Math.sin(S.t*20)*.012;
+  }else if(S.mode==='shield'){
+    const H=S.shield;
+    b.y+=(sy-b.y)*Math.min(1,dt*5.8);b.x=W*.5+Math.sin(S.t*.86)*Math.min(52,amp*.70);
+    if(!H||!H.active){stage4WarfareSetMode(b,'burst');}
+    else if(S.shot<=S.t){
+      S.shot+=.74;const slot=(S.event&1)?'ORB_R':'ORB_L',side=(S.event&1)?1:-1;
+      stage4WarfareShot(b,slot,Math.PI/2,1.35,'orb',{lift:.24,launchSpeed:2.0,launchAccel:1.42,
+        max:5.85,side:side,shootable:true,hp:2,szMul:.76});
+      stage4WarfareMuzzle(b,slot,'orb',1.0,.20);
+      if((S.event&1)===0)stage4WarfareSound('enemyElectricBolt','enemyBossCannon');S.event++;
+    }
+  }else if(S.mode==='burst'){
+    b.y+=(sy-b.y)*Math.min(1,dt*5);b.x=W*.5+Math.sin(S.t*1.62)*amp;
+    while(S.shot<=S.t){
+      S.shot+=phase>=3?.105:.132;const seq=[-.28,-.20,-.12,-.04,.04,.12,.20,.28,.12,-.04,-.20];
+      /* One real lightning chaingun round per beat, alternating barrels. */
+      const slot=(S.wave&1)?'MG_R':'MG_L';
+      stage4WarfareShot(b,slot,Math.PI/2+seq[S.wave%seq.length],5.35+phase*.24,'lightningmg',{szMul:.78});
+      stage4WarfareMuzzle(b,slot,'mg',.74,.10);
+      if((S.wave%5)===0)stage4WarfareSound('enemyMachineGunHeavy','enemyShoot');
+      S.wave++;
+    }
+    if(S.t>=4.25)stage4WarfareSetMode(b,'flyaway');
+  }else if(S.mode==='flyaway'){
+    /* Recede without cutting the new 286px hull off at the top.  At .82 scale, y=122 leaves
+       a small visible crown margin and still reads as the enemy pulling away up the highway. */
+    b.x+=(W*.5-b.x)*Math.min(1,dt*4.5);b.y+=(122-b.y)*Math.min(1,dt*3.4);S.scale=.82;
+    if(S.shot<=S.t&&S.event<6){S.shot+=.56;const slot=(S.event&1)?'ORB_R':'ORB_L',side=(S.event&1)?1:-1;
+      stage4WarfareShot(b,slot,Math.PI/2,1.55,'orb',{lift:.48,launchSpeed:2.15,launchAccel:1.75,max:6.6,side:side,shootable:true,hp:3,szMul:.80});
+      stage4WarfareMuzzle(b,slot,'orb',1.02,.22);stage4WarfareSound('enemyElectricBolt','enemyBossCannon');S.event++;}
+    if(S.t>=3.55)stage4WarfareSetMode(b,'swerve');
+  }else if(S.mode==='swerve'){
+    const q=clamp(S.t/1.72,0,1),ease=q*q*(3-2*q),dir=(S.round&1)?1:-1;
+    b.x=lerp(W*.5-dir*amp,W*.5+dir*amp,ease);b.y+=(sy-b.y)*Math.min(1,dt*4.8);
+    S.poseRot=dir*Math.sin(q*Math.PI)*1.05;S.scale=.86+.14*q;
+    if(S.t>=1.72)stage4WarfareSetMode(b,'lightning');
+  }else{
+    b.x+=(W*.5-b.x)*Math.min(1,dt*5.8);b.y+=(sy-b.y)*Math.min(1,dt*5.8);
+    if(S.event===0&&S.t>=1.12){
+      for(const e of [['EL',-.24],['ER',.24]]){stage4WarfareShot(b,e[0],Math.PI/2+e[1],5.15,'lightning',{accel:1.1,max:7.2,szMul:1.18});stage4WarfareMuzzle(b,e[0],'lightning',1.12,.24);}
+      stage4WarfareSound('enemyHeavyLaser','enemyElectricBolt');shake=Math.max(shake,6);S.event=1;
+    }
+    if(S.event===1&&S.t>=1.68){
+      for(const e of [['EL',.18],['ER',-.18]]){stage4WarfareShot(b,e[0],Math.PI/2+e[1],5.45,'lightning',{accel:1.2,max:7.5,szMul:1.22});stage4WarfareMuzzle(b,e[0],'lightning',1.12,.24);}
+      stage4WarfareSound('enemyElectricBolt','enemyBossCannon');S.event=2;
+    }
+    if(S.event===2&&S.t>=2.28){
+      stage4WarfareShot(b,'C',Math.PI/2,4.10,'lightning',{w:23,h:54,accel:1.55,max:8.0,szMul:1.68});
+      stage4WarfareMuzzle(b,'C','lightning',1.55,.30);stage4WarfareSound('enemyHeavyLaser','laserCannon');shake=Math.max(shake,10);S.event=3;
+    }
+    if(S.event===3&&S.t>=2.92){
+      stage4WarfareShot(b,'C',Math.PI/2,1.38,'orb',{lift:.30,launchSpeed:2.45,launchAccel:2.0,max:7.0,shootable:true,hp:4,szMul:.92});
+      stage4WarfareMuzzle(b,'C','orb',1.48,.28);stage4WarfareSound('enemyElectricBolt','enemyBossCannon');S.event=4;
+    }
+    if(S.t>=4.12)stage4WarfareSetMode(b,'burst');
+  }
+  if(S.mode==='rearm')b._animKey='s4w_boss_charge_'+clamp(Math.floor((S.shield.rearmT||0)/1.08*12),0,11);
+  else if(S.mode==='lightning'&&S.t<1.18)b._animKey='s4w_boss_charge_'+clamp(Math.floor(S.t/1.18*12),0,11);
+  else if(S.mode==='swerve')b._animKey='s4w_boss_flight_'+clamp(Math.floor(S.t/1.72*12),0,11);
+  else b._animKey='s4w_boss_energized_'+(Math.floor((b.t||0)*11)%12);
+  return true;
+}
+function stage4WarfareTick(b,dt){
+  if(!b||!b._s4war)return false;
+  return b._s4war.mini?stage4WarfareMiniTick(b,dt):stage4WarfareBossTick(b,dt);
+}
+function stage4WarfareProjectileTick(b,dt){
+  const L=b&&b._s4wLift;if(!L)return;L.t+=dt;
+  if(!L.released&&L.t<L.dur){b.vx=(L.side||0)*.48;b.vy=-2.15;return;}
+  if(!L.released){
+    L.released=true;const dx=L.targetX-b.x,dy=Math.max(60,L.targetY-b.y),a=Math.atan2(dy,dx);
+    b.vx=Math.cos(a)*L.speed;b.vy=Math.sin(a)*L.speed;b.ang=a;b._s4Accel=L.accel;b._s4Max=L.max;
+  }
+}
+function stage4WarfareDrawOver(b){
+  const S=b&&b._s4war;if(!S||typeof XART==='undefined')return;
+  const fi=Math.floor((b.t||0)*22)%8,bk='s4w_drone_barrel_'+fi;
+  if(!S.mini&&S.shield){
+    const H=S.shield,cy=(b._drawY!=null?b._drawY:b.y),sf='s4w_lightning_shield_'+(Math.floor((b.t||0)*10)%12);
+    const reform=H.rearming?clamp((H.rearmT-.82)/.26,0,1):0;
+    if((H.active||H.breakT>0||reform>0)&&XART.rdy(sf)){
+      const q=H.active?1:(reform>0?reform:clamp(H.breakT/1.15,0,1)),pulse=.29+Math.sin((b.t||0)*18)*.045+(H.hit>0?.16:0);
+      const sz=(b.w*1.38)*(H.active?1:(1+(1-q)*.28));
+      ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=pulse*q;
+      ctx.drawImage(XART.get(sf),b.x-sz/2,cy-sz/2,sz,sz);ctx.restore();
+    }
+    /* The four circles visibly feed the bubble. Deterministic zig-zags avoid per-frame random
+       crawling while still reading as live electricity between generator and hull. */
+    if(H.active){
+      ctx.save();ctx.globalCompositeOperation='lighter';ctx.lineWidth=1.5;
+      for(let ni=0;ni<H.nodes.length;ni++){
+        const n=H.nodes[ni];if(n.dead)continue;
+        ctx.strokeStyle=(ni&1)?'#78efff':'#2e9cff';ctx.beginPath();ctx.moveTo(n.x,n.y);
+        for(let k=1;k<=5;k++){
+          const q=k/5,x=lerp(n.x,b.x,q)+Math.sin((b.t||0)*22+k*3.1+ni)*4*(1-Math.abs(q-.5)),
+                y=lerp(n.y,cy,q)+Math.cos((b.t||0)*19+k*2.7+ni)*3;
+          ctx.lineTo(x,y);
+        }
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+    if(H.rearming){
+      const tf='s4w_node_teleport_'+clamp(Math.floor(H.rearmT/1.08*12),0,11);
+      if(XART.rdy(tf))for(const n of H.nodes){
+        const ts=118+Math.sin(H.rearmT*24+n.side+n.row)*7;
+        ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.78;ctx.drawImage(XART.get(tf),n.x-ts/2,n.y-ts/2,ts,ts);ctx.restore();
+      }
+    }
+    for(const n of H.nodes){
+      if(n.dead)continue;const nk='s4w_power_node_'+(Math.floor(n.spin)%16),mat=H.active?1:(n.materialize||0),sz=72*(.35+.65*mat);
+      if(mat<=0)continue;
+      if(!XART.rdy(nk))continue;const im=XART.get(nk);
+      ctx.save();ctx.globalAlpha=mat;ctx.imageSmoothingEnabled=false;ctx.drawImage(im,n.x-sz/2,n.y-sz/2,sz,sz);
+      if(n.flash>0&&typeof xartTint==='function'){
+        const t=xartTint(nk,'#ffffff',1);if(t){ctx.globalAlpha=clamp(n.flash/.16,0,1);ctx.drawImage(t,n.x-sz/2,n.y-sz/2,sz,sz);}
+      }
+      ctx.restore();
+    }
+  }
+  /* At half health these are two independent helper units, not an attachment pasted over the
+     hull. Each uses the approved locked dual-socket silhouette. The body never rotates: only
+     internal reel/specular frames animate while both fixed south-facing barrels fire. */
+  if(!S.mini&&S.coreUnlocked)for(const t of S.coreTurrets){
+    if(t.dead)continue;
+    const alpha=clamp(t.materialize||0,0,1),frame=(Math.floor(t.spin)||0)%8,
+          dual='s4w_helper_dual_'+frame,hot='s4w_helper_dual_hot_'+frame;
+    if(alpha<1){
+      const tf='s4w_node_teleport_'+clamp(Math.floor((t.spawnT||0)/.62*12),0,11),ts=142+Math.sin((t.spawnT||0)*26)*7;
+      if(XART.rdy(tf)){
+        ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.78*(1-alpha*.35);
+        ctx.drawImage(XART.get(tf),t.x-ts/2,t.y-ts/2,ts,ts);ctx.restore();
+      }
+    }
+    ctx.save();ctx.globalAlpha=alpha;ctx.imageSmoothingEnabled=false;
+    if(XART.rdy(dual))ctx.drawImage(XART.get(dual),t.x-66,t.y-66,132,132);
+    if((t.heat||0)>0&&XART.rdy(hot)){
+      const pulse=t.state==='overheat'?.86+.14*Math.sin((b.t||0)*20):1;
+      ctx.globalAlpha=alpha*clamp(t.heat*pulse,0,1);ctx.drawImage(XART.get(hot),t.x-66,t.y-66,132,132);
+    }
+    if(t.state==='overheat'){
+      ctx.globalCompositeOperation='lighter';ctx.strokeStyle='rgba(255,96,18,'+(.28+.22*Math.sin((b.t||0)*17))+')';
+      ctx.lineWidth=2;ctx.beginPath();ctx.arc(t.x,t.y,59+Math.sin((b.t||0)*13)*2,0,TAU);ctx.stroke();
+    }
+    if(t.deflectFlash>0&&XART.rdy(dual)&&typeof xartTint==='function'){
+      const shieldTint=xartTint(dual,'#5be7ff',1);if(shieldTint){ctx.globalCompositeOperation='lighter';
+        ctx.globalAlpha=clamp(t.deflectFlash/.13,0,1)*.72;ctx.drawImage(shieldTint,t.x-66,t.y-66,132,132);}
+    }
+    if(t.flash>0&&XART.rdy(dual)&&typeof xartTint==='function'){
+      const tint=xartTint(dual,'#ffffff',1);if(tint){ctx.globalAlpha=clamp(t.flash/.15,0,1);ctx.drawImage(tint,t.x-66,t.y-66,132,132);}
+    }
+    ctx.restore();
+    if(alpha>=.92){
+      const sr=clamp(t.shield/Math.max(1,t.maxShield),0,1),hr=clamp(t.hp/Math.max(1,t.maxhp),0,1),bw=62,bh=4,y=t.y+62;
+      ctx.save();ctx.fillStyle='rgba(0,0,0,.82)';ctx.fillRect(t.x-bw/2-1,y-1,bw+2,bh*2+5);
+      ctx.fillStyle='#28a9ff';ctx.fillRect(t.x-bw/2,y,bw*sr,bh);
+      ctx.fillStyle=hr>.50?'#39e66d':(hr>.24?'#b8dc3c':'#ff5147');ctx.fillRect(t.x-bw/2,y+bh+2,bw*hr,bh);ctx.restore();
+    }
+  }
+  /* The hull barrels are a separate rotary reel too; recoil/rotation never mutates the base art. */
+  if(XART.rdy(bk)){
+    const im=XART.get(bk),bh=S.mini?48:40,bw=bh*(im.naturalWidth/Math.max(1,im.naturalHeight));
+    for(const slot of ['MG_L','MG_R']){const p=shipBossMount(b,slot);ctx.drawImage(im,p.x-bw/2,p.y-bh*.30,bw,bh);}
+  }
+  if(!S.mini||!S.summoned||!XART.rdy('s4w_drone_body'))return;
+  const body=XART.get('s4w_drone_body');
+  for(const d of S.drones){
+    if(d.dead||d.active<=0)continue;const sz=92*d.active;
+    ctx.save();ctx.globalAlpha=d.active;ctx.drawImage(body,d.x-sz/2,d.y-sz/2,sz,sz);ctx.restore();
+    if(XART.rdy(bk)){
+      const im=XART.get(bk),bh=58,bw=bh*(im.naturalWidth/Math.max(1,im.naturalHeight));
+      ctx.save();ctx.translate(d.x,d.y);ctx.rotate(d.ang-Math.PI/2);ctx.drawImage(im,-bw/2,-bh*.25,bw,bh);ctx.restore();
+    }
+    if(d.shieldFlash>0&&typeof xartTint==='function'){
+      const tint=xartTint('s4w_drone_body','#4adfff',1);if(tint){ctx.save();ctx.globalAlpha=clamp(d.shieldFlash/.14,0,1)*.78;ctx.drawImage(tint,d.x-sz/2,d.y-sz/2,sz,sz);ctx.restore();}
+    }else if(d.flash>0&&typeof xartTint==='function'){
+      const tint=xartTint('s4w_drone_body','#ffffff',1);if(tint){ctx.save();ctx.globalAlpha=clamp(d.flash/.15,0,1);ctx.drawImage(tint,d.x-sz/2,d.y-sz/2,sz,sz);ctx.restore();}
+    }
+    if(d.active>=.82){const bw=52,bh=3,sr=clamp(d.shield/Math.max(1,d.maxShield),0,1),hr=clamp(d.hp/Math.max(1,d.maxhp),0,1),y=d.y+48;
+      ctx.save();ctx.fillStyle='rgba(0,0,0,.82)';ctx.fillRect(d.x-bw/2-1,y-1,bw+2,bh*2+5);
+      ctx.fillStyle='#28a9ff';ctx.fillRect(d.x-bw/2,y,bw*sr,bh);ctx.fillStyle='#3fe875';ctx.fillRect(d.x-bw/2,y+bh+2,bw*hr,bh);ctx.restore();}
+  }
 }
 /* which phase is this boss in, 0-based, and has it just changed? */
 /* ============================================================
@@ -10688,10 +12606,507 @@ function reaverOrbTick(b, dt){
     }
   } else if(b._orb.t>=FIREORB_CHARGE+0.30){ b._orb=null; }
 }
+
+/* ============================================================
+   STAGE 2–3 AUTHORED BOSS AMMUNITION (0830)
+
+   Travelling rounds keep a fixed sprite box and rotate only to their committed launch vector.
+   Continuous beams retain their muzzle slot while the boss recoils/banks. They either lock when
+   charged or follow a bounded authored sweep; no beam or projectile samples the player after
+   release. */
+function l23BossBeamStart(b,family,slots,angles,warm,active,retract,width,opts){
+  if(!b||b._l23Beam)return false;
+  opts=opts||{};
+  b._l23Beam={family:family,slots:slots.slice(),angles:angles.slice(),t:0,warm:warm||.72,
+    active:active||1.0,retract:retract||.20,width:width||38,released:false,spin:opts.spin||0,
+    baseAngles:angles.slice(),sweepArc:opts.sweepArc||0,sweepRate:opts.sweepRate||0,
+    sweepPhase:opts.sweepPhase||0};
+  try{if(Audio.SFX&&(Audio.SFX.retinaCharge||Audio.SFX.bossPhase))(Audio.SFX.retinaCharge||Audio.SFX.bossPhase)();}catch(_l23c){}
+  return true;
+}
+function l23BossBeamTick(b,dt){
+  const B=b&&b._l23Beam;if(!B)return false;B.t+=dt;
+  /* Bounded sweep motion is authored and never tracks the player. Inferno Reaver uses this to
+     douse only 45 degrees either side of south, leaving a real opposite-side escape lane. */
+  if(B.sweepArc){
+    const off=Math.sin(B.t*B.sweepRate+B.sweepPhase)*B.sweepArc;
+    for(let i=0;i<B.angles.length;i++)B.angles[i]=B.baseAngles[i]+off;
+  }else if(B.spin)for(let i=0;i<B.angles.length;i++)B.angles[i]+=B.spin*dt;
+  if(!B.released&&B.t>=B.warm){
+    B.released=true;
+    shipBossMuzzleStart(b,B.slots,{life:.24,hpx:B.family==='inferno'?68:62});
+    try{if(Audio.SFX&&(Audio.SFX.enemyHeavyLaser||Audio.SFX.laserShot||Audio.SFX.enemyBossCannon))
+      (Audio.SFX.enemyHeavyLaser||Audio.SFX.laserShot||Audio.SFX.enemyBossCannon)();}catch(_l23s){}
+  }
+  const live=B.t>=B.warm&&B.t<B.warm+B.active;
+  if(live&&typeof player!=='undefined'&&player&&!player.dead&&player.invuln<=0){
+    const half=B.width*.32+(player._hx||9)*.55,len=Math.max(VW,VH)*1.25;
+    for(let i=0;i<B.slots.length;i++){
+      const p=shipBossMount(b,B.slots[i]),a=B.angles[i],dx=Math.cos(a),dy=Math.sin(a),px=player.x-p.x,py=player.y-p.y;
+      const along=px*dx+py*dy,across=Math.abs(px*dy-py*dx);
+      if(along>=0&&along<=len&&across<half){if(typeof playerHit==='function')playerHit();break;}
+    }
+  }
+  if(B.t>=B.warm+B.active+B.retract){b._l23Beam=null;return false;}
+  return true;
+}
+function l23BossBeamFrame(B){
+  if(B.t<B.warm)return clamp(Math.floor(B.t/Math.max(.01,B.warm)*3),0,2);
+  if(B.t<B.warm+B.active)return 3+(Math.floor((B.t-B.warm)*15)%6);
+  return 9+clamp(Math.floor((B.t-B.warm-B.active)/Math.max(.01,B.retract)*3),0,2);
+}
+function l23BossBeamDraw(b){
+  const B=b&&b._l23Beam;if(!B||typeof XART==='undefined')return false;
+  let key='l23fx_'+(B.family==='inferno'?'inferno_laser':'rime_laser')+'_'+l23BossBeamFrame(B);
+  /* The promoted Stage-3 fortress uses the same authored laser-helper family as Axel/Falva.
+     It is a wider, mechanically dense column, not a scaled ice pellet. */
+  if(B.family==='rime'&&b._s3boss&&b._s3boss.role==='wall'){
+    const hk='nlz_3_b'+(l23BossBeamFrame(B)%6);if(XART.rdy(hk))key=hk;
+  }
+  if(!XART.rdy(key))return false;const im=XART.get(key),len=Math.max(VW,VH)*1.25;
+  ctx.save();ctx.imageSmoothingEnabled=false;
+  for(let i=0;i<B.slots.length;i++){
+    const p=shipBossMount(b,B.slots[i]);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(B.angles[i]-Math.PI/2);
+    ctx.drawImage(im,-B.width/2,0,B.width,len);ctx.restore();
+  }
+  ctx.restore();return true;
+}
+function l23ProjectileDraw(b){
+  if(!b||!b._l23fx||typeof XART==='undefined')return false;
+  const fi=b._s3StaticSpin?0:(Math.floor((b.t||0)*16)%8);
+  const key='l23fx_'+b._l23fx+'_'+fi;if(!XART.rdy(key))return false;
+  const im=XART.get(key),size=b._s3Giant?[132,132]:({inferno_mg:[18,34],inferno_shotgun:[34,46],cryo_ball:[34,34],rime_orb:[58,58]}[b._l23fx]||[36,36]);
+  ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));
+  if(b._s3StaticSpin)ctx.rotate((b.t||0)*4.8);
+  else if(b._l23fx!=='cryo_ball'&&b._l23fx!=='rime_orb')ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);
+  ctx.drawImage(im,-size[0]/2,-size[1]/2,size[0],size[1]);ctx.restore();return true;
+}
+/* ============================================================
+   MAGMA WARD — FOUR-PHASE FIRE KIT (0830)
+
+   The furnace mouth owns the flamethrower and charged fireball. The two visible lower barrels
+   own the flame lances. Nothing spawns from the hull centre by accident, nothing tracks after
+   release, and the bubble is a real timed block rather than a decorative halo.               */
+function magmaWardFrame(prefix,count,t,fps){
+  const i=Math.max(0,Math.floor(Math.max(0,t)*(fps||12)))%count,k=prefix+i;
+  return (typeof XART!=='undefined'&&XART.rdy(k))?XART.get(k):null;
+}
+function magmaWardPointSegment(px,py,x1,y1,x2,y2){
+  const dx=x2-x1,dy=y2-y1,d2=dx*dx+dy*dy;
+  const u=d2?clamp(((px-x1)*dx+(py-y1)*dy)/d2,0,1):0;
+  return {d:Math.hypot(px-(x1+dx*u),py-(y1+dy*u)),u:u};
+}
+/* The yellow X marks on Mike's Level-2 diagram are inviolable safety corridors. Fire and laser
+   emitters may douse only the 90-degree sector centred on south: 45 degrees left to 45 right. */
+/* The authored motion is capped below the full 45-degree mechanical limit so the 96px flame
+   body and collision taper—not merely its centre line—remain outside both marked X zones. */
+const L2_DOUSE_ARC=35*Math.PI/180;
+function l2BoundSouthAngle(a){return clamp(a,Math.PI/2-L2_DOUSE_ARC,Math.PI/2+L2_DOUSE_ARC);}
+/* Stage 2's lower 138px are a guaranteed retreat lane.  The flame art and its collision use the
+   same computed length, so a player holding the bottom can read the sweep without being clipped
+   by an invisible full-length hazard.  Moving forward deliberately leaves that refuge. */
+function l2FlameSafeLength(m,ang,want){
+  const safeY=VH-138,down=Math.max(.22,Math.sin(ang));
+  return clamp((safeY-m.y)/down,76,want||240);
+}
+function magmaWardHazardHit(x,y,ang,len,r0,r1){
+  if(typeof player==='undefined'||!player||player.dead||player.invuln>0)return false;
+  const h=magmaWardPointSegment(player.x,player.y,x,y,x+Math.cos(ang)*len,y+Math.sin(ang)*len);
+  if(h.d<=lerp(r0,r1,h.u)+Math.max(player._hx||9,player._hy||10)){playerHit();return true;}
+  return false;
+}
+function magmaWardSound(name,fallback){
+  try{if(typeof Audio!=='undefined'&&Audio.SFX){const fn=Audio.SFX[name]||Audio.SFX[fallback];if(fn)fn();}}catch(_mwS){}
+}
+function magmaWardBarrierInit(b){
+  if(!b)return;const boss=b._ship==='infernoreaver',max=Math.max(boss?360:280,Math.round((b.maxhp||1000)*(boss?0.22:0.20)));
+  b._mwBarrier={active:true,hp:max,maxhp:max,hit:0,breakT:0,rearms:0};
+}
+function magmaWardBarrierRearm(b,ratio){
+  const H=b&&b._mwBarrier;if(!H||H.active)return false;
+  H.active=true;H.hp=Math.max(1,Math.round(H.maxhp*(ratio||1)));H.breakT=0;H.rearms++;
+  magmaWardSound('bossShieldTeleport','bossWeaponCharge');return true;
+}
+function magmaWardBarrierTick(b,dt){
+  const H=b&&b._mwBarrier;if(!H)return;H.hit=Math.max(0,H.hit-dt);H.breakT=Math.max(0,H.breakT-dt);
+}
+function magmaWardBarrierDamage(b,dmg,hx,hy){
+  const H=b&&b._mwBarrier;if(!H||!H.active)return false;
+  dmg=Math.max(1,dmg||1);H.hp-=dmg;H.hit=.16;b._mwShieldHit=.16;
+  if(typeof stageStats!=='undefined')stageStats.dmgDealt+=Math.min(dmg,Math.max(0,H.hp+dmg));
+  if(typeof fxBurst==='function')fxBurst(hx!=null?hx:b.x,hy!=null?hy:b.y,18,{color:'#ff8a22',rings:1,chunks:3,sparks:9});
+  magmaWardSound('shieldHitHeavy','shieldHitLight');
+  if(H.hp<=0){H.hp=0;H.active=false;H.breakT=.72;explode(b.x,(b._drawY!=null?b._drawY:b.y),72,'red');
+    if(typeof fxBurst==='function')fxBurst(b.x,(b._drawY!=null?b._drawY:b.y),84,{color:'#ff7a16',rings:2,chunks:12,sparks:24});
+    magmaWardSound('shieldBreak','expBig');shake=Math.max(shake,8);
+  }
+  return true;
+}
+function magmaWardBarrierDraw(b){
+  const H=b&&b._mwBarrier;if(!H||typeof XART==='undefined')return;
+  const cy=(b._drawY!=null?b._drawY:b.y),q=H.active?1:clamp(H.breakT/.72,0,1),k='mwfx_fire_shield_'+(Math.floor((b.t||0)*12)%8);
+  if(q>0&&XART.rdy(k)){const raw=XART.get(k),ratio=clamp(H.hp/Math.max(1,H.maxhp),0,1),
+      col=ratio>.66?'#ff2f18':(ratio>.33?'#8b8b8b':'#ffffff'),
+      im=(H.active&&typeof xartTint==='function'&&H.hit>0)?(xartTint(k,col,.96)||raw):raw,
+      base=(b._ship==='infernoreaver'?304:288),s=base+(H.hit>0?16:0)+(1-q)*34;
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=(H.active?.72:.62*q)+(H.hit>0?.22:0);
+    ctx.drawImage(im,b.x-s/2,cy-s/2,s,s);ctx.restore();
+  }
+  if(H.active){const bw=Math.min(150,b.w*.70),ratio=clamp(H.hp/Math.max(1,H.maxhp),0,1),y=cy-b.h*.56-10;
+    ctx.save();ctx.fillStyle='rgba(0,0,0,.78)';ctx.fillRect(b.x-bw/2-1,y-1,bw+2,6);
+    ctx.fillStyle='#ffb22d';ctx.fillRect(b.x-bw/2,y,bw*ratio,4);ctx.restore();}
+}
+function magmaWardProjectile(x,y,ang,speed,kind,opts){
+  opts=opts||{};
+  const sp=speed*((typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1);
+  eBullets.push({x:x,y:y,vx:Math.cos(ang)*sp,vy:Math.sin(ang)*sp,ang:ang,
+    w:opts.w||((kind==='fireball')?86:38),h:opts.h||((kind==='fireball')?86:38),
+    dmg:1,t:0,kind:'magma',_mwKind:kind,_noArsenal:true,
+    _mwAccel:opts.accel||0,_mwMax:opts.max||sp,_shootable:!!opts.shootable,hp:opts.hp||0});
+}
+function magmaWardStartAttack(b,pat,step,cdMul){
+  if(!b||b.dead)return;
+  const arenaLeft=(typeof camX==='number'?camX:0),arenaMid=arenaLeft+VW*.5;
+  const C=shipBossMount(b,'C'),A={kind:pat,t:0,step:step,started:false,released:false,ang:aimPlayer(C.x,C.y),
+    ownsMove:true,poseRot:0,pulse:0,volley:0,arenaLeft:arenaLeft,homeX:arenaMid,homeY:shipBossStationY(b)};
+  if(pat==='magmaflame'){
+    /* The burner is a real outboard hardpoint, never a flame emerging through the middle of the
+       hull.  Alternate sides so both cannons get a readable turn. */
+    A.tell=.58;A.active=2.24;A.recover=.46;A.dir=(step&1)?1:-1;A.holdSlot=(step&1)?'R':'L';b.fireCd=3.52*Math.max(.64,cdMul||1);
+  }else if(pat==='magmaflamelaser'){
+    /* Boss1/boss2: five top-lane stations, alternating travel direction on each use. Every station
+       fires one vertical flame-laser before the hull moves to the next; the pass never tracks. */
+    /* Keep the complete hull and its outboard muzzle inside the playfield at every stop. */
+    const margin=Math.max(116,b.w*.54),dir=(step&1)?1:-1;
+    A.tell=.85;A.passCount=5;A.passPeriod=.66;A.fireHold=.48;A.slideDur=A.passCount*A.passPeriod;
+    A.centerDur=.62;A.douseDur=3.05;A.active=A.slideDur+A.centerDur+A.douseDur;A.recover=.55;
+    const arenaRight=arenaLeft+VW;
+    A.passIndex=-1;A.passDir=dir;A.slideStart=dir>0?arenaLeft+margin:arenaRight-margin;
+    A.slideEnd=dir>0?arenaRight-margin:arenaLeft+margin;A.mode='tell';
+    b.fireCd=9.10*Math.max(.64,cdMul||1);
+  }else if(pat==='magmafireball'){
+    A.tell=.72;A.active=1.16;A.recover=.42;b.fireCd=2.58*Math.max(.64,cdMul||1);
+  }else{
+    /* Shield/ring prelude -> unmistakable charge -> one giant committed fire laser. */
+    A.tell=.38;A.shieldDur=1.05;A.laserWarm=.72;A.laserDur=1.38;
+    A.active=A.shieldDur+A.laserWarm+A.laserDur;A.recover=.55;A.pulse=-.04;
+    b.fireCd=4.34*Math.max(.64,cdMul||1);
+  }
+  b._mwAttack=A;magmaWardSound('bossWeaponCharge','enemyFlameBolt');
+}
+function magmaWardFinish(b){
+  if(!b)return;const A=b._mwAttack;b._mwAttack=null;b._mwShieldActive=false;
+  try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOff)Snd.loopOff('magmaWardFlameLoop');}catch(_mwL){}
+  if(A){b.x=A.homeX;b.y=A.homeY;}
+}
+function magmaWardTick(b,dt){
+  const A=b&&b._mwAttack;if(!A)return;A.t+=dt;
+  const activeT=A.t-A.tell,W=worldWidth(),sy=A.homeY;
+  /* The action owns movement until recovery completes.  This prevents the generic ship drift
+     from fighting the close flamethrower pass or rotating the hardpoints away from their art. */
+  const recoverT=activeT-A.active;
+  if(A.kind==='magmaflame'){
+    b.x+=(A.homeX-b.x)*Math.min(1,dt*4.5);b.y+=(sy-b.y)*Math.min(1,dt*5);
+    /* Oscillation, not a full spin: the flame can never enter the four marked X corridors. */
+    A.poseRot=(activeT>=0&&activeT<A.active)?Math.sin(activeT*2.55+(A.step&1?Math.PI:0))*L2_DOUSE_ARC:0;
+    if(activeT>=0&&activeT<A.active){
+      if(!A.started){A.started=true;magmaWardSound('flameThrowerStart','enemyFlameBolt');}
+      try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn)Snd.loopOn('magmaWardFlameLoop',.58);}catch(_mwLoop){}
+      const m=shipBossMount(b,A.holdSlot),Aang=Math.PI/2+A.poseRot,len=l2FlameSafeLength(m,Aang,240);A.flameLen=len;
+      magmaWardHazardHit(m.x,m.y,Aang,len,11,36);
+      A.pulse-=dt;
+      while(A.pulse<=0){
+        A.pulse+=.38;const aim=aimPlayer(m.x,m.y),flip=(A.volley&1)?1:-1;
+        for(const o of [-.075,.075])magmaWardProjectile(m.x,m.y,aim+o,3.10,'ember',{w:30,h:30});
+        if((A.volley&1)===0)for(let i=0;i<8;i++)magmaWardProjectile(m.x,m.y,A.poseRot+i*TAU/8,2.05,'ember',{w:28,h:28});
+        A.volley++;magmaWardSound('enemyFlameBolt','enemyBossCannon');
+      }
+    }else if(activeT>=A.active&&A.started){
+      A.started=false;try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOff)Snd.loopOff('magmaWardFlameLoop');}catch(_mwEnd){}
+      magmaWardSound('flameThrowerEnd','enemyFlameBolt');
+    }
+  }else if(A.kind==='magmaflamelaser'){
+    if(activeT<0){
+      A.mode='tell';b.x+=(A.slideStart-b.x)*Math.min(1,dt*7);b.y+=(sy-b.y)*Math.min(1,dt*5);
+      A.poseRot=0;A.flameOn=false;
+    }
+    if(activeT>=0&&activeT<A.active){
+      let on=false;
+      if(activeT<A.slideDur){
+        A.mode='slide';const idx=Math.min(A.passCount-1,Math.floor(activeT/A.passPeriod)),phase=activeT-idx*A.passPeriod;
+        const x0=lerp(A.slideStart,A.slideEnd,idx/Math.max(1,A.passCount-1));
+        const x1=lerp(A.slideStart,A.slideEnd,Math.min(A.passCount-1,idx+1)/Math.max(1,A.passCount-1));
+        const mv=clamp((phase-A.fireHold)/Math.max(.01,A.passPeriod-A.fireHold),0,1),ease=mv*mv*(3-2*mv);
+        b.x=lerp(x0,x1,ease);b.y=sy;A.poseRot=0;A.flameAng=Math.PI/2;
+        if(idx!==A.passIndex){
+          A.passIndex=idx;A.holdSlot=['L','R','C','L','R'][idx];
+          l23BossBeamStart(b,'inferno',[A.holdSlot],[Math.PI/2],.14,.24,.10,34);
+        }
+      }else if(activeT<A.slideDur+A.centerDur){
+        A.mode='center';b.x+=(A.homeX-b.x)*Math.min(1,dt*7);b.y+=(sy-b.y)*Math.min(1,dt*6);
+        A.poseRot*=Math.max(0,1-dt*10);on=false;
+      }else{
+        A.mode='douse';const q=activeT-A.slideDur-A.centerDur;
+        b.x=A.homeX;b.y=sy;A.poseRot=Math.sin(q*2.65)*L2_DOUSE_ARC;
+        A.holdSlot=A.poseRot<0?'L':'R';A.flameAng=Math.PI/2+A.poseRot;on=true;
+      }
+      if(on&&!A.flameOn){A.flameOn=true;magmaWardSound('flameThrowerStart','enemyFlameBolt');shake=Math.max(shake,4);}
+      if(!on&&A.flameOn){A.flameOn=false;magmaWardSound('flameThrowerEnd','enemyFlameBolt');}
+      if(on){
+        try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn)Snd.loopOn('magmaWardFlameLoop',.58);}catch(_mwHoldLoop){}
+        const m=shipBossMount(b,A.holdSlot),len=l2FlameSafeLength(m,A.flameAng,240);A.flameLen=len;
+        magmaWardHazardHit(m.x,m.y,A.flameAng,len,11,36);
+      }else try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOff)Snd.loopOff('magmaWardFlameLoop');}catch(_mwHoldOff){}
+    }else if(activeT>=A.active){
+      if(A.flameOn){A.flameOn=false;magmaWardSound('flameThrowerEnd','enemyFlameBolt');}
+      b.x+=(A.homeX-b.x)*Math.min(1,dt*4.5);b.y+=(sy-b.y)*Math.min(1,dt*4.5);A.poseRot*=Math.max(0,1-dt*8);
+    }
+  }else if(A.kind==='magmafireball'){
+    b.x+=(A.homeX+Math.sin(A.t*3.4)*56-b.x)*Math.min(1,dt*3.8);b.y+=(sy-b.y)*Math.min(1,dt*5);
+    while(activeT>=A.volley*.34&&activeT>=0&&A.volley<3){
+      const C=shipBossMount(b,'C'),a=aimPlayer(C.x,C.y),o=(A.volley-1)*.095;
+      magmaWardProjectile(C.x,C.y,a+o,1.48,'fireball',{accel:1.95,max:6.35,shootable:true,hp:3});
+      shipBossMuzzleStart(b,['C'],{life:.18,n:6});magmaWardSound('enemyFlameBolt','enemyBossCannon');
+      shake=Math.max(shake,5);A.volley++;
+    }
+  }else if(A.kind==='magmafireshield'){
+    b.x+=(A.homeX-b.x)*Math.min(1,dt*4.8);b.y+=(sy-b.y)*Math.min(1,dt*5);
+    b._mwShieldActive=activeT>=0&&activeT<A.shieldDur;
+    if(b._mwShieldActive){
+      if(!A.barrierRearmDone){A.barrierRearmDone=true;if(b._mwBarrier&&!b._mwBarrier.active&&b._mwBarrier.rearms<1)magmaWardBarrierRearm(b,.70);}
+      A.pulse-=dt;
+      if(A.pulse<=0){
+        A.pulse=.36;const C=shipBossMount(b,'C'),base=A.volley*.31;A.volley++;
+        for(let i=0;i<10;i++)magmaWardProjectile(C.x,C.y,base+i*TAU/10,2.42,'ember',{w:32,h:32});
+        magmaWardSound('enemyFlameBolt','enemyBossCannon');
+      }
+    }else if(activeT>=A.shieldDur&&activeT<A.active){
+      const lt=activeT-A.shieldDur,C=shipBossMount(b,'C');
+      if(A.laserAng==null){A.laserAng=l2BoundSouthAngle(aimPlayer(C.x,C.y));magmaWardSound('bossWeaponCharge','enemyFlameBolt');}
+      if(lt>=A.laserWarm&&lt<A.laserWarm+A.laserDur){
+        if(!A.laserLive){A.laserLive=true;magmaWardSound('enemyHeavyLaser','laserCannon');shake=Math.max(shake,9);}
+        magmaWardHazardHit(C.x,C.y,A.laserAng,Math.max(380,VH-C.y+60),18,28);
+      }
+    }
+  }
+  if(recoverT>=0){b.x+=(A.homeX-b.x)*Math.min(1,dt*5);b.y+=(sy-b.y)*Math.min(1,dt*5);A.poseRot*=Math.max(0,1-dt*9);}
+  b.x=clamp(b.x,b.w*.46,W-b.w*.46);b.y=clamp(b.y,sy,VH-b.h*.46);
+  if(A.t>=A.tell+A.active+A.recover)magmaWardFinish(b);
+}
+function magmaWardDrawOver(b){
+  const A=b&&b._mwAttack;if(!A||typeof ctx==='undefined')return;const activeT=A.t-A.tell;
+  if(A.kind==='magmaflame'){
+    const C=shipBossMount(b,A.holdSlot||'L');
+    if(activeT<0){const im=magmaWardFrame('mwfx_fireball_charge_',8,A.t,12);if(im)ctx.drawImage(im,C.x-43,C.y-43,86,86);}
+    else if(activeT<A.active){
+      const im=magmaWardFrame('mwfx_flamethrower_',12,activeT,14);if(!im)return;
+      const ang=A.poseRot+Math.PI/2;
+      ctx.save();ctx.translate(C.x,C.y);ctx.rotate(ang-Math.PI/2);ctx.drawImage(im,-62,0,124,A.flameLen||l2FlameSafeLength(C,ang,240));ctx.restore();
+    }
+  }else if(A.kind==='magmaflamelaser'){
+    const L=shipBossMount(b,'L'),R=shipBossMount(b,'R');
+    if(activeT<0){const im=magmaWardFrame('mwfx_fireball_charge_',8,A.t,12);if(im){ctx.drawImage(im,L.x-28,L.y-28,56,56);ctx.drawImage(im,R.x-28,R.y-28,56,56);}}
+    else if(activeT<A.active&&A.flameOn){
+      const im=magmaWardFrame('mwfx_flamethrower_',12,activeT,14);if(!im)return;
+      const m=A.holdSlot==='R'?R:L,len=A.flameLen||l2FlameSafeLength(m,A.flameAng,240);
+      ctx.save();ctx.translate(m.x,m.y);ctx.rotate(A.flameAng-Math.PI/2);ctx.drawImage(im,-62,0,124,len);ctx.restore();
+    }
+  }else if(A.kind==='magmafireball'){
+    if(activeT<0){const C=shipBossMount(b,'C'),im=magmaWardFrame('mwfx_fireball_charge_',8,A.t/A.tell*.66,12);if(im){ctx.save();ctx.drawImage(im,C.x-46,C.y-46,92,92);ctx.restore();}}
+  }else if(A.kind==='magmafireshield'&&activeT>=0&&activeT<A.active){
+    const cy=(b._drawY!=null?b._drawY:b.y),C=shipBossMount(b,'C');
+    if(activeT<A.shieldDur){const im=magmaWardFrame('mwfx_fire_shield_',8,activeT,12);
+      if(im){const s=270+((b._mwShieldHit||0)>0?10:0);ctx.save();ctx.globalAlpha=(b._mwShieldHit||0)>0?1:.92;ctx.drawImage(im,b.x-s/2,cy-s/2,s,s);ctx.restore();}}
+    else{const lt=activeT-A.shieldDur;
+      if(lt<A.laserWarm){const im=magmaWardFrame('mwfx_fireball_charge_',8,lt,12);if(im){const s=88+lt/A.laserWarm*58;ctx.drawImage(im,C.x-s/2,C.y-s/2,s,s);}}
+      else if(lt<A.laserWarm+A.laserDur){const p=(lt-A.laserWarm)/A.laserDur;let fi=p<.12?Math.floor(p/.12*3):(p>.88?10:3+Math.floor(lt*15)%7);fi=clamp(fi,0,11);
+        const k='mwfx_flame_laser_'+fi;if(XART.rdy(k)){const im=XART.get(k),len=Math.max(380,VH-C.y+60);
+          ctx.save();ctx.translate(C.x,C.y);ctx.rotate(A.laserAng-Math.PI/2);ctx.drawImage(im,-56,0,112,len);ctx.restore();}}
+    }
+  }
+  b._mwShieldHit=Math.max(0,(b._mwShieldHit||0)-1/60);
+}
+function magmaWardProjectileDraw(b){
+  if(!b||!b._mwKind||typeof XART==='undefined')return false;
+  const k='mwfx_fireball_'+(Math.floor((b.t||0)*13)%8);if(!XART.rdy(k))return false;
+  const raw=XART.get(k),im=(typeof xartTint==='function'?(xartTint(k,'#ffb51f',.84)||raw):raw),s=b._mwKind==='fireball'?82:38;
+  ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowColor='#ff7b16';ctx.shadowBlur=10;
+  ctx.drawImage(im,b.x-s/2,b.y-s/2,s,s);ctx.restore();return true;
+}
+/* INFERNO REAVER'S BOSS1/BOSS2 PASS. Five equally spaced stations run left-to-right, then the
+   next use mirrors right-to-left. At every station one physical cannon fires one straight-down
+   laser and fully retracts before the hull advances. */
+function infernoReaverPassStart(b,step){
+  if(!b||b._irPass)return false;
+  const arenaLeft=(typeof camX==='number'?camX:0),arenaRight=arenaLeft+VW,margin=Math.max(116,b.w*.54),dir=(step&1)?1:-1;
+  b._irPass={phase:'tell',t:0,dir:dir,startX:dir>0?arenaLeft+margin:arenaRight-margin,
+    endX:dir>0?arenaRight-margin:arenaLeft+margin,homeX:arenaLeft+VW*.5,
+    sy:shipBossStationY(b),count:5,period:.68,hold:.50,index:-1,poseRot:0};
+  b.fireCd=4.75;magmaWardSound('bossWeaponCharge','enemyFlameBolt');return true;
+}
+function infernoReaverPassFinish(b){
+  if(!b)return;const P=b._irPass;b._irPass=null;if(P){b.x=P.homeX;b.y=P.sy;}b.fireCd=Math.max(b.fireCd||0,.74);
+}
+function infernoReaverPassTick(b,dt){
+  const P=b&&b._irPass;if(!P)return false;P.t+=dt;const W=worldWidth();
+  if(P.phase==='tell'){
+    const dx=P.startX-b.x,dy=P.sy-b.y,d=Math.hypot(dx,dy)||1,step=Math.min(d,370*dt);
+    b.x+=dx/d*step;b.y+=dy/d*step;P.poseRot=P.dir*.08*Math.sin(clamp(P.t/.72,0,1)*Math.PI);
+    if(P.t>=.72&&d<7){b.x=P.startX;b.y=P.sy;P.phase='pass';P.t=0;P.poseRot=0;}
+  }else if(P.phase==='pass'){
+    const idx=Math.min(P.count-1,Math.floor(P.t/P.period)),phase=P.t-idx*P.period;
+    const x0=lerp(P.startX,P.endX,idx/Math.max(1,P.count-1));
+    const x1=lerp(P.startX,P.endX,Math.min(P.count-1,idx+1)/Math.max(1,P.count-1));
+    const mv=clamp((phase-P.hold)/Math.max(.01,P.period-P.hold),0,1),ease=mv*mv*(3-2*mv);
+    b.x=lerp(x0,x1,ease);b.y=P.sy;P.poseRot=P.dir*.09*Math.sin(mv*Math.PI);
+    if(idx!==P.index){
+      P.index=idx;const slots=['L','R','C','L','R'],slot=P.dir>0?slots[idx]:slots[P.count-1-idx];
+      l23BossBeamStart(b,'inferno',[slot],[Math.PI/2],.15,.25,.10,38);
+    }
+    if(P.t>=P.count*P.period){P.phase='recover';P.t=0;P.poseRot=0;}
+  }else{
+    const dx=P.homeX-b.x,dy=P.sy-b.y,d=Math.hypot(dx,dy)||1,step=Math.min(d,390*dt);
+    b.x+=dx/d*step;b.y+=dy/d*step;P.poseRot*=Math.max(0,1-dt*8);
+    if((P.t>=.58&&d<5)||P.t>=1.05)infernoReaverPassFinish(b);
+  }
+  b.x=clamp(b.x,b.w*.50,W-b.w*.50);b.y=P?P.sy:b.y;return true;
+}
+/* INFERNO REAVER'S FINAL ROLL.  One held flamethrower remains attached to the rotating centre
+   emitter while the whole hull rolls from one side of the arena to the other.  The tell moves
+   the boss to its starting edge; the active phase never teleports and the recovery restores the
+   normal station before another pattern can queue. */
+function infernoReaverRollStart(b,step){
+  if(!b||b._irRoll)return false;const W=worldWidth(),margin=Math.max(104,b.w*.52),dir=(step&1)?1:-1;
+  b._irRoll={phase:'tell',t:0,dir:dir,startX:dir>0?margin:W-margin,endX:dir>0?W-margin:margin,
+    sy:shipBossStationY(b),poseRot:0,flameAng:Math.PI/2,pulse:0,flameOn:false,turn:-1};
+  b.fireCd=5.6;magmaWardSound('bossWeaponCharge','enemyFlameBolt');return true;
+}
+function infernoReaverRollFinish(b){
+  if(!b)return;const R=b._irRoll;b._irRoll=null;
+  try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOff)Snd.loopOff('magmaWardFlameLoop');}catch(_ir0){}
+  magmaWardSound('flameThrowerEnd','enemyFlameBolt');
+  if(R){b.x=worldWidth()*.5;b.y=R.sy;}b.fireCd=Math.max(b.fireCd||0,.72);
+}
+function infernoReaverRollTick(b,dt){
+  const R=b&&b._irRoll;if(!R)return false;R.t+=dt;const W=worldWidth();
+  if(R.phase==='tell'){
+    /* The Reaver keeps its boss station. Dropping 72-126px toward the player made the hull plus
+       340px flame physically seal the lower arena before the sweep even began. */
+    const dx=R.startX-b.x,dy=R.sy-b.y,d=Math.hypot(dx,dy)||1,step=Math.min(d,365*dt);
+    b.x+=dx/d*step;b.y+=dy/d*step;R.poseRot+=R.dir*dt*1.35;
+    if(R.t>=.72&&d<7){b.x=R.startX;b.y=R.sy;R.phase='roll';R.t=0;R.poseRot=0;shake=Math.max(shake,7);}
+  }else if(R.phase==='roll'){
+    const TURN=.62,GAP=.26,CYCLE=TURN+GAP,DUR=CYCLE*4;
+    const p=clamp(R.t/DUR,0,1),ease=p*p*(3-2*p),local=R.t%CYCLE,turn=Math.floor(R.t/CYCLE);
+    b.x=lerp(R.startX,R.endX,ease);b.y=R.sy;
+    /* Each live beat is one exact 180-degree lower-hemisphere douse, followed by a visible/silent
+       recovery gap. Alternating direction keeps it dodgeable from either side; the flame never
+       wraps through the north half or remains lethal during the reset. */
+    const tp=clamp(local/TURN,0,1),sweep=(turn&1)?lerp(Math.PI/2,-Math.PI/2,tp):lerp(-Math.PI/2,Math.PI/2,tp);
+    /* The hull still performs the requested 180-degree turn, but the burner opens only while its
+       nozzle crosses the central +/-45-degree douse sector. The outer four X regions therefore
+       remain true safe zones throughout every turn. */
+    R.poseRot=sweep;R.flameAng=Math.PI/2+clamp(sweep,-L2_DOUSE_ARC,L2_DOUSE_ARC);
+    R.flameOn=local<TURN&&Math.abs(sweep)<=L2_DOUSE_ARC;
+    if(R.flameOn&&!R._flameWasOn){magmaWardSound('flameThrowerStart','enemyFlameBolt');}
+    if(!R.flameOn&&R._flameWasOn){
+      try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOff)Snd.loopOff('magmaWardFlameLoop');}catch(_irGap){}
+      magmaWardSound('flameThrowerEnd','enemyFlameBolt');
+    }
+    R._flameWasOn=R.flameOn;
+    R.holdSlot=R.flameAng<Math.PI/2?'L':'R';
+    const C=shipBossMount(b,R.holdSlot),flameLen=l2FlameSafeLength(C,R.flameAng,340);R.flameLen=flameLen;
+    if(R.flameOn){
+      try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn)Snd.loopOn('magmaWardFlameLoop',.68);}catch(_ir1){}
+      magmaWardHazardHit(C.x,C.y,R.flameAng,flameLen,14,54);
+    }
+    R.pulse-=dt;if(R.pulse<=0){R.pulse=.46;
+      /* Four outward rounds emphasize the roll direction without homing or sealing the screen. */
+      for(const o of [-.22,-.08,.08,.22]){b._shotFx='inferno_mg';_shipShot(C.x,C.y,Math.cos(R.flameAng+o)*3.35,Math.sin(R.flameAng+o)*3.35,11,b);}b._shotFx=null;
+      magmaWardSound('enemyMachineGunHeavy','enemyBossCannon');
+    }
+    if(R.t>=DUR){R.phase='recover';R.t=0;R.flameOn=false;
+      try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOff)Snd.loopOff('magmaWardFlameLoop');}catch(_ir2){}
+      magmaWardSound('flameThrowerEnd','enemyFlameBolt');}
+  }else{
+    const dx=W*.5-b.x,dy=R.sy-b.y,d=Math.hypot(dx,dy)||1,step=Math.min(d,390*dt);
+    b.x+=dx/d*step;b.y+=dy/d*step;R.poseRot*=Math.max(0,1-dt*5.5);
+    if((R.t>=.58&&d<5)||R.t>=1.05)infernoReaverRollFinish(b);
+  }
+  b.x=clamp(b.x,b.w*.50,W-b.w*.50);b.y=clamp(b.y,R.sy,VH-b.h*.48);return true;
+}
+function infernoReaverRollDraw(b){
+  const R=b&&b._irRoll;if(!R||typeof XART==='undefined')return;
+  const C=shipBossMount(b,R.holdSlot||'L');
+  if(R.phase==='tell'){
+    const im=magmaWardFrame('mwfx_fireball_charge_',8,R.t,12);if(im){const s=86+Math.sin(R.t*18)*7;ctx.drawImage(im,C.x-s/2,C.y-s/2,s,s);}return;
+  }
+  if(R.phase!=='roll'||!R.flameOn)return;const im=magmaWardFrame('mwfx_flamethrower_',12,R.t,15);if(!im)return;
+  ctx.save();ctx.translate(C.x,C.y);ctx.rotate(R.flameAng-Math.PI/2);ctx.drawImage(im,-84,0,168,R.flameLen||l2FlameSafeLength(C,R.flameAng,340));ctx.restore();
+}
+
+/* STAGE 6 BLACKSTEEL MINIBOSS — three readable storm-weapon acts. The hull owns one stable idle
+   plate; attack motion comes from anchored muzzle reels and internal electrical charge overlays,
+   so it never flickers between unrelated generated ships. */
+function stage6MiniInit(b){b._s6mini={t:0,mode:'tracer',shot:0,event:0,round:0,charge:0,homeY:b.ty||132};b.fireCd=999;}
+function stage6MiniShot(b,slot,ang,spd,kind,opt){
+  opt=opt||{};const p=shipBossMount(b,slot),hb=S6_PROJECTILE_HIT[kind]||[10,24];
+  const q=eShootT(p.x,p.y,ang,spd,kind,{w:opt.w||hb[0],h:opt.h||hb[1],silent:!!opt.silent,szMul:opt.szMul||1});
+  q._boss=true;q._bfam='legion';q._noArsenal=true;if(opt.accel){q._s6Accel=opt.accel;q._s6Max=opt.max||spd*2;}return q;
+}
+function stage6MiniMuzzle(b,slot,scale){
+  const p=shipBossMount(b,slot);navalFlash(null,p,scale||.82,BPFX_MUZZLE_LASER,{n:8,hpx:52,life:.16,anchor:.40,
+    follow:()=>b&&!b.dead?shipBossMount(b,slot):null});
+}
+function stage6MiniMode(b,next){const S=b._s6mini;S.mode=next;S.t=0;S.shot=0;S.event=0;S.charge=0;S.round++;}
+function stage6MiniTick(b,dt){
+  const S=b._s6mini,W=worldWidth();S.t+=dt;b.fireCd=999;
+  b.y+=(S.homeY-b.y)*Math.min(1,dt*5.5);b.x=W*.5+Math.sin((S.t+S.round*1.7)*1.08)*Math.max(70,W*.22);
+  if(S.mode==='tracer'){
+    while(S.shot<10&&S.t>=.42+S.shot*.105){const slot=(S.shot&1)?'R':'L',off=(S.shot%5-2)*.045;
+      stage6MiniShot(b,slot,Math.PI/2+off,5.45,'s6tracer',{});stage6MiniMuzzle(b,slot,.68);
+      if((S.shot%3)===0&&Audio.SFX&&(Audio.SFX.enemyMachineGunHeavy||Audio.SFX.enemyShoot))(Audio.SFX.enemyMachineGunHeavy||Audio.SFX.enemyShoot)();S.shot++;}
+    if(S.t>2.05)stage6MiniMode(b,'missile');
+  }else if(S.mode==='missile'){
+    if(!S.event&&S.t>.62){S.event=1;for(const side of [-1,1])for(const o of [.10,.26]){
+        const slot=side<0?'L':'R';stage6MiniShot(b,slot,Math.PI/2+side*o,1.72,'s6missile',{silent:side>0||o>.1,accel:1.22,max:5.65});}
+      stage6MiniMuzzle(b,'L',1);stage6MiniMuzzle(b,'R',1);shake=Math.max(shake,4);
+      if(Audio.SFX&&(Audio.SFX.missile||Audio.SFX.enemyBossCannon))(Audio.SFX.missile||Audio.SFX.enemyBossCannon)();}
+    if(S.t>2.10)stage6MiniMode(b,'storm');
+  }else{
+    S.charge=clamp(S.t/.92,0,1);
+    if(!S.event&&S.t>.92){S.event=1;const C=shipBossMount(b,'C');
+      for(const o of [-.34,-.17,0,.17,.34])stage6MiniShot(b,'C',Math.PI/2+o,3.15,'s6bolt',{silent:o!==0,szMul:o===0?1.25:1});
+      for(const side of [-1,1])stage6MiniShot(b,side<0?'L':'R',Math.PI/2+side*.12,1.45,'s6orb',{silent:true,accel:.72,max:4.25,szMul:1.10});
+      stage6MiniMuzzle(b,'C',1.35);stage6MiniMuzzle(b,'L',.9);stage6MiniMuzzle(b,'R',.9);shake=Math.max(shake,7);
+      if(Audio.SFX&&(Audio.SFX.enemyElectricBolt||Audio.SFX.enemyHeavyLaser))(Audio.SFX.enemyElectricBolt||Audio.SFX.enemyHeavyLaser)();}
+    if(S.t>2.42)stage6MiniMode(b,'tracer');
+  }
+  return true;
+}
+function stage6MiniDrawOver(b){
+  const S=b&&b._s6mini;if(!S||typeof XART==='undefined')return;const C=shipBossMount(b,'C');
+  if(S.mode==='storm'){
+    const fi=clamp(Math.floor(S.charge*7),0,7),key='s6mb_cyclonemuzzle_'+fi;
+    if(XART.rdy(key)){const im=XART.get(key),sz=52+S.charge*72;ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.45+.45*S.charge;ctx.drawImage(im,C.x-sz/2,C.y-sz/2,sz,sz);ctx.restore();}
+    /* A crisp bottom-to-top pixel charge stays inside the hull bounds and signals the release. */
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.fillStyle='#6edcff';ctx.globalAlpha=.28+.45*S.charge;
+    const top=(b._drawY!=null?b._drawY:b.y)+b.h*.38-b.h*.72*S.charge;
+    for(let i=0;i<7;i++)ctx.fillRect(Math.round(b.x-22+i*7),Math.round(top+(i%2)*5),4,8);ctx.restore();
+  }
+}
 function shipBossManoeuvre(b, dt){
   if(!b || !b._ship || b.dead || b.enter) return false;
   shipBossMuzzleTick(b, dt);
+  if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierTick==='function')magmaWardBarrierTick(b,dt);
+  /* The Jungle Cruiser is a complete authored encounter. Letting the generic manoeuvre and
+     shipBossQueueAttack paths run underneath it would double-move the hull and reintroduce the
+     retired green-vortex volley between its missile/beam phases. */
+  if(b._ship==='junglecruiser'&&typeof jungleCruiserDirector==='function')return jungleCruiserDirector(b,dt);
   shipBossActionTick(b,dt);
+  if(b._s4war&&typeof stage4WarfareTick==='function')return stage4WarfareTick(b,dt);
+  if(b._xenoRig&&typeof xenoRegentTick==='function')xenoRegentTick(b,dt);
+  if(b._s6mini&&typeof stage6MiniTick==='function')return stage6MiniTick(b,dt);
   if(b._herald && typeof heraldDeathTick==='function') heraldDeathTick(b,dt);
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const sy=shipBossStationY(b);
@@ -10702,9 +13117,17 @@ function shipBossManoeuvre(b, dt){
      decrements _brkCd, so gating the call on `b._brk` alone would leave the cooldown frozen the
      moment the sweep ended - and no rake would ever arm again for the rest of the fight. */
   if(b._brk || b._brkCd>0) beamRakeTick(b, dt);
+  if(b._l23Beam) l23BossBeamTick(b,dt);
   if(b._orb) reaverOrbTick(b, dt);
+  if(b._ship==='magmaward'){
+    magmaWardTick(b,dt);
+    if(b._mwAttack&&b._mwAttack.ownsMove)return true;
+  }
+  if(b._ship==='infernoreaver'&&b._irPass){infernoReaverPassTick(b,dt);if(b._irPass)return true;}
+  if(b._ship==='infernoreaver'&&b._irRoll){infernoReaverRollTick(b,dt);if(b._irRoll)return true;}
   if(b._stormMg) stormMgTick(b, dt);
-  if(b._jcBurst) jungleCruiserTick(b,dt);
+  if(b._s3boss && typeof stage3BossTick==='function') stage3BossTick(b,dt);
+  if(b._s7Flood)sludgeFloodTick(b,dt);
   /* the carrier's reel runs on the FRAME clock, not the volley beat - the round leaves on the
      animation frame that shows it clearing the bay. See carrierTick. */
   if((b._ship==='doomsdaycarrier'||b._ship==='doomsdaycarriermk2') && typeof carrierTick==='function') carrierTick(b, dt);            // the wind-up runs on the frame clock, not the volley beat
@@ -10723,8 +13146,9 @@ function shipBossManoeuvre(b, dt){
       for(const sx of [-0.30, 0.30]){
         const rx=b.x+(b.w||120)*sx;
         eBullets.push({x:rx, y:ry, vx:0, vy:2.3, ang:Math.PI/2, spd:2.3, turn:0.030,
-                       w:16, h:26, dmg:1, t:0, kind:'emissile'});
+                       w:16, h:26, dmg:1, t:0, kind:'emissile',hp:1,_shootable:true});
       }
+      if(Audio.SFX&&(Audio.SFX.missile||Audio.SFX.enemyBossCannon))(Audio.SFX.missile||Audio.SFX.enemyBossCannon)();
     }
   }
   if(b._sbm==null){ b._sbm=SBM_HOLD; b._sbmT=rnd(1.2,2.2); b._sbmLeg=0; }
@@ -10837,60 +13261,530 @@ function shipBossPhase(b){
   if(i<0) i=0; if(i>n-1) i=n-1;
   return i;
 }
-/* JUNGLE CRUISER — rapid naval guns in real bursts, then emerald laser/wind pressure. The burst
-   is advanced per frame so ten rounds do not appear as one solid graphic or one stacked hitbox. */
-function jungleCruiserTick(b,dt){
-  const B=b&&b._jcBurst; if(!B) return;
-  B.t-=dt;
-  if(B.t>0) return;
-  const L=shipBossMount(b,'L'),R=shipBossMount(b,'R');
-  const beat=10-B.n, bias=(beat&1)?0.035:-0.035, sp=5.05;
-  for(const item of [[L,-0.055+bias],[R,0.055-bias]]){
-    const m=item[0], a=eAimDown(aimPlayer(m.x,m.y)+item[1]);
-    eShootT(m.x,m.y,a,sp,'mg',{w:5,h:13,silent:(beat%3)!==0||m===R});
-    navalFlash(null,m,0.76,S1_MUZZLE_ROTARY,{n:6,hpx:36,life:0.12});
-  }
-  B.n--; B.t=0.075;
-  b._sbaKick=Math.max(b._sbaKick||0,0.32);
-  if(B.n<=0) b._jcBurst=null;
+/* ============================================================
+   JUNGLE CRUISER — AUTHORED STAGE-1 MINIBOSS DIRECTOR (0830)
+
+   This aircraft is a stealth jungle-camouflage fighter, not a generic ship-boss table entry.
+   Mike supplied the three physical release points and the full performance order:
+
+     smart horizontal stalk -> L/R/L/R twin homing pods -> nose MG cross-strafe
+     -> safe southbound exit -> northbound reversal + looping missiles
+     -> slow return -> 8.6 second Level-3 green beam sweep
+
+   At half health the anchored damage vents open, rockets tighten, and incoming damage gains a
+   1.35x vulnerability multiplier. At quarter health it becomes enraged: a faster eight-salvo
+   pod run leads into a held internal charge, half-slide feint, player-side orbit and a committed
+   green helix ball. The old green vortices/blades are deliberately gone from this encounter.
+
+   Mike says "2-3 millisecond" beats. A 60 Hz game cannot display a 2 ms flash (it would live
+   entirely between frames), so those instructions are preserved as the fastest readable arcade
+   equivalents: 45 ms nose rounds, 95 ms rage-pod beats, and 200 ms normal alternating pods.
+   They remain independent rounds and flashes rather than stacked same-frame hitboxes. */
+const JC_TRACK_SAMPLE=0.20, JC_POD_GAP=0.20, JC_RAGE_POD_GAP=0.095;
+const JC_GUN_GAP=0.045, JC_BEAM_CHARGE=1.25, JC_BEAM_HOLD=8.6;
+const JC_BEAM_SWEEP=Math.PI/6, JC_BEAM_PERIOD=2.55, JC_BEAM_CENTER_SPEED=330;
+function jungleCruiserInit(b){
+  if(!b) return;
+  b._jc={state:'acquire',t:0,shot:0,sample:0,targetX:b.x,rot:0,thrust:0,
+    charge:0,beamActive:false,beamAng:0,beamSound:false,ghost:false,
+    damaged:false,enraged:false,rageQueued:false,blasts:[],blastCd:0.22};
+  b._jcGhost=false;b.fireCd=999;
+  try{if(typeof XART!=='undefined'){
+    for(const fam of [BPFX_MUZZLE_MISSILE,S1_MUZZLE_ROTARY,BPFX_MUZZLE_LASER])
+      for(let i=0;i<8;i++)if(XART._touch)XART._touch(fam+'_'+i);
+    for(let i=0;i<8;i++){
+      if(XART._touch)XART._touch('nxp_dense_'+i);
+      if(typeof SMOKE_FAM!=='undefined'&&XART._touch)XART._touch(SMOKE_FAM+'_'+i);
+    }
+    for(let i=0;i<6;i++)if(XART._touch)XART._touch('nlz_3_b'+i);
+    if(XART._touch){XART._touch('nhxsb_g_2');XART._touch('nhxb_g_0');}
+  }}catch(_jcload){}
 }
-function jungleCruiserAttack(b,pat,step,ph,cdMul){
-  const D=SHIPBOSS[b._ship],L=shipBossMount(b,'L'),C=shipBossMount(b,'C'),R=shipBossMount(b,'R');
-  if(pat==='jungleburst'){
-    if(!b._jcBurst){ b._jcBurst={n:ph?12:10,t:0}; jungleCruiserTick(b,0); }
-    /* Every other gun run is punctuated by a fast, readable laser triad. */
-    if((step&1)===0){
-      for(const item of [[L,-0.10],[C,0],[R,0.10]]){
-        const m=item[0],a=eAimDown(aimPlayer(m.x,m.y)+item[1]);
-        eShootT(m.x,m.y,a,5.2,'s1greenLaser',{w:7,h:22,silent:m!==C,impact:'green'});
+function jungleCruiserBeamAudio(b,on){
+  const J=b&&b._jc;if(!J)return;
+  if(on&&!J.beamSound){
+    J.beamSound=true;
+    try{if(Audio&&Audio.SFX&&(Audio.SFX.laserBeamStart||Audio.SFX.enemyHeavyLaser))
+      (Audio.SFX.laserBeamStart||Audio.SFX.enemyHeavyLaser)();}catch(_jca0){}
+    try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn)Snd.loopOn('laserBeamLoop',0.58);}catch(_jca1){}
+  }else if(!on&&J.beamSound){
+    J.beamSound=false;
+    try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOff)Snd.loopOff('laserBeamLoop');}catch(_jca2){}
+    try{if(Audio&&Audio.SFX&&Audio.SFX.laserBeamEnd)Audio.SFX.laserBeamEnd();}catch(_jca3){}
+  }
+}
+function jungleCruiserSetState(b,state){
+  const J=b&&b._jc;if(!J)return;
+  if(J.state==='beamSweep'&&state!=='beamSweep')jungleCruiserBeamAudio(b,false);
+  J.state=state;J.t=0;J.shot=0;J.gunClock=0;J.sample=0;J.thrust=0;
+  if(state!=='beamSweep')J.beamActive=false;
+  if(state==='edgeGun'||state==='rageChargeEdge'){
+    const W=(typeof worldWidth==='function')?worldWidth():VW,margin=Math.max(58,b.w*.46);
+    J.edgeStart=(player&&player.x<W*.5)?W-margin:margin; // furthest side from the sampled player
+    J.edgeEnd=J.edgeStart<W*.5?W-margin:margin;
+    J.charge=state==='rageChargeEdge'?0:J.charge;
+  }
+  if(state==='diveSouth'||state==='riseNorth'||state==='returnTop'){
+    J.ghost=true;b._jcGhost=true;
+  }
+}
+function jungleCruiserStalk(b,dt){
+  const J=b._jc,W=(typeof worldWidth==='function')?worldWidth():VW,margin=Math.max(60,b.w*.45);
+  J.sample-=dt;
+  if(J.sample<=0){
+    J.sample=JC_TRACK_SAMPLE;
+    /* Input detection is intentionally delayed: it reads the player's SIDE, then commits for
+       200 ms. That makes it feel intelligent without letting it mirror every pixel instantly. */
+    J.targetX=(player&&player.x<W*.5)?W*.29:W*.71;
+  }
+  const want=clamp(J.targetX+Math.sin((b.t||0)*2.35)*34,margin,W-margin);
+  b.x+=(want-b.x)*Math.min(1,dt*2.9);
+  const sy=shipBossStationY(b);b.y+=(sy-b.y)*Math.min(1,dt*5);
+}
+function jungleCruiserFlash(b,slot,fam,scale,hpx,life){
+  const m=shipBossMount(b,slot);
+  navalFlash(null,m,scale||1,fam,{n:fam&&fam.indexOf('bpfx_')===0?8:6,
+    hpx:hpx||48,life:life||0.16,anchor:0.38,follow:()=>b&&!b.dead?shipBossMount(b,slot):null});
+}
+function jungleCruiserPodPair(b,slot,rage){
+  const m=shipBossMount(b,slot),side=slot==='L'?-1:1;
+  const base=Math.PI/2-side*0.115,spd=rage?3.20:(b._jc.damaged?2.82:2.48);
+  for(const barrel of [-1,1]){
+    const a=base+barrel*0.027;
+    eBullets.push({x:m.x+barrel*4,y:m.y+Math.abs(barrel)*2,vx:Math.cos(a)*spd,vy:Math.sin(a)*spd,
+      ang:a,spd:spd,w:12,h:22,dmg:1,t:0,kind:'emissile',hp:1,_shootable:true,
+      _boss:true,_noArsenal:true,_jcRocket:true,homing:true,turn:rage?0.021:0.014,
+      _swerve:rage?0.12:0.20,_turnLock:rage?0.088:0.068,_accel:rage?0.075:0.052,
+      _maxspd:rage?6.25:(b._jc.damaged?5.72:5.32)});
+  }
+  jungleCruiserFlash(b,slot,BPFX_MUZZLE_MISSILE,0.92,54,0.18);
+  try{if(Audio&&Audio.SFX&&(Audio.SFX.missile||Audio.SFX.enemyBossCannon))
+    (Audio.SFX.missile||Audio.SFX.enemyBossCannon)();}catch(_jcm){}
+  shake=Math.max(shake,rage?4:2);
+}
+function jungleCruiserLoopMissiles(b){
+  for(const item of [['L',-1],['R',1]]){
+    const slot=item[0],side=item[1],m=shipBossMount(b,slot);
+    for(const barrel of [-1,1]){
+      const phase=(side<0?Math.PI:0)+barrel*0.30;
+      eBullets.push({x:m.x+barrel*4,y:m.y,vx:0,vy:-2.4,ang:-Math.PI/2,spd:2.55,
+        w:12,h:22,dmg:1,t:0,kind:'emissile',hp:1,_shootable:true,_boss:true,_noArsenal:true,
+        _jcRocket:true,homing:false,turn:0.016,_turnLock:0.090,_accel:0.060,_maxspd:5.9,
+        _jcLoop:{ox:m.x+barrel*4,oy:m.y,side:side*barrel,phase:phase,dur:0.74,released:false}});
+    }
+    jungleCruiserFlash(b,slot,BPFX_MUZZLE_MISSILE,1.0,58,0.20);
+  }
+  try{if(Audio&&Audio.SFX&&Audio.SFX.missile)Audio.SFX.missile();}catch(_jclm){}
+  shake=Math.max(shake,5);
+}
+function jungleCruiserNoseRound(b){
+  const J=b._jc,C=shipBossMount(b,'C');
+  J.sample-=JC_GUN_GAP;
+  if(J.sample<=0){J.sample=0.18;J.gunTarget=(player?player.x:C.x);}
+  const py=player?player.y:VH*.84,tx=J.gunTarget==null?C.x:J.gunTarget;
+  const a=eAimDown(Math.atan2(py-C.y,tx-C.x));
+  const q=eShootT(C.x,C.y,a,6.15,'mg',{w:5,h:15,silent:(J.shot%3)!==0});
+  q._boss=true;q._noArsenal=true;q._jcNose=true;q.dmg=1;
+  jungleCruiserFlash(b,'C',S1_MUZZLE_ROTARY,0.72,35,0.105);
+  J.shot++;b._sbaKick=Math.max(b._sbaKick||0,0.18);
+}
+function jungleCruiserHelix(b){
+  const C=shipBossMount(b,'C'),a=Math.atan2(player.y-C.y,player.x-C.x),sp=3.55;
+  eBullets.push({x:C.x,y:C.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,ang:a,spd:sp,
+    w:38,h:38,dmg:2,t:0,kind:'jcHelix',_jcHelix:true,_noArsenal:true,_boss:true,
+    turn:0.047,_commit:86,life:4.5});
+  jungleCruiserFlash(b,'C',BPFX_MUZZLE_LASER,1.35,84,0.30);
+  try{if(Audio&&Audio.SFX&&(Audio.SFX.enemyHeavyLaser||Audio.SFX.laserShot||Audio.SFX.laserCannon))
+    (Audio.SFX.enemyHeavyLaser||Audio.SFX.laserShot||Audio.SFX.laserCannon)();}catch(_jch){}
+  shake=Math.max(shake,10);flashScreen=Math.max(flashScreen,0.10);
+}
+function jungleCruiserBeamHit(b){
+  const J=b._jc,C=shipBossMount(b,'C'),a=Math.PI/2+(J.beamAng||0),len=VH*1.55;
+  const dx=Math.cos(a),dy=Math.sin(a),px=player.x-C.x,py=player.y-C.y;
+  const along=px*dx+py*dy;if(along<0||along>len)return;
+  const off=Math.abs(px*dy-py*dx),r=(player._hx||9)+12;
+  if(off<=r&&!player.dead&&player.invuln<=0)playerHit();
+}
+function jungleCruiserDirector(b,dt){
+  if(!b||b.dead||b.enter)return true;
+  if(!b._jc)jungleCruiserInit(b);
+  const J=b._jc,W=(typeof worldWidth==='function')?worldWidth():VW,sy=shipBossStationY(b);
+  J.t+=dt;J.thrust=Math.max(0,(J.thrust||0)-dt*3.2);
+  for(const z of J.blasts)z.t+=dt;
+  J.blasts=J.blasts.filter(z=>z.t<z.life);
+  const frac=clamp(b.hp/Math.max(1,b.maxhp),0,1);
+  J.damaged=frac<=0.50;
+  if(frac<=0.25&&!J.enraged){
+    J.enraged=true;J.rageQueued=true;J.blastCd=0;
+    b.flash=Math.max(b.flash||0,0.42);
+    try{if(Audio&&Audio.SFX&&Audio.SFX.bossPhase)Audio.SFX.bossPhase();}catch(_jcr0){}
+    if(typeof floatText==='function')floatText(b.x,b.y-b.h*.48,'ENRAGED!','#65ff72');
+  }
+  if(J.enraged){
+    J.blastCd-=dt;
+    if(J.blastCd<=0){
+      J.blastCd=0.24+rnd(0,0.12);
+      J.blasts.push({ox:rnd(-0.30,0.30),oy:rnd(-0.18,0.28),t:0,life:rnd(0.42,0.66),s:rnd(0.72,1.08)});
+      if(J.blasts.length>8)J.blasts.shift();
+      if(chance(0.28)&&Audio&&Audio.SFX&&Audio.SFX.expSmall)Audio.SFX.expSmall();
+    }
+    if(J.rageQueued&&!J.ghost&&J.state!=='beamCharge'&&J.state!=='beamSweep'&&J.state.indexOf('rage')!==0){
+      J.rageQueued=false;jungleCruiserSetState(b,'rageMissiles');
+    }
+  }
+
+  switch(J.state){
+    case 'acquire':
+      jungleCruiserStalk(b,dt);
+      if(J.t>=1.35)jungleCruiserSetState(b,'missiles');
+      break;
+    case 'missiles': {
+      jungleCruiserStalk(b,dt);const gap=J.damaged?0.145:JC_POD_GAP,count=4;
+      while(J.shot<count&&J.t+0.0001>=J.shot*gap){jungleCruiserPodPair(b,(J.shot&1)?'R':'L',false);J.shot++;}
+      if(J.shot>=count&&J.t>=count*gap+0.42)jungleCruiserSetState(b,'edgeGun');
+      break; }
+    case 'edgeGun': {
+      const d=J.edgeStart-b.x,step=Math.sign(d)*Math.min(Math.abs(d),300*dt);b.x+=step;
+      b.y+=(sy-b.y)*Math.min(1,dt*5);J.rot=clamp(step/90,-0.055,0.055);
+      if(Math.abs(d)<4){b.x=J.edgeStart;J.rot=0;jungleCruiserSetState(b,'gunSlide');J.slideTarget=J.edgeEnd;}
+      break; }
+    case 'gunSlide': {
+      const d=J.slideTarget-b.x,step=Math.sign(d)*Math.min(Math.abs(d),158*dt);b.x+=step;b.y=sy;
+      J.rot=clamp(step/42,-0.075,0.075);J.gunClock-=dt;
+      while(J.gunClock<=0){jungleCruiserNoseRound(b);J.gunClock+=JC_GUN_GAP;}
+      if(Math.abs(d)<3){b.x=J.slideTarget;J.rot=0;jungleCruiserSetState(b,'diveSouth');J.thrust=1;}
+      break; }
+    case 'diveSouth':
+      J.ghost=true;b._jcGhost=true;J.thrust=1;b.y+=690*dt;
+      if(b.y>VH+b.h*.72){
+        b.x=b.x<W*.5?W-Math.max(62,b.w*.46):Math.max(62,b.w*.46);
+        b.y=VH+b.h*.68;J.rot=Math.PI;jungleCruiserSetState(b,'riseNorth');
+      }
+      break;
+    case 'riseNorth':
+      J.ghost=true;b._jcGhost=true;J.rot=Math.PI;J.thrust=1;b.y-=735*dt;
+      if(!J.loopFired&&b.y<=sy+18){J.loopFired=true;jungleCruiserLoopMissiles(b);}
+      if(b.y<-b.h*.72){
+        b.y=-b.h*.66;J.rot=0;J.loopFired=false;jungleCruiserSetState(b,'returnTop');
+      }
+      break;
+    case 'returnTop':
+      J.rot=0;b.y+=92*dt;
+      if(b.y>=sy){b.y=sy;J.ghost=false;b._jcGhost=false;jungleCruiserSetState(b,'beamCharge');}
+      break;
+    case 'beamCharge': {
+      /* The laser is an arena sweep, so its origin must be the arena centre.  The previous
+         version charged wherever the northbound flyby happened to end, which made one edge
+         trivially safe and the other unfairly cramped.  Translate visibly into centre during
+         the tell, then refuse to release until both the charge and centring are complete. */
+      const centre=W*.5,dx=centre-b.x,step=Math.sign(dx)*Math.min(Math.abs(dx),JC_BEAM_CENTER_SPEED*dt);
+      b.x+=step;b.y+=(sy-b.y)*Math.min(1,dt*6);J.charge=clamp(J.t/JC_BEAM_CHARGE,0,1);
+      J.rot=clamp(step/100,-0.055,0.055);
+      if(!J.chargeSound){J.chargeSound=true;try{if(Audio&&Audio.SFX&&Audio.SFX.bossWeaponCharge)Audio.SFX.bossWeaponCharge();}catch(_jcc){}}
+      if(J.t>=JC_BEAM_CHARGE&&Math.abs(dx)<2){
+        b.x=centre;J.rot=0;J.charge=1;J.chargeSound=false;jungleCruiserSetState(b,'beamSweep');J.beamActive=true;
+        jungleCruiserFlash(b,'C',BPFX_MUZZLE_LASER,1.48,92,0.34);
+        jungleCruiserBeamAudio(b,true);
+      }
+      break; }
+    case 'beamSweep':
+      /* Centre lock plus a full +/-30 degree sweep gives both edges a readable escape lane on
+         alternating beats.  The beam never samples player.x; survival is movement and timing,
+         not the boss cheating by following the player. */
+      J.beamActive=true;J.beamAng=Math.sin(J.t*(Math.PI*2/JC_BEAM_PERIOD))*JC_BEAM_SWEEP;J.rot=J.beamAng*0.18;
+      b.x=W*.5;b.y=sy;jungleCruiserBeamHit(b);
+      if(J.t>=JC_BEAM_HOLD){J.beamActive=false;J.charge=0;J.rot=0;jungleCruiserSetState(b,'recover');}
+      break;
+    case 'rageMissiles': {
+      jungleCruiserStalk(b,dt);const count=8;
+      while(J.shot<count&&J.t+0.0001>=J.shot*JC_RAGE_POD_GAP){jungleCruiserPodPair(b,(J.shot&1)?'R':'L',true);J.shot++;}
+      if(J.shot>=count&&J.t>=count*JC_RAGE_POD_GAP+0.30)jungleCruiserSetState(b,'rageChargeEdge');
+      break; }
+    case 'rageChargeEdge': {
+      J.charge=clamp(J.charge+dt*0.72,0,1);
+      if(!J.chargeSound){J.chargeSound=true;try{if(Audio&&Audio.SFX&&Audio.SFX.bossWeaponCharge)Audio.SFX.bossWeaponCharge();}catch(_jcrc){}}
+      const d=J.edgeStart-b.x,step=Math.sign(d)*Math.min(Math.abs(d),310*dt);b.x+=step;J.rot=clamp(step/80,-0.075,0.075);
+      if(Math.abs(d)<4){b.x=J.edgeStart;J.rot=0;jungleCruiserSetState(b,'rageSlide');J.slideTarget=J.edgeEnd;}
+      break; }
+    case 'rageSlide': {
+      J.charge=clamp(J.charge+dt*0.42,0,1);
+      const before=b.x-W*.5,d=J.slideTarget-b.x,step=Math.sign(d)*Math.min(Math.abs(d),178*dt);b.x+=step;
+      J.rot=clamp(step/38,-0.085,0.085);
+      if(before===0||before*(b.x-W*.5)<=0){J.rot=0;jungleCruiserSetState(b,'ragePounce');J.anchorX=(player&&player.x<W*.5)?W*.26:W*.74;J.anchorY=sy+46;}
+      break; }
+    case 'ragePounce': {
+      J.charge=1;J.thrust=1;const dx=J.anchorX-b.x,dy=J.anchorY-b.y,d=Math.hypot(dx,dy)||1,step=Math.min(d,520*dt);
+      b.x+=dx/d*step;b.y+=dy/d*step;J.rot=clamp(dx/d*0.14,-0.14,0.14);
+      if(d<8){b.x=J.anchorX;b.y=J.anchorY;J.orbitBaseX=b.x;J.orbitBaseY=b.y;jungleCruiserSetState(b,'rageOrbit');}
+      break; }
+    case 'rageOrbit':
+      J.charge=1;b.x=J.orbitBaseX+Math.cos(J.t*5.8)*34;b.y=J.orbitBaseY+Math.sin(J.t*5.8)*18;
+      J.rot=Math.sin(J.t*5.8)*0.12;
+      if(J.t>=0.92){J.chargeSound=false;jungleCruiserHelix(b);J.charge=0;J.rot=0;jungleCruiserSetState(b,'recover');}
+      break;
+    case 'recover':
+    default:
+      J.rot*=Math.max(0,1-dt*7);b.y+=(sy-b.y)*Math.min(1,dt*4.5);b.x+=(W*.5-b.x)*Math.min(1,dt*1.7);
+      if(J.t>=0.82)jungleCruiserSetState(b,J.enraged?'rageMissiles':'missiles');
+      break;
+  }
+  b.x=clamp(b.x,-b.w*.72,W+b.w*.72);b.fireCd=999;
+  return true;
+}
+/* Compatibility names retained for old probes. The dedicated director owns cadence now. */
+function jungleCruiserTick(b,dt){return jungleCruiserDirector(b,dt);}
+function jungleCruiserAttack(){return false;}
+
+function jungleCruiserDrawUnder(b){
+  const J=b&&b._jc;if(!J||!J.beamActive||typeof XART==='undefined')return;
+  const C=shipBossMount(b,'C'),a=Math.PI/2+(J.beamAng||0),len=VH*1.55,bw=42;
+  const key='nlz_3_b'+(Math.floor((b.t||0)*14)%6);if(!XART.rdy(key))return;
+  const im=XART.get(key);
+  ctx.save();ctx.translate(C.x,C.y);ctx.rotate(a-Math.PI/2);ctx.imageSmoothingEnabled=false;
+  ctx.globalCompositeOperation='lighter';ctx.shadowColor='#4fff69';ctx.shadowBlur=18;
+  ctx.globalAlpha=0.48;ctx.drawImage(im,-bw*.78,-5,bw*1.56,len);
+  ctx.globalAlpha=1;ctx.shadowBlur=7;ctx.drawImage(im,-bw*.50,-5,bw,len);
+  ctx.fillStyle='rgba(235,255,225,0.72)';ctx.fillRect(-4,0,8,len);
+  ctx.restore();
+}
+function jungleCruiserDrawOver(b,key,w,h,cy,P){
+  const J=b&&b._jc;if(!J||typeof XART==='undefined')return;
+  ctx.save();ctx.translate(b.x+P.x,cy+P.y);ctx.rotate(P.rot);ctx.scale(P.sx,P.sy);ctx.imageSmoothingEnabled=false;
+  /* Bottom-to-top internal pixel illumination. xartTint preserves the hull alpha and luminance;
+     the moving clip reveals only pixels already inside the aircraft, so there is no halo. */
+  if(J.charge>0){
+    const tint=typeof xartTint==='function'?xartTint(key,'#35ff62',0.94):null;
+    if(tint){
+      const reveal=h*clamp(J.charge,0,1),top=h*.5-reveal;
+      ctx.save();ctx.beginPath();ctx.rect(-w*.5,top,w,reveal);ctx.clip();
+      ctx.globalCompositeOperation='lighter';ctx.globalAlpha=0.28+0.52*J.charge;
+      ctx.drawImage(tint,-w*.5,-h*.5,w,h);
+      /* A six-pixel leading edge makes the bottom-to-top charge readable without drawing any
+         geometry outside the authored alpha. Reusing the full tinted plate inside a narrow
+         destination clip avoids the invalid negative source rectangle the earlier draft used. */
+      ctx.save();ctx.beginPath();ctx.rect(-w*.5,top-3,w,6);ctx.clip();ctx.globalAlpha=0.72;
+      ctx.drawImage(tint,-w*.5,-h*.5,w,h);ctx.restore();ctx.restore();
+    }
+  }
+  if(J.damaged){
+    const fi=Math.floor((b.t||0)*8)%8,sk=(typeof SMOKE_FAM!=='undefined'?SMOKE_FAM:'ntr_smkH')+'_'+fi;
+    if(XART.rdy(sk)){
+      const im=XART.get(sk),sz=J.enraged?54:46;
+      for(const q of [[-0.17,0.015],[0.17,0.015]]){
+        /* Two phased puffs per damaged vent make the whole smoke mass travel; swapping animation
+           frames alone would leave a stationary grey sticker on the wing. Every puff begins at
+           the transformed vent, rises through the aircraft's local space, expands and dissipates. */
+        for(let k=0;k<2;k++){
+          const p=(((b.t||0)*.72+k*.5)%1),rise=p*(J.enraged?42:34),grow=1+p*.34;
+          ctx.globalAlpha=(1-p)*.82;ctx.drawImage(im,w*q[0]-sz*grow*.5,h*q[1]-sz*.42-rise,sz*grow,sz*grow);
+        }
       }
     }
-  } else if((step&1)===1){
-    /* White-cored green lances: five separate fast rounds, never a welded beam graphic. */
-    const lanes=[[-0.24,L],[-0.11,L],[0,C],[0.11,R],[0.24,R]];
-    for(let i=0;i<lanes.length;i++){
-      const a=eAimDown(Math.PI/2+lanes[i][0]),m=lanes[i][1];
-      eShootT(m.x,m.y,a,5.45,'s1greenLaser',{w:7,h:22,silent:i>0,impact:'green'});
-    }
-    for(const m of [L,C,R]) navalFlash(null,m,0.9,S1_MUZZLE_MILITARY,{n:6,hpx:37,life:0.15});
-  } else {
-    /* Curving blades leave the centre readable; the slower rings force the next reposition. */
-    const blade=[[-0.48,L,-0.72],[-0.27,L,-0.42],[0.27,R,0.42],[0.48,R,0.72]];
-    for(let i=0;i<blade.length;i++){
-      const row=blade[i],a=Math.PI/2+row[0];
-      eShootT(row[1].x,row[1].y,a,3.95,'s1windBlade',{w:12,h:18,curve:row[2],silent:i>0,impact:'green'});
-    }
-    for(const item of [[L,0.12],[R,-0.12]]){
-      eShootT(item[0].x,item[0].y,Math.PI/2+item[1],1.75,'s1windVortex',{w:18,h:18,szMul:1.08,silent:true,impact:'green'});
-    }
-    navalFlash(null,C,1.15,'s1fx_wind_vortex',{n:6,hpx:92,life:0.30,anchor:0.5});
   }
-  b.fireCd=(D.cd||1.05)*Math.max(0.62,cdMul||1);
+  for(const z of J.blasts){
+    const p=clamp(z.t/z.life,0,1),fi=clamp(Math.floor(p*8),0,7),ek='nxp_dense_'+fi;
+    if(!XART.rdy(ek))continue;const im=XART.get(ek),sz=(28+20*Math.sin(p*Math.PI))*z.s;
+    ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1;ctx.drawImage(im,w*z.ox-sz*.5,h*z.oy-sz*.5,sz,sz);
+  }
+  if((J.state==='rageOrbit'||J.state==='ragePounce'||J.state==='rageSlide')&&J.charge>=0.72){
+    const C=SHIPBOSS.junglecruiser.mounts.C,im=XART.rdy('nhxsb_g_2')?XART.get('nhxsb_g_2'):null;
+    if(im){const pulse=50+7*Math.sin((b.t||0)*15);ctx.globalCompositeOperation='lighter';ctx.globalAlpha=0.86;
+      ctx.drawImage(im,w*C[0]-pulse*.5,h*C[1]-pulse*.5,pulse,pulse);}
+  }
+  ctx.restore();
+}
+function jungleCruiserHelixDraw(q){
+  if(!q||!q._jcHelix||typeof XART==='undefined')return false;
+  const key=XART.rdy('nhxsb_g_2')?'nhxsb_g_2':('nhxb_g_'+(Math.floor((q.t||0)*12)%5));
+  if(!XART.rdy(key))return false;const im=XART.get(key),s=54+8*Math.sin((q.t||0)*13);
+  ctx.save();ctx.translate(q.x,q.y);ctx.rotate((q.t||0)*5.5);ctx.globalCompositeOperation='lighter';
+  ctx.shadowColor='#43ff6a';ctx.shadowBlur=16;ctx.drawImage(im,-s*.5,-s*.5,s,s);ctx.restore();return true;
+}
+function s7BossShot(x,y,a,sp,kind,opts){opts=opts||{};const hb=S7_PROJECTILE_HIT[kind]||[12,12];
+  if(opts.w==null)opts.w=hb[0];if(opts.h==null)opts.h=hb[1];const q=eShootT(x,y,a,sp,kind,opts);q._boss=true;
+  if(kind==='s7spore')q._noArsenal=true;else{q._bfam=(boss&&boss._ship==='sludgeemperor')?'sludge':'toxic';q._noArsenal=false;}
+  if(opts.accel){q._s7Accel=opts.accel;q._s7Max=opts.max||sp*1.9;}return q;}
+/* FLOOD SURGE belongs to the Sludge Emperor itself.  It sends four descending sludge fronts with
+   ONE moving gap.  The warning owns the whole lane before the animated sludge arrives, and the
+   door advances one column at a time so a player can follow it instead of guessing. */
+function sludgeFloodStart(b){
+  /* ONE moving gap: the gap IS the answer, never a random sealed wall. */
+  if(!b||b._s7Flood)return false;const cols=9;
+  b._s7Flood={t:0,tell:.72,wave:0,waves:4,next:.72,gap:clamp(Math.round(player.x/(worldWidth()/cols)),0,cols-1),cols:cols};
+  b._s7FloodUsed=true;b.fireCd=Math.max(b.fireCd||0,2.45);b.flash=Math.max(b.flash||0,.38);
+  if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.42,'FLOOD SURGE!','#aaff42');
+  if(Audio.SFX&&(Audio.SFX.bossPhase||Audio.SFX.sludge))(Audio.SFX.bossPhase||Audio.SFX.sludge)();
+  return true;
+}
+function sludgeFloodTick(b,dt){
+  const F=b&&b._s7Flood;if(!F)return false;F.t+=dt;
+  if(F.t>=F.next&&F.wave<F.waves){
+    const W=worldWidth(),cw=W/F.cols,y=(b._drawY!=null?b._drawY:b.y)+b.h*.30;
+    for(let i=0;i<F.cols;i++){
+      if(i===F.gap)continue;
+      s7BossShot((i+.5)*cw,y,Math.PI/2,1.65+F.wave*.16,'s7sludge',{silent:i>0,accel:.34,max:2.75+F.wave*.22});
+      s7BossShot((i+.5)*cw,y-28,Math.PI/2,1.48+F.wave*.14,'s7acid',{silent:true,accel:.31,max:2.52+F.wave*.20});
+    }
+    shipBossMuzzleStart(b,['L','C','R'],{fam:'nfx_sludgecrawler_mflash',n:6,life:.16,hpx:58});
+    shake=Math.max(shake,5+F.wave);F.wave++;F.gap=clamp(F.gap+(F.wave&1?1:-1),0,F.cols-1);F.next+=.38;
+  }
+  if(F.wave>=F.waves&&F.t>F.next+.50){b._s7Flood=null;b.fireCd=.62;return false;}
+  return true;
+}
+function sludgeFloodDraw(b){
+  const F=b&&b._s7Flood;if(!F||F.t>=F.tell)return;const W=worldWidth(),cw=W/F.cols,p=.20+.18*Math.sin(F.t*20);
+  ctx.save();for(let i=0;i<F.cols;i++){
+    if(i===F.gap)continue;ctx.globalAlpha=p;ctx.fillStyle='#89d928';ctx.fillRect(i*cw+3,PLAY.y,cw-6,VH-PLAY.y);
+    ctx.globalAlpha=.65;ctx.fillStyle='#dfff8c';ctx.fillRect(i*cw+cw*.46,PLAY.y,cw*.08,VH-PLAY.y);
+  }
+  ctx.globalAlpha=.9;ctx.strokeStyle='#d9ff75';ctx.lineWidth=3;ctx.strokeRect(F.gap*cw+4,PLAY.y+4,cw-8,VH-PLAY.y-8);ctx.restore();
+}
+function s7DredgerAttack(b,step){
+  const ph=shipBossPhase(b),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C');
+  b._sbPat=ph?'s7spore':'s7dredge';
+  if(!ph){const slot=(step&1)?L:R,a=aimPlayer(slot.x,slot.y);for(const o of [-.18,0,.18])s7BossShot(slot.x,slot.y,a+o,2.85,'s7sludge',{silent:o!==0});
+    shipBossMuzzleStart(b,[(step&1)?'L':'R'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.18,hpx:48});b.fireCd=.92;
+  }else if(step%3){for(const o of [.16,.31,.47]){s7BossShot(L.x,L.y,Math.PI/2+o,2.75,'s7acid',{silent:true});s7BossShot(R.x,R.y,Math.PI/2-o,2.75,'s7acid',{silent:true});}
+    shipBossMuzzleStart(b,['L','R'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.20,hpx:52});b.fireCd=.82;
+  }else{s7BossShot(C.x,C.y,Math.PI/2,1.55,'s7spore',{w:38,h:38,szMul:.84,accel:.38,max:2.6});
+    shipBossMuzzleStart(b,['C'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.30,hpx:70});b.fireCd=1.18;}
+}
+function sludgeEmperorAttack(b,step){
+  const ph=shipBossPhase(b),W=worldWidth(),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C');
+  b._sbPat=['s7pressure','s7flood','s7crown','s7purge'][ph];
+  if(b._s7Flood){b.fireCd=.24;return;}
+  if(ph===1&&!b._s7FloodUsed){sludgeFloodStart(b);return;}
+  if(ph===0){const left=(step&1)===0,src=left?L:R,sgn=left?1:-1;for(const o of [.08,.20,.34,.49])s7BossShot(src.x,src.y,Math.PI/2+sgn*o,2.75,'s7acid',{silent:o>.08});
+    shipBossMuzzleStart(b,[left?'L':'R'],{fam:'nfx_sludgecrawler_mflash',n:6,life:.19,hpx:54});b.fireCd=1.04;
+  }else if(ph===1){const cols=9,gap=(step*2)%8;for(let i=0;i<cols;i++){if(i===gap||i===gap+1)continue;s7BossShot(W*(i+.5)/cols,C.y,Math.PI/2,1.72,'s7sludge',{silent:i>0,accel:.25,max:2.35});}
+    shipBossMuzzleStart(b,['L','C','R'],{fam:'nfx_sludgecrawler_mflash',n:6,life:.24,hpx:62});b.fireCd=1.18;
+  }else if(ph===2){if(step%3===0)s7BossShot(C.x,C.y,Math.PI/2,1.45,'s7spore',{w:40,h:40,szMul:.94,accel:.34,max:2.45});
+    else{const base=step*.31,n=14,a=aimPlayer(C.x,C.y),st=TAU/n,gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;s7BossShot(C.x,C.y,base+i*st,2.05,'s7acid',{silent:i>0});}}
+    shipBossMuzzleStart(b,['C'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.27,hpx:74});b.fireCd=.98;
+  }else{const safe=step%5;for(let i=0;i<5;i++){if(i===safe)continue;const x=W*(i+.5)/5;s7BossShot(x,C.y,Math.PI/2,4.0,'s7laser',{silent:i>0});}
+    for(const s of [-1,1])s7BossShot((s<0?L:R).x,(s<0?L:R).y,Math.PI/2+s*.22,1.65,'s7grenade',{silent:true,accel:.48,max:3.1});
+    shipBossMuzzleStart(b,['L','C','R'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.20,hpx:60});b.fireCd=.74;}
+}
+function spaceBossShot(x,y,a,sp,kind,o){o=o||{};const hit=(S5_PROJECTILE_HIT&&S5_PROJECTILE_HIT[kind])||(S9_PROJECTILE_HIT&&S9_PROJECTILE_HIT[kind])||[12,12];
+  if(o.w==null)o.w=hit[0];if(o.h==null)o.h=hit[1];const q=eShootT(x,y,a,sp,kind,o);q._boss=true;
+  q._bfam=run.stage===9?'cyclone':(kind==='s5missile'?'mirv':kind==='s5null'?'toxic':'rampart');q._noArsenal=false;
+  if(o.accel){q._spaceAccel=o.accel;q._spaceMax=o.max||sp*2;}return q;}
+
+/* STAGE 5 — XENO REGENT ESCORT RIG.
+   The twin-station is a real shootable mothership that projects the boss shield.  Its two heavy
+   interceptors are independent targets with their own muzzle points and Stage-5 ammunition.
+   Space weapons acquire these parts through spaceTargets(), so missiles and shadow bursts do not
+   detonate on an invisible boss rectangle while the visible shield source remains untouched. */
+function xenoRegentInit(b){
+  if(!b)return;const hp=Math.max(160,Math.ceil((b.maxhp||1200)*.12));
+  const mother={role:'mother',x:b.x,y:-90,w:154,h:88,hp:hp,maxhp:hp,dead:false,flash:0,fire:.9,anim:0};
+  const helpers=[-1,1].map((side,i)=>({role:'helper',side:side,x:b.x+side*154,y:-55-i*18,w:88,h:82,
+    hp:Math.max(70,Math.ceil(hp*.48)),maxhp:Math.max(70,Math.ceil(hp*.48)),dead:false,flash:0,
+    fire:.65+i*.38,anim:0}));
+  b._xenoRig={t:0,mother:mother,helpers:helpers,shield:true,shieldFlash:0,shieldBreak:0,fireBeat:0};
+}
+function xenoRegentPartDamage(part,dmg,b){
+  if(!part||part.dead)return false;part.hp-=dmg;part.flash=.16;part.anim=.34;
+  try{if(Audio.SFX&&(Audio.SFX.spaceLaserHit||Audio.SFX.shieldHitLight))(Audio.SFX.spaceLaserHit||Audio.SFX.shieldHitLight)();}catch(_xh){}
+  if(part.hp<=0){part.hp=0;part.dead=true;part.flash=0;
+    if(typeof explode==='function')explode(part.x,part.y,part.role==='mother'?22:12,'purple');
+    try{if(Audio.SFX&&(Audio.SFX.explosionPlasma||Audio.SFX.explosionAirMedium))(Audio.SFX.explosionPlasma||Audio.SFX.explosionAirMedium)();}catch(_xd){}
+    if(part.role==='mother'&&b&&b._xenoRig){b._xenoRig.shield=false;b._xenoRig.shieldBreak=.82;b.flash=.28;shake=Math.max(shake,9);}
+  }
+  return true;
+}
+function xenoRegentShieldAbsorb(b,dmg){
+  const R=b&&b._xenoRig;if(!R||!R.shield||!R.mother||R.mother.dead)return false;
+  R.shieldFlash=.18;R.mother.flash=Math.max(R.mother.flash,.08);shake=Math.max(shake,2);
+  try{if(Audio.SFX&&(Audio.SFX.shieldHitLight||Audio.SFX.spaceLaserHit))(Audio.SFX.shieldHitLight||Audio.SFX.spaceLaserHit)();}catch(_xs){}
+  return true;
+}
+function xenoRegentMuzzle(part,ox){
+  if(!part||typeof navalFlash!=='function')return;const p={x:part.x+(ox||0)*part.w,y:part.y+part.h*.30};
+  navalFlash(null,p,.76,BPFX_MUZZLE_VOID,{n:8,hpx:46,life:.15,anchor:.40,
+    follow:()=>part&&!part.dead?{x:part.x+(ox||0)*part.w,y:part.y+part.h*.30}:null});
+}
+function xenoRegentTick(b,dt){
+  const R=b&&b._xenoRig;if(!R)return;R.t+=dt;R.shieldFlash=Math.max(0,R.shieldFlash-dt);R.shieldBreak=Math.max(0,R.shieldBreak-dt);
+  const W=worldWidth(),cy=(b._drawY!=null?b._drawY:b.y),m=R.mother;
+  if(!m.dead){
+    const ty=Math.max(54,cy-b.h*.58);m.x+=(b.x-m.x)*Math.min(1,dt*3.2);m.y+=(ty-m.y)*Math.min(1,dt*2.9);
+    m.flash=Math.max(0,m.flash-dt);m.anim=Math.max(0,m.anim-dt);m.fire-=dt;
+    if(R.t>1.25&&m.fire<=0){m.fire=1.68;const a=aimPlayer(m.x,m.y),base=m.y+m.h*.29;
+      for(const o of [-.18,0,.18])spaceBossShot(m.x,m.y+24,a+o,3.45,'s5fracture',{silent:o!==0});
+      xenoRegentMuzzle(m,-.23);xenoRegentMuzzle(m,.23);m.anim=.58;
+      try{if(Audio.SFX&&(Audio.SFX.enemyPulseLaserAlien||Audio.SFX.enemyHeavyLaser))(Audio.SFX.enemyPulseLaserAlien||Audio.SFX.enemyHeavyLaser)();}catch(_xm){}
+    }
+  }
+  for(const h of R.helpers){
+    if(h.dead)continue;
+    /* Stage 5 is wider than the camera. Clamp the visible 112px escort plate to the current
+       camera window, not merely the 800px world, or the outer helper can be a valid target while
+       half of its hull is offscreen. */
+    const left=(typeof camLeftX==='function'?camLeftX():0)+60,
+          right=(typeof camRightX==='function'?camRightX():W)-60,
+          tx=clamp(b.x+h.side*(b.w*.70+56)+Math.sin(R.t*1.35+h.side)*18,left,right),
+          ty=cy+10+Math.cos(R.t*1.1+h.side)*25;
+    h.x+=(tx-h.x)*Math.min(1,dt*4.2);h.y+=(ty-h.y)*Math.min(1,dt*4.2);h.flash=Math.max(0,h.flash-dt);h.anim=Math.max(0,h.anim-dt);h.fire-=dt;
+    if(R.t>1.05&&h.fire<=0){h.fire=1.12+(h.side>0?.16:0);const a=aimPlayer(h.x,h.y);
+      for(const o of [-.09,.09])spaceBossShot(h.x,h.y+h.h*.28,a+o,4.05,'s5null',{silent:o>0});
+      xenoRegentMuzzle(h,0);h.anim=.42;
+      try{if(Audio.SFX&&(Audio.SFX.enemyPulseLaserAlien||Audio.SFX.enemyBossCannon))(Audio.SFX.enemyPulseLaserAlien||Audio.SFX.enemyBossCannon)();}catch(_xhf){}
+    }
+  }
+}
+function xenoRegentDrawPart(part,keyBase,size){
+  if(!part||part.dead||typeof XART==='undefined')return;const fi=part.anim>0?(Math.floor((.6-part.anim)*14)&7):0,key=keyBase+fi;
+  if(!XART.rdy(key))return;const im=XART.get(key),w=size,h=size;
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.drawImage(im,part.x-w/2,part.y-h/2,w,h);
+  if(part.flash>0&&typeof xartTint==='function'){const q=xartTint(key,'#ffffff',.9);if(q){ctx.globalAlpha=clamp(part.flash/.16,0,1);ctx.drawImage(q,part.x-w/2,part.y-h/2,w,h);}}
+  ctx.restore();
+  const bw=part.role==='mother'?118:68,by=part.y-h*.35;ctx.fillStyle='rgba(0,0,0,.82)';ctx.fillRect(part.x-bw/2,by,bw,5);ctx.fillStyle='#41e66d';ctx.fillRect(part.x-bw/2+1,by+1,(bw-2)*clamp(part.hp/part.maxhp,0,1),3);
+}
+function xenoRegentDrawOver(b){
+  const R=b&&b._xenoRig;if(!R)return;const cy=(b._drawY!=null?b._drawY:b.y);
+  if(R.shield&&!R.mother.dead){
+    const key='s5fracture_'+(Math.floor(R.t*14)%12),r=Math.max(b.w,b.h)*.67;
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.62+(R.shieldFlash>0?.30:0);
+    if(typeof XART!=='undefined'&&XART.rdy(key))ctx.drawImage(XART.get(key),b.x-r,cy-r,r*2,r*2);
+    else{ctx.strokeStyle='#ac58ff';ctx.lineWidth=5;ctx.beginPath();ctx.arc(b.x,cy,r,0,TAU);ctx.stroke();}
+    ctx.restore();
+  }
+  if(R.shieldBreak>0){ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=R.shieldBreak/.82;ctx.strokeStyle='#f1b4ff';ctx.lineWidth=8;ctx.beginPath();ctx.arc(b.x,cy,(1-R.shieldBreak/.82)*120+82,0,TAU);ctx.stroke();ctx.restore();}
+  xenoRegentDrawPart(R.mother,'s5atk_twin_station_',190);
+  for(const h of R.helpers)xenoRegentDrawPart(h,'s5atk_heavy_interceptor_',112);
+}
+function xenoRegentAttack(b,step){const ph=shipBossPhase(b),W=worldWidth(),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C');
+  if(ph===0){const flip=(step&1)?1:-1;for(const o of [.07,.18,.31,.46]){spaceBossShot(L.x,L.y,Math.PI/2+flip*o,3.7,'s5null',{silent:o>.07});spaceBossShot(R.x,R.y,Math.PI/2-flip*o,3.7,'s5null',{silent:true});}shipBossMuzzleStart(b,['L','R'],{fam:'bfx_toxic_m',n:6,life:.18,hpx:58});b.fireCd=1.04;
+  }else if(ph===1){if(step%3===0)spaceBossShot(C.x,C.y,Math.PI/2,1.45,'s5halo',{accel:.34,max:2.8});else{const n=16,base=step*.29,st=TAU/n,a=aimPlayer(C.x,C.y),gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;spaceBossShot(C.x,C.y,base+i*st,2.35,'s5fracture',{silent:i>0});}}shipBossMuzzleStart(b,['C'],{fam:'bfx_toxic_m',n:6,life:.25,hpx:72});b.fireCd=.92;
+  }else if(ph===2){for(const s of [-1,1]){const p=s<0?L:R;for(const o of [.08,.22,.38])spaceBossShot(p.x,p.y,Math.PI/2+s*o,1.5,'s5missile',{silent:s>0||o>.08,accel:1.05,max:5.7});}shipBossMuzzleStart(b,['L','R'],{fam:'bfx_toxic_m',n:6,life:.20,hpx:62});b.fireCd=.82;
+  }else{const left=step&1,src=left?L:R,sgn=left?1:-1;for(const o of [.06,.16,.28,.42,.58])spaceBossShot(src.x,src.y,Math.PI/2+sgn*o,3.15,'s5chaos',{silent:o>.06});spaceBossShot(C.x,C.y,Math.PI/2,1.55,'s5halo',{silent:true,accel:.42,max:3.2});shipBossMuzzleStart(b,[left?'L':'R','C'],{fam:'bfx_toxic_m',n:6,life:.16,hpx:56});b.fireCd=.66;}
+}
+function s9ShipBossAttack(b,step){const ph=shipBossPhase(b),W=worldWidth(),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C'),sent=b._ship==='warpsentinel';
+  if(sent){if(ph===0){for(const o of [.10,.25,.42]){spaceBossShot(L.x,L.y,Math.PI/2+o,4.0,'s9needle',{silent:o>.10});spaceBossShot(R.x,R.y,Math.PI/2-o,4.0,'s9needle',{silent:true});}b.fireCd=.88;
+    }else if(ph===1){const n=12,base=step*.36,st=TAU/n,a=aimPlayer(C.x,C.y),gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;spaceBossShot(C.x,C.y,base+i*st,2.85,'s9warp',{silent:i>0});}b.fireCd=.76;
+    }else{for(const s of [-1,1]){const p=s<0?L:R;spaceBossShot(p.x,p.y,Math.PI/2+s*.14,2.0,'s9comet',{silent:s>0,accel:1.65,max:6.4});}for(const o of [-.13,0,.13])spaceBossShot(C.x,C.y,Math.PI/2+o,5.3,'s9gold',{silent:true});b.fireCd=.58;}
+  }else if(ph===0){const safe=step%6;for(let i=0;i<6;i++){if(i===safe)continue;spaceBossShot(W*(i+.5)/6,C.y,Math.PI/2,4.0,'s9gold',{silent:i>0});}b.fireCd=.94;
+  }else if(ph===1){if(step%3===0)spaceBossShot(C.x,C.y,Math.PI/2,1.5,'s9lattice',{accel:.42,max:3.2});else for(const s of [-1,1]){const p=s<0?L:R;for(const o of [.08,.22,.38])spaceBossShot(p.x,p.y,Math.PI/2+s*o,3.0,'s9warp',{silent:s>0||o>.08});}b.fireCd=.82;
+  }else if(ph===2){for(const s of [-1,1]){const p=s<0?L:R;for(const o of [.09,.25])spaceBossShot(p.x,p.y,Math.PI/2+s*o,1.7,'s9comet',{silent:s>0||o>.09,accel:1.4,max:6.2});}b.fireCd=.72;
+  }else{const n=18,base=step*.27,st=TAU/n,a=aimPlayer(C.x,C.y),gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;spaceBossShot(C.x,C.y,base+i*st,3.15,'s9pair',{silent:i>0});}for(const o of [-.12,.12])spaceBossShot(C.x,C.y,Math.PI/2+o,5.5,'s9needle',{silent:true});b.fireCd=.56;}
+  shipBossMuzzleStart(b,['L','C','R'],{fam:'bfx_cyclone_m',n:6,life:sent?.14:.18,hpx:sent?54:64});
 }
 function shipBossAttack(b){
   const D=SHIPBOSS[b._ship]; if(!D) return;
   const W=(typeof worldWidth==='function')?worldWidth():VW;
+  /* A committed authored beam owns the attack channel through its recovery. Do not queue
+     anonymous pellets underneath it or advance the public pattern beat while it is active. */
+  if(b._l23Beam){b.fireCd=.16;return;}
   const step=(b._sbStep=(b._sbStep|0)+1);
+  /* The Mk II's bay reel, cannon reel and mega-phase director already own its cadence.  The old
+     generic ship volley on top made the encounter noisy rather than harder.  Advance the public
+     attack beat before returning so the authored carrier queue keeps its established contract. */
+  if(b._ship==='doomsdaycarriermk2'){b.fireCd=2.4;return;}
+  if(b._ship==='dualscoopdredger'){s7DredgerAttack(b,step);return;}
+  if(b._ship==='sludgeemperor'){sludgeEmperorAttack(b,step);return;}
+  if(b._ship==='xenoregent'){xenoRegentAttack(b,step);return;}
+  if(b._ship==='warpsentinel'||b._ship==='tidalsovereign'){s9ShipBossAttack(b,step);return;}
   if(b._herald){ b._herald.attack=(step%3===0)?'special_attack':'primary_attack'; b._herald.attackT=0.72; }
   const y=b.y+b.h*0.30;
   const mL=shipBossMount(b,'L'), mC=shipBossMount(b,'C'), mR=shipBossMount(b,'R');
@@ -10906,9 +13800,18 @@ function shipBossAttack(b){
     if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.bossPhase) Audio.SFX.bossPhase();
   }
   const pat = (D.pats && D.pats[ph]) || D.pat;
+  b._sbPat=pat; // projectile skin follows the visible phase, never a stage-wide palette guess
   /* and it TIGHTENS as it goes: -18% cooldown per phase, floored so the last phase is still
      readable rather than a wall of bullets. */
   const cdMul = Math.max(0.55, 1 - ph*0.18);
+  if(b._ship==='magmaward'){
+    magmaWardStartAttack(b,pat,step,cdMul);
+    return;
+  }
+  if(b._s3boss&&typeof stage3BossAttack==='function'){
+    stage3BossAttack(b,pat,step,ph,cdMul);
+    return;
+  }
   if(b._ship==='junglecruiser'){
     jungleCruiserAttack(b,pat,step,ph,cdMul);
     return;
@@ -10952,6 +13855,35 @@ function shipBossAttack(b){
       for(const a of [-0.34,0.34]) _shipShot(C.x,C.y,Math.sin(a)*2.65,Math.cos(a)*2.65,12,b);
     }
     shipBossMuzzleStart(b,wide?['L','R']:['L','C','R']);
+  } else if(pat==='magmaforge'){
+    /* MAGMA WARD phase 1 — one emitter glows, then stamps a five-round aimed fan.  The active
+       cannon walks L -> R -> C, making its origin learnable instead of filling the hull with
+       anonymous centre-fire. */
+    const slots=['L','R','C'],slot=slots[(step-1)%3],m=shipBossMount(b,slot),a=aimPlayer(m.x,m.y);
+    for(const o of [-0.22,-0.11,0,0.11,0.22]) _shipShot(m.x,m.y,Math.cos(a+o)*2.65,Math.sin(a+o)*2.65,12,b);
+  } else if(pat==='magmacross'){
+    /* MAGMA WARD phase 2 — mirrored wing streams cross while the centre drops one slower shell.
+       The outer lanes are threatened first and the crossing leaves a moving centre doorway. */
+    for(const o of [0.16,0.30,0.44]){
+      _shipShot(mL.x,mL.y, Math.sin(o)*2.75,Math.cos(o)*2.75,12,b);
+      _shipShot(mR.x,mR.y,-Math.sin(o)*2.75,Math.cos(o)*2.75,12,b);
+    }
+    _shipShot(mC.x,mC.y,0,1.72,15,b);
+  } else if(pat==='infernogate'){
+    /* Supplied boss1/boss2 route: traverse five top-lane stations, fire one vertical flame-laser
+       at each, then mirror the entire order on the next pass. */
+    infernoReaverPassStart(b,step);b.fireCd=4.75*Math.max(.55,cdMul);return;
+  } else if(pat==='infernoburst'){
+    /* One readable volcanic shotgun blast: seven independently collidable slag chunks spread
+       from the luminous center, with two faster wing-pod escorts closing the outer lanes. */
+    b._shotFx='inferno_shotgun';
+    for(const o of [-.39,-.26,-.13,0,.13,.26,.39])_shipShot(mC.x,mC.y,Math.sin(o)*3.18,Math.cos(o)*3.18,18,b);
+    for(const q of [[mL,-.49],[mR,.49]])_shipShot(q[0].x,q[0].y,Math.sin(q[1])*3.42,Math.cos(q[1])*3.42,16,b);
+    b._shotFx=null;
+  } else if(pat==='infernostorm'){
+    /* Final phase — the hull becomes the attack: charge to an edge, roll across the arena with
+       one held rotating flamethrower, shed short fire-round bursts, then visibly restore. */
+    infernoReaverRollStart(b,step);b.fireCd=5.6*Math.max(.55,cdMul);return;
   } else if(pat==='ember'){
     /* a WALL with one gap, and the gap walks — the whole attack is "get to the gap in time" */
     const cols=9, gap=((step*3)%cols);
@@ -11001,14 +13933,14 @@ function shipBossAttack(b){
        Real components now, fanned about straight DOWN. */
     for(let i=-3;i<=3;i++){ const a=i*0.22; _shipShot(mC.x,mC.y, Math.sin(a)*2.2, Math.cos(a)*2.2, 11,b); }
   } else if(pat==='chargebeam'){
-    /* ⚠ RENAMED IN SPIRIT, NOT IN KEY (drop 0812n). The pattern id stays `chargebeam` so the
-       SHIPBOSS tables do not have to change, but what it does is now the ROTATING RAKE — Mike:
-       "a charge beam and beam should never follow you." Nothing here reads the player's position.
-
-       Spoke count rises with the phase, which is what tightens the corridor as the fight goes on:
-       3 spokes leave a 120-degree gap, 5 leave 72. Armed every third volley for the same reason
-       0812m gated the old one — a phase is ONE pattern, so an ungated hazard becomes the arena. */
-    if(!b._brk && (step%3)===0){
+    /* The pattern key remains `chargebeam`, but its geometry is authored per boss and never reads
+       player position after release. */
+    if(b._ship==='infernoreaver'){
+      /* Three south-facing cannons douse together through one controlled 90-degree sector. They
+         can reach 45 degrees left or right but can never wrap around or erase every safe lane. */
+      l23BossBeamStart(b,'inferno',['L','C','R'],[Math.PI/2,Math.PI/2,Math.PI/2],
+        .78,2.22,.28,34,{sweepArc:Math.PI/4,sweepRate:2.45,sweepPhase:(step&1)?0:Math.PI});
+    } else if(!b._brk && (step%3)===0){
       beamRakeStart(b, 3+Math.min(2,ph), (Math.random()<0.5?-1:1)*(0.55+ph*0.16), 4.2+ph*0.9);
     } else {
       const a3=aimPlayer(b.x,y);
@@ -11023,18 +13955,10 @@ function shipBossAttack(b){
     stormMgStart(b);
     stormMgTick(b,0);
   } else if(pat==='stormbolts'){
-    /* The supplied blue storm projectiles remain this boss's energy identity, but they are
-       separate bolts — not a continuous beam.  They leave the two blue coil emitters and nose
-       in a clean five-lane fan, with the middle lane alternating a slight aimed correction. */
-    const lanes=[[-0.28,mL],[-0.12,mL],[0,mC],[0.12,mR],[0.28,mR]];
-    for(const it of lanes){
-      const a2=it[0], m=it[1], sp=3.35;
-      _shipShot(m.x,m.y,Math.sin(a2)*sp,Math.cos(a2)*sp,10,b);
-    }
-    if((step%2)===0 && typeof player!=='undefined' && player){
-      const a3=aimPlayer(mC.x,mC.y);
-      _shipShot(mC.x,mC.y,Math.cos(a3)*3.15,Math.sin(a3)*3.15,11,b);
-    }
+    /* Five visibly separated columns, all travelling straight forward. The coils and nose choose
+       where each lane begins; none of the rounds angle toward the player after that placement. */
+    const lanes=[[mL,-10],[mL,10],[mC,0],[mR,-10],[mR,10]];
+    for(const it of lanes)_shipShot(it[0].x+it[1],it[0].y,0,3.35,10,b);
   } else if(pat==='beamfan'){
     /* SPREAD LASER — three dense columns from the hull, angled. Dense because a "laser" made of
        sparse rounds reads as a machine gun; tight spacing along the same vector is what makes the
@@ -11083,7 +14007,10 @@ function shipBossAttack(b){
      So the geometry is untouched and an AIMED pair is added on top, on every other volley. That is
      what turns "bullets are happening" into "it is shooting at me" without flattening the authored
      shape, and the every-other cadence leaves the pattern legible between aimed beats. */
-  if(pat!=='spawnpods' && pat!=='deathlattice' && pat!=='stormmg' && pat!=='stormbolts' && (step%2)===0 && typeof player!=='undefined' && player && player.alive!==false){
+  if(pat!=='spawnpods' && pat!=='deathlattice' && pat!=='stormmg' && pat!=='stormbolts' &&
+     pat!=='magmaforge' && pat!=='magmacross' && pat!=='infernogate' && pat!=='infernoburst' && pat!=='infernostorm' &&
+     pat!=='chargebeam' &&
+     (step%2)===0 && typeof player!=='undefined' && player && player.alive!==false){
     const dx=player.x-b.x, dy=Math.max(40,(player.y-y));
     const d=Math.hypot(dx,dy)||1, spd=2.35;
     for(const off of [-0.10, 0.10]){
@@ -11092,9 +14019,11 @@ function shipBossAttack(b){
       _shipShot(mC.x,mC.y,(ux*ca-uy*sa)*spd,(ux*sa+uy*ca)*spd,10,b);
     }
   }
-  if(pat!=='spawnpods' && pat!=='deathlattice' && pat!=='stormmg') shipBossMuzzleStart(b,shipBossPatternSlots(pat,step));
+  if(pat!=='spawnpods' && pat!=='deathlattice' && pat!=='stormmg'&&!(pat==='chargebeam'&&b._ship==='infernoreaver'))
+    shipBossMuzzleStart(b,shipBossPatternSlots(pat,step));
   b.fireCd = (D.cd||1.3) * cdMul;
-  if(pat!=='stormmg' && Audio.SFX.enemyBossCannon) Audio.SFX.enemyBossCannon();
+  if((pat==='infernogate'||pat==='infernostorm')&&Audio.SFX.enemyMachineGunHeavy)Audio.SFX.enemyMachineGunHeavy();
+  else if(!(pat==='chargebeam'&&b._ship==='infernoreaver')&&pat!=='stormmg'&&Audio.SFX.enemyBossCannon)Audio.SFX.enemyBossCannon();
 }
 /* south-facing 256 cell, pivot centre. White flash on hit is Mike's standing rule for every unit
    and he asked for it again by name: "glow white when shot etc." */
@@ -11129,7 +14058,164 @@ const CARRIER_BAY = {                       // fractions of the hull box, left a
   R:{x0: 0.17, x1: 0.46, y0:-0.34, y1:0.30}
 };
 const CARRIER_BAY_HP   = 6;                 // deflected warheads needed per bay
-const CARRIER_FLOAT_Y  = 0.86;              // fraction of VH where an ignored round starts to rise
+const CARRIER_FLOAT_Y  = 0.74;              // brake early enough for the giant round to turn before culling
+const CARRIER_MEGA_PHASE=['BAY SIEGE','STORM CAGE','GRAVITY PRISM','DOOMSDAY FUSION'];
+function carrierMegaInit(b){
+  if(!b||b._ship!=='doomsdaycarriermk2'||b._mega)return;
+  b._mega={phase:0,shown:0,t:0,cd:.85,step:0,hit:null,nodes:[
+    {id:'L1',ox:-.34,oy:.05,hp:18,maxhp:18,dead:false},
+    {id:'L2',ox:-.12,oy:.20,hp:18,maxhp:18,dead:false},
+    {id:'R2',ox: .12,oy:.20,hp:18,maxhp:18,dead:false},
+    {id:'R1',ox: .34,oy:.05,hp:18,maxhp:18,dead:false}
+  ]};
+  try{if(typeof XART!=='undefined'&&XART._touch){
+    for(const fam of ['stormnode','stormlink','prismmuzzle','prismbolt','cyclonemuzzle','cyclonetracer',
+      'flakshell','gravitymine','omegabomb-hostile','clusterbomblet'])for(let i=0;i<8;i++)XART._touch('s6mb_'+fam+'_'+i);
+  }}catch(_s6megaLoad){}
+}
+function carrierMegaNodePos(b,n){
+  const y=(b._drawY!=null?b._drawY:b.y);return{x:b.x+b.w*n.ox,y:y+b.h*n.oy};
+}
+function carrierMegaNodeAt(b,x,y){
+  const M=b&&b._mega;if(!M||M.phase<1)return null;
+  for(const n of M.nodes){if(n.dead)continue;const p=carrierMegaNodePos(b,n);if(Math.hypot(x-p.x,y-p.y)<=27)return n;}
+  return null;
+}
+function carrierMegaNodeDamage(b,n,dmg){
+  if(!b||!n||n.dead)return false;n.hp-=dmg;b.flash=Math.max(b.flash||0,.08);
+  if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
+  if(n.hp<=0){n.hp=0;n.dead=true;const p=carrierMegaNodePos(b,n);
+    if(typeof explode==='function')explode(p.x,p.y,18,'blue');
+    if(typeof floatText==='function')floatText(p.x,p.y-20,'STORM NODE DOWN','#7deaff');
+    b.hp=Math.max(1,b.hp-b.maxhp*.045);shake=Math.max(shake,7);
+    if(Audio.SFX&&(Audio.SFX.shieldBreakCombat||Audio.SFX.explodeBig))(Audio.SFX.shieldBreakCombat||Audio.SFX.explodeBig)();
+  }
+  return true;
+}
+function carrierMegaMuzzle(b,slot,fam,scale){
+  const p=shipBossMount(b,slot);navalFlash(null,p,scale||1.0,fam,{n:8,hpx:72,life:.18,
+    follow:()=>b&&!b.dead?shipBossMount(b,slot):null});
+}
+function carrierMegaShot(b,p,a,sp,kind,opts){
+  opts=opts||{};const q=eShootT(p.x,p.y,a,sp,kind,opts);q._boss=true;
+  if(opts.accel){q._s6Accel=opts.accel;q._s6Max=opts.max||sp*1.8;}return q;
+}
+/* THUNDERHEAD is owned by the Mk II controller.  The earlier signature lived in the generic
+   boss switch, but this carrier returns through its _ship controller before that switch can run.
+   Eight lightning LANES are warned first; two neighbouring lanes are always empty and the safe
+   door walks only one column per wave, so pressure rises without turning into a coin toss. */
+function carrierThunderheadStart(b){
+  /* lightning LANES retain two readable gaps through all four warned waves. */
+  const M=b&&b._mega;if(!M||M.thunderhead)return false;
+  const cols=8,start=clamp(Math.round(player.x/(worldWidth()/cols))-1,0,cols-2);
+  M.thunderhead={t:0,tell:.66,wave:0,waves:4,next:.66,gap:start,cols:cols};
+  M.cd=2.1;b.fireCd=Math.max(b.fireCd||0,2.1);b.flash=Math.max(b.flash||0,.42);
+  if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.38,'THUNDERHEAD!','#bdf5ff');
+  if(Audio.SFX&&(Audio.SFX.bossPhase||Audio.SFX.crackle))(Audio.SFX.bossPhase||Audio.SFX.crackle)();
+  return true;
+}
+function carrierThunderheadTick(b,dt){
+  const M=b&&b._mega,T=M&&M.thunderhead;if(!T)return false;T.t+=dt;
+  if(T.t>=T.next&&T.wave<T.waves){
+    const W=worldWidth(),cw=W/T.cols,top=(typeof viewTopY==='function'?viewTopY():0)+18;
+    for(let i=0;i<T.cols;i++){
+      if(i===T.gap||i===T.gap+1)continue;
+      const p={x:(i+.5)*cw,y:top},sp=4.25+T.wave*.38;
+      carrierMegaShot(b,p,Math.PI/2,sp,'s6prism',{silent:i>0,w:12,h:30});
+      carrierMegaShot(b,{x:p.x,y:top-38},Math.PI/2,sp*.94,'s6cyclone',{silent:true,w:13,h:25});
+    }
+    if(typeof navalFlash==='function'){
+      for(let i=0;i<T.cols;i++)if(i!==T.gap&&i!==T.gap+1)
+        navalFlash(null,{x:(i+.5)*cw,y:top},.58,'s6mb_prismmuzzle',{n:8,hpx:42,life:.12});
+    }
+    shake=Math.max(shake,5+T.wave);if(Audio.SFX&&Audio.SFX.crackle)Audio.SFX.crackle();
+    T.wave++;T.gap=clamp(T.gap+(T.wave&1?1:-1),0,T.cols-2);T.next+=.34;
+  }
+  if(T.wave>=T.waves&&T.t>T.next+.48){M.thunderhead=null;M.cd=.72;return false;}
+  return true;
+}
+function carrierThunderheadDraw(b){
+  const M=b&&b._mega,T=M&&M.thunderhead;if(!T||T.t>=T.tell)return;
+  const W=worldWidth(),cw=W/T.cols,pulse=.28+.20*Math.sin(T.t*22);
+  ctx.save();ctx.globalCompositeOperation='lighter';
+  for(let i=0;i<T.cols;i++){
+    if(i===T.gap||i===T.gap+1)continue;
+    ctx.globalAlpha=pulse;ctx.fillStyle='#67dcff';ctx.fillRect(i*cw+cw*.38,PLAY.y,cw*.24,VH-PLAY.y);
+    ctx.globalAlpha=.85;ctx.fillStyle='#eaffff';ctx.fillRect(i*cw+cw*.49,PLAY.y,cw*.035,VH-PLAY.y);
+  }
+  ctx.globalAlpha=.82;ctx.strokeStyle='#9bffdb';ctx.lineWidth=2;
+  ctx.strokeRect(T.gap*cw+3,PLAY.y+3,cw*2-6,VH-PLAY.y-6);ctx.restore();
+}
+function carrierMegaTick(b,dt){
+  carrierMegaInit(b);const M=b&&b._mega;if(!M)return;M.t+=dt;
+  const ratio=clamp(b.hp/(b.maxhp||1),0,1),phase=ratio>.75?0:(ratio>.50?1:(ratio>.25?2:3));
+  if(phase!==M.phase){M.phase=phase;M.shown=phase;M.cd=.55;M.step=0;b.flash=Math.max(b.flash||0,.36);
+    flashScreen=Math.max(flashScreen,.22);shake=Math.max(shake,9);
+    if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.38,'PHASE '+(phase+1)+': '+CARRIER_MEGA_PHASE[phase],'#bdf5ff');
+    if(Audio.SFX&&Audio.SFX.bossPhase)Audio.SFX.bossPhase();
+    if(phase===1)carrierThunderheadStart(b);
+  }
+  if(carrierThunderheadTick(b,dt))return;
+  /* The launch/cannon reels own their beat.  Pausing this clock during either keeps the mega
+     arsenal forceful without stacking an unreadable attack on top of the existing bay mechanic. */
+  if(b._cn||(b._lc&&b._lc.playing))return;
+  M.cd-=dt*bossCadencePressure(b);if(M.cd>0)return;M.step++;
+  const L=shipBossMount(b,'L'),C=shipBossMount(b,'C'),R=shipBossMount(b,'R');
+  if(M.phase===0){
+    /* BAY SIEGE: twin rotary batteries rake converging, fixed cyclone lanes between warheads. */
+    const ML=shipBossMount(b,'MG_L'),MR=shipBossMount(b,'MG_R');
+    for(const row of [[ML,-1],[MR,1]]){const a=aimPlayer(row[0].x,row[0].y);for(const o of [-.15,0,.15])carrierMegaShot(b,row[0],a+o*row[1],4.1,'s6cyclone',{silent:o!==0});}
+    carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.92);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.92);M.cd=1.35;
+  }else if(M.phase===1){
+    /* STORM CAGE: alternating weakpoint pairs fire three committed spokes; the opposite side is
+       always quiet, leaving a readable half-screen escape route. */
+    const alive=M.nodes.filter(n=>!n.dead),parity=M.step&1;let fired=0;
+    for(let i=0;i<M.nodes.length;i++){const n=M.nodes[i];if(n.dead||(i&1)!==parity)continue;const p=carrierMegaNodePos(b,n),a=aimPlayer(p.x,p.y);
+      for(const o of [-.16,0,.16])carrierMegaShot(b,p,a+o,3.15,'s6cyclone',{silent:fired++>0});}
+    if(!fired&&alive.length){const n=alive[M.step%alive.length],p=carrierMegaNodePos(b,n),a=aimPlayer(p.x,p.y);carrierMegaShot(b,p,a,3.35,'s6cyclone',{});}
+    M.cd=1.55;
+  }else if(M.phase===2){
+    if(M.step&1){
+      /* GRAVITY PRISM: three bright, locked prism lanes. */
+      for(const row of [[L,-.10],[C,0],[R,.10]]){const a=aimPlayer(row[0].x,row[0].y)+row[1];carrierMegaShot(b,row[0],a,4.3,'s6prism',{silent:row[0]!==C});}
+      for(const slot of ['L','C','R'])carrierMegaMuzzle(b,slot,'s6mb_prismmuzzle',1.08);M.cd=1.25;
+    }else{
+      /* Slow gravity mines occupy the outer lanes; the centre remains a deliberate door. */
+      for(const row of [[L,-.20],[R,.20]])carrierMegaShot(b,row[0],Math.PI/2+row[1],1.35,'s6gravity',{silent:row[0]!==L,accel:.16,max:2.15,szMul:1.05});
+      carrierMegaMuzzle(b,'L','s6mb_prismmuzzle',.92);carrierMegaMuzzle(b,'R','s6mb_prismmuzzle',.92);M.cd=1.72;
+    }
+  }else{
+    if(M.step%3===0){
+      /* One accelerating omega bomb on a promised centreline — fast late, never homing. */
+      carrierMegaShot(b,C,Math.PI/2,1.1,'s6omega',{accel:1.05,max:5.2,szMul:1.15});carrierMegaMuzzle(b,'C','s6mb_prismmuzzle',1.30);M.cd=1.45;
+    }else if(M.step%3===1){
+      /* Mirrored cluster fans leave the middle wedge open. */
+      for(const row of [[L,-1],[R,1]])for(const o of [.22,.38,.54])carrierMegaShot(b,row[0],Math.PI/2+row[1]*o,3.35,'s6cluster',{silent:true});
+      carrierMegaMuzzle(b,'L','s6mb_cyclonemuzzle',1.0);carrierMegaMuzzle(b,'R','s6mb_cyclonemuzzle',1.0);M.cd=1.18;
+    }else{
+      /* A pair of flak shells target where the player was at release and stay on that line. */
+      for(const row of [[L,-.08],[R,.08]])carrierMegaShot(b,row[0],aimPlayer(row[0].x,row[0].y)+row[1],3.75,'s6flak',{silent:row[0]!==L});
+      carrierMegaMuzzle(b,'L','s6mb_prismmuzzle',.90);carrierMegaMuzzle(b,'R','s6mb_prismmuzzle',.90);M.cd=1.08;
+    }
+  }
+  if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch))(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch)();
+}
+function carrierMegaDrawUnder(b){
+  const M=b&&b._mega;if(!M||M.phase<1||typeof XART==='undefined')return;
+  carrierThunderheadDraw(b);
+  const cy=(b._drawY!=null?b._drawY:b.y),fi=Math.floor(M.t*12)%6,key='s6mb_stormlink_'+fi;if(!XART.rdy(key))return;
+  const im=XART.get(key);ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.78;
+  for(const n of M.nodes){if(n.dead)continue;const p=carrierMegaNodePos(b,n),dx=b.x-p.x,dy=cy-p.y,len=Math.hypot(dx,dy),a=Math.atan2(dy,dx);
+    ctx.save();ctx.translate(p.x,p.y);ctx.rotate(a);ctx.drawImage(im,0,-10,len,20);ctx.restore();}
+  ctx.restore();
+}
+function carrierMegaDrawOver(b){
+  const M=b&&b._mega;if(!M||M.phase<1||typeof XART==='undefined')return;const fi=Math.floor(M.t*11)%8,key='s6mb_stormnode_'+fi;
+  for(const n of M.nodes){const p=carrierMegaNodePos(b,n);if(n.dead){ctx.save();ctx.fillStyle='#1a2630';ctx.beginPath();ctx.arc(p.x,p.y,15,0,TAU);ctx.fill();ctx.restore();continue;}
+    if(XART.rdy(key)){ctx.save();ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(key),p.x-34,p.y-34,68,68);ctx.restore();}
+    const r=clamp(n.hp/n.maxhp,0,1);ctx.fillStyle='#06111c';ctx.fillRect(p.x-21,p.y+26,42,4);ctx.fillStyle='#54e8ff';ctx.fillRect(p.x-20,p.y+27,40*r,2);
+  }
+}
 function carrierBayBox(b, side){
   const f=CARRIER_BAY[side]; if(!f) return null;
   const y=(b._drawY!=null?b._drawY:b.y);
@@ -11139,6 +14225,32 @@ function carrierInit(b){
   if(b._bay) return;
   b._bay={L:CARRIER_BAY_HP, R:CARRIER_BAY_HP};
   b._lc={t:0, f:0, playing:false, side:'L', fired:false};
+}
+/* The Mk II bay reel contains the bomb until the release frame; from that exact frame onward this
+   is the continuation.  It is intentionally drawn outside the shared projectile renderer: that
+   path classified the 128px warhead as a generic missile and crushed it to 20px, making the bay
+   animation appear to end instead of becoming gameplay. */
+function carrierWarheadDraw(q){
+  if(!q||!q._carrierWarhead||typeof XART==='undefined')return false;
+  const fi=((q.t||0)*12|0)%8,ref=!!q._ref,key='s6mb_omegabomb-'+(ref?'reflected':'hostile')+'_'+fi;
+  if(!XART.rdy(key))return false;
+  const h=q._drawH||108,w=q._drawW||68,ang=Math.atan2(q.vy||0,q.vx||0)-Math.PI/2;
+  ctx.save();ctx.translate(q.x,q.y);
+  /* Warning and shield are authored rings.  They ride the live projectile rather than being
+     pasted at the bay, proving that the detached bomb is now an interactive world object. */
+  if(!ref&&(q.t||0)<1.10){const wk='s6mb_bombwarning_'+fi;if(XART.rdy(wk)){const z=118+Math.sin((q.t||0)*19)*5;
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.54;ctx.drawImage(XART.get(wk),-z/2,-z/2,z,z);ctx.restore();}}
+  const sk='s6mb_bombshield_'+fi;if(XART.rdy(sk)){const z=112;
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=ref?.42:.68;ctx.drawImage(XART.get(sk),-z/2,-z/2,z,z);ctx.restore();}
+  ctx.rotate(ang);ctx.drawImage(XART.get(key),-w/2,-h/2,w,h);
+  if(!ref&&(q.t||0)<.52){const ik='s6mb_bombignition_'+Math.min(7,((q.t||0)*15)|0);if(XART.rdy(ik)){
+    const ih=82,iw=ih*(XART.get(ik).naturalWidth/XART.get(ik).naturalHeight);
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(ik),-iw/2,-ih*.20,iw,ih);ctx.restore();}}
+  ctx.restore();return true;
+}
+function carrierWarheadBurst(q,fam,n,hpx,life){
+  if(!q||typeof navalFlash!=='function')return;
+  navalFlash(null,{x:q.x,y:q.y},1,fam,{n:n,hpx:hpx,life:life,anchor:.5});
 }
 /* ── THE Mk II's ENERGY CANNON (drop 0822y) ─────────────────────
    The reel is authored 640x480 against a 640x320 hull, so the art DRAWS THE WHOLE ATTACK and
@@ -11174,6 +14286,7 @@ function carrierCannonTick(b, dt, C){
 function carrierTick(b, dt){
   const D=SHIPBOSS[b&&b._ship]; if(!D||!D.launch) return;
   carrierInit(b);
+  if(b._ship==='doomsdaycarriermk2') carrierMegaTick(b,dt);
   const L=D.launch, S=b._lc, C=D.cannon;
   /* a cannon reel owns the frame for its whole duration */
   if(b._cn && C){ if(carrierCannonTick(b, dt, C)) return; }
@@ -11218,13 +14331,16 @@ function carrierTick(b, dt){
          is the counterplay; chasing him would remove it. */
       const _wa=(typeof aimPlayer==='function')?aimPlayer(sx,sy):Math.PI/2;
       const _wsp=1.15;
-      eBullets.push({x:sx, y:sy, vx:Math.cos(_wa)*_wsp, vy:Math.sin(_wa)*_wsp, ang:_wa,spd:_wsp,
-                     _accel:0.030,_maxspd:4.6,w:22, h:56,
+      const _mk2=b._ship==='doomsdaycarriermk2';
+      const _warhead={x:sx, y:sy, vx:Math.cos(_wa)*_wsp, vy:Math.sin(_wa)*_wsp, ang:_wa,spd:_wsp,
+                     _accel:_mk2?0.040:0.030,_maxspd:_mk2?5.0:4.6,w:_mk2?34:22, h:_mk2?76:56,
                      dmg:1, t:0, kind:'omegawarhead', _fx:'missile', _side:S.side,
+                     _boss:_mk2,_noArsenal:_mk2,_carrierWarhead:_mk2,_drawW:_mk2?68:null,_drawH:_mk2?108:null,
                      /* the Mk I and Mk II fire visibly different rounds — a slim olive shell
                         vs a silver canister — so the round carries the art its OWNER declares
                         instead of the draw hardcoding one pair. */
-                     _wart:(L.warhead||'nfx_omegawarhead_in')});
+                     _wart:(L.warhead||'nfx_omegawarhead_in')};
+      eBullets.push(_warhead);
       if(Audio.SFX&&(Audio.SFX.spaceVolleyLaunch||Audio.SFX.missile||Audio.SFX.enemyBossCannon))
         (Audio.SFX.spaceVolleyLaunch||Audio.SFX.missile||Audio.SFX.enemyBossCannon)();
     }
@@ -11233,13 +14349,14 @@ function carrierTick(b, dt){
   b._animKey = L.pre + String(Math.max(0,Math.min(L.frames-1,S.f))).padStart(2,'0');
 }
 /* a deflected round landing on a bay is the only thing that hurts one */
-function carrierBayHit(b, wx, wy){
+function carrierBayHit(b, wx, wy, warhead){
   if(!b||!b._bay) return false;
   for(const side of ('LR')){
     if(b._bay[side]<=0) continue;
     const box=carrierBayBox(b, side); if(!box) continue;
     if(wx>=box.x0 && wx<=box.x1 && wy>=box.y0 && wy<=box.y1){
       b._bay[side]--; b.flash=0.12;
+      if(warhead&&warhead._carrierWarhead)carrierWarheadBurst(warhead,'s6mb_bombimpact',10,176,.46);
       if(typeof explode==='function') explode(wx, wy, b._bay[side]<=0?16:9, 'orange');
       if(b._bay[side]<=0 && typeof floatText==='function') floatText(wx, wy-14, side+' BAY DOWN', '#ffd36b');
       return true;
@@ -11294,7 +14411,7 @@ function heraldDeathDraw(b){
   if(!heraldDeathPlate(key,b,1,deathScale) && !heraldDeathPlate('nhd_idle_0',b,1,deathScale)) return false;
   if(overlay) heraldDeathPlate('nhd_'+overlay+'_'+fi,b,1,deathScale);
   if((b.flash||0)>0 && typeof xartTint==='function'){
-    const t=xartTint(key,'#ffffff',0.9),y=(b._drawY!=null?b._drawY:b.y);
+    const t=xartTint(key,hitFlashColor(b,'#ffffff'),0.9),y=(b._drawY!=null?b._drawY:b.y);
     const dw=H.dw*deathScale,dh=H.dh*deathScale;
     if(t){ctx.save();ctx.globalAlpha=Math.min(0.65,(b.flash||0)*3.2);ctx.drawImage(t,b.x-dw/2,y-dh/2,dw,dh);ctx.restore();}
   }
@@ -11321,6 +14438,8 @@ function shipBossDraw(b){
     ctx.lineTo(w*0.42, -h*0.10); ctx.closePath();
     ctx.fill(); ctx.stroke();
     ctx.restore(); ctx.globalAlpha=1;
+    if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierDraw==='function')magmaWardBarrierDraw(b);
+    if(b._s4war&&typeof stage4WarfareDrawOver==='function')stage4WarfareDrawOver(b);
     shipBossMuzzleDraw(b);
     return true;
   }
@@ -11334,6 +14453,11 @@ function shipBossDraw(b){
      the plate gets themed and imported, not tinted here. */
   /* the rake draws UNDER the hull, so the spokes read as coming out of the ship */
   if(b._brk && typeof beamRakeDraw==='function') beamRakeDraw(b);
+  if(b._l23Beam&&typeof l23BossBeamDraw==='function')l23BossBeamDraw(b);
+  if(b._ship==='infernoreaver'&&b._irRoll&&typeof infernoReaverRollDraw==='function')infernoReaverRollDraw(b);
+  if(b._ship==='junglecruiser'&&typeof jungleCruiserDrawUnder==='function')jungleCruiserDrawUnder(b);
+  if(b._s7Flood)sludgeFloodDraw(b);
+  if(b._ship==='doomsdaycarriermk2') carrierMegaDrawUnder(b);
   /* A supplied damaged plate is a HULL STATE, never an impact effect. The old renderer never read
      D.dmg, leaving every authored damaged/critical plate dead. Reels still own the frame while
      active; otherwise health selects the intact / damaged / critical plate. */
@@ -11344,7 +14468,12 @@ function shipBossDraw(b){
     if(_dk&&XART.rdy(_dk)) _hk=_dk;
   }
   /* a boss running an authored reel drives its own frame; everything else keeps its selected plate */
-  const _ak=(b._animKey && XART.rdy(b._animKey)) ? b._animKey : _hk;
+  let _ak=(b._animKey && XART.rdy(b._animKey)) ? b._animKey : _hk;
+  if(b._s7dredger){
+    const _q=b._sba,_dur=_q?Math.max(.01,_q.tell+_q.recover):1;
+    const _fi=_q?clamp(Math.floor((_q.t/_dur)*8),0,7):(Math.floor((b._sbT||0)*6)%4);
+    const _dk='s7atk_dual_scoop_dredger_'+_fi;if(XART.rdy(_dk))_ak=_dk;
+  }
   const im=XART.get(_ak);
   /* ⚠ THE BOX IS w x h, NOT w x w (drop 0822y). This read `h=256*s` — i.e. b.w — so every
      ship boss drew SQUARE and its declared h was ignored. Harmless while a plate was square,
@@ -11365,10 +14494,18 @@ function shipBossDraw(b){
   ctx.translate(b.x+P.x,cy+P.y); ctx.rotate(P.rot); ctx.scale(P.sx,P.sy);
   ctx.drawImage(im, -w/2, -h/2, w, dh);
   if((b.flash||0)>0 && typeof xartTint==='function'){
-    const t=xartTint(_ak, '#ffffff', 0.9);
+    const t=xartTint(_ak, hitFlashColor(b,'#ffffff'), 0.9);
     if(t){ ctx.globalAlpha=Math.min(1,(b.flash/0.18))*0.85; ctx.drawImage(t, -w/2, -h/2, w, dh); ctx.globalAlpha=1; }
   }
   ctx.restore();
+  if(b._s3boss&&typeof stage3BossDrawOver==='function') stage3BossDrawOver(b);
+  if(b._ship==='junglecruiser'&&typeof jungleCruiserDrawOver==='function')jungleCruiserDrawOver(b,_ak,w,h,cy,P);
+  if(b._ship==='magmaward')magmaWardDrawOver(b);
+  if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierDraw==='function')magmaWardBarrierDraw(b);
+  if(b._s4war&&typeof stage4WarfareDrawOver==='function')stage4WarfareDrawOver(b);
+  if(b._xenoRig&&typeof xenoRegentDrawOver==='function')xenoRegentDrawOver(b);
+  if(b._s6mini&&typeof stage6MiniDrawOver==='function')stage6MiniDrawOver(b);
+  if(b._ship==='doomsdaycarriermk2') carrierMegaDrawOver(b);
   /* The Mk-II pack includes a dedicated nine-frame beam. The 640x480 cannon reel performs the
      hull, while this continuous column carries the laser visibly from its centre emitter through
      the player lane; using the supplied beam is what makes the collision above readable. */
@@ -11382,6 +14519,39 @@ function shipBossDraw(b){
   }
   shipBossMuzzleDraw(b);
   return true;
+}
+/* Encounter HP floors are deliberately central.  Individual boss builders may still multiply
+   above these values, but no boss/miniboss can accidentally inherit a 100-HP seed and evaporate
+   before its second pattern.  Internal section pools are scaled with the public gauge so a
+   modular hull cannot report 2000 HP while its actual breakable parts still total 300. */
+const BOSS_HP_FLOOR=[800,1750,1350,1700,2150,2700,3350,4100,4950];
+/* The first two encounters need enough life to show their authored state machines. At 380/500
+   the Jungle Cruiser and Magma Ward could disappear during their opening pattern, particularly
+   after the player had carried upgrades forward. Later-stage floors were already on the desired
+   progression curve, so only the two reported fights are raised. */
+const MINIBOSS_HP_FLOOR=[900,1500,650,820,1020,1260,1540,1860,2220];
+function enforceEncounterHp(b,floor){
+  if(!b||!(floor>0)||!(b.maxhp>0)||b.maxhp>=floor)return b;
+  const ratio=floor/b.maxhp,scalePool=(o,hpKey,maxKey)=>{
+    if(!o)return;
+    if(o[maxKey]>0)o[maxKey]=Math.ceil(o[maxKey]*ratio);
+    if(o[hpKey]>0)o[hpKey]=Math.ceil(o[hpKey]*ratio);
+  };
+  b.maxhp=Math.ceil(floor);b.hp=Math.ceil(Math.max(1,b.hp||b.maxhp)*ratio);
+  if(b.hp>b.maxhp)b.hp=b.maxhp;
+  if(Array.isArray(b.parts))for(const p of b.parts)scalePool(p,'hp','maxhp');
+  if(b._sx&&typeof b._sx==='object'){
+    if(Array.isArray(b._sx.parts))for(const p of b._sx.parts)scalePool(p,'hp','maxhp');
+    if(b._sx.hp&&b._sx.max)for(const k of Object.keys(b._sx.max)){
+      if(b._sx.max[k]>0)b._sx.max[k]=Math.ceil(b._sx.max[k]*ratio);
+      if(b._sx.hp[k]>0)b._sx.hp[k]=Math.ceil(b._sx.hp[k]*ratio);
+    }
+    for(const k of Object.keys(b._sx))if(b._sx[k]&&typeof b._sx[k]==='object')scalePool(b._sx[k],'hp','max');
+  }
+  if(Array.isArray(b._qlCan))for(const c of b._qlCan)scalePool(c,'hp','max');
+  if(b._s9rift)for(const w of [b._s9rift.left,b._s9rift.right])scalePool(w,'hp','maxhp');
+  if(b._s9fusion)for(const w of [b._s9fusion.left,b._s9fusion.right])scalePool(w,'hp','maxhp');
+  return b;
 }
 function spawnBoss(kind){
   const sn=curStage.n;
@@ -11399,12 +14569,14 @@ function spawnBoss(kind){
 
      Expressed as a formula rather than a table so a ninth stage cannot be forgotten. */
   const _hpRamp = (sn<=0) ? 1 : (1.06 + sn*0.09);
-  const hpBase = (220 + sn*120) * DIFF.eHp * _hpRamp;
+  const _threat=(typeof combatThreat==='function')?combatThreat(sn):{bossHp:1,bossRate:1,bossDensity:1,bullet:1};
+  const _hpFloor=(BOSS_HP_FLOOR[clamp(sn|0,0,BOSS_HP_FLOOR.length-1)]||800)*Math.max(1,DIFF.eHp||1)*_threat.bossHp;
+  const hpBase = Math.max((220 + sn*120) * DIFF.eHp * _hpRamp * _threat.bossHp,_hpFloor);
   const b={
     kind, x:VW/2, y:-120, tx:VW/2, ty:120, w:160, h:120,
     hp:hpBase, maxhp:hpBase, t:0, phase:0, fireCd:1.5, enter:true,
     flash:0, dead:false, dying:0, dmgState:0, drift:0, name:'',
-    rotor:0,
+    rotor:0, _threat:_threat,
   };
   switch(kind){
     /* the ship bosses (drop 0810s) take their whole stat line from SHIPBOSS */
@@ -11438,9 +14610,13 @@ function spawnBoss(kind){
     buildModularBoss(b, IRONREV_SPEC, 'mbp_ir', Math.ceil(hpBase*2.4));
   }
   if(kind==='vileexistence'){
-    b.name='APOSTLE COCOON'; b.ty=140;
-    b._vBase=Math.ceil(hpBase*2.2); b._vile=true;
+    /* STAGE 8'S NEW FOUR-FORM FINALE. `_vBase` is the WHOLE encounter budget;
+       every shell receives exactly one quarter of it.  The old 2.2x weighted
+       split made the finale substantially longer than the bosses around it. */
+    b.name='BLACK COCOON'; b.ty=140; b.y=b.ty;
+    b._vPhaseHp=Math.max(1,Math.ceil(hpBase/4)); b._vBase=b._vPhaseHp*4; b._vile=true;
     vileBuildForm(b, 0);
+    b._symEntry={t:0,dur:2.55,beat:-1}; b.enter=true;
   }
   if(kind==='cesspool'){             // LEVEL 7 BOSS — CESSPOOL LEVIATHAN.
     // The pack's component-map is the same five-part 256x256 layout the VILE forms use
@@ -11615,7 +14791,7 @@ function spawnBoss(kind){
      bits and pieces like that, they are jets and planes." A machine that builds itself out of
      flying parts reads right for a colossus, a behemoth or the finale; it reads absurd for an
      aircraft, which should simply fly in. Everything else keeps the plain approach. */
-  const _ASSEMBLE={magmacolossus:1, cryobehemoth:1, vileexistence:1};
+  const _ASSEMBLE={magmacolossus:1, cryobehemoth:1};
   /* >=1 part: the magma colossus and cryo behemoth are single-body hulls, so their "assembly" is
      the POWER-ON wash rather than a multi-part dock. The Vile Existence has 5 components and gets
      the full fly-in. Either way the fight is gated until the sequence finishes. */
@@ -11624,6 +14800,10 @@ function spawnBoss(kind){
   const _SXMAP={magmacolossus:'mc', cryobehemoth:'cb', leviathan:'l6j'};   // L6 jet is sectional too
   if(_SXMAP[kind] && typeof sxInit==='function') sxInit(b, _SXMAP[kind]);
   if(_ASSEMBLE[kind] && b.modular && b.parts && b.parts.length>=1 && typeof bossEntryStart==="function") bossEntryStart(b);
+  /* The four Stage-8 forms already divide a deliberately bounded encounter
+     budget. Applying the generic per-boss floor here would inflate EACH form
+     back into a complete boss and destroy the 25/25/25/25 contract. */
+  if(!b._vile) enforceEncounterHp(b,_hpFloor);
   boss=b; bossActive=true;
   /* The warning sequence already owns the one boss alert. Do not fire it again on spawn. */
 }
@@ -11639,12 +14819,14 @@ function spawnSubBoss__inner(kind){
   const b={kind, x:VW/2, y:-120, ty:130, t:0, enter:true, hp:100, maxhp:100, w:130, h:120,
            flash:0, dead:false, dying:0, fireCd:1.4, drift:0, atkPhase:0, phaseT:1.2, sub:true, name:'SUB-BOSS'};
   switch(kind){
+    case 'riftwardens': s9RiftWardensInit(b); break;
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
     case 'magmaward': case 'rimewall': case 'olivewarden':   // Mike's 0813h minis
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
     case 'spawncarrier':                               // stage 8's lock mini (0814e) — replaces the herald
     case 'heralddeath':                                // generated Hellwing Death Carrier, Stage 8
     case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
+    case 'dualscoopdredger':
       b.mini=true; shipBossInit(b, kind); break;
     case 'quadlaser': {
       /* Built from the pack's own map rather than eyeballed: BOFQL carries the
@@ -11734,12 +14916,19 @@ function spawnSubBoss__inner(kind){
      from level 2 onward." Their HP is set in half a dozen branches above - the ship table's
      absolute values, the quad-laser's own figure, the modular builds - so scaling here, after the
      switch has finished with the object, is the only spot that catches all of them. Same curve as
-     the boss ramp, and stage 1 is deliberately left alone: the jungle cruiser is the first
-     miniboss anyone meets and it was tuned at 210. */
+     the boss ramp; stage 1 keeps the Jungle Cruiser's dedicated 720-HP table value. */
   {
     const _sn=(run.stage|0)-1;
     const _r=(_sn<=0)?1:(1.06+_sn*0.09);
-    if(_r>1 && b.maxhp>0){ b.maxhp=Math.ceil(b.maxhp*_r); b.hp=b.maxhp; }
+    if(_r>1 && b.maxhp>0)enforceEncounterHp(b,Math.ceil(b.maxhp*_r));
+  }
+  b._threat=(typeof combatThreat==='function')?combatThreat(run.stage):{bossHp:1,bossRate:1,bossDensity:1,bullet:1};
+  /* Rift Wardens already receive combatThreat inside their twin initializer; every other mini
+     receives it here. Always scale through enforceEncounterHp so private section pools follow. */
+  if(!b._s9rift&&b._threat.bossHp>1&&b.maxhp>0)enforceEncounterHp(b,Math.ceil(b.maxhp*b._threat.bossHp));
+  {
+    const _i=clamp(((run.stage|0)-1),0,MINIBOSS_HP_FLOOR.length-1);
+    enforceEncounterHp(b,MINIBOSS_HP_FLOOR[_i]*Math.max(1,DIFF.eHp||1)*(b._threat.bossHp||1));
   }
   subBoss=b; subBossActive=true;
 }
@@ -11930,11 +15119,17 @@ function updateSubBoss(dt){
        class-sized death takeover instead of a spray of generic fireballs. */
     if(!b._deathFxStarted){
       if(b._herald) b._deathFxStarted=true;
-      else if(typeof unitDeathFX==='function') unitDeathFX(b,'mini',(curStage&&curStage.bg==='ice')?'blue':'red');
+      else if(b._ship==='junglecruiser'&&typeof unitDeathFX==='function'){
+        /* No dissolve/fade. The intact hull is immediately replaced by a boss-scale authored
+           explosion takeover, large enough to engulf the full 168px aircraft. */
+        if(typeof jungleCruiserBeamAudio==='function')jungleCruiserBeamAudio(b,false);
+        unitDeathFX(b,'boss','green');
+      }else if(typeof unitDeathFX==='function') unitDeathFX(b,'mini',(curStage&&curStage.bg==='ice')?'blue':'red');
     }
     if(T>=1.9){ subBoss=null; subBossActive=false; subBossDone=true; if(typeof dropPowerup==='function') dropPowerup(b.x,b.y,'weapon'); }
     return;
   }
+  if(b._s9rift){ s9RiftWardensTick(b,dt); return; }
   if(b._harrier){ chaosHarrierUpdate(b,dt); return; }
   if(b.enter){
     b._entT=(b._entT||0)+dt;
@@ -11970,6 +15165,10 @@ function updateSubBoss(dt){
     b.drift+=dt; b.x=worldWidth()/2+Math.sin(b.drift*0.9)*96;   // WORLD centre: wide stages are 800px
   }
   if(!b.mini){ b.phaseT-=dt; if(b.phaseT<=0){ b.atkPhase=(b.atkPhase+1)%4; b.phaseT=rnd(1.0,1.7); } }
+  /* The authored Jungle Cruiser director has already moved and fired this frame. Returning here
+     is essential: otherwise the generic attack queue adds the retired vortex/warhawk pattern on
+     top and destroys the one-weapon-at-a-time reads designed for this fight. */
+  if(b._ship==='junglecruiser')return;
   b.fireCd-=dt*DIFF.eFire;
   if(b.fireCd<=0){
     if(b._ship&&typeof shipBossQueueAttack==='function') shipBossQueueAttack(b);
@@ -12160,7 +15359,7 @@ function cryoBodyDraw(b){
   ctx.save();
   ctx.drawImage(im, b.x-w/2, b.y-h/2, w, h);
   if(b.flash>0 && typeof xartTint==='function'){
-    const tc=xartTint(k, b.flash>0.04?'#ffffff':'#ff8a4a', 0.85);
+    const tc=xartTint(k, hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'), 0.85);
     if(tc) ctx.drawImage(tc, b.x-w/2, b.y-h/2, w, h);
   }
   ctx.restore();
@@ -12317,12 +15516,36 @@ function customMiniMuzzleStart(b, family, points){
 }
 function customMiniMuzzleDraw(b){
   const F=b&&b._cmz; if(!F||typeof XART==='undefined') return;
+  if(F.followGenerated)return; /* attachAnchoredReleaseMuzzles owns the visible, following reel */
   const fi=clamp(Math.floor((F.t/F.life)*6),0,5), key='bfx_'+F.family+'_m_'+fi;
   if(!XART.rdy(key)) return;
   const im=XART.get(key), h=36, w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
   ctx.save(); ctx.globalCompositeOperation='lighter';
   for(const p of F.points) ctx.drawImage(im,p.x-w/2,p.y-h*0.34,w,h);
   ctx.restore();
+}
+function attachAnchoredReleaseMuzzles(owner,first,family){
+  if(!owner||typeof eBullets==='undefined'||typeof navalFlash!=='function')return;
+  const oy=(owner._drawY!=null?owner._drawY:owner.y),seen=[];
+  for(let i=first;i<eBullets.length;i++){
+    const q=eBullets[i];if(!q)continue;q._boss=true;
+    const dedicated=/^(s1|s6mb_|s7spore|s8rift|s9lattice)/.test(String(q.kind||''));
+    if(family&&!dedicated){q._bfam=family;q._noArsenal=false;}
+    if(Math.abs(q.x-owner.x)>owner.w*.62||Math.abs(q.y-oy)>owner.h*.72)continue;
+    const dx=q.x-owner.x,dy=q.y-oy;
+    if(seen.some(p=>Math.hypot(p.dx-dx,p.dy-dy)<18))continue;
+    seen.push({dx:dx,dy:dy,kind:q.kind});
+  }
+  for(const p of seen.slice(0,4)){
+    const _bossFam=family?'bfx_'+family+'_m':null;
+    const _premium=({kinetic:BPFX_MUZZLE_KINETIC,laser:BPFX_MUZZLE_LASER,
+      missile:BPFX_MUZZLE_MISSILE,void:BPFX_MUZZLE_VOID}[bossProjectileFxFamily({_boss:true,kind:p.kind})]||BPFX_MUZZLE_KINETIC);
+    const _fam=_bossFam&&typeof XART!=='undefined'&&XART.rdy(_bossFam+'_0')?_bossFam:_premium;
+    const _n=_fam.indexOf('bpfx_')===0?8:6;
+    const start={x:owner.x+p.dx,y:oy+p.dy};
+    navalFlash(null,start,.82,_fam,{n:_n,hpx:48,life:.16,anchor:.38,
+      follow:()=>owner&&!owner.dead?{x:owner.x+p.dx,y:(owner._drawY!=null?owner._drawY:owner.y)+p.dy}:null});
+  }
 }
 function subBossAttack(){
   const b=subBoss, yy=(b._drawY||b.y);
@@ -12357,6 +15580,7 @@ function subBossAttack(){
     if(live.length){
       b.fireCd=1.15; b._muz=0.16;
       for(const c of live) eShoot(b.x+(c.mz[0]-192)*S, my, Math.PI/2, 3.1, 'laser');
+      attachAnchoredReleaseMuzzles(b,_customFirst,null);
       if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
       return;
     }
@@ -12365,10 +15589,11 @@ function subBossAttack(){
     b._qlChg=0; b._qlChgN=(b._qlChgN|0)+1; b.fireCd=1.7; b._muz=0.24;
     const fan=(b._qlChgN%2)?0.13:0;
     for(let k=-2;k<=2;k++) eShoot(b.x, my, Math.PI/2+k*fan, 3.6, 'laser');
+    attachAnchoredReleaseMuzzles(b,_customFirst,null);
     if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
     return;
   }
-  if(b.mini){ bossProfileAttack(b); return; }   // minibosses use their named profile
+  if(b.mini){ bossProfileAttack(b);attachAnchoredReleaseMuzzles(b,_customFirst,null);return; }   // minibosses use their named profile
   /* NO MORE RINGS, NO MORE SIDEWAYS BULLETS (drop 0801kn). Mike: "theres sideway
      bullets going across the screen instead of machine gun like attacks".
 
@@ -12400,14 +15625,14 @@ function subBossAttack(){
     case 3: b.fireCd=1.6;  eMissile(b.x-b.w*0.2,yy+b.h*0.3); eMissile(b.x+b.w*0.2,yy+b.h*0.3); break;      // missiles
   }
   if(_customFam){
-    for(let i=_customFirst;i<eBullets.length;i++){ eBullets[i]._boss=true; eBullets[i]._bfam=_customFam; }
     const pts=_customPhase===1
       ?[{x:b.x-b.w*0.30,y:yy+b.h*0.22},{x:b.x+b.w*0.30,y:yy+b.h*0.22}]
       :_customPhase===3
         ?[{x:b.x-b.w*0.20,y:yy+b.h*0.30},{x:b.x+b.w*0.20,y:yy+b.h*0.30}]
         :[{x:b.x,y:yy+b.h*(_customPhase===2?0.22:0.30)}];
-    customMiniMuzzleStart(b,_customFam,pts);
+    customMiniMuzzleStart(b,_customFam,pts);if(b._cmz)b._cmz.followGenerated=true;
   }
+  attachAnchoredReleaseMuzzles(b,_customFirst,_customFam);
 }
 /* MINIBOSS HEALTH BAR (drop 0724ao). Sub-bosses had no bar at all, so there was no way to tell a
    miniboss from a tough enemy or to read how the fight was going. Deliberately styled DIFFERENTLY
@@ -12604,7 +15829,7 @@ function chaosHarrierDraw(b){
     const glow=0.22+(0.36*(0.5+0.5*Math.sin((b.t||0)*8.5)));
     chaosHarrierImage('ch_ship_glow',b.x,yy,b.w,h,glow,'lighter',0);
     if(b.flash>0 && typeof xartTint==='function' && XART.rdy(key)){
-      const im=xartTint(key,'#ffffff',0.9);
+      const im=xartTint(key,hitFlashColor(b,'#ffffff'),0.9);
       if(im){ctx.save();ctx.globalAlpha=Math.min(0.86,b.flash/0.18);ctx.drawImage(im,b.x-b.w/2,yy-h/2,b.w,h);ctx.restore();}
     }
   }
@@ -12653,6 +15878,7 @@ function chaosHarrierProjectileDraw(b){
 }
 function drawSubBoss(){
   const b=subBoss; if(!b) return;
+  if(b._s9rift){ s9RiftWardensDraw(b); return; }
   if(typeof drawSubBossBar==='function') drawSubBossBar(b);
   if(b._harrier){ chaosHarrierDraw(b); return; }
   if(b._ship && typeof shipBossDraw==='function' && shipBossDraw(b)){
@@ -12746,7 +15972,7 @@ function drawSubBoss(){
           ctx.drawImage(XART.get(ck), x0, y0, 384*S, 384*S);
           // only the cannon that took the hit lights
           if((c.flash||0) > 0 && typeof xartTint==='function'){
-            const ct=xartTint(ck,'#ffffff',0.75);
+            const ct=xartTint(ck,hitFlashColor(c,'#ffffff'),0.75);
             if(ct){
               ctx.save();
               ctx.globalAlpha=Math.min(1,(c.flash||0)/0.20);
@@ -12816,7 +16042,7 @@ function drawSubBoss(){
       /* SUB-BOSS HIT FLASH. Minibosses had NO flash at all — you could empty a clip into a tank
          and get no feedback that it was landing. Same xartTint the rest of the game uses. */
       if(b.flash>0 && typeof xartTint==='function'){
-        const _tc2=xartTint(key, b.flash>0.04?'#ffffff':'#ff8a4a', 0.85);
+        const _tc2=xartTint(key, hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'), 0.85);
         if(_tc2) ctx.drawImage(_tc2, b.x-w/2, yy-h/2, w, h);
       }
       ctx.restore();
@@ -12852,20 +16078,20 @@ function drawSubBoss(){
         const fw=w*(fim.naturalWidth/220);          // frames were baked at 220px master width
         const fh=fw;                                 // fixed square canvas per set
         b._lastKey=_fk; ctx.drawImage(fim, b.x-fw/2, yy-fh/2, fw, fh);
-        if(b.flash>0){ const tc=xartTint(_fk,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,b.x-fw/2,yy-fh/2,fw,fh); }
+        if(b.flash>0){ const tc=xartTint(_fk,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); if(tc) ctx.drawImage(tc,b.x-fw/2,yy-fh/2,fw,fh); }
       } else {
         ctx.drawImage(im,b.x-w/2,yy-h/2,w,h);        // frames not loaded yet: real art, unwarped
-        if(b.flash>0){ const tc=xartTint(key,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h); }
+        if(b.flash>0){ const tc=xartTint(key,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h); }
       }
     }
     else { ctx.drawImage(im,b.x-w/2,yy-h/2,w,h);
-      if(b.flash>0){ const tc=xartTint(key,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h); } }
+      if(b.flash>0){ const tc=xartTint(key,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); if(tc) ctx.drawImage(tc,b.x-w/2,yy-h/2,w,h); } }
     /* GUARANTEED HIT FLASH (drop 0724cb). drawSubBoss has several draw branches and only some of
        them tinted on flash — the level-1 crawler took one that did not, so it never lit up however
        hard you shot it. One pass here covers EVERY branch, including any added later, using the
        key the branch actually drew with. */
     if(b.flash>0 && b._lastKey && typeof xartTint==='function'){
-      const _ft=xartTint(b._lastKey, b.flash>0.05?'#ffffff':'#ff8a4a', 0.9);
+      const _ft=xartTint(b._lastKey, hitFlashColor(b,b.flash>0.05?'#ffffff':'#ff8a4a'), 0.9);
       if(_ft) ctx.drawImage(_ft, b.x-w/2, yy-h/2, w, h);
     }
     // back-muzzle flash when a homing missile just launched from the rear
@@ -12894,11 +16120,11 @@ function drawSubBoss(){
       b._drawW=w; b._drawH=h;
       if(b.dead){ ctx.save();                     // no death fade (drop 0806j)
         ASSETS.blit(key,b.x,yy,w,h); ASSETS.blitTint(key,b.x,yy,w,h,'#140f0a',Math.min(0.7,b.dying*0.3)); ctx.restore(); }
-      else { ASSETS.blit(key,b.x,yy,w,h); if(b.flash>0) ASSETS.blitTint(key,b.x,yy,w,h,b.flash>0.04?'#ffffff':'#ff8a4a',0.85); }
+      else { ASSETS.blit(key,b.x,yy,w,h); if(b.flash>0) ASSETS.blitTint(key,b.x,yy,w,h,hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'),0.85); }
       drawn=true;
     }
   }
-  if(!drawn){ ctx.fillStyle=b.flash>0?'#fff':'#b04a4a'; ctx.fillRect(b.x-b.w/2,yy-b.h/2,b.w,b.h); }
+  if(!drawn){ ctx.fillStyle=b.flash>0?hitFlashColor(b,'#fff'):'#b04a4a'; ctx.fillRect(b.x-b.w/2,yy-b.h/2,b.w,b.h); }
   customMiniMuzzleDraw(b);
   // sub-boss HP bar (thinner, amber, below the main-boss bar slot)
   if(!b.dead){
@@ -12943,6 +16169,13 @@ function drawSubBoss(){
 function subBossHitPart(x, y){
   const b = (typeof subBoss!=='undefined') ? subBoss : null;
   if(!b) return null;
+  if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'){
+    const d=stage4MiniDroneAt(b,x,y,2);if(d)return d.side<0?'s4droneL':'s4droneR';
+  }
+  if(b._s9rift){
+    const w=s9RiftWardensPart(b,x,y);
+    return w?(w.side==='L'?'riftL':'riftR'):null;
+  }
   const S = b._sx;
   const G = (S && typeof sxPackGeom==='function') ? sxPackGeom(S.code) : null;
   if(G && S){
@@ -12995,6 +16228,9 @@ function subBossHit(x, y){ return subBossHitPart(x,y)!==null; }
 function subBossSolidAt(x, y){
   const b = (typeof subBoss!=='undefined') ? subBoss : null;
   if(!b) return null;
+  if(b._jcGhost) return false; // safe scripted fly-through: neither body nor bullets collide
+  if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'&&stage4MiniDroneAt(b,x,y,2))return true;
+  if(b._s9rift) return !!s9RiftWardensPart(b,x,y);
   if(b._sx && typeof subBossHitPart==='function') return subBossHitPart(x,y)!==null;
   if(b._ql){
     /* hb is [x,y,w,h] in the 384px SPRITE's own space — the same conversion hitSubBoss
@@ -13046,7 +16282,14 @@ function hitSubBoss(dmg, hx, hy){
     sxHit(subBoss, dmg, (_lastHitX!=null?_lastHitX:subBoss.x), (_lastHitY!=null?_lastHitY:subBoss.y));
   }
   const b=subBoss; if(!b||b.dead) return;
+  if(b._jcGhost) return;
   if(b._harrier && !b._chCollision) return;   // the hull is absent inside the authored warp aperture
+  if(b._s9rift){ if(s9RiftWardensHit(b,dmg,hx,hy)) weaponHitSfx('normal'); return; }
+  if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'){
+    const d=stage4MiniDroneAt(b,hx!=null?hx:b.x,hy!=null?hy:b.y,2);
+    if(d){stage4MiniDroneDamage(b,d,dmg);weaponHitSfx('normal');return;}
+  }
+  if(b._ship==='magmaward'&&typeof magmaWardBarrierDamage==='function'&&magmaWardBarrierDamage(b,dmg,hx,hy))return;
 
   /* THE CANNONS TAKE THE HIT FIRST (drop 0801jw). Mike: "Level 1 miniboss, I cannot
      kill it at all nor are the turrets seperately atttackable."
@@ -13071,6 +16314,7 @@ function hitSubBoss(dmg, hx, hy){
       const hx = c.hb[0], hy = c.hb[1], hw = c.hb[2], hh = c.hb[3];
       const cxr = hx + hw / 2, cyr = hy + hh / 2;
       if(Math.abs(rel.x-cxr)<hw*0.5+8 && Math.abs(rel.y-cyr)<hh*0.5+8){
+        const _partElem=(typeof opposingElementImpact==='function')?opposingElementImpact(b,'subboss',_dmgBullet):null;
         c.hp -= dmg;
         /* THE HIT TURRET LIGHTS, NOT THE MACHINE (drop 0801kf). Mike: "stop making
            the whole frame light up, each turret ligths up seperately after being hit
@@ -13079,7 +16323,9 @@ function hitSubBoss(dmg, hx, hy){
            b.flash drives a full-sprite white tint, so one pellet lit every plate at
            once. Each cannon now carries its OWN flash timer and only that plate is
            tinted. The hull is left alone here - it gets the armour trace instead. */
+        c._hitFlashColor=b._hitFlashColor||null;
         c.flash = 0.20;
+        weaponHitSfx('normal');
         if(typeof fxBurst==='function') fxBurst(_lastHitX, _lastHitY, 'nxp_clus', 0.5);
         if(c.hp<=0 && !c.dead){
           c.dead=true; c.rupt=-1;                  // -1: no rupture plate, it is gone
@@ -13138,7 +16384,12 @@ function hitSubBoss(dmg, hx, hy){
     }
     b._qlHullOpen=true;
   }
-  b.hp-=dmg; b.flash=0.18;   // long enough that a single hit registers visually
+  /* The damaged stealth hull is deliberately vulnerable. This shortens the back half while its
+     faster rockets, smoke and enraged charge make that time much more dangerous. */
+  if(b._ship==='junglecruiser'&&b.maxhp&&b.hp/b.maxhp<=0.50)dmg*=1.35;
+  const _elemHit=(typeof opposingElementImpact==='function')?opposingElementImpact(b,'subboss',_dmgBullet):null;
+  b.hp-=dmg; b.flash=0.18;
+  weaponHitSfx('normal');
   /* ⚠ THIS LINE WAS INSIDE THE COMMENT ABOVE (drop 0810l). The `//` ran on past "visually" and
      swallowed it whole, so no sub-boss damage has EVER reached the stats screen — the miniboss
      fight contributed 0 to dmgDealt on every stage. Nothing failed, nothing threw; the number was
@@ -13156,7 +16407,16 @@ function hitSubBoss(dmg, hx, hy){
      One assignment makes the existing pulse reachable. The colour is Mike's — 0807b said "do not
      let the hull flash white until you break all the turrets", and the turrets are broken. */
   if(b._ql && b._qlHullOpen) b._qlArmor = 0.30;
-  if(b.hp<=0){ b.dead=true; b.dying=0; Audio.SFX.expBig(); shake=Math.max(shake,10); }
+  if(b._ship==='junglecruiser'&&b._jc&&b.hp/b.maxhp<=0.25){
+    b._jc.blasts.push({ox:rnd(-0.30,0.30),oy:rnd(-0.18,0.28),t:0,life:rnd(0.42,0.66),s:rnd(0.72,1.08)});
+    if(b._jc.blasts.length>8)b._jc.blasts.shift();
+  }
+  if(b.hp<=0){
+    b.dead=true;b.dying=0;b._jcGhost=false;
+    if(b._ship==='junglecruiser'&&typeof jungleCruiserBeamAudio==='function')jungleCruiserBeamAudio(b,false);
+    if(b._ship==='magmaward')magmaWardFinish(b);
+    Audio.SFX.expBig();shake=Math.max(shake,10);
+  }
 }
 
 /* ============================================================
@@ -13172,7 +16432,7 @@ function pilotMissileKey(fat){ const pk=(typeof _pilotKey==='function'?_pilotKey
 function wlvColor(lv){ return WLVL_COL[clamp(lv||1,1,5)]||'#ffffff'; }
 function eMissile(x,y){
   if(typeof _eMslAllow==='function' && !_eMslAllow()) return;   // thinned salvos (early stages hardest hit)
-  eBullets.push({x,y,vx:0,vy:2.3,w:11,h:16,kind:'emissile',hp:1,spd:2.7,turn:0.05,t:0,ang:Math.PI/2});
+  eBullets.push({x,y,vx:0,vy:2.3,w:11,h:16,kind:'emissile',hp:1,_shootable:true,spd:2.7,turn:0.05,t:0,ang:Math.PI/2});
   if(Audio.SFX&&Audio.SFX.missile)Audio.SFX.missile();
 }
 /* BOSS HOMING MISSILE — fires from up top, sweeps OUT to one side, then swerves
@@ -13191,7 +16451,7 @@ function eMissileHoming(x,y,dir){
      only makes sense for a round that comes back. */
   if(typeof run!=='undefined' && run.stage!==1){
     const a=(typeof aimPlayer==='function')? aimPlayer(x,y) : Math.PI/2;
-    eBullets.push({x, y, kind:'emissile', hp:1,
+    eBullets.push({x, y, kind:'emissile', hp:1, _shootable:true,
       vx:Math.cos(a)*2.6, vy:Math.sin(a)*2.6, ang:a,
       w:12, h:18, spd:2.6, _accel:0.05, _maxspd:4.6, t:0});
     (Audio.SFX.missile||Audio.SFX.enemyShoot)();
@@ -13200,7 +16460,7 @@ function eMissileHoming(x,y,dir){
   const d = (dir!=null) ? dir : ((eMissileHoming._alt=-(eMissileHoming._alt||1)));
   const outAng = Math.PI/2 + d*rnd(0.75,1.05);      // steeply out to the side, still descending
   eBullets.push({
-    x, y, kind:'emissile', hp:1,
+    x, y, kind:'emissile', hp:1, _shootable:true,
     vx:Math.cos(outAng)*2.6, vy:Math.sin(outAng)*2.6, ang:outAng,
     w:12, h:18,
     spd:2.4, _accel:0.055, _maxspd:5.0,   // builds speed as it comes around
@@ -13229,7 +16489,7 @@ function eHomingMissile(x,y,src){
   const a=(typeof aimPlayer==='function')? aimPlayer(x,y) : Math.PI/2;
   const hom=(typeof run!=='undefined' && run.stage===1
              && typeof boss!=='undefined' && boss && !boss.dead && src===boss);
-  eBullets.push({x,y,vx:Math.cos(a)*3.2,vy:Math.sin(a)*3.2,w:12,h:18,kind:'emissile',hp:1,spd:3.2,turn:0.11,t:0,ang:a,homing:hom,_bright:true}); (Audio.SFX.missile||Audio.SFX.enemyShoot)();
+  eBullets.push({x,y,vx:Math.cos(a)*3.2,vy:Math.sin(a)*3.2,w:12,h:18,kind:'emissile',hp:1,_shootable:true,spd:3.2,turn:0.11,t:0,ang:a,homing:hom,_bright:true}); (Audio.SFX.missile||Audio.SFX.enemyShoot)();
 }
 function eTwinGuns(e, ang){
   // twin machine-gun cannons: two parallel tracer rounds from the wingtips/barrels, fired toward `ang`.
@@ -13265,8 +16525,9 @@ function eTwinGuns(e, ang){
        none of them - it is a hand-drawn tracer rectangle with a shadow blur, not
        art. kind:'mg' routes through the FIRETYPES alias to the real PELLET plates
        (mfx_bmg_0..3), which is what a jet's guns should be firing. */
+    const kind=(typeof run!=='undefined'&&run.stage===1)?'s1bullet':'mg';
     eBullets.push({x:bx+px*s, y:by+py*s, vx:Math.cos(ang)*4.6, vy:Math.sin(ang)*4.6,
-      w:5, h:12, kind:'mg', _ph:(Math.random()*4)|0, _pfam:e._pfam, hp:1, t:0, ang});
+      w:5, h:12, kind, _ph:(Math.random()*4)|0, _pfam:e._pfam, hp:1, t:0, ang});
   }
   if(Audio.SFX.enemyMachineGunLight) Audio.SFX.enemyMachineGunLight(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
@@ -13340,6 +16601,9 @@ function _weaponCadence(){
   if(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()){
     return run.spaceWeapon===0?0.24:(run.spaceWeapon===2?0.48:0.32);
   }
+  /* A docked vehicle-mounted MG owns the primary trigger: about eighteen twin-barrel beats per
+     second gives it the requested MG42/gatling rip without turning it into a 60Hz particle hose. */
+  if(typeof lzMountActive==='function' && lzMountActive()) return LZ_SLUG_CD;
   // Basic machine gun = weapon 0 at level 0 (before any MG powerup): a slower base cadence than the
   // L1 rapid-fire (0.085). The pilot's stat-card fire rate is applied on top via PILOTMOD.fire in the
   // caller, so faster-firing pilots get a snappier basic MG automatically.
@@ -13446,28 +16710,24 @@ function flameSpanTop(f){
    held, and none of them made a sound on contact - only the firing sound. A held laser buried in a
    boss was silent, which is why it never read as connecting.
 
-   ⚠ RATE-LIMITED PER ELEMENT, AND THAT IS THE WHOLE DIFFICULTY. These sites run every frame or
-   two: an ungated call is sixty plays a second and reads as a buzzsaw, not as impact. One play per
-   90ms per element, so laser-on-boss and flame-on-enemy can still overlap but neither machine-guns.
+   ⚠ RATE-LIMITED THROUGH ONE NORMAL IMPACT CHANNEL. These sites run every frame or two: an
+   ungated call is sixty plays a second and reads as a buzzsaw, not as impact. One play per 90ms
+   across every weapon keeps simultaneous beams, flames and bullets from stacking into noise.
    ⚠ AND IT GATES ON stateT, NOT performance.now() - the same correction 0811y made to the pellet,
    so two hits inside one frame cannot both pass. ============================================================ */
 const HITSFX_GAP = 0.09;
 let _hitSfxAt = {};
 function weaponHitSfx(el){
-  if(!el) el='laser';
+  /* Launch/fire sounds identify the weapon; target impacts use one restrained, readable cue. */
+  el='normal';
   const now = (typeof stateT==='number') ? stateT : 0;
-  if(_hitSfxAt[el]!=null && (now-_hitSfxAt[el]) < HITSFX_GAP) return;
+  /* stateT resets whenever the game changes state. Treating that rewind as a negative interval
+     muted this element until the new clock caught all the way back up. */
+  if(_hitSfxAt[el]!=null && now>=_hitSfxAt[el] && (now-_hitSfxAt[el]) < HITSFX_GAP) return;
   _hitSfxAt[el]=now;
   try{
     const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null; if(!S) return;
-    if(el==='ice'  && (S.iceBreathHit||S.shatter)) (S.iceBreathHit||S.shatter)();
-    else if(el==='fire' && (S.flameHit||S.crackle)) (S.flameHit||S.crackle)();
-    /* thermoshock is both, so it is heard as both — one gate, so it still cannot machine-gun */
-    else if(el==='fireice'){
-      if(S.flameHit||S.crackle) (S.flameHit||S.crackle)();
-      if(S.iceBreathHit||S.shatter) (S.iceBreathHit||S.shatter)();
-    }
-    else if(S.laserBeamHit||S.hit) (S.laserBeamHit||S.hit)();
+    if(S.hit) S.hit();
   }catch(e){}
 }
 function flameHit(f,x,y,ew,eh){
@@ -13535,7 +16795,10 @@ function flameFire(lv){
 function flameSndStart(el){
   if(typeof Snd!=='undefined' && Snd && Snd.loopOn){
     const n=el==='ice'?'iceBreathLoop':'flameThrowerLoop';
-    if(Snd.pools&&Snd.pools[n]) Snd.loopOn(n,el==='ice'?0.72:0.78);
+    /* Ice Breath was technically running but mixed at roughly 13% effective volume
+       (loop request * TAME * global SFX), so Stage music made it sound absent.  It is a
+       held primary weapon just like the flamethrower and needs the same foreground bed. */
+    if(Snd.pools&&Snd.pools[n]) Snd.loopOn(n,el==='ice'?0.90:1.00);
     else Snd.loopOn(el==='ice'?'iceBreathLoop':'arcFlameLoop',0.85);
   }
 }
@@ -14058,11 +17321,11 @@ function coleFuseRelease(){
    and keeps steering after the player moves. The table is the contract — projectile count,
    palette and the L5 helix promotion cannot drift apart in separate branches again. */
 const MAV_LASER_TIERS=Object.freeze({
-  1:Object.freeze({count:3, body:'#8f36ff', glow:'#d39aff', core:'#fff2ff', turn:0.070, speed:8.8, helix:false}),
-  2:Object.freeze({count:4, body:'#267cff', glow:'#76d8ff', core:'#f2ffff', turn:0.078, speed:9.1, helix:false}),
-  3:Object.freeze({count:5, body:'#25d84a', glow:'#91ff82', core:'#f4ffe9', turn:0.086, speed:9.4, helix:false}),
-  4:Object.freeze({count:6, body:'#171b24', glow:'#b8c7de', core:'#ffffff', turn:0.094, speed:9.7, helix:false}),
-  5:Object.freeze({count:7, body:'#9d4dff', glow:'#55d8ff', core:'#ffe8ff', turn:0.102, speed:10.0, helix:true})
+  1:Object.freeze({count:2, body:'#8f36ff', glow:'#d39aff', core:'#fff2ff', turn:0.070, speed:8.4, helix:false}),
+  2:Object.freeze({count:3, body:'#267cff', glow:'#76d8ff', core:'#f2ffff', turn:0.078, speed:8.7, helix:false}),
+  3:Object.freeze({count:3, body:'#25d84a', glow:'#91ff82', core:'#f4ffe9', turn:0.086, speed:9.0, helix:false}),
+  4:Object.freeze({count:4, body:'#171b24', glow:'#b8c7de', core:'#ffffff', turn:0.094, speed:9.3, helix:false}),
+  5:Object.freeze({count:5, body:'#9d4dff', glow:'#55d8ff', core:'#ffe8ff', turn:0.102, speed:9.6, helix:true})
 });
 function maverickLaserTier(lv){ return MAV_LASER_TIERS[clamp(lv||1,1,5)]; }
 function maverickLaserTarget(b){
@@ -14078,6 +17341,22 @@ function maverickLaserTarget(b){
   if(boss && bossActive) consider(boss,boss.x,(boss._drawY!=null?boss._drawY:boss.y));
   return out;
 }
+/* ONE HELIX BALL MAY REMOVE AT MOST ONE QUARTER OF AN ENCOUNTER GAUGE.
+   The full-charge burst emits 105 independently colliding lances. Capping each lance at a fixed
+   number still lets the volley add those caps together and erase an early boss in one release.
+   Every lance from one ball therefore shares this budget object; the cap is calculated from the
+   actual boss/miniboss it first reaches and consumed by the family as a whole. Ordinary enemies
+   intentionally retain the authored 9999 clear-through damage. */
+function helixEncounterDamage(b,target,raw){
+  const H=b&&b._helixBossBudget;
+  if(!H||!target||!(target.maxhp>0))return raw;
+  if(H.target!==target){
+    H.target=target;H.spent=0;H.cap=Math.max(1,target.maxhp*0.25);
+  }
+  const give=Math.max(0,Math.min(raw||0,H.cap-H.spent));
+  H.spent+=give;
+  return give;
+}
 function maverickLaserProjectile(lv,dmg,x,y,angle,opt){
   const tier=maverickLaserTier(lv), o=opt||{};
   const speed=o.speed||tier.speed;
@@ -14086,6 +17365,7 @@ function maverickLaserProjectile(lv,dmg,x,y,angle,opt){
     _launchDelay:o.delay||0,_helixAmp:o.amp!=null?o.amp:(tier.helix?10:3+lv),_helixRate:o.rate||((tier.helix?18:11)+lv),
     _burstDir:o.dir!=null?o.dir:null,w:8+lv,h:24+lv*3,dmg:dmg,lv:lv,pierce:true,_hit:[],_bt:0,t:0,_burstVolley:!!o.burst};
   if(o.bossDmg!=null)b._bossDmg=o.bossDmg;
+  if(o.bossBudget)b._helixBossBudget=o.bossBudget;
   if(o.pierceAll)b._pierceAll=true;
   pBullets.push(b);
   return b;
@@ -14094,11 +17374,14 @@ function maverickLaserVolley(lv,dmg){
   /* Every tip shown on the icon is a real projectile. They leave on staggered beats, carry
      independent phases and acquire targets independently; no multi-lance decal is ever fired. */
   const tier=maverickLaserTier(lv);
-  const count=tier.count, spread=(lv===1?0.22:0.32);
+  const count=tier.count, spread=(lv===1?0.20:0.30);
+  /* Ordinary laser damage is a volley budget. Passing full damage into every lance multiplied
+     Maverick's non-special DPS by five to seven before pierce was even considered. */
+  const perLance=dmg*(0.34+lv*0.025);
   for(let i=0;i<count;i++){
     const u=count===1?0:(i/(count-1)-0.5), angle=-Math.PI/2+u*spread;
     const side=(i-(count-1)/2), x=player.x+side*4.2;
-    maverickLaserProjectile(lv,dmg,x,player.y-18,angle,{index:i,count:count,
+    maverickLaserProjectile(lv,perLance,x,player.y-18,angle,{index:i,count:count,
       phase:(i/count)*TAU,delay:Math.abs(side)*0.012+(i%2)*0.010,amp:tier.helix?11:2.5+lv*0.8});
   }
 }
@@ -14151,14 +17434,39 @@ const SPACE_LASER_MUZZLE=['nmz_1','nmz_5','nmz_7','nmz_6','nmz_8'];
    made the actual craft ~25% larger. 48px gives it the same ~48px visible hull as the roster. */
 const SPACE_SHIP_SIZE=48;
 const SPACE_SHADOW_TIER=[
-  {base:11.0,rad:54,pierce:0.82},{base:13.5,rad:60,pierce:0.78},
-  {base:16.5,rad:67,pierce:0.74},{base:20.0,rad:75,pierce:0.70},
-  {base:24.0,rad:84,pierce:0.66}
+  {base:90,rad:76},{base:112,rad:84},{base:138,rad:92},
+  {base:168,rad:101},{base:200,rad:110}
 ];
+/* Shadow Orb is a committed charge shot, never a tap weapon. A release before MIN_CHARGE
+   cancels cleanly; FULL_CHARGE may be held indefinitely and only fires when the trigger is
+   released. Keeping these timings shared also guarantees identical behaviour in Stages 5/9. */
+const SPACE_SHADOW_MIN_CHARGE=0.42;
+const SPACE_SHADOW_FULL_CHARGE=1.55;
+const SPACE_SHADOW_AUDIO_DELAY=0.10;
 function spaceWeaponsActive(){ return !!(run&&run.spaceMode&&(run.stage===5||run.stage===9)); }
 function spaceLaserMuzzleWarm(){
   if(typeof XART==='undefined'||!XART._touch)return;
   for(const fam of SPACE_LASER_MUZZLE)for(let f=0;f<4;f++)XART._touch(fam+'_'+f);
+}
+function spaceWeaponCue(name,fallback){
+  try{
+    /* Space weapons are player-critical foreground cues. Route them directly through the real
+       sample bank so a legacy synthesized fallback cannot mask a missing/late media element. */
+    if(typeof Snd!=='undefined'&&Snd&&Snd.play){
+      const pick=(Snd.pools&&Snd.pools[name])?name:((fallback&&Snd.pools&&Snd.pools[fallback])?fallback:null);
+      if(pick){Snd.play(pick,1.72);return true;}
+    }
+    const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null;
+    const fn=S&&(S[name]||S[fallback]);
+    if(fn){fn();return true;}
+  }catch(_swc){}
+  return false;
+}
+function spaceShadowCancel(){
+  try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOff)Snd.loopOff('spaceShadowCharge');}catch(_ssc0){}
+  if(typeof run!=='undefined'&&run){
+    run._spaceShadowCharge=0;run._spaceShadowHeld=false;run._spaceShadowAudio=false;
+  }
 }
 function spaceWeaponLevel(){
   if(!run.spaceLevels)run.spaceLevels=[1,0,0];
@@ -14192,10 +17500,18 @@ function spaceModeStage(num){
     run.weapon=0; run.wlevel=spaceWeaponLevel(); run.wlevels=[0,0,0,0,0,0];
     run.wvars=[null,null,null,null,null,null]; run.missileLevel=0; run._mslCd=0;
     spaceLaserMuzzleWarm();
+    /* The Shadow Orb is the one held space weapon. Prepare its loop as the space loadout is
+       installed, not on the first trigger frame, so Stage 5 and the bonus route never begin a
+       charge against an undecoded media element. */
+    try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopPrepare)Snd.loopPrepare('spaceShadowCharge');}catch(_smp){}
+    try{if(typeof Snd!=='undefined'&&Snd&&Snd.prepare)Snd.prepare([
+      'spaceLaserCannon','spaceShadowCharge','spaceShadowRelease','spaceVolleyLaunch'
+    ]);}catch(_spa){}
   }else if(run.spaceMode){
+    spaceShadowCancel();
     const s=run._groundLoadout;
     if(s){ run.weapon=s.weapon;run.wlevel=s.wlevel;run.wlevels=s.wlevels;run.wvars=s.wvars;run.missileLevel=s.missileLevel; }
-    run.spaceMode=false;run._groundLoadout=null;run._spaceShadowCharge=0;run._spaceShadowHeld=false;
+    run.spaceMode=false;run._groundLoadout=null;
   }
 }
 function spaceLaserFire(){
@@ -14210,44 +17526,68 @@ function spaceLaserFire(){
       _muzzleX:hp.x,_muzzleY:hp.y,_launchDelay:pulse*0.002});
   }
   player._spaceMuzzle=0.13;player._spaceMuzzleLv=lv;
-  if(Audio.SFX&&(Audio.SFX.spaceLaserCannon||Audio.SFX.laserCannon))
-    (Audio.SFX.spaceLaserCannon||Audio.SFX.laserCannon)();
+  spaceWeaponCue('spaceLaserCannon','laserCannon');
 }
 function spaceShadowRelease(charge){
-  const p=clamp(charge/1.55,0.12,1),lv=spaceWeaponLevel(),tier=SPACE_SHADOW_TIER[lv-1];
-  const s=22+lv*2+p*(24+lv*2),hp=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE).nose;
-  /* Every tier now advances the weapon rather than merely changing its icon: the orb grows,
-     accelerates, hits harder, opens a wider detonation and reaches piercing charge sooner. */
+  const held=clamp(charge||0,0,SPACE_SHADOW_FULL_CHARGE);
+  if(held<SPACE_SHADOW_MIN_CHARGE){spaceShadowCancel();return false;}
+  const p=clamp(held/SPACE_SHADOW_FULL_CHARGE,0,1),lv=spaceWeaponLevel(),tier=SPACE_SHADOW_TIER[lv-1];
+  const q=clamp((held-SPACE_SHADOW_MIN_CHARGE)/(SPACE_SHADOW_FULL_CHARGE-SPACE_SHADOW_MIN_CHARGE),0,1);
+  const power=q*q*(3-2*q); // smooth ramp: partial charges cannot approach full-charge damage
+  const s=34+lv*2+p*(22+lv*2),hp=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE).nose;
+  /* A valid release is already a heavy weapon; a full release is the immense direct + radial
+     burst the Shadow Orb is meant to be. It detonates on contact instead of tunnelling through
+     a boss and wasting its blast beyond the top of the screen. */
   pBullets.push({kind:'shadowOrb',x:hp.x,y:hp.y,vx:0,vy:-(4.15+lv*0.18+p*4.45),
-    w:s,h:s,dmg:tier.base*(0.55+p*1.45),lv,charge:p,t:0,life:2.1+p*0.95,
-    blastRad:tier.rad+p*(58+lv*4),splash:0.62+p*0.14,pierceAt:tier.pierce,
-    full:p>=0.985,_muzzleX:hp.x,_muzzleY:hp.y,_hit:[]});
-  if(p>=0.985){shake=Math.max(shake,4+lv*0.7);flashScreen=Math.max(flashScreen,0.12);}
-  player.fireCd=0.32;
-  if(Audio.SFX&&(Audio.SFX.spaceShadowRelease||Audio.SFX.shadowRelease))
-    (Audio.SFX.spaceShadowRelease||Audio.SFX.shadowRelease)();
+    w:s,h:s,dmg:tier.base*(0.55+power*0.95),lv,charge:p,power,t:0,life:2.1+p*0.95,
+    blastRad:tier.rad+power*(68+lv*4),splash:0.52+power*0.22,
+    primaryBurst:0.46+power*0.30,full:q>=0.985,_muzzleX:hp.x,_muzzleY:hp.y,_hit:[]});
+  if(q>=0.985){shake=Math.max(shake,4+lv*0.7);flashScreen=Math.max(flashScreen,0.12);}
+  player.fireCd=0.38;
+  spaceShadowCancel();
+  spaceWeaponCue('spaceShadowRelease','shadowRelease');
+  return true;
 }
 function spaceShadowTick(dt,firing){
-  if(!spaceWeaponsActive()||run.spaceWeapon!==1||
-     (typeof chargePilotActive==='function'&&chargePilotActive())) return false;
+  if(!spaceWeaponsActive()||run.spaceWeapon!==1||player.dead||
+     (typeof chargePilotActive==='function'&&chargePilotActive())){
+    if(run._spaceShadowHeld||(run._spaceShadowCharge||0)>0)spaceShadowCancel();
+    return false;
+  }
   if(firing){
-    if(!run._spaceShadowHeld&&Audio.SFX&&(Audio.SFX.spaceShadowCharge||Audio.SFX.shadowCharge))
-      (Audio.SFX.spaceShadowCharge||Audio.SFX.shadowCharge)();
-    run._spaceShadowHeld=true;run._spaceShadowCharge=Math.min(1.55,(run._spaceShadowCharge||0)+dt);
+    if(!run._spaceShadowHeld){run._spaceShadowHeld=true;run._spaceShadowCharge=0;run._spaceShadowAudio=false;}
+    run._spaceShadowCharge=Math.min(SPACE_SHADOW_FULL_CHARGE,(run._spaceShadowCharge||0)+dt);
+    /* Do not chirp the charge sample on a stray tap. Once the player has deliberately held the
+       trigger, start one continuous loop and keep a full charge armed until release. */
+    if(!run._spaceShadowAudio&&run._spaceShadowCharge>=SPACE_SHADOW_AUDIO_DELAY){
+      let looped=false;
+      try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn){Snd.loopOn('spaceShadowCharge',.72);looped=true;}}catch(_ssc){}
+      if(!looped)spaceWeaponCue('spaceShadowCharge','shadowCharge');
+      run._spaceShadowAudio=true;
+    }
     return true;
   }
   if(run._spaceShadowHeld){
-    const c=run._spaceShadowCharge||0;run._spaceShadowHeld=false;run._spaceShadowCharge=0;
-    if(!player.dead)spaceShadowRelease(c);return true;
+    const c=run._spaceShadowCharge||0;
+    if(c>=SPACE_SHADOW_MIN_CHARGE)spaceShadowRelease(c);else spaceShadowCancel();
+    return true;
   }
   return false;
 }
-function spaceVolleyFire(){
-  const lv=spaceWeaponLevel(),hp=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE).nose;
+function spaceVolleyFire(levelOverride){
+  const lv=clamp(levelOverride==null?spaceWeaponLevel():levelOverride,1,5),hp=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE).nose;
   pBullets.push({kind:'spaceVolleySeed',x:hp.x,y:hp.y,vx:0,vy:-7.4,
     w:24,h:28,dmg:4+lv*1.4,lv,t:0,_muzzleX:hp.x,_muzzleY:hp.y});
-  if(Audio.SFX&&(Audio.SFX.spaceVolleyLaunch||Audio.SFX.volleyLaunch))
-    (Audio.SFX.spaceVolleyLaunch||Audio.SFX.volleyLaunch)();
+  spaceWeaponCue('spaceVolleyLaunch','volleyLaunch');
+}
+/* The bomb/missile button keeps its game-wide meaning in Gravity Mode. It launches one authored
+   three-missile space volley and spends one missile stock; selecting Volley as the primary still
+   fires it normally without double-charging the same press. */
+function spaceUseMissile(){
+  if(!spaceWeaponsActive()||run.bombs<=0||player.dead)return false;
+  run.bombs--;if(typeof stageStats!=='undefined')stageStats.missiles++;
+  const lv=clamp((run.spaceLevels&&run.spaceLevels[2])||1,1,5);
+  spaceVolleyFire(lv);shake=Math.max(shake,2.5);return true;
 }
 function spaceWeaponFire(){
   const w=clamp(run.spaceWeapon||0,0,2);
@@ -14255,8 +17595,29 @@ function spaceWeaponFire(){
 }
 function spaceTargets(){
   const a=[];for(const e of enemies)if(!e.dead)a.push(e);
-  if(boss&&bossActive&&!boss.dead)a.push(boss);
-  if(typeof subBoss!=='undefined'&&subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter)a.push(subBoss);
+  /* Composite Stage-9 encounters expose their actual visible bodies to locks and collision.
+     Treating a two-drone fight as one giant invisible rectangle made Volley Missiles detonate in
+     the gap and left hitBoss with no selected body, so the shot looked broken and dealt nothing. */
+  if(boss&&bossActive&&!boss.dead){
+    const F=boss._s9fusion;
+    if(F&&F.phase==='twins'&&!boss.enter){
+      for(const w of [F.left,F.right])if(!w.disabled){w._spaceBossOwner=boss;a.push(w);}
+    }else{
+      /* Stage-5 escort bodies are inserted before the Regent. A forward laser or missile therefore
+         hits the visible shield source/helper it overlaps instead of being consumed by the boss. */
+      const X=boss._xenoRig;
+      if(X&&!boss.enter){
+        if(X.mother&&!X.mother.dead){X.mother._xenoOwner=boss;a.push(X.mother);}
+        for(const h of X.helpers)if(!h.dead){h._xenoOwner=boss;a.push(h);}
+      }
+      a.push(boss);
+    }
+  }
+  if(typeof subBoss!=='undefined'&&subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter){
+    const R=subBoss._s9rift;
+    if(R){for(const w of [R.left,R.right])if(!w.disabled){w._spaceSubOwner=subBoss;a.push(w);}}
+    else a.push(subBoss);
+  }
   /* Space rounds have their own collision pass, so they used to skip the normal crate/capsule
      loop completely. Include only shootable containers (not loose rewards) in the same target
      list used by lasers, shadow blasts and volley missiles. */
@@ -14270,9 +17631,20 @@ function spaceTargetY(t){return t&&t._drawY!=null?t._drawY:t.y;}
 function spaceDamageTarget(t,dmg,b){
   if(!t||t.dead)return;
   if(spaceShootableContainer(t)){
-    t.hp=(t.hp||5)-dmg;t.flash=0.12;
+    t.hp=(t.hp||5)-dmg;t.flash=0.12;weaponHitSfx('normal');
     if(t.hp<=0){t.dead=true;breakContainer(t);}
-  }else if(t===boss)hitBoss(dmg);
+  }else if(t._xenoOwner&&t._xenoOwner._xenoRig){
+    xenoRegentPartDamage(t,dmg,t._xenoOwner);
+  }else if(t._spaceBossOwner&&t._spaceBossOwner._s9fusion){
+    const own=t._spaceBossOwner,F=own._s9fusion;F.hit=t;_lastHitX=b.x;_lastHitY=b.y;hitBoss(dmg);
+  }else if(t._spaceSubOwner&&t._spaceSubOwner._s9rift){
+    /* spaceBulletHit has already resolved the exact visible Warden body. Re-testing the
+       projectile's edge-contact point against s9RiftWardensPart's deliberately tighter hull
+       inset consumed the round but rejected the damage (the Stage-9 bonus-route hardlock).
+       Credit the body that the collision pass actually selected; ordinary/non-space rounds
+       still use the tighter point test through hitSubBoss. */
+    s9RiftWardensHit(t._spaceSubOwner,dmg,t.x,spaceTargetY(t));
+  }else if(t===boss){_lastHitX=b.x;_lastHitY=b.y;hitBoss(dmg);}
   else if(typeof subBoss!=='undefined'&&t===subBoss)hitSubBoss(dmg,b.x,b.y);
   else hitEnemy(t,dmg);
   if(typeof stageStats!=='undefined')stageStats.hits++;
@@ -14309,8 +17681,12 @@ function spaceVolleyLocks(seed,range){
   return [right,center,left];
 }
 function spaceImpact(b,family,lv,size){
-  b.kind='spaceImpact';b.family=family;b.lv=lv||1;b.t=0;b.life=family==='shadow'?0.52:0.28;
+  b.kind='spaceImpact';b.family=family;b.lv=lv||1;b.t=0;b.life=family==='shadow'?0.52:(family==='volley'?0.44:0.28);
   b.vx=0;b.vy=0;b.w=b.h=size||42;
+  if(family==='volley'){
+    b.w=b.h=Math.max(b.w,52+(b.lv||1)*4);shake=Math.max(shake,4+(b.lv||1)*.45);flashScreen=Math.max(flashScreen,.055);
+    for(let i=0;i<18;i++){const a=rnd(0,TAU),sp=rnd(.8,4.2);particles.push({x:b.x,y:b.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:rnd(.24,.58),t:0,r:rnd(1.2,3.4),color:i%3===0?'#ffffff':(i%2?'#68e8ff':'#a64cff')});}
+  }
   try{
     const S=Audio&&Audio.SFX;if(!S)return;
     const fn=family==='shadow'?(S.spaceShadowHit||S.explosionPlasma):
@@ -14332,6 +17708,11 @@ function spaceBulletHit(b,pierce){
 }
 function spaceShadowBlast(b){
   const rad=b.blastRad||58+(b.charge||0)*72;
+  /* The contact target has already taken the travelling orb's direct hit. Credit it with the
+     centre of the detonation as well so this behaves like a burst cannon rather than a large
+     cosmetic ring; nearby targets receive the normal radial payload once. */
+  if(b._blastPrimary&&!b._blastPrimary.dead)
+    spaceDamageTarget(b._blastPrimary,(b.dmg||8)*(b.primaryBurst||0.58),b);
   for(const t of spaceTargets()){
     if(b._hit&&b._hit.indexOf(t)>=0)continue;
     if(Math.hypot(t.x-b.x,spaceTargetY(t)-b.y)<rad)spaceDamageTarget(t,(b.dmg||8)*(b.splash||0.68),b);
@@ -14391,15 +17772,15 @@ function spaceBulletTick(b,dt){
     const weave=Math.sin(b.t*(15+b.lv*0.45)+(b._phase||0))*(7+b.lv*1.5);
     b.ang=ang;b.vx=Math.cos(ang)*b.spd+Math.cos(ang+Math.PI/2)*weave*0.13;
     b.vy=Math.sin(ang)*b.spd+Math.sin(ang+Math.PI/2)*weave*0.13;b.x+=b.vx;b.y+=b.vy;
+    b._trailFx=(b._trailFx||0)-dt;if(b._trailFx<=0){b._trailFx=.045;particles.push({x:b.x-b.vx*1.25,y:b.y-b.vy*1.25,vx:-b.vx*.08+rnd(-.25,.25),vy:-b.vy*.08+rnd(-.25,.25),life:.24,t:0,r:2.1+(b.lv||1)*.28,color:(b.i===1?'#74efff':'#b75cff')});}
     if(spaceBulletHit(b,false)){spaceImpact(b,'volley',b.lv,40);}
     else {const ww=(typeof worldWidth==='function')?worldWidth():VW;if(b.t>3||b.y<-55||b.x<-55||b.x>ww+55)b.dead=true;}
     return true;
   }
   if(b.kind==='shadowOrb'){
     b.t+=dt;b.life-=dt;b.x+=b.vx;b.y+=b.vy;
-    const pierce=(b.charge||0)>=(b.pierceAt==null?0.72:b.pierceAt),hit=spaceBulletHit(b,pierce);
-    if(hit&&!pierce)spaceShadowBlast(b);
-    else if(hit){b.vy*=0.94;}
+    const hit=spaceBulletHit(b,false);
+    if(hit){b._blastPrimary=hit;spaceShadowBlast(b);}
     if(b.kind==='shadowOrb'&&(b.life<=0||b.y<-50))spaceShadowBlast(b);
     return true;
   }
@@ -14422,9 +17803,8 @@ function pShoot(){
      shotgun rather than a spread gun. */
   if(typeof dkFire==='function' && dkFire()) return;
   if(typeof lzMountActive==='function' && lzMountActive()){
-    run._lzCd=(run._lzCd==null?0:run._lzCd)-1/60;
-    if(run._lzCd>0) return;
-    run._lzCd=LZ_SLUG_CD;
+    /* _weaponCadence already owns this trigger. The former fixed-1/60 second cooldown only
+       advanced when pShoot ran, stretching 75ms into roughly a quarter-second. */
     const my=(lzMount?lzMount.y:player.y)-10;
     for(const off of [-7,7]){
       pBullets.push({x:player.x+off, y:my, vx:0, vy:-LZ_SLUG_SPD, kind:'lzslug',
@@ -14539,6 +17919,11 @@ function pShoot(){
            the sustained body.  Start is creation-owned; updateBullets keeps the body alive and
            expiry owns the release, so refreshing one held entity cannot stack voices. */
         (Audio.SFX.laserBeamStart||Audio.SFX.laser||Audio.SFX.spread||Audio.SFX.shoot)();
+        /* Start the sustained body on the same player-triggered firing beat as the attack.  Waiting
+           for updateBullets put the first play() outside that beat and made native HTML audio
+           vulnerable to the browser's gesture gate, which is why the clip could be loaded and
+           still remain silent. Subsequent simulation frames only refresh this idempotent loop. */
+        if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn)Snd.loopOn('laserBeamLoop',0.90);
       }
       beam.dmg=dmg; beam.lv=lv; beam.life=0.15; beam.w=14+lv*4;
     } else {
@@ -14597,16 +17982,27 @@ function pShoot(){
 const MG_CONE = 0.62;
 function eAimDown(ang){ return clamp(ang, Math.PI/2-MG_CONE, Math.PI/2+MG_CONE); }
 
-function eMG(x,y,ang,spd,col){ ang=eAimDown(ang); eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, w:4,h:14, kind:'mg', _ph:(Math.random()*4)|0, col:col||'#bfe8ff'}); (Audio.SFX.enemyMachineGunLight||Audio.SFX.enemyShoot)(); }
+function eMG(x,y,ang,spd,col){ ang=eAimDown(ang); const _tp=enemyBulletPressure(); eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed*_tp, vy:Math.sin(ang)*spd*DIFF.ebSpeed*_tp, w:4,h:14, kind:'mg', _ph:(Math.random()*4)|0, col:col||'#bfe8ff',_threatBullet:_tp}); (Audio.SFX.enemyMachineGunLight||Audio.SFX.enemyShoot)(); }
 function enemyShotSfx(kind){
   const S=Audio&&Audio.SFX; if(!S) return;
-  if(kind==='mg' || kind==='pellet') (S.enemyMachineGunLight||S.enemyShoot||function(){})();
-  else if(kind==='ice' || kind==='frost') (S.enemyIceBolt||S.enemyShoot||function(){})();
-  else if(kind==='fire' || kind==='flare' || kind==='magma') (S.enemyFlameBolt||S.enemyShoot||function(){})();
-  else if(kind==='laser' || kind==='eglaser' || kind==='s1greenLaser') (S.enemyPulseLaserAlien||S.laserShot||S.enemyShoot||function(){})();
-  else if(kind==='s1windBlade' || kind==='s1windVortex') (S.windGust||S.enemyShoot||function(){})();
-  else if(kind==='s1cannon' || kind==='s1jungleMissile') (S.enemyBossCannon||S.enemyShoot||function(){})();
-  else if(kind==='electric' || kind==='arc') (S.enemyElectricBolt||S.enemyShoot||function(){})();
+  const k=String(kind||'').toLowerCase();
+  /* One semantic dispatcher covers ordinary enemies, minis and typed boss ammunition. Previous
+     mappings named only seven exact strings, so authored s2/s3/s5/s6/s7/s9 projectiles silently
+     fell back to the same anonymous mechanical "doot" even though their proper samples existed. */
+  if(/missile|rocket|comet/.test(k)) (S.missile||S.enemyBossCannon||S.enemyShoot||function(){})();
+  else if(k==='mg'||k==='pellet'||k==='s1bullet'||/tracer|chaingun/.test(k))
+    (S.enemyMachineGunLight||S.enemyShoot||function(){})();
+  else if(/s3|ice|frost|glacier|rime|cryo/.test(k))
+    (S.enemyIceBolt||S.enemyElectricBolt||S.enemyShoot||function(){})();
+  else if(/fire|flame|magma|inferno|flare|ember/.test(k))
+    (S.enemyFlameBolt||S.enemyShoot||function(){})();
+  else if(/laser|beam|plasma|void|warp|null|lattice|photon|rift/.test(k))
+    (S.enemyPulseLaserAlien||S.laserShot||S.enemyShoot||function(){})();
+  else if(/electric|arc|bolt|prism|cyclone|needle|gold/.test(k))
+    (S.enemyElectricBolt||S.enemyShoot||function(){})();
+  else if(/shell|cannon|rail|mortar|grenade|slug/.test(k))
+    (S.enemyBossCannon||S.enemyRailCannon||S.enemyShoot||function(){})();
+  else if(k==='s1windblade'||k==='s1windvortex') (S.windGust||S.enemyShoot||function(){})();
   else (S.enemyShoot||function(){})();
 }
 function eShoot(x,y,ang,spd,kind='mg'){
@@ -14622,7 +18018,7 @@ function eShoot(x,y,ang,spd,kind='mg'){
      boss patterns and are left completely alone — the sub-boss ring was removed by
      changing what it FIRES, not by bending its geometry, and that stays a design call
      rather than something a clamp decides silently. */
-  if(kind==='mg' && typeof eAimDown==='function') ang=eAimDown(ang);
+  if((kind==='mg'||kind==='s1bullet') && typeof eAimDown==='function') ang=eAimDown(ang);
   /* DEFAULT TO THE APPROVED PELLET (drop 0801kf). 'bolt' was the fallback for every
      caller that did not name a kind - a drawn shape outside Mike's six. */
   /* _ph IS REQUIRED. FIRETYPES build their art key from it (mfx_ea_0_<2+_ph%3> and friends), and
@@ -14630,8 +18026,9 @@ function eShoot(x,y,ang,spd,kind='mg'){
      inconsistently, XART.rdy() failed, and drawFireType fell through to the procedural circle
      fallback: the bullet visibly switched between its sprite and a plain dot as it travelled.
      t is set here too, for the same reason. */
-  eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, w:6,h:6, kind,
-    t:0, _ph:(Math.random()*8)|0});
+  const _tp=enemyBulletPressure();
+  eBullets.push({x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed*_tp, vy:Math.sin(ang)*spd*DIFF.ebSpeed*_tp, w:6,h:6, kind,
+    t:0, _ph:(Math.random()*8)|0,_threatBullet:_tp});
   enemyShotSfx(kind);
 }
 function eGreenLaser(x,y,ang,spd){ // fast green enemy laser bolt (white-cored)
@@ -15285,6 +18682,18 @@ function _pilotTint(){ const P=(typeof PILOTS!=='undefined')?PILOTS.find(p=>p.ke
 function ragePlay(){ try{ const p=Snd&&Snd.pools&&(Snd.pools['death']||Snd.pools['bossAlarm']); if(!p)return;
   const a=p.list[p.i]; p.i=(p.i+1)%p.list.length; a.currentTime=0; a.playbackRate=0.55;
   if('preservesPitch'in a)a.preservesPitch=false; a.volume=0.9*Snd.vol.sfx*Snd.vol.master; const pr=a.play(); if(pr&&pr.catch)pr.catch(function(){}); }catch(e){} }
+/* One pickup cue for every outcome from the red SPECIAL crate.  Cole's Sonic Cannon, Lizzie's
+   Heavy MG and Decker's Incendiary Shotgun are timed weapon loans rather than their native
+   specials, but they still come from that same crate and must acknowledge collection with the
+   approved Special Item cue.  Axel alone keeps his authored Mega Shield pickup tail. */
+function playSpecialPickupCue(pilotKey){
+  if(!Audio||!Audio.SFX)return false;
+  const k=pilotKey||_pilotKey();
+  const cue=k==='axel'?(Audio.SFX.megaShieldPickup||Audio.SFX.specialAbilityPickup||Audio.SFX.powerup)
+                       :(Audio.SFX.specialAbilityPickup||Audio.SFX.powerup);
+  if(!cue)return false;
+  cue();return true;
+}
 function startSpecial(){
   const k=_pilotKey();
   special={pilot:k, t:15, dur:15, strikes:0, prevShield:run.shield, golden:false};
@@ -15295,7 +18704,10 @@ function startSpecial(){
   else if(k==='yuri'){ for(const b of pBullets){ if(b.kind==='orb') b.dead=true; } }   // chain replaces the weapon; no lingering orbs
   else if(k==='falva'){ falvaLasersStart(); }   // 2 balls anchor to her sides and fire lasers for the duration
   else if(k==='lizzie'){ special.prevBombs=run.bombs; special.strikes=Math.max(3, run.bombs); run.bombs=special.strikes; retina.target=null; }   // missiles become armed A-bombs (min 3)
-  floatText(player.x,player.y-20,'SPECIAL!',_pilotTint()); Audio.SFX.powerup();
+  floatText(player.x,player.y-20,'SPECIAL!',_pilotTint());
+  /* 0829 reviewed pickup map: Axel owns the Mega Shield tail; the other eight pilots use the
+     approved Special Item #1 tail. */
+  playSpecialPickupCue(k);
 }
 function _newWeaponTick(dt){
   if(typeof dkTick==='function') dkTick(dt);
@@ -15749,6 +19161,10 @@ function chargePilotActive(){
   const k=special.pilot;
   if(k==='falva') return true;                       // rollerball: hold to spin up
   if(k==='maverick') return true;                    // venom helix lance
+  /* Thermoshock already had a hold/release controller, but Freezer was missing from this
+     ownership gate.  His normal orb cadence therefore fired repeatedly underneath the
+     charge, stacking launch sounds and projectiles before the button was released. */
+  if(k==='freezer' && run && run.weapon===5 && typeof orbIsFire==='function' && orbIsFire()) return true;
   if(typeof sonicActive==='function' && sonicActive()) return true;   // Cole's sonic boom (0805r)
   return false;
 }
@@ -16214,7 +19630,7 @@ function sonicActive(){ return !!(run && run.sonicT>0); }
 function sonicGrant(){
   run.sonicT = 22;                  // seconds of the weapon, like the other timed pickups
   floatText(player.x,player.y-18,'SONIC BOOM','#8de23a');
-  if(Audio&&Audio.SFX&&Audio.SFX.powerup) Audio.SFX.powerup();
+  playSpecialPickupCue('cole');
 }
 /* ============================================================
    SONIC BOOM IS A CHARGE WEAPON (drop 0805v)
@@ -16364,8 +19780,8 @@ function sonicDraw(){
 }
 /* ---- Lizzie's heavy machine-gun mount ---- */
 const LZM_DOCK_T = 0.55;            // seconds to fly in and connect
-/* Base MG pellet is 2 dmg at the pilot's own fire rate. A mounted heavy gun trades cadence
-   for weight: heavy damage per slug, a little over half the rate, two barrels.
+/* Base MG pellet is 2 dmg at the pilot's own fire rate. The timed vehicle mount combines heavy
+   damage per slug with a true rapid twin-barrel cadence.
 
    7, NOT 6 (drop 0805u). Mike: "does deadly damage seemlingly one shotting or two shotting
    most fodder enemies." Measured shots-to-kill against every fodder type the stages actually
@@ -16383,14 +19799,16 @@ const LZ_SLUG_DMG = 7;
    faster than the pea-shooter it replaces. That is not a machine gun, it is the same gun with
    bigger bullets, which is exactly how it read.
 
-   0.075 is 2.1x faster: ~13 volleys a second, and with two barrels that is the chatter the name
-   promises. The DAMAGE is untouched at 7 — that number was measured against every fodder type in
-   0805u for the one-or-two-shot brief and is not the thing he complained about.
+   0.055 is ~18 volleys a second, and with two barrels that is the ripping chatter the MG42/gatling
+   brief promises. The DAMAGE is untouched at 7 — that number was measured against every fodder
+   type in 0805u for the one-or-two-shot brief and is not the thing he complained about.
 
    Yes, that is a lot of DPS. It is meant to be: this is now a 15-SECOND pickup (LZ_LIFE below),
    not a permanent weapon, and a short overwhelming window is the point of it. */
-const LZ_SLUG_CD  = 0.075;
-const LZ_SLUG_SPD = 10.5;
+/* 0831 balance: the approved mounted-MG pass was a little too close to a continuous stream.
+   +25% between twin-barrel beats preserves the war-SUV/MG42 weight without the particle hose. */
+const LZ_SLUG_CD  = 0.06875;
+const LZ_SLUG_SPD = 7.875;
 /* THE MOUNT IS A LOAN, NOT A GIFT (drop 0810f). Mike: "needs to goes away after 15 seconds or when
    she dies. Same with deckers shotgun." It previously had NO expiry at all — it survived until the
    next beginStage, so a mount picked up early in a level was simply the rest of that level. */
@@ -16402,7 +19820,7 @@ function lzMountActive(){ return !!(lzMount && lzMount.docked && (typeof _pilotK
 function lzMountGrant(){
   lzMount={t:0, docked:false, life:LZ_LIFE, ax:player.x+rnd(-70,70), ay:player.y+rnd(30,70)};
   floatText(player.x,player.y-18,'HEAVY MG','#ffc21a');
-  if(Audio&&Audio.SFX&&Audio.SFX.powerup) Audio.SFX.powerup();
+  playSpecialPickupCue('lizzie');
 }
 /* the loan expiring, from either end — the clock or a death. One place, so the two paths cannot
    drift apart the way dkT did from the reset line that claimed to cover it. */
@@ -16447,18 +19865,41 @@ function lzMountDraw(){
   ctx.drawImage(im, -ax, -ay, w, h);
   ctx.restore();
 }
+function timedWeaponHUDRows(){
+  const rows=[];
+  if(lzMount){
+    rows.push({icon:'nsw_icon_lizzie', col:'#ffc21a', dark:'#3d2b05',
+      frac:lzMount.docked?clamp((lzMount.life||0)/LZ_LIFE,0,1):1,
+      label:lzMount.docked?('HEAVY MG  '+Math.max(0,Math.ceil(lzMount.life))+'s'):'HEAVY MG DOCKING'});
+  }
+  if(typeof sonicActive==='function' && sonicActive()){
+    rows.push({icon:'nsw_icon_cole', col:'#8de23a', dark:'#183607',
+      frac:clamp((run.sonicT||0)/22,0,1), label:'SONIC BOOM  '+Math.max(0,Math.ceil(run.sonicT||0))+'s'});
+  }
+  if(typeof dkActive==='function' && dkActive()){
+    rows.push({icon:'nsw_icon_decker', col:'#ffb347', dark:'#442207',
+      frac:clamp((run.dkT||0)/DK_LIFE,0,1), label:'INCENDIARY SHOTGUN  '+Math.max(0,Math.ceil(run.dkT||0))+'s'});
+  }
+  return rows;
+}
 function drawHeavyTurretHUD(){
-  if(!lzMount || !lzMount.docked) return;
+  const rows=timedWeaponHUDRows(); if(!rows.length) return;
   screenBar(function(){
-    /* Stack above a simultaneous pilot special; both meters stay locked to the
-       viewport instead of inheriting the scrolling playfield. */
-    const y=specialActive()?VH-55:VH-34;
-    const frac=clamp((lzMount.life||0)/LZ_LIFE,0,1), col='#ffc21a';
-    ctx.fillStyle='rgba(0,0,0,0.68)'; ctx.fillRect(VW/2-81,y,162,8);
-    ctx.fillStyle='#3d2b05'; ctx.fillRect(VW/2-80,y+1,160,6);
-    ctx.fillStyle=col; ctx.fillRect(VW/2-80,y+1,160*frac,6);
-    ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillStyle=col;
-    ctx.fillText('HEAVY TURRET  '+Math.max(0,Math.ceil(lzMount.life))+'s',VW/2,y-4);
+    /* Timed weapon loans are separate from a pilot's native SPECIAL. Keep them in screen space,
+       stack them above that native meter, and show the same approved pickup badge. */
+    const baseY=VH-34-(specialActive()?21:0);
+    for(let i=0;i<rows.length;i++){
+      const r=rows[i], y=baseY-i*21;
+      ctx.fillStyle='rgba(0,0,0,0.74)'; ctx.fillRect(VW/2-81,y,162,8);
+      ctx.fillStyle=r.dark; ctx.fillRect(VW/2-80,y+1,160,6);
+      ctx.fillStyle=r.col; ctx.fillRect(VW/2-80,y+1,160*r.frac,6);
+      if(typeof iconBlit==='function'){
+        ctx.save(); ctx.shadowColor=r.col; ctx.shadowBlur=7;
+        iconBlit(ctx,r.icon,VW/2-98,y+3,24,true); ctx.restore();
+      }
+      ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillStyle=r.col;
+      ctx.fillText(r.label,VW/2,y-4);
+    }
   });
 }
 
@@ -16535,14 +19976,14 @@ function dkActive(){ return !!(run && run.dkT>0 && (typeof _pilotKey!=='function
 const DK_LIFE = 15;
 function dkEnd(quiet){
   if(!run || !(run.dkT>0)) return;
-  run.dkT=0; run._dkCd=0;
+  run.dkT=0; run._dkCd=0; run._dkReloadCue=0;
   if(typeof dkShells!=='undefined') dkShells.length=0;
   if(!quiet && typeof floatText==='function') floatText(player.x,player.y-18,'SHOTGUN LOST','#8fa4bd');
 }
 function dkGrant(){
-  run.dkT=DK_LIFE; run._dkCd=0;
+  run.dkT=DK_LIFE; run._dkCd=0; run._dkReloadCue=0;
   floatText(player.x,player.y-18,'INCENDIARY','#ffb347');
-  if(Audio&&Audio.SFX&&Audio.SFX.powerup) Audio.SFX.powerup();
+  playSpecialPickupCue('decker');
 }
 function dkFire(){
   if(!dkActive()) return false;
@@ -16569,17 +20010,22 @@ function dkFire(){
     (Audio.SFX.dkBuck||Audio.SFX.spread||function(){})();
     if(Audio.SFX.dkShell) Audio.SFX.dkShell();     // the pair pushed above, heard
   }
+  /* Start the pump/reload shortly after the blast, not on the READY frame.  The old
+     end-of-cooldown trigger landed under the next blast whenever FIRE stayed held, so
+     the real reload recording was called but perceptually disappeared. */
+  run._dkReloadCue=0.10;
   return true;
 }
 function dkTick(dt){
   if(run && run.dkT>0) run.dkT=Math.max(0,run.dkT-dt);
-  /* THE PUMP IS THE MOMENT THE TRIGGER GOES LIVE AGAIN (Mike, 0821c). Played on the TRANSITION
-     to 0, so it fires exactly once per reload and lands on the frame the weapon is ready —
-     which makes the 0.62s dead trigger something the player can time instead of something that
-     just happens to them. */
+  /* One reload cue per blast.  It begins after the eject transient so the three sounds
+     read as BOOM -> casings -> pump even while the player holds FIRE continuously. */
+  if(run && run._dkReloadCue>0){
+    run._dkReloadCue=Math.max(0,run._dkReloadCue-dt);
+    if(run._dkReloadCue===0 && Audio&&Audio.SFX&&Audio.SFX.dkReload) Audio.SFX.dkReload();
+  }
   if(run && run._dkCd>0){
     run._dkCd=Math.max(0,run._dkCd-dt);
-    if(run._dkCd===0 && Audio&&Audio.SFX&&Audio.SFX.dkReload) Audio.SFX.dkReload();
   }
   if(player._dkMuz!=null){ player._dkMuz+=dt; if(player._dkMuz>0.22) player._dkMuz=null; }
   for(let i=dkShells.length-1;i>=0;i--){
@@ -16822,19 +20268,19 @@ function yuriChainStrike(){
     zaps.push({x1:ox,y1:oy,x2:tx,y2:ty,t:0.20});   // primary bolt from the SHIP to the target
     // every branch now chains at the SAME level-scaled depth — previously only the enemy branch
     // scaled, so hitting a boss or a crate collapsed the chain back to depth 2.
-    if(kind==='enemy'){ hitEnemy(tobj,dmg); tobj._zapFlash=0.22; (Audio.SFX.chainHit||Audio.SFX.hit)(); chainZap(tx,ty, depth, [tobj]); }
+    if(kind==='enemy'){ hitEnemy(tobj,dmg); tobj._zapFlash=0.22; weaponHitSfx('normal'); chainZap(tx,ty, depth, [tobj]); }
     else if(kind==='boss'){ hitBoss(dmg); chainZap(tx,ty, depth, []); }
     else if(kind==='sub'){ hitSubBoss(dmg); chainZap(tx,ty, depth, []); }
 
     else if(kind==='missile'){
       tobj.dead=true;
       if(typeof explode==='function') explode(tx,ty, 18, 'blue');
-      (Audio.SFX.chainHit||Audio.SFX.hit)();
+      weaponHitSfx('normal');
       chainZap(tx,ty, depth, []);
     }
     else if(kind==='crate'){
       zapPowerup(tobj, dmg);
-      (Audio.SFX.chainHit||Audio.SFX.hit)();
+      weaponHitSfx('normal');
       chainZap(tx,ty, depth, []);
     }
   } else {
@@ -16850,7 +20296,7 @@ function yuriChainStrike(){
 function zapPowerup(p,dmg){
   if(!p||p.dead) return;
   if(p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate'||p.kind==='mcrate'){
-    p.hp=(p.hp||5)-dmg; p.flash=0.12;
+    p.hp=(p.hp||5)-dmg; p.flash=0.12; weaponHitSfx('normal');
     if(p.hp<=0){ p.dead=true; breakContainer(p); }
   } else {
     // a loose pickup (weapon/speed/special/missilepack/bomb): lightning just detonates it harmlessly (no collect)
@@ -16887,7 +20333,7 @@ function chainZap(x,y,depth,hitset,dirx,diry){
   zaps.push({x1:x,y1:y,x2:best.x,y2:best.y,t:0.18});
   hitEnemy(best, 3+_lv*2); hitset.push(best);          // per-link damage scales with level
   best._zapFlash=0.20;                                  // struck by lightning -> white/yellow pop
-  (Audio.SFX.chainHit||Audio.SFX.hit)();
+  weaponHitSfx('normal');
   // pass the heading on so the next hop keeps sweeping outward instead of turning back
   if(depth>0) chainZap(best.x, best.y, depth-1, hitset, best.x-x, best.y-y);
 }
@@ -17117,6 +20563,7 @@ function startRun(fromStage=1){
      a Cole sonic test left run.sonicT set and the Lizzie block that ran after it fired
      nothing at all, because pShoot returned on the sonic branch before reaching the mount. */
   run.sonicT=0; run._sonicCd=0; run._lzCd=0;
+  run._lifeCombatT=0; run._lifeThreat=0; run._threatBuild=0;
   if(typeof hqSeen!=='undefined') hqSeen={};      // a fresh run plays the HQ scenes again
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
   if(typeof lzMount!=='undefined') lzMount=null;
@@ -17172,9 +20619,9 @@ function warmStageSheets(n){
   try{
     const A=(typeof ASSETS!=='undefined')?ASSETS:null; if(!A) return;
     const k=String(n);
-    if(A.stageFont && A.stageFont[k]) void A.stageFont[k].img;
+    if(A.bofFont && (A.bofFont[k]||A.bofFont['8'])) void (A.bofFont[k]||A.bofFont['8']).img;
     if(A.stageArt  && A.stageArt[k])  void A.stageArt[k].img;
-    if(A.stageFont && A.stageFont['1']) void A.stageFont['1'].img;   // the UI font, used everywhere
+    if(A.bofFont && A.bofFont['1']) void A.bofFont['1'].img;   // the UI font, used everywhere
   }catch(e){}
 }
 /* ============================================================
@@ -17193,7 +20640,6 @@ function uiFontWarm(){
   try{
     if(typeof ASSETS==='undefined') return;
     if(ASSETS.bofFont   && ASSETS.bofFont['1'])   void ASSETS.bofFont['1'].img;
-    if(ASSETS.stageFont && ASSETS.stageFont['1']) void ASSETS.stageFont['1'].img;
   }catch(e){}
 }
 /* ============================================================
@@ -17272,8 +20718,9 @@ function warmStage(n){
        spawn it; otherwise the first cinematic frame contains a health bar and an invisible boss. */
     if(_bk==='vileexistence' && typeof VILE_FORMS!=='undefined'){
       for(const _vf of VILE_FORMS) addPrefix(_vf.art+'_');
-      addPrefix('nvx_morph');
-      addPrefix('nvx_imp_');
+      addPrefix('s8symboss_form_');
+      addPrefix('s8symboss_entrance_');
+      addPrefix('s8nf_');
     }
     /* Portal families are deliberately separate. Stage 5 owns the bonus-run warp gates;
        Stage 7/8 use the CF_ToxicSewerPortal reel. Warming the wrong family was why the sewer
@@ -17440,6 +20887,69 @@ function attackElement(kind){
   if(kind==='iceorb'||kind==='iceshard') return 'ice';
   return null;
 }
+/* OPPOSING-ELEMENT HIT REACTIONS (0830a).
+
+   This belongs at the shared damage boundary, not inside a stage renderer. Stage 2/3 alone have
+   more than a dozen enemy drawing branches, while hitEnemy / hitSubBoss / hitBoss are the three
+   places every player weapon ultimately reaches. `_dmgBullet` is already scoped to the live
+   player round there, so the picture and the damaging element cannot drift apart.
+
+   The white nwp_kin_hit_spark remains the approved silhouette. xartTint palette-swaps that exact
+   plate red or blue, and the draw pass composites the existing 8-frame fire/ice reels INSIDE the
+   target footprint. No extra halo-bearing bitmap is introduced and no target-specific anchor is
+   required. Freezer's thermoshock counts as both elements: fire against ice and ice against fire.
+   Stage 8's final boss is deliberately exempt; ordinary Stage-8 enemies and its miniboss are not. */
+function damageProjectileElement(b){
+  if(!b) return null;
+  const el=String(b._el||b.element||'').toLowerCase();
+  if(el==='fireice'||el==='thermoshock') return 'fireice';
+  if(el==='fire'||el==='flame'||el==='magma'||el==='lava') return 'fire';
+  if(el==='ice'||el==='frost'||el==='cryo') return 'ice';
+  if(b._ts) return 'fireice';
+  if(b._fire) return 'fire';
+  if(b._ice) return 'ice';
+  const kind=String(b.kind||'').toLowerCase();
+  if(kind==='fireball') return b._ts?'fireice':'fire';
+  if(kind==='firray') return b._ts?(el||'fireice'):'fire';
+  if(kind==='flame') return (typeof attackElement==='function'&&attackElement('flame'))||'fire';
+  if(kind==='orb'||kind==='shard') return (typeof attackElement==='function'&&attackElement(kind))||null;
+  if(kind==='iceorb'||kind==='iceshard'||/ice|frost|cryo/.test(kind)) return 'ice';
+  if(/fire|flame|magma|lava|ember/.test(kind)) return 'fire';
+  return null;
+}
+function damageTargetElement(t,role){
+  if(!t) return null;
+  if(t._volc||t._magma||t._lava||t._fireEnemy) return 'fire';
+  if(t._cryo||t._s3ice||t._iceEnemy||t._frost) return 'ice';
+  const tag=[t.element,t._element,t._el,t.kind,t.type,t.art,t._nef,t._volc,t._s3ice,
+             t.name,t.proj,t._profile,t._ship].filter(v=>v!=null).join(' ').toLowerCase();
+  if(/\b(ice|icy|cryo|frost|rime|glacier|snow|arctic|hail|blizzard)\b/.test(tag)) return 'ice';
+  if(/\b(fire|flame|magma|lava|inferno|ember|cinder|volcan|basalt|caldera|slag|obsidian)\w*\b/.test(tag)) return 'fire';
+  /* The campaign art direction makes the complete Stage-2 force volcanic and the complete
+     Stage-3 force cryogenic. The fallback covers legacy sprites whose old spawn records predate
+     explicit element tags; no other stage is guessed. */
+  if(role==='enemy'||role==='subboss'||role==='boss'){
+    if(run&&run.stage===2) return 'fire';
+    if(run&&run.stage===3) return 'ice';
+  }
+  return null;
+}
+function opposingElementImpact(t,role,b){
+  if(!t) return null;
+  /* Stage 8's final boss is intentionally exempt from the opposing-element response. */
+  if(role==='boss'&&run&&run.stage===8){ t._hitFlashColor=null; return null; }
+  const atk=damageProjectileElement(b||_dmgBullet), def=damageTargetElement(t,role);
+  let reaction=null;
+  if(def==='ice' && (atk==='fire'||atk==='fireice')) reaction='fire';
+  else if(def==='fire' && (atk==='ice'||atk==='fireice')) reaction='ice';
+  t._hitFlashColor=reaction==='fire'?'#ff3b30':reaction==='ice'?'#83d9ff':null;
+  return reaction;
+}
+/* Sprite-only hit tint. Elemental reactions use the exact same silhouette as an ordinary hit:
+   fire on ice is red, ice on fire is light blue. No halo, reel, geometry or glow is added. */
+function hitFlashColor(t,fallback){
+  return (t&&t._hitFlashColor)||fallback||'#ffffff';
+}
 const ORB_FIRE_ON_L3 = true;
 /* ⚠ THE ORB'S ELEMENT IS THE ORB YOU PICKED UP, NOT THE STAGE YOU ARE STANDING ON (drop 0814a).
 
@@ -17481,6 +20991,11 @@ function freezerOrbCharge(dt){
   if(!_frzOrb) _frzOrb={ch:0, charging:false, ph:0};
   _frzOrb.ph += dt;
   if(holding){
+    if(!_frzOrb.charging){
+      const _chargeStart=(typeof Audio!=='undefined'&&Audio.SFX)
+        ? (Audio.SFX.fireIceChargeStart||Audio.SFX.iceBreathStart||Audio.SFX.weapon) : null;
+      if(_chargeStart) _chargeStart();
+    }
     _frzOrb.charging=true;
     _frzOrb.ch=Math.min(FRZ_ORB_FULL, _frzOrb.ch+dt);
     const p=_frzOrb.ch/FRZ_ORB_FULL;
@@ -17556,7 +21071,9 @@ function launchFireball(charge, forceTier){
     pierce:true, t:0, _lt:0,             // _lt drives the launch reel
     _rays: full?8:0, _rayI:0, _rayT:0, _burst:false
   });
-  if(Audio.SFX.nsp_charge_release) Audio.SFX.nsp_charge_release();
+  /* Thermoshock already played its dedicated release above.  Replaying the generic
+     charge-release here stacked the same transient twice once the missing route was added. */
+  if(!_ts && Audio.SFX.nsp_charge_release) Audio.SFX.nsp_charge_release();
   explode(player.x, player.y-16, full?30:20, _ts?'#7fe0ff':'red');
   shake=Math.max(shake, full?8:4);
   if(_ts) floatText(player.x,player.y-30, full?'THERMOSHOCK!':'thermoshock', '#9fd8ff');
@@ -17680,7 +21197,26 @@ function beginStage(num){
   /* the secret is SPENT once it is entered, so the map is not stuck on stage 9 forever (0822ad) */
   if(num===9 && typeof campaign!=='undefined') campaign.bonusUnlocked=0;
   run.stage=num; mapScroll=0; damBroken=false;
+  /* Snapshot player strength at the stage boundary; no mid-fight rubber-banding. */
+  run._threatBuild=(typeof playerArsenalScore==='function')?playerArsenalScore():0;
   if(typeof spaceModeStage==='function') spaceModeStage(num);
+  /* Ground-stage elemental weapons may be selected immediately. Fetch their transients and held
+     beds during the entrance instead of making the first trigger double as the decode request. */
+  try{
+    if(typeof Snd!=='undefined'&&Snd){
+      if(Snd.loopPrepare){
+        Snd.loopPrepare('flameThrowerLoop');
+        Snd.loopPrepare('iceBreathLoop');
+        Snd.loopPrepare('laserBeamLoop');
+        Snd.loopPrepare('fireIceChargeLoop');
+      }
+      if(Snd.prepare) Snd.prepare(['flameThrowerStart','flameThrowerLoop','flameThrowerEnd',
+                                  'iceBreathStart','iceBreathLoop','iceBreathEnd',
+                                  'fireIceChargeStart','fireIceChargeLoop','fireIceOrbLaunch',
+                                  'dkBuck','dkShell','dkReload',
+                                  'laserBeamStart','laserBeamLoop','laserBeamEnd','hit']);
+    }
+  }catch(_fap){}
   thaw=null; if(num===3 && typeof thawStart==='function') thawStart();   // the stage-3 thaw (0806d)
   run.sonicT=0; run._sonicCd=0; run._lzCd=0;          // pickup weapons do not ride between stages
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
@@ -17691,7 +21227,7 @@ function beginStage(num){
      dkT walked straight into the next level — where, until dkActive was pilot-gated, it also
      took the trigger away from whoever was flying. Shells and decals go too: they hold a
      reference to the enemy they are riding, and those are cleared just below. */
-  if(run){ run.dkT=0; run._dkCd=0; }
+  if(run){ run.dkT=0; run._dkCd=0; run._dkReloadCue=0; }
   if(typeof dkShells!=='undefined') dkShells.length=0;
   if(typeof dkDecals!=='undefined') dkDecals.length=0;
   /* ⚠ THE RESET HAD TO GROW TOO (drop 0807o). I extended the stageStats declaration with
@@ -17750,7 +21286,8 @@ function beginStage(num){
   if(specialActive('freezer')){ timeScale=1; try{ if(Snd&&Snd.cur) Snd.cur.playbackRate=1; }catch(e){} }
   special=null; retina.target=null; timeScale=1; zaps.length=0; missileRush=null; clearPilotFX();
   warnT=0; warnKind=null; bossWarned=false; _sc1=false; _sc2=false; _mc1=false; _mc2=false;
-  waveIdx=0; _s1GroundHold=false; stagePlan=buildStagePlan(num);
+  waveIdx=0; _s1GroundHold=false; _adaptiveSpawnT=6.5; _adaptiveSpawnSeq=0;
+  stagePlan=buildStagePlan(num);
   /* SORT AT THE ONE PLACE THE PLAN IS BUILT (drop 0801jx). The dispatcher walks
      stagePlan in ARRAY order, holding waveIdx and waiting for stagePlan[waveIdx].t
      - so an entry whose time is later than the ones after it blocks the whole
@@ -17764,10 +21301,13 @@ function beginStage(num){
      right one. Sorting here catches every stage and every exit. */
   if(stagePlan && stagePlan.sort) stagePlan.sort((a,b)=> (a.t||0) - (b.t||0));
   if(typeof wfxReset==='function') wfxReset();
+  if(typeof bg6Reset==='function') bg6Reset();
   /* AMBIENCE DISABLED (drop 0724bu). Mike: stop playing the jungle ambient. The beds sat under the
      music at 0.55 and muddied it rather than adding depth, and stage 1's was the worst offender.
      ambStart/ambStop are intact — set AMBIENCE_ON=true to bring them back. */
-  if(AMBIENCE_ON && typeof ambStart==='function') ambStart(num);
+  /* The global ambient beds remain off, but Stage 6 explicitly owns the approved reviewed
+     howling-wind/crush bed.  It follows the single blue sky for the entire mission. */
+  if((AMBIENCE_ON || num===6) && typeof ambStart==='function') ambStart(num);
   else if(typeof ambStop==='function') ambStop();
   if(typeof allyReset==='function') allyReset();
   player.reset();
@@ -17853,6 +21393,7 @@ function setState(s){
        (state===GS.STAGESEL||state===GS.PLAY||state===GS.STAGECLEAR||state===GS.FLYOVER)) campSuspend();
   }catch(_){}
   state=s; stateT=0; Input.clearTaps(); _hudShow(_hudStateWants(s));
+  _setCinematicViewport(s===GS.CUTSCENE);
   if(s===GS.TITLE){
     /* TITLE OWNS ITS MUSIC (0824b). Returning through the campaign pause or OPTIONS used to
        leave NEON VELOCITY playing over the main menu because only some callers remembered to
@@ -18199,6 +21740,10 @@ function updatePlay(dt){
   for(const ni of nukeImpacts) ni.t+=dt;
   if(nukeImpacts.length) nukeImpacts=nukeImpacts.filter(ni=>ni.t<ni.dur);
   stageTimer+=dt*timeScale;
+  if(!player.dead){
+    run._lifeCombatT=(run._lifeCombatT||0)+dt*timeScale;
+    run._lifeThreat=Math.max(run._lifeThreat||0,(typeof playerArsenalScore==='function'?playerArsenalScore():0));
+  }
   run.distance+=dt*40;
   run.speed=run.speedLevel||0; run.wlevel=(run.wlevels?run.wlevels[run.weapon]:0)|0;
   /* COLE'S TIER KEYS (drop 0801bs). Mike: "when I play as Cole, allow me to press
@@ -18368,9 +21913,11 @@ function updatePlay(dt){
       run._mslCd=({1:0.9,2:0.75,3:0.6,4:0.5,5:0.42})[clamp(run.missileLevel,1,5)]||0.7;
     }
     if(keybind.bomb.some(k=>Input.tap(k))){
-      /* Pilot specials may still claim the button, but the ordinary ground bomb/missile weapon
-         is genuinely false in space — Volley Missiles is the Gravity Mode missile system. */
-      if(!retinaFire() && !lizzieFire() && !spaceWeaponsActive()) useBomb();
+      /* Pilot specials may still claim the button. Otherwise it is the same missile control in
+         every stage: ground launches gmiss, Gravity Mode launches the glow-volley. */
+      if(!retinaFire() && !lizzieFire()){
+        if(spaceWeaponsActive())spaceUseMissile();else useBomb();
+      }
     }
     if(keybind.retina.some(k=>Input.tap(k))||Input.tap('l')) cycleLock();
   } else {
@@ -18402,11 +21949,11 @@ function updatePlay(dt){
     // density guard: cap on-screen enemies AND require a short gap between waves so the player
     // always has a lane to maneuver — never an unavoidable wall.
     _waveGap=(_waveGap||0)-dt;
-    // per-stage on-screen cap. Jungle (stage 1) runs the new roster at up to 9 concurrent enemies.
+    // per-stage on-screen cap. Jungle reserves two lanes for its adaptive one-by-one reinforcements.
     // Reserve room for the next authored wave so dispatch can never push pressure past the cap.
-    /* RAISED 7→9 and 4→6 (Mike, 0819): "increase the amount of enemies." The dispatch formulas
-       below are unchanged, so the wave rhythm holds — the screen just carries more pressure. */
-    const _liveCap = (run.stage===1)? 9 : 6;
+    /* Stage 1 now carries up to eleven so its fifth/sixth delayed jet can enter without deleting
+       the next mapped beat. Other stages retain their six-unit pressure ceiling. */
+    const _liveCap = (run.stage===1)?11:(run.stage===9?12:6);
     // Stationary emplacements (turrets, bunkers, mini tanks/ships) are terrain hazards, not wave
     // pressure — they linger by design. Counting them against the dispatch cap starved the later
     // waves on stage 1, so they are excluded here.
@@ -18447,8 +21994,17 @@ function updatePlay(dt){
        because the clock continued beyond the beach. */
     _s1GroundHold=!!(_s1GroundDue && (_waveGap>0 || _liveN>_dispatchAt));
     if(_nextStageWave && stageTimer>=_nextStageWave.t && _waveGap<=0 && _liveN<=_dispatchAt){
-      stagePlan[waveIdx].fn(); waveIdx++; _waveGap=(run.stage===1?0.9:1.1);
+      stagePlan[waveIdx].fn(); waveIdx++; _waveGap=(run.stage===1?0.9:(run.stage===9?0.38:1.1));
       _s1GroundHold=false;
+    }
+    /* Global adaptive density is a separate, one-at-a-time lane from the authored scheduler.
+       It never replaces a wave, never runs through a warning/encounter, and never exceeds its
+       small pressure allowance. The percentage grows with the same life-based threat meter that
+       scales newly spawned HP and fire cadence. */
+    if(run.stage!==1){
+      _adaptiveSpawnT=(_adaptiveSpawnT||0)-dt;
+      const _adaptiveNext=(waveIdx<stagePlan.length)?stagePlan[waveIdx]:null;
+      tryAdaptiveReinforcement(run.stage,_adaptiveNext,_liveN,_liveCap);
     }
     // special crates: 1 before the sub-boss, 1 between sub-boss and boss
     if(!_sc1 && stageTimer>=curStage.length*0.22){ _sc1=true; spawnContainer('scrate'); }
@@ -18597,10 +22153,18 @@ function updatePlay(dt){
         break;
       }
       case 'orbital': if(typeof orbitalTick==='function') orbitalTick(e,dt); break;   // level-5 deep-space signatures
+      case 's5space': if(typeof s5SpaceTick==='function') s5SpaceTick(e,dt); break;   // native orbital fleet
       case 'sewer':   if(typeof sewerTick==='function')   sewerTick(e,dt);   break;   // level-7 sewer signatures
       case 'volc':    if(typeof volcTick==='function')    volcTick(e,dt);    break;   // level-2 volcanic signatures
+      case 's3ice':   if(typeof s3IceTick==='function')   s3IceTick(e,dt);   break;   // level-3 native ice signatures
+      case 's4chase': if(typeof s4ChaseTick==='function') s4ChaseTick(e,dt);break;   // level-4 highway war
+      case 's6storm': if(typeof s6StormTick==='function') s6StormTick(e,dt);break;   // level-6 turbulence fleet
+      case 's7toxic': if(typeof s7ToxicTick==='function') s7ToxicTick(e,dt);break;   // level-7 toxic fleet
+      case 's8mega':  if(typeof s8MegaTick==='function')  s8MegaTick(e,dt); break;   // Furious Death smart mega fleet
       case 'elite8':  if(typeof elite8Tick==='function')  elite8Tick(e,dt);  break;   // level-8 elite escorts
       case 's9chaos': if(typeof s9ChaosTick==='function') s9ChaosTick(e,dt); break;   // Velocity Void aces + water-rocks
+      case 's9void':  if(typeof s9VoidTick==='function')  s9VoidTick(e,dt);  break;   // native bonus-space fleet
+      case 's9meteor':if(typeof s9MeteorTick==='function')s9MeteorTick(e,dt);break;   // giant colliding, gravity-driven rocks
       case 'ai':     if(typeof aiTick==='function') aiTick(e,dt); break;   // AI pattern library (behaviour sheets)
       /* naval units steer themselves and hold station (drop 0808k) */
       case 'naval':  navalTick(e, dt); break;
@@ -19541,7 +23105,7 @@ function updatePlay(dt){
       // crates still pop, but the lance keeps going (pierce)
       for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate')) continue;
         if(b._hs.indexOf(p)>=0) continue;
-        if(Math.abs(b.x-p.x)<(p.w/2+6) && Math.abs(b.y-p.y)<(p.h/2+8)){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; b._hs.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
+        if(Math.abs(b.x-p.x)<(p.w/2+6) && Math.abs(b.y-p.y)<(p.h/2+8)){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); b._hs.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
       }
       const _vw=(typeof worldWidth==='function')?worldWidth():VW;
       if(b.y<-40 || b.x<-30 || b.x>_vw+30) b.dead=true;
@@ -19561,7 +23125,7 @@ function updatePlay(dt){
           if(e.dead) continue;
           if(Math.abs(e.x-b.x)<(e.w/2+22) && Math.abs(e.y-b.y)<(e.h/2+30)){
             b._chained=1; hitEnemy(e, b.dmg||8); e._zapFlash=0.22;
-            (Audio.SFX.chainHit||Audio.SFX.hit)();
+            weaponHitSfx('normal');
             zaps.push({x1:b.x,y1:b.y,x2:e.x,y2:e.y,t:0.20});
             chainZap(e.x,e.y, 3+(b.lv||1), [e]);
             b.dead=true; break;
@@ -19580,7 +23144,7 @@ function updatePlay(dt){
       }
       if(!hit){
         for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate')) continue;
-          if(Math.abs(b.x-p.x)<(p.w/2+4) && Math.abs(b.y-p.y)<(p.h/2+7)){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; hit=true; if(p.hp<=0){ p.dead=true; breakContainer(p); } break; }
+          if(Math.abs(b.x-p.x)<(p.w/2+4) && Math.abs(b.y-p.y)<(p.h/2+7)){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); hit=true; if(p.hp<=0){ p.dead=true; breakContainer(p); } break; }
         }
       }
       if(hit) b.dead=true;
@@ -19629,7 +23193,7 @@ function updatePlay(dt){
           for(const e of enemies){ if(!e.dead && e!==t && dist2(e.x,e.y,b.x,b.y)<90*90) hitEnemy(e,10); }
           if(boss && bossActive && !boss.dead && t!==boss && dist2(boss.x,boss.y,b.x,b.y)<110*110) hitBoss(8);
           if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && t!==subBoss && dist2(subBoss.x,subBoss.y,b.x,b.y)<110*110) hitSubBoss(8);
-          for(const p of powerups){ if(!p.dead && (p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate') && dist2(p.x,p.y,b.x,b.y)<90*90){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; if(p.hp<=0){ p.dead=true; breakContainer(p); } } }
+          for(const p of powerups){ if(!p.dead && (p.kind==='crate'||p.kind==='capsule'||p.kind==='scrate') && dist2(p.x,p.y,b.x,b.y)<90*90){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); if(p.hp<=0){ p.dead=true; breakContainer(p); } } }
         }
       }
       continue;
@@ -19660,7 +23224,11 @@ function updatePlay(dt){
       }
       if(boss && bossActive && !boss.dead){
         b._bt=(b._bt||0)-dt;
-        if(b._bt<=0 && boss.y<=b.bot && Math.abs(b.x-boss.x)<(boss.w/2+b.w/2)){ hitBoss(b.dmg); weaponHitSfx('laser'); b._bt=0.05; }
+        const _s4t=(typeof stage4CoreTurretBeamAt==='function')?stage4CoreTurretBeamAt(boss,b.x,b.w/2,b.top,b.bot):null;
+        const _s4n=(typeof stage4ShieldBeamNode==='function')?stage4ShieldBeamNode(boss,b.x,b.w/2,b.top,b.bot):null;
+        if(b._bt<=0&&_s4t){boss._s4CoreHit=_s4t;_lastHitX=_s4t.x;_lastHitY=_s4t.y;hitBoss(b.dmg);weaponHitSfx('laser');b._bt=.05;}
+        else if(b._bt<=0&&_s4n){boss._s4ShieldHit=_s4n;_lastHitX=_s4n.x;_lastHitY=_s4n.y;hitBoss(b.dmg);weaponHitSfx('laser');b._bt=.05;}
+        else if(b._bt<=0 && boss.y<=b.bot && Math.abs(b.x-boss.x)<(boss.w/2+b.w/2)){ hitBoss(b.dmg); weaponHitSfx('laser'); b._bt=0.05; }
       }
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
         b._sbt=(b._sbt||0)-dt;
@@ -19668,13 +23236,17 @@ function updatePlay(dt){
         if(b._sbt<=0 && sy<=b.bot && Math.abs(b.x-subBoss.x)<(subBoss.w/2+b.w/2)){ hitSubBoss(b.dmg, b.x, sy); weaponHitSfx('laser'); b._sbt=0.05; }
       }
       for(const p of powerups){ if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate')) continue;
-        if(p.y<=b.bot && Math.abs(b.x-p.x)<(p.w/2+b.w/2)){ if(b._hit.indexOf(p)<0){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; b._hit.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } } }
+        if(p.y<=b.bot && Math.abs(b.x-p.x)<(p.w/2+b.w/2)){ if(b._hit.indexOf(p)<0){ p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); b._hit.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } } }
       }
       continue;
     }
     if(b.kind==='flame'){   // FLAMETHROWER: a held cone anchored to the nose, re-burning on a tick
       b.life-=dt; b.anim=(b.anim||0)+dt;
       if(b.life<=0 || player.dead){ b.dead=true; flameSndStop(b._el); continue; }
+      /* flameFire is reached only on the weapon cadence (~300ms), while a sustained loop's grace
+         window is two frames. Refresh from the live held entity so its bed cannot fade between
+         consecutive trigger beats. */
+      flameSndStart(b._el);
       b.x=player.x; b.bot=player.y-14; b.top=b.bot-flameReach(b.lv);
       b.w=flameBase(b.lv)*2; b.h=flameReach(b.lv);
       b._ht=(b._ht||0)-dt; if(b._ht<=0){ b._hit.length=0; b._ht=FLAME_TICK; }
@@ -19695,10 +23267,6 @@ function updatePlay(dt){
    hands no longer freezes what it burns. */
             if(flameIsIce()){
               e._frozen=(e._frozen||0)+1;
-              e._frzFlash=0.18;
-              if(chance(0.5)) particles.push({x:e.x+rnd(-e.w*0.4,e.w*0.4), y:e.y+rnd(-e.h*0.4,e.h*0.4),
-                vx:rnd(-0.6,0.6), vy:rnd(-1.2,-0.2), life:rnd(0.3,0.7), t:0, r:rnd(1.2,2.6),
-                color: chance(0.5)?'#ffffff':'#9fe4ff', grav:-0.01});
             }
             if(chance(0.35)) particles.push({x:e.x,y:e.y,vx:0,vy:0,life:0.12,t:0,r:7,color:'#ffd36b',flashring:true});
           }
@@ -19706,7 +23274,11 @@ function updatePlay(dt){
       }
       if(boss && bossActive && !boss.dead){
         b._bt=(b._bt||0)-dt;
-        if(b._bt<=0 && flameHit(b, boss.x, (boss._drawY!=null?boss._drawY:boss.y), boss.w, boss.h)){ hitBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower')); weaponHitSfx(attackElement('flame')); b._bt=FLAME_TICK; }
+        const _s4t=(typeof stage4CoreTurretFlameAt==='function')?stage4CoreTurretFlameAt(boss,b):null;
+        const _s4n=(typeof stage4ShieldFlameNode==='function')?stage4ShieldFlameNode(boss,b):null;
+        if(b._bt<=0&&_s4t){boss._s4CoreHit=_s4t;_lastHitX=_s4t.x;_lastHitY=_s4t.y;hitBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower'));weaponHitSfx(attackElement('flame'));b._bt=FLAME_TICK;}
+        else if(b._bt<=0&&_s4n){boss._s4ShieldHit=_s4n;_lastHitX=_s4n.x;_lastHitY=_s4n.y;hitBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower'));weaponHitSfx(attackElement('flame'));b._bt=FLAME_TICK;}
+        else if(b._bt<=0 && flameHit(b, boss.x, (boss._drawY!=null?boss._drawY:boss.y), boss.w, boss.h)){ hitBoss(b.dmg*elementMultiplier(attackElement('flame'),flameIsIce()?'icebreath':'flamethrower')); weaponHitSfx(attackElement('flame')); b._bt=FLAME_TICK; }
       }
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
         b._sbt=(b._sbt||0)-dt;
@@ -19716,7 +23288,7 @@ function updatePlay(dt){
       for(const p of powerups){
         if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate')) continue;
         if(flameHit(b, p.x, p.y, p.w, p.h) && b._hit.indexOf(p)<0){
-          p.hp=(p.hp||5)-b.dmg; p.flash=0.12; b._hit.push(p);
+          p.hp=(p.hp||5)-b.dmg; p.flash=0.12; weaponHitSfx('normal'); b._hit.push(p);
           if(p.hp<=0){ p.dead=true; breakContainer(p); }
         }
       }
@@ -19734,7 +23306,12 @@ function updatePlay(dt){
       if(b.shardCd<=0){ b.shardCd=0.10; const n=b.shardN; for(let i=0;i<n;i++){ pShard(b.x,b.y, b.spin + i*(TAU/n), b.lv, _sopt); } b.sfxCd=(b.sfxCd||0)-1; if(b.sfxCd<=0){ b.sfxCd=3; if(Audio.SFX.spread)Audio.SFX.spread(); } }
       b._ht-=dt; if(b._ht<=0){ b._hit.length=0; b._ht=0.16; }
       for(const e of enemies){ if(e.dead)continue; if(Math.abs(e.x-b.x)<(e.w/2+b.w/2)&&Math.abs(e.y-b.y)<(e.h/2+b.h/2)){ if(b._hit.indexOf(e)<0){ hitEnemy(e,b.dmg*_om); if(b._ts){ e._frozen=(e._frozen||0)+1; e._frzFlash=0.18; } b._hit.push(e); } } }
-      if(boss&&bossActive&&!boss.dead && Math.abs(boss.x-b.x)<(boss.w/2+b.w/2)&&Math.abs(boss.y-b.y)<(boss.h/2+b.h/2)){ b._bt-=dt; if(b._bt<=0){ hitBoss(b.dmg*_om); b._bt=0.16; } }
+      if(boss&&bossActive&&!boss.dead){
+        const _s4t=(typeof stage4CoreTurretAt==='function')?stage4CoreTurretAt(boss,b.x,b.y,Math.max(b.w,b.h)*.5):null;
+        const _s4n=(typeof stage4ShieldNodeAt==='function')?stage4ShieldNodeAt(boss,b.x,b.y,Math.max(b.w,b.h)*.5):null;
+        const _hull=Math.abs(boss.x-b.x)<(boss.w/2+b.w/2)&&Math.abs(boss.y-b.y)<(boss.h/2+b.h/2);
+        if(_s4t||_s4n||_hull){b._bt-=dt;if(b._bt<=0){if(_s4t){boss._s4CoreHit=_s4t;_lastHitX=_s4t.x;_lastHitY=_s4t.y;}else if(_s4n){boss._s4ShieldHit=_s4n;_lastHitX=_s4n.x;_lastHitY=_s4n.y;}hitBoss(b.dmg*_om);b._bt=.16;}}
+      }
       if(b.life<=0 || b.y<-40){ b.dead=true; iceBurst(b.x,b.y,b.shardN,b.lv,_sopt); if(b._ts) tsFx(b.x,b.y,'imp',110); }
       continue;
     }
@@ -19827,16 +23404,24 @@ function updatePlay(dt){
     }
     // collide sub-boss
     if(!b.dead && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
-      const sw=(subBoss._drawW||subBoss.w), sh=(subBoss._drawH||subBoss.h), sy=(subBoss._drawY||subBoss.y);
+      const _s4DroneReach=(subBoss._ship==='olivewarden'&&subBoss._s4war&&subBoss._s4war.summoned)?300:0;
+      const sw=(subBoss._drawW||subBoss.w)+_s4DroneReach, sh=Math.max((subBoss._drawH||subBoss.h),_s4DroneReach?260:0), sy=(subBoss._drawY||subBoss.y);
       /* THE RECTANGLE IS NOW ONLY A BROAD PHASE (drop 0805c). It cheaply rejects shots
          nowhere near the unit; subBossSolidAt then decides whether the pellet actually met
          anything. Null means the unit has no part data and keeps the old rectangle. */
       const _inBox = Math.abs(subBoss.x-b.x)<(sw/2+b.w/2) && Math.abs(sy-b.y)<(sh/2+b.h/2);
       const _solid = _inBox ? ((typeof subBossSolidAt==='function') ? subBossSolidAt(b.x,b.y) : null) : false;
       if(_inBox && (_solid===null || _solid===true)){
-        const _sd=(b._bossDmg!=null)?b._bossDmg:b.dmg;
-        if(pierce){ b._bt=(b._bt||0)-dt; if(b._bt<=0){ hitSubBoss(_sd, b.x, b.y); b._bt=0.10; explode(b.x,b.y,6,'red'); } }
-        else { hitSubBoss(_sd, b.x, b.y); if(b.kind==='nade') nadeBlast(b); else explode(b.x,b.y,8,'red'); b.dead=true; }
+        const _rawSd=(b._bossDmg!=null)?b._bossDmg:b.dmg;
+        if(pierce){ b._bt=(b._bt||0)-dt; if(b._bt<=0){
+          const _sd=helixEncounterDamage(b,subBoss,_rawSd);
+          if(_sd>0){hitSubBoss(_sd, b.x, b.y);explode(b.x,b.y,6,'red');}
+          b._bt=0.10;
+        } }
+        else {
+          const _sd=helixEncounterDamage(b,subBoss,_rawSd);
+          if(_sd>0){hitSubBoss(_sd, b.x, b.y);if(b.kind==='nade') nadeBlast(b);else explode(b.x,b.y,8,'red');b.dead=true;}
+        }
       }
     }
     // collide boss
@@ -19846,9 +23431,10 @@ function updatePlay(dt){
          anything it does not own — limbs, non-mech bosses, phases 2 and 3 — so the ordinary
          path below is untouched. */
       if(typeof mechShieldIntercept==='function' && mechShieldIntercept(boss, b)) continue;
+      if(typeof stage4ShieldDeflectBullet==='function'&&stage4ShieldDeflectBullet(boss,b))continue;
       // _bossDmg caps what a shot may do to a BOSS. The helix flurry one-shots ordinary enemies
       // (dmg 9999) but must never trivialise a boss fight, so it lands heavy-but-capped instead.
-      const _bd = (b._bossDmg!=null) ? b._bossDmg : b.dmg;
+      const _rawBd = (b._bossDmg!=null) ? b._bossDmg : b.dmg;
       /* SECTIONAL BOSSES ARE PIERCED BY DEFAULT (drop 0724ce). A boss built from separate wings,
          arms and engines is a frame of pieces, not a solid wall — shots pass THROUGH it and can
          strike more than one section on the way. Armoured or shielded units stop them, but nothing
@@ -19857,14 +23443,21 @@ function updatePlay(dt){
       if(pierce2){
         b._bt=(b._bt||0)-dt;
         if(b._bt<=0){
-          _lastHitX=b.x; _lastHitY=b.y;          // so the section under THIS shot takes the damage
-          hitBoss(_bd); b._bt=0.10;
-          explode(b.x,b.y,b.kind==='fire'?9:6,b.kind==='fire'?'red':'blue');
+          const _bd=helixEncounterDamage(b,boss,_rawBd);
+          if(_bd>0){
+            _lastHitX=b.x; _lastHitY=b.y;        // so the section under THIS shot takes the damage
+            hitBoss(_bd);
+            explode(b.x,b.y,b.kind==='fire'?9:6,b.kind==='fire'?'red':'blue');
+          }
+          b._bt=0.10;
         }
       } else {
-        _lastHitX=(typeof p!=='undefined'&&p&&p.x!=null)?p.x:null; _lastHitY=(typeof p!=='undefined'&&p&&p.y!=null)?p.y:null;
-        hitBoss((b._bossDmg!=null)?b._bossDmg:b.dmg); if(b.kind==='nade') nadeBlast(b); else explode(b.x,b.y,8,'red');
-        b.dead=true;
+        const _bd=helixEncounterDamage(b,boss,_rawBd);
+        if(_bd>0){
+          _lastHitX=(typeof p!=='undefined'&&p&&p.x!=null)?p.x:null; _lastHitY=(typeof p!=='undefined'&&p&&p.y!=null)?p.y:null;
+          hitBoss(_bd); if(b.kind==='nade') nadeBlast(b); else explode(b.x,b.y,8,'red');
+          b.dead=true;
+        }
       }
     }
     // collide powerup containers (shoot to break open)
@@ -19874,9 +23467,9 @@ function updatePlay(dt){
         if(Math.abs(b.x-p.x)<(p.w/2+b.w/2) && Math.abs(b.y-p.y)<(p.h/2+b.h/2)){
           if(pierce){
             if(!b._hit) b._hit=[];
-            if(b._hit.indexOf(p)<0){ p.hp=(p.hp||5)-(b.dmg||1); p.flash=0.12; b._hit.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
+            if(b._hit.indexOf(p)<0){ p.hp=(p.hp||5)-(b.dmg||1); p.flash=0.12; weaponHitSfx('normal'); b._hit.push(p); if(p.hp<=0){ p.dead=true; breakContainer(p); } }
           } else {
-            p.hp=(p.hp||5)-(b.dmg||1); p.flash=0.12;
+            p.hp=(p.hp||5)-(b.dmg||1); p.flash=0.12; weaponHitSfx('normal');
             if(b.kind==='nade') nadeBlast(b); else explode(b.x,b.y,6,'red');
             b.dead=true;
             if(p.hp<=0){ p.dead=true; breakContainer(p); }
@@ -19901,6 +23494,89 @@ function updatePlay(dt){
   for(const b of eBullets){
     if(_tslow) continue;
     b.t=(b.t||0)+dt;
+    if(b._s4wKind&&typeof stage4WarfareProjectileTick==='function')stage4WarfareProjectileTick(b,dt);
+    let _jcManualMove=false;
+    /* The Jungle Cruiser's reversal salvo performs one visible loop above its launch point, then
+       turns south and begins its granted stage-1 homing. During the loop position is authored
+       absolutely, which prevents the generic velocity integrator from adding a second movement
+       and warping the circle into a loose wobble. */
+    if(b._jcLoop&&!b._jcLoop.released){
+      const L=b._jcLoop,p=clamp(b.t/Math.max(.01,L.dur),0,1);
+      const turn=L.phase+L.side*TAU*p,r=42*Math.sin(Math.PI*p);
+      b.x=L.ox+Math.cos(turn)*r;
+      b.y=L.oy-22*p-66*Math.sin(Math.PI*p);
+      const dr=42*Math.PI*Math.cos(Math.PI*p),da=L.side*TAU;
+      const dx=-Math.sin(turn)*da*r+Math.cos(turn)*dr;
+      const dy=-22-66*Math.PI*Math.cos(Math.PI*p)+Math.cos(turn)*da*r+Math.sin(turn)*dr;
+      const tangent=Math.atan2(dy,dx),tsp=Math.max(2.2,b.spd||2.55);
+      b.vx=Math.cos(tangent)*tsp;b.vy=Math.sin(tangent)*tsp;b.ang=tangent;_jcManualMove=true;
+      if(p>=1){
+        L.released=true;b.homing=true;b._swerve=0;b._locked=false;
+        b.spd=2.55;b.vx=0;b.vy=b.spd;b.ang=Math.PI/2;_jcManualMove=false;
+      }
+    }
+    /* Critical-phase helix ball: track until the player is inside the commit radius, then keep
+       that heading permanently. A successful lateral break sends it offscreen, where the normal
+       cull deletes it; it never turns around or reacquires. */
+    if(b._jcHelix){
+      if(b.t>(b.life||4.5)){b.dead=true;continue;}
+      const dx=player.x-b.x,dy=player.y-b.y,d=Math.hypot(dx,dy);
+      if(!b._committed&&d<=(b._commit||86))b._committed=true;
+      if(!b._committed){
+        let a=Math.atan2(b.vy,b.vx),ta=Math.atan2(dy,dx),da=((ta-a+Math.PI*3)%TAU)-Math.PI;
+        a+=clamp(da,-(b.turn||.047),b.turn||.047);
+        const sp=Math.min(6.4,(b.spd||3.55)+.035);b.spd=sp;b.vx=Math.cos(a)*sp;b.vy=Math.sin(a)*sp;b.ang=a;
+      }
+      if(typeof addTrail==='function'&&((b.t*60)|0)%2===0)addTrail(b.x,b.y,null,'laser');
+    }
+    if(b._mwAccel){
+      /* The charged MAGMA WARD fireball builds speed on the direction locked during its charge.
+         It is circular art, so there is no sprite flip, and it never samples the player again. */
+      const a=Math.atan2(b.vy,b.vx),now=Math.hypot(b.vx,b.vy),next=Math.min(b._mwMax||6.25,now+b._mwAccel*dt);
+      b.vx=Math.cos(a)*next;b.vy=Math.sin(a)*next;b.ang=a;
+    }
+    if(b._s2Accel){
+      /* Stage-2 rockets/slugs accelerate only along their launch vector. They never flip, home,
+         wobble or reacquire the player after release. */
+      const a=Math.atan2(b.vy,b.vx),now=Math.hypot(b.vx,b.vy),next=Math.min(b._s2Max||5.2,now+b._s2Accel*dt);
+      b.vx=Math.cos(a)*next;b.vy=Math.sin(a)*next;b.ang=a;
+    }
+    if(b._s3Accel){
+      /* Ice shells accelerate only on their release vector.  No homing, no mirroring, no late
+         steering: the muzzle tell is a reliable promise of the lane the player must dodge. */
+      const tp=b._threatBullet||1,a=Math.atan2(b.vy,b.vx),now=Math.hypot(b.vx,b.vy),next=Math.min((b._s3Max||5.4)*tp,now+b._s3Accel*tp*dt);
+      b.vx=Math.cos(a)*next;b.vy=Math.sin(a)*next;b.ang=a;
+    }
+    if(b._s4Accel){
+      /* Highway rockets build speed on the promised launch line. No flip, homing, wobble or
+         post-release aim correction: the muzzle flash remains an honest dodge telegraph. */
+      const tp=b._threatBullet||1,a=Math.atan2(b.vy,b.vx),now=Math.hypot(b.vx,b.vy),next=Math.min((b._s4Max||5.2)*tp,now+b._s4Accel*tp*dt);
+      b.vx=Math.cos(a)*next;b.vy=Math.sin(a)*next;b.ang=a;
+    }
+    if(b._s6Curve){
+      /* Stage 6 turbine crescents follow an authored, one-way arc.  This is not homing: the
+         curvature and its direction are fixed at launch and never sample the player again. */
+      const sp=Math.hypot(b.vx,b.vy),a=Math.atan2(b.vy,b.vx)+b._s6Curve*dt;
+      b.vx=Math.cos(a)*sp;b.vy=Math.sin(a)*sp;b.ang=a;
+    }
+    if(b._s6Accel){
+      /* Storm missiles and forecast cells accelerate on the promised launch heading.  They do
+         not flip, mirror, reacquire or steer after the muzzle tell has committed the lane. */
+      const tp=b._threatBullet||1,a=Math.atan2(b.vy,b.vx),now=Math.hypot(b.vx,b.vy),next=Math.min((b._s6Max||5.0)*tp,now+b._s6Accel*tp*dt);
+      b.vx=Math.cos(a)*next;b.vy=Math.sin(a)*next;b.ang=a;
+    }
+    if(b._s7Accel){
+      /* Toxic missiles and grenades accelerate only on the line announced by their muzzle.
+         They never flip, mirror, home, or sample the player again after release. */
+      const tp=b._threatBullet||1,a=Math.atan2(b.vy,b.vx),now=Math.hypot(b.vx,b.vy),next=Math.min((b._s7Max||5.1)*tp,now+b._s7Accel*tp*dt);
+      b.vx=Math.cos(a)*next;b.vy=Math.sin(a)*next;b.ang=a;
+    }
+    if(b._spaceAccel){
+      /* Space missiles/comets build speed only on their announced launch vector.  No tracking,
+         sprite flipping or late steering is permitted after the muzzle flash commits the lane. */
+      const tp=b._threatBullet||1,a=Math.atan2(b.vy,b.vx),now=Math.hypot(b.vx,b.vy),next=Math.min((b._spaceMax||5.8)*tp,now+b._spaceAccel*tp*dt);
+      b.vx=Math.cos(a)*next;b.vy=Math.sin(a)*next;b.ang=a;
+    }
     if(b._chKind==='missile'){
       /* One centerline missile, readable at release and increasingly urgent as it approaches.
          Reassert the launch lane/angle every tick so it cannot inherit steering, fan or animation
@@ -19947,7 +23623,7 @@ function updatePlay(dt){
       b.y += Math.sin(a-Math.PI/2)*d;
       b._swOff=want;
     }
-    if(b.kind==='emissile' || b.kind==='s1jungleMissile'){
+    if(b._shootable || b.kind==='emissile' || b.kind==='s1jungleMissile'){
       // (b.t already advanced at the loop head — do not double-count)
       // white exhaust smoke trailing the missile
       if(typeof addTrail==='function' && (b.t*60|0)%2===0) addTrail(b.x - Math.cos(b.ang||Math.PI/2)*b.h*0.4, b.y - Math.sin(b.ang||Math.PI/2)*b.h*0.4, null, 'missile');
@@ -19994,6 +23670,7 @@ function updatePlay(dt){
           /* DEFLECTED, not destroyed. Mike: "the missiles can be shot and deflected back at the
              boss, as this is the only way to destroy the missile bays." */
           b._ref=true; b._fx='missile'; b.vy=-3.1; b.vx*=0.3; b.ang=-Math.PI/2; b.t=0;
+          if(b._carrierWarhead)carrierWarheadBurst(b,'s6mb_bombdeflect',8,144,.36);
           if(!pb.pierce) pb.dead=true;
           if(typeof addTrail==='function') addTrail(b.x,b.y,null,'missile');
           if(Audio.SFX && Audio.SFX.clank) Audio.SFX.clank();
@@ -20003,18 +23680,25 @@ function updatePlay(dt){
       if(b._ref){
         b.vy=Math.max(-5.4, b.vy-3.4*dt);          // accelerates back up the screen
         if(boss && bossActive && !boss.dead && typeof carrierBayHit==='function'){
-          if(carrierBayHit(boss, b.x, b.y)){ b.dead=true; continue; }
+          if(carrierBayHit(boss, b.x, b.y, b)){ b.dead=true; continue; }
         }
         if(b.y < PLAY.y-40){ b.dead=true; continue; }
       } else {
+        /* The detached Mk II warhead is a real accelerating projectile.  The old object carried
+           _accel but only generic emissile read it, so this special round never accelerated at
+           all.  Its heading is still committed at release; speed changes, aim never does. */
+        if(!b._buoy&&b._accel){
+          const a=Math.atan2(b.vy,b.vx),now=Math.hypot(b.vx,b.vy),next=Math.min(b._maxspd||5,now+b._accel);
+          b.spd=next;b.vx=Math.cos(a)*next;b.vy=Math.sin(a)*next;b.ang=a;
+        }
         /* THE TIDE. An ignored round does not leave the screen - near the floor it turns buoyant
            and rises, so uncleared missiles stack up and fill the play field. */
         if(b.y > VH*CARRIER_FLOAT_Y){
           b._buoy=true; b.vx*=0.94;
         }
         if(b._buoy){
-          b.vy=Math.max(-0.85, b.vy-1.5*dt);
-          b.ang=-Math.PI/2;
+          b.vy=Math.max(-1.15, b.vy-12*dt);
+          b.ang=Math.atan2(b.vy,b.vx);
           b.x += Math.sin((b.t||0)*1.6 + (b.x*0.03))*8*dt;   // slow drift so the raft is not a grid
         }
       }
@@ -20060,16 +23744,18 @@ function updatePlay(dt){
       }
       continue;
     }
-    b.x+=b.vx; b.y+=b.vy;
+    if(!_jcManualMove){b.x+=b.vx;b.y+=b.vy;}
     if(!player.dead && player.invuln<=0){
       const _hx=(player._hx!=null?player._hx:9), _hy=(player._hy!=null?player._hy:10);
       if(Math.abs(b.x-player.x)<(_hx+b.w*0.15) && Math.abs(b.y-player.y)<(_hy+b.h*0.15)){
         /* the magma round lands on its OWN authored impact (Mike, 0819) — `bfx_magma_i`, the third
            plate of the set, a burst that scatters into cooling debris. explode() counts a named
            family's frames itself, so the 6-frame reel needs no table row. */
-        if(b.kind==='magma' && typeof explode==='function') explode(b.x,b.y,34,'red','bfx_magma_i');
+        if((b.kind==='magma'||String(b.kind).indexOf('s2')===0||b.kind==='lavaComet') && typeof explode==='function')
+          explode(b.x,b.y,(b.kind==='s2slag'||b.kind==='s2bomb')?42:34,'red','bfx_magma_i');
         else if((b.kind==='s1greenLaser'||b.kind==='s1windBlade'||b.kind==='s1windVortex') && typeof s1CombatImpact==='function') s1CombatImpact(b.x,b.y,true,54);
         else if((b.kind==='s1cannon'||b.kind==='s1jungleMissile') && typeof s1CombatImpact==='function') s1CombatImpact(b.x,b.y,false,48);
+        else if(b._carrierWarhead)carrierWarheadBurst(b,'s6mb_bombimpact',10,176,.46);
         playerHit(); b.dead=true;
       }
     }
@@ -20092,7 +23778,7 @@ function updatePlay(dt){
       if(specialActive('juggernaut')){ player._ramT=(player._ramT||0)-dt; if(player._ramT<=0){ hitBoss(6); player._ramT=0.2; explode(player.x,player.y-10,20,'red'); shake=Math.max(shake,6); } }
       else playerHit();
     }
-    if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter && (!subBoss._harrier||subBoss._chCollision) && Math.abs(subBoss.x-player.x)<(subBoss.w/2+10) && Math.abs((subBoss._drawY||subBoss.y)-player.y)<(subBoss.h/2+10)){
+    if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter && !subBoss._jcGhost && (!subBoss._harrier||subBoss._chCollision) && Math.abs(subBoss.x-player.x)<(subBoss.w/2+10) && Math.abs((subBoss._drawY||subBoss.y)-player.y)<(subBoss.h/2+10)){
       if(specialActive('juggernaut')){ player._ramT=(player._ramT||0)-dt; if(player._ramT<=0){ hitSubBoss(6); player._ramT=0.2; explode(player.x,player.y-10,20,'red'); shake=Math.max(shake,6); } }
       else playerHit();
     }
@@ -20389,7 +24075,8 @@ function _hitEnemyCore(e,dmg){
   // happens on their terms. Kept as a generic flag so later units can reuse it.
   if(e._noHit){ e.flash=Math.max(e.flash||0, 0.05); return; }
   if(typeof enemyShieldIntercept==='function' && enemyShieldIntercept(e,dmg,_dmgBullet)) return true;
-  e.hp-=dmg; e.flash=0.12; Audio.SFX.hit();
+  const _elemHit=(typeof opposingElementImpact==='function')?opposingElementImpact(e,'enemy',_dmgBullet):null;
+  e.hp-=dmg; e.flash=0.12; weaponHitSfx('normal');
   if(typeof stageStats!=='undefined'){
     stageStats.dmgDealt+=dmg;
     if(_dmgSrc==='missile') stageStats.mslHits++;
@@ -20403,7 +24090,7 @@ function _hitEnemyCore(e,dmg){
      which is the readability the enemy ordnance on mfx_ cannot give you. Metal armour rings
      differently from a soft target: tanks and ships take metal_impact, everything else the
      spark, and a glancing hit that fails to kill throws a ricochet. */
-  if(typeof pImpacts!=='undefined'){
+  if(typeof pImpacts!=='undefined' && !_elemHit){
     const hard = (e._nef && /tank|apc|boat|corvette|craft|artillery|crawler|turret|sled/.test(e._nef));
     pImpacts.push({ x:e.x+rnd(-4,4), y:e.y-e.h*0.18+rnd(-4,4), t:0, dur:0.20,
                     key: hard ? 'nwp_kin_metal_impact' : 'nwp_kin_hit_spark',
@@ -20539,6 +24226,10 @@ function playerHit(){
   if(typeof fxBurst==='function') fxBurst(player.x, player.y, 66, {color:'#7fd4ff', rings:2});
   if(typeof stageStats!=='undefined') stageStats.deaths++;
   player.dead=true; player.deathT=1.4; player.alive=false;
+  /* Adaptive pressure is earned per life. A real death (not a shield break) returns enemy HP and
+     reinforcement density to their baseline along with the player's stripped powerups. */
+  run._lifeCombatT=0; run._lifeThreat=0; run._threatBuild=0;
+  _adaptiveSpawnT=6.5; _adaptiveSpawnSeq=0;
   for(let _k=0;_k<7;_k++) explode(player.x+rnd(-16,16), player.y+rnd(-14,14), rnd(26,50), 'red');
   shake=18; flashScreen=0.7; Audio.SFX.death();
   /* Gravity Mode is a recovered prototype, not a disposable ground pickup. A lost life must not
@@ -20576,7 +24267,22 @@ function triggerVictory(){ drawVictory._t=0; drawVictory._scroll=0; setState(GS.
    ============================================================ */
 function bossHitTest(x,y){
   if(!boss) return false;
+  if(boss._ship==='stormsovereign'&&boss._s4war){
+    boss._s4CoreHit=stage4CoreTurretAt(boss,x,y,2);
+    if(boss._s4CoreHit)return true;
+  }
+  if(boss._ship==='stormsovereign'&&boss._s4war&&boss._s4war.shield&&
+     (boss._s4war.shield.active||boss._s4war.shield.rearming)){
+    boss._s4ShieldHit=stage4ShieldNodeAt(boss,x,y,2);
+    if(boss._s4ShieldHit)return true;
+    const sy=(boss._drawY!=null?boss._drawY:boss.y),r=boss.w*.67;
+    return dist2(x,y,boss.x,sy)<r*r;
+  }
   if(boss._s9fusion && boss._s9fusion.phase!=='tidal') return s9FusionHitTest(boss,x,y);
+  if(boss._ship==='doomsdaycarriermk2'&&boss._mega){
+    boss._mega.hit=carrierMegaNodeAt(boss,x,y);
+    if(boss._mega.hit)return true;
+  }
   if(boss.modular){ const p=modularPartAt(x,y); boss._lastPart=p||null; return !!p; }
   /* non-modular bosses: widen the box by the same draw stretch, for the same
      reason as modularPartAt above. */
@@ -20591,7 +24297,23 @@ function hitBoss(dmg){
      _shielded. Nothing carries those flags yet; the hook exists for when something does. */
   /* MECH: route the hit to whichever component is under the impact, so shooting an arm breaks
      THAT arm. Front-to-back, so the topmost piece takes it. During assembly nothing is hittable. */
+  if(!boss||boss.dead) return;
+  if(boss._ship==='xenoregent'&&typeof xenoRegentShieldAbsorb==='function'&&xenoRegentShieldAbsorb(boss,dmg)){
+    weaponHitSfx('normal');return;
+  }
+  if(boss._ship==='infernoreaver'&&typeof magmaWardBarrierDamage==='function'&&
+     magmaWardBarrierDamage(boss,dmg,_lastHitX,_lastHitY)){weaponHitSfx('normal');return;}
+  if(typeof stage4CoreTurretAbsorbHit==='function'&&stage4CoreTurretAbsorbHit(boss,dmg)){
+    weaponHitSfx('normal');return;
+  }
+  if(typeof stage4ShieldAbsorbHit==='function'&&stage4ShieldAbsorbHit(
+      boss,dmg,(_lastHitX!=null?_lastHitX:null),(_lastHitY!=null?_lastHitY:null))){
+    weaponHitSfx('normal');return;
+  }
+  const _elemHit=(typeof opposingElementImpact==='function')?opposingElementImpact(boss,'boss',_dmgBullet):null;
+  weaponHitSfx('normal');
   if(boss && boss._s9fusion && boss._s9fusion.phase!=='tidal'){ s9FusionHit(boss,dmg); return; }
+  if(boss&&boss._mega&&boss._mega.hit){const _mn=boss._mega.hit;boss._mega.hit=null;carrierMegaNodeDamage(boss,_mn,dmg);return;}
   if(boss && boss._mech && typeof mechHitPart==='function'){
     if(boss._mech.phase!=='fight') return;
     const _c=mechHitPart(boss, (_lastHitX!=null?_lastHitX:boss.x), (_lastHitY!=null?_lastHitY:boss.y));
@@ -20601,7 +24323,9 @@ function hitBoss(dmg){
     sxHit(boss, dmg, (_lastHitX!=null?_lastHitX:boss.x), (_lastHitY!=null?_lastHitY:boss.y));
   }
   if(boss.modular){ modularHit(dmg); return; }
+  if(typeof stage4WarfareClampDamage==='function')dmg=stage4WarfareClampDamage(boss,dmg);
   boss.hp-=dmg; boss.flash=0.08; if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
+  if(typeof stage4WarfareAfterDamage==='function')stage4WarfareAfterDamage(boss);
   const ratio=boss.hp/boss.maxhp;
   boss.dmgState = ratio>0.75?0 : ratio>0.5?1 : ratio>0.25?2 : ratio>0.08?3 : 4;
   if(boss.hp<=0 && !boss.dead){ bossDie(); }
@@ -20739,6 +24463,11 @@ function bossDeathChar(T){ return Math.min(0.7, (T||0) * 0.3); }
 let _bossFade = 1;
 function bossDie(){
   boss.dead=true; boss.dying=0; boss._blasted=false; bossActive=false; bossDefeated=true;
+  /* Side cores are real destructible units, but none may linger after their carrier dies. */
+  if(boss._s4war&&boss._s4war.coreTurrets)for(const t of boss._s4war.coreTurrets){
+    if(t.dead)continue;t.dead=true;t.hp=0;explode(t.x,t.y,64,'blue');
+    if(typeof fxBurst==='function')fxBurst(t.x,t.y,64,{color:'#32c8ff',rings:2,chunks:14,sparks:24});
+  }
   /* One authored boss-class origin blast, sized from the boss frame. The longer cook-off below
      adds waves, but it no longer begins with the old generic fxBurst placeholder. */
   if(typeof unitDeathFX==='function') unitDeathFX(boss,'boss',(curStage&&curStage.bg==='ice')?'blue':'red');
@@ -20773,8 +24502,10 @@ function ovTwinMG(b){
   const a1=eAimDown(aimPlayer(nz[0],nz[1])-0.05), a2=eAimDown(aimPlayer(nz2[0],nz2[1])+0.05);
   eBullets.push({x:nz[0],y:nz[1],vx:Math.cos(a1)*s*DIFF.ebSpeed, vy:Math.sin(a1)*s*DIFF.ebSpeed, w:5,h:12, kind:'mg', _ph:(Math.random()*4)|0});
   eBullets.push({x:nz2[0],y:nz2[1],vx:Math.cos(a2)*s*DIFF.ebSpeed, vy:Math.sin(a2)*s*DIFF.ebSpeed, w:5,h:12, kind:'mg', _ph:(Math.random()*4)|0});
-  navalFlash(null,{x:nz[0],y:nz[1]},0.74,S1_MUZZLE_ROTARY,{n:6,hpx:35,life:0.12});
-  navalFlash(null,{x:nz2[0],y:nz2[1]},0.74,S1_MUZZLE_ROTARY,{n:6,hpx:35,life:0.12});
+  navalFlash(null,{x:nz[0],y:nz[1]},0.74,S1_MUZZLE_ROTARY,{n:6,hpx:35,life:0.12,
+    follow:()=>{const p=ovMount(b,-10,54);return {x:p[0],y:p[1]};}});
+  navalFlash(null,{x:nz2[0],y:nz2[1]},0.74,S1_MUZZLE_ROTARY,{n:6,hpx:35,life:0.12,
+    follow:()=>{const p=ovMount(b,10,54);return {x:p[0],y:p[1]};}});
   b._muzL=0.12; b._muzR=0.12;
   if(Audio.SFX.enemyMachineGunBurst) Audio.SFX.enemyMachineGunBurst(); else if(Audio.SFX.enemyMachineGunHeavy) Audio.SFX.enemyMachineGunHeavy(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
@@ -20785,8 +24516,10 @@ function ovRocketSide(b, side, fan){
   if(side<0) b._mzlT=0.32; else b._mzrT=0.32;             // launch-flash anim timer for that pod
   const f=(fan||0)*side;
   eBullets.push({x:m[0],y:m[1],vx:(side*0.9+f),vy:0.8,w:14,h:24,kind:'s1jungleMissile',hp:1,spd:2.4,turn:0.055,t:0,ang:Math.PI/2,homing:true,_bright:true,_accel:0.06,_maxspd:4.0});
-  navalFlash(null,{x:m[0],y:m[1]},1.0,S1_MUZZLE_MILITARY,{n:6,hpx:40,life:0.17});
-  /* no launch alarm 0819d */
+  navalFlash(null,{x:m[0],y:m[1]},1.0,S1_MUZZLE_MILITARY,{n:6,hpx:40,life:0.17,
+    follow:()=>{const p=side<0?ovMount(b,-48,41):ovMount(b,46,41);return {x:p[0],y:p[1]};}});
+  /* Weapon report only—no lock-on alarm. */
+  if(Audio.SFX&&(Audio.SFX.missile||Audio.SFX.enemyBossCannon))(Audio.SFX.missile||Audio.SFX.enemyBossCannon)();
 }
 function ovReticleVolley(b){
   // Jungle missiles own this volley. Do not call enemyLockOn here: that helper launches an
@@ -20809,7 +24542,8 @@ function ovRotorTempest(b){
     eShootT(row[1][0],row[1][1],Math.PI/2+row[0],4.15,'s1windBlade',{w:12,h:18,curve:row[2],silent:i>0,impact:'green'});
   }
   eShootT(C[0],C[1],Math.PI/2,1.85,'s1windVortex',{w:20,h:20,szMul:1.16,silent:true,impact:'green'});
-  navalFlash(null,{x:C[0],y:C[1]},1.2,'s1fx_wind_vortex',{n:6,hpx:104,life:0.32,anchor:0.5});
+  navalFlash(null,{x:C[0],y:C[1]},1.2,'s1fx_wind_vortex',{n:6,hpx:104,life:0.32,anchor:0.5,
+    follow:()=>{const p=ovMount(b,0,12);return {x:p[0],y:p[1]};}});
 }
 function ovStartChargeTell(b){
   b._ovState='chargeTell';
@@ -20943,7 +24677,8 @@ function updateOverlordX(b, dt){
     else if(!T.locked){
       T.locked=true; T.lane=clamp(T.lane,72,VW-72);
       const hub=ovMount(b,0,4);
-      navalFlash(null,{x:hub[0],y:hub[1]},1.42,'s1fx_wind_vortex',{n:6,hpx:124,life:T.dur-T.t+0.12,anchor:0.5});
+      navalFlash(null,{x:hub[0],y:hub[1]},1.42,'s1fx_wind_vortex',{n:6,hpx:124,life:T.dur-T.t+0.12,anchor:0.5,
+        follow:()=>{const p=ovMount(b,0,4);return {x:p[0],y:p[1]};}});
     }
     const oldX=b.x;
     b.x=lerp(b.x,T.lane,p<0.48?0.10:0.035);
@@ -20954,7 +24689,8 @@ function updateOverlordX(b, dt){
     b._ovJitterX=Math.sin(T.t*72)*tellShake;
     b._ovJitterY=Math.cos(T.t*61)*tellShake*0.62;
     if(T.pulse<=0){ T.pulse=p>0.72?0.075:0.14; const hub=ovMount(b,0,2);
-      navalFlash(null,{x:hub[0],y:hub[1]},0.62+p*0.45,'s1fx_green_impact',{n:6,hpx:76+p*34,life:0.18,anchor:0.5});
+      navalFlash(null,{x:hub[0],y:hub[1]},0.62+p*0.45,'s1fx_green_impact',{n:6,hpx:76+p*34,life:0.18,anchor:0.5,
+        follow:()=>{const q=ovMount(b,0,2);return {x:q[0],y:q[1]};}});
     }
     if(p>0.82) shake=Math.max(shake,2+p*3);
     if(T.t>=T.dur){
@@ -21033,6 +24769,7 @@ function updateBoss(dt){
      for everything that is NOT a ship boss, so neither path double-advances it: a double tick
      doubles the spin and halves the duration. */
   if(!b._ship && (b._brk || b._brkCd>0) && typeof beamRakeTick==='function') beamRakeTick(b, dt);
+  if(b._vile&&b._annihilation)vileAnnihilationTick(b,dt);
   /* MECH BOSSES (drop 0730u) own their own assembly and limb motion. While the mech is still
      building itself the fight is gated: it does not shoot, and it takes no damage, exactly like
      the modular entrance below. */
@@ -21095,6 +24832,20 @@ function updateBoss(dt){
     if(typeof mechFireTick==='function') mechFireTick(b, dt);
   }
   if(b.modular && !b.dead){
+    /* The Stage-8 symbiote owns a bespoke gravity-fusion entrance. Keep the
+       normal modular movement/fire state completely dormant until its final
+       flash; `enter` simultaneously keeps player damage gated. */
+    if(b._symEntry){
+      if(symbioteEntryTick(b,dt))return;
+    }
+    /* Shell changes are short, invulnerable organic set-pieces. Holding this
+       branch prevents a freshly allocated quarter-bar from taking stray fire
+       or attacking before its new silhouette is readable. */
+    if(b._vile&&b._morphT!=null){
+      b._morphT+=dt;b.x=worldWidth()/2;b.y=b.ty;
+      if(b._morphT>=.55){b._morphT=null;b.enter=false;b.fireCd=.72;b.flash=.18;}
+      return;
+    }
     /* ASSEMBLY ENTRANCE owns the boss until it finishes. The fight cannot start mid-assembly:
        bossEntryTick returns true while it is still building and clears b.enter itself when the
        power-on completes. */
@@ -21111,7 +24862,7 @@ function updateBoss(dt){
       /* FURY DRIVES THE CADENCE (drop 0724dd). A boss on its last fifth fires 70% faster than one
          at full health, so the fight tightens as it ends instead of thinning out. */
       const _F=(typeof furyOf==='function')?furyOf(b):{rate:1};
-      b.fireCd -= dt*DIFF.eFire*(1+(b.dmgState||0)*0.12)*(run.stage>=2?1.5:1)*_F.rate;
+      b.fireCd -= dt*DIFF.eFire*(1+(b.dmgState||0)*0.12)*(run.stage>=2?1.5:1)*_F.rate*bossCadencePressure(b);
       if(b.fireCd<=0) bossAttack();
     }
     return;
@@ -21185,7 +24936,7 @@ function updateBoss(dt){
      the drift AND the dash system below it, which would otherwise fight the manoeuvre for control
      of b.x. Everything non-ship falls through untouched. */
   if(b._ship && typeof shipBossManoeuvre==='function' && shipBossManoeuvre(b, dt)){
-    b.fireCd -= dt*DIFF.eFire*(run.stage>=2?1.35:1);
+    b.fireCd -= dt*DIFF.eFire*(run.stage>=2?1.35:1)*bossCadencePressure(b);
     if(b.fireCd<=0) shipBossQueueAttack(b);
     return;
   }
@@ -21221,7 +24972,7 @@ function updateBoss(dt){
       b._cracked=true; shake=Math.max(shake,15); flashScreen=Math.max(flashScreen||0,0.3); Audio.SFX.expBig();
     }
   }
-  b.fireCd-=dt*DIFF.eFire*(1+b.dmgState*0.12)*(run.stage>=2?1.5:1);
+  b.fireCd-=dt*DIFF.eFire*(1+b.dmgState*0.12)*(run.stage>=2?1.5:1)*bossCadencePressure(b);
   if(b.fireCd<=0){ bossAttack(); }
 }
 let bossAtkRot=0;
@@ -21266,13 +25017,17 @@ function furyOf(b){
   const frac = clamp((b.hp||0)/b.maxhp, 0, 1);
   let t=FURY_TIERS[0];
   for(const tier of FURY_TIERS) if(frac <= tier.at) t=tier;
+  const P=b._threat||((typeof combatThreat==='function')?combatThreat():{bossDensity:1,bullet:1});
+  let out={name:t.name,rate:t.rate,dens:t.dens*(P.bossDensity||1),aim:t.aim,
+           spd:t.spd,at:t.at};
   /* A boss that has lost its limbs fights harder with what is left — the wounded-animal beat that
      makes a sectional fight escalate instead of fizzling as parts come off. */
   if(typeof sxArmamentLeft==='function' && b._sx){
     const left=sxArmamentLeft(b);
-    if(left<0.6) return {name:t.name+'+', rate:t.rate*1.15, dens:t.dens*1.10, aim:Math.min(0.8,t.aim+0.1), spd:t.spd*1.06, at:t.at};
+    if(left<0.6) out={name:out.name+'+', rate:out.rate*1.15, dens:out.dens*1.10,
+      aim:Math.min(0.8,out.aim+0.1), spd:out.spd*1.06, at:out.at};
   }
-  return t;
+  return out;
 }
 /* TELEGRAPH: hold the pattern for a beat and show where it is coming from. */
 function bossTelegraph(b, x, y, dur, col){
@@ -21351,7 +25106,7 @@ function furyWall(b, cy, F, spd, kind){
   }
   return out;
 }
-function bossAttack(){
+function bossAttack__inner(){
   // NAMED PROFILES FIRST. The Magma Colossus (level 2) had no profile at all, so it fell through
   // every branch and never fired a shot — it just hovered. This is the boss-side hook.
   if(boss && boss._ship && typeof shipBossAttack==='function'){ shipBossAttack(boss); boss._firing=0.35; return; }
@@ -22557,7 +26312,8 @@ const GRAVITY_PIECES=[
 let gravityMode=null;
 function gravityModeReset(){ gravityMode=null; }
 const GRAVITY_CHARGE_DUR=4.10,GRAVITY_SCATTER_DUR=0.82,GRAVITY_SNAP_DUR=0.64,
-      GRAVITY_PIXEL_DUR=0.92,GRAVITY_WHITE_DUR=0.50,GRAVITY_REVEAL_DUR=0.86;
+      GRAVITY_PIXEL_DUR=0.92,GRAVITY_WHITE_DUR=0.50,GRAVITY_REVEAL_DUR=0.86,
+      GRAVITY_DIALOGUE_CPS=38,GRAVITY_DIALOGUE_HOLD=1.35;
 function gravityModeStart(){
   if(!run || (run.stage!==5 && run.stage!==9)){ gravityMode=null; return false; }
   if(run.stage===9) return gravityModeRetain();
@@ -22595,8 +26351,8 @@ function gravityModeTick(dt){
   gravityMode.t+=dt;gravityMode.age=(gravityMode.age||0)+dt;
   if(gravityMode.phase==='drift'){
     gravityMode.dialogueT=(gravityMode.dialogueT||0)+dt;
-    const chars=Math.max(0,(gravityMode.dialogueT-gravityMode.dialogueDelay)*44);
-    if(chars>=(gravityMode.line||'').length+44*0.85)gravityMode.dialogueDone=true;
+    const chars=Math.max(0,(gravityMode.dialogueT-gravityMode.dialogueDelay)*GRAVITY_DIALOGUE_CPS);
+    if(chars>=(gravityMode.line||'').length+GRAVITY_DIALOGUE_CPS*GRAVITY_DIALOGUE_HOLD)gravityMode.dialogueDone=true;
   }else if(gravityMode.phase==='charge'){
     const at=[0,0.90,1.75,2.55,3.30];let band=0;
     for(let i=1;i<at.length;i++)if(gravityMode.t>=at[i])band=i;
@@ -22683,10 +26439,25 @@ function gravityModeDrawShip(drawX,drawY,drawSize){
     if(tr){ const th=size*0.58,tw=th*(tr.w/tr.h);
       ctx.save();ctx.globalCompositeOperation='lighter';spaceAtlasDraw(ctx,tf,x,y+size*0.55,tw,th,true,pilot);ctx.restore(); }
     let key='ship_base';
-    if(phase==='active'&&player.roll){
+    const forcedRoll=phase==='active'&&typeof warpForcedRollFrame==='function'?warpForcedRollFrame():null;
+    if(forcedRoll!=null){
+      key='ship_roll_'+String(forcedRoll).padStart(2,'0');
+      if(!spaceAtlasRect(key))key='ship_base';
+    }else if(phase==='active'&&player.roll){
       const rp=clamp(player.roll.t/player.roll.dur,0,1),fi=clamp(Math.floor(rp*17),0,16);
       key='ship_roll_'+String(player.roll.dir>0?16-fi:fi).padStart(2,'0');
       if(!spaceAtlasRect(key))key='ship_base';
+    }else if(phase==='active'){
+      /* The Gravity craft has its own authored three-step left/right perspective row.  The old
+         renderer ignored it and held ship_base through every ordinary turn, only changing art
+         for the dodge somersault.  Follow the same bank value that drives movement/hitbox so the
+         silhouette now visibly twists into and out of both directions. */
+      const bank=clamp(player._bank||0,-1,1),ab=Math.abs(bank);
+      if(ab>=0.08){
+        const step=ab<0.34?1:(ab<0.68?2:3);
+        const bankKey='ship_bank_'+(bank<0?'l':'r')+step;
+        if(spaceAtlasRect(bankKey))key=bankKey;
+      }
     }
     const r=spaceAtlasRect(key),h=size,w=h*(r?r.w/r.h:0.93);
     ctx.save();ctx.globalCompositeOperation='source-over';
@@ -22711,7 +26482,7 @@ function gravityModeDrawShip(drawX,drawY,drawSize){
     ctx.restore();
   }
   if(phase==='active'&&(run._spaceShadowCharge||0)>0){
-    const p=clamp(run._spaceShadowCharge/1.55,0,1),f=clamp(Math.floor(p*3),0,2),s=size*(0.20+p*0.25),lv=spaceWeaponLevel(),hp=spaceShipHardpoints(x,y,size).nose;
+    const p=clamp(run._spaceShadowCharge/SPACE_SHADOW_FULL_CHARGE,0,1),f=clamp(Math.floor(p*3),0,2),s=size*(0.20+p*0.25),lv=spaceWeaponLevel(),hp=spaceShipHardpoints(x,y,size).nose;
     ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowColor=p>=0.985?'#ffffff':'#8e48ff';ctx.shadowBlur=p>=0.985?20:9;
     spaceAtlasDraw(ctx,'shadow_'+lv+'_charge_'+f,hp.x,hp.y,s,s,true,null);
     if(p>=0.985){ctx.globalAlpha=0.34+0.24*Math.sin(performance.now()*0.025);spaceAtlasDraw(ctx,'shadow_'+lv+'_charge_2',hp.x,hp.y,s*1.28,s*1.28,true,null);}
@@ -22727,7 +26498,7 @@ function gravityModeDrawShip(drawX,drawY,drawSize){
      transformation hands control to the countdown. */
   if(phase!=='active'&&(gravityMode.dialogueT||0)>gravityMode.dialogueDelay){
     const full=gravityMode.line||'',shown=phase==='drift'
-      ?full.slice(0,Math.max(0,Math.floor(((gravityMode.dialogueT||0)-gravityMode.dialogueDelay)*44)))
+      ?full.slice(0,Math.max(0,Math.floor(((gravityMode.dialogueT||0)-gravityMode.dialogueDelay)*GRAVITY_DIALOGUE_CPS)))
       :full;
     const fade=clamp(((gravityMode.dialogueT||0)-gravityMode.dialogueDelay)/0.28,0,1);
     if(typeof dlgBox==='function')dlgBox({who:'FURY HQ',tint:'#ffb347',full,shown,fade,portrait:false,
@@ -23299,7 +27070,7 @@ function _drawPlayerCore(){
 }
 
 function tintColor(e){
-  if(e.flash>0){ return '#ffffff'; }   // WHITE-only hit flash. (The old red tail band '#ff4040' @0.55 turned
+  if(e.flash>0){ return hitFlashColor(e,'#ffffff'); }   // ordinary white, opposing elements red/light-blue
   return null;                         //  light-grey jets salmon-PINK for a few frames per hit — Mike's smear.)
 }
 
@@ -23510,7 +27281,7 @@ function drawL6XFighter(e){
   /* fade removed: opacity held at 1 */
   ctx.drawImage(im,-w/2,-h/2,w,h);
   if(e.flash>0 && typeof xartTint==='function'){
-    const tc=xartTint(k, e.flash>0.04?'#ffffff':'#ff8a4a', 0.85);
+    const tc=xartTint(k, hitFlashColor(e,e.flash>0.04?'#ffffff':'#ff8a4a'), 0.85);
     if(tc) ctx.drawImage(tc,-w/2,-h/2,w,h);
   }
   ctx.restore();
@@ -23530,7 +27301,7 @@ function drawNewEnemyArt(e){
   const im=XART.get(key);
   // uniform canvas: draw at e.w footprint; height from canvas aspect (1:1)
   const _foot = TURRET_ART.has(base) ? TURRET_FOOT : ((e._foot!=null)?e._foot:ENEMY_ART_FOOT);
-  const dw=e.w*_foot, dh=dw*(im.naturalHeight/im.naturalWidth);
+  const dw=(e._bodyW||e.w)*_foot, dh=dw*(im.naturalHeight/im.naturalWidth);
   e._drawW=dw; e._drawH=dh;
   const t=tintColor(e);
   ctx.save(); ctx.translate(e.x, e.y + (e._navBob||0) + (typeof volcHover==='function'?volcHover(e):0));   // boats bob vertically; volcanic units levitate
@@ -23761,7 +27532,7 @@ function drawBCarrier(e){
        names it the other way round, and my sweep flipped this one the wrong way
        (drop 0801fu). Stage 6 threw "k is not defined" on the first frame a bcarrier
        flashed, killing the rest of the draw. */
-    const _tc=xartTint(key, e.flash>0.04?'#ffffff':'#ff8a4a', 0.85);
+    const _tc=xartTint(key, hitFlashColor(e,e.flash>0.04?'#ffffff':'#ff8a4a'), 0.85);
     if(_tc) ctx.drawImage(_tc,-w/2,-h/2,w,h);
   }
   ctx.restore();
@@ -23810,11 +27581,18 @@ function drawEnemy(e){
   if(e._bcar && drawBCarrier(e)) return;
   if(e._el8 && drawElite8(e)) return;
   if(e._volc && drawVolc(e)) return;
+  if(e._s3ice && drawS3Ice(e)) return;
+  if(e._s4chase && drawS4Chase(e)) return;
+  if(e._s6storm && drawS6Storm(e)) return;
+  if(e._s7toxic && drawS7Toxic(e)) return;
+  if(e._s8mega && typeof drawS8Mega==='function' && drawS8Mega(e)) return;
   if(e._sew && drawSewer(e)) return;
   if(e._orb && drawOrbital(e)) return;
+  if(e._s5space && typeof drawS5Space==='function' && drawS5Space(e)) return;
   if(e._el && drawElite(e)) return;
   if(e._mini && drawMini(e)) return;
   if(e._s9 && typeof drawS9VoidEnemy==='function' && drawS9VoidEnemy(e)) return;
+  if(e._s9void && typeof drawS9Void==='function' && drawS9Void(e)) return;
   if(e._bunker && drawBunker(e)) return;
   if(e._tur && drawTur360(e)) return;
   if(e._droid && e._dyingT==null && typeof droidDraw==='function'){
@@ -24602,7 +28380,7 @@ function drawBossInner(){
   if(ASSETS.ready && ( (b.kind==='damkeeper'&&typeof XART!=='undefined'&&XART.rdy('ovbody_intact')) || _hasNewBoss || (run.stage===2&&ASSETS.has('dread_0')) || (run.stage===1&&ASSETS.has('boss2_0')) || (run.stage===3&&ASSETS.has('boss3_0')) || (run.stage===4&&ASSETS.has('boss4_0')) || (run.stage===5&&ASSETS.has('boss5_0')) || (b.kind==='damkeeper'&&ASSETS.has('boss_idle')) )){ drawBossSprite(b); return; }
   ctx.save(); ctx.translate(b.x,b.y);
   const dmg=b.dmgState;
-  const flash = b.flash>0 ? (b.flash>0.04?'#ffffff':'#ff5a5a') : null;
+  const flash = b.flash>0 ? hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff5a5a') : null;
   // rotor blades (helicopter-fortress)
   if(b.kind==='damkeeper'||b.kind==='dreadnought'){
     ctx.strokeStyle=flash||'#9a9a8a'; ctx.lineWidth=3;
@@ -24897,6 +28675,13 @@ function _bossProjFam(){
           : ((typeof subBoss!=='undefined'&&subBoss&&subBoss._mech) ? subBoss._mech.tag : null);
   return src ? (BOSS_PROJ_FAM[src]||null) : null;
 }
+function bossVisualFamily(owner){
+  if(owner&&owner._bfam)return owner._bfam;
+  if(owner&&owner._mech&&BOSS_PROJ_FAM[owner._mech.tag])return BOSS_PROJ_FAM[owner._mech.tag];
+  if(owner&&owner._ship&&SHIPBOSS[owner._ship]&&SHIPBOSS[owner._ship].proj)return SHIPBOSS[owner._ship].proj;
+  const st=(typeof run!=='undefined'&&run)?run.stage:1;
+  return ({1:'warhawk',2:'magma',3:'cryo',4:'mirv',5:'rampart',6:'storm',7:'toxic',8:'sludge',9:'cyclone'})[st]||null;
+}
 function _bossProjKey(b){
   const fam = b._bfam || (b._bfam = _bossProjFam());
   if(!fam) return null;
@@ -24960,6 +28745,10 @@ function pelletKey(b){
 }
 const FIRETYPES={
   pellet:{ art:(b)=>pelletKey(b), align:true, h:20, glow:(b)=>PELLET_GLOW[pelletFam(b)]},
+  /* Stage 1 military fire is a fixed in-flight tracer. Cycling the six construction frames made
+     a bullet visibly twist and change silhouette while travelling; the final authored frame is
+     the complete projectile and only its launch vector controls its orientation. */
+  s1bullet:{art:(b)=>'mgcf_1_5',align:true,h:22,glow:'#ffb52a',glow2:'#fff4c2'},
   flare: { art:(b)=>'mfx_ea_3_'+(((Math.floor(performance.now()/80)+((b._ph|0)||0))%8)), spin:0, h:15, glow:'#ffd36b'},
   comet: { art:(b)=>eaCometKey(b.pal||'red', ((b.t||0)*12)|0), align:true, h:20, glow:'#ff8a4a'},
   blast: { art:(b)=>'mfx_bpow_'+({red:0,blue:1,white:2}[b.pal||'red']||0)+'_0', align:false, h:26, glow:'#ffd36b'},
@@ -24997,6 +28786,55 @@ const FIRETYPES={
   /* Use the authored molten-orb reel; the old electrical star was the wrong visual language. */
   magma: { art:(b)=>'ndc_magmaorb_'+(((b.t||0)*12|0)%4), align:false, h:26, glow:'#ff4a00', glow2:'#ffd36b'},
   lavaComet:{art:(b)=>'fx0825_lava_comet', align:true, h:25, glow:'#ff9a24', glow2:'#fff0a0'},
+  /* Stage 2's lava-safe ammunition. These are deliberately procedural pixel silhouettes rather
+     than orange atlas recolours: a hard black/navy border survives white-hot lava, cyan separates
+     the edge from the scenery, and the yellow-white core still belongs to the volcanic stage. */
+  s2needle:{proc:'needle'}, s2rake:{proc:'rake'}, s2slag:{proc:'slag'},
+  s2rocket:{proc:'rocket'}, s2bomb:{proc:'bomb'}, s2shock:{proc:'shock'},
+  s2breath:{proc:'breath'}, s2slug:{proc:'slug'}, s2mine:{proc:'mine'},
+  /* Stage 3 uses a dark violet silhouette and warm gold core so every round stays legible over
+     white snow, cyan ice and the bright boss arena.  These never share Stage 2's cyan rim. */
+  s3shard:{proc3:'shard'}, s3lance:{proc3:'lance'}, s3tracer:{proc3:'tracer'},
+  s3mortar:{proc3:'mortar'}, s3shell:{proc3:'shell'}, s3wave:{proc3:'wave'},
+  /* Stage 4's six supplied weapon families use a black silhouette first, then a bright material
+     core. That survives gray asphalt, runway lights and the pale high-speed highway plate. */
+  s4steel:{proc4:'steel'},s4brass:{proc4:'brass'},s4rocket:{proc4:'rocket'},
+  s4missile:{proc4:'missile'},s4bomb:{proc4:'bomb'},s4rail:{proc4:'rail'},
+  /* Stage 6 ammunition has a near-black storm silhouette, electric-blue material edge and a
+     white/gold core.  It stays readable over every time-of-day state and the animated rain. */
+  s6wind:{proc6:'wind'},s6bolt:{proc6:'bolt'},s6missile:{proc6:'missile'},
+  s6orb:{proc6:'orb'},s6tracer:{proc6:'tracer'},s6seeker:{proc6:'seeker'},
+  /* Stage 7 uses a charcoal silhouette, toxic-lime material and white core. Purple accent
+     separates bio ordnance from the green sewer while preserving a hard readable edge. */
+  s7acid:{proc7:'acid'},s7sludge:{proc7:'sludge'},s7shard:{proc7:'shard'},
+  s7bio:{proc7:'bio'},s7laser:{proc7:'laser'},s7grenade:{proc7:'grenade'},
+  s7spore:{art:(b)=>'s7spore_'+(((b.t||0)*12|0)%12),spin:1.1,h:64,glow:'#aaff21'},
+  /* Deep-space families have hard charcoal silhouettes, then stage-specific luminous cores.
+     Every pointed round visibly faces its actual velocity; none flip or home after release. */
+  s5fracture:{procSpace:'s5-fracture'},s5split:{procSpace:'s5-split'},s5prism:{procSpace:'s5-prism'},
+  s5null:{procSpace:'s5-null'},s5missile:{procSpace:'s5-missile'},s5chaos:{procSpace:'s5-chaos'},
+  s5halo:{art:(b)=>'s5fracture_'+(((b.t||0)*12|0)%12),spin:.85,h:70,glow:'#d447ff'},
+  s8needle:{procSpace:'s8-fracture'},s8rage:{procSpace:'s8-warp'},s8slug:{procSpace:'s8-gold'},
+  s8missile:{procSpace:'s8-missile'},s8pair:{procSpace:'s8-pair'},s8blade:{procSpace:'s8-chaos'},
+  s8rift:{art:(b)=>'s8rift_'+(((b.t||0)*16|0)%16),spin:.9,h:72,glow:'#ff4322'},
+  /* Six authored symbiote-fleet rounds. Their silhouettes remain south-facing and stable; only
+     internal pixels cycle, which avoids the old rotating/flipping-pellet look. */
+  s8nf_gunship:{art:(b)=>'s8nf_armored_gunship_projectile_'+(((b.t||0)*15|0)%4),align:false,h:43,glow:'#ff3322'},
+  s8nf_needle:{art:(b)=>'s8nf_needle_interceptor_projectile_'+(((b.t||0)*16|0)%4),align:false,h:45,glow:'#20efff'},
+  s8nf_scout:{art:(b)=>'s8nf_scout_drone_projectile_'+(((b.t||0)*14|0)%4),align:false,h:37,glow:'#8cff18'},
+  s8nf_solar:{art:(b)=>'s8nf_solar_corvette_projectile_'+(((b.t||0)*13|0)%4),align:false,h:44,glow:'#bb55ff'},
+  s8nf_spread:{art:(b)=>'s8nf_spread_wing_fighter_projectile_'+(((b.t||0)*17|0)%4),align:false,h:42,glow:'#2f9fff'},
+  s8nf_crescent:{art:(b)=>'s8nf_stealth_crescent_projectile_'+(((b.t||0)*14|0)%4),align:false,h:46,glow:'#c548ff'},
+  s9gold:{procSpace:'s9-gold'},s9warp:{procSpace:'s9-warp'},s9turbo:{procSpace:'s9-turbo'},
+  s9needle:{procSpace:'s9-needle'},s9comet:{procSpace:'s9-comet'},s9pair:{procSpace:'s9-pair'},
+  s9lattice:{art:(b)=>'s9lattice_'+(((b.t||0)*12|0)%12),spin:1.15,h:72,glow:'#43e9ff'},
+  /* Doomsday Carrier Mk II arsenal: supplied animated plates, not generic bullets. */
+  s6cyclone:{art:(b)=>'s6mb_cyclonetracer_'+(((b.t||0)*16|0)%8),align:true,h:42,glow:'#55dfff'},
+  s6prism:{art:(b)=>'s6mb_prismbolt_'+(((b.t||0)*15|0)%8),align:true,h:44,glow:'#d9f8ff'},
+  s6flak:{art:(b)=>'s6mb_flakshell_'+(((b.t||0)*14|0)%8),align:true,h:38,glow:'#ffd05a'},
+  s6gravity:{art:(b)=>'s6mb_gravitymine_'+(((b.t||0)*12|0)%8),spin:1.8,h:52,glow:'#9f5cff'},
+  s6omega:{art:(b)=>'s6mb_omegabomb-hostile_'+(((b.t||0)*12|0)%8),align:true,h:58,glow:'#ff7d45'},
+  s6cluster:{art:(b)=>'s6mb_clusterbomblet_'+(((b.t||0)*16|0)%8),align:true,h:34,glow:'#ffcf4a'},
   /* Stage 1's platforms no longer share anonymous fantasy bolts. Military hulls use metal,
      launchers use a toxic Jungle warhead, and the two command fights own the emerald wind set. */
   s1cannon:{art:(b)=>'s1fx_cannon_shell_'+Math.min(5,((b.t||0)*15)|0),align:true,h:31,glow:'#f3d56a'},
@@ -25051,8 +28889,245 @@ deriveFireType('kingPellet','pellet',{szMul:1.5, glow:'#ffe06b'});
    strafer's, and `_shipShot` already asks for w 10-13 against a strafer's ~8. One number.
    ============================================================ */
 deriveFireType('eshot','pellet',{h:18});
+function drawStage2Projectile(b, role){
+  const mul=b.szMul||1, pulse=0.78+0.22*Math.sin((b.t||0)*18+(b._ph||0));
+  const poly=(pts,fill)=>{ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();};
+  const circ=(x,y,r,fill)=>{ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fillStyle=fill;ctx.fill();};
+  ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));
+  ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);ctx.scale(mul,mul);
+  /* Volcano Maw used to fall through the premium `laser` family, making a molten vent throw
+     electric-blue shots. Keep its three-lobed breath silhouette but palette it as fire: a hard
+     near-black rim for lava readability, red body, orange core and hot cream centre. */
+  const _mawFire=b.kind==='s2breath';
+  const dark='#030711', edge=_mawFire?'#ff321c':'#36dfff', hot=_mawFire?'#ff981f':'#ffe34f',
+        white=_mawFire?'#fff0b0':'#fffdf0';
+  if(role==='needle'){
+    poly([[0,-13],[7,-2],[5,10],[0,14],[-5,10],[-7,-2]],dark);
+    poly([[0,-10],[4,-1],[2,10],[0,12],[-2,10],[-4,-1]],edge);
+    poly([[0,-8],[2,-1],[0,8],[-2,-1]],white);
+  }else if(role==='rake'){
+    poly([[0,-14],[9,-5],[5,13],[0,9],[-5,13],[-9,-5]],dark);
+    poly([[0,-10],[6,-4],[3,8],[0,5],[-3,8],[-6,-4]],edge);
+    poly([[0,-8],[3,-3],[0,6],[-3,-3]],hot);circ(0,-4,2.2,white);
+  }else if(role==='slag'){
+    circ(0,0,12,dark);circ(0,0,9,edge);circ(0,0,6.4,hot);circ(-1,-1,3.4,white);
+    const q=(b.t||0)*4.5;circ(Math.cos(q)*8,Math.sin(q)*8,1.5,white);
+  }else if(role==='rocket'){
+    poly([[0,-16],[7,-7],[7,8],[12,13],[4,12],[0,17],[-4,12],[-12,13],[-7,8],[-7,-7]],dark);
+    poly([[0,-12],[4,-5],[4,8],[7,10],[2,9],[0,13],[-2,9],[-7,10],[-4,8],[-4,-5]],edge);
+    poly([[0,-9],[2,-4],[2,7],[0,10],[-2,7],[-2,-4]],white);circ(0,-4,2.2,hot);
+  }else if(role==='bomb'){
+    poly([[0,-12],[7,-8],[11,0],[7,9],[0,13],[-7,9],[-11,0],[-7,-8]],dark);
+    circ(0,0,8,edge);circ(0,0,5,hot);circ(-1,-1,2.5,white);
+    ctx.fillStyle=white;ctx.fillRect(-2,-11,4,4);
+  }else if(role==='shock'){
+    poly([[-16,-8],[0,2],[16,-8],[12,5],[0,13],[-12,5]],dark);
+    poly([[-11,-5],[0,2],[11,-5],[8,3],[0,8],[-8,3]],edge);
+    poly([[-5,-2],[0,2],[5,-2],[0,6]],white);
+  }else if(role==='breath'){
+    circ(0,-7,8,dark);circ(-6,3,7,dark);circ(6,3,7,dark);
+    circ(0,-7,5.5,edge);circ(-6,3,4.5,edge);circ(6,3,4.5,edge);
+    circ(0,-7,3.2,white);circ(-6,3,2.5,hot);circ(6,3,2.5,hot);
+  }else if(role==='slug'){
+    poly([[0,-14],[9,-7],[10,5],[5,13],[0,16],[-5,13],[-10,5],[-9,-7]],dark);
+    poly([[0,-10],[6,-5],[6,5],[3,10],[0,12],[-3,10],[-6,5],[-6,-5]],edge);
+    circ(0,1,4.5,hot);circ(0,-1,2.5,white);
+  }else{ // mine: rotating, unmistakable hazard ring used by the disc and eruption pod
+    ctx.rotate((b.t||0)*2.8);circ(0,0,11,dark);circ(0,0,8.5,edge);circ(0,0,5.5,dark);circ(0,0,3.5,white);
+    ctx.fillStyle=hot;ctx.fillRect(-2,-12,4,5);ctx.fillRect(-2,7,4,5);ctx.fillRect(-12,-2,5,4);ctx.fillRect(7,-2,5,4);
+  }
+  ctx.globalAlpha=0.22*pulse;circ(0,0,role==='shock'?14:10,white);
+  ctx.restore();return true;
+}
+function drawStage3Projectile(b,role){
+  const mul=b.szMul||1,pulse=.80+.20*Math.sin((b.t||0)*19+(b._ph||0));
+  const poly=(pts,fill)=>{ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();};
+  const circ=(x,y,r,fill)=>{ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fillStyle=fill;ctx.fill();};
+  ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));
+  ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);ctx.scale(mul,mul);
+  const dark='#02030a',edge='#a20fff',hot='#ffbd22',white='#fff8d6';
+  if(role==='shard'){
+    poly([[0,-15],[7,-2],[4,12],[0,17],[-4,12],[-7,-2]],dark);
+    poly([[0,-11],[4,-1],[2,10],[0,13],[-2,10],[-4,-1]],edge);
+    poly([[0,-8],[2,-1],[0,8],[-2,-1]],white);
+  }else if(role==='lance'){
+    poly([[0,-18],[8,-9],[8,9],[3,17],[0,20],[-3,17],[-8,9],[-8,-9]],dark);
+    poly([[0,-14],[4,-7],[4,9],[0,15],[-4,9],[-4,-7]],edge);
+    ctx.fillStyle=hot;ctx.fillRect(-2,-10,4,20);circ(0,-8,2.4,white);
+  }else if(role==='tracer'){
+    poly([[0,-13],[6,-5],[5,9],[0,15],[-5,9],[-6,-5]],dark);
+    poly([[0,-9],[3,-4],[2,8],[0,11],[-2,8],[-3,-4]],hot);circ(0,-5,2.2,white);
+  }else if(role==='mortar'){
+    circ(0,0,13,dark);circ(0,0,9,edge);circ(0,0,5.5,hot);circ(-1,-1,2.8,white);
+    const q=(b.t||0)*5;circ(Math.cos(q)*9,Math.sin(q)*9,1.7,white);
+  }else if(role==='shell'){
+    poly([[0,-17],[8,-9],[9,8],[5,15],[0,19],[-5,15],[-9,8],[-8,-9]],dark);
+    poly([[0,-12],[5,-7],[5,8],[2,13],[0,15],[-2,13],[-5,8],[-5,-7]],edge);
+    poly([[0,-10],[2,-5],[2,8],[0,12],[-2,8],[-2,-5]],hot);circ(0,-6,2,white);
+  }else{ // wave: a broad crescent, outlined twice so it cannot disappear into a snow bank
+    poly([[-18,-9],[0,0],[18,-9],[14,7],[0,15],[-14,7]],dark);
+    poly([[-13,-6],[0,1],[13,-6],[10,4],[0,10],[-10,4]],edge);
+    poly([[-5,-2],[0,1],[5,-2],[0,6]],hot);
+  }
+  ctx.globalAlpha=.18*pulse;circ(0,0,role==='wave'?15:10,white);
+  ctx.restore();return true;
+}
+function drawStage4Projectile(b,role){
+  const mul=b.szMul||1,pulse=.80+.20*Math.sin((b.t||0)*20+(b._ph||0));
+  const poly=(pts,fill)=>{ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();};
+  const circ=(x,y,r,fill)=>{ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fillStyle=fill;ctx.fill();};
+  ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);ctx.scale(mul,mul);
+  const dark='#020409',cyan='#22d8ff',blue='#3975ff',gold='#ffd238',red='#ff3d21',white='#fffdf0';
+  if(role==='steel'){
+    poly([[0,-14],[7,-7],[7,8],[3,14],[0,16],[-3,14],[-7,8],[-7,-7]],dark);
+    poly([[0,-10],[4,-5],[4,7],[0,12],[-4,7],[-4,-5]],cyan);ctx.fillStyle=white;ctx.fillRect(-2,-8,4,15);
+  }else if(role==='brass'){
+    poly([[0,-12],[6,-5],[5,10],[0,15],[-5,10],[-6,-5]],dark);
+    poly([[0,-8],[3,-3],[2,8],[0,11],[-2,8],[-3,-3]],gold);circ(0,-5,2.2,white);
+  }else if(role==='rocket'){
+    poly([[0,-17],[7,-9],[7,9],[12,14],[4,12],[0,18],[-4,12],[-12,14],[-7,9],[-7,-9]],dark);
+    poly([[0,-13],[4,-6],[4,8],[7,11],[2,10],[0,14],[-2,10],[-7,11],[-4,8],[-4,-6]],red);
+    poly([[0,-10],[2,-5],[2,8],[0,11],[-2,8],[-2,-5]],white);
+  }else if(role==='missile'){
+    poly([[0,-19],[8,-10],[8,10],[4,16],[0,21],[-4,16],[-8,10],[-8,-10]],dark);
+    poly([[0,-15],[5,-8],[5,9],[2,14],[0,17],[-2,14],[-5,9],[-5,-8]],cyan);
+    poly([[0,-12],[2,-7],[2,8],[0,12],[-2,8],[-2,-7]],white);ctx.fillStyle=gold;ctx.fillRect(-3,-15,6,4);
+  }else if(role==='bomb'){
+    poly([[0,-13],[8,-9],[12,0],[8,10],[0,14],[-8,10],[-12,0],[-8,-9]],dark);
+    circ(0,0,8.5,gold);circ(0,0,5,red);circ(-1,-1,2.5,white);ctx.fillStyle=cyan;ctx.fillRect(-2,-12,4,5);
+  }else{
+    poly([[0,-18],[6,-10],[5,13],[0,20],[-5,13],[-6,-10]],dark);
+    poly([[0,-14],[3,-8],[2,12],[0,16],[-2,12],[-3,-8]],blue);ctx.fillStyle=white;ctx.fillRect(-1.5,-11,3,23);
+  }
+  ctx.globalAlpha=.18*pulse;circ(0,0,role==='bomb'?12:9,white);ctx.restore();return true;
+}
+function drawStage4WarfareProjectile(b){
+  if(!b||!b._s4wKind||typeof XART==='undefined')return false;
+  const role=b._s4wKind,t=b.t||0;
+  let key,h,round=false;
+  if(role==='mg'){key='s4w_mg_round_'+(Math.floor(t*30)%6);h=28;}
+  else if(role==='lightningmg'){key='s4w_lightning_mg_round_'+(Math.floor(t*34)%8);h=34;}
+  else if(role==='spread'){key='s4w_spread_round_'+(Math.floor(t*18)%8);h=38;}
+  else if(role==='orb'){key='s4w_lightning_ball_'+(Math.floor(t*18)%16);h=62;round=true;}
+  else{key='s4w_lightning_lance_'+(Math.floor(t*20)%8);h=54;}
+  if(!XART.rdy(key))return false;const im=XART.get(key),mul=b.szMul||1,w=h*(im.naturalWidth/Math.max(1,im.naturalHeight))*mul;h*=mul;
+  ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));
+  if(!round)ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);
+  ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
+}
+function drawStage6Projectile(b,role){
+  const mul=b.szMul||1,pulse=.80+.20*Math.sin((b.t||0)*22+(b._ph||0));
+  const poly=(pts,fill)=>{ctx.beginPath();ctx.moveTo(pts[0][0],pts[0][1]);for(let i=1;i<pts.length;i++)ctx.lineTo(pts[i][0],pts[i][1]);ctx.closePath();ctx.fillStyle=fill;ctx.fill();};
+  const circ=(x,y,r,fill)=>{ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fillStyle=fill;ctx.fill();};
+  ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);ctx.scale(mul,mul);
+  const dark='#01050c',navy='#07182a',blue='#17bfff',electric='#627dff',gold='#ffd83d',white='#f8ffff';
+  if(role==='wind'){
+    poly([[-17,-9],[-2,-3],[0,-15],[4,-4],[17,-9],[12,5],[0,15],[-12,5]],dark);
+    poly([[-12,-6],[-1,-1],[0,-10],[3,-1],[12,-6],[8,3],[0,10],[-8,3]],blue);
+    poly([[-4,-2],[0,1],[4,-2],[0,6]],white);
+  }else if(role==='bolt'){
+    poly([[-5,-17],[5,-17],[2,-5],[8,-5],[-3,18],[-1,4],[-7,4]],dark);
+    poly([[-2,-13],[2,-13],[0,-2],[4,-2],[-1,12],[0,1],[-3,1]],gold);
+    poly([[-1,-11],[1,-11],[0,-3],[2,-3],[0,5]],white);
+  }else if(role==='missile'){
+    poly([[0,-19],[8,-10],[8,9],[13,15],[4,12],[0,21],[-4,12],[-13,15],[-8,9],[-8,-10]],dark);
+    poly([[0,-15],[5,-7],[5,8],[8,12],[2,10],[0,16],[-2,10],[-8,12],[-5,8],[-5,-7]],electric);
+    poly([[0,-12],[2,-6],[2,7],[0,12],[-2,7],[-2,-6]],white);ctx.fillStyle=gold;ctx.fillRect(-3,-16,6,4);
+  }else if(role==='orb'){
+    circ(0,0,13,dark);circ(0,0,9.5,blue);circ(0,0,6.2,navy);circ(0,0,3.7,white);
+    const q=(b.t||0)*7;circ(Math.cos(q)*9,Math.sin(q)*9,2,gold);
+  }else if(role==='tracer'){
+    poly([[0,-14],[5,-7],[4,10],[0,16],[-4,10],[-5,-7]],dark);
+    poly([[0,-10],[2.5,-5],[2,9],[0,12],[-2,9],[-2.5,-5]],gold);ctx.fillStyle=white;ctx.fillRect(-1,-8,2,15);
+  }else{
+    /* Forecast cells are fixed pressure lanes, not homing orbs.  The diamond makes their
+       orientation visible while they accelerate straight down the announced column. */
+    poly([[0,-16],[12,0],[0,16],[-12,0]],dark);poly([[0,-11],[8,0],[0,11],[-8,0]],electric);
+    poly([[0,-6],[5,0],[0,6],[-5,0]],navy);circ(0,0,2.8,white);
+  }
+  ctx.globalAlpha=.20*pulse;circ(0,0,role==='orb'?15:10,white);ctx.restore();return true;
+}
+function drawStage7Projectile(b,role){
+  const mul=b.szMul||1,pulse=.80+.20*Math.sin((b.t||0)*20+(b._ph||0));
+  const poly=(p,f)=>{ctx.beginPath();ctx.moveTo(p[0][0],p[0][1]);for(let i=1;i<p.length;i++)ctx.lineTo(p[i][0],p[i][1]);ctx.closePath();ctx.fillStyle=f;ctx.fill();};
+  const circ=(x,y,r,f)=>{ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fillStyle=f;ctx.fill();};
+  ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);ctx.scale(mul,mul);
+  const dark='#020504',lime='#91ff19',green='#23bf35',purple='#ba38ff',amber='#ffd03a',white='#fbfff0';
+  if(role==='acid'){poly([[0,-14],[7,-5],[6,9],[0,16],[-6,9],[-7,-5]],dark);poly([[0,-10],[4,-3],[3,8],[0,11],[-3,8],[-4,-3]],lime);circ(0,-5,2.3,white);
+  }else if(role==='sludge'){circ(0,0,13,dark);circ(0,0,9.5,purple);circ(0,0,6,green);circ(-1,-1,3,white);const q=(b.t||0)*6;circ(Math.cos(q)*9,Math.sin(q)*9,1.8,lime);
+  }else if(role==='shard'){poly([[0,-16],[7,-2],[4,12],[0,18],[-4,12],[-7,-2]],dark);poly([[0,-11],[4,-1],[2,10],[0,13],[-2,10],[-4,-1]],amber);poly([[0,-8],[2,-1],[0,8],[-2,-1]],white);
+  }else if(role==='bio'){poly([[0,-19],[8,-10],[8,10],[13,15],[4,12],[0,21],[-4,12],[-13,15],[-8,10],[-8,-10]],dark);poly([[0,-15],[5,-7],[5,9],[8,12],[2,10],[0,16],[-2,10],[-8,12],[-5,9],[-5,-7]],purple);poly([[0,-11],[2,-5],[2,8],[0,12],[-2,8],[-2,-5]],white);
+  }else if(role==='laser'){poly([[0,-19],[6,-11],[5,14],[0,21],[-5,14],[-6,-11]],dark);poly([[0,-15],[3,-8],[2,13],[0,17],[-2,13],[-3,-8]],lime);ctx.fillStyle=white;ctx.fillRect(-1.5,-12,3,25);
+  }else{poly([[0,-14],[9,-9],[13,0],[9,10],[0,15],[-9,10],[-13,0],[-9,-9]],dark);circ(0,0,9.5,purple);circ(0,0,6.2,lime);circ(-1,-1,3,white);ctx.fillStyle=amber;ctx.fillRect(-2,-13,4,5);}
+  ctx.globalAlpha=.18*pulse;circ(0,0,role==='sludge'||role==='grenade'?13:10,white);ctx.restore();return true;
+}
+function drawSpaceProjectile(b,tag){
+  const p=String(tag).split('-'),s9=p[0]==='s9',s8=p[0]==='s8',role=p[1],mul=b.szMul||1;
+  const poly=(q,f)=>{ctx.beginPath();ctx.moveTo(q[0][0],q[0][1]);for(let i=1;i<q.length;i++)ctx.lineTo(q[i][0],q[i][1]);ctx.closePath();ctx.fillStyle=f;ctx.fill();};
+  const circ=(x,y,r,f)=>{ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.fillStyle=f;ctx.fill();};
+  const dark=s8?'#080100':'#01020a',edge=s9?'#20d9ff':(s8?'#ff3b18':'#c32cff'),
+        core=s9?'#6968ff':(s8?'#8f0c08':'#ff387e'),hot=s9?'#ffe75a':(s8?'#ffca3a':'#66f6ff'),white='#ffffff';
+  ctx.save();ctx.translate(Math.round(b.x),Math.round(b.y));ctx.rotate(Math.atan2(b.vy||1,b.vx||0)-Math.PI/2);ctx.scale(mul,mul);
+  if(role==='split'||role==='pair'){
+    ctx.rotate((b.t||0)*3.2);circ(0,0,13,dark);circ(0,0,9.5,edge);circ(0,0,6,dark);circ(0,0,3.5,white);
+    for(let i=0;i<4;i++){ctx.rotate(TAU/4);ctx.fillStyle=hot;ctx.fillRect(-2,-15,4,7);}
+  }else if(role==='prism'||role==='chaos'||role==='warp'){
+    poly([[0,-16],[12,0],[0,16],[-12,0]],dark);poly([[0,-11],[8,0],[0,11],[-8,0]],edge);
+    poly([[0,-7],[5,0],[0,7],[-5,0]],core);circ(0,0,2.8,white);
+  }else if(role==='missile'||role==='comet'){
+    poly([[0,-20],[8,-10],[8,9],[13,15],[4,12],[0,22],[-4,12],[-13,15],[-8,9],[-8,-10]],dark);
+    poly([[0,-15],[5,-7],[5,8],[8,12],[2,10],[0,16],[-2,10],[-8,12],[-5,8],[-5,-7]],edge);
+    poly([[0,-12],[2,-5],[2,8],[0,12],[-2,8],[-2,-5]],white);ctx.fillStyle=hot;ctx.fillRect(-3,-16,6,4);
+  }else if(role==='null'||role==='needle'||role==='turbo'||role==='gold'){
+    const wide=role==='turbo'||role==='gold';
+    poly([[0,-18],[wide?8:6,-8],[wide?6:4,13],[0,20],[-(wide?6:4),13],[-(wide?8:6),-8]],dark);
+    poly([[0,-13],[wide?5:3,-6],[wide?3:2,11],[0,15],[-(wide?3:2),11],[-(wide?5:3),-6]],role==='gold'?hot:edge);
+    ctx.fillStyle=white;ctx.fillRect(-1.5,-10,3,20);
+  }else{ // fracture
+    poly([[0,-16],[9,-8],[6,0],[10,10],[0,18],[-10,10],[-6,0],[-9,-8]],dark);
+    poly([[0,-11],[5,-5],[3,0],[6,6],[0,12],[-6,6],[-3,0],[-5,-5]],edge);circ(0,-2,3.5,white);
+  }
+  ctx.globalAlpha=.18+.05*Math.sin((b.t||0)*20);circ(0,0,11,white);ctx.restore();return true;
+}
+/* Premium projectile routing. Stage 2-9's generated combat passes previously stopped at flat
+   canvas polygons. The atlas families below retain each pattern's physics/hitbox while replacing
+   only that placeholder render. Generic ammunition is upgraded only when the shot is boss-owned,
+   so ordinary pilot/enemy palette contracts elsewhere remain untouched. */
+const BPFX_STAGE_PROJECTILE={
+  s2needle:'kinetic',s2rake:'kinetic',s2slag:'void',s2rocket:'missile',s2bomb:'void',s2shock:'laser',
+  /* s2breath deliberately stays on drawStage2Projectile: Volcano Maw owns the red fire palette. */
+  s2slug:'kinetic',s2mine:'void',
+  s3shard:'laser',s3lance:'laser',s3tracer:'kinetic',s3mortar:'void',s3shell:'missile',s3wave:'laser',
+  s4steel:'kinetic',s4brass:'kinetic',s4rocket:'missile',s4missile:'missile',s4bomb:'void',s4rail:'laser',
+  s6wind:'laser',s6bolt:'laser',s6missile:'missile',s6orb:'void',s6tracer:'kinetic',s6seeker:'missile',
+  s7acid:'laser',s7sludge:'void',s7shard:'kinetic',s7bio:'missile',s7laser:'laser',s7grenade:'void',
+  s5fracture:'kinetic',s5split:'void',s5prism:'laser',s5null:'laser',s5missile:'missile',s5chaos:'void',
+  s8needle:'kinetic',s8rage:'void',s8slug:'kinetic',s8missile:'missile',s8pair:'void',s8blade:'laser',
+  s9gold:'kinetic',s9warp:'void',s9turbo:'kinetic',s9needle:'laser',s9comet:'missile',s9pair:'void'
+};
+const BPFX_BOSS_PROJECTILE={pellet:'kinetic',mg:'kinetic',embullet:'kinetic',dart:'kinetic',shell:'kinetic',
+  railshot:'kinetic',laser:'laser',bolt:'laser',plasma:'laser',gem:'laser',ice:'laser',missile:'missile',
+  homing:'missile',omegawarhead:'missile',orb:'void',voidOrb:'void',blast:'void',blob:'void',flare:'void'};
+function bossProjectileFxFamily(b){
+  if(!b)return null;
+  return BPFX_STAGE_PROJECTILE[b.kind]||(b._boss?BPFX_BOSS_PROJECTILE[b.kind]:null)||null;
+}
+function drawBossProjectileArt(b,family){
+  if(!family||typeof XART==='undefined')return false;
+  const key='bpfx_proj_'+family+'_'+(((b.t||0)*16|0)%8);
+  const h=({kinetic:34,laser:46,missile:48,void:38}[family]||38)*(b.szMul||1);
+  const ang=family==='void'?(b.t||0)*1.65:Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
+  return drawMfx(key,b.x,b.y,ang,h,null,1,null,null);
+}
 function drawFireType(b){
+  const _premium=bossProjectileFxFamily(b);if(_premium)return drawBossProjectileArt(b,_premium);
   const T=FIRETYPES[b.kind]; if(!T) return false;
+  if(T.proc) return drawStage2Projectile(b,T.proc);
+  if(T.proc3) return drawStage3Projectile(b,T.proc3);
+  if(T.proc4) return drawStage4Projectile(b,T.proc4);
+  if(T.proc6) return drawStage6Projectile(b,T.proc6);
+  if(T.proc7) return drawStage7Projectile(b,T.proc7);
+  if(T.procSpace) return drawSpaceProjectile(b,T.procSpace);
   const key=T.art(b); if(typeof XART==='undefined'||!XART.rdy(key)) return false;
   let ang=0;
   if(T.align) ang=Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
@@ -25065,7 +29140,9 @@ function drawFireType(b){
   /* Stage 2's boss rounds cross a red/orange animated lava bed. Yellow alone still loses its
      silhouette in the white-hot cells, so the boss family gets a hard eight-neighbour black rim
      before its brighter yellow body. This is restricted to boss-owned Stage-2 fire. */
-  if(typeof run!=='undefined' && run.stage===2 && b._boss){
+  const _s2Readable=typeof run!=='undefined' && ((run.stage===2 && b._boss) ||
+    (run.stage===2 && (b.kind==='magma'||b.kind==='lavaComet'||String(b.kind).indexOf('s2')===0)));
+  if(_s2Readable){
     const readH=Math.max(36,h*1.2), edge=3, dark='#050200';
     for(const o of [[-edge,0],[edge,0],[0,-edge],[0,edge],[-edge,-edge],[edge,-edge],[-edge,edge],[edge,edge]])
       drawMfx(key,b.x+o[0],b.y+o[1],ang,readH,dark,1,null,null);
@@ -25113,6 +29190,7 @@ function drawFireType(b){
 const PROJ = {
   // ---- pellet: rapid small tracers
   pellet:{type:'pellet',slot:0}, mg:{type:'pellet',slot:0}, embullet:{type:'pellet',slot:0},
+  s1bullet:{type:'pellet',slot:0},
   bolt:{type:'pellet',slot:0},   chaingunT:{type:'pellet',slot:0}, minigunT:{type:'pellet',slot:0},
   eg:{type:'pellet',slot:0},     kingPellet:{type:'pellet',slot:0,szMul:1.25},
   // ---- dart: the small AIMED round. turret + mech + fk'aimed' + sub-boss aimed (PASSOVER.md)
@@ -25145,6 +29223,32 @@ const PROJ = {
      authored art still reaches the screen because the DRAW resolves FIRETYPES by the kind name.
      Exactly how `eshot` is wired two tables down. */
   magma:{type:'comet',slot:2},
+  s2needle:{type:'comet',slot:2}, s2rake:{type:'comet',slot:2},
+  s2slag:{type:'comet',slot:2}, s2rocket:{type:'missile',slot:5},
+  s2bomb:{type:'comet',slot:2}, s2shock:{type:'comet',slot:2},
+  s2breath:{type:'comet',slot:2}, s2slug:{type:'comet',slot:2},
+  s2mine:{type:'comet',slot:2}, lavaComet:{type:'comet',slot:2},
+  s3shard:{type:'comet',slot:2}, s3lance:{type:'missile',slot:5},
+  s3tracer:{type:'pellet',slot:0}, s3mortar:{type:'blast',slot:3},
+  s3shell:{type:'missile',slot:5}, s3wave:{type:'comet',slot:2},
+  s4steel:{type:'comet',slot:2},s4brass:{type:'pellet',slot:0},
+  s4rocket:{type:'missile',slot:5},s4missile:{type:'missile',slot:5},
+  s4bomb:{type:'blast',slot:3},s4rail:{type:'comet',slot:2},
+  s6wind:{type:'comet',slot:2},s6bolt:{type:'comet',slot:2},
+  s6missile:{type:'missile',slot:5},s6orb:{type:'blast',slot:3},
+  s6tracer:{type:'pellet',slot:0},s6seeker:{type:'missile',slot:5},
+  s6cyclone:{type:'comet',slot:2},s6prism:{type:'missile',slot:5},
+  s6flak:{type:'missile',slot:5},s6gravity:{type:'blast',slot:3},
+  s6omega:{type:'missile',slot:5},s6cluster:{type:'comet',slot:2},
+  s7acid:{type:'comet',slot:2},s7sludge:{type:'blast',slot:3},
+  s7shard:{type:'pellet',slot:0},s7bio:{type:'missile',slot:5},
+  s7laser:{type:'missile',slot:5},s7grenade:{type:'blast',slot:3},s7spore:{type:'blast',slot:3},
+  s5fracture:{type:'comet',slot:2},s5split:{type:'blast',slot:3},s5prism:{type:'comet',slot:2},
+  s5null:{type:'missile',slot:5},s5missile:{type:'missile',slot:5},s5chaos:{type:'comet',slot:2},s5halo:{type:'blast',slot:3},
+  s8needle:{type:'comet',slot:2},s8rage:{type:'comet',slot:2},s8slug:{type:'pellet',slot:0},
+  s8missile:{type:'missile',slot:5},s8pair:{type:'blast',slot:3},s8blade:{type:'comet',slot:2},s8rift:{type:'blast',slot:3},
+  s9gold:{type:'pellet',slot:0},s9warp:{type:'comet',slot:2},s9turbo:{type:'pellet',slot:0},
+  s9needle:{type:'missile',slot:5},s9comet:{type:'missile',slot:5},s9pair:{type:'blast',slot:3},s9lattice:{type:'blast',slot:3},
   // ---- homing / missile
   homing:{type:'homing',slot:4},
   missile:{type:'missile',slot:5}, emr:{type:'missile',slot:5},
@@ -25308,6 +29412,15 @@ function navalHardpoint(e, ox, oy){
   const lx=(e.w||48)*(ox||0),ly=(e.h||64)*(oy==null?0.46:oy);
   return {x:e.x+lx*c-ly*s,y:e.y+(e._navBob||0)+lx*s+ly*c};
 }
+/* Shared moving-unit hardpoint.  Local offsets are fractions of the live collision hull and are
+   rotated by the same bank/spin the renderer uses.  This keeps a short muzzle reel physically
+   welded to a jet/tank barrel while the unit manoeuvres instead of leaving the flash behind. */
+function combatHardpoint(e, ox, oy){
+  if(!e) return null;
+  const a=e.spin||0, c=Math.cos(a),s=Math.sin(a);
+  const lx=(e._bodyW||e.w||40)*(ox||0),ly=(e._bodyH||e.h||40)*(oy||0);
+  return {x:e.x+lx*c-ly*s,y:e.y+lx*s+ly*c};
+}
 /* ⚠ fxBurst IS A PARTICLE BURST, NOT A SPRITE PLAYER (drop 0808o) — its third argument is a
    SIZE, and I first passed it a reel name, which would have produced a burst of size NaN. The
    nmz_ reels are five-frame animations and need their own short-lived effect that plays them.
@@ -25330,14 +29443,19 @@ const MUZZLE_MG     = 'nmz_2';
 const MUZZLE_ROCKET = 'nmz_4';
 const S1_MUZZLE_MILITARY = 's1fx_military_muzzle';
 const S1_MUZZLE_ROTARY   = 's1fx_rotary_muzzle';
+const BPFX_MUZZLE_KINETIC='bpfx_muzzle_kinetic';
+const BPFX_MUZZLE_LASER='bpfx_muzzle_laser';
+const BPFX_MUZZLE_MISSILE='bpfx_muzzle_missile';
+const BPFX_MUZZLE_VOID='bpfx_muzzle_void';
 function navalFlash(e, mz, scale, fam, opts){
   if(typeof XART==='undefined') return;
+  opts=opts||{};
   const f=fam||MUZZLE_MG;
   if(!XART.rdy(f+'_0')) return;
-  _navalFlashes.push({fam:f, x:mz.x, y:mz.y, t:0, life:(opts&&opts.life)||0.13, s:(scale||1.0),
-                      n:(opts&&opts.n)||4, hpx:(opts&&opts.hpx)||28, owner:e,
-                      ox:(opts&&opts.ox)||0,oy:(opts&&opts.oy),
-                      anchor:(opts&&opts.anchor!=null)?opts.anchor:0.35});
+  _navalFlashes.push({fam:f, x:mz.x, y:mz.y, t:0, life:opts.life||0.13, s:(scale||1.0),
+                      n:opts.n||4, hpx:opts.hpx||28, owner:e,
+                      ox:opts.ox||0,oy:opts.oy, follow:opts.follow||null,
+                      angle:opts.angle,anchor:(opts.anchor!=null)?opts.anchor:0.35});
 }
 /* THE MAGMA MUZZLE (Mike, 0819) — `bfx_magma_m`, the 6-frame starburst authored beside the round
    and never once fired. It has NO owner: a magma gunner is not a boat and its barrel does not
@@ -25349,18 +29467,42 @@ function magmaMuzzle(x, y, scale){
   if(typeof XART==='undefined' || !XART.rdy('bfx_magma_m_0')) return;
   navalFlash(null, {x:x, y:y}, scale||1.0, 'bfx_magma_m', {n:6, hpx:34, life:0.16});
 }
+function volcHardpoint(e, ox, oy){
+  const p=combatHardpoint(e,ox,oy);
+  if(p && typeof volcHover==='function') p.y+=volcHover(e);
+  return p;
+}
+function stage2Muzzle(e, ox, oy, scale, life){
+  const p=volcHardpoint(e,ox,oy); if(!p) return;
+  navalFlash(null,p,scale||1,BPFX_MUZZLE_KINETIC,{n:8,hpx:44,life:life||0.16,
+    follow:()=>e&&!e.dead?volcHardpoint(e,ox,oy):null});
+}
 function tickNavalFlashes(dt){
   for(let i=_navalFlashes.length-1;i>=0;i--){
     const f=_navalFlashes[i];
     f.t+=dt;
-    /* it rides the barrel — if the boat moves mid-flash the flash moves with it */
-    if(f.owner && !f.owner.dead){ const m=navalHardpoint(f.owner,f.ox,f.oy); f.x=m.x; f.y=m.y; }
+    /* It rides the WEAPON for the complete reel.  `follow` covers aircraft, tanks and bosses,
+       whose hardpoints use their own bank/recoil transforms; owner+offset remains the naval
+       shorthand.  A flash is discarded with its mount instead of hanging in empty space. */
+    if(f.follow){
+      const m=f.follow();
+      if(!m){ _navalFlashes.splice(i,1); continue; }
+      f.x=m.x!=null?m.x:m[0]; f.y=m.y!=null?m.y:m[1];
+      if(m.angle!=null)f.angle=m.angle;
+    } else if(f.owner && !f.owner.dead){
+      const m=navalHardpoint(f.owner,f.ox,f.oy); f.x=m.x; f.y=m.y;
+    } else if(f.owner && f.owner.dead){ _navalFlashes.splice(i,1); continue; }
     if(f.t>=f.life) _navalFlashes.splice(i,1);
   }
 }
 function drawNavalFlashes(){
   if(!_navalFlashes.length || typeof XART==='undefined') return;
   for(const f of _navalFlashes){
+    /* Resolve the moving hardpoint again at DRAW time. Boss motion and this effect list are
+       updated by different passes; using only the tick-time position left a one-frame gap of up
+       to 12px during a fast cross-strafe. The callback is the authoritative transformed mount,
+       so drawing from it welds every flash to its barrel even during a dive or orbit. */
+    if(f.follow){const m=f.follow();if(!m)continue;f.x=m.x!=null?m.x:m[0];f.y=m.y!=null?m.y:m[1];if(m.angle!=null)f.angle=m.angle;}
     const k=clamp(f.t/f.life,0,1);
     /* front-weighted across FOUR frames — a muzzle flash is at its brightest instantly and
        decays, so linear time across the reel wastes it on the dim end */
@@ -25369,7 +29511,8 @@ function drawNavalFlashes(){
     if(!im || !im.naturalWidth) continue;
     const h=(f.hpx||28)*f.s, w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
     ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=1-k*0.35;
-    ctx.drawImage(im, f.x-w/2, f.y-h*(f.anchor==null?0.35:f.anchor), w, h);
+    ctx.translate(f.x,f.y);if(f.angle!=null)ctx.rotate(f.angle-Math.PI/2);
+    ctx.drawImage(im,-w/2,-h*(f.anchor==null?0.35:f.anchor),w,h);
     ctx.restore();
   }
 }
@@ -25414,6 +29557,13 @@ function s1CombatImpact(x,y,green,size){
      kick     the same, but each round shoves the hull back along its own axis
      missile  a single straight rocket on a long reload
      homing   the same cadence, but the round tracks ============================================================ */
+const S1_TANK_BOX_PAD = 20;  // square extends beyond the art, so separate units never touch
+function applyS1TankBox(c, d){
+  c._bodyW=d.w; c._bodyH=d.h;                       // authored render/muzzle dimensions
+  c._unitSquare=Math.ceil(Math.max(d.w,d.h)+S1_TANK_BOX_PAD);
+  c.w=c._unitSquare; c.h=c._unitSquare;             // every collision path consumes this AABB
+  c._vkind='tank';                                  // never run the aircraft entrance sweep
+}
 const S1_TANKS = {
   s1tankheavy:     {art:'s1tankHeavy',    atk:'mg',      w:48, h:64, hp:16, score:460},
   s1tanklight:     {art:'s1tankLight',    atk:'cannon',  w:38, h:52, hp:10, score:340},
@@ -25429,7 +29579,7 @@ const S1_TANKS = {
 function applyS1Tank(c, type){
   const d=S1_TANKS[type]; if(!d) return false;
   c.art=d.art; c.pattern='s1tank';
-  c.w=d.w; c.h=d.h;
+  applyS1TankBox(c,d);
   c.hp=EHP(d.hp); c.maxhp=c.hp; c.score=d.score;
   c._atk=d.atk; c._wheels=!!d.wheels; c._blk=!!d.blk;
   c.vy=0; c.shoots=true;
@@ -25667,21 +29817,8 @@ const NEF_S1 = {
    and difficulty do not move; widths follow each sprite's own aspect so nothing is squashed.
    ============================================================ */
 const NEF_S2 = {
-  /* THREE STAGE-2 UNITS HAD NO ROW HERE AND WERE THEREFORE INVISIBLE (drop 0822q).
-     Measured on stage 2: magmagun 3,230 frames on screen with ZERO blits, spinner 2,235 with 117,
-     dodger 870 with zero. They spawned, moved, shot and collided while drawing nothing.
-     THE VOLC ROSTER LOOKS LIKE IT FIXES THIS AND DOES NOT. It carries art:'pod' / 'disc' / 'ash',
-     but those are UNIT-TYPE names, ENEMY_ART holds neither, and the spawn branch that owns these
-     units copies w/h/hp/score off VOLC and never reads .art at all. Editing VOLC changed nothing -
-     measured, not assumed. nefRow(type) is what sets art, and it looks HERE.
-     Resolved to what those aliases pointed at rather than picking new art: 'pod' is the eruption
-     pod (what eye draws), 'disc' the volcanic mine, 'ash' the molten drone. w/h/hp/score mirror
-     VOLC exactly so no behaviour moves.
-     SPINNER'S TELEGRAPH DEPENDED ON THIS: its wind-up is e.spin rotating the sprite, so with no
-     art its ring of 10 arrived with no tell at all. A disc is also what reads best spinning. */
-  magmagun:{art:'nef_s2_eruption_pod',              w:38, h:38, hp:30, score:900},
-  spinner: {art:'nef_s2_volcanic_mine',             w:36, h:34, hp:22, score:840},
-  dodger:  {art:'nef_s2_molten_drone',              w:32, h:30, hp:16, score:700},
+  /* The 0829 plan removed the three art aliases (magmagun/spinner/dodger). The live twelve below
+     each resolve a different shipped hull; drawVolc owns their new action reels. */
   ash:     {art:'nef_s2_molten_drone',               w:46, h:39, hp: 7, score:480},
   skim:    {art:'nef_s2_magma_skimmer',              w:43, h:39, hp: 8, score:520},
   disc:    {art:'nef_s2_volcanic_mine',              w:53, h:44, hp: 6, score:760},
@@ -25715,6 +29852,16 @@ const NEF_S3 = {
      nothing. cryo_barge is the one ice unit the roster pass left unused, and a barge reads as
      the heavy an elite slot wants. */
   el_cs:   {art:'nef_s3_cryo_barge',              w:40, h:56, hp:24, score:1500},
+  /* 0829 native Stage-3 controller names.  Unique names prevent the global `racer`, `topgun`
+     and sewer `crawler` cases from stealing an ice hull's movement or ammunition. */
+  s3mine:       {art:'nef_s3_shard_mine',                 w:46,h:44,hp:18,score:700},
+  s3interceptor:{art:'nef_s3_elite_ice_interceptor',      w:43,h:39,hp:15,score:760},
+  s3sled:       {art:'nef_s3_aa_sled',                    w:45,h:48,hp:24,score:920},
+  s3snowmobile: {art:'nef_s3_snowmobile_gunner',          w:30,h:48,hp:16,score:720},
+  s3crawler:    {art:'nef_s3_ice_crawler',                w:52,h:48,hp:32,score:1180},
+  s3tank:       {art:'nef_s3_snow_tank',                  w:54,h:54,hp:46,score:1550},
+  s3barge:      {art:'nef_s3_cryo_barge',                 w:54,h:66,hp:62,score:2100},
+  s3artillery:  {art:'nef_s3_tracked_frost_artillery',    w:50,h:62,hp:54,score:1900},
   /* the ice equivalent of a fuel barrel */
   s3canister: {art:'nef_s3_explosive_cryo_canister', pat:'prop', w:26, h:42, hp:4, score:180, prop:true},
 };
@@ -25782,6 +29929,47 @@ const S9_UNITS = {
   riftrocksm:{art:'ns9c_sm',  w:40,h:40,hp:18,score:260,pat:'s9chaos',s9:'waterrock',waterRock:1,foot:1.55},
   riftrock:  {art:'ns9c_big', w:76,h:76,hp:44,score:520,pat:'s9chaos',s9:'waterrock',waterRock:2,foot:1.48}
 };
+
+/* STAGE-9 GIANT METEORS. The source comet is still the approved small authored rock, but its
+   collision body and draw grow together to 300-500% scale. Unlike scenery these are shootable
+   enemies. Unlike ordinary enemies they carry velocity, gravity and equal-mass collision impulse,
+   so converging rocks strike, separate and open a temporary squeeze lane. */
+let _s9MeteorId=0;
+function spawnS9Meteor(x,y,scale,vx,vy){
+  if(typeof spawnEnemy!=='function')return null;
+  const s=clamp(scale||3,3,5),e=spawnEnemy('cometsm',x,y,{pattern:'s9meteor',_s9Meteor:true,_route:'meteor'});
+  if(!e)return null;e._meteorId=++_s9MeteorId;e._meteorScale=s;e.w=e.h=44*s;e._foot=1.70;
+  e.hp=e.maxhp=EHP(11+11*s);e._mvx=vx==null?rnd(-28,28):vx;e._mvy=vy==null?rnd(82,126):vy;
+  e._mspin=rnd(-.48,.48);e.shoots=false;e.dropOk=false;e.impact=true;return e;
+}
+function s9MeteorShower(gap,variant){
+  const W=(typeof worldWidth==='function')?worldWidth():VW,g=clamp(gap||W*.5,W*.22,W*.78),v=variant|0;
+  /* Every shower preserves one authored corridor. Side pairs converge and collide after entry;
+     the third rock is offset vertically so the resulting bounce has room to read. */
+  const left=Math.max(70,g-150),right=Math.min(W-70,g+150);
+  spawnS9Meteor(left,-150-(v%2)*70,3.2+(v%3)*.45,52+(v%2)*12,108);
+  spawnS9Meteor(right,-245+(v%2)*45,3.4+((v+1)%3)*.42,-56-(v%2)*10,116);
+  if(v%3!==1)spawnS9Meteor(g+(v%2?88:-88),-430,3.0+((v+2)%3)*.36,(v%2?-22:22),132);
+}
+function s9MeteorTick(e,dt){
+  if(!e||e.dead)return;
+  e._mvy=(e._mvy||90)+13*dt;                       // gravity always wins eventually
+  e.x+=(e._mvx||0)*dt;e.y+=e._mvy*dt;e.spin=(e.spin||0)+(e._mspin||0)*dt;
+  const W=(typeof worldWidth==='function')?worldWidth():VW,r=(e.w||132)*.38;
+  if(e.x<r&&e._mvx<0){e.x=r;e._mvx=Math.abs(e._mvx)*.86;}
+  else if(e.x>W-r&&e._mvx>0){e.x=W-r;e._mvx=-Math.abs(e._mvx)*.86;}
+  for(const o of enemies){
+    if(!o||o===e||o.dead||!o._s9Meteor||(o._meteorId||0)<=(e._meteorId||0))continue;
+    const rr=r+(o.w||132)*.38,dx=o.x-e.x,dy=o.y-e.y,d=Math.max(.01,Math.hypot(dx,dy));if(d>=rr)continue;
+    const nx=dx/d,ny=dy/d,over=rr-d;e.x-=nx*over*.5;e.y-=ny*over*.5;o.x+=nx*over*.5;o.y+=ny*over*.5;
+    const rvx=(o._mvx||0)-(e._mvx||0),rvy=(o._mvy||0)-(e._mvy||0),along=rvx*nx+rvy*ny;
+    if(along<0){const imp=-along*.88;e._mvx-=nx*imp;e._mvy-=ny*imp;o._mvx=(o._mvx||0)+nx*imp;o._mvy=(o._mvy||0)+ny*imp;}
+    e._mspin=(e._mspin||0)-ny*.9;o._mspin=(o._mspin||0)+ny*.9;shake=Math.max(shake,5);
+    if(typeof explode==='function')explode((e.x+o.x)/2,(e.y+o.y)/2,34,'white');
+    try{if(Audio.SFX&&Audio.SFX.crash)Audio.SFX.crash();}catch(_smc){}
+  }
+  if(e.y>VH+r+110)e.dead=true;
+}
 
 let s9WaterFx=[];
 function s9WaterReset(){ s9WaterFx.length=0; }
@@ -25978,14 +30166,16 @@ if(typeof ENEMY_ART!=='undefined' && typeof window!=='undefined' && window.BOFX 
    ⚠ THE SHIMMY TIGHTENS. Early gates sit far apart so the move is obvious; the amplitude closes
    gate by gate so the last few are precision rather than travel. One constant.
    ============================================================ */
-const S5R_N      = 9;        // nine gates for the ninth level — Mike's own reason
+const S5R_N      = 8;        // eight accelerating gates, then the full-screen jump to Stage 9
 const S5R_START  = 0.52;     // fraction of stage 5 where the convoy arrives (after the miniboss)
 const S5R_SPEED  = 118;      // px/s the convoy drifts down
 const S5R_GAP    = 2.05;     // seconds between gates
 const S5R_OPEN   = 28;       // visible half-width of the 96px 3/4 portal mouth
-const S5R_OPEN9  = 28;       // the ninth gate uses the same physical ring
 let s5run=null;
-function s5RunReset(){ s5run=null; }
+function s5RunReset(){
+  s5run=null;
+  try{if(Audio.warpAmbienceStop)Audio.warpAmbienceStop();if(Audio.setWarpMix)Audio.setWarpMix(0);}catch(_s5rr){}
+}
 function s5RunInit(){
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const gates=[];
@@ -25995,7 +30185,8 @@ function s5RunInit(){
     gates.push({i:i, x:W*0.5 + side*W*amp, y:-160 - i*(S5R_GAP*S5R_SPEED), py:-9999,
                 passed:false, missed:false, glow:0});
   }
-  s5run={t:0, armed:false, idx:0, failed:false, done:false, gates:gates, clash:null, spawned:{}};
+  s5run={t:0, armed:false, idx:0, failed:false, done:false, gates:gates, clash:null, spawned:{},
+    rollPhase:0,rollSpeed:1.10,warpMix:0};
 }
 /* the two that clash. Scripted rather than roster units because their motion IS the set piece:
    Mike asked for "two that clash into each other and bounce away and we can manuever through
@@ -26014,28 +30205,36 @@ function s5RunTick(dt){
   const _pl=(typeof player!=='undefined')?player:null;
   for(const g of s5run.gates){
     g.py=g.y; g.y += S5R_SPEED*dt;
-    if(g.i===8 && s5run.idx>=8 && !s5run.failed) g.glow=Math.min(1, g.glow+dt*1.6);
+    if(g.i===S5R_N-1 && s5run.idx>=S5R_N-1 && !s5run.failed) g.glow=Math.min(1, g.glow+dt*1.6);
     if(g.passed || g.missed || !_pl || _pl.dead) continue;
     /* the pass test fires on the frame the gate's line crosses the ship, so it cannot be
        double-counted and cannot be dodged by sitting still */
     if(g.py < _pl.y && g.y >= _pl.y){
-      const open=(g.i===8)?S5R_OPEN9:S5R_OPEN;
+      const open=S5R_OPEN;
       if(Math.abs(_pl.x-g.x) <= open){
         g.passed=true; s5run.idx++;
-        if(!s5run.armed){ s5run.armed=true;   // the speed effect starts on the FIRST gate, per Mike
-          if(Audio.SFX && Audio.SFX.dash) Audio.SFX.dash(); }
-        if(Audio.SFX && Audio.SFX.blip) Audio.SFX.blip();
-        if(g.i===8 && !s5run.failed && s5run.idx>=S5R_N){
+        if(!s5run.armed){s5run.armed=true;
+          try{if(Audio.warpAmbienceStart)Audio.warpAmbienceStart(.12);}catch(_s5wa){}
+        }
+        s5run.rollSpeed=1.10+(s5run.idx-1)*.24;
+        s5run.warpMix=clamp(.10+s5run.idx/S5R_N*.78,0,1);
+        try{if(Audio.SFX&&Audio.SFX.warpGate)Audio.SFX.warpGate(s5run.idx);if(Audio.setWarpMix)Audio.setWarpMix(s5run.warpMix);}catch(_s5wg){}
+        if(g.i===S5R_N-1 && !s5run.failed && s5run.idx>=S5R_N){
           s5run.done=true; run._s9taken=1; run._s9warp=1;   // the warp-out picks it up
         }
       } else {
         g.missed=true; s5run.failed=true;
+        try{if(Audio.warpAmbienceStop)Audio.warpAmbienceStop();if(Audio.setWarpMix)Audio.setWarpMix(0);}catch(_s5wm){}
         if(Audio.SFX && Audio.SFX.dangerAlert) Audio.SFX.dangerAlert();
       }
     }
   }
   /* HAZARDS BETWEEN THE GATES. Roster comets so they can be shot; the clash pair is scripted. */
   if(s5run.armed){
+    if(!s5run.failed){
+      s5run.rollPhase=(s5run.rollPhase+dt*TAU*s5run.rollSpeed)%TAU;
+      try{if(Audio.warpAmbienceLevel)Audio.warpAmbienceLevel(s5run.warpMix);if(Audio.setWarpMix)Audio.setWarpMix(s5run.warpMix);}catch(_s5wl){}
+    }
     const W=(typeof worldWidth==='function')?worldWidth():VW;
     const _once=function(k,at,fn){ if(!s5run.spawned[k] && s5run.t>=at){ s5run.spawned[k]=1; fn(); } };
     _once('c1', 1.6, function(){ if(typeof spawnEnemy==='function') spawnEnemy('cometbig', W*0.50, -120, {pattern:'straight'}); });
@@ -26069,18 +30268,45 @@ function s5RunTick(dt){
     if(C.a.y>VH+220) s5run.clash=null;
   }
 }
+let _warpDistortCanvas=null;
+function warpForcedRollFrame(){
+  let q=null;
+  if(s9warp&&s9warp.ph==='draw')q=s9warp;
+  else if(s5run&&s5run.armed&&!s5run.failed)q=s5run;
+  if(!q)return null;
+  const p=((q.rollPhase||0)%TAU+TAU)%TAU;
+  return Math.floor(p/TAU*17)%17;
+}
+/* Real refraction: copy the already-drawn world into short horizontal slices, offset the slices,
+   then lay the transparent authored vortex over it. This bends the stage itself and contains no
+   speed-line substitute. `full` is reserved for the eight-gate jump/Stage-9 exit. */
+function warpFxDraw(mix,phase,full){
+  mix=clamp(mix||0,0,1);if(mix<=.01)return;
+  const tm=phase||0;
+  try{
+    if(!_warpDistortCanvas){_warpDistortCanvas=document.createElement('canvas');_warpDistortCanvas.width=VW;_warpDistortCanvas.height=VH;}
+    const g=_warpDistortCanvas.getContext('2d');g.clearRect(0,0,VW,VH);g.drawImage(ctx.canvas,0,0,VW,VH);
+    ctx.save();ctx.globalAlpha=(full?0.44:0.14)*mix;
+    const band=full?12:20,amp=(full?18:7)*mix;
+    for(let y=0;y<VH;y+=band){const dx=Math.sin(tm*5.1+y*.052)*amp;ctx.drawImage(_warpDistortCanvas,0,y,VW,band,dx,y,VW,band);}
+    ctx.restore();
+  }catch(_wfd){}
+  const fi=((Math.floor(tm*18)%16)+16)%16,key='nfx_warp_tunnel_'+fi;
+  if(typeof XART!=='undefined'&&XART.rdy(key)){
+    const im=XART.get(key),s=Math.max(VW,VH)*(full?1.42:1.18)*(1+.07*Math.sin(tm*2.4));
+    ctx.save();ctx.translate(VW/2,VH/2);ctx.rotate(tm*(full?0.24:0.10));ctx.globalCompositeOperation='lighter';
+    ctx.globalAlpha=(full?0.72:0.30)*mix;ctx.drawImage(im,-s/2,-s/2,s,s);ctx.restore();
+  }
+  ctx.save();ctx.globalCompositeOperation='screen';ctx.translate(VW/2,VH/2);ctx.scale(1,.73);
+  for(let i=0;i<(full?5:3);i++){const r=34+((tm*(full?150:72)+i*91)%330);ctx.globalAlpha=(1-r/380)*mix*(full?0.34:0.14);ctx.strokeStyle=i&1?'#a250ff':'#4deeff';ctx.lineWidth=2+(full?i*.4:0);ctx.beginPath();ctx.arc(0,0,r,0,TAU);ctx.stroke();}
+  ctx.restore();
+}
 function s5RunDraw(){
   if(!s5run || typeof XART==='undefined') return;
-  /* THE SPEED EFFECT, once the first gate is touched. Mike: "the screen will be doing a speed
-     effect I give you permission to wire in for the this entire sequence". Reuses the existing
-     _speedLines rather than a second implementation of the same thing. */
-  if(s5run.armed && typeof _speedLines==='function'){
-    const ramp=clamp(s5run.idx/(S5R_N-1), 0, 1);
-    _speedLines(0.55 + ramp*0.9);
-  }
+  if(s5run.armed&&!s5run.failed)warpFxDraw(.20+s5run.idx/S5R_N*.54,s5run.t,false);
   for(const g of s5run.gates){
     if(g.y < -96 || g.y > VH+96) continue;
-    const last=(g.i===8);
+    const last=(g.i===S5R_N-1);
     const k='nfx_s5gate96_'+((((s5run.t*11)|0)+g.i)%8);
     if(!XART.rdy(k)) continue;
     const im=XART.get(k); if(!im) continue;
@@ -26101,7 +30327,7 @@ function s5RunDraw(){
       ctx.save(); ctx.drawImage(im, o.x-w/2, o.y-h/2, w, h); ctx.restore();
     }
   }
-  /* the counter, so the run is legible: nine pips, one per gate */
+  /* the counter, so the run is legible: eight pips, one per gate */
   if(s5run.armed && !s5run.done){
     ctx.save();
     for(let i=0;i<S5R_N;i++){
@@ -26123,7 +30349,7 @@ function s5RunForegroundDraw(){
     const im=XART.get(k); if(!im) continue;
     ctx.save();
     if(g.missed) ctx.globalAlpha=0.35; else if(g.passed) ctx.globalAlpha=0.55;
-    if(g.i===8 && g.glow>0){ctx.shadowColor='#7ef0ff';ctx.shadowBlur=26*g.glow;}
+    if(g.i===S5R_N-1 && g.glow>0){ctx.shadowColor='#7ef0ff';ctx.shadowBlur=26*g.glow;}
     ctx.beginPath(); ctx.rect(g.x-48,g.y+18,96,30); ctx.clip();
     ctx.drawImage(im,g.x-48,g.y-48,96,96);
     ctx.restore();
@@ -26150,12 +30376,16 @@ function s5RunForegroundDraw(){
 const S9W_DRAW = 1.35, S9W_WHITE = 1.25;
 let s9warp=null;
 function s9WarpStart(){
-  s9warp={ph:'draw', t:0, x:(player?player.x:VW/2), y:(player?player.y:VH*0.7)};
-  if(Audio.SFX && (Audio.SFX.mapDeploy||Audio.SFX.dash)) (Audio.SFX.mapDeploy||Audio.SFX.dash)();
+  s9warp={ph:'draw', t:0, x:(player?player.x:VW/2), y:(player?player.y:VH*0.7),
+    rollPhase:s5run&&s5run.rollPhase||0,rollSpeed:3.05};
+  try{if(Audio.warpAmbienceStart)Audio.warpAmbienceStart(1);if(Audio.setWarpMix)Audio.setWarpMix(1);
+    if(Audio.SFX&&Audio.SFX.warpBurst)Audio.SFX.warpBurst();}catch(_s9ws){}
 }
 function s9WarpTick(dt){
   if(!s9warp) return;
   s9warp.t+=dt;
+  s9warp.rollPhase=(s9warp.rollPhase+dt*TAU*s9warp.rollSpeed)%TAU;
+  try{if(Audio.warpAmbienceLevel)Audio.warpAmbienceLevel(1);if(Audio.setWarpMix)Audio.setWarpMix(1);}catch(_s9wl){}
   if(s9warp.ph==='draw'){
     if(s9warp.t>=S9W_DRAW){
       s9warp.ph='white'; s9warp.t=0;
@@ -26165,6 +30395,7 @@ function s9WarpTick(dt){
   } else if(s9warp.ph==='white'){
     if(s9warp.t>=S9W_WHITE){
       s9warp=null;
+      try{if(Audio.warpAmbienceStop)Audio.warpAmbienceStop();if(Audio.setWarpMix)Audio.setWarpMix(0);}catch(_s9we){}
       /* hand over to the map, which flashes the bonus node and unlocks it */
       if(typeof openStageSelect==='function') openStageSelect(5, {bonusUnlock:true});
     }
@@ -26184,9 +30415,11 @@ function s9WarpDraw(){
         ctx.drawImage(im, VW/2-s/2, VH*0.30-s/2, s, s); ctx.restore(); }
     }
     if(player){ player.x=px; player.y=py; }
+    warpFxDraw(.62+k*.38,s9warp.t*1.35,true);
     ctx.save(); ctx.globalAlpha=clamp(k*1.2,0,1); ctx.fillStyle='#ffffff';
     ctx.globalAlpha=Math.max(0,(k-0.75)/0.25); ctx.fillRect(0,0,VW,VH); ctx.restore();
   } else {
+    warpFxDraw(1,s9warp.t*2.2,true);
     ctx.save(); ctx.fillStyle='#ffffff'; ctx.globalAlpha=(k<0.55)?1:(1-(k-0.55)/0.45);
     ctx.fillRect(0,0,VW,VH); ctx.restore();
   }
@@ -26270,6 +30503,7 @@ function applyS9Unit(c, type){
   if(d.foot!=null) c._foot=d.foot;   // explicit draw multiplier; see the comet rows
   if(d.s9) c._s9=d.s9;
   if(d.waterRock) c._waterRock=d.waterRock;
+  if(c._s9Meteor){c.pattern='s9meteor';c.shoots=false;c.dropOk=false;c._route='meteor';}
   /* Only the hard Stage-9 specialists equip shields.  Directional families reflect eligible
      player rounds; full fields absorb and recharge through the existing shield controller. */
   if(d.shield && typeof run!=='undefined' && run.stage===9 && typeof enemyShieldEquip==='function')
@@ -26280,7 +30514,11 @@ function applyS9Unit(c, type){
 function nefArtFor(e){
   const base=e._nef; if(!base) return e.art;
   const f=(e.maxhp>0)? (e.hp/e.maxhp) : 1;
-  const state = (f>=0.65)?'intact' : (f>=0.35)?'damaged' : 'critical';
+  /* Naval hulls stay on their clean plate until destruction. Their baked damage states looked
+     like abrupt sprite swaps; hits still use the normal flash and the kill still hands off to
+     the complete explosion animation. */
+  const navy=(e.pattern==='naval'||/^s1(?:boat|corvette|landingcraft)/.test(String(e.type||'')));
+  const state = navy?'intact':((f>=0.65)?'intact' : (f>=0.35)?'damaged' : 'critical');
   return base+'_'+state+(e._blk?'_blk':'');
 }
 function nefRow(type){
@@ -26298,7 +30536,8 @@ function applyNefUnit(c, type){
   /* ONLY when the row asks. Stage 2 rides 'volc' and stage 3 sine/spin/dive — tuned movement
      this pass has no business rewriting. An art swap should not change how a unit flies. */
   if(d.pat) c.pattern=d.pat;
-  c.w=d.w; c.h=d.h;
+  if(d.pat==='s1tank' && typeof applyS1TankBox==='function') applyS1TankBox(c,d);
+  else { c.w=d.w; c.h=d.h; }
   c.hp=EHP(d.hp); c.maxhp=c.hp; c.score=d.score;
   c._atk=d.atk; c._wheels=!!d.wheels; c._prop=!!d.prop;
   /* ENEMY_ART_FOOT is 2.15 because the stock uniform canvases carry a wide transparent margin
@@ -26415,10 +30654,41 @@ function propBlast(e){
 }
 function jetTick(e, dt){
   if(e.dead) return;
+  /* Stage-1 ripples are created together so their lane order is inspectable, then released two
+     or three rendered frames apart. Nothing moves or fires while its release clock is active. */
+  if((e._s1DelayFrames||0)>0){ e._s1DelayFrames--; return; }
+  if((e._stagger||0)>0){ e._stagger=Math.max(0,e._stagger-dt); return; }
   if(e._jet==null){
     e._jet=1; e._burst=0; e._burstCd=rnd(0.3,1.2); e._shotCd=0; e._dodge=0; e._lane=e.x;
     e._y0=e.y;                                    // where its run began, for the route curve
     if(!e._route) e._route='straight';
+    if(e._s1Rush){ e._jspd=(e._jspd||96)*1.55; e._fmul=(e._fmul||1)*0.82; }
+    if(e._s1Kamikaze){
+      e._jspd=Math.max(168,(e._jspd||104)*1.60);
+      e._atk='none'; e.shoots=false; e.impact=true;
+      e._kmLocked=false;
+    }
+  }
+
+  /* Purple-map jets make one readable commitment. They approach vertically, record where the
+     player is, and then keep that vector; there are no homing corrections after the lock, so a
+     deliberate dodge always works. */
+  if(e._s1Kamikaze){
+    if(!e._kmLocked && e.y>=VH*0.16){
+      const dx=player.x-e.x, dy=Math.max(70,player.y-e.y), mag=Math.max(1,Math.hypot(dx,dy));
+      e._kmVx=dx/mag*(e._jspd||168);
+      e._kmVy=dy/mag*(e._jspd||168);
+      e._kmLocked=true;
+    }
+    if(e._kmLocked){
+      e.x+=(e._kmVx||0)*dt; e.y+=(e._kmVy||168)*dt;
+      const want=clamp((e._kmVx||0)/260,-1,1)*JET_BANK_MAX;
+      e.spin=(e.spin||0)+(want-(e.spin||0))*Math.min(1,dt*JET_BANK_RATE);
+    } else {
+      e.y+=(e._jspd||168)*dt;
+      e.spin=(e.spin||0)*(1-Math.min(1,dt*JET_BANK_RATE));
+    }
+    return;
   }
 
   /* ---- DODGE: only ever reacts to a TRACKING round of the player's ---- */
@@ -26532,8 +30802,10 @@ function jetTick(e, dt){
            at any size. */
         const nx=(e.w||60)*JET_GUN_OFF, ny=e.y+(e.h||60)*0.44;
         for(const sx of [e.x-nx, e.x+nx]){
-          eShootT(sx, ny, Math.PI/2, 4.6, 'mg', {silent:sx>e.x});
-          navalFlash(null, {x:sx,y:ny}, 0.58, S1_MUZZLE_ROTARY,{n:6,hpx:31,life:0.13});
+          const side=sx<e.x?-1:1;
+          eShootT(sx, ny, Math.PI/2, 4.6, 's1bullet', {silent:sx>e.x});
+          navalFlash(null, {x:sx,y:ny}, 0.58, S1_MUZZLE_ROTARY,{n:6,hpx:31,life:0.13,
+            follow:()=>combatHardpoint(e,side*JET_GUN_OFF,0.44)});
         }
         if(e._burst<=0) e._burstCd=JET_BURST_GAP;
       }
@@ -26569,7 +30841,8 @@ function jetTick(e, dt){
         /* record the pylon it left from — the hull keeps flying, so anything measuring the
            offset later would be reading drift rather than the launch point (drop 0808w) */
         if(eBullets.length) eBullets[eBullets.length-1]._bx0 = (st===0 ? -hw : hw);
-        navalFlash(null, {x:sx,y:my}, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:36,life:0.16});
+        navalFlash(null, {x:sx,y:my}, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:36,life:0.16,
+          follow:()=>combatHardpoint(e,st===0?-0.30:0.30,0.40)});
         e._shotCd=0.70*(e._fmul||1);
       } else {
         /* THE QUAD — four at once, fanned and swirling out */
@@ -26580,7 +30853,8 @@ function jetTick(e, dt){
           eShootT(sx, my, ang, 2.9, 's1jungleMissile', {szMul:1.2,silent:q>0});
           const b=eBullets[eBullets.length-1];
           if(b){ b._swirl=1; b._swPh=q*1.57; b._swAmp=1.15; b._bx0=off*hw; }   // own phase, own pylon
-          navalFlash(null, {x:sx,y:my}, 0.9, S1_MUZZLE_MILITARY,{n:6,hpx:34,life:0.16});
+          navalFlash(null, {x:sx,y:my}, 0.9, S1_MUZZLE_MILITARY,{n:6,hpx:34,life:0.16,
+            follow:()=>combatHardpoint(e,off*0.30,0.40)});
         }
         shake=Math.max(shake,6);
         if(Audio.SFX.expBig) Audio.SFX.expBig();
@@ -26595,7 +30869,8 @@ function jetTick(e, dt){
       e._shotCd=2.2*(e._fmul||1);
       const mz={x:e.x, y:e.y+(e.h||50)*0.44};
       eShootT(mz.x, mz.y, Math.PI/2, 3.15, 's1jungleMissile', {szMul:1.15});
-      navalFlash(null, mz, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:36,life:0.16});
+      navalFlash(null, mz, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:36,life:0.16,
+        follow:()=>combatHardpoint(e,0,0.44)});
     }
   }
 }
@@ -26656,7 +30931,9 @@ function tankRoadOK(x,y){
 function tankInit(e){
   e._tank=1; e._gear=1; e._phase='drive'; e._phT=rnd(1.6,3.2);
   e._spd=0; e._burst=0; e._burstCd=rnd(0.5,1.8); e._shotCd=0; e._recoil=0; e._wheelT=0;
-  e._dir8=(Math.random()*8)|0;
+  if(e.pattern==='s1tank'){
+    e._tankLane=e.x; e._dir8=0;                  // south only; reverse uses the same tracks north
+  } else e._dir8=(Math.random()*8)|0;
   if(e._lvlY==null) e._lvlY=((typeof levelSrcY==='function')?levelSrcY():0)+e.y;
 }
 function tankPickDir(e){
@@ -26671,6 +30948,13 @@ function tankPickDir(e){
   return false;
 }
 function tankDriveStep(e,dist){
+  if(e.pattern==='s1tank'){
+    const sy=e._gear<0?-1:1, nly=e._lvlY+sy*dist;
+    if(!tankRoadOK(e._tankLane,nly)){ e.vx=0; e._phase='brake'; return false; }
+    e.x=e._tankLane; e.y+=sy*dist; e._lvlY=nly; e.vx=0;
+    e._tankPathDir=sy>0?0:4;
+    return true;
+  }
   let actual=(e._dir8+(e._gear<0?4:0)+8)%8, v=TANK_DIR8[actual];
   let nx=e.x+v.x*dist, nly=e._lvlY+v.y*dist;
   const legal=nx>18 && nx<worldWidth()-18 && tankRoadOK(nx,nly);
@@ -26697,7 +30981,8 @@ function tankMotionTick(e,dt,maxSpd){
     if(e._phT<=0){
       /* Sometimes reverse on the same tracks; otherwise turn onto another one of the eight legal
          headings. Either way it rolls — there is never a sideways position nudge. */
-      if(Math.random()<0.45) e._gear=-e._gear;
+      if(e.pattern==='s1tank') e._gear=-e._gear;
+      else if(Math.random()<0.45) e._gear=-e._gear;
       else { const turn=[-3,-2,-1,1,2,3][(Math.random()*6)|0]; e._dir8=(e._dir8+turn+8)%8; e._gear=1; }
       e._phase='drive'; e._phT=rnd(1.6,3.2);
     }
@@ -26706,7 +30991,12 @@ function tankMotionTick(e,dt,maxSpd){
   tankDriveStep(e,e._spd*dt);
   if(e._recoil>0) e._recoil-=dt;                         // draw-only kick; never moves the footprint
   e._wheelT += Math.abs(e._spd)*dt*0.25;                    // wheels/tracks roll with the hull
-  e.y=clamp(e.y, -80, VH+80);
+  /* Do not collapse a staged tank file back onto y=-80. Stage-1 files carry their own entry
+     rows; preserving each lower bound keeps their padded square hitboxes distinct off-screen. */
+  const vt=(typeof viewTopY==='function')?viewTopY():0;
+  const minY=(e._tankQueueY!=null)?e._tankQueueY:
+    (vt-Math.max(160,(e.h||0)+((typeof ENTRY_CLEAR!=='undefined')?ENTRY_CLEAR:64)));
+  e.y=clamp(e.y, minY, VH+80);
 }
 function tankCruiseTick(e,dt,maxSpd){
   if(e.dead) return;
@@ -26724,9 +31014,10 @@ function tankTick(e, dt){
       if(e._shotCd<=0){
         e._shotCd=NAVAL_MG_GAP;
         e._burst--;
-        const mz={x:e.x, y:e.y+(e.h||60)*0.46};
-        eShootT(mz.x, mz.y, Math.PI/2, 4.5, 'mg', {});
-        navalFlash(null, mz, 0.82, S1_MUZZLE_ROTARY,{n:6,hpx:34,life:0.13});
+        const mz={x:e.x, y:e.y+(e._bodyH||e.h||60)*0.46};
+        eShootT(mz.x, mz.y, Math.PI/2, 4.5, 's1bullet', {});
+        navalFlash(null, mz, 0.82, S1_MUZZLE_ROTARY,{n:6,hpx:34,life:0.13,
+          follow:()=>combatHardpoint(e,0,0.46)});
         if(e._atk==='kick'){ e._recoil=0.10; shake=Math.max(shake,2); }   // #3 kicks back
         if(e._burst<=0) e._burstCd=NAVAL_BURST_GAP;
       }
@@ -26741,11 +31032,12 @@ function tankTick(e, dt){
     e._shotCd-=dt;
     if(e._shotCd<=0 && canFire){
       e._shotCd=(e._atk==='cannon')?2.35:3.75;
-      const mz={x:e.x, y:e.y+(e.h||60)*0.46};
+      const mz={x:e.x, y:e.y+(e._bodyH||e.h||60)*0.46};
       const cannon=e._atk==='cannon';
       eShootT(mz.x, mz.y, Math.PI/2, cannon?3.8:3.05,
               cannon?'s1cannon':'s1jungleMissile', {szMul:cannon?1.0:1.18});
-      navalFlash(null, mz, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:cannon?42:38,life:0.17});
+      navalFlash(null, mz, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:cannon?42:38,life:0.17,
+        follow:()=>combatHardpoint(e,0,0.46)});
       e._recoil=0.18; shake=Math.max(shake,5);
     }
   }
@@ -26858,8 +31150,8 @@ function navalTick(e, dt){
         e._shotCd=0.14;
         const k=5-e._burst, side=(k&1)?1:-1, a=(-0.28+k*0.14);
         const mz=navalHardpoint(e,side*0.18,0.37);
-        eShootT(mz.x,mz.y,Math.PI/2+a,4.65,'mg',{});
-        navalFlash(null,mz,0.82,S1_MUZZLE_ROTARY,{n:6,hpx:34,life:0.13});
+        eShootT(mz.x,mz.y,Math.PI/2+a,4.65,'s1bullet',{});
+        navalFlash(e,mz,0.82,S1_MUZZLE_ROTARY,{n:6,hpx:34,life:0.13,ox:side*0.18,oy:0.37});
         e._navLean=side*0.055; e._recoil=Math.max(e._recoil,0.06); e._burst--;
         if(e._burst<=0) e._burstCd=3.2;
       }
@@ -26909,8 +31201,8 @@ function navalTick(e, dt){
         const mz=navalMuzzle(e);
         /* straight from the turret, no arc and no gravity — Mike: "they act like really
            traveling bullets from the turret" */
-        eShootT(mz.x, mz.y, ang, 4.5, 'mg', {});
-        navalFlash(null, mz, 0.78, S1_MUZZLE_ROTARY,{n:6,hpx:33,life:0.13});
+        eShootT(mz.x, mz.y, ang, 4.5, 's1bullet', {});
+        navalFlash(e, mz, 0.78, S1_MUZZLE_ROTARY,{n:6,hpx:33,life:0.13,ox:0,oy:0.46});
         if(e._burst<=0) e._burstCd=NAVAL_BURST_GAP;   // the fixed silence begins
       }
     } else {
@@ -26935,7 +31227,7 @@ function navalTick(e, dt){
          suite caught it, which is exactly what that assertion is for (drop 0808k) */
       const mz=navalMuzzle(e);
       eShootT(mz.x, mz.y, ang, 3.05, 's1jungleMissile', {szMul:1.28});
-      navalFlash(null, mz, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:42,life:0.17});
+      navalFlash(e, mz, 1.0, S1_MUZZLE_MILITARY,{n:6,hpx:42,life:0.17,ox:0,oy:0.46});
       e._recoil=0.22;
       shake=Math.max(shake, 6);
       if(Audio.SFX.expBig) Audio.SFX.expBig();
@@ -26950,10 +31242,13 @@ function navalTick(e, dt){
 const SWIRL_HZ = 7.4, SWIRL_AMP = 1.9*60/7.4;
 function eShootT(x,y,ang,spd,kind,opts){
   opts=opts||{};
-  const shot={x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed, vy:Math.sin(ang)*spd*DIFF.ebSpeed, spd:spd, ang:ang,
+  const _tp=enemyBulletPressure();
+  const _shootable=(kind==='emissile'||kind==='s1jungleMissile');
+  const shot={x,y,vx:Math.cos(ang)*spd*DIFF.ebSpeed*_tp, vy:Math.sin(ang)*spd*DIFF.ebSpeed*_tp, spd:spd, ang:ang,
     w:opts.w||7,h:opts.h||7, kind:kind||'bolt',
     t:0, _ph:(Math.random()*8)|0, pal:opts.pal, tint:opts.tint, szMul:opts.szMul,
-    _curve:opts.curve||0, _s1Impact:opts.impact||null};
+    hp:_shootable?1:undefined,_shootable,
+    _curve:opts.curve||0, _s1Impact:opts.impact||null,_threatBullet:_tp};
   eBullets.push(shot);
   /* A twin barrel is one report, not two stacked samples. Burst callers silence the partner
      round so the fast Stage-1 cadence stays punchy without recreating the ear-splitting overlap. */
@@ -27358,13 +31653,14 @@ function helixVolleysUpdate(dt){
   const due=helixVolleyQ.filter(q=>q.t<=0);
   if(!due.length) return;
   helixVolleyQ=helixVolleyQ.filter(q=>q.t>0);
-  for(const q of due) helixWaveSpawn(q.x,q.y,q.lv,q.full,q.k);
+  for(const q of due) helixWaveSpawn(q.x,q.y,q.lv,q.full,q.k,q.budget);
 }
 function helixFlurrySpawn(x, y, lv, full){
-  helixWaveSpawn(x, y, lv, full, 0);
-  for(let k=1;k<HELIX_WAVES;k++) helixVolleyQ.push({x:x,y:y,lv:lv,full:full,k:k,t:k*HELIX_WAVE_GAP});
+  const budget={target:null,spent:0,cap:0};
+  helixWaveSpawn(x, y, lv, full, 0, budget);
+  for(let k=1;k<HELIX_WAVES;k++) helixVolleyQ.push({x:x,y:y,lv:lv,full:full,k:k,t:k*HELIX_WAVE_GAP,budget:budget});
 }
-function helixWaveSpawn(x, y, lv, full, wave){
+function helixWaveSpawn(x, y, lv, full, wave, budget){
   if(Audio.SFX.helixVolley) Audio.SFX.helixVolley();
   /* Five directions, each containing seven REAL Level-V lances. The seven members of one volley
      fan slightly, release one-by-one and start at distinct helix phases. Three staggered rings
@@ -27376,7 +31672,7 @@ function helixWaveSpawn(x, y, lv, full, wave){
     for(let i=0;i<count;i++){
       const u=i/(count-1)-0.5, angle=heading+u*0.20;
       maverickLaserProjectile(5,9999,x,y,angle,{burst:true,speed:12.5,
-        bossDmg:HELIX_FLURRY_BOSS,pierceAll:true,index:i,count:count,
+        bossDmg:HELIX_FLURRY_BOSS,bossBudget:budget,pierceAll:true,index:i,count:count,
         dir:dir,delay:i*0.012,phase:dir*step+(i/count)*TAU,amp:8.5});
     }
   }
@@ -27821,10 +32117,11 @@ function drawBullets(){
     }
     if(b.kind==='spaceVolley'){
       const lv=clamp(b.lv||1,1,5),key='volley_'+lv+'_missile_'+clamp(b.i||0,0,2),r=spaceAtlasRect(key);
-      ctx.save();ctx.translate(b.x,b.y);ctx.rotate((b.ang||-Math.PI/2)+Math.PI/2);ctx.globalCompositeOperation='lighter';
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate((b.ang||-Math.PI/2)+Math.PI/2);ctx.globalCompositeOperation='lighter';ctx.shadowColor=(b.i===1?'#73efff':'#ad54ff');ctx.shadowBlur=15+lv*1.5;
       const trail='volley_'+lv+'_trail_'+(Math.floor((b.t||0)*16+(b.i||0))%4);
-      spaceAtlasDraw(ctx,trail,0,14,20,30,true,null);
-      if(r)spaceAtlasDraw(ctx,key,0,0,22,36,true,null);ctx.restore();continue;
+      ctx.globalAlpha=.32;spaceAtlasDraw(ctx,trail,0,17,29,43,true,null);
+      ctx.globalAlpha=1;spaceAtlasDraw(ctx,trail,0,14,20,30,true,null);
+      if(r){ctx.globalAlpha=.24;spaceAtlasDraw(ctx,key,0,0,31,50,true,null);ctx.globalAlpha=1;spaceAtlasDraw(ctx,key,0,0,22,36,true,null);}ctx.restore();continue;
     }
     if(b.kind==='shadowOrb'){
       const lv=clamp(b.lv||1,1,5),key='shadow_'+lv+'_flight_'+(Math.floor((b.t||0)*14)%6),s=b.w*(1.05+0.06*Math.sin((b.t||0)*20));
@@ -27839,8 +32136,9 @@ function drawBullets(){
       else if(fam==='volley'){n=6;key='volley_'+clamp(b.lv||1,1,5)+'_impact_'+Math.floor(p*n);}
       else {n=4;key='laser_'+clamp(b.lv||1,1,5)+'_impact_'+Math.floor(p*n);}
       const s=(b.w||40)*(0.72+p*0.55);
-      ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1-p*0.45;
-      spaceAtlasDraw(ctx,key,b.x,b.y,s,s,true,null);ctx.restore();continue;
+      ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1-p*0.45;ctx.shadowColor=fam==='volley'?'#86eaff':(fam==='shadow'?'#a95cff':'#78dfff');ctx.shadowBlur=fam==='volley'?24:12;
+      if(fam==='volley'){ctx.globalAlpha=(1-p)*.24;spaceAtlasDraw(ctx,key,b.x,b.y,s*1.55,s*1.55,true,null);ctx.globalAlpha=(1-p)*.44;spaceAtlasDraw(ctx,key,b.x,b.y,s*1.22,s*1.22,true,null);}
+      ctx.globalAlpha=1-p*0.45;spaceAtlasDraw(ctx,key,b.x,b.y,s,s,true,null);ctx.restore();continue;
     }
     if(b.kind==='mavlaser'){
       if(b._launchDelay>0) continue;
@@ -28934,7 +33232,12 @@ function drawBullets(){
   ctx.imageSmoothingEnabled = false;
   // enemy — master fire-type art first (legacy kinds alias onto shared FIRETYPES)
   for(const b of eBullets){
+    if(b._s4wKind&&typeof drawStage4WarfareProjectile==='function'&&drawStage4WarfareProjectile(b))continue;
+    if(b._l23fx&&typeof l23ProjectileDraw==='function'&&l23ProjectileDraw(b))continue;
+    if(b._mwKind&&typeof magmaWardProjectileDraw==='function'&&magmaWardProjectileDraw(b))continue;
     if(b._chKind && typeof chaosHarrierProjectileDraw==='function' && chaosHarrierProjectileDraw(b)) continue;
+    if(b._carrierWarhead && typeof carrierWarheadDraw==='function' && carrierWarheadDraw(b)) continue;
+    if(b._jcHelix&&typeof jungleCruiserHelixDraw==='function'&&jungleCruiserHelixDraw(b))continue;
     /* Hellwing's generated pack includes its own two projectile reels. They are not members of
        the shared bfx arsenal, so draw them before that fallback can replace them. */
     if(b._heraldProjectile && typeof XART!=='undefined'){
@@ -29078,7 +33381,8 @@ function drawBullets(){
          purposes, but drawing the base type here replaced that authored reel with the generic
          comet—the exact projectile Mike asked to delete. Exact magma art wins; other kinds retain
          the existing base-family resolution. */
-      const _fk=(b.kind==='magma' && FIRETYPES.magma) ? 'magma'
+      const _dedicated=(b.kind==='magma'||b.kind==='lavaComet'||/^s[123456789]/.test(String(b.kind)));
+      const _fk=(_dedicated && FIRETYPES[b.kind]) ? b.kind
                : ((_pd2 && FIRETYPES[_pd2.type]) ? _pd2.type : (FIRETYPES[b.kind]?b.kind:null));
       if(_fk){
         if(b.kind==='plasma'&&!b.pal) b.pal=_PLASMA_PAL[run.stage]||'red';
@@ -29436,21 +33740,20 @@ function drawPowerups(){
          siblings to the generic coloured capsule with no icon on it. It has been grantable and
          unrecognisable at the same time, which is exactly why he cannot tell whether it works.
 
-         ⚠ AND THERE IS NO AUTHORED ICON FOR IT. The manifest has nsw_icon_cole and
-         nsw_icon_lizzie and no decker entry; the only Decker shotgun art is ndk_shot_0..3 (the
-         blast reel) and ndk_shell_0..5 (the ejected shells). Per the standing rule this does not
-         invent one — it tries nsw_icon_decker first so a real icon drops straight in the moment
-         Mike supplies one, then falls back to authored Decker art.
-
-         ⚠ THE CANDIDATES WERE RENDERED BEFORE CHOOSING, per rule 1 — see
-         docs/proofs/decker_shotbox_candidates_0811m.png. ndk_shot_0..3 turned out to be the blast
-         seen head-on: a glowing orange emitter that reads as a FIREBALL pickup, which is the last
-         thing this particular box should be mistaken for. ndk_shell_0 is a brass shotgun shell —
-         an object rather than an effect, unmistakably ammunition, and it cannot be confused with
-         any other pickup on the field. That is the one, pending Mike's call. */
+         The later approved Vol.3 pack supplies nsw_icon_decker: the yellow hex badge with the
+         shotgun and shells. It is packed beside Cole and Lizzie in the production icon atlas. */
       const _k=(p.kind==='sonicbox')?'nsw_icon_cole'
-             : (p.kind==='lzmgbox') ?'nsw_icon_lizzie'
-             : (XART.rdy('nsw_icon_decker')?'nsw_icon_decker':'ndk_shell_0');
+             : (p.kind==='lzmgbox') ?'nsw_icon_lizzie':'nsw_icon_decker';
+      /* These approved badges are atlas CELLS in BOFX.icons. XART.rdy(key) only resolves a
+         standalone plate, so checking Decker there always selected the brass shell fallback even
+         though his proper yellow shotgun badge is packed and registered. */
+      let _timedIcon=null;
+      if(typeof iconBlit==='function'){
+        ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
+        ctx.shadowColor=(p.kind==='sonicbox')?'#8de23a':'#ffc21a'; ctx.shadowBlur=14;
+        _timedIcon=iconBlit(ctx,_k,0,0,PICKUP_BOX,true); ctx.restore();
+      }
+      if(_timedIcon) continue;
       if(typeof XART!=='undefined' && XART.rdy(_k)){
         const im=XART.get(_k), _f=pickupFit(im), w=_f.w, h=_f.h;
         ctx.save(); ctx.translate(p.x, yb+Math.sin((p.bob||0)+performance.now()/360)*2.4);
@@ -29575,7 +33878,10 @@ function drawPowerups(){
       }
     }
     if(p.kind==='weapon'){ const _w2=(p.wtype!=null?p.wtype:run.weapon), _sw2=spaceWeaponsActive()?spaceWeaponPickupIndex(p):null,
-      _l2=spaceWeaponsActive()?clamp(((run.spaceLevels&&run.spaceLevels[_sw2])||0)+1,1,5):clamp((run.wlevels&&run.wlevels[_w2])||1,1,5);
+      /* A falling pickup advertises what collecting it WILL grant. Ground weapons were asking
+         for the current tier while applyPowerup correctly awarded current+1, leaving every icon
+         exactly one level behind its banner and damage. */
+      _l2=spaceWeaponsActive()?clamp(((run.spaceLevels&&run.spaceLevels[_sw2])||0)+1,1,5):clamp(((run.wlevels&&run.wlevels[_w2])||0)+1,1,5);
       /* ============================================================
          ASK THE ONE LOOKUP THAT KNOWS ALL THREE STORES (drop 0811m)
 
@@ -29649,7 +33955,7 @@ function drawPowerups(){
          here after the branches above had carefully refused to draw the wrong element — and this
          one drew it anyway. weaponLegacyName answers the same question through weaponIconKey's
          rules and returns null where the legacy set simply has no art for that element. */
-      const nm = p.kind==='weapon' ? ((typeof weaponLegacyName==='function')?weaponLegacyName(_wt, clamp((run.wlevels&&run.wlevels[_wt])||1,1,5)):null) : (({speed:('item_speed_'+clamp(run.speedLevel||1,1,5)),shield:'item_shield',bomb:'__use_crate__',life:'pu_life'})[p.kind]||('pu_'+p.kind)); if(nm && ASSETS.has(nm)){ ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=4; const _f=ASSETS.dims(nm), _s=34/Math.max(_f.w,_f.h); ASSETS.blit(nm,p.x,yb,_f.w*_s,_f.h*_s); ctx.restore(); continue; } }
+      const nm = p.kind==='weapon' ? ((typeof weaponLegacyName==='function')?weaponLegacyName(_wt, clamp(((run.wlevels&&run.wlevels[_wt])||0)+1,1,5)):null) : (({speed:('item_speed_'+clamp(run.speedLevel||1,1,5)),shield:'item_shield',bomb:'__use_crate__',life:'pu_life'})[p.kind]||('pu_'+p.kind)); if(nm && ASSETS.has(nm)){ ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=4; const _f=ASSETS.dims(nm), _s=34/Math.max(_f.w,_f.h); ASSETS.blit(nm,p.x,yb,_f.w*_s,_f.h*_s); ctx.restore(); continue; } }
     ctx.save(); ctx.translate(p.x,yb);
     // capsule frame
     let frame='#888', icon='#fff';
@@ -29912,6 +34218,11 @@ function _drawEffectsInner(){
      rather than a sprite that appeared. Additive, because these are sparks. */
   if(typeof pImpacts!=='undefined' && pImpacts.length && typeof XART!=='undefined'){
     for(const p of pImpacts){
+      if(p.elemental){
+        /* Legacy saves can briefly retain one of the removed ornamental reactions. Discard it;
+           current elemental feedback is the target sprite's own red/light-blue hit flash. */
+        continue;
+      }
       if(!XART.rdy(p.key)) continue;
       const im=XART.get(p.key), k=clamp(p.t/p.dur,0,1);
       const s=p.size*(0.55+0.45*Math.min(1,k*3));          // snap open, then hold
@@ -30771,11 +35082,9 @@ function hqPlay(id, onDone){
   hqSlot={left:null,right:null}; hqSpeak='right';  // so line 0 seats left
   hqSeat(0);
   hqSeen[id]=1;
-  /* THE FURY HQ SCENES PLAYED IN SILENCE (drop 0811a). Mike: "apply music during the cinematics".
-     Eight authored ensemble scenes out of ColeForge's own cutscene bible, and not one audio call
-     in hqPlay, drawCutsceneState or hqEnd. 'lordshadows' was REGISTERED AND REFERENCED NOWHERE " a
-     whole track sitting unused while the game's only dialogue scenes ran dry. */
-  try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('lordshadows'); }catch(_hqm){}
+  /* Every Fury HQ story scene owns the dedicated cinematic score. startMusic no-ops when this
+     same track is already healthy, so connected dialogue beats do not restart the song. */
+  try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('cinematics'); }catch(_hqm){}
   setState(GS.CUTSCENE);
   return true;
 }
@@ -30785,7 +35094,7 @@ function hqEnd(){
   /* HAND THE TRACK BACK EXPLICITLY. A continuation that starts a stage calls startMusic itself, so
      only the scenes that fall back to the hub matter " and the hub's own guard is
      `if(!musicPlaying()) startMusic('neonvelocity')`, which is FALSE while the cutscene theme is
-     still going. It would have sat under 'lordshadows' for the rest of the session. */
+     still going. It would otherwise sit under the campaign map for the rest of the session. */
   if(!d){ try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('neonvelocity'); }catch(_hqm){} }
   if(d) d(); else setState(GS.CAMPHUB);
 }
@@ -30798,7 +35107,8 @@ function hqTrigger(when, stage, onDone){
 }
 
 function drawCutsceneState(dt){
-  ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
+  const _cutW=cutsceneViewWidth();
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,_cutW,VH);
   if(!hqSc){ hqEnd(); return; }
   const ln=hqSc.lines[hqLine];
   if(!ln){ hqEnd(); return; }
@@ -30806,7 +35116,7 @@ function drawCutsceneState(dt){
 
   const sc={ bg:CUT_HQ, left:hqSlot.left, right:hqSlot.right, speaking:hqSpeak,
              ensemble:hqRoster, speakingPilot:ln[0], speakingPose:ln[1],
-             text: full.slice(0, Math.min(n, Math.floor(hqChars))) };
+             fullText:full, text: full.slice(0, Math.min(n, Math.floor(hqChars))) };
   /* drawCutscene returns false until the background and poses have loaded. XART.rdy STARTS the
      load on its first call, so a one-shot check always reads false - hold on black and keep
      asking rather than treating it as missing art. */
@@ -30844,10 +35154,16 @@ function drawCutsceneState(dt){
 
   /* the advance prompt, inside the dialogue frame, blinking only once the line has finished */
   if(hqChars>=n && Math.floor(stateT*2.2)%2){
-    const s=Math.min(VW/640, VH/480), oy=(VH-480*s)/2, ox=(VW-640*s)/2;
-    const _f=(typeof uiFontArt==='function')?uiFontArt():null;
-    if(_f && typeof stageText==='function')
-      stageText(_f,'NEXT', ox+552*s, oy+441*s, 13, '#ffe082',0.9,1,0.10);
+    const _cw=cutsceneViewWidth(),s=Math.min(_cw/640, VH/480), oy=(VH-480*s)/2, ox=(_cw-640*s)/2;
+    const _df=(typeof msgFaceUse==='function' && msgFaceUse('dialogue')==='dialogue');
+    if(_df && typeof msgTextLeft==='function'){
+      const _nh=13, _nw=msgMeasure('NEXT',_nh,0.08);
+      msgTextLeft('NEXT',_cw-36*s-_nw,oy+441*s,_nh,'#ffe082',0.9,1,0.08,1);
+      msgFaceUse(null);
+    } else {
+      const _f=(typeof uiFontArt==='function')?uiFontArt():null;
+      if(_f && typeof stageText==='function') stageText(_f,'NEXT',ox+552*s,oy+441*s,13,'#ffe082',0.9,1,0.10);
+    }
   }
 
   if(stateT>0.15 && (Input.mouse.down || anyTap())){
@@ -31322,7 +35638,7 @@ function l6GMDraw(){
      filter. */
     const _fl = (m.flash>0);
     ctx.drawImage(im,-w/2,-h/2,w,h);
-    if(_fl && typeof xartTint==='function' && typeof k!=='undefined'){ const _t=xartTint(k,'#ffffff',0.55); if(_t) ctx.drawImage(_t,-w/2,-h/2,w,h); }
+    if(_fl && typeof xartTint==='function' && typeof k!=='undefined'){ const _t=xartTint(k,hitFlashColor(m,'#ffffff'),0.55); if(_t) ctx.drawImage(_t,-w/2,-h/2,w,h); }
     // thruster anchored at the tail, additive
     if(m.state!=='dead'){
       const tk=`ngm_${m.name}_thr_${Math.floor(m.t*20)%8}`;
@@ -31889,9 +36205,10 @@ function l5FieldReset(){
    plate, so 1.0 would wall off the screen. 0.42-0.58 puts one against the edge as terrain the
    player flies past, which is what the family is for. */
 const L8_DECKS=[
-  {pre:'nl8_lg_',   n:6,  count:3, sc:0.50, spd:14, a:0.90, edge:true },  // biomech cliffs — far, slow, hugging the sides
-  {pre:'nl8_rim_',  n:6,  count:2, sc:0.46, spd:24, a:0.85, edge:false},  // portal rims as landmarks
-  {pre:'nl8_prop_', n:12, count:8, sc:0.40, spd:46, a:0.95, edge:false}   // bone rocks and wreckage
+  {pre:'nl8c_lg_',   n:6,  count:3, sc:0.50, spd:14, a:0.90, edge:true },  // crimson biomech cliffs — far, slow, hugging the sides
+  {pre:'nl8c_rim_',  n:6,  count:2, sc:0.46, spd:24, a:0.85, edge:false},  // cleaned portal rims as landmarks
+  {pre:'nl8c_prop_', n:12, count:8, sc:0.40, spd:46, a:0.95, edge:false}, // bone rocks and wreckage
+  {pre:'s8rift_',    n:16, count:4, sc:0.43, spd:30, a:0.54, edge:false, fx:true}
 ];
 let l8Field=[];
 function l8FieldReset(){
@@ -31905,7 +36222,8 @@ function l8FieldReset(){
       l8Field.push({pre:d.pre, idx:(Math.random()*d.n)|0,
         x:x, y:rnd(-VH, VH),
         sc:d.sc*rnd(0.82,1.18), spd:d.spd*rnd(0.85,1.15), a:d.a,
-        rot:d.edge?0:rnd(0,TAU), spin:d.edge?0:rnd(-0.22,0.22), n:d.n, edge:d.edge});
+        rot:d.edge?0:rnd(0,TAU), spin:d.edge?0:rnd(-0.22,0.22), n:d.n, edge:d.edge,
+        fx:!!d.fx, phase:(Math.random()*d.n)|0});
     }
   }
 }
@@ -31923,13 +36241,15 @@ function l8FieldUpdate(dt){
 function l8ObjsDraw(){
   if(typeof XART==='undefined') return;
   for(const o of l8Field){
-    const k=o.pre+o.idx;
+    const clock=(typeof stageTimer!=='undefined'?stageTimer:performance.now()/1000);
+    const k=o.pre+(o.fx?((Math.floor(clock*12)+(o.phase||0))%o.n):o.idx);
     /* ⚠ rdy() STARTS THE LOAD AND RETURNS FALSE THE FIRST TIME. Skipping the frame is correct —
        it decodes and appears on a later one. Never block on it. */
     if(!XART.rdy(k)) continue;
     const im=XART.get(k); if(!im) continue;
     const w=(im.naturalWidth||im.width)*o.sc, h=(im.naturalHeight||im.height)*o.sc;
     ctx.save(); ctx.globalAlpha=o.a; ctx.translate(o.x, o.y);
+    if(o.fx) ctx.globalCompositeOperation='lighter';
     if(o.spin) ctx.rotate(o.rot);
     ctx.drawImage(im, -w/2, -h/2, w, h);
     ctx.restore();
@@ -32551,7 +36871,7 @@ function drawElite8(e){
   const _fl = (e.flash>0 && e._dyingT==null);
   /* fade removed (drop 0801cw): no enemy fades, ever — it explodes instead */
   ctx.drawImage(im,-w/2,-h/2,w,h);
-  if(_fl && typeof xartTint==='function' && typeof k!=='undefined'){ const _t=xartTint(k,'#ffffff',0.55); if(_t) ctx.drawImage(_t,-w/2,-h/2,w,h); }
+  if(_fl && typeof xartTint==='function' && typeof k!=='undefined'){ const _t=xartTint(k,hitFlashColor(e,'#ffffff'),0.55); if(_t) ctx.drawImage(_t,-w/2,-h/2,w,h); }
   ctx.restore();
   return true;
 }
@@ -32571,217 +36891,136 @@ const VOLC = {
   crawl:  {fam:'vent', hp:40, w:42, h:36, score:960,  art:'crawl'},
   pod:    {fam:'vent', hp:28, w:36, h:36, score:820,  art:'pod'},
   golem:  {fam:'vent', hp:96, w:56, h:52, score:2400, art:'golem'},
-  /* ============================================================
-     THE 0819 CAST (Mike): "there should be sevveral different styled enemies for level 2 ... other
-     lava based enemies to shoot magma ball projetiles we have, spin, dodge attacks, and fly off if
-     they dont hit the player."
-
-     Three new BEHAVIOURS on art families that already ship — no placeholder art, and no unit
-     invented where one exists. Each answers a different clause, and each is beatable a different
-     way, which is what "several different styled" has to mean to be worth adding:
-
-       magmagun   holds a lane and shells you        -> move out of the lane
-       spinner    winds up, rings you, then leaves   -> read the tell, be off the ring
-       dodger     strafes AND SIDESTEPS your fire    -> lead it, or wait out the pass
-
-     ⚠ THE FLY-OFF IS THE SHARED RULE, not a per-unit quirk: all three commit to ONE pass and
-     leave. A unit that lingers turns the stage back into the wall of noise Mike has objected to
-     since 0810q. ============================================================ */
-  magmagun:{fam:'vent', hp:30, w:38, h:38, score:900,  art:'pod'},
-  spinner: {fam:'ship', hp:22, w:36, h:34, score:840,  art:'disc'},
-  dodger:  {fam:'ship', hp:16, w:32, h:30, score:700,  art:'ash'},
+};
+const S2_PROJECTILE_HIT={
+  s2needle:[6,15],s2rake:[10,18],s2slag:[18,18],s2rocket:[12,24],s2bomb:[18,18],
+  s2shock:[24,14],s2breath:[18,18],s2slug:[16,23],s2mine:[18,18]
 };
 function volcTick(e, dt){
   const K=e._volc, V=VOLC[K]; if(!V) return;
   e._vt=(e._vt||0)+dt;
-  const W=worldWidth();                       // WORLD width — stage 2 is 480 today, but never assume
-  e._bank=0; e._chg=0;
-  const fire=(x,y,a,sp,t)=>{ eShootT(x,y,a,sp,t); e._muz=0.12; };
+  const W=worldWidth();
+  e._bank=0;e._chg=0;
+  const fire=(p,a,sp,t,opts)=>{
+    opts=opts||{};const hb=S2_PROJECTILE_HIT[t]||[7,7];
+    if(opts.w==null)opts.w=hb[0];if(opts.h==null)opts.h=hb[1];
+    const b=eShootT(p.x,p.y,a,sp,t,opts);e._muz=0.13;
+    if(opts.accel){b._s2Accel=opts.accel;b._s2Max=opts.max||sp*1.8;}
+    return b;
+  };
+  const muzzle=(ox,oy,s,life)=>stage2Muzzle(e,ox,oy,s,life);
+  const queue=(release,dur,at)=>{
+    if(e._s2Act)return false;
+    e._s2Act={t:0,dur:dur||0.64,at:at||0.30,fired:false,release:release};
+    e._s2AtkT=0;e._s2AtkDur=e._s2Act.dur;return true;
+  };
+  if(e._s2Act){
+    const q=e._s2Act;q.t+=dt;e._s2AtkT=q.t;e._chg=1;
+    if(!q.fired&&q.t>=q.at){q.fired=true;q.release();}
+    if(q.t>=q.dur){e._s2Act=null;e._s2AtkT=null;e._chg=0;}
+  }
 
-  if(K==='skim'){            // fast diagonal strafe across the lower half, firing as it crosses
-    if(e._dir==null){ e._dir=(e.x<W*0.5)?1:-1; e._ty=rnd(VH*0.42, VH*0.66); }
-    e.y += (e.y<e._ty ? 150 : 20)*dt;
-    e.x += e._dir*168*dt; e._bank=e._dir;
-    if(e.x<-40||e.x>W+40) e.dead=true;
-    if((e._fcd=(e._fcd==null?rnd(0.4,0.9):e._fcd)-dt)<=0 && e.y>VH*0.30){
-      e._fcd=rnd(0.6,1.0)/DIFF.eFire; fire(e.x,e.y+e.h*0.3, aimPlayer(e.x,e.y), 3.1,'dart');
+  if(K==='ash'){
+    // EMBER WASP: fast sine dive, synchronized twin needle guns, one clean vertical lane.
+    e.y+=178*dt;e.x+=Math.sin(e._vt*4.4)*38*dt;e._bank=Math.sin(e._vt*4.4)>0?1:-1;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?rnd(.35,.7):e._fcd)-dt)<=0){
+      e._fcd=rnd(.78,1.05)/DIFF.eFire;
+      queue(()=>{for(const ox of [-.22,.22]){const p=volcHardpoint(e,ox,.27);fire(p,Math.PI/2,4.15,'s2needle',{silent:ox>0});muzzle(ox,.27,.50,.11);}},.58,.25);
     }
-  } else if(K==='disc'){     // drifts in, STOPS, then lets go of a radial volcanic burst
-    if(e.y<VH*0.26) e.y += 74*dt;
-    else {
-      e._hold=(e._hold||0)+dt;
-      e.x += Math.sin(e._vt*1.1)*22*dt;
-      if((e._fcd=(e._fcd==null?1.3:e._fcd)-dt)<=0){
-        e._fcd=rnd(2.2,3.2)/DIFF.eFire;
-        for(let k=0;k<9;k++) fire(e.x,e.y, k*TAU/9 + e._vt*0.4, 2.4,'blob');
-      }
+  }else if(K==='skim'){
+    // MAGMA SKIMMER: one crossing run and a three-prong belly rake aimed only at release.
+    if(e._dir==null){e._dir=e.x<W*.5?1:-1;e._ty=rnd(VH*.40,VH*.62);}
+    e.y+=(e.y<e._ty?142:18)*dt;e.x+=e._dir*164*dt;e._bank=e._dir;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?rnd(.45,.85):e._fcd)-dt)<=0&&e.y>VH*.25){
+      e._fcd=rnd(1.0,1.3)/DIFF.eFire;
+      queue(()=>{const p=volcHardpoint(e,0,.31),a=aimPlayer(p.x,p.y);for(const o of [-.16,0,.16])fire(p,a+o,3.35,'s2rake',{silent:o!==0});muzzle(0,.31,.72);},.64,.30);
     }
-  } else if(K==='eye'){      // hovers and TELEGRAPHS a focused heat shot straight down-screen
-    if(e.y<VH*0.22) e.y += 68*dt; else e.y = VH*0.22 + Math.sin(e._vt*1.3)*7;
-    e.x += Math.sin(e._vt*0.7)*26*dt;
-    e._fcd=(e._fcd==null?rnd(1.2,2.0):e._fcd)-dt;
-    if(e._fcd<=0.55 && e._fcd>0) e._chg=1;                    // visible swell before the shot
-    if(e._fcd<=0){
-      e._fcd=rnd(2.0,2.9)/DIFF.eFire;
-      const a=aimPlayer(e.x,e.y);
-      for(let k=-1;k<=1;k++) fire(e.x,e.y+e.h*0.3, a+k*0.07, 3.6,'bolt');
+    if(e.x<-48||e.x>W+48)e.dead=true;
+  }else if(K==='eye'){
+    // ERUPTION EYE: long iris tell, one slow slag core, two faster escort needles.
+    if(e.y<VH*.22)e.y+=66*dt;else e.y=VH*.22+Math.sin(e._vt*1.3)*7;
+    e.x+=Math.sin(e._vt*.7)*24*dt;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?rnd(1.1,1.8):e._fcd)-dt)<=0){
+      e._fcd=rnd(2.4,3.1)/DIFF.eFire;
+      queue(()=>{const p=volcHardpoint(e,0,.25),a=aimPlayer(p.x,p.y);fire(p,a,2.15,'s2slag',{});for(const o of [-.18,.18])fire(p,a+o,3.5,'s2needle',{silent:true});muzzle(0,.25,1.0);shake=Math.max(shake,2);},.78,.43);
     }
-  } else if(K==='miner'){    // armoured, advances slowly, DEPLOYS magma hazards behind it
-    e.y += 34*dt; e.x += Math.sin(e._vt*0.6)*18*dt; e._bank=Math.sin(e._vt*0.6)>0?1:-1;
-    if((e._fcd=(e._fcd==null?1.6:e._fcd)-dt)<=0){
-      e._fcd=rnd(1.7,2.5)/DIFF.eFire;
-      fire(e.x,e.y+e.h*0.34, Math.PI/2, 1.5,'blob');          // slow drop = a lingering hazard
-      fire(e.x,e.y+e.h*0.34, Math.PI/2+0.35, 1.5,'blob');
-      fire(e.x,e.y+e.h*0.34, Math.PI/2-0.35, 1.5,'blob');
+  }else if(K==='disc'){
+    // VOLCANIC MINE: rotating hazard ring with a three-round safe gap pointed toward the player.
+    if(e.y<VH*.25)e.y+=70*dt;else e.x+=Math.sin(e._vt*1.1)*20*dt;
+    e.spin=(e.spin||0)+1.35*dt;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?1.15:e._fcd)-dt)<=0){
+      e._fcd=rnd(2.5,3.2)/DIFF.eFire;
+      queue(()=>{const p=volcHardpoint(e,0,0),n=12,step=TAU/n,base=e._vt*.36,a=aimPlayer(p.x,p.y);let gap=Math.round((a-base)/step);for(let k=0;k<n;k++){let d=Math.abs(((k-gap+n*3)%n));d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+k*step,2.15,'s2mine',{silent:k>0});}muzzle(0,0,.92,.18);},.72,.38);
     }
-  } else if(K==='ash'){      // high-speed interceptor, PAIRED downward burst
-    e.y += 190*dt; e.x += Math.sin(e._vt*4.2)*40*dt; e._bank=Math.sin(e._vt*4.2)>0?1:-1;
-    if((e._fcd=(e._fcd==null?rnd(0.5,0.9):e._fcd)-dt)<=0){
-      e._fcd=rnd(0.8,1.2)/DIFF.eFire;
-      fire(e.x-7,e.y+e.h*0.3, Math.PI/2, 3.4,'dart');
-      fire(e.x+7,e.y+e.h*0.3, Math.PI/2, 3.4,'dart');
+  }else if(K==='lance'){
+    // VOLCANIC LANCER: visible nose-open sequence, one accelerating rocket, then a committed dive.
+    if(!e._lanceQueued&&e._vt>.12){e._lanceQueued=1;queue(()=>{const p=volcHardpoint(e,0,.35);e._lock=aimPlayer(p.x,p.y);fire(p,e._lock,2.2,'s2rocket',{accel:2.8,max:5.4});muzzle(0,.35,.70);e._sp=70;},.66,.30);}
+    if(e._lock!=null){e._sp=Math.min(310,(e._sp||0)+480*dt);e.x+=Math.cos(e._lock)*e._sp*dt;e.y+=Math.sin(e._lock)*e._sp*dt;e._bank=Math.cos(e._lock)>0?1:-1;}
+    else e.y+=48*dt;
+  }else if(K==='cruc'){
+    // CRUCIBLE BOMBER: alternates physical wing racks so every bomb begins on visible hardware.
+    e.y+=40*dt;e.x+=Math.sin(e._vt*.55)*14*dt;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?.8:e._fcd)-dt)<=0){
+      e._fcd=rnd(1.15,1.5)/DIFF.eFire;e._wing=(e._wing||1)*-1;
+      const wing=e._wing;
+      queue(()=>{const ox=wing*.30,p=volcHardpoint(e,ox,.24);fire(p,Math.PI/2+wing*.11,1.75,'s2bomb',{accel:.55,max:2.75});muzzle(ox,.24,.82);},.68,.32);
     }
-  } else if(K==='cruc'){     // heavy bomber, seeds DELAYED bombs in lanes
-    e.y += 44*dt;
-    if(e._lane==null) e._lane=0;
-    if((e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){
-      e._fcd=rnd(0.85,1.15)/DIFF.eFire;
-      const lanes=[0.2,0.5,0.8], lx=W*lanes[e._lane%3]; e._lane++;
-      fire(lx, e.y+e.h*0.3, Math.PI/2, 1.9,'blob');
+  }else if(K==='carrier'){
+    // MAGMA CARRIER: bay-opening reel, ash-wing deployment and two bracket rockets, then retreat.
+    if(e._launched==null)e._launched=0;
+    if(e._retreat){e.y-=98*dt;if(e.y<-74)e.dead=true;return;}
+    if(e.y<VH*.20)e.y+=38*dt;else e.x+=Math.sin(e._vt*.75)*22*dt;
+    if(!e._s2Act&&e._launched<2&&(e._fcd=(e._fcd==null?1.2:e._fcd)-dt)<=0){
+      e._fcd=2.45;e._launched++;
+      queue(()=>{if(typeof spawnEnemy==='function'){spawnEnemy('ash',clamp(e.x-24,20,W-20),e.y+12,{inPlace:1});spawnEnemy('ash',clamp(e.x+24,20,W-20),e.y+12,{inPlace:1});}for(const ox of [-.34,.34]){const p=volcHardpoint(e,ox,.18);fire(p,Math.PI/2+ox*.52,2.0,'s2rocket',{silent:ox>0,accel:1.8,max:4.4});muzzle(ox,.18,.72);}if(e._launched>=2)e._retreat=true;},.82,.43);
     }
-  } else if(K==='lance'){    // commits to a high-speed diving LINE and does not correct
-    if(e._lock==null){ e._lock=aimPlayer(e.x,e.y); e._sp=0; }
-    e._sp=Math.min(300, (e._sp||0)+520*dt);
-    e.x += Math.cos(e._lock)*e._sp*dt; e.y += Math.sin(e._lock)*e._sp*dt;
-    e._bank = Math.cos(e._lock)>0 ? 1 : -1;
-    if((e._fcd=(e._fcd==null?0.7:e._fcd)-dt)<=0){ e._fcd=rnd(0.9,1.3)/DIFF.eFire; fire(e.x,e.y+e.h*0.3,e._lock,3.4,'dart'); }
-  } else if(K==='carrier'){  // durable support: releases drones, THEN retreats up-screen
-    if(e._launched==null) e._launched=0;
-    if(e._retreat){ e.y -= 96*dt; if(e.y<-70) e.dead=true; return; }
-    e.y += 40*dt; e.x += Math.sin(e._vt*0.8)*24*dt; e._bank=Math.sin(e._vt*0.8)>0?1:-1;
-    if((e._fcd=(e._fcd==null?1.8:e._fcd)-dt)<=0 && e._launched<3){
-      e._fcd=2.2; e._launched++;
-      if(typeof spawnEnemy==='function'){
-        spawnEnemy('ash', clamp(e.x-24,20,W-20), e.y+10, {inPlace:1});   // a SPLIT: both halves emerge from the wreck
-        spawnEnemy('ash', clamp(e.x+24,20,W-20), e.y+10, {inPlace:1});
-      }
-      if(e._launched>=3) e._retreat=true;
+  }else if(K==='miner'){
+    // DRILL MINER: braces its arms, spins the drill, then tears three readable fissures downward.
+    if(e.y<VH*.29)e.y+=44*dt;else e.x+=Math.sin(e._vt*.55)*12*dt;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){
+      e._fcd=rnd(2.0,2.7)/DIFF.eFire;
+      queue(()=>{const p=volcHardpoint(e,0,.39);for(const o of [-.32,0,.32])fire(p,Math.PI/2+o,2.15,'s2shock',{silent:o!==0});muzzle(0,.39,.90);shake=Math.max(shake,3);},.74,.40);
     }
-  } else if(K==='maw'){      // vent: OPENS, charges, spits fire straight down
-    if(e.y<VH*0.20) e.y += 60*dt; else e.y=VH*0.20+Math.sin(e._vt*0.9)*5;
-    e._fcd=(e._fcd==null?rnd(1.4,2.2):e._fcd)-dt;
-    if(e._fcd<=0.6 && e._fcd>0) e._chg=1;
-    if(e._fcd<=0){
-      e._fcd=rnd(2.1,3.0)/DIFF.eFire;
-      for(let k=-2;k<=2;k++) fire(e.x,e.y+e.h*0.34, Math.PI/2+k*0.15, 2.7,'blob');
+  }else if(K==='lavamaw'){
+    // LAVA MAW: anchored furnace breath — broad, slower five-way denial with a huge inhale tell.
+    if(e.y<VH*.22)e.y+=54*dt;else e.y=VH*.22+Math.sin(e._vt*.9)*4;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?1.3:e._fcd)-dt)<=0){
+      e._fcd=rnd(2.25,3.0)/DIFF.eFire;
+      queue(()=>{const p=volcHardpoint(e,0,.12);for(let k=-2;k<=2;k++)fire(p,Math.PI/2+k*.17,2.45,'s2breath',{silent:k!==0});muzzle(0,.12,1.0);},.78,.43);
     }
-  } else if(K==='crawl'){    // ground crawler: tracks the player laterally, never leaves the deck
-    e.y += 30*dt;
-    const dx=clamp(player.x-e.x,-1,1);
-    e.x += dx*54*dt; e._bank=dx>0?1:-1;
-    e._fcd=(e._fcd==null?rnd(1.0,1.8):e._fcd)-dt;
-    if(e._fcd<=0.45 && e._fcd>0) e._chg=1;
-    if(e._fcd<=0){ e._fcd=rnd(1.5,2.2)/DIFF.eFire; fire(e.x,e.y+e.h*0.3, aimPlayer(e.x,e.y), 2.9,'bolt'); }
-  } else if(K==='pod'){      // stationary turret: SWELLS, then one big eruption shot
-    if(e.y<VH*0.18) e.y += 52*dt;
-    e._fcd=(e._fcd==null?rnd(1.6,2.4):e._fcd)-dt;
-    if(e._fcd<=0.8 && e._fcd>0) e._chg=1;
-    if(e._fcd<=0){
-      e._fcd=rnd(2.6,3.6)/DIFF.eFire;
-      for(let k=0;k<12;k++) fire(e.x,e.y, k*TAU/12, 2.2,'blob');
+  }else if(K==='crawl'){
+    // LAVA CRAWLER: low pursuit, then two heavy fixed-heading jaw slugs; no post-launch steering.
+    if(e.y<VH*.33)e.y+=34*dt;const dx=clamp(player.x-e.x,-1,1);e.x+=dx*42*dt;e._bank=dx>0?1:-1;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?1.0:e._fcd)-dt)<=0){
+      e._fcd=rnd(1.65,2.25)/DIFF.eFire;
+      queue(()=>{const p=volcHardpoint(e,0,.28),a=aimPlayer(p.x,p.y);for(const o of [-.08,.08])fire(p,a+o,2.45,'s2slug',{silent:o>0,accel:.75,max:3.45});muzzle(0,.28,.78);},.66,.31);
     }
-  } else if(K==='magmagun'){
-    /* MAGMA ARTILLERY (0819): settles into a lane and SHELLS it — three magma balls on a tight
-       cadence, then a long reload you can cross the lane in. Same "burst then a window" rule the
-       0819 machine guns got: the pause IS the counterplay. Leaves after two full salvos. */
-    if(e.y<VH*0.20) e.y += 64*dt;
-    else e.x += Math.sin(e._vt*0.8)*20*dt;
-    e._fcd=(e._fcd==null?rnd(1.0,1.7):e._fcd)-dt;
-    if(e._fcd<=0.5 && e._fcd>0) e._chg=1;                       // the swell before the salvo
-    if(e._fcd<=0){
-      e._burst=(e._burst==null?3:e._burst);
-      const a=aimPlayer(e.x,e.y);
-      fire(e.x, e.y+e.h*0.34, a, 2.8, 'magma');
-      magmaMuzzle(e.x, e.y+e.h*0.34);
-      if(--e._burst>0){ e._fcd=0.26; }
-      else { e._burst=null; e._fcd=rnd(2.4,3.2)/DIFF.eFire; e._salvos=(e._salvos||0)+1; }
+  }else if(K==='pod'){
+    // ERUPTION POD: petals expose the core, then a twelve-point mine bloom leaves a safe gate.
+    if(e.y<VH*.18)e.y+=50*dt;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?1.4:e._fcd)-dt)<=0){
+      e._fcd=rnd(2.8,3.7)/DIFF.eFire;
+      queue(()=>{const p=volcHardpoint(e,0,-.04),n=12,step=TAU/n,base=e._vt*.24,a=aimPlayer(p.x,p.y);let gap=Math.round((a-base)/step);for(let k=0;k<n;k++){let d=Math.abs(((k-gap+n*3)%n));d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+k*step,1.85,'s2mine',{silent:k>0});}muzzle(0,-.04,.98);},.80,.44);
     }
-    if((e._salvos||0)>=2){ e.y -= 108*dt; if(e.y<-70) e.dead=true; }   // said its piece, withdraws
-  } else if(K==='spinner'){
-    /* CINDER SPINNER (0819) — "spin". Drifts to its station, SPINS UP visibly (the rotation is
-       the telegraph, so no extra tell is needed), releases a full ring of magma, then flies off.
-       ⚠ THE SPIN IS DRAWN, NOT IMPLIED: e.spin is what drawNewEnemyArt rotates by, so winding it
-       up is what makes the wind-up readable — the 0819 loopcharge lesson, same field. */
-    if(e.y<VH*0.24){ e.y += 78*dt; }
-    else {
-      e._wind=(e._wind||0)+dt;
-      e.spin=(e.spin||0) + Math.min(9.5, 1.2+e._wind*3.4)*dt;   // accelerates into the release
-      e.x += Math.sin(e._vt*1.2)*18*dt;
-      if(e._wind>0.55) e._chg=1;
-      if(e._wind>=1.35 && !e._rang){
-        e._rang=1;
-        for(let k=0;k<10;k++) fire(e.x, e.y, k*TAU/10 + e._vt*0.3, 2.5, 'magma');
-        magmaMuzzle(e.x, e.y);
-        shake=Math.max(shake,3);
-      }
-      if(e._rang){                                              // unwinds and climbs out
-        e.spin += 3.0*dt; e.y -= 96*dt;
-        if(e.y<-70) e.dead=true;
-      }
-    }
-  } else if(K==='dodger'){
-    /* EMBER DARTER (0819) — "dodge attacks, and fly off if they dont hit the player". Crosses on a
-       fast diagonal firing aimed magma, SIDESTEPS any player round closing on it, and exits the
-       far side. It never turns around: one pass, then gone.
-       ⚠ THE DODGE IS THE SAME TEST jetTick USES — it reacts only to a round actually closing on
-       it, so the break reads as a reaction rather than a twitch. Reusing the rule keeps the two
-       units feeling like the same game. */
-    if(e._dir==null){ e._dir=(e.x<W*0.5)?1:-1; e._ty=rnd(VH*0.30, VH*0.58); }
-    let _dodge=0;
-    if(typeof pBullets!=='undefined'){
-      for(const b of pBullets){
-        if(b.dead) continue;
-        if(b.y < e.y || b.y > e.y+180) continue;                // only what is closing on it
-        const dx=b.x-e.x;
-        if(Math.abs(dx)<52){ _dodge = dx>=0 ? -1 : 1; break; }  // break away from the round
-      }
-    }
-    if(_dodge){ e._dodgeT=0.34; e._dodgeDir=_dodge; }
-    e.y += (e.y<e._ty ? 130 : 26)*dt;
-    if((e._dodgeT=(e._dodgeT||0)-dt)>0){
-      e.x += (e._dodgeDir||1)*150*dt; e._bank=(e._dodgeDir||1);
-      e._chg=1;                                                 // lights up as it jinks
-    } else {
-      e.x += e._dir*146*dt; e._bank=e._dir;
-    }
-    if((e._fcd=(e._fcd==null?rnd(0.5,0.9):e._fcd)-dt)<=0 && e.y>VH*0.22){
-      e._fcd=rnd(0.9,1.4)/DIFF.eFire;
-      fire(e.x, e.y+e.h*0.3, aimPlayer(e.x,e.y), 3.0, 'lavaComet');
-      magmaMuzzle(e.x, e.y+e.h*0.3);
-    }
-    if(e.x<-46 || e.x>W+46) e.dead=true;                        // missed its pass: gone
-  } else if(K==='golem'){    // heavy elite: long telegraph, then a wide SLAM burst
-    if(e.y<VH*0.24) e.y += 40*dt; else e.x += Math.sin(e._vt*0.5)*34*dt;
-    e._fcd=(e._fcd==null?2.4:e._fcd)-dt;
-    if(e._fcd<=1.0 && e._fcd>0) e._chg=1;                     // a full second of tell
-    if(e._fcd<=0){
-      e._fcd=rnd(3.0,4.2)/DIFF.eFire;
-      for(let k=-4;k<=4;k++) fire(e.x,e.y+e.h*0.3, Math.PI/2+k*0.13, 2.6,'blob');
-      shake=Math.max(shake,4);
+  }else if(K==='golem'){
+    // MAGMA GOLEM: full-body wind-up; fist slam creates a wide shock fan with an obvious centre lane.
+    if(e.y<VH*.27)e.y+=34*dt;else e.x+=Math.sin(e._vt*.45)*24*dt;
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?1.8:e._fcd)-dt)<=0){
+      e._fcd=rnd(3.2,4.1)/DIFF.eFire;
+      queue(()=>{const p=volcHardpoint(e,0,.42);for(const o of [-.48,-.32,-.16,.16,.32,.48])fire(p,Math.PI/2+o,2.45,'s2shock',{silent:o!==-.48});muzzle(-.26,.40,.78);muzzle(.26,.40,.78);shake=Math.max(shake,5);},.86,.50);
     }
   }
-  if(e.x<-60) e.x=-60; else if(e.x>W+60) e.x=W+60;
+  if(e.x<-60)e.x=-60;else if(e.x>W+60)e.x=W+60;
 }
 function drawVolc(e){
   if(typeof XART==='undefined' || !e._volc) return false;
   const V=VOLC[e._volc]; if(!V) return false;
   const frac=clamp(e.hp/(e._maxhp||e.hp||1), 0, 1);
-  let fi;
+  let fi,k=null;
   if(V.fam==='ship'){
     // 0 neutral · 1 attack · 2 bank-left · 3 bank-right · 4 damaged · 5 destroyed
     if(e._dyingT!=null) fi=5;
     else if(frac<=0.35) fi=4;
-    else if((e._muz||0)>0) fi=1;
     else if(e._bank<0) fi=2;
     else if(e._bank>0) fi=3;
     else fi=0;
@@ -32790,11 +37029,9 @@ function drawVolc(e){
     if(e._dyingT!=null) fi=5;
     else if(frac<=0.22) fi=4;
     else if(frac<=0.55) fi=3;
-    else if((e._muz||0)>0) fi=2;
-    else if(e._chg) fi=1;
     else fi=0;
   }
-  let k='nvl_'+V.art+'_'+fi;
+  if(!k) k='nvl_'+V.art+'_'+fi;
   if(!XART.rdy(k)){ k='nvl_'+V.art+'_0'; if(!XART.rdy(k)) return false; }
   const im=XART.get(k);
   const h=e.h*1.9, w=h*(im.naturalWidth/im.naturalHeight);
@@ -32806,12 +37043,523 @@ function drawVolc(e){
      inconsistently across contexts, do not respect the pixel-art look, and were why several units
      never appeared to light up when shot. Tinting the sprite keeps its silhouette exactly. */
   if(e.flash>0 && typeof xartTint==='function'){
-    const _tc=xartTint(k, e.flash>0.04?'#ffffff':'#ff8a4a', 0.85);
+    const _tc=xartTint(k, hitFlashColor(e,e.flash>0.04?'#ffffff':'#ff8a4a'), 0.85);
     if(_tc) ctx.drawImage(_tc,-w/2,-h/2,w,h);
   }
   ctx.restore();
   return true;
 }
+
+/* Every main-boss release is post-processed at one choke point. Older attacks pushed ordinary
+   enemy bullets and toggled hand-drawn `_muzL/_muzR` flags, bypassing the authored boss arsenal.
+   Stamp the newly released rounds with the boss's real bfx family, then place the matching bfx
+   muzzle reel exactly where those rounds were born. Screen-wide walls are excluded because their
+   spawn points are pattern geometry, not physical gun barrels. */
+function bossAttack(){
+  const b=(typeof boss!=='undefined')?boss:null, first=eBullets.length;
+  try{return bossAttack__inner();}
+  finally{
+    if(b&&!b.dead){
+      const fam=(typeof bossVisualFamily==='function')?bossVisualFamily(b):null;
+      for(let i=first;i<eBullets.length;i++){
+        const q=eBullets[i];q._boss=true;
+        const dedicated=/^(s1|s6mb_|s7spore|s8rift|s9lattice)/.test(String(q.kind||''));
+        if(fam&&!dedicated){q._bfam=fam;q._noArsenal=false;}
+      }
+      if(!b._smz)attachAnchoredReleaseMuzzles(b,first,fam);
+    }
+  }
+}
+
+/* ============================================================
+   STAGE 3 — NATIVE ICE COMBAT PASS (0829)
+
+   One controller per shipped silhouette, no drone aliases and no generic shooter.  Every armed
+   hull queues its authored eight-frame reel, releases from a measured local hardpoint and then
+   commits the projectile to that launch heading.  The interceptor is intentionally projectile-
+   free: it circles once and becomes the projectile, matching Mike's Fire-Shark specification.
+   ============================================================ */
+const S3ICE={
+  s3mine:       {art:'mine',       hp:18,w:42,h:42,score:700},
+  s3interceptor:{art:'interceptor',hp:15,w:38,h:40,score:760},
+  s3sled:       {art:'sled',       hp:24,w:46,h:48,score:920},
+  s3snowmobile: {art:'snowmobile', hp:16,w:30,h:48,score:720},
+  s3crawler:    {art:'crawler',    hp:32,w:50,h:48,score:1180},
+  s3tank:       {art:'tank',       hp:46,w:54,h:54,score:1550},
+  s3barge:      {art:'barge',      hp:62,w:54,h:66,score:2100},
+  s3artillery:  {art:'artillery',  hp:54,w:50,h:62,score:1900},
+};
+const S3_PROJECTILE_HIT={
+  s3shard:[8,18],s3lance:[9,24],s3tracer:[7,17],s3mortar:[20,20],s3shell:[12,27],s3wave:[28,18]
+};
+function s3Hardpoint(e,ox,oy){ return combatHardpoint(e,ox,oy); }
+function stage3Muzzle(e,ox,oy,scale,life,fam){
+  const p=s3Hardpoint(e,ox,oy); if(!p) return;
+  const _fam=fam===MUZZLE_MG?BPFX_MUZZLE_KINETIC:BPFX_MUZZLE_LASER;
+  navalFlash(null,p,scale||.82,_fam,{n:8,hpx:44,life:life||.15,
+    follow:()=>e&&!e.dead?s3Hardpoint(e,ox,oy):null});
+}
+function s3IceTick(e,dt){
+  const K=e._s3ice,I=S3ICE[K]; if(!I) return;
+  e._s3t=(e._s3t||0)+dt;
+  const W=worldWidth(),aim=(p)=>aimPlayer(p.x,p.y);
+  const fire=(p,a,sp,kind,opts)=>{
+    opts=opts||{};const hb=S3_PROJECTILE_HIT[kind]||[8,8];
+    if(opts.w==null)opts.w=hb[0];if(opts.h==null)opts.h=hb[1];
+    const b=eShootT(p.x,p.y,a,sp,kind,opts);e._muz=.13;
+    if(opts.accel){b._s3Accel=opts.accel;b._s3Max=opts.max||sp*1.8;}
+    return b;
+  };
+  const queue=(release,dur,at)=>{
+    if(e._s3Act)return false;
+    e._s3Act={t:0,dur:dur||.70,at:at||.36,fired:false,release};
+    e._s3AtkT=0;e._s3AtkDur=e._s3Act.dur;return true;
+  };
+  if(e._s3Act){
+    const q=e._s3Act;q.t+=dt;e._s3AtkT=q.t;
+    if(!q.fired&&q.t>=q.at){q.fired=true;q.release();}
+    if(q.t>=q.dur){e._s3Act=null;e._s3AtkT=null;}
+  }
+  if((e._stagger||0)>0){e._stagger-=dt;return;}
+
+  if(K==='s3mine'){
+    // SHARD MINE: opens, spins and throws a radial crown with a three-slot escape gate.
+    if(e.y<VH*.23)e.y+=70*dt;else e.y=VH*.23+Math.sin(e._s3t*.9)*5;
+    e.spin=(e.spin||0)+.55*dt;
+    if(!e._s3Act&&(e._fcd=(e._fcd==null?1.0:e._fcd)-dt)<=0){
+      e._fcd=rnd(2.7,3.4)/DIFF.eFire;
+      queue(()=>{const p=s3Hardpoint(e,0,0),n=12,step=TAU/n,base=e._s3t*.23,a=aim(p);let gap=Math.round((a-base)/step);
+        for(let k=0;k<n;k++){let d=Math.abs((k-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+k*step,1.9,'s3shard',{silent:k>0});}
+        stage3Muzzle(e,0,0,1.0,.18);},.78,.42);
+    }
+  }else if(K==='s3interceptor'){
+    // ELITE INTERCEPTOR: one complete readable circle, a short engine tell, then one locked ram.
+    if(!e._phase){e._phase='entry';e._loopA=-Math.PI/2;e._loopCx=e.x;e._loopCy=VH*.24;}
+    if(e._phase==='entry'){
+      e.y+=96*dt;
+      if(e.y>=e._loopCy){e.y=e._loopCy;e._phase='loop';e._loopCx=e.x;e._loopA=-Math.PI/2;}
+    }else if(e._phase==='loop'){
+      const old=e._loopA;e._loopA+=3.15*dt;
+      e.x=e._loopCx+46*Math.cos(e._loopA);e.y=e._loopCy+30*Math.sin(e._loopA);
+      const vx=-46*Math.sin(e._loopA),vy=30*Math.cos(e._loopA);e.spin=Math.atan2(vy,vx)-Math.PI/2;
+      if(old<TAU-Math.PI/2&&e._loopA>=TAU-Math.PI/2){e._phase='tell';e._tell=.48;queue(()=>{},.48,.47);}
+    }else if(e._phase==='tell'){
+      e._tell-=dt;e.spin*=.90;
+      if(e._tell<=0){e._phase='charge';e._ramA=aimPlayer(e.x,e.y);e._ramSp=90;e._s3AtkT=0;e._s3AtkDur=.72;}
+    }else{
+      e._ramSp=Math.min(430,e._ramSp+620*dt);e.x+=Math.cos(e._ramA)*e._ramSp*dt;e.y+=Math.sin(e._ramA)*e._ramSp*dt;
+      e.spin=e._ramA-Math.PI/2;e._s3AtkT=Math.min(.71,(e._s3AtkT||0)+dt);
+      if(e.x<-70||e.x>W+70||e.y>VH+80)e.dead=true;
+    }
+  }else if(K==='s3sled'){
+    // AA SLED: two visible barrels paint two vertical lances, then the centre lane a beat later.
+    if(e.y<VH*.25)e.y+=58*dt;else e.y+=Math.sin(e._s3t*.8)*.07;
+    if(!e._s3Act&&(e._fcd=(e._fcd==null?.75:e._fcd)-dt)<=0){
+      e._fcd=rnd(2.0,2.6)/DIFF.eFire;
+      queue(()=>{for(const ox of [-.22,.22]){const p=s3Hardpoint(e,ox,.34);fire(p,Math.PI/2,4.0,'s3lance',{silent:ox>0});stage3Muzzle(e,ox,.34,.82,.15);}
+        const p=s3Hardpoint(e,0,.38);fire(p,Math.PI/2,3.25,'s3lance',{silent:true,szMul:.82});},.72,.37);
+    }
+  }else if(K==='s3snowmobile'){
+    // SNOWMOBILE: one fast side pass, short anchored machine-gun burst, never loops or homes.
+    if(e._dir==null)e._dir=e._side||((e.x<W*.5)?1:-1);
+    e.x+=e._dir*155*dt;e.y+=Math.sin(e._s3t*3.4)*18*dt;e.spin=e._dir*.08;
+    if(!e._s3Act&&(e._fcd=(e._fcd==null?.35:e._fcd)-dt)<=0&&e.x>20&&e.x<W-20){
+      e._fcd=rnd(.72,.98)/DIFF.eFire;
+      queue(()=>{const p=s3Hardpoint(e,0,.42);for(const o of [-.08,0,.08])fire(p,Math.PI/2+o,4.75,'s3tracer',{silent:o!==0});stage3Muzzle(e,0,.42,.66,.12,MUZZLE_MG);},.50,.24);
+    }
+    if(e.x<-60||e.x>W+60)e.dead=true;
+  }else if(K==='s3crawler'){
+    // ICE CRAWLER: plants its claws, follows slowly, then lobs a fixed three-shell mortar fan.
+    if(e.y<VH*.32)e.y+=43*dt;else{const dx=clamp(player.x-e.x,-1,1);e.x+=dx*32*dt;}
+    if(!e._s3Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){
+      e._fcd=rnd(2.2,2.9)/DIFF.eFire;
+      queue(()=>{const p=s3Hardpoint(e,0,.31),a=aim(p);for(const o of [-.24,0,.24])fire(p,a+o,1.65,'s3mortar',{silent:o!==0,accel:.65,max:3.1});stage3Muzzle(e,0,.31,.92,.17);shake=Math.max(shake,2);},.76,.42);
+    }
+  }else if(K==='s3tank'){
+    // SNOW TANK: terrain-locked heavy cannon; one obvious shell and two slower crystal escorts.
+    if(e.y<VH*.27)e.y+=46*dt;else e.y+=emplaceStep(e,dt);
+    if(!e._s3Act&&(e._fcd=(e._fcd==null?1.2:e._fcd)-dt)<=0){
+      e._fcd=rnd(2.6,3.3)/DIFF.eFire;
+      queue(()=>{const p=s3Hardpoint(e,0,.46),a=aim(p);fire(p,a,2.1,'s3shell',{accel:1.15,max:4.7});
+        for(const o of [-.22,.22])fire(p,a+o,1.65,'s3shard',{silent:true,szMul:.82});stage3Muzzle(e,0,.46,1.05,.18);shake=Math.max(shake,4);},.84,.47);
+    }
+  }else if(K==='s3barge'){
+    // CRYO BARGE: slow centre hold; alternating six-round brackets always leave the centre open.
+    if(e.y<VH*.21)e.y+=35*dt;else e.x+=Math.sin(e._s3t*.42)*18*dt;
+    if(!e._s3Act&&(e._fcd=(e._fcd==null?1.4:e._fcd)-dt)<=0){
+      e._fcd=rnd(3.0,3.8)/DIFF.eFire;e._br=(e._br||1)*-1;
+      queue(()=>{for(const side of [-1,1]){const p=s3Hardpoint(e,side*.16,.10);for(const o of [.20,.34,.48])fire(p,Math.PI/2+side*o*e._br,2.35,'s3wave',{silent:side>0||o>.2});stage3Muzzle(e,side*.16,.10,.92,.17);}},.82,.43);
+    }
+  }else if(K==='s3artillery'){
+    // FROST ARTILLERY: long bore tell and a descending three-lane barrage, fixed at release.
+    if(e.y<VH*.20)e.y+=38*dt;else e.y+=emplaceStep(e,dt);
+    if(!e._s3Act&&(e._fcd=(e._fcd==null?1.3:e._fcd)-dt)<=0){
+      e._fcd=rnd(3.2,4.0)/DIFF.eFire;
+      queue(()=>{const p=s3Hardpoint(e,0,.49),a=aim(p);for(const o of [-.17,0,.17])fire(p,a+o,1.45,'s3mortar',{silent:o!==0,accel:.9,max:4.0,szMul:1.18});stage3Muzzle(e,0,.49,1.12,.19);shake=Math.max(shake,5);},.90,.52);
+    }
+  }
+  if(e.x<-70)e.x=-70;else if(e.x>W+70)e.x=W+70;
+}
+function drawS3Ice(e){
+  if(typeof XART==='undefined'||!e._s3ice)return false;
+  const I=S3ICE[e._s3ice];if(!I)return false;
+  const frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);
+  let key=null;
+  if(frac<=.65){
+    const st=frac<=.35?'critical':'damaged';key='s3dmg_'+I.art+'_'+st+'_'+(Math.floor((e.t||0)*9)%8);
+  }else key='s3atk_'+I.art+'_0';
+  if(!XART.rdy(key)){key=nefArtFor(e);if(!XART.rdy(key))return false;}
+  const im=XART.get(key),dh=e.h*1.9,dw=dh*(im.naturalWidth/im.naturalHeight);
+  e._drawW=dw;e._drawH=dh;
+  ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);
+  ctx.drawImage(im,-dw/2,-dh/2,dw,dh);
+  if(e.flash>0&&typeof xartTint==='function'){const t=xartTint(key,hitFlashColor(e,'#ffffff'),.92);if(t)ctx.drawImage(t,-dw/2,-dh/2,dw,dh);}
+  ctx.restore();return true;
+}
+
+/* ============================================================
+   STAGE 4 — BLACKSITE HIGHWAY COMBAT PASS (0829)
+
+   Twelve supplied silhouettes, twelve signatures.  The chase never borrows jungle craft and
+   never arms the generic shooter: every release is frame-locked to the recovered eight-frame
+   action reel and starts at a measured local hardpoint.  Missiles accelerate on their original
+   launch heading only; none of this roster flips, mirrors or re-aims a round after the tell.
+   ============================================================ */
+const S4CHASE={
+  s4airfield:   {art:'airfield_tank',       hp:42,w:52,h:60,score:1450,ground:1},
+  s4tractor:    {art:'armored_tractor',     hp:34,w:50,h:60,score:1260,ground:1},
+  s4interceptor:{art:'blacksite_interceptor',hp:16,w:48,h:54,score:820,impact:1},
+  s4command:    {art:'command_plane',       hp:38,w:66,h:56,score:1540},
+  s4barrel:     {art:'explosive_barrel',    hp:7, w:34,h:46,score:360, ground:1,impact:1},
+  s4tanker:     {art:'fuel_tanker',         hp:28,w:40,h:66,score:1060,ground:1},
+  s4bomber:     {art:'gunship_bomber',      hp:24,w:64,h:50,score:1140},
+  s4heavyjet:   {art:'heavy_attack_jet',    hp:36,w:66,h:70,score:1500},
+  s4missile:    {art:'missile_vehicle',     hp:32,w:48,h:66,score:1340,ground:1},
+  s4rocket:     {art:'rocket_plane',        hp:20,w:58,h:46,score:980},
+  s4minitank:   {art:'runway_mini_tank',    hp:18,w:40,h:52,score:760,ground:1},
+  s4sam:        {art:'sam_carrier',          hp:44,w:50,h:66,score:1680,ground:1}
+};
+const S4_PROJECTILE_HIT={
+  s4steel:[8,18],s4brass:[7,16],s4rocket:[11,26],s4missile:[12,30],s4bomb:[18,20],s4rail:[8,25]
+};
+function s4Hardpoint(e,ox,oy){return combatHardpoint(e,ox,oy);}
+function stage4Muzzle(e,ox,oy,scale,life,fam){
+  const p=s4Hardpoint(e,ox,oy);if(!p)return;
+  const _fam=fam===MUZZLE_MG?BPFX_MUZZLE_KINETIC:BPFX_MUZZLE_MISSILE;
+  navalFlash(null,p,scale||.82,_fam,{n:8,hpx:46,life:life||.15,
+    follow:()=>e&&!e.dead?s4Hardpoint(e,ox,oy):null});
+}
+function s4ChaseTick(e,dt){
+  const K=e._s4chase,H=S4CHASE[K];if(!H)return;
+  e._s4t=(e._s4t||0)+dt;
+  const W=worldWidth(),aim=(p)=>aimPlayer(p.x,p.y);
+  const fire=(p,a,sp,kind,opts)=>{
+    opts=opts||{};const hb=S4_PROJECTILE_HIT[kind]||[8,8];
+    if(opts.w==null)opts.w=hb[0];if(opts.h==null)opts.h=hb[1];
+    const b=eShootT(p.x,p.y,a,sp,kind,opts);e._muz=.13;
+    if(opts.accel){b._s4Accel=opts.accel;b._s4Max=opts.max||sp*1.9;}
+    return b;
+  };
+  const queue=(release,dur,at)=>{
+    if(e._s4Act)return false;e._s4Act={t:0,dur:dur||.68,at:at||.34,fired:false,release};
+    e._s4AtkT=0;e._s4AtkDur=e._s4Act.dur;return true;
+  };
+  if(e._s4Act){const q=e._s4Act;q.t+=dt;e._s4AtkT=q.t;if(!q.fired&&q.t>=q.at){q.fired=true;q.release();}
+    if(q.t>=q.dur){e._s4Act=null;e._s4AtkT=null;}}
+  if((e._stagger||0)>0){e._stagger-=dt;return;}
+
+  if(K==='s4airfield'){
+    // AIRFIELD TANK: steady centre-lane pursuit, three recoil-spaced cannon rounds.
+    e.y+=58*dt;e.x+=clamp(player.x-e.x,-1,1)*18*dt;
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?.9:e._fcd)-dt)<=0){e._fcd=rnd(2.1,2.7)/DIFF.eFire;
+      queue(()=>{const p=s4Hardpoint(e,0,.40),a=aim(p);for(const o of [-.08,0,.08])fire(p,a+o,3.05,'s4steel',{silent:o!==0});stage4Muzzle(e,0,.40,1.0,.17);e._kick=.18;shake=Math.max(shake,3);},.76,.40);}
+  }else if(K==='s4tractor'){
+    // ARMORED TRACTOR: twin turrets alternate a brass bracket, leaving the middle lane open.
+    e.y+=52*dt;e.x+=Math.sin(e._s4t*.72)*15*dt;
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){e._fcd=rnd(2.4,3.1)/DIFF.eFire;e._br=(e._br||1)*-1;
+      queue(()=>{for(const side of [-1,1]){const p=s4Hardpoint(e,side*.20,.30);for(const d of [.16,.30])fire(p,Math.PI/2+side*d*e._br,2.65,'s4brass',{silent:side>0||d>.16});stage4Muzzle(e,side*.20,.30,.76,.14,MUZZLE_MG);}},.74,.38);}
+  }else if(K==='s4interceptor'){
+    // BLACKSITE INTERCEPTOR: one crossing pass and a short fixed-heading nose burst.
+    if(e._dir==null)e._dir=e._side||((e.x<W*.5)?1:-1);e.x+=e._dir*190*dt;e.y+=42*dt;e.spin=-e._dir*Math.PI/2;
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?.32:e._fcd)-dt)<=0&&e.x>24&&e.x<W-24){e._fcd=.92/DIFF.eFire;
+      queue(()=>{const p=s4Hardpoint(e,0,.36),a=aim(p);for(const o of [-.07,0,.07])fire(p,a+o,4.8,'s4brass',{silent:o!==0});stage4Muzzle(e,0,.36,.66,.11,MUZZLE_MG);},.48,.22);}
+    if(e.x<-100||e.x>W+100)e.dead=true;
+  }else if(K==='s4command'){
+    // COMMAND PLANE: high station, alternating five-needle command fans from outer nacelles.
+    if(e.y<VH*.20)e.y+=72*dt;else{e.y=VH*.20+Math.sin(e._s4t*1.2)*5;e.x+=Math.sin(e._s4t*.55)*24*dt;}
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?1.25:e._fcd)-dt)<=0){e._fcd=rnd(2.5,3.2)/DIFF.eFire;e._fan=(e._fan||1)*-1;
+      queue(()=>{for(const side of [-1,1]){const p=s4Hardpoint(e,side*.30,.21);for(const o of [-.26,-.13,0,.13,.26])if(Math.sign(o||side)===side||o===0)fire(p,Math.PI/2+o*e._fan,3.0,'s4rail',{silent:true});stage4Muzzle(e,side*.30,.21,.80,.15);}},.82,.45);}
+  }else if(K==='s4barrel'){
+    // EXPLOSIVE BARREL: fixed to its placement and carried only by the scrolling highway.
+    if(e._lane==null)e._lane=e.x;e.x=e._lane;e.y+=emplaceStep(e,dt);e.vx=0;e.vy=0;e.spin=0;
+  }else if(K==='s4tanker'){
+    // FUEL TANKER: convoy target that sheds slow, bright fuel bombs from its rear rack.
+    e.y+=68*dt;e.x+=Math.sin(e._s4t*.50)*9*dt;
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?1.0:e._fcd)-dt)<=0){e._fcd=rnd(2.1,2.8)/DIFF.eFire;
+      queue(()=>{const p=s4Hardpoint(e,0,.43);for(const o of [-.16,.16])fire(p,Math.PI/2+o,1.85,'s4bomb',{silent:o>0,accel:.45,max:3.0});stage4Muzzle(e,0,.43,.74,.14);},.72,.37);}
+  }else if(K==='s4bomber'){
+    // GUNSHIP BOMBER: commits to one lateral run and drops a measured three-bomb ladder.
+    if(e._dir==null)e._dir=e._side||1;e.x+=e._dir*132*dt;e.y+=30*dt;e.spin=-e._dir*Math.PI/2;
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?.35:e._fcd)-dt)<=0&&e.x>35&&e.x<W-35){e._fcd=1.45/DIFF.eFire;
+      queue(()=>{for(const ox of [-.25,0,.25]){const p=s4Hardpoint(e,ox,.20);fire(p,Math.PI/2,2.0,'s4bomb',{silent:ox!==-.25,accel:.65,max:3.5});stage4Muzzle(e,ox,.20,.64,.11);}},.62,.30);}
+    if(e.x<-110||e.x>W+110)e.dead=true;
+  }else if(K==='s4heavyjet'){
+    // HEAVY ATTACK JET: slow dive, twin rack salvo, then accelerates out of the chase.
+    e.y+=(e._egress?190:62)*dt;e.x+=Math.sin(e._s4t*.8)*18*dt;
+    if(!e._s4Act&&!e._egress&&(e._fcd=(e._fcd==null?.72:e._fcd)-dt)<=0){e._fcd=9;
+      queue(()=>{for(const side of [-1,1]){const p=s4Hardpoint(e,side*.31,.20),a=aim(p);fire(p,a+side*.10,2.15,'s4missile',{silent:side>0,accel:1.55,max:5.4});stage4Muzzle(e,side*.31,.20,.90,.16);}e._egress=1;},.82,.43);}
+  }else if(K==='s4missile'){
+    // MISSILE VEHICLE: road-locked hold, two accelerating rockets leave visible parallel racks.
+    if(e.y<VH*.27)e.y+=48*dt;else e.y+=12*dt;
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){e._fcd=rnd(2.6,3.4)/DIFF.eFire;
+      queue(()=>{for(const side of [-1,1]){const p=s4Hardpoint(e,side*.18,.30),a=aim(p);fire(p,a+side*.07,1.9,'s4rocket',{silent:side>0,accel:1.3,max:5.0});stage4Muzzle(e,side*.18,.30,.86,.16);}},.84,.45);}
+  }else if(K==='s4rocket'){
+    // ROCKET PLANE: diagonal sweep with one fixed three-rocket fan; no reacquisition or wobble.
+    if(e._dir==null)e._dir=e._side||((e.x<W*.5)?1:-1);e.x+=e._dir*118*dt;e.y+=92*dt;e.spin=-e._dir*.35;
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?.42:e._fcd)-dt)<=0){e._fcd=1.8/DIFF.eFire;
+      queue(()=>{const p=s4Hardpoint(e,0,.28),a=aim(p);for(const o of [-.18,0,.18])fire(p,a+o,2.35,'s4rocket',{silent:o!==0,accel:1.1,max:4.8});stage4Muzzle(e,0,.28,.80,.14);},.68,.33);}
+  }else if(K==='s4minitank'){
+    // RUNWAY MINI TANK: quick lane changes and a four-shot machine-gun stitch.
+    if(e._lane==null)e._lane=e.x;e.y+=96*dt;e.x=e._lane+Math.sin(e._s4t*1.75+(e.phase||0))*44;
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?.45:e._fcd)-dt)<=0){e._fcd=rnd(1.15,1.55)/DIFF.eFire;
+      queue(()=>{const p=s4Hardpoint(e,0,.41),a=aim(p);for(const o of [-.09,-.03,.03,.09])fire(p,a+o,4.35,'s4brass',{silent:o>-.09});stage4Muzzle(e,0,.41,.60,.10,MUZZLE_MG);},.52,.24);}
+  }else if(K==='s4sam'){
+    // SAM CARRIER: long rack-opening tell, then a descending three-lane missile wall.
+    if(e.y<VH*.22)e.y+=42*dt;else e.y+=10*dt;
+    if(!e._s4Act&&(e._fcd=(e._fcd==null?1.35:e._fcd)-dt)<=0){e._fcd=rnd(3.0,3.8)/DIFF.eFire;
+      queue(()=>{for(const ox of [-.22,0,.22]){const p=s4Hardpoint(e,ox,.28);fire(p,Math.PI/2,1.75,'s4missile',{silent:ox!==-.22,accel:1.35,max:5.2});stage4Muzzle(e,ox,.28,.88,.16);}shake=Math.max(shake,3);},.92,.52);}
+  }
+  if(e._kick>0)e._kick=Math.max(0,e._kick-dt);
+  if(e.x<-120)e.x=-120;else if(e.x>W+120)e.x=W+120;
+}
+function drawS4DamageOverlay(e,frac,w,h){
+  if(frac>.66)return;
+  const critical=frac<=.33,t=e.t||0,count=critical?4:2;
+  ctx.save();ctx.globalCompositeOperation='source-over';
+  for(let i=0;i<count;i++){
+    const ph=t*(1.25+i*.17)+i*1.7;
+    const x=Math.sin(ph*1.9)*w*(.09+i*.025), y=-h*.03-((ph*18+i*11)%(h*.44));
+    const r=(critical?7:5)+i*1.2;
+    ctx.fillStyle=critical?'rgba(38,42,48,.84)':'rgba(55,59,64,.72)';
+    ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.arc(x+r*.62,y-r*.25,r*.72,0,TAU);ctx.fill();
+  }
+  const fy=h*.12+Math.sin(t*11)*3;ctx.fillStyle=critical?'#ff4a16':'#ff9b27';
+  ctx.beginPath();ctx.moveTo(-4,fy);ctx.lineTo(0,fy-13-Math.sin(t*17)*4);ctx.lineTo(5,fy);ctx.fill();
+  ctx.restore();
+}
+function drawS4Chase(e){
+  if(typeof XART==='undefined'||!e._s4chase)return false;const H=S4CHASE[e._s4chase];if(!H)return false;
+  let fi=0;
+  let key='s4atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s4atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),kick=(e._kick||0)*18;
+  e._drawW=dw;e._drawH=dh;const frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);
+  ctx.save();ctx.translate(e.x,e.y+kick);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);
+  drawS4DamageOverlay(e,frac,dw,dh);
+  if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#ffffff'),.72);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}
+  ctx.restore();return true;
+}
+
+/* ============================================================
+   STAGE 6 — HEAVY TURBULENCE NATIVE FLEET (0829)
+
+   Twelve supplied airframes, twelve signatures.  Every weapon launches from a measured local
+   hardpoint during its eight-frame attack reel.  Wind and electrical rounds commit at release:
+   no common enemy homes, mirrors, or flips a projectile after the player has read the tell.
+   ============================================================ */
+const S6STORM={
+  s6lancer: {art:'cloud_lancer',          hp:22,w:58,h:68,score:980},
+  s6cyclone:{art:'cyclone_interceptor',   hp:18,w:62,h:62,score:920,impact:1},
+  s6bomber: {art:'four_engine_bomber',    hp:38,w:72,h:58,score:1420},
+  s6mine:   {art:'lightning_mine',        hp:20,w:54,h:54,score:900},
+  s6skimmer:{art:'lightning_skimmer',     hp:28,w:64,h:68,score:1180},
+  s6carrier:{art:'nuclear_carrier',       hp:64,w:76,h:66,score:2100},
+  s6reactor:{art:'reactor_storm_bomber',  hp:96,w:88,h:78,score:3200},
+  s6buoy:   {art:'storm_buoy',            hp:24,w:46,h:58,score:1040},
+  s6dart:   {art:'storm_dart',            hp:16,w:58,h:54,score:760},
+  s6thunder:{art:'thunder_fighter',       hp:26,w:58,h:66,score:1120},
+  s6turbine:{art:'turbine_drone',         hp:34,w:66,h:70,score:1380},
+  s6probe:  {art:'weather_probe',         hp:30,w:54,h:54,score:1260}
+};
+const S6_PROJECTILE_HIT={
+  s6wind:[16,34],s6bolt:[10,30],s6missile:[13,32],s6orb:[22,22],s6tracer:[7,20],s6seeker:[14,30]
+};
+const S6_MUZZLE='s6mb_cyclonemuzzle';
+function s6Hardpoint(e,ox,oy){return combatHardpoint(e,ox,oy);}
+function stage6Muzzle(e,ox,oy,scale,life,fam){
+  const p=s6Hardpoint(e,ox,oy);if(!p)return;
+  navalFlash(null,p,scale||.76,BPFX_MUZZLE_LASER,{n:8,hpx:46,life:life||.16,
+    follow:()=>e&&!e.dead?s6Hardpoint(e,ox,oy):null});
+}
+function s6StormTick(e,dt){
+  const K=e._s6storm,H=S6STORM[K];if(!H)return;
+  e._s6t=(e._s6t||0)+dt;const W=worldWidth(),aim=(p)=>aimPlayer(p.x,p.y);
+  const fire=(p,a,sp,kind,opts)=>{opts=opts||{};const hb=S6_PROJECTILE_HIT[kind]||[9,9];
+    if(opts.w==null)opts.w=hb[0];if(opts.h==null)opts.h=hb[1];
+    const b=eShootT(p.x,p.y,a,sp,kind,opts);e._muz=.14;
+    if(opts.accel){b._s6Accel=opts.accel;b._s6Max=opts.max||sp*1.9;}
+    if(opts.curve)b._s6Curve=opts.curve;return b;};
+  const queue=(release,dur,at)=>{if(e._s6Act)return false;e._s6Act={t:0,dur:dur||.72,at:at||.36,fired:false,release};
+    e._s6AtkT=0;e._s6AtkDur=e._s6Act.dur;return true;};
+  if(e._s6Act){const q=e._s6Act;q.t+=dt;e._s6AtkT=q.t;
+    if(!q.fired&&q.t>=q.at){q.fired=true;q.release();}
+    if(q.t>=q.dur){e._s6Act=null;e._s6AtkT=null;}}
+  if((e._stagger||0)>0){e._stagger-=dt;return;}
+
+  if(K==='s6lancer'){
+    // CLOUD LANCER: high station, three wind blades locked to the player's position at release.
+    if(e.y<VH*.22)e.y+=82*dt;else{e.y=VH*.22+Math.sin(e._s6t*1.4)*7;e.x+=Math.sin(e._s6t*.65)*22*dt;}
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?.65:e._fcd)-dt)<=0){e._fcd=rnd(1.55,2.05)/DIFF.eFire;
+      queue(()=>{const p=s6Hardpoint(e,0,.34),a=aim(p);for(const o of [-.10,0,.10])fire(p,a+o,3.5,'s6wind',{silent:o!==0,curve:o*.30});stage6Muzzle(e,0,.34,.82,.15);},.68,.32);}
+  }else if(K==='s6cyclone'){
+    // CYCLONE INTERCEPTOR: complete corkscrew tell, then one committed high-speed ram lane.
+    if(!e._phase){e._phase='entry';e._cx=e.x;e._cy=VH*.24;e._a=-Math.PI/2;}
+    if(e._phase==='entry'){e.y+=112*dt;if(e.y>=e._cy){e.y=e._cy;e._phase='loop';}}
+    else if(e._phase==='loop'){const old=e._a;e._a+=3.5*dt;e.x=e._cx+54*Math.cos(e._a);e.y=e._cy+34*Math.sin(e._a);e.spin=e._a+Math.PI/2;
+      if(old<TAU-Math.PI/2&&e._a>=TAU-Math.PI/2){e._phase='tell';e._tell=.52;queue(()=>{},.52,.51);}}
+    else if(e._phase==='tell'){e._tell-=dt;if(e._tell<=0){e._phase='charge';e._ramA=aimPlayer(e.x,e.y);e._ramSp=120;}}
+    else{e._ramSp=Math.min(520,e._ramSp+720*dt);e.x+=Math.cos(e._ramA)*e._ramSp*dt;e.y+=Math.sin(e._ramA)*e._ramSp*dt;e.spin=e._ramA-Math.PI/2;if(e.x<-90||e.x>W+90||e.y>VH+100)e.dead=true;}
+  }else if(K==='s6bomber'){
+    // FOUR-ENGINE BOMBER: one lateral run; alternating racks build a descending bomb corridor.
+    if(e._dir==null)e._dir=e._side||1;e.x+=e._dir*118*dt;e.y+=28*dt;e.spin=-e._dir*Math.PI/2;
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?.30:e._fcd)-dt)<=0&&e.x>45&&e.x<W-45){e._fcd=1.32/DIFF.eFire;
+      queue(()=>{for(const side of [-1,1]){const p=s6Hardpoint(e,side*.27,.24);for(const o of [-.08,.08])fire(p,Math.PI/2+o,1.7,'s6orb',{silent:true,accel:.62,max:3.15});stage6Muzzle(e,side*.27,.24,.68,.12);}},.62,.28);}
+    if(e.x<-120||e.x>W+120)e.dead=true;
+  }else if(K==='s6mine'){
+    // LIGHTNING MINE: rotating twelve-spoke crown with a three-spoke escape gate aimed at release.
+    if(e.y<VH*.25)e.y+=66*dt;else e.x+=Math.sin(e._s6t*.9)*18*dt;e.spin=(e.spin||0)+1.4*dt;
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?1.0:e._fcd)-dt)<=0){e._fcd=rnd(2.5,3.2)/DIFF.eFire;
+      queue(()=>{const p=s6Hardpoint(e,0,0),n=12,st=TAU/n,base=e._s6t*.38,a=aim(p);let gap=Math.round((a-base)/st);
+        for(let k=0;k<n;k++){let d=Math.abs((k-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+k*st,2.1,'s6bolt',{silent:k>0});}stage6Muzzle(e,0,0,1.05,.19);},.80,.43);}
+  }else if(K==='s6skimmer'){
+    // LIGHTNING SKIMMER: fast crosswind pass, two pressure orbs crossing behind its wake.
+    if(e._dir==null)e._dir=e._side||1;e.x+=e._dir*176*dt;e.y+=48*dt;e.spin=-e._dir*.46;
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?.38:e._fcd)-dt)<=0&&e.x>28&&e.x<W-28){e._fcd=1.1/DIFF.eFire;
+      queue(()=>{for(const o of [-.16,.16]){const p=s6Hardpoint(e,o,.30);fire(p,Math.PI/2-o*e._dir,2.3,'s6orb',{silent:o>0});stage6Muzzle(e,o,.30,.70,.12);}},.58,.27);}
+    if(e.x<-105||e.x>W+105)e.dead=true;
+  }else if(K==='s6carrier'){
+    // NUCLEAR CARRIER: opens both racks, launches a missile bracket, then deploys two storm darts.
+    if(e.y<VH*.19)e.y+=42*dt;else e.x+=Math.sin(e._s6t*.48)*20*dt;
+    if(e._salvos==null)e._salvos=0;
+    if(!e._s6Act&&e._salvos<3&&(e._fcd=(e._fcd==null?.95:e._fcd)-dt)<=0){e._fcd=2.5;e._salvos++;
+      queue(()=>{for(const side of [-1,1]){const p=s6Hardpoint(e,side*.34,.19),a=aim(p);fire(p,a+side*.15,1.95,'s6missile',{silent:side>0,accel:1.35,max:5.0});stage6Muzzle(e,side*.34,.19,.92,.17);}
+        if(typeof spawnEnemy==='function'){spawnEnemy('s6dart',clamp(e.x-34,25,W-25),e.y+18,{inPlace:1,_side:-1});spawnEnemy('s6dart',clamp(e.x+34,25,W-25),e.y+18,{inPlace:1,_side:1});}},.88,.47);}
+  }else if(K==='s6reactor'){
+    // REACTOR STORM BOMBER: elite hull alternates a six-bolt reactor fan and gravity-like orb wall.
+    if(e.y<VH*.18)e.y+=38*dt;else{e.y=VH*.18+Math.sin(e._s6t*.8)*6;e.x+=Math.sin(e._s6t*.40)*16*dt;}
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?1.25:e._fcd)-dt)<=0){e._fcd=rnd(2.5,3.1)/DIFF.eFire;e._mode=(e._mode||0)+1;
+      queue(()=>{if(e._mode%2){for(const side of [-1,1]){const p=s6Hardpoint(e,side*.32,.28);for(const o of [.13,.28,.43])fire(p,Math.PI/2+side*o,2.75,'s6bolt',{silent:true});stage6Muzzle(e,side*.32,.28,1.0,.18);}}
+        else{for(let i=0;i<7;i++){if(i===3)continue;const p=s6Hardpoint(e,0,.36);fire({x:W*(i+.5)/7,y:p.y},Math.PI/2,1.65,'s6orb',{silent:i>0,accel:.32,max:2.4});}stage6Muzzle(e,0,.36,1.15,.19);shake=Math.max(shake,4);}},.88,.48);}
+  }else if(K==='s6buoy'){
+    // STORM BUOY: holds position and alternates six fixed lightning spokes around its energized core.
+    if(e.y<VH*.23)e.y+=58*dt;else e.y=VH*.23+Math.sin(e._s6t*1.6)*8;
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?.9:e._fcd)-dt)<=0){e._fcd=rnd(1.9,2.5)/DIFF.eFire;
+      queue(()=>{const p=s6Hardpoint(e,0,0),base=e._s6t*.62;for(let i=0;i<6;i++)fire(p,base+i*TAU/6,2.35,'s6bolt',{silent:i>0});stage6Muzzle(e,0,0,.96,.17);},.70,.36);}
+  }else if(K==='s6dart'){
+    // STORM DART: slashing S-pass with one four-tracer stitch; it never turns its rounds later.
+    if(e._dir==null)e._dir=e._side||((e.x<W*.5)?1:-1);e.x+=e._dir*146*dt;e.y+=96*dt+Math.sin(e._s6t*5)*18*dt;e.spin=-e._dir*.28;
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?.30:e._fcd)-dt)<=0){e._fcd=.88/DIFF.eFire;
+      queue(()=>{const p=s6Hardpoint(e,0,.38),a=aim(p);for(const o of [-.09,-.03,.03,.09])fire(p,a+o,5.1,'s6tracer',{silent:o>-.09});stage6Muzzle(e,0,.38,.58,.10);},.48,.21);}
+    if(e.y>VH+90||e.x<-90||e.x>W+90)e.dead=true;
+  }else if(K==='s6thunder'){
+    // THUNDER FIGHTER: twin coils paint two vertical lightning lanes then a delayed centre lance.
+    if(e.y<VH*.24)e.y+=76*dt;else e.x+=Math.sin(e._s6t*.82)*25*dt;
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?.72:e._fcd)-dt)<=0){e._fcd=rnd(1.8,2.35)/DIFF.eFire;
+      queue(()=>{for(const side of [-1,1]){const p=s6Hardpoint(e,side*.19,.34);fire(p,Math.PI/2,4.15,'s6bolt',{silent:side>0});stage6Muzzle(e,side*.19,.34,.78,.14);}const p=s6Hardpoint(e,0,.38);fire(p,Math.PI/2,3.25,'s6bolt',{silent:true,szMul:1.15});},.72,.36);}
+  }else if(K==='s6turbine'){
+    // TURBINE DRONE: counter-rotating wind crescents make a moving helix with a readable centre.
+    if(e.y<VH*.22)e.y+=52*dt;else e.x+=Math.sin(e._s6t*.56)*20*dt;e.spin=Math.sin(e._s6t)*.08;
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){e._fcd=rnd(2.2,2.9)/DIFF.eFire;e._turn=(e._turn||1)*-1;
+      queue(()=>{for(const side of [-1,1]){const p=s6Hardpoint(e,side*.24,.28);for(const o of [.18,.36,.54])fire(p,Math.PI/2+side*o,2.55,'s6wind',{silent:true,curve:side*e._turn*.45});stage6Muzzle(e,side*.24,.28,.88,.16);}},.78,.41);}
+  }else if(K==='s6probe'){
+    // WEATHER PROBE: long forecast pulse, then three pressure cells descend on fixed warned lanes.
+    if(e.y<VH*.20)e.y+=60*dt;else e.x+=Math.sin(e._s6t*.46)*26*dt;
+    if(!e._s6Act&&(e._fcd=(e._fcd==null?1.2:e._fcd)-dt)<=0){e._fcd=rnd(2.8,3.5)/DIFF.eFire;
+      queue(()=>{const px=clamp(player.x,70,W-70);for(const o of [-70,0,70])fire({x:clamp(px+o,30,W-30),y:e.y+22},Math.PI/2,1.55,'s6seeker',{silent:o!==-70,accel:.62,max:3.8});stage6Muzzle(e,0,.30,1.0,.18);},.94,.55);}
+  }
+  if(e.x<-130)e.x=-130;else if(e.x>W+130)e.x=W+130;
+}
+function drawS6DamageOverlay(e,frac,w,h){
+  if(frac>.66)return;const critical=frac<=.33,t=e.t||0,count=critical?5:3;
+  ctx.save();for(let i=0;i<count;i++){const ph=t*(1.35+i*.11)+i*1.9;
+    const x=Math.sin(ph*2.1)*w*(.08+i*.018),y=-h*.02-((ph*21+i*13)%(h*.48)),r=(critical?7:5)+i*.8;
+    ctx.fillStyle=critical?'rgba(28,34,43,.88)':'rgba(48,56,66,.76)';ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.arc(x+r*.58,y-r*.30,r*.70,0,TAU);ctx.fill();}
+  const fy=h*.12+Math.sin(t*12)*3;ctx.fillStyle=critical?'#ff4818':'#ff9f28';ctx.beginPath();ctx.moveTo(-4,fy);ctx.lineTo(0,fy-14-Math.sin(t*19)*4);ctx.lineTo(5,fy);ctx.fill();ctx.restore();
+}
+function drawS6Storm(e){
+  if(typeof XART==='undefined'||!e._s6storm)return false;const H=S6STORM[e._s6storm];if(!H)return false;
+  const fi=0;
+  let key='s6atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s6atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);
+  e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);
+  drawS6DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#ffffff'),.76);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;
+}
+
+/* STAGE 7 — TOXIC SEWER NATIVE FLEET (0829). Eleven field units, eleven combat jobs.
+   No unit fades, no projectile homes, and every release owns an anchored muzzle tell. */
+const S7TOXIC={
+  s7lamprey:{art:'armored_lamprey',hp:30,w:62,h:72,score:1180},
+  s7barge:{art:'armored_sludge_barge',hp:76,w:76,h:72,score:2300},
+  s7pipe:{art:'pipe_crawler',hp:22,w:42,h:68,score:880},
+  s7walker:{art:'piston_pump_walker',hp:42,w:60,h:76,score:1580},
+  s7sampler:{art:'sampling_drone',hp:24,w:58,h:56,score:960},
+  s7serpent:{art:'sewer_serpent',hp:38,w:48,h:80,score:1460},
+  s7mine:{art:'sludge_mine',hp:26,w:58,h:58,score:1120},
+  s7canister:{art:'toxic_canister',hp:18,w:46,h:68,score:740},
+  s7tank:{art:'toxic_mini_tank',hp:44,w:58,h:70,score:1660},
+  s7skimmer:{art:'toxic_skimmer',hp:32,w:70,h:62,score:1240},
+  s7valve:{art:'valve_turret',hp:36,w:66,h:66,score:1440}
+};
+const S7_PROJECTILE_HIT={s7acid:[12,24],s7sludge:[21,21],s7shard:[10,24],s7bio:[14,32],s7laser:[8,34],s7grenade:[24,24],s7spore:[38,38]};
+function s7Hardpoint(e,ox,oy){return combatHardpoint(e,ox,oy);}
+function stage7Muzzle(e,ox,oy,scale,life){const p=s7Hardpoint(e,ox,oy);if(!p)return;
+  navalFlash(null,p,scale||.78,BPFX_MUZZLE_VOID,{n:8,hpx:48,life:life||.16,follow:()=>e&&!e.dead?s7Hardpoint(e,ox,oy):null});}
+function s7ToxicTick(e,dt){
+  const K=e._s7toxic,H=S7TOXIC[K];if(!H)return;e._s7t=(e._s7t||0)+dt;
+  const W=worldWidth(),aim=(p)=>aimPlayer(p.x,p.y);
+  const fire=(p,a,sp,kind,o)=>{o=o||{};const hb=S7_PROJECTILE_HIT[kind]||[10,10];if(o.w==null)o.w=hb[0];if(o.h==null)o.h=hb[1];
+    const b=eShootT(p.x,p.y,a,sp,kind,o);e._muz=.14;if(o.accel){b._s7Accel=o.accel;b._s7Max=o.max||sp*1.9;}return b;};
+  const queue=(release,dur,at)=>{if(e._s7Act)return false;e._s7Act={t:0,dur:dur||.74,at:at||.38,fired:false,release};e._s7AtkT=0;e._s7AtkDur=e._s7Act.dur;return true;};
+  if(e._s7Act){const q=e._s7Act;q.t+=dt;e._s7AtkT=q.t;if(!q.fired&&q.t>=q.at){q.fired=true;q.release();}if(q.t>=q.dur){e._s7Act=null;e._s7AtkT=null;}}
+  if((e._stagger||0)>0){e._stagger-=dt;return;}
+  if(K==='s7lamprey'){
+    if(e._x0==null)e._x0=e.x;e.y+=72*dt;e.x=e._x0+Math.sin(e._s7t*1.7+(e.phase||0))*55;e.spin=Math.sin(e._s7t*1.7)*.18;
+    if(!e._s7Act&&(e._fcd=(e._fcd==null?.72:e._fcd)-dt)<=0){e._fcd=rnd(1.65,2.15)/DIFF.eFire;queue(()=>{const s=(e._burst=(e._burst||1)*-1),p=s7Hardpoint(e,s*.24,.34),a=aim(p);for(const o of [-.12,0,.12])fire(p,a+o,2.85,'s7sludge',{silent:o!==0});stage7Muzzle(e,s*.24,.34,.90,.16);},.72,.34);}
+  }else if(K==='s7barge'){
+    if(e.y<VH*.20)e.y+=38*dt;else{if(e._dir==null)e._dir=1;e.x+=e._dir*32*dt;if(e.x<90||e.x>W-90)e._dir*=-1;}
+    if(!e._s7Act&&(e._fcd=(e._fcd==null?1.25:e._fcd)-dt)<=0){e._fcd=rnd(2.6,3.3)/DIFF.eFire;queue(()=>{const gap=((e._gate=(e._gate||0)+2)%7);for(let i=0;i<7;i++){if(i===gap||i===(gap+1)%7)continue;const p=s7Hardpoint(e,(i-3)*.10,.31);fire(p,Math.PI/2+(i-3)*.055,2.15,'s7acid',{silent:i>0});}stage7Muzzle(e,0,.31,1.05,.20);},.88,.48);}
+  }else if(K==='s7pipe'){
+    if(e._wall==null)e._wall=e.x<W*.5?0:1;const tx=e._wall?W-34:34;e.x+=(tx-e.x)*Math.min(1,dt*4);e.y+=92*dt;
+    if(!e._s7Act&&(e._fcd=(e._fcd==null?.55:e._fcd)-dt)<=0){e._fcd=rnd(1.15,1.65)/DIFF.eFire;queue(()=>{const p=s7Hardpoint(e,0,.35),a=aim(p);for(const o of [-.09,.09])fire(p,a+o,3.8,'s7shard',{silent:o>0});stage7Muzzle(e,0,.35,.68,.11);},.50,.23);}
+  }else if(K==='s7walker'){
+    if(e.y<VH*.26)e.y+=48*dt;else e.y+=10*dt;if(!e._s7Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.5,3.2)/DIFF.eFire;queue(()=>{const open=(e._pump=(e._pump||0)+1)%3;for(let i=0;i<3;i++){if(i===open)continue;const x=(i-1)*.24,p=s7Hardpoint(e,x,.33);fire(p,Math.PI/2,1.7,'s7grenade',{silent:i>0,accel:.52,max:3.2});stage7Muzzle(e,x,.33,.82,.16);}},.92,.52);}
+  }else if(K==='s7sampler'){
+    if(e._dir==null)e._dir=e._side||1;if(e.x<0||e.x>W)e.x+=e._dir*126*dt;else{e.y+=52*dt;e.x+=Math.sin(e._s7t*1.2)*18*dt;}
+    if(!e._s7Act&&(e._fcd=(e._fcd==null?.64:e._fcd)-dt)<=0){e._fcd=rnd(1.8,2.35)/DIFF.eFire;queue(()=>{const p=s7Hardpoint(e,0,.40),a=aim(p);for(const o of [-.11,0,.11])fire(p,a+o,4.1,'s7laser',{silent:o!==0});stage7Muzzle(e,0,.40,.72,.13);},.76,.40);}
+  }else if(K==='s7serpent'){
+    if(e._x0==null)e._x0=e.x;e.y+=64*dt;e.x=e._x0+Math.sin(e._s7t*1.35)*78;e.spin=Math.sin(e._s7t*1.35)*.26;
+    if(!e._s7Act&&(e._fcd=(e._fcd==null?.88:e._fcd)-dt)<=0){e._fcd=rnd(2.1,2.7)/DIFF.eFire;queue(()=>{for(const s of [-1,1]){const p=s7Hardpoint(e,s*.18,.35),a=aim(p);fire(p,a+s*.08,1.8,'s7bio',{silent:s>0,accel:1.2,max:5.1});stage7Muzzle(e,s*.18,.35,.82,.15);}},.84,.45);}
+  }else if(K==='s7mine'){
+    if(e.y<VH*.25)e.y+=58*dt;else e.x+=Math.sin(e._s7t*.72)*16*dt;e.spin=(e.spin||0)+1.25*dt;
+    if(!e._s7Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.45,3.1)/DIFF.eFire;queue(()=>{const p=s7Hardpoint(e,0,0),n=12,st=TAU/n,base=e._s7t*.3,gap=Math.round((aim(p)-base)/st);for(let k=0;k<n;k++){let d=Math.abs((k-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+k*st,2.05,'s7acid',{silent:k>0});}stage7Muzzle(e,0,0,1,.18);},.80,.43);}
+  }else if(K==='s7canister'){
+    if(e._lane==null)e._lane=e.x;e.y+=86*dt;e.x=e._lane+Math.sin(e._s7t*1.1)*20;e.spin=Math.sin(e._s7t)*.07;
+    if(!e._s7Act&&(e._fcd=(e._fcd==null?.82:e._fcd)-dt)<=0){e._fcd=9;queue(()=>{const p=s7Hardpoint(e,0,0);for(let i=0;i<4;i++)fire(p,Math.PI/4+i*TAU/4,1.65,'s7sludge',{silent:i>0});stage7Muzzle(e,0,0,.88,.17);},.72,.38);}
+  }else if(K==='s7tank'){
+    if(e.y<VH*.24)e.y+=54*dt;else e.y+=14*dt;if(!e._s7Act&&(e._fcd=(e._fcd==null?.52:e._fcd)-dt)<=0){e._fcd=rnd(1.05,1.4)/DIFF.eFire;queue(()=>{const p=s7Hardpoint(e,0,.40),a=aim(p);for(const o of [-.08,-.04,0,.04,.08])fire(p,a+o,4.65,'s7shard',{silent:o>-.08});stage7Muzzle(e,0,.40,.62,.10);},.52,.23);}
+  }else if(K==='s7skimmer'){
+    if(e._dir==null)e._dir=e._side||1;e.x+=e._dir*168*dt;e.y+=46*dt;e.spin=-e._dir*.38;
+    if(!e._s7Act&&(e._fcd=(e._fcd==null?.36:e._fcd)-dt)<=0&&e.x>28&&e.x<W-28){e._fcd=1/DIFF.eFire;queue(()=>{for(const x of [-.22,0,.22]){const p=s7Hardpoint(e,x,.28);fire(p,Math.PI/2,2.45,'s7acid',{silent:x!==-.22});stage7Muzzle(e,x,.28,.60,.10);}},.54,.24);}if(e.x<-115||e.x>W+115)e.dead=true;
+  }else if(K==='s7valve'){
+    if(e.y<VH*.21)e.y+=52*dt;else e.y=VH*.21+Math.sin(e._s7t*1.1)*5;if(!e._s7Act&&(e._fcd=(e._fcd==null?.92:e._fcd)-dt)<=0){e._fcd=rnd(2,2.6)/DIFF.eFire;queue(()=>{const flip=(e._sweep=(e._sweep||1)*-1),p=s7Hardpoint(e,0,.36);for(let i=0;i<5;i++)fire(p,Math.PI/2+(i-2)*.14+flip*.18,3.55,'s7laser',{silent:i>0});stage7Muzzle(e,0,.36,.94,.17);},.78,.40);}
+  }
+  if(e.x<-140)e.x=-140;else if(e.x>W+140)e.x=W+140;
+}
+function drawS7DamageOverlay(e,frac,w,h){if(frac>.66)return;const critical=frac<=.33,t=e.t||0,count=critical?5:3;ctx.save();
+  for(let i=0;i<count;i++){const ph=t*(1.30+i*.13)+i*1.83,rise=(ph*25+i*9)%(h*.52),x=Math.sin(ph*1.8+i)*w*(.07+i*.014),y=h*.10-rise,r=(critical?7:5)+i*.85;ctx.fillStyle=critical?'rgba(26,31,29,.90)':'rgba(46,55,47,.78)';ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.arc(x+r*.62,y-r*.30,r*.72,0,TAU);ctx.arc(x-r*.48,y-r*.10,r*.58,0,TAU);ctx.fill();}
+  const fy=h*.13+Math.sin(t*13)*3;ctx.fillStyle=critical?'#baff16':'#65ff32';ctx.beginPath();ctx.moveTo(-5,fy);ctx.lineTo(Math.sin(t*9)*3,fy-15-Math.sin(t*18)*4);ctx.lineTo(6,fy);ctx.fill();ctx.restore();}
+function drawS7Toxic(e){if(typeof XART==='undefined'||!e._s7toxic)return false;const H=S7TOXIC[e._s7toxic];if(!H)return false;
+  const fi=0;let key='s7atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s7atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawS7DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 const SEWER={
   skimmer: {art:'skimmer',  hp:14, w:32, h:32, score:420,  fps:11},
@@ -32921,10 +37669,293 @@ function drawSewer(e){
   if(e._sub>0) ctx.globalAlpha=clamp(1-e._sub*0.92, 0.06, 1);   // sinking into the sludge
   const _fl = (e.flash>0 || e._muz>0);
   ctx.drawImage(im,-w/2,-h/2,w,h);
-  if(_fl && typeof xartTint==='function' && typeof k!=='undefined'){ const _t=xartTint(k,'#ffffff',0.55); if(_t) ctx.drawImage(_t,-w/2,-h/2,w,h); }
+  if(_fl && typeof xartTint==='function' && typeof k!=='undefined'){ const _t=xartTint(k,hitFlashColor(e,'#ffffff'),0.55); if(_t) ctx.drawImage(_t,-w/2,-h/2,w,h); }
   ctx.restore();
   return true;
 }
+
+/* STAGE 5 — NATIVE ORBITAL FLEET. Twelve silhouettes, twelve jobs. */
+const S5SPACE={
+  s5frigate:{art:'beam_frigate',hp:42,w:76,h:70,score:1350},s5rammer:{art:'comet_rammer',hp:34,w:64,h:72,score:1160,impact:1},
+  s5skimmer:{art:'debris_skimmer',hp:30,w:72,h:62,score:1080},s5gravity:{art:'gravity_orb',hp:46,w:72,h:72,score:1520},
+  s5interceptor:{art:'heavy_interceptor',hp:32,w:68,h:70,score:1200},s5minelayer:{art:'mine_layer',hp:52,w:78,h:74,score:1760},
+  s5satellite:{art:'missile_satellite',hp:40,w:64,h:76,score:1480},s5portalmine:{art:'portal_mine',hp:34,w:66,h:66,score:1320},
+  s5repair:{art:'repair_drone',hp:28,w:64,h:58,score:1240},s5salvage:{art:'salvage_tug',hp:58,w:72,h:78,score:1940},
+  s5leech:{art:'shield_leech',hp:38,w:70,h:66,score:1460},s5station:{art:'twin_station',hp:120,w:112,h:78,score:3600}
+};
+const S5_PROJECTILE_HIT={s5fracture:[12,28],s5split:[22,22],s5prism:[18,26],s5null:[9,34],s5missile:[16,34],s5chaos:[18,26],s5halo:[48,48]};
+function s5Hardpoint(e,ox,oy){return combatHardpoint(e,ox,oy);}
+function s5Muzzle(e,ox,oy,scale,life){const p=s5Hardpoint(e,ox,oy);if(!p)return;navalFlash(null,p,scale||.78,BPFX_MUZZLE_VOID,{n:8,hpx:50,life:life||.16,follow:()=>e&&!e.dead?s5Hardpoint(e,ox,oy):null});}
+function s5SpaceTick(e,dt){
+  const K=e._s5space,H=S5SPACE[K];if(!H)return;e._s5t=(e._s5t||0)+dt;const W=worldWidth(),aim=p=>aimPlayer(p.x,p.y);
+  const fire=(p,a,sp,kind,o)=>{o=o||{};const hb=S5_PROJECTILE_HIT[kind]||[12,12];if(o.w==null)o.w=hb[0];if(o.h==null)o.h=hb[1];const b=eShootT(p.x,p.y,a,sp,kind,o);if(o.accel){b._spaceAccel=o.accel;b._spaceMax=o.max||sp*2;}return b;};
+  const queue=(fn,dur,at)=>{if(e._s5Act)return false;e._s5Act={t:0,dur:dur||.72,at:at||.36,fired:false,fn};e._s5AtkT=0;e._s5AtkDur=e._s5Act.dur;return true;};
+  if(e._s5Act){const q=e._s5Act;q.t+=dt;e._s5AtkT=q.t;if(!q.fired&&q.t>=q.at){q.fired=true;q.fn();}if(q.t>=q.dur){e._s5Act=null;e._s5AtkT=null;}}
+  if((e._stagger||0)>0){e._stagger-=dt;return;}
+  if(K==='s5frigate'){
+    if(e.y<VH*.22)e.y+=54*dt;else{e.y=VH*.22+Math.sin(e._s5t*1.1)*7;e.x+=Math.sin(e._s5t*.7)*19*dt;}
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?.65:e._fcd)-dt)<=0){e._fcd=rnd(1.7,2.2)/DIFF.eFire;queue(()=>{for(const x of [-.23,.23]){const p=s5Hardpoint(e,x,.34);for(const o of [-.08,.08])fire(p,Math.PI/2+o,4.2,'s5null',{silent:x>0||o>-.08});s5Muzzle(e,x,.34,.72,.13);}},.64,.29);}
+  }else if(K==='s5rammer'){
+    if(!e._ram){e.y+=72*dt;if(e.y>VH*.23){e._ram={t:0,a:aimPlayer(e.x,e.y),sp:0};}}
+    else{e._ram.t+=dt;if(e._ram.t<.55){e.spin=Math.sin(e._ram.t*22)*.06;}else{e._ram.sp=Math.min(390,e._ram.sp+520*dt);e.x+=Math.cos(e._ram.a)*e._ram.sp*dt;e.y+=Math.sin(e._ram.a)*e._ram.sp*dt;e.spin=e._ram.a-Math.PI/2;}}
+  }else if(K==='s5skimmer'){
+    if(e._dir==null)e._dir=e._side||1;e.x+=e._dir*190*dt;e.y+=42*dt;e.spin=-e._dir*.34;
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?.28:e._fcd)-dt)<=0&&e.x>30&&e.x<W-30){e._fcd=1.15/DIFF.eFire;queue(()=>{for(const x of [-.22,.22]){const p=s5Hardpoint(e,x,.28);fire(p,Math.PI/2,2.15,'s5chaos',{silent:x>0});s5Muzzle(e,x,.28,.60,.10);}},.46,.20);}if(e.x<-120||e.x>W+120)e.dead=true;
+  }else if(K==='s5gravity'){
+    if(e.y<VH*.24)e.y+=48*dt;else e.y=VH*.24+Math.sin(e._s5t)*5;e.spin=(e.spin||0)+.45*dt;
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.3,2.9)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,0),n=14,base=e._s5t*.34,st=TAU/n,gap=Math.round((aim(p)-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+i*st,2,'s5split',{silent:i>0});}s5Muzzle(e,0,0,1,.18);},.82,.44);}
+  }else if(K==='s5interceptor'){
+    if(e._x0==null)e._x0=e.x;e.y+=98*dt;e.x=e._x0+Math.sin(e._s5t*2.0+(e.phase||0))*82;e.spin=Math.sin(e._s5t*2)*.30;
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?.42:e._fcd)-dt)<=0){e._fcd=rnd(1.1,1.5)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,.38),a=aim(p);for(const o of [-.10,0,.10])fire(p,a+o,4.7,'s5fracture',{silent:o!==0});s5Muzzle(e,0,.38,.65,.11);},.48,.22);}
+  }else if(K==='s5minelayer'){
+    if(e.y<VH*.20)e.y+=40*dt;else e.x+=Math.sin(e._s5t*.65)*24*dt;
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?1.2:e._fcd)-dt)<=0){e._fcd=rnd(2.7,3.3)/DIFF.eFire;queue(()=>{for(const x of [-.26,0,.26]){const p=s5Hardpoint(e,x,.35);fire(p,Math.PI/2,1.25,'s5split',{silent:x!==-.26,accel:.18,max:2.1});s5Muzzle(e,x,.35,.66,.12);}},.86,.47);}
+  }else if(K==='s5satellite'){
+    if(e.y<VH*.21)e.y+=50*dt;else e.y=VH*.21+Math.sin(e._s5t*1.3)*6;
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?.85:e._fcd)-dt)<=0){e._fcd=rnd(2,2.6)/DIFF.eFire;queue(()=>{for(const s of [-1,1]){const p=s5Hardpoint(e,s*.27,.30);fire(p,Math.PI/2+s*.16,1.6,'s5missile',{silent:s>0,accel:1.05,max:5.4});s5Muzzle(e,s*.27,.30,.82,.15);}},.78,.40);}
+  }else if(K==='s5portalmine'){
+    if(e.y<VH*.27)e.y+=56*dt;else e.y=VH*.27+Math.sin(e._s5t*.9)*4;e.spin+=1.1*dt;
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){e._fcd=rnd(2.6,3.2)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,0);for(let i=0;i<8;i++){if(i===2||i===6)continue;fire(p,i*TAU/8+e._s5t*.2,2.35,'s5chaos',{silent:i>0});}s5Muzzle(e,0,0,.95,.17);},.82,.43);}
+  }else if(K==='s5repair'){
+    if(e.y<VH*.18)e.y+=62*dt;else{let ally=null,best=1e9;for(const q of enemies){if(q===e||q.dead||!q._s5space)continue;const d=Math.hypot(q.x-e.x,q.y-e.y);if(d<best){best=d;ally=q;}}if(ally){e.x+=(ally.x-e.x)*dt*.7;e.y+=(ally.y-e.y-55)*dt*.7;e._heal=(e._heal||0)-dt;if(e._heal<=0&&best<150){ally.hp=Math.min(ally._maxhp||ally.maxhp||ally.hp,ally.hp+EHP(3));e._heal=.8;e._repairGlow=.25;}}else e.y+=28*dt;}e._repairGlow=Math.max(0,(e._repairGlow||0)-dt);
+  }else if(K==='s5salvage'){
+    if(e.y<VH*.23)e.y+=38*dt;else{if(e._dir==null)e._dir=1;e.x+=e._dir*30*dt;if(e.x<85||e.x>W-85)e._dir*=-1;}
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.1,2.8)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,.38);for(const o of [-.34,-.17,0,.17,.34])fire(p,Math.PI/2+o,2.4,'s5prism',{silent:o>-.34});s5Muzzle(e,0,.38,1,.18);},.88,.48);}
+  }else if(K==='s5leech'){
+    e.y+=60*dt;e.x+=clamp(player.x-e.x,-1,1)*38*dt;e.spin=Math.sin(e._s5t*1.5)*.18;
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?.7:e._fcd)-dt)<=0){e._fcd=rnd(1.7,2.2)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,.34),a=aim(p);fire(p,a,2.25,'s5split',{});s5Muzzle(e,0,.34,.78,.14);},.62,.30);}
+  }else if(K==='s5station'){
+    if(e.y<VH*.18)e.y+=34*dt;else e.x=W*.5+Math.sin(e._s5t*.55)*110;
+    if(!e._s5Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){e._fcd=rnd(1.55,2.0)/DIFF.eFire;queue(()=>{if((e._salvo=(e._salvo||0)+1)%3===0){const p=s5Hardpoint(e,0,.34);fire(p,Math.PI/2,1.45,'s5halo',{accel:.30,max:2.7});s5Muzzle(e,0,.34,1.2,.22);}else for(const x of [-.29,.29]){const p=s5Hardpoint(e,x,.30),a=aim(p);for(const o of [-.16,0,.16])fire(p,a+o,3.25,'s5fracture',{silent:x>0||o>-.16});s5Muzzle(e,x,.30,.88,.15);}},.86,.44);}
+  }
+  if(e.x<-150)e.x=-150;else if(e.x>W+150)e.x=W+150;
+}
+function drawSpaceDamage(e,frac,w,h,s9){if(frac>.66)return;const critical=frac<=.33,t=e.t||0,n=critical?5:3;ctx.save();
+  for(let i=0;i<n;i++){const q=t*(1.35+i*.12)+i*1.7,rise=(q*28+i*11)%(h*.52),x=Math.sin(q*1.8+i)*w*(.06+i*.014),y=h*.12-rise,r=(critical?7:5)+i*.7;ctx.fillStyle=critical?'rgba(18,21,30,.92)':'rgba(37,40,54,.78)';ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.arc(x+r*.6,y-r*.3,r*.72,0,TAU);ctx.arc(x-r*.45,y-r*.08,r*.55,0,TAU);ctx.fill();}
+  const fy=h*.13+Math.sin(t*14)*3;ctx.fillStyle=s9?'#48eaff':'#d248ff';ctx.beginPath();ctx.moveTo(-5,fy);ctx.lineTo(Math.sin(t*10)*3,fy-15-Math.sin(t*20)*4);ctx.lineTo(6,fy);ctx.fill();ctx.restore();}
+function drawS5Space(e){if(typeof XART==='undefined'||!e._s5space)return false;const H=S5SPACE[e._s5space];if(!H)return false;
+  const fi=0;let key='s5atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s5atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawSpaceDamage(e,frac,dw,dh,false);
+  if(e._repairGlow>0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=e._repairGlow/.25;ctx.strokeStyle='#70ffff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,Math.max(dw,dh)*.52,0,TAU);ctx.stroke();}if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
+
+/* STAGE 8 — FURIOUS DEATH MEGA FLEET.  Every hull owns a distinct movement/weapon signature,
+   predictive aim is bounded, and rolls are real animated evasions rather than sprite flips. */
+const S8MEGA={
+  s8leech:{art:'armored_leech',hp:58,w:64,h:88,score:1900,ag:.90},
+  s8interceptor:{art:'bone_interceptor',hp:44,w:76,h:84,score:1700,ag:.45},
+  s8manta:{art:'bone_manta',hp:70,w:94,h:76,score:2300,ag:.72},
+  s8hunter:{art:'hunter_pod',hp:64,w:78,h:82,score:2150,ag:.56},
+  s8deathorb:{art:'multi_eye_death_orb',hp:92,w:96,h:96,score:3000,ag:1.10},
+  s8parasite:{art:'parasite_drone',hp:66,w:84,h:88,score:2250,ag:.62},
+  s8razor:{art:'razor_disc',hp:52,w:74,h:74,score:1900,ag:.38},
+  s8skull:{art:'skull_mine',hp:60,w:70,h:82,score:2100,ag:.78,impact:1},
+  s8carrier:{art:'spawn_carrier',hp:180,w:126,h:112,score:5200,ag:1.85},
+  s8symbiote:{art:'symbiote_fighter',hp:72,w:92,h:86,score:2500,ag:.48},
+  s8tentacle:{art:'tentacle_cannon',hp:108,w:104,h:98,score:3600,ag:1.30},
+  s8bomber:{art:'void_bomber',hp:124,w:116,h:104,score:4100,ag:.68},
+  /* New fleet: fixed means one immutable idle plate and no borrowed barrel-roll fallback.
+     Mounts are normalized coordinates measured against the cleaned 256px plates. */
+  s8gunship:{art:'armored_gunship',hp:156,w:118,h:114,score:4700,fixed:1,mounts:[[-.34,.27],[.34,.27],[0,.43]]},
+  s8needlejet:{art:'needle_interceptor',hp:52,w:66,h:94,score:1950,fixed:1,mounts:[[-.25,.22],[.25,.22],[0,.44]]},
+  s8scout:{art:'scout_drone',hp:68,w:86,h:72,score:2300,fixed:1,mounts:[[-.31,.25],[.31,.25],[0,.34]]},
+  s8solar:{art:'solar_corvette',hp:148,w:122,h:118,score:4600,fixed:1,mounts:[[-.40,.20],[.40,.20],[0,.42]]},
+  s8spread:{art:'spread_wing_fighter',hp:58,w:112,h:58,score:2100,fixed:1,mounts:[[-.25,.23],[.25,.23],[0,.39]]},
+  s8crescent:{art:'stealth_crescent',hp:88,w:104,h:108,score:3100,fixed:1,mounts:[[-.18,.23],[.18,.23],[0,.35]]}
+};
+const S8_PROJECTILE_HIT={s8needle:[12,30],s8rage:[20,26],s8slug:[12,32],s8missile:[17,38],s8pair:[23,23],s8blade:[20,30],s8rift:[48,48],
+  s8nf_gunship:[15,34],s8nf_needle:[10,34],s8nf_scout:[24,24],s8nf_solar:[30,30],s8nf_spread:[12,34],s8nf_crescent:[22,36]};
+function s8Hardpoint(e,ox,oy){return combatHardpoint(e,ox,oy);}
+function s8Muzzle(e,ox,oy,scale,life){const p=s8Hardpoint(e,ox,oy);if(!p)return;navalFlash(null,p,scale||.82,BPFX_MUZZLE_VOID,{n:8,hpx:52,life:life||.15,follow:()=>e&&!e.dead?s8Hardpoint(e,ox,oy):null});}
+function s8NewMuzzle(e,mountIndex,scale,life){const H=S8MEGA[e._s8mega],m=H&&H.mounts&&H.mounts[mountIndex];if(!m)return;const p=s8Hardpoint(e,m[0],m[1]);
+  navalFlash(null,p,scale||.84,'s8nf_'+H.art+'_muzzle',{n:4,hpx:54,life:life||.16,anchor:.45,
+    follow:()=>e&&!e.dead?s8Hardpoint(e,m[0],m[1]):null});}
+function s8MegaRoll(e,dir){if(e._s8Roll||e.dead)return false;e._s8Roll={t:0,dur:.58,dir:dir||1};e._s8RollCd=(S8MEGA[e._s8mega].ag||.7)+rnd(.32,.68);e._s8Act=null;e._s8AtkT=null;return true;}
+function s8Predict(e,p){
+  const px=player&&Number.isFinite(player.x)?player.x:p.x,py=player&&Number.isFinite(player.y)?player.y:VH*.82;
+  const dx=px-(e._s8LastPX==null?px:e._s8LastPX);e._s8LastPX=px;
+  const lead=clamp(px+dx*7,28,worldWidth()-28);return Math.atan2(py-p.y,lead-p.x);
+}
+function s8ThreatRoll(e,dt){
+  e._s8RollCd=Math.max(0,(e._s8RollCd||0)-dt);if(e._s8RollCd>0||e._s8Act||typeof pBullets==='undefined')return false;
+  let threat=null,best=1e9;
+  for(const b of pBullets){if(!b||b.dead)continue;const dy=b.y-e.y,dx=b.x-e.x;if(dy<12||dy>180)continue;const score=Math.abs(dx)+dy*.18;if(Math.abs(dx)<e.w*.62+18&&score<best){best=score;threat=b;}}
+  if(!threat)return false;return s8MegaRoll(e,(e.x-threat.x>=0?1:-1));
+}
+function s8MegaTick(e,dt){
+  const K=e._s8mega,H=S8MEGA[K];if(!H)return;e._s8t=(e._s8t||0)+dt;const W=worldWidth();
+  const fire=(p,a,sp,kind,o)=>{o=o||{};const hb=S8_PROJECTILE_HIT[kind]||[12,12];if(o.w==null)o.w=hb[0];if(o.h==null)o.h=hb[1];const b=eShootT(p.x,p.y,a,sp,kind,o);if(o.accel){b._spaceAccel=o.accel;b._spaceMax=o.max||sp*2;}return b;};
+  const queue=(fn,dur,at)=>{if(e._s8Act||e._s8Roll)return false;e._s8Act={t:0,dur:dur||.66,at:at||.32,fired:false,fn};e._s8AtkT=0;e._s8AtkDur=e._s8Act.dur;return true;};
+  if((e._stagger||0)>0){e._stagger-=dt;return;}
+  if(e._s8Roll){const r=e._s8Roll;r.t+=dt;e.x+=r.dir*(K==='s8carrier'||K==='s8tentacle'?190:330)*dt;e.spin=0;e._s8RollT=r.t;if(r.t>=r.dur){e._s8Roll=null;e._s8RollT=null;}e.x=clamp(e.x,e.w*.55,W-e.w*.55);return;}
+  if(!H.fixed&&s8ThreatRoll(e,dt))return;
+  if(e._s8Act){const q=e._s8Act;q.t+=dt;e._s8AtkT=q.t;if(!q.fired&&q.t>=q.at){q.fired=true;q.fn();}if(q.t>=q.dur){e._s8Act=null;e._s8AtkT=null;}}
+  const aimed=(p)=>s8Predict(e,p),ready=(base,min,max)=>!e._s8Act&&(e._fcd=(e._fcd==null?base:e._fcd)-dt)<=0&&(e._fcd=rnd(min,max)/DIFF.eFire);
+  if(K==='s8leech'){
+    if(e.y<VH*.25)e.y+=88*dt;else{e.x+=clamp(player.x-e.x,-1,1)*72*dt;e.y=VH*.25+Math.sin(e._s8t*1.8)*12;e.spin=Math.sin(e._s8t*1.5)*.15;}
+    if(ready(.55,1.45,1.85))queue(()=>{for(const x of [-.18,.18]){const p=s8Hardpoint(e,x,.36);fire(p,aimed(p)+x*.35,3.1,'s8pair',{silent:x>0});s8Muzzle(e,x,.36,.72,.12);}},.54,.24);
+  }else if(K==='s8interceptor'){
+    if(e._x0==null)e._x0=e.x;e.y+=116*dt;e.x=e._x0+Math.sin(e._s8t*3.0+(e.phase||0))*105;e.spin=Math.sin(e._s8t*3)*.34;
+    if(ready(.30,.78,1.08))queue(()=>{const p=s8Hardpoint(e,0,.41),a=aimed(p);for(const o of [-.08,0,.08])fire(p,a+o,5.8,'s8needle',{silent:o!==0});s8Muzzle(e,0,.41,.62,.09);},.38,.16);
+  }else if(K==='s8manta'){
+    if(e.y<VH*.20)e.y+=58*dt;else{e.x=W*.5+Math.sin(e._s8t*.88+(e.phase||0))*W*.31;e.y=VH*.20+Math.sin(e._s8t*1.7)*8;e.spin=Math.cos(e._s8t*.88)*.26;}
+    if(ready(.70,1.35,1.72))queue(()=>{for(const x of [-.34,0,.34]){const p=s8Hardpoint(e,x,.34);for(const o of [-.22,0,.22])fire(p,Math.PI/2+o+x*.35,3.35,'s8blade',{silent:x!==-.34||o>-.22});s8Muzzle(e,x,.34,.76,.12);}},.66,.30);
+  }else if(K==='s8hunter'){
+    if(e.y<VH*.23)e.y+=82*dt;else{e._dash=(e._dash||0)-dt;if(e._dash<=0){e._dash=rnd(.62,.88);e._dashV=(player.x>e.x?1:-1)*rnd(160,230);}e.x+=e._dashV*dt;e._dashV*=Math.pow(.055,dt);e.spin=clamp(e._dashV/470,-.48,.48);}
+    if(ready(.55,1.10,1.45))queue(()=>{const p=s8Hardpoint(e,0,.37),a=aimed(p);for(const o of [-.18,.18])fire(p,a+o,4.7,'s8rage',{silent:o>0});s8Muzzle(e,0,.37,.82,.12);},.48,.20);
+  }else if(K==='s8deathorb'){
+    if(e.y<VH*.22)e.y+=48*dt;else e.y=VH*.22+Math.sin(e._s8t)*7;e.spin+=.72*dt;
+    if(ready(.9,1.85,2.25))queue(()=>{const p=s8Hardpoint(e,0,0),n=16,base=e._s8t*.38,st=TAU/n,gap=Math.round((aimed(p)-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+i*st,2.85,'s8rage',{silent:i>0});}if((e._riftN=(e._riftN||0)+1)%2===0)fire(p,Math.PI/2,1.35,'s8rift',{silent:true,accel:.24,max:2.5});s8Muzzle(e,0,0,1.15,.20);},.84,.44);
+  }else if(K==='s8parasite'){
+    if(e.y<VH*.20)e.y+=72*dt;else{let ally=null,bd=1e9;for(const q of enemies){if(q===e||q.dead||!q._s8mega)continue;const d=Math.hypot(q.x-e.x,q.y-e.y);if(d<bd){bd=d;ally=q;}}if(ally){e.x+=(ally.x-e.x)*dt*.85;e.y+=(ally.y-e.y-62)*dt*.85;e._heal=(e._heal||0)-dt;if(e._heal<=0&&bd<155){ally.hp=Math.min(ally._maxhp||ally.hp,ally.hp+EHP(4));e._heal=.72;e._repairGlow=.24;}}else e.x+=clamp(player.x-e.x,-1,1)*52*dt;}
+    e._repairGlow=Math.max(0,(e._repairGlow||0)-dt);if(ready(.5,1.2,1.55))queue(()=>{const p=s8Hardpoint(e,0,.38),a=aimed(p);fire(p,a,3.8,'s8slug',{});s8Muzzle(e,0,.38,.68,.10);},.42,.18);
+  }else if(K==='s8razor'){
+    if(e._cx==null){e._cx=e.x;e._cy=VH*.24;e._rad=72+(e.phase?18:0);}if(e.y<e._cy)e.y+=84*dt;else{const a=e._s8t*1.8+(e.phase||0);e.x=e._cx+Math.cos(a)*e._rad;e.y=e._cy+Math.sin(a)*e._rad*.48;e.spin=a*1.35;}
+    if(ready(.34,.72,.98))queue(()=>{const p=s8Hardpoint(e,0,0),a=e._s8t*1.8+Math.PI/2;for(const o of [-.12,.12])fire(p,a+o,4.45,'s8blade',{silent:o>0});s8Muzzle(e,0,0,.66,.09);},.36,.14);
+  }else if(K==='s8skull'){
+    if(!e._dive){e.y+=68*dt;if(e.y>VH*.24){e._dive={t:0,a:aimed(e),sp:0};queue(()=>{const p=s8Hardpoint(e,0,.28);for(let i=0;i<8;i++)fire(p,i*TAU/8,2.45,'s8rage',{silent:i>0});s8Muzzle(e,0,.28,.9,.14);},.54,.22);}}
+    else{e._dive.t+=dt;if(e._dive.t>.55){e._dive.sp=Math.min(440,e._dive.sp+600*dt);e.x+=Math.cos(e._dive.a)*e._dive.sp*dt;e.y+=Math.sin(e._dive.a)*e._dive.sp*dt;e.spin=e._dive.a-Math.PI/2;}}
+  }else if(K==='s8carrier'){
+    if(e.y<VH*.17)e.y+=34*dt;else e.x=W*.5+Math.sin(e._s8t*.46)*W*.22;
+    e._spawnCd=(e._spawnCd==null?2.2:e._spawnCd)-dt;if(e._spawnCd<=0&&enemies.length<32){e._spawnCd=4.5;spawnEnemy('s8interceptor',e.x-42,e.y+30,{_stagger:.12});spawnEnemy('s8interceptor',e.x+42,e.y+30,{_stagger:.34});}
+    if(ready(.8,1.45,1.82))queue(()=>{for(const x of [-.33,.33]){const p=s8Hardpoint(e,x,.34);for(const o of [-.24,0,.24])fire(p,Math.PI/2+o,1.55,'s8missile',{silent:x>0||o>-.24,accel:1.15,max:6.0});s8Muzzle(e,x,.34,1.0,.17);}},.78,.40);
+  }else if(K==='s8symbiote'){
+    if(e.y<VH*.21)e.y+=86*dt;else{const tx=clamp(W-player.x,80,W-80);e.x+=(tx-e.x)*dt*2.4;e.y=VH*.21+Math.sin(e._s8t*2.2)*9;e.spin=clamp((tx-e.x)/190,-.38,.38);}
+    if(ready(.42,.88,1.16))queue(()=>{const p=s8Hardpoint(e,0,.39),a=aimed(p);for(const o of [-.14,-.05,.05,.14])fire(p,a+o,5.05,'s8needle',{silent:o>-.14});s8Muzzle(e,0,.39,.74,.10);},.42,.17);
+  }else if(K==='s8tentacle'){
+    if(e.y<VH*.19)e.y+=39*dt;else e.x+=Math.sin(e._s8t*.58)*24*dt;
+    if(ready(.9,1.65,2.05))queue(()=>{const lead=clamp(player.x+(player.x-(e._s8LastPX||player.x))*6,34,W-34);for(const x of [-.31,0,.31]){const p=s8Hardpoint(e,x,.34),tx=lead+x*150,a=Math.atan2(player.y-p.y,tx-p.x);for(const o of [-.07,.07])fire(p,a+o,4.25,'s8slug',{silent:x!==-.31||o>-.07});s8Muzzle(e,x,.34,.84,.13);}},.72,.35);
+  }else if(K==='s8bomber'){
+    if(e._dir==null){e._dir=e.x<W*.5?1:-1;e.x=e._dir>0?-100:W+100;e.y=VH*.17;}e.x+=e._dir*205*dt;e.y+=Math.sin(e._s8t*2.1)*18*dt;e.spin=-e._dir*.38;
+    if(ready(.35,.72,.96))queue(()=>{for(const x of [-.26,.26]){const p=s8Hardpoint(e,x,.36);fire(p,Math.PI/2,1.30,'s8missile',{silent:x>0,accel:1.25,max:6.2});s8Muzzle(e,x,.36,.86,.12);}},.44,.18);if(e.x<-160||e.x>W+160)e.dead=true;
+  }else if(K==='s8gunship'){
+    /* Armoured siege ship: deliberate straight approach, then three measured cannons. */
+    if(e.y<VH*.18)e.y+=43*dt;else{if(e._holdX==null)e._holdX=e.x;e.x+=(e._holdX-e.x)*Math.min(1,dt*3);}
+    if(ready(.72,1.45,1.82))queue(()=>{
+      for(const i of [0,1]){const m=H.mounts[i],p=s8Hardpoint(e,m[0],m[1]);fire(p,Math.PI/2,4.15,'s8nf_gunship',{silent:i>0});s8NewMuzzle(e,i,.88,.16);}
+      const m=H.mounts[2],p=s8Hardpoint(e,m[0],m[1]);fire(p,Math.PI/2,2.15,'s8nf_gunship',{silent:true,accel:.58,max:5.2,szMul:1.18});s8NewMuzzle(e,2,1.08,.20);
+    },.70,.31);
+  }else if(K==='s8needlejet'){
+    /* Needle: player-lane intercept, a readable staccato of three straight cyan lances. */
+    if(e.y<VH*.22)e.y+=138*dt;else e.x+=clamp(player.x-e.x,-1,1)*112*dt;
+    if(ready(.28,.72,.96))queue(()=>{
+      const m=H.mounts[2],p=s8Hardpoint(e,m[0],m[1]);
+      for(const x of [-10,0,10])fire({x:p.x+x,y:p.y},Math.PI/2,6.35,'s8nf_needle',{silent:x!==-10});
+      s8NewMuzzle(e,2,.70,.11);
+    },.34,.13);
+  }else if(K==='s8scout'){
+    /* Scout: mirrors the player at the ceiling and sends compact predictive pulse fans. */
+    if(e.y<VH*.23)e.y+=76*dt;else e.x+=clamp((player.x-e.x)*1.8,-96,96)*dt;
+    if(ready(.48,1.02,1.28))queue(()=>{
+      const m=H.mounts[2],p=s8Hardpoint(e,m[0],m[1]),a=s8Predict(e,p);
+      for(const o of [-.18,0,.18])fire(p,a+o,3.75,'s8nf_scout',{silent:o!==-.18});
+      s8NewMuzzle(e,2,.78,.14);
+    },.48,.20);
+  }else if(K==='s8solar'){
+    /* Corvette: an arena-control reactor. The round discs radiate with one aimed escape sector. */
+    if(e.y<VH*.17)e.y+=36*dt;else e.x+=(W*.5-e.x)*Math.min(1,dt*2.2);
+    if(ready(.92,1.72,2.08))queue(()=>{
+      const m=H.mounts[2],p=s8Hardpoint(e,m[0],m[1]),n=12,base=(e._s8t*.31)%TAU,st=TAU/n,gap=Math.round((s8Predict(e,p)-base)/st);
+      for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+i*st,2.75,'s8nf_solar',{silent:i>0});}
+      for(const i of [0,1])s8NewMuzzle(e,i,.90,.18);
+    },.78,.34);
+  }else if(K==='s8spread'){
+    /* Spread-wing: fast cross-screen gun run, twin vertical machine-laser slugs. */
+    if(e._dir==null){e._dir=e._side||((e.x<W*.5)?1:-1);e.y=clamp(e.y,VH*.16,VH*.32);}
+    e.x+=e._dir*252*dt;
+    if(ready(.20,.48,.66))queue(()=>{
+      for(const i of [0,1]){const m=H.mounts[i],p=s8Hardpoint(e,m[0],m[1]);fire(p,Math.PI/2,5.85,'s8nf_spread',{silent:i>0});s8NewMuzzle(e,i,.66,.10);}
+    },.28,.10);
+    if(e.x<-150||e.x>W+150)e.dead=true;
+  }else if(K==='s8crescent'){
+    /* Crescent: reads the player's half, cuts to the opposite firing pocket, then drops blades. */
+    if(e.y<VH*.20)e.y+=84*dt;else{
+      e._pocketCd=(e._pocketCd==null?0:e._pocketCd)-dt;
+      if(e._pocketCd<=0){e._pocketCd=1.15;e._pocket=(player.x<W*.5?W*.76:W*.24);}
+      e.x+=(e._pocket-e.x)*Math.min(1,dt*4.2);
+    }
+    if(ready(.44,.86,1.10))queue(()=>{
+      for(const i of [0,2,1]){const m=H.mounts[i],p=s8Hardpoint(e,m[0],m[1]);fire(p,Math.PI/2,4.65,'s8nf_crescent',{silent:i!==0});s8NewMuzzle(e,i,i===2?.88:.70,.13);}
+    },.44,.18);
+  }
+  if(K!=='s8bomber'&&K!=='s8spread'){e.x=clamp(e.x,e.w*.50,W-e.w*.50);if(e.y>VH+180)e.dead=true;}
+}
+function drawS8Damage(e,frac,w,h){if(frac>.66)return;const t=e._s8t||0,n=frac<.34?5:3;ctx.save();for(let i=0;i<n;i++){const q=t*(1.7+i*.16)+i*1.31,rise=(q*34+i*13)%(h*.62),x=Math.sin(q*2.1+i*.7)*w*(.07+i*.012),y=h*.16-rise,r=5.5+i*.9;ctx.fillStyle=i&1?'rgba(25,13,12,.88)':'rgba(10,8,9,.94)';ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.arc(x+r*.55,y-r*.25,r*.72,0,TAU);ctx.arc(x-r*.5,y-r*.08,r*.58,0,TAU);ctx.fill();}const fy=h*.16+Math.sin(t*15)*4;ctx.fillStyle='#ff3218';ctx.beginPath();ctx.moveTo(-6,fy);ctx.lineTo(Math.sin(t*11)*4,fy-18-Math.sin(t*23)*4);ctx.lineTo(7,fy);ctx.fill();ctx.fillStyle='#ffc742';ctx.beginPath();ctx.moveTo(-3,fy);ctx.lineTo(Math.sin(t*13)*2,fy-10);ctx.lineTo(3,fy);ctx.fill();ctx.restore();}
+function drawS8Mega(e){if(typeof XART==='undefined'||!e._s8mega)return false;const H=S8MEGA[e._s8mega];if(!H)return false;let fi,key;
+  if(H.fixed){fi=0;key='s8nf_'+H.art+'_idle';}
+  else if(e._s8Roll){fi=clamp(Math.floor((e._s8Roll.t/e._s8Roll.dur)*8),0,7);key='s8roll_'+H.art+'_'+fi;}
+  else{fi=0;key='s8atk_'+H.art+'_0';}
+  if(!XART.rdy(key)){key=H.fixed?'s8nf_'+H.art+'_idle':'s8atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
+  const im=XART.get(key),dh=e.h*(H.fixed?1.0:1.62),dw=H.fixed?e.w:dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;
+  ctx.save();ctx.translate(e.x,e.y);if(e.spin&&!e._s8Roll&&!H.fixed)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawS8Damage(e,frac,dw,dh);
+  if(e._repairGlow>0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=e._repairGlow/.24;ctx.strokeStyle='#ff5b2d';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,Math.max(dw,dh)*.53,0,TAU);ctx.stroke();}
+  if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.72);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
+
+/* STAGE 9 — VELOCITY VOID. Faster motion and space-warp geometry, still deterministic. */
+const S9VOID={
+  s9beacon:{art:'alien_beacon',hp:34,w:60,h:74,score:1100},s9chronal:{art:'chronal_crawler_tank',hp:54,w:78,h:66,score:1750},
+  s9comet:{art:'comet_skimmer',hp:28,w:70,h:62,score:1060},s9gunship:{art:'dimensional_gunship',hp:62,w:76,h:82,score:1920},
+  s9interceptor:{art:'galaxy_interceptor',hp:30,w:62,h:76,score:1140},s9gatecarrier:{art:'gate_carrier',hp:70,w:84,h:76,score:2180},
+  s9gateturret:{art:'gate_turret',hp:42,w:70,h:70,score:1480},s9gravity:{art:'gravity_artillery',hp:60,w:82,h:72,score:2020},
+  s9prism:{art:'hyperspace_prism',hp:66,w:78,h:78,score:2250},s9warptank:{art:'mini_warp_tank',hp:48,w:72,h:66,score:1640},
+  s9ring:{art:'ring_drone',hp:32,w:64,h:64,score:1200},s9singularity:{art:'singularity_mine',hp:46,w:70,h:70,score:1580}
+};
+const S9_PROJECTILE_HIT={s9gold:[10,28],s9warp:[18,28],s9turbo:[11,30],s9needle:[8,34],s9comet:[17,36],s9pair:[22,22],s9lattice:[50,50]};
+function s9vHardpoint(e,ox,oy){return combatHardpoint(e,ox,oy);}
+function s9vMuzzle(e,ox,oy,scale,life){const p=s9vHardpoint(e,ox,oy);if(!p)return;navalFlash(null,p,scale||.76,BPFX_MUZZLE_LASER,{n:8,hpx:48,life:life||.14,follow:()=>e&&!e.dead?s9vHardpoint(e,ox,oy):null});}
+function s9VoidTick(e,dt){
+  const K=e._s9void,H=S9VOID[K];if(!H)return;e._s9vt=(e._s9vt||0)+dt;const W=worldWidth(),aim=p=>aimPlayer(p.x,p.y);
+  const fire=(p,a,sp,kind,o)=>{o=o||{};const hb=S9_PROJECTILE_HIT[kind]||[12,12];if(o.w==null)o.w=hb[0];if(o.h==null)o.h=hb[1];const b=eShootT(p.x,p.y,a,sp,kind,o);if(o.accel){b._spaceAccel=o.accel;b._spaceMax=o.max||sp*2;}return b;};
+  const queue=(fn,dur,at)=>{if(e._s9Act)return false;e._s9Act={t:0,dur:dur||.68,at:at||.34,fired:false,fn};e._s9AtkT=0;e._s9AtkDur=e._s9Act.dur;return true;};
+  if(e._s9Act){const q=e._s9Act;q.t+=dt;e._s9AtkT=q.t;if(!q.fired&&q.t>=q.at){q.fired=true;q.fn();}if(q.t>=q.dur){e._s9Act=null;e._s9AtkT=null;}}
+  if((e._stagger||0)>0){e._stagger-=dt;return;}
+  if(K==='s9beacon'){
+    if(e.y<VH*.19)e.y+=68*dt;else e.y=VH*.19+Math.sin(e._s9vt*1.3)*6;e.spin+=.55*dt;
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?.58:e._fcd)-dt)<=0){e._fcd=rnd(1.6,2.0)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.28),base=e._s9vt*.5;for(let i=0;i<8;i++){if(i===2||i===6)continue;fire(p,base+i*TAU/8,2.8,'s9warp',{silent:i>0});}s9vMuzzle(e,0,.28,.9,.15);},.68,.32);}
+  }else if(K==='s9chronal'){
+    if(e.y<VH*.24)e.y+=46*dt;else{e._dash=(e._dash||0)-dt;if(e._dash<=0){e._dash=e._s9Role==='jumper'?.48:.78;e._dashV=(e.x<W*.5?1:-1)*rnd(e._s9Role==='jumper'?190:110,e._s9Role==='jumper'?260:170);if(e._s9Role==='jumper')e._jumpLift=1;}e.x+=e._dashV*dt;e._dashV*=Math.pow(.035,dt);if(e._jumpLift){e.y=VH*.24-Math.sin(clamp((e._dash||0)/.48,0,1)*Math.PI)*34;if(e._dash<=0)e._jumpLift=0;}}
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?.8:e._fcd)-dt)<=0){e._fcd=rnd(1.3,1.7)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.35),a=aim(p);for(const o of [-.15,-.05,.05,.15])fire(p,a+o,4.5,'s9gold',{silent:o>-.15});s9vMuzzle(e,0,.35,.72,.11);},.48,.21);}
+  }else if(K==='s9comet'){
+    if(e._dir==null)e._dir=e._side||1;e.x+=e._dir*225*dt;e.y+=58*dt;e.spin=-e._dir*.42;if(!e._s9Act&&(e._fcd=(e._fcd==null?.25:e._fcd)-dt)<=0&&e.x>25&&e.x<W-25){e._fcd=.92/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.36);fire(p,Math.PI/2,5.4,'s9turbo',{});s9vMuzzle(e,0,.36,.58,.09);},.40,.18);}if(e.x<-120||e.x>W+120)e.dead=true;
+  }else if(K==='s9gunship'){
+    if(e.y<VH*.21)e.y+=48*dt;else e.x=W*.5+Math.sin(e._s9vt*.62)*145;
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?.8:e._fcd)-dt)<=0){e._fcd=rnd(e._s9Role==='beam'?2.05:1.55,e._s9Role==='beam'?2.42:1.95)/DIFF.eFire;queue(()=>{if(e._s9Role==='beam'){for(const x of [-.24,.24]){const p=s9vHardpoint(e,x,.36);orbitalBeam(e,p.x,1,12,.72,x<0?'#6de8ff':'#b57aff',0,x<0?'beam_blue':'beam_purple');s9vMuzzle(e,x,.36,.82,.16);}}else for(const x of [-.28,0,.28]){const p=s9vHardpoint(e,x,.36);for(const o of [-.08,.08])fire(p,Math.PI/2+o+x*.22,4.3,'s9needle',{silent:x!==-.28||o>-.08});s9vMuzzle(e,x,.36,.70,.11);}},e._s9Role==='beam'?.88:.58,e._s9Role==='beam'?.42:.26);}
+  }else if(K==='s9interceptor'){
+    if(e._s9Role==='kamikaze'){
+      e.impact=true;
+      if(!e._kmV){const tx=player&&!player.dead?player.x:e.x,ty=player&&!player.dead?player.y:VH*.78,dx=tx-e.x,dy=Math.max(220,ty-e.y),d=Math.max(1,Math.hypot(dx,dy));e._kmV={x:dx/d*355,y:dy/d*355};}
+      e.x+=e._kmV.x*dt;e.y+=e._kmV.y*dt;e.spin=Math.atan2(e._kmV.y,e._kmV.x)-Math.PI/2;
+      if(!e._kmShot&&e.y>20){e._kmShot=1;const p=s9vHardpoint(e,0,.40),a=aim(p);for(const o of [-.10,0,.10])fire(p,a+o,5.8,'s9needle',{silent:o!==0});s9vMuzzle(e,0,.40,.68,.10);}
+    }else{
+      if(e._x0==null)e._x0=e.x;e.y+=122*dt;e.x=e._x0+Math.sin(e._s9vt*2.35)*95;e.spin=Math.sin(e._s9vt*2.35)*.36;
+      if(!e._s9Act&&(e._fcd=(e._fcd==null?.32:e._fcd)-dt)<=0){e._fcd=rnd(.9,1.2)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.40),a=aim(p);for(const o of [-.09,0,.09])fire(p,a+o,5.2,'s9needle',{silent:o!==0});s9vMuzzle(e,0,.40,.60,.09);},.42,.18);}
+    }
+  }else if(K==='s9gatecarrier'){
+    if(e.y<VH*.19)e.y+=36*dt;else e.x+=Math.sin(e._s9vt*.58)*25*dt;
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.0,2.5)/DIFF.eFire;queue(()=>{for(const x of [-.28,.28]){const p=s9vHardpoint(e,x,.32);for(const o of [-.28,0,.28])fire(p,Math.PI/2+o,2.65,'s9pair',{silent:x>0||o>-.28});s9vMuzzle(e,x,.32,.86,.14);}},.72,.37);}
+  }else if(K==='s9gateturret'){
+    if(e.y<VH*.25)e.y+=58*dt;else e.y=VH*.25+Math.sin(e._s9vt)*4;e.spin+=1.2*dt;
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?.68:e._fcd)-dt)<=0){e._fcd=rnd(1.45,1.8)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,0),base=e._s9vt*.8;for(let i=0;i<6;i++)fire(p,base+i*TAU/6,3.15,'s9warp',{silent:i>0});s9vMuzzle(e,0,0,.92,.14);},.58,.27);}
+  }else if(K==='s9gravity'){
+    if(e.y<VH*.22)e.y+=42*dt;else{if(e._dir==null)e._dir=1;e.x+=e._dir*35*dt;if(e.x<90||e.x>W-90)e._dir*=-1;}
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){e._fcd=rnd(2.1,2.6)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.36),a=aim(p);for(const o of [-.18,0,.18])fire(p,a+o,1.55,'s9comet',{silent:o>-.18,accel:1.3,max:6.1});s9vMuzzle(e,0,.36,1,.18);},.82,.44);}
+  }else if(K==='s9prism'){
+    if(e.y<VH*.20)e.y+=44*dt;else e.y=VH*.20+Math.sin(e._s9vt*.9)*5;e.spin+=.75*dt;
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.0,2.4)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,0);if((e._pr=(e._pr||0)+1)%3===0)fire(p,Math.PI/2,1.5,'s9lattice',{accel:.38,max:3.0});else{const n=12,base=e._s9vt*.33,st=TAU/n,gap=Math.round((aim(p)-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+i*st,2.7,'s9warp',{silent:i>0});}}s9vMuzzle(e,0,0,1.05,.18);},.82,.43);}
+  }else if(K==='s9warptank'){
+    if(e.y<VH*.26)e.y+=62*dt;else e.y+=15*dt;
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?.38:e._fcd)-dt)<=0){e._fcd=rnd(.82,1.08)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.38),a=aim(p);for(const o of [-.06,0,.06])fire(p,a+o,5.5,'s9gold',{silent:o!==0});s9vMuzzle(e,0,.38,.56,.08);},.36,.15);}
+  }else if(K==='s9ring'){
+    if(e._cx==null){e._cx=e.x;e._cy=VH*.22;e._rad=55+(e.phase?15:0);}if(e.y<e._cy)e.y+=72*dt;else{const a=e._s9vt*1.45+(e.phase||0);e.x=e._cx+Math.cos(a)*e._rad;e.y=e._cy+Math.sin(a)*e._rad*.45;e.spin=a;}
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?.62:e._fcd)-dt)<=0){e._fcd=rnd(1.45,1.8)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,0),a=e._s9vt*1.45+Math.PI/2;for(const o of [-.10,.10])fire(p,a+o,3.7,'s9turbo',{silent:o>0});s9vMuzzle(e,0,0,.65,.10);},.44,.19);}
+  }else if(K==='s9singularity'){
+    if(e.y<VH*.26)e.y+=52*dt;else e.y=VH*.26+Math.sin(e._s9vt*.8)*4;e.spin+=1.4*dt;
+    if(!e._s9Act&&(e._fcd=(e._fcd==null?.82:e._fcd)-dt)<=0){e._fcd=rnd(1.8,2.2)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,0),n=14,base=e._s9vt*.46,st=TAU/n,gap=Math.round((aim(p)-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+i*st,2.65,'s9pair',{silent:i>0});}s9vMuzzle(e,0,0,1,.16);},.66,.32);}
+  }
+  if(e.x<-150)e.x=-150;else if(e.x>W+150)e.x=W+150;
+}
+function drawS9Void(e){if(typeof XART==='undefined'||!e._s9void)return false;const H=S9VOID[e._s9void];if(!H)return false;
+  const fi=0;let key='s9atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s9atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawSpaceDamage(e,frac,dw,dh,true);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 /* HP cut ~45% across the orbital cast. Stage 5 fields big slow targets in an asteroid field, and
    at the old values every single one outlasted its welcome — the level read as a chore rather than
@@ -33061,8 +38092,13 @@ function drawOrbital(e){
   const h=e.h*1.6, w=h*(im.naturalWidth/im.naturalHeight);
   ctx.save(); ctx.translate(e.x,e.y);
   if(e._spinA) ctx.rotate(e._spinA);                       // oracle tumbles
-  if(e._flash2>0 || e.flash>0 || e._bounce>0) ctx.filter='brightness(2.4)';   // crescent tell / bounce pop
+  if(e._flash2>0 || e._bounce>0) ctx.filter='brightness(2.4)';   // crescent tell / bounce pop
   ctx.drawImage(im,-w/2,-h/2,w,h);
+  ctx.filter='none';
+  if(e.flash>0&&typeof xartTint==='function'){
+    const tc=xartTint(k,hitFlashColor(e,'#ffffff'),0.74);
+    if(tc)ctx.drawImage(tc,-w/2,-h/2,w,h);
+  }
   ctx.restore();
   // CHARGE EFFECTS — real enemy energy art from the weapon-VFX pack, never a drawn blob.
   // Hauler: a swelling energy ORB at the muzzle that spins up as the shot builds.
@@ -33174,8 +38210,11 @@ function drawL6Jet(e){
     const sx=Math.cos(r*TAU);              // squash through the horizontal as it goes over
     ctx.scale(Math.abs(sx)<0.12?0.12:sx, 1);
   }
-  if(e.flash>0){ ctx.filter='brightness(1.9)'; }
   ctx.drawImage(im,-w/2,-h/2,w,h);
+  if(e.flash>0&&typeof xartTint==='function'){
+    const fk=_l6key(s,st,fi),tc=xartTint(fk,hitFlashColor(e,'#ffffff'),0.74);
+    if(tc)ctx.drawImage(tc,-w/2,-h/2,w,h);
+  }
   ctx.restore();
   drawThruster(e);
   return true;
@@ -33193,7 +38232,17 @@ function mavCharge(dt){
   if(!special || special.pilot!=='maverick') return;
   const holding = !player.dead && keybind.fire.some(k=>Input.down(k));
   if(holding){
+    const _mavChargeJustStarted=!special.mavCharging;
     special.mavCharging=true;
+    if(_mavChargeJustStarted){
+      special._mavLoopDelay=0.66;
+      /* Decode the held bed while the authored build-up transient is playing. Previously the
+         loop element did not exist until the handoff frame, so its first play hit readyState 0,
+         rejected, and short/medium charges remained completely silent. */
+      try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopPrepare)Snd.loopPrepare('helixCharge');}catch(_mcp){}
+      if(Audio&&Audio.SFX&&(Audio.SFX.helixChargeStart||Audio.SFX.helixCharge))
+        (Audio.SFX.helixChargeStart||Audio.SFX.helixCharge)();
+    }
     special.mavCharge=Math.min(MAV_FULL,(special.mavCharge||0)+dt);
     const p=special.mavCharge/MAV_FULL;
     /* CHARGE AUDIO (drop 0801br). Mike: "when maverick charges his laser, it
@@ -33209,8 +38258,12 @@ function mavCharge(dt){
        frame — it starts the bed once, then just keeps the fade climbing — and
        the volume rides the charge so it builds instead of sitting flat. The
        existing HELIX OVERDRIVE ping still marks the top. */
-    if(typeof Snd!=='undefined' && Snd && Snd.loopOn) Snd.loopOn('helixCharge', 0.35+p*0.5);
-    else if(!special._mavChgSnd){ special._mavChgSnd=true; if(Audio.SFX.helixCharge) Audio.SFX.helixCharge(); }
+    special._mavLoopDelay=Math.max(0,(special._mavLoopDelay||0)-dt);
+    if(special._mavLoopDelay<=0 && typeof Snd!=='undefined' && Snd && Snd.loopOn)
+      Snd.loopOn('helixCharge', 0.35+p*0.5);
+    else if(special._mavLoopDelay<=0 && !special._mavChgSnd){
+      special._mavChgSnd=true; if(Audio.SFX.helixCharge) Audio.SFX.helixCharge();
+    }
     // ENERGY ORBS, not spiralling laser strands. The pack ships real charge art — nchg_orb_ (8f)
     // and nchg_sph_ (8f) — so the charge is now a ring of energy orbs drawing inward to the nose,
     // tightening and speeding up as it tops out. Handled in drawMavCharge(); particles here are
@@ -33242,19 +38295,22 @@ function mavCharge(dt){
     /* loopOff FADES rather than cutting, so releasing does not click. */
     if(typeof Snd!=='undefined' && Snd && Snd.loopOff) Snd.loopOff('helixCharge');
     special._mavChgSnd=false;
-    const c=special.mavCharge||0; special.mavCharge=0; special.mavPinged=false;
+    const c=special.mavCharge||0; special.mavCharge=0; special.mavPinged=false; special._mavLoopDelay=0;
     /* AND THE RELEASE PART FIRES HERE (drop 0801eu). Maverick's LOOP was already
        correct from 0801br - loopOn while charging, loopOff on release - but nothing
        marked the release itself, so letting go just faded the hum out. Falva now
        plays nsp_charge_release on release and he should match. */
-    if(c>=MAV_HALF && Audio.SFX.nsp_charge_release) Audio.SFX.nsp_charge_release();
+    if(c>=MAV_HALF && Audio.SFX){
+      const _mavRelease=Audio.SFX.maverickHelixRelease||Audio.SFX.helixBurst||Audio.SFX.nsp_charge_release;
+      if(_mavRelease)_mavRelease();
+    }
     if(c>=MAV_HALF) releaseHelix(c);
   }
   /* DEATH KILLS THE WHINE. Without this the charge bed keeps looping over the
      death animation, because the release branch above is only reached while
      mavCharging is still set and dying clears the hold, not the flag. */
   if(player.dead && special.mavCharging){
-    special.mavCharging=false; special.mavCharge=0; special.mavPinged=false;
+    special.mavCharging=false; special.mavCharge=0; special.mavPinged=false; special._mavLoopDelay=0;
     special._mavChgSnd=false;
     if(typeof Snd!=='undefined' && Snd && Snd.loopOff) Snd.loopOff('helixCharge');
   }
@@ -34244,7 +39300,7 @@ function drawMini(e){
      inconsistently across contexts, do not respect the pixel-art look, and were why several units
      never appeared to light up when shot. Tinting the sprite keeps its silhouette exactly. */
   if(e.flash>0 && typeof xartTint==='function'){
-    const _tc=xartTint(k, e.flash>0.04?'#ffffff':'#ff8a4a', 0.85);
+    const _tc=xartTint(k, hitFlashColor(e,e.flash>0.04?'#ffffff':'#ff8a4a'), 0.85);
     if(_tc) ctx.drawImage(_tc,-w/2,-h/2,w,h);
   }
   ctx.restore();
@@ -34420,11 +39476,35 @@ const ASSIGNED_FLIP={lr:1, jc:1, cc:1, ss:1};
    Supersedes the 3-form chain from drop 0720al.
    ============================================================ */
 const VILE_FORMS=[
-  {art:'mbv_f1', name:'APOSTLE COCOON',    hpx:1.00, scale:0.78, morph:'12'},
-  {art:'mbv_f2', name:'VENOM ASCENDANT',   hpx:1.22, scale:0.86, morph:'23'},
-  {art:'mbv_f3', name:'NECROTIC LEVIATHAN',hpx:1.48, scale:0.94, morph:'34'},
-  {art:'mbv_f4', name:'FURIOUS DEATH',     hpx:1.80, scale:1.02, morph:null},
+  {art:'s8symboss_form_0', name:'BLACK COCOON',       hpx:1, scale:0.78},
+  {art:'s8symboss_form_1', name:'RAVENOUS ASCENDANT', hpx:1, scale:0.86},
+  {art:'s8symboss_form_2', name:'ABYSSAL LEVIATHAN',  hpx:1, scale:0.94},
+  {art:'s8symboss_form_3', name:'FURIOUS DEATH',      hpx:1, scale:1.02},
 ];
+/* The entrance is an authored sixteen-frame organic transformation, not a
+   collection of hull parts. The boss is already at its combat anchor while it
+   plays, stays invulnerable through `enter`, and never fades between frames. */
+function symbioteEntryTick(b,dt){
+  const E=b&&b._symEntry;if(!E)return false;
+  E.t=Math.min(E.dur,E.t+dt);b.x=worldWidth()/2;b.y=b.ty;
+  const beat=Math.min(15,Math.floor((E.t/E.dur)*16));
+  if(beat!==E.beat){
+    E.beat=beat;
+    if((beat===5||beat===11)&&Audio.SFX&&Audio.SFX.hit)Audio.SFX.hit();
+    if(beat===14){shake=Math.max(shake,12);atomFlash=Math.max(atomFlash||0,.42);if(Audio.SFX&&Audio.SFX.bossPhase)Audio.SFX.bossPhase();}
+  }
+  if(E.t>=E.dur){b._symEntry=null;b.enter=false;b.fireCd=1.0;b.flash=.20;return false;}
+  return true;
+}
+function symbioteEntryDraw(b){
+  const E=b&&b._symEntry;if(!E||typeof XART==='undefined')return false;
+  const p=clamp(E.t/E.dur,0,.999),fi=clamp(Math.floor(p*16),0,15),k='s8symboss_entrance_'+fi;
+  if(!XART.rdy(k))return false;
+  const im=XART.get(k),pulse=Math.sin(p*Math.PI*10),d=b.w*(1.16+p*.55+pulse*.018);
+  ctx.save();ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im,b.x-d/2,b.y-d/2,d,d);
+  ctx.restore();return true;
+}
 function _vileSpec(scale){
   return {mw:256, mh:256, scale:scale, overlay:true, named:true, modules:[
     {c:'left_systems',  rect:[0,0,85,256],    hp:1000, role:'systems'},
@@ -34433,6 +39513,12 @@ function _vileSpec(scale){
     {c:'rear_core',     rect:[85,170,171,256],hp:950,  role:'drive'},
     {c:'right_systems', rect:[171,0,256,256], hp:1000, role:'systems'},
   ]};
+}
+function vileHardpoint(b,ox,oy){return combatHardpoint(b,ox,oy);}
+function vileMuzzle(b,ox,oy,family,scale,life){
+  const p=vileHardpoint(b,ox,oy);if(!p)return;
+  navalFlash(null,p,scale||1,'s8nf_'+family+'_muzzle',{n:4,hpx:62,life:life||.18,anchor:.45,
+    follow:()=>b&&!b.dead?vileHardpoint(b,ox,oy):null});
 }
 /* ============================================================
    THE FOUR FORMS FIGHT DIFFERENTLY (drop 0812o)
@@ -34460,16 +39546,21 @@ function vileAttack(b){
   const f=b._vForm|0, y=b.y+b.h*0.28;
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const step=(b._vAtk=(b._vAtk|0)+1);
+  if(b._annihilation){b.fireCd=.22;return;}
+  if(f===3&&!b._annihilationUsed){vileAnnihilationStart(b);return;}
   if(f===0){
     const gap=W*(0.18+0.64*(0.5+0.5*Math.sin((b.t||0)*0.8)));
     for(let x=30;x<W-20;x+=46){
       if(Math.abs(x-gap)<70) continue;
-      eShoot(x, y, Math.PI/2, 2.0, 'blob');
+      vileAnnihilationShot(x,y,Math.PI/2,2.25,'s8nf_crescent',{silent:x>30});
     }
+    vileMuzzle(b,0,.33,'stealth_crescent',1.12,.20);
     b.fireCd=1.35;
   } else if(f===1){
     const a0=aimPlayer(b.x,y);
-    for(let k=-2;k<=2;k++) eShoot(b.x, y, a0+k*0.10, 3.4, 'bolt');
+    const lp=vileHardpoint(b,-.27,.27),rp=vileHardpoint(b,.27,.27);
+    for(let k=-2;k<=2;k++)vileAnnihilationShot(k&1?rp.x:lp.x,k&1?rp.y:lp.y,a0+k*.10,3.65,'s8nf_needle',{silent:k!==-2});
+    vileMuzzle(b,-.27,.27,'needle_interceptor',.92,.15);vileMuzzle(b,.27,.27,'needle_interceptor',.92,.15);
     if((step%2)===0 && typeof eMissileHoming==='function'){
       eMissileHoming(b.x-b.w*0.26, y, -1);
       eMissileHoming(b.x+b.w*0.26, y,  1);
@@ -34478,61 +39569,98 @@ function vileAttack(b){
   } else if(f===2){
     if(!b._brk && (step%3)===0 && typeof beamRakeStart==='function'){
       beamRakeStart(b, 4, (Math.random()<0.5?-1:1)*0.62, 5.0);
+      vileMuzzle(b,0,.30,'solar_corvette',1.25,.26);
     } else {
-      for(let k=0;k<9;k++) eShoot(b.x, y, (b._vRot=(b._vRot||0)+0.19)+k*TAU/9, 2.2, 'plasma');
+      const p=vileHardpoint(b,0,.30),base=(b._vRot=(b._vRot||0)+.19);
+      for(let k=0;k<9;k++)vileAnnihilationShot(p.x,p.y,base+k*TAU/9,2.45,'s8nf_solar',{silent:k>0});
+      vileMuzzle(b,0,.30,'solar_corvette',1.22,.22);
     }
     b.fireCd=0.95;
   } else {
     if(!b._brk && (step%4)===0 && typeof beamRakeStart==='function'){
       beamRakeStart(b, 5, (Math.random()<0.5?-1:1)*0.85, 5.4);
+      vileMuzzle(b,0,.28,'armored_gunship',1.30,.26);
     } else if((step%3)===0 && typeof eMissile==='function'){
-      for(const fx of [-0.30,-0.10,0.10,0.30]) eMissile(b.x+b.w*fx, y);
+      for(const fx of [-0.30,-0.10,0.10,0.30]){eMissile(b.x+b.w*fx,y);vileMuzzle(b,fx,.28,'armored_gunship',.82,.14);}
     } else {
       const a0=aimPlayer(b.x,y);
-      for(let k=-3;k<=3;k++) eShoot(b.x, y, a0+k*0.085, 4.0, 'bolt');
+      const lp=vileHardpoint(b,-.34,.25),rp=vileHardpoint(b,.34,.25);
+      for(let k=-3;k<=3;k++)vileAnnihilationShot(k&1?rp.x:lp.x,k&1?rp.y:lp.y,a0+k*.085,4.25,'s8nf_gunship',{silent:k!==-3});
+      vileMuzzle(b,-.34,.25,'armored_gunship',1.02,.15);vileMuzzle(b,.34,.25,'armored_gunship',1.02,.15);
     }
     b.fireCd=0.78;
   }
   if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
 }
+function vileAnnihilationShot(x,y,a,sp,kind,opts){
+  opts=opts||{};const hb=S8_PROJECTILE_HIT[kind]||[12,12];if(opts.w==null)opts.w=hb[0];if(opts.h==null)opts.h=hb[1];
+  const q=eShootT(x,y,a,sp,kind,opts);q._boss=true;q._bfam='vile';q._noArsenal=true;return q;
+}
+/* ANNIHILATION is the final form's authored set piece: a warned converging cross locks the old
+   player position, followed by a radial burst behind it.  The target never tracks after the tell,
+   and the radial ring removes three sectors toward the player, preserving a deliberate escape. */
+function vileAnnihilationStart(b){
+  /* converging cross first, then the radial burst behind it. */
+  if(!b||b._annihilation)return false;
+  b._annihilation={t:0,tell:.78,wave:0,waves:3,next:.78,tx:clamp(player.x,54,worldWidth()-54),ty:clamp(player.y,PLAY.y+120,VH-70)};
+  b._annihilationUsed=true;b.fireCd=Math.max(b.fireCd||0,2.6);b.flash=Math.max(b.flash||0,.46);
+  if(typeof floatText==='function')floatText(b.x,b.y-b.h*.40,'ANNIHILATION!','#ff764f');
+  if(Audio.SFX&&(Audio.SFX.bossPhase||Audio.SFX.enemyBossCannon))(Audio.SFX.bossPhase||Audio.SFX.enemyBossCannon)();
+  return true;
+}
+function vileAnnihilationTick(b,dt){
+  const A=b&&b._annihilation;if(!A)return false;A.t+=dt;
+  if(A.t>=A.next&&A.wave<A.waves){
+    const W=worldWidth(),pad=18,src=[[pad,A.ty],[W-pad,A.ty],[A.tx,PLAY.y+pad],[A.tx,VH-pad]];
+    for(let i=0;i<src.length;i++){
+      const p=src[i],ang=Math.atan2(A.ty-p[1],A.tx-p[0]);
+      vileAnnihilationShot(p[0],p[1],ang,3.75+A.wave*.45,'s8nf_needle',{silent:i>0});
+      vileAnnihilationShot(p[0]-Math.sin(ang)*14,p[1]+Math.cos(ang)*14,ang,3.45+A.wave*.42,'s8nf_crescent',{silent:true});
+    }
+    if(typeof navalFlash==='function')for(const p of src)navalFlash(null,{x:p[0],y:p[1]},.76,'s8nf_stealth_crescent_muzzle',{n:4,hpx:54,life:.13,anchor:.45});
+    shake=Math.max(shake,7+A.wave);A.wave++;A.next+=.34;
+  }
+  if(A.wave>=A.waves&&!A.burst&&A.t>=A.next+.10){
+    A.burst=true;const n=18,base=(b.t||0)*.31,st=TAU/n,aim=aimPlayer(b.x,b.y),gap=Math.round((aim-base)/st);
+    for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;
+      vileAnnihilationShot(b.x,b.y,base+i*st,2.75,'s8nf_solar',{silent:i>0,szMul:.86,w:26,h:26});}
+    vileMuzzle(b,0,0,'solar_corvette',1.42,.26);
+    if(Audio.SFX&&Audio.SFX.enemyBossCannon)Audio.SFX.enemyBossCannon();shake=Math.max(shake,11);
+  }
+  if(A.burst&&A.t>A.next+.82){b._annihilation=null;b.fireCd=.54;return false;}return true;
+}
+function vileAnnihilationDraw(b){
+  const A=b&&b._annihilation;if(!A||A.t>=A.tell)return;const W=worldWidth(),pulse=.32+.28*Math.sin(A.t*24);
+  ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=pulse;ctx.strokeStyle='#ff6b43';ctx.lineWidth=5;
+  ctx.beginPath();ctx.moveTo(0,A.ty);ctx.lineTo(W,A.ty);ctx.moveTo(A.tx,PLAY.y);ctx.lineTo(A.tx,VH);ctx.stroke();
+  ctx.globalAlpha=.95;ctx.strokeStyle='#fff0b8';ctx.lineWidth=2;ctx.strokeRect(A.tx-22,A.ty-22,44,44);ctx.restore();
+}
 function vileBuildForm(b, idx){
   const F=VILE_FORMS[idx];
-  /* ⚠ hpx IS A SHARE, NOT A MULTIPLIER (drop 0814h). The tester: "the stage 8 boss ... very
-     tanky." Measured: each form was taking _vBase × its OWN hpx as a full health bar —
-     4,067 / 4,962 / 6,020 / 7,321, a 22,370-hp fight against a stage-8 hpBase of 1,848. **12.1×
-     hpBase**, where every other late boss totals 1.4–1.5× (doomsdaycarrier ~2,256, sludgeemperor
-     ~2,615). The finale was EIGHT TIMES the hp of the bosses either side of it.
-
-     `_vBase = hpBase*2.2` reads as the whole fight's budget — 2.2× is exactly the band the other
-     modular finales sit in — and the hpx column (1.00→1.80, summing to 5.5) is the ESCALATION
-     SHAPE across forms. Applying hpx to the full base handed every form its own boss-sized pool.
-     Normalised by the hpx sum, both authored knobs keep their meaning: the fight totals
-     hpBase*2.2 ≈ 4,066 and the forms still grow 739 → 902 → 1,094 → 1,331. The 0812o attack
-     identities are untouched — the fight escalates in pressure while each bar stays killable. */
-  const _hpxSum=VILE_FORMS.reduce((a,f)=>a+f.hpx,0);
-  buildModularBoss(b, _vileSpec(F.scale), F.art, Math.ceil(b._vBase*F.hpx/_hpxSum));
+  /* Equal phase pools are mandatory: one form is precisely 25% of the full
+     encounter, while its attack vocabulary—not a larger life bar—escalates. */
+  const phaseHp=b._vPhaseHp||Math.ceil(b._vBase/VILE_FORMS.length);
+  buildModularBoss(b, _vileSpec(F.scale), F.art, phaseHp);
   b._vForm=idx; b.name=F.name;
   b.flash=0.3; shake=Math.max(shake,14);
 }
 function vileMorphDraw(b){
   if(!b || b._morphT==null || typeof XART==='undefined') return;
-  const F=VILE_FORMS[b._morphFrom];
-  if(!F || !F.morph) return;
-  const fi=clamp(Math.floor(b._morphT/0.09),0,5);
-  const k='nvx_morph'+F.morph+'_'+fi;
+  const fi=clamp(8+Math.floor((b._morphT/.55)*8),8,15);
+  const k='s8symboss_entrance_'+fi;
   if(!XART.rdy(k)) return;
-  const im=XART.get(k), d=b.w*1.35;
-  ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.95;
+  const im=XART.get(k), d=b.w*(1.28+b._morphT*.35);
+  ctx.save();ctx.imageSmoothingEnabled=false;
   ctx.drawImage(im, b.x-d/2, b.y-d/2, d, d);
   ctx.restore();
 }
 function vileImplosionDraw(b){
   if(!b || b._impT==null || typeof XART==='undefined') return;
-  const fi=clamp(Math.floor(b._impT/0.13),0,5);
-  const k='nvx_imp_'+fi;
+  const fi=clamp(15-Math.floor((b._impT/.80)*16),0,15);
+  const k='s8symboss_entrance_'+fi;
   if(!XART.rdy(k)) return;
-  const im=XART.get(k), d=b.w*2.0;
-  ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=1;
+  const im=XART.get(k), d=b.w*(1.55-b._impT*.45);
+  ctx.save();ctx.imageSmoothingEnabled=false;
   ctx.drawImage(im, b.x-d/2, b.y-d/2, d, d);
   ctx.restore();
 }
@@ -37441,7 +42569,7 @@ function modularHit(dmg){
       const nx=boss._vForm+1;
       for(const q of boss.parts) explode(boss.x+q.dx, boss.y+q.dy, Math.max(16, Math.max(boss.w,boss.h)*0.22), 'red', 'fireball');
       atomFlash=Math.max(atomFlash||0, 0.6);
-      boss._morphFrom=boss._vForm; boss._morphT=0;
+      boss._morphFrom=boss._vForm; boss._morphT=0; boss.enter=true;
       vileBuildForm(boss, nx);
       floatText(boss.x, boss.y-60, VILE_FORMS[nx].name+'!', '#c66aff');
       Audio.SFX.bossPhase&&Audio.SFX.bossPhase();
@@ -37620,16 +42748,12 @@ function heraldAnimKey(b){
 function vileAnimKey(b){
   if(typeof XART==='undefined') return null;
   if(!b || !b._vile || b._vForm==null) return null;
-  if(b._morphT!=null) return null;               // mid-morph: the morph overlay owns the frame
+  if(b._symEntry||b._morphT!=null) return null;  // organic FX owns these transformations
   const F = VILE_FORMS[b._vForm]; if(!F) return null;
-  if(b._vCharge!=null){
-    const fi = clamp(Math.floor(b._vCharge*6), 0, 5);
-    const k = F.art+'_atk_'+fi;
-    if(XART.rdy(k)) return k;
-  }
-  const fi = Math.floor((b._vT||0)*VILE_IDLE_FPS) % 6;
-  const k = F.art+'_idle_'+fi;
-  return XART.rdy(k) ? k : null;
+  /* Each form has one stable combat silhouette. Attacks are communicated by
+     anchored muzzle/charge overlays; swapping entire hull frames created the
+     fake tail/wing mutations the art pass is explicitly avoiding. */
+  return XART.rdy(F.art) ? F.art : null;
 }
 function updateModularBoss(b, dt){
   if(b._profile==='magma' && typeof magmaColossusPresence==='function') magmaColossusPresence(b, dt);
@@ -37900,7 +43024,7 @@ function l6jDraw(b){
                 body:'central_core', tail:'rear_core'};
       const _S={clean:'clean', dam:'ruin', ruin:'ruin'};
       const k='mbp_ft_'+(_P[part]||'central_core')+'_'+(_S[st]||'clean');
-        const tc=XART.rdy(k)?xartTint(k, b.flash>0.04?'#ffffff':'#ff8a4a', 0.85):null;
+        const tc=XART.rdy(k)?xartTint(k, hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'), 0.85):null;
         if(!tc) continue;
         const r=parseInt(cell[1],10)-1, c=parseInt(cell[3],10)-1;
         ctx.drawImage(tc, x0+c*cw, y0+r*ch, cw, ch);
@@ -38301,7 +43425,7 @@ function sxDraw(b, dt){
     ctx.save();
     ctx.drawImage(im, b.x-w/2, b.y-h/2, w, h);       // parts are authored in place on one canvas
     if(b.flash>0 && typeof xartTint==='function'){
-      const tc=xartTint(k, b.flash>0.04?'#ffffff':'#ff8a4a', 0.85);
+      const tc=xartTint(k, hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'), 0.85);
       if(tc) ctx.drawImage(tc, b.x-w/2, b.y-h/2, w, h);
     }
     ctx.restore();
@@ -38326,6 +43450,11 @@ function sxDraw(b, dt){
 }
 function drawModularBoss(b){
   if(typeof XART==='undefined') return;
+  if(b._symEntry&&typeof symbioteEntryDraw==='function'){symbioteEntryDraw(b);return;}
+  /* During a shell change the black growth reel is drawn in the boss-FX pass;
+     do not expose the invisible legacy component grid underneath it. */
+  if(b._vile&&b._morphT!=null)return;
+  if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b);
   if(b._impT!=null && typeof vileImplosionDraw==='function'){ vileImplosionDraw(b); }
   // ANIMATED BASE (VILE EXISTENCE): the form's idle/attack reel replaces the intact layers.
   // Its silhouette is pixel-identical to the composited clean components, so undamaged parts
@@ -38342,11 +43471,15 @@ function drawModularBoss(b){
        differently or not at all depending on the canvas context, which is why these bosses looked
        dark and never lit up when you shot them. */
     if(b.flash>0){
-      const tc=xartTint(_animK, b.flash>0.04?'#ffffff':'#ff8a4a', 0.85);
+      const tc=xartTint(_animK, hitFlashColor(b,b.flash>0.04?'#ffffff':'#ff8a4a'), 0.85);
       if(tc) ctx.drawImage(tc, b.x-b.w/2, b.y-b.h/2, b.w, b.h);
     }
     ctx.restore();
   }
+  /* The new symbiote forms are complete authored silhouettes. Their modular
+     parts exist solely as five independently hittable HP regions; attempting
+     to paint the former component plates over them causes seams and mutations. */
+  if(b._vile&&_animK&&_animK.indexOf('s8symboss_form_')===0)return;
   if(b._be && typeof bossEntryPowerDraw==='function' && _animK){
     bossEntryPowerDraw(b, _animK, b.x-b.w/2, b.y-b.h/2, b.w, b.h);
   }
@@ -40296,7 +45429,7 @@ function drawTitle(dt){
     const _t=performance.now()/1000;
     const _pulse=0.5+0.5*Math.sin(_t*3.2);
     const _cx=VW/2, _cy=TMENU_Y0 - 50;                    // raised another 10px (was TMENU_Y0-40)
-    const _s2=(ASSETS.stageFont&&ASSETS.stageFont['2'])||(ASSETS.stageArt&&ASSETS.stageArt['2']);
+    const _s2=pilotFont(2);
     if(_s2 && typeof stageText==='function'){
       ctx.save();
       ctx.shadowColor='#ffcf3a'; ctx.shadowBlur=12+_pulse*22;   // glowing gold, pulsing
@@ -40521,7 +45654,7 @@ function drawDiff(dt){
   // RULES of the highlighted difficulty — LARGE, stage-1 font, at the bottom, readable
   { const desc=DIFF_DESC[clamp(menuIndex,0,N-1)];
     const parts=desc.split(' \u00B7 ');
-    const uf=(ASSETS.stageFont&&ASSETS.stageFont['1'])||(ASSETS.stageArt&&ASSETS.stageArt['1']);
+    const uf=pilotFont(1);
     let yy=VH-72;
     for(const line of parts){ if(uf && typeof stageText==='function'){ stageText(uf,line,VW/2,yy,15,null,null,1,0.08); } else { ctx.textAlign='center'; ctx.fillStyle='#eaf2ff'; ctx.font='13px "BOFmil", monospace'; ctx.fillText(line,VW/2,yy); } yy+=20; }
   }
@@ -40563,7 +45696,13 @@ function drawPilotBG(tint){
   rg.addColorStop(0,rgba(c,0.26)); rg.addColorStop(1,'rgba(0,0,0,0)');
   ctx.fillStyle=rg; ctx.fillRect(0,0,VW,VH);
 }
-function pilotFont(idx){ return (ASSETS.stageArt && ASSETS.stageArt[String(idx)]) || null; }
+/* Corrected compact stage face. Stage 9 intentionally inherits stage 8 because the approved
+   pack contains eight campaign identities; stage art is only an emergency visual fallback. */
+function pilotFont(idx){
+  const k=String(Math.max(1,Math.min(9,idx|0)));
+  return (ASSETS.bofFont && (ASSETS.bofFont[k] || (k==='9'&&ASSETS.bofFont['8']) || ASSETS.bofFont['1']))
+      || (ASSETS.stageArt && (ASSETS.stageArt[k] || ASSETS.stageArt['1'])) || null;
+}
 function startPilotRot(dir){ if(pilotRot>0)return; pilotFrom=pilotIndex; pilotIndex=(pilotIndex+dir+PILOTS.length)%PILOTS.length; pilotRot=1; Audio.SFX.blip(); }
 /* A held click/stick/button survives setState even though edge taps are cleared. During Campaign
    setup that let the same input which chose a difficulty immediately rotate or launch a pilot.
@@ -40596,11 +45735,8 @@ function drawCommWindow(o){
      legitimate dialogue renderers, so between them the whole of "dialogues and cutscenes" is
      covered.
 
-     ⚠ THE 1x FACE, NOT THE 2x CUTSCENE BUILD, AND THAT IS NOT A TYPO. This panel draws its name
-     at 20px and its body at 14px. `fury-cutscene-font` is an exact 2x of the same letterforms
-     (44px line height) authored for FULL-SCREEN cutscene cards; asking for it at 14px would
-     downscale a 2x plate and land softer than the 1x face it was doubled from. The cutscene build
-     earns its place where the type is actually large.
+     The single 1x dialogue sheet is nearest-neighbour scaled at every requested size. The former
+     2x cutscene copy contained the same pixels doubled and is intentionally no longer loaded.
 
      ⚠ SET HERE AND CLEARED AT THE SINGLE EXIT. This function has no early returns — checked, not
      assumed — so one clear before the final restore covers it. Leaving the face set would repaint
@@ -40791,9 +45927,11 @@ function drawPilot(dt){
   drawPilotBG(P.tint);
   /* the reveal (typed text + stat bars + special) is drawn AFTER the shell, over the same rect —
      see the pcDraw call further down, which now receives cardRect. */
-  // title in the stage-2 atlas font (full glyph set incl. S), tinted vivid to the pilot colour
+  // title and pilot name use that pilot's corrected stage face.
   const t2=pilotFont(2);
-  if(typeof msgText==='function'){ msgText('CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0,1,0.06); }
+  const _pilotFace=pilotFont(P.font)||t2;
+  if(_pilotFace && typeof stageText==='function'){ stageText(_pilotFace,'CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0.25,1,0.06); }
+  else if(typeof msgText==='function'){ msgText('CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0,1,0.06); }
   else { ctx.textAlign='center'; outlineText('CHOOSE YOUR PILOT!',VW/2,46,'#f2f5ff','#12151a',3); }
   // one card, centred, with a horizontal scale (rotation) transition between pilots
   const locked = isPilotLocked(P);
@@ -40835,8 +45973,8 @@ function drawPilot(dt){
     /* The big stage-font name under the card stays — it is the screen's title, not card data.
        The SPECIAL line below it does NOT: the new card carries its own SPECIAL ABILITY section
        with an icon, so printing it again underneath was the same fact twice. */
-    const pf=pilotFont(P.font)||t2;
-    if(pf){ stageTextMixed(pf,t2,P.name,VW/2,VH*0.80,28,P.tint,1,0.07); }
+    const pf=_pilotFace;
+    if(pf){ stageText(pf,P.name,VW/2,VH*0.80,28,P.tint,1,1,0.07); }
     else if(typeof msgText==='function'){ msgText(P.name.toUpperCase(), VW/2, VH*0.80, 22, P.tint, 1, 1, 0.08); }
     else { ctx.textAlign='center'; ctx.fillStyle=P.tint; ctx.font='bold 22px "BOFmil", monospace'; ctx.fillText(P.name,VW/2,VH*0.81); }
     /* the SPECIAL line and its description used to print here, under the card. The new card has
@@ -40928,7 +46066,7 @@ function drawCredits(dt){
   }
   ctx.textAlign='center'; ctx.textBaseline='alphabetic';
   // stage-1 bitmap font for the section headers + the CREDITS title
-  const s1=(ASSETS.stageFont&&ASSETS.stageFont['1'])||(ASSETS.stageArt&&ASSETS.stageArt['1']);
+  const s1=pilotFont(1);
   if(s1 && typeof stageText==='function'){ stageText(s1,'CREDITS',VW/2,150,24,null,null,1,0.08); }
   else { ctx.fillStyle='#f2f5ff'; ctx.font='bold 22px "BOFmil", monospace'; ctx.fillText('CREDITS', VW/2, 150); }
   // label rows -> stage-1 font; name rows -> dialogue font (readable)
@@ -41071,18 +46209,20 @@ function drawPassword(dt){
     const _sub=pwTypeTick();
     if(_sub && typeof submitPassword==='function') submitPassword();
   }
+  const _PWMAP={'FURY':1,'IRON':2,'DAM5':3,'STRM':4,'ORBT':5,'TURB':6,'SEWR':7,'DETH':8};
+  let _pwStage=1;
+  for(const code in _PWMAP){ if(code.slice(0,pwInput.length)===pwInput && pwInput.length>0){ _pwStage=_PWMAP[code]; break; } }
+  const _pwFont=pilotFont(_pwStage);
   if(typeof drawCanonBackdrop==='function' && drawCanonBackdrop('nbt_3',0.62)){} else drawBootBackdrop(dt,0.66);
-  if(typeof msgText==='function'){ msgText('ENTER PASSWORD',VW/2,24,16,'#f2f5ff',0,1,0.10); } else { ctx.fillStyle='#f2f5ff'; ctx.font='bold 16px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText('ENTER PASSWORD',VW/2,24); }
+  if(_pwFont && typeof stageText==='function'){ stageText(_pwFont,'ENTER PASSWORD',VW/2,24,16,'#f2f5ff',0.25,1,0.08); }
+  else if(typeof msgText==='function'){ msgText('ENTER PASSWORD',VW/2,24,16,'#f2f5ff',0,1,0.10); }
+  else { ctx.fillStyle='#f2f5ff'; ctx.font='bold 16px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText('ENTER PASSWORD',VW/2,24); }
   const _panelDef={x:16,y:42,w:VW-32,h:VH-42-16};
   const _panel=uiRect('password','panel',_panelDef);
   const wx=_panel.x, wy=_panel.y, ww=_panel.w, wh=_panel.h;
   bofPanel(wx,wy,ww,wh);
   // typed-password slot row — LARGE, chars in the bitmap font of the stage this code unlocks
   // figure out which stage the current input matches/prefixes so we can use its font live
-  const _PWMAP={'FURY':1,'IRON':2,'DAM5':3,'STRM':4,'ORBT':5,'TURB':6,'SEWR':7,'DETH':8};
-  let _pwStage=1;
-  for(const code in _PWMAP){ if(code.slice(0,pwInput.length)===pwInput && pwInput.length>0){ _pwStage=_PWMAP[code]; break; } }
-  const _pwFont=(ASSETS.stageFont && ASSETS.stageFont[String(_pwStage)]) || (ASSETS.stageArt && ASSETS.stageArt[String(_pwStage)]);
   const slotY=wy+30, slotN=6, slotW=52, slotGap=8, slotsW=slotN*slotW+(slotN-1)*slotGap, slotX0=VW/2-slotsW/2, slotH=48;
   for(let i=0;i<slotN;i++){
     const sx=slotX0+i*(slotW+slotGap);
@@ -41587,8 +46727,6 @@ function curFontArt(){
      mixing typefaces mid-screen is the bug this replaces. */
   const bf=ASSETS.bofFont && (ASSETS.bofFont[String(run.stage)] || ASSETS.bofFont['8']);
   if(bf && bf.img && bf.img.complete && bf.img.naturalWidth) return bf;
-  const nf=ASSETS.stageFont && ASSETS.stageFont[String(run.stage)];
-  if(nf && nf.img && nf.img.complete && nf.img.naturalWidth) return nf;
   return curArt();
 }
 /* GLYPH FALLBACK. Stage 1's font carries 58 glyphs; every other stage font carries 46 — the
@@ -41606,7 +46744,7 @@ function fontGlyph(art, ch){
     if(XART.rdy(k)) return {xart:k};
   }
   if(art && art.font && art.font[ch]) return {art:art, key:art.font[ch]};
-  const base=ASSETS.stageFont && ASSETS.stageFont['1'];
+  const base=ASSETS.bofFont && ASSETS.bofFont['1'];
   if(base && base.font && base.font[ch]) return {art:base, key:base.font[ch]};
   /* THE GAMEFONT WAS NEVER IN THE CHAIN (drop 0801gj). It carries the complete
      punctuation set as ncm_font_c<NNN> - three-digit ASCII - while the stage fonts
@@ -41632,8 +46770,6 @@ function uiFontArt(){
      ones read as stage identity rather than chrome. */
   const bf=ASSETS.bofFont && ASSETS.bofFont['1'];
   if(bf && bf.img && bf.img.complete && bf.img.naturalWidth) return bf;
-  const nf=ASSETS.stageFont && ASSETS.stageFont['1'];
-  if(nf && nf.img && nf.img.complete && nf.img.naturalWidth) return nf;
   return (ASSETS.stageArt && ASSETS.stageArt['1']);
 }
 function artReady(a){ return a && a.img && a.img.complete && a.img.naturalWidth>0; }
@@ -41855,10 +46991,9 @@ function fontCapH(art){
 /* ============================================================
    THE FURY DIALOGUE FONT — CF_BOFDialogueFont-Vol.1 (Mike, 0819)
 
-   Two faces, both authored from the approved stage-font identity:
-     fury-dialogue-font   1x, 20x22 cells, line height 22, baseline 15  — in-play dialogue, HUD
-                          prompts, pickup announces
-     fury-cutscene-font   an EXACT nearest-neighbour 2x of it, 40x44    — cutscenes
+   One approved face, authored from the stage-font identity:
+     fury-dialogue-font   1x, 20x22 cells, line height 22, baseline 15  — dialogue, cutscenes,
+                          HUD prompts and pickup announces. Large text is nearest-neighbour scaled.
 
    ⚠ THIS FACE HAS PER-GLYPH VERTICAL METRICS, WHICH IS THE WHOLE POINT. The stage face has none,
    so `glyphBox` below bottom-aligns every glyph in the cap box and carries `FONT_DESC` — a
@@ -41879,7 +47014,6 @@ function fontCapH(art){
    ============================================================ */
 const BMF_FACES = {
   dialogue:'assets/game/fonts/fury-dialogue-font/fury-dialogue-font',
-  cutscene:'assets/game/fonts/fury-cutscene-font/fury-cutscene-font',
 };
 const BMF = {};
 function bmfInit(){
@@ -42046,7 +47180,7 @@ let introSeq={crash:false,slice:false,mus:false,debris:null,lastnum:99,go:false}
 // ---- OFFICIAL GAME FONT: Stage-1 bitmap font as the default for all messages/dialogue.
 // Stage-1 font lacks 'S' (and a few glyphs) -> borrow those from the Stage-2 font atlas.
 function defFontArt(){ return uiFontArt() || curFontArt() || (ASSETS.stageArt && (curArt() || ASSETS.stageArt['1'])); }
-function defFontAlt(){ return (ASSETS.stageFont && ASSETS.stageFont['1']) || (ASSETS.stageArt && ASSETS.stageArt['1']); }
+function defFontAlt(){ return (ASSETS.bofFont && ASSETS.bofFont['1']) || (ASSETS.stageArt && ASSETS.stageArt['1']); }
 function msgText(text,cx,cy,H,tintC,tintA,alpha,spacingMul){
   const a1=defFontArt(), a2=defFontAlt();
   if(!a1||!a1.font||!a1.img||!a1.img.complete){
@@ -42593,39 +47727,50 @@ function launchConnDy(){
   if(ph==='settle') return raw*(1-_ease(clamp((drawLaunch._pt||0)/0.45,0,1)));
   return 0;
 }
-const LAUNCH_COUNTDOWN_SCROLL=16;  // deliberately below PLAY's 40px/s; GO hands off to normal speed
-const STAGE6_TRANSITION_SKY='nl6sky_stage06_sky_scroll_640x960';
-/* Stage 6 owns an authored 640x960 transition plate. Keep it as one continuously moving strip
-   for the entire launch instead of handing the countdown to the stationary gameplay master.
-   That handoff was why GET READY appeared to freeze even though mapScroll was still advancing. */
+const LAUNCH_COUNTDOWN_SCROLL=24;  // visible slow crawl; GO hands off continuously to PLAY's 40px/s
+const STAGE6_TRANSITION_SKY='stage6_blue_master';
+/* Launch and gameplay now read the SAME 680x5000 master. The launch samples upward from its
+   bottom edge, matching the first live level frame; the countdown only changes scroll speed. */
 function stage6TransitionBackgroundDraw(scroll){
-  ctx.fillStyle='#061126'; ctx.fillRect(0,0,VW,VH);
+  ctx.fillStyle='#062a8e'; ctx.fillRect(0,0,VW,VH);
   if(typeof XART==='undefined' || !XART.rdy(STAGE6_TRANSITION_SKY)) return true;
-  const im=XART.get(STAGE6_TRANSITION_SKY), iw=Math.max(1,im.naturalWidth||640), ih=Math.max(1,im.naturalHeight||960);
-  const sc=VW/iw, dh=Math.max(1,ih*sc);
-  const off=((((scroll||0)*0.35)%dh)+dh)%dh;
-  let y=off-dh;
-  for(; y<VH; y+=dh) ctx.drawImage(im,0,Math.round(y),VW,Math.ceil(dh));
+  const im=XART.get(STAGE6_TRANSITION_SKY);
+  /* Use the gameplay sampler itself.  The old transition multiplied scroll by .35 and wrapped
+     against a different range, so GO necessarily jumped to another piece of the same image. */
+  if(typeof bg6LoopDraw==='function')bg6LoopDraw(im,STAGE6_TRANSITION_SKY,scroll||0,VW,VH,0);
+  else {const H=im.naturalHeight||5000;let sy=H-((((scroll||0)%H)+H)%H)-VH;sy=((sy%H)+H)%H;
+    const h1=Math.min(VH,H-sy);ctx.drawImage(im,0,sy,VW,h1,0,0,VW,h1);if(h1<VH)ctx.drawImage(im,0,0,VW,VH-h1,0,h1,VW,VH-h1);}
   return true;
 }
-function stage5SpaceAscentProgress(dist){
+function stage5KitArrivalProgress(dist){
   return clamp(((dist||0)-SEG_B1*0.10)/Math.max(1,SEG_B3*0.72),0,1);
 }
-/* Stage 5 begins in the clean sky and climbs into its actual space master. The space plate is
-   always moving underneath; the sky fades and darkens away above it, so there is no section cut
-   and the kit pieces inherit the same continuous travel speed as the ship. */
+function stage5SpaceAscentProgress(){
+  if(!gravityMode)return 0;
+  const t=gravityMode.t||0,p=gravityMode.phase;
+  /* The horizon does not disappear before the kit arrives. Space begins resolving only once
+     the pieces orbit the player, then completes under the fusion flash. */
+  if(p==='drift')return 0;
+  if(p==='charge')return .08*clamp(t/GRAVITY_CHARGE_DUR,0,1);
+  if(p==='scatter')return .08+.22*clamp(t/GRAVITY_SCATTER_DUR,0,1);
+  if(p==='snap')return .30+.30*clamp(t/GRAVITY_SNAP_DUR,0,1);
+  if(p==='pixelglow')return .60+.30*clamp(t/GRAVITY_PIXEL_DUR,0,1);
+  if(p==='whiteout')return .90+.10*clamp(t/GRAVITY_WHITE_DUR,0,1);
+  return 1;
+}
 function stage5SkyToSpaceDraw(progress,scroll){
-  const p=_ease(clamp(progress,0,1));ctx.fillStyle='#020610';ctx.fillRect(0,0,VW,VH);
-  if(typeof XART!=='undefined'&&XART.rdy('bg_stage05_loop')){
-    const im=XART.get('bg_stage05_loop'),iw=Math.max(1,im.naturalWidth||680),ih=Math.max(1,im.naturalHeight||VH);
-    const sc=VW/iw,dh=Math.max(VH,ih*sc),off=((((scroll||0)*0.42)%dh)+dh)%dh;
-    for(let yy=off-dh;yy<VH;yy+=dh)ctx.drawImage(im,0,Math.round(yy),VW,Math.ceil(dh));
-  }
+  const p=clamp(progress,0,1);
+  stage6TransitionBackgroundDraw(scroll||0);
+  if(p>0){ctx.save();ctx.globalAlpha=p*p*(3-2*p);ctx.fillStyle='#020610';ctx.fillRect(0,0,VW,VH);
+    if(typeof XART!=='undefined'&&XART.rdy('bg_stage05_loop')){
+      const im=XART.get('bg_stage05_loop'),iw=Math.max(1,im.naturalWidth||680),ih=Math.max(1,im.naturalHeight||VH);
+      const sc=VW/iw,dh=Math.max(VH,ih*sc),off=((((scroll||0)*0.42)%dh)+dh)%dh;
+      for(let yy=off-dh;yy<VH;yy+=dh)ctx.drawImage(im,0,Math.round(yy),VW,Math.ceil(dh));
+    }
+    ctx.restore();}
   /* As the join reaches the screen, let the normal connector/master path paint over the preview.
      Its final frame is therefore the exact first gameplay frame instead of a second space offset. */
-  if(typeof entryConnectorDraw==='function')entryConnectorDraw(5,launchConnDy());
-  if(p<1){ctx.save();ctx.globalAlpha=1-p;stage6TransitionBackgroundDraw((scroll||0)*0.62);ctx.restore();}
-  if(p>0.18&&p<0.86){ctx.save();ctx.globalAlpha=Math.sin((p-0.18)/0.68*Math.PI)*0.24;ctx.fillStyle='#01040d';ctx.fillRect(0,0,VW,VH);ctx.restore();}
+  if(p>.72&&typeof entryConnectorDraw==='function'){ctx.save();ctx.globalAlpha=clamp((p-.72)/.28,0,1);entryConnectorDraw(5,launchConnDy());ctx.restore();}
   return true;
 }
 /* Stage 9 is the other side of the secret gate. It never rebuilds the Fury ship: the portal sits
@@ -42633,6 +47778,11 @@ function stage5SkyToSpaceDraw(progress,scroll){
 function stage9PortalEscapeDraw(progress,foreground){
   const p=clamp(progress,0,1),cx=VW/2,cy=VH*0.30;
   if(!foreground){
+    /* Stage 9 begins inside the tunnel, not on a blue surface transition. Keep the destination
+       hidden behind deep void until the Fury ship has actually cleared the portal; the live
+       Stage-9 background then resolves underneath over the last third of the exit. */
+    ctx.save();ctx.globalAlpha=1-clamp((p-.58)/.42,0,1);ctx.fillStyle='#01020b';ctx.fillRect(0,0,VW,VH);ctx.restore();
+    warpFxDraw(1-p,(typeof performance!=='undefined'?performance.now():Date.now())*.0017,true);
     const key='nfx_s5gate96_'+(Math.floor((1-p)*7)%8);
     if(typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key),s=96;
       ctx.save();ctx.globalAlpha=1-p*0.72;ctx.shadowColor='#b8f4ff';ctx.shadowBlur=20*(1-p);ctx.drawImage(im,cx-s/2,cy-s/2,s,s);ctx.restore();}
@@ -42640,13 +47790,19 @@ function stage9PortalEscapeDraw(progress,foreground){
     const key='nfx_s5gate96_'+(Math.floor((1-p)*7)%8);
     if(typeof XART!=='undefined'&&XART.rdy(key)){const im=XART.get(key),s=96;
       ctx.save();ctx.globalAlpha=1-p*0.72;ctx.beginPath();ctx.rect(cx-s/2,cy+18,s,30);ctx.clip();ctx.drawImage(im,cx-s/2,cy-s/2,s,s);ctx.restore();}
-    if(p<0.36)gravityWhite(1-p/0.36);
+    /* Only a snap flash at the instant of emergence. The former .36 white hold washed the whole
+       tunnel gray and made the sequence read as another surface fade instead of a warp. */
+    if(p<0.08)gravityWhite(1-p/0.08);
   }
 }
 function drawLaunch(dt){
   if(drawLaunch._phase===undefined || stateT < (drawLaunch._lastT||0)-0.001){ drawLaunch._dist=0; drawLaunch._spd=110; drawLaunch._phase='run'; drawLaunch._pt=0;
     drawLaunch._eng=false; drawLaunch._thr=false; drawLaunch._brk=false; drawLaunch._go=false; drawLaunch._num=99; drawLaunch._mus=false; drawLaunch._bgScroll=0;
-    if(run.stage===9 && typeof gravityModeRetain==='function')gravityModeRetain();else gravityModeReset(); }
+    drawLaunch._warpAudio=false;
+    if(run.stage===9 && typeof gravityModeRetain==='function'){
+      gravityModeRetain();drawLaunch._warpAudio=true;
+      try{if(Audio.warpAmbienceStart)Audio.warpAmbienceStart(1);if(Audio.setWarpMix)Audio.setWarpMix(1);}catch(_d9wa){}
+    }else gravityModeReset(); }
   drawLaunch._lastT=stateT;
   const t=stateT;
   if(!drawLaunch._mus){ drawLaunch._mus=true; Audio.startMusic((curStage&&curStage.music)||'stage'); }
@@ -42654,14 +47810,19 @@ function drawLaunch(dt){
   /* ---- speed / phase machine: run is distance-driven so the level always shows before braking ---- */
   const _space=(run.stage===5||run.stage===9);
   const _gravityStage=(run.stage===5);       // Stage 9 retains the craft; only Stage 5 builds it
-  const _s5space=_gravityStage?stage5SpaceAscentProgress(drawLaunch._dist||0):0;
-  if(_gravityStage&&ph==='run'&&_s5space>=0.10&&!gravityMode)gravityModeStart();
+  const _s6=(run.stage===6);
+  const _s5arrival=_gravityStage?stage5KitArrivalProgress(drawLaunch._dist||0):0;
+  if(_gravityStage&&ph==='run'&&_s5arrival>=0.10&&!gravityMode)gravityModeStart();
   if(_gravityStage&&gravityMode&&gravityMode.phase==='drift'&&ph!=='gravity')gravityModeTick(dt);
   const _spdCap=_space?3200:1750;   // space launch is faster than we've ever gone
   if(ph==='run'){
     drawLaunch._spd=Math.min(_spdCap, drawLaunch._spd+(_space?2600:1500)*dt);
     drawLaunch._dist+=drawLaunch._spd*dt;
-    if(drawLaunch._dist>=SEG_B3+240){ drawLaunch._phase='brake'; drawLaunch._pt=0; if(Audio.SFX.brake)Audio.SFX.brake(); }   /* sped a little past into the level */
+    const _launchEnd=_gravityStage?(SEG_B3+SEG_B1+240):(SEG_B3+240);
+    if(drawLaunch._dist>=_launchEnd){
+      if(_s6){drawLaunch._phase='cd';drawLaunch._pt=0;} /* same fast sky, no brake/settle/pause */
+      else {drawLaunch._phase='brake';drawLaunch._pt=0;if(Audio.SFX.brake)Audio.SFX.brake();}
+    }
     /* STAGE 6 is the exception Mike called out: runway -> SKY. It keeps climbing instead of
        settling onto ground, and the cloud deck thickens as it goes. */
     if(typeof seqCfg==='function' && seqCfg(run.stage).sky){
@@ -42700,10 +47861,11 @@ function drawLaunch(dt){
     /* The old countdown set speed to zero for the entire 3-2-1-GO beat. On bright water this
        looked like the game had stalled. Consume a small, real slice of the level while counting;
        finishLaunch preserves mapScroll, so PLAY continues from this exact frame at 40px/s. */
-    drawLaunch._pt+=dt; drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;
+    drawLaunch._pt+=dt;
+    drawLaunch._spd=_s6?Math.max(STAGE6_SKY_CRUISE,(drawLaunch._spd||STAGE6_SKY_CRUISE)-700*dt):LAUNCH_COUNTDOWN_SCROLL;
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
-    mapScroll=_rng>0 ? Math.min(_rng, mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt)
-                     : mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt;
+    mapScroll=_rng>0 ? Math.min(_rng, mapScroll+drawLaunch._spd*dt)
+                     : mapScroll+drawLaunch._spd*dt;
   }
   /* One accumulator spans every phase. Stage 6 reads this instead of phase-local distance, so its
      sky cannot reset at brake/settle/countdown boundaries and never stops behind the numerals. */
@@ -42739,10 +47901,15 @@ function drawLaunch(dt){
      and a stale colour. The connector takes its fill from _levelCfg, the live one, so the entry and
      the level cannot disagree about what the stage looks like again. */
   const rum=nrm*4; ctx.save(); if(rum>0.2) ctx.translate(rnd(-rum,rum),rnd(-rum,rum));
-  if(run.stage===5) stage5SkyToSpaceDraw(stage5SpaceAscentProgress(drawLaunch._dist),drawLaunch._bgScroll);
+  if(run.stage===5) stage5SkyToSpaceDraw(stage5SpaceAscentProgress(),drawLaunch._bgScroll);
   else if(run.stage===6) stage6TransitionBackgroundDraw(drawLaunch._bgScroll);
   else entryConnectorDraw(run.stage, launchConnDy());
-  if(run.stage===9)stage9PortalEscapeDraw(clamp(drawLaunch._dist/Math.max(1,SEG_B1*0.78),0,1),false);
+  const _s9portalP=run.stage===9?clamp(drawLaunch._dist/Math.max(1,SEG_B1*0.78),0,1):0;
+  if(run.stage===9){
+    stage9PortalEscapeDraw(_s9portalP,false);
+    if(drawLaunch._warpAudio){const wm=clamp(1-_s9portalP,0,1);try{if(Audio.warpAmbienceLevel)Audio.warpAmbienceLevel(wm);if(Audio.setWarpMix)Audio.setWarpMix(wm);}catch(_d9wl){}
+      if(wm<=.01){drawLaunch._warpAudio=false;try{if(Audio.warpAmbienceStop)Audio.warpAmbienceStop();if(Audio.setWarpMix)Audio.setWarpMix(0);}catch(_d9we){}}}
+  }
   ctx.restore();
   /* No white speed-line overlay on level transitions. Motion comes from the continuously
      scrolling stage connector and ship movement; the streaks obscured the approved art and
@@ -42755,21 +47922,33 @@ function drawLaunch(dt){
   /* ---- ship: launches off the pad, pulls up over the run, settles into the level ---- */
   const POSE=playShipPose();               // the exact pose PLAY starts from — see playShipPose
   let shipX=VW/2, shipY, suf='', shipH=62; // plain hull; the thruster is drawn live (drop 0808g)
-  if(ph==='run'){ shipY=lerp(VH*0.66, VH*0.42, _ease(clamp(dist/SEG_B1,0,1)))+Math.sin(t*3)*3;
+  if(ph==='run'){
+    /* Ground-stage entries approach the gameplay lane in one direction only. The old path climbed
+       to 42% of the screen, then its brake phase pushed the player back to 60%, producing the
+       recorded jerk. Enter from below and keep climbing gently through every handoff. */
+    shipY=_space
+      ?lerp(VH*0.66,VH*0.42,_ease(clamp(dist/SEG_B1,0,1)))
+      :lerp(VH+70,POSE.y+54,_ease(clamp(dist/SEG_B1,0,1)));
     if(run.stage===9){const pe=_ease(clamp(dist/Math.max(1,SEG_B1*0.78),0,1));shipH=lerp(14,SPACE_SHIP_SIZE,pe);shipY=lerp(VH*0.30,VH*0.44,pe);}
     else if(_space){ // lifting off: the ship scales up as it rockets toward space
       const lift=_ease(clamp(dist/(SEG_B3),0,1)); shipH=lerp(62, 128, lift); shipY=lerp(VH*0.66, VH*0.30, lift); }
   }
-  else if(ph==='brake'){ shipY=lerp(VH*0.42, VH*0.60, _ease(clamp(drawLaunch._pt/2.0,0,1))); if(_space) shipH=lerp(run.stage===9?SPACE_SHIP_SIZE:128,SHIP_DRAW_H,_ease(clamp(drawLaunch._pt/2.0,0,1))); }
+  else if(ph==='brake'){
+    const k=_ease(clamp(drawLaunch._pt/2.0,0,1));
+    shipY=_space?lerp(VH*0.42,VH*0.60,k):lerp(POSE.y+54,POSE.y+30,k);
+    if(_space) shipH=lerp(run.stage===9?SPACE_SHIP_SIZE:128,SHIP_DRAW_H,k);
+  }
   else if(ph==='settle'){
     /* Reach the bottom flight lane in two continuous beats: settle gets most of the way there,
        then the countdown carries the hull the final few pixels instead of pinning it in place. */
     const k=_ease(clamp(drawLaunch._pt/0.45,0,1));
-    shipX=lerp(VW/2, POSE.x, k); shipY=lerp(VH*0.60, POSE.y-42, k); shipH=lerp(62, POSE.h, k);
+    shipX=lerp(VW/2, POSE.x, k);
+    shipY=_space?lerp(VH*0.60,POSE.y-42,k):lerp(POSE.y+30,POSE.y+20,k);
+    shipH=lerp(62, POSE.h, k);
   }
   else {
     const k=_ease(clamp(drawLaunch._pt/3.0,0,1));
-    shipX=POSE.x; shipY=lerp(POSE.y-42,POSE.y,k); shipH=POSE.h; suf='';
+    shipX=POSE.x; shipY=_space?lerp(POSE.y-42,POSE.y,k):(_s6?lerp(POSE.y+54,POSE.y,k):lerp(POSE.y+20,POSE.y,k)); shipH=POSE.h; suf='';
   }
   const _drawGravityShip=_space&&gravityMode;
   const _gravityDrawSize=(run.stage===9 && ph==='run')
@@ -42872,6 +48051,8 @@ function drawLaunch(dt){
   /* NON-SKIPPABLE: no skip input */
 }
 function finishLaunch(){ drawLaunch._eng=false; drawLaunch._thr=false;
+  if(run&&run.stage===6) _stage6SkyScroll=drawLaunch._bgScroll||_stage6SkyScroll||0;
+  if(drawLaunch._warpAudio){drawLaunch._warpAudio=false;try{if(Audio.warpAmbienceStop)Audio.warpAmbienceStop();if(Audio.setWarpMix)Audio.setWarpMix(0);}catch(_flw){}}
   if(!drawLaunch._mus) Audio.startMusic((curStage&&curStage.music)||'stage'); drawLaunch._mus=false;
   setState(GS.PLAY);
 }
@@ -42964,31 +48145,32 @@ function bg5Draw(dt){
 }
 
 /* ============================================================
-   STAGE 6 — ONE SKY, FIVE PALETTES (Mike, 0824)
+   STAGE 6 — ONE CONTINUOUS SKY, FIVE STRONG WEATHER/TIME PALETTES
 
-   The background itself never scrolls and the cloud never animates. Progress through the level
-   only changes palette, in the After Burner style Mike referenced:
+   The 5000px master scrolls continuously and its baked clouds never animate independently.
+   Section changes are palette cross-fades of that SAME master, never background swaps:
 
-      NIGHT -> DARK RAIN -> DUSK -> DAWN -> SUNLIGHT
+      BLUE NIGHT -> BLACK SQUALL -> PURPLE DUSK -> FIRE DAWN -> SUNLIGHT
 
-   Every transition is an eased cross-fade between tinted copies of the SAME nsky6_sky source and
-   the SAME clean bg6_cloud_day_0 cloud. None of the purple sunset/dawn cloud reels are used. Rain
-   and lightning exist only in the second, darkest interval; the sewer art exists only after this
-   level. All weather remains under gameplay so aircraft and bullets stay legible.
+   Rain and lightning occupy the squall interval. All weather remains below units and bullets,
+   preserving projectile readability while the atmosphere itself stays forceful.
    ============================================================ */
 const BG6_CLOUD_KEY = 'bg6_cloud_day_0';
 const BG6_MOOD = [
-  {at:0.00, name:'night',    tint:'#07142f', amt:0.82},
-  {at:0.27, name:'storm',    tint:'#010611', amt:0.93},
-  {at:0.49, name:'dusk',     tint:'#713044', amt:0.62},
-  {at:0.72, name:'dawn',     tint:'#d17a59', amt:0.38},
-  {at:1.00, name:'sunlight', tint:'#d9f0ff', amt:0.10},
+  {at:0.00, name:'night',    tint:'#061b4f', amt:0.68},
+  {at:0.22, name:'storm',    tint:'#01050d', amt:0.91},
+  {at:0.48, name:'dusk',     tint:'#86254b', amt:0.68},
+  {at:0.72, name:'dawn',     tint:'#ef7e38', amt:0.62},
+  {at:1.00, name:'sunlight', tint:'#e5f5ff', amt:0.22},
 ];
 const BG6_BOLT_N = 8, BG6_FLASH_N = 4;
 const BG6_BOLT_FPS = 22, BG6_FLASH_FPS = 14;
 let _bg6T=0, _bg6Stage=-1, _bg6BoltT=-1, _bg6BoltGap=4.5, _bg6Moon=null;
 
-function bg6Reset(){ _bg6T=0; _bg6Stage=-1; _bg6BoltT=-1; _bg6Moon=null; }
+function bg6Reset(){
+  _bg6T=0; _bg6Stage=-1; _bg6BoltT=-1; _bg6Moon=null;
+  _stage6SkyScroll=0;
+}
 
 function bg6Phase(){
   /* The sky is fixed; the stage clock owns the complete night-to-day palette journey. */
@@ -42998,7 +48180,8 @@ function bg6Phase(){
 
 function bg6StormStrength(){
   const p=bg6Phase();
-  return clamp((p-0.11)/0.10,0,1) * clamp((0.48-p)/0.11,0,1);
+  /* Fast arrival, long violent middle, then a readable clearing into dusk. */
+  return clamp((p-0.08)/0.07,0,1) * clamp((0.57-p)/0.09,0,1);
 }
 
 function bg6Mood(p){
@@ -43038,21 +48221,32 @@ function bg6LoopDraw(img,key,scroll,drawW,winH,dstY){
 }
 function bg6RainDraw(wet,W,top,hgt){
   if(wet<=0)return;
-  /* Deterministic moving rain: complete streaks translate every frame instead of a static rain
-     photograph being alpha-blended over the sky. The two speeds create depth without changing
-     the approved background plate. */
-  ctx.save();ctx.lineCap='round';ctx.strokeStyle='rgba(174,220,255,'+(0.18+wet*0.30)+')';
-  const count=Math.round(58+wet*92),fall=420+wet*420,wind=44+wet*86,t=_bg6T;
-  for(let i=0;i<count;i++){
-    const seed=(i*97.31)%1,x0=((i*67.73+seed*W+t*wind)%W+W)%W;
-    const y0=top+(((i*43.17+seed*hgt+t*fall)%hgt+hgt)%hgt);
-    const len=7+wet*13+(i%5);ctx.globalAlpha=0.38+0.12*(i%3);ctx.lineWidth=(i%7===0)?1.5:1;
-    ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x0-wind/fall*len,y0+len);ctx.stroke();
+  /* Two complete moving rain depths. The old single sparse pass could be technically active and
+     still disappear against the blue plate; this remains pixel-clean canvas rain, but now reads
+     immediately as a storm at gameplay scale. */
+  ctx.save();ctx.lineCap='round';
+  for(let layer=0;layer<2;layer++){
+    const near=layer===1;
+    const count=Math.round((near?70:92)+wet*(near?92:128));
+    const fall=(near?760:470)+wet*(near?520:360);
+    const wind=(near?150:82)+wet*(near?104:76),t=_bg6T;
+    ctx.strokeStyle=near?'rgba(210,236,255,0.82)':'rgba(116,182,232,0.60)';
+    for(let i=0;i<count;i++){
+      const seed=((i*(near?83.17:97.31))%101)/101;
+      const x0=((i*(near?61.73:67.73)+seed*W+t*wind)%W+W)%W;
+      const y0=top+(((i*(near?37.11:43.17)+seed*hgt+t*fall)%hgt+hgt)%hgt);
+      const len=(near?14:8)+wet*(near?22:15)+(i%6);
+      ctx.globalAlpha=(near?0.38:0.25)+wet*(near?0.42:0.30);
+      ctx.lineWidth=near?((i%6===0)?2:1.25):1;
+      ctx.beginPath();ctx.moveTo(x0,y0);ctx.lineTo(x0-wind/fall*len,y0+len);ctx.stroke();
+    }
   }
   ctx.restore();
 }
 
 function bg6Draw(dt){
+  /* The background remains one physical master. This pass supplies only weather laid over that
+     same continuously tinted sky; disabling it disables the entire Stage-6 identity. */
   if(typeof run==='undefined' || run.stage!==6 || typeof XART==='undefined') return;
   if(!(dt>=0)) dt=0;
   if(_bg6Stage!==run.stage){
@@ -43082,19 +48276,15 @@ function bg6Draw(dt){
     bg6RainDraw(wet,W,top,hgt);
   }
 
-  /* ---- lightning: storm band only, a one-shot bolt then its flash ---- */
-  if(wet>0.5){
-    if(_bg6BoltT<0){ if(_bg6T>_bg6BoltGap){ _bg6BoltT=0; _bg6T=0; _bg6BoltGap=3.0+Math.random()*4.0;
-                                            if(Audio.SFX && Audio.SFX.crackle) Audio.SFX.crackle(); } }
-    else {
-      _bg6BoltT+=dt;
-      const bf=Math.floor(_bg6BoltT*BG6_BOLT_FPS);
-      const ff=Math.floor(_bg6BoltT*BG6_FLASH_FPS);
-      if(bf<BG6_BOLT_N) blit('bg6_bolt_'+bf, 0.95, 'lighter');
-      if(ff<BG6_FLASH_N) blit('bg6_flash_'+ff, 0.30*(1-ff/BG6_FLASH_N), 'lighter');
-      if(bf>=BG6_BOLT_N && ff>=BG6_FLASH_N) _bg6BoltT=-1;
-    }
-  } else _bg6BoltT=-1;
+  /* ---- lightning: use WFX's one authoritative strike clock so flash/sound/bolt cannot double. ---- */
+  const wb=(typeof wfx!=='undefined'&&wfx)?wfx.bolt:null;
+  if(wet>0.18 && wb){
+    const q=clamp(wb.t/0.46,0,1);
+    const bf=clamp(Math.floor(q*BG6_BOLT_N),0,BG6_BOLT_N-1);
+    const ff=clamp(Math.floor(q*BG6_FLASH_N),0,BG6_FLASH_N-1);
+    blit('bg6_bolt_'+bf, 0.96*(1-q*0.35), 'lighter');
+    if(q<0.72) blit('bg6_flash_'+ff, 0.42*(1-q/0.72), 'lighter');
+  }
 }
 function drawWorld(dt){
 
@@ -45166,41 +50356,57 @@ window.addEventListener('keydown',()=>{ try{ Audio.init(); }catch(_){} },{once:t
 window.addEventListener('pointerdown',()=>{ try{ Audio.init(); }catch(_){} },{once:true});
 
 /* ===== V3/V4 GENERATED COMBAT BANK =========================================== */
+/* Code-owned because assets/manifest.js is generated. Keep the game's dialogue cinematics on
+   their own score without replacing stage, boss, menu, campaign-map, or credits music. */
+if(window.BOFA && BOFA.music){
+  BOFA.music.cinematics='assets/game/music/cinematics_rapbeat.mp3';
+}
 if(window.BOFA && BOFA.sfx){
   Object.assign(BOFA.sfx, {
     /* Replace the old tonal enemyShoot.mp3 catch-all with a short mechanical weapon transient.
        Named elemental/boss families below still keep their own sound identities. */
     enemyShoot:'assets/game/sounds/enemy_machine_shot_light.wav',
     machineGun:'assets/game/sounds/jet_machinegun_shot_01.wav',
-    heavyMachineGun:'assets/game/sounds/jet_machinegun_shot_03.wav',
+    heavyMachineGun:'assets/game/sounds/reviewed_lizzie_heavy_mg.wav',
     enemyMachineGunLight:'assets/game/sounds/enemy_machine_shot_light.wav',
-    enemyMachineGunHeavy:'assets/game/sounds/enemy_machine_shot_heavy.wav',
-    enemyMachineGunBurst:'assets/game/sounds/enemy_machine_burst.wav',
-    coleSonicBoom:'assets/game/sounds/cole_sonic_boom.wav',
-    laserBeamStart:'assets/game/sounds/laser_beam_start.wav',
-    laserBeamLoop:'assets/game/sounds/laser_beam_loop.wav',
-    laserBeamEnd:'assets/game/sounds/laser_beam_end.wav',
+    enemyMachineGunHeavy:'assets/game/sounds/reviewed_enemy_heavy_mg.wav',
+    enemyMachineGunBurst:'assets/game/sounds/reviewed_enemy_heavy_mg.wav',
+    dkBuck:'assets/game/sounds/reviewed_decker_shotgun.wav',
+    dkShell:'assets/game/sounds/reviewed_decker_shell_eject.wav',
+    dkReload:'assets/game/sounds/reviewed_decker_reload.wav',
+    coleSonicBoom:'assets/game/sounds/reviewed_cole_sonic_release.wav',
+    sonicChargeStart:'assets/game/sounds/reviewed_cole_sonic_charge_start.wav',
+    sonicChargeLoop:'assets/game/sounds/reviewed_cole_sonic_charge_loop.wav',
+    laserBeamStart:'assets/game/sounds/reviewed_player_laser_beam_start.wav',
+    laserBeamLoop:'assets/game/sounds/reviewed_player_laser_beam_loop.wav',
+    laserBeamEnd:'assets/game/sounds/reviewed_player_laser_beam_end.wav',
     laserBeamHit:'assets/game/sounds/shield_hit_light.wav',
-    flameThrowerStart:'assets/game/sounds/flamethrower_ignite.wav',
-    flameThrowerLoop:'assets/game/sounds/flamethrower_loop.wav',
-    flameThrowerEnd:'assets/game/sounds/flamethrower_release.wav',
+    flameThrowerStart:'assets/game/sounds/reviewed_flamethrower_start.wav',
+    flameThrowerLoop:'assets/game/sounds/reviewed_flamethrower_loop.wav',
+    flameThrowerEnd:'assets/game/sounds/reviewed_flamethrower_end.wav',
+    magmaWardFlameLoop:'assets/game/sounds/reviewed_flamethrower_loop.wav',
     flameHit:'assets/game/sounds/explosion_air_small_01.wav',
     iceBreathStart:'assets/game/sounds/ice_breath_start.wav',
     iceBreathLoop:'assets/game/sounds/ice_breath_loop.wav',
     iceBreathEnd:'assets/game/sounds/ice_breath_release.wav',
     iceBreathHit:'assets/game/sounds/enemy_ice_bolt.wav',
-    spaceLaserCannon:'assets/game/sounds/nsp_pulse_laser.mp3',
+    fireIceChargeStart:'assets/game/sounds/ice_breath_start.wav',
+    fireIceOrbLaunch:'assets/game/sounds/nsp_charge_release.mp3',
+    fireIceOrbImpact:'assets/game/sounds/hit.mp3',
+    laserCannon:'assets/game/sounds/reviewed_laser_cannon.wav',
+    spaceLaserCannon:'assets/game/sounds/reviewed_laser_cannon.wav',
     spaceLaserHit:'assets/game/sounds/shield_hit_light.wav',
     spaceShadowCharge:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
-    spaceShadowRelease:'assets/game/sounds/nsp_charge_release.mp3',
+    spaceShadowRelease:'assets/game/sounds/reviewed_shadow_orb_launch.wav',
     spaceShadowHit:'assets/game/sounds/explosion_plasma.wav',
     spaceVolleyLaunch:'assets/game/sounds/nsp_rocket_launch.mp3',
     spaceVolleyHit:'assets/game/sounds/explosion_air_medium.wav',
-    enemyPulseLaserBlue:'assets/game/sounds/enemy_pulse_laser_blue.wav',
-    enemyPulseLaserRed:'assets/game/sounds/enemy_pulse_laser_red.wav',
-    enemyPulseLaserAlien:'assets/game/sounds/enemy_pulse_laser_alien.wav',
-    enemyHeavyLaser:'assets/game/sounds/enemy_heavy_laser.wav',
-    enemyScatterLaser:'assets/game/sounds/enemy_scatter_laser.wav',
+    enemyPulseLaserBlue:'assets/game/sounds/reviewed_enemy_laser.wav',
+    enemyPulseLaserRed:'assets/game/sounds/reviewed_enemy_laser.wav',
+    enemyPulseLaserAlien:'assets/game/sounds/reviewed_enemy_laser.wav',
+    enemyHeavyLaser:'assets/game/sounds/reviewed_enemy_laser.wav',
+    enemyScatterLaser:'assets/game/sounds/reviewed_enemy_laser.wav',
+    laserShot:'assets/game/sounds/reviewed_enemy_laser.wav',
     enemyFlameBolt:'assets/game/sounds/enemy_flame_bolt.wav',
     enemyIceBolt:'assets/game/sounds/enemy_ice_bolt.wav',
     enemyElectricBolt:'assets/game/sounds/enemy_electric_bolt.wav',
@@ -45223,7 +50429,20 @@ if(window.BOFA && BOFA.sfx){
     shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.wav',
     shieldBreakCombat:'assets/game/sounds/shield_break_combat.wav',
     debrisMetal:'assets/game/sounds/debris_scatter_metal.wav',
-    projectileRicochet:'assets/game/sounds/projectile_ricochet.wav'
+    projectileRicochet:'assets/game/sounds/projectile_ricochet.wav',
+    atomicLaunch:'assets/game/sounds/reviewed_lizzie_atom_launch.wav',
+    atomicDetonate:'assets/game/sounds/reviewed_lizzie_atom_impact.wav',
+    megaShieldPickup:'assets/game/sounds/reviewed_axel_mega_shield.wav',
+    specialAbilityPickup:'assets/game/sounds/reviewed_special_pickup.wav',
+    helixChargeStart:'assets/game/sounds/reviewed_maverick_charge_build.wav',
+    helixCharge:'assets/game/sounds/reviewed_maverick_charge_loop.wav',
+    maverickHelixRelease:'assets/game/sounds/reviewed_maverick_helix_release.wav',
+    /* Keep unrelated charge systems out of Maverick's new two-part bed. */
+    fusionChargeLoop:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
+    fireIceChargeLoop:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
+    gravityTransform:'assets/game/sounds/reviewed_ship_fusion_sequence.wav',
+    gravityFuse:'assets/game/sounds/reviewed_ship_fusion_lock.wav',
+    amb_storm:'assets/game/sounds/reviewed_stage6_wind_loop.wav'
   });
 }
 
@@ -45232,7 +50451,8 @@ const Snd=(function(){
   if(!window.BOFA||!window.Audio) return null;
   function c01(x){ return Math.max(0,Math.min(1,x||0)); }
   // music at full level, SFX mixed LOWER so music is clearly audible over the effects
-  const A={ vol:{master:1.0,music:1.0,sfx:0.42,voice:0.85}, pools:{}, music:{}, cur:null };
+  const A={ vol:{master:1.0,music:1.0,sfx:0.42,voice:0.85}, pools:{}, music:{}, cur:null,
+    warpMix:0,warpMusicEcho:[],_warpSfxAt:0 };
   function _au(v){ return (typeof v==='string'&&v.lastIndexOf('assets/',0)===0)?v:('data:audio/mpeg;base64,'+v); }
   /* ROUND-ROBIN SOURCE SETS. A BOFA entry may be one legacy URI or an array of authored
      variations. The pool used to clone one identical element three times, which prevented
@@ -45284,40 +50504,66 @@ const Snd=(function(){
     enemyMachineGunLight:{g:0.22, lp:5400, min:0.10},
     enemyMachineGunHeavy:{g:0.30, lp:5200, min:0.11},
     enemyMachineGunBurst:{g:0.26, lp:5000, min:0.55},
+    dkBuck:               {g:1.00, boost:1.20, lp:6800, min:0.42},
+    dkShell:              {g:0.48, lp:7200, min:0.28},
+    dkReload:             {g:0.95, boost:1.15, lp:6800, min:0.45},
     enemyShoot:          {g:0.20, lp:4800, min:0.12},
     enemyPulseLaserBlue: {g:0.24, lp:5600, min:0.14},
     enemyPulseLaserRed:  {g:0.24, lp:5600, min:0.14},
     enemyPulseLaserAlien:{g:0.22, lp:5200, min:0.16},
-    enemyHeavyLaser:     {g:0.28, lp:5000, min:0.22},
+    enemyHeavyLaser:     {g:0.72, native:true, min:0.22},
     enemyScatterLaser:   {g:0.24, lp:5200, min:0.20},
-    enemyFlameBolt:      {g:0.24, lp:4200, min:0.14},
-    enemyIceBolt:        {g:0.25, lp:6200, min:0.14},
-    enemyElectricBolt:   {g:0.24, lp:5600, min:0.14},
-    enemyRailCannon:     {g:0.30, lp:5200, min:0.24},
-    enemyBossCannon:     {g:0.32, lp:4800, min:0.20},
-    bossWeaponCharge:    {g:0.22, lp:4600, min:0.65},
-    bossPhase:           {g:0.38, lp:5200, min:1.40},
+    enemyFlameBolt:      {g:0.66, native:true, min:0.14},
+    enemyIceBolt:        {g:0.66, native:true, min:0.14},
+    enemyElectricBolt:   {g:0.66, native:true, min:0.14},
+    enemyRailCannon:     {g:0.72, native:true, min:0.24},
+    enemyBossCannon:     {g:0.78, native:true, min:0.20},
+    bossWeaponCharge:    {g:0.72, native:true, min:0.65},
+    bossPhase:           {g:0.68, native:true, min:1.40},
     bossAlarm:           {g:0.42, lp:5200, min:2.20},
     coleSonicBoom:       {g:0.72, min:0.16},
-    laserBeamStart:      {g:0.58, lp:5200},
-    laserBeamLoop:       {g:0.42, lp:4300},
-    laserBeamEnd:        {g:0.50, lp:5200},
-    laserBeamHit:        {g:0.28, lp:5200, min:0.09},
-    flameThrowerStart:   {g:0.54, lp:3800},
-    flameThrowerLoop:    {g:0.48, lp:3400},
-    flameThrowerEnd:     {g:0.46, lp:3800},
-    flameHit:            {g:0.28, lp:4300, min:0.09},
-    iceBreathStart:      {g:0.52, lp:6800},
-    iceBreathLoop:       {g:0.44, lp:6200},
-    iceBreathEnd:        {g:0.48, lp:6800},
+    sonicChargeStart:    {g:0.62, lp:6200, min:0.35},
+    sonicChargeLoop:     {g:0.50, lp:5600},
+    /* Held weapons are foreground voices. The reviewed laser body measures roughly -21 dBFS;
+       the former 0.42 gain buried it another 7.5 dB beneath full-stage music. `boost` happens
+       after filtering, while `g` remains the safe HTML-media fallback when WebAudio is absent. */
+    laserBeamStart:      {g:0.95, boost:2.10, lp:6800},
+    /* Same local/file-build failure mode as the flamethrower: a claimed media element can report
+       currentTime while its suspended/tainted WebAudio graph emits silence. This approved sample
+       is already mastered; keep the held body on native HTML audio so it is actually audible. */
+    laserBeamLoop:       {g:1.00, native:true},
+    laserBeamEnd:        {g:0.90, boost:2.00, lp:6800},
+    laserBeamHit:        {g:0.70, boost:1.30, lp:6200, min:0.09},
+    /* Keep the flamethrower on native HTML-media output. In local/file builds a
+       MediaElementAudioSourceNode can successfully report `playing` while its security-tainted
+       graph outputs silence. The reviewed samples are already EQ'd, so bypassing that graph is
+       both safer and faithful to the approved recording. */
+    flameThrowerStart:   {g:1.00, native:true},
+    flameThrowerLoop:    {g:1.00, native:true},
+    flameThrowerEnd:     {g:0.92, native:true},
+    magmaWardFlameLoop:  {g:0.92, native:true},
+    /* The contact transient must clear the held bed, or landing the flame sounds like a miss. */
+    flameHit:            {g:0.75, boost:1.15, lp:5200, min:0.09},
+    iceBreathStart:      {g:0.92, boost:1.25, lp:6800},
+    iceBreathLoop:       {g:0.86, boost:1.55, lp:6200},
+    iceBreathEnd:        {g:0.86, boost:1.20, lp:6800},
     iceBreathHit:        {g:0.26, lp:6400, min:0.09},
-    spaceLaserCannon:    {g:0.52, lp:6200, min:0.12},
-    spaceLaserHit:       {g:0.24, lp:5600, min:0.07},
-    spaceShadowCharge:   {g:0.42, lp:5000, min:0.45},
-    spaceShadowRelease:  {g:0.52, lp:5200, min:0.18},
-    spaceShadowHit:      {g:0.34, lp:4800, min:0.12},
-    spaceVolleyLaunch:   {g:0.48, lp:4800, min:0.18},
-    spaceVolleyHit:      {g:0.34, lp:4600, min:0.10},
+    fireIceChargeStart:  {g:0.82, boost:1.15, lp:6800, min:0.30},
+    fireIceChargeLoop:   {g:0.86, boost:1.40, lp:6400},
+    fireIceOrbLaunch:    {g:1.00, boost:1.25, lp:6800, min:0.18},
+    fireIceOrbImpact:    {g:0.82, lp:6800, min:0.09},
+    /* These are player weapons, not ambience. The earlier gains left their real samples
+       15-25 dB beneath full-volume Stage-5/9 music, so the calls succeeded while gameplay was
+       effectively silent. Keep the selected recordings, but mix their launch and contact
+       transients at the same foreground level as the ground weapons. */
+    spaceLaserCannon:    {g:1.00, native:true, min:0.10},
+    laserCannon:         {g:1.00, native:true, min:0.10},
+    spaceLaserHit:       {g:0.86, native:true, min:0.07},
+    spaceShadowCharge:   {g:1.00, native:true, min:0.30},
+    spaceShadowRelease:  {g:1.00, native:true, min:0.16},
+    spaceShadowHit:      {g:0.92, native:true, min:0.10},
+    spaceVolleyLaunch:   {g:1.00, native:true, min:0.16},
+    spaceVolleyHit:      {g:0.92, native:true, min:0.09},
     explosionAirSmall01: {g:0.54},
     explosionAirSmall02: {g:0.54},
     explosionAirMedium:  {g:0.56},
@@ -45325,6 +50571,22 @@ const Snd=(function(){
     explosionFuelAir:    {g:0.48},
     explosionBossCore:   {g:0.58},
     explosionIceBurst:   {g:0.52},
+    atomicLaunch:        {g:0.62, lp:5600, min:0.45},
+    atomicDetonate:      {g:0.70, lp:5200, min:0.55},
+    /* These cues fire from a floating pickup in local/file builds. Routing a file:// media
+       element through createMediaElementSource can advance currentTime while outputting silence,
+       the same failure already proven on the flamethrower bed. Keep the approved recordings but
+       play them natively, at foreground pickup level, so every pilot actually hears the grant. */
+    megaShieldPickup:    {g:1.15, native:true, min:0.45},
+    specialAbilityPickup:{g:1.35, native:true, min:0.30},
+    /* The authored Maverick build/loop files are intentionally dynamic but measure much quieter
+       than the rest of the bank. `boost` is post-element WebAudio gain, allowing these two beds
+       to be raised without replacing or destructively normalising the source recordings. */
+    helixChargeStart:    {g:1.30, boost:1.75, lp:6800, min:0.36},
+    helixCharge:         {g:1.30, boost:2.20, lp:6400},
+    maverickHelixRelease:{g:1.08, lp:6800, min:0.20},
+    gravityTransform:    {g:0.64, lp:6200, min:4.0},
+    gravityFuse:         {g:0.68, lp:6200, min:0.70},
   };
   A._ctx=null; A._nodes={}; A._bad={}; A._last={};
   A._audioCtx=function(){
@@ -45333,7 +50595,7 @@ const Snd=(function(){
     return A._ctx;
   };
   A._shape=function(a,name,cfg){
-    if(!cfg.lp || A._bad[name]) return false;
+    if(cfg.native || !cfg.lp || A._bad[name]) return false;
     if(a._bofNode) return true;
     const ctxA=A._audioCtx();
     if(!ctxA || ctxA.state!=='running'){ try{ if(ctxA&&ctxA.resume) ctxA.resume(); }catch(e){} return false; }
@@ -45343,43 +50605,133 @@ const Snd=(function(){
       lp.frequency.value=cfg.lp; lp.Q.value=0.7;
       const sh=ctxA.createBiquadFilter(); sh.type='highshelf';
       sh.frequency.value=2600; sh.gain.value=-6;
-      const g=ctxA.createGain(); g.gain.value=1;
+      const g=ctxA.createGain(); g.gain.value=cfg.boost||1;
       srcN.connect(lp); lp.connect(sh); sh.connect(g); g.connect(ctxA.destination);
       a._bofNode=g; return true;
     }catch(e){ A._bad[name]=1; return false; }
   };
-  A.play=function(name,vol){ const p=A.pools[name]; if(!p) return;
+  A.prepare=function(names){
+    for(const name of (Array.isArray(names)?names:[names])){
+      const p=A.pools[name];if(!p)continue;
+      for(const a of p.list)if(a.readyState<3){try{a.load();}catch(e){}}
+    }
+  };
+  /* HTMLAudio-safe reverb. Local/file builds cannot reliably route every music element through
+     a ConvolverNode (a claimed media element can advance while outputting silence), so the warp
+     uses two quiet, delayed copies of the active track plus one throttled SFX reflection. */
+  A._warpMusicStop=function(){
+    for(const e of A.warpMusicEcho){try{e.pause();e.currentTime=0;}catch(_wme){}}
+    A.warpMusicEcho.length=0;
+  };
+  A._warpMusicStart=function(){
+    if(A.warpMix<=.02||!A.cur||!A.cur.src||A.warpMusicEcho.length)return;
+    for(const q of [{delay:72,rate:.997,gain:.105},{delay:148,rate:1.003,gain:.065}]){
+      const e=new window.Audio();e.src=A.cur.src;e.loop=true;e.preload='auto';e.playbackRate=q.rate;
+      e._warpGain=q.gain;A.warpMusicEcho.push(e);
+      setTimeout(function(){if(A.warpMix<=.02||A.cur==null)return;try{e.currentTime=Math.max(0,A.cur.currentTime-.08);e.volume=c01(A.vol.music*A.vol.master*A.warpMix*e._warpGain);const p=e.play();if(p&&p.catch)p.catch(function(){});}catch(_wmp){}},q.delay);
+    }
+  };
+  A.setWarpMix=function(v){
+    A.warpMix=c01(v);if(A.warpMix<=.02)A._warpMusicStop();else A._warpMusicStart();
+    for(const e of A.warpMusicEcho)try{e.volume=c01(A.vol.music*A.vol.master*A.warpMix*(e._warpGain||.08));}catch(_wmv){}
+  };
+  A._warpSfx=function(src,volume){
+    if(A.warpMix<=.04||!src)return;const t=(window.performance&&performance.now?performance.now():Date.now());
+    if(t-A._warpSfxAt<66)return;A._warpSfxAt=t;const mix=A.warpMix;
+    setTimeout(function(){if(A.warpMix<=.02)return;try{const e=new window.Audio();e.src=src;e.preload='auto';e.playbackRate=.985;e.volume=c01(volume*mix*.22);const p=e.play();if(p&&p.catch)p.catch(function(){});}catch(_wse){}},64+mix*34);
+  };
+  A.play=function(name,vol){ const p=A.pools[name]; if(!p) return false;
     const cfg=A.TAME[name];
     if(cfg && cfg.min){                                   // retrigger throttle
       const t=(window.performance&&performance.now?performance.now():Date.now())/1000;
-      if(A._last[name]!=null && t-A._last[name] < cfg.min) return;
+      if(A._last[name]!=null && t-A._last[name] < cfg.min) return false;
       A._last[name]=t;
     }
     const a=p.list[p.i]; p.i=(p.i+1)%p.list.length;
     const ch=A.VOICE_SET[name] ? (A.vol.voice!=null?A.vol.voice:1) : A.vol.sfx;
     const gm=cfg?cfg.g:1;
+    /* Media elements already routed through a WebAudio filter become completely silent if that
+       context was suspended while a stage/card/dialogue changed focus. Resume it on every real
+       shot; this is cheap when running and closes the Stage-5/9 all-weapons-silent failure. */
+    try{if(A._ctx&&A._ctx.state==='suspended'&&A._ctx.resume)A._ctx.resume();}catch(e){}
     if(cfg) A._shape(a,name,cfg);
-    try{ a.currentTime=0; a.volume=c01((vol==null?1:vol)*gm*ch*A.vol.master); const pr=a.play(); if(pr&&pr.catch)pr.catch(function(){}); }catch(e){} };
+    try{
+      a.currentTime=0;a.volume=c01((vol==null?1:vol)*gm*ch*A.vol.master);
+      const born=(window.performance&&performance.now?performance.now():Date.now());
+      const retry=function(){
+        a._bofRetry=false;
+        const now=(window.performance&&performance.now?performance.now():Date.now());
+        if(now-born>520)return;
+        try{a.currentTime=0;const q=a.play();if(q&&q.catch)q.catch(function(){});}catch(e){}
+      };
+      const pr=a.play();
+      if(pr&&pr.catch)pr.catch(function(){
+        /* preload="auto" is a hint, not a guarantee. Queue one short-lived retry when the real
+           sample becomes playable instead of swallowing the rejection and losing the shot. */
+        if(a.readyState<3&&!a._bofRetry){a._bofRetry=true;a.addEventListener('canplay',retry,{once:true});try{a.load();}catch(e){}}
+      });
+      A._warpSfx(a.src,a.volume);return true;
+    }catch(e){return false;} };
 
   /* ---- SUSTAINED LOOPS -----------------------------------------------------
      For HELD weapons. loopOn() is safe to call every frame: it starts the bed once and then just
      keeps the fade climbing. loopOff() fades it out and pauses, so releasing the button does not
      cut the sound off with a click. Dedicated elements, so the round-robin pool is untouched. */
   A.loops={};
-  A.loopOn=function(name,vol){
+  A._ensureLoop=function(name,vol){
     let L=A.loops[name];
     if(!L){
       const src=A.pools[name]; if(!src||!src.list.length) return;
       const a=new window.Audio(); a.src=src.list[0].src; a.loop=true; a.preload='auto';
-      L=A.loops[name]={el:a, on:false, lvl:0, want:(vol==null?1:vol)};
+      /* Explicitly begin fetching/decoding held-weapon beds. preload="auto" is only a hint;
+         Chromium was still at readyState 0 when Maverick reached the loop handoff. */
+      try{ a.load(); }catch(e){}
+      L=A.loops[name]={el:a, on:false, lvl:0, want:(vol==null?1:vol),playing:false,pending:false};
     }
+    return L;
+  };
+  A.loopPrepare=function(name){ return A._ensureLoop(name,0); };
+  A._loopPlay=function(L){
+    if(!L||!L.on||L.pending||(!L.el.paused&&L.playing))return;
+    L.pending=true;
+    try{
+      const pr=L.el.play();
+      if(pr&&pr.then)pr.then(function(){L.pending=false;L.playing=true;})
+        .catch(function(){L.pending=false;L.playing=false;});
+      else {L.pending=false;L.playing=!L.el.paused;}
+    }catch(e){L.pending=false;L.playing=false;}
+  };
+  A._resumeHeldContext=function(L,name,cfg){
+    const c=A._ctx;
+    if(!c||c.state==='running')return;
+    /* Once createMediaElementSource has claimed this element, a suspended context is absolute
+       silence even though HTMLMediaElement.paused is false and currentTime keeps looking healthy.
+       Stage cards, focus changes and dialogue can suspend that graph. Resume it from the live
+       trigger, and after the promise resolves re-seat both shaping and playback. */
+    const now=(window.performance&&performance.now?performance.now():Date.now());
+    if(L._resumeAt!=null&&now-L._resumeAt<180)return;
+    L._resumeAt=now;
+    try{
+      const rp=c.resume&&c.resume();
+      if(rp&&rp.then)rp.then(function(){
+        if(L.on&&cfg&&!L.el._bofNode)A._shape(L.el,name,cfg);
+        if(L.on)A._loopPlay(L);
+      }).catch(function(){});
+    }catch(e){}
+  };
+  A.loopOn=function(name,vol){
+    const L=A._ensureLoop(name,vol); if(!L)return;
     L.want=(vol==null?1:vol);
     L.hold=2;                                             // frames of grace before the fade-out starts
     if(!L.on){
       L.on=true;
-      const cfg=A.TAME[name]; if(cfg) A._shape(L.el,name,cfg);
-      try{ L.el.currentTime=0; const pr=L.el.play(); if(pr&&pr.catch)pr.catch(function(){}); }catch(e){}
+      L.playing=false;L.pending=false;
+      try{ L.el.currentTime=0; }catch(e){}
     }
+    const cfg=A.TAME[name];
+    if(cfg&&!L.el._bofNode)A._shape(L.el,name,cfg);
+    A._resumeHeldContext(L,name,cfg);
+    A._loopPlay(L);
   };
   A.loopOff=function(name){ const L=A.loops[name]; if(L) L.hold=0; };
   A.loopTick=function(dt){
@@ -45399,21 +50751,22 @@ const Snd=(function(){
            60Hz thrashes the fetch - measured, readyState stayed pinned at 1 (metadata only)
            for 90 frames and currentTime never moved. readyState>=3 (HAVE_FUTURE_DATA) is the
            point a retry can actually succeed, and the 6-frame stride keeps it from hammering. */
-        if(L.on && L.el.paused && L.el.readyState>=3 && ((L._rt=(L._rt||0)+1)%6)===0){
-          try{ const _pr=L.el.play(); if(_pr&&_pr.catch)_pr.catch(function(){}); }catch(e){}
+        if(L.on && (L.el.paused||!L.playing) && L.el.readyState>=3 && ((L._rt=(L._rt||0)+1)%6)===0){
+          A._resumeHeldContext(L,n,cfg);
+          A._loopPlay(L);
         }
       }
-      else { L.lvl=Math.max(0, L.lvl-dt*5); if(L.lvl<=0 && L.on){ L.on=false; try{ L.el.pause(); }catch(e){} } }
+      else { L.lvl=Math.max(0, L.lvl-dt*5); if(L.lvl<=0 && L.on){ L.on=false;L.playing=false;L.pending=false;try{ L.el.pause(); }catch(e){} } }
       try{ L.el.volume=c01(L.lvl*L.want*gm*A.vol.sfx*A.vol.master); }catch(e){}
     }
   };
-  A.loopStopAll=function(){ for(const n in A.loops){ const L=A.loops[n]; L.hold=0; L.lvl=0; L.on=false; try{ L.el.pause(); }catch(e){} } };
+  A.loopStopAll=function(){ for(const n in A.loops){ const L=A.loops[n]; L.hold=0;L.lvl=0;L.on=false;L.playing=false;L.pending=false;try{ L.el.pause(); }catch(e){} } };
   A.startMusic=function(name){ const m=A.music[name]; if(!m) return; if(A.cur===m&&!m.paused) return; A.stopMusic(); A.cur=m;
     try{ m.playbackRate=(typeof timeScale!=='undefined'&&timeScale<1)?timeScale:1; if('preservesPitch'in m)m.preservesPitch=(timeScale>=1); }catch(e){}
-    try{ m.volume=c01(A.vol.music*A.vol.master); m.currentTime=0; const pr=m.play(); if(pr&&pr.catch)pr.catch(function(){}); }catch(e){} };
-  A.stopMusic=function(){ if(A.cur){ try{A.cur.pause();}catch(e){} A.cur=null; } };
+    try{ m.volume=c01(A.vol.music*A.vol.master); m.currentTime=0; const pr=m.play(); if(pr&&pr.catch)pr.catch(function(){}); }catch(e){} A._warpMusicStart(); };
+  A.stopMusic=function(){ A._warpMusicStop();if(A.cur){ try{A.cur.pause();}catch(e){} A.cur=null; } };
   A.stopVoice=function(){ for(const nm in A.VOICE_SET){ const p=A.pools[nm]; if(p&&p.list){ for(const a of p.list){ try{ a.pause(); a.currentTime=0; }catch(e){} } } } };
-  A.setVol=function(k,v){ if(A.vol[k]!=null){ A.vol[k]=c01(v); if(A.cur) A.cur.volume=c01(A.vol.music*A.vol.master); } };
+  A.setVol=function(k,v){ if(A.vol[k]!=null){ A.vol[k]=c01(v); if(A.cur) A.cur.volume=c01(A.vol.music*A.vol.master);if(k==='music'||k==='master')A.setWarpMix(A.warpMix); } };
   return A;
 })();
 if(Snd){
@@ -45427,8 +50780,8 @@ if(Snd){
      Driven off BOFA.sfx now, so registering a sound is all it takes. */
   for(const m in BOFA.sfx){ if(Audio.SFX){ Audio.SFX[m]=(function(n){ return function(){ Snd.play(n); }; })(m); } }
   /* Restore the original shipped explosion pair. The expansion bank was taking over every death
-     and changed the game's whole sound identity. Its small-air sample remains intentionally used
-     only by flameHit above, where the held weapon needs a distinct, throttled contact transient. */
+     and changed the game's whole sound identity. Weapon damage confirmation is routed separately
+     through the normal hit cue; these remain destruction sounds only. */
   Audio.SFX.expSmall=function(){ Snd.play('expSmall'); };
   Audio.SFX.expBig=function(){ Snd.play('expBig'); };
   Audio.SFX.expBoss=function(){ Snd.play('expBig'); };
@@ -45437,6 +50790,7 @@ if(Snd){
   Audio.startMusic=function(n){ if(Snd.music[n]){ Snd.startMusic(n); } else { try{Snd.stopMusic();}catch(e){} if(_synthMusic)_synthMusic(n); } };
   Audio.stopMusic=function(){ Snd.stopMusic(); };
   Audio.stopVoice=function(){ if(Snd.stopVoice)Snd.stopVoice(); };
+  Audio.setWarpMix=function(v){ if(Snd.setWarpMix)Snd.setWarpMix(v); };
   const _setVol=Audio.setVol;
   Audio.setVol=function(k,v){ try{ if(_setVol)_setVol(k,v); }catch(e){} Snd.setVol(k,v); };
   try{ Snd.setVol('master',Audio.getVol('master')); Snd.setVol('music',Audio.getVol('music')); Snd.setVol('sfx',Audio.getVol('sfx')); }catch(e){}
