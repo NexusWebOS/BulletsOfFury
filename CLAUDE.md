@@ -79,6 +79,15 @@ trimmed rect needs `_foot=1` or it draws 2.15× too big.
 **`XART.rdy(k)` returns false on its FIRST call** — that call is what starts the lazy load. Every
 one-shot readiness check reads false and looks like missing art. Poll it.
 
+**A DRAW THAT THROWS IS SWALLOWED, SO THE GAME LOOKS FINE AND THE SCREEN STOPS ADVANCING.**
+Every state draw runs under a try/catch that logs `draw error in state <s>` and moves on. So a
+ReferenceError in a draw costs no crash, no visible failure and no dropped frames — the game
+holds 60fps while the thing it was drawing simply never appears, and whatever sequence that
+drawing drives never finishes. This is what stopped pilot select dead (0902a): `drawCommWindow`
+read `_dialogueReady`, a const belonging to `drawArcadeBanner`, and threw **3,379 times** without
+one symptom a state check could see. **Read the CONSOLE, not just the state.** A probe that
+watches `pageerror` plus `console.error` finds this class in one pass; nothing else does.
+
 **The player never fires in `shoot.py`.** Firing needs an input tap the harness does not simulate,
 so `pBullets` stays empty and any weapon FX measures as dead. A test must call `pShoot()` itself.
 `_BUILD_SOURCE/probe_weapons.py` is that test — it drives `pShoot()` directly and asserts on what
