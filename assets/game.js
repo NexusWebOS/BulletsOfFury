@@ -41012,6 +41012,33 @@ const ASSIGNED_FLIP={lr:1, jc:1, cc:1, ss:1};
    and re-forms stronger. Only form 4 dies, and it dies into the death-implosion overlay.
    Supersedes the 3-form chain from drop 0720al.
    ============================================================ */
+/* BOSS MUSIC PHASES -- Mike, drop 0824c: "There will be 3 phases to our boss fight."
+   Stage 8 fields FOUR shells (VILE_FORMS) but the fight is scored as THREE musical
+   phases, so the mapping is a table rather than `_vForm+1`. Index is _vForm.
+   Mike sent phase 1 (boss8) and phase 3 (boss8p3); phase 2 is still to come, and
+   until it lands phase 2 resolves back down to phase 1 and simply keeps playing.
+
+   IT MUST RESOLVE TO A KEY THAT EXISTS. Audio.startMusic stops the track and drops to
+   the synth fallback when handed a name it does not know, so asking for an as-yet
+   unregistered 'boss8p2' would go SILENT mid-fight rather than doing nothing at all.
+   Resolving downward is what makes a missing phase harmless. Re-asking for the key
+   already playing is a no-op inside startMusic (`A.cur===m && !m.paused`), so a phase
+   that maps to the same track never restarts it from the top. */
+const BOSS_MUS_PHASE={ 8:[1,1,2,3] };
+function bossMusPhase(stage, form){
+  const t=BOSS_MUS_PHASE[stage]; if(!t) return 1;
+  return t[Math.max(0, Math.min(t.length-1, form|0))] || 1;
+}
+function bossPhaseMusic(stage, phase){
+  try{
+    const bank=(window.BOFA&&window.BOFA.music)||null;
+    let k=null;
+    for(let p=phase; p>=2 && !k; p--){ const c='boss'+stage+'p'+p; if(bank&&bank[c]) k=c; }
+    if(!k) k='boss'+stage;
+    if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic(k);
+    return k;
+  }catch(e){ return null; }
+}
 const VILE_FORMS=[
   {art:'s8symboss_form_0', name:'BLACK COCOON',       hpx:1, scale:0.78},
   {art:'s8symboss_form_1', name:'RAVENOUS ASCENDANT', hpx:1, scale:0.86},
@@ -44109,6 +44136,9 @@ function modularHit(dmg){
       boss._morphFrom=boss._vForm; boss._morphT=0; boss.enter=true;
       vileBuildForm(boss, nx);
       floatText(boss.x, boss.y-60, VILE_FORMS[nx].name+'!', '#c66aff');
+      /* Four shells, three phases: the music only turns over on a real phase boundary. */
+      const _mp=bossMusPhase(run.stage, nx);
+      if(_mp!==bossMusPhase(run.stage, boss._morphFrom)) bossPhaseMusic(run.stage, _mp);
       Audio.SFX.bossPhase&&Audio.SFX.bossPhase();
       return;
     }
