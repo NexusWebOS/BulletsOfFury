@@ -4443,14 +4443,15 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     _fa2.push(st+':'+(vm.runInContext("!!curFontArt()", ctxv)?'ok':'NULL'));
   });
   ok(_fa2.every(function(x){return x.indexOf('ok')>0;}), 'and a font ('+_fa2.join(' ')+')');
-  // GLYPH FALLBACK for the 12 punctuation glyphs stages 2-8 lack
+  // GLYPH FALLBACK inside the authored stage-card family only
   ok(vm.runInContext("typeof fontGlyph==='function'", ctxv), 'a glyph fallback exists');
-  var _miss=['"','#','$','%','(',')','*',';','=','@','_'];
+  var _miss=['!','?',"'",'-','&','.',',',':',';'];
   vm.runInContext("run.stage=6;", ctxv);
   var _resolved=_miss.filter(function(c){
     return vm.runInContext("!!fontGlyph(curFontArt(), "+JSON.stringify(c)+")", ctxv);
   });
-  ok(_resolved.length===_miss.length, 'all '+_miss.length+' punctuation glyphs missing from the stage-6 font now resolve from stage 1');
+  ok(_resolved.length===_miss.length, 'late stages borrow the '+_miss.length+' supported label marks from authored stage 1');
+  ok(vm.runInContext("!fontGlyph(curFontArt(),'@')", ctxv), 'unsupported marks do not fall through to a deleted password font');
   vm.runInContext("run.stage=1;", ctxv);
 
 
@@ -4532,8 +4533,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("enemies.length=0; eBullets.length=0; player.x=240; player.y=400;", ctxv);
 
 
-  // ===== 103. RECOVERED STAGE FONTS + COLEFORGE BRAND (drop 0724bq) =====
-  console.log("=== 103. fonts + brand ===");
+  // ===== 103. RETIRED RECOVERY FONTS + COLEFORGE BRAND (drop 0902a) =====
+  console.log("=== 103. retired fonts + brand ===");
   var _sfr=null; try{ _sfr=JSON.parse(fs.readFileSync(fxJson('_stagefont_report.json'),'utf8')); }catch(e){}
   ok(_sfr!==null, 'stage-font recovery report present');
   if(_sfr){
@@ -4543,14 +4544,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
       ok(_sfr[k] && _sfr[k].empty.length===0, k+' has no empty cells');
     });
   }
-  // the glyphs resolve per stage
+  // the historical recovery report remains evidence, but those loose password/recovery cells are
+  // no longer shipping font sources.
   [[6,'H'],[7,'S'],[8,'D'],[9,'W']].forEach(function(pr){
-    ok(vm.runInContext("XART.rdy('sfont"+pr[0]+"_"+pr[1]+"')", ctxv), 'stage '+pr[0]+' glyph '+pr[1]+' is registered');
+    ok(!vm.runInContext("XART.rdy('sfont"+pr[0]+"_"+pr[1]+"')", ctxv), 'retired stage '+pr[0]+' recovery glyph '+pr[1]+' is not registered');
   });
-  ok(vm.runInContext("fontGlyph.toString().indexOf('RECOVERED STAGE FONTS')>0", ctxv), 'the glyph lookup prefers the recovered font');
+  ok(vm.runInContext("fontGlyph.toString().indexOf('sfont')<0 && fontGlyph.toString().indexOf('ncm_font')<0", ctxv),
+     'the live glyph lookup cannot reach either retired family');
   vm.runInContext("run.stage=6;", ctxv);
   var _g6=vm.runInContext("JSON.stringify(fontGlyph(curFontArt(),'H'))", ctxv);
-  ok(_g6.indexOf('sfont6_H')>0, 'and stage 6 resolves its OWN glyph, not the stage-1 fallback ('+_g6+')');
+  ok(_g6.indexOf('g_H')>0 && _g6.indexOf('sfont')<0, 'stage 6 resolves through the authored stage-card fallback ('+_g6+')');
   vm.runInContext("run.stage=1;", ctxv);
   // COLEFORGE BRAND
   ['cf_boot','cf_logo','cf_sdk','cf_banner'].forEach(function(k){
@@ -4822,8 +4825,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_fxMiss.length===0, 'every ambient effect resolves to real art — all four built from assets the game already owned');
   ok(vm.runInContext("cmapFxDraw.toString().indexOf('fw||640')>0", ctxv), 'the FX take their frame as a parameter, so the map can draw at any scale');
   ok(vm.runInContext("cmapFxDraw.toString().indexOf('VW=640')<0", ctxv), 'and never reassign a global to fake a viewport');
-  // the world map font
-  ok(vm.runInContext("XART.rdy('ncm_font_A') && XART.rdy('ncm_font_0')", ctxv), 'the 94-glyph world map font is registered');
+  // the retired world-map/password font must remain absent
+  ok(vm.runInContext("!XART.rdy('ncm_font_A') && !XART.rdy('ncm_font_0')", ctxv), 'the retired ncm/password font is not registered');
 
 
   // ===== 107. SEVENTH-TIME FIXES (drop 0724bu) =====
@@ -5563,35 +5566,25 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("pilotPortrait('falva','nonsense')==='port_cf_falva_idle'", ctxv), 'falling back to approved idle for an unknown emotion rather than to a head-crop');
 
 
-  // ===== 126. SPRITE GAME FONT (drop 0724cq) =====
-  console.log("=== 126. sprite game font ===");
-  /* Installed by WRAPPING ctx.fillText once rather than editing 132 call sites. Every existing
-     call keeps working: the wrapper reads ctx.font for size, textAlign for anchor and fillStyle
-     for colour, and falls back to the TTF for anything the glyph set cannot draw. */
-  ok(vm.runInContext("typeof GF==='object' && typeof installGameFont==='function'", ctxv), 'the sprite font renderer exists');
-  ok(vm.runInContext("GF.cell[0]===32 && GF.cell[1]===40", ctxv), 'cells are the measured 32x40');
-  ok(vm.runInContext("GF.cap===22 && GF.base===29", ctxv), 'cap height and baseline come from measuring the glyphs, not from guessing');
-  // all 94 glyphs resolve
-  var _gmiss=[];
-  for(var c=33;c<=126;c++){
-    var ch=String.fromCharCode(c);
-    var k=vm.runInContext("GF.key("+JSON.stringify(ch)+")", ctxv);
-    if(!k || !vm.runInContext("XART.rdy("+JSON.stringify(k)+")", ctxv)) _gmiss.push(ch);
-  }
-  ok(_gmiss.length===0, 'all 94 printable ASCII glyphs resolve'+(_gmiss.length?(' — missing '+_gmiss.slice(0,6).join('')):''));
-  ok(vm.runInContext("GF.key(' ')===null", ctxv), 'space has no glyph and is advanced, not drawn');
-  // size handling
-  ok(vm.runInContext("GF.sizeOf('bold 16px \"BOFmil\", monospace')===16", ctxv), 'it reads the pixel size out of ctx.font');
-  ok(vm.runInContext("GF.sizeOf('')===10", ctxv), 'with a sane default when it cannot');
-  // width tracks the string, so centring and measureText stay correct
-  var _w1=vm.runInContext("GF.width('AAAA',16)", ctxv), _w2=vm.runInContext("GF.width('AA',16)", ctxv);
-  ok(Math.abs(_w1-_w2*2)<0.01, 'advance is uniform, so measureText and centring agree');
-  ok(vm.runInContext("GF.width('AA',32)===GF.width('AA',16)*2", ctxv), 'and scales linearly with size');
-  // it must be switchable off, and must degrade rather than throw
-  ok(vm.runInContext("GF.on===false", ctxv), 'it is OFF by default — the game runs on the TTF until this is verified in a browser');
-  ok(vm.runInContext("(function(){GF.on=true; var r=GF.ready(); GF.on=false; return r===true;})()", ctxv), 'and GF.on=true enables it without a rebuild');
-  ok(vm.runInContext("installGameFont.toString().indexOf('catch')>0", ctxv), 'a glyph failure falls through to the original fillText rather than killing the frame');
-  ok(vm.runInContext("installGameFont.toString().indexOf('_gfWrapped')>0", ctxv), 'and installing twice is a no-op');
+  // ===== 126. AUTHORED DIALOGUE BITMAP FONT (updated 0902) =====
+  console.log("=== 126. authored dialogue bitmap font ===");
+  /* GF monkey-patched ctx.fillText and belonged to the retired sprite/password-font generation.
+     The live game now opts individual dialogue surfaces into the authored BMF face, so the test
+     must protect that explicit renderer instead of resurrecting a deleted global wrapper. */
+  var _bmf126=fs.readFileSync(path.join(ROOT,'assets/game/fonts/bmf_maps.js'),'utf8');
+  var _maps126=JSON.parse(_bmf126.replace(/^window\.BOF_BMF_MAPS=/,'').replace(/;\s*$/,''));
+  var _d126=_maps126.dialogue;
+  ok(!!(_d126&&_d126.glyphs), 'the embedded dialogue bitmap map exists');
+  ok(_d126.line_height===22 && _d126.baseline===15, 'line height 22 and baseline 15 come from the authored map');
+  ok(Object.keys(_d126.glyphs).length>=110, 'the dialogue face carries lowercase and punctuation ('+Object.keys(_d126.glyphs).length+' glyphs)');
+  ok(['a','A','0',' ','!','%','#','@','_'].every(function(ch){return !!_d126.glyphs[ch];}),
+     'the active face covers sentence case, digits, spacing and gameplay punctuation');
+  ok(vm.runInContext("typeof bmfGlyph==='function' && typeof bmfMeasure==='function' && typeof bmfDraw==='function'",ctxv),
+     'the explicit bitmap measure/draw pipeline is live');
+  ok(vm.runInContext("bmfDraw.toString().indexOf('imageSmoothingEnabled=false')>0",ctxv),
+     'the dialogue face remains nearest-neighbour sharp at gameplay scale');
+  ok(vm.runInContext("typeof GF==='undefined' && typeof installGameFont==='undefined'",ctxv),
+     'the retired global sprite-font wrapper stays deleted');
 
 
   // ===== 127. BOOT INTEGRITY (drop 0724cs) =====
@@ -5610,17 +5603,20 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(!!_ba.sfx && !!_ba.music, 'BOFA still has both sfx and music');
   var _bf=JSON.parse(_mfull.match(/window\.BOF=([\s\S]*?\});/)[1]);
   /* BOF.cards IS RETIRED (drop 0801gj). The namespace now carries atlas, frames,
-     logo, boot, mapJungle, play, banner_seq, cloudCount, expFams, stageFont and
-     stageArt - no cards. The pilot cards moved into BOFX.img as card_<pilot> keys
+     logo, boot, mapJungle, play, banner_seq, cloudCount, expFams and stageArt.
+     The compact bofFont and legacy stageFont/password families are deliberately absent.
+     The pilot cards moved into BOFX.img as card_<pilot> keys
      during the asset reorganisation, and ASSETS.cards has been an empty array
      since. Checking the keys that actually define the namespace's shape. */
-  ['atlas','boot','stageArt','stageFont','logo'].forEach(function(k){
+  ['atlas','boot','stageArt','logo'].forEach(function(k){
     ok(_bf[k]!==undefined, 'BOF.'+k+' survived');
   });
+  ok(_bf.bofFont===undefined && _bf.stageFont===undefined, 'retired font families stay out of BOF');
   // THE CANVAS MONKEY-PATCH IS NOT INSTALLED
   var _gH=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok(!/^\s*if\(typeof installGameFont==='function'\) installGameFont\(ctx\);/m.test(_gH), 'ctx.fillText is NOT wrapped at load — the game uses the TTF as it always did');
-  ok(_gH.indexOf('const GF =')>0, 'the sprite font library is still in the build for testing');
+  ok(_gH.indexOf('const GF =')<0 && _gH.indexOf('function installGameFont')<0,
+     'the retired sprite/password-font library remains out of the build');
   // the boot gate must be reachable and releasable
   ok(_gH.indexOf('Input.mouse.down || anyTap()')>0, 'the boot gate still listens for a click or any key');
   ok(_gH.indexOf('drawBoot._started=true')>0, 'and releases when it gets one');
@@ -8810,30 +8806,22 @@ console.log("=== 186. player / enemy / game ===");
   }
 }
 
-// ===== 187. STAGE SHEETS DECODE ON USE, NOT AT BOOT (drop 0806v) =====
+// ===== 187. AUTHORED STAGE SHEETS DECODE ON USE, NOT AT BOOT (drop 0902a) =====
 console.log("=== 187. lazy stage sheets ===");
 {
-  /* The loader built an Image for EVERY stage font and EVERY stage-art sheet up front, and mk()
-     sets .src immediately — so fourteen sheets decoded before the title screen appeared, for
-     content the player sees one stage of at a time:
-
-         9 stage fonts  2688x1152 each   111.6 MB
-         5 stage art   ~1024x1100 each    24.1 MB
-                                         -------
-                                         135.7 MB resident at boot
-
-     `img` is a lazy getter now. Reaching stage 3 costs stage 3's sheet and nothing else. */
+  /* Only the five authored stage-card sheets remain. stageFont is a compatibility alias to those
+     same lazy objects, not another texture family. */
   var _lz=JSON.parse(vm.runInContext("(function(){ ASSETS.ready=true;"
    +"var f=Object.keys(ASSETS.stageFont), a=Object.keys(ASSETS.stageArt);"
    +"var lazyF=f.filter(function(k){ var d=Object.getOwnPropertyDescriptor(ASSETS.stageFont[k],'img'); return d&&!!d.get; });"
    +"var lazyA=a.filter(function(k){ var d=Object.getOwnPropertyDescriptor(ASSETS.stageArt[k],'img'); return d&&!!d.get; });"
    +"var glyphs=f.map(function(k){ return Object.keys(ASSETS.stageFont[k].frames||{}).length; });"
    +"return JSON.stringify({f:f.length,a:a.length,lf:lazyF.length,la:lazyA.length,g:glyphs});})()", ctxv));
-  ok(_lz.f===9 && _lz.a===5, 'all nine stage fonts and five stage-art sheets are registered');
-  ok(_lz.lf===9 && _lz.la===5,
+  ok(_lz.f===5 && _lz.a===5, 'only the five authored stage-card alphabets are registered');
+  ok(_lz.lf===5 && _lz.la===5,
      'and every one of them decodes on FIRST USE rather than at boot ('+_lz.lf+'/'+_lz.la+')');
-  ok(_lz.g.every(function(n){ return n===47; }),
-     'each font still carries its full 47-glyph set ('+_lz.g.join(',')+')');
+  ok(_lz.g.every(function(n){ return n>=80; }),
+     'each alias still carries its authored card/effects/glyph frame set ('+_lz.g.join(',')+')');
   /* the getter must hand back a usable image, or the laziness has just broken the title cards */
   ok(vm.runInContext("(function(){ ASSETS.ready=true; var im=ASSETS.stageFont['3'].img; return !!(im&&im.naturalWidth>0); })()", ctxv),
      'and reading one produces a real image');
@@ -10514,47 +10502,33 @@ console.log("=== 215. menu navigation ===");
      'the listener only buffers on the password screen, so it cannot swallow a key elsewhere');
 }
 
-// ===== 216. ONE FONT FOR THE WHOLE GAME (drop 0809g) =====
-console.log("=== 216. the BOF font ===");
+// ===== 216. APPROVED DIALOGUE + STAGE FONTS ONLY (drop 0902a) =====
+console.log("=== 216. dialogue/stage fonts only ===");
 {
-  /* Mike: "You got 2 different fonts your combining for stage 1... this new bullets of fury font
-     your using for the stage cards wont work. You need to use these. these are your new stage
-     font, pilot card, dialogue and stats fonts."
-
-     ⚠ THE GAME HAD FOUR FONT SYSTEMS AND MIXED THEM ON THE SAME SCREEN:
-         BOF.stageArt    stages 1-5, embedded in the stage sheets, 44-58 glyphs
-         BOF.stageFont   the v3 set, 1-9, 47 glyphs
-         sfont1-9        atlas copies, alphanumerics only
-         ncm_font        74-glyph monospace fallback
-     curFontArt() preferred v3 and fell back to stageArt — so a stage whose v3 sheet had not
-     decoded yet drew the ORIGINAL instead, putting two unrelated typefaces on one card. That is
-     exactly what he photographed.
-
-     Eight new sheets, 13x4 at 64px, 46 glyphs each, are now the single source for BOTH the stage
-     banner and the whole UI. */
+  /* The compact BOF face photographed in the campaign finale is retired. Prose/cinematics use
+     the Fury dialogue BMF; stage-labelled surfaces and passwords use the alphabets already
+     embedded in stageArt. The older sfont/ncm password families stay retired too. */
   var _f=JSON.parse(vm.runInContext("(function(){"
     +"ASSETS.ready=true;"
-    +"var o={n:Object.keys(ASSETS.bofFont||{}).length, stages:{}, ui:'', miss:[]};"
+    +"var o={compact:('bofFont' in ASSETS)||('bofFont' in BOF),stages:{},ui:false,legacy:[],bmf:0};"
     +"for(var i=1;i<=9;i++){ run.stage=i; var a=curFontArt();"
-    +"  o.stages[i]= (a===ASSETS.bofFont[String(i)]||a===ASSETS.bofFont['8']) ? 'bof' : 'other'; }"
-    +"o.ui=(uiFontArt()===ASSETS.bofFont['1'])?'bof':'other';"
-    +"var need=\"ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!?'-&.,:;/\";"
-    +"var f=ASSETS.bofFont['1'];"
-    +"for(var i=0;i<need.length;i++) if(!f.font[need[i]]) o.miss.push(need[i]);"
+    +"  o.stages[i]=(a===(ASSETS.stageArt[String(i)]||ASSETS.stageArt['1'])); }"
+    +"o.ui=(uiFontArt()===ASSETS.stageArt['1']);"
+    +"for(var p of ['img','cells'])for(var k in (BOFX[p]||{}))if(/^sfont[1-9]_|^ncm_font_|^bof_font/.test(k))o.legacy.push(p+':'+k);"
+    +"o.bmf=msgText.toString().indexOf('if(_msgFace && bmfReady(_msgFace))')>=0;"
     +"return JSON.stringify(o);})()", ctxv));
-  ok(_f.n===8, 'all eight BOF font sheets are registered ('+_f.n+')');
+  ok(_f.compact===false, 'the retired compact BOF family is absent from both BOF and ASSETS');
   for(var _i=1;_i<=9;_i++){
-    ok(_f.stages[_i]==='bof', 'stage '+_i+' draws its banner in the BOF font');
+    ok(_f.stages[_i]===true, 'stage '+_i+' resolves to an authored stage-card alphabet');
   }
-  ok(_f.ui==='bof', 'and the UI — pilot cards, dialogue, stats — uses it too');
-  ok(_f.miss.length===0, 'every glyph resolves, none missing'+(_f.miss.length?(' — '+_f.miss.join('')):''));
+  ok(_f.ui===true, 'stage-labelled UI uses the authored stage-1 alphabet');
+  ok(_f.legacy.length===0, 'no compact, sfont, or ncm password glyph is registered');
+  ok(_f.bmf===true, 'a centred cinematic title honours msgFaceUse(dialogue) and routes through BMF');
 
-  /* the point of the change: no screen can fall back to a DIFFERENT typeface mid-draw */
   var _g216=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g216.indexOf("ASSETS.bofFont[String(run.stage)] || ASSETS.bofFont['8']")>0,
-     'stage 9 falls back to another BOF tint, not to a different face');
-  ok(_g216.indexOf('const bf=ASSETS.bofFont && ASSETS.bofFont[\'1\'];')>0,
-     'the UI resolver reaches for the BOF font first');
+  ok(!/\b(?:ASSETS|A|BOF)\.bofFont\b/.test(_g216), 'no live game path can load the retired family');
+  for(var _i=1;_i<=8;_i++) ok(!fs.existsSync(ROOT+'/assets/game/fonts/bof_font'+_i+'.png'),
+    'retired compact sheet '+_i+' is deleted from disk');
 }
 
 // ===== 217. ONE COLUMN ON THE STATS PANEL, AND A POINTER ON EVERY MENU (drop 0812b) =====
@@ -10615,16 +10589,13 @@ console.log("=== 217. stats alignment + menu pointers ===");
   ok(/_pwL\s*=\s*Math\.max\(/.test(_sc), 'the password is left-anchored and clamped clear of its label');
   ok(/_twMix\(art,\s*_pf,\s*row\.text/.test(_sc), 'and percent values go through the mixed-font measure');
 
-  /* ⚠ WHY THE BORROW EXISTS. '%' is in NO BOF font sheet and in exactly one sheet in the build.
-     If this ever fails because bofFont gained a '%', the borrow in drawStageClear can be deleted —
-     that is the point of pinning it. §216's "every glyph resolves" does not cover '%'. */
+  /* '%' is absent from the stage-1 authored alphabet but present in the stage-2 sheet, which is
+     the existing stats-screen donor. The retired compact family is no longer part of this path. */
   var _f217=JSON.parse(vm.runInContext("(function(){ASSETS.ready=true;"
-    +"var bof=ASSETS.bofFont&&ASSETS.bofFont['1'], don=ASSETS.stageArt&&ASSETS.stageArt['2'];"
-    +"var n=0; for(var k in (ASSETS.bofFont||{})) if(ASSETS.bofFont[k].font&&ASSETS.bofFont[k].font['%']) n++;"
-    +"return JSON.stringify({bofPct:!!(bof&&bof.font&&bof.font['%']), bofSheets:n,"
+    +"var base=ASSETS.stageArt&&ASSETS.stageArt['1'], don=ASSETS.stageArt&&ASSETS.stageArt['2'];"
+    +"return JSON.stringify({basePct:!!(base&&base.font&&base.font['%']),"
     +" donorPct:!!(don&&don.font&&don.font['%'])});})()", ctxv));
-  ok(_f217.bofPct===false && _f217.bofSheets===0,
-     "no BOF font sheet has a '%' — the stats screen borrows one (sheets with it: "+_f217.bofSheets+")");
+  ok(_f217.basePct===false, "stageArt['1'] has no '%' — the stats screen borrows one");
   ok(_f217.donorPct===true, "and stageArt['2'] — stage2.png — is the sheet it borrows from");
 }
 
@@ -11579,10 +11550,10 @@ console.log("=== 240. launch, lava, audio and dialogue regressions ===");
   var _map240=JSON.parse(_bmf240.replace(/^window\.BOF_BMF_MAPS=/,'').replace(/;\s*$/,''));
   var _html240=fs.readFileSync(path.join(ROOT,'index.html'),'utf8');
   ok(!!(_map240.dialogue&&_map240.dialogue.glyphs&&_map240.dialogue.glyphs.a) &&
-     !!(_map240.cutscene&&_map240.cutscene.glyphs&&_map240.cutscene.glyphs.a) &&
+     !_map240.cutscene &&
      _html240.indexOf('assets/game/fonts/bmf_maps.js')>0 &&
      _s240.indexOf('window.BOF_BMF_MAPS')>0,
-     'the new lowercase dialogue/cutscene faces are embedded and load even under file://');
+     'the single approved lowercase dialogue face is embedded and loads even under file://');
 }
 
 // ===== 241. STAGE-4 STORM SOVEREIGN TURRETS / ENERGY BOLTS / CLEAN TRANSITIONS =====
@@ -11747,21 +11718,35 @@ console.log("=== 245. arcade boss performance and distinct naval identities ==="
      'both live boss and miniboss runtimes use the performance queue while direct attack tests stay deterministic');
 }
 
-// ===== 246. FURY HQ RETAINS THE FULL PILOT ENSEMBLE =====
-console.log("=== 246. Fury HQ ensemble staging ===");
+// ===== 246. PILOT-SELECTED MOVING OPENINGS + GENERATED DESTINATIONS =====
+console.log("=== 246. pilot-selected cinematic staging ===");
 {
-  var _hq246=JSON.parse(vm.runInContext("(function(){run.mode='campaign';hqSeen={};hqPlay('HQ_ALL_00');"
-    +"var first={n:hqRoster.length,j:hqRoster.indexOf('juggernaut'),who:hqSc.lines[hqLine][0]};"
-    +"hqPlay('HQ_ALL_04');var reveal={n:hqRoster.length,j:hqRoster.indexOf('juggernaut')};"
-    +"return JSON.stringify({first:first,reveal:reveal});})()",ctxv));
-  ok(_hq246.first.n===8 && _hq246.first.j===-1 && _hq246.first.who==='cole',
-     'the opening HQ briefing keeps all eight established pilots around the command console');
-  ok(_hq246.reveal.n===9 && _hq246.reveal.j>=0,
-     'Juggernaut joins the persistent HQ ensemble at his authored sealed-hangar reveal');
+  /* Pilot stories retain their individual action beats. Flight approaches use top-down aircraft
+     over the aerial plate; close beach/gate art is reserved for the new historical prologue. */
+  var _hq246=JSON.parse(vm.runInContext("(function(){var keys=Object.keys(PILOT_OPENINGS),motions={},hq=0,jungle=0,ends=true;"
+    +"keys.forEach(function(k){var s=PILOT_OPENINGS[k],m=s.beats[0].motion;motions[m]=1;if(s.destination==='hq')hq++;if(s.destination==='jungle')jungle++;"
+    +"var z=s.beats[s.beats.length-1].motion;ends=ends&&(z==='hq_approach'||z==='jungle_approach');});"
+    +"return JSON.stringify({keys:keys,motions:Object.keys(motions),hq:hq,jungle:jungle,ends:ends});})()",ctxv));
+  ok(_hq246.keys.length===9 && _hq246.motions.length>=7,
+     'all nine pilots own a branch across at least seven distinct opening action styles');
+  ok(_hq246.hq===6 && _hq246.jungle===3 && _hq246.ends,
+     'each branch finishes on its authored HQ or jungle travel route');
   var _s246=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
-  ok(_s246.indexOf('ensemble:hqRoster, speakingPilot:ln[0], speakingPose:ln[1]')>0 &&
-     _s246.indexOf("const bottom=344-18*arc")>0,
-     'the live cutscene passes speaker emphasis into the full ensemble and seats them along the curved console');
+  var _route246=vm.runInContext("cinRouteBackdrop.toString()",ctxv);
+  var _motion246=vm.runInContext("cinDrawMotion.toString()",ctxv);
+  ok(_route246.indexOf("cinbg_hq_aerial")>0 && _route246.indexOf("cinbg_hq_beach")<0 &&
+     _route246.indexOf("cinbg_hq_gate")<0 && _motion246.indexOf("cinDrawShip(p,1")>0,
+     'moving arrival shots use the aerial HQ view and top-down ships only');
+  ok(_s246.indexOf("cinbg_hq_beach")>0 && _s246.indexOf("cinbg_hq_gate")>0 &&
+     _s246.indexOf('const CAMPAIGN_INTRO_BEATS')>0,
+     'close beach and gate plates remain available as stationary FURY HQ prologue views');
+  ok(_s246.indexOf('hqRoster')<0 && _s246.indexOf("motion==='hq_approach'")>0 &&
+     _s246.indexOf("motion==='jungle_approach'")>0,
+     'the retired briefing remains gone while both moving destination sequences stay wired');
+  ok(_s246.indexOf("CAMPAIGNINTRO:'campaignintro'")>0 &&
+     _s246.indexOf("campaignIntroStart(function(){ openStageSelect(fromStage,{boot:true}); })")>0 &&
+     _s246.indexOf('for(let i=0;i<7;i++)')>0,
+     'a fresh campaign runs the skippable history prologue and its seven-round title before the map');
 }
 
 // ===== 247. CAMPAIGN PILOT SELECT REQUIRES A FRESH INPUT =====
@@ -12079,7 +12064,10 @@ console.log("=== 257. Gravity Mode space armory I-V ===");
      'Shadow Orb I-V advances damage, blast radius and piercing charge—not just icon art');
   ok(_src257.indexOf('function spaceWeaponPickupIndex(')>=0 &&
      _src257.match(/spaceWeaponPickupIndex\(p\)/g).length>=3,
-     'pickup application and every pickup renderer share the same three-weapon routing helper');
+     'pickup application and every pickup renderer share the same two-primary/one-passive routing helper');
+  ok(_arm257.indexOf("const SPACE_WEAPONS=['LASER CANNON','SHADOW ORB']")>=0 &&
+     _arm257.indexOf('function spaceVolleyAutoTick(')>=0 && _arm257.indexOf("if(w===0)spaceLaserFire()")>=0,
+     'Volley Missiles are a passive auto-fire rack and cannot occupy the primary fire-button slot');
 
   var _atlas257=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','bof_gravity_mode_space_weapons.json'),'utf8')).frames;
   var _missing257=[];
@@ -12112,6 +12100,9 @@ console.log("=== 257. Gravity Mode space armory I-V ===");
   var _pick257=vm.runInContext("[0,1,2,3,4,5].map(function(wtype){return spaceWeaponPickupIndex({wtype:wtype});})",ctxv);
   ok(_pick257.join()==='0,1,2,0,1,2',
      'all six ordinary crate types map deterministically across Laser Cannon, Shadow Orb and Volley Missiles');
+  var _passive257=JSON.parse(vm.runInContext("(function(){run.stage=5;run.spaceMode=true;run.spaceWeapon=0;run.spaceLevels=[4,3,1];player.dead=false;special=null;applyPowerup({kind:'weapon',wtype:2,x:player.x,y:player.y});pBullets.length=0;run._spaceVolleyCd=0;var fired=spaceVolleyAutoTick(1/60,true),n=pBullets.filter(function(b){return b.kind==='spaceVolleySeed';}).length;return JSON.stringify({active:run.spaceWeapon,levels:run.spaceLevels,fired:fired,n:n});})()",ctxv));
+  ok(_passive257.active===0 && _passive257.levels.join()==='4,3,2' && _passive257.fired && _passive257.n===1,
+     'a Volley pickup upgrades only the passive rack, which auto-fires without replacing the selected primary');
   var _hud257=vm.runInContext("(function(){run.stage=5;run.spaceMode=true;run.spaceWeapon=1;run.spaceLevels[1]=4;run.wlevel=1;return [weaponDisplayName(run.weapon),weaponIconKey(run.weapon,run.wlevel),spaceWeaponLevel()];})()",ctxv);
   ok(_hud257.join()==='SHADOW ORB,space_shadow_icon_4,4',
      'HUD name, icon and tier read the selected space armory level rather than stale ground state');
@@ -12144,8 +12135,8 @@ console.log("=== 258. Stage 9 Velocity Void headless contract ===");
      'the map cinematic unlocks only the bonus node without corrupting linear campaign progress');
 
   var _entry258=JSON.parse(vm.runInContext("(function(){campaign.bonusUnlocked=1;run.spaceLevels=[4,3,5];run.spaceWeapon=2;run.gravityShipReady=true;beginStage(9);return JSON.stringify({spent:campaign.bonusUnlocked,space:run.spaceMode,levels:run.spaceLevels,weapon:run.spaceWeapon,gravity:run.gravityShipReady,phase:gravityMode&&gravityMode.phase,retained:gravityMode&&gravityMode.retained});})()",ctxv));
-  ok(_entry258.spent===0 && _entry258.space===true && _entry258.levels.join()==='4,3,5' && _entry258.weapon===2,
-     'entering Stage 9 consumes the one-use latch and retains the earned space-armory levels');
+  ok(_entry258.spent===0 && _entry258.space===true && _entry258.levels.join()==='4,3,5' && _entry258.weapon===0,
+     'entering Stage 9 consumes the one-use latch, retains all tiers and migrates obsolete selected-Volley saves to Laser Cannon');
   ok(_entry258.gravity===true && _entry258.phase==='active' && _entry258.retained===true,
      'Stage 9 restores the completed Gravity craft instead of replaying its assembly');
 
@@ -12211,7 +12202,7 @@ console.log("=== 259. generated combat audio routing ===");
        var rel=sandbox.window.BOFA.sfx[k];
        return typeof rel==='string' && rel.endsWith('/'+_approved259[k]) && fs.existsSync(path.join(ROOT,rel));
      }), 'all approved 0829 event mappings resolve to their rendered production WAVs');
-  var _spaceRoutes259=JSON.parse(vm.runInContext("(function(){var hit={laser:0,chargeOn:0,chargeOff:0,shadow:0,volley:0,laserHit:0,shadowHit:0,volleyHit:0};var keep={laser:Audio.SFX.spaceLaserCannon,shadow:Audio.SFX.spaceShadowRelease,volley:Audio.SFX.spaceVolleyLaunch,laserHit:Audio.SFX.spaceLaserHit,shadowHit:Audio.SFX.spaceShadowHit,volleyHit:Audio.SFX.spaceVolleyHit,on:Snd.loopOn,off:Snd.loopOff};Audio.SFX.spaceLaserCannon=function(){hit.laser++;};Audio.SFX.spaceShadowRelease=function(){hit.shadow++;};Audio.SFX.spaceVolleyLaunch=function(){hit.volley++;};Audio.SFX.spaceLaserHit=function(){hit.laserHit++;};Audio.SFX.spaceShadowHit=function(){hit.shadowHit++;};Audio.SFX.spaceVolleyHit=function(){hit.volleyHit++;};Snd.loopOn=function(n){if(n==='spaceShadowCharge')hit.chargeOn++;};Snd.loopOff=function(n){if(n==='spaceShadowCharge')hit.chargeOff++;};run.stage=5;run.spaceMode=true;run.spaceLevels=[2,2,2];player.dead=false;player.x=240;player.y=410;pBullets.length=0;run.spaceWeapon=0;spaceLaserFire();run.spaceWeapon=1;spaceShadowTick(1/60,true);spaceShadowTick(1/60,false);run.spaceWeapon=2;spaceVolleyFire();spaceImpact({kind:'spaceLaser',x:0,y:0},'laser',1,20);spaceImpact({kind:'shadowOrb',x:0,y:0},'shadow',1,20);spaceImpact({kind:'spaceVolley',x:0,y:0},'volley',1,20);Audio.SFX.spaceLaserCannon=keep.laser;Audio.SFX.spaceShadowRelease=keep.shadow;Audio.SFX.spaceVolleyLaunch=keep.volley;Audio.SFX.spaceLaserHit=keep.laserHit;Audio.SFX.spaceShadowHit=keep.shadowHit;Audio.SFX.spaceVolleyHit=keep.volleyHit;Snd.loopOn=keep.on;Snd.loopOff=keep.off;return JSON.stringify(hit);})()",ctxv));
+  var _spaceRoutes259=JSON.parse(vm.runInContext("(function(){var hit={laser:0,chargeOn:0,chargeOff:0,shadow:0,volley:0,laserHit:0,shadowHit:0,volleyHit:0};var keep={laser:Audio.SFX.spaceLaserCannon,shadow:Audio.SFX.spaceShadowRelease,volley:Audio.SFX.spaceVolleyLaunch,laserHit:Audio.SFX.spaceLaserHit,shadowHit:Audio.SFX.spaceShadowHit,volleyHit:Audio.SFX.spaceVolleyHit,on:Snd.loopOn,off:Snd.loopOff};Audio.SFX.spaceLaserCannon=function(){hit.laser++;};Audio.SFX.spaceShadowRelease=function(){hit.shadow++;};Audio.SFX.spaceVolleyLaunch=function(){hit.volley++;};Audio.SFX.spaceLaserHit=function(){hit.laserHit++;};Audio.SFX.spaceShadowHit=function(){hit.shadowHit++;};Audio.SFX.spaceVolleyHit=function(){hit.volleyHit++;};Snd.loopOn=function(n){if(n==='spaceShadowCharge')hit.chargeOn++;};Snd.loopOff=function(n){if(n==='spaceShadowCharge')hit.chargeOff++;};run.stage=5;run.spaceMode=true;run.spaceLevels=[2,2,2];player.dead=false;player.x=240;player.y=410;pBullets.length=0;run.spaceWeapon=0;spaceLaserFire();run.spaceWeapon=1;spaceShadowTick(1/60,true);spaceShadowTick(1/60,false);run._spaceVolleyCd=0;spaceVolleyAutoTick(1/60,true);spaceImpact({kind:'spaceLaser',x:0,y:0},'laser',1,20);spaceImpact({kind:'shadowOrb',x:0,y:0},'shadow',1,20);spaceImpact({kind:'spaceVolley',x:0,y:0},'volley',1,20);Audio.SFX.spaceLaserCannon=keep.laser;Audio.SFX.spaceShadowRelease=keep.shadow;Audio.SFX.spaceVolleyLaunch=keep.volley;Audio.SFX.spaceLaserHit=keep.laserHit;Audio.SFX.spaceShadowHit=keep.shadowHit;Audio.SFX.spaceVolleyHit=keep.volleyHit;Snd.loopOn=keep.on;Snd.loopOff=keep.off;return JSON.stringify(hit);})()",ctxv));
   ok(_spaceRoutes259.laser===1&&_spaceRoutes259.chargeOn===1&&_spaceRoutes259.chargeOff>=1&&_spaceRoutes259.shadow===1&&_spaceRoutes259.volley===1,
      'Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route');
   ok(_spaceRoutes259.laserHit===1&&_spaceRoutes259.shadowHit===1&&_spaceRoutes259.volleyHit===1,

@@ -126,7 +126,7 @@
   // to the right of the game screen. Hidden when no weapon / player dead.
   var cv=document.getElementById('equipcv'); if(!cv) return;
   var g=cv.getContext('2d'); g.imageSmoothingEnabled=false;
-  var WT={0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'};
+  var WT={0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'};
   window.__drawEquipDom=function(px){
     var W=cv.width, H=cv.height; g.clearRect(0,0,W,H);
     /* GAMEPLAY ONLY (drop 0809p). The box was drawn in every state, so the boot logo, the
@@ -195,6 +195,8 @@
 <!-- Gravity Mode atlas metadata is a classic script so direct file:// play works too; fetch()
      cannot read a neighbouring JSON file in that mode. The texture itself is still one atlas. -->
 <script src="assets/game/atlas/bof_gravity_mode_space_weapons.js"></script>
+<script src="assets/game/atlas/stage_runtime_atlases.js"></script>
+<script src="assets/game/atlas/stage5_runtime_atlas.js"></script>
 <script src="assets/game.js"></script>
 <script>
 (function(){

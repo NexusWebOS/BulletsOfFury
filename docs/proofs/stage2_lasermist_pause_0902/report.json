@@ -1,0 +1,70 @@
+{
+  "stage2": {
+    "patrol": {
+      "ampX": 116,
+      "ampY": 4,
+      "period": 5.8
+    },
+    "bodyUnaffected": true,
+    "barrierActive": false,
+    "stun": 0.8033333333333332,
+    "fireCd": 1.24,
+    "attacksCancelled": true,
+    "manoeuvreOwnsFrame": true
+  },
+  "mist": {
+    "launch": 3,
+    "first": 9,
+    "second": 27,
+    "stages": [
+      0,
+      0,
+      27
+    ],
+    "waves": 1,
+    "bubbles": 19,
+    "impacts": 4,
+    "bounds": {
+      "minX": 119.77126602795883,
+      "maxX": 360.228733972041,
+      "minY": 138.39210340449765,
+      "maxY": 161.0765448671477
+    }
+  },
+  "pause": {
+    "state": "paused",
+    "screen": "grayscale(1) contrast(0.92) brightness(0.82)",
+    "hud": "grayscale(1) contrast(0.92) brightness(0.82)",
+    "equip": "grayscale(1) contrast(0.92) brightness(0.82)",
+    "lowered": 0.14
+  },
+  "resumed": {
+    "state": "play",
+    "filter": "",
+    "music": 0.5
+  },
+  "failure": {
+    "state": "riftfallback",
+    "unlocked": false,
+    "stored": null
+  },
+  "unlock": {
+    "changed": true,
+    "unlocked": true,
+    "stored": "1",
+    "icon": "micon_lasermist_5",
+    "name": "LASER MIST"
+  },
+  "staticChecks": {
+    "atlasFrames": 49,
+    "unlockCalls": 3,
+    "shadowImmediate": true,
+    "laserImpactAtlas": true,
+    "cutscenePilotPrewarm": true,
+    "selectedStagePrewarm": true,
+    "unlockFunction": true,
+    "stage9OnlyGrant": true
+  },
+  "missing": [],
+  "errors": []
+}

@@ -5,8 +5,8 @@ Production-ready cinematic views for all nine Fury pilots, generated from the ca
 ## Delivery
 
 - 9 pilot ships
-- 6 cinematic views per pilot
-- 54 fixed frames total
+- 6 original cinematic views plus 1 centered-rear ending view per pilot
+- 54 fixed opening frames plus 9 native ending cutouts
 - 512x512 RGBA per fixed frame
 - Tight native-resolution RGBA cutout for every view
 - 1536x1024 RGBA six-view master for every pilot
@@ -21,6 +21,7 @@ Production-ready cinematic views for all nine Fury pilots, generated from the ca
 4. Rear-left three-quarter
 5. Rear-right three-quarter
 6. Dramatic hard-bank upper-side
+7. Centered straight-behind stern elevation (ending fly-away; native cutout only)
 
 ## Folder layout
 
@@ -32,6 +33,10 @@ Each pilot folder contains:
 - `<pilot>_edge_qa_checker.jpg` - transparency review image
 
 `manifest.json` records every file, view description, cutout size, checksum, reference source and alpha-edge metric. The combined review sheet is `previews/cinematic_ships_9pilots_contact.jpg`.
+
+`cutouts_native/07_center_rear.png` is the supplemental boss-camera-style ending view. It is
+generated independently at high resolution with genuine alpha and intentionally does not alter
+the original six-view master or its fixed 512 slots.
 
 ## Tail continuity repair
 

@@ -1,0 +1,72 @@
+{
+  "pickup": {
+    "active": 0,
+    "primary": "LASER CANNON",
+    "primaryLevel": 4,
+    "passiveLevel": 2,
+    "levels": [
+      4,
+      3,
+      2
+    ],
+    "primaryIcon": "space_laser_icon_4",
+    "passiveIcon": "space_volley_icon_2"
+  },
+  "automatic": {
+    "first": true,
+    "blocked": false,
+    "second": true,
+    "afterFirst": 1,
+    "afterBlocked": 1,
+    "afterSecond": 2,
+    "defaultVolleyTier": 5,
+    "stats": 2
+  },
+  "migration": {
+    "active": 0,
+    "name": "LASER CANNON",
+    "icon": "space_laser_icon_1",
+    "passive": 4
+  },
+  "groundDeath": {
+    "weapon": 4,
+    "wlevel": 1,
+    "wlevels": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "missileLevel": 1,
+    "variant": "flamethrower",
+    "dead": true
+  },
+  "spaceDeath": {
+    "active": 1,
+    "spaceLevels": [
+      1,
+      1,
+      1
+    ],
+    "missileLevel": 1,
+    "groundWeapon": 4,
+    "groundLevel": 1,
+    "groundLevels": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1
+    ],
+    "groundMissile": 1,
+    "volleyCooldown": 0,
+    "dead": true
+  },
+  "missing": [],
+  "errors": []
+}

@@ -1320,18 +1320,8 @@ const ctx = cv.getContext('2d');
     window.__skippedDraws = function(){ return {skipped: skipped, lastBadFile: lastBad}; };
   }catch(e){}
 })();
-/* SPRITE FONT NOT INSTALLED (drop 0724cs).
-   Wrapping ctx.fillText and ctx.measureText at load was the only change in that drop touching a
-   canvas API used on every screen, and the game became unresponsive at the boot gate. I could not
-   reproduce it here — the harness stubs the canvas, so a monkey-patch behaves differently than it
-   does against a real CanvasRenderingContext2D. Rather than ship another guess, the patch is not
-   applied at all: the game uses the TTF exactly as it did before.
-   GF and installGameFont remain in the build. Calling installGameFont(ctx) from the console with
-   GF.on=true enables the sprite font, which is how we find out whether it is really the culprit
-   without risking the build. */
 const hudcv = document.getElementById('hud');
 const hudctx = hudcv ? (hudcv.width=VW, hudcv.height=HUDH, hudcv.getContext('2d')) : null;
-// (sprite font deliberately not installed on the HUD context either — see above)
 /* ===== ASSETS + framed HUD + bombs + stage map ===== */
 const PLAY={x:4,y:46,w:VW-8,h:VH-52};
 /* FIVE SOUND NAMES THAT WERE NEVER IN THE BANK (drop 0801gb): eshot, clank,
@@ -1371,39 +1361,6 @@ const ASSETS=(function(){
     A.stageArt={};
     A.stageFont={};
     /* ============================================================
-       THE BOF FONT (drop 0809g)
-
-       Mike: "this new bullets of fury font your using for the stage cards wont work. You need to
-       use these. these are your new stage font, pilot card, dialogue and stats fonts."
-
-       Eight sheets, 13x4 at 64px, 46 glyphs each: A-Z 0-9 ! ? ' - & . , : ; /
-
-       ⚠ WHY THIS REPLACES A MESS RATHER THAN ADDING TO ONE. The game had FOUR font systems and
-       was mixing them on the same screen:
-
-           BOF.stageArt      stages 1-5, embedded in the stage sheets, 44-58 glyphs
-           BOF.stageFont     the v3 set, 1-9, 47 glyphs
-           sfont1-9          atlas copies, alphanumerics only
-           ncm_font          74-glyph monospace fallback
-
-       curFontArt() preferred v3 and fell back to stageArt, so a stage whose v3 sheet had not
-       decoded yet drew the ORIGINAL instead — two completely different typefaces on the same
-       card. That is the "2 different fonts your combining for stage 1" Mike saw.
-
-       These eight are now the single source. Same lazy decode as the others, so nothing regresses
-       at boot. ============================================================ */
-    A.bofFont={};
-    for(const k in (BOF.bofFont||{})){
-      const d=BOF.bofFont[k];
-      A.bofFont[k]={ frames:d.frames, font:d.font, name:d.name, _src:d.atlas, _img:null,
-        get img(){ if(!this._img){ this._img=new Image(); this._img.src=this._src; } return this._img; } };
-    }
-    /* The corrected compact BOF sheets supersede the 20 MB v3 stage-font set. Keep the old
-       property as a compatibility alias for any downstream extension, but never register or
-       decode the retired atlases. */
-    A.stageFont=Object.assign({},A.bofFont);
-    if(!A.stageFont['9']&&A.bofFont['8']) A.stageFont['9']=A.bofFont['8'];
-    /* ============================================================
        STAGE FONTS AND STAGE ART DECODE ON FIRST USE, NOT AT BOOT (drop 0806v)
 
        This built an Image for EVERY stage font and EVERY stage-art sheet up front, and mk()
@@ -1430,6 +1387,9 @@ const ASSETS=(function(){
     if(BOF.stageArt){ for(const _k in BOF.stageArt){ const _sa=BOF.stageArt[_k];
       A.stageArt[_k]=_lazySheet({frames:_sa.frames, fx:_sa.fx, font:_sa.font, warmFont:_sa.warmFont,
         anchors:_sa.anchors, disintegrate:_sa.disintegrate}, _sa.atlas); } }
+    /* Only the authored stage-card alphabets remain in the stage-font slot. The retired compact
+       BOF/password family was intentionally removed from the manifest and disk. */
+    A.stageFont=Object.assign({},A.stageArt);
     if(A.img){ A.img.onload=function(){A.ready=true;}; A.img.onerror=function(){A.ready=false;}; }
   }
   function _rdy(im){ return im && im.complete && im.naturalWidth>0; }
@@ -1472,6 +1432,24 @@ const ASSETS=(function(){
   };
   return A;
 })();
+
+/* Draw one cell from a packed generated atlas. Fractional source sizes are intentional: two of
+   the approved sheets have odd pixel dimensions, and Canvas can sample those exact grid bounds
+   without shaving a column from alternating frames. */
+function combatAtlasDraw(key,cols,rows,index,x,y,w,h,opts){
+  if(typeof XART==='undefined'||!XART.rdy(key))return false;
+  const im=XART.get(key);if(!im||!(im.naturalWidth||im.width))return false;
+  opts=opts||{};index=clamp(index|0,0,cols*rows-1);
+  const iw=im.naturalWidth||im.width,ih=im.naturalHeight||im.height,sw=iw/cols,sh=ih/rows;
+  const sx=(index%cols)*sw,sy=Math.floor(index/cols)*sh;
+  ctx.save();ctx.imageSmoothingEnabled=opts.smooth==null?false:!!opts.smooth;
+  if(opts.alpha!=null)ctx.globalAlpha=opts.alpha;
+  if(opts.blend)ctx.globalCompositeOperation=opts.blend;
+  if(opts.angle||opts.flipX||opts.flipY){ctx.translate(x,y);if(opts.angle)ctx.rotate(opts.angle);
+    ctx.scale(opts.flipX?-1:1,opts.flipY?-1:1);ctx.drawImage(im,sx,sy,sw,sh,-w/2,-h/2,w,h);}
+  else ctx.drawImage(im,sx,sy,sw,sh,x-w/2,y-h/2,w,h);
+  ctx.restore();return true;
+}
 
 /* ===== NEW BOSS SPRITE SYSTEM ===== */
 const NEWBOSS = {
@@ -1697,6 +1675,10 @@ const XART=(function(){
      code is the same registration by a route that survives the next regeneration. ============================================================ */
   X._src['nsb_jungle_cruiser'] = 'assets/game/nsb_jungle_cruiser.png';
   X._src['nsb_olive_carrier']  = 'assets/game/nsb_olive_carrier.png';
+  /* LASER MIST REWARD ATLAS (0902). One decoded sheet owns the five pickup plates, twenty
+     travelling-water frames and all impact/ripple/bubble animation. Runtime rects below keep
+     the generated cells padded; no loose duplicate images are loaded. */
+  X._src['bof_laser_mist_weapon_atlas']='assets/game/laser_mist/bof_laser_mist_weapon_atlas.png';
   /* MAGMA WARD'S AUTHORED STAGE-2 FIRE KIT (0830). Loose registrations are intentional:
      manifest.js is generated, while these normalized frames live in a source-controlled runtime
      folder and must survive the next catalog rebuild. Every family has a fixed anchor/box. */
@@ -1733,6 +1715,72 @@ const XART=(function(){
       X._src['port_cf_'+_pp+'_'+_pe]='assets/game/pilot_portraits/'+_pp+'-'+_pe+'.png';
     }
   }
+  /* PILOT-SELECTED CAMPAIGN OPENINGS (0901). The approved ImageGen cinematic pack contains
+     six opening views plus a dedicated centered stern view of every Fury aircraft, so scenes use
+     real generated art instead of another static HQ briefing or canvas-drawn stand-ins. Keep
+     these registrations code-owned: manifest.js is generated, and each scene lazily warms only
+     the one- or two-pilot cast it needs. */
+  const _CIN_PILOTS=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
+  const _CIN_VIEWS=['01_top_down','02_front_left_3q','03_front_right_3q',
+                    '04_rear_left_3q','05_rear_right_3q','06_hard_bank','07_center_rear'];
+  for(const _cp of _CIN_PILOTS) for(let _cv=0;_cv<_CIN_VIEWS.length;_cv++){
+    X._src['cinship_'+_cp+'_'+(_cv+1)]='assets/game/cinematic_ships/'+_cp+
+      '/cutouts_native/'+_CIN_VIEWS[_cv]+'.png';
+  }
+  X._src['cinbg_fury_hq']='assets/game/cinematic_campaign/exteriors_generated_official/01_fury_hq_island_aerial_official_generated.png';
+  X._src['cinbg_hq_aerial']='assets/game/cinematic_campaign/exteriors_generated_official/01_fury_hq_island_aerial_official_generated.png';
+  X._src['cinbg_hq_beach']='assets/game/cinematic_campaign/exteriors_generated_official/02_fury_hq_beach_approach_official_generated.png';
+  X._src['cinbg_hq_gate']='assets/game/cinematic_campaign/exteriors_generated_official/03_fury_hq_jungle_gate_official_generated.png';
+  X._src['cinbg_jungle']='assets/game/cinematic_level_approaches/stage01_rumble_in_the_jungle_approach.png';
+  /* ENDING CINEMATIC (0902). Keep these code-owned like the other cinematic plates: manifest.js
+     is generated and must not be the only place that knows the finale exists. The two creature
+     files are true RGBA cutouts; the HQ and satellite dish remain RGB background masters. */
+  X._src['cinend_hq_restored']='assets/game/cinematic_campaign/ending_generated/ending_fury_hq_restored_dawn_v1.png';
+  X._src['cinend_satellite_dish']='assets/game/cinematic_campaign/ending_generated/ending_damaged_satellite_dish_v1.png';
+  X._src['cinend_symbiote_survivor']='assets/game/cinematic_campaign/ending_generated/ending_symbiote_ooze_survivor_rgba_v2.png';
+  X._src['cinend_bof2_shadow']='assets/game/cinematic_campaign/ending_generated/ending_bof2_shadow_mech_rgba_v2.png';
+  X._src['cinend_deep_space']='assets/game/cinematic_campaign/ending_generated/ending_deep_space_starfield_v1.png';
+  /* Campaign prologue plates. The beach and gate are establishing VIEWS only; aircraft are never
+     composited over either perspective. The complete squad and command table give the history
+     room to introduce FURY as people rather than reducing the organization to one building. */
+  X._src['cinintro_team']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/06_full_earth_division_lounge.png';
+  X._src['cinintro_command']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/04_command_table_cole_decker_juggernaut.png';
+  X._src['cinintro_lab']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/07_cole_decker_restricted_prototype_lab.png';
+  X._src['cincloud_day']='assets/game/bg6/bg6_cloud_day_1.png';
+  X._src['cincloud_storm']='assets/game/bg6/bg6_cloud_storm_0.png';
+  X._src['cinhostile_scout']='assets/game/stage8_symbiote_fleet/scout_drone/idle.png';
+  X._src['cinhostile_bone']='assets/game/stage8_mega_enemies/bone_interceptor/attack_01.png';
+  X._src['cinhostile_heavy']='assets/game/stage5_enemy_attacks/heavy_interceptor/01.png';
+  for(let _cf=0;_cf<8;_cf++){
+    const _ef=String(_cf*4).padStart(2,'0');
+    X._src['cinfx_airburst_'+_cf]='assets/game/generated_cinematic/explosions/airburst/192x192/frames/frame_'+_ef+'.png';
+    X._src['cinfx_laser_'+_cf]='assets/game/boss_projectile_overhaul/bpfx_proj_laser_'+_cf+'.png';
+    X._src['cinfx_missile_'+_cf]='assets/game/boss_projectile_overhaul/bpfx_proj_missile_'+_cf+'.png';
+  }
+  /* FINAL COMBAT PASS (0901). These are deliberately code-owned loose atlases: manifest.js is
+     generated and must never be the only place that knows about a boss mechanic. The atlas
+     coordinates are resolved at draw time, keeping one decoded texture per family instead of
+     multiplying the Stage 5-7 pass into dozens of loose frames. */
+  X._src['cfx_stage5_xeno_projectiles']='assets/game/combat_final/stage5_xeno_projectiles_atlas.png';
+  /* 0901 projectile rebuild. These atlases are packed from measured alpha bounds with fixed
+     gutters; never cut their generated presentation sheets directly. */
+  X._src['cfx_stage2_volcanic_projectiles']='assets/game/combat_upgrade_0901/stage2_volcanic_projectiles_atlas.png';
+  X._src['cfx_stage4_chain_lightning']='assets/game/combat_upgrade_0901/stage4_chain_lightning_atlas.png';
+  X._src['cfx_stage5_alien_projectiles_v2']='assets/game/combat_upgrade_0901/stage5_alien_projectiles_atlas.png';
+  X._src['cfx_stage7_toxic_projectiles_v2']='assets/game/combat_upgrade_0901/stage7_toxic_projectiles_atlas.png';
+  X._src['cfx_stage8_symbiote_projectiles']='assets/game/combat_upgrade_0901/stage8_symbiote_projectiles_atlas.png';
+  X._src['cfx_stage6_carrier_shield']='assets/game/combat_final/stage6_carrier_shield_atlas.png';
+  X._src['cfx_stage7_warden_walk']='assets/game/combat_final/stage7_toxic_portal_warden_crawl_spritecook.png';
+  X._src['cfx_stage7_warden_teleport']='assets/game/combat_final/stage7_toxic_portal_teleport_atlas.png';
+  X._src['cfx_stage7_warden_projectiles']='assets/game/combat_final/stage7_toxic_portal_projectiles_atlas.png';
+  X._src['cfx_stage7_warden_cannon']='assets/game/combat_final/stage7_warden_cannon_barrage_spritecook.png';
+  X._src['cfx_stage7_warden_rail']='assets/game/combat_final/stage7_warden_rail_charge_spritecook.png';
+  X._src['cfx_stage7_warden_shell']='assets/game/combat_final/stage7_warden_toxic_pressure_shell_spritecook.png';
+  X._src['cfx_stage7_warden_mine']='assets/game/combat_final/stage7_warden_portal_mine_spritecook.png';
+  X._src['cfx_stage7_warden_spear']='assets/game/combat_final/stage7_warden_rift_rail_spear_spritecook.png';
+  X._src['cfx_stage7_warden_roar']='assets/game/combat_final/stage7_warden_rear_roar_spritecook.png';
+  X._src['cfx_stage7_warden_cripple']='assets/game/combat_final/stage7_warden_crippled_crawl_spritecook.png';
+  X._src['cfx_stage7_warden_laststand']='assets/game/combat_final/stage7_warden_last_stand_spritecook.png';
   /* 0825 LEVEL-6 FLEET + APPROVED PROJECTILES. The aircraft palettes are baked files rather
      than runtime overlays, and every damage state is registered independently. */
   for(let _fh=0;_fh<3;_fh++) for(const _fp of ['steel','royal','blackice'])
@@ -1882,6 +1930,20 @@ const XART=(function(){
   }
   for(let _f=0;_f<12;_f++){const _n=String(_f+1).padStart(2,'0');
     X._src['s5fracture_'+_f]='assets/game/stage5_fracture_halo/'+_n+'.png';}
+  /* Stage 5 ships as one decoded combat texture.  The loose files above remain the editable
+     source-of-truth and fallback registrations; BOFX.cells wins in XART._touch, so the browser
+     fetches this atlas rather than 159 separate frames during a run. */
+  X._src['nca_stage5_runtime_atlas']='assets/game/atlas/stage5_runtime_atlas.png';
+  if(window.BOF_STAGE5_CELLS&&window.BOFX&&BOFX.cells){
+    for(const _s5cell in BOF_STAGE5_CELLS)BOFX.cells[_s5cell]=BOF_STAGE5_CELLS[_s5cell];
+  }
+  /* The remaining modern combat reels use the same runtime-atlas contract. Source folders stay
+     intact for editing; only the browser lookup is redirected to per-stage pages. */
+  if(window.BOF_STAGE_RUNTIME_ATLASES&&window.BOFX&&BOFX.cells){
+    const _RA=BOF_STAGE_RUNTIME_ATLASES;
+    for(const _root in _RA.roots)X._src[_root]=_RA.roots[_root];
+    for(const _cell in _RA.cells)BOFX.cells[_cell]=_RA.cells[_cell];
+  }
   for(const _s9u of _S9_ATTACK_UNITS) for(let _s9f=0;_s9f<8;_s9f++){
     const _n=String(_s9f+1).padStart(2,'0');
     X._src['s9atk_'+_s9u+'_'+_s9f]='assets/game/stage9_enemy_attacks/'+_s9u+'/'+_n+'.png';
@@ -2167,6 +2229,25 @@ const XART=(function(){
   X.get=function(k){ return X.safe(k); };
   X.raw=function(k){ return X._touch(k); };      // for the few places that need the real object
   X.rdy=function(k){ const im=X._touch(k); return !!(im&&im.complete&&im.naturalWidth>0); };
+  /* Resolve a logical sprite/cell to the one texture the browser actually downloads.  Stage
+     loading uses this to turn hundreds of atlas-cell names into a handful of unique sheets,
+     avoiding a request/decode storm on lower-powered machines. */
+  X.root=function(k){
+    let T;
+    if(window.BOFX&&BOFX.playercells&&(T=BOFX.playercells[k])) return T[0];
+    if(window.BOFX&&BOFX.cells&&(T=BOFX.cells[k])) return 'nca_'+T[0];
+    if(window.BOFX&&BOFX.ecells&&(T=BOFX.ecells[k])) return 'nes_'+T[0];
+    if(window.BOFX&&BOFX.ships&&BOFX.ships[k]) return (BOFX.shipAtlas||'nsa_ships');
+    return k;
+  };
+  X.releaseRoot=function(root){
+    if(!root)return;
+    if(X.img[root]!==undefined)delete X.img[root];
+    /* General atlas cells are real canvases after first use; release only those belonging to the
+       retired stage texture. Shared player/ship sheets are never passed here. */
+    for(const k in _genCells)if(X.root(k)===root)delete _genCells[k];
+    for(const k in _eCellCache)if(X.root(k)===root)delete _eCellCache[k];
+  };
   /* ⚠ THESE TWO READ THE CACHE DIRECTLY AND THAT IS WHY THE GAME WENT BLACK (drop 0806y).
 
      X.img is XART's cache of decoded Images. Since 0806u a key can instead be a CELL, which
@@ -2186,6 +2267,22 @@ const XART=(function(){
   return X;
 })();
 const _xtc=document.createElement('canvas'), _xtx=_xtc.getContext('2d');
+function laserMistAtlasRect(key){
+  let m=/^micon_lasermist_([1-5])$/.exec(key||'');
+  if(m)return {x:(+m[1]-1)*160,y:0,w:152,h:152};
+  m=/^lmfx_beam_([1-5])_([0-3])$/.exec(key||'');
+  if(m)return {x:+m[2]*72,y:160+(+m[1]-1)*96,w:64,h:88};
+  m=/^lmfx_(impact|decal)_([0-7])$/.exec(key||'');
+  if(m)return {x:+m[2]*112,y:m[1]==='impact'?648:760,w:104,h:104};
+  m=/^lmfx_bubble_([0-7])$/.exec(key||'');
+  if(m)return {x:296+(+m[1])*88,y:160,w:80,h:80};
+  return null;
+}
+function laserMistAtlasBlit(g,key,x,y,w,h,centred){
+  const r=laserMistAtlasRect(key);if(!g||!r||typeof XART==='undefined'||!XART.rdy('bof_laser_mist_weapon_atlas'))return null;
+  const im=XART.get('bof_laser_mist_weapon_atlas'),dw=w||r.w,dh=h||((w||r.w)*r.h/r.w),dx=centred?x-dw/2:x,dy=centred?y-dh/2:y;
+  g.drawImage(im,r.x,r.y,r.w,r.h,dx,dy,dw,dh);return dw;
+}
 function flashImg(im,x,y,w,h,alpha){ if(!im||!im.naturalWidth) return;
   _xtc.width=im.naturalWidth;_xtc.height=im.naturalHeight;
   _xtx.globalCompositeOperation='source-over';_xtx.globalAlpha=1;_xtx.clearRect(0,0,_xtc.width,_xtc.height);
@@ -2207,120 +2304,9 @@ function hx(h){ h=String(h).replace('#',''); return [parseInt(h.slice(0,2),16),p
 function rgba(c,a){ return 'rgba('+c[0]+','+c[1]+','+c[2]+','+a+')'; }
 function lighten(h,f){ const c=hx(h); const r=Math.min(255,Math.round(c[0]+(255-c[0])*f)); const g=Math.min(255,Math.round(c[1]+(255-c[1])*f)); const b=Math.min(255,Math.round(c[2]+(255-c[2])*f)); return 'rgb('+r+','+g+','+b+')'; }
 function anyTap(){ for(const k in Input.keys){ if(Input.tap(k)) return true; } return false; }
-/* ============================================================
-   SPRITE GAME FONT (drop 0724cq)
-
-   The game's text was drawn with ctx.fillText in a TTF. This routes EVERY text call through the
-   94-glyph sprite font instead — uniform 32x40 cells, ASCII 33..126, the fullest set we own.
-
-   It is installed by WRAPPING ctx.fillText once rather than editing 132 call sites. Every existing
-   call keeps working unchanged: the wrapper reads ctx.font for the size, ctx.textAlign for the
-   anchor and ctx.fillStyle for the colour, and falls straight back to the original fillText for
-   anything the sprite font cannot draw. One install point, one place to turn it off.
-
-   METRICS, measured from the glyphs rather than guessed:
-     cell 32x40, glyph cap height median 22px, baseline median at y=29 of the cell.
-   So a request for "16px" draws a cell of 16*(40/22) and places its top at baseline-29*scale,
-   which lands the sprite where the TTF would have put it.
-   ============================================================ */
-const GF = {
-  /* DEFAULT OFF (drop 0724cr). Wrapping ctx.fillText broke input at the start screen in the
-     browser — a symptom I could not reproduce in the harness, which stubs the canvas. Shipping a
-     build I cannot verify is worse than shipping the TTF, so the sprite font is off by default and
-     the game runs exactly as it did before. Set GF.on=true in the console to try it. */
-  on: false,
-  cell: [32, 40], cap: 22, base: 29,
-  track: 0.86,                 // glyph advance as a fraction of cell width — the cells carry padding
-  _tint: new Map(),
-  key(ch){
-    const c = ch.charCodeAt(0);
-    if(c < 33 || c > 126) return null;                       // space and control chars have no glyph
-    // the extractor names punctuation cNNN (three digits) — padding to two produced 'c33' for '!'
-    // and every punctuation glyph silently failed to resolve.
-    if(!/[A-Za-z0-9]/.test(ch)) return 'ncm_font_c' + String(c).padStart(3,'0');
-    /* CASE-INSENSITIVE (drop 0801by). The gamefont exports one file per letter,
-       but SIX landed as lowercase filenames — ncm_font_b, _g, _m, _n, _p, _v —
-       almost certainly a case collision at export. Every other letter is
-       uppercase. A straight lookup therefore resolves 20 of 26 for uppercase
-       text and 6 of 26 for lowercase, and WHICH six flip depending on the case
-       you ask for. That is what the harness reported as "missing BGMNPV", and
-       after the aliases went in, "missing acdefh" — same defect, other side.
-
-       The face has no case distinction, it is one set of caps, so the lookup
-       tries the character then the other case. No caller has to know which way
-       a given glyph happened to export. */
-    const k='ncm_font_'+ch;
-    if(typeof XART!=='undefined' && XART._src && XART._src[k]) return k;
-    const alt=(ch===ch.toUpperCase())?ch.toLowerCase():ch.toUpperCase();
-    const k2='ncm_font_'+alt;
-    if(typeof XART!=='undefined' && XART._src && XART._src[k2]) return k2;
-    return k;
-  },
-  ready(){
-    return this.on && typeof XART !== 'undefined' && XART.rdy && XART.rdy('ncm_font_A');
-  },
-  sizeOf(fontStr){
-    const m = /(\d+(?:\.\d+)?)px/.exec(fontStr || '');
-    return m ? parseFloat(m[1]) : 10;
-  },
-  glyph(k, colour){
-    if(!colour || colour === '#ffffff' || colour === '#fff') return XART.get(k);
-    const id = k + '|' + colour;
-    if(this._tint.has(id)) return this._tint.get(id);
-    let g = null;
-    try { g = (typeof xartTint === 'function') ? xartTint(k, colour, 1) : null; } catch(e){ g = null; }
-    if(this._tint.size > 900) this._tint.clear();            // bounded: colours are few, but never unbounded
-    this._tint.set(id, g);
-    return g || XART.get(k);
-  },
-  width(text, px){
-    const sc = px / this.cap;
-    return String(text).length * this.cell[0] * sc * this.track;
-  },
-  draw(c2, text, x, y){
-    const px = this.sizeOf(c2.font);
-    const sc = px / this.cap;
-    const cw = this.cell[0] * sc, chh = this.cell[1] * sc;
-    const adv = cw * this.track;
-    const str = String(text);
-    let ox = x;
-    const al = c2.textAlign;
-    if(al === 'center') ox = x - (str.length * adv) / 2;
-    else if(al === 'right' || al === 'end') ox = x - str.length * adv;
-    const top = y - this.base * sc;                          // fillText's y is the BASELINE
-    const colour = (typeof c2.fillStyle === 'string') ? c2.fillStyle : null;
-    for(let i = 0; i < str.length; i++){
-      const ch = str[i];
-      if(ch === ' ') { ox += adv; continue; }
-      const k = this.key(ch);
-      if(k && XART.rdy(k)){
-        const im = this.glyph(k, colour);
-        if(im) c2.drawImage(im, ox + (adv - cw) / 2, top, cw, chh);
-      }
-      ox += adv;
-    }
-    return true;
-  }
-};
-function installGameFont(c2){
-  if(!c2 || c2._gfWrapped) return;
-  const orig = c2.fillText.bind(c2);
-  const origMeasure = c2.measureText.bind(c2);
-  c2._gfOrigFillText = orig;
-  c2.fillText = function(text, x, y, maxW){
-    if(GF.ready()){
-      try { if(GF.draw(c2, text, x, y)) return; } catch(e){ /* fall through to the TTF */ }
-    }
-    return orig(text, x, y, maxW);
-  };
-  c2.measureText = function(text){
-    if(GF.ready()){
-      try { return { width: GF.width(text, GF.sizeOf(c2.font)) }; } catch(e){}
-    }
-    return origMeasure(text);
-  };
-  c2._gfWrapped = true;
-}
+/* The retired ncm sprite-font wrapper was removed with its atlas cells. Canvas fallback text now
+   remains a fallback only; authored stage text and the Fury dialogue face are selected explicitly
+   by the surfaces that own them. */
 function drawBootBackdrop(dt,darken){
   if(XART.rdy('nbt_1')){ XART.cover('nbt_1');
   } else if(XART.rdy('bootimage')){ XART.cover('bootimage');
@@ -2621,7 +2607,7 @@ function debugEquip(slot, opts){
   /* a debug grant is a grant: it has to write the HELD variant too, or the slot keeps whatever
      the last pickup put there and the debug key silently does half its job (drop 0814a).
      `opts.variant` lets a key ask for a specific one; otherwise take the dispenser's answer. */
-  if(!run.wvars) run.wvars=[null,null,null,null,null,null];
+  if(!run.wvars) run.wvars=[null,null,null,null,null,null,null];
   run.wvars[slot] = (opts && opts.variant) ||
                     ((opts && opts.forceIce) ? 'icebreath' : null) ||
                     ((opts && opts.forceFire) ? 'fireorb' : null) ||
@@ -3689,16 +3675,9 @@ function drawCutscene(sc){
       const _nameX=_nx+ew+S(6);
       if(_dialogueFace && typeof msgTextLeft==='function')
         msgTextLeft(_name,_nameX,_ny+eh*0.5,_nameH,_spkTint,_spkTint?1:null,1,0.06,1);
-      else {
-        const _cf=(typeof uiFontArt==='function')?uiFontArt():null;
-        if(_cf && typeof stageWidth==='function')
-          stageText(_cf,_name,_nameX+stageWidth(_cf,_name,_nameH,0.06)/2,
-                    _ny+eh*0.5,_nameH,_spkTint,_spkTint?1:null,1,0.06);
-      }
     }
   }
   {
-    const _cf2=(typeof uiFontArt==='function')?uiFontArt():null;
     /* ⚠ LAID OUT TO THE FRAME'S INTERIOR, AND SIZED TO IT (drop 0811q).
 
        This used a flat S(12) inset and a dw-S(24) column, which is 6% wider than the panel's
@@ -3714,34 +3693,10 @@ function drawCutscene(sc){
     const _inY=dy+dh*DLGW_IN_Y, _inH=dh*DLGW_IN_H;
     const _nameH=S(16), _bodyTop=_inY+_nameH*1.55;      // clear of the speaker's name row
     const _room=Math.max(_nameH, _inY+_inH-_bodyTop);
-    if(sc.text && _dialogueFace && typeof msgWrap==='function' && typeof msgTextLeft==='function'){
-      const _full=String(sc.fullText||sc.text), _shown=String(sc.text).length, _sp=0.045;
-      let _H=S(16), _lines=[];
-      for(let i=0;i<16 && _H>S(10);i++){
-        _lines=msgWrap(_full,_inW,_H,_sp);
-        if(_lines.length*_H*1.34<=_room) break;
-        _H*=0.94;
-      }
-      let _budget=_shown, _yy=_bodyTop+_H*0.52;
-      for(const _line of _lines){
-        if(_budget<=0) break;
-        const _part=_line.slice(0,Math.min(_line.length,_budget));
-        const _cx=_inX+_inW*.5,_edge=Math.max(1,Math.round(_H*.10));
-        msgText(_part,_cx-_edge,_yy,_H,'#000000',1,.94,_sp);
-        msgText(_part,_cx+_edge,_yy,_H,'#000000',1,.94,_sp);
-        msgText(_part,_cx,_yy-_edge,_H,'#000000',1,.94,_sp);
-        msgText(_part,_cx,_yy+_edge,_H,'#000000',1,.94,_sp);
-        msgText(_part,_cx,_yy,_H,DIALOGUE_BODY_COLOR,1,1,_sp);
-        _budget-=_line.length+1;
-        _yy+=_H*1.34;
-      }
-    } else if(sc.text && typeof stageWrap==='function' && _cf2){
-      let _H=S(16);
-      for(let i=0;i<16 && _H>S(10); i++){
-        if(stageWrapCount(_cf2, sc.text, _H, _inW, 0.05)*_H*1.40 <= _room) break;
-        _H*=0.94;
-      }
-      stageWrap(_cf2,sc.text,_inX,_bodyTop+_H*0.7,_H,_inW,1.40,1,0.05,DIALOGUE_BODY_COLOR,1);
+    if(sc.text && _dialogueFace && typeof msgDrawBlock==='function'){
+      msgDrawBlock({text:String(sc.fullText||sc.text),budget:String(sc.text).length,
+        x:_inX,y:_bodyTop,w:_inW,h:_room,maxH:S(16),minH:S(7),lineMul:1.34,spacing:0.045,
+        color:DIALOGUE_BODY_COLOR,align:'center',outline:Math.max(1,Math.round(S(1)))});
     }
   }
   if(_dialogueFace) msgFaceUse(null);
@@ -4184,8 +4139,17 @@ function drawLevelMaster(dt){
   if(_arenaLava) _arenaLavaScroll += dt * ARENA_LAVA_SPD;   // (the `else` it hung off moved above, 0819d)
   let _floorDy = 0;        // kept at 0: the master is not slid any more (0814c). See the arena block.
   if(_bossRun){
-    _bossHold = Math.min(1, (_bossHold||0) + dt*1.6);            // 0 -> 1 over ~0.6s
-    mapScroll = Math.min(range, mapScroll + dt*40*(1-_bossHold));
+    /* Stage 7's Warden is a pursuit fight. Once its entrance finishes the camera deliberately
+       walks BACK down the single continuous sewer plate while the machine advances on the ship.
+       This is the same master and the same mapScroll value -- no section swap or teleport. */
+    const _s7back=(typeof s7WardenReverseScroll==='function')?s7WardenReverseScroll():0;
+    if(_s7back>0){
+      _bossHold=1;
+      mapScroll=Math.max(0,mapScroll-dt*_s7back);
+    } else {
+      _bossHold = Math.min(1, (_bossHold||0) + dt*1.6);          // 0 -> 1 over ~0.6s
+      mapScroll = Math.min(range, mapScroll + dt*40*(1-_bossHold));
+    }
   } else {
     _bossHold = 0;
     mapScroll = Math.min(range, mapScroll + dt*40);
@@ -5149,6 +5113,7 @@ function weaponDisplayName(w, opt){
 }
 function weaponIconKey(w, lv, opt){
   if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive()) return spaceWeaponIconKey();
+  if(w===6)return 'micon_lasermist_'+clamp(lv||1,1,5);
   const base = ({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[w] || 'mg';
   const _pk = (typeof _pilotKey==='function') ? _pilotKey() : '';
   /* Maverick owns a separate five-tier laser family. The pickup, HUD and equipped plate all ask
@@ -5206,13 +5171,14 @@ function weaponLegacyName(w, lv){
   if(w===4 && flameIsIce()) return null;                                   // ice breath
   if(w===5 && typeof orbIsFire==='function' && orbIsFire()) return null;   // fire / fire-ice
   if(w===3 && typeof _pilotKey==='function' && _pilotKey()==='maverick') return null;
-  return 'pw_'+(({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[w]||'mg')+'_'+lv;
+  return 'pw_'+(({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[w]||'mg')+'_'+lv;
 }
 /* The twin Warp Sentinels are an unidentified fusion event, not a conventional health check.
    Their damage state stays in the world presentation.  The boss gauge becomes legal only after
    convergence completes and the resulting Tidal Sovereign exists. */
 function bossHealthVisible(b){
   if(!b||b.dead)return false;
+  if(b._s7FinalNoBar)return false;
   const F=b._s9fusion;
   return !(F&&F.phase!=='tidal');
 }
@@ -5258,7 +5224,7 @@ function drawHUDCustom(){
       for(let i=0;i<5;i++){ ctx.fillStyle=(i<lv)?col:'#1b2430'; ctx.fillRect(x,vy,PW,5); x+=PW+GAP; } };
     _pips(0.757*VW, clamp(run.shield||0,0,5));
     _pips(0.835*VW, clamp((run.speedLevel||0),0,5));
-    const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[run.weapon]||'mg', /* COLE'S TIERS WERE CLAMPED OUT OF THE HUD (drop 0801cb). Mike: "cole, I cant
+    const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg', /* COLE'S TIERS WERE CLAMPED OUT OF THE HUD (drop 0801cb). Mike: "cole, I cant
      get lvl 6 lvl 7 or lvl 8 laser icons even when at lvl 5". The level was
      clamped to 5 before it ever reached the icon lookup, so tiers 6-8 could not
      display no matter how they were reached — including via the 1/2/3 keys. Cole
@@ -5322,8 +5288,8 @@ function drawHUDCustomImg(){
     if(run.bombs<=6){ let bx=cx[3]-(run.bombs-1)*8; for(let i=0;i<run.bombs;i++){ ctx.fillStyle='#15181d'; circle(bx,vy+1,3.7); ctx.fillStyle='#ffd36b'; circle(bx,vy-0.4,1.2); ctx.fillStyle='#ff9a3a'; ctx.fillRect(bx-0.8,vy-3.2,1.6,1.5); bx+=13; } }
     else { ctx.save(); ctx.shadowColor='#ffae6a'; ctx.shadowBlur=4; ctx.fillStyle='#ffae6a'; ctx.font='bold 16px "BOFmil", monospace'; ctx.fillText('x'+run.bombs,cx[3],vy); ctx.restore(); }
   }
-  const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[run.weapon]||'mg', wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
-  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[wlv-1]:run.spaceWeapon===1?'#a45bff':'#59a9ff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a'})[run.weapon]||'#fff');
+  const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg', wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
+  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[wlv-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
   /* ⚠ THE ICONS LIVE IN BOFX.icons, AND THERE IS ALREADY A FUNCTION FOR THEM (drop 0810r).
      Mike: "I see your using a basic graphic for fireball icon, Im assuming yuo lost the icons."
 
@@ -5461,8 +5427,8 @@ function drawHUDStrip(g){
   else { g.fillStyle='#cfe6ff'; g.font='bold 16px monospace'; g.fillText('x'+run.lives,cx[2],vy); }
   if(run.bombs<=4){ let bx=cx[3]-(run.bombs-1)*8; for(let i=0;i<run.bombs;i++){ g.fillStyle='#15181d'; _circG(g,bx,vy+1,3.7); g.fillStyle='#ffd36b'; _circG(g,bx,vy-0.4,1.2); g.fillStyle='#ff9a3a'; g.fillRect(bx-0.8,vy-3.2,1.6,1.5); bx+=16; } }
   else { g.fillStyle='#ffae6a'; g.font='bold 16px monospace'; g.fillText('x'+run.bombs,cx[3],vy); }
-  const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[run.weapon]||'mg', wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
-  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[wlv-1]:run.spaceWeapon===1?'#a45bff':'#59a9ff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a'})[run.weapon]||'#fff');
+  const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg', wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
+  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[wlv-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
   if(ASSETS.has(wIcon)){ const f=ASSETS.frames[wIcon], ss=Math.min(30/f[2],24/f[3]), dw=f[2]*ss, dh=f[3]*ss;
     g.save(); g.shadowColor=wglow; g.shadowBlur=8; g.drawImage(ASSETS.img,f[0],f[1],f[2],f[3],Math.round(cx[4]-dw/2),Math.round(HUDH*0.46-dh/2),dw,dh); g.restore(); }
   else { g.fillStyle=wglow; g.font='bold 11px monospace'; g.fillText('L'+wlv,cx[4],vy-2); }
@@ -5605,10 +5571,10 @@ function drawHUDCustomLegacy(){
   let bx=224; for(let i=0;i<Math.min(run.bombs,6);i++){ ctx.fillStyle='#15181d'; circle(bx,36,3.2); ctx.fillStyle='#363d47'; circle(bx-1,35,1.2); ctx.fillStyle='#0a0c0f'; ctx.fillRect(bx-1,32.6,2,1.5); ctx.fillStyle='#ffd36b'; circle(bx,31.6,0.9); bx+=10; }
 
   // WEAPON module
-  const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb'})[run.weapon]||'mg';
-  const wname=spaceWeaponsActive()?spaceWeaponName():(({0:'MACHINE GUN',1:'SPREAD FIRE',2:'MISSILE',3:'LASER',4:'FLAMETHROWER',5:'ICE ORB'})[run.weapon]||'');
+  const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg';
+  const wname=spaceWeaponsActive()?spaceWeaponName():(({0:'MACHINE GUN',1:'SPREAD FIRE',2:'MISSILE',3:'LASER',4:'FLAMETHROWER',5:'ICE ORB',6:'LASER MIST'})[run.weapon]||'');
   const wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
-  const wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[wlv-1]:run.spaceWeapon===1?'#a45bff':'#59a9ff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a'})[run.weapon]||'#fff');
+  const wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[wlv-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
   hudPanel(VW-152,5,146,36);
   const mx=VW-130, my=23;
   ctx.fillStyle='#0c0f15'; hudSlot(mx-16,8,32,30,5);
@@ -5659,7 +5625,28 @@ function drawHUDFramed(){
   for(let i=0;i<slots.length;i++){ if(slots[i]&&ASSETS.has(slots[i])) ASSETS.blit(slots[i],sx[i],460,30,30); }
 }
 
-const SS = 2;                       /* supersample backing for crisp detailed art */
+/* Start in the authored supersampled mode.  If PLAY sustains sub-30fps for more than a short
+   spike, the governor drops the backing store to native 480x512 (CSS remains pixel-perfect).
+   That removes 75% of canvas fill work on a laptop without changing simulation speed, hitboxes,
+   timing or layout. `?quality=high` locks SS=2; `?quality=performance` starts native. */
+let _renderQuality='auto';
+try{_renderQuality=(new URLSearchParams(location.search).get('quality')||'auto').toLowerCase();}catch(_rq){}
+let SS = _renderQuality==='performance'?1:2;
+let _renderSlowT=0,_renderScaleChanged=SS===1;
+function setRenderScale(scale){
+  scale=scale<=1?1:2;if(scale===SS)return;
+  SS=scale;cv.width=VW*SS;cv.height=VH*SS;ctx.imageSmoothingEnabled=false;
+}
+function renderPerformanceTick(rawDt){
+  if(_renderQuality==='high'||_renderScaleChanged||SS<=1)return;
+  if(state!==GS.PLAY||stateT<1.25){_renderSlowT=Math.max(0,_renderSlowT-.05);return;}
+  const d=Math.max(0,Math.min(rawDt||0,.25));
+  _renderSlowT=d>.034?_renderSlowT+d:Math.max(0,_renderSlowT-d*.70);
+  if(_renderSlowT>1.20){
+    _renderScaleChanged=true;setRenderScale(1);
+    try{if(typeof floatText==='function')floatText(VW/2,PLAY.y+28,'PERFORMANCE MODE','#8fdfff');}catch(_pm){}
+  }
+}
 cv.width = VW*SS; cv.height = VH*SS;
 /* ⚠ NEAREST-NEIGHBOUR IS THE DEFAULT, NOT AN OPT-IN (drop 0813b)
    Mike: "Its likke you've upscaled my levels in-game and they dont look as clear ... the stages
@@ -5724,7 +5711,7 @@ function _setCinematicViewport(on){
   }catch(_cinemaView){}
 }
 window.__bofResizeCinematic=function(){
-  try{if(state===GS.CUTSCENE)_setCinematicViewport(true);}catch(_cinResize){}
+  try{if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY)_setCinematicViewport(true);}catch(_cinResize){}
 };
 window.addEventListener('resize',window.__bofResizeCinematic);
 
@@ -5839,6 +5826,15 @@ const Audio = (()=>{
   const SFX = {
     shoot(){ tone(880,0.06,'square',0.10,-300); tone(1320,0.04,'square',0.05,-200); },
     spread(){ tone(660,0.07,'sawtooth',0.09,-260); },
+    /* Laser Mist is built inside the game's sound engine: liquid broadband motion carries the
+       shot while soft sine bodies provide energy without becoming another piercing "doot". The
+       split/impact cues self-throttle because one wave can create 27 visual children. */
+    laserMistFire(){noise(.19,.16,3400,-1500);noise(.13,.08,7600,-2600);tone(126,.17,'sine',.075,+62);},
+    laserMistSplit(){const n=(typeof performance!=='undefined'?performance.now():Date.now());if(n-(SFX._lmSplit||0)<105)return;SFX._lmSplit=n;
+      noise(.11,.11,5100,-2500);tone(310,.10,'sine',.050,+180);},
+    laserMistImpact(){const n=(typeof performance!=='undefined'?performance.now():Date.now());if(n-(SFX._lmHit||0)<82)return;SFX._lmHit=n;
+      noise(.13,.12,2700,-1850);tone(96,.12,'sine',.045,+36);},
+    laserMistUnlock(){noise(.48,.20,2200,+2600);tone(220,.42,'sine',.12,+440);setTimeout(()=>tone(660,.24,'triangle',.10,+330),185);},
     grenade(){ tone(180,0.12,'square',0.16,-60); noise(0.07,0.10,800,-400); },
     /* ⚠ ONE TONE PER VOLLEY, NOT PER BULLET (drop 0822ae). Mike: "stop doing the beep beep
        beep noise with all these bosses."
@@ -6279,7 +6275,7 @@ function uiBlipRep(){
 }
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
-  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene' };
+  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene' };
 let state = GS.BOOT;
 /* ============================================================
    DEBUG SWITCHBOARD (drop 0724do)
@@ -6426,16 +6422,35 @@ let DIFF = DIFFS.normal;
    already on screen.
    ============================================================ */
 const STAGE_THREAT={
-  1:{hp:1.00,fire:1.00,bullet:1.00,bossHp:1.00,bossRate:1.00,bossDensity:1.00},
-  2:{hp:1.00,fire:1.00,bullet:1.00,bossHp:1.04,bossRate:1.03,bossDensity:1.00},
-  3:{hp:1.05,fire:1.07,bullet:1.04,bossHp:1.10,bossRate:1.08,bossDensity:1.05},
-  4:{hp:1.10,fire:1.13,bullet:1.08,bossHp:1.16,bossRate:1.14,bossDensity:1.10},
-  5:{hp:1.15,fire:1.20,bullet:1.12,bossHp:1.22,bossRate:1.20,bossDensity:1.15},
-  6:{hp:1.20,fire:1.27,bullet:1.17,bossHp:1.30,bossRate:1.28,bossDensity:1.20},
-  7:{hp:1.25,fire:1.34,bullet:1.22,bossHp:1.38,bossRate:1.36,bossDensity:1.26},
-  8:{hp:1.30,fire:1.42,bullet:1.27,bossHp:1.48,bossRate:1.45,bossDensity:1.32},
-  9:{hp:1.32,fire:1.46,bullet:1.30,bossHp:1.52,bossRate:1.50,bossDensity:1.35},
+  1:{hp:1.00,fire:1.06,bullet:1.02,bossHp:1.00,bossRate:1.05,bossDensity:1.00},
+  2:{hp:1.02,fire:1.12,bullet:1.06,bossHp:1.08,bossRate:1.10,bossDensity:1.03},
+  3:{hp:1.06,fire:1.18,bullet:1.10,bossHp:1.13,bossRate:1.16,bossDensity:1.08},
+  4:{hp:1.11,fire:1.24,bullet:1.14,bossHp:1.19,bossRate:1.22,bossDensity:1.13},
+  5:{hp:1.16,fire:1.30,bullet:1.18,bossHp:1.25,bossRate:1.28,bossDensity:1.18},
+  6:{hp:1.21,fire:1.36,bullet:1.22,bossHp:1.33,bossRate:1.35,bossDensity:1.23},
+  7:{hp:1.26,fire:1.42,bullet:1.26,bossHp:1.41,bossRate:1.42,bossDensity:1.28},
+  8:{hp:1.30,fire:1.48,bullet:1.30,bossHp:1.49,bossRate:1.49,bossDensity:1.33},
+  9:{hp:1.33,fire:1.53,bullet:1.34,bossHp:1.54,bossRate:1.54,bossDensity:1.37},
 };
+/* Movement, formation and scheduler pressure are intentionally separate from HP.  This is the
+   arcade difficulty ramp: early stages add better attack runs and slightly tighter support;
+   later stages gain faster entries and shorter breaths without turning fodder into damage
+   sponges.  Values stay data-driven so a playtest can tune one stage without destabilising all. */
+const STAGE_AI_PROFILE={
+  1:{move:1.00,formation:1.03,waveGap:.90,cap:11,spawn:.12},
+  2:{move:1.04,formation:1.10,waveGap:.88,cap:7, spawn:.09},
+  3:{move:1.06,formation:1.12,waveGap:.84,cap:7, spawn:.10},
+  4:{move:1.08,formation:1.14,waveGap:.80,cap:7, spawn:.11},
+  5:{move:1.10,formation:1.16,waveGap:.75,cap:8, spawn:.12},
+  6:{move:1.12,formation:1.18,waveGap:.70,cap:8, spawn:.13},
+  7:{move:1.14,formation:1.20,waveGap:.62,cap:9, spawn:.14},
+  8:{move:1.16,formation:1.23,waveGap:.52,cap:10,spawn:.15},
+  9:{move:1.18,formation:1.26,waveGap:.38,cap:12,spawn:.16},
+};
+function stageAiProfile(stage){
+  stage=clamp(stage||((typeof run!=='undefined'&&run.stage)||1),1,9);
+  return STAGE_AI_PROFILE[stage]||STAGE_AI_PROFILE[9];
+}
 function playerArsenalScore(){
   if(typeof run==='undefined'||!run)return 0;
   const levels=(run.wlevels||[]).concat(run.spaceLevels||[]).map(v=>Math.max(0,+v||0));
@@ -6468,11 +6483,15 @@ function combatThreat(stage){
     bossRate:base.bossRate*(1+power*0.18), bossDensity:base.bossDensity*(1+power*0.12),
     /* Stage 1 also receives the requested extra baseline traffic. The additional survival share
        rises gradually and is capped, so density pressure cannot become an unavoidable wall. */
-    spawn:1+(stage===1?.12:.04)+power*.13+survived*.17,
+    spawn:1+stageAiProfile(stage).spawn+power*.13+survived*.17,
     stage,build,survived
   };
 }
 function enemyBulletPressure(){return combatThreat().bullet;}
+function enemyCadencePressure(stage){
+  const d=(typeof DIFF!=='undefined'&&DIFF&&DIFF.eFire)?DIFF.eFire:1;
+  return Math.max(.35,d*combatThreat(stage).fire);
+}
 function bossCadencePressure(b){return (b&&b._threat?b._threat:combatThreat()).bossRate;}
 
 /* ============================================================
@@ -6574,11 +6593,24 @@ try{ const h=localStorage.getItem('bof_hi'); if(h) highScore=parseInt(h); }catch
 
 /* run state */
 const run = {
-  stage:1, score:0, lives:3, bombs:2, weapon:0, wlevel:1, wlevels:[1,1,1,1,1,1],
+  stage:1, score:0, lives:3, bombs:2, weapon:0, wlevel:1, wlevels:[1,1,1,1,1,1,1],
   speed:0, speedT:0, speedLevel:0, shield:0, power:0, distance:0, pilot:'axel',
-  spaceMode:false,spaceWeapon:0,spaceLevels:[1,0,0],gravityShipReady:false,
+  spaceMode:false,spaceWeapon:0,spaceLevels:[1,1,1],gravityShipReady:false,
 };
-const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','ICE ORB'];
+const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','ICE ORB','LASER MIST'];
+const LASER_MIST_UNLOCK_KEY='bof_laser_mist_unlocked';
+let laserMistUnlocked=false;
+try{laserMistUnlocked=localStorage.getItem(LASER_MIST_UNLOCK_KEY)==='1';}catch(_lmRead){}
+function laserMistIsUnlocked(){return !!laserMistUnlocked;}
+function laserMistUnlock(){
+  if(laserMistUnlocked)return false;
+  laserMistUnlocked=true;try{localStorage.setItem(LASER_MIST_UNLOCK_KEY,'1');}catch(_lmWrite){}
+  if(typeof laserMistWarm==='function')laserMistWarm();
+  run._wbag=[];
+  if(typeof arcadeBanner==='function')arcadeBanner('LASER MIST UNLOCKED');
+  if(Audio&&Audio.SFX&&(Audio.SFX.laserMistUnlock||Audio.SFX.powerup))(Audio.SFX.laserMistUnlock||Audio.SFX.powerup)();
+  return true;
+}
 /* MISSILE AND SPECIAL ATTRIBUTION (drop 0807o). Mike asked the stats screen for missiles fired
    AND how many hit, plus special-ability damage and its own accuracy. Only `missiles` (fired)
    existed; the other four are new.
@@ -6608,9 +6640,9 @@ let pwTimer=0, spTimer=6;
 /* ============================================================
    ENEMY ENERGY SHIELDS (Enemy Shield FX Vol.1, 0825b)
 
-   Six authored families, reserved for explicit miniboss/boss encounter wiring. Nothing in the
-   ordinary spawn roster equips one automatically. Full fields sandwich a hull between back/front
-   plates; directional deflectors sit on the south-facing side of the unit.
+   Six authored families. Elite drone loadouts below deliberately introduce the mechanic on
+   Stages 2/5/7/8/9; full fields sandwich a hull between back/front plates and directional
+   deflectors sit on the south-facing side of the unit.
    ============================================================ */
 const ENEMY_SHIELD_FAMILY={
   ion:    {kind:'field', prefix:'nes_ion',    hit:0},
@@ -6620,12 +6652,35 @@ const ENEMY_SHIELD_FAMILY={
   gold:   {kind:'plate', prefix:'nes_gold',   hit:9},
   prism:  {kind:'plate', prefix:'nes_prism',  hit:9}
 };
-const ENEMY_SHIELD_LOADOUT=Object.freeze({}); // explicit reservation: no rank-and-file assignments
+const ENEMY_SHIELD_LOADOUT=Object.freeze({
+  /* Stage 2: introduce one full field and one directional plate. */
+  disc:         {stage:2,family:'ion',    ratio:.30,drawScale:2.18},
+  eye:          {stage:2,family:'hex',    ratio:.27},
+  /* Stage 5: alien support/drone specialists. */
+  s5gravity:    {stage:5,family:'violet', ratio:.34,drawScale:2.12},
+  s5satellite:  {stage:5,family:'prism',  ratio:.30},
+  s5repair:     {stage:5,family:'ion',    ratio:.28,drawScale:2.16},
+  s5leech:      {stage:5,family:'violet', ratio:.34,drawScale:2.10},
+  /* Stage 7: mechanical/toxic drone silhouettes only; static mines and barrels stay static. */
+  s7sampler:    {stage:7,family:'hex',    ratio:.30},
+  s7skimmer:    {stage:7,family:'gold',   ratio:.34},
+  /* Stage 8: living rift drones. */
+  s8deathorb:   {stage:8,family:'crimson',ratio:.36,drawScale:2.02},
+  s8parasite:   {stage:8,family:'prism',  ratio:.31},
+  s8scout:      {stage:8,family:'crimson',ratio:.33,drawScale:2.08},
+  s8leech:      {stage:8,family:'violet', ratio:.30,drawScale:2.12},
+  /* Stage 9: the void roster combines both field and directional shield reads. */
+  s9beacon:     {stage:9,family:'ion',    ratio:.32,drawScale:2.16},
+  s9prism:      {stage:9,family:'prism',  ratio:.38},
+  s9ring:       {stage:9,family:'violet', ratio:.30,drawScale:2.10},
+  s9singularity:{stage:9,family:'gold',   ratio:.34}
+});
 function enemyShieldEquip(e,family,energy,opt={}){
   if(!e) return null;
   const F=ENEMY_SHIELD_FAMILY[family]; if(!F) return null;
   const cap=Math.max(1,Number(energy)||1);
   e._esh={family, kind:F.kind, energy:cap, max:cap, drawScale:Number(opt.drawScale)||0,
+          breakDelay:Number(opt.breakDelay)||1.4, regen:Number(opt.regen)||.07,
           phase:'deploy', animT:0, hitT:0, sinceHit:99, breakT:0, impactCd:0};
   /* Touch every frame in this one family at spawn. The decode begins before the unit reaches the
      playfield, without putting all six shield volumes on the boot path. */
@@ -6652,7 +6707,7 @@ function enemyShieldTick(e,dt){
     if(s.breakT<=0){ s.energy=Math.max(1,s.max*0.45); s.phase='deploy'; s.animT=0; }
     return;
   }
-  if(s.sinceHit>=0.9 && s.energy<s.max) s.energy=Math.min(s.max,s.energy+s.max*0.07*dt);
+  if(s.sinceHit>=0.9 && s.energy<s.max) s.energy=Math.min(s.max,s.energy+s.max*s.regen*dt);
 }
 function enemyShieldFrame(s){
   if(s.phase==='deploy') return Math.min(3,Math.floor(s.animT/0.085));
@@ -6705,7 +6760,7 @@ function enemyShieldIntercept(e,dmg,b){
     if(Audio.SFX.projectileRicochet) Audio.SFX.projectileRicochet(); else if(Audio.SFX.shieldHitLight) Audio.SFX.shieldHitLight();
   } else if(Audio.SFX.shieldHitLight) Audio.SFX.shieldHitLight();
   if(s.energy<=0){
-    s.phase='broken'; s.breakT=1.4; s.animT=0; s.hitT=0;
+    s.phase='broken'; s.breakT=s.breakDelay; s.animT=0; s.hitT=0;
     if(Audio.SFX.shieldBreakCombat) Audio.SFX.shieldBreakCombat();
   }
   return true;
@@ -6727,6 +6782,13 @@ function drawEnemyShieldLayer(e,front){
 }
 function drawEnemyShieldBack(e){ drawEnemyShieldLayer(e,false); }
 function drawEnemyShieldFront(e){ drawEnemyShieldLayer(e,true); }
+function enemyShieldAutoEquip(e){
+  if(!e||e._esh||typeof run==='undefined')return null;
+  const L=ENEMY_SHIELD_LOADOUT[e.type];
+  if(!L||run.stage!==L.stage)return null;
+  const body=Math.max(1,e.maxhp||e.hp||1),energy=Math.max(4,Math.round(body*L.ratio));
+  return enemyShieldEquip(e,L.family,energy,{drawScale:L.drawScale||0,breakDelay:3.15,regen:.035});
+}
 function enemyShieldFxUpdate(dt){
   for(const f of enemyShieldFx) f.t+=dt;
   enemyShieldFx=enemyShieldFx.filter(f=>f.t<f.dur);
@@ -8639,6 +8701,10 @@ const SHIPS=[];
      last point before the enemy is finalised, and these types carry NO case in the switch
      below, so nothing downstream reassigns art/pattern/size. See NEF_S1. */
   if(typeof applyNefUnit==='function') applyNefUnit(c, _rk);   // no-op unless a row matches
+  /* A mapped encounter may deliberately change the weapon role while retaining the same hull.
+     The roster supplies the default, but an explicit authoring option wins. This restores the
+     Stage-1 heavy missile rows, which were silently changed back to machine guns by NEF_S1. */
+  if(opt._atk!=null)c._atk=opt._atk;
   /* Stage-9's final roster lock is deliberately applied at the finished-object handoff below.
      Several legacy fallbacks between here and enemies.push() still assign a generic pattern. */
 
@@ -9347,6 +9413,9 @@ const SHIPS=[];
   /* FINAL Stage-9 lock.  This must be after every generic art/pattern fallback: otherwise the
      void roster can look correct while silently running the default movement and never firing. */
   if(typeof applyS9Unit==='function') applyS9Unit(c, _rk);
+  /* Shield assignment is intentionally last: stage-specific setup above owns final HP/type/size,
+     so capacity and field footprint are computed from the actual unit that enters the array. */
+  if(typeof enemyShieldAutoEquip==='function')enemyShieldAutoEquip(c);
   enemies.push(c);
   return c;
 }
@@ -10416,7 +10485,7 @@ function enemyVolleyTick(e, dt){
   if(!(e.y>0 && e.y<VH*0.85)) return;                     // never from off the top edge
   const V = ENEMY_VOLLEY[e.type];
   if(e._volCd==null){ e._volCd = rnd(0.25, 0.8); return; } // staggered so a wave never fires as one
-  e._volCd -= dt*((typeof DIFF!=='undefined'&&DIFF.eFire)?DIFF.eFire:1);
+  e._volCd -= dt*enemyCadencePressure();
   if(e._volCd>0) return;
   /* RATE, not shape, is the dial Mike is asking for: "the enemies should be SHOOTING".
      Measured at the old 0.42 factor stage 7 produced 14 volleys in 15s across ~2.5 live units
@@ -10629,8 +10698,12 @@ if(typeof XART!=='undefined' && XART._src){
 
    This is deliberately stage-agnostic.  The Stage-2/3 blocks below decide the roster; this helper
    only preserves the placement/order language from the drawings. */
+let encounterRippleSeq=0;
 function encounterRipple(specs, gap){
-  specs=specs||[]; gap=(gap==null)?0.26:Math.max(0.16,gap);
+  specs=specs||[];
+  const profile=(typeof stageAiProfile==='function')?stageAiProfile():{formation:1};
+  gap=((gap==null)?0.26:Math.max(0.16,gap))/Math.max(1,profile.formation||1);
+  const squad=++encounterRippleSeq;
   for(let i=0;i<specs.length;i++){
     const s=specs[i]||{};
     aiDelay(i*gap, ()=>{
@@ -10639,6 +10712,13 @@ function encounterRipple(specs, gap){
       /* Distinct top rows plus the time ripple prevent two same-lane hitboxes touching at birth. */
       const y=(s.y!=null)?s.y:(-48-(i%3)*22);
       const e=spawnEnemy(s.type,x,y,Object.assign({},s.opt||{}));
+      if(e){
+        /* Every encounter file publishes its formation identity. Native controllers can now
+           coordinate opposite banks and stagger attacks without searching the enemy array or
+           accidentally synchronising with an unrelated wave of the same hull. */
+        e._squadId=squad;e._squadRank=i;e._squadSize=specs.length;
+        e._squadSide=(i<(specs.length-1)*.5)?-1:(i>(specs.length-1)*.5?1:0);
+      }
       if(e && s.scale!=null){
         const sc=clamp(s.scale,.5,1.5);
         e.w=Math.max(16,Math.round(e.w*sc));e.h=Math.max(16,Math.round(e.h*sc));
@@ -10694,7 +10774,9 @@ const SHIPBOSS = {
      reason, not shuffled " ember teaches "find the gap", then lance closes lanes so the gap-hunting
      habit gets you hit, then ember again, faster. */
   infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'infernogate', cd:1.20, proj:'magma',
-                  move:{ampX:120,ampY:6,period:3.30},
+                  /* Slow enough that wing-laser stations and charged magma commitments remain
+                     readable. This is a boss patrol, not fighter wobble. */
+                  move:{ampX:116,ampY:4,period:5.80},
                   mounts:{L:[-0.35,0.28],C:[0,0.40],R:[0.35,0.28]},
                   pats:['infernogate','fireorb','infernoburst','chargebeam','infernostorm']},
   /* STAGE 3 ROLE SWAP (0830). The end-stage slot still uses the stable `cryospear` runtime id,
@@ -10703,7 +10785,7 @@ const SHIPBOSS = {
      the player fights. The hardpoints are measured from the 256px Rime Wall plate: long lower
      cannons, the luminous centre core, and the two raised ice batteries. */
   cryospear:     {key:'nsb_rimewall_intact', name:'RIME WALL',           w:224,h:236, hpMul:1.58, pat:'s3wallcannons', cd:1.05, proj:'glacier',
-                  move:{ampX:74,ampY:4,period:4.20},
+                  move:{ampX:86,ampY:3,period:8.40},
                   mounts:{L:[-0.145,0.430],C:[0,-0.060],R:[0.145,0.430],
                           TL:[-0.235,-0.105],TR:[0.235,-0.105],V1:[-0.30,-0.06],V2:[0.30,-0.06]},
                   pats:['s3wallcannons','s3wallgate','s3wallhalo','s3walloverdrive'],
@@ -10769,7 +10851,11 @@ const SHIPBOSS = {
   glacierfortress:{key:'mbg3f_master',            name:'GLACIER FORTRESS', w:214,h:214, hpMul:1.44, pat:'rime', cd:1.26, proj:'glacier',
                   mounts:{L:[-0.27,0.27],C:[0,0.43],R:[0.27,0.27]},
                   pats:['rime','lance','siege'], dmg:['mbg3f_dmgov_0','mbg3f_dmgov_1']},
-  xenoregent:    {key:'nsb_xenoregent_intact',      name:'XENO REGENT',    w:216,h:208, hpMul:1.62, pat:'s5regentgrid',  cd:1.12, proj:'toxic',
+  /* Stage 5 already receives the campaign boss floor and threat multiplier before this table is
+     applied.  1.62 multiplied that fully-scaled pool a second time (about 5.4k HP on Normal), then
+     put a separate shield source in front of it.  Keep the Regent on the Stage-5 encounter budget;
+     its difficulty comes from the escort rig and changing lanes, not a duplicated life bar. */
+  xenoregent:    {key:'nsb_xenoregent_intact',      name:'XENO REGENT',    w:216,h:208, hpMul:1.00, pat:'s5regentgrid',  cd:1.12, proj:'toxic',
                   mounts:{L:[-0.22,0.24],C:[0,0.42],R:[0.22,0.24]},
                   pats:['s5regentgrid','s5regenthalo','s5regentmissile','s5regentcollapse'], dmg:['nsb_xenoregent_damaged','nsb_xenoregent_critical']},
   /* THE CARRIER IS A 16-FRAME LAUNCH CYCLE (drop 0813o). CF_DoomsdayCarrierAnimation-Lvl6:
@@ -10832,9 +10918,12 @@ const SHIPBOSS = {
                   mounts:{L:[-0.17,0.35],C:[0,0.43],R:[0.17,0.35]},
                   pat:'s9sentinelcross', cd:1.02, mini:true, pats:['s9sentinelcross','s9sentinelgate','s9sentinelrush'],
                   dmg:['ns9_warpsen_damaged','ns9_warpsen_critical']},
-  sludgeemperor: {key:'nsb_sludgeemperor_intact',   name:'SLUDGE EMPEROR', w:220,h:216, hpMul:1.62, pat:'s7pressure', cd:1.14, proj:'sludge',
-                  mounts:{L:[-0.29,0.28],C:[0,0.42],R:[0.29,0.28]},
-                  pats:['s7pressure','s7flood','s7crown','s7purge'], dmg:['nsb_sludgeemperor_damaged','nsb_sludgeemperor_critical']},
+  /* Keep the stable runtime id for stage/save compatibility, but replace the old floating green
+     craft with the grounded portal defender. Its dedicated director owns gait, teleport, mines,
+     cannon bursts and toxic artillery; none of the former hover/wobble path survives. */
+  sludgeemperor: {key:'cfx_stage7_warden_walk', name:'TOXIC PORTAL WARDEN', w:300,h:230, hpMul:1.86, pat:'s7warden', cd:99, proj:'toxic',
+                  mounts:{L:[-0.17,0.25],C:[0,0.38],R:[0.17,0.25]},
+                  pats:['s7warden']},
   dualscoopdredger:{key:'s7atk_dual_scoop_dredger_0',name:'DUAL SCOOP DREDGER',w:240,h:220,hp:360,mini:true,proj:'toxic',
                   mounts:{L:[-0.145,0.25],C:[0,0.36],R:[0.145,0.25]},pat:'s7dredge',cd:1.02,pats:['s7dredge','s7spore']},
   magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:1000, pat:'magmaflame', cd:1.12, mini:true, proj:'magma',
@@ -10844,7 +10933,9 @@ const SHIPBOSS = {
      CRYO SPEAR fighter. It is deliberately faster and narrower than the promoted fortress, with
      separate wing pods and a nose emitter instead of borrowing the Wall's artillery language. */
   rimewall:      {key:'nsb_cryo_spear',         name:'CRYO SPEAR',       w:195,h:195, hp:390, pat:'s3spearburst', cd:0.88, mini:true, proj:'cryo',
-                  move:{ampX:142,ampY:12,period:2.65},
+                  /* A boss patrol is a readable slide, not a fighter wobble. The previous 2.65s
+                     sine crossed this 220px lane at over 330px/s and made every fixed tell lie. */
+                  move:{ampX:110,ampY:5,period:7.40},
                   mounts:{L:[-0.245,0.205],C:[0,0.435],R:[0.245,0.205],
                           V1:[-0.29,0.02],V2:[0.29,0.02]},
                   pats:['s3spearburst','s3spearcross','s3spearcore']},
@@ -11188,6 +11279,7 @@ function shipBossInit(b, kind){
   if((kind==='rimewall'||kind==='cryospear') && typeof stage3BossInit==='function') stage3BossInit(b);
   if((kind==='stormsovereign'||kind==='olivewarden') && typeof stage4WarfareInit==='function') stage4WarfareInit(b);
   if(kind==='xenoregent'&&typeof xenoRegentInit==='function')xenoRegentInit(b);
+  if(kind==='sludgeemperor'&&typeof s7WardenInit==='function')s7WardenInit(b);
   if(kind==='blacksteel'&&run.stage===6&&typeof stage6MiniInit==='function')stage6MiniInit(b);
   if((kind==='magmaward'||kind==='infernoreaver') && typeof magmaWardBarrierInit==='function')magmaWardBarrierInit(b);
   return true;
@@ -11375,6 +11467,10 @@ function shipBossQueueAttack(b){
     const _jm=shipBossMount(b,'C');
     navalFlash(null,_jm,1.0,'s1fx_wind_vortex',{n:6,hpx:76,life:A.tell,anchor:0.5,
       follow:()=>shipBossMount(b,'C')});
+  } else if(b._ship==='infernoreaver'&&pat==='chargebeam'){
+    /* Charge the two wing emitters only. The separately rendered nose orb begins when the action
+       releases, so no beam tell is ever anchored to the central magma furnace. */
+    shipBossMuzzleStart(b,['L','R'],{life:A.tell,n:6});
   } else shipBossMuzzleStart(b,shipBossPatternSlots(pat,(b._sbStep|0)+1),{life:A.tell,n:6});
   if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossWeaponCharge) Audio.SFX.bossWeaponCharge();
   return true;
@@ -11483,7 +11579,7 @@ function shipBossMuzzleDraw(b){
    There is no homing and no post-launch turn: the tell always predicts the dodge lane. */
 function stage3BossInit(b){
   if(!b||(b._ship!=='rimewall'&&b._ship!=='cryospear'))return;
-  b._s3boss={role:b._ship==='rimewall'?'spear':'wall',volley:null,charge:null,cannonSeq:null,cannonGlow:null,
+  b._s3boss={role:b._ship==='rimewall'?'spear':'wall',volley:null,charge:null,cannonSeq:null,cannonGlow:null,slide:null,
     damaged:false,critical:false,blastCd:.18,blasts:[],shots:0,muzzles:0,lastPattern:null,
     patternsSeen:Object.create(null),kinds:Object.create(null),releaseLog:[]};
   try{if(typeof XART!=='undefined'&&XART._touch){
@@ -11526,6 +11622,19 @@ function stage3BossQueueVolley(b,events,duration){
   if(!b||!b._s3boss)return;
   b._s3boss.volley={t:0,i:0,events:events||[],duration:duration||1};
 }
+/* Every Stage-3 attack crosses toward the opposite side on one slow, continuous rail. The target
+   alternates from the boss's actual position, so phase changes cannot reset it to the same edge. */
+function stage3BossBeginSlide(b,duration){
+  const S=b&&b._s3boss;if(!S)return;
+  const left=(typeof camX==='number'?camX:0),right=left+VW,margin=Math.max(104,(b.w||190)*.53),mid=left+VW*.5;
+  S.slide={t:0,dur:Math.max(2.4,duration||3.6),from:b.x,to:b.x<=mid?right-margin:left+margin,y:shipBossStationY(b)};
+}
+function stage3BossSlideTick(b,dt){
+  const S=b&&b._s3boss,L=S&&S.slide;if(!L)return false;
+  L.t=Math.min(L.dur,L.t+dt);const p=clamp(L.t/L.dur,0,1),ease=p*p*(3-2*p);
+  b.x=lerp(L.from,L.to,ease);b.y+=(L.y-b.y)*Math.min(1,dt*5.5);
+  return true;
+}
 function stage3BossFireEvent(b,e){
   const p=shipBossMount(b,e.slot||'C');
   if(e.ring){
@@ -11546,6 +11655,7 @@ function stage3BossFireEvent(b,e){
 }
 function stage3BossTick(b,dt){
   const S=b&&b._s3boss;if(!S)return;
+  const ownsMove=stage3BossSlideTick(b,dt);
   const frac=clamp(b.hp/Math.max(1,b.maxhp),0,1);
   S.damaged=frac<=.52;S.critical=frac<=.25;
   if(S.volley){
@@ -11597,61 +11707,79 @@ function stage3BossTick(b,dt){
       if(S.blasts.length>7)S.blasts.shift();
     }
   }
+  return ownsMove;
 }
 function stage3BossAttack(b,pat,step,ph,cdMul){
   const S=b._s3boss;if(!S)return false;S.lastPattern=pat;S.patternsSeen[pat]=(S.patternsSeen[pat]||0)+1;
   const ev=[];
   if(pat==='s3spearburst'){
-    /* CRYO SPEAR follows the small blue diagram: left, centre, right (or the mirrored order), one
-       straight laser at a time. The compact miniboss gets shorter holds than Rime Wall, but the
-       same readable no-tracking contract. */
-    S.cannonSeq={t:0,i:0,next:0,count:3,finishCharge:false,
-      slots:(step&1)?['L','C','R']:['R','C','L'],warm:.18,active:.28,retract:.12,width:22};
-    b.fireCd=2.42*cdMul;
+    /* Five locked laser lanes walk across the arena while the wings add two compact shard beats.
+       The boss itself slides slowly in the opposite direction, so every warning remains readable. */
+    S.cannonSeq={t:0,i:0,next:0,count:5,finishCharge:false,
+      slots:(step&1)?['L','C','R','C','L']:['R','C','L','C','R'],warm:.24,active:.34,retract:.14,width:26};
+    ev.push({at:.62,slot:'L',base:Math.PI/2,offs:[-.22,-.08,.08],sp:3.25,kind:'s3shard',shootable:true});
+    ev.push({at:2.42,slot:'R',base:Math.PI/2,offs:[-.08,.08,.22],sp:3.45,kind:'s3shard',shootable:true});
+    stage3BossQueueVolley(b,ev,4.35);stage3BossBeginSlide(b,4.55);b.fireCd=4.72*cdMul;
   }else if(pat==='s3spearcross'){
-    /* Mirrored lances cross once, then reopen. Their acceleration is strictly along the launch
-       ray, so the two announced corridors never bend after the flash. */
-    ev.push({at:0,slot:'L',base:Math.PI/2,offs:[-.10,-.25,-.40],sp:2.10,kind:'s3lance',accel:1.55,max:5.8,shootable:true});
-    ev.push({at:0,slot:'R',base:Math.PI/2,offs:[.10,.25,.40],sp:2.10,kind:'s3lance',accel:1.55,max:5.8,shootable:true,audio:false});
-    ev.push({at:.34,slot:'L',base:Math.PI/2,offs:[.05,.20,.35],sp:2.35,kind:'s3lance',accel:1.35,max:5.5,shootable:true});
-    ev.push({at:.34,slot:'R',base:Math.PI/2,offs:[-.05,-.20,-.35],sp:2.35,kind:'s3lance',accel:1.35,max:5.5,shootable:true,audio:false});
-    stage3BossQueueVolley(b,ev,.72);b.fireCd=1.12*cdMul;
+    /* Three crossing beats close and reopen the same corridors, followed by one heavy centre
+       mortar. Nothing homes: the challenge is moving through the repeating weave on cadence. */
+    for(let k=0;k<3;k++){
+      const close=(k&1)===0,at=k*.50;
+      ev.push({at:at,slot:'L',base:Math.PI/2,offs:close?[-.10,-.25,-.40]:[.05,.20,.35],sp:2.45+k*.18,kind:'s3lance',accel:1.35,max:5.9,shootable:true});
+      ev.push({at:at,slot:'R',base:Math.PI/2,offs:close?[.10,.25,.40]:[-.05,-.20,-.35],sp:2.45+k*.18,kind:'s3lance',accel:1.35,max:5.9,shootable:true,audio:false});
+    }
+    ev.push({at:1.50,slot:'C',aim:true,offs:[0],sp:1.55,kind:'s3mortar',accel:.82,max:5.15,muzzleScale:1.25});
+    stage3BossQueueVolley(b,ev,2.05);stage3BossBeginSlide(b,3.25);b.fireCd=3.42*cdMul;
   }else if(pat==='s3spearcore'){
     S.charge={t:0,dur:.78,slot:'C'};
-    /* The nose now releases a real continuous ice laser after the charge rather than three
-       oversized pellets pretending to be a beam. Aim commits at charge start and never tracks. */
+    /* The nose commits one real ice laser while both wings bracket it with shootable lances. */
     {const C=shipBossMount(b,'C');l23BossBeamStart(b,'rime',['C'],[aimPlayer(C.x,C.y)],.78,.78,.20,34);}
-    ev.push({at:.91,slot:'L',base:Math.PI/2,offs:[-.24,-.08],sp:4.20,kind:'s3lance',accel:1.0,max:5.9,shootable:true,audio:false});
-    ev.push({at:.91,slot:'R',base:Math.PI/2,offs:[.08,.24],sp:4.20,kind:'s3lance',accel:1.0,max:5.9,shootable:true,audio:false});
-    stage3BossQueueVolley(b,ev,1.76);b.fireCd=1.92*cdMul;
+    ev.push({at:.52,slot:'L',base:Math.PI/2,offs:[-.30,-.14],sp:3.65,kind:'s3lance',accel:1.0,max:6.0,shootable:true});
+    ev.push({at:.52,slot:'R',base:Math.PI/2,offs:[.14,.30],sp:3.65,kind:'s3lance',accel:1.0,max:6.0,shootable:true,audio:false});
+    ev.push({at:1.16,slot:'L',base:Math.PI/2,offs:[-.18,.02],sp:4.10,kind:'s3shell',accel:1.25,max:6.6,shootable:true,hp:2});
+    ev.push({at:1.16,slot:'R',base:Math.PI/2,offs:[-.02,.18],sp:4.10,kind:'s3shell',accel:1.25,max:6.6,shootable:true,hp:2,audio:false});
+    stage3BossQueueVolley(b,ev,2.18);stage3BossBeginSlide(b,3.55);b.fireCd=3.72*cdMul;
   }else if(pat==='s3wallcannons'){
-    /* Five individually timed vertical lanes mirror the supplied boss pattern. Direction alternates
-       on repeat so the player cannot camp the lane that fired first, then the centre reactor forges
-       the giant orb already approved in the previous pass. */
-    S.cannonSeq={t:0,i:0,next:0,count:5,finishCharge:true,
-      slots:(step&1)?['L','C','R','C','L']:['R','C','L','C','R'],warm:.28,active:.46,retract:.16,width:44};
-    b.fireCd=5.02*cdMul;
+    /* Seven individually timed siege lanes traverse with the Wall. The opening teaches the
+       left/right rhythm, then raised batteries and core join before the giant reactor orb. */
+    S.cannonSeq={t:0,i:0,next:0,count:7,finishCharge:true,
+      slots:(step&1)?['L','R','TL','TR','L','R','C']:['R','L','TR','TL','R','L','C'],warm:.30,active:.50,retract:.18,width:46};
+    /* Seven full beam cycles plus the reactor release need a clean recovery beat.  Keeping the
+       director locked out for the whole 8.35s prevents the next phase from being queued while
+       the final cannon is still retracting. */
+    stage3BossBeginSlide(b,7.35);b.fireCd=8.35*cdMul;
   }else if(pat==='s3wallgate'){
-    /* Raised batteries weave three fixed X-gates. The centre opening changes width, not direction,
-       so the player reads one geometry and moves with it instead of reacting to homing. */
-    const shifts=[-.06,.08,-.13];
-    for(let k=0;k<3;k++){
-      ev.push({at:k*.31,slot:'TL',base:Math.PI/2+shifts[k],offs:[-.42,-.27,-.12],sp:3.05,kind:'s3lance',accel:.65,max:4.8,shootable:true,audio:true});
-      ev.push({at:k*.31,slot:'TR',base:Math.PI/2-shifts[k],offs:[.12,.27,.42],sp:3.05,kind:'s3lance',accel:.65,max:4.8,shootable:true,audio:false});
+    /* Raised batteries weave four fixed X-gates. Heavy centre mortars land between the gates,
+       forcing a lane change without ever tracking after launch. */
+    const shifts=[-.08,.10,-.14,.06];
+    for(let k=0;k<4;k++){
+      const at=k*.46;
+      ev.push({at:at,slot:'TL',base:Math.PI/2+shifts[k],offs:[-.44,-.28,-.12],sp:3.20,kind:'s3lance',accel:.72,max:5.15,shootable:true,audio:true});
+      ev.push({at:at,slot:'TR',base:Math.PI/2-shifts[k],offs:[.12,.28,.44],sp:3.20,kind:'s3lance',accel:.72,max:5.15,shootable:true,audio:false});
+      if(k<3)ev.push({at:at+.23,slot:'C',base:Math.PI/2,offs:[0],sp:1.38,kind:'s3mortar',accel:.78,max:4.9,muzzleScale:1.18});
     }
-    stage3BossQueueVolley(b,ev,.96);b.fireCd=1.24*cdMul;
+    stage3BossQueueVolley(b,ev,2.22);stage3BossBeginSlide(b,4.35);b.fireCd=4.58*cdMul;
   }else if(pat==='s3wallhalo'){
-    S.charge={t:0,dur:1.02,slot:'C',kind:'giantOrb',released:false};
+    /* The old phase was one slow orb and then empty time. Two gated halos now open around the
+       reactor charge; each ring deliberately removes the three spokes nearest the player. */
+    S.charge={t:0,dur:1.22,slot:'C',kind:'giantOrb',released:false};
     if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyElectricBolt))(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyElectricBolt)();
-    b.fireCd=1.62*cdMul;
+    ev.push({at:.18,slot:'C',ring:true,n:18,gap:2,base:step*.24,sp:2.08,kind:'s3mortar',accel:.38,max:3.7,szMul:.88});
+    ev.push({at:.86,slot:'C',ring:true,n:20,gap:2,base:step*.24+.16,sp:2.30,kind:'s3mortar',accel:.42,max:4.0,szMul:.92});
+    ev.push({at:1.62,slot:'L',base:Math.PI/2,offs:[-.34,-.18,-.02],sp:3.72,kind:'s3lance',shootable:true});
+    ev.push({at:1.62,slot:'R',base:Math.PI/2,offs:[.02,.18,.34],sp:3.72,kind:'s3lance',shootable:true,audio:false});
+    stage3BossQueueVolley(b,ev,2.48);stage3BossBeginSlide(b,4.35);b.fireCd=4.62*cdMul;
   }else if(pat==='s3walloverdrive'){
-    /* Final form: the core visibly charges, releases a seven-crescent denial fan, then the twin
-       barrels punch a fast shell pair through the gap. Dense, but every layer has its own beat. */
-    S.charge={t:0,dur:.94,slot:'C'};
-    l23BossBeamStart(b,'rime',['TL','C','TR'],[Math.PI/2-.31,Math.PI/2,Math.PI/2+.31],.94,.84,.22,46);
-    ev.push({at:1.16,slot:'L',aim:true,offs:[-.09],sp:4.65,kind:'s3shell',accel:1.75,max:7.0,shootable:true,hp:2});
-    ev.push({at:1.16,slot:'R',aim:true,offs:[.09],sp:4.65,kind:'s3shell',accel:1.75,max:7.0,shootable:true,hp:2,audio:false});
-    stage3BossQueueVolley(b,ev,2.02);b.fireCd=2.12*cdMul;
+    /* Final form: three locked beams establish the corridors, a gated halo closes the idle lanes,
+       and two staggered shell pairs punish staying still. Dense, but every layer has its own beat. */
+    S.charge={t:0,dur:1.00,slot:'C'};
+    l23BossBeamStart(b,'rime',['TL','C','TR'],[Math.PI/2-.31,Math.PI/2,Math.PI/2+.31],1.00,1.05,.24,48);
+    ev.push({at:.30,slot:'C',ring:true,n:16,gap:2,base:step*.19,sp:1.92,kind:'s3mortar',accel:.46,max:3.85,szMul:.86});
+    ev.push({at:1.36,slot:'L',aim:true,offs:[-.12,.04],sp:4.25,kind:'s3shell',accel:1.55,max:7.0,shootable:true,hp:2});
+    ev.push({at:1.36,slot:'R',aim:true,offs:[-.04,.12],sp:4.25,kind:'s3shell',accel:1.55,max:7.0,shootable:true,hp:2,audio:false});
+    ev.push({at:2.04,slot:'L',base:Math.PI/2,offs:[-.30,-.15,0],sp:4.00,kind:'s3lance',shootable:true});
+    ev.push({at:2.04,slot:'R',base:Math.PI/2,offs:[0,.15,.30],sp:4.00,kind:'s3lance',shootable:true,audio:false});
+    stage3BossQueueVolley(b,ev,2.78);stage3BossBeginSlide(b,4.65);b.fireCd=4.92*cdMul;
   }else return false;
   return true;
 }
@@ -12019,6 +12147,10 @@ function stage4ShieldDeflectBullet(b,shot){
   const S=b&&b._s4war,H=S&&S.shield;if(!H||(!H.active&&!H.rearming)||!shot)return false;
   /* A circle hit remains damageable. Only shots meeting the field itself ricochet. */
   if(b._s4ShieldHit)return false;
+  /* Below half health the exposed core turrets are a deliberate counter-objective. bossHitTest
+     records that tighter hit before testing the carrier field; let that shot reach the turret's
+     own shield/hull while the rest of the carrier remains protected. */
+  if(b._s4CoreHit&&S.coreUnlocked&&b.hp<=(b.maxhp||1)*.501)return false;
   if(shot._s4DeflectedBy===b)return true;
   const cy=(b._drawY!=null?b._drawY:b.y),dx=shot.x-b.x,dy=shot.y-cy,d=Math.max(1,Math.hypot(dx,dy)),nx=dx/d,ny=dy/d;
   let vx=shot.vx||0,vy=shot.vy==null?-8:shot.vy,dot=vx*nx+vy*ny;
@@ -12606,6 +12738,14 @@ function reaverOrbTick(b, dt){
     }
   } else if(b._orb.t>=FIREORB_CHARGE+0.30){ b._orb=null; }
 }
+function reaverOrbDraw(b){
+  const O=b&&b._orb;if(!O||O.fired||typeof XART==='undefined')return false;
+  const fi=Math.min(7,Math.floor(clamp(O.t/FIREORB_CHARGE,0,.999)*8));
+  const key='mwfx_fireball_charge_'+fi;if(!XART.rdy(key))return false;
+  const C=shipBossMount(b,'C'),q=clamp(O.t/FIREORB_CHARGE,0,1),s=42+q*66;
+  ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.62+q*.38;
+  ctx.drawImage(XART.get(key),C.x-s/2,C.y-s/2,s,s);ctx.restore();return true;
+}
 
 /* ============================================================
    STAGE 2–3 AUTHORED BOSS AMMUNITION (0830)
@@ -12729,6 +12869,7 @@ function magmaWardBarrierRearm(b,ratio){
 }
 function magmaWardBarrierTick(b,dt){
   const H=b&&b._mwBarrier;if(!H)return;H.hit=Math.max(0,H.hit-dt);H.breakT=Math.max(0,H.breakT-dt);
+  b._mwStun=Math.max(0,(b._mwStun||0)-dt);
 }
 function magmaWardBarrierDamage(b,dmg,hx,hy){
   const H=b&&b._mwBarrier;if(!H||!H.active)return false;
@@ -12739,6 +12880,14 @@ function magmaWardBarrierDamage(b,dmg,hx,hy){
   if(H.hp<=0){H.hp=0;H.active=false;H.breakT=.72;explode(b.x,(b._drawY!=null?b._drawY:b.y),72,'red');
     if(typeof fxBurst==='function')fxBurst(b.x,(b._drawY!=null?b._drawY:b.y),84,{color:'#ff7a16',rings:2,chunks:12,sparks:24});
     magmaWardSound('shieldBreak','expBig');shake=Math.max(shake,8);
+    /* Breaking the shield is an earned punish window. Cancel the committed attack cleanly,
+       centre the hull, and hold its guns; the miniboss exposes itself slightly longer than the
+       end boss. This gives Stage 2 a learnable offense/defense rhythm instead of stacked hazards. */
+    b._mwStun=b._ship==='magmaward'?1.16:.82;b._sba=null;b._l23Beam=null;b._orb=null;
+    if(b._mwAttack&&typeof magmaWardFinish==='function')magmaWardFinish(b);
+    if(b._irPass&&typeof infernoReaverPassFinish==='function')infernoReaverPassFinish(b);
+    if(b._irRoll&&typeof infernoReaverRollFinish==='function')infernoReaverRollFinish(b);
+    b.fireCd=Math.max(b.fireCd||0,b._mwStun+.42);
   }
   return true;
 }
@@ -12778,7 +12927,10 @@ function magmaWardStartAttack(b,pat,step,cdMul){
        fires one vertical flame-laser before the hull moves to the next; the pass never tracks. */
     /* Keep the complete hull and its outboard muzzle inside the playfield at every stop. */
     const margin=Math.max(116,b.w*.54),dir=(step&1)?1:-1;
-    A.tell=.85;A.passCount=5;A.passPeriod=.66;A.fireHold=.48;A.slideDur=A.passCount*A.passPeriod;
+    A.tell=.85;A.passCount=5;A.passPeriod=1.00;A.fireHold=.62;
+    /* The five firing stations now live on one continuous four-second traverse. The former .18s
+       hop between holds looked like teleporting even though the endpoints were technically lerped. */
+    A.slideDur=(A.passCount-1)*A.passPeriod+A.fireHold;
     A.centerDur=.62;A.douseDur=3.05;A.active=A.slideDur+A.centerDur+A.douseDur;A.recover=.55;
     const arenaRight=arenaLeft+VW;
     A.passIndex=-1;A.passDir=dir;A.slideStart=dir>0?arenaLeft+margin:arenaRight-margin;
@@ -12834,13 +12986,12 @@ function magmaWardTick(b,dt){
       let on=false;
       if(activeT<A.slideDur){
         A.mode='slide';const idx=Math.min(A.passCount-1,Math.floor(activeT/A.passPeriod)),phase=activeT-idx*A.passPeriod;
-        const x0=lerp(A.slideStart,A.slideEnd,idx/Math.max(1,A.passCount-1));
-        const x1=lerp(A.slideStart,A.slideEnd,Math.min(A.passCount-1,idx+1)/Math.max(1,A.passCount-1));
-        const mv=clamp((phase-A.fireHold)/Math.max(.01,A.passPeriod-A.fireHold),0,1),ease=mv*mv*(3-2*mv);
-        b.x=lerp(x0,x1,ease);b.y=sy;A.poseRot=0;A.flameAng=Math.PI/2;
+        const travel=Math.max(.01,(A.passCount-1)*A.passPeriod),mv=clamp(activeT/travel,0,1),ease=mv*mv*(3-2*mv);
+        b.x=lerp(A.slideStart,A.slideEnd,ease);b.y=sy;A.poseRot=A.passDir*.035*Math.sin(mv*Math.PI);A.flameAng=Math.PI/2;
         if(idx!==A.passIndex){
           A.passIndex=idx;A.holdSlot=['L','R','C','L','R'][idx];
-          l23BossBeamStart(b,'inferno',[A.holdSlot],[Math.PI/2],.14,.24,.10,34);
+          if(A.holdSlot==='C')reaverOrbStart(b);
+          else l23BossBeamStart(b,'inferno',[A.holdSlot],[Math.PI/2],.14,.24,.10,34);
         }
       }else if(activeT<A.slideDur+A.centerDur){
         A.mode='center';b.x+=(A.homeX-b.x)*Math.min(1,dt*7);b.y+=(sy-b.y)*Math.min(1,dt*6);
@@ -12941,8 +13092,8 @@ function infernoReaverPassStart(b,step){
   const arenaLeft=(typeof camX==='number'?camX:0),arenaRight=arenaLeft+VW,margin=Math.max(116,b.w*.54),dir=(step&1)?1:-1;
   b._irPass={phase:'tell',t:0,dir:dir,startX:dir>0?arenaLeft+margin:arenaRight-margin,
     endX:dir>0?arenaRight-margin:arenaLeft+margin,homeX:arenaLeft+VW*.5,
-    sy:shipBossStationY(b),count:5,period:.68,hold:.50,index:-1,poseRot:0};
-  b.fireCd=4.75;magmaWardSound('bossWeaponCharge','enemyFlameBolt');return true;
+    sy:shipBossStationY(b),count:5,period:1.05,hold:.56,index:-1,poseRot:0};
+  b.fireCd=5.45;magmaWardSound('bossWeaponCharge','enemyFlameBolt');return true;
 }
 function infernoReaverPassFinish(b){
   if(!b)return;const P=b._irPass;b._irPass=null;if(P){b.x=P.homeX;b.y=P.sy;}b.fireCd=Math.max(b.fireCd||0,.74);
@@ -12954,16 +13105,17 @@ function infernoReaverPassTick(b,dt){
     b.x+=dx/d*step;b.y+=dy/d*step;P.poseRot=P.dir*.08*Math.sin(clamp(P.t/.72,0,1)*Math.PI);
     if(P.t>=.72&&d<7){b.x=P.startX;b.y=P.sy;P.phase='pass';P.t=0;P.poseRot=0;}
   }else if(P.phase==='pass'){
-    const idx=Math.min(P.count-1,Math.floor(P.t/P.period)),phase=P.t-idx*P.period;
-    const x0=lerp(P.startX,P.endX,idx/Math.max(1,P.count-1));
-    const x1=lerp(P.startX,P.endX,Math.min(P.count-1,idx+1)/Math.max(1,P.count-1));
-    const mv=clamp((phase-P.hold)/Math.max(.01,P.period-P.hold),0,1),ease=mv*mv*(3-2*mv);
-    b.x=lerp(x0,x1,ease);b.y=P.sy;P.poseRot=P.dir*.09*Math.sin(mv*Math.PI);
+    const idx=Math.min(P.count-1,Math.floor(P.t/P.period));
+    const travel=Math.max(.01,(P.count-1)*P.period),mv=clamp(P.t/travel,0,1),ease=mv*mv*(3-2*mv);
+    b.x=lerp(P.startX,P.endX,ease);b.y=P.sy;P.poseRot=P.dir*.04*Math.sin(mv*Math.PI);
     if(idx!==P.index){
       P.index=idx;const slots=['L','R','C','L','R'],slot=P.dir>0?slots[idx]:slots[P.count-1-idx];
-      l23BossBeamStart(b,'inferno',[slot],[Math.PI/2],.15,.25,.10,38);
+      /* The nose is an orb furnace, never a laser emitter. Its middle station charges/releases the
+         giant magma ball while the two wing hardpoints retain the readable pass lasers. */
+      if(slot==='C')reaverOrbStart(b);
+      else l23BossBeamStart(b,'inferno',[slot],[Math.PI/2],.15,.25,.10,38);
     }
-    if(P.t>=P.count*P.period){P.phase='recover';P.t=0;P.poseRot=0;}
+    if(P.t>=travel+P.hold){P.phase='recover';P.t=0;P.poseRot=0;}
   }else{
     const dx=P.homeX-b.x,dy=P.sy-b.y,d=Math.hypot(dx,dy)||1,step=Math.min(d,390*dt);
     b.x+=dx/d*step;b.y+=dy/d*step;P.poseRot*=Math.max(0,1-dt*8);
@@ -12996,7 +13148,7 @@ function infernoReaverRollTick(b,dt){
     b.x+=dx/d*step;b.y+=dy/d*step;R.poseRot+=R.dir*dt*1.35;
     if(R.t>=.72&&d<7){b.x=R.startX;b.y=R.sy;R.phase='roll';R.t=0;R.poseRot=0;shake=Math.max(shake,7);}
   }else if(R.phase==='roll'){
-    const TURN=.62,GAP=.26,CYCLE=TURN+GAP,DUR=CYCLE*4;
+    const TURN=.78,GAP=.34,CYCLE=TURN+GAP,DUR=CYCLE*4;
     const p=clamp(R.t/DUR,0,1),ease=p*p*(3-2*p),local=R.t%CYCLE,turn=Math.floor(R.t/CYCLE);
     b.x=lerp(R.startX,R.endX,ease);b.y=R.sy;
     /* Each live beat is one exact 180-degree lower-hemisphere douse, followed by a visible/silent
@@ -13099,10 +13251,17 @@ function shipBossManoeuvre(b, dt){
   if(!b || !b._ship || b.dead || b.enter) return false;
   shipBossMuzzleTick(b, dt);
   if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierTick==='function')magmaWardBarrierTick(b,dt);
+  if((b._ship==='magmaward'||b._ship==='infernoreaver')&&(b._mwStun||0)>0){
+    const _sy=shipBossStationY(b),_cx=(typeof worldWidth==='function'?worldWidth():VW)*.5;
+    b.x+=(_cx-b.x)*Math.min(1,dt*4.2);b.y+=(_sy-b.y)*Math.min(1,dt*5.0);
+    b.flash=Math.max(b.flash||0,.035+Math.sin((b._mwStun||0)*25)*.018);b.fireCd=Math.max(b.fireCd||0,(b._mwStun||0)+.18);
+    return true;
+  }
   /* The Jungle Cruiser is a complete authored encounter. Letting the generic manoeuvre and
      shipBossQueueAttack paths run underneath it would double-move the hull and reintroduce the
      retired green-vortex volley between its missile/beam phases. */
   if(b._ship==='junglecruiser'&&typeof jungleCruiserDirector==='function')return jungleCruiserDirector(b,dt);
+  if(b._s7warden&&typeof s7WardenTick==='function')return s7WardenTick(b,dt);
   shipBossActionTick(b,dt);
   if(b._s4war&&typeof stage4WarfareTick==='function')return stage4WarfareTick(b,dt);
   if(b._xenoRig&&typeof xenoRegentTick==='function')xenoRegentTick(b,dt);
@@ -13126,8 +13285,10 @@ function shipBossManoeuvre(b, dt){
   if(b._ship==='infernoreaver'&&b._irPass){infernoReaverPassTick(b,dt);if(b._irPass)return true;}
   if(b._ship==='infernoreaver'&&b._irRoll){infernoReaverRollTick(b,dt);if(b._irRoll)return true;}
   if(b._stormMg) stormMgTick(b, dt);
-  if(b._s3boss && typeof stage3BossTick==='function') stage3BossTick(b,dt);
+  if(b._s3boss && typeof stage3BossTick==='function'&&stage3BossTick(b,dt))return true;
   if(b._s7Flood)sludgeFloodTick(b,dt);
+  if(b._s7Rosette)sludgeRosetteTick(b,dt);
+  if(b._s9Cascade)tidalCascadeTick(b,dt);
   /* the carrier's reel runs on the FRAME clock, not the volley beat - the round leaves on the
      animation frame that shows it clearing the bay. See carrierTick. */
   if((b._ship==='doomsdaycarrier'||b._ship==='doomsdaycarriermk2') && typeof carrierTick==='function') carrierTick(b, dt);            // the wind-up runs on the frame clock, not the volley beat
@@ -13189,19 +13350,18 @@ function shipBossManoeuvre(b, dt){
       break;
     }
     case SBM_XSTRIKE: {
-      /* ONSCREEN CROSS-STRAFE. The former X-strike intentionally teleported the boss beyond a
-         corner and flew it back through the whole field twice. In play that reads as a broken
-         entrance, hides the health target, and can overlap an invisible beam hub. Three brisk
-         lateral passes preserve the arcade commitment without ever removing the boss from view. */
+      /* ONSCREEN CROSS-STRAFE. This is deliberately a slow, predictable left/right slide. Bosses
+         may keep attacking while it runs, so a fast transit makes the telegraph itself move out
+         from under the player. Two measured passes provide the pattern without a snap or wobble. */
       const margin=Math.max(34,(b.w||120)*0.40);
       const side=((b._sbmLeg&1)===0?b._sbmSide:-b._sbmSide);
       const tx=side<0?margin:W-margin;
       const ty=sy+18+((b._sbmLeg&1)?26:0);
-      const dx=tx-b.x, dy=ty-b.y, d=Math.hypot(dx,dy)||1, sp=300;
+      const dx=tx-b.x, dy=ty-b.y, d=Math.hypot(dx,dy)||1, sp=120;
       b.x+=dx/d*Math.min(d,sp*dt); b.y+=dy/d*Math.min(d,sp*dt);
       if(d<8 || b._sbmT<=0){
-        b.x=clamp(b.x,margin,W-margin); b._sbmLeg++; b._sbmT=1.05;
-        if(b._sbmLeg>=3){ b._sbm=SBM_RECOVER; b._sbmT=0.9; }
+        b.x=clamp(b.x,margin,W-margin); b._sbmLeg++; b._sbmT=2.80;
+        if(b._sbmLeg>=2){ b._sbm=SBM_RECOVER; b._sbmT=0.9; }
       }
       break;
     }
@@ -13602,7 +13762,8 @@ function jungleCruiserHelixDraw(q){
 }
 function s7BossShot(x,y,a,sp,kind,opts){opts=opts||{};const hb=S7_PROJECTILE_HIT[kind]||[12,12];
   if(opts.w==null)opts.w=hb[0];if(opts.h==null)opts.h=hb[1];const q=eShootT(x,y,a,sp,kind,opts);q._boss=true;
-  if(kind==='s7spore')q._noArsenal=true;else{q._bfam=(boss&&boss._ship==='sludgeemperor')?'sludge':'toxic';q._noArsenal=false;}
+  q._forceStageArt=!!opts.forceStageArt;
+  if(kind==='s7spore'||opts.noArsenal)q._noArsenal=true;else{q._bfam=(boss&&boss._ship==='sludgeemperor')?'sludge':'toxic';q._noArsenal=false;}
   if(opts.accel){q._s7Accel=opts.accel;q._s7Max=opts.max||sp*1.9;}return q;}
 /* FLOOD SURGE belongs to the Sludge Emperor itself.  It sends four descending sludge fronts with
    ONE moving gap.  The warning owns the whole lane before the animated sludge arrives, and the
@@ -13639,10 +13800,67 @@ function sludgeFloodDraw(b){
   }
   ctx.globalAlpha=.9;ctx.strokeStyle='#d9ff75';ctx.lineWidth=3;ctx.strokeRect(F.gap*cw+4,PLAY.y+4,cw-8,VH-PLAY.y-8);ctx.restore();
 }
+/* REFERENCE PASS 0831 — TOXIC RESIDUE ROSETTES.
+   Three planted blooms announce themselves together, then open ONE AT A TIME.  Each bloom removes
+   three sectors toward the sampled player position, so the ring is a path-reading question rather
+   than an unavoidable radial dump.  Sequential release is the important part: the footage's
+   lingering rosettes were effective because the player could read where the next hazard lived. */
+function sludgeRosetteStart(b){
+  if(!b||b._s7Rosette)return false;
+  const left=(typeof camLeftX==='function'?camLeftX():0),right=(typeof camRightX==='function'?camRightX():worldWidth());
+  const span=right-left,cy=Math.max(PLAY.y+92,(b._drawY!=null?b._drawY:b.y)+b.h*.34);
+  b._s7Rosette={t:0,tell:.72,wave:0,next:.72,bursts:[],points:[
+    {x:left+span*.24,y:cy+18},{x:left+span*.50,y:cy-10},{x:left+span*.76,y:cy+18}
+  ]};
+  b.fireCd=Math.max(b.fireCd||0,2.55);b.flash=Math.max(b.flash||0,.34);
+  if(typeof floatText==='function')floatText(b.x,cy-42,'TOXIC BLOOM!','#c9ff64');
+  if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.sludge))(Audio.SFX.bossWeaponCharge||Audio.SFX.sludge)();
+  return true;
+}
+function sludgeRosetteTick(b,dt){
+  const R=b&&b._s7Rosette;if(!R)return false;R.t+=dt;
+  for(const z of R.bursts)z.t+=dt;R.bursts=R.bursts.filter(z=>z.t<.34);
+  if(R.wave<R.points.length&&R.t>=R.next){
+    const p=R.points[R.wave],n=14,base=.18+R.wave*.37,st=TAU/n,a=aimPlayer(p.x,p.y),gap=Math.round((a-base)/st);
+    for(let i=0;i<n;i++){
+      let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;
+      s7BossShot(p.x,p.y,base+i*st,2.18+R.wave*.16,'s7acid',{silent:i>0,noArsenal:true,forceStageArt:true});
+    }
+    R.bursts.push({x:p.x,y:p.y,t:0});
+    shake=Math.max(shake,4+R.wave);R.wave++;R.next+=.48;
+  }
+  if(R.wave>=R.points.length&&R.t>R.next+.62){b._s7Rosette=null;b.fireCd=.66;return false;}
+  return true;
+}
+function sludgeRosetteDraw(b){
+  const R=b&&b._s7Rosette;if(!R)return;const fi=Math.floor(R.t*10)%12;
+  ctx.save();ctx.globalCompositeOperation='lighter';
+  for(let i=R.wave;i<R.points.length;i++){
+    const p=R.points[i],pulse=.62+.10*Math.sin(R.t*18+i),sz=44+pulse*18,key='s7spore_'+fi;
+    ctx.globalAlpha=.34+.18*Math.sin(R.t*15+i);
+    if(typeof XART!=='undefined'&&XART.rdy(key))ctx.drawImage(XART.get(key),p.x-sz/2,p.y-sz/2,sz,sz);
+    ctx.globalAlpha=.78;ctx.strokeStyle='#d8ff78';ctx.lineWidth=2;ctx.beginPath();ctx.arc(p.x,p.y,25+pulse*7,0,TAU);ctx.stroke();
+  }
+  for(const z of R.bursts){
+    const p=clamp(z.t/.34,0,1),r0=10+12*p,r1=28+35*p;
+    /* The available spore reel is ice-blue. Draw the Emperor's short-lived bloom in its own toxic
+       material palette instead of recolouring a boss or letting a blue placeholder dominate it. */
+    ctx.save();ctx.translate(z.x,z.y);ctx.rotate((b.t||0)*1.4);
+    ctx.globalAlpha=(1-p)*.92;ctx.strokeStyle='#a8ff2b';ctx.lineWidth=5-2.5*p;ctx.lineCap='round';
+    for(let i=0;i<12;i++){ctx.rotate(TAU/12);ctx.beginPath();ctx.moveTo(0,r0);ctx.lineTo(0,r1);ctx.stroke();}
+    ctx.fillStyle='#efffb8';ctx.beginPath();ctx.arc(0,0,7+5*p,0,TAU);ctx.fill();ctx.restore();
+    ctx.globalAlpha=(1-p)*.82;ctx.strokeStyle='#baff36';ctx.lineWidth=4-2*p;ctx.beginPath();ctx.arc(z.x,z.y,18+42*p,0,TAU);ctx.stroke();
+  }
+  ctx.restore();
+}
 function s7DredgerAttack(b,step){
   const ph=shipBossPhase(b),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C');
-  b._sbPat=ph?'s7spore':'s7dredge';
-  if(!ph){const slot=(step&1)?L:R,a=aimPlayer(slot.x,slot.y);for(const o of [-.18,0,.18])s7BossShot(slot.x,slot.y,a+o,2.85,'s7sludge',{silent:o!==0});
+  b._sbPat=ph>=2?'s7portalmines':(ph?'s7spore':'s7dredge');
+  if(ph>=2&&step%4===0){const cols=6,gap=clamp(Math.floor(player.x/(worldWidth()/cols)),0,cols-1);
+    for(let i=0;i<cols;i++){if(i===gap)continue;const tx=(i+.5)*worldWidth()/cols,a=Math.atan2(VH*.60-C.y,tx-C.x);
+      s7WardenShot(b,'C',a,1.08,'mine',{silent:i>0});}
+    shipBossMuzzleStart(b,['C'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.26,hpx:68});b.fireCd=1.42;
+  }else if(!ph){const slot=(step&1)?L:R,a=aimPlayer(slot.x,slot.y);for(const o of [-.18,0,.18])s7BossShot(slot.x,slot.y,a+o,2.85,'s7sludge',{silent:o!==0});
     shipBossMuzzleStart(b,[(step&1)?'L':'R'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.18,hpx:48});b.fireCd=.92;
   }else if(step%3){for(const o of [.16,.31,.47]){s7BossShot(L.x,L.y,Math.PI/2+o,2.75,'s7acid',{silent:true});s7BossShot(R.x,R.y,Math.PI/2-o,2.75,'s7acid',{silent:true});}
     shipBossMuzzleStart(b,['L','R'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.20,hpx:52});b.fireCd=.82;
@@ -13652,22 +13870,409 @@ function s7DredgerAttack(b,step){
 function sludgeEmperorAttack(b,step){
   const ph=shipBossPhase(b),W=worldWidth(),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C');
   b._sbPat=['s7pressure','s7flood','s7crown','s7purge'][ph];
-  if(b._s7Flood){b.fireCd=.24;return;}
+  if(b._s7Flood||b._s7Rosette){b.fireCd=.24;return;}
   if(ph===1&&!b._s7FloodUsed){sludgeFloodStart(b);return;}
   if(ph===0){const left=(step&1)===0,src=left?L:R,sgn=left?1:-1;for(const o of [.08,.20,.34,.49])s7BossShot(src.x,src.y,Math.PI/2+sgn*o,2.75,'s7acid',{silent:o>.08});
     shipBossMuzzleStart(b,[left?'L':'R'],{fam:'nfx_sludgecrawler_mflash',n:6,life:.19,hpx:54});b.fireCd=1.04;
   }else if(ph===1){const cols=9,gap=(step*2)%8;for(let i=0;i<cols;i++){if(i===gap||i===gap+1)continue;s7BossShot(W*(i+.5)/cols,C.y,Math.PI/2,1.72,'s7sludge',{silent:i>0,accel:.25,max:2.35});}
     shipBossMuzzleStart(b,['L','C','R'],{fam:'nfx_sludgecrawler_mflash',n:6,life:.24,hpx:62});b.fireCd=1.18;
-  }else if(ph===2){if(step%3===0)s7BossShot(C.x,C.y,Math.PI/2,1.45,'s7spore',{w:40,h:40,szMul:.94,accel:.34,max:2.45});
+  }else if(ph===2){if(step%4===0){sludgeRosetteStart(b);return;}else if(step%3===0)s7BossShot(C.x,C.y,Math.PI/2,1.45,'s7spore',{w:40,h:40,szMul:.94,accel:.34,max:2.45});
     else{const base=step*.31,n=14,a=aimPlayer(C.x,C.y),st=TAU/n,gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;s7BossShot(C.x,C.y,base+i*st,2.05,'s7acid',{silent:i>0});}}
     shipBossMuzzleStart(b,['C'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.27,hpx:74});b.fireCd=.98;
   }else{const safe=step%5;for(let i=0;i<5;i++){if(i===safe)continue;const x=W*(i+.5)/5;s7BossShot(x,C.y,Math.PI/2,4.0,'s7laser',{silent:i>0});}
     for(const s of [-1,1])s7BossShot((s<0?L:R).x,(s<0?L:R).y,Math.PI/2+s*.22,1.65,'s7grenade',{silent:true,accel:.48,max:3.1});
     shipBossMuzzleStart(b,['L','C','R'],{fam:'nfx_toxicleviathan_mflash',n:6,life:.20,hpx:60});b.fireCd=.74;}
 }
+
+/* ============================================================
+   STAGE 7 FINAL — TOXIC PORTAL WARDEN
+
+   A grounded Raiden-style mechanical defender: planted gait, readable lateral patrols, braced
+   firing stops and authored teleport travel. The old Sludge Emperor id is retained only as the
+   stage/save key. No sine hover, no sideways wobble and no sprite rotation are used here. */
+function s7FinalPhase(b){return b&&b._s7warden&&b._s7warden.final?b._s7warden.final.phase:null;}
+function s7WardenReverseScroll(){
+  if(!boss||!boss._s7warden||run.stage!==7)return 0;
+  const ph=s7FinalPhase(boss);
+  return ['fight','stun','hyper','legBurst','cripple'].indexOf(ph)>=0?(ph==='cripple'?62:46):0;
+}
+function s7WardenCinematic(){
+  const ph=s7FinalPhase(boss);
+  return ['portalClose','teleportIn','walkIn','roar','defeat','escape'].indexOf(ph)>=0;
+}
+function s7WardenShipHidden(){
+  const F=boss&&boss._s7warden&&boss._s7warden.final;
+  return !!(F&&F.shipHidden);
+}
+function s7FinalWingman(){
+  const pk=(typeof _pilotKey==='function'?_pilotKey():(run&&run.pilot)||'cole').toLowerCase();
+  const order=['lizzie','axel','decker','freezer','juggernaut','yuri','cole','falva','maverick'];
+  return (order.find(k=>k!==pk)||'axel').toUpperCase();
+}
+function s7WardenSay(b,text,dur,who){
+  const F=b&&b._s7warden&&b._s7warden.final;if(!F)return;
+  F.radio={who:who||s7FinalWingman(),full:text,t:0,typed:0,dur:dur||2.7};
+  if(typeof storySkip==='function')storySkip();
+}
+function s7WardenRadioDraw(){
+  const F=boss&&boss._s7warden&&boss._s7warden.final,R=F&&F.radio;if(!R||typeof dlgBox!=='function')return;
+  const full=(typeof subst==='function')?subst(R.full):R.full,shown=full.slice(0,Math.max(0,R.typed|0));
+  const who=R.who||'FURY WING',pk=String(who).toLowerCase();
+  dlgBox({who:who,full:full,shown:shown,tint:(typeof dialogueNameColor==='function'?dialogueNameColor(who,'#54dcff'):'#54dcff'),
+    portrait:pk,emo:'anger'});
+}
+function s7WardenMechSound(kind){
+  try{
+    if(!Audio||!Audio.SFX)return;
+    const f=kind==='roar'?(Audio.SFX.wardenRoar||Audio.SFX.mechRoar||Audio.SFX.bossPhase)
+      :(kind==='scream'?(Audio.SFX.wardenScream||Audio.SFX.mechScream||Audio.SFX.death)
+      :(Audio.SFX.mechFootWhir||Audio.SFX.clank));
+    if(f)f();
+  }catch(_s7snd){}
+}
+function s7WardenCorePos(b,side){
+  /* The shootable cores are the two upright toxic canisters on the authored chassis, not two
+     abstract points near the reactor.  Keeping hit-test and draw on this one anchor makes the
+     short vulnerability window visually honest. */
+  const y=(b._drawY!=null?b._drawY:b.y)-b.h*.10;
+  return {x:b.x+side*b.w*.285,y:y,r:Math.max(22,b.w*.086),side:side};
+}
+function s7WardenCoreAt(b,x,y){
+  const F=b&&b._s7warden&&b._s7warden.final;if(!F)return null;
+  for(const c of F.cores){if(c.dead)continue;const p=s7WardenCorePos(b,c.side);if(dist2(x,y,p.x,p.y)<=p.r*p.r)return c;}
+  return null;
+}
+function s7WardenCoreBurst(b,c,forced){
+  if(!c||c.dead)return;c.dead=true;c.hp=0;const p=s7WardenCorePos(b,c.side);
+  for(let i=0;i<5;i++)explode(p.x+rnd(-12,12),p.y+rnd(-12,12),rnd(30,54),'green');
+  if(typeof fxBurst==='function')fxBurst(p.x,p.y,70,{color:'#8cff4f',rings:2,chunks:18,sparks:30});
+  shake=Math.max(shake,10);if(!forced)b.hp=Math.max(1,b.hp-b.maxhp*.075);
+}
+function s7WardenPhase(b,phase){
+  const S=b._s7warden,F=S.final;F.phase=phase;F.t=0;F.beat=0;S.mt=0;S.shot=0;S.event=0;
+  S.noHit=['portalClose','teleportIn','walkIn','roar','hyper','legBurst','defeat','escape'].indexOf(phase)>=0;
+}
+function s7WardenInit(b){
+  if(!b||b._s7warden)return;
+  b.name='TOXIC PORTAL WARDEN';b.w=300;b.h=230;b.ty=178;
+  b._s7warden={t:0,mode:'patrol',mt:0,step:0,shot:0,event:0,targetX:VW*.28,dir:-1,
+    gait:0,travel:0,crawlClock:0,crawlPhase:0,crawlFrame:0,bodyDrop:0,
+    noHit:true,impactCd:0,teleFrom:b.x,teleTo:b.x,
+    final:{phase:'portalClose',t:0,beat:0,portalT:0,hyper:false,crippled:false,stunUsed:false,
+      legBlast:0,escapeBlast:0,shipHidden:false,finished:false,radio:null,
+      cores:[{side:-1,hp:Math.max(24,b.maxhp*.055),max:Math.max(24,b.maxhp*.055),dead:false},
+             {side: 1,hp:Math.max(24,b.maxhp*.055),max:Math.max(24,b.maxhp*.055),dead:false}]}};
+  /* The portal owns the entrance. Do not let the generic straight slide-in put the tanker on
+     screen before the gate has visibly shut and the authored teleport has fired. */
+  b.enter=false;b.x=(typeof worldWidth==='function'?worldWidth():VW)/2;b.y=84;b._s7FinalNoBar=true;
+  b.fireCd=999;
+  try{if(typeof XART!=='undefined'&&XART._touch){
+    for(const k of ['cfx_stage7_warden_walk','cfx_stage7_warden_teleport','cfx_stage7_warden_projectiles',
+      'cfx_stage7_warden_cannon','cfx_stage7_warden_rail','cfx_stage7_warden_shell','cfx_stage7_warden_mine','cfx_stage7_warden_spear',
+      'cfx_stage7_warden_roar','cfx_stage7_warden_cripple','cfx_stage7_warden_laststand'])XART._touch(k);
+  }}catch(_s7wi){}
+}
+function s7WardenMode(b,mode){
+  const S=b._s7warden;S.mode=mode;S.mt=0;S.shot=0;S.event=0;S.noHit=false;S.step++;
+  if(mode==='burst')S.aim=aimPlayer(b.x,b.y+b.h*.22);
+  if(mode==='teleport'){
+    const left=(typeof camLeftX==='function'?camLeftX():0)+b.w*.57,right=(typeof camRightX==='function'?camRightX():worldWidth())-b.w*.57;
+    S.teleFrom=b.x;S.teleTo=clamp(player.x<(left+right)/2?right:left,left,right);
+    if(typeof combatAtlasFx==='function')combatAtlasFx(b.x,b.y,'cfx_stage7_warden_teleport',4,2,0,8,{life:.82,hpx:410,wpx:410,blend:'lighter'});
+    if(Audio.SFX&&(Audio.SFX.teleportOut||Audio.SFX.warpGate||Audio.SFX.crackle))(Audio.SFX.teleportOut||Audio.SFX.warpGate||Audio.SFX.crackle)();
+  }
+}
+function s7WardenShot(b,slot,a,sp,role,opt){
+  opt=opt||{};const p=shipBossMount(b,slot),kind=role==='mine'?'s7wardenMine':role==='rail'?'s7wardenRail':'s7wardenShell';
+  const q=eShootT(p.x,p.y,a,sp,kind,{w:role==='mine'?34:role==='rail'?18:15,h:role==='mine'?34:role==='rail'?54:38,
+    silent:!!opt.silent,szMul:opt.szMul||1});
+  q._boss=true;q._noArsenal=true;q._s7warden=role;q._bfam='toxic';
+  if(role==='mine'){q._shootable=true;q.hp=2;q._minePhase=++S7_WARDEN_MINE_SEQ;
+    if(opt.targetX!=null)q._wardenAnchor={x:opt.targetX,y:opt.targetY,life:4.8};}
+  if(opt.accel){q._spaceAccel=opt.accel;q._spaceMax=opt.max||sp*1.8;}
+  return q;
+}
+let S7_WARDEN_MINE_SEQ=0;
+/* A crawl is not a sliding sprite with a fast reel. Each of these poses names the leg that is
+   taking weight. Recovery poses move the hull only a fraction; planted poses deliver the power
+   stroke. Over a full eight-pose cycle the average remains `speed`, but the eye sees four
+   separate feet pull the machine across the floor. */
+const S7_WARDEN_CRAWL=[
+  {f:0,leg:0,drive:.18},{f:1,leg:0,drive:1.82,plant:1},
+  {f:2,leg:1,drive:.18},{f:3,leg:1,drive:1.82,plant:1},
+  {f:4,leg:2,drive:.18},{f:5,leg:2,drive:1.82,plant:1},
+  {f:6,leg:3,drive:.18},{f:7,leg:3,drive:1.82,plant:1}
+];
+const S7_WARDEN_FEET=[[-.39,.31],[-.25,.25],[.25,.25],[.39,.31]];
+function s7WardenFootPlant(b,leg){
+  const S=b&&b._s7warden;if(!S)return;const size=b.w*1.12,idx=S.dir>0?3-leg:leg,p=S7_WARDEN_FEET[idx];
+  S.plants=(S.plants||0)+1;S.plantedLeg=idx;
+  /* A small authored toxic-metal contact spark marks the planted foot. It is deliberately not a
+     generic explosion and is kept below the hull so four footfalls never obscure projectiles. */
+  if(typeof combatAtlasFx==='function')combatAtlasFx(b.x+p[0]*size,b.y+p[1]*size,
+    'cfx_stage7_warden_projectiles',4,3,8,4,{life:.18,hpx:36,wpx:42,alpha:.42,blend:'lighter'});
+  s7WardenMechSound('foot');
+  shake=Math.max(shake,1.35);
+}
+function s7WardenCrawl(b,dt,speed){
+  const S=b._s7warden,dur=.115;let remain=dt,moved=0;
+  while(remain>0){
+    const pose=S7_WARDEN_CRAWL[S.crawlPhase],slice=Math.min(remain,dur-S.crawlClock);
+    const dx=S.dir*speed*pose.drive*slice;b.x+=dx;moved+=Math.abs(dx);
+    S.crawlClock+=slice;remain-=slice;
+    if(S.crawlClock>=dur-.00001){
+      S.crawlClock=0;S.crawlPhase=(S.crawlPhase+1)%S7_WARDEN_CRAWL.length;
+      const next=S7_WARDEN_CRAWL[S.crawlPhase];if(next.plant)s7WardenFootPlant(b,next.leg);
+    }
+  }
+  const pose=S7_WARDEN_CRAWL[S.crawlPhase],u=clamp(S.crawlClock/dur,0,1);
+  /* SpriteCook authored this loop travelling left. Play it in source order for leftward motion;
+     rightward motion mirrors the same stable silhouettes instead of reversing time. */
+  S.crawlFrame=pose.f;S.gait=S.crawlFrame;S.travel=moved;
+  /* Vertical suspension compression only. There is intentionally no lateral sine wobble. */
+  S.bodyDrop=(pose.plant?1.8:-.55)*Math.sin(u*Math.PI);return moved;
+}
+function s7WardenMuzzle(b,slot,large){
+  const p=shipBossMount(b,slot);navalFlash(null,p,large?1.18:.82,BPFX_MUZZLE_LASER,{n:8,hpx:large?72:48,life:large?.22:.14,
+    anchor:.42,follow:()=>b&&!b.dead?shipBossMount(b,slot):null});
+}
+function s7WardenForwardCrawl(b,dt,speed,crippled){
+  const S=b._s7warden,dur=crippled?.155:.125;let remain=dt,moved=0;
+  while(remain>0){
+    const pose=S7_WARDEN_CRAWL[S.crawlPhase],slice=Math.min(remain,dur-S.crawlClock);
+    const dy=speed*pose.drive*slice;b.y+=dy;moved+=Math.abs(dy);S.crawlClock+=slice;remain-=slice;
+    if(S.crawlClock>=dur-.00001){S.crawlClock=0;S.crawlPhase=(S.crawlPhase+1)%S7_WARDEN_CRAWL.length;
+      const next=S7_WARDEN_CRAWL[S.crawlPhase];if(next.plant)s7WardenFootPlant(b,next.leg);}
+  }
+  const pose=S7_WARDEN_CRAWL[S.crawlPhase],u=clamp(S.crawlClock/dur,0,1);
+  S.crawlFrame=pose.f;S.gait=pose.f;S.travel=moved;S.bodyDrop=(pose.plant?(crippled?3.2:1.8):-.55)*Math.sin(u*Math.PI);
+}
+function s7WardenBeginDefeat(b){
+  const S=b&&b._s7warden,F=S&&S.final;if(!F||F.phase==='defeat'||F.phase==='escape')return true;
+  b.hp=1;b._s7FinalNoBar=true;bossDefeated=true;eBullets.length=0;
+  s7WardenPhase(b,'defeat');F.finalY=b.y;F.finalX=b.x;F.bossHidden=false;
+  run.score+=5000*run.stage;
+  if(Audio&&Audio.SFX&&(Audio.SFX.enemyHeavyLaser||Audio.SFX.expBig))(Audio.SFX.enemyHeavyLaser||Audio.SFX.expBig)();
+  return true;
+}
+function s7WardenHit(b,dmg,x,y){
+  const S=b&&b._s7warden,F=S&&S.final;if(!F)return false;
+  if(S.noHit)return true;
+  if(F.phase==='stun'){
+    const c=s7WardenCoreAt(b,x,y);if(!c){b.flash=Math.max(b.flash,.08);return true;}
+    const dealt=dmg*1.8;c.hp-=dealt;b.flash=Math.max(b.flash,.12);
+    if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dealt;
+    if(c.hp<=0)s7WardenCoreBurst(b,c,false);return true;
+  }
+  if(F.phase!=='fight'&&F.phase!=='cripple')return true;
+  b.hp-=dmg;b.flash=.08;if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
+  const ratio=b.hp/b.maxhp;
+  b.dmgState=ratio>.75?0:ratio>.5?1:ratio>.25?2:ratio>.08?3:4;
+  if(b.hp<=0){s7WardenBeginDefeat(b);return true;}
+  if(F.phase==='fight'&&!F.stunUsed&&ratio<=.75){
+    F.stunUsed=true;F.stunFrom=b.y;F.stunTo=Math.max(164,b.y-38);s7WardenPhase(b,'stun');
+    shake=Math.max(shake,14);if(Audio.SFX&&(Audio.SFX.expBig||Audio.SFX.clank))(Audio.SFX.expBig||Audio.SFX.clank)();return true;
+  }
+  if(F.phase==='fight'&&!F.hyper&&ratio<=.50){
+    F.hyper=true;s7WardenPhase(b,'hyper');return true;
+  }
+  if(!F.crippled&&ratio<=.25){
+    F.crippled=true;s7WardenPhase(b,'legBurst');return true;
+  }
+  return true;
+}
+function s7WardenFinishCampaign(b){
+  const F=b&&b._s7warden&&b._s7warden.final;if(!F||F.finished)return;F.finished=true;
+  whiteBlast=0;bossActive=false;bossDefeated=true;b.dead=true;
+  try{Audio.stopMusic();}catch(_s7m){}
+  if(run.mode==='campaign'&&typeof campaign!=='undefined'){
+    let R=null;if(typeof computeStageResults==='function'){computeStageResults();R=drawStageClear._res;}
+    if(R){run.score=(run.score|0)+R.bonus;campaign.rank[7]=R.rank;drawStageClear._res=null;drawStageClear._init=false;}
+    campaign.unlockedMax=Math.max(campaign.unlockedMax||1,8);campaign.justUnlocked=8;campaign._l78Pending=1;
+    if(typeof campSuspend==='function')campSuspend();
+    if(typeof openStageSelect==='function')openStageSelect(8,{unlock:8});
+    else{run._l78Entry=1;beginStage(8);}
+  }else{
+    run._l78Entry=1;beginStage(8);
+  }
+}
+function s7WardenFinalTick(b,dt){
+  const S=b&&b._s7warden,F=S&&S.final;if(!F)return false;F.t+=dt;
+  if(F.radio){F.radio.t+=dt;F.radio.typed+=dt*44;if(F.radio.t>=F.radio.dur)F.radio=null;}
+  if(F.phase==='portalClose'){
+    b.x=(typeof worldWidth==='function'?worldWidth():VW)/2;b.y=84;S.noHit=true;
+    if(!F.beat){F.beat=1;if(Audio.SFX&&(Audio.SFX.warpGate||Audio.SFX.crackle))(Audio.SFX.warpGate||Audio.SFX.crackle)();}
+    if(F.t>=.92){s7WardenPhase(b,'teleportIn');
+      if(Audio.SFX&&(Audio.SFX.teleportIn||Audio.SFX.warpGate))(Audio.SFX.teleportIn||Audio.SFX.warpGate)();}
+    return true;
+  }
+  if(F.phase==='teleportIn'){
+    S.noHit=true;if(F.t>=1.02)s7WardenPhase(b,'walkIn');return true;
+  }
+  if(F.phase==='walkIn'){
+    S.noHit=true;s7WardenForwardCrawl(b,dt,30,false);b.x=(typeof worldWidth==='function'?worldWidth():VW)/2;
+    if(b.y>=b.ty||F.t>=3.35){b.y=b.ty;s7WardenPhase(b,'roar');}
+    return true;
+  }
+  if(F.phase==='roar'){
+    S.noHit=true;if(!F.beat){F.beat=1;s7WardenMechSound('roar');shake=Math.max(shake,8);}
+    if(F.t>=1.34){b._s7FinalNoBar=false;S.mode='burst';S.mt=0;S.noHit=false;s7WardenPhase(b,'fight');}
+    return true;
+  }
+  if(F.phase==='fight'){
+    S.noHit=false;b.y=Math.min(VH*.39,b.y+dt*(F.hyper?13:8));return false;
+  }
+  if(F.phase==='stun'){
+    S.noHit=false;const q=clamp(F.t/.46,0,1),e=1-Math.pow(1-q,3);b.y=lerp(F.stunFrom,F.stunTo,e);
+    shake=Math.max(shake,F.t<.46?8:2);if(F.t>=3.65){S.mode='burst';s7WardenPhase(b,'fight');}
+    return true;
+  }
+  if(F.phase==='hyper'){
+    S.noHit=true;if(!F.beat){F.beat=1;s7WardenMechSound('roar');if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.bossPhase))(Audio.SFX.bossWeaponCharge||Audio.SFX.bossPhase)();}
+    shake=Math.max(shake,2+clamp(F.t/1.45,0,1)*7);
+    if(F.t>=1.52){S.mode='minefield';s7WardenPhase(b,'fight');S.noHit=false;b.flash=.24;}
+    return true;
+  }
+  if(F.phase==='legBurst'){
+    S.noHit=true;const spots=[[-.35,.28],[.35,.28],[-.27,.36],[.27,.36],[-.14,.42],[.14,.42]];
+    while(F.beat<spots.length&&F.t>=.10+F.beat*.085){const p=spots[F.beat++];explode(b.x+p[0]*b.w,b.y+p[1]*b.h,48,'red');shake=Math.max(shake,10);}
+    if(F.t>=.31&&!F.coresForced){F.coresForced=true;for(const c of F.cores)if(!c.dead)s7WardenCoreBurst(b,c,true);}
+    if(F.t>=1.28){b.hp=Math.max(1,Math.min(b.hp,b.maxhp*.24));S.noHit=false;s7WardenPhase(b,'cripple');F.fire=.16;F.volley=0;}
+    return true;
+  }
+  if(F.phase==='cripple'){
+    S.noHit=false;s7WardenForwardCrawl(b,dt,9,true);b.y=Math.min(VH*.46,b.y);
+    F.fire-=dt;if(F.fire<=0){F.volley++;const aim=aimPlayer(b.x,b.y+b.h*.14);
+      if(F.volley%4===0){s7WardenShot(b,'L',aim-.07,4.65,'rail',{});s7WardenShot(b,'R',aim+.07,4.65,'rail',{silent:true});s7WardenMuzzle(b,'L',true);s7WardenMuzzle(b,'R',true);F.fire=.54;}
+      else{s7WardenShot(b,(F.volley&1)?'L':'R',aim,5.25,'rail',{});s7WardenMuzzle(b,(F.volley&1)?'L':'R',false);F.fire=.19;}}
+    return true;
+  }
+  if(F.phase==='defeat'){
+    S.noHit=true;if(!F.beat){F.beat=1;s7WardenMechSound('scream');s7WardenSay(b,"{P1_NAME}, IT'S NOW OR NEVER! THE PORTAL'S STILL OPEN!",2.8);}
+    if(F.t>=2.75){s7WardenPhase(b,'escape');F.portalOpen=0;F.shipStartX=player.x;F.shipStartY=player.y;F.explodeAt=.9;}
+    return true;
+  }
+  if(F.phase==='escape'){
+    S.noHit=true;F.portalOpen=clamp(F.t/.72,0,1);mapScroll=Math.min(levelScrollRange(),mapScroll+dt*230);
+    if(!F.beat){F.beat=1;if(Audio.SFX&&(Audio.SFX.helixCharge||Audio.SFX.warpGate))(Audio.SFX.helixCharge||Audio.SFX.warpGate)();}
+    if(F.t>=.82&&!F.legRaise){F.legRaise=true;s7WardenMechSound('scream');}
+    if(F.t>=1.15&&!F.warned){F.warned=true;s7WardenSay(b,"{P1_NAME}, GET OUT OF THERE NOW! IT'S GONNA BLOW!",3.0);}
+    const limb=[[-.36,.25],[.36,.25],[-.28,.37],[.28,.37],[0,.16],[0,0]];
+    while(F.escapeBlast<limb.length&&F.t>=.95+F.escapeBlast*.11){const p=limb[F.escapeBlast++];explode(b.x+p[0]*b.w,b.y+p[1]*b.h,rnd(42,68),'red');shake=Math.max(shake,12);}
+    if(F.t>=1.55){const q=clamp((F.t-1.55)/1.58,0,1),e=q*q*(3-2*q);player.x=lerp(F.shipStartX,(typeof worldWidth==='function'?worldWidth():VW)/2,e);player.y=lerp(F.shipStartY,VH*.60,e);if(q>=.96)F.shipHidden=true;}
+    if(F.t>=2.34){F.chase=(F.chase||0)-dt;while(F.chase<=0){F.chase+=.075;const q=clamp((F.t-2.34)/2.0,0,1),y=lerp(b.y,VH*.10,q);explode(rnd(20,worldWidth()-20),y+rnd(-55,65),rnd(42,92),'red');shake=Math.max(shake,15);}}
+    if(F.t>=3.06&&!F.bigBoom){F.bigBoom=true;F.bossHidden=true;for(let i=0;i<9;i++)explode(b.x+rnd(-b.w*.55,b.w*.55),b.y+rnd(-b.h*.45,b.h*.45),rnd(72,132),'red');if(typeof fxBurst==='function')fxBurst(b.x,b.y,230,{color:'#ff7134',rings:4,chunks:44,sparks:72});}
+    if(F.t>=3.72){F.engulf=(F.engulf||0)-dt;while(F.engulf<=0){F.engulf+=.055;explode(rnd(0,worldWidth()),rnd(PLAY.y,VH),rnd(58,128),'red');}}
+    whiteBlast=F.t<4.18?0:clamp((F.t-4.18)/.72,0,1);
+    if(F.t>=5.18)s7WardenFinishCampaign(b);return true;
+  }
+  return false;
+}
+function s7WardenTick(b,dt){
+  const S=b&&b._s7warden;if(!S)return false;S.t+=dt;S.mt+=dt;S.impactCd=Math.max(0,S.impactCd-dt);b.fireCd=999;
+  if(s7WardenFinalTick(b,dt))return true;
+  /* Crawl targets deliberately extend beyond the fully-visible teleport anchors. The outer legs
+     enter and leave through the sewer walls while the reactor chassis stays onscreen, giving the
+     walker a real edge-to-edge traversal instead of a 90px shuffle in the center. */
+  const left=(typeof camLeftX==='function'?camLeftX():0)+b.w*.26,right=(typeof camRightX==='function'?camRightX():worldWidth())-b.w*.26;
+  b.y+=(b.ty-b.y)*Math.min(1,dt*5.5);
+  if(S.mode==='patrol'){
+    const dx=S.targetX-b.x,spd=52;if(Math.abs(dx)>3)S.dir=dx<0?-1:1;const travelDir=S.dir;s7WardenCrawl(b,dt,spd);
+    if(Math.abs(dx)<4||(travelDir>0?b.x>=S.targetX:b.x<=S.targetX)){
+      b.x=S.targetX;S.targetX=S.targetX<(left+right)/2?right:left;S.dir=S.targetX>b.x?1:-1;
+    }
+    if(S.mt>2.40){const pick=S.step%4;s7WardenMode(b,pick===0?'burst':pick===1?'minefield':pick===2?'rail':'teleport');}
+  }else if(S.mode==='burst'){
+    /* Ten machine-fast toxic cannon rounds, but the whole burst commits to the angle sampled at
+       the tell. The boss braces and crawls only 11px/s, so the player can read the lane. */
+    s7WardenCrawl(b,dt,11);
+    while(S.shot<10&&S.mt>=.48+S.shot*.105){const slot=(S.shot&1)?'R':'L',o=(S.shot%5-2)*.025;
+      s7WardenShot(b,slot,S.aim+o,5.0,'shell',{silent:S.shot>0});s7WardenMuzzle(b,slot,false);S.shot++;}
+    if(S.mt>1.78)s7WardenMode(b,'patrol');
+  }else if(S.mode==='minefield'){
+    if(!S.event&&S.mt>.72){S.event=1;const C=shipBossMount(b,'C'),cols=7,gap=clamp(Math.floor(player.x/(worldWidth()/cols)),1,cols-2);
+      for(let i=0;i<cols;i++){if(i===gap)continue;const tx=(i+.5)*worldWidth()/cols,a=Math.atan2(VH*.58-C.y,tx-C.x);
+        s7WardenShot(b,'C',a,1.18,'mine',{silent:i>0,targetX:tx,targetY:VH*.58});}
+      s7WardenMuzzle(b,'C',true);shake=Math.max(shake,6);
+      if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.enemyToxicSpit))(Audio.SFX.enemyBossCannon||Audio.SFX.enemyToxicSpit)();}
+    if(S.mt>2.20)s7WardenMode(b,'patrol');
+  }else if(S.mode==='rail'){
+    if(!S.event&&S.mt>.86){S.event=1;const base=aimPlayer(b.x,b.y),safe=(player.x<b.x)?-1:1;
+      for(const o of [-.44,-.30,-.16,0,.16,.30,.44]){if(Math.sign(o)===safe&&Math.abs(o)>.28)continue;
+        s7WardenShot(b,'C',base+o,4.15,'rail',{silent:o!==-.44,szMul:Math.abs(o)<.02?1.28:1});}
+      s7WardenMuzzle(b,'C',true);shake=Math.max(shake,8);
+      if(Audio.SFX&&(Audio.SFX.enemyHeavyLaser||Audio.SFX.enemyElectricBolt))(Audio.SFX.enemyHeavyLaser||Audio.SFX.enemyElectricBolt)();}
+    if(S.mt>1.82)s7WardenMode(b,'patrol');
+  }else if(S.mode==='teleport'){
+    S.noHit=S.mt>.28&&S.mt<1.08;
+    if(S.mt>=.76&&!S.event){S.event=1;b.x=S.teleTo;
+      combatAtlasFx(b.x,b.y,'cfx_stage7_warden_teleport',4,2,0,8,{life:.82,hpx:410,wpx:410,blend:'lighter'});
+      if(Audio.SFX&&(Audio.SFX.teleportIn||Audio.SFX.warpGate||Audio.SFX.crackle))(Audio.SFX.teleportIn||Audio.SFX.warpGate||Audio.SFX.crackle)();}
+    if(S.mt>1.62)s7WardenMode(b,'burst');
+  }
+  b.x=clamp(b.x,left,right);return true;
+}
+function s7WardenDraw(b){
+  const S=b&&b._s7warden;if(!S)return false;const F=S.final,phase=F&&F.phase;
+  if(phase==='portalClose'||(F&&F.bossHidden))return true;
+  const baseY=(b._drawY!=null?b._drawY:b.y);let cy=baseY+(S.bodyDrop||0),size=b.w*1.12;
+  let alpha=1;if(S.mode==='teleport')alpha=S.mt<.76?1-clamp((S.mt-.20)/.38,0,1):clamp((S.mt-.84)/.38,0,1);
+  /* The entrance reel belongs to the portal aperture, not to a second floating circle around
+     the boss. The machine itself grows out of that shared hole, clears its rim, and settles at
+     the top of the arena before beginning the authored leg-by-leg walk toward the player. */
+  if(phase==='teleportIn'){
+    const q=clamp((F.t-.46)/.48,0,1),e=q*q*(3-2*q),G=s7PortalGeom();
+    cy=lerp(G.y,baseY+(S.bodyDrop||0),e);size*=lerp(.10,1,e);alpha=clamp(q*1.22,0,1);
+  }
+  const drawH=size*(616/640);
+  if(S.mode==='teleport'){
+    const q=S.mt<.76?clamp((S.mt-.08)/.68,0,1):clamp((S.mt-.76)/.70,0,1),fi=clamp(Math.floor(q*8),0,7);
+    combatAtlasDraw('cfx_stage7_warden_teleport',4,2,fi,b.x,cy,size*1.16,size*1.16,{alpha:.68+.22*Math.sin(q*Math.PI),blend:'lighter'});
+  }
+  const moving=((S.mode==='patrol'||S.mode==='burst')&&S.travel>.02)||phase==='walkIn'||phase==='cripple';
+  let fi=moving?S.crawlFrame:0,bodyKey='cfx_stage7_warden_walk',flip=S.dir>0;
+  if(phase==='roar'){
+    bodyKey='cfx_stage7_warden_roar';fi=Math.min(7,Math.floor(clamp(F.t/1.16,0,1)*8));flip=false;
+  }else if(phase==='cripple'){
+    bodyKey='cfx_stage7_warden_cripple';fi=S.crawlFrame;flip=false;
+  }else if(phase==='defeat'||phase==='escape'){
+    bodyKey='cfx_stage7_warden_laststand';fi=phase==='defeat'?Math.min(2,Math.floor(F.t*2.1)):Math.min(7,2+Math.floor(clamp(F.t/2.5,0,1)*6));flip=false;
+  }else if(S.mode==='burst'&&phase==='fight'){
+    bodyKey='cfx_stage7_warden_cannon';fi=S.mt<.28?0:(Math.floor(((S.mt-.28)%0.64)/0.64*8)%8);
+  }else if(S.mode==='rail'&&phase==='fight'){
+    bodyKey='cfx_stage7_warden_rail';fi=S.mt<.86?Math.min(3,Math.floor(S.mt/.86*4)):4+Math.min(3,Math.floor((S.mt-.86)/.96*4));
+  }else if(S.mode==='minefield'&&phase==='fight'){
+    bodyKey='cfx_stage7_warden_rail';fi=Math.min(7,Math.floor(clamp(S.mt/1.35,0,1)*8));
+  }
+  combatAtlasDraw(bodyKey,8,1,fi,b.x,cy,size,drawH,{alpha:alpha,flipX:flip,smooth:true});
+  /* HYPER MODE keeps the metal readable. A restrained magenta/cyan colour wash stays on the
+     authored body, while the phase-change itself is a bottom-to-top white pixel scan. */
+  if(F&&(F.hyper||phase==='hyper')&&typeof xartPalette==='function'&&XART.rdy(bodyKey)){
+    const pal=xartPalette(bodyKey,(Math.floor(S.t*5)&1)?'#ff37df':'#20cfff'),iw=pal&&pal.width,ih=pal&&pal.height;
+    if(pal&&iw){const sw=iw/8;ctx.save();ctx.translate(b.x,cy);ctx.scale(flip?-1:1,1);ctx.imageSmoothingEnabled=true;
+      ctx.globalCompositeOperation='lighter';ctx.globalAlpha=phase==='hyper'?.34:.14;
+      ctx.drawImage(pal,fi*sw,0,sw,ih,-size/2,-drawH/2,size,drawH);ctx.restore();}
+  }
+  if(phase==='hyper'&&typeof xartTint==='function'&&XART.rdy(bodyKey)){
+    const hi=xartTint(bodyKey,'#ffffff',.98),iw=hi&&hi.width,ih=hi&&hi.height,q=clamp(F.t/1.45,0,1),fill=drawH*q;
+    if(hi&&iw){const sw=iw/8;ctx.save();ctx.translate(b.x,cy);ctx.scale(flip?-1:1,1);ctx.beginPath();ctx.rect(-size/2,drawH/2-fill,size,fill);ctx.clip();
+      ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.42+.38*Math.sin(F.t*28);ctx.drawImage(hi,fi*sw,0,sw,ih,-size/2,-drawH/2,size,drawH);ctx.restore();
+      ctx.save();ctx.globalCompositeOperation='lighter';ctx.fillStyle='#ffffff';ctx.globalAlpha=.85;ctx.fillRect(b.x-size*.43,cy+drawH/2-fill-2,size*.86,4);ctx.restore();}
+  }
+  if(phase==='stun')for(const c of F.cores){if(c.dead)continue;const p=s7WardenCorePos(b,c.side),pulse=.82+.18*Math.sin(S.t*11+c.side);
+    ctx.save();ctx.globalCompositeOperation='lighter';ctx.fillStyle='rgba(202,255,91,'+(.30*pulse).toFixed(3)+')';ctx.strokeStyle='#ecffcb';ctx.lineWidth=2.5;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r*pulse,0,TAU);ctx.fill();ctx.stroke();ctx.restore();
+    combatAtlasDraw('cfx_stage7_warden_mine',1,1,0,p.x,p.y,p.r*2.35,p.r*2.35,{alpha:.68*pulse,blend:'lighter',smooth:true});}
+  if((b.flash||0)>0&&typeof xartTint==='function'&&XART.rdy(bodyKey)){
+    const hi=xartTint(bodyKey,hitFlashColor(b,'#ffffff'),.9),iw=hi&&hi.width,ih=hi&&hi.height;
+    if(hi&&iw){const sw=iw/8,sh=ih,sx=fi*sw,sy=0;ctx.save();ctx.imageSmoothingEnabled=true;ctx.globalAlpha=Math.min(.78,b.flash*5);
+      ctx.translate(b.x,cy);ctx.scale(flip?-1:1,1);ctx.drawImage(hi,sx,sy,sw,sh,-size/2,-drawH/2,size,drawH);ctx.restore();}
+  }
+  return true;
+}
 function spaceBossShot(x,y,a,sp,kind,o){o=o||{};const hit=(S5_PROJECTILE_HIT&&S5_PROJECTILE_HIT[kind])||(S9_PROJECTILE_HIT&&S9_PROJECTILE_HIT[kind])||[12,12];
   if(o.w==null)o.w=hit[0];if(o.h==null)o.h=hit[1];const q=eShootT(x,y,a,sp,kind,o);q._boss=true;
-  q._bfam=run.stage===9?'cyclone':(kind==='s5missile'?'mirv':kind==='s5null'?'toxic':'rampart');q._noArsenal=false;
+  q._bfam=run.stage===9?'cyclone':(kind==='s5missile'?'mirv':kind==='s5null'?'toxic':'rampart');q._noArsenal=!!o.noArsenal;q._forceStageArt=!!o.forceStageArt;
   if(o.accel){q._spaceAccel=o.accel;q._spaceMax=o.max||sp*2;}return q;}
 
 /* STAGE 5 — XENO REGENT ESCORT RIG.
@@ -13676,16 +14281,58 @@ function spaceBossShot(x,y,a,sp,kind,o){o=o||{};const hit=(S5_PROJECTILE_HIT&&S5
    Space weapons acquire these parts through spaceTargets(), so missiles and shadow bursts do not
    detonate on an invisible boss rectangle while the visible shield source remains untouched. */
 function xenoRegentInit(b){
-  if(!b)return;const hp=Math.max(160,Math.ceil((b.maxhp||1200)*.12));
+  if(!b)return;const hp=Math.max(150,Math.ceil((b.maxhp||1200)*.075));
   const mother={role:'mother',x:b.x,y:-90,w:154,h:88,hp:hp,maxhp:hp,dead:false,flash:0,fire:.9,anim:0};
   const helpers=[-1,1].map((side,i)=>({role:'helper',side:side,x:b.x+side*154,y:-55-i*18,w:88,h:82,
     hp:Math.max(70,Math.ceil(hp*.48)),maxhp:Math.max(70,Math.ceil(hp*.48)),dead:false,flash:0,
     fire:.65+i*.38,anim:0}));
   b._xenoRig={t:0,mother:mother,helpers:helpers,shield:true,shieldFlash:0,shieldBreak:0,fireBeat:0};
 }
-function xenoRegentPartDamage(part,dmg,b){
+/* REFERENCE PASS 0831 — XENO BLOCK FORMATION.
+   The Regent now owns a Contra-style formation wall instead of expressing every phase as a fan.
+   Two adjacent columns are promised as the door, and that door walks only one column per row. */
+function xenoRegentGridStart(b,step){
+  if(!b||b._xenoGrid)return false;const cols=8,gapW=3;
+  const left=(typeof camLeftX==='function'?camLeftX():0),right=(typeof camRightX==='function'?camRightX():worldWidth()),cw=(right-left)/cols;
+  const gap=clamp(Math.floor(((player?player.x:(left+right)/2)-left)/cw)-1,0,cols-gapW);
+  b._xenoGrid={t:0,tell:.82,wave:0,waves:3,next:.82,gap:gap,gapW:gapW,dir:(step&1)?1:-1,cols:cols,left:left,right:right};
+  b.fireCd=Math.max(b.fireCd||0,2.45);b.flash=Math.max(b.flash||0,.36);
+  if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.38,'VOID GRID!','#d895ff');
+  if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyPulseLaserAlien))(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyPulseLaserAlien)();
+  return true;
+}
+function xenoRegentGridTick(b,dt){
+  const G=b&&b._xenoGrid;if(!G)return false;G.t+=dt;
+  if(G.t>=G.next&&G.wave<G.waves){
+    const cw=(G.right-G.left)/G.cols,y=(b._drawY!=null?b._drawY:b.y)+b.h*.34;
+    for(let i=0;i<G.cols;i++){
+      if(i>=G.gap&&i<G.gap+(G.gapW||3))continue;
+      const x=G.left+(i+.5)*cw;
+      spaceBossShot(x,y,Math.PI/2,1.58+G.wave*.13,'s5fracture',{silent:i>0,accel:.18,max:2.38+G.wave*.17,noArsenal:true,forceStageArt:true});
+      /* A staggered second row keeps the wall dimensional without filling every closed column
+         twice.  The old 48-round block hid the promised door behind overlapping projectiles. */
+      if(((i+G.wave)&1)===0)spaceBossShot(x,y-27,Math.PI/2,1.46+G.wave*.11,'s5null',{silent:true,accel:.16,max:2.20+G.wave*.15,noArsenal:true,forceStageArt:true});
+    }
+    shipBossMuzzleStart(b,['L','C','R'],{fam:'bfx_toxic_m',n:6,life:.17,hpx:58});
+    shake=Math.max(shake,4+G.wave);G.wave++;
+    let ng=G.gap+G.dir;if(ng<0||ng>G.cols-(G.gapW||3)){G.dir*=-1;ng=G.gap+G.dir;}G.gap=clamp(ng,0,G.cols-(G.gapW||3));G.next+=.48;
+  }
+  if(G.wave>=G.waves&&G.t>G.next+.58){b._xenoGrid=null;b.fireCd=.70;return false;}
+  return true;
+}
+function xenoRegentGridDraw(b){
+  const G=b&&b._xenoGrid;if(!G||G.t>=G.tell)return;const cw=(G.right-G.left)/G.cols,pulse=.24+.18*Math.sin(G.t*22);
+  ctx.save();ctx.globalCompositeOperation='lighter';
+  for(let i=0;i<G.cols;i++){
+    if(i>=G.gap&&i<G.gap+(G.gapW||3))continue;
+    ctx.globalAlpha=pulse;ctx.fillStyle='#ab55ff';ctx.fillRect(G.left+i*cw+4,PLAY.y,cw-8,VH-PLAY.y);
+    ctx.globalAlpha=.72;ctx.fillStyle='#f0c8ff';ctx.fillRect(G.left+i*cw+cw*.47,PLAY.y,cw*.06,VH-PLAY.y);
+  }
+  ctx.globalAlpha=.92;ctx.strokeStyle='#f1c7ff';ctx.lineWidth=2;ctx.strokeRect(G.left+G.gap*cw+3,PLAY.y+3,cw*(G.gapW||3)-6,VH-PLAY.y-6);ctx.restore();
+}
+function xenoRegentPartDamage(part,dmg,b,quiet){
   if(!part||part.dead)return false;part.hp-=dmg;part.flash=.16;part.anim=.34;
-  try{if(Audio.SFX&&(Audio.SFX.spaceLaserHit||Audio.SFX.shieldHitLight))(Audio.SFX.spaceLaserHit||Audio.SFX.shieldHitLight)();}catch(_xh){}
+  if(!quiet)try{if(Audio.SFX&&(Audio.SFX.spaceLaserHit||Audio.SFX.shieldHitLight))(Audio.SFX.spaceLaserHit||Audio.SFX.shieldHitLight)();}catch(_xh){}
   if(part.hp<=0){part.hp=0;part.dead=true;part.flash=0;
     if(typeof explode==='function')explode(part.x,part.y,part.role==='mother'?22:12,'purple');
     try{if(Audio.SFX&&(Audio.SFX.explosionPlasma||Audio.SFX.explosionAirMedium))(Audio.SFX.explosionPlasma||Audio.SFX.explosionAirMedium)();}catch(_xd){}
@@ -13696,6 +14343,11 @@ function xenoRegentPartDamage(part,dmg,b){
 function xenoRegentShieldAbsorb(b,dmg){
   const R=b&&b._xenoRig;if(!R||!R.shield||!R.mother||R.mother.dead)return false;
   R.shieldFlash=.18;R.mother.flash=Math.max(R.mother.flash,.08);shake=Math.max(shake,2);
+  /* Specials and splash attacks resolve against the boss body rather than spaceTargets().  They
+     used to disappear into an invulnerable shield forever.  Transfer a readable fraction to the
+     visible projector so every weapon can advance the mechanic, while a directly aimed cannon
+     still breaks it much faster at full damage. */
+  xenoRegentPartDamage(R.mother,Math.max(.25,(dmg||0)*.30),b,true);
   try{if(Audio.SFX&&(Audio.SFX.shieldHitLight||Audio.SFX.spaceLaserHit))(Audio.SFX.shieldHitLight||Audio.SFX.spaceLaserHit)();}catch(_xs){}
   return true;
 }
@@ -13706,11 +14358,14 @@ function xenoRegentMuzzle(part,ox){
 }
 function xenoRegentTick(b,dt){
   const R=b&&b._xenoRig;if(!R)return;R.t+=dt;R.shieldFlash=Math.max(0,R.shieldFlash-dt);R.shieldBreak=Math.max(0,R.shieldBreak-dt);
+  if(b._xenoGrid)xenoRegentGridTick(b,dt);
   const W=worldWidth(),cy=(b._drawY!=null?b._drawY:b.y),m=R.mother;
   if(!m.dead){
-    const ty=Math.max(54,cy-b.h*.58);m.x+=(b.x-m.x)*Math.min(1,dt*3.2);m.y+=(ty-m.y)*Math.min(1,dt*2.9);
+    /* Keep the complete 190px station inside the arena.  Its former y=54 target left nearly half
+       the sprite above the screen even though it was the one mandatory target in the fight. */
+    const ty=Math.max(100,cy-b.h*.46);m.x+=(b.x-m.x)*Math.min(1,dt*3.2);m.y+=(ty-m.y)*Math.min(1,dt*2.9);
     m.flash=Math.max(0,m.flash-dt);m.anim=Math.max(0,m.anim-dt);m.fire-=dt;
-    if(R.t>1.25&&m.fire<=0){m.fire=1.68;const a=aimPlayer(m.x,m.y),base=m.y+m.h*.29;
+    if(R.t>1.25&&m.fire<=0&&!b._xenoGrid){m.fire=1.68;const a=aimPlayer(m.x,m.y),base=m.y+m.h*.29;
       for(const o of [-.18,0,.18])spaceBossShot(m.x,m.y+24,a+o,3.45,'s5fracture',{silent:o!==0});
       xenoRegentMuzzle(m,-.23);xenoRegentMuzzle(m,.23);m.anim=.58;
       try{if(Audio.SFX&&(Audio.SFX.enemyPulseLaserAlien||Audio.SFX.enemyHeavyLaser))(Audio.SFX.enemyPulseLaserAlien||Audio.SFX.enemyHeavyLaser)();}catch(_xm){}
@@ -13726,7 +14381,7 @@ function xenoRegentTick(b,dt){
           tx=clamp(b.x+h.side*(b.w*.70+56)+Math.sin(R.t*1.35+h.side)*18,left,right),
           ty=cy+10+Math.cos(R.t*1.1+h.side)*25;
     h.x+=(tx-h.x)*Math.min(1,dt*4.2);h.y+=(ty-h.y)*Math.min(1,dt*4.2);h.flash=Math.max(0,h.flash-dt);h.anim=Math.max(0,h.anim-dt);h.fire-=dt;
-    if(R.t>1.05&&h.fire<=0){h.fire=1.12+(h.side>0?.16:0);const a=aimPlayer(h.x,h.y);
+    if(R.t>1.05&&h.fire<=0&&!b._xenoGrid){h.fire=1.12+(h.side>0?.16:0);const a=aimPlayer(h.x,h.y);
       for(const o of [-.09,.09])spaceBossShot(h.x,h.y+h.h*.28,a+o,4.05,'s5null',{silent:o>0});
       xenoRegentMuzzle(h,0);h.anim=.42;
       try{if(Audio.SFX&&(Audio.SFX.enemyPulseLaserAlien||Audio.SFX.enemyBossCannon))(Audio.SFX.enemyPulseLaserAlien||Audio.SFX.enemyBossCannon)();}catch(_xhf){}
@@ -13740,9 +14395,11 @@ function xenoRegentDrawPart(part,keyBase,size){
   if(part.flash>0&&typeof xartTint==='function'){const q=xartTint(key,'#ffffff',.9);if(q){ctx.globalAlpha=clamp(part.flash/.16,0,1);ctx.drawImage(q,part.x-w/2,part.y-h/2,w,h);}}
   ctx.restore();
   const bw=part.role==='mother'?118:68,by=part.y-h*.35;ctx.fillStyle='rgba(0,0,0,.82)';ctx.fillRect(part.x-bw/2,by,bw,5);ctx.fillStyle='#41e66d';ctx.fillRect(part.x-bw/2+1,by+1,(bw-2)*clamp(part.hp/part.maxhp,0,1),3);
+  if(part.role==='mother'){ctx.save();ctx.textAlign='center';ctx.font='bold 7px "BOFmil", monospace';ctx.fillStyle='#f1c7ff';ctx.fillText('SHIELD ARRAY',part.x,by-4);ctx.restore();}
 }
 function xenoRegentDrawOver(b){
   const R=b&&b._xenoRig;if(!R)return;const cy=(b._drawY!=null?b._drawY:b.y);
+  if(b._xenoGrid)xenoRegentGridDraw(b);
   if(R.shield&&!R.mother.dead){
     const key='s5fracture_'+(Math.floor(R.t*14)%12),r=Math.max(b.w,b.h)*.67;
     ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.62+(R.shieldFlash>0?.30:0);
@@ -13755,16 +14412,54 @@ function xenoRegentDrawOver(b){
   for(const h of R.helpers)xenoRegentDrawPart(h,'s5atk_heavy_interceptor_',112);
 }
 function xenoRegentAttack(b,step){const ph=shipBossPhase(b),W=worldWidth(),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C');
-  if(ph===0){const flip=(step&1)?1:-1;for(const o of [.07,.18,.31,.46]){spaceBossShot(L.x,L.y,Math.PI/2+flip*o,3.7,'s5null',{silent:o>.07});spaceBossShot(R.x,R.y,Math.PI/2-flip*o,3.7,'s5null',{silent:true});}shipBossMuzzleStart(b,['L','R'],{fam:'bfx_toxic_m',n:6,life:.18,hpx:58});b.fireCd=1.04;
+  if(b._xenoGrid){b.fireCd=.24;return;}
+  if(ph===0){if(step%3===0){xenoRegentGridStart(b,step);return;}const flip=(step&1)?1:-1;for(const o of [.07,.18,.31,.46]){spaceBossShot(L.x,L.y,Math.PI/2+flip*o,3.7,'s5null',{silent:o>.07});spaceBossShot(R.x,R.y,Math.PI/2-flip*o,3.7,'s5null',{silent:true});}shipBossMuzzleStart(b,['L','R'],{fam:'bfx_toxic_m',n:6,life:.18,hpx:58});b.fireCd=1.04;
   }else if(ph===1){if(step%3===0)spaceBossShot(C.x,C.y,Math.PI/2,1.45,'s5halo',{accel:.34,max:2.8});else{const n=16,base=step*.29,st=TAU/n,a=aimPlayer(C.x,C.y),gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;spaceBossShot(C.x,C.y,base+i*st,2.35,'s5fracture',{silent:i>0});}}shipBossMuzzleStart(b,['C'],{fam:'bfx_toxic_m',n:6,life:.25,hpx:72});b.fireCd=.92;
-  }else if(ph===2){for(const s of [-1,1]){const p=s<0?L:R;for(const o of [.08,.22,.38])spaceBossShot(p.x,p.y,Math.PI/2+s*o,1.5,'s5missile',{silent:s>0||o>.08,accel:1.05,max:5.7});}shipBossMuzzleStart(b,['L','R'],{fam:'bfx_toxic_m',n:6,life:.20,hpx:62});b.fireCd=.82;
-  }else{const left=step&1,src=left?L:R,sgn=left?1:-1;for(const o of [.06,.16,.28,.42,.58])spaceBossShot(src.x,src.y,Math.PI/2+sgn*o,3.15,'s5chaos',{silent:o>.06});spaceBossShot(C.x,C.y,Math.PI/2,1.55,'s5halo',{silent:true,accel:.42,max:3.2});shipBossMuzzleStart(b,[left?'L':'R','C'],{fam:'bfx_toxic_m',n:6,life:.16,hpx:56});b.fireCd=.66;}
+  }else if(ph===2){for(const s of [-1,1]){const p=s<0?L:R;for(const o of [.12,.32])spaceBossShot(p.x,p.y,Math.PI/2+s*o,1.46,'s5missile',{silent:s>0||o>.12,accel:.96,max:5.25});}shipBossMuzzleStart(b,['L','R'],{fam:'bfx_toxic_m',n:6,life:.20,hpx:62});b.fireCd=1.12;
+  }else{const left=step&1,src=left?L:R,sgn=left?1:-1;for(const o of [.08,.22,.40,.58])spaceBossShot(src.x,src.y,Math.PI/2+sgn*o,3.05,'s5chaos',{silent:o>.08});spaceBossShot(C.x,C.y,Math.PI/2,1.50,'s5halo',{silent:true,accel:.38,max:3.0});shipBossMuzzleStart(b,[left?'L':'R','C'],{fam:'bfx_toxic_m',n:6,life:.16,hpx:56});b.fireCd=.92;}
+}
+/* REFERENCE PASS 0831 — TIDAL CASCADE.
+   Four heavy water/void rows cross the arena with a two-column opening.  The opening moves by one
+   column per wave and bounces at the edge, preserving the footage's block-wall pressure without
+   turning the last stage into a memorisation trap. */
+function tidalCascadeStart(b,step){
+  if(!b||b._s9Cascade)return false;const cols=8,left=(typeof camLeftX==='function'?camLeftX():0),right=(typeof camRightX==='function'?camRightX():worldWidth()),cw=(right-left)/cols;
+  const gap=clamp(Math.floor(((player?player.x:(left+right)/2)-left)/cw)-1,0,cols-2);
+  b._s9Cascade={t:0,tell:.70,wave:0,waves:4,next:.70,gap:gap,dir:(step&1)?1:-1,cols:cols,left:left,right:right};
+  b.fireCd=Math.max(b.fireCd||0,2.65);b.flash=Math.max(b.flash||0,.38);
+  if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.39,'TIDAL CASCADE!','#79eaff');
+  if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyHeavyLaser))(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyHeavyLaser)();
+  return true;
+}
+function tidalCascadeTick(b,dt){
+  const T=b&&b._s9Cascade;if(!T)return false;T.t+=dt;
+  if(T.t>=T.next&&T.wave<T.waves){
+    const cw=(T.right-T.left)/T.cols,y=(b._drawY!=null?b._drawY:b.y)+b.h*.34;
+    for(let i=0;i<T.cols;i++){
+      if(i===T.gap||i===T.gap+1)continue;const x=T.left+(i+.5)*cw;
+      spaceBossShot(x,y-(i&1)*18,Math.PI/2,1.42+T.wave*.15,'s9pair',{silent:i>0,w:34,h:34,szMul:1.22,accel:.24,max:2.48+T.wave*.18,noArsenal:true,forceStageArt:true});
+    }
+    shipBossMuzzleStart(b,['L','C','R'],{fam:'bfx_cyclone_m',n:6,life:.18,hpx:66});
+    shake=Math.max(shake,5+T.wave);T.wave++;
+    let ng=T.gap+T.dir;if(ng<0||ng>T.cols-2){T.dir*=-1;ng=T.gap+T.dir;}T.gap=clamp(ng,0,T.cols-2);T.next+=.42;
+  }
+  if(T.wave>=T.waves&&T.t>T.next+.62){b._s9Cascade=null;b.fireCd=.68;return false;}return true;
+}
+function tidalCascadeDraw(b){
+  const T=b&&b._s9Cascade;if(!T||T.t>=T.tell)return;const cw=(T.right-T.left)/T.cols,pulse=.25+.18*Math.sin(T.t*21);
+  ctx.save();ctx.globalCompositeOperation='lighter';
+  for(let i=0;i<T.cols;i++){
+    if(i===T.gap||i===T.gap+1)continue;ctx.globalAlpha=pulse;ctx.fillStyle='#39caff';ctx.fillRect(T.left+i*cw+5,PLAY.y,cw-10,VH-PLAY.y);
+    ctx.globalAlpha=.76;ctx.fillStyle='#d4ffff';ctx.fillRect(T.left+i*cw+cw*.48,PLAY.y,cw*.04,VH-PLAY.y);
+  }
+  ctx.globalAlpha=.92;ctx.strokeStyle='#a6ffff';ctx.lineWidth=2;ctx.strokeRect(T.left+T.gap*cw+3,PLAY.y+3,cw*2-6,VH-PLAY.y-6);ctx.restore();
 }
 function s9ShipBossAttack(b,step){const ph=shipBossPhase(b),W=worldWidth(),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C'),sent=b._ship==='warpsentinel';
+  if(b._s9Cascade){b.fireCd=.24;return;}
   if(sent){if(ph===0){for(const o of [.10,.25,.42]){spaceBossShot(L.x,L.y,Math.PI/2+o,4.0,'s9needle',{silent:o>.10});spaceBossShot(R.x,R.y,Math.PI/2-o,4.0,'s9needle',{silent:true});}b.fireCd=.88;
     }else if(ph===1){const n=12,base=step*.36,st=TAU/n,a=aimPlayer(C.x,C.y),gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;spaceBossShot(C.x,C.y,base+i*st,2.85,'s9warp',{silent:i>0});}b.fireCd=.76;
     }else{for(const s of [-1,1]){const p=s<0?L:R;spaceBossShot(p.x,p.y,Math.PI/2+s*.14,2.0,'s9comet',{silent:s>0,accel:1.65,max:6.4});}for(const o of [-.13,0,.13])spaceBossShot(C.x,C.y,Math.PI/2+o,5.3,'s9gold',{silent:true});b.fireCd=.58;}
-  }else if(ph===0){const safe=step%6;for(let i=0;i<6;i++){if(i===safe)continue;spaceBossShot(W*(i+.5)/6,C.y,Math.PI/2,4.0,'s9gold',{silent:i>0});}b.fireCd=.94;
+  }else if(ph===0){if(step%3===0){tidalCascadeStart(b,step);return;}const safe=step%6;for(let i=0;i<6;i++){if(i===safe)continue;spaceBossShot(W*(i+.5)/6,C.y,Math.PI/2,4.0,'s9gold',{silent:i>0});}b.fireCd=.94;
   }else if(ph===1){if(step%3===0)spaceBossShot(C.x,C.y,Math.PI/2,1.5,'s9lattice',{accel:.42,max:3.2});else for(const s of [-1,1]){const p=s<0?L:R;for(const o of [.08,.22,.38])spaceBossShot(p.x,p.y,Math.PI/2+s*o,3.0,'s9warp',{silent:s>0||o>.08});}b.fireCd=.82;
   }else if(ph===2){for(const s of [-1,1]){const p=s<0?L:R;for(const o of [.09,.25])spaceBossShot(p.x,p.y,Math.PI/2+s*o,1.7,'s9comet',{silent:s>0||o>.09,accel:1.4,max:6.2});}b.fireCd=.72;
   }else{const n=18,base=step*.27,st=TAU/n,a=aimPlayer(C.x,C.y),gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;spaceBossShot(C.x,C.y,base+i*st,3.15,'s9pair',{silent:i>0});}for(const o of [-.12,.12])spaceBossShot(C.x,C.y,Math.PI/2+o,5.5,'s9needle',{silent:true});b.fireCd=.56;}
@@ -13936,10 +14631,11 @@ function shipBossAttack(b){
     /* The pattern key remains `chargebeam`, but its geometry is authored per boss and never reads
        player position after release. */
     if(b._ship==='infernoreaver'){
-      /* Three south-facing cannons douse together through one controlled 90-degree sector. They
-         can reach 45 degrees left or right but can never wrap around or erase every safe lane. */
-      l23BossBeamStart(b,'inferno',['L','C','R'],[Math.PI/2,Math.PI/2,Math.PI/2],
+      /* Wing lasers douse one controlled sector while the nose visibly charges and releases the
+         giant shootable magma ball. The centre mount is never included in beam geometry. */
+      l23BossBeamStart(b,'inferno',['L','R'],[Math.PI/2,Math.PI/2],
         .78,2.22,.28,34,{sweepArc:Math.PI/4,sweepRate:2.45,sweepPhase:(step&1)?0:Math.PI});
+      reaverOrbStart(b);
     } else if(!b._brk && (step%3)===0){
       beamRakeStart(b, 3+Math.min(2,ph), (Math.random()<0.5?-1:1)*(0.55+ph*0.16), 4.2+ph*0.9);
     } else {
@@ -14047,8 +14743,9 @@ function shipBossAttack(b){
    never cut: CARRIER_BAY is a pair of fractions of the hull box, and a bay is a hitbox plus hp
    over the existing plate.
 
-   ⚠ THE BAYS ARE IMMUNE TO ORDINARY FIRE. Deflected warheads are the ONLY thing that damages them,
-   exactly as asked. Shooting the hull does nothing to a bay, so the fight cannot be brute-forced.
+   The MASSIVE FIELD is immune to ordinary fire. Reflected carrier warheads are the only thing
+   that cracks it. Once down, the two exposed bay doors become honest weapon-damage targets for a
+   strict 30-second sabotage window. Failure reforms the field around whichever bay remains.
 
    THE TIDE IS THE PRESSURE. A warhead the player never deflects does not leave: it slows at the
    bottom, turns buoyant and rises, and the screen fills. That is the fail state Mike describes -
@@ -14057,7 +14754,9 @@ const CARRIER_BAY = {                       // fractions of the hull box, left a
   L:{x0:-0.46, x1:-0.17, y0:-0.34, y1:0.30},
   R:{x0: 0.17, x1: 0.46, y0:-0.34, y1:0.30}
 };
-const CARRIER_BAY_HP   = 6;                 // deflected warheads needed per bay
+const CARRIER_BAY_HP   = 320;               // weapon damage needed per exposed bay
+const CARRIER_SHIELD_HP= 3;                 // reflected giant warheads needed to break the field
+const CARRIER_SHIELD_WINDOW=30;             // seconds to finish both bays before regeneration
 const CARRIER_FLOAT_Y  = 0.74;              // brake early enough for the giant round to turn before culling
 const CARRIER_MEGA_PHASE=['BAY SIEGE','STORM CAGE','GRAVITY PRISM','DOOMSDAY FUSION'];
 function carrierMegaInit(b){
@@ -14224,7 +14923,47 @@ function carrierBayBox(b, side){
 function carrierInit(b){
   if(b._bay) return;
   b._bay={L:CARRIER_BAY_HP, R:CARRIER_BAY_HP};
+  b._bayMax={L:CARRIER_BAY_HP, R:CARRIER_BAY_HP};
+  b._bayShield={up:true,hp:CARRIER_SHIELD_HP,max:CARRIER_SHIELD_HP,window:0,
+    flash:0,breakT:0,reformT:0};
   b._lc={t:0, f:0, playing:false, side:'L', fired:false};
+  try{if(typeof XART!=='undefined'&&XART._touch)XART._touch('cfx_stage6_carrier_shield');}catch(_s6shieldLoad){}
+}
+function carrierShieldContains(b,x,y){
+  if(!b)return false;const cy=(b._drawY!=null?b._drawY:b.y),rx=b.w*.57,ry=b.h*.69;
+  const dx=(x-b.x)/Math.max(1,rx),dy=(y-cy)/Math.max(1,ry);return dx*dx+dy*dy<=1;
+}
+function carrierBayAt(b,x,y){
+  if(!b||!b._bay)return null;
+  for(const side of 'LR'){if(b._bay[side]<=0)continue;const box=carrierBayBox(b,side);
+    if(box&&x>=box.x0&&x<=box.x1&&y>=box.y0&&y<=box.y1)return side;}
+  return null;
+}
+function carrierBayDamage(b,side,dmg,x,y,warhead){
+  if(!b||!b._bay||!side||b._bay[side]<=0)return false;
+  const before=b._bay[side];b._bay[side]=Math.max(0,b._bay[side]-Math.max(1,dmg||1));
+  b.flash=Math.max(b.flash||0,.11);if(typeof stageStats!=='undefined')stageStats.dmgDealt+=before-b._bay[side];
+  if(warhead&&warhead._carrierWarhead)carrierWarheadBurst(warhead,'s6mb_bombimpact',10,176,.46);
+  else if(typeof combatAtlasFx==='function')combatAtlasFx(x,y,'cfx_stage6_carrier_shield',4,2,4,4,{life:.28,hpx:84,wpx:112,blend:'lighter'});
+  if(typeof explode==='function')explode(x,y,b._bay[side]<=0?24:8,b._bay[side]<=0?'orange':'blue');
+  if(b._bay[side]<=0){
+    if(typeof floatText==='function')floatText(x,y-18,side+' BAY DESTROYED','#ffd36b');
+    shake=Math.max(shake,11);if(Audio.SFX&&(Audio.SFX.explodeBig||Audio.SFX.shieldBreakCombat))(Audio.SFX.explodeBig||Audio.SFX.shieldBreakCombat)();
+  }
+  return true;
+}
+/* While a bay survives, normal fire is stopped by the field or must be placed directly into an
+   exposed door. The carrier core does not lose HP until both doors are destroyed. */
+function carrierPlayerHit(b,dmg,x,y){
+  if(!b||!b._bayShield||!b._bay)return false;const F=b._bayShield;
+  if(b._bay.L<=0&&b._bay.R<=0)return false;
+  if(F.up){F.flash=Math.max(F.flash,.16);F.reformT=0;
+    if(typeof combatAtlasFx==='function')combatAtlasFx(x,y,'cfx_stage6_carrier_shield',4,2,0,4,{life:.20,hpx:72,wpx:90,blend:'lighter'});
+    return true;
+  }
+  const side=b._carrierBayHit||carrierBayAt(b,x,y);b._carrierBayHit=null;
+  if(side)return carrierBayDamage(b,side,dmg,x,y,null);
+  F.flash=Math.max(F.flash,.08);return true;
 }
 /* The Mk II bay reel contains the bomb until the release frame; from that exact frame onward this
    is the continuation.  It is intentionally drawn outside the shared projectile renderer: that
@@ -14286,6 +15025,18 @@ function carrierCannonTick(b, dt, C){
 function carrierTick(b, dt){
   const D=SHIPBOSS[b&&b._ship]; if(!D||!D.launch) return;
   carrierInit(b);
+  if(b._ship==='doomsdaycarriermk2'&&b._bayShield){
+    const F=b._bayShield;F.flash=Math.max(0,F.flash-dt);F.breakT=Math.max(0,F.breakT-dt);F.reformT=Math.max(0,F.reformT-dt);
+    const doorsRemain=b._bay.L>0||b._bay.R>0;
+    if(!doorsRemain){F.up=false;F.window=0;}
+    else if(!F.up){
+      F.window=Math.max(0,F.window-dt);
+      if(F.window<=0){F.up=true;F.hp=F.max;F.flash=.72;F.reformT=1.0;
+        if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.42,'ENERGY SHIELD REFORMED','#7beaff');
+        if(Audio.SFX&&(Audio.SFX.shieldRestore||Audio.SFX.bossWeaponCharge||Audio.SFX.crackle))(Audio.SFX.shieldRestore||Audio.SFX.bossWeaponCharge||Audio.SFX.crackle)();
+      }
+    }
+  }
   if(b._ship==='doomsdaycarriermk2') carrierMegaTick(b,dt);
   const L=D.launch, S=b._lc, C=D.cannon;
   /* a cannon reel owns the frame for its whole duration */
@@ -14348,21 +15099,50 @@ function carrierTick(b, dt){
   b._animH=0;                             // the bay reel is hull-height; only the cannon grows the box
   b._animKey = L.pre + String(Math.max(0,Math.min(L.frames-1,S.f))).padStart(2,'0');
 }
-/* a deflected round landing on a bay is the only thing that hurts one */
+/* Reflected warheads crack the field. Once it is down, conventional weapons have thirty seconds
+   to destroy the exposed doors; a returned warhead that lands in a door is a high-damage bonus. */
 function carrierBayHit(b, wx, wy, warhead){
-  if(!b||!b._bay) return false;
-  for(const side of ('LR')){
-    if(b._bay[side]<=0) continue;
-    const box=carrierBayBox(b, side); if(!box) continue;
-    if(wx>=box.x0 && wx<=box.x1 && wy>=box.y0 && wy<=box.y1){
-      b._bay[side]--; b.flash=0.12;
+  if(!b||!b._bay||!b._bayShield)return false;const F=b._bayShield;
+  if(b._bay.L<=0&&b._bay.R<=0)return false;
+  if(F.up&&carrierShieldContains(b,wx,wy)){
+    F.hp=Math.max(0,F.hp-1);F.flash=.88;b.flash=Math.max(b.flash||0,.12);shake=Math.max(shake,9);
+    if(warhead&&warhead._carrierWarhead)carrierWarheadBurst(warhead,'s6mb_empimpact',8,218,.52);
+    if(typeof combatAtlasFx==='function')combatAtlasFx(wx,wy,'cfx_stage6_carrier_shield',4,2,0,8,{life:.48,hpx:196,wpx:250,blend:'lighter'});
+    if(F.hp<=0){F.up=false;F.window=CARRIER_SHIELD_WINDOW;F.breakT=1.2;
+      if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.44,'SHIELD DOWN — 30 SECONDS','#fff39a');
+      if(Audio.SFX&&(Audio.SFX.shieldBreakCombat||Audio.SFX.enemyElectricBolt))(Audio.SFX.shieldBreakCombat||Audio.SFX.enemyElectricBolt)();
+    }else if(typeof floatText==='function')floatText(wx,wy-28,'FIELD '+F.hp+'/'+F.max,'#7beaff');
+    return true;
+  }
+  if(!F.up){const side=carrierBayAt(b,wx,wy);
+    if(side)return carrierBayDamage(b,side,Math.ceil(CARRIER_BAY_HP*.32),wx,wy,warhead);
+    if(carrierShieldContains(b,wx,wy)){
       if(warhead&&warhead._carrierWarhead)carrierWarheadBurst(warhead,'s6mb_bombimpact',10,176,.46);
-      if(typeof explode==='function') explode(wx, wy, b._bay[side]<=0?16:9, 'orange');
-      if(b._bay[side]<=0 && typeof floatText==='function') floatText(wx, wy-14, side+' BAY DOWN', '#ffd36b');
       return true;
     }
   }
   return false;
+}
+function carrierShieldDraw(b){
+  const F=b&&b._bayShield;if(!F||!F.up||typeof XART==='undefined')return;
+  const cy=(b._drawY!=null?b._drawY:b.y),fi=Math.floor((b.t||0)*10)%8;
+  ctx.save();ctx.globalCompositeOperation='lighter';
+  const pulse=1+.018*Math.sin((b.t||0)*7),alpha=.64+(F.flash>0?.30:.08)*Math.sin((b.t||0)*24);
+  ctx.fillStyle='rgba(69,205,255,'+(F.flash>0?.20:.09)+')';ctx.beginPath();ctx.ellipse(b.x,cy,b.w*.55*pulse,b.h*.67*pulse,0,0,TAU);ctx.fill();
+  combatAtlasDraw('cfx_stage6_carrier_shield',4,2,fi,b.x,cy,b.w*1.24*pulse,b.h*1.50*pulse,{alpha:clamp(alpha,.42,.96),blend:'lighter'});
+  ctx.restore();
+}
+function carrierStatusDraw(b){
+  const F=b&&b._bayShield;if(!F||!b._bay)return;const y=(b._drawY!=null?b._drawY:b.y),barW=Math.min(238,b.w*.44),x=b.x-barW/2,top=y+b.h*.49;
+  ctx.save();ctx.font='8px "BOFmil", monospace';ctx.textAlign='center';ctx.textBaseline='bottom';
+  ctx.fillStyle='rgba(4,8,14,.86)';ctx.fillRect(x-3,top-3,barW+6,22);
+  if(F.up){ctx.fillStyle='#aef7ff';ctx.fillText('REFLECT GIANT MISSILES — FIELD '+F.hp+'/'+F.max,b.x,top-5);
+    ctx.fillStyle='#153d57';ctx.fillRect(x,top,barW,5);ctx.fillStyle='#6eeaff';ctx.fillRect(x,top,barW*clamp(F.hp/F.max,0,1),5);
+  }else{ctx.fillStyle='#fff09a';ctx.fillText('BAY WINDOW '+Math.ceil(F.window)+'s',b.x,top-5);
+    ctx.fillStyle='#513813';ctx.fillRect(x,top,barW,5);ctx.fillStyle='#ffc34f';ctx.fillRect(x,top,barW*clamp(F.window/CARRIER_SHIELD_WINDOW,0,1),5);}
+  const half=(barW-5)/2;for(const side of 'LR'){const ox=side==='L'?x:x+half+5,r=clamp(b._bay[side]/Math.max(1,b._bayMax[side]),0,1);
+    ctx.fillStyle='#1b1110';ctx.fillRect(ox,top+9,half,4);ctx.fillStyle=b._bay[side]>0?'#ff8f39':'#242424';ctx.fillRect(ox,top+9,half*r,4);}
+  ctx.restore();
 }
 /* ============================================================
    HERALD OF DEATH — GENERATED STAGE 8 HELLWING MINIBOSS
@@ -14420,6 +15200,7 @@ function heraldDeathDraw(b){
 function shipBossDraw(b){
   const D=SHIPBOSS[b&&b._ship]; if(!D) return false;
   if(b._herald && typeof heraldDeathDraw==='function') return heraldDeathDraw(b);
+  if(b._s7warden&&typeof s7WardenDraw==='function')return s7WardenDraw(b);
   if(typeof XART==='undefined' || !XART.rdy(D.key)){
     /* ⚠ NEVER FALL THROUGH TO NOTHING. Returning false here sent the draw down a chain of
        early-returns for _gen / _mech / _sx / modular / mega, and a ship boss is none of those " so
@@ -14439,6 +15220,7 @@ function shipBossDraw(b){
     ctx.fill(); ctx.stroke();
     ctx.restore(); ctx.globalAlpha=1;
     if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierDraw==='function')magmaWardBarrierDraw(b);
+    if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof reaverOrbDraw==='function')reaverOrbDraw(b);
     if(b._s4war&&typeof stage4WarfareDrawOver==='function')stage4WarfareDrawOver(b);
     shipBossMuzzleDraw(b);
     return true;
@@ -14457,6 +15239,8 @@ function shipBossDraw(b){
   if(b._ship==='infernoreaver'&&b._irRoll&&typeof infernoReaverRollDraw==='function')infernoReaverRollDraw(b);
   if(b._ship==='junglecruiser'&&typeof jungleCruiserDrawUnder==='function')jungleCruiserDrawUnder(b);
   if(b._s7Flood)sludgeFloodDraw(b);
+  if(b._s7Rosette)sludgeRosetteDraw(b);
+  if(b._s9Cascade)tidalCascadeDraw(b);
   if(b._ship==='doomsdaycarriermk2') carrierMegaDrawUnder(b);
   /* A supplied damaged plate is a HULL STATE, never an impact effect. The old renderer never read
      D.dmg, leaving every authored damaged/critical plate dead. Reels still own the frame while
@@ -14489,23 +15273,30 @@ function shipBossDraw(b){
      the sprite (y is unchanged, the hull does not jump when the cannon opens) and only the
      drawn height grows. _animH is set by carrierTick and left null by every other boss. */
   const dh=(b._animH>0 ? b._animH : h);
+  const _mk2Cannon=b._ship==='doomsdaycarriermk2'&&/^nsb_dcarrmk2_cn_/.test(_ak);
   ctx.save();
   ctx.imageSmoothingEnabled=false;
   ctx.translate(b.x+P.x,cy+P.y); ctx.rotate(P.rot); ctx.scale(P.sx,P.sy);
-  ctx.drawImage(im, -w/2, -h/2, w, dh);
+  if(_mk2Cannon){const _sh=Math.max(1,Math.round((im.naturalHeight||im.height)*2/3));
+    ctx.drawImage(im,0,0,im.naturalWidth||im.width,_sh,-w/2,-h/2,w,h);
+  }else ctx.drawImage(im, -w/2, -h/2, w, dh);
   if((b.flash||0)>0 && typeof xartTint==='function'){
     const t=xartTint(_ak, hitFlashColor(b,'#ffffff'), 0.9);
-    if(t){ ctx.globalAlpha=Math.min(1,(b.flash/0.18))*0.85; ctx.drawImage(t, -w/2, -h/2, w, dh); ctx.globalAlpha=1; }
+    if(t){ctx.globalAlpha=Math.min(1,(b.flash/0.18))*0.85;
+      if(_mk2Cannon){const _th=Math.max(1,Math.round((t.height||im.naturalHeight||im.height)*2/3));ctx.drawImage(t,0,0,t.width,_th,-w/2,-h/2,w,h);}
+      else ctx.drawImage(t,-w/2,-h/2,w,dh);ctx.globalAlpha=1;}
   }
   ctx.restore();
   if(b._s3boss&&typeof stage3BossDrawOver==='function') stage3BossDrawOver(b);
   if(b._ship==='junglecruiser'&&typeof jungleCruiserDrawOver==='function')jungleCruiserDrawOver(b,_ak,w,h,cy,P);
   if(b._ship==='magmaward')magmaWardDrawOver(b);
+  if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof reaverOrbDraw==='function')reaverOrbDraw(b);
   if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierDraw==='function')magmaWardBarrierDraw(b);
   if(b._s4war&&typeof stage4WarfareDrawOver==='function')stage4WarfareDrawOver(b);
   if(b._xenoRig&&typeof xenoRegentDrawOver==='function')xenoRegentDrawOver(b);
   if(b._s6mini&&typeof stage6MiniDrawOver==='function')stage6MiniDrawOver(b);
   if(b._ship==='doomsdaycarriermk2') carrierMegaDrawOver(b);
+  if(b._ship==='doomsdaycarriermk2')carrierShieldDraw(b);
   /* The Mk-II pack includes a dedicated nine-frame beam. The 640x480 cannon reel performs the
      hull, while this continuous column carries the laser visibly from its centre emitter through
      the player lane; using the supplied beam is what makes the collision above readable. */
@@ -14517,6 +15308,7 @@ function shipBossDraw(b){
       ctx.drawImage(bi,b.x-bw/2,start,bw,bh);ctx.restore();
     }
   }
+  if(b._ship==='doomsdaycarriermk2')carrierStatusDraw(b);
   shipBossMuzzleDraw(b);
   return true;
 }
@@ -14524,12 +15316,12 @@ function shipBossDraw(b){
    above these values, but no boss/miniboss can accidentally inherit a 100-HP seed and evaporate
    before its second pattern.  Internal section pools are scaled with the public gauge so a
    modular hull cannot report 2000 HP while its actual breakable parts still total 300. */
-const BOSS_HP_FLOOR=[800,1750,1350,1700,2150,2700,3350,4100,4950];
-/* The first two encounters need enough life to show their authored state machines. At 380/500
-   the Jungle Cruiser and Magma Ward could disappear during their opening pattern, particularly
-   after the player had carried upgrades forward. Later-stage floors were already on the desired
-   progression curve, so only the two reported fights are raised. */
-const MINIBOSS_HP_FLOOR=[900,1500,650,820,1020,1260,1540,1860,2220];
+const BOSS_HP_FLOOR=[800,1750,1800,1700,2150,2700,3350,4100,4950];
+/* The first three encounters need enough life to show their authored state machines. Jungle
+   Cruiser, Magma Ward, Cryo Spear and the promoted Rime Wall could otherwise disappear during
+   their opening pattern after a player carried upgrades forward. Later-stage floors already sit
+   on the desired progression curve. */
+const MINIBOSS_HP_FLOOR=[900,1500,1250,820,1020,1260,1540,1860,2220];
 function enforceEncounterHp(b,floor){
   if(!b||!(floor>0)||!(b.maxhp>0)||b.maxhp>=floor)return b;
   const ratio=floor/b.maxhp,scalePool=(o,hpKey,maxKey)=>{
@@ -16599,7 +17391,7 @@ function autoFireMissiles(){
 }
 function _weaponCadence(){
   if(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()){
-    return run.spaceWeapon===0?0.24:(run.spaceWeapon===2?0.48:0.32);
+    return run.spaceWeapon===0?0.24:0.32;
   }
   /* A docked vehicle-mounted MG owns the primary trigger: about eighteen twin-barrel beats per
      second gives it the requested MG42/gatling rip without turning it into a 60Hz particle hose. */
@@ -16610,7 +17402,108 @@ function _weaponCadence(){
   // Mike: the DEFAULT gun should already fire at level-1 machine-gun SPEED — it just fires one
   // pellet instead of two. So L0 and L1 share the 0.085 cadence and differ only in bullet count.
   if(run.weapon===0 && (run.wlevels?((run.wlevels[0]|0)===0):true)) return 0.085;
+  if(run.weapon===6)return Math.max(.48,.80-clamp(run.wlevel||1,1,5)*.055);
   return ({0:0.085,1:0.16,2:0.34,3:0.11,4:0.30})[run.weapon];
+}
+/* ============================================================
+   LASER MIST — STAGE-9 VICTORY WEAPON (0902)
+
+   One trigger is a wave, not 39 unrelated shots: three launch lanes split into nine, straighten,
+   then split into twenty-seven final water lances. Every child shares a target ledger, which
+   keeps the spectacle from multiplying boss damage 27x while still letting the wave clear a
+   formation across the full screen. Movement is simulation-time driven; the atlas is visual only.
+   ============================================================ */
+function laserMistWarm(){
+  if(typeof XART!=='undefined'&&XART._touch)XART._touch('bof_laser_mist_weapon_atlas');
+}
+function laserMistImpact(x,y,lv,large){
+  const s=(large?58:40)+clamp(lv||1,1,5)*3;
+  pImpacts.push({x:x,y:y,t:0,dur:.34,size:s,rot:Math.random()*TAU,_lmFx:'impact'});
+  pImpacts.push({x:x,y:y,t:0,dur:1.15,size:s*.82,rot:Math.random()*TAU,_lmFx:'decal'});
+  if(pImpacts.length>180)pImpacts.splice(0,pImpacts.length-180);
+  /* Bubble sprites are decoration, not simulation.  Cap them independently so a 27-lance wave
+     hitting a packed formation cannot turn the laptop's particle array into the expensive part
+     of the weapon. */
+  let liveBubbles=0;for(const p of particles)if(p&&p._lmBubble&&p.t<p.life)liveBubbles++;
+  const n=Math.max(0,Math.min(3+clamp(lv||1,1,5)+(large?3:0),72-liveBubbles));
+  for(let i=0;i<n;i++)particles.push({x:x+rnd(-8,8),y:y+rnd(-6,6),vx:rnd(-.65,.65),vy:rnd(-1.15,-.28),
+    grav:-.002,life:rnd(.56,1.12),t:0,r:rnd(8,18),_lmBubble:1,_lmFrame:(Math.random()*8)|0,_lmRot:Math.random()*TAU});
+  if(Audio&&Audio.SFX&&(Audio.SFX.laserMistImpact||Audio.SFX.hit))(Audio.SFX.laserMistImpact||Audio.SFX.hit)();
+}
+function laserMistLedgerHit(b,target){
+  const L=b._mistLedger||(b._mistLedger={hits:[]}),cap=2+clamp(b.lv||1,1,5);
+  let r=null;for(const q of L.hits)if(q.target===target){r=q;break;}
+  if(!r){r={target:target,n:0};L.hits.push(r);}if(r.n>=cap)return false;r.n++;return true;
+}
+function laserMistChild(parent,stage,vx,vy,index){
+  pBullets.push({kind:'lasermist',x:parent.x,y:parent.y,vx:vx,vy:vy,w:10+parent.lv*1.2,h:24+parent.lv*3,
+    dmg:parent.dmg,lv:parent.lv,t:0,life:3.2,_mistStage:stage,_mistAge:0,_mistLedger:parent._mistLedger,
+    _mistIndex:index||0,_mistOriginY:parent.y});
+}
+function laserMistSplit(b,finalSplit){
+  const base=Math.atan2(b.vy||-9,b.vx||0),spread=finalSplit ? .245 : .31,spd=finalSplit?(9.8+b.lv*.25):(8.9+b.lv*.18);
+  for(const off of [-spread,0,spread]){
+    const idx=(b._mistIndex||0)*3+(off===0?1:(off<0?0:2));
+    /* The second split owns 27 distinct lanes. Reusing the same three angles for all nine parent
+       lances was mechanically correct but visually collapsed into a solid cyan slab. Indexed
+       angles keep every projectile readable and let the final fan reach both playfield edges. */
+    const a=finalSplit?(-Math.PI/2+((idx-13)/13)*.78):(base+off);
+    laserMistChild(b,finalSplit?2:1,Math.cos(a)*spd,Math.sin(a)*spd,idx);
+  }
+  b.dead=true;
+  if(Audio&&Audio.SFX&&Audio.SFX.laserMistSplit)Audio.SFX.laserMistSplit();
+}
+function laserMistFire(lv){
+  /* At most three authored waves may coexist.  A complete wave can briefly contain 27 final
+     lances; this ceiling preserves the full pattern while bounding collision work on slower
+     machines. */
+  const liveWaves=new Set();let liveMist=0;
+  for(const q of pBullets)if(q&&q.kind==='lasermist'&&!q.dead){liveMist++;if(q._mistLedger)liveWaves.add(q._mistLedger.wave);}
+  if(liveWaves.size>=3||liveMist>=96)return false;
+  lv=clamp(lv||1,1,5);laserMistWarm();const ledger={hits:[],wave:(laserMistFire._wave=(laserMistFire._wave||0)+1)};
+  for(let i=0;i<3;i++){
+    const off=(i-1)*42;
+    pBullets.push({kind:'lasermist',x:player.x+off,y:player.y-18,vx:0,vy:-(9.4+lv*.22),w:10+lv*1.2,h:24+lv*3,
+      dmg:1.8+lv*.75,lv:lv,t:0,life:3.2,_mistStage:0,_mistAge:0,_mistLedger:ledger,_mistIndex:i,_mistOriginY:player.y-18});
+  }
+  player._mgMuzT=.09;player._mgMuzLv=Math.max(1,lv);shake=Math.max(shake,2.2);
+  if(Audio&&Audio.SFX&&(Audio.SFX.laserMistFire||Audio.SFX.laser))(Audio.SFX.laserMistFire||Audio.SFX.laser)();
+  return true;
+}
+function laserMistTick(b,dt){
+  if(!b||b.kind!=='lasermist')return false;
+  b.t=(b.t||0)+dt;b._mistAge=(b._mistAge||0)+dt;b.life-=dt;
+  const f=Math.min(1,dt*60);b.x+=b.vx*f;b.y+=b.vy*f;
+  if(b._mistStage===0&&b._mistOriginY-b.y>=70){laserMistSplit(b,false);return true;}
+  if(b._mistStage===1){
+    /* The first fan visibly opens, then its lateral velocity bleeds away so all nine lanes run
+       straight before the second spread. */
+    if(b._mistAge>.11)b.vx*=Math.pow(.80,dt*60);
+    b.vy=lerp(b.vy,-(9.25+b.lv*.22),Math.min(1,dt*7));
+    /* Split again near mid-field, after the first fan has visibly straightened.  Waiting until
+       .61s put the 27-lance payoff at (or beyond) the top edge on a 512px playfield. */
+    if(b._mistAge>=.27){laserMistSplit(b,true);return true;}
+  }
+  let hit=null;
+  for(const e of enemies){if(e.dead)continue;if(Math.abs(e.x-b.x)<(e.w+b.w)/2&&Math.abs(e.y-b.y)<(e.h+b.h)/2){hit=e;break;}}
+  if(hit&&laserMistLedgerHit(b,hit)){hitEnemy(hit,b.dmg);laserMistImpact(b.x,b.y,b.lv,false);b.dead=true;return true;}
+  if(!b.dead&&typeof subBoss!=='undefined'&&subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter){
+    const sy=subBoss._drawY!=null?subBoss._drawY:subBoss.y,sw=subBoss._drawW||subBoss.w,sh=subBoss._drawH||subBoss.h;
+    if(Math.abs(subBoss.x-b.x)<(sw+b.w)/2&&Math.abs(sy-b.y)<(sh+b.h)/2&&laserMistLedgerHit(b,subBoss)){
+      hitSubBoss(b.dmg,b.x,b.y);laserMistImpact(b.x,b.y,b.lv,true);b.dead=true;return true;
+    }
+  }
+  if(!b.dead&&boss&&bossActive&&!boss.dead&&bossHitTest(b.x,b.y)&&laserMistLedgerHit(b,boss)){
+    _lastHitX=b.x;_lastHitY=b.y;hitBoss(b.dmg);laserMistImpact(b.x,b.y,b.lv,true);b.dead=true;return true;
+  }
+  if(!b.dead)for(const p of powerups){
+    if(p.dead||(p.kind!=='crate'&&p.kind!=='capsule'&&p.kind!=='scrate'&&p.kind!=='mcrate'))continue;
+    if(Math.abs(p.x-b.x)<(p.w+b.w)/2&&Math.abs(p.y-b.y)<(p.h+b.h)/2){p.hp=(p.hp||5)-b.dmg;p.flash=.12;
+      laserMistImpact(b.x,b.y,b.lv,false);b.dead=true;if(p.hp<=0){p.dead=true;breakContainer(p);}break;}
+  }
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  if(b.life<=0||b.y<-60||b.x<-80||b.x>W+80)b.dead=true;
+  return true;
 }
 /* ============================================================
    FLAMETHROWER  (drop 0730a) — weapon 4, replacing the FIREWALL projectile.
@@ -17416,13 +18309,14 @@ function maverickLaserTick(b,dt){
 /* ============================================================
    GRAVITY MODE SPACE ARMORY — the only ordinary weapons on Stages 5 and 9.
 
-   Pilot specials still take precedence in pShoot. The three weapons below replace every normal
-   weapon and automatic missile only while run.spaceMode is live:
+   Pilot specials still take precedence in pShoot. The two primary weapons below replace every
+   normal weapon while run.spaceMode is live. Volley Missiles remain a separately levelled,
+   always-equipped auto-fire system and can never occupy the primary-weapon slot:
      0  LASER CANNON I-V — six twin-turret pulses, 2 ms authored spacing
      1  SHADOW ORB       — hold to charge, release a scaling shadow blast
-     2  VOLLEY MISSILES  — one launch splits into three independent crossing homers
+     P  VOLLEY MISSILES  — passive launch splits into three independent crossing homers
    ============================================================ */
-const SPACE_WEAPONS=['LASER CANNON','SHADOW ORB','VOLLEY MISSILES'];
+const SPACE_WEAPONS=['LASER CANNON','SHADOW ORB'];
 const SPACE_LASER_COL=['#ff972b','#39a4ff','#48e36c','#f5f7ff','#ff4848'];
 /* Standalone four-frame overlays already shipped in the production muzzle library.  They match
    the five Laser Cannon palettes and, unlike the Gravity atlas demonstration cells, contain no
@@ -17442,7 +18336,9 @@ const SPACE_SHADOW_TIER=[
    released. Keeping these timings shared also guarantees identical behaviour in Stages 5/9. */
 const SPACE_SHADOW_MIN_CHARGE=0.42;
 const SPACE_SHADOW_FULL_CHARGE=1.55;
-const SPACE_SHADOW_AUDIO_DELAY=0.10;
+/* Audio starts on the same trigger frame as the charge. The previous 100ms gate made the orb
+   visibly grow before the sound arrived, especially at 30fps or on a busy laptop. */
+const SPACE_SHADOW_AUDIO_DELAY=0;
 function spaceWeaponsActive(){ return !!(run&&run.spaceMode&&(run.stage===5||run.stage===9)); }
 function spaceLaserMuzzleWarm(){
   if(typeof XART==='undefined'||!XART._touch)return;
@@ -17469,16 +18365,21 @@ function spaceShadowCancel(){
   }
 }
 function spaceWeaponLevel(){
-  if(!run.spaceLevels)run.spaceLevels=[1,0,0];
-  return clamp(run.spaceLevels[clamp(run.spaceWeapon||0,0,2)]||1,1,5);
+  if(!run.spaceLevels)run.spaceLevels=[1,1,1];
+  return clamp(run.spaceLevels[clamp(run.spaceWeapon||0,0,1)]||1,1,5);
 }
-function spaceWeaponName(){ return SPACE_WEAPONS[clamp(run.spaceWeapon||0,0,2)]||SPACE_WEAPONS[0]; }
+function spaceVolleyLevel(){
+  if(!run.spaceLevels)run.spaceLevels=[1,1,1];
+  return clamp(run.spaceLevels[2]||1,1,5);
+}
+function spaceWeaponName(){ return SPACE_WEAPONS[clamp(run.spaceWeapon||0,0,1)]||SPACE_WEAPONS[0]; }
 function spaceWeaponIconKey(){
-  const w=clamp(run.spaceWeapon||0,0,2),lv=spaceWeaponLevel();
-  return w===0?'space_laser_icon_'+lv:(w===1?'space_shadow_icon_'+lv:'space_volley_icon_'+lv);
+  const w=clamp(run.spaceWeapon||0,0,1),lv=spaceWeaponLevel();
+  return w===0?'space_laser_icon_'+lv:'space_shadow_icon_'+lv;
 }
+function spaceVolleyIconKey(lv){return 'space_volley_icon_'+clamp(lv==null?spaceVolleyLevel():lv,1,5);}
 function spaceWeaponPickupIndex(p){
-  const raw=(p&&p.wtype!=null)?p.wtype:((run.spaceWeapon||0)+1);
+  const raw=(p&&p.wtype!=null)?p.wtype:((run.spaceWeapon||0)===0?1:0);
   return ((raw%3)+3)%3;
 }
 function spaceShipHardpoints(x,y,size){
@@ -17494,11 +18395,14 @@ function spaceModeStage(num){
   if(on){
     if(!run._groundLoadout) run._groundLoadout={weapon:run.weapon,wlevel:run.wlevel,
       wlevels:(run.wlevels||[]).slice(),wvars:(run.wvars||[]).slice(),missileLevel:run.missileLevel||0};
-    run.spaceMode=true; if(!run.spaceLevels)run.spaceLevels=[1,0,0];
-    run.spaceLevels[0]=Math.max(1,run.spaceLevels[0]||0);
-    run.spaceWeapon=clamp(run.spaceWeapon||0,0,2);
-    run.weapon=0; run.wlevel=spaceWeaponLevel(); run.wlevels=[0,0,0,0,0,0];
-    run.wvars=[null,null,null,null,null,null]; run.missileLevel=0; run._mslCd=0;
+    run.spaceMode=true; if(!run.spaceLevels)run.spaceLevels=[1,1,1];
+    for(let _sl=0;_sl<3;_sl++)run.spaceLevels[_sl]=clamp(run.spaceLevels[_sl]||1,1,5);
+    /* Old saves could leave Volley Missiles selected as primary slot 2. Migrate that obsolete
+       state to Laser Cannon; only Laser/Shadow may own the fire button now. */
+    run.spaceWeapon=(run.spaceWeapon===1)?1:0;
+    run._spaceVolleyCd=0.28;
+    run.weapon=0; run.wlevel=spaceWeaponLevel(); run.wlevels=[0,0,0,0,0,0,0];
+    run.wvars=[null,null,null,null,null,null,null]; run.missileLevel=0; run._mslCd=0;
     spaceLaserMuzzleWarm();
     /* The Shadow Orb is the one held space weapon. Prepare its loop as the space loadout is
        installed, not on the first trigger frame, so Stage 5 and the bonus route never begin a
@@ -17575,23 +18479,26 @@ function spaceShadowTick(dt,firing){
   return false;
 }
 function spaceVolleyFire(levelOverride){
-  const lv=clamp(levelOverride==null?spaceWeaponLevel():levelOverride,1,5),hp=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE).nose;
+  const lv=clamp(levelOverride==null?spaceVolleyLevel():levelOverride,1,5),hp=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE).nose;
   pBullets.push({kind:'spaceVolleySeed',x:hp.x,y:hp.y,vx:0,vy:-7.4,
     w:24,h:28,dmg:4+lv*1.4,lv,t:0,_muzzleX:hp.x,_muzzleY:hp.y});
   spaceWeaponCue('spaceVolleyLaunch','volleyLaunch');
 }
-/* The bomb/missile button keeps its game-wide meaning in Gravity Mode. It launches one authored
-   three-missile space volley and spends one missile stock; selecting Volley as the primary still
-   fires it normally without double-charging the same press. */
-function spaceUseMissile(){
-  if(!spaceWeaponsActive()||run.bombs<=0||player.dead)return false;
-  run.bombs--;if(typeof stageStats!=='undefined')stageStats.missiles++;
-  const lv=clamp((run.spaceLevels&&run.spaceLevels[2])||1,1,5);
-  spaceVolleyFire(lv);shake=Math.max(shake,2.5);return true;
+/* Volley Missiles are the Gravity ship's auto-missile rack, not a selectable weapon and not a
+   bomb-button attack. Like the ground auto missiles, they launch alongside the primary while
+   FIRE is held. Their own cooldown and level bank keep them independent of Laser/Shadow. */
+function spaceVolleyAutoTick(dt,firing){
+  if(!spaceWeaponsActive()||player.dead){run._spaceVolleyCd=0;return false;}
+  run._spaceVolleyCd=(run._spaceVolleyCd||0)-dt;
+  if(!firing||run._spaceVolleyCd>0||specialActive('cole')||specialActive('falva'))return false;
+  const lv=spaceVolleyLevel();spaceVolleyFire(lv);
+  run._spaceVolleyCd=({1:0.9,2:0.75,3:0.6,4:0.5,5:0.42})[lv]||0.7;
+  if(typeof stageStats!=='undefined')stageStats.missiles++;
+  return true;
 }
 function spaceWeaponFire(){
-  const w=clamp(run.spaceWeapon||0,0,2);
-  if(w===0)spaceLaserFire();else if(w===2)spaceVolleyFire();
+  const w=clamp(run.spaceWeapon||0,0,1);
+  if(w===0)spaceLaserFire();
 }
 function spaceTargets(){
   const a=[];for(const e of enemies)if(!e.dead)a.push(e);
@@ -17936,6 +18843,8 @@ function pShoot(){
     /* light the muzzle for this weapon too (drop 0809n) - the draw picks the authored
        PlayerWeapons frame by weapon id; before this only mg and spread ever set the timer */
     player._mgMuzT=0.07; player._mgMuzLv=Math.max(1,Math.min(8,lv||1));
+  } else if(w===6){ // LASER MIST — Stage-9 victory reward, three lanes and two real split beats
+    laserMistFire(lv);
   } else if(w===5){ // ICE ORB — D2 frozen-orb: spins upward, sprays shards, pierces; one orb at a time (two at lv5)
     const maxOrbs = lv>=5?2:1;
     let live=0; for(const b of pBullets){ if(b.kind==='orb') live++; }
@@ -18270,7 +19179,13 @@ function spawnContainer(type){
          returns null for exactly that case, so a slot with no variant is simply not in the bag.
          Driven from the table rather than hand-listed, so stage 3 cannot drop a weapon whose icon
          and name have nothing to show. */
-      const _pool=[0,1,2,3,4,5].filter(w=>(w!==4 && w!==5) || (typeof weaponVariant!=='function') || weaponVariant(w)!==null);
+      const _pool=[0,1,2,3,4,5];
+      /* Laser Mist joins ordinary ground-weapon RNG only after a real Stage-9 boss kill. Space
+         crates remain the three Gravity Mode systems, so the reward cannot replace them. */
+      if(typeof laserMistIsUnlocked==='function'&&laserMistIsUnlocked()&&
+         !(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()))_pool.push(6);
+      for(let _i=_pool.length-1;_i>=0;_i--)if((_pool[_i]===4||_pool[_i]===5)&&
+         typeof weaponVariant==='function'&&weaponVariant(_pool[_i])===null)_pool.splice(_i,1);
       if(run.stage===3 && _pool.indexOf(5)>=0) _pool.push(5);      // the fire orb is the stage-3 event
       run._wbag = _pool; for(let i=run._wbag.length-1;i>0;i--){ const j=(Math.random()*(i+1))|0; const t=run._wbag[i]; run._wbag[i]=run._wbag[j]; run._wbag[j]=t; } }
     const _wt0=run._wbag.pop();
@@ -18442,10 +19357,17 @@ function applyPowerup(p){
       let _wt=(p.wtype!=null)?p.wtype:run.weapon;
       if(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()){
         const _sw=spaceWeaponPickupIndex(p);
-        if(!run.spaceLevels)run.spaceLevels=[1,0,0];
-        run.spaceWeapon=_sw;run.spaceLevels[_sw]=clamp((run.spaceLevels[_sw]||0)+1,1,5);
-        run.wlevel=run.spaceLevels[_sw];
-        if(typeof arcadeBanner==='function')arcadeBanner('LVL '+run.wlevel+' '+spaceWeaponName());
+        if(!run.spaceLevels)run.spaceLevels=[1,1,1];
+        run.spaceLevels[_sw]=clamp((run.spaceLevels[_sw]||1)+1,1,5);
+        if(_sw===2){
+          /* Missile crates improve the passive rack without taking Laser Cannon or Shadow Orb
+             out of the player's hands. */
+          if(typeof arcadeBanner==='function')arcadeBanner('LVL '+spaceVolleyLevel()+' VOLLEY MISSILES');
+        }else{
+          run.spaceWeapon=_sw;
+          if(typeof arcadeBanner==='function')arcadeBanner('LVL '+spaceWeaponLevel()+' '+spaceWeaponName());
+        }
+        run.wlevel=spaceWeaponLevel();
         Audio.SFX.weapon();break;
       }
       if(_wt===2){ // MISSILES is no longer a swappable weapon -> level up the auto-missiles instead
@@ -18461,7 +19383,7 @@ function applyPowerup(p){
          this was the only place it could have been kept. Without it every surface downstream
          had to guess from pilot+stage, and all three of Mike's weapon reports are that guess
          being wrong in a different way. Recorded here, read via heldVariant everywhere else. */
-      if(!run.wvars) run.wvars=[null,null,null,null,null,null];
+      if(!run.wvars) run.wvars=[null,null,null,null,null,null,null];
       run.wvars[_wt] = p.wvar || ((typeof weaponVariant==='function')?weaponVariant(_wt):null);
       /* Debug weapon keys are temporary grants, not sticky palette switches. A real pickup owns
          the slot from this frame forward and clears every override that could redraw it. */
@@ -18538,7 +19460,7 @@ function drawArcadeBanner(){
      sweep clip and the draw all have to agree about which face is on screen.
      ⚠ AND THIS FACE HAS A REAL '!', so the hand-built bar-and-dot below stops being reachable —
      it stays for the stage face, which does not. */
-  msgFaceUse('dialogue');
+  const _dialogueReady=msgFaceUse('dialogue');
   const H=Math.max(12, Math.round(VH*0.042));
   const typeDur=B.text.length/ARC_CPS;
   const tSweep=B.t-typeDur, tOut=B.t-(typeDur+ARC_SWEEP+ARC_HOLD);
@@ -20546,8 +21468,11 @@ function startRun(fromStage=1){
      its asset warm to finish. This is idempotent and starts only the three shared player sheets;
      individual cells remain lazy. */
   if(typeof warmPlayerAtlases==='function') warmPlayerAtlases();
+  if(typeof laserMistIsUnlocked==='function'&&laserMistIsUnlocked()&&typeof laserMistWarm==='function')laserMistWarm();
   DIFF=DIFFS[diffKey]||DIFFS.normal;
   const _P=PILOTS[pilotIndex]||PILOTS[0]; run.pilot=_P.key;
+  /* Decode only the selected pilot's opening pack during campaign-map dwell time. */
+  if(typeof cinPrewarmPilot==='function')cinPrewarmPilot(run.pilot);
   PILOTMOD={spd:_P.spd||0, fire:_P.fire||0, range:_P.range||0, tint:_P.tint};
   run.stage=fromStage; run.score=0;
   /* PASSWORDS ARE ARCADE — enforced here rather than in the password screen, because there are two
@@ -20567,14 +21492,18 @@ function startRun(fromStage=1){
   if(typeof hqSeen!=='undefined') hqSeen={};      // a fresh run plays the HQ scenes again
   if(typeof sonicTrail!=='undefined') sonicTrail.length=0;
   if(typeof lzMount!=='undefined') lzMount=null;
-  run.weapon=0; run.wlevel=0; run.wlevels=[0,0,0,0,0,0]; run.wvars=[null,null,null,null,null,null]; run.speed=0; run.speedT=0; run.speedLevel=0; run.shield=0; run.power=0; run.missileLevel=0; run._mslCd=0;
-  run.spaceMode=false;run.spaceWeapon=0;run.spaceLevels=[1,0,0];run.gravityShipReady=false;run._groundLoadout=null;run._spaceShadowCharge=0;run._spaceShadowHeld=false;   // Gravity ship is earned visibly in Stage 5 and retained for Stage 9
+  run.weapon=0; run.wlevel=0; run.wlevels=[0,0,0,0,0,0,0]; run.wvars=[null,null,null,null,null,null,null]; run.speed=0; run.speedT=0; run.speedLevel=0; run.shield=0; run.power=0; run.missileLevel=0; run._mslCd=0;
+  run.spaceMode=false;run.spaceWeapon=0;run.spaceLevels=[1,1,1];run.gravityShipReady=false;run._groundLoadout=null;run._spaceShadowCharge=0;run._spaceShadowHeld=false;run._spaceVolleyCd=0;   // Gravity ship is earned visibly in Stage 5 and retained for Stage 9
   if(run.mode==='arcade'){ beginStage(fromStage); }
   else {
-    // CAMPAIGN: first entry runs the full military-computer boot -> map -> flags sequence
+    /* A NEW CAMPAIGN now owns a real prologue before the tactical map. Continue/load routes never
+       replay it: they already represent an operation in progress and open the map immediately. */
     var _firstBoot = (typeof campaign!=='undefined') && !campaign._booted;
     if(typeof campaign!=='undefined') campaign._booted=true;
-    openStageSelect(fromStage, _firstBoot ? {boot:true} : {});
+    if(_firstBoot && fromStage===1 && typeof campaignIntroStart==='function'){
+      campaign._introSeen=true;
+      campaignIntroStart(function(){ openStageSelect(fromStage,{boot:true}); });
+    } else openStageSelect(fromStage, _firstBoot ? {boot:true} : {});
   }
 }
 /* WARM WHAT THE STAGE ACTUALLY NEEDS (drop 0801fb). Mike: "you should be loading
@@ -20598,7 +21527,76 @@ function startRun(fromStage=1){
      - its boss and sub-boss prefixes
    Everything else stays lazy. The set is a few hundred keys, not seven thousand,
    and it is requested while the stage intro is on screen rather than during play. */
-let _warmed={};
+let _warmed={}, _stageLoads={};
+const STAGE_LOAD_CONCURRENCY=3, STAGE_LOAD_ITEM_TIMEOUT=18;
+function _stageLoadNow(){return (typeof performance!=='undefined'&&performance.now)?performance.now()/1000:Date.now()/1000;}
+function _stageLoadDecode(im){
+  if(!im||im._bofStageDecodeStarted)return;
+  im._bofStageDecodeStarted=1;
+  if(typeof im.decode==='function'){
+    try{im.decode().then(()=>{im._bofStageDecodeDone=1;}).catch(()=>{
+      im._bofStageDecodeDone=(im.complete&&im.naturalWidth>0)?1:-1;
+    });}catch(_sd){im._bofStageDecodeDone=(im.complete&&im.naturalWidth>0)?1:-1;}
+  }else if(im.complete)im._bofStageDecodeDone=im.naturalWidth>0?1:-1;
+}
+function stageLoadBegin(n,keys){
+  if(typeof XART==='undefined'||!XART.raw)return 0;
+  const seen={},roots=[];
+  for(const logical of (keys||[])){
+    const root=(XART.root?XART.root(logical):logical);
+    if(!root||seen[root]||!XART._src[root])continue;
+    seen[root]=1;roots.push(root);
+  }
+  /* Start the things needed on the first playable frame before secondary animation reels.  Within
+     each group the authored list order is retained. */
+  const priority=k=>(/master|stageArt|scard_|ngm_space_atlas|weapon.*atlas|ships.*atlas|nsb_|mbg|cfx_/.test(k)?0:
+                     (/_0$|_idle$|_intact$/.test(k)?1:2));
+  roots.sort((a,b)=>priority(a)-priority(b));
+  /* Retire only unambiguously stage-owned combat textures from the previous mission. Generic nca
+     sheets and player atlases remain shared. This prevents a campaign run from retaining every
+     loose attack reel it has ever seen in decoded memory. */
+  const stageOwned=/^(?:s[2-9](?:atk|dmg|fracture|lattice|spore|rift|roll|nf|symboss)_|s4w_|s6mb_|n6v|mwfx_|l23fx_|cfx_stage[2-8]_|nca_stage(?:[2-9]_runtime_|5_runtime_atlas)|stage6_blue_)/;
+  for(const old in _stageLoads){
+    if(+old===+n)continue;
+    const O=_stageLoads[old];
+    for(const root of (O.keys||[]))if(!seen[root]&&stageOwned.test(root)&&XART.releaseRoot)XART.releaseRoot(root);
+    delete _stageLoads[old];delete _warmed[old];
+  }
+  const now=_stageLoadNow();
+  _stageLoads[n]={stage:n,keys:roots,cursor:0,inflight:[],loaded:0,failed:0,total:roots.length,
+                  started:now,done:roots.length===0,doneAt:0};
+  return roots.length;
+}
+function stageLoadTick(){
+  if(typeof run==='undefined'||!run)return;
+  const L=_stageLoads[run.stage];if(!L||L.done||typeof XART==='undefined')return;
+  const now=_stageLoadNow();
+  for(let i=L.inflight.length-1;i>=0;i--){
+    const q=L.inflight[i],im=q.im;
+    if(im&&!im._bofStageDecodeStarted)_stageLoadDecode(im);
+    const ok=!!(im&&(im._bofStageDecodeDone===1||
+      (typeof im.decode!=='function'&&im.complete&&im.naturalWidth>0)));
+    const bad=!!(!im||(im.complete&&im.naturalWidth===0)||im._bofStageDecodeDone===-1||(now-q.at)>STAGE_LOAD_ITEM_TIMEOUT);
+    if(ok||bad){L.inflight.splice(i,1);if(ok)L.loaded++;else L.failed++;}
+  }
+  while(L.inflight.length<STAGE_LOAD_CONCURRENCY&&L.cursor<L.keys.length){
+    const key=L.keys[L.cursor++],im=XART.raw(key);
+    if(!im){L.failed++;continue;}
+    _stageLoadDecode(im);
+    if(im._bofStageDecodeDone===1||(typeof im.decode!=='function'&&im.complete&&im.naturalWidth>0)){L.loaded++;continue;}
+    if((im.complete&&im.naturalWidth===0)||im._bofStageDecodeDone===-1){L.failed++;continue;}
+    L.inflight.push({key:key,im:im,at:now});
+  }
+  if(L.loaded+L.failed>=L.total&&L.inflight.length===0){L.done=true;L.doneAt=now;}
+}
+function stageLoadInfo(n){
+  const L=_stageLoads[n];
+  if(!L)return {ready:true,progress:1,loaded:0,failed:0,total:0};
+  const settled=L.loaded+L.failed, started=L.cursor-settled;
+  return {ready:!!L.done,progress:L.total?clamp((settled+Math.max(0,started)*.35)/L.total,0,1):1,
+          loaded:L.loaded,failed:L.failed,total:L.total};
+}
+function stageLoadReady(n){return stageLoadInfo(n).ready;}
 /* ⚠ THE LAZY SHEETS MUST BE KICKED OFF BEFORE THEY ARE NEEDED (drop 0807e).
 
    0806v made the nine stage fonts and five stage-art sheets decode on FIRST USE instead of at
@@ -20619,9 +21617,8 @@ function warmStageSheets(n){
   try{
     const A=(typeof ASSETS!=='undefined')?ASSETS:null; if(!A) return;
     const k=String(n);
-    if(A.bofFont && (A.bofFont[k]||A.bofFont['8'])) void (A.bofFont[k]||A.bofFont['8']).img;
     if(A.stageArt  && A.stageArt[k])  void A.stageArt[k].img;
-    if(A.bofFont && A.bofFont['1']) void A.bofFont['1'].img;   // the UI font, used everywhere
+    if(A.stageArt && A.stageArt['1']) void A.stageArt['1'].img;
   }catch(e){}
 }
 /* ============================================================
@@ -20639,7 +21636,7 @@ function warmStageSheets(n){
 function uiFontWarm(){
   try{
     if(typeof ASSETS==='undefined') return;
-    if(ASSETS.bofFont   && ASSETS.bofFont['1'])   void ASSETS.bofFont['1'].img;
+    if(ASSETS.stageArt && ASSETS.stageArt['1']) void ASSETS.stageArt['1'].img;
   }catch(e){}
 }
 /* ============================================================
@@ -20712,6 +21709,7 @@ function warmStage(n){
     const _bk = S && S.boss;
     if(_bk && typeof SHIPBOSS!=='undefined' && SHIPBOSS[_bk]){
       const _bd=SHIPBOSS[_bk]; add(_bd.key);
+      if(_bd.dmg)for(const _hurt of _bd.dmg)add(_hurt);
     }
     /* VILE EXISTENCE is a four-form modular boss whose runtime kind does not match any of its
        art prefixes. Warm every shell plus the transition/implosion overlays before Stage 8 can
@@ -20736,6 +21734,28 @@ function warmStage(n){
       if(_mk==='heralddeath') addPrefix('nhd_');
     }
   }catch(e){}
+  /* Modern combat packs live in named source folders rather than `levels/levelN`, so folder-based
+     discovery cannot see them.  Warm only the families owned by this stage.  The loader resolves
+     atlas cells to their shared root and limits loose-frame decoding to three concurrent images. */
+  {
+    const _F={
+      1:['nca_s1combatfx'],
+      2:['s2atk_','mwfx_','l23fx_inferno_','cfx_stage2_volcanic_projectiles'],
+      3:['s3atk_','s3dmg_','l23fx_cryo_','l23fx_rime_'],
+      4:['s4atk_','s4w_','cfx_stage4_chain_lightning'],
+      5:['s5atk_','s5fracture_','ch_','cfx_stage5_xeno_projectiles','cfx_stage5_alien_projectiles_v2','ngm_space_atlas'],
+      6:['s6atk_','s6mb_','n6v','cfx_stage6_carrier_shield','stage6_blue_master'],
+      7:['s7atk_','s7spore_','cfx_stage7_','cfx_stage7_toxic_projectiles_v2'],
+      8:['s8atk_','s8roll_','s8nf_','s8symboss_','s8rift_','nst8_','nl8c_','cfx_stage8_symbiote_projectiles'],
+      9:['s9atk_','s9lattice_','ngm_space_atlas','nst9_']
+    };
+    for(const _pre of (_F[n]||[]))addPrefix(_pre);
+    /* Ship-boss projectiles are registered by visual family, not stage. */
+    try{
+      const _S=STAGES[n-1],_D=_S&&SHIPBOSS[_S.boss];
+      if(_D&&_D.proj)addPrefix('bfx_'+_D.proj+'_');
+    }catch(_bp){}
+  }
   /* 5. THE FAMILIES THAT DO NOT MATCH A FOLDER OR A KIND NAME (drop 0801kd).
 
      Mike, repeatedly: "theres no shock rings for enemies, barely any debris",
@@ -20826,9 +21846,8 @@ function warmStage(n){
             add(_c+_t+_i+'_r0_'+_z);
   }
 
-  // 4. fire the requests
-  for(let i=0;i<want.length;i++){ try{ XART._touch(want[i]); }catch(e){} }
-  return want.length;
+  // 4. queue unique texture roots; stageLoadTick performs bounded fetch/decode work each frame.
+  return stageLoadBegin(n,want);
 }
 /* FREEZER'S LEVEL 3 NARRATION (drop 0801fi). Mike: "on level 3, freezer should
    have a self narration dialogue that he should probably turn off his weapon
@@ -21141,7 +22160,7 @@ function freezerL3Begin(){
      separated from the flamethrower this beat handed him a weapon that came out as frost, on
      the ice level, contradicting its own narration. Stated here rather than left to the
      dispenser default so the story beat cannot drift if that table changes. */
-  if(!run.wvars) run.wvars=[null,null,null,null,null,null];
+  if(!run.wvars) run.wvars=[null,null,null,null,null,null,null];
   run.wvars[4]='flamethrower';
   _frzNarr = { i:0, t:0, hold:2.6, done:false };
 }
@@ -21196,7 +22215,9 @@ function beginStage(num){
   curStage=STAGES[num-1];
   /* the secret is SPENT once it is entered, so the map is not stuck on stage 9 forever (0822ad) */
   if(num===9 && typeof campaign!=='undefined') campaign.bonusUnlocked=0;
-  run.stage=num; mapScroll=0; damBroken=false;
+  const _l78Pending=(num===8)&&!!(run._l78Entry||(typeof campaign!=='undefined'&&campaign._l78Pending));
+  run.stage=num;run._l78Entry=_l78Pending?1:0;if(_l78Pending&&typeof campaign!=='undefined')campaign._l78Pending=0;
+  mapScroll=0; damBroken=false;
   /* Snapshot player strength at the stage boundary; no mid-fight rubber-banding. */
   run._threatBuild=(typeof playerArsenalScore==='function')?playerArsenalScore():0;
   if(typeof spaceModeStage==='function') spaceModeStage(num);
@@ -21317,14 +22338,18 @@ function beginStage(num){
      The ship therefore appeared right of centre at GO and visibly drifted back. Snapped here,
      AFTER reset, so the launch draws through the same camera play will use. */
   snapCamToPlayer();
-  setState(GS.INTRO);
+  /* The Stage 7 escape already supplied Stage 8's dramatic handoff.  Selecting the newly
+     unlocked stage therefore begins on the requested white frame and helix-rift emergence,
+     without inserting the ordinary title-card/launch sequence between those two moments. */
+  if(num===8&&run._l78Entry){l78EntryStart();setState(GS.WARPENTRY);}
+  else setState(GS.INTRO);
   Audio.stopMusic();/*card-first*/
   /* raised at the top, applied HERE — after the stage is fully built */
   if(_wantOpening){ openingStart(1); setState(GS.OPENING); }
   /* RADIO: the stage's ENTRY exchange plays over the entry flight, which is exactly where the
      delivery rules want it — "major radio exchanges should play over entry flights, empty
      transition corridors, environmental flyovers, or post-boss slowdowns". */
-  if(typeof storyPlay==='function' && run.mode==='campaign') storyPlay(num,'entry');
+  if(typeof storyPlay==='function' && run.mode==='campaign' && !(num===8&&run._l78Entry)) storyPlay(num,'entry');
   /* SCENE CODE. COLE1..COLE9 put the player at the moment that matters — boss up, nearly dead,
      transition one hit away. Applied last so the stage is fully built underneath it, the same
      reason _wantOpening is applied here rather than at the top. */
@@ -21381,6 +22406,20 @@ function _hudStateWants(s){
   return s===GS.PLAY || s==='paused' || s===GS.LAUNCH || s===GS.WARPENTRY || s===GS.OUTBOUND ||
          s===GS.INTRO || s===GS.STAGECLEAR || s===GS.RIVAL;
 }
+let _pauseMusicVol=null;
+function _pausePresentation(on){
+  try{
+    for(const id of ['screen','hud','equipcv']){
+      const el=document.getElementById(id);if(el)el.style.filter=on?'grayscale(1) contrast(.92) brightness(.82)':'';
+    }
+  }catch(_pf){}
+  try{
+    if(on){
+      if(_pauseMusicVol==null)_pauseMusicVol=Audio.getVol('music');
+      Audio.setVol('music',Math.max(.03,_pauseMusicVol*.28));
+    }else if(_pauseMusicVol!=null){Audio.setVol('music',_pauseMusicVol);_pauseMusicVol=null;}
+  }catch(_pa){}
+}
 function setState(s){
   /* BACKING OUT OF A CAMPAIGN UNLOCKS CONTINUE (drop 0809l). Mike: "if they are playing
      campaign and decide to back out of the campaign mode, continue game will be unlocked
@@ -21392,8 +22431,18 @@ function setState(s){
        (s===GS.TITLE||s===GS.MODESEL||s===GS.CAMPHUB||s===GS.OPTIONS) &&
        (state===GS.STAGESEL||state===GS.PLAY||state===GS.STAGECLEAR||state===GS.FLYOVER)) campSuspend();
   }catch(_){}
+  const _prevState=state;
+  if(s==='paused'&&_prevState!=='paused')_pausePresentation(true);
+  else if(_prevState==='paused'&&s!=='paused')_pausePresentation(false);
   state=s; stateT=0; Input.clearTaps(); _hudShow(_hudStateWants(s));
-  _setCinematicViewport(s===GS.CUTSCENE);
+  _setCinematicViewport(s===GS.CUTSCENE || s===GS.CAMPAIGNINTRO || s===GS.VICTORY);
+  /* The final results card is useful decode time. Start the ending plates here so a player who
+     advances immediately never reaches the first line of the finale before its HQ background and
+     selected straight-rear aircraft are drawable. The bonus stage returns to the campaign map and
+     therefore must not warm the campaign ending. */
+  if(s===GS.STAGECLEAR && run.stage>=CAMPAIGN_STAGES && !(curStage&&curStage.bonus)){
+    try{if(typeof victoryEndingWarm==='function')victoryEndingWarm();}catch(_victoryPrewarm){}
+  }
   if(s===GS.TITLE){
     /* TITLE OWNS ITS MUSIC (0824b). Returning through the campaign pause or OPTIONS used to
        leave NEON VELOCITY playing over the main menu because only some callers remembered to
@@ -21745,7 +22794,7 @@ function updatePlay(dt){
     run._lifeThreat=Math.max(run._lifeThreat||0,(typeof playerArsenalScore==='function'?playerArsenalScore():0));
   }
   run.distance+=dt*40;
-  run.speed=run.speedLevel||0; run.wlevel=(run.wlevels?run.wlevels[run.weapon]:0)|0;
+  run.speed=run.speedLevel||0; run.wlevel=spaceWeaponsActive()?spaceWeaponLevel():((run.wlevels?run.wlevels[run.weapon]:1)|0);
   /* COLE'S TIER KEYS (drop 0801bs). Mike: "when I play as Cole, allow me to press
      1 to switch to lvl 6 machine gun, 2 for lvl 7, 3 for lvl 8, regardless of
      what I pick up or have equipped Only as cole."
@@ -21762,7 +22811,7 @@ function updatePlay(dt){
       if(Input.tap(_k)){
         const _lv=_tier[_k];
         run.weapon=0;
-        if(!run.wlevels) run.wlevels=[0,0,0,0,0,0];
+        if(!run.wlevels) run.wlevels=[0,0,0,0,0,0,0];
         run.wlevels[0]=_lv; run.wlevel=_lv;
         if(typeof coleFuse!=='undefined') coleFuse=0;      // drop any part-built fusion charge
         if(Audio&&Audio.SFX&&Audio.SFX.select) Audio.SFX.select();
@@ -21786,7 +22835,7 @@ function updatePlay(dt){
        The boss death payoff runs for ~9s and the player was fully controllable through all of
        it, parked in frame with nothing to shoot - which is the pause he is describing. Movement
        and fire stop here; the ship keeps DRAWING, and drawFlyover takes it out. */
-    if(!bossDefeated){
+    if(!bossDefeated && !(typeof s7WardenCinematic==='function'&&s7WardenCinematic())){
       if(Input.lf)mvx-=1; if(Input.rt)mvx+=1; if(Input.up)mvy-=1; if(Input.dn)mvy+=1;
     }
     const sp=playerBaseSpeed();
@@ -21837,7 +22886,7 @@ function updatePlay(dt){
     // fire
     player.fireCd-=dt; if(player._mgMuzT>0)player._mgMuzT-=dt;
     if(player._spaceMuzzle>0)player._spaceMuzzle=Math.max(0,player._spaceMuzzle-dt);
-    const firing = !_rolling && keybind.fire.some(k=>Input.down(k));   // no shooting mid-roll
+    const firing = !_rolling && !(typeof s7WardenCinematic==='function'&&s7WardenCinematic()) && keybind.fire.some(k=>Input.down(k));   // no shooting mid-roll/cinematic
     /* ============================================================
        TAP vs HOLD ON A CHARGE WEAPON (drop 0805r)
 
@@ -21907,16 +22956,19 @@ function updatePlay(dt){
       player.fireCd=(cd!=null?cd:0.2)*(specialActive('maverick')||specialActive('yuri')?1:(1-(PILOTMOD?PILOTMOD.fire:0))); pShoot();
     }
     // ---- RAIDEN-STYLE AUTO HOMING MISSILES ---- fire alongside the primary ONLY while firing
-    run._mslCd=(run._mslCd||0)-dt;
-    if(!spaceWeaponsActive() && firing && (run.missileLevel||0)>0 && run._mslCd<=0 && !player.dead && !specialActive('cole') && !specialActive('falva')){
-      autoFireMissiles();
-      run._mslCd=({1:0.9,2:0.75,3:0.6,4:0.5,5:0.42})[clamp(run.missileLevel,1,5)]||0.7;
+    if(spaceWeaponsActive())spaceVolleyAutoTick(dt,firing);
+    else{
+      run._mslCd=(run._mslCd||0)-dt;
+      if(firing && (run.missileLevel||0)>0 && run._mslCd<=0 && !player.dead && !specialActive('cole') && !specialActive('falva')){
+        autoFireMissiles();
+        run._mslCd=({1:0.9,2:0.75,3:0.6,4:0.5,5:0.42})[clamp(run.missileLevel,1,5)]||0.7;
+      }
     }
     if(keybind.bomb.some(k=>Input.tap(k))){
-      /* Pilot specials may still claim the button. Otherwise it is the same missile control in
-         every stage: ground launches gmiss, Gravity Mode launches the glow-volley. */
+      /* Pilot specials may still claim the button. Volley Missiles are passive in Gravity Mode,
+         so a spare bomb press there never manually launches or spends one. */
       if(!retinaFire() && !lizzieFire()){
-        if(spaceWeaponsActive())spaceUseMissile();else useBomb();
+        if(!spaceWeaponsActive())useBomb();
       }
     }
     if(keybind.retina.some(k=>Input.tap(k))||Input.tap('l')) cycleLock();
@@ -21953,7 +23005,8 @@ function updatePlay(dt){
     // Reserve room for the next authored wave so dispatch can never push pressure past the cap.
     /* Stage 1 now carries up to eleven so its fifth/sixth delayed jet can enter without deleting
        the next mapped beat. Other stages retain their six-unit pressure ceiling. */
-    const _liveCap = (run.stage===1)?11:(run.stage===9?12:6);
+    const _aiProfile=stageAiProfile(run.stage);
+    const _liveCap=_aiProfile.cap;
     // Stationary emplacements (turrets, bunkers, mini tanks/ships) are terrain hazards, not wave
     // pressure — they linger by design. Counting them against the dispatch cap starved the later
     // waves on stage 1, so they are excluded here.
@@ -21994,7 +23047,7 @@ function updatePlay(dt){
        because the clock continued beyond the beach. */
     _s1GroundHold=!!(_s1GroundDue && (_waveGap>0 || _liveN>_dispatchAt));
     if(_nextStageWave && stageTimer>=_nextStageWave.t && _waveGap<=0 && _liveN<=_dispatchAt){
-      stagePlan[waveIdx].fn(); waveIdx++; _waveGap=(run.stage===1?0.9:(run.stage===9?0.38:1.1));
+      stagePlan[waveIdx].fn(); waveIdx++; _waveGap=_aiProfile.waveGap;
       _s1GroundHold=false;
     }
     /* Global adaptive density is a separate, one-at-a-time lane from the authored scheduler.
@@ -22658,7 +23711,7 @@ function updatePlay(dt){
                  : (20 + (Math.abs((e.x|0)*7+(e.y|0)*3)%41)) / 60;   // 20-60 frames
       }
       if(e._entry>0){ e._entry-=dt; }
-      e.fireCd-=dt*DIFF.eFire;
+      e.fireCd-=dt*enemyCadencePressure();
       if(e._entry<=0 && e.fireCd<=0 && e.y>0 && e.y<VH*0.85){
         e.fireCd=e.fireRate*rnd(0.8,1.3);
         if(specialActive('decker') && Math.random()<0.85){ continue; }   // cloaked: enemies confused, rarely fire
@@ -22820,6 +23873,7 @@ function updatePlay(dt){
     _dmgBullet=b;
     if(b._shieldIgnoreT>0){ b._shieldIgnoreT-=dt; if(b._shieldIgnoreT<=0) b._shieldIgnore=null; }
     if(typeof spaceBulletTick==='function'&&spaceBulletTick(b,dt)) continue;
+    if(typeof laserMistTick==='function'&&laserMistTick(b,dt)) continue;
     /* A Maverick volley launches one lance at a time. Held lances stay at the muzzle and cannot
        move, draw or collide until their authored release beat arrives. */
     if(b.kind==='mavlaser' && b._launchDelay>0){
@@ -23651,8 +24705,8 @@ function updatePlay(dt){
       if(b._accel){ b.spd=Math.min(b._maxspd||4.0,(b.spd||2.4)+b._accel); }   // missile builds speed after launch (readable then fast)
       const spd=(b.spd||2.7)*(DIFF?DIFF.ebSpeed:1); b.vx=Math.cos(ang)*spd; b.vy=Math.sin(ang)*spd; b.ang=ang;
       for(const pb of pBullets){ if(pb.dead) continue;
-        if(pb.kind==='beam'){ if(Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y)){ b.dead=true; if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); break; } }
-        else if(Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2)){ b.dead=true; if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); if(!pb.pierce) pb.dead=true; break; }
+        if(pb.kind==='beam'){ if(Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y)){ b.dead=true; if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); break; } }
+        else if(Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2)){ b.dead=true; if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:112,wpx:126,blend:'lighter'});else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:102,wpx:116,blend:'lighter'});else if(b.kind==='s1jungleMissile') s1CombatImpact(b.x,b.y,false,46); else explode(b.x,b.y,7,'red'); if(!pb.pierce) pb.dead=true; break; }
       }
       if(b.dead) continue;
     }
@@ -23744,6 +24798,12 @@ function updatePlay(dt){
       }
       continue;
     }
+    if(b._wardenAnchor){
+      /* Portal mines travel out as a readable fan, then phase-lock into their authored lane.
+         They remain shootable while anchored and expire instead of accumulating forever. */
+      if(!b._wardenAnchored&&b.t>=1.0){b.x=b._wardenAnchor.x;b.y=b._wardenAnchor.y;b._wardenAnchored=true;}
+      if(b._wardenAnchored){b.vx=0;b.vy=0;b.spd=0;_jcManualMove=true;if(b.t>=b._wardenAnchor.life)b.dead=true;}
+    }
     if(!_jcManualMove){b.x+=b.vx;b.y+=b.vy;}
     if(!player.dead && player.invuln<=0){
       const _hx=(player._hx!=null?player._hx:9), _hy=(player._hy!=null?player._hy:10);
@@ -23755,6 +24815,8 @@ function updatePlay(dt){
           explode(b.x,b.y,(b.kind==='s2slag'||b.kind==='s2bomb')?42:34,'red','bfx_magma_i');
         else if((b.kind==='s1greenLaser'||b.kind==='s1windBlade'||b.kind==='s1windVortex') && typeof s1CombatImpact==='function') s1CombatImpact(b.x,b.y,true,54);
         else if((b.kind==='s1cannon'||b.kind==='s1jungleMissile') && typeof s1CombatImpact==='function') s1CombatImpact(b.x,b.y,false,48);
+        else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:110,wpx:124,blend:'lighter'});
+        else if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:118,wpx:132,blend:'lighter'});
         else if(b._carrierWarhead)carrierWarheadBurst(b,'s6mb_bombimpact',10,176,.46);
         playerHit(); b.dead=true;
       }
@@ -23804,7 +24866,10 @@ function updatePlay(dt){
   if(bombFlash>0) bombFlash-=dt*1.2;
   
   // stage clear handling
-  if(bossDefeated){
+  /* Stage 7 owns its entire kill-to-portal handoff.  Do not let the generic five-second
+     flyover timer cut across the intact wreck, warning dialogue, escape, or whiteout. */
+  const s7FinaleOwnsExit=!!(boss&&boss._s7warden&&s7FinalPhase(boss)&&s7FinalPhase(boss)!=='done');
+  if(bossDefeated&&!s7FinaleOwnsExit){
     stageEnding+=dt;
     // the death runs ~9.4s now (6s of blasts + whiteout + 2.5s of coming apart), so the stage must
     // hold past it or the payoff gets cut off mid-explosion.
@@ -24232,20 +25297,18 @@ function playerHit(){
   _adaptiveSpawnT=6.5; _adaptiveSpawnSeq=0;
   for(let _k=0;_k<7;_k++) explode(player.x+rnd(-16,16), player.y+rnd(-14,14), rnd(26,50), 'red');
   shake=18; flashScreen=0.7; Audio.SFX.death();
-  /* Gravity Mode is a recovered prototype, not a disposable ground pickup. A lost life must not
-     erase upgrades in its three independent weapon banks. Snapshot them before the generic
-     ground-loadout strip and restore them afterwards, including the selected bank. */
-  const _spaceDeathLoadout=(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive())?{
-    weapon:run.spaceWeapon||0, levels:(run.spaceLevels||[1,0,0]).slice()
-  }:null;
-  // lose some powerup state on death
-  run.weapon=0; run.wlevels=[0,0,0,0,0,0]; run.wvars=[null,null,null,null,null,null]; run.wlevel=0; run.power=0;
-  if(_spaceDeathLoadout){
-    run.spaceWeapon=_spaceDeathLoadout.weapon;run.spaceLevels=_spaceDeathLoadout.levels;
-    run.wlevel=spaceWeaponLevel();
+  /* Death powers every weapon bank down to level 1. It does not erase the equipped weapon or its
+     authored variant, and it cannot leave upgraded ground weapons hidden in the Stage-5/9 loadout
+     snapshot ready to reappear after Gravity Mode ends. */
+  run.weapon=clamp(run.weapon||0,0,6);run.wlevels=[1,1,1,1,1,1,1];run.wlevel=1;run.power=0;
+  run.spaceWeapon=(run.spaceWeapon===1)?1:0;run.spaceLevels=[1,1,1];run._spaceVolleyCd=0;
+  if(run._groundLoadout){
+    run._groundLoadout.wlevel=1;run._groundLoadout.wlevels=[1,1,1,1,1,1,1];
+    run._groundLoadout.missileLevel=1;
   }
+  if(typeof spaceShadowCancel==='function')spaceShadowCancel();
   run.speed=0; run.speedLevel=0; run.speedT=0;
-  run.missileLevel=0;   // die -> lose ALL auto-missiles; next missile powerup is level 1 again
+  run.missileLevel=1;   // every weapon system, including passive auto-missiles, returns to level 1
   // lose the active special on death (Maverick venom, Yuri chain, etc.)
   if(special){ if(typeof endSpecial==='function') endSpecial(); special=null; }
   /* AND THE LOANED WEAPONS (drop 0810f). Mike: "needs to goes away after 15 seconds or when she
@@ -24257,9 +25320,15 @@ function playerHit(){
   retina.target=null; retina.phase=null; timeScale=1; zaps.length=0;
 }
 
-function triggerGameOver(){ setState(GS.GAMEOVER); Audio.stopMusic(); Audio.SFX.gameover();
+function triggerGameOver(){
+  if(run.stage===9&&!bossDefeated&&typeof riftFallbackStart==='function'){riftFallbackStart();return;}
+  setState(GS.GAMEOVER); Audio.stopMusic(); Audio.SFX.gameover();
   if(run.score>=highScore){ highScore=run.score; try{localStorage.setItem('bof_hi',highScore);}catch(e){} } }
-function triggerVictory(){ drawVictory._t=0; drawVictory._scroll=0; setState(GS.VICTORY); Audio.stopMusic(); Audio.startMusic('lvl6'); Audio.SFX.victory();
+function triggerVictory(){
+  drawVictory._t=0; drawVictory._scroll=0; drawVictory._sfx={}; drawVictory._md=!!Input.mouse.down;
+  drawVictory._ready=false;
+  if(typeof victoryEndingWarm==='function')victoryEndingWarm();
+  setState(GS.VICTORY); Audio.stopMusic(); Audio.startMusic('cinematics'); Audio.SFX.victory();
   if(run.score>highScore){ highScore=run.score; } try{localStorage.setItem('bof_hi',highScore);}catch(e){} }
 
 /* ============================================================
@@ -24267,6 +25336,7 @@ function triggerVictory(){ drawVictory._t=0; drawVictory._scroll=0; setState(GS.
    ============================================================ */
 function bossHitTest(x,y){
   if(!boss) return false;
+  if(boss._s7warden&&boss._s7warden.noHit)return false;
   if(boss._ship==='stormsovereign'&&boss._s4war){
     boss._s4CoreHit=stage4CoreTurretAt(boss,x,y,2);
     if(boss._s4CoreHit)return true;
@@ -24279,6 +25349,14 @@ function bossHitTest(x,y){
     return dist2(x,y,boss.x,sy)<r*r;
   }
   if(boss._s9fusion && boss._s9fusion.phase!=='tidal') return s9FusionHitTest(boss,x,y);
+  if(boss._ship==='doomsdaycarriermk2'){
+    if(!boss._bay&&typeof carrierInit==='function')carrierInit(boss);
+    boss._carrierBayHit=null;
+    if(boss._bay&&(boss._bay.L>0||boss._bay.R>0)){
+      if(boss._bayShield&&boss._bayShield.up)return carrierShieldContains(boss,x,y);
+      boss._carrierBayHit=carrierBayAt(boss,x,y);return !!boss._carrierBayHit;
+    }
+  }
   if(boss._ship==='doomsdaycarriermk2'&&boss._mega){
     boss._mega.hit=carrierMegaNodeAt(boss,x,y);
     if(boss._mega.hit)return true;
@@ -24298,6 +25376,16 @@ function hitBoss(dmg){
   /* MECH: route the hit to whichever component is under the impact, so shooting an arm breaks
      THAT arm. Front-to-back, so the topmost piece takes it. During assembly nothing is hittable. */
   if(!boss||boss.dead) return;
+  if(boss._s7warden&&typeof s7WardenHit==='function'){
+    const _wx=(_dmgBullet&&Number.isFinite(_dmgBullet.x))?_dmgBullet.x:(_lastHitX!=null?_lastHitX:boss.x);
+    const _wy=(_dmgBullet&&Number.isFinite(_dmgBullet.y))?_dmgBullet.y:(_lastHitY!=null?_lastHitY:boss.y);
+    weaponHitSfx('normal');s7WardenHit(boss,dmg,_wx,_wy);return;
+  }
+  if(boss._ship==='doomsdaycarriermk2'&&typeof carrierPlayerHit==='function'){
+    const _cx=(_dmgBullet&&Number.isFinite(_dmgBullet.x))?_dmgBullet.x:(_lastHitX!=null?_lastHitX:boss.x);
+    const _cy=(_dmgBullet&&Number.isFinite(_dmgBullet.y))?_dmgBullet.y:(_lastHitY!=null?_lastHitY:(boss._drawY!=null?boss._drawY:boss.y));
+    if(carrierPlayerHit(boss,dmg,_cx,_cy)){weaponHitSfx('normal');return;}
+  }
   if(boss._ship==='xenoregent'&&typeof xenoRegentShieldAbsorb==='function'&&xenoRegentShieldAbsorb(boss,dmg)){
     weaponHitSfx('normal');return;
   }
@@ -24462,6 +25550,10 @@ function bossDeathAlpha(T){
 function bossDeathChar(T){ return Math.min(0.7, (T||0) * 0.3); }
 let _bossFade = 1;
 function bossDie(){
+  if(boss&&boss._s7warden&&typeof s7WardenBeginDefeat==='function'){s7WardenBeginDefeat(boss);return;}
+  /* Only the actual Stage-9 boss death grants Laser Mist. Entering the stage, seeing the boss,
+     or exhausting continues on it never touches this flag. */
+  if(run.stage===9&&typeof laserMistUnlock==='function')laserMistUnlock();
   boss.dead=true; boss.dying=0; boss._blasted=false; bossActive=false; bossDefeated=true;
   /* Side cores are real destructible units, but none may linger after their carrier dies. */
   if(boss._s4war&&boss._s4war.coreTurrets)for(const t of boss._s4war.coreTurrets){
@@ -26148,6 +27240,9 @@ const SPECIAL_ART_OVERRIDE = {
 };
 function specialArtKey(k){ return SPECIAL_ART_OVERRIDE[k] || k; }
 function iconDraw(key, x, y, h, centred){
+  if(/^micon_lasermist_[1-5]$/.test(key||'')){
+    return laserMistAtlasBlit(ctx,key,x,y,h,h,centred);
+  }
   if(typeof spaceAtlasIconBlit==='function' && /^space_/.test(key||'')){
     const _sw=spaceAtlasIconBlit(ctx,key,x,y,h,centred);
     if(_sw)return _sw;
@@ -26182,6 +27277,9 @@ function iconDraw(key, x, y, h, centred){
    any canvas, so a second surface can never drift from the first again. ============================================================ */
 function iconBlit(g, key, x, y, h, centred){
   if(!g) return null;
+  if(/^micon_lasermist_[1-5]$/.test(key||'')){
+    return laserMistAtlasBlit(g,key,x,y,h,h,centred);
+  }
   if(typeof spaceAtlasIconBlit==='function' && /^space_/.test(key||'')){
     const _sw=spaceAtlasIconBlit(g,key,x,y,h,centred);
     if(_sw) return _sw;
@@ -26516,7 +27614,8 @@ function drawPlayer(){
   /* Cinematics sometimes redraw the live world but own the ship pose themselves.  Keep the
      player alive (so the death banner and death-only effects stay off) while suppressing only
      the ordinary gameplay sprite. */
-  if(typeof _cinematicHidePlayer!=='undefined' && _cinematicHidePlayer) return;
+  if((typeof _cinematicHidePlayer!=='undefined' && _cinematicHidePlayer) ||
+     (typeof s7WardenShipHidden==='function'&&s7WardenShipHidden())) return;
   const _spk=specialActive()?special.pilot:null;
   if(!_spk){ _drawPlayerCore(); return; }
   ctx.save();
@@ -28132,7 +29231,7 @@ function dlgBox(o){
   /* dlg_window has a deep machined frame — the inset is the frame, not taste. Text laid out to
      the panel's outer edge sits on the rivets. */
   const ix=x+16+bay, iw=pw-32-bay;
-  if(who){
+  if(who && _dlgFace){
     const nameH=Math.round(ph*0.20);
     const _nh=(typeof msgFitH==='function')?msgFitH(who, iw, nameH, 7):nameH;
     if(typeof msgTextLeft==='function') msgTextLeft(who, ix, y+Math.round(ph*0.24), _nh, tint, 1, fade, null, true);
@@ -28144,26 +29243,10 @@ function dlgBox(o){
      the rows available, down to a floor. The typed-in prefix is wrapped at the FULL line's size
      so the block does not reflow letter by letter as it types. */
   const yTop=y+Math.round(ph*(who?0.46:0.30)), yBot=y+ph-Math.round(ph*0.12);
-  /* ⚠ THE SOLVER AND THE DRAWER MUST COUNT ROWS THE SAME WAY. The loop below draws a row only if
-     its FOOT clears yBot; if this asked how many row TOPS fit it would believe in a row the
-     drawer then refuses, and the tail would vanish silently — which is 0811m's truncation bug
-     arriving by a new route. `rowsFit` is the one definition, used by both. */
-  const rowsFit=(h)=>Math.max(1, Math.floor((yBot-yTop-h)/Math.round(h*1.42))+1);
-  let bodyH=Math.round(ph*0.17); const minH=Math.max(7, Math.round(ph*0.10));
-  if(typeof msgWrap==='function'){
-    for(; bodyH>minH; bodyH--){
-      if(msgWrap(full, iw, bodyH).length<=rowsFit(bodyH)) break;
-    }
-  }
-  const lines=(typeof msgWrap==='function')?msgWrap(shown, iw, bodyH):[shown];
-  let yy=yTop;
-  for(const L of lines){
-    /* ⚠ THE ROW'S FOOT, NOT ITS TOP. `yy>yBot` lets a line that STARTS one pixel above the limit
-       draw its full height below it, so the last row sat on the bottom rail — visible in the
-       0814b proof frame before this line changed, and invisible to a horizontal overrun check. */
-    if(yy+bodyH>yBot) break;
-    if(typeof msgTextLeft==='function') msgTextLeft(L, ix, yy, bodyH, DIALOGUE_BODY_COLOR, 1, fade, null, true);
-    yy += Math.round(bodyH*1.42);
+  if(_dlgFace && typeof msgDrawBlock==='function'){
+    msgDrawBlock({text:full,budget:shown.length,x:ix,y:yTop,w:iw,h:Math.max(1,yBot-yTop),
+      maxH:Math.round(ph*0.17),minH:Math.max(6,Math.round(ph*0.085)),lineMul:1.42,
+      color:DIALOGUE_BODY_COLOR,alpha:fade,outline:true});
   }
   msgFaceUse(null);        // ⚠ the ONLY exit past the opt-in above; leaving it set would repaint every banner
   ctx.restore();
@@ -28330,16 +29413,38 @@ function attractDraw(){
   return true;
 }
 
+/* Engine-level encounter damage language. Every boss and miniboss begins venting at half health;
+   the art is taken from the authored chimney and dense-burst reels, so this remains consistent
+   across bespoke renderers without fading or replacing their hull frames. */
+function encounterDamageOverlay(b,isMini){
+  if(!b||b.dead||!(b.maxhp>0)||b.hp/b.maxhp>.50||typeof XART==='undefined')return;
+  b._encDmgT=(b._encDmgT||0)+(_lastDt||1/60);const t=b._encDmgT,frac=clamp(b.hp/b.maxhp,0,1);
+  const cy=(b._drawY!=null?b._drawY:b.y),w=b._drawW||b.w||120,h=b._drawH||b.h||120;
+  const vents=frac<=.22?[[-.24,.06],[.23,.02],[-.02,.20]]:[[-.18,.08],[.18,.03]];
+  for(let i=0;i<vents.length;i++){
+    const key='nsd_chim_'+((Math.floor(t*9)+i*3)%8);if(!XART.rdy(key))continue;
+    const im=XART.get(key),q=(t*.46+i*.43)%1,sz=Math.max(30,Math.min(isMini?82:118,h*(frac<=.22?.34:.27)))*(1+q*.24);
+    const x=b.x+w*vents[i][0],y=cy+h*vents[i][1]-q*h*.15;
+    ctx.save();ctx.globalAlpha=(1-q)*(.68+(frac<=.22?.16:0));ctx.drawImage(im,x-sz/2,y-sz,sz,sz);ctx.restore();
+  }
+  if(frac<=.25){
+    const beat=Math.floor(t*1.35),phase=(t*1.35)%1;if(phase<.34){const fi=clamp(Math.floor(phase/.34*8),0,7),key='nxp_dense_'+fi;
+      if(XART.rdy(key)){const anchors=[[-.31,.11],[.27,.06],[-.08,.22],[.12,-.02]],a=anchors[beat%anchors.length],sz=Math.max(34,Math.min(isMini?76:106,h*.28));
+        ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.88;ctx.drawImage(XART.get(key),b.x+w*a[0]-sz/2,cy+h*a[1]-sz/2,sz,sz);ctx.restore();}
+    }
+  }
+}
 function drawBoss(){
   /* The death-visibility rule lives here at the one entry point. bossDeathAlpha is deliberately
      binary: full-opacity hull, then authored explosion takeover; never a dissolve. */
   const _b = boss;
   _bossFade = (_b && _b.dead) ? bossDeathAlpha(_b.dying || 0) : 1;
   if(_bossFade <= 0) return;                 // gone: the explosion has the screen to itself now
-  if(_bossFade >= 1) return drawBossInner();
+  if(_bossFade >= 1){drawBossInner();encounterDamageOverlay(_b,false);return;}
   ctx.save();
   ctx.globalAlpha = _bossFade;
   drawBossInner();
+  encounterDamageOverlay(_b,false);
   ctx.restore();
   _bossFade = 1;
 }
@@ -28828,6 +29933,7 @@ const FIRETYPES={
   s9gold:{procSpace:'s9-gold'},s9warp:{procSpace:'s9-warp'},s9turbo:{procSpace:'s9-turbo'},
   s9needle:{procSpace:'s9-needle'},s9comet:{procSpace:'s9-comet'},s9pair:{procSpace:'s9-pair'},
   s9lattice:{art:(b)=>'s9lattice_'+(((b.t||0)*12|0)%12),spin:1.15,h:72,glow:'#43e9ff'},
+  s7wardenShell:{proc7:'acid'},s7wardenMine:{proc7:'grenade'},s7wardenRail:{proc7:'laser'},
   /* Doomsday Carrier Mk II arsenal: supplied animated plates, not generic bullets. */
   s6cyclone:{art:(b)=>'s6mb_cyclonetracer_'+(((b.t||0)*16|0)%8),align:true,h:42,glow:'#55dfff'},
   s6prism:{art:(b)=>'s6mb_prismbolt_'+(((b.t||0)*15|0)%8),align:true,h:44,glow:'#d9f8ff'},
@@ -29004,6 +30110,12 @@ function drawStage4Projectile(b,role){
 function drawStage4WarfareProjectile(b){
   if(!b||!b._s4wKind||typeof XART==='undefined')return false;
   const role=b._s4wKind,t=b.t||0;
+  if(role==='lightning'&&typeof combatAtlasDraw==='function'){
+    const mul=b.szMul||1,fi=(Math.floor(t*20)%8),ang=Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
+    /* Lightning only: the firing hardware remains on the boss hull. The 4x2 sheet is packed into
+       tall cells with 40px minimum gutters, so side forks cannot be shaved during animation. */
+    return combatAtlasDraw('cfx_stage4_chain_lightning',4,2,fi,b.x,b.y,62*mul,108*mul,{angle:ang});
+  }
   let key,h,round=false;
   if(role==='mg'){key='s4w_mg_round_'+(Math.floor(t*30)%6);h=28;}
   else if(role==='lightningmg'){key='s4w_lightning_mg_round_'+(Math.floor(t*34)%8);h=34;}
@@ -29110,6 +30222,7 @@ const BPFX_BOSS_PROJECTILE={pellet:'kinetic',mg:'kinetic',embullet:'kinetic',dar
   homing:'missile',omegawarhead:'missile',orb:'void',voidOrb:'void',blast:'void',blob:'void',flare:'void'};
 function bossProjectileFxFamily(b){
   if(!b)return null;
+  if(b._forceStageArt)return null;
   return BPFX_STAGE_PROJECTILE[b.kind]||(b._boss?BPFX_BOSS_PROJECTILE[b.kind]:null)||null;
 }
 function drawBossProjectileArt(b,family){
@@ -29119,7 +30232,60 @@ function drawBossProjectileArt(b,family){
   const ang=family==='void'?(b.t||0)*1.65:Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
   return drawMfx(key,b.x,b.y,ang,h,null,1,null,null);
 }
+const CFX_STAGE_PROJECTILE=Object.freeze({
+  s2needle:['cfx_stage2_volcanic_projectiles',8,0,'up',62],
+  s2slug:  ['cfx_stage2_volcanic_projectiles',8,0,'up',62],
+  s2rake:  ['cfx_stage2_volcanic_projectiles',8,1,'up',72],
+  s2slag:  ['cfx_stage2_volcanic_projectiles',8,2,'spin',72],
+  s2rocket:['cfx_stage2_volcanic_projectiles',8,3,'up',76],
+  s2bomb:  ['cfx_stage2_volcanic_projectiles',8,4,'spin',74],
+  s2shock: ['cfx_stage2_volcanic_projectiles',8,5,'spin',70],
+  s2breath:['cfx_stage2_volcanic_projectiles',8,6,'up',76],
+  s2mine:  ['cfx_stage2_volcanic_projectiles',8,7,'spin',78],
+  s5fracture:['cfx_stage5_alien_projectiles_v2',7,0,'up',72],
+  s5split:   ['cfx_stage5_alien_projectiles_v2',7,1,'spin',76],
+  s5prism:   ['cfx_stage5_alien_projectiles_v2',7,2,'spin',72],
+  s5null:    ['cfx_stage5_alien_projectiles_v2',7,3,'up',78],
+  s5missile: ['cfx_stage5_alien_projectiles_v2',7,4,'right',84],
+  s5chaos:   ['cfx_stage5_alien_projectiles_v2',7,5,'spin',88],
+  s5halo:    ['cfx_stage5_alien_projectiles_v2',7,6,'spin',96],
+  s7acid:    ['cfx_stage7_toxic_projectiles_v2',6,0,'right',82],
+  s7sludge:  ['cfx_stage7_toxic_projectiles_v2',6,1,'spin',78],
+  s7shard:   ['cfx_stage7_toxic_projectiles_v2',6,2,'right',80],
+  s7bio:     ['cfx_stage7_toxic_projectiles_v2',6,3,'up',82],
+  s7laser:   ['cfx_stage7_toxic_projectiles_v2',6,4,'up',78],
+  s7grenade: ['cfx_stage7_toxic_projectiles_v2',6,5,'spin',82],
+  s8needle:  ['cfx_stage8_symbiote_projectiles',8,0,'up',66],
+  s8rage:    ['cfx_stage8_symbiote_projectiles',8,1,'up',78],
+  s8slug:    ['cfx_stage8_symbiote_projectiles',8,2,'up',78],
+  s8missile: ['cfx_stage8_symbiote_projectiles',8,3,'up',82],
+  s8pair:    ['cfx_stage8_symbiote_projectiles',8,4,'spin',82],
+  s8blade:   ['cfx_stage8_symbiote_projectiles',8,5,'spin',88],
+  s8rift:    ['cfx_stage8_symbiote_projectiles',8,6,'spin',94],
+  s8parasite:['cfx_stage8_symbiote_projectiles',8,7,'spin',84]
+});
+function drawCfxStageProjectile(b){
+  const S=b&&CFX_STAGE_PROJECTILE[b.kind];if(!S||typeof combatAtlasDraw!=='function')return false;
+  const fi=((b.t||0)*14|0)%4,mul=b.szMul||1,a=Math.atan2(b.vy||1,b.vx||0);
+  /* Generated directional art is either authored pointing north (`up`) or east (`right`). Keep
+     that source orientation explicit instead of making every missile inherit the same 90deg bug. */
+  const angle=S[3]==='spin'?(b.t||0)*2.25:(S[3]==='right'?a:a+Math.PI/2);
+  return combatAtlasDraw(S[0],4,S[1],S[2]*4+fi,b.x,b.y,S[4]*mul,S[4]*mul,{angle:angle});
+}
+function drawCombatFinalProjectile(b){
+  if(!b||typeof combatAtlasDraw!=='function')return false;
+  if(drawCfxStageProjectile(b))return true;
+  const ang=Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
+  if(b._s7warden){
+    const role=b._s7warden,mul=b.szMul||1;
+    if(role==='mine')return combatAtlasDraw('cfx_stage7_warden_mine',1,1,0,b.x,b.y,50*mul,50*mul,{angle:(b.t||0)*.72,smooth:true});
+    if(role==='rail')return combatAtlasDraw('cfx_stage7_warden_spear',1,1,0,b.x,b.y,58*mul,112*mul,{angle:ang,smooth:true});
+    return combatAtlasDraw('cfx_stage7_warden_shell',1,1,0,b.x,b.y,46*mul,78*mul,{angle:ang,smooth:true});
+  }
+  return false;
+}
 function drawFireType(b){
+  if(drawCombatFinalProjectile(b))return true;
   const _premium=bossProjectileFxFamily(b);if(_premium)return drawBossProjectileArt(b,_premium);
   const T=FIRETYPES[b.kind]; if(!T) return false;
   if(T.proc) return drawStage2Projectile(b,T.proc);
@@ -29243,6 +30409,7 @@ const PROJ = {
   s7acid:{type:'comet',slot:2},s7sludge:{type:'blast',slot:3},
   s7shard:{type:'pellet',slot:0},s7bio:{type:'missile',slot:5},
   s7laser:{type:'missile',slot:5},s7grenade:{type:'blast',slot:3},s7spore:{type:'blast',slot:3},
+  s7wardenShell:{type:'missile',slot:5},s7wardenMine:{type:'blast',slot:3},s7wardenRail:{type:'comet',slot:2},
   s5fracture:{type:'comet',slot:2},s5split:{type:'blast',slot:3},s5prism:{type:'comet',slot:2},
   s5null:{type:'missile',slot:5},s5missile:{type:'missile',slot:5},s5chaos:{type:'comet',slot:2},s5halo:{type:'blast',slot:3},
   s8needle:{type:'comet',slot:2},s8rage:{type:'comet',slot:2},s8slug:{type:'pellet',slot:0},
@@ -29428,6 +30595,14 @@ function combatHardpoint(e, ox, oy){
    The flashes live in their own list so they can be drawn over the hull and expire on their own
    without being tangled into the explosion system. */
 let _navalFlashes=[];
+function combatAtlasFx(x,y,key,cols,rows,start,count,opts){
+  opts=opts||{};
+  if(typeof XART==='undefined'||!XART.rdy(key))return false;
+  _navalFlashes.push({atlas:key,cols:cols,rows:rows,start:start||0,n:count||1,x:x,y:y,t:0,
+    life:opts.life||.34,hpx:opts.hpx||72,wpx:opts.wpx||opts.hpx||72,owner:opts.owner||null,
+    follow:opts.follow||null,angle:opts.angle,alpha:opts.alpha==null?1:opts.alpha,blend:opts.blend||null});
+  return true;
+}
 /* ⚠ ONE FLASH PER WEAPON (drop 0808q). Mike: "Only use single muzzle flashes."
 
    I was walking all nine reels so consecutive shots would not repeat — which meant a single
@@ -29504,6 +30679,13 @@ function drawNavalFlashes(){
        so drawing from it welds every flash to its barrel even during a dive or orbit. */
     if(f.follow){const m=f.follow();if(!m)continue;f.x=m.x!=null?m.x:m[0];f.y=m.y!=null?m.y:m[1];if(m.angle!=null)f.angle=m.angle;}
     const k=clamp(f.t/f.life,0,1);
+    if(f.atlas){
+      const fi=(f.start||0)+Math.min((f.n||1)-1,Math.floor(k*(f.n||1)));
+      const h=f.hpx||72,w=f.wpx||h;
+      combatAtlasDraw(f.atlas,f.cols||1,f.rows||1,fi,f.x,f.y,w,h,{angle:f.angle,
+        alpha:(f.alpha==null?1:f.alpha)*(1-k*.18),blend:f.blend});
+      continue;
+    }
     /* front-weighted across FOUR frames — a muzzle flash is at its brightest instantly and
        decays, so linear time across the reel wastes it on the dim end */
     const _n=f.n||4;    // the reel's OWN length — see magmaMuzzle
@@ -30171,6 +31353,8 @@ const S5R_START  = 0.52;     // fraction of stage 5 where the convoy arrives (af
 const S5R_SPEED  = 118;      // px/s the convoy drifts down
 const S5R_GAP    = 2.05;     // seconds between gates
 const S5R_OPEN   = 28;       // visible half-width of the 96px 3/4 portal mouth
+/* Mike's 0901 hand-drawn route, read top-to-bottom as normalized 680-wide gate centres. */
+const S5R_ROUTE  = [.28,.54,.76,.23,.54,.29,.69,.18];
 let s5run=null;
 function s5RunReset(){
   s5run=null;
@@ -30180,9 +31364,7 @@ function s5RunInit(){
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const gates=[];
   for(let i=0;i<S5R_N;i++){
-    const side=(i%2)?1:-1;
-    const amp=0.30 - i*0.020;                       // the shimmy closes up as it goes
-    gates.push({i:i, x:W*0.5 + side*W*amp, y:-160 - i*(S5R_GAP*S5R_SPEED), py:-9999,
+    gates.push({i:i,x:W*S5R_ROUTE[i%S5R_ROUTE.length],y:-160-i*(S5R_GAP*S5R_SPEED),py:-9999,
                 passed:false, missed:false, glow:0});
   }
   s5run={t:0, armed:false, idx:0, failed:false, done:false, gates:gates, clash:null, spawned:{},
@@ -30304,6 +31486,13 @@ function warpFxDraw(mix,phase,full){
 function s5RunDraw(){
   if(!s5run || typeof XART==='undefined') return;
   if(s5run.armed&&!s5run.failed)warpFxDraw(.20+s5run.idx/S5R_N*.54,s5run.t,false);
+  /* The attached route is visible as one connected flight plan rather than eight unrelated
+     circles. Only on-screen segments draw, and they sit beneath the gates and aircraft. */
+  ctx.save();ctx.lineWidth=2;ctx.strokeStyle='rgba(105,228,255,.30)';ctx.setLineDash([8,8]);ctx.beginPath();let _routeStarted=false;
+  for(let i=0;i<s5run.gates.length-1;i++){const a=s5run.gates[i],z=s5run.gates[i+1];
+    if(Math.max(a.y,z.y)<-120||Math.min(a.y,z.y)>VH+120)continue;
+    if(!_routeStarted){ctx.moveTo(a.x,a.y);_routeStarted=true;}else ctx.moveTo(a.x,a.y);ctx.lineTo(z.x,z.y);}
+  ctx.stroke();ctx.restore();
   for(const g of s5run.gates){
     if(g.y < -96 || g.y > VH+96) continue;
     const last=(g.i===S5R_N-1);
@@ -30662,7 +31851,10 @@ function jetTick(e, dt){
     e._jet=1; e._burst=0; e._burstCd=rnd(0.3,1.2); e._shotCd=0; e._dodge=0; e._lane=e.x;
     e._y0=e.y;                                    // where its run began, for the route curve
     if(!e._route) e._route='straight';
-    if(e._s1Rush){ e._jspd=(e._jspd||96)*1.55; e._fmul=(e._fmul||1)*0.82; }
+    if(e._s1Rush){
+      e._jspd=(e._jspd||96)*1.55; e._fmul=(e._fmul||1)*0.82;
+      e._s1RunPhase='approach';e._s1RunT=0;
+    }
     if(e._s1Kamikaze){
       e._jspd=Math.max(168,(e._jspd||104)*1.60);
       e._atk='none'; e.shoots=false; e.impact=true;
@@ -30689,6 +31881,21 @@ function jetTick(e, dt){
       e.spin=(e.spin||0)*(1-Math.min(1,dt*JET_BANK_RATE));
     }
     return;
+  }
+
+  /* The fast yellow-map file is now an ATTACK RUN, not five straight sprites. Each jet reads the
+     player's column once, claims a unique bracket on the side from which it approached, commits
+     to that curve, and peels outward. There are no later aim corrections. The aircraft bank is
+     the tell and the rank-based bracket keeps the whole file from stacking over one hitbox. */
+  if(e._s1Rush && e._s1RunPhase==='approach' && e.y>=VH*.08){
+    const W=(typeof worldWidth==='function'?worldWidth():VW);
+    e._s1Wing=(e.x<player.x)?-1:1;
+    /* Preserve lane order: distance from the player's column determines the bracket. The old
+       rank-based bands could send an outside-left leader behind an inside-left follower, making
+       their curves cross. Outer stays outer and inner stays inner throughout the attack. */
+    const band=clamp(54+Math.max(0,Math.abs(e.x-player.x)-54)*.48,54,156);
+    e._s1RunTarget=clamp(player.x+e._s1Wing*band,28,W-28);
+    e._s1RunPhase='commit';e._s1RunT=.88;
   }
 
   /* ---- DODGE: only ever reacts to a TRACKING round of the player's ---- */
@@ -30721,6 +31928,13 @@ function jetTick(e, dt){
   if(e._dodge>0){
     e._dodge-=dt;
     _wx = (e._dodgeDir||1)*JET_DODGE_SPD;
+  } else if(e._s1RunPhase==='commit'){
+    e._s1RunT-=dt;
+    _wx=clamp((e._s1RunTarget-e.x)*3.0,-(e._jspd||96)*1.65,(e._jspd||96)*1.65);
+    if(e._s1RunT<=0 || e.y>=VH*.44){e._s1RunPhase='peel';e._s1RunT=.62;}
+  } else if(e._s1RunPhase==='peel'){
+    e._s1RunT-=dt;_wx=(e._s1Wing||1)*(e._jspd||96)*1.28;
+    if(e._s1RunT<=0){e._s1RunPhase='done';e._lane=e.x;}
   } else if(e._route && e._route!=='straight'){
     _wx = jetRouteX(e, dt);
   } else {
@@ -30933,6 +32147,9 @@ function tankInit(e){
   e._spd=0; e._burst=0; e._burstCd=rnd(0.5,1.8); e._shotCd=0; e._recoil=0; e._wheelT=0;
   if(e.pattern==='s1tank'){
     e._tankLane=e.x; e._dir8=0;                  // south only; reverse uses the same tracks north
+    /* A mapped row fires in visible order rather than all opening up on frame one. */
+    const order=Math.max(0,e._order|0);
+    e._burstCd=.46+order*.26;e._shotCd=.62+order*.34;
   } else e._dir8=(Math.random()*8)|0;
   if(e._lvlY==null) e._lvlY=((typeof levelSrcY==='function')?levelSrcY():0)+e.y;
 }
@@ -31031,6 +32248,13 @@ function tankTick(e, dt){
   } else {
     e._shotCd-=dt;
     if(e._shotCd<=0 && canFire){
+      /* Heavy ordnance is a roll -> brake -> fire decision. Keep the barrel south, shed track
+         speed, then release the cannon shell/missile from a stationary readable silhouette. */
+      if(e._spd>1.8 || e._phase==='drive'){
+        e._phase='brake';e._phT=0;e._tankFireQueued=1;
+        return;
+      }
+      e._tankFireQueued=0;
       e._shotCd=(e._atk==='cannon')?2.35:3.75;
       const mz={x:e.x, y:e.y+(e._bodyH||e.h||60)*0.46};
       const cannon=e._atk==='cannon';
@@ -32102,6 +33326,14 @@ function drawBullets(){
   ctx.shadowBlur=0;   // never inherit a shadow from an upstream draw: it silently blurs every bullet
   // player
   for(const b of pBullets){
+    if(b.kind==='lasermist'){
+      const lv=clamp(b.lv||1,1,5),frame=(Math.floor((b.t||0)*16)+(b._mistIndex||0))%4;
+      /* Match the atlas lance to its collision body. The previous 50x36 Level-V draw made 27
+         independent rounds overlap into a glowing wall even after their trajectories separated. */
+      const h=24+lv*3,w=10+lv*1.2,ang=Math.atan2(b.vy||-1,b.vx||0)+Math.PI/2;
+      ctx.save();ctx.translate(b.x,b.y);ctx.rotate(ang);ctx.globalCompositeOperation='lighter';
+      ctx.shadowColor='#4be8ff';ctx.shadowBlur=7+lv;laserMistAtlasBlit(ctx,'lmfx_beam_'+lv+'_'+frame,0,0,w,h,true);ctx.restore();continue;
+    }
     if(b.kind==='spaceLaser'){
       if(b._launchDelay>0)continue;
       const key='laser_'+clamp(b.lv||1,1,5)+'_pulse_'+(((b.pulse||0)&1)?'short':'long');
@@ -33238,6 +34470,9 @@ function drawBullets(){
     if(b._chKind && typeof chaosHarrierProjectileDraw==='function' && chaosHarrierProjectileDraw(b)) continue;
     if(b._carrierWarhead && typeof carrierWarheadDraw==='function' && carrierWarheadDraw(b)) continue;
     if(b._jcHelix&&typeof jungleCruiserHelixDraw==='function'&&jungleCruiserHelixDraw(b))continue;
+    /* The combat-final Stage 5/7 sheets are encounter-owned and therefore precede the generic
+       boss arsenal too; otherwise Xeno Regent's `_boss` flag silently replaces its new ammo. */
+    if(typeof drawCombatFinalProjectile==='function'&&drawCombatFinalProjectile(b))continue;
     /* Hellwing's generated pack includes its own two projectile reels. They are not members of
        the shared bfx arsenal, so draw them before that fallback can replace them. */
     if(b._heraldProjectile && typeof XART!=='undefined'){
@@ -33924,7 +35159,7 @@ function drawPowerups(){
          falling") and then no call site honoured it. `p.wvar` was baked at spawn for this. */
       const _pvOpt = p.wvar ? {fixed:p.wvar} : null;
       ctx.save(); ctx.globalAlpha=0.92+0.08*Math.sin(p.t*8); ctx.shadowColor='#cfe6ff'; ctx.shadowBlur=6;
-      const _pik=spaceWeaponsActive()?(_sw2===0?'space_laser_icon_'+_l2:_sw2===1?'space_shadow_icon_'+_l2:'space_volley_icon_'+_l2):weaponIconKey(_w2,_l2,_pvOpt);
+      const _pik=spaceWeaponsActive()?(_sw2===0?'space_laser_icon_'+_l2:_sw2===1?'space_shadow_icon_'+_l2:spaceVolleyIconKey(_l2)):weaponIconKey(_w2,_l2,_pvOpt);
       const _drew=(typeof iconBlit==='function') && iconBlit(ctx, _pik, p.x, yb, 36, true);
       ctx.restore();
       if(_drew) continue;
@@ -34043,6 +35278,11 @@ function _drawEffectsInner(){
   }
   // particles
   for(const p of particles){
+    if(p._lmBubble){
+      const k=clamp(1-p.t/p.life,0,1),s=(p.r||12)*(.72+.32*Math.sin(Math.PI*k));
+      ctx.save();ctx.translate(p.x,p.y);ctx.rotate((p._lmRot||0)+p.t*.8);ctx.globalAlpha=k;
+      ctx.globalCompositeOperation='lighter';laserMistAtlasBlit(ctx,'lmfx_bubble_'+((p._lmFrame||0)%8),0,0,s,s,true);ctx.restore();continue;
+    }
     /* HELIX DEBRIS: the ball sprite at a fraction of its size, spinning. Drawn
        before the generic particle paths so it never falls through to a dot. */
     if(p._hxdeb){
@@ -34218,6 +35458,12 @@ function _drawEffectsInner(){
      rather than a sprite that appeared. Additive, because these are sparks. */
   if(typeof pImpacts!=='undefined' && pImpacts.length && typeof XART!=='undefined'){
     for(const p of pImpacts){
+      if(p._lmFx){
+        const k=clamp(p.t/p.dur,0,.999),fi=Math.min(7,Math.floor(k*8)),s=p.size*(p._lmFx==='impact'?(.62+.48*Math.min(1,k*2.8)):(.82+.28*k));
+        ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.rot||0);ctx.globalAlpha=p._lmFx==='impact'?(1-k):(.55*(1-k));
+        ctx.globalCompositeOperation=p._lmFx==='impact'?'lighter':'source-over';
+        laserMistAtlasBlit(ctx,'lmfx_'+p._lmFx+'_'+fi,0,0,s,s,true);ctx.restore();continue;
+      }
       if(p.elemental){
         /* Legacy saves can briefly retain one of the removed ornamental reactions. Discard it;
            current elemental feedback is the target sprite's own red/light-blue hit flash. */
@@ -34497,7 +35743,7 @@ function campaignEnd(){
   try{ window.sselCommitted=false; }catch(e){}
   if(typeof hqSeen!=='undefined') hqSeen={};
   if(typeof campPick!=='undefined') campPick=null;
-  if(typeof campaign!=='undefined' && campaign) campaign._booted=false;
+  if(typeof campaign!=='undefined' && campaign){ campaign._booted=false; campaign._introSeen=false; }
 }
 function campPauseSlotLabel(i){
   if(!campSlotUsed(i)) return 'SLOT '+(i+1)+'  EMPTY';
@@ -34608,10 +35854,14 @@ function campPauseDraw(dt){
 
 function drawScene(dt){
   if(typeof window!=='undefined') window.__bofFrames=(window.__bofFrames|0)+1;   // watchdog: proves the loop is running
-  /* Campaign consumes BACK and gives Enter/Start to the live map menu before generic menu routing. */
-  if(typeof campaignMenuInputTick==='function') campaignMenuInputTick();
-  /* every other menu is backable, checked once here rather than in seven screens (drop 0809c) */
-  if(!campPause && typeof menuBackTick==='function' && menuBackTick()) return;
+  /* The prologue owns its own ANY-BUTTON skip. Letting the generic BACK handler run first would
+     turn one of those valid skip buttons into an exit from Campaign instead. */
+  if(state!==GS.CAMPAIGNINTRO){
+    /* Campaign consumes BACK and gives Enter/Start to the live map menu before generic routing. */
+    if(typeof campaignMenuInputTick==='function') campaignMenuInputTick();
+    /* every other menu is backable, checked once here rather than in seven screens (drop 0809c) */
+    if(!campPause && typeof menuBackTick==='function' && menuBackTick()) return;
+  }
   switch(state){
     case GS.OPENING: return drawOpening(dt);
     case GS.BOOT:    return drawBoot(dt);
@@ -34633,12 +35883,14 @@ function drawScene(dt){
     case GS.STAGECLEAR: return drawStageClear(dt);
     case GS.GAMEOVER:return drawGameOver(dt);
     case GS.CONTINUE: return drawContinue(dt);
+    case GS.RIFTFALLBACK:return drawRiftFallback(dt);
     case GS.VICTORY: return drawVictory(dt);
     case GS.RIVAL:   return drawRivalSeq(dt);
     case GS.FLYOVER: return drawFlyover(dt);
     case GS.STAGESEL: { drawStageSelect(dt); campPauseDraw(dt); return; }
     case GS.MODESEL: return drawModeSelect(dt);
     case GS.CAMPHUB: return drawCampaignHub(dt);
+    case GS.CAMPAIGNINTRO: return drawCampaignIntro(dt);
   }
 }
 
@@ -34949,233 +36201,471 @@ function drawAttract(dt){
 }
 
 /* ============================================================
-   FURY HQ CUTSCENES (drop 0809q)
+   PILOT-SELECTED FLIGHT OPENINGS (0901)
 
-   CF_FuryHQCutscenes-Vol.1 shipped 224 files and a bible - ColeForge's own
-   FuryHQ-Cutscene-Bible.md - and none of it was reachable. drawCutscene() could already
-   compose a scene (background, up to three bottom-aligned portraits, the dlg_window frame,
-   emblem, name, body text) and NOTHING CALLED IT. What was missing was a state: something
-   that owns the screen, holds input, types a line at a time and knows what comes next.
-
-   The eight ensemble scenes below are the bible's, verbatim, with the curly quotes stripped
-   because this face has no double-quote glyph. Pose numbers map to the pack's six sheets -
-   idle 0, smile 1, anger 2, laugh 3, sad 4, victory 5.
-
-   STAGING: two slots, and a speaker never moves once seated. Whoever talks takes the slot the
-   PREVIOUS speaker is not in, so a back-and-forth stays put instead of the portraits jumping
-   sides on every line - and the listener stays on screen, dimmed, which is what makes it read
-   as a conversation rather than a slideshow of single portraits.
+   The command-room ensemble briefings are retired. Campaign Stage 1 now branches directly on
+   the selected pilot and plays a short moving-image flight story made from the approved seven-view
+   cinematic aircraft pack. `hqTrigger` keeps its old name only as a stable boundary hook for the
+   campaign map and stage-clear code; post-stage calls now pass straight through.
    ============================================================ */
-const HQ_SCENES = [
-  {id:'HQ_ALL_00', title:"Nine Chairs, Eight Names", lines:[
-    ['cole',0,"Every military network on Earth is compromised. Every civilian system connected to it is becoming a weapon."],
-    ['axel',2,"Then command authority transfers to the surviving Airforce structure."],
-    ['cole',0,"There is no surviving structure. There is this room."],
-    ['maverick',1,"Good. Less paperwork."],
-    ['yuri',2,"And less supervision. That is not the advantage you think it is."],
-    ['falva',1,"Eight pilots, nine stations. Either Cole cannot count, or somebody is late."],
-    ['cole',0,"That station is not part of today's briefing."],
-    ['lizzie',0,"Then brief the eight who are."],
-    ['decker',0,"The impact was not a comet. It transmitted before it touched the ground."],
-    ['freezer',0,"Destination?"],
-    ['cole',5,"Meridian Basin. We cut a road through everything between here and there."]
+const PILOT_OPENINGS={
+  axel:{cast:['axel','freezer'],destination:'hq',beats:[
+    {motion:'aftermath',bg:'darksky',duration:1.55},
+    {who:'axel',motion:'formation',text:"You okay over there, bud? What the hell was that back there?!"},
+    {who:'freezer',motion:'formation',text:"No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!"},
+    {who:'axel',motion:'formation',text:"SH*T! We've got to get back to base, NOW!"},
+    {motion:'hq_approach',bg:'hq_route',duration:3.75}
   ]},
-  {id:'HQ_ALL_01', title:"Trust Is a Weapon", lines:[
-    ['decker',0,"The dam defense grid was waiting for our exact approach vector."],
-    ['axel',2,"That route existed on one closed briefing terminal."],
-    ['maverick',2,"So we have a rat."],
-    ['falva',0,"Or the Signal can predict obvious people. You fly like a bar fight."],
-    ['maverick',3,"A winning bar fight."],
-    ['yuri',2,"You broke formation three times."],
-    ['cole',0,"Nobody leaves the room accused and nobody leaves it cleared. From now on, routes are carried by hand."],
-    ['decker',0,"Analog secrecy will slow us."],
-    ['cole',2,"Staying alive is allowed to take longer."]
+  freezer:{cast:['freezer','axel'],destination:'jungle',beats:[
+    {motion:'aftermath',duration:1.55},
+    {who:'freezer',motion:'formation',text:"Axel, you okay over there? My comm system is completely dead."},
+    {who:'axel',motion:'formation',text:"I'm good. Whatever hit us took the whole operation dark. We need to get back to base."},
+    {who:'freezer',motion:'radar',bg:'jungle',text:"Wait. My radar is still working. I'm picking up a strong Fury-class unit in the jungle ruins just off the coast. Maybe it's one of the others."},
+    {who:'axel',motion:'formation',text:"Then we find them. Lead the way."},
+    {motion:'jungle_approach',bg:'jungle',duration:3.15}
   ]},
-  {id:'HQ_ALL_02', title:"Chain of Command", lines:[
-    ['axel',2,"Your improvisation turned an extraction into a collapse."],
-    ['cole',2,"Your formation left a burning aircraft outside the shield."],
-    ['freezer',0,"One pilot."],
-    ['freezer',2,"Then the calculation is wrong."],
-    ['lizzie',0,"Enough. Cole chooses the objective. Axel commands the formation. Either man exceeds that boundary, I end the argument."],
-    ['maverick',1,"With diplomacy?"],
-    ['lizzie',0,"With the payload elevator."],
-    ['falva',3,"I vote Lizzie."]
+  cole:{cast:['cole'],destination:'hq',beats:[
+    {motion:'dogfight',duration:2.15},
+    {who:'cole',motion:'barrel',text:"Did you think you were dealing with an amateur over here?! You're gonna have to try better than that, you clankerf**ks!"},
+    {motion:'barrel',duration:1.85},
+    {who:'cole',motion:'cruise',text:"I hope the others are doing okay... I better head back to base and try to find them."},
+    {motion:'hq_approach',bg:'hq_route',duration:3.75}
   ]},
-  {id:'HQ_ALL_03', title:"The Man Behind the Door", lines:[
-    ['cole',2,"You entered a vault that does not exist."],
-    ['decker',0,"I entered it because it exists."],
-    ['axel',2,"Order of the Matrix. You were placed inside Fury."],
-    ['decker',0,"The distinction is becoming less clear."],
-    ['falva',2,"You used my lab as a bridge."],
-    ['decker',4,"Your hardware was the only system the Signal could not recognize."],
-    ['decker',0,"Because I found the command buried inside the Signal: HARVEST FLEET REDIRECTED."]
+  falva:{cast:['falva','lizzie'],destination:'jungle',beats:[
+    {motion:'duo_attack',bg:'hq_aerial',duration:2.10},
+    {who:'falva',motion:'formation',text:"That was a close one! Sis, where did they even come from?!"},
+    {who:'lizzie',motion:'formation',text:"No idea, but they picked the wrong ones, that's for sure. We've got to find the others before more show up!"},
+    {who:'falva',motion:'radar',bg:'jungle',text:"Our comms system seems to be down... radar still seems to be working. I'm detecting anomalies in the jungle just off the coast. Let's check it out!"},
+    {who:'lizzie',motion:'formation',text:"I got your back, girl. Over and out!"},
+    {motion:'jungle_approach',bg:'jungle',duration:3.15}
   ]},
-  {id:'HQ_ALL_04', title:"Open the Ninth Door", lines:[
-    ['axel',2,"You kept an unregistered heavy pilot beneath an active command base?"],
-    ['cole',0,"I kept a solution that could not be hacked, bribed, reassigned, or remotely activated."],
-    ['juggernaut',1,"He means I do not take instructions from computers."],
-    ['maverick',3,"I like him."],
-    ['yuri',0,"That is not reassuring."],
-    ['juggernaut',0,"Brotherhood sent me to protect the thing behind Fury. Not the base. Not the aircraft. The people."],
-    ['falva',1,"You have been under us this entire time?"],
-    ['juggernaut',3,"Your music is terrible."],
-    ['falva',2,"Open the door. I changed my mind."],
-    ['cole',5,"Juggernaut, you are cleared for launch."]
+  maverick:{cast:['maverick'],destination:'hq',beats:[
+    {motion:'missile_lock',duration:2.35},
+    {who:'maverick',motion:'cruise',text:"That was close... I thought I told these clowns money won't do any good in the bank if I'm dead. Why isn't HQ returning my calls either...?"},
+    {who:'maverick',motion:'sos',text:"Huh... that's strange. I know I'm an independent contractor and all, but part of the gig was returning to a base that's still erect. Just when I thought I was out, they pull me back in!"},
+    {motion:'hq_approach',bg:'hq_route',duration:3.75}
   ]},
-  {id:'HQ_ALL_05', title:"Destroy It or Take It Back", lines:[
-    ['cole',2,"The Black Signal is inside the World Engine. We destroy the core and bury everything connected to it."],
-    ['lizzie',2,"No. We can destroy it, or we can take it back."],
-    ['decker',0,"She is correct. The Signal is not the invasion. It is a change-of-address notice."],
-    ['falva',1,"Decker attacks through the network. I keep the counter-signal analog. If one gets infected, the other cuts it loose."],
-    ['juggernaut',1,"We become the anesthesia."]
+  yuri:{cast:['yuri'],traffic:['axel','cole','falva'],destination:'hq',beats:[
+    {motion:'joyride',duration:1.95},
+    {who:'yuri',motion:'joyride',text:"What the...? Everyone is burning back toward HQ like the sky is falling."},
+    {who:'yuri',motion:'sos',text:"My comms are down too. Something is very wrong. I am following them."},
+    {motion:'hq_approach',bg:'hq_route',duration:3.75}
   ]},
-  {id:'HQ_ALL_06', title:"Fury Means All of Us", lines:[
-    ['cole',0,"Axel, the formation is yours."],
-    ['axel',0,"And the field command remains yours."],
-    ['maverick',1,"Good. I need you where I am not looking."],
-    ['freezer',0,"That may be the closest he gets to trust."],
-    ['falva',1,"Then be brilliant faster."],
-    ['cole',1,"I know."],
-    ['juggernaut',5,"Doors open. Problems close."],
-    ['cole',5,"Fury Division—last sky. Launch."]
+  juggernaut:{cast:['juggernaut','yuri'],destination:'hq',beats:[
+    {who:'juggernaut',motion:'ram',bg:'darksky',text:"I'M THE JUGGERNAUT, B1**H!"},
+    {motion:'ram',bg:'darksky',duration:1.75},
+    {who:'yuri',motion:'formation',text:"Thank God I found you! Any idea why the others are all flying toward HQ?"},
+    {who:'juggernaut',motion:'formation',text:"No clue, kid! Did you try calling them?"},
+    {who:'yuri',motion:'sos',text:"Perhaps it's just me, but the comms system appears to be down."},
+    {who:'juggernaut',motion:'sos',text:"Well... that sure isn't good... F**K! WE GOTTA GO NOW! I'M THE JUGGERNAUT!!!!!!!"},
+    {motion:'hq_approach',bg:'hq_route',duration:3.75}
   ]},
-  {id:'HQ_ALL_07', title:"The Emergency Division", lines:[
-    ['decker',4,"The Signal escaped past the Moon."],
-    ['falva',4,"Show us."],
-    ['lizzie',0,"This was supposed to be the emergency division."],
-    ['cole',0,"It still is."],
-    ['cole',5,"It does now."]
+  lizzie:{cast:['lizzie','falva'],destination:'jungle',beats:[
+    {motion:'duo_attack',bg:'hq_aerial',duration:2.10},
+    {who:'lizzie',motion:'formation',text:"That's how you clear a sky. You still with me, sis?"},
+    {who:'falva',motion:'formation',text:"Barely! Where did they even come from?"},
+    {who:'lizzie',motion:'formation',text:"Doesn't matter. They picked the wrong sisters. We find the others before round two starts."},
+    {who:'falva',motion:'radar',bg:'jungle',text:"Comms are down, but radar has an anomaly in the jungle just off the coast."},
+    {who:'lizzie',motion:'formation',text:"Then stay on my wing. We're going in."},
+    {motion:'jungle_approach',bg:'jungle',duration:3.15}
+  ]},
+  decker:{cast:['decker','maverick'],destination:'hq',beats:[
+    {motion:'cloak',duration:1.75},
+    {who:'maverick',motion:'cloak',text:"Say, you wouldn't be able to cloak me up before these nasty hostiles show up again, would you?"},
+    {who:'decker',motion:'formation',text:"Maybe back at base that could be possible, but right now it appears our comms system is down."},
+    {who:'maverick',motion:'formation',text:"Ten steps ahead of you. Any idea why the fridge at base tried to eat Larry the Janitor?"},
+    {who:'decker',motion:'formation',text:"..."},
+    {who:'maverick',motion:'formation',text:"..."},
+    {who:'decker',motion:'formation',text:"We need to head to base, right away!"},
+    {motion:'hq_approach',bg:'hq_route',duration:3.75}
   ]}
-];
-/* which scene fires where. 'pre' plays before that stage, 'post' after it clears. */
-const HQ_AT = { pre:{1:'HQ_ALL_00', 8:'HQ_ALL_06'},
-                post:{1:'HQ_ALL_01', 3:'HQ_ALL_02', 4:'HQ_ALL_03', 6:'HQ_ALL_04', 7:'HQ_ALL_05', 9:'HQ_ALL_07'} };
-let hqSc=null, hqLine=0, hqChars=0, hqDone=null, hqSeen={};
-let hqSlot={left:null, right:null}, hqSpeak='left';
-let hqRoster=[];
-const HQ_CPS=42;                                   // characters per second
+};
 
-const HQ_CORE_ROSTER=['axel','lizzie','cole','decker','falva','freezer','maverick','yuri'];
-function hqRosterFor(id){
-  const roster=HQ_CORE_ROSTER.slice();
-  const sceneNo=Number((String(id||'').match(/(\d+)$/)||[])[1]||0);
-  if(sceneNo>=4) roster.push('juggernaut');          // his sealed-hangar reveal is HQ_ALL_04
-  return roster;
+let hqSc=null, hqLine=0, hqChars=0, hqDone=null, hqSeen={}, hqBeatT=0;
+const HQ_CPS=42;
+const CIN_HOSTILES=['cinhostile_scout','cinhostile_bone','cinhostile_heavy'];
+
+function cinPilotName(key){
+  const p=(typeof PILOTS!=='undefined'&&PILOTS.find)?PILOTS.find(q=>q.key===key):null;
+  return String((p&&p.name)||key||'').toUpperCase();
 }
-
-function hqScene(id){ for(const s of HQ_SCENES) if(s.id===id) return s; return null; }
-
-/* seat the speaker of line i, leaving the other slot holding whoever spoke last */
-function hqSeat(i){
-  const ln=hqSc.lines[i]; if(!ln) return;
-  const who=ln[0], pose=ln[1]|0;
-  if(hqSlot.left && hqSlot.left.pilot===who){ hqSlot.left.pose=pose; hqSpeak='left'; return; }
-  if(hqSlot.right && hqSlot.right.pilot===who){ hqSlot.right.pose=pose; hqSpeak='right'; return; }
-  const to=(hqSpeak==='left')?'right':'left';      // opposite the last speaker
-  hqSlot[to]={pilot:who, pose:pose}; hqSpeak=to;
+function cinShipKey(pilot,view){ return 'cinship_'+pilot+'_'+clamp(view|0,1,7); }
+function cinAllPilots(sc){
+  const out=[]; for(const p of (sc.cast||[]).concat(sc.traffic||[])) if(out.indexOf(p)<0) out.push(p);
+  return out;
 }
-
-function hqPlay(id, onDone){
-  const sc=hqScene(id); if(!sc){ if(onDone) onDone(); return false; }
-  hqSc=sc; hqLine=0; hqChars=0; hqDone=onDone||null;
-  hqRoster=hqRosterFor(id);
-  hqSlot={left:null,right:null}; hqSpeak='right';  // so line 0 seats left
-  hqSeat(0);
-  hqSeen[id]=1;
-  /* Every Fury HQ story scene owns the dedicated cinematic score. startMusic no-ops when this
-     same track is already healthy, so connected dialogue beats do not restart the song. */
-  try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('cinematics'); }catch(_hqm){}
-  setState(GS.CUTSCENE);
+function cinBackgroundKeys(sc){
+  const out=[],add=k=>{if(k&&out.indexOf(k)<0)out.push(k);};
+  if(sc&&sc.destination==='hq') add('cinbg_hq_aerial');
+  else add('cinbg_jungle');
+  for(const beat of ((sc&&sc.beats)||[])){
+    if(beat.bg==='hq_aerial')add('cinbg_hq_aerial');
+    if(beat.bg==='jungle')add('cinbg_jungle');
+  }
+  return out;
+}
+function cinWarm(sc){
+  let ready=true;
+  if(typeof XART==='undefined') return false;
+  for(const p of cinAllPilots(sc)) for(let v=1;v<=7;v++) if(!XART.rdy(cinShipKey(p,v))) ready=false;
+  for(const key of cinBackgroundKeys(sc)) if(!XART.rdy(key)) ready=false;
+  if(!XART.rdy('dlg_window')) ready=false;
+  XART.rdy('cincloud_day'); XART.rdy('cincloud_storm');
+  for(const k of CIN_HOSTILES) if(!XART.rdy(k)) ready=false;
+  for(let i=0;i<8;i++){ XART.rdy('cinfx_airburst_'+i); XART.rdy('cinfx_laser_'+i); XART.rdy('cinfx_missile_'+i); }
+  if(typeof bmfReady!=='function' || !bmfReady('dialogue')) ready=false;
+  return ready;
+}
+function cinPrewarmPilot(pilot){
+  const sc=(typeof PILOT_OPENINGS!=='undefined'&&PILOT_OPENINGS)?PILOT_OPENINGS[pilot]:null;
+  if(!sc||typeof XART==='undefined'||!XART._touch)return 0;
+  const keys=[],seen={};const add=k=>{if(k&&!seen[k]&&XART._src&&XART._src[k]){seen[k]=1;keys.push(k);}};
+  for(const p of cinAllPilots(sc))for(let v=1;v<=7;v++)add(cinShipKey(p,v));
+  for(const key of cinBackgroundKeys(sc))add(key);add('dlg_window');add('cincloud_day');add('cincloud_storm');
+  for(const k of CIN_HOSTILES)add(k);
+  for(let i=0;i<8;i++){add('cinfx_airburst_'+i);add('cinfx_laser_'+i);add('cinfx_missile_'+i);}
+  for(const k of keys)XART._touch(k);
+  if(typeof bmfReady==='function')bmfReady('dialogue');
+  return keys.length;
+}
+function cinCover(key,W,H,pan){
+  if(!XART.rdy(key)) return false;
+  const im=XART.get(key), sc=Math.max(W/im.naturalWidth,H/im.naturalHeight);
+  const sw=W/sc, sh=H/sc, travel=Math.max(0,im.naturalWidth-sw);
+  const sx=travel*clamp(pan==null?.5:pan,0,1), sy=Math.max(0,(im.naturalHeight-sh)*.48);
+  ctx.drawImage(im,sx,sy,sw,sh,0,0,W,H); return true;
+}
+function cinRouteBackdrop(t,W,H){
+  /* Aircraft only fly over the high aerial plate. The beach facade and jungle gate are close
+     establishing views and belong to the campaign prologue, never beneath moving ship sprites. */
+  return cinCover('cinbg_hq_aerial',W,H,.28+.18*clamp(t/3.75,0,1));
+}
+function cinBackdrop(kind,t,W,H){
+  if(kind==='hq_route') return cinRouteBackdrop(t,W,H);
+  if(kind==='hq'||kind==='hq_aerial') return cinCover('cinbg_hq_aerial',W,H,.44+.04*Math.sin(t*.35));
+  if(kind==='coast') return cinCover('cinbg_hq_beach',W,H,.30+.05*Math.sin(t*.28));
+  if(kind==='hq_gate') return cinCover('cinbg_hq_gate',W,H,.48+.035*Math.sin(t*.31));
+  if(kind==='jungle') return cinCover('cinbg_jungle',W,H,.46+.035*Math.sin(t*.32));
+  const space=(kind==='space');
+  const g=ctx.createLinearGradient(0,0,0,H);
+  if(space){ g.addColorStop(0,'#030713'); g.addColorStop(.55,'#0c1d3b'); g.addColorStop(1,'#183c5d'); }
+  else { g.addColorStop(0,kind==='darksky'?'#071326':'#123a69'); g.addColorStop(.58,kind==='darksky'?'#17354f':'#4d91bd'); g.addColorStop(1,'#d3ae78'); }
+  ctx.fillStyle=g; ctx.fillRect(0,0,W,H);
+  if(space){
+    for(let i=0;i<94;i++){
+      const x=(i*173.17+(t*9*(1+i%3)))%W, y=(i*83.71)%H, z=1+(i%3);
+      ctx.globalAlpha=.35+(i%5)*.11; ctx.fillStyle=(i%7===0)?'#9fdcff':'#ffffff'; ctx.fillRect(x,y,z,z);
+    }
+    ctx.globalAlpha=1;
+  }else{
+    const ck=kind==='darksky'?'cincloud_storm':'cincloud_day';
+    if(XART.rdy(ck)){
+      const im=XART.get(ck), h=H*.34, w=h*(im.naturalWidth/im.naturalHeight);
+      ctx.globalAlpha=kind==='darksky'?.72:.88;
+      ctx.drawImage(im,W*.05,H*.18,w,h); ctx.drawImage(im,W*.62-w*.25,H*.06,w*.82,h*.82);
+      ctx.globalAlpha=1;
+    }
+    ctx.fillStyle='rgba(7,19,29,.42)'; ctx.beginPath(); ctx.moveTo(0,H*.87);
+    for(let x=0;x<=W;x+=32) ctx.lineTo(x,H*.86-Math.sin(x*.023)*9-(x%96===0?8:0));
+    ctx.lineTo(W,H); ctx.lineTo(0,H); ctx.fill();
+  }
   return true;
 }
-
-function hqEnd(){
-  const d=hqDone; hqSc=null; hqDone=null; hqRoster=[];
-  /* HAND THE TRACK BACK EXPLICITLY. A continuation that starts a stage calls startMusic itself, so
-     only the scenes that fall back to the hub matter " and the hub's own guard is
-     `if(!musicPlaying()) startMusic('neonvelocity')`, which is FALSE while the cutscene theme is
-     still going. It would otherwise sit under the campaign map for the rest of the session. */
-  if(!d){ try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('neonvelocity'); }catch(_hqm){} }
-  if(d) d(); else setState(GS.CAMPHUB);
+function cinDrawShip(pilot,view,x,y,h,flip,alpha,rot){
+  const key=cinShipKey(pilot,view); if(!XART.rdy(key)) return false;
+  const im=XART.get(key), w=h*(im.naturalWidth/im.naturalHeight);
+  ctx.save(); ctx.globalAlpha=alpha==null?1:alpha; ctx.translate(x,y); if(rot)ctx.rotate(rot);
+  if(flip)ctx.scale(-1,1); ctx.shadowColor='rgba(0,0,0,.65)';ctx.shadowBlur=Math.max(3,h*.04);
+  ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore(); return true;
 }
-
-/* fire the scene for a boundary if it has one and has not played this run */
-function hqTrigger(when, stage, onDone){
-  const id = HQ_AT[when] && HQ_AT[when][stage];
-  if(!id || hqSeen[id] || !run || run.mode!=='campaign'){ if(onDone) onDone(); return false; }
-  return hqPlay(id, onDone);
+function cinHostile(x,y,h,flip,alpha,rot){
+  let key=(flip?CIN_HOSTILES[1]:CIN_HOSTILES[0]);
+  if(!XART.rdy(key)){key=null;for(const k of CIN_HOSTILES){if(XART.rdy(k)){key=k;break;}}}
+  if(!key)return false; const im=XART.get(key),w=h*(im.naturalWidth/im.naturalHeight);
+  ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.translate(x,y);if(rot)ctx.rotate(rot);if(flip)ctx.scale(-1,1);
+  ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
 }
-
-function drawCutsceneState(dt){
-  const _cutW=cutsceneViewWidth();
-  ctx.fillStyle='#000'; ctx.fillRect(0,0,_cutW,VH);
-  if(!hqSc){ hqEnd(); return; }
-  const ln=hqSc.lines[hqLine];
-  if(!ln){ hqEnd(); return; }
-  const full=ln[2], n=full.length;
-
-  const sc={ bg:CUT_HQ, left:hqSlot.left, right:hqSlot.right, speaking:hqSpeak,
-             ensemble:hqRoster, speakingPilot:ln[0], speakingPose:ln[1],
-             fullText:full, text: full.slice(0, Math.min(n, Math.floor(hqChars))) };
-  /* drawCutscene returns false until the background and poses have loaded. XART.rdy STARTS the
-     load on its first call, so a one-shot check always reads false - hold on black and keep
-     asking rather than treating it as missing art. */
-  const shown = drawCutscene(sc);
-  if(!shown){
-    const _f=(typeof uiFontArt==='function')?uiFontArt():null;
-    if(_f && typeof stageText==='function') stageText(_f,'...', VW/2, VH/2, 18, '#5a6070',0.9,1,0.10);
+function cinFx(kind,x,y,size,t,rot){
+  const f=Math.abs(Math.floor(t*13))%8,key='cinfx_'+kind+'_'+f;if(!XART.rdy(key))return;
+  const im=XART.get(key),w=size*(im.naturalWidth/im.naturalHeight);
+  ctx.save();ctx.translate(x,y);if(rot)ctx.rotate(rot);ctx.drawImage(im,-w/2,-size/2,w,size);ctx.restore();
+}
+function cinFormation(sc,beat,t,W,H){
+  const cast=sc.cast||[], active=beat.who, bob=Math.sin(t*2.1)*5;
+  if(cast.length===1){
+    const p=cast[0],view=beat.motion==='barrel'?[2,6,3,1][Math.floor(t*4)%4]:(beat.view||2);
+    cinDrawShip(p,view,W*.5+Math.sin(t*.8)*W*.045,H*.46+bob,H*.53,false,1,Math.sin(t*.9)*.025);return;
+  }
+  cast.slice(0,2).forEach((p,i)=>{
+    const left=i===0,x=W*(left?.36:.64),speaker=p===active,h=H*(speaker?.50:.43);
+    cinDrawShip(p,left?2:3,x+Math.sin(t*1.3+i)*9,H*(speaker?.47:.43)-bob*(i?1:-1),h,false,speaker?1:.78,left?-.018:.018);
+  });
+}
+function cinDrawMotion(sc,beat,t,W,H){
+  const motion=beat.motion||'formation', lead=(sc.cast&&sc.cast[0])||'axel';
+  if(motion==='formation'||motion==='cruise'||motion==='radar'||motion==='sos'){cinFormation(sc,beat,t,W,H);return;}
+  if(motion==='aftermath'){
+    cinFormation(sc,{who:null,motion:'formation'},t,W,H);
+    cinFx('airburst',W*.18,H*.38,H*.25,t);cinFx('airburst',W*.82,H*.27,H*.19,t+.22);return;
+  }
+  if(motion==='dogfight'||motion==='barrel'){
+    const view=motion==='barrel'?[2,6,3,1][Math.floor(t*5)%4]:6;
+    cinDrawShip(lead,view,W*(.5+.16*Math.sin(t*1.8)),H*(.52+.08*Math.cos(t*2.2)),H*.52,false,1,Math.sin(t*2)*.08);
+    cinHostile(W*.22,H*.25,H*.22,false,.94,-.08);cinHostile(W*.79,H*.19,H*.21,true,.9,.08);
+    cinFx('laser',W*(.45+.1*Math.sin(t*2)),H*.34,H*.10,t,-.18);
+    if((t%1.6)>.8)cinFx('airburst',W*.78,H*.22,H*.27,t);return;
+  }
+  if(motion==='duo_attack'){
+    cinDrawShip(sc.cast[0],2,W*.33,H*.55,H*.43,false,1,-.035);cinDrawShip(sc.cast[1],3,W*.67,H*.55,H*.43,false,1,.035);
+    cinHostile(W*.5,H*.2,H*.22,false,.95,0);cinFx('laser',W*.41,H*.37,H*.095,t,-.16);cinFx('laser',W*.59,H*.37,H*.095,t,.16);
+    if((t%1.4)>.7)cinFx('airburst',W*.5,H*.22,H*.29,t);return;
+  }
+  if(motion==='missile_lock'){
+    cinDrawShip(lead,6,W*.5,H*.58,H*.51,false,1,Math.sin(t*1.4)*.04);
+    cinHostile(W*.22,H*.22,H*.22,false,.95,-.06);cinHostile(W*.78,H*.22,H*.22,true,.95,.06);
+    cinFx('missile',W*(.43-.17*clamp(t/2.1,0,1)),H*(.43-.18*clamp(t/2.1,0,1)),H*.12,t,-.4);
+    cinFx('missile',W*(.57+.17*clamp(t/2.1,0,1)),H*(.43-.18*clamp(t/2.1,0,1)),H*.12,t,.4);
+    if(t>1.05){cinFx('airburst',W*.22,H*.22,H*.25,t);cinFx('airburst',W*.78,H*.22,H*.25,t+.2);}return;
+  }
+  if(motion==='joyride'){
+    cinDrawShip('yuri',2,W*.5,H*.6,H*.47,false,1,Math.sin(t)*.025);
+    const traffic=sc.traffic||[];traffic.forEach((p,i)=>cinDrawShip(p,7,W*(.25+i*.25),H*(.18+(i%2)*.06),H*.23,false,.88,0));return;
+  }
+  if(motion==='ram'){
+    const push=.45+.13*Math.sin(Math.min(t,1.2)*4.5);cinDrawShip('juggernaut',1,W*.5,H*push,H*.58,false,1,0);
+    cinHostile(W*.32,H*.22,H*.21,false,.9,-.1);cinHostile(W*.68,H*.22,H*.21,true,.9,.1);
+    cinFx('airburst',W*.33,H*.24,H*.28,t);cinFx('airburst',W*.67,H*.24,H*.28,t+.25);return;
+  }
+  if(motion==='cloak'){
+    const shimmer=.16+.18*(.5+.5*Math.sin(t*4.2));cinDrawShip('decker',2,W*.36,H*.49,H*.49,false,shimmer,-.02);
+    const mx=W*(.86-.24*clamp(t/1.5,0,1));cinDrawShip('maverick',3,mx,H*.48,H*.46,false,1,.025);return;
+  }
+  if(motion==='hq_approach'){
+    const cast=sc.cast||[],u=clamp(t/(beat.duration||3.75),0,1),e=u*u*(3-2*u);
+    cast.slice(0,2).forEach((p,i)=>{
+      const side=i-(cast.length-1)/2,sep=.54-.28*e;
+      cinDrawShip(p,7,W*(.50+side*sep),H*(.76-.40*e+i*.018),H*(.38-.23*e),false,1,0);
+    });
     return;
   }
-  /* ============================================================
-     TYPE IT WITH SOUND, LIKE THE PILOT CARDS (drop 0811r)
-
-     Mike: "load each word letter by letter like the pilot cards with sound".
-
-     The letters were already arriving one at a time; what the scene had was SILENCE. Eight
-     authored ensemble scenes and the only audio in the whole state was the music cue 0811a added.
-
-     ⚠ MATCHED TO THE PILOT CARDS' FEEL, NOT COPIED FROM THEIR CODE. pcUpdate does
-     `if((C.typed|0)%3===0 && ... Math.random()<0.5) blip()` — and that test runs EVERY FRAME, so
-     at 42cps and 60fps one character sits on the same integer for about a frame and a half and
-     can blip twice; the random coin is what stops it sounding like a buzz. Here the blip fires on
-     the character actually ADVANCING, every third one, which gives the same sparse tick
-     deterministically. (The pilot-card version is left alone — it is not what he reported, and
-     its coin flip masks the fault. Recorded rather than quietly changed.) */
-  if(hqChars<n){
-    const _was=Math.floor(hqChars);
-    hqChars+=HQ_CPS*dt;
-    const _now=Math.min(n, Math.floor(hqChars));
-    if(_now>_was){
-      for(let c=_was+1;c<=_now;c++){
-        if(c%3===0){ uiBlipRep(); break; }
-      }
-    }
+  if(motion==='jungle_approach'){
+    const cast=sc.cast||[],u=clamp(t/(beat.duration||3.15),0,1),e=u*u*(3-2*u);
+    cast.slice(0,2).forEach((p,i)=>{
+      const side=i-(cast.length-1)/2,sep=.54-.28*e;
+      cinDrawShip(p,7,W*(.50+side*sep),H*(.76-.45*e+i*.025),H*(.38-.24*e),false,1,0);
+    });
+    return;
   }
-
-  /* the advance prompt, inside the dialogue frame, blinking only once the line has finished */
-  if(hqChars>=n && Math.floor(stateT*2.2)%2){
-    const _cw=cutsceneViewWidth(),s=Math.min(_cw/640, VH/480), oy=(VH-480*s)/2, ox=(_cw-640*s)/2;
-    const _df=(typeof msgFaceUse==='function' && msgFaceUse('dialogue')==='dialogue');
-    if(_df && typeof msgTextLeft==='function'){
-      const _nh=13, _nw=msgMeasure('NEXT',_nh,0.08);
-      msgTextLeft('NEXT',_cw-36*s-_nw,oy+441*s,_nh,'#ffe082',0.9,1,0.08,1);
-      msgFaceUse(null);
-    } else {
-      const _f=(typeof uiFontArt==='function')?uiFontArt():null;
-      if(_f && typeof stageText==='function') stageText(_f,'NEXT',ox+552*s,oy+441*s,13,'#ffe082',0.9,1,0.10);
-    }
+  if(motion==='depart'){
+    const u=clamp(t/(beat.duration||2.65),0,1),e=u*u*(3-2*u),cast=sc.cast||[];
+    cast.slice(0,2).forEach((p,i)=>{
+      const sx=W*(cast.length===1?.5:(i?.61:.39)), sy=H*.70, tx=W*(.5+(i-(cast.length-1)/2)*.045), ty=H*.23;
+      cinDrawShip(p,7,sx+(tx-sx)*e,sy+(ty-sy)*e,H*(.43-.31*e),false,1,0);
+    });
+    const traffic=sc.traffic||[];traffic.forEach((p,i)=>cinDrawShip(p,7,W*(.34+i*.16),H*(.28-i*.025),H*.14,false,.75,0));return;
   }
-
-  if(stateT>0.15 && (Input.mouse.down || anyTap())){
-    if(hqChars<n){ hqChars=n; }                    // first tap completes the line
-    else {
-      hqLine++;
-      if(hqLine>=hqSc.lines.length){ hqEnd(); return; }
-      hqChars=0; hqSeat(hqLine);
-    }
-    Input.mouse.down=false;
+  cinFormation(sc,beat,t,W,H);
+}
+function cinDialogue(beat,budget,W,H){
+  if(!beat.text || !XART.rdy('dlg_window') || typeof msgFaceUse!=='function' || msgFaceUse('dialogue')!=='dialogue')return false;
+  const dx=Math.round(W*.025),dy=Math.round(H*.715),dw=Math.round(W*.95),dh=Math.round(H*.255);
+  ctx.drawImage(XART.get('dlg_window'),dx,dy,dw,dh);
+  const padX=dw*.055,nameY=dy+dh*.115,nameH=Math.max(12,Math.round(H*.030));
+  const name=cinPilotName(beat.who),col=dialogueNameColor(beat.who,'#dce7ff');
+  msgTextLeft(name,dx+padX,nameY+nameH*.5,nameH,col,.95,1,.06,1);
+  const bodyY=dy+dh*.34,bodyH=dh*.52;
+  msgDrawBlock({text:beat.text,budget:budget,x:dx+padX,y:bodyY,w:dw-padX*2,h:bodyH,
+                maxH:Math.max(13,Math.round(H*.031)),minH:8,lineMul:1.31,spacing:.055,
+                color:DIALOGUE_BODY_COLOR,tintA:1,alpha:1,outline:1});
+  if(budget>=beat.text.length && Math.floor(hqBeatT*2.2)%2){
+    const ph=Math.max(10,Math.round(H*.024)),pw=msgMeasure('NEXT',ph,.07);
+    msgTextLeft('NEXT',dx+dw-padX-pw,dy+dh*.865,ph,'#ffe082',.92,1,.07,1);
   }
-  if(typeof Input.menuBack==='function' && Input.menuBack()){ hqEnd(); return; }   // skip the scene
+  msgFaceUse(null);return true;
+}
+function hqPlay(pilot,onDone){
+  const sc=PILOT_OPENINGS[pilot]; if(!sc){if(onDone)onDone();return false;}
+  hqSc=sc;hqLine=0;hqChars=0;hqBeatT=0;hqDone=onDone||null;hqSeen['OPEN_'+pilot]=1;
+  cinWarm(sc);
+  try{if(typeof Audio!=='undefined'&&Audio.startMusic)Audio.startMusic('cinematics');}catch(_cinMusic){}
+  setState(GS.CUTSCENE);return true;
+}
+function hqEnd(){
+  const d=hqDone;hqSc=null;hqDone=null;hqLine=0;hqChars=0;hqBeatT=0;
+  if(!d){try{if(typeof Audio!=='undefined'&&Audio.startMusic)Audio.startMusic('neonvelocity');}catch(_cinMusic){}}
+  if(d)d();else setState(GS.CAMPHUB);
+}
+function hqAdvance(){
+  hqLine++;hqChars=0;hqBeatT=0;if(!hqSc||hqLine>=hqSc.beats.length){hqEnd();return false;}return true;
+}
+/* Stable campaign-boundary hook: only the selected-pilot Stage 1 opener remains. */
+function hqTrigger(when,stage,onDone){
+  if(when!=='pre'||stage!==1||!run||run.mode!=='campaign'){if(onDone)onDone();return false;}
+  const pilot=(typeof _pilotKey==='function')?_pilotKey():String(run.pilot||'axel');
+  const id='OPEN_'+pilot;if(hqSeen[id]){if(onDone)onDone();return false;}return hqPlay(pilot,onDone);
+}
+
+/* ============================================================
+   NEW-CAMPAIGN PROLOGUE (0902)
+
+   This is the missing story bridge between pilot selection and the campaign map. Close exterior
+   art is treated as an establishing VIEW of FURY HQ; aircraft appear only over the dark-sky title
+   shot, and that aircraft is the generated top-down frame. Any fresh button press skips safely to
+   the same military-map boot that automatic completion reaches.
+   ============================================================ */
+const CAMPAIGN_INTRO_BEATS=[
+  {at:0.0,to:3.5,key:'cinbg_hq_aerial',pan:.30,head:'FURY HQ - EARTH DIVISION',
+   body:"Hidden off the coast, FURY HQ is home to Earth's strongest elite pilots."},
+  {at:3.5,to:6.8,key:'cinbg_hq_beach',pan:.30,head:'THE HIDDEN FORTRESS',
+   body:'Mercenaries, former militia and specialists without official affiliation were chosen for one reason: defend the globe.'},
+  {at:6.8,to:10.1,key:'cinbg_hq_gate',pan:.48,head:'THE LAST LINE OF RESISTANCE',
+   body:'The United States government formed FURY for secret and covert missions - and to fight back if an enemy ever seized control.'},
+  {at:10.1,to:13.6,key:'cinintro_team',pan:.50,head:'NINE PILOTS. ONE MISSION.',
+   body:'Different histories and different loyalties, united against every known and unknown threat to our world.'},
+  {at:13.6,to:17.0,key:'cinintro_command',pan:.50,head:'THEN, WITHOUT WARNING...',
+   body:'One night beneath the darkened sky, a digital virus began spreading through every network it touched.'},
+  {at:17.0,to:20.6,key:'cut_furyhq_command_center',pan:.50,head:'SYSTEMS COMPROMISED',virus:true,
+   body:'Vehicles. Aircraft. Automobiles. Entire defense systems turned hostile, moving as though they possessed minds of their own.'},
+  {at:20.6,to:24.6,key:null,head:'ONE FINAL DISPATCH',virus:true,
+   body:'With no explanation and one last call for help, the team launched to learn what happened, why it happened - and who did this.'}
+];
+const CAMPAIGN_INTRO_FINALE=24.6, CAMPAIGN_INTRO_DONE=28.7;
+let campaignIntro=null, campaignIntroPilot=null;
+function campaignIntroPickPilot(){
+  if(campaignIntroPilot)return campaignIntroPilot;
+  const pool=(typeof PILOTS!=='undefined'&&PILOTS.length)?PILOTS.map(p=>p.key):['axel'];
+  campaignIntroPilot=pool[(Math.random()*pool.length)|0]||'axel';return campaignIntroPilot;
+}
+function campaignIntroKeys(){
+  return ['cinbg_hq_aerial','cinbg_hq_beach','cinbg_hq_gate','cinintro_team','cinintro_command',
+          'cut_furyhq_command_center',cinShipKey(campaignIntroPickPilot(),1),
+          'mgcf_1_0','mgcf_1_1','mgcf_1_2','mgcf_1_3','mgcf_1_4','mgcf_1_5'];
+}
+function campaignIntroWarm(){
+  if(typeof XART==='undefined')return false;
+  for(const k of campaignIntroKeys()){
+    if(XART._touch&&XART._src&&XART._src[k])XART._touch(k);else XART.rdy(k);
+  }
+  if(typeof bmfReady==='function')bmfReady('dialogue');
+  return true;
+}
+function campaignIntroReady(){
+  if(typeof XART==='undefined'||typeof bmfReady!=='function'||!bmfReady('dialogue'))return false;
+  for(const k of campaignIntroKeys())if(!XART.rdy(k))return false;
+  return true;
+}
+function campaignIntroStart(onDone){
+  campaignIntroWarm();
+  campaignIntro={t:0,onDone:onDone||null,pilot:campaignIntroPickPilot(),shotSoundN:0,ready:false,finished:false,md:!!Input.mouse.down};
+  try{if(Audio&&Audio.startMusic)Audio.startMusic('cinematics');}catch(_ciMusic){}
+  setState(GS.CAMPAIGNINTRO);return true;
+}
+function campaignIntroFinish(){
+  const C=campaignIntro;if(!C||C.finished)return;C.finished=true;
+  const done=C.onDone;campaignIntro=null;campaignIntroPilot=null;
+  try{if(Audio&&Audio.fadeOutMusic)Audio.fadeOutMusic(.30);else if(Audio&&Audio.stopMusic)Audio.stopMusic();}catch(_ciMusic){}
+  if(done)done();else openStageSelect(1,{boot:true});
+}
+function campaignIntroVisual(B,t,W,H,alpha){
+  ctx.save();ctx.globalAlpha=alpha==null?1:alpha;
+  if(B&&B.key)cinCover(B.key,W,H,(B.pan==null?.5:B.pan)+Math.sin(t*.18)*.025);
+  else cinBackdrop('darksky',t,W,H);
+  if(B&&B.virus){
+    /* A digital takeover, not a flat red filter: broken scan rows, offset data blocks and hostile
+       silhouettes make the archive itself look compromised. */
+    ctx.globalCompositeOperation='screen';
+    for(let i=0;i<18;i++){
+      const y=(i*37+Math.floor(t*83))%H,h=1+(i%3),x=(i*91+Math.floor(t*127))%Math.max(1,W-90);
+      ctx.globalAlpha=(alpha==null?1:alpha)*(.10+(i%4)*.035);ctx.fillStyle=i%2?'#ff2b35':'#42d9ff';ctx.fillRect(x,y,54+(i%5)*21,h);
+    }
+    ctx.globalCompositeOperation='source-over';ctx.globalAlpha=alpha==null?1:alpha;
+    for(let i=0;i<3;i++)cinHostile(W*(.22+i*.28),H*(.22+(i%2)*.12),H*.16,i===1,.28+.08*i,Math.sin(t+i)*.08);
+  }
+  ctx.restore();
+}
+function campaignIntroCaption(B,W,H,alpha){
+  if(!B||typeof msgFaceUse!=='function'||msgFaceUse('dialogue')!=='dialogue')return;
+  const x=W*.055,w=W*.89,h=H*.235,y=H-h-20;
+  ctx.save();ctx.globalAlpha=alpha;
+  const g=ctx.createLinearGradient(0,y-34,0,H);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(.26,'rgba(0,0,0,.78)');g.addColorStop(1,'rgba(0,0,0,.95)');
+  ctx.fillStyle=g;ctx.fillRect(0,y-34,W,H-y+34);
+  const hh=Math.max(13,Math.round(H*.035));
+  msgTextLeft(B.head,x,y+hh,hh,'#ffe082',1,alpha,.055,1);
+  msgDrawBlock({text:B.body,x:x,y:y+hh+10,w:w,h:h-hh-12,maxH:Math.max(12,Math.round(H*.030)),minH:8,
+    lineMul:1.34,spacing:.052,color:DIALOGUE_BODY_COLOR,tintA:1,alpha:alpha,outline:1});
+  ctx.restore();msgFaceUse(null);
+}
+function campaignIntroFinale(C,t,W,H){
+  const q=t-CAMPAIGN_INTRO_FINALE;
+  cinBackdrop('darksky',q,W,H);
+  ctx.save();ctx.fillStyle='rgba(0,0,0,.34)';ctx.fillRect(0,0,W,H);ctx.restore();
+  msgFaceUse('dialogue');
+  const a=clamp(q/.34,0,1);
+  msgText('WELCOME TO',W/2,H*.28,Math.max(15,H*.038),'#dce7ff',1,a,.07);
+  msgText('BULLETS OF FURY!',W/2,H*.39,Math.max(27,H*.070),'#ffe082',1,a,.045);
+  msgFaceUse(null);
+  const fireAt=.62,step=.13,speed=W*.91;
+  while(C.shotSoundN<7&&q>=fireAt+C.shotSoundN*step){
+    C.shotSoundN++;
+    try{const s=Audio&&Audio.SFX&&(Audio.SFX.machineGun||Audio.SFX.enemyMachineGunLight||Audio.SFX.shoot);if(s)s();}catch(_ciShot){}
+  }
+  for(let i=0;i<7;i++){
+    const age=q-(fireAt+i*step);if(age<0||age>1.32)continue;
+    const x=-30+age*speed,y=H*(.57+(i-3)*.012);
+    drawMfx('mgcf_1_'+(i%6),x,y,Math.PI/2,30,null,1,'#ffb52a','#ff6a1a');
+  }
+  const fly=clamp((q-1.18)/1.45,0,1),fe=fly*fly*(3-2*fly);
+  if(q>=1.08&&fly<1)cinDrawShip(C.pilot,1,lerp(-H*.24,W+H*.24,fe),H*.62,H*.34,false,1,Math.PI/2);
+  const out=clamp((q-3.18)/.72,0,1);if(out>0){ctx.fillStyle='rgba(0,0,0,'+out.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
+}
+function drawCampaignIntro(dt){
+  const C=campaignIntro,W=cutsceneViewWidth(),H=VH;
+  ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
+  if(!C){campaignIntroFinish();return;}
+  if(!C.ready){C.ready=campaignIntroReady();if(!C.ready){campaignIntroWarm();cinCover('cinbg_hq_aerial',W,H,.30);return;}}
+  C.t+=dt;const t=C.t;
+  if(t<CAMPAIGN_INTRO_FINALE){
+    let i=CAMPAIGN_INTRO_BEATS.findIndex(b=>t>=b.at&&t<b.to);if(i<0)i=CAMPAIGN_INTRO_BEATS.length-1;
+    const B=CAMPAIGN_INTRO_BEATS[i],local=t-B.at,fade=.42;
+    campaignIntroVisual(B,local,W,H,1);
+    if(B.to-t<fade&&i+1<CAMPAIGN_INTRO_BEATS.length){
+      const na=clamp((t-(B.to-fade))/fade,0,1);campaignIntroVisual(CAMPAIGN_INTRO_BEATS[i+1],0,W,H,na);
+    }
+    const ca=Math.min(clamp(local/.28,0,1),clamp((B.to-t)/.32,0,1));campaignIntroCaption(B,W,H,ca);
+    const fi=clamp(1-t/.42,0,1);if(fi>0){ctx.fillStyle='rgba(0,0,0,'+fi.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
+  }else campaignIntroFinale(C,t,W,H);
+  msgFaceUse('dialogue');if(Math.floor(t*2)%2)msgText('PRESS ANY BUTTON TO SKIP',W/2,H-10,Math.max(9,H*.020),'#cfd6e0',0,.82,.075);msgFaceUse(null);
+  const click=Input.mouse.down&&!C.md;C.md=!!Input.mouse.down;
+  if(stateT>.35&&(click||(typeof anyTap==='function'&&anyTap()))){Input.mouse.down=false;campaignIntroFinish();return;}
+  if(t>=CAMPAIGN_INTRO_DONE)campaignIntroFinish();
+}
+function drawCutsceneState(dt){
+  const W=cutsceneViewWidth(),H=VH;ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
+  if(!hqSc){hqEnd();return;}const beat=hqSc.beats[hqLine];if(!beat){hqEnd();return;}
+  if(!cinWarm(hqSc))return;
+  hqBeatT+=dt;
+  const bg=beat.bg||(beat.motion==='depart'?hqSc.destination:(beat.motion==='dogfight'||beat.motion==='missile_lock'?'space':(beat.motion==='cloak'?'darksky':'sky')));
+  cinBackdrop(bg,hqBeatT,W,H);cinDrawMotion(hqSc,beat,hqBeatT,W,H*(beat.text?.70:.94));
+  /* Action and travel beats use a real cinematic aperture. Dialogue keeps the full vertical room
+     for its machined panel, while wordless shots get restrained letterboxing and therefore read
+     as cuts rather than another gameplay screen. */
+  if(!beat.text){const bar=Math.max(10,Math.round(H*.052));ctx.fillStyle='#000';ctx.fillRect(0,0,W,bar);ctx.fillRect(0,H-bar,W,bar);}
+  const text=beat.text||'',n=text.length;
+  if(text){
+    const was=Math.floor(hqChars);hqChars=Math.min(n,hqChars+HQ_CPS*dt);const now=Math.floor(hqChars);
+    if(now>was){for(let c=was+1;c<=now;c++){if(c%3===0){uiBlipRep();break;}}}
+    cinDialogue(beat,hqChars,W,H);
+  }
+  const dur=beat.duration||0;
+  if(!text&&dur>0){
+    const fadeIn=clamp(1-hqBeatT/.24,0,1),fadeOut=clamp((hqBeatT-(dur-.34))/.34,0,1),fa=Math.max(fadeIn,fadeOut);
+    if(fa>0){ctx.fillStyle='rgba(0,0,0,'+fa.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
+    if(hqBeatT>=dur){hqAdvance();return;}
+  }
+  if(hqBeatT>.18&&(Input.mouse.down||anyTap())){
+    if(text&&hqChars<n)hqChars=n;else hqAdvance();Input.mouse.down=false;return;
+  }
+  if(typeof Input.menuBack==='function'&&Input.menuBack()){hqEnd();return;}
 }
 function drawBoot(dt){
   ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
@@ -35818,6 +37308,14 @@ function wfxUpdate(dt){
 
   /* ---------------- STAGE 2 — FIREWAVE, 1-2-3 ---------------- */
   if(C.kind==='fire'){
+    /* The caldera wave is stage pressure, not a second boss. Retire it the moment the main-boss
+       warning/fight begins so Inferno Reaver's authored lanes remain the only lethal language. */
+    const bossFight=(typeof bossActive!=='undefined'&&bossActive)||
+      (typeof warnKind!=='undefined'&&warnKind==='boss');
+    if(bossFight){
+      wfx.fseq=null;wfx.fire=null;wfx.fireCd=Math.max(wfx.fireCd||0,999);
+      return;
+    }
     // Mike's spec: THREE alerts appear one after another, each marking where a wave will come
     // from. Then the waves arrive 1, 2, 3 — one at a time, each from its own alert's lane.
     // They travel VERTICALLY (down the screen) and they are big.
@@ -35856,7 +37354,10 @@ function wfxUpdate(dt){
              authored it for. It had been playing 'firewall' = nsp_solar_flare.mp3, a generic flare
              whoosh, while its own sample sat on the flamethrower. The 150ms offset from the alert
              stays: 0730a put it there so the stinger and the flame read as two events. */
-          setTimeout(()=>{ try{ if(Audio.SFX && (Audio.SFX.flamewall||Audio.SFX.firewall)) (Audio.SFX.flamewall||Audio.SFX.firewall)(); }catch(_){} }, 150);
+          setTimeout(()=>{ try{
+            const blocked=(typeof bossActive!=='undefined'&&bossActive)||(typeof warnKind!=='undefined'&&warnKind==='boss');
+            if(!blocked&&Audio.SFX&&(Audio.SFX.flamewall||Audio.SFX.firewall))(Audio.SFX.flamewall||Audio.SFX.firewall)();
+          }catch(_){} }, 150);
           shake=Math.max(shake,6);
         }
         if(F.wave){
@@ -36479,9 +37980,11 @@ function aiAttach(e, cfg){
   if(!e) return e;
   cfg=cfg||{};
   e.pattern='ai';
+  const profile=(typeof stageAiProfile==='function')?stageAiProfile():{move:1};
+  const entry=AI_ENTRY*Math.max(1,profile.move||1);
   e._ai={ kind:cfg.kind||'rush', dir:cfg.dir||1,
           slowY:(cfg.slowY!=null?cfg.slowY:VH*0.32), slowX:cfg.slowX,
-          k:AI_ENTRY, cruise:cfg.cruise!=null?cfg.cruise:AI_CRUISE,
+          k:entry, entry:entry, cruise:(cfg.cruise!=null?cfg.cruise:AI_CRUISE)*Math.max(1,profile.move||1),
           forkY:cfg.forkY, forked:0, loopT:0, base:{vx:e.vx||0, vy:e.vy||1} };
   if(cfg.hiAlt){ e._hiAlt=true; e._scale=0.18; }
   return e;
@@ -36495,7 +37998,7 @@ function aiTick(e, dt){
   }
   // past its number? shed speed toward cruise
   const past = (A.slowX!=null) ? ((A.dir>0) ? e.x>=A.slowX : e.x<=A.slowX) : (e.y>=A.slowY);
-  const target = past ? A.cruise : AI_ENTRY;
+  const target = past ? A.cruise : (A.entry||AI_ENTRY);
   A.k += (target-A.k)*Math.min(1, dt*AI_DECEL);
   const B=A.base;
   if(A.kind==='rush'){
@@ -36900,6 +38403,7 @@ function volcTick(e, dt){
   const K=e._volc, V=VOLC[K]; if(!V) return;
   e._vt=(e._vt||0)+dt;
   const W=worldWidth();
+  const fireScale=enemyCadencePressure(2);
   e._bank=0;e._chg=0;
   const fire=(p,a,sp,t,opts)=>{
     opts=opts||{};const hb=S2_PROJECTILE_HIT[t]||[7,7];
@@ -36921,10 +38425,14 @@ function volcTick(e, dt){
   }
 
   if(K==='ash'){
-    // EMBER WASP: fast sine dive, synchronized twin needle guns, one clean vertical lane.
-    e.y+=178*dt;e.x+=Math.sin(e._vt*4.4)*38*dt;e._bank=Math.sin(e._vt*4.4)>0?1:-1;
-    if(!e._s2Act&&(e._fcd=(e._fcd==null?rnd(.35,.7):e._fcd)-dt)<=0){
-      e._fcd=rnd(.78,1.05)/DIFF.eFire;
+    // EMBER WASP: mirrored scissor flight. A pair expands/contracts around its OWN lanes and
+    // never crosses through its partner, then alternates its twin-gun beat by formation rank.
+    if(e._s2Lane==null)e._s2Lane=e.x;
+    const side=e._squadSide||((e._squadRank||0)&1?1:-1),sweep=.5+.5*Math.sin(e._vt*3.4);
+    const want=clamp(e._s2Lane+side*(12+28*sweep),24,W-24),vx=clamp((want-e.x)*4.2,-92,92);
+    e.y+=178*dt;e.x+=vx*dt;e._bank=vx>5?1:(vx<-5?-1:0);
+    if(!e._s2Act&&(e._fcd=(e._fcd==null?.36+(e._squadRank||0)*.12:e._fcd)-dt)<=0){
+      e._fcd=rnd(.78,1.05)/fireScale;
       queue(()=>{for(const ox of [-.22,.22]){const p=volcHardpoint(e,ox,.27);fire(p,Math.PI/2,4.15,'s2needle',{silent:ox>0});muzzle(ox,.27,.50,.11);}},.58,.25);
     }
   }else if(K==='skim'){
@@ -36932,7 +38440,7 @@ function volcTick(e, dt){
     if(e._dir==null){e._dir=e.x<W*.5?1:-1;e._ty=rnd(VH*.40,VH*.62);}
     e.y+=(e.y<e._ty?142:18)*dt;e.x+=e._dir*164*dt;e._bank=e._dir;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?rnd(.45,.85):e._fcd)-dt)<=0&&e.y>VH*.25){
-      e._fcd=rnd(1.0,1.3)/DIFF.eFire;
+      e._fcd=rnd(1.0,1.3)/fireScale;
       queue(()=>{const p=volcHardpoint(e,0,.31),a=aimPlayer(p.x,p.y);for(const o of [-.16,0,.16])fire(p,a+o,3.35,'s2rake',{silent:o!==0});muzzle(0,.31,.72);},.64,.30);
     }
     if(e.x<-48||e.x>W+48)e.dead=true;
@@ -36941,7 +38449,7 @@ function volcTick(e, dt){
     if(e.y<VH*.22)e.y+=66*dt;else e.y=VH*.22+Math.sin(e._vt*1.3)*7;
     e.x+=Math.sin(e._vt*.7)*24*dt;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?rnd(1.1,1.8):e._fcd)-dt)<=0){
-      e._fcd=rnd(2.4,3.1)/DIFF.eFire;
+      e._fcd=rnd(2.4,3.1)/fireScale;
       queue(()=>{const p=volcHardpoint(e,0,.25),a=aimPlayer(p.x,p.y);fire(p,a,2.15,'s2slag',{});for(const o of [-.18,.18])fire(p,a+o,3.5,'s2needle',{silent:true});muzzle(0,.25,1.0);shake=Math.max(shake,2);},.78,.43);
     }
   }else if(K==='disc'){
@@ -36949,7 +38457,7 @@ function volcTick(e, dt){
     if(e.y<VH*.25)e.y+=70*dt;else e.x+=Math.sin(e._vt*1.1)*20*dt;
     e.spin=(e.spin||0)+1.35*dt;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?1.15:e._fcd)-dt)<=0){
-      e._fcd=rnd(2.5,3.2)/DIFF.eFire;
+      e._fcd=rnd(2.5,3.2)/fireScale;
       queue(()=>{const p=volcHardpoint(e,0,0),n=12,step=TAU/n,base=e._vt*.36,a=aimPlayer(p.x,p.y);let gap=Math.round((a-base)/step);for(let k=0;k<n;k++){let d=Math.abs(((k-gap+n*3)%n));d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+k*step,2.15,'s2mine',{silent:k>0});}muzzle(0,0,.92,.18);},.72,.38);
     }
   }else if(K==='lance'){
@@ -36961,7 +38469,7 @@ function volcTick(e, dt){
     // CRUCIBLE BOMBER: alternates physical wing racks so every bomb begins on visible hardware.
     e.y+=40*dt;e.x+=Math.sin(e._vt*.55)*14*dt;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?.8:e._fcd)-dt)<=0){
-      e._fcd=rnd(1.15,1.5)/DIFF.eFire;e._wing=(e._wing||1)*-1;
+      e._fcd=rnd(1.15,1.5)/fireScale;e._wing=(e._wing||1)*-1;
       const wing=e._wing;
       queue(()=>{const ox=wing*.30,p=volcHardpoint(e,ox,.24);fire(p,Math.PI/2+wing*.11,1.75,'s2bomb',{accel:.55,max:2.75});muzzle(ox,.24,.82);},.68,.32);
     }
@@ -36971,42 +38479,42 @@ function volcTick(e, dt){
     if(e._retreat){e.y-=98*dt;if(e.y<-74)e.dead=true;return;}
     if(e.y<VH*.20)e.y+=38*dt;else e.x+=Math.sin(e._vt*.75)*22*dt;
     if(!e._s2Act&&e._launched<2&&(e._fcd=(e._fcd==null?1.2:e._fcd)-dt)<=0){
-      e._fcd=2.45;e._launched++;
+      e._fcd=2.45/fireScale;e._launched++;
       queue(()=>{if(typeof spawnEnemy==='function'){spawnEnemy('ash',clamp(e.x-24,20,W-20),e.y+12,{inPlace:1});spawnEnemy('ash',clamp(e.x+24,20,W-20),e.y+12,{inPlace:1});}for(const ox of [-.34,.34]){const p=volcHardpoint(e,ox,.18);fire(p,Math.PI/2+ox*.52,2.0,'s2rocket',{silent:ox>0,accel:1.8,max:4.4});muzzle(ox,.18,.72);}if(e._launched>=2)e._retreat=true;},.82,.43);
     }
   }else if(K==='miner'){
     // DRILL MINER: braces its arms, spins the drill, then tears three readable fissures downward.
     if(e.y<VH*.29)e.y+=44*dt;else e.x+=Math.sin(e._vt*.55)*12*dt;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){
-      e._fcd=rnd(2.0,2.7)/DIFF.eFire;
+      e._fcd=rnd(2.0,2.7)/fireScale;
       queue(()=>{const p=volcHardpoint(e,0,.39);for(const o of [-.32,0,.32])fire(p,Math.PI/2+o,2.15,'s2shock',{silent:o!==0});muzzle(0,.39,.90);shake=Math.max(shake,3);},.74,.40);
     }
   }else if(K==='lavamaw'){
     // LAVA MAW: anchored furnace breath — broad, slower five-way denial with a huge inhale tell.
     if(e.y<VH*.22)e.y+=54*dt;else e.y=VH*.22+Math.sin(e._vt*.9)*4;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?1.3:e._fcd)-dt)<=0){
-      e._fcd=rnd(2.25,3.0)/DIFF.eFire;
+      e._fcd=rnd(2.25,3.0)/fireScale;
       queue(()=>{const p=volcHardpoint(e,0,.12);for(let k=-2;k<=2;k++)fire(p,Math.PI/2+k*.17,2.45,'s2breath',{silent:k!==0});muzzle(0,.12,1.0);},.78,.43);
     }
   }else if(K==='crawl'){
     // LAVA CRAWLER: low pursuit, then two heavy fixed-heading jaw slugs; no post-launch steering.
     if(e.y<VH*.33)e.y+=34*dt;const dx=clamp(player.x-e.x,-1,1);e.x+=dx*42*dt;e._bank=dx>0?1:-1;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?1.0:e._fcd)-dt)<=0){
-      e._fcd=rnd(1.65,2.25)/DIFF.eFire;
+      e._fcd=rnd(1.65,2.25)/fireScale;
       queue(()=>{const p=volcHardpoint(e,0,.28),a=aimPlayer(p.x,p.y);for(const o of [-.08,.08])fire(p,a+o,2.45,'s2slug',{silent:o>0,accel:.75,max:3.45});muzzle(0,.28,.78);},.66,.31);
     }
   }else if(K==='pod'){
     // ERUPTION POD: petals expose the core, then a twelve-point mine bloom leaves a safe gate.
     if(e.y<VH*.18)e.y+=50*dt;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?1.4:e._fcd)-dt)<=0){
-      e._fcd=rnd(2.8,3.7)/DIFF.eFire;
+      e._fcd=rnd(2.8,3.7)/fireScale;
       queue(()=>{const p=volcHardpoint(e,0,-.04),n=12,step=TAU/n,base=e._vt*.24,a=aimPlayer(p.x,p.y);let gap=Math.round((a-base)/step);for(let k=0;k<n;k++){let d=Math.abs(((k-gap+n*3)%n));d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+k*step,1.85,'s2mine',{silent:k>0});}muzzle(0,-.04,.98);},.80,.44);
     }
   }else if(K==='golem'){
     // MAGMA GOLEM: full-body wind-up; fist slam creates a wide shock fan with an obvious centre lane.
     if(e.y<VH*.27)e.y+=34*dt;else e.x+=Math.sin(e._vt*.45)*24*dt;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?1.8:e._fcd)-dt)<=0){
-      e._fcd=rnd(3.2,4.1)/DIFF.eFire;
+      e._fcd=rnd(3.2,4.1)/fireScale;
       queue(()=>{const p=volcHardpoint(e,0,.42);for(const o of [-.48,-.32,-.16,.16,.32,.48])fire(p,Math.PI/2+o,2.45,'s2shock',{silent:o!==-.48});muzzle(-.26,.40,.78);muzzle(.26,.40,.78);shake=Math.max(shake,5);},.86,.50);
     }
   }
@@ -37734,7 +39242,8 @@ function drawSpaceDamage(e,frac,w,h,s9){if(frac>.66)return;const critical=frac<=
   for(let i=0;i<n;i++){const q=t*(1.35+i*.12)+i*1.7,rise=(q*28+i*11)%(h*.52),x=Math.sin(q*1.8+i)*w*(.06+i*.014),y=h*.12-rise,r=(critical?7:5)+i*.7;ctx.fillStyle=critical?'rgba(18,21,30,.92)':'rgba(37,40,54,.78)';ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.arc(x+r*.6,y-r*.3,r*.72,0,TAU);ctx.arc(x-r*.45,y-r*.08,r*.55,0,TAU);ctx.fill();}
   const fy=h*.13+Math.sin(t*14)*3;ctx.fillStyle=s9?'#48eaff':'#d248ff';ctx.beginPath();ctx.moveTo(-5,fy);ctx.lineTo(Math.sin(t*10)*3,fy-15-Math.sin(t*20)*4);ctx.lineTo(6,fy);ctx.fill();ctx.restore();}
 function drawS5Space(e){if(typeof XART==='undefined'||!e._s5space)return false;const H=S5SPACE[e._s5space];if(!H)return false;
-  const fi=0;let key='s5atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s5atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
+  const fi=e._s5Act?clamp(Math.floor(((e._s5AtkT||0)/Math.max(.01,e._s5AtkDur||1))*8),0,7):0;
+  let key='s5atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s5atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
   const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawSpaceDamage(e,frac,dw,dh,false);
   if(e._repairGlow>0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=e._repairGlow/.25;ctx.strokeStyle='#70ffff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,Math.max(dw,dh)*.52,0,TAU);ctx.stroke();}if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
@@ -44101,7 +45610,9 @@ function campApply(s){
   run.bombs=(s.bombs==null?2:s.bombs);
   run.weapon=s.weapon||0; run.wlevel=s.wlevel||1;
   if(Array.isArray(s.wlevels)) run.wlevels=s.wlevels.slice();
-  run.wvars = Array.isArray(s.wvars) ? s.wvars.slice() : [null,null,null,null,null,null];
+  while(run.wlevels.length<7)run.wlevels.push(0);
+  run.wvars = Array.isArray(s.wvars) ? s.wvars.slice() : [null,null,null,null,null,null,null];
+  while(run.wvars.length<7)run.wvars.push(null);
   if(typeof s.pilotIndex==='number') pilotIndex=s.pilotIndex;
   if(s.diff) diffKey=s.diff;
   campaign.unlockedMax=Math.max(1, s.unlockedMax||1);
@@ -44120,8 +45631,10 @@ function campAnySaved(){ for(let i=0;i<CAMP_SLOTS;i++) if(campSlotUsed(i)) retur
 function bofStorageResetKeepSaves(){
   const keep=[];
   for(let i=0;i<CAMP_SLOTS;i++){ try{ keep.push(localStorage.getItem(campSlotKey(i))); }catch(e){ keep.push(null); } }
+  let mist=null;try{mist=localStorage.getItem(LASER_MIST_UNLOCK_KEY);}catch(e){}
   try{ localStorage.clear(); }catch(e){}
   for(let i=0;i<CAMP_SLOTS;i++){ if(keep[i]!=null){ try{ localStorage.setItem(campSlotKey(i), keep[i]); }catch(e){} } }
+  if(mist!=null)try{localStorage.setItem(LASER_MIST_UNLOCK_KEY,mist);}catch(e){}
 }
 function campSlotLabel(i){
   const s=campReadSlot(i);
@@ -44260,7 +45773,7 @@ function campHubInput(){
       campHubSay(it.act==='continue'?'NO CAMPAIGN IN PROGRESS':it.act==='load'?'NO SAVED GAMES':'START A CAMPAIGN FIRST'); return; }
     const act=it.act;
     selFlash(function(){
-      if(act==='new'){ campSession=null; if(typeof campaign!=='undefined') campaign._booted=false; setState(GS.DIFF); }
+      if(act==='new'){ campSession=null; if(typeof campaign!=='undefined'){campaign._booted=false;campaign._introSeen=false;} setState(GS.DIFF); }
       else if(act==='continue'){ if(campApply(campSession)) openStageSelect(run.stage,{}); else setState(GS.DIFF); }
       else { campPick=act; campHubIndex=0; }
     }, null, drawCampaignHub._selRect||null);   // 0822ag: the button, not the screen
@@ -44853,7 +46366,9 @@ function drawStageSelect(dt){
      stage's font and art off here gives the decode the whole selection plus the launch sequence
      to finish, instead of starting it on the frame the countdown wants to draw. */
   try{ if(typeof warmStageSheets==='function'){
-    warmStageSheets((typeof sselIndex!=='undefined' && sselIndex!=null) ? (sselIndex+1) : run.stage);
+    /* sselCursor is the highlighted stage. sselIndex never existed here, so this used to warm
+       the previous run.stage instead of the mission the player was about to deploy to. */
+    warmStageSheets((typeof sselCursor!=='undefined'&&sselCursor!=null)?sselCursor:run.stage);
   } }catch(e){}
   const _zoomed=(typeof sselZoomApply==='function') ? sselZoomApply() : false;
   try{ _drawStageSelectInner(dt); } finally { if(_zoomed) ctx.restore(); }
@@ -45696,12 +47211,11 @@ function drawPilotBG(tint){
   rg.addColorStop(0,rgba(c,0.26)); rg.addColorStop(1,'rgba(0,0,0,0)');
   ctx.fillStyle=rg; ctx.fillRect(0,0,VW,VH);
 }
-/* Corrected compact stage face. Stage 9 intentionally inherits stage 8 because the approved
-   pack contains eight campaign identities; stage art is only an emergency visual fallback. */
+/* Passwords and stage-labelled UI use the authored stage-card alphabet. Stages without a
+   dedicated card use stage 1's authored face; prose and cinematics use the dialogue sheet. */
 function pilotFont(idx){
   const k=String(Math.max(1,Math.min(9,idx|0)));
-  return (ASSETS.bofFont && (ASSETS.bofFont[k] || (k==='9'&&ASSETS.bofFont['8']) || ASSETS.bofFont['1']))
-      || (ASSETS.stageArt && (ASSETS.stageArt[k] || ASSETS.stageArt['1'])) || null;
+  return (ASSETS.stageArt && (ASSETS.stageArt[k] || ASSETS.stageArt['1'])) || null;
 }
 function startPilotRot(dir){ if(pilotRot>0)return; pilotFrom=pilotIndex; pilotIndex=(pilotIndex+dir+PILOTS.length)%PILOTS.length; pilotRot=1; Audio.SFX.blip(); }
 /* A held click/stick/button survives setState even though edge taps are cleared. During Campaign
@@ -45842,29 +47356,25 @@ function drawCommWindow(o){
      rather than the canvas one. Both the name and the body are authored glyphs now. */
   ctx.textAlign='left'; ctx.fillStyle=t; ctx.font='20px "BOFmil", monospace';
   const _nm=String(o.name||'').toUpperCase();
-  if(typeof msgTextLeft==='function'){
+  if(_dialogueReady && typeof msgTextLeft==='function'){
     /* ⚠ AND THE NAME WAS MEASURED IN THE WRONG FONT. It drew through msgText — bitmap glyphs —
        but computed its half-width with `ctx.measureText`, i.e. the CANVAS face, so the centring
        was off by however much the two disagreed. msgTextLeft measures and draws in one face. */
-    msgTextLeft(_nm, rx, inT+20, 20, t, 1, 1, 0.08);
-  } else ctx.fillText(_nm, rx, inT+26);
+    const _nameH=(typeof msgFitH==='function')?msgFitH(_nm,rw,20,9,0.08):20;
+    ctx.save();ctx.beginPath();ctx.rect(rx,inT,rw,Math.max(1,inH*0.28));ctx.clip();
+    msgTextLeft(_nm, rx, inT+20, _nameH, t, 1, 1, 0.08,true);ctx.restore();
+  }
   ctx.shadowColor='rgba(0,0,0,0.8)'; ctx.shadowBlur=3;
-  if(o.text){
+  if(o.text && _dialogueReady){
     const _bH=14, _bSP=0.08, _lead=19;
-    if(typeof msgWrap==='function' && typeof msgTextLeft==='function'){
+    if(typeof msgDrawBlock==='function'){
       /* ⚠ WRAP THE FULL TEXT, THEN REVEAL — NOT THE OTHER WAY ROUND. The old code sliced to
          charsShown and wrapped what was left, so every time a word grew past the right edge the
          whole paragraph re-flowed and the earlier lines jumped. Wrapping once and spending a
          character budget down the finished lines keeps them still while it types. */
-      const _lines=msgWrap(String(o.text), rw, _bH, _bSP);
-      let _budget=(o.charsShown!=null) ? Math.max(0, Math.floor(o.charsShown)) : Infinity;
-      let _yy=inT+50;                       // msgTextLeft centres on cy; the old call sat on a baseline
-      for(const _ln of _lines){
-        if(_budget<=0) break;
-        msgTextLeft(_budget>=_ln.length ? _ln : _ln.slice(0,_budget), rx, _yy, _bH, DIALOGUE_BODY_COLOR, 1, 1, _bSP);
-        _budget-=_ln.length+1;              // +1 for the space the wrap consumed
-        _yy+=_lead;
-      }
+      const _bodyY=inT+38,_bodyH=Math.max(8,inT+inH-_bodyY-5);
+      msgDrawBlock({text:String(o.text),budget:o.charsShown,x:rx,y:_bodyY,w:rw,h:_bodyH,
+        maxH:_bH,minH:7,lineMul:_lead/_bH,spacing:_bSP,color:DIALOGUE_BODY_COLOR,outline:true});
     } else {
       ctx.fillStyle=DIALOGUE_BODY_COLOR; ctx.font=_bH+'px "BOFmil", monospace';
       let shown=o.text;
@@ -46033,6 +47543,9 @@ function drawPilot(dt){
 function confirmPilot(){
   if(pilotPending!=null||pilotRot>0||isPilotLocked(PILOTS[pilotIndex]))return;
   if(typeof warmPlayerAtlases==='function') warmPlayerAtlases();
+  /* The slide-away and GOOD LUCK panel buy roughly two seconds. Spend them decoding the prologue
+     now so a fresh campaign never opens on black while the large HQ plates arrive. */
+  if(run&&run.mode==='campaign'&&typeof campaignIntroWarm==='function')campaignIntroWarm();
   Audio.SFX.select(); pilotPending=pilotIndex; pilotSlide=0.0001;
 }
 /* CREDITS */
@@ -46203,6 +47716,14 @@ function menuBackTick(){
   return true;
 }
 
+function passwordStageText(art,text,cx,cy,wantH,maxW,color,alpha,spacing){
+  if(!art || typeof stageText!=='function') return false;
+  const sp=spacing==null?0.08:spacing;
+  const h=(maxW && typeof stageFitH==='function')
+      ? stageFitH(art,String(text),maxW,wantH,Math.max(7,wantH*0.48),sp) : wantH;
+  stageText(art,String(text),cx,cy,h,color||null,color?0.92:null,alpha==null?1:alpha,sp);
+  return true;
+}
 function drawPassword(dt){
   /* keyboard entry runs alongside the on-screen keypad — both write the same pwInput */
   if(typeof pwTypeTick==='function'){
@@ -46213,10 +47734,9 @@ function drawPassword(dt){
   let _pwStage=1;
   for(const code in _PWMAP){ if(code.slice(0,pwInput.length)===pwInput && pwInput.length>0){ _pwStage=_PWMAP[code]; break; } }
   const _pwFont=pilotFont(_pwStage);
+  if(_pwFont && _pwFont.img) void _pwFont.img;
   if(typeof drawCanonBackdrop==='function' && drawCanonBackdrop('nbt_3',0.62)){} else drawBootBackdrop(dt,0.66);
-  if(_pwFont && typeof stageText==='function'){ stageText(_pwFont,'ENTER PASSWORD',VW/2,24,16,'#f2f5ff',0.25,1,0.08); }
-  else if(typeof msgText==='function'){ msgText('ENTER PASSWORD',VW/2,24,16,'#f2f5ff',0,1,0.10); }
-  else { ctx.fillStyle='#f2f5ff'; ctx.font='bold 16px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText('ENTER PASSWORD',VW/2,24); }
+  passwordStageText(_pwFont,'ENTER PASSWORD',VW/2,24,16,VW-48,'#f2f5ff',1,0.08);
   const _panelDef={x:16,y:42,w:VW-32,h:VH-42-16};
   const _panel=uiRect('password','panel',_panelDef);
   const wx=_panel.x, wy=_panel.y, ww=_panel.w, wh=_panel.h;
@@ -46230,9 +47750,7 @@ function drawPassword(dt){
     if(i<pwInput.length){ ctx.save(); ctx.shadowColor='#ffb347'; ctx.shadowBlur=8;
       ctx.strokeStyle='#ffd24a'; ctx.lineWidth=2; ctx.strokeRect(sx,slotY,slotW,slotH); ctx.restore();
       // typed char in the NEXT-stage bitmap font, large
-      if(_pwFont && typeof stageText==='function'){ stageText(_pwFont, pwInput[i], sx+slotW/2, slotY+slotH/2+2, 40, null, null, 1, 0.08); }
-      else if(typeof msgText==='function'){ msgText(pwInput[i], sx+slotW/2, slotY+slotH/2, 34, '#ffffff', 0, 1, 0.08); }
-      else { ctx.fillStyle='#ffe08a'; ctx.font='bold 30px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText(pwInput[i],sx+slotW/2,slotY+34); }
+      passwordStageText(_pwFont,pwInput[i],sx+slotW/2,slotY+slotH/2+2,40,slotW-10,null,1,0.08);
     } else { ctx.strokeStyle='#4a4038'; ctx.lineWidth=2; ctx.strokeRect(sx,slotY,slotW,slotH);
       ctx.fillStyle='rgba(255,179,71,0.22)'; ctx.fillRect(sx+10,slotY+slotH-8,slotW-20,3); }
   }
@@ -46263,9 +47781,8 @@ function drawPassword(dt){
     ctx.fillStyle=gg; roundRectFill(TYPETGT.x,TYPETGT.y,TYPETGT.w,TYPETGT.h,5);
     ctx.strokeStyle=drawPassword.typing?'#bff3a4':(on?'#ffe6a0':'#57607a'); ctx.lineWidth=2;
     ctx.strokeRect(TYPETGT.x,TYPETGT.y,TYPETGT.w,TYPETGT.h);
-    ctx.fillStyle=(on||drawPassword.typing)?'#ffffff':'#cfd6e0';
-    ctx.font='bold 12px "BOFmil", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.fillText(drawPassword.typing?'TYPING - K TO STOP':'ENTER PASSWORD', VW/2, TYPETGT.y+TYPETGT.h/2);
+    passwordStageText(_pwFont,drawPassword.typing?'TYPING - K TO STOP':'ENTER PASSWORD',
+      VW/2,TYPETGT.y+TYPETGT.h/2,12,TYPETGT.w-14,(on||drawPassword.typing)?'#ffffff':'#cfd6e0',1,0.06);
     ctx.textBaseline='alphabetic';
   }
   // selector stays UNSET (-1) until the player actually navigates with d-pad/gamepad — keyboard
@@ -46305,8 +47822,7 @@ function drawPassword(dt){
     if(on) ctx.restore();
     ctx.strokeStyle= on?'#ffe6a0':'#57607a'; ctx.lineWidth=1.5; ctx.strokeRect(h.x,h.y,h.w,h.h);
     ctx.fillStyle='rgba(255,255,255,0.10)'; ctx.fillRect(h.x+2,h.y+2,h.w-4,2);
-    ctx.fillStyle= on?'#1a1408':'#e8ecf4'; ctx.font='bold '+(h.wide?11:12)+'px "BOFmil", monospace';
-    ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText(h.c,h.x+h.w/2,h.y+h.h/2);
+    passwordStageText(_pwFont,h.c,h.x+h.w/2,h.y+h.h/2,h.wide?11:12,h.w-6,on?'#1a1408':'#e8ecf4',1,0.05);
   }
   ctx.textBaseline='alphabetic';
   // MOUSE: click a keypad button
@@ -46346,8 +47862,8 @@ function drawPassword(dt){
       if(k.length===1 && /[a-z0-9]/i.test(k) && Input.tap(k)){ pwKey(k.toUpperCase()); }
     }
   }
-  if(drawPassword.err>0){ drawPassword.err-=dt; ctx.fillStyle='#ff4a4a'; ctx.font='bold 12px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText('INVALID CODE',VW/2,wy+wh+12); }
-  if(drawPassword.unlockMsg>0){ drawPassword.unlockMsg-=dt; ctx.fillStyle='#8de23a'; ctx.font='bold 12px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText('COLE UNLOCKED!',VW/2,wy+wh+12); }
+  if(drawPassword.err>0){ drawPassword.err-=dt; passwordStageText(_pwFont,'INVALID CODE',VW/2,wy+wh+9,11,ww-40,'#ff4a4a',1,0.06); }
+  if(drawPassword.unlockMsg>0){ drawPassword.unlockMsg-=dt; passwordStageText(_pwFont,'COLE UNLOCKED!',VW/2,wy+wh+9,11,ww-40,'#8de23a',1,0.06); }
   if(backButton()){ setState(GS.TITLE); menuIndex=0; pwInput=''; Audio.SFX.select(); }
 }
 function pwHotspots(wx,wy,ww,wh){
@@ -46379,17 +47895,6 @@ function pwKey(c){
   if(c==='CLEAR'){ pwInput=''; Audio.SFX.blip(); return; }
   if(c==='ENTER'){ submitPassword(); return; }
   if(pwInput.length<6){ pwInput+=c; Audio.SFX.blip(); }
-}
-function drawPasswordLegacy(dt){
-  ctx.textAlign='center'; ctx.fillStyle='#ffd36b'; ctx.font='bold 18px "BOFmil", monospace'; ctx.fillText('ENTER PASSWORD',VW/2,140);
-  metalPanel(VW/2-110,170,220,46); ctx.fillStyle='#8de23a'; ctx.font='bold 22px "BOFmil", monospace';
-  const show=(pwInput+'______').slice(0,6); ctx.fillText(show.split('').join(' '),VW/2,202);
-  ctx.fillStyle='#9aa0aa'; ctx.font='8px "BOFmil", monospace'; ctx.fillText('TYPE UP TO 6 CHARS \u00B7 ENTER CONFIRM \u00B7 BKSP BACK',VW/2,250);
-  for(const k in Input.keys){ if(Input.tap(k)){
-    if(k.length===1 && /[a-z0-9]/i.test(k) && pwInput.length<6){ pwInput+=k.toUpperCase(); Audio.SFX.blip(); }
-    else if(k==='backspace'){ if(pwInput.length){pwInput=pwInput.slice(0,-1);Audio.SFX.blip();} else {setState(GS.TITLE);menuIndex=0;} }
-    else if(k==='enter'){ submitPassword(); } }}
-  if(backButton()){ setState(GS.TITLE); menuIndex=0; pwInput=''; Audio.SFX.select(); }
 }
 function submitPassword(){
   if(pwInput==='COLE4U'){
@@ -46722,54 +48227,29 @@ function curArt(){
   return A[String(run.stage)] || A['1'] || null;
 }
 function curFontArt(){
-  /* THE BOF FONT FIRST (drop 0809g) — one typeface for the whole game. Stages 1-8 have their own
-     tint of it; stage 9 falls back to stage 8's rather than dropping to a different face, because
-     mixing typefaces mid-screen is the bug this replaces. */
-  const bf=ASSETS.bofFont && (ASSETS.bofFont[String(run.stage)] || ASSETS.bofFont['8']);
-  if(bf && bf.img && bf.img.complete && bf.img.naturalWidth) return bf;
+  /* Stage-labelled text comes only from the authored stage-card sheet. */
   return curArt();
 }
-/* GLYPH FALLBACK. Stage 1's font carries 58 glyphs; every other stage font carries 46 — the
-   punctuation set (" # $ % ( ) * ; = @ \ _) is absent. A stage font that lacks a character used to
-   draw nothing at all for it. Any glyph the stage font does not have is now taken from stage 1's
-   complete set, so text can never silently lose characters. */
+/* Resolve one glyph from the authored stage sheet, borrowing only from stage 1 when a later card
+   omitted a character. Retired sfont/ncm/password and compact BOF atlases are not consulted. */
 function fontGlyph(art, ch){
-  /* RECOVERED STAGE FONTS (drop 0724bq). Stages 6/7/8 (and the bonus stage 9) now have their
-     ORIGINAL matching atlases, sliced to individual glyphs as sfont<N>_<char>. Prefer those over
-     the atlas font, and keep the stage-1 fallback underneath for any character none of them has. */
-  const st=(typeof run!=='undefined'&&run)?run.stage:1;
-  if(typeof XART!=='undefined' && ch){
-    const safe = /^[A-Za-z0-9]$/.test(ch) ? ch : ('p'+String(ch.charCodeAt(0)).padStart(2,'0'));
-    const k='sfont'+st+'_'+safe;
-    if(XART.rdy(k)) return {xart:k};
+  const c=String(ch==null?'':ch);
+  if(!c) return null;
+  const up=c.toUpperCase();
+  if(art&&art.font){
+    const key=art.font[c]||art.font[up];
+    if(key&&art.frames&&art.frames[key]) return {art:art,key:key};
   }
-  if(art && art.font && art.font[ch]) return {art:art, key:art.font[ch]};
-  const base=ASSETS.bofFont && ASSETS.bofFont['1'];
-  if(base && base.font && base.font[ch]) return {art:base, key:base.font[ch]};
-  /* THE GAMEFONT WAS NEVER IN THE CHAIN (drop 0801gj). It carries the complete
-     punctuation set as ncm_font_c<NNN> - three-digit ASCII - while the stage fonts
-     use p<NN>, two digits. Measured on stage 6: only "(" and ")" of eleven
-     punctuation marks resolved, so " # $ % * ; = @ _ rendered as nothing.
-     ncm_font_c034 / c035 / c036 were registered the whole time; nothing looked
-     for them. This is the last rung, so stage art still wins where it exists. */
-  if(typeof XART!=='undefined' && ch){
-    const g='ncm_font_'+(/^[A-Za-z0-9]$/.test(ch) ? ch : ('c'+String(ch.charCodeAt(0)).padStart(3,'0')));
-    if(XART.rdy(g)) return {xart:g};
-    if(/^[A-Z]$/.test(ch) && XART.rdy('ncm_font_'+ch.toLowerCase())) return {xart:'ncm_font_'+ch.toLowerCase()};
+  const base=(ASSETS.stageFont&&ASSETS.stageFont['1']) ||
+             (ASSETS.stageArt&&ASSETS.stageArt['1']);
+  if(base&&base.font){
+    const key=base.font[c]||base.font[up];
+    if(key&&base.frames&&base.frames[key]) return {art:base,key:key};
   }
   return null;
 }
-// UI font — the stage-1 stone font, used for ALL in-game/UI text everywhere
+// Stage-labelled UI uses the stage-1 authored stone font. Dialogue/cinematics opt into BMF.
 function uiFontArt(){
-  /* THE UI FACE (drop 0809g). Mike: "these are your new stage font, pilot card, dialogue and
-     stats fonts." Everything outside the stage banner — pilot cards, dialogue, the stats screen,
-     menus — comes through here, so pointing it at the BOF font is what makes the game speak in
-     ONE typeface instead of three.
-
-     Stage 1's tint is the UI default because it is the most neutral of the eight; the coloured
-     ones read as stage identity rather than chrome. */
-  const bf=ASSETS.bofFont && ASSETS.bofFont['1'];
-  if(bf && bf.img && bf.img.complete && bf.img.naturalWidth) return bf;
   return (ASSETS.stageArt && ASSETS.stageArt['1']);
 }
 function artReady(a){ return a && a.img && a.img.complete && a.img.naturalWidth>0; }
@@ -46808,66 +48288,6 @@ function drawFrameTinted(img,f,dx,dy,dw,dh,tintC,tintA,alpha){
     ctx.save(); if(alpha!=null)ctx.globalAlpha=alpha;
     ctx.drawImage(img,f[0],f[1],f[2],f[3],dx,dy,dw,dh); ctx.restore();
   }
-}
-// centered bitmap-font text at pixel height H; tintC null = original colors
-/* THE GAME FONT AS TEXT (drop 0801bw). Mike: "use scaled down versions for each
-   pilot's dialogue from this which I found in our game folder."
-
-   assets/fonts/gamefont/ncm_font_* is a full 26-letter + 10-digit + punctuation
-   bitmap face. I previously reported it as missing B G M N P V - that was wrong.
-   Those six export as LOWERCASE filenames (ncm_font_b.png), almost certainly a
-   case-collision at export time, and my audit was case-sensitive. They are now
-   aliased so an uppercase lookup resolves all 26.
-
-   gameText draws a string from those glyphs at a given cap height, left-aligned.
-   gameTextWrap breaks on words to a pixel width and returns the line count, so
-   the pilot bio can be typeset into the card's column instead of relying on the
-   page font. */
-function gameGlyph(ch){
-  if(typeof XART==='undefined') return null;
-  if(ch===' ') return null;
-  const code=ch.charCodeAt(0);
-  let k='ncm_font_'+ch.toUpperCase();
-  if(!(XART._src && XART._src[k])) k='ncm_font_c'+String(code).padStart(3,'0');
-  return (XART._src && XART._src[k] && XART.rdy(k)) ? XART.get(k) : null;
-}
-function gameTextW(text,H,sp){
-  const s=(sp==null?H*0.12:sp); let w=0;
-  for(const ch of String(text)){
-    if(ch===' '){ w+=H*0.40+s; continue; }
-    const im=gameGlyph(ch);
-    w+=(im?H*(im.naturalWidth/im.naturalHeight):H*0.40)+s;
-  }
-  return Math.max(0,w-s);
-}
-function gameText(text,x,y,H,color,alpha,sp){
-  if(typeof XART==='undefined') return 0;
-  const s=(sp==null?H*0.12:sp); let cx2=x;
-  ctx.save(); ctx.globalAlpha=(alpha==null?1:alpha);
-  for(const ch of String(text)){
-    if(ch===' '){ cx2+=H*0.40+s; continue; }
-    const im=gameGlyph(ch);
-    if(im){
-      const w=H*(im.naturalWidth/im.naturalHeight);
-      const tc=(color && typeof xartTint==='function') ? xartTint('ncm_font_'+ch.toUpperCase(),color,0.9) : null;
-      ctx.drawImage(tc||im, Math.round(cx2), Math.round(y-H/2), Math.round(w), Math.round(H));
-      cx2+=w+s;
-    } else cx2+=H*0.40+s;
-  }
-  ctx.restore();
-  return cx2-x;
-}
-function gameTextWrap(text,x,y,H,maxW,lineMul,color,alpha,budget){
-  const words=String(text).split(' '); let line='', yy=y, n=0, used=0;
-  const flush=()=>{ if(line){ gameText(line,x,yy,H,color,alpha); yy+=H*(lineMul||1.55); n++; line=''; } };
-  for(const w of words){
-    if(budget!=null && used>=budget) break;
-    const t=line?(line+' '+w):w;
-    if(gameTextW(t,H)>maxW && line){ flush(); line=w; } else line=t;
-    used+=w.length+1;
-  }
-  flush();
-  return n;
 }
 /* STAGE-FONT BODY TEXT (drop 0801ca). Mike: "I can barely see our dialogue text
    ... use our stage fonts for everything, never color overlay anything."
@@ -47180,8 +48600,14 @@ let introSeq={crash:false,slice:false,mus:false,debris:null,lastnum:99,go:false}
 // ---- OFFICIAL GAME FONT: Stage-1 bitmap font as the default for all messages/dialogue.
 // Stage-1 font lacks 'S' (and a few glyphs) -> borrow those from the Stage-2 font atlas.
 function defFontArt(){ return uiFontArt() || curFontArt() || (ASSETS.stageArt && (curArt() || ASSETS.stageArt['1'])); }
-function defFontAlt(){ return (ASSETS.bofFont && ASSETS.bofFont['1']) || (ASSETS.stageArt && ASSETS.stageArt['1']); }
+function defFontAlt(){ return (ASSETS.stageArt && ASSETS.stageArt['1']); }
 function msgText(text,cx,cy,H,tintC,tintA,alpha,spacingMul){
+  /* A centred dialogue line used to ignore msgFaceUse('dialogue') and fall through to the old
+     compact BOF face. Measure and draw through the same selected BMF face as msgTextLeft. */
+  if(_msgFace && bmfReady(_msgFace)){
+    const w=bmfMeasure(_msgFace,text,H);
+    if(bmfDraw(_msgFace,text,cx-w/2,cy-H/2,H,alpha,tintC,tintA,false)) return w;
+  }
   const a1=defFontArt(), a2=defFontAlt();
   if(!a1||!a1.font||!a1.img||!a1.img.complete){
     ctx.save(); ctx.font='900 '+Math.round(H*0.86)+'px "Arial Black",Impact,sans-serif';
@@ -47237,21 +48663,70 @@ function msgMeasure(text, H, spacingMul){
   }
   return Math.max(0, total-sp);
 }
-/* Greedy word wrap in the authored face. Returns an array of lines that each fit maxW, and a
-   single over-long word is left on its own line rather than dropped — a name that does not fit
-   should overflow visibly, not disappear. */
+/* Greedy word wrap in the authored face. Long unbroken tokens are split at glyph boundaries;
+   dialogue must remain inside its machined window even when a localization, callsign, or debug
+   string has no spaces. Explicit newlines remain explicit rows. */
 function msgWrap(text, maxW, H, spacingMul){
-  const words=String(text).split(/\s+/).filter(Boolean);
-  if(!words.length) return [];
-  if(!msgMeasure('M', H, spacingMul)) return [String(text)];   // sheet not up: one line, let it fall back
-  const out=[]; let ln='';
-  for(const w of words){
-    const t=ln?(ln+' '+w):w;
-    if(ln && msgMeasure(t,H,spacingMul)>maxW){ out.push(ln); ln=w; }
-    else ln=t;
+  const raw=String(text==null?'':text);
+  if(!raw) return [];
+  if(!msgMeasure('M', H, spacingMul)) return [raw];   // sheet not up: clip safely until it decodes
+  const out=[];
+  for(const para of raw.split(/\r?\n/)){
+    const words=para.split(/\s+/).filter(Boolean); let ln='';
+    if(!words.length){ out.push(''); continue; }
+    for(const word of words){
+      let w=word;
+      const trial=ln?(ln+' '+w):w;
+      if(ln && msgMeasure(trial,H,spacingMul)<=maxW){ ln=trial; continue; }
+      if(ln){ out.push(ln); ln=''; }
+      while(w && msgMeasure(w,H,spacingMul)>maxW){
+        let part='';
+        for(const ch of w){
+          const next=part+ch;
+          if(part && msgMeasure(next,H,spacingMul)>maxW) break;
+          part=next;
+        }
+        if(!part) part=w[0];
+        out.push(part); w=w.slice(part.length);
+      }
+      ln=w;
+    }
+    if(ln) out.push(ln);
   }
-  if(ln) out.push(ln);
   return out;
+}
+function msgBlockLayout(text,maxW,maxH,Hmax,Hmin,lineMul,spacingMul){
+  const mul=lineMul||1.36, floor=Math.max(5,Hmin||7);
+  let H=Math.max(floor,Hmax||14), lines=[];
+  for(;H>floor;H--){
+    lines=msgWrap(text,maxW,H,spacingMul);
+    const need=lines.length ? H+(lines.length-1)*Math.round(H*mul) : 0;
+    if(need<=maxH) return {H,lines,step:Math.round(H*mul),height:need};
+  }
+  lines=msgWrap(text,maxW,floor,spacingMul);
+  const need=lines.length ? floor+(lines.length-1)*Math.round(floor*mul) : 0;
+  return {H:floor,lines,step:Math.round(floor*mul),height:need};
+}
+/* One clipped dialogue column. Layout always uses the complete sentence; `budget` only reveals
+   glyphs, so typewriter text never reflows while it is appearing. */
+function msgDrawBlock(o){
+  const full=String(o.text==null?'':o.text), layout=msgBlockLayout(full,o.w,o.h,o.maxH,o.minH,o.lineMul,o.spacing);
+  let budget=o.budget==null?Infinity:Math.max(0,Math.floor(o.budget)), yy=o.y+layout.H/2;
+  ctx.save(); ctx.beginPath(); ctx.rect(o.x,o.y,o.w,o.h); ctx.clip();
+  for(const line of layout.lines){
+    if(budget<=0) break;
+    const part=budget>=line.length?line:line.slice(0,budget);
+    if(part){
+      let x=o.x;
+      if(o.align==='center') x=o.x+(o.w-msgMeasure(part,layout.H,o.spacing))/2;
+      msgTextLeft(part,x,yy,layout.H,o.color||DIALOGUE_BODY_COLOR,o.tintA==null?1:o.tintA,
+                  o.alpha==null?1:o.alpha,o.spacing,o.outline||false);
+    }
+    budget-=line.length+1;
+    yy+=layout.step;
+  }
+  ctx.restore();
+  return layout;
 }
 /* Draw in the authored face, LEFT-aligned at x. msgText centres on cx and there is no left
    variant, which is why panels that wanted a text column used canvas text instead. */
@@ -47521,7 +48996,7 @@ function _scrollVAbs(img,dist){
   for(let yy=off-dh; yy<VH; yy+=dh){ ctx.drawImage(img,(VW-dw)/2,yy,dw,dh); }   /* NO flip */
 }
 /* draw the selected pilot's ship (idle '', bank '_l'/'_r'). '_t' is REFUSED — see drawShipSprite. */
-function _shipK(suf){ const p=(run&&run.pilot)||'axel'; const k='ship_'+p+(suf||''); return (typeof XART!=='undefined'&&XART.rdy(k))?k:null; }
+function _shipK(suf){ const p=(typeof _pilotKey==='function'?_pilotKey():((run&&run.pilot)||'axel')); const k='ship_'+p+(suf||''); return (typeof XART!=='undefined'&&XART.rdy(k))?k:null; }
 /* ============================================================
    ONE THRUSTER SYSTEM, EVERYWHERE (drop 0808g)
 
@@ -47586,7 +49061,7 @@ function drawShipSprite(x,y,h,suf){
   let k=_shipK(_s); if(!k) k=_shipK('');
   if(k){
     const im=XART.get(k); const w=h*(im.naturalWidth/im.naturalHeight);
-    drawShipThruster(x,y,h,(run&&run.pilot)||'cole', 0.95);   // behind the hull
+    drawShipThruster(x,y,h,(typeof _pilotKey==='function'?_pilotKey():((run&&run.pilot)||'cole')), 0.95);   // behind the hull
     ctx.drawImage(im,x-w/2,y-h/2,w,h); return; }
   if(ASSETS.has&&ASSETS.has('player')){ const fr=ASSETS.dims('player'), sc=h/fr.h;
     // legacy player_thrust blit removed (drop 0724cj) — a second engine under our own
@@ -47678,7 +49153,8 @@ const SEG_B1=2000, SEG_B2=SEG_B1+2200, SEG_B3=SEG_B2+8800;   /* runway | terrain
    because there is only one pose. Same reasoning as drawing the arcade name from the pilot key:
    make the disagreement structurally impossible rather than fixing today's instance of it. */
 function playShipPose(){
-  const cf=(typeof _CFO!=='undefined' && _CFO[run.pilot]!=null)?_CFO[run.pilot]:0.80;
+  const pk=(typeof _pilotKey==='function'?_pilotKey():run.pilot);
+  const cf=(typeof _CFO!=='undefined' && _CFO[pk]!=null)?_CFO[pk]:0.80;
   const ww=(typeof worldWidth==='function')?worldWidth():VW;
   return {
     x: (player.x!=null?player.x:VW/2) - (ww>VW ? camX : 0),
@@ -47795,6 +49271,22 @@ function stage9PortalEscapeDraw(progress,foreground){
     if(p<0.08)gravityWhite(1-p/0.08);
   }
 }
+function launchBeginCountdown(){
+  drawLaunch._phase=(typeof stageLoadReady==='function'&&stageLoadReady(run.stage))?'cd':'load';
+  drawLaunch._pt=0;
+}
+function drawStageLoadOverlay(){
+  const I=(typeof stageLoadInfo==='function')?stageLoadInfo(run.stage):{progress:1,loaded:0,total:0,failed:0};
+  const p=clamp(I.progress||0,0,1),w=360,h=62,x=(VW-w)/2,y=VH-88;
+  ctx.save();ctx.fillStyle='rgba(3,7,15,.92)';ctx.fillRect(x,y,w,h);
+  ctx.strokeStyle='#5e718c';ctx.lineWidth=2;ctx.strokeRect(x+.5,y+.5,w-1,h-1);
+  ctx.textAlign='center';ctx.font='bold 10px "BOFmil", monospace';ctx.fillStyle='#dcecff';
+  ctx.fillText('LOADING STAGE '+run.stage+' COMBAT RESOURCES',VW/2,y+18);
+  ctx.fillStyle='#101b28';ctx.fillRect(x+20,y+30,w-40,12);
+  ctx.fillStyle='#61dcff';ctx.fillRect(x+22,y+32,(w-44)*p,8);
+  ctx.font='7px "BOFmil", monospace';ctx.fillStyle='#8fa6bd';
+  ctx.fillText(Math.round(p*100)+'%  ·  PREPARING BEFORE DEPLOYMENT',VW/2,y+54);ctx.restore();
+}
 function drawLaunch(dt){
   if(drawLaunch._phase===undefined || stateT < (drawLaunch._lastT||0)-0.001){ drawLaunch._dist=0; drawLaunch._spd=110; drawLaunch._phase='run'; drawLaunch._pt=0;
     drawLaunch._eng=false; drawLaunch._thr=false; drawLaunch._brk=false; drawLaunch._go=false; drawLaunch._num=99; drawLaunch._mus=false; drawLaunch._bgScroll=0;
@@ -47820,7 +49312,7 @@ function drawLaunch(dt){
     drawLaunch._dist+=drawLaunch._spd*dt;
     const _launchEnd=_gravityStage?(SEG_B3+SEG_B1+240):(SEG_B3+240);
     if(drawLaunch._dist>=_launchEnd){
-      if(_s6){drawLaunch._phase='cd';drawLaunch._pt=0;} /* same fast sky, no brake/settle/pause */
+      if(_s6){launchBeginCountdown();} /* same fast sky, no brake/settle/pause */
       else {drawLaunch._phase='brake';drawLaunch._pt=0;if(Audio.SFX.brake)Audio.SFX.brake();}
     }
     /* STAGE 6 is the exception Mike called out: runway -> SKY. It keeps climbing instead of
@@ -47846,7 +49338,7 @@ function drawLaunch(dt){
         if(gravityMode&&gravityMode.dialogueDone){
           gravityModeBeginCharge();drawLaunch._phase='gravity';drawLaunch._pt=0;
         }else drawLaunch._pt=0.45;
-      }else {drawLaunch._phase='cd';drawLaunch._pt=0;}
+      }else {launchBeginCountdown();}
     }
   } else if(ph==='gravity'){
     /* Gravity Mode is a stage-transition beat, not a gameplay freeze.  The completed level
@@ -47856,7 +49348,14 @@ function drawLaunch(dt){
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0 ? Math.min(_rng,mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt)
                      : mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt;
-    if(!gravityMode || !gravityModeTick(dt)){ drawLaunch._phase='cd'; drawLaunch._pt=0; }
+    if(!gravityMode || !gravityModeTick(dt)){ launchBeginCountdown(); }
+  } else if(ph==='load'){
+    /* The level remains visibly alive at cruise speed while the bounded decoder finishes.  No
+       stage clock, enemy AI or player input advances beneath this gate. */
+    drawLaunch._pt+=dt;drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;
+    const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
+    mapScroll=_rng>0?Math.min(_rng,mapScroll+drawLaunch._spd*dt):mapScroll+drawLaunch._spd*dt;
+    if(typeof stageLoadReady!=='function'||stageLoadReady(run.stage)){drawLaunch._phase='cd';drawLaunch._pt=0;}
   } else {
     /* The old countdown set speed to zero for the entire 3-2-1-GO beat. On bright water this
        looked like the game had stalled. Consume a small, real slice of the level while counting;
@@ -48015,6 +49514,7 @@ function drawLaunch(dt){
      stage 1's bright water it moved HALF THE PIXELS IN THE FRAME, which is how probe_arrival caught
      it. Drawn after the ship, matching drawWorld's own order (world, craft, then scanlines). */
   if(typeof drawScanlines==='function') drawScanlines();
+  if(ph==='load'){drawStageLoadOverlay();return;}
   /* ---- GET READY 3-2-1 -> GO ---- */
   if(ph==='cd'){
     const ct=drawLaunch._pt;
@@ -48310,6 +49810,7 @@ function drawWorld(dt){
   }
   if(shake>0){ ctx.translate(rnd(-shake,shake),rnd(-shake,shake)); }
   drawBG(dt);
+  if(typeof drawS7FinalPortalWorld==='function')drawS7FinalPortalWorld();
   /* ⚠ THE OLD PARALLAX CLOUD LAYER IS GONE (0819f) — the pack ships four cloud families and
      bg6Draw cross-fades them across the stage. The far scenery objects are NOT weather and
      stay. */
@@ -48340,7 +49841,7 @@ function drawWorld(dt){
      is gone, so nothing else that reads fadeOuts changes behaviour. */
   if(boss) drawBoss();
   if(boss && boss._morphT!=null && typeof vileMorphDraw==='function') vileMorphDraw(boss);
-  if(subBoss) drawSubBoss();
+  if(subBoss){drawSubBoss();encounterDamageOverlay(subBoss,true);}
   if(typeof speedPadsDraw==='function') speedPadsDraw();   // boost pads sit on the deck, under the craft
   if(typeof l6GMDraw==='function') l6GMDraw();   // giant missiles ride over the fight
   if(run.stage===5 && typeof l5RocksDraw==='function') l5RocksDraw();   // asteroids share the play plane
@@ -48427,6 +49928,7 @@ function drawWorld(dt){
   /* RADIO. Drawn last so it sits over the HUD, ducked automatically while a boss is alive so a
      line never competes with a bullet pattern (delivery rule 5). */
   if(typeof storyTick==='function'){ storyTick(1/60); if(bossActive) storyDuck(); storyDraw(); }
+  if(typeof s7WardenRadioDraw==='function')s7WardenRadioDraw();
   /* the BOSS WARNING card rides the alert, then clears itself */
   if(_bossCard){ _bossCard.t+=1/60;
     if(_bossCard.t>3.2) _bossCard=null;
@@ -48457,7 +49959,7 @@ function drawScanlines(){
   ctx.globalAlpha=1;
 }
 function drawPaused(){
-  ctx.fillStyle='rgba(0,0,0,0.6)'; ctx.fillRect(0,0,VW,VH);
+  ctx.fillStyle='rgba(0,0,0,0.38)'; ctx.fillRect(0,0,VW,VH);
   ctx.textAlign='center';
   msgText('PAUSED',VW/2,VH/2-10,30,null,0,1,0.12);
   ctx.fillStyle='#cfd6e0'; ctx.font='bold 10px "BOFmil", monospace';
@@ -49221,16 +50723,43 @@ function l7PortalFrame(t){
   return clamp(5+Math.floor((t-L7P_CLOSE)*L7P_FPS),5,7);
 }
 function l7PortalReady(){ return typeof XART!=='undefined' && XART.rdy && XART.rdy('nfx_l7portal_0'); }
-function drawL7Portal(frame,x,y,h,alpha,blend){
+function drawL7Portal(frame,x,y,h,alpha,blend,helixT){
   const k='nfx_l7portal_'+clamp(frame|0,0,7);
   if(!l7PortalReady() || !XART.rdy(k)) return false;
   const im=XART.get(k); if(!im) return false;
   const iw=(im.naturalWidth||im.width)||512, ih=(im.naturalHeight||im.height)||512;
-  const w=h*(iw/ih);
+  const w=h*(iw/ih),a=(alpha==null?1:alpha),ht=helixT==null?((typeof stageTimer==='number'?stageTimer:0)):helixT;
+  const cyan=(typeof xartPalette==='function'&&xartPalette(k,'#19d9ff'))||im;
+  const cobalt=(typeof xartPalette==='function'&&xartPalette(k,'#3158ff'))||cyan;
+  const magenta=(typeof xartPalette==='function'&&xartPalette(k,'#ff35df'))||im;
   ctx.save();
-  ctx.globalAlpha=(alpha==null?1:alpha);
+  ctx.globalAlpha=a;
   if(blend) ctx.globalCompositeOperation=blend;
-  ctx.drawImage(im,x-w/2,y-h/2,w,h);
+  ctx.drawImage(cobalt,x-w/2,y-h/2,w,h);
+  ctx.globalCompositeOperation='lighter';ctx.globalAlpha=a*.52;
+  ctx.drawImage(cyan,x-w*.505,y-h*.505,w*1.01,h*1.01);
+  /* Alternating moving bands reveal the magenta copy through the authored portal alpha. The
+     doorway remains the real eight-frame reel; these bands only give it Maverick's helix palette. */
+  const bands=8,bh=h/bands;
+  for(let i=0;i<bands;i++){
+    const yy=y-h/2+i*bh+Math.sin(ht*7+i*1.45)*bh*.22;
+    ctx.save();ctx.beginPath();ctx.rect(x-w/2-3,yy,w+6,bh*.52);ctx.clip();ctx.globalAlpha=a*(.58+.18*Math.sin(ht*9+i));
+    ctx.drawImage(magenta,x-w/2,y-h/2,w,h);ctx.restore();
+  }
+  ctx.globalAlpha=a*.12;ctx.drawImage(im,x-w/2,y-h/2,w,h);
+  /* Two opposite luminous coils make the gate read as a real helix, not merely a blue portal
+     with a palette wash.  They share the authored reel's center and tighten into its white core. */
+  ctx.save();ctx.translate(x,y);ctx.globalCompositeOperation='lighter';ctx.lineCap='round';ctx.lineJoin='round';
+  for(let strand=0;strand<2;strand++){
+    ctx.beginPath();
+    for(let j=0;j<=96;j++){
+      const u=j/96,r=u*w*.41,ang=(strand?-1:1)*ht*4.2+u*TAU*2.35+strand*Math.PI;
+      const xx=Math.cos(ang)*r,yy=Math.sin(ang)*r*(h/w);
+      if(j===0)ctx.moveTo(xx,yy);else ctx.lineTo(xx,yy);
+    }
+    ctx.strokeStyle=strand?'#ff31df':'#20dcff';ctx.lineWidth=2.35;ctx.shadowColor=strand?'#ff31df':'#218cff';ctx.shadowBlur=7;ctx.globalAlpha=a*.72;ctx.stroke();
+  }
+  ctx.restore();
   ctx.restore();
   return true;
 }
@@ -49244,49 +50773,152 @@ function drawL7WarpFX(x,y,t,power,closing){
     const a=i*TAU/24+spin+(i%3)*0.07;
     const pulse=0.72+0.28*Math.sin(t*11+i*1.7);
     const r0=(34+((i*13)%31))*p, r1=r0+(24+((i*7)%42))*p*pulse;
-    ctx.strokeStyle=(i%3===0?'rgba(235,255,224,0.72)':i%3===1?'rgba(58,255,211,0.58)':'rgba(210,62,255,0.62)');
+    ctx.strokeStyle=(i%3===0?'rgba(245,255,255,0.78)':i%3===1?'rgba(36,202,255,0.68)':'rgba(255,47,224,0.70)');
     ctx.globalAlpha=p*(0.35+0.45*pulse); ctx.lineWidth=1+(i%4===0?1:0);
     ctx.beginPath(); ctx.moveTo(x+Math.cos(a)*r0,y+Math.sin(a)*r0);
     ctx.lineTo(x+Math.cos(a+0.10*(closing?-1:1))*r1,y+Math.sin(a+0.10*(closing?-1:1))*r1); ctx.stroke();
   }
   ctx.restore();
 }
+/* One aperture owns every Stage-7 finale beat. The background art beneath this ring contains a
+   toxic pool, so the seal is deliberately opaque: transparent portal pixels can never reveal the
+   old slime. Portal formation, teleport expansion, boss emergence, and the escape all reuse the
+   exact same center and radius. */
+function s7PortalGeom(){
+  const h=VW*.46;return {x:(typeof worldWidth==='function'?worldWidth():VW)/2,y:VH*.60,h:h,r:h*.468};
+}
+function drawS7PortalSeal(G,t,energy){
+  const e=clamp(energy||0,0,1),r=G.r,spin=(t||0)*1.8;
+  ctx.save();ctx.beginPath();ctx.arc(G.x,G.y,r,0,TAU);ctx.clip();
+  const core=ctx.createRadialGradient(G.x,G.y,r*.04,G.x,G.y,r);
+  core.addColorStop(0,e>.08?'#08052b':'#010107');
+  core.addColorStop(.52,e>.08?'#07143d':'#03000c');
+  core.addColorStop(.82,e>.08?'#160a38':'#090012');
+  core.addColorStop(1,'#010004');ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
+  ctx.fillStyle=core;ctx.fillRect(G.x-r,G.y-r,r*2,r*2);
+  if(e>.01){
+    ctx.globalCompositeOperation='lighter';ctx.lineCap='round';
+    for(let i=0;i<9;i++){
+      const rr=r*(.18+i*.082),a=spin*(i&1?-1:1)+i*.73;
+      ctx.strokeStyle=(i&1)?'#ff31df':'#20dfff';ctx.globalAlpha=e*(.10+i*.012);ctx.lineWidth=1.2+(i%3===0?1:0);
+      ctx.beginPath();ctx.arc(G.x,G.y,rr,a,a+Math.PI*(.72+.08*Math.sin(t*4+i)));ctx.stroke();
+    }
+  }
+  ctx.restore();
+  ctx.save();ctx.globalCompositeOperation='lighter';ctx.lineWidth=3;ctx.globalAlpha=.26+.42*e;
+  ctx.strokeStyle=e>.01?'#24dfff':'#241138';ctx.beginPath();ctx.arc(G.x,G.y,r-1.5,0,TAU);ctx.stroke();
+  if(e>.01){ctx.lineWidth=1.5;ctx.globalAlpha=.22+.36*e;ctx.strokeStyle='#ff35df';ctx.beginPath();ctx.arc(G.x,G.y,r-6,0,TAU);ctx.stroke();}
+  ctx.restore();
+}
+function drawS7PortalEnergy(G,frame,t,power,closing){
+  const p=clamp(power||0,0,1),e=p*p*(3-2*p),scale=closing?lerp(.18,1,e):lerp(.16,1,e);
+  ctx.save();ctx.beginPath();ctx.arc(G.x,G.y,G.r-2,0,TAU);ctx.clip();
+  drawL7WarpFX(G.x,G.y,t,p,closing);
+  drawL7Portal(frame,G.x,G.y,G.h*1.18*scale,.98,'lighter',t);
+  ctx.restore();
+}
+function drawS7WardenPortalTeleport(G,t){
+  const q=clamp(t/.94,0,1),fill=clamp(t/.38,0,1),e=1-Math.pow(1-fill,3),fi=clamp(Math.floor(q*8),0,7);
+  const key='cfx_stage7_warden_teleport',im=XART.rdy(key)&&XART.get(key),iw=im&&((im.naturalWidth||im.width)||0),ih=im&&((im.naturalHeight||im.height)||0);
+  ctx.save();ctx.beginPath();ctx.arc(G.x,G.y,G.r-2,0,TAU);ctx.clip();
+  /* Stretch from a pinprick to the full mechanical aperture. The final reel is slightly
+     oversized and clipped, guaranteeing that it fills this exact circle without a second halo. */
+  if(im&&iw&&ih){
+    const sw=iw/4,sh=ih/2,sx=(fi%4)*sw,sy=Math.floor(fi/4)*sh,sz=G.h*lerp(.08,1.16,e);
+    const cyan=xartPalette(key,'#20dfff')||im,magenta=xartPalette(key,'#ff35df')||im;
+    ctx.imageSmoothingEnabled=true;ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.64+.26*Math.sin(q*Math.PI);
+    ctx.drawImage(cyan,sx,sy,sw,sh,G.x-sz/2,G.y-sz/2,sz,sz);
+    const bands=7,bh=sz/bands;
+    for(let i=0;i<bands;i++){
+      const yy=G.y-sz/2+i*bh+Math.sin(t*15+i*1.4)*bh*.18;
+      ctx.save();ctx.beginPath();ctx.rect(G.x-sz/2,yy,sz,bh*.52);ctx.clip();ctx.globalAlpha=.48+.18*Math.sin(t*12+i);
+      ctx.drawImage(magenta,sx,sy,sw,sh,G.x-sz/2,G.y-sz/2,sz,sz);ctx.restore();
+    }
+  }
+  drawL7WarpFX(G.x,G.y,t,e,false);
+  ctx.restore();
+  ctx.save();ctx.globalCompositeOperation='lighter';ctx.strokeStyle=(Math.floor(t*18)&1)?'#ff35df':'#58efff';
+  ctx.globalAlpha=.42+.34*Math.sin(q*Math.PI);ctx.lineWidth=3.5;ctx.beginPath();ctx.arc(G.x,G.y,G.r-2,0,TAU);ctx.stroke();ctx.restore();
+}
+function drawS7FinalPortalWorld(){
+  if(!run||run.stage!==7||typeof drawL7Portal!=='function')return;
+  const range=levelScrollRange(),G=s7PortalGeom();
+  let frame=-1,power=0,t=stageTimer||0,closing=false,teleport=false,visible=false;
+  if(!boss||!boss._s7warden){
+    const near=range>0?clamp((mapScroll-(range-620))/300,0,1):0;
+    if(near<=0)return;visible=true;frame=Math.min(4,Math.floor(near*5));power=near;
+  }else{
+    const F=boss._s7warden.final;if(!F)return;
+    visible=true;
+    if(F.phase==='portalClose'){frame=F.t<.18?4:Math.min(7,5+Math.floor(clamp((F.t-.18)/.70,0,1)*3));power=1-clamp((F.t-.18)/.74,0,1);closing=true;t=F.t;}
+    else if(F.phase==='teleportIn'){teleport=true;t=F.t;power=clamp(F.t/.78,0,1);}
+    else if(F.phase==='escape'){
+      const q=clamp(F.portalOpen||0,0,1);frame=Math.min(4,Math.floor(q*5));power=q;t=F.t;
+    }
+  }
+  if(!visible)return;
+  /* The seal is always painted first and always opaque. A closed portal is a black-violet core,
+     never the green sewer pool from the stage background. */
+  drawS7PortalSeal(G,t,teleport?power:(frame>=0?power:0));
+  if(teleport)drawS7WardenPortalTeleport(G,t);
+  else if(frame>=0)drawS7PortalEnergy(G,frame,t,power,closing);
+}
 function l78EntryStart(){
-  l78entry={t:0, open:false, breach:false, close:false};
+  l78entry={t:0, open:false, breach:false, close:false,said1:false,said2:false,radio:null};
+  if(typeof storySkip==='function')storySkip();
   if(player) player.invuln=Math.max(player.invuln||0,140);
+}
+function l78EntrySay(q,text,who){q.radio={who:who||s7FinalWingman(),full:text,t:0,typed:0,dur:2.35};}
+function l78EntryRadioDraw(q){
+  const R=q&&q.radio;if(!R||typeof dlgBox!=='function')return;
+  const full=(typeof subst==='function')?subst(R.full):R.full,shown=full.slice(0,R.typed|0),who=R.who||'FURY WING';
+  dlgBox({who:who,full:full,shown:shown,tint:(typeof dialogueNameColor==='function'?dialogueNameColor(who,'#54dcff'):'#54dcff'),portrait:String(who).toLowerCase(),emo:'sad'});
 }
 function drawL78Entry(dt){
   if(!l78entry) l78EntryStart();
   const q=l78entry; q.t+=dt;
-  const t=q.t, px=VW/2, py=VH*0.24, frame=l7PortalFrame(t);
+  const t=q.t,px=VW/2,py=VH*.22,pt=Math.max(0,t-.32),closeAt=2.34;
+  const frame=pt<.46?Math.min(4,Math.floor(pt/.46*5)):pt<closeAt?4:Math.min(7,5+Math.floor(clamp((pt-closeAt)/.42,0,1)*3));
   if(!q.open){ q.open=true; if(Audio.SFX){ if(Audio.SFX.helixCharge)Audio.SFX.helixCharge(); if(Audio.SFX.crackle)Audio.SFX.crackle(); } }
-  if(t>=0.46 && !q.breach){ q.breach=true; if(Audio.SFX){ if(Audio.SFX.mapDeploy)Audio.SFX.mapDeploy(); if(Audio.SFX.dash)Audio.SFX.dash(); } shake=Math.max(shake,8); }
-  if(t>=L7P_CLOSE && !q.close){ q.close=true; if(Audio.SFX&&Audio.SFX.bossPhase)Audio.SFX.bossPhase(); }
+  if(t>=1.05 && !q.breach){ q.breach=true; if(Audio.SFX){ if(Audio.SFX.mapDeploy)Audio.SFX.mapDeploy(); if(Audio.SFX.dash)Audio.SFX.dash(); } shake=Math.max(shake,8); }
+  if(pt>=closeAt && !q.close){ q.close=true; if(Audio.SFX&&Audio.SFX.bossPhase)Audio.SFX.bossPhase(); }
 
-  /* Draw the real Stage 8 world, but not its ordinary player instance. The cinematic owns the
-     craft until it reaches playShipPose; no second ship may sit underneath it. */
+  /* Begin on white, then reveal the real Stage 8 world. It crawls forward at less than a fifth
+     normal speed while comms discover that the pilot no longer exists on their reader. */
   _cinematicHidePlayer=true;
-  drawWorld(dt*0.55);
+  drawWorld(dt*.18);
   _cinematicHidePlayer=false;
 
-  const openP=clamp(t/L7P_FORM,0,1), closeP=clamp((t-L7P_CLOSE)/(L7P_DONE-L7P_CLOSE),0,1);
+  const openP=clamp(pt/.46,0,1),closeP=clamp((pt-closeAt)/.42,0,1);
   drawL7WarpFX(px,py,t,openP*(1-closeP),closeP>0);
-  drawL7Portal(frame,px,py,VW*0.94,0.96,'lighter');
+  if(pt>=0&&closeP<1)drawL7Portal(frame,px,py,VW*.94,.98,'lighter',t);
 
-  /* The ship breaches the aperture at full thrust, grows to its actual gameplay scale and lands
-     exactly on the pose PLAY will use. Once it arrives, control begins immediately. */
-  if(t>=0.42){
-    const k=(typeof _ease==='function')?_ease(clamp((t-0.42)/1.25,0,1)):clamp((t-0.42)/1.25,0,1);
-    const pose=playShipPose(), sx=lerp(px,pose.x,k), sy=lerp(py+4,pose.y,k);
-    const sh=lerp(7,pose.h,k);
+  /* The ship is spat out of the helix rift, then takes a long, cautious drift to its gameplay
+     station. Control remains locked until the explicit 3-2-1-GO beat finishes. */
+  if(t>=1.02){
+    const k=(typeof _ease==='function')?_ease(clamp((t-1.02)/2.48,0,1)):clamp((t-1.02)/2.48,0,1);
+    const pose=playShipPose(),sx=lerp(px,pose.x,k),sy=lerp(py+3,pose.y,k),sh=lerp(6,pose.h,k);
     drawShipSprite(sx,sy,sh,'');
-    if(t<1.25) drawL7Portal(frame,px,py,VW*0.94,0.28,'lighter');
+    if(t<2.5)drawL7Portal(frame,px,py,VW*.94,.25,'lighter',t);
   }
-  if(t>=0.46 && t<0.72){
-    const f=1-clamp((t-0.46)/0.26,0,1);
-    ctx.fillStyle='rgba(220,255,246,'+(f*0.34).toFixed(3)+')'; ctx.fillRect(0,0,VW,VH);
+  if(t>=1.05&&t<1.42){const f=1-clamp((t-1.05)/.37,0,1);ctx.fillStyle='rgba(238,248,255,'+(f*.46).toFixed(3)+')';ctx.fillRect(0,0,VW,VH);}
+
+  if(t>=2.45&&!q.said1){q.said1=true;l78EntrySay(q,"{P1_NAME}, YOU'RE NOT EVEN SHOWING UP ON THE READER ANYMORE. STAY SAFE.");}
+  if(t>=4.72&&!q.said2){q.said2=true;l78EntrySay(q,"WE DON'T KNOW WHAT'S ON THE OTHER SIDE. KEEP MOVING.");}
+  if(q.radio){q.radio.t+=dt;q.radio.typed+=dt*43;if(q.radio.t>=q.radio.dur)q.radio=null;}
+  l78EntryRadioDraw(q);
+
+  const cdStart=7.22,step=.72,goEnd=10.16,ci=Math.floor((t-cdStart)/step);
+  if(t>=cdStart&&t<cdStart+step*3){
+    const n=3-ci,p=(t-cdStart-ci*step)/step,a=Math.sin(clamp(p,0,1)*Math.PI);
+    msgText(String(n),VW/2,VH*.43,58,null,0,.72+.28*a,.08);
+    if(ci!==q.cdBeat){q.cdBeat=ci;if(Audio.SFX&&Audio.SFX.statTick)Audio.SFX.statTick();}
+  }else if(t>=cdStart+step*3&&t<goEnd){
+    msgText('GO!',VW/2,VH*.43,44,null,0,.72+.28*Math.sin((t-cdStart)*8),.10);
+    if(!q.go){q.go=true;if(Audio.SFX&&(Audio.SFX.stageClear||Audio.SFX.select))(Audio.SFX.stageClear||Audio.SFX.select)();}
   }
-  if(t>=1.82){
+  const wf=1-clamp(t/.92,0,1);if(wf>0){ctx.fillStyle='rgba(255,255,255,'+wf.toFixed(3)+')';ctx.fillRect(0,0,VW,VH);}
+  if(t>=goEnd){
     const pose=playShipPose();
     player.x=pose.x+((worldWidth()>VW)?camX:0); player.y=pose.y;
     player.invuln=Math.max(player.invuln||0,140);
@@ -50073,10 +51705,16 @@ function drawStageClear(dt){
         else beginStage(6);
       }
       else if(run.stage>=CAMPAIGN_STAGES){ triggerVictory(); }
-      /* Stage 7->8 is one authored portal cut in every mode. The sewer gate already swallowed
-         the ship before these results; confirming them goes straight to Stage 8's card, which
-         hands to drawL78Entry. It deliberately bypasses outbound terrain and the campaign hub. */
-      else if(run.stage===7){ run._l78Entry=1; beginStage(8); }
+      /* Campaign returns to its map after the Warden escape. Stage 8 keeps the rift-arrival latch
+         until the player deliberately launches that node. Arcade has no campaign map, so it
+         continues directly while preserving the same Stage 8 entrance cinematic. */
+      else if(run.stage===7){
+        if(run.mode==='campaign'&&typeof campaign!=='undefined'){
+          campaign.unlockedMax=Math.max(campaign.unlockedMax||1,8);campaign.justUnlocked=8;campaign._l78Pending=1;
+          if(typeof campSuspend==='function')campSuspend();
+          if(typeof openStageSelect==='function')openStageSelect(8,{unlock:8});else{run._l78Entry=1;beginStage(8);}
+        }else{run._l78Entry=1;beginStage(8);}
+      }
       else if(typeof RACE_AFTER!=='undefined' && RACE_AFTER[run.stage] && rollRivalEncounter()){ startRivalSequence(); }
       else if(run.mode==='arcade'){
         if(typeof outboundStart==='function'){ outboundStart(run.stage); setState(GS.OUTBOUND); }
@@ -50128,83 +51766,174 @@ function drawGameOver(dt){
   if(stateT>1.2&&(Input.tap('enter')||Input.mouse.down)){ setState(GS.TITLE); menuIndex=0; Audio.startMusic('title'); }
 }
 
-/* VICTORY */
-function drawVictory(dt){
-  // ===== ENDING: credits roll over an endless terrain flyover — no fade to black =====
-  drawVictory._scroll=(drawVictory._scroll||0)+dt*170;
-  drawVictory._t=(drawVictory._t||0)+dt;
-  const t=drawVictory._t;
-  // cycle through every stage's terrain, ~9s each, crossfading between them
-  const terrKeys=['terr_grass','terr_desert','terr_ice','terr_road','terr_war'];
-  const SEG=9, seg=Math.floor(t/SEG)%terrKeys.length, segT=(t%SEG)/SEG;
-  const nxt=(seg+1)%terrKeys.length;
-  function tile(key,alpha){
-    const im=(typeof XART!=='undefined'&&XART.rdy(key))?XART.get(key):null;
-    if(!im) return false;
-    const th=VW*(im.naturalHeight/im.naturalWidth), off=drawVictory._scroll%th;
-    ctx.save(); ctx.globalAlpha=alpha;
-    for(let y=-th+off; y<VH; y+=th) ctx.drawImage(im,0,y,VW,th);
-    ctx.restore(); return true;
-  }
-  let drew=tile(terrKeys[seg],1);
-  if(segT>0.85) drew=tile(terrKeys[nxt],(segT-0.85)/0.15)||drew;
-  if(!drew && !drawAnimTerrain(ASSETS.water, drawVictory._scroll, 1.4)){ ctx.fillStyle='#0a1520'; ctx.fillRect(0,0,VW,VH); }
-  // speed streaks
-  ctx.save(); ctx.globalAlpha=0.22; ctx.strokeStyle='#ffffff'; ctx.lineWidth=1.2;
-  for(let i=0;i<8;i++){ const sx=(i*61+drawVictory._scroll*2.2)%(VW+60)-30; ctx.beginPath(); ctx.moveTo(sx,0); ctx.lineTo(sx-8,VH); ctx.stroke(); }
-  ctx.restore();
-  // the player's ship, cruising with a gentle sway
+/* ============================================================
+   PILOT ENDINGS + THE SURVIVOR (0902)
+
+   The old victory state opened on a generic terrain/credits loop and still announced that only
+   five stages had been cleared. The campaign now ends as a story: the selected pilot restores
+   order, a missed symbiote fragment escapes from the HQ dish, the Space Federation warns Earth,
+   and a deliberately shadowed sequel warform attacks the camera. All cinematic text uses the
+   dialogue face. The restoration shot uses each pilot's authored rear-three-quarter ship art so
+   the departure reads as a real climb away from the camera instead of a top-down gameplay frame. */
+const VICTORY_PILOT_ENDINGS={
+  axel:{head:'AXEL - COMMAND RESTORED',body:'FURY HQ, this is Axel. The skies are clear. Bring every defense system back online. We rebuild now.'},
+  decker:{head:'DECKER - CLEAN SIGNAL',body:'The virus command lattice is severed. Restoring clean control sector by sector. Nothing hostile gets back in.'},
+  maverick:{head:'MAVERICK - CONTRACT COMPLETE',body:'Target network is dead and the planet is still standing. Tell the accountants Venom Strike delivered.'},
+  freezer:{head:'FREEZER - SYSTEMS STABLE',body:'Core temperatures are stable and the infected systems are thawing clean. Order is coming back online.'},
+  juggernaut:{head:'JUGGERNAUT - WORLD SAVED',body:'Every hostile system is down! Somebody tell Earth the Juggernaut just put the whole world back on its feet!'},
+  yuri:{head:'YURI - MANUAL CONTROL RESTORED',body:'Air traffic, power grids and defense networks are responding again. We got them all back.'},
+  lizzie:{head:'LIZZIE - DEFENSE GRID SECURED',body:'Defense grid is ours again. Civilian routes are clear. Let us make sure this never happens twice.'},
+  falva:{head:'FALVA - THE LINE HELD',body:'The last evacuation lane is open and every surviving pilot is coming home. We held the line.'},
+  cole:{head:'COLE - AIRSPACE CLEAR',body:'Last clanker is scrap. Airspace is ours, systems are clean, and Earth gets another sunrise. Not bad.'}
+};
+const VICTORY_DISH_AT=8.4, VICTORY_WARNING_AT=15.8, VICTORY_SPACE_AT=22.8,
+      VICTORY_STINGER_AT=29.3, VICTORY_CARD_AT=32.6;
+const VICTORY_PILOT_ORDER=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
+function victoryRearView(){return 7;}
+function victoryEndingKeys(){
   const pk=(typeof _pilotKey==='function')?_pilotKey():'axel';
-  const shx=VW/2+Math.sin(t*0.5)*26, shy=VH*0.74+Math.sin(t*0.9)*8;
-  if(typeof XART!=='undefined' && XART.rdy('ship_'+pk)){ const im=XART.get('ship_'+pk); const w=42,h=w*(im.naturalHeight/im.naturalWidth);
-    ctx.save(); ctx.shadowColor='#ffd36b'; ctx.shadowBlur=8; ctx.drawImage(im,shx-w/2,shy-h/2,w,h); ctx.restore(); }
-  // ---- scrolling credits ----
-  const lines=[
-    ['VICTORY!',22,'#ffd24a'],
-    ['THE FURY IS UNLEASHED.',11,'#cfd6e0'],
-    ['ALL 5 STAGES CLEARED.',11,'#cfd6e0'],
-    ['',0,''],
-    ['FINAL SCORE  '+pad(run.score,8),14,'#ffd36b'],
-    ['DIFFICULTY: '+DIFF.name,10,'#9aa0aa'],
-    ['',0,''],['',0,''],
-    ['BULLETS OF FURY',18,'#ffd24a'],
-    ['',0,''],
-    ['COLEFORGE STUDIOS',14,'#eaf2ff'],
-    ['',0,''],
-    ['DESIGN',10,'#8b919c'],['MIKE',13,'#eaf2ff'],
-    ['',0,''],
-    ['ENGINE',10,'#8b919c'],['COLEFORGE PHOENIX ENGINE',12,'#eaf2ff'],
-    ['',0,''],
-    ['ART',10,'#8b919c'],['COLEFORGE',13,'#eaf2ff'],
-    ['',0,''],
-    ['MUSIC',10,'#8b919c'],['COLEFORGE AUDIO',13,'#eaf2ff'],
-    ['',0,''],
-    ['PILOTS',10,'#8b919c'],
-    ['AXEL \u00b7 MAVERICK \u00b7 YURI \u00b7 DECKER',12,'#eaf2ff'],
-    ['JUGGERNAUT \u00b7 FREEZER \u00b7 COLE',12,'#eaf2ff'],
-    ['',0,''],['',0,''],
-    ['RAIL SHOOTER EDITION',11,'#9aa0aa'],
-    ['',0,''],['',0,''],
-    ['THANK YOU FOR PLAYING',16,'#ffd24a']
-  ];
-  const LH=30, total=lines.length*LH+VH;
-  const roll=Math.max(0,(t-1.5)*26)%total;   // loops forever
-  ctx.save(); ctx.textAlign='center'; ctx.shadowColor='rgba(0,0,0,0.85)'; ctx.shadowBlur=5;
-  const art=ASSETS.stageArt&&ASSETS.stageArt['2'];
-  lines.forEach(function(l,i){
-    if(!l[0]) return;
-    const y=VH+i*LH-roll;
-    if(y<-30||y>VH+30) return;
-    const a=clamp(Math.min((y+20)/60,(VH-y+20)/60),0,1);
-    ctx.globalAlpha=a;
-    if(typeof msgText==='function'){ msgText(l[0],VW/2,y,Math.max(10,l[1]),l[2],0.85,ctx.globalAlpha,0.08); }
-    else { ctx.fillStyle=l[2]; ctx.font=(l[1]>=13?'bold ':'')+l[1]+'px "BOFmil", monospace'; ctx.fillText(l[0],VW/2,y); }
-  });
+  return ['cinend_hq_restored','cinend_satellite_dish','cinend_symbiote_survivor',
+          'cinend_bof2_shadow','cinend_deep_space','cut_furyhq_command_center',cinShipKey(pk,victoryRearView(pk))];
+}
+function victoryEndingWarm(){
+  if(typeof XART==='undefined')return false;
+  for(const k of victoryEndingKeys()){
+    if(XART._touch&&XART._src&&XART._src[k])XART._touch(k);else XART.rdy(k);
+  }
+  if(typeof bmfReady==='function')bmfReady('dialogue');return true;
+}
+function victoryEndingReady(){
+  if(typeof XART==='undefined')return false;
+  const art=victoryEndingKeys().every(k=>XART.rdy(k));
+  const face=(typeof bmfReady!=='function')||bmfReady('dialogue');
+  return art&&face;
+}
+function victorySprite(key,x,y,h,alpha,rot,shadow){
+  if(typeof XART==='undefined'||!XART.rdy(key))return false;
+  const raw=XART.get(key),im=(shadow&&typeof xartTint==='function')?(xartTint(key,'#000000',shadow)||raw):raw;
+  const w=h*(raw.naturalWidth/raw.naturalHeight);
+  ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.translate(x,y);if(rot)ctx.rotate(rot);
+  ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
+}
+function victoryCaption(head,body,W,H,alpha){
+  if(typeof campaignIntroCaption==='function')campaignIntroCaption({head:head,body:body},W,H,alpha==null?1:alpha);
+}
+function victoryRestoration(t,W,H,pk){
+  if(!cinCover('cinend_hq_restored',W,H,.47+.025*Math.sin(t*.16)))cinBackdrop('sky',t,W,H);
+  /* Clean control pulses return to the base a sector at a time. */
+  ctx.save();ctx.globalCompositeOperation='screen';ctx.strokeStyle='#54ff9a';ctx.lineWidth=1;
+  for(let i=0;i<3;i++){
+    const p=(t*.34+i*.31)%1,r=8+p*52;ctx.globalAlpha=(1-p)*.24;
+    ctx.beginPath();ctx.arc(W*(.78+i*.028),H*.29,r,0,Math.PI*2);ctx.stroke();
+  }
   ctx.restore();
-  // return prompt appears after the roll has cycled once; the flight itself never ends
-  if(t>6 && (Math.floor(t*1.4)%2)){ ctx.save(); ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace';
-    ctx.shadowColor='#000'; ctx.shadowBlur=4; ctx.font='9px "BOFmil", monospace'; ctx.fillText('PRESS ENTER TO RETURN TO TITLE',VW/2,VH-12); ctx.restore(); }
-  if(t>3 && (Input.tap('enter')||Input.mouse.down)){ drawVictory._t=0; drawVictory._scroll=0; setState(GS.TITLE); menuIndex=0; Audio.startMusic('title'); }
+  /* Hold the pilot in the dedicated straight-behind hero view, then climb and shrink into the
+     restored sky. This keeps the camera at engine height instead of reverting to top-down art. */
+  const rv=victoryRearView(pk),take=clamp((t-4.35)/3.45,0,1),e=take*take*(3-2*take),
+        bob=Math.sin(t*2.2)*3*(1-take),x=W*.5+Math.sin(t*.72)*W*.008*(1-take),
+        y=lerp(H*.60,H*.09,e)+bob,h=lerp(H*.43,H*.055,e),aShip=1-clamp((take-.94)/.06,0,1);
+  cinDrawShip(pk,rv,x,y,h,false,aShip,0);
+  const E=VICTORY_PILOT_ENDINGS[pk]||VICTORY_PILOT_ENDINGS.axel;
+  const a=Math.min(clamp(t/.34,0,1),clamp((VICTORY_DISH_AT-t)/.48,0,1));
+  victoryCaption(E.head,E.body,W,H,a);
+}
+function victoryDish(t,W,H,S){
+  const q=t-VICTORY_DISH_AT;
+  if(!cinCover('cinend_satellite_dish',W,H,.58+.035*Math.sin(q*.10)))cinBackdrop('darksky',q,W,H);
+  if(q<4.75){
+    const crawl=clamp(q/4.1,0,1),x=lerp(W*.64,W*.735,crawl)+Math.sin(q*5)*3,
+          y=lerp(H*.48,H*.32,crawl)+Math.cos(q*4)*2,h=H*(.105+.010*Math.sin(q*6));
+    victorySprite('cinend_symbiote_survivor',x,y,h,1,-.08+.10*Math.sin(q*4),0);
+  }else{
+    const p=clamp((q-4.75)/1.55,0,1),e=p*p,x=lerp(W*.735,-W*.13,e),y=lerp(H*.32,-H*.18,e),h=lerp(H*.12,H*.045,p);
+    ctx.save();ctx.lineCap='round';ctx.strokeStyle='rgba(0,3,1,'+(.86*(1-p)).toFixed(3)+')';ctx.lineWidth=Math.max(2,H*.013*(1-p));
+    ctx.beginPath();ctx.moveTo(W*.735,H*.32);ctx.lineTo(x,y);ctx.stroke();
+    ctx.strokeStyle='rgba(82,255,108,'+(.34*(1-p)).toFixed(3)+')';ctx.lineWidth=Math.max(1,H*.0026*(1-p));ctx.stroke();ctx.restore();
+    victorySprite('cinend_symbiote_survivor',x,y,h,1,p*-1.8,0);
+    if(!S.launch&&q>=4.78){S.launch=1;try{const f=Audio.SFX&&(Audio.SFX.warpGate||Audio.SFX.thruster);if(f)f();}catch(_veLaunch){}}
+  }
+  if(!S.charge&&q>=4.25){S.charge=1;try{if(Audio.SFX&&Audio.SFX.bossWeaponCharge)Audio.SFX.bossWeaponCharge();}catch(_veCharge){}}
+  if(q<4.55){
+    const a=Math.min(clamp(q/.32,0,1),clamp((4.55-q)/.38,0,1));
+    victoryCaption('THE FINAL BATTLE WAS OVER...','But a piece of the alien symbiote survived. Hidden. Watching. Waiting.',W,H,a);
+  }
+  const cut=clamp((q-6.75)/.42,0,1);if(cut>0){ctx.fillStyle='rgba(0,0,0,'+cut.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
+}
+function victoryWarning(t,W,H,S){
+  const q=t-VICTORY_WARNING_AT;
+  if(!cinCover('cut_furyhq_command_center',W,H,.50))cinBackdrop('darksky',q,W,H);
+  ctx.save();ctx.fillStyle='rgba(1,5,12,.48)';ctx.fillRect(0,0,W,H);ctx.globalCompositeOperation='screen';
+  for(let i=0;i<10;i++){ctx.globalAlpha=.07+(i%3)*.025;ctx.fillStyle=i%2?'#48d9ff':'#ff273d';ctx.fillRect(0,(i*47+q*61)%H,W,1);}
+  ctx.restore();
+  const second=q>=3.15,local=second?q-3.15:q,dur=second?3.85:3.15;
+  const a=Math.min(clamp(local/.28,0,1),clamp((dur-local)/.34,0,1));
+  if(second){
+    if(!S.fed&&q>=3.15){S.fed=1;try{uiBlipRep();}catch(_veFed){}}
+    victoryCaption('SPACE FEDERATION - PRIORITY CHANNEL','Something BIG has happened beyond the outer system. If we do not stop it, it is heading for Earth - fast.',W,H,a);
+  }else victoryCaption('FURY COMMAND','Pilot, we just received an emergency transmission from the Space Federation.',W,H,a);
+}
+function victorySpaceLaunch(t,W,H,S){
+  const q=t-VICTORY_SPACE_AT;if(!cinCover('cinend_deep_space',W,H,.5))cinBackdrop('space',q*2.4,W,H);
+  if(!S.camera&&q>=.05){S.camera=1;try{const f=Audio.SFX&&(Audio.SFX.gravityTransform||Audio.SFX.warpGate||Audio.SFX.thruster);if(f)f();}catch(_veCamera){}}
+  /* The camera is already beyond the atmosphere. Accelerating streaks are composited over a
+     genuinely black stellar plate, never the old blue sky gradient. */
+  const cx=W*.5,cy=H*.48,boost=28+q*q*95;
+  ctx.save();ctx.lineCap='round';
+  for(let i=0;i<76;i++){
+    const a=i*2.399963,seed=(i*67.31)%220,r=(seed+q*boost*(1+(i%4)*.16))%(Math.max(W,H)*.72),len=2+q*q*(1+i%3)*2.2;
+    const x=cx+Math.cos(a)*r,y=cy+Math.sin(a)*r*.72;ctx.strokeStyle=i%9===0?'#9fe7ff':'#ffffff';ctx.globalAlpha=.32+(i%5)*.1;
+    ctx.lineWidth=1+(i%3)*.35;ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x-Math.cos(a)*len,y-Math.sin(a)*len*.72);ctx.stroke();
+  }
+  ctx.restore();
+  if(q<2.7)victoryCaption('UNKNOWN CONTACT','Trajectory confirmed. Deep-space approach vector: EARTH.',W,H,Math.min(clamp(q/.3,0,1),clamp((2.7-q)/.35,0,1)));
+  if(q>=5.55&&!S.silence){S.silence=1;try{if(Audio.fadeOutMusic)Audio.fadeOutMusic(.42);else Audio.stopMusic();}catch(_veSilence){}}
+}
+function victoryStinger(t,W,H,S){
+  const q=t-VICTORY_STINGER_AT;ctx.fillStyle='#010205';ctx.fillRect(0,0,W,H);
+  if(!cinCover('cinend_deep_space',W,H,.5))cinBackdrop('space',q*.18,W,H);
+  const p=clamp((q-.38)/1.16,0,1),e=p*p*p,amp=(1-p)*12,shx=Math.sin(q*47)*amp,shy=Math.cos(q*39)*amp*.55;
+  if(q>.18){
+    const h=lerp(H*.08,H*1.62,e),a=clamp((q-.18)/.36,0,1);
+    victorySprite('cinend_bof2_shadow',W/2+shx,H*.50+shy,h,a,Math.sin(q*8)*.015,.90);
+    /* Preserve only a restrained eye/edge glint so the sequel mech remains a shadow preview. */
+    ctx.save();ctx.globalCompositeOperation='screen';ctx.globalAlpha=.08+.09*p;
+    victorySprite('cinend_bof2_shadow',W/2+shx,H*.50+shy,h,1,Math.sin(q*8)*.015,0);ctx.restore();
+  }
+  if(!S.scream&&q>=1.06){S.scream=1;try{if(typeof s7WardenMechSound==='function')s7WardenMechSound('scream');else if(Audio.SFX&&Audio.SFX.death)Audio.SFX.death();}catch(_veScream){}}
+  const hit=1-Math.abs(q-1.10)/.16;if(hit>0){ctx.fillStyle='rgba(255,238,238,'+(clamp(hit,0,1)*.72).toFixed(3)+')';ctx.fillRect(0,0,W,H);}
+  const out=clamp((q-2.12)/.44,0,1);if(out>0){ctx.fillStyle='rgba(0,0,0,'+out.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
+}
+function victoryFinalCard(t,W,H){
+  const q=t-VICTORY_CARD_AT;ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);msgFaceUse('dialogue');
+  const a=clamp(q/.48,0,1);msgText('THE END',W/2,H*.30,Math.max(24,H*.064),'#dce7ff',1,a,.08);
+  if(q>.95){const b=clamp((q-.95)/.55,0,1);msgText('BULLETS OF FURY,',W/2,H*.49,Math.max(28,H*.072),'#ffe082',1,b,.05);}
+  if(q>1.75){const c=clamp((q-1.75)/.55,0,1);msgText('WILL RETURN!',W/2,H*.61,Math.max(18,H*.046),'#ff4b55',1,c,.065);}
+  if(q>3.0){msgText('FINAL SCORE  '+pad(run.score,8),W/2,H*.75,Math.max(10,H*.024),'#cfd6e0',0,clamp((q-3)/.4,0,1),.07);}
+  if(q>5.0&&Math.floor(q*2)%2)msgText('PRESS ENTER TO RETURN TO TITLE',W/2,H-16,Math.max(9,H*.020),'#9fb0cd',0,.86,.075);
+  msgFaceUse(null);
+}
+function drawVictory(dt){
+  const W=cutsceneViewWidth(),H=VH,pk=(typeof _pilotKey==='function')?_pilotKey():'axel',S=drawVictory._sfx||(drawVictory._sfx={});
+  victoryEndingWarm();ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
+  /* Never spend story time while required art is still decoding. Without this gate, a cold launch
+     could show the pilot's first caption over a blank gradient for several seconds, then pop the
+     restored HQ and aircraft into the middle of the shot. */
+  if(!drawVictory._ready){
+    if(!victoryEndingReady())return;
+    drawVictory._ready=true;drawVictory._t=0;drawVictory._scroll=0;
+  }
+  drawVictory._t=(drawVictory._t||0)+dt;drawVictory._scroll=(drawVictory._scroll||0)+dt;
+  const t=drawVictory._t;
+  if(t<VICTORY_DISH_AT)victoryRestoration(t,W,H,pk);
+  else if(t<VICTORY_WARNING_AT)victoryDish(t,W,H,S);
+  else if(t<VICTORY_SPACE_AT)victoryWarning(t,W,H,S);
+  else if(t<VICTORY_STINGER_AT)victorySpaceLaunch(t,W,H,S);
+  else if(t<VICTORY_CARD_AT)victoryStinger(t,W,H,S);
+  else victoryFinalCard(t,W,H);
+  const click=!!Input.mouse.down&&!drawVictory._md;drawVictory._md=!!Input.mouse.down;
+  if(t>VICTORY_CARD_AT+5 && (Input.tap('enter')||click)){
+    drawVictory._t=0;drawVictory._scroll=0;drawVictory._sfx={};drawVictory._ready=false;setState(GS.TITLE);menuIndex=0;Audio.startMusic('title');
+  }
 }
 
 /* EXITED */
@@ -50223,7 +51952,7 @@ function drawExited(){
 let last=performance.now();
 function loop(now){
   if(Input.pollGamepad) Input.pollGamepad();
-  let dt=(now-last)/1000; last=now;
+  const rawDt=(now-last)/1000;let dt=rawDt; last=now;
   /* CLAMP BOTH ENDS (drop 0724df). This was Math.min(dt,0.05) with NO lower bound, so a single
      negative frame permanently poisoned stateT — and stateT never recovers, because it accumulates.
      Every state gate that waits on `t >= X` then fails FOREVER: the loading screen never calls
@@ -50235,6 +51964,10 @@ function loop(now){
      the whole class. */
   dt=Math.max(0, Math.min(dt,0.05)); stateT+=dt;
   if(!(stateT>=0)) stateT=0;                 // belt and braces: never let it go bad at all
+  try{renderPerformanceTick(rawDt);}catch(_perfTick){}
+  /* Bounded stage preloading runs beside cards/transitions, never from an enemy's first draw.
+     Three concurrent decodes keep a laptop responsive while the live transition continues. */
+  try{if(typeof stageLoadTick==='function')stageLoadTick();}catch(_slTick){}
   /* ⚠ THIS LINE IS WHY THE INIT DEFAULT NEVER MATTERED (drop 0813b). It ran EVERY FRAME and set
      smoothing back on, so the `=false` at init was overwritten before the first backdrop was ever
      drawn — and the only art that escaped was the handful of blits that set the flag themselves.
@@ -50799,6 +52532,36 @@ if(Snd){
 
 /* CONTINUE — 10s countdown. VO says "continue?" then counts 10..1 in sync with the on-screen
    number, then "GAME" + over.mp3 at zero. Continuing cancels any pending VO. */
+let _riftFallback=null;
+function riftFallbackStart(){
+  if(state===GS.RIFTFALLBACK)return;
+  if(typeof _stopContinueVO==='function')_stopContinueVO();
+  _riftFallback={done:false};eBullets.length=0;pBullets.length=0;
+  try{if(typeof XART!=='undefined'&&XART._touch){for(let i=0;i<8;i++)XART._touch('nfx_s5gate96_'+i);for(let i=0;i<16;i++)XART._touch('nfx_warp_tunnel_'+i);}}catch(_rfw){}
+  try{if(Audio&&Audio.warpAmbienceStart)Audio.warpAmbienceStart(.25);}catch(_rfa){}
+  setState(GS.RIFTFALLBACK);
+}
+function drawRiftFallback(dt){
+  drawWorld(0);const p=clamp(stateT/2.45,0,1),ease=p*p*(3-2*p),cx=VW/2,cy=VH*.52;
+  ctx.save();ctx.fillStyle='rgba(1,2,12,'+(.18+.44*ease)+')';ctx.fillRect(0,0,VW,VH);ctx.restore();
+  if(typeof warpFxDraw==='function')warpFxDraw(.28+.72*ease,stateT*2.3,true);
+  const key='nfx_s5gate96_'+(Math.floor(stateT*13)%8);
+  if(typeof XART!=='undefined'&&XART.rdy(key)){
+    const im=XART.get(key),s=96+ease*210;ctx.save();ctx.translate(cx,cy);ctx.rotate(stateT*.42);
+    ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.72+.28*Math.sin(stateT*8);ctx.shadowColor='#84e9ff';ctx.shadowBlur=28;
+    ctx.drawImage(im,-s/2,-s/2,s,s);ctx.restore();
+  }
+  if(typeof msgText==='function')msgText('RIFT COLLAPSE - RETURNING TO STAGE 5',VW/2,VH*.15,14,null,0,1,.055);
+  try{if(Audio&&Audio.warpAmbienceLevel)Audio.warpAmbienceLevel(ease);}catch(_rfl){}
+  if(p>.80){ctx.fillStyle='rgba(255,255,255,'+clamp((p-.80)/.20,0,1)+')';ctx.fillRect(0,0,VW,VH);}
+  if(stateT>=2.55&&!_riftFallback.done){
+    _riftFallback.done=true;try{if(Audio&&Audio.warpAmbienceStop)Audio.warpAmbienceStop();}catch(_rfs){}
+    run.contUsed=0;run.lives=DIFF.startLives;run.bombs=Math.max(run.bombs,DIFF.startBombs);run._wbag=[];
+    player.dead=false;player.deathT=0;player.reset();player.invuln=160;eBullets.length=0;pBullets.length=0;
+    /* No unlock mutation occurs here. The only grant is bossDie() on Stage 9. */
+    beginStage(5);
+  }
+}
 function _stopContinueVO(){
   drawContinue._vo=false;
   // silence the number-tick VO channel if it's mid-count
@@ -50846,6 +52609,7 @@ function drawContinue(dt){
        Furious returns 1 life rather than a full bar. */
     if(DIFF.continues>=0 && (run.contUsed||0)>=DIFF.continues){
       // out of continues — this run is over, no matter how much the player wants it
+      if(run.stage===9){riftFallbackStart();return;}
       setState(GS.GAMEOVER); return;
     }
     run.contUsed=(run.contUsed||0)+1;

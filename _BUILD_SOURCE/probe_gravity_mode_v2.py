@@ -128,8 +128,8 @@ def main():
         canvas.screenshot(path=str(OUT / "08_shadow_orb_flight.png"))
 
         # Volley seed visibly separates, then each missile gets its own heading and weave phase.
-        volley = page.evaluate("""() => {pBullets.length=0;run.spaceWeapon=2;run.spaceLevels[2]=5;run.wlevel=5;
-          spaceVolleyFire();return {name:spaceWeaponName(),icon:spaceWeaponIconKey(),seed:pBullets[0].kind};}""")
+        volley = page.evaluate("""() => {pBullets.length=0;run.spaceWeapon=0;run.spaceLevels[2]=5;run.wlevel=5;
+          run._spaceVolleyCd=0;spaceVolleyAutoTick(1/60,true);return {name:'VOLLEY MISSILES',icon:spaceVolleyIconKey(),seed:pBullets[0].kind};}""")
         page.wait_for_timeout(260)
         canvas.screenshot(path=str(OUT / "09_volley_missiles_split.png"))
         volley_state = page.evaluate("""() => ({count:pBullets.filter(b=>b.kind==='spaceVolley').length,

@@ -1,0 +1,54 @@
+{
+  "assets": [
+    {
+      "asset_id": "c5998874-1843-44d2-977a-1cd265ec4bc3",
+      "sha12": "d232edbb3a59",
+      "label": "Toxic Portal Warden source crawl atlas"
+    },
+    {
+      "asset_id": "7e8870d9-7875-4197-8b71-82b22a7d83b0",
+      "sha12": "c7ec64fbe373",
+      "label": "Toxic Portal Warden smooth eight-frame crawl"
+    },
+    {
+      "asset_id": "6ae83b63-c9b0-4c03-b3b8-9747a6eb0f15",
+      "sha12": "3873e136950a",
+      "label": "Toxic Portal Warden alternating cannon barrage"
+    },
+    {
+      "asset_id": "de5fb84e-e7f4-47c9-9977-c938a26cfd10",
+      "sha12": "5a750a45aef3",
+      "label": "Toxic Portal Warden reactor rail charge"
+    },
+    {
+      "asset_id": "fed049ed-2004-519f-bff7-b2dc85c8a8da",
+      "sha12": "8656dbe28e07",
+      "label": "Toxic Portal Warden pressure shell"
+    },
+    {
+      "asset_id": "08137966-02b6-579b-85b1-eaef1192772a",
+      "sha12": "4214f677f5d6",
+      "label": "Toxic Portal Warden portal mine"
+    },
+    {
+      "asset_id": "09826576-adf8-44be-b4a4-2521c22c66fd",
+      "sha12": "5614a0ed5854",
+      "label": "Toxic Portal Warden rift rail spear"
+    },
+    {
+      "asset_id": "7098820d-6924-4bb5-b5c2-81438f921d15",
+      "sha12": "f83931232fcf",
+      "label": "Toxic Portal Warden rear-up mechanical roar"
+    },
+    {
+      "asset_id": "47bd3cb3-a112-45b4-bd53-75fffd91de35",
+      "sha12": "b95c0b3bc1f7",
+      "label": "Toxic Portal Warden crippled front-leg crawl"
+    },
+    {
+      "asset_id": "ed50b924-9092-462c-ab0c-b58b72656ad7",
+      "sha12": "38ebf09b4318",
+      "label": "Toxic Portal Warden final last stand"
+    }
+  ]
+}

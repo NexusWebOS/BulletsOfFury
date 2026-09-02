@@ -1,0 +1,28 @@
+{
+  "contract": {
+    "state": "campaignintro",
+    "introState": "campaignintro",
+    "beatCount": 7,
+    "closeViewsRegistered": "assets/game/cinematic_campaign/exteriors_generated_official/03_fury_hq_jungle_gate_official_generated.png",
+    "aerialOnlyRoute": true,
+    "topDownApproaches": true,
+    "sevenRoundFinale": true,
+    "sevenShotSounds": 7,
+    "randomPilot": "maverick",
+    "freshRunRoutesToPrologue": true,
+    "dialogueReady": true,
+    "ready": true,
+    "canvas": [
+      1590,
+      1024
+    ]
+  },
+  "skip": {
+    "called": 1,
+    "state": "stagesel",
+    "map": true,
+    "boot": 1
+  },
+  "errors": [],
+  "missing": []
+}

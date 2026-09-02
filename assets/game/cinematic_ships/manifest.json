@@ -15,6 +15,16 @@
   "edge_contract": "decontaminated alpha; transparent RGB is zero; no matte or halo",
   "generation": "built-in ImageGen reference workflow followed by deterministic chroma decontamination and frame extraction",
   "continuity_repair_count": 8,
+  "supplemental_views": [
+    {
+      "id": "07_center_rear",
+      "description": "straight-behind stern elevation at aircraft height for the ending fly-away",
+      "count": 9,
+      "path_template": "assets/game/cinematic_ships/<pilot>/cutouts_native/07_center_rear.png",
+      "generation": "built-in ImageGen identity references plus boss-camera pose reference; built-in alpha extraction",
+      "background": "transparent RGBA"
+    }
+  ],
   "continuity_repairs": [
     {
       "pilot": "falva",

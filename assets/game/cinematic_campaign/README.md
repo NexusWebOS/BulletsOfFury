@@ -9,6 +9,7 @@ This pack establishes the official Earth Division branding, exterior geography, 
 - Nine reusable native-resolution seated RGBA pilot cutouts
 - Seven baked lounge/alliance story frames
 - Nine baked individual pilot campaign introductions
+- Five production ending assets: restored-dawn HQ, damaged satellite dish, tar-black RGBA ooze survivor, reference-locked RGBA BOF2 shadow mech and a dedicated black deep-space starfield
 - Contact sheets and edge-QA previews
 - Reproducible built-in ImageGen prompt specifications in `GENERATION_PROMPTS.md`
 
@@ -29,6 +30,8 @@ This pack establishes the official Earth Division branding, exterior geography, 
 - `exteriors_generated_official/` contains the active island aerial, beach approach and concealed jungle gate. Every plate carries the same generated Earth Division identity as a physical part of the headquarters architecture.
 - `branding/` and `exteriors/` contain the retired first-pass flat-panel treatment and are retained only as legacy source material.
 - `seated_poses/` contains the reusable identity-locked cutouts used for the lounge scenes.
+- `ending_generated/` contains the active victory-cinematic plates and transparent sequel-stinger creatures. The active V2 survivor is a black ooze-virus fragment with a dim green core; the V2 sequel silhouette preserves the round spiked hull, green slit-eye, two articulated arms and three-prong claws of the supplied model. The enemy approach uses the dedicated black starfield rather than the generic blue space/sky gradient. Runtime keys are code-owned in `assets/game.js` as `cinend_*`.
+- The selected pilot now departs FURY HQ with their existing native `04_rear_left_3q` or `05_rear_right_3q` sprite. The ship holds in rear view, climbs, banks and shrinks into the distance; no top-down gameplay frame is used for this fly-off.
 
 ## Production notes
 

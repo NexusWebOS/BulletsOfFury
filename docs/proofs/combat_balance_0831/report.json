@@ -41,11 +41,22 @@
     "lizzieSpeed": 7.875,
     "laserNative": true
   },
+  "firewaveGate": {
+    "stagePressure": true,
+    "bossSequence": false,
+    "bossWave": false,
+    "cooldown": 999
+  },
+  "level2Slide": {
+    "maxStep": 1.4761594820173514,
+    "travel": 248,
+    "phase": "pass"
+  },
   "rollLive": {
     "y": 112,
     "station": 112,
     "flameOn": true,
-    "angle": 1.5707963267948966,
+    "angle": 1.2485816956574818,
     "phase": "roll"
   },
   "rollGap": {
@@ -66,9 +77,120 @@
     "spin": true,
     "shootable": false
   },
+  "level3Mini": {
+    "hp": 1381,
+    "maxStep": 1.3736202300385116,
+    "travel": 250,
+    "shots": 19,
+    "kinds": {
+      "s3lance": 18,
+      "s3mortar": 1
+    }
+  },
+  "level3Boss": {
+    "hp": 2967,
+    "shots": 35,
+    "kinds": {
+      "s3mortar": 29,
+      "s3lance": 6
+    },
+    "giant": 1,
+    "slideDuration": 4.35
+  },
+  "bossAudio": {
+    "route": {
+      "enemyMachineGunHeavy": {
+        "handle": true,
+        "before": 0,
+        "after": 1,
+        "immediate": {
+          "paused": false,
+          "currentTime": 0,
+          "readyState": 1,
+          "volume": 0.20400000000000001
+        }
+      },
+      "enemyHeavyLaser": {
+        "handle": true,
+        "before": 0,
+        "after": 1,
+        "immediate": {
+          "paused": false,
+          "currentTime": 0,
+          "readyState": 1,
+          "volume": 0.48960000000000004
+        }
+      },
+      "bossWeaponCharge": {
+        "handle": true,
+        "before": 1,
+        "after": 1,
+        "immediate": {
+          "paused": true,
+          "currentTime": 0,
+          "readyState": 4,
+          "volume": 0.48960000000000004
+        }
+      },
+      "shieldHitHeavy": {
+        "handle": true,
+        "before": 0,
+        "after": 1,
+        "immediate": {
+          "paused": false,
+          "currentTime": 0,
+          "readyState": 1,
+          "volume": 0.68
+        }
+      },
+      "shieldBreakCombat": {
+        "handle": true,
+        "before": 0,
+        "after": 1,
+        "immediate": {
+          "paused": false,
+          "currentTime": 0,
+          "readyState": 1,
+          "volume": 0.68
+        }
+      }
+    },
+    "playback": {
+      "enemyMachineGunHeavy": {
+        "currentTime": 0.426667,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.20400000000000001
+      },
+      "enemyHeavyLaser": {
+        "currentTime": 0.368474,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.48960000000000004
+      },
+      "bossWeaponCharge": {
+        "currentTime": 0.417014,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.48960000000000004
+      },
+      "shieldHitHeavy": {
+        "currentTime": 0.370579,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.68
+      },
+      "shieldBreakCombat": {
+        "currentTime": 0.370582,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.68
+      }
+    }
+  },
   "laserAudio": {
     "paused": false,
-    "currentTime": 0.6148,
+    "currentTime": 0.593798,
     "readyState": 4,
     "on": true,
     "volume": 0.5032

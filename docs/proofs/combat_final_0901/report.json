@@ -1,0 +1,55 @@
+{
+  "state": {
+    "pilot": "lizzie",
+    "stage": 7,
+    "boss": "TOXIC PORTAL WARDEN",
+    "warden": "burst",
+    "stage5Route": [
+      0.28,
+      0.54,
+      0.76,
+      0.23,
+      0.54,
+      0.29,
+      0.69,
+      0.18
+    ],
+    "stage6": {
+      "shield": false
+    },
+    "assets": [
+      {
+        "k": "cfx_stage5_xeno_projectiles",
+        "ready": false
+      },
+      {
+        "k": "cfx_stage6_carrier_shield",
+        "ready": false
+      },
+      {
+        "k": "cfx_stage7_warden_walk",
+        "ready": false
+      },
+      {
+        "k": "cfx_stage7_warden_teleport",
+        "ready": false
+      },
+      {
+        "k": "cfx_stage7_warden_projectiles",
+        "ready": false
+      }
+    ]
+  },
+  "shieldResult": {
+    "before": 1
+  },
+  "bayResult": {
+    "before": 320,
+    "after": 205,
+    "shieldUp": false,
+    "window": 28.933399999999992
+  },
+  "errors": [],
+  "missing": [],
+  "recording": "docs/proofs/combat_final_0901/lizzie_stage5_7_combat_final.webm"
+}

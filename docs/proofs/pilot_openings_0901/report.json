@@ -1,0 +1,546 @@
+{
+  "branch": [
+    {
+      "pilot": "axel",
+      "started": true,
+      "continued": false,
+      "selected": true,
+      "cast": [
+        "axel",
+        "freezer"
+      ],
+      "destination": "hq",
+      "beats": 5,
+      "dialogue": 3,
+      "dialogueFace": true,
+      "pilotReady": true,
+      "rows": [
+        {
+          "who": "axel",
+          "text": "You okay over there, bud? What the hell was that back there?!",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 400.0000000000001,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "freezer",
+          "text": "No idea, man. It's like they all started acting like they had minds of their own and took over out of nowhere! We've got to warn the others, but our comm systems are down. The bastards probably took our whole operation down!",
+          "H": 16,
+          "lines": 3,
+          "height": 58,
+          "room": 68.12,
+          "widest": 647.2727272727271,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "axel",
+          "text": "SH*T! We've got to get back to base, NOW!",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 276.3636363636364,
+          "width": 671.95,
+          "fits": true
+        }
+      ],
+      "failed": []
+    },
+    {
+      "pilot": "freezer",
+      "started": true,
+      "continued": false,
+      "selected": true,
+      "cast": [
+        "freezer",
+        "axel"
+      ],
+      "destination": "jungle",
+      "beats": 6,
+      "dialogue": 4,
+      "dialogueFace": true,
+      "pilotReady": true,
+      "rows": [
+        {
+          "who": "freezer",
+          "text": "Axel, you okay over there? My comm system is completely dead.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 410.1818181818182,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "axel",
+          "text": "I'm good. Whatever hit us took the whole operation dark. We need to get back to base.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 554.9090909090907,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "freezer",
+          "text": "Wait. My radar is still working. I'm picking up a strong Fury-class unit in the jungle ruins just off the coast. Maybe it's one of the others.",
+          "H": 16,
+          "lines": 2,
+          "height": 37,
+          "room": 68.12,
+          "widest": 639.2727272727268,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "axel",
+          "text": "Then we find them. Lead the way.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 215.27272727272737,
+          "width": 671.95,
+          "fits": true
+        }
+      ],
+      "failed": []
+    },
+    {
+      "pilot": "cole",
+      "started": true,
+      "continued": false,
+      "selected": true,
+      "cast": [
+        "cole"
+      ],
+      "destination": "hq",
+      "beats": 5,
+      "dialogue": 2,
+      "dialogueFace": true,
+      "pilotReady": true,
+      "rows": [
+        {
+          "who": "cole",
+          "text": "Did you think you were dealing with an amateur over here?! You're gonna have to try better than that, you clankerf**ks!",
+          "H": 16,
+          "lines": 2,
+          "height": 37,
+          "room": 68.12,
+          "widest": 654.545454545454,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "cole",
+          "text": "I hope the others are doing okay... I better head back to base and try to find them.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 531.6363636363636,
+          "width": 671.95,
+          "fits": true
+        }
+      ],
+      "failed": []
+    },
+    {
+      "pilot": "falva",
+      "started": true,
+      "continued": false,
+      "selected": true,
+      "cast": [
+        "falva",
+        "lizzie"
+      ],
+      "destination": "jungle",
+      "beats": 6,
+      "dialogue": 4,
+      "dialogueFace": true,
+      "pilotReady": true,
+      "rows": [
+        {
+          "who": "falva",
+          "text": "That was a close one! Sis, where did they even come from?!",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 376.00000000000006,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "lizzie",
+          "text": "No idea, but they picked the wrong ones, that's for sure. We've got to find the others before more show up!",
+          "H": 16,
+          "lines": 2,
+          "height": 37,
+          "room": 68.12,
+          "widest": 665.4545454545452,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "falva",
+          "text": "Our comms system seems to be down... radar still seems to be working. I'm detecting anomalies in the jungle just off the coast. Let's check it out!",
+          "H": 16,
+          "lines": 2,
+          "height": 37,
+          "room": 68.12,
+          "widest": 647.9999999999997,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "lizzie",
+          "text": "I got your back, girl. Over and out!",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 221.09090909090918,
+          "width": 671.95,
+          "fits": true
+        }
+      ],
+      "failed": []
+    },
+    {
+      "pilot": "maverick",
+      "started": true,
+      "continued": false,
+      "selected": true,
+      "cast": [
+        "maverick"
+      ],
+      "destination": "hq",
+      "beats": 4,
+      "dialogue": 2,
+      "dialogueFace": true,
+      "pilotReady": true,
+      "rows": [
+        {
+          "who": "maverick",
+          "text": "That was close... I thought I told these clowns money won't do any good in the bank if I'm dead. Why isn't HQ returning my calls either...?",
+          "H": 16,
+          "lines": 2,
+          "height": 37,
+          "room": 68.12,
+          "widest": 671.2727272727268,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "maverick",
+          "text": "Huh... that's strange. I know I'm an independent contractor and all, but part of the gig was returning to a base that's still erect. Just when I thought I was out, they pull me back in!",
+          "H": 16,
+          "lines": 2,
+          "height": 37,
+          "room": 68.12,
+          "widest": 669.8181818181815,
+          "width": 671.95,
+          "fits": true
+        }
+      ],
+      "failed": []
+    },
+    {
+      "pilot": "yuri",
+      "started": true,
+      "continued": false,
+      "selected": true,
+      "cast": [
+        "yuri"
+      ],
+      "destination": "hq",
+      "beats": 4,
+      "dialogue": 2,
+      "dialogueFace": true,
+      "pilotReady": true,
+      "rows": [
+        {
+          "who": "yuri",
+          "text": "What the...? Everyone is burning back toward HQ like the sky is falling.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 453.090909090909,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "yuri",
+          "text": "My comms are down too. Something is very wrong. I am following them.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 452.3636363636363,
+          "width": 671.95,
+          "fits": true
+        }
+      ],
+      "failed": []
+    },
+    {
+      "pilot": "juggernaut",
+      "started": true,
+      "continued": false,
+      "selected": true,
+      "cast": [
+        "juggernaut",
+        "yuri"
+      ],
+      "destination": "hq",
+      "beats": 7,
+      "dialogue": 5,
+      "dialogueFace": true,
+      "pilotReady": true,
+      "rows": [
+        {
+          "who": "juggernaut",
+          "text": "I'M THE JUGGERNAUT, B1**H!",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 184,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "yuri",
+          "text": "Thank God I found you! Any idea why the others are all flying toward HQ?",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 466.9090909090909,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "juggernaut",
+          "text": "No clue, kid! Did you try calling them?",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 239.27272727272725,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "yuri",
+          "text": "Perhaps it's just me, but the comms system appears to be down.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 413.090909090909,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "juggernaut",
+          "text": "Well... that sure isn't good... F**K! WE GOTTA GO NOW! I'M THE JUGGERNAUT!!!!!!!",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 524.3636363636367,
+          "width": 671.95,
+          "fits": true
+        }
+      ],
+      "failed": []
+    },
+    {
+      "pilot": "lizzie",
+      "started": true,
+      "continued": false,
+      "selected": true,
+      "cast": [
+        "lizzie",
+        "falva"
+      ],
+      "destination": "jungle",
+      "beats": 7,
+      "dialogue": 5,
+      "dialogueFace": true,
+      "pilotReady": true,
+      "rows": [
+        {
+          "who": "lizzie",
+          "text": "That's how you clear a sky. You still with me, sis?",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 316.36363636363643,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "falva",
+          "text": "Barely! Where did they even come from?",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 256.00000000000006,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "lizzie",
+          "text": "Doesn't matter. They picked the wrong sisters. We find the others before round two starts.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 586.9090909090905,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "falva",
+          "text": "Comms are down, but radar has an anomaly in the jungle just off the coast.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 479.27272727272725,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "lizzie",
+          "text": "Then stay on my wing. We're going in.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 240.00000000000009,
+          "width": 671.95,
+          "fits": true
+        }
+      ],
+      "failed": []
+    },
+    {
+      "pilot": "decker",
+      "started": true,
+      "continued": false,
+      "selected": true,
+      "cast": [
+        "decker",
+        "maverick"
+      ],
+      "destination": "hq",
+      "beats": 8,
+      "dialogue": 6,
+      "dialogueFace": true,
+      "pilotReady": true,
+      "rows": [
+        {
+          "who": "maverick",
+          "text": "Say, you wouldn't be able to cloak me up before these nasty hostiles show up again, would you?",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 607.2727272727271,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "decker",
+          "text": "Maybe back at base that could be possible, but right now it appears our comms system is down.",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 610.1818181818178,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "maverick",
+          "text": "Ten steps ahead of you. Any idea why the fridge at base tried to eat Larry the Janitor?",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 557.090909090909,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "decker",
+          "text": "...",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 13.09090909090909,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "maverick",
+          "text": "...",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 13.09090909090909,
+          "width": 671.95,
+          "fits": true
+        },
+        {
+          "who": "decker",
+          "text": "We need to head to base, right away!",
+          "H": 16,
+          "lines": 1,
+          "height": 16,
+          "room": 68.12,
+          "widest": 237.09090909090918,
+          "width": 671.95,
+          "fits": true
+        }
+      ],
+      "failed": []
+    }
+  ],
+  "routing": {
+    "oldTableRemoved": true,
+    "postStarted": false,
+    "postContinued": true,
+    "wrongStarted": false,
+    "wrongStageContinued": true,
+    "openingKeys": [
+      "axel",
+      "freezer",
+      "cole",
+      "falva",
+      "maverick",
+      "yuri",
+      "juggernaut",
+      "lizzie",
+      "decker"
+    ]
+  },
+  "errors": [],
+  "missing": []
+}
