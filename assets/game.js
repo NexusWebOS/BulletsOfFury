@@ -36715,6 +36715,8 @@ function drawBoot(dt){
     if(stateT>0.25 && (Input.mouse.down || anyTap())){
       drawBoot._started=true; drawBoot._ct=0; drawBoot._chimed=false;
       Audio.init(); Audio.resume(); if(BootChime) BootChime.unlock();
+      /* the sfx pool clones load here rather than at boot - see A.warmPools */
+      try{ if(typeof Snd!=='undefined' && Snd && Snd.warmPools) Snd.warmPools(); }catch(_wpg){}
     }
     return;
   }
@@ -52287,9 +52289,36 @@ const Snd=(function(){
      every shot. Arrays rotate the actual sources while preserving the old three-clone behavior
      for every untouched cue. */
   for(const name in BOFA.sfx){ const raw=BOFA.sfx[name], uris=(Array.isArray(raw)?raw:[raw]).map(_au);
-    const list=[], poolN=Math.max(3,uris.length); for(let i=0;i<poolN;i++){ const a=new window.Audio(); a.src=uris[i%uris.length]; a.preload='auto'; list.push(a); }
+    /* ONLY THE FIRST COPY OF A URL PRELOADS (drop 0902c). The pool holds at least three
+       elements so a rapid weapon cannot clip itself, and every one of them carried
+       preload='auto'. Three elements pointing at one file are created in the same tick,
+       before any cache entry exists to share, so the browser fetched the SAME sample three
+       times: 22 MB of samples on disk arrived as 67.8 MB over the wire, all of it before
+       the title screen. The clones keep their src, so the moment the first fetch lands
+       they are served from cache and overlap still works. Measured, not assumed. */
+    const list=[], poolN=Math.max(3,uris.length), _seen=Object.create(null);
+    for(let i=0;i<poolN;i++){ const a=new window.Audio(), u=uris[i%uris.length];
+      a.src=u; a.preload=_seen[u]?'none':'auto'; _seen[u]=1; list.push(a); }
     A.pools[name]={list,i:0}; }
-  for(const name in BOFA.music){ const m=new window.Audio(); m.src=_au(BOFA.music[name]); m.loop=true; m.preload='auto'; A.music[name]=m; }
+  /* MUSIC LOADS WHEN IT IS ASKED FOR, NOT AT BOOT (drop 0902c). Twenty-seven tracks, 43 MB,
+     every one of them preload='auto' - so the whole score downloaded before the title
+     screen even though exactly ONE track is ever audible at a time. startMusic calls
+     play(), which begins the fetch itself, so 'none' costs a short delay the first time a
+     track is heard and nothing after that. This is the single largest item in the boot
+     download. */
+  for(const name in BOFA.music){ const m=new window.Audio(); m.src=_au(BOFA.music[name]); m.loop=true; m.preload='none'; A.music[name]=m; }
+  /* WARM THE CLONES ONCE THE PLAYER IS PAST THE GATE (drop 0902c). The pool's 2nd and 3rd
+     elements no longer preload, which is what took 45 MB off the boot download - but that
+     leaves them at readyState 0, so the FIRST time a sound needs to overlap itself the
+     clone would have to start loading mid-shot. Called from the press-start gate, after
+     the first copy has already filled the HTTP cache, so these load from cache and cost
+     essentially nothing on the wire - the bytes move off the critical path rather than
+     being paid twice. Idempotent. */
+  A.warmPools=function(){
+    if(A._warmed) return; A._warmed=true;
+    for(const n in A.pools){ const L=A.pools[n].list;
+      for(let i=1;i<L.length;i++){ try{ L[i].preload='auto'; L[i].load(); }catch(_wp){} } }
+  };
   A.VOICE_SET={continueVO:1,countdown:1,restrictedarea:1,enemyunits:1,enemyunit:1,over:1,goodluck:1,announce:1,selectpilot:1};
 
   /* ---- TONE SHAPING (drop 0730a) -------------------------------------------
