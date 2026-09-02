@@ -6994,7 +6994,13 @@ const STAGES = [
      stage instead of finishing the game. That is why the campaign end is now counted from
      CAMPAIGN_STAGES (entries without bonus:true) rather than from the array length.
      Any future bonus stage just sets the flag and both behaviours stay correct. */
-  {n:9, name:'STAGE 9', sub:'THE VELOCITY VOID',       bg:'space',  music:'bonus',
+  /* Mike, 0824: "this is our stage 9 music right here" - Lord of the Shadows. Converted to
+     mp3 at 192k like the rest of the bank (16.2 MB wav -> 2.0 MB); loading is the release
+     blocker, and every other one of the 24 tracks is mp3.
+     NOTE: stage 8's key is literally named 'lordshadows' and resolves to stage5_egypt.mp3.
+     Left alone - Mike named this track for stage 9, and repointing that key would silently
+     change stage 8's music instead. Worth him confirming which stage 8 should play. */
+  {n:9, name:'STAGE 9', sub:'THE VELOCITY VOID',       bg:'space',  music:'lordofshadows',
    length:42, boss:'tidalfusion', bonus:true},
 ];
 /* the campaign is stages 1..8; a bonus stage lives in the table but not in the run order */
@@ -47252,12 +47258,24 @@ function pilotInputNeutral(){
   }
   return !held.some(k=>Input.down(k));
 }
+/* the longest this screen may refuse input while waiting for a neutral controller (0824b) */
+const PILOT_GATE_MAX = 1.20;
 function pilotInputGateTick(){
   if(!run || run.mode!=='campaign'){ pilotInputArmed=true; return true; }
   if(pilotInputArmed) return true;
   Input.clearTaps();
   drawPilot._md=Input.mouse.down;                // a held click cannot become a fresh card click
+  /* ⚠ THE GATE MUST ARM EVEN IF NEUTRAL NEVER COMES (drop 0824b). Mike: "I couldnt make it
+     past selecting the pilot in the pilot select screen when I chose one."
+     pilotInputNeutral() requires EVERY binding in keybind.fire/up/down/left/right/back to
+     read released - and those include pad_b0 and pad_b7. A controller that reports a trigger
+     or a drifting stick as permanently pressed is therefore never neutral, and this function
+     then calls Input.clearTaps() on EVERY FRAME FOR EVER: the screen eats every keypress and
+     every click, from the keyboard too, with no way forward and no error. He plays on a pad.
+     The gate's job is to swallow the press that ARRIVED on this screen; after a beat that job
+     is done whether or not the pad ever reads clean, so it now arms on time as well. */
   if(stateT>=0.35 && pilotInputNeutral()) pilotInputArmed=true;
+  else if(stateT>=PILOT_GATE_MAX) pilotInputArmed=true;   // a stuck pad can no longer lock the screen
   return false;                                  // arm now; accept input beginning next frame
 }
 function roundRect(x,y,w,h,r){ ctx.beginPath(); ctx.moveTo(x+r,y); ctx.arcTo(x+w,y,x+w,y+h,r); ctx.arcTo(x+w,y+h,x,y+h,r); ctx.arcTo(x,y+h,x,y,r); ctx.arcTo(x,y,x+w,y,r); ctx.closePath(); }

@@ -5302,7 +5302,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // every stage points at its NEW track
   var _want={1:'stage1_',2:'stage2_',3:'stage3_',4:'stage4_',5:'lvl3-alt.mp3',6:'stage6_',7:'stage7_',8:'stage5_egypt.mp3'};
   var _g9=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  var _blk=_g9.slice(_g9.indexOf('const STAGES'), _g9.indexOf('const STAGES')+3000);
+  /* \u26a0 A FIXED BYTE WINDOW OVER A GROWING TABLE STOPS MEASURING (repointed 0824b). This sliced
+     3000 chars after `const STAGES`, and the table has since grown past that - so stage 8 fell
+     outside the window, _got[8] was undefined, and it reported "8:undefined->none" as though
+     stage 8 had no music. It has: 'lordshadows'. Bounded by the array's own closing bracket, so
+     adding a stage or a comment can never silently shrink what this checks. */
+  var _sIdx=_g9.indexOf('const STAGES');
+  var _eIdx=_g9.indexOf('let curStage', _sIdx);
+  var _blk=_g9.slice(_sIdx, _eIdx>_sIdx ? _eIdx : _sIdx+8000);
   var _re=/n:(\d)[^}]*?music:'([\w-]+)'/g, _m, _got={};
   while((_m=_re.exec(_blk))) _got[_m[1]]=_m[2];
   var _wrong=[];
