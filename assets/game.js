@@ -47328,7 +47328,14 @@ function drawCommWindow(o){
      fixes. And because the flag gates msgMeasure as well as msgTextLeft, the wrap below is solved
      in the same metric it is drawn in — 0814b's "the text ran off its rail" cannot recur here.
      ============================================================ */
-  msgFaceUse('dialogue');
+  /* CAPTURE THE OPT-IN. msgFaceUse returns the face it actually switched to, or null when the
+     sheet is not up, and the two guards further down read that answer as _dialogueReady --
+     which was never declared in this function. It is a const inside drawArcadeBanner, a
+     different function entirely, so every frame of this window threw a ReferenceError out of
+     the name draw. The draw is wrapped in a try/catch that logs and moves on, so nothing
+     crashed: the comm window simply stopped rendering, which is why pilot select appeared to
+     hang after choosing a pilot. Capturing the return is what the call was always for. */
+  const _dialogueReady=msgFaceUse('dialogue');
   const t=o.tint||'#8ad0ff', c=hx(t), ap=clamp(o.appear==null?1:o.appear,0,1);
   ctx.save();
   ctx.globalAlpha=0.66*ap; ctx.fillStyle='#030407'; ctx.fillRect(0,0,VW,VH); ctx.globalAlpha=1;
