@@ -14186,6 +14186,17 @@ function s7WardenTick(b,dt){
     /* Ten machine-fast toxic cannon rounds, but the whole burst commits to the angle sampled at
        the tell. The boss braces and crawls only 11px/s, so the player can read the lane. */
     s7WardenCrawl(b,dt,11);
+    /* ⚠ THE BURST MUST HAVE AN ANGLE, WHATEVER PUT IT IN BURST (drop 0824a).
+       S.aim is assigned in ONE place - s7WardenMode('burst') - but the final-phase transitions
+       at 'portalClose' and the roar set S.mode='burst' DIRECTLY, so they skipped it. The
+       initialiser carries no `aim` field either, so S.aim was undefined and `S.aim+o` was NaN:
+       measured, every Warden fight opened with ten NaN shells - x, y, vx and vy all NaN while
+       spd stayed 5. A NaN round is invisible, can never hit, and NEVER CULLS (every bound test
+       against NaN is false), so it accumulates in eBullets for the rest of the fight.
+       Guarded HERE rather than at the two call sites, because this is the one place that
+       CONSUMES the angle - a third path into burst cannot reopen it. Once finite it is never
+       resampled, so the volley still commits to one lane, as the note above describes. */
+    if(!isFinite(S.aim)) S.aim=aimPlayer(b.x,b.y+b.h*.22);
     while(S.shot<10&&S.mt>=.48+S.shot*.105){const slot=(S.shot&1)?'R':'L',o=(S.shot%5-2)*.025;
       s7WardenShot(b,slot,S.aim+o,5.0,'shell',{silent:S.shot>0});s7WardenMuzzle(b,slot,false);S.shot++;}
     if(S.mt>1.78)s7WardenMode(b,'patrol');
@@ -24821,7 +24832,18 @@ function updatePlay(dt){
         playerHit(); b.dead=true;
       }
     }
-    { const _mw=(typeof worldWidth==='function')?worldWidth():VW; if(b.y<-16||b.y>VH+16||b.x<-16||b.x>_mw+16) b.dead=true; }
+    /* ⚠ A NaN ROUND CAN NEVER LEAVE THE SCREEN (drop 0824a). Every comparison against NaN is
+       FALSE, so a bullet whose x or y went non-finite fails all four bound tests, is never
+       marked dead, and stays in eBullets for the rest of the stage - invisible, unhittable,
+       and collision-checked every frame forever. Measured: the stage-2 soak ends with six of
+       them while the player, the boss and every live enemy are finite, i.e. they are DEBRIS
+       from a transient that has long since passed.
+       Testing !isFinite FIRST makes the cull total: whatever produces one, it lasts a frame.
+       That is containment, not a cure - the source still deserves finding - but it stops one
+       bad frame poisoning a whole run. (The Warden's undefined burst aim, fixed this drop,
+       was one such source.) */
+    { const _mw=(typeof worldWidth==='function')?worldWidth():VW;
+      if(!isFinite(b.x)||!isFinite(b.y)||b.y<-16||b.y>VH+16||b.x<-16||b.x>_mw+16) b.dead=true; }
   }
   eBullets=eBullets.filter(b=>!b.dead);
 
@@ -51786,6 +51808,9 @@ const VICTORY_PILOT_ENDINGS={
   falva:{head:'FALVA - THE LINE HELD',body:'The last evacuation lane is open and every surviving pilot is coming home. We held the line.'},
   cole:{head:'COLE - AIRSPACE CLEAR',body:'Last clanker is scrap. Airspace is ours, systems are clean, and Earth gets another sunrise. Not bad.'}
 };
+/* how long the ending may wait on its art before starting anyway (drop 0824a) */
+const VICTORY_READY_MAX = 3.0;
+const VICTORY_READY_FRAMES = 240;
 const VICTORY_DISH_AT=8.4, VICTORY_WARNING_AT=15.8, VICTORY_SPACE_AT=22.8,
       VICTORY_STINGER_AT=29.3, VICTORY_CARD_AT=32.6;
 const VICTORY_PILOT_ORDER=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
@@ -51919,7 +51944,21 @@ function drawVictory(dt){
      could show the pilot's first caption over a blank gradient for several seconds, then pop the
      restored HQ and aircraft into the middle of the shot. */
   if(!drawVictory._ready){
-    if(!victoryEndingReady())return;
+    /* ⚠ THE GATE IS BOUNDED NOW (drop 0824a). Holding the ending until its art decodes is
+       right - the note above says why - but the wait had NO CEILING, so anything that stops
+       victoryEndingReady() ever returning true leaves the FINAL SCREEN OF THE GAME black for
+       ever, with no way out. That is the worst place in the build to have an unbounded wait.
+       Measured: verify_atlas drives 90 synchronous frames and reports VICTORY as drawing
+       nothing, because a synchronous burst never yields and lazy art can never arrive - the
+       trap CLAUDE.md records. In real play the results screen prewarms it and the gate opens
+       immediately, so this ceiling should never be reached; it exists so that a missed
+       prewarm costs a slightly rough first second instead of the entire ending. */
+    /* counted in FRAMES as well as seconds: several callers draw with dt=0 (the connectors do
+       it deliberately), and a seconds-only ceiling never advances for them. */
+    drawVictory._wait=(drawVictory._wait||0)+(dt||0);
+    drawVictory._waitF=(drawVictory._waitF||0)+1;
+    if(!victoryEndingReady() && drawVictory._wait<VICTORY_READY_MAX
+                             && drawVictory._waitF<VICTORY_READY_FRAMES) return;
     drawVictory._ready=true;drawVictory._t=0;drawVictory._scroll=0;
   }
   drawVictory._t=(drawVictory._t||0)+dt;drawVictory._scroll=(drawVictory._scroll||0)+dt;

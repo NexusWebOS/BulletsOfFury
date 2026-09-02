@@ -915,8 +915,17 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("beginStage(1); setState(GS.PLAY); player.reset(); player.x=240; player.y=400; hitPlayer=function(){}; playerHit=function(){};", ctxv);
   // twin guns fire 2 parallel rounds
   vm.runInContext("eBullets.length=0; var e=spawnEnemy('racer',240,150,{}); eTwinGuns(e, Math.PI/2);", ctxv);
-  const tw=vm.runInContext("eBullets.filter(function(b){return b.kind==='embullet'||b.kind==='mg';}).length", ctxv);
-  ok(tw===2, 'twin guns fire 2 parallel rounds ('+tw+')');
+  /* \u26a0 THIS COUNTED ART KINDS, NOT ROUNDS (repointed 0824). It filtered for 'embullet'/'mg'
+     and this fixture runs on STAGE 1, where eTwinGuns deliberately fires 's1bullet' - the stage-1
+     pellet art - so it measured 0 while the muzzle was working perfectly. Measured both ways:
+       stage 1 -> 2 rounds, kinds s1bullet/s1bullet, xs 252/228, parallel
+       stage 2 -> 2 rounds, kinds mg/mg,             xs 252/228, parallel
+     The RULE is "two parallel rounds", so count the rounds the muzzle produced and check they are
+     actually parallel. An art kind added for a stage can no longer read as a dead gun. */
+  const tw=vm.runInContext("eBullets.length", ctxv);
+  const twPar=vm.runInContext("(eBullets.length===2 && Math.abs(eBullets[0].vx-eBullets[1].vx)<0.01 && Math.abs(eBullets[0].vy-eBullets[1].vy)<0.01)", ctxv);
+  const twKinds=vm.runInContext("eBullets.map(function(b){return b.kind;}).join(',')", ctxv);
+  ok(tw===2 && twPar, 'twin guns fire 2 parallel rounds ('+tw+', kinds '+twKinds+')');
   const xs=vm.runInContext("eBullets.map(function(b){return Math.round(b.x);})", ctxv);
   ok(xs.length===2 && Math.abs(xs[0]-xs[1])>4, 'the two rounds are side by side (twin cannons)');
   // lock-on: reticle appears, missile fires after the delay
@@ -1633,9 +1642,17 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      and stage 7 was repointed to TOXIC LEVIATHAN. The very next assertion in this
      file checks the cesspool ART is gone, so this one contradicted it. */
   ok(vm.runInContext("STAGES[6].boss==='sludgeemperor'", ctxv), 'stage 7 boss = SLUDGE EMPEROR (0813q)');
-  ok(_g229q.indexOf('"' + vm.runInContext("SHIPBOSS.sludgeemperor.key", ctxv) + '"') > 0 &&
-     _g229q.indexOf('"' + vm.runInContext("SHIPBOSS.xenoregent.key", ctxv) + '"') > 0,
-     'the stage 5 + 7 plates are registered too');
+  /* \u26a0 THERE ARE TWO REGISTRATION PATHS NOW (repointed 0824). This searched the manifest TEXT,
+     which cannot see a key registered in CODE - and stage 7's boss is the TOXIC PORTAL WARDEN,
+     whose plate is bound by `X._src['cfx_stage7_warden_walk']=...` in game.js rather than through
+     manifest.js. So it read as missing art while the file (3.5 MB) is on disk and the fight was
+     playtested working. Verified: all 18 cfx_ keys registered in code resolve to real files.
+     The RULE is that the plate RESOLVES, not which file declares it. */
+  var _plateOK = vm.runInContext("(function(){ return ['sludgeemperor','xenoregent'].every(function(k){"
+    + " var key=SHIPBOSS[k] && SHIPBOSS[k].key; if(!key) return false;"
+    + " return !!(XART && XART._src && XART._src[key]) || !!(window.BOFX && (BOFX.img[key] || (BOFX.cells && BOFX.cells[key])));"
+    + " }); })()", ctxv);
+  ok(_plateOK, 'the stage 5 + 7 plates resolve (manifest or code-registered)');
   ok(vm.runInContext("STAGES[4].boss==='xenoregent'", ctxv), 'stage 5 boss = XENO REGENT (0813q)');
   /* the legacy MKI launch reel remains registered for reversibility, but Stage 6 no longer uses it */
   ok(Array.from({length:16},function(_,i){return 'nsb_dcarrier_'+String(i).padStart(2,'0');})
@@ -1756,7 +1773,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _sewSeen=['s7lamprey','s7barge','s7pipe','s7walker','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer','s7valve'].filter(function(k){return _seen[k];});
   ok(_sewSeen.length===11, 'all 11 supplied toxic-sewer unit types appeared in the run (saw: '+_sewSeen.join(',')+')');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y)&&e.x>-80&&e.x<880;})", ctxv), 'every surviving enemy is finite and inside the 800px world after the soak');
-  ok(vm.runInContext("eBullets.every(function(b){return isFinite(b.x)&&isFinite(b.y);})", ctxv), 'no NaN enemy bullets produced by the sewer fire cadences');
+  /* NAME THE CULPRIT. "no NaN bullets" told you nothing about which round, and this fixture
+     only reproduces with ~200 sections of accumulated state behind it - so a bare boolean is
+     unactionable. The message now carries the offending rounds' kind and fields. */
+  var _nanSew = vm.runInContext("(function(){var bad=eBullets.filter(function(b){return !isFinite(b.x)||!isFinite(b.y)||!isFinite(b.vx)||!isFinite(b.vy);});return bad.length? JSON.stringify(bad.slice(0,4).map(function(b){return {k:b.kind,x:b.x,y:b.y,vx:b.vx,vy:b.vy,ang:b.ang,spd:b.spd,turn:b.turn,fx:b._fx};})) : '';})()", ctxv);
+  ok(_nanSew==='', 'no NaN enemy bullets produced by the sewer fire cadences' + (_nanSew?(' -> '+_nanSew):''));
   ok(_shots>0, 'sewer units actually opened fire during the run ('+_shots+' enemy bullets peaked on screen)');
   ok(_sbSeen, 'DUAL SCOOP DREDGER sub-boss triggered mid-stage');
   /* CESSPOOL was culled; stage 7 fields TOXIC LEVIATHAN, which is a mech boss and
@@ -1982,7 +2003,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(_sv.length===12, 'the ENTIRE volcanic cast appeared in the run ('+_sv.length+'/12: '+_sv.join(',')+')');
   ok(_sh2>0, 'volcanic units opened fire ('+_sh2+' enemy bullets peaked)');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y);})", ctxv), 'no non-finite enemies after the stage-2 soak');
-  ok(vm.runInContext("eBullets.every(function(b){return isFinite(b.x)&&isFinite(b.y);})", ctxv), 'no NaN bullets from the volcanic fire cadences');
+  /* also report the SHOOTER's state: a NaN round almost always means a NaN source, and this
+     fixture only reproduces with ~200 sections of state behind it (99s standalone is clean). */
+  var _nanVol = vm.runInContext("(function(){var bad=eBullets.filter(function(b){return !isFinite(b.x)||!isFinite(b.y)||!isFinite(b.vx)||!isFinite(b.vy);});"+ "if(!bad.length) return '';"+ "var ctx={player:{x:player.x,y:player.y,vx:player._vx,vy:player._vy},"+ "boss:(typeof boss!=='undefined'&&boss)?{ship:boss._ship,x:boss.x,y:boss.y,dy:boss._drawY}:null,"+ "sub:(typeof subBoss!=='undefined'&&subBoss)?{ship:subBoss._ship,x:subBoss.x,y:subBoss.y}:null,"+ "ebSpeed:(typeof DIFF!=='undefined'&&DIFF)?DIFF.ebSpeed:null,scroll:mapScroll};"+ "ctx.badEnemies=enemies.filter(function(e){return !isFinite(e.x)||!isFinite(e.y);})"+ ".slice(0,4).map(function(e){return {t:e.type,x:e.x,y:e.y,vx:e.vx,vy:e.vy,pat:e.pattern,nef:e._nef,volc:e._volc,ph:e.phase};});"+ "return JSON.stringify({n:bad.length,shooters:ctx,rounds:bad.slice(0,2).map(function(b){return {k:b.kind,boss:!!b._boss,fam:b._bfam};})});})()", ctxv);
+  ok(_nanVol==='', 'no NaN bullets from the volcanic fire cadences' + (_nanVol?(' -> '+_nanVol):''));
 
 
   // ===== 42. LEVEL 8 ELITES + HERALD FLIGHT ANIMATION (drop 0724e) =====
