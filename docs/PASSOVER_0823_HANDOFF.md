@@ -128,6 +128,34 @@ carries them.
 
 ---
 
+## 5b. ⚠ VERIFIED-CLOSED ON 0902 — MEASURE BEFORE YOU IMPLEMENT ANY OF SECTION 6
+
+Section 6 was written against the pre-reconcile tree. Codex's build closed several of its items,
+and on 0902 four were re-checked **by measurement** and found already done. Re-implementing them
+would be wasted work, and worse, would undo working code:
+
+| item | how it was checked | result |
+|---|---|---|
+| Revert the laser for all but Maverick | fired the laser slot as all nine pilots | eight get the legacy `beam`, Maverick alone gets `mavlaser` — **done** |
+| No boss fades, they blow up | read the curve | `BOSS_FADE_OUT = 0`; `bossDeathAlpha` is 1 then 0, a hard cut — **done** |
+| Axel's special is Mega Shield | rendered his card to the `special` phase | card reads SPECIAL ABILITY / MEGA SHIELD — **done** |
+| SPEED collides with the bio's last line | rendered Axel, Falva and Cole revealed | gap is clean at three, four and five stats — **done** |
+
+⚠ **THE PILOT CARD REVEALS IN PHASES AND A FORCED `pcard.done` DOES NOT SKIP TO THE END.** The
+SPECIAL ABILITY row is gated on `C.phase==='special'||'hold'`. Setting `pcard.t`/`typed`/`done` by
+hand leaves the phase where it was, so the row does not draw and the card looks like it is missing
+the ability — which is exactly the bug being looked for. **Step frames until `pcard.phase` reports
+`special` or `hold`, then screenshot.** Proofs: `docs/proofs/pilotcards_0902/`.
+
+⚠ **THE BLACK BAND ABOVE THE MENUS IS DELIBERATE.** `_hudShow(false)` uses `visibility:hidden`,
+not `display:none`, so `#hud-row` keeps its 62px box on every non-PLAY screen. That is what stops
+the playfield jumping when a stage starts. Do not collapse it.
+
+⚠ **DECKER IS NOT AN OUTLIER ON THE SHARED PRIMARY.** "Decker shoot way too fast" `[20:22]` cannot
+be the pilot stat: `PILOTMOD.fire` scales the cooldown as `cd*(1-fire)`, and his 0.08 sits behind
+Falva 0.16, Yuri 0.14, Maverick 0.12 and Cole 0.10. If it is real it is the SHOTGUN
+(`DK_RELOAD` 0.62s, 7 pellets), which Mike tuned himself in 0821c — ask before changing that number.
+
 ## 6. THE OUTSTANDING LIST, FROM MIKE'S VIDEO
 
 Timestamps are into `docs/feedback/0823_video_walkthrough.txt`. He asked for menu input first;
