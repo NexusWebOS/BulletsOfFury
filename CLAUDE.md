@@ -220,6 +220,13 @@ CPU profile shows 3 ms of real work; with the trap the run is real-time. `pg.eva
 before the first `STEP`, always. The stage-2 "wedge" of the continuous nine-stage harness was this. And **a quoted heredoc is not safe from the harness's shell** — a
 backtick in a regex class broke a script write at line 117; keep backticks out of source that goes
 through Bash, or use the Write tool.
+⚠ **`ctx.shadowBlur` PER PROJECTILE IS THE FRAME COST, AND IT IS MEASURABLE.** The Magma Ward's
+fireballs drew through `shadowBlur=10` under `'lighter'`, one save/restore each, ~32 a frame: **78 ms
+a frame** in real Chromium (CPU profile, 77% in `magmaWardProjectileDraw`). Baking the glow once per
+reel frame and size into a cached canvas gives the same pixels at **2.6 ms**. `drawBullets` still
+sets `shadowBlur` in 46 places and `drawPowerups` in 15 — that is the next optimisation target, and
+the profile (`scratchpad/miniprof.py`: CDP `Profiler`, attribute native time to the nearest game.js
+frame) is how to find the owner in one run.
 Verified: 5,549 cells pixel-identical old→new before the manifest moved; `verify_atlas_0806z.js`
 all 5,698 cells resolve, eight stages 100 s each with 0 blank fallthroughs; title / mode / pilot
 select / stage screens shot in real Chromium (`docs/proofs/atlas_repack_0903/`).

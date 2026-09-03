@@ -13401,12 +13401,26 @@ function magmaWardDrawOver(b){
   }
   b._mwShieldHit=Math.max(0,(b._mwShieldHit||0)-1/60);
 }
+/* THE MAGMA WARD'S FIREBALLS COST 78 ms A FRAME (0903l, measured with a CPU profile in real Chromium).
+   Every one of its ~32 live rounds drew through ctx.shadowBlur under a 'lighter' composite - 77% of the
+   frame in save/restore around that shadow, 32 shadow draws a frame. The glow is now BAKED once per
+   reel frame and size into a cached canvas (16 entries) and blitted; the shadow colour, blur, tint and
+   composite are unchanged, so the pixels are the same and the per-round cost is one drawImage. */
+const _mwGlowCache={};
+function _mwGlowSprite(k,s){
+  const ck=k+'|'+s; let c=_mwGlowCache[ck]; if(c) return c;
+  const raw=XART.get(k),im=(typeof xartTint==='function'?(xartTint(k,'#ffb51f',.84)||raw):raw);
+  if(!im||!im.width) return null;
+  const pad=18; c=document.createElement('canvas'); c.width=s+pad*2; c.height=s+pad*2;
+  const g=c.getContext('2d'); g.shadowColor='#ff7b16'; g.shadowBlur=10; g.drawImage(im,pad,pad,s,s);
+  _mwGlowCache[ck]=c; return c;
+}
 function magmaWardProjectileDraw(b){
   if(!b||!b._mwKind||typeof XART==='undefined')return false;
   const k='mwfx_fireball_'+(Math.floor((b.t||0)*13)%8);if(!XART.rdy(k))return false;
-  const raw=XART.get(k),im=(typeof xartTint==='function'?(xartTint(k,'#ffb51f',.84)||raw):raw),s=b._mwKind==='fireball'?82:38;
-  ctx.save();ctx.globalCompositeOperation='lighter';ctx.shadowColor='#ff7b16';ctx.shadowBlur=10;
-  ctx.drawImage(im,b.x-s/2,b.y-s/2,s,s);ctx.restore();return true;
+  const s=b._mwKind==='fireball'?82:38,c=_mwGlowSprite(k,s); if(!c) return false;
+  ctx.save();ctx.globalCompositeOperation='lighter';
+  ctx.drawImage(c,b.x-c.width/2,b.y-c.height/2);ctx.restore();return true;
 }
 /* INFERNO REAVER'S BOSS1/BOSS2 PASS. Five equally spaced stations run left-to-right, then the
    next use mirrors right-to-left. At every station one physical cannon fires one straight-down
