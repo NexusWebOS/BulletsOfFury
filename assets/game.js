@@ -47388,21 +47388,18 @@ function _drawStageSelectInner(dt){
     }
     ctx.restore();
   }
+  /* ONE CARD, NOT TWO (Mike, 0903): "in the stage select its like its trying to load up two
+     different dialogue windows and fonts at once but one is overpowering another."
+     Rendered every nss_panel_N beside its nss_label_N: all eight PANELS already carry the
+     stage title AND the briefing baked into the art, and every LABEL is a second copy of the
+     same title in a different-coloured box. Drawing the label above the panel put the title
+     on screen twice, stacked. The label draw is gone; the panel's scale-in is the arrival beat.
+     nss_label_ stays registered - it is authored art - but nothing on this screen draws it.
+     The panel also sits 14px higher so the hint bar at VH-18 no longer lands on its bottom
+     bevel (it was drawn at VH-10, a 98px card, so the hint sat inside it). */
   if(sselBoot===0 && rdy(gp)){
     const im=XART.get(gp), pw=456*bScale, ph=pw*(im.naturalHeight/im.naturalWidth);
-    ctx.drawImage(im,(VW-pw)/2, VH-ph-10-(1-bScale)*20, pw, ph);
-    if(rdy(gl)){ const lm=XART.get(gl), lw=260*bScale, lh=lw*(lm.naturalHeight/lm.naturalWidth);
-      // letter-by-letter: clip-reveal the label art left -> right with a bright type edge
-      const rev=clamp((BT-0.10)/0.55,0,1);
-      const lx=(VW-lw)/2, ly=VH-ph-10-lh-4-(1-bScale)*20;
-      if(rev>0){
-        ctx.save(); ctx.beginPath(); ctx.rect(lx, ly, lw*rev, lh); ctx.clip();
-        ctx.drawImage(lm, lx, ly, lw, lh); ctx.restore();
-        if(rev<1){ ctx.fillStyle='rgba(180,240,255,'+(0.5+0.5*Math.sin(performance.now()/60))+')';
-          ctx.fillRect(lx+lw*rev, ly, 3, lh);
-          if(((BT*14)|0)!==drawStageSelect._typeTick){ drawStageSelect._typeTick=(BT*14)|0; uiBlipRep(); } }
-      }
-    }
+    ctx.drawImage(im,(VW-pw)/2, VH-ph-24-(1-bScale)*20, pw, ph);
   }
   // prompt
   /* THE HINT SITS AT THE BOTTOM OF THE SCREEN, NOT UNDER THE MAP (drop 0806h). Mike: "campaign
