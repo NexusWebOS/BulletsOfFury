@@ -5291,7 +5291,7 @@ function drawHUDCustomImg(){
     else { ctx.save(); ctx.shadowColor='#ffae6a'; ctx.shadowBlur=4; ctx.fillStyle='#ffae6a'; ctx.font='bold 16px "BOFmil", monospace'; ctx.fillText('x'+run.bombs,cx[3],vy); ctx.restore(); }
   }
   const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg', wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
-  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[wlv-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
+  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[Math.max(1,wlv)-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
   /* ⚠ THE ICONS LIVE IN BOFX.icons, AND THERE IS ALREADY A FUNCTION FOR THEM (drop 0810r).
      Mike: "I see your using a basic graphic for fireball icon, Im assuming yuo lost the icons."
 
@@ -5430,7 +5430,7 @@ function drawHUDStrip(g){
   if(run.bombs<=4){ let bx=cx[3]-(run.bombs-1)*8; for(let i=0;i<run.bombs;i++){ g.fillStyle='#15181d'; _circG(g,bx,vy+1,3.7); g.fillStyle='#ffd36b'; _circG(g,bx,vy-0.4,1.2); g.fillStyle='#ff9a3a'; g.fillRect(bx-0.8,vy-3.2,1.6,1.5); bx+=16; } }
   else { g.fillStyle='#ffae6a'; g.font='bold 16px monospace'; g.fillText('x'+run.bombs,cx[3],vy); }
   const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg', wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
-  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[wlv-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
+  const wIcon=((typeof weaponIconKey==='function')?weaponIconKey(run.weapon,wlv):('pw_'+wt+'_'+wlv)), wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[Math.max(1,wlv)-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
   if(ASSETS.has(wIcon)){ const f=ASSETS.frames[wIcon], ss=Math.min(30/f[2],24/f[3]), dw=f[2]*ss, dh=f[3]*ss;
     g.save(); g.shadowColor=wglow; g.shadowBlur=8; g.drawImage(ASSETS.img,f[0],f[1],f[2],f[3],Math.round(cx[4]-dw/2),Math.round(HUDH*0.46-dh/2),dw,dh); g.restore(); }
   else { g.fillStyle=wglow; g.font='bold 11px monospace'; g.fillText('L'+wlv,cx[4],vy-2); }
@@ -5576,7 +5576,7 @@ function drawHUDCustomLegacy(){
   const wt=({0:'mg',1:'spread',2:'missile',3:'laser',4:'firewall',5:'iceorb',6:'lasermist'})[run.weapon]||'mg';
   const wname=spaceWeaponsActive()?spaceWeaponName():(({0:'MACHINE GUN',1:'SPREAD FIRE',2:'MISSILE',3:'LASER',4:'FLAMETHROWER',5:'ICE ORB',6:'LASER MIST'})[run.weapon]||'');
   const wlv=spaceWeaponsActive()?spaceWeaponLevel():clamp(run.wlevel||1,1,(typeof colePilot==='function'&&colePilot())?8:5);
-  const wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[wlv-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
+  const wglow=spaceWeaponsActive()?(run.spaceWeapon===0?SPACE_LASER_COL[Math.max(1,wlv)-1]:'#a45bff'):(({0:'#ff5a5a',1:'#b06bff',2:'#6bd06b',3:'#7fe0ff',4:'#ff7a2a',5:'#77cfff',6:'#54e8ff'})[run.weapon]||'#fff');
   hudPanel(VW-152,5,146,36);
   const mx=VW-130, my=23;
   ctx.fillStyle='#0c0f15'; hudSlot(mx-16,8,32,30,5);
@@ -17689,7 +17689,11 @@ function autoFireMissiles(){
 }
 function _weaponCadence(){
   if(typeof spaceWeaponsActive==='function'&&spaceWeaponsActive()){
-    return run.spaceWeapon===0?0.24:0.32;
+    /* LEVEL 0 LASER (Mike, 0903): after a death in Gravity Mode 'you reset back to level 0 lasers -
+       which should be the laser cannon and its 1st level color but slower than the level 1
+       variant'. Same art and colour (spaceLaserTier never drops below 1); half again the wait. */
+    if(run.spaceWeapon===0) return (typeof spaceWeaponLevel==='function'&&spaceWeaponLevel()<=0) ? 0.36 : 0.24;
+    return 0.32;
   }
   /* A docked vehicle-mounted MG owns the primary trigger: about eighteen twin-barrel beats per
      second gives it the requested MG42/gatling rip without turning it into a 60Hz particle hose. */
@@ -18664,8 +18668,11 @@ function spaceShadowCancel(){
 }
 function spaceWeaponLevel(){
   if(!run.spaceLevels)run.spaceLevels=[1,1,1];
-  return clamp(run.spaceLevels[clamp(run.spaceWeapon||0,0,1)]||1,1,5);
+  /* 0 IS A REAL LEVEL (Mike, 0903): 'even in space when you die, you reset back to level 0 lasers'.
+     Art, colour and size come from spaceLaserTier() (never below 1); only the cadence knows 0. */
+  const v=run.spaceLevels[clamp(run.spaceWeapon||0,0,1)]; return clamp((v==null?1:v),0,5);
 }
+function spaceLaserTier(){ return Math.max(1, spaceWeaponLevel()); }
 function spaceVolleyLevel(){
   if(!run.spaceLevels)run.spaceLevels=[1,1,1];
   return clamp(run.spaceLevels[2]||1,1,5);
@@ -18717,7 +18724,7 @@ function spaceModeStage(num){
   }
 }
 function spaceLaserFire(){
-  const lv=spaceWeaponLevel(),spd=12.2+lv*0.65,dmg=1.25+lv*0.72;
+  const lv0=spaceWeaponLevel(), lv=spaceLaserTier(), spd=12.2+lv*0.65, dmg=1.25+lv*0.72;   // lv0 may be 0 after a death; lv never is
   const hardpoints=spaceShipHardpoints(player.x,player.y,SPACE_SHIP_SIZE).laser;
   /* Six authored beats, and BOTH turret barrels fire on every beat. Delay is stored in seconds,
      not rounded to a frame. `spaceBulletTick` consumes the fractional remainder of the frame,
@@ -19066,7 +19073,12 @@ function pShoot(){
       return;                          // charge/release is driven by coleFuseTick from the input path
     }
     if(_cl>=6) coleTrident(_cl);       // gold at 6, black four-wide at 7 — plus the homing arch
-    const spread = _cl<=0 ? 1 : (_cl===1 ? 2 : (_cl>=7 ? 4 : (_cl>=6 ? 3 : _cl)));
+    /* STREAM COUNT PER LEVEL (Mike, 0903): 'lvl 1 machine gun bumps you to dual fire, lvl 2 turn
+       you to blue and triples, lvl 3 turns you to green and quads it, lvl 4 to white and five
+       lasers in a row now, lvl 5 to red and with 6.' The colours (WLV_GLOW/WLV_BODY) already
+       matched that scheme; the count was one short from L2 up (L2 fired 2, L3 fired 3...).
+       L0 stays the single default shot. Cole's 6 and 7 keep their own authored widths. */
+    const spread = _cl<=0 ? 1 : (_cl>=7 ? 4 : (_cl>=6 ? 3 : _cl+1));
     const lvv = _cl;
     /* PER-PELLET DAMAGE now scales with the weapon level. Measured before this change: the default
        gun did 11.8 dps (one pellet, one damage) and NEVER got stronger — upgrades only added more
@@ -19074,7 +19086,7 @@ function pShoot(){
        L0/L1 share a value so the L1 upgrade is still purely "a second bullet" as specified. */
     const _bdmg = 2 + Math.floor(lvv/2);
     for(let i=0;i<spread;i++){
-      const off=(i-(spread-1)/2)*(spread===2?7:11);   // the L1 pair sits tight, not spread wide
+      const off=(i-(spread-1)/2)*(spread===2?7:(spread>=5?9:11));   // the L1 pair sits tight; five and six rows close up so they still leave the nose
       // L0 and L1 share the SAME bullet tier so the pair looks like the default gun, doubled
       const _blv = lvv<=1 ? 1 : Math.max(1,lvv);
       pBullets.push({x:player.x+off, y:player.y-14, vx:0, vy:-9, w:4,h:12, dmg:_bdmg, kind:'mg', lv:_blv});
@@ -25741,9 +25753,9 @@ function playerHit(){
   /* DEATH DROPS YOU TO THE MACHINE GUN (Mike, 0903: "keeping weapons when I die" is a bug).
      Codex's build kept the equipped weapon's identity and only powered its level down; Mike
      overruled that. Weapon 0 at level 1, every bank at 1, variants cleared. */
-  run.weapon=0;run.wlevels=[1,1,1,1,1,1,1];run.wlevel=1;run.power=0;
+  run.weapon=0;run.wlevels=[0,0,0,0,0,0,0];run.wlevel=0;run.power=0;   // 0, not 1: 'all other weapons when you acquire them are lvl 1 first' - a pickup adds one
   if(run.wvars) run.wvars=[null,null,null,null,null,null,null];
-  run.spaceWeapon=(run.spaceWeapon===1)?1:0;run.spaceLevels=[1,1,1];run._spaceVolleyCd=0;
+  run.spaceWeapon=(run.spaceWeapon===1)?1:0;run.spaceLevels=[0,1,1];run._spaceVolleyCd=0;   // laser to LEVEL 0 (Mike, 0903)
   if(run._groundLoadout){
     run._groundLoadout.wlevel=1;run._groundLoadout.wlevels=[1,1,1,1,1,1,1];
     run._groundLoadout.missileLevel=1;
