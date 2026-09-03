@@ -27060,6 +27060,8 @@ function stageSceneryDraw(dt){
        random planet/comet reel over it; only the asteroid field below remains separate. */
     if(run.stage===6) { try{ bg6Draw(dt); }catch(_b6){} }               // clouds, rain, lightning (0819f)
     if(run.stage===5 && typeof l5FieldDraw==='function'){ l5FieldUpdate(dt); l5FieldDraw(false); }
+    if(run.stage===5 && run._s5GateOut && typeof s5GateOutStart==='function'){ run._s5GateOut=0; s5GateOutStart(); }
+    if(typeof s5GateOutTick==='function'){ s5GateOutTick(dt); s5GateOutDraw(); }
     if(run.stage===5 && typeof s5RunTick==='function'){ s5RunTick(dt); s5RunDraw(); }   // the nine-gate secret run (0822ad)
     if(run.stage===8 && typeof l8ObjsDraw==='function'){ l8FieldUpdate(dt); l8ObjsDraw(); }   // Furious Death scenery (0822aa)
   }catch(_s){}
@@ -31780,6 +31782,56 @@ function s5ClashSpawn(){
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   return {a:{x:W*0.16, y:-150, vx: 96, vy:70}, b:{x:W*0.84, y:-150, vx:-96, vy:70}, hit:false, t:0};
 }
+/* THE RETURN ARRIVAL - the ship is SHOT OUT of a gate, mid-level (Mike, 0902).
+
+   "...and then shooting us back out of the warp gate in the middle of the level, very cool
+   effect." run._s5GateOut is set by riftReturn just before it deploys, so this fires on the
+   first play frame of the stage it returns to and never on an ordinary stage 5 run.
+
+   ⚠ IT MUST NOT RE-ARM THE SECRET. riftReturn also sets run._s9taken, which is the
+   same latch s5RunTick reads to decide the nine-gate run is spent - otherwise a player who
+   just lost stage 9 would be handed the gates to stage 9 again on the way down. */
+let s5GateOut=null;                    // {t} the arrival burst
+const S5GO_DUR=1.25;
+function s5GateOutStart(){
+  s5GateOut={t:0, x:(player?player.x:VW/2), y:VH*0.30};
+  try{ if(typeof XART!=='undefined'&&XART._touch) for(let i=0;i<8;i++) XART._touch('nfx_s5gate96_'+i); }catch(_go){}
+  try{ if(Audio.SFX&&Audio.SFX.warpGate) Audio.SFX.warpGate(1); }catch(_gs){}
+  /* every seat arrives, so a co-op wing is thrown out together */
+  try{
+    const seats=(typeof seatList==='function')?seatList():[1];
+    for(const n of seats){ const s=(typeof seatShip==='function')?seatShip(n):player;
+      if(s){ s.x=s5GateOut.x+(n===2?26:-26); s.y=s5GateOut.y; s.invuln=Math.max(s.invuln|0,150); } }
+  }catch(_gp){}
+}
+function s5GateOutTick(dt){
+  if(!s5GateOut) return;
+  s5GateOut.t+=dt;
+  const k=clamp(s5GateOut.t/S5GO_DUR,0,1), e=k*k*(3-2*k);
+  /* eased down to the ordinary flying line - the ship is CARRIED out, it does not teleport */
+  const ty=VH*0.72;
+  try{
+    const seats=(typeof seatList==='function')?seatList():[1];
+    for(const n of seats){ const s=(typeof seatShip==='function')?seatShip(n):player;
+      if(s && !s.dead) s.y = s5GateOut.y + (ty-s5GateOut.y)*e; }
+  }catch(_gt){}
+  if(k>=1) s5GateOut=null;
+}
+function s5GateOutDraw(){
+  if(!s5GateOut) return;
+  const k=clamp(s5GateOut.t/S5GO_DUR,0,1);
+  const key='nfx_s5gate96_'+(Math.floor(s5GateOut.t*15)%8);
+  if(typeof XART==='undefined'||!XART.rdy(key)) return;
+  const im=XART.get(key);
+  /* the mouth flares open, then shuts behind the ship */
+  const open=Math.sin(Math.min(1,k*1.15)*Math.PI);
+  const s=96+open*150;
+  ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.35+0.65*open;
+  ctx.shadowColor='#84e9ff'; ctx.shadowBlur=26;
+  ctx.translate(s5GateOut.x, s5GateOut.y); ctx.rotate(s5GateOut.t*1.6);
+  ctx.drawImage(im,-s/2,-s/2,s,s);
+  ctx.restore(); ctx.globalAlpha=1;
+}
 function s5RunTick(dt){
   if(typeof run==='undefined' || !run || run.stage!==5 || run._s9taken){ s5run=null; return; }
   if(typeof bossActive!=='undefined' && bossActive) return;
@@ -32044,6 +32096,72 @@ let s9MapCine=null;     // {t, ph} the flash/unlock/warp-across on the map
 function s9MapCineStart(){
   s9MapCine={t:0, ph:'fly'};
   if(Audio.SFX && Audio.SFX.mapMove) Audio.SFX.mapMove();
+}
+/* ============================================================
+   THE RIFT COLLAPSE RETURN (Mike, 0902)
+
+   "If we lose all 5 lives on the level, we lose, teleport out of the stage, go back to the
+   campaign map spinning ourselves back to stage 5, entering the stage automatically in the
+   campaign map, and then shooting us back out of the warp gate in the middle of the level."
+
+   drawRiftFallback already owned the first beat - the warp-out and the white flash - and
+   then went straight to beginStage(5), skipping the map entirely. This is the middle beat:
+   the map, the travel from the ninth node back to the fifth, and the automatic deploy.
+   The last beat is run._s5GateOut, which stage 5 reads to throw the ship out of a gate.
+
+   It is its OWN cine rather than a direction flag on s9MapCine: that one flashes and then
+   GRANTS the bonus stage (campaign.bonusUnlocked=1), which is the last thing a player who
+   just lost stage 9 should be handed. Nothing here mutates an unlock.
+   ============================================================ */
+let riftReturn=null;                   // {t, ph} the 9 -> 5 travel on the campaign map
+const RIFT_ARRIVE=0.80, RIFT_SPIN=1.45, RIFT_LAND=0.60;
+function riftReturnStart(){
+  riftReturn={t:0, ph:'arrive', from:9, to:5};
+  sselCursor=9;
+  if(Audio.SFX && Audio.SFX.mapMove) Audio.SFX.mapMove();
+}
+function riftReturnActive(){ return !!riftReturn; }
+function riftReturnTick(dt){
+  if(!riftReturn) return;
+  riftReturn.t+=dt;
+  if(riftReturn.ph==='arrive'){
+    if(riftReturn.t>RIFT_ARRIVE){ riftReturn.ph='spin'; riftReturn.t=0;
+      if(Audio.SFX && Audio.SFX.warpGate) Audio.SFX.warpGate(1); }
+  } else if(riftReturn.ph==='spin'){
+    if(riftReturn.t>RIFT_SPIN){ riftReturn.ph='land'; riftReturn.t=0; sselCursor=5;
+      if(Audio.SFX && Audio.SFX.mapMove) Audio.SFX.mapMove(); }
+  } else if(riftReturn.ph==='land'){
+    if(riftReturn.t>RIFT_LAND){
+      riftReturn=null;
+      run._s5GateOut=1;                  // stage 5 throws the ship out of a gate
+      run._s9taken=1;                    // the secret is spent; do not re-arm the gates
+      if(typeof sselDeploy==='function') sselDeploy(5, function(){ beginStage(5); });
+      else beginStage(5);
+    }
+  }
+}
+/* the streak between the two nodes. Drawn in the same MX/MY/S map transform the flags use,
+   so it lands on the real node positions rather than on guessed screen coordinates. */
+function riftReturnDraw(MX,MY,S){
+  if(!riftReturn || typeof sselFlagXY!=='function') return;
+  const a=sselFlagXY(riftReturn.from), b=sselFlagXY(riftReturn.to);
+  if(!a||!b) return;
+  const ph=riftReturn.ph;
+  const k = ph==='spin' ? clamp(riftReturn.t/RIFT_SPIN,0,1) : (ph==='land'?1:0);
+  const e = k*k*(3-2*k);
+  const x = a.x+(b.x-a.x)*e, y = a.y+(b.y-a.y)*e;
+  ctx.save(); ctx.globalCompositeOperation='lighter';
+  if(ph==='spin'){
+    ctx.strokeStyle='rgba(132,233,255,0.55)'; ctx.lineWidth=3;
+    ctx.beginPath(); ctx.moveTo(a.x,a.y); ctx.lineTo(x,y); ctx.stroke();
+  }
+  const key='nfx_s5gate96_'+(Math.floor(riftReturn.t*13)%8);
+  if(typeof XART!=='undefined' && XART.rdy(key)){
+    const im=XART.get(key), s=34+18*Math.sin(riftReturn.t*9);
+    ctx.globalAlpha=0.92; ctx.shadowColor='#84e9ff'; ctx.shadowBlur=20;
+    ctx.drawImage(im, x-s/2, y-s/2, s, s);
+  }
+  ctx.restore(); ctx.globalAlpha=1;
 }
 function s9MapCineTick(dt){
   if(!s9MapCine) return;
@@ -47142,6 +47260,8 @@ function _drawStageSelectInner(dt){
   try{
     if(typeof s9MapCineTick==='function') s9MapCineTick(dt||0);
     if(typeof s9MapDraw==='function') s9MapDraw(MX, MY, S);
+    if(typeof riftReturnTick==='function') riftReturnTick(dt||0);
+    if(typeof riftReturnDraw==='function') riftReturnDraw(MX, MY, S);
   }catch(_s9Err){}
   if(typeof sselZoomTick==='function') sselZoomTick(dt||0);
   // THE PILOT'S SHIP — flies in from off the left once the flags have landed, then travels to
@@ -47290,7 +47410,7 @@ function _drawStageSelectInner(dt){
      and deploy stays 0; without it, deploy=1 and the stage card is on screen 3.2s later. */
   /* ⚠ THE BONUS CINEMATIC LOCKS THE MAP TOO (0822ad). Without it the player could walk the
      cursor away, or deploy, while the secret node was still flashing itself unlocked. */
-  const locked = campPause || sselBoot>0 || (sselUnlockCine!=null) || (typeof s9MapCine!=='undefined' && s9MapCine!=null) || !!window.sselCommitted;
+  const locked = campPause || sselBoot>0 || (sselUnlockCine!=null) || (typeof s9MapCine!=='undefined' && s9MapCine!=null) || (typeof riftReturn!=='undefined' && riftReturn!=null) || !!window.sselCommitted;
   if(!locked){
     /* ⚠ ONLY THE BONUS STAGE, ONCE IT IS EARNED. Mike: "we can ONLY select stage 9 and then
        enter it." The latch clears when stage 9 is entered, so the map goes back to normal
@@ -53342,8 +53462,25 @@ function drawRiftFallback(dt){
     _riftFallback.done=true;try{if(Audio&&Audio.warpAmbienceStop)Audio.warpAmbienceStop();}catch(_rfs){}
     run.contUsed=0;run.lives=DIFF.startLives;run.bombs=Math.max(run.bombs,DIFF.startBombs);run._wbag=[];
     player.dead=false;player.deathT=0;player.reset();player.invuln=160;eBullets.length=0;pBullets.length=0;
+    /* co-op: the wing returns together - a seat spent on stage 9 comes back for the retreat,
+       because the run did not END, it was thrown out of the rift. */
+    try{ if(typeof coopActive==='function' && coopActive() && typeof seatList==='function'){
+      for(const _n of seatList()){ const _s=(typeof seatShip==='function')?seatShip(_n):null;
+        if(_s){ _s.out=false; _s.dead=false; _s.deathT=0; if(_s.reset)_s.reset(); _s.invuln=160; }
+        const _r=(typeof seatRun==='function')?seatRun(_n):null;
+        if(_r){ _r.lives=Math.max(_r.lives|0, DIFF.startLives); } }
+    } }catch(_rfc){}
     /* No unlock mutation occurs here. The only grant is bossDie() on Stage 9. */
-    beginStage(5);
+    /* ⚠ THE MAP IS THE MIDDLE BEAT, NOT A JUMP TO THE STAGE. This used to call
+       beginStage(5) directly, which skipped the whole of what Mike asked for - the map, the
+       travel back from the ninth node, and the automatic entry. riftReturn owns those, and
+       it finishes by calling sselDeploy(5, beginStage), so the stage still starts in one
+       place rather than two. */
+    if(typeof openStageSelect==='function' && typeof riftReturnStart==='function'){
+      openStageSelect(5, {});
+      setState(GS.STAGESEL);
+      riftReturnStart();
+    } else beginStage(5);
   }
 }
 function _stopContinueVO(){
