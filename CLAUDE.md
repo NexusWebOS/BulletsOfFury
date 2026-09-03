@@ -220,6 +220,24 @@ CPU profile shows 3 ms of real work; with the trap the run is real-time. `pg.eva
 before the first `STEP`, always. The stage-2 "wedge" of the continuous nine-stage harness was this. And **a quoted heredoc is not safe from the harness's shell** — a
 backtick in a regex class broke a script write at line 117; keep backticks out of source that goes
 through Bash, or use the Write tool.
+⚠ **A MISSING GLYPH DREW A SPACE, AND THE STAGE-CARD ALPHABETS ARE NOT COMPLETE SETS (0903).**
+Mike, with four shots of the pilot screen: *"remove these old fonts, replace with the better stage
+fonts asap"* — one of them reads **CHOO E YOUR PILOT**. Juggernaut's font is stage 5, whose card
+alphabet carries 44 glyphs and **no letter S**, and `stageText` pushed a blank on a miss: no error,
+nothing in the state, eight of nine pilots fine. `msgText` has had the borrow since 0812j and
+`stageText` never got it — the same fix applied to one of two twin functions. **The complete faces
+(`stagefont1..9_v3.png`, 47 glyphs each) were deleted from disk on 0831 and their atlas cells
+cleared on 0902 with nothing put in their place**; `_BUILD_SOURCE/build_stage_fonts_v3_0903.py`
+recovers the pixels from git (`58252627^`, the last intact tree) and packs all nine into
+`atlas/fonts_stage.png` at a 96px cap — measured against the largest `stageText` in the game (H=44
+on a 2x backing store), not guessed; 128 cost 6.9 MB for headroom nobody uses. `stageText`,
+`stageWidth` and `_tw` now all resolve through `stageGlyph`, so a borrowed glyph is measured at the
+width it is drawn at. ⚠ **AND A SATURATED FACE CHANGES WHAT A TINT MEANS**: the heading's
+`'#f2f5ff'` wash was tuned at 0.25 against muted card art, so the authored purple stage-5 face
+turned the screen title purple over a gold card. `drawFrameTinted` composites in `'color'` and white
+has no saturation to donate, so raising it DESATURATES rather than paints — 0.85 holds every pilot's
+title neutral with the letterforms and metal intact (swept 0.25/0.55/0.85/1.00 across the three
+colour extremes, `docs/proofs/fonts_v3_0903/_tintsweep.png`).
 ⚠ **THE GENERIC BACK HANDLER ATE THE REBIND KEY (0903).** `menuBackTick` runs before `drawOptions`
 every frame and `Input.menuBack()` CONSUMES its tap, so with PRESS KEY lit the B button, backspace,
 escape and k backed out to the title instead of binding — and drawOptions' own

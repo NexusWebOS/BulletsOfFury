@@ -1390,6 +1390,20 @@ const ASSETS=(function(){
     /* Only the authored stage-card alphabets remain in the stage-font slot. The retired compact
        BOF/password family was intentionally removed from the manifest and disk. */
     A.stageFont=Object.assign({},A.stageArt);
+    /* ============================================================
+       THE NINE AUTHORED STAGE ALPHABETS ARE BACK (Mike, 0903: "remove these old fonts, replace
+       with the better stage fonts asap", with four screenshots of the pilot screen).
+
+       What he was looking at is the alphabet embedded in each stage's CARD sheet, and those are
+       INCOMPLETE — stage 5 carries 44 glyphs and has no letter S, which is why his Juggernaut shot
+       reads CHOO E YOUR PILOT. The complete faces (`stagefont1..9_v3.png`, 47 glyphs each) were
+       deleted from disk on 0831 and their atlas cells cleared on 0902, with nothing put in their
+       place. `_BUILD_SOURCE/build_stage_fonts_v3_0903.py` recovers the pixels from git and packs
+       all nine into one sheet; this hands them out in the same `{frames, font, img}` shape every
+       stage-card alphabet uses, so stageText/glyphBox/fontCapH consume them unchanged. ============================================================ */
+    A.stageFontV3={};
+    if(BOF.stageFontV3){ for(const _k in BOF.stageFontV3){ const _fv=BOF.stageFontV3[_k];
+      A.stageFontV3[_k]=_lazySheet({frames:_fv.frames, font:_fv.font}, _fv.atlas); } }
     if(A.img){ A.img.onload=function(){A.ready=true;}; A.img.onerror=function(){A.ready=false;}; }
   }
   function _rdy(im){ return im && im.complete && im.naturalWidth>0; }
@@ -22064,6 +22078,10 @@ function uiFontWarm(){
   try{
     if(typeof ASSETS==='undefined') return;
     if(ASSETS.stageArt && ASSETS.stageArt['1']) void ASSETS.stageArt['1'].img;
+    /* the nine authored faces share ONE sheet, so touching stage 1 starts all of them (0903).
+       Without this the pilot screen opens on the incomplete card alphabet for a frame or two —
+       which is 0812j's "basic ass text" window, by a new route. */
+    if(ASSETS.stageFontV3 && ASSETS.stageFontV3['1']) void ASSETS.stageFontV3['1'].img;
   }catch(e){}
 }
 /* ============================================================
@@ -47989,7 +48007,13 @@ function drawPilotBG(tint){
    dedicated card use stage 1's authored face; prose and cinematics use the dialogue sheet. */
 function pilotFont(idx){
   const k=String(Math.max(1,Math.min(9,idx|0)));
-  return (ASSETS.stageArt && (ASSETS.stageArt[k] || ASSETS.stageArt['1'])) || null;
+  /* THE COMPLETE FACE FIRST (0903). The stage-CARD alphabets under it are incomplete — stage 5 has
+     no S — and stages 6-9 have none at all, so a pilot whose font is 6+ silently fell back to
+     stage 1's. stageFontV3 carries all nine at 47 glyphs each. The card alphabets stay as the
+     fallback for the moment the sheet is still decoding. */
+  const v3=ASSETS.stageFontV3 && (ASSETS.stageFontV3[k] || ASSETS.stageFontV3['1']);
+  if(v3 && typeof artReady==='function' && artReady(v3)) return v3;
+  return (ASSETS.stageArt && (ASSETS.stageArt[k] || ASSETS.stageArt['1'])) || v3 || null;
 }
 function startPilotRot(dir){ if(pilotRot>0)return; pilotFrom=pilotIndex; pilotIndex=(pilotIndex+dir+PILOTS.length)%PILOTS.length; pilotRot=1; Audio.SFX.blip(); }
 /* A held click/stick/button survives setState even though edge taps are cleared. During Campaign
@@ -48233,7 +48257,16 @@ function drawPilot(dt){
   // title and pilot name use that pilot's corrected stage face.
   const t2=pilotFont(2);
   const _pilotFace=pilotFont(P.font)||t2;
-  if(_pilotFace && typeof stageText==='function'){ stageText(_pilotFace,'CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0.25,1,0.06); }
+  /* ⚠ THE WASH HOLDS THE TITLE NEUTRAL, AND 0.25 WAS TUNED AGAINST A DIFFERENT FACE (0903).
+     The heading borrows the selected pilot's alphabet, so its colour used to come from that stage's
+     CARD art — all of them muted stone. The authored v3 faces are SATURATED (stage 5 is purple,
+     stage 2 orange), so at 0.25 the screen title turned purple over Juggernaut's gold card.
+     `drawFrameTinted` composites in 'color', taking hue and saturation from the fill and luminosity
+     from the plate — and white has no saturation to give, so raising this DESATURATES rather than
+     paints: the letterforms and the metal texture survive intact and every pilot's title reads the
+     same. Measured across the three extremes (purple/olive/orange) at 0.25/0.55/0.85/1.00:
+     docs/proofs/fonts_v3_0903/_tintsweep.png. The pilot's own colour stays on their NAME below. */
+  if(_pilotFace && typeof stageText==='function'){ stageText(_pilotFace,'CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0.85,1,0.06); }
   else if(typeof msgText==='function'){ msgText('CHOOSE YOUR PILOT!',VW/2,42,22,'#f2f5ff',0,1,0.06); }
   else { ctx.textAlign='center'; outlineText('CHOOSE YOUR PILOT!',VW/2,46,'#f2f5ff','#12151a',3); }
   // one card, centred, with a horizontal scale (rotation) transition between pilots
@@ -49369,9 +49402,11 @@ function stageWidth(art,text,H,spacingMul){
   const sp=(spacingMul==null?0.10:spacingMul)*H; let w=0;
   for(const ch of String(text).toUpperCase()){
     if(ch===' '){ w+=H*0.42+sp; continue; }
-    const nm=art.font[ch];
-    if(!nm||!art.frames[nm]){ w+=H*0.42+sp; continue; }
-    const f=art.frames[nm]; w+=glyphBox(art,f,H,ch).w+sp;
+    /* through stageGlyph, so a BORROWED glyph is measured at the width it will be drawn at.
+       Measuring in one face and drawing in another is 0814b's "the text ran off its rail". */
+    const g=stageGlyph(art,ch);
+    if(!g){ w+=H*0.42+sp; continue; }
+    w+=glyphBox(g.art,g.f,H,ch).w+sp;
   }
   return Math.max(0,w-sp);
 }
@@ -49645,16 +49680,50 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
   const sp=(spacingMul==null?0.10:spacingMul)*H; const items=[]; let total=0;
   for(const ch of String(text).toUpperCase()){
     if(ch===' '){ items.push(null); total+=H*0.42+sp; continue; }
-    const nm=art.font[ch]; if(!nm||!art.frames[nm]){ items.push(null); total+=H*0.42+sp; continue; }
-    const f=art.frames[nm], gb=glyphBox(art,f,H,ch); items.push([f,gb.w,gb]); total+=gb.w+sp;
+    const g=stageGlyph(art,ch);
+    if(!g){ items.push(null); total+=H*0.42+sp; continue; }
+    const gb=glyphBox(g.art,g.f,H,ch); items.push([g.art,g.f,gb.w,gb]); total+=gb.w+sp;
   }
   total-=sp; let x=cx-total/2;
   for(const it of items){
     if(!it){ x+=H*0.42+sp; continue; }
-    const f=it[0], w=it[1], gb=it[2];
-    drawFrameTinted(art.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
+    const ga=it[0], f=it[1], w=it[2], gb=it[3];
+    drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
     x+=w+sp;
   }
+}
+/* ============================================================
+   A MISSING GLYPH DREW A SPACE, AND THAT IS "CHOO E YOUR PILOT" (Mike, 0903).
+
+   stageText looked its character up in ONE face and pushed a blank on a miss. The stage-CARD
+   alphabets are not complete sets — stage 5 has 44 glyphs and NO LETTER S — so Juggernaut, whose
+   font is 5, lost the S out of CHOOSE on every frame, silently, with no error and nothing in the
+   state to see. Every other pilot looked fine, which is why it read as one bad screen rather than
+   a renderer that cannot report a gap.
+
+   ⚠ msgText HAS HAD THIS FALLBACK SINCE 0812j and stageText never got it — the same fix applied
+   to one of two twin functions, which is a shape this file records more than once. Borrowing one
+   glyph from a sibling face is not free (it can differ in style) but it is strictly better than
+   dropping the letter, and with stageFontV3 in front the only character that ever borrows is % —
+   absent from all nine authored faces and present in stage 2's card alphabet, exactly as
+   CLAUDE.md already records for the stats screen.
+
+   glyphBox is handed the BORROWED face, so the borrowed glyph is scaled by ITS OWN cap height and
+   lands on the same baseline. ============================================================ */
+function stageGlyph(art, ch){
+  let nm=art&&art.font&&art.font[ch];
+  if(nm && art.frames && art.frames[nm]) return {art:art, f:art.frames[nm]};
+  const A=(typeof ASSETS!=='undefined')?ASSETS:null; if(!A) return null;
+  const alt=[];
+  if(A.stageFontV3) for(const k in A.stageFontV3) alt.push(A.stageFontV3[k]);
+  if(A.stageArt){ alt.push(A.stageArt['2']); alt.push(A.stageArt['1']);
+    for(const k in A.stageArt) alt.push(A.stageArt[k]); }
+  for(const b of alt){
+    if(!b || b===art || !b.font) continue;
+    const bn=b.font[ch];
+    if(bn && b.frames && b.frames[bn] && (typeof artReady!=='function' || artReady(b))) return {art:b, f:b.frames[bn]};
+  }
+  return null;
 }
 let introSeq={crash:false,slice:false,mus:false,debris:null,lastnum:99,go:false};
 // ---- OFFICIAL GAME FONT: Stage-1 bitmap font as the default for all messages/dialogue.
@@ -52371,8 +52440,8 @@ function _tw(art, text, H, sp){
   if(!art||!art.font) return 0;
   const s=(sp==null?0.10:sp)*H; let t=0;
   for(const ch of String(text).toUpperCase()){
-    const nm=art.font[ch], f=nm&&art.frames[nm];
-    t += (f? glyphBox(art,f,H,ch).w : H*0.42) + s;
+    const g=(typeof stageGlyph==='function')?stageGlyph(art,ch):null;   // same lookup stageText draws through
+    t += (g? glyphBox(g.art,g.f,H,ch).w : H*0.42) + s;
   }
   return Math.max(0,t-s);
 }

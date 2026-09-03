@@ -10623,6 +10623,41 @@ console.log("=== 216. dialogue/stage fonts only ===");
   ok(!/\b(?:ASSETS|A|BOF)\.bofFont\b/.test(_g216), 'no live game path can load the retired family');
   for(var _i=1;_i<=8;_i++) ok(!fs.existsSync(ROOT+'/assets/game/fonts/bof_font'+_i+'.png'),
     'retired compact sheet '+_i+' is deleted from disk');
+
+  /* ============================================================
+     THE NINE AUTHORED ALPHABETS ARE COMPLETE, AND A MISSING GLYPH CANNOT DRAW A SPACE (0903).
+
+     Mike sent four shots of the pilot screen: "remove these old fonts, replace with the better
+     stage fonts asap". One of them reads CHOO E YOUR PILOT — Juggernaut's font is stage 5, whose
+     CARD alphabet carries 44 glyphs and NO LETTER S, and stageText pushed a blank on a miss.
+     Silent: no error, nothing in the state, and eight of nine pilots looked fine.
+
+     Two things are pinned here. The FACE: all nine v3 alphabets resolve with their full 47 glyphs.
+     The RENDERER: stageText, stageWidth and _tw all resolve through stageGlyph, so a borrowed
+     glyph is measured at the width it is drawn at — measuring in one face and drawing in another
+     is 0814b's "the text ran off its rail". ============================================================ */
+  var _v3=JSON.parse(vm.runInContext("(function(){var o={stages:{},sheet:null};"
+    +"for(var i=1;i<=9;i++){var f=ASSETS.stageFontV3&&ASSETS.stageFontV3[String(i)];"
+    +"  o.stages[i]=f?Object.keys(f.font).length:0;}"
+    +"o.sheet=(window.BOF.stageFontV3&&window.BOF.stageFontV3['1'])?window.BOF.stageFontV3['1'].atlas:null;"
+    +"o.miss=[];for(var i=1;i<=9;i++){var f=ASSETS.stageFontV3[String(i)];"
+    +"  for(var ch of 'CHOOSE YOUR PILOT!JUGGERNAUTMAVERICKFREEZER'){ if(ch===' ')continue;"
+    +"    if(!(f&&f.font&&f.font[ch])) o.miss.push(i+':'+ch); } }"
+    +"return JSON.stringify(o);})()", ctxv));
+  for(var _i=1;_i<=9;_i++) ok(_v3.stages[_i]===47,
+    'stage '+_i+' has the complete authored alphabet ('+_v3.stages[_i]+' glyphs)');
+  ok(_v3.miss.length===0, 'and no pilot-screen character is missing from any of them'+(_v3.miss.length?(' — GAPS: '+_v3.miss.join(',')):''));
+  ok(!!_v3.sheet && fs.existsSync(ROOT+'/'+_v3.sheet), 'the packed face sheet is on disk ('+_v3.sheet+')');
+  var _gF=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  function _fnBody(nm){ var i=_gF.indexOf('function '+nm+'('); if(i<0) return ''; var j=_gF.indexOf('\nfunction ',i+1); return _gF.slice(i, j<0?i+4000:j); }
+  ['stageText','stageWidth','_tw'].forEach(function(fn){
+    ok(_fnBody(fn).indexOf('stageGlyph(')>0, fn+' resolves its glyphs through stageGlyph, so the measure and the draw cannot disagree');
+  });
+  ok(_fnBody('stageText').indexOf('art.font[ch]')<0, 'and stageText no longer reads one face directly, which is what dropped the S');
+  /* the fallback has to actually fire: ask the stage-5 CARD alphabet (44 glyphs, no S) for an S */
+  ok(vm.runInContext("(function(){var c=ASSETS.stageArt['5']; if(!c||c.font['S'])return 'stage5 card now HAS an S — retarget this';"
+    +"var g=stageGlyph(c,'S'); return (g&&g.f)?'ok':'no borrow';})()", ctxv)==='ok',
+    'a face missing a letter borrows it from a sibling instead of drawing a space');
 }
 
 // ===== 217. ONE COLUMN ON THE STATS PANEL, AND A POINTER ON EVERY MENU (drop 0812b) =====
