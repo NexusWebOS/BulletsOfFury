@@ -19280,16 +19280,44 @@ function maulerVolley(b){
    time. Two iterations converge well inside a pixel at these speeds, and it is cheap enough to
    run per shot. */
 let ENEMY_LEAD = 0.55;
+/* CO-OP TARGETING (Mike, 0902): who an enemy is shooting AT.
+
+   The seats drop recorded this as its known limitation - enemy AI runs outside any seat
+   window, so the global `player` there is always seat 1, and every aimed shot in the game led
+   P1 no matter where P2 was. P2 could be flown straight through a firing line and be ignored.
+
+   targetShip picks the NEAREST live seat to whatever is doing the aiming, which is the
+   ordinary shmup answer and needs no per-enemy bookkeeping. A seat that is dead or spent
+   (`out`) is not a target, so a wing does not shoot at a hole in the air.
+
+   Solo returns the same `player` object the code has always read, so a one-player run is
+   unchanged - the function is not even entered when coopActive() is false. */
+function targetShip(x,y){
+  if(typeof coopActive!=='function' || !coopActive()) return player;
+  let best=null, bd=Infinity;
+  try{
+    const seats=(typeof seatList==='function')?seatList():[1];
+    for(const n of seats){
+      const s=(typeof seatShip==='function')?seatShip(n):null;
+      if(!s || s.dead || s.out) continue;
+      const dx=s.x-x, dy=s.y-y, d=dx*dx+dy*dy;
+      if(d<bd){ bd=d; best=s; }
+    }
+  }catch(_ts){}
+  return best || player;
+}
 function aimPlayer(x,y,spd,k){
   const L = (k==null) ? (ENEMY_LEAD||0) : k;
-  if(!(L>0) || !(spd>0)) return Math.atan2(player.y-y, player.x-x);
-  const pvx=player._vx||0, pvy=player._vy||0;
-  let t = Math.hypot(player.x-x, player.y-y)/spd;
+  /* the seat this shot is aimed at - nearest live one in co-op, `player` solo */
+  const P = targetShip(x,y);
+  if(!(L>0) || !(spd>0)) return Math.atan2(P.y-y, P.x-x);
+  const pvx=P._vx||0, pvy=P._vy||0;
+  let t = Math.hypot(P.x-x, P.y-y)/spd;
   for(let i=0;i<2;i++){
-    const tx=player.x+pvx*t*L, ty=player.y+pvy*t*L;
+    const tx=P.x+pvx*t*L, ty=P.y+pvy*t*L;
     t = Math.hypot(tx-x, ty-y)/spd;
   }
-  return Math.atan2((player.y+pvy*t*L)-y, (player.x+pvx*t*L)-x);
+  return Math.atan2((P.y+pvy*t*L)-y, (P.x+pvx*t*L)-x);
 }
 
 /* ============================================================
