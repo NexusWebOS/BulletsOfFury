@@ -8289,7 +8289,7 @@ function ex8Fire(e){
      inside this radius the shot is skipped rather than nudged - a nudged shot
      still reads as unfair because it came from inside you. */
   if(typeof player!=='undefined' && player && !player.dead){
-    const d = Math.hypot(player.x - e.x, player.y - e.y);
+    const d = Math.hypot(targetShip(e.x,e.y).x - e.x, targetShip(e.x,e.y).y - e.y);
     if(d < 46) return false;
   }
   if(typeof eShoot==='function' && typeof aimAt==='function'){
@@ -13004,7 +13004,7 @@ function reaverOrbTick(b, dt){
     if(b._orb.t>=FIREORB_CHARGE){
       b._orb.fired=true;
       const y=(b._drawY!=null?b._drawY:b.y)+(b.h||120)*0.30;
-      const a=Math.atan2(player.y-y, player.x-b.x);
+      const a=Math.atan2(targetShip(b.x,b.y).y-y, targetShip(b.x,b.y).x-b.x);
       const sp=2.6*((typeof DIFF!=='undefined'&&DIFF&&DIFF.ebSpeed)?DIFF.ebSpeed:1);
       eBullets.push({x:b.x, y:y, vx:Math.cos(a)*sp, vy:Math.sin(a)*sp, ang:a, spd:2.6,
                      w:42, h:42, dmg:1, t:0, kind:'magma', _reaverOrb:true, szMul:2.6});
@@ -13824,7 +13824,7 @@ function jungleCruiserNoseRound(b){
   J.shot++;b._sbaKick=Math.max(b._sbaKick||0,0.18);
 }
 function jungleCruiserHelix(b){
-  const C=shipBossMount(b,'C'),a=Math.atan2(player.y-C.y,player.x-C.x),sp=3.55;
+  const C=shipBossMount(b,'C'),a=Math.atan2(targetShip(C.x,C.y).y-C.y,targetShip(C.x,C.y).x-C.x),sp=3.55;
   eBullets.push({x:C.x,y:C.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,ang:a,spd:sp,
     w:38,h:38,dmg:2,t:0,kind:'jcHelix',_jcHelix:true,_noArsenal:true,_boss:true,
     turn:0.047,_commit:86,life:4.5});
@@ -13835,7 +13835,7 @@ function jungleCruiserHelix(b){
 }
 function jungleCruiserBeamHit(b){
   const J=b._jc,C=shipBossMount(b,'C'),a=Math.PI/2+(J.beamAng||0),len=VH*1.55;
-  const dx=Math.cos(a),dy=Math.sin(a),px=player.x-C.x,py=player.y-C.y;
+  const dx=Math.cos(a),dy=Math.sin(a),px=targetShip(C.x,C.y).x-C.x,py=targetShip(C.x,C.y).y-C.y;
   const along=px*dx+py*dy;if(along<0||along>len)return;
   const off=Math.abs(px*dy-py*dx),r=(player._hx||9)+12;
   if(off<=r&&!player.dead&&player.invuln<=0)playerHit();
@@ -14993,7 +14993,7 @@ function shipBossAttack(b){
      pat!=='magmaforge' && pat!=='magmacross' && pat!=='infernogate' && pat!=='infernoburst' && pat!=='infernostorm' &&
      pat!=='chargebeam' &&
      (step%2)===0 && typeof player!=='undefined' && player && player.alive!==false){
-    const dx=player.x-b.x, dy=Math.max(40,(player.y-y));
+    const dx=targetShip(b.x,b.y).x-b.x, dy=Math.max(40,(targetShip(b.x,b.y).y-y));
     const d=Math.hypot(dx,dy)||1, spd=2.35;
     for(const off of [-0.10, 0.10]){
       const ux=dx/d, uy=dy/d;
@@ -17638,7 +17638,7 @@ function tankMuzzle(e){ // fixed south-facing barrel: the art has no independent
 }
 function eTankBlast(e){ // STRONG shell fired from the END OF THE BARREL, scaling up toward the player
   const m=tankMuzzle(e);
-  eBullets.push({x:m.x, y:m.y, vx:(player.x-m.x)*0.006, vy:2.8, w:18, h:22,
+  eBullets.push({x:m.x, y:m.y, vx:(targetShip(m.x,m.y).x-m.x)*0.006, vy:2.8, w:18, h:22,
     kind:'groundup', _fx:'blast', hp:1, t:0, ang:m.aim,
     _gscale:0.45, mg:false, blast:true, dmg:1 });
   if(Audio.SFX.enemyBossCannon) Audio.SFX.enemyBossCannon(); else if(Audio.SFX.enemyBig) Audio.SFX.enemyBig(); else if(Audio.SFX.enemyShoot) Audio.SFX.enemyShoot();
@@ -20787,7 +20787,7 @@ function cycleLock(){
   if(!specialActive('cole') && !specialActive('lizzie') && run.bombs<=0){ Audio.SFX.hit(); floatText(player.x,player.y-18,'NO MISSILES','#ff6a4a'); retina.target=null; retina.phase=null; return; }
   const t=_lockTargets();
   if(!t.length){ retina.target=null; retina.phase=null; return; }
-  t.sort((a,b)=> (Math.hypot(a.x-player.x,a.y-player.y)-Math.hypot(b.x-player.x,b.y-player.y)));
+  t.sort((a,b)=> (Math.hypot(a.x-targetShip(b.x,b.y).x,a.y-targetShip(b.x,b.y).y)-Math.hypot(b.x-targetShip(b.x,b.y).x,b.y-targetShip(b.x,b.y).y)));
   let nt;
   if(!retina.target || t.indexOf(retina.target)<0){ nt=t[0]; }
   else { nt=t[(t.indexOf(retina.target)+1)%t.length]; }
@@ -23553,6 +23553,10 @@ function updatePlay(dt){
 
   // ---- enemies ----
   for(const e of enemies){
+    /* CO-OP: the seat THIS unit is working against - nearest live ship (targetShip), or
+       `player` in solo so a one-player run reads exactly what it always read. Every
+       dive, lateral track and ram line below aims at _T, not at the global player. */
+    const _T=(typeof targetShip==='function')?targetShip(e.x,e.y):player;
     if(_tslow) continue;
     e.t+=dt;
     if(typeof enemyShieldTick==='function') enemyShieldTick(e,dt);
@@ -23587,7 +23591,7 @@ function updatePlay(dt){
       e.flash=0;   // never tint a dying wreck (pink-ghost fix)
       continue;
     }
-    const dxp=player.x-e.x;
+    const dxp=_T.x-e.x;
     // movement patterns
     switch(e.pattern){
       // EMPLACEMENTS ride the terrain exactly. A hardcoded vy made them SLIDE against the
@@ -23677,7 +23681,7 @@ function updatePlay(dt){
         }
         // TURRET tracks separately from the hull
         if(player && !player.dead){
-          const _ta=Math.atan2(player.y-e.y, player.x-e.x);
+          const _ta=Math.atan2(_T.y-e.y, _T.x-e.x);
           let _d=_ta-e._gbTur;
           while(_d>Math.PI)_d-=TAU; while(_d<-Math.PI)_d+=TAU;
           e._gbTur += clamp(_d, -2.4*dt, 2.4*dt);               // 45 frames for a half turn
@@ -23711,12 +23715,12 @@ function updatePlay(dt){
         } else if(e._phase==='lock'){
           // brief telegraph: hang, aim the nose at the player
           e._lockT+=dt; e.y+=e.vy*0.2;
-          e._diveAng=Math.atan2(player.y-e.y, player.x-e.x);
+          e._diveAng=Math.atan2(_T.y-e.y, _T.x-e.x);
           e._bank = Math.sin(e._lockT*18)*0.3;              // shudder before launch
           if(e._lockT>=0.4){ e._phase='dive'; e._dvx=Math.cos(e._diveAng); e._dvy=Math.sin(e._diveAng); }
         } else if(e._phase==='dive'){
           // BODY as a homing missile: accelerate along the aim, curving toward the player (limited turn)
-          const want=Math.atan2(player.y-e.y, player.x-e.x);
+          const want=Math.atan2(_T.y-e.y, _T.x-e.x);
           let cur=Math.atan2(e._dvy,e._dvx);
           let d=Math.atan2(Math.sin(want-cur),Math.cos(want-cur));
           cur += clamp(d,-1,1)*2.4*dt;                      // homing turn rate
@@ -23737,15 +23741,15 @@ function updatePlay(dt){
         if(e._phase==='descend'){
           e._scale=Math.min(1, e._scale+dt*1.6);            // grows from tiny to full as it nears the plane
           e.y+=e.vy*2.4;                                     // fast dive-in
-          e.x += (player.x-e.x)*0.9*dt;                     // curves toward the player's column
+          e.x += (_T.x-e.x)*0.9*dt;                     // curves toward the player's column
           if(e._scale>=1 || e.y>VH*0.30){ e._phase='turn'; e._turnT=0; }
         } else if(e._phase==='turn'){
           e._turnT+=dt; e.y+=e.vy*0.4;                      // quick beat where it snaps to face head-on
-          e.x += (player.x-e.x)*3.2*dt;
+          e.x += (_T.x-e.x)*3.2*dt;
           if(e._turnT>=0.28){ e._phase='attack'; }
         } else {                                            // 'attack': bears down, strafes to track the player
           e.y+=e.vy*0.7;
-          e.x += clamp(player.x-e.x,-1,1)*70*dt;
+          e.x += clamp(_T.x-e.x,-1,1)*70*dt;
         }
         break;
       }
@@ -23829,7 +23833,7 @@ function updatePlay(dt){
           e._diveT+=dt; e.y += 4.2;
           const tx=player.x + e._side*28;                          // converge NEAR the player, not on one point
           e.x += clamp(tx-e.x,-1,1)*70*dt; e.vx=clamp((tx-e.x)*0.02,-1,1);
-          faceStep(e, Math.PI + clamp((player.x-e.x)*0.004, -0.3, 0.3), dt);
+          faceStep(e, Math.PI + clamp((_T.x-e.x)*0.004, -0.3, 0.3), dt);
           e._diveFireT=(e._diveFireT||0)+dt;
           if(e._diveFireT>0.8){ e._diveFireT=0; enemyLockOn(e, 0.5); }
           if(e._diveT>2.4 || e.y>VH*0.92){ e._phase='flee'; e._fleeT=0; e._faT=0; e._flX0=e.x; e._flSide=e._side; if(Audio.SFX.whip)Audio.SFX.whip(); }   // flee OUT YOUR OWN SIDE — never across the partner's dive lane
@@ -23846,11 +23850,11 @@ function updatePlay(dt){
       case 'topgun': {
         // FAST TOP DIVER: screams in from the top, TWIN MACHINE GUNS blazing, one missile lock mid-dive.
         e.y += e.vy*1.15;
-        e.x += clamp(player.x-e.x,-1,1)*52*dt;
-        faceStep(e, Math.PI + clamp((player.x-e.x)*0.004,-0.3,0.3), dt);
+        e.x += clamp(_T.x-e.x,-1,1)*52*dt;
+        faceStep(e, Math.PI + clamp((_T.x-e.x)*0.004,-0.3,0.3), dt);
         if(typeof addTrail==='function' && (e.t*60|0)%2===0) addTrail(e.x, e.y-e.h*0.4, null, 'jet');
         e._mgT=(e._mgT||0)+dt;
-        if(e._mgT>0.42 && e.y>40 && e.y<VH*0.75){ e._mgT=0; const ang=Math.atan2(player.y-e.y,player.x-e.x); eTwinGuns(e,ang); e._muz=0.12; }
+        if(e._mgT>0.42 && e.y>40 && e.y<VH*0.75){ e._mgT=0; const ang=Math.atan2(_T.y-e.y,_T.x-e.x); eTwinGuns(e,ang); e._muz=0.12; }
         /* the mid-dive missile lock is gone (Mike, 0819): fodder homing is CUT. Guns only. */
         break;
       }
@@ -23879,8 +23883,8 @@ function updatePlay(dt){
              phases are gone, and the one-hit body contact below is the whole threat. */
           if(curlStep(e,dt,1)){ e._phase='dive'; e._diveT=0; e._faT=0; if(Audio.SFX.whip)Audio.SFX.whip(); }
         } else { // dive at the player
-          e._diveT=(e._diveT||0)+dt; e.y+=4.0; e.x+=clamp(player.x-e.x,-1,1)*70*dt; e.vx=clamp((player.x-e.x)*0.02,-1,1);
-          faceStep(e, Math.PI + clamp((player.x-e.x)*0.004,-0.3,0.3), dt);
+          e._diveT=(e._diveT||0)+dt; e.y+=4.0; e.x+=clamp(_T.x-e.x,-1,1)*70*dt; e.vx=clamp((_T.x-e.x)*0.02,-1,1);
+          faceStep(e, Math.PI + clamp((_T.x-e.x)*0.004,-0.3,0.3), dt);
           if(typeof addTrail==='function' && (e.t*60|0)%2===0) addTrail(e.x, e.y-e.h*0.4, null, 'jet');
         }
         break;
@@ -23928,12 +23932,12 @@ function updatePlay(dt){
              point: the choreography is unchanged in the common case. */
           if(curlStep(e,dt,1) && (e._chgTellT||0)>=CHARGE_TELL){    // ONE revolution, then commit
             e._phase='charge'; e._faT=0;
-            const a=Math.atan2(player.y-e.y, player.x-e.x);
+            const a=Math.atan2(_T.y-e.y, _T.x-e.x);
             e._cvx=Math.cos(a); e._cvy=Math.sin(a); e._cSpd=3.0;
             if(Audio.SFX.whip)Audio.SFX.whip();
           }
         } else { // 'charge': accelerate at the player on a limited turn — dodge it and it is gone
-          const want=Math.atan2(player.y-e.y, player.x-e.x);
+          const want=Math.atan2(_T.y-e.y, _T.x-e.x);
           let cur=Math.atan2(e._cvy,e._cvx);
           let d=Math.atan2(Math.sin(want-cur),Math.cos(want-cur));
           cur += clamp(d,-1,1)*2.2*dt;                            // kamikaze's turn rate, a shade gentler
@@ -23985,7 +23989,7 @@ function updatePlay(dt){
         // STRAFER JET: flies in from the TOP charging straight down at the player, guns blazing.
         // Pellets hurt; body impact hurts. Simple, aggressive, relentless.
         e.y+=e.vy*1.35;
-        e.x += clamp(player.x-e.x,-1,1)*44*dt;                    // gentle tracking as it dives
+        e.x += clamp(_T.x-e.x,-1,1)*44*dt;                    // gentle tracking as it dives
         if(typeof addTrail==='function' && (e.t*60|0)%3===0) addTrail(e.x,e.y-e.h*0.4,'#ffd2a0');
         break;
       }
@@ -24279,7 +24283,7 @@ function updatePlay(dt){
     }
     /* A reflected player round stays visually identical, but becomes hostile on its return trip. */
     if(b._enemyReflected && !b.dead && !player.dead && player.invuln<=0 &&
-       Math.abs(b.x-player.x)<((b.w||6)/2+(player.w||24)/2) && Math.abs(b.y-player.y)<((b.h||10)/2+(player.h||30)/2)){
+       Math.abs(b.x-targetShip(b.x,b.y).x)<((b.w||6)/2+(player.w||24)/2) && Math.abs(b.y-targetShip(b.x,b.y).y)<((b.h||10)/2+(player.h||30)/2)){
       playerHit(); b.dead=true; continue;
     }
     if(b.kind==='hxspiral'){
@@ -24971,7 +24975,7 @@ function updatePlay(dt){
        cull deletes it; it never turns around or reacquires. */
     if(b._jcHelix){
       if(b.t>(b.life||4.5)){b.dead=true;continue;}
-      const dx=player.x-b.x,dy=player.y-b.y,d=Math.hypot(dx,dy);
+      const dx=targetShip(b.x,b.y).x-b.x,dy=targetShip(b.x,b.y).y-b.y,d=Math.hypot(dx,dy);
       if(!b._committed&&d<=(b._commit||86))b._committed=true;
       if(!b._committed){
         let a=Math.atan2(b.vy,b.vx),ta=Math.atan2(dy,dx),da=((ta-a+Math.PI*3)%TAU)-Math.PI;
@@ -25097,7 +25101,7 @@ function updatePlay(dt){
           if(b.t < b._swerve){ _tr=b.turn||0.012; }
           else { _tr=b._turnLock||0.085; if(!b._locked){ b._locked=true; if(typeof addTrail==='function') addTrail(b.x,b.y,null,'missile'); } }
         }
-        const ta=Math.atan2(player.y-b.y,player.x-b.x); let da=((ta-ang+Math.PI*3)%(Math.PI*2))-Math.PI; ang+=clamp(da,-_tr,_tr);
+        const ta=Math.atan2(targetShip(b.x,b.y).y-b.y,targetShip(b.x,b.y).x-b.x); let da=((ta-ang+Math.PI*3)%(Math.PI*2))-Math.PI; ang+=clamp(da,-_tr,_tr);
       }
       if(b._accel){ b.spd=Math.min(b._maxspd||4.0,(b.spd||2.4)+b._accel); }   // missile builds speed after launch (readable then fast)
       const spd=(b.spd||2.7)*(DIFF?DIFF.ebSpeed:1); b.vx=Math.cos(ang)*spd; b.vy=Math.sin(ang)*spd; b.ang=ang;
@@ -25158,7 +25162,7 @@ function updatePlay(dt){
       /* HOMES FAR, COMMITS NEAR - see reaverOrbTick. Once it is inside FIREORB_COMMIT the heading
          is frozen for good, so breaking late sends it past and off the world instead of hooking
          back onto the player. _committed latches; it must never re-acquire. */
-      const dx=player.x-b.x, dy=player.y-b.y;
+      const dx=targetShip(b.x,b.y).x-b.x, dy=targetShip(b.x,b.y).y-b.y;
       if(!b._committed && Math.sqrt(dx*dx+dy*dy)<=FIREORB_COMMIT) b._committed=true;
       if(!b._committed){
         let ang=Math.atan2(b.vy,b.vx);
@@ -25173,7 +25177,7 @@ function updatePlay(dt){
       b.t=(b.t||0)+dt;
       // scale up as it climbs toward the player -> sells the ground-to-air perspective
       b._gscale=Math.min(1.5, (b._gscale||0.4) + dt*1.1);
-      if(!b.mg){ const ta=Math.atan2(player.y-b.y,player.x-b.x); let ang=Math.atan2(b.vy,b.vx);
+      if(!b.mg){ const ta=Math.atan2(targetShip(b.x,b.y).y-b.y,targetShip(b.x,b.y).x-b.x); let ang=Math.atan2(b.vy,b.vx);
         let da=((ta-ang+Math.PI*3)%(Math.PI*2))-Math.PI; ang+=clamp(da,-0.03,0.03);
         const spd=Math.hypot(b.vx,b.vy); b.vx=Math.cos(ang)*spd; b.vy=Math.sin(ang)*spd; }
       for(const pb of pBullets){ if(pb.dead) continue;
@@ -25210,7 +25214,7 @@ function updatePlay(dt){
       if(withSeat(_s, function(){
       if(player.dead || player.invuln>0) return false;
       const _hx=(player._hx!=null?player._hx:9), _hy=(player._hy!=null?player._hy:10);
-      if(Math.abs(b.x-player.x)<(_hx+b.w*0.15) && Math.abs(b.y-player.y)<(_hy+b.h*0.15)){
+      if(Math.abs(b.x-targetShip(b.x,b.y).x)<(_hx+b.w*0.15) && Math.abs(b.y-targetShip(b.x,b.y).y)<(_hy+b.h*0.15)){
         /* the magma round lands on its OWN authored impact (Mike, 0819) — `bfx_magma_i`, the third
            plate of the set, a burst that scatters into cooling debris. explode() counts a named
            family's frames itself, so the 6-frame reel needs no table row. */
@@ -25252,7 +25256,7 @@ function updatePlay(dt){
       if(e._dyingT!=null) continue;   // dying wrecks don't collide
       if(e._noHit) continue;          // submerged/phased (level-7 BUBBLE MAW mid-dive) — no body contact
       const _hx=(player._hx!=null?player._hx:9)-1, _hy=(player._hy!=null?player._hy:10)-2;
-      if(Math.abs(e.x-player.x)<(e.w/2+_hx) && Math.abs(e.y-player.y)<(e.h/2+_hy)){
+      if(Math.abs(e.x-_T.x)<(e.w/2+_hx) && Math.abs(e.y-_T.y)<(e.h/2+_hy)){
         if(specialActive('juggernaut')){ hitEnemy(e,999); explode(e.x,e.y,26,'red'); shake=Math.max(shake,7); Audio.SFX.expSmall(); }
         else { playerHit(); break; }
       }
@@ -25498,7 +25502,7 @@ function drawChargeTell(e){
   ctx.beginPath(); ctx.arc(e.x, e.y, r, 0, Math.PI*2); ctx.stroke();
   /* and it says WHERE: a lead line toward the player, which is the whole point of the warning */
   if(typeof player!=='undefined' && player && !player.dead){
-    const a=Math.atan2(player.y-e.y, player.x-e.x);
+    const a=Math.atan2(targetShip(e.x,e.y).y-e.y, targetShip(e.x,e.y).x-e.x);
     ctx.globalAlpha=Math.min(1,(0.20+0.5*k)*pulse);
     ctx.beginPath();
     ctx.moveTo(e.x+Math.cos(a)*r, e.y+Math.sin(a)*r);
@@ -28684,7 +28688,7 @@ function droneCannonTick(e, dt){
   const C=e && e._cn; if(!C || e.dead) return;
   const D=DRONE_CANNON[C.w]; if(!D) return;
   // aim within a clamped cone toward the player — never far enough to clip the un-margined art
-  const want = (!player.dead) ? clamp(Math.atan2(player.x-e.x, Math.max(1,player.y-e.y)), -0.55, 0.55) : 0;
+  const want = (!targetShip(e.x,e.y).dead) ? clamp(Math.atan2(targetShip(e.x,e.y).x-e.x, Math.max(1,targetShip(e.x,e.y).y-e.y)), -0.55, 0.55) : 0;
   C.aim += (want-C.aim)*Math.min(1, dt*4);
   if(C.flash>0) C.flash-=dt;
   C.cd-=dt*(DIFF?DIFF.eFire:1);
@@ -31622,7 +31626,7 @@ function s9WaterDraw(){
 
 function s9ChaosFire(e){
   if(!player || player.dead || e.y<18 || e.y>VH*0.72) return;
-  const aim=Math.atan2(player.y-e.y,player.x-e.x), mode=e._s9;
+  const aim=Math.atan2(targetShip(e.x,e.y).y-e.y,targetShip(e.x,e.y).x-e.x), mode=e._s9;
   if(mode==='laserwheel'){
     e._s9rot=(e._s9rot||0)+0.31;
     /* Six readable, evenly-spaced refraction lanes. Ten spokes filled almost every escape angle
@@ -31658,7 +31662,7 @@ function s9ChaosTick(e,dt){
     e._s9vy+=22*dt; e.x+=e._s9vx*dt; e.y+=e._s9vy*dt; e.spin=(e.spin||0)+dt*(e._waterChild?2.8:1.15); return;
   }
   if(m==='needle'){
-    e.y+=e._s9vy*1.35*dt; e.x+=clamp(player.x-e.x,-1,1)*90*dt;
+    e.y+=e._s9vy*1.35*dt; e.x+=clamp(targetShip(e.x,e.y).x-e.x,-1,1)*90*dt;
     e.spin=Math.sin(e.t*7)*0.34;
     e._s9PhaseCd=(e._s9PhaseCd==null?0.42:e._s9PhaseCd)-dt;
     if((e._s9PhaseT||0)>0){
@@ -32429,7 +32433,7 @@ function jetTick(e, dt){
      deliberate dodge always works. */
   if(e._s1Kamikaze){
     if(!e._kmLocked && e.y>=VH*0.16){
-      const dx=player.x-e.x, dy=Math.max(70,player.y-e.y), mag=Math.max(1,Math.hypot(dx,dy));
+      const dx=targetShip(e.x,e.y).x-e.x, dy=Math.max(70,targetShip(e.x,e.y).y-e.y), mag=Math.max(1,Math.hypot(dx,dy));
       e._kmVx=dx/mag*(e._jspd||168);
       e._kmVy=dy/mag*(e._jspd||168);
       e._kmLocked=true;
@@ -32455,7 +32459,7 @@ function jetTick(e, dt){
     /* Preserve lane order: distance from the player's column determines the bracket. The old
        rank-based bands could send an outside-left leader behind an inside-left follower, making
        their curves cross. Outer stays outer and inner stays inner throughout the attack. */
-    const band=clamp(54+Math.max(0,Math.abs(e.x-player.x)-54)*.48,54,156);
+    const band=clamp(54+Math.max(0,Math.abs(e.x-targetShip(e.x,e.y).x)-54)*.48,54,156);
     e._s1RunTarget=clamp(player.x+e._s1Wing*band,28,W-28);
     e._s1RunPhase='commit';e._s1RunT=.88;
   }
@@ -32565,7 +32569,7 @@ function jetTick(e, dt){
   if(Math.abs(e.spin)<0.002) e.spin=0;                    // settles true south, not near it
 
   /* ---- FIRING ---- */
-  const canFire = player.y > e.y+8 && Math.abs(player.x-e.x) < 150;
+  const canFire = targetShip(e.x,e.y).y > e.y+8 && Math.abs(targetShip(e.x,e.y).x-e.x) < 150;
   if(e._atk==='mg'){
     if(e._burst>0){
       e._shotCd-=dt;
@@ -32786,7 +32790,7 @@ function tankTick(e, dt){
   tankMotionTick(e,dt,TANK_SPD);
 
   /* FIRING — the same burst rhythm as the boats, per Mike's "similar attack" */
-  const canFire = player.y > e.y+8 && Math.abs(player.x-e.x) < 120;
+  const canFire = targetShip(e.x,e.y).y > e.y+8 && Math.abs(targetShip(e.x,e.y).x-e.x) < 120;
   if(e._atk==='mg' || e._atk==='kick'){
     if(e._burst>0){
       e._shotCd-=dt;
@@ -32831,7 +32835,7 @@ function tankTick(e, dt){
 function navalInSix(e){
   /* "in their six" for a vertically-oriented warship means the player is BELOW it and roughly in
      its lane — not a compass arc off a freely-rotating hull (drop 0808m) */
-  return player.y > e.y+10 && Math.abs(player.x-e.x) < 96;
+  return targetShip(e.x,e.y).y > e.y+10 && Math.abs(targetShip(e.x,e.y).x-e.x) < 96;
 }
 function navalTick(e, dt){
   if(e.dead) return;
@@ -37184,8 +37188,15 @@ function campaignIntroFinale(C,t,W,H){
 function drawCampaignIntro(dt){
   const C=campaignIntro,W=cutsceneViewWidth(),H=VH;
   ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
-  if(!C){campaignIntroFinish();return;}
-  if(!C.ready){C.ready=campaignIntroReady();if(!C.ready){campaignIntroWarm();cinCover('cinbg_hq_aerial',W,H,.30);return;}}
+  /* NO SOFTLOCK THROUGH THIS SCREEN (0903). Two ways it could hold the player for ever:
+     (1) C null - campaignIntroFinish early-returns on a null C, so the old line called a
+         no-op and came back next frame to do it again. Now it LEAVES: straight to the map.
+     (2) art never ready - the cover was drawn with no input exit, so a stalled decode was a
+         wall. After 2.5s any button skips it, exactly as the finished scene already allows. */
+  if(!C){ campaignIntro=null; campaignIntroPilot=null; if(typeof openStageSelect==='function') openStageSelect(1,{boot:true}); else setState(GS.CAMPHUB); return; }
+  if(!C.ready){C.ready=campaignIntroReady();if(!C.ready){campaignIntroWarm();cinCover('cinbg_hq_aerial',W,H,.30);
+    if(stateT>2.5 && ((Input.mouse.down&&!C.md)||(typeof anyTap==='function'&&anyTap()))){ Input.mouse.down=false; campaignIntroFinish(); }
+    C.md=!!Input.mouse.down; return;}}
   C.t+=dt;const t=C.t;
   if(t<CAMPAIGN_INTRO_FINALE){
     let i=CAMPAIGN_INTRO_BEATS.findIndex(b=>t>=b.at&&t<b.to);if(i<0)i=CAMPAIGN_INTRO_BEATS.length-1;
@@ -39063,7 +39074,7 @@ function volcTick(e, dt){
     }
   }else if(K==='crawl'){
     // LAVA CRAWLER: low pursuit, then two heavy fixed-heading jaw slugs; no post-launch steering.
-    if(e.y<VH*.33)e.y+=34*dt;const dx=clamp(player.x-e.x,-1,1);e.x+=dx*42*dt;e._bank=dx>0?1:-1;
+    if(e.y<VH*.33)e.y+=34*dt;const dx=clamp(targetShip(e.x,e.y).x-e.x,-1,1);e.x+=dx*42*dt;e._bank=dx>0?1:-1;
     if(!e._s2Act&&(e._fcd=(e._fcd==null?1.0:e._fcd)-dt)<=0){
       e._fcd=rnd(1.65,2.25)/fireScale;
       queue(()=>{const p=volcHardpoint(e,0,.28),a=aimPlayer(p.x,p.y);for(const o of [-.08,.08])fire(p,a+o,2.45,'s2slug',{silent:o>0,accel:.75,max:3.45});muzzle(0,.28,.78);},.66,.31);
@@ -39243,7 +39254,7 @@ function s3IceTick(e,dt){
     if(e.x<-60||e.x>W+60)e.dead=true;
   }else if(K==='s3crawler'){
     // ICE CRAWLER: plants its claws, follows slowly, then lobs a fixed three-shell mortar fan.
-    if(e.y<VH*.32)e.y+=43*dt;else{const dx=clamp(player.x-e.x,-1,1);e.x+=dx*32*dt;}
+    if(e.y<VH*.32)e.y+=43*dt;else{const dx=clamp(targetShip(e.x,e.y).x-e.x,-1,1);e.x+=dx*32*dt;}
     if(!e._s3Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){
       e._fcd=rnd(2.2,2.9)/DIFF.eFire;
       queue(()=>{const p=s3Hardpoint(e,0,.31),a=aim(p);for(const o of [-.24,0,.24])fire(p,a+o,1.65,'s3mortar',{silent:o!==0,accel:.65,max:3.1});stage3Muzzle(e,0,.31,.92,.17);shake=Math.max(shake,2);},.76,.42);
@@ -39343,7 +39354,7 @@ function s4ChaseTick(e,dt){
 
   if(K==='s4airfield'){
     // AIRFIELD TANK: steady centre-lane pursuit, three recoil-spaced cannon rounds.
-    e.y+=58*dt;e.x+=clamp(player.x-e.x,-1,1)*18*dt;
+    e.y+=58*dt;e.x+=clamp(targetShip(e.x,e.y).x-e.x,-1,1)*18*dt;
     if(!e._s4Act&&(e._fcd=(e._fcd==null?.9:e._fcd)-dt)<=0){e._fcd=rnd(2.1,2.7)/DIFF.eFire;
       queue(()=>{const p=s4Hardpoint(e,0,.40),a=aim(p);for(const o of [-.08,0,.08])fire(p,a+o,3.05,'s4steel',{silent:o!==0});stage4Muzzle(e,0,.40,1.0,.17);e._kick=.18;shake=Math.max(shake,3);},.76,.40);}
   }else if(K==='s4tractor'){
@@ -39795,7 +39806,7 @@ function s5SpaceTick(e,dt){
     if(e.y<VH*.23)e.y+=38*dt;else{if(e._dir==null)e._dir=1;e.x+=e._dir*30*dt;if(e.x<85||e.x>W-85)e._dir*=-1;}
     if(!e._s5Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.1,2.8)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,.38);for(const o of [-.34,-.17,0,.17,.34])fire(p,Math.PI/2+o,2.4,'s5prism',{silent:o>-.34});s5Muzzle(e,0,.38,1,.18);},.88,.48);}
   }else if(K==='s5leech'){
-    e.y+=60*dt;e.x+=clamp(player.x-e.x,-1,1)*38*dt;e.spin=Math.sin(e._s5t*1.5)*.18;
+    e.y+=60*dt;e.x+=clamp(targetShip(e.x,e.y).x-e.x,-1,1)*38*dt;e.spin=Math.sin(e._s5t*1.5)*.18;
     if(!e._s5Act&&(e._fcd=(e._fcd==null?.7:e._fcd)-dt)<=0){e._fcd=rnd(1.7,2.2)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,.34),a=aim(p);fire(p,a,2.25,'s5split',{});s5Muzzle(e,0,.34,.78,.14);},.62,.30);}
   }else if(K==='s5station'){
     if(e.y<VH*.18)e.y+=34*dt;else e.x=W*.5+Math.sin(e._s5t*.55)*110;
@@ -39865,7 +39876,7 @@ function s8MegaTick(e,dt){
   if(e._s8Act){const q=e._s8Act;q.t+=dt;e._s8AtkT=q.t;if(!q.fired&&q.t>=q.at){q.fired=true;q.fn();}if(q.t>=q.dur){e._s8Act=null;e._s8AtkT=null;}}
   const aimed=(p)=>s8Predict(e,p),ready=(base,min,max)=>!e._s8Act&&(e._fcd=(e._fcd==null?base:e._fcd)-dt)<=0&&(e._fcd=rnd(min,max)/DIFF.eFire);
   if(K==='s8leech'){
-    if(e.y<VH*.25)e.y+=88*dt;else{e.x+=clamp(player.x-e.x,-1,1)*72*dt;e.y=VH*.25+Math.sin(e._s8t*1.8)*12;e.spin=Math.sin(e._s8t*1.5)*.15;}
+    if(e.y<VH*.25)e.y+=88*dt;else{e.x+=clamp(targetShip(e.x,e.y).x-e.x,-1,1)*72*dt;e.y=VH*.25+Math.sin(e._s8t*1.8)*12;e.spin=Math.sin(e._s8t*1.5)*.15;}
     if(ready(.55,1.45,1.85))queue(()=>{for(const x of [-.18,.18]){const p=s8Hardpoint(e,x,.36);fire(p,aimed(p)+x*.35,3.1,'s8pair',{silent:x>0});s8Muzzle(e,x,.36,.72,.12);}},.54,.24);
   }else if(K==='s8interceptor'){
     if(e._x0==null)e._x0=e.x;e.y+=116*dt;e.x=e._x0+Math.sin(e._s8t*3.0+(e.phase||0))*105;e.spin=Math.sin(e._s8t*3)*.34;
@@ -39880,7 +39891,7 @@ function s8MegaTick(e,dt){
     if(e.y<VH*.22)e.y+=48*dt;else e.y=VH*.22+Math.sin(e._s8t)*7;e.spin+=.72*dt;
     if(ready(.9,1.85,2.25))queue(()=>{const p=s8Hardpoint(e,0,0),n=16,base=e._s8t*.38,st=TAU/n,gap=Math.round((aimed(p)-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+i*st,2.85,'s8rage',{silent:i>0});}if((e._riftN=(e._riftN||0)+1)%2===0)fire(p,Math.PI/2,1.35,'s8rift',{silent:true,accel:.24,max:2.5});s8Muzzle(e,0,0,1.15,.20);},.84,.44);
   }else if(K==='s8parasite'){
-    if(e.y<VH*.20)e.y+=72*dt;else{let ally=null,bd=1e9;for(const q of enemies){if(q===e||q.dead||!q._s8mega)continue;const d=Math.hypot(q.x-e.x,q.y-e.y);if(d<bd){bd=d;ally=q;}}if(ally){e.x+=(ally.x-e.x)*dt*.85;e.y+=(ally.y-e.y-62)*dt*.85;e._heal=(e._heal||0)-dt;if(e._heal<=0&&bd<155){ally.hp=Math.min(ally._maxhp||ally.hp,ally.hp+EHP(4));e._heal=.72;e._repairGlow=.24;}}else e.x+=clamp(player.x-e.x,-1,1)*52*dt;}
+    if(e.y<VH*.20)e.y+=72*dt;else{let ally=null,bd=1e9;for(const q of enemies){if(q===e||q.dead||!q._s8mega)continue;const d=Math.hypot(q.x-e.x,q.y-e.y);if(d<bd){bd=d;ally=q;}}if(ally){e.x+=(ally.x-e.x)*dt*.85;e.y+=(ally.y-e.y-62)*dt*.85;e._heal=(e._heal||0)-dt;if(e._heal<=0&&bd<155){ally.hp=Math.min(ally._maxhp||ally.hp,ally.hp+EHP(4));e._heal=.72;e._repairGlow=.24;}}else e.x+=clamp(targetShip(e.x,e.y).x-e.x,-1,1)*52*dt;}
     e._repairGlow=Math.max(0,(e._repairGlow||0)-dt);if(ready(.5,1.2,1.55))queue(()=>{const p=s8Hardpoint(e,0,.38),a=aimed(p);fire(p,a,3.8,'s8slug',{});s8Muzzle(e,0,.38,.68,.10);},.42,.18);
   }else if(K==='s8razor'){
     if(e._cx==null){e._cx=e.x;e._cy=VH*.24;e._rad=72+(e.phase?18:0);}if(e.y<e._cy)e.y+=84*dt;else{const a=e._s8t*1.8+(e.phase||0);e.x=e._cx+Math.cos(a)*e._rad;e.y=e._cy+Math.sin(a)*e._rad*.48;e.spin=a*1.35;}
@@ -39910,7 +39921,7 @@ function s8MegaTick(e,dt){
     },.70,.31);
   }else if(K==='s8needlejet'){
     /* Needle: player-lane intercept, a readable staccato of three straight cyan lances. */
-    if(e.y<VH*.22)e.y+=138*dt;else e.x+=clamp(player.x-e.x,-1,1)*112*dt;
+    if(e.y<VH*.22)e.y+=138*dt;else e.x+=clamp(targetShip(e.x,e.y).x-e.x,-1,1)*112*dt;
     if(ready(.28,.72,.96))queue(()=>{
       const m=H.mounts[2],p=s8Hardpoint(e,m[0],m[1]);
       for(const x of [-10,0,10])fire({x:p.x+x,y:p.y},Math.PI/2,6.35,'s8nf_needle',{silent:x!==-10});
@@ -39918,7 +39929,7 @@ function s8MegaTick(e,dt){
     },.34,.13);
   }else if(K==='s8scout'){
     /* Scout: mirrors the player at the ceiling and sends compact predictive pulse fans. */
-    if(e.y<VH*.23)e.y+=76*dt;else e.x+=clamp((player.x-e.x)*1.8,-96,96)*dt;
+    if(e.y<VH*.23)e.y+=76*dt;else e.x+=clamp((targetShip(e.x,e.y).x-e.x)*1.8,-96,96)*dt;
     if(ready(.48,1.02,1.28))queue(()=>{
       const m=H.mounts[2],p=s8Hardpoint(e,m[0],m[1]),a=s8Predict(e,p);
       for(const o of [-.18,0,.18])fire(p,a+o,3.75,'s8nf_scout',{silent:o!==-.18});
@@ -40121,7 +40132,7 @@ function orbBeamsUpdate(dt){
     if(b.src && !b.src.dead && b.src._dyingT==null){ b.x=b.src.x; b.y=b.src.y+b.src.h*0.4; }
     // damage the player if they're inside the column
     if(player && !player.dead && player.invuln<=0 && b.t<b.life){
-      const dy=player.y-b.y;
+      const dy=targetShip(b.x,b.y).y-b.y;
       if(dy>0){
         const bx=b.x+Math.tan(b.ang)*dy;
         if(Math.abs(player.x-bx)<b.w*0.5+6) playerHit();
@@ -41218,7 +41229,7 @@ function tur360Tick(e, dt){
   if(e._dieT!=null){ e._dieT+=dt; if(e._dieT>0.72) e.dead=true; return; }
   // FULL 360 aim — pick the nearest 15-degree frame to the true bearing
   if(player && !player.dead){
-    let deg=Math.atan2(player.y-e.y, player.x-e.x)*180/Math.PI;   // 0 = right, +down
+    let deg=Math.atan2(targetShip(e.x,e.y).y-e.y, targetShip(e.x,e.y).x-e.x)*180/Math.PI;   // 0 = right, +down
     if(deg<0) deg+=360;
     e._aimDeg=deg;
     e._turIdx=Math.round(deg/TUR_DEG)%TUR_STEPS;
@@ -41304,7 +41315,7 @@ function bunkerTick(e, dt){
   if(player && !player.dead){
     // The player is nearly always BELOW an emplacement, so the useful arc is right -> down -> left.
     // Mapping the full circle wasted 5 of the 7 steps; this spreads them across the arc that matters.
-    const ang=Math.atan2(player.y-e.y, player.x-e.x);      // ~0 (right) .. PI (left) when below
+    const ang=Math.atan2(targetShip(e.x,e.y).y-e.y, targetShip(e.x,e.y).x-e.x);      // ~0 (right) .. PI (left) when below
     const k=clamp(ang/Math.PI,0,1);
     e._rotIdx=clamp(Math.round(k*(D.nrot-1)),0,D.nrot-1);
   }
@@ -41384,7 +41395,7 @@ function miniTick(e, dt){
   const D=MINI_DEF[e._mini]; if(!D) return;
   // slow turn toward the player so the rotation frames get used
   if(player && !player.dead){
-    const want=clamp((player.x-e.x)/120,-1,1);
+    const want=clamp((targetShip(e.x,e.y).x-e.x)/120,-1,1);
     e._face=(e._face||0)+(want-(e._face||0))*Math.min(1,dt*2.2);
   }
   // ---- PATROL on the unit's own axis, and never leave its terrain ----
