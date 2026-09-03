@@ -2961,7 +2961,8 @@ function _levelCfg(){
        spanning the world width — drawStageBG paints it first and then covers it with the
        master. So the corridor Mike is describing was underneath the mountain the whole time;
        it only needed the mountain to stop being drawn over it. No new art. */
-    case 2: return {master:'nst2_master', liquid:'nlq2_lava', fill:'#241008', tile:0.5, fps:6,
+    /* CF_BoFExpansion-Vol.1 (Mike, 0903): 'replace our lava tile in-game with the new animated lava tile'. 8 x 512px seamless frames at the pack's 10 fps; _liquidFrames reads _0.._7. */
+    case 2: return {master:'nst2_master', liquid:'nlq3_lava', fill:'#241008', tile:0.5, fps:10,
                     arenaLiquid:true,continuousBoss:true,plateW:680, h:4080};
     case 3: return {master:'nst3_master', liquid:'nlq2_ice',     fill:'#0c1c2e', tile:0.5, fps:5,
                     plateW:680, h:4080};   // 0822d: plate rescaled 800x4800 -> 680x4080
@@ -3120,7 +3121,7 @@ function _levelCfg(){
        restored, and the rain/lightning still darken over it in code. */
     /* One physical 5000px master, built from the same blue plate used by the launch. The five
        1000px exports are QA/editing sections of this exact master, not runtime background swaps. */
-    case 6: return {master:'stage6_blue_master', plateW:680, h:5000, liquid:null,
+    case 6: return {master:'stage6_blue_master', city:'nst6_neoncity', plateW:680, h:5000, liquid:null,
                     fill:'#062a8e', tile:1.0, wide:true, loopMaster:true, continuousBoss:true};
     // 7 NOT ANOTHER SEWER LEVEL — dedicated sewer kit (CF_LevelPack-Lvl7): 800x3616 gameplay
     // scroll + 800x1000 boss arena, with the 256px sludge surface animating through the
@@ -3227,7 +3228,8 @@ function _levelCfg(){
        boundary, so _loopDraw can run for the full stage without a cut, stretch, or horizontal
        camera.  The restrained central lane keeps bullets readable while the outer liquid rifts
        carry the impossible space/ocean premise. */
-    case 9: return {master:'nst9_voidwater_master', liquid:null, fill:'#020817', tile:1.0, wide:true,
+    /* CF_BoFExpansion-Vol.1 (Mike, 0903): 'use space-starfield for stage 9 instead and make it tile up to the height of the stage length'. A 1024px seamless tile; loopMaster/_loopDraw repeat it for the whole 4096px scroll. */
+    case 9: return {master:'nst9_starfield', liquid:null, fill:'#020817', tile:1.0, wide:true,
                     plateW:680, h:4096, scrollLen:4096, loopMaster:true, continuousBoss:true};
     default: return null;
   }
@@ -22092,14 +22094,14 @@ function warmStage(n){
   {
     const _F={
       1:['nca_s1combatfx'],
-      2:['s2atk_','mwfx_','l23fx_inferno_','cfx_stage2_volcanic_projectiles'],
+      2:['s2atk_','mwfx_','l23fx_inferno_','cfx_stage2_volcanic_projectiles','nlq3_lava_'],
       3:['s3atk_','s3dmg_','l23fx_cryo_','l23fx_rime_'],
       4:['s4atk_','s4w_','cfx_stage4_chain_lightning'],
       5:['s5atk_','s5fracture_','ch_','cfx_stage5_xeno_projectiles','cfx_stage5_alien_projectiles_v2','ngm_space_atlas'],
-      6:['s6atk_','s6mb_','n6v','cfx_stage6_carrier_shield','stage6_blue_master'],
+      6:['s6atk_','s6mb_','n6v','cfx_stage6_carrier_shield','stage6_blue_master','nst6_neoncity'],
       7:['s7atk_','s7spore_','cfx_stage7_','cfx_stage7_toxic_projectiles_v2'],
       8:['s8atk_','s8roll_','s8nf_','s8symboss_','s8rift_','nst8_','nl8c_','cfx_stage8_symbiote_projectiles'],
-      9:['s9atk_','s9lattice_','ngm_space_atlas','nst9_']
+      9:['s9atk_','s9lattice_','ngm_space_atlas','nst9_','nst9_starfield']
     };
     for(const _pre of (_F[n]||[]))addPrefix(_pre);
     /* Ship-boss projectiles are registered by visual family, not stage. */
@@ -25736,7 +25738,11 @@ function playerHit(){
   /* Death powers every weapon bank down to level 1. It does not erase the equipped weapon or its
      authored variant, and it cannot leave upgraded ground weapons hidden in the Stage-5/9 loadout
      snapshot ready to reappear after Gravity Mode ends. */
-  run.weapon=clamp(run.weapon||0,0,6);run.wlevels=[1,1,1,1,1,1,1];run.wlevel=1;run.power=0;
+  /* DEATH DROPS YOU TO THE MACHINE GUN (Mike, 0903: "keeping weapons when I die" is a bug).
+     Codex's build kept the equipped weapon's identity and only powered its level down; Mike
+     overruled that. Weapon 0 at level 1, every bank at 1, variants cleared. */
+  run.weapon=0;run.wlevels=[1,1,1,1,1,1,1];run.wlevel=1;run.power=0;
+  if(run.wvars) run.wvars=[null,null,null,null,null,null,null];
   run.spaceWeapon=(run.spaceWeapon===1)?1:0;run.spaceLevels=[1,1,1];run._spaceVolleyCd=0;
   if(run._groundLoadout){
     run._groundLoadout.wlevel=1;run._groundLoadout.wlevels=[1,1,1,1,1,1,1];
@@ -50597,6 +50603,8 @@ function bg6SkyBaseDraw(img, key, sy, winH, drawW, dstY){
   }
   ctx.restore();
 }
+/* when the city begins to show and when it is fully there, as fractions of the stage clock */
+const BG6_CITY_FROM=0.30, BG6_CITY_TO=0.80, BG6_CITY_MAX=0.92;
 function bg6LoopDraw(img,key,scroll,drawW,winH,dstY){
   const H=img.naturalHeight||img.height||1;
   let sy=H-(((scroll%H)+H)%H)-winH;sy=((sy%H)+H)%H;
@@ -50604,6 +50612,28 @@ function bg6LoopDraw(img,key,scroll,drawW,winH,dstY){
   const h1=Math.min(winH,H-sy);
   bg6SkyBaseDraw(img,key,sy,h1,drawW,dstY);
   if(h1<winH)bg6SkyBaseDraw(img,key,0,winH-h1,drawW,dstY+h1);
+  /* THE DESCENT (CF_BoFExpansion-Vol.1, Mike 0903): 'use the neon city for stage 6 as we scale
+     down and start descending in altitude'. The 20,000ft sky stays the base; the 680x1024 neon
+     city strip (loops top-to-bottom by design) rises through it as the stage clock runs, so the
+     stage reads as losing altitude rather than cutting to a new plate. Its own scroll uses its
+     own height, so the loop is seamless whatever the sky plate's length. */
+  try{
+    const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
+    const ck=cfg&&cfg.city;
+    if(ck && typeof XART!=='undefined' && XART.rdy(ck)){
+      const p=(typeof bg6Phase==='function')?bg6Phase():0;
+      const k=clamp((p-BG6_CITY_FROM)/(BG6_CITY_TO-BG6_CITY_FROM),0,1), a=k*k*(3-2*k);
+      if(a>0.002){
+        const cim=XART.get(ck), CH=cim.naturalHeight||1;
+        let cy=CH-(((scroll%CH)+CH)%CH)-winH; cy=((cy%CH)+CH)%CH;
+        const c1=Math.min(winH,CH-cy);
+        ctx.save(); ctx.globalAlpha=a*BG6_CITY_MAX;
+        ctx.drawImage(cim,0,cy,cim.naturalWidth,c1,0,dstY,drawW,c1);
+        if(c1<winH) ctx.drawImage(cim,0,0,cim.naturalWidth,winH-c1,0,dstY+c1,drawW,winH-c1);
+        ctx.restore();
+      }
+    }
+  }catch(_c6){}
 }
 function bg6RainDraw(wet,W,top,hgt){
   if(wet<=0)return;
