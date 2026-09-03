@@ -22226,12 +22226,22 @@ function freezerL3Draw(){
     full:line, fade:clamp(f,0,1), portrait:'freezer', emo:'idle'
   });
 }
+/* the floor stage 9 tops you up to - see beginStage */
+const STAGE9_LIVES = 5;
 function beginStage(num){
   try{ window.sselCommitted=false; }catch(e){}
   try{ if(typeof warmStage==='function') warmStage(arguments[0]); }catch(e){}
   curStage=STAGES[num-1];
   /* the secret is SPENT once it is entered, so the map is not stuck on stage 9 forever (0822ad) */
   if(num===9 && typeof campaign!=='undefined') campaign.bonusUnlocked=0;
+  /* STAGE 9 HANDS YOU FIVE LIVES (Mike, 0902): "when entering stage 9 - you are given 5
+     lives by default if you didnt already have 5, or brought up to 5 if your amount < 5."
+     A FLOOR, NOT AN ASSIGNMENT - arriving with seven keeps seven; the bonus stage is a
+     reward and must never take lives away. Applies in single player and co-op alike.
+     Set in beginStage rather than at the warp-in so EVERY route into the stage gets it:
+     the stage-5 secret, a campaign-map re-entry, and a password or debug jump all pass
+     through here. */
+  if(num===9) run.lives=Math.max(run.lives|0, STAGE9_LIVES);
   const _l78Pending=(num===8)&&!!(run._l78Entry||(typeof campaign!=='undefined'&&campaign._l78Pending));
   run.stage=num;run._l78Entry=_l78Pending?1:0;if(_l78Pending&&typeof campaign!=='undefined')campaign._l78Pending=0;
   mapScroll=0; damBroken=false;
@@ -45220,7 +45230,10 @@ const MODE_ITEMS=[
   {name:'CAMPAIGN', sub:'WORLD MAP - STORY - REVISIT STAGES', mode:'campaign', open:true,  pill:'nms_campaign'},
   {name:'ARCADE',   sub:'STRAIGHT RUN - CLASSIC PROGRESSION', mode:'arcade',   open:true,  pill:'nms_arcade'},
   {name:'CO-OP',    sub:'TWO PILOTS',                         mode:'coop',     open:false, pill:'nms_coop'},
-  {name:'VERSUS',   sub:'HEAD TO HEAD',                       mode:'versus',   open:false, pill:'nms_versus'},
+  /* VERSUS IS GONE (Mike, 0902): "remove the vs. or versus button from the game entirely.
+     were not doing a DM mode with this game as much as I would have liked to. That's a bof2
+     idea." The nms_versus pill art stays registered and unused - deleting art is not what he
+     asked for, and BOF2 is where this belongs. Do not re-add the row because the art exists. */
 ];
 let modeIndex=0;   // default highlight CAMPAIGN (now first)
 /* ============================================================
