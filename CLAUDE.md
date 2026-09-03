@@ -220,6 +220,13 @@ CPU profile shows 3 ms of real work; with the trap the run is real-time. `pg.eva
 before the first `STEP`, always. The stage-2 "wedge" of the continuous nine-stage harness was this. And **a quoted heredoc is not safe from the harness's shell** — a
 backtick in a regex class broke a script write at line 117; keep backticks out of source that goes
 through Bash, or use the Write tool.
+⚠ **THE GENERIC BACK HANDLER ATE THE REBIND KEY (0903).** `menuBackTick` runs before `drawOptions`
+every frame and `Input.menuBack()` CONSUMES its tap, so with PRESS KEY lit the B button, backspace,
+escape and k backed out to the title instead of binding — and drawOptions' own
+`menuBack()&&!rebindAction` guard (0724dl) had been dead code the whole time. The handler now yields
+while `rebindAction` is set and routes an OPTIONS back through `optCancel`. **A guard inside a
+screen's draw cannot protect it from a handler that runs first**; check the dispatcher order.
+Measured in real Chromium: `_BUILD_SOURCE/probe_optback_0903.py`.
 ⚠ **`ctx.shadowBlur` PER PROJECTILE IS THE FRAME COST, AND IT IS MEASURABLE.** The Magma Ward's
 fireballs drew through `shadowBlur=10` under `'lighter'`, one save/restore each, ~32 a frame: **78 ms
 a frame** in real Chromium (CPU profile, 77% in `magmaWardProjectileDraw`). Baking the glow once per

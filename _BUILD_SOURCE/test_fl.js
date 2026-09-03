@@ -10535,6 +10535,19 @@ console.log("=== 215. menu navigation ===");
      'and it is checked once in drawScene, not copied into each screen');
   ok((_g215.match(/menuBackTick\(\)\) return;/g)||[]).length===1,
      'exactly one menuBackTick call site');
+  /* A REBIND IN PROGRESS OWNS EVERY KEY (Mike, 0903). This generic handler runs BEFORE drawOptions
+     and Input.menuBack() CONSUMES the tap, so with PRESS KEY lit the B button / backspace / escape / k
+     backed out to the title instead of binding. drawOptions' own guard was dead code for that reason.
+     Measured in real Chromium (probe_optback_0903.py): backspace mid-rebind binds and stays, escape
+     cancels the capture and stays, backspace with nothing armed leaves through optCancel. */
+  var _mbt=vm.runInContext("menuBackTick.toString()", ctxv);
+  ok(_mbt.indexOf('rebindAction) return false')>0 && _mbt.indexOf('rebindAction) return false')<_mbt.indexOf('if(!Input.menuBack())'),
+     'menuBackTick yields to a rebind in progress BEFORE it consumes the back tap');
+  ok(/state===GS\.OPTIONS[\s\S]{0,400}optCancel\(\)/.test(_mbt), 'and backing out of OPTIONS goes through CANCEL, the same path as the button');
+  vm.runInContext("state=GS.OPTIONS; rebindAction='fire'; rebindWho=1;", ctxv);
+  var _held=vm.runInContext("menuBackTick()===false && state===GS.OPTIONS && rebindAction==='fire'", ctxv);
+  ok(_held, 'with a rebind armed, the back handler does nothing and the screen stays');
+  vm.runInContext("rebindAction=null; rebindWho=1; state=GS.TITLE;", ctxv);
 
   /* CAMPAIGN INPUT OWNERSHIP (0826). Back is inert; Enter/Start opens the menu only after the
      authored map sequence has completed. FIRE remains the independent deploy command. */

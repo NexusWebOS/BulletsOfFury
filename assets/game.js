@@ -48727,6 +48727,25 @@ const MENU_BACK = {
 function menuBackTick(){
   const dest=MENU_BACK[state];
   if(dest==null) return false;
+  /* ============================================================
+     A REBIND IN PROGRESS OWNS EVERY KEY (Mike, 0903: "while assigning buttons, pressing b/back should
+     not exit us back to the main menu until we're done mapping our button").
+
+     This generic handler runs BEFORE drawOptions every frame (the dispatcher checks it once for all
+     seven backable screens), and Input.menuBack() CONSUMES the tap it matches. So with PRESS KEY lit,
+     the B button, backspace, escape and k never reached the capture loop in drawOptions - the screen
+     was already gone. drawOptions has had its own `menuBack()&&!rebindAction` guard since 0724dl; it
+     was dead code, because the key was eaten here first.
+
+     While rebindAction is set this returns WITHOUT touching Input, so the capture loop sees the tap:
+     B / backspace / k are BOUND to the action (that is the point of mapping a button), escape cancels
+     the capture and stays on the screen. Backing out of OPTIONS normally goes through optCancel, the
+     same path as the CANCEL button, so a rebind never leaves half-applied. ============================================================ */
+  if(state===GS.OPTIONS){
+    if(typeof rebindAction!=='undefined' && rebindAction) return false;
+    if(!Input.menuBack()) return false;
+    if(typeof optCancel==='function'){ optCancel(); return true; }
+  }
   if(!Input.menuBack()) return false;
   /* leave the screen the way it was found — a half-typed password or a stray menu index
      following you back out is its own bug */
