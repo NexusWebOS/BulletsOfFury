@@ -1645,7 +1645,7 @@ const XART=(function(){
      The BOSS sheets (87, 88) are deliberately NOT here: they are 10MB between them and are not
      needed until the end of a stage, by which point lazy loading has had minutes. Preloading
      them would put that on the boot path for no gain. */
-  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|bof_player_(?:weapon_special_icons|ordnance_projectiles|ships_barrel_rolls)_atlas|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nfx_(?:warp_tunnel|s5gate96)_|nca_(?:s1combatfx|8[0-2]|86|8[7-9])|aintro_)/;
+  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|bof_player_(?:weapon_special_icons|ordnance_projectiles|ships_barrel_rolls)_atlas|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nfx_(?:warp_tunnel|s5gate96)_|nca_(?:s1combatfx|en_s1|8[7-9])|aintro_)/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
   /* Approved close-camera Fury HQ command deck.  Keep the stable runtime key so every existing
      campaign scene inherits the new room without duplicating story data or carrying the former
@@ -1746,8 +1746,10 @@ const XART=(function(){
   X._src['cinintro_team']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/06_full_earth_division_lounge.png';
   X._src['cinintro_command']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/04_command_table_cole_decker_juggernaut.png';
   X._src['cinintro_lab']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/07_cole_decker_restricted_prototype_lab.png';
-  X._src['cincloud_day']='assets/game/bg6/bg6_cloud_day_1.png';
-  X._src['cincloud_storm']='assets/game/bg6/bg6_cloud_storm_0.png';
+  /* 0903: the stage-6 cloud plates are cells on fx_weather now (the loose bg6/ files are gone), so the
+     cinematic aliases point at the same cells. The loose path stays as the fallback for an old manifest. */
+  if(window.BOFX&&BOFX.cells&&BOFX.cells['bg6_cloud_day_1']) BOFX.cells['cincloud_day']=BOFX.cells['bg6_cloud_day_1']; else X._src['cincloud_day']='assets/game/bg6/bg6_cloud_day_1.png';
+  if(window.BOFX&&BOFX.cells&&BOFX.cells['bg6_cloud_storm_0']) BOFX.cells['cincloud_storm']=BOFX.cells['bg6_cloud_storm_0']; else X._src['cincloud_storm']='assets/game/bg6/bg6_cloud_storm_0.png';
   X._src['cinhostile_scout']='assets/game/stage8_symbiote_fleet/scout_drone/idle.png';
   X._src['cinhostile_bone']='assets/game/stage8_mega_enemies/bone_interceptor/attack_01.png';
   X._src['cinhostile_heavy']='assets/game/stage5_enemy_attacks/heavy_interceptor/01.png';

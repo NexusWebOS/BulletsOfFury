@@ -1,0 +1,6012 @@
+{
+ "ENEMY_ART": {
+  "tankA": "tnkG_g2",
+  "tankB": "tnkG_g3",
+  "tankC": "tnkG_g5",
+  "tankD": "tnkM_m1",
+  "tankE": "tnkM_m3",
+  "tankF": "tnkM_m4",
+  "tankG": "tnkM_m6",
+  "xelite_furytalon": "xelite_furytalon",
+  "xelite_razorback": "xelite_razorback",
+  "xelite_tempest": "xelite_tempest",
+  "xelite_emberwing": "xelite_emberwing",
+  "xelite_glacierlance": "xelite_glacierlance",
+  "xelite_voidreaver": "xelite_voidreaver",
+  "xelite_ironserpent": "xelite_ironserpent",
+  "xelite_solarwarden": "xelite_solarwarden",
+  "xelite_nighthammer": "xelite_nighthammer",
+  "jet1": "air_air1",
+  "jet2": "air_air2",
+  "jet3": "air_air5",
+  "jet4": "air_air6",
+  "jet5": "air_air7",
+  "drone1": "air_air9",
+  "drone2": "air_air10",
+  "drone3": "air_air11",
+  "drone4": "air_air12",
+  "miniboss1": "esB_big1",
+  "miniboss2": "esB_big2",
+  "miniboss3": "esB_big3",
+  "miniboss4": "esB_big4",
+  "miniboss5": "esB_big5",
+  "miniboss6": "esB_big6",
+  "s1tankHeavy": "s1_tank_heavy",
+  "s1tankLight": "s1_tank_light",
+  "s1tankApc": "s1_tank_apc",
+  "s1truckMissile": "s1_truck_missile",
+  "s1boatGun": "s1_boat_gun",
+  "s1boatPatrol": "s1_boat_patrol",
+  "s1jetDelta": "s1_jet_delta",
+  "s1jetBomber": "s1_jet_bomber",
+  "s1barrelOil": "s1_barrel_oil",
+  "s1barrelFire": "s1_barrel_fire",
+  "s1mineWater": "s1_mine_water",
+  "s1tankHeavyB": "s1_tank_heavy_blk",
+  "s1tankLightB": "s1_tank_light_blk",
+  "s1tankApcB": "s1_tank_apc_blk",
+  "s1truckMissileB": "s1_truck_missile_blk",
+  "s1boatGunB": "s1_boat_gun_blk",
+  "s1boatPatrolB": "s1_boat_patrol_blk",
+  "s1jetDeltaB": "s1_jet_delta_blk",
+  "s1jetBomberB": "s1_jet_bomber_blk",
+  "nef_s1_jungle_tank_intact_blk": "nef_s1_jungle_tank_intact_blk",
+  "nef_s1_jungle_tank_damaged_blk": "nef_s1_jungle_tank_damaged_blk",
+  "nef_s1_jungle_tank_critical_blk": "nef_s1_jungle_tank_critical_blk",
+  "nef_s1_jungle_mini_tank_intact_blk": "nef_s1_jungle_mini_tank_intact_blk",
+  "nef_s1_jungle_mini_tank_damaged_blk": "nef_s1_jungle_mini_tank_damaged_blk",
+  "nef_s1_jungle_mini_tank_critical_blk": "nef_s1_jungle_mini_tank_critical_blk",
+  "nef_s1_jungle_apc_intact_blk": "nef_s1_jungle_apc_intact_blk",
+  "nef_s1_jungle_apc_damaged_blk": "nef_s1_jungle_apc_damaged_blk",
+  "nef_s1_jungle_apc_critical_blk": "nef_s1_jungle_apc_critical_blk",
+  "nef_s1_rocket_buggy_intact_blk": "nef_s1_rocket_buggy_intact_blk",
+  "nef_s1_rocket_buggy_damaged_blk": "nef_s1_rocket_buggy_damaged_blk",
+  "nef_s1_rocket_buggy_critical_blk": "nef_s1_rocket_buggy_critical_blk",
+  "nef_s1_river_patrol_boat_intact_blk": "nef_s1_river_patrol_boat_intact_blk",
+  "nef_s1_river_patrol_boat_damaged_blk": "nef_s1_river_patrol_boat_damaged_blk",
+  "nef_s1_river_patrol_boat_critical_blk": "nef_s1_river_patrol_boat_critical_blk",
+  "nef_s1_missile_gunboat_intact_blk": "nef_s1_missile_gunboat_intact_blk",
+  "nef_s1_missile_gunboat_damaged_blk": "nef_s1_missile_gunboat_damaged_blk",
+  "nef_s1_missile_gunboat_critical_blk": "nef_s1_missile_gunboat_critical_blk",
+  "nef_s1_landing_craft_intact_blk": "nef_s1_landing_craft_intact_blk",
+  "nef_s1_landing_craft_damaged_blk": "nef_s1_landing_craft_damaged_blk",
+  "nef_s1_landing_craft_critical_blk": "nef_s1_landing_craft_critical_blk",
+  "nef_s1_river_corvette_intact_blk": "nef_s1_river_corvette_intact_blk",
+  "nef_s1_river_corvette_damaged_blk": "nef_s1_river_corvette_damaged_blk",
+  "nef_s1_river_corvette_critical_blk": "nef_s1_river_corvette_critical_blk",
+  "nef_s1_camo_attack_jet_intact_blk": "nef_s1_camo_attack_jet_intact_blk",
+  "nef_s1_camo_attack_jet_damaged_blk": "nef_s1_camo_attack_jet_damaged_blk",
+  "nef_s1_camo_attack_jet_critical_blk": "nef_s1_camo_attack_jet_critical_blk",
+  "nef_s1_jungle_bomber_intact_blk": "nef_s1_jungle_bomber_intact_blk",
+  "nef_s1_jungle_bomber_damaged_blk": "nef_s1_jungle_bomber_damaged_blk",
+  "nef_s1_jungle_bomber_critical_blk": "nef_s1_jungle_bomber_critical_blk",
+  "nef_s1_jungle_tank_intact": "nef_s1_jungle_tank_intact",
+  "nef_s1_jungle_tank_damaged": "nef_s1_jungle_tank_damaged",
+  "nef_s1_jungle_tank_critical": "nef_s1_jungle_tank_critical",
+  "nef_s1_jungle_mini_tank_intact": "nef_s1_jungle_mini_tank_intact",
+  "nef_s1_jungle_mini_tank_damaged": "nef_s1_jungle_mini_tank_damaged",
+  "nef_s1_jungle_mini_tank_critical": "nef_s1_jungle_mini_tank_critical",
+  "nef_s1_jungle_apc_intact": "nef_s1_jungle_apc_intact",
+  "nef_s1_jungle_apc_damaged": "nef_s1_jungle_apc_damaged",
+  "nef_s1_jungle_apc_critical": "nef_s1_jungle_apc_critical",
+  "nef_s1_rocket_buggy_intact": "nef_s1_rocket_buggy_intact",
+  "nef_s1_rocket_buggy_damaged": "nef_s1_rocket_buggy_damaged",
+  "nef_s1_rocket_buggy_critical": "nef_s1_rocket_buggy_critical",
+  "nef_s1_river_patrol_boat_intact": "nef_s1_river_patrol_boat_intact",
+  "nef_s1_river_patrol_boat_damaged": "nef_s1_river_patrol_boat_damaged",
+  "nef_s1_river_patrol_boat_critical": "nef_s1_river_patrol_boat_critical",
+  "nef_s1_missile_gunboat_intact": "nef_s1_missile_gunboat_intact",
+  "nef_s1_missile_gunboat_damaged": "nef_s1_missile_gunboat_damaged",
+  "nef_s1_missile_gunboat_critical": "nef_s1_missile_gunboat_critical",
+  "nef_s1_landing_craft_intact": "nef_s1_landing_craft_intact",
+  "nef_s1_landing_craft_damaged": "nef_s1_landing_craft_damaged",
+  "nef_s1_landing_craft_critical": "nef_s1_landing_craft_critical",
+  "nef_s1_river_corvette_intact": "nef_s1_river_corvette_intact",
+  "nef_s1_river_corvette_damaged": "nef_s1_river_corvette_damaged",
+  "nef_s1_river_corvette_critical": "nef_s1_river_corvette_critical",
+  "nef_s1_camo_attack_jet_intact": "nef_s1_camo_attack_jet_intact",
+  "nef_s1_camo_attack_jet_damaged": "nef_s1_camo_attack_jet_damaged",
+  "nef_s1_camo_attack_jet_critical": "nef_s1_camo_attack_jet_critical",
+  "nef_s1_jungle_bomber_intact": "nef_s1_jungle_bomber_intact",
+  "nef_s1_jungle_bomber_damaged": "nef_s1_jungle_bomber_damaged",
+  "nef_s1_jungle_bomber_critical": "nef_s1_jungle_bomber_critical",
+  "nef_s1_fuel_barrel_intact": "nef_s1_fuel_barrel_intact",
+  "nef_s1_fuel_barrel_damaged": "nef_s1_fuel_barrel_damaged",
+  "nef_s1_fuel_barrel_critical": "nef_s1_fuel_barrel_critical",
+  "nef_s1_fuel_tank_intact": "nef_s1_fuel_tank_intact",
+  "nef_s1_fuel_tank_damaged": "nef_s1_fuel_tank_damaged",
+  "nef_s1_fuel_tank_critical": "nef_s1_fuel_tank_critical",
+  "nef_s1_ammo_crate_intact": "nef_s1_ammo_crate_intact",
+  "nef_s1_ammo_crate_damaged": "nef_s1_ammo_crate_damaged",
+  "nef_s1_ammo_crate_critical": "nef_s1_ammo_crate_critical",
+  "nef_s1_river_mine_intact": "nef_s1_river_mine_intact",
+  "nef_s1_river_mine_damaged": "nef_s1_river_mine_damaged",
+  "nef_s1_river_mine_critical": "nef_s1_river_mine_critical",
+  "nef_s2_lava_crawler_intact": "nef_s2_lava_crawler_intact",
+  "nef_s2_lava_crawler_damaged": "nef_s2_lava_crawler_damaged",
+  "nef_s2_lava_crawler_critical": "nef_s2_lava_crawler_critical",
+  "nef_s2_mini_drill_tank_intact": "nef_s2_mini_drill_tank_intact",
+  "nef_s2_mini_drill_tank_damaged": "nef_s2_mini_drill_tank_damaged",
+  "nef_s2_mini_drill_tank_critical": "nef_s2_mini_drill_tank_critical",
+  "nef_s2_magma_artillery_intact": "nef_s2_magma_artillery_intact",
+  "nef_s2_magma_artillery_damaged": "nef_s2_magma_artillery_damaged",
+  "nef_s2_magma_artillery_critical": "nef_s2_magma_artillery_critical",
+  "nef_s2_heat_shielded_barrel_intact": "nef_s2_heat_shielded_barrel_intact",
+  "nef_s2_heat_shielded_barrel_damaged": "nef_s2_heat_shielded_barrel_damaged",
+  "nef_s2_heat_shielded_barrel_critical": "nef_s2_heat_shielded_barrel_critical",
+  "nef_s2_volcanic_mine_intact": "nef_s2_volcanic_mine_intact",
+  "nef_s2_volcanic_mine_damaged": "nef_s2_volcanic_mine_damaged",
+  "nef_s2_volcanic_mine_critical": "nef_s2_volcanic_mine_critical",
+  "nef_s2_tracked_flame_turret_intact": "nef_s2_tracked_flame_turret_intact",
+  "nef_s2_tracked_flame_turret_damaged": "nef_s2_tracked_flame_turret_damaged",
+  "nef_s2_tracked_flame_turret_critical": "nef_s2_tracked_flame_turret_critical",
+  "nef_s2_magma_skimmer_intact": "nef_s2_magma_skimmer_intact",
+  "nef_s2_magma_skimmer_damaged": "nef_s2_magma_skimmer_damaged",
+  "nef_s2_magma_skimmer_critical": "nef_s2_magma_skimmer_critical",
+  "nef_s2_molten_drone_intact": "nef_s2_molten_drone_intact",
+  "nef_s2_molten_drone_damaged": "nef_s2_molten_drone_damaged",
+  "nef_s2_molten_drone_critical": "nef_s2_molten_drone_critical",
+  "nef_s2_armored_lava_boat_intact": "nef_s2_armored_lava_boat_intact",
+  "nef_s2_armored_lava_boat_damaged": "nef_s2_armored_lava_boat_damaged",
+  "nef_s2_armored_lava_boat_critical": "nef_s2_armored_lava_boat_critical",
+  "nef_s2_drill_buggy_intact": "nef_s2_drill_buggy_intact",
+  "nef_s2_drill_buggy_damaged": "nef_s2_drill_buggy_damaged",
+  "nef_s2_drill_buggy_critical": "nef_s2_drill_buggy_critical",
+  "nef_s2_eruption_pod_intact": "nef_s2_eruption_pod_intact",
+  "nef_s2_eruption_pod_damaged": "nef_s2_eruption_pod_damaged",
+  "nef_s2_eruption_pod_critical": "nef_s2_eruption_pod_critical",
+  "nef_s2_volcanic_elite_interceptor_intact": "nef_s2_volcanic_elite_interceptor_intact",
+  "nef_s2_volcanic_elite_interceptor_damaged": "nef_s2_volcanic_elite_interceptor_damaged",
+  "nef_s2_volcanic_elite_interceptor_critical": "nef_s2_volcanic_elite_interceptor_critical",
+  "nef_s3_snow_tank_intact": "nef_s3_snow_tank_intact",
+  "nef_s3_snow_tank_damaged": "nef_s3_snow_tank_damaged",
+  "nef_s3_snow_tank_critical": "nef_s3_snow_tank_critical",
+  "nef_s3_ice_crawler_intact": "nef_s3_ice_crawler_intact",
+  "nef_s3_ice_crawler_damaged": "nef_s3_ice_crawler_damaged",
+  "nef_s3_ice_crawler_critical": "nef_s3_ice_crawler_critical",
+  "nef_s3_aa_sled_intact": "nef_s3_aa_sled_intact",
+  "nef_s3_aa_sled_damaged": "nef_s3_aa_sled_damaged",
+  "nef_s3_aa_sled_critical": "nef_s3_aa_sled_critical",
+  "nef_s3_frozen_turret_intact": "nef_s3_frozen_turret_intact",
+  "nef_s3_frozen_turret_damaged": "nef_s3_frozen_turret_damaged",
+  "nef_s3_frozen_turret_critical": "nef_s3_frozen_turret_critical",
+  "nef_s3_shard_mine_intact": "nef_s3_shard_mine_intact",
+  "nef_s3_shard_mine_damaged": "nef_s3_shard_mine_damaged",
+  "nef_s3_shard_mine_critical": "nef_s3_shard_mine_critical",
+  "nef_s3_explosive_cryo_canister_intact": "nef_s3_explosive_cryo_canister_intact",
+  "nef_s3_explosive_cryo_canister_damaged": "nef_s3_explosive_cryo_canister_damaged",
+  "nef_s3_explosive_cryo_canister_critical": "nef_s3_explosive_cryo_canister_critical",
+  "nef_s3_ice_skimmer_intact": "nef_s3_ice_skimmer_intact",
+  "nef_s3_ice_skimmer_damaged": "nef_s3_ice_skimmer_damaged",
+  "nef_s3_ice_skimmer_critical": "nef_s3_ice_skimmer_critical",
+  "nef_s3_glacier_drone_intact": "nef_s3_glacier_drone_intact",
+  "nef_s3_glacier_drone_damaged": "nef_s3_glacier_drone_damaged",
+  "nef_s3_glacier_drone_critical": "nef_s3_glacier_drone_critical",
+  "nef_s3_tracked_frost_artillery_intact": "nef_s3_tracked_frost_artillery_intact",
+  "nef_s3_tracked_frost_artillery_damaged": "nef_s3_tracked_frost_artillery_damaged",
+  "nef_s3_tracked_frost_artillery_critical": "nef_s3_tracked_frost_artillery_critical",
+  "nef_s3_snowmobile_gunner_intact": "nef_s3_snowmobile_gunner_intact",
+  "nef_s3_snowmobile_gunner_damaged": "nef_s3_snowmobile_gunner_damaged",
+  "nef_s3_snowmobile_gunner_critical": "nef_s3_snowmobile_gunner_critical",
+  "nef_s3_cryo_barge_intact": "nef_s3_cryo_barge_intact",
+  "nef_s3_cryo_barge_damaged": "nef_s3_cryo_barge_damaged",
+  "nef_s3_cryo_barge_critical": "nef_s3_cryo_barge_critical",
+  "nef_s3_elite_ice_interceptor_intact": "nef_s3_elite_ice_interceptor_intact",
+  "nef_s3_elite_ice_interceptor_damaged": "nef_s3_elite_ice_interceptor_damaged",
+  "nef_s3_elite_ice_interceptor_critical": "nef_s3_elite_ice_interceptor_critical",
+  "ns9c_big": "ns9c_big",
+  "ns9c_mega": "ns9c_mega",
+  "ns9c_sm": "ns9c_sm",
+  "ns9e_wskim": "ns9e_wskim",
+  "ns9e_pneedle": "ns9e_pneedle",
+  "ns9e_pmine": "ns9e_pmine",
+  "ns9e_gleech": "ns9e_gleech",
+  "ns9e_vmanta": "ns9e_vmanta",
+  "ns9e_echof": "ns9e_echof",
+  "ns9e_tsplit": "ns9e_tsplit",
+  "ns9e_cbreak": "ns9e_cbreak"
+ },
+ "STAGES": [
+  {
+   "n": 1,
+   "name": "STAGE 1",
+   "sub": "RUMBLE IN THE JUNGLE",
+   "bg": "jungle",
+   "music": "lvl1",
+   "length": 82,
+   "boss": "damkeeper"
+  },
+  {
+   "n": 2,
+   "name": "STAGE 2",
+   "sub": "IT'S HOT IN HERE",
+   "bg": "volcano",
+   "music": "bullets",
+   "length": 48,
+   "boss": "infernoreaver"
+  },
+  {
+   "n": 3,
+   "name": "STAGE 3",
+   "sub": "ICE STILL CAN'T SEE",
+   "bg": "ice",
+   "music": "lvl3",
+   "length": 50,
+   "boss": "cryospear"
+  },
+  {
+   "n": 4,
+   "name": "STAGE 4",
+   "sub": "CROUCHING MISSILES, HIDDEN DEATH",
+   "bg": "sky",
+   "music": "lvl4",
+   "length": 52,
+   "boss": "stormsovereign"
+  },
+  {
+   "n": 5,
+   "name": "STAGE 5",
+   "sub": "ALL FOR ONE, NONE FOR ALL",
+   "bg": "space",
+   "music": "lvl3-alt",
+   "length": 56,
+   "boss": "xenoregent"
+  },
+  {
+   "n": 6,
+   "name": "STAGE 6",
+   "sub": "HEAVY TURBULENCE",
+   "bg": "sky",
+   "music": "deathtrap",
+   "length": 56,
+   "boss": "doomsdaycarriermk2"
+  },
+  {
+   "n": 7,
+   "name": "STAGE 7",
+   "sub": "NOT ANOTHER SEWER LEVEL",
+   "bg": "sewer",
+   "music": "stage7mus",
+   "length": 58,
+   "boss": "sludgeemperor"
+  },
+  {
+   "n": 8,
+   "name": "STAGE 8",
+   "sub": "FURIOUS DEATH",
+   "bg": "space",
+   "music": "lordshadows",
+   "length": 60,
+   "boss": "vileexistence"
+  },
+  {
+   "n": 9,
+   "name": "STAGE 9",
+   "sub": "THE VELOCITY VOID",
+   "bg": "space",
+   "music": "lordofshadows",
+   "length": 42,
+   "boss": "tidalfusion",
+   "bonus": true
+  }
+ ],
+ "SUBBOSS": {
+  "1": {
+   "at": 0.42,
+   "kind": "junglecruiser",
+   "afterScroll": 1400,
+   "afterWaveTime": 34
+  },
+  "2": {
+   "at": 0.45,
+   "kind": "magmaward",
+   "afterScroll": 961
+  },
+  "3": {
+   "at": 0.45,
+   "kind": "rimewall",
+   "afterScroll": 1001
+  },
+  "4": {
+   "at": 0.45,
+   "kind": "olivewarden",
+   "afterScroll": 1041
+  },
+  "5": {
+   "at": 0.45,
+   "kind": "chaosharrier",
+   "afterScroll": 1121
+  },
+  "6": {
+   "at": 0.45,
+   "kind": "blacksteel",
+   "afterScroll": 1121
+  },
+  "7": {
+   "at": 0.45,
+   "kind": "dualscoopdredger",
+   "afterScroll": 1161
+  },
+  "8": {
+   "at": 0.45,
+   "kind": "heralddeath",
+   "afterScroll": 1201
+  },
+  "9": {
+   "at": 0.45,
+   "kind": "riftwardens",
+   "afterScroll": 1201
+  }
+ },
+ "NEWBOSS": {
+  "1": {
+   "idle": "chopper_idle",
+   "fire": "chopper_fire",
+   "death": "death",
+   "frames": 6,
+   "wmul": 1.15
+  },
+  "2": {
+   "idle": "fboss_idle",
+   "fire": "fboss_fire",
+   "death": "fboss_death",
+   "frames": 6,
+   "wmul": 1.2
+  },
+  "3": {
+   "idle": "iboss_idle",
+   "fire": "iboss_idle",
+   "death": null,
+   "frames": 6,
+   "wmul": 1.15,
+   "form2": {
+    "idle": "iboss2_idle",
+    "fire": "iboss2_atk"
+   },
+   "transformAt": 0.5
+  },
+  "4": {
+   "idle": "tankboss_idle",
+   "fire": "tankboss_fire",
+   "death": null,
+   "frames": 6,
+   "wmul": 1.15
+  }
+ },
+ "SHIPBOSS": {
+  "stormsovereign": {
+   "key": "s4w_boss_idle",
+   "name": "STORM SOVEREIGN MK II",
+   "w": 286,
+   "h": 286,
+   "hp": 2500,
+   "pat": "s4warburst",
+   "cd": 0.78,
+   "proj": "storm",
+   "mounts": {
+    "MG_L": [
+     -0.135,
+     0.315
+    ],
+    "MG_R": [
+     0.135,
+     0.315
+    ],
+    "ORB_L": [
+     -0.315,
+     -0.03
+    ],
+    "ORB_R": [
+     0.315,
+     -0.03
+    ],
+    "L": [
+     -0.235,
+     0.215
+    ],
+    "EL": [
+     -0.235,
+     0.215
+    ],
+    "C": [
+     0,
+     0.44
+    ],
+    "ER": [
+     0.235,
+     0.215
+    ],
+    "R": [
+     0.235,
+     0.215
+    ]
+   },
+   "pats": [
+    "s4warburst",
+    "s4orblift",
+    "s4lightning",
+    "s4waroverdrive"
+   ]
+  },
+  "infernoreaver": {
+   "key": "nsb_inferno_reaver",
+   "name": "INFERNO REAVER",
+   "w": 200,
+   "h": 200,
+   "hpMul": 1.3,
+   "pat": "infernogate",
+   "cd": 1.2,
+   "proj": "magma",
+   "move": {
+    "ampX": 116,
+    "ampY": 4,
+    "period": 5.8
+   },
+   "mounts": {
+    "L": [
+     -0.35,
+     0.28
+    ],
+    "C": [
+     0,
+     0.4
+    ],
+    "R": [
+     0.35,
+     0.28
+    ]
+   },
+   "pats": [
+    "infernogate",
+    "fireorb",
+    "infernoburst",
+    "chargebeam",
+    "infernostorm"
+   ]
+  },
+  "cryospear": {
+   "key": "nsb_rimewall_intact",
+   "name": "RIME WALL",
+   "w": 224,
+   "h": 236,
+   "hpMul": 1.58,
+   "pat": "s3wallcannons",
+   "cd": 1.05,
+   "proj": "glacier",
+   "move": {
+    "ampX": 86,
+    "ampY": 3,
+    "period": 8.4
+   },
+   "mounts": {
+    "L": [
+     -0.145,
+     0.43
+    ],
+    "C": [
+     0,
+     -0.06
+    ],
+    "R": [
+     0.145,
+     0.43
+    ],
+    "TL": [
+     -0.235,
+     -0.105
+    ],
+    "TR": [
+     0.235,
+     -0.105
+    ],
+    "V1": [
+     -0.3,
+     -0.06
+    ],
+    "V2": [
+     0.3,
+     -0.06
+    ]
+   },
+   "pats": [
+    "s3wallcannons",
+    "s3wallgate",
+    "s3wallhalo",
+    "s3walloverdrive"
+   ],
+   "dmg": [
+    "nsb_rimewall_damaged",
+    "nsb_rimewall_critical"
+   ]
+  },
+  "voidbat": {
+   "key": "nsb_void_bat",
+   "name": "VOID BAT",
+   "w": 210,
+   "h": 210,
+   "hpMul": 1.45,
+   "pat": "void",
+   "cd": 1.3,
+   "proj": "obsid",
+   "move": {
+    "ampX": 150,
+    "ampY": 24,
+    "period": 2.7,
+    "orbit": true
+   },
+   "mounts": {
+    "L": [
+     -0.29,
+     0.28
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.29,
+     0.28
+    ]
+   },
+   "pats": [
+    "void",
+    "pincer2",
+    "chargebeam",
+    "beamfan"
+   ]
+  },
+  "siegeember": {
+   "key": "nsb_siege_ember",
+   "name": "EMBER SIEGECARRIER",
+   "w": 165,
+   "h": 165,
+   "hp": 235,
+   "pat": "siege",
+   "cd": 1.25,
+   "mini": true,
+   "proj": "rampart",
+   "mounts": {
+    "L": [
+     -0.27,
+     0.27
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.27,
+     0.27
+    ]
+   },
+   "pats": [
+    "siege",
+    "fireorb"
+   ]
+  },
+  "lavamaw": {
+   "key": "nvl_maw_0",
+   "name": "MAGMA VENT",
+   "w": 196,
+   "h": 194,
+   "hp": 230,
+   "pat": "fireorb",
+   "cd": 1.3,
+   "mini": true,
+   "proj": "magma",
+   "mounts": {
+    "L": [
+     -0.25,
+     0.12
+    ],
+    "C": [
+     0,
+     0.34
+    ],
+    "R": [
+     0.25,
+     0.12
+    ]
+   },
+   "pats": [
+    "fireorb",
+    "ember"
+   ]
+  },
+  "glacierfortress": {
+   "key": "mbg3f_master",
+   "name": "GLACIER FORTRESS",
+   "w": 214,
+   "h": 214,
+   "hpMul": 1.44,
+   "pat": "rime",
+   "cd": 1.26,
+   "proj": "glacier",
+   "mounts": {
+    "L": [
+     -0.27,
+     0.27
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.27,
+     0.27
+    ]
+   },
+   "pats": [
+    "rime",
+    "lance",
+    "siege"
+   ],
+   "dmg": [
+    "mbg3f_dmgov_0",
+    "mbg3f_dmgov_1"
+   ]
+  },
+  "xenoregent": {
+   "key": "nsb_xenoregent_intact",
+   "name": "XENO REGENT",
+   "w": 216,
+   "h": 208,
+   "hpMul": 1,
+   "pat": "s5regentgrid",
+   "cd": 1.12,
+   "proj": "toxic",
+   "mounts": {
+    "L": [
+     -0.22,
+     0.24
+    ],
+    "C": [
+     0,
+     0.42
+    ],
+    "R": [
+     0.22,
+     0.24
+    ]
+   },
+   "pats": [
+    "s5regentgrid",
+    "s5regenthalo",
+    "s5regentmissile",
+    "s5regentcollapse"
+   ],
+   "dmg": [
+    "nsb_xenoregent_damaged",
+    "nsb_xenoregent_critical"
+   ]
+  },
+  "doomsdaycarrier": {
+   "key": "nsb_dcarrier_00",
+   "name": "DOOMSDAY CARRIER",
+   "w": 640,
+   "h": 310,
+   "hpMul": 1.5,
+   "pat": "mslfan",
+   "cd": 1.24,
+   "proj": "mirv",
+   "mounts": {
+    "L": [
+     -0.32,
+     0.14
+    ],
+    "C": [
+     0,
+     0.42
+    ],
+    "R": [
+     0.32,
+     0.14
+    ]
+   },
+   "pats": [
+    "mslfan",
+    "beamfan",
+    "mslfan"
+   ],
+   "dmg": [
+    "nsb_doomsdaycarrier_damaged",
+    "nsb_doomsdaycarrier_critical"
+   ],
+   "launch": {
+    "frames": 16,
+    "pre": "nsb_dcarrier_",
+    "fps": 14,
+    "loop": false,
+    "release": 10,
+    "warhead": "nfx_omegawarhead_in"
+   }
+  },
+  "doomsdaycarriermk2": {
+   "key": "nsb_dcarrmk2_closed",
+   "name": "DOOMSDAY CARRIER MK II",
+   "w": 640,
+   "h": 320,
+   "ty": 172,
+   "proj": "mirv",
+   "mounts": {
+    "L": [
+     -0.31,
+     0.17
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.31,
+     0.17
+    ],
+    "MG_L": [
+     -0.38,
+     0.31
+    ],
+    "MG_R": [
+     0.38,
+     0.31
+    ]
+   },
+   "hpMul": 1.65,
+   "pat": "mslfan",
+   "cd": 1.04,
+   "pats": [
+    "mslfan",
+    "stormmg",
+    "beamfan",
+    "stormmg"
+   ],
+   "launch": {
+    "frames": 18,
+    "pre": "nsb_dcarrmk2_",
+    "fps": 14,
+    "loop": false,
+    "release": 11,
+    "warhead": "nfx_omegamk2_in"
+   },
+   "cannon": {
+    "frames": 14,
+    "pre": "nsb_dcarrmk2_cn_",
+    "fps": 12,
+    "hMul": 1.5,
+    "fire": 6,
+    "last": 11
+   }
+  },
+  "tidalsovereign": {
+   "key": "ns9_tidal_intact",
+   "name": "TIDAL SOVEREIGN",
+   "w": 320,
+   "h": 256,
+   "hpMul": 1.55,
+   "proj": "cyclone",
+   "mounts": {
+    "L": [
+     -0.25,
+     0.36
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.25,
+     0.36
+    ]
+   },
+   "pat": "s9tidalguard",
+   "cd": 1.08,
+   "pats": [
+    "s9tidalguard",
+    "s9tidallattice",
+    "s9tidalcomet",
+    "s9tidalstorm"
+   ],
+   "dmg": [
+    "ns9_tidal_damaged",
+    "ns9_tidal_critical"
+   ]
+  },
+  "warpsentinel": {
+   "key": "ns9_warpsen_intact",
+   "name": "WARP SENTINEL",
+   "w": 256,
+   "h": 192,
+   "hp": 320,
+   "proj": "warhawk",
+   "mounts": {
+    "L": [
+     -0.17,
+     0.35
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.17,
+     0.35
+    ]
+   },
+   "pat": "s9sentinelcross",
+   "cd": 1.02,
+   "mini": true,
+   "pats": [
+    "s9sentinelcross",
+    "s9sentinelgate",
+    "s9sentinelrush"
+   ],
+   "dmg": [
+    "ns9_warpsen_damaged",
+    "ns9_warpsen_critical"
+   ]
+  },
+  "sludgeemperor": {
+   "key": "cfx_stage7_warden_walk",
+   "name": "TOXIC PORTAL WARDEN",
+   "w": 300,
+   "h": 230,
+   "hpMul": 1.86,
+   "pat": "s7warden",
+   "cd": 99,
+   "proj": "toxic",
+   "mounts": {
+    "L": [
+     -0.17,
+     0.25
+    ],
+    "C": [
+     0,
+     0.38
+    ],
+    "R": [
+     0.17,
+     0.25
+    ]
+   },
+   "pats": [
+    "s7warden"
+   ]
+  },
+  "dualscoopdredger": {
+   "key": "s7atk_dual_scoop_dredger_0",
+   "name": "DUAL SCOOP DREDGER",
+   "w": 240,
+   "h": 220,
+   "hp": 360,
+   "mini": true,
+   "proj": "toxic",
+   "mounts": {
+    "L": [
+     -0.145,
+     0.25
+    ],
+    "C": [
+     0,
+     0.36
+    ],
+    "R": [
+     0.145,
+     0.25
+    ]
+   },
+   "pat": "s7dredge",
+   "cd": 1.02,
+   "pats": [
+    "s7dredge",
+    "s7spore"
+   ]
+  },
+  "magmaward": {
+   "key": "nsb_magmaward_intact",
+   "name": "MAGMA WARD",
+   "w": 210,
+   "h": 216,
+   "hp": 1000,
+   "pat": "magmaflame",
+   "cd": 1.12,
+   "mini": true,
+   "proj": "magma",
+   "mounts": {
+    "L": [
+     -0.39,
+     0.27
+    ],
+    "C": [
+     0,
+     0.42
+    ],
+    "R": [
+     0.39,
+     0.27
+    ]
+   },
+   "pats": [
+    "magmaflame",
+    "magmaflamelaser",
+    "magmafireball",
+    "magmafireshield"
+   ],
+   "dmg": [
+    "nsb_magmaward_damaged",
+    "nsb_magmaward_critical"
+   ]
+  },
+  "rimewall": {
+   "key": "nsb_cryo_spear",
+   "name": "CRYO SPEAR",
+   "w": 195,
+   "h": 195,
+   "hp": 390,
+   "pat": "s3spearburst",
+   "cd": 0.88,
+   "mini": true,
+   "proj": "cryo",
+   "move": {
+    "ampX": 110,
+    "ampY": 5,
+    "period": 7.4
+   },
+   "mounts": {
+    "L": [
+     -0.245,
+     0.205
+    ],
+    "C": [
+     0,
+     0.435
+    ],
+    "R": [
+     0.245,
+     0.205
+    ],
+    "V1": [
+     -0.29,
+     0.02
+    ],
+    "V2": [
+     0.29,
+     0.02
+    ]
+   },
+   "pats": [
+    "s3spearburst",
+    "s3spearcross",
+    "s3spearcore"
+   ]
+  },
+  "olivewarden": {
+   "key": "nsb_olivewarden_intact",
+   "name": "OLIVE WARDEN",
+   "w": 210,
+   "h": 216,
+   "hp": 1180,
+   "pat": "s4warburst",
+   "cd": 0.92,
+   "mini": true,
+   "proj": "legion",
+   "mounts": {
+    "L": [
+     -0.28,
+     0.18
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.28,
+     0.18
+    ],
+    "MG_L": [
+     -0.19,
+     0.31
+    ],
+    "MG_R": [
+     0.19,
+     0.31
+    ]
+   },
+   "pats": [
+    "s4warburst",
+    "s4wargate",
+    "s4wardrones"
+   ],
+   "dmg": [
+    "nsb_olivewarden_damaged",
+    "nsb_olivewarden_critical"
+   ]
+  },
+  "spawncarrier": {
+   "key": "nsb_spawncarrier_intact_v2",
+   "name": "HERALD OF DEATH",
+   "w": 210,
+   "h": 216,
+   "hp": 340,
+   "pat": "spawnpods",
+   "cd": 1.22,
+   "mini": true,
+   "pats": [
+    "spawnpods",
+    "deathlattice"
+   ],
+   "proj": "spawn",
+   "mounts": {
+    "L": [
+     -0.316,
+     0.234
+    ],
+    "C": [
+     0,
+     0.414
+    ],
+    "R": [
+     0.316,
+     0.234
+    ]
+   },
+   "dmg": [
+    "nsb_spawncarrier_damaged_v2",
+    "nsb_spawncarrier_critical_v2"
+   ]
+  },
+  "heralddeath": {
+   "key": "nhd_idle_0",
+   "name": "HERALD OF DEATH",
+   "w": 150,
+   "h": 200,
+   "drawW": 192,
+   "drawH": 256,
+   "ty": 168,
+   "hp": 340,
+   "pat": "void",
+   "cd": 1.22,
+   "mini": true,
+   "proj": "herald",
+   "mounts": {
+    "L": [
+     -0.29,
+     0.24
+    ],
+    "C": [
+     0,
+     0.42
+    ],
+    "R": [
+     0.29,
+     0.24
+    ]
+   },
+   "pats": [
+    "void",
+    "mslfan"
+   ]
+  },
+  "thornrime": {
+   "key": "nsb_thorn_rime",
+   "name": "RIME THORN",
+   "w": 165,
+   "h": 165,
+   "hp": 225,
+   "pat": "rime",
+   "cd": 1.2,
+   "mini": true,
+   "proj": "cryo",
+   "mounts": {
+    "L": [
+     -0.27,
+     0.27
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.27,
+     0.27
+    ]
+   },
+   "pats": [
+    "rime",
+    "chargebeam"
+   ]
+  },
+  "blacksteel": {
+   "key": "nsb_blacksteel",
+   "name": "BLACKSTEEL RAPTOR",
+   "w": 170,
+   "h": 170,
+   "hp": 245,
+   "pat": "lance",
+   "cd": 1.15,
+   "mini": true,
+   "proj": "obsid",
+   "mounts": {
+    "L": [
+     -0.25,
+     0.12
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.25,
+     0.12
+    ]
+   },
+   "pats": [
+    "stormbolts",
+    "lance"
+   ]
+  },
+  "junglecruiser": {
+   "key": "nsb_jungle_cruiser",
+   "name": "JUNGLE CRUISER",
+   "w": 168,
+   "h": 168,
+   "hp": 900,
+   "pat": "jungleburst",
+   "cd": 1.05,
+   "mini": true,
+   "proj": "warhawk",
+   "mounts": {
+    "L": [
+     -0.22,
+     0.29
+    ],
+    "C": [
+     0,
+     0.455
+    ],
+    "R": [
+     0.22,
+     0.29
+    ],
+    "SL": [
+     -0.17,
+     0.02
+    ],
+    "SR": [
+     0.17,
+     0.02
+    ]
+   },
+   "pats": [
+    "jungleburst",
+    "jungletempest"
+   ]
+  },
+  "olivecarrier": {
+   "key": "nsb_olive_carrier",
+   "name": "OLIVE CARRIER",
+   "w": 172,
+   "h": 172,
+   "hp": 265,
+   "pat": "mslfan",
+   "cd": 1.12,
+   "mini": true,
+   "proj": "legion",
+   "mounts": {
+    "L": [
+     -0.3,
+     0.24
+    ],
+    "C": [
+     0,
+     0.43
+    ],
+    "R": [
+     0.3,
+     0.24
+    ]
+   },
+   "pats": [
+    "mslfan",
+    "lance"
+   ]
+  }
+ },
+ "VILE_FORMS": [
+  {
+   "art": "s8symboss_form_0",
+   "name": "BLACK COCOON",
+   "hpx": 1,
+   "scale": 0.78
+  },
+  {
+   "art": "s8symboss_form_1",
+   "name": "RAVENOUS ASCENDANT",
+   "hpx": 1,
+   "scale": 0.86
+  },
+  {
+   "art": "s8symboss_form_2",
+   "name": "ABYSSAL LEVIATHAN",
+   "hpx": 1,
+   "scale": 0.94
+  },
+  {
+   "art": "s8symboss_form_3",
+   "name": "FURIOUS DEATH",
+   "hpx": 1,
+   "scale": 1.02
+  }
+ ],
+ "MEGABOSS": {
+  "bz0": {
+   "name": "IRON BASTION",
+   "hpx": 1.1,
+   "atk": "siege",
+   "accent": "#c8a24a"
+  },
+  "bz1": {
+   "name": "RUST LEVIATHAN",
+   "hpx": 1.15,
+   "atk": "spread",
+   "accent": "#c07a3a"
+  },
+  "bz2": {
+   "name": "FROST CITADEL",
+   "hpx": 1.1,
+   "atk": "ice",
+   "accent": "#6db0e0"
+  },
+  "bz3": {
+   "name": "GRAVE WARDEN",
+   "hpx": 1.2,
+   "atk": "homing",
+   "accent": "#8a8f9c"
+  },
+  "bz4": {
+   "name": "CAMO COLOSSUS",
+   "hpx": 1.15,
+   "atk": "siege",
+   "accent": "#9aa246"
+  },
+  "bz5": {
+   "name": "MAGMA TYRANT",
+   "hpx": 1.2,
+   "atk": "inferno",
+   "accent": "#e0602a"
+  },
+  "bz6": {
+   "name": "VOID SOVEREIGN",
+   "hpx": 1.3,
+   "atk": "spiral",
+   "accent": "#9a6ad0"
+  }
+ },
+ "MINIBOSS": {
+  "esB_big1": {
+   "name": "GRAY REAPER",
+   "atk": "strafe",
+   "accent": "#9a8f86"
+  },
+  "esB_big2": {
+   "name": "BLUE HALBERD",
+   "atk": "twin",
+   "accent": "#5a90c8"
+  },
+  "esB_big3": {
+   "name": "SAND VIPER",
+   "atk": "spread",
+   "accent": "#c2a35a"
+  },
+  "esB_big4": {
+   "name": "STEEL WIDOW",
+   "atk": "homing",
+   "accent": "#7f86a0"
+  },
+  "esB_big5": {
+   "name": "OLIVE MAULER",
+   "atk": "strafe",
+   "accent": "#7f8646"
+  },
+  "esB_big6": {
+   "name": "CRIMSON TALON",
+   "atk": "twin",
+   "accent": "#c05046"
+  }
+ },
+ "ELITEX": {
+  "furytalon": {
+   "hp": 150,
+   "w": 52,
+   "h": 52,
+   "score": 3600,
+   "band": 0.3,
+   "spd": 78,
+   "shield": "gold",
+   "sh": 0.45,
+   "vol": 3,
+   "gap": 0.09,
+   "cd": [
+    1.1,
+    1.6
+   ],
+   "kind": "dart"
+  },
+  "razorback": {
+   "hp": 140,
+   "w": 50,
+   "h": 50,
+   "score": 3400,
+   "band": 0.34,
+   "spd": 92,
+   "shield": "crimson",
+   "sh": 0.4,
+   "vol": 2,
+   "gap": 0.16,
+   "cd": [
+    0.9,
+    1.3
+   ],
+   "kind": "dart"
+  },
+  "tempest": {
+   "hp": 160,
+   "w": 54,
+   "h": 54,
+   "score": 3800,
+   "band": 0.28,
+   "spd": 70,
+   "shield": "ion",
+   "sh": 0.5,
+   "vol": 4,
+   "gap": 0.07,
+   "cd": [
+    1.2,
+    1.7
+   ],
+   "kind": "xorb_lightning"
+  },
+  "emberwing": {
+   "hp": 170,
+   "w": 54,
+   "h": 54,
+   "score": 4000,
+   "band": 0.32,
+   "spd": 74,
+   "shield": "crimson",
+   "sh": 0.5,
+   "vol": 3,
+   "gap": 0.12,
+   "cd": [
+    1,
+    1.5
+   ],
+   "kind": "comet"
+  },
+  "glacierlance": {
+   "hp": 240,
+   "w": 58,
+   "h": 58,
+   "score": 5600,
+   "band": 0.26,
+   "spd": 66,
+   "shield": "ion",
+   "sh": 0.7,
+   "vol": 5,
+   "gap": 0.06,
+   "cd": [
+    1.3,
+    1.8
+   ],
+   "kind": "xlz_burst"
+  },
+  "voidreaver": {
+   "hp": 190,
+   "w": 56,
+   "h": 56,
+   "score": 4600,
+   "band": 0.3,
+   "spd": 80,
+   "shield": "violet",
+   "sh": 0.55,
+   "vol": 3,
+   "gap": 0.14,
+   "cd": [
+    1,
+    1.5
+   ],
+   "kind": "xorb_void"
+  },
+  "ironserpent": {
+   "hp": 150,
+   "w": 50,
+   "h": 50,
+   "score": 3600,
+   "band": 0.36,
+   "spd": 110,
+   "shield": "hex",
+   "sh": 0.4,
+   "vol": 2,
+   "gap": 0.18,
+   "cd": [
+    0.8,
+    1.2
+   ],
+   "kind": "dart"
+  },
+  "solarwarden": {
+   "hp": 210,
+   "w": 56,
+   "h": 56,
+   "score": 5000,
+   "band": 0.28,
+   "spd": 64,
+   "shield": "gold",
+   "sh": 0.65,
+   "vol": 4,
+   "gap": 0.08,
+   "cd": [
+    1.2,
+    1.7
+   ],
+   "kind": "xorb_solar"
+  },
+  "nighthammer": {
+   "hp": 220,
+   "w": 60,
+   "h": 60,
+   "score": 5200,
+   "band": 0.24,
+   "spd": 58,
+   "shield": "prism",
+   "sh": 0.6,
+   "vol": 5,
+   "gap": 0.05,
+   "cd": [
+    1.4,
+    1.9
+   ],
+   "kind": "xorb_antimatter"
+  }
+ },
+ "ELITE8": {
+  "talon": {
+   "hp": 120,
+   "w": 46,
+   "h": 44,
+   "score": 3200,
+   "art": "talon"
+  },
+  "hell": {
+   "hp": 150,
+   "w": 50,
+   "h": 46,
+   "score": 3800,
+   "art": "hell"
+  },
+  "cdisc": {
+   "hp": 135,
+   "w": 46,
+   "h": 44,
+   "score": 3500,
+   "art": "cdisc"
+  },
+  "spiral": {
+   "hp": 170,
+   "w": 48,
+   "h": 46,
+   "score": 4400,
+   "art": "spiral"
+  }
+ },
+ "NEF_S1": {
+  "s1tankheavy": {
+   "art": "nef_s1_jungle_tank",
+   "pat": "s1tank",
+   "atk": "mg",
+   "w": 47,
+   "h": 64,
+   "hp": 16,
+   "score": 460
+  },
+  "s1tanklight": {
+   "art": "nef_s1_jungle_mini_tank",
+   "pat": "s1tank",
+   "atk": "cannon",
+   "w": 38,
+   "h": 52,
+   "hp": 10,
+   "score": 340
+  },
+  "s1tankapc": {
+   "art": "nef_s1_jungle_apc",
+   "pat": "s1tank",
+   "atk": "kick",
+   "w": 39,
+   "h": 62,
+   "hp": 13,
+   "score": 400
+  },
+  "s1truckmissile": {
+   "art": "nef_s1_rocket_buggy",
+   "pat": "s1tank",
+   "atk": "jungleMissile",
+   "w": 42,
+   "h": 62,
+   "hp": 12,
+   "score": 520,
+   "wheels": true
+  },
+  "s1jetdelta": {
+   "art": "nef_s1_camo_attack_jet",
+   "pat": "s1jet",
+   "atk": "mg",
+   "w": 73,
+   "h": 81,
+   "hp": 9,
+   "score": 380,
+   "spd": 96
+  },
+  "s1jetbomber": {
+   "art": "nef_s1_jungle_bomber",
+   "pat": "s1jet",
+   "atk": "missile",
+   "w": 101,
+   "h": 89,
+   "hp": 14,
+   "score": 520,
+   "spd": 78
+  },
+  "s1boatgun": {
+   "art": "nef_s1_missile_gunboat",
+   "pat": "naval",
+   "atk": "missile",
+   "w": 41,
+   "h": 64,
+   "hp": 14,
+   "score": 420
+  },
+  "s1boatpatrol": {
+   "art": "nef_s1_river_patrol_boat",
+   "pat": "naval",
+   "atk": "mg",
+   "w": 43,
+   "h": 68,
+   "hp": 18,
+   "score": 560
+  },
+  "s1tankheavy_b": {
+   "art": "nef_s1_jungle_tank",
+   "pat": "s1tank",
+   "atk": "mg",
+   "w": 47,
+   "h": 64,
+   "hp": 20,
+   "score": 560,
+   "blk": true
+  },
+  "s1tanklight_b": {
+   "art": "nef_s1_jungle_mini_tank",
+   "pat": "s1tank",
+   "atk": "cannon",
+   "w": 38,
+   "h": 52,
+   "hp": 13,
+   "score": 420,
+   "blk": true
+  },
+  "s1tankapc_b": {
+   "art": "nef_s1_jungle_apc",
+   "pat": "s1tank",
+   "atk": "kick",
+   "w": 39,
+   "h": 62,
+   "hp": 16,
+   "score": 500,
+   "blk": true
+  },
+  "s1truckmissile_b": {
+   "art": "nef_s1_rocket_buggy",
+   "pat": "s1tank",
+   "atk": "jungleMissile",
+   "w": 42,
+   "h": 62,
+   "hp": 15,
+   "score": 640,
+   "blk": true,
+   "wheels": true
+  },
+  "s1jetdelta_b": {
+   "art": "nef_s1_camo_attack_jet",
+   "pat": "s1jet",
+   "atk": "mg",
+   "w": 73,
+   "h": 81,
+   "hp": 12,
+   "score": 470,
+   "spd": 104,
+   "blk": true,
+   "fireMul": 0.75
+  },
+  "s1jetbomber_b": {
+   "art": "nef_s1_jungle_bomber",
+   "pat": "s1jet",
+   "atk": "salvo",
+   "w": 101,
+   "h": 89,
+   "hp": 18,
+   "score": 640,
+   "spd": 86,
+   "blk": true,
+   "fireMul": 0.75
+  },
+  "s1corvette": {
+   "art": "nef_s1_river_corvette",
+   "pat": "naval",
+   "atk": "mg",
+   "w": 48,
+   "h": 76,
+   "hp": 24,
+   "score": 720,
+   "blk": true
+  },
+  "s1landingcraft": {
+   "art": "nef_s1_landing_craft",
+   "pat": "naval",
+   "atk": "none",
+   "w": 46,
+   "h": 72,
+   "hp": 20,
+   "score": 600,
+   "blk": true
+  },
+  "s1fuelbarrel": {
+   "art": "nef_s1_fuel_barrel",
+   "pat": "prop",
+   "atk": "none",
+   "w": 25,
+   "h": 40,
+   "hp": 4,
+   "score": 150,
+   "prop": true
+  },
+  "s1fueltank": {
+   "art": "nef_s1_fuel_tank",
+   "pat": "prop",
+   "atk": "none",
+   "w": 27,
+   "h": 42,
+   "hp": 6,
+   "score": 200,
+   "prop": true
+  },
+  "s1ammocrate": {
+   "art": "nef_s1_ammo_crate",
+   "pat": "prop",
+   "atk": "none",
+   "w": 39,
+   "h": 34,
+   "hp": 4,
+   "score": 150,
+   "prop": true
+  },
+  "s1rivermine": {
+   "art": "nef_s1_river_mine",
+   "pat": "prop",
+   "atk": "none",
+   "w": 37,
+   "h": 36,
+   "hp": 3,
+   "score": 180,
+   "prop": true
+  }
+ },
+ "NEF_S2": {
+  "ash": {
+   "art": "nef_s2_molten_drone",
+   "w": 46,
+   "h": 39,
+   "hp": 7,
+   "score": 480
+  },
+  "skim": {
+   "art": "nef_s2_magma_skimmer",
+   "w": 43,
+   "h": 39,
+   "hp": 8,
+   "score": 520
+  },
+  "disc": {
+   "art": "nef_s2_volcanic_mine",
+   "w": 53,
+   "h": 44,
+   "hp": 6,
+   "score": 760
+  },
+  "lance": {
+   "art": "nef_s2_volcanic_elite_interceptor",
+   "w": 47,
+   "h": 47,
+   "hp": 9,
+   "score": 640
+  },
+  "eye": {
+   "art": "nef_s2_eruption_pod",
+   "w": 33,
+   "h": 42,
+   "hp": 10,
+   "score": 700
+  },
+  "cruc": {
+   "art": "nef_s2_lava_crawler",
+   "w": 59,
+   "h": 52,
+   "hp": 16,
+   "score": 1320
+  },
+  "carrier": {
+   "art": "nef_s2_magma_artillery",
+   "w": 57,
+   "h": 60,
+   "hp": 20,
+   "score": 1850
+  },
+  "el_em": {
+   "art": "nef_s2_mini_drill_tank",
+   "w": 43,
+   "h": 54,
+   "hp": 22,
+   "score": 1450
+  },
+  "el_lr": {
+   "art": "nef_s2_armored_lava_boat",
+   "w": 34,
+   "h": 56,
+   "hp": 26,
+   "score": 1650
+  },
+  "s2heatbarrel": {
+   "art": "nef_s2_heat_shielded_barrel",
+   "pat": "prop",
+   "w": 29,
+   "h": 42,
+   "hp": 5,
+   "score": 180,
+   "prop": true
+  }
+ },
+ "NEF_S3": {
+  "frost": {
+   "art": "nef_s3_glacier_drone",
+   "w": 47,
+   "h": 36,
+   "hp": 5,
+   "score": 200
+  },
+  "shieldd": {
+   "art": "nef_s3_shard_mine",
+   "w": 46,
+   "h": 44,
+   "hp": 8,
+   "score": 500
+  },
+  "cryo": {
+   "art": "nef_s3_elite_ice_interceptor",
+   "w": 43,
+   "h": 39,
+   "hp": 9,
+   "score": 600
+  },
+  "turdrone": {
+   "art": "nef_s3_frozen_turret",
+   "w": 43,
+   "h": 44,
+   "hp": 8,
+   "score": 480
+  },
+  "mdrone": {
+   "art": "nef_s3_ice_skimmer",
+   "w": 51,
+   "h": 44,
+   "hp": 6,
+   "score": 360
+  },
+  "icegun": {
+   "art": "nef_s3_aa_sled",
+   "w": 39,
+   "h": 44,
+   "hp": 10,
+   "score": 520
+  },
+  "sideswirl": {
+   "art": "nef_s3_snowmobile_gunner",
+   "w": 21,
+   "h": 40,
+   "hp": 7,
+   "score": 440
+  },
+  "racer": {
+   "art": "nef_s3_ice_crawler",
+   "w": 39,
+   "h": 44,
+   "hp": 12,
+   "score": 560
+  },
+  "topgun": {
+   "art": "nef_s3_snow_tank",
+   "w": 45,
+   "h": 48,
+   "hp": 14,
+   "score": 700
+  },
+  "el_cs": {
+   "art": "nef_s3_cryo_barge",
+   "w": 40,
+   "h": 56,
+   "hp": 24,
+   "score": 1500
+  },
+  "s3mine": {
+   "art": "nef_s3_shard_mine",
+   "w": 46,
+   "h": 44,
+   "hp": 18,
+   "score": 700
+  },
+  "s3interceptor": {
+   "art": "nef_s3_elite_ice_interceptor",
+   "w": 43,
+   "h": 39,
+   "hp": 15,
+   "score": 760
+  },
+  "s3sled": {
+   "art": "nef_s3_aa_sled",
+   "w": 45,
+   "h": 48,
+   "hp": 24,
+   "score": 920
+  },
+  "s3snowmobile": {
+   "art": "nef_s3_snowmobile_gunner",
+   "w": 30,
+   "h": 48,
+   "hp": 16,
+   "score": 720
+  },
+  "s3crawler": {
+   "art": "nef_s3_ice_crawler",
+   "w": 52,
+   "h": 48,
+   "hp": 32,
+   "score": 1180
+  },
+  "s3tank": {
+   "art": "nef_s3_snow_tank",
+   "w": 54,
+   "h": 54,
+   "hp": 46,
+   "score": 1550
+  },
+  "s3barge": {
+   "art": "nef_s3_cryo_barge",
+   "w": 54,
+   "h": 66,
+   "hp": 62,
+   "score": 2100
+  },
+  "s3artillery": {
+   "art": "nef_s3_tracked_frost_artillery",
+   "w": 50,
+   "h": 62,
+   "hp": 54,
+   "score": 1900
+  },
+  "s3canister": {
+   "art": "nef_s3_explosive_cryo_canister",
+   "pat": "prop",
+   "w": 26,
+   "h": 42,
+   "hp": 4,
+   "score": 180,
+   "prop": true
+  }
+ },
+ "VOLC": {
+  "skim": {
+   "fam": "ship",
+   "hp": 16,
+   "w": 34,
+   "h": 30,
+   "score": 520,
+   "art": "skim"
+  },
+  "disc": {
+   "fam": "ship",
+   "hp": 24,
+   "w": 36,
+   "h": 34,
+   "score": 760,
+   "art": "disc"
+  },
+  "eye": {
+   "fam": "ship",
+   "hp": 20,
+   "w": 34,
+   "h": 32,
+   "score": 700,
+   "art": "eye"
+  },
+  "miner": {
+   "fam": "ship",
+   "hp": 46,
+   "w": 44,
+   "h": 38,
+   "score": 1150,
+   "art": "miner"
+  },
+  "ash": {
+   "fam": "ship",
+   "hp": 14,
+   "w": 32,
+   "h": 30,
+   "score": 480,
+   "art": "ash"
+  },
+  "cruc": {
+   "fam": "ship",
+   "hp": 52,
+   "w": 48,
+   "h": 40,
+   "score": 1320,
+   "art": "cruc"
+  },
+  "lance": {
+   "fam": "ship",
+   "hp": 18,
+   "w": 30,
+   "h": 36,
+   "score": 640,
+   "art": "lance"
+  },
+  "carrier": {
+   "fam": "ship",
+   "hp": 70,
+   "w": 52,
+   "h": 46,
+   "score": 1850,
+   "art": "carrier"
+  },
+  "lavamaw": {
+   "fam": "vent",
+   "hp": 34,
+   "w": 40,
+   "h": 38,
+   "score": 880,
+   "art": "maw"
+  },
+  "crawl": {
+   "fam": "vent",
+   "hp": 40,
+   "w": 42,
+   "h": 36,
+   "score": 960,
+   "art": "crawl"
+  },
+  "pod": {
+   "fam": "vent",
+   "hp": 28,
+   "w": 36,
+   "h": 36,
+   "score": 820,
+   "art": "pod"
+  },
+  "golem": {
+   "fam": "vent",
+   "hp": 96,
+   "w": 56,
+   "h": 52,
+   "score": 2400,
+   "art": "golem"
+  }
+ },
+ "SEWER": {
+  "skimmer": {
+   "art": "skimmer",
+   "hp": 14,
+   "w": 32,
+   "h": 32,
+   "score": 420,
+   "fps": 11
+  },
+  "shambler": {
+   "art": "shambler",
+   "hp": 34,
+   "w": 40,
+   "h": 44,
+   "score": 820,
+   "fps": 7
+  },
+  "sentry": {
+   "art": "sentry",
+   "hp": 26,
+   "w": 38,
+   "h": 38,
+   "score": 700,
+   "fps": 8
+  },
+  "barge": {
+   "art": "barge",
+   "hp": 78,
+   "w": 62,
+   "h": 74,
+   "score": 1900,
+   "fps": 6
+  },
+  "crawler": {
+   "art": "crawler",
+   "hp": 22,
+   "w": 34,
+   "h": 38,
+   "score": 640,
+   "fps": 12
+  },
+  "maw": {
+   "art": "maw",
+   "hp": 44,
+   "w": 46,
+   "h": 50,
+   "score": 1150,
+   "fps": 9
+  }
+ },
+ "S1_TANKS": {
+  "s1tankheavy": {
+   "art": "s1tankHeavy",
+   "atk": "mg",
+   "w": 48,
+   "h": 64,
+   "hp": 16,
+   "score": 460
+  },
+  "s1tanklight": {
+   "art": "s1tankLight",
+   "atk": "cannon",
+   "w": 38,
+   "h": 52,
+   "hp": 10,
+   "score": 340
+  },
+  "s1tankapc": {
+   "art": "s1tankApc",
+   "atk": "kick",
+   "w": 42,
+   "h": 62,
+   "hp": 13,
+   "score": 400
+  },
+  "s1truckmissile": {
+   "art": "s1truckMissile",
+   "atk": "jungleMissile",
+   "w": 44,
+   "h": 62,
+   "hp": 12,
+   "score": 520,
+   "wheels": true
+  },
+  "s1tankheavy_b": {
+   "art": "s1tankHeavyB",
+   "atk": "mg",
+   "w": 48,
+   "h": 64,
+   "hp": 20,
+   "score": 560,
+   "blk": true
+  },
+  "s1tanklight_b": {
+   "art": "s1tankLightB",
+   "atk": "cannon",
+   "w": 38,
+   "h": 52,
+   "hp": 13,
+   "score": 420,
+   "blk": true
+  },
+  "s1tankapc_b": {
+   "art": "s1tankApcB",
+   "atk": "kick",
+   "w": 42,
+   "h": 62,
+   "hp": 16,
+   "score": 500,
+   "blk": true
+  },
+  "s1truckmissile_b": {
+   "art": "s1truckMissileB",
+   "atk": "jungleMissile",
+   "w": 44,
+   "h": 62,
+   "hp": 15,
+   "score": 640,
+   "blk": true,
+   "wheels": true
+  }
+ },
+ "S1_JETS": {
+  "s1jetdelta": {
+   "art": "s1jetDelta",
+   "atk": "mg",
+   "w": 78,
+   "h": 81,
+   "hp": 9,
+   "score": 380,
+   "spd": 96
+  },
+  "s1jetbomber": {
+   "art": "s1jetBomber",
+   "atk": "missile",
+   "w": 100,
+   "h": 89,
+   "hp": 14,
+   "score": 520,
+   "spd": 78
+  },
+  "s1jetdelta_b": {
+   "art": "s1jetDeltaB",
+   "atk": "mg",
+   "w": 78,
+   "h": 81,
+   "hp": 12,
+   "score": 470,
+   "spd": 104,
+   "blk": true,
+   "fireMul": 0.75
+  },
+  "s1jetbomber_b": {
+   "art": "s1jetBomberB",
+   "atk": "salvo",
+   "w": 100,
+   "h": 89,
+   "hp": 18,
+   "score": 640,
+   "spd": 86,
+   "blk": true,
+   "fireMul": 0.75
+  }
+ },
+ "TUR360": {
+  "turretMG": {
+   "art": "ntur_a",
+   "w": 32,
+   "h": 32,
+   "hp": 24,
+   "sc": 850,
+   "mode": "mg",
+   "fr": 1.7
+  },
+  "turretMSL": {
+   "art": "ntur_b",
+   "w": 34,
+   "h": 34,
+   "hp": 30,
+   "sc": 1050,
+   "mode": "msl",
+   "fr": 2.4
+  }
+ },
+ "MINI_DEF": {
+  "minitank": {
+   "row": 0,
+   "cols": [
+    7,
+    12
+   ],
+   "w": 30,
+   "h": 30,
+   "hp": 9,
+   "sc": 420,
+   "fr": 1.6,
+   "scale": 0.86,
+   "terr": "ground",
+   "axis": "v"
+  },
+  "minitank2": {
+   "row": 1,
+   "cols": [
+    7,
+    12
+   ],
+   "w": 30,
+   "h": 30,
+   "hp": 11,
+   "sc": 480,
+   "fr": 1.5,
+   "scale": 0.86,
+   "terr": "ground",
+   "axis": "v"
+  },
+  "minitank3": {
+   "row": 3,
+   "cols": [
+    7,
+    12
+   ],
+   "w": 30,
+   "h": 30,
+   "hp": 13,
+   "sc": 540,
+   "fr": 1.4,
+   "scale": 0.86,
+   "terr": "ground",
+   "axis": "v"
+  },
+  "minishipA": {
+   "row": 5,
+   "cols": [
+    0,
+    6
+   ],
+   "w": 24,
+   "h": 17,
+   "hp": 10,
+   "sc": 460,
+   "fr": 1.5,
+   "scale": 0.62,
+   "terr": "water",
+   "axis": "h"
+  },
+  "minishipB": {
+   "row": 6,
+   "cols": [
+    0,
+    6
+   ],
+   "w": 24,
+   "h": 17,
+   "hp": 12,
+   "sc": 520,
+   "fr": 1.4,
+   "scale": 0.62,
+   "terr": "water",
+   "axis": "h"
+  },
+  "minishipC": {
+   "row": 7,
+   "cols": [
+    0,
+    6
+   ],
+   "w": 26,
+   "h": 18,
+   "hp": 14,
+   "sc": 580,
+   "fr": 1.3,
+   "scale": 0.64,
+   "terr": "water",
+   "axis": "h"
+  }
+ },
+ "ELITE_DEF": {
+  "jet_f22": {
+   "p": "mbj_f22",
+   "c": "air6",
+   "w": 40,
+   "h": 48,
+   "hp": 14,
+   "sc": 900,
+   "fr": 1.25
+  },
+  "jet_f16": {
+   "p": "mbj_f16",
+   "c": "air6",
+   "w": 38,
+   "h": 46,
+   "hp": 11,
+   "sc": 760,
+   "fr": 1.15
+  },
+  "jet_f15": {
+   "p": "mbj_f15",
+   "c": "air6",
+   "w": 42,
+   "h": 50,
+   "hp": 16,
+   "sc": 980,
+   "fr": 1.35
+  },
+  "jet_f18": {
+   "p": "mbj_f18",
+   "c": "air6",
+   "w": 40,
+   "h": 48,
+   "hp": 12,
+   "sc": 820,
+   "fr": 1.2
+  },
+  "jet_shn": {
+   "p": "mbj_shn",
+   "c": "air6",
+   "w": 42,
+   "h": 50,
+   "hp": 15,
+   "sc": 940,
+   "fr": 1.3
+  },
+  "jet_m29": {
+   "p": "mbj_m29",
+   "c": "air6",
+   "w": 38,
+   "h": 46,
+   "hp": 11,
+   "sc": 780,
+   "fr": 1.1
+  },
+  "jet_su27": {
+   "p": "mbj_su27",
+   "c": "air6",
+   "w": 42,
+   "h": 50,
+   "hp": 15,
+   "sc": 950,
+   "fr": 1.3
+  },
+  "jet_j20": {
+   "p": "mbj_j20",
+   "c": "air6",
+   "w": 42,
+   "h": 50,
+   "hp": 16,
+   "sc": 990,
+   "fr": 1.35
+  },
+  "jet_hwk": {
+   "p": "mbj_hwk",
+   "c": "air6",
+   "w": 40,
+   "h": 48,
+   "hp": 13,
+   "sc": 860,
+   "fr": 1.2
+  },
+  "jet_f35": {
+   "p": "mbj_f35",
+   "c": "air6",
+   "w": 40,
+   "h": 48,
+   "hp": 14,
+   "sc": 900,
+   "fr": 1.25
+  },
+  "jet_su57": {
+   "p": "mbj_su57",
+   "c": "air6",
+   "w": 44,
+   "h": 52,
+   "hp": 17,
+   "sc": 1050,
+   "fr": 1.4
+  },
+  "jet_raf": {
+   "p": "mbj_raf",
+   "c": "air6",
+   "w": 38,
+   "h": 46,
+   "hp": 12,
+   "sc": 800,
+   "fr": 1.15
+  },
+  "jet_typ": {
+   "p": "mbj_typ",
+   "c": "air6",
+   "w": 40,
+   "h": 48,
+   "hp": 13,
+   "sc": 850,
+   "fr": 1.2
+  },
+  "jet_grp": {
+   "p": "mbj_grp",
+   "c": "air6",
+   "w": 36,
+   "h": 44,
+   "hp": 10,
+   "sc": 720,
+   "fr": 1.05
+  },
+  "jet_kaw": {
+   "p": "mbj_kaw",
+   "c": "air6",
+   "w": 42,
+   "h": 50,
+   "hp": 15,
+   "sc": 940,
+   "fr": 1.3
+  },
+  "jet_cic": {
+   "p": "mbj_cic",
+   "c": "body",
+   "w": 56,
+   "h": 56,
+   "hp": 30,
+   "sc": 1900,
+   "fr": 1.5
+  },
+  "el_jh": {
+   "p": "mba_jh",
+   "c": "mod5",
+   "w": 44,
+   "h": 44,
+   "hp": 16,
+   "sc": 1000,
+   "fr": 1.3
+  },
+  "el_em": {
+   "p": "mba_em",
+   "c": "mod5",
+   "w": 44,
+   "h": 44,
+   "hp": 16,
+   "sc": 1000,
+   "fr": 1.3
+  },
+  "el_cs": {
+   "p": "mba_cs",
+   "c": "mod5",
+   "w": 44,
+   "h": 44,
+   "hp": 16,
+   "sc": 1000,
+   "fr": 1.3
+  },
+  "el_gw": {
+   "p": "mba_gw",
+   "c": "mod5",
+   "w": 46,
+   "h": 46,
+   "hp": 18,
+   "sc": 1150,
+   "fr": 1.3
+  },
+  "el_vr": {
+   "p": "mba_vr",
+   "c": "mod5",
+   "w": 46,
+   "h": 46,
+   "hp": 19,
+   "sc": 1200,
+   "fr": 1.3
+  },
+  "el_iv": {
+   "p": "mba_iv",
+   "c": "air6",
+   "w": 42,
+   "h": 50,
+   "hp": 17,
+   "sc": 1050,
+   "fr": 1.3
+  },
+  "el_lr": {
+   "p": "mba_lr",
+   "c": "air6",
+   "w": 44,
+   "h": 52,
+   "hp": 18,
+   "sc": 1100,
+   "fr": 1.3,
+   "flip": 1
+  },
+  "el_gr": {
+   "p": "mba_gr",
+   "c": "body",
+   "w": 50,
+   "h": 50,
+   "hp": 26,
+   "sc": 1500,
+   "fr": 1.2
+  },
+  "el_od": {
+   "p": "mba_od",
+   "c": "body",
+   "w": 48,
+   "h": 48,
+   "hp": 24,
+   "sc": 1400,
+   "fr": 1.2
+  },
+  "el_hd": {
+   "p": "mba_hd",
+   "c": "body",
+   "w": 52,
+   "h": 52,
+   "hp": 28,
+   "sc": 1700,
+   "fr": 1.2
+  }
+ },
+ "WIDE_FLAT": {
+  "nlq2_water": "nwl_water",
+  "nlq2_lava": "nwl_lava",
+  "nlq_sludge": "nwl_sludge",
+  "nlq_sludgeF": "nwl_sludge",
+  "nlq2_ice": "nwl_ice"
+ },
+ "EA_COMET_ROW": {
+  "red": 9,
+  "blue": 11,
+  "crimson": 13,
+  "orange": 14,
+  "scarlet": 16,
+  "purple": 18
+ },
+ "PELLET_GLOW": [
+  "#ff6b5a",
+  "#7fb0ff",
+  "#ffd36b",
+  "#8fe07a",
+  "#dfe8ff"
+ ],
+ "TURRET_ART": {},
+ "_S9_ATTACK_UNITS": {
+  "__err": "ReferenceError: _S9_ATTACK_UNITS is not defined"
+ },
+ "_selfPat": {
+  "__err": "ReferenceError: _selfPat is not defined"
+ },
+ "DRONE_CANNON": {
+  "chaingun": {
+   "fire": "chaingunT",
+   "cd": 0.3,
+   "spd": 3.4,
+   "dmg": 1
+  },
+  "minigun": {
+   "fire": "minigunT",
+   "cd": 0.22,
+   "spd": 3.8,
+   "dmg": 1
+  },
+  "railgun": {
+   "fire": "railshot",
+   "cd": 0.95,
+   "spd": 5.2,
+   "dmg": 2
+  },
+  "rocket": {
+   "fire": "rocketW",
+   "cd": 1.1,
+   "spd": 2.6,
+   "dmg": 2
+  },
+  "tesla": {
+   "fire": "teslaW",
+   "cd": 0.7,
+   "spd": 3,
+   "dmg": 2
+  }
+ },
+ "BOSS_MUS_PHASE": {
+  "8": [
+   1,
+   1,
+   2,
+   3
+  ]
+ },
+ "FIRETYPES": {
+  "pellet": {
+   "art": "[fn](b)=>pelletKey(b)",
+   "align": true,
+   "h": 20,
+   "glow": "[fn](b)=>PELLET_GLOW[pelletFam(b)]"
+  },
+  "s1bullet": {
+   "art": "[fn](b)=>'mgcf_1_5'",
+   "align": true,
+   "h": 22,
+   "glow": "#ffb52a",
+   "glow2": "#fff4c2"
+  },
+  "flare": {
+   "art": "[fn](b)=>'mfx_ea_3_'+(((Math.floor(performance.now()/80)+((b._ph|0)||0))%8))",
+   "spin": 0,
+   "h": 15,
+   "glow": "#ffd36b"
+  },
+  "comet": {
+   "art": "[fn](b)=>eaCometKey(b.pal||'red', ((b.t||0)*12)|0)",
+   "align": true,
+   "h": 20,
+   "glow": "#ff8a4a"
+  },
+  "blast": {
+   "art": "[fn](b)=>'mfx_bpow_'+({red:0,blue:1,white:2}[b.pal||'red']||0)+'_0'",
+   "align": false,
+   "h": 26,
+   "glow": "#ffd36b"
+  },
+  "homing": {
+   "art": "[fn](b)=>'mfx_hom_0_'+(((b.t||0)*14|0)%10)",
+   "align": true,
+   "h": 18,
+   "glow": "#ff6ba0"
+  },
+  "missile": {
+   "art": "[fn](b)=>(b&&b.kind==='omegawarhead')\r\n              ? (function(_s){ return b._ref ? _s.replace(/_in$/,'_ref') : _s; })\r\n                  (b._wart||'nfx_omegawarhead_in')                      // authored pair, per carrier\r\n              : 'mfx_emr_0_'+(((b.t||0)*12|0)%4)",
+   "align": true,
+   "h": 20,
+   "glow": "#ffb04a"
+  },
+  "dart": {
+   "art": "[fn](b)=>['mfx_mg_2_0','mfx_mg_2_2'][(Math.floor(performance.now()/70)+((b._ph|0)||0))%2]",
+   "align": true,
+   "h": 16,
+   "glow": "#ffd36b"
+  },
+  "gem": {
+   "art": "[fn](b)=>'mfx_ea_3_'+(((b.t||0)*10|0)%8)",
+   "spin": 2.4,
+   "h": 13,
+   "glow": "#9fe6ff"
+  },
+  "orb": {
+   "art": "[fn](b)=>'mfx_ea_3_'+(((b.t||0)*8|0)%8)",
+   "spin": 0,
+   "h": 12,
+   "glow": "#ffb04a"
+  },
+  "laser": {
+   "art": "[fn](b)=>'mfx_emr_0_'+(((b.t||0)*12|0)%4)",
+   "align": true,
+   "h": 20,
+   "glow": "#8fff9f"
+  },
+  "railshot": {
+   "art": "[fn](b)=>'waf_railgun_'+Math.min(2,((b.t||0)*10)|0)",
+   "align": true,
+   "h": 20,
+   "glow": "#ff5a4a"
+  },
+  "magma": {
+   "art": "[fn](b)=>'ndc_magmaorb_'+(((b.t||0)*12|0)%4)",
+   "align": false,
+   "h": 26,
+   "glow": "#ff4a00",
+   "glow2": "#ffd36b"
+  },
+  "lavaComet": {
+   "art": "[fn](b)=>'fx0825_lava_comet'",
+   "align": true,
+   "h": 25,
+   "glow": "#ff9a24",
+   "glow2": "#fff0a0"
+  },
+  "s2needle": {
+   "proc": "needle"
+  },
+  "s2rake": {
+   "proc": "rake"
+  },
+  "s2slag": {
+   "proc": "slag"
+  },
+  "s2rocket": {
+   "proc": "rocket"
+  },
+  "s2bomb": {
+   "proc": "bomb"
+  },
+  "s2shock": {
+   "proc": "shock"
+  },
+  "s2breath": {
+   "proc": "breath"
+  },
+  "s2slug": {
+   "proc": "slug"
+  },
+  "s2mine": {
+   "proc": "mine"
+  },
+  "s3shard": {
+   "proc3": "shard"
+  },
+  "s3lance": {
+   "proc3": "lance"
+  },
+  "s3tracer": {
+   "proc3": "tracer"
+  },
+  "s3mortar": {
+   "proc3": "mortar"
+  },
+  "s3shell": {
+   "proc3": "shell"
+  },
+  "s3wave": {
+   "proc3": "wave"
+  },
+  "s4steel": {
+   "proc4": "steel"
+  },
+  "s4brass": {
+   "proc4": "brass"
+  },
+  "s4rocket": {
+   "proc4": "rocket"
+  },
+  "s4missile": {
+   "proc4": "missile"
+  },
+  "s4bomb": {
+   "proc4": "bomb"
+  },
+  "s4rail": {
+   "proc4": "rail"
+  },
+  "s6wind": {
+   "proc6": "wind"
+  },
+  "s6bolt": {
+   "proc6": "bolt"
+  },
+  "s6missile": {
+   "proc6": "missile"
+  },
+  "s6orb": {
+   "proc6": "orb"
+  },
+  "s6tracer": {
+   "proc6": "tracer"
+  },
+  "s6seeker": {
+   "proc6": "seeker"
+  },
+  "s7acid": {
+   "proc7": "acid"
+  },
+  "s7sludge": {
+   "proc7": "sludge"
+  },
+  "s7shard": {
+   "proc7": "shard"
+  },
+  "s7bio": {
+   "proc7": "bio"
+  },
+  "s7laser": {
+   "proc7": "laser"
+  },
+  "s7grenade": {
+   "proc7": "grenade"
+  },
+  "s7spore": {
+   "art": "[fn](b)=>'s7spore_'+(((b.t||0)*12|0)%12)",
+   "spin": 1.1,
+   "h": 64,
+   "glow": "#aaff21"
+  },
+  "s5fracture": {
+   "procSpace": "s5-fracture"
+  },
+  "s5split": {
+   "procSpace": "s5-split"
+  },
+  "s5prism": {
+   "procSpace": "s5-prism"
+  },
+  "s5null": {
+   "procSpace": "s5-null"
+  },
+  "s5missile": {
+   "procSpace": "s5-missile"
+  },
+  "s5chaos": {
+   "procSpace": "s5-chaos"
+  },
+  "s5halo": {
+   "art": "[fn](b)=>'s5fracture_'+(((b.t||0)*12|0)%12)",
+   "spin": 0.85,
+   "h": 70,
+   "glow": "#d447ff"
+  },
+  "s8needle": {
+   "procSpace": "s8-fracture"
+  },
+  "s8rage": {
+   "procSpace": "s8-warp"
+  },
+  "s8slug": {
+   "procSpace": "s8-gold"
+  },
+  "s8missile": {
+   "procSpace": "s8-missile"
+  },
+  "s8pair": {
+   "procSpace": "s8-pair"
+  },
+  "s8blade": {
+   "procSpace": "s8-chaos"
+  },
+  "s8rift": {
+   "art": "[fn](b)=>'s8rift_'+(((b.t||0)*16|0)%16)",
+   "spin": 0.9,
+   "h": 72,
+   "glow": "#ff4322"
+  },
+  "s8nf_gunship": {
+   "art": "[fn](b)=>'s8nf_armored_gunship_projectile_'+(((b.t||0)*15|0)%4)",
+   "align": false,
+   "h": 43,
+   "glow": "#ff3322"
+  },
+  "s8nf_needle": {
+   "art": "[fn](b)=>'s8nf_needle_interceptor_projectile_'+(((b.t||0)*16|0)%4)",
+   "align": false,
+   "h": 45,
+   "glow": "#20efff"
+  },
+  "s8nf_scout": {
+   "art": "[fn](b)=>'s8nf_scout_drone_projectile_'+(((b.t||0)*14|0)%4)",
+   "align": false,
+   "h": 37,
+   "glow": "#8cff18"
+  },
+  "s8nf_solar": {
+   "art": "[fn](b)=>'s8nf_solar_corvette_projectile_'+(((b.t||0)*13|0)%4)",
+   "align": false,
+   "h": 44,
+   "glow": "#bb55ff"
+  },
+  "s8nf_spread": {
+   "art": "[fn](b)=>'s8nf_spread_wing_fighter_projectile_'+(((b.t||0)*17|0)%4)",
+   "align": false,
+   "h": 42,
+   "glow": "#2f9fff"
+  },
+  "s8nf_crescent": {
+   "art": "[fn](b)=>'s8nf_stealth_crescent_projectile_'+(((b.t||0)*14|0)%4)",
+   "align": false,
+   "h": 46,
+   "glow": "#c548ff"
+  },
+  "s9gold": {
+   "procSpace": "s9-gold"
+  },
+  "s9warp": {
+   "procSpace": "s9-warp"
+  },
+  "s9turbo": {
+   "procSpace": "s9-turbo"
+  },
+  "s9needle": {
+   "procSpace": "s9-needle"
+  },
+  "s9comet": {
+   "procSpace": "s9-comet"
+  },
+  "s9pair": {
+   "procSpace": "s9-pair"
+  },
+  "s9lattice": {
+   "art": "[fn](b)=>'s9lattice_'+(((b.t||0)*12|0)%12)",
+   "spin": 1.15,
+   "h": 72,
+   "glow": "#43e9ff"
+  },
+  "s7wardenShell": {
+   "proc7": "acid"
+  },
+  "s7wardenMine": {
+   "proc7": "grenade"
+  },
+  "s7wardenRail": {
+   "proc7": "laser"
+  },
+  "s6cyclone": {
+   "art": "[fn](b)=>'s6mb_cyclonetracer_'+(((b.t||0)*16|0)%8)",
+   "align": true,
+   "h": 42,
+   "glow": "#55dfff"
+  },
+  "s6prism": {
+   "art": "[fn](b)=>'s6mb_prismbolt_'+(((b.t||0)*15|0)%8)",
+   "align": true,
+   "h": 44,
+   "glow": "#d9f8ff"
+  },
+  "s6flak": {
+   "art": "[fn](b)=>'s6mb_flakshell_'+(((b.t||0)*14|0)%8)",
+   "align": true,
+   "h": 38,
+   "glow": "#ffd05a"
+  },
+  "s6gravity": {
+   "art": "[fn](b)=>'s6mb_gravitymine_'+(((b.t||0)*12|0)%8)",
+   "spin": 1.8,
+   "h": 52,
+   "glow": "#9f5cff"
+  },
+  "s6omega": {
+   "art": "[fn](b)=>'s6mb_omegabomb-hostile_'+(((b.t||0)*12|0)%8)",
+   "align": true,
+   "h": 58,
+   "glow": "#ff7d45"
+  },
+  "s6cluster": {
+   "art": "[fn](b)=>'s6mb_clusterbomblet_'+(((b.t||0)*16|0)%8)",
+   "align": true,
+   "h": 34,
+   "glow": "#ffcf4a"
+  },
+  "s1cannon": {
+   "art": "[fn](b)=>'s1fx_cannon_shell_'+Math.min(5,((b.t||0)*15)|0)",
+   "align": true,
+   "h": 31,
+   "glow": "#f3d56a"
+  },
+  "s1jungleMissile": {
+   "art": "[fn](b)=>'s1fx_jungle_missile_'+Math.min(5,((b.t||0)*13)|0)",
+   "align": true,
+   "h": 39,
+   "glow": "#9cff31",
+   "glow2": "#fff8a8"
+  },
+  "s1greenLaser": {
+   "art": "[fn](b)=>'s1fx_green_laser_'+Math.min(5,((b.t||0)*18)|0)",
+   "align": true,
+   "h": 38,
+   "glow": "#41ff72",
+   "glow2": "#eaffef"
+  },
+  "s1windBlade": {
+   "art": "[fn](b)=>'s1fx_wind_blade_'+Math.min(5,((b.t||0)*16)|0)",
+   "align": true,
+   "h": 42,
+   "glow": "#63ff91"
+  },
+  "s1windVortex": {
+   "art": "[fn](b)=>'s1fx_wind_vortex_'+Math.min(5,((b.t||0)*14)|0)",
+   "spin": 2.2,
+   "h": 62,
+   "glow": "#68ff93"
+  },
+  "xorb_acid": {
+   "art": "[fn]()=>'xorb_acid'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#9dff3a"
+  },
+  "xorb_antimatter": {
+   "art": "[fn]()=>'xorb_antimatter'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#ff5af0"
+  },
+  "xorb_cryo": {
+   "art": "[fn]()=>'xorb_cryo'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#8de6ff"
+  },
+  "xorb_gravity": {
+   "art": "[fn]()=>'xorb_gravity'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#b48cff"
+  },
+  "xorb_helix_emerald": {
+   "art": "[fn]()=>'xorb_helix_emerald'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#3aff9a"
+  },
+  "xorb_kinetic_rock": {
+   "art": "[fn]()=>'xorb_kinetic_rock'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#d8b070"
+  },
+  "xorb_lightning": {
+   "art": "[fn]()=>'xorb_lightning'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#e0f0ff"
+  },
+  "xorb_molten_orange": {
+   "art": "[fn]()=>'xorb_molten_orange'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#ff8a2e"
+  },
+  "xorb_plasma_blue": {
+   "art": "[fn]()=>'xorb_plasma_blue'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#5aa8ff"
+  },
+  "xorb_solar": {
+   "art": "[fn]()=>'xorb_solar'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#ffd24a"
+  },
+  "xorb_sonic": {
+   "art": "[fn]()=>'xorb_sonic'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#c0fff8"
+  },
+  "xorb_void": {
+   "art": "[fn]()=>'xorb_void'",
+   "align": false,
+   "spin": 0.9,
+   "h": 16,
+   "glow": "#a24aff"
+  },
+  "xlz_fire": {
+   "art": "[fn](b)=>'xlz_fire_travel_'+(((b.t||0)*12|0)%4)",
+   "align": true,
+   "spin": 0,
+   "h": 26,
+   "glow": "#ff8a2e"
+  },
+  "xlz_lightning": {
+   "art": "[fn](b)=>'xlz_lightning_travel_'+(((b.t||0)*12|0)%4)",
+   "align": true,
+   "spin": 0,
+   "h": 26,
+   "glow": "#cfe8ff"
+  },
+  "xlz_shadow": {
+   "art": "[fn](b)=>'xlz_shadow_travel_'+(((b.t||0)*12|0)%4)",
+   "align": true,
+   "spin": 0,
+   "h": 26,
+   "glow": "#a45cff"
+  },
+  "xlz_rock": {
+   "art": "[fn](b)=>'xlz_rock_travel_'+(((b.t||0)*12|0)%4)",
+   "align": true,
+   "spin": 0,
+   "h": 26,
+   "glow": "#d8b070"
+  },
+  "xlz_burst": {
+   "art": "[fn](b)=>'xlz_burst_travel_'+(((b.t||0)*12|0)%4)",
+   "align": true,
+   "spin": 0,
+   "h": 26,
+   "glow": "#7ef0ff"
+  },
+  "venomDart": {
+   "art": "[fn](b)=>['mfx_mg_2_0','mfx_mg_2_2'][(Math.floor(performance.now()/70)+((b._ph|0)||0))%2]",
+   "align": true,
+   "h": 16,
+   "glow": "#8de23a",
+   "_tint": "#7dff5a",
+   "_pal": null,
+   "_szMul": 1
+  },
+  "voidOrb": {
+   "art": "[fn](b)=>'mfx_ea_3_'+(((b.t||0)*8|0)%8)",
+   "spin": 0,
+   "h": 12,
+   "glow": "#c46bff",
+   "_tint": "#a24aff",
+   "_pal": null,
+   "_szMul": 1
+  },
+  "emberGem": {
+   "art": "[fn](b)=>'mfx_ea_3_'+(((b.t||0)*10|0)%8)",
+   "spin": 2.4,
+   "h": 13,
+   "glow": "#ffb04a",
+   "_tint": "#ff8a2e",
+   "_pal": null,
+   "_szMul": 1
+  },
+  "frostComet": {
+   "art": "[fn](b)=>eaCometKey(b.pal||'red', ((b.t||0)*12)|0)",
+   "align": true,
+   "h": 20,
+   "glow": "#9fe6ff",
+   "_tint": null,
+   "_pal": "blue",
+   "_szMul": 1
+  },
+  "kingPellet": {
+   "art": "[fn](b)=>pelletKey(b)",
+   "align": true,
+   "h": 20,
+   "glow": "#ffe06b",
+   "_tint": null,
+   "_pal": null,
+   "_szMul": 1.5
+  },
+  "eshot": {
+   "art": "[fn](b)=>pelletKey(b)",
+   "align": true,
+   "h": 18,
+   "glow": "[fn](b)=>PELLET_GLOW[pelletFam(b)]",
+   "_tint": null,
+   "_pal": null,
+   "_szMul": 1
+  }
+ },
+ "PROJ": {
+  "pellet": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "mg": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "embullet": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "s1bullet": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "bolt": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "chaingunT": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "minigunT": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "eg": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "kingPellet": {
+   "type": "pellet",
+   "slot": 0,
+   "szMul": 1.25
+  },
+  "dart": {
+   "type": "dart",
+   "slot": 0,
+   "szMul": 0.85,
+   "tint": "#cfe6ff"
+  },
+  "venomDart": {
+   "type": "dart",
+   "slot": 0,
+   "szMul": 0.85,
+   "tint": "#7dff5a"
+  },
+  "gem": {
+   "type": "gem",
+   "slot": 1,
+   "spin": 2.4,
+   "szMul": 0.85,
+   "tint": "#9fe6ff"
+  },
+  "ice": {
+   "type": "gem",
+   "slot": 1,
+   "spin": 2.4,
+   "szMul": 0.85,
+   "tint": "#9fe6ff"
+  },
+  "emberGem": {
+   "type": "gem",
+   "slot": 1,
+   "spin": 2.4,
+   "szMul": 0.85,
+   "tint": "#ff8a2e"
+  },
+  "flare": {
+   "type": "flare",
+   "slot": 1
+  },
+  "groundup": {
+   "type": "flare",
+   "slot": 1
+  },
+  "comet": {
+   "type": "comet",
+   "slot": 2
+  },
+  "plasma": {
+   "type": "comet",
+   "slot": 2
+  },
+  "fireorb": {
+   "type": "comet",
+   "slot": 2
+  },
+  "omegawarhead": {
+   "type": "missile",
+   "slot": 5
+  },
+  "railshot": {
+   "type": "comet",
+   "slot": 2
+  },
+  "shell": {
+   "type": "comet",
+   "slot": 2
+  },
+  "mechshot": {
+   "type": "comet",
+   "slot": 2
+  },
+  "photon": {
+   "type": "comet",
+   "slot": 2
+  },
+  "riftshot": {
+   "type": "orb",
+   "slot": 3
+  },
+  "frostComet": {
+   "type": "comet",
+   "slot": 2,
+   "pal": "blue",
+   "tint": "#9fe6ff"
+  },
+  "blast": {
+   "type": "blast",
+   "slot": 3
+  },
+  "teslaW": {
+   "type": "blast",
+   "slot": 3
+  },
+  "blob": {
+   "type": "blast",
+   "slot": 3
+  },
+  "orb": {
+   "type": "orb",
+   "slot": 3,
+   "szMul": 0.8
+  },
+  "voidOrb": {
+   "type": "orb",
+   "slot": 3,
+   "szMul": 0.8,
+   "tint": "#a24aff"
+  },
+  "magma": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s2needle": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s2rake": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s2slag": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s2rocket": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s2bomb": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s2shock": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s2breath": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s2slug": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s2mine": {
+   "type": "comet",
+   "slot": 2
+  },
+  "lavaComet": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s3shard": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s3lance": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s3tracer": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "s3mortar": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s3shell": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s3wave": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s4steel": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s4brass": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "s4rocket": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s4missile": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s4bomb": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s4rail": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s6wind": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s6bolt": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s6missile": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s6orb": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s6tracer": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "s6seeker": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s6cyclone": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s6prism": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s6flak": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s6gravity": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s6omega": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s6cluster": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s7acid": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s7sludge": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s7shard": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "s7bio": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s7laser": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s7grenade": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s7spore": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s7wardenShell": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s7wardenMine": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s7wardenRail": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s5fracture": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s5split": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s5prism": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s5null": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s5missile": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s5chaos": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s5halo": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s8needle": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s8rage": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s8slug": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "s8missile": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s8pair": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s8blade": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s8rift": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s9gold": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "s9warp": {
+   "type": "comet",
+   "slot": 2
+  },
+  "s9turbo": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "s9needle": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s9comet": {
+   "type": "missile",
+   "slot": 5
+  },
+  "s9pair": {
+   "type": "blast",
+   "slot": 3
+  },
+  "s9lattice": {
+   "type": "blast",
+   "slot": 3
+  },
+  "homing": {
+   "type": "homing",
+   "slot": 4
+  },
+  "missile": {
+   "type": "missile",
+   "slot": 5
+  },
+  "emr": {
+   "type": "missile",
+   "slot": 5
+  },
+  "emissile": {
+   "type": "missile",
+   "slot": 5
+  },
+  "rocketW": {
+   "type": "missile",
+   "slot": 5
+  },
+  "laser": {
+   "type": "missile",
+   "slot": 5,
+   "tint": "#8fff9f"
+  },
+  "eshot": {
+   "type": "pellet",
+   "slot": 0
+  },
+  "eglaser": {
+   "type": "missile",
+   "slot": 5,
+   "tint": "#8fff9f"
+  },
+  "mechmortar": {
+   "type": "blast",
+   "slot": 3
+  }
+ },
+ "BOF.expFams": {
+  "fireA": 7,
+  "fireB": 7,
+  "fireC": 8,
+  "iceA": 8
+ },
+ "BOFX.mechroles": {
+  "mbg2": {
+   "stage": 2,
+   "role": "boss"
+  },
+  "mbo2": {
+   "stage": 2,
+   "role": "miniboss"
+  },
+  "mbg3": {
+   "stage": 3,
+   "role": "boss"
+  },
+  "mbg3f": {
+   "stage": 3,
+   "role": "miniboss"
+  },
+  "mbm4": {
+   "stage": 4,
+   "role": "boss"
+  },
+  "mbw4": {
+   "stage": 4,
+   "role": "miniboss"
+  },
+  "mbl5": {
+   "stage": 5,
+   "role": "boss"
+  },
+  "mbr5": {
+   "stage": 5,
+   "role": "miniboss"
+  },
+  "mbc6": {
+   "stage": 6,
+   "role": "boss"
+  },
+  "mbs6": {
+   "stage": 6,
+   "role": "miniboss"
+  },
+  "mbs7": {
+   "stage": 7,
+   "role": "boss"
+  },
+  "mbt7": {
+   "stage": 7,
+   "role": "miniboss"
+  }
+ },
+ "BOFX.mechboss": {
+  "mbg2": {
+   "name": "Magma Colossus",
+   "stage": 2,
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-cannon",
+    "right-cannon",
+    "left-arm",
+    "right-arm",
+    "head",
+    "left-leg",
+    "right-leg",
+    "torso"
+   ],
+   "assembly": [
+    "torso",
+    "right-leg",
+    "left-leg",
+    "head",
+    "right-arm",
+    "left-arm",
+    "right-cannon",
+    "left-cannon"
+   ],
+   "components": {
+    "left-cannon": {
+     "bounds": [
+      58,
+      131,
+      139,
+      246
+     ],
+     "anchor": [
+      98,
+      188
+     ]
+    },
+    "right-cannon": {
+     "bounds": [
+      246,
+      131,
+      325,
+      246
+     ],
+     "anchor": [
+      285,
+      188
+     ]
+    },
+    "left-arm": {
+     "bounds": [
+      68,
+      17,
+      150,
+      223
+     ],
+     "anchor": [
+      109,
+      120
+     ]
+    },
+    "right-arm": {
+     "bounds": [
+      235,
+      17,
+      315,
+      223
+     ],
+     "anchor": [
+      275,
+      120
+     ]
+    },
+    "head": {
+     "bounds": [
+      150,
+      21,
+      235,
+      108
+     ],
+     "anchor": [
+      192,
+      64
+     ]
+    },
+    "left-leg": {
+     "bounds": [
+      58,
+      200,
+      173,
+      367
+     ],
+     "anchor": [
+      115,
+      283
+     ]
+    },
+    "right-leg": {
+     "bounds": [
+      210,
+      200,
+      325,
+      367
+     ],
+     "anchor": [
+      267,
+      283
+     ]
+    },
+    "torso": {
+     "bounds": [
+      150,
+      108,
+      235,
+      200
+     ],
+     "anchor": [
+      192,
+      154
+     ]
+    }
+   },
+   "joints": {
+    "left-shoulder": [
+     146,
+     104
+    ],
+    "right-shoulder": [
+     238,
+     104
+    ],
+    "left-cannon-dock": [
+     98,
+     188
+    ],
+    "right-cannon-dock": [
+     285,
+     188
+    ],
+    "left-hip": [
+     166,
+     203
+    ],
+    "right-hip": [
+     218,
+     203
+    ]
+   },
+   "pivots": {
+    "head": [
+     71,
+     86
+    ],
+    "torso": [
+     138,
+     168
+    ],
+    "left-upper-arm": [
+     93,
+     175
+    ],
+    "right-upper-arm": [
+     92,
+     175
+    ],
+    "left-cannon-forearm": [
+     64,
+     134
+    ],
+    "right-cannon-forearm": [
+     64,
+     135
+    ],
+    "left-leg": [
+     81,
+     175
+    ],
+    "right-leg": [
+     80,
+     175
+    ]
+   }
+  },
+  "mbg3": {
+   "name": "Cryo Behemoth",
+   "stage": 3,
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-cannon",
+    "right-cannon",
+    "left-arm",
+    "right-arm",
+    "head",
+    "left-leg",
+    "right-leg",
+    "torso"
+   ],
+   "assembly": [
+    "torso",
+    "right-leg",
+    "left-leg",
+    "head",
+    "right-arm",
+    "left-arm",
+    "right-cannon",
+    "left-cannon"
+   ],
+   "components": {
+    "left-cannon": {
+     "bounds": [
+      45,
+      131,
+      139,
+      246
+     ],
+     "anchor": [
+      92,
+      188
+     ]
+    },
+    "right-cannon": {
+     "bounds": [
+      245,
+      131,
+      339,
+      246
+     ],
+     "anchor": [
+      292,
+      188
+     ]
+    },
+    "left-arm": {
+     "bounds": [
+      58,
+      17,
+      150,
+      223
+     ],
+     "anchor": [
+      104,
+      120
+     ]
+    },
+    "right-arm": {
+     "bounds": [
+      235,
+      17,
+      327,
+      223
+     ],
+     "anchor": [
+      281,
+      120
+     ]
+    },
+    "head": {
+     "bounds": [
+      150,
+      19,
+      235,
+      108
+     ],
+     "anchor": [
+      192,
+      63
+     ]
+    },
+    "left-leg": {
+     "bounds": [
+      44,
+      200,
+      192,
+      367
+     ],
+     "anchor": [
+      118,
+      283
+     ]
+    },
+    "right-leg": {
+     "bounds": [
+      192,
+      200,
+      340,
+      367
+     ],
+     "anchor": [
+      266,
+      283
+     ]
+    },
+    "torso": {
+     "bounds": [
+      150,
+      108,
+      235,
+      200
+     ],
+     "anchor": [
+      192,
+      154
+     ]
+    }
+   },
+   "joints": {
+    "left-shoulder": [
+     146,
+     106
+    ],
+    "right-shoulder": [
+     238,
+     106
+    ],
+    "left-cannon-dock": [
+     92,
+     188
+    ],
+    "right-cannon-dock": [
+     292,
+     188
+    ],
+    "left-hip": [
+     166,
+     203
+    ],
+    "right-hip": [
+     218,
+     203
+    ]
+   },
+   "pivots": {
+    "head": [
+     86,
+     104
+    ],
+    "torso": [
+     151,
+     175
+    ],
+    "left-upper-arm": [
+     96,
+     175
+    ],
+    "right-upper-arm": [
+     97,
+     175
+    ],
+    "left-cannon-forearm": [
+     71,
+     142
+    ],
+    "right-cannon-forearm": [
+     72,
+     141
+    ],
+    "left-leg": [
+     92,
+     175
+    ],
+    "right-leg": [
+     91,
+     175
+    ]
+   }
+  },
+  "mbo2": {
+   "name": "Obsidian Drill Tank",
+   "stage": 2,
+   "role": "miniboss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-track",
+    "right-track",
+    "front-weapon",
+    "left-weapon-pod",
+    "right-weapon-pod",
+    "rear-engine",
+    "turret-core",
+    "hull"
+   ],
+   "assembly": [
+    "hull",
+    "turret-core",
+    "rear-engine",
+    "right-weapon-pod",
+    "left-weapon-pod",
+    "front-weapon",
+    "right-track",
+    "left-track"
+   ],
+   "components": {
+    "left-track": {
+     "bounds": [
+      85,
+      102,
+      112,
+      346
+     ],
+     "anchor": [
+      98,
+      224
+     ]
+    },
+    "right-track": {
+     "bounds": [
+      273,
+      102,
+      299,
+      345
+     ],
+     "anchor": [
+      286,
+      223
+     ]
+    },
+    "front-weapon": {
+     "bounds": [
+      139,
+      208,
+      246,
+      354
+     ],
+     "anchor": [
+      192,
+      281
+     ]
+    },
+    "left-weapon-pod": {
+     "bounds": [
+      112,
+      77,
+      166,
+      231
+     ],
+     "anchor": [
+      139,
+      154
+     ]
+    },
+    "right-weapon-pod": {
+     "bounds": [
+      219,
+      77,
+      273,
+      231
+     ],
+     "anchor": [
+      246,
+      154
+     ]
+    },
+    "rear-engine": {
+     "bounds": [
+      129,
+      30,
+      255,
+      93
+     ],
+     "anchor": [
+      192,
+      61
+     ]
+    },
+    "turret-core": {
+     "bounds": [
+      166,
+      93,
+      219,
+      208
+     ],
+     "anchor": [
+      192,
+      150
+     ]
+    },
+    "hull": {
+     "bounds": [
+      112,
+      231,
+      273,
+      346
+     ],
+     "anchor": [
+      192,
+      288
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  },
+  "mbg3f": {
+   "name": "Glacier Rail Fortress",
+   "stage": 3,
+   "role": "mini-boss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-track",
+    "right-track",
+    "front-weapon",
+    "left-weapon-pod",
+    "right-weapon-pod",
+    "rear-engine",
+    "turret-core",
+    "hull"
+   ],
+   "assembly": [
+    "hull",
+    "turret-core",
+    "rear-engine",
+    "right-weapon-pod",
+    "left-weapon-pod",
+    "front-weapon",
+    "right-track",
+    "left-track"
+   ],
+   "components": {
+    "left-track": {
+     "bounds": [
+      75,
+      150,
+      112,
+      318
+     ],
+     "anchor": [
+      93,
+      234
+     ]
+    },
+    "right-track": {
+     "bounds": [
+      273,
+      150,
+      309,
+      318
+     ],
+     "anchor": [
+      291,
+      234
+     ]
+    },
+    "front-weapon": {
+     "bounds": [
+      139,
+      208,
+      246,
+      354
+     ],
+     "anchor": [
+      192,
+      281
+     ]
+    },
+    "left-weapon-pod": {
+     "bounds": [
+      112,
+      77,
+      166,
+      231
+     ],
+     "anchor": [
+      139,
+      154
+     ]
+    },
+    "right-weapon-pod": {
+     "bounds": [
+      219,
+      77,
+      273,
+      231
+     ],
+     "anchor": [
+      246,
+      154
+     ]
+    },
+    "rear-engine": {
+     "bounds": [
+      146,
+      30,
+      257,
+      93
+     ],
+     "anchor": [
+      201,
+      61
+     ]
+    },
+    "turret-core": {
+     "bounds": [
+      166,
+      93,
+      219,
+      208
+     ],
+     "anchor": [
+      192,
+      150
+     ]
+    },
+    "hull": {
+     "bounds": [
+      112,
+      231,
+      273,
+      325
+     ],
+     "anchor": [
+      192,
+      278
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  },
+  "mbm4": {
+   "name": "MIRV Stalker",
+   "stage": 4,
+   "role": "mini-boss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-track",
+    "right-track",
+    "front-weapon",
+    "left-weapon-pod",
+    "right-weapon-pod",
+    "rear-engine",
+    "turret-core",
+    "hull"
+   ],
+   "assembly": [
+    "hull",
+    "turret-core",
+    "rear-engine",
+    "right-weapon-pod",
+    "left-weapon-pod",
+    "front-weapon",
+    "right-track",
+    "left-track"
+   ],
+   "components": {
+    "left-track": {
+     "bounds": [
+      69,
+      30,
+      112,
+      247
+     ],
+     "anchor": [
+      90,
+      138
+     ]
+    },
+    "right-track": {
+     "bounds": [
+      273,
+      30,
+      315,
+      247
+     ],
+     "anchor": [
+      294,
+      138
+     ]
+    },
+    "front-weapon": {
+     "bounds": [
+      139,
+      208,
+      246,
+      354
+     ],
+     "anchor": [
+      192,
+      281
+     ]
+    },
+    "left-weapon-pod": {
+     "bounds": [
+      112,
+      77,
+      166,
+      231
+     ],
+     "anchor": [
+      139,
+      154
+     ]
+    },
+    "right-weapon-pod": {
+     "bounds": [
+      219,
+      77,
+      273,
+      231
+     ],
+     "anchor": [
+      246,
+      154
+     ]
+    },
+    "rear-engine": {
+     "bounds": [
+      112,
+      31,
+      273,
+      93
+     ],
+     "anchor": [
+      192,
+      62
+     ]
+    },
+    "turret-core": {
+     "bounds": [
+      166,
+      93,
+      219,
+      208
+     ],
+     "anchor": [
+      192,
+      150
+     ]
+    },
+    "hull": {
+     "bounds": [
+      112,
+      231,
+      273,
+      321
+     ],
+     "anchor": [
+      192,
+      276
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  },
+  "mbw4": {
+   "name": "Warhawk Arsenal",
+   "stage": 4,
+   "role": "boss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-engine-pods",
+    "right-engine-pods",
+    "left-weapon-rack",
+    "right-weapon-rack",
+    "left-wing",
+    "right-wing",
+    "tail",
+    "nose",
+    "command-core"
+   ],
+   "assembly": [
+    "command-core",
+    "nose",
+    "tail",
+    "right-wing",
+    "left-wing",
+    "right-weapon-rack",
+    "left-weapon-rack",
+    "right-engine-pods",
+    "left-engine-pods"
+   ],
+   "components": {
+    "left-engine-pods": {
+     "bounds": [
+      89,
+      114,
+      104,
+      336
+     ],
+     "anchor": [
+      96,
+      225
+     ]
+    },
+    "right-engine-pods": {
+     "bounds": [
+      281,
+      118,
+      295,
+      335
+     ],
+     "anchor": [
+      288,
+      226
+     ]
+    },
+    "left-weapon-rack": {
+     "bounds": [
+      75,
+      181,
+      166,
+      340
+     ],
+     "anchor": [
+      120,
+      260
+     ]
+    },
+    "right-weapon-rack": {
+     "bounds": [
+      219,
+      181,
+      309,
+      340
+     ],
+     "anchor": [
+      264,
+      260
+     ]
+    },
+    "left-wing": {
+     "bounds": [
+      64,
+      17,
+      181,
+      367
+     ],
+     "anchor": [
+      122,
+      192
+     ]
+    },
+    "right-wing": {
+     "bounds": [
+      204,
+      17,
+      320,
+      367
+     ],
+     "anchor": [
+      262,
+      192
+     ]
+    },
+    "tail": {
+     "bounds": [
+      181,
+      29,
+      204,
+      89
+     ],
+     "anchor": [
+      192,
+      59
+     ]
+    },
+    "nose": {
+     "bounds": [
+      181,
+      269,
+      204,
+      354
+     ],
+     "anchor": [
+      192,
+      311
+     ]
+    },
+    "command-core": {
+     "bounds": [
+      181,
+      89,
+      204,
+      269
+     ],
+     "anchor": [
+      192,
+      179
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  },
+  "mbl5": {
+   "name": "Legion Command Tank",
+   "stage": 5,
+   "role": "mini-boss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-track",
+    "right-track",
+    "front-weapon",
+    "left-weapon-pod",
+    "right-weapon-pod",
+    "rear-engine",
+    "turret-core",
+    "hull"
+   ],
+   "assembly": [
+    "hull",
+    "turret-core",
+    "rear-engine",
+    "right-weapon-pod",
+    "left-weapon-pod",
+    "front-weapon",
+    "right-track",
+    "left-track"
+   ],
+   "components": {
+    "left-track": {
+     "bounds": [
+      74,
+      135,
+      112,
+      235
+     ],
+     "anchor": [
+      93,
+      185
+     ]
+    },
+    "right-track": {
+     "bounds": [
+      273,
+      135,
+      310,
+      235
+     ],
+     "anchor": [
+      291,
+      185
+     ]
+    },
+    "front-weapon": {
+     "bounds": [
+      139,
+      208,
+      246,
+      354
+     ],
+     "anchor": [
+      192,
+      281
+     ]
+    },
+    "left-weapon-pod": {
+     "bounds": [
+      112,
+      82,
+      166,
+      231
+     ],
+     "anchor": [
+      139,
+      156
+     ]
+    },
+    "right-weapon-pod": {
+     "bounds": [
+      219,
+      77,
+      273,
+      231
+     ],
+     "anchor": [
+      246,
+      154
+     ]
+    },
+    "rear-engine": {
+     "bounds": [
+      166,
+      30,
+      239,
+      93
+     ],
+     "anchor": [
+      202,
+      61
+     ]
+    },
+    "turret-core": {
+     "bounds": [
+      166,
+      93,
+      219,
+      208
+     ],
+     "anchor": [
+      192,
+      150
+     ]
+    },
+    "hull": {
+     "bounds": [
+      113,
+      231,
+      270,
+      340
+     ],
+     "anchor": [
+      191,
+      285
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  },
+  "mbr5": {
+   "name": "Rampart Zero",
+   "stage": 5,
+   "role": "boss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-siege-arm",
+    "right-siege-arm",
+    "left-fortress-wing",
+    "right-fortress-wing",
+    "command-core",
+    "ram-gate",
+    "gun-decks"
+   ],
+   "assembly": [
+    "gun-decks",
+    "ram-gate",
+    "command-core",
+    "right-fortress-wing",
+    "left-fortress-wing",
+    "right-siege-arm",
+    "left-siege-arm"
+   ],
+   "components": {
+    "left-siege-arm": {
+     "bounds": [
+      74,
+      116,
+      104,
+      346
+     ],
+     "anchor": [
+      89,
+      231
+     ]
+    },
+    "right-siege-arm": {
+     "bounds": [
+      281,
+      116,
+      310,
+      344
+     ],
+     "anchor": [
+      295,
+      230
+     ]
+    },
+    "left-fortress-wing": {
+     "bounds": [
+      85,
+      32,
+      150,
+      354
+     ],
+     "anchor": [
+      117,
+      193
+     ]
+    },
+    "right-fortress-wing": {
+     "bounds": [
+      235,
+      32,
+      299,
+      353
+     ],
+     "anchor": [
+      267,
+      192
+     ]
+    },
+    "command-core": {
+     "bounds": [
+      150,
+      22,
+      235,
+      108
+     ],
+     "anchor": [
+      192,
+      65
+     ]
+    },
+    "ram-gate": {
+     "bounds": [
+      150,
+      296,
+      235,
+      367
+     ],
+     "anchor": [
+      192,
+      331
+     ]
+    },
+    "gun-decks": {
+     "bounds": [
+      150,
+      108,
+      235,
+      296
+     ],
+     "anchor": [
+      192,
+      202
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  },
+  "mbc6": {
+   "name": "Cyclone Interceptor Carrier",
+   "stage": 6,
+   "role": "mini-boss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-engine-pods",
+    "right-engine-pods",
+    "left-weapon-rack",
+    "right-weapon-rack",
+    "left-wing",
+    "right-wing",
+    "tail",
+    "nose",
+    "command-core"
+   ],
+   "assembly": [
+    "command-core",
+    "nose",
+    "tail",
+    "right-wing",
+    "left-wing",
+    "right-weapon-rack",
+    "left-weapon-rack",
+    "right-engine-pods",
+    "left-engine-pods"
+   ],
+   "components": {
+    "left-engine-pods": {
+     "bounds": [
+      76,
+      242,
+      104,
+      330
+     ],
+     "anchor": [
+      90,
+      286
+     ]
+    },
+    "right-engine-pods": {
+     "bounds": [
+      281,
+      242,
+      308,
+      329
+     ],
+     "anchor": [
+      294,
+      285
+     ]
+    },
+    "left-weapon-rack": {
+     "bounds": [
+      81,
+      181,
+      166,
+      354
+     ],
+     "anchor": [
+      123,
+      267
+     ]
+    },
+    "right-weapon-rack": {
+     "bounds": [
+      219,
+      181,
+      303,
+      354
+     ],
+     "anchor": [
+      261,
+      267
+     ]
+    },
+    "left-wing": {
+     "bounds": [
+      86,
+      50,
+      181,
+      346
+     ],
+     "anchor": [
+      133,
+      198
+     ]
+    },
+    "right-wing": {
+     "bounds": [
+      204,
+      50,
+      298,
+      346
+     ],
+     "anchor": [
+      251,
+      198
+     ]
+    },
+    "tail": {
+     "bounds": [
+      181,
+      30,
+      204,
+      89
+     ],
+     "anchor": [
+      192,
+      59
+     ]
+    },
+    "nose": {
+     "bounds": [
+      181,
+      269,
+      204,
+      346
+     ],
+     "anchor": [
+      192,
+      307
+     ]
+    },
+    "command-core": {
+     "bounds": [
+      181,
+      89,
+      204,
+      269
+     ],
+     "anchor": [
+      192,
+      179
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  },
+  "mbs6": {
+   "name": "Storm Sovereign",
+   "stage": 6,
+   "role": "boss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-engine-pods",
+    "right-engine-pods",
+    "left-weapon-rack",
+    "right-weapon-rack",
+    "left-wing",
+    "right-wing",
+    "tail",
+    "nose",
+    "command-core"
+   ],
+   "assembly": [
+    "command-core",
+    "nose",
+    "tail",
+    "right-wing",
+    "left-wing",
+    "right-weapon-rack",
+    "left-weapon-rack",
+    "right-engine-pods",
+    "left-engine-pods"
+   ],
+   "components": {
+    "left-engine-pods": {
+     "bounds": [
+      70,
+      55,
+      104,
+      292
+     ],
+     "anchor": [
+      87,
+      173
+     ]
+    },
+    "right-engine-pods": {
+     "bounds": [
+      281,
+      56,
+      314,
+      292
+     ],
+     "anchor": [
+      297,
+      174
+     ]
+    },
+    "left-weapon-rack": {
+     "bounds": [
+      69,
+      181,
+      166,
+      348
+     ],
+     "anchor": [
+      117,
+      264
+     ]
+    },
+    "right-weapon-rack": {
+     "bounds": [
+      219,
+      181,
+      315,
+      348
+     ],
+     "anchor": [
+      267,
+      264
+     ]
+    },
+    "left-wing": {
+     "bounds": [
+      77,
+      17,
+      181,
+      342
+     ],
+     "anchor": [
+      129,
+      179
+     ]
+    },
+    "right-wing": {
+     "bounds": [
+      204,
+      17,
+      307,
+      339
+     ],
+     "anchor": [
+      255,
+      178
+     ]
+    },
+    "tail": {
+     "bounds": [
+      181,
+      35,
+      204,
+      89
+     ],
+     "anchor": [
+      192,
+      62
+     ]
+    },
+    "nose": {
+     "bounds": [
+      181,
+      269,
+      204,
+      367
+     ],
+     "anchor": [
+      192,
+      318
+     ]
+    },
+    "command-core": {
+     "bounds": [
+      181,
+      89,
+      204,
+      269
+     ],
+     "anchor": [
+      192,
+      179
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  },
+  "mbs7": {
+   "name": "Sludge Crawler",
+   "stage": 7,
+   "role": "mini-boss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-crusher-claw",
+    "right-crusher-claw",
+    "left-front-legs",
+    "right-front-legs",
+    "left-rear-legs",
+    "right-rear-legs",
+    "reactor-turret",
+    "head-cab",
+    "central-hull"
+   ],
+   "assembly": [
+    "central-hull",
+    "head-cab",
+    "reactor-turret",
+    "right-rear-legs",
+    "left-rear-legs",
+    "right-front-legs",
+    "left-front-legs",
+    "right-crusher-claw",
+    "left-crusher-claw"
+   ],
+   "components": {
+    "left-crusher-claw": {
+     "bounds": [
+      69,
+      246,
+      123,
+      354
+     ],
+     "anchor": [
+      96,
+      300
+     ]
+    },
+    "right-crusher-claw": {
+     "bounds": [
+      262,
+      246,
+      315,
+      354
+     ],
+     "anchor": [
+      288,
+      300
+     ]
+    },
+    "left-front-legs": {
+     "bounds": [
+      67,
+      52,
+      162,
+      192
+     ],
+     "anchor": [
+      114,
+      122
+     ]
+    },
+    "right-front-legs": {
+     "bounds": [
+      223,
+      52,
+      316,
+      192
+     ],
+     "anchor": [
+      269,
+      122
+     ]
+    },
+    "left-rear-legs": {
+     "bounds": [
+      65,
+      192,
+      162,
+      349
+     ],
+     "anchor": [
+      113,
+      270
+     ]
+    },
+    "right-rear-legs": {
+     "bounds": [
+      223,
+      192,
+      319,
+      350
+     ],
+     "anchor": [
+      271,
+      271
+     ]
+    },
+    "reactor-turret": {
+     "bounds": [
+      162,
+      30,
+      223,
+      181
+     ],
+     "anchor": [
+      192,
+      105
+     ]
+    },
+    "head-cab": {
+     "bounds": [
+      162,
+      223,
+      223,
+      300
+     ],
+     "anchor": [
+      192,
+      261
+     ]
+    },
+    "central-hull": {
+     "bounds": [
+      162,
+      181,
+      223,
+      223
+     ],
+     "anchor": [
+      192,
+      202
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  },
+  "mbt7": {
+   "name": "Toxic Leviathan",
+   "stage": 7,
+   "role": "boss",
+   "canvas": [
+    384,
+    384
+   ],
+   "pivot": [
+    192,
+    192
+   ],
+   "drawOrder": [
+    "left-claw",
+    "right-claw",
+    "head-core",
+    "body-segment-01",
+    "body-segment-02",
+    "body-segment-03",
+    "body-segment-04",
+    "body-segment-05",
+    "body-segment-06",
+    "tail-blade"
+   ],
+   "assembly": [
+    "tail-blade",
+    "body-segment-06",
+    "body-segment-05",
+    "body-segment-04",
+    "body-segment-03",
+    "body-segment-02",
+    "body-segment-01",
+    "head-core",
+    "right-claw",
+    "left-claw"
+   ],
+   "components": {
+    "left-claw": {
+     "bounds": [
+      77,
+      54,
+      143,
+      173
+     ],
+     "anchor": [
+      110,
+      113
+     ]
+    },
+    "right-claw": {
+     "bounds": [
+      242,
+      54,
+      306,
+      173
+     ],
+     "anchor": [
+      274,
+      113
+     ]
+    },
+    "head-core": {
+     "bounds": [
+      143,
+      17,
+      242,
+      123
+     ],
+     "anchor": [
+      192,
+      70
+     ]
+    },
+    "body-segment-01": {
+     "bounds": [
+      143,
+      123,
+      236,
+      166
+     ],
+     "anchor": [
+      189,
+      144
+     ]
+    },
+    "body-segment-02": {
+     "bounds": [
+      78,
+      166,
+      305,
+      208
+     ],
+     "anchor": [
+      191,
+      187
+     ]
+    },
+    "body-segment-03": {
+     "bounds": [
+      122,
+      208,
+      291,
+      250
+     ],
+     "anchor": [
+      206,
+      229
+     ]
+    },
+    "body-segment-04": {
+     "bounds": [
+      115,
+      250,
+      270,
+      292
+     ],
+     "anchor": [
+      192,
+      271
+     ]
+    },
+    "body-segment-05": {
+     "bounds": [
+      134,
+      292,
+      250,
+      335
+     ],
+     "anchor": [
+      192,
+      313
+     ]
+    },
+    "body-segment-06": {
+     "bounds": [
+      139,
+      335,
+      249,
+      365
+     ],
+     "anchor": [
+      194,
+      350
+     ]
+    },
+    "tail-blade": {
+     "bounds": [
+      176,
+      365,
+      188,
+      367
+     ],
+     "anchor": [
+      182,
+      366
+     ]
+    }
+   },
+   "joints": {},
+   "pivots": {}
+  }
+ },
+ "BOFX.stagestack": {
+  "1": {
+   "master": "jungle800_master",
+   "w": 800,
+   "h": 4800,
+   "upper": "nst1_upper"
+  },
+  "2": {
+   "master": "nst2_master",
+   "w": 800,
+   "h": 4800,
+   "upper": "nst2_upper"
+  },
+  "3": {
+   "master": "nst3_master",
+   "w": 800,
+   "h": 4800,
+   "upper": "nst3_upper"
+  },
+  "4": {
+   "master": "nst4_master",
+   "w": 800,
+   "h": 4800,
+   "order": [
+    3,
+    1,
+    2,
+    4
+   ],
+   "spine": 400,
+   "upper": "nst4_upper"
+  },
+  "5": {
+   "master": "nst5_master",
+   "w": 800,
+   "h": 3286,
+   "upper": null
+  },
+  "6": {
+   "master": "nst6_master",
+   "w": 800,
+   "h": 7836,
+   "upper": null
+  },
+  "7": {
+   "master": "nst7_master",
+   "w": 800,
+   "h": 4062,
+   "upper": "nst7_upper"
+  },
+  "8": {
+   "master": "nst8_master",
+   "w": 800,
+   "h": 3601,
+   "upper": null
+  },
+  "9": {
+   "master": "nst9_master",
+   "w": 800,
+   "h": 3721,
+   "upper": null
+  }
+ },
+ "BOFX.liquids": {
+  "flat": {
+   "1": "nwl_water",
+   "2": "nwl_lava",
+   "3": "nwl_ice",
+   "7": "nwl_sludge"
+  },
+  "fall": {
+   "1": "nlf_water",
+   "2": "nlf_lava",
+   "7": "nlf_sludge"
+  },
+  "fps": {
+   "nwl_water": 8,
+   "nwl_lava": 7,
+   "nwl_sludge": 6,
+   "nlf_water": 8,
+   "nlf_lava": 7,
+   "nlf_sludge": 6,
+   "nwl_ice": 6,
+   "nlf_ice": 6
+  },
+  "drops": {
+   "1": [
+    {
+     "y": 764,
+     "x0": 139,
+     "x1": 660
+    }
+   ],
+   "4": [
+    {
+     "y": 2904,
+     "x0": 0,
+     "x1": 799
+    }
+   ]
+  }
+ },
+ "_CF_PORTRAIT_PILOTS": {
+  "__err": "ReferenceError: _CF_PORTRAIT_PILOTS is not defined"
+ },
+ "levelCfg": {
+  "1": {
+   "master": "bg_stage01_intact",
+   "destroyed": "bg_stage01_destroyed",
+   "plateW": 680,
+   "liquid": "nlq2_water",
+   "fill": "#0a1607",
+   "tile": 0.5,
+   "fps": 5,
+   "wide": true,
+   "h": 4212
+  },
+  "2": {
+   "master": "bg_stage01_intact",
+   "destroyed": "bg_stage01_destroyed",
+   "plateW": 680,
+   "liquid": "nlq2_water",
+   "fill": "#0a1607",
+   "tile": 0.5,
+   "fps": 5,
+   "wide": true,
+   "h": 4212
+  },
+  "3": {
+   "master": "bg_stage01_intact",
+   "destroyed": "bg_stage01_destroyed",
+   "plateW": 680,
+   "liquid": "nlq2_water",
+   "fill": "#0a1607",
+   "tile": 0.5,
+   "fps": 5,
+   "wide": true,
+   "h": 4212
+  },
+  "4": {
+   "master": "bg_stage01_intact",
+   "destroyed": "bg_stage01_destroyed",
+   "plateW": 680,
+   "liquid": "nlq2_water",
+   "fill": "#0a1607",
+   "tile": 0.5,
+   "fps": 5,
+   "wide": true,
+   "h": 4212
+  },
+  "5": {
+   "master": "bg_stage01_intact",
+   "destroyed": "bg_stage01_destroyed",
+   "plateW": 680,
+   "liquid": "nlq2_water",
+   "fill": "#0a1607",
+   "tile": 0.5,
+   "fps": 5,
+   "wide": true,
+   "h": 4212
+  },
+  "6": {
+   "master": "bg_stage01_intact",
+   "destroyed": "bg_stage01_destroyed",
+   "plateW": 680,
+   "liquid": "nlq2_water",
+   "fill": "#0a1607",
+   "tile": 0.5,
+   "fps": 5,
+   "wide": true,
+   "h": 4212
+  },
+  "7": {
+   "master": "bg_stage01_intact",
+   "destroyed": "bg_stage01_destroyed",
+   "plateW": 680,
+   "liquid": "nlq2_water",
+   "fill": "#0a1607",
+   "tile": 0.5,
+   "fps": 5,
+   "wide": true,
+   "h": 4212
+  },
+  "8": {
+   "master": "bg_stage01_intact",
+   "destroyed": "bg_stage01_destroyed",
+   "plateW": 680,
+   "liquid": "nlq2_water",
+   "fill": "#0a1607",
+   "tile": 0.5,
+   "fps": 5,
+   "wide": true,
+   "h": 4212
+  },
+  "9": {
+   "master": "bg_stage01_intact",
+   "destroyed": "bg_stage01_destroyed",
+   "plateW": 680,
+   "liquid": "nlq2_water",
+   "fill": "#0a1607",
+   "tile": 0.5,
+   "fps": 5,
+   "wide": true,
+   "h": 4212
+  }
+ },
+ "plan": {
+  "1": {
+   "waves": 19,
+   "types": {},
+   "other": {}
+  },
+  "2": {
+   "__err": "TypeError: Cannot read properties of null (reading 'length')"
+  },
+  "3": {
+   "__err": "TypeError: Cannot read properties of null (reading 'length')"
+  },
+  "4": {
+   "__err": "TypeError: Cannot read properties of null (reading 'length')"
+  },
+  "5": {
+   "__err": "TypeError: Cannot read properties of null (reading 'length')"
+  },
+  "6": {
+   "__err": "TypeError: Cannot read properties of null (reading 'length')"
+  },
+  "7": {
+   "__err": "TypeError: Cannot read properties of null (reading 'length')"
+  },
+  "8": {
+   "__err": "TypeError: Cannot read properties of null (reading 'length')"
+  },
+  "9": {
+   "__err": "TypeError: Cannot read properties of null (reading 'length')"
+  }
+ },
+ "spawnEnemySrcLen": 70561,
+ "spawnCases": [
+  "tank",
+  "htank",
+  "mgturret",
+  "rockturret",
+  "microturret",
+  "turret",
+  "turdrone",
+  "shieldd",
+  "drone",
+  "mdrone",
+  "minidrone",
+  "assault",
+  "gunship",
+  "scout",
+  "intcp",
+  "hfight",
+  "bomber",
+  "drone",
+  "mine",
+  "mdrone",
+  "frost",
+  "octo",
+  "mech",
+  "icegun",
+  "cryo",
+  "ebomb",
+  "minidrone",
+  "minicarrier",
+  "s1boatgun",
+  "s1boatpatrol",
+  "drone",
+  "assault",
+  "gunship",
+  "turret",
+  "mine",
+  "octo",
+  "mech",
+  "tank",
+  "htank",
+  "frost",
+  "icegun",
+  "cryo",
+  "mgturret",
+  "rockturret",
+  "microturret",
+  "gunboat",
+  "racer",
+  "strafer",
+  "turretMG",
+  "turretMSL",
+  "bunkerA",
+  "bunkerB",
+  "sandtank",
+  "minitank",
+  "minitank2",
+  "minitank3",
+  "minishipA",
+  "minishipB",
+  "minishipC",
+  "jet_f22",
+  "jet_f16",
+  "jet_f15",
+  "jet_f18",
+  "jet_shn",
+  "jet_m29",
+  "jet_su27",
+  "jet_j20",
+  "jet_hwk",
+  "jet_f35",
+  "jet_su57",
+  "jet_raf",
+  "jet_typ",
+  "jet_grp",
+  "jet_kaw",
+  "jet_cic",
+  "el_jh",
+  "el_em",
+  "el_cs",
+  "el_gw",
+  "el_vr",
+  "el_iv",
+  "el_lr",
+  "el_gr",
+  "el_od",
+  "el_hd",
+  "l6x_st",
+  "l6x_tf",
+  "l6x_cw",
+  "l6x_cr",
+  "l6x_tl",
+  "l6x_hw",
+  "needle",
+  "crescent",
+  "hauler",
+  "oracle",
+  "xelite_furytalon",
+  "xelite_razorback",
+  "xelite_tempest",
+  "xelite_emberwing",
+  "xelite_glacierlance",
+  "xelite_voidreaver",
+  "xelite_ironserpent",
+  "xelite_solarwarden",
+  "xelite_nighthammer",
+  "talon",
+  "hell",
+  "cdisc",
+  "spiral",
+  "s5frigate",
+  "s5rammer",
+  "s5skimmer",
+  "s5gravity",
+  "s5interceptor",
+  "s5minelayer",
+  "s5satellite",
+  "s5portalmine",
+  "s5repair",
+  "s5salvage",
+  "s5leech",
+  "s5station",
+  "s8leech",
+  "s8interceptor",
+  "s8manta",
+  "s8hunter",
+  "s8deathorb",
+  "s8parasite",
+  "s8razor",
+  "s8skull",
+  "s8carrier",
+  "s8symbiote",
+  "s8tentacle",
+  "s8bomber",
+  "s8gunship",
+  "s8needlejet",
+  "s8scout",
+  "s8solar",
+  "s8spread",
+  "s8crescent",
+  "s9beacon",
+  "s9chronal",
+  "s9comet",
+  "s9gunship",
+  "s9interceptor",
+  "s9gatecarrier",
+  "s9gateturret",
+  "s9gravity",
+  "s9prism",
+  "s9warptank",
+  "s9ring",
+  "s9singularity",
+  "s3mine",
+  "s3interceptor",
+  "s3sled",
+  "s3snowmobile",
+  "s3crawler",
+  "s3tank",
+  "s3barge",
+  "s3artillery",
+  "s4airfield",
+  "s4tractor",
+  "s4interceptor",
+  "s4command",
+  "s4barrel",
+  "s4tanker",
+  "s4bomber",
+  "s4heavyjet",
+  "s4missile",
+  "s4rocket",
+  "s4minitank",
+  "s4sam",
+  "s6lancer",
+  "s6cyclone",
+  "s6bomber",
+  "s6mine",
+  "s6skimmer",
+  "s6carrier",
+  "s6reactor",
+  "s6buoy",
+  "s6dart",
+  "s6thunder",
+  "s6turbine",
+  "s6probe",
+  "s7lamprey",
+  "s7barge",
+  "s7pipe",
+  "s7walker",
+  "s7sampler",
+  "s7serpent",
+  "s7mine",
+  "s7canister",
+  "s7tank",
+  "s7skimmer",
+  "s7valve",
+  "skim",
+  "disc",
+  "eye",
+  "miner",
+  "ash",
+  "cruc",
+  "lance",
+  "carrier",
+  "crawl",
+  "pod",
+  "golem",
+  "lavamaw",
+  "skimmer",
+  "shambler",
+  "sentry",
+  "barge",
+  "crawler",
+  "maw",
+  "bcarrier",
+  "stationship",
+  "roadtank",
+  "jungletank",
+  "topgun",
+  "sideswirl",
+  "jetflyby",
+  "tankpatrol"
+ ],
+ "fireArt": {
+  "pellet": "(b)=>pelletKey(b)",
+  "s1bullet": "(b)=>'mgcf_1_5'",
+  "flare": "(b)=>'mfx_ea_3_'+(((Math.floor(performance.now()/80)+((b._ph|0)||0))%8))",
+  "comet": "(b)=>eaCometKey(b.pal||'red', ((b.t||0)*12)|0)",
+  "blast": "(b)=>'mfx_bpow_'+({red:0,blue:1,white:2}[b.pal||'red']||0)+'_0'",
+  "homing": "(b)=>'mfx_hom_0_'+(((b.t||0)*14|0)%10)",
+  "missile": "(b)=>(b&&b.kind==='omegawarhead')\r\n              ? (function(_s){ return b._ref ? _s.replace(/_in$/,'_ref') : _s; })\r\n                  (b._wart||'nfx_omegawarhead_in')                      // authored pair, per carrier\r\n              : 'mfx_emr_0_'+(((b.t||0)*12|0)%4)",
+  "dart": "(b)=>['mfx_mg_2_0','mfx_mg_2_2'][(Math.floor(performance.now()/70)+((b._ph|0)||0))%2]",
+  "gem": "(b)=>'mfx_ea_3_'+(((b.t||0)*10|0)%8)",
+  "orb": "(b)=>'mfx_ea_3_'+(((b.t||0)*8|0)%8)",
+  "laser": "(b)=>'mfx_emr_0_'+(((b.t||0)*12|0)%4)",
+  "railshot": "(b)=>'waf_railgun_'+Math.min(2,((b.t||0)*10)|0)",
+  "magma": "(b)=>'ndc_magmaorb_'+(((b.t||0)*12|0)%4)",
+  "lavaComet": "(b)=>'fx0825_lava_comet'",
+  "s2needle": "undefined",
+  "s2rake": "undefined",
+  "s2slag": "undefined",
+  "s2rocket": "undefined",
+  "s2bomb": "undefined",
+  "s2shock": "undefined",
+  "s2breath": "undefined",
+  "s2slug": "undefined",
+  "s2mine": "undefined",
+  "s3shard": "undefined",
+  "s3lance": "undefined",
+  "s3tracer": "undefined",
+  "s3mortar": "undefined",
+  "s3shell": "undefined",
+  "s3wave": "undefined",
+  "s4steel": "undefined",
+  "s4brass": "undefined",
+  "s4rocket": "undefined",
+  "s4missile": "undefined",
+  "s4bomb": "undefined",
+  "s4rail": "undefined",
+  "s6wind": "undefined",
+  "s6bolt": "undefined",
+  "s6missile": "undefined",
+  "s6orb": "undefined",
+  "s6tracer": "undefined",
+  "s6seeker": "undefined",
+  "s7acid": "undefined",
+  "s7sludge": "undefined",
+  "s7shard": "undefined",
+  "s7bio": "undefined",
+  "s7laser": "undefined",
+  "s7grenade": "undefined",
+  "s7spore": "(b)=>'s7spore_'+(((b.t||0)*12|0)%12)",
+  "s5fracture": "undefined",
+  "s5split": "undefined",
+  "s5prism": "undefined",
+  "s5null": "undefined",
+  "s5missile": "undefined",
+  "s5chaos": "undefined",
+  "s5halo": "(b)=>'s5fracture_'+(((b.t||0)*12|0)%12)",
+  "s8needle": "undefined",
+  "s8rage": "undefined",
+  "s8slug": "undefined",
+  "s8missile": "undefined",
+  "s8pair": "undefined",
+  "s8blade": "undefined",
+  "s8rift": "(b)=>'s8rift_'+(((b.t||0)*16|0)%16)",
+  "s8nf_gunship": "(b)=>'s8nf_armored_gunship_projectile_'+(((b.t||0)*15|0)%4)",
+  "s8nf_needle": "(b)=>'s8nf_needle_interceptor_projectile_'+(((b.t||0)*16|0)%4)",
+  "s8nf_scout": "(b)=>'s8nf_scout_drone_projectile_'+(((b.t||0)*14|0)%4)",
+  "s8nf_solar": "(b)=>'s8nf_solar_corvette_projectile_'+(((b.t||0)*13|0)%4)",
+  "s8nf_spread": "(b)=>'s8nf_spread_wing_fighter_projectile_'+(((b.t||0)*17|0)%4)",
+  "s8nf_crescent": "(b)=>'s8nf_stealth_crescent_projectile_'+(((b.t||0)*14|0)%4)",
+  "s9gold": "undefined",
+  "s9warp": "undefined",
+  "s9turbo": "undefined",
+  "s9needle": "undefined",
+  "s9comet": "undefined",
+  "s9pair": "undefined",
+  "s9lattice": "(b)=>'s9lattice_'+(((b.t||0)*12|0)%12)",
+  "s7wardenShell": "undefined",
+  "s7wardenMine": "undefined",
+  "s7wardenRail": "undefined",
+  "s6cyclone": "(b)=>'s6mb_cyclonetracer_'+(((b.t||0)*16|0)%8)",
+  "s6prism": "(b)=>'s6mb_prismbolt_'+(((b.t||0)*15|0)%8)",
+  "s6flak": "(b)=>'s6mb_flakshell_'+(((b.t||0)*14|0)%8)",
+  "s6gravity": "(b)=>'s6mb_gravitymine_'+(((b.t||0)*12|0)%8)",
+  "s6omega": "(b)=>'s6mb_omegabomb-hostile_'+(((b.t||0)*12|0)%8)",
+  "s6cluster": "(b)=>'s6mb_clusterbomblet_'+(((b.t||0)*16|0)%8)",
+  "s1cannon": "(b)=>'s1fx_cannon_shell_'+Math.min(5,((b.t||0)*15)|0)",
+  "s1jungleMissile": "(b)=>'s1fx_jungle_missile_'+Math.min(5,((b.t||0)*13)|0)",
+  "s1greenLaser": "(b)=>'s1fx_green_laser_'+Math.min(5,((b.t||0)*18)|0)",
+  "s1windBlade": "(b)=>'s1fx_wind_blade_'+Math.min(5,((b.t||0)*16)|0)",
+  "s1windVortex": "(b)=>'s1fx_wind_vortex_'+Math.min(5,((b.t||0)*14)|0)",
+  "xorb_acid": "()=>'xorb_acid'",
+  "xorb_antimatter": "()=>'xorb_antimatter'",
+  "xorb_cryo": "()=>'xorb_cryo'",
+  "xorb_gravity": "()=>'xorb_gravity'",
+  "xorb_helix_emerald": "()=>'xorb_helix_emerald'",
+  "xorb_kinetic_rock": "()=>'xorb_kinetic_rock'",
+  "xorb_lightning": "()=>'xorb_lightning'",
+  "xorb_molten_orange": "()=>'xorb_molten_orange'",
+  "xorb_plasma_blue": "()=>'xorb_plasma_blue'",
+  "xorb_solar": "()=>'xorb_solar'",
+  "xorb_sonic": "()=>'xorb_sonic'",
+  "xorb_void": "()=>'xorb_void'",
+  "xlz_fire": "(b)=>'xlz_fire_travel_'+(((b.t||0)*12|0)%4)",
+  "xlz_lightning": "(b)=>'xlz_lightning_travel_'+(((b.t||0)*12|0)%4)",
+  "xlz_shadow": "(b)=>'xlz_shadow_travel_'+(((b.t||0)*12|0)%4)",
+  "xlz_rock": "(b)=>'xlz_rock_travel_'+(((b.t||0)*12|0)%4)",
+  "xlz_burst": "(b)=>'xlz_burst_travel_'+(((b.t||0)*12|0)%4)",
+  "venomDart": "(b)=>['mfx_mg_2_0','mfx_mg_2_2'][(Math.floor(performance.now()/70)+((b._ph|0)||0))%2]",
+  "voidOrb": "(b)=>'mfx_ea_3_'+(((b.t||0)*8|0)%8)",
+  "emberGem": "(b)=>'mfx_ea_3_'+(((b.t||0)*10|0)%8)",
+  "frostComet": "(b)=>eaCometKey(b.pal||'red', ((b.t||0)*12)|0)",
+  "kingPellet": "(b)=>pelletKey(b)",
+  "eshot": "(b)=>pelletKey(b)"
+ },
+ "bossProjFamSrc": "function _bossProjFam(){\n  const src=(typeof boss!=='undefined'&&boss&&boss._mech) ? boss._mech.tag\r\n          : ((typeof subBoss!=='undefined'&&subBoss&&subBoss._mech) ? subBoss._mech.tag : null);\r\n  return src ? (BOSS_PROJ_FAM[src]||null) : null;\r\n}",
+ "pelletKeySrc": "function pelletKey(b){\n  /* Map the legacy family identities onto the approved five-colour 0825 tracer set:\n     old 0 red,1 blue,2 orange,3 green,4 white -> new levels 5,2,1,3,4. */\n  const lv=[5,2,1,3,4][pelletFam(b)]||1;\n  return 'mgcf_'+lv+'_'+Math.min(5,Math.floor(((b&&b.t)||0)/0.024));\n}",
+ "stageArtKeys": [
+  "1",
+  "2",
+  "3",
+  "4",
+  "5"
+ ]
+}

@@ -3223,7 +3223,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* THE MAGMA COLOSSUS IS A MECH, NOT A MODULAR BOSS (drop 0801ge). It carries
      _mech.tag 'mbg2' and boss.modular is false - the Genesis pack replaced the
      modular rig. The magma profile survived the swap, so that half still holds. */
-  ok(vm.runInContext("!!boss && !!boss._mech && boss._mech.tag==='mbg2' && boss._profile==='magma'", ctxv), 'the L2 boss is the mbg2 mech and carries the magma profile');
+  /* mbg2 rig art quarantined 0903 (Mike scrapped the Colossus 0810q; no stage fields the kind): the
+     spawn builds the generic hull, so the mech identity is asserted only while its art is registered. */
+  if(vm.runInContext("Object.keys(BOFX.cells).some(function(k){return k.indexOf('mbg2_')===0;})", ctxv))
+    ok(vm.runInContext("!!boss && !!boss._mech && boss._mech.tag==='mbg2' && boss._profile==='magma'", ctxv), 'the L2 boss is the mbg2 mech and carries the magma profile');
+  else
+    ok(vm.runInContext("!!boss && boss._profile==='magma'", ctxv), 'the retired Colossus still spawns a magma-profile hull without its quarantined rig (0903)');
   /* THE MAGMA COLOSSUS HAS TWO ENTRANCES (drop 0801ge). It is one of only two
      bosses whose tag has a _p_torso plate, so genesisInit succeeds and it plays
      the genesis haul BEFORE the mech assembly - roughly 10.6s of haul, then 2.3s
@@ -3730,7 +3735,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      mbg2_chainr_0..7, EIGHT a side rather than six, from the Genesis pack. The
      nmc_chain_ prefix has zero keys (drop 0801fy). */
   ['l','r'].forEach(function(sd){ for(var i=0;i<8;i++) if(!vm.runInContext("XART.rdy('mbg2_chain"+sd+"_"+i+"')", ctxv)) _cOK=false; });
-  ok(_cOK, 'all 16 magma chain overlays registered (8 per side)');
+  if(vm.runInContext("Object.keys(BOFX.cells).some(function(k){return k.indexOf('mbg2_')===0;})", ctxv))
+    ok(_cOK, 'all 16 magma chain overlays registered (8 per side)');
+  else ok(!_cOK, 'the magma chain overlays left with the quarantined Colossus rig (0903)');
   ok(vm.runInContext("XART.rdy('ncb_cannon_l') && XART.rdy('ncb_cannon_r')", ctxv), 'both cryo cannon masters registered');
   if(_bp){
     ok(_bp.mirror_exact===true, 'the right cannon is a BYTE-EXACT mirror of the left, as the pack requires');
@@ -3816,13 +3823,25 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      limbs out of the lava one at a time. So the old `boss._be` / `boss.parts` assertions test a
      path that no longer exists; these test the one that does. */
   vm.runInContext("run.stage=2; curStage=STAGES[1]; boss=null; bossActive=false; eBullets.length=0; spawnBoss('magmacolossus'); boss.x=240; boss.y=150;", ctxv);
-  ok(vm.runInContext("!!boss && !!boss._mech", ctxv), 'MAGMA COLOSSUS builds as a mech (8 components, per-part HP)');
-  ok(vm.runInContext("boss._mech && Object.keys(boss._mech.parts).length===8", ctxv),
-     'with '+vm.runInContext("boss._mech?Object.keys(boss._mech.parts).length:0",ctxv)+' independently destructible parts');
-  ok(vm.runInContext("!!boss._gen && boss._gen.phase==='rise'", ctxv),
-     'and enters on the GENESIS chain-haul, starting with the torso rising from the lava');
-  ok(vm.runInContext("boss._mech.phase==='assemble' || boss.enter===true", ctxv),
-     'the fight is gated until it has assembled itself');
+  /* THE COLOSSUS RIG ART IS QUARANTINED (0903). Mike scrapped the Magma Colossus in 0810q and no
+     STAGES/SUBBOSS kind routes to mechInit any more, so the atlas repack took the mbg2_ cells out of
+     the shipped manifest (docs/ATLAS_QUARANTINE_0903.json). mechInit refuses to build without its
+     art and the spawn falls to the generic hull — so `boss._mech` is undefined here, and reading
+     `boss._mech.phase` THREW and killed the whole suite at section 86 (rule 3: a crash wearing a
+     pass). The mech assertions run only while the rig art is registered; otherwise they record the
+     retirement instead of asserting a machine nothing can spawn. */
+  if(vm.runInContext("!!(boss && boss._mech)", ctxv)){
+    ok(true, 'MAGMA COLOSSUS builds as a mech (8 components, per-part HP)');
+    ok(vm.runInContext("boss._mech && Object.keys(boss._mech.parts).length===8", ctxv),
+       'with '+vm.runInContext("boss._mech?Object.keys(boss._mech.parts).length:0",ctxv)+' independently destructible parts');
+    ok(vm.runInContext("!!boss._gen && boss._gen.phase==='rise'", ctxv),
+       'and enters on the GENESIS chain-haul, starting with the torso rising from the lava');
+    ok(vm.runInContext("boss._mech.phase==='assemble' || boss.enter===true", ctxv),
+       'the fight is gated until it has assembled itself');
+  } else {
+    ok(vm.runInContext("!BOFX.img['mbg2_master'] && !Object.keys(BOFX.cells).some(function(k){return k.indexOf('mbg2_')===0;})", ctxv),
+       'the Magma Colossus rig art is quarantined (0903) and the kind is fielded by no stage — mech assertions skipped, not failed');
+  }
   // the MULTI-PART fly-in belongs to the Vile Existence, which actually has components
   vm.runInContext("run.stage=8; curStage=STAGES[7]; boss=null; bossActive=false; spawnBoss('vileexistence');", ctxv);
   if(vm.runInContext("!!boss && !!boss._be && boss.parts.length>1", ctxv)){
@@ -3833,6 +3852,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      magma; this walks the sequence that replaced it. Driven through genesisUpdate at a real
      frame rate rather than by poking state, so it tests the machine and not my description of it. */
   vm.runInContext("run.stage=2; curStage=STAGES[1]; boss=null; bossActive=false; spawnBoss('magmacolossus'); boss.x=240; boss.y=150;", ctxv);
+  /* genesis needs the mbg2 rig (quarantined 0903) — walk the beats only while it builds */
+  var _rig86=vm.runInContext("!!(boss && boss._mech)", ctxv);
+  if(_rig86){
   ok(vm.runInContext("boss._gen && boss._gen.phase==='rise' && boss.enter===true", ctxv),
      'genesis beat 1: torso rising from the lava, fight not started');
   vm.runInContext("for(var f=0;f<60*2.0;f++){ if(boss._gen) genesisUpdate(boss,1/60); }", ctxv);
@@ -3842,6 +3864,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("!boss._gen", ctxv), 'genesis completes inside its authored runtime');
   ok(vm.runInContext("boss._mech && boss._mech.phase==='fight'", ctxv),
      'and hands over to the fight with the limbs wired for damage');
+  } else ok(vm.runInContext("!!boss && !boss._gen", ctxv), 'no genesis haul without the quarantined Colossus rig — the generic hull spawns clean (0903)');
   /* ⚠ THIS WAS ONE OF THE FIVE "PRE-EXISTING FAILURES" AND IT WAS NOT A BUG — it was an assertion
      defending a design Mike replaced (found 0810m, while chasing his "almost no minibosses or
      bosses past level 1 truly work right").
@@ -3857,9 +3880,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      MECH_HP_SHARE is the single source of HP, every component owns its own pool, and genesis
      leaves every part DOCKED — the 0809m fix for "957 probes found nothing hittable", which is
      the real "the level 2 and 3 bosses cannot be damaged" bug and the thing worth guarding. */
-  var _dock=vm.runInContext("(function(){var K=boss._mech,n=0,t=0;for(var c in K.parts){t++;if(K.parts[c].docked)n++;}return [n,t];})()", ctxv);
-  ok(_dock[0]===_dock[1] && _dock[1]>0,
-     'genesis leaves every part DOCKED and hittable ('+_dock[0]+'/'+_dock[1]+')');
+  if(_rig86){
+    var _dock=vm.runInContext("(function(){var K=boss._mech,n=0,t=0;for(var c in K.parts){t++;if(K.parts[c].docked)n++;}return [n,t];})()", ctxv);
+    ok(_dock[0]===_dock[1] && _dock[1]>0,
+       'genesis leaves every part DOCKED and hittable ('+_dock[0]+'/'+_dock[1]+')');
+  }
   ok(vm.runInContext("(function(){var n=0;for(var k in MECH_HP_SHARE) n++; return n;})()", ctxv)>=6,
      'and HP is per-COMPONENT, six-plus separate targets, not one pool per haul group');
   ok(vm.runInContext("Math.abs(Object.keys(MECH_HP_SHARE).reduce(function(s,k){return s+MECH_HP_SHARE[k];},0)-1)<0.001", ctxv),
@@ -4085,8 +4110,14 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      superseded by the Genesis mech pack - the Cryo Behemoth is tag mbg3 now, with
      290 registered keys and damage states driven by mechDraw rather than by a
      five-frame phase reel. Not one ncbp_ key is in the manifest. */
+  /* THE mbg3 RIG IS QUARANTINED (0903). Mike scrapped the Cryo Behemoth with the Colossus (0810q) and
+     stage 3 fields the Rime Wall; the repack took the 290 mbg3_ cells out of the shipped manifest
+     (docs/ATLAS_QUARANTINE_0903.json). Without its art mechInit refuses and the spawn is the generic
+     hull, so the mech assertions below run only while the rig is registered. */
+  var _rig93 = vm.runInContext("Object.keys(BOFX.cells).some(function(k){return k.indexOf('mbg3_')===0;})", ctxv);
   var _cp = vm.runInContext("Object.keys(BOFX.img).filter(function(k){return k.indexOf('mbg3_')===0;}).length>=100", ctxv);
-  ok(_cp, 'the cryo behemoth ships as the mbg3 mech ('+vm.runInContext("Object.keys(BOFX.img).filter(function(k){return k.indexOf('mbg3_')===0;}).length", ctxv)+' keys)');
+  ok(_rig93 ? _cp : !_cp, _rig93 ? 'the cryo behemoth ships as the mbg3 mech ('+vm.runInContext("Object.keys(BOFX.img).filter(function(k){return k.indexOf('mbg3_')===0;}).length", ctxv)+' keys)'
+                          : 'the mbg3 rig is quarantined and no stage fields the Cryo Behemoth (0903)');
   ok(vm.runInContext("typeof cryoPhaseKey==='function' && typeof cryoBodyDraw==='function'", ctxv), 'the phase body draws');
   // the phase must follow HP so the boss visibly deploys as it breaks down
   vm.runInContext("run.stage=3; curStage=STAGES[2]; boss=null; bossActive=false; spawnBoss('cryobehemoth'); bossActive=true; boss.enter=false;", ctxv);
@@ -4102,12 +4133,13 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     vm.runInContext("boss.hp=boss.maxhp*"+f+";", ctxv);
     if(!vm.runInContext("!!boss._mech && boss._mech.tag==='mbg3'", ctxv)) _cryoOK=false;
   });
-  ok(_cryoOK, 'the cryo behemoth holds its mbg3 mech body across every HP tier');
+  if(_rig93) ok(_cryoOK, 'the cryo behemoth holds its mbg3 mech body across every HP tier');
+  else ok(vm.runInContext("!!boss && !boss._mech", ctxv), 'the retired Behemoth spawns as a plain hull without its quarantined rig (0903)');
   /* _seq WAS BUILT BY THE OLD ncbp_ PHASE CHECK, which I replaced in 0801gd when
      the cryo boss moved to the mbg3 mech - so it is now an empty array and this
      asserted on undefined. The tier behaviour is covered by the assertion directly
      above; this one has nothing left to test (drop 0801gr). */
-  ok(vm.runInContext("boss._mech.parts && Object.keys(boss._mech.parts).length>=6", ctxv), 'and its part set stays intact across those tiers ('+vm.runInContext("Object.keys(boss._mech.parts).length", ctxv)+' parts)');
+  if(_rig93) ok(vm.runInContext("boss._mech.parts && Object.keys(boss._mech.parts).length>=6", ctxv), 'and its part set stays intact across those tiers ('+vm.runInContext("Object.keys(boss._mech.parts).length", ctxv)+' parts)');
   ok(vm.runInContext("cryoBodyDraw.toString().indexOf('xartTint')>0", ctxv), 'the phase body still flashes when hit');
   // it is BRIGHTER than the art it replaces — this was the whole complaint
   var _rep=null; try{ _rep=JSON.parse(fs.readFileSync(fxJson('_cryophase_report.json'),'utf8')); }catch(e){}
@@ -4300,13 +4332,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      and was covered one line later, which is why the boss looked completely unchanged. */
   ok(vm.runInContext("drawModularBoss.toString().indexOf('CRYO PHASE BODY REPLACES THE PART BODY')>0", ctxv), 'the phase body replaces the part body');
   vm.runInContext("run.stage=3; curStage=STAGES[2]; boss=null; bossActive=false; spawnBoss('cryobehemoth'); bossActive=true; boss.enter=false; boss.x=240; boss.y=150;", ctxv);
-  ok(vm.runInContext("(function(){try{return !!boss._mech;}catch(e){return false;}})()", ctxv), 'the cryo behemoth draws through the mech part system');
+  /* mbg3 rig quarantined 0903 — see section 93 */
+  var _rig99=vm.runInContext("Object.keys(BOFX.cells).some(function(k){return k.indexOf('mbg3_')===0;})", ctxv);
+  if(_rig99) ok(vm.runInContext("(function(){try{return !!boss._mech;}catch(e){return false;}})()", ctxv), 'the cryo behemoth draws through the mech part system');
+  else ok(vm.runInContext("!!boss", ctxv), 'the retired Behemoth still spawns a hull with its rig quarantined (0903)');
   var _dm=vm.runInContext("drawModularBoss.toString()", ctxv);
   ok(_dm.indexOf('cryoBodyDraw(b)')<_dm.indexOf('for(const p of b.parts)'), 'and it is decided BEFORE the parts loop');
   ok(_dm.slice(_dm.indexOf('cryoBodyDraw(b)'), _dm.indexOf('for(const p of b.parts)')).indexOf('return')>0, 'returning early so nothing can paint over it');
   var _ph2=[];
   [1.0,0.7,0.5,0.3,0.1].forEach(function(f){ vm.runInContext("boss.hp=boss.maxhp*"+f+";", ctxv); _ph2.push(vm.runInContext("String(cryoPhaseKey(boss))", ctxv)); });
-  ok(vm.runInContext("!!boss._mech && boss._mech.tag==='mbg3'", ctxv), 'cryo body stays on the mbg3 mech through the fight');
+  if(_rig99) ok(vm.runInContext("!!boss._mech && boss._mech.tag==='mbg3'", ctxv), 'cryo body stays on the mbg3 mech through the fight');
   /* LEVEL 2. The pack contains NO magma body art — 16 PNGs, all chains and cannons, confirmed by
      its own recovery-audit.json. The measurable defect was that the existing art is far too dark:
      brightness 51/255 against the cryo behemoth's 135 from the same set. Lifted by gamma, which
@@ -5226,8 +5261,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      catches a file dropped in the wrong place, which the folder-exists checks never did. */
   /* enemy art is largely IN SHEETS now, so count the keys that are enemy-shaped rather than
      loose files sitting under assets/enemy */
-  var _enemyN=Object.keys(_mf).filter(function(k){ return /^(mb[a-z0-9]+_|nab_|nsx_|n6x_)/.test(k); }).length;
-  ok(_enemyN>=1000, 'enemy art is registered and consolidated ('+_enemyN+' keys)');
+  /* 0903: the enemy sheets are NAMED now (en_s1..en_s9, en_shared), so count the cells that live on
+     them instead of guessing enemy-ness from four prefixes — two of which (mb*, nab_) are quarantined. */
+  var _cellsE=(vm.runInContext("JSON.stringify(Object.keys(BOFX.cells).filter(function(k){return String(BOFX.cells[k][0]).indexOf('en_')===0;}).length)", ctxv));
+  var _enemyN=JSON.parse(_cellsE);
+  ok(_enemyN>=1000, 'enemy art is registered and consolidated on the en_* sheets ('+_enemyN+' keys)');
   var _loose=Object.values(_mf).filter(function(v){ return !/^assets\/(player|enemy|game)\//.test(v); });
   ok(_loose.length===0, 'and no manifest path sits outside the three buckets'+(_loose.length?(' — '+_loose.slice(0,3).join(', ')):''));
   // stage fonts live in the game bucket now, keyed not foldered
@@ -7814,7 +7852,10 @@ console.log("=== 167. draw-scale discipline ===");
   /* The boss FX plates. Measured worst draw is 64.8px (every boss sits at b.w=288, so
      54*S*1.6 tops out there) and impact is a fixed 54px — 128 is exactly 2x that. */
   var _fx=Object.keys(_M167.img).filter(function(k){ return /^mb[a-z0-9]+_(mflash|impact)_\d+$/.test(k); });
-  ok(_fx.length===144, 'all 144 boss FX plates are present ('+_fx.length+')');
+  /* the mech rigs and their FX are QUARANTINED since 0903 (docs/ATLAS_QUARANTINE_0903.json) — no
+     stage can spawn them. Registered means all 144; quarantined means none and the record says so. */
+  var _rigQ167=!Object.keys(_M167.cells).some(function(k){ return k.indexOf('mbg2_')===0; });
+  ok(_rigQ167 ? _fx.length===0 : _fx.length===144, _rigQ167 ? 'the 144 mech-boss FX plates are quarantined with their rigs (0903)' : 'all 144 boss FX plates are present ('+_fx.length+')');
   var _big=[];
   _fx.forEach(function(k){ var s=cellSize(_M167,k,_pngSize); if(s && Math.max(s[0],s[1])>128) _big.push(k+' '+s[0]+'x'+s[1]); });
   ok(_big.length===0,
@@ -8346,7 +8387,10 @@ console.log("=== 176. enemy/boss atlas decision ===");
 {
   var _M176=JSON.parse(fs.readFileSync(ROOT+'/assets/manifest.js','utf8').match(/window\.BOFX=([\s\S]*?\});/)[1]);
   var _bossKeys=Object.keys(_M176.img).filter(function(k){ return /^mb[a-z0-9]+_/.test(k); });
-  ok(_bossKeys.length>1000, 'the boss component art is large ('+_bossKeys.length+' keys)');
+  /* 0903: the twelve mech rigs are quarantined (no stage spawns them); the record must say so */
+  var _quar176=null; try{ _quar176=JSON.parse(fs.readFileSync(ROOT+'/docs/ATLAS_QUARANTINE_0903.json','utf8')); }catch(e){}
+  ok(_bossKeys.length>1000 || (_quar176 && _quar176.families && _quar176.families.mbg2 && _quar176.families.mbg3),
+     _bossKeys.length>1000 ? 'the boss component art is large ('+_bossKeys.length+' keys)' : 'the mech component art is quarantined and recorded with its restore commit (0903)');
   /* CORRECTED IN 0805z. The "no" above applies to ONE sheet for the whole family (1,322 MB,
      of which a run touches 12%). It does NOT apply to per-STAGE sheets, which Mike was right
      about: measured, a stage touches only 23-108 enemy keys, and the sheets come out
@@ -8807,7 +8851,11 @@ console.log("=== 186. player / enemy / game ===");
      They are NOT atlas material: each is a full-canvas 680x510 alpha layer drawn whole at the
      view rect, so packing them would add a rect lookup and save nothing, and 24 loose plates in
      a flat game/ is exactly the sprawl Mike asked to be cleaned up. Same reasoning fonts/ got. */
-  var _reqSub=['atlas','bg5','bg6','fonts','music','sounds','fx_0825','l6_fleet','pilot_portraits'];
+  /* bg5/ and bg6/ LEFT again (0903): the atlas repack folded the 24 planet layers and the 40
+     stage-6 cloud plates into terrain_masters / fx_weather as cells — Mike asked for clouds to
+     have their own atlas — and a cell canvas draws whole at the view rect exactly as the loose
+     plate did (pixel identity checked per cell). The empty folders were removed with the files. */
+  var _reqSub=['atlas','fonts','music','sounds','fx_0825','l6_fleet','pilot_portraits'];
   ok(_reqSub.every(function(n){return _sub.indexOf(n)>=0;}),
      'game/ holds every required runtime asset bucket ('+_sub.join(',')+')');
 
@@ -8926,7 +8974,9 @@ console.log("=== 189. cell dedup ===");
   });
   ok(_forked.length===0, 'deduplicated art still shares one cell'+(_forked.length?(' — FORKED: '+_forked.join(', ')):''));
   var _shared=Object.keys(_rect).filter(function(s){ return _rect[s].length>1; }).length;
-  ok(_shared>=600, 'and the alias sharing survived the repack ('+_shared+' rects serve more than one key)');
+  /* 600+ before 0903; the retired mech rigs carried a share of the aliases and are quarantined now.
+     What this protects is that aliases are still DEDUPED (many keys, one rect), not the exact count. */
+  ok(_shared>=400, 'and the alias sharing survived the repack ('+_shared+' rects serve more than one key)');
   ok(Object.keys(_c).length > Object.keys(_rect).length,
      'so there are fewer distinct cells than keys — nothing is stored twice');
 }

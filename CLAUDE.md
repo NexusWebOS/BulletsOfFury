@@ -34,7 +34,7 @@ syntax error mid-suite reports zero failures and looks like a pass.
 ```
 assets/game.js        the whole game — large, single file
 assets/manifest.js    9 namespaces: BOF BOFA BOFFI BOFPI BOFQL BOFRS BOFTK BOFTM BOFX
-assets/game/atlas/    packed sheets; most art is a CELL in a sheet, not a loose file
+assets/game/atlas/    NAMED sheets since 0903 (en_s1, boss_s6, player_weapons, fx_weather_0 ...); most art is a CELL
 assets/data/          ART_TAXONOMY.json, STAGE1_ROSTER_SPEC.json, thruster_mounts.json
 _BUILD_SOURCE/        test_fl.js, shoot.py, verify_atlas_0806z.js, one-off art scripts
 docs/                 76 passovers, one per drop, newest last
@@ -186,6 +186,40 @@ literal storm plate on a space stage, which Mike DID want changed. The test is w
 wrong for the stage, not whether it matches the title.
 
 
+## The atlas is repacked (2026-09-03) — read `docs/ATLAS_REPACK_0903.md` before touching a sheet
+
+**A sheet index is a NAME.** `BOFX.cells` rows are `[sheet, x, y, w, h]`; the loader reads
+`'nca_'+sheet`, so `['en_s1', …]` resolves through `img['nca_en_s1']` to `assets/game/atlas/en_s1.png`.
+58 named sheets replace `nca_0..86`: enemies per stage, one sheet per live boss and miniboss,
+enemy projectiles per stage, `player_weapons`, `pickups`, `fx_weather/explosions/misc/debris`,
+terrain, UI by surface. **Only `nca_87/88/89` are still numbered** — the MG pack, indexed whole by
+`P87_SHEET`. Boot download 134 → 102 MB; 271 MB of numbered sheets → 220 MB named (+ 23 MB of folded loose files deleted).
+⚠ **2,345 keys in 51 families are QUARANTINED, not deleted** — `docs/ATLAS_QUARANTINE_0903.json`
+holds every cell row and the commit (`0c964ee3`) they restore from. They are the retired mech /
+sectional / megaboss rigs no `STAGES`/`SUBBOSS` kind can reach (spawnBoss is table-driven; `_SXMAP`
+names only `magmacolossus`/`cryobehemoth`/`leviathan`) plus families nothing names in any quote
+style, any manifest table, or either live-run audit. **The sectional packs, quad-laser, megaboss and
+esB hulls are NOT quarantined** — they sit on `retired_rigs_0..2` (lazy, never at boot) because the
+suite pins them and CLAUDE.md keeps the sectional rig on disk; Mike deletes them with one rule change.
+**Check the SUITE for every family before quarantining it** — `nhxfi`/`nrbfi` are Falva's fade-in
+frames Mike asked for, unreferenced by game.js, and section 184 crashed on them in the first pass. **Spawning a retired kind now builds the
+GENERIC hull** — `mechInit` refuses without its art, so `boss._mech` is undefined. Section 86 read
+`boss._mech.phase` and the throw killed the suite at 1,068 assertions with 0 failures printed
+(rule 3, exactly). Guard on `boss._mech` before asking a rig anything.
+⚠ **Sheet 79 was `stage1roster.png`, not `nca_79.png`.** Resolve a numeric sheet through its
+`img['nca_N']` registration; a filename built from the index is wrong for one sheet in 90.
+⚠ **`n6x_`/`nvl_`/`s1_`/`tk*` are built by code, not named by tables** (`'n6x_'+kind`,
+`'nvl_'+art`, `JUNGLE_TANKS`/`STAGE4_TANKS`); the debris library is `ramp+type+chunk+'_r'+rot+'_'+tier`,
+which no grep for a family prefix can see. A liveness scan that only checks quoted prefixes calls
+all of them dead. `atlas_repack_0903.py` carries the exceptions; extend it, do not re-derive.
+⚠ **`Page.screenshot` hangs on the transformed canvas** (shoot.py already says so at its capture);
+use its `toDataURL` route. And **a quoted heredoc is not safe from the harness's shell** — a
+backtick in a regex class broke a script write at line 117; keep backticks out of source that goes
+through Bash, or use the Write tool.
+Verified: 5,549 cells pixel-identical old→new before the manifest moved; `verify_atlas_0806z.js`
+all 5,698 cells resolve, eight stages 100 s each with 0 blank fallthroughs; title / mode / pilot
+select / stage screens shot in real Chromium (`docs/proofs/atlas_repack_0903/`).
+
 ## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
 
 **Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download
@@ -231,8 +265,7 @@ regeneration is Mike's side; wiring, normalizing and rigging what comes back is 
 **Open, needing Mike:** which pilot/pickup carries the new orb cores; the level-2/3 boss art
 (SpriteCook, level 3 from the current boss as a 100% reference); the Siege Ember "spin" did not
 reproduce on this build — measured ≤0.025 rad of draw rotation in both its patterns while its hull
-already slides 240..608 across the field; the remaining atlas repack (per-stage / per-boss sheets)
-is designed and unbuilt.
+already slides 240..608 across the field; the atlas repack landed 0903 (see above).
 
 ## Current state (2026-08-19c)
 **0821b — the spawn trap was ONE CLAMP, and the spawn safety Mike asked for.** Full writeup:
