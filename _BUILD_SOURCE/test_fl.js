@@ -1415,7 +1415,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("run.weapon=0; run.wlevels=[0,0,0,0,0,0]; run.wlevel=0;", ctxv);
   ok(vm.runInContext("run.weapon=0; run.wlevels=[0,0,0,0,0,0]; _weaponCadence()", ctxv)===0.085, 'default MG cadence is the fast 0.085');
   vm.runInContext("run.wlevels[0]=2; run.wlevel=2; pBullets.length=0; pShoot();", ctxv);
-  ok(vm.runInContext("pShoot.toString().indexOf('spread===2?7:11')>0", ctxv), 'the L1 pair sits tight (7px) while higher tiers keep the 11px row');
+  ok(vm.runInContext("pShoot.toString().indexOf('spread===2?7:')>0", ctxv), 'the L1 pair sits tight (7px); wider tiers keep their own row spacing (11px to four rows, 9px at five and six - 0903e)');
   vm.runInContext("run.stage=1;", ctxv);
   ok(vm.runInContext("(function(){for(var i=0;i<6;i++){ if(_jungleTank()==='tk0') return false; } return true;})()", ctxv), 'no red tk0 hulls on stage 1');
   vm.runInContext("run.stage=4;", ctxv);

@@ -9200,6 +9200,16 @@ const SHIPS=[];
       c.shoots=true; c.fk='aimed'; c.fireRate=1.9; c.dropOk=true;
       break;
     }
+    case 'xelite_furytalon': case 'xelite_razorback': case 'xelite_tempest': case 'xelite_emberwing': case 'xelite_glacierlance':
+    case 'xelite_voidreaver': case 'xelite_ironserpent': case 'xelite_solarwarden': case 'xelite_nighthammer': {
+      const K=type.slice(7), X=ELITEX[K];
+      /* ABSOLUTE hp, like the minibosses: EHP() is the fodder shots-to-kill model and capped every elite at 12 */
+      c.w=X.w; c.h=X.h; c.hp=c._maxhp=Math.ceil(X.hp*((typeof DIFF!=='undefined'&&DIFF.eHp)||1)); c.score=X.score;
+      c.vy=0; c.pattern='elitex'; c._elx=K; c.art=type; c._foot=1.0;    // one trimmed 256 cell, not a uniform-canvas roster frame
+      c.shoots=false; c.fk=null; c.dropOk=true; c._dieDur=0.52;
+      if(typeof enemyShieldEquip==='function') enemyShieldEquip(c, X.shield, Math.ceil(c.hp*X.sh));
+      break;
+    }
     case 'talon': case 'hell': case 'cdisc': case 'spiral': {
       const E=ELITE8[type];
       c.w=E.w; c.h=E.h; c.hp=c._maxhp=EHP(E.hp); c.score=E.score;
@@ -9336,6 +9346,7 @@ const SHIPS=[];
                   racer:1,strafer:1,stationship:1,jungletank:1,roadtank:1,microturret:1,topgun:1,sideswirl:1,jetflyby:1,gunboat:1,
                   needle:1,crescent:1,hauler:1,oracle:1,bcarrier:1};   // these set their own pattern above
   for(const _k in SEWER) _selfPat[_k]=1;      // level-7 sewer units run their own sewerTick signatures
+  for(const _k in ELITEX) _selfPat['xelite_'+_k]=1;   // the Vol.1 aces own their pattern (0903) - without this the generic block overwrites 'elitex' and they hang at spawn
   if(typeof S1_TANKS!=='undefined') for(const _k in S1_TANKS) _selfPat[_k]=1;   // every tank row
   if(typeof S1_JETS!=='undefined')  for(const _k in S1_JETS)  _selfPat[_k]=1;   // and every jet
   /* ⚠ AND THE SPELLING THIS WAVE ACTUALLY USED (drop 0811l). _selfPat is looked up with `type`,
@@ -10400,6 +10411,9 @@ function buildStagePlan(stageNum){
     add(40.0,()=> { spawnEnemy('s6skimmer',W6+90,VH*.20,{_side:-1}); spawnEnemy('s6dart',-70,VH*.34,{_side:1,_stagger:.20}); });
     add(44.0,()=> spawnEnemy('s6carrier',W6*.50,-112,{}));
     add(48.0,()=> { spawnEnemy('s6mine',W6*.25,-82,{}); spawnEnemy('s6probe',W6*.75,-104,{_stagger:.32}); });
+    add(22.0,()=> spawnEnemy('xelite_glacierlance',W6*.50,-72,{}));   /* Vol.1 aces (0903): Mike's favourite leads */
+    add(38.0,()=> spawnEnemy('xelite_tempest',W6*.30,-70,{}));
+    add(38.0,()=> spawnEnemy('xelite_solarwarden',W6*.70,-70,{}));
     add(52.0,()=> spawnEnemy('s6reactor',W6*.50,-124,{}));
     add(curStage.length-4,()=> { spawnEnemy('s6cyclone',W6*.18,-92,{_side:1}); spawnEnemy('s6turbine',W6*.50,-126,{_stagger:.22}); spawnEnemy('s6thunder',W6*.82,-98,{_stagger:.38}); });
     return _planSorted(P);
@@ -10438,6 +10452,7 @@ function buildStagePlan(stageNum){
     add(29.0,()=>spawnEnemy('s5salvage',W5*.50,-110,{}));
     add(33.0,()=>{spawnEnemy('s5leech',W5*.26,-85,{});spawnEnemy('s5leech',W5*.74,-85,{_stagger:.26});});
     add(38.0,()=>{spawnEnemy('s5interceptor',W5*.22,-80,{});spawnEnemy('s5rammer',W5*.50,-110,{_stagger:.25});spawnEnemy('s5interceptor',W5*.78,-80,{_stagger:.50});});
+    add(24.0,()=>spawnEnemy('xelite_voidreaver',W5*.35,-70,{}));   /* Vol.1 aces (0903) */
     add(43.0,()=>spawnEnemy('s5station',W5*.50,-145,{}));
     add(48.0,()=>{spawnEnemy('s5satellite',W5*.24,-100,{});spawnEnemy('s5gravity',W5*.50,-118,{_stagger:.22});spawnEnemy('s5minelayer',W5*.76,-100,{_stagger:.44});});
     add(curStage.length-4,()=>{spawnEnemy('s5station',W5*.50,-150,{});spawnEnemy('s5skimmer',-80,VH*.24,{_side:1,_stagger:.2});spawnEnemy('s5skimmer',W5+80,VH*.36,{_side:-1,_stagger:.4});});
@@ -10465,6 +10480,8 @@ function buildStagePlan(stageNum){
     add(30.5,()=>{spawnEnemy('s8symbiote',W8*.22,-100,{});spawnEnemy('s8symbiote',W8*.50,-125,{_stagger:.20});spawnEnemy('s8symbiote',W8*.78,-100,{_stagger:.40});});
     add(34.5,()=>spawnEnemy('s8bomber',W8*.50,-155,{}));
     add(38.5,()=>spawnEnemy('s8carrier',W8*.50,-180,{}));
+    add(26.0,()=>spawnEnemy('xelite_nighthammer',W8*.50,-74,{}));   /* Vol.1 aces (0903) */
+    add(33.0,()=>spawnEnemy('xelite_ironserpent',W8*.25,-70,{}));
     add(41.0,()=>spawnEnemy('s8gunship',W8*.50,-165,{}));
     add(43.0,()=>{spawnEnemy('s8deathorb',W8*.28,-140,{});spawnEnemy('s8razor',W8*.72,-95,{_stagger:.25});});
     add(47.0,()=>{spawnEnemy('s8manta',W8*.24,-140,{});spawnEnemy('s8hunter',W8*.76,-110,{_stagger:.28});});
@@ -22109,10 +22126,10 @@ function warmStage(n){
       2:['s2atk_','mwfx_','l23fx_inferno_','cfx_stage2_volcanic_projectiles','nlq3_lava_'],
       3:['s3atk_','s3dmg_','l23fx_cryo_','l23fx_rime_'],
       4:['s4atk_','s4w_','cfx_stage4_chain_lightning'],
-      5:['s5atk_','s5fracture_','ch_','cfx_stage5_xeno_projectiles','cfx_stage5_alien_projectiles_v2','ngm_space_atlas'],
-      6:['s6atk_','s6mb_','n6v','cfx_stage6_carrier_shield','stage6_blue_master','nst6_neoncity'],
+      5:['s5atk_','s5fracture_','ch_','cfx_stage5_xeno_projectiles','cfx_stage5_alien_projectiles_v2','ngm_space_atlas','xelite_'],
+      6:['s6atk_','s6mb_','n6v','cfx_stage6_carrier_shield','stage6_blue_master','nst6_neoncity','xelite_'],
       7:['s7atk_','s7spore_','cfx_stage7_','cfx_stage7_toxic_projectiles_v2'],
-      8:['s8atk_','s8roll_','s8nf_','s8symboss_','s8rift_','nst8_','nl8c_','cfx_stage8_symbiote_projectiles'],
+      8:['s8atk_','s8roll_','s8nf_','s8symboss_','s8rift_','nst8_','nl8c_','cfx_stage8_symbiote_projectiles','xelite_'],
       9:['s9atk_','s9lattice_','ngm_space_atlas','nst9_','nst9_starfield']
     };
     for(const _pre of (_F[n]||[]))addPrefix(_pre);
@@ -23629,6 +23646,7 @@ function updatePlay(dt){
       case 's6storm': if(typeof s6StormTick==='function') s6StormTick(e,dt);break;   // level-6 turbulence fleet
       case 's7toxic': if(typeof s7ToxicTick==='function') s7ToxicTick(e,dt);break;   // level-7 toxic fleet
       case 's8mega':  if(typeof s8MegaTick==='function')  s8MegaTick(e,dt); break;   // Furious Death smart mega fleet
+      case 'elitex':  if(typeof elitexTick==='function')  elitexTick(e,dt);  break;   // Vol.1 expansion aces (0903)
       case 'elite8':  if(typeof elite8Tick==='function')  elite8Tick(e,dt);  break;   // level-8 elite escorts
       case 's9chaos': if(typeof s9ChaosTick==='function') s9ChaosTick(e,dt); break;   // Velocity Void aces + water-rocks
       case 's9void':  if(typeof s9VoidTick==='function')  s9VoidTick(e,dt);  break;   // native bonus-space fleet
@@ -28645,6 +28663,10 @@ const ENEMY_ART={
   tankA:'tnkG_g2', tankB:'tnkG_g3', tankC:'tnkG_g5',
   tankD:'tnkM_m1', tankE:'tnkM_m3', tankF:'tnkM_m4', tankG:'tnkM_m6',
   // aircraft / jets (level 1 & 4)
+  /* THE EXPANSION ELITES (Mike, 0903): the nine Vol.1 ships flipped south - 'trippy new enemies we
+     can use in the later levels like 5, 6 and 8 ... beefy, stay on screen till they die, have shields
+     and are some of the smartest and best in class fighters'. One cell each; idle/fire/death alias it. */
+  xelite_furytalon:'xelite_furytalon', xelite_razorback:'xelite_razorback', xelite_tempest:'xelite_tempest', xelite_emberwing:'xelite_emberwing', xelite_glacierlance:'xelite_glacierlance', xelite_voidreaver:'xelite_voidreaver', xelite_ironserpent:'xelite_ironserpent', xelite_solarwarden:'xelite_solarwarden', xelite_nighthammer:'xelite_nighthammer',
   jet1:'air_air1', jet2:'air_air2', jet3:'air_air5', jet4:'air_air6', jet5:'air_air7',
   drone1:'air_air9', drone2:'air_air10', drone3:'air_air11', drone4:'air_air12',
   // mini-boss craft (level 4 surprise) — huge canvas
@@ -38853,6 +38875,56 @@ function droidDraw(e){
    ELITE8_IFRAMES is the single flag to flip if Mike ever wants it to.
    ============================================================ */
 const ELITE8_IFRAMES = false;      // design lever: true = the roll becomes a real dodge
+/* ============================================================
+   ELITE X - the CF_BoFExpansion-Vol.1 ships as late-stage aces (Mike, 0903).
+   'beefy, stay on screen till they die, have shields and are some of the smartest and best in
+   class fighters in the game. my personal favorite is the glacier lance.' Modelled on elite8:
+   they enter to a band, hold station, strafe, ROLL out of your fire, and shoot aimed volleys.
+   Each carries a shield from the existing enemy shield system (enemyShieldEquip), so it must be
+   knocked down before the hull takes a hit. Glacier Lance is the strongest of the nine.
+   ============================================================ */
+const ELITEX = {
+  furytalon:   {hp:150, w:52, h:52, score:3600, band:0.30, spd:78,  shield:'gold',    sh:0.45, vol:3, gap:0.09, cd:[1.1,1.6], kind:'dart'},
+  razorback:   {hp:140, w:50, h:50, score:3400, band:0.34, spd:92,  shield:'crimson', sh:0.40, vol:2, gap:0.16, cd:[0.9,1.3], kind:'dart'},
+  tempest:     {hp:160, w:54, h:54, score:3800, band:0.28, spd:70,  shield:'ion',     sh:0.50, vol:4, gap:0.07, cd:[1.2,1.7], kind:'comet'},
+  emberwing:   {hp:170, w:54, h:54, score:4000, band:0.32, spd:74,  shield:'crimson', sh:0.50, vol:3, gap:0.12, cd:[1.0,1.5], kind:'comet'},
+  glacierlance:{hp:240, w:58, h:58, score:5600, band:0.26, spd:66,  shield:'ion',     sh:0.70, vol:5, gap:0.06, cd:[1.3,1.8], kind:'frostComet'},
+  voidreaver:  {hp:190, w:56, h:56, score:4600, band:0.30, spd:80,  shield:'violet',  sh:0.55, vol:3, gap:0.14, cd:[1.0,1.5], kind:'voidOrb'},
+  ironserpent: {hp:150, w:50, h:50, score:3600, band:0.36, spd:110, shield:'hex',     sh:0.40, vol:2, gap:0.18, cd:[0.8,1.2], kind:'dart'},
+  solarwarden: {hp:210, w:56, h:56, score:5000, band:0.28, spd:64,  shield:'gold',    sh:0.65, vol:4, gap:0.08, cd:[1.2,1.7], kind:'emberGem'},
+  nighthammer: {hp:220, w:60, h:60, score:5200, band:0.24, spd:58,  shield:'prism',   sh:0.60, vol:5, gap:0.05, cd:[1.4,1.9], kind:'comet'},
+};
+function elitexTick(e, dt){
+  const K=e._elx, X=ELITEX[K]; if(!X) return;
+  e._et=(e._et||0)+dt; const W=worldWidth();
+  /* the roll is elite8's: it MOVES the ship, which is what makes it a dodge */
+  if(e._rollT!=null){ e._rollT+=dt; e.x+=e._rollDir*170*dt; if(e._rollT>=EL8_ROLL){ e._rollT=null; } }
+  const ty=VH*X.band;
+  if(e.y<ty) e.y+=(X.spd*1.6)*dt;                       // enter to the band
+  else {
+    /* hold station and STRAFE toward the nearer pilot's column, never faster than X.spd and never
+       parked on top of it - an ace keeps a firing angle, it does not ram */
+    const T=(typeof targetShip==='function')?targetShip(e.x,e.y):player;
+    const want=T.x+Math.sin(e._et*0.9)*90;
+    e.x+=clamp(want-e.x,-1,1)*X.spd*dt;
+    e.y=ty+Math.sin(e._et*1.3)*10;
+  }
+  e.x=clamp(e.x, 28, W-28);
+  /* dodge: a player round about to cross the hull triggers a roll away from it */
+  if(e._rollT==null && typeof pBullets!=='undefined'){
+    for(const b of pBullets){ if(b.dead) continue;
+      if(Math.abs(b.x-e.x)<e.w*0.8 && b.y>e.y && b.y-e.y<90 && b.vy<0){ el8Roll(e, b.x<e.x?1:-1); break; } }
+  }
+  /* aimed volleys once on station */
+  if(e.y>=ty-2){
+    if((e._fcd=(e._fcd==null?rnd(X.cd[0],X.cd[1]):e._fcd)-dt)<=0){
+      e._fcd=rnd(X.cd[0],X.cd[1])/(DIFF.eFire||1);
+      const a=aimPlayer(e.x,e.y,3.6);
+      for(let k=0;k<X.vol;k++){ const off=(k-(X.vol-1)/2)*X.gap; eShootT(e.x,e.y+e.h*0.30,a+off,3.6,X.kind); }
+      e._muz=0.12;
+    }
+  }
+}
 const ELITE8 = {
   talon:  {hp:120, w:46, h:44, score:3200, art:'talon'},   // twist-rolls through fire, re-passes
   hell:   {hp:150, w:50, h:46, score:3800, art:'hell'},    // banks around the player, constant pressure
