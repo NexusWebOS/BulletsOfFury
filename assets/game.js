@@ -6042,18 +6042,51 @@ const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_do
    Now: every action must end up with at least one USABLE key, bare modifiers are refused, and
    anything that fails is restored from the defaults. */
 const KEY_UNBINDABLE = ['shift','control','alt','meta','capslock','contextmenu','dead','unidentified',''];
-function keybindValidate(kb){
+/* ============================================================
+   PLAYER 2'S KEYS (drop 0902f)
+
+   Mike, on how P2 drives: "either keyboard via 2 player controller settings, or controller of
+   their own." So P2 needs its own bind table, its own save key, and its own block on the options
+   screen — everything P1 has.
+
+   ⚠ WHY TFGH AND NOT THE ARROW KEYS, WHICH IS WHAT EVERYONE EXPECTS. The usual shared-keyboard
+   split is P1 on WASD and P2 on the arrows. That is not available here: **P1 already holds BOTH**
+   (`KEYBIND_DEFAULT` binds w/a/s/d AND the four arrows to the same four actions), so handing the
+   arrows to P2 would silently take half of P1's movement away from every existing player the
+   first time they opened co-op. Against P1's full claim — w a s d, the arrows, j, k, c, space,
+   mouse0, mouse2 — TFGH with V/B/N is the largest free cluster left that keeps movement under
+   one hand and the three action keys under the other. (`b` is free: 0801bv removed it from
+   menuBack deliberately.)
+
+   ⚠ AND THE NUMPAD IS A TRAP, WHICH IS WHY IT IS NOT THE DEFAULT. `keyName` prefers `e.key`, and
+   for a numpad key `e.key` is the DIGIT with NumLock on and `'ArrowUp'`/`'ArrowDown'`/etc with it
+   off. So a numpad default would work on one machine, silently collide with P1's arrows on the
+   next, and change behaviour when a player pressed NumLock mid-game. A key whose identity
+   depends on a toggle cannot be a default.
+
+   None of this matters much once a player rebinds, which is exactly what Mike asked for — the
+   defaults only have to be sane and collision-free out of the box.
+   ============================================================ */
+const KEYBIND2_DEFAULT={
+  up:['t','pad2_up'], down:['g','pad2_down'], left:['f','pad2_left'], right:['h','pad2_right'],
+  fire:['v','pad2_b0','pad2_b7'], bomb:['b','pad2_b1','pad2_b6'], retina:['n','pad2_b2'],
+};
+/* `defaults` is a parameter now rather than a captured constant, so P2's table is healed by the
+   same validator that heals P1's. A second copy of this function is how one player ends up
+   protected from a bare-modifier bind and the other does not. */
+function keybindValidate(kb, defaults, saveKey){
+  defaults = defaults || KEYBIND_DEFAULT;
   const out = {}, fixed = [];
-  for(const a in KEYBIND_DEFAULT){
+  for(const a in defaults){
     let list = Array.isArray(kb && kb[a]) ? kb[a].filter(function(k){
       return typeof k==='string' && k.length>0 && KEY_UNBINDABLE.indexOf(k.toLowerCase())<0;
     }) : null;
-    if(!list || !list.length){ list = KEYBIND_DEFAULT[a].slice(); fixed.push(a); }
+    if(!list || !list.length){ list = defaults[a].slice(); fixed.push(a); }
     out[a] = list;
   }
   if(fixed.length){
     try{ console.warn('keybind: restored defaults for', fixed.join(', ')); }catch(e){}
-    try{ localStorage.setItem('bof_keys', JSON.stringify(out)); }catch(e){}   // heal the save too
+    try{ localStorage.setItem(saveKey||'bof_keys', JSON.stringify(out)); }catch(e){}   // heal the save too
   }
   out.__fixed = fixed;
   return out;
@@ -6061,9 +6094,21 @@ function keybindValidate(kb){
 let keybind=(function(){
   let j=null;
   try{ j=JSON.parse(localStorage.getItem('bof_keys')||'null'); }catch(e){ j=null; }
-  return keybindValidate(j);
+  return keybindValidate(j, KEYBIND_DEFAULT, 'bof_keys');
 })();
-function saveKeybind(){ try{ localStorage.setItem('bof_keys',JSON.stringify(keybind)); }catch(e){} }
+let keybind2=(function(){
+  let j=null;
+  try{ j=JSON.parse(localStorage.getItem('bof_keys2')||'null'); }catch(e){ j=null; }
+  return keybindValidate(j, KEYBIND2_DEFAULT, 'bof_keys2');
+})();
+function saveKeybind(){
+  try{ localStorage.setItem('bof_keys',JSON.stringify(keybind)); }catch(e){}
+  try{ localStorage.setItem('bof_keys2',JSON.stringify(keybind2)); }catch(e){}
+}
+/* One accessor so nothing downstream has to remember which table a seat reads. Seat 2 falls back
+   to seat 1's table if keybind2 somehow failed to build, because a co-op player with NO controls
+   is worse than two players sharing a stick. */
+function keybindFor(seat){ return (seat===2 && keybind2) ? keybind2 : keybind; }
 const Input = (()=>{
   const keys={}, pressed={};
   const mouse={x:VW/2,y:VH*0.75,down:false,inside:false,active:false,moved:false,_lx:-1,_ly:-1};
@@ -6189,13 +6234,33 @@ const Input = (()=>{
   function pollGamepad(){
     if(!navigator.getGamepads) return;
     const pads=navigator.getGamepads();
-    const gp=pads&&(pads[0]||pads[1]||pads[2]||pads[3]);
+    /* ⚠ TWO PADS, AND THE FIRST ONE MUST NOT MOVE (drop 0902f). This used to be
+       `pads[0]||pads[1]||pads[2]||pads[3]` — the first pad present, whatever slot it sat in,
+       mapped onto `pad_*`. Co-op needs a second controller, and the tempting change is
+       `pads[0]` -> pad_, `pads[1]` -> pad2_. That would BREAK EXISTING SOLO PLAYERS: browsers do
+       not compact the gamepad array, so a pad that reconnects, or one plugged in after a
+       disconnected first, lands in slot 1 or 2 with slot 0 null — and every one of those players
+       would find their controller had become player two's.
+
+       So it stays "the first pad PRESENT", and the second pad present becomes P2. One pad
+       behaves exactly as it always did, in whatever slot it occupies. */
+    const live=[];
+    for(let i=0;i<(pads?pads.length:0);i++){ if(pads[i]) live.push(pads[i]); }
+    const gp=live[0], gp2=live[1];
     if(!gp){ if(gpConnected) gpConnected=false; return; }
     gpConnected=true;
     const setk=(name,held)=>{
       if(held && !_padHeld[name]){ pressed[name]=true; }
       _padHeld[name]=held; keys[name]=held;
     };
+    /* P2's pad runs the identical mapping under a `pad2_` prefix. Written once and called twice
+       rather than copied, because a second copy of the stick deadzone is a second place for the
+       0822af double-tap bug to come back. */
+    if(gp2) padInto(gp2,'pad2_',setk);
+    padInto(gp,'pad_',setk);
+  }
+  /* One pad's whole mapping, under whatever prefix it was handed. */
+  function padInto(gp, P, setk){
     // left stick + d-pad -> directional virtual keys
     /* ⚠ THE STICK NEEDS HYSTERESIS (drop 0822af). Mike, on pilot select: "it's very sensitive
        and if you're not careful you'll double click. It happened to me a lot."
@@ -6210,12 +6275,12 @@ const Input = (()=>{
     const stickOn=(name,mag)=> (_padHeld[name] ? mag>DZ_OFF : mag>DZ_ON);
     const dpUp=gp.buttons[12]&&gp.buttons[12].pressed, dpDn=gp.buttons[13]&&gp.buttons[13].pressed;
     const dpLf=gp.buttons[14]&&gp.buttons[14].pressed, dpRt=gp.buttons[15]&&gp.buttons[15].pressed;
-    setk('pad_up',    stickOn('pad_up',   -ay) || !!dpUp);
-    setk('pad_down',  stickOn('pad_down',  ay) || !!dpDn);
-    setk('pad_left',  stickOn('pad_left', -ax) || !!dpLf);
-    setk('pad_right', stickOn('pad_right', ax) || !!dpRt);
-    // face + shoulder buttons -> pad_b0..pad_b15 (all bindable via the options "press a key" flow)
-    for(let i=0;i<gp.buttons.length;i++){ setk('pad_b'+i, !!gp.buttons[i].pressed); }
+    setk(P+'up',    stickOn(P+'up',   -ay) || !!dpUp);
+    setk(P+'down',  stickOn(P+'down',  ay) || !!dpDn);
+    setk(P+'left',  stickOn(P+'left', -ax) || !!dpLf);
+    setk(P+'right', stickOn(P+'right', ax) || !!dpRt);
+    // face + shoulder buttons -> <P>b0..b15 (all bindable via the options "press a key" flow)
+    for(let i=0;i<gp.buttons.length;i++){ setk(P+'b'+i, !!gp.buttons[i].pressed); }
   }
   window.addEventListener('gamepadconnected',()=>{ try{ Audio.resume&&Audio.resume(); }catch(_){} });
   function down(k){return !!keys[k];}
@@ -6256,7 +6321,40 @@ const Input = (()=>{
     get up(){return keybind.up.some(k=>down(k));},
     get dn(){return keybind.down.some(k=>down(k));},
     get lf(){return keybind.left.some(k=>down(k));},
-    get rt(){return keybind.right.some(k=>down(k));}};
+    get rt(){return keybind.right.some(k=>down(k));},
+    /* ---- seat-aware input (drop 0902f) --------------------------------------------------
+       `hold(seat, action)` and `tapSeat(seat, action)` are the general form; the four getters
+       above are P1's and are untouched, so every existing `Input.lf` call site behaves exactly
+       as it did. A seat argument rather than a duplicated set of p2-prefixed getters, because
+       the player update wants to run the SAME code for both ships with the seat as a variable —
+       two parallel getter sets would guarantee one of them gets a fix the other does not. */
+    /* ⚠ SEAT 1 MUST ROUTE THROUGH THE PUBLIC API, NOT THE INTERNAL HELPERS, AND THIS COST NINE
+       SUITE FAILURES BEFORE IT WAS WRITTEN THIS WAY. The first cut read the closure-local
+       `down`/`tap` and the `keys` map directly. That is the same ANSWER in normal play and a
+       different answer under test: section 16 stubs `Input.lf/rt/up/dn` with defineProperty and
+       replaces `Input.down`/`Input.tap` wholesale, and a reader that skips the public surface
+       sees through every one of those stubs. The bank/twist and charge-weapon fixtures all
+       broke, and they were right to.
+
+       It is not a test accommodation. `Input.lf` IS the definition of "seat 1 is holding left" —
+       the four getters have been that definition since the file was written, they honour the
+       keybind table, and going around them means there are now two definitions that can drift.
+       So seat 1 asks exactly what the solo code always asked, and seat 2 asks the same question
+       of `keybind2` through the same `this.down`. */
+    hold(seat, action){
+      if(seat!==2){
+        if(action==='left')  return this.lf;
+        if(action==='right') return this.rt;
+        if(action==='up')    return this.up;
+        if(action==='down')  return this.dn;
+      }
+      const kb=keybindFor(seat), l=kb&&kb[action];
+      return !!(l&&l.some(k=>this.down(k)));
+    },
+    tapSeat(seat, action){
+      const kb=keybindFor(seat), l=kb&&kb[action];
+      return !!(l&&l.some(k=>this.tap(k)));
+    }};
 })();
 
 /* ============================================================
@@ -6275,7 +6373,9 @@ function uiBlipRep(){
 }
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
-  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene' };
+  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
+  /* the co-op wing muster: both chosen pilots side by side before deploy (drop 0902f) */
+  COOPROSTER:'cooproster' };
 let state = GS.BOOT;
 /* ============================================================
    DEBUG SWITCHBOARD (drop 0724do)
@@ -6598,6 +6698,65 @@ const run = {
   spaceMode:false,spaceWeapon:0,spaceLevels:[1,1,1],gravityShipReady:false,
 };
 const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','ICE ORB','LASER MIST'];
+
+/* ============================================================
+   CO-OP — TWO PILOTS, TWO SETS OF EVERYTHING (drop 0902f)
+
+   The CO-OP pill has been drawn, reskinned and greyed out since drop 0720a, and the roadmap
+   parked the work as "2P/VERSUS implementation = new roadmap items under modes". VERSUS is gone
+   for good as of 0902d; this opens the half Mike kept.
+
+   ⚠ CO-OP IS A PARTY SIZE, NOT A CAMPAIGN STRUCTURE — and that is why `run.mode` stays 'arcade'
+   for a co-op run instead of becoming 'coop'. Every `run.mode` read in this file answers one of
+   two questions: "is this campaign" (story, the hub, the HQ scenes, the pilot-select input gate)
+   and "is this arcade" (skip stage select, go straight into the next stage). Inventing a third
+   value makes co-op fail BOTH tests: no story AND no straight progression, so the run would
+   deploy into a stage-select screen co-op has no flow for. `coopOn` is a separate flag for that
+   reason. Co-op is the arcade structure with two pilots. CAMPAIGN co-op is a bigger job — two
+   save slots, two pilots in the story tokens — and is not this drop.
+
+   Mike's rules for the mode, from the brief: both players pick their own pilot; separate lives
+   each; separate scores; P2 drives a second keyboard block or a controller of their own. So P2
+   needs its own `run`, not a shared one. Anything genuinely shared — the stage, the difficulty,
+   the distance scrolled — stays on `run` and is deliberately absent here, because a duplicated
+   stage number is a desync waiting to happen.
+
+   ⚠ THE WEAPON ARRAYS ARE SEVEN LONG ON THIS BUILD, NOT SIX. LASER MIST was added to WEAPONS and
+   `run.wlevels` grew with it. A six-slot `run2.wlevels` would leave P2's last weapon slot
+   permanently undefined, and that reads in play as "the mist just does nothing for player two" —
+   a long way from where anyone would look. Derived from WEAPONS.length rather than written out,
+   so the next weapon added cannot reintroduce it.
+   ============================================================ */
+let coopOn=false;         // is THIS run a co-op run
+let p2Index=1;            // P2's row in PILOTS — defaults off P1's so the roster opens on someone else
+let coopPick=0;           // who is at the roster right now: 0 = P1, 1 = P2, 2 = both locked in
+/* ⚠ THE ROSTER SCREEN HAS ONE CURSOR AND IT STAYS `pilotIndex`. P2's pass drives the SAME
+   variable the solo screen drives, so every line of drawPilot — the card reveal, the spin, the
+   lock check, the comm window — runs unmodified for the second player. P1's choice is parked
+   here for the length of P2's pass and put back when it ends. Giving P2 its own cursor would
+   have meant a second copy of that screen, and this file records what happens to second
+   copies. */
+let coopP1Index=0;
+/* P2's half of the run. Same field names as `run` on purpose: the update and draw paths read
+   these through the same property names, so a seam routed for two players reads identically to
+   the one-player code it replaced. */
+const run2 = {
+  score:0, lives:3, bombs:2, weapon:0, wlevel:1, wlevels:WEAPONS.map(()=>1),
+  speed:0, speedT:0, speedLevel:0, shield:0, power:0, pilot:'decker', missileLevel:0,
+  wvars:WEAPONS.map(()=>null),
+};
+/* P2's pilot modifiers. A SECOND table rather than swapping PILOTMOD around the two update
+   passes: both ships are in the air at the same time, and a single table that has to be correct
+   at the moment each one is read is a bug waiting for the first frame where the order changes.
+   Null in a solo run, which is also the test for "is there a second seat". */
+let PILOTMOD2=null;
+function coopActive(){ return !!coopOn; }
+/* The two pilot records, by the index each player is parked on. Read through functions rather
+   than off `pilotIndex`/`p2Index` directly so a locked or out-of-range row can never hand back
+   undefined and take a screen down with it. */
+function p1Pilot(){ return PILOTS[pilotIndex] || PILOTS[0]; }
+function p2Pilot(){ return PILOTS[p2Index] || PILOTS[(pilotIndex+1)%PILOTS.length] || PILOTS[0]; }
+
 const LASER_MIST_UNLOCK_KEY='bof_laser_mist_unlocked';
 let laserMistUnlocked=false;
 try{laserMistUnlocked=localStorage.getItem(LASER_MIST_UNLOCK_KEY)==='1';}catch(_lmRead){}
@@ -6854,7 +7013,26 @@ function clearSpawnZone(){
   }
   return cleared;
 }
-const player = {
+/* ⚠ `let`, NOT `const`, AND THAT ONE WORD IS THE WHOLE CO-OP STRATEGY (drop 0902f).
+
+   There are ~750 `player.` references in this file. Renaming them to `players[i].` across nine
+   stages — in a file whose recorded failure modes include an unclosed `if` inside `spawnEnemy`
+   that swallows every declaration after it, a `pShoot` chain of early returns where one weapon
+   claiming the trigger silences another pilot entirely, and `_selfPat` quietly overwriting any
+   pattern not listed in it — is a change that cannot be reviewed and cannot be partially
+   reverted. It would break everything at once and the suite would stay green while it did.
+
+   So `player` stays exactly what it has always been: THE SHIP CURRENTLY BEING UPDATED OR DRAWN.
+   In a solo run that is P1 forever and nothing in the file can tell the difference. In co-op,
+   `seatIn(2)` points it at the second ship for the length of one clearly-bounded section and
+   `seatOut()` puts it back. Every one of those references keeps working, unread and unedited.
+
+   ⚠ THE RULE THAT MAKES THIS SAFE: the swap may only wrap code that is ABOUT ONE SHIP — input,
+   movement, its own fire, its own draw, its own collision. It must NEVER wrap enemy AI, the
+   camera, or anything that means "the player" in the singular sense of "the thing to aim at",
+   because during P2's window those would silently retarget onto P2. `playerTarget()` below is
+   what such code should ask instead. */
+let player = {
   x:VW/2, y:VH*0.78, w:24, h:30, alive:true,
   fireCd:0, invuln:0, dead:false, deathT:0, respawnT:0,
   roll:null,           // active barrel roll: {dir:-1|1, t, dur}
@@ -6868,6 +7046,88 @@ const player = {
        actually going to appear. See clearSpawnZone. */
     if(typeof clearSpawnZone==='function') clearSpawnZone(); },
 };
+
+/* ============================================================
+   THE SECOND SEAT (drop 0902f)
+
+   `player2` is CLONED from `player` rather than written out a second time, so the two ships can
+   never have different shapes. A hand-written twin is a twin that is missing `_hx` the day
+   somebody adds `_hx`, and the symptom would be a hitbox that is right for one player and
+   undefined for the other. `reset` comes across as a reference and binds to whichever object it
+   is called on, which is what method shorthand already guaranteed.
+   ============================================================ */
+let player2 = Object.assign({}, player);
+player2.x = VW/2 + 40;      // offset so the two do not start inside one another
+
+/* Which `run` fields belong to a SEAT rather than to the RUN. This list is the reviewable heart
+   of co-op: anything on it is duplicated per player, anything off it is shared.
+
+   SHARED, deliberately, and each for a reason: `stage` and `distance` (one level, one scroll —
+   two copies is a desync), `mode`, `contUsed`, and the whole Gravity Mode group
+   (`spaceMode`/`spaceWeapon`/`spaceLevels`/`gravityShipReady`), which is a conversion the STAGE
+   performs on the run, not a thing one pilot carries.
+
+   ⚠ IF YOU ADD A PER-PLAYER FIELD TO `run`, ADD IT HERE. Forgetting is silent: the field simply
+   becomes shared, so one player picking up a weapon hands it to both, or one player's death
+   spends the other's life. */
+const SEAT_RUN_FIELDS = ['score','lives','bombs','weapon','wlevel','wlevels','speed','speedT',
+  'speedLevel','shield','power','pilot','missileLevel','wvars','dkT','sonicT','_mslCd'];
+
+let _seat = 1;              // which seat `player` and `run` are currently pointing at
+let _seatSave = null;
+
+/* Point `player`, `run`, `PILOTMOD` and `pilotIndex` at seat n. Returns whether it swapped, so
+   the caller knows whether it owes a seatOut.
+
+   `pilotIndex` moves too because `_pilotKey()` falls through to it, and every piece of ship art,
+   every thruster mount and every special ability is keyed off that answer — a swap that moved
+   the ship but not the pilot would fly P2's position wearing P1's hull. */
+function seatIn(n){
+  if(n!==2 || _seat===2 || !coopActive()) return false;
+  const stash = {};
+  for(const f of SEAT_RUN_FIELDS){ stash[f] = run[f]; if(f in run2) run[f] = run2[f]; }
+  _seatSave = { run: stash, player: player, mod: PILOTMOD, idx: pilotIndex };
+  player = player2;
+  if(PILOTMOD2) PILOTMOD = PILOTMOD2;
+  pilotIndex = p2Index;
+  _seat = 2;
+  return true;
+}
+function seatOut(){
+  if(_seat !== 2 || !_seatSave) return;
+  for(const f of SEAT_RUN_FIELDS){ run2[f] = run[f]; run[f] = _seatSave.run[f]; }
+  player = _seatSave.player; PILOTMOD = _seatSave.mod; pilotIndex = _seatSave.idx;
+  _seatSave = null; _seat = 1;
+}
+/* ⚠ ALWAYS THROUGH THIS, NEVER seatIn/seatOut BY HAND. The `finally` is the entire safety
+   property: if anything inside throws — and this build's own 0902a note records that draw errors
+   here are SWALLOWED, so a throw would not even be loud — the seat would be left pointing at P2
+   and every enemy, every pickup and the camera would spend the rest of the run following the
+   wrong ship. That failure looks like "the game went mad", not like an exception. */
+function withSeat(n, fn){
+  const swapped = seatIn(n);
+  try { return fn(); } finally { if(swapped) seatOut(); }
+}
+/* The seats to run this frame, in order. Solo is `[1]` and takes no swap at all, which is what
+   keeps a one-player run byte-identical to how it ran before co-op existed. */
+function seatList(){ return coopActive() ? [1,2] : [1]; }
+/* The ship at seat n WITHOUT swapping — for code that needs to look at the other player rather
+   than to act as them (the HUD, the muster, a revive check). */
+function seatShip(n){ return n===2 ? player2 : (_seat===2 && _seatSave ? _seatSave.player : player); }
+function seatRun(n){ return n===2 ? run2 : run; }
+
+/* ⚠ WHAT ENEMIES AIM AT, AND A KNOWN LIMITATION OF THIS DROP.
+   Enemy AI runs OUTSIDE any seat window, so `player` there is always seat 1 — which means
+   enemies currently lead and target P1 only. P2 is still hit by contact and by any round that
+   reaches it, so it is playable, but the wing is asymmetric and Mike should see it before it is
+   called finished. Retargeting means auditing the enemy `player.x` reads, which is its own drop;
+   this exists so those sites have something to move ONTO rather than being rewritten twice. */
+function playerTarget(){
+  const a = seatShip(1), b = coopActive() ? seatShip(2) : null;
+  if(!b || b.dead || !b.alive) return a;
+  if(!a || a.dead || !a.alive) return b;
+  return a;
+}
 
 /* ---- BARREL ROLL ----------------------------------------------------------
    Double-tap left or right (within BR_WINDOW) to snap-roll that way: a fast
@@ -21499,6 +21759,34 @@ function startRun(fromStage=1){
   if(fromStage>1 && typeof run!=='undefined' && run) run.mode='arcade';
   run.lives=DIFF.startLives; run.bombs=DIFF.startBombs;
   run.contUsed=0;   // continue counter resets per RUN, not per stage (drop 0805b)
+  /* ---- P2's half of a co-op run (drop 0902f) ----------------------------------------------
+     Mike's call: SEPARATE lives and SEPARATE scores. So P2 gets its own full allowance off the
+     same difficulty rather than a share of P1's — a shared pool lets one player end the other's
+     run, which is the failure mode co-op is supposed to avoid.
+
+     Reset unconditionally, not just when coopOn, so a solo run started after a co-op one cannot
+     inherit a live second seat from the previous game. `run2.pilot` is only meaningful while
+     coopOn, but a stale one is exactly the kind of thing that shows up as a ghost ship. */
+  {
+    const _P2 = coopActive() ? p2Pilot() : null;
+    run2.pilot = _P2 ? _P2.key : '';
+    run2.score = 0;
+    run2.lives = coopActive() ? DIFF.startLives : 0;
+    run2.bombs = coopActive() ? DIFF.startBombs : 0;
+    run2.weapon = 0; run2.wlevel = 1; run2.wlevels = WEAPONS.map(()=>1);
+    run2.wvars = WEAPONS.map(()=>null);
+    run2.speed = 0; run2.speedT = 0; run2.speedLevel = 0;
+    run2.shield = 0; run2.power = 0; run2.missileLevel = 0;
+    run2.dkT = 0; run2.sonicT = 0; run2._mslCd = 0;
+    /* P2's pilot modifiers, kept beside P1's PILOTMOD rather than swapped into it — two ships
+       with different speed and fire bonuses need both tables live at once. */
+    PILOTMOD2 = _P2 ? {spd:_P2.spd||0, fire:_P2.fire||0, range:_P2.range||0, tint:_P2.tint} : null;
+    /* Both seats start the run flying. `out` is what the death path sets when a seat spends its
+       last life, and a stale one from the previous run would put a player on the bench before
+       the stage even opened. */
+    player.out=false; player2.out=false;
+    if(coopActive()){ player2.dead=false; player2.alive=true; }
+  }
   /* THE NEW PICKUP WEAPONS ARE PER-RUN STATE (drop 0805i). Without this the sonic timer and
      Lizzie's docked mount survive into the next run — and because both replace the primary
      inside pShoot, a stale one silently suppresses the pilot's own gun. Caught by the suite:
@@ -22848,12 +23136,24 @@ function updatePlay(dt){
     }
   }
 
-  // ---- player movement ----
-  if(!player.dead){
+  /* ---- player movement - ONCE PER SEAT (drop 0902f) --------------------------------------
+     Solo runs `seatList()` = [1] and `withSeat(1,...)` does not swap anything, so this is the
+     same single pass it has always been. Co-op runs the identical body a second time with
+     `player`, `run`, `PILOTMOD` and `pilotIndex` pointing at seat 2.
+
+     ⚠ THE BODY USED TO `return` OUT OF `updatePlay` when the last life was spent. Inside a
+     function that `return` would leave the function and let the rest of the frame run - a
+     control-flow change wearing a refactor. The body reports it instead, and the loop re-raises
+     it after the seat has been restored. */
+  let _seatHalt = false;
+  for(const _s of seatList()){
+    if(withSeat(_s, function(){
+    if(player.out) return false;         // this seat has spent every life; it is a spectator now
+    if(!player.dead){
     // double-tap left/right -> barrel roll (before normal movement so a roll can start this frame)
     const _nowT=performance.now()/1000;
-    if(keybind.left.some(k=>Input.tap(k))){ if(_nowT-player._tapL<=BR_WINDOW) startRoll(-1); player._tapL=_nowT; player._tapR=-9; }
-    if(keybind.right.some(k=>Input.tap(k))){ if(_nowT-player._tapR<=BR_WINDOW) startRoll(1); player._tapR=_nowT; player._tapL=-9; }
+    if(Input.tapSeat(_seat,'left')){ if(_nowT-player._tapL<=BR_WINDOW) startRoll(-1); player._tapL=_nowT; player._tapR=-9; }
+    if(Input.tapSeat(_seat,'right')){ if(_nowT-player._tapR<=BR_WINDOW) startRoll(1); player._tapR=_nowT; player._tapL=-9; }
     updateRoll(dt);
     const _rolling=!!player.roll;
     let mvx=0,mvy=0;
@@ -22863,7 +23163,8 @@ function updatePlay(dt){
        it, parked in frame with nothing to shoot - which is the pause he is describing. Movement
        and fire stop here; the ship keeps DRAWING, and drawFlyover takes it out. */
     if(!bossDefeated && !(typeof s7WardenCinematic==='function'&&s7WardenCinematic())){
-      if(Input.lf)mvx-=1; if(Input.rt)mvx+=1; if(Input.up)mvy-=1; if(Input.dn)mvy+=1;
+      if(Input.hold(_seat,'left'))mvx-=1; if(Input.hold(_seat,'right'))mvx+=1;
+      if(Input.hold(_seat,'up'))mvy-=1; if(Input.hold(_seat,'down'))mvy+=1;
     }
     const sp=playerBaseSpeed();
     if((mvx||mvy) && !_rolling){                 // the roll drives x itself; allow only vertical nudge mid-roll
@@ -22886,7 +23187,7 @@ function updatePlay(dt){
     // Held direction ramps the bank toward ±1 over ~0.32s; release eases it back to 0.
     // A barrel roll forces full bank in its direction (the ship is fully edge-on).
     {
-      let dir=0; if(Input.lf)dir-=1; if(Input.rt)dir+=1;
+      let dir=0; if(Input.hold(_seat,'left'))dir-=1; if(Input.hold(_seat,'right'))dir+=1;
       if(player.roll) dir=player.roll.dir;
       const RAMP=dt/0.32, EASE=dt/0.18;
       const b0=player._bank||0;
@@ -22913,7 +23214,7 @@ function updatePlay(dt){
     // fire
     player.fireCd-=dt; if(player._mgMuzT>0)player._mgMuzT-=dt;
     if(player._spaceMuzzle>0)player._spaceMuzzle=Math.max(0,player._spaceMuzzle-dt);
-    const firing = !_rolling && !(typeof s7WardenCinematic==='function'&&s7WardenCinematic()) && keybind.fire.some(k=>Input.down(k));   // no shooting mid-roll/cinematic
+    const firing = !_rolling && !(typeof s7WardenCinematic==='function'&&s7WardenCinematic()) && Input.hold(_seat,'fire');   // no shooting mid-roll/cinematic
     /* ============================================================
        TAP vs HOLD ON A CHARGE WEAPON (drop 0805r)
 
@@ -22991,21 +23292,36 @@ function updatePlay(dt){
         run._mslCd=({1:0.9,2:0.75,3:0.6,4:0.5,5:0.42})[clamp(run.missileLevel,1,5)]||0.7;
       }
     }
-    if(keybind.bomb.some(k=>Input.tap(k))){
+    if(Input.tapSeat(_seat,'bomb')){
       /* Pilot specials may still claim the button. Volley Missiles are passive in Gravity Mode,
          so a spare bomb press there never manually launches or spends one. */
       if(!retinaFire() && !lizzieFire()){
         if(!spaceWeaponsActive())useBomb();
       }
     }
-    if(keybind.retina.some(k=>Input.tap(k))||Input.tap('l')) cycleLock();
-  } else {
+    /* 'l' stays a seat-1 convenience only. It is an unbound extra, not part of anyone's
+       keybind table, so handing it to both seats would let P1's spare key cycle P2's lock. */
+    if(Input.tapSeat(_seat,'retina')||(_seat===1&&Input.tap('l'))) cycleLock();
+    } else {
     player.deathT-=dt;
     if(player.deathT<=0){
       if(run.lives>0){ run.lives--; player.dead=false; player.reset(true); }   // hold position
-      else { setState(GS.CONTINUE); return; }
+      /* ---- SEPARATE LIVES (Mike's call, drop 0902f) ------------------------------------
+         A seat that runs out does NOT end a co-op run. It goes `out` and sits the rest of the
+         stage while its partner flies; only when BOTH seats are out does the run reach the
+         continue screen. A shared pool was the alternative and it lets one player end the other
+         player's game, which is the thing co-op is supposed to protect against. */
+      else if(coopActive()){
+        player.out=true; player.dead=true;
+        if(seatShip(1).out && seatShip(2).out) return true;
+      }
+      else return true;
     }
+    }
+    return false;
+    })) { _seatHalt = true; break; }
   }
+  if(_seatHalt){ setState(GS.CONTINUE); return; }
   if(Input.tap('p')){ setState('paused'); return; }
 
   // ---- powerup containers ----
@@ -24832,7 +25148,13 @@ function updatePlay(dt){
       if(b._wardenAnchored){b.vx=0;b.vy=0;b.spd=0;_jcManualMove=true;if(b.t>=b._wardenAnchor.life)b.dead=true;}
     }
     if(!_jcManualMove){b.x+=b.vx;b.y+=b.vy;}
-    if(!player.dead && player.invuln<=0){
+    /* ⚠ TESTED PER SEAT, BUT THE ROUND MOVES ONCE (drop 0902f). The `b.x+=b.vx` above is
+       deliberately OUTSIDE this loop. Wrapping the whole eBullets loop per seat instead would
+       advance every enemy round twice a frame in co-op - doubling every enemy's effective
+       bullet speed, on every stage, and looking like a difficulty bug rather than a loop bug. */
+    for(const _s of seatList()){
+      if(withSeat(_s, function(){
+      if(player.dead || player.invuln>0) return false;
       const _hx=(player._hx!=null?player._hx:9), _hy=(player._hy!=null?player._hy:10);
       if(Math.abs(b.x-player.x)<(_hx+b.w*0.15) && Math.abs(b.y-player.y)<(_hy+b.h*0.15)){
         /* the magma round lands on its OWN authored impact (Mike, 0819) — `bfx_magma_i`, the third
@@ -24845,9 +25167,12 @@ function updatePlay(dt){
         else if(/^s5/.test(b.kind||''))combatAtlasFx(b.x,b.y,'cfx_stage5_xeno_projectiles',4,3,8,4,{life:.30,hpx:110,wpx:124,blend:'lighter'});
         else if(b._s7warden)combatAtlasFx(b.x,b.y,'cfx_stage7_warden_projectiles',4,3,8,4,{life:.34,hpx:118,wpx:132,blend:'lighter'});
         else if(b._carrierWarhead)carrierWarheadBurst(b,'s6mb_bombimpact',10,176,.46);
-        playerHit(); b.dead=true;
-      }
+        playerHit(); return true;
+        }
+        return false;
+      })) { b.dead=true; break; }
     }
+
     /* ⚠ A NaN ROUND CAN NEVER LEAVE THE SCREEN (drop 0824a). Every comparison against NaN is
        FALSE, so a bullet whose x or y went non-finite fails all four bound tests, is never
        marked dead, and stays in eBullets for the rest of the stage - invisible, unhittable,
@@ -24864,6 +25189,10 @@ function updatePlay(dt){
   eBullets=eBullets.filter(b=>!b.dead);
 
   // ---- enemy body collision w/ player (ram) ----
+  /* Ramming, the boss hull and the miniboss hull, once per seat. Safe to wrap wholesale - unlike
+     the bullet loop above, nothing in here MOVES anything; it is pure hit testing plus the
+     Juggernaut counter-damage, and a second pass only asks the same question about a second ship. */
+  for(const _s of seatList()) withSeat(_s, function(){
   if(!player.dead && player.invuln<=0){
     for(const e of enemies){
       if(e._dyingT!=null) continue;   // dying wrecks don't collide
@@ -24883,12 +25212,22 @@ function updatePlay(dt){
       else playerHit();
     }
   }
+  });
 
   // ---- powerups ----
   for(const p of powerups){
     p.t+=dt; p.y+=p.vy; p.x+=Math.sin(p.t*3+p.bob)*0.4;
     if(p.flash>0) p.flash-=dt;
-    if(!player.dead && p.kind!=='crate' && p.kind!=='capsule' && p.kind!=='scrate' && p.kind!=='mcrate' && dist2(p.x,p.y,player.x,player.y)<22*22){ applyPowerup(p); p.dead=true; run.score+=50; }
+    /* WHOEVER TOUCHES IT, GETS IT - and gets it alone. `applyPowerup` and the 50 points both
+       land inside the seat window, so an orb upgrades the weapon of the player who flew into it
+       and credits their score, not their partner's. Seat 1 is tested first, so a genuine dead
+       heat goes to P1; arbitrary, but it has to be somebody, and `break` stops it being both. */
+    for(const _s of seatList()){
+      if(withSeat(_s, function(){
+        if(!player.dead && p.kind!=='crate' && p.kind!=='capsule' && p.kind!=='scrate' && p.kind!=='mcrate' && dist2(p.x,p.y,player.x,player.y)<22*22){ applyPowerup(p); run.score+=50; return true; }
+        return false;
+      })) { p.dead=true; break; }
+    }
     if(p.y>VH+20) p.dead=true;
   }
   powerups=powerups.filter(p=>!p.dead);
@@ -35909,6 +36248,7 @@ function drawScene(dt){
     case GS.TITLE:   return drawTitle(dt);
     case GS.DIFF:    return drawDiff(dt);
     case GS.PILOT:   return drawPilot(dt);
+    case GS.COOPROSTER: return drawCoopRoster(dt);
     case GS.PASSWORD:return drawPassword(dt);
     case GS.CREDITS: return drawCredits(dt);
     case GS.OPTIONS: return drawOptions(dt);
@@ -45229,7 +45569,10 @@ function drawCanonBackdrop(key, dim, drift){
 const MODE_ITEMS=[
   {name:'CAMPAIGN', sub:'WORLD MAP - STORY - REVISIT STAGES', mode:'campaign', open:true,  pill:'nms_campaign'},
   {name:'ARCADE',   sub:'STRAIGHT RUN - CLASSIC PROGRESSION', mode:'arcade',   open:true,  pill:'nms_arcade'},
-  {name:'CO-OP',    sub:'TWO PILOTS',                         mode:'coop',     open:false, pill:'nms_coop'},
+  /* OPEN AS OF 0902f. The sub-line still reads TWO PILOTS because that is exactly what it is:
+     the arcade run with a second seat. See the co-op block beside `run2` for why `run.mode` does
+     NOT become 'coop'. */
+  {name:'CO-OP',    sub:'TWO PILOTS',                         mode:'coop',     open:true,  pill:'nms_coop'},
   /* VERSUS IS GONE (Mike, 0902): "remove the vs. or versus button from the game entirely.
      were not doing a DM mode with this game as much as I would have liked to. That's a bof2
      idea." The nms_versus pill art stays registered and unused - deleting art is not what he
@@ -45468,7 +45811,14 @@ function drawModeSelect(dt){
       /* CAMPAIGN now lands on its own hub (drop 0809l) — new game / continue / load / save.
          Every other mode still goes straight to difficulty, unchanged. */
       selFlash(function(){
-        run.mode=_m;
+        /* ⚠ CO-OP IS NOT A run.mode (drop 0902f). It sets the party size and then runs the
+           ARCADE structure — see the co-op block beside `run2`. Written as an explicit
+           assignment on BOTH branches rather than `if(coop)` alone, because the flag has to be
+           cleared when the player backs out to pick CAMPAIGN or ARCADE instead; leaving a stale
+           true here is how you get a second ship in a solo run. */
+        coopOn = (_m==='coop');
+        run.mode = (_m==='coop') ? 'arcade' : _m;
+        if(coopOn) coopPick=0;                    // P1 is always the one who picks first
         if(_m==='campaign'){ campHubIndex=campCanContinue()?1:0; campPick=null; setState(GS.CAMPHUB); }
         else setState(GS.DIFF);
       }, null, drawModeSelect._selRect||null);
@@ -47607,9 +47957,51 @@ function drawPilot(dt){
       }
     }
   }
+  /* WHOSE TURN IT IS, SAID OUT LOUD (drop 0902f). The roster is run twice in co-op and the two
+     passes are otherwise pixel-identical — without this the second player cannot tell that the
+     screen came back for them rather than that their partner's choice failed. Drawn after the
+     card so it sits over it, and only in co-op so the solo screen is untouched. Just the seat:
+     the screen's own title already says CHOOSE YOUR PILOT directly underneath, and saying it
+     twice reads as a mistake rather than as emphasis. */
+  if(coopActive() && coopPick<2){
+    ctx.save();
+    ctx.textAlign='center'; ctx.textBaseline='alphabetic';
+    ctx.shadowColor='rgba(0,0,0,0.8)'; ctx.shadowBlur=5;
+    ctx.fillStyle = coopPick===0 ? '#4aa8ff' : '#ff5a3c';
+    ctx.font='bold 13px "BOFmil", monospace';
+    ctx.fillText(coopPick===0?'PLAYER 1':'PLAYER 2', VW/2, 16);
+    ctx.restore();
+  }
   // ---- input ----
   if(pilotComm!=null){ pilotCommT+=dt; drawPilotComm(PILOTS[pilotComm], pilotCommT);
-    if(pilotCommT>=1.95){ pilotComm=null; pilotCommT=0; pilotPending=null; pilotSlide=0; const _ps=(typeof PENDING_STAGE!=='undefined'&&PENDING_STAGE)||1; startRun(_ps); if(typeof PENDING_STAGE!=='undefined')PENDING_STAGE=1; } return; }
+    if(pilotCommT>=1.95){ pilotComm=null; pilotCommT=0; pilotPending=null; pilotSlide=0;
+      /* ---- CO-OP: THE SCREEN IS RUN TWICE (drop 0902f) ----------------------------------
+         P1's "GOOD LUCK, PILOT!" no longer deploys the run — it hands the roster to P2. The
+         handover happens HERE, at the end of the comm, rather than at confirmPilot, so the
+         second player gets the same full beat the first one did: card, slide, comm, then their
+         turn. Cutting P2 straight to the roster would have read as P1's selection being
+         rejected. */
+      if(coopActive() && coopPick===0){
+        coopP1Index = pilotIndex;
+        coopPick = 1;
+        /* Open P2 on somebody else. Landing on P1's pick and requiring a nudge off it is how two
+           players end up flying the same pilot by accident — and with `pcard` keyed on the pilot,
+           an unchanged index would not even replay the reveal, so the screen would look frozen
+           on the handover. */
+        pilotIndex = (coopP1Index+1) % PILOTS.length;
+        if(isPilotLocked(PILOTS[pilotIndex])) pilotIndex = (pilotIndex+1) % PILOTS.length;
+        drawPilot._entered=false; drawPilot._pcFor=null; pilotRot=0; pilotFrom=pilotIndex;
+        if(Audio.SFX && Audio.SFX.selectpilot) Audio.SFX.selectpilot();
+        return;
+      }
+      if(coopActive() && coopPick===1){
+        p2Index = pilotIndex;
+        pilotIndex = coopP1Index;              // P1's cursor is theirs again
+        coopPick = 2;                          // both locked in
+        setState(GS.COOPROSTER);
+        return;
+      }
+      const _ps=(typeof PENDING_STAGE!=='undefined'&&PENDING_STAGE)||1; startRun(_ps); if(typeof PENDING_STAGE!=='undefined')PENDING_STAGE=1; } return; }
   if(pilotPending!=null){ pilotSlide+=dt/0.5; if(pilotSlide>=1){ pilotComm=pilotIndex; pilotCommT=0; if(Audio.SFX&&Audio.SFX.goodluck)Audio.SFX.goodluck(); } return; }
   if(!pilotInputReady) return;
   /* NO BACK BUTTON (drop 0801bw). Mike: "remove the back button. k gets you out
@@ -47630,7 +48022,20 @@ function drawPilot(dt){
   }
   drawPilot._md=Input.mouse.down;
   if(Input.menuConfirm()){ if(locked){ Audio.SFX.hit(); pilotFlash=1; } else confirmPilot(); }
-  if(Input.menuBack()){ setState(GS.DIFF); }
+  if(Input.menuBack()){
+    /* In co-op, back from P2's pass hands the roster BACK to P1 rather than dropping both
+       players out to difficulty — losing a partner's confirmed pick because you wanted to change
+       your own is the sort of thing that gets a mode called broken. */
+    if(coopActive() && coopPick===1){
+      coopPick=0;
+      p2Index=pilotIndex;                    // remember where P2 was standing
+      pilotIndex=coopP1Index;
+      drawPilot._entered=false; drawPilot._pcFor=null; pilotRot=0; pilotFrom=pilotIndex;
+      if(Audio.SFX && Audio.SFX.blip) Audio.SFX.blip();
+      return;
+    }
+    setState(GS.DIFF);
+  }
 }
 function confirmPilot(){
   if(pilotPending!=null||pilotRot>0||isPilotLocked(PILOTS[pilotIndex]))return;
@@ -47639,6 +48044,179 @@ function confirmPilot(){
      now so a fresh campaign never opens on black while the large HQ plates arrive. */
   if(run&&run.mode==='campaign'&&typeof campaignIntroWarm==='function')campaignIntroWarm();
   Audio.SFX.select(); pilotPending=pilotIndex; pilotSlide=0.0001;
+}
+
+/* ============================================================
+   CO-OP WING MUSTER (drop 0902f)
+
+   Mike: "when they do we show a screen with both pilots they selected via avatar and P1 and P2
+   symbol above them both in a triangle of ours we have flipped vertically facing south."
+
+   ⚠ THE TRIANGLE IS `nsel_arrow` AND IT POINTS EAST — a literal vertical flip is very nearly a
+   NO-OP on it. The cell (nca_2 at 715,1717, 109x107, with _r/_g/_y recolours beside it) is the
+   menu selection arrowhead, and it is close to symmetric about its horizontal axis, so
+   FLIP_TOP_BOTTOM returns almost the same image pointing the same way. Rendered both before
+   writing this, per rule 1 of CLAUDE.md. What makes it face SOUTH is a quarter turn, so that is
+   what this does: ctx.rotate(+PI/2), which is clockwise in canvas space (y grows downward) and
+   takes the east-pointing head to due south, aimed down at the avatar under it.
+
+   P1 takes the blue arrow and P2 the red one — the two recolours already in the atlas, no new
+   art — because blue/red is the arcade convention for two seats and it matches the marker to the
+   label without needing a tint pass.
+
+   The fallback path is not decoration. `XART.rdy(k)` returns FALSE on its first call — that call
+   is what starts the lazy load — so the very first frame of this screen has no arrow, and a
+   screen whose only marker is a lazily-loaded cell shows nothing at all on entry.
+   ============================================================ */
+function coopMarker(cx, cy, size, variant, label){
+  const key = (typeof _selKey==='function') ? _selKey(variant) : null;
+  const tint = (variant==='r') ? '#ff5a3c' : '#4aa8ff';
+  let drew=false;
+  if(key && typeof XART!=='undefined'){
+    if(XART._src && XART._src[key] && XART._touch) XART._touch(key);
+    if(XART.rdy(key)){
+      const im=XART.get(key);
+      const w=size*(im.naturalWidth/im.naturalHeight), h=size;
+      ctx.save();
+      ctx.translate(cx,cy);
+      ctx.rotate(Math.PI/2);                 // east -> SOUTH. See the banner.
+      ctx.shadowColor=tint; ctx.shadowBlur=10;
+      /* drawn about its own centre AFTER the rotation, so `size` is the height of the
+         south-facing marker on screen rather than of the unrotated cell */
+      ctx.drawImage(im,-w/2,-h/2,w,h);
+      ctx.restore();
+      drew=true;
+    }
+  }
+  if(!drew){
+    ctx.save();
+    ctx.translate(cx,cy);
+    ctx.shadowColor=tint; ctx.shadowBlur=10;
+    ctx.strokeStyle=tint; ctx.lineWidth=3; ctx.lineJoin='round';
+    ctx.beginPath();
+    ctx.moveTo(-size*0.52,-size*0.34); ctx.lineTo(0,size*0.46); ctx.lineTo(size*0.52,-size*0.34);
+    ctx.stroke();
+    ctx.restore();
+  }
+  /* The seat label rides IN the marker, in its wide upper half, so the symbol and the arrow are
+     one object pointing at one pilot rather than two things stacked near each other. It sits
+     just under the marker's top edge rather than centred on it: the arrowhead has a notch cut
+     into its north side, and a label centred on the cell straddles that notch and reads as
+     clipped. */
+  if(label){
+    ctx.save();
+    ctx.shadowColor='rgba(0,0,0,0.85)'; ctx.shadowBlur=4;
+    ctx.fillStyle='#ffffff';
+    ctx.font='bold 15px "BOFmil", monospace';
+    ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.fillText(label, cx, cy-size*0.04);
+    ctx.restore();
+  }
+}
+
+function drawCoopRoster(dt){
+  const P1=p1Pilot(), P2=p2Pilot();
+  /* P1's tint carries the backdrop and P2's is washed over the right half, so the screen reads
+     as two halves without a hard divider cutting it in two. */
+  if(typeof drawPilotBG==='function') drawPilotBG(P1.tint);
+  {
+    const c=(typeof hx==='function')?hx(P2.tint):null;
+    if(c){
+      const g=ctx.createLinearGradient(VW*0.42,0,VW,0);
+      g.addColorStop(0,rgba(c,0)); g.addColorStop(1,rgba(c,0.30));
+      ctx.fillStyle=g; ctx.fillRect(0,0,VW,VH);
+    }
+  }
+  if(typeof uiFontWarm==='function') uiFontWarm();
+  ctx.textBaseline='alphabetic';
+  if(typeof bofTitle==='function') bofTitle('CO-OP WING',VW/2,22,16);
+
+  const CW=170, CH=244, CY=134;
+  const seats=[
+    {P:P1, cx:VW*0.29, label:'P1', variant:null, seat:'#4aa8ff'},
+    {P:P2, cx:VW*0.71, label:'P2', variant:'r',  seat:'#ff5a3c'},
+  ];
+  for(const s of seats){
+    const x=s.cx-CW/2;
+    if(typeof bofPanel==='function') bofPanel(x,CY,CW,CH);
+    /* ⚠ THE AVATAR IS `port_<pilot>_smile`, NOT THE ROSTER CARD. Mike asked for the pilots "via
+       avatar", and `pcard_`/`card_` are not avatars — `card_` is the full 820x631 roster sheet
+       with the stat bars, the description and the profile strip, and `pcard_` is a portrait panel
+       that carries a second, EMPTY sub-panel beside the figure. Both were rendered before this
+       was written; contain-fitting either into a seat box gives you a tiny pilot floating in
+       furniture.
+
+       `port_<pilot>_<emotion>` is the seven-expression sheet the story doc already names as the
+       portrait source, and every one is a framed bust in the pilot's own colour at roughly 0.7
+       aspect — which is what a seat box wants. `smile` because this is the muster: they are about
+       to fly together. `face_` is the alias of the idle frame and stands behind it, then the two
+       card keys, so the screen degrades to something rather than to nothing. */
+    let k=null;
+    if(typeof XART!=='undefined'){
+      const want=['port_'+s.P.key+'_smile','face_'+s.P.key,'port_'+s.P.key+'_idle',
+                  'pcard_'+s.P.key,'card_'+s.P.key];
+      for(const c of want){
+        if(XART._src && XART._src[c] && XART._touch) XART._touch(c);   // rdy() is what starts the load
+        if(!k && XART.rdy(c)) k=c;
+      }
+      if(k){
+        const im=XART.get(k);
+        /* contain-fit: a portrait stretched to the box is the one thing that makes
+           hand-authored pilot art look generated */
+        const pad=7, bw=CW-pad*2, bh=CH-pad*2;
+        const sc=Math.min(bw/im.naturalWidth, bh/im.naturalHeight);
+        const w=im.naturalWidth*sc, h=im.naturalHeight*sc;
+        ctx.drawImage(im, x+pad+(bw-w)/2, CY+pad+(bh-h)/2, w, h);
+      }
+    }
+    /* The outer frame is the SEAT colour, not the pilot's — the art inside already carries the
+       pilot's own tint, so seat-coloured furniture is the thing that tells you which stick this
+       ship answers to when both players pick blue pilots. */
+    ctx.save();
+    ctx.strokeStyle=s.seat; ctx.globalAlpha=0.9; ctx.lineWidth=2;
+    ctx.shadowColor=s.seat; ctx.shadowBlur=8;
+    ctx.strokeRect(x+1.5,CY+1.5,CW-3,CH-3);
+    ctx.restore();
+
+    coopMarker(s.cx, CY-32, 42, s.variant, s.label);
+
+    ctx.textAlign='center';
+    ctx.fillStyle='#ffffff'; ctx.font='bold 15px "BOFmil", monospace';
+    ctx.fillText(s.P.name, s.cx, CY+CH+26);
+    ctx.fillStyle=s.P.tint; ctx.font='10px "BOFmil", monospace';
+    ctx.fillText(s.P.role, s.cx, CY+CH+42);
+  }
+
+  /* SAME PILOT, TWO SEATS IS LEGAL and is called out rather than blocked. Two people wanting the
+     same ship is an ordinary thing to want in co-op, and the roster art already tells them apart
+     by seat colour; refusing it would be a rule nobody asked for. */
+  if(P1.key===P2.key){
+    ctx.textAlign='center'; ctx.fillStyle='#ffd36b'; ctx.font='bold 10px "BOFmil", monospace';
+    ctx.fillText('TWO OF THE SAME AIRFRAME', VW/2, CY+CH+58);
+  }
+
+  ctx.textAlign='center'; ctx.fillStyle='#8fa0bd'; ctx.font='9px "BOFmil", monospace';
+  ctx.fillText('ENTER DEPLOY   ·   K BACK', VW/2, VH-18);
+
+  if(typeof Input==='undefined') return;
+  if(Input.menuConfirm()){
+    selFlash(function(){
+      const _ps=(typeof PENDING_STAGE!=='undefined'&&PENDING_STAGE)||1;
+      startRun(_ps);
+      if(typeof PENDING_STAGE!=='undefined') PENDING_STAGE=1;
+    }, null, null);
+    return;
+  }
+  if(Input.menuBack()){
+    /* Back rewinds ONE seat, to P2 at the roster — not out to difficulty. `coopPick` has to be
+       rewound with the state, which is why this is here and not a row in MENU_BACK. */
+    coopPick=1;
+    coopP1Index=pilotIndex;
+    pilotIndex=p2Index;
+    drawPilot._entered=false; drawPilot._pcFor=null;
+    pilotRot=0; pilotFrom=pilotIndex; pilotPending=null; pilotSlide=0; pilotComm=null; pilotCommT=0;
+    setState(GS.PILOT);
+  }
 }
 /* CREDITS */
 function drawCredits(dt){
@@ -48086,9 +48664,17 @@ const VOL_KINDS=['master','music','sfx','voice'];
 const CTRL_ACTS=['left','right','up','down','fire','bomb','retina'];
 const CTRL_LABELS=['MOVE LEFT','MOVE RIGHT','MOVE UP','MOVE DOWN','FIRE','MISSILE','RETINA LOCK'];
 let voiceVol=1.0, optScroll=0, optSnap=null, optDrag=-1, optSbDrag=false, optSelIdx=0;
-function optSnapshot(){ optSnap={master:Audio.getVol('master'),music:Audio.getVol('music'),sfx:Audio.getVol('sfx'),voice:voiceVol,keybind:JSON.parse(JSON.stringify(keybind))}; }
-function optCancel(){ if(optSnap){ Audio.setVol('master',optSnap.master); Audio.setVol('music',optSnap.music); Audio.setVol('sfx',optSnap.sfx); voiceVol=optSnap.voice; Audio.setVol('voice',voiceVol); for(const a in optSnap.keybind) keybind[a]=optSnap.keybind[a].slice(); } optSnap=null; optScroll=0; rebindAction=null; setState(GS.TITLE); menuIndex=2; Audio.SFX.select(); }
-function optApply(){ saveKeybind(); if(Audio.saveVol)Audio.saveVol(); optSnap=null; optScroll=0; rebindAction=null; setState(GS.TITLE); menuIndex=2; Audio.SFX.select(); }
+/* Which seat's table an armed rebind writes to: 1 or 2 (drop 0902f). */
+let rebindWho=1;
+/* CANCEL HAS TO UNDO BOTH SEATS. The snapshot carried only `keybind`, so with a PLAYER 2 block
+   on the same screen CANCEL would have thrown away P1's edits and silently KEPT P2's - a cancel
+   that half-applies is worse than no cancel at all. */
+function optSnapshot(){ optSnap={master:Audio.getVol('master'),music:Audio.getVol('music'),sfx:Audio.getVol('sfx'),voice:voiceVol,
+  keybind:JSON.parse(JSON.stringify(keybind)), keybind2:JSON.parse(JSON.stringify(keybind2))}; }
+function optCancel(){ if(optSnap){ Audio.setVol('master',optSnap.master); Audio.setVol('music',optSnap.music); Audio.setVol('sfx',optSnap.sfx); voiceVol=optSnap.voice; Audio.setVol('voice',voiceVol); for(const a in optSnap.keybind){ if(Array.isArray(optSnap.keybind[a])) keybind[a]=optSnap.keybind[a].slice(); }
+  if(optSnap.keybind2) for(const a in optSnap.keybind2){ if(Array.isArray(optSnap.keybind2[a])) keybind2[a]=optSnap.keybind2[a].slice(); } }
+  optSnap=null; optScroll=0; rebindAction=null; rebindWho=1; setState(GS.TITLE); menuIndex=2; Audio.SFX.select(); }
+function optApply(){ saveKeybind(); if(Audio.saveVol)Audio.saveVol(); optSnap=null; optScroll=0; rebindAction=null; rebindWho=1; setState(GS.TITLE); menuIndex=2; Audio.SFX.select(); }
 function drawOptions(dt){
   if(typeof drawCanonBackdrop==='function' && drawCanonBackdrop('nbt_4',0.60,1)){} else drawTitleBackdrop(dt);
   if(optSnap==null) optSnapshot();
@@ -48101,7 +48687,13 @@ function drawOptions(dt){
   const rows=[{t:'head',label:'VOLUME'}]; const vk=['master','music','sfx','voice'], vl=['MASTER','MUSIC','SFX','VOICE'];
   for(let i=0;i<4;i++) rows.push({t:'vol',k:vk[i],label:vl[i]});
   rows.push({t:'head',label:'CONTROLS'});
-  for(let i=0;i<7;i++) rows.push({t:'ctrl',act:CTRL_ACTS[i],label:CTRL_LABELS[i]});
+  for(let i=0;i<7;i++) rows.push({t:'ctrl',act:CTRL_ACTS[i],label:CTRL_LABELS[i],who:1});
+  /* PLAYER 2 CONTROLS (drop 0902f) - Mike asked for "2 player controller settings", and this is
+     it: the same seven actions against `keybind2`, rebound by the same flow. Shown ALWAYS rather
+     than only in co-op, because you configure a second stick BEFORE you start a co-op run, and a
+     settings block that only appears once you are already in the mode is a block nobody finds. */
+  rows.push({t:'head',label:'PLAYER 2 CONTROLS'});
+  for(let i=0;i<7;i++) rows.push({t:'ctrl',act:CTRL_ACTS[i],label:CTRL_LABELS[i],who:2});
   const selectable=rows.map((r,i)=>({r,i})).filter(o=>o.r.t!=='head');
   /* ⚠ CANCEL AND APPLY JOIN THE CURSOR LIST (drop 0822af). Mike: "I have no way to apply in
      the options menu with my controller or a keyboard. I have to do it with the mouse."
@@ -48129,7 +48721,7 @@ function drawOptions(dt){
     if(Input.menuLeft()) adjustVol(selRow.k,-1/SEG);
     if(Input.menuRight()) adjustVol(selRow.k, 1/SEG);
   }
-  if(!rebindAction && selRow && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){ rebindAction=selRow.act; Audio.SFX.blip(); }
+  if(!rebindAction && selRow && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){ rebindAction=selRow.act; rebindWho=(selRow.who||1); Audio.SFX.blip(); }
   /* on the buttons: left/right picks between them, confirm presses the one you are on */
   if(!rebindAction && onBtn){
     if(Input.menuLeft()  && btnIdx>0){ optSelIdx--; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
@@ -48213,14 +48805,16 @@ function drawOptions(dt){
            it is widened above. ww/2-4 now lands them at wx-12 and wx+ww+12: clear of the labels,
            clear of the key buttons, inside the 28px margin the panel leaves. */
         if(isSel && typeof menuSelMark==='function') menuSelMark(wx+ww/2, cy, ww/2-4, '#ffd24a');
-        const bx=wx+ww-124, bw=104, bh=22, active=(rebindAction===r.act);
+        /* the action alone no longer identifies a row: 'fire' appears twice, once per seat, so a
+           match on rebindAction alone lit BOTH buttons and the click test armed whichever drew last */
+        const bx=wx+ww-124, bw=104, bh=22, active=(rebindAction===r.act && rebindWho===(r.who||1));
         const kg=ctx.createLinearGradient(0,cy-bh/2,0,cy+bh/2);
         if(active){ kg.addColorStop(0,'#ffb347'); kg.addColorStop(1,'#c96f14'); } else { kg.addColorStop(0,'#3a4150'); kg.addColorStop(1,'#20242e'); }
         ctx.fillStyle=kg; roundRectFill(bx,cy-bh/2,bw,bh,5);
         ctx.strokeStyle=active?'#ffe27a':(isSel?'#ffb347':'#57607a'); ctx.lineWidth=1.5; ctx.strokeRect(bx,cy-bh/2,bw,bh);
         ctx.fillStyle='rgba(255,255,255,0.10)'; ctx.fillRect(bx+2,cy-bh/2+2,bw-4,3);
-        ctx.fillStyle=active?'#1a0f02':'#e8ecf4'; ctx.font='bold 11px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText(active?'PRESS KEY':keyName(keybind[r.act][0]),bx+bw/2,cy);
-        if(m.down && !drawOptions._md && m.x>bx && m.x<bx+bw && Math.abs(m.y-cy)<bh/2 && m.y>wy && m.y<wy+wh){ rebindAction=r.act; optSelIdx=selectable.findIndex(o=>o.r===r); Audio.SFX.blip(); } }
+        ctx.fillStyle=active?'#1a0f02':'#e8ecf4'; ctx.font='bold 11px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText(active?'PRESS KEY':keyName(((keybindFor(r.who||1)||{})[r.act]||[])[0]),bx+bw/2,cy);
+        if(m.down && !drawOptions._md && m.x>bx && m.x<bx+bw && Math.abs(m.y-cy)<bh/2 && m.y>wy && m.y<wy+wh){ rebindAction=r.act; rebindWho=(r.who||1); optSelIdx=selectable.findIndex(o=>o.r===r); Audio.SFX.blip(); } }
     }
     y+=rh;
   }
@@ -48240,12 +48834,16 @@ function drawOptions(dt){
         rebindAction=null; break;
       }
       if(k!=='escape'){
-        const cur=keybind[rebindAction]||[];
-        // pad_* buttons get APPENDED (keep kb defaults); a normal key REPLACES the primary kb key but keeps pad binds
-        if(k.startsWith('pad_')){ if(cur.indexOf(k)<0) keybind[rebindAction]=cur.concat([k]); }
-        else { const pads=cur.filter(x=>x.startsWith('pad_')); keybind[rebindAction]=[k].concat(pads); }
+        /* Writes into whichever seat's table armed the rebind. A seat may be bound to either
+           pad, which is deliberate: nothing stops a player giving seat 2 the first controller. */
+        const _kb=keybindFor(rebindWho||1);
+        const isPad=(x)=>x.startsWith('pad_')||x.startsWith('pad2_');
+        const cur=_kb[rebindAction]||[];
+        // pad buttons get APPENDED (keep kb defaults); a normal key REPLACES the primary kb key but keeps pad binds
+        if(isPad(k)){ if(cur.indexOf(k)<0) _kb[rebindAction]=cur.concat([k]); }
+        else { const pads=cur.filter(isPad); _kb[rebindAction]=[k].concat(pads); }
       }
-      rebindAction=null; Audio.SFX.select(); break; } } }
+      rebindAction=null; rebindWho=1; Audio.SFX.select(); break; } } }
   const _cDef={x:wx,y:VH-48,w:(ww-16)/2,h:30}, _aDef={x:wx+(ww-16)/2+16,y:VH-48,w:(ww-16)/2,h:30};
   const _cBtn=uiRect('options','btnCancel',_cDef), _aBtn=uiRect('options','btnApply',_aDef);
   const by=_cBtn.y, bh2=_cBtn.h, bw2=_cBtn.w, cbx=_cBtn.x, abx=_aBtn.x;
@@ -49970,7 +50568,18 @@ function drawWorld(dt){
   if(typeof thawDraw==='function') thawDraw();       // stage-3 thaw panel (drop 0806d)
   if(typeof dkDraw==='function') dkDraw();            // shells, decals + muzzle blast (drop 0805w)
   if(typeof sonicDraw==='function') sonicDraw();      // distortion sits under the ship (drop 0805i)
-  drawPlayer();
+  /* BOTH SHIPS, IN SEAT ORDER (drop 0902f). P2 is drawn first so that when the two overlap, P1 -
+     the ship whose input the person holding the keyboard is most likely watching - sits on top.
+     `drawPlayer` reads `player` throughout, so the swap is the whole change; none of the pilot
+     FX, thruster or special branches inside it needed touching.
+
+     ⚠ SEAT 2 IS SKIPPED WHILE `out`. A seat that has spent its last life keeps `dead` set, and
+     drawPlayer's own death handling would otherwise keep drawing its wreck for the rest of the
+     stage. */
+  for(const _s of seatList().slice().reverse()) withSeat(_s, function(){
+    if(player.out) return;
+    drawPlayer();
+  });
   if(run.stage===5 && typeof s5RunForegroundDraw==='function') s5RunForegroundDraw();
   if(typeof lzMountDraw==='function') lzMountDraw();  // pack: "above ship body"
   drawFalvaOrbs();     // orbs swirling AROUND her + the ball forming at the nose — OVER the ship
