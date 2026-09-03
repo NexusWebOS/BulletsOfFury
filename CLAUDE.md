@@ -186,6 +186,54 @@ literal storm plate on a space stage, which Mike DID want changed. The test is w
 wrong for the stage, not whether it matches the title.
 
 
+## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
+
+**Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download
+302 → 92 MB, co-op seats + scaling + stage-5 either-pilot rings + stage-9 wipe-out return, enemies
+targeting the nearer pilot, the Vol.1 expansion (new lava, stage 6 descends into the neon city,
+stage 9 on the starfield, 17 new fire types, nine south-facing shielded aces on 5/6/8), MG streams
+1-6 per level, death drops to the default gun, a level-0 space laser, red alert lanes on the
+level-2 boss beams. Suite **3,177 ok / 67 fail** = the 3,178/66 baseline ± the documented corner-run
+flakes. Full writeups are in the commit messages 0902a … 0903i.
+
+⚠ **AN ATLAS REPACK MUST REGISTER ITS SHEETS IN THE SAME WRITE AS ITS CELLS.** 0903 repointed 451
+`BOFX.cells` to three new sheets and registered the sheet files minutes later. In that window every
+one of those keys — buttons, pilot cards, `cf_boot`, the UI frame set — resolved to nothing and Mike
+was playing. It was reverted from HEAD and never committed. If it is tried again: one write, then
+render every affected screen before anyone plays.
+
+⚠ **EDIT BY CONTENT, NEVER BY LINE NUMBER AFTER AN INSERT.** A retarget pass edited 26 lines from a
+list captured before four lines were inserted above them (and the list had been cut by `head`). It
+converted the wrong lines and put a `const` in a block its users could not see — a ReferenceError
+`node --check` passes. Reverted; redone anchored on content, with the declaration placed by walking
+back from its first user and every user checked to sit inside that block.
+
+⚠ **A COLLISION TEST IS NOT TARGETING.** `Math.abs(e.x-player.x)<…` inside `withSeat(...)` asks
+whether a unit touches THE seat swapped in. It must read `player`, never `targetShip()`. The
+`playerHit()` that marks it can be on the NEXT line, so a same-line skip list misses it.
+
+⚠ **`EHP()` IS THE FODDER SHOTS-TO-KILL MODEL AND CAPS WHATEVER IT IS HANDED** — every new elite
+spawned with 12 hp. Bosses, minibosses and aces take absolute hp × `DIFF.eHp`.
+
+⚠ **A NEW PATTERN NEEDS ITS TYPES IN `_selfPat` OR THE GENERIC BLOCK OVERWRITES IT** — five of nine
+aces hung at their spawn y until `for(const _k in ELITEX) _selfPat['xelite_'+_k]=1`.
+
+⚠ **PROBE TRAPS FOUND TODAY:** `_liquidFrames()` returns Image objects, not keys (`rdy(k)` throws);
+`XART.rdy` is false on the first call, so a synchronous spawn+check reads every new key as missing;
+`window.Snd` is undefined while bare `Snd` works; the pilot card's SPECIAL row is gated on
+`pcard.phase`, which a forced `pcard.done` does not advance; a `pg.evaluate` that runs hundreds of
+frames synchronously wedges the renderer — pace with `wait_for_timeout` between short bursts.
+
+⚠ **SpriteCook IS NOT IN THIS REPO.** `tools/ColeForge` is a yt-dlp front end. The SpriteCook sheets
+were GPT-generated externally and normalized by `_BUILD_SOURCE/combat_final_0901/`. Boss art
+regeneration is Mike's side; wiring, normalizing and rigging what comes back is ours.
+
+**Open, needing Mike:** which pilot/pickup carries the new orb cores; the level-2/3 boss art
+(SpriteCook, level 3 from the current boss as a 100% reference); the Siege Ember "spin" did not
+reproduce on this build — measured ≤0.025 rad of draw rotation in both its patterns while its hull
+already slides 240..608 across the field; the remaining atlas repack (per-stage / per-boss sheets)
+is designed and unbuilt.
+
 ## Current state (2026-08-19c)
 **0821b — the spawn trap was ONE CLAMP, and the spawn safety Mike asked for.** Full writeup:
 `docs/PASSOVER_0821B.md`.
