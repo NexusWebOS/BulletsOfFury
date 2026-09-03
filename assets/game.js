@@ -30464,6 +30464,27 @@ function deriveFireType(name, base, opts){
   return true;
 }
 /* derived types — recolors / rescales of existing fire types (palette swaps; add freely) */
+/* CF_BoFExpansion-Vol.1 PROJECTILES (Mike, 0903): 'see the new projectiles, you may add those to our
+   arsenal for the enemies, and the orbs as projectiles from us and them as well.' Twelve orb cores as
+   static rounds with a slow spin, and five elemental lasers as four-frame travel reels at the pack's
+   12 fps. The impact reels are registered (xlz_<fam>_impact_0..3) for the hit FX pass. */
+FIRETYPES['xorb_acid']={ art:()=>'xorb_acid', align:false, spin:0.9, h:16, glow:'#9dff3a' };
+FIRETYPES['xorb_antimatter']={ art:()=>'xorb_antimatter', align:false, spin:0.9, h:16, glow:'#ff5af0' };
+FIRETYPES['xorb_cryo']={ art:()=>'xorb_cryo', align:false, spin:0.9, h:16, glow:'#8de6ff' };
+FIRETYPES['xorb_gravity']={ art:()=>'xorb_gravity', align:false, spin:0.9, h:16, glow:'#b48cff' };
+FIRETYPES['xorb_helix_emerald']={ art:()=>'xorb_helix_emerald', align:false, spin:0.9, h:16, glow:'#3aff9a' };
+FIRETYPES['xorb_kinetic_rock']={ art:()=>'xorb_kinetic_rock', align:false, spin:0.9, h:16, glow:'#d8b070' };
+FIRETYPES['xorb_lightning']={ art:()=>'xorb_lightning', align:false, spin:0.9, h:16, glow:'#e0f0ff' };
+FIRETYPES['xorb_molten_orange']={ art:()=>'xorb_molten_orange', align:false, spin:0.9, h:16, glow:'#ff8a2e' };
+FIRETYPES['xorb_plasma_blue']={ art:()=>'xorb_plasma_blue', align:false, spin:0.9, h:16, glow:'#5aa8ff' };
+FIRETYPES['xorb_solar']={ art:()=>'xorb_solar', align:false, spin:0.9, h:16, glow:'#ffd24a' };
+FIRETYPES['xorb_sonic']={ art:()=>'xorb_sonic', align:false, spin:0.9, h:16, glow:'#c0fff8' };
+FIRETYPES['xorb_void']={ art:()=>'xorb_void', align:false, spin:0.9, h:16, glow:'#a24aff' };
+FIRETYPES['xlz_fire']={ art:(b)=>'xlz_fire_travel_'+(((b.t||0)*12|0)%4), align:true, spin:0, h:26, glow:'#ff8a2e' };
+FIRETYPES['xlz_lightning']={ art:(b)=>'xlz_lightning_travel_'+(((b.t||0)*12|0)%4), align:true, spin:0, h:26, glow:'#cfe8ff' };
+FIRETYPES['xlz_shadow']={ art:(b)=>'xlz_shadow_travel_'+(((b.t||0)*12|0)%4), align:true, spin:0, h:26, glow:'#a45cff' };
+FIRETYPES['xlz_rock']={ art:(b)=>'xlz_rock_travel_'+(((b.t||0)*12|0)%4), align:true, spin:0, h:26, glow:'#d8b070' };
+FIRETYPES['xlz_burst']={ art:(b)=>'xlz_burst_travel_'+(((b.t||0)*12|0)%4), align:true, spin:0, h:26, glow:'#7ef0ff' };
 deriveFireType('venomDart','dart',{tint:'#7dff5a', glow:'#8de23a'});
 deriveFireType('voidOrb','orb',{tint:'#a24aff', glow:'#c46bff'});
 deriveFireType('emberGem','gem',{tint:'#ff8a2e', glow:'#ffb04a'});
@@ -38914,13 +38935,13 @@ const ELITE8_IFRAMES = false;      // design lever: true = the roll becomes a re
 const ELITEX = {
   furytalon:   {hp:150, w:52, h:52, score:3600, band:0.30, spd:78,  shield:'gold',    sh:0.45, vol:3, gap:0.09, cd:[1.1,1.6], kind:'dart'},
   razorback:   {hp:140, w:50, h:50, score:3400, band:0.34, spd:92,  shield:'crimson', sh:0.40, vol:2, gap:0.16, cd:[0.9,1.3], kind:'dart'},
-  tempest:     {hp:160, w:54, h:54, score:3800, band:0.28, spd:70,  shield:'ion',     sh:0.50, vol:4, gap:0.07, cd:[1.2,1.7], kind:'comet'},
+  tempest:     {hp:160, w:54, h:54, score:3800, band:0.28, spd:70,  shield:'ion',     sh:0.50, vol:4, gap:0.07, cd:[1.2,1.7], kind:'xorb_lightning'},
   emberwing:   {hp:170, w:54, h:54, score:4000, band:0.32, spd:74,  shield:'crimson', sh:0.50, vol:3, gap:0.12, cd:[1.0,1.5], kind:'comet'},
-  glacierlance:{hp:240, w:58, h:58, score:5600, band:0.26, spd:66,  shield:'ion',     sh:0.70, vol:5, gap:0.06, cd:[1.3,1.8], kind:'frostComet'},
-  voidreaver:  {hp:190, w:56, h:56, score:4600, band:0.30, spd:80,  shield:'violet',  sh:0.55, vol:3, gap:0.14, cd:[1.0,1.5], kind:'voidOrb'},
+  glacierlance:{hp:240, w:58, h:58, score:5600, band:0.26, spd:66,  shield:'ion',     sh:0.70, vol:5, gap:0.06, cd:[1.3,1.8], kind:'xlz_burst'},
+  voidreaver:  {hp:190, w:56, h:56, score:4600, band:0.30, spd:80,  shield:'violet',  sh:0.55, vol:3, gap:0.14, cd:[1.0,1.5], kind:'xorb_void'},
   ironserpent: {hp:150, w:50, h:50, score:3600, band:0.36, spd:110, shield:'hex',     sh:0.40, vol:2, gap:0.18, cd:[0.8,1.2], kind:'dart'},
-  solarwarden: {hp:210, w:56, h:56, score:5000, band:0.28, spd:64,  shield:'gold',    sh:0.65, vol:4, gap:0.08, cd:[1.2,1.7], kind:'emberGem'},
-  nighthammer: {hp:220, w:60, h:60, score:5200, band:0.24, spd:58,  shield:'prism',   sh:0.60, vol:5, gap:0.05, cd:[1.4,1.9], kind:'comet'},
+  solarwarden: {hp:210, w:56, h:56, score:5000, band:0.28, spd:64,  shield:'gold',    sh:0.65, vol:4, gap:0.08, cd:[1.2,1.7], kind:'xorb_solar'},
+  nighthammer: {hp:220, w:60, h:60, score:5200, band:0.24, spd:58,  shield:'prism',   sh:0.60, vol:5, gap:0.05, cd:[1.4,1.9], kind:'xorb_antimatter'},
 };
 function elitexTick(e, dt){
   const K=e._elx, X=ELITEX[K]; if(!X) return;
