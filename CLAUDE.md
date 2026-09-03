@@ -213,7 +213,11 @@ GENERIC hull** — `mechInit` refuses without its art, so `boss._mech` is undefi
 which no grep for a family prefix can see. A liveness scan that only checks quoted prefixes calls
 all of them dead. `atlas_repack_0903.py` carries the exceptions; extend it, do not re-derive.
 ⚠ **`Page.screenshot` hangs on the transformed canvas** (shoot.py already says so at its capture);
-use its `toDataURL` route. And **a quoted heredoc is not safe from the harness's shell** — a
+use its `toDataURL` route. ⚠ **AND A PROBE THAT STEPS `loop()` WITHOUT `TRAP_RAF` SPAWNS A NEW LIVE
+ANIMATION CHAIN EVERY FRAME** — the "renderer wedge" this file has blamed on long bursts. Measured:
+frame cost climbs 0 → 26 ms over 600 frames on an EMPTY stage, same on the pre-repack tree, while a
+CPU profile shows 3 ms of real work; with the trap the run is real-time. `pg.evaluate(sh.TRAP_RAF)`
+before the first `STEP`, always. The stage-2 "wedge" of the continuous nine-stage harness was this. And **a quoted heredoc is not safe from the harness's shell** — a
 backtick in a regex class broke a script write at line 117; keep backticks out of source that goes
 through Bash, or use the Write tool.
 Verified: 5,549 cells pixel-identical old→new before the manifest moved; `verify_atlas_0806z.js`
@@ -255,8 +259,9 @@ aces hung at their spawn y until `for(const _k in ELITEX) _selfPat['xelite_'+_k]
 ⚠ **PROBE TRAPS FOUND TODAY:** `_liquidFrames()` returns Image objects, not keys (`rdy(k)` throws);
 `XART.rdy` is false on the first call, so a synchronous spawn+check reads every new key as missing;
 `window.Snd` is undefined while bare `Snd` works; the pilot card's SPECIAL row is gated on
-`pcard.phase`, which a forced `pcard.done` does not advance; a `pg.evaluate` that runs hundreds of
-frames synchronously wedges the renderer — pace with `wait_for_timeout` between short bursts.
+`pcard.phase`, which a forced `pcard.done` does not advance; ~~a `pg.evaluate` that runs hundreds of
+frames synchronously wedges the renderer~~ — **WRONG, corrected 0903k: the wedge is a missing
+`TRAP_RAF`** (see the atlas section above), not burst length.
 
 ⚠ **SpriteCook IS NOT IN THIS REPO.** `tools/ColeForge` is a yt-dlp front end. The SpriteCook sheets
 were GPT-generated externally and normalized by `_BUILD_SOURCE/combat_final_0901/`. Boss art

@@ -106,6 +106,10 @@ from the JSON back into `BOFX.cells` (its `[0]` is `<N>`) and `"nca_<N>"` back i
 - **`n6x_`/`nvl_`/`s1_`/`tk*` are built by the code, not named by the tables**, so the table-driven
   pass put 471 stage-owned keys in `misc`. Rule 1 on the residue (render, read the draw function)
   moved them home; `misc` is 114 keys now.
-- **The live-run audit wedges the renderer if a stage is stepped in long synchronous bursts.** The
-  0903 audit ran 45 minutes with zero output and had to be killed; the 0902 audit (short bursts)
-  was used instead. Pace with `wait_for_timeout` between bursts of ≤150 frames.
+- **A probe that steps `loop()` without `shoot.py`'s `TRAP_RAF` spawns one more live animation
+  chain per manual frame.** That is the "renderer wedge": frame cost grows linearly (0 → 26 ms per
+  frame over 600 frames on an EMPTY stage 2, identical on the pre-repack tree), a stage-2 boss run
+  took 431 s of wall time for 32 s of game, and the 0903 live-run audit ran 45 minutes with no output.
+  `shoot.py` documents the trap at its definition; every probe that calls `STEP` must evaluate
+  `TRAP_RAF` first. With it, the same run is real-time. Not a game bug — measured with a CPU profile
+  (3 ms/frame of real work) and the A/B against `0c964ee3`.
