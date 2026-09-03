@@ -6809,6 +6809,43 @@ let stageStats={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,death
                 mslHits:0, spShots:0, spHits:0, spDmg:0};
 let _dmgSrc=null;                  // 'missile' | 'special' | null, for the frame of a damage call
 let _dmgBullet=null;               // the live player round, for directional enemy deflectors
+/* ============================================================
+   P2's STATS, AND WHO GETS CREDITED FOR A HIT (drop 0903p)
+
+   Mike: "when you do the end stats screen, you do a split screen where we show their seperate
+   stats." Separate stats need a second accumulator AND a way to know which pilot's round did
+   the damage - and there are ~40 `stageStats.x++` sites across hitEnemy, killEnemy, the boss
+   paths and the specials. Editing each is how one gets missed (the file already says so at
+   _dmgSrc, which exists for exactly this reason).
+
+   So `stageStats` is a SEAT POINTER, like `player` and `run`: withSeat() swaps it, so a write
+   that happens inside a seat window (a death, damage taken, a bomb fired) lands on that seat's
+   object without the site knowing. For the player-bullet loop, which runs OUTSIDE any seat
+   window, every round is stamped with the seat that fired it and `shooterSet(b.seat)` points
+   `stageStats` and `run.score` at that seat for the length of that bullet's processing. Same
+   idiom as _dmgSrc: set once per bullet, restored after the loop.
+
+   KNOWN: damage that lands LATER than the frame it was fired on - a bomb's blast chain, a
+   special that ticks on its own clock - is credited to whichever seat the swap is on when it
+   lands, which outside a window is seat 1. That is the first cut, and it is recorded here so
+   nobody measures "P2's bombs never count" as a mystery.
+   ============================================================ */
+let stageStats2={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0,
+                 mslHits:0, spShots:0, spHits:0, spDmg:0};
+let _shooter=1, _shooterSave=null;
+function shooterSet(seat){
+  if(typeof _seat!=='undefined' && _seat===2) return;   // never nest inside a seat window
+  seat = (seat===2 && typeof coopActive==='function' && coopActive()) ? 2 : 1;
+  if(seat===_shooter) return;
+  if(_shooter===2 && _shooterSave){
+    run2.score=run.score; run.score=_shooterSave.score; stageStats=_shooterSave.stats; _shooterSave=null;
+  }
+  if(seat===2){
+    _shooterSave={score:run.score, stats:stageStats};
+    run.score=run2.score; stageStats=stageStats2;
+  }
+  _shooter=seat;
+}
 
 /* entity pools */
 let pBullets=[], eBullets=[], enemies=[], powerups=[], explosions=[], particles=[], floaters=[], decals=[], sprAnims=[], fadeOuts=[], pilotFx=[];
@@ -7113,7 +7150,8 @@ function seatIn(n){
   if(n!==2 || _seat===2 || !coopActive()) return false;
   const stash = {};
   for(const f of SEAT_RUN_FIELDS){ stash[f] = run[f]; if(f in run2) run[f] = run2[f]; }
-  _seatSave = { run: stash, player: player, mod: PILOTMOD, idx: pilotIndex };
+  _seatSave = { run: stash, player: player, mod: PILOTMOD, idx: pilotIndex, stats: stageStats };
+  stageStats = stageStats2;            // a death or a bomb inside this window is P2's (drop 0903p)
   player = player2;
   if(PILOTMOD2) PILOTMOD = PILOTMOD2;
   pilotIndex = p2Index;
@@ -7124,6 +7162,7 @@ function seatOut(){
   if(_seat !== 2 || !_seatSave) return;
   for(const f of SEAT_RUN_FIELDS){ run2[f] = run[f]; run[f] = _seatSave.run[f]; }
   player = _seatSave.player; PILOTMOD = _seatSave.mod; pilotIndex = _seatSave.idx;
+  stageStats = _seatSave.stats;
   _seatSave = null; _seat = 1;
 }
 /* ⚠ ALWAYS THROUGH THIS, NEVER seatIn/seatOut BY HAND. The `finally` is the entire safety
@@ -22712,6 +22751,12 @@ function beginStage(num){
      exist at RUNTIME rather than just in the source. */
   stageStats={kills:0,shots:0,hits:0,livesStart:run.lives,scoreStart:run.score,spawned:0,deaths:0,missiles:0,
               dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0};
+  /* P2's accumulator starts the stage alongside P1's. `spawned` is a STAGE fact, not a seat one -
+     both rows show the same denominator - so it is mirrored onto seat 2 wherever seat 1 writes it
+     (see the stamp in updatePlay) rather than counted twice. */
+  stageStats2={kills:0,shots:0,hits:0,livesStart:run2.lives,scoreStart:run2.score,spawned:0,deaths:0,missiles:0,
+               dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0};
+  _shooter=1; _shooterSave=null;
   if(typeof drawStageClear!=='undefined'){ drawStageClear._init=false; drawStageClear._rsnd=false; for(const _k in drawStageClear){ if(/^_(l|c)\d/.test(_k)) delete drawStageClear[_k]; } }
   try{ freezerL3End(); freezerL3Begin(); }catch(e){}
   /* BGSTACK IS CUT (drop 0801gp). Mike: "cut it."
@@ -23458,6 +23503,12 @@ function updatePlay(dt){
       else return true;
     }
     }
+    /* Every round born during this seat's turn belongs to this seat. Stamped here, once, rather
+       than at the 33 pBullets.push sites - a site that forgets would credit its rounds to seat 1
+       forever and nobody would see why. `spawned` mirrors across so both rows share the stage's
+       real denominator. */
+    for(const _b of pBullets){ if(_b.seat==null) _b.seat=_seat; }
+    if(coopActive() && _seat===1) stageStats2.spawned=stageStats.spawned;
     return false;
     })) { _seatHalt = true; break; }
   }
@@ -24366,6 +24417,7 @@ function updatePlay(dt){
   for(const b of pBullets){
     _dmgSrc = (b.kind==='missile') ? 'missile' : (_SPECIAL_KINDS[b.kind] ? 'special' : null);
     _dmgBullet=b;
+    shooterSet(b.seat||1);           // hits, kills and score from this round land on its pilot (drop 0903p)
     if(b._shieldIgnoreT>0){ b._shieldIgnoreT-=dt; if(b._shieldIgnoreT<=0) b._shieldIgnore=null; }
     if(typeof spaceBulletTick==='function'&&spaceBulletTick(b,dt)) continue;
     if(typeof laserMistTick==='function'&&laserMistTick(b,dt)) continue;
@@ -25039,6 +25091,7 @@ function updatePlay(dt){
   pBullets=pBullets.filter(b=>!b.dead);
 
   _dmgSrc=null; _dmgBullet=null;  // attribution and shield context end with the player-bullet loop
+  shooterSet(1);                  // and so does the shooter swap - seat 1's stats/score are live again
   // ---- enemy bullets ----
   for(const b of eBullets){
     if(_tslow) continue;
@@ -52389,8 +52442,16 @@ function scNextPassword(){
   if(typeof PASSWORDS==='object') for(const w in PASSWORDS) if(PASSWORDS[w]===nxt) return w;
   return null;
 }
-function computeStageResults(){
-  const s=stageStats;
+/* ============================================================
+   ONE RESULT SHEET PER SEAT (drop 0903p)
+
+   Mike: "when you do the end stats screen, you do a split screen where we show their seperate
+   stats." So a co-op clear computes TWO sheets from two accumulators, and the panel draws them
+   side by side. Solo is untouched: `_res.rows/pct/rank/bonus/face` are still seat 1's, exactly
+   as every existing consumer - the password branch, the stage-advance handler - reads them.
+   `_res.seats` is the only new field, and it is null in a solo run.
+   ============================================================ */
+function scSheet(s, seatRun, pilot){
   const rows=SC_ROWS.map(function(R){
     const v=Math.max(0, Math.min(1, R.val(s)));
     /* ⚠ A ROW WITH NO ATTEMPTS MUST NOT COUNT AGAINST THE RANK (drop 0807o). MISSILE HITS and
@@ -52413,14 +52474,26 @@ function computeStageResults(){
   const counted=rows.filter(function(r){ return r.rank; });
   const pct=counted.length ? counted.reduce((a,r)=>a+r.val,0)/counted.length : 0;
   const rank=scRank(pct);
-  drawStageClear._res={
+  return {
     rows:rows, pct:pct, rank:rank,
     bonus:Math.round(pct*5000) + (s.deaths===0?2500:0),
+    face:scPortrait(pilot||'cole', rank),
+    pilot:String(pilot||''),
+    score:(seatRun.score|0),
+  };
+}
+function computeStageResults(){
+  const one=scSheet(stageStats, run, run.pilot);
+  const coop=(typeof coopActive==='function' && coopActive());
+  const two=coop ? scSheet(stageStats2, run2, run2.pilot) : null;
+  drawStageClear._res={
+    rows:one.rows, pct:one.pct, rank:one.rank, bonus:one.bonus, face:one.face,
     pw:scNextPassword(),
-    face:scPortrait(run.pilot||'cole', rank),
+    seats: coop ? [one, two] : null,
   };
   drawStageClear._seq=0; drawStageClear._segT=0; drawStageClear._row=0;
-  drawStageClear._scoreShown=run.score|0; drawStageClear._stamp=0; drawStageClear._pwChars=0;
+  drawStageClear._scoreShown=run.score|0; drawStageClear._scoreShown2=run2.score|0;
+  drawStageClear._stamp=0; drawStageClear._pwChars=0;
 }
 const RANKCOL={S:'#ffd24a',A:'#8de23a',B:'#5ab0ff',C:'#cfd6e0',D:'#c98a4a',F:'#e23a3a'};
 function _SX(f){ const r=drawStageClear._rect; return r ? r[0]+r[2]*f : VW*f; }
@@ -52489,6 +52562,169 @@ function scBar(x, y, w, h, filled, total, type, glow, animT){
   if(glow>0){
     ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=glow*0.45;
     ctx.fillStyle='#ffffff'; ctx.fillRect(inx, iny, fw, inh); ctx.restore();
+  }
+}
+
+/* ============================================================
+   THE CO-OP CLEAR SCREEN: TWO SHEETS, SIDE BY SIDE, ONE PANEL (drop 0903p)
+
+   Mike's call was side by side in one panel rather than the panel twice. So each half is the
+   solo layout scaled into its own column - portrait on the outside edge, rows beside it, its own
+   score bar under the rows, its rank under its portrait - and the header and password stay
+   shared across the whole panel, because the stage was cleared once.
+
+   Everything here is a fraction of the SAME panel rect the solo screen measured in 0807n (interior
+   x 0.046..0.951, y 0.086..0.907), so nothing can land on a bevel the solo layout already learned
+   to avoid. The row pitch is the solo pitch (0.062) so nine rows still finish clear of the score
+   block; the type steps down two sizes because each half is 0.45 of the width the solo rows had.
+
+   The two columns animate in LOCKSTEP off seat 1's row/segment counters: each row fills for both
+   pilots at once and the screen moves on when BOTH have reached their segment count. Two
+   independent tickers would finish at different times and the panel would sit half-done waiting
+   on the slower player, which reads as a hang.
+
+   The rank stamp waits for BOTH score counters, and drives drawStageClear._stamp the way the solo
+   block does - the password and PRESS FIRE beneath are shared code and key off that field.
+   ============================================================ */
+function scDrawCoopBody(R, px, py, pw, ph, t, dt, art, F){
+  const S=R.seats; if(!S) return;
+  const START=0.42, per=0.020;
+  const rowH=ph*0.062, rowY0=py+ph*0.170;
+  /* seat 1 on the left, seat 2 on the right; the seat colour is the muster's */
+  const halves=[
+    {L:0.046, Rr:0.487, seat:1, tint:'#4aa8ff', mirror:false},
+    {L:0.513, Rr:0.951, seat:2, tint:'#ff5a3c', mirror:true },
+  ];
+  /* ---- advance: both seats' row i together ---- */
+  const nRows=S[0].rows.length;
+  if(t>START && drawStageClear._row<nRows){
+    drawStageClear._segT+=dt;
+    const a=S[0].rows[drawStageClear._row], b=S[1].rows[drawStageClear._row];
+    while(drawStageClear._segT>=per && ((a._shown||0)<a.segs || (b._shown||0)<b.segs)){
+      drawStageClear._segT-=per;
+      if((a._shown||0)<a.segs) a._shown=(a._shown||0)+1;
+      if((b._shown||0)<b.segs) b._shown=(b._shown||0)+1;
+      if(Audio.SFX.statTick) Audio.SFX.statTick();
+    }
+    if((a._shown||0)>=a.segs && (b._shown||0)>=b.segs){
+      a._done=(a._done||0)+dt;
+      if(a._done>0.10){ drawStageClear._row++; drawStageClear._segT=0; }
+    }
+  }
+  const rowsDone = drawStageClear._row>=nRows;
+  const _fontOK = !!(art && art.font);
+  const _pf=(typeof pctFont==='function')?pctFont():null;
+
+  for(const H of halves){
+    const sheet=S[H.seat-1];
+    const hx=px+pw*H.L, hw=pw*(H.Rr-H.L);
+    /* portrait column on the OUTSIDE edge of each half, rows on the inside, so the two pilots
+       face the centre line and the numbers meet in the middle where they can be compared */
+    const pcW=hw*0.235, gap=hw*0.03;
+    const pcX = H.mirror ? hx+hw-pcW : hx;
+    const rowsX = H.mirror ? hx : hx+pcW+gap;
+    const rowsW = hw-pcW-gap;
+    const poW=pcW*0.92, poH=poW*1.30, poX=pcX+(pcW-poW)/2, poY=py+ph*0.190;
+
+    /* portrait, popping in as the solo one does */
+    if(sheet.face && XART.rdy(sheet.face)){
+      const im=XART.get(sheet.face);
+      const sc=Math.min(poW/im.naturalWidth, poH/im.naturalHeight);
+      const w=im.naturalWidth*sc, h=im.naturalHeight*sc;
+      const pop=1-Math.pow(1-Math.min(1,Math.max(0,(t-0.20)/0.30)),3);
+      ctx.save(); ctx.globalAlpha=pop;
+      ctx.drawImage(im, poX+(poW-w)/2, poY+(poH-h)/2*pop, w, h);
+      ctx.restore();
+    }
+    /* seat tag over the portrait - the muster's colour, so P1/P2 reads the same on both screens */
+    ctx.save(); ctx.textAlign='center'; ctx.textBaseline='middle';
+    ctx.shadowColor='rgba(0,0,0,0.85)'; ctx.shadowBlur=4;
+    ctx.fillStyle=H.tint; ctx.font=F(ph*0.026);
+    ctx.fillText('P'+H.seat, poX+poW/2, poY-ph*0.022);
+    ctx.restore();
+    if(_fontOK && typeof stageText==='function' && t>0.34)
+      stageText(art, sheet.pilot.toUpperCase(), poX+poW/2, poY+poH+ph*0.026, ph*0.022, null,null,1,0.08);
+
+    /* rows */
+    for(let i=0;i<sheet.rows.length;i++){
+      if(i>drawStageClear._row) break;
+      const row=sheet.rows[i], y=rowY0+i*rowH;
+      const app=Math.min(1,(t-START-i*0.04)/0.18);
+      if(app<=0) continue;
+      const slideX=rowsX+(H.mirror?1:-1)*(1-app)*26;
+      ctx.save(); ctx.globalAlpha=app;
+      const dim=(row.val<0.34)?0.62:1;
+      scBar(slideX, y+ph*0.016, rowsW, rowH*0.50, (row._shown||0), SC_SEGS, row.fill,
+            (i===drawStageClear._row && (row._shown||0)>=row.segs) ? 1 : 0, t+i*0.3);
+      if(_fontOK && typeof stageText==='function'){
+        ctx.globalAlpha=app*dim;
+        /* label left-aligned by measuring and offsetting half - the 0812b rule, kept */
+        const _lH=ph*0.020, _lW=_tw(art, row.label, _lH, 0.05);
+        stageText(art, row.label, slideX+ph*0.004+_lW/2, y, _lH, null,null,app*dim,0.05);
+        const _vH=ph*0.022;
+        if(_pf && /%/.test(row.text))
+          stageTextMixed(art, _pf, row.text, slideX+rowsW-_twMix(art,_pf,row.text,_vH,0.05)/2, y, _vH, SC_PCT_TINT, app, 0.05);
+        else
+          stageText(art, row.text, slideX+rowsW-_tw(art,row.text,_vH,0.05)/2, y, _vH, null,0,app,0.05);
+      } else {
+        ctx.textAlign='left'; ctx.fillStyle='#cfd6e0'; ctx.font=F(ph*0.020); ctx.globalAlpha=app*dim;
+        ctx.fillText(row.label, slideX, y);
+        ctx.textAlign='right'; ctx.font=F(ph*0.022); ctx.fillStyle=(row.val>=0.92)?'#ffd24a':'#e8eef8';
+        ctx.textBaseline='middle'; ctx.globalAlpha=app; ctx.fillText(row.text, slideX+rowsW, y);
+        ctx.textBaseline='alphabetic'; ctx.textAlign='left';
+      }
+      ctx.restore();
+    }
+
+    /* score: its own bar per half, counting toward that seat's score + bonus */
+    if(rowsDone){
+      const key = H.seat===1 ? '_scoreShown' : '_scoreShown2';
+      const base = sheet.score, tgt = base + sheet.bonus;
+      if(drawStageClear[key]<tgt){
+        drawStageClear[key]=Math.min(tgt, drawStageClear[key]+Math.max(53, Math.ceil((tgt-drawStageClear[key])*0.13)));
+        drawStageClear._scT=(drawStageClear._scT||0)+dt;
+        if(drawStageClear._scT>0.045){ drawStageClear._scT=0; if(Audio.SFX.statTick) Audio.SFX.statTick(); }
+        if(drawStageClear[key]>=tgt && Audio.SFX.go) Audio.SFX.go();
+      }
+      const shown=drawStageClear[key], done=(shown>=tgt);
+      const sy=py+ph*0.744, sbY=sy+ph*0.018, sbH=rowH*0.95;
+      scBar(rowsX, sbY, rowsW, sbH, Math.round(SC_SEGS*(shown-base)/Math.max(1,sheet.bonus)), SC_SEGS, 'special', done?1:0, t);
+      const fl = done ? 1 : (0.55+0.45*Math.sin(t*22));
+      if(_fontOK && typeof stageText==='function'){
+        const _sLH=ph*0.024, _sVH=ph*0.032, _sv=String(shown);
+        stageText(art,'SCORE', rowsX+_tw(art,'SCORE',_sLH,0.06)/2, sy, _sLH, null,null,1,0.06);
+        stageText(art, _sv, rowsX+rowsW-_tw(art,_sv,_sVH,0.06)/2, sy, _sVH, null, 0, fl, 0.06);
+      } else {
+        ctx.textAlign='left'; ctx.fillStyle='#9fb4d0'; ctx.font=F(ph*0.024); ctx.fillText('SCORE', rowsX, sy);
+        ctx.textAlign='right'; ctx.globalAlpha=fl; ctx.fillStyle=done?'#ffd24a':'#ffffff'; ctx.font=F(ph*0.032);
+        ctx.fillText(String(shown), rowsX+rowsW, sy); ctx.globalAlpha=1; ctx.textAlign='left';
+      }
+    }
+
+    /* rank, under the portrait, once BOTH counters have landed */
+    const bothDone = rowsDone
+      && drawStageClear._scoreShown  >= S[0].score+S[0].bonus
+      && drawStageClear._scoreShown2 >= S[1].score+S[1].bonus;
+    if(bothDone){
+      if(H.seat===1){
+        if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7); if(Audio.SFX.expBig) Audio.SFX.expBig(); }
+        drawStageClear._stamp=Math.min(1, drawStageClear._stamp+dt/0.34);
+      }
+      const k=drawStageClear._stamp;
+      const sc=(k<1)? (3.4-2.4*(1-Math.pow(1-k,3))) : 1;
+      const rx=poX+poW/2, ry=poY+poH+ph*0.092;
+      ctx.save(); ctx.globalAlpha=Math.min(1,k*2);
+      if(_fontOK && typeof stageText==='function'){
+        stageText(art,'RANK', rx, ry-ph*0.030, ph*0.018, null,null,1,0.08);
+        stageText(art, sheet.rank, rx, ry+ph*0.034, ph*0.076*sc, null, 0, 1, 0.06);
+      } else {
+        ctx.textAlign='center'; ctx.fillStyle='#9fb4d0'; ctx.font=F(ph*0.022); ctx.fillText('RANK', rx, ry-ph*0.024);
+        ctx.fillStyle=RANKCOL[sheet.rank]||'#fff'; ctx.font=F(ph*0.090*sc);
+        ctx.lineWidth=3; ctx.strokeStyle='#1a1206'; ctx.strokeText(sheet.rank, rx, ry+ph*0.050);
+        ctx.fillText(sheet.rank, rx, ry+ph*0.050); ctx.textAlign='left';
+      }
+      ctx.restore();
+    }
   }
 }
 
@@ -52576,6 +52812,21 @@ function drawStageClear(dt){
   else { ctx.textAlign='center'; ctx.fillStyle='#ffd24a'; ctx.font=F(ph*0.060);
          ctx.fillText('STAGE '+run.stage+' CLEAR', px+pw/2, hy); }
 
+  /* THE SOLO BODY IS GATED, NOT EDITED (drop 0903p). Everything from here to the PASSWORD block
+     is byte-for-byte the solo screen it was; co-op takes the other branch of this `if`. The
+     password, PRESS FIRE and the stage-advance handler below are SHARED - the stage was cleared
+     once - and they key off drawStageClear._stamp, which both branches drive. */
+  const _coop = !!(R.seats);
+  /* rowsX/rowsW are read by the shared PASSWORD block below the gate, so they are declared
+     OUTSIDE it. The solo body assigns its column; co-op hands the password the whole interior
+     so it centres under both sheets. The first cut declared them inside the solo branch and
+     the password threw a ReferenceError in BOTH modes - the screen went blank at the exact
+     moment the panel was meant to finish, which is the worst place for a blank. */
+  let rowsX, rowsW;
+  if(_coop){
+    rowsX=px+pw*0.046; rowsW=pw*0.905;
+    scDrawCoopBody(R, px, py, pw, ph, t, dt, art, F);
+  } else {
   /* ---- PORTRAIT, and it is showing you your rank before the rank arrives ---- */
   /* CENTRED IN THE LEFT COLUMN (drop 0807o). Mike: "make cole's portrait center betwen the bars
      and the stage clear." It sat hard against the left bevel with the rank crowded under it. The
@@ -52600,7 +52851,7 @@ function drawStageClear(dt){
   /* ⚠ THE VALUE COLUMN OVERRAN THE FRAME. At 0.655 the right-aligned numbers landed on the
      panel's right bevel — the same class of collision Mike has reported four times, reintroduced
      by me in the rebuild. Pulled in so the widest value (NO DEATHS) clears the moulding. */
-  const rowsX=px+pw*0.290, rowsW=pw*0.610;
+  rowsX=px+pw*0.290; rowsW=pw*0.610;
   /* nine rows have to finish clear of the score block: 0.170 + 8*0.062 + bar = 0.704 (drop 0807o) */
   const rowY0=py+ph*0.170, rowH=ph*0.062;
   const START=0.42;
@@ -52784,6 +53035,7 @@ function drawStageClear(dt){
     ctx.restore();
   }
 
+  }   // end of the solo body
   /* ---- PASSWORD: typed in, then flashing, with a tick per letter ---- */
   if(drawStageClear._stamp>=1 && R.pw){
     const before=Math.floor(drawStageClear._pwChars);
@@ -52845,6 +53097,10 @@ function drawStageClear(dt){
       R.rows.forEach(function(r){ r._shown=r.segs; });
       drawStageClear._row=R.rows.length;
       drawStageClear._scoreShown=(run.score|0)+R.bonus;
+      if(R.seats){   // co-op: seat 2's sheet skips ahead with seat 1's
+        R.seats[1].rows.forEach(function(r){ r._shown=r.segs; });
+        drawStageClear._scoreShown2=R.seats[1].score+R.seats[1].bonus;
+      }
       drawStageClear._stamp=1; drawStageClear._pwChars=(R.pw||'').length;
       if(Audio.SFX.blip) Audio.SFX.blip();
     } else {
@@ -52855,6 +53111,7 @@ function drawStageClear(dt){
          suite pins it to STAGES.length rather than a number. */
       run.score=(run.score|0)+R.bonus;
       run.lives=clamp(run.lives,0,9);
+      if(R.seats){ run2.score=(run2.score|0)+R.seats[1].bonus; run2.lives=clamp(run2.lives,0,9); }
       drawStageClear._init=false; drawStageClear._res=null;
       Audio.stopMusic();
       /* ⚠ THE BONUS STAGE RETURNS, IT DOES NOT END THE GAME (0822ab). run.stage 9 is >= the
