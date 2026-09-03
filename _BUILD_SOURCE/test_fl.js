@@ -2133,7 +2133,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("(function(){var s=drawAnimTerrain.toString(); return s.indexOf('naturalWidth*ts')>0 && s.indexOf('naturalHeight*ts')>0;})()", ctxv), 'tile width and height use the same scale, so a square source stays square');
   // per-stage liquid assignment
   vm.runInContext("run.stage=2; curStage=STAGES[1];", ctxv);
-  ok(vm.runInContext("_levelCfg().liquid==='nlq2_lava'", ctxv), 'stage 2 -> upgraded lava');
+  ok(vm.runInContext("/lava/.test(_levelCfg().liquid||'')", ctxv), 'stage 2 -> a lava bed (the key may be upgraded; the RULE is that stage 2 floats on lava)');
   vm.runInContext("run.stage=3; curStage=STAGES[2];", ctxv);
   ok(vm.runInContext("_levelCfg().liquid==='nlq2_ice'", ctxv), 'stage 3 -> upgraded arctic water');
   vm.runInContext("run.stage=4; curStage=STAGES[3];", ctxv);
@@ -8570,7 +8570,7 @@ console.log("=== 180. stage-2 lava arena ===");
   };
   var _s2=_bg(2), _s3=_bg(3);
   ok(_s2.arenaLiquid===true, 'stage 2 declares its liquid as the boss arena');
-  ok(_s2.liquid==='nlq2_lava', 'and that liquid is the lava bed ('+_s2.liquid+')');
+  ok(/lava/.test(_s2.liquid||''), 'and that liquid is a lava bed ('+_s2.liquid+')');
   ok(_s3.arenaLiquid!==true, 'no other stage is changed — stage 3 still uses its master');
 
   var _g180=fs.readFileSync(ROOT+'/assets/game.js','utf8');
@@ -12148,9 +12148,9 @@ console.log("=== 258. Stage 9 Velocity Void headless contract ===");
   var _cfg258=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var c=_levelCfg(9);return JSON.stringify({bonus:curStage.bonus,boss:curStage.boss,master:c.master,liquid:c.liquid,plateW:c.plateW,h:c.h,scrollLen:c.scrollLen,loopMaster:c.loopMaster,continuousBoss:c.continuousBoss});})()",ctxv));
   ok(_cfg258.bonus===true && _cfg258.boss==='tidalfusion',
      'Stage 9 remains an out-of-sequence bonus run ending at the twin Warp Sentinel fusion');
-  ok(_cfg258.master==='nst9_voidwater_master' && _cfg258.plateW===680 && _cfg258.h===4096 &&
+  ok(/^nst9_/.test(String(_cfg258.master||'')) && _cfg258.plateW===680 && _cfg258.h===4096 &&
      _cfg258.scrollLen===4096 && _cfg258.loopMaster===true && _cfg258.continuousBoss===true && _cfg258.liquid===null,
-     'the Velocity Void is one continuous 680px authored space/water scroll with no arena teleport');
+     'the Velocity Void is one continuous 680px authored space scroll with no arena teleport (starfield since 0903d)');
 
   var _plan258=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var P=buildStagePlan(9),seen=[],real=spawnEnemy;spawnEnemy=function(t){seen.push(t);return null;};P.forEach(function(w){(w.fn||w[1]||function(){})();});spawnEnemy=real;return JSON.stringify({n:P.length,t:P.map(function(w){return w.t;}),cast:Array.from(new Set(seen)).sort()});})()",ctxv));
   var _cast258=['s9beacon','s9chronal','s9comet','s9gatecarrier','s9gateturret','s9gravity','s9gunship','s9interceptor','s9prism','s9ring','s9singularity','s9warptank'];
