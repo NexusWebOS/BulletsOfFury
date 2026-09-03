@@ -13099,9 +13099,37 @@ function l23BossBeamDraw(b){
   }
   if(!XART.rdy(key))return false;const im=XART.get(key),len=Math.max(VW,VH)*1.25;
   ctx.save();ctx.imageSmoothingEnabled=false;
+  /* THE BEAM IS THE RELEASE, NOT THE TELL. It used to draw at full length and brightness from
+     the first warm-up frame, so charging and firing looked identical and the player had no
+     window to read. During warm only a faint ghost of the plate shows under the red lane. */
+  const _ghost=(!B.released && B.t<B.warm) ? 0.22 : 1;
   for(let i=0;i<B.slots.length;i++){
     const p=shipBossMount(b,B.slots[i]);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(B.angles[i]-Math.PI/2);
-    ctx.drawImage(im,-B.width/2,0,B.width,len);ctx.restore();
+    ctx.globalAlpha=_ghost; ctx.drawImage(im,-B.width/2,0,B.width,len);ctx.restore();
+  }
+  /* RED ALERT FIELD - drawn OVER the ghosted beam so lava cannot swallow it. (Mike, 0903): 'get us red alert field graphics to let us know whre the lasers
+     are going'. During the warm-up the beam art is not drawn at all, so the player had NO tell -
+     a thin unannounced line. Now each emitter paints its lane while it charges: a translucent
+     red column along the angle the beam will fire on, with hard red rails and a pulse that
+     quickens toward release. The tick already sweeps B.angles during warm, so the lane follows
+     exactly where the beam is going to be, not where it started. */
+  if(!B.released && B.t<B.warm){
+    const k=clamp(B.t/Math.max(0.01,B.warm),0,1), pulse=0.55+0.45*Math.sin(B.t*(10+k*22));
+    const lane=B.width*1.35, len=Math.max(VW,VH)*1.25;
+    ctx.save();
+    for(let i=0;i<B.slots.length;i++){
+      const p=shipBossMount(b,B.slots[i]);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(B.angles[i]-Math.PI/2);
+      /* on a lava stage a red wash vanishes - the lane needs a dark outline and white-hot rails */
+      ctx.globalAlpha=0.62*pulse; ctx.fillStyle='#0a0000'; ctx.fillRect(-lane/2-3,0,lane+6,len);
+      ctx.globalAlpha=(0.35+0.35*k)*pulse; ctx.fillStyle='#ff0000'; ctx.fillRect(-lane/2,0,lane,len);
+      ctx.globalAlpha=0.95; ctx.fillStyle='#ffffff';
+      ctx.fillRect(-lane/2,0,3,len); ctx.fillRect(lane/2-3,0,3,len);
+      /* hazard ticks marching down the rails read as 'incoming' even on a busy field */
+      const ph=(B.t*180)%28; ctx.globalAlpha=(0.30+0.40*k)*pulse; ctx.fillStyle='#ffd0a0';
+      for(let y=ph;y<len;y+=28){ ctx.fillRect(-lane/2-1,y,5,2); ctx.fillRect(lane/2-4,y,5,2); }
+      ctx.restore();
+    }
+    ctx.restore(); ctx.globalAlpha=1;
   }
   ctx.restore();return true;
 }
