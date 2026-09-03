@@ -25256,7 +25256,8 @@ function updatePlay(dt){
       if(e._dyingT!=null) continue;   // dying wrecks don't collide
       if(e._noHit) continue;          // submerged/phased (level-7 BUBBLE MAW mid-dive) — no body contact
       const _hx=(player._hx!=null?player._hx:9)-1, _hy=(player._hy!=null?player._hy:10)-2;
-      if(Math.abs(e.x-_T.x)<(e.w/2+_hx) && Math.abs(e.y-_T.y)<(e.h/2+_hy)){
+      /* COLLISION, NOT TARGETING: this asks whether the unit touches THE seat swapped in by withSeat. It must read player, never targetShip. */
+      if(Math.abs(e.x-player.x)<(e.w/2+_hx) && Math.abs(e.y-player.y)<(e.h/2+_hy)){
         if(specialActive('juggernaut')){ hitEnemy(e,999); explode(e.x,e.y,26,'red'); shake=Math.max(shake,7); Audio.SFX.expSmall(); }
         else { playerHit(); break; }
       }
