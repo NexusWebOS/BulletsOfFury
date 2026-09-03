@@ -6489,7 +6489,8 @@ function fodderShots(baseHp, stage, dkey){
 function EHP(baseHp){
   const stage = (typeof run!=='undefined' && run && run.stage) ? run.stage : 1;
   const pressure=(typeof combatThreat==='function')?combatThreat(stage):{hp:1};
-  return Math.max(1, Math.round(fodderShots(baseHp, stage, diffKey) * PLAYER_REF_DMG * pressure.hp));
+  const coop = (typeof coopActive==='function' && coopActive()) ? COOP_EHP_MUL : 1;
+  return Math.max(1, Math.round(fodderShots(baseHp, stage, diffKey) * PLAYER_REF_DMG * pressure.hp * coop));
 }
 
 const DIFFS = {
@@ -6728,6 +6729,14 @@ const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','IC
    so the next weapon added cannot reintroduce it.
    ============================================================ */
 let coopOn=false;         // is THIS run a co-op run
+/* CO-OP DIFFICULTY (Mike, 0902): "the game increases enemy count by 1.5x per level, enemy
+   hp by 25%, bosses and mini bosses by 50%". Two ships put roughly twice the damage on
+   the screen, so without this a co-op run is EASIER than solo, not harder.
+   All three read through coopActive(), so a solo run multiplies by exactly 1 and plays
+   bit-identically to how it did before co-op existed. */
+const COOP_COUNT_MUL = 1.5;    // enemies per stage
+const COOP_EHP_MUL   = 1.25;   // ordinary enemy hp
+const COOP_BOSS_MUL  = 1.5;    // bosses AND minibosses
 let p2Index=1;            // P2's row in PILOTS — defaults off P1's so the roster opens on someone else
 let coopPick=0;           // who is at the roster right now: 0 = P1, 1 = P2, 2 = both locked in
 /* ⚠ THE ROSTER SCREEN HAS ONE CURSOR AND IT STAYS `pilotIndex`. P2's pass drives the SAME
@@ -15873,6 +15882,11 @@ function spawnBoss(kind){
      budget. Applying the generic per-boss floor here would inflate EACH form
      back into a complete boss and destroy the 25/25/25/25 contract. */
   if(!b._vile) enforceEncounterHp(b,_hpFloor);
+  /* co-op: +50% on this boss, applied at the ONE exit every kind passes
+     through, so a boss added later cannot miss it. */
+  if(typeof coopActive==='function' && coopActive() && b && b.maxhp>0){
+    b.maxhp=Math.ceil(b.maxhp*COOP_BOSS_MUL); b.hp=b.maxhp;
+  }
   boss=b; bossActive=true;
   /* The warning sequence already owns the one boss alert. Do not fire it again on spawn. */
 }
@@ -15998,6 +16012,11 @@ function spawnSubBoss__inner(kind){
   {
     const _i=clamp(((run.stage|0)-1),0,MINIBOSS_HP_FLOOR.length-1);
     enforceEncounterHp(b,MINIBOSS_HP_FLOOR[_i]*Math.max(1,DIFF.eHp||1)*(b._threat.bossHp||1));
+  }
+  /* co-op: +50% on this miniboss, applied at the ONE exit every kind passes
+     through, so a boss added later cannot miss it. */
+  if(typeof coopActive==='function' && coopActive() && b && b.maxhp>0){
+    b.maxhp=Math.ceil(b.maxhp*COOP_BOSS_MUL); b.hp=b.maxhp;
   }
   subBoss=b; subBossActive=true;
 }
@@ -23390,7 +23409,14 @@ function updatePlay(dt){
        because the clock continued beyond the beach. */
     _s1GroundHold=!!(_s1GroundDue && (_waveGap>0 || _liveN>_dispatchAt));
     if(_nextStageWave && stageTimer>=_nextStageWave.t && _waveGap<=0 && _liveN<=_dispatchAt){
-      stagePlan[waveIdx].fn(); waveIdx++; _waveGap=_aiProfile.waveGap;
+      stagePlan[waveIdx].fn();
+      /* CO-OP COUNT: every other wave runs its spawn function TWICE, which is 1.5x the
+         stage's enemies without inventing placements. DIFF.density is not the lever it
+         looks like - buildStagePlan reads it into `D` and then never uses it. Doubling an
+         authored wave keeps every unit's route, entry side and formation; the spawn clear
+         zone and enemySeparate already handle two of a thing arriving together. */
+      if(typeof coopActive==='function' && coopActive() && (waveIdx & 1)) stagePlan[waveIdx].fn();
+      waveIdx++; _waveGap=_aiProfile.waveGap;
       _s1GroundHold=false;
     }
     /* Global adaptive density is a separate, one-at-a-time lane from the authored scheduler.
@@ -31761,16 +31787,29 @@ function s5RunTick(dt){
   if(!s5run && stageTimer > len*S5R_START) s5RunInit();
   if(!s5run || s5run.done) return;
   s5run.t+=dt;
-  const _pl=(typeof player!=='undefined')?player:null;
+  /* CO-OP: EITHER PILOT'S RUN COUNTS FOR BOTH (Mike, 0902): "only one of them has to go
+     through all 8 rings to bring them both to stage 9." The gate is scored against EVERY live
+     seat rather than against `player`, which in co-op is only whichever seat is swapped in.
+     PASSED if any live ship is inside the opening; MISSED only when every live ship is outside
+     it, so one pilot flying a clean line cannot be failed by the other drifting wide. Solo
+     yields the single ship and behaves exactly as it did before. */
+  const _crew=(function(){ const out=[];
+    try{ if(typeof seatList==='function' && typeof seatShip==='function'){
+      for(const n of seatList()){ const s=seatShip(n); if(s && !s.dead && !s.out) out.push(s); } }
+    }catch(_s5c){}
+    if(!out.length && typeof player!=='undefined' && player && !player.dead) out.push(player);
+    return out; })();
+  const _pl=_crew[0]||null;
   for(const g of s5run.gates){
     g.py=g.y; g.y += S5R_SPEED*dt;
     if(g.i===S5R_N-1 && s5run.idx>=S5R_N-1 && !s5run.failed) g.glow=Math.min(1, g.glow+dt*1.6);
-    if(g.passed || g.missed || !_pl || _pl.dead) continue;
+    if(g.passed || g.missed || !_crew.length) continue;
     /* the pass test fires on the frame the gate's line crosses the ship, so it cannot be
        double-counted and cannot be dodged by sitting still */
-    if(g.py < _pl.y && g.y >= _pl.y){
+    const _crossers=_crew.filter(s=>g.py < s.y && g.y >= s.y);
+    if(_crossers.length){
       const open=S5R_OPEN;
-      if(Math.abs(_pl.x-g.x) <= open){
+      if(_crossers.some(s=>Math.abs(s.x-g.x) <= open)){
         g.passed=true; s5run.idx++;
         if(!s5run.armed){s5run.armed=true;
           try{if(Audio.warpAmbienceStart)Audio.warpAmbienceStart(.12);}catch(_s5wa){}
