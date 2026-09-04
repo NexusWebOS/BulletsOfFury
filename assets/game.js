@@ -7398,8 +7398,15 @@ function updateRoll(dt){
 function rollFrameKey(){
   const r=player.roll; if(!r) return null;
   const f=clamp(Math.floor((r.t/r.dur)*8),0,7);
-  const fi=(r.dir>0)?((8-f)%8):f;   // RIGHT rolls rotate rightward (br0,7,6,5,4,3,2,1); left rolls 0..7
   const pk=_pilotKey();
+  /* ⚠ THE BARREL ROLL READS THE SAME REEL AND HAD THE SAME BUG (drop 0903y). The comment below
+     is true only for the six pilots whose br6 is their right-hand quarter; for axel, decker and
+     juggernaut the reel is authored the other way round, so a right roll on those three span
+     through br2 and the ship rolled AWAY from the dash. Reversing on the pilot as well as the
+     direction makes a right roll pass through that pilot's own right-hand quarter, whichever
+     index that is. See SHIP_TWIST_FLIP. */
+  const _rev=((r.dir>0) !== !!SHIP_TWIST_FLIP[pk]);
+  const fi=_rev?((8-f)%8):f;   // a RIGHT roll rotates rightward (br0,7,6,5,4,3,2,1); left rolls 0..7
   /* FALVA IS THE EXCEPTION (drop 0724cj). Every other pilot's turn and barrel-roll frames are
      drawn WITHOUT an engine — hers are the only ones with a thruster baked in, so using them would
      put her flame back the moment she rolled. She keeps her flameless idle frame through the roll
@@ -27950,7 +27957,10 @@ function _shipFrameKey(pk){
   const R=(k)=>(typeof XART!=='undefined'&&XART.rdy(k));
   const hasPv=R('ship_'+pk+'_pv2'), hasBr=R('ship_'+pk+'_br0');
   const bank=player._bank||0, ab=Math.abs(bank);
+  /* `right` is for the LEAN reel and `rightBr` for the TWIST reel - see SHIP_TWIST_FLIP. They
+     agree for six of the nine pilots and must not be collapsed back into one flag. */
   const right=(SHIP_BANK_FLIP[pk] ? bank<0 : bank>0);
+  const rightBr=(SHIP_TWIST_FLIP[pk] ? bank<0 : bank>0);
   const TWIST=0.82;
   /* NO _t FALLBACK (drop 0808g). It is the flame-baked variant and 20-161px taller than the
      plain hull, so falling back to it silently swapped in a different-sized aircraft. */
@@ -27967,9 +27977,9 @@ function _shipFrameKey(pk){
      her art is all present and all distinct — pv0..4 at 152x280 and br0/2/6 at 174x271, the same
      shape of pv-vs-br difference Cole has — so this is not the 0808g size-swap trap that the `_t`
      fallback was. Rendered all nine of her frames before deleting the line. */
-  if(ab>=TWIST && hasBr) return 'ship_'+pk+'_br'+(right?6:2);
+  if(ab>=TWIST && hasBr) return 'ship_'+pk+'_br'+(rightBr?6:2);
   if(hasPv) return 'ship_'+pk+(ab<0.5?(right?'_pv3':'_pv1'):(right?'_pv4':'_pv0'));
-  return 'ship_'+pk+'_br'+(right?(ab<0.5?7:6):(ab<0.5?1:2));
+  return 'ship_'+pk+'_br'+(rightBr?(ab<0.5?7:6):(ab<0.5?1:2));
 }
 function _shipThrRig(pk){
   const key=_shipFrameKey(pk);
@@ -43751,6 +43761,40 @@ function _mechOrder(K){
    The other four entries match the measurement and are unchanged. Mirror IoU between pv0 and
    flipped pv4 is 0.88-0.97 across all nine, confirming the pairs are genuine opposites. */
 const SHIP_BANK_FLIP={axel:1, decker:1, freezer:1, yuri:1};
+/* ============================================================
+   THE TWIST REEL HAS ITS OWN HANDEDNESS, AND IT IS NOT THE LEAN'S (drop 0903y)
+
+   Mike: "we need to fix the direction the ships steer when we move left and right, rotate left
+   and right, as they appear to be backwards. When i turn left, I'm facing right as I twist, when
+   I turn right, I'm facing left as a I twist."
+
+   SHIP_BANK_FLIP was measured on pv4 ONLY - its own note says so - and then applied to the br
+   twist pick as well. The two reels are separate art and do not share a handedness. Measured all
+   nine pilots on BOTH reels with the same metric (the nose is the topmost ink; a ship banked to
+   its RIGHT carries that nose to the RIGHT of the hull's centroid; normalised by hull width so
+   nine different airframes compare):
+
+       pilot        pv0     pv4       br2     br6      right-lean is   right-twist is
+       axel        +.246   -.230     +.069   -.069        pv0              br2
+       decker      +.265   -.261     +.019   -.019        pv0              br2
+       freezer     +.195   -.196     -.109   +.109        pv0              br6   <- disagree
+       yuri        +.233   -.233     -.022   +.016        pv0              br6   <- disagree
+       juggernaut  -.219   +.223     +.121   -.102        pv4              br2   <- disagree
+       maverick    -.173   +.180     -.026   +.026        pv4              br6
+       cole        -.232   +.238     -.047   +.047        pv4              br6
+       falva       -.273   +.267     -.005   +.005        pv4              br6
+       lizzie      -.061   -.036     -.013   +.013        (weak)           br6
+
+   The lean column reproduces SHIP_BANK_FLIP exactly, so that table is right and is untouched.
+   The twist column disagrees with it for THREE pilots - freezer, yuri and juggernaut - and those
+   are the ones whose twist has been inverted. Yuri is the loudest of them; he is also the pilot
+   in the default co-op second seat.
+
+   ⚠ lizzie's pv0/pv4 are both slightly negative (-.061/-.036) - her airframe is close to
+   symmetric at the lean, so the sign there is not meaningful. She is left out of the lean table,
+   as she already was, and her twist reads cleanly (br6 right) so she is out of this one too.
+   ============================================================ */
+const SHIP_TWIST_FLIP={axel:1, decker:1, juggernaut:1};
 /* THE TORSO PLATE ALREADY CONTAINS THE HEAD (drop 0801dy). Mike: "dont use the
    head piece, use the body piece with the head attached."
 

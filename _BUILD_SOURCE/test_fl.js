@@ -1442,7 +1442,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("player.reset(); player._rollCool=0; startRoll(1);", ctxv);
   var _seq=[];
   for(let f=0;f<30;f++){ vm.runInContext("updateRoll(1/60);", ctxv); const k=vm.runInContext("rollFrameKey()", ctxv); if(k)_seq.push(k.slice(-1)); if(!vm.runInContext("player.roll", ctxv)) break; }
-  ok(_seq.indexOf('7')>=0 && _seq.indexOf('6')>=0 && (_seq.indexOf('7')<_seq.indexOf('2')||_seq.indexOf('2')<0), 'RIGHT roll rotates rightward (br7/br6 before any left frames)');
+  /* ⚠ REPOINTED 0903y. This pinned br7/br6 as "rightward" for EVERY pilot, which is only true of
+     six of the nine: axel, decker and juggernaut have their br reel authored the other way round,
+     measured on both reels (see SHIP_TWIST_FLIP). The rule is that a RIGHT roll passes through
+     THAT PILOT'S OWN right-hand quarter first - the frame index is per-pilot, so asserting the
+     index asserted the old bug. */
+  var _twFlip=vm.runInContext("!!(typeof SHIP_TWIST_FLIP!=='undefined' && SHIP_TWIST_FLIP[_pilotKey()])", ctxv);
+  var _qRight=_twFlip?'2':'6', _qLeft=_twFlip?'6':'2', _nearRight=_twFlip?'1':'7';
+  ok(_seq.indexOf(_qRight)>=0 && _seq.indexOf(_nearRight)>=0 &&
+     (_seq.indexOf(_nearRight)<_seq.indexOf(_qLeft)||_seq.indexOf(_qLeft)<0),
+     'RIGHT roll rotates toward the right-hand quarter THIS pilot was authored with (br'+_nearRight+'/br'+_qRight+' before br'+_qLeft+')');
   ok(vm.runInContext("(function(){var f=['pv2','br0','br6']; for(var i=0;i<f.length;i++){ if(!XART.rdy('ship_cole_'+f[i])) return false; } return true;})()", ctxv), 'cole has his own bank/roll frames (no more yuri fallback)');
   /* ⚠ THIS ASSERTION REQUIRED THE THING MIKE JUST BANNED (drop 0808g). It insisted the player
      core reference ship_<pilot>_t — the flame-BAKED-IN variant. His instruction: "in cinematics,
