@@ -2092,9 +2092,9 @@ const XART=(function(){
      elite plates are real twelve-frame animations used for readable heavyweight attacks. */
   const _S5_ATTACK_UNITS=['beam_frigate','comet_rammer','debris_skimmer','gravity_orb',
     'heavy_interceptor','mine_layer','missile_satellite','portal_mine','repair_drone',
-    'salvage_tug','shield_leech','twin_station'];
+    'shield_leech','twin_station'];
   const _S9_ATTACK_UNITS=['alien_beacon','comet_skimmer','dimensional_gunship',
-    'galaxy_interceptor','gate_carrier','gate_turret','gravity_artillery','hyperspace_prism',
+    'galaxy_interceptor','gate_carrier','gate_turret','hyperspace_prism',
     'mini_warp_tank','ring_drone','singularity_mine'];
   for(const _s5u of _S5_ATTACK_UNITS) for(let _s5f=0;_s5f<8;_s5f++){
     const _n=String(_s5f+1).padStart(2,'0');
@@ -9672,7 +9672,7 @@ const SHIPS=[];
     }
     case 's5frigate': case 's5rammer': case 's5skimmer': case 's5gravity':
     case 's5interceptor': case 's5minelayer': case 's5satellite': case 's5portalmine':
-    case 's5repair': case 's5salvage': case 's5leech': case 's5station': {
+    case 's5repair': case 's5leech': case 's5station': {
       const H=S5SPACE[type]; c.w=H.w;c.h=H.h;c.hp=c._maxhp=EHP(H.hp);c.score=H.score;
       c.vy=0;c.pattern='s5space';c._s5space=type;c.shoots=false;c.fk=null;c.dropOk=true;
       c.impact=!!H.impact;break;
@@ -9687,7 +9687,7 @@ const SHIPS=[];
       c.impact=!!H.impact;c._dieDur=.64;break;
     }
     case 's9beacon': case 's9comet': case 's9gunship':
-    case 's9interceptor': case 's9gatecarrier': case 's9gateturret': case 's9gravity':
+    case 's9interceptor': case 's9gatecarrier': case 's9gateturret':
     case 's9prism': case 's9warptank': case 's9ring': case 's9singularity': {
       const H=S9VOID[type];c.w=H.w;c.h=H.h;c.hp=c._maxhp=EHP(H.hp);c.score=H.score;
       c.vy=0;c.pattern='s9void';c._s9void=type;c.shoots=false;c.fk=null;c.dropOk=true;
@@ -10897,7 +10897,7 @@ function buildStagePlan(stageNum){
     add(15.5,()=>{spawnEnemy('s5minelayer',W5*.28,-100,{});spawnEnemy('s5satellite',W5*.72,-90,{_stagger:.30});});
     add(20.0,()=>{spawnEnemy('s5portalmine',W5*.32,-80,{});spawnEnemy('s5portalmine',W5*.68,-105,{_stagger:.32});});
     add(24.0,()=>{spawnEnemy('s5repair',W5*.50,-88,{});spawnEnemy('s5frigate',W5*.30,-100,{});spawnEnemy('s5frigate',W5*.70,-100,{});});
-    add(29.0,()=>spawnEnemy('s5salvage',W5*.50,-110,{}));
+    add(29.0,()=>spawnEnemy('s5station',W5*.50,-110,{}));
     add(33.0,()=>{spawnEnemy('s5leech',W5*.26,-85,{});spawnEnemy('s5leech',W5*.74,-85,{_stagger:.26});});
     add(38.0,()=>{spawnEnemy('s5interceptor',W5*.22,-80,{});spawnEnemy('s5rammer',W5*.50,-110,{_stagger:.25});spawnEnemy('s5interceptor',W5*.78,-80,{_stagger:.50});});
     add(24.0,()=>spawnEnemy('xelite_voidreaver',W5*.35,-70,{}));   /* Vol.1 aces (0903) */
@@ -10955,7 +10955,7 @@ function buildStagePlan(stageNum){
     add(6.75,()=>spawnEnemy('s9gunship',W9*.50,-126,{_s9Role:'beam'}));
     add(8.10,()=>pair('s9warptank',.24,.76,{_s9Role:'jumper'}));
     add(9.45,()=>pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'}));
-    add(10.70,()=>{spawnEnemy('s9gateturret',W9*.30,-108,{_s9Role:'spinner'});spawnEnemy('s9gravity',W9*.70,-120,{_s9Role:'orb',_stagger:.18});});
+    add(10.70,()=>{spawnEnemy('s9gateturret',W9*.30,-108,{_s9Role:'spinner'});spawnEnemy('s9prism',W9*.70,-120,{_s9Role:'orb',_stagger:.18});});
     add(12.25,()=>s9MeteorShower(W9*.67,1));
     add(13.30,()=>spawnEnemy('s9gatecarrier',W9*.50,-145,{_s9Role:'laser'}));
     add(14.65,()=>{spawnEnemy('s9comet',-86,VH*.20,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.34,{_side:-1,_s9Role:'slider'});});
@@ -10965,7 +10965,7 @@ function buildStagePlan(stageNum){
     add(19.60,()=>{spawnEnemy('s9interceptor',W9*.16,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-122,{_s9Role:'kamikaze',_stagger:.13});spawnEnemy('s9interceptor',W9*.84,-94,{_s9Role:'kamikaze',_stagger:.26});});
     add(21.00,()=>pair('s9ring',.25,.75,{_s9Role:'spinner'}));
     add(22.25,()=>spawnEnemy('s9gunship',W9*.50,-132,{_s9Role:'beam'}));
-    add(23.65,()=>{spawnEnemy('s9warptank',W9*.28,-112,{_s9Role:'jumper'});spawnEnemy('s9gravity',W9*.72,-126,{_s9Role:'orb',_stagger:.16});});
+    add(23.65,()=>{spawnEnemy('s9warptank',W9*.28,-112,{_s9Role:'jumper'});spawnEnemy('s9prism',W9*.72,-126,{_s9Role:'orb',_stagger:.16});});
     add(25.00,()=>s9MeteorShower(W9*.72,3));
     add(26.20,()=>pair('s9interceptor',.22,.78,{_s9Role:'kamikaze'}));
     add(27.50,()=>{spawnEnemy('s9comet',-86,VH*.16,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.29,{_side:-1,_s9Role:'slider'});});
@@ -10976,7 +10976,7 @@ function buildStagePlan(stageNum){
     add(34.00,()=>pair('s9ring',.22,.78,{_s9Role:'spinner'}));
     add(35.15,()=>{spawnEnemy('s9interceptor',W9*.18,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-124,{_s9Role:'kamikaze',_stagger:.12});spawnEnemy('s9interceptor',W9*.82,-94,{_s9Role:'kamikaze',_stagger:.24});});
     add(36.40,()=>s9MeteorShower(W9*.55,5));
-    add(37.55,()=>{spawnEnemy('s9prism',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9gravity',W9*.70,-126,{_s9Role:'orb',_stagger:.17});});
+    add(37.55,()=>{spawnEnemy('s9prism',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9gatecarrier',W9*.70,-126,{_s9Role:'orb',_stagger:.17});});
     add(38.75,()=>spawnEnemy('s9gatecarrier',W9*.50,-148,{_s9Role:'laser'}));
     add(curStage.length-2.1,()=>{pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'});s9MeteorShower(W9*.50,6);});
     return _planSorted(P);
@@ -40605,7 +40605,8 @@ const S5SPACE={
   s5skimmer:{art:'debris_skimmer',hp:30,w:72,h:62,score:1080},s5gravity:{art:'gravity_orb',hp:46,w:72,h:72,score:1520},
   s5interceptor:{art:'heavy_interceptor',hp:32,w:68,h:70,score:1200},s5minelayer:{art:'mine_layer',hp:52,w:78,h:74,score:1760},
   s5satellite:{art:'missile_satellite',hp:40,w:64,h:76,score:1480},s5portalmine:{art:'portal_mine',hp:34,w:66,h:66,score:1320},
-  s5repair:{art:'repair_drone',hp:28,w:64,h:58,score:1240},s5salvage:{art:'salvage_tug',hp:58,w:72,h:78,score:1940},
+  s5repair:{art:'repair_drone',hp:28,w:64,h:58,score:1240},/* ⚠ s5salvage/'salvage_tug' REMOVED 0904i - Mike: "delete these 2 enemies. no good." Its wave
+   fields s5station. It was also one of the two plates the vendor shipped with a caption baked in. */
   s5leech:{art:'shield_leech',hp:38,w:70,h:66,score:1460},s5station:{art:'twin_station',hp:120,w:112,h:78,score:3600}
 };
 const S5_PROJECTILE_HIT={s5fracture:[12,28],s5split:[22,22],s5prism:[18,26],s5null:[9,34],s5missile:[16,34],s5chaos:[18,26],s5halo:[48,48]};
@@ -40643,9 +40644,6 @@ function s5SpaceTick(e,dt){
     if(!e._s5Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){e._fcd=rnd(2.6,3.2)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,0);for(let i=0;i<8;i++){if(i===2||i===6)continue;fire(p,i*TAU/8+e._s5t*.2,2.35,'s5chaos',{silent:i>0});}s5Muzzle(e,0,0,.95,.17);},.82,.43);}
   }else if(K==='s5repair'){
     if(e.y<VH*.18)e.y+=62*dt;else{let ally=null,best=1e9;for(const q of enemies){if(q===e||q.dead||!q._s5space)continue;const d=Math.hypot(q.x-e.x,q.y-e.y);if(d<best){best=d;ally=q;}}if(ally){e.x+=(ally.x-e.x)*dt*.7;e.y+=(ally.y-e.y-55)*dt*.7;e._heal=(e._heal||0)-dt;if(e._heal<=0&&best<150){ally.hp=Math.min(ally._maxhp||ally.maxhp||ally.hp,ally.hp+EHP(3));e._heal=.8;e._repairGlow=.25;}}else e.y+=28*dt;}e._repairGlow=Math.max(0,(e._repairGlow||0)-dt);
-  }else if(K==='s5salvage'){
-    if(e.y<VH*.23)e.y+=38*dt;else{if(e._dir==null)e._dir=1;e.x+=e._dir*30*dt;if(e.x<85||e.x>W-85)e._dir*=-1;}
-    if(!e._s5Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.1,2.8)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,.38);for(const o of [-.34,-.17,0,.17,.34])fire(p,Math.PI/2+o,2.4,'s5prism',{silent:o>-.34});s5Muzzle(e,0,.38,1,.18);},.88,.48);}
   }else if(K==='s5leech'){
     e.y+=60*dt;e.x+=clamp(targetShip(e.x,e.y).x-e.x,-1,1)*38*dt;e.spin=Math.sin(e._s5t*1.5)*.18;
     if(!e._s5Act&&(e._fcd=(e._fcd==null?.7:e._fcd)-dt)<=0){e._fcd=rnd(1.7,2.2)/DIFF.eFire;queue(()=>{const p=s5Hardpoint(e,0,.34),a=aim(p);fire(p,a,2.25,'s5split',{});s5Muzzle(e,0,.34,.78,.14);},.62,.30);}
@@ -40835,7 +40833,9 @@ const S9VOID={
    tank. we cant have any turned enemies like this." Its waves now field s9warptank. */
   s9comet:{art:'comet_skimmer',hp:28,w:70,h:62,score:1060},s9gunship:{art:'dimensional_gunship',hp:62,w:76,h:82,score:1920},
   s9interceptor:{art:'galaxy_interceptor',hp:30,w:62,h:76,score:1140},s9gatecarrier:{art:'gate_carrier',hp:70,w:84,h:76,score:2180},
-  s9gateturret:{art:'gate_turret',hp:42,w:70,h:70,score:1480},s9gravity:{art:'gravity_artillery',hp:60,w:82,h:72,score:2020},
+  s9gateturret:{art:'gate_turret',hp:42,w:70,h:70,score:1480},/* ⚠ s9gravity/'gravity_artillery' REMOVED 0904i - Mike: "delete these 2 enemies. no good."
+   Its three waves field s9prism, s9prism and s9gatecarrier. NOTE s5gravity (gravity_orb) is a
+   DIFFERENT unit on stage 5 and stays - only the stage-9 artillery goes. */
   s9prism:{art:'hyperspace_prism',hp:66,w:78,h:78,score:2250},s9warptank:{art:'mini_warp_tank',hp:48,w:72,h:66,score:1640},
   s9ring:{art:'ring_drone',hp:32,w:64,h:64,score:1200},s9singularity:{art:'singularity_mine',hp:46,w:70,h:70,score:1580}
 };
@@ -40872,9 +40872,6 @@ function s9VoidTick(e,dt){
   }else if(K==='s9gateturret'){
     if(e.y<VH*.25)e.y+=58*dt;else e.y=VH*.25+Math.sin(e._s9vt)*4;e.spin+=1.2*dt;
     if(!e._s9Act&&(e._fcd=(e._fcd==null?.68:e._fcd)-dt)<=0){e._fcd=rnd(1.45,1.8)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,0),base=e._s9vt*.8;for(let i=0;i<6;i++)fire(p,base+i*TAU/6,3.15,'s9warp',{silent:i>0});s9vMuzzle(e,0,0,.92,.14);},.58,.27);}
-  }else if(K==='s9gravity'){
-    if(e.y<VH*.22)e.y+=42*dt;else{if(e._dir==null)e._dir=1;e.x+=e._dir*35*dt;if(e.x<90||e.x>W-90)e._dir*=-1;}
-    if(!e._s9Act&&(e._fcd=(e._fcd==null?1.1:e._fcd)-dt)<=0){e._fcd=rnd(2.1,2.6)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.36),a=aim(p);for(const o of [-.18,0,.18])fire(p,a+o,1.55,'s9comet',{silent:o>-.18,accel:1.3,max:6.1});s9vMuzzle(e,0,.36,1,.18);},.82,.44);}
   }else if(K==='s9prism'){
     if(e.y<VH*.20)e.y+=44*dt;else e.y=VH*.20+Math.sin(e._s9vt*.9)*5;e.spin+=.75*dt;
     if(!e._s9Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.0,2.4)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,0);if((e._pr=(e._pr||0)+1)%3===0)fire(p,Math.PI/2,1.5,'s9lattice',{accel:.38,max:3.0});else{const n=12,base=e._s9vt*.33,st=TAU/n,gap=Math.round((aim(p)-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+i*st,2.7,'s9warp',{silent:i>0});}}s9vMuzzle(e,0,0,1.05,.18);},.82,.43);}
