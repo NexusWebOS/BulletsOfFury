@@ -1629,6 +1629,27 @@ const ASSETS=(function(){
        58 glyphs, every letter and digit, including the S stage 5 lacks. That borrow already
        existed and already listed stage 2 first; removing v3 simply promotes it. Verified by
        comparing every card face against the union of all of them. ============================================================ */
+    /* ============================================================
+       CF_BOFStageFonts-Complete-Vol.2 (Mike, 0904: "heres the actual stage fonts and pilot select
+       font")
+
+       TEN authored bitmap families - one per stage 1-9 plus a FINAL LEVEL face - each themed to
+       its stage: jungle temple stone, basalt with lava cracks, glacier ice, riveted gunmetal,
+       fractured amethyst, aviation enamel, corroded sewer metal, alien bone with crimson
+       fissures, violet warp glass, and ivory/old-gold for the finale.
+
+       This is the first face set that covers STAGES 6-9. The five card alphabets stop at stage 5
+       and everything above it borrowed stage 1's grey stone, which is why GET READY on the storm,
+       sewer, death and void stages never looked like those stages.
+
+       ⚠ THE PACK HAS NO % ( ) OR +. Its 46 glyphs are A-Z 0-9 ! & ' , - . / : ; ? - and the stats
+       screen draws a percent sign. stage 2's CARD alphabet stays loaded as the donor and
+       stageGlyph borrows from it, which is the same mechanism that covers stage 5's missing S.
+       The build script REFUSES to import if the donor cannot supply them.
+       ============================================================ */
+    A.stageFontV4={};
+    if(window.BOF && BOF.stageFontV4){ for(const _k in BOF.stageFontV4){ const _f4=BOF.stageFontV4[_k];
+      A.stageFontV4[_k]=_lazySheet({frames:_f4.frames, font:_f4.font}, _f4.atlas); } }
     if(A.img){ A.img.onload=function(){A.ready=true;}; A.img.onerror=function(){A.ready=false;}; }
   }
   function _rdy(im){ return im && im.complete && im.naturalWidth>0; }
@@ -23322,6 +23343,11 @@ function warmStageSheets(n){
        CHOOSE YOUR PILOT reads CHOO E YOUR PILOT again. Caught exactly that in the probe. Stage 2
        carries all 58 glyphs and is now warmed on every stage entry alongside stage 1. */
     if(A.stageArt && A.stageArt['2']) void A.stageArt['2'].img;
+    /* the stage's own authored face, and the final-level face the pilot screen draws with */
+    if(A.stageFontV4){
+      if(A.stageFontV4[k]) void A.stageFontV4[k].img;
+      if(A.stageFontV4['final']) void A.stageFontV4['final'].img;
+    }
   }catch(e){}
 }
 /* ============================================================
@@ -49505,13 +49531,19 @@ function pilotFont(idx){
   const k=String(Math.max(1,Math.min(9,idx|0)));
   /* the pilot screen runs BEFORE any stage entry, so warmStageSheets has not fired yet - touch the
      donor here or the first frames of this screen borrow nothing. See warmStageSheets. */
-  try{ if(ASSETS.stageArt && ASSETS.stageArt['2']) void ASSETS.stageArt['2'].img; }catch(_pf){}
-  /* ⚠ THE CARD ALPHABET, AND A MISSING GLYPH IS BORROWED RATHER THAN DROPPED (drop 0904u).
-     The v3 faces that used to sit in front of this were deleted at Mike's instruction. The card
-     alphabets are still incomplete - stage 5 has no S, stages 6-9 have no card face at all and
-     fall through to stage 1's - so correctness now rests on stageGlyph's borrow, which reaches
-     stage 2's 58-glyph face first. That is the only complete alphabet in the game, so no letter
-     or digit can go missing; what a borrowed glyph costs is style, not meaning. */
+  try{ if(ASSETS.stageArt && ASSETS.stageArt['2']) void ASSETS.stageArt['2'].img;
+       if(ASSETS.stageFontV4 && ASSETS.stageFontV4['final']) void ASSETS.stageFontV4['final'].img; }catch(_pf){}
+  /* ⚠ THE PILOT SCREEN USES THE FINAL-LEVEL FACE (drop 0904v). Mike, handing over the pack:
+     "heres the actual stage fonts and pilot select font" - ten families, nine of them explicitly
+     per-stage, and one FINAL LEVEL face in ivory and old gold that belongs to no stage. The pilot
+     select screen belongs to no stage either: it is chosen before a run exists, so keying it to
+     the pilot's home stage made the heading change typeface every time the player scrolled.
+     One face, and it is the one in the pack with nowhere else to go.
+
+     The card alphabet stays underneath for the frames before the sheet decodes, and a glyph
+     absent from the pack (% ( ) +) is still borrowed from stage 2 by stageGlyph. */
+  const A4=ASSETS.stageFontV4 && ASSETS.stageFontV4['final'];
+  if(A4 && (typeof artReady!=='function' || artReady(A4))) return A4;
   return (ASSETS.stageArt && (ASSETS.stageArt[k] || ASSETS.stageArt['1'])) || null;
 }
 function startPilotRot(dir){ if(pilotRot>0)return; pilotFrom=pilotIndex; pilotIndex=(pilotIndex+dir+PILOTS.length)%PILOTS.length; pilotRot=1; Audio.SFX.blip(); }
@@ -50854,7 +50886,16 @@ function curArt(){
   return A[String(run.stage)] || A['1'] || null;
 }
 function curFontArt(){
-  /* Stage-labelled text comes only from the authored stage-card sheet. */
+  /* ⚠ THE AUTHORED PER-STAGE FACE FIRST (drop 0904v). Mike supplied CF_BOFStageFonts Vol.2, which
+     is the first set covering ALL NINE stages - the five card alphabets stop at stage 5, so
+     GET READY / 3-2-1 / GO on stages 6-9 had been drawing in stage 1's grey jungle stone.
+     The card sheet stays as the fallback for the frames before the face has decoded, because
+     stageText draws NOTHING when its sheet has not landed (the 0810o trap). */
+  const A=(typeof ASSETS!=='undefined')?ASSETS:null;
+  if(A && A.stageFontV4){
+    const f=A.stageFontV4[String((typeof run!=='undefined'&&run)?run.stage:1)];
+    if(f && (typeof artReady!=='function' || artReady(f))) return f;
+  }
   return curArt();
 }
 /* Resolve one glyph from the authored stage sheet, borrowing only from stage 1 when a later card
@@ -51248,8 +51289,11 @@ function stageGlyph(art, ch){
   if(nm && art.frames && art.frames[nm]) return {art:art, f:art.frames[nm]};
   const A=(typeof ASSETS!=='undefined')?ASSETS:null; if(!A) return null;
   const alt=[];
-  /* stage 2 first: 58 glyphs, the only complete card alphabet, and the only one carrying the S
-     that stage 5 is missing. See the pilotFont note - this borrow is now what keeps text whole. */
+  /* the authored Vol.2 faces first - a sibling STAGE face is a closer match in weight and finish
+     than a card alphabet, so a borrowed glyph reads as the same lettering rather than a patch */
+  if(A.stageFontV4) for(const k4 in A.stageFontV4) alt.push(A.stageFontV4[k4]);
+  /* then stage 2: 58 glyphs, the only complete card alphabet, the only face carrying the S that
+     stage 5 lacks AND the % ( ) + that the Vol.2 pack does not include at all. */
   if(A.stageArt){ alt.push(A.stageArt['2']); alt.push(A.stageArt['1']);
     for(const k in A.stageArt) alt.push(A.stageArt[k]); }
   for(const b of alt){

@@ -85,6 +85,23 @@ level 3+, sparks kept as decoration over a real frame.
 
 ---
 
+## DONE (drop 0904v) — fonts
+
+**9. Pilot select fonts + the stage fonts** — Mike supplied `CF_BOFStageFonts-Complete-Vol.2`:
+ten authored bitmap families, 46 glyphs each, 96x96 cells, hard alpha. Nine per-stage faces plus a
+FINAL LEVEL face.
+This is the first set covering **stages 6-9** — the five card alphabets stop at stage 5, so GET
+READY / 3-2-1 / GO on the storm, sewer, death and void stages had been drawing in stage 1's grey
+jungle stone. All nine now draw their own.
+The pilot screen takes the FINAL LEVEL face: it belongs to no stage, and the pilot screen belongs
+to no stage either — keying it to the pilot's home stage made the heading change typeface every
+time the player scrolled.
+⚠ The pack has no `%`, `(`, `)` or `+`, and the stats screen draws a percent sign. stage 2's card
+alphabet stays loaded as the donor and stageGlyph borrows from it. The build script REFUSES to
+import if the donor cannot supply them.
+
+---
+
 ## QUEUED
 
 ### Art-led (needs SpriteCook)
