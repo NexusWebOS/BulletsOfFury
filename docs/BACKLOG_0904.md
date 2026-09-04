@@ -62,6 +62,29 @@ stepped evenly across the width with jitter inside each step now.
 
 ---
 
+## DONE (drop 0904t)
+
+**16. Stage 6 scroll + moon** — *"do not ever stop scrolling, do not place the moon there either."*
+The SKY never stopped (measured: 260px/s in play, 300 during a boss) — the PARALLAX layer rode
+`mapScroll`, which the engine deliberately freezes for a boss so the level stops advancing. Half the
+background travelled, half stood still. On stage 6 it rides the sky's own clock now.
+The moon was `bg6_moon_full` blitted FULL-SCREEN at 0.9 alpha across the night window — a
+moon-sized wash over the playfield, not a body in the sky. Removed; the night tint is carried by
+the master's own palette journey, so the opening is still night.
+
+**10. Maverick's laser** — *"only targets one enemy instead of homing to whats in front of it."*
+It re-acquires every frame, so it was never locking on — it picked by straight Euclidean distance,
+so an enemy off to the SIDE beat one dead ahead the moment it was a few pixels closer. Lateral
+offset now dominates the score 3x against forward distance 0.6x, and anything more than half a
+screen off-axis is rejected outright.
+
+**15. Volley missile impact** — *"bad, need correction."* It drew eighteen coloured dots and a faint
+screen tint, with no authored frame anywhere, so a warhead landed weaker than a bullet. Now calls
+the engine's own `nxp_clus` explosion (8 authored frames) with a second `nxp_dense` burst at
+level 3+, sparks kept as decoration over a real frame.
+
+---
+
 ## QUEUED
 
 ### Art-led (needs SpriteCook)
@@ -93,8 +116,19 @@ made no announcement.
 **14.** Still has tanks and weird enemies that do not belong.
 
 ### UI
-**9. Pilot select fonts** — delete them, use the current stage fonts. (Same complaint as the stats
-screen in 0903; that one was fixed, this one was missed.)
+**9. Pilot select fonts** — delete them, use the current stage fonts.
+⚠ NEEDS A DECISION FROM MIKE BEFORE IT IS TOUCHED. Investigated and the obvious answer is wrong:
+  - the card art (`pcard_<pilot>`) carries NO baked text — the panel is clean;
+  - `drawPilot` already routes its own strings through `msgText`, with raw canvas text only as a
+    fallback when the bitmap face has not loaded;
+  - the card body already uses BOFmil, which a previous drop set deliberately after Mike asked for
+    "our dialogue font" — its own comment says so;
+  - and the STAGE screens use the same family: `'bold Npx "BOFmil", monospace'`.
+  So "use the actual stage fonts" cannot mean the typeface — they already match. What differs in
+  the screenshot is the FACE: the headers ("CHOOSE YOUR PILOT!", the pilot name) render through the
+  bitmap `fury-dialogue-font`, while the card interior and the footer render as thin canvas BOFmil.
+  Most likely Mike wants the card/footer on the bitmap face too. Worth one word from him rather
+  than restyling the whole screen on a guess.
 
 ---
 

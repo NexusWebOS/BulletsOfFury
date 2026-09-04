@@ -4620,7 +4620,13 @@ function drawLevelMaster(dt){
       bg6LoopDraw(img,_mk,_loopScroll,drawW,winH,_winTop);
     else _loopDraw(img, _loopScroll);
     if(typeof drawLiquidFalls==='function') drawLiquidFalls(0);
-    if(cfg.par && XART.rdy(cfg.par)) _loopDraw(XART.get(cfg.par), mapScroll*1.18);
+    /* ⚠ THE SKY KEPT MOVING AND THE PARALLAX FROZE (drop 0904t). Mike: "do not ever stop
+       scrolling." Measured on stage 6: the sky runs 260px/s in play, 300 during a boss, and never
+       stops - but this layer rode mapScroll, which the engine deliberately freezes for a boss or
+       miniboss so the LEVEL stops advancing. Half the background travelled and half stood still,
+       which is what reads as the scroll stopping. On stage 6 it now rides the sky's own clock. */
+    if(cfg.par && XART.rdy(cfg.par))
+      _loopDraw(XART.get(cfg.par), (run.stage===6 ? _loopScroll*0.62 : mapScroll*1.18));
     return true;
   }
   const scrollFrac=range>0?(mapScroll/range):0;    // 0..1 progress through the level
@@ -19745,11 +19751,31 @@ const MAV_LASER_TIERS=Object.freeze({
 });
 function maverickLaserTier(lv){ return MAV_LASER_TIERS[clamp(lv||1,1,5)]; }
 function maverickLaserTarget(b){
+  /* ============================================================
+     ⚠ IT CHOSE THE NEAREST THING, NOT THE THING IN FRONT (drop 0904t)
+
+     Mike: "Maverick's regular laser weapon only targets one enemy instead of homing to whats in
+     front of it."
+
+     The lance re-acquires every frame, so it was never locking on - it was picking by straight
+     Euclidean distance, which means an enemy off to the SIDE beats one directly ahead the moment
+     it is a few pixels closer. Flying up a lane with a target dead ahead, the lance would swing
+     sideways at something in the periphery.
+
+     Lateral offset now dominates the score at 3x against forward distance at 0.6x, so "ahead"
+     wins unless the off-axis target is dramatically nearer. Targets more than half a screen off
+     the lance's own axis are rejected outright - a lance should not turn ninety degrees.
+     ============================================================ */
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  const MAX_OFF=W*0.42;
   let out=null, best=Infinity;
   const consider=(unit,x,y)=>{
     if(!unit || unit.dead || y>b.y+72) return;
-    const d=Math.hypot(x-b.x,y-b.y);
-    if(d<best){ best=d; out={unit:unit,x:x,y:y}; }
+    const off=Math.abs(x-b.x);
+    if(off>MAX_OFF) return;                       /* never turn across the screen */
+    const ahead=Math.max(0, b.y-y);
+    const score=off*3.0 + ahead*0.6;
+    if(score<best){ best=score; out={unit:unit,x:x,y:y}; }
   };
   for(const e of enemies) consider(e,e.x,e.y);
   if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.enter)
@@ -20117,8 +20143,27 @@ function spaceImpact(b,family,lv,size){
   b.kind='spaceImpact';b.family=family;b.lv=lv||1;b.t=0;b.life=family==='shadow'?0.52:(family==='volley'?0.44:0.28);
   b.vx=0;b.vy=0;b.w=b.h=size||42;
   if(family==='volley'){
+    /* ============================================================
+       ⚠ THE VOLLEY IMPACT WAS A PARTICLE PUFF, NOT AN EXPLOSION (drop 0904t)
+
+       Mike: "voley missile impact fx's are bad, need correction."
+
+       It drew EIGHTEEN coloured dots and a faint screen tint - no authored frame anywhere - so a
+       missile landing looked weaker than an ordinary bullet hit. The engine already owns the
+       explosion families every other blast in the game uses (the nxp_ set, the same ones BOSS_COMBO
+       draws from), and the fix is to actually call them rather than to tune the dots.
+
+       nxp_clus is the clustered burst - the right read for a warhead - and the size rides the
+       missile's level so a level-5 rack lands visibly harder than a level-1. A handful of sparks
+       is kept on top for grit, but they are now decoration over a real frame rather than the
+       whole effect. */
     b.w=b.h=Math.max(b.w,52+(b.lv||1)*4);shake=Math.max(shake,4+(b.lv||1)*.45);flashScreen=Math.max(flashScreen,.055);
-    for(let i=0;i<18;i++){const a=rnd(0,TAU),sp=rnd(.8,4.2);particles.push({x:b.x,y:b.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:rnd(.24,.58),t:0,r:rnd(1.2,3.4),color:i%3===0?'#ffffff':(i%2?'#68e8ff':'#a64cff')});}
+    if(typeof explode==='function'){
+      const _sz=30+(b.lv||1)*7;
+      explode(b.x,b.y,_sz,'red',null,'nxp_clus',null);
+      if((b.lv||1)>=3) explode(b.x+rnd(-9,9),b.y+rnd(-9,9),_sz*0.62,'red',null,'nxp_dense',null);
+    }
+    for(let i=0;i<8;i++){const a=rnd(0,TAU),sp=rnd(.8,3.4);particles.push({x:b.x,y:b.y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:rnd(.20,.46),t:0,r:rnd(1.0,2.6),color:i%3===0?'#ffffff':(i%2?'#68e8ff':'#ffb04a')});}
   }
   try{
     const S=Audio&&Audio.SFX;if(!S)return;
@@ -52498,9 +52543,12 @@ function bg6Draw(dt){
      The old bg6_star_cluster layer was a group of giant cross-shaped glints over the countdown
      and gameplay. It was an effect overlay, not part of the approved sky, so it stays removed. */
   const night=clamp((0.47-p)/0.16, 0, 1);
-  if(night>0.02){
-    if(_bg6Moon) blit(_bg6Moon, 0.9*night);
-  }
+  /* ⚠ NO MOON ON STAGE 6 (drop 0904t). Mike: "do not place the moon there either." bg6_moon_full
+     was blitted FULL-SCREEN across the night window at 0.9 alpha - not a body hanging in the sky
+     but a moon-sized wash over the whole playfield during the opening. The night tint is carried
+     by the master's own palette journey (bg6Phase), so removing it costs the stage nothing: the
+     opening is still night, it just has no moon in it. _bg6Moon stays resolved but unused, so
+     bringing it back as a small parallax body later is one line. */
 
   /* ---- rain arrives after the night opening, peaks at the darkest palette, then clears for dusk ---- */
   const wet=bg6StormStrength();
