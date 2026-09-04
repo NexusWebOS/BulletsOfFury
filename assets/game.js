@@ -5947,6 +5947,29 @@ const Audio = (()=>{
     g.gain.exponentialRampToValueAtTime(0.0001, now()+dur);
     o.connect(g); g.connect(dest||sfxGain); o.start(); o.stop(now()+dur+0.02);
   }
+  /* a distortion curve, built once. WaveShaper needs a lookup table; k is the drive. */
+  let _distCurve=null, _distK=-1;
+  function distCurve(k){
+    if(_distK===k && _distCurve) return _distCurve;
+    const n=1024, c=new Float32Array(n), deg=Math.PI/180;
+    for(let i=0;i<n;i++){ const x=i*2/n-1; c[i]=(3+k)*x*20*deg/(Math.PI+k*Math.abs(x)); }
+    _distCurve=c; _distK=k; return c;
+  }
+  /* tone(), but routed through a waveshaper - same oscillator recipe, dirtied */
+  function toneDist(freq,dur,type='square',vol=0.3,bend=0,drive=25,dest){
+    if(!actx||muted) return;
+    let ws;
+    try{ ws=actx.createWaveShaper(); ws.curve=distCurve(drive); ws.oversample='2x'; }
+    catch(e){ return tone(freq,dur,type,vol,bend,dest); }   /* no shaper: the clean cue still fires */
+    const o=actx.createOscillator(), g=actx.createGain();
+    o.type=type; o.frequency.setValueAtTime(freq, now());
+    if(bend) o.frequency.exponentialRampToValueAtTime(Math.max(20,freq+bend), now()+dur);
+    g.gain.setValueAtTime(0.0001, now());
+    g.gain.exponentialRampToValueAtTime(vol, now()+0.008);
+    g.gain.exponentialRampToValueAtTime(0.0001, now()+dur);
+    o.connect(ws); ws.connect(g); g.connect(dest||sfxGain);
+    o.start(); o.stop(now()+dur+0.02);
+  }
   function noise(dur,vol=0.4,filter=1200,sweep=-800,dest){
     if(!actx||muted) return;
     const src=actx.createBufferSource(); src.buffer=noiseBuf;
@@ -6037,6 +6060,26 @@ const Audio = (()=>{
       noise(0.055,0.055,3800,-2200); tone(92,0.055,'triangle',0.035,-30);
     },
     hit(){ tone(1400,0.03,'square',0.06,-600); },
+    /* ============================================================
+       SHIELD IMPACT = THE IMPACT CUE, DISTORTED AND PITCH-SHIFTED (drop 0904q)
+
+       Mike: "shield impact noises should be the same as our impact noises, but distort and pitch
+       shift it please."
+
+       So it is literally hit()'s own recipe - 1400Hz square, 30ms, falling bend - pitched DOWN a
+       fifth and pushed through a waveshaper. Down rather than up because a shield ABSORBS: the
+       heavier pitch reads as mass taking the hit, where the existing blocked-shot cue pitches UP
+       to read as something refusing it. The distortion is what makes it land as energy rather
+       than metal, and it is the same waveform underneath so the two cues stay related by ear.
+       ============================================================ */
+    shieldImpact(){
+      toneDist(1400*0.62, 0.045, 'square', 0.055, -600*0.62, 26);
+      noise(0.030, 0.022, 2200, -1400);       /* a little grit on the front of it */
+    },
+    shieldImpactHeavy(){
+      toneDist(1400*0.48, 0.070, 'square', 0.075, -600*0.48, 42);
+      noise(0.045, 0.032, 1700, -1100);
+    },
     /* THE BLOCKED-SHOT SOUND (drop 0807b). Mike: "make a different sound that sounds like it
        blocked the shot, like a pitched version of one of our sounds."
 
@@ -7203,8 +7246,10 @@ function enemyShieldIntercept(e,dmg,b){
   s.sinceHit=0; s.hitT=0.18; s.animT=0;
   if(s.impactCd<=0){ enemyShieldImpact(e,b,F,reflected); s.impactCd=0.055; }
   if(reflected){
-    if(Audio.SFX.projectileRicochet) Audio.SFX.projectileRicochet(); else if(Audio.SFX.shieldHitLight) Audio.SFX.shieldHitLight();
-  } else if(Audio.SFX.shieldHitLight) Audio.SFX.shieldHitLight();
+    if(Audio.SFX.projectileRicochet) Audio.SFX.projectileRicochet();
+    else if(Audio.SFX.shieldImpact) Audio.SFX.shieldImpact();
+  } else if(Audio.SFX.shieldImpact) Audio.SFX.shieldImpact();
+  else if(Audio.SFX.shieldHitLight) Audio.SFX.shieldHitLight();
   if(s.energy<=0){
     s.phase='broken'; s.breakT=s.breakDelay; s.animT=0; s.hitT=0;
     if(Audio.SFX.shieldBreakCombat) Audio.SFX.shieldBreakCombat();
@@ -12239,6 +12284,42 @@ const _bossMzLookup=(function(){
   for(const fam in BOSS_MUZZLE_FAM) for(const k of BOSS_MUZZLE_FAM[fam]) m[k]='bpfx_muzzle_'+fam;
   return m;
 })();
+/* ============================================================
+   EVERY BOSS ATTACK MAKES A NOISE (drop 0904q)
+
+   Mike: "wire up sounds for allmini bosses and boss attacks immediately."
+
+   ⚠ 22 OF 24 BOSS PATTERNS FIRED IN SILENCE. Checked the central path first this time, having
+   been wrong about exactly this on muzzles: shipBossActionTick plays only bossPhase (a phase
+   CHANGE cue) and _shipShot makes no sound at all, so the release itself was silent for every
+   pattern except spawnpods and deathlattice, which happened to call their own.
+
+   One site covers all of them, for the same reason the muzzle fix went there: the release is
+   already a single choke point, and per-pattern edits are how the next new pattern gets missed.
+   The cue is chosen by the boss's ORDNANCE family, so it agrees with the muzzle flash the same
+   call raises - a missile bay thumps, a laser cracks, a void lance warbles, kinetic rattles.
+   Every name is probed before use; an absent sample falls through to the generic enemy shot
+   rather than throwing.
+   ============================================================ */
+const BOSS_FIRE_SFX={
+  missile:['missile','enemyBossCannon','enemyShoot'],
+  laser:  ['enemyHeavyLaser','enemyBossCannon','enemyShoot'],
+  void:   ['enemyElectricBolt','enemyHeavyLaser','enemyShoot'],
+  kinetic:['enemyMachineGunHeavy','enemyMachineGunLight','enemyShoot']
+};
+let _bossFireAt=0;
+function bossAttackSfx(b){
+  const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null; if(!S) return false;
+  /* a boss volley is many rounds on one beat; without a gate the cue stacks into a wall of noise */
+  const n=(typeof performance!=='undefined'?performance.now():Date.now());
+  if(n-_bossFireAt < 90) return false;
+  _bossFireAt=n;
+  const famKey=(b&&b._ship&&_bossMzLookup[b._ship])||'';
+  const fam=famKey.replace('bpfx_muzzle_','')||'kinetic';
+  const list=BOSS_FIRE_SFX[fam]||BOSS_FIRE_SFX.kinetic;
+  for(const nm of list){ if(typeof S[nm]==='function'){ try{ S[nm](); }catch(e){} return true; } }
+  return false;
+}
 function bossMuzzleFam(b){
   const k=b&&b._ship?_bossMzLookup[b._ship]:null;
   /* only claim a family the art actually shipped - otherwise fall back to the engine default */
@@ -12393,6 +12474,8 @@ function shipBossQueueAttack(b){
        releases, so no beam tell is ever anchored to the central magma furnace. */
     shipBossMuzzleStart(b,['L','R'],{life:A.tell,n:6,fam:bossMuzzleFam(b)});
   } else shipBossMuzzleStart(b,shipBossPatternSlots(pat,(b._sbStep|0)+1),{life:A.tell,n:6,fam:bossMuzzleFam(b)});
+  /* the flash and the noise are raised together, so they can never drift apart */
+  bossAttackSfx(b);
   if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossWeaponCharge) Audio.SFX.bossWeaponCharge();
   return true;
 }
@@ -14249,6 +14332,8 @@ function infernoReaverRollDraw(b){
    ============================================================ */
 const RAP_WING_SHARE=0.28;      /* each wing's pool, as a share of the hull */
 const RAP_MAN={roll:{dur:0.82,strafe:210}, somersault:{dur:0.94,dive:120}};
+/* flip to true once the Raptor has an authored roll/somersault reel - see stage6MiniTick */
+const RAP_AEROBATICS=false;
 function stage6MiniInit(b){
   b._s6mini={t:0,mode:'tracer',shot:0,event:0,round:0,charge:0,homeY:b.ty||132,manCd:2.4};
   const pool=Math.max(1,Math.round((b.maxhp||b.hp||1)*RAP_WING_SHARE));
@@ -14351,10 +14436,21 @@ function stage6MiniTick(b,dt){
   } else {
     b.y+=(S.homeY-b.y)*Math.min(1,dt*5.5);b.x=W*.5+Math.sin((S.t+S.round*1.7)*1.08)*Math.max(70,W*.22);
     /* a true raptor does not hold a lane: it rolls out of one attack and somersaults into the next */
-    S.manCd-=dt;
-    if(S.manCd<=0){
-      S.manCd=rnd(2.6,4.2)/rapAggr(b);
-      blacksteelManoeuvre(b, (Math.random()<0.55)?'roll':'somersault');
+    /* ⚠ AEROBATICS ARE OFF UNTIL THE FRAMES EXIST (drop 0904q). Mike: "stage 6 mini boss, do NOT
+       somersault and barrel roll unti lyou get the fraems you need to do so."
+       0904k drove the roll by running scale.x through a cosine and the somersault through
+       scale.y - which is a real manoeuvre for a sprite that has ROLL FRAMES, and a squash for one
+       that does not. The Raptor has four plates, all of them level. Squashing a single top-down
+       plate to zero width does not read as an aircraft presenting its edge; it reads as the
+       sprite glitching. The machinery is kept intact and tested - blacksteelManoeuvre and
+       blacksteelManTick still work and the probe still covers them - so turning this back on when
+       a roll reel is authored is one flag, not a rewrite. */
+    if(RAP_AEROBATICS){
+      S.manCd-=dt;
+      if(S.manCd<=0){
+        S.manCd=rnd(2.6,4.2)/rapAggr(b);
+        blacksteelManoeuvre(b, (Math.random()<0.55)?'roll':'somersault');
+      }
     }
   }
   if(S.mode==='tracer'){
