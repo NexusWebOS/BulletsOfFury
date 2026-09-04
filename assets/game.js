@@ -389,7 +389,8 @@ function outboundStart(fromStage){
                    3 -> 4  ice -> sky -> town   built on the laptop 0810a, ported 0810b
                    4 -> 5  the boss chase, still blocked on the stage-4 boss
                  */
-              via:(fromStage===1 || fromStage===2 || fromStage===3 || ((typeof DBG!=='undefined' && DBG.transitions)))
+              /* 4 -> 5 joins the built list as of 0903s - see outboundIsSkySpaceRoute */
+              via:(fromStage===1 || fromStage===2 || fromStage===3 || fromStage===4 || ((typeof DBG!=='undefined' && DBG.transitions)))
                     && typeof transVia==='function' ? transVia(fromStage) : []};
   return outbound;
 }
@@ -484,6 +485,42 @@ const S34_TOWN_SCALE0 = 0.34;        // the town enters at about a third size an
 function outboundIsSkyTownRoute(o){
   return o && o.from===3 && o.via && o.via.indexOf('ice')>=0 && o.via.indexOf('sky')>=0;
 }
+/* ============================================================
+   4 -> 5: THE SKY NEVER STOPS, AND SPACE ARRIVES INSIDE THE SWIRL (drop 0903s)
+
+   Mike: "we should be moving in the sky, the scene never stops vertically scrolling, then when
+   it starts to swirl us, you attach the space background as a tile and make it loop as the
+   sequence completes and thats how we should be doing it. not stopping in sky, finishing the
+   phase, then fading to space. that wouldnt even make any sense at all."
+
+   He is right that it made no sense, and the reason is that THIS LEG DID NOT EXIST. `via` only
+   populated for fromStage 1, 2 and 3; TRANS[4] has read 'sky','space' since the table was
+   re-keyed in 0810a and nothing ever consumed it, so stage 4 fell through to the generic
+   climb/`con` branch in outboundDraw - which holds the player, runs one plate and cuts. This
+   builds the leg his description specifies.
+
+   THE ONE RULE: `o.scroll` ADVANCES ON EVERY PHASE, and it accelerates. No phase holds it, there
+   is no "arrive and settle" beat, and there is no fade BETWEEN backdrops - the space plate is
+   composited OVER the sky at a rising alpha while both scroll, so the change of place happens
+   inside the motion instead of replacing it. The speed is one ramp read from `s45Speed(o)`
+   rather than a per-phase constant, because a per-phase constant is how a scroll ends up
+   stepping at a boundary.
+
+   THE SWIRL owns the handover. `warpFxDraw(mix, phase, full)` is the authored vortex already
+   used by the stage-9 warp; mix ramps 0 -> 1 across `swirl`, and the space tile's alpha is
+   driven by THE SAME curve, so space becomes visible exactly as the distortion takes hold.
+   `full` stays false - the eight-gate / Stage-9 exit reserves the full-screen form.
+   ============================================================ */
+function outboundIsSkySpaceRoute(o){
+  return o && o.from===4 && o.via && o.via.indexOf('sky')>=0 && o.via.indexOf('space')>=0;
+}
+const L45_CLIMB=1.5, L45_SKY=2.6, L45_SWIRL=3.0, L45_SPACE=2.2;
+/* px/sec, ramping across the whole leg. The stage's own scroll is ~40px/s, so this leaves the
+   level at its established speed and builds to a genuine departure rather than snapping to one. */
+function s45Speed(o){
+  const total=L45_CLIMB+L45_SKY+L45_SWIRL+L45_SPACE;
+  return 240 + 980*clamp((o._elapsed||0)/total,0,1);
+}
 function outboundUpdate(dt){
   if(!outbound) return null;
   const o=outbound; o.t+=dt;
@@ -556,6 +593,34 @@ function outboundUpdate(dt){
     return null;
   }
   /* ---- the 3 -> 4 ice -> sky -> town route owns its own timeline ---- */
+  if(outboundIsSkySpaceRoute(o)){
+    /* ONE scroll advance for the whole leg, before any phase logic, so no branch can forget it
+       and no boundary can step it. This is "never stops vertically scrolling" expressed as code
+       rather than as four copies of the same line. */
+    o._elapsed=(o._elapsed||0)+dt;
+    o.scroll += s45Speed(o)*dt;
+    if(o.phase==='climb'){
+      if(o.t>=L45_CLIMB){ o.phase='sky'; o.t=0; }          // the highway still running underneath
+    } else if(o.phase==='sky'){
+      o.sky=clamp(o.t/0.9,0,1);                            // the sky rises over the stage plate
+      if(o.t>=L45_SKY){ o.phase='swirl'; o.t=0; }
+    } else if(o.phase==='swirl'){
+      o.sky=1;
+      /* ONE curve drives the vortex AND the space tile's opacity: space arrives BECAUSE the
+         swirl is taking hold, not after it finishes. */
+      const q=clamp(o.t/L45_SWIRL,0,1);
+      o.swirl=q*q*(3-2*q);
+      o.space=o.swirl;
+      if(o.t>=L45_SWIRL){ o.phase='space'; o.t=0; }
+    } else if(o.phase==='space'){
+      o.sky=1; o.space=1;
+      /* the vortex eases out while the space tile keeps looping - the sequence completes INTO
+         the level's own backdrop, already moving at the speed the stage continues at */
+      o.swirl=1-clamp(o.t/(L45_SPACE*0.8),0,1);
+      if(o.t>=L45_SPACE) return outboundFinish();
+    }
+    return null;
+  }
   if(outboundIsSkyTownRoute(o)){
     if(o.phase==='climb'){ o.phase='past'; o.t=0; }        // never climbs: the player is held
     if(o.phase==='past'){
@@ -746,6 +811,50 @@ function outboundDrawLavaIce(o){
 }
 /* The 3 -> 4 ice -> sky -> town route, drawn. Ice first, then the sky washing down over it, then
    the town growing up out of it, then the player on top. */
+/* One tiled layer, scrolled off `o.scroll`. Returns whether it drew, so a caller can fall back
+   to a second key without duplicating the tiling maths. */
+function s45Tile(key, scroll, rate, alpha){
+  if(alpha<=0.004 || typeof XART==='undefined' || !XART.rdy(key)) return false;
+  const im=XART.get(key), w=im.naturalWidth, H=im.naturalHeight;
+  const sc=VW/w, dh=H*sc;
+  if(!(dh>0)) return false;
+  ctx.save(); ctx.globalAlpha=clamp(alpha,0,1);
+  let y=((scroll*rate)%dh+dh)%dh - dh;
+  for(; y<VH+dh; y+=dh) ctx.drawImage(im, 0, Math.round(y), VW, Math.ceil(dh));
+  ctx.restore();
+  return true;
+}
+/* Three tiled layers, all off the same scroll. Nothing is cleared to a flat colour mid-leg and
+   nothing holds still. */
+function outboundDrawSkySpace(o){
+  const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
+  const mk=(cfg&&cfg.master)||'bg_stage04_master';
+  const sky=clamp(o.sky||0,0,1), space=clamp(o.space||0,0,1);
+  /* 1. the stage they cleared, still running underneath until the sky is fully over it - the
+     ground does not stop, it is covered. */
+  if(sky<1) s45Tile(mk, o.scroll, 1.0, 1-sky*0.85);
+  /* 2. the sky, slower than the foreground so the climb reads as distance rather than speed.
+
+     ⚠ NOT `nl6sky_stage06_sky_scroll_640x960` OR `nsky6_sky`, WHICH ARE THE SAME ATLAS AND ARE
+     NOT SKY. Both keys resolve to assets/game/atlas/fx_weather_0.png - a 4092x3938 SHEET - and
+     neither carries a cell rect, so XART.get hands back the whole atlas and tiling it stretched
+     a corner of the weather sheet across the screen as a field of blue noise. Rendered it before
+     believing the names, per rule 1; the filmstrip is what caught it.
+
+     `bg_stage06_master` is stage 6's actual authored sky plate, a standalone 680-wide file, so
+     the climb passes through the same sky the sky STAGE uses. */
+  if(sky>0) s45Tile('bg_stage06_master', o.scroll, 0.45, sky);
+  /* 3. stage 5's OWN loop plate, attached during the swirl and left looping. Using the level's
+     real backdrop rather than a stand-in is the point: when the leg ends there is nothing to
+     swap - the player is already looking at stage 5, moving. */
+  if(space>0) s45Tile('bg_stage05_loop', o.scroll, 0.80, space);
+  /* the ship, climbing out of frame during the first beat only */
+  if(o.phase==='climb' && o.py>-80 && typeof drawShipSprite==='function')
+    drawShipSprite(outboundScreenX(o), o.py, 38, '');
+  /* the vortex, over everything, on the same curve as the space tile */
+  if((o.swirl||0)>0.01 && typeof warpFxDraw==='function')
+    warpFxDraw(clamp(o.swirl,0,1)*0.92, o.t*1.6, false);
+}
 function outboundDrawSkyTown(o){
   const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
   const mk=(cfg&&cfg.master)||'nst3_master';       // see the _levelCfg note in outboundDrawLavaIce
@@ -839,6 +948,7 @@ function outboundDraw(){
   if(outboundIsWaterRoute(o)){ outboundDrawWater(o); ctx.restore(); return; }
   if(outboundIsLavaIceRoute(o)){ outboundDrawLavaIce(o); ctx.restore(); return; }
   if(outboundIsSkyTownRoute(o)){ outboundDrawSkyTown(o); ctx.restore(); return; }
+  if(outboundIsSkySpaceRoute(o)){ outboundDrawSkySpace(o); ctx.restore(); return; }
   if(o.phase==='climb'){
     // still over the map they cleared — NOT liquid, NOT terrain
     const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
@@ -48457,10 +48567,11 @@ function drawPilot(dt){
     ctx.save();
     ctx.textAlign='center'; ctx.textBaseline='alphabetic';
     ctx.shadowColor='rgba(0,0,0,0.8)'; ctx.shadowBlur=5;
-    ctx.fillStyle = coopPick===0 ? '#4aa8ff' : '#ff5a3c';
-    ctx.font='bold 13px "BOFmil", monospace';
-    ctx.fillText(coopPick===0?'PLAYER 1':'PLAYER 2', VW/2, 16);
     ctx.restore();
+    /* the seat banner rides the SELECTED pilot's own alphabet, so it matches the title and name
+       directly under it rather than sitting in the old canvas face */
+    coopText(coopPick===0?'PLAYER 1':'PLAYER 2', VW/2, 18, 15,
+             coopPick===0?'#4aa8ff':'#ff5a3c', (P&&P.font)||1, 1);
   }
   // ---- input ----
   if(pilotComm!=null){ pilotCommT+=dt; drawPilotComm(PILOTS[pilotComm], pilotCommT);
@@ -48619,7 +48730,11 @@ function drawCoopRoster(dt){
   }
   if(typeof uiFontWarm==='function') uiFontWarm();
   ctx.textBaseline='alphabetic';
-  if(typeof bofTitle==='function') bofTitle('CO-OP WING',VW/2,22,16);
+  /* the muster's own title in the stage face, matching the names under it. bofTitle stays BOFmil
+     and stays in use on OPTIONS, where its note explains that every other label on THAT panel is
+     BOFmil too - converting it globally would break the panel it was written for. */
+  if(!coopText('CO-OP WING', VW/2, 30, 20, '#ffd36b', P1.font||1, 1) && typeof bofTitle==='function')
+    bofTitle('CO-OP WING',VW/2,22,16);
 
   const CW=170, CH=244, CY=134;
   const seats=[
@@ -48670,23 +48785,20 @@ function drawCoopRoster(dt){
 
     coopMarker(s.cx, CY-32, 42, s.variant, s.label);
 
-    ctx.textAlign='center';
-    ctx.fillStyle='#ffffff'; ctx.font='bold 15px "BOFmil", monospace';
-    ctx.fillText(s.P.name, s.cx, CY+CH+26);
-    ctx.fillStyle=s.P.tint; ctx.font='10px "BOFmil", monospace';
-    ctx.fillText(s.P.role, s.cx, CY+CH+42);
+    /* each pilot's name and role in THEIR OWN stage alphabet - the same face their card and the
+       roster title use, so the muster reads as part of the same screen */
+    coopText(s.P.name, s.cx, CY+CH+26, 16, null, s.P.font||1, 1);
+    coopText(s.P.role, s.cx, CY+CH+44, 10, s.P.tint, s.P.font||1, 1);
   }
 
   /* SAME PILOT, TWO SEATS IS LEGAL and is called out rather than blocked. Two people wanting the
      same ship is an ordinary thing to want in co-op, and the roster art already tells them apart
      by seat colour; refusing it would be a rule nobody asked for. */
   if(P1.key===P2.key){
-    ctx.textAlign='center'; ctx.fillStyle='#ffd36b'; ctx.font='bold 10px "BOFmil", monospace';
-    ctx.fillText('TWO OF THE SAME AIRFRAME', VW/2, CY+CH+58);
+    coopText('TWO OF THE SAME AIRFRAME', VW/2, CY+CH+62, 10, '#ffd36b', P1.font||1, 1);
   }
 
-  ctx.textAlign='center'; ctx.fillStyle='#8fa0bd'; ctx.font='9px "BOFmil", monospace';
-  ctx.fillText('ENTER DEPLOY   ·   K BACK', VW/2, VH-18);
+  coopText('ENTER DEPLOY  -  K BACK', VW/2, VH-18, 10, '#8fa0bd', P1.font||1, 1);
 
   if(typeof Input==='undefined') return;
   if(Input.menuConfirm()){
@@ -49146,6 +49258,39 @@ function bofPanel(x,y,w,h){
   for(const [cx,cy,dx,dy] of [[x,y,1,1],[x+w,y,-1,1],[x,y+h,1,-1],[x+w,y+h,-1,-1]]){
     ctx.beginPath(); ctx.moveTo(cx+dx*L,cy); ctx.lineTo(cx,cy); ctx.lineTo(cx,cy+dy*L); ctx.stroke();
   }
+}
+/* ============================================================
+   ONE WAY TO PUT CO-OP TEXT ON SCREEN, AND IT IS THE STAGE FACE (drop 0903t)
+
+   Mike: "clean up the stage fonts as in the stat and pilot select screens your using the old
+   outdated fonts and need to use the current stage fonts."
+
+   0903o restored the nine authored alphabets (stageFontV3) and moved the pilot screen's title
+   and name onto them - but the co-op screens added in 0902f/0903p were written against the
+   BOFmil canvas face, so the PLAYER 1 / PLAYER 2 banner, the muster's pilot names and roles,
+   its prompt, and the P1/P2 seat tags on the split stats panel were all still in the old
+   typeface, sitting directly beside text that had been converted. That is the mismatch he is
+   looking at.
+
+   `pilotFont(idx)` is the current accessor: stageFontV3 for that pilot's stage, falling back to
+   the stage-card alphabet while the sheet decodes. This wraps it so a caller cannot forget the
+   fallback - stageText draws NOTHING when its glyph sheet has not landed (the 0810o trap), so a
+   bare conversion would make these labels disappear on a cold boot rather than look old.
+   ============================================================ */
+function coopText(text, cx, cy, H, col, fontIdx, alpha){
+  const art=(typeof pilotFont==='function') ? pilotFont(fontIdx||1) : null;
+  if(art && art.font && typeof stageText==='function'){
+    stageText(art, String(text), cx, cy, H, col||null, col?0.85:null, alpha==null?1:alpha, 0.06);
+    return true;
+  }
+  ctx.save();
+  ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.globalAlpha=alpha==null?1:alpha;
+  ctx.fillStyle=col||'#e8eef8';
+  ctx.font='bold '+Math.max(8,Math.round(H))+'px "BOFmil", monospace';
+  ctx.fillText(String(text).toUpperCase(), cx, cy);
+  ctx.restore(); ctx.textBaseline='alphabetic';
+  return false;
 }
 function bofTitle(txt,cx,cy,H){
   /* PANEL FONT, NOT THE STAGE FONT (drop 0801bp). Mike: "fix the font up top in
@@ -52690,11 +52835,11 @@ function scDrawCoopBody(R, px, py, pw, ph, t, dt, art, F){
       ctx.restore();
     }
     /* seat tag over the portrait - the muster's colour, so P1/P2 reads the same on both screens */
-    ctx.save(); ctx.textAlign='center'; ctx.textBaseline='middle';
-    ctx.shadowColor='rgba(0,0,0,0.85)'; ctx.shadowBlur=4;
-    ctx.fillStyle=H.tint; ctx.font=F(ph*0.026);
-    ctx.fillText('P'+H.seat, poX+poW/2, poY-ph*0.022);
-    ctx.restore();
+    /* the seat tag in the stage face, like every other label on this panel */
+    const _pRec=(typeof PILOTS!=='undefined')?PILOTS.filter(function(q){return q.key===sheet.pilot;})[0]:null;
+    if(typeof coopText==='function') coopText('P'+H.seat, poX+poW/2, poY-ph*0.024, ph*0.028, H.tint, (_pRec&&_pRec.font)||1, 1);
+    else { ctx.save(); ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillStyle=H.tint;
+           ctx.font=F(ph*0.026); ctx.fillText('P'+H.seat, poX+poW/2, poY-ph*0.022); ctx.restore(); }
     if(_fontOK && typeof stageText==='function' && t>0.34)
       stageText(art, sheet.pilot.toUpperCase(), poX+poW/2, poY+poH+ph*0.026, ph*0.022, null,null,1,0.08);
 
@@ -53134,9 +53279,18 @@ function drawStageClear(dt){
   /* ---- continue ---- */
   const ready = drawStageClear._stamp>=1 && (!R.pw || drawStageClear._pwChars>=R.pw.length);
   if(ready){
-    ctx.save(); ctx.globalAlpha=0.55+0.45*Math.sin(t*4); ctx.textAlign='center';
-    ctx.fillStyle='#cfd6e0'; ctx.font=F(ph*0.028);
-    ctx.fillText('PRESS FIRE', px+pw/2, py+ph*0.898); ctx.restore(); ctx.textAlign='left';
+    /* PRESS FIRE was the one unconditional BOFmil string left on this panel, so it read as a
+       different typeface from every label above it. Same face the rows use (`art` = uiFontArt),
+       with the canvas face kept behind it because stageText draws NOTHING before its sheet
+       decodes - the 0810o trap. */
+    const _pfA=0.55+0.45*Math.sin(t*4);
+    if(art && art.font && typeof stageText==='function'){
+      stageText(art,'PRESS FIRE', px+pw/2, py+ph*0.898, ph*0.030, null, null, _pfA, 0.06);
+    } else {
+      ctx.save(); ctx.globalAlpha=_pfA; ctx.textAlign='center';
+      ctx.fillStyle='#cfd6e0'; ctx.font=F(ph*0.028);
+      ctx.fillText('PRESS FIRE', px+pw/2, py+ph*0.898); ctx.restore(); ctx.textAlign='left';
+    }
   }
   /* MOUSE (drop 0812b). Stage clear says PRESS FIRE and had no pointer path at all, so a mouse
      player was stranded on the results screen after every level. Click anywhere — it is a
