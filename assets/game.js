@@ -11693,7 +11693,13 @@ const SHIPBOSS = {
      the extra 160px below the hull IS the beam. hMul carries that to _animH. */
   doomsdaycarriermk2:{key:'nsb_dcarrmk2_closed', name:'DOOMSDAY CARRIER MK II', w:640,h:320,ty:172, proj:'mirv',
                   mounts:{L:[-0.31,0.17],C:[0,0.43],R:[0.31,0.17],MG_L:[-0.38,0.31],MG_R:[0.38,0.31]},
+                  /* ⚠ THIS BOSS DOES NOT USE THE GENERIC PATTERN LIST. shipBossAttack returns
+                     immediately for doomsdaycarriermk2 - "the Mk II's bay reel, cannon reel and
+                     mega-phase director already own its cadence" - so anything added to `pats`
+                     here would never fire. Its new acts live in carrierTick, which is the
+                     director that actually runs. The list is left as it was. */
                   hpMul:1.65, pat:'mslfan', cd:1.04, pats:['mslfan','stormmg','beamfan','stormmg'],
+                  field:{key:'nsb_bossfield_0', scale:1.18},
                   launch:{frames:18, pre:'nsb_dcarrmk2_', fps:14, loop:false,
                           release:11, warhead:'nfx_omegamk2_in'},
                   cannon:{frames:14, pre:'nsb_dcarrmk2_cn_', fps:12, hMul:1.5, fire:6, last:11}},
@@ -12148,7 +12154,9 @@ function shipBossPatternSlots(pat, step){
   if(pat==='magmacross'||pat==='infernogate'||pat==='infernoburst'||pat==='infernostorm') return ['L','C','R'];
   if(pat==='magmaflamelaser') return ['L','R'];
   if(pat==='magmaflame'||pat==='magmafireball'||pat==='magmafireshield') return ['C'];
-  if(pat==='stormmg') return ['MG_L','MG_R'];
+  if(pat==='stormmg'||pat==='mk2spread') return ['MG_L','MG_R'];
+  if(pat==='mk2snap') return ['L','R'];
+  if(pat==='mk2mega') return ['C'];
   if(pat==='stormbolts') return ['EL','C','ER'];
   if(pat==='s4warburst'||pat==='s4waroverdrive') return ['MG_L','MG_R'];
   if(pat==='s4orblift') return ['ORB_L','ORB_R'];
@@ -12203,6 +12211,12 @@ const SHIP_ACTION_PROFILE={
   fan2:{tell:0.28,recover:0.20,kick:5,shake:1},
   beamfan:{tell:0.43,recover:0.28,kick:9,shake:3},
   chargebeam:{tell:0.52,recover:0.31,kick:9,shake:3},
+  /* DOOMSDAY CARRIER MK II, the three new acts (drop 0904l). The mega beam's tell is deliberately
+     the longest in the table: it is a quarter of the screen wide and the player has to be given
+     time to read which side is safe and get there. */
+  mk2spread:{tell:0.26,recover:0.20,kick:5,shake:2},
+  mk2snap:{tell:0.34,recover:0.22,kick:7,shake:2},
+  mk2mega:{tell:1.15,recover:0.55,kick:14,shake:6},
   fireorb:{tell:0.24,recover:0.18,kick:4,shake:1},
   mslfan:{tell:0.30,recover:0.23,kick:6,shake:2},
   mslhome:{tell:0.32,recover:0.23,kick:6,shake:2},
@@ -15648,6 +15662,38 @@ function shipBossAttack(b){
       const a3=aimPlayer(b.x,y);
       for(const o of [-0.08,0.08]) _shipShot(mC.x,mC.y, Math.cos(a3+o)*2.4, Math.sin(a3+o)*2.4, 10,b);
     }
+  } else if(pat==='mk2spread'){
+    /* TURRET SPREAD — Mike: "turrets that shoot machine gun bullets in spread patterns."
+       Both MG pods fire a five-round fan. The fans are MIRRORED and offset from centre, so the
+       two cones overlap into a lattice with gaps rather than a single wall - a wall is dodged by
+       standing anywhere outside it, a lattice has to be read. */
+    const pods=[shipBossMount(b,'MG_L'), shipBossMount(b,'MG_R')];
+    for(let i=0;i<pods.length;i++){
+      const m=pods[i], lean=(i?1:-1)*0.10;
+      for(const o of [-0.30,-0.15,0,0.15,0.30]){
+        const a4=Math.PI/2+o+lean, sp=3.9;
+        _shipShot(m.x, m.y, Math.cos(a4)*sp, Math.sin(a4)*sp, 8, b);
+      }
+    }
+    if(Audio.SFX&&(Audio.SFX.enemyMachineGunHeavy||Audio.SFX.enemyShoot))
+      (Audio.SFX.enemyMachineGunHeavy||Audio.SFX.enemyShoot)();
+  } else if(pat==='mk2snap'){
+    /* SNAP LASERS — Mike: "the laser beam firing off quick laser beams". Three short, narrow
+       beams in quick succession from the wing cannons, each one live for a fifth of a second.
+       They are authored to fixed angles, never aimed after release, so they read as punctuation
+       before the big one rather than as tracking fire. */
+    const side=(step%2)?1:-1;
+    l23BossBeamStart(b,'legion',['L','R'],[Math.PI/2-0.16*side,Math.PI/2+0.16*side],
+      0.20, 0.22, 0.10, 22, {});
+  } else if(pat==='mk2mega'){
+    /* THE BIG ONE — Mike: "charges up for a massive large beam that takes up 25% of the screen."
+       Width is computed from the LIVE playfield rather than hardcoded, so it stays a quarter of
+       the screen at any view scale. Fired straight down from the centre mount, with a long tell,
+       and it does NOT sweep: a quarter-screen beam that also tracks leaves no honest escape. */
+    const _W=(typeof worldWidth==='function')?worldWidth():VW;
+    b._mk2Mega=1;
+    l23BossBeamStart(b,'legion',['C'],[Math.PI/2], 1.15, 1.45, 0.35, Math.round(_W*0.25), {});
+    if(typeof shake!=='undefined') shake=Math.max(shake,10);
   } else if(pat==='fireorb'){
     /* the wind-up is state, not a volley - reaverOrbTick advances it every frame and launches */
     reaverOrbStart(b);
@@ -15854,6 +15900,11 @@ function carrierThunderheadDraw(b){
 function carrierMegaTick(b,dt){
   carrierMegaInit(b);const M=b&&b._mega;if(!M)return;M.t+=dt;
   const ratio=clamp(b.hp/(b.maxhp||1),0,1),phase=ratio>.75?0:(ratio>.50?1:(ratio>.25?2:3));
+  /* ⚠ THE WIDE BEAM HAS TO BE ARMED SOMEWHERE. carrierBeamHalf reads _megaBeam, and on the first
+     cut nothing ever set it - the quarter-screen beam was unreachable code that looked wired.
+     The last phase arms it: below 25% health the cannon column opens from 58px to a quarter of
+     the playfield, which is the moment the fight is meant to become desperate. */
+  b._megaBeam = (phase>=3) ? 1 : 0;
   if(phase!==M.phase){M.phase=phase;M.shown=phase;M.cd=.55;M.step=0;b.flash=Math.max(b.flash||0,.36);
     flashScreen=Math.max(flashScreen,.22);shake=Math.max(shake,9);
     if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.38,'PHASE '+(phase+1)+': '+CARRIER_MEGA_PHASE[phase],'#bdf5ff');
@@ -16005,7 +16056,50 @@ function carrierWarheadBurst(q,fam,n,hpx,life){
    centre, so the column sits on b.x with no offset.
    Damage follows the RAKE's convention (perp distance, respects invuln, calls playerHit)
    rather than spawning bullets, because the beam is continuous while it is drawn. */
+/* ============================================================
+   THE Mk II's TURRET LATTICE AND ITS BIG BEAM (drop 0904l)
+
+   Mike: "turrets that shoot machine gun bullets in spread patterns, the laser beam firing off
+   quick laser beams, and then charges up for a massive large beam that takes up 25% of the
+   screen ... make this truly some of the best boss fights of the game."
+
+   ⚠ THESE COULD NOT GO IN THE GENERIC PATTERN TABLE. shipBossAttack returns on its first line
+   for this boss because its bay reel, cannon reel and mega director already own the cadence, so
+   a pattern added to `pats` would have been dead code that looked live. They are wired into
+   carrierTick instead - the director that actually runs.
+
+   The two MG pods fire MIRRORED five-round fans, leaned outward and offset from centre, so the
+   cones overlap into a lattice with gaps rather than one wall. A wall is beaten by standing
+   outside it; a lattice has to be read.
+   ============================================================ */
+function carrierTurretSpread(b,lean){
+  if(typeof shipBossMount!=='function') return 0;
+  let n=0;
+  const pods=[['MG_L',-1],['MG_R',1]];
+  for(const [slot,side] of pods){
+    const m=shipBossMount(b,slot);
+    for(const o of [-0.30,-0.15,0,0.15,0.30]){
+      const a=Math.PI/2+o+side*(lean==null?0.10:lean), sp=3.9;
+      if(typeof _shipShot==='function'){ _shipShot(m.x,m.y,Math.cos(a)*sp,Math.sin(a)*sp,8,b); n++; }
+    }
+  }
+  if(n&&Audio.SFX&&(Audio.SFX.enemyMachineGunHeavy||Audio.SFX.enemyShoot))
+    (Audio.SFX.enemyMachineGunHeavy||Audio.SFX.enemyShoot)();
+  return n;
+}
+/* ⚠ THE BEAM WAS 12% OF THE SCREEN, NOT 25%. CARRIER_BEAM_HALF 29 gives a 58px column on a 480px
+   playfield. Mike asked for a quarter of the screen, so the LAST mega phase widens it to
+   0.25*W - measured off the live playfield rather than hardcoded, so it stays a quarter at any
+   view scale. The ordinary cannon keeps its authored 29, because the art draws that column and
+   the hazard has to agree with the art; only the mega phase overrides both. */
 const CARRIER_BEAM_HALF = 29;          // matches the separately drawn Mk-II beam column
+function carrierBeamHalf(b){
+  if(b && b._megaBeam){
+    const W=(typeof worldWidth==='function')?worldWidth():VW;
+    return Math.round(W*0.25*0.5);
+  }
+  return CARRIER_BEAM_HALF;
+}
 function carrierCannonTick(b, dt, C){
   const S=b._cn;
   S.t+=dt; S.f=Math.floor(S.t*C.fps);
@@ -16021,7 +16115,7 @@ function carrierCannonTick(b, dt, C){
   if(S.f>=C.fire && S.f<=C.last && typeof player!=='undefined' && player &&
      !player.dead && !(player.invuln>0)){
     const _top=(b._drawY!=null?b._drawY:b.y)-b.h/2;
-    const half=CARRIER_BEAM_HALF + (player._hx||9)*0.5;
+    const half=carrierBeamHalf(b) + (player._hx||9)*0.5;
     if(player.y>=_top+b.h && player.y<=_top+b._animH && Math.abs(player.x-b.x)<half){
       if(typeof playerHit==='function') playerHit();
     }
@@ -16057,6 +16151,13 @@ function carrierTick(b, dt){
     if(S.cd<=0){
       /* the cannon takes every third turn, and every turn once the bays are gone */
       S.turn=(S.turn||0)+1;
+      /* THE TURRET LATTICE fills the turn before every cannon turn, so the player is being
+         pinned by MG fire exactly as the beam starts charging. */
+      if(b._ship==='doomsdaycarriermk2' && C && (S.turn%3)===2){
+        carrierTurretSpread(b,0.10);
+        S.cd=0.72;
+        return;
+      }
       if(C && (_bothGone || S.turn%3===0)){
         b._cn={t:0,f:0}; S.cd=1.0+Math.random()*0.6;
         b._animKey=C.pre+'00'; b._animH=b.h*(C.hMul||1);
@@ -16280,6 +16381,19 @@ function shipBossDraw(b){
      drawn height grows. _animH is set by carrierTick and left null by every other boss. */
   const dh=(b._animH>0 ? b._animH : h);
   const _mk2Cannon=b._ship==='doomsdaycarriermk2'&&/^nsb_dcarrmk2_cn_/.test(_ak);
+  /* ============================================================
+     THE CARRIER'S ENERGY FIELD (drop 0904l)
+
+     Mike: "the energy shield we need for the level 6 boss ... the boss has energy fields".
+
+     Drawn AFTER the hull, at 1.18x the hull box, from a wide elliptical shell whose centre is
+     transparent - so the carrier stays fully visible inside it rather than being masked by its
+     own defence. It breathes on its own slow clock and flares additively when the boss is struck,
+     which reuses the flash the hull already tracks (_sbaHitT) instead of inventing a second one.
+     ⚠ It draws OUTSIDE the hull's own save/restore transform on purpose: the hull scales and
+     rotates with shipBossVisualPose, and a field that rolled with the ship would read as painted
+     onto it rather than as a barrier holding station around it.
+     ============================================================ */
   ctx.save();
   ctx.imageSmoothingEnabled=false;
   ctx.translate(b.x+P.x,cy+P.y); ctx.rotate(P.rot); ctx.scale(P.sx,P.sy);
@@ -22374,6 +22488,28 @@ function _bigTarget(t){
   if(!t) return false;
   if(t===boss || t===subBoss) return true;
   return (t.w||0)>=64 || (t.h||0)>=64;
+}
+/* the boss field, drawn in world space so it never inherits the hull's roll */
+function drawBossEnergyField(b){
+  if(!b||b.dead) return;
+  const D=(typeof SHIPBOSS!=='undefined'&&SHIPBOSS[b._ship]&&SHIPBOSS[b._ship].field)||null;
+  if(!D || typeof XART==='undefined' || !XART.rdy(D.key)) return;
+  const im=XART.get(D.key);
+  const cy=(b._drawY!=null?b._drawY:b.y);
+  const w=(b.w||200)*(D.scale||1.18), h=w*(im.naturalHeight/Math.max(1,im.naturalWidth));
+  const t=(b.t||0);
+  const puff=1+Math.sin(t*1.7)*0.022 + ((b._sbaHitT||0)>0?0.05:0);
+  ctx.save();
+  ctx.translate(b.x,cy);
+  ctx.globalAlpha=0.42+0.12*Math.sin(t*2.3);
+  ctx.imageSmoothingEnabled=true;
+  ctx.drawImage(im,-w*puff/2,-h*puff/2,w*puff,h*puff);
+  if((b._sbaHitT||0)>0){
+    ctx.globalCompositeOperation='lighter';
+    ctx.globalAlpha=clamp(0.55*((b._sbaHitT||0)/0.12),0,1);
+    ctx.drawImage(im,-w*puff/2,-h*puff/2,w*puff,h*puff);
+  }
+  ctx.restore();
 }
 function drawBossRetina(t, x, y, spin, alpha){
   if(typeof XART==='undefined') return false;
@@ -30709,6 +30845,7 @@ function drawBoss(){
   ctx.save();
   ctx.globalAlpha = _bossFade;
   drawBossInner();
+  if(typeof drawBossEnergyField==='function' && typeof boss!=='undefined' && boss) drawBossEnergyField(boss);
   encounterDamageOverlay(_b,false);
   ctx.restore();
   _bossFade = 1;
