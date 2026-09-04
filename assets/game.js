@@ -1938,6 +1938,10 @@ const XART=(function(){
   X._src['cfx_stage6_carrier_shield']='assets/game/combat_final/stage6_carrier_shield_atlas.png';
   /* the circular enemy shield shell (SpriteCook, 0904e) - ONE plate, recoloured per family */
   X._src['nes_bubble_0']='assets/game/enemy_shields/nes_bubble_0.png';
+  X._src['nes_bubble_volt_0']='assets/game/enemy_shields/nes_bubble_volt_0.png';
+  X._src['nes_bubble_fire_0']='assets/game/enemy_shields/nes_bubble_fire_0.png';
+  X._src['nes_bubble_ice_0']='assets/game/enemy_shields/nes_bubble_ice_0.png';
+  X._src['nes_bubble_void_0']='assets/game/enemy_shields/nes_bubble_void_0.png';
   X._src['cfx_stage7_warden_walk']='assets/game/combat_final/stage7_toxic_portal_warden_crawl_spritecook.png';
   X._src['cfx_stage7_warden_teleport']='assets/game/combat_final/stage7_toxic_portal_teleport_atlas.png';
   X._src['cfx_stage7_warden_projectiles']='assets/game/combat_final/stage7_toxic_portal_projectiles_atlas.png';
@@ -7044,11 +7048,16 @@ const ENEMY_SHIELD_FAMILY={
      its hex lattice while moving the hue. When the remaining plates generate they can be dropped
      in by adding a `prefix` here; nothing else has to change.
      ============================================================ */
-  bubble_hex:  {kind:'bubble', prefix:'nes_bubble', hit:0, tint:null},
-  bubble_volt: {kind:'bubble', prefix:'nes_bubble', hit:0, tint:'#6fa8ff'},
-  bubble_fire: {kind:'bubble', prefix:'nes_bubble', hit:3, tint:'#ff7a34'},
-  bubble_ice:  {kind:'bubble', prefix:'nes_bubble', hit:0, tint:'#bfe9ff'},
-  bubble_void: {kind:'bubble', prefix:'nes_bubble', hit:6, tint:'#c46bff'}
+  /* five authored shells, one per element - the retry after the outage landed the other four,
+     so nothing is a recolour any more and `tint` stays null on all of them */
+  bubble_hex:  {kind:'bubble', prefix:'nes_bubble',      hit:0, tint:null},
+  bubble_volt: {kind:'bubble', prefix:'nes_bubble_volt', hit:0, tint:null},
+  bubble_fire: {kind:'bubble', prefix:'nes_bubble_fire', hit:3, tint:null},
+  /* ⚠ THE ICE SHELL CAME BACK WITH A SOLID WHITE CENTRE (alpha 255 through the middle), which
+     would have hidden the hull completely. A soft radial punch - clear inside 0.44R, ramped to
+     untouched by 0.66R - keeps the swirl and returns the centre to 0. Measured before and after. */
+  bubble_ice:  {kind:'bubble', prefix:'nes_bubble_ice',  hit:0, tint:null},
+  bubble_void: {kind:'bubble', prefix:'nes_bubble_void', hit:6, tint:null}
 };
 /* ============================================================
    SHIELD + HEALTH, THEN FRENZY (drop 0904e)
