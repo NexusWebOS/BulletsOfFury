@@ -1367,7 +1367,15 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("for(var i=0;i<20;i++){ pShoot(); updatePlay(1/60); }", ctxv);
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='flame';}).length===1", ctxv), 'holding fire keeps exactly ONE flame jet, not a stream of projectiles');
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='fire';}).length===0", ctxv), 'the old firewall projectile is gone — one spawner, no second path');
-  ok(vm.runInContext("flameReach(5)>flameReach(1) && flameReach(5)<VH*0.6", ctxv), 'reach scales with level and stays SHORT — it never reaches the top of the screen');
+  /* ⚠ REPOINTED 0903z. This asserted flameReach(5)>flameReach(1) - the level-scaled plume Mike
+     removed: "it shouldnt get larger as it goes level 1-5, but instead do more damage, glow more
+     fiery and even douse enemies with fire." The SHORT half of the rule still holds and still
+     matters, so it is kept; the scaling half now asserts the opposite, which is the new contract.
+     Measured off the rendered plume at threshold 40 (the plate's full extent): lv1 and lv5 both
+     span 206px - identical silhouettes. What changes is the additive heat above it. */
+  ok(vm.runInContext("flameReach(5)===flameReach(1) && flameHalfWDrawn(5)===flameHalfWDrawn(1)", ctxv), 'the jet is ONE size at every level - draw and hitbox both');
+  ok(vm.runInContext("flameReach(5)<VH*0.6", ctxv), 'and it stays SHORT — it never reaches the top of the screen');
+  ok(vm.runInContext("flameDmg(5)>flameDmg(1)*2.5 && flameHeat(5)>flameHeat(1)", ctxv), 'the level goes into damage and heat instead');
   ok(vm.runInContext("flameHalfW(5,1)>flameHalfW(5,0)*2", ctxv), 'the jet flares into a cone — the tip is more than twice the nozzle');
   // crowd control: a rank of enemies across the cone must ALL take damage from one jet
   /* PIN THE PLAYER AND THE WEAPON LEVEL (drop 0801gv). The rank sits at y=300 and

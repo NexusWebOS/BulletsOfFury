@@ -18168,9 +18168,39 @@ const FLAME_LIFE = 0.55   /* drop 0801en. Mike: "stop making it disappear every 
                        expires promptly on release. */;    // longer than this would latch the jet on after release
 const FLAME_TICK = 0.08;    // 12.5 damage ticks per second
 const FLAME_SEG  = 30;      // px between drawn segments up the jet
-function flameReach(lv){ return 118 + clamp(lv,1,5)*30; }        // lv1:148 ... lv5:268
-function flameBase(lv){ return 15 + clamp(lv,1,5)*4; }           // half-width at the nozzle
-function flameFlare(lv){ return 2.0 + clamp(lv,1,5)*0.15; }      // tip width as a multiple of the base
+/* ============================================================
+   THE JET IS ONE SIZE. THE LEVEL GOES INTO HEAT, DAMAGE AND THE DOUSE (drop 0903z)
+
+   Mike: "it shouldnt get larger as it goes level 1-5, but instead do more damage, glow more
+   fiery and even douse enemies with fire."
+
+   These three used to scale with level: reach 148->268, nozzle half-width 19->35, flare
+   2.15->2.75. A level-5 flamethrower was a different WEAPON on screen from a level-1 one, and
+   because flameHalfWDrawn feeds the hit test as well as the draw (0813a), the hitbox grew with
+   it - the upgrade was mostly "the same attack, bigger". Now the plume is authored at one size,
+   the level 3 shape, and progression is carried by:
+
+       damage    FLAME_DMG[lv]   3.6 -> 11 per tick, a real curve rather than 3+lv
+       heat      flameHeat(lv)   drives the two additive passes in flameDraw
+       douse     flameDouseSec   how long a target Mike sets alight keeps burning
+
+   ⚠ THE HIT TEST IS UNCHANGED AND STILL READS THESE. flameHalfWDrawn/flameSpanTop are what
+   0813a made the single source of the column that kills; holding the shape constant holds the
+   hitbox constant with it, which is the point - the two cannot drift.
+   ============================================================ */
+const FLAME_FIXED_LV = 3;                                        // the authored plume size
+function flameReach(lv){ return 118 + FLAME_FIXED_LV*30; }       // 208 at every level
+function flameBase(lv){ return 15 + FLAME_FIXED_LV*4; }          // 27 half-width at the nozzle
+function flameFlare(lv){ return 2.0 + FLAME_FIXED_LV*0.15; }     // 2.45 tip multiple
+/* per-tick damage. FLAME_TICK is 0.08s, so lv5 is ~137 dps against lv1's ~45 - the upgrade the
+   size used to be. Indexed 1..5; the 0 slot is unused and mirrors lv1 so a stray 0 cannot read
+   undefined and silently deal NaN. */
+const FLAME_DMG=[3.6, 3.6, 5.2, 7.0, 8.9, 11.0];
+function flameDmg(lv){ return FLAME_DMG[clamp(lv,1,5)]; }
+/* 0..1, how hard the additive passes burn. Level 1 still breathes; level 5 is white-hot. */
+function flameHeat(lv){ return (clamp(lv,1,5)-1)/4; }
+/* how long a target stays alight after the fire leaves it */
+function flameDouseSec(lv){ return 1.1 + clamp(lv,1,5)*0.55; }   // lv1 1.65s ... lv5 3.85s
 /* half-width at travel fraction t (0 = nozzle, 1 = tip) */
 function flameHalfW(lv,t){ const f=clamp(t,0,1); return flameBase(lv)*(1+(flameFlare(lv)-1)*f); }
 /* ============================================================
@@ -18284,7 +18314,7 @@ function flameFire(lv){
   }
   const _nextEl=flameIsIce()?'ice':'fire';
   if(f._el && f._el!==_nextEl) flameSndStop(f._el);
-  f.lv=lv; f.life=FLAME_LIFE; f.dmg=3+lv; f._el=_nextEl;
+  f.lv=lv; f.life=FLAME_LIFE; f.dmg=flameDmg(lv); f._el=_nextEl;
   flameSndStart(f._el);
 }
 /* SUSTAINED AUDIO, NOT A RETRIGGER.
@@ -18598,14 +18628,26 @@ function flameDraw(f){
   ctx.globalAlpha=_isIce?ICE_ALPHA:1;
   ctx.drawImage(src, sx0, sy0, sw2, sh2, -dw/2, -dh/2, dw, dh);
   if(!_isNewIce){
+    /* ⚠ THE LEVEL LIVES HERE NOW (drop 0903z). The plume is one size at every level, so what a
+       level-5 flamethrower buys visually is HEAT: both additive passes lift with flameHeat(), and
+       at the top a third pass burns a tight white core. Additive over the plate's own orange and
+       white, so the silhouette never changes - the 0801fj rule that made this look like fire in
+       the first place. */
+    const _ht=(typeof flameHeat==='function')?flameHeat(lv):0;
     // 2. the burn — additive, so it can only brighten the orange that is there
     ctx.globalCompositeOperation='lighter';
-    ctx.globalAlpha=0.30+0.26*Math.sin(t*19.0);
+    ctx.globalAlpha=(0.30+0.26*Math.sin(t*19.0))*(1+_ht*0.55);
     ctx.drawImage(src, sx0, sy0, sw2, sh2, -dw/2, -dh/2, dw, dh);
     // 3. the core — narrower, slower clock, so the middle pulses against the burn
     const kc=0.58+0.07*Math.sin(t*11.0);
-    ctx.globalAlpha=0.34+0.22*Math.sin(t*27.0);
+    ctx.globalAlpha=(0.34+0.22*Math.sin(t*27.0))*(1+_ht*0.50);
     ctx.drawImage(src, sx0, sy0, sw2, sh2, -dw*kc/2, -dh/2, dw*kc, dh);
+    // 4. white-hot centre, top of the range only, on its own faster clock
+    if(_ht>0.02){
+      const kw=0.30+0.05*Math.sin(t*33.0);
+      ctx.globalAlpha=_ht*(0.26+0.16*Math.sin(t*41.0));
+      ctx.drawImage(src, sx0, sy0, sw2, sh2, -dw*kw/2, -dh/2, dw*kw, dh);
+    }
   }
   ctx.restore();
 }
@@ -25078,6 +25120,18 @@ function updatePlay(dt){
    hands no longer freezes what it burns. */
             if(flameIsIce()){
               e._frozen=(e._frozen||0)+1;
+            } else if(typeof dkIgnite==='function'){
+              /* ⚠ DOUSED, NOT JUST BURNED (drop 0903z). Mike: "even douse enemies with fire."
+                 dkIgnite is the burn Decker's incendiary already uses - one system, so a unit
+                 alight from either source ticks, particles and dies the same way rather than
+                 carrying two competing timers. It refuses set pieces on its own (isSetPiece),
+                 which is why this does not need its own guard.
+                 The LENGTH is the flamethrower's own, and it is the level's third reward:
+                 dkIgnite stamps DK_BURN_TIME, so the longer douse is written after it. Only
+                 EXTENDED, never cut - walking fire over a target that is already well alight
+                 should not shorten it. */
+              dkIgnite(e);
+              if(e._burn>0) e._burn=Math.max(e._burn, flameDouseSec(b.lv));
             }
             if(chance(0.35)) particles.push({x:e.x,y:e.y,vx:0,vy:0,life:0.12,t:0,r:7,color:'#ffd36b',flashring:true});
           }
