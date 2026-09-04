@@ -2103,8 +2103,8 @@ const XART=(function(){
     'heavy_interceptor','mine_layer','missile_satellite','portal_mine','repair_drone',
     'shield_leech','twin_station'];
   const _S9_ATTACK_UNITS=['alien_beacon','comet_skimmer','dimensional_gunship',
-    'galaxy_interceptor','gate_carrier','gate_turret','hyperspace_prism',
-    'mini_warp_tank','ring_drone','singularity_mine'];
+    'galaxy_interceptor','gate_turret','hyperspace_prism',
+    'ring_drone','singularity_mine'];
   for(const _s5u of _S5_ATTACK_UNITS) for(let _s5f=0;_s5f<8;_s5f++){
     const _n=String(_s5f+1).padStart(2,'0');
     X._src['s5atk_'+_s5u+'_'+_s5f]='assets/game/stage5_enemy_attacks/'+_s5u+'/'+_n+'.png';
@@ -6838,7 +6838,7 @@ const ADAPTIVE_REINFORCEMENT_ROSTER={
   6:['s6dart','s6lancer','s6skimmer'],
   7:['s7sampler','s7skimmer','s7lamprey'],
   8:['s8interceptor','s8needlejet','s8scout'],
-  9:['s9interceptor','s9warptank','s9comet']
+  9:['s9interceptor','s9ring','s9comet']
 };
 function adaptiveSpawnPressure(stage){
   stage=clamp(stage||((typeof run!=='undefined'&&run.stage)||1),1,9);
@@ -7162,7 +7162,7 @@ const ENEMY_SHIELD_LOADOUT=Object.freeze({
   s9ring:       {stage:9,family:'bubble_void',ratio:.30,drawScale:2.58,once:1},
   s9singularity:{stage:9,family:'bubble_void',ratio:.34,drawScale:2.55,once:1},
   s9gunship:    {stage:9,family:'bubble_volt',ratio:.33,drawScale:2.52,once:1},
-  s9warptank:   {stage:9,family:'bubble_ice', ratio:.31,drawScale:2.55,once:1}
+  s9ring2:      {stage:9,family:'bubble_ice', ratio:.31,drawScale:2.55,once:1}
 });
 function enemyShieldEquip(e,family,energy,opt={}){
   if(!e) return null;
@@ -7877,6 +7877,8 @@ const STAGES = [
 ];
 /* the campaign is stages 1..8; a bonus stage lives in the table but not in the run order */
 const CAMPAIGN_STAGES = STAGES.filter(function(s){ return !s.bonus; }).length;
+/* the bonus stage allows exactly one continue before the rift collapses - see drawContinue */
+const STAGE9_CONTINUES = 1;
 let curStage=null;
 let stageTimer=0, spawnClock=0, _waveGap=0, _adaptiveSpawnT=6.5, _adaptiveSpawnSeq=0,
     bossActive=false, bossDefeated=false, stageEnding=0, lifeUpRolled=false;
@@ -9840,8 +9842,8 @@ const SHIPS=[];
       c.impact=!!H.impact;c._dieDur=.64;break;
     }
     case 's9beacon': case 's9comet': case 's9gunship':
-    case 's9interceptor': case 's9gatecarrier': case 's9gateturret':
-    case 's9prism': case 's9warptank': case 's9ring': case 's9singularity': {
+    case 's9interceptor': case 's9gateturret':
+    case 's9prism': case 's9ring': case 's9singularity': {
       const H=S9VOID[type];c.w=H.w;c.h=H.h;c.hp=c._maxhp=EHP(H.hp);c.score=H.score;
       c.vy=0;c.pattern='s9void';c._s9void=type;c.shoots=false;c.fk=null;c.dropOk=true;
       c.impact=!!H.impact;break;
@@ -11106,31 +11108,31 @@ function buildStagePlan(stageNum){
     add(4.05,()=>pair('s9ring',.28,.72,{_s9Role:'spinner'}));
     add(5.55,()=>s9MeteorShower(W9*.33,0));
     add(6.75,()=>spawnEnemy('s9gunship',W9*.50,-126,{_s9Role:'beam'}));
-    add(8.10,()=>pair('s9warptank',.24,.76,{_s9Role:'jumper'}));
+    add(8.10,()=>pair('s9interceptor',.24,.76,{_s9Role:'jumper'}));
     add(9.45,()=>pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'}));
     add(10.70,()=>{spawnEnemy('s9gateturret',W9*.30,-108,{_s9Role:'spinner'});spawnEnemy('s9prism',W9*.70,-120,{_s9Role:'orb',_stagger:.18});});
     add(12.25,()=>s9MeteorShower(W9*.67,1));
-    add(13.30,()=>spawnEnemy('s9gatecarrier',W9*.50,-145,{_s9Role:'laser'}));
+    add(13.30,()=>spawnEnemy('s9gunship',W9*.50,-145,{_s9Role:'laser'}));
     add(14.65,()=>{spawnEnemy('s9comet',-86,VH*.20,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.34,{_side:-1,_s9Role:'slider'});});
-    add(15.80,()=>pair('s9warptank',.27,.73,{_s9Role:'laser'}));
+    add(15.80,()=>pair('s9ring',.27,.73,{_s9Role:'laser'}));
     add(17.15,()=>spawnEnemy('s9prism',W9*.50,-130,{_s9Role:'beam'}));
     add(18.35,()=>s9MeteorShower(W9*.48,2));
     add(19.60,()=>{spawnEnemy('s9interceptor',W9*.16,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-122,{_s9Role:'kamikaze',_stagger:.13});spawnEnemy('s9interceptor',W9*.84,-94,{_s9Role:'kamikaze',_stagger:.26});});
     add(21.00,()=>pair('s9ring',.25,.75,{_s9Role:'spinner'}));
     add(22.25,()=>spawnEnemy('s9gunship',W9*.50,-132,{_s9Role:'beam'}));
-    add(23.65,()=>{spawnEnemy('s9warptank',W9*.28,-112,{_s9Role:'jumper'});spawnEnemy('s9prism',W9*.72,-126,{_s9Role:'orb',_stagger:.16});});
+    add(23.65,()=>{spawnEnemy('s9interceptor',W9*.28,-112,{_s9Role:'jumper'});spawnEnemy('s9prism',W9*.72,-126,{_s9Role:'orb',_stagger:.16});});
     add(25.00,()=>s9MeteorShower(W9*.72,3));
     add(26.20,()=>pair('s9interceptor',.22,.78,{_s9Role:'kamikaze'}));
     add(27.50,()=>{spawnEnemy('s9comet',-86,VH*.16,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.29,{_side:-1,_s9Role:'slider'});});
     add(28.75,()=>spawnEnemy('s9singularity',W9*.50,-120,{_s9Role:'orb'}));
     add(30.10,()=>{spawnEnemy('s9gateturret',W9*.24,-105,{_s9Role:'spinner'});spawnEnemy('s9gateturret',W9*.76,-105,{_s9Role:'spinner',_stagger:.17});});
     add(31.35,()=>s9MeteorShower(W9*.28,4));
-    add(32.55,()=>{spawnEnemy('s9gunship',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9warptank',W9*.70,-108,{_s9Role:'laser',_stagger:.20});});
+    add(32.55,()=>{spawnEnemy('s9gunship',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9singularity',W9*.70,-108,{_s9Role:'laser',_stagger:.20});});
     add(34.00,()=>pair('s9ring',.22,.78,{_s9Role:'spinner'}));
     add(35.15,()=>{spawnEnemy('s9interceptor',W9*.18,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-124,{_s9Role:'kamikaze',_stagger:.12});spawnEnemy('s9interceptor',W9*.82,-94,{_s9Role:'kamikaze',_stagger:.24});});
     add(36.40,()=>s9MeteorShower(W9*.55,5));
-    add(37.55,()=>{spawnEnemy('s9prism',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9gatecarrier',W9*.70,-126,{_s9Role:'orb',_stagger:.17});});
-    add(38.75,()=>spawnEnemy('s9gatecarrier',W9*.50,-148,{_s9Role:'laser'}));
+    add(37.55,()=>{spawnEnemy('s9prism',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9beacon',W9*.70,-126,{_s9Role:'orb',_stagger:.17});});
+    add(38.75,()=>spawnEnemy('s9gateturret',W9*.50,-148,{_s9Role:'laser'}));
     add(curStage.length-2.1,()=>{pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'});s9MeteorShower(W9*.50,6);});
     return _planSorted(P);
   }
@@ -12097,7 +12099,16 @@ function s9FusionBossTick(b,dt){
     if(F.t>=1.42&&!F.burstL){F.burstL=true;explode(F.left.x,F.left.y,92,'blue');if(Audio.SFX&&Audio.SFX.expBig)Audio.SFX.expBig();}
     if(F.t>=1.64&&!F.burstR){F.burstR=true;explode(F.right.x,F.right.y,92,'blue');if(Audio.SFX&&Audio.SFX.expBig)Audio.SFX.expBig();}
     if(F.t>=2.05){
-      flashScreen=Math.max(flashScreen,0.85);whiteBlast=Math.max(whiteBlast,0.65);shake=Math.max(shake,13);
+      /* ⚠ THE MERGE USED whiteBlast AND NOTHING EVER CLEARS IT. Mike: "screen stays flashed
+         white when the stage 9 final boss merges." whiteBlast is documented three screens down
+         as "driven by the boss-death sequence and never self-decays" - the death sequence writes
+         it every frame from its own clock and zeroes it at the end. The MERGE is not that
+         sequence, so a one-off 0.65 written here simply stayed on the canvas for the rest of the
+         fight. atomFlash is the self-decaying white pop (it fades at dt*2.0 in the play update),
+         which is what a one-shot flare wants. */
+      flashScreen=Math.max(flashScreen,0.85);
+      atomFlash=Math.max(atomFlash||0,0.65);
+      shake=Math.max(shake,13);
       b.maxhp=F.baseHp;b.hp=F.baseHp;shipBossInit(b,'tidalsovereign');
       /* This object began life as the twin encounter, so shipBossInit cannot inherit the final
          identity from spawnBoss the way it normally does.  Promote the public kind as well as
@@ -23794,6 +23805,22 @@ function beginStage(num){
      the stage-5 secret, a campaign-map re-entry, and a password or debug jump all pass
      through here. */
   if(num===9) run.lives=Math.max(run.lives|0, STAGE9_LIVES);
+  /* ============================================================
+     THE RIFT REMEMBERS WHERE YOU LEFT STAGE 5 (drop 0904r)
+
+     Mike: "Also did not bring me bac kto my exact positon in stage 5 when I defeated the level."
+
+     ⚠ THERE WAS NO SAVE AT ALL - riftReturn finished with beginStage(5), which restarts the
+     stage from zero, so beating the bonus stage cost you your whole stage-5 run. Entering 9
+     now snapshots how far through 5 you were; returning restores it instead of replaying it.
+     Only the stage CLOCK and the scroll are restored - not enemies, not bullets - because the
+     wave plan is driven off that clock, so it re-forms naturally from the right beat. */
+  if(num===9 && run.stage===5){
+    run._s5Resume={ t:(typeof stageTimer==='number'?stageTimer:0),
+                    scroll:(typeof scroll==='number'?scroll:0),
+                    clock:(typeof spawnClock==='number'?spawnClock:0),
+                    wave:(typeof waveIdx==='number'?waveIdx:0) };
+  }
   const _l78Pending=(num===8)&&!!(run._l78Entry||(typeof campaign!=='undefined'&&campaign._l78Pending));
   run.stage=num;run._l78Entry=_l78Pending?1:0;if(_l78Pending&&typeof campaign!=='undefined')campaign._l78Pending=0;
   mapScroll=0; damBroken=false;
@@ -23939,6 +23966,24 @@ function beginStage(num){
      transition one hit away. Applied last so the stage is fully built underneath it, the same
      reason _wantOpening is applied here rather than at the top. */
   if(_coleScene) coleSceneApply(num);
+  /* ⚠ RESTORED AT THE END, NOT THE TOP. beginStage zeroes the clock, the scroll and the wave
+     index as part of setting a stage up, so a snapshot applied any earlier would simply be
+     overwritten by the reset that follows it. Armed by riftReturn and consumed once, so a
+     later ordinary entry into stage 5 still starts from the beginning. */
+  if(num===5 && run._s5ResumeArm && run._s5Resume){
+    const R=run._s5Resume; run._s5ResumeArm=0; run._s5Resume=null;
+    try{ stageTimer=R.t||0; scroll=R.scroll||0; spawnClock=R.clock||0; waveIdx=R.wave||0; }catch(_rs){}
+    /* THE REWARD IS ANNOUNCED HERE, WHERE IT CAN ACTUALLY BE SEEN. Mike: "nor showed me the
+       water gun pickup I got or made an announcment or showed it." laserMistUnlock() already
+       banners and plays its cue - but it fires during stage 9's boss death, and the state
+       leaves PLAY for the map within the same beat, so the banner was raised onto a screen
+       that was already gone. Re-raised on arrival in stage 5, where the player is looking. */
+    if(typeof laserMistUnlocked!=='undefined' && laserMistUnlocked){
+      if(typeof arcadeBanner==='function') arcadeBanner('LASER MIST UNLOCKED');
+      try{ if(Audio&&Audio.SFX&&(Audio.SFX.laserMistUnlock||Audio.SFX.powerup))
+           (Audio.SFX.laserMistUnlock||Audio.SFX.powerup)(); }catch(_ru){}
+    }
+  }
 }
 /* Drop straight into the boss kill. Everything about the stage is real — its roster, its scroll,
    its music — only the clock is moved forward. */
@@ -33561,6 +33606,7 @@ function riftReturnTick(dt){
       riftReturn=null;
       run._s5GateOut=1;                  // stage 5 throws the ship out of a gate
       run._s9taken=1;                    // the secret is spent; do not re-arm the gates
+      run._s5ResumeArm=1;                // beginStage(5) restores the snapshot taken on entry
       if(typeof sselDeploy==='function') sselDeploy(5, function(){ beginStage(5); });
       else beginStage(5);
     }
@@ -41449,11 +41495,15 @@ const S9VOID={
   s9beacon:{art:'alien_beacon',hp:34,w:60,h:74,score:1100},/* ⚠ s9chronal/'chronal_crawler_tank' REMOVED 0904e - Mike: "unusuable, its a 45 degree titled
    tank. we cant have any turned enemies like this." Its waves now field s9warptank. */
   s9comet:{art:'comet_skimmer',hp:28,w:70,h:62,score:1060},s9gunship:{art:'dimensional_gunship',hp:62,w:76,h:82,score:1920},
-  s9interceptor:{art:'galaxy_interceptor',hp:30,w:62,h:76,score:1140},s9gatecarrier:{art:'gate_carrier',hp:70,w:84,h:76,score:2180},
+  s9interceptor:{art:'galaxy_interceptor',hp:30,w:62,h:76,score:1140},/* ⚠ s9gatecarrier/'gate_carrier' REMOVED 0904r - Mike: "you still have tanks and weird enemies
+   on stage 9". It was also the ONE hull my own silhouette audit flagged as genuinely turned
+   (principal axis 145.7 degrees), which Mike had already ruled out for the roster. */
   s9gateturret:{art:'gate_turret',hp:42,w:70,h:70,score:1480},/* ⚠ s9gravity/'gravity_artillery' REMOVED 0904i - Mike: "delete these 2 enemies. no good."
    Its three waves field s9prism, s9prism and s9gatecarrier. NOTE s5gravity (gravity_orb) is a
    DIFFERENT unit on stage 5 and stays - only the stage-9 artillery goes. */
-  s9prism:{art:'hyperspace_prism',hp:66,w:78,h:78,score:2250},s9warptank:{art:'mini_warp_tank',hp:48,w:72,h:66,score:1640},
+  s9prism:{art:'hyperspace_prism',hp:66,w:78,h:78,score:2250},/* ⚠ s9warptank/'mini_warp_tank' REMOVED 0904r - a TRACKED GROUND TANK in a stage that takes
+   place inside a rift in deep space. It only entered the roster in 0904i as the substitute for
+   the tilted chronal crawler; a tank was the wrong stand-in and Mike caught it. */
   s9ring:{art:'ring_drone',hp:32,w:64,h:64,score:1200},s9singularity:{art:'singularity_mine',hp:46,w:70,h:70,score:1580}
 };
 const S9_PROJECTILE_HIT={s9gold:[10,28],s9warp:[18,28],s9turbo:[11,30],s9needle:[8,34],s9comet:[17,36],s9pair:[22,22],s9lattice:[50,50]};
@@ -41483,18 +41533,12 @@ function s9VoidTick(e,dt){
       if(e._x0==null)e._x0=e.x;e.y+=122*dt;e.x=e._x0+Math.sin(e._s9vt*2.35)*95;e.spin=Math.sin(e._s9vt*2.35)*.36;
       if(!e._s9Act&&(e._fcd=(e._fcd==null?.32:e._fcd)-dt)<=0){e._fcd=rnd(.9,1.2)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.40),a=aim(p);for(const o of [-.09,0,.09])fire(p,a+o,5.2,'s9needle',{silent:o!==0});s9vMuzzle(e,0,.40,.60,.09);},.42,.18);}
     }
-  }else if(K==='s9gatecarrier'){
-    if(e.y<VH*.19)e.y+=36*dt;else e.x+=Math.sin(e._s9vt*.58)*25*dt;
-    if(!e._s9Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.0,2.5)/DIFF.eFire;queue(()=>{for(const x of [-.28,.28]){const p=s9vHardpoint(e,x,.32);for(const o of [-.28,0,.28])fire(p,Math.PI/2+o,2.65,'s9pair',{silent:x>0||o>-.28});s9vMuzzle(e,x,.32,.86,.14);}},.72,.37);}
   }else if(K==='s9gateturret'){
     if(e.y<VH*.25)e.y+=58*dt;else e.y=VH*.25+Math.sin(e._s9vt)*4;e.spin+=1.2*dt;
     if(!e._s9Act&&(e._fcd=(e._fcd==null?.68:e._fcd)-dt)<=0){e._fcd=rnd(1.45,1.8)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,0),base=e._s9vt*.8;for(let i=0;i<6;i++)fire(p,base+i*TAU/6,3.15,'s9warp',{silent:i>0});s9vMuzzle(e,0,0,.92,.14);},.58,.27);}
   }else if(K==='s9prism'){
     if(e.y<VH*.20)e.y+=44*dt;else e.y=VH*.20+Math.sin(e._s9vt*.9)*5;e.spin+=.75*dt;
     if(!e._s9Act&&(e._fcd=(e._fcd==null?1:e._fcd)-dt)<=0){e._fcd=rnd(2.0,2.4)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,0);if((e._pr=(e._pr||0)+1)%3===0)fire(p,Math.PI/2,1.5,'s9lattice',{accel:.38,max:3.0});else{const n=12,base=e._s9vt*.33,st=TAU/n,gap=Math.round((aim(p)-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;fire(p,base+i*st,2.7,'s9warp',{silent:i>0});}}s9vMuzzle(e,0,0,1.05,.18);},.82,.43);}
-  }else if(K==='s9warptank'){
-    if(e.y<VH*.26)e.y+=62*dt;else e.y+=15*dt;
-    if(!e._s9Act&&(e._fcd=(e._fcd==null?.38:e._fcd)-dt)<=0){e._fcd=rnd(.82,1.08)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.38),a=aim(p);for(const o of [-.06,0,.06])fire(p,a+o,5.5,'s9gold',{silent:o!==0});s9vMuzzle(e,0,.38,.56,.08);},.36,.15);}
   }else if(K==='s9ring'){
     if(e._cx==null){e._cx=e.x;e._cy=VH*.22;e._rad=55+(e.phase?15:0);}if(e.y<e._cy)e.y+=72*dt;else{const a=e._s9vt*1.45+(e.phase||0);e.x=e._cx+Math.cos(a)*e._rad;e.y=e._cy+Math.sin(a)*e._rad*.45;e.spin=a;}
     if(!e._s9Act&&(e._fcd=(e._fcd==null?.62:e._fcd)-dt)<=0){e._fcd=rnd(1.45,1.8)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,0),a=e._s9vt*1.45+Math.PI/2;for(const o of [-.10,.10])fire(p,a+o,3.7,'s9turbo',{silent:o>0});s9vMuzzle(e,0,0,.65,.10);},.44,.19);}
@@ -55511,7 +55555,18 @@ function drawContinue(dt){
        run.contUsed counts them; DIFF.continues is the cap (-1 = uncapped, easy/normal, which is
        exactly the behaviour they already had); DIFF.contLives is what a continue gives back, so
        Furious returns 1 life rather than a full bar. */
-    if(DIFF.continues>=0 && (run.contUsed||0)>=DIFF.continues){
+    /* ⚠ ON EASY AND NORMAL THE BONUS STAGE COULD NEVER FAIL YOU. Mike: "stage 9 - did not fail
+       me on the stage and teleport me backk to stage 5 when I lost all 5 lives and my continue."
+       Both of those difficulties carry continues:-1, which means UNCAPPED - so this branch, the
+       only one that ejects a player from the rift, was unreachable for them and stage 9 offered
+       continues forever. A bonus stage you can retry indefinitely is not a bonus.
+       STAGE9_CONTINUES caps it regardless of difficulty: you get your one continue, and the next
+       time you run out the rift collapses and throws you back to stage 5. Harder difficulties
+       already cap lower (Furious allows 1 overall) and keep whichever is stricter. */
+    const _capNow = (run.stage===9)
+      ? ((DIFF.continues>=0) ? Math.min(DIFF.continues, STAGE9_CONTINUES) : STAGE9_CONTINUES)
+      : DIFF.continues;
+    if(_capNow>=0 && (run.contUsed||0)>=_capNow){
       // out of continues — this run is over, no matter how much the player wants it
       if(run.stage===9){riftFallbackStart();return;}
       setState(GS.GAMEOVER); return;

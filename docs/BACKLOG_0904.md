@@ -27,6 +27,26 @@ the boss's ordnance family and rate-gated so a volley is not a wall of noise.
 
 ---
 
+## DONE (drop 0904r) — the stage-9 cluster
+
+**11. Fail + eject** — *"did not fail me on the stage and teleport me backk to stage 5"*
+easy/normal carry `continues:-1` (UNCAPPED), which made the only eject branch unreachable for them.
+`STAGE9_CONTINUES=1` caps the bonus stage regardless of difficulty.
+
+**12. Return to stage 5** — *"did not bring me bac kto my exact positon ... nor showed me the water
+gun pickup"*. There was no save at all; the return called `beginStage(5)` and replayed the level.
+Entry snapshots the clock/scroll/wave, return restores it. The reward is Laser Mist and it was
+already announced — during stage 9's boss death, one beat before the state left PLAY for the map,
+so the banner was raised onto a screen that had gone. Re-raised on arrival in stage 5.
+
+**13. Stuck whiteout** — the merge wrote `whiteBlast`, which the file itself documents as
+"never self-decays". Moved to `atomFlash`, which fades in the play update.
+
+**14. Unusable hulls** — `mini_warp_tank` (a tracked ground tank, in deep space) and `gate_carrier`
+(the one hull my own tilt audit flagged at 145.7 degrees). Roster 10 -> 8.
+
+---
+
 ## QUEUED
 
 ### Art-led (needs SpriteCook)

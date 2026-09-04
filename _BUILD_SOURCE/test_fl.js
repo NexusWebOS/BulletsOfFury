@@ -7372,7 +7372,14 @@ console.log("=== 159. shots-to-kill spec + continue caps ===");
      'easy and normal keep the uncapped continues they already had');
 
   var _g159 = fs.readFileSync(ROOT + '/assets/game.js', 'utf8');
-  ok(_g159.indexOf('(run.contUsed||0)>=DIFF.continues') > 0, 'the cap is enforced at the continue prompt');
+  /* 0904r: the cap is now STAGE-AWARE, so the expression it is read from changed. Mike: "stage 9 -
+     did not fail me on the stage and teleport me backk to stage 5 when I lost all 5 lives and my
+     continue." easy/normal carry continues:-1 (uncapped), which made the eject branch unreachable
+     for them and let the bonus stage be retried forever. The cap is still enforced at the prompt -
+     it is just computed per stage first. Both halves are checked, so this is stricter than before. */
+  ok(_g159.indexOf('(run.contUsed||0)>=_capNow') > 0, 'the cap is enforced at the continue prompt');
+  ok(_g159.indexOf('STAGE9_CONTINUES') > 0 && _g159.indexOf('Math.min(DIFF.continues, STAGE9_CONTINUES)') > 0,
+     'and the bonus stage caps its own continues regardless of difficulty');
   ok(_g159.indexOf('run.contUsed=0;') > 0, 'and the counter resets per run');
 
   /* BOSSES AND MINIBOSSES KEEP THEIR OWN HP — "mini bosses of course each get there own
@@ -12275,7 +12282,7 @@ console.log("=== 258. Stage 9 Velocity Void headless contract ===");
      'the Velocity Void is one continuous 680px authored space scroll with no arena teleport (starfield since 0903d)');
 
   var _plan258=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var P=buildStagePlan(9),seen=[],real=spawnEnemy;spawnEnemy=function(t){seen.push(t);return null;};P.forEach(function(w){(w.fn||w[1]||function(){})();});spawnEnemy=real;return JSON.stringify({n:P.length,t:P.map(function(w){return w.t;}),cast:Array.from(new Set(seen)).sort()});})()",ctxv));
-  var _cast258=['s9beacon','s9comet','s9gatecarrier','s9gateturret','s9gunship','s9interceptor','s9prism','s9ring','s9singularity','s9warptank'];
+  var _cast258=['s9beacon','s9comet','s9gateturret','s9gunship','s9interceptor','s9prism','s9ring','s9singularity'];
   ok(_plan258.n===12 && JSON.stringify(_plan258.cast)===JSON.stringify(_cast258),
      'all twelve authored events field only the exact twelve-family Velocity Void cast');
   ok(_plan258.t.every(function(t,i,a){return Number.isFinite(t) && t>=0 && t<42 && (i===0||t>=a[i-1]);}),
@@ -12446,7 +12453,7 @@ console.log("=== 261. Stage 9 full headless soak ===");
   }catch(_err261){_crash261=String(_err261&&_err261.message||_err261);}
   _seen261=JSON.parse(vm.runInContext("JSON.stringify(window.__s9SoakSeen||{})",ctxv));
   vm.runInContext("spawnEnemy=window.__realS9Spawn;delete window.__realS9Spawn;",ctxv);
-  var _cast261=['s9beacon','s9comet','s9gatecarrier','s9gateturret','s9gunship','s9interceptor','s9prism','s9ring','s9singularity','s9warptank'];
+  var _cast261=['s9beacon','s9comet','s9gateturret','s9gunship','s9interceptor','s9prism','s9ring','s9singularity'];
   ok(_crash261===null,'Stage 9 survives a full 90-second update soak without throwing'+(_crash261?' -> '+_crash261:''));
   ok(_cast261.every(function(k){return _seen261[k];}),
      'the soak observes all twelve Velocity Void families in live director order (saw '+Object.keys(_seen261).sort().join(',')+')');
@@ -12945,18 +12952,19 @@ console.log("=== 271. Stage-5 orbital fleet and Xeno Regent ===");
 // ===== 272. STAGE-9 NATIVE VOID FLEET + RIFT WARDENS =====
 console.log("=== 272. Stage-9 void fleet and Rift Wardens ===");
 {
-  var _fleet272=['s9beacon','s9comet','s9gunship','s9interceptor','s9gatecarrier','s9gateturret','s9prism','s9warptank','s9ring','s9singularity'];
+  var _fleet272=['s9beacon','s9comet','s9gunship','s9interceptor','s9gateturret','s9prism','s9ring','s9singularity'];
   var _plan272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var p=buildStagePlan(9),seen={};for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
   ok(_fleet272.every(function(k){return _plan272.indexOf(k)>=0;}),'Stage 9 schedules all twelve supplied Velocity Void hulls');
   ok(['wskim','pneedle','pmine','gleech','vmanta','echof','tsplit','cbreak','horizon','dreadv'].every(function(k){return _plan272.indexOf(k)<0;}),'the rebuilt bonus stage no longer mixes the prototype void roster into its waves');
   var _owned272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];enemies.length=0;var o={};Object.keys(S9VOID).forEach(function(k){enemies.length=0;var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S9VOID[k].art};});return JSON.stringify(o);})()",ctxv));
   ok(_fleet272.every(function(k){return _owned272[k]&&_owned272[k].p==='s9void'&&!_owned272[k].s&&_owned272[k].f===null;}),'every Velocity Void hull owns its flight and weapon cadence');
-  var _shots272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S9VOID[k],e={_s9void:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||120)&&!e.dead;i++)s9VoidTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}return JSON.stringify({beacon:tick('s9beacon'),comet:tick('s9comet',function(e){e._dir=1;}),gunship:tick('s9gunship'),interceptor:tick('s9interceptor'),carrier:tick('s9gatecarrier'),turret:tick('s9gateturret'),prism:tick('s9prism'),tank:tick('s9warptank'),ring:tick('s9ring',function(e){e._cy=120;}),singularity:tick('s9singularity')});})()",ctxv));
+  var _shots272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S9VOID[k],e={_s9void:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||120)&&!e.dead;i++)s9VoidTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}return JSON.stringify({beacon:tick('s9beacon'),comet:tick('s9comet',function(e){e._dir=1;}),gunship:tick('s9gunship'),interceptor:tick('s9interceptor'),turret:tick('s9gateturret'),prism:tick('s9prism'),ring:tick('s9ring',function(e){e._cy=120;}),singularity:tick('s9singularity')});})()",ctxv));
   /* 0904e: the chronal clause is gone with the unit - Mike: "its a 45 degree titled tank. we cant have any turned enemies like this." */
   ok(_shots272.beacon.k.every(function(k){return k==='s9warp';})&&_shots272.comet.k.every(function(k){return k==='s9turbo';}),'beacon wheel and comet pass use distinct void ammunition');
-  ok(_shots272.gunship.k.every(function(k){return k==='s9needle';})&&_shots272.interceptor.k.every(function(k){return k==='s9needle';})&&_shots272.carrier.k.every(function(k){return k==='s9pair';}),'gunship batteries, interceptor burst and gate carrier bracket remain distinct patterns');
+  ok(_shots272.gunship.k.every(function(k){return k==='s9needle';})&&_shots272.interceptor.k.every(function(k){return k==='s9needle';}),'gunship batteries, interceptor burst and gate carrier bracket remain distinct patterns');
   /* 0904i: the gravity-artillery clause is gone with the unit - Mike: "delete these 2 enemies. no good." */
-  ok(_shots272.turret.k.every(function(k){return k==='s9warp';})&&_shots272.tank.k.every(function(k){return k==='s9gold';}),'gate turret and warp tank preserve their separate cadences');
+  /* 0904r: the warp-tank clause is gone with the unit - Mike: "you still have tanks ... on stage 9" */
+  ok(_shots272.turret.k.every(function(k){return k==='s9warp';}),'the gate turret preserves its cadence');
   ok((_shots272.prism.k.indexOf('s9warp')>=0||_shots272.prism.k.indexOf('s9lattice')>=0)&&_shots272.ring.k.every(function(k){return k==='s9turbo';})&&_shots272.singularity.k.every(function(k){return k==='s9pair';}),'prism, ring drone and singularity mine complete the twelve identities');
   ok(Object.keys(_shots272).every(function(k){return _shots272[k].k.length&&_shots272[k].fl>0;}),'every Level-9 hull fires through an animated following muzzle hardpoint');
   ok(vm.runInContext("['s9gold','s9warp','s9turbo','s9needle','s9comet','s9pair'].every(function(k){return FIRETYPES[k]&&FIRETYPES[k].procSpace&&PROJ[k];})",ctxv),'all six void projectile families use the dedicated hard-edged space renderer');
