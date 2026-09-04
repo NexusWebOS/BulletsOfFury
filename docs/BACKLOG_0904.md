@@ -47,6 +47,21 @@ so the banner was raised onto a screen that had gone. Re-raised on arrival in st
 
 ---
 
+## DONE (drop 0904s) — stage 5
+
+**8. Sky -> space** — *"do not stop the scroling and use clouds so we dont see the connection but
+feels natural like our player went up into space."*
+⚠ The leg was ALREADY scrolling continuously and still read as stopping: it ramped 240 -> 1220px/s
+then handed straight to PLAY, which runs at 40px/s. A thirty-fold drop in one frame is a wall, not
+a continuation. The ramp now decelerates across the final phase and lands on 40.2px/s, so the
+background is already moving at the speed stage 5 will move it.
+The three backdrops meet on two hard clipped edges; a drifting cloud bank now rides each one,
+densest on the join. The upper seam thins as the swirl takes hold — leaving the weather behind is
+the altitude cue. First cut scattered clouds by hash and left a third of the seam bare; they are
+stepped evenly across the width with jitter inside each step now.
+
+---
+
 ## QUEUED
 
 ### Art-led (needs SpriteCook)

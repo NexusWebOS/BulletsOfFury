@@ -515,11 +515,77 @@ function outboundIsSkySpaceRoute(o){
   return o && o.from===4 && o.via && o.via.indexOf('sky')>=0 && o.via.indexOf('space')>=0;
 }
 const L45_CLIMB=1.5, L45_SKY=2.6, L45_SWIRL=3.0, L45_SPACE=2.2;
-/* px/sec, ramping across the whole leg. The stage's own scroll is ~40px/s, so this leaves the
-   level at its established speed and builds to a genuine departure rather than snapping to one. */
+/* ============================================================
+   THE SCROLL NEVER STOPS, AND IT NEVER SLAMS EITHER (drop 0904s)
+
+   Mike: "you were supposed to connect space and sky, do not stop the scroling and use clouds so
+   we dont see the connection but feels natural like our player went up into space."
+
+   ⚠ THE LEG WAS ALREADY SCROLLING CONTINUOUSLY - AND STILL READ AS STOPPING. It ramped 240 ->
+   1220px/s and then handed straight to PLAY, which runs at 40px/s (see LAUNCH_COUNTDOWN_SCROLL:
+   "GO hands off continuously to PLAY's 40px/s"). A thirty-fold drop in one frame is not a scroll
+   that continues, it is a scroll that hits a wall - which is exactly what the player sees.
+
+   So the ramp now has a DECELERATION. It builds through climb/sky/swirl as before, then eases
+   back down across `space` to the stage's own 40px/s, so the moment stage 5 takes over the
+   background is already moving at the speed stage 5 will move it. Nothing changes at the seam.
+   ============================================================ */
+const S45_ENTRY=240, S45_PEAK=1220, S45_PLAY=40;
 function s45Speed(o){
-  const total=L45_CLIMB+L45_SKY+L45_SWIRL+L45_SPACE;
-  return 240 + 980*clamp((o._elapsed||0)/total,0,1);
+  const climbT=L45_CLIMB+L45_SKY+L45_SWIRL;
+  if(o.phase==='space'){
+    /* ease from the peak down to the speed PLAY is about to continue at */
+    const q=clamp((o.t||0)/L45_SPACE,0,1), e=q*q*(3-2*q);
+    return S45_PEAK + (S45_PLAY-S45_PEAK)*e;
+  }
+  return S45_ENTRY + (S45_PEAK-S45_ENTRY)*clamp((o._elapsed||0)/climbT,0,1);
+}
+/* ============================================================
+   CLOUD OVER THE JOINS (drop 0904s)
+
+   Mike: "use clouds so we dont see the connection but feels natural like our player went up into
+   space."
+
+   The leg draws three backdrops in clipped bands - the stage they cleared, the sky above it, then
+   space - and those bands meet on two hard horizontal edges. No fade is wanted (0903w settled
+   that), so the edges are HIDDEN instead: a drifting cloud bank rides each seam, densest exactly
+   on the join and thinning above and below it, so the eye reads weather passing rather than two
+   images meeting.
+
+   The upper seam (sky -> space) thins as the swirl takes hold, because climbing out of the
+   atmosphere means leaving the weather behind - that thinning is what sells the altitude.
+
+   Reuses stage 6's authored cloud families and the same deterministic hash for placement, so a
+   given leg looks the same every run rather than reshuffling.
+   ============================================================ */
+function s45CloudSeam(yc, amt, scroll, seed){
+  if(!(amt>0.01) || typeof XART==='undefined' || typeof BG6_CLOUD_LAYERS==='undefined') return;
+  const t=(typeof performance!=='undefined'?performance.now():Date.now())/1000;
+  for(let li=0; li<BG6_CLOUD_LAYERS.length; li++){
+    const L=BG6_CLOUD_LAYERS[li], probe=L.fam+'0';
+    if(!XART.rdy(probe)) continue;            /* rdy() also STARTS the decode - skip until it lands */
+    const im0=XART.get(probe);
+    const cw=(im0.naturalWidth||128)*L.sc*1.35, ch=(im0.naturalHeight||96)*L.sc*1.35;
+    /* ⚠ PURE HASH PLACEMENT LEFT HOLES IN THE SEAM. Scattering N clouds at hashed x positions
+       clumps them - measured on the captured leg, the join was still bare across a third of the
+       width. The band is now stepped EVENLY across the screen with a hashed jitter inside each
+       step, so every part of the seam is covered while the spacing still looks unplanned. */
+    const band=ch*0.85, cols=Math.max(4, L.cols*2+2);
+    const spanX=VW+cw*2, stepX=spanX/cols;
+    for(let c=0;c<cols;c++){
+      const jx=_bg6Hash(li+seed, 7, c), jy=_bg6Hash(li+64+seed, 7, c), jf=_bg6Hash(li+128+seed, 7, c);
+      const oy=(jy*2-1)*band*0.72;
+      const fall=1-Math.min(1,Math.abs(oy)/(band*1.02));
+      if(fall<=0.02) continue;
+      let x=(c*stepX + jx*stepX*0.85 + t*L.vx) % spanX; if(x<0) x+=spanX;
+      const fi=(Math.floor(t*3.2 + jf*BG6_CLOUD_FRAMES))%BG6_CLOUD_FRAMES;
+      const key=L.fam+fi; if(!XART.rdy(key)) continue;
+      ctx.save();
+      ctx.globalAlpha=clamp(L.a*amt*fall*1.65,0,1);
+      ctx.drawImage(XART.get(key), x-cw, yc+oy-ch/2, cw, ch);
+      ctx.restore();
+    }
+  }
 }
 function outboundUpdate(dt){
   if(!outbound) return null;
@@ -887,6 +953,14 @@ function outboundDrawSkySpace(o){
      backdrop is the point: when the leg ends there is nothing to swap - the player is already
      looking at stage 5, moving. */
   band(0, yaSpace, function(){ s45Tile('bg_stage05_loop', o.scroll, 0.80, 1); });
+  /* ⚠ THE JOINS ARE HIDDEN, NOT FADED. Two hard clipped edges meet above: stage 4 -> sky at
+     yaSky, and sky -> space at yaSpace. A cloud bank rides each of them. The lower seam holds
+     full weather; the upper one thins out as the swirl takes over, because leaving the
+     atmosphere means leaving the clouds behind - that is the altitude cue Mike is asking for. */
+  if(o._skyAt!=null && yaSky>0.5 && yaSky<VH-0.5)
+    s45CloudSeam(yaSky, 1.0, o.scroll, 0);
+  if(o._spaceAt!=null && yaSpace>0.5)
+    s45CloudSeam(yaSpace, clamp(1-(o.swirl||0)*0.85, 0, 1), o.scroll, 5);
   /* the ship, climbing out of frame during the first beat only */
   if(o.phase==='climb' && o.py>-80 && typeof drawShipSprite==='function')
     drawShipSprite(outboundScreenX(o), o.py, 38, '');
