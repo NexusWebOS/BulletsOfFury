@@ -11504,6 +11504,11 @@ console.log("=== 231. spawn carrier identity + boss projectiles ===");
   var _bossFamilies=JSON.parse(vm.runInContext("(function(){"
     +"var miss=[],bad=[]; Object.keys(SHIPBOSS).forEach(function(k){var d=SHIPBOSS[k];"
     +" if(!d.proj) miss.push(k); else if(k==='heralddeath'){if(!XART._src.nhd_primary_projectile_0||!XART._src.nhd_special_projectile_0)bad.push(k+':'+d.proj);}"
+    /* 0904n: the HERALD OF DEATH was remade as a death-themed alien drone and now throws an
+       AUTHORED skull round (herald_bolt_0) through its own FIRETYPES entry, instead of the
+       generic bfx_spawn_* pack - 18 frames that were registered on every stage-8 entry and drawn
+       by nothing. Same precedent as heralddeath's custom reels directly above. */
+    +" else if(k==='spawncarrier'){if(!XART._src.herald_bolt_0)bad.push(k+':'+d.proj);}"
     +" else if(!XART._src['bfx_'+d.proj+'_p_0']) bad.push(k+':'+d.proj); });"
     +"return JSON.stringify({miss:miss,bad:bad,n:Object.keys(SHIPBOSS).length});})()",ctxv));
   ok(_bossFamilies.miss.length===0,

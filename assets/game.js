@@ -11469,13 +11469,31 @@ function enemyVolley(e, force){
    the shipped damaged plates permanently fuse smoke/explosion FX into it.  Registering them here
    keeps the generated manifest untouched and makes rollback one key. */
 if(typeof XART!=='undefined' && XART._src){
-  XART._src.nsb_spawncarrier_intact_v2='assets/game/nsb_spawncarrier_intact_v2.png';
-  XART._src.nsb_spawncarrier_damaged_v2='assets/game/nsb_spawncarrier_damaged_v2.png';
-  XART._src.nsb_spawncarrier_critical_v2='assets/game/nsb_spawncarrier_critical_v2.png';
-  for(const _r of ['p','m','i']) for(let _f=0;_f<6;_f++){
-    const _k='bfx_spawn_'+_r+'_'+_f;
-    XART._src[_k]='assets/game/boss_fx_spawncarrier/'+_k+'.png';
-  }
+  /* ============================================================
+     HERALD OF DEATH, REMADE (drop 0904n)
+
+     Mike: "the sprite seems low quality. do a 1||1 spritecook remake with some better
+     projectiles, frames, attack patterns and attack frames etc. want this to be a death themed
+     alien drone boss."
+
+     A skull-cored bio-mechanical drone in bone and ash with acid-green energy. The old plate's
+     three states were nearly identical - intact, damaged and critical differed by a few scorches
+     and could not be told apart in play. These read at a glance: cracked brow and one dead eye
+     socket at damaged, a split skull with both sockets blazing and a molten-green interior at
+     critical. All three were re-aligned to one 492px footprint on import, because SpriteCook
+     crops each edit to its own bbox and unaligned states make the hull jump when it degrades.
+     ============================================================ */
+  XART._src.nsb_spawncarrier_intact_v2='assets/game/stage8_herald/herald_intact.png';
+  XART._src.nsb_spawncarrier_damaged_v2='assets/game/stage8_herald/herald_damaged.png';
+  XART._src.nsb_spawncarrier_critical_v2='assets/game/stage8_herald/herald_critical.png';
+  XART._src.herald_bolt_0='assets/game/stage8_herald/herald_bolt_0.png';
+  /* ⚠ 18 GENERATED FX FRAMES REGISTERED HERE WERE NEVER DRAWN BY ANYTHING. bfx_spawn_p/m/i_0..5
+     were loaded on every stage-8 entry and referenced by exactly one line - this one. Mike:
+     "it should just use our explosion frames we already have hardwired into the engine ... for
+     some reason it's using some generic crap it generated." Grepped the whole file before
+     deleting: no draw site, no table, no string built from the prefix. The Herald's blasts
+     already run through explode() on the authored nxp_ families like every other boss, which is
+     what Mike is asking for; the generated pack was dead weight sitting next to them. */
 }
 
 /* Encounter-map ripple.  Mike's marked layouts use numbered circles as an ORDER, not as a
@@ -12105,6 +12123,9 @@ function shipShotKind(owner){
   }
   if(owner&&S4_SHIP_SHOT[owner._ship]) return owner._sbPat==='ember'?'s4rail':'s4missile';
   if(owner&&S6_SHIP_SHOT[owner._ship]) return owner._sbPat==='stormbolts'?'s6bolt':'s6prism';
+  /* the Herald throws skulls - Mike asked for "better projectiles" and a death theme, so its
+     rounds are authored art rather than the generic ship pellet every other hull shares */
+  if(owner&&owner._ship==='spawncarrier') return 's8herald';
   return 'eshot';
 }
 /* one bullet, on the file's own contract: slow, readable, scaled by difficulty SPEED */
@@ -31402,6 +31423,10 @@ const FIRETYPES={
   gem:   { art:(b)=>'mfx_ea_3_'+(((b.t||0)*10|0)%8), spin:2.4, h:13, glow:'#9fe6ff'},
   orb:   { art:(b)=>'mfx_ea_3_'+(((b.t||0)*8|0)%8),  spin:0,   h:12, glow:'#ffb04a'},
   laser: { art:(b)=>emrKey(b), align:true, h:20, glow:(b)=>emrGlow(b)},
+  /* HERALD OF DEATH's ordnance (drop 0904n): one authored plate, aligned to its own velocity,
+     lit with the drone's acid-green. Static by design - it is in PROJ_SHADE's spirit, a single
+     frame carried by rotation and glow rather than a reel that swaps silhouettes mid-flight. */
+  s8herald:{art:()=>'herald_bolt_0', align:true, h:26, glow:'#9dff3a'},
   /* RAILSHOT SURVIVES ON ITS OWN ART (drop 0801hj). It is not one of the six, but
      it does not draw from mfx_ at all - it uses waf_railgun_, and all five
      DRONE_CANNON mounts fire it. Dropping it when I rewrote this table left every
