@@ -7343,8 +7343,64 @@ const HULL_RAMPS={
   neonblue:[[8,12,20],[12,30,60],[14,50,104],[16,72,152],[18,96,200],[30,128,238],[64,166,255],[112,200,255],[172,226,255],[226,244,255]],
   neonyel: [[16,14,6],[46,40,8],[80,70,10],[116,102,12],[154,138,14],[192,176,18],[224,212,30],[246,240,70],[252,250,140],[255,254,210]],
   darkyel: [[14,12,6],[36,30,8],[58,48,10],[80,66,12],[104,86,16],[130,108,22],[158,132,30],[188,160,48],[214,190,86],[240,224,150]],
-  rustyel: [[16,10,6],[44,24,8],[74,40,10],[104,58,12],[136,78,16],[166,100,22],[196,126,34],[220,156,58],[238,190,104],[252,224,168]]
+  rustyel: [[16,10,6],[44,24,8],[74,40,10],[104,58,12],[136,78,16],[166,100,22],[196,126,34],[220,156,58],[238,190,104],[252,224,168]],
+  /* Mike, on the Herald: "palette swap the herald of death to bed red and black and dark gray."
+     Black at the bottom, dark greys through the middle where the bone plating sits, and blood red
+     climbing into the highlights - so the carapace reads black-and-grey and the energy reads red,
+     rather than the whole hull turning into one flat red shape. */
+  bloodred:[[10,8,9],[30,28,30],[52,50,53],[74,70,74],[104,40,42],[142,34,36],[178,28,30],[212,34,34],[240,74,66],[255,166,150]]
 };
+/* ============================================================
+   BOSS PALETTES AND ENERGY GLOW (drop 0904p)
+
+   Mike: "palette swap the herald of death to bed red and black and dark gray. these guys need to
+   get pixel glow effects on their energy sections proper muzzle flashes and there own attacks and
+   animations. spritecoo kmay be the answer but you trll me"
+
+   ⚠ MY ANSWER IS NO, NOT FOR THESE. A generated frame cannot pulse - the glow Mike wants is a
+   thing that MOVES, so it has to be procedural whatever the art is. The palette is the banding
+   system already built for the enraged swap; regenerating the plates would also throw away the
+   footprint alignment that stops the hull jumping between damage states. Muzzle flashes are an
+   engine system with four authored families already shipped. Only new ATTACKS would want new art,
+   and even those are behaviour first.
+   ============================================================ */
+const BOSS_TINT={ spawncarrier:'bloodred' };
+/* ENERGY SECTIONS, FOUND RATHER THAN AUTHORED. A boss's glowing parts are its most saturated,
+   brightest pixels - the acid-green sockets, the magma vents, the cryo cores. Extracting them
+   into their own cached plate means the glow can be re-burnt additively on its own clock over
+   ANY boss, with no per-boss mask to author and nothing to keep in sync when art changes. */
+const _emisCache={};
+function xartEmissive(key, srcOverride, cacheKey){
+  /* ⚠ THE MASK MUST COME FROM THE PLATE THAT IS ACTUALLY DRAWN. The first cut always read the
+     RAW art, so a palette-swapped boss got a glow made of its ORIGINAL colours - the Herald would
+     have burned acid-green light over a blood-red hull. When a boss is tinted, the tinted canvas
+     is passed in here and cached under its own key. */
+  const ck=cacheKey||key;
+  if(_emisCache[ck]!==undefined) return _emisCache[ck];
+  const im=srcOverride||((typeof XART!=='undefined'&&XART.rdy(key))?XART.get(key):null);
+  if(!im) return null;
+  const w=(im.naturalWidth||im.width)|0, h=(im.naturalHeight||im.height)|0;
+  if(!w||!h) return null;
+  let c,x,d;
+  try{
+    c=document.createElement('canvas'); c.width=w; c.height=h;
+    x=c.getContext('2d',{willReadFrequently:true});
+    x.drawImage(im,0,0);
+    d=x.getImageData(0,0,w,h);
+  }catch(err){ _emisCache[ck]=null; return null; }   /* tainted canvas: no glow, hull unchanged */
+  const px=d.data; let n=0;
+  for(let i=0;i<px.length;i+=4){
+    if(px[i+3]===0) continue;
+    const r=px[i], g=px[i+1], b=px[i+2];
+    const mx=Math.max(r,g,b), mn=Math.min(r,g,b);
+    const sat=mx===0?0:(mx-mn)/mx, val=mx/255;
+    if(sat>0.42 && val>0.52){ n++; }
+    else px[i+3]=0;                                    /* keep only the emissive pixels */
+  }
+  if(!n){ _emisCache[ck]=null; return null; }
+  x.putImageData(d,0,0);
+  c._emisN=n; _emisCache[ck]=c; return c;
+}
 /* silhouette-aware assignment - the five look-alike jets are on five different ramps */
 const HULL_TINT={
   s6skimmer:'black',   s6thunder:'royal',    s6bomber:'royal',
@@ -12157,6 +12213,38 @@ function shipBossMount(b, slot){
   const c=Math.cos(P.rot||0), s=Math.sin(P.rot||0);
   return {x:b.x+P.x+lx*c-ly*s, y:y+P.y+lx*s+ly*c};
 }
+/* ============================================================
+   A MUZZLE THAT MATCHES WHAT LEAVES THE BARREL (drop 0904p)
+
+   Mike: "proper muzzle flashes".
+
+   ⚠ THE FLASHES WERE NEVER MISSING - my first audit said 21 of 24 patterns fired silently, and
+   that was WRONG: shipBossActionTick raises one centrally for every pattern off the action
+   profile. What was missing is that nearly all of them fell back to the DEFAULT flash, so a
+   missile bay, a rail cannon and a void lance all bloomed the same way. Two bosses had authored
+   families (the sludge crawler and the toxic leviathan) and everything else shared one look.
+
+   The four premium families are already shipped and the suite asserts all 64 frames resolve, so
+   each boss is routed to the one that matches its ordnance. No new art, and the flash now tells
+   the player what is coming out.
+   ============================================================ */
+const BOSS_MUZZLE_FAM={
+  missile:['doomsdaycarrier','doomsdaycarriermk2','olivewarden','spawncarrier','heralddeath'],
+  laser:  ['stormsovereign','rimewall','cryospear','thornrime','blacksteel'],
+  void:   ['xenoregent','voidbat','infernoreaver'],
+  kinetic:['magmaward','siegeember','junglecruiser','olivecarrier','dualscoopdredger']
+};
+const _bossMzLookup=(function(){
+  const m={};
+  for(const fam in BOSS_MUZZLE_FAM) for(const k of BOSS_MUZZLE_FAM[fam]) m[k]='bpfx_muzzle_'+fam;
+  return m;
+})();
+function bossMuzzleFam(b){
+  const k=b&&b._ship?_bossMzLookup[b._ship]:null;
+  /* only claim a family the art actually shipped - otherwise fall back to the engine default */
+  if(k && typeof XART!=='undefined' && XART.rdy(k+'_0')) return k;
+  return null;
+}
 function shipBossMuzzleStart(b, slots, opts){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null;
   if(!D||!D.proj||!D.mounts) return;
@@ -12303,8 +12391,8 @@ function shipBossQueueAttack(b){
   } else if(b._ship==='infernoreaver'&&pat==='chargebeam'){
     /* Charge the two wing emitters only. The separately rendered nose orb begins when the action
        releases, so no beam tell is ever anchored to the central magma furnace. */
-    shipBossMuzzleStart(b,['L','R'],{life:A.tell,n:6});
-  } else shipBossMuzzleStart(b,shipBossPatternSlots(pat,(b._sbStep|0)+1),{life:A.tell,n:6});
+    shipBossMuzzleStart(b,['L','R'],{life:A.tell,n:6,fam:bossMuzzleFam(b)});
+  } else shipBossMuzzleStart(b,shipBossPatternSlots(pat,(b._sbStep|0)+1),{life:A.tell,n:6,fam:bossMuzzleFam(b)});
   if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.bossWeaponCharge) Audio.SFX.bossWeaponCharge();
   return true;
 }
@@ -16428,7 +16516,12 @@ function shipBossDraw(b){
     const _fi=_q?clamp(Math.floor((_q.t/_dur)*8),0,7):(Math.floor((b._sbT||0)*6)%4);
     const _dk='s7atk_dual_scoop_dredger_'+_fi;if(XART.rdy(_dk))_ak=_dk;
   }
-  const im=XART.get(_ak);
+  let im=XART.get(_ak);
+  /* the boss's identity palette, if it has one (Herald: black/grey carapace, blood-red energy) */
+  if(typeof BOSS_TINT!=='undefined' && BOSS_TINT[b._ship] && typeof xartRampPlate==='function'){
+    const _rp=HULL_RAMPS[BOSS_TINT[b._ship]];
+    if(_rp){ const _q=xartRampPlate(_ak,_rp,BOSS_TINT[b._ship]+'|'+_ak,0.80,ENRAGE_FLOOR); if(_q) im=_q; }
+  }
   /* ⚠ THE BOX IS w x h, NOT w x w (drop 0822y). This read `h=256*s` — i.e. b.w — so every
      ship boss drew SQUARE and its declared h was ignored. Harmless while a plate was square,
      but the Doomsday Carrier is authored 320x155 and declares 640x310, so it drew 640x640:
@@ -22551,6 +22644,47 @@ function _bigTarget(t){
   if(!t) return false;
   if(t===boss || t===subBoss) return true;
   return (t.w||0)>=64 || (t.h||0)>=64;
+}
+/* ============================================================
+   PIXEL GLOW ON THE ENERGY SECTIONS (drop 0904p)
+
+   Mike: "these guys need to get pixel glow effects on their energy sections".
+
+   The emissive pixels are extracted once per plate (xartEmissive) and re-burnt over the hull
+   additively on a fast clock, with a slower second pass for a hotter core. Same idiom as the
+   projectile shadeglow and Cole's firewall: the life comes from re-burning the SAME pixels rather
+   than swapping art, so it costs one cached canvas per plate and works on every boss - authored,
+   generated or atlas-backed - with no per-boss mask to keep in sync.
+
+   ⚠ IT FOLLOWS THE HULL'S POSE, unlike the energy FIELD which deliberately does not. The glow IS
+   the hull's own pixels, so if the boss banks or scales, its lit sections have to bank with it or
+   they slide off the vents they belong to.
+   ============================================================ */
+function drawBossEnergyGlow(b){
+  if(!b||b.dead||b.enter) return;
+  if(typeof XART==='undefined'||typeof shipBossVisualPose!=='function') return;
+  const key=(b._animKey&&XART.rdy(b._animKey))?b._animKey:
+            ((typeof SHIPBOSS!=='undefined'&&SHIPBOSS[b._ship]&&SHIPBOSS[b._ship].key)||null);
+  if(!key||!XART.rdy(key)) return;
+  let em;
+  const _tn=(typeof BOSS_TINT!=='undefined')?BOSS_TINT[b._ship]:null;
+  if(_tn && typeof xartRampPlate==='function' && HULL_RAMPS[_tn]){
+    const tp=xartRampPlate(key,HULL_RAMPS[_tn],_tn+'|'+key,0.80,ENRAGE_FLOOR);
+    em=tp?xartEmissive(key,tp,'emis|'+_tn+'|'+key):xartEmissive(key);
+  } else em=xartEmissive(key);
+  if(!em) return;
+  const w=b.w||160, h=b.h||160, cy=(b._drawY!=null?b._drawY:b.y), P=shipBossVisualPose(b);
+  const t=(b.t||0);
+  const fast=0.34+0.26*Math.sin(t*6.1), slow=0.20+0.16*Math.sin(t*2.7);
+  ctx.save();
+  ctx.translate(b.x+P.x, cy+P.y); ctx.rotate(P.rot); ctx.scale(P.sx,P.sy);
+  ctx.globalCompositeOperation='lighter';
+  ctx.imageSmoothingEnabled=false;
+  ctx.globalAlpha=Math.max(0,Math.min(1,fast));
+  ctx.drawImage(em,-w/2,-h/2,w,h);
+  ctx.globalAlpha=Math.max(0,Math.min(1,slow));
+  ctx.drawImage(em,-w*0.985/2,-h*0.985/2,w*0.985,h*0.985);
+  ctx.restore();
 }
 /* the boss field, drawn in world space so it never inherits the hull's roll */
 function drawBossEnergyField(b){
@@ -30908,6 +31042,7 @@ function drawBoss(){
   ctx.save();
   ctx.globalAlpha = _bossFade;
   drawBossInner();
+  if(typeof drawBossEnergyGlow==='function' && typeof boss!=='undefined' && boss) drawBossEnergyGlow(boss);
   if(typeof drawBossEnergyField==='function' && typeof boss!=='undefined' && boss) drawBossEnergyField(boss);
   encounterDamageOverlay(_b,false);
   ctx.restore();
