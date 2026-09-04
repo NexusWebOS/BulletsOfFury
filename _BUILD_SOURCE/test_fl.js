@@ -12317,7 +12317,7 @@ console.log("=== 259. generated combat audio routing ===");
     dkReload:'reviewed_decker_reload.wav', laserCannon:'reviewed_laser_cannon.wav',
     spaceLaserCannon:'reviewed_laser_cannon.wav', spaceLaserHit:'shield_hit_light.wav',
     spaceShadowCharge:'nsp_bof2_charge_shot.mp3', spaceShadowRelease:'reviewed_shadow_orb_launch.wav',
-    spaceShadowHit:'explosion_plasma.wav', spaceVolleyLaunch:'nsp_rocket_launch.mp3',
+    spaceShadowHit:'reviewed_shadow_orb_impact.wav', /* 0903q: was explosion_plasma.wav, whose peak lands at 454 ms - Mike: 'delayed impact sound'. The approved table pinned the late sample; see the mapping note in game.js. */ spaceVolleyLaunch:'nsp_rocket_launch.mp3',
     spaceVolleyHit:'explosion_air_medium.wav',
     atomicLaunch:'reviewed_lizzie_atom_launch.wav', atomicDetonate:'reviewed_lizzie_atom_impact.wav',
     megaShieldPickup:'reviewed_axel_mega_shield.wav', specialAbilityPickup:'reviewed_special_pickup.wav',

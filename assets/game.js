@@ -12270,6 +12270,35 @@ function stage4MiniDroneDamage(b,d,dmg){
     stage4WarfareSound('enemyElectricBolt','expBig');shake=Math.max(shake,7);}
   return true;
 }
+/* ============================================================
+   THE HELPER CHAINGUN TURRETS: 1.5x, RE-SOCKETED, AND THEY ANGLE 45 DEGREES (drop 0903r)
+
+   Mike: "the chaingun turrets helpers, enlarge those chainguns via 50% scaling and re-socket
+   them to ensure they look right. they should not only shoot straight down, but at times, angle
+   themselves 45 degrees and shoot towards the player diagonally in burst round firing patterns."
+
+   These are S.coreTurrets - the two dual-socket helpers the carrier deploys, drawn from
+   s4w_helper_dual_*. Until this drop the body never rotated and t.ang was forced to PI/2 every
+   tick; the tip comment said "permanently south-facing" and meant it. That is the straight-down
+   he is describing.
+
+   SCALE. S4H_SCALE is the one number. The sprite, its heat overlay, both tints, the overheat
+   ring, the teleport-in ring and the HP-bar offset read it - and so do the HIT PADS. A turret
+   half again as big with the old 58x54 pad would let rounds pass through its visible edges,
+   which is what "does not look right" becomes once it is bigger.
+
+   RE-SOCKET. The helpers do not sit on the hull: stage4CoreTurretTarget parks them at the screen
+   edges and the carrier strafes between them, so the socket that matters is the barrel tip.
+   stage4CoreTurretTip scales the two baked offsets AND rotates them about the turret centre by
+   the same angle the draw rotates by, so rounds and muzzle flashes leave the drawn barrels at
+   every angle instead of from where the barrels used to be.
+
+   DIAGONAL BURSTS. The mode alternates each cycle: DOWN is the old continuous stream at PI/2;
+   DIAG swings the whole turret to 45 degrees toward whichever side the player is on and fires
+   4-round bursts (55 ms apart, a beat between) across the same 2.0 s window. The swing is
+   chosen at the START of windup, so the turn is the tell - you see it angle before it fires.
+   ============================================================ */
+const S4H_SCALE=1.5, S4H_SIZE=132*S4H_SCALE, S4H_HALF=S4H_SIZE/2;
 function stage4CoreTurretTarget(b,side){
   const viewX=(typeof camX!=='undefined'?camX:0),cy=(b._drawY!=null?b._drawY:b.y);
   /* These helpers are independent targets, so they hold the two outer combat lanes while the
@@ -12285,7 +12314,7 @@ function stage4CoreTurretSpawnMissing(b,threshold){
     if(old&&!old.dead)continue;
     const p=stage4CoreTurretTarget(b,side),hp=170+S.coreGeneration*20,shield=90+S.coreGeneration*12,
           t={side:side,x:p.x,y:p.y,hp:hp,maxhp:hp,shield:shield,maxShield:shield,dead:false,spawnT:0,materialize:0,
-             flash:0,deflectFlash:0,deflectSfx:0,ang:Math.PI/2,spin:side<0?0:4,
+             flash:0,deflectFlash:0,deflectSfx:0,ang:Math.PI/2,aimTo:Math.PI/2,mode:'down',burstLeft:0,spin:side<0?0:4,
              /* The right helper is one half-cycle behind the left. Their fire and orange punish
                 windows alternate, so the intended rhythm is usually one target at a time. */
              state:'windup',stateT:side>0?-3.05:0,heat:0,reelSpeed:0,fireShot:0,
@@ -12299,13 +12328,13 @@ function stage4CoreTurretSpawnMissing(b,threshold){
 function stage4CoreTurretAt(b,x,y,pad){
   const S=b&&b._s4war;if(!S||!S.coreUnlocked)return null;pad=pad||0;
   for(const t of S.coreTurrets)if(!t.dead&&t.materialize>=.92&&
-    Math.abs(x-t.x)<58+pad&&Math.abs(y-t.y)<54+pad)return t;
+    Math.abs(x-t.x)<58*S4H_SCALE+pad&&Math.abs(y-t.y)<54*S4H_SCALE+pad)return t;
   return null;
 }
 function stage4CoreTurretBeamAt(b,x,halfW,top,bot){
   const S=b&&b._s4war;if(!S||!S.coreUnlocked)return null;let best=null,bestY=-Infinity;
   for(const t of S.coreTurrets){
-    if(t.dead||t.materialize<.92||t.y<top-54||t.y>bot+54||Math.abs(x-t.x)>58+(halfW||0))continue;
+    if(t.dead||t.materialize<.92||t.y<top-54*S4H_SCALE||t.y>bot+54*S4H_SCALE||Math.abs(x-t.x)>58*S4H_SCALE+(halfW||0))continue;
     if(t.y>bestY){best=t;bestY=t.y;}
   }
   return best;
@@ -12313,7 +12342,7 @@ function stage4CoreTurretBeamAt(b,x,halfW,top,bot){
 function stage4CoreTurretFlameAt(b,flame){
   const S=b&&b._s4war;if(!S||!S.coreUnlocked||typeof flameHit!=='function')return null;
   let best=null,bestY=-Infinity;
-  for(const t of S.coreTurrets)if(!t.dead&&t.materialize>=.92&&flameHit(flame,t.x,t.y,72,76)&&t.y>bestY){best=t;bestY=t.y;}
+  for(const t of S.coreTurrets)if(!t.dead&&t.materialize>=.92&&flameHit(flame,t.x,t.y,72*S4H_SCALE,76*S4H_SCALE)&&t.y>bestY){best=t;bestY=t.y;}
   return best;
 }
 function stage4CoreTurretDamage(b,t,dmg){
@@ -12344,13 +12373,16 @@ function stage4CoreTurretAbsorbHit(b,dmg){
   return t?stage4CoreTurretDamage(b,t,dmg):false;
 }
 function stage4CoreTurretTip(t,barrelSide){
-  /* Approved helper is permanently south-facing. These are the two baked socket locations. */
-  return {x:t.x+(barrelSide||-1)*36,y:t.y+51,angle:Math.PI/2};
+  /* The two baked socket offsets, scaled by S4H_SCALE and carried around the turret's own
+     centre by its current angle - the same rotation the draw applies. At PI/2 (the old permanent
+     heading) this returns exactly the pre-0903r point times the scale. */
+  const a=(t.ang==null?Math.PI/2:t.ang), r=a-Math.PI/2, ox=(barrelSide||-1)*36*S4H_SCALE, oy=51*S4H_SCALE;
+  return {x:t.x+ox*Math.cos(r)-oy*Math.sin(r), y:t.y+ox*Math.sin(r)+oy*Math.cos(r), angle:a};
 }
 function stage4CoreTurretMuzzle(b,t,barrelSide){
   if(typeof navalFlash!=='function')return;
   const follow=()=>!b||b.dead||!t||t.dead?null:stage4CoreTurretTip(t,barrelSide),p=follow();if(!p)return;
-  navalFlash(null,p,.70,'s4w_muzzle_lightning',{n:8,hpx:42,life:.095,anchor:.27,angle:Math.PI/2,follow:follow});
+  navalFlash(null,p,.70,'s4w_muzzle_lightning',{n:8,hpx:42*S4H_SCALE,life:.095,anchor:.27,angle:p.angle,follow:follow});
 }
 function stage4CoreTurretTick(b,dt,phase){
   const S=b&&b._s4war;if(!S||!S.coreUnlocked)return;
@@ -12359,7 +12391,8 @@ function stage4CoreTurretTick(b,dt,phase){
     t.spawnT+=dt;t.materialize=clamp(t.spawnT/.62,0,1);t.flash=Math.max(0,t.flash-dt);
     t.deflectFlash=Math.max(0,(t.deflectFlash||0)-dt);t.deflectSfx=Math.max(0,(t.deflectSfx||0)-dt);
     t.x+=(p.x-t.x)*Math.min(1,dt*8);t.y+=(p.y-t.y)*Math.min(1,dt*8);
-    t.ang=Math.PI/2;
+    if(t.aimTo==null)t.aimTo=Math.PI/2;
+    t.ang=(t.ang==null?Math.PI/2:t.ang)+stage4AngleDelta(t.ang==null?Math.PI/2:t.ang,t.aimTo)*Math.min(1,dt*6);
     if(t.materialize<1)continue;
     t.stateT+=dt;t.vulnerable=t.state==='overheat';S.coreCycleSeen[t.state]=true;
     if(t.state==='windup'){
@@ -12367,19 +12400,23 @@ function stage4CoreTurretTick(b,dt,phase){
       if(!t.windupSfx){t.windupSfx=true;stage4WarfareSound('bossWeaponCharge','enemyElectricBolt');}
       const q=clamp(t.stateT/1.35,0,1);
       t.reelSpeed=2.5+(31+phase*2.5)*q*q;t.heat=.04+.12*q;
-      if(t.stateT>=1.35){t.state='fire';t.stateT=0;t.fireShot=0;t.heat=.16;
+      if(t.stateT>=1.35){t.state='fire';t.stateT=0;t.fireShot=0;t.heat=.16;t.burstLeft=(t.mode==='diag')?4:0;
         t.barrelNext=t.side<0?-1:1;S.coreBurstSerial++;
         stage4WarfareSound('enemyLightningChaingun','enemyMachineGunHeavy');}
     }else if(t.state==='fire'){
       const q=clamp(t.stateT/2.0,0,1);t.reelSpeed=42+phase*3;t.heat=.16+.34*q;
       t.fireShot-=dt;
       while(t.fireShot<=0&&t.stateT<2.0){
-        t.fireShot+=(phase>=3?.028:.034);
+        if(t.mode==='diag'){
+          /* 4 rounds 55 ms apart, then a beat - "burst round firing patterns" */
+          if(t.burstLeft>1){t.burstLeft--;t.fireShot+=.055;}
+          else{t.burstLeft=4;t.fireShot+=.32;}
+        } else t.fireShot+=(phase>=3?.028:.034);
         const barrelSide=t.barrelNext;t.barrelNext=-t.barrelNext;
-        const tip=stage4CoreTurretTip(t,barrelSide),shot=stage4WarfareShot(
-          b,tip,Math.PI/2,7.10+phase*.20,'lightningmg',{accel:.22,max:8.70,szMul:.80});
+        const tip=stage4CoreTurretTip(t,barrelSide),ang=tip.angle,shot=stage4WarfareShot(
+          b,tip,ang,7.10+phase*.20,'lightningmg',{accel:.22,max:8.70,szMul:.80});
         shot._s4CoreSide=t.side;shot._s4CoreBarrel=barrelSide;shot._s4CoreGeneration=t.generation;
-        S.coreLastShot={helperSide:t.side,barrelSide:barrelSide,angle:Math.PI/2,x:tip.x,y:tip.y};
+        S.coreLastShot={helperSide:t.side,barrelSide:barrelSide,angle:ang,x:tip.x,y:tip.y};
         S.coreShots++;S.coreBarrelShots[barrelSide]++;stage4CoreTurretMuzzle(b,t,barrelSide);
         if((S.coreShots%14)===0)stage4WarfareSound('enemyLightningChaingun','enemyMachineGunHeavy');
       }
@@ -12388,7 +12425,12 @@ function stage4CoreTurretTick(b,dt,phase){
     }else{
       const q=clamp(t.stateT/2.65,0,1);t.reelSpeed=18*(1-q)+2.0;t.heat=1-q*.92;
       if(t.stateT>=2.65){t.state='windup';t.stateT=0;t.heat=0;t.reelSpeed=2.5;
-        t.vulnerable=false;t.windupSfx=false;}
+        t.vulnerable=false;t.windupSfx=false;
+        /* alternate the cycle, and read the player's side NOW so the turn during windup is
+           toward where they actually are rather than where they were a burst ago */
+        t.mode=(t.mode==='diag')?'down':'diag';
+        const _tgt=(typeof targetShip==='function')?targetShip(t.x,t.y):player, _dir=(_tgt&&_tgt.x>=t.x)?1:-1;
+        t.aimTo=(t.mode==='diag')?(Math.PI/2-_dir*Math.PI/4):Math.PI/2;}
     }
     t.spin=(t.spin+dt*t.reelSpeed)%8;
   }
@@ -12501,13 +12543,21 @@ function stage4ShieldDeflectBullet(b,shot){
      own shield/hull while the rest of the carrier remains protected. */
   if(b._s4CoreHit&&S.coreUnlocked&&b.hp<=(b.maxhp||1)*.501)return false;
   if(shot._s4DeflectedBy===b)return true;
-  const cy=(b._drawY!=null?b._drawY:b.y),dx=shot.x-b.x,dy=shot.y-cy,d=Math.max(1,Math.hypot(dx,dy)),nx=dx/d,ny=dy/d;
-  let vx=shot.vx||0,vy=shot.vy==null?-8:shot.vy,dot=vx*nx+vy*ny;
-  if(dot>=0)dot=-Math.max(3,Math.hypot(vx,vy));
-  shot.vx=vx-2*dot*nx;shot.vy=vy-2*dot*ny;shot.x+=nx*12;shot.y+=ny*12;
-  shot._s4DeflectedBy=b;shot._bossDmg=0;shot._enemyReflected=true;H.hit=.18;
+  /* THE SHIELD BREAKS THE ROUND NOW - IT DOES NOT SEND IT BACK (drop 0903r). Mike: "stage 4, do not
+     deflect bullets anymore, make them break when they hit the shield. this has made the boss fight
+     way too tough." This used to mirror the shot's velocity off the field's normal, mark it
+     _enemyReflected and push it 12px clear, so every round the player put into the shield came
+     back at them as a hostile one - at close range that is a wall of your own fire. The contact
+     test above is unchanged; only the outcome is. The round dies here with the same impact burst
+     it always drew, on the shield-HIT cue rather than the ricochet. It is still marked so a
+     round already inside the field on the frame it breaks cannot be counted twice.
+
+     Deliberately scoped to stage 4's carrier field. The energy-shield ENEMIES (enemyShieldIntercept,
+     CF_EnemyShieldFX) still reflect from their plate shields - that is a different mechanic on
+     other stages and was not what he named. */
+  H.hit=.18;shot._s4DeflectedBy=b;shot._bossDmg=0;shot.dead=true;
   explode(shot.x,shot.y,11,'blue');if(typeof fxBurst==='function')fxBurst(shot.x,shot.y,18,{color:'#9ef7ff',rings:1});
-  stage4WarfareSound('shieldDeflect','shieldHit');shake=Math.max(shake,2.5);return true;
+  stage4WarfareSound('shieldHit','shieldHitLight');shake=Math.max(shake,1.5);return true;
 }
 function stage4ShieldTick(b,dt){
   const S=b&&b._s4war,H=S&&S.shield;if(!H)return;
@@ -12808,38 +12858,41 @@ function stage4WarfareDrawOver(b){
   }
   /* At half health these are two independent helper units, not an attachment pasted over the
      hull. Each uses the approved locked dual-socket silhouette. The body never rotates: only
-     internal reel/specular frames animate while both fixed south-facing barrels fire. */
+     internal reel/specular frames animate. As of 0903r the body DOES rotate - to 45 degrees on
+     the diagonal cycles - about its own centre; see S4H_SCALE. */
   if(!S.mini&&S.coreUnlocked)for(const t of S.coreTurrets){
     if(t.dead)continue;
     const alpha=clamp(t.materialize||0,0,1),frame=(Math.floor(t.spin)||0)%8,
           dual='s4w_helper_dual_'+frame,hot='s4w_helper_dual_hot_'+frame;
     if(alpha<1){
-      const tf='s4w_node_teleport_'+clamp(Math.floor((t.spawnT||0)/.62*12),0,11),ts=142+Math.sin((t.spawnT||0)*26)*7;
+      const tf='s4w_node_teleport_'+clamp(Math.floor((t.spawnT||0)/.62*12),0,11),ts=(142+Math.sin((t.spawnT||0)*26)*7)*S4H_SCALE;
       if(XART.rdy(tf)){
         ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.78*(1-alpha*.35);
         ctx.drawImage(XART.get(tf),t.x-ts/2,t.y-ts/2,ts,ts);ctx.restore();
       }
     }
     ctx.save();ctx.globalAlpha=alpha;ctx.imageSmoothingEnabled=false;
-    if(XART.rdy(dual))ctx.drawImage(XART.get(dual),t.x-66,t.y-66,132,132);
+    /* the whole turret angles about its own centre; the HP bar after ctx.restore() does not */
+    ctx.translate(t.x,t.y);ctx.rotate((t.ang==null?Math.PI/2:t.ang)-Math.PI/2);
+    if(XART.rdy(dual))ctx.drawImage(XART.get(dual),-S4H_HALF,-S4H_HALF,S4H_SIZE,S4H_SIZE);
     if((t.heat||0)>0&&XART.rdy(hot)){
       const pulse=t.state==='overheat'?.86+.14*Math.sin((b.t||0)*20):1;
-      ctx.globalAlpha=alpha*clamp(t.heat*pulse,0,1);ctx.drawImage(XART.get(hot),t.x-66,t.y-66,132,132);
+      ctx.globalAlpha=alpha*clamp(t.heat*pulse,0,1);ctx.drawImage(XART.get(hot),-S4H_HALF,-S4H_HALF,S4H_SIZE,S4H_SIZE);
     }
     if(t.state==='overheat'){
       ctx.globalCompositeOperation='lighter';ctx.strokeStyle='rgba(255,96,18,'+(.28+.22*Math.sin((b.t||0)*17))+')';
-      ctx.lineWidth=2;ctx.beginPath();ctx.arc(t.x,t.y,59+Math.sin((b.t||0)*13)*2,0,TAU);ctx.stroke();
+      ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,(59+Math.sin((b.t||0)*13)*2)*S4H_SCALE,0,TAU);ctx.stroke();
     }
     if(t.deflectFlash>0&&XART.rdy(dual)&&typeof xartTint==='function'){
       const shieldTint=xartTint(dual,'#5be7ff',1);if(shieldTint){ctx.globalCompositeOperation='lighter';
-        ctx.globalAlpha=clamp(t.deflectFlash/.13,0,1)*.72;ctx.drawImage(shieldTint,t.x-66,t.y-66,132,132);}
+        ctx.globalAlpha=clamp(t.deflectFlash/.13,0,1)*.72;ctx.drawImage(shieldTint,-S4H_HALF,-S4H_HALF,S4H_SIZE,S4H_SIZE);}
     }
     if(t.flash>0&&XART.rdy(dual)&&typeof xartTint==='function'){
-      const tint=xartTint(dual,'#ffffff',1);if(tint){ctx.globalAlpha=clamp(t.flash/.15,0,1);ctx.drawImage(tint,t.x-66,t.y-66,132,132);}
+      const tint=xartTint(dual,'#ffffff',1);if(tint){ctx.globalAlpha=clamp(t.flash/.15,0,1);ctx.drawImage(tint,-S4H_HALF,-S4H_HALF,S4H_SIZE,S4H_SIZE);}
     }
     ctx.restore();
     if(alpha>=.92){
-      const sr=clamp(t.shield/Math.max(1,t.maxShield),0,1),hr=clamp(t.hp/Math.max(1,t.maxhp),0,1),bw=62,bh=4,y=t.y+62;
+      const sr=clamp(t.shield/Math.max(1,t.maxShield),0,1),hr=clamp(t.hp/Math.max(1,t.maxhp),0,1),bw=62,bh=4,y=t.y+62*S4H_SCALE;
       ctx.save();ctx.fillStyle='rgba(0,0,0,.82)';ctx.fillRect(t.x-bw/2-1,y-1,bw+2,bh*2+5);
       ctx.fillStyle='#28a9ff';ctx.fillRect(t.x-bw/2,y,bw*sr,bh);
       ctx.fillStyle=hr>.50?'#39e66d':(hr>.24?'#b8dc3c':'#ff5147');ctx.fillRect(t.x-bw/2,y+bh+2,bw*hr,bh);ctx.restore();
@@ -53569,7 +53622,12 @@ if(window.BOFA && BOFA.sfx){
     spaceLaserHit:'assets/game/sounds/shield_hit_light.wav',
     spaceShadowCharge:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
     spaceShadowRelease:'assets/game/sounds/reviewed_shadow_orb_launch.wav',
-    spaceShadowHit:'assets/game/sounds/explosion_plasma.wav',
+    /* THE ORB'S IMPACT HAD A 454 ms SWELL (drop 0903q). spaceImpact() fires this cue on the frame of
+       contact - the delay Mike heard was in the sample: explosion_plasma.wav peaks at 454 ms, under a
+       reviewed launch cue that does not reach -12 dB until 928 ms. reviewed_shadow_orb_impact.wav is
+       the same plasma burst cut 60 ms ahead of its peak (4 ms fade-in, normalised), so the hit lands
+       with the flash. explosion_plasma.wav is untouched; swap this line back and nothing else moves. */
+    spaceShadowHit:'assets/game/sounds/reviewed_shadow_orb_impact.wav',
     spaceVolleyLaunch:'assets/game/sounds/nsp_rocket_launch.mp3',
     spaceVolleyHit:'assets/game/sounds/explosion_air_medium.wav',
     enemyPulseLaserBlue:'assets/game/sounds/reviewed_enemy_laser.wav',
