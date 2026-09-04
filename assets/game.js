@@ -825,53 +825,33 @@ function s45Tile(key, scroll, rate, alpha){
   return true;
 }
 /* ============================================================
-   THE BLUE SKY, AND WHY IT IS A SUB-RECT (drop 0903u)
+   THE STAGE-6 BLUE SKY, DRAWN BY THE FUNCTION THAT ALREADY EXISTS FOR IT (drop 0903v)
 
-   Mike: "the sky in the stage 5 transition was to use the blue sky graphic from stage 6."
+   Mike: "that is not the sky from stage 6."
 
-   `bg_stage06_master` is 680x4080 and is a WHOLE DAY: sewer structure, then blue sky, then
-   sunset, then dusk, then a sunrise band. Tiling the entire plate - which is what 0903s did -
-   scrolls through all of it, so the climb passed through orange and purple bands on its way up.
-   That is the "sunset" he is pointing at; the plate name is right and the plate is right, the
-   REGION was not.
+   He was right twice over. Stage 6's master is `stage6_blue_master` (680x5000, registered in
+   game.js via X._src, not through the manifest) - a flat royal-blue field with pixel clouds,
+   uniform end to end. What 0903s/0903u used was `bg_stage06_master`, a DIFFERENT plate that
+   runs a whole day cycle, and 0903u then went hunting inside it for a blue region and
+   mirror-tiled a gradient band out of it. All of that was solving a problem that did not exist.
 
-   Scanned the plate row by row for blue dominance (b > 90, b > r*1.6, b >= g, r < 150) and it
-   returns six runs. Rendered all of them: rows 1530..2016 are the clean blue-sky gradient, deep
-   blue (1,11,177) at the top easing to pale cyan (145,233,252) at the bottom. 3570..3891 is
-   blue but dithered and belongs to the sunrise; 209..510 is flat blue with structure across its
-   top edge. 1530..2016 is the one.
+   `STAGE6_TRANSITION_SKY` and `stage6TransitionBackgroundDraw(scroll)` were already in this file
+   for exactly this purpose - the stage-6 launch/transition sky - and its own note explains why
+   it exists: an earlier version multiplied scroll by .35 and wrapped against a different range,
+   so GO jumped to another piece of the same image. It uses `bg6LoopDraw`, the GAMEPLAY sampler,
+   so the transition and the live level cannot disagree about where in the plate they are.
 
-   ⚠ IT CANNOT BE TILED DIRECTLY. The band's top is deep blue and its bottom is pale cyan, so
-   butting copies together puts pale straight against deep - a hard horizontal line marching up
-   the screen every 343px. Alternate copies are therefore MIRRORED, which makes pale meet pale
-   and deep meet deep: seamless by construction, and it reads as the depth of the sky changing
-   as you climb rather than as a repeat. Rendered a mirrored pair before wiring it.
+   Wrapped in an alpha so the sky can rise OVER the stage-4 plate rather than replacing it: the
+   function opens with an opaque #062a8e fill, which at full alpha would hide the highway the
+   climb is still meant to be leaving.
 
-   The index is derived from the scroll (`base - k`), not from the loop counter, so which copies
-   are flipped stays consistent as the scroll crosses a multiple of the band height - deriving it
-   from k alone makes the whole pattern flip every time it wraps, which is a visible strobe.
+   The neon-city overlay inside bg6LoopDraw is keyed off `_levelCfg().city`, and during the
+   outbound that cfg is stage 4's, which has no city - so it stays off without a special case.
    ============================================================ */
-const S45_SKY_KEY='bg_stage06_master', S45_SKY_Y=1530, S45_SKY_H=486;
 function s45Sky(scroll, rate, alpha){
-  if(alpha<=0.004 || typeof XART==='undefined' || !XART.rdy(S45_SKY_KEY)) return false;
-  const im=XART.get(S45_SKY_KEY), W=im.naturalWidth;
-  if(im.naturalHeight < S45_SKY_Y+S45_SKY_H) return false;      // wrong plate: do not draw a slice of something else
-  const sc=VW/W, dh=S45_SKY_H*sc;
-  if(!(dh>0)) return false;
-  const span=scroll*rate, base=Math.floor(span/dh);
+  if(alpha<=0.004 || typeof stage6TransitionBackgroundDraw!=='function') return false;
   ctx.save(); ctx.globalAlpha=clamp(alpha,0,1);
-  let y=((span%dh)+dh)%dh - dh;
-  for(let k=0; y<VH+dh; k++, y+=dh){
-    const idx=base-k, flip=(((idx%2)+2)%2)===1;
-    const ty=Math.round(y), th=Math.ceil(dh);
-    if(flip){
-      ctx.save(); ctx.translate(0,ty+th); ctx.scale(1,-1);
-      ctx.drawImage(im, 0,S45_SKY_Y,W,S45_SKY_H, 0,0,VW,th);
-      ctx.restore();
-    } else {
-      ctx.drawImage(im, 0,S45_SKY_Y,W,S45_SKY_H, 0,ty,VW,th);
-    }
-  }
+  stage6TransitionBackgroundDraw(scroll*rate);
   ctx.restore();
   return true;
 }
@@ -884,13 +864,12 @@ function outboundDrawSkySpace(o){
   /* 1. the stage they cleared, still running underneath until the sky is fully over it - the
      ground does not stop, it is covered. */
   if(sky<1) s45Tile(mk, o.scroll, 1.0, 1-sky*0.85);
-  /* 2. THE BLUE SKY from stage 6 - its rows 1530..2016 only, mirror-tiled. See s45Sky.
+  /* 2. THE STAGE-6 BLUE SKY, through the engine's own stage-6 transition drawer. See s45Sky.
 
-     ⚠ NOT `nl6sky_stage06_sky_scroll_640x960` OR `nsky6_sky`: both keys resolve to
-     assets/game/atlas/fx_weather_0.png, a 4092x3938 SHEET, and neither carries a cell rect, so
-     XART.get hands back the whole atlas and tiling it stretches a corner of the weather sheet
-     across the screen as blue noise. That was 0903s's first cut and the filmstrip caught it.
-     Slower than the foreground so the climb reads as distance rather than speed. */
+     ⚠ NOT `nl6sky_stage06_sky_scroll_640x960` / `nsky6_sky` (both are the fx_weather_0 atlas
+     with no cell rect - tiling them stretches a corner of the weather sheet across the screen)
+     and NOT `bg_stage06_master` (a different plate that runs a whole day cycle). Stage 6's sky
+     is `stage6_blue_master`. Slower than the foreground so the climb reads as distance. */
   if(sky>0) s45Sky(o.scroll, 0.45, sky);
   /* 3. stage 5's OWN loop plate, attached during the swirl and left looping. Using the level's
      real backdrop rather than a stand-in is the point: when the leg ends there is nothing to
