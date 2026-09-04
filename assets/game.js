@@ -1936,6 +1936,8 @@ const XART=(function(){
   X._src['cfx_stage7_toxic_projectiles_v2']='assets/game/combat_upgrade_0901/stage7_toxic_projectiles_atlas.png';
   X._src['cfx_stage8_symbiote_projectiles']='assets/game/combat_upgrade_0901/stage8_symbiote_projectiles_atlas.png';
   X._src['cfx_stage6_carrier_shield']='assets/game/combat_final/stage6_carrier_shield_atlas.png';
+  /* the circular enemy shield shell (SpriteCook, 0904e) - ONE plate, recoloured per family */
+  X._src['nes_bubble_0']='assets/game/enemy_shields/nes_bubble_0.png';
   X._src['cfx_stage7_warden_walk']='assets/game/combat_final/stage7_toxic_portal_warden_crawl_spritecook.png';
   X._src['cfx_stage7_warden_teleport']='assets/game/combat_final/stage7_toxic_portal_teleport_atlas.png';
   X._src['cfx_stage7_warden_projectiles']='assets/game/combat_final/stage7_toxic_portal_projectiles_atlas.png';
@@ -2072,7 +2074,7 @@ const XART=(function(){
      The pack's separate twelve-frame spore crown remains a true transparent animation. */
   const _S7_ATTACK_UNITS=['armored_lamprey','armored_sludge_barge','dual_scoop_dredger','pipe_crawler',
     'piston_pump_walker','sampling_drone','sewer_serpent','sludge_mine','toxic_canister',
-    'toxic_mini_tank','toxic_skimmer','valve_turret'];
+    'toxic_mini_tank','toxic_skimmer'];
   for(const _s7u of _S7_ATTACK_UNITS) for(let _s7f=0;_s7f<8;_s7f++){
     const _s7n=String(_s7f+1).padStart(2,'0');
     X._src['s7atk_'+_s7u+'_'+_s7f]='assets/game/stage7_enemy_attacks/'+_s7u+'/'+_s7n+'.png';
@@ -2087,7 +2089,7 @@ const XART=(function(){
   const _S5_ATTACK_UNITS=['beam_frigate','comet_rammer','debris_skimmer','gravity_orb',
     'heavy_interceptor','mine_layer','missile_satellite','portal_mine','repair_drone',
     'salvage_tug','shield_leech','twin_station'];
-  const _S9_ATTACK_UNITS=['alien_beacon','chronal_crawler_tank','comet_skimmer','dimensional_gunship',
+  const _S9_ATTACK_UNITS=['alien_beacon','comet_skimmer','dimensional_gunship',
     'galaxy_interceptor','gate_carrier','gate_turret','gravity_artillery','hyperspace_prism',
     'mini_warp_tank','ring_drone','singularity_mine'];
   for(const _s5u of _S5_ATTACK_UNITS) for(let _s5f=0;_s5f<8;_s5f++){
@@ -7023,36 +7025,90 @@ const ENEMY_SHIELD_FAMILY={
   violet: {kind:'field', prefix:'nes_violet', hit:6},
   hex:    {kind:'plate', prefix:'nes_hex',    hit:0},
   gold:   {kind:'plate', prefix:'nes_gold',   hit:9},
-  prism:  {kind:'plate', prefix:'nes_prism',  hit:9}
+  prism:  {kind:'plate', prefix:'nes_prism',  hit:9},
+  /* ============================================================
+     THE CIRCULAR SHELL (drop 0904e)
+
+     Mike: "they need to be less oval, more circle like that can scale and be larger than the
+     unit/frame/enemy itself so it actaully looks like a really shield."
+
+     ⚠ THE OLD 'plate' KIND IS THE FAN HE WAS POINTING AT. It draws one arc segment rotated to
+     face the player and anchored below the hull, which reads as an oval scoop sitting under the
+     enemy rather than a shield around it. 'bubble' draws a complete circle centred on the hull
+     at 2.6x its longest side, so the hull sits INSIDE it. The plate code is left intact - bosses
+     still use directional deflectors - but no ordinary enemy is routed to it any more.
+
+     ⚠ ONE PLATE, FIVE COLOURS, NO EXTRA ART. The SpriteCook run that made this shell lost four of
+     its five jobs to a service outage, so the other elements are tinted from the same circle via
+     xartPalette, which composites with 'color' and therefore preserves the shell's luminance and
+     its hex lattice while moving the hue. When the remaining plates generate they can be dropped
+     in by adding a `prefix` here; nothing else has to change.
+     ============================================================ */
+  bubble_hex:  {kind:'bubble', prefix:'nes_bubble', hit:0, tint:null},
+  bubble_volt: {kind:'bubble', prefix:'nes_bubble', hit:0, tint:'#6fa8ff'},
+  bubble_fire: {kind:'bubble', prefix:'nes_bubble', hit:3, tint:'#ff7a34'},
+  bubble_ice:  {kind:'bubble', prefix:'nes_bubble', hit:0, tint:'#bfe9ff'},
+  bubble_void: {kind:'bubble', prefix:'nes_bubble', hit:6, tint:'#c46bff'}
 };
+/* ============================================================
+   SHIELD + HEALTH, THEN FRENZY (drop 0904e)
+
+   Mike: "I wanted enemies to start having shield and health points. you have to break their
+   shield first, which once down they go into a panic/frantic attack mode."
+
+   Every entry here now carries `once`, so its shield is a GATE rather than a delay: it never
+   regenerates, and breaking it drops the hull into frenzy (see enemyFrenzyBegin). The roster is
+   widened from 15 units to cover a real slice of each stage rather than a few specialists,
+   because the mechanic only teaches itself if the player meets it repeatedly.
+
+   ⚠ EVERY ORDINARY ENEMY IS ROUTED TO A 'bubble' FAMILY, NEVER 'plate'. The plate kind is the
+   fan Mike pointed at - an arc anchored under the hull that reads as an oval scoop. The plate
+   code stays for boss deflectors; nothing in this table selects it.
+
+   ratio is shield energy as a fraction of the hull's own HP, so shields scale with the stage's
+   toughness instead of being a flat pool that trivialises late units. drawScale is a multiple of
+   the hull's LONGEST side - 2.5-2.8 puts the shell comfortably outside the airframe, which is
+   what Mike asked for: "larger than the unit/frame/enemy itself so it actaully looks like a
+   really shield."
+   ============================================================ */
 const ENEMY_SHIELD_LOADOUT=Object.freeze({
-  /* Stage 2: introduce one full field and one directional plate. */
-  disc:         {stage:2,family:'ion',    ratio:.30,drawScale:2.18},
-  eye:          {stage:2,family:'hex',    ratio:.27},
-  /* Stage 5: alien support/drone specialists. */
-  s5gravity:    {stage:5,family:'violet', ratio:.34,drawScale:2.12},
-  s5satellite:  {stage:5,family:'prism',  ratio:.30},
-  s5repair:     {stage:5,family:'ion',    ratio:.28,drawScale:2.16},
-  s5leech:      {stage:5,family:'violet', ratio:.34,drawScale:2.10},
-  /* Stage 7: mechanical/toxic drone silhouettes only; static mines and barrels stay static. */
-  s7sampler:    {stage:7,family:'hex',    ratio:.30},
-  s7skimmer:    {stage:7,family:'gold',   ratio:.34},
+  /* Stage 2 introduces the mechanic on two units only. */
+  disc:         {stage:2,family:'bubble_hex', ratio:.30,drawScale:2.55,once:1},
+  eye:          {stage:2,family:'bubble_volt',ratio:.27,drawScale:2.50,once:1},
+  /* Stage 5: the alien support wing. */
+  s5gravity:    {stage:5,family:'bubble_void',ratio:.34,drawScale:2.62,once:1},
+  s5satellite:  {stage:5,family:'bubble_hex', ratio:.30,drawScale:2.55,once:1},
+  s5repair:     {stage:5,family:'bubble_hex', ratio:.28,drawScale:2.58,once:1},
+  s5leech:      {stage:5,family:'bubble_void',ratio:.34,drawScale:2.55,once:1},
+  s5station:    {stage:5,family:'bubble_volt',ratio:.32,drawScale:2.60,once:1},
+  s5frigate:    {stage:5,family:'bubble_void',ratio:.36,drawScale:2.52,once:1},
+  /* Stage 6: the storm fleet's electrical hulls. */
+  s6carrier:    {stage:6,family:'bubble_volt',ratio:.34,drawScale:2.58,once:1},
+  s6turbine:    {stage:6,family:'bubble_volt',ratio:.28,drawScale:2.55,once:1},
+  s6probe:      {stage:6,family:'bubble_ice', ratio:.26,drawScale:2.62,once:1},
+  /* Stage 7: mechanical/toxic drones. Static mines and barrels stay bare. */
+  s7sampler:    {stage:7,family:'bubble_hex', ratio:.30,drawScale:2.58,once:1},
+  s7skimmer:    {stage:7,family:'bubble_fire',ratio:.34,drawScale:2.55,once:1},
+  s7barge:      {stage:7,family:'bubble_fire',ratio:.32,drawScale:2.50,once:1},
+  s7walker:     {stage:7,family:'bubble_hex', ratio:.28,drawScale:2.55,once:1},
   /* Stage 8: living rift drones. */
-  s8deathorb:   {stage:8,family:'crimson',ratio:.36,drawScale:2.02},
-  s8parasite:   {stage:8,family:'prism',  ratio:.31},
-  s8scout:      {stage:8,family:'crimson',ratio:.33,drawScale:2.08},
-  s8leech:      {stage:8,family:'violet', ratio:.30,drawScale:2.12},
-  /* Stage 9: the void roster combines both field and directional shield reads. */
-  s9beacon:     {stage:9,family:'ion',    ratio:.32,drawScale:2.16},
-  s9prism:      {stage:9,family:'prism',  ratio:.38},
-  s9ring:       {stage:9,family:'violet', ratio:.30,drawScale:2.10},
-  s9singularity:{stage:9,family:'gold',   ratio:.34}
+  s8deathorb:   {stage:8,family:'bubble_fire',ratio:.36,drawScale:2.52,once:1},
+  s8parasite:   {stage:8,family:'bubble_void',ratio:.31,drawScale:2.55,once:1},
+  s8scout:      {stage:8,family:'bubble_fire',ratio:.33,drawScale:2.58,once:1},
+  s8leech:      {stage:8,family:'bubble_void',ratio:.30,drawScale:2.60,once:1},
+  /* Stage 9: the void roster. */
+  s9beacon:     {stage:9,family:'bubble_hex', ratio:.32,drawScale:2.60,once:1},
+  s9prism:      {stage:9,family:'bubble_ice', ratio:.38,drawScale:2.55,once:1},
+  s9ring:       {stage:9,family:'bubble_void',ratio:.30,drawScale:2.58,once:1},
+  s9singularity:{stage:9,family:'bubble_void',ratio:.34,drawScale:2.55,once:1},
+  s9gunship:    {stage:9,family:'bubble_volt',ratio:.33,drawScale:2.52,once:1},
+  s9warptank:   {stage:9,family:'bubble_ice', ratio:.31,drawScale:2.55,once:1}
 });
 function enemyShieldEquip(e,family,energy,opt={}){
   if(!e) return null;
   const F=ENEMY_SHIELD_FAMILY[family]; if(!F) return null;
   const cap=Math.max(1,Number(energy)||1);
-  e._esh={family, kind:F.kind, energy:cap, max:cap, drawScale:Number(opt.drawScale)||0,
+  e._esh={family, kind:F.kind, once:!!opt.once, energy:cap, max:cap, drawScale:Number(opt.drawScale)||0,
           breakDelay:Number(opt.breakDelay)||1.4, regen:Number(opt.regen)||.07,
           phase:'deploy', animT:0, hitT:0, sinceHit:99, breakT:0, impactCd:0};
   /* Touch every frame in this one family at spawn. The decode begins before the unit reaches the
@@ -7077,7 +7133,7 @@ function enemyShieldTick(e,dt){
   }
   if(s.phase==='broken'){
     s.breakT-=dt;
-    if(s.breakT<=0){ s.energy=Math.max(1,s.max*0.45); s.phase='deploy'; s.animT=0; }
+    if(s.breakT<=0 && !s.once){ s.energy=Math.max(1,s.max*0.45); s.phase='deploy'; s.animT=0; }
     return;
   }
   if(s.sinceHit>=0.9 && s.energy<s.max) s.energy=Math.min(s.max,s.energy+s.max*s.regen*dt);
@@ -7135,17 +7191,48 @@ function enemyShieldIntercept(e,dmg,b){
   if(s.energy<=0){
     s.phase='broken'; s.breakT=s.breakDelay; s.animT=0; s.hitT=0;
     if(Audio.SFX.shieldBreakCombat) Audio.SFX.shieldBreakCombat();
+    /* ⚠ ONE-WAY. See enemyFrenzyBegin: a `once` shield never comes back, so "break the shield
+       first" is a real gate rather than a delay, and the hull panics for the rest of its life. */
+    if(s.once) enemyFrenzyBegin(e);
   }
   return true;
 }
 function drawEnemyShieldLayer(e,front){
   const s=e&&e._esh; if(!s||e._dyingT!=null) return;
-  const fi=enemyShieldFrame(s); if(fi<0) return;
   const F=ENEMY_SHIELD_FAMILY[s.family]; if(!F||typeof XART==='undefined') return;
+  /* ⚠ THE FRAME PICKER RETURNS -1 LATE IN THE BREAK and the bubble has no reel to pick from, so
+     it must not be gated on that - it fades itself out through s.animT instead. */
+  const fi=enemyShieldFrame(s);
+  if(F.kind!=='bubble' && fi<0) return;
   if(F.kind==='field'){
     const k=F.prefix+'_'+(front?'f':'b')+'_'+fi; if(!XART.rdy(k)) return;
     const z=Math.max(e.w||30,e.h||30)*(s.drawScale||2.55);
     ctx.drawImage(XART.get(k),e.x-z/2,e.y-z/2,z,z);
+  } else if(F.kind==='bubble'){
+    if(!front) return;                                   /* one pass, drawn over the hull */
+    const k=F.prefix+'_0'; if(!XART.rdy(k)) return;
+    const img=(F.tint&&typeof xartPalette==='function'&&xartPalette(k,F.tint))||XART.get(k);
+    /* LARGER THAN THE UNIT, ALWAYS. drawScale is a multiple of the hull's LONGEST side, so a wide
+       hull and a tall one both end up fully enclosed rather than clipped on one axis. */
+    const z=Math.max(e.w||30,e.h||30)*(s.drawScale||2.6);
+    /* the shell is one still; the life comes from a slow rotation, a breathing scale and an
+       energy-linked alpha, so it never strobes and never needs an eight-frame reel */
+    const t=(s.animT||0), frac=clamp(s.energy/Math.max(1,s.max),0,1);
+    const puff=1+Math.sin(t*2.1)*0.028 + (s.hitT>0?0.06*(s.hitT/0.18):0);
+    let al=0.30+0.55*frac;
+    if(s.phase==='deploy') al*=clamp(t/0.34,0,1);
+    else if(s.phase==='broken') al*=Math.max(0,1-t/0.30);
+    ctx.save(); ctx.translate(e.x,e.y); ctx.rotate(t*0.42);
+    ctx.globalAlpha=clamp(al,0,1);
+    ctx.imageSmoothingEnabled=true;      /* a 512px shell minified ~4x - see drop 0904d */
+    const zz=z*puff;
+    ctx.drawImage(img,-zz/2,-zz/2,zz,zz);
+    if(s.hitT>0){                        /* the struck shell flares additively, it does not swap art */
+      ctx.globalCompositeOperation='lighter';
+      ctx.globalAlpha=clamp(0.55*(s.hitT/0.18),0,1);
+      ctx.drawImage(img,-zz/2,-zz/2,zz,zz);
+    }
+    ctx.restore();
   } else if(front){
     const k=F.prefix+'_'+fi; if(!XART.rdy(k)) return;
     const z=Math.max(e.w||30,e.h||30)*2.9, a=enemyShieldFacing(e)-Math.PI/2;
@@ -7155,12 +7242,70 @@ function drawEnemyShieldLayer(e,front){
 }
 function drawEnemyShieldBack(e){ drawEnemyShieldLayer(e,false); }
 function drawEnemyShieldFront(e){ drawEnemyShieldLayer(e,true); }
+/* ============================================================
+   SHIELD DOWN -> FRENZY (drop 0904e)
+
+   Mike: "I wanted enemies to start having shield and health points. you have to break their
+   shield first, which once down they go into a panic/frantic attack mode where they attack 1.5x
+   faster and do kamikaze like moves and such." And: "frenzy enemies become palette swap red
+   based versions of themselves."
+
+   ⚠ THE SHIELD USED TO COME BACK, WHICH WOULD HAVE MADE THIS MEANINGLESS. enemyShieldTick's
+   broken branch restored energy to 45% and redeployed after breakDelay, so "break the shield
+   first" was a suggestion, not a gate. A frenzy shield is ONE-WAY: `once` marks it, the tick
+   never redeploys it, and the hull stays frenzied for the rest of its life.
+
+   ⚠ AND THE RED VARIANT NEEDS NO NEW ART FOR ANY ENEMY. Mike expected "additional frames created
+   for all enemies". It does not: xartPalette(key,colour) composites with globalCompositeOperation
+   'color', which replaces hue and saturation while PRESERVING LUMINANCE - an HSV rotation, which
+   is exactly what this art needs. Generated hulls are heavily dithered (a 128px sheet measured
+   76k distinct colours), so a palette lookup table would band them badly; 'color' does not care
+   how many colours are in the source. It is cached per key, so a frenzied hull costs one canvas
+   the first time it turns red and nothing after.
+   ============================================================ */
+const FRENZY_RED='#d2322c';
+const FRENZY_FIRE_MULT=1.5;          /* Mike: "attack 1.5x faster" */
+function enemyFrenzyBegin(e){
+  if(!e || e._frenzy) return;
+  e._frenzy=1; e._frenzyT=0; e._frenzyDiveCd=0.55;
+  if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.shieldBreakCombat) Audio.SFX.shieldBreakCombat();
+}
+function enemyFrenzyTick(e,dt){
+  if(!e || !e._frenzy) return;
+  e._frenzyT=(e._frenzyT||0)+dt;
+  /* 1.5x FIRE RATE, IN ONE PLACE. Every stage family counts down the same `_fcd` field inside its
+     own tick, at a dozen call sites apiece; editing each one is how a stage gets missed. Taking
+     the extra 0.5*dt off here - after the family tick has already taken its dt - lands exactly
+     1.5x for all of them and cannot drift out of sync with new families. */
+  if(e._fcd>0) e._fcd-=dt*(FRENZY_FIRE_MULT-1);
+  /* KAMIKAZE. Periodically commit a real dive at the player instead of holding the lane. */
+  e._frenzyDiveCd=(e._frenzyDiveCd||0)-dt;
+  if(e._frenzyDiveCd<=0 && !e._frenzyDive && typeof player!=='undefined' && player){
+    e._frenzyDiveCd=rnd(1.5,2.6); e._frenzyDive={t:0,dur:.92};
+    const dx=(player.x-e.x), dy=Math.max(24,(player.y-e.y));
+    const m=Math.hypot(dx,dy)||1;
+    e._frenzyDVX=dx/m; e._frenzyDVY=dy/m;
+  }
+  if(e._frenzyDive){
+    const D=e._frenzyDive; D.t+=dt;
+    const push=(1-Math.abs(0.5-D.t/D.dur)*2)*260;   /* ease in and out of the lunge */
+    e.x+=e._frenzyDVX*push*dt; e.y+=e._frenzyDVY*push*dt;
+    if(D.t>=D.dur) e._frenzyDive=null;
+  }
+}
+/* the red plate, or null when the hull is not frenzied */
+function frenzyPlate(e,key){
+  if(!e || !e._frenzy || typeof xartPalette!=='function') return null;
+  return xartPalette(key, FRENZY_RED);
+}
 function enemyShieldAutoEquip(e){
   if(!e||e._esh||typeof run==='undefined')return null;
   const L=ENEMY_SHIELD_LOADOUT[e.type];
   if(!L||run.stage!==L.stage)return null;
   const body=Math.max(1,e.maxhp||e.hp||1),energy=Math.max(4,Math.round(body*L.ratio));
-  return enemyShieldEquip(e,L.family,energy,{drawScale:L.drawScale||0,breakDelay:3.15,regen:.035});
+  /* a `once` shield never regenerates and drops the hull into frenzy when it breaks */
+  return enemyShieldEquip(e,L.family,energy,{drawScale:L.drawScale||0,breakDelay:L.once?0.42:3.15,
+                                             regen:L.once?0:.035, once:!!L.once});
 }
 function enemyShieldFxUpdate(dt){
   for(const f of enemyShieldFx) f.t+=dt;
@@ -9450,7 +9595,7 @@ const SHIPS=[];
       c.vy=0;c.pattern='s8mega';c._s8mega=type;c.shoots=false;c.fk=null;c.dropOk=true;
       c.impact=!!H.impact;c._dieDur=.64;break;
     }
-    case 's9beacon': case 's9chronal': case 's9comet': case 's9gunship':
+    case 's9beacon': case 's9comet': case 's9gunship':
     case 's9interceptor': case 's9gatecarrier': case 's9gateturret': case 's9gravity':
     case 's9prism': case 's9warptank': case 's9ring': case 's9singularity': {
       const H=S9VOID[type];c.w=H.w;c.h=H.h;c.hp=c._maxhp=EHP(H.hp);c.score=H.score;
@@ -9488,7 +9633,7 @@ const SHIPS=[];
       break;
     }
     case 's7lamprey': case 's7barge': case 's7pipe': case 's7walker': case 's7sampler':
-    case 's7serpent': case 's7mine': case 's7canister': case 's7tank': case 's7skimmer': case 's7valve': {
+    case 's7serpent': case 's7mine': case 's7canister': case 's7tank': case 's7skimmer': {
       const H=S7TOXIC[type];
       c.w=H.w; c.h=H.h; c.hp=c._maxhp=EHP(H.hp); c.score=H.score;
       c.vy=0; c.pattern='s7toxic'; c._s7toxic=type;
@@ -10634,7 +10779,7 @@ function buildStagePlan(stageNum){
     const W=worldWidth();
     add(2.0, ()=> { spawnEnemy('s7sampler',W*.28,-72,{}); spawnEnemy('s7sampler',W*.72,-96,{_stagger:.24}); });
     add(5.5, ()=> { spawnEnemy('s7pipe',W*.06,-76,{}); spawnEnemy('s7pipe',W*.94,-102,{_stagger:.30}); });
-    add(9.0, ()=> spawnEnemy('s7valve',W*.50,-92,{}));
+    add(9.0, ()=> spawnEnemy('s7tank',W*.50,-92,{}));
     add(12.5,()=> spawnEnemy('s7skimmer',-55,VH*.22,{_side:1}));
     add(16.0,()=> { spawnEnemy('s7lamprey',W*.27,-84,{_side:1}); spawnEnemy('s7lamprey',W*.73,-112,{_side:-1,_stagger:.28}); });
     add(20.0,()=> spawnEnemy('s7mine',W*.50,-84,{}));
@@ -10644,7 +10789,7 @@ function buildStagePlan(stageNum){
     add(36.0,()=> spawnEnemy('s7barge',W*.50,-130,{}));
     add(40.0,()=> spawnEnemy('s7serpent',W*.50,-108,{_side:1}));
     add(44.0,()=> { spawnEnemy('s7sampler',-55,VH*.24,{_side:1}); spawnEnemy('s7skimmer',W+55,VH*.34,{_side:-1,_stagger:.22}); });
-    add(48.0,()=> { spawnEnemy('s7valve',W*.30,-92,{}); spawnEnemy('s7mine',W*.70,-108,{_stagger:.28}); });
+    add(48.0,()=> { spawnEnemy('s7tank',W*.30,-92,{}); spawnEnemy('s7mine',W*.70,-108,{_stagger:.28}); });
     add(52.0,()=> { spawnEnemy('s7tank',W*.28,-112,{}); spawnEnemy('s7lamprey',W*.72,-102,{_side:-1,_stagger:.32}); });
     add(curStage.length-4,()=> { spawnEnemy('s7barge',W*.22,-132,{}); spawnEnemy('s7serpent',W*.50,-116,{_stagger:.20}); spawnEnemy('s7walker',W*.78,-124,{_stagger:.38}); });
     return _planSorted(P);
@@ -10717,7 +10862,7 @@ function buildStagePlan(stageNum){
     add(4.05,()=>pair('s9ring',.28,.72,{_s9Role:'spinner'}));
     add(5.55,()=>s9MeteorShower(W9*.33,0));
     add(6.75,()=>spawnEnemy('s9gunship',W9*.50,-126,{_s9Role:'beam'}));
-    add(8.10,()=>pair('s9chronal',.24,.76,{_s9Role:'jumper'}));
+    add(8.10,()=>pair('s9warptank',.24,.76,{_s9Role:'jumper'}));
     add(9.45,()=>pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'}));
     add(10.70,()=>{spawnEnemy('s9gateturret',W9*.30,-108,{_s9Role:'spinner'});spawnEnemy('s9gravity',W9*.70,-120,{_s9Role:'orb',_stagger:.18});});
     add(12.25,()=>s9MeteorShower(W9*.67,1));
@@ -10729,7 +10874,7 @@ function buildStagePlan(stageNum){
     add(19.60,()=>{spawnEnemy('s9interceptor',W9*.16,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-122,{_s9Role:'kamikaze',_stagger:.13});spawnEnemy('s9interceptor',W9*.84,-94,{_s9Role:'kamikaze',_stagger:.26});});
     add(21.00,()=>pair('s9ring',.25,.75,{_s9Role:'spinner'}));
     add(22.25,()=>spawnEnemy('s9gunship',W9*.50,-132,{_s9Role:'beam'}));
-    add(23.65,()=>{spawnEnemy('s9chronal',W9*.28,-112,{_s9Role:'jumper'});spawnEnemy('s9gravity',W9*.72,-126,{_s9Role:'orb',_stagger:.16});});
+    add(23.65,()=>{spawnEnemy('s9warptank',W9*.28,-112,{_s9Role:'jumper'});spawnEnemy('s9gravity',W9*.72,-126,{_s9Role:'orb',_stagger:.16});});
     add(25.00,()=>s9MeteorShower(W9*.72,3));
     add(26.20,()=>pair('s9interceptor',.22,.78,{_s9Role:'kamikaze'}));
     add(27.50,()=>{spawnEnemy('s9comet',-86,VH*.16,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.29,{_side:-1,_s9Role:'slider'});});
@@ -23956,6 +24101,7 @@ function updatePlay(dt){
     if(_tslow) continue;
     e.t+=dt;
     if(typeof enemyShieldTick==='function') enemyShieldTick(e,dt);
+    if(typeof enemyFrenzyTick==='function') enemyFrenzyTick(e,dt);
     if(e._dr && typeof droneTick==='function'){ droneTick(e, dt); }   // arsenal drone: hover, bank, glow, fire
     /* ⚠ AND STOCK ENEMIES GET THE ARC TOO (drop 0810f). Mike: "find out why enemies are appearing
        on stage 1 out of thin air instead of flying in."
@@ -40178,7 +40324,8 @@ function drawS6Storm(e){
   const fi=0;
   let key='s6atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s6atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
   const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);
-  e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);
+  e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. *//* FRENZY RED (drop 0904e). Mike: "frenzy enemies become palette swap red based versions of themselves." No new frames: xartPalette composites with 'color', which swaps hue and saturation and KEEPS luminance, so every panel line and rivet in the plate survives the recolour. Cached per key, so this costs one canvas per hull type, once. */
+  {const _fr=frenzyPlate(e,key); ctx.drawImage(_fr||im,-dw/2,-dh/2,dw,dh);}
   drawS6DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#ffffff'),.76);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;
 }
 
@@ -40195,7 +40342,8 @@ const S7TOXIC={
   s7canister:{art:'toxic_canister',hp:18,w:46,h:68,score:740},
   s7tank:{art:'toxic_mini_tank',hp:44,w:58,h:70,score:1660},
   s7skimmer:{art:'toxic_skimmer',hp:32,w:70,h:62,score:1240},
-  s7valve:{art:'valve_turret',hp:36,w:66,h:66,score:1440}
+  /* ⚠ s7valve/'valve_turret' REMOVED 0904e - Mike: "do not use this as an enemy its a valve.
+     delete it." Its waves now field s7tank, which holds the same stationary-armour slot. */
 };
 const S7_PROJECTILE_HIT={s7acid:[12,24],s7sludge:[21,21],s7shard:[10,24],s7bio:[14,32],s7laser:[8,34],s7grenade:[24,24],s7spore:[38,38]};
 function s7Hardpoint(e,ox,oy){return combatHardpoint(e,ox,oy);}
@@ -40237,8 +40385,6 @@ function s7ToxicTick(e,dt){
   }else if(K==='s7skimmer'){
     if(e._dir==null)e._dir=e._side||1;e.x+=e._dir*168*dt;e.y+=46*dt;e.spin=-e._dir*.38;
     if(!e._s7Act&&(e._fcd=(e._fcd==null?.36:e._fcd)-dt)<=0&&e.x>28&&e.x<W-28){e._fcd=1/DIFF.eFire;queue(()=>{for(const x of [-.22,0,.22]){const p=s7Hardpoint(e,x,.28);fire(p,Math.PI/2,2.45,'s7acid',{silent:x!==-.22});stage7Muzzle(e,x,.28,.60,.10);}},.54,.24);}if(e.x<-115||e.x>W+115)e.dead=true;
-  }else if(K==='s7valve'){
-    if(e.y<VH*.21)e.y+=52*dt;else e.y=VH*.21+Math.sin(e._s7t*1.1)*5;if(!e._s7Act&&(e._fcd=(e._fcd==null?.92:e._fcd)-dt)<=0){e._fcd=rnd(2,2.6)/DIFF.eFire;queue(()=>{const flip=(e._sweep=(e._sweep||1)*-1),p=s7Hardpoint(e,0,.36);for(let i=0;i<5;i++)fire(p,Math.PI/2+(i-2)*.14+flip*.18,3.55,'s7laser',{silent:i>0});stage7Muzzle(e,0,.36,.94,.17);},.78,.40);}
   }
   if(e.x<-140)e.x=-140;else if(e.x>W+140)e.x=W+140;
 }
@@ -40247,7 +40393,7 @@ function drawS7DamageOverlay(e,frac,w,h){if(frac>.66)return;const critical=frac<
   const fy=h*.13+Math.sin(t*13)*3;ctx.fillStyle=critical?'#baff16':'#65ff32';ctx.beginPath();ctx.moveTo(-5,fy);ctx.lineTo(Math.sin(t*9)*3,fy-15-Math.sin(t*18)*4);ctx.lineTo(6,fy);ctx.fill();ctx.restore();}
 function drawS7Toxic(e){if(typeof XART==='undefined'||!e._s7toxic)return false;const H=S7TOXIC[e._s7toxic];if(!H)return false;
   const fi=0;let key='s7atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s7atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
-  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawS7DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(frenzyPlate(e,key)||im,-dw/2,-dh/2,dw,dh)/*FRENZY RED 0904e: xartPalette swaps hue+saturation and KEEPS luminance, so no new frames are needed for any enemy*/;drawS7DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 const SEWER={
   skimmer: {art:'skimmer',  hp:14, w:32, h:32, score:420,  fps:11},
@@ -40437,7 +40583,7 @@ function drawS5Space(e){if(typeof XART==='undefined'||!e._s5space)return false;c
      only the PLATE stops changing. */
   const fi=0;
   let key='s5atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s5atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
-  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawSpaceDamage(e,frac,dw,dh,false);
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(frenzyPlate(e,key)||im,-dw/2,-dh/2,dw,dh)/*FRENZY RED 0904e: xartPalette swaps hue+saturation and KEEPS luminance, so no new frames are needed for any enemy*/;drawSpaceDamage(e,frac,dw,dh,false);
   if(e._repairGlow>0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=e._repairGlow/.25;ctx.strokeStyle='#70ffff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,Math.max(dw,dh)*.52,0,TAU);ctx.stroke();}if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 /* STAGE 8 — FURIOUS DEATH MEGA FLEET.  Every hull owns a distinct movement/weapon signature,
@@ -40588,13 +40734,14 @@ function drawS8Mega(e){if(typeof XART==='undefined'||!e._s8mega)return false;con
   else{fi=0;key='s8atk_'+H.art+'_0';}
   if(!XART.rdy(key)){key=H.fixed?'s8nf_'+H.art+'_idle':'s8atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
   const im=XART.get(key),dh=e.h*(H.fixed?1.0:1.62),dw=H.fixed?e.w:dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;
-  ctx.save();ctx.translate(e.x,e.y);if(e.spin&&!e._s8Roll&&!H.fixed)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawS8Damage(e,frac,dw,dh);
+  ctx.save();ctx.translate(e.x,e.y);if(e.spin&&!e._s8Roll&&!H.fixed)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(frenzyPlate(e,key)||im,-dw/2,-dh/2,dw,dh)/*FRENZY RED 0904e: xartPalette swaps hue+saturation and KEEPS luminance, so no new frames are needed for any enemy*/;drawS8Damage(e,frac,dw,dh);
   if(e._repairGlow>0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=e._repairGlow/.24;ctx.strokeStyle='#ff5b2d';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,Math.max(dw,dh)*.53,0,TAU);ctx.stroke();}
   if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.72);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 /* STAGE 9 — VELOCITY VOID. Faster motion and space-warp geometry, still deterministic. */
 const S9VOID={
-  s9beacon:{art:'alien_beacon',hp:34,w:60,h:74,score:1100},s9chronal:{art:'chronal_crawler_tank',hp:54,w:78,h:66,score:1750},
+  s9beacon:{art:'alien_beacon',hp:34,w:60,h:74,score:1100},/* ⚠ s9chronal/'chronal_crawler_tank' REMOVED 0904e - Mike: "unusuable, its a 45 degree titled
+   tank. we cant have any turned enemies like this." Its waves now field s9warptank. */
   s9comet:{art:'comet_skimmer',hp:28,w:70,h:62,score:1060},s9gunship:{art:'dimensional_gunship',hp:62,w:76,h:82,score:1920},
   s9interceptor:{art:'galaxy_interceptor',hp:30,w:62,h:76,score:1140},s9gatecarrier:{art:'gate_carrier',hp:70,w:84,h:76,score:2180},
   s9gateturret:{art:'gate_turret',hp:42,w:70,h:70,score:1480},s9gravity:{art:'gravity_artillery',hp:60,w:82,h:72,score:2020},
@@ -40613,9 +40760,6 @@ function s9VoidTick(e,dt){
   if(K==='s9beacon'){
     if(e.y<VH*.19)e.y+=68*dt;else e.y=VH*.19+Math.sin(e._s9vt*1.3)*6;e.spin+=.55*dt;
     if(!e._s9Act&&(e._fcd=(e._fcd==null?.58:e._fcd)-dt)<=0){e._fcd=rnd(1.6,2.0)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.28),base=e._s9vt*.5;for(let i=0;i<8;i++){if(i===2||i===6)continue;fire(p,base+i*TAU/8,2.8,'s9warp',{silent:i>0});}s9vMuzzle(e,0,.28,.9,.15);},.68,.32);}
-  }else if(K==='s9chronal'){
-    if(e.y<VH*.24)e.y+=46*dt;else{e._dash=(e._dash||0)-dt;if(e._dash<=0){e._dash=e._s9Role==='jumper'?.48:.78;e._dashV=(e.x<W*.5?1:-1)*rnd(e._s9Role==='jumper'?190:110,e._s9Role==='jumper'?260:170);if(e._s9Role==='jumper')e._jumpLift=1;}e.x+=e._dashV*dt;e._dashV*=Math.pow(.035,dt);if(e._jumpLift){e.y=VH*.24-Math.sin(clamp((e._dash||0)/.48,0,1)*Math.PI)*34;if(e._dash<=0)e._jumpLift=0;}}
-    if(!e._s9Act&&(e._fcd=(e._fcd==null?.8:e._fcd)-dt)<=0){e._fcd=rnd(1.3,1.7)/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.35),a=aim(p);for(const o of [-.15,-.05,.05,.15])fire(p,a+o,4.5,'s9gold',{silent:o>-.15});s9vMuzzle(e,0,.35,.72,.11);},.48,.21);}
   }else if(K==='s9comet'){
     if(e._dir==null)e._dir=e._side||1;e.x+=e._dir*225*dt;e.y+=58*dt;e.spin=-e._dir*.42;if(!e._s9Act&&(e._fcd=(e._fcd==null?.25:e._fcd)-dt)<=0&&e.x>25&&e.x<W-25){e._fcd=.92/DIFF.eFire;queue(()=>{const p=s9vHardpoint(e,0,.36);fire(p,Math.PI/2,5.4,'s9turbo',{});s9vMuzzle(e,0,.36,.58,.09);},.40,.18);}if(e.x<-120||e.x>W+120)e.dead=true;
   }else if(K==='s9gunship'){
@@ -40657,7 +40801,7 @@ function s9VoidTick(e,dt){
 }
 function drawS9Void(e){if(typeof XART==='undefined'||!e._s9void)return false;const H=S9VOID[e._s9void];if(!H)return false;
   const fi=0;let key='s9atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s9atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
-  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawSpaceDamage(e,frac,dw,dh,true);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(frenzyPlate(e,key)||im,-dw/2,-dh/2,dw,dh)/*FRENZY RED 0904e: xartPalette swaps hue+saturation and KEEPS luminance, so no new frames are needed for any enemy*/;drawSpaceDamage(e,frac,dw,dh,true);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 /* HP cut ~45% across the orbital cast. Stage 5 fields big slow targets in an asteroid field, and
    at the old values every single one outlasted its welcome — the level read as a chore rather than

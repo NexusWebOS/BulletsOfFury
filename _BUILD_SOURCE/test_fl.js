@@ -1787,8 +1787,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   }catch(err){ _crash=String(err&&err.message||err); }
   ok(_crash===null, 'stage 7 survives a full 90s headless run without throwing' + (_crash?(' -> '+_crash):''));
   ok(_peak>0, 'enemies actually spawned during the run (peak concurrent = '+_peak+')');
-  var _sewSeen=['s7lamprey','s7barge','s7pipe','s7walker','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer','s7valve'].filter(function(k){return _seen[k];});
-  ok(_sewSeen.length===11, 'all 11 supplied toxic-sewer unit types appeared in the run (saw: '+_sewSeen.join(',')+')');
+  var _sewSeen=['s7lamprey','s7barge','s7pipe','s7walker','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer'].filter(function(k){return _seen[k];});
+  /* 0904e: ten, not eleven - s7valve was removed at Mike's instruction ("its a valve. delete it")
+     and its waves field s7tank now. The count follows the roster; it does not define it. */
+  ok(_sewSeen.length===10, 'all 10 supplied toxic-sewer unit types appeared in the run (saw: '+_sewSeen.join(',')+')');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y)&&e.x>-80&&e.x<880;})", ctxv), 'every surviving enemy is finite and inside the 800px world after the soak');
   /* NAME THE CULPRIT. "no NaN bullets" told you nothing about which round, and this fixture
      only reproduces with ~200 sections of accumulated state behind it - so a bare boolean is
@@ -12268,7 +12270,7 @@ console.log("=== 258. Stage 9 Velocity Void headless contract ===");
      'the Velocity Void is one continuous 680px authored space scroll with no arena teleport (starfield since 0903d)');
 
   var _plan258=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var P=buildStagePlan(9),seen=[],real=spawnEnemy;spawnEnemy=function(t){seen.push(t);return null;};P.forEach(function(w){(w.fn||w[1]||function(){})();});spawnEnemy=real;return JSON.stringify({n:P.length,t:P.map(function(w){return w.t;}),cast:Array.from(new Set(seen)).sort()});})()",ctxv));
-  var _cast258=['s9beacon','s9chronal','s9comet','s9gatecarrier','s9gateturret','s9gravity','s9gunship','s9interceptor','s9prism','s9ring','s9singularity','s9warptank'];
+  var _cast258=['s9beacon','s9comet','s9gatecarrier','s9gateturret','s9gravity','s9gunship','s9interceptor','s9prism','s9ring','s9singularity','s9warptank'];
   ok(_plan258.n===12 && JSON.stringify(_plan258.cast)===JSON.stringify(_cast258),
      'all twelve authored events field only the exact twelve-family Velocity Void cast');
   ok(_plan258.t.every(function(t,i,a){return Number.isFinite(t) && t>=0 && t<42 && (i===0||t>=a[i-1]);}),
@@ -12439,7 +12441,7 @@ console.log("=== 261. Stage 9 full headless soak ===");
   }catch(_err261){_crash261=String(_err261&&_err261.message||_err261);}
   _seen261=JSON.parse(vm.runInContext("JSON.stringify(window.__s9SoakSeen||{})",ctxv));
   vm.runInContext("spawnEnemy=window.__realS9Spawn;delete window.__realS9Spawn;",ctxv);
-  var _cast261=['s9beacon','s9chronal','s9comet','s9gatecarrier','s9gateturret','s9gravity','s9gunship','s9interceptor','s9prism','s9ring','s9singularity','s9warptank'];
+  var _cast261=['s9beacon','s9comet','s9gatecarrier','s9gateturret','s9gravity','s9gunship','s9interceptor','s9prism','s9ring','s9singularity','s9warptank'];
   ok(_crash261===null,'Stage 9 survives a full 90-second update soak without throwing'+(_crash261?' -> '+_crash261:''));
   ok(_cast261.every(function(k){return _seen261[k];}),
      'the soak observes all twelve Velocity Void families in live director order (saw '+Object.keys(_seen261).sort().join(',')+')');
@@ -12877,17 +12879,22 @@ console.log("=== 269. Stage-6 storm fleet and Doomsday mega boss ===");
 // ===== 270. STAGE-7 NATIVE TOXIC FLEET + SLUDGE EMPEROR =====
 console.log("=== 270. Stage-7 toxic fleet and Sludge Emperor ===");
 {
-  var _fleet270=['s7lamprey','s7barge','s7pipe','s7walker','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer','s7valve'];
+    /* 0904e: s7valve (valve_turret) and s9chronal (chronal_crawler_tank) were REMOVED from
+     the rosters at Mike's instruction - "do not use this as an enemy its a valve" and
+     "its a 45 degree titled tank. we cant have any turned enemies like this". Their waves
+     field s7tank / s9warptank now. These lists follow the roster; they do not define it. */
+var _fleet270=['s7lamprey','s7barge','s7pipe','s7walker','s7sampler','s7serpent','s7mine','s7canister','s7tank','s7skimmer'];
   var _plan270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];var p=buildStagePlan(7),seen={};for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
   ok(_fleet270.every(function(k){return _plan270.indexOf(k)>=0;}),'Stage 7 schedules all eleven supplied toxic-sewer field units');
   ok(['skimmer','sentry','crawler','shambler','maw','barge'].every(function(k){return _plan270.indexOf(k)<0;}),'the rebuilt Stage-7 plan contains none of the reused legacy sewer roster');
   var _owned270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];enemies.length=0;var o={};Object.keys(S7TOXIC).forEach(function(k){var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S7TOXIC[k].art};});return JSON.stringify(o);})()",ctxv));
   ok(_fleet270.every(function(k){return _owned270[k]&&_owned270[k].p==='s7toxic'&&!_owned270[k].s&&_owned270[k].f===null;}),'every toxic unit owns its movement and ammunition without a stacked generic shooter');
-  var _shots270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S7TOXIC[k],e={_s7toxic:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||110)&&!e.dead;i++)s7ToxicTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}return JSON.stringify({lamprey:tick('s7lamprey'),barge:tick('s7barge'),pipe:tick('s7pipe'),walker:tick('s7walker'),sampler:tick('s7sampler'),serpent:tick('s7serpent'),mine:tick('s7mine'),canister:tick('s7canister'),tank:tick('s7tank'),skimmer:tick('s7skimmer',function(e){e._dir=1;}),valve:tick('s7valve')});})()",ctxv));
+  var _shots270=JSON.parse(vm.runInContext("(function(){run.stage=7;curStage=STAGES[6];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S7TOXIC[k],e={_s7toxic:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||110)&&!e.dead;i++)s7ToxicTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}return JSON.stringify({lamprey:tick('s7lamprey'),barge:tick('s7barge'),pipe:tick('s7pipe'),walker:tick('s7walker'),sampler:tick('s7sampler'),serpent:tick('s7serpent'),mine:tick('s7mine'),canister:tick('s7canister'),tank:tick('s7tank'),skimmer:tick('s7skimmer',function(e){e._dir=1;})});})()",ctxv));
   ok(_shots270.lamprey.k.every(function(k){return k==='s7sludge';})&&_shots270.barge.k.every(function(k){return k==='s7acid';}),'Lamprey jaw bursts and Barge safe-gate fans use different readable ordnance');
   ok(_shots270.pipe.k.every(function(k){return k==='s7shard';})&&_shots270.walker.k.every(function(k){return k==='s7grenade';})&&_shots270.sampler.k.every(function(k){return k==='s7laser';}),'wall crawler, pump walker and sampling drone retain three distinct attack roles');
   ok(_shots270.serpent.k.every(function(k){return k==='s7bio';})&&_shots270.mine.k.every(function(k){return k==='s7acid';})&&_shots270.canister.k.every(function(k){return k==='s7sludge';}),'serpent missiles, mine crown and canister pulse stay visually and behaviorally separate');
-  ok(_shots270.tank.k.every(function(k){return k==='s7shard';})&&_shots270.skimmer.k.every(function(k){return k==='s7acid';})&&_shots270.valve.k.every(function(k){return k==='s7laser';}),'tank stitch, skimmer wake and valve sweep complete the eleven identities');
+  /* 0904e: the valve clause is gone with the unit - Mike: "do not use this as an enemy its a valve. delete it." */
+  ok(_shots270.tank.k.every(function(k){return k==='s7shard';})&&_shots270.skimmer.k.every(function(k){return k==='s7acid';}),'tank stitch and skimmer wake complete the remaining identities');
   ok(Object.keys(_shots270).every(function(k){return _shots270[k].k.length>0&&_shots270[k].fl>0;}),'every Level-7 field unit releases through an animated following muzzle hardpoint');
   ok(vm.runInContext("['s7acid','s7sludge','s7shard','s7bio','s7laser','s7grenade'].every(function(k){return !!FIRETYPES[k]&&!!FIRETYPES[k].proc7&&!!PROJ[k];})",ctxv),'all six toxic projectile roles resolve through dedicated render and behavior registries');
   ok(vm.runInContext("Object.keys(S7TOXIC).every(function(k){var a=S7TOXIC[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s7atk_'+a+'_'+i))return false;return true;})",ctxv),'all eleven field hulls resolve complete eight-frame action reels');
@@ -12930,14 +12937,15 @@ console.log("=== 271. Stage-5 orbital fleet and Xeno Regent ===");
 // ===== 272. STAGE-9 NATIVE VOID FLEET + RIFT WARDENS =====
 console.log("=== 272. Stage-9 void fleet and Rift Wardens ===");
 {
-  var _fleet272=['s9beacon','s9chronal','s9comet','s9gunship','s9interceptor','s9gatecarrier','s9gateturret','s9gravity','s9prism','s9warptank','s9ring','s9singularity'];
+  var _fleet272=['s9beacon','s9comet','s9gunship','s9interceptor','s9gatecarrier','s9gateturret','s9gravity','s9prism','s9warptank','s9ring','s9singularity'];
   var _plan272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var p=buildStagePlan(9),seen={};for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
   ok(_fleet272.every(function(k){return _plan272.indexOf(k)>=0;}),'Stage 9 schedules all twelve supplied Velocity Void hulls');
   ok(['wskim','pneedle','pmine','gleech','vmanta','echof','tsplit','cbreak','horizon','dreadv'].every(function(k){return _plan272.indexOf(k)<0;}),'the rebuilt bonus stage no longer mixes the prototype void roster into its waves');
   var _owned272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];enemies.length=0;var o={};Object.keys(S9VOID).forEach(function(k){enemies.length=0;var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S9VOID[k].art};});return JSON.stringify(o);})()",ctxv));
   ok(_fleet272.every(function(k){return _owned272[k]&&_owned272[k].p==='s9void'&&!_owned272[k].s&&_owned272[k].f===null;}),'every Velocity Void hull owns its flight and weapon cadence');
-  var _shots272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S9VOID[k],e={_s9void:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||120)&&!e.dead;i++)s9VoidTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}return JSON.stringify({beacon:tick('s9beacon'),chronal:tick('s9chronal'),comet:tick('s9comet',function(e){e._dir=1;}),gunship:tick('s9gunship'),interceptor:tick('s9interceptor'),carrier:tick('s9gatecarrier'),turret:tick('s9gateturret'),gravity:tick('s9gravity'),prism:tick('s9prism'),tank:tick('s9warptank'),ring:tick('s9ring',function(e){e._cy=120;}),singularity:tick('s9singularity')});})()",ctxv));
-  ok(_shots272.beacon.k.every(function(k){return k==='s9warp';})&&_shots272.chronal.k.every(function(k){return k==='s9gold';})&&_shots272.comet.k.every(function(k){return k==='s9turbo';}),'beacon wheel, chronal fan and comet pass use distinct void ammunition');
+  var _shots272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S9VOID[k],e={_s9void:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||120)&&!e.dead;i++)s9VoidTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}return JSON.stringify({beacon:tick('s9beacon'),comet:tick('s9comet',function(e){e._dir=1;}),gunship:tick('s9gunship'),interceptor:tick('s9interceptor'),carrier:tick('s9gatecarrier'),turret:tick('s9gateturret'),gravity:tick('s9gravity'),prism:tick('s9prism'),tank:tick('s9warptank'),ring:tick('s9ring',function(e){e._cy=120;}),singularity:tick('s9singularity')});})()",ctxv));
+  /* 0904e: the chronal clause is gone with the unit - Mike: "its a 45 degree titled tank. we cant have any turned enemies like this." */
+  ok(_shots272.beacon.k.every(function(k){return k==='s9warp';})&&_shots272.comet.k.every(function(k){return k==='s9turbo';}),'beacon wheel and comet pass use distinct void ammunition');
   ok(_shots272.gunship.k.every(function(k){return k==='s9needle';})&&_shots272.interceptor.k.every(function(k){return k==='s9needle';})&&_shots272.carrier.k.every(function(k){return k==='s9pair';}),'gunship batteries, interceptor burst and gate carrier bracket remain distinct patterns');
   ok(_shots272.turret.k.every(function(k){return k==='s9warp';})&&_shots272.gravity.k.every(function(k){return k==='s9comet';})&&_shots272.tank.k.every(function(k){return k==='s9gold';}),'gate turret, gravity artillery and warp tank preserve their separate cadences');
   ok((_shots272.prism.k.indexOf('s9warp')>=0||_shots272.prism.k.indexOf('s9lattice')>=0)&&_shots272.ring.k.every(function(k){return k==='s9turbo';})&&_shots272.singularity.k.every(function(k){return k==='s9pair';}),'prism, ring drone and singularity mine complete the twelve identities');
