@@ -10662,18 +10662,31 @@ console.log("=== 216. dialogue/stage fonts only ===");
      The RENDERER: stageText, stageWidth and _tw all resolve through stageGlyph, so a borrowed
      glyph is measured at the width it is drawn at — measuring in one face and drawing in another
      is 0814b's "the text ran off its rail". ============================================================ */
-  var _v3=JSON.parse(vm.runInContext("(function(){var o={stages:{},sheet:null};"
-    +"for(var i=1;i<=9;i++){var f=ASSETS.stageFontV3&&ASSETS.stageFontV3[String(i)];"
-    +"  o.stages[i]=f?Object.keys(f.font).length:0;}"
-    +"o.sheet=(window.BOF.stageFontV3&&window.BOF.stageFontV3['1'])?window.BOF.stageFontV3['1'].atlas:null;"
-    +"o.miss=[];for(var i=1;i<=9;i++){var f=ASSETS.stageFontV3[String(i)];"
-    +"  for(var ch of 'CHOOSE YOUR PILOT!JUGGERNAUTMAVERICKFREEZER'){ if(ch===' ')continue;"
-    +"    if(!(f&&f.font&&f.font[ch])) o.miss.push(i+':'+ch); } }"
-    +"return JSON.stringify(o);})()", ctxv));
-  for(var _i=1;_i<=9;_i++) ok(_v3.stages[_i]===47,
-    'stage '+_i+' has the complete authored alphabet ('+_v3.stages[_i]+' glyphs)');
-  ok(_v3.miss.length===0, 'and no pilot-screen character is missing from any of them'+(_v3.miss.length?(' — GAPS: '+_v3.miss.join(',')):''));
-  ok(!!_v3.sheet && fs.existsSync(ROOT+'/'+_v3.sheet), 'the packed face sheet is on disk ('+_v3.sheet+')');
+  /* ⚠ THE NINE v3 FACES WERE DELETED IN 0904u. Mike, shown all of them rendered at full size:
+     "Oof. No, delete these." The three assertions that pinned their existence (47 glyphs each, no
+     pilot-screen gap, the packed sheet on disk) are gone with them.
+
+     WHAT THIS SECTION STILL PROTECTS IS THE PART THAT MATTERS MORE NOW. The v3 faces were the
+     belt; stageGlyph's borrow was the braces. With the belt removed the braces are load-bearing,
+     so they are pinned harder: every letter and digit must resolve on every decoded card face,
+     the stage-5 S must actually borrow, and the donor must be WARM - stage 2 is the only complete
+     alphabet (58 glyphs) and the borrow silently drops the glyph if its sheet has not decoded,
+     which is exactly how CHOO E YOUR PILOT comes back. */
+  ok(vm.runInContext("!ASSETS.stageFontV3", ctxv), 'the rejected v3 faces are gone from ASSETS');
+  ok(!fs.existsSync(ROOT+'/assets/game/atlas/fonts_stage.png'), 'and their packed sheet is off disk');
+  ok(vm.runInContext("(function(){return !!(ASSETS.stageArt&&ASSETS.stageArt['2']&&Object.keys(ASSETS.stageArt['2'].font).length>=58);})()", ctxv),
+     "stage 2's card alphabet is complete (58 glyphs) - it is the donor everything else borrows from");
+  var _cov=JSON.parse(vm.runInContext("(function(){var miss=[];var CH='ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';"
+    +"for(var k in ASSETS.stageArt){var f=ASSETS.stageArt[k]; if(!f||(typeof artReady==='function'&&!artReady(f)))continue;"
+    +"  for(var i=0;i<CH.length;i++){ if(!stageGlyph(f,CH[i])) miss.push(k+':'+CH[i]); } }"
+    +"return JSON.stringify({miss:miss});})()", ctxv));
+  ok(_cov.miss.length===0,
+     'every letter and digit resolves on every decoded card face'+(_cov.miss.length?(' — GAPS: '+_cov.miss.slice(0,8).join(',')):''));
+  ok(vm.runInContext("(function(){var g=stageGlyph(ASSETS.stageArt['5'],'S');return !!(g&&g.art===ASSETS.stageArt['2']);})()", ctxv),
+     "and the S stage 5 lacks is borrowed specifically from stage 2");
+  var _gW=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(_gW.indexOf("if(A.stageArt && A.stageArt['2']) void A.stageArt['2'].img;")>0,
+     'warmStageSheets decodes the donor face, without which the borrow silently drops the glyph');
   var _gF=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   function _fnBody(nm){ var i=_gF.indexOf('function '+nm+'('); if(i<0) return ''; var j=_gF.indexOf('\nfunction ',i+1); return _gF.slice(i, j<0?i+4000:j); }
   ['stageText','stageWidth','_tw'].forEach(function(fn){

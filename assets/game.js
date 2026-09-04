@@ -1615,19 +1615,20 @@ const ASSETS=(function(){
        BOF/password family was intentionally removed from the manifest and disk. */
     A.stageFont=Object.assign({},A.stageArt);
     /* ============================================================
-       THE NINE AUTHORED STAGE ALPHABETS ARE BACK (Mike, 0903: "remove these old fonts, replace
-       with the better stage fonts asap", with four screenshots of the pilot screen).
+       THE stagefont1..9_v3 FACES ARE GONE (Mike, 0904: shown all nine rendered - "Oof. No, delete
+       these.")
 
-       What he was looking at is the alphabet embedded in each stage's CARD sheet, and those are
-       INCOMPLETE — stage 5 carries 44 glyphs and has no letter S, which is why his Juggernaut shot
-       reads CHOO E YOUR PILOT. The complete faces (`stagefont1..9_v3.png`, 47 glyphs each) were
-       deleted from disk on 0831 and their atlas cells cleared on 0902, with nothing put in their
-       place. `_BUILD_SOURCE/build_stage_fonts_v3_0903.py` recovers the pixels from git and packs
-       all nine into one sheet; this hands them out in the same `{frames, font, img}` shape every
-       stage-card alphabet uses, so stageText/glyphBox/fontCapH consume them unchanged. ============================================================ */
-    A.stageFontV3={};
-    if(BOF.stageFontV3){ for(const _k in BOF.stageFontV3){ const _fv=BOF.stageFontV3[_k];
-      A.stageFontV3[_k]=_lazySheet({frames:_fv.frames, font:_fv.font}, _fv.atlas); } }
+       0903 recovered them from git and packed them into assets/game/atlas/fonts_stage.png because
+       the CARD alphabets under them are incomplete - stage 5 has 44 glyphs and no letter S, which
+       is what made his Juggernaut screenshot read CHOO E YOUR PILOT. Mike has now seen the nine
+       faces at full size and rejected the look, so the sheet, its manifest block and every
+       consumer are removed rather than left loading unused.
+
+       ⚠ THE MISSING-GLYPH PROBLEM THEY WERE COVERING IS STILL REAL, so it is handled the other
+       way now: stageGlyph borrows from stage 2's CARD alphabet, which is the only complete one -
+       58 glyphs, every letter and digit, including the S stage 5 lacks. That borrow already
+       existed and already listed stage 2 first; removing v3 simply promotes it. Verified by
+       comparing every card face against the union of all of them. ============================================================ */
     if(A.img){ A.img.onload=function(){A.ready=true;}; A.img.onerror=function(){A.ready=false;}; }
   }
   function _rdy(im){ return im && im.complete && im.naturalWidth>0; }
@@ -23314,6 +23315,13 @@ function warmStageSheets(n){
     const k=String(n);
     if(A.stageArt  && A.stageArt[k])  void A.stageArt[k].img;
     if(A.stageArt && A.stageArt['1']) void A.stageArt['1'].img;
+    /* ⚠ STAGE 2 IS THE DONOR FACE AND IT HAS TO BE DECODED TO DONATE (drop 0904u). With the v3
+       sheet deleted, stageGlyph's borrow is the ONLY thing keeping text whole - stage 5 has no
+       letter S and stages 6-9 have no card face at all. But the borrow requires artReady(b), and
+       these sheets are lazy, so an undecoded stage 2 means the S is silently DROPPED and
+       CHOOSE YOUR PILOT reads CHOO E YOUR PILOT again. Caught exactly that in the probe. Stage 2
+       carries all 58 glyphs and is now warmed on every stage entry alongside stage 1. */
+    if(A.stageArt && A.stageArt['2']) void A.stageArt['2'].img;
   }catch(e){}
 }
 /* ============================================================
@@ -23335,7 +23343,6 @@ function uiFontWarm(){
     /* the nine authored faces share ONE sheet, so touching stage 1 starts all of them (0903).
        Without this the pilot screen opens on the incomplete card alphabet for a frame or two —
        which is 0812j's "basic ass text" window, by a new route. */
-    if(ASSETS.stageFontV3 && ASSETS.stageFontV3['1']) void ASSETS.stageFontV3['1'].img;
   }catch(e){}
 }
 /* ============================================================
@@ -49496,13 +49503,16 @@ function drawPilotBG(tint){
    dedicated card use stage 1's authored face; prose and cinematics use the dialogue sheet. */
 function pilotFont(idx){
   const k=String(Math.max(1,Math.min(9,idx|0)));
-  /* THE COMPLETE FACE FIRST (0903). The stage-CARD alphabets under it are incomplete — stage 5 has
-     no S — and stages 6-9 have none at all, so a pilot whose font is 6+ silently fell back to
-     stage 1's. stageFontV3 carries all nine at 47 glyphs each. The card alphabets stay as the
-     fallback for the moment the sheet is still decoding. */
-  const v3=ASSETS.stageFontV3 && (ASSETS.stageFontV3[k] || ASSETS.stageFontV3['1']);
-  if(v3 && typeof artReady==='function' && artReady(v3)) return v3;
-  return (ASSETS.stageArt && (ASSETS.stageArt[k] || ASSETS.stageArt['1'])) || v3 || null;
+  /* the pilot screen runs BEFORE any stage entry, so warmStageSheets has not fired yet - touch the
+     donor here or the first frames of this screen borrow nothing. See warmStageSheets. */
+  try{ if(ASSETS.stageArt && ASSETS.stageArt['2']) void ASSETS.stageArt['2'].img; }catch(_pf){}
+  /* ⚠ THE CARD ALPHABET, AND A MISSING GLYPH IS BORROWED RATHER THAN DROPPED (drop 0904u).
+     The v3 faces that used to sit in front of this were deleted at Mike's instruction. The card
+     alphabets are still incomplete - stage 5 has no S, stages 6-9 have no card face at all and
+     fall through to stage 1's - so correctness now rests on stageGlyph's borrow, which reaches
+     stage 2's 58-glyph face first. That is the only complete alphabet in the game, so no letter
+     or digit can go missing; what a borrowed glyph costs is style, not meaning. */
+  return (ASSETS.stageArt && (ASSETS.stageArt[k] || ASSETS.stageArt['1'])) || null;
 }
 function startPilotRot(dir){ if(pilotRot>0)return; pilotFrom=pilotIndex; pilotIndex=(pilotIndex+dir+PILOTS.length)%PILOTS.length; pilotRot=1; Audio.SFX.blip(); }
 /* A held click/stick/button survives setState even though edge taps are cleared. During Campaign
@@ -50538,17 +50548,17 @@ function bofPanel(x,y,w,h){
    Mike: "clean up the stage fonts as in the stat and pilot select screens your using the old
    outdated fonts and need to use the current stage fonts."
 
-   0903o restored the nine authored alphabets (stageFontV3) and moved the pilot screen's title
-   and name onto them - but the co-op screens added in 0902f/0903p were written against the
-   BOFmil canvas face, so the PLAYER 1 / PLAYER 2 banner, the muster's pilot names and roles,
-   its prompt, and the P1/P2 seat tags on the split stats panel were all still in the old
-   typeface, sitting directly beside text that had been converted. That is the mismatch he is
-   looking at.
+   0903o restored the nine authored alphabets and moved the pilot screen's title and name onto
+   them - but the co-op screens added in 0902f/0903p were written against the BOFmil canvas face,
+   so the PLAYER 1 / PLAYER 2 banner, the muster's pilot names and roles, its prompt, and the
+   P1/P2 seat tags on the split stats panel were all still in the old typeface, sitting directly
+   beside text that had been converted. That is the mismatch he is looking at.
 
-   `pilotFont(idx)` is the current accessor: stageFontV3 for that pilot's stage, falling back to
-   the stage-card alphabet while the sheet decodes. This wraps it so a caller cannot forget the
-   fallback - stageText draws NOTHING when its glyph sheet has not landed (the 0810o trap), so a
-   bare conversion would make these labels disappear on a cold boot rather than look old.
+   ⚠ THOSE NINE FACES WERE DELETED IN 0904u - Mike, shown all of them rendered: "Oof. No, delete
+   these." `pilotFont(idx)` now returns the stage-CARD alphabet directly, and a glyph the card
+   lacks is borrowed from stage 2's 58-glyph face by stageGlyph rather than dropped. This wrapper
+   still matters: stageText draws NOTHING when its glyph sheet has not landed (the 0810o trap), so
+   a bare conversion would make these labels disappear on a cold boot rather than look old.
    ============================================================ */
 function coopText(text, cx, cy, H, col, fontIdx, alpha){
   const art=(typeof pilotFont==='function') ? pilotFont(fontIdx||1) : null;
@@ -51228,9 +51238,8 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
    ⚠ msgText HAS HAD THIS FALLBACK SINCE 0812j and stageText never got it — the same fix applied
    to one of two twin functions, which is a shape this file records more than once. Borrowing one
    glyph from a sibling face is not free (it can differ in style) but it is strictly better than
-   dropping the letter, and with stageFontV3 in front the only character that ever borrows is % —
-   absent from all nine authored faces and present in stage 2's card alphabet, exactly as
-   CLAUDE.md already records for the stats screen.
+   dropping the letter. With the v3 faces deleted (0904u) stage 2's card alphabet leads the pool:
+   58 glyphs, the only complete one, and the only face carrying the S that stage 5 lacks.
 
    glyphBox is handed the BORROWED face, so the borrowed glyph is scaled by ITS OWN cap height and
    lands on the same baseline. ============================================================ */
@@ -51239,7 +51248,8 @@ function stageGlyph(art, ch){
   if(nm && art.frames && art.frames[nm]) return {art:art, f:art.frames[nm]};
   const A=(typeof ASSETS!=='undefined')?ASSETS:null; if(!A) return null;
   const alt=[];
-  if(A.stageFontV3) for(const k in A.stageFontV3) alt.push(A.stageFontV3[k]);
+  /* stage 2 first: 58 glyphs, the only complete card alphabet, and the only one carrying the S
+     that stage 5 is missing. See the pilotFont note - this borrow is now what keeps text whole. */
   if(A.stageArt){ alt.push(A.stageArt['2']); alt.push(A.stageArt['1']);
     for(const k in A.stageArt) alt.push(A.stageArt[k]); }
   for(const b of alt){
