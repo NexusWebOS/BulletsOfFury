@@ -30708,6 +30708,93 @@ function pelletKey(b){
   const lv=[5,2,1,3,4][pelletFam(b)]||1;
   return 'mgcf_'+lv+'_'+Math.min(5,Math.floor(((b&&b.t)||0)/0.024));
 }
+/* ============================================================
+   STATIC FRAME + SHADEGLOW, PER FAMILY (drop 0904a)
+
+   Mike: "fixing all current projectiles in the game that have animations to instead use their
+   1st original static frame, and we animate it via pixel glow, rotations etc."
+
+   The technique has a name: PALETTE CYCLING for the internal shading (the 16-bit one - the pixels
+   never move, the colours rotate through them) and PROCEDURAL SPRITE ANIMATION for the rest. This
+   file already does it in one place - Cole's firewall, whose note reads "the life comes from
+   re-burning the SAME plate rather than swapping art: a steady base pass, then an additive pass
+   whose strength rides its own fast clock, then a tight white-hot core". PROJ_SHADE generalises
+   exactly that to enemy ordnance.
+
+   PER FAMILY, NOT GLOBAL, and OFF unless listed - Mike: "per family cause some do animate well".
+   A reel that reads well keeps its animation; only families whose reel is the problem are listed.
+
+   WHY THESE THREE. Contact-sheeted every animated family before writing a line:
+
+   ⚠ AND THE REASON THEY LOOK "JUMPY" IS drawMfx SCALING, NOT THE ART. drawMfx fits every frame
+   to a FIXED HEIGHT `h` and keeps its aspect. These reels are GROWTH sequences - a compact round
+   in frame 0, then a trail that gets longer and longer - so squeezing each frame into the same
+   `h` makes the WIDTH collapse as the trail grows. Measured off the atlas:
+
+     mfx_hom_0   _0 is a 17x32 missile; _1.._4 grow the exhaust to 27x139, then _5 SNAPS BACK to
+                 17x32 and _6.._9 grow again. At h:18 that renders 9.6px wide, thinning to 3.5px,
+                 then popping back to 9.6 - fourteen times a second. Not a flicker in the art: a
+                 round pulsing between a blob and a sliver.
+     mfx_mg_2    _0 18x20 round, _1.._4 grow to 34x57. At h:16 that is 14.4px wide down to 9.5px,
+                 and `dart` toggled _0 and _2 OFF THE WALL CLOCK - the bug 0811y fixed for the
+                 pellet and never here.
+     mfx_ea_3    _0.._4 are round (16x18..16x21), _5/_6 are thin capsules (8x23, 9x25) and _7 is a
+                 20x31 FORK. One "reel" holding three different silhouettes; at h:15 it swings
+                 13.3px wide -> 5.2 -> 9.7. 0811y already names this reel as a trap and three fire
+                 types were still cycling it.
+
+   Frame 0 is the compact, trail-free round in all three - which is why it is the frame held.
+
+   LEFT ANIMATING, deliberately: waf_railgun (a hit-flash that grows 109x65 -> 216x86; growth IS
+   the effect for an impact star, and it is drawn at its own size, not squeezed into an `h`),
+   pellet (mgcf_ is a birth sequence driven MONOTONICALLY off b.t and holding on the tracer, which
+   0811y built on purpose), and every xlz_/s1fx_ travel reel until they have been sheeted too.
+   ============================================================ */
+const PROJ_SHADE={
+  /* frame: which frame becomes the sprite. pulse/core: additive strength on their own clocks.
+     spin: rad/sec of rotation for rounds that are not aligned to their velocity. */
+  'mfx_ea_3':     {frame:0, pulse:0.34, core:0.26, spin:0.0},
+  'mfx_hom_0':    {frame:0, pulse:0.30, core:0.22, spin:0.0},
+  'mfx_mg_2':     {frame:0, pulse:0.26, core:0.18, spin:0.0},
+};
+/* the family a key belongs to, i.e. the key with its trailing frame index removed */
+function projShadeFor(key){
+  const i=String(key).lastIndexOf('_');
+  if(i<0) return null;
+  return PROJ_SHADE[String(key).slice(0,i)]||null;
+}
+/* the static frame this family should draw instead of whatever the reel asked for */
+function projStaticKey(key){
+  const i=String(key).lastIndexOf('_');
+  if(i<0) return key;
+  const fam=String(key).slice(0,i), S=PROJ_SHADE[fam];
+  return S ? (fam+'_'+S.frame) : key;
+}
+
+/* ============================================================
+   THE MISSILE / LASER ROUND WAS STROBING THROUGH FOUR COLOURS (drop 0904a)
+
+   `mfx_emr_0_0..3` are NOT four frames of one round - they are four COLOURS: red, green, blue,
+   purple. Rendered them to be sure. Both `missile` and `laser` drew
+   'mfx_emr_0_'+(((b.t||0)*12|0)%4), so every enemy missile and every enemy laser in the game
+   cycled red->green->blue->purple twelve times a second while it flew.
+
+   Mike: "route it per stage like the pellets." So this mirrors PELLET_FAM exactly - same shape,
+   same override hook, same fallback - and each stage fires ordnance in its own palette instead of
+   all four at once. `_efam` on the bullet overrides, the way `_pfam` does for pellets.
+   ============================================================ */
+const EMR_GLOW=['#ff6b5a','#8fff9f','#7fb0ff','#c46bff'];   // red, green, blue, purple
+/*  1 jungle green | 2 lava red | 3 ice blue | 4 the lightning carrier blue | 5 xeno purple
+    6 neon-city blue | 7 sewer green | 8 necro purple | 9 bonus blue */
+const EMR_FAM={1:1, 2:0, 3:2, 4:2, 5:3, 6:2, 7:1, 8:3, 9:2};
+function emrFam(b){
+  if(b && b._efam!=null) return clamp(b._efam|0,0,3);
+  const st=(typeof run!=='undefined'&&run)?run.stage:1;
+  const f=EMR_FAM[st]; return (f==null)?0:f;
+}
+function emrKey(b){ return 'mfx_emr_0_'+emrFam(b); }
+function emrGlow(b){ return EMR_GLOW[emrFam(b)]||EMR_GLOW[0]; }
+
 const FIRETYPES={
   pellet:{ art:(b)=>pelletKey(b), align:true, h:20, glow:(b)=>PELLET_GLOW[pelletFam(b)]},
   /* Stage 1 military fire is a fixed in-flight tracer. Cycling the six construction frames made
@@ -30721,7 +30808,7 @@ const FIRETYPES={
   missile:{art:(b)=>(b&&b.kind==='omegawarhead')
               ? (function(_s){ return b._ref ? _s.replace(/_in$/,'_ref') : _s; })
                   (b._wart||'nfx_omegawarhead_in')                      // authored pair, per carrier
-              : 'mfx_emr_0_'+(((b.t||0)*12|0)%4), align:true, h:20, glow:'#ffb04a'},
+              : emrKey(b), align:true, h:20, glow:(b)=>emrGlow(b)},
   /* the four Mike scrapped now ALIAS onto survivors, so any call site I have not
      found yet still draws something correct rather than nothing:
        dart -> pellet (both are the small aimed round)
@@ -30730,7 +30817,7 @@ const FIRETYPES={
   dart:  { art:(b)=>['mfx_mg_2_0','mfx_mg_2_2'][(Math.floor(performance.now()/70)+((b._ph|0)||0))%2], align:true, h:16, glow:'#ffd36b'},
   gem:   { art:(b)=>'mfx_ea_3_'+(((b.t||0)*10|0)%8), spin:2.4, h:13, glow:'#9fe6ff'},
   orb:   { art:(b)=>'mfx_ea_3_'+(((b.t||0)*8|0)%8),  spin:0,   h:12, glow:'#ffb04a'},
-  laser: { art:(b)=>'mfx_emr_0_'+(((b.t||0)*12|0)%4), align:true, h:20, glow:'#8fff9f'},
+  laser: { art:(b)=>emrKey(b), align:true, h:20, glow:(b)=>emrGlow(b)},
   /* RAILSHOT SURVIVES ON ITS OWN ART (drop 0801hj). It is not one of the six, but
      it does not draw from mfx_ at all - it uses waf_railgun_, and all five
      DRONE_CANNON mounts fire it. Dropping it when I rewrote this table left every
@@ -31175,7 +31262,14 @@ function drawFireType(b){
   if(T.proc6) return drawStage6Projectile(b,T.proc6);
   if(T.proc7) return drawStage7Projectile(b,T.proc7);
   if(T.procSpace) return drawSpaceProjectile(b,T.procSpace);
-  const key=T.art(b); if(typeof XART==='undefined'||!XART.rdy(key)) return false;
+  let key=T.art(b);
+  /* ⚠ THE FAMILY IS SWAPPED TO ITS STATIC FRAME HERE, NOT IN EACH art() (drop 0904a). There are
+     a dozen art() closures and several fire types share a family - `flare`, `gem` and `orb` are
+     all mfx_ea_3 - so editing the closures would mean the same decision written three times and
+     a fourth one added later that forgets. One swap at the choke point covers every caller. */
+  const _shade=projShadeFor(key);
+  if(_shade) key=projStaticKey(key);
+  if(typeof XART==='undefined'||!XART.rdy(key)) return false;
   let ang=0;
   if(T.align) ang=Math.atan2(b.vy||1,b.vx||0)-Math.PI/2;
   else if(T.spin) ang=(performance.now()/1000)*T.spin+((b._ph||0));
@@ -31194,6 +31288,22 @@ function drawFireType(b){
     for(const o of [[-edge,0],[edge,0],[0,-edge],[0,edge],[-edge,-edge],[edge,-edge],[-edge,edge],[edge,edge]])
       drawMfx(key,b.x+o[0],b.y+o[1],ang,readH,dark,1,null,null);
     return drawMfx(key,b.x,b.y,ang,readH,b.tint||'#ffd21f',1,'#fff4a8','#ffd21f');
+  }
+  if(_shade){
+    /* SHADEGLOW: one static plate, re-burnt. A steady base pass, then an additive pass on its own
+       fast clock, then a tighter core on a slower one - additive, so they can only brighten what
+       the plate already has and the silhouette never changes. The phase is offset by the round's
+       own `_ph` so a volley does not pulse in lockstep, which is the tell that gave the reels
+       away in the first place. */
+    const _t=(typeof performance!=='undefined'?performance.now():Date.now())/1000 + ((b._ph||0)*0.37);
+    if(_shade.spin) ang += _t*_shade.spin;
+    drawMfx(key,b.x,b.y,ang,h,b.tint||T._tint||null,1,_gl,_gl);
+    const _prev=ctx.globalCompositeOperation;
+    ctx.globalCompositeOperation='lighter';
+    drawMfx(key,b.x,b.y,ang,h,      b.tint||T._tint||null, _shade.pulse*(0.72+0.28*Math.sin(_t*17.0)), _gl,_gl);
+    drawMfx(key,b.x,b.y,ang,h*0.62, b.tint||T._tint||null, _shade.core *(0.70+0.30*Math.sin(_t*26.0)), _gl,_gl);
+    ctx.globalCompositeOperation=_prev;
+    return true;
   }
   return drawMfx(key,b.x,b.y,ang,h,b.tint||T._tint||null,1,_gl,_gl);
 }
