@@ -14147,6 +14147,31 @@ function stage6MiniInit(b){
   b._animKey='nsb_rap_intact';
   b.fireCd=999;
 }
+/* ============================================================
+   ⚠ SILENCING A DEAD WING'S MOUNT CREATED A HOLE I HAD TO CLOSE (drop 0904m)
+
+   0904k made a destroyed wing stop firing, which is right - but the missile act fires from L and
+   R ONLY. With both wings gone every shot in that act returned null and the Raptor stood there
+   doing nothing for two full seconds, once per rotation. Sectional damage that makes the boss
+   HARMLESS is worse than sectional damage that is cosmetic.
+
+   rapSlot() substitutes the nose for a missing wing, so the jet always has somewhere to shoot
+   from, and rapAggr() makes it fight HARDER as it loses structure: a cornered raptor compresses
+   its rotation and adds rounds. Losing a wing costs it reach and gains it fury, which is the
+   trade that makes shooting a wing off a real decision rather than a free win.
+   ============================================================ */
+function rapSlot(b,slot){
+  const W=b&&b._rapWing; if(!W) return slot;
+  if(slot==='L'&&W.L.dead) return W.R.dead?'C':'R';
+  if(slot==='R'&&W.R.dead) return W.L.dead?'C':'L';
+  return slot;
+}
+/* 0 wings lost -> 1.00, one -> 1.22, both -> 1.48 */
+function rapAggr(b){
+  const W=b&&b._rapWing; if(!W) return 1;
+  const lost=(W.L.dead?1:0)+(W.R.dead?1:0);
+  return 1+lost*0.24;
+}
 /* the plate that matches the current wing state */
 function blacksteelPlate(b){
   const W=b&&b._rapWing; if(!W) return 'nsb_rap_intact';
@@ -14219,29 +14244,36 @@ function stage6MiniTick(b,dt){
     /* a true raptor does not hold a lane: it rolls out of one attack and somersaults into the next */
     S.manCd-=dt;
     if(S.manCd<=0){
-      S.manCd=rnd(2.6,4.2);
+      S.manCd=rnd(2.6,4.2)/rapAggr(b);
       blacksteelManoeuvre(b, (Math.random()<0.55)?'roll':'somersault');
     }
   }
   if(S.mode==='tracer'){
-    while(S.shot<10&&S.t>=.42+S.shot*.105){const slot=(S.shot&1)?'R':'L',off=(S.shot%5-2)*.045;
+    while(S.shot<10&&S.t>=.42+S.shot*.105/rapAggr(b)){const slot=rapSlot(b,(S.shot&1)?'R':'L'),off=(S.shot%5-2)*.045*rapAggr(b);
       stage6MiniShot(b,slot,Math.PI/2+off,5.45,'s6tracer',{});stage6MiniMuzzle(b,slot,.68);
       if((S.shot%3)===0&&Audio.SFX&&(Audio.SFX.enemyMachineGunHeavy||Audio.SFX.enemyShoot))(Audio.SFX.enemyMachineGunHeavy||Audio.SFX.enemyShoot)();S.shot++;}
-    if(S.t>2.05)stage6MiniMode(b,'missile');
+    if(S.t>2.05/rapAggr(b))stage6MiniMode(b,'missile');
   }else if(S.mode==='missile'){
     if(!S.event&&S.t>.62){S.event=1;for(const side of [-1,1])for(const o of [.10,.26]){
-        const slot=side<0?'L':'R';stage6MiniShot(b,slot,Math.PI/2+side*o,1.72,'s6missile',{silent:side>0||o>.1,accel:1.22,max:5.65});}
+        const slot=rapSlot(b,side<0?'L':'R');stage6MiniShot(b,slot,Math.PI/2+side*o,1.72,'s6missile',{silent:side>0||o>.1,accel:1.22,max:5.65});}
+      /* wingless, it lobs two more straight off the nose - it has lost the spread, not the fight */
+      if(b._rapWing&&b._rapWing.L.dead&&b._rapWing.R.dead){
+        for(const o of [-.05,.05]) stage6MiniShot(b,'C',Math.PI/2+o,1.9,'s6missile',{silent:true,accel:1.3,max:6.0});
+      }
       stage6MiniMuzzle(b,'L',1);stage6MiniMuzzle(b,'R',1);shake=Math.max(shake,4);
       if(Audio.SFX&&(Audio.SFX.missile||Audio.SFX.enemyBossCannon))(Audio.SFX.missile||Audio.SFX.enemyBossCannon)();}
-    if(S.t>2.10)stage6MiniMode(b,'storm');
+    if(S.t>2.10/rapAggr(b))stage6MiniMode(b,'storm');
   }else{
     S.charge=clamp(S.t/.92,0,1);
     if(!S.event&&S.t>.92){S.event=1;const C=shipBossMount(b,'C');
-      for(const o of [-.34,-.17,0,.17,.34])stage6MiniShot(b,'C',Math.PI/2+o,3.15,'s6bolt',{silent:o!==0,szMul:o===0?1.25:1});
-      for(const side of [-1,1])stage6MiniShot(b,side<0?'L':'R',Math.PI/2+side*.12,1.45,'s6orb',{silent:true,accel:.72,max:4.25,szMul:1.10});
+      const _fan=(b._rapWing&&(b._rapWing.L.dead||b._rapWing.R.dead))
+        ? [-.46,-.30,-.15,0,.15,.30,.46]        /* hurt: a wider, denser wall off the nose */
+        : [-.34,-.17,0,.17,.34];
+      for(const o of _fan)stage6MiniShot(b,'C',Math.PI/2+o,3.15,'s6bolt',{silent:o!==0,szMul:o===0?1.25:1});
+      for(const side of [-1,1])stage6MiniShot(b,rapSlot(b,side<0?'L':'R'),Math.PI/2+side*.12,1.45,'s6orb',{silent:true,accel:.72,max:4.25,szMul:1.10});
       stage6MiniMuzzle(b,'C',1.35);stage6MiniMuzzle(b,'L',.9);stage6MiniMuzzle(b,'R',.9);shake=Math.max(shake,7);
       if(Audio.SFX&&(Audio.SFX.enemyElectricBolt||Audio.SFX.enemyHeavyLaser))(Audio.SFX.enemyElectricBolt||Audio.SFX.enemyHeavyLaser)();}
-    if(S.t>2.42)stage6MiniMode(b,'tracer');
+    if(S.t>2.42/rapAggr(b))stage6MiniMode(b,'tracer');
   }
   return true;
 }
@@ -16154,7 +16186,17 @@ function carrierTick(b, dt){
       /* THE TURRET LATTICE fills the turn before every cannon turn, so the player is being
          pinned by MG fire exactly as the beam starts charging. */
       if(b._ship==='doomsdaycarriermk2' && C && (S.turn%3)===2){
+        /* MG lattice, then two quick narrow beams, then the cannon charges on the next turn -
+           Mike's escalation in three beats: "turrets ... spread patterns, the laser beam firing
+           off quick laser beams, adn then charges up for a massive large beam".
+           ⚠ REUSES l23BossBeamStart RATHER THAN A NEW REEL. That system already carries
+           warm/active/retract and a width, needs no art, and shipBossManoeuvre ticks it for any
+           boss with a _ship - which this boss has, so it runs without a second tick site. The
+           authored cannon reel is untouched; these are a different, much narrower weapon. */
         carrierTurretSpread(b,0.10);
+        const _sd=(S.turn%6===2)?1:-1;
+        l23BossBeamStart(b,'legion',['L','R'],[Math.PI/2-0.16*_sd,Math.PI/2+0.16*_sd],
+                         0.20,0.22,0.10,22,{});
         S.cd=0.72;
         return;
       }
