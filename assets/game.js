@@ -7273,6 +7273,85 @@ function drawEnemyShieldFront(e){ drawEnemyShieldLayer(e,true); }
    the first time it turns red and nothing after.
    ============================================================ */
 const FRENZY_RED='#d2322c';
+/* ============================================================
+   THE ENRAGED PALETTE (drop 0904g)
+
+   Mike, correcting 0904e: "we don't wanna swap hue and saturation, I want you to swap the palette
+   of the pixels to make the enemy become 'enraged' to go to a more reddish shading of pixel
+   groups."
+
+   ⚠ 0904e USED THE WRONG TECHNIQUE. It composited with 'color', which rotates hue+saturation and
+   keeps each pixel's own luminance - every one of the plate's thousands of shades survived as its
+   own distinct red. That is a hue wash, not a palette swap, and it is not what Mike asked for.
+
+   THIS IS A REAL PALETTE SWAP. The plate's pixels are sorted into ENRAGE_BANDS luminance GROUPS
+   and each group is reassigned one authored colour off a red ramp. Pixels that shaded together
+   before shade together after, as a group, in the new palette - which is exactly what a 16-bit
+   palette swap did and why it reads as "enraged" rather than "tinted".
+
+   ⚠ AND A 1:1 COLOUR LOOKUP TABLE WOULD NOT HAVE WORKED HERE. These hulls are heavily dithered
+   generated art - a 128px sheet measured 76k distinct colours - so there is no small source
+   palette to map entries of. Banding by LUMINANCE recovers the ramp the artist implied: the
+   groups are found rather than assumed, so the technique survives art that was never authored
+   against a fixed palette.
+
+   Band 0 is near-black on purpose: every hull in this game carries a 1px black outline, and it
+   has to stay black rather than turn maroon.
+   ============================================================ */
+const ENRAGE_RAMP=[
+  [ 12,  7,  9],   /* band 0 is the 1px black outline and the deepest shadow - it must stay dark */
+  [ 58, 12, 16],
+  [104, 19, 21],
+  [150, 28, 26],
+  [196, 44, 33],
+  [228, 76, 44],
+  [248,128, 70],
+  [255,205,160]    /* hottest specular */
+];
+const ENRAGE_BANDS=ENRAGE_RAMP.length;
+/* ⚠ A STRAIGHT LINEAR BAND MAP CAME OUT BURNT, NOT ENRAGED. These hulls are dark - most of the
+   plate sits in the bottom third of the luminance range - so dividing 0..255 into eight equal
+   bands buried the whole body in the two darkest reds and the hull read as a black silhouette
+   with red edges. Rendered the alternatives side by side and picked this curve:
+     - anything below ENRAGE_FLOOR is band 0, which keeps the black outline BLACK, and
+     - everything above it is gamma-lifted across bands 1..7, so the mid-tones that make up the
+       body land on the bright reds where the rage actually reads. */
+const ENRAGE_GAMMA=0.55, ENRAGE_FLOOR=16;
+const _enrageCache={};
+function xartEnraged(key){
+  if(_enrageCache[key]!==undefined) return _enrageCache[key];
+  if(typeof XART==='undefined' || !XART.rdy(key)) return null;   /* not cached: it may decode later */
+  const im=XART.get(key), w=im.naturalWidth|0, h=im.naturalHeight|0;
+  if(!w||!h) return null;
+  let c,x,d;
+  try{
+    c=document.createElement('canvas'); c.width=w; c.height=h;
+    x=c.getContext('2d',{willReadFrequently:true});
+    x.drawImage(im,0,0);
+    d=x.getImageData(0,0,w,h);            /* ⚠ throws on a tainted canvas - see the catch */
+  }catch(err){
+    /* ⚠ READING PIXELS IS THE ONE THING THAT CAN FAIL HERE. Served from file://, or from another
+       origin, the canvas is tainted and getImageData throws SecurityError. Caching null means the
+       hull simply draws its normal plate instead of vanishing, and the frenzy still reads through
+       its behaviour. Never let a cosmetic pass be able to blank an enemy. */
+    _enrageCache[key]=null; return null;
+  }
+  const px=d.data;
+  for(let i=0;i<px.length;i+=4){
+    if(px[i+3]===0) continue;
+    const L=0.2126*px[i]+0.7152*px[i+1]+0.0722*px[i+2];
+    let b;
+    if(L<ENRAGE_FLOOR) b=0;
+    else {
+      b=1+(Math.pow((L-ENRAGE_FLOOR)/(255-ENRAGE_FLOOR), ENRAGE_GAMMA)*(ENRAGE_BANDS-1))|0;
+      if(b>=ENRAGE_BANDS) b=ENRAGE_BANDS-1;
+    }
+    const r=ENRAGE_RAMP[b];
+    px[i]=r[0]; px[i+1]=r[1]; px[i+2]=r[2];
+  }
+  x.putImageData(d,0,0);
+  _enrageCache[key]=c; return c;
+}
 const FRENZY_FIRE_MULT=1.5;          /* Mike: "attack 1.5x faster" */
 function enemyFrenzyBegin(e){
   if(!e || e._frenzy) return;
@@ -7304,8 +7383,11 @@ function enemyFrenzyTick(e,dt){
 }
 /* the red plate, or null when the hull is not frenzied */
 function frenzyPlate(e,key){
-  if(!e || !e._frenzy || typeof xartPalette!=='function') return null;
-  return xartPalette(key, FRENZY_RED);
+  if(!e || !e._frenzy) return null;
+  const q=xartEnraged(key);
+  if(q) return q;
+  /* only if the pixels could not be read at all (tainted canvas) */
+  return (typeof xartPalette==='function') ? xartPalette(key, FRENZY_RED) : null;
 }
 function enemyShieldAutoEquip(e){
   if(!e||e._esh||typeof run==='undefined')return null;
