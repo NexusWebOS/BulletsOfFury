@@ -824,6 +824,57 @@ function s45Tile(key, scroll, rate, alpha){
   ctx.restore();
   return true;
 }
+/* ============================================================
+   THE BLUE SKY, AND WHY IT IS A SUB-RECT (drop 0903u)
+
+   Mike: "the sky in the stage 5 transition was to use the blue sky graphic from stage 6."
+
+   `bg_stage06_master` is 680x4080 and is a WHOLE DAY: sewer structure, then blue sky, then
+   sunset, then dusk, then a sunrise band. Tiling the entire plate - which is what 0903s did -
+   scrolls through all of it, so the climb passed through orange and purple bands on its way up.
+   That is the "sunset" he is pointing at; the plate name is right and the plate is right, the
+   REGION was not.
+
+   Scanned the plate row by row for blue dominance (b > 90, b > r*1.6, b >= g, r < 150) and it
+   returns six runs. Rendered all of them: rows 1530..2016 are the clean blue-sky gradient, deep
+   blue (1,11,177) at the top easing to pale cyan (145,233,252) at the bottom. 3570..3891 is
+   blue but dithered and belongs to the sunrise; 209..510 is flat blue with structure across its
+   top edge. 1530..2016 is the one.
+
+   ⚠ IT CANNOT BE TILED DIRECTLY. The band's top is deep blue and its bottom is pale cyan, so
+   butting copies together puts pale straight against deep - a hard horizontal line marching up
+   the screen every 343px. Alternate copies are therefore MIRRORED, which makes pale meet pale
+   and deep meet deep: seamless by construction, and it reads as the depth of the sky changing
+   as you climb rather than as a repeat. Rendered a mirrored pair before wiring it.
+
+   The index is derived from the scroll (`base - k`), not from the loop counter, so which copies
+   are flipped stays consistent as the scroll crosses a multiple of the band height - deriving it
+   from k alone makes the whole pattern flip every time it wraps, which is a visible strobe.
+   ============================================================ */
+const S45_SKY_KEY='bg_stage06_master', S45_SKY_Y=1530, S45_SKY_H=486;
+function s45Sky(scroll, rate, alpha){
+  if(alpha<=0.004 || typeof XART==='undefined' || !XART.rdy(S45_SKY_KEY)) return false;
+  const im=XART.get(S45_SKY_KEY), W=im.naturalWidth;
+  if(im.naturalHeight < S45_SKY_Y+S45_SKY_H) return false;      // wrong plate: do not draw a slice of something else
+  const sc=VW/W, dh=S45_SKY_H*sc;
+  if(!(dh>0)) return false;
+  const span=scroll*rate, base=Math.floor(span/dh);
+  ctx.save(); ctx.globalAlpha=clamp(alpha,0,1);
+  let y=((span%dh)+dh)%dh - dh;
+  for(let k=0; y<VH+dh; k++, y+=dh){
+    const idx=base-k, flip=(((idx%2)+2)%2)===1;
+    const ty=Math.round(y), th=Math.ceil(dh);
+    if(flip){
+      ctx.save(); ctx.translate(0,ty+th); ctx.scale(1,-1);
+      ctx.drawImage(im, 0,S45_SKY_Y,W,S45_SKY_H, 0,0,VW,th);
+      ctx.restore();
+    } else {
+      ctx.drawImage(im, 0,S45_SKY_Y,W,S45_SKY_H, 0,ty,VW,th);
+    }
+  }
+  ctx.restore();
+  return true;
+}
 /* Three tiled layers, all off the same scroll. Nothing is cleared to a flat colour mid-leg and
    nothing holds still. */
 function outboundDrawSkySpace(o){
@@ -833,17 +884,14 @@ function outboundDrawSkySpace(o){
   /* 1. the stage they cleared, still running underneath until the sky is fully over it - the
      ground does not stop, it is covered. */
   if(sky<1) s45Tile(mk, o.scroll, 1.0, 1-sky*0.85);
-  /* 2. the sky, slower than the foreground so the climb reads as distance rather than speed.
+  /* 2. THE BLUE SKY from stage 6 - its rows 1530..2016 only, mirror-tiled. See s45Sky.
 
-     ⚠ NOT `nl6sky_stage06_sky_scroll_640x960` OR `nsky6_sky`, WHICH ARE THE SAME ATLAS AND ARE
-     NOT SKY. Both keys resolve to assets/game/atlas/fx_weather_0.png - a 4092x3938 SHEET - and
-     neither carries a cell rect, so XART.get hands back the whole atlas and tiling it stretched
-     a corner of the weather sheet across the screen as a field of blue noise. Rendered it before
-     believing the names, per rule 1; the filmstrip is what caught it.
-
-     `bg_stage06_master` is stage 6's actual authored sky plate, a standalone 680-wide file, so
-     the climb passes through the same sky the sky STAGE uses. */
-  if(sky>0) s45Tile('bg_stage06_master', o.scroll, 0.45, sky);
+     ⚠ NOT `nl6sky_stage06_sky_scroll_640x960` OR `nsky6_sky`: both keys resolve to
+     assets/game/atlas/fx_weather_0.png, a 4092x3938 SHEET, and neither carries a cell rect, so
+     XART.get hands back the whole atlas and tiling it stretches a corner of the weather sheet
+     across the screen as blue noise. That was 0903s's first cut and the filmstrip caught it.
+     Slower than the foreground so the climb reads as distance rather than speed. */
+  if(sky>0) s45Sky(o.scroll, 0.45, sky);
   /* 3. stage 5's OWN loop plate, attached during the swirl and left looping. Using the level's
      real backdrop rather than a stand-in is the point: when the leg ends there is nothing to
      swap - the player is already looking at stage 5, moving. */
