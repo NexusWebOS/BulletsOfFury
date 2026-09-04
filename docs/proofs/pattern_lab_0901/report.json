@@ -1,0 +1,25 @@
+{
+  "lab": {
+    "t": 35.53289999999979,
+    "phase": "PATTERN LAB COMPLETE",
+    "shots": 0,
+    "metrics": {
+      "maxShots": 24,
+      "closest": 6.166069759489972,
+      "events": 77,
+      "intercepts": 2,
+      "beamDoors": [
+        2,
+        2
+      ]
+    },
+    "completed": true,
+    "errors": []
+  },
+  "pilot": "lizzie",
+  "gameState": "play",
+  "gameFrames": 2120,
+  "errors": [],
+  "missing": [],
+  "recording": "docs/proofs/pattern_lab_0901/lizzie_pattern_lab.webm"
+}

@@ -1,0 +1,33 @@
+================================================================
+ BULLETS OF FURY — PLAYABILITY + ATLAS VERIFICATION
+================================================================
+
+1. CELLS
+  PASS  all 6990 cells resolve (0 failed)
+  PASS  all cells report their true size (0 wrong)
+  PASS  every cell rect is inside its sheet, none can bleed (0 bad)
+
+2. EVERY SCREEN DRAWS
+  FAIL  all 20 non-play states draw 90 frames — BROKEN: VICTORY (drew NOTHING)
+  PASS  no screen draws a blank placeholder
+
+3. PLAYABLE — nine stages driven end to end
+     stage 1  draws 932682  blanks 0      kills 27    boss reached
+     stage 2  draws 1020802 blanks 0      kills 26    boss reached
+     stage 3  draws 1176982 blanks 0      kills 23    boss reached
+     stage 4  draws 1835706 blanks 0      kills 22    boss reached
+     stage 5  draws 1236955 blanks 0      kills 28    boss reached
+     stage 6  draws 1316158 blanks 0      kills 29    boss reached
+     stage 7  draws 1050079 blanks 0      kills 22    boss reached
+     stage 8  draws 1349194 blanks 0      kills 38    boss reached
+  PASS  all 8 stages play 100s without throwing
+  PASS  no stage draws a blank placeholder
+
+4. ART IS SERVED FROM SHEETS
+     6990 keys served from 4 sheets · 3025 keys still loose
+  FAIL  the overwhelming majority of art comes from sheets (6990 vs 3025)
+  PASS  sheet count is sane (4)
+
+================================================================
+ RESULT: 2 CHECK(S) FAILED
+================================================================

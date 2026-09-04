@@ -1,0 +1,226 @@
+================================================================================================
+ ATLAS REPACK 0903 - PLAN
+================================================================================================
+ repackable cells: 8898 on sheets 0..86   folded loose files: 286   quarantined keys: 2345 in 51 families
+ SHEET GROUP              keys  cells      Mpx  sample
+ boss_s1                    85     85     3.12  mlaunch_0 mlaunch_1 mlaunch_2
+ boss_s2                     1      1     0.07  nsb_inferno_reaver
+ boss_s3                     3      3     0.19  nsb_rimewall_critical nsb_rimewall_damaged nsb_rimewall_intact
+ boss_s5                     3      3     0.19  nsb_xenoregent_critical nsb_xenoregent_damaged nsb_xenoregent_intact
+ boss_s6                    49     45     9.09  n6bc_die_0 n6bc_die_1 n6bc_die_2
+ boss_s8                    24     22     1.44  nvx_imp_0 nvx_imp_1 nvx_imp_2
+ boss_s9                     3      3     0.25  ns9_tidal_critical ns9_tidal_damaged ns9_tidal_intact
+ cinematic                  14     14     4.64  cut_axel_formation_simulator cut_cole_manual_command_room cut_decker_data_vault
+ en_s1                     194    114     4.17  nef_s1_ammo_crate_critical nef_s1_ammo_crate_critical_idle nef_s1_ammo_crate_damaged
+ en_s2                     185    137     6.29  ac12_crit_c ac12_dama_c ac12_inta_c
+ en_s3                     102     57     2.08  ac10_crit_c ac10_dama_c ac10_inta_c
+ en_s4                      63     54     0.92  ac13_crit_c ac13_dama_c ac13_inta_c
+ en_s5                      81     75     3.70  ac4_crit_c ac4_dama_c ac4_inta_c
+ en_s6                     399    320    22.26  n6e_sky_cf_crit n6e_sky_cf_dama n6e_sky_cf_inta
+ en_s7                      20     20     1.09  nsw_barge_0 nsw_circ_0 nsw_circ_1
+ en_s9                     142    120     5.02  ns9_comet_lg0_0 ns9_comet_lg0_1 ns9_comet_lg0_2
+ en_shared                 116    116     1.27  ndr_basaltbomber_idle_0 ndr_basaltbomber_idle_1 ndr_basaltbomber_idle_2
+ eproj_s1                   18     18     0.50  bfx_warhawk_i_0 bfx_warhawk_i_1 bfx_warhawk_i_2
+ eproj_s2                   18     18     0.45  bfx_magma_i_0 bfx_magma_i_1 bfx_magma_i_2
+ eproj_s3                   36     36     1.23  bfx_cryo_i_0 bfx_cryo_i_1 bfx_cryo_i_2
+ eproj_s4                   18     18     0.55  bfx_legion_i_0 bfx_legion_i_1 bfx_legion_i_2
+ eproj_s5                   18     17     0.62  bfx_rampart_i_0 bfx_rampart_i_1 bfx_rampart_i_2
+ eproj_s6                   18     18     0.65  bfx_obsid_i_0 bfx_obsid_i_1 bfx_obsid_i_2
+ eproj_s8                   29     29     1.03  bfx_sludge_i_0 bfx_sludge_i_1 bfx_sludge_i_2
+ eproj_s9                   32     32     0.81  bfx_cyclone_i_0 bfx_cyclone_i_1 bfx_cyclone_i_2
+ eproj_shared              469    469     4.71  bfx_mirv_i_0 bfx_mirv_i_1 bfx_mirv_i_2
+ fx_debris                1024   1024     0.23  bossblboss1_r0_medium bossblboss1_r0_micro bossblboss1_r0_small
+ fx_explosions             375    375     9.91  mexh_0 mexh_1 mexh_2
+ fx_misc                   108    108     6.22  nfx_sludgecrawler_impact_0 nfx_sludgecrawler_impact_1 nfx_sludgecrawler_impact_2
+ fx_weather                193    193    27.57  bg6_bolt_0 bg6_bolt_1 bg6_bolt_2
+ mini_s2                     3      3     0.19  nsb_magmaward_critical nsb_magmaward_damaged nsb_magmaward_intact
+ mini_s3                     1      1     0.07  nsb_cryo_spear
+ mini_s4                     3      3     0.18  nsb_olivewarden_critical nsb_olivewarden_damaged nsb_olivewarden_intact
+ mini_s6                     1      1     0.07  nsb_blacksteel
+ mini_s9                     3      3     0.15  ns9_warpsen_critical ns9_warpsen_damaged ns9_warpsen_intact
+ misc                      114    105     1.82  ac0_crit_c ac0_dama_c ac0_inta_c
+ pickups                    21     21     4.01  crate6_0 crate6_1 crate6_2
+ pilots                    166    166    22.32  aintro_axel aintro_cole aintro_decker
+ player_weapons            550    549    13.50  alaser_src aorb_0 aorb_1
+ retired_rigs              980    839    35.73  bz0_crit bz0_dama bz0_inta
+ terrain_liquids           130    130     8.86  nlf_lava_0 nlf_lava_1 nlf_lava_2
+ terrain_masters            39     39    31.25  bg5_comet_0 bg5_comet_1 bg5_comet_2
+ terrain_props             195    145    18.97  jungle800_fill nbs_slot_1_0 nbs_slot_1_1
+ ui_dialogue                82     72     7.66  dlg_axel dlg_cole dlg_decker
+ ui_hud                    529    354    13.10  alert_down cole_warhead_B_impact firewall_1
+ ui_map                    134    130    20.71  ncm_dwin_0 ncm_dwin_1 ncm_dwin_2
+ ui_menu                    48     48    18.22  bootimage btn_continue btn_credits
+ TOTAL                    6839   6153   317.09
+
+ QUARANTINE (removed from the shipped manifest; pixels stay in git at the recorded commit):
+   mbg3             290 keys    53.82 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbg2             290 keys    51.02 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   nfx              144 keys    14.13 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   nqm              175 keys    13.03 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbt7              77 keys    10.47 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbw4              73 keys     9.88 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbs6              73 keys     9.88 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbs7              73 keys     9.88 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbc6              73 keys     9.88 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbl5              69 keys     9.29 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbm4              69 keys     9.29 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbg3f             69 keys     9.29 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   mbo2              69 keys     9.29 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   sfontA             7 keys     8.78 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   mbr5              65 keys     8.67 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   ngm              140 keys     3.95 Mpx  retired rig: no live STAGES/SUBBOSS kind routes to it
+   nqv               56 keys     3.23 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nchl              12 keys     2.54 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nhxm             150 keys     2.46 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nbm               42 keys     1.88 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   ncl6              36 keys     1.31 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   ncl                9 keys     0.77 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   mgx               14 keys     0.72 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nch               22 keys     0.63 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nab               28 keys     0.52 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nbb1               9 keys     0.29 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nbb2               9 keys     0.29 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nbb3               9 keys     0.29 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nbb4               9 keys     0.29 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nbb5               9 keys     0.29 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nbb6               9 keys     0.29 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nbb7               9 keys     0.29 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nbb8               9 keys     0.29 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nvi3               3 keys     0.27 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   startile           1 keys     0.26 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nvp3               3 keys     0.23 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   trt               12 keys     0.20 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nmb1               9 keys     0.17 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nmb2               9 keys     0.17 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nmb3               9 keys     0.17 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nmb4               9 keys     0.17 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nmb5               9 keys     0.17 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nmb6               9 keys     0.17 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nmb7               9 keys     0.17 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nmb8               9 keys     0.17 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   bar                7 keys     0.14 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   crate2             4 keys     0.08 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nanc               5 keys     0.05 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   ashard            14 keys     0.03 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   pmg               15 keys     0.01 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   nspk              12 keys     0.00 Mpx  no code prefix, no manifest table, no key literal, never drawn
+   sheet boss_s1                1850x1986     85 cells  fill 85%
+   sheet boss_s2                 258x258       1 cells  fill 98%
+   sheet boss_s3                 488x516       3 cells  fill 74%
+   sheet boss_s5                 258x745       3 cells  fill 98%
+   sheet boss_s6                3210x2992     45 cells  fill 95%
+   sheet boss_s8                1290x1290     22 cells  fill 87%
+   sheet boss_s9                 322x774       3 cells  fill 99%
+   sheet cinematic              2098x2534     14 cells  fill 87%
+   sheet en_s1                  2205x2080    114 cells  fill 91%
+   sheet en_s2                  2659x2629    137 cells  fill 90%
+   sheet en_s3                  1572x1532     57 cells  fill 86%
+   sheet en_s4                  1072x1048     54 cells  fill 82%
+   sheet en_s5                  2105x1997     75 cells  fill 88%
+   sheet en_s6_0                3864x4062    106 cells  fill 93%
+   sheet en_s6_1                4074x2026    214 cells  fill 92%
+   sheet en_s7                  1040x1411     20 cells  fill 74%
+   sheet en_s9                  2410x2736    120 cells  fill 76%
+   sheet en_shared              1186x1168    116 cells  fill 92%
+   sheet eproj_s1                747x931      18 cells  fill 73%
+   sheet eproj_s2                720x785      18 cells  fill 79%
+   sheet eproj_s3               1192x1272     36 cells  fill 81%
+   sheet eproj_s4                826x872      18 cells  fill 77%
+   sheet eproj_s5                872x864      17 cells  fill 82%
+   sheet eproj_s6                840x917      18 cells  fill 85%
+   sheet eproj_s8               1086x1200     29 cells  fill 79%
+   sheet eproj_s9               1011x977      32 cells  fill 82%
+   sheet eproj_shared           2368x2383    469 cells  fill 83%
+   sheet fx_debris               576x523    1024 cells  fill 77%
+   sheet fx_explosions          3381x3292    375 cells  fill 89%
+   sheet fx_misc                2677x2574    108 cells  fill 90%
+   sheet fx_weather_0           4092x3938     28 cells  fill 67%
+   sheet fx_weather_1           4092x4015    134 cells  fill 94%
+   sheet fx_weather_2           3942x372      31 cells  fill 88%
+   sheet mini_s2                 503x516       3 cells  fill 74%
+   sheet mini_s3                 258x258       1 cells  fill 98%
+   sheet mini_s4                 477x516       3 cells  fill 73%
+   sheet mini_s6                 258x258       1 cells  fill 98%
+   sheet mini_s9                 258x582       3 cells  fill 98%
+   sheet misc                   1432x1632    105 cells  fill 78%
+   sheet pickups                2134x3108     21 cells  fill 60%
+   sheet pilots_0               3840x3872     19 cells  fill 86%
+   sheet pilots_1               4032x2781    147 cells  fill 84%
+   sheet player_weapons         3960x3799    549 cells  fill 90%
+   sheet retired_rigs_0         4094x3953    172 cells  fill 94%
+   sheet retired_rigs_1         3924x3870    231 cells  fill 97%
+   sheet retired_rigs_2         4078x1593    436 cells  fill 89%
+   sheet terrain_liquids        3136x3598    130 cells  fill 79%
+   sheet terrain_masters_0      4010x3723      5 cells  fill 95%
+   sheet terrain_masters_1      3765x3604     13 cells  fill 72%
+   sheet terrain_masters_2      4092x2048     21 cells  fill 87%
+   sheet terrain_props_0        4010x3618      5 cells  fill 42%
+   sheet terrain_props_1        4076x3455    140 cells  fill 91%
+   sheet ui_dialogue            2975x3109     72 cells  fill 83%
+   sheet ui_hud                 3903x4029    354 cells  fill 83%
+   sheet ui_map_0               3852x3856     48 cells  fill 99%
+   sheet ui_map_1               4070x1844     82 cells  fill 79%
+   sheet ui_menu_0              4010x3615     17 cells  fill 82%
+   sheet ui_menu_1              4059x1954     31 cells  fill 81%
+   wrote assets/game/atlas/boss_s1.png                  1.40 MB
+   wrote assets/game/atlas/boss_s2.png                  0.05 MB
+   wrote assets/game/atlas/boss_s3.png                  0.34 MB
+   wrote assets/game/atlas/boss_s5.png                  0.26 MB
+   wrote assets/game/atlas/boss_s6.png                  1.37 MB
+   wrote assets/game/atlas/boss_s8.png                  1.06 MB
+   wrote assets/game/atlas/boss_s9.png                  0.24 MB
+   wrote assets/game/atlas/cinematic.png                2.70 MB
+   wrote assets/game/atlas/en_s1.png                    4.98 MB
+   wrote assets/game/atlas/en_s2.png                    6.30 MB
+   wrote assets/game/atlas/en_s3.png                    3.04 MB
+   wrote assets/game/atlas/en_s4.png                    0.38 MB
+   wrote assets/game/atlas/en_s5.png                    2.73 MB
+   wrote assets/game/atlas/en_s6_0.png                  0.55 MB
+   wrote assets/game/atlas/en_s6_1.png                  2.03 MB
+   wrote assets/game/atlas/en_s7.png                    0.77 MB
+   wrote assets/game/atlas/en_s9.png                    3.43 MB
+   wrote assets/game/atlas/en_shared.png                1.28 MB
+   wrote assets/game/atlas/eproj_s1.png                 0.52 MB
+   wrote assets/game/atlas/eproj_s2.png                 0.46 MB
+   wrote assets/game/atlas/eproj_s3.png                 1.17 MB
+   wrote assets/game/atlas/eproj_s4.png                 0.64 MB
+   wrote assets/game/atlas/eproj_s5.png                 0.50 MB
+   wrote assets/game/atlas/eproj_s6.png                 0.54 MB
+   wrote assets/game/atlas/eproj_s8.png                 1.16 MB
+   wrote assets/game/atlas/eproj_s9.png                 0.74 MB
+   wrote assets/game/atlas/eproj_shared.png             4.49 MB
+   wrote assets/game/atlas/fx_debris.png                0.15 MB
+   wrote assets/game/atlas/fx_explosions.png            3.91 MB
+   wrote assets/game/atlas/fx_misc.png                  1.31 MB
+   wrote assets/game/atlas/fx_weather_0.png             6.43 MB
+   wrote assets/game/atlas/fx_weather_1.png             6.11 MB
+   wrote assets/game/atlas/fx_weather_2.png             1.21 MB
+   wrote assets/game/atlas/mini_s2.png                  0.31 MB
+   wrote assets/game/atlas/mini_s3.png                  0.04 MB
+   wrote assets/game/atlas/mini_s4.png                  0.30 MB
+   wrote assets/game/atlas/mini_s6.png                  0.03 MB
+   wrote assets/game/atlas/mini_s9.png                  0.14 MB
+   wrote assets/game/atlas/misc.png                     0.54 MB
+   wrote assets/game/atlas/pickups.png                  3.40 MB
+   wrote assets/game/atlas/pilots_0.png                18.09 MB
+   wrote assets/game/atlas/pilots_1.png                 9.46 MB
+   wrote assets/game/atlas/player_weapons.png           7.42 MB
+   wrote assets/game/atlas/retired_rigs_0.png          10.49 MB
+   wrote assets/game/atlas/retired_rigs_1.png           5.91 MB
+   wrote assets/game/atlas/retired_rigs_2.png           3.69 MB
+   wrote assets/game/atlas/terrain_liquids.png          9.99 MB
+   wrote assets/game/atlas/terrain_masters_0.png       16.74 MB
+   wrote assets/game/atlas/terrain_masters_1.png       14.40 MB
+   wrote assets/game/atlas/terrain_masters_2.png        0.93 MB
+   wrote assets/game/atlas/terrain_props_0.png          1.88 MB
+   wrote assets/game/atlas/terrain_props_1.png          5.35 MB
+   wrote assets/game/atlas/ui_dialogue.png             10.58 MB
+   wrote assets/game/atlas/ui_hud.png                   7.31 MB
+   wrote assets/game/atlas/ui_map_0.png                 2.20 MB
+   wrote assets/game/atlas/ui_map_1.png                 1.68 MB
+   wrote assets/game/atlas/ui_menu_0.png               17.17 MB
+   wrote assets/game/atlas/ui_menu_1.png                9.56 MB
+ pixel identity: 6839 cells checked, 0 mismatches
+ manifest rewritten: 6935 cells, 7635 img entries
+ PRELOAD now eager on: en_s1
+ removed nca_0..86: 271.1 MB;  new sheets: 219.8 MB in 58 files

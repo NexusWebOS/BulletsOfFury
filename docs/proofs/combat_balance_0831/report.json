@@ -1,0 +1,199 @@
+{
+  "audit": {
+    "base": {
+      "hp": 1,
+      "fire": 1,
+      "bullet": 1,
+      "bossHp": 1,
+      "bossRate": 1,
+      "bossDensity": 1,
+      "spawn": 1.12,
+      "stage": 1,
+      "build": 0,
+      "survived": 0
+    },
+    "hot": {
+      "hp": 1.1031008,
+      "fire": 1.070296,
+      "bullet": 1.046864,
+      "bossHp": 1.1124736,
+      "bossRate": 1.0843552,
+      "bossDensity": 1.0562368,
+      "spawn": 1.3509232,
+      "stage": 1,
+      "build": 0.808,
+      "survived": 1
+    },
+    "reset": {
+      "hp": 1,
+      "fire": 1,
+      "bullet": 1,
+      "bossHp": 1,
+      "bossRate": 1,
+      "bossDensity": 1,
+      "spawn": 1.12,
+      "stage": 1,
+      "build": 0,
+      "survived": 0
+    },
+    "pickupLevel": 2,
+    "lizzieCadence": 0.06875,
+    "lizzieSpeed": 7.875,
+    "laserNative": true
+  },
+  "firewaveGate": {
+    "stagePressure": true,
+    "bossSequence": false,
+    "bossWave": false,
+    "cooldown": 999
+  },
+  "level2Slide": {
+    "maxStep": 1.4761594820173514,
+    "travel": 248,
+    "phase": "pass"
+  },
+  "rollLive": {
+    "y": 112,
+    "station": 112,
+    "flameOn": true,
+    "angle": 1.2485816956574818,
+    "phase": "roll"
+  },
+  "rollGap": {
+    "y": 112,
+    "station": 112,
+    "flameOn": false,
+    "phase": "roll"
+  },
+  "cannon": {
+    "slots": [
+      "L"
+    ],
+    "width": 44
+  },
+  "giant": {
+    "w": 68,
+    "h": 68,
+    "spin": true,
+    "shootable": false
+  },
+  "level3Mini": {
+    "hp": 1381,
+    "maxStep": 1.3736202300385116,
+    "travel": 250,
+    "shots": 19,
+    "kinds": {
+      "s3lance": 18,
+      "s3mortar": 1
+    }
+  },
+  "level3Boss": {
+    "hp": 2967,
+    "shots": 35,
+    "kinds": {
+      "s3mortar": 29,
+      "s3lance": 6
+    },
+    "giant": 1,
+    "slideDuration": 4.35
+  },
+  "bossAudio": {
+    "route": {
+      "enemyMachineGunHeavy": {
+        "handle": true,
+        "before": 0,
+        "after": 1,
+        "immediate": {
+          "paused": false,
+          "currentTime": 0,
+          "readyState": 1,
+          "volume": 0.20400000000000001
+        }
+      },
+      "enemyHeavyLaser": {
+        "handle": true,
+        "before": 0,
+        "after": 1,
+        "immediate": {
+          "paused": false,
+          "currentTime": 0,
+          "readyState": 1,
+          "volume": 0.48960000000000004
+        }
+      },
+      "bossWeaponCharge": {
+        "handle": true,
+        "before": 1,
+        "after": 1,
+        "immediate": {
+          "paused": true,
+          "currentTime": 0,
+          "readyState": 4,
+          "volume": 0.48960000000000004
+        }
+      },
+      "shieldHitHeavy": {
+        "handle": true,
+        "before": 0,
+        "after": 1,
+        "immediate": {
+          "paused": false,
+          "currentTime": 0,
+          "readyState": 1,
+          "volume": 0.68
+        }
+      },
+      "shieldBreakCombat": {
+        "handle": true,
+        "before": 0,
+        "after": 1,
+        "immediate": {
+          "paused": false,
+          "currentTime": 0,
+          "readyState": 1,
+          "volume": 0.68
+        }
+      }
+    },
+    "playback": {
+      "enemyMachineGunHeavy": {
+        "currentTime": 0.426667,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.20400000000000001
+      },
+      "enemyHeavyLaser": {
+        "currentTime": 0.368474,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.48960000000000004
+      },
+      "bossWeaponCharge": {
+        "currentTime": 0.417014,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.48960000000000004
+      },
+      "shieldHitHeavy": {
+        "currentTime": 0.370579,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.68
+      },
+      "shieldBreakCombat": {
+        "currentTime": 0.370582,
+        "readyState": 4,
+        "paused": false,
+        "volume": 0.68
+      }
+    }
+  },
+  "laserAudio": {
+    "paused": false,
+    "currentTime": 0.593798,
+    "readyState": 4,
+    "on": true,
+    "volume": 0.5032
+  },
+  "errors": []
+}

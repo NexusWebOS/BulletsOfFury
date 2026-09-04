@@ -1,0 +1,227 @@
+{
+  "jets": {
+    "units": [
+      {
+        "x": 103.49582342770846,
+        "y": 77.98917674655627,
+        "rank": 0,
+        "phase": "commit",
+        "target": 133.2,
+        "bank": 0.11517911165713578,
+        "wing": -1
+      },
+      {
+        "x": 177.738564441537,
+        "y": -31.260823253443736,
+        "rank": 1,
+        "phase": "approach",
+        "bank": 0
+      },
+      {
+        "x": 294.988564441537,
+        "y": 66.46302283052188,
+        "rank": 2,
+        "phase": "commit",
+        "target": 294.55452132409727,
+        "bank": 0,
+        "wing": 1
+      },
+      {
+        "x": 412.405252758536,
+        "y": 44,
+        "rank": 3,
+        "bank": 0
+      }
+    ],
+    "minSpacing": 74.24274101382854,
+    "shots": 1,
+    "phases": [
+      "commit",
+      "approach",
+      null
+    ],
+    "committed": 2,
+    "orderedTargets": true
+  },
+  "tanks": {
+    "brake": {
+      "shots": 0,
+      "phase": "brake",
+      "queued": true,
+      "speed": 22
+    },
+    "firedAt": {
+      "frame": 42,
+      "speed": 1.7907108103816485,
+      "phase": "brake"
+    },
+    "kind": "s1cannon",
+    "x": 240,
+    "y": 124,
+    "atk": "cannon",
+    "pattern": "s1tank"
+  },
+  "volcano": {
+    "units": [
+      {
+        "type": "ash",
+        "x": 181.35216260823015,
+        "y": 61.75480000000006,
+        "squad": 1,
+        "rank": 0,
+        "side": -1,
+        "bank": -1
+      },
+      {
+        "type": "cinderwasp",
+        "x": 124.0706373917698,
+        "y": -4.475999999999978,
+        "squad": 2,
+        "rank": 0,
+        "side": -1,
+        "ai": "curve",
+        "entry": 3.224,
+        "bank": 0
+      },
+      {
+        "type": "ash",
+        "x": 525.9024033383946,
+        "y": 4.154800000000064,
+        "squad": 1,
+        "rank": 1,
+        "side": 1,
+        "bank": -1
+      },
+      {
+        "type": "cinderwasp",
+        "x": 285.1083948880021,
+        "y": -38.08239999999998,
+        "squad": 2,
+        "rank": 1,
+        "side": 0,
+        "ai": "rush",
+        "entry": 3.224,
+        "bank": 0
+      },
+      {
+        "type": "cinderwasp",
+        "x": 484.4042903653857,
+        "y": -71.68879999999999,
+        "squad": 2,
+        "rank": 2,
+        "side": 1,
+        "ai": "curve",
+        "entry": 3.224,
+        "bank": 0
+      }
+    ],
+    "waspSpacing": 344.55024073016443,
+    "shots": 0,
+    "support": 1,
+    "pressure": 0.17665066666666673
+  },
+  "curve": [
+    {
+      "stage": 1,
+      "move": 1,
+      "formation": 1.03,
+      "waveGap": 0.9,
+      "cap": 11,
+      "fire": 1.0633199199999999,
+      "bullet": 1.02212976,
+      "bossRate": 1.0539463199999999,
+      "spawn": 1.1227144
+    },
+    {
+      "stage": 2,
+      "move": 1.04,
+      "formation": 1.1,
+      "waveGap": 0.88,
+      "cap": 7,
+      "fire": 1.12387072,
+      "bullet": 1.0624422400000002,
+      "bossRate": 1.10456192,
+      "spawn": 1.0929952
+    },
+    {
+      "stage": 3,
+      "move": 1.06,
+      "formation": 1.12,
+      "waveGap": 0.84,
+      "cap": 7,
+      "fire": 1.1844603999999999,
+      "bullet": 1.102772,
+      "bossRate": 1.16526176,
+      "spawn": 1.1032760000000001
+    },
+    {
+      "stage": 4,
+      "move": 1.08,
+      "formation": 1.14,
+      "waveGap": 0.8,
+      "cap": 7,
+      "fire": 1.2450889600000001,
+      "bullet": 1.14311904,
+      "bossRate": 1.2260082559999999,
+      "spawn": 1.1135568
+    },
+    {
+      "stage": 5,
+      "move": 1.1,
+      "formation": 1.16,
+      "waveGap": 0.75,
+      "cap": 8,
+      "fire": 1.3057564000000002,
+      "bullet": 1.18348336,
+      "bossRate": 1.286801408,
+      "spawn": 1.1238376
+    },
+    {
+      "stage": 6,
+      "move": 1.12,
+      "formation": 1.18,
+      "waveGap": 0.7,
+      "cap": 8,
+      "fire": 1.3664627200000001,
+      "bullet": 1.22386496,
+      "bossRate": 1.3576982400000002,
+      "spawn": 1.1341184
+    },
+    {
+      "stage": 7,
+      "move": 1.14,
+      "formation": 1.2,
+      "waveGap": 0.62,
+      "cap": 9,
+      "fire": 1.42720792,
+      "bullet": 1.2642638400000001,
+      "bossRate": 1.4286495039999998,
+      "spawn": 1.1443992
+    },
+    {
+      "stage": 8,
+      "move": 1.16,
+      "formation": 1.23,
+      "waveGap": 0.52,
+      "cap": 10,
+      "fire": 1.487992,
+      "bullet": 1.30468,
+      "bossRate": 1.4996552,
+      "spawn": 1.15468
+    },
+    {
+      "stage": 9,
+      "move": 1.18,
+      "formation": 1.26,
+      "waveGap": 0.38,
+      "cap": 12,
+      "fire": 1.5382620000000002,
+      "bullet": 1.3448240000000002,
+      "bossRate": 1.5499792000000001,
+      "spawn": 1.16468
+    }
+  ],
+  "monotonic": true,
+  "errors": [],
+  "missing": []
+}

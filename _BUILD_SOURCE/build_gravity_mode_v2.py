@@ -39,6 +39,46 @@ def magenta_key(im: Image.Image) -> Image.Image:
     return Image.fromarray(a, "RGBA")
 
 
+def neutralize_ship_edge_purple(im: Image.Image, passes: int = 8) -> Image.Image:
+    """Turn transparency-adjacent purple key spill into the ship's dark outline.
+
+    The recovered rotation sheet was antialiased against hot magenta.  Removing only the
+    background key leaves a two-to-four pixel violet rind around every pose, especially after
+    the runtime pilot-palette overlay.  Purple inside the opaque hull is not selected: this is a
+    boundary-distance operation, and the selected pixels retain alpha so the silhouette cannot
+    fray or shrink.
+    """
+    a = np.asarray(im.convert("RGBA")).copy()
+    alpha = a[..., 3]
+    opaque = alpha > 0
+    near_clear = ~opaque
+    for _ in range(max(1, passes)):
+        expanded = near_clear.copy()
+        expanded[1:] |= near_clear[:-1]
+        expanded[:-1] |= near_clear[1:]
+        expanded[:, 1:] |= near_clear[:, :-1]
+        expanded[:, :-1] |= near_clear[:, 1:]
+        near_clear = expanded
+
+    rgb = a[..., :3].astype(int)
+    r, g, b = rgb[..., 0], rgb[..., 1], rgb[..., 2]
+    purple = (r > g + 10) & (b > g + 18) & (r > 35) & (b > 35)
+    rim = opaque & near_clear & purple
+    # Five restrained steel-outline steps preserve the original edge contrast without replacing
+    # the halo with a flat black sticker.
+    shades = np.asarray(
+        ((6, 9, 13), (12, 16, 22), (19, 24, 32), (27, 33, 43), (38, 45, 56)),
+        dtype=np.uint8,
+    )
+    lum = (r * 21 + g * 72 + b * 7) // 100
+    band = np.clip(lum * len(shades) // 96, 0, len(shades) - 1)
+    a[rim, :3] = shades[band[rim]]
+    # Transparent RGB must be neutral as well; otherwise linear texture sampling can reintroduce
+    # a colored fringe even though the source pixel's alpha is zero.
+    a[~opaque, :3] = 0
+    return Image.fromarray(a, "RGBA")
+
+
 def neutral_edge_key(im: Image.Image) -> Image.Image:
     """Flood only the light neutral checkerboard connected to a crop edge."""
     a = np.asarray(im.convert("RGBA")).copy()
@@ -78,6 +118,43 @@ def gradient_key(im: Image.Image, radius: int = 28, threshold: int = 18) -> Imag
     alpha = np.maximum(alpha, np.clip((lum - 185) * 5, 0, 255).astype(np.uint8))
     out = np.dstack((s.astype(np.uint8), alpha))
     return Image.fromarray(out, "RGBA")
+
+
+def neutral_checker_key(im: Image.Image, threshold: int = 225, max_chroma: int = 18) -> Image.Image:
+    """Remove both exposed and enclosed neutral checkerboard from generated orb FX.
+
+    Edge flood-fill alone cannot reach the checker trapped inside a closed impact ring.  Treat
+    large bright-neutral components as matte even when enclosed, while retaining small white
+    specular details embedded in the coloured artwork.
+    """
+    a = np.asarray(im.convert("RGBA")).copy()
+    rgb = a[..., :3].astype(np.int16)
+    neutral = ((rgb.max(2) - rgb.min(2)) <= max_chroma) & (rgb.min(2) >= threshold)
+    h, w = neutral.shape
+    seen = np.zeros((h, w), dtype=bool)
+    clear = np.zeros((h, w), dtype=bool)
+    for sy in range(h):
+        for sx in range(w):
+            if not neutral[sy, sx] or seen[sy, sx]:
+                continue
+            q: deque[tuple[int, int]] = deque([(sy, sx)])
+            seen[sy, sx] = True
+            comp: list[tuple[int, int]] = []
+            touches_edge = False
+            while q:
+                y, x = q.popleft()
+                comp.append((y, x))
+                touches_edge |= x == 0 or y == 0 or x == w - 1 or y == h - 1
+                for yy, xx in ((y - 1, x), (y + 1, x), (y, x - 1), (y, x + 1)):
+                    if 0 <= yy < h and 0 <= xx < w and neutral[yy, xx] and not seen[yy, xx]:
+                        seen[yy, xx] = True
+                        q.append((yy, xx))
+            if touches_edge or len(comp) >= 240:
+                for y, x in comp:
+                    clear[y, x] = True
+    a[clear, 3] = 0
+    a[clear, :3] = 0
+    return Image.fromarray(a, "RGBA")
 
 
 def trim(im: Image.Image, pad: int = 3) -> Image.Image:
@@ -209,12 +286,41 @@ frames: dict[str, Image.Image] = {}
 
 
 def add(key: str, im: Image.Image, max_w: int = 220, max_h: int = 220) -> None:
-    frames[key] = contain(trim(im), max_w, max_h)
+    prepared = contain(trim(im), max_w, max_h)
+    # LANCZOS normalization can pull a few key-colored RGB values back into low-alpha boundary
+    # pixels. Run the same silhouette-preserving cleanup on the final runtime-sized ship cell,
+    # not only on the large source sheet.
+    if key == "ship_base" or key.startswith("ship_bank_") or key.startswith("ship_roll_"):
+        prepared = neutralize_ship_edge_purple(prepared, passes=10)
+    frames[key] = prepared
+
+
+def add_fx_square(key: str, im: Image.Image, side: int, gutter: int = 8) -> None:
+    """Pack an impact into a fixed square with a guaranteed transparent safety gutter."""
+    content = contain(trim(im, 0), side - gutter * 2, side - gutter * 2)
+    out = Image.new("RGBA", (side, side), (0, 0, 0, 0))
+    out.alpha_composite(content, ((side - content.width) // 2, (side - content.height) // 2))
+    frames[key] = out
 
 
 # Canonical Fury ship: first clean top-down frame from the user's recovered sheet.
-ship_master = magenta_key(rgba("canonical_fury_ship_rotations.png"))
+ship_master = neutralize_ship_edge_purple(
+    magenta_key(rgba("canonical_fury_ship_rotations.png"))
+)
 add("ship_base", ship_master.crop((374, 60, 532, 225)), 150, 162)
+# The middle authored row is the missing ordinary left/right turn set.  These are not generated
+# approximations and they are not the somersault cycle below: three progressively harder poses on
+# each side preserve the Fury hull's perspective as the player banks during regular movement.
+ship_bank_boxes = {
+    "ship_bank_l3": (137, 282, 300, 474),
+    "ship_bank_l2": (314, 282, 475, 474),
+    "ship_bank_l1": (490, 282, 658, 474),
+    "ship_bank_r1": (862, 282, 1034, 474),
+    "ship_bank_r2": (1042, 282, 1212, 474),
+    "ship_bank_r3": (1218, 282, 1392, 474),
+}
+for key, box in ship_bank_boxes.items():
+    add(key, ship_master.crop(box), 150, 162)
 # The bottom two authored rows are the complete top-down rotation/barrel-roll cycle.
 ship_roll_boxes = [
     (51, 550, 179, 688), (250, 554, 318, 688), (409, 550, 465, 684),
@@ -267,19 +373,29 @@ for i in range(5):
 
 # Laser Cannon FX: five tier rows, with muzzle, two pulse lengths and four impacts.
 laser_fx = rgba("gpt_laser_cannon_fx_master.png")
+# Key the complete master before tier slicing.  Its smooth colour washes cross the nominal row
+# boundaries; blurring a sliced row creates false opaque bars at those boundaries.
+laser_fx_keyed = gradient_key(laser_fx, radius=20, threshold=14)
 for tier in range(5):
     row = crop_grid(laser_fx, 1, 5, 0, tier)
+    clean_impact_row = crop_grid(laser_fx_keyed, 1, 5, 0, tier)
     cells = [
         ("muzzle_0", 0.00, 0.12), ("muzzle_1", 0.12, 0.24),
         ("muzzle_2", 0.24, 0.36), ("muzzle_3", 0.36, 0.48),
         ("pulse_short", 0.45, 0.56), ("pulse_long", 0.53, 0.65),
-        ("impact_0", 0.63, 0.73), ("impact_1", 0.72, 0.82),
-        ("impact_2", 0.81, 0.91), ("impact_3", 0.90, 1.00),
+        # Impact cuts are strict and non-overlapping.  The previous overlapping windows copied
+        # a crescent/particle strip from the neighbouring impact into every runtime frame.
+        ("impact_0", 0.610, 0.700), ("impact_1", 0.700, 0.795),
+        ("impact_2", 0.795, 0.885), ("impact_3", 0.885, 1.000),
     ]
     for name, xa, xb in cells:
-        piece = row.crop((round(row.width * xa), 0, round(row.width * xb), row.height))
-        piece = gradient_key(piece, radius=20, threshold=14)
-        add(f"laser_{tier + 1}_{name}", piece, 92 if "pulse" not in name else 48, 112)
+        source = clean_impact_row if "impact" in name else row
+        piece = source.crop((round(row.width * xa), 0, round(row.width * xb), row.height))
+        if "impact" in name:
+            add_fx_square(f"laser_{tier + 1}_{name}", piece, 112, 10)
+        else:
+            piece = gradient_key(piece, radius=20, threshold=14)
+            add(f"laser_{tier + 1}_{name}", piece, 92 if "pulse" not in name else 48, 112)
 
 # Shadow Orb I-V icons and tier-specific generated FX.  Each FX row is:
 # charge spark, charge medium, charge full, flight, impact ring, implosion.
@@ -287,7 +403,7 @@ shadow_icons = rgba("gpt_shadow_orb_icons_i_v_master.png")
 shadow_fx = rgba("gpt_shadow_orb_fx_i_v_master.png")
 for tier in range(5):
     add(f"shadow_icon_{tier + 1}", neutral_edge_key(crop_grid(shadow_icons, 5, 1, tier, 0)), 112, 112)
-    cells = [neutral_edge_key(crop_grid(shadow_fx, 6, 5, col, tier)) for col in range(6)]
+    cells = [neutral_checker_key(crop_grid(shadow_fx, 6, 5, col, tier)) for col in range(6)]
     for fi, src in enumerate(cells[:3]):
         add(f"shadow_{tier + 1}_charge_{fi}", src, 104, 104)
     # The authored flight cell is one projectile pose.  Six subtle squash/pulse frames keep that
@@ -300,7 +416,7 @@ for tier in range(5):
         src = impact_sources[0 if fi < 3 else 1]
         scale = (0.65,0.84,1.00,1.05,0.86,0.60)[fi]
         bright = (0.82,1.00,1.18,1.15,0.94,0.72)[fi]
-        add(f"shadow_{tier + 1}_impact_{fi}", pulse(src, scale, bright), 124, 124)
+        add_fx_square(f"shadow_{tier + 1}_impact_{fi}", pulse(src, scale, bright), 136, 10)
 
 # Volley Missiles I-V.  Every generated tier row is split flash, three independent missiles,
 # curved trail, crossing spark, first impact and final impact.
@@ -322,7 +438,8 @@ for tier in range(5):
 # Add one compact monochrome mask beside every pilot-colourable frame.  The original remains the
 # Axel source; runtime overlays only this mask for every other pilot.  This is deliberately done
 # after all motion frames exist so turns/flips cannot reveal an untinted blue edge.
-palette_keys = [k for k in list(frames) if k == "ship_base" or k.startswith("ship_roll_")
+palette_keys = [k for k in list(frames) if k == "ship_base" or k.startswith("ship_bank_")
+                or k.startswith("ship_roll_")
                 or k.startswith("piece_") or k.startswith("thruster_")]
 for key in palette_keys:
     mask = blue_mask(frames[key])
@@ -355,8 +472,18 @@ OUT.mkdir(parents=True, exist_ok=True)
 PROOF.mkdir(parents=True, exist_ok=True)
 atlas, metadata = pack(frames)
 atlas.save(ATLAS_PNG, optimize=True)
-ATLAS_JSON.write_text(json.dumps({"image": ATLAS_PNG.name, "frames": metadata}, indent=2), encoding="utf-8")
-ATLAS_JS.write_text("window.BOF_GRAVITY_ATLAS=" + json.dumps({"image": ATLAS_PNG.name, "frames": metadata}, separators=(",", ":")) + ";\n", encoding="utf-8")
+ATLAS_JSON.write_text(
+    json.dumps({"image": ATLAS_PNG.name, "frames": metadata}, indent=2) + "\n",
+    encoding="utf-8",
+    newline="\n",
+)
+ATLAS_JS.write_text(
+    "window.BOF_GRAVITY_ATLAS="
+    + json.dumps({"image": ATLAS_PNG.name, "frames": metadata}, separators=(",", ":"))
+    + ";\n",
+    encoding="utf-8",
+    newline="\n",
+)
 
 # Labelled proof sheet, grouped by atlas order, on a neutral checker for alpha QA.
 thumb_w, thumb_h = 184, 168
@@ -383,7 +510,9 @@ proof.save(PROOF_PNG, optimize=True)
 
 # Compact decision proof: exact blue-only palette contract plus all ten new level icons and one
 # representative effect row from each family.  The live browser proof supplies per-pilot colours.
-review_keys = (["ship_base", "ship_base_blue", "piece_07", "piece_07_blue"] +
+review_keys = (["ship_base", "ship_base_blue"] +
+               [f"ship_bank_{side}{i}" for side in ("l", "r") for i in range(1, 4)] +
+               ["piece_07", "piece_07_blue"] +
                [f"piece_07_turn_{i:02d}" for i in range(8)] +
                [f"piece_07_flip_{i:02d}" for i in range(8)] +
                [f"shadow_icon_{i}" for i in range(1, 6)] +

@@ -1,0 +1,31 @@
+{
+  "cinematic": {
+    "state": "cutscene",
+    "css": true,
+    "backing": [
+      1638,
+      1024
+    ],
+    "client": [
+      1440,
+      900
+    ],
+    "viewWidth": 819
+  },
+  "xeno": {
+    "ship": "xenoregent",
+    "shield": true,
+    "mother": 644,
+    "helpers": [
+      310,
+      310
+    ],
+    "targets": 3
+  },
+  "s6": {
+    "ship": "blacksteel",
+    "mode": "storm",
+    "charge": 1
+  },
+  "errors": []
+}

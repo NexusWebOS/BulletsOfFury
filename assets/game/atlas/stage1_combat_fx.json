@@ -1,0 +1,348 @@
+{
+  "atlas": "assets/game/atlas/stage1_combat_fx.png",
+  "cell": [
+    192,
+    192
+  ],
+  "columns": 6,
+  "rows": [
+    "jungle_missile",
+    "cannon_shell",
+    "military_muzzle",
+    "rotary_muzzle",
+    "flak_impact",
+    "green_laser",
+    "wind_blade",
+    "wind_vortex",
+    "green_impact"
+  ],
+  "rects": {
+    "s1fx_jungle_missile_0": [
+      0,
+      0,
+      192,
+      192
+    ],
+    "s1fx_jungle_missile_1": [
+      192,
+      0,
+      192,
+      192
+    ],
+    "s1fx_jungle_missile_2": [
+      384,
+      0,
+      192,
+      192
+    ],
+    "s1fx_jungle_missile_3": [
+      576,
+      0,
+      192,
+      192
+    ],
+    "s1fx_jungle_missile_4": [
+      768,
+      0,
+      192,
+      192
+    ],
+    "s1fx_jungle_missile_5": [
+      960,
+      0,
+      192,
+      192
+    ],
+    "s1fx_cannon_shell_0": [
+      0,
+      192,
+      192,
+      192
+    ],
+    "s1fx_cannon_shell_1": [
+      192,
+      192,
+      192,
+      192
+    ],
+    "s1fx_cannon_shell_2": [
+      384,
+      192,
+      192,
+      192
+    ],
+    "s1fx_cannon_shell_3": [
+      576,
+      192,
+      192,
+      192
+    ],
+    "s1fx_cannon_shell_4": [
+      768,
+      192,
+      192,
+      192
+    ],
+    "s1fx_cannon_shell_5": [
+      960,
+      192,
+      192,
+      192
+    ],
+    "s1fx_military_muzzle_0": [
+      0,
+      384,
+      192,
+      192
+    ],
+    "s1fx_military_muzzle_1": [
+      192,
+      384,
+      192,
+      192
+    ],
+    "s1fx_military_muzzle_2": [
+      384,
+      384,
+      192,
+      192
+    ],
+    "s1fx_military_muzzle_3": [
+      576,
+      384,
+      192,
+      192
+    ],
+    "s1fx_military_muzzle_4": [
+      768,
+      384,
+      192,
+      192
+    ],
+    "s1fx_military_muzzle_5": [
+      960,
+      384,
+      192,
+      192
+    ],
+    "s1fx_rotary_muzzle_0": [
+      0,
+      576,
+      192,
+      192
+    ],
+    "s1fx_rotary_muzzle_1": [
+      192,
+      576,
+      192,
+      192
+    ],
+    "s1fx_rotary_muzzle_2": [
+      384,
+      576,
+      192,
+      192
+    ],
+    "s1fx_rotary_muzzle_3": [
+      576,
+      576,
+      192,
+      192
+    ],
+    "s1fx_rotary_muzzle_4": [
+      768,
+      576,
+      192,
+      192
+    ],
+    "s1fx_rotary_muzzle_5": [
+      960,
+      576,
+      192,
+      192
+    ],
+    "s1fx_flak_impact_0": [
+      0,
+      768,
+      192,
+      192
+    ],
+    "s1fx_flak_impact_1": [
+      192,
+      768,
+      192,
+      192
+    ],
+    "s1fx_flak_impact_2": [
+      384,
+      768,
+      192,
+      192
+    ],
+    "s1fx_flak_impact_3": [
+      576,
+      768,
+      192,
+      192
+    ],
+    "s1fx_flak_impact_4": [
+      768,
+      768,
+      192,
+      192
+    ],
+    "s1fx_flak_impact_5": [
+      960,
+      768,
+      192,
+      192
+    ],
+    "s1fx_green_laser_0": [
+      0,
+      960,
+      192,
+      192
+    ],
+    "s1fx_green_laser_1": [
+      192,
+      960,
+      192,
+      192
+    ],
+    "s1fx_green_laser_2": [
+      384,
+      960,
+      192,
+      192
+    ],
+    "s1fx_green_laser_3": [
+      576,
+      960,
+      192,
+      192
+    ],
+    "s1fx_green_laser_4": [
+      768,
+      960,
+      192,
+      192
+    ],
+    "s1fx_green_laser_5": [
+      960,
+      960,
+      192,
+      192
+    ],
+    "s1fx_wind_blade_0": [
+      0,
+      1152,
+      192,
+      192
+    ],
+    "s1fx_wind_blade_1": [
+      192,
+      1152,
+      192,
+      192
+    ],
+    "s1fx_wind_blade_2": [
+      384,
+      1152,
+      192,
+      192
+    ],
+    "s1fx_wind_blade_3": [
+      576,
+      1152,
+      192,
+      192
+    ],
+    "s1fx_wind_blade_4": [
+      768,
+      1152,
+      192,
+      192
+    ],
+    "s1fx_wind_blade_5": [
+      960,
+      1152,
+      192,
+      192
+    ],
+    "s1fx_wind_vortex_0": [
+      0,
+      1344,
+      192,
+      192
+    ],
+    "s1fx_wind_vortex_1": [
+      192,
+      1344,
+      192,
+      192
+    ],
+    "s1fx_wind_vortex_2": [
+      384,
+      1344,
+      192,
+      192
+    ],
+    "s1fx_wind_vortex_3": [
+      576,
+      1344,
+      192,
+      192
+    ],
+    "s1fx_wind_vortex_4": [
+      768,
+      1344,
+      192,
+      192
+    ],
+    "s1fx_wind_vortex_5": [
+      960,
+      1344,
+      192,
+      192
+    ],
+    "s1fx_green_impact_0": [
+      0,
+      1536,
+      192,
+      192
+    ],
+    "s1fx_green_impact_1": [
+      192,
+      1536,
+      192,
+      192
+    ],
+    "s1fx_green_impact_2": [
+      384,
+      1536,
+      192,
+      192
+    ],
+    "s1fx_green_impact_3": [
+      576,
+      1536,
+      192,
+      192
+    ],
+    "s1fx_green_impact_4": [
+      768,
+      1536,
+      192,
+      192
+    ],
+    "s1fx_green_impact_5": [
+      960,
+      1536,
+      192,
+      192
+    ]
+  },
+  "generation": "approved military VFX plus four separately generated, widely spaced built-in ImageGen Jungle strips; guarded slicing, border-connected neutral-field removal, and deterministic frame normalization",
+  "source_edge_guard": 20,
+  "atlas_edge_guard": 20
+}

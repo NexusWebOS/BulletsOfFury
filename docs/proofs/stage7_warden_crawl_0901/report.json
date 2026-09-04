@@ -1,0 +1,68 @@
+{
+  "state": {
+    "pilot": "lizzie",
+    "boss": "TOXIC PORTAL WARDEN",
+    "mode": "patrol",
+    "plants": 32,
+    "asset": true
+  },
+  "bounds": {
+    "left": 187.88,
+    "right": 492.12
+  },
+  "distance": 277.7511999999997,
+  "frames": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "phases": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "plantOrder": [
+    1,
+    2,
+    3,
+    0,
+    1,
+    2,
+    3,
+    0,
+    1,
+    2,
+    3,
+    0,
+    1,
+    2,
+    0,
+    1,
+    2,
+    3,
+    0,
+    1,
+    2,
+    3,
+    0,
+    1,
+    1,
+    0,
+    3,
+    2,
+    1
+  ],
+  "errors": [],
+  "missing": [],
+  "recording": "docs/proofs/stage7_warden_crawl_0901/lizzie_toxic_portal_warden_crawl.webm"
+}

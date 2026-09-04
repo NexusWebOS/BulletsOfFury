@@ -1,0 +1,49 @@
+{
+  "password": {
+    "stage": 6,
+    "stageFontIdentity": true,
+    "stageFontReady": true,
+    "stageTextCalls": 45,
+    "legacyKeys": [],
+    "bofStageFonts": [
+      "1",
+      "2",
+      "3",
+      "4",
+      "5",
+      "6",
+      "7",
+      "8"
+    ]
+  },
+  "fit": {
+    "dialogueReady": true,
+    "openingLines": 33,
+    "storyLines": 304,
+    "failed": [],
+    "stress": [
+      {
+        "text": "Fury HQ confirms the dimensional corridor is destabilizing faster than predicted; maintain formation, protect the evacuation wing, and do not let the carrier cross the final beacon.",
+        "H": 16,
+        "rows": 2,
+        "height": 37,
+        "room": 68.12,
+        "widest": 566.5454545454544,
+        "width": 592.74,
+        "fits": true
+      },
+      {
+        "text": "FURYHQDIMENSIONALOVERRIDESEQUENCEALPHAOMEGASEVEN must remain completely inside this dialogue window.",
+        "H": 16,
+        "rows": 2,
+        "height": 37,
+        "room": 68.12,
+        "widest": 591.272727272727,
+        "width": 592.74,
+        "fits": true
+      }
+    ]
+  },
+  "errors": [],
+  "missing": []
+}

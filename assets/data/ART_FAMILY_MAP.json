@@ -962,8 +962,8 @@
   },
   "ncm": {
    "group": "terrain_props",
-   "keys": 131,
-   "why": "drawn by anyTap, updateCamX"
+   "keys": 57,
+   "why": "campaign-map ncm_ art only; retired ncm_font glyph cells permanently removed"
   },
   "ncon": {
    "group": "terrain_transitions",
@@ -1755,51 +1755,6 @@
    "keys": 1,
    "why": "drawn by _levelCfg"
   },
-  "sfont1": {
-   "group": "terrain_props",
-   "keys": 47,
-   "why": "drawn by updateCamX"
-  },
-  "sfont2": {
-   "group": "zz_unreferenced_quarantine",
-   "keys": 47,
-   "why": "not named in game.js and not in any BOFX table"
-  },
-  "sfont3": {
-   "group": "zz_unreferenced_quarantine",
-   "keys": 47,
-   "why": "not named in game.js and not in any BOFX table"
-  },
-  "sfont4": {
-   "group": "zz_unreferenced_quarantine",
-   "keys": 47,
-   "why": "not named in game.js and not in any BOFX table"
-  },
-  "sfont5": {
-   "group": "zz_unreferenced_quarantine",
-   "keys": 47,
-   "why": "not named in game.js and not in any BOFX table"
-  },
-  "sfont6": {
-   "group": "zz_unreferenced_quarantine",
-   "keys": 47,
-   "why": "not named in game.js and not in any BOFX table"
-  },
-  "sfont7": {
-   "group": "zz_unreferenced_quarantine",
-   "keys": 47,
-   "why": "not named in game.js and not in any BOFX table"
-  },
-  "sfont8": {
-   "group": "zz_unreferenced_quarantine",
-   "keys": 47,
-   "why": "not named in game.js and not in any BOFX table"
-  },
-  "sfont9": {
-   "group": "zz_unreferenced_quarantine",
-   "keys": 47,
-   "why": "not named in game.js and not in any BOFX table"
-  },
   "sfontA": {
    "group": "zz_unreferenced_quarantine",
    "keys": 7,
@@ -2414,38 +2369,6 @@
    "keys": 16
   },
   {
-   "family": "sfont2",
-   "keys": 47
-  },
-  {
-   "family": "sfont3",
-   "keys": 47
-  },
-  {
-   "family": "sfont4",
-   "keys": 47
-  },
-  {
-   "family": "sfont5",
-   "keys": 47
-  },
-  {
-   "family": "sfont6",
-   "keys": 47
-  },
-  {
-   "family": "sfont7",
-   "keys": 47
-  },
-  {
-   "family": "sfont8",
-   "keys": 47
-  },
-  {
-   "family": "sfont9",
-   "keys": 47
-  },
-  {
    "family": "sfontA",
    "keys": 7
   },
@@ -2519,8 +2442,8 @@
   }
  ],
  "stats": {
-  "families": 403,
-  "namedByCode": 4596,
-  "quarantined": 2618
+  "families": 394,
+  "namedByCode": 4475,
+  "quarantined": 2242
  }
 }

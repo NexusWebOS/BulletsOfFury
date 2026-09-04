@@ -1,0 +1,83 @@
+{
+  "initial": {
+    "ready": false,
+    "progress": 0.03749999999999999,
+    "loaded": 0,
+    "failed": 0,
+    "total": 28
+  },
+  "loaded": {
+    "ready": true,
+    "progress": 1,
+    "loaded": 28,
+    "failed": 0,
+    "total": 28
+  },
+  "maxInflight": 3,
+  "loadMs": 50865,
+  "fight": {
+    "bossHp": 3383,
+    "bossMax": 3383,
+    "mother": {
+      "x": 240,
+      "y": 99.50233563500889,
+      "hp": 254,
+      "max": 254
+    },
+    "shield": true
+  },
+  "shield": {
+    "bleed": {
+      "bossBefore": 3383,
+      "bossAfter": 3383,
+      "motherBefore": 254,
+      "motherAfter": 224
+    },
+    "shieldAfter": false,
+    "motherDead": true
+  },
+  "grid": {
+    "gap": 3,
+    "gapW": 3,
+    "waves": 3,
+    "tell": 0.82,
+    "projectiles": 24,
+    "finished": false
+  },
+  "renderScale": 1,
+  "frameTimes": {
+    "samples": 180,
+    "median": 100,
+    "p95": 133.3000000000029,
+    "max": 183.20000000000437
+  },
+  "afterSpawnStageAssetRequests": [],
+  "missing": [],
+  "errors": [],
+  "kill": {
+    "before": 3383,
+    "defeated": true,
+    "dying": 0,
+    "dead": true
+  },
+  "release": {
+    "before": true,
+    "after": false,
+    "next": {
+      "ready": false,
+      "progress": 0,
+      "loaded": 0,
+      "failed": 0,
+      "total": 13
+    }
+  },
+  "stageRootCounts": {
+    "2": 14,
+    "3": 16,
+    "4": 16,
+    "6": 13,
+    "7": 27,
+    "8": 11,
+    "9": 15
+  }
+}

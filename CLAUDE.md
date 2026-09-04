@@ -34,7 +34,7 @@ syntax error mid-suite reports zero failures and looks like a pass.
 ```
 assets/game.js        the whole game — large, single file
 assets/manifest.js    9 namespaces: BOF BOFA BOFFI BOFPI BOFQL BOFRS BOFTK BOFTM BOFX
-assets/game/atlas/    packed sheets; most art is a CELL in a sheet, not a loose file
+assets/game/atlas/    NAMED sheets since 0903 (en_s1, boss_s6, player_weapons, fx_weather_0 ...); most art is a CELL
 assets/data/          ART_TAXONOMY.json, STAGE1_ROSTER_SPEC.json, thruster_mounts.json
 _BUILD_SOURCE/        test_fl.js, shoot.py, verify_atlas_0806z.js, one-off art scripts
 docs/                 76 passovers, one per drop, newest last
@@ -78,6 +78,15 @@ trimmed rect needs `_foot=1` or it draws 2.15× too big.
 
 **`XART.rdy(k)` returns false on its FIRST call** — that call is what starts the lazy load. Every
 one-shot readiness check reads false and looks like missing art. Poll it.
+
+**A DRAW THAT THROWS IS SWALLOWED, SO THE GAME LOOKS FINE AND THE SCREEN STOPS ADVANCING.**
+Every state draw runs under a try/catch that logs `draw error in state <s>` and moves on. So a
+ReferenceError in a draw costs no crash, no visible failure and no dropped frames — the game
+holds 60fps while the thing it was drawing simply never appears, and whatever sequence that
+drawing drives never finishes. This is what stopped pilot select dead (0902a): `drawCommWindow`
+read `_dialogueReady`, a const belonging to `drawArcadeBanner`, and threw **3,379 times** without
+one symptom a state check could see. **Read the CONSOLE, not just the state.** A probe that
+watches `pageerror` plus `console.error` finds this class in one pass; nothing else does.
 
 **The player never fires in `shoot.py`.** Firing needs an input tap the harness does not simulate,
 so `pBullets` stays empty and any weapon FX measures as dead. A test must call `pShoot()` itself.
@@ -176,6 +185,124 @@ from the stage name — that is the design. **Stage 5 was different**: `storm800
 literal storm plate on a space stage, which Mike DID want changed. The test is whether the art is
 wrong for the stage, not whether it matches the title.
 
+
+## The atlas is repacked (2026-09-03) — read `docs/ATLAS_REPACK_0903.md` before touching a sheet
+
+**A sheet index is a NAME.** `BOFX.cells` rows are `[sheet, x, y, w, h]`; the loader reads
+`'nca_'+sheet`, so `['en_s1', …]` resolves through `img['nca_en_s1']` to `assets/game/atlas/en_s1.png`.
+58 named sheets replace `nca_0..86`: enemies per stage, one sheet per live boss and miniboss,
+enemy projectiles per stage, `player_weapons`, `pickups`, `fx_weather/explosions/misc/debris`,
+terrain, UI by surface. **Only `nca_87/88/89` are still numbered** — the MG pack, indexed whole by
+`P87_SHEET`. Boot download 134 → 102 MB; 271 MB of numbered sheets → 220 MB named (+ 23 MB of folded loose files deleted).
+⚠ **2,345 keys in 51 families are QUARANTINED, not deleted** — `docs/ATLAS_QUARANTINE_0903.json`
+holds every cell row and the commit (`0c964ee3`) they restore from. They are the retired mech /
+sectional / megaboss rigs no `STAGES`/`SUBBOSS` kind can reach (spawnBoss is table-driven; `_SXMAP`
+names only `magmacolossus`/`cryobehemoth`/`leviathan`) plus families nothing names in any quote
+style, any manifest table, or either live-run audit. **The sectional packs, quad-laser, megaboss and
+esB hulls are NOT quarantined** — they sit on `retired_rigs_0..2` (lazy, never at boot) because the
+suite pins them and CLAUDE.md keeps the sectional rig on disk; Mike deletes them with one rule change.
+**Check the SUITE for every family before quarantining it** — `nhxfi`/`nrbfi` are Falva's fade-in
+frames Mike asked for, unreferenced by game.js, and section 184 crashed on them in the first pass. **Spawning a retired kind now builds the
+GENERIC hull** — `mechInit` refuses without its art, so `boss._mech` is undefined. Section 86 read
+`boss._mech.phase` and the throw killed the suite at 1,068 assertions with 0 failures printed
+(rule 3, exactly). Guard on `boss._mech` before asking a rig anything.
+⚠ **Sheet 79 was `stage1roster.png`, not `nca_79.png`.** Resolve a numeric sheet through its
+`img['nca_N']` registration; a filename built from the index is wrong for one sheet in 90.
+⚠ **`n6x_`/`nvl_`/`s1_`/`tk*` are built by code, not named by tables** (`'n6x_'+kind`,
+`'nvl_'+art`, `JUNGLE_TANKS`/`STAGE4_TANKS`); the debris library is `ramp+type+chunk+'_r'+rot+'_'+tier`,
+which no grep for a family prefix can see. A liveness scan that only checks quoted prefixes calls
+all of them dead. `atlas_repack_0903.py` carries the exceptions; extend it, do not re-derive.
+⚠ **`Page.screenshot` hangs on the transformed canvas** (shoot.py already says so at its capture);
+use its `toDataURL` route. ⚠ **AND A PROBE THAT STEPS `loop()` WITHOUT `TRAP_RAF` SPAWNS A NEW LIVE
+ANIMATION CHAIN EVERY FRAME** — the "renderer wedge" this file has blamed on long bursts. Measured:
+frame cost climbs 0 → 26 ms over 600 frames on an EMPTY stage, same on the pre-repack tree, while a
+CPU profile shows 3 ms of real work; with the trap the run is real-time. `pg.evaluate(sh.TRAP_RAF)`
+before the first `STEP`, always. The stage-2 "wedge" of the continuous nine-stage harness was this. And **a quoted heredoc is not safe from the harness's shell** — a
+backtick in a regex class broke a script write at line 117; keep backticks out of source that goes
+through Bash, or use the Write tool.
+⚠ **A MISSING GLYPH DREW A SPACE, AND THE STAGE-CARD ALPHABETS ARE NOT COMPLETE SETS (0903).**
+Mike, with four shots of the pilot screen: *"remove these old fonts, replace with the better stage
+fonts asap"* — one of them reads **CHOO E YOUR PILOT**. Juggernaut's font is stage 5, whose card
+alphabet carries 44 glyphs and **no letter S**, and `stageText` pushed a blank on a miss: no error,
+nothing in the state, eight of nine pilots fine. `msgText` has had the borrow since 0812j and
+`stageText` never got it — the same fix applied to one of two twin functions. **The complete faces
+(`stagefont1..9_v3.png`, 47 glyphs each) were deleted from disk on 0831 and their atlas cells
+cleared on 0902 with nothing put in their place**; `_BUILD_SOURCE/build_stage_fonts_v3_0903.py`
+recovers the pixels from git (`58252627^`, the last intact tree) and packs all nine into
+`atlas/fonts_stage.png` at a 96px cap — measured against the largest `stageText` in the game (H=44
+on a 2x backing store), not guessed; 128 cost 6.9 MB for headroom nobody uses. `stageText`,
+`stageWidth` and `_tw` now all resolve through `stageGlyph`, so a borrowed glyph is measured at the
+width it is drawn at. ⚠ **AND A SATURATED FACE CHANGES WHAT A TINT MEANS**: the heading's
+`'#f2f5ff'` wash was tuned at 0.25 against muted card art, so the authored purple stage-5 face
+turned the screen title purple over a gold card. `drawFrameTinted` composites in `'color'` and white
+has no saturation to donate, so raising it DESATURATES rather than paints — 0.85 holds every pilot's
+title neutral with the letterforms and metal intact (swept 0.25/0.55/0.85/1.00 across the three
+colour extremes, `docs/proofs/fonts_v3_0903/_tintsweep.png`).
+⚠ **THE GENERIC BACK HANDLER ATE THE REBIND KEY (0903).** `menuBackTick` runs before `drawOptions`
+every frame and `Input.menuBack()` CONSUMES its tap, so with PRESS KEY lit the B button, backspace,
+escape and k backed out to the title instead of binding — and drawOptions' own
+`menuBack()&&!rebindAction` guard (0724dl) had been dead code the whole time. The handler now yields
+while `rebindAction` is set and routes an OPTIONS back through `optCancel`. **A guard inside a
+screen's draw cannot protect it from a handler that runs first**; check the dispatcher order.
+Measured in real Chromium: `_BUILD_SOURCE/probe_optback_0903.py`.
+⚠ **`ctx.shadowBlur` PER PROJECTILE IS THE FRAME COST, AND IT IS MEASURABLE.** The Magma Ward's
+fireballs drew through `shadowBlur=10` under `'lighter'`, one save/restore each, ~32 a frame: **78 ms
+a frame** in real Chromium (CPU profile, 77% in `magmaWardProjectileDraw`). Baking the glow once per
+reel frame and size into a cached canvas gives the same pixels at **2.6 ms**. `drawBullets` still
+sets `shadowBlur` in 46 places and `drawPowerups` in 15 — that is the next optimisation target, and
+the profile (`scratchpad/miniprof.py`: CDP `Profiler`, attribute native time to the nearest game.js
+frame) is how to find the owner in one run.
+Verified: 5,549 cells pixel-identical old→new before the manifest moved; `verify_atlas_0806z.js`
+all 5,698 cells resolve, eight stages 100 s each with 0 blank fallthroughs; title / mode / pilot
+select / stage screens shot in real Chromium (`docs/proofs/atlas_repack_0903/`).
+
+## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
+
+**Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download
+302 → 92 MB, co-op seats + scaling + stage-5 either-pilot rings + stage-9 wipe-out return, enemies
+targeting the nearer pilot, the Vol.1 expansion (new lava, stage 6 descends into the neon city,
+stage 9 on the starfield, 17 new fire types, nine south-facing shielded aces on 5/6/8), MG streams
+1-6 per level, death drops to the default gun, a level-0 space laser, red alert lanes on the
+level-2 boss beams. Suite **3,177 ok / 67 fail** = the 3,178/66 baseline ± the documented corner-run
+flakes. Full writeups are in the commit messages 0902a … 0903i.
+
+⚠ **AN ATLAS REPACK MUST REGISTER ITS SHEETS IN THE SAME WRITE AS ITS CELLS.** 0903 repointed 451
+`BOFX.cells` to three new sheets and registered the sheet files minutes later. In that window every
+one of those keys — buttons, pilot cards, `cf_boot`, the UI frame set — resolved to nothing and Mike
+was playing. It was reverted from HEAD and never committed. If it is tried again: one write, then
+render every affected screen before anyone plays.
+
+⚠ **EDIT BY CONTENT, NEVER BY LINE NUMBER AFTER AN INSERT.** A retarget pass edited 26 lines from a
+list captured before four lines were inserted above them (and the list had been cut by `head`). It
+converted the wrong lines and put a `const` in a block its users could not see — a ReferenceError
+`node --check` passes. Reverted; redone anchored on content, with the declaration placed by walking
+back from its first user and every user checked to sit inside that block.
+
+⚠ **A COLLISION TEST IS NOT TARGETING.** `Math.abs(e.x-player.x)<…` inside `withSeat(...)` asks
+whether a unit touches THE seat swapped in. It must read `player`, never `targetShip()`. The
+`playerHit()` that marks it can be on the NEXT line, so a same-line skip list misses it.
+
+⚠ **`EHP()` IS THE FODDER SHOTS-TO-KILL MODEL AND CAPS WHATEVER IT IS HANDED** — every new elite
+spawned with 12 hp. Bosses, minibosses and aces take absolute hp × `DIFF.eHp`.
+
+⚠ **A NEW PATTERN NEEDS ITS TYPES IN `_selfPat` OR THE GENERIC BLOCK OVERWRITES IT** — five of nine
+aces hung at their spawn y until `for(const _k in ELITEX) _selfPat['xelite_'+_k]=1`.
+
+⚠ **PROBE TRAPS FOUND TODAY:** `_liquidFrames()` returns Image objects, not keys (`rdy(k)` throws);
+`XART.rdy` is false on the first call, so a synchronous spawn+check reads every new key as missing;
+`window.Snd` is undefined while bare `Snd` works; the pilot card's SPECIAL row is gated on
+`pcard.phase`, which a forced `pcard.done` does not advance; ~~a `pg.evaluate` that runs hundreds of
+frames synchronously wedges the renderer~~ — **WRONG, corrected 0903k: the wedge is a missing
+`TRAP_RAF`** (see the atlas section above), not burst length.
+
+⚠ **SpriteCook IS NOT IN THIS REPO.** `tools/ColeForge` is a yt-dlp front end. The SpriteCook sheets
+were GPT-generated externally and normalized by `_BUILD_SOURCE/combat_final_0901/`. Boss art
+regeneration is Mike's side; wiring, normalizing and rigging what comes back is ours.
+
+**Open, needing Mike:** which pilot/pickup carries the new orb cores; the level-2/3 boss art
+(SpriteCook, level 3 from the current boss as a 100% reference); the Siege Ember "spin" did not
+reproduce on this build — measured ≤0.025 rad of draw rotation in both its patterns while its hull
+already slides 240..608 across the field; the atlas repack landed 0903 (see above).
 
 ## Current state (2026-08-19c)
 **0821b — the spawn trap was ONE CLAMP, and the spawn safety Mike asked for.** Full writeup:

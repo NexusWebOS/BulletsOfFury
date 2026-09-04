@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base href="../">
+  <title>Bullets of Fury — Lizzie Pattern Laboratory</title>
+  <style>
+    html,body{margin:0;width:100%;height:100%;overflow:hidden;background:#020407}
+    body{display:grid;place-items:center}
+    #viewport{position:relative;width:600px;height:640px;background:#000;overflow:hidden}
+    #screen,#lab{position:absolute;inset:0;width:600px;height:640px;image-rendering:pixelated}
+    #lab{pointer-events:none}
+    #hud,#equipcv{display:none}
+  </style>
+</head>
+<body>
+  <div id="viewport">
+    <canvas id="screen" width="480" height="512"></canvas>
+    <canvas id="lab" width="480" height="512"></canvas>
+  </div>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+  <script>window.__qaErrors=[];addEventListener('error',e=>window.__qaErrors.push(String(e.error||e.message)));</script>
+  <script src="assets/manifest.js"></script>
+  <script src="assets/game/fonts/bmf_maps.js"></script>
+  <script src="assets/section_geom.js"></script>
+  <script src="assets/game.js"></script>
+  <script src="_BUILD_SOURCE/qa_pattern_lab_0901_lab.js"></script>
+</body>
+</html>

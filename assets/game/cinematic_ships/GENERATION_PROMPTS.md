@@ -46,3 +46,18 @@ Built-in ImageGen was run once per affected frame using the current frame as the
 - **Lizzie 04, 05:** remove the invented glowing tail bulb; retain a plain gold vertical fin, rudder and horizontal tailplane, with the sole engine and propeller at the front.
 
 Each repair was generated against uniform green chroma, resized before dekeying, decontaminated into transparent RGBA, and inserted only into its original 512x512 master slot.
+
+## Supplemental centered-rear ending view
+
+Built-in ImageGen was run separately for each pilot using the pilot's rear-left and rear-right
+three-quarter cutouts together with the approved boss camera reference. The camera contract was:
+
+- directly behind the stern at aircraft/engine height
+- wings nearly horizontal, with minimal upper surface visible
+- engines and tail nearest the viewer; nose receding and mostly hidden
+- no bank, yaw, pitch, top-down framing, redesign, text or scenery
+- complete silhouette with generous gutter and genuine transparent alpha
+
+The approved output for every pilot is `cutouts_native/07_center_rear.png`. Lizzie's single front
+propeller remains fully occluded behind the fuselage, while Freezer retains only the compact violet
+rear-engine cluster from the canonical ship references.

@@ -1,0 +1,185 @@
+{
+ "1": {
+  "types": [
+   "s1ammocrate",
+   "s1boatgun",
+   "s1boatpatrol",
+   "s1corvette",
+   "s1fuelbarrel",
+   "s1fueltank",
+   "s1jetbomber",
+   "s1jetbomber_b",
+   "s1jetdelta",
+   "s1jetdelta_b",
+   "s1landingcraft",
+   "s1rivermine",
+   "s1tankapc",
+   "s1tankheavy",
+   "s1tanklight",
+   "s1truckmissile"
+  ],
+  "helpers": {
+   "spawnEnemy": 67,
+   "jetRipple": 5,
+   "kamikazeRipple": 2
+  }
+ },
+ "2": {
+  "types": [
+   "ash",
+   "basaltbomber",
+   "carrier",
+   "cinderwasp",
+   "crawl",
+   "cruc",
+   "disc",
+   "eye",
+   "golem",
+   "lance",
+   "lavamaw",
+   "magmaorb",
+   "miner",
+   "pod",
+   "skim"
+  ],
+  "helpers": {
+   "encounterRipple": 15
+  }
+ },
+ "3": {
+  "types": [
+   "cryoeye",
+   "glaciercarrier",
+   "s3barge",
+   "s3interceptor",
+   "sharddart"
+  ],
+  "helpers": {
+   "encounterRipple": 12
+  }
+ },
+ "4": {
+  "types": [
+   "s4airfield",
+   "s4barrel",
+   "s4bomber",
+   "s4command",
+   "s4heavyjet",
+   "s4interceptor",
+   "s4minitank",
+   "s4missile",
+   "s4rocket",
+   "s4sam",
+   "s4tanker",
+   "s4tractor"
+  ],
+  "helpers": {
+   "spawnEnemy": 28
+  }
+ },
+ "5": {
+  "types": [
+   "s5frigate",
+   "s5gravity",
+   "s5interceptor",
+   "s5leech",
+   "s5minelayer",
+   "s5portalmine",
+   "s5rammer",
+   "s5repair",
+   "s5salvage",
+   "s5satellite",
+   "s5skimmer",
+   "s5station",
+   "xelite_voidreaver"
+  ],
+  "helpers": {
+   "spawnEnemy": 27
+  }
+ },
+ "6": {
+  "types": [
+   "s6bomber",
+   "s6buoy",
+   "s6carrier",
+   "s6cyclone",
+   "s6dart",
+   "s6lancer",
+   "s6mine",
+   "s6probe",
+   "s6reactor",
+   "s6skimmer",
+   "s6thunder",
+   "s6turbine",
+   "xelite_glacierlance",
+   "xelite_solarwarden",
+   "xelite_tempest"
+  ],
+  "helpers": {
+   "spawnEnemy": 27
+  }
+ },
+ "7": {
+  "types": [
+   "s7barge",
+   "s7canister",
+   "s7lamprey",
+   "s7mine",
+   "s7pipe",
+   "s7sampler",
+   "s7serpent",
+   "s7skimmer",
+   "s7tank",
+   "s7valve",
+   "s7walker"
+  ],
+  "helpers": {
+   "spawnEnemy": 25
+  }
+ },
+ "8": {
+  "types": [
+   "s8bomber",
+   "s8carrier",
+   "s8crescent",
+   "s8deathorb",
+   "s8gunship",
+   "s8hunter",
+   "s8interceptor",
+   "s8leech",
+   "s8manta",
+   "s8needlejet",
+   "s8parasite",
+   "s8razor",
+   "s8scout",
+   "s8skull",
+   "s8solar",
+   "s8spread",
+   "s8symbiote",
+   "s8tentacle",
+   "xelite_ironserpent",
+   "xelite_nighthammer"
+  ],
+  "helpers": {
+   "spawnEnemy": 41
+  }
+ },
+ "9": {
+  "types": [
+   "s9beacon",
+   "s9chronal",
+   "s9comet",
+   "s9gatecarrier",
+   "s9gateturret",
+   "s9gravity",
+   "s9gunship",
+   "s9interceptor",
+   "s9prism",
+   "s9singularity",
+   "s9warptank"
+  ],
+  "helpers": {
+   "spawnEnemy": 31
+  }
+ }
+}

@@ -1,0 +1,90 @@
+{
+  "coreState": {
+    "phase": "stun",
+    "noHit": false,
+    "tests": [
+      {
+        "p": {
+          "x": 218.52452800000015,
+          "y": 141,
+          "r": 25.799999999999997,
+          "side": -1
+        },
+        "at": true,
+        "before": 596.2,
+        "after": 0,
+        "dead": true
+      },
+      {
+        "p": {
+          "x": 389.52452800000015,
+          "y": 141,
+          "r": 25.799999999999997,
+          "side": 1
+        },
+        "at": true,
+        "before": 596.2,
+        "after": 0,
+        "dead": true
+      }
+    ],
+    "cores": [
+      {
+        "dead": true,
+        "hp": 0
+      },
+      {
+        "dead": true,
+        "hp": 0
+      }
+    ]
+  },
+  "mapState": {
+    "state": "stagesel",
+    "stageSelect": "stagesel",
+    "runStage": 7,
+    "pending": 1,
+    "unlocked": 8,
+    "bossActive": false,
+    "phase": "escape",
+    "phaseT": 5.253099999999998,
+    "finished": true,
+    "whiteBlast": 0
+  },
+  "endState": {
+    "state": "play",
+    "play": "play",
+    "stage": 8,
+    "l78": 0,
+    "playerHidden": false,
+    "assets": [
+      {
+        "key": "cfx_stage7_warden_walk",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_roar",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_cripple",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_laststand",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_teleport",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_mine",
+        "ready": true
+      }
+    ]
+  },
+  "errors": [],
+  "missing": [],
+  "recording": "docs/proofs/stage7_finale_helix_0901/lizzie_stage7_warden_to_stage8_helix.webm"
+}

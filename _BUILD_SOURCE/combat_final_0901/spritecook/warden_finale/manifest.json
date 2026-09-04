@@ -1,0 +1,42 @@
+{
+  "created": "2026-09-01",
+  "purpose": "Stage 7 Toxic Portal Warden finale animation integration",
+  "source_asset_id": "523cc626-8079-4d5b-ad5e-7dc82a644830",
+  "source_label": "Toxic Portal Warden Source Crawl Atlas",
+  "assets": [
+    {
+      "asset_id": "7098820d-6924-4bb5-b5c2-81438f921d15",
+      "job_id": "a3985b7d-e562-4ca4-ae5d-ea90b7af24e5",
+      "label": "Toxic Portal Warden Rear-Up Mechanical Roar",
+      "staging_file": "warden_rear_roar_sheet.png",
+      "production_file": "assets/game/combat_final/stage7_warden_rear_roar_spritecook.png",
+      "sha256_12": "f83931232fcf",
+      "frames": 8,
+      "frame_size": [640, 616],
+      "fps": 8
+    },
+    {
+      "asset_id": "47bd3cb3-a112-45b4-bd53-75fffd91de35",
+      "job_id": "7bfddf36-3728-4ae3-a7b6-9c8d0be8e2d9",
+      "label": "Toxic Portal Warden Crippled Front-Leg Crawl",
+      "staging_file": "warden_crippled_crawl_sheet.png",
+      "production_file": "assets/game/combat_final/stage7_warden_crippled_crawl_spritecook.png",
+      "sha256_12": "b95c0b3bc1f7",
+      "frames": 8,
+      "frame_size": [640, 616],
+      "fps": 8
+    },
+    {
+      "asset_id": "ed50b924-9092-462c-ab0c-b58b72656ad7",
+      "job_id": "88dcb690-365d-4539-8d01-d11aab397709",
+      "label": "Toxic Portal Warden Final Last Stand",
+      "staging_file": "warden_last_stand_sheet.png",
+      "production_file": "assets/game/combat_final/stage7_warden_last_stand_spritecook.png",
+      "sha256_12": "38ebf09b4318",
+      "frames": 8,
+      "frame_size": [640, 616],
+      "fps": 8
+    }
+  ],
+  "post_generation_credit_balance": 54
+}

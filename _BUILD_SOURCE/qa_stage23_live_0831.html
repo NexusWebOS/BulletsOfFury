@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base href="../">
+  <title>Stage 2/3 Boss Live Playtest</title>
+  <style>
+    html,body{margin:0;min-height:100%;background:#05070b;color:#e8f4ff;font:14px/1.35 monospace}
+    body{display:flex;align-items:flex-start;justify-content:center;gap:18px;padding:18px;box-sizing:border-box}
+    #screen{width:min(72vw,680px);height:auto;image-rendering:pixelated;background:#000;border:2px solid #30485c}
+    #hud,#equipcv{display:none}
+    aside{width:270px;background:#0c131d;border:1px solid #35506a;padding:14px;box-shadow:0 8px 28px #000}
+    h1{font-size:16px;color:#8cd8ff;margin:0 0 10px}
+    p{color:#9fb5c7;margin:0 0 12px}
+    button{display:block;width:100%;margin:7px 0;padding:10px 8px;background:#15283a;color:#fff;
+      border:1px solid #4781aa;font:inherit;cursor:pointer;text-align:left}
+    button:hover{background:#20405b}.audio{border-color:#a98238;color:#ffe9a8}
+    #state{white-space:pre-wrap;margin-top:12px;color:#8be6ae;font-size:12px}
+  </style>
+</head>
+<body>
+  <canvas id="screen" width="480" height="512"></canvas>
+  <canvas id="hud" width="480" height="62"></canvas>
+  <canvas id="equipcv" width="128" height="128"></canvas>
+  <aside>
+    <h1>LIVE BOSS QA</h1>
+    <p>Real game update loop, real encounter controllers, and real sound routes. Player damage is disabled for observation.</p>
+    <button data-stage="2" data-kind="magmaward" data-mini="1">Stage 2 — Magma Ward</button>
+    <button data-stage="2" data-kind="infernoreaver">Stage 2 — Inferno Reaver</button>
+    <button data-stage="3" data-kind="rimewall" data-mini="1">Stage 3 — Cryo Spear</button>
+    <button data-stage="3" data-kind="cryospear">Stage 3 — Rime Wall</button>
+    <button id="audio" class="audio">Play boss cue sampler</button>
+    <div id="state">Select an encounter.</div>
+  </aside>
+  <script>window.__qaErrors=[];addEventListener('error',e=>window.__qaErrors.push(String(e.error||e.message)));</script>
+  <script src="assets/manifest.js"></script>
+  <script src="assets/game/fonts/bmf_maps.js"></script>
+  <script src="assets/section_geom.js"></script>
+  <script src="assets/game.js"></script>
+  <script>
+  (()=>{
+    const stateEl=document.getElementById('state');
+    function clearEncounter(stage){
+      beginStage(stage);setState(GS.PLAY);player.reset();player.x=VW/2;player.y=VH*.84;player.invuln=1e9;
+      stagePlan=[{t:9999,fn:function(){}}];waveIdx=0;stageTimer=0;mapScroll=levelScrollRange();snapCamToPlayer();
+      enemies.length=0;eBullets.length=0;pBullets.length=0;aiQueue.length=0;powerups.length=0;
+      boss=null;bossActive=false;subBoss=null;subBossActive=false;bossWarned=true;subBossTriggered=true;
+      story=null;warnKind=null;warnT=0;if(typeof thaw!=='undefined')thaw=null;if(typeof wfxReset==='function')wfxReset();
+    }
+    function start(stage,kind,mini){
+      Audio.init();Audio.resume();clearEncounter(stage);
+      if(mini){spawnSubBoss(kind);subBoss.enter=false;subBoss.x=VW/2;subBoss.y=shipBossStationY(subBoss);subBoss.ty=subBoss.y;subBoss.fireCd=.12;}
+      else{spawnBoss(kind);boss.enter=false;boss.x=VW/2;boss.y=shipBossStationY(boss);boss.ty=boss.y;boss.fireCd=.12;}
+      Audio.startMusic('boss'+stage);window.__qaEncounter={stage,kind,mini:!!mini,started:performance.now()};
+    }
+    for(const b of document.querySelectorAll('button[data-stage]'))b.addEventListener('click',()=>start(+b.dataset.stage,b.dataset.kind,b.dataset.mini==='1'));
+    document.getElementById('audio').addEventListener('click',()=>{
+      Audio.init();Audio.resume();const cues=['enemyMachineGunHeavy','enemyHeavyLaser','bossWeaponCharge','shieldHitHeavy','shieldBreakCombat'];
+      if(Snd&&Snd.prepare)Snd.prepare(cues);cues.forEach((n,i)=>setTimeout(()=>{if(Audio.SFX[n])Audio.SFX[n]();},i*950));
+      window.__qaCueSampler={started:performance.now(),cues};
+    });
+    setInterval(()=>{
+      const b=bossActive?boss:(subBossActive?subBoss:null),s=b&&(b._s3boss||b._mwAttack||b._irPass||b._irRoll);
+      const data={encounter:window.__qaEncounter||null,name:b&&b.name,hp:b&&Math.round(b.hp),maxhp:b&&Math.round(b.maxhp),
+        x:b&&Math.round(b.x),projectiles:eBullets.length,controller:s?true:false,firewave:!!(wfx&&(wfx.fseq||wfx.fire)),errors:window.__qaErrors};
+      stateEl.textContent=JSON.stringify(data,null,2);window.__qaStage23=data;
+    },120);
+  })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+{
+  "galleries": {
+    "stage2": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "stage5": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "stage7": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ],
+    "stage8": [
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true
+    ]
+  },
+  "shields": {
+    "2": [
+      {
+        "type": "disc",
+        "family": "ion",
+        "energy": 4
+      },
+      {
+        "type": "eye",
+        "family": "hex",
+        "energy": 4
+      }
+    ],
+    "5": [
+      {
+        "type": "s5gravity",
+        "family": "violet",
+        "energy": 4
+      },
+      {
+        "type": "s5satellite",
+        "family": "prism",
+        "energy": 4
+      },
+      {
+        "type": "s5repair",
+        "family": "ion",
+        "energy": 4
+      },
+      {
+        "type": "s5leech",
+        "family": "violet",
+        "energy": 4
+      }
+    ],
+    "7": [
+      {
+        "type": "s7sampler",
+        "family": "hex",
+        "energy": 5
+      },
+      {
+        "type": "s7skimmer",
+        "family": "gold",
+        "energy": 5
+      }
+    ],
+    "8": [
+      {
+        "type": "s8deathorb",
+        "family": "crimson",
+        "energy": 6
+      },
+      {
+        "type": "s8parasite",
+        "family": "prism",
+        "energy": 6
+      },
+      {
+        "type": "s8scout",
+        "family": "crimson",
+        "energy": 6
+      },
+      {
+        "type": "s8leech",
+        "family": "violet",
+        "energy": 5
+      }
+    ],
+    "9": [
+      {
+        "type": "s9beacon",
+        "family": "ion",
+        "energy": 6
+      },
+      {
+        "type": "s9prism",
+        "family": "prism",
+        "energy": 7
+      },
+      {
+        "type": "s9ring",
+        "family": "violet",
+        "energy": 6
+      },
+      {
+        "type": "s9singularity",
+        "family": "gold",
+        "energy": 6
+      }
+    ]
+  },
+  "stage4": {
+    "coreDeflected": false,
+    "bodyDeflected": true,
+    "before": 102,
+    "after": 84,
+    "coreUnlocked": true
+  },
+  "stage2Tell": {
+    "pattern": "chargebeam",
+    "beamSlots": [
+      "L",
+      "R"
+    ],
+    "orb": true
+  },
+  "stage2Release": {
+    "before": 0,
+    "after": 1,
+    "kind": "magma",
+    "size": 2.6,
+    "beamSlots": [
+      "L",
+      "R"
+    ]
+  },
+  "assets": [
+    {
+      "key": "cfx_stage2_volcanic_projectiles",
+      "registered": true
+    },
+    {
+      "key": "cfx_stage4_chain_lightning",
+      "registered": true
+    },
+    {
+      "key": "cfx_stage5_alien_projectiles_v2",
+      "registered": true
+    },
+    {
+      "key": "cfx_stage7_toxic_projectiles_v2",
+      "registered": true
+    },
+    {
+      "key": "cfx_stage8_symbiote_projectiles",
+      "registered": true
+    }
+  ],
+  "errors": [],
+  "missing": []
+}

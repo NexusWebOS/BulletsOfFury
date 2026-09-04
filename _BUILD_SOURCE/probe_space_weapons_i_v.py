@@ -132,7 +132,7 @@ def main():
         canvas.screenshot(path=str(OUT / "05_shadow_orb_V_blast.png"))
 
         volley = page.evaluate("""() => {
-          run.spaceWeapon=2;run.spaceLevels[2]=5;run.wlevel=1;pBullets.length=0;
+          run.spaceWeapon=0;run.spaceLevels[2]=5;run.wlevel=1;pBullets.length=0;
           const ox=player.x,oy=player.y;
           enemies.length=0;
           enemies.push({qa:'left',x:ox-115,y:oy-330,w:1,h:1,hp:999,maxhp:999,dead:false},
@@ -142,24 +142,24 @@ def main():
           const missiles=pBullets.filter(b=>b.kind==='spaceVolley');
           const tracks=missiles.map(b=>[{x:b.x,y:b.y}]);
           for(let f=0;f<24;f++)missiles.forEach((b,i)=>{spaceBulletTick(b,1/60);tracks[i].push({x:b.x,y:b.y});});
-          return {count:missiles.length,icon:spaceWeaponIconKey(),hudLevel:spaceWeaponLevel(),
+          return {count:missiles.length,icon:spaceVolleyIconKey(),hudLevel:spaceVolleyLevel(),
             locks:missiles.map(b=>b._target&&b._target.qa),phases:missiles.map(b=>b._phase),
             tracks:tracks.map((tr,i)=>({side:missiles[i].side,minX:Math.min(...tr.map(p=>p.x))-ox,
               maxX:Math.max(...tr.map(p=>p.x))-ox,startX:tr[0].x-ox,endX:tr[tr.length-1].x-ox})),
             finite:{near:!!spaceAcquire({x:ox,y:oy},440),behind:!!spaceAcquire({x:ox,y:oy-500},440)}};
         }""")
-        page.evaluate("""() => {enemies.length=0;pBullets.length=0;run.spaceWeapon=2;run.spaceLevels[2]=5;spaceVolleyFire();
+        page.evaluate("""() => {enemies.length=0;pBullets.length=0;run.spaceWeapon=0;run.spaceLevels[2]=5;spaceVolleyFire();
           const seed=pBullets[0];for(let f=0;f<7;f++)spaceBulletTick(seed,1/60);
           const m=pBullets.filter(b=>b.kind==='spaceVolley');for(let f=0;f<17;f++)m.forEach(b=>spaceBulletTick(b,1/60));}""")
         page.wait_for_timeout(80)
         canvas.screenshot(path=str(OUT / "06_volley_missiles_V_criss_cross.png"))
 
         pickups = page.evaluate("""() => {
-          run.spaceWeapon=0;run.spaceLevels=[1,0,0];run.wlevel=1;
+          run.spaceWeapon=0;run.spaceLevels=[1,1,1];run.wlevel=1;
           const mapping=[],states=[];
           for(let wtype=0;wtype<6;wtype++){
             const p={kind:'weapon',wtype,x:player.x,y:player.y};mapping.push(spaceWeaponPickupIndex(p));applyPowerup(p);
-            states.push({wtype,active:run.spaceWeapon,level:spaceWeaponLevel(),levels:run.spaceLevels.slice(),name:spaceWeaponName(),icon:spaceWeaponIconKey()});
+            states.push({wtype,active:run.spaceWeapon,level:spaceWeaponLevel(),passive:spaceVolleyLevel(),levels:run.spaceLevels.slice(),name:spaceWeaponName(),icon:spaceWeaponIconKey()});
           }
           return {mapping,states};
         }""")
@@ -171,7 +171,7 @@ def main():
           special=null;run.stage=4;run.spaceMode=false;run._groundLoadout=null;
           run.weapon=4;run.wlevel=3;run.wlevels=[0,0,0,0,3,0];run.wvars=[null,null,null,null,'flamethrower',null];run.missileLevel=4;
           run.stage=5;spaceModeStage(5);const locked={space:spaceWeaponsActive(),weapon:run.weapon,missiles:run.missileLevel};
-          run.spaceLevels=[5,4,3];run.spaceWeapon=2;run.wlevel=3;
+          run.spaceLevels=[5,4,3];run.spaceWeapon=1;run.wlevel=3;
           run.stage=6;spaceModeStage(6);const restored={space:run.spaceMode,weapon:run.weapon,wlevel:run.wlevel,missiles:run.missileLevel,variant:run.wvars[4]};
           run.stage=9;spaceModeStage(9);const retained={space:spaceWeaponsActive(),levels:run.spaceLevels.slice(),active:run.spaceWeapon,groundMissiles:run.missileLevel};
           return {locked,restored,retained};
@@ -218,7 +218,7 @@ def main():
     assert hud == {"display": "SHADOW ORB", "icon": "space_shadow_icon_4", "level": 4, "rawGroundLevel": 1}
     assert isolation["locked"] == {"space": True, "weapon": 0, "missiles": 0}
     assert isolation["restored"] == {"space": False, "weapon": 4, "wlevel": 3, "missiles": 4, "variant": "flamethrower"}
-    assert isolation["retained"] == {"space": True, "levels": [5, 4, 3], "active": 2, "groundMissiles": 0}
+    assert isolation["retained"] == {"space": True, "levels": [5, 4, 3], "active": 1, "groundMissiles": 0}
     assert specials["during"] == ["venomx"] and specials["ordinary"] == ["spaceLaser"] * 12
 
 

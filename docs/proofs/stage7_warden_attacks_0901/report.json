@@ -1,0 +1,50 @@
+{
+  "state": {
+    "pilot": "lizzie",
+    "boss": "TOXIC PORTAL WARDEN",
+    "w": 300,
+    "h": 230,
+    "mode": "minefield",
+    "assets": [
+      {
+        "key": "cfx_stage7_warden_walk",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_cannon",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_rail",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_shell",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_mine",
+        "ready": true
+      },
+      {
+        "key": "cfx_stage7_warden_spear",
+        "ready": true
+      }
+    ]
+  },
+  "projectileKinds": {
+    "burst": [
+      "s7wardenShell",
+      "emissile"
+    ],
+    "rail": [
+      "s7wardenRail"
+    ],
+    "mine": [
+      "s7wardenMine"
+    ]
+  },
+  "errors": [],
+  "missing": [],
+  "recording": "docs/proofs/stage7_warden_attacks_0901/lizzie_toxic_portal_warden_attacks.webm"
+}

@@ -1,0 +1,44 @@
+{
+  "xenoTell": {
+    "gap": 5,
+    "cols": 8,
+    "doorWidth": 2,
+    "left": 0,
+    "right": 480
+  },
+  "xenoLive": {
+    "before": 0,
+    "shots": 16,
+    "wave": 2,
+    "gap": 3,
+    "kinds": {
+      "s5fracture": 10,
+      "s5null": 6
+    }
+  },
+  "sludgeTell": {
+    "points": 3,
+    "tell": 0.72
+  },
+  "sludgeLive": {
+    "wave": 1,
+    "shots": 11,
+    "acid": 11
+  },
+  "tidalTell": {
+    "gap": 6,
+    "cols": 8,
+    "doorWidth": 2,
+    "left": 0,
+    "right": 480
+  },
+  "tidalLive": {
+    "oldGap": 6,
+    "gap": 5,
+    "delta": 1,
+    "wave": 1,
+    "shots": 6,
+    "pair": 6
+  },
+  "errors": []
+}

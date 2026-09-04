@@ -1,0 +1,1921 @@
+{
+  "alpha_threshold": 8,
+  "atlases": [
+    {
+      "sources": [
+        "stage2_volcanic_projectiles_a.png",
+        "stage2_volcanic_projectiles_b.png"
+      ],
+      "output": "stage2_volcanic_projectiles_atlas.png",
+      "grid": [
+        4,
+        8
+      ],
+      "cell": [
+        256,
+        256
+      ],
+      "source_cuts": [
+        {
+          "source": "stage2_volcanic_projectiles_a.png",
+          "x": [
+            0,
+            313,
+            627,
+            940,
+            1254
+          ],
+          "y": [
+            0,
+            313,
+            625,
+            870,
+            1254
+          ]
+        },
+        {
+          "source": "stage2_volcanic_projectiles_b.png",
+          "x": [
+            0,
+            310,
+            620,
+            931,
+            1241
+          ],
+          "y": [
+            0,
+            310,
+            604,
+            905,
+            1268
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "role": "needle",
+          "scale": 0.74494,
+          "frames": [
+            {
+              "size": [
+                45,
+                78
+              ],
+              "gutters": {
+                "left": 105,
+                "top": 89,
+                "right": 106,
+                "bottom": 89
+              }
+            },
+            {
+              "size": [
+                50,
+                112
+              ],
+              "gutters": {
+                "left": 103,
+                "top": 72,
+                "right": 103,
+                "bottom": 72
+              }
+            },
+            {
+              "size": [
+                80,
+                150
+              ],
+              "gutters": {
+                "left": 88,
+                "top": 53,
+                "right": 88,
+                "bottom": 53
+              }
+            },
+            {
+              "size": [
+                95,
+                184
+              ],
+              "gutters": {
+                "left": 80,
+                "top": 36,
+                "right": 81,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "rake",
+          "scale": 0.69173,
+          "frames": [
+            {
+              "size": [
+                64,
+                75
+              ],
+              "gutters": {
+                "left": 96,
+                "top": 90,
+                "right": 96,
+                "bottom": 91
+              }
+            },
+            {
+              "size": [
+                92,
+                101
+              ],
+              "gutters": {
+                "left": 82,
+                "top": 77,
+                "right": 82,
+                "bottom": 78
+              }
+            },
+            {
+              "size": [
+                135,
+                131
+              ],
+              "gutters": {
+                "left": 60,
+                "top": 62,
+                "right": 61,
+                "bottom": 63
+              }
+            },
+            {
+              "size": [
+                184,
+                167
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 44,
+                "right": 36,
+                "bottom": 45
+              }
+            }
+          ]
+        },
+        {
+          "role": "slag",
+          "scale": 0.82143,
+          "frames": [
+            {
+              "size": [
+                86,
+                89
+              ],
+              "gutters": {
+                "left": 85,
+                "top": 83,
+                "right": 85,
+                "bottom": 84
+              }
+            },
+            {
+              "size": [
+                110,
+                126
+              ],
+              "gutters": {
+                "left": 73,
+                "top": 65,
+                "right": 73,
+                "bottom": 65
+              }
+            },
+            {
+              "size": [
+                152,
+                151
+              ],
+              "gutters": {
+                "left": 52,
+                "top": 52,
+                "right": 52,
+                "bottom": 53
+              }
+            },
+            {
+              "size": [
+                184,
+                178
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 39,
+                "right": 36,
+                "bottom": 39
+              }
+            }
+          ]
+        },
+        {
+          "role": "rocket",
+          "scale": 0.50829,
+          "frames": [
+            {
+              "size": [
+                34,
+                83
+              ],
+              "gutters": {
+                "left": 111,
+                "top": 86,
+                "right": 111,
+                "bottom": 87
+              }
+            },
+            {
+              "size": [
+                46,
+                119
+              ],
+              "gutters": {
+                "left": 105,
+                "top": 68,
+                "right": 105,
+                "bottom": 69
+              }
+            },
+            {
+              "size": [
+                63,
+                156
+              ],
+              "gutters": {
+                "left": 96,
+                "top": 50,
+                "right": 97,
+                "bottom": 50
+              }
+            },
+            {
+              "size": [
+                76,
+                184
+              ],
+              "gutters": {
+                "left": 90,
+                "top": 36,
+                "right": 90,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "bomb",
+          "scale": 0.79654,
+          "frames": [
+            {
+              "size": [
+                91,
+                93
+              ],
+              "gutters": {
+                "left": 82,
+                "top": 81,
+                "right": 83,
+                "bottom": 82
+              }
+            },
+            {
+              "size": [
+                119,
+                123
+              ],
+              "gutters": {
+                "left": 68,
+                "top": 66,
+                "right": 69,
+                "bottom": 67
+              }
+            },
+            {
+              "size": [
+                147,
+                153
+              ],
+              "gutters": {
+                "left": 54,
+                "top": 51,
+                "right": 55,
+                "bottom": 52
+              }
+            },
+            {
+              "size": [
+                184,
+                184
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 36,
+                "right": 36,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "shock",
+          "scale": 0.6595,
+          "frames": [
+            {
+              "size": [
+                89,
+                104
+              ],
+              "gutters": {
+                "left": 83,
+                "top": 76,
+                "right": 84,
+                "bottom": 76
+              }
+            },
+            {
+              "size": [
+                132,
+                142
+              ],
+              "gutters": {
+                "left": 62,
+                "top": 57,
+                "right": 62,
+                "bottom": 57
+              }
+            },
+            {
+              "size": [
+                158,
+                173
+              ],
+              "gutters": {
+                "left": 49,
+                "top": 41,
+                "right": 49,
+                "bottom": 42
+              }
+            },
+            {
+              "size": [
+                178,
+                184
+              ],
+              "gutters": {
+                "left": 39,
+                "top": 36,
+                "right": 39,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "breath",
+          "scale": 0.67647,
+          "frames": [
+            {
+              "size": [
+                95,
+                95
+              ],
+              "gutters": {
+                "left": 80,
+                "top": 80,
+                "right": 81,
+                "bottom": 81
+              }
+            },
+            {
+              "size": [
+                128,
+                127
+              ],
+              "gutters": {
+                "left": 64,
+                "top": 64,
+                "right": 64,
+                "bottom": 65
+              }
+            },
+            {
+              "size": [
+                149,
+                150
+              ],
+              "gutters": {
+                "left": 53,
+                "top": 53,
+                "right": 54,
+                "bottom": 53
+              }
+            },
+            {
+              "size": [
+                183,
+                184
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 36,
+                "right": 37,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "mine",
+          "scale": 0.69173,
+          "frames": [
+            {
+              "size": [
+                95,
+                95
+              ],
+              "gutters": {
+                "left": 80,
+                "top": 80,
+                "right": 81,
+                "bottom": 81
+              }
+            },
+            {
+              "size": [
+                124,
+                120
+              ],
+              "gutters": {
+                "left": 66,
+                "top": 68,
+                "right": 66,
+                "bottom": 68
+              }
+            },
+            {
+              "size": [
+                153,
+                154
+              ],
+              "gutters": {
+                "left": 51,
+                "top": 51,
+                "right": 52,
+                "bottom": 51
+              }
+            },
+            {
+              "size": [
+                181,
+                184
+              ],
+              "gutters": {
+                "left": 37,
+                "top": 36,
+                "right": 38,
+                "bottom": 36
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sources": [
+        "stage5_alien_projectiles_a.png",
+        "stage5_alien_projectiles_b.png"
+      ],
+      "output": "stage5_alien_projectiles_atlas.png",
+      "grid": [
+        4,
+        7
+      ],
+      "cell": [
+        256,
+        256
+      ],
+      "source_cuts": [
+        {
+          "source": "stage5_alien_projectiles_a.png",
+          "x": [
+            0,
+            313,
+            627,
+            940,
+            1254
+          ],
+          "y": [
+            0,
+            313,
+            627,
+            897,
+            1254
+          ]
+        },
+        {
+          "source": "stage5_alien_projectiles_b.png",
+          "x": [
+            0,
+            362,
+            709,
+            1051,
+            1448
+          ],
+          "y": [
+            0,
+            362,
+            706,
+            1086
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "role": "fracture",
+          "scale": 0.62799,
+          "frames": [
+            {
+              "size": [
+                38,
+                97
+              ],
+              "gutters": {
+                "left": 109,
+                "top": 79,
+                "right": 109,
+                "bottom": 80
+              }
+            },
+            {
+              "size": [
+                48,
+                134
+              ],
+              "gutters": {
+                "left": 104,
+                "top": 61,
+                "right": 104,
+                "bottom": 61
+              }
+            },
+            {
+              "size": [
+                76,
+                159
+              ],
+              "gutters": {
+                "left": 90,
+                "top": 48,
+                "right": 90,
+                "bottom": 49
+              }
+            },
+            {
+              "size": [
+                107,
+                184
+              ],
+              "gutters": {
+                "left": 74,
+                "top": 36,
+                "right": 75,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "split",
+          "scale": 0.67897,
+          "frames": [
+            {
+              "size": [
+                87,
+                82
+              ],
+              "gutters": {
+                "left": 84,
+                "top": 87,
+                "right": 85,
+                "bottom": 87
+              }
+            },
+            {
+              "size": [
+                108,
+                109
+              ],
+              "gutters": {
+                "left": 74,
+                "top": 73,
+                "right": 74,
+                "bottom": 74
+              }
+            },
+            {
+              "size": [
+                151,
+                140
+              ],
+              "gutters": {
+                "left": 52,
+                "top": 58,
+                "right": 53,
+                "bottom": 58
+              }
+            },
+            {
+              "size": [
+                184,
+                177
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 39,
+                "right": 36,
+                "bottom": 40
+              }
+            }
+          ]
+        },
+        {
+          "role": "prism",
+          "scale": 0.76667,
+          "frames": [
+            {
+              "size": [
+                48,
+                71
+              ],
+              "gutters": {
+                "left": 104,
+                "top": 92,
+                "right": 104,
+                "bottom": 93
+              }
+            },
+            {
+              "size": [
+                86,
+                108
+              ],
+              "gutters": {
+                "left": 85,
+                "top": 74,
+                "right": 85,
+                "bottom": 74
+              }
+            },
+            {
+              "size": [
+                119,
+                138
+              ],
+              "gutters": {
+                "left": 68,
+                "top": 59,
+                "right": 69,
+                "bottom": 59
+              }
+            },
+            {
+              "size": [
+                164,
+                184
+              ],
+              "gutters": {
+                "left": 46,
+                "top": 36,
+                "right": 46,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "null",
+          "scale": 0.53179,
+          "frames": [
+            {
+              "size": [
+                21,
+                95
+              ],
+              "gutters": {
+                "left": 117,
+                "top": 80,
+                "right": 118,
+                "bottom": 81
+              }
+            },
+            {
+              "size": [
+                31,
+                126
+              ],
+              "gutters": {
+                "left": 112,
+                "top": 65,
+                "right": 113,
+                "bottom": 65
+              }
+            },
+            {
+              "size": [
+                46,
+                151
+              ],
+              "gutters": {
+                "left": 105,
+                "top": 52,
+                "right": 105,
+                "bottom": 53
+              }
+            },
+            {
+              "size": [
+                71,
+                184
+              ],
+              "gutters": {
+                "left": 92,
+                "top": 36,
+                "right": 93,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "missile",
+          "scale": 0.51541,
+          "frames": [
+            {
+              "size": [
+                82,
+                39
+              ],
+              "gutters": {
+                "left": 87,
+                "top": 108,
+                "right": 87,
+                "bottom": 109
+              }
+            },
+            {
+              "size": [
+                115,
+                58
+              ],
+              "gutters": {
+                "left": 70,
+                "top": 99,
+                "right": 71,
+                "bottom": 99
+              }
+            },
+            {
+              "size": [
+                153,
+                71
+              ],
+              "gutters": {
+                "left": 51,
+                "top": 92,
+                "right": 52,
+                "bottom": 93
+              }
+            },
+            {
+              "size": [
+                184,
+                92
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 82,
+                "right": 36,
+                "bottom": 82
+              }
+            }
+          ]
+        },
+        {
+          "role": "chaos",
+          "scale": 0.5768,
+          "frames": [
+            {
+              "size": [
+                75,
+                74
+              ],
+              "gutters": {
+                "left": 90,
+                "top": 91,
+                "right": 91,
+                "bottom": 91
+              }
+            },
+            {
+              "size": [
+                125,
+                122
+              ],
+              "gutters": {
+                "left": 65,
+                "top": 67,
+                "right": 66,
+                "bottom": 67
+              }
+            },
+            {
+              "size": [
+                151,
+                147
+              ],
+              "gutters": {
+                "left": 52,
+                "top": 54,
+                "right": 53,
+                "bottom": 55
+              }
+            },
+            {
+              "size": [
+                183,
+                184
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 36,
+                "right": 37,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "halo",
+          "scale": 0.50273,
+          "frames": [
+            {
+              "size": [
+                82,
+                62
+              ],
+              "gutters": {
+                "left": 87,
+                "top": 97,
+                "right": 87,
+                "bottom": 97
+              }
+            },
+            {
+              "size": [
+                114,
+                107
+              ],
+              "gutters": {
+                "left": 71,
+                "top": 74,
+                "right": 71,
+                "bottom": 75
+              }
+            },
+            {
+              "size": [
+                146,
+                134
+              ],
+              "gutters": {
+                "left": 55,
+                "top": 61,
+                "right": 55,
+                "bottom": 61
+              }
+            },
+            {
+              "size": [
+                184,
+                166
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 45,
+                "right": 36,
+                "bottom": 45
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sources": [
+        "stage7_toxic_projectiles_a.png",
+        "stage7_toxic_projectiles_b.png"
+      ],
+      "output": "stage7_toxic_projectiles_atlas.png",
+      "grid": [
+        4,
+        6
+      ],
+      "cell": [
+        256,
+        256
+      ],
+      "source_cuts": [
+        {
+          "source": "stage7_toxic_projectiles_a.png",
+          "x": [
+            0,
+            362,
+            724,
+            1084,
+            1448
+          ],
+          "y": [
+            0,
+            362,
+            724,
+            1086
+          ]
+        },
+        {
+          "source": "stage7_toxic_projectiles_b.png",
+          "x": [
+            0,
+            358,
+            716,
+            1075,
+            1433
+          ],
+          "y": [
+            0,
+            366,
+            732,
+            1098
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "role": "acid",
+          "scale": 0.58413,
+          "frames": [
+            {
+              "size": [
+                79,
+                36
+              ],
+              "gutters": {
+                "left": 88,
+                "top": 110,
+                "right": 89,
+                "bottom": 110
+              }
+            },
+            {
+              "size": [
+                117,
+                52
+              ],
+              "gutters": {
+                "left": 69,
+                "top": 102,
+                "right": 70,
+                "bottom": 102
+              }
+            },
+            {
+              "size": [
+                148,
+                67
+              ],
+              "gutters": {
+                "left": 54,
+                "top": 94,
+                "right": 54,
+                "bottom": 95
+              }
+            },
+            {
+              "size": [
+                184,
+                93
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 81,
+                "right": 36,
+                "bottom": 82
+              }
+            }
+          ]
+        },
+        {
+          "role": "sludge",
+          "scale": 0.59935,
+          "frames": [
+            {
+              "size": [
+                62,
+                73
+              ],
+              "gutters": {
+                "left": 97,
+                "top": 91,
+                "right": 97,
+                "bottom": 92
+              }
+            },
+            {
+              "size": [
+                98,
+                115
+              ],
+              "gutters": {
+                "left": 79,
+                "top": 70,
+                "right": 79,
+                "bottom": 71
+              }
+            },
+            {
+              "size": [
+                131,
+                153
+              ],
+              "gutters": {
+                "left": 62,
+                "top": 51,
+                "right": 63,
+                "bottom": 52
+              }
+            },
+            {
+              "size": [
+                169,
+                184
+              ],
+              "gutters": {
+                "left": 43,
+                "top": 36,
+                "right": 44,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "shard",
+          "scale": 0.62162,
+          "frames": [
+            {
+              "size": [
+                85,
+                47
+              ],
+              "gutters": {
+                "left": 85,
+                "top": 104,
+                "right": 86,
+                "bottom": 105
+              }
+            },
+            {
+              "size": [
+                117,
+                75
+              ],
+              "gutters": {
+                "left": 69,
+                "top": 90,
+                "right": 70,
+                "bottom": 91
+              }
+            },
+            {
+              "size": [
+                154,
+                101
+              ],
+              "gutters": {
+                "left": 51,
+                "top": 77,
+                "right": 51,
+                "bottom": 78
+              }
+            },
+            {
+              "size": [
+                184,
+                142
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 57,
+                "right": 36,
+                "bottom": 57
+              }
+            }
+          ]
+        },
+        {
+          "role": "bio",
+          "scale": 0.54438,
+          "frames": [
+            {
+              "size": [
+                46,
+                106
+              ],
+              "gutters": {
+                "left": 105,
+                "top": 75,
+                "right": 105,
+                "bottom": 75
+              }
+            },
+            {
+              "size": [
+                64,
+                149
+              ],
+              "gutters": {
+                "left": 96,
+                "top": 53,
+                "right": 96,
+                "bottom": 54
+              }
+            },
+            {
+              "size": [
+                94,
+                173
+              ],
+              "gutters": {
+                "left": 81,
+                "top": 41,
+                "right": 81,
+                "bottom": 42
+              }
+            },
+            {
+              "size": [
+                103,
+                184
+              ],
+              "gutters": {
+                "left": 76,
+                "top": 36,
+                "right": 77,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "laser",
+          "scale": 0.56269,
+          "frames": [
+            {
+              "size": [
+                25,
+                104
+              ],
+              "gutters": {
+                "left": 115,
+                "top": 76,
+                "right": 116,
+                "bottom": 76
+              }
+            },
+            {
+              "size": [
+                44,
+                134
+              ],
+              "gutters": {
+                "left": 106,
+                "top": 61,
+                "right": 106,
+                "bottom": 61
+              }
+            },
+            {
+              "size": [
+                62,
+                162
+              ],
+              "gutters": {
+                "left": 97,
+                "top": 47,
+                "right": 97,
+                "bottom": 47
+              }
+            },
+            {
+              "size": [
+                83,
+                184
+              ],
+              "gutters": {
+                "left": 86,
+                "top": 36,
+                "right": 87,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "grenade",
+          "scale": 0.5768,
+          "frames": [
+            {
+              "size": [
+                64,
+                76
+              ],
+              "gutters": {
+                "left": 96,
+                "top": 90,
+                "right": 96,
+                "bottom": 90
+              }
+            },
+            {
+              "size": [
+                81,
+                127
+              ],
+              "gutters": {
+                "left": 87,
+                "top": 64,
+                "right": 88,
+                "bottom": 65
+              }
+            },
+            {
+              "size": [
+                107,
+                152
+              ],
+              "gutters": {
+                "left": 74,
+                "top": 52,
+                "right": 75,
+                "bottom": 52
+              }
+            },
+            {
+              "size": [
+                149,
+                184
+              ],
+              "gutters": {
+                "left": 53,
+                "top": 36,
+                "right": 54,
+                "bottom": 36
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sources": [
+        "stage8_symbiote_projectiles_a.png",
+        "stage8_symbiote_projectiles_b.png"
+      ],
+      "output": "stage8_symbiote_projectiles_atlas.png",
+      "grid": [
+        4,
+        8
+      ],
+      "cell": [
+        256,
+        256
+      ],
+      "source_cuts": [
+        {
+          "source": "stage8_symbiote_projectiles_a.png",
+          "x": [
+            0,
+            317,
+            634,
+            951,
+            1269
+          ],
+          "y": [
+            0,
+            302,
+            620,
+            903,
+            1240
+          ]
+        },
+        {
+          "source": "stage8_symbiote_projectiles_b.png",
+          "x": [
+            0,
+            313,
+            627,
+            918,
+            1254
+          ],
+          "y": [
+            0,
+            313,
+            627,
+            942,
+            1254
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "role": "needle",
+          "scale": 0.68148,
+          "frames": [
+            {
+              "size": [
+                29,
+                97
+              ],
+              "gutters": {
+                "left": 113,
+                "top": 79,
+                "right": 114,
+                "bottom": 80
+              }
+            },
+            {
+              "size": [
+                44,
+                144
+              ],
+              "gutters": {
+                "left": 106,
+                "top": 56,
+                "right": 106,
+                "bottom": 56
+              }
+            },
+            {
+              "size": [
+                74,
+                168
+              ],
+              "gutters": {
+                "left": 91,
+                "top": 44,
+                "right": 91,
+                "bottom": 44
+              }
+            },
+            {
+              "size": [
+                100,
+                184
+              ],
+              "gutters": {
+                "left": 78,
+                "top": 36,
+                "right": 78,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "rage",
+          "scale": 0.5974,
+          "frames": [
+            {
+              "size": [
+                54,
+                155
+              ],
+              "gutters": {
+                "left": 101,
+                "top": 50,
+                "right": 101,
+                "bottom": 51
+              }
+            },
+            {
+              "size": [
+                74,
+                162
+              ],
+              "gutters": {
+                "left": 91,
+                "top": 47,
+                "right": 91,
+                "bottom": 47
+              }
+            },
+            {
+              "size": [
+                107,
+                172
+              ],
+              "gutters": {
+                "left": 74,
+                "top": 42,
+                "right": 75,
+                "bottom": 42
+              }
+            },
+            {
+              "size": [
+                148,
+                184
+              ],
+              "gutters": {
+                "left": 54,
+                "top": 36,
+                "right": 54,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "slug",
+          "scale": 0.70769,
+          "frames": [
+            {
+              "size": [
+                48,
+                100
+              ],
+              "gutters": {
+                "left": 104,
+                "top": 78,
+                "right": 104,
+                "bottom": 78
+              }
+            },
+            {
+              "size": [
+                79,
+                141
+              ],
+              "gutters": {
+                "left": 88,
+                "top": 57,
+                "right": 89,
+                "bottom": 58
+              }
+            },
+            {
+              "size": [
+                93,
+                163
+              ],
+              "gutters": {
+                "left": 81,
+                "top": 46,
+                "right": 82,
+                "bottom": 47
+              }
+            },
+            {
+              "size": [
+                154,
+                184
+              ],
+              "gutters": {
+                "left": 51,
+                "top": 36,
+                "right": 51,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "missile",
+          "scale": 0.56615,
+          "frames": [
+            {
+              "size": [
+                36,
+                104
+              ],
+              "gutters": {
+                "left": 110,
+                "top": 76,
+                "right": 110,
+                "bottom": 76
+              }
+            },
+            {
+              "size": [
+                61,
+                135
+              ],
+              "gutters": {
+                "left": 97,
+                "top": 60,
+                "right": 98,
+                "bottom": 61
+              }
+            },
+            {
+              "size": [
+                93,
+                162
+              ],
+              "gutters": {
+                "left": 81,
+                "top": 47,
+                "right": 82,
+                "bottom": 47
+              }
+            },
+            {
+              "size": [
+                155,
+                184
+              ],
+              "gutters": {
+                "left": 50,
+                "top": 36,
+                "right": 51,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "pair",
+          "scale": 0.67399,
+          "frames": [
+            {
+              "size": [
+                73,
+                77
+              ],
+              "gutters": {
+                "left": 91,
+                "top": 89,
+                "right": 92,
+                "bottom": 90
+              }
+            },
+            {
+              "size": [
+                98,
+                119
+              ],
+              "gutters": {
+                "left": 79,
+                "top": 68,
+                "right": 79,
+                "bottom": 69
+              }
+            },
+            {
+              "size": [
+                138,
+                155
+              ],
+              "gutters": {
+                "left": 59,
+                "top": 50,
+                "right": 59,
+                "bottom": 51
+              }
+            },
+            {
+              "size": [
+                177,
+                184
+              ],
+              "gutters": {
+                "left": 39,
+                "top": 36,
+                "right": 40,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "blade",
+          "scale": 0.60726,
+          "frames": [
+            {
+              "size": [
+                53,
+                65
+              ],
+              "gutters": {
+                "left": 101,
+                "top": 95,
+                "right": 102,
+                "bottom": 96
+              }
+            },
+            {
+              "size": [
+                96,
+                115
+              ],
+              "gutters": {
+                "left": 80,
+                "top": 70,
+                "right": 80,
+                "bottom": 71
+              }
+            },
+            {
+              "size": [
+                131,
+                145
+              ],
+              "gutters": {
+                "left": 62,
+                "top": 55,
+                "right": 63,
+                "bottom": 56
+              }
+            },
+            {
+              "size": [
+                161,
+                184
+              ],
+              "gutters": {
+                "left": 47,
+                "top": 36,
+                "right": 48,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "rift",
+          "scale": 0.59164,
+          "frames": [
+            {
+              "size": [
+                59,
+                67
+              ],
+              "gutters": {
+                "left": 98,
+                "top": 94,
+                "right": 99,
+                "bottom": 95
+              }
+            },
+            {
+              "size": [
+                98,
+                118
+              ],
+              "gutters": {
+                "left": 79,
+                "top": 69,
+                "right": 79,
+                "bottom": 69
+              }
+            },
+            {
+              "size": [
+                143,
+                159
+              ],
+              "gutters": {
+                "left": 56,
+                "top": 48,
+                "right": 57,
+                "bottom": 49
+              }
+            },
+            {
+              "size": [
+                174,
+                184
+              ],
+              "gutters": {
+                "left": 41,
+                "top": 36,
+                "right": 41,
+                "bottom": 36
+              }
+            }
+          ]
+        },
+        {
+          "role": "parasite",
+          "scale": 0.61333,
+          "frames": [
+            {
+              "size": [
+                72,
+                75
+              ],
+              "gutters": {
+                "left": 92,
+                "top": 90,
+                "right": 92,
+                "bottom": 91
+              }
+            },
+            {
+              "size": [
+                109,
+                104
+              ],
+              "gutters": {
+                "left": 73,
+                "top": 76,
+                "right": 74,
+                "bottom": 76
+              }
+            },
+            {
+              "size": [
+                147,
+                151
+              ],
+              "gutters": {
+                "left": 54,
+                "top": 52,
+                "right": 55,
+                "bottom": 53
+              }
+            },
+            {
+              "size": [
+                184,
+                177
+              ],
+              "gutters": {
+                "left": 36,
+                "top": 39,
+                "right": 36,
+                "bottom": 40
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sources": [
+        "stage4_chain_lightning_source.png"
+      ],
+      "output": "stage4_chain_lightning_atlas.png",
+      "grid": [
+        4,
+        2
+      ],
+      "cell": [
+        256,
+        384
+      ],
+      "source_cuts": [
+        {
+          "source": "stage4_chain_lightning_source.png",
+          "x": [
+            0,
+            384,
+            768,
+            1152,
+            1536
+          ],
+          "y": [
+            0,
+            512,
+            1024
+          ]
+        }
+      ],
+      "rows": [
+        {
+          "role": "chain_a",
+          "scale": 0.74877,
+          "frames": [
+            {
+              "size": [
+                111,
+                303
+              ],
+              "gutters": {
+                "left": 72,
+                "top": 40,
+                "right": 73,
+                "bottom": 41
+              }
+            },
+            {
+              "size": [
+                100,
+                303
+              ],
+              "gutters": {
+                "left": 78,
+                "top": 40,
+                "right": 78,
+                "bottom": 41
+              }
+            },
+            {
+              "size": [
+                118,
+                304
+              ],
+              "gutters": {
+                "left": 69,
+                "top": 40,
+                "right": 69,
+                "bottom": 40
+              }
+            },
+            {
+              "size": [
+                113,
+                303
+              ],
+              "gutters": {
+                "left": 71,
+                "top": 40,
+                "right": 72,
+                "bottom": 41
+              }
+            }
+          ]
+        },
+        {
+          "role": "chain_b",
+          "scale": 0.75434,
+          "frames": [
+            {
+              "size": [
+                124,
+                302
+              ],
+              "gutters": {
+                "left": 66,
+                "top": 41,
+                "right": 66,
+                "bottom": 41
+              }
+            },
+            {
+              "size": [
+                115,
+                302
+              ],
+              "gutters": {
+                "left": 70,
+                "top": 41,
+                "right": 71,
+                "bottom": 41
+              }
+            },
+            {
+              "size": [
+                125,
+                304
+              ],
+              "gutters": {
+                "left": 65,
+                "top": 40,
+                "right": 66,
+                "bottom": 40
+              }
+            },
+            {
+              "size": [
+                131,
+                302
+              ],
+              "gutters": {
+                "left": 62,
+                "top": 41,
+                "right": 63,
+                "bottom": 41
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
