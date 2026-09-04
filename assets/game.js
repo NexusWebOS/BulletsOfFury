@@ -40178,7 +40178,7 @@ function drawS6Storm(e){
   const fi=0;
   let key='s6atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s6atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
   const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);
-  e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);
+  e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);
   drawS6DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#ffffff'),.76);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;
 }
 
@@ -40247,7 +40247,7 @@ function drawS7DamageOverlay(e,frac,w,h){if(frac>.66)return;const critical=frac<
   const fy=h*.13+Math.sin(t*13)*3;ctx.fillStyle=critical?'#baff16':'#65ff32';ctx.beginPath();ctx.moveTo(-5,fy);ctx.lineTo(Math.sin(t*9)*3,fy-15-Math.sin(t*18)*4);ctx.lineTo(6,fy);ctx.fill();ctx.restore();}
 function drawS7Toxic(e){if(typeof XART==='undefined'||!e._s7toxic)return false;const H=S7TOXIC[e._s7toxic];if(!H)return false;
   const fi=0;let key='s7atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s7atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
-  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawS7DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawS7DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 const SEWER={
   skimmer: {art:'skimmer',  hp:14, w:32, h:32, score:420,  fps:11},
@@ -40422,9 +40422,22 @@ function drawSpaceDamage(e,frac,w,h,s9){if(frac>.66)return;const critical=frac<=
   for(let i=0;i<n;i++){const q=t*(1.35+i*.12)+i*1.7,rise=(q*28+i*11)%(h*.52),x=Math.sin(q*1.8+i)*w*(.06+i*.014),y=h*.12-rise,r=(critical?7:5)+i*.7;ctx.fillStyle=critical?'rgba(18,21,30,.92)':'rgba(37,40,54,.78)';ctx.beginPath();ctx.arc(x,y,r,0,TAU);ctx.arc(x+r*.6,y-r*.3,r*.72,0,TAU);ctx.arc(x-r*.45,y-r*.08,r*.55,0,TAU);ctx.fill();}
   const fy=h*.13+Math.sin(t*14)*3;ctx.fillStyle=s9?'#48eaff':'#d248ff';ctx.beginPath();ctx.moveTo(-5,fy);ctx.lineTo(Math.sin(t*10)*3,fy-15-Math.sin(t*20)*4);ctx.lineTo(6,fy);ctx.fill();ctx.restore();}
 function drawS5Space(e){if(typeof XART==='undefined'||!e._s5space)return false;const H=S5SPACE[e._s5space];if(!H)return false;
-  const fi=e._s5Act?clamp(Math.floor(((e._s5AtkT||0)/Math.max(.01,e._s5AtkDur||1))*8),0,7):0;
+  /* ⚠ STAGE 5 WAS THE LAST HULL STILL BODY-CYCLING (drop 0904d). Mike: "jumpy animations,
+     jagged jumpy idle sprites ... fix the enemies on these levels to use a static idle frame
+     only, get proper muzzle flashes". This line ran the eight-frame ATTACK reel across the
+     wind-up (t/dur*8), so every shot made the whole airframe morph - the same defect drop
+     0813 called out for the S8 fleet, whose note already reads "hulls never mutate just to
+     imply activity". S4, S6, S7, S8 and S9 all hold frame 0 already; S5 is why the suite's
+     'generated enemy hulls hold frame 0 while idle and firing' has been red.
+
+     ⚠ THE FIRING TELL IS NOT LOST WITH IT. s5SpaceTick raises ELEVEN s5Muzzle() flashes
+     across its ten queued attacks - measured, one per release plus the split follow-up - so
+     the shot is announced by a muzzle at a measured hardpoint, which is what it should have
+     been announcing it with all along. `_s5Act`/`_s5AtkT` still drive the release timing;
+     only the PLATE stops changing. */
+  const fi=0;
   let key='s5atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s5atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
-  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawSpaceDamage(e,frac,dw,dh,false);
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawSpaceDamage(e,frac,dw,dh,false);
   if(e._repairGlow>0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=e._repairGlow/.25;ctx.strokeStyle='#70ffff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,Math.max(dw,dh)*.52,0,TAU);ctx.stroke();}if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 /* STAGE 8 — FURIOUS DEATH MEGA FLEET.  Every hull owns a distinct movement/weapon signature,
@@ -40575,7 +40588,7 @@ function drawS8Mega(e){if(typeof XART==='undefined'||!e._s8mega)return false;con
   else{fi=0;key='s8atk_'+H.art+'_0';}
   if(!XART.rdy(key)){key=H.fixed?'s8nf_'+H.art+'_idle':'s8atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
   const im=XART.get(key),dh=e.h*(H.fixed?1.0:1.62),dw=H.fixed?e.w:dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;
-  ctx.save();ctx.translate(e.x,e.y);if(e.spin&&!e._s8Roll&&!H.fixed)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=false;ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawS8Damage(e,frac,dw,dh);
+  ctx.save();ctx.translate(e.x,e.y);if(e.spin&&!e._s8Roll&&!H.fixed)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawS8Damage(e,frac,dw,dh);
   if(e._repairGlow>0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=e._repairGlow/.24;ctx.strokeStyle='#ff5b2d';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,Math.max(dw,dh)*.53,0,TAU);ctx.stroke();}
   if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.72);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
@@ -40644,7 +40657,7 @@ function s9VoidTick(e,dt){
 }
 function drawS9Void(e){if(typeof XART==='undefined'||!e._s9void)return false;const H=S9VOID[e._s9void];if(!H)return false;
   const fi=0;let key='s9atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s9atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
-  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawSpaceDamage(e,frac,dw,dh,true);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
+  const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(im,-dw/2,-dh/2,dw,dh);drawSpaceDamage(e,frac,dw,dh,true);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 /* HP cut ~45% across the orbital cast. Stage 5 fields big slow targets in an asteroid field, and
    at the old values every single one outlasted its welcome — the level read as a chore rather than
