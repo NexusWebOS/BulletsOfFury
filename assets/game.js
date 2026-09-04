@@ -2067,7 +2067,7 @@ const XART=(function(){
     X._src['stage6_blue_'+_sn]='assets/game/stage6_blue/stage6_blue_'+_sn+'.png';
   }
   const _S6_ATTACK_UNITS=['cloud_lancer','cyclone_interceptor','four_engine_bomber','lightning_mine',
-    'lightning_skimmer','nuclear_carrier','reactor_storm_bomber','storm_buoy','storm_dart',
+    'lightning_skimmer','storm_buoy','storm_dart',
     'thunder_fighter','turbine_drone','weather_probe'];
   for(const _s6u of _S6_ATTACK_UNITS) for(let _s6f=0;_s6f<8;_s6f++){
     const _s6n=String(_s6f+1).padStart(2,'0');
@@ -7092,7 +7092,6 @@ const ENEMY_SHIELD_LOADOUT=Object.freeze({
   s5station:    {stage:5,family:'bubble_volt',ratio:.32,drawScale:2.60,once:1},
   s5frigate:    {stage:5,family:'bubble_void',ratio:.36,drawScale:2.52,once:1},
   /* Stage 6: the storm fleet's electrical hulls. */
-  s6carrier:    {stage:6,family:'bubble_volt',ratio:.34,drawScale:2.58,once:1},
   s6turbine:    {stage:6,family:'bubble_volt',ratio:.28,drawScale:2.55,once:1},
   s6probe:      {stage:6,family:'bubble_ice', ratio:.26,drawScale:2.62,once:1},
   /* Stage 7: mechanical/toxic drones. Static mines and barrels stay bare. */
@@ -7309,6 +7308,78 @@ const ENRAGE_RAMP=[
   [255,205,160]    /* hottest specular */
 ];
 const ENRAGE_BANDS=ENRAGE_RAMP.length;
+/* ============================================================
+   HULL IDENTITY PALETTES (drop 0904j)
+
+   Mike: "the issue with these enemies. is they are all colored the same so its hard to tell
+   whats what. we should do some palette swaps on their base colors to be black, royal blue, teal,
+   neon blue, and even variants of yellow like neon yellow, dark yellow, rust yellow"
+
+   Same technique as the enraged swap - luminance GROUPS remapped onto an authored ramp - but the
+   identity ramps carry TEN stops rather than eight. Enraged is a state and wants to read as one
+   flat angry colour; an identity is permanent and has to stay legible as a machine, so it keeps
+   more of its shading steps. Every ramp still ends in a near-black band 0 so the 2px outline the
+   plates got in 0904h survives the recolour.
+
+   ⚠ THESE ARE FOR SILHOUETTES THAT COLLIDE. Stage 6 fields five grey-blue swept-wing jets at
+   54-68px that all read as the same aircraft in play, which is what Mike is describing. The
+   assignment below deliberately puts the most similar shapes on the most different ramps, and
+   only lets two units share a ramp when their silhouettes are plainly different (a sphere and a
+   jet can both be teal; two jets cannot).
+   ============================================================ */
+const HULL_RAMPS={
+  black:   [[10,10,12],[26,27,32],[44,46,54],[62,65,75],[82,86,98],[104,109,122],[130,136,150],[160,166,180],[196,201,214],[236,239,246]],
+  royal:   [[10,11,20],[20,26,58],[28,38,94],[36,52,132],[46,70,172],[60,94,206],[86,126,230],[124,164,244],[172,202,250],[224,236,254]],
+  teal:    [[8,14,15],[14,38,40],[18,62,64],[22,88,90],[26,116,116],[34,148,144],[52,182,174],[92,212,202],[152,234,226],[214,250,246]],
+  neonblue:[[8,12,20],[12,30,60],[14,50,104],[16,72,152],[18,96,200],[30,128,238],[64,166,255],[112,200,255],[172,226,255],[226,244,255]],
+  neonyel: [[16,14,6],[46,40,8],[80,70,10],[116,102,12],[154,138,14],[192,176,18],[224,212,30],[246,240,70],[252,250,140],[255,254,210]],
+  darkyel: [[14,12,6],[36,30,8],[58,48,10],[80,66,12],[104,86,16],[130,108,22],[158,132,30],[188,160,48],[214,190,86],[240,224,150]],
+  rustyel: [[16,10,6],[44,24,8],[74,40,10],[104,58,12],[136,78,16],[166,100,22],[196,126,34],[220,156,58],[238,190,104],[252,224,168]]
+};
+/* silhouette-aware assignment - the five look-alike jets are on five different ramps */
+const HULL_TINT={
+  s6skimmer:'black',   s6thunder:'royal',    s6bomber:'royal',
+  s6lancer:'teal',     s6probe:'teal',
+  s6mine:'neonblue',   s6turbine:'neonblue',
+  s6dart:'neonyel',    s6buoy:'darkyel',     s6cyclone:'rustyel'
+};
+const _rampCache={};
+/* the one banding pass, shared by the enraged swap and every identity palette */
+function xartRampPlate(key, ramp, cacheKey, gamma, floor){
+  if(_rampCache[cacheKey]!==undefined) return _rampCache[cacheKey];
+  if(typeof XART==='undefined' || !XART.rdy(key)) return null;
+  const im=XART.get(key), w=im.naturalWidth|0, h=im.naturalHeight|0;
+  if(!w||!h) return null;
+  const N=ramp.length;
+  let c,x,d;
+  try{
+    c=document.createElement('canvas'); c.width=w; c.height=h;
+    x=c.getContext('2d',{willReadFrequently:true});
+    x.drawImage(im,0,0);
+    d=x.getImageData(0,0,w,h);
+  }catch(err){ _rampCache[cacheKey]=null; return null; }
+  const px=d.data;
+  for(let i=0;i<px.length;i+=4){
+    if(px[i+3]===0) continue;
+    const L=0.2126*px[i]+0.7152*px[i+1]+0.0722*px[i+2];
+    let b;
+    if(L<floor) b=0;
+    else { b=1+(Math.pow((L-floor)/(255-floor), gamma)*(N-1))|0; if(b>=N) b=N-1; }
+    const r=ramp[b];
+    px[i]=r[0]; px[i+1]=r[1]; px[i+2]=r[2];
+  }
+  x.putImageData(d,0,0);
+  _rampCache[cacheKey]=c; return c;
+}
+/* the identity plate for a hull, or null when its type has no assigned palette */
+function hullPlate(e,key){
+  const name=e&&e.type?HULL_TINT[e.type]:null;
+  if(!name) return null;
+  const ramp=HULL_RAMPS[name]; if(!ramp) return null;
+  /* gentler gamma than enraged: an identity has to stay readable as a machine, not read as one
+     flat colour, so the mid-tones are not pushed as hard up the ramp */
+  return xartRampPlate(key, ramp, name+'|'+key, 0.80, ENRAGE_FLOOR);
+}
 /* ⚠ A STRAIGHT LINEAR BAND MAP CAME OUT BURNT, NOT ENRAGED. These hulls are dark - most of the
    plate sits in the bottom third of the luminance range - so dividing 0..255 into eight equal
    bands buried the whole body in the two darkest reds and the hull read as a black silhouette
@@ -7317,40 +7388,12 @@ const ENRAGE_BANDS=ENRAGE_RAMP.length;
      - everything above it is gamma-lifted across bands 1..7, so the mid-tones that make up the
        body land on the bright reds where the rage actually reads. */
 const ENRAGE_GAMMA=0.55, ENRAGE_FLOOR=16;
-const _enrageCache={};
+/* ⚠ READING PIXELS IS THE ONE THING THAT CAN FAIL HERE, and xartRampPlate owns the try/catch:
+   served from file:// the canvas is tainted and getImageData throws SecurityError, so it caches
+   null and the hull draws its normal plate rather than vanishing. A cosmetic pass must never be
+   able to blank an enemy. */
 function xartEnraged(key){
-  if(_enrageCache[key]!==undefined) return _enrageCache[key];
-  if(typeof XART==='undefined' || !XART.rdy(key)) return null;   /* not cached: it may decode later */
-  const im=XART.get(key), w=im.naturalWidth|0, h=im.naturalHeight|0;
-  if(!w||!h) return null;
-  let c,x,d;
-  try{
-    c=document.createElement('canvas'); c.width=w; c.height=h;
-    x=c.getContext('2d',{willReadFrequently:true});
-    x.drawImage(im,0,0);
-    d=x.getImageData(0,0,w,h);            /* ⚠ throws on a tainted canvas - see the catch */
-  }catch(err){
-    /* ⚠ READING PIXELS IS THE ONE THING THAT CAN FAIL HERE. Served from file://, or from another
-       origin, the canvas is tainted and getImageData throws SecurityError. Caching null means the
-       hull simply draws its normal plate instead of vanishing, and the frenzy still reads through
-       its behaviour. Never let a cosmetic pass be able to blank an enemy. */
-    _enrageCache[key]=null; return null;
-  }
-  const px=d.data;
-  for(let i=0;i<px.length;i+=4){
-    if(px[i+3]===0) continue;
-    const L=0.2126*px[i]+0.7152*px[i+1]+0.0722*px[i+2];
-    let b;
-    if(L<ENRAGE_FLOOR) b=0;
-    else {
-      b=1+(Math.pow((L-ENRAGE_FLOOR)/(255-ENRAGE_FLOOR), ENRAGE_GAMMA)*(ENRAGE_BANDS-1))|0;
-      if(b>=ENRAGE_BANDS) b=ENRAGE_BANDS-1;
-    }
-    const r=ENRAGE_RAMP[b];
-    px[i]=r[0]; px[i+1]=r[1]; px[i+2]=r[2];
-  }
-  x.putImageData(d,0,0);
-  _enrageCache[key]=c; return c;
+  return xartRampPlate(key, ENRAGE_RAMP, 'enraged|'+key, ENRAGE_GAMMA, ENRAGE_FLOOR);
 }
 const FRENZY_FIRE_MULT=1.5;          /* Mike: "attack 1.5x faster" */
 function enemyFrenzyBegin(e){
@@ -9714,7 +9757,7 @@ const SHIPS=[];
       break;
     }
     case 's6lancer': case 's6cyclone': case 's6bomber': case 's6mine':
-    case 's6skimmer': case 's6carrier': case 's6reactor': case 's6buoy':
+    case 's6skimmer': case 's6buoy':
     case 's6dart': case 's6thunder': case 's6turbine': case 's6probe': {
       const H=S6STORM[type];
       c.w=H.w; c.h=H.h; c.hp=c._maxhp=EHP(H.hp); c.score=H.score;
@@ -10857,12 +10900,12 @@ function buildStagePlan(stageNum){
     add(32.0,()=> { spawnEnemy('s6buoy',W6*.30,-82,{}); spawnEnemy('s6buoy',W6*.70,-106,{_stagger:.26}); });
     add(36.0,()=> spawnEnemy('s6turbine',W6*.50,-96,{}));
     add(40.0,()=> { spawnEnemy('s6skimmer',W6+90,VH*.20,{_side:-1}); spawnEnemy('s6dart',-70,VH*.34,{_side:1,_stagger:.20}); });
-    add(44.0,()=> spawnEnemy('s6carrier',W6*.50,-112,{}));
+    add(44.0,()=> spawnEnemy('s6bomber',W6*.50,-112,{}));
     add(48.0,()=> { spawnEnemy('s6mine',W6*.25,-82,{}); spawnEnemy('s6probe',W6*.75,-104,{_stagger:.32}); });
     add(22.0,()=> spawnEnemy('xelite_glacierlance',W6*.50,-72,{}));   /* Vol.1 aces (0903): Mike's favourite leads */
     add(38.0,()=> spawnEnemy('xelite_tempest',W6*.30,-70,{}));
     add(38.0,()=> spawnEnemy('xelite_solarwarden',W6*.70,-70,{}));
-    add(52.0,()=> spawnEnemy('s6reactor',W6*.50,-124,{}));
+    add(52.0,()=> spawnEnemy('s6turbine',W6*.50,-124,{}));
     add(curStage.length-4,()=> { spawnEnemy('s6cyclone',W6*.18,-92,{_side:1}); spawnEnemy('s6turbine',W6*.50,-126,{_stagger:.22}); spawnEnemy('s6thunder',W6*.82,-98,{_stagger:.38}); });
     return _planSorted(P);
   }
@@ -12007,7 +12050,7 @@ function shipBossInit(b, kind){
     }
     if(kind==='blacksteel'){
       for(let i=0;i<8;i++){
-        XART.rdy('s6atk_lightning_mine_'+i);XART.rdy('s6atk_reactor_storm_bomber_'+i);
+        XART.rdy('s6atk_lightning_mine_'+i);
         XART.rdy('s6mb_cyclonemuzzle_'+i);
       }
     }
@@ -40297,8 +40340,10 @@ const S6STORM={
   s6bomber: {art:'four_engine_bomber',    hp:38,w:72,h:58,score:1420},
   s6mine:   {art:'lightning_mine',        hp:20,w:54,h:54,score:900},
   s6skimmer:{art:'lightning_skimmer',     hp:28,w:64,h:68,score:1180},
-  s6carrier:{art:'nuclear_carrier',       hp:64,w:76,h:66,score:2100},
-  s6reactor:{art:'reactor_storm_bomber',  hp:96,w:88,h:78,score:3200},
+  /* ⚠ s6carrier/'nuclear_carrier' and s6reactor/'reactor_storm_bomber' REMOVED 0904j - Mike:
+     "these 2 get deleted right away." Their waves field s6bomber and s6turbine. NOTE this takes
+     the stage's two heaviest hulls (64hp and 96hp) with it, so the toughest stage-6 fodder is now
+     s6bomber at 38hp - flagged to Mike rather than silently rebalanced. */
   s6buoy:   {art:'storm_buoy',            hp:24,w:46,h:58,score:1040},
   s6dart:   {art:'storm_dart',            hp:16,w:58,h:54,score:760},
   s6thunder:{art:'thunder_fighter',       hp:26,w:58,h:66,score:1120},
@@ -40361,19 +40406,6 @@ function s6StormTick(e,dt){
     if(!e._s6Act&&(e._fcd=(e._fcd==null?.38:e._fcd)-dt)<=0&&e.x>28&&e.x<W-28){e._fcd=1.1/DIFF.eFire;
       queue(()=>{for(const o of [-.16,.16]){const p=s6Hardpoint(e,o,.30);fire(p,Math.PI/2-o*e._dir,2.3,'s6orb',{silent:o>0});stage6Muzzle(e,o,.30,.70,.12);}},.58,.27);}
     if(e.x<-105||e.x>W+105)e.dead=true;
-  }else if(K==='s6carrier'){
-    // NUCLEAR CARRIER: opens both racks, launches a missile bracket, then deploys two storm darts.
-    if(e.y<VH*.19)e.y+=42*dt;else e.x+=Math.sin(e._s6t*.48)*20*dt;
-    if(e._salvos==null)e._salvos=0;
-    if(!e._s6Act&&e._salvos<3&&(e._fcd=(e._fcd==null?.95:e._fcd)-dt)<=0){e._fcd=2.5;e._salvos++;
-      queue(()=>{for(const side of [-1,1]){const p=s6Hardpoint(e,side*.34,.19),a=aim(p);fire(p,a+side*.15,1.95,'s6missile',{silent:side>0,accel:1.35,max:5.0});stage6Muzzle(e,side*.34,.19,.92,.17);}
-        if(typeof spawnEnemy==='function'){spawnEnemy('s6dart',clamp(e.x-34,25,W-25),e.y+18,{inPlace:1,_side:-1});spawnEnemy('s6dart',clamp(e.x+34,25,W-25),e.y+18,{inPlace:1,_side:1});}},.88,.47);}
-  }else if(K==='s6reactor'){
-    // REACTOR STORM BOMBER: elite hull alternates a six-bolt reactor fan and gravity-like orb wall.
-    if(e.y<VH*.18)e.y+=38*dt;else{e.y=VH*.18+Math.sin(e._s6t*.8)*6;e.x+=Math.sin(e._s6t*.40)*16*dt;}
-    if(!e._s6Act&&(e._fcd=(e._fcd==null?1.25:e._fcd)-dt)<=0){e._fcd=rnd(2.5,3.1)/DIFF.eFire;e._mode=(e._mode||0)+1;
-      queue(()=>{if(e._mode%2){for(const side of [-1,1]){const p=s6Hardpoint(e,side*.32,.28);for(const o of [.13,.28,.43])fire(p,Math.PI/2+side*o,2.75,'s6bolt',{silent:true});stage6Muzzle(e,side*.32,.28,1.0,.18);}}
-        else{for(let i=0;i<7;i++){if(i===3)continue;const p=s6Hardpoint(e,0,.36);fire({x:W*(i+.5)/7,y:p.y},Math.PI/2,1.65,'s6orb',{silent:i>0,accel:.32,max:2.4});}stage6Muzzle(e,0,.36,1.15,.19);shake=Math.max(shake,4);}},.88,.48);}
   }else if(K==='s6buoy'){
     // STORM BUOY: holds position and alternates six fixed lightning spokes around its energized core.
     if(e.y<VH*.23)e.y+=58*dt;else e.y=VH*.23+Math.sin(e._s6t*1.6)*8;
@@ -40397,7 +40429,30 @@ function s6StormTick(e,dt){
       queue(()=>{for(const side of [-1,1]){const p=s6Hardpoint(e,side*.24,.28);for(const o of [.18,.36,.54])fire(p,Math.PI/2+side*o,2.55,'s6wind',{silent:true,curve:side*e._turn*.45});stage6Muzzle(e,side*.24,.28,.88,.16);}},.78,.41);}
   }else if(K==='s6probe'){
     // WEATHER PROBE: long forecast pulse, then three pressure cells descend on fixed warned lanes.
-    if(e.y<VH*.20)e.y+=60*dt;else e.x+=Math.sin(e._s6t*.46)*26*dt;
+    /* ⚠ IT USED TO SWAY, NOT ORBIT. The old line was `e.x+=Math.sin(e._s6t*.46)*26*dt` - a
+       horizontal wobble with no vertical component at all, which reads as a drifting buoy. Mike:
+       "the probes should orbit/gravitate in a circle like a true probe." It now parks at its
+       station and walks a real circle around that anchor: equal radius on both axes so it is a
+       circle rather than the ellipse a smaller y-term would give, with the anchor drifting very
+       slowly sideways so two probes on screen do not trace the same ring in lockstep. */
+    /* ⚠ THE ORBIT HAS TO LATCH. Checking `e.y<VH*.20` every frame re-armed the descend branch the
+       moment the circle carried the probe back ABOVE its station line - which is half of every
+       lap - so the anchor was re-taken mid-orbit and the ring walked sideways: measured 233px
+       across against 83 down. `_orbOn` latches once, and the station test never runs again. */
+    if(!e._orbOn && e.y<VH*.20){ e.y+=60*dt; e._orbCX=e.x; }
+    else {
+      if(!e._orbOn){ e._orbOn=1; e._orbCX=e.x; e._orbCY=e.y; e._orbT=0; }
+      e._orbT=(e._orbT||0)+dt;
+      /* ⚠ THE ANCHOR DRIFT HAS TO BE BOUNDED, NOT INTEGRATED. Adding `sin(t)*7*dt` to the centre
+         every frame accumulates: measured, it stretched the path to 151px across and 83 down, so
+         the "circle" was an ellipse twice as wide as it was tall. This offsets the anchor by a
+         bounded sine instead, so the ring stays a ring and still slides enough that two probes
+         on screen do not trace the same circle in lockstep. */
+      const cx=e._orbCX+Math.sin((e._s6t||0)*0.21)*10;
+      const R=42, wv=1.15;
+      e.x=cx+Math.cos(e._orbT*wv)*R;
+      e.y=e._orbCY+Math.sin(e._orbT*wv)*R;
+    }
     if(!e._s6Act&&(e._fcd=(e._fcd==null?1.2:e._fcd)-dt)<=0){e._fcd=rnd(2.8,3.5)/DIFF.eFire;
       queue(()=>{const px=clamp(player.x,70,W-70);for(const o of [-70,0,70])fire({x:clamp(px+o,30,W-30),y:e.y+22},Math.PI/2,1.55,'s6seeker',{silent:o!==-70,accel:.62,max:3.8});stage6Muzzle(e,0,.30,1.0,.18);},.94,.55);}
   }
@@ -40416,7 +40471,9 @@ function drawS6Storm(e){
   let key='s6atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s6atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
   const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);
   e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. *//* FRENZY RED (drop 0904e). Mike: "frenzy enemies become palette swap red based versions of themselves." No new frames: xartPalette composites with 'color', which swaps hue and saturation and KEEPS luminance, so every panel line and rivet in the plate survives the recolour. Cached per key, so this costs one canvas per hull type, once. */
-  {const _fr=frenzyPlate(e,key); ctx.drawImage(_fr||im,-dw/2,-dh/2,dw,dh);}
+  /* enraged wins over the identity palette: a frenzied hull must read as enraged, not as its
+     team colour, so the state overrides the identity rather than blending with it */
+  {const _pl=frenzyPlate(e,key)||hullPlate(e,key); ctx.drawImage(_pl||im,-dw/2,-dh/2,dw,dh);}
   drawS6DamageOverlay(e,frac,dw,dh);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#ffffff'),.76);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;
 }
 

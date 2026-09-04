@@ -12804,8 +12804,11 @@ console.log("=== 268. Stage-4 native Blacksite highway fleet ===");
 // ===== 269. STAGE-6 NATIVE STORM FLEET + DOOMSDAY MEGA BOSS =====
 console.log("=== 269. Stage-6 storm fleet and Doomsday mega boss ===");
 {
-  var _fleet269=['s6lancer','s6cyclone','s6bomber','s6mine','s6skimmer','s6carrier',
-    's6reactor','s6buoy','s6dart','s6thunder','s6turbine','s6probe'];
+  /* 0904j: s6carrier and s6reactor removed at Mike's instruction ("these 2 get deleted right
+     away"). ⚠ _shots266.carrier is STAGE 2 and _shots273.carrier is STAGE 8 - different units,
+     both untouched. */
+  var _fleet269=['s6lancer','s6cyclone','s6bomber','s6mine','s6skimmer',
+    's6buoy','s6dart','s6thunder','s6turbine','s6probe'];
   var _plan269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];var p=buildStagePlan(6),seen={};"
     +"for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
   ok(_fleet269.every(function(k){return _plan269.indexOf(k)>=0;}),
@@ -12821,19 +12824,18 @@ console.log("=== 269. Stage-6 storm fleet and Doomsday mega boss ===");
   var _shots269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];stagePlan=[];waveIdx=0;player.x=260;player.y=470;"
     +"function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S6STORM[k],e={_s6storm:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||90)&&!e.dead;i++)s6StormTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length,phase:e._phase||null};}"
     +"return JSON.stringify({lancer:tick('s6lancer'),cyclone:tick('s6cyclone',function(e){e._phase='tell';e._tell=.03;},50),bomber:tick('s6bomber',function(e){e._dir=1;}),"
-    +"mine:tick('s6mine'),skimmer:tick('s6skimmer',function(e){e._dir=1;}),carrier:tick('s6carrier'),reactor:tick('s6reactor'),buoy:tick('s6buoy'),"
+    +"mine:tick('s6mine'),skimmer:tick('s6skimmer',function(e){e._dir=1;}),buoy:tick('s6buoy'),"
     +"dart:tick('s6dart',function(e){e._dir=1;}),thunder:tick('s6thunder'),turbine:tick('s6turbine'),probe:tick('s6probe')});})()",ctxv));
   ok(_shots269.lancer.k.length===3&&_shots269.lancer.k.every(function(k){return k==='s6wind';})&&
      _shots269.mine.k.length===9&&_shots269.mine.k.every(function(k){return k==='s6bolt';}),
      'Cloud Lancer fan and Lightning Mine safe-gate crown remain distinct patterns');
   ok(_shots269.cyclone.k.length===0&&_shots269.cyclone.phase==='charge',
      'Cyclone Interceptor is a projectile-free, telegraphed committed rammer');
-  ok(_shots269.bomber.k.every(function(k){return k==='s6orb';})&&_shots269.skimmer.k.every(function(k){return k==='s6orb';})&&
-     _shots269.carrier.k.filter(function(k){return k==='s6missile';}).length===2,
-     'bomber corridor, skimmer crosswind and carrier missile bracket keep separate flight questions');
-  ok(_shots269.reactor.k.length>=6&&_shots269.buoy.k.length===6&&
+  ok(_shots269.bomber.k.every(function(k){return k==='s6orb';})&&_shots269.skimmer.k.every(function(k){return k==='s6orb';}),
+     'bomber corridor and skimmer crosswind keep separate flight questions');
+  ok(_shots269.buoy.k.length===6&&
      _shots269.dart.k.length===4&&_shots269.dart.k.every(function(k){return k==='s6tracer';}),
-     'reactor wall, rotating buoy spokes and dart tracer stitch retain their own cadence');
+     'rotating buoy spokes and dart tracer stitch retain their own cadence');
   ok(_shots269.thunder.k.length===3&&_shots269.turbine.k.length===6&&
      _shots269.probe.k.length===3&&_shots269.probe.k.every(function(k){return k==='s6seeker';}),
      'Thunder lanes, turbine helix and three warned forecast columns complete the fleet identities');
