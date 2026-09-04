@@ -599,21 +599,24 @@ function outboundUpdate(dt){
        rather than as four copies of the same line. */
     o._elapsed=(o._elapsed||0)+dt;
     o.scroll += s45Speed(o)*dt;
+    /* ⚠ NOTHING ON THIS LEG FADES (drop 0903w). Mike: "theres no fading anymore with the stage 5
+       transition." 0903s had the sky rise over the highway on an alpha ramp and the space plate
+       arrive on another one - which is a cross-fade however it is timed, and a cross-fade is the
+       thing he ruled out. Each backdrop now ATTACHES: it is a band of the same moving strip, and
+       the boundary between two bands is a horizon line that sweeps DOWN the screen at the scroll
+       speed. The change of place is travel, not opacity. `_skyAt` / `_spaceAt` are the scroll
+       readings at which each band was attached; the draw turns them into that boundary. */
     if(o.phase==='climb'){
-      if(o.t>=L45_CLIMB){ o.phase='sky'; o.t=0; }          // the highway still running underneath
+      if(o.t>=L45_CLIMB){ o.phase='sky'; o.t=0; o._skyAt=o.scroll; }
     } else if(o.phase==='sky'){
-      o.sky=clamp(o.t/0.9,0,1);                            // the sky rises over the stage plate
-      if(o.t>=L45_SKY){ o.phase='swirl'; o.t=0; }
+      if(o.t>=L45_SKY){ o.phase='swirl'; o.t=0; o._spaceAt=o.scroll; }
     } else if(o.phase==='swirl'){
-      o.sky=1;
-      /* ONE curve drives the vortex AND the space tile's opacity: space arrives BECAUSE the
-         swirl is taking hold, not after it finishes. */
+      /* the vortex takes hold while space is sweeping in - the swirl IS the handover, and the
+         space band is already arriving under it rather than after it */
       const q=clamp(o.t/L45_SWIRL,0,1);
       o.swirl=q*q*(3-2*q);
-      o.space=o.swirl;
       if(o.t>=L45_SWIRL){ o.phase='space'; o.t=0; }
     } else if(o.phase==='space'){
-      o.sky=1; o.space=1;
       /* the vortex eases out while the space tile keeps looping - the sequence completes INTO
          the level's own backdrop, already moving at the speed the stage continues at */
       o.swirl=1-clamp(o.t/(L45_SPACE*0.8),0,1);
@@ -855,30 +858,40 @@ function s45Sky(scroll, rate, alpha){
   ctx.restore();
   return true;
 }
-/* Three tiled layers, all off the same scroll. Nothing is cleared to a flat colour mid-leg and
-   nothing holds still. */
+/* THREE BANDS OF ONE MOVING STRIP - NOT THREE LAYERS WITH OPACITIES (drop 0903w)
+
+   Bottom to top the strip runs: the stage they cleared, the stage-6 blue sky, then stage 5's own
+   space loop. Each band is drawn CLIPPED to its own slice of the screen, and the boundaries
+   between them sweep down at the scroll speed, so a backdrop arrives by travelling into frame.
+   No globalAlpha is set anywhere on this path - that is the point.
+
+   A boundary at screen y means "everything above this is the newer band". `scroll - _skyAt` is
+   how far the sky's leading edge has travelled since it attached, which IS its boundary's y. */
 function outboundDrawSkySpace(o){
   const cfg=(typeof _levelCfg==='function')?_levelCfg():null;
   const mk=(cfg&&cfg.master)||'bg_stage04_master';
-  const sky=clamp(o.sky||0,0,1), space=clamp(o.space||0,0,1);
-  /* 1. the stage they cleared, still running underneath until the sky is fully over it - the
-     ground does not stop, it is covered. */
-  if(sky<1) s45Tile(mk, o.scroll, 1.0, 1-sky*0.85);
-  /* 2. THE STAGE-6 BLUE SKY, through the engine's own stage-6 transition drawer. See s45Sky.
-
-     ⚠ NOT `nl6sky_stage06_sky_scroll_640x960` / `nsky6_sky` (both are the fx_weather_0 atlas
-     with no cell rect - tiling them stretches a corner of the weather sheet across the screen)
-     and NOT `bg_stage06_master` (a different plate that runs a whole day cycle). Stage 6's sky
-     is `stage6_blue_master`. Slower than the foreground so the climb reads as distance. */
-  if(sky>0) s45Sky(o.scroll, 0.45, sky);
-  /* 3. stage 5's OWN loop plate, attached during the swirl and left looping. Using the level's
-     real backdrop rather than a stand-in is the point: when the leg ends there is nothing to
-     swap - the player is already looking at stage 5, moving. */
-  if(space>0) s45Tile('bg_stage05_loop', o.scroll, 0.80, space);
+  const yaSky   = (o._skyAt   ==null) ? 0 : clamp(o.scroll-o._skyAt,   0, VH);   // sky over stage 4
+  const yaSpace = (o._spaceAt ==null) ? 0 : clamp(o.scroll-o._spaceAt, 0, VH);   // space over sky
+  const band=function(y0,y1,fn){
+    if(y1-y0<=0.5) return;
+    ctx.save(); ctx.beginPath(); ctx.rect(0,y0,VW,y1-y0); ctx.clip(); fn(); ctx.restore();
+  };
+  /* 1. the stage they cleared, below the sky's leading edge, still running */
+  band(yaSky, VH, function(){ s45Tile(mk, o.scroll, 1.0, 1); });
+  /* 2. THE STAGE-6 BLUE SKY between the two edges. See s45Sky.
+     ⚠ NOT `nl6sky_stage06_sky_scroll_640x960` / `nsky6_sky` (the fx_weather_0 atlas, no cell
+     rect - tiling them stretches a corner of the weather sheet across the screen) and NOT
+     `bg_stage06_master` (a different plate, a whole day cycle). It is `stage6_blue_master`. */
+  band(yaSpace, yaSky, function(){ s45Sky(o.scroll, 0.45, 1); });
+  /* 3. stage 5's OWN loop plate above space's leading edge, looping. Using the level's real
+     backdrop is the point: when the leg ends there is nothing to swap - the player is already
+     looking at stage 5, moving. */
+  band(0, yaSpace, function(){ s45Tile('bg_stage05_loop', o.scroll, 0.80, 1); });
   /* the ship, climbing out of frame during the first beat only */
   if(o.phase==='climb' && o.py>-80 && typeof drawShipSprite==='function')
     drawShipSprite(outboundScreenX(o), o.py, 38, '');
-  /* the vortex, over everything, on the same curve as the space tile */
+  /* the vortex over everything. This is an EFFECT, not a fade - it is the swirl Mike asked for,
+     and it is the only thing on this leg with a ramp. */
   if((o.swirl||0)>0.01 && typeof warpFxDraw==='function')
     warpFxDraw(clamp(o.swirl,0,1)*0.92, o.t*1.6, false);
 }
@@ -50644,7 +50657,20 @@ function stage5SpaceAscentProgress(){
 function stage5SkyToSpaceDraw(progress,scroll){
   const p=clamp(progress,0,1);
   stage6TransitionBackgroundDraw(scroll||0);
-  if(p>0){ctx.save();ctx.globalAlpha=p*p*(3-2*p);ctx.fillStyle='#020610';ctx.fillRect(0,0,VW,VH);
+  /* ⚠ SPACE ATTACHES, IT DOES NOT FADE UP (drop 0903x). Mike: "theres no fading anymore with the
+     stage 5 transition." This was globalAlpha=p*p*(3-2p) over a black fill and the space plate -
+     a cross-fade, which is exactly what he ruled out, and it is the LAUNCH-side twin of the
+     outbound leg 0903w already converted. Space is now a band whose leading edge sweeps DOWN the
+     screen at the scroll speed, the same way the outbound does it, so the change of place is
+     travel. The attach scroll is latched the first frame p goes positive and cleared when the
+     sequence resets, so the edge starts at the top of the screen rather than wherever the
+     ascent's progress happened to be. */
+  if(p<=0) stage5SkyToSpaceDraw._at=null;
+  else if(stage5SkyToSpaceDraw._at==null) stage5SkyToSpaceDraw._at=(scroll||0);
+  const yb=(stage5SkyToSpaceDraw._at==null)?0:clamp((scroll||0)-stage5SkyToSpaceDraw._at,0,VH);
+  if(yb>0.5){
+    ctx.save(); ctx.beginPath(); ctx.rect(0,0,VW,yb); ctx.clip();
+    ctx.fillStyle='#020610'; ctx.fillRect(0,0,VW,yb);
     if(typeof XART!=='undefined'&&XART.rdy('bg_stage05_loop')){
       const im=XART.get('bg_stage05_loop'),iw=Math.max(1,im.naturalWidth||680),ih=Math.max(1,im.naturalHeight||VH);
       const sc=VW/iw,dh=Math.max(VH,ih*sc),off=((((scroll||0)*0.42)%dh)+dh)%dh;
@@ -50759,7 +50785,15 @@ function drawLaunch(dt){
   } else if(ph==='load'){
     /* The level remains visibly alive at cruise speed while the bounded decoder finishes.  No
        stage clock, enemy AI or player input advances beneath this gate. */
-    drawLaunch._pt+=dt;drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;
+    drawLaunch._pt+=dt;
+    /* ⚠ STAGE 6 DOES NOT SLOW DOWN, INCLUDING HERE (drop 0903x). Mike: "with stage 6, NO SLOWING
+       DOWN IN THE TRANSITION. the stage is meant to be high speed sky scrolling."
+       The `run` phase already skips brake and settle for stage 6, and the countdown holds
+       STAGE6_SKY_CRUISE - but THIS gate did not, and it is the one that runs while the stage is
+       still decoding. A slow load meant the high-speed sky dropped to a 24px/s crawl, waited,
+       and then sped back up for the numerals. On a warm machine you never see it; on a cold one
+       it is the whole transition. */
+    drawLaunch._spd=_s6?STAGE6_SKY_CRUISE:LAUNCH_COUNTDOWN_SCROLL;
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0?Math.min(_rng,mapScroll+drawLaunch._spd*dt):mapScroll+drawLaunch._spd*dt;
     if(typeof stageLoadReady!=='function'||stageLoadReady(run.stage)){drawLaunch._phase='cd';drawLaunch._pt=0;}
@@ -51120,6 +51154,79 @@ function bg6SkyBaseDraw(img, key, sy, winH, drawW, dstY){
 }
 /* when the city begins to show and when it is fully there, as fractions of the stage clock */
 const BG6_CITY_FROM=0.30, BG6_CITY_TO=0.80, BG6_CITY_MAX=0.92;
+/* ============================================================
+   THE SKY IS FULL OF DRIFTING CLOUD (drop 0903x)
+
+   Mike: "layer up alot of clouds in the sky all over the place that scroll left or right and are
+   translucent, especially as we begin to see the city."
+
+   `stage6_blue_master` carries a handful of clouds baked into the plate, and they scroll straight
+   down with it, so the sky reads as one flat sheet moving. These are a separate parallax set: four
+   layers, each with its own vertical rate, its own HORIZONTAL drift direction and speed, its own
+   scale and its own opacity. Nearer layers are bigger, faster, more opaque and drift further; the
+   two directions crossing is what stops it reading as a single sheet.
+
+   ⚠ PLACEMENT IS HASHED, NOT RANDOM. Math.random() here would reposition every cloud every frame -
+   the sky would boil. Each slot's offset comes from a hash of its own (layer,row,col), so a cloud
+   sits still relative to its layer and only the layer moves. Same reason phoenix_boom hashes its
+   pick rather than rolling it.
+
+   ⚠ AND THE FRAME IS HASHED PER SLOT TOO. Driving the 6-frame reel off a shared clock makes every
+   cloud in the sky animate in lockstep, which is instantly readable as a repeat.
+
+   DENSITY RISES INTO THE CITY. `bg6Phase()` is the stage clock and BG6_CITY_FROM/TO is the window
+   the neon city fades up in; the clouds thicken across the same window, so the city arrives
+   through weather rather than appearing in clear air.
+   ============================================================ */
+const BG6_CLOUD_LAYERS=[
+  /* fam, scale, base alpha, vertical parallax, horizontal drift px/s, rows, cols */
+  {fam:'nl6c_low_rolling_bank_', sc:1.45, a:0.22, vy:0.42, vx:-18, rows:2, cols:2},
+  {fam:'nl6c_rain_cloud_',       sc:1.05, a:0.28, vy:0.68, vx:+30, rows:3, cols:2},
+  {fam:'nl6c_low_rolling_bank_', sc:0.78, a:0.34, vy:1.00, vx:-46, rows:4, cols:3},
+  {fam:'nl6c_heavy_rain_cloud_', sc:0.58, a:0.40, vy:1.38, vx:+62, rows:5, cols:3},
+];
+const BG6_CLOUD_FRAMES=6;
+function _bg6Hash(a,b,c){
+  let h=2166136261;
+  h^=a; h=Math.imul(h,16777619)>>>0;
+  h^=b; h=Math.imul(h,16777619)>>>0;
+  h^=c; h=Math.imul(h,16777619)>>>0;
+  return (h>>>8)/16777216;                 // 0..1, and the LOW bits are the ones that vary
+}
+function bg6CloudsDraw(scroll, drawW, winH, dstY){
+  if(typeof XART==='undefined') return;
+  const p=(typeof bg6Phase==='function')?bg6Phase():0;
+  const k=clamp((p-BG6_CITY_FROM)/Math.max(0.001,(BG6_CITY_TO-BG6_CITY_FROM)),0,1);
+  const thick=0.55+0.45*(k*k*(3-2*k));     // thicker into the city window, never absent before it
+  const t=(typeof performance!=='undefined'?performance.now():Date.now())/1000;
+  for(let li=0; li<BG6_CLOUD_LAYERS.length; li++){
+    const L=BG6_CLOUD_LAYERS[li];
+    const probe=L.fam+'0';
+    if(!XART.rdy(probe)) continue;         // rdy() also STARTS the decode; skip until it lands
+    const im0=XART.get(probe);
+    const cw=(im0.naturalWidth||128)*L.sc, ch=(im0.naturalHeight||96)*L.sc;
+    const stepX=drawW/L.cols, stepY=(winH+ch*1.4)/L.rows;
+    ctx.save();
+    ctx.globalAlpha=clamp(L.a*thick,0,1);
+    for(let r=0;r<L.rows;r++) for(let c=0;c<L.cols;c++){
+      const jx=_bg6Hash(li,r,c), jy=_bg6Hash(li+64,r,c), jf=_bg6Hash(li+128,r,c);
+      /* vertical: carried by the sky's own scroll. horizontal: its own drift. Both wrap on the
+         layer's full span so a cloud leaving one edge re-enters the other instead of the row
+         emptying out. */
+      const spanY=stepY*L.rows, spanX=stepX*L.cols;
+      const y=(((scroll*L.vy + (jy+r)*stepY) % spanY) + spanY) % spanY - ch;
+      const x=((((jx+c)*stepX + t*L.vx) % spanX) + spanX) % spanX - cw*0.5;
+      const f=Math.floor(t*2.2 + jf*BG6_CLOUD_FRAMES) % BG6_CLOUD_FRAMES;
+      const key=L.fam+f;
+      const im=XART.rdy(key)?XART.get(key):im0;
+      ctx.drawImage(im, x, dstY+y, cw, ch);
+      /* one wrap copy on each axis so nothing pops in at an edge */
+      if(x+cw>drawW) ctx.drawImage(im, x-spanX, dstY+y, cw, ch);
+      if(y+ch>winH)  ctx.drawImage(im, x, dstY+y-spanY, cw, ch);
+    }
+    ctx.restore();
+  }
+}
 function bg6LoopDraw(img,key,scroll,drawW,winH,dstY){
   const H=img.naturalHeight||img.height||1;
   let sy=H-(((scroll%H)+H)%H)-winH;sy=((sy%H)+H)%H;
@@ -51127,6 +51234,7 @@ function bg6LoopDraw(img,key,scroll,drawW,winH,dstY){
   const h1=Math.min(winH,H-sy);
   bg6SkyBaseDraw(img,key,sy,h1,drawW,dstY);
   if(h1<winH)bg6SkyBaseDraw(img,key,0,winH-h1,drawW,dstY+h1);
+
   /* THE DESCENT (CF_BoFExpansion-Vol.1, Mike 0903): 'use the neon city for stage 6 as we scale
      down and start descending in altitude'. The 20,000ft sky stays the base; the 680x1024 neon
      city strip (loops top-to-bottom by design) rises through it as the stage clock runs, so the
@@ -51149,6 +51257,11 @@ function bg6LoopDraw(img,key,scroll,drawW,winH,dstY){
       }
     }
   }catch(_c6){}
+  /* ⚠ THE CLOUDS GO IN FRONT OF THE CITY, NOT BEHIND IT (drop 0903x). Drawn before the city they
+     were 92% hidden the moment it faded up - the exact window Mike asked for them to be strongest
+     in ("especially as we begin to see the city"). You are flying ABOVE the city, so cloud passes
+     between you and it; in front is both what he asked for and what the altitude implies. */
+  if(typeof bg6CloudsDraw==='function') bg6CloudsDraw(scroll,drawW,winH,dstY);
 }
 function bg6RainDraw(wet,W,top,hgt){
   if(wet<=0)return;
