@@ -1939,6 +1939,15 @@ const XART=(function(){
   /* the circular enemy shield shell (SpriteCook, 0904e) - ONE plate, recoloured per family */
   X._src['nes_bubble_0']='assets/game/enemy_shields/nes_bubble_0.png';
   X._src['nes_bubble_volt_0']='assets/game/enemy_shields/nes_bubble_volt_0.png';
+  /* BLACKSTEEL RAPTOR, rebuilt at 2x with per-wing damage states (SpriteCook, 0904k). All four
+     plates were aligned to the SAME 363x488 footprint inside a 512 canvas before import - the
+     generator crops each edit to its own bbox, so unaligned states would make the jet JUMP the
+     instant a wing broke. */
+  X._src['nsb_rap_intact']='assets/game/stage6_raptor/nsb_rap_intact.png';
+  X._src['nsb_rap_wl']='assets/game/stage6_raptor/nsb_rap_wl.png';
+  X._src['nsb_rap_wr']='assets/game/stage6_raptor/nsb_rap_wr.png';
+  X._src['nsb_rap_crit']='assets/game/stage6_raptor/nsb_rap_crit.png';
+  X._src['nsb_bossfield_0']='assets/game/enemy_shields/nsb_bossfield_0.png';
   X._src['nes_bubble_fire_0']='assets/game/enemy_shields/nes_bubble_fire_0.png';
   X._src['nes_bubble_ice_0']='assets/game/enemy_shields/nes_bubble_ice_0.png';
   X._src['nes_bubble_void_0']='assets/game/enemy_shields/nes_bubble_void_0.png';
@@ -11762,8 +11771,12 @@ const SHIPBOSS = {
      from its waves to the boss. Retiring a unit in 0810m left the table still pointing at it.
      nsb_blacksteel was built and registered in 0810s and never assigned to anything, so the
      Blacksteel Raptor takes the slot rather than inventing art. */
-  blacksteel:    {key:'nsb_blacksteel',     name:'BLACKSTEEL RAPTOR',   w:170,h:170, hp:245, pat:'lance', cd:1.15, mini:true, proj:'obsid',
+  /* ⚠ 2x SIZE AND A NEW PLATE (drop 0904k). Mike: "the raptor to be 2x as large and have
+     sectional damage frames for each wing." 170 -> 340. The mounts are FRACTIONS of the hull box,
+     so they scale with it and did not need touching; only the pixel size changed. */
+  blacksteel:    {key:'nsb_rap_intact',     name:'BLACKSTEEL RAPTOR',   w:340,h:340, hp:245, pat:'lance', cd:1.15, mini:true, proj:'obsid',
                   mounts:{L:[-0.25,0.12],C:[0,0.43],R:[0.25,0.12]},
+                  dmg:['nsb_rap_wl','nsb_rap_wr','nsb_rap_crit'],
                   pats:['stormbolts','lance']},
   /* ============================================================
      THE JUNGLE CRUISER TAKES STAGE 1 (drop 0812e)
@@ -12304,6 +12317,16 @@ function shipBossVisualPose(b){
     x+=wall?0:wave*4; y-=Math.sin((1-p)*Math.PI)*7; sx+=0.035*p; sy+=0.035*p;
   }
   if((b._sbaHitT||0)>0){ const h=b._sbaHitT/0.12; x+=(wall?0:Math.sin(h*Math.PI*5)*2.5); }
+  /* ⚠ AEROBATICS DRIVE SCALE THROUGH ZERO ON PURPOSE (drop 0904k). A top-down barrel roll reads
+     by the airframe narrowing to its edge and opening out the other side, so scale.x runs a full
+     cosine from 1 to -1 and back; the one frame at zero width IS the edge-on moment. A somersault
+     does the same on scale.y and pitches the nose over with a vertical lift. Anything less - a
+     wobble, a flip - reads as a sprite trick rather than a manoeuvre. */
+  if(b._rapMan){
+    const q=clamp(b._rapMan.t/Math.max(0.01,b._rapMan.dur),0,1), c=Math.cos(q*TAU);
+    if(b._rapMan.kind==='roll'){ sx*=c; rot+=Math.sin(q*TAU)*0.12; }
+    else { sy*=c; y-=Math.sin(q*Math.PI)*22; }
+  }
   if(b._s3boss){
     /* Spear attacks bank harder; Wall attacks brace and swell around the core charge. The same
        transform continues into shipBossMount, keeping all flashes locked to the moving plate. */
@@ -14080,8 +14103,83 @@ function infernoReaverRollDraw(b){
 /* STAGE 6 BLACKSTEEL MINIBOSS — three readable storm-weapon acts. The hull owns one stable idle
    plate; attack motion comes from anchored muzzle reels and internal electrical charge overlays,
    so it never flickers between unrelated generated ships. */
-function stage6MiniInit(b){b._s6mini={t:0,mode:'tracer',shot:0,event:0,round:0,charge:0,homeY:b.ty||132};b.fireCd=999;}
+/* ============================================================
+   BLACKSTEEL RAPTOR — SECTIONAL WINGS AND REAL AEROBATICS (drop 0904k)
+
+   Mike: "the raptor to be 2x as large and have sectional damage frames for each wing ... the mini
+   boss should be doing somersalts, barrel rolls and acting like a true raptor jet."
+
+   WINGS ARE SEPARATE TARGETS. Each carries 28% of the hull's pool. A hit is routed by WHERE it
+   landed: outboard of ±10% of the hull box goes to that wing, anything closer is fuselage. Losing
+   a wing swaps the plate AND silences that side's mount - the jet keeps fighting with one gun,
+   which is what makes shooting a wing off worth doing rather than cosmetic.
+
+   ⚠ THE PLATES HAD TO BE ALIGNED BEFORE ANY OF THIS WORKS. SpriteCook crops each edit to its own
+   bbox; dropped in raw, the jet jumps sideways the frame a wing breaks. All four were resampled
+   to one 363x488 footprint on import.
+
+   AEROBATICS. A barrel roll drives scale.x through a full cosine - 1 to -1 and back - which is
+   how a 2D top-down roll reads, passing through zero width at the halfway point exactly as the
+   airframe would present its edge. A somersault does the same on scale.y and adds a vertical arc,
+   so the jet pitches over its own nose. Both are real manoeuvres, not sprite flips: the jet also
+   MOVES along them, so a roll strafes and a somersault dives.
+   ============================================================ */
+const RAP_WING_SHARE=0.28;      /* each wing's pool, as a share of the hull */
+const RAP_MAN={roll:{dur:0.82,strafe:210}, somersault:{dur:0.94,dive:120}};
+function stage6MiniInit(b){
+  b._s6mini={t:0,mode:'tracer',shot:0,event:0,round:0,charge:0,homeY:b.ty||132,manCd:2.4};
+  const pool=Math.max(1,Math.round((b.maxhp||b.hp||1)*RAP_WING_SHARE));
+  b._rapWing={L:{hp:pool,max:pool,dead:false}, R:{hp:pool,max:pool,dead:false}};
+  b._animKey='nsb_rap_intact';
+  b.fireCd=999;
+}
+/* the plate that matches the current wing state */
+function blacksteelPlate(b){
+  const W=b&&b._rapWing; if(!W) return 'nsb_rap_intact';
+  if(W.L.dead&&W.R.dead) return 'nsb_rap_crit';
+  if(W.L.dead) return 'nsb_rap_wl';
+  if(W.R.dead) return 'nsb_rap_wr';
+  return 'nsb_rap_intact';
+}
+/* route a hit to a wing or the fuselage. Returns true when the wing pool absorbed it. */
+function blacksteelHit(b,dmg,hx){
+  const W=b&&b._rapWing; if(!W) return false;
+  const half=(b.w||340)*0.5, off=(hx==null)?0:(hx-b.x);
+  if(Math.abs(off)<half*0.20) return false;            /* fuselage - falls through to hull HP */
+  const side=off<0?W.L:W.R;
+  if(side.dead) return false;                          /* already gone: the hull takes it */
+  side.hp-=Math.max(0,dmg||0);
+  if(side.hp<=0){
+    side.hp=0; side.dead=true;
+    b._animKey=blacksteelPlate(b);
+    if(typeof addExplosion==='function') addExplosion(b.x+off*0.8, b.y, 1.35);
+    if(typeof shake!=='undefined') shake=Math.max(shake,9);
+    if(typeof Audio!=='undefined'&&Audio.SFX&&(Audio.SFX.enemyBossHit||Audio.SFX.explosion))
+      (Audio.SFX.enemyBossHit||Audio.SFX.explosion)();
+  }
+  return true;
+}
+/* start a manoeuvre if one is not already running */
+function blacksteelManoeuvre(b,kind){
+  if(!b||b._rapMan) return false;
+  const C=RAP_MAN[kind]; if(!C) return false;
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  b._rapMan={kind, t:0, dur:C.dur, dir:(b.x<W*0.5?1:-1)};
+  return true;
+}
+function blacksteelManTick(b,dt){
+  const M=b&&b._rapMan; if(!M) return;
+  M.t+=dt;
+  const p=clamp(M.t/M.dur,0,1), ease=Math.sin(p*Math.PI);   /* in and out of the manoeuvre */
+  if(M.kind==='roll') b.x+=M.dir*RAP_MAN.roll.strafe*ease*dt;
+  else                b.y+=RAP_MAN.somersault.dive*Math.sin(p*TAU)*dt;
+  if(p>=1) b._rapMan=null;
+}
 function stage6MiniShot(b,slot,ang,spd,kind,opt){
+  /* ⚠ A DESTROYED WING CANNOT FIRE. Without this the jet keeps shooting from a hardpoint that is
+     visibly missing from the plate, which is the exact tell that sectional damage is cosmetic. */
+  const _W=b&&b._rapWing;
+  if(_W && ((slot==='L'&&_W.L.dead) || (slot==='R'&&_W.R.dead))) return null;
   opt=opt||{};const p=shipBossMount(b,slot),hb=S6_PROJECTILE_HIT[kind]||[10,24];
   const q=eShootT(p.x,p.y,ang,spd,kind,{w:opt.w||hb[0],h:opt.h||hb[1],silent:!!opt.silent,szMul:opt.szMul||1});
   q._boss=true;q._bfam='legion';q._noArsenal=true;if(opt.accel){q._s6Accel=opt.accel;q._s6Max=opt.max||spd*2;}return q;
@@ -14093,7 +14191,24 @@ function stage6MiniMuzzle(b,slot,scale){
 function stage6MiniMode(b,next){const S=b._s6mini;S.mode=next;S.t=0;S.shot=0;S.event=0;S.charge=0;S.round++;}
 function stage6MiniTick(b,dt){
   const S=b._s6mini,W=worldWidth();S.t+=dt;b.fireCd=999;
-  b.y+=(S.homeY-b.y)*Math.min(1,dt*5.5);b.x=W*.5+Math.sin((S.t+S.round*1.7)*1.08)*Math.max(70,W*.22);
+  /* ⚠ THE MANOEUVRE OWNS THE AIRFRAME WHILE IT RUNS. The lane sine below is absolute - it ASSIGNS
+     b.x rather than adding to it - so a roll that also writes b.x would be overwritten on the same
+     frame and the jet would strafe nowhere. While a manoeuvre is live the lane is suspended and
+     only blacksteelManTick moves the aircraft; the lane picks it up again from wherever it ends,
+     which is why the sine is re-phased against S.t rather than snapping back to centre. */
+  if(b._rapMan){
+    blacksteelManTick(b,dt);
+    b.x=clamp(b.x,(b.w||340)*0.28,W-(b.w||340)*0.28);
+    b.y+=(S.homeY-b.y)*Math.min(1,dt*1.6);
+  } else {
+    b.y+=(S.homeY-b.y)*Math.min(1,dt*5.5);b.x=W*.5+Math.sin((S.t+S.round*1.7)*1.08)*Math.max(70,W*.22);
+    /* a true raptor does not hold a lane: it rolls out of one attack and somersaults into the next */
+    S.manCd-=dt;
+    if(S.manCd<=0){
+      S.manCd=rnd(2.6,4.2);
+      blacksteelManoeuvre(b, (Math.random()<0.55)?'roll':'somersault');
+    }
+  }
   if(S.mode==='tracer'){
     while(S.shot<10&&S.t>=.42+S.shot*.105){const slot=(S.shot&1)?'R':'L',off=(S.shot%5-2)*.045;
       stage6MiniShot(b,slot,Math.PI/2+off,5.45,'s6tracer',{});stage6MiniMuzzle(b,slot,.68);
@@ -17971,6 +18086,16 @@ function hitSubBoss(dmg, hx, hy){
      Taking the point as an ARGUMENT means the caller that actually knows where the
      bullet was can pass it, and the fourteen sites that do not are unchanged. */
   if(hx!=null && hy!=null){ _lastHitX=hx; _lastHitY=hy; }
+  /* ⚠ THE RAPTOR'S WINGS HANG OFF THE SUB-BOSS PATH, NOT hitBoss. Minibosses live in `subBoss`
+     and never touch `boss`, so a sectional hook on hitBoss would simply never fire for them - the
+     first cut put it there and the wings were unreachable. This function already takes the impact
+     point as an argument (drop 0801kb fixed exactly that), so the routing has what it needs.
+     blacksteelHit returns true only when a LIVE wing pool absorbed the damage; a fuselage hit, or
+     a hit on a wing already torn off, falls through to the hull pool so the fight still ends. */
+  if(subBoss && subBoss._rapWing && typeof blacksteelHit==='function'){
+    const _rx=(_lastHitX!=null?_lastHitX:subBoss.x);
+    if(blacksteelHit(subBoss,dmg,_rx)) return;
+  }
   if(subBoss && subBoss._sx && typeof sxHit==='function'){
     sxHit(subBoss, dmg, (_lastHitX!=null?_lastHitX:subBoss.x), (_lastHitY!=null?_lastHitY:subBoss.y));
   }
