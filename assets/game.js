@@ -3807,7 +3807,26 @@ function cutsceneFor(pilotKey){
   if(k && typeof XART!=='undefined' && XART._src && XART._src[k]) return k;
   return (typeof XART!=='undefined' && XART._src && XART._src[CUT_HQ]) ? CUT_HQ : null;
 }
-function cutPose(pilotKey, pose){
+/* ============================================================
+   THE ENSEMBLE ROW IS SEATED NOW, WHICH IS WHAT IT ALWAYS SAID IT WAS (drop 0905a)
+
+   Mike: "remove the white stuck under their arms and stuff. and then we use these for the HQ
+   scenes."
+
+   drawCutscene's own comment has read "Keep the whole division seated around the command console"
+   since it was written - and it was compositing STANDING portraits, because the seated art was
+   registered nowhere (0904ao). It is registered and de-matted now, so the row can finally be what
+   its comment describes.
+
+   Seated art is used ONLY for the ensemble row. A two-slot dialogue - the in-play window, the
+   cutscene pair - stages people close and upright, and a seated figure there would read as someone
+   sitting down mid-conversation. `seated` is therefore a parameter, not a global preference.
+   ============================================================ */
+function cutPose(pilotKey, pose, seated){
+  if(seated){
+    const sk='cinseat_'+pilotKey;
+    if(typeof XART!=='undefined' && XART._src && XART._src[sk]) return sk;
+  }
   const k='pose_'+pilotKey+'_'+(pose|0);
   if(typeof XART!=='undefined' && XART._src && XART._src[k]) return k;
   const z='pose_'+pilotKey+'_0';
@@ -3929,7 +3948,9 @@ function drawCutscene(sc){
     const hqX={axel:56,lizzie:126,cole:196,falva:258,decker:320,freezer:386,maverick:458,yuri:526,juggernaut:586};
     for(const e of order){
       const active=e.pilot===activePilot;
-      const pk=cutPose(e.pilot, active?(sc.speakingPose||0):0);
+      /* the ensemble is the seated row; a pose index has no meaning for a single seated cut-out,
+         so the ACTIVE speaker is still distinguished by brightness and draw order below */
+      const pk=cutPose(e.pilot, active?(sc.speakingPose||0):0, true);
       if(!pk || !XART.rdy(pk)) continue;
       const im=XART.get(pk), centre=e.pilot==='decker',mw=centre?138:(n>8?116:124),mh=centre?274:(n>8?232:246);
       const k2=Math.min(mw/im.naturalWidth, mh/im.naturalHeight)*(active?1.10:1);
