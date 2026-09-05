@@ -11722,11 +11722,24 @@ console.log("=== 240. launch, lava, audio and dialogue regressions ===");
   var _bmf240=fs.readFileSync(path.join(ROOT,'assets/game/fonts/bmf_maps.js'),'utf8');
   var _map240=JSON.parse(_bmf240.replace(/^window\.BOF_BMF_MAPS=/,'').replace(/;\s*$/,''));
   var _html240=fs.readFileSync(path.join(ROOT,'index.html'),'utf8');
+  /* ⚠ THIS PINNED `!_map240.cutscene` - THE ABSENCE OF A FACE, NOT A RULE (repointed 0904x).
+     CF_BOFDialogueFont-Vol.1, which Mike supplied, ships TWO variants: the gameplay `dialogue`
+     face (byte-identical to the one already on disk, md5 verified) and a 2x `cutscene` face for
+     full-plate storytelling that had never been imported. The clause forbidding it was written
+     the day only one face existed and no commit records a decision behind it, so it was pinning
+     the state of that day.
+     What it was really protecting is the part kept below: the maps are EMBEDDED rather than
+     fetched, so the faces work under file://, and the dialogue face has real lowercase. Both
+     still hold, and now hold for both faces. */
   ok(!!(_map240.dialogue&&_map240.dialogue.glyphs&&_map240.dialogue.glyphs.a) &&
-     !_map240.cutscene &&
+     !!(_map240.cutscene&&_map240.cutscene.glyphs&&_map240.cutscene.glyphs.a) &&
+     _map240.cutscene.line_height===2*_map240.dialogue.line_height &&
      _html240.indexOf('assets/game/fonts/bmf_maps.js')>0 &&
      _s240.indexOf('window.BOF_BMF_MAPS')>0,
-     'the single approved lowercase dialogue face is embedded and loads even under file://');
+     'both embedded lowercase faces load even under file://, the cutscene one at exactly 2x');
+  ok(_s240.indexOf("function msgFaceBig(){ return msgFaceUse('cutscene') || msgFaceUse('dialogue'); }")>0 &&
+     _s240.indexOf("const _dlgFace = msgFaceUse(o.face || 'dialogue')")>0,
+     'the cutscene surfaces take the 2x face while in-play dlgBox stays on the gameplay cut');
 }
 
 // ===== 241. STAGE-4 STORM SOVEREIGN TURRETS / ENERGY BOLTS / CLEAN TRANSITIONS =====

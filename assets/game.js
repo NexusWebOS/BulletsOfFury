@@ -1649,7 +1649,7 @@ const ASSETS=(function(){
        ============================================================ */
     A.stageFontV4={};
     if(window.BOF && BOF.stageFontV4){ for(const _k in BOF.stageFontV4){ const _f4=BOF.stageFontV4[_k];
-      A.stageFontV4[_k]=_lazySheet({frames:_f4.frames, font:_f4.font}, _f4.atlas); } }
+      A.stageFontV4[_k]=_lazySheet({frames:_f4.frames, font:_f4.font, ride:_f4.ride||null}, _f4.atlas); } }
     if(A.img){ A.img.onload=function(){A.ready=true;}; A.img.onerror=function(){A.ready=false;}; }
   }
   function _rdy(im){ return im && im.complete && im.naturalWidth>0; }
@@ -3922,7 +3922,7 @@ function drawCutscene(sc){
   /* Full-screen HQ scenes use the same approved dialogue face as gameplay conversations. The
      former 2x cutscene sheet was a byte-for-byte nearest-neighbour enlargement, so scaling this
      single source produces identical hard pixels without carrying a duplicate font. */
-  const _dialogueFace=(typeof msgFaceUse==='function' && msgFaceUse('dialogue')==='dialogue');
+  const _dialogueFace=(typeof msgFaceBig==='function' && !!msgFaceBig());
   /* ============================================================
      THE SPEAKER'S OWN COLOUR (drop 0811r)
 
@@ -38773,7 +38773,7 @@ function cinDrawMotion(sc,beat,t,W,H){
   cinFormation(sc,beat,t,W,H);
 }
 function cinDialogue(beat,budget,W,H){
-  if(!beat.text || !XART.rdy('dlg_window') || typeof msgFaceUse!=='function' || msgFaceUse('dialogue')!=='dialogue')return false;
+  if(!beat.text || !XART.rdy('dlg_window') || typeof msgFaceBig!=='function' || !msgFaceBig())return false;
   const dx=Math.round(W*.025),dy=Math.round(H*.715),dw=Math.round(W*.95),dh=Math.round(H*.255);
   ctx.drawImage(XART.get('dlg_window'),dx,dy,dw,dh);
   const padX=dw*.055,nameY=dy+dh*.115,nameH=Math.max(12,Math.round(H*.030));
@@ -38890,7 +38890,7 @@ function campaignIntroVisual(B,t,W,H,alpha){
   ctx.restore();
 }
 function campaignIntroCaption(B,W,H,alpha){
-  if(!B||typeof msgFaceUse!=='function'||msgFaceUse('dialogue')!=='dialogue')return;
+  if(!B||typeof msgFaceBig!=='function'||!msgFaceBig())return;
   const x=W*.055,w=W*.89,h=H*.235,y=H-h-20;
   ctx.save();ctx.globalAlpha=alpha;
   const g=ctx.createLinearGradient(0,y-34,0,H);g.addColorStop(0,'rgba(0,0,0,0)');g.addColorStop(.26,'rgba(0,0,0,.78)');g.addColorStop(1,'rgba(0,0,0,.95)');
@@ -45826,7 +45826,31 @@ function pcTint(p){
   const P=(typeof PILOTS!=='undefined' && PILOTS.find)?PILOTS.find(x=>x.key===p):null;
   return (P&&P.tint)||'#dfe8f4';
 }
+/* ============================================================
+   THE PILOT CARD DRAWS IN THE STAGE LETTERING (drop 0904x)
+
+   Mike: "replace our stage fonts with these and our pilot select card screen fonts please."
+
+   The heading and the pilot name were already on the authored stage face. Everything INSIDE the
+   card - role, affiliation, the bio, SPEED / FIRE RATE / ATTACK RANGE, SPECIAL ABILITY and the
+   ability name - came out of the thin `dialogue` bitmap, so one screen showed two typefaces. That
+   is the mismatch in his screenshots.
+
+   All four pcFont helpers route through this one accessor, so measure, fit, wrap and draw cannot
+   disagree about which face is live - the 0814b failure was exactly that split, and it shipped
+   green because the counters could not see it. `dialogue` stays as the fallback for the window
+   between boot and the stage sheet decoding.
+   ============================================================ */
+function pcFontFace(){
+  if(typeof ASSETS==='undefined' || !ASSETS.stageFontV4) return null;
+  const f=ASSETS.stageFontV4['final'];
+  if(!f || !f.font) return null;
+  if(typeof artReady==='function' && !artReady(f)) return null;
+  return f;
+}
 function pcFontMeasure(text,H){
+  const sf=pcFontFace();
+  if(sf) return stageWidth(sf,text,H,0.08);
   if(typeof bmfReady==='function' && bmfReady('dialogue')) return bmfMeasure('dialogue',text,H);
   ctx.save(); ctx.font='bold '+Math.max(7,Math.round(H*0.86))+'px "BOFmil", monospace';
   const w=ctx.measureText(String(text)).width; ctx.restore(); return w;
@@ -45838,6 +45862,14 @@ function pcFontFit(text,maxW,Hmax,Hmin){
 }
 function pcFontLeft(text,x,cy,H,color,alpha){
   if(!text) return 0;
+  const sf=pcFontFace();
+  if(sf){
+    /* stageText centres on cx and pcFontLeft is anchored on its LEFT edge, so the width is
+       measured through the same helper the caller used to lay the column out. */
+    const w=stageWidth(sf,text,H,0.08);
+    stageText(sf,text,x+w/2,cy,H,color||null,color?1:0,(alpha==null?1:alpha),0.08);
+    return w;
+  }
   if(typeof bmfReady==='function' && bmfReady('dialogue')){
     bmfDraw('dialogue',text,x,cy-H/2,H,alpha,color,1);
     return bmfMeasure('dialogue',text,H);
@@ -50002,7 +50034,13 @@ function drawPilot(dt){
     const _hint=(run && run.mode==='campaign')
       ? '\u25C0 \u25B6 SCROLL   \u2022   ENTER = LAUNCH'
       : '\u25C0 \u25B6 SCROLL   \u2022   ENTER = LAUNCH   \u2022   '+_backKey+' = BACK';
-    if(typeof msgText==='function'){ msgText(_hint, VW/2, VH-14, 12, '#cfd6e0', 0.7, 0.9, 0.10); }
+    /* Mike, 0904: "...and our pilot select card screen fonts please." The heading and the pilot
+       name were already on the authored face; the footer and the unlock prompt were the two lines
+       still coming out as thin canvas text, which is the mismatch visible in his screenshots. Both
+       are on the stage lettering now, and stageText's new last-rung fallback is what keeps the
+       arrow and bullet marks in this string alive - no face carries them. */
+    if(_pilotFace && typeof stageText==='function'){ stageText(_pilotFace,_hint,VW/2,VH-14,12,'#cfd6e0',0.7,0.9,0.10); }
+    else if(typeof msgText==='function'){ msgText(_hint, VW/2, VH-14, 12, '#cfd6e0', 0.7, 0.9, 0.10); }
     else { ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='8px "BOFmil", monospace'; ctx.fillText(_hint,VW/2,VH-12); } }
   // (pip/dot indicator removed per Mike — the player discovers the roster by scrolling)
   // hover check (locked card) -> glow pulse + flashing unlock prompt
@@ -50011,7 +50049,9 @@ function drawPilot(dt){
     pilotFlash=Math.min(1,pilotFlash+dt*3);
     if(Math.sin(performance.now()/140)>-0.2){
       /* same screen, same fault (drop 0812j) */
-      if(typeof msgText==='function'){
+      if(_pilotFace && typeof stageText==='function'){
+        stageText(_pilotFace,'UNLOCK WITH PASSWORD...', VW/2, cardRect[1]+cardRect[3]+14, 12, '#ffe98a', 1, 1, 0.09);
+      } else if(typeof msgText==='function'){
         msgText('UNLOCK WITH PASSWORD...', VW/2, cardRect[1]+cardRect[3]+14, 12, '#ffe98a', 1, 1, 0.09);
       } else {
         ctx.textAlign='center'; ctx.font='bold 12px "BOFmil", monospace'; ctx.fillStyle='#ffe98a';
@@ -51127,7 +51167,15 @@ function stageWidth(art,text,H,spacingMul){
     /* through stageGlyph, so a BORROWED glyph is measured at the width it will be drawn at.
        Measuring in one face and drawing in another is 0814b's "the text ran off its rail". */
     const g=stageGlyph(art,ch);
-    if(!g){ w+=H*0.42+sp; continue; }
+    if(!g){
+      /* ⚠ MEASURE THE FALLBACK THE WAY stageText DRAWS IT (drop 0904x). stageText now paints a
+         glyph no face carries as canvas text; if this still charged it a blank's width the wrap
+         would be solved in one metric and rendered in another, which is 0814b's "the text ran off
+         its rail" exactly. Same font string, same size, both sides. */
+      ctx.save(); ctx.font='bold '+Math.round(H*0.92)+'px "BOFmil", monospace';
+      const cw=ctx.measureText(ch).width; ctx.restore();
+      w+=(cw>0.5?cw:H*0.42)+sp; continue;
+    }
     w+=glyphBox(g.art,g.f,H,ch).w+sp;
   }
   return Math.max(0,w-sp);
@@ -51251,6 +51299,15 @@ function fontCapH(art){
    ============================================================ */
 const BMF_FACES = {
   dialogue:'assets/game/fonts/fury-dialogue-font/fury-dialogue-font',
+  /* ⚠ THE 2x CUTSCENE FACE SHIPPED IN THE SAME PACK AND WAS NEVER IMPORTED (drop 0904x).
+     CF_BOFDialogueFont-Vol.1 carries TWO variants. The dialogue face on disk is byte-identical to
+     the pack's (md5 2a41b64549, verified before touching anything) so there was nothing to update
+     there - but `fury-cutscene-font` was missing entirely: 640x308, 40x44 cells, the same 110
+     glyphs authored at 2x for "cutscenes, speaker cards, major transmissions".
+     It matters because the cutscene surfaces were MAGNIFYING the 20x22 gameplay face to fill a
+     640x480 plate. Nearest-neighbour magnification of a beveled face turns its 1px highlight into
+     a 2px block; the authored 2x cells carry the bevel at that size instead of inventing it. */
+  cutscene:'assets/game/fonts/fury-cutscene-font/fury-cutscene-font',
 };
 const BMF = {};
 function bmfInit(){
@@ -51333,6 +51390,17 @@ function bmfDraw(k,text,x,yTop,H,alpha,tintC,tintA,outline){
    A surface opts in by setting this around its own drawing, and both halves follow. */
 let _msgFace = null;
 function msgFaceUse(k){ _msgFace = (k && bmfReady(k)) ? k : null; return _msgFace; }
+/* ⚠ WHICH SURFACES ARE "BIG" IS ONE DECISION, MADE HERE (drop 0904x).
+
+   The pack ships two variants for a reason: `dialogue` is authored for 640x480 gameplay text and
+   `cutscene` at 2x for full-plate storytelling. The cutscene surfaces were magnifying the small
+   face to fill a 640x480 plate, which turns an authored 1px bevel highlight into a 2px block.
+
+   The IN-PLAY dlgBox deliberately stays on `dialogue` - it draws at gameplay size, which is the
+   size that face was cut for, and using the 2x face there would minify it right back down.
+   Falls back to `dialogue` whenever the 2x face has not decoded, so a slow load costs sharpness
+   and never the text itself. */
+function msgFaceBig(){ return msgFaceUse('cutscene') || msgFaceUse('dialogue'); }
 const FONT_DESC = {',':1, ';':1};
 /* WHERE A MARK RIDES IN THE CAP BOX (drop 0822a) — the counterpart FONT_DESC never had.
 
@@ -51357,12 +51425,29 @@ const FONT_DESC = {',':1, ';':1};
    The two glyphs this code ALREADY got right derive to exactly what it already does, which is
    the check that matters: the same formula that moves ' and - leaves . and , untouched. */
 const FONT_RIDE = {"'":0.00, '-':0.60};
+/* ⚠ A FACE THAT CARRIES ITS OWN METRICS OUTRANKS THE HAND TABLE (drop 0904x).
+
+   FONT_RIDE above is two entries, derived by hand off the dialogue pack in 0822a because the
+   Vol.2 stage faces were tight slices that "carry no vertical placement at all". CF_BOFStageFonts
+   Vol.3 does carry it: every face declares cap_top 6 / baseline 90 and every glyph a
+   bounds_in_cell, so the importer emits a measured `ride` per glyph per face.
+
+   The pack agrees with the hand measurement where the two overlap - it derives ' to 0.00, exactly
+   what 0822a measured, and - to 0.50 against the hand's 0.60 - and it answers two glyphs the hand
+   table never covered: ':' at 0.50 and ';' at 0.61, both of which were being dropped onto the
+   baseline. `.` `,` `!` `?` `&` `/` all derive to 1.0, which is the default this code already
+   applied, so the glyphs that were already right do not move. That is the same check 0822a used
+   and the only one that makes a derived table trustworthy. */
+function fontRide(art, ch){
+  if(art && art.ride && art.ride[ch] != null) return art.ride[ch];
+  return (ch && FONT_RIDE[ch] != null) ? FONT_RIDE[ch] : 1;
+}
 function glyphBox(art, f, H, ch){
   const cap = fontCapH(art);
   if(!(cap > 0)) return {w: f[2]*(H/f[3]), h: H, dy: 0};
   const sc = H / cap;
   const gh = f[3]*sc;
-  let dy = (H - gh) * (ch && FONT_RIDE[ch] != null ? FONT_RIDE[ch] : 1);
+  let dy = (H - gh) * fontRide(art, ch);
   if(ch && FONT_DESC[ch] && art.font){
     const pn = art.font['.'], pf = pn && art.frames[pn];
     if(pf && f[3] > pf[3]) dy += (f[3]-pf[3])*sc;
@@ -51399,17 +51484,45 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
     ctx.restore();
     return;
   }
+  /* ⚠ A CHARACTER NO FACE CAN DRAW STILL BECAME A SPACE (drop 0904x).
+
+     0903 fixed the case where a SIBLING face could cover the gap - that is what stageGlyph's
+     borrow chain is - but a character that exists in no bitmap face at all still fell through to
+     `items.push(null)`, which advances the pen and draws nothing. The stage faces are 46 glyphs
+     and the card alphabets 58; the pilot screen's own footer reads
+     "<left> <right> SCROLL . ENTER = LAUNCH" with authored arrow and bullet marks, and NONE of
+     those three symbols is in any face. Routing that line to the stage lettering would silently
+     delete them, which is the 0903 bug wearing different clothes.
+
+     So the last rung is canvas text, sized to the same cap box and painted in the same colour.
+     It is not the authored lettering and is not meant to be - it is the difference between a
+     symbol the player can see and a hole the renderer cannot report. Letters still come from the
+     art on every path that has art. */
   const sp=(spacingMul==null?0.10:spacingMul)*H; const items=[]; let total=0;
   for(const ch of String(text).toUpperCase()){
     if(ch===' '){ items.push(null); total+=H*0.42+sp; continue; }
     const g=stageGlyph(art,ch);
-    if(!g){ items.push(null); total+=H*0.42+sp; continue; }
+    if(!g){
+      ctx.save(); ctx.font='bold '+Math.round(H*0.92)+'px "BOFmil", monospace';
+      const w=ctx.measureText(ch).width; ctx.restore();
+      if(w>0.5){ items.push([null,ch,w,null]); total+=w+sp; }
+      else { items.push(null); total+=H*0.42+sp; }
+      continue;
+    }
     const gb=glyphBox(g.art,g.f,H,ch); items.push([g.art,g.f,gb.w,gb]); total+=gb.w+sp;
   }
   total-=sp; let x=cx-total/2;
   for(const it of items){
     if(!it){ x+=H*0.42+sp; continue; }
     const ga=it[0], f=it[1], w=it[2], gb=it[3];
+    if(ga===null){
+      ctx.save(); ctx.textAlign='left'; ctx.textBaseline='alphabetic';
+      ctx.font='bold '+Math.round(H*0.92)+'px "BOFmil", monospace';
+      if(alpha!=null)ctx.globalAlpha=alpha;
+      ctx.fillStyle=(tintC&&tintA)?tintC:'#e8eefc';
+      ctx.fillText(f,Math.round(x),Math.round(cy+H/2));
+      ctx.restore(); x+=w+sp; continue;
+    }
     drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
     x+=w+sp;
   }
