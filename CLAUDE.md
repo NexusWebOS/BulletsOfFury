@@ -1108,7 +1108,22 @@ counts discrete pixel differences, which nearest maximises. The nearest-neighbou
 bullet pass is KEPT but on pack-contract/crispness grounds, **not** as the wobble fix. An analogy
 was doing the work that evidence should have.
 
-## ⚠ THE SUITE IS DETERMINISTIC NOW — **2,505 / 221 / 5**, EVERY RUN
+## ⚠⚠ THE SUITE IS **NOT** DETERMINISTIC — PROVED 0905k WITH A ZERO-CODE-CHANGE RUN
+
+**Read this before the section below, which contradicts it and is STALE.** 0905k changed six PNG
+files and nothing else — `git diff HEAD -- assets/game.js assets/manifest.js` was empty, byte for
+byte — and the suite still went **3,216 ok / 65 fail → 3,214 / 67**, the two extra being the
+documented corner-run pair (`cornerLR`, "a corner run travels further sideways than a curve").
+Those assertions test JET ROUTING; they cannot read a stage-6 beam sprite. Across four runs this
+session the count was **65, 67, 64, 67**.
+
+⚠ **SO A COUNT CHANGE OF ±2 IS NOT EVIDENCE OF ANYTHING.** Re-run before chasing, and compare the
+failure NAMES against a clean `git worktree` at HEAD rather than comparing totals — that is the
+only check that separated real from flaky every time this session. The observed band is **64–67**.
+The paragraph below claiming three identical consecutive runs was true of the tree it was written
+against and is not true now.
+
+## ~~⚠ THE SUITE IS DETERMINISTIC NOW — **2,505 / 221 / 5**, EVERY RUN~~ (STALE — see above)
 
 Three fixtures (202 miniboss aura, 208 volley length, 212 curveL) run the LIVE stage plan, which
 picks waves and cadences from `Math.random` — so each measured a different battle every time and
