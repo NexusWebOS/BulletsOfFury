@@ -157,8 +157,31 @@ oscillate; the stage-1 sand-tank fixture does too.
 - **The 2x cutscene face** is live on three surfaces he never asked to change; one accessor reverts.
 - **Whether the 3s warn applies to every beam on stages 2–3 or only the big ones** — one constant.
 
-**Not imported:** `CF_Stage9PortalCombatPickups-Lvl9` (179 entries, at `C:\s9p`) and four
-`CF_EnemyTeleportFX` families (phase-needle, plasma-bloom, crimson-shatter, gravity-maw).
+**⚠ `CF_Stage9PortalCombatPickups-Lvl9` — INVESTIGATED 0905v, AND DO NOT IMPORT IT BLIND.**
+It is NOT at `C:\s9p` (that path in the backlog is wrong); it is `~/Downloads/
+CF_Stage9PortalCombatPickups-Lvl9.zip`. 179 entries, **28 families / 122 frames**, and it is the
+best-documented pack in the tree: a README, a per-family JSON carrying fps, pivot, canvas, hitbox
+scale and the OWNER unit, and a `stage09-expansion-map.json` that maps every piece. The PNGs are
+already clean RGBA - `source_key:#FF00FF` is a record of how they were authored, not a state to
+de-key (1 stray magenta pixel in 1,832).
+
+**It presupposes a stage-9 REGULAR ENEMY ROSTER THAT DOES NOT EXIST.** Ten projectile families each
+name their owner, and eight of those owners return ZERO hits in game.js: `warp-skimmer`,
+`phase-needle-drone`, `prism-mine`, `gate-leech`, `void-manta`, `echo-fighter`, `comet-breaker`,
+`time-split-interceptor`. Only two map onto units that exist, under different names -
+**twin-portal-wardens → `riftwardens`** (SUBBOSS[9], live) and **velocity-gate-core → `ns9_gatecore_`**.
+The seven portal FILLS are explicitly "behind_gate_ring" layers and need matching gates from a
+DIFFERENT pack. The ten pickups are self-contained art but need a score/time pickup system
+(100/250/500/1000/2500 points; +1/2/3/5/10 seconds, per the README).
+
+So importing it today would have registered ~122 frames that almost nothing can draw - growing the
+"art in the tree that nothing draws yet" list this very backlog tracks, which is the shape CLAUDE.md
+warns about in four separate places. **The pack is a downstream consequence of building stage 9's
+roster, not a task on its own.** Its JSON is the spec for that work when someone takes it.
+
+**Also not imported:** four `CF_EnemyTeleportFX-Vol.1` families (phase-needle, plasma-bloom,
+crimson-shatter, gravity-maw). ⚠ The zip was NOT found on this machine outside AppData; only the
+chaosharrier-phase-rift family was ever taken (0904w). Locate the source before planning that one.
 
 **Standing:** the Siege Ember "spin" has never reproduced. And ⚠ **an unrelated Pixeltable plugin
 ships a `PostToolUse` hook that errors on every Write/Edit** — edits still land; the script itself

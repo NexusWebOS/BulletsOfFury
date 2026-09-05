@@ -156,7 +156,11 @@ defect was the TELEGRAPH wearing the lava boss's red over ice. `L23_ALERT` is pe
   exact authored geometry for the other cycles.
 
 ### Packs on disk, not yet imported
-- `CF_Stage9PortalCombatPickups-Lvl9` (179 entries, PortalFill families) at `C:\s9p`.
+- ⚠ `CF_Stage9PortalCombatPickups-Lvl9` — **the `C:\s9p` path is WRONG**; it is
+  `~/Downloads/CF_Stage9PortalCombatPickups-Lvl9.zip`. Investigated 0905v: 28 families / 122 frames,
+  excellent JSON spec — **but EIGHT of its ten projectile owners do not exist in game.js.** It
+  presupposes a stage-9 regular-enemy roster that was never built, so it is downstream of that work,
+  not a task on its own. Full finding in `docs/PASSOVER_0905.md`.
 - The four remaining `CF_EnemyTeleportFX-Vol.1` families - phase-needle, plasma-bloom,
   crimson-shatter, gravity-maw. Only the Chaos Harrier's phase-rift was taken.
 
