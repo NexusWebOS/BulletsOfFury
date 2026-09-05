@@ -163,6 +163,29 @@ plus `--seconds 2 --fps 3` showed the scene. Each screenshot is a separate `eval
 boundary is what lets the network run. Use `--seconds/--fps` whenever the shot needs art the state
 loads on entry.
 
+⚠ **AND THE SAME IS TRUE OF ANY LOOP OF `pg.evaluate(sh.STEP, n)` — IT COST THREE WRONG VERDICTS IN
+ONE DAY (0905).** `STEP` advances a synthetic clock inside one tight JS loop, so fifty-eight
+simulated seconds finish in milliseconds of wall time and nothing decodes. Measured on the stage-9
+roster, which is cells of one atlas (`BOFX.cells['ns9e_wskim_idle']` → `['en_s9',1490,2120,…]`):
+`en_s9.png` sat at `naturalWidth 0` with **zero network requests** for an entire run, `XART.rdy`
+false on all eight units — then true after a **1.5-second real wait**. A probe that did not wait
+reported nine perfectly good units as "NOT DRAWN". So: touch the keys, `wait_for_function` on
+`rdy`, *then* step, and step in chunks with a real pause between them so anything requested
+mid-run can still decode.
+
+⚠ **Wrapping matters when you build that wait: `READY + '() >= 0.9'` produces `() => {…}() >= 0.9`,
+a SyntaxError.** It throws instantly, the wait silently never happens, and the first sprite you
+test draws against an undecoded atlas. Use `'(' + READY + ')()'`.
+
+⚠ **A DECODE RACE IS NOT ONLY A HARNESS PROBLEM — IT IS A REAL RENDERING BUG CLASS.** Chasing the
+above found `drawS9Void` answering `return false` while its reel decoded, which handed every
+Velocity Void hull to the generic path, where `art` was still the spawn default `tankA` →
+`tnkG_g2`, **a green ground tank in deep space**. Not a cold-boot curiosity: `tnkG_g2` is on
+`en_shared`, already decoded from stages 1/4/5, while the stage-9 plates are loose per-unit PNGs
+arriving on stage-9 entry — so the wrong sprite is ready exactly when the right one is not. That is
+Mike's "you still have tanks and weird enemies on stage 9", which 0904r had answered by deleting
+two tank-*shaped* units. **When a draw helper declines a frame, check what picks it up.**
+
 ---
 
 ## Standing creative rules

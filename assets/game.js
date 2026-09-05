@@ -2361,8 +2361,15 @@ const XART=(function(){
      Keeping this as one decoded texture replaces the old loose pseudo-3D ship/thruster pack. */
   X._src['nst9_voidwater_master']='assets/game/stage9_void_rift/void_rift_water_loop_680x4096.png';
   X._src['ngm_space_atlas']='assets/game/atlas/bof_gravity_mode_space_weapons.png';
-  for(let _vh=0;_vh<7;_vh++)
+  /* THE MID-BOSS REEL (0905). Both skins are seven frames because drawS9VoidEnemy and the
+     Event Horizon's own draw both index `% 7`; an eighth frame would be silently unreachable and
+     the loop would stutter at the wrap. The black set is the second-phase skin Mike asked for -
+     "a black variant of it 1|1" - and is derived from the same plate, so the two reels share one
+     silhouette and swapping between them cannot move the hitbox. */
+  for(let _vh=0;_vh<7;_vh++){
     X._src['ns9x_horizon_'+_vh]='assets/game/stage9_void_rift/enemies/event_horizon_'+_vh+'.png';
+    X._src['ns9x_horizonblk_'+_vh]='assets/game/stage9_void_rift/enemies/event_horizon_blk_'+_vh+'.png';
+  }
   X._src['ns9x_dreadv']='assets/game/stage9_void_rift/enemies/dreadnought_vanguard.png';
   for(let _vf=0;_vf<6;_vf++){
     X._src['ns9fx_photon_'+_vf]='assets/game/stage9_void_rift/fx/photon_'+_vf+'.png';
@@ -8193,7 +8200,7 @@ const SUBBOSS={
   /* The violet/ion pair are the Stage-9 SUB-BOSSES.  The black-and-blue Warp Sentinel hull is
      reserved for the true final encounter, where two of them must be disabled before they fuse
      into the Tidal Sovereign. */
-  9:{at:0.45, kind:'riftwardens', afterScroll:1201},
+  9:{at:0.45, kind:'voidhorizon', afterScroll:1201},
   3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
   5:{at:0.45, kind:'chaosharrier', afterScroll:1121}, // CHAOS HARRIER — authored space interceptor, replaces retired ENERGY CORE
@@ -10514,6 +10521,17 @@ const SHIPS=[];
   /* FINAL Stage-9 lock.  This must be after every generic art/pattern fallback: otherwise the
      void roster can look correct while silently running the default movement and never firing. */
   if(typeof applyS9Unit==='function') applyS9Unit(c, _rk);
+  /* ⚠ AND CLEAR `art` ON THE VOID HULLS, HERE, NOT IN THE SWITCH. They are drawn by drawS9Void
+     off S9VOID[k].art, so `art` is dead weight on the happy path - but it was left at the spawn
+     default `tankA`, which ENEMY_ART maps to `tnkG_g2`, A GREEN GROUND TANK. Any frame drawS9Void
+     declined, the generic path picked that up and put a tank in deep space: measured at 59,056
+     painted pixels standing in for an s9interceptor, under the ordering real play produces
+     (en_shared already decoded from stages 1/4/5, the stage-9 loose plates still arriving).
+     Setting it inside the `case` above does NOT survive - the generic art/pattern fallback runs
+     after the switch and puts `tankA` straight back, which is the whole reason this lock exists
+     at this point in the function. Null leaves the generic path nothing to resolve. */
+  /* both space rosters, for the same reason - see the note above */
+  if(c._s9void || c._s5space) c.art=null;
   /* Shield assignment is intentionally last: stage-specific setup above owns final HP/type/size,
      so capacity and field footprint are computed from the actual unit that enters the array. */
   if(typeof enemyShieldAutoEquip==='function')enemyShieldAutoEquip(c);
@@ -11312,37 +11330,70 @@ function buildStagePlan(stageNum){
       spawnEnemy(kind,W9*a,-100,opt||{});
       spawnEnemy(kind,W9*b,-118,Object.assign({_stagger:.16},opt||{}));
     };
+    /* ── THE RAMP (0905z). Mike: "pacing should be light difficulty in the beginning to medium
+       to high difficulty before the boss of the end of the level."
+       Measured on the plan this replaces, per simulated second in a live stage-9 run: LIGHT band
+       2.64 live fighters / 44.8 hp, MEDIUM 3.31 / 54.2, HIGH 4.11 / 64.9. That is nearly flat,
+       and the reason is WHERE THE HEAVY HULLS WERE: the two heaviest in the cast, the Dimensional
+       Gunship (62) and the Hyperspace Prism (66), both arrived inside the first eleven seconds.
+       The S9VOID hulls sort by weight: light 28-34 opens, the heavies enter one at a time through
+       the middle, and the last third runs them in PAIRS on a tighter beat. All eight still
+       appear, which the roster-coverage assertion requires.
+       ⚠ THE S9_UNITS SPECIALISTS ARE BACK, AND ONLY BECAUSE MIKE SAID SO. They were kept out by
+       an assertion written when the stage was rebuilt; on 0905, shown the art, he answered "these
+       enemies are good to go" and approved the recolour that separates them. That assertion is
+       repointed, not deleted - it now guards the two that stay out. `horizon` is gone from the
+       waves because it IS the miniboss now, and `dreadv` is still held back (hp 130, a 7-wide
+       volley every 0.78s, and the only warm-palette hull in a stage that is 0.0-0.2% warm).
+       ⚠ AND THEY RIDE EXISTING BEATS IN THE HIGH BAND RATHER THAN ADDING NEW ONES. That band is
+       already on a ~1.0s cadence; six more add() times would have halved it to ~0.5s, which is a
+       wall, not an escalation. Adding them INTO the callbacks grows the wave instead. */
+    // ---- LIGHT (0..14s): comet 28, interceptor 30, ring 32, beacon 34. Nothing heavier. ----
     add(.45,()=>pair('s9interceptor',.25,.75,{_s9Role:'kamikaze'}));
     add(1.55,()=>{spawnEnemy('s9comet',-86,VH*.17,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.31,{_side:-1,_s9Role:'slider'});});
     add(2.70,()=>spawnEnemy('s9beacon',W9*.50,-108,{_s9Role:'orb'}));
     add(4.05,()=>pair('s9ring',.28,.72,{_s9Role:'spinner'}));
     add(5.55,()=>s9MeteorShower(W9*.33,0));
-    add(6.75,()=>spawnEnemy('s9gunship',W9*.50,-126,{_s9Role:'beam'}));
+    add(6.75,()=>spawnEnemy('s9interceptor',W9*.50,-112,{_s9Role:'jumper'}));
     add(8.10,()=>pair('s9interceptor',.24,.76,{_s9Role:'jumper'}));
-    add(9.45,()=>pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'}));
-    add(10.70,()=>{spawnEnemy('s9gateturret',W9*.30,-108,{_s9Role:'spinner'});spawnEnemy('s9prism',W9*.70,-120,{_s9Role:'orb',_stagger:.18});});
+    add(9.45,()=>spawnEnemy('s9ring',W9*.38,-104,{_s9Role:'spinner'}));
+    add(10.70,()=>{spawnEnemy('s9beacon',W9*.30,-108,{_s9Role:'orb'});spawnEnemy('s9comet',W9+86,VH*.24,{_side:-1,_s9Role:'slider',_stagger:.18});});
     add(12.25,()=>s9MeteorShower(W9*.67,1));
-    add(13.30,()=>spawnEnemy('s9gunship',W9*.50,-145,{_s9Role:'laser'}));
+    add(13.30,()=>pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'}));
+    // ---- MEDIUM (14..27s): the heavies enter, ONE at a time, so each is legible alone. ----
     add(14.65,()=>{spawnEnemy('s9comet',-86,VH*.20,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.34,{_side:-1,_s9Role:'slider'});});
-    add(15.80,()=>pair('s9ring',.27,.73,{_s9Role:'laser'}));
-    add(17.15,()=>spawnEnemy('s9prism',W9*.50,-130,{_s9Role:'beam'}));
+    add(15.80,()=>spawnEnemy('s9gunship',W9*.50,-126,{_s9Role:'beam'}));          // first heavy hull
+    add(16.45,()=>spawnEnemy('wskim',W9*.44,-104,{}));                            // weaver, barrel-rolls
+    add(17.15,()=>pair('s9ring',.27,.73,{_s9Role:'laser'}));
     add(18.35,()=>s9MeteorShower(W9*.48,2));
-    add(19.60,()=>{spawnEnemy('s9interceptor',W9*.16,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-122,{_s9Role:'kamikaze',_stagger:.13});spawnEnemy('s9interceptor',W9*.84,-94,{_s9Role:'kamikaze',_stagger:.26});});
-    add(21.00,()=>pair('s9ring',.25,.75,{_s9Role:'spinner'}));
-    add(22.25,()=>spawnEnemy('s9gunship',W9*.50,-132,{_s9Role:'beam'}));
-    add(23.65,()=>{spawnEnemy('s9interceptor',W9*.28,-112,{_s9Role:'jumper'});spawnEnemy('s9prism',W9*.72,-126,{_s9Role:'orb',_stagger:.16});});
+    add(19.60,()=>spawnEnemy('s9gateturret',W9*.50,-110,{_s9Role:'spinner'}));
+    add(20.85,()=>{spawnEnemy('s9interceptor',W9*.16,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-122,{_s9Role:'kamikaze',_stagger:.13});spawnEnemy('s9interceptor',W9*.84,-94,{_s9Role:'kamikaze',_stagger:.26});});
+    add(21.55,()=>{spawnEnemy('gleech',W9*.14,-100,{});                           // rides to the walls
+                   spawnEnemy('gleech',W9*.86,-116,{_stagger:.15});});
+    add(22.25,()=>spawnEnemy('s9prism',W9*.50,-130,{_s9Role:'beam'}));
+    add(23.65,()=>pair('s9ring',.25,.75,{_s9Role:'spinner'}));
+    add(24.30,()=>spawnEnemy('echof',W9*.56,-108,{}));                            // its afterimages shoot too
     add(25.00,()=>s9MeteorShower(W9*.72,3));
-    add(26.20,()=>pair('s9interceptor',.22,.78,{_s9Role:'kamikaze'}));
+    add(26.20,()=>spawnEnemy('s9singularity',W9*.50,-120,{_s9Role:'orb'}));
+    // ---- HIGH (27s..boss): heavies in PAIRS, beats carry more, cadence tightens to ~1.0s. ----
     add(27.50,()=>{spawnEnemy('s9comet',-86,VH*.16,{_side:1,_s9Role:'slider'});spawnEnemy('s9comet',W9+86,VH*.29,{_side:-1,_s9Role:'slider'});});
-    add(28.75,()=>spawnEnemy('s9singularity',W9*.50,-120,{_s9Role:'orb'}));
-    add(30.10,()=>{spawnEnemy('s9gateturret',W9*.24,-105,{_s9Role:'spinner'});spawnEnemy('s9gateturret',W9*.76,-105,{_s9Role:'spinner',_stagger:.17});});
-    add(31.35,()=>s9MeteorShower(W9*.28,4));
-    add(32.55,()=>{spawnEnemy('s9gunship',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9singularity',W9*.70,-108,{_s9Role:'laser',_stagger:.20});});
+    add(28.60,()=>{spawnEnemy('s9gunship',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9gateturret',W9*.70,-108,{_s9Role:'spinner',_stagger:.18});
+                   spawnEnemy('wskim',W9*.50,-96,{_stagger:.34});});
+    add(29.80,()=>pair('s9interceptor',.22,.78,{_s9Role:'kamikaze'}));
+    add(30.90,()=>{spawnEnemy('s9prism',W9*.28,-128,{_s9Role:'beam'});spawnEnemy('s9prism',W9*.72,-142,{_s9Role:'orb',_stagger:.20});
+                   spawnEnemy('pmine',W9*.50,-104,{_stagger:.30});});          // parks, six-spoke wheel
+    add(31.90,()=>s9MeteorShower(W9*.28,4));
+    add(32.90,()=>{spawnEnemy('s9gunship',W9*.50,-134,{_s9Role:'laser'});spawnEnemy('s9singularity',W9*.20,-110,{_s9Role:'orb',_stagger:.16});spawnEnemy('s9singularity',W9*.80,-110,{_s9Role:'laser',_stagger:.32});
+                   spawnEnemy('vmanta',W9*.36,-118,{_stagger:.44});spawnEnemy('vmanta',W9*.64,-132,{_stagger:.58});});
     add(34.00,()=>pair('s9ring',.22,.78,{_s9Role:'spinner'}));
-    add(35.15,()=>{spawnEnemy('s9interceptor',W9*.18,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-124,{_s9Role:'kamikaze',_stagger:.12});spawnEnemy('s9interceptor',W9*.82,-94,{_s9Role:'kamikaze',_stagger:.24});});
-    add(36.40,()=>s9MeteorShower(W9*.55,5));
-    add(37.55,()=>{spawnEnemy('s9prism',W9*.30,-132,{_s9Role:'beam'});spawnEnemy('s9beacon',W9*.70,-126,{_s9Role:'orb',_stagger:.17});});
-    add(38.75,()=>spawnEnemy('s9gateturret',W9*.50,-148,{_s9Role:'laser'}));
+    add(34.95,()=>{spawnEnemy('s9interceptor',W9*.18,-94,{_s9Role:'kamikaze'});spawnEnemy('s9interceptor',W9*.50,-124,{_s9Role:'kamikaze',_stagger:.12});spawnEnemy('s9interceptor',W9*.82,-94,{_s9Role:'kamikaze',_stagger:.24});
+                   spawnEnemy('echof',W9*.34,-106,{_stagger:.40});});
+    add(36.00,()=>{spawnEnemy('s9gateturret',W9*.26,-105,{_s9Role:'spinner'});spawnEnemy('s9gateturret',W9*.74,-105,{_s9Role:'spinner',_stagger:.17});
+                   spawnEnemy('tsplit',W9*.50,-118,{_stagger:.32});});          // halves into two needles
+    add(36.90,()=>s9MeteorShower(W9*.55,5));
+    add(37.80,()=>{spawnEnemy('s9prism',W9*.32,-132,{_s9Role:'beam'});spawnEnemy('s9beacon',W9*.68,-126,{_s9Role:'orb',_stagger:.17});spawnEnemy('s9comet',-86,VH*.18,{_side:1,_s9Role:'slider',_stagger:.30});});
+    add(38.85,()=>{spawnEnemy('s9gunship',W9*.50,-140,{_s9Role:'beam'});spawnEnemy('s9singularity',W9*.24,-112,{_s9Role:'orb',_stagger:.20});
+                   spawnEnemy('cbreak',W9*.72,-124,{_stagger:.38});});          // the heaviest weaver
     add(curStage.length-2.1,()=>{pair('s9interceptor',.18,.82,{_s9Role:'kamikaze'});s9MeteorShower(W9*.50,6);});
     return _planSorted(P);
   }
@@ -12182,76 +12233,96 @@ const SHIPBOSS = {
 };
 
 /* ============================================================
-   STAGE 9 MID-BOSS — THE TWO VIOLET/ION RIFT WARDENS
+   STAGE 9 MID-BOSS — THE EVENT HORIZON
 
-   These are the two units shown in the old final encounter.  They now occupy the mid-stage gate
-   as a real pair: separate bodies, separate HP and separate fire clocks.  There is deliberately
-   no generic shield ring or regenerating shield HP.  Their movement and projectile patterns are
-   the defence; every hit on the visible hull is honest damage.
+   ⚠ THIS WAS A PAIR AND IS NOW ONE BODY. Mike, 0905: "that'll be our new mini boss, as I did not
+   want two enemies as a mini boss before." The two violet/ion Rift Wardens are retired; the gate
+   is held by a single enlarged Event Horizon (SpriteCook 0905, 164x199 of ink against the old
+   120x180, seven-frame core pulse derived from the still).
+
+   ⚠ THE `_s9rift` PROPERTY NAME IS KEPT ON PURPOSE. Six call sites outside this block gate on it
+   — the sub-boss tick (18441), draw (19242), the two hull-part tests (19537, 19594), the ordinary
+   damage route (19658) and, most importantly, the SPACE-WEAPON damage path at 21201 that exists
+   because a space projectile has to test its edge-contact point against a deliberately tighter
+   hull box. Renaming the property would have quietly detached the Laser Cannon, Shadow Orb and
+   Volley Missiles from the miniboss, which is exactly what the assertion at test_fl.js §272 was
+   written to catch. The FUNCTIONS are renamed; the property is not.
+
+   It keeps the wardens' honest-damage rule: no generic shield ring, no regenerating shield HP.
+   Movement and projectile pattern are the whole defence, and every hit on the visible hull counts.
    ============================================================ */
-function s9RiftWardensInit(b){
+function s9VoidHorizonInit(b){
   const T=(typeof combatThreat==='function')?combatThreat(9):{bossHp:1};
-  const each=Math.ceil(190*DIFF.eHp*(T.bossHp||1));
-  const mk=(side,x)=>({side,x,y:-120,w:172,h:172,hp:each,maxhp:each,disabled:false,
-    spin:side==='L'?-0.06:0.06,_fire:side==='L'?0.72:1.08,flash:0});
-  b.kind='riftwardens';b.name='RIFT WARDENS';b.x=VW/2;b.y=130;b.ty=130;
-  b.w=VW*0.82;b.h=188;b.hp=b.maxhp=each*2;b.enter=true;b.mini=false;
-  b._s9rift={t:0,left:mk('L',VW*.30),right:mk('R',VW*.70),hit:null};
+  /* the SAME total the pair carried (190 each, two of them), so replacing two bodies with one
+     does not quietly halve or double how long the gate takes to break. */
+  const hp=Math.ceil(380*DIFF.eHp*(T.bossHp||1));
+  b.kind='voidhorizon';b.name='EVENT HORIZON';b.x=VW/2;b.y=130;b.ty=130;
+  b.w=196;b.h=238;b.hp=b.maxhp=hp;b.enter=true;b.mini=true;
+  b._s9rift={t:0,core:{x:VW/2,y:-130,w:196,h:238,hp:hp,maxhp:hp,disabled:false,
+                       spin:0,_fire:0.82,flash:0},hit:null};
   if(typeof XART!=='undefined'&&XART._touch){
-    for(let i=0;i<4;i++){XART._touch('ns9_wardenL_'+i);XART._touch('ns9_wardenR_'+i);}
+    for(let i=0;i<7;i++){XART._touch('ns9x_horizon_'+i);XART._touch('ns9x_horizonblk_'+i);}
   }
   return true;
 }
-function s9RiftWardensPart(b,x,y){
+function s9VoidHorizonPart(b,x,y){
   const F=b&&b._s9rift;if(!F||b.enter)return null;
-  for(const w of [F.left,F.right]){
-    if(w.disabled)continue;
-    if(Math.abs(x-w.x)<w.w*.40&&Math.abs(y-w.y)<w.h*.40)return w;
-  }
-  return null;
+  const w=F.core;if(!w||w.disabled)return null;
+  /* the hull is a wide wing span over a narrow spine; .40 of the full box was tuned for the
+     wardens' square plates and would accept shots well outside this silhouette. */
+  return (Math.abs(x-w.x)<w.w*.42&&Math.abs(y-w.y)<w.h*.34)?w:null;
 }
-function s9RiftWardensHit(b,dmg,x,y){
-  const F=b&&b._s9rift,w=s9RiftWardensPart(b,x==null?b.x:x,y==null?b.y:y);if(!F||!w)return false;
-  w.hp=Math.max(0,w.hp-dmg);w.flash=.16;b.hp=F.left.hp+F.right.hp;b.flash=.08;
+function s9VoidHorizonHit(b,dmg,x,y){
+  const F=b&&b._s9rift,w=s9VoidHorizonPart(b,x==null?b.x:x,y==null?b.y:y);if(!F||!w)return false;
+  w.hp=Math.max(0,w.hp-dmg);w.flash=.16;b.hp=w.hp;b.flash=.08;
   if(typeof stageStats!=='undefined')stageStats.dmgDealt+=dmg;
   if(w.hp<=0&&!w.disabled){
-    w.disabled=true;explode(w.x,w.y,70,w.side==='L'?'purple':'blue');shake=Math.max(shake,8);
+    w.disabled=true;explode(w.x,w.y,88,'purple');shake=Math.max(shake,12);
     if(Audio.SFX&&Audio.SFX.expBig)Audio.SFX.expBig();
+    b.hp=0;b.dead=true;b.dying=0;
   }
-  if(F.left.disabled&&F.right.disabled){b.hp=0;b.dead=true;b.dying=0;shake=Math.max(shake,12);}
   return true;
 }
-function s9RiftWardensTick(b,dt){
+function s9VoidHorizonTick(b,dt){
   const F=b._s9rift;if(!F)return false;F.t+=dt;
-  const p=clamp(F.t/1.35,0,1),ey=lerp(-120,132,p*p*(3-2*p));b.enter=p<1;
-  F.left.y=F.right.y=ey+Math.sin(b.t*1.8)*7;
-  F.left.x=VW*.30+Math.sin(b.t*1.12)*30;F.right.x=VW*.70-Math.sin(b.t*1.12)*30;
-  for(const w of [F.left,F.right]){
-    if(w.flash>0)w.flash=Math.max(0,w.flash-dt);
-    w.spin=Math.sin(b.t*1.7+(w.side==='R'?Math.PI:0))*.20;
-    if(!b.enter&&!w.disabled){w._fire-=dt*DIFF.eFire;if(w._fire<=0){s9FusionWardenFire(w,F.t);w._fire=rnd(.76,1.08);}}
+  const w=F.core;
+  const p=clamp(F.t/1.35,0,1),ey=lerp(-130,138,p*p*(3-2*p));b.enter=p<1;
+  w.y=ey+Math.sin(b.t*1.6)*8;
+  w.x=VW*.5+Math.sin(b.t*.78)*(VW*.24);
+  w.spin=Math.sin(b.t*1.1)*.07;
+  b.x=w.x;b.y=w.y;
+  if(w.flash>0)w.flash=Math.max(0,w.flash-dt);
+  if(!b.enter&&!w.disabled){
+    w._fire-=dt*DIFF.eFire;
+    /* reuses the wardens' authored volley rather than inventing a second one; the cadence
+       tightens as the hull darkens, which is the only thing the second phase changes. */
+    if(w._fire<=0){s9FusionWardenFire(w,F.t);w._fire=(w.hp<=w.maxhp*.5)?rnd(.58,.84):rnd(.76,1.08);}
   }
-  b.hp=F.left.hp+F.right.hp;return true;
+  b.hp=w.hp;return true;
 }
-function s9RiftWardensDraw(b){
+function s9VoidHorizonDraw(b){
   const F=b&&b._s9rift;if(!F||typeof XART==='undefined')return false;
-  for(const w of [F.left,F.right]){
-    const key='ns9_warden'+w.side+'_'+(w.disabled?3:(Math.floor(b.t*9)%4));
-    if(!XART.rdy(key))continue;
-    ctx.save();ctx.translate(w.x,w.y);ctx.rotate(w.spin||0);ctx.globalAlpha=w.disabled ? .58 : 1;
-    ctx.drawImage(XART.get(key),-w.w/2,-w.h/2,w.w,w.h);
-    if(w.flash>0&&typeof xartTint==='function'){
-      const hi=xartTint(key,'#ffffff',.88);if(hi){ctx.globalAlpha=clamp(w.flash/.16,0,1);ctx.drawImage(hi,-w.w/2,-w.h/2,w.w,w.h);}
-    }
-    ctx.restore();
+  const w=F.core;
+  /* Mike asked for the black variant as a 1:1 of the same hull, so it is the SECOND-PHASE skin:
+     the Event Horizon goes black once it is half broken. Both reels are the same silhouette, so
+     the swap cannot move the hitbox. */
+  const dark=w.hp<=w.maxhp*.5;
+  const fi=Math.floor(b.t*10)%7;
+  let key=(dark?'ns9x_horizonblk_':'ns9x_horizon_')+fi;
+  if(!XART.rdy(key))key=(dark?'ns9x_horizonblk_':'ns9x_horizon_')+0;
+  if(!XART.rdy(key))return false;
+  ctx.save();ctx.translate(w.x,w.y);ctx.rotate(w.spin||0);ctx.globalAlpha=w.disabled?.58:1;
+  ctx.drawImage(XART.get(key),-w.w/2,-w.h/2,w.w,w.h);
+  if(w.flash>0&&typeof xartTint==='function'){
+    const hi=xartTint(key,'#ffffff',.88);if(hi){ctx.globalAlpha=clamp(w.flash/.16,0,1);ctx.drawImage(hi,-w.w/2,-w.h/2,w.w,w.h);}
   }
+  ctx.restore();
   screenBar(function(){
-    const bw=VW*.34,bh=7,y=31;
-    for(const w of [F.left,F.right]){
-      const x=w.side==='L'?VW*.08:VW*.58,r=clamp(w.hp/w.maxhp,0,1);
-      ctx.fillStyle='#06101b';ctx.fillRect(x,y,bw,bh);ctx.fillStyle=w.side==='L'?'#a35cff':'#39d9ff';ctx.fillRect(x+1,y+1,(bw-2)*r,bh-2);
-    }
-    ctx.fillStyle='#e8f6ff';ctx.font='8px "BOFmil", monospace';ctx.textAlign='center';ctx.fillText('RIFT WARDENS',VW/2,52);
+    const bw=VW*.72,bh=8,y=31,x=VW*.14,r=clamp(w.hp/w.maxhp,0,1);
+    ctx.fillStyle='#06101b';ctx.fillRect(x,y,bw,bh);
+    ctx.fillStyle=dark?'#2b2f3a':'#a35cff';ctx.fillRect(x+1,y+1,(bw-2)*r,bh-2);
+    ctx.fillStyle='#e8f6ff';ctx.font='8px "BOFmil", monospace';ctx.textAlign='center';
+    ctx.fillText('EVENT HORIZON',VW/2,52);
   });
   return true;
 }
@@ -17713,7 +17784,7 @@ function enforceEncounterHp(b,floor){
     for(const k of Object.keys(b._sx))if(b._sx[k]&&typeof b._sx[k]==='object')scalePool(b._sx[k],'hp','max');
   }
   if(Array.isArray(b._qlCan))for(const c of b._qlCan)scalePool(c,'hp','max');
-  if(b._s9rift)for(const w of [b._s9rift.left,b._s9rift.right])scalePool(w,'hp','maxhp');
+  if(b._s9rift&&b._s9rift.core)scalePool(b._s9rift.core,'hp','maxhp');   // ONE body since 0905
   if(b._s9fusion)for(const w of [b._s9fusion.left,b._s9fusion.right])scalePool(w,'hp','maxhp');
   return b;
 }
@@ -17988,7 +18059,7 @@ function spawnSubBoss__inner(kind){
   const b={kind, x:VW/2, y:-120, ty:130, t:0, enter:true, hp:100, maxhp:100, w:130, h:120,
            flash:0, dead:false, dying:0, fireCd:1.4, drift:0, atkPhase:0, phaseT:1.2, sub:true, name:'SUB-BOSS'};
   switch(kind){
-    case 'riftwardens': s9RiftWardensInit(b); break;
+    case 'voidhorizon': s9VoidHorizonInit(b); break;
     /* the two ship MINIBOSSES (drop 0810s) — palette-swapped hulls, same table */
     case 'magmaward': case 'rimewall': case 'olivewarden':   // Mike's 0813h minis
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
@@ -18418,7 +18489,7 @@ function updateSubBoss(dt){
     if(T>=1.9){ subBoss=null; subBossActive=false; subBossDone=true; if(typeof dropPowerup==='function') dropPowerup(b.x,b.y,'weapon'); }
     return;
   }
-  if(b._s9rift){ s9RiftWardensTick(b,dt); return; }
+  if(b._s9rift){ s9VoidHorizonTick(b,dt); return; }
   if(b._harrier){ chaosHarrierUpdate(b,dt); return; }
   if(b.enter){
     b._entT=(b._entT||0)+dt;
@@ -19219,7 +19290,7 @@ function chaosHarrierProjectileDraw(b){
 }
 function drawSubBoss(){
   const b=subBoss; if(!b) return;
-  if(b._s9rift){ s9RiftWardensDraw(b); return; }
+  if(b._s9rift){ s9VoidHorizonDraw(b); return; }
   if(typeof drawSubBossBar==='function') drawSubBossBar(b);
   if(b._harrier){ chaosHarrierDraw(b); return; }
   if(b._ship && typeof shipBossDraw==='function' && shipBossDraw(b)){
@@ -19514,7 +19585,7 @@ function subBossHitPart(x, y){
     const d=stage4MiniDroneAt(b,x,y,2);if(d)return d.side<0?'s4droneL':'s4droneR';
   }
   if(b._s9rift){
-    const w=s9RiftWardensPart(b,x,y);
+    const w=s9VoidHorizonPart(b,x,y);
     return w?(w.side==='L'?'riftL':'riftR'):null;
   }
   const S = b._sx;
@@ -19571,7 +19642,7 @@ function subBossSolidAt(x, y){
   if(!b) return null;
   if(b._jcGhost) return false; // safe scripted fly-through: neither body nor bullets collide
   if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'&&stage4MiniDroneAt(b,x,y,2))return true;
-  if(b._s9rift) return !!s9RiftWardensPart(b,x,y);
+  if(b._s9rift) return !!s9VoidHorizonPart(b,x,y);
   if(b._sx && typeof subBossHitPart==='function') return subBossHitPart(x,y)!==null;
   if(b._ql){
     /* hb is [x,y,w,h] in the 384px SPRITE's own space — the same conversion hitSubBoss
@@ -19635,7 +19706,7 @@ function hitSubBoss(dmg, hx, hy){
   const b=subBoss; if(!b||b.dead) return;
   if(b._jcGhost) return;
   if(b._harrier && !b._chCollision) return;   // the hull is absent inside the authored warp aperture
-  if(b._s9rift){ if(s9RiftWardensHit(b,dmg,hx,hy)) weaponHitSfx('normal'); return; }
+  if(b._s9rift){ if(s9VoidHorizonHit(b,dmg,hx,hy)) weaponHitSfx('normal'); return; }
   if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'){
     const d=stage4MiniDroneAt(b,hx!=null?hx:b.x,hy!=null?hy:b.y,2);
     if(d){stage4MiniDroneDamage(b,d,dmg);weaponHitSfx('normal');return;}
@@ -21150,7 +21221,14 @@ function spaceTargets(){
   }
   if(typeof subBoss!=='undefined'&&subBoss&&subBossActive&&!subBoss.dead&&!subBoss.enter){
     const R=subBoss._s9rift;
-    if(R){for(const w of [R.left,R.right])if(!w.disabled){w._spaceSubOwner=subBoss;a.push(w);}}
+    /* ⚠ THE SEVENTH CALL SITE. The Event Horizon replaced a PAIR here on 0905 and this one
+       destructures `.left`/`.right` off `_s9rift` directly instead of going through the mid-boss
+       functions, so renaming those did not reach it - `[R.left,R.right]` became [undefined,
+       undefined] and the first `.disabled` read threw inside spaceTargets, which is on the
+       player's own bullet tick. The suite reported it as 0 failures and 40 MISSING assertions,
+       not as a failure: it crashed the run. Filtered rather than indexed, so a future shape
+       change degrades instead of throwing. */
+    if(R){for(const w of [R.core])if(w&&!w.disabled){w._spaceSubOwner=subBoss;a.push(w);}}
     else a.push(subBoss);
   }
   /* Space rounds have their own collision pass, so they used to skip the normal crate/capsule
@@ -21173,12 +21251,12 @@ function spaceDamageTarget(t,dmg,b){
   }else if(t._spaceBossOwner&&t._spaceBossOwner._s9fusion){
     const own=t._spaceBossOwner,F=own._s9fusion;F.hit=t;_lastHitX=b.x;_lastHitY=b.y;hitBoss(dmg);
   }else if(t._spaceSubOwner&&t._spaceSubOwner._s9rift){
-    /* spaceBulletHit has already resolved the exact visible Warden body. Re-testing the
-       projectile's edge-contact point against s9RiftWardensPart's deliberately tighter hull
+    /* spaceBulletHit has already resolved the exact visible mid-boss body. Re-testing the
+       projectile's edge-contact point against s9VoidHorizonPart's deliberately tighter hull
        inset consumed the round but rejected the damage (the Stage-9 bonus-route hardlock).
        Credit the body that the collision pass actually selected; ordinary/non-space rounds
        still use the tighter point test through hitSubBoss. */
-    s9RiftWardensHit(t._spaceSubOwner,dmg,t.x,spaceTargetY(t));
+    s9VoidHorizonHit(t._spaceSubOwner,dmg,t.x,spaceTargetY(t));
   }else if(t===boss){_lastHitX=b.x;_lastHitY=b.y;hitBoss(dmg);}
   else if(typeof subBoss!=='undefined'&&t===subBoss)hitSubBoss(dmg,b.x,b.y);
   else hitEnemy(t,dmg);
@@ -42947,7 +43025,12 @@ function drawS5Space(e){if(typeof XART==='undefined'||!e._s5space)return false;c
      been announcing it with all along. `_s5Act`/`_s5AtkT` still drive the release timing;
      only the PLATE stops changing. */
   const fi=0;
-  let key='s5atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s5atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
+  /* ⚠ RETURN TRUE, NOT FALSE (0905) - IDENTICAL DEFECT TO drawS9Void, FOUND BY TESTING FOR IT.
+     `false` hands the hull to the generic path, where `art` was still the spawn default `tankA`
+     -> `tnkG_g2`, A GREEN GROUND TANK, in the Orbital War. Measured: ALL ELEVEN S5SPACE hulls
+     blitted tnkG_g2_idle under the ordering real play produces, because tnkG_g2 rides en_shared
+     (already decoded from stage 1) while these are loose per-unit plates arriving on entry. */
+  let key='s5atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s5atk_'+H.art+'_0';if(!XART.rdy(key))return true;}
   const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(frenzyPlate(e,key)||im,-dw/2,-dh/2,dw,dh)/*FRENZY RED 0904e: xartPalette swaps hue+saturation and KEEPS luminance, so no new frames are needed for any enemy*/;drawSpaceDamage(e,frac,dw,dh,false);
   if(e._repairGlow>0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=e._repairGlow/.25;ctx.strokeStyle='#70ffff';ctx.lineWidth=3;ctx.beginPath();ctx.arc(0,0,Math.max(dw,dh)*.52,0,TAU);ctx.stroke();}if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
@@ -43162,7 +43245,16 @@ function s9VoidTick(e,dt){
   if(e.x<-150)e.x=-150;else if(e.x>W+150)e.x=W+150;
 }
 function drawS9Void(e){if(typeof XART==='undefined'||!e._s9void)return false;const H=S9VOID[e._s9void];if(!H)return false;
-  const fi=0;let key='s9atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s9atk_'+H.art+'_0';if(!XART.rdy(key))return false;}
+  /* ⚠ RETURN TRUE, NOT FALSE, WHEN THE REEL IS NOT DECODED YET (0905). `false` means "I did not
+     draw this, let the generic path try", and the generic path resolved these to a GROUND TANK -
+     see the art:null note in spawnEnemy. It is not a cold-boot curiosity either: `tnkG_g2` lives
+     on en_shared, which stages 1/4/5 have already decoded, while these are loose per-unit PNGs
+     that only start loading on stage-9 entry, so the tank is READY and the void hull is NOT for
+     exactly the window a player is looking at. Reproduced under that ordering on all four hulls
+     tested. Drawing nothing for a frame or two while the plate arrives is the right answer; a
+     tank in deep space is Mike's complaint of 0904r, which removing two units did not close.
+     rdy() calls _touch internally, so asking is also what starts the load. */
+  const fi=0;let key='s9atk_'+H.art+'_'+fi;if(!XART.rdy(key)){key='s9atk_'+H.art+'_0';if(!XART.rdy(key))return true;}
   const im=XART.get(key),dh=e.h*1.72,dw=dh*(im.naturalWidth/im.naturalHeight),frac=clamp(e.hp/(e._maxhp||e.maxhp||e.hp||1),0,1);e._drawW=dw;e._drawH=dh;ctx.save();ctx.translate(e.x,e.y);if(e.spin)ctx.rotate(e.spin);ctx.imageSmoothingEnabled=true;/* ⚠ SMOOTH THESE, THEY ARE NOT PIXEL ART (drop 0904d). These hulls are 256px PHOTOREAL plates minified to 93-141px (1.8x-2.8x, non-integer). Nearest-neighbour MINIFICATION of photoreal art keeps every Nth source pixel and throws the rest away, so highlights survive as isolated white specks - and because the kept pixels change as the sprite drifts sub-pixel, that speckle CRAWLS. Rendered both: chronal_crawler_tank comes out peppered with sparkle under nearest and reads as a solid hull smoothed. THAT is Mike's "jagged jumpy idle sprites", and it is why S6/S7/S9 still looked jumpy after they were already holding frame 0. The engine-wide default stays nearest for the real pixel art; this is inside a save/restore so it cannot leak. */ctx.drawImage(frenzyPlate(e,key)||im,-dw/2,-dh/2,dw,dh)/*FRENZY RED 0904e: xartPalette swaps hue+saturation and KEEPS luminance, so no new frames are needed for any enemy*/;drawSpaceDamage(e,frac,dw,dh,true);if(e.flash>0&&typeof xartTint==='function'){const q=xartTint(key,hitFlashColor(e,'#fff'),.74);if(q)ctx.drawImage(q,-dw/2,-dh/2,dw,dh);}ctx.restore();return true;}
 
 /* HP cut ~45% across the orbital cast. Stage 5 fields big slow targets in an asteroid field, and

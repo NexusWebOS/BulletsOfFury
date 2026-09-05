@@ -12563,7 +12563,7 @@ console.log("=== 261. Stage 9 full headless soak ===");
         JSON.parse(vm.runInContext("JSON.stringify(enemies.map(function(e){return e.type;}))",ctxv)).forEach(function(k){_seen261[k]=1;});
         _peak261=Math.max(_peak261,vm.runInContext("enemies.length",ctxv));
         _shots261=Math.max(_shots261,vm.runInContext("eBullets.length",ctxv));
-        if(vm.runInContext("!!(subBoss&&subBoss.kind==='riftwardens')",ctxv)){
+        if(vm.runInContext("!!(subBoss&&subBoss.kind==='voidhorizon')",ctxv)){
           _sub261=true;
           vm.runInContext("if(subBoss&&!subBoss.dead){subBoss.hp=0;subBoss.dead=true;subBoss.dying=0;}",ctxv);
         }
@@ -13100,7 +13100,14 @@ console.log("=== 272. Stage-9 void fleet and Rift Wardens ===");
   var _fleet272=['s9beacon','s9comet','s9gunship','s9interceptor','s9gateturret','s9prism','s9ring','s9singularity'];
   var _plan272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];var p=buildStagePlan(9),seen={};for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
   ok(_fleet272.every(function(k){return _plan272.indexOf(k)>=0;}),'Stage 9 schedules all twelve supplied Velocity Void hulls');
-  ok(['wskim','pneedle','pmine','gleech','vmanta','echof','tsplit','cbreak','horizon','dreadv'].every(function(k){return _plan272.indexOf(k)<0;}),'the rebuilt bonus stage no longer mixes the prototype void roster into its waves');
+  /* 0905: REPOINTED, NOT DELETED. This asserted that none of the ten prototype units reached the
+     waves - correct when the stage was rebuilt, and it caught a drop that reached for them. Mike
+     was then shown the art and answered "these enemies are good to go", so eight of them are in
+     by his decision. The gate still exists and now guards the two that are NOT: `horizon` became
+     the miniboss, and `dreadv` is held back (hp 130 on a 0.78s 7-wide volley, and the only
+     warm-palette hull in a stage measured at 0.0-0.2% warm). */
+  ok(['wskim','pmine','gleech','vmanta','echof','tsplit','cbreak'].every(function(k){return _plan272.indexOf(k)>=0;}),'the eight approved prototype specialists are scheduled into the bonus stage');
+  ok(['horizon','dreadv'].every(function(k){return _plan272.indexOf(k)<0;}),'the miniboss hull and the held-back apex drone stay out of the ordinary waves');
   var _owned272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];enemies.length=0;var o={};Object.keys(S9VOID).forEach(function(k){enemies.length=0;var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S9VOID[k].art};});return JSON.stringify(o);})()",ctxv));
   ok(_fleet272.every(function(k){return _owned272[k]&&_owned272[k].p==='s9void'&&!_owned272[k].s&&_owned272[k].f===null;}),'every Velocity Void hull owns its flight and weapon cadence');
   var _shots272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];stagePlan=[];waveIdx=0;player.x=260;player.y=470;function tick(k,prep,n){eBullets.length=0;_navalFlashes.length=0;enemies.length=0;var H=S9VOID[k],e={_s9void:k,type:k,x:240,y:120,w:H.w,h:H.h,hp:H.hp,maxhp:H.hp,_maxhp:H.hp,dead:false,spin:0,_fcd:0};if(prep)prep(e);for(var i=0;i<(n||120)&&!e.dead;i++)s9VoidTick(e,1/60);return {k:eBullets.map(function(b){return b.kind;}),fl:_navalFlashes.length};}return JSON.stringify({beacon:tick('s9beacon'),comet:tick('s9comet',function(e){e._dir=1;}),gunship:tick('s9gunship'),interceptor:tick('s9interceptor'),turret:tick('s9gateturret'),prism:tick('s9prism'),ring:tick('s9ring',function(e){e._cy=120;}),singularity:tick('s9singularity')});})()",ctxv));
@@ -13114,13 +13121,36 @@ console.log("=== 272. Stage-9 void fleet and Rift Wardens ===");
   ok(Object.keys(_shots272).every(function(k){return _shots272[k].k.length&&_shots272[k].fl>0;}),'every Level-9 hull fires through an animated following muzzle hardpoint');
   ok(vm.runInContext("['s9gold','s9warp','s9turbo','s9needle','s9comet','s9pair'].every(function(k){return FIRETYPES[k]&&FIRETYPES[k].procSpace&&PROJ[k];})",ctxv),'all six void projectile families use the dedicated hard-edged space renderer');
   ok(vm.runInContext("Object.keys(S9VOID).every(function(k){var a=S9VOID[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s9atk_'+a+'_'+i))return false;return true;})",ctxv),'all twelve Stage-9 hulls resolve their complete eight-frame reels');
+  /* 0905: THE TANK IN DEEP SPACE. `art` was left at the spawn default `tankA` on every void hull -
+     ENEMY_ART maps that to `tnkG_g2`, a green ground tank - and drawS9Void answered `false` while
+     its reel was still decoding, which handed the draw to the generic path. Reproduced under the
+     ordering real play produces (en_shared decoded from stages 1/4/5, the stage-9 loose plates
+     still arriving): 59,056 painted pixels of tank standing in for an s9interceptor. Mike had
+     reported it twice; 0904r answered it by deleting two tank-SHAPED units, which is a different
+     thing. Both ends are asserted here - the hull must carry no resolvable `art`, and the draw
+     must not decline a frame back to the generic path. */
+  ok(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];return Object.keys(S9VOID).every(function(k){enemies.length=0;var e=spawnEnemy(k,240,-90,{});return !e.art||!ENEMY_ART[e.art];});})()",ctxv),
+     'no Velocity Void hull carries a resolvable generic art key - it cannot fall back to a ground tank');
+  /* ⚠ AND STAGE 5 HAD IT TOO, ON ALL ELEVEN HULLS. Found by asking whether the other space stage
+     shared the defect rather than assuming stage 9 was special - every S5SPACE unit blitted
+     tnkG_g2_idle under the same ordering. A ground tank in the Orbital War. */
+  ok(vm.runInContext("(function(){run.stage=5;curStage=STAGES[4];return Object.keys(S5SPACE).every(function(k){enemies.length=0;var e=spawnEnemy(k,240,-90,{});return !e.art||!ENEMY_ART[e.art];});})()",ctxv),
+     'no Orbital War hull carries a resolvable generic art key either');
+  ok(vm.runInContext("drawS5Space.toString().indexOf(\"if(!XART.rdy(key))return true\")>=0",ctxv),
+     'drawS5Space does not hand an undecoded orbital hull to the generic draw path');
+  /* ⚠ TEST THE REEL LINE, NOT THE COUNT OF `return false`. The first version of this asserted
+     there was only one `return false` in the function; there are legitimately two guards at the
+     top (no _s9void, no S9VOID row) and neither reaches the generic path, so it failed on correct
+     code. What matters is that the branch taken when the REEL is undecoded returns true. */
+  ok(vm.runInContext("drawS9Void.toString().indexOf(\"if(!XART.rdy(key))return true\")>=0",ctxv),
+     'drawS9Void does not hand an undecoded void hull to the generic draw path');
   ok(vm.runInContext("(function(){for(var i=0;i<12;i++)if(!XART.rdy('s9lattice_'+i))return false;return true;})()",ctxv),'the supplied twelve-frame warp lattice resolves');
-  var _mini272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];player.x=250;player.y=500;spawnSubBoss('riftwardens');for(var i=0;i<90;i++)updateSubBoss(1/60);var F=subBoss._s9rift;eBullets.length=0;F.left._fire=0;s9RiftWardensTick(subBoss,1/60);return JSON.stringify({kind:subBoss.kind,name:subBoss.name,pair:!!F,left:F.left.hp,right:F.right.hp,shots:eBullets.map(function(q){return q.kind;})});})()",ctxv));
-  ok(_mini272.kind==='riftwardens'&&_mini272.name==='RIFT WARDENS'&&_mini272.pair&&_mini272.left>0&&_mini272.right>0&&_mini272.shots.length>0,'the pictured violet/ion pair now occupies the Stage-9 sub-boss gate as two armed bodies');
-  var _damage272=JSON.parse(vm.runInContext("(function(){function fresh(){subBoss=null;subBossActive=false;subBossDone=false;subBossTriggered=false;pBullets.length=0;spawnSubBoss('riftwardens');for(var i=0;i<90;i++)updateSubBoss(1/60);var F=subBoss._s9rift;player.dead=false;player.x=F.left.x;player.y=410;return F;}function fly(n){for(var i=0;i<n;i++){for(var j=0;j<pBullets.length;j++)if(!pBullets[j].dead)spaceBulletTick(pBullets[j],1/60);pBullets=pBullets.filter(function(b){return !b.dead;});}}run.stage=9;run.spaceMode=true;run.spaceLevels=[5,5,5];var F=fresh(),a=F.left.hp;spaceLaserFire();fly(45);var laser=a-F.left.hp;F=fresh();a=F.left.hp;spaceShadowRelease(1.2);fly(70);var shadow=a-F.left.hp;F=fresh();a=F.left.hp;spaceVolleyFire();fly(80);var volley=a-F.left.hp;return JSON.stringify({laser:laser,shadow:shadow,volley:volley});})()",ctxv));
+  var _mini272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];player.x=250;player.y=500;spawnSubBoss('voidhorizon');for(var i=0;i<90;i++)updateSubBoss(1/60);var F=subBoss._s9rift;eBullets.length=0;F.core._fire=0;s9VoidHorizonTick(subBoss,1/60);return JSON.stringify({kind:subBoss.kind,name:subBoss.name,single:!!(F&&F.core&&!F.left&&!F.right),hp:F.core.hp,shots:eBullets.map(function(q){return q.kind;})});})()",ctxv));
+  ok(_mini272.kind==='voidhorizon'&&_mini272.name==='EVENT HORIZON'&&_mini272.single&&_mini272.hp>0&&_mini272.shots.length>0,'the Stage-9 sub-boss gate is held by ONE armed body - Mike 0905: "I did not want two enemies as a mini boss"');
+  var _damage272=JSON.parse(vm.runInContext("(function(){function fresh(){subBoss=null;subBossActive=false;subBossDone=false;subBossTriggered=false;pBullets.length=0;spawnSubBoss('voidhorizon');for(var i=0;i<90;i++)updateSubBoss(1/60);var F=subBoss._s9rift;player.dead=false;player.x=F.core.x;player.y=410;return F;}function fly(n){for(var i=0;i<n;i++){for(var j=0;j<pBullets.length;j++)if(!pBullets[j].dead)spaceBulletTick(pBullets[j],1/60);pBullets=pBullets.filter(function(b){return !b.dead;});}}run.stage=9;run.spaceMode=true;run.spaceLevels=[5,5,5];var F=fresh(),a=F.core.hp;spaceLaserFire();fly(45);var laser=a-F.core.hp;F=fresh();a=F.core.hp;spaceShadowRelease(1.2);fly(70);var shadow=a-F.core.hp;F=fresh();a=F.core.hp;spaceVolleyFire();fly(80);var volley=a-F.core.hp;return JSON.stringify({laser:laser,shadow:shadow,volley:volley});})()",ctxv));
   ok(_damage272.laser>0&&_damage272.shadow>0&&_damage272.volley>0,
-     'Laser Cannon, Shadow Orb and Volley Missiles all damage Rift Wardens through their live projectile ticks');
-  ok(vm.runInContext("SHIPBOSS.tidalsovereign.pats.length===4&&SHIPBOSS.tidalsovereign.hpMul>=1.5&&SHIPBOSS.warpsentinel.pats.length===3&&SUBBOSS[9].kind==='riftwardens'",ctxv),'Stage 9 reserves the black/blue Warp Sentinel hull for the true twin-drone final boss');
+     'Laser Cannon, Shadow Orb and Volley Missiles all damage the Event Horizon through their live projectile ticks');
+  ok(vm.runInContext("SHIPBOSS.tidalsovereign.pats.length===4&&SHIPBOSS.tidalsovereign.hpMul>=1.5&&SHIPBOSS.warpsentinel.pats.length===3&&SUBBOSS[9].kind==='voidhorizon'",ctxv),'Stage 9 reserves the black/blue Warp Sentinel hull for the true twin-drone final boss');
   ok(vm.runInContext("typeof s9FusionBossInit==='function'&&typeof s9FusionBossTick==='function'&&typeof s9FusionBossDraw==='function'&&s9FusionBossInit.toString().indexOf('enemyShieldEquip')<0",ctxv),'the two black/blue drones fuse into Tidal Sovereign without unexplained shield rings');
   ok(vm.runInContext("Snd.TAME.spaceLaserCannon.g>=1&&Snd.TAME.spaceShadowRelease.g>=1&&Snd.TAME.spaceVolleyLaunch.g>=1",ctxv),
      'all three space launch cues are foreground-mixed over Stage-5/9 music');
@@ -13162,7 +13192,7 @@ console.log("=== 274. tough encounters, static hulls and premium ordnance ===");
 {
   ok(vm.runInContext("BOSS_HP_FLOOR.length===9&&MINIBOSS_HP_FLOOR.length===9&&BOSS_HP_FLOOR.every(function(v,i){return v>=(i?BOSS_HP_FLOOR[i-1]:800);})",ctxv),
      'all nine stages own monotonically rising boss and miniboss HP floors');
-  var _hp274=JSON.parse(vm.runInContext("(function(){run.stage=1;curStage=STAGES[0];spawnBoss('damkeeper');var b1=boss.maxhp;spawnSubBoss('junglecruiser');var m1=subBoss.maxhp;run.stage=9;curStage=STAGES[8];spawnBoss('tidalfusion');var b9=boss.maxhp,tw=boss._s9fusion.left.maxhp+boss._s9fusion.right.maxhp;spawnSubBoss('riftwardens');var m9=subBoss.maxhp,mw=subBoss._s9rift.left.maxhp+subBoss._s9rift.right.maxhp;return JSON.stringify({b1:b1,m1:m1,b9:b9,tw:tw,m9:m9,mw:mw});})()",ctxv));
+  var _hp274=JSON.parse(vm.runInContext("(function(){run.stage=1;curStage=STAGES[0];spawnBoss('damkeeper');var b1=boss.maxhp;spawnSubBoss('junglecruiser');var m1=subBoss.maxhp;run.stage=9;curStage=STAGES[8];spawnBoss('tidalfusion');var b9=boss.maxhp,tw=boss._s9fusion.left.maxhp+boss._s9fusion.right.maxhp;spawnSubBoss('voidhorizon');var m9=subBoss.maxhp,mw=subBoss._s9rift.core.maxhp;return JSON.stringify({b1:b1,m1:m1,b9:b9,tw:tw,m9:m9,mw:mw});})()",ctxv));
   ok(_hp274.b1>=800&&_hp274.m1>=380&&_hp274.b9>=4950&&_hp274.m9>=2220,
      'live stage-1 and stage-9 encounters cannot bypass their toughness floors');
   ok(Math.abs(_hp274.b9-_hp274.tw)<=8&&Math.abs(_hp274.m9-_hp274.mw)<=8,
