@@ -51813,6 +51813,7 @@ function stageWidth(art,text,H,spacingMul){
     /* through stageGlyph, so a BORROWED glyph is measured at the width it will be drawn at.
        Measuring in one face and drawing in another is 0814b's "the text ran off its rail". */
     const g=stageGlyph(art,ch);
+    if(g&&g.dbl){ w+=eqWidth(glyphBox(g.art,g.f,H,ch).w)+sp; continue; }   /* the widened '=' */
     if(!g){
       /* ⚠ MEASURE THE FALLBACK THE WAY stageText DRAWS IT (drop 0904x). stageText now paints a
          glyph no face carries as canvas text; if this still charged it a blank's width the wrap
@@ -52084,7 +52085,25 @@ const FONT_RIDE = {"'":0.00, '-':0.60};
    baseline. `.` `,` `!` `?` `&` `/` all derive to 1.0, which is the default this code already
    applied, so the glyphs that were already right do not move. That is the same check 0822a used
    and the only one that makes a derived table trustworthy. */
+/* ============================================================
+   THE SYNTHETIC '=' HAS TO CARRY THE LINE (drop 0904ah)
+
+   Mike: "the ='s are too small".
+
+   0904y built it from the face's own hyphen, which is right - it keeps the mark in the stage's own
+   material instead of borrowing a shape from another typeface - but it drew the hyphen at its
+   natural size. A hyphen is a thin, narrow mark BECAUSE it separates letters inside a word; an
+   equals is a standalone operator between two values and has to hold its own against them. At the
+   sizes this screen uses it read as two specks.
+
+   Widened, thickened and separated by fractions of the LINE HEIGHT rather than of the hyphen, so
+   it scales with the text instead of with the thinnest glyph in the face. Measured and drawn
+   through the same three constants - a mark that measures narrow and draws wide is 0814b again.
+   ============================================================ */
+const EQ_W=1.42, EQ_T=1.55, EQ_SEP=0.150;
+function eqWidth(w){ return w*EQ_W; }
 function fontRide(art, ch){
+  if(ch==='=') return 0.5;          /* an operator sits on the middle of the cap box, not the baseline */
   if(art && art.ride && art.ride[ch] != null) return art.ride[ch];
   return (ch && FONT_RIDE[ch] != null) ? FONT_RIDE[ch] : 1;
 }
@@ -52155,7 +52174,9 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       else { items.push(null); total+=H*0.42+sp; }
       continue;
     }
-    const gb=glyphBox(g.art,g.f,H,ch); items.push([g.art,g.f,gb.w,gb,g.dbl?1:0]); total+=gb.w+sp;
+    const gb=glyphBox(g.art,g.f,H,ch);
+    const gw=g.dbl?eqWidth(gb.w):gb.w;
+    items.push([g.art,g.f,gw,gb,g.dbl?1:0]); total+=gw+sp;
   }
   total-=sp; let x=cx-total/2;
   /* ⚠ THE OUTLINE IS ITS OWN FULL PASS, BEFORE ANY FACE IS DRAWN. Doing it per glyph would lay
@@ -52168,6 +52189,17 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       if(!it){ ox+=H*0.42+sp; continue; }
       const ga=it[0], f=it[1], w=it[2], gb=it[3];
       if(ga===null){ ox+=w+sp; continue; }         // the canvas rung already strokes itself
+      if(it[4]){
+        /* the '=' is edged on BOTH bars, at the same widened geometry the face pass uses -
+           outlining it as a single hyphen would ring the wrong shape */
+        const sep=Math.max(1,H*EQ_SEP), bh=Math.max(1,Math.round(gb.h*EQ_T));
+        const by=Math.round(cy-H/2+gb.dy);
+        for(const d of _OUTLINE_RING){
+          drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,by-Math.round(sep)-bh+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
+          drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,by+Math.round(sep)+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
+        }
+        ox+=w+sp; continue;
+      }
       for(const d of _OUTLINE_RING)
         drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,Math.round(cy-H/2+gb.dy)+d[1]*outline,
                        Math.round(w),Math.round(gb.h),'#05070c',alpha);
@@ -52192,14 +52224,13 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       ctx.restore(); x+=w+sp; continue;
     }
     if(it[4]){
-      /* the synthetic '=': the hyphen drawn twice, split around the bar the single one sits on,
-         so the pair reads as one mark rather than as two hyphens that happened to collide */
-      /* ⚠ SEPARATED BY THE LINE HEIGHT, NOT BY THE HYPHEN'S OWN. The hyphen's ink is a few
-         percent of the cap box, so gb.h put the two copies a hair apart and the pair rendered as
-         one slightly thick dash - visually identical to the bug it was meant to fix. */
-      const sep=Math.max(1,H*0.115);
-      drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy-sep),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
-      drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy+sep),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
+      /* the synthetic '=': the hyphen drawn twice, widened and thickened so it reads as an
+         operator rather than as two specks, and separated by a fraction of the LINE HEIGHT so it
+         scales with the text instead of with the thinnest glyph in the face */
+      const sep=Math.max(1,H*EQ_SEP), bh=Math.max(1,Math.round(gb.h*EQ_T));
+      const by=Math.round(cy-H/2+gb.dy);
+      drawFrameTinted(ga.img,f,Math.round(x),by-Math.round(sep)-bh,Math.round(w),bh,tintC,tintA,alpha);
+      drawFrameTinted(ga.img,f,Math.round(x),by+Math.round(sep),Math.round(w),bh,tintC,tintA,alpha);
       x+=w+sp; continue;
     }
     drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
@@ -55619,6 +55650,14 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
                        scFit(art,rTxt,colW3,b[3]*0.34,ph2*0.010,0.05));
       /* ⚠ UNTINTED. Mike, 0807q: "Dont color overlay the rank please". */
       const cy=b[1]+b[3]*0.50;
+      /* Mike: "we need line dividers between each section for score, time and rank." Placed on the
+         midpoints BETWEEN the three column centres rather than at chosen fractions, so a divider
+         cannot drift into a column if the columns are ever re-spaced. Drawn in the plate's own rim
+         cyan at low alpha so it reads as part of his panel, not as something laid over it. */
+      const _dv=[(0.185+0.500)/2, (0.500+0.820)/2];
+      ctx.save(); ctx.globalAlpha=0.42; ctx.fillStyle='#7fd8ef';
+      for(const fx of _dv) ctx.fillRect(b[0]+b[2]*fx, cy-b[3]*0.30, Math.max(1,P[2]*0.0022), b[3]*0.60);
+      ctx.restore();
       scCenLift(art,sTxt,b[0]+b[2]*0.185,cy,H,null,0,1,0.05,0.45,1);
       scCenLift(art,cTxt,b[0]+b[2]*0.500,cy,H,null,0,1,0.05,0.45,1);
       scCenLift(art,rTxt,b[0]+b[2]*0.820,cy,H,null,0,1,0.05,0.45,1);
