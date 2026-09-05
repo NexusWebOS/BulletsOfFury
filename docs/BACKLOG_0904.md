@@ -154,3 +154,39 @@ made no announcement.
 The stage-9 cluster (11-14) is one coherent pass — fail state, return state, and roster. The two
 SpriteCook items (4, 7) are one art run. Everything else is independent and can be picked off in any
 order.
+
+---
+
+## DONE (drops 0904w-0904aa) — the 0904 art batch
+
+**Chaos Harrier (0904w)** — no tilt (the banked hulls are never selected), three warps then a
+stationary laser window, the wing cannons rebuilt as sustained beams off the authored `ch_lance_`
+cannon art that nothing had ever drawn, and the phase-rift teleport FX imported.
+
+**Stage fonts Vol.3 (0904x)** — the metric-locked remaster replaces Vol.2. The faces now carry
+their own per-glyph `ride`, so the two-entry hand table from 0822a is a fallback. The pilot card's
+interior is on the stage lettering. `stageText` gained a canvas last rung so a character in NO
+face stops rendering as a space. The pack's 2x `fury-cutscene-font` was imported (never had been).
+
+**The debrief screen (0904y)** — rebuilt to Mike's concept: title bar, pilot bay, mission brief,
+six stat slots with the authored fills and the text ON them, SCORE / RANK, sign-off. Power-Ups
+Collected and Weapon of Choice are NEW measurements. '=' is synthesised from the face's own hyphen.
+
+**Stage 9 boss attacks (0904z)** — CF_BossAttacks-Lvl9 imported; both ship bosses' mounts corrected
+from the pack's own anchors (the Sovereign's cannons were 37px outboard); five signature attacks
+live. The Chaos Harrier's hardpoints were re-measured off its hull in the same pass.
+
+**Doomsday Carrier (0904aa)** — CF_DoomsdayCarrierAttacks-Lvl6 imported. ⚠ Its 16 `s6mb_` families
+were referenced by game.js and NONE were registered; the whole attack visual layer had been drawing
+nothing.
+
+### Still open on the 0904 packs
+- The carrier pack ships **11 named hardpoints** and **six named boss cycles**
+  (cyclone_barrage, prism_crossfire, omega_bomb_run, chrome_flak_fan, storm_cage, doomsday_fusion).
+  Only the art is in; the mounts and the cycles are the next pass on that boss.
+- Seven carrier families are registered but not yet referenced by any draw: ricochetimpact,
+  crystalimpact, flakburst, clusterburst, gravityripple, prismbeam, omegabomb-reflected.
+- The Stage 9 pack's beam heads + tileable bodies (Warp_CrystalBeam/Tile, Tidal_PressureBeam/Tile)
+  and its impacts are imported but not yet wired to a beam act.
+- `CF_Stage9PortalCombatPickups-Lvl9` (179 entries) and the remaining four teleport-FX families
+  from CF_EnemyTeleportFX-Vol.1 are still unimported.

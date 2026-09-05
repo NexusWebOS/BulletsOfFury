@@ -76,6 +76,19 @@ it returns false, and the unit falls through to legacy rigs: it spawns, moves, s
 and draws **nothing**. `ENEMY_ART_FOOT` (2.15) already compensates for uniform-canvas margin, so a
 trimmed rect needs `_foot=1` or it draws 2.15× too big.
 
+**`XART.get(k)` RETURNS A CANVAS, NOT AN Image — SO IT HAS NO `.src`.** A probe that identifies a
+blit by matching `im.src` measures **zero** on working code. This has now cost two round trips in
+one session (the Chaos Harrier's beam, then the stage-6 carrier's whole attack layer), each time
+reading as "the draw never runs" when the draw was running perfectly. Identify a blit by wrapping
+`XART.get` and recording the KEY asked for, or by the image's dimensions — never by `src`.
+
+**A FAMILY REFERENCED BY NAME IS NOT A FAMILY THAT EXISTS, AND THE GUARDS HIDE IT.** 16 `s6mb_*`
+families — the Doomsday Carrier's entire muzzle/tracer/bomb/deflect layer — were written into
+game.js and **none were registered in the manifest**. Every draw resolved to nothing for as long as
+the code existed, silently, because `XART.rdy()` guards turn a missing family into a quiet frame
+rather than an error. The fight ran; the art was simply absent. **When a boss looks plain, grep its
+art prefix against the MANIFEST, not just against game.js.**
+
 **`XART.rdy(k)` returns false on its FIRST call** — that call is what starts the lazy load. Every
 one-shot readiness check reads false and looks like missing art. Poll it.
 
