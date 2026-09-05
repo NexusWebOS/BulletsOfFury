@@ -52100,7 +52100,20 @@ const FONT_RIDE = {"'":0.00, '-':0.60};
    it scales with the text instead of with the thinnest glyph in the face. Measured and drawn
    through the same three constants - a mark that measures narrow and draws wide is 0814b again.
    ============================================================ */
-const EQ_W=1.42, EQ_T=1.55, EQ_SEP=0.150;
+/* Mike, shown the first weighting zoomed in: "closer together vertically, scale them to be
+   larger though. thats how we do it once closer together." So the two bars grow and the gap
+   between them shrinks - a heavier mark with a tight waist, rather than two thin rules spread
+   apart. EQ_SEP is HALF the gap: the bars sit at +-EQ_SEP*H around the centre line. */
+const EQ_W=1.78, EQ_T=1.95, EQ_SEP=0.085;
+/* ⚠ THE GAP HAS TO SURVIVE THE OUTLINE, AND AT ROW SIZE IT DID NOT (drop 0904ai).
+   The 1px black edge is drawn as a full ring, so the TOP bar's edge grows down into the gap and
+   the BOTTOM bar's edge grows up into it. A 2px gap loses 1px from each side and closes: swept
+   H=10..34, the mark rendered as ONE thick dash at every size up to 26 and only separated at 34.
+   That is the "reads as a colon" bug in a new costume, and the zoomed screenshot did not show it -
+   the lava texture in the face reads as a notch where there is none. Only the row-count sweep did.
+   So the half-gap is never smaller than the outline plus one, which guarantees a visible parting
+   at whatever width the edge is drawn at. */
+function eqSep(H,outline){ return Math.max((outline|0)+1, Math.round(H*EQ_SEP)); }
 function eqWidth(w){ return w*EQ_W; }
 function fontRide(art, ch){
   if(ch==='=') return 0.5;          /* an operator sits on the middle of the cap box, not the baseline */
@@ -52192,11 +52205,11 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       if(it[4]){
         /* the '=' is edged on BOTH bars, at the same widened geometry the face pass uses -
            outlining it as a single hyphen would ring the wrong shape */
-        const sep=Math.max(1,H*EQ_SEP), bh=Math.max(1,Math.round(gb.h*EQ_T));
+        const sep=eqSep(H,outline), bh=Math.max(1,Math.round(gb.h*EQ_T));
         const by=Math.round(cy-H/2+gb.dy);
         for(const d of _OUTLINE_RING){
-          drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,by-Math.round(sep)-bh+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
-          drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,by+Math.round(sep)+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
+          drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,by-sep-bh+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
+          drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,by+sep+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
         }
         ox+=w+sp; continue;
       }
@@ -52227,10 +52240,10 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       /* the synthetic '=': the hyphen drawn twice, widened and thickened so it reads as an
          operator rather than as two specks, and separated by a fraction of the LINE HEIGHT so it
          scales with the text instead of with the thinnest glyph in the face */
-      const sep=Math.max(1,H*EQ_SEP), bh=Math.max(1,Math.round(gb.h*EQ_T));
+      const sep=eqSep(H,outline), bh=Math.max(1,Math.round(gb.h*EQ_T));
       const by=Math.round(cy-H/2+gb.dy);
-      drawFrameTinted(ga.img,f,Math.round(x),by-Math.round(sep)-bh,Math.round(w),bh,tintC,tintA,alpha);
-      drawFrameTinted(ga.img,f,Math.round(x),by+Math.round(sep),Math.round(w),bh,tintC,tintA,alpha);
+      drawFrameTinted(ga.img,f,Math.round(x),by-sep-bh,Math.round(w),bh,tintC,tintA,alpha);
+      drawFrameTinted(ga.img,f,Math.round(x),by+sep,Math.round(w),bh,tintC,tintA,alpha);
       x+=w+sp; continue;
     }
     drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
