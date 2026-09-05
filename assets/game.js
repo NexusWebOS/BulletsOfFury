@@ -13512,11 +13512,28 @@ function stage4WarfareDroneMuzzle(b,d){
   navalFlash(null,p,.64,'s4w_muzzle_mg',{n:8,hpx:38,life:.105,anchor:.28,
     follow:()=>b&&!b.dead&&d.active?{x:d.x+Math.cos(d.ang)*40,y:d.y+Math.sin(d.ang)*40}:null});
 }
+/* ============================================================
+   THE HELPERS' ROUNDS ARE BIGGER (drop 0905c)
+
+   Mike, item 5 of his 0904 list: "stage 4 boss - awesome, but make the projectiles from the enemy
+   helpers larger."
+
+   ⚠ DRAWN SIZE AND HITBOX ARE RAISED BY DIFFERENT AMOUNTS, ON PURPOSE. `size` here is the HITBOX;
+   the drawn round comes from the fire type's own height times szMul. Scaling both by the same
+   factor would make the fight measurably harder - a 45% wider hitbox on every helper round is a
+   difficulty change, and he asked for a readability change. So the round is drawn 45% larger and
+   its hitbox grows 18%, which keeps it honest (a round that visibly does not hit where it looks is
+   worse than a small one) without turning a legibility note into a balance pass.
+   Both are one constant each.
+   ============================================================ */
+const S4H_SHOT_DRAW=1.45, S4H_SHOT_HIT=1.18;
 function stage4WarfareShot(b,slot,ang,spd,role,opt){
   opt=opt||{};const p=(typeof slot==='string')?shipBossMount(b,slot):slot;
   const kind=role==='mg'?'s4brass':(role==='spread'?'s4rail':(role==='orb'?'s4bomb':'s4rail'));
-  const size=role==='orb'?[28,28]:(role==='lightning'?[13,30]:(role==='spread'?[10,22]:[7,18]));
-  const q=eShootT(p.x,p.y,ang,spd,kind,{w:opt.w||size[0],h:opt.h||size[1],silent:true,szMul:opt.szMul||1});
+  const _sz=role==='orb'?[28,28]:(role==='lightning'?[13,30]:(role==='spread'?[10,22]:[7,18]));
+  const size=[Math.round(_sz[0]*S4H_SHOT_HIT), Math.round(_sz[1]*S4H_SHOT_HIT)];
+  const q=eShootT(p.x,p.y,ang,spd,kind,{w:opt.w||size[0],h:opt.h||size[1],silent:true,
+                                        szMul:(opt.szMul||1)*S4H_SHOT_DRAW});
   q._s4wKind=role;q._noArsenal=true;q._boss=true;q._bfam='storm';q.ang=ang;
   if(opt.accel){q._s4Accel=opt.accel;q._s4Max=opt.max||spd*1.9;}
   if(opt.lift){q._s4wLift={t:0,dur:opt.lift,targetX:player?player.x:p.x,targetY:player?player.y:VH*.82,
