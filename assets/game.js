@@ -7121,8 +7121,14 @@ function laserMistUnlock(){
    threading a parameter through every one of the damage entry points — hitEnemy, hitSubBoss,
    hitBoss and the modular-boss path all land in different places, and adding an argument to each
    is how a call site gets missed. One variable, set and cleared by the shooter. */
+/* ⚠ TWO OF MIKE'S CONCEPT STATS WERE NEVER MEASURED (drop 0904y). His stat-screen concept asks
+   for "Power-Up's Collected = X/Y" and "Weapon of Choice = Weapon you used to kill the most
+   enemies or do the most damage". Neither existed as a number anywhere in the engine - no label
+   was missing, the measurement was. `pickups`/`pickupsSeen` and the per-weapon damage tally
+   `wpn` are those measurements, taken at the same chokepoints the existing stats use so a new
+   pickup kind or a new weapon is counted by existing code. */
 let stageStats={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0,
-                mslHits:0, spShots:0, spHits:0, spDmg:0};
+                mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{}};
 let _dmgSrc=null;                  // 'missile' | 'special' | null, for the frame of a damage call
 let _dmgBullet=null;               // the live player round, for directional enemy deflectors
 /* ============================================================
@@ -7146,7 +7152,7 @@ let _dmgBullet=null;               // the live player round, for directional ene
    lands, which outside a window is seat 1. That is the first cut, and it is recorded here so
    nobody measures "P2's bombs never count" as a mystery.
    ============================================================ */
-let stageStats2={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0,
+let stageStats2={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0, pickups:0, pickupsSeen:0, wpn:{},
                  mslHits:0, spShots:0, spHits:0, spDmg:0};
 let _shooter=1, _shooterSave=null;
 function shooterSet(seat){
@@ -20933,6 +20939,7 @@ function dropPowerup(x,y,forceKind){
     kind = r<0.62?'bomb' : (r<0.9?'shield':'life');
   }
   powerups.push({x,y,vy:1.1,t:0,kind,w:18,h:18,bob:rnd(0,TAU)});
+  try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_pq){}
 }
 function spawnContainer(type){
   const x=rnd(40,VW-40);
@@ -20969,6 +20976,10 @@ function spawnContainer(type){
   else if(type==='scrate') powerups.push({x,y:-30,vy:0.8,t:0,kind:'scrate',hp:6,flash:0,w:30,h:30,bob:rnd(0,TAU)});
   else if(type==='mcrate') powerups.push({x,y:-30,vy:0.85,t:0,kind:'mcrate',hp:6,flash:0,w:48,h:44,bob:rnd(0,TAU)});
   else powerups.push({x,y:-30,vy:0.9,t:0,kind:'capsule',hp:5,flash:0,w:22,h:32,bob:rnd(0,TAU)});
+  /* the denominator for "Power-Up's Collected = X/Y": what the stage OFFERED. A container counts
+     once here, not again when it breaks open - breakContainer pushes the contents of something
+     already counted, and counting both would let the ratio exceed 1 the way MISSILE HITS did. */
+  try{ if(typeof stageStats!=='undefined' && stageStats.pickupsSeen!=null) stageStats.pickupsSeen++; }catch(_pq){}
 }
 function crateBreak(x,y,col){
   for(let i=0;i<16;i++){ const a=rnd(0,TAU),sp=rnd(1,4.2); particles.push({x,y,vx:Math.cos(a)*sp,vy:Math.sin(a)*sp,life:rnd(0.3,0.75),t:0,r:rnd(1.5,3.2),color:i%2?col:'#fff'}); }
@@ -21074,7 +21085,21 @@ function grantCinematicMissiles(x, y){
   if(Audio.SFX.powerup) Audio.SFX.powerup();
 }
 
+/* the name to credit this frame's damage to. Missiles and specials are their own answer; the
+   primary is whatever slot the pilot is holding, which is what WEAPONS already indexes. */
+function scWeaponKey(){
+  if(_dmgSrc==='missile') return 'MISSILES';
+  if(_dmgSrc==='special') return 'SPECIAL';
+  if(typeof spaceWeaponsActive==='function' && spaceWeaponsActive() && typeof spaceWeaponName==='function')
+    return String(spaceWeaponName()||'SPACE WEAPON').toUpperCase();
+  const w=(typeof run!=='undefined')?(run.weapon|0):0;
+  return (typeof WEAPONS!=='undefined' && WEAPONS[w]) ? WEAPONS[w] : 'MACHINE GUN';
+}
 function applyPowerup(p){
+  /* ⚠ COUNTED BEFORE THE KIND IS REWRITTEN. The lines below REPLACE `p` when it is a container -
+     a crate becomes the weapon inside it - so counting after the switch would count the contents
+     and miss anything that yields nothing. One pickup touched is one pickup collected. */
+  try{ if(typeof stageStats!=='undefined' && stageStats.pickups!=null) stageStats.pickups++; }catch(_pq){}
   if(p.kind==='crate'){ crateBreak(p.x,p.y,'#ffcf4a'); p={kind:'weapon',wtype:p.wtype,wvar:p.wvar,x:p.x,y:p.y}; }
   else if(p.kind==='scrate'){ crateBreak(p.x,p.y,'#ff3a2a'); p={kind:scrateYield(),x:p.x,y:p.y}; }
   else if(p.kind==='mcrate'){ crateBreak(p.x,p.y,'#5ab4ff');
@@ -24161,12 +24186,12 @@ function beginStage(num){
      stage began — the four new rows would have read 0 forever. Caught by asserting the fields
      exist at RUNTIME rather than just in the source. */
   stageStats={kills:0,shots:0,hits:0,livesStart:run.lives,scoreStart:run.score,spawned:0,deaths:0,missiles:0,
-              dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0};
+              dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{}};
   /* P2's accumulator starts the stage alongside P1's. `spawned` is a STAGE fact, not a seat one -
      both rows show the same denominator - so it is mirrored onto seat 2 wherever seat 1 writes it
      (see the stamp in updatePlay) rather than counted twice. */
   stageStats2={kills:0,shots:0,hits:0,livesStart:run2.lives,scoreStart:run2.score,spawned:0,deaths:0,missiles:0,
-               dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0};
+               dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{}};
   _shooter=1; _shooterSave=null;
   if(typeof drawStageClear!=='undefined'){ drawStageClear._init=false; drawStageClear._rsnd=false; for(const _k in drawStageClear){ if(/^_(l|c)\d/.test(_k)) delete drawStageClear[_k]; } }
   try{ freezerL3End(); freezerL3Begin(); }catch(e){}
@@ -27171,6 +27196,12 @@ function _hitEnemyCore(e,dmg){
     stageStats.dmgDealt+=dmg;
     if(_dmgSrc==='missile') stageStats.mslHits++;
     else if(_dmgSrc==='special'){ stageStats.spHits++; stageStats.spDmg+=dmg; }
+    /* WEAPON OF CHOICE. Attributed HERE, beside dmgDealt, because this is the one place every
+       point of player damage is already counted - CLAUDE.md's own note at _dmgSrc says there are
+       ~40 stageStats sites and that editing each is how one gets missed. `_dmgSrc` already
+       distinguishes a missile and a special from the primary, so the three cases the player
+       actually thinks of as different weapons are separable without a new flag. */
+    try{ if(stageStats.wpn){ const _wk=scWeaponKey(); stageStats.wpn[_wk]=(stageStats.wpn[_wk]||0)+dmg; } }catch(_wq){}
   }
   // small spark
   particles.push({x:e.x,y:e.y-e.h/4,vx:rnd(-1,1),vy:rnd(-1,0),life:0.18,t:0,r:rnd(1,2),color:'#fff'});
@@ -27583,6 +27614,9 @@ function bossDie(){
   /* Only the actual Stage-9 boss death grants Laser Mist. Entering the stage, seeing the boss,
      or exhausting continues on it never touches this flag. */
   if(run.stage===9&&typeof laserMistUnlock==='function')laserMistUnlock();
+  /* the debrief names the boss you just beat, and by then the object is gone - so the name is
+     taken here, at the one moment it is certainly correct, rather than re-derived from a kind. */
+  try{ if(boss&&boss.name) run._lastBossName=String(boss.name); }catch(_bn){}
   boss.dead=true; boss.dying=0; boss._blasted=false; bossActive=false; bossDefeated=true;
   /* Side cores are real destructible units, but none may linger after their carrier dies. */
   if(boss._s4war&&boss._s4war.coreTurrets)for(const t of boss._s4war.coreTurrets){
@@ -51509,19 +51543,36 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
       else { items.push(null); total+=H*0.42+sp; }
       continue;
     }
-    const gb=glyphBox(g.art,g.f,H,ch); items.push([g.art,g.f,gb.w,gb]); total+=gb.w+sp;
+    const gb=glyphBox(g.art,g.f,H,ch); items.push([g.art,g.f,gb.w,gb,g.dbl?1:0]); total+=gb.w+sp;
   }
   total-=sp; let x=cx-total/2;
   for(const it of items){
     if(!it){ x+=H*0.42+sp; continue; }
     const ga=it[0], f=it[1], w=it[2], gb=it[3];
     if(ga===null){
+      /* ⚠ THE AUTHORED FACE IS A BRIGHT GLYPH OVER ITS OWN OPAQUE DARK SHADOW, so a flat canvas
+         glyph beside it reads as a thin mark from a different font - which is exactly how '='
+         looked on the debrief screen, and '=' is in none of the 46 cells. The stroke reproduces
+         that shadow so a fallback glyph sits in the line instead of floating in it. */
       ctx.save(); ctx.textAlign='left'; ctx.textBaseline='alphabetic';
-      ctx.font='bold '+Math.round(H*0.92)+'px "BOFmil", monospace';
+      ctx.font='bold '+Math.round(H*0.98)+'px "BOFmil", monospace';
       if(alpha!=null)ctx.globalAlpha=alpha;
+      ctx.lineJoin='round'; ctx.lineWidth=Math.max(2,H*0.18); ctx.strokeStyle='#0a0d14';
+      ctx.strokeText(f,Math.round(x),Math.round(cy+H/2));
       ctx.fillStyle=(tintC&&tintA)?tintC:'#e8eefc';
       ctx.fillText(f,Math.round(x),Math.round(cy+H/2));
       ctx.restore(); x+=w+sp; continue;
+    }
+    if(it[4]){
+      /* the synthetic '=': the hyphen drawn twice, split around the bar the single one sits on,
+         so the pair reads as one mark rather than as two hyphens that happened to collide */
+      /* ⚠ SEPARATED BY THE LINE HEIGHT, NOT BY THE HYPHEN'S OWN. The hyphen's ink is a few
+         percent of the cap box, so gb.h put the two copies a hair apart and the pair rendered as
+         one slightly thick dash - visually identical to the bug it was meant to fix. */
+      const sep=Math.max(1,H*0.115);
+      drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy-sep),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
+      drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy+sep),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
+      x+=w+sp; continue;
     }
     drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
     x+=w+sp;
@@ -51544,7 +51595,18 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
 
    glyphBox is handed the BORROWED face, so the borrowed glyph is scaled by ITS OWN cap height and
    lands on the same baseline. ============================================================ */
+/* ⚠ '=' IS NOT ONE OF THE 46 CELLS, AND MIKE'S DEBRIEF SCREEN USES IT EIGHT TIMES.
+   ("Enemies Killed = X/Y", "Boss Defeated = X", "Score = X", "Rank = Y" - it is the whole
+   grammar of his mock.) Falling through to the canvas last rung put a thin monospace mark in
+   the middle of every line of authored lettering.
+   An equals sign is two hyphens, and the face HAS a hyphen - so it is drawn from the face's own
+   glyph, twice, rather than borrowed from another typeface or invented as a rectangle. It stays
+   the stage lettering, in the stage's own material, at whatever size the line is set in. */
 function stageGlyph(art, ch){
+  if(ch==='='){
+    const h=stageGlyph(art,'-');
+    if(h) return {art:h.art, f:h.f, dbl:1};
+  }
   let nm=art&&art.font&&art.font[ch];
   if(nm && art.frames && art.frames[nm]) return {art:art, f:art.frames[nm]};
   const A=(typeof ASSETS!=='undefined')?ASSETS:null; if(!A) return null;
@@ -54616,6 +54678,299 @@ function scDrawCoopBody(R, px, py, pw, ph, t, dt, art, F){
   }
 }
 
+/* ============================================================
+   THE DEBRIEF SCREEN, BUILT TO MIKE'S CONCEPT (drop 0904y)
+
+   Mike, with a mocked-up screen: "I have a concept stat screen, see if you can replicate it ...
+   center all avatars, text, and use colored fills we have with the text on top of the fills."
+
+   THREE THINGS HE ASKED FOR, AND WHAT EACH MEANT IN THIS ENGINE:
+
+   1. THE LAYOUT. His mock is a title bar, a small left bay holding the pilot's face, a wide right
+      bay holding the mission brief, SIX stat slots in two columns, one wide SCORE / RANK bar and
+      a sign-off line. The old screen was a portrait column beside nine left-label/right-value
+      rows - a spreadsheet, not a debrief.
+
+   2. "COLORED FILLS WE HAVE". Not a new asset: `nui_fill_<type>_large_0..7` is eight authored
+      animated fills - armor, bomb, firepower, health, missiles, shield, special, speed - already
+      driving scBar, and `nui_bframe_large` is the slot they sit in. Every slot on this screen is
+      that frame plus that fill, so the screen is made of the game's own parts.
+
+   3. "TEXT ON TOP OF THE FILLS". The old rows drew the label ABOVE its bar; his mock puts the
+      whole line inside the slot. So each slot fills to its own fraction and the text is drawn
+      over it, centred, at a size solved against the slot so it cannot overrun - the collision
+      this panel has had reported four separate times.
+
+   ⚠ TWO OF HIS SIX STATS DID NOT EXIST AS NUMBERS. "Power-Up's Collected" and "Weapon of Choice"
+      were never measured anywhere in the engine; see stageStats. They are counted now at the same
+      chokepoints the existing stats use.
+
+   ⚠ AND HIS SIX REPLACE NINE. The old panel showed MISSILES FIRED, MISSILE HITS, SPECIAL DAMAGE,
+      SPECIAL HITS and CLEAR TIME, all of which Mike asked for in 0807o. His concept has six
+      slots and names all six, so the five are not on this screen any more. The grid is driven by
+      SC_CONCEPT below - going back to a 2x4 or 2x5 grid is that table plus one row count.
+   ============================================================ */
+const SC_CONCEPT = [
+  {k:'ENEMIES KILLED',  fill:'firepower', fmt:s=>s.kills+' / '+Math.max(s.kills,s.spawned),
+   val:s=>s.spawned? Math.min(1,s.kills/s.spawned) : 1},
+  {k:'LIVES LOST',      fill:'health',    fmt:s=>String(s.deaths)+' / '+Math.max(1,s.livesStart|0),
+   val:s=>Math.max(0, 1-s.deaths/Math.max(1,s.livesStart|0))},   // inverted: fewer lost fills more
+  {k:'BULLETS FIRED',   fill:'missiles',  fmt:s=>s.hits+' / '+s.shots,
+   val:s=>s.shots? Math.min(1,s.hits/s.shots) : 0},
+  {k:'WEAPON ACCURACY', fill:'speed',     fmt:s=>(s.shots? Math.round(100*Math.min(1,s.hits/s.shots)):0)+'%',
+   val:s=>s.shots? Math.min(1,s.hits/s.shots) : 0},
+  {k:'WEAPON OF CHOICE',fill:'special',   fmt:s=>scTopWeapon(s),
+   val:s=>scTopWeapon(s)==='NONE'?0:1},
+  {k:'POWER-UPS',       fill:'shield',    fmt:s=>(s.pickups|0)+' / '+Math.max(s.pickups|0,s.pickupsSeen|0),
+   val:s=>(s.pickupsSeen|0)? Math.min(1,(s.pickups|0)/s.pickupsSeen) : 0},
+];
+/* "Weapon you used to kill the most enemies or do the most damage" - Mike's own definition, and
+   damage is the half the engine can answer exactly, so the tally is by damage dealt. */
+function scTopWeapon(s){
+  let best=null, bv=0;
+  const W=(s&&s.wpn)||{};
+  for(const k in W) if(W[k]>bv){ bv=W[k]; best=k; }
+  return best||'NONE';
+}
+/* the boss of a stage, by display name, without spawning one */
+function scBossName(kind){
+  if(!kind) return '';
+  try{ if(typeof SHIPBOSS!=='undefined' && SHIPBOSS[kind] && SHIPBOSS[kind].name) return SHIPBOSS[kind].name; }catch(_e){}
+  return String(kind).toUpperCase().replace(/_/g,' ');
+}
+/* the ground colour under each authored fill - the MEAN of every pixel above 40 alpha in frame 0
+   of that family, measured off the plates rather than chosen */
+const SC_FILL_RGB = {
+  firepower:'#d78333', health:'#d4682a', missiles:'#61bc5e', speed:'#a1b866',
+  special:'#bb5ec7',   shield:'#4d9ed3', bomb:'#d3b041',     armor:'#5395cd',
+};
+/* one slot: the authored frame, the authored fill clipped to `frac`, then the text ON it */
+function scSlot(x,y,w,h,type,frac,animT,alpha){
+  const fk='nui_bframe_large';
+  ctx.save(); if(alpha!=null)ctx.globalAlpha=alpha;
+  if(XART.rdy(fk)) ctx.drawImage(XART.get(fk), x, y, w, h);
+  else { ctx.fillStyle='rgba(8,16,26,0.72)'; ctx.fillRect(x,y,w,h);
+         ctx.strokeStyle='#5a6472'; ctx.lineWidth=1; ctx.strokeRect(x,y,w,h); }
+  if(frac>0 && type){
+    /* ============================================================
+       ⚠ THE AUTHORED FILL ALONE DOES NOT READ AS A BAR UNDER TEXT.
+
+       nui_fill_* are diagonal hazard stripes with a bright highlight on every stripe. They are
+       cut to be seen ALONE on a health bar, where all that detail is signal. Put a word on top
+       and the two compete: the stripes show through the gaps between letters as coloured speckle
+       and the eye cannot find where the fill ENDS, which is the one thing a fill has to say.
+       Both obvious fixes are wrong - full strength is the speckle, and a dark wash under the text
+       hides the fill, which is the opposite of what Mike asked for.
+
+       So the bar is built in three passes: the fill's OWN measured colour as a solid ground so
+       the extent is unmistakable, the authored stripes over it so it is still our art and still
+       animates, and a bright leading edge at the fill head. Text then sits on a flat colour
+       rather than on moving detail.
+
+       The colours are MEASURED off the plates, not picked - the mean of every pixel above 40
+       alpha in frame 0 of each family. ============================================================ */
+    const inx=x+w*0.035, iny=y+h*0.16, inw=w*0.930, inh=h*0.68;
+    const fw=inw*Math.min(1,frac);
+    const key='nui_fill_'+type+'_large_'+(Math.floor((animT||0)*10)%8);
+    const im=XART.rdy(key)?XART.get(key):null;
+    ctx.save();
+    ctx.beginPath(); ctx.rect(inx, iny, fw, inh); ctx.clip();
+    ctx.globalAlpha=(ctx.globalAlpha||1)*0.72;
+    ctx.fillStyle=SC_FILL_RGB[type]||'#2f6d3a'; ctx.fillRect(inx, iny, inw, inh);
+    if(im){ ctx.globalAlpha=(ctx.globalAlpha||1)*0.55; ctx.drawImage(im, inx, iny, inw, inh); }
+    ctx.restore();
+    if(fw>2 && fw<inw-1){
+      ctx.save(); ctx.globalAlpha=(ctx.globalAlpha||1)*0.85; ctx.globalCompositeOperation='lighter';
+      ctx.fillStyle='#ffffff'; ctx.fillRect(inx+fw-Math.max(1,w*0.006), iny, Math.max(1,w*0.006), inh);
+      ctx.restore();
+    }
+  }
+  ctx.restore();
+}
+/* centred text solved against a width, so a long value shrinks instead of running off its slot */
+function scFit(art,text,maxW,Hmax,Hmin,sp){
+  let H=Hmax; const lo=Math.max(4,Hmin||4);
+  while(H>lo && _tw(art,text,H,sp)>maxW) H-=0.5;
+  return H;
+}
+function scCen(art,text,cx,cy,H,tintC,tintA,alpha,sp){
+  if(art && art.font && typeof stageText==='function') stageText(art,text,cx,cy,H,tintC,tintA,alpha,sp);
+  else { ctx.save(); ctx.globalAlpha=(alpha==null?1:alpha); ctx.textAlign='center'; ctx.textBaseline='middle';
+         ctx.fillStyle=tintC||'#e8eef8'; ctx.font='bold '+Math.max(7,Math.round(H))+'px "BOFmil", monospace';
+         ctx.fillText(String(text),cx,cy); ctx.restore(); ctx.textAlign='left'; ctx.textBaseline='alphabetic'; }
+}
+function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
+  const S=(typeof stageStats!=='undefined')?stageStats:{};
+  const IX=px+pw*0.046, IW=pw*0.905;                   // the measured panel interior
+  const A=(d)=>Math.min(1,Math.max(0,(t-d)/0.28));     // one stagger curve for the whole screen
+
+  /* ---- 1. TITLE ---- */
+  const tiY=py+ph*0.088, tiH=ph*0.062;
+  /* ⚠ THE FILLS GO WHERE THEY MEAN SOMETHING. Mike asked for "colored fills we have with the
+     text on top", and on a STAT slot the fill is the value - it is information. Behind a title or
+     a paragraph it is just a hazard stripe under words, which is what the first cut looked like.
+     Title, brief and sign-off get the authored slot with no fill; the six stats and the score bar
+     get the fill, because those are the ones a fraction means something for. */
+  scSlot(IX,tiY,IW,tiH,null,0,0,A(0.16));
+  {
+    const s='STAGE '+run.stage+' COMPLETE!';
+    const H=scFit(art,s,IW*0.90,tiH*0.62,ph*0.020,0.09);
+    scCen(art,s,IX+IW/2,tiY+tiH/2,H,null,0,A(0.20),0.09);
+  }
+
+  /* ---- 2. THE PILOT BAY - "Pilot face goes in here, centered." ---- */
+  const bY=py+ph*0.170, bH=ph*0.225;
+  const faW=IW*0.285, brX=IX+faW+IW*0.022, brW=IW-faW-IW*0.022;
+  scSlot(IX,bY,faW,bH,null,0,0,A(0.24));
+  if(R.face && XART.rdy(R.face)){
+    const im=XART.get(R.face);
+    const pad=Math.min(faW,bH)*0.10, aw=faW-pad*2, ah=bH-pad*2-ph*0.024;
+    const k=Math.min(aw/im.naturalWidth, ah/im.naturalHeight);
+    const w=im.naturalWidth*k, h=im.naturalHeight*k;
+    ctx.save(); ctx.globalAlpha=A(0.28);
+    /* CENTRED IN THE BAY ON BOTH AXES - his note on the mock is literally "centered" */
+    ctx.drawImage(im, IX+(faW-w)/2, bY+pad+(ah-h)/2, w, h);
+    ctx.restore();
+  }
+  {
+    const nm=String(run.pilot||'').toUpperCase();
+    const H=scFit(art,nm,faW*0.88,ph*0.026,ph*0.014,0.06);
+    scCen(art,nm,IX+faW/2,bY+bH-ph*0.018,H,null,0,A(0.30),0.06);
+  }
+
+  /* ---- 3. THE BRIEF - boss defeated, and where you are sent next ---- */
+  scSlot(brX,bY,brW,bH,null,0,0,A(0.26));
+  {
+    const nx=(typeof STAGES!=='undefined')?STAGES[(run.stage|0)]:null;   // STAGES is 0-indexed
+    const bossNm=(run._lastBossName||scBossName((curStage&&curStage.boss)||'')||'ENEMY COMMAND');
+    /* Mike's mock makes STATUS one sentence - "Head to X and destroy Y. Our HQ reports heavy
+       activity in X, Z." - so it is one line here too. The first cut carried it as two and the
+       block ran onto the bay's bottom moulding, which is the collision this panel has had
+       reported four separate times. */
+    const lines=['BOSS DEFEATED = '+bossNm];
+    if(nx) lines.push('STATUS = HEAD TO '+String(nx.sub||nx.name)+' AND DESTROY '+scBossName(nx.boss)
+                      +'. OUR HQ REPORTS HEAVY ACTIVITY THERE.');
+    else   lines.push('STATUS = ALL SECTORS CLEAR. RETURN TO FURY HQ FOR DEBRIEF.');
+    const pad=brW*0.055, colW=brW-pad*2;
+    /* ⚠ SOLVED AGAINST THE BAY'S REAL INTERIOR, NOT ITS OUTER BOX. nui_bframe_large carries a
+       bevel of its own, so a block sized to bH sits ON the moulding. The 0.80 is that bevel. */
+    const room=bH*0.80;
+    let H=ph*0.023, gap=H*1.42, N=0;
+    for(;H>ph*0.010;H-=0.3){
+      gap=H*1.42; N=0;
+      for(const L of lines) N+=Math.max(1,stageWrapCount(art,L,H,colW,0.05));
+      if(N*gap<=room) break;
+    }
+    /* centred in the bay on the vertical too - "center all ... text" */
+    let yy=bY+bH/2-(N*gap)/2;
+    for(let i=0;i<lines.length;i++){
+      const L=lines[i];
+      const n=Math.max(1,stageWrapCount(art,L,H,colW,0.05));
+      stageWrapCen(art,L,brX+brW/2,yy+H/2,H,colW,1.42,A(0.32+i*0.06),0.05,i===0?'#ffd24a':null,i===0?1:0);
+      yy+=n*gap;
+    }
+  }
+
+  /* ---- 4. SIX STAT SLOTS, TWO COLUMNS, TEXT ON THE FILL ---- */
+  const gY=py+ph*0.415, gH=ph*0.235;
+  const colW=(IW-IW*0.020)/2, colX=[IX, IX+colW+IW*0.020];
+  const rowH=gH/3, slotH=rowH*0.84;
+  /* the fills still animate in one at a time, which is what made the old screen feel like a
+     readout rather than a static card - kept, just per SLOT instead of per row */
+  if(t>0.42 && drawStageClear._row<SC_CONCEPT.length){
+    drawStageClear._segT+=dt;
+    if(drawStageClear._segT>=0.16){ drawStageClear._segT=0; drawStageClear._row++;
+      if(Audio.SFX.statTick) Audio.SFX.statTick(); }
+  }
+  for(let i=0;i<SC_CONCEPT.length;i++){
+    if(i>drawStageClear._row) break;
+    const row=SC_CONCEPT[i];
+    const cx=colX[i%2], cy=gY+Math.floor(i/2)*rowH;
+    const app=Math.min(1,(drawStageClear._row-i)+0.35);
+    const frac=Math.max(0,Math.min(1,row.val(S)))*Math.min(1,app*1.6);
+    scSlot(cx,cy,colW,slotH,row.fill,frac,t,1);
+    const txt=row.k+' = '+row.fmt(S);
+    const H=scFit(art,txt,colW*0.80,slotH*0.44,ph*0.010,0.05);
+    /* ⚠ NO DARK WASH UNDER THE TEXT. The first cut laid a 55%-black rect over 90% of the slot to
+       protect the letterforms and it hid the fill Mike asked to see - the stat bars read as grey
+       slots with coloured speckle showing through the word gaps. It is not needed: CLAUDE.md
+       records that every letter in this face is a bright face drawn over its OWN opaque dark drop
+       shadow, which is exactly the separation a wash was being added for. Text straight on the
+       fill, centred. */
+    scCen(art,txt,cx+colW/2,cy+slotH*0.50,H,null,0,app,0.05);
+  }
+
+  /* ---- 5. SCORE and RANK, one wide bar ---- */
+  const sY=py+ph*0.660, sH=ph*0.070;
+  if(t>0.95){
+    scSlot(IX,sY,IW,sH,'bomb',Math.max(0.06,Math.min(1,R.pct||0)),t*0.7,1);
+    const tgt=(run.score|0)+Math.round(R.bonus*Math.min(1,(t-0.95)/0.9));
+    if(drawStageClear._scoreShown<tgt){
+      drawStageClear._scoreShown=Math.min(tgt, drawStageClear._scoreShown+Math.max(1,Math.round(R.bonus*dt*1.4)));
+      if(Audio.SFX.blip && Math.random()<0.35) Audio.SFX.blip();
+    }
+    const sTxt='SCORE = '+String(drawStageClear._scoreShown|0);
+    const rTxt='RANK = '+(drawStageClear._stamp>0?R.rank:'-');
+    const H=scFit(art,sTxt+'   '+rTxt,IW*0.86,sH*0.46,ph*0.014,0.06);
+    /* ⚠ THE RANK AND THE SCORE DRAW UNTINTED. Mike, 0807q: "Dont color overlay the rank please"
+       - a tint composites in 'color' and the letter stops reading as the game's own lettering and
+       becomes a coloured shape. My first cut of this screen put the rank in gold and section 201
+       caught it, which is exactly what that assertion is for. */
+    scCen(art,sTxt,IX+IW*0.28,sY+sH*0.50,H,null,0,1,0.06);
+    scCen(art,rTxt,IX+IW*0.76,sY+sH*0.50,H,null,0,1,0.06);
+    /* the divider his mock draws between the two halves */
+    ctx.save(); ctx.globalAlpha=0.5; ctx.fillStyle='#9fb4d0';
+    ctx.fillRect(IX+IW*0.52, sY+sH*0.26, Math.max(1,pw*0.003), sH*0.48); ctx.restore();
+  }
+  /* the rank stamp still drives _stamp, because PRESS FIRE and the password both gate on it */
+  if(t>1.15 && drawStageClear._stamp<1){
+    if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7);
+      if(Audio.SFX.rank) Audio.SFX.rank(); else if(Audio.SFX.blip) Audio.SFX.blip(); }
+    drawStageClear._stamp=Math.min(1, drawStageClear._stamp+dt/0.34);
+  }
+
+  /* ---- 6. THE SIGN-OFF ---- */
+  const mY=py+ph*0.745, mH=ph*0.066;
+  if(drawStageClear._stamp>0){
+    scSlot(IX,mY,IW,mH,null,0,0,1);
+    const nx=(typeof STAGES!=='undefined')?STAGES[(run.stage|0)]:null;
+    const who=String(run.pilot||'PILOT').toUpperCase();
+    const msg = nx
+      ? 'GREAT JOB, '+who+'! BUT THE BATTLE IS FAR FROM OVER! WE NEED YOU AT '+String(nx.sub||nx.name)+' ASAP!'
+      : 'GREAT JOB, '+who+'! EVERY SECTOR IS CLEAR. FURY HQ SALUTES YOU!';
+    /* same bevel allowance as the brief bay - a block sized to the slot's OUTER box sits on the
+       moulding, which is how the first cut ran its second line onto the frame */
+    const mW=IW*0.84;
+    let H=ph*0.020;
+    for(;H>ph*0.009;H-=0.3){
+      if(stageWrapCount(art,msg,H,mW,0.05)*H*1.35 <= mH*0.62) break;
+    }
+    const n=Math.max(1,stageWrapCount(art,msg,H,mW,0.05));
+    /* the block is centred in the bar rather than hung from its top, so one line and three lines
+       both sit on the bar's own middle */
+    let yy=mY+mH/2-((n-1)*H*1.35)/2;
+    stageWrapCen(art,msg,IX+IW/2,yy,H,mW,1.35,1,0.05);
+  }
+  return [IX, IW];
+}
+/* stageWrap left-aligns its block; his mock centres every line, so this is the centred twin.
+   It measures through stageWidth for the same reason stageWrap does - a borrowed or
+   canvas-fallback glyph has to be measured at the width it will be drawn at. */
+function stageWrapCen(art,text,cx,y,H,maxW,lineMul,alpha,spacingMul,tintC,tintA){
+  if(!art||!art.font) return 0;
+  const words=String(text).split(' ');
+  let line='', yy=y, n=0;
+  const flush=()=>{ if(!line) return;
+    stageText(art,line,cx,yy,H,tintC||null,tintA||0,alpha,spacingMul);
+    yy+=H*(lineMul||1.35); n++; line=''; };
+  for(const w of words){
+    const next=line?(line+' '+w):w;
+    if(line && stageWidth(art,next,H,spacingMul)>maxW){ flush(); line=w; }
+    else line=next;
+  }
+  flush();
+  return n;
+}
 function drawStageClear(dt){
   const t=stateT;
   if(!drawStageClear._init){
@@ -54694,11 +55049,18 @@ function drawStageClear(dt){
      header sat ON the top moulding and PRESS FIRE on the bottom one. Everything below is re-flowed
      to live inside those bounds, with the portrait and type scaled down to make the room rather
      than the rows being squeezed. */
+  /* ⚠ THE HEADER IS CO-OP'S NOW. The solo screen draws its own title INSIDE a filled title bar
+     (Mike's mock puts "Stage X Complete!" in a slot, not floating above one), and both drawing
+     here and drawing there would stack two titles in the same 60px band. Co-op keeps the free
+     -floating header because its body has no title bar of its own. */
+  const _coopHdr = !!(R.seats);
   const hy=py+ph*0.118;
-  if(art && typeof stageText==='function')
-    stageText(art, 'STAGE '+run.stage+' CLEAR', px+pw/2, hy, ph*0.054, null,null,1,0.10);
-  else { ctx.textAlign='center'; ctx.fillStyle='#ffd24a'; ctx.font=F(ph*0.060);
-         ctx.fillText('STAGE '+run.stage+' CLEAR', px+pw/2, hy); }
+  if(_coopHdr){
+    if(art && typeof stageText==='function')
+      stageText(art, 'STAGE '+run.stage+' CLEAR', px+pw/2, hy, ph*0.054, null,null,1,0.10);
+    else { ctx.textAlign='center'; ctx.fillStyle='#ffd24a'; ctx.font=F(ph*0.060);
+           ctx.fillText('STAGE '+run.stage+' CLEAR', px+pw/2, hy); }
+  }
 
   /* THE SOLO BODY IS GATED, NOT EDITED (drop 0903p). Everything from here to the PASSWORD block
      is byte-for-byte the solo screen it was; co-op takes the other branch of this `if`. The
@@ -54715,214 +55077,13 @@ function drawStageClear(dt){
     rowsX=px+pw*0.046; rowsW=pw*0.905;
     scDrawCoopBody(R, px, py, pw, ph, t, dt, art, F);
   } else {
-  /* ---- PORTRAIT, and it is showing you your rank before the rank arrives ---- */
-  /* CENTRED IN THE LEFT COLUMN (drop 0807o). Mike: "make cole's portrait center betwen the bars
-     and the stage clear." It sat hard against the left bevel with the rank crowded under it. The
-     column runs from the panel's inner edge to where the rows begin, and the portrait is centred
-     in it — horizontally in that column, vertically between the header and the last row. */
-  const colL=px+pw*0.046, colR=px+pw*0.268;
-  const poW=(colR-colL)*0.86, poH=poW*1.30;
-  const poX=colL+((colR-colL)-poW)/2, poY=py+ph*0.215;
-  if(R.face && XART.rdy(R.face)){
-    const im=XART.get(R.face);
-    const s=Math.min(poW/im.naturalWidth, poH/im.naturalHeight);
-    const w=im.naturalWidth*s, h=im.naturalHeight*s;
-    const pop=1-Math.pow(1-Math.min(1,Math.max(0,(t-0.20)/0.30)),3);
-    ctx.save(); ctx.globalAlpha=pop;
-    ctx.drawImage(im, poX+(poW-w)/2, poY+(poH-h)/2*pop, w, h);
-    ctx.restore();
-  }
-  if(art && typeof stageText==='function' && t>0.34)
-    stageText(art, String(run.pilot||'').toUpperCase(), poX+poW/2, poY+poH+ph*0.034, ph*0.030, null,null,1,0.08);
-
-  /* ---- STAT ROWS: one at a time, each filling segment by segment ---- */
-  /* ⚠ THE VALUE COLUMN OVERRAN THE FRAME. At 0.655 the right-aligned numbers landed on the
-     panel's right bevel — the same class of collision Mike has reported four times, reintroduced
-     by me in the rebuild. Pulled in so the widest value (NO DEATHS) clears the moulding. */
-  rowsX=px+pw*0.290; rowsW=pw*0.610;
-  /* nine rows have to finish clear of the score block: 0.170 + 8*0.062 + bar = 0.704 (drop 0807o) */
-  const rowY0=py+ph*0.170, rowH=ph*0.062;
-  const START=0.42;
-  if(t>START && drawStageClear._row<R.rows.length){
-    drawStageClear._segT+=dt;
-    const row=R.rows[drawStageClear._row];
-    const per=0.020;
-    while(drawStageClear._segT>=per && (row._shown||0)<row.segs){
-      drawStageClear._segT-=per; row._shown=(row._shown||0)+1;
-      if(Audio.SFX.statTick) Audio.SFX.statTick();
-    }
-    if((row._shown||0)>=row.segs){
-      row._done=(row._done||0)+dt;
-      if(row._done>0.10){ drawStageClear._row++; drawStageClear._segT=0; }
-    }
-  }
-  for(let i=0;i<R.rows.length;i++){
-    if(i>drawStageClear._row) break;
-    const row=R.rows[i], y=rowY0+i*rowH;
-    const app=Math.min(1,(t-START-i*0.04)/0.18);
-    if(app<=0) continue;
-    const slideX=rowsX-(1-app)*26;
-    ctx.save(); ctx.globalAlpha=app;
-    const dim=(row.val<0.34)?0.62:1;
-    /* _fontOK is read by BOTH the label and the value below, so they cannot end up in two
-       different faces. The real readiness question — is the glyph SHEET decoded — is answered
-       inside stageText now; see the fallback at the top of it. Superseded note follows:
-       ⚠ A TRUTHY `art` IS NOT A USABLE FONT (drop 0810o). Mike's stage-clear panel drew nine
-       filled bars, the portrait and the rank frame, and NOT ONE LABEL OR NUMBER — the data was
-       arriving, only the text was missing.
-
-       This asked `if(art)`. curArt() hands back an object as soon as the descriptor exists, but
-       stageText needs art.font — the glyph map — and draws NOTHING, silently, when that has not
-       landed. Because `art` was truthy the fillText fallback on the next line never ran either,
-       so the branch that could have shown something was skipped by the branch that showed
-       nothing. _tw() twenty lines down already knew this and guards on `!art||!art.font`.
-
-       Same shape as the XART.rdy first-call trap: a readiness check that answers about the
-       wrapper rather than the thing you are about to use. Now the fallback face carries the
-       panel until the real one is decoded, so the screen is never blank. */
-    /* BAR FIRST, TEXT OVER IT (drop 0810o). scBar blits nui_bframe_large — a 512x64 FULL-BAR
-       plate, opaque across its top edge — and the label was going down before it. 0807o had
-       already spotted the two colliding and bought clearance by dropping the bar 0.016 and
-       shaving its height; nine rows into this panel there was none left to buy. Flipping the
-       order costs nothing and moves nothing.
-
-       ⚠ THIS IS NOT WHAT MADE MIKE'S PANEL BLANK. I changed it believing it was, and the panel
-       came back just as empty. The blank screen was stageText drawing NOTHING AT ALL when its
-       glyph sheet had not decoded — 2,853 calls, no pixels, the title missing too — and the fix
-       belongs at the top of stageText, where it now is. Kept because it is correct on its own
-       terms, not because it fixed this. Two wrong guesses before measuring; the measurement took
-       one run. */
-    scBar(slideX, y+ph*0.016, rowsW, rowH*0.50, (row._shown||0), SC_SEGS, row.fill,
-          (i===drawStageClear._row && (row._shown||0)>=row.segs) ? 1 : 0, t+i*0.3);
-    const _fontOK = !!(art && art.font);
-    if(_fontOK && typeof stageText==='function'){
-      ctx.globalAlpha=app*dim;
-      /* ============================================================
-         ⚠ THE LABELS WERE CENTRED, NOT LEFT-ALIGNED (drop 0812b) — the tester's
-         "label column and value column disagree", and the cause of the portrait collision too.
-
-         stageText's third parameter is named cx and IS the centre: its last line is
-         `let x = cx - total/2`. This passed the row's LEFT edge as that centre, so every label
-         straddled it and its left edge sat at `rowsX - width/2`. Short labels looked roughly
-         right — KILLS is 5 characters — while SPECIAL DAMAGE reached 60px further left, across
-         the gap and into the portrait column. That is why COLE, RANK and the rank letter appeared
-         to collide with the rows: nothing moved into them, the long labels grew out over them.
-
-         The values were already right-aligned correctly (`right - width/2`), so the two columns
-         were being positioned by two different rules. Both are now stated the same way: measure
-         the string, then offset by half of it. ============================================================ */
-      const _lH=ph*0.024, _lW=_tw(art, row.label, _lH, 0.05);
-      stageText(art, row.label, slideX+ph*0.005+_lW/2, y, _lH, null,null,app*dim,0.05);
-    } else { ctx.textAlign='left'; ctx.fillStyle='#cfd6e0'; ctx.font=F(ph*0.024);
-             ctx.globalAlpha=app*dim; ctx.fillText(row.label, slideX, y); }
-    /* ⚠ THE VALUE WAS NEVER USING OUR FONT (drop 0807t). The label went through stageText and
-       the value went through ctx.fillText — unconditionally, outside the art check. So every
-       number on the screen was in the browser fallback face AND on a different vertical
-       baseline: stageText centres on cy, fillText sits on the alphabetic baseline. That is the
-       drift Mike photographed, where the labels and the numbers march apart down the panel. */
-    if(_fontOK && typeof stageText==='function'){
-      /* ⚠ EVERY PERCENT SIGN ON THIS SCREEN WAS INVISIBLE (drop 0812b). ACCURACY read "63",
-         MISSILE HITS "85", SPECIAL HITS "92" — the number, then a blank the width of a space.
-         stageText turns an unmapped character into a gap (`items.push(null)`) and says nothing,
-         so a missing glyph looks like a spacing quirk rather than a fault.
-
-         Checked all eighteen font sheets rather than assuming: '%' exists in EXACTLY ONE,
-         stageArt[2] — and that is `assets/game/stage2.png`, one of the six art files that had
-         gone missing from the working tree, so until they were restored no sheet in the build
-         had the glyph at all.
-
-         Borrowing one character from stage 2 is the established idiom here, not a new one — the
-         stage-1 font already borrows 'S' from it, and stageTextMixed exists to do exactly this
-         per glyph. `art` still draws everything it has, so the face does not change. */
-      const _vH=ph*0.026, _pf=(typeof pctFont==='function')?pctFont():null;
-      if(_pf && /%/.test(row.text))
-        stageTextMixed(art, _pf, row.text, slideX+rowsW-_twMix(art,_pf,row.text,_vH,0.05)/2, y, _vH, SC_PCT_TINT, app, 0.05);
-      else
-        stageText(art, row.text, slideX+rowsW-_tw(art,row.text,_vH,0.05)/2, y, _vH, null,0,app,0.05);
-    } else {
-      ctx.textAlign='right'; ctx.font=F(ph*0.026);
-      ctx.fillStyle=(row.val>=0.92)?'#ffd24a':'#e8eef8';
-      ctx.textBaseline='middle';
-      ctx.fillText(row.text, slideX+rowsW, y);
-      ctx.textBaseline='alphabetic'; ctx.textAlign='left';
-    }
-    ctx.globalAlpha=app;
-    /* ⚠ THE LABEL WAS TOUCHING ITS OWN BAR (drop 0807o). At a 0.062 pitch with the bar starting
-       0.010 below the label baseline, the two met — nine rows is tight and I took the clearance
-       out of the wrong place. The bar drops to 0.016 and loses a little height instead. */
-    ctx.globalAlpha=app;
-    ctx.restore();
-  }
-
-  const rowsDone = drawStageClear._row>=R.rows.length;
-
-  /* ---- SCORE: its own full-width bar, counting, flashing, with sound ---- */
-  if(rowsDone){
-    const tgt=(run.score|0)+R.bonus;
-    if(drawStageClear._scoreShown<tgt){
-      drawStageClear._scoreShown=Math.min(tgt, drawStageClear._scoreShown+Math.max(53, Math.ceil((tgt-drawStageClear._scoreShown)*0.13)));
-      /* a tick per step while it climbs — Mike asked for the score to behave like the password */
-      drawStageClear._scT=(drawStageClear._scT||0)+dt;
-      if(drawStageClear._scT>0.045){ drawStageClear._scT=0; if(Audio.SFX.statTick) Audio.SFX.statTick(); }
-      if(drawStageClear._scoreShown>=tgt && Audio.SFX.go) Audio.SFX.go();
-    }
-    const sy=py+ph*0.744, done=(drawStageClear._scoreShown>=tgt);
-    /* SCORE GETS ITS OWN, LARGER BAR (drop 0807o). Mike: "score should get its own larger stat
-       bar." It fills as the number climbs, so the bar and the digits tell the same story. */
-    const sbY=sy+ph*0.018, sbH=rowH*0.95;
-    scBar(rowsX, sbY, rowsW, sbH, Math.round(SC_SEGS*(drawStageClear._scoreShown-(run.score|0))/Math.max(1,R.bonus)),
-          SC_SEGS, 'special', done?1:0, t);
-    /* BOLD, and flashing while it climbs then steady once locked */
-    const fl = done ? 1 : (0.55+0.45*Math.sin(t*22));
-    if(art && typeof stageText==='function'){
-      /* ⚠ THE SCORE BLOCK USED THE EDGES AS CENTRES — the same fault as the rows, in the one place
-         it is most obvious, because the score is the largest type on the panel. SCORE straddled
-         the left edge and the digits straddled the right, so the number hung about half its width
-         past every value above it. Measured: the digits ended 43px right of the value column.
-         Both ends now match the rows exactly. */
-      const _sLH=ph*0.030, _sVH=ph*0.040, _sv=String(drawStageClear._scoreShown);
-      stageText(art,'SCORE', rowsX+_tw(art,'SCORE',_sLH,0.06)/2, sy, _sLH, null,null,1,0.06);
-      stageText(art, _sv, rowsX+rowsW-_tw(art,_sv,_sVH,0.06)/2, sy, _sVH, null, 0, fl, 0.06);
-    } else {
-      ctx.textAlign='left'; ctx.fillStyle='#9fb4d0'; ctx.font=F(ph*0.030); ctx.fillText('SCORE', rowsX, sy);
-      ctx.textAlign='right'; ctx.globalAlpha=fl;
-      ctx.lineWidth=3; ctx.strokeStyle='#0b1018'; ctx.font=F(ph*0.040);
-      ctx.strokeText(String(drawStageClear._scoreShown), rowsX+rowsW, sy);
-      ctx.fillStyle=done?'#ffd24a':'#ffffff';
-      ctx.fillText(String(drawStageClear._scoreShown), rowsX+rowsW, sy);
-      ctx.globalAlpha=1; ctx.textAlign='left';
-    }
-  }
-
-  /* ---- RANK: stamps in oversized, overshoots, settles, shakes ---- */
-  if(rowsDone && drawStageClear._scoreShown>=(run.score|0)+R.bonus){
-    if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7);
-      if(Audio.SFX.expBig) Audio.SFX.expBig(); }
-    drawStageClear._stamp=Math.min(1, drawStageClear._stamp+dt/0.34);
-    const k=drawStageClear._stamp;
-    const sc=(k<1)? (3.4-2.4*(1-Math.pow(1-k,3))) : 1;
-    const rx=poX+poW/2, ry=poY+poH+ph*0.108;
-    ctx.save();
-    ctx.globalAlpha=Math.min(1,k*2);
-    if(art && typeof stageText==='function'){
-      /* NO COLOUR OVERLAY ON THE RANK (drop 0807q). Mike: "Dont color overlay the rank please.
-         just use the variant of that color for the passwords and letters we have."
-
-         Tinting stage-font glyphs washes the stone texture flat — the letter stopped looking like
-         the game's font and started looking like a coloured shape. The glyph is drawn UNTINTED
-         now; the rank still reads at a glance from its size and the stamp, and the colour lives
-         where he wants it: on the password. */
-      stageText(art,'RANK', rx, ry-ph*0.040, ph*0.024, null,null,1,0.08);
-      stageText(art, R.rank, rx, ry+ph*0.040, ph*0.098*sc, null, 0, 1, 0.06);
-    } else {
-      ctx.textAlign='center'; ctx.fillStyle='#9fb4d0'; ctx.font=F(ph*0.028); ctx.fillText('RANK', rx, ry-ph*0.030);
-      ctx.fillStyle=RANKCOL[R.rank]||'#fff'; ctx.font=F(ph*0.115*sc);
-      ctx.lineWidth=3; ctx.strokeStyle='#1a1206'; ctx.strokeText(R.rank, rx, ry+ph*0.060);
-      ctx.fillText(R.rank, rx, ry+ph*0.060); ctx.textAlign='left';
-    }
-    ctx.restore();
-  }
-
+    /* MIKE'S CONCEPT SCREEN (drop 0904y). The 208 lines that were here - a portrait column beside
+       nine left-label / right-value rows, each with its bar UNDER its label - are replaced by the
+       layout he mocked up: title bar, pilot bay, mission brief, six slots in two columns with the
+       text ON the fill, one SCORE / RANK bar and a sign-off. scConceptBody carries the reasoning.
+       It returns the interior column the shared PASSWORD block below measures itself against. */
+    const _ci=scConceptBody(R, px, py, pw, ph, t, dt, art, F);
+    rowsX=_ci[0]; rowsW=_ci[1];
   }   // end of the solo body
   /* ---- PASSWORD: typed in, then flashing, with a tick per letter ---- */
   if(drawStageClear._stamp>=1 && R.pw){

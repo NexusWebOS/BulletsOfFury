@@ -5077,10 +5077,16 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      viewport any more. */
   ok(_sc.indexOf('STAGE CLEAR — REBUILT FROM SCRATCH')>0 || _sc.indexOf('drawStageClear._rect=[px,py,pw,ph]')>0,
      'the stats layout is the rebuilt one');
-  ok(/rowsX\s*=\s*px\+pw\*/.test(_sc) && /rowY0\s*=\s*py\+ph\*/.test(_sc),
+  /* ⚠ AGAINST THE WHOLE FILE, NOT `_sc`. _sc is game.js sliced from `function drawStageClear`
+     onward, and the concept body is defined ABOVE it - so a regex over _sc searches a window the
+     code is not in and fails on correct source. Same trap as the 7000-char window this section
+     already records one note above. */
+  ok(/const IX=px\+pw\*0\.046, IW=pw\*0\.905/.test(_g5) && /const gY=py\+ph\*0\.415/.test(_g5),
      'stat rows are positioned against the PANEL, not the viewport');
+  ok(/rowsX=_ci\[0\]; rowsW=_ci\[1\]/.test(_g5),
+     'and the shared password block is handed that same panel-relative column');
   /* the portrait is centred in the LEFT COLUMN now, which is itself panel-relative (drop 0807o) */
-  ok(/colL\s*=\s*px\+pw\*/.test(_sc) && /poY\s*=\s*py\+ph\*/.test(_sc),
+  ok(/const bY=py\+ph\*0\.170/.test(_g5) && /IX\+\(faW-w\)\/2, bY\+pad\+\(ah-h\)\/2/.test(_g5),
      'and so is the portrait, so neither can drift off the frame at another size');
   ok(_g5.indexOf('const inx=x+w*0.035')>0 && _g5.indexOf('ctx.clip();')>0,
      'the fill is ONE full-bar image clipped to the filled width, not stamped per segment');
@@ -9484,10 +9490,12 @@ console.log("=== 198. stats screen fits the window ===");
   ok(_sc198.indexOf('py+ph*0.898')>0, 'and PRESS FIRE clears the bottom one');
   /* the six rows must END inside the interior too — start + 6*pitch + bar height */
   /* NINE rows now, and they must finish clear of the score block */
-  var _y0=0.170, _pitch=0.062;
-  ok(_y0+8*_pitch+_pitch*0.62 < 0.744,
-     'the nine stat rows finish above the score line ('+(_y0+8*_pitch+_pitch*0.62).toFixed(3)+')');
-  ok(_sc198.indexOf('const poW=(colR-colL)*0.86')>0, 'the portrait is sized to its column');
+  /* six slots in two columns now, in the band 0.415..0.650, which must clear the score bar at
+     0.660 - the same "rows finish above the score line" property, on the new grid */
+  var _gy=0.415, _gh=0.235;
+  ok(_gy+_gh <= 0.660, 'the six stat slots finish above the score bar ('+(_gy+_gh).toFixed(3)+')');
+  ok(/const k=Math\.min\(aw\/im\.naturalWidth, ah\/im\.naturalHeight\)/.test(_sc198),
+     'the portrait is sized to its column');
 }
 
 // ===== 199. NINE STATS, SCORE BAR, FLASHING PASSWORD (drop 0807o) =====
@@ -9576,16 +9584,25 @@ console.log("=== 201. rank glyph ===");
      the letter stops looking like the game font and becomes a coloured shape. The rank and the
      score draw untinted; the colour stays on the password, which is where he wants it. */
   var _g201=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g201.indexOf("stageText(art, R.rank, rx, ry+ph*0.040, ph*0.098*sc, null, 0, 1, 0.06)")>0,
+  /* ⚠ REPOINTED FOR MIKE'S CONCEPT SCREEN (drop 0904y). These pinned the EXPRESSIONS of the
+     nine-row layout he replaced - a portrait column, `rowsX`/`rowY0`, a `_sVH` score size. The
+     RULES underneath them all survive the rebuild and are checked against the new layout: the
+     rank and score stay untinted (his 0807q call), everything is placed against the PANEL rather
+     than the viewport, the avatar is sized to its own bay so it cannot outgrow the frame, and the
+     percent sign still resolves. */
+  ok(/scCen\(art,rTxt,[^;]*?,null,0,1,0\.06\)/.test(_g201),
      'the rank glyph is drawn with no tint');
   /* THIS PINNED THE SIZE EXPRESSION, NOT THE PROPERTY IT NAMES (drop 0812b). It matched the
      literal "ph*0.040, null, 0, fl, 0.06)", so hoisting the size into a named constant in order to
      right-align the score — a change that touched neither the tint nor the size — failed an
      assertion whose subject is "the score draws untinted". Both halves are now checked directly:
      the tint arguments stay null/0, and the size is still ph*0.040. */
-  ok(/stageText\(art,\s*_sv,[^;]*?,\s*null,\s*0,\s*fl,\s*0\.06\)/.test(_g201),
+  ok(/scCen\(art,sTxt,[^;]*?,null,0,1,0\.06\)/.test(_g201),
      'and so is the score');
-  ok(_g201.indexOf("_sVH=ph*0.040")>0, 'and the score is still drawn at ph*0.040');
+  /* the size is SOLVED now rather than fixed, so what is pinned is that it is solved against the
+     bar's own width - which is the property the literal was standing in for */
+  ok(/const H=scFit\(art,sTxt\+'   '\+rTxt,IW\*0\.86/.test(_g201),
+     'and the score/rank size is fitted to the bar instead of hard-coded');
   ok(_g201.indexOf("pc = full ? (beat>0 ? '#8de23a' : '#ffd24a')")>0,
      'while the password keeps its two-colour flash');
 }
@@ -10755,7 +10772,11 @@ console.log("=== 217. stats alignment + menu pointers ===");
   /* the password is the one value that must NOT be right-aligned: it is typed, so a pinned right
      edge would make it appear to type backwards. Left-anchored, and clamped clear of its label. */
   ok(/_pwL\s*=\s*Math\.max\(/.test(_sc), 'the password is left-anchored and clamped clear of its label');
-  ok(/_twMix\(art,\s*_pf,\s*row\.text/.test(_sc), 'and percent values go through the mixed-font measure');
+  /* ACCURACY still prints a percent sign, and the stage pack carries no '%' - so what has to
+     hold is that the BORROW still answers for it. Checked as a contract rather than as the old
+     mixed-font call, which the concept screen no longer makes. */
+  ok(/Math\.round\(100\*Math\.min\(1,s\.hits\/s\.shots\)\):0\)\+'%'/.test(_g201),
+     'and the accuracy slot still prints a percent sign for stageGlyph to borrow');
 
   /* '%' is absent from the stage-1 authored alphabet but present in the stage-2 sheet, which is
      the existing stats-screen donor. The retired compact family is no longer part of this path. */
