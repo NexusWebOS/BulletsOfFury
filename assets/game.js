@@ -13057,12 +13057,25 @@ function stage3BossAttack(b,pat,step,ph,cdMul){
           side (PI/2+PI/4 = down-left) and R to its own (PI/2-PI/4 = down-right), clearing both
           flanks - which leaves the CENTRE as the obvious hiding place, so C fires straight down as
           the charged beam that punishes it. That is his "stuck in between him" case, and it is why
-          the centre is not simply omitted from this volley. */
+          the centre is not simply omitted from this volley.
+
+       ⚠ 0905r, FROM MIKE'S DIAGRAM: the sides do not sit at a static 45, they ROTATE. He drew the
+       centre as a narrow fixed RED corridor, the left and right cannons as black ARCS sweeping an
+       area on their own side, and GREEN safe bands in between. So the alternate volley pins C
+       straight down and gives L and R a per-slot sweep, mirrored so both swing outward together
+       and the safe bands stay symmetric. The bases sit 54 degrees off vertical with a +-24 degree
+       arc, which keeps the inner 30 degrees either side of the corridor open - those are his green
+       bands, and they close if the arc or the base ever grows. */
     const _rowed=(step&1)===0;
     l23BossBeamStart(b,'rime',['L','C','R'],
       _rowed ? [Math.PI/2, Math.PI/2, Math.PI/2]
-             : [Math.PI/2+Math.PI/4, Math.PI/2, Math.PI/2-Math.PI/4],
-      1.00,1.05,.24,48);
+             : [Math.PI/2+.95, Math.PI/2, Math.PI/2-.95],
+      1.00,1.05,.24,48,
+      /* ⚠ THE RATE HAS TO FIT THE TELEGRAPH, NOT THE OTHER WAY ROUND. At 1.5 rad/s the sweep's
+         period is 4.2s against a beam that lives ~4.3s, so it swung OUT and never came back:
+         measured 56..78 degrees, i.e. the inner half of the fan never happened and the safe band
+         read as 56 degrees instead of the intended 30. 2.6 fits a full cycle inside the 3s warn. */
+      _rowed ? undefined : {sweepArc:[.42,0,-.42], sweepRate:2.6});
     ev.push({at:.30,slot:'C',ring:true,n:16,gap:2,base:step*.19,sp:1.92,kind:'s3mortar',accel:.46,max:3.85,szMul:.86});
     ev.push({at:1.36,slot:'L',aim:true,offs:[-.12,.04],sp:4.25,kind:'s3shell',accel:1.55,max:7.0,shootable:true,hp:2});
     ev.push({at:1.36,slot:'R',aim:true,offs:[-.04,.12],sp:4.25,kind:'s3shell',accel:1.55,max:7.0,shootable:true,hp:2,audio:false});
@@ -14189,7 +14202,7 @@ function l23BossBeamStart(b,family,slots,angles,warm,active,retract,width,opts){
   opts=opts||{};
   b._l23Beam={family:family,slots:slots.slice(),angles:angles.slice(),t:0,warm:Math.max(warm||.72,L23_WARN_T),
     active:active||1.0,retract:retract||.20,width:width||38,released:false,spin:opts.spin||0,
-    baseAngles:angles.slice(),sweepArc:opts.sweepArc||0,sweepRate:opts.sweepRate||0,
+    baseAngles:angles.slice(),sweepArc:(Array.isArray(opts.sweepArc)?opts.sweepArc.slice():(opts.sweepArc||0)),sweepRate:opts.sweepRate||0,
     sweepPhase:opts.sweepPhase||0};
   try{if(Audio.SFX&&(Audio.SFX.retinaCharge||Audio.SFX.bossPhase))(Audio.SFX.retinaCharge||Audio.SFX.bossPhase)();}catch(_l23c){}
   return true;
@@ -14199,9 +14212,19 @@ function l23BossBeamTick(b,dt){
   l23WarnSound(B);
   /* Bounded sweep motion is authored and never tracks the player. Inferno Reaver uses this to
      douse only 45 degrees either side of south, leaving a real opposite-side escape lane. */
+  /* ⚠ THE SWEEP IS PER SLOT NOW (0905r). It applied ONE offset to every slot, which is fine for the
+     Reaver's single douse but cannot express Mike's Rime Wall diagram: the CENTRE holds a fixed
+     corridor while the LEFT and RIGHT cannons rotate through a fan on their own sides. A shared
+     offset would swing the centre beam with them and close the safe bands he drew between them.
+     `sweepArc` still accepts a NUMBER and behaves exactly as before; an ARRAY gives each slot its
+     own arc, and 0 pins that slot. */
   if(B.sweepArc){
-    const off=Math.sin(B.t*B.sweepRate+B.sweepPhase)*B.sweepArc;
-    for(let i=0;i<B.angles.length;i++)B.angles[i]=B.baseAngles[i]+off;
+    const _arr=Array.isArray(B.sweepArc);
+    const _ph=Math.sin(B.t*B.sweepRate+B.sweepPhase);
+    for(let i=0;i<B.angles.length;i++){
+      const _arc=_arr?(B.sweepArc[i]||0):B.sweepArc;
+      B.angles[i]=B.baseAngles[i]+_ph*_arc;
+    }
   }else if(B.spin)for(let i=0;i<B.angles.length;i++)B.angles[i]+=B.spin*dt;
   if(!B.released&&B.t>=B.warm){
     B.released=true;
