@@ -107,24 +107,29 @@ import if the donor cannot supply them.
 ⚠ THIS SECTION WAS STALE. It still listed items 8, 9, 10, 11, 12, 13, 14, 15 and 16 as open when
 the DONE sections above record all nine as landed. Cross-checked before rewriting.
 
-### Still owed from Mike's 17-item list — FIVE of them
-**2. Cutscene shootdowns** — *"use our pseudo-3d graphics"* in the cutscenes where we shoot enemies
-down.
-**4. Stage-4 miniboss remake** — *"use spritecook, get proper attack frames, muzzle frames,
-projectiles etc. it should no longer get its helpers either."* Art run + a behaviour change in its
-tick to stop the helper spawns.
-**5. Stage-4 boss helper projectiles** — larger. Small and isolated.
-**7. The laser telegraph** — *"that ugly field view before a laser comes out needs to be remade via
-sprite cook, and it should flash for 3 seconds on/off and an alert symbol of ours should pop up
-above the enemy, go from the yellow to red with the sound"*. Art + behaviour + audio; the
-1..2..3 / f.f.f telegraph from the earlier list belongs with this one.
-**17. Stage 3** — *"where are the new attacks, projectiles and animations for him?"*
+### Still owed from Mike's 17-item list — ⚠ RE-CHECKED 0905k: **TWO**, and both only half
+**2. Cutscene shootdowns** — 🟡 **HALF DONE 0905e.** The pseudo-3D motion, depth and the
+unreachable third hostile are fixed. **OPEN: the ART** — the hostiles still need drawing in the
+hero ships' 3/4 view. Mike's credits, Mike's call.
+**4. Stage-4 miniboss remake** — ✅ **DONE (0905h helpers, 0905i attack frame).** The unit is the
+OLIVE WARDEN, not blacksteel. Muzzles and projectiles already existed and were already wired;
+only the attack frame was missing. `summoned` now derives from `drones.length`.
+**5. Stage-4 boss helper projectiles** — ✅ **DONE 0905c.**
+**7. The laser telegraph** — 🟡 **HALF DONE 0905h.** 3-second warn, the yellow→red sign (his own
+`nwarn_yield`/`nwarn_alert`, no credits) and the escalating alarm all land. **OPEN: the lane
+plate.** `nwarn_lane` is generated and registered but NOT wired — drawing it whitens the boss
+hull and the mechanism is not understood (0905i). Also open: whether the 3s should apply to
+every beam on stages 2-3 or only the big ones — one constant.
+**17. Stage 3** — ✅ **DONE 0905e.** The attacks and proc3 projectiles were already there; the
+defect was the TELEGRAPH wearing the lava boss's red over ice. `L23_ALERT` is per-family now.
 
 ### Art in the tree that nothing draws yet
-- **Six s6mb_ families** imported with the carrier pack and still unreferenced: `crystalimpact`,
-  `flakburst`, `gravityripple`, `omegabomb-reflected`, `prismbeam`, `ricochetimpact`.
-  `omegabomb-reflected` is the notable one - the deflect mechanic has a REFLECTED plate authored
-  for it and currently redraws the hostile one.
+- ⚠ **RE-MEASURED 0905k: FIVE OF THE SIX ARE NOW DRAWN. Only `gravityripple` is left.**
+  `crystalimpact`, `prismbeam`, `ricochetimpact` landed in 0905j. `flakburst` and
+  `omegabomb-reflected` were ALREADY wired before today and this entry was simply stale —
+  omegabomb-reflected is built by concatenation (`'s6mb_omegabomb-'+(ref?...)`), which no
+  family-prefix grep can see. **`gravityripple` (10 frames) is the gravity mine's detonation
+  ripple and still draws nothing** — the mine itself (`s6gravity` / `gravitymine`) is live.
 - **The carrier's six named boss cycles** are art-only. Four already exist in spirit as the mega
   phases; what the pack adds beyond the anchors and the flak airburst (both landed 0904ae) is the
   exact authored geometry for the other cycles.
