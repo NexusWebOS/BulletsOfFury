@@ -2280,6 +2280,12 @@ const XART=(function(){
   for(const _cg in _CH_GROUP_COUNTS) for(let _ci=0;_ci<_CH_GROUP_COUNTS[_cg];_ci++)
     X._src['ch_'+_cg+'_'+_ci]='assets/game/chaos_harrier/ch_'+_cg+'_'+_ci+'.png';
   X._src['ch_ship_glow']='assets/game/chaos_harrier/ch_ship_glow.png';
+  /* CF_EnemyTeleportFX-Vol.1, the chaosharrier-phase-rift family (drop 0904w). Eight authored
+     frames - sparks, slit open, aperture open, aperture full, phase flash, aperture collapse,
+     slit collapse, residue - trimmed to their ink and centred in 256px cells on import. The old
+     ch_warp_0..7 reel stays registered; this one is drawn over it because it is the effect Mike
+     supplied for exactly this enemy. */
+  for(let _cr=0;_cr<8;_cr++) X._src['chrift_'+_cr]='assets/game/chaos_harrier_rift/chrift_'+_cr+'.png';
   /* The supplied official BONUS STAGE card. Keep this registration beside the other code-owned
      assets so regenerating manifest.js cannot silently replace it with the text fallback again. */
   X._src['scard_9'] = 'assets/game/bonus_stage_card.png';
@@ -17258,6 +17264,7 @@ function chaosHarrierShot(b, family, slot, angle, speed){
 }
 function chaosHarrierFinish(b){
   b._chState='idle'; b._chT=0; b._chStep=0; b._chBeamActive=false;
+  b._chSideOn=false; b._chSideLock=false;
   b._chCd=(b._chPhase===3?0.52:(b._chPhase===2?0.68:0.82))/Math.max(0.75,DIFF.eFire||1);
 }
 function chaosHarrierBegin(b, attack){
@@ -17265,15 +17272,44 @@ function chaosHarrierBegin(b, attack){
   if(attack.indexOf('warp_')===0){ b._chQueued=attack.slice(5); b._chState='warpout'; b._chCollision=false; }
   else b._chState=attack;
 }
+/* ============================================================
+   THREE WARPS, THEN HE STANDS STILL AND SHOOTS (drop 0904w)
+
+   Mike: "for him to teleport 3 times before remaining stationary to let us hit him as he tries to
+   shoot us with lasers."
+
+   The old sequences sprinkled one warp into a four or five beat rotation, so he was never
+   reliably in one place long enough to punish and never warped enough to feel like a phasing
+   interceptor. The cycle is now explicit and readable:
+
+     THREE warps in a row, each landing on a new point and firing on arrival, then a STAND phase -
+     no warping at all, holding station while he works through laser attacks - then back to
+     warping.
+
+   The stand is the damage window. It is the whole point of the request: the player learns that
+   after the third blink he is pinned, and that is when to commit. HARRIER_STAND_ATTACKS controls
+   how long the window lasts.
+   ============================================================ */
+const HARRIER_WARPS_PER_CYCLE=3;     /* Mike: "teleport 3 times before remaining stationary" */
+const HARRIER_STAND_ATTACKS=3;       /* how many attacks he fires while pinned */
 function chaosHarrierSelect(b){
   const f=b.hp/Math.max(1,b.maxhp), phase=f>0.70?1:(f>0.35?2:3);
   b._chPhase=phase;
-  const seq=phase===1
-    ?['plasma','missile','plasma','warp_plasma']
-    :(phase===2?['missile','side','plasma','beam','warp_side']
-                :['side','beam','missile','warp_plasma','beam']);
-  const attack=seq[(b._chPattern||0)%seq.length]; b._chPattern=(b._chPattern||0)+1;
-  chaosHarrierBegin(b,attack);
+  if(b._chWarpCount==null){ b._chWarpCount=0; b._chStandLeft=0; }
+  /* --- the pinned window: no warp, lasers only --- */
+  if(b._chStandLeft>0){
+    b._chStandLeft--;
+    /* lasers while pinned - the beam cannon on the outside beats, side lances between them */
+    const standSeq=['beam','side','beam'];
+    chaosHarrierBegin(b, standSeq[(b._chStandStep=(b._chStandStep||0)+1)%standSeq.length]);
+    if(b._chStandLeft<=0) b._chWarpCount=0;      /* window over: start blinking again */
+    return;
+  }
+  /* --- the blink phase: every beat warps, and fires as it arrives --- */
+  const arrive = phase===1 ? 'warp_plasma' : (phase===2 ? 'warp_side' : 'warp_plasma');
+  b._chWarpCount=(b._chWarpCount||0)+1;
+  if(b._chWarpCount>=HARRIER_WARPS_PER_CYCLE) b._chStandLeft=HARRIER_STAND_ATTACKS;
+  chaosHarrierBegin(b, arrive);
 }
 /* The Stage-5 playfield is wider than the 480px camera.  Using worldWidth() for the Harrier's
    lateral patrol let it choose x=500-ish while the player/camera were still on the left side,
@@ -17301,12 +17337,63 @@ function chaosHarrierWarpTarget(b){
   }
   b._chLastWarp=best.slice(); return best;
 }
-function chaosHarrierBeamHit(b){
-  if(!b._chBeamActive || player.dead || player.invuln>0) return;
-  const p=chaosHarrierPoint(b,'nose'), a=Math.PI/2+(b._chBeamAng||0);
-  const ux=Math.cos(a),uy=Math.sin(a),dx=player.x-p.x,dy=player.y-p.y;
+/* ============================================================
+   THE HARRIER'S LASERS ARE CANNONS NOW (drop 0904w)
+
+   Mike: "the lasers acting like actual laser cannons of ours".
+
+   The nose already fired a real beam - charge, sustain, impact, a ray hit test. The two WING
+   cannons did not: `side` threw four short bolts (16x44 sprites at speed 5) that read as pellets
+   with a laser texture. Those are gone; each wing cannon now fires a sustained beam of its own,
+   built the same way the nose beam and the player's own laser are built.
+
+   ⚠ THE ART FOR IT WAS ALREADY IN THE PACK AND NOTHING DREW IT. Rendered all three candidate
+   reels rather than picking by name (rule 1):
+
+     ch_lance_0..3     an authored CANNON - grey housing, red cell detail, a purple energy chamber
+                       and the beam leaving it. Registered, preloaded at spawn, drawn by NOTHING.
+                       This is the emitter, and it is what makes the wing read as a gun.
+     ch_sidelaser_0..3 measured columns: |.###############.           ################.| - the
+                       plate holds TWO parallel beams, not one, with a 12px gap. Drawing the whole
+                       plate at each cannon would put FOUR beams on screen, and stretching one
+                       plate across both cannons would make each beam 76px wide. So one column is
+                       cropped out (CH_SIDE_CROP, measured off the alpha) and drawn per cannon -
+                       the same crop idiom the missile draw already uses on its own plates.
+     ch_beam_0..3      the single wide column the nose already uses. Left to the nose.
+
+   TELL -> COMMIT -> RECOVER, the contract this engine already carries: the cannons track the
+   player while they spin up, LOCK on the beat they fire, and hold that line for the burn. So it
+   is aimed - "as he tries to shoot us with lasers" - but it is dodgeable, because what it commits
+   to is visible before it burns.
+   ============================================================ */
+const CH_SIDE_CHARGE=0.48;      /* spin-up: the cannon tracks, nothing burns yet */
+const CH_SIDE_OFF=1.30;         /* the beams cut out here */
+const CH_SIDE_END=1.62;         /* ...and the act recovers before handing back to idle */
+/* ⚠ CROP THE UNIFORM CORE, NOT THE WHOLE COLUMN. The plate's own beam tapers at both ends
+   (measured luminance down the left column: 7.9 at row 29, 163-198 through the middle, then
+   143 / 107 / out by row 147). Stretching all 118 rows to a 509px screen run stretches that
+   taper too, so the beam visibly died out around three-quarters of the way down - it reached
+   the player as a fade rather than as a burn. Rows 37..129 hold 15-17 lit columns at luminance
+   148-198 with no falloff, so THAT is what gets stretched, and the beam holds full strength
+   from the cannon to the bottom of the screen. */
+const CH_SIDE_CROP=[90,37,17,93];
+const CH_SIDE_HALF=15;          /* the burn's half-width in world px, matched to the drawn column */
+function chaosHarrierBeamRay(b,p,ang,half){
+  if(player.dead || player.invuln>0) return;
+  const ux=Math.cos(ang),uy=Math.sin(ang),dx=player.x-p.x,dy=player.y-p.y;
   const along=dx*ux+dy*uy, across=Math.abs(dx*uy-dy*ux);
-  if(along>0 && along<VH+120 && across<24+(player._hx||9)) playerHit();
+  if(along>0 && along<VH+120 && across<half+(player._hx||9)) playerHit();
+}
+function chaosHarrierBeamHit(b){
+  if(!b._chBeamActive) return;
+  chaosHarrierBeamRay(b,chaosHarrierPoint(b,'nose'),Math.PI/2+(b._chBeamAng||0),24);
+}
+/* the wing pair: aim while spinning up, then hold whatever line they locked */
+function chaosHarrierSideAim(b,dt){
+  const L=chaosHarrierPoint(b,'left_cannon'), R=chaosHarrierPoint(b,'right_cannon');
+  if(b._chSideLock) return;
+  b._chSideL=clamp(Math.atan2(player.y-L.y,player.x-L.x)-Math.PI/2,-0.34,0.34);
+  b._chSideR=clamp(Math.atan2(player.y-R.y,player.x-R.x)-Math.PI/2,-0.34,0.34);
 }
 function chaosHarrierUpdate(b,dt){
   b._chT=(b._chT||0)+dt;
@@ -17362,12 +17449,20 @@ function chaosHarrierUpdate(b,dt){
     if(b._chT>=1.12)chaosHarrierFinish(b); return;
   }
   if(st==='side'){
-    const times=[0.09,0.38];
-    while(b._chStep<times.length && b._chT>=times[b._chStep]){
-      chaosHarrierShot(b,'sidelaser','left_cannon',Math.PI/2+(b._chStep?0.07:-0.07),5.0);
-      chaosHarrierShot(b,'sidelaser','right_cannon',Math.PI/2+(b._chStep?-0.07:0.07),5.0); b._chStep++;
+    /* TELL: both cannons spin up and track. COMMIT: they lock and burn. RECOVER: they cool. */
+    if(b._chT<CH_SIDE_CHARGE){ b._chSideLock=false; chaosHarrierSideAim(b,dt); b._chSideOn=false; }
+    else if(b._chT<CH_SIDE_OFF){
+      if(!b._chSideOn){
+        b._chSideOn=true; b._chSideLock=true; shake=Math.max(shake,5);
+        chaosHarrierFlash(b,'sideflash',chaosHarrierPoint(b,'left_cannon'));
+        if(Audio.SFX&&Audio.SFX.helixCharge)Audio.SFX.helixCharge();
+        else if(Audio.SFX&&Audio.SFX.laserShot)Audio.SFX.laserShot();
+      }
+      chaosHarrierBeamRay(b,chaosHarrierPoint(b,'left_cannon'),Math.PI/2+(b._chSideL||0),CH_SIDE_HALF);
+      chaosHarrierBeamRay(b,chaosHarrierPoint(b,'right_cannon'),Math.PI/2+(b._chSideR||0),CH_SIDE_HALF);
     }
-    if(b._chT>=1.05)chaosHarrierFinish(b); return;
+    else b._chSideOn=false;
+    if(b._chT>=CH_SIDE_END)chaosHarrierFinish(b); return;
   }
   if(st==='beam'){
     const nose=chaosHarrierPoint(b,'nose');
@@ -18103,13 +18198,35 @@ function chaosHarrierWarpFrame(b){
 function chaosHarrierDraw(b){
   if(!b||!b._harrier)return false;
   const yy=(b._drawY!=null?b._drawY:b.y), wf=chaosHarrierWarpFrame(b);
-  if(wf>=0)chaosHarrierImage('ch_warp_'+wf,b.x,yy,b.w*1.48,b.w*1.48,0.88,'lighter',0);
+  /* the authored phase rift, drawn in place of the old generic warp puff. Warping OUT runs the
+     eight frames forward; warping IN runs them in reverse, which is what the pack's own notes
+     say the family is built for. */
+  const _rf=(wf>=0)?(b._chState==='warpin'?(7-wf):wf):-1;
+  if(_rf>=0 && XART.rdy('chrift_'+_rf))
+    chaosHarrierImage('chrift_'+_rf,b.x,yy,b.w*1.72,b.w*1.72,0.95,'lighter',0);
+  else if(wf>=0)chaosHarrierImage('ch_warp_'+wf,b.x,yy,b.w*1.48,b.w*1.48,0.88,'lighter',0);
   if(b._chVisible){
+    /* ============================================================
+       ⚠ THE HARRIER NEVER BANKS AGAIN (drop 0904w)
+
+       Mike: "see the stage harrier, stop making him tilt, but I wanna see more of his attack
+       frames as shown".
+
+       ch_ship_3 and ch_ship_4 are BANKED hulls - the airframe rolled left and right - and they
+       were selected purely from lateral drift, so simply patrolling made him tilt back and forth
+       the whole fight. They are no longer selected by anything.
+
+       What replaces them is the frame set he actually wants to see. ch_ship_1 was registered and
+       loaded and drawn by NOTHING - a whole authored attack pose sitting unused - so it now
+       carries every firing state that is not the missile bays. The selection is by STATE, not by
+       drift: idle is level, firing shows the attack pose, the bays open only while missiles are
+       actually leaving, and critical still overrides everything.
+       ============================================================ */
+    const _stNow=b._chState;
     let si=0;
-    if(b._chState==='missile')si=2;
-    else if(b.hp/Math.max(1,b.maxhp)<=0.35)si=5;
-    else if(b._chBank<0)si=3;
-    else if(b._chBank>0)si=4;
+    if(b.hp/Math.max(1,b.maxhp)<=0.35)si=5;
+    else if(_stNow==='missile')si=2;
+    else if(_stNow==='plasma'||_stNow==='side'||_stNow==='beam')si=1;
     const key='ch_ship_'+si, h=b.w*(320/352);
     chaosHarrierImage(key,b.x,yy,b.w,h,1,null,0);
     /* Stable hull, animated internals: only the cyan delta pixels from hover-B are composited. */
@@ -18124,6 +18241,34 @@ function chaosHarrierDraw(b){
   if(F){
     const fi=clamp(Math.floor((F.t/F.life)*4),0,3), a=Math.max(0,1-F.t/F.life);
     chaosHarrierImage('ch_'+F.family+'_'+fi,F.point.x,F.point.y,b.w*0.54,b.w*0.54,a,'lighter',0);
+  }
+  if(b._chState==='side'){
+    /* the emitter is drawn on every beat of the act - spin-up AND burn - so the wing reads as a
+       gun that is winding up rather than a sprite that appears when damage starts */
+    const t=b._chT||0, fi=Math.floor((b.t||0)*13)%4;
+    const guns=[[chaosHarrierPoint(b,'left_cannon'),b._chSideL||0],
+                [chaosHarrierPoint(b,'right_cannon'),b._chSideR||0]];
+    for(const [p,ang] of guns){
+      if(b._chSideOn && XART.rdy('ch_sidelaser_'+fi)){
+        const C=CH_SIDE_CROP, len=VH-p.y+120, w=CH_SIDE_HALF*2;
+        ctx.save();ctx.translate(p.x,p.y);ctx.rotate(ang);
+        ctx.globalCompositeOperation='lighter';ctx.imageSmoothingEnabled=false;
+        ctx.drawImage(XART.get('ch_sidelaser_'+fi),C[0],C[1],C[2],C[3],-w/2,-6,w,len);
+        ctx.restore();
+        const a=Math.PI/2+ang;
+        chaosHarrierImage('ch_impact_'+fi,p.x+Math.cos(a)*(VH-p.y+16),p.y+Math.sin(a)*(VH-p.y+16),
+                          74,74,0.88,'lighter',0);
+      }
+      /* ch_lance_ IS the cannon housing + charge chamber. It sits over the muzzle end, rotated
+         onto the line the gun is holding, so the emitter and its beam are one object. */
+      const ca=b._chSideOn?0.95:(0.30+0.65*Math.min(1,t/CH_SIDE_CHARGE));
+      const lw=b.w*0.30, lh=lw*(138/47), la=Math.PI/2+ang;
+      /* chaosHarrierImage centres the plate, and the housing is the plate's TOP third (measured:
+         row density 9999999888867764455434422210). Seat it down the beam line so the housing
+         lands on the cannon instead of floating above the wing. */
+      chaosHarrierImage('ch_lance_'+fi,p.x+Math.cos(la)*lh*0.30,p.y+Math.sin(la)*lh*0.30,
+                        lw,lh,ca,'lighter',ang);
+    }
   }
   if(b._chState==='beam'){
     const nose=chaosHarrierPoint(b,'nose');
@@ -18142,7 +18287,9 @@ function chaosHarrierDraw(b){
       chaosHarrierImage('ch_impact_'+fi,ex,ey,96,96,0.92,'lighter',0);
     }
   }
-  if(wf>=0)chaosHarrierImage('ch_warp_'+wf,b.x,yy,b.w*1.48,b.w*1.48,0.28,'lighter',0);
+  if(_rf>=0 && XART.rdy('chrift_'+_rf))
+    chaosHarrierImage('chrift_'+_rf,b.x,yy,b.w*1.34,b.w*1.34,0.30,'lighter',0);
+  else if(wf>=0)chaosHarrierImage('ch_warp_'+wf,b.x,yy,b.w*1.48,b.w*1.48,0.28,'lighter',0);
   return true;
 }
 function chaosHarrierProjectileDraw(b){
