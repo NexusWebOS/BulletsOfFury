@@ -334,9 +334,49 @@ aces hung at their spawn y until `for(const _k in ELITEX) _selfPat['xelite_'+_k]
 frames synchronously wedges the renderer~~ — **WRONG, corrected 0903k: the wedge is a missing
 `TRAP_RAF`** (see the atlas section above), not burst length.
 
-⚠ **SpriteCook IS NOT IN THIS REPO.** `tools/ColeForge` is a yt-dlp front end. The SpriteCook sheets
-were GPT-generated externally and normalized by `_BUILD_SOURCE/combat_final_0901/`. Boss art
-regeneration is Mike's side; wiring, normalizing and rigging what comes back is ours.
+⚠ ~~**SpriteCook IS NOT IN THIS REPO.**~~ **SUPERSEDED 0905 — SpriteCook IS WIRED IN NOW**, as a
+Claude plugin (`spritecook@spritecook`, MCP at `mcp.spritecook.ai`). Art can be generated from this
+session directly; it is no longer only Mike's side. `tools/ColeForge` is still a yt-dlp front end,
+and the older sheets were still GPT-generated externally and normalized by
+`_BUILD_SOURCE/combat_final_0901/`. **Installing the plugin does NOT sign it in** — `/plugin
+install` places the server config, the OAuth grant is a separate `/mcp` in an interactive terminal,
+and until it runs the tools are simply absent.
+
+### ⚠ WHAT SPRITECOOK ACTUALLY RETURNS — five traps, all measured on the 0905 Cryo Spear job
+
+`_BUILD_SOURCE/normalize_spritecook_plate_0905.py` exists because of these. **Run every generated
+plate through it before the art goes near `assets/game/`.**
+
+- **`edit_asset_id`, NOT `reference_asset_id`, is what "1:1" means.** Per the plugin's own
+  `spritecook-generate-sprites` skill, `reference_asset_id` is *"make a building in a similar style
+  to this one"* — a LOOKALIKE. `edit_asset_id` is a direct modification of one asset. A damage state
+  is an edit. Picking the wrong slot silently produces a different ship that passes every check a
+  human would run on it. The two cannot be combined. Measured result of getting it right:
+  **silhouette IoU 0.919** against the intact plate.
+- **`width`/`height` ARE HINTS, EVEN WITH `smart_crop=false`.** The response says so itself —
+  `resolved_parameters.size_behavior: "hint"`. 256x256 was requested twice and returned **257x274**
+  and **266x263**. The plates swap IN PLACE at one draw size, so an unnormalized plate reads as the
+  boss growing the instant it takes a hit.
+- **EVERY MODEL REPORTS `supports_transparency: false` AND THE ALPHA COMES BACK ANYWAY.** Measured
+  0-255 alpha with 0% semi-transparent pixels on both plates: SpriteCook post-processes the cutout
+  itself. Do not conclude from the catalogue flag that a plate will be opaque — and do not conclude
+  the reverse either. Measure the returned PNG.
+- ⚠ **`pixel:true` AND `pixel_perfect:true` DO NOT GIVE YOU PIXEL ART.** The authored intact plate
+  is **61 colours**; the generation came back with **19,063** on a comparable opaque area. It is a
+  continuous-tone render at sprite resolution. Unfixed, the boss changes ART STYLE at 62% HP. The
+  fix is a palette lock to the reference's own colours with **DITHER OFF** (dithering a 61-colour
+  target sprays checkerboard noise through flat armour).
+- ⚠ **COUNT COLOURS ON OPAQUE PIXELS ONLY.** `im.convert('RGB').getcolors()` counts the RGB left
+  under fully transparent pixels and reported **35,374** where the honest figure is 19,063 — more
+  "colours" than the sprite has pixels, which is the tell. A number that absurd invites dismissal
+  of a real defect.
+
+**And solve the pivot by silhouette IoU, not by bbox edges or centroid.** Both of those are pulled
+by whichever edge the new damage grew; IoU asks the only question that matters — where does this
+ship most sit on top of the old one. Aligning the Cryo Spear cost dx=-1 dy=-6 with **0 px clipped**,
+and the ship was NOT rescaled: ink measured 212 wide against 211, so forcing the HEIGHT to match
+would have squeezed the width to 198 and made the boss visibly narrower at 62% HP — a real defect
+introduced to fix a cosmetic one.
 
 **Open, needing Mike:** which pilot/pickup carries the new orb cores; the level-2/3 boss art
 (SpriteCook, level 3 from the current boss as a 100% reference); the Siege Ember "spin" did not
@@ -1471,10 +1511,22 @@ stage banners and all UI; menus backable via `menuBack()`; keyboard password ent
   `probe_uilayout_0814g.html`. **And the 404 was hiding a real bug:** the UI editor loaded AND
   saved `assets/ui_layout.json` — one directory up from the `assets/data/` path the game fetches —
   so every layout Mike saved went to a file the game never reads. Both editor paths fixed.
-- ~~The `validate_antipatterns.py` hook errors on every write — its script path does not exist.~~
-  **CLOSED as stale (0814g)** — no hook config referencing it exists anywhere on this machine
-  (user-level or project settings, both checked); the broken hook was removed at some point and the
-  entry outlived it.
+- ~~The `validate_antipatterns.py` hook errors on every write.~~ ~~**CLOSED as stale (0814g)** — no
+  hook config referencing it exists anywhere on this machine (user-level or project settings, both
+  checked).~~ ⚠ **RE-OPENED 0905, AND 0814g's METHOD IS WHY IT WAS MISSED.** It fires on every
+  `Write|Edit|MultiEdit` again, blocking-with-an-error while the edit itself lands. **It is not
+  ours and it is not in any settings file** — it ships inside the **Pixeltable plugin**
+  (`plugins/.../plugin_01Hukt…/hooks/hooks.json`, `PostToolUse` matcher `Write|Edit|MultiEdit`),
+  installed for unrelated work. 0814g grepped user-level and project `settings.json`, concluded no
+  config referenced it, and closed the entry. **A PLUGIN-SUPPLIED HOOK IS INVISIBLE TO A SETTINGS
+  GREP** — plugins carry their own `hooks.json` and register it themselves, so "not in settings"
+  never meant "not configured". Grep the plugin tree too, or read the error's own path: it names
+  the owner.
+  Measured before blaming the script: the file EXISTS, and run by hand with `{}` on stdin — at both
+  the all-backslash and the mixed-separator form of its own path, under the same interpreter the
+  error names — it exits **0** silently. So the script is innocent and the failure is in how the
+  harness invokes it. Cosmetic here (Pixeltable is used by nothing in this repo); uninstalling that
+  plugin, or dropping its `PostToolUse` block, ends it. **Do not "fix" the script.**
 - ~~Jets: observed speed varies 96–138 even on `straight`.~~ **CLOSED and MEASURED in 0811t**
   (`probe_jetspeed.py`). **`straight` is exactly 96 — min, median and max.** The residual on
   CURVED routes is fully attributed and every part of it is deliberate: the >96 excursions

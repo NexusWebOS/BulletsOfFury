@@ -33,11 +33,28 @@ takes its whole fight at full visual health and never shows a scratch.
 - ink occupies **(22, 11) to (233, 245)** — 211 x 234 inside the canvas
 - 23,023 opaque pixels
 
-**Pass this as the reference asset** (`reference_asset_id` in SpriteCook's API — the plugin's own
-skills describe generating a hero asset first and referencing it for everything after; the same
-route the BOF2 station panels used, recorded in `BOFII-Lost-Conquest/docs/SPRITECOOK_STATION.md`).
-Mike's instruction is explicit: a 1:1 replica, so the ship's identity survives. The damaged and
-critical plates must read as **the same ship after taking hits**, not a new ship.
+⚠ **PASS IT AS `edit_asset_id`, NOT `reference_asset_id` — I had this wrong.** Read from the
+installed plugin's own skill (`skills/spritecook-generate-sprites/SKILL.md`, "Reference Roles"),
+the three slots are not interchangeable:
+
+| slot | what it means | fit here |
+|---|---|---|
+| `style_asset_ids` | ambient style guides — palette, proportions, rendering | no: a NEW ship in the house style |
+| `reference_asset_id` | *"make a building in a similar style to this one"* | **no: a lookalike, which is what Mike asked us not to produce** |
+| `edit_asset_id` | *"make this roof red"*, *"remove the sign"* — a direct modification of ONE existing asset | **yes** |
+
+Damaged and critical ARE the same plate with armour torn off. That is an edit, not a new
+generation. `reference_asset_id` would have handed back a ship that resembles the Cryo Spear, and
+Mike's words were *"a 1|1 replica to make sure we dont lose too much originality"*. The two must
+read as **the same ship after taking hits**, not a new ship.
+
+⚠ **AND THEY CANNOT BE COMBINED** — the skill states `reference_asset_id` and `edit_asset_id` are
+mutually exclusive (`style_asset_ids` may accompany either). One choice, and it is the edit.
+
+The upload route is `create_asset_upload` → HTTP PUT → `finalize_asset_upload`, which returns the
+`asset_id` (the same bridge the BOF2 station panels used, recorded in
+`BOFII-Lost-Conquest/docs/SPRITECOOK_STATION.md`). ⚠ The upload URL and token are short-lived
+secrets — never echoed, never written to a manifest, never into a passover.
 
 ---
 
@@ -93,8 +110,37 @@ Both generated at the reference's canvas, transparent background, top-down/dead-
   with the ink centred on the reference's bbox (22, 11, 211 x 234) rather than rescaling the ship.
 - Save as `nsb_cryo_spear_damaged.png` and `nsb_cryo_spear_critical.png` in this folder.
 
-⚠ **Do not let a smart-crop resize the ship.** The three plates are swapped in place at the same
-draw size; a re-cropped plate reads as the boss growing or shrinking when it takes a hit.
+⚠ **`smart_crop` DEFAULTS TO TRUE AND MUST BE TURNED OFF HERE.** The plugin's own parameter table
+gives `smart_crop: true, smart_crop_mode: "tightest"` as the default, and workflow-essentials says
+to prefer `"tightest"` — correct for a standalone sprite, **wrong for a damage state**. Tightest
+crops to the ink, so a plate that has lost a wing comes back cropped to what is LEFT and re-centred:
+the ship then grows, shrinks or jumps the instant it takes a hit. The three plates are swapped in
+place at one draw size, so the canvas must not move. Pass `smart_crop=false`.
+
+## The exact call, once the tools are live
+
+`get_credit_balance` first (workflow-essentials requires it before a multi-asset batch, and Mike
+wants the cost said out loud). Then upload the reference once and edit it twice:
+
+```
+create_asset_upload(file_name="REFERENCE_nsb_cryo_spear.png",
+                    content_type="image/png", pixel=true)
+  -> PUT the bytes to upload_url   (short-lived secret: never echoed, never in a passover)
+finalize_asset_upload(upload_token=...)  -> asset_id
+
+generate_game_art(prompt=<DAMAGED or CRITICAL, below>,
+                  edit_asset_id=<asset_id>,     # NOT reference_asset_id — see above
+                  width=256, height=256,        # in range; the tool accepts 16-512
+                  pixel=true, bg_mode="transparent",
+                  smart_crop=false,             # ⚠ the pivot rule above
+                  aspect_ratio="1:1", variations=1)
+```
+
+⚠ **`generate_game_art` IS ASYNCHRONOUS.** It returns a job, not art. Follow the returned
+`poll.tool` with its exact `poll.arguments` — workflow-essentials says explicitly not to invent a
+polling endpoint or fish through response fields. Take the plate from `sprite_url`, and record
+`asset_id` + a `sha12` of the saved file in the project manifest so a later state edits the same
+lineage instead of starting a new ship.
 
 ---
 
@@ -124,3 +170,56 @@ In `SHIPBOSS`, the kind `rimewall` is named **CRYO SPEAR** and draws `nsb_cryo_s
 `cryospear` is named **RIME WALL** and draws `nsb_rimewall_*`. Stage 3 fields `cryospear` as its
 boss and `rimewall` as its miniboss. This brief is about the **miniboss** — the slim ice
 interceptor in the reference image — whatever the kind string says.
+
+---
+
+# ✅ RUN AND LANDED — 0905
+
+**32 credits** (2 x `gemini-3-pro-image` at 16), 346 → 314. Both plates shipped and verified in
+real Chromium. Lineage and hashes: `spritecook-assets.json` beside this file.
+
+## What Mike decided
+
+The first damaged plate came back reading as **soot added rather than armour lost** — the opposite
+of the convention above, and the ice blades the prompt asked to be "cracked and partly broken away"
+were still intact. That was put to him with the render. **"looks great to me"** — so the damage
+LEVEL is his call and stands. It was not re-run. Do not "fix" it later on the strength of the
+convention section above; he has seen it and overruled it.
+
+## What was wrong and was NOT a design question
+
+Both fixed by `_BUILD_SOURCE/normalize_spritecook_plate_0905.py`, which every future SpriteCook
+plate should go through:
+
+| | generated | after normalize | authored reference |
+|---|---|---|---|
+| canvas | 257x274 / 266x263 | **256x256** | 256x256 |
+| colours (opaque px) | 19,063 / 17,347 | **61** | 61 |
+| semi-alpha px | 0 | 0 | 0 |
+| ink bbox | (22,12,234,262) | (21,6,233,256) | (22,11,233,245) |
+
+Alignment was solved by **silhouette IoU**, not bbox edges: damaged dx=-1 dy=-6 at **IoU 0.919**,
+critical dx=-6 dy=-5 at **0.872** (lower because more armour is gone — the right direction), **0 px
+clipped** on both. The ship was NOT rescaled; see the script's header for why forcing the height to
+match would have made the boss narrower at 62% HP.
+
+## How it is wired
+
+Registered as **loose files** in `BOFX.img` (`assets/game/nsb_cryo_spear_{damaged,critical}.png`),
+alongside `nsb_spawncarrier_*` — the repack doc records recent generations as deliberately left
+loose. Folding them onto `mini_s3` is a later `atlas_repack_0903.py` pass, not required to ship.
+`SHIPBOSS.rimewall` gained `dmg:['nsb_cryo_spear_damaged','nsb_cryo_spear_critical']` **after** the
+art was registered, per the 0812c warning above.
+
+## Verified, in real Chromium
+
+`scratchpad/probe_cryospear_dmg.py` — proof frames in `docs/proofs/cryospear_dmg_0905/`.
+It records **the art key the DRAW asked for**, because `XART.get` returns a canvas with no `.src`:
+
+    100% hp -> nsb_cryo_spear            OK
+     50% hp -> nsb_cryo_spear_damaged    OK
+     20% hp -> nsb_cryo_spear_critical   OK      0 page errors
+
+⚠ The probe polls `XART.rdy` against real elapsed time rather than checking once, because
+`shipBossDraw` reads `if(_dk && XART.rdy(_dk)) _hk=_dk;` — **an unready plate silently keeps the
+intact hull**, so a one-shot check reports a working swap as broken (and a missing plate as fine).

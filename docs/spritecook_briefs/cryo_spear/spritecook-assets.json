@@ -1,0 +1,29 @@
+{
+  "note": "SpriteCook lineage for the stage-3 miniboss. edit_asset_id chain, NOT reference_asset_id - a further damage state must EDIT the asset below it, or the ship stops being the same ship. sha12 is of the RAW generation as downloaded, before normalize_spritecook_plate_0905.py.",
+  "assets": [
+    {
+      "asset_id": "8c0434c9-1deb-4d85-a12a-cb5e1ca04301",
+      "sha12": "06a1b7e17843",
+      "label": "BOF Cryo Spear - intact (reference)",
+      "model": "uploaded-file",
+      "edited_from": null,
+      "raw_local": "REFERENCE_nsb_cryo_spear.png"
+    },
+    {
+      "asset_id": "04f5b315-3df7-4f0d-b62f-444d09ea5426",
+      "sha12": "813969e08d1a",
+      "label": "BOF Cryo Spear - damaged (62% HP)",
+      "model": "gemini-3-pro-image",
+      "edited_from": "8c0434c9-1deb-4d85-a12a-cb5e1ca04301",
+      "raw_local": "RAW_damaged_gen.png"
+    },
+    {
+      "asset_id": "ffc68372-f472-4af9-be77-1ad5f4dfe5ad",
+      "sha12": "e1affd893be1",
+      "label": "BOF Cryo Spear - critical (30% HP)",
+      "model": "gemini-3-pro-image",
+      "edited_from": "04f5b315-3df7-4f0d-b62f-444d09ea5426",
+      "raw_local": "RAW_critical_gen.png"
+    }
+  ]
+}
