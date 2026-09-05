@@ -221,3 +221,59 @@ the cleaner's SKIP list so a later run cannot damage her further.
 - `CF_Stage9PortalCombatPickups-Lvl9` and the four remaining teleport-FX families unimported.
 - HQ_ROOM's scene-to-room mapping is my reading of the scripts and is a creative call to review.
 - 26+ commits unpushed.
+
+---
+
+## 0905e — items 2 and 17, on Mike's ask
+
+**17. Stage 3 — the attacks were there; the TELEGRAPH was wearing the lava boss's colour.**
+His words: *"where are the new attacks, projectiles and animations for him?"* Measured before
+changing anything: the seven Rime Wall / Cryo Spear patterns and the `proc3` projectiles landed
+0831 (58252627), i.e. BEFORE he wrote the list, and they do fire with authored `l23fx_cryo_/rime_`
+art — so "where are they" was not a wiring question. What he was looking at is the laser tell:
+I built the red alert field in 0903h for the LAVA boss (his note then was about level 2) and put it
+in the shared `l23BossBeamDraw`, so stage 3 inherited a hardcoded `#ff0000` lane. Over cyan ice at
+the opening alpha (0.35 × 0.55 pulse = 0.19) red does not read as red — blended with blue it is a
+**brown smear**, which is what the Rime Wall has been telegraphing with.
+`L23_ALERT` is per-family now. ⚠ **The fix is the ALPHA, not the hue** — swept five candidates on
+the real ice field (`docs/proofs/stage3_alert_0905/_sweep.png`): an ice-blue lane vanishes into the
+ice (the same mistake one step over), amber reads molten, magenta reads like a pickup. Red at a
+higher opening alpha stays red on cyan, so an alert still means one thing everywhere. Stage 2's
+values are byte-identical and shown unchanged in `_after.png`; stage 4's `legion` deliberately has
+no row and inherits the shipped lava values rather than a guess.
+
+⚠ **I nearly "fixed" something deliberate.** `PROJ` maps `s3shard`→comet / `s3mortar`→blast, which
+default to the RED palette, and the mini's shards do look like fire on ice. That mapping is a
+registry classification only: `_dedicated` routes any `s[1-9]` kind to its own FIRETYPES row, and
+stage 3's rows carry `proc3` → `drawStage3Projectile`, authored silhouettes with a documented
+reason ("dark violet silhouette and warm gold core so every round stays legible over white snow").
+Changing the palette would have overwritten a design decision. Read the whole chain first.
+
+**2. Cutscene shootdowns — the motion half is done; the ART half is Mike's call.**
+His words: *"use our pseudo-3d graphics"*. The scenes are the per-pilot openings (`PILOT_OPENINGS`,
+beats `dogfight` / `duo_attack` / `missile_lock` / `ram`), which **are live** — `hqTrigger('pre',1)`
+plays them before stage 1 in campaign. ⚠ The comment above `HQ_SCENES` said they were "kept as data
+and no longer played"; that was true when written and 0904an put them back. Corrected in place.
+
+- ⚠ **The art does not exist and cannot be faked.** Our ships have seven authored 3/4 views each
+  (`cinematic_ships/<pilot>/cutouts_native/`); every enemy plate in the tree — the stage-8 scout,
+  the bone interceptor, the whole Vol.1 `xship` set — is TOP-DOWN. Rendered side by side in
+  `docs/proofs/cin_shootdown_0905/_candidates.png`. Matching the hero perspective is a SpriteCook
+  run, so it sits with items 4 and 7 as **Mike's credits, Mike's call**.
+- **Landed without art:** `cinhostile_heavy` was registered and **unreachable** — `flip?[1]:[0]`
+  can only pick two of three — so a third of the hostile art had never been on screen. Beats can
+  name one now. And the four combat beats got the depth language the `hq_approach` / `depart` beats
+  already use, so bandits close on the camera instead of sitting at a fixed size.
+- ⚠ **The ram never showed what it hit.** Both airbursts were unconditional and drawn at the
+  hostiles' own position at twice their size, so from frame zero the enemies Juggernaut rams were
+  covered by their own explosions. They wait for the closing now. Before/after:
+  `docs/proofs/cin_shootdown_0905/_before.png`, `_after2.png`.
+
+**Still needs Mike**
+- **Item 2's art** — hostiles in the hero ships' 3/4 view (SpriteCook).
+- **Stage 3's miniboss has one plate.** `nsb_cryo_spear` has no damaged/critical, so the CRYO SPEAR
+  never visibly degrades; every other ship boss and mini that has them declares a `dmg` array. The
+  art is not on disk — also a generation job.
+
+Suite **3,214 ok / 67 fail / 278 sections**, thirteen of those assertions new (§275, §276) and all
+passing; nothing failing outside the baseline but the two documented corner-run flakes.

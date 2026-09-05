@@ -13160,6 +13160,57 @@ console.log("=== 274. tough encounters, static hulls and premium ordnance ===");
      'generated boss muzzle overlays stay anchored to a moving physical emitter');
 }
 
+// ===== 275. THE LASER ALERT LANE IS PER-FAMILY (drop 0905e, backlog item 17) =====
+console.log("=== 275. boss laser alert lane ===");
+{
+  /* The red alert field was built in 0903h for the LAVA boss - Mike's words were about level 2 -
+     and it lives in the shared l23 beam draw, so stage 3's RIME WALL inherited a hardcoded #ff0000
+     lane. Over cyan ice at the opening alpha (0.35 * 0.55 pulse = 0.19) red blends to a brown
+     smear. Swept five candidates on the real ice field before choosing: the fix is the ALPHA, not
+     the hue, so an alert still means the same thing on every stage.
+     docs/proofs/stage3_alert_0905/_sweep.png (candidates) and _after.png (both stages). */
+  var _AL=JSON.parse(vm.runInContext("JSON.stringify(L23_ALERT)", ctxv));
+  ok(!!_AL.inferno && _AL.inferno.lane==='#ff0000' && _AL.inferno.a0===0.35 && _AL.inferno.shell==='#0a0000',
+     'the lava boss keeps the exact alert Mike signed off on');
+  ok(!!_AL.rime, 'the ice boss has its own alert row rather than inheriting the lava one');
+  ok(_AL.rime.a0 > _AL.inferno.a0,
+     'and it opens more opaque, which is what stops red muddying to brown over cyan ('+_AL.rime.a0+' vs '+_AL.inferno.a0+')');
+  /* the hue stays in the red family: an alert that changes colour per stage stops being a language */
+  ok(/^#ff[0-3]/.test(_AL.rime.lane), 'the ice lane is still a RED alert ('+_AL.rime.lane+')');
+  ok(vm.runInContext("typeof l23AlertCol==='function' && l23AlertCol('legion')===L23_ALERT.inferno", ctxv),
+     'an unmeasured family falls back to the shipped lava values rather than to a guess');
+  var _bd=vm.runInContext("l23BossBeamDraw.toString()", ctxv);
+  ok(_bd.indexOf("'#ff0000'")<0 && _bd.indexOf("l23AlertCol(")>0,
+     'the draw reads the table instead of hard-coding one stage\'s colour');
+}
+
+// ===== 276. CUTSCENE SHOOTDOWNS HAVE DEPTH (drop 0905e, backlog item 2) =====
+console.log("=== 276. cutscene shootdown beats ===");
+{
+  /* Mike: "use our pseudo-3d graphics" in the cutscenes where we shoot enemies down. The ART half
+     needs hostiles in the hero ships' 3/4 view and that art does not exist - every enemy plate in
+     the tree is top-down (docs/proofs/cin_shootdown_0905/_candidates.png), so it is a SpriteCook
+     job and Mike's call. This pins the half that needed no art. */
+  ok(vm.runInContext("typeof hqPlayPilot==='function' && /hqPlayPilot\\(/.test(hqTrigger.toString())", ctxv),
+     'the per-pilot openings are LIVE - hqTrigger routes to them, whatever the stale comment said');
+  var _ch=vm.runInContext("cinHostile.toString()", ctxv);
+  ok(/idx/.test(_ch) && _ch.indexOf('CIN_HOSTILES[idx')>0,
+     'a beat can name which hostile it draws');
+  ok(vm.runInContext("CIN_HOSTILES.length===3", ctxv),
+     'and all three registered hostiles are reachable - [2] could never be drawn before');
+  ok(vm.runInContext("typeof cinClose==='function'", ctxv), 'the shootdown beats share one depth helper');
+  var _c1=JSON.parse(vm.runInContext("JSON.stringify(cinClose(0,2,0.12,0.30))", ctxv));
+  var _c2=JSON.parse(vm.runInContext("JSON.stringify(cinClose(2,2,0.12,0.30))", ctxv));
+  ok(Math.abs(_c1.s-0.12)<1e-6 && Math.abs(_c2.s-0.30)<1e-6,
+     'a hostile starts far and ends near ('+_c1.s.toFixed(2)+' -> '+_c2.s.toFixed(2)+')');
+  var _dm=vm.runInContext("cinDrawMotion.toString()", ctxv);
+  ok((_dm.match(/cinClose\(/g)||[]).length>=4,
+     'every combat beat - dogfight, duo_attack, missile_lock, ram - uses it ('+(_dm.match(/cinClose\(/g)||[]).length+')');
+  /* the ram's two airbursts were unconditional and drawn ON the hostiles at twice their size, so
+     the thing Juggernaut rams was never once visible. They wait for the closing now. */
+  ok(/_d4\.e>0\.55/.test(_dm), 'the ram shows what it hits before it blows it up');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

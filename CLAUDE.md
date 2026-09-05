@@ -269,6 +269,32 @@ Verified: 5,549 cells pixel-identical old→new before the manifest moved; `veri
 all 5,698 cells resolve, eight stages 100 s each with 0 blank fallthroughs; title / mode / pilot
 select / stage screens shot in real Chromium (`docs/proofs/atlas_repack_0903/`).
 
+## 0905e — two traps worth more than the fixes
+
+⚠ **A SHARED DRAW THAT CARRIES ONE STAGE'S COLOUR IS THE SAME BUG AS ONE FLAG DOING TWO JOBS.**
+The red alert lane was written for the LAVA boss and lives in `l23BossBeamDraw`, which stage 3 also
+uses — so the ice boss telegraphed its lasers in `#ff0000`. Over cyan at the lane's opening alpha
+(0.19) red blends to BROWN; it did not read as a warning at all. `L23_ALERT` is keyed by family now.
+**And the fix was the ALPHA, not the hue** — swept on the real field first: an ice-blue lane for the
+ice boss vanishes into the ice, which is the same mistake one step over. An alert must contrast with
+the FIELD, not match the beam, and it should mean the same thing on every stage. This is
+`arenaLiquid` and `_bossRun` a third time: a constant standing in for a family.
+
+⚠ **READ THE WHOLE RESOLUTION CHAIN BEFORE RECOLOURING A PROJECTILE.** `PROJ` maps `s3shard`→comet,
+which defaults to the red palette, and stage 3's shards do look like fire on ice — but `PROJ` is a
+registry classification, not the art: `_dedicated` sends any `s[1-9]` kind to its own FIRETYPES row,
+and stage 3's rows carry `proc3` → `drawStage3Projectile`, authored silhouettes with a written
+reason. I was one edit from overwriting a design decision with a "fix".
+
+⚠ **A COMMENT SAYING A SYSTEM IS DEAD CAN BE OLDER THAN THE COMMIT THAT REVIVED IT.** The note above
+`HQ_SCENES` said `PILOT_OPENINGS` was "kept as data and no longer played". 0904an put the openings
+back and `hqTrigger('pre',1)` routes to them; the note was never updated, and believing it would
+have meant skipping item 2 as dead code. **Check the caller, not the paragraph.**
+
+⚠ **AN EFFECT DRAWN AT A UNIT'S OWN POSITION AT TWICE ITS SIZE DELETES THE UNIT.** The `ram` beat's
+two airbursts were unconditional from t=0 and centred on the hostiles, so the enemies Juggernaut
+rams were never once visible. Nothing errored; the beat just looked like two explosions and a hull.
+
 ## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
 
 **Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download

@@ -14119,6 +14119,36 @@ function l23BossBeamFrame(B){
   if(B.t<B.warm+B.active)return 3+(Math.floor((B.t-B.warm)*15)%6);
   return 9+clamp(Math.floor((B.t-B.warm-B.active)/Math.max(.01,B.retract)*3),0,2);
 }
+/* ============================================================
+   THE ALERT LANE IS PER-FAMILY, BECAUSE RED OVER ICE IS BROWN (0905, backlog item 17).
+
+   Mike, on stage 3: "where are the new attacks, projectiles and animations for him?" The attacks
+   and the proc3 projectiles landed 0831; what he was looking at is this. I built the red alert
+   field in 0903h for the LAVA boss - his words were about level 2 - and it lives in the shared
+   l23 beam draw, so stage 3's RIME WALL inherited a hardcoded `#ff0000` lane. Over cyan ice at the
+   lane's opening alpha (0.35 * 0.55 pulse = 0.19) red does not read as red: blended with blue it
+   is a muddy brown smear, which is what the Rime Wall telegraphs its lasers with today.
+   Measured render: docs/proofs/stage3_alert_0905/.
+
+   ⚠ AND THE FIX IS THE ALPHA, NOT THE HUE - swept on the real ice field before choosing, five
+   candidates at the same warm frame (docs/proofs/stage3_alert_0905/_sweep.png). An ice-blue lane
+   for the ice boss is the same mistake one step over: cyan on cyan vanishes, which is what the
+   original comment warns about for a red wash on lava. Amber read as molten and magenta as a
+   pickup. RED AT A HIGHER OPENING ALPHA reads unmistakably red on cyan, so an alert field means
+   the same thing on every stage - which is the point of an alert - and only the opacity needed to
+   survive the field changes.
+
+   Stage 4's `legion` is deliberately NOT given a row: it was not measured here, and inheriting the
+   lava default leaves its behaviour exactly as it shipped. Add one when it is looked at.
+
+   This is the shape CLAUDE.md already records twice (arenaLiquid, _bossRun): one constant standing
+   in for a family, left pointing at whatever unit arrives next. ============================================================ */
+const L23_ALERT = {
+  inferno: {shell:'#0a0000', lane:'#ff0000', tick:'#ffd0a0', a0:0.35, a1:0.35},   // lava - unchanged
+  /* ice: same danger red, opaque enough that blending with cyan cannot turn it brown */
+  rime:    {shell:'#12000a', lane:'#ff2020', tick:'#ffd0d0', a0:0.55, a1:0.32},
+};
+function l23AlertCol(fam){ return L23_ALERT[fam] || L23_ALERT.inferno; }
 function l23BossBeamDraw(b){
   const B=b&&b._l23Beam;if(!B||typeof XART==='undefined')return false;
   let key='l23fx_'+(B.family==='inferno'?'inferno_laser':'rime_laser')+'_'+l23BossBeamFrame(B);
@@ -14149,13 +14179,14 @@ function l23BossBeamDraw(b){
     ctx.save();
     for(let i=0;i<B.slots.length;i++){
       const p=shipBossMount(b,B.slots[i]);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(B.angles[i]-Math.PI/2);
+      const _AL=l23AlertCol(B.family);
       /* on a lava stage a red wash vanishes - the lane needs a dark outline and white-hot rails */
-      ctx.globalAlpha=0.62*pulse; ctx.fillStyle='#0a0000'; ctx.fillRect(-lane/2-3,0,lane+6,len);
-      ctx.globalAlpha=(0.35+0.35*k)*pulse; ctx.fillStyle='#ff0000'; ctx.fillRect(-lane/2,0,lane,len);
+      ctx.globalAlpha=0.62*pulse; ctx.fillStyle=_AL.shell; ctx.fillRect(-lane/2-3,0,lane+6,len);
+      ctx.globalAlpha=(_AL.a0+_AL.a1*k)*pulse; ctx.fillStyle=_AL.lane; ctx.fillRect(-lane/2,0,lane,len);
       ctx.globalAlpha=0.95; ctx.fillStyle='#ffffff';
       ctx.fillRect(-lane/2,0,3,len); ctx.fillRect(lane/2-3,0,3,len);
       /* hazard ticks marching down the rails read as 'incoming' even on a busy field */
-      const ph=(B.t*180)%28; ctx.globalAlpha=(0.30+0.40*k)*pulse; ctx.fillStyle='#ffd0a0';
+      const ph=(B.t*180)%28; ctx.globalAlpha=(0.30+0.40*k)*pulse; ctx.fillStyle=_AL.tick;
       for(let y=ph;y<len;y+=28){ ctx.fillRect(-lane/2-1,y,5,2); ctx.fillRect(lane/2-4,y,5,2); }
       ctx.restore();
     }
@@ -39129,9 +39160,11 @@ const PILOT_OPENINGS={
    speaking, speakingPilot, speakingPose, fullText, text - which was checked field by field before
    any of this was moved, and CUT_HQ, anyTap and uiBlipRep are all still present.
 
-   ⚠ PILOT_OPENINGS IS KEPT AS DATA AND IS NO LONGER PLAYED. cinPrewarmPilot reads it to warm the
-   cinematic art, and the ensemble scenes draw from the same portraits and backgrounds, so it
-   still earns its place as the prewarm's key source. Nothing routes to it as a scene any more.
+   ⚠⚠ THE NOTE THAT USED TO SIT HERE - "PILOT_OPENINGS IS KEPT AS DATA AND IS NO LONGER PLAYED,
+   nothing routes to it as a scene any more" - IS STALE AND WAS WRONG BY 0905. Drop 0904an put the
+   openings back: `hqTrigger('pre',1)` plays `hqPlayPilot(pk, briefing)` before stage 1 in campaign,
+   so the per-pilot opener runs first and hands off to the ensemble briefing. Read the trigger, not
+   this paragraph - it cost a session's start believing the shootdown beats were dead code.
    ⚠ cinDialogue is now referenced by nothing - it was the beats renderer for the openers. Left on
    disk rather than deleted; it is a working authored renderer and the campaign prologue is the
    obvious place it could be wanted.
@@ -39386,12 +39419,36 @@ function cinDrawShip(pilot,view,x,y,h,flip,alpha,rot){
   if(flip)ctx.scale(-1,1); ctx.shadowColor='rgba(0,0,0,.65)';ctx.shadowBlur=Math.max(3,h*.04);
   ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore(); return true;
 }
-function cinHostile(x,y,h,flip,alpha,rot){
-  let key=(flip?CIN_HOSTILES[1]:CIN_HOSTILES[0]);
+/* ⚠ CIN_HOSTILES[2] WAS UNREACHABLE. `flip?[1]:[0]` can only ever pick two of the three, so
+   `cinhostile_heavy` has been registered and never drawn since the pack landed - this file's
+   recurring "declared and never fired" shape. `idx` lets a beat name one; the flip still chooses
+   when it does not, so every existing call renders exactly as it did. */
+function cinHostile(x,y,h,flip,alpha,rot,idx){
+  let key=(idx!=null?CIN_HOSTILES[idx%CIN_HOSTILES.length]:(flip?CIN_HOSTILES[1]:CIN_HOSTILES[0]));
   if(!XART.rdy(key)){key=null;for(const k of CIN_HOSTILES){if(XART.rdy(k)){key=k;break;}}}
   if(!key)return false; const im=XART.get(key),w=h*(im.naturalWidth/im.naturalHeight);
   ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.translate(x,y);if(rot)ctx.rotate(rot);if(flip)ctx.scale(-1,1);
   ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
+}
+/* ============================================================
+   THE SHOOTDOWN BEATS GET THE DEPTH THE APPROACH BEATS ALREADY HAVE (0905, backlog item 2).
+
+   Mike: "use our pseudo-3d graphics" in the cutscenes where we shoot enemies down.
+
+   Two halves. The ART half needs hostiles drawn in the hero ships' 3/4 perspective and that art
+   does not exist - `cinematic_ships/` covers the nine pilots only, and every enemy plate in the
+   tree (the stage-8 scout, the bone interceptor, the Vol.1 xship set) is TOP-DOWN. Rendered side
+   by side: docs/proofs/cin_shootdown_0905/_candidates.png. Generating it spends Mike's SpriteCook
+   credits, so it is his call, exactly like backlog items 4 and 7.
+
+   The MOTION half needs no new art and is this. `hq_approach`, `jungle_approach` and `depart`
+   already sell distance by scaling our own ships along the beat (`H*(.38-.23*e)`); the combat
+   beats drew their hostiles at a FIXED size, so nothing ever closed on the camera and the fight
+   read as flat cardboard even before the perspective mismatch. cinClose returns the scale and the
+   vertical drift for a hostile bearing down, so all four beats speak one language. ============================================================ */
+function cinClose(t,dur,far,near){
+  const u=clamp(t/Math.max(0.01,dur||2.0),0,1), e=u*u*(3-2*u);      // smoothstep, same easing the approach beats use
+  return {s:far+(near-far)*e, e:e};
 }
 function cinFx(kind,x,y,size,t,rot){
   const f=Math.abs(Math.floor(t*13))%8,key='cinfx_'+kind+'_'+f;if(!XART.rdy(key))return;
@@ -39419,18 +39476,26 @@ function cinDrawMotion(sc,beat,t,W,H){
   if(motion==='dogfight'||motion==='barrel'){
     const view=motion==='barrel'?[2,6,3,1][Math.floor(t*5)%4]:6;
     cinDrawShip(lead,view,W*(.5+.16*Math.sin(t*1.8)),H*(.52+.08*Math.cos(t*2.2)),H*.52,false,1,Math.sin(t*2)*.08);
-    cinHostile(W*.22,H*.25,H*.22,false,.94,-.08);cinHostile(W*.79,H*.19,H*.21,true,.9,.08);
+    /* both bandits close on the camera over the beat, so the dogfight has depth (0905) */
+    const _d=cinClose(t,beat.duration||2.15,0.12,0.30);
+    cinHostile(W*(.22-.05*_d.e),H*(.25+.10*_d.e),H*_d.s,     false,.94,-.08,0);
+    cinHostile(W*(.79+.05*_d.e),H*(.19+.12*_d.e),H*(_d.s*.95),true, .90, .08,2);
     cinFx('laser',W*(.45+.1*Math.sin(t*2)),H*.34,H*.10,t,-.18);
-    if((t%1.6)>.8)cinFx('airburst',W*.78,H*.22,H*.27,t);return;
+    if((t%1.6)>.8)cinFx('airburst',W*(.79+.05*_d.e),H*(.19+.12*_d.e),H*.27,t);return;
   }
   if(motion==='duo_attack'){
     cinDrawShip(sc.cast[0],2,W*.33,H*.55,H*.43,false,1,-.035);cinDrawShip(sc.cast[1],3,W*.67,H*.55,H*.43,false,1,.035);
-    cinHostile(W*.5,H*.2,H*.22,false,.95,0);cinFx('laser',W*.41,H*.37,H*.095,t,-.16);cinFx('laser',W*.59,H*.37,H*.095,t,.16);
-    if((t%1.4)>.7)cinFx('airburst',W*.5,H*.22,H*.29,t);return;
+    /* the target the pair is converging on grows as they close it down (0905) */
+    const _d2=cinClose(t,beat.duration||2.10,0.13,0.29);
+    cinHostile(W*.5,H*(.20+.06*_d2.e),H*_d2.s,false,.95,0,1);
+    cinFx('laser',W*.41,H*.37,H*.095,t,-.16);cinFx('laser',W*.59,H*.37,H*.095,t,.16);
+    if((t%1.4)>.7)cinFx('airburst',W*.5,H*(.22+.06*_d2.e),H*.29,t);return;
   }
   if(motion==='missile_lock'){
     cinDrawShip(lead,6,W*.5,H*.58,H*.51,false,1,Math.sin(t*1.4)*.04);
-    cinHostile(W*.22,H*.22,H*.22,false,.95,-.06);cinHostile(W*.78,H*.22,H*.22,true,.95,.06);
+    /* the locked pair hold their distance and only swell as the missiles reach them (0905) */
+    const _d3=cinClose(t,beat.duration||2.30,0.20,0.26);
+    cinHostile(W*.22,H*.22,H*_d3.s,false,.95,-.06,0);cinHostile(W*.78,H*.22,H*_d3.s,true,.95,.06,2);
     cinFx('missile',W*(.43-.17*clamp(t/2.1,0,1)),H*(.43-.18*clamp(t/2.1,0,1)),H*.12,t,-.4);
     cinFx('missile',W*(.57+.17*clamp(t/2.1,0,1)),H*(.43-.18*clamp(t/2.1,0,1)),H*.12,t,.4);
     if(t>1.05){cinFx('airburst',W*.22,H*.22,H*.25,t);cinFx('airburst',W*.78,H*.22,H*.25,t+.2);}return;
@@ -39441,8 +39506,19 @@ function cinDrawMotion(sc,beat,t,W,H){
   }
   if(motion==='ram'){
     const push=.45+.13*Math.sin(Math.min(t,1.2)*4.5);cinDrawShip('juggernaut',1,W*.5,H*push,H*.58,false,1,0);
-    cinHostile(W*.32,H*.22,H*.21,false,.9,-.1);cinHostile(W*.68,H*.22,H*.21,true,.9,.1);
-    cinFx('airburst',W*.33,H*.24,H*.28,t);cinFx('airburst',W*.67,H*.24,H*.28,t+.25);return;
+    /* Juggernaut goes THROUGH them, so these two close hardest of the four beats (0905) */
+    const _d4=cinClose(t,beat.duration||1.90,0.14,0.34);
+    cinHostile(W*(.32-.06*_d4.e),H*(.22+.11*_d4.e),H*_d4.s,false,.9,-.1,1);
+    cinHostile(W*(.68+.06*_d4.e),H*(.22+.11*_d4.e),H*_d4.s,true, .9, .1,2);
+    /* ⚠ AND THE BLASTS USED TO COVER THEM FROM FRAME ZERO. Both airbursts were unconditional and
+       drawn at the hostiles' own position at twice their size, so the thing Juggernaut rams was
+       never once visible - the beat was two explosions and a hull. They wait for the closing now,
+       which is the whole point of a ram: you see it coming, then it goes through. */
+    if(_d4.e>0.55){
+      cinFx('airburst',W*(.33-.06*_d4.e),H*(.24+.11*_d4.e),H*.28,t);
+      cinFx('airburst',W*(.67+.06*_d4.e),H*(.24+.11*_d4.e),H*.28,t+.25);
+    }
+    return;
   }
   if(motion==='cloak'){
     const shimmer=.16+.18*(.5+.5*Math.sin(t*4.2));cinDrawShip('decker',2,W*.36,H*.49,H*.49,false,shimmer,-.02);
