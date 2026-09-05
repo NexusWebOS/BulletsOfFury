@@ -55543,6 +55543,41 @@ function scFit(art,text,maxW,Hmax,Hmin,sp){
    luminance where it is not already clipped, which lifts basalt and sewer metal a long way and
    barely touches ice, so the faces converge on legible without any of them being repainted.
    ============================================================ */
+/* ============================================================
+   LABEL AND VALUE IN DIFFERENT FACES (drop 0904al)
+
+   Mike: "the score and time and Rank values should be using diffferent stage fonts to stand out
+   properly."
+
+   The label is the stage's own lettering - it belongs to the level you just cleared. The VALUE is
+   the thing you came to read, so it takes the pack's FINAL LEVEL face: ivory, old gold and black
+   armour, which is the one face in the set cut to belong to no stage. That is exactly why it
+   contrasts with all nine of them rather than clashing with one - basalt against gold on stage 2,
+   glacier ice against gold on stage 3, and so on.
+
+   The pair is measured as a unit and centred as a unit, so the column stays centred no matter how
+   wide either half runs. Both halves take the same lift and the same 1px edge.
+
+   ⚠ AND THE VALUE GETS ITS OWN LETTER SPACING. Mike: "that 2 looks awfully close to the 9." The
+   Vol.3 glyphs are packed TIGHT - each cell is its own ink bbox - so a uniform advance puts two
+   wide-inked digits closer together than two narrow ones, and 9 and 2 are both wide. Digits get
+   more air than words need; the label keeps the tighter setting.
+   ============================================================ */
+function scValueFace(art){
+  if(typeof ASSETS==='undefined' || !ASSETS.stageFontV4) return art;
+  const f=ASSETS.stageFontV4['final'];
+  if(!f || !f.font) return art;
+  if(typeof artReady==='function' && !artReady(f)) return art;   // never draw nothing (0810o)
+  return f;
+}
+function scPairLift(art,label,value,cx,cy,H,alpha,spL,spV,lift,outline){
+  const vf=scValueFace(art);
+  const wL=stageWidth(art,label,H,spL), wV=stageWidth(vf,value,H,spV);
+  const x0=cx-(wL+wV)/2;
+  scCenLift(art,label,x0+wL/2,cy,H,null,0,alpha,spL,lift,outline);
+  scCenLift(vf ,value,x0+wL+wV/2,cy,H,null,0,alpha,spV,lift,outline);
+  return wL+wV;
+}
 function scCenLift(art,text,cx,cy,H,tintC,tintA,alpha,sp,lift,outline){
   /* the edge goes down FIRST and once - the additive re-burn below must not lift it, or the
      outline would brighten along with the letter it exists to separate */
@@ -55713,14 +55748,20 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
          Mike: "the numbers need to be spaced out better" - the stat slots run tight because they
          are long labels in narrow bays, but this row is three short readings in a wide bar and can
          afford real letter spacing. */
-      const SP=0.13;
-      const sTxt='SCORE = '+String(drawStageClear._scoreShown|0);
-      const cTxt='CLEAR TIME = '+((typeof fmtTime==='function')?fmtTime(R.clearT||0):String(Math.round(R.clearT||0)));
-      const rTxt='RANK = '+(drawStageClear._stamp>0?R.rank:'-');
+      const SP=0.13, SPV=0.26;          /* words, then digits - see scPairLift */
+      const sLab='SCORE = ',      sVal=String(drawStageClear._scoreShown|0);
+      const cLab='CLEAR TIME = ', cVal=((typeof fmtTime==='function')?fmtTime(R.clearT||0):String(Math.round(R.clearT||0)));
+      const rLab='RANK = ',       rVal=(drawStageClear._stamp>0?R.rank:'-');
       const colW3=b[2]*0.30;
-      const H=Math.min(scFit(art,sTxt,colW3,b[3]*0.34,ph2*0.010,SP),
-                       scFit(art,cTxt,colW3,b[3]*0.34,ph2*0.010,SP),
-                       scFit(art,rTxt,colW3,b[3]*0.34,ph2*0.010,SP));
+      /* ⚠ FITTED ACROSS BOTH HALVES AT THEIR OWN SPACINGS. Solving the size against the joined
+         string at one spacing would under-measure the pair and let the widest column overrun its
+         third of the bar - the label and the value are now set differently, so the fit has to be
+         too. */
+      const _vf=scValueFace(art);
+      const _fit=(L,V)=>{ let h=b[3]*0.34;
+        while(h>ph2*0.010 && (stageWidth(art,L,h,SP)+stageWidth(_vf,V,h,SPV))>colW3) h-=0.5;
+        return Math.max(ph2*0.010,h); };
+      const H=Math.min(_fit(sLab,sVal), _fit(cLab,cVal), _fit(rLab,rVal));
       /* ⚠ UNTINTED. Mike, 0807q: "Dont color overlay the rank please". */
       const cy=b[1]+b[3]*0.50;
       /* Mike: "we need line dividers between each section for score, time and rank." Placed on the
@@ -55731,9 +55772,9 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
       ctx.save(); ctx.globalAlpha=0.42; ctx.fillStyle='#7fd8ef';
       for(const fx of _dv) ctx.fillRect(b[0]+b[2]*fx, cy-b[3]*0.30, Math.max(1,P[2]*0.0022), b[3]*0.60);
       ctx.restore();
-      scCenLift(art,sTxt,b[0]+b[2]*0.185,cy,H,null,0,1,SP,0.45,1);
-      scCenLift(art,cTxt,b[0]+b[2]*0.500,cy,H,null,0,1,SP,0.45,1);
-      scCenLift(art,rTxt,b[0]+b[2]*0.820,cy,H,null,0,1,SP,0.45,1);
+      scPairLift(art,sLab,sVal,b[0]+b[2]*0.185,cy,H,1,SP,SPV,0.45,1);
+      scPairLift(art,cLab,cVal,b[0]+b[2]*0.500,cy,H,1,SP,SPV,0.45,1);
+      scPairLift(art,rLab,rVal,b[0]+b[2]*0.820,cy,H,1,SP,SPV,0.45,1);
     }
     if(t>1.15 && drawStageClear._stamp<1){
       if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7);

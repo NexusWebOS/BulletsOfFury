@@ -9603,24 +9603,37 @@ console.log("=== 201. rank glyph ===");
      implementation detail rather than Mike's rule. What 0807q actually requires is that the rank
      and the score pass NO TINT - a tint composites in 'color' and the letter stops reading as the
      game's lettering. Matched on the tint arguments now, whichever helper carries them. */
-  /* ⚠ FOURTH REPOINT, AND THIS TIME THE REGEX STOPS AT THE RULE. The last two rewrites still
-     carried the letter-SPACING literal, which has nothing whatever to do with 0807q's rule that
-     the rank and score draw UNTINTED - so changing the spacing broke a test about tinting. Only
-     the tint arguments are matched now. */
-  ok(/scCen\w*\(art,rTxt,[^;]*?,null,0,1,/.test(_g201),
+  /* ⚠ FIFTH REPOINT - AND NOW IT CHECKS THE PLACE THE RULE LIVES, NOT A CALL SITE. Every earlier
+     version matched the arguments at the row's own draw call, so it broke whenever that row was
+     restructured (renamed helper, changed spacing, split label from value) - four times, none of
+     them anything to do with 0807q's rule that the rank and score draw UNTINTED.
+     The rows go through ONE helper now and that helper is where the tint is decided, so the rule
+     is asserted there: scPairLift passes null/0 for both halves and cannot tint either of them.
+     The row assertions below only check that the rank and the score actually use it. */
+  ok(/scCenLift\(art,label,[^;]*?,null,0,alpha,/.test(_g201) &&
+     /scCenLift\(vf ,value,[^;]*?,null,0,alpha,/.test(_g201),
+     'label and value both draw untinted, in the one helper that decides it');
+  ok(/scPairLift\(art,rLab,rVal,/.test(_g201),
      'the rank glyph is drawn with no tint');
   /* THIS PINNED THE SIZE EXPRESSION, NOT THE PROPERTY IT NAMES (drop 0812b). It matched the
      literal "ph*0.040, null, 0, fl, 0.06)", so hoisting the size into a named constant in order to
      right-align the score — a change that touched neither the tint nor the size — failed an
      assertion whose subject is "the score draws untinted". Both halves are now checked directly:
      the tint arguments stay null/0, and the size is still ph*0.040. */
-  ok(/scCen\w*\(art,sTxt,[^;]*?,null,0,1,/.test(_g201),
+  ok(/scPairLift\(art,sLab,sVal,/.test(_g201),
      'and so is the score');
   /* Mike, 0904: "Clear Time - make this a metric on the screen but not in the box, down below
      with the score and rank section." It shares their bar, and it is a SNAPSHOT rather than a
      live read of stageTimer, which beginStage and the flyover both move. */
-  ok(/const cTxt='CLEAR TIME = '/.test(_g201) && /clearT: \(typeof stageTimer==='number'/.test(_g201),
+  ok(/const cLab='CLEAR TIME = '/.test(_g201) && /clearT: \(typeof stageTimer==='number'/.test(_g201),
      'clear time sits in the score/rank bar and is snapshotted, not read live');
+  /* Mike: "the score and time and Rank values should be using diffferent stage fonts to stand out
+     properly" - the value takes the pack's FINAL LEVEL face, the one cut to belong to no stage,
+     which is why it contrasts with all nine rather than clashing with one. */
+  ok(/function scValueFace\(art\)/.test(_g201) && /ASSETS\.stageFontV4\['final'\]/.test(_g201),
+     'the values are set in a different face from their labels');
+  ok(/const SP=0\.13, SPV=0\.26;/.test(_g201),
+     'and digits are set looser than words - the tight-packed cells put wide digits too close');
   /* Mike: "replace the font here with the right stage fonts, this font is horrible here." The
      debrief was asking for uiFontArt(), which IS stage 1's card alphabet, so every stage's clear
      screen was lettered in grey jungle stone. */
@@ -9638,7 +9651,10 @@ console.log("=== 201. rank glyph ===");
      'and each bar is ringed on its outer sides only, so the waist can be one pixel');
   /* the size is SOLVED now rather than fixed, so what is pinned is that it is solved against the
      bar's own width - which is the property the literal was standing in for */
-  ok(/const H=Math\.min\(scFit\(art,sTxt,colW3/.test(_g201),
+  /* the fit spans BOTH halves at their OWN spacings - solving against a joined string at one
+     spacing would under-measure the pair and let the widest column overrun its third of the bar */
+  ok(/const _fit=\(L,V\)=>/.test(_g201) &&
+     /stageWidth\(art,L,h,SP\)\+stageWidth\(_vf,V,h,SPV\)/.test(_g201),
      'and the score/rank size is fitted to the bar instead of hard-coded');
   ok(_g201.indexOf("pc = full ? (beat>0 ? '#8de23a' : '#ffd24a')")>0,
      'while the password keeps its two-colour flash');
