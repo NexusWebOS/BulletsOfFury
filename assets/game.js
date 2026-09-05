@@ -2280,6 +2280,14 @@ const XART=(function(){
   for(const _cg in _CH_GROUP_COUNTS) for(let _ci=0;_ci<_CH_GROUP_COUNTS[_cg];_ci++)
     X._src['ch_'+_cg+'_'+_ci]='assets/game/chaos_harrier/ch_'+_cg+'_'+_ci+'.png';
   X._src['ch_ship_glow']='assets/game/chaos_harrier/ch_ship_glow.png';
+  /* CF_BossAttacks-Lvl9 (drop 0904z): eighteen authored families, 140 frames, for the WARP
+     SENTINEL and the TIDAL SOVEREIGN. Every round those two fired was procedural before this. */
+  const S9A_REELS={warpvoidmuzzle:6,warpcrystallance:8,warpcrystalbeam:8,warpcrystalbeamtile:8,
+    warpcrystalimpact:8,warpriftorb:8,warpprismshard:8,warpsingularity:8,warpsaw:8,
+    tidalhydromuzzle:6,tidaltorpedo:8,tidalpressurebeam:8,tidalpressurebeamtile:8,
+    tidalgeyserimpact:8,tidalbubblemine:8,tidalcutter:8,tidalmaelstrom:8,tidalabyssalcrown:8};
+  for(const _k in S9A_REELS) for(let _i=0;_i<S9A_REELS[_k];_i++)
+    X._src[_k+'_'+_i]='assets/game/s9_attacks/'+_k+'_'+_i+'.png';
   /* CF_EnemyTeleportFX-Vol.1, the chaosharrier-phase-rift family (drop 0904w). Eight authored
      frames - sparks, slit open, aperture open, aperture full, phase flash, aperture collapse,
      slit collapse, residue - trimmed to their ink and centred in 256px cells on import. The old
@@ -11945,12 +11953,23 @@ const SHIPBOSS = {
      D.dmg, measured 0822y, and Mike has confirmed it). If damage states are ever wired,
      these two are the units that already have the art for it.
      w/h are the authored canvases: Tidal Sovereign 320x256, Warp Sentinel 256x192. */
+  /* ⚠ MOUNTS TAKEN FROM THE PACK'S OWN ANCHORS (drop 0904z). Mike: "you have to better anchor
+     the muzzle and effects from where they should be shooting from." CF_BossAttacks-Lvl9 ships
+     muzzle_anchors and a core_beam_anchor for both of these bosses, in the same canvas the hull is
+     drawn at (320x256 here, 256x192 for the Sentinel - both match w/h exactly, checked).
+       Tidal, pack: cannons (117,238) and (203,238), core (160,247) on a 320x256 canvas
+                 -> x +-0.134 of width, y +0.430 of height below centre; core +0.465
+       Tidal, code before:  L/R x +-0.25, y 0.36  -> 37px too far OUTBOARD and 18px too HIGH
+     Warheads were leaving from open space beside the hull rather than from the cannon tips. */
   tidalsovereign:{key:'ns9_tidal_intact', name:'TIDAL SOVEREIGN', w:320,h:256, hpMul:1.55, proj:'cyclone',
-                  mounts:{L:[-0.25,0.36],C:[0,0.43],R:[0.25,0.36]},
+                  mounts:{L:[-0.134,0.430],C:[0,0.465],R:[0.134,0.430]},
                   pat:'s9tidalguard', cd:1.08, pats:['s9tidalguard','s9tidallattice','s9tidalcomet','s9tidalstorm'],
                   dmg:['ns9_tidal_damaged','ns9_tidal_critical']},
+  /*   Warp, pack: cannons (104,176) and (152,176), core (128,116) on a 256x192 canvas
+             -> x +-0.094 of width, y +0.417 of height below centre; core +0.104
+       Warp, code before: L/R x +-0.17, y 0.35; C y 0.43 -> the core was 63px below its emitter */
   warpsentinel:  {key:'ns9_warpsen_intact', name:'WARP SENTINEL', w:256,h:192, hp:320, proj:'warhawk',
-                  mounts:{L:[-0.17,0.35],C:[0,0.43],R:[0.17,0.35]},
+                  mounts:{L:[-0.094,0.417],C:[0,0.104],R:[0.094,0.417]},
                   pat:'s9sentinelcross', cd:1.02, mini:true, pats:['s9sentinelcross','s9sentinelgate','s9sentinelrush'],
                   dmg:['ns9_warpsen_damaged','ns9_warpsen_critical']},
   /* Keep the stable runtime id for stage/save compatibility, but replace the old floating green
@@ -12687,7 +12706,11 @@ function shipBossMuzzleTick(b, dt){
   b._smz.t+=dt;
   if(b._smz.t>=b._smz.life) b._smz=null;
 }
+/* the pack's paired plate rides alongside the generic muzzle draw, so a boss that has one gets it
+   at every site the generic flash already reaches and cannot be drawn in one place and missed in
+   another - which is how the 0904p muzzle audit went wrong in the first place */
 function shipBossMuzzleDraw(b){
+  if(b && b._s9aMuz && typeof s9aTwinMuzzle==='function') s9aTwinMuzzle(b);
   const D=b&&b._ship?SHIPBOSS[b._ship]:null, F=b&&b._smz;
   if(!D||!D.proj||!F||typeof XART==='undefined') return;
   const fi=clamp(Math.floor((F.t/F.life)*F.n),0,F.n-1);
@@ -15652,6 +15675,89 @@ function s7WardenDraw(b){
   }
   return true;
 }
+/* ============================================================
+   STAGE 9's TWO SHIP BOSSES FIRE AUTHORED ORDNANCE NOW (drop 0904z)
+
+   Mike: "plus more effects, attacks, projectiles, patterns we enver used and how they should look
+   in-game."
+
+   ⚠ EVERY ROUND THESE TWO FIRED WAS DRAWN IN CODE. s9needle, s9warp, s9comet, s9gold and s9pair
+     all carry `procSpace:'s9-...'`, i.e. procedural shapes. CF_BossAttacks-Lvl9 is authored pixel
+     art for exactly that ordnance - eight frames each, hard alpha, cut for this stage.
+
+   ⚠ THE TWIN MUZZLE PLATES HOLD BOTH FLASHES IN ONE IMAGE. Warp_TwinVoidMuzzle is 112x72 and
+     Tidal_TwinHydroMuzzle 128x72, each containing the LEFT and RIGHT flash side by side, sized to
+     the gap between the pack's own two muzzle_anchors. Drawn once per cannon they would put FOUR
+     flashes on screen - the Chaos Harrier's twin sidelaser plate set exactly this trap two drops
+     ago. So the plate is drawn ONCE, centred between the anchors.
+
+   ⚠ AND THE SURPRISE ATTACKS ARE THE POINT. The pack's README names five: Singularity Bloom and
+     Dimensional Saw for the Sentinel, Tidal Cutter, Maelstrom Orb and the Abyssal Crown five-spear
+     volley for the Sovereign. They are area-denial and space-control shapes, not more pellets,
+     which is what "patterns we never used" is asking for - each one takes ground away rather than
+     adding rounds to dodge.
+   ============================================================ */
+const S9A = {
+  /* kind -> [reel, drawn height, spin?]  - the height each round is DRAWN at, not its hitbox */
+  warplance:  ['warpcrystallance', 34, 0],
+  warpshard:  ['warpprismshard',   26, 0],
+  warporb:    ['warpriftorb',      30, 1],
+  warpsaw:    ['warpsaw',          46, 1],
+  warpbloom:  ['warpsingularity',  64, 0],
+  tidaltorp:  ['tidaltorpedo',     32, 0],
+  tidalcut:   ['tidalcutter',      40, 1],
+  tidalorb:   ['tidalmaelstrom',   44, 1],
+  tidalmine:  ['tidalbubblemine',  38, 1],
+  tidalcrown: ['tidalabyssalcrown',36, 0],
+};
+const S9A_HIT = {
+  warplance:[10,30], warpshard:[8,24], warporb:[24,24], warpsaw:[38,38], warpbloom:[52,52],
+  tidaltorp:[12,28], tidalcut:[32,32], tidalorb:[36,36], tidalmine:[30,30], tidalcrown:[26,30],
+};
+/* one shot of authored stage-9 ordnance */
+function s9aShot(x,y,a,sp,kind,o){
+  o=o||{}; const H=S9A_HIT[kind]||[14,14];
+  if(o.w==null)o.w=H[0]; if(o.h==null)o.h=H[1];
+  const q=eShootT(x,y,a,sp,kind,o);
+  q._boss=true; q._s9a=kind; q._bfam='cyclone'; q._noArsenal=true;
+  if(o.accel){ q._spaceAccel=o.accel; q._spaceMax=o.max||sp*2; }
+  return q;
+}
+/* the authored reel, drawn in place of the procedural shape */
+function s9aProjectileDraw(b){
+  if(!b||!b._s9a||typeof XART==='undefined') return false;
+  const D=S9A[b._s9a]; if(!D) return false;
+  const n=(D[0]==='warpvoidmuzzle'||D[0]==='tidalhydromuzzle')?6:8;
+  const fi=Math.floor((b.t||0)*13)%n, key=D[0]+'_'+fi;
+  if(!XART.rdy(key)) return false;
+  const im=XART.get(key), h=D[1], w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
+  /* a spinner turns on its own clock; a travelling round points where it is going */
+  const rot = D[2] ? (b.t||0)*3.4 : (Math.atan2(b.vy,b.vx)+Math.PI/2);
+  ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(rot); ctx.imageSmoothingEnabled=false;
+  ctx.globalCompositeOperation='lighter';
+  ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
+  return true;
+}
+/* the paired muzzle, drawn ONCE across both cannon tips */
+function s9aTwinMuzzle(b){
+  if(!b||!b._s9aMuz) return;
+  const M=b._s9aMuz; M.t+=(typeof _lastDt==='number'?_lastDt:1/60);
+  if(M.t>=M.life){ b._s9aMuz=null; return; }
+  const n=6, fi=Math.min(n-1,Math.floor((M.t/M.life)*n));
+  const key=M.fam+'_'+fi; if(!XART.rdy(key)) return;
+  const im=XART.get(key);
+  const L=shipBossMount(b,'L'), R=shipBossMount(b,'R');
+  const cx=(L.x+R.x)/2, cy=(L.y+R.y)/2;
+  /* the plate is authored to span the two anchors, so it is scaled by the gap between them
+     rather than by a chosen size - the flashes then land ON the barrels at any boss scale */
+  const gapArt=(M.fam==='warpvoidmuzzle')?48:86;      // anchor separation in the pack's canvas
+  const k=Math.max(0.4, Math.abs(R.x-L.x)/gapArt);
+  const w=im.naturalWidth*k, h=im.naturalHeight*k;
+  ctx.save(); ctx.imageSmoothingEnabled=false; ctx.globalCompositeOperation='lighter';
+  ctx.globalAlpha=Math.max(0,1-M.t/M.life)*0.5+0.5;
+  ctx.drawImage(im, cx-w/2, cy-h/2, w, h); ctx.restore();
+}
+function s9aMuzzleStart(b,fam){ b._s9aMuz={fam:fam,t:0,life:0.30}; }
 function spaceBossShot(x,y,a,sp,kind,o){o=o||{};const hit=(S5_PROJECTILE_HIT&&S5_PROJECTILE_HIT[kind])||(S9_PROJECTILE_HIT&&S9_PROJECTILE_HIT[kind])||[12,12];
   if(o.w==null)o.w=hit[0];if(o.h==null)o.h=hit[1];const q=eShootT(x,y,a,sp,kind,o);q._boss=true;
   q._bfam=run.stage===9?'cyclone':(kind==='s5missile'?'mirv':kind==='s5null'?'toxic':'rampart');q._noArsenal=!!o.noArsenal;q._forceStageArt=!!o.forceStageArt;
@@ -15838,6 +15944,11 @@ function tidalCascadeDraw(b){
 }
 function s9ShipBossAttack(b,step){const ph=shipBossPhase(b),W=worldWidth(),L=shipBossMount(b,'L'),R=shipBossMount(b,'R'),C=shipBossMount(b,'C'),sent=b._ship==='warpsentinel';
   if(b._s9Cascade){b.fireCd=.24;return;}
+  /* ⚠ THE SIGNATURE ATTACKS ARE ON THEIR OWN BEAT, NOT MIXED INTO EVERY VOLLEY. They are
+     area-denial shapes; firing one alongside a pellet fan gives the player nowhere to stand and
+     reads as noise rather than as a threat with an answer. Every third beat from phase 1 onward,
+     so the fight opens on its ordinary patterns and the surprises arrive once it has a rhythm. */
+  if(ph>=1 && step%3===2){ s9aSignature(b,sent,step); return; }
   if(sent){if(ph===0){for(const o of [.10,.25,.42]){spaceBossShot(L.x,L.y,Math.PI/2+o,4.0,'s9needle',{silent:o>.10});spaceBossShot(R.x,R.y,Math.PI/2-o,4.0,'s9needle',{silent:true});}b.fireCd=.88;
     }else if(ph===1){const n=12,base=step*.36,st=TAU/n,a=aimPlayer(C.x,C.y),gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;spaceBossShot(C.x,C.y,base+i*st,2.85,'s9warp',{silent:i>0});}b.fireCd=.76;
     }else{for(const s of [-1,1]){const p=s<0?L:R;spaceBossShot(p.x,p.y,Math.PI/2+s*.14,2.0,'s9comet',{silent:s>0,accel:1.65,max:6.4});}for(const o of [-.13,0,.13])spaceBossShot(C.x,C.y,Math.PI/2+o,5.3,'s9gold',{silent:true});b.fireCd=.58;}
@@ -15845,7 +15956,68 @@ function s9ShipBossAttack(b,step){const ph=shipBossPhase(b),W=worldWidth(),L=shi
   }else if(ph===1){if(step%3===0)spaceBossShot(C.x,C.y,Math.PI/2,1.5,'s9lattice',{accel:.42,max:3.2});else for(const s of [-1,1]){const p=s<0?L:R;for(const o of [.08,.22,.38])spaceBossShot(p.x,p.y,Math.PI/2+s*o,3.0,'s9warp',{silent:s>0||o>.08});}b.fireCd=.82;
   }else if(ph===2){for(const s of [-1,1]){const p=s<0?L:R;for(const o of [.09,.25])spaceBossShot(p.x,p.y,Math.PI/2+s*o,1.7,'s9comet',{silent:s>0||o>.09,accel:1.4,max:6.2});}b.fireCd=.72;
   }else{const n=18,base=step*.27,st=TAU/n,a=aimPlayer(C.x,C.y),gap=Math.round((a-base)/st);for(let i=0;i<n;i++){let d=Math.abs((i-gap+n*3)%n);d=Math.min(d,n-d);if(d<=1)continue;spaceBossShot(C.x,C.y,base+i*st,3.15,'s9pair',{silent:i>0});}for(const o of [-.12,.12])spaceBossShot(C.x,C.y,Math.PI/2+o,5.5,'s9needle',{silent:true});b.fireCd=.56;}
-  shipBossMuzzleStart(b,['L','C','R'],{fam:'bfx_cyclone_m',n:6,life:sent?.14:.18,hpx:sent?54:64});
+  /* the authored paired flash replaces the generic cyclone muzzle on these two bosses. It is a
+     ONE-SHOT across both barrels; the central mount keeps the generic flash because the pack has
+     no core-muzzle plate, only a core BEAM anchor. */
+  s9aMuzzleStart(b, sent?'warpvoidmuzzle':'tidalhydromuzzle');
+  shipBossMuzzleStart(b,['C'],{fam:'bfx_cyclone_m',n:6,life:sent?.14:.18,hpx:sent?54:64});
+}
+/* ============================================================
+   THE FIVE SURPRISE ATTACKS THE PACK WAS BUILT FOR (drop 0904z)
+
+   Its README names them, and each is a SHAPE rather than more rounds - which is what Mike means
+   by "patterns we never used". Every one takes ground away instead of adding pellets to dodge:
+
+     SINGULARITY BLOOM  an expanding area-denial ring; the damage is on the bright front, so it is
+                        crossed on the way OUT, not stood inside.
+     DIMENSIONAL SAW    a spinning blade that holds a lane and drifts across it.
+     TIDAL CUTTER       twin crescents that sweep outward from the core and come back.
+     MAELSTROM ORB      a slow vortex that owns the middle of the screen.
+     ABYSSAL CROWN      the five-spear fan, thrown as one spread.
+   ============================================================ */
+function s9aSignature(b, sent, step){
+  const C=shipBossMount(b,'C'), L=shipBossMount(b,'L'), R=shipBossMount(b,'R');
+  /* ⚠ THIS COUNTS ITS OWN BEATS, AND THE FIRST CUT DID NOT. The caller only reaches here when
+     `step%3===2`, so every `step` arriving is already 2 mod 3 - switching on `step%3` inside meant
+     one branch could NEVER run and the Sovereign fired the Maelstrom forever while the Crown and
+     the Cutter sat unused. The signature list has its own counter so it rotates through all of
+     them regardless of how the caller filters the beat. Caught by the probe asking which kinds
+     actually reached eBullets rather than whether the function ran. */
+  const sig=(b._s9aSig=(b._s9aSig|0)+1);
+  if(sent){
+    if(sig%2===0){
+      /* SINGULARITY BLOOM - a slow ring that grows through the playfield */
+      s9aShot(C.x,C.y,Math.PI/2,0.55,'warpbloom',{accel:0.30,max:1.9});
+      for(const o of [-0.55,0.55]) s9aShot(C.x,C.y,Math.PI/2+o,1.5,'warpshard',{silent:true});
+    }else{
+      /* DIMENSIONAL SAW - two blades holding lanes either side of the player's column */
+      for(const sx of [-1,1]){
+        const p=sx<0?L:R;
+        s9aShot(p.x,p.y,Math.PI/2+sx*0.16,2.1,'warpsaw',{silent:sx>0,accel:0.5,max:3.4});
+      }
+      s9aShot(C.x,C.y,aimPlayer(C.x,C.y),2.6,'warporb',{silent:true});
+    }
+    b.fireCd=1.24;
+  }else{
+    if(sig%3===0){
+      /* ABYSSAL CROWN - the five-spear fan, as one spread */
+      const a=aimPlayer(C.x,C.y);
+      for(let i=-2;i<=2;i++) s9aShot(C.x,C.y,a+i*0.17,3.4,'tidalcrown',{silent:i>-2});
+    }else if(sig%3===1){
+      /* TIDAL CUTTER - crescents sweeping out of both cannons */
+      for(const sx of [-1,1]){
+        const p=sx<0?L:R;
+        s9aShot(p.x,p.y,Math.PI/2+sx*0.42,2.4,'tidalcut',{silent:sx>0,accel:0.34,max:3.8});
+      }
+      s9aShot(C.x,C.y,Math.PI/2,2.0,'tidaltorp',{silent:true,accel:1.1,max:5.2});
+    }else{
+      /* MAELSTROM ORB, with mines left behind it */
+      s9aShot(C.x,C.y,Math.PI/2,1.15,'tidalorb',{accel:0.22,max:2.2});
+      for(const sx of [-1,1]) s9aShot((sx<0?L:R).x,(sx<0?L:R).y,Math.PI/2,0.72,'tidalmine',{silent:true});
+    }
+    b.fireCd=1.16;
+  }
+  s9aMuzzleStart(b, sent?'warpvoidmuzzle':'tidalhydromuzzle');
 }
 function shipBossAttack(b){
   const D=SHIPBOSS[b._ship]; if(!D) return;
@@ -17240,10 +17412,36 @@ function spawnSubBoss__inner(kind){
    launch without bending away from its lane. */
 function chaosHarrierPoint(b, slot){
   const s=b.w/352, y=(b._drawY!=null?b._drawY:b.y);
+  /* ============================================================
+     ⚠ THE HARDPOINTS ARE MEASURED OFF THE HULL NOW (drop 0904z)
+
+     Mike: "you have to better anchor the muzzle and effects from where they should be shooting
+     from."
+
+     These were hand-placed, and against the plate they are wrong by amounts you can see. Measured
+     on ch_ship_0 (352x320, hull columns 55..296) two ways - the forward extremity of each pod, and
+     a connected-component scan for the bright cyan emitter clusters:
+
+       central_reactor  coded (  0,-50)  measured (  -0.1,-50.4)   already exact - left alone
+       left_cannon      coded (-100,-15) measured ( -99.0, -6.0)   9px behind the barrel mouth
+       right_cannon     coded ( +99,-15) measured ( +99.0, -6.0)   9px behind the barrel mouth
+       missile bays     coded (+-48,-14) measured (+-35.1,+25.6)   13px out and FORTY px behind
+
+     The bays were the bad one: warheads were leaving from the middle of the wing surface rather
+     than from the lit ports, which at the drawn scale is 25px up-screen of the hole they come out
+     of. The reactor coming out exact is the check that the method is sound - a measurement that
+     moves everything is usually measuring the wrong thing.
+
+     The nose sits at +98: the last ventral emitter is at +78 and the hull tip at +107, so this
+     puts the beam's origin just inside the point it leaves from while the charge orb still
+     overlaps the hull instead of hanging off it.
+
+     Every muzzle flash, every shot and every charge effect on this unit resolves through here, so
+     the flash and the round it belongs to cannot drift apart. ============================================================ */
   const p={
-    left_cannon:[-100,-15], right_cannon:[99,-15],
-    left_missile_bay:[-48,-14], right_missile_bay:[48,-14], missile_bay:[0,-14],
-    central_reactor:[0,-50], nose:[0,91]
+    left_cannon:[-99,-6], right_cannon:[99,-6],
+    left_missile_bay:[-35,26], right_missile_bay:[35,26], missile_bay:[0,48],
+    central_reactor:[0,-50], nose:[0,98]
   }[slot]||[0,0];
   return {x:b.x+p[0]*s,y:y+p[1]*s};
 }
@@ -36806,6 +37004,7 @@ function drawBullets(){
     if(b._s4wKind&&typeof drawStage4WarfareProjectile==='function'&&drawStage4WarfareProjectile(b))continue;
     if(b._l23fx&&typeof l23ProjectileDraw==='function'&&l23ProjectileDraw(b))continue;
     if(b._mwKind&&typeof magmaWardProjectileDraw==='function'&&magmaWardProjectileDraw(b))continue;
+    if(b._s9a && typeof s9aProjectileDraw==='function' && s9aProjectileDraw(b)) continue;
     if(b._chKind && typeof chaosHarrierProjectileDraw==='function' && chaosHarrierProjectileDraw(b)) continue;
     if(b._carrierWarhead && typeof carrierWarheadDraw==='function' && carrierWarheadDraw(b)) continue;
     if(b._jcHelix&&typeof jungleCruiserHelixDraw==='function'&&jungleCruiserHelixDraw(b))continue;
