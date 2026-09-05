@@ -16660,7 +16660,12 @@ function carrierFlakTick(dt){
       const c=eShootT(q.x,q.y,a+o,sp,'s6cluster',{w:16,h:22,silent:o!==0});
       if(c){ c._boss=true; c._bfam='mirv'; c._noArsenal=true; c.life=1.15; }
     }
-    if(typeof explode==='function') explode(q.x,q.y,54,'#ffd05a',null,'s6mb_clusterburst',null);
+    /* ⚠ THE SHELL BURSTS WITH `flakburst`, NOT `clusterburst` (drop 0905b). 0904ae reached for
+       the wrong one of the two: the pack ships a burst plate for each, and clusterburst belongs to
+       the CLUSTER BOMBLET while flakburst is cut for exactly this shell. Both were registered and
+       undrawn, so picking either "worked" - which is precisely why it had to be checked against
+       the pack rather than against whether anything appeared. */
+    if(typeof explode==='function') explode(q.x,q.y,54,'#ffd05a',null,'s6mb_flakburst',null);
     if(Audio.SFX&&(Audio.SFX.expSmall)) Audio.SFX.expSmall();
     q.dead=true; eBullets.splice(i,1);
   }
@@ -32553,7 +32558,11 @@ const FIRETYPES={
   s6cyclone:{art:(b)=>'s6mb_cyclonetracer_'+(((b.t||0)*16|0)%8),align:true,h:42,glow:'#55dfff'},
   s6prism:{art:(b)=>'s6mb_prismbolt_'+(((b.t||0)*15|0)%8),align:true,h:44,glow:'#d9f8ff'},
   s6flak:{art:(b)=>'s6mb_flakshell_'+(((b.t||0)*14|0)%8),align:true,h:38,glow:'#ffd05a'},
-  s6gravity:{art:(b)=>'s6mb_gravitymine_'+(((b.t||0)*12|0)%8),spin:1.8,h:52,glow:'#9f5cff'},
+  /* the mine PULLS, and `s6mb_gravityripple` is the authored ten-frame ring that says so - it was
+     registered with nothing drawing it. Drawn under the mine, on its own slower clock, so the
+     round reads as a field with reach rather than a spinning object. */
+  s6gravity:{art:(b)=>'s6mb_gravitymine_'+(((b.t||0)*12|0)%8),spin:1.8,h:52,glow:'#9f5cff',
+             under:(b)=>'s6mb_gravityripple_'+(((b.t||0)*7|0)%10), underScale:2.6},
   s6omega:{art:(b)=>'s6mb_omegabomb-hostile_'+(((b.t||0)*12|0)%8),align:true,h:58,glow:'#ff7d45'},
   s6cluster:{art:(b)=>'s6mb_clusterbomblet_'+(((b.t||0)*16|0)%8),align:true,h:34,glow:'#ffcf4a'},
   /* Stage 1's platforms no longer share anonymous fantasy bolts. Military hulls use metal,
@@ -32930,6 +32939,21 @@ function drawFireType(b){
   if(T.proc6) return drawStage6Projectile(b,T.proc6);
   if(T.proc7) return drawStage7Projectile(b,T.proc7);
   if(T.procSpace) return drawSpaceProjectile(b,T.procSpace);
+  /* ⚠ AN UNDERLAY IS DRAWN BEFORE THE ROUND AND BEFORE THE STATIC-FRAME SWAP. `under` is for a
+     field a projectile SITS IN rather than a second sprite of the round - the carrier's gravity
+     mine and its authored ripple - so it composites additively underneath at its own scale and
+     its own clock, and never goes through projShadeFor, which exists to freeze a round's own
+     birth reel and would stop the ripple animating. (drop 0905b) */
+  if(T.under){
+    const uk=(typeof T.under==='function')?T.under(b):T.under;
+    if(uk && typeof XART!=='undefined' && XART.rdy(uk)){
+      const im=XART.get(uk), uh=(T.h||14)*(b.szMul||1)*(T.underScale||2.0);
+      const uw=uh*(im.naturalWidth/Math.max(1,im.naturalHeight));
+      ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.62;
+      ctx.imageSmoothingEnabled=false;
+      ctx.drawImage(im,b.x-uw/2,b.y-uh/2,uw,uh); ctx.restore();
+    }
+  }
   let key=T.art(b);
   /* ⚠ THE FAMILY IS SWAPPED TO ITS STATIC FRAME HERE, NOT IN EACH art() (drop 0904a). There are
      a dozen art() closures and several fire types share a family - `flare`, `gem` and `orb` are
