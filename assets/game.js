@@ -16022,33 +16022,42 @@ const S9_BEAM = {
                       w:44, hn:8, tn:6, cn:8},
 };
 const S9_BEAM_CHARGE=0.62, S9_BEAM_OFF=1.85, S9_BEAM_END=2.20;
-function s9aBeamStart(b){ b._s9Beam={t:0, ang:0, locked:false}; }
+/* ⚠ THE BEAM CARRIES ITS OWN TIMINGS NOW (0905o). Mike's carrier spec wants "laser beam taps" AND
+   "charged strong large laser fire off's" from the same emitter, and later the same beam "FAST".
+   One set of module constants cannot be three cadences. `tune` is optional and every field falls
+   back to the old constant, so both stage-9 bosses fire exactly as before. */
+function s9aBeamStart(b,tune){ b._s9Beam={t:0, ang:0, locked:false,
+    charge:(tune&&tune.charge)||S9_BEAM_CHARGE,
+    off:(tune&&tune.off)||S9_BEAM_OFF,
+    end:(tune&&tune.end)||S9_BEAM_END,
+    w:(tune&&tune.w)||0}; }
 function s9aBeamTick(b,dt){
   const B=b&&b._s9Beam; if(!B) return false;
   const D=S9_BEAM[b._ship]; if(!D){ b._s9Beam=null; return false; }
   B.t+=dt;
   const C=shipBossMount(b,'C');
-  if(B.t<S9_BEAM_CHARGE){
+  if(B.t<(B.charge||S9_BEAM_CHARGE)){
     B.ang=clamp(Math.atan2(player.y-C.y,player.x-C.x)-Math.PI/2,-0.30,0.30);
-  }else if(B.t<S9_BEAM_OFF){
+  }else if(B.t<(B.off||S9_BEAM_OFF)){
     if(!B.locked){ B.locked=true; shake=Math.max(shake,6);
       if(Audio.SFX&&Audio.SFX.helixCharge)Audio.SFX.helixCharge();
       else if(Audio.SFX&&Audio.SFX.laserShot)Audio.SFX.laserShot(); }
     if(typeof chaosHarrierBeamRay==='function') chaosHarrierBeamRay(b,C,Math.PI/2+B.ang,D.w*0.46);
   }
-  if(B.t>=S9_BEAM_END){ b._s9Beam=null; return false; }
+  if(B.t>=(B.end||S9_BEAM_END)){ b._s9Beam=null; return false; }
   return true;
 }
 function s9aBeamDraw(b){
   const B=b&&b._s9Beam; if(!B||typeof XART==='undefined') return;
-  const D=S9_BEAM[b._ship]; if(!D) return;
+  const _D0=S9_BEAM[b._ship]; if(!_D0) return;
+  const D=(B.w? Object.assign({},_D0,{w:B.w}) : _D0);
   const C=shipBossMount(b,'C'), _fr=Math.floor((B.t||0)*14);
   const fih=_fr%(D.hn||8), fit=_fr%(D.tn||8), fic=_fr%(D.cn||8);
   /* the charge shows on the head plate before anything burns, so the commit is visible */
-  if(B.t<S9_BEAM_CHARGE){
+  if(B.t<(B.charge||S9_BEAM_CHARGE)){
     const k=D.head+'_'+fih;
     if(XART.rdy(k)){
-      const a=Math.min(1,B.t/S9_BEAM_CHARGE), im=XART.get(k);
+      const a=Math.min(1,B.t/(B.charge||S9_BEAM_CHARGE)), im=XART.get(k);
       ctx.save(); ctx.translate(C.x,C.y); ctx.rotate(B.ang);
       ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.35+0.55*a; ctx.imageSmoothingEnabled=false;
       const h=D.w*1.9*(0.5+0.5*a), w=D.w*(0.5+0.5*a);
@@ -16056,7 +16065,7 @@ function s9aBeamDraw(b){
     }
     return;
   }
-  if(B.t>=S9_BEAM_OFF) return;
+  if(B.t>=(B.off||S9_BEAM_OFF)) return;
   const len=VH-C.y+120;
   ctx.save(); ctx.translate(C.x,C.y); ctx.rotate(B.ang);
   ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
@@ -16674,7 +16683,38 @@ const CARRIER_BAY_HP   = 320;               // weapon damage needed per exposed 
 const CARRIER_SHIELD_HP= 3;                 // reflected giant warheads needed to break the field
 const CARRIER_SHIELD_WINDOW=30;             // seconds to finish both bays before regeneration
 const CARRIER_FLOAT_Y  = 0.74;              // brake early enough for the giant round to turn before culling
-const CARRIER_MEGA_PHASE=['BAY SIEGE','STORM CAGE','GRAVITY PRISM','DOOMSDAY FUSION'];
+/* ⚠ SIX PHASES, AND THEY ADVANCE ON WHAT THE PLAYER DOES (0905o). Mike's spec, verbatim, is in
+   docs/CARRIER_MK2_PHASES.md. The fight had FOUR, chosen by health:
+       phase = ratio>.75?0:ratio>.50?1:ratio>.25?2:3
+   His are events. "Shield down" happens because you BROKE it; "1 or both bays down" and "turrets
+   destroyed" are things you ACHIEVE. Read as health bands the fight would advance whether or not
+   you did the work, and phases 3 and 5 would be lies - the shield could be up with both bays
+   intact and the game would still announce them. So the phase is a state machine now.
+   ⚠ HP IS KEPT AS A FLOOR, NOT AS THE DRIVER. The bays take damage ONLY from deflected warheads
+   (Mike's own rule), so a player who never deflects one could otherwise sit in phase 2 forever.
+   `CARRIER_PHASE_FLOOR` drags the fight forward if health falls far past where a phase should have
+   ended. It is a safety net, not the mechanism. */
+const CARRIER_MEGA_PHASE=['BAY SIEGE','TURRET BARRAGE','BAYS FALLING','SPREAD ASSAULT',
+                          'TURRETS DOWN','LAST RUN'];
+const CARRIER_PHASE_FLOOR=[0.86,0.70,0.56,0.42,0.26,0.00];  // health at which each phase gives way
+const CARRIER_LAST_STAND=0.26;
+/* Advance ONLY forward, one step at a time, on the event that ends the current phase. */
+function carrierPhaseNext(b){
+  const M=b&&b._mega; if(!M) return 0;
+  const F=b._bayShield, BAY=b._bay, ratio=clamp(b.hp/(b.maxhp||1),0,1);
+  const shieldDown = !!(F && !F.up);
+  const bayGone    = !!(BAY && (BAY.L<=0 || BAY.R<=0));
+  const turretsGone= !!(M.nodes && M.nodes.length && M.nodes.every(n=>n.dead));
+  let p = M.phase|0;
+  if     (p===0 && shieldDown)  p=1;
+  else if(p===1 && bayGone)     p=2;
+  else if(p===2 && shieldDown)  p=3;
+  else if(p===3 && turretsGone) p=4;
+  else if(p===4 && ratio<=CARRIER_LAST_STAND) p=5;
+  /* the floor: never let the fight stall below the health its phase was meant to end at */
+  while(p<5 && ratio<=CARRIER_PHASE_FLOOR[p]) p++;
+  return Math.max(M.phase|0, p);
+}
 function carrierMegaInit(b){
   if(!b||b._ship!=='doomsdaycarriermk2'||b._mega)return;
   b._mega={phase:0,shown:0,t:0,cd:.85,step:0,hit:null,nodes:[
@@ -16826,13 +16866,18 @@ function carrierFlakTick(dt){
 }
 function carrierMegaTick(b,dt){
   carrierMegaInit(b);const M=b&&b._mega;if(!M)return;M.t+=dt;
-  const ratio=clamp(b.hp/(b.maxhp||1),0,1),phase=ratio>.75?0:(ratio>.50?1:(ratio>.25?2:3));
+  const ratio=clamp(b.hp/(b.maxhp||1),0,1),phase=carrierPhaseNext(b);
   /* ⚠ THE WIDE BEAM HAS TO BE ARMED SOMEWHERE. carrierBeamHalf reads _megaBeam, and on the first
      cut nothing ever set it - the quarter-screen beam was unreachable code that looked wired.
      The last phase arms it: below 25% health the cannon column opens from 58px to a quarter of
      the playfield, which is the moment the fight is meant to become desperate. */
-  b._megaBeam = (phase>=3) ? 1 : 0;
+  b._megaBeam = (phase>=5) ? 1 : 0;   // the quarter-screen cannon belongs to the LAST RUN now
   if(phase!==M.phase){M.phase=phase;M.shown=phase;M.cd=.55;M.step=0;b.flash=Math.max(b.flash||0,.36);
+    /* ⚠ PHASES 1 AND 3 (1-BASED) ARE 'SHIELD UP'. Entering phase 2 after a bay falls has to RESTORE
+       the field, or the alternation Mike described never happens - it broke in phase 1 and would
+       simply stay broken for the rest of the fight. */
+    if((phase===2)&&b._bayShield){const F2=b._bayShield;F2.up=true;F2.hp=F2.max;F2.window=0;F2.breakT=0;
+      if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y),'FIELD RESTORED','#7beaff');}
     flashScreen=Math.max(flashScreen,.22);shake=Math.max(shake,9);
     if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.38,'PHASE '+(phase+1)+': '+CARRIER_MEGA_PHASE[phase],'#bdf5ff');
     if(Audio.SFX&&Audio.SFX.bossPhase)Audio.SFX.bossPhase();
@@ -16844,20 +16889,39 @@ function carrierMegaTick(b,dt){
   if(b._cn||(b._lc&&b._lc.playing))return;
   M.cd-=dt*bossCadencePressure(b);if(M.cd>0)return;M.step++;
   const L=shipBossMount(b,'L'),C=shipBossMount(b,'C'),R=shipBossMount(b,'R');
-  if(M.phase===0){
-    /* BAY SIEGE: twin rotary batteries rake converging, fixed cyclone lanes between warheads. */
+  /* ⚠ PHASE 6 "CONSTANTLY SLIDES" - a continuous traverse, driven per FRAME, not per volley. It
+     has to sit above the M.cd gate below or it would only move when the guns happen to fire. */
+  if(M.phase===5){ const _W=worldWidth(), _amp=Math.max(60,_W*0.5-Math.max(150,b.w*0.5));
+    b.x=_W*0.5+Math.sin(M.t*0.85)*_amp; }
+  if(M.phase===0||M.phase===2){
+    /* PHASES 1 AND 3 (Mike's numbering): shield UP, the bays working. Twin rotary batteries rake
+       converging cyclone lanes between warheads. Phase 3 is the same siege with the player already
+       a bay up, so it presses slightly harder. */
     const ML=shipBossMount(b,'MG_L'),MR=shipBossMount(b,'MG_R');
     for(const row of [[ML,-1],[MR,1]]){const a=aimPlayer(row[0].x,row[0].y);for(const o of [-.15,0,.15])carrierMegaShot(b,row[0],a+o*row[1],4.1,'s6cyclone',{silent:o!==0});}
-    carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.92);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.92);M.cd=1.35;
-  }else if(M.phase===1){
-    /* STORM CAGE: alternating weakpoint pairs fire three committed spokes; the opposite side is
+    carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.92);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.92);M.cd=(M.phase===2?1.12:1.35);
+  }else if(M.phase===1||M.phase===3){
+    /* PHASES 2 AND 4: shield DOWN, the turrets going off, and the prism lance. Phase 4 widens the
+       turret volley to a SPREAD and brings the lance in faster - Mike: "spread fire turret fire,
+       laser beams more rapid". The opposite side is still
        always quiet, leaving a readable half-screen escape route. */
     const alive=M.nodes.filter(n=>!n.dead),parity=M.step&1;let fired=0;
     for(let i=0;i<M.nodes.length;i++){const n=M.nodes[i];if(n.dead||(i&1)!==parity)continue;const p=carrierMegaNodePos(b,n),a=aimPlayer(p.x,p.y);
-      for(const o of [-.16,0,.16])carrierMegaShot(b,p,a+o,3.15,'s6cyclone',{silent:fired++>0});}
+      for(const o of (M.phase>=3?[-.34,-.17,0,.17,.34]:[-.16,0,.16]))
+        carrierMegaShot(b,p,a+o,3.15,'s6cyclone',{silent:fired++>0});}
     if(!fired&&alive.length){const n=alive[M.step%alive.length],p=carrierMegaNodePos(b,n),a=aimPlayer(p.x,p.y);carrierMegaShot(b,p,a,3.35,'s6cyclone',{});}
-    M.cd=1.55;
-  }else if(M.phase===2){
+    /* THE LANCE: short TAPS between volleys, a long CHARGED burn to punctuate. Phase 4 taps every
+       volley instead of every other one. Never stacked on a live beam. */
+    if(!b._s9Beam){
+      const _chg=(M.step%4)===3, _tap=(M.phase>=3)||((M.step%2)===1);
+      if(_chg)      s9aBeamStart(b,{charge:.62,off:1.70,end:2.05,w:64});
+      else if(_tap) s9aBeamStart(b,{charge:.24,off:.58,end:.74,w:30});
+      if(b._s9Beam) carrierMegaMuzzle(b,'C','s6mb_prismmuzzle',_chg?1.30:.90);
+    }
+    M.cd=(M.phase>=3?1.12:1.55);
+  }else if(M.phase===4){
+    /* PHASE 5: the turrets are gone, so the HULL fights - prism crossfire from the upper barrels,
+       gravity mines holding the outer lanes. */
     if(M.step&1){
       /* PRISM CROSSFIRE, from the FOUR UPPER BARRELS the pack names for it - "four upper barrels
          fire mirrored diagonal lanes, then reverse the crossing angle on the next volley". They
@@ -16893,21 +16957,19 @@ function carrierMegaTick(b,dt){
       }
       carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.90);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.90);M.cd=1.08;
     }else{
-      /* ⚠ PRISM LANCE — A NEW ATTACK IN THE CARRIER'S FINAL PHASE (0905j). Mike: "we also need
-         crystalimpact, prismbeam and ricochetimpact". prismbeam is a TILE, not an impact, so it
-         needs a beam to live in - and the pack ships the other two parts for exactly that:
-         prismmuzzle as the emitter head and crystalimpact as the cap. Left unwired it would be
-         the 'declared and never fired' shape this file records over and over.
-
-         It reuses the S9 head/tile/cap beam wholesale (the tick+draw at ~12802 are gated only on
-         `_s9Beam`, so they are already generic); nothing new was written to move light down the
-         screen. It CHARGES on the head plate before it burns, so it is telegraphed and dodgeable,
-         the same TELL -> COMMIT -> RECOVER the rest of this fight uses.
-
-         ⚠ THIS IS A FIGHT CHANGE AND IT IS DELIBERATELY IN THE LAST PHASE ONLY. The rotation went
-         %3 -> %4 here and nowhere else; phases 0, 1 and 2 are untouched. Moving or removing it is
-         this one branch. */
-      s9aBeamStart(b); carrierMegaMuzzle(b,'C','s6mb_prismmuzzle',1.30); M.cd=S9_BEAM_END+0.45;
+      /* ⚠ PHASE 6, THE LAST RUN (0905o). Mike: "he fires off laser beams FAST and constantly
+         slides and we have to dodge the laser beams and shoot to destroy him. then it dies."
+         So the lance stops being one slot in a four-attack rotation and becomes the phase: a short
+         charge and a short burn, back to back, on a ~1s cadence, while the hull traverses (the
+         slide is driven per-frame above the cooldown gate, or it would only move when a gun fired).
+         Every third beat is an omega bomb so the player cannot simply park in one lane and trade. */
+      if((M.step%3)!==2){
+        s9aBeamStart(b,{charge:.30,off:.86,end:1.02,w:52});
+        carrierMegaMuzzle(b,'C','s6mb_prismmuzzle',1.10); M.cd=1.05;
+      }else{
+        carrierMegaShot(b,C,Math.PI/2,1.25,'s6omega',{accel:1.05,max:5.2,szMul:1.15});
+        carrierMegaMuzzle(b,'C','s6mb_prismmuzzle',1.30); M.cd=1.20;
+      }
     }
   }
   if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch))(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch)();
@@ -17136,7 +17198,13 @@ function carrierTick(b, dt){
         return;
       }
       if(C && (_bothGone || S.turn%3===0)){
-        b._cn={t:0,f:0}; S.cd=1.0+Math.random()*0.6;
+        /* ⚠ THE LAST RUN'S LASER IS THIS CANNON, NOT THE PRISM LANCE (0905o). Mike: phase 6 "fires
+           off laser beams FAST". The Mk II already owns an authored energy cannon, and the fire
+           dispatcher early-returns while it plays (`if(b._cn||...)return;`) - so a competing lance
+           in that phase is unreachable by construction. Measured: `_cn` was live on 35 of 70 frames
+           and the phase-6 lance branch never once ran. Halving the cannon's own cooldown is what
+           "FAST" actually means here. */
+        b._cn={t:0,f:0}; S.cd=(b._mega&&b._mega.phase>=5)?(0.52+Math.random()*0.26):(1.0+Math.random()*0.6);
         b._animKey=C.pre+'00'; b._animH=b.h*(C.hMul||1);
         if(Audio.SFX&&Audio.SFX.bossWeaponCharge)Audio.SFX.bossWeaponCharge();
         return;

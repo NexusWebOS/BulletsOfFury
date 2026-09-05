@@ -13002,11 +13002,31 @@ console.log("=== 269. Stage-6 storm fleet and Doomsday mega boss ===");
     +"carrierMegaNodeDamage(b,node,99);return JSON.stringify({p:[p0,p1,p2,p3],phase:b._mega.phase,nodes:b._mega.nodes.length,hit:hit,dead:node.dead,fl:_navalFlashes.length});})()",ctxv));
   ok(_mega269.nodes===4&&_mega269.hit&&_mega269.dead,
      'the mega boss fields four independently hittable and destructible animated storm nodes');
-  ok(_mega269.p[0].indexOf('s6cyclone')>=0&&_mega269.p[1].indexOf('s6cyclone')>=0&&
-     _mega269.p[2].indexOf('s6prism')>=0&&_mega269.p[2].indexOf('s6gravity')>=0,
-     'Bay Siege escalates through Storm Cage into alternating prism and gravity attacks');
-  ok(['s6omega','s6cluster','s6flak'].every(function(k){return _mega269.p[3].indexOf(k)>=0;})&&_mega269.phase===3,
-     'Doomsday Fusion cycles omega bomb, cluster fan and flak attacks rather than repeating one volley');
+  /* ⚠ THESE TWO PINNED THE OLD FOUR-PHASE, HEALTH-DRIVEN FIGHT and failed the moment Mike's six
+     landed (0905o). Read before fixed, per CLAUDE.md: they described a structure he replaced, so
+     they are repointed onto what he actually specified rather than reverted. The health bands are
+     gone as the DRIVER - what matters now is that the ladder advances on EVENTS. */
+  ok(_mega269.p[0].indexOf('s6cyclone')>=0,
+     'the carrier opens on shield-up cyclone rakes between warheads');
+  var _lad269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];player.x=250;player.y=500;"
+    +"var b={_ship:'doomsdaycarriermk2',x:VW/2,y:120,_drawY:120,w:640,h:320,hp:1000,maxhp:1000,flash:0,dead:false};"
+    +"carrierInit(b);carrierMegaInit(b);b._lc.playing=false;var seen=[];"
+    +"function run6(n){for(var i=0;i<n;i++)carrierMegaTick(b,.12);seen.push(b._mega.phase);}"
+    +"run6(3);"                                              /* phase 1: shield up */
+    +"b._bayShield.up=false;b._bayShield.hp=0;run6(3);"      /* -> 2: shield broken */
+    +"b._bay.L=0;run6(3);"                                   /* -> 3: a bay falls, field restored */
+    +"var upAgain=!!b._bayShield.up;"
+    +"b._bayShield.up=false;b._bayShield.hp=0;run6(3);"      /* -> 4: broken again */
+    +"b._mega.nodes.forEach(function(n){n.dead=true;});run6(3);" /* -> 5: turrets destroyed */
+    +"b.hp=b.maxhp*0.10;run6(3);"                            /* -> 6: last run */
+    +"var x0=b.x;for(var j=0;j<40;j++)carrierMegaTick(b,.05);var moved=Math.abs(b.x-x0);"
+    +"return JSON.stringify({seen:seen,upAgain:upAgain,moved:moved,names:CARRIER_MEGA_PHASE.length});})()",ctxv));
+  ok(_lad269.names===6&&_lad269.seen.join(',')==='0,1,2,3,4,5',
+     'the carrier advances through all SIX phases in order, on events rather than on health');
+  ok(_lad269.upAgain===true,
+     'phase 3 puts the shield back UP after a bay falls, so the fight alternates as specified');
+  ok(_lad269.moved>4,
+     'the LAST RUN slides continuously instead of holding station');
   ok(_mega269.fl>0&&vm.runInContext("SHIPBOSS.doomsdaycarriermk2.hpMul>=1.65",ctxv),
      'the Mk II mega boss uses supplied animated muzzles and an appropriately reinforced health pool');
   ok(vm.runInContext("['s6cyclone','s6prism','s6flak','s6gravity','s6omega','s6cluster'].every(function(k){return !!FIRETYPES[k]&&!!PROJ[k];})",ctxv),
