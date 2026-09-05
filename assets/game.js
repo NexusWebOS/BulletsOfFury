@@ -52104,16 +52104,46 @@ const FONT_RIDE = {"'":0.00, '-':0.60};
    larger though. thats how we do it once closer together." So the two bars grow and the gap
    between them shrinks - a heavier mark with a tight waist, rather than two thin rules spread
    apart. EQ_SEP is HALF the gap: the bars sit at +-EQ_SEP*H around the centre line. */
-const EQ_W=1.78, EQ_T=1.95, EQ_SEP=0.085;
-/* ⚠ THE GAP HAS TO SURVIVE THE OUTLINE, AND AT ROW SIZE IT DID NOT (drop 0904ai).
-   The 1px black edge is drawn as a full ring, so the TOP bar's edge grows down into the gap and
-   the BOTTOM bar's edge grows up into it. A 2px gap loses 1px from each side and closes: swept
-   H=10..34, the mark rendered as ONE thick dash at every size up to 26 and only separated at 34.
-   That is the "reads as a colon" bug in a new costume, and the zoomed screenshot did not show it -
-   the lava texture in the face reads as a notch where there is none. Only the row-count sweep did.
-   So the half-gap is never smaller than the outline plus one, which guarantees a visible parting
-   at whatever width the edge is drawn at. */
-function eqSep(H,outline){ return Math.max((outline|0)+1, Math.round(H*EQ_SEP)); }
+const EQ_W=1.78, EQ_T=1.95, EQ_GAP=0.075;
+/* ⚠ 0904ai SOLVED THE OUTLINE-EATS-THE-GAP PROBLEM BY WIDENING THE GAP, AND THAT WAS THE WRONG
+   LEVER (drop 0904aj). Mike: "closer together please."
+
+   Ringing each bar SEPARATELY is what forced the gap open: the top bar's edge grows down into it
+   and the bottom bar's grows up, so the parting had to be wide enough to survive losing a pixel
+   from each side. That put a floor under how close the bars could ever sit.
+
+   An equals is ONE mark. Composited into a single silhouette first and ringed as a unit, the edge
+   goes around the OUTSIDE of the pair and never into the space between them - so the gap is
+   whatever it is drawn as, at any size, and the bars can close right up. */
+/* ⚠ THE WAIST CANNOT BE CLOSER THAN THE EDGE ALLOWS, AND THAT IS GEOMETRY, NOT TUNING.
+   An outline is a ring: it grows one pixel INTO the gap from the bar above and one from the bar
+   below, whether the two bars are ringed separately or composited and ringed as a pair (I built
+   the pair version to dodge it and measured the same zero - offsetting the whole silhouette by a
+   pixel still puts the top bar's edge into a two-pixel waist).
+
+       visible gap = drawn gap - 2 x outline width
+
+   So with the 1px edge Mike asked for, THREE pixels is the tightest a parting can be and still be
+   seen, and that is what this returns. It was four. Closer than this needs the edge dropped from
+   this one mark, which would make it the only unedged glyph on the screen. */
+function eqGap(H,outline){ return Math.max(2*(outline|0)+1, Math.round(H*EQ_GAP)); }
+const _eqc=document.createElement('canvas'), _eqx=_eqc.getContext('2d');
+/* both bars as ONE flat silhouette, so the ring wraps the pair and leaves the waist open */
+function drawEqSolid(img,f,dx,dy,w,bh,gap,color,alpha){
+  const H2=bh*2+gap;
+  _eqc.width=Math.max(1,w); _eqc.height=Math.max(1,H2);
+  _eqx.globalCompositeOperation='source-over'; _eqx.globalAlpha=1;
+  _eqx.clearRect(0,0,w,H2); _eqx.imageSmoothingEnabled=false;
+  _eqx.drawImage(img,f[0],f[1],f[2],f[3],0,0,w,bh);
+  _eqx.drawImage(img,f[0],f[1],f[2],f[3],0,bh+gap,w,bh);
+  _eqx.globalCompositeOperation='source-in';
+  _eqx.fillStyle=color||'#000'; _eqx.fillRect(0,0,w,H2);
+  _eqx.globalCompositeOperation='source-over';
+  ctx.save(); ctx.imageSmoothingEnabled=false;
+  if(alpha!=null)ctx.globalAlpha=alpha;
+  ctx.drawImage(_eqc,0,0,w,H2,dx,dy,w,H2);
+  ctx.restore();
+}
 function eqWidth(w){ return w*EQ_W; }
 function fontRide(art, ch){
   if(ch==='=') return 0.5;          /* an operator sits on the middle of the cap box, not the baseline */
@@ -52205,12 +52235,13 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       if(it[4]){
         /* the '=' is edged on BOTH bars, at the same widened geometry the face pass uses -
            outlining it as a single hyphen would ring the wrong shape */
-        const sep=eqSep(H,outline), bh=Math.max(1,Math.round(gb.h*EQ_T));
-        const by=Math.round(cy-H/2+gb.dy);
-        for(const d of _OUTLINE_RING){
-          drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,by-sep-bh+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
-          drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,by+sep+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
-        }
+        /* ONE silhouette for the pair - ringing each bar on its own is what used to close the
+           waist, and is why the bars could not be brought together */
+        const gap=eqGap(H,outline), bh=Math.max(1,Math.round(gb.h*EQ_T));
+        const by=Math.round(cy-H/2+gb.dy), top=by-Math.floor(gap/2)-bh;
+        for(const d of _OUTLINE_RING)
+          drawEqSolid(ga.img,f,Math.round(ox)+d[0]*outline,top+d[1]*outline,
+                      Math.round(w),bh,gap,'#05070c',alpha);
         ox+=w+sp; continue;
       }
       for(const d of _OUTLINE_RING)
@@ -52240,10 +52271,10 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       /* the synthetic '=': the hyphen drawn twice, widened and thickened so it reads as an
          operator rather than as two specks, and separated by a fraction of the LINE HEIGHT so it
          scales with the text instead of with the thinnest glyph in the face */
-      const sep=eqSep(H,outline), bh=Math.max(1,Math.round(gb.h*EQ_T));
-      const by=Math.round(cy-H/2+gb.dy);
-      drawFrameTinted(ga.img,f,Math.round(x),by-sep-bh,Math.round(w),bh,tintC,tintA,alpha);
-      drawFrameTinted(ga.img,f,Math.round(x),by+sep,Math.round(w),bh,tintC,tintA,alpha);
+      const gap=eqGap(H,outline), bh=Math.max(1,Math.round(gb.h*EQ_T));
+      const by=Math.round(cy-H/2+gb.dy), gT=Math.floor(gap/2), gB=gap-gT;
+      drawFrameTinted(ga.img,f,Math.round(x),by-gT-bh,Math.round(w),bh,tintC,tintA,alpha);
+      drawFrameTinted(ga.img,f,Math.round(x),by+gB,Math.round(w),bh,tintC,tintA,alpha);
       x+=w+sp; continue;
     }
     drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
