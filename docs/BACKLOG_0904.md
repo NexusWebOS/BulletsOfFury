@@ -119,11 +119,21 @@ cutscene would have silently restyled stage-5 and stage-8 enemies mid-fight. New
 OLIVE WARDEN, not blacksteel. Muzzles and projectiles already existed and were already wired;
 only the attack frame was missing. `summoned` now derives from `drones.length`.
 **5. Stage-4 boss helper projectiles** — ✅ **DONE 0905c.**
-**7. The laser telegraph** — 🟡 **HALF DONE 0905h.** 3-second warn, the yellow→red sign (his own
-`nwarn_yield`/`nwarn_alert`, no credits) and the escalating alarm all land. **OPEN: the lane
-plate.** `nwarn_lane` is generated and registered but NOT wired — drawing it whitens the boss
-hull and the mechanism is not understood (0905i). Also open: whether the 3s should apply to
-every beam on stages 2-3 or only the big ones — one constant.
+**7. The laser telegraph** — ✅ **DONE (0905h timing/sign/sound, 0905p the lane plate).** The
+sign was his own `nwarn_yield`/`nwarn_alert` and cost nothing; the lane plate cost 12.
+⚠ **THE 'WHITENING' THAT BLOCKED THIS FOR TWO DROPS WAS GEOMETRY, NOT A MYSTERY.** Measured: the
+hull spans y -43..193 and the TL/C/TR mounts sit at y 50..61, so a lane running 640px DOWN from
+its mount crosses ~140px of the boss's own body. The fillRects always drew that overlap at
+alpha 0.30-0.55 (a glow); the first plate cut drew it at up to **1.0** via a stray `*2.2` and
+simply painted over the ship. Same alpha as the fillRects now, plus a ramp across the overlap.
+⚠ **AND THE A/B THAT 'PROVED' IT WAS MEASURING ANIMATION.** Two arms captured seconds apart
+differ across the WHOLE FRAME — terrain scroll, rain, the dialogue typing on — and a near-white
+count over a fixed box picks all of it up. CLAUDE.md already records that same-state frame
+isolation is impossible here (the draw reads `performance.now()` directly). **An amplified
+difference IMAGE showed it in one look; the number never could, and had me report a mechanism
+I did not understand as if it were established.**
+Still Mike's call: whether the 3s warn should apply to every beam on stages 2-3 or only the big
+ones — one constant.
 **17. Stage 3** — ✅ **DONE 0905e.** The attacks and proc3 projectiles were already there; the
 defect was the TELEGRAPH wearing the lava boss's red over ice. `L23_ALERT` is per-family now.
 

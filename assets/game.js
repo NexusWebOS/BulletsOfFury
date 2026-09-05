@@ -14266,15 +14266,39 @@ function l23BossBeamDraw(b){
     for(let i=0;i<B.slots.length;i++){
       const p=shipBossMount(b,B.slots[i]);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(B.angles[i]-Math.PI/2);
       const _AL=l23AlertCol(B.family);
-      /* ⚠ THE AUTHORED LANE PLATE IS REGISTERED (`nwarn_lane`) AND DELIBERATELY NOT WIRED HERE.
-         It looks right in isolation and right in the lane - but drawing it whitens the BOSS HULL,
-         measured in a controlled A/B (patrol disabled, position pinned, one redraw before the
-         capture, identical warm k): hull near-white 22.3% with the plate against 3.4% with these
-         fillRects, 35,453 differing pixels in the hull band. No hull tint is keyed on `_l23Beam`
-         anywhere in the source, so the mechanism is NOT understood, and a telegraph upgrade is not
-         worth a boss that washes out. Proofs and both arms: docs/proofs/laser_telegraph_0905/.
-         The plate and its brief stay on disk so this is one wiring change away once someone can
-         explain the interaction. */
+      /* ⚠ THE AUTHORED LANE PLATE (0905p). It is wired now, and the 0905i note claiming it
+         'whitens the boss hull, mechanism not understood' was WRONG TWICE OVER.
+
+         What actually happens is geometry. Measured on the real boss: the hull spans y -43..193
+         and the TL/C/TR mounts sit at y 50..61 - so a lane that starts at its mount and runs 640px
+         DOWNWARD crosses ~140px of the boss's own body before it clears the hull. The procedural
+         fillRects below draw that overlap at alpha 0.30-0.55, which reads as a glow on the hull.
+         The first cut drew the PLATE there at up to alpha 1.0 (a stray *2.2), so it painted over
+         the lower half of the boss. That is not a whitening, it is a lane covering a ship.
+
+         ⚠ AND THE A/B THAT 'PROVED' IT WAS MEASURING ANIMATION. Two arms captured seconds apart
+         differ across the WHOLE FRAME - terrain scroll, rain, the dialogue typing on - and a
+         near-white count over a fixed box picks all of that up. CLAUDE.md already says same-state
+         frame isolation is not available in this renderer because the draw reads performance.now()
+         directly. An amplified difference image showed it immediately; the number never could.
+
+         So: the plate uses the SAME alpha the fillRects always did, and fades across the hull
+         overlap so the boss reads through its own telegraph. */
+      if(typeof XART!=='undefined'&&XART.rdy('nwarn_lane')){
+        const _lim=XART.get('nwarn_lane');
+        const _seg=Math.max(24,lane*(_lim.height/_lim.width));
+        const _off=(B.t*_seg*1.6)%_seg;
+        const _hullBot=((b._drawY!=null?b._drawY:b.y)+(b._drawH!=null?b._drawH:b.h)*.5);
+        const _clear=Math.max(0,_hullBot-shipBossMount(b,B.slots[i]).y);   // how much lane lies on the hull
+        ctx.save();ctx.beginPath();ctx.rect(-lane/2,0,lane,len);ctx.clip();
+        const _a=(_AL.a0+_AL.a1*k)*pulse;
+        for(let y=-_seg+_off;y<len;y+=_seg){
+          const _mid=y+_seg*.5;
+          ctx.globalAlpha=_a*(_clear>0?clamp(_mid/_clear,.34,1):1);
+          ctx.drawImage(_lim,-lane/2,y,lane,_seg);
+        }
+        ctx.restore();
+      }else{
       /* on a lava stage a red wash vanishes - the lane needs a dark outline and white-hot rails */
       ctx.globalAlpha=0.62*pulse; ctx.fillStyle=_AL.shell; ctx.fillRect(-lane/2-3,0,lane+6,len);
       ctx.globalAlpha=(_AL.a0+_AL.a1*k)*pulse; ctx.fillStyle=_AL.lane; ctx.fillRect(-lane/2,0,lane,len);
@@ -14283,6 +14307,7 @@ function l23BossBeamDraw(b){
       /* hazard ticks marching down the rails read as 'incoming' even on a busy field */
       const ph=(B.t*180)%28; ctx.globalAlpha=(0.30+0.40*k)*pulse; ctx.fillStyle=_AL.tick;
       for(let y=ph;y<len;y+=28){ ctx.fillRect(-lane/2-1,y,5,2); ctx.fillRect(lane/2-4,y,5,2); }
+      }
       ctx.restore();
     }
     ctx.restore(); ctx.globalAlpha=1;
