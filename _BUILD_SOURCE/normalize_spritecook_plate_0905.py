@@ -98,7 +98,20 @@ def main():
     print('ink kept %d / %d   CLIPPED BY CANVAS: %d px (%.2f%%)' % (placed, g_op, lost, 100.0 * lost / g_op))
 
     # ---- 3. snap every opaque pixel to the reference palette, dither OFF -----------------------
+    # ⚠ A PIL PALETTE HOLDS 256 COLOURS. The Cryo Spear's reference is 61, so the lock is exact and
+    # cheap. The OLIVE WARDEN's hull is 22,597 - it is not an indexed plate at all - and building a
+    # palette from it would silently truncate to the first 256 and repaint the ship in whatever
+    # those happened to be. Skip the lock when the reference is not indexable; the canvas and pivot
+    # work still applies, which is the half that matters for a plate swapped in place.
     pal = sorted(ref_cols.keys())
+    if len(pal) > 256:
+        print('reference carries %d colours (>256): NOT an indexed plate, skipping the palette lock'
+              % len(pal))
+        out = canvas
+        o_op, o_cols, o_semi, _ = opaque_stats(out)
+        print('OUT       %s  opaque %d  colours %d  semi-alpha %d  bbox %s'
+              % (out.size, o_op, o_cols, o_semi, out.getbbox()))
+        out.save(out_p, optimize=True); print('wrote %s' % out_p); return
     flat = []
     for c in pal: flat.extend(c)
     flat.extend([0, 0, 0] * (256 - len(pal)))

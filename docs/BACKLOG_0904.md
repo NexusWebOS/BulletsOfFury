@@ -331,3 +331,45 @@ them apart.**
 
 **Still owed on item 7:** *"that ugly field view before a laser comes out needs to be remade via
 sprite cook"* — the LANE plate under the beam, which is the ugly part. Art run, Mike's call.
+
+## 0905i — item 4 art, and the item-7 lane that is NOT wired
+
+**4. The Olive Warden has attack frames. DONE.**
+
+⚠ **ONLY ONE OF THE THREE THINGS ITEM 4 ASKS FOR WAS ACTUALLY MISSING.** *"proper attack frames,
+muzzle frames, projectiles etc."* — the muzzles (`s4w_muzzle_mg/orb/lightning`, 8 frames each) and
+the rounds (`bfx_legion_`, `s4w_spread_round_`, `s4w_mg_round_`) **already existed and were already
+wired**. A manifest grep says 0 `s4w_` keys registered and that is a FALSE NEGATIVE: game.js
+registers them at runtime into `XART._src`, and **221 files sit in `assets/game/stage4_warfare/`**.
+Checking the directory before generating saved roughly 128 credits of art we already own. Rule 1.
+
+What was genuinely missing: the mini set **no `_animKey` at all**, so it drew a static hull while
+the Storm Sovereign cycles its flight/charge/energized reels. `nsb_olivewarden_attack` is one
+generated plate (16 credits, `edit_asset_id` off the hull, silhouette IoU **0.933**, 18px clipped).
+
+⚠ **DRIVEN BY THE WALL ATTACK, NOT BY EVERY ROUND.** Keyed to each MG shot it never expired — the
+gun cycles every ~0.064s against a 0.16s flash — so the Warden sat in the firing pose permanently
+and the idle hull was never drawn once (**measured 930 attack / 0 idle**). On the wall beat it now
+measures **20% of frames in the firing pose** across a full mode cycle.
+⚠ **GATED ABOVE 0.62 HP.** `_animKey` OVERRIDES the damage plate in `shipBossDraw`, so an ungated
+attack frame visually HEALS the Warden whenever it fires at critical health. Verified: at 20% hp,
+173,280 critical-plate frames and **zero** attack frames.
+
+**7. The lane plate exists, is registered, and is DELIBERATELY NOT WIRED.**
+
+`nwarn_lane` was generated (12 credits) and it is a real improvement in isolation — a tapered
+corridor with hot rails and marching chevrons, against three flat translucent trapezoids with plain
+white edge lines (`docs/proofs/laser_telegraph_0905/BEFORE_lane_fullframe.png`).
+
+⚠ **BUT DRAWING IT WHITENS THE BOSS HULL, AND THE MECHANISM IS NOT UNDERSTOOD.** Controlled A/B —
+patrol disabled so both arms hold the same x, one redraw before the capture, identical warm k:
+**hull near-white 22.3% with the plate against 3.4% with the fillRects**, 35,453 differing pixels in
+the hull band. Nothing in the source keys a hull tint on `_l23Beam`. A telegraph upgrade is not
+worth a boss that washes out, so the draw stays procedural and the plate waits.
+
+⚠ **AND THREE EARLIER ATTEMPTS TO MEASURE THIS WERE ALL INVALID, IN THE SAME WAY.** The boss
+PATROLS. Two arms captured at the same k are at different x, so a fixed sample box compares
+boss-present against boss-absent — one run reported "48.6% vs 1.3%, my change caused it" and that
+was measuring an empty crop. **Pinning the position is not enough either: the canvas holds the LAST
+DRAWN frame, so a pin must be followed by a step before the capture.** Both are now in the note
+above the block.

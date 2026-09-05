@@ -13630,7 +13630,7 @@ function stage4WarfareMiniTick(b,dt){
     if(S.t>=3.60)stage4WarfareSetMode(b,'gate');
   }else if(S.mode==='gate'){
     b.x+=(W*.5-b.x)*Math.min(1,dt*6.2);
-    if(S.shot<=S.t){S.shot+=.62;stage4WarfareWall(b,(S.wave&2)!==0);}
+    if(S.shot<=S.t){S.shot+=.62;stage4WarfareWall(b,(S.wave&2)!==0);S.fireFlash=.22;}
     if(S.t>=2.40)stage4WarfareSetMode(b,'drones');
   }else{
     b.x=W*.5+Math.sin(S.t*.82)*amp*.42;if(S.drones.length)S.summoned=true;
@@ -13648,9 +13648,26 @@ function stage4WarfareMiniTick(b,dt){
         stage4WarfareShot(b,{x:d.x+Math.cos(d.ang)*34,y:d.y+Math.sin(d.ang)*34},d.ang+cross,5.55,'mg',{});
         stage4WarfareDroneMuzzle(b,d);if((S.wave%8)===0)stage4WarfareSound('enemyMachineGunHeavy','enemyShoot');S.wave++;}
     }
-    if(S.shot<=S.t){S.shot+=.78;stage4WarfareWall(b,(S.wave&1)===0);}
+    if(S.shot<=S.t){S.shot+=.78;stage4WarfareWall(b,(S.wave&1)===0);S.fireFlash=.22;}
     if(S.t>=5.20)stage4WarfareSetMode(b,'burst');
   }
+  /* THE WARDEN HAS AN ATTACK FRAME NOW (0905i, backlog item 4: "get proper attack frames").
+     It was the ONLY thing item 4 actually lacked - `s4w_muzzle_mg/orb/lightning` (8 frames each)
+     and the `bfx_legion_` rounds already existed on disk and were already wired; the mini simply
+     drew a STATIC hull, setting no `_animKey` at all, while the Storm Sovereign cycles its
+     flight/charge/energized reels.
+
+     ⚠ GATED ABOVE 0.62 HP ON PURPOSE. `shipBossDraw` lets `_animKey` OVERRIDE the damage plate
+     (`_ak = b._animKey ? b._animKey : _hk`), so an ungated attack frame would visually HEAL the
+     Warden every time it fired at critical health. The damage read is the stronger signal and wins.
+     Damaged/critical attack variants would lift the gate; that is two more plates and Mike's call. */
+  /* ⚠ DRIVEN BY THE WALL ATTACK, NOT BY EVERY ROUND. Keyed to each MG shot it never
+     expired - the gun cycles every ~0.064s against a 0.16s flash, so the Warden sat in the
+     firing pose permanently and the idle hull was never drawn once (measured: 930 attack
+     frames, 0 idle). Per-round feedback is already the muzzle sprites' job; the HULL should
+     change on the heavy beat, which fires every 0.62-0.78s and reads. */
+  S.fireFlash=Math.max(0,(S.fireFlash||0)-dt);
+  b._animKey=(S.fireFlash>0&&b.maxhp&&(b.hp/b.maxhp)>.62)?'nsb_olivewarden_attack':null;
   return true;
 }
 function stage4WarfareBossTick(b,dt){
@@ -14236,6 +14253,15 @@ function l23BossBeamDraw(b){
     for(let i=0;i<B.slots.length;i++){
       const p=shipBossMount(b,B.slots[i]);ctx.save();ctx.translate(p.x,p.y);ctx.rotate(B.angles[i]-Math.PI/2);
       const _AL=l23AlertCol(B.family);
+      /* ⚠ THE AUTHORED LANE PLATE IS REGISTERED (`nwarn_lane`) AND DELIBERATELY NOT WIRED HERE.
+         It looks right in isolation and right in the lane - but drawing it whitens the BOSS HULL,
+         measured in a controlled A/B (patrol disabled, position pinned, one redraw before the
+         capture, identical warm k): hull near-white 22.3% with the plate against 3.4% with these
+         fillRects, 35,453 differing pixels in the hull band. No hull tint is keyed on `_l23Beam`
+         anywhere in the source, so the mechanism is NOT understood, and a telegraph upgrade is not
+         worth a boss that washes out. Proofs and both arms: docs/proofs/laser_telegraph_0905/.
+         The plate and its brief stay on disk so this is one wiring change away once someone can
+         explain the interaction. */
       /* on a lava stage a red wash vanishes - the lane needs a dark outline and white-hot rails */
       ctx.globalAlpha=0.62*pulse; ctx.fillStyle=_AL.shell; ctx.fillRect(-lane/2-3,0,lane+6,len);
       ctx.globalAlpha=(_AL.a0+_AL.a1*k)*pulse; ctx.fillStyle=_AL.lane; ctx.fillRect(-lane/2,0,lane,len);
