@@ -2280,6 +2280,31 @@ const XART=(function(){
   for(const _cg in _CH_GROUP_COUNTS) for(let _ci=0;_ci<_CH_GROUP_COUNTS[_cg];_ci++)
     X._src['ch_'+_cg+'_'+_ci]='assets/game/chaos_harrier/ch_'+_cg+'_'+_ci+'.png';
   X._src['ch_ship_glow']='assets/game/chaos_harrier/ch_ship_glow.png';
+  /* ============================================================
+     ⚠ SIXTEEN s6mb_ FAMILIES WERE ASKED FOR BY NAME AND NONE OF THEM EXISTED (drop 0904aa)
+
+     CF_DoomsdayCarrierAttacks-Lvl6. The Doomsday Carrier Mk II's whole attack visual layer -
+     muzzles, tracers, flak, storm nodes and links, gravity mines, cluster bomblets, the omega
+     warhead and the bomb warning / shield / deflect / impact set that its OWN bay mechanic runs
+     on - was written against `s6mb_*` keys, and a grep for them in the manifest returns ZERO.
+     Sixteen families referenced, none registered: every one of those draws has been resolving to
+     nothing for as long as the code has existed.
+
+     This is the "declared and never fired" shape this file records over and over, and the reason
+     it survived is that XART.rdy() guards make a missing family look like a quiet frame rather
+     than an error. The art is the pack Mike just supplied; the code was already waiting for it.
+
+     23 families, 184 frames. Seven are not referenced yet - ricochetimpact, crystalimpact,
+     flakburst, clusterburst, gravityripple, prismbeam, omegabomb-reflected as its own key - and
+     are registered anyway so the draws that want them can be written without a second import.
+     ============================================================ */
+  const S6MB_REELS={cyclonemuzzle:8,prismmuzzle:8,bombignition:8,cyclonetracer:8,prismbolt:8,
+    flakshell:8,stormnode:8,ricochetimpact:8,crystalimpact:8,flakburst:8,empimpact:8,
+    'omegabomb-hostile':8,'omegabomb-reflected':8,bombwarning:8,bombdeflect:8,bombshield:8,
+    bombimpact:10,clusterbomblet:8,clusterburst:8,gravitymine:8,gravityripple:10,
+    prismbeam:6,stormlink:6};
+  for(const _k in S6MB_REELS) for(let _i=0;_i<S6MB_REELS[_k];_i++)
+    X._src['s6mb_'+_k+'_'+_i]='assets/game/s6_carrier_attacks/s6mb_'+_k+'_'+_i+'.png';
   /* CF_BossAttacks-Lvl9 (drop 0904z): eighteen authored families, 140 frames, for the WARP
      SENTINEL and the TIDAL SOVEREIGN. Every round those two fired was procedural before this. */
   const S9A_REELS={warpvoidmuzzle:6,warpcrystallance:8,warpcrystalbeam:8,warpcrystalbeamtile:8,
