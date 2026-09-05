@@ -2027,9 +2027,22 @@ const XART=(function(){
      cinematic aliases point at the same cells. The loose path stays as the fallback for an old manifest. */
   if(window.BOFX&&BOFX.cells&&BOFX.cells['bg6_cloud_day_1']) BOFX.cells['cincloud_day']=BOFX.cells['bg6_cloud_day_1']; else X._src['cincloud_day']='assets/game/bg6/bg6_cloud_day_1.png';
   if(window.BOFX&&BOFX.cells&&BOFX.cells['bg6_cloud_storm_0']) BOFX.cells['cincloud_storm']=BOFX.cells['bg6_cloud_storm_0']; else X._src['cincloud_storm']='assets/game/bg6/bg6_cloud_storm_0.png';
-  X._src['cinhostile_scout']='assets/game/stage8_symbiote_fleet/scout_drone/idle.png';
-  X._src['cinhostile_bone']='assets/game/stage8_mega_enemies/bone_interceptor/attack_01.png';
-  X._src['cinhostile_heavy']='assets/game/stage5_enemy_attacks/heavy_interceptor/01.png';
+  /* ⚠ THE CUTSCENE HOSTILES ARE THEIR OWN PLATES NOW (0905m, backlog item 2). Mike: "use our
+     pseudo-3d graphics" in the shootdown beats. These three keys BORROWED live gameplay sprites
+     from stages 5 and 8, and every one of those is STRICT TOP-DOWN - so the beats drew flat
+     top-downs next to `cinship_*`, which are authored front/rear three-quarter pseudo-3D. Rendered
+     side by side the mismatch is obvious: docs/spritecook_briefs/cin_hostiles/_CURRENT.png.
+
+     ⚠ THE OLD PATHS ARE LEFT ALONE ON PURPOSE. Those files are live enemy reels - 9, 16 and 8
+     sibling frames, referenced by game.js elsewhere - so overwriting them to fix a cutscene would
+     have silently restyled stage-5 and stage-8 enemies mid-fight. New files, repointed keys.
+
+     The three-quarter views were generated from those same top-downs as edits, to the
+     cinematic_ships pack's own contract (see cinematic_ships/GENERATION_PROMPTS.md), so the
+     hostiles and the hero ships share one perspective language. */
+  X._src['cinhostile_scout']='assets/game/cinematic_ships/hostiles/cinhostile_scout.png';
+  X._src['cinhostile_bone']='assets/game/cinematic_ships/hostiles/cinhostile_bone.png';
+  X._src['cinhostile_heavy']='assets/game/cinematic_ships/hostiles/cinhostile_heavy.png';
   for(let _cf=0;_cf<8;_cf++){
     const _ef=String(_cf*4).padStart(2,'0');
     X._src['cinfx_airburst_'+_cf]='assets/game/generated_cinematic/explosions/airburst/192x192/frames/frame_'+_ef+'.png';

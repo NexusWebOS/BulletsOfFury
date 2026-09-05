@@ -108,9 +108,13 @@ import if the donor cannot supply them.
 the DONE sections above record all nine as landed. Cross-checked before rewriting.
 
 ### Still owed from Mike's 17-item list — ⚠ RE-CHECKED 0905k: **TWO**, and both only half
-**2. Cutscene shootdowns** — 🟡 **HALF DONE 0905e.** The pseudo-3D motion, depth and the
-unreachable third hostile are fixed. **OPEN: the ART** — the hostiles still need drawing in the
-hero ships' 3/4 view. Mike's credits, Mike's call.
+**2. Cutscene shootdowns** — ✅ **DONE (0905e motion, 0905m art).** All three hostiles are now
+front three-quarter pseudo-3D, generated as edits off their own top-downs to the cinematic_ships
+pack's contract, so hostiles and hero ships share one perspective language. 48 credits.
+⚠ **THE OLD PATHS WERE LEFT ALONE.** The three keys borrowed LIVE gameplay sprites from stages 5
+and 8 (9, 16 and 8 sibling frames, referenced elsewhere in game.js). Overwriting those to fix a
+cutscene would have silently restyled stage-5 and stage-8 enemies mid-fight. New files under
+`cinematic_ships/hostiles/`, keys repointed.
 **4. Stage-4 miniboss remake** — ✅ **DONE (0905h helpers, 0905i attack frame).** The unit is the
 OLIVE WARDEN, not blacksteel. Muzzles and projectiles already existed and were already wired;
 only the attack frame was missing. `summoned` now derives from `drones.length`.
