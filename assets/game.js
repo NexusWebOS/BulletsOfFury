@@ -2006,6 +2006,23 @@ const XART=(function(){
   X._src['cinintro_team']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/06_full_earth_division_lounge.png';
   X._src['cinintro_command']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/04_command_table_cole_decker_juggernaut.png';
   X._src['cinintro_lab']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/07_cole_decker_restricted_prototype_lab.png';
+  /* ⚠ FOUR OF THE SEVEN HQ INTERIORS WERE REGISTERED NOWHERE, AND NEITHER WAS A SINGLE SEATED POSE.
+     Mike: "there were ones where we re-did the inside of the HQ and had them standing in a giant
+     command room or sitting in the break room instead."
+     They exist. cutscenes/lounge_and_alliances holds SEVEN authored 1672x941 interiors with the
+     cast composed into them; seated_poses holds a seated cut-out for all nine pilots. Of that,
+     three plates were registered and used only as still backdrops in the campaign prologue, four
+     were registered nowhere at all, and none of the nine poses was - most of a finished art drop
+     unreachable from the game. Registered here; used by HQ_ROOM below. */
+  X._src['cinhq_brotherhood']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/01_brotherhood_axel_freezer_lounge.png';
+  X._src['cinhq_princesses']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/02_princesses_falva_lizzie_lounge.png';
+  X._src['cinhq_lonewolves']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/03_lone_wolves_yuri_maverick_lounge.png';
+  X._src['cinhq_storytime']='assets/game/cinematic_campaign/cutscenes/lounge_and_alliances/05_juggernaut_storytime.png';
+  X._src['cinhq_command']=X._src['cinintro_command'];
+  X._src['cinhq_lounge']=X._src['cinintro_team'];
+  X._src['cinhq_lab']=X._src['cinintro_lab'];
+  for(const _sp of ['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'])
+    X._src['cinseat_'+_sp]='assets/game/cinematic_campaign/seated_poses/'+_sp+'_seated_rgba.png';
   /* 0903: the stage-6 cloud plates are cells on fx_weather now (the loose bg6/ files are gone), so the
      cinematic aliases point at the same cells. The loose path stays as the fallback for an old manifest. */
   if(window.BOFX&&BOFX.cells&&BOFX.cells['bg6_cloud_day_1']) BOFX.cells['cincloud_day']=BOFX.cells['bg6_cloud_day_1']; else X._src['cincloud_day']='assets/game/bg6/bg6_cloud_day_1.png';
@@ -3876,7 +3893,11 @@ function drawCutscene(sc){
      low-res plate, so HQ uses its full composition while legacy pilot rooms keep their crop. */
   const bgZoom=sc.bgZoom || (bgk===CUT_HQ?1.08:(sc.ensemble?1.14:1.08));
   const cover=Math.max(CW/bg.naturalWidth,CH/bg.naturalHeight)*bgZoom;
-  const bsw=CW/cover,bsh=CH/cover,bsx=(bg.naturalWidth-bsw)*.5,bsy=(bg.naturalHeight-bsh)*.44;
+  /* ⚠ A ROOM PLATE PANS. sc.bgPan drives the horizontal window; without it this stays the centred
+     crop every other cutscene has always used. */
+  const bsw=CW/cover,bsh=CH/cover;
+  const bsx=(bg.naturalWidth-bsw)*(sc.bgPan!=null?clamp(sc.bgPan,0,1):.5),
+        bsy=(bg.naturalHeight-bsh)*(sc.bgPanY!=null?clamp(sc.bgPanY,0,1):.44);
   ctx.drawImage(bg,bsx,bsy,bsw,bsh,0,0,CW,CH);
   /* One shared portrait compositor gives every pilot a real black arcade cutout edge.  Drawing
      the silhouette underneath (rather than stroking a rectangle) follows the alpha contour,
@@ -3896,7 +3917,11 @@ function drawCutscene(sc){
   /* HQ is an ensemble briefing, not a two-person slideshow. Keep the whole division seated
      around the command console and change only the active pilot's pose/brightness. Their feet
      terminate at the console/dialogue rail, so the existing authored foreground does the masking. */
-  const ensemble=(Array.isArray(sc.ensemble) && sc.ensemble.length)?sc.ensemble:null;
+  /* ⚠ A ROOM PLATE ALREADY CONTAINS THE CAST. `noPortraits` suppresses BOTH compositors - the
+     ensemble row and the two-slot fallback - while leaving the speaker's NAME intact, because the
+     name is read from sc[sc.speaking] further down and is the only cue to who is talking once the
+     portraits are gone. Dropping the slots to hide the portrait would have taken the name with it. */
+  const ensemble=(!sc.noPortraits && Array.isArray(sc.ensemble) && sc.ensemble.length)?sc.ensemble:null;
   if(ensemble){
     const n=ensemble.length, activePilot=sc.speakingPilot;
     const order=ensemble.map((pilot,i)=>({pilot,i}));
@@ -3922,7 +3947,7 @@ function drawCutscene(sc){
     }
   }
   const slots=[['left',12,464,210,300],['right',418,464,210,300],['center',215,438,210,280]];
-  for(const [name,px,py,mw,mh] of ensemble?[]:slots){
+  for(const [name,px,py,mw,mh] of (ensemble||sc.noPortraits)?[]:slots){
     const e=sc[name]; if(!e) continue;
     const pk=cutPose(e.pilot, e.pose||0);
     if(!pk || !XART.rdy(pk)) continue;
@@ -39130,6 +39155,32 @@ const HQ_SCENES = [
     ['cole',5,"It does now."]
   ]}
 ];
+/* ============================================================
+   THE ENSEMBLE SCENES HAPPEN IN A ROOM (drop 0904ao)
+
+   All eight used to draw on the same command-deck plate with two portraits over it. The authored
+   interiors are better than that AND they already contain the cast, so a scene set in one does not
+   composite portraits - drawing them would put a second Cole beside the Cole already in the shot.
+
+   The plates are 16:9 against a viewport taller than it is wide, so they PAN rather than squeeze:
+   covering one crops about 47% of its width and cuts pilots off both edges. Each room carries the
+   pan that frames its own subject.
+
+   ⚠ WHICH ROOM HOSTS WHICH SCENE IS A CREATIVE CALL, AND THEREFORE MIKE'S. This is a reading of
+   the scripts - accusations at the command table, Decker's vault reveal in the prototype lab,
+   Juggernaut's beat in his own storytime plate, the opening and closing assemblies in the full
+   division lounge - and it is one table to re-order. A scene with NO entry here keeps the old
+   portrait staging, so nothing is forced into a room that does not suit it. */
+const HQ_ROOM = {
+  HQ_ALL_00:{key:'cinhq_lounge',      pan:0.50},
+  HQ_ALL_01:{key:'cinhq_command',     pan:0.50},
+  HQ_ALL_02:{key:'cinhq_command',     pan:0.38},
+  HQ_ALL_03:{key:'cinhq_lab',         pan:0.50},
+  HQ_ALL_04:{key:'cinhq_storytime',   pan:0.50},
+  HQ_ALL_05:{key:'cinhq_brotherhood', pan:0.45},
+  HQ_ALL_06:{key:'cinhq_command',     pan:0.62},
+  HQ_ALL_07:{key:'cinhq_lounge',      pan:0.42},
+};
 /* which scene fires where. 'pre' plays before that stage, 'post' after it clears. */
 const HQ_AT = { pre:{1:'HQ_ALL_00', 8:'HQ_ALL_06'},
                 post:{1:'HQ_ALL_01', 3:'HQ_ALL_02', 4:'HQ_ALL_03', 6:'HQ_ALL_04', 7:'HQ_ALL_05', 9:'HQ_ALL_07'} };
@@ -39610,9 +39661,21 @@ function drawCutsceneEnsemble(dt){
   if(!ln){ hqEnd(); return; }
   const full=ln[2], n=full.length;
 
-  const sc={ bg:CUT_HQ, left:hqSlot.left, right:hqSlot.right, speaking:hqSpeak,
-             ensemble:hqRoster, speakingPilot:ln[0], speakingPose:ln[1],
-             fullText:full, text: full.slice(0, Math.min(n, Math.floor(hqChars))) };
+  /* a room plate already contains the cast, so it REPLACES the portrait staging rather than
+     sitting behind it - no ensemble, no left/right, which is what skips the compositor */
+  const room=HQ_ROOM[hqSc.id], roomUp=!!(room && XART.rdy(room.key));
+  /* ⚠ THESE PLATES CARRY A BAKED CAPTION BAR ("FURY HQ - EARTH DIVISION" and a title) across the
+     bottom ~9%, and at bgZoom 1.0 the whole plate fits the height, so that bar rendered UNDER the
+     dialogue panel as loose green text. Zoomed just past cover and biased to the TOP, the crop
+     takes the caption off the bottom instead of squeezing the room. */
+  const sc= roomUp
+    ? { bg:room.key, bgPan:room.pan, bgPanY:0.0, bgZoom:1.16, noPortraits:true,
+        left:{pilot:ln[0], pose:ln[1]}, speaking:'left',
+        speakingPilot:ln[0], speakingPose:ln[1],
+        fullText:full, text: full.slice(0, Math.min(n, Math.floor(hqChars))) }
+    : { bg:CUT_HQ, left:hqSlot.left, right:hqSlot.right, speaking:hqSpeak,
+        ensemble:hqRoster, speakingPilot:ln[0], speakingPose:ln[1],
+        fullText:full, text: full.slice(0, Math.min(n, Math.floor(hqChars))) };
   /* drawCutscene returns false until the background and poses have loaded. XART.rdy STARTS the
      load on its first call, so a one-shot check always reads false - hold on black and keep
      asking rather than treating it as missing art. */
