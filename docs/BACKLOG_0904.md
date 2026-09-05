@@ -189,3 +189,35 @@ nothing.
   and its impacts are imported but not yet wired to a beam act.
 - `CF_Stage9PortalCombatPickups-Lvl9` (179 entries) and the remaining four teleport-FX families
   from CF_EnemyTeleportFX-Vol.1 are still unimported.
+
+---
+
+## 0905 — worked while Mike rested
+
+**Done**
+- Seated HQ poses de-matted (26,571 px of enclosed white cleared across 7 files) and wired as the
+  ensemble row, which drawCutscene's own comment has described as "seated" since it was written.
+- Flak shell bursts with `flakburst` (0904ae had grabbed `clusterburst` - the pack ships one of
+  each and clusterburst belongs to the bomblet).
+- Gravity mine draws its authored `gravityripple` underneath, via a new FIRETYPES `under` slot.
+- **Item 5** - stage-4 boss helper rounds enlarged: drawn x1.45, hitbox x1.18.
+
+**⚠ A CORRECTION TO THIS DOC'S OWN AUDIT.** `omegabomb-reflected` was listed as undrawn. It is
+drawn - line 16812 builds the key dynamically as `'s6mb_omegabomb-'+(ref?'reflected':'hostile')` -
+and the audit regex only matched literal prefixes, which is the trap CLAUDE.md records for
+n6x_/nvl_/s1_/tk*. The deflect mechanic has been correct all along. Genuinely undrawn now:
+`crystalimpact`, `prismbeam`, `ricochetimpact`.
+
+**⚠ LIZZIE'S SEATED POSE IS DAMAGED ART.** Her gloves, belt and sleeve panels are washed out to
+pale opaque grey - whatever produced the file ate into the art rather than stopping at it. A matte
+pass cannot help: deleting those pixels would punch holes in her. She needs regenerating, and is in
+the cleaner's SKIP list so a later run cannot damage her further.
+
+**Left on the list**
+- Items 2 (cutscene shootdowns -> pseudo-3D), 4 (stage-4 miniboss remake), 7 (laser telegraph),
+  17 (stage 3 attacks). ⚠ 4 and 7 need SpriteCook art - NOT started, because generating art spends
+  Mike's credits and that is his call to make, not something to do while he is asleep.
+- `crystalimpact`, `prismbeam`, `ricochetimpact` still undrawn.
+- `CF_Stage9PortalCombatPickups-Lvl9` and the four remaining teleport-FX families unimported.
+- HQ_ROOM's scene-to-room mapping is my reading of the scripts and is a creative call to review.
+- 26+ commits unpushed.
