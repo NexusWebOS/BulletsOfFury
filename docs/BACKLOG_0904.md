@@ -128,12 +128,19 @@ every beam on stages 2-3 or only the big ones — one constant.
 defect was the TELEGRAPH wearing the lava boss's red over ice. `L23_ALERT` is per-family now.
 
 ### Art in the tree that nothing draws yet
-- ⚠ **RE-MEASURED 0905k: FIVE OF THE SIX ARE NOW DRAWN. Only `gravityripple` is left.**
+- ✅ **ALL SIX ARE DRAWN. This entry is CLOSED (re-measured 0905n).**
   `crystalimpact`, `prismbeam`, `ricochetimpact` landed in 0905j. `flakburst` and
-  `omegabomb-reflected` were ALREADY wired before today and this entry was simply stale —
-  omegabomb-reflected is built by concatenation (`'s6mb_omegabomb-'+(ref?...)`), which no
-  family-prefix grep can see. **`gravityripple` (10 frames) is the gravity mine's detonation
-  ripple and still draws nothing** — the mine itself (`s6gravity` / `gravitymine`) is live.
+  `omegabomb-reflected` were already wired before today.
+  ⚠ **AND SO WAS `gravityripple` — 0905k's claim that it was 'the only one left' WAS WRONG.**
+  It is the gravity mine's `under` layer (`FIRETYPES.s6gravity.under`, drawn at 33128 with
+  `underScale:2.6`), so it renders beneath every mine. Measured live in phase 2: **16,196 ripple
+  draws against the mine's 17,132**.
+  ⚠⚠ **THE MISTAKE WAS THE AUDIT, AND IT IS WORTH MORE THAN THE ITEM.** The 0905k grep excluded
+  every line matching `'s6mb_'+` to filter out the two import tables — but that is exactly how
+  a real draw site builds its key (`'s6mb_gravityripple_'+(...)`). **The filter that hides the
+  registration tables also hides every concatenated draw**, which is the same blind spot that
+  left `omegabomb-reflected` on this list. Grep for the family NAME with no prefix filter, then
+  read the hits; or better, count `XART.get` keys in a live run, which cannot be fooled either way.
 - **The carrier's six named boss cycles** are art-only. Four already exist in spirit as the mega
   phases; what the pack adds beyond the anchors and the flak airburst (both landed 0904ae) is the
   exact authored geometry for the other cycles.
