@@ -82,6 +82,19 @@ one session (the Chaos Harrier's beam, then the stage-6 carrier's whole attack l
 reading as "the draw never runs" when the draw was running perfectly. Identify a blit by wrapping
 `XART.get` and recording the KEY asked for, or by the image's dimensions — never by `src`.
 
+⚠ **AND `ctx` CARRIES ITS OWN `drawImage`, SO PATCHING `CanvasRenderingContext2D.prototype` TRAPS
+NOTHING (0905h).** Measured: `hasOwnProperty(ctx,'drawImage')` is **true**. A prototype trap on a
+draw that is provably running returns **0 blits** and reads as "the draw never happens" — the same
+false negative as the `.src` trap, one level down. Wrap `ctx.drawImage` itself. Doing that turned
+0 blits into 26, with the transform (`getTransform()` → scale 2, tx −200) that converts the world
+coords to canvas coords and proves where the thing actually landed.
+⚠ **AND `XART.get` DOES NOT RETURN A STABLE OBJECT** — an identity trap (`img===XART.get(k)`) also
+catches nothing. Match on `img.width/height` against the CELL size instead.
+⚠ **A KEY-COUNTING PROBE IS NOT A PIXEL PROBE.** "The draw asked for `nwarn_yield` 30 times" was
+true while the sign was painted over by the boss hull every frame. Three green probes in a row on
+one invisible sprite; only the screenshot found it. **Occlusion is not off-screen and is not a
+missing draw — and no state check can tell the three apart.**
+
 **A FAMILY REFERENCED BY NAME IS NOT A FAMILY THAT EXISTS, AND THE GUARDS HIDE IT.** 16 `s6mb_*`
 families — the Doomsday Carrier's entire muzzle/tracer/bomb/deflect layer — were written into
 game.js and **none were registered in the manifest**. Every draw resolved to nothing for as long as
@@ -1318,7 +1331,7 @@ and reports settled burial. **The 839 / 71.9% baselines quoted in the handoff ar
 `assets/fonts/BlackOpsOne.ttf`. Worth checking the first before the stats-screen alignment work.
 
 
-**0810s–0811b, all committed and each verified in real Chromium:** the five ship bosses (stages 2/3/5 + minis on 2/3) and the Blacksteel Raptor as stage 4's miniboss — stage 4 had had NONE, its table still named the retired `subreactor`; Mike's fire orb + ice breath icons and the EQUIPPED box that was drawing the wrong one; the quad-laser's four beams and its charge phase; stage 7 on Mike's corrected plate with the sludge behind it, darkened to 50% value; the enemy volley layer and the five silent rosters armed; Mike's loopable runway; the arcade intro cards' blank panel; music on the Fury HQ cutscenes.
+**0810s–0811b, all committed and each verified in real Chromium:** the five ship bosses (stages 2/3/5 + minis on 2/3) and ~~the Blacksteel Raptor as stage 4's miniboss~~ (**STALE — measured 0905h: `SUBBOSS[4].kind` is `olivewarden`, the OLIVE WARDEN. Blacksteel moved to stage 6 as the STORM SOVEREIGN. Read `SUBBOSS`, not this line**) — stage 4 had had NONE, its table still named the retired `subreactor`; Mike's fire orb + ice breath icons and the EQUIPPED box that was drawing the wrong one; the quad-laser's four beams and its charge phase; stage 7 on Mike's corrected plate with the sludge behind it, darkened to 50% value; the enemy volley layer and the five silent rosters armed; Mike's loopable runway; the arcade intro cards' blank panel; music on the Fury HQ cutscenes.
 
 ⚠ **The recurring failure this stretch was systems that were declared and never fired** — the quad-laser's muzzles, `_qlChg`, `enemyVolley` sharing a `fireCd` its unit's tick owns, `micon_` asked of the wrong store, `lordshadows` registered and referenced nowhere. In every case the state looked right and no pixel moved. **Render it, then believe it.**
 

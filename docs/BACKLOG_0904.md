@@ -277,3 +277,57 @@ and no longer played"; that was true when written and 0904an put them back. Corr
 
 Suite **3,214 ok / 67 fail / 278 sections**, thirteen of those assertions new (§275, §276) and all
 passing; nothing failing outside the baseline but the two documented corner-run flakes.
+
+## 0905h — items 4 and 7, the halves that cost nothing
+
+**BOTH ARE PARTIAL. The behaviour is in; the SpriteCook art is not, and is what remains.**
+
+**4. Stage-4 miniboss — the helpers are gone. The art run is not done.**
+*"it should no longer get its helpers either"* — done and verified. The unit is the **OLIVE
+WARDEN** (`olivewarden`), not the Blacksteel Raptor; CLAUDE.md said stage 4's mini was blacksteel
+and that is stale — blacksteel moved to stage 6.
+
+⚠ **THE HELPERS WERE BUILT AT INIT, NOT SUMMONED MID-FIGHT.** `stage4WarfareInit` pushed two
+chaingun drones for the mini; the `drones` MODE only revealed them. So hiding the mode would have
+left them alive and shooting. They are removed at the source, and `summoned` is now DERIVED from
+`drones.length`, so the reveal, the draw and the 300px collision broad-phase reach all switch off
+together — three consumers, one fact, none can be missed.
+
+⚠ **THE `drones` PHASE IS KEPT.** It still runs the Warden's own wall attack on its 5.2s beat, so
+the fight keeps its rhythm. Verified in real Chromium: 0 drones ever, `summoned` never true, reach
+never opened, all three modes still entered — **and peak 24 rounds in flight**, which is the check
+that matters: removing a unit's helpers by accidentally disarming the unit looks identical to
+success on a probe that only counts drones. `_BUILD_SOURCE/probe_warden_helpers.py`.
+
+**Still owed on item 4:** *"use spritecook, get proper attack frames, muzzle frames, projectiles
+etc."* — an art run, Mike's credits, his direction.
+
+**7. The laser telegraph — timing, symbol and sound are in. The field view is not.**
+
+⚠ **THE ALERT SYMBOL HE ASKED FOR ALREADY EXISTED.** *"an alert symbol of OURS"* — `nwarn_yield`
+and `nwarn_alert` are the same authored 165x153 triangular sign in yellow and red. Rendered to
+find them, not picked by name (`docs/proofs/warden_helpers_0905/_alert_candidates.png`). That half
+of item 7 cost no credits at all.
+
+`L23_WARN_T` = 3.00 (his number), `L23_WARN_RED` = 0.60 for the yellow→red flip, blink accelerating
+3→8Hz into the release, and an escalating alarm on its own slower cadence so it does not buzz.
+
+⚠ **`L23_WARN_T` LENGTHENS EVERY BEAM ON STAGES 2 AND 3** — warms authored at 0.14–1.00s all become
+3.00. That is a balance change wearing a feature, and it is ONE number so Mike can scope it to the
+big beams if the Reaver's short jabs should stay short.
+
+⚠⚠ **THE SIGN WAS DRAWN, ON SCREEN, CORRECTLY SIZED — AND INVISIBLE, THROUGH THREE GREEN PROBES.**
+Worth reading before writing another draw-side check:
+  1. a probe asserting the draw ASKED FOR the art key passed — true, and it proves nothing;
+  2. a pixel probe passed on 4,254 "red" pixels that were the **RIME WALL name text**, not the sign;
+  3. a `ctx.drawImage` trap caught **zero** blits — because **`ctx` carries its OWN `drawImage`**
+     that shadows `CanvasRenderingContext2D.prototype`. Trapping the own property found 26 blits at
+     world (352,46) under a scale-2/tx-200 transform = canvas (504,92): exactly where it should be.
+The cause was DRAW ORDER, twice. It ran inside `l23BossBeamDraw`, which draws BEFORE the boss hull,
+so the hull painted over it; and the boss GAUGE, later again in the HUD pass, owns the top ~39px.
+It now draws in `drawWorld` AFTER both hulls, floored at `L23_WARN_MINY` = 46 to clear the gauge.
+**Only a screenshot ever showed this. Occlusion is not off-screen, and a state check cannot tell
+them apart.**
+
+**Still owed on item 7:** *"that ugly field view before a laser comes out needs to be remade via
+sprite cook"* — the LANE plate under the beam, which is the ugly part. Art run, Mike's call.

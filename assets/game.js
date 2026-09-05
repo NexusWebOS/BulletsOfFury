@@ -13147,9 +13147,13 @@ function stage4WarfareInit(b){
     coreCycleSeen:{windup:false,fire:false,overheat:false},coreSpreadCd:0,coreSpreadWave:0,
     coreSpreadShots:0,coreSpreadLast:null};
   if(mini){
-    for(const side of [-1,1])b._s4war.drones.push({side:side,x:b.x+side*142,y:b.y+26,ang:Math.PI/2,
-      active:0,spin:0,shot:side<0?0:.065,flash:0,shieldFlash:0,dead:false,
-      hp:150,maxhp:150,shield:70,maxShield:70});
+    /* THE OLIVE WARDEN FIGHTS ALONE (0905h). Mike, item 4: "it should no longer get its helpers
+       either." The two chaingun drones were built HERE, at init - the 'drones' MODE only revealed
+       them - so removing them at the source is what actually removes them. `drones` stays an empty
+       array rather than going away: `summoned` is derived from its LENGTH below, so the reveal, the
+       draw and the 300px collision broad-phase reach all switch themselves off together and no
+       consumer can be missed. The 'drones' PHASE is KEPT - it still runs the Warden's own wall
+       attack on its 5.2s beat, so the fight keeps its rhythm and only the helpers are gone. */
   }else{
     const nodeHp=Math.max(70,Math.ceil((b.maxhp||2500)*.023));
     b._s4war.shield={active:true,rearming:false,rearmT:0,cycle:0,hit:0,breakT:0,sfx:0,nodes:[
@@ -13499,7 +13503,7 @@ function stage4WarfareSound(primary,fallback){
 }
 function stage4WarfareSetMode(b,mode){
   const S=b&&b._s4war;if(!S)return;S.mode=mode;S.t=0;S.shot=-.02;S.event=0;S.wave=0;S.round++;
-  if(mode==='drones'){S.summoned=true;stage4WarfareSound('bossWeaponCharge','enemyBossCannon');}
+  if(mode==='drones'){if(S.drones.length)S.summoned=true;stage4WarfareSound('bossWeaponCharge','enemyBossCannon');}
   if(mode==='flyaway')stage4WarfareSound('bossPhase','bossWeaponCharge');
   if(mode==='lightning')stage4WarfareSound('bossWeaponCharge','enemyElectricBolt');
 }
@@ -13629,7 +13633,7 @@ function stage4WarfareMiniTick(b,dt){
     if(S.shot<=S.t){S.shot+=.62;stage4WarfareWall(b,(S.wave&2)!==0);}
     if(S.t>=2.40)stage4WarfareSetMode(b,'drones');
   }else{
-    b.x=W*.5+Math.sin(S.t*.82)*amp*.42;S.summoned=true;
+    b.x=W*.5+Math.sin(S.t*.82)*amp*.42;if(S.drones.length)S.summoned=true;
     for(const d of S.drones){
       if(d.dead)continue;
       d.flash=Math.max(0,d.flash-dt);d.shieldFlash=Math.max(0,d.shieldFlash-dt);
@@ -14079,10 +14083,60 @@ function reaverOrbDraw(b){
    Continuous beams retain their muzzle slot while the boss recoils/banks. They either lock when
    charged or follow a bounded authored sweep; no beam or projectile samples the player after
    release. */
+/* ---- THE LASER TELEGRAPH (0905h, backlog item 7) --------------------------------------------
+   Mike: "that ugly field view before a laser comes out needs to be remade via sprite cook, and it
+   should flash for 3 seconds on/off and an alert symbol of ours should pop up above the enemy, go
+   from the yellow to red with the sound".
+
+   ⚠ THE SYMBOL HE ASKED FOR ALREADY EXISTS AND DID NOT NEED GENERATING. `nwarn_yield` and
+   `nwarn_alert` are the SAME authored 165x153 triangular sign in yellow and red - rendered, not
+   picked by name (docs/proofs/warden_helpers_0905/_alert_candidates.png). "An alert symbol of
+   OURS" is exactly this pair, so item 7's symbol half costs no credits. What is still owed to that
+   item is the FIELD VIEW itself - the lane plate under the beam - which is the ugly part.
+
+   ⚠ `L23_WARN_T` LENGTHENS EVERY BEAM ON STAGES 2 AND 3, and that is a balance change wearing a
+   feature. Warms authored at 0.14-1.00s all become 3.00. It is ONE number, deliberately, so Mike
+   can scope it to the big beams instead if the Reaver's short jabs should stay short. */
+const L23_WARN_T   = 3.00;   // his number, verbatim
+const L23_WARN_RED = 0.60;   // fraction of the warn after which the sign flips yellow -> red
+const L23_WARN_MINY= 46;     // measured: clears the boss gauge band, which draws after the beam
+function l23WarnSymbolDraw(b,B){
+  if(!b||!B||B.released||B.t>=B.warm||typeof XART==='undefined')return false;
+  const f=clamp(B.t/Math.max(.001,B.warm),0,1),red=f>=L23_WARN_RED;
+  const key=red?'nwarn_alert':'nwarn_yield';if(!XART.rdy(key))return false;
+  /* the blink accelerates into the release, so the LAST second reads as different from the first */
+  if((Math.floor(B.t*(3+f*5))%2)!==0)return false;
+  const im=XART.get(key);if(!im||!im.width)return false;
+  const h=42,w=h*(im.width/im.height);
+  const top=(b._drawY!=null?b._drawY:b.y)-(b._drawH!=null?b._drawH:b.h)*.5;
+  /* ⚠ CLAMPED, AND THE FIRST CUT WAS NOT. A ship boss holds station near the top of the playfield
+     (stage 3's sits at y=150 with h=195), so "above the enemy" computes to y=-1 and the sign drew
+     ENTIRELY OFF SCREEN. The probe still passed, because it asserted the draw ASKED FOR the key and
+     never that a pixel landed - rule 2 inside the probe written to enforce rule 2. Keep it on the
+     field; over the hull's top edge still reads as above the unit.
+
+     ⚠ AND THE FLOOR IS 46, NOT 6, BECAUSE THE BOSS GAUGE OWNS THE TOP OF THE SCREEN. At 6 the sign
+     was on screen, in front of the camera, the right size - and INVISIBLE, because the full-width
+     boss health gauge draws after the beam across roughly y 15..39 and painted straight over it.
+     Occlusion is not off-screen, and only the picture tells them apart: two probes passed on this
+     (one counting the art key, one counting red pixels that turned out to be the RIME WALL name
+     text) before a screenshot showed the sign was never there. 46 clears the gauge band. */
+  const sy=Math.max(L23_WARN_MINY,top-h-12);
+  ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=red?1:.92;
+  ctx.drawImage(im,Math.round(b.x-w/2),Math.round(sy),w,h);
+  ctx.restore();return true;
+}
+function l23WarnSound(B){
+  /* an escalating alarm, not one beep per blink - the blink runs to 8Hz and would buzz */
+  if(!B||B.released)return;
+  const f=clamp(B.t/Math.max(.001,B.warm),0,1),period=f>=L23_WARN_RED?.26:.52;
+  const step=Math.floor(B.t/period);if(step===B._warnStep)return;B._warnStep=step;
+  try{if(Audio.SFX){const fn=Audio.SFX.lockAlert||Audio.SFX.dangerAlert||Audio.SFX.uiMove;if(fn)fn();}}catch(_lw){}
+}
 function l23BossBeamStart(b,family,slots,angles,warm,active,retract,width,opts){
   if(!b||b._l23Beam)return false;
   opts=opts||{};
-  b._l23Beam={family:family,slots:slots.slice(),angles:angles.slice(),t:0,warm:warm||.72,
+  b._l23Beam={family:family,slots:slots.slice(),angles:angles.slice(),t:0,warm:Math.max(warm||.72,L23_WARN_T),
     active:active||1.0,retract:retract||.20,width:width||38,released:false,spin:opts.spin||0,
     baseAngles:angles.slice(),sweepArc:opts.sweepArc||0,sweepRate:opts.sweepRate||0,
     sweepPhase:opts.sweepPhase||0};
@@ -14091,6 +14145,7 @@ function l23BossBeamStart(b,family,slots,angles,warm,active,retract,width,opts){
 }
 function l23BossBeamTick(b,dt){
   const B=b&&b._l23Beam;if(!B)return false;B.t+=dt;
+  l23WarnSound(B);
   /* Bounded sweep motion is authored and never tracks the player. Inferno Reaver uses this to
      douse only 45 degrees either side of south, leaving a real opposite-side escape lane. */
   if(B.sweepArc){
@@ -54003,6 +54058,19 @@ function drawWorld(dt){
   if(boss) drawBoss();
   if(boss && boss._morphT!=null && typeof vileMorphDraw==='function') vileMorphDraw(boss);
   if(subBoss){drawSubBoss();encounterDamageOverlay(subBoss,true);}
+  /* ⚠ THE LASER ALERT SIGN DRAWS HERE, AFTER THE HULLS, AND THAT PLACEMENT IS THE WHOLE FIX.
+     It lived inside l23BossBeamDraw first, which runs BEFORE the boss hull - so the boss was
+     painted straight over it every frame. Trapped at world (352,46) under a scale-2 / tx-200
+     transform, i.e. canvas (504,92): drawn, on screen, correctly sized, and invisible. Three
+     probes had already passed on it - one counting the art KEY, one counting red pixels that were
+     really the RIME WALL name text, and one whose ctx.drawImage trap caught NOTHING because ctx
+     carries its OWN drawImage that shadows the prototype. Only trapping the own property found it.
+     `L23_WARN_MINY` (46) is still needed on top of this: the boss GAUGE draws later again, in the
+     HUD pass, and owns the top ~39px. */
+  if(typeof l23WarnSymbolDraw==='function'){
+    if(boss&&boss._l23Beam)l23WarnSymbolDraw(boss,boss._l23Beam);
+    if(subBoss&&subBoss._l23Beam)l23WarnSymbolDraw(subBoss,subBoss._l23Beam);
+  }
   if(typeof speedPadsDraw==='function') speedPadsDraw();   // boost pads sit on the deck, under the craft
   if(typeof l6GMDraw==='function') l6GMDraw();   // giant missiles ride over the fight
   if(run.stage===5 && typeof l5RocksDraw==='function') l5RocksDraw();   // asteroids share the play plane

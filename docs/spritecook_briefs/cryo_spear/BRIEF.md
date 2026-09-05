@@ -213,7 +213,7 @@ art was registered, per the 0812c warning above.
 
 ## Verified, in real Chromium
 
-`scratchpad/probe_cryospear_dmg.py` — proof frames in `docs/proofs/cryospear_dmg_0905/`.
+`_BUILD_SOURCE/probe_cryospear_dmg.py` — proof frames in `docs/proofs/cryospear_dmg_0905/`.
 It records **the art key the DRAW asked for**, because `XART.get` returns a canvas with no `.src`:
 
     100% hp -> nsb_cryo_spear            OK
