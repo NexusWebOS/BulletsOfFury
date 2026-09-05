@@ -13041,7 +13041,28 @@ function stage3BossAttack(b,pat,step,ph,cdMul){
     /* Final form: three locked beams establish the corridors, a gated halo closes the idle lanes,
        and two staggered shell pairs punish staying still. Dense, but every layer has its own beat. */
     S.charge={t:0,dur:1.00,slot:'C'};
-    l23BossBeamStart(b,'rime',['TL','C','TR'],[Math.PI/2-.31,Math.PI/2,Math.PI/2+.31],1.00,1.05,.24,48);
+    /* ⚠ MIKE, 0905, WITH A SHOT OF THIS EXACT ATTACK: "thes must come exactly from the tip of his
+       firing beams/cannons. and do not criss cross them like that, make them vertically rowed, and
+       the left and right cannons fire off in a 45 degree pattern angle on there own side that we
+       have to dodge, if were stuck in between him, he has a charge up beam that we have to dodge
+       in addition". Three separate corrections:
+
+       1. THE ORIGIN WAS THE WRONG MOUNT. It fired from TL/TR, which sit at y -0.105 - UP INSIDE
+          THE HULL - so the lanes emerged from the middle of the ship above the barrels. L/C/R sit
+          at y +0.430, down at the cannon tips, and are what the beams should have used all along.
+       2. THE CRISS-CROSS WAS THE ANGLES. `PI/2-.31` on the LEFT mount points down-RIGHT (dx=cos,
+          so subtracting swings toward +x), and the right mount mirrored it, so the two crossed in
+          front of the boss. Straight `PI/2` from each tip gives the vertical rows he asked for.
+       3. AND THE SIDES NOW GET THEIR OWN 45. On the alternate volley L swings 45 degrees to ITS
+          side (PI/2+PI/4 = down-left) and R to its own (PI/2-PI/4 = down-right), clearing both
+          flanks - which leaves the CENTRE as the obvious hiding place, so C fires straight down as
+          the charged beam that punishes it. That is his "stuck in between him" case, and it is why
+          the centre is not simply omitted from this volley. */
+    const _rowed=(step&1)===0;
+    l23BossBeamStart(b,'rime',['L','C','R'],
+      _rowed ? [Math.PI/2, Math.PI/2, Math.PI/2]
+             : [Math.PI/2+Math.PI/4, Math.PI/2, Math.PI/2-Math.PI/4],
+      1.00,1.05,.24,48);
     ev.push({at:.30,slot:'C',ring:true,n:16,gap:2,base:step*.19,sp:1.92,kind:'s3mortar',accel:.46,max:3.85,szMul:.86});
     ev.push({at:1.36,slot:'L',aim:true,offs:[-.12,.04],sp:4.25,kind:'s3shell',accel:1.55,max:7.0,shootable:true,hp:2});
     ev.push({at:1.36,slot:'R',aim:true,offs:[-.04,.12],sp:4.25,kind:'s3shell',accel:1.55,max:7.0,shootable:true,hp:2,audio:false});
@@ -14291,7 +14312,13 @@ function l23BossBeamDraw(b){
         const _hullBot=((b._drawY!=null?b._drawY:b.y)+(b._drawH!=null?b._drawH:b.h)*.5);
         const _clear=Math.max(0,_hullBot-shipBossMount(b,B.slots[i]).y);   // how much lane lies on the hull
         ctx.save();ctx.beginPath();ctx.rect(-lane/2,0,lane,len);ctx.clip();
-        const _a=(_AL.a0+_AL.a1*k)*pulse;
+        /* ⚠ THE CAP CAME OFF ONCE THE ORIGIN MOVED. The 0905p alpha was held down to the fillRects'
+           because the lane started at TL/TR - up inside the hull - and 140px of it lay across the
+           ship. Firing from the cannon TIPS leaves only ~17px of overlap, so the plate can carry
+           its own weight again; at the fillRect alpha it washed out to a pale band on the ice and
+           stopped reading as a warning, which is the one job a telegraph has. The ramp below still
+           protects the short stretch that does cross the hull. */
+        const _a=Math.min(1,(_AL.a0+_AL.a1*k)*pulse*1.55);
         for(let y=-_seg+_off;y<len;y+=_seg){
           const _mid=y+_seg*.5;
           ctx.globalAlpha=_a*(_clear>0?clamp(_mid/_clear,.34,1):1);
