@@ -892,7 +892,11 @@ bosses/minibosses, level-7 purple halos, wrong level-5 map region, background sq
 stage-8 chain lightning). The stage-6 "door/side sky overlay" he ordered deleted was **not** deleted:
 the obvious key renders as a flat blue noise field, not an overlay. Rule 1, third save.
 
-**→ START HERE: `docs/PASSOVER_0819C.md` (the newest drop), then `0819B`, `0819A`, then
+**→ START HERE: `docs/PASSOVER_0905.md` — the newest, and the handoff. It covers drops 0905g…0905t
+(SpriteCook going live, Mike's 17-item list closing, the carrier's six phases, the Rime Wall's
+telegraph), and its first section is nine MEASUREMENT traps rather than code ones: read that before
+writing a probe. `docs/CARRIER_MK2_PHASES.md` carries Mike's phase spec verbatim.
+Then `docs/PASSOVER_0819C.md`, then `0819B`, `0819A`, then
 `docs/HANDOFF_BRIAN_0814.md` (the previous patch notes), then
 `docs/PASSOVER_0814D.md`, `0814C`, `0814B`, `0814A`, then `docs/PASSOVER_0813G.md`, then `0813E`, `0813D`, `0813C`, `0813B`, `0813A`, then `0812G`, then `0812F`, `0812E`, `0812D`, `0812C`, `0812B`, `0812A`, `0811Z`, `0811Y`, `0811X`, `0811W`, `0811V`, `0811U`, `0811T`, `0811S`, `0811R`, `0811Q`, `0811P`, `0811O`, `0811N`, `0811M`, `0811L`, then `docs/PASSOVER_0811_HANDOFF.md`.**
 
