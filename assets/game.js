@@ -39133,7 +39133,27 @@ const HQ_SCENES = [
 /* which scene fires where. 'pre' plays before that stage, 'post' after it clears. */
 const HQ_AT = { pre:{1:'HQ_ALL_00', 8:'HQ_ALL_06'},
                 post:{1:'HQ_ALL_01', 3:'HQ_ALL_02', 4:'HQ_ALL_03', 6:'HQ_ALL_04', 7:'HQ_ALL_05', 9:'HQ_ALL_07'} };
-let hqSc=null, hqLine=0, hqChars=0, hqDone=null, hqSeen={};
+/* ============================================================
+   BOTH SETS OF HQ CUTSCENES RUN NOW (drop 0904an)
+
+   Mike: "Didnt we have these new full sized HQ cutscenes. what happened to those?"
+
+   They were never lost - I turned them off. When he was asked which set he wanted running he
+   chose "restore the old ensemble scenes", and that option said the per-pilot openings come out,
+   so 0904ac left PILOT_OPENINGS in the tree as data with nothing routed to it. The question he is
+   asking now is the third option I offered and he did not take: BOTH.
+
+   They are not competing, and putting them in order shows why. The per-pilot opening is nine
+   full-screen animated sequences - aftermath, formation, radar, and a run for home that ENDS at
+   HQ ('destination'). The ensemble scene is the briefing in the room they land in. So stage 1 now
+   plays the opening, arrives, and hands straight to HQ_ALL_00; the other seven boundaries are
+   ensemble only, because there is no flight home to show at those.
+
+   One state machine, two renderers. `hqMode` says which, and every entry point sets it - a scene
+   type that can be entered without setting it would draw one renderer's data through the other's
+   loop, which is the kind of fault that shows up as a blank screen rather than an error.
+   ============================================================ */
+let hqSc=null, hqLine=0, hqChars=0, hqDone=null, hqSeen={}, hqMode='ens', hqBeatT=0;
 let hqSlot={left:null, right:null}, hqSpeak='left';
 let hqRoster=[];
 const HQ_CPS=42;                                   // characters per second
@@ -39358,9 +39378,25 @@ function cinDialogue(beat,budget,W,H){
   }
   msgFaceUse(null);return true;
 }
+/* the full-screen per-pilot opening - recovered verbatim from 5ecee4c8^ */
+function hqPlayPilot(pilot, onDone){
+  const sc=(typeof PILOT_OPENINGS!=='undefined')?PILOT_OPENINGS[pilot]:null;
+  if(!sc){ if(onDone)onDone(); return false; }
+  hqMode='beats';
+  hqSc=sc; hqLine=0; hqChars=0; hqBeatT=0; hqDone=onDone||null; hqSeen['OPEN_'+pilot]=1;
+  cinWarm(sc);
+  try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('cinematics'); }catch(_m){}
+  setState(GS.CUTSCENE); return true;
+}
+function hqAdvance(){
+  hqLine++; hqChars=0; hqBeatT=0;
+  if(!hqSc||hqLine>=hqSc.beats.length){ hqEnd(); return false; }
+  return true;
+}
 function hqPlay(id, onDone){
   const sc=hqScene(id); if(!sc){ if(onDone) onDone(); return false; }
-  hqSc=sc; hqLine=0; hqChars=0; hqDone=onDone||null;
+  hqMode='ens';
+  hqSc=sc; hqLine=0; hqChars=0; hqBeatT=0; hqDone=onDone||null;
   hqRoster=hqRosterFor(id);
   hqSlot={left:null,right:null}; hqSpeak='right';  // so line 0 seats left
   hqSeat(0);
@@ -39384,8 +39420,21 @@ function hqEnd(){
 
 /* fire the scene for a boundary if it has one and has not played this run */
 function hqTrigger(when, stage, onDone){
+  if(!run || run.mode!=='campaign'){ if(onDone) onDone(); return false; }
   const id = HQ_AT[when] && HQ_AT[when][stage];
-  if(!id || hqSeen[id] || !run || run.mode!=='campaign'){ if(onDone) onDone(); return false; }
+  /* ⚠ STAGE 1 IS THE ONE BOUNDARY THAT HAS BOTH, AND THEY GO IN NARRATIVE ORDER. The per-pilot
+     opening is the flight home after the attack and it ENDS at HQ; the ensemble scene is the
+     briefing in that room. Playing the briefing first would have the team discussing an arrival
+     that has not happened yet. So: opening -> briefing -> stage. */
+  if(when==='pre' && stage===1){
+    const pk=(typeof _pilotKey==='function')?_pilotKey():String(run.pilot||'axel');
+    const oid='OPEN_'+pk;
+    const briefing=()=>{ if(id && !hqSeen[id]) hqPlay(id,onDone); else if(onDone) onDone(); };
+    if(!hqSeen[oid] && typeof PILOT_OPENINGS!=='undefined' && PILOT_OPENINGS[pk])
+      return hqPlayPilot(pk, briefing);
+    briefing(); return true;
+  }
+  if(!id || hqSeen[id]){ if(onDone) onDone(); return false; }
   return hqPlay(id, onDone);
 }
 
@@ -39523,6 +39572,37 @@ function drawCampaignIntro(dt){
   if(t>=CAMPAIGN_INTRO_DONE)campaignIntroFinish();
 }
 function drawCutsceneState(dt){
+  if(hqMode==='beats') return drawCutsceneBeats(dt);
+  return drawCutsceneEnsemble(dt);
+}
+/* the full-screen opening: backdrop, moving aircraft, an authored dialogue panel */
+function drawCutsceneBeats(dt){
+  const W=cutsceneViewWidth(),H=VH; ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
+  if(!hqSc){hqEnd();return;} const beat=hqSc.beats[hqLine]; if(!beat){hqEnd();return;}
+  if(!cinWarm(hqSc))return;
+  hqBeatT+=dt;
+  const bg=beat.bg||(beat.motion==='depart'?hqSc.destination:(beat.motion==='dogfight'||beat.motion==='missile_lock'?'space':(beat.motion==='cloak'?'darksky':'sky')));
+  cinBackdrop(bg,hqBeatT,W,H); cinDrawMotion(hqSc,beat,hqBeatT,W,H*(beat.text?.70:.94));
+  /* Action and travel beats use a real cinematic aperture; dialogue keeps the full vertical room */
+  if(!beat.text){const bar=Math.max(10,Math.round(H*.052));ctx.fillStyle='#000';ctx.fillRect(0,0,W,bar);ctx.fillRect(0,H-bar,W,bar);}
+  const text=beat.text||'',n=text.length;
+  if(text){
+    const was=Math.floor(hqChars); hqChars=Math.min(n,hqChars+HQ_CPS*dt); const now=Math.floor(hqChars);
+    if(now>was){for(let c=was+1;c<=now;c++){if(c%3===0){uiBlipRep();break;}}}
+    cinDialogue(beat,hqChars,W,H);
+  }
+  const dur=beat.duration||0;
+  if(!text&&dur>0){
+    const fadeIn=clamp(1-hqBeatT/.24,0,1),fadeOut=clamp((hqBeatT-(dur-.34))/.34,0,1),fa=Math.max(fadeIn,fadeOut);
+    if(fa>0){ctx.fillStyle='rgba(0,0,0,'+fa.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
+    if(hqBeatT>=dur){hqAdvance();return;}
+  }
+  if(hqBeatT>.18&&(Input.mouse.down||anyTap())){
+    if(text&&hqChars<n)hqChars=n; else hqAdvance(); Input.mouse.down=false; return;
+  }
+  if(typeof Input.menuBack==='function'&&Input.menuBack()){hqEnd();return;}
+}
+function drawCutsceneEnsemble(dt){
   const _cutW=cutsceneViewWidth();
   ctx.fillStyle='#000'; ctx.fillRect(0,0,_cutW,VH);
   if(!hqSc){ hqEnd(); return; }

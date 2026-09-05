@@ -12013,6 +12013,21 @@ console.log("=== 246. pilot-selected cinematic staging ===");
   var _hqAt=vm.runInContext("JSON.stringify([Object.keys(HQ_AT.pre),Object.keys(HQ_AT.post),HQ_SCENES.length])",ctxv);
   ok(_hqAt==='[["1","8"],["1","3","4","6","7","9"],8]',
      'eight scenes fire at their eight authored boundaries ('+_hqAt+')');
+  /* Mike: "Didnt we have these new full sized HQ cutscenes. what happened to those?" - they were
+     never lost, they were switched off when he chose the ensemble set. BOTH run now: the
+     full-screen per-pilot opening ends at HQ and the ensemble briefing is the scene in that room,
+     so stage 1 plays opening -> briefing -> stage, and the other seven boundaries stay ensemble.
+     ⚠ hqMode is what keeps the two apart. An entry point that failed to set it would draw one
+     renderer's data through the other's loop - beats have `.beats`, ensemble scenes have `.lines`
+     - which surfaces as a blank screen, not an error. */
+  ok(_s246.indexOf('function hqPlayPilot')>0 && _s246.indexOf('function drawCutsceneBeats')>0 &&
+     _s246.indexOf('function drawCutsceneEnsemble')>0,
+     'both cutscene players and both renderers are wired');
+  ok(/hqMode='beats'/.test(_s246) && /hqMode='ens'/.test(_s246) &&
+     /if\(hqMode==='beats'\) return drawCutsceneBeats/.test(_s246),
+     'and each entry point sets the mode the dispatcher reads');
+  ok(/if\(when==='pre' && stage===1\)/.test(_s246) && _s246.indexOf('return hqPlayPilot(pk, briefing)')>0,
+     'stage 1 plays the opening first and the briefing after it');
   ok(_s246.indexOf("CAMPAIGNINTRO:'campaignintro'")>0 &&
      _s246.indexOf("campaignIntroStart(function(){ openStageSelect(fromStage,{boot:true}); })")>0 &&
      _s246.indexOf('for(let i=0;i<7;i++)')>0,
