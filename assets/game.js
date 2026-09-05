@@ -11963,8 +11963,21 @@ const SHIPBOSS = {
      TWO REELS, NOT ONE. `launch` is the 18-frame bay cycle and drives the existing warhead
      mechanic unchanged. `cannon` is new: a 14-frame charge-and-fire authored 640x480, where
      the extra 160px below the hull IS the beam. hMul carries that to _animH. */
+  /* ⚠ MOUNTS FROM THE PACK'S OWN ELEVEN HARDPOINTS (drop 0904ae). Mike: "you have to better
+     anchor the muzzle and effects from where they should be shooting from."
+     CF_DoomsdayCarrierAttacks-Lvl6 names eleven anchors in a 640x480 screen space with the boss at
+     origin - and the hull IS 640x320, with energy_cannon at x=320, dead centre, which is what
+     confirms the mapping. As fractions of the hull box (centre 320,160):
+
+       lower_left_inner  (147,244) -> -0.2703,+0.2625     code L    was -0.31 ,0.17   (25px, 30px)
+       lower_left_outer  (138,244) -> -0.2844,+0.2625     code MG_L was -0.38 ,0.31   (61px, 15px)
+       energy_cannon     (320,290) ->  0     ,+0.4063     code C    was  0    ,0.43   (7px)
+
+     The outer battery was SIXTY-ONE pixels wide of its own barrel on a 640px hull. See CARRIER_HP
+     below for the four upper barrels and the two bays, which had no mounts at all. */
   doomsdaycarriermk2:{key:'nsb_dcarrmk2_closed', name:'DOOMSDAY CARRIER MK II', w:640,h:320,ty:172, proj:'mirv',
-                  mounts:{L:[-0.31,0.17],C:[0,0.43],R:[0.31,0.17],MG_L:[-0.38,0.31],MG_R:[0.38,0.31]},
+                  mounts:{L:[-0.2703,0.2625],C:[0,0.4063],R:[0.2703,0.2625],
+                          MG_L:[-0.2844,0.2625],MG_R:[0.2844,0.2625]},
                   /* ⚠ THIS BOSS DOES NOT USE THE GENERIC PATTERN LIST. shipBossAttack returns
                      immediately for doomsdaycarriermk2 - "the Mk II's bay reel, cannon reel and
                      mega-phase director already own its cadence" - so anything added to `pats`
@@ -12739,6 +12752,10 @@ function shipBossMuzzleTick(b, dt){
    at every site the generic flash already reaches and cannot be drawn in one place and missed in
    another - which is how the 0904p muzzle audit went wrong in the first place */
 function shipBossMuzzleDraw(b){
+  if(b && b._s9Beam && typeof s9aBeamTick==='function'){
+    s9aBeamTick(b, (typeof _lastDt==='number'?_lastDt:1/60));
+    if(typeof s9aBeamDraw==='function') s9aBeamDraw(b);
+  }
   if(b && b._s9aMuz && typeof s9aTwinMuzzle==='function') s9aTwinMuzzle(b);
   const D=b&&b._ship?SHIPBOSS[b._ship]:null, F=b&&b._smz;
   if(!D||!D.proj||!F||typeof XART==='undefined') return;
@@ -15787,6 +15804,87 @@ function s9aTwinMuzzle(b){
   ctx.drawImage(im, cx-w/2, cy-h/2, w, h); ctx.restore();
 }
 function s9aMuzzleStart(b,fam){ b._s9aMuz={fam:fam,t:0,life:0.30}; }
+/* ============================================================
+   THE CORE BEAM - HEAD, TILEABLE BODY, IMPACT CAP (drop 0904ae)
+
+   CF_BossAttacks-Lvl9 ships each boss a beam in three parts and the README says exactly how they
+   go together: "Beam tiles intentionally meet their top and bottom frame edges so they repeat
+   vertically without a gap" and "Vertically repeat this tile between emitter and impact cap."
+   That is a real beam - an emitter head that stays put, a body of whatever length the geometry
+   needs, and a cap where it lands - rather than one plate stretched, which is what stretching a
+   64px head down 400px would have been.
+
+   It fires from the pack's own `core_beam_anchor`, which is the C mount (corrected in 0904z), and
+   it commits: the angle is locked when the burn starts, the same TELL -> COMMIT -> RECOVER the
+   Harrier's wing cannons use, so it is aimed but dodgeable.
+   ============================================================ */
+const S9_BEAM = {
+  warpsentinel  :{head:'warpcrystalbeam', tile:'warpcrystalbeamtile', cap:'warpcrystalimpact', w:34},
+  tidalsovereign:{head:'tidalpressurebeam',tile:'tidalpressurebeamtile',cap:'tidalgeyserimpact', w:38},
+};
+const S9_BEAM_CHARGE=0.62, S9_BEAM_OFF=1.85, S9_BEAM_END=2.20;
+function s9aBeamStart(b){ b._s9Beam={t:0, ang:0, locked:false}; }
+function s9aBeamTick(b,dt){
+  const B=b&&b._s9Beam; if(!B) return false;
+  const D=S9_BEAM[b._ship]; if(!D){ b._s9Beam=null; return false; }
+  B.t+=dt;
+  const C=shipBossMount(b,'C');
+  if(B.t<S9_BEAM_CHARGE){
+    B.ang=clamp(Math.atan2(player.y-C.y,player.x-C.x)-Math.PI/2,-0.30,0.30);
+  }else if(B.t<S9_BEAM_OFF){
+    if(!B.locked){ B.locked=true; shake=Math.max(shake,6);
+      if(Audio.SFX&&Audio.SFX.helixCharge)Audio.SFX.helixCharge();
+      else if(Audio.SFX&&Audio.SFX.laserShot)Audio.SFX.laserShot(); }
+    if(typeof chaosHarrierBeamRay==='function') chaosHarrierBeamRay(b,C,Math.PI/2+B.ang,D.w*0.46);
+  }
+  if(B.t>=S9_BEAM_END){ b._s9Beam=null; return false; }
+  return true;
+}
+function s9aBeamDraw(b){
+  const B=b&&b._s9Beam; if(!B||typeof XART==='undefined') return;
+  const D=S9_BEAM[b._ship]; if(!D) return;
+  const C=shipBossMount(b,'C'), n=8, fi=Math.floor((B.t||0)*14)%n;
+  /* the charge shows on the head plate before anything burns, so the commit is visible */
+  if(B.t<S9_BEAM_CHARGE){
+    const k=D.head+'_'+fi;
+    if(XART.rdy(k)){
+      const a=Math.min(1,B.t/S9_BEAM_CHARGE), im=XART.get(k);
+      ctx.save(); ctx.translate(C.x,C.y); ctx.rotate(B.ang);
+      ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.35+0.55*a; ctx.imageSmoothingEnabled=false;
+      const h=D.w*1.9*(0.5+0.5*a), w=D.w*(0.5+0.5*a);
+      ctx.drawImage(im,-w/2,-h*0.25,w,h); ctx.restore();
+    }
+    return;
+  }
+  if(B.t>=S9_BEAM_OFF) return;
+  const len=VH-C.y+120;
+  ctx.save(); ctx.translate(C.x,C.y); ctx.rotate(B.ang);
+  ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
+  /* HEAD at the emitter, then the BODY tiled to length. The tile is repeated, not stretched -
+     that is the whole reason the pack cuts its top and bottom edges to meet. */
+  const hk=D.head+'_'+fi, tk=D.tile+'_'+fi;
+  let y=0;
+  if(XART.rdy(hk)){
+    const im=XART.get(hk), h=D.w*(im.naturalHeight/Math.max(1,im.naturalWidth));
+    ctx.drawImage(im,-D.w/2,-h*0.22,D.w,h); y=h*0.70;
+  }
+  if(XART.rdy(tk)){
+    const im=XART.get(tk), th=D.w*(im.naturalHeight/Math.max(1,im.naturalWidth));
+    for(; y<len; y+=th){
+      const seg=Math.min(th,len-y);
+      ctx.drawImage(im, 0,0, im.naturalWidth, im.naturalHeight*(seg/th), -D.w/2, y, D.w, seg);
+    }
+  }
+  ctx.restore();
+  /* the CAP where it lands */
+  const a=Math.PI/2+B.ang, ex=C.x+Math.cos(a)*(VH-C.y+18), ey=C.y+Math.sin(a)*(VH-C.y+18);
+  const ck=D.cap+'_'+fi;
+  if(XART.rdy(ck)){
+    const im=XART.get(ck), w=D.w*2.6, h=w*(im.naturalHeight/Math.max(1,im.naturalWidth));
+    ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(im, ex-w/2, ey-h/2, w, h); ctx.restore();
+  }
+}
 function spaceBossShot(x,y,a,sp,kind,o){o=o||{};const hit=(S5_PROJECTILE_HIT&&S5_PROJECTILE_HIT[kind])||(S9_PROJECTILE_HIT&&S9_PROJECTILE_HIT[kind])||[12,12];
   if(o.w==null)o.w=hit[0];if(o.h==null)o.h=hit[1];const q=eShootT(x,y,a,sp,kind,o);q._boss=true;
   q._bfam=run.stage===9?'cyclone':(kind==='s5missile'?'mirv':kind==='s5null'?'toxic':'rampart');q._noArsenal=!!o.noArsenal;q._forceStageArt=!!o.forceStageArt;
@@ -16013,6 +16111,9 @@ function s9aSignature(b, sent, step){
      them regardless of how the caller filters the beat. Caught by the probe asking which kinds
      actually reached eBullets rather than whether the function ran. */
   const sig=(b._s9aSig=(b._s9aSig|0)+1);
+  /* the core beam takes every third signature beat on both bosses - it is the longest and most
+     committed of them, so it wants room around it rather than a slot in a fast rotation */
+  if(sig%3===0 && S9_BEAM[b._ship]){ s9aBeamStart(b); b.fireCd=S9_BEAM_END+0.30; s9aMuzzleStart(b, sent?'warpvoidmuzzle':'tidalhydromuzzle'); return; }
   if(sent){
     if(sig%2===0){
       /* SINGULARITY BLOOM - a slow ring that grows through the playfield */
@@ -16460,6 +16561,64 @@ function carrierThunderheadDraw(b){
   ctx.globalAlpha=.82;ctx.strokeStyle='#9bffdb';ctx.lineWidth=2;
   ctx.strokeRect(T.gap*cw+3,PLAY.y+3,cw*2-6,VH-PLAY.y-6);ctx.restore();
 }
+/* ============================================================
+   THE CARRIER'S ELEVEN NAMED HARDPOINTS (drop 0904ae)
+
+   Straight out of CF_DoomsdayCarrierAttacks-Lvl6's manifest, converted once from its 640x320
+   canvas to fractions of the hull box. Five of them already had approximate `mounts`; the four
+   UPPER barrels and the two BAYS had none, so the prism crossfire - which the pack specifies as
+   "four upper barrels fire mirrored diagonal lanes" - was being fired out of the lower pods.
+   ============================================================ */
+const CARRIER_HP = {
+  upper_left_outer :[-0.1141,-0.2156], upper_left_inner :[-0.0984,-0.2156],
+  upper_right_inner:[ 0.0984,-0.2156], upper_right_outer:[ 0.1141,-0.2156],
+  lower_left_outer :[-0.2844, 0.2625], lower_left_inner :[-0.2703, 0.2625],
+  lower_right_inner:[ 0.2703, 0.2625], lower_right_outer:[ 0.2844, 0.2625],
+  left_bay         :[-0.2500, 0.0938], right_bay        :[ 0.2500, 0.0938],
+  energy_cannon    :[ 0.0000, 0.4063],
+};
+/* resolved through the boss's own visual pose, exactly as shipBossMount does, so a hardpoint
+   follows the hull when it banks or recoils instead of floating at a fixed offset */
+function carrierHP(b, name){
+  const M=CARRIER_HP[name]; if(!b||!M) return {x:(b?b.x:0), y:(b?b.y:0)};
+  const y=(b._drawY!=null)?b._drawY:b.y;
+  const P=(typeof shipBossVisualPose==='function')?shipBossVisualPose(b):{x:0,y:0,rot:0,sx:1,sy:1};
+  const lx=b.w*M[0]*P.sx, ly=b.h*M[1]*P.sy;
+  const c=Math.cos(P.rot||0), sn=Math.sin(P.rot||0);
+  return {x:b.x+P.x+lx*c-ly*sn, y:y+P.y+lx*sn+ly*c};
+}
+/* ============================================================
+   CHROME FLAK FAN - THE SHELLS AIRBURST NOW (drop 0904ae)
+
+   The pack specifies this one precisely: "Arcing chrome shells airburst at staggered depths. Each
+   burst spawns five short-lived fragments", airburst_ms 640, child angles -48/-24/0/24/48.
+
+   What shipped was a pair of shells that, in the code's own words, "stay on that line" - they flew
+   straight and expired. So the attack had no second half, and `s6mb_flakburst` and
+   `s6mb_clusterburst` were two more families registered with nothing drawing them.
+
+   The burst is what makes the pattern readable: the shell is a telegraph you can see travelling,
+   and the fan it becomes is the actual threat, at a depth you can judge from the shell. A round
+   that just flies is a bullet; this is a decision.
+   ============================================================ */
+const CARRIER_FLAK_FUSE=0.64;          // the pack's airburst_ms
+const CARRIER_FLAK_CHILDREN=[-48,-24,0,24,48].map(d=>d*Math.PI/180);
+function carrierFlakTick(dt){
+  if(typeof eBullets==='undefined') return;
+  for(let i=eBullets.length-1;i>=0;i--){
+    const q=eBullets[i]; if(!q || q._flakFuse==null) continue;
+    q._flakFuse-=dt;
+    if(q._flakFuse>0) continue;
+    const a=Math.atan2(q.vy,q.vx), sp=Math.hypot(q.vx,q.vy)*0.78;
+    for(const o of CARRIER_FLAK_CHILDREN){
+      const c=eShootT(q.x,q.y,a+o,sp,'s6cluster',{w:16,h:22,silent:o!==0});
+      if(c){ c._boss=true; c._bfam='mirv'; c._noArsenal=true; c.life=1.15; }
+    }
+    if(typeof explode==='function') explode(q.x,q.y,54,'#ffd05a',null,'s6mb_clusterburst',null);
+    if(Audio.SFX&&(Audio.SFX.expSmall)) Audio.SFX.expSmall();
+    q.dead=true; eBullets.splice(i,1);
+  }
+}
 function carrierMegaTick(b,dt){
   carrierMegaInit(b);const M=b&&b._mega;if(!M)return;M.t+=dt;
   const ratio=clamp(b.hp/(b.maxhp||1),0,1),phase=ratio>.75?0:(ratio>.50?1:(ratio>.25?2:3));
@@ -16495,8 +16654,15 @@ function carrierMegaTick(b,dt){
     M.cd=1.55;
   }else if(M.phase===2){
     if(M.step&1){
-      /* GRAVITY PRISM: three bright, locked prism lanes. */
-      for(const row of [[L,-.10],[C,0],[R,.10]]){const a=aimPlayer(row[0].x,row[0].y)+row[1];carrierMegaShot(b,row[0],a,4.3,'s6prism',{silent:row[0]!==C});}
+      /* PRISM CROSSFIRE, from the FOUR UPPER BARRELS the pack names for it - "four upper barrels
+         fire mirrored diagonal lanes, then reverse the crossing angle on the next volley". They
+         had no mounts at all before this, so it was firing out of the lower pods. */
+      const _ub=['upper_left_outer','upper_left_inner','upper_right_inner','upper_right_outer'];
+      const _ua=(M.step&2)?[-22,-8,8,22]:[22,8,-8,-22];
+      for(let _i=0;_i<4;_i++){
+        const pt=carrierHP(b,_ub[_i]);
+        carrierMegaShot(b,pt,Math.PI/2+_ua[_i]*Math.PI/180,4.3,'s6prism',{silent:_i>0});
+      }
       for(const slot of ['L','C','R'])carrierMegaMuzzle(b,slot,'s6mb_prismmuzzle',1.08);M.cd=1.25;
     }else{
       /* Slow gravity mines occupy the outer lanes; the centre remains a deliberate door. */
@@ -16512,9 +16678,15 @@ function carrierMegaTick(b,dt){
       for(const row of [[L,-1],[R,1]])for(const o of [.22,.38,.54])carrierMegaShot(b,row[0],Math.PI/2+row[1]*o,3.35,'s6cluster',{silent:true});
       carrierMegaMuzzle(b,'L','s6mb_cyclonemuzzle',1.0);carrierMegaMuzzle(b,'R','s6mb_cyclonemuzzle',1.0);M.cd=1.18;
     }else{
-      /* A pair of flak shells target where the player was at release and stay on that line. */
-      for(const row of [[L,-.08],[R,.08]])carrierMegaShot(b,row[0],aimPlayer(row[0].x,row[0].y)+row[1],3.75,'s6flak',{silent:row[0]!==L});
-      carrierMegaMuzzle(b,'L','s6mb_prismmuzzle',.90);carrierMegaMuzzle(b,'R','s6mb_prismmuzzle',.90);M.cd=1.08;
+      /* CHROME FLAK FAN, to the pack's own geometry: alternating lower INNER pods, the four
+         authored launch angles, and a fuse that turns each shell into a five-way fan. */
+      const _fa=[[-18,'lower_left_inner'],[18,'lower_right_inner'],[10,'lower_left_inner'],[-10,'lower_right_inner']];
+      for(let _i=0;_i<2;_i++){
+        const row=_fa[(M.step+_i)%4], pt=carrierHP(b,row[1]);
+        const q=carrierMegaShot(b,pt,Math.PI/2+row[0]*Math.PI/180,3.75,'s6flak',{silent:_i>0});
+        if(q) q._flakFuse=CARRIER_FLAK_FUSE;
+      }
+      carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.90);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.90);M.cd=1.08;
     }
   }
   if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch))(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch)();
@@ -24940,6 +25112,11 @@ function enemySeparate(dt){
    ============================================================ */
 function updatePlay(dt){
   _lastDt=dt;
+  /* ⚠ THE FLAK FUSE TICKS HERE, NOT IN THE BOSS. A shell in flight has to reach its airburst even
+     if the carrier dies in the meantime - hanging the fuse off carrierTick would make killing the
+     boss quietly delete every shell already on its way, which is a fight the player would learn
+     to exploit rather than dodge. */
+  if(typeof carrierFlakTick==='function') carrierFlakTick(dt);
   /* Defensive resume guard: normal Stage 5/9 flow finishes Gravity Mode inside GS.LAUNCH before
      PLAY.  If a developer save/reload restores the conversion mid-beat, gameplay still cannot
      advance waves, shots or pickups underneath its remaining frames. */
