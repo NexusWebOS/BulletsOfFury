@@ -9598,20 +9598,32 @@ console.log("=== 201. rank glyph ===");
      rank and score stay untinted (his 0807q call), everything is placed against the PANEL rather
      than the viewport, the avatar is sized to its own bay so it cannot outgrow the frame, and the
      percent sign still resolves. */
-  ok(/scCen\(art,rTxt,[^;]*?,null,0,1,0\.05\)/.test(_g201),
+  /* ⚠ MATCH THE PROPERTY, NOT THE HELPER. This has now been repointed three times purely because
+     the drawing call was renamed around it (scCen -> scCenLift), which is a test tracking an
+     implementation detail rather than Mike's rule. What 0807q actually requires is that the rank
+     and the score pass NO TINT - a tint composites in 'color' and the letter stops reading as the
+     game's lettering. Matched on the tint arguments now, whichever helper carries them. */
+  ok(/scCen\w*\(art,rTxt,[^;]*?,null,0,1,0\.05[,)]/.test(_g201),
      'the rank glyph is drawn with no tint');
   /* THIS PINNED THE SIZE EXPRESSION, NOT THE PROPERTY IT NAMES (drop 0812b). It matched the
      literal "ph*0.040, null, 0, fl, 0.06)", so hoisting the size into a named constant in order to
      right-align the score — a change that touched neither the tint nor the size — failed an
      assertion whose subject is "the score draws untinted". Both halves are now checked directly:
      the tint arguments stay null/0, and the size is still ph*0.040. */
-  ok(/scCen\(art,sTxt,[^;]*?,null,0,1,0\.05\)/.test(_g201),
+  ok(/scCen\w*\(art,sTxt,[^;]*?,null,0,1,0\.05[,)]/.test(_g201),
      'and so is the score');
   /* Mike, 0904: "Clear Time - make this a metric on the screen but not in the box, down below
      with the score and rank section." It shares their bar, and it is a SNAPSHOT rather than a
      live read of stageTimer, which beginStage and the flyover both move. */
   ok(/const cTxt='CLEAR TIME = '/.test(_g201) && /clearT: \(typeof stageTimer==='number'/.test(_g201),
      'clear time sits in the score/rank bar and is snapshotted, not read live');
+  /* Mike: "replace the font here with the right stage fonts, this font is horrible here." The
+     debrief was asking for uiFontArt(), which IS stage 1's card alphabet, so every stage's clear
+     screen was lettered in grey jungle stone. */
+  ok(/const art=\(typeof curFontArt==='function'\)\?curFontArt\(\)/.test(_g201),
+     'the debrief is lettered in the face of the stage just cleared, not stage 1’s card alphabet');
+  ok(/function scCenLift\(/.test(_g201) && /ctx\.globalCompositeOperation='lighter'/.test(_g201),
+     'and a dark face is lifted additively rather than tinted, which cannot brighten it');
   /* the size is SOLVED now rather than fixed, so what is pinned is that it is solved against the
      bar's own width - which is the property the literal was standing in for */
   ok(/const H=Math\.min\(scFit\(art,sTxt,colW3/.test(_g201),

@@ -55357,9 +55357,17 @@ function scFillBar(x,y,w,h,type,frac,animT){
     const im=XART.rdy(key)?XART.get(key):null;
     ctx.save();
     ctx.beginPath(); ctx.rect(inx, iny, fw, inh); ctx.clip();
-    ctx.globalAlpha=(ctx.globalAlpha||1)*0.72;
+    /* ⚠ MEASURED, AFTER MIKE CALLED THE TYPE UNREADABLE (drop 0904af). I assumed the FONT was the
+       problem and it was the FILL - mine, from 0904y. Contrast of every Vol.3 face against these
+       bars as they were drawn: nothing cleared 2.7:1, and stage 7's corroded metal on the blue
+       `shield` fill came out at 1.01:1, which is text you cannot see at all. The brightest face in
+       the pack (stage 6) only reached 1.93:1 on `speed`.
+       A value bar does not need to be bright to be read - it needs to be COLOURED and to have a
+       visible end. At 0.42 it is a dark tinted bar: the hue and the extent both still read, and
+       every face now sits well clear of it. */
+    ctx.globalAlpha=(ctx.globalAlpha||1)*0.42;
     ctx.fillStyle=SC_FILL_RGB[type]||'#2f6d3a'; ctx.fillRect(inx, iny, inw, inh);
-    if(im){ ctx.globalAlpha=(ctx.globalAlpha||1)*0.55; ctx.drawImage(im, inx, iny, inw, inh); }
+    if(im){ ctx.globalAlpha=(ctx.globalAlpha||1)*0.40; ctx.drawImage(im, inx, iny, inw, inh); }
     ctx.restore();
     if(fw>2 && fw<inw-1){
       ctx.save(); ctx.globalAlpha=(ctx.globalAlpha||1)*0.85; ctx.globalCompositeOperation='lighter';
@@ -55374,6 +55382,29 @@ function scFit(art,text,maxW,Hmax,Hmin,sp){
   let H=Hmax; const lo=Math.max(4,Hmin||4);
   while(H>lo && _tw(art,text,H,sp)>maxW) H-=0.5;
   return H;
+}
+/* ============================================================
+   LIFTING A DARK FACE WITHOUT REPAINTING IT (drop 0904af)
+
+   The Vol.3 faces run from stage 3's bright glacier ice (75th-percentile glyph luminance 235) to
+   stage 2's blackened basalt (71) - a 3.3x spread, because each one is cut from its stage's own
+   material. On a dark panel the dark ones are simply dim.
+
+   A TINT CANNOT FIX THIS and the file already says why: drawFrameTinted composites in 'color', so
+   hue and saturation come from the tint and LUMINOSITY comes from the plate. Tinting a dark face
+   white desaturates it; it does not brighten it.
+
+   So this is the shadeglow idiom this engine already uses elsewhere - draw the authored pixels,
+   then re-burn them additively. An additive pass of a glyph over itself roughly doubles its
+   luminance where it is not already clipped, which lifts basalt and sewer metal a long way and
+   barely touches ice, so the faces converge on legible without any of them being repainted.
+   ============================================================ */
+function scCenLift(art,text,cx,cy,H,tintC,tintA,alpha,sp,lift){
+  scCen(art,text,cx,cy,H,tintC,tintA,alpha,sp);
+  if(!(lift>0) || !art || !art.font || typeof stageText!=='function') return;
+  ctx.save(); ctx.globalCompositeOperation='lighter';
+  stageText(art,text,cx,cy,H,tintC,tintA,(alpha==null?1:alpha)*lift,sp);
+  ctx.restore();
 }
 function scCen(art,text,cx,cy,H,tintC,tintA,alpha,sp){
   if(art && art.font && typeof stageText==='function') stageText(art,text,cx,cy,H,tintC,tintA,alpha,sp);
@@ -55512,7 +55543,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
     scFillBar(b[0]+b[2]*0.020, b[1]+b[3]*0.16, b[2]*0.960, b[3]*0.68, row.fill, frac, t);
     const txt=row.k+' = '+row.fmt(S);
     const H=scFit(art,txt,b[2]*0.90,b[3]*0.62,ph2*0.010,0.05);
-    scCen(art,txt,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,app,0.05);
+    scCenLift(art,txt,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,app,0.05,0.55);
   }
 
   /* ---- 5. SCORE / CLEAR TIME / RANK ---- */
@@ -55535,9 +55566,9 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
                        scFit(art,rTxt,colW3,b[3]*0.34,ph2*0.010,0.05));
       /* ⚠ UNTINTED. Mike, 0807q: "Dont color overlay the rank please". */
       const cy=b[1]+b[3]*0.50;
-      scCen(art,sTxt,b[0]+b[2]*0.185,cy,H,null,0,1,0.05);
-      scCen(art,cTxt,b[0]+b[2]*0.500,cy,H,null,0,1,0.05);
-      scCen(art,rTxt,b[0]+b[2]*0.820,cy,H,null,0,1,0.05);
+      scCenLift(art,sTxt,b[0]+b[2]*0.185,cy,H,null,0,1,0.05,0.45);
+      scCenLift(art,cTxt,b[0]+b[2]*0.500,cy,H,null,0,1,0.05,0.45);
+      scCenLift(art,rTxt,b[0]+b[2]*0.820,cy,H,null,0,1,0.05,0.45);
     }
     if(t>1.15 && drawStageClear._stamp<1){
       if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7);
@@ -55591,7 +55622,22 @@ function drawStageClear(dt){
     Audio.startMusic('stageclear');
   }
   const R=drawStageClear._res; if(!R) return;
-  const art=(typeof uiFontArt==='function')?uiFontArt():null;
+  /* ⚠ THE WHOLE DEBRIEF WAS DRAWING IN STAGE 1'S CARD ALPHABET (drop 0904af).
+
+     Mike, on the finished screen: "now replace the font here with the right stage fonts, this font
+     is horrible here."
+
+     `uiFontArt()` is literally `ASSETS.stageArt['1']` - stage 1's grey jungle-stone CARD face -
+     so every label, number, the brief and the sign-off came out in it no matter which stage you
+     had just cleared. That is the same fault 0904v fixed for GET READY / 3-2-1 / GO, still live on
+     this screen because it asks for the UI face rather than the current one.
+
+     `curFontArt()` is the accessor that already answers this: the authored Vol.3 face for
+     `run.stage`, with the card alphabet kept behind it for the frames before the sheet decodes -
+     stageText draws NOTHING when its sheet has not landed (the 0810o trap), so the fallback is
+     load-bearing, not decoration. On this screen run.stage is the stage just cleared, so the
+     debrief is lettered in the material of the level you finished. */
+  const art=(typeof curFontArt==='function')?curFontArt():((typeof uiFontArt==='function')?uiFontArt():null);
   const F=(px)=>'bold '+Math.max(8,Math.round(px))+'px "BOFmil", monospace';
 
   /* ---- backdrop: the level you just cleared, dimmed, so the screen belongs to the stage ---- */
