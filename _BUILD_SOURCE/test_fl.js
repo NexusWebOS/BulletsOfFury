@@ -9590,18 +9590,23 @@ console.log("=== 201. rank glyph ===");
      rank and score stay untinted (his 0807q call), everything is placed against the PANEL rather
      than the viewport, the avatar is sized to its own bay so it cannot outgrow the frame, and the
      percent sign still resolves. */
-  ok(/scCen\(art,rTxt,[^;]*?,null,0,1,0\.06\)/.test(_g201),
+  ok(/scCen\(art,rTxt,[^;]*?,null,0,1,0\.05\)/.test(_g201),
      'the rank glyph is drawn with no tint');
   /* THIS PINNED THE SIZE EXPRESSION, NOT THE PROPERTY IT NAMES (drop 0812b). It matched the
      literal "ph*0.040, null, 0, fl, 0.06)", so hoisting the size into a named constant in order to
      right-align the score — a change that touched neither the tint nor the size — failed an
      assertion whose subject is "the score draws untinted". Both halves are now checked directly:
      the tint arguments stay null/0, and the size is still ph*0.040. */
-  ok(/scCen\(art,sTxt,[^;]*?,null,0,1,0\.06\)/.test(_g201),
+  ok(/scCen\(art,sTxt,[^;]*?,null,0,1,0\.05\)/.test(_g201),
      'and so is the score');
+  /* Mike, 0904: "Clear Time - make this a metric on the screen but not in the box, down below
+     with the score and rank section." It shares their bar, and it is a SNAPSHOT rather than a
+     live read of stageTimer, which beginStage and the flyover both move. */
+  ok(/const cTxt='CLEAR TIME = '/.test(_g201) && /clearT: \(typeof stageTimer==='number'/.test(_g201),
+     'clear time sits in the score/rank bar and is snapshotted, not read live');
   /* the size is SOLVED now rather than fixed, so what is pinned is that it is solved against the
      bar's own width - which is the property the literal was standing in for */
-  ok(/const H=scFit\(art,sTxt\+'   '\+rTxt,IW\*0\.86/.test(_g201),
+  ok(/const H=Math\.min\(scFit\(art,sTxt,colW3/.test(_g201),
      'and the score/rank size is fitted to the bar instead of hard-coded');
   ok(_g201.indexOf("pc = full ? (beat>0 ? '#8de23a' : '#ffd24a')")>0,
      'while the password keeps its two-colour flash');
@@ -11947,9 +11952,19 @@ console.log("=== 246. pilot-selected cinematic staging ===");
   ok(_s246.indexOf("cinbg_hq_beach")>0 && _s246.indexOf("cinbg_hq_gate")>0 &&
      _s246.indexOf('const CAMPAIGN_INTRO_BEATS')>0,
      'close beach and gate plates remain available as stationary FURY HQ prologue views');
-  ok(_s246.indexOf('hqRoster')<0 && _s246.indexOf("motion==='hq_approach'")>0 &&
-     _s246.indexOf("motion==='jungle_approach'")>0,
-     'the retired briefing remains gone while both moving destination sequences stay wired');
+  /* ⚠ THIS PINNED `hqRoster` STAYING ABSENT - i.e. that the ensemble briefing remained DELETED.
+     Mike was asked directly which set he wanted running and chose "restore the old ensemble
+     scenes", so that clause was defending a decision he has reversed. The half that is still a
+     live rule - both moving destination sequences stay wired - is kept, and the restored briefing
+     is asserted on its own terms beside it. */
+  ok(_s246.indexOf("motion==='hq_approach'")>0 && _s246.indexOf("motion==='jungle_approach'")>0,
+     'both moving destination sequences stay wired');
+  ok(_s246.indexOf('const HQ_SCENES')>0 && _s246.indexOf('const HQ_AT')>0 &&
+     _s246.indexOf('hqRoster')>0,
+     'and the eight ensemble HQ scenes are restored alongside them');
+  var _hqAt=vm.runInContext("JSON.stringify([Object.keys(HQ_AT.pre),Object.keys(HQ_AT.post),HQ_SCENES.length])",ctxv);
+  ok(_hqAt==='[["1","8"],["1","3","4","6","7","9"],8]',
+     'eight scenes fire at their eight authored boundaries ('+_hqAt+')');
   ok(_s246.indexOf("CAMPAIGNINTRO:'campaignintro'")>0 &&
      _s246.indexOf("campaignIntroStart(function(){ openStageSelect(fromStage,{boot:true}); })")>0 &&
      _s246.indexOf('for(let i=0;i<7;i++)')>0,

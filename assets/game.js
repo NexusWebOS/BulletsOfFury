@@ -38845,8 +38845,138 @@ const PILOT_OPENINGS={
   ]}
 };
 
-let hqSc=null, hqLine=0, hqChars=0, hqDone=null, hqSeen={}, hqBeatT=0;
-const HQ_CPS=42;
+/* ============================================================
+   THE EIGHT ENSEMBLE HQ SCENES ARE BACK (drop 0904ac)
+
+   Mike, asked directly which set he wanted running: restore the old ensemble scenes.
+
+   Commit dfeff4ce deleted HQ_SCENES - the eight scenes from ColeForge's own cutscene bible, with
+   their two-portrait staging - and replaced them with PILOT_OPENINGS, a per-pilot opener. It also
+   narrowed hqTrigger to `when==='pre' && stage===1`, so SEVEN of the eight authored boundaries
+   (pre 8, post 1/3/4/6/7/9) stopped firing anything at all. The generic call sites were never
+   touched and still pass any stage, so this restores the table and the trigger, not the plumbing.
+
+   Recovered verbatim from dfeff4ce^ rather than retyped. The renderer needed no adaptation: the
+   CURRENT drawCutscene accepts exactly the same `sc` contract the old one did - bg, ensemble,
+   speaking, speakingPilot, speakingPose, fullText, text - which was checked field by field before
+   any of this was moved, and CUT_HQ, anyTap and uiBlipRep are all still present.
+
+   ⚠ PILOT_OPENINGS IS KEPT AS DATA AND IS NO LONGER PLAYED. cinPrewarmPilot reads it to warm the
+   cinematic art, and the ensemble scenes draw from the same portraits and backgrounds, so it
+   still earns its place as the prewarm's key source. Nothing routes to it as a scene any more.
+   ⚠ cinDialogue is now referenced by nothing - it was the beats renderer for the openers. Left on
+   disk rather than deleted; it is a working authored renderer and the campaign prologue is the
+   obvious place it could be wanted.
+   ============================================================ */
+const HQ_SCENES = [
+  {id:'HQ_ALL_00', title:"Nine Chairs, Eight Names", lines:[
+    ['cole',0,"Every military network on Earth is compromised. Every civilian system connected to it is becoming a weapon."],
+    ['axel',2,"Then command authority transfers to the surviving Airforce structure."],
+    ['cole',0,"There is no surviving structure. There is this room."],
+    ['maverick',1,"Good. Less paperwork."],
+    ['yuri',2,"And less supervision. That is not the advantage you think it is."],
+    ['falva',1,"Eight pilots, nine stations. Either Cole cannot count, or somebody is late."],
+    ['cole',0,"That station is not part of today's briefing."],
+    ['lizzie',0,"Then brief the eight who are."],
+    ['decker',0,"The impact was not a comet. It transmitted before it touched the ground."],
+    ['freezer',0,"Destination?"],
+    ['cole',5,"Meridian Basin. We cut a road through everything between here and there."]
+  ]},
+  {id:'HQ_ALL_01', title:"Trust Is a Weapon", lines:[
+    ['decker',0,"The dam defense grid was waiting for our exact approach vector."],
+    ['axel',2,"That route existed on one closed briefing terminal."],
+    ['maverick',2,"So we have a rat."],
+    ['falva',0,"Or the Signal can predict obvious people. You fly like a bar fight."],
+    ['maverick',3,"A winning bar fight."],
+    ['yuri',2,"You broke formation three times."],
+    ['cole',0,"Nobody leaves the room accused and nobody leaves it cleared. From now on, routes are carried by hand."],
+    ['decker',0,"Analog secrecy will slow us."],
+    ['cole',2,"Staying alive is allowed to take longer."]
+  ]},
+  {id:'HQ_ALL_02', title:"Chain of Command", lines:[
+    ['axel',2,"Your improvisation turned an extraction into a collapse."],
+    ['cole',2,"Your formation left a burning aircraft outside the shield."],
+    ['freezer',0,"One pilot."],
+    ['freezer',2,"Then the calculation is wrong."],
+    ['lizzie',0,"Enough. Cole chooses the objective. Axel commands the formation. Either man exceeds that boundary, I end the argument."],
+    ['maverick',1,"With diplomacy?"],
+    ['lizzie',0,"With the payload elevator."],
+    ['falva',3,"I vote Lizzie."]
+  ]},
+  {id:'HQ_ALL_03', title:"The Man Behind the Door", lines:[
+    ['cole',2,"You entered a vault that does not exist."],
+    ['decker',0,"I entered it because it exists."],
+    ['axel',2,"Order of the Matrix. You were placed inside Fury."],
+    ['decker',0,"The distinction is becoming less clear."],
+    ['falva',2,"You used my lab as a bridge."],
+    ['decker',4,"Your hardware was the only system the Signal could not recognize."],
+    ['decker',0,"Because I found the command buried inside the Signal: HARVEST FLEET REDIRECTED."]
+  ]},
+  {id:'HQ_ALL_04', title:"Open the Ninth Door", lines:[
+    ['axel',2,"You kept an unregistered heavy pilot beneath an active command base?"],
+    ['cole',0,"I kept a solution that could not be hacked, bribed, reassigned, or remotely activated."],
+    ['juggernaut',1,"He means I do not take instructions from computers."],
+    ['maverick',3,"I like him."],
+    ['yuri',0,"That is not reassuring."],
+    ['juggernaut',0,"Brotherhood sent me to protect the thing behind Fury. Not the base. Not the aircraft. The people."],
+    ['falva',1,"You have been under us this entire time?"],
+    ['juggernaut',3,"Your music is terrible."],
+    ['falva',2,"Open the door. I changed my mind."],
+    ['cole',5,"Juggernaut, you are cleared for launch."]
+  ]},
+  {id:'HQ_ALL_05', title:"Destroy It or Take It Back", lines:[
+    ['cole',2,"The Black Signal is inside the World Engine. We destroy the core and bury everything connected to it."],
+    ['lizzie',2,"No. We can destroy it, or we can take it back."],
+    ['decker',0,"She is correct. The Signal is not the invasion. It is a change-of-address notice."],
+    ['falva',1,"Decker attacks through the network. I keep the counter-signal analog. If one gets infected, the other cuts it loose."],
+    ['juggernaut',1,"We become the anesthesia."]
+  ]},
+  {id:'HQ_ALL_06', title:"Fury Means All of Us", lines:[
+    ['cole',0,"Axel, the formation is yours."],
+    ['axel',0,"And the field command remains yours."],
+    ['maverick',1,"Good. I need you where I am not looking."],
+    ['freezer',0,"That may be the closest he gets to trust."],
+    ['falva',1,"Then be brilliant faster."],
+    ['cole',1,"I know."],
+    ['juggernaut',5,"Doors open. Problems close."],
+    ['cole',5,"Fury Division—last sky. Launch."]
+  ]},
+  {id:'HQ_ALL_07', title:"The Emergency Division", lines:[
+    ['decker',4,"The Signal escaped past the Moon."],
+    ['falva',4,"Show us."],
+    ['lizzie',0,"This was supposed to be the emergency division."],
+    ['cole',0,"It still is."],
+    ['cole',5,"It does now."]
+  ]}
+];
+/* which scene fires where. 'pre' plays before that stage, 'post' after it clears. */
+const HQ_AT = { pre:{1:'HQ_ALL_00', 8:'HQ_ALL_06'},
+                post:{1:'HQ_ALL_01', 3:'HQ_ALL_02', 4:'HQ_ALL_03', 6:'HQ_ALL_04', 7:'HQ_ALL_05', 9:'HQ_ALL_07'} };
+let hqSc=null, hqLine=0, hqChars=0, hqDone=null, hqSeen={};
+let hqSlot={left:null, right:null}, hqSpeak='left';
+let hqRoster=[];
+const HQ_CPS=42;                                   // characters per second
+
+const HQ_CORE_ROSTER=['axel','lizzie','cole','decker','falva','freezer','maverick','yuri'];
+function hqRosterFor(id){
+  const roster=HQ_CORE_ROSTER.slice();
+  const sceneNo=Number((String(id||'').match(/(\d+)$/)||[])[1]||0);
+  if(sceneNo>=4) roster.push('juggernaut');          // his sealed-hangar reveal is HQ_ALL_04
+  return roster;
+}
+
+function hqScene(id){ for(const s of HQ_SCENES) if(s.id===id) return s; return null; }
+
+/* seat the speaker of line i, leaving the other slot holding whoever spoke last */
+function hqSeat(i){
+  const ln=hqSc.lines[i]; if(!ln) return;
+  const who=ln[0], pose=ln[1]|0;
+  if(hqSlot.left && hqSlot.left.pilot===who){ hqSlot.left.pose=pose; hqSpeak='left'; return; }
+  if(hqSlot.right && hqSlot.right.pilot===who){ hqSlot.right.pose=pose; hqSpeak='right'; return; }
+  const to=(hqSpeak==='left')?'right':'left';      // opposite the last speaker
+  hqSlot[to]={pilot:who, pose:pose}; hqSpeak=to;
+}
+
 const CIN_HOSTILES=['cinhostile_scout','cinhostile_bone','cinhostile_heavy'];
 
 function cinPilotName(key){
@@ -39047,36 +39177,37 @@ function cinDialogue(beat,budget,W,H){
   }
   msgFaceUse(null);return true;
 }
-function hqPlay(pilot,onDone){
-  const sc=PILOT_OPENINGS[pilot]; if(!sc){if(onDone)onDone();return false;}
-  hqSc=sc;hqLine=0;hqChars=0;hqBeatT=0;hqDone=onDone||null;hqSeen['OPEN_'+pilot]=1;
-  cinWarm(sc);
-  try{if(typeof Audio!=='undefined'&&Audio.startMusic)Audio.startMusic('cinematics');}catch(_cinMusic){}
-  setState(GS.CUTSCENE);return true;
+function hqPlay(id, onDone){
+  const sc=hqScene(id); if(!sc){ if(onDone) onDone(); return false; }
+  hqSc=sc; hqLine=0; hqChars=0; hqDone=onDone||null;
+  hqRoster=hqRosterFor(id);
+  hqSlot={left:null,right:null}; hqSpeak='right';  // so line 0 seats left
+  hqSeat(0);
+  hqSeen[id]=1;
+  /* Every Fury HQ story scene owns the dedicated cinematic score. startMusic no-ops when this
+     same track is already healthy, so connected dialogue beats do not restart the song. */
+  try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('cinematics'); }catch(_hqm){}
+  setState(GS.CUTSCENE);
+  return true;
 }
+
 function hqEnd(){
-  const d=hqDone;hqSc=null;hqDone=null;hqLine=0;hqChars=0;hqBeatT=0;
-  if(!d){try{if(typeof Audio!=='undefined'&&Audio.startMusic)Audio.startMusic('neonvelocity');}catch(_cinMusic){}}
-  if(d)d();else setState(GS.CAMPHUB);
-}
-function hqAdvance(){
-  hqLine++;hqChars=0;hqBeatT=0;if(!hqSc||hqLine>=hqSc.beats.length){hqEnd();return false;}return true;
-}
-/* Stable campaign-boundary hook: only the selected-pilot Stage 1 opener remains. */
-function hqTrigger(when,stage,onDone){
-  if(when!=='pre'||stage!==1||!run||run.mode!=='campaign'){if(onDone)onDone();return false;}
-  const pilot=(typeof _pilotKey==='function')?_pilotKey():String(run.pilot||'axel');
-  const id='OPEN_'+pilot;if(hqSeen[id]){if(onDone)onDone();return false;}return hqPlay(pilot,onDone);
+  const d=hqDone; hqSc=null; hqDone=null; hqRoster=[];
+  /* HAND THE TRACK BACK EXPLICITLY. A continuation that starts a stage calls startMusic itself, so
+     only the scenes that fall back to the hub matter " and the hub's own guard is
+     `if(!musicPlaying()) startMusic('neonvelocity')`, which is FALSE while the cutscene theme is
+     still going. It would otherwise sit under the campaign map for the rest of the session. */
+  if(!d){ try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('neonvelocity'); }catch(_hqm){} }
+  if(d) d(); else setState(GS.CAMPHUB);
 }
 
-/* ============================================================
-   NEW-CAMPAIGN PROLOGUE (0902)
+/* fire the scene for a boundary if it has one and has not played this run */
+function hqTrigger(when, stage, onDone){
+  const id = HQ_AT[when] && HQ_AT[when][stage];
+  if(!id || hqSeen[id] || !run || run.mode!=='campaign'){ if(onDone) onDone(); return false; }
+  return hqPlay(id, onDone);
+}
 
-   This is the missing story bridge between pilot selection and the campaign map. Close exterior
-   art is treated as an establishing VIEW of FURY HQ; aircraft appear only over the dark-sky title
-   shot, and that aircraft is the generated top-down frame. Any fresh button press skips safely to
-   the same military-map boot that automatic completion reaches.
-   ============================================================ */
 const CAMPAIGN_INTRO_BEATS=[
   {at:0.0,to:3.5,key:'cinbg_hq_aerial',pan:.30,head:'FURY HQ - EARTH DIVISION',
    body:"Hidden off the coast, FURY HQ is home to Earth's strongest elite pilots."},
@@ -39211,32 +39342,75 @@ function drawCampaignIntro(dt){
   if(t>=CAMPAIGN_INTRO_DONE)campaignIntroFinish();
 }
 function drawCutsceneState(dt){
-  const W=cutsceneViewWidth(),H=VH;ctx.fillStyle='#000';ctx.fillRect(0,0,W,H);
-  if(!hqSc){hqEnd();return;}const beat=hqSc.beats[hqLine];if(!beat){hqEnd();return;}
-  if(!cinWarm(hqSc))return;
-  hqBeatT+=dt;
-  const bg=beat.bg||(beat.motion==='depart'?hqSc.destination:(beat.motion==='dogfight'||beat.motion==='missile_lock'?'space':(beat.motion==='cloak'?'darksky':'sky')));
-  cinBackdrop(bg,hqBeatT,W,H);cinDrawMotion(hqSc,beat,hqBeatT,W,H*(beat.text?.70:.94));
-  /* Action and travel beats use a real cinematic aperture. Dialogue keeps the full vertical room
-     for its machined panel, while wordless shots get restrained letterboxing and therefore read
-     as cuts rather than another gameplay screen. */
-  if(!beat.text){const bar=Math.max(10,Math.round(H*.052));ctx.fillStyle='#000';ctx.fillRect(0,0,W,bar);ctx.fillRect(0,H-bar,W,bar);}
-  const text=beat.text||'',n=text.length;
-  if(text){
-    const was=Math.floor(hqChars);hqChars=Math.min(n,hqChars+HQ_CPS*dt);const now=Math.floor(hqChars);
-    if(now>was){for(let c=was+1;c<=now;c++){if(c%3===0){uiBlipRep();break;}}}
-    cinDialogue(beat,hqChars,W,H);
+  const _cutW=cutsceneViewWidth();
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,_cutW,VH);
+  if(!hqSc){ hqEnd(); return; }
+  const ln=hqSc.lines[hqLine];
+  if(!ln){ hqEnd(); return; }
+  const full=ln[2], n=full.length;
+
+  const sc={ bg:CUT_HQ, left:hqSlot.left, right:hqSlot.right, speaking:hqSpeak,
+             ensemble:hqRoster, speakingPilot:ln[0], speakingPose:ln[1],
+             fullText:full, text: full.slice(0, Math.min(n, Math.floor(hqChars))) };
+  /* drawCutscene returns false until the background and poses have loaded. XART.rdy STARTS the
+     load on its first call, so a one-shot check always reads false - hold on black and keep
+     asking rather than treating it as missing art. */
+  const shown = drawCutscene(sc);
+  if(!shown){
+    const _f=(typeof uiFontArt==='function')?uiFontArt():null;
+    if(_f && typeof stageText==='function') stageText(_f,'...', VW/2, VH/2, 18, '#5a6070',0.9,1,0.10);
+    return;
   }
-  const dur=beat.duration||0;
-  if(!text&&dur>0){
-    const fadeIn=clamp(1-hqBeatT/.24,0,1),fadeOut=clamp((hqBeatT-(dur-.34))/.34,0,1),fa=Math.max(fadeIn,fadeOut);
-    if(fa>0){ctx.fillStyle='rgba(0,0,0,'+fa.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
-    if(hqBeatT>=dur){hqAdvance();return;}
+  /* ============================================================
+     TYPE IT WITH SOUND, LIKE THE PILOT CARDS (drop 0811r)
+
+     Mike: "load each word letter by letter like the pilot cards with sound".
+
+     The letters were already arriving one at a time; what the scene had was SILENCE. Eight
+     authored ensemble scenes and the only audio in the whole state was the music cue 0811a added.
+
+     ⚠ MATCHED TO THE PILOT CARDS' FEEL, NOT COPIED FROM THEIR CODE. pcUpdate does
+     `if((C.typed|0)%3===0 && ... Math.random()<0.5) blip()` — and that test runs EVERY FRAME, so
+     at 42cps and 60fps one character sits on the same integer for about a frame and a half and
+     can blip twice; the random coin is what stops it sounding like a buzz. Here the blip fires on
+     the character actually ADVANCING, every third one, which gives the same sparse tick
+     deterministically. (The pilot-card version is left alone — it is not what he reported, and
+     its coin flip masks the fault. Recorded rather than quietly changed.) */
+  if(hqChars<n){
+    const _was=Math.floor(hqChars);
+    hqChars+=HQ_CPS*dt;
+    const _now=Math.min(n, Math.floor(hqChars));
+    if(_now>_was){
+      for(let c=_was+1;c<=_now;c++){
+        if(c%3===0){ uiBlipRep(); break; }
+      }
+    }
   }
-  if(hqBeatT>.18&&(Input.mouse.down||anyTap())){
-    if(text&&hqChars<n)hqChars=n;else hqAdvance();Input.mouse.down=false;return;
+
+  /* the advance prompt, inside the dialogue frame, blinking only once the line has finished */
+  if(hqChars>=n && Math.floor(stateT*2.2)%2){
+    const _cw=cutsceneViewWidth(),s=Math.min(_cw/640, VH/480), oy=(VH-480*s)/2, ox=(_cw-640*s)/2;
+    const _df=(typeof msgFaceUse==='function' && msgFaceUse('dialogue')==='dialogue');
+    if(_df && typeof msgTextLeft==='function'){
+      const _nh=13, _nw=msgMeasure('NEXT',_nh,0.08);
+      msgTextLeft('NEXT',_cw-36*s-_nw,oy+441*s,_nh,'#ffe082',0.9,1,0.08,1);
+      msgFaceUse(null);
+    } else {
+      const _f=(typeof uiFontArt==='function')?uiFontArt():null;
+      if(_f && typeof stageText==='function') stageText(_f,'NEXT',ox+552*s,oy+441*s,13,'#ffe082',0.9,1,0.10);
+    }
   }
-  if(typeof Input.menuBack==='function'&&Input.menuBack()){hqEnd();return;}
+
+  if(stateT>0.15 && (Input.mouse.down || anyTap())){
+    if(hqChars<n){ hqChars=n; }                    // first tap completes the line
+    else {
+      hqLine++;
+      if(hqLine>=hqSc.lines.length){ hqEnd(); return; }
+      hqChars=0; hqSeat(hqLine);
+    }
+    Input.mouse.down=false;
+  }
+  if(typeof Input.menuBack==='function' && Input.menuBack()){ hqEnd(); return; }   // skip the scene
 }
 function drawBoot(dt){
   ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
@@ -54663,6 +54837,10 @@ function computeStageResults(){
   drawStageClear._res={
     rows:one.rows, pct:one.pct, rank:one.rank, bonus:one.bonus, face:one.face,
     pw:scNextPassword(),
+    /* ⚠ SNAPSHOT, NOT READ LIVE. The old CLEAR TIME row called fmtTime(stageTimer) every frame,
+       which is only correct while nothing else touches the clock - and beginStage, the flyover and
+       the co-op seat swap all do. Taken once, here, at the moment the stage was cleared. */
+    clearT: (typeof stageTimer==='number' ? stageTimer : 0),
     seats: coop ? [one, two] : null,
   };
   drawStageClear._seq=0; drawStageClear._segT=0; drawStageClear._row=0;
@@ -55133,18 +55311,31 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
       drawStageClear._scoreShown=Math.min(tgt, drawStageClear._scoreShown+Math.max(1,Math.round(R.bonus*dt*1.4)));
       if(Audio.SFX.blip && Math.random()<0.35) Audio.SFX.blip();
     }
+    /* ⚠ CLEAR TIME LIVES HERE, NOT IN THE GRID. Mike, 0904: "Clear Time - make this a metric on
+       the screen but not in the box, down below with the score and rank section." It is a run
+       summary like the score and the rank, not one of the six per-stat slots - so it shares their
+       bar and takes the middle third. */
     const sTxt='SCORE = '+String(drawStageClear._scoreShown|0);
+    const cTxt='CLEAR TIME = '+((typeof fmtTime==='function')?fmtTime(R.clearT||0):String(Math.round(R.clearT||0)));
     const rTxt='RANK = '+(drawStageClear._stamp>0?R.rank:'-');
-    const H=scFit(art,sTxt+'   '+rTxt,IW*0.86,sH*0.46,ph*0.014,0.06);
+    /* solved against the widest of the three columns so the longest string sets the size and all
+       three stay on one type scale */
+    const colW3=IW*0.30;
+    const H=Math.min(scFit(art,sTxt,colW3,sH*0.46,ph*0.012,0.05),
+                     scFit(art,cTxt,colW3,sH*0.46,ph*0.012,0.05),
+                     scFit(art,rTxt,colW3,sH*0.46,ph*0.012,0.05));
     /* ⚠ THE RANK AND THE SCORE DRAW UNTINTED. Mike, 0807q: "Dont color overlay the rank please"
        - a tint composites in 'color' and the letter stops reading as the game's own lettering and
        becomes a coloured shape. My first cut of this screen put the rank in gold and section 201
        caught it, which is exactly what that assertion is for. */
-    scCen(art,sTxt,IX+IW*0.28,sY+sH*0.50,H,null,0,1,0.06);
-    scCen(art,rTxt,IX+IW*0.76,sY+sH*0.50,H,null,0,1,0.06);
-    /* the divider his mock draws between the two halves */
+    scCen(art,sTxt,IX+IW*0.185,sY+sH*0.50,H,null,0,1,0.05);
+    scCen(art,cTxt,IX+IW*0.500,sY+sH*0.50,H,null,0,1,0.05);
+    scCen(art,rTxt,IX+IW*0.820,sY+sH*0.50,H,null,0,1,0.05);
+    /* the dividers his mock draws between the halves - two of them now, three columns */
     ctx.save(); ctx.globalAlpha=0.5; ctx.fillStyle='#9fb4d0';
-    ctx.fillRect(IX+IW*0.52, sY+sH*0.26, Math.max(1,pw*0.003), sH*0.48); ctx.restore();
+    for(const fx of [0.345,0.655])
+      ctx.fillRect(IX+IW*fx, sY+sH*0.26, Math.max(1,pw*0.003), sH*0.48);
+    ctx.restore();
   }
   /* the rank stamp still drives _stamp, because PRESS FIRE and the password both gate on it */
   if(t>1.15 && drawStageClear._stamp<1){
