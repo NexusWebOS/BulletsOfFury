@@ -12314,7 +12314,14 @@ function s9FusionWardenFire(w,phase){
     follow:()=>w&&!w.disabled?{x:w.x,y:w.y+38}:null});
 }
 function s9FusionBossTick(b,dt){
-  const F=b._s9fusion;if(!F||F.phase==='tidal')return false;F.t+=dt;
+  const F=b._s9fusion;if(!F)return false;
+  /* ⚠ THE RING OUTLIVES THE MERGE ON PURPOSE (0905x). Mike: the wardens fuse inside a giant energy
+     ring and the final form TELEPORTS OUT of it. The aperture therefore has to keep running for a
+     beat after `phase` flips to 'tidal', or the Sovereign simply appears and the effect is a flash
+     with no cause. This tick returns early on 'tidal' as it always did - it just advances the ring
+     clock first. */
+  if(F.phase==='tidal'){ if(F.ringT!=null&&F.ringT<S9_RING_OUT)F.ringT+=dt; return false; }
+  F.t+=dt;
   if(F.phase==='twins'){
     const enter=clamp(F.t/1.45,0,1),ey=lerp(-130,132,enter*enter*(3-2*enter));
     b.enter=enter<1;
@@ -12349,15 +12356,73 @@ function s9FusionBossTick(b,dt){
          identity from spawnBoss the way it normally does.  Promote the public kind as well as
          `_ship`; otherwise death routing, diagnostics and any kind-gated logic still see the
          already-finished Wardens after the complete Tidal Sovereign is on the field. */
-      b.kind='tidalsovereign';
+      b.kind='tidalsovereign'; F.ringT=0;   // the aperture now COLLAPSES around the arriving hull
       b.enter=false;b.x=VW/2;b.y=132;b.tx=VW/2;b.ty=132;F.phase='tidal';F.t=0;
       if(Audio.SFX&&Audio.SFX.explodeBig)Audio.SFX.explodeBig();
     }
   }
   return true;
 }
+/* ============================================================
+   THE FUSION APERTURE (0905x). Mike: "you should be spawning a giant energy ring around the two of
+   them as they go to fuse and do our teleport effect but pallete swapped to something else and
+   teleport outs the final fused form".
+
+   It reuses `chrift_0..7` - the authored teleport rift from CF_EnemyTeleportFX-Vol.1, whose eight
+   frames ARE this beat already: sparks, slit, aperture opening, aperture full, phase flash, then
+   collapse, slit close, residue. Rendered before it was chosen (docs/proofs/chrift_frames.png), not
+   picked off its name.
+
+   ⚠ PALETTE-SWAPPED VIA xartPalette, NOT xartTint. `xartTint` is a source-atop flood - this file
+   records it flattening a font's drop shadow into the E->B bug. `xartPalette` composites in 'color':
+   hue and saturation from the fill, LUMINOSITY from the plate, so the rift keeps its authored
+   internal shading and only changes colour. Amber separates it from the Chaos Harrier's purple warp
+   and from stage 9's own blue void, so the two teleports do not read as the same event.
+
+   ⚠ AND IT IS SIZED TO ENCIRCLE BOTH WARDENS, not to sit behind one. The span is measured from the
+   pair's actual separation each frame, so it stays a ring AROUND them as they converge rather than
+   a disc that swallows them. The existing `ns9_gatecore_` (145->250px, driven by the same F.gate)
+   is a separate, smaller central element and is left alone.                                     */
+const S9_RING_OUT = 1.10;          // seconds the aperture collapses for after the merge
+const S9_RING_TINT = '#ffb43a';    // amber - not the harrier's purple, not the void's blue
+function s9FusionRing(b){
+  const F=b&&b._s9fusion; if(!F||typeof XART==='undefined') return;
+  let fi, a, k;
+  if(F.phase==='fuse'){
+    /* ⚠ FRAME 4 IS THE PHASE FLASH, NOT THE RING. Mapping the whole fuse across 0..4 put the white
+       starburst on screen for the last 13% of the wind-up, so the beat Mike asked to read as "a
+       giant energy RING" read as an explosion instead. 0..3 is the aperture opening; 4 is held back
+       for the merge instant itself, which is what that frame is for. */
+    k=clamp(F.gate||0,0,1);
+    fi=(k>=0.93)?4:Math.min(3,Math.floor(k*3.7)); a=0.30+0.70*k;
+  }else if(F.phase==='tidal'&&F.ringT!=null&&F.ringT<S9_RING_OUT){
+    /* ⚠ THE COLLAPSE HAS TO FADE TO NOTHING, AND THE FIRST CUT DID NEITHER END. Mike, on the frame
+       right after the merge: "your not fading back to regular screen after he comes out of the
+       teleporter". Two faults, both mine and both in this line:
+         - it opened at alpha 1.0 under 'lighter' across a 300px+ disc, so the arriving Sovereign sat
+           in a full-strength additive wash. The screen flashes themselves were innocent - measured,
+           flashScreen 0.800->0 and atomFlash 0.617->0 on their own clocks.
+         - and it bottomed at 0.15, not 0, so the ring POPPED off when ringT passed the window
+           instead of fading out.
+       A plain linear ramp from 0.62 to 0 fixes both, and squaring it keeps the aperture readable
+       early while getting out of the way fast. */
+    k=1; fi=5+Math.min(2,Math.floor((F.ringT/S9_RING_OUT)*3));
+    const _fade=1-clamp(F.ringT/S9_RING_OUT,0,1); a=0.62*_fade*_fade;
+  }else return;
+  const key='chrift_'+fi; if(!XART.rdy(key)) return;
+  const im=(typeof xartPalette==='function'&&xartPalette(key,S9_RING_TINT))||XART.get(key);
+  if(!im) return;
+  const cx=(F.left.x+F.right.x)*.5, cy=(F.left.y+F.right.y)*.5;
+  const span=Math.abs(F.right.x-F.left.x)+Math.max(F.left.w,F.right.w);
+  const z=Math.max(300,span*1.55)*(0.72+0.28*k);
+  ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
+  ctx.globalAlpha=clamp(a,0,1);
+  ctx.drawImage(im,cx-z/2,cy-z/2,z,z);
+  ctx.restore();
+}
 function s9FusionBossDraw(b){
   const F=b&&b._s9fusion;if(!F||F.phase==='tidal'||typeof XART==='undefined')return false;
+  s9FusionRing(b);          // the aperture sits UNDER the pair, so they fuse inside it
   const core='ns9_gatecore_'+(Math.floor(b.t*9)%4);
   if(F.phase==='fuse'&&XART.rdy(core)){
     const z=145+105*(F.gate||0);ctx.save();ctx.globalCompositeOperation='lighter';
@@ -28753,7 +28818,12 @@ function updateBoss(dt){
   const b=boss; b.t+=dt; if(!b.dead) b.rotor+=dt*30;
   if(b._firing>0) b._firing-=dt;
   if(b.flash>0) b.flash-=dt;
-  if(b._s9fusion && b._s9fusion.phase!=='tidal' && s9FusionBossTick(b,dt)) return;
+  /* ⚠ THE PHASE GATE MOVED INSIDE THE TICK (0905x). It used to sit HERE, so once the merge flipped
+     `phase` to 'tidal' the tick was never called again - and the aperture's collapse clock, which
+     has to run for a beat AFTER the merge so the Sovereign teleports out of the ring, never
+     advanced. Measured: ringT stayed at 0.00 through the whole tidal phase. The tick returns FALSE
+     on 'tidal', so this line's early-return behaviour is identical; only the clock now runs. */
+  if(b._s9fusion && s9FusionBossTick(b,dt)) return;
   /* ⚠ THE RAKE NEEDS A TICK ON EVERY PATH THAT CAN OWN ONE (drop 0812o). shipBossManoeuvre ticks
      it for `_ship` units, and the modular bosses - the VILE forms among them - never reach that
      function, so a rake armed by vileAttack would have hung in its warm-up forever. Ticked here
@@ -32365,6 +32435,8 @@ function drawBossInner(){
      it warns about. A pattern the player cannot read is not difficulty, it is noise. */
   if(typeof bossTelegraphDraw==='function') bossTelegraphDraw(1/60);
   if(boss && boss._s9fusion && boss._s9fusion.phase!=='tidal' && s9FusionBossDraw(boss)) return;
+  /* the collapse plays OVER the Sovereign for its first beat - that is the 'teleports out' half */
+  if(boss && boss._s9fusion && boss._s9fusion.phase==='tidal' && typeof s9FusionRing==='function') s9FusionRing(boss);
   /* SECTIONAL BOSSES KEEP THEIR OWN ART THROUGH DEATH (drop 0724bx).
      This was gated on !boss.dead, so the moment a sectional boss died it fell out of the modular
      path and drawBossSprite picked up the LEGACY body art (mba_mc/mba_cb _ruin) — which is why the
