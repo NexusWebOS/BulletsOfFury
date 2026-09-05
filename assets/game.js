@@ -14341,12 +14341,35 @@ function l23BossBeamDraw(b){
            its own weight again; at the fillRect alpha it washed out to a pale band on the ice and
            stopped reading as a warning, which is the one job a telegraph has. The ramp below still
            protects the short stretch that does cross the hull. */
-        const _a=Math.min(1,(_AL.a0+_AL.a1*k)*pulse*1.55);
+        /* ⚠ MIKE, 0905: "those zones are too dark to see, and we need them to do a pixel glow from
+           bottom to top as a cool effect before officially firing off." Two things.
+           BRIGHTNESS: 1.55 was still losing the lane against stage 3's pale ice - 2.35 holds it.
+           THE CHARGE GLOW: a band runs the length of the lane from the FAR END back up to the
+           muzzle across the warn (`_gy = len*(1-k)`, so k=0 is at the bottom of the screen and k=1
+           arrives at the cannon just as it fires). It is drawn by re-blitting the PLATE'S OWN TILES
+           additively where the band passes, not by laying a gradient over them - so what glows is
+           the authored pixels, which is what "pixel glow" has to mean in a 16-bit set. A gradient
+           would also have cost an allocation per slot per frame; this reuses the tile already in
+           hand. */
+        const _a=Math.min(1,(_AL.a0+_AL.a1*k)*pulse*2.35);
+        const _gy=len*(1-k), _gh=Math.max(56,len*.17);
         for(let y=-_seg+_off;y<len;y+=_seg){
           const _mid=y+_seg*.5;
+          ctx.globalCompositeOperation='source-over';
           ctx.globalAlpha=_a*(_clear>0?clamp(_mid/_clear,.34,1):1);
           ctx.drawImage(_lim,-lane/2,y,lane,_seg);
+          const _d=Math.abs(_mid-_gy);
+          if(_d<_gh){
+            ctx.globalCompositeOperation='lighter';
+            /* ⚠ the additive peak is CAPPED. At 0.34+0.58k it reached 0.92 on top of an already
+               2.35x base, and the last third of the charge blew the lanes to near-white - the
+               chevrons, and with them the hazard read, disappeared exactly when the warning matters
+               most. 0.30+0.34k still climbs visibly into the muzzle without bleaching the plate. */
+            ctx.globalAlpha=(1-_d/_gh)*(0.30+0.34*k);
+            ctx.drawImage(_lim,-lane/2,y,lane,_seg);
+          }
         }
+        ctx.globalCompositeOperation='source-over';
         ctx.restore();
       }else{
       /* on a lava stage a red wash vanishes - the lane needs a dark outline and white-hot rails */
