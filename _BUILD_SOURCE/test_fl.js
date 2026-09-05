@@ -9603,14 +9603,18 @@ console.log("=== 201. rank glyph ===");
      implementation detail rather than Mike's rule. What 0807q actually requires is that the rank
      and the score pass NO TINT - a tint composites in 'color' and the letter stops reading as the
      game's lettering. Matched on the tint arguments now, whichever helper carries them. */
-  ok(/scCen\w*\(art,rTxt,[^;]*?,null,0,1,0\.05[,)]/.test(_g201),
+  /* ⚠ FOURTH REPOINT, AND THIS TIME THE REGEX STOPS AT THE RULE. The last two rewrites still
+     carried the letter-SPACING literal, which has nothing whatever to do with 0807q's rule that
+     the rank and score draw UNTINTED - so changing the spacing broke a test about tinting. Only
+     the tint arguments are matched now. */
+  ok(/scCen\w*\(art,rTxt,[^;]*?,null,0,1,/.test(_g201),
      'the rank glyph is drawn with no tint');
   /* THIS PINNED THE SIZE EXPRESSION, NOT THE PROPERTY IT NAMES (drop 0812b). It matched the
      literal "ph*0.040, null, 0, fl, 0.06)", so hoisting the size into a named constant in order to
      right-align the score — a change that touched neither the tint nor the size — failed an
      assertion whose subject is "the score draws untinted". Both halves are now checked directly:
      the tint arguments stay null/0, and the size is still ph*0.040. */
-  ok(/scCen\w*\(art,sTxt,[^;]*?,null,0,1,0\.05[,)]/.test(_g201),
+  ok(/scCen\w*\(art,sTxt,[^;]*?,null,0,1,/.test(_g201),
      'and so is the score');
   /* Mike, 0904: "Clear Time - make this a metric on the screen but not in the box, down below
      with the score and rank section." It shares their bar, and it is a SNAPSHOT rather than a
@@ -9624,6 +9628,14 @@ console.log("=== 201. rank glyph ===");
      'the debrief is lettered in the face of the stage just cleared, not stage 1’s card alphabet');
   ok(/function scCenLift\(/.test(_g201) && /ctx\.globalCompositeOperation='lighter'/.test(_g201),
      'and a dark face is lifted additively rather than tinted, which cannot brighten it');
+  /* Mike: "the : needs to be also as big as the =". Both are stacked PAIRS built from the face's
+     own marks - '=' from two hyphens, ':' from two periods - because a glyph with an interior
+     waist cannot be outlined as a single frame: the ring closes the gap and it renders as one
+     band. Same code path, two constant sets. */
+  ok(/const d=stageGlyph\(art,'\.'\);/.test(_g201) && /sw:COLON_W, sh:COLON_T/.test(_g201),
+     "the colon is built as a stacked pair like the equals, not a scaled colon cell");
+  ok(/if\(d\[1\]<=0\)/.test(_g201) && /if\(d\[1\]>=0\)/.test(_g201),
+     'and each bar is ringed on its outer sides only, so the waist can be one pixel');
   /* the size is SOLVED now rather than fixed, so what is pinned is that it is solved against the
      bar's own width - which is the property the literal was standing in for */
   ok(/const H=Math\.min\(scFit\(art,sTxt,colW3/.test(_g201),

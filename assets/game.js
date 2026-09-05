@@ -51813,7 +51813,7 @@ function stageWidth(art,text,H,spacingMul){
     /* through stageGlyph, so a BORROWED glyph is measured at the width it will be drawn at.
        Measuring in one face and drawing in another is 0814b's "the text ran off its rail". */
     const g=stageGlyph(art,ch);
-    if(g&&g.dbl){ w+=eqWidth(glyphBox(g.art,g.f,H,ch).w)+sp; continue; }   /* the widened '=' */
+    if(g&&g.dbl){ w+=glyphBox(g.art,g.f,H,ch).w*g.sw+sp; continue; }   /* '=' and ':' */
     if(!g){
       /* ⚠ MEASURE THE FALLBACK THE WAY stageText DRAWS IT (drop 0904x). stageText now paints a
          glyph no face carries as canvas text; if this still charged it a blank's width the wrap
@@ -52104,7 +52104,22 @@ const FONT_RIDE = {"'":0.00, '-':0.60};
    larger though. thats how we do it once closer together." So the two bars grow and the gap
    between them shrinks - a heavier mark with a tight waist, rather than two thin rules spread
    apart. EQ_SEP is HALF the gap: the bars sit at +-EQ_SEP*H around the centre line. */
-const EQ_W=1.78, EQ_T=1.95, EQ_GAP=0.075;
+const EQ_W=1.78, EQ_T=1.95, EQ_GAP=0.055;
+/* ':' IS BUILT THE SAME WAY THE '=' IS - as a stacked PAIR (drop 0904ak).
+   Mike: "the : needs to be also as big as the =".
+
+   ⚠ SCALING THE FACE'S OWN COLON CELL DOES NOT WORK, and it fails for the reason the equals
+   already taught: the cell holds two dots with a gap between them, the 1px ring grows into that
+   gap from both sides, and the mark renders as ONE band. Measured exactly that on the first cut.
+   A glyph with an interior waist cannot be outlined as a single frame.
+
+   So the colon is two copies of the face's own PERIOD, stacked, sharing the equals' machinery -
+   the same outer-only ring and the same one-pixel waist. Both operators are now one code path with
+   two sets of constants, which is also why they end up visually matched rather than nearly so. */
+/* the PERIOD's ink is smaller than the HYPHEN's, so the same factor gives a shorter mark - the
+   two operators are matched by measuring the rendered result (colon 11px against equals 15px on
+   the first pass) rather than by sharing a number that only looks like it should agree. */
+const COLON_W=2.85, COLON_T=2.85;
 /* ⚠ 0904ai SOLVED THE OUTLINE-EATS-THE-GAP PROBLEM BY WIDENING THE GAP, AND THAT WAS THE WRONG
    LEVER (drop 0904aj). Mike: "closer together please."
 
@@ -52115,18 +52130,20 @@ const EQ_W=1.78, EQ_T=1.95, EQ_GAP=0.075;
    An equals is ONE mark. Composited into a single silhouette first and ringed as a unit, the edge
    goes around the OUTSIDE of the pair and never into the space between them - so the gap is
    whatever it is drawn as, at any size, and the bars can close right up. */
-/* ⚠ THE WAIST CANNOT BE CLOSER THAN THE EDGE ALLOWS, AND THAT IS GEOMETRY, NOT TUNING.
-   An outline is a ring: it grows one pixel INTO the gap from the bar above and one from the bar
-   below, whether the two bars are ringed separately or composited and ringed as a pair (I built
-   the pair version to dodge it and measured the same zero - offsetting the whole silhouette by a
-   pixel still puts the top bar's edge into a two-pixel waist).
+/* ⚠ 0904aj CALLED A 3px DRAWN GAP THE FLOOR. IT WAS THE FLOOR OF THE WRONG APPROACH (drop 0904ak).
+   Mike: "needs to be moved vertically closer one more time".
 
-       visible gap = drawn gap - 2 x outline width
+   Both earlier attempts ringed each bar on ALL EIGHT sides, so the edge grew into the waist from
+   above and below and the drawn gap had to be 2*outline+1 to leave anything visible. But an
+   equals' inner faces are INTERIOR to the mark - they need an edge no more than the inside of a
+   letter's counter does. Ring the top bar on its top and sides only, the bottom bar on its bottom
+   and sides only, and nothing is ever drawn into the parting.
 
-   So with the 1px edge Mike asked for, THREE pixels is the tightest a parting can be and still be
-   seen, and that is what this returns. It was four. Closer than this needs the edge dropped from
-   this one mark, which would make it the only unedged glyph on the screen. */
-function eqGap(H,outline){ return Math.max(2*(outline|0)+1, Math.round(H*EQ_GAP)); }
+   So the drawn gap is one pixel at row size and the whole mark is two pixels shorter. The outer
+   silhouette still carries its full 1px edge, which is what Mike asked for in 0904ag - only the
+   two faces that look at each other across the waist go unedged, and those are exactly the faces
+   the waist is made of. */
+function eqGap(H,outline){ return Math.max(1, Math.round(H*EQ_GAP)); }
 const _eqc=document.createElement('canvas'), _eqx=_eqc.getContext('2d');
 /* both bars as ONE flat silhouette, so the ring wraps the pair and leaves the waist open */
 function drawEqSolid(img,f,dx,dy,w,bh,gap,color,alpha){
@@ -52146,7 +52163,7 @@ function drawEqSolid(img,f,dx,dy,w,bh,gap,color,alpha){
 }
 function eqWidth(w){ return w*EQ_W; }
 function fontRide(art, ch){
-  if(ch==='=') return 0.5;          /* an operator sits on the middle of the cap box, not the baseline */
+  if(ch==='=' || ch===':') return 0.5;   /* operators sit on the middle of the cap box */          /* an operator sits on the middle of the cap box, not the baseline */
   if(art && art.ride && art.ride[ch] != null) return art.ride[ch];
   return (ch && FONT_RIDE[ch] != null) ? FONT_RIDE[ch] : 1;
 }
@@ -52218,8 +52235,8 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       continue;
     }
     const gb=glyphBox(g.art,g.f,H,ch);
-    const gw=g.dbl?eqWidth(gb.w):gb.w;
-    items.push([g.art,g.f,gw,gb,g.dbl?1:0]); total+=gw+sp;
+    const gw=g.dbl?gb.w*g.sw:gb.w;
+    items.push([g.art,g.f,gw,gb,g.dbl?1:0,g.sh]); total+=gw+sp;
   }
   total-=sp; let x=cx-total/2;
   /* ⚠ THE OUTLINE IS ITS OWN FULL PASS, BEFORE ANY FACE IS DRAWN. Doing it per glyph would lay
@@ -52233,15 +52250,16 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       const ga=it[0], f=it[1], w=it[2], gb=it[3];
       if(ga===null){ ox+=w+sp; continue; }         // the canvas rung already strokes itself
       if(it[4]){
-        /* the '=' is edged on BOTH bars, at the same widened geometry the face pass uses -
-           outlining it as a single hyphen would ring the wrong shape */
-        /* ONE silhouette for the pair - ringing each bar on its own is what used to close the
-           waist, and is why the bars could not be brought together */
-        const gap=eqGap(H,outline), bh=Math.max(1,Math.round(gb.h*EQ_T));
-        const by=Math.round(cy-H/2+gb.dy), top=by-Math.floor(gap/2)-bh;
-        for(const d of _OUTLINE_RING)
-          drawEqSolid(ga.img,f,Math.round(ox)+d[0]*outline,top+d[1]*outline,
-                      Math.round(w),bh,gap,'#05070c',alpha);
+        /* ⚠ EACH BAR IS RINGED ON ITS OUTER SIDES ONLY. The top bar takes the offsets that do not
+           push DOWN, the bottom bar those that do not push UP, so the waist never receives a
+           single edge pixel and the two bars can sit one pixel apart. */
+        const gap=eqGap(H,outline), bh=Math.max(1,Math.round(gb.h*(it[5]||EQ_T)));
+        const by=Math.round(cy-H/2+gb.dy), gT=Math.floor(gap/2), gB=gap-gT;
+        const topY=by-gT-bh, botY=by+gB;
+        for(const d of _OUTLINE_RING){
+          if(d[1]<=0) drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,topY+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
+          if(d[1]>=0) drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,botY+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
+        }
         ox+=w+sp; continue;
       }
       for(const d of _OUTLINE_RING)
@@ -52268,10 +52286,8 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       ctx.restore(); x+=w+sp; continue;
     }
     if(it[4]){
-      /* the synthetic '=': the hyphen drawn twice, widened and thickened so it reads as an
-         operator rather than as two specks, and separated by a fraction of the LINE HEIGHT so it
-         scales with the text instead of with the thinnest glyph in the face */
-      const gap=eqGap(H,outline), bh=Math.max(1,Math.round(gb.h*EQ_T));
+      /* '=' from two hyphens, ':' from two periods - one path, the glyph carries its own scale */
+      const gap=eqGap(H,outline), bh=Math.max(1,Math.round(gb.h*(it[5]||EQ_T)));
       const by=Math.round(cy-H/2+gb.dy), gT=Math.floor(gap/2), gB=gap-gT;
       drawFrameTinted(ga.img,f,Math.round(x),by-gT-bh,Math.round(w),bh,tintC,tintA,alpha);
       drawFrameTinted(ga.img,f,Math.round(x),by+gB,Math.round(w),bh,tintC,tintA,alpha);
@@ -52307,8 +52323,12 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
    the stage lettering, in the stage's own material, at whatever size the line is set in. */
 function stageGlyph(art, ch){
   if(ch==='='){
-    const h=stageGlyph(art,'-');
-    if(h) return {art:h.art, f:h.f, dbl:1};
+    const h=stageGlyph(art,'-');                 // two hyphens
+    if(h) return {art:h.art, f:h.f, dbl:1, sw:EQ_W, sh:EQ_T};
+  }
+  if(ch===':'){
+    const d=stageGlyph(art,'.');                 // two periods, same machinery
+    if(d) return {art:d.art, f:d.f, dbl:1, sw:COLON_W, sh:COLON_T};
   }
   let nm=art&&art.font&&art.font[ch];
   if(nm && art.frames && art.frames[nm]) return {art:art, f:art.frames[nm]};
@@ -55685,13 +55705,22 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
       }
       /* Mike, 0904: "Clear Time - make this a metric on the screen but not in the box, down below
          with the score and rank section." */
+      /* ⚠ DECLARED BEFORE ITS FIRST READER. My first cut put this AFTER the scFit calls that use
+         it - a temporal-dead-zone ReferenceError that node --check passes, that every draw in this
+         engine swallows ("draw error in state <s>"), and that therefore showed up as the score bar
+         and the sign-off rendering EMPTY rather than as any kind of error. CLAUDE.md records this
+         exact trap from 0812g; I walked into it anyway, and only the screenshot found it.
+         Mike: "the numbers need to be spaced out better" - the stat slots run tight because they
+         are long labels in narrow bays, but this row is three short readings in a wide bar and can
+         afford real letter spacing. */
+      const SP=0.13;
       const sTxt='SCORE = '+String(drawStageClear._scoreShown|0);
       const cTxt='CLEAR TIME = '+((typeof fmtTime==='function')?fmtTime(R.clearT||0):String(Math.round(R.clearT||0)));
       const rTxt='RANK = '+(drawStageClear._stamp>0?R.rank:'-');
       const colW3=b[2]*0.30;
-      const H=Math.min(scFit(art,sTxt,colW3,b[3]*0.34,ph2*0.010,0.05),
-                       scFit(art,cTxt,colW3,b[3]*0.34,ph2*0.010,0.05),
-                       scFit(art,rTxt,colW3,b[3]*0.34,ph2*0.010,0.05));
+      const H=Math.min(scFit(art,sTxt,colW3,b[3]*0.34,ph2*0.010,SP),
+                       scFit(art,cTxt,colW3,b[3]*0.34,ph2*0.010,SP),
+                       scFit(art,rTxt,colW3,b[3]*0.34,ph2*0.010,SP));
       /* ⚠ UNTINTED. Mike, 0807q: "Dont color overlay the rank please". */
       const cy=b[1]+b[3]*0.50;
       /* Mike: "we need line dividers between each section for score, time and rank." Placed on the
@@ -55702,9 +55731,9 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
       ctx.save(); ctx.globalAlpha=0.42; ctx.fillStyle='#7fd8ef';
       for(const fx of _dv) ctx.fillRect(b[0]+b[2]*fx, cy-b[3]*0.30, Math.max(1,P[2]*0.0022), b[3]*0.60);
       ctx.restore();
-      scCenLift(art,sTxt,b[0]+b[2]*0.185,cy,H,null,0,1,0.05,0.45,1);
-      scCenLift(art,cTxt,b[0]+b[2]*0.500,cy,H,null,0,1,0.05,0.45,1);
-      scCenLift(art,rTxt,b[0]+b[2]*0.820,cy,H,null,0,1,0.05,0.45,1);
+      scCenLift(art,sTxt,b[0]+b[2]*0.185,cy,H,null,0,1,SP,0.45,1);
+      scCenLift(art,cTxt,b[0]+b[2]*0.500,cy,H,null,0,1,SP,0.45,1);
+      scCenLift(art,rTxt,b[0]+b[2]*0.820,cy,H,null,0,1,SP,0.45,1);
     }
     if(t>1.15 && drawStageClear._stamp<1){
       if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7);
