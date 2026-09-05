@@ -15994,9 +15994,19 @@ function s9aMuzzleStart(b,fam){ b._s9aMuz={fam:fam,t:0,life:0.30}; }
    it commits: the angle is locked when the burn starts, the same TELL -> COMMIT -> RECOVER the
    Harrier's wing cannons use, so it is aimed but dodgeable.
    ============================================================ */
+/* ⚠ THE FRAME COUNT IS PER PART, AND IT HAS TO BE. The draw indexed every part with a hardcoded
+   %8. Every stage-9 family happens to be 8 frames so that was invisible - but `s6mb_prismbeam` is
+   SIX, so two frames in every eight would resolve to nothing and the beam would strobe. hn/tn/cn
+   default to 8, so both stage-9 entries below are byte-identical in behaviour. */
 const S9_BEAM = {
   warpsentinel  :{head:'warpcrystalbeam', tile:'warpcrystalbeamtile', cap:'warpcrystalimpact', w:34},
   tidalsovereign:{head:'tidalpressurebeam',tile:'tidalpressurebeamtile',cap:'tidalgeyserimpact', w:38},
+  /* THE Mk II's PRISM BEAM (0905j). head/tile/cap are all from its OWN pack and all three were
+     imported in 0904aa with nothing drawing them - the note there lists prismbeam and
+     crystalimpact among the seven 'not referenced yet'. The cap naming matches the warp
+     sentinel's `warpcrystalimpact` exactly, which is what says these two belong together. */
+  doomsdaycarriermk2:{head:'s6mb_prismmuzzle', tile:'s6mb_prismbeam', cap:'s6mb_crystalimpact',
+                      w:44, hn:8, tn:6, cn:8},
 };
 const S9_BEAM_CHARGE=0.62, S9_BEAM_OFF=1.85, S9_BEAM_END=2.20;
 function s9aBeamStart(b){ b._s9Beam={t:0, ang:0, locked:false}; }
@@ -16019,10 +16029,11 @@ function s9aBeamTick(b,dt){
 function s9aBeamDraw(b){
   const B=b&&b._s9Beam; if(!B||typeof XART==='undefined') return;
   const D=S9_BEAM[b._ship]; if(!D) return;
-  const C=shipBossMount(b,'C'), n=8, fi=Math.floor((B.t||0)*14)%n;
+  const C=shipBossMount(b,'C'), _fr=Math.floor((B.t||0)*14);
+  const fih=_fr%(D.hn||8), fit=_fr%(D.tn||8), fic=_fr%(D.cn||8);
   /* the charge shows on the head plate before anything burns, so the commit is visible */
   if(B.t<S9_BEAM_CHARGE){
-    const k=D.head+'_'+fi;
+    const k=D.head+'_'+fih;
     if(XART.rdy(k)){
       const a=Math.min(1,B.t/S9_BEAM_CHARGE), im=XART.get(k);
       ctx.save(); ctx.translate(C.x,C.y); ctx.rotate(B.ang);
@@ -16038,7 +16049,7 @@ function s9aBeamDraw(b){
   ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
   /* HEAD at the emitter, then the BODY tiled to length. The tile is repeated, not stretched -
      that is the whole reason the pack cuts its top and bottom edges to meet. */
-  const hk=D.head+'_'+fi, tk=D.tile+'_'+fi;
+  const hk=D.head+'_'+fih, tk=D.tile+'_'+fit;
   let y=0;
   if(XART.rdy(hk)){
     const im=XART.get(hk), h=D.w*(im.naturalHeight/Math.max(1,im.naturalWidth));
@@ -16054,7 +16065,7 @@ function s9aBeamDraw(b){
   ctx.restore();
   /* the CAP where it lands */
   const a=Math.PI/2+B.ang, ex=C.x+Math.cos(a)*(VH-C.y+18), ey=C.y+Math.sin(a)*(VH-C.y+18);
-  const ck=D.cap+'_'+fi;
+  const ck=D.cap+'_'+fic;
   if(XART.rdy(ck)){
     const im=XART.get(ck), w=D.w*2.6, h=w*(im.naturalHeight/Math.max(1,im.naturalWidth));
     ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.imageSmoothingEnabled=false;
@@ -16851,14 +16862,14 @@ function carrierMegaTick(b,dt){
       carrierMegaMuzzle(b,'L','s6mb_prismmuzzle',.92);carrierMegaMuzzle(b,'R','s6mb_prismmuzzle',.92);M.cd=1.72;
     }
   }else{
-    if(M.step%3===0){
+    if(M.step%4===0){
       /* One accelerating omega bomb on a promised centreline — fast late, never homing. */
       carrierMegaShot(b,C,Math.PI/2,1.1,'s6omega',{accel:1.05,max:5.2,szMul:1.15});carrierMegaMuzzle(b,'C','s6mb_prismmuzzle',1.30);M.cd=1.45;
-    }else if(M.step%3===1){
+    }else if(M.step%4===1){
       /* Mirrored cluster fans leave the middle wedge open. */
       for(const row of [[L,-1],[R,1]])for(const o of [.22,.38,.54])carrierMegaShot(b,row[0],Math.PI/2+row[1]*o,3.35,'s6cluster',{silent:true});
       carrierMegaMuzzle(b,'L','s6mb_cyclonemuzzle',1.0);carrierMegaMuzzle(b,'R','s6mb_cyclonemuzzle',1.0);M.cd=1.18;
-    }else{
+    }else if(M.step%4===2){
       /* CHROME FLAK FAN, to the pack's own geometry: alternating lower INNER pods, the four
          authored launch angles, and a fuse that turns each shell into a five-way fan. */
       const _fa=[[-18,'lower_left_inner'],[18,'lower_right_inner'],[10,'lower_left_inner'],[-10,'lower_right_inner']];
@@ -16868,6 +16879,22 @@ function carrierMegaTick(b,dt){
         if(q) q._flakFuse=CARRIER_FLAK_FUSE;
       }
       carrierMegaMuzzle(b,'MG_L','s6mb_cyclonemuzzle',.90);carrierMegaMuzzle(b,'MG_R','s6mb_cyclonemuzzle',.90);M.cd=1.08;
+    }else{
+      /* ⚠ PRISM LANCE — A NEW ATTACK IN THE CARRIER'S FINAL PHASE (0905j). Mike: "we also need
+         crystalimpact, prismbeam and ricochetimpact". prismbeam is a TILE, not an impact, so it
+         needs a beam to live in - and the pack ships the other two parts for exactly that:
+         prismmuzzle as the emitter head and crystalimpact as the cap. Left unwired it would be
+         the 'declared and never fired' shape this file records over and over.
+
+         It reuses the S9 head/tile/cap beam wholesale (the tick+draw at ~12802 are gated only on
+         `_s9Beam`, so they are already generic); nothing new was written to move light down the
+         screen. It CHARGES on the head plate before it burns, so it is telegraphed and dodgeable,
+         the same TELL -> COMMIT -> RECOVER the rest of this fight uses.
+
+         ⚠ THIS IS A FIGHT CHANGE AND IT IS DELIBERATELY IN THE LAST PHASE ONLY. The rotation went
+         %3 -> %4 here and nowhere else; phases 0, 1 and 2 are untouched. Moving or removing it is
+         this one branch. */
+      s9aBeamStart(b); carrierMegaMuzzle(b,'C','s6mb_prismmuzzle',1.30); M.cd=S9_BEAM_END+0.45;
     }
   }
   if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch))(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch)();
@@ -16936,6 +16963,17 @@ function carrierPlayerHit(b,dmg,x,y){
   }
   const side=b._carrierBayHit||carrierBayAt(b,x,y);b._carrierBayHit=null;
   if(side)return carrierBayDamage(b,side,dmg,x,y,null);
+  /* ⚠ A SHOT THAT HITS THE CARRIER AND IS NOT ON A BAY WAS SHOWING A 0.08 FLASH AND NOTHING
+     ELSE (0905j). `s6mb_ricochetimpact` is an authored 8-frame orange spark burst that was
+     imported in 0904aa and referenced by nothing since. This is the event it depicts, and
+     drawing it TEACHES the bay mechanic - the player sees ordinary fire spark off and learns
+     the warheads are the way in. Purely additive: no damage and no return value changes. */
+  /* ⚠ navalFlash, NOT explode(). explode() is the ENEMY DEATH routine - it brings a shock ring,
+     debris, a white flash and smoke with it (this file's own standing rule lists them), so the
+     first cut answered a bullet bouncing off with a full death explosion: grey smoke over the
+     hull and ~1,500 reel lookups per hit. navalFlash is the one-shot the carrier's other impacts
+     already use (carrierWarheadBurst), so this reads as a spark and costs like one. */
+  if(typeof navalFlash==='function')navalFlash(null,{x:x,y:y},.80,'s6mb_ricochetimpact',{n:8,hpx:96,life:.30,anchor:.5});
   F.flash=Math.max(F.flash,.08);return true;
 }
 /* The Mk II bay reel contains the bomb until the release frame; from that exact frame onward this

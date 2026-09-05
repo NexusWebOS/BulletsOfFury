@@ -373,3 +373,46 @@ boss-present against boss-absent — one run reported "48.6% vs 1.3%, my change 
 was measuring an empty crop. **Pinning the position is not enough either: the canvas holds the LAST
 DRAWN frame, so a pin must be followed by a step before the capture.** Both are now in the note
 above the block.
+
+## 0905j — crystalimpact, prismbeam, ricochetimpact
+
+Mike: *"we also need crystalimpact, prismbeam and ricochetimpact"*.
+
+⚠ **ALL THREE WERE ALREADY ON DISK AND ALREADY REGISTERED. NONE COST A CREDIT.** They came in with
+the CF_DoomsdayCarrierAttacks-Lvl6 pack in 0904aa, and that drop's own note says so: *"Seven are
+not referenced yet - ricochetimpact, crystalimpact, flakburst, clusterburst, gravityripple,
+prismbeam, omegabomb-reflected ... registered anyway so the draws that want them can be written."*
+8 + 6 + 8 frames in `assets/game/s6_carrier_attacks/`. This was a WIRING job, not an art job.
+⚠ A manifest grep finds none of them — they are registered at runtime into `XART._src`. Second time
+today that a manifest-only search would have led to buying art the repo already owns.
+
+**Rendered before wiring** (`docs/proofs/s6mb_unused_0905.png`): crystalimpact is a cyan crystalline
+burst, ricochetimpact an orange spark burst, and **prismbeam is a 40x104 TILE, not an impact**.
+
+**prismbeam + crystalimpact are ONE feature, and the naming says so.** A tile needs a beam to live
+in, and the pack ships the other two parts: `prismmuzzle` as the emitter head, `crystalimpact` as
+the cap — exactly the head/tile/cap shape `S9_BEAM` already uses, where the warp sentinel's cap is
+called `warpcrystalimpact`. So the carrier gets a **PRISM LANCE** built from the existing S9 beam
+machinery (the tick+draw are gated only on `_s9Beam`, so they were already generic — no new code
+moves light down the screen).
+
+⚠ **THE BEAM FRAME COUNT HAD TO BECOME PER-PART.** The draw indexed head, tile and cap alike with a
+hardcoded `%8`. Every stage-9 family is 8 frames so that was invisible — but **prismbeam is SIX**,
+so two frames in every eight would have resolved to nothing and the beam would have strobed.
+`hn/tn/cn` default to 8, so both stage-9 entries behave identically.
+
+⚠ **THIS IS A FIGHT CHANGE, SCOPED TO THE CARRIER'S FINAL PHASE.** The phase-3 rotation went `%3`
+-> `%4` and nowhere else; phases 0-2 are untouched. It charges on the head plate before it burns,
+so it is telegraphed. Moving or removing it is one branch.
+⚠ **AND `M.phase` IS DERIVED FROM HP EVERY TICK** (`ratio>.75?0:...`), so forcing `_mega.phase`
+does nothing — a probe must drop the boss below 25% hp to reach the last phase at all.
+
+**ricochetimpact** goes where ordinary fire hits the carrier and is NOT on a bay — previously a
+0.08 flash and nothing else. It makes a real event visible and teaches the bay mechanic: shots
+spark off, warheads are the way in. Additive; no damage or return value changed.
+⚠ **AND IT MUST NOT USE `explode()`.** That is the enemy-DEATH routine and brings a shock ring,
+debris, white flash and smoke — the first cut answered a bullet bouncing off with a full death
+explosion, grey smoke over the hull and **20,930 reel lookups**. `navalFlash`, which the carrier's
+other impacts already use, gives the same reel at **1,650** — 12.7x lighter and it reads as a spark.
+⚠ **`carrierPlayerHit` RETURNS AT THE SHIELD BRANCH WHILE THE SHIELD IS UP**, so a probe that does
+not drop `_bayShield.up` never reaches this code and measures zero.
