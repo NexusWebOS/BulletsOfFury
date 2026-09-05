@@ -1,0 +1,138 @@
+{
+  "iceBreath": {
+    "calls": [
+      {
+        "src": "ice_breath_start.wav",
+        "volume": 0.92,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 4580.9000000059605
+      },
+      {
+        "src": "ice_breath_loop.wav",
+        "volume": 0,
+        "loop": true,
+        "ready": 1,
+        "status": "playing",
+        "at": 4581.199999988079
+      }
+    ],
+    "loop": {
+      "on": true,
+      "paused": false,
+      "ready": 4,
+      "currentTime": 0.953333,
+      "volume": 0.774
+    },
+    "releaseCalls": [
+      {
+        "src": "ice_breath_start.wav",
+        "volume": 0.92,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 4580.9000000059605
+      },
+      {
+        "src": "ice_breath_loop.wav",
+        "volume": 0,
+        "loop": true,
+        "ready": 1,
+        "status": "playing",
+        "at": 4581.199999988079
+      },
+      {
+        "src": "ice_breath_release.wav",
+        "volume": 0.86,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 5798.800000011921
+      }
+    ]
+  },
+  "thermoshock": {
+    "calls": [
+      {
+        "src": "ice_breath_start.wav",
+        "volume": 0.82,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 5998.9000000059605
+      },
+      {
+        "src": "nsp_bof2_charge_shot.mp3",
+        "volume": 0,
+        "loop": true,
+        "ready": 1,
+        "status": "playing",
+        "at": 5999.0999999940395
+      },
+      {
+        "src": "nsp_charge_release.mp3",
+        "volume": 0.85,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 7199.9000000059605
+      },
+      {
+        "src": "expSmall.mp3",
+        "volume": 1,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 7200.4000000059605
+      }
+    ],
+    "projectiles": [
+      {
+        "kind": "fireball",
+        "ts": 1,
+        "tier": "half"
+      }
+    ]
+  },
+  "decker": {
+    "calls": [
+      {
+        "src": "nsp_bof2_pickup.mp3",
+        "volume": 1,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 7691.300000011921
+      },
+      {
+        "src": "reviewed_decker_shotgun.wav",
+        "volume": 1,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 7691.699999988079
+      },
+      {
+        "src": "reviewed_decker_shell_eject.wav",
+        "volume": 0.48,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 7691.800000011921
+      },
+      {
+        "src": "reviewed_decker_reload.wav",
+        "volume": 0.95,
+        "loop": false,
+        "ready": 1,
+        "status": "playing",
+        "at": 7831.699999988079
+      }
+    ],
+    "pellets": 7,
+    "reloadCue": 0,
+    "reloadCooldown": 0.27010000000000006
+  },
+  "pageErrors": []
+}

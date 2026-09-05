@@ -1,0 +1,51 @@
+{
+  "routing": {
+    "nativeRoutes": {
+      "axel": "megaShieldPickup",
+      "cole": "specialAbilityPickup",
+      "decker": "specialAbilityPickup",
+      "falva": "specialAbilityPickup",
+      "freezer": "specialAbilityPickup",
+      "juggernaut": "specialAbilityPickup",
+      "lizzie": "specialAbilityPickup",
+      "maverick": "specialAbilityPickup",
+      "yuri": "specialAbilityPickup"
+    },
+    "loanRoutes": [
+      "specialAbilityPickup",
+      "specialAbilityPickup",
+      "specialAbilityPickup"
+    ],
+    "specialNative": true,
+    "axelNative": true,
+    "specialSrc": "http://127.0.0.1:50572/assets/game/sounds/reviewed_special_pickup.wav",
+    "axelSrc": "http://127.0.0.1:50572/assets/game/sounds/reviewed_axel_mega_shield.wav"
+  },
+  "specialPlayback": {
+    "before": {
+      "ready": 1,
+      "node": false
+    },
+    "after": {
+      "time": 0.243355,
+      "paused": false,
+      "ended": false,
+      "node": false,
+      "volume": 0.918
+    }
+  },
+  "axelPlayback": {
+    "before": {
+      "ready": 1,
+      "node": false
+    },
+    "after": {
+      "time": 0.267913,
+      "paused": false,
+      "ended": false,
+      "node": false,
+      "volume": 0.782
+    }
+  },
+  "errors": []
+}

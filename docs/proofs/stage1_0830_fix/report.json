@@ -1,0 +1,27 @@
+{
+  "launch": {
+    "samples": 123,
+    "reversals": 0,
+    "maxDownStep": 0,
+    "crawlAdvance": 102.10080000000022,
+    "reachedPlay": true,
+    "phases": [
+      "run",
+      "brake",
+      "settle",
+      "cd"
+    ]
+  },
+  "unit": {
+    "tankMinX": 173,
+    "tankMaxX": 173,
+    "tankVx": 0,
+    "missileKind": "s1jungleMissile",
+    "missileShootable": true,
+    "missileHp": 1,
+    "fixedBullet": "mgcf_1_5",
+    "navyArt": "nef_s1_river_patrol_boat_intact",
+    "bulletCount": 1
+  },
+  "consoleErrors": []
+}

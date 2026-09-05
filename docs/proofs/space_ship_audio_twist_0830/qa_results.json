@@ -1,0 +1,192 @@
+{
+  "edgePurple": {
+    "ship_base": 0,
+    "ship_bank_l1": 0,
+    "ship_bank_l2": 0,
+    "ship_bank_l3": 0,
+    "ship_bank_r1": 0,
+    "ship_bank_r2": 0,
+    "ship_bank_r3": 0,
+    "ship_roll_00": 0,
+    "ship_roll_01": 0,
+    "ship_roll_02": 0,
+    "ship_roll_03": 0,
+    "ship_roll_04": 0,
+    "ship_roll_05": 0,
+    "ship_roll_06": 0,
+    "ship_roll_07": 0,
+    "ship_roll_08": 0,
+    "ship_roll_09": 0,
+    "ship_roll_10": 0,
+    "ship_roll_11": 0,
+    "ship_roll_12": 0,
+    "ship_roll_13": 0,
+    "ship_roll_14": 0,
+    "ship_roll_15": 0,
+    "ship_roll_16": 0
+  },
+  "stages": {
+    "5": {
+      "audio": {
+        "calls": [
+          {
+            "src": "reviewed_laser_cannon.wav",
+            "volume": 1,
+            "loop": false,
+            "ready": 1,
+            "status": "playing",
+            "at": 3731.399999976158
+          },
+          {
+            "src": "reviewed_shadow_orb_launch.wav",
+            "volume": 1,
+            "loop": false,
+            "ready": 1,
+            "status": "playing",
+            "at": 3996.2999999821186
+          },
+          {
+            "src": "nsp_rocket_launch.mp3",
+            "volume": 1,
+            "loop": false,
+            "ready": 1,
+            "status": "playing",
+            "at": 4221.699999988079
+          }
+        ],
+        "context": "running",
+        "ready": [
+          {
+            "name": "spaceLaserCannon",
+            "states": [
+              4,
+              4,
+              4
+            ],
+            "times": [
+              0.499328,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "spaceShadowRelease",
+            "states": [
+              4,
+              4,
+              4
+            ],
+            "times": [
+              0.499339,
+              0,
+              0
+            ]
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "states": [
+              4,
+              4,
+              4
+            ],
+            "times": [
+              0.279299,
+              0,
+              0
+            ]
+          }
+        ]
+      },
+      "poses": {
+        "left": [
+          "ship_bank_l3",
+          "ship_bank_l3",
+          "ship_bank_l3"
+        ],
+        "level": [
+          "ship_base",
+          "ship_base",
+          "ship_base"
+        ],
+        "right": [
+          "ship_bank_r3",
+          "ship_bank_r3",
+          "ship_bank_r3"
+        ]
+      }
+    },
+    "9": {
+      "audio": {
+        "calls": [
+          {
+            "src": "reviewed_laser_cannon.wav",
+            "volume": 1,
+            "loop": false,
+            "ready": 1,
+            "status": "playing",
+            "at": 5495.5999999940395
+          },
+          {
+            "src": "reviewed_shadow_orb_launch.wav",
+            "volume": 1,
+            "loop": false,
+            "ready": 1,
+            "status": "playing",
+            "at": 5718.899999976158
+          },
+          {
+            "src": "nsp_rocket_launch.mp3",
+            "volume": 1,
+            "loop": false,
+            "ready": 1,
+            "status": "playing",
+            "at": 5933.5
+          }
+        ],
+        "context": "running",
+        "ready": [
+          {
+            "name": "spaceLaserCannon",
+            "states": [
+              4,
+              4,
+              4
+            ],
+            "times": [
+              0.78,
+              0.76,
+              0
+            ]
+          },
+          {
+            "name": "spaceShadowRelease",
+            "states": [
+              4,
+              4,
+              4
+            ],
+            "times": [
+              2.2,
+              0.488,
+              0
+            ]
+          },
+          {
+            "name": "spaceVolleyLaunch",
+            "states": [
+              4,
+              4,
+              4
+            ],
+            "times": [
+              1.4,
+              0.272834,
+              0
+            ]
+          }
+        ]
+      }
+    }
+  },
+  "pageErrors": []
+}

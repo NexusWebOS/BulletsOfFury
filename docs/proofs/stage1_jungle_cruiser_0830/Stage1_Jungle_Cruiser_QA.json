@@ -1,0 +1,163 @@
+{
+  "start": 4297.5,
+  "states": [
+    {
+      "state": "acquire",
+      "time": 0.68
+    },
+    {
+      "state": "missiles",
+      "time": 1.96
+    },
+    {
+      "state": "edgeGun",
+      "time": 3.18
+    },
+    {
+      "state": "gunSlide",
+      "time": 4.08
+    },
+    {
+      "state": "diveSouth",
+      "time": 7.41
+    },
+    {
+      "state": "riseNorth",
+      "time": 8.16
+    },
+    {
+      "state": "returnTop",
+      "time": 9.18
+    },
+    {
+      "state": "beamCharge",
+      "time": 11.66
+    },
+    {
+      "state": "beamSweep",
+      "time": 12.92
+    },
+    {
+      "state": "recover",
+      "time": 21.53
+    },
+    {
+      "state": "missiles",
+      "time": 22.35
+    },
+    {
+      "state": "rageMissiles",
+      "time": 23.23
+    },
+    {
+      "state": "rageChargeEdge",
+      "time": 24.31
+    },
+    {
+      "state": "rageSlide",
+      "time": 25.51
+    },
+    {
+      "state": "ragePounce",
+      "time": 27.01
+    },
+    {
+      "state": "rageOrbit",
+      "time": 27.33
+    },
+    {
+      "state": "recover",
+      "time": 28.26
+    },
+    {
+      "state": "rageMissiles",
+      "time": 29.11
+    },
+    {
+      "state": "rageChargeEdge",
+      "time": 30.16
+    },
+    {
+      "state": "rageSlide",
+      "time": 31.43
+    }
+  ],
+  "stateSeen": {
+    "acquire": 1,
+    "missiles": 1,
+    "edgeGun": 1,
+    "gunSlide": 1,
+    "diveSouth": 1,
+    "riseNorth": 1,
+    "returnTop": 1,
+    "beamCharge": 1,
+    "beamSweep": 1,
+    "recover": 1,
+    "rageMissiles": 1,
+    "rageChargeEdge": 1,
+    "rageSlide": 1,
+    "ragePounce": 1,
+    "rageOrbit": 1
+  },
+  "bullets": {
+    "rocket": 52,
+    "loop": 4,
+    "nose": 75,
+    "helix": 1,
+    "other": 0
+  },
+  "flashes": {
+    "missile": 26,
+    "mg": 75,
+    "laser": 2
+  },
+  "maxAnchorError": {
+    "missile": 0,
+    "mg": 0,
+    "laser": 0
+  },
+  "ghostSolidViolations": 0,
+  "ghostBodyFrames": 170,
+  "beamFrames": 157,
+  "beamSeconds": 8.61,
+  "chargeFrames": 525,
+  "beamMaxCenterError": 0,
+  "beamMinAngle": -0.524,
+  "beamMaxAngle": 0.524,
+  "damagedFrames": 858,
+  "enragedFrames": 438,
+  "deathFx": true,
+  "removed": true,
+  "soundCalls": {
+    "missile": 25,
+    "enemyMachineGunLight": 25,
+    "bossWeaponCharge": 3,
+    "laserBeamStart": 1,
+    "laserBeamEnd": 1,
+    "expSmall": 12,
+    "enemyHeavyLaser": 1,
+    "expBig": 27
+  },
+  "capture": {
+    "w": 960,
+    "h": 1024,
+    "mime": "video/webm;codecs=vp9"
+  },
+  "pageErrors": [],
+  "assertions": {
+    "allRequiredStates": true,
+    "allThreeHardpointsFlashed": true,
+    "flashesRemainAnchored": true,
+    "projectilesAuthoredOnly": true,
+    "loopMissilesPresent": true,
+    "helixPresent": true,
+    "beamHeldEightSeconds": true,
+    "beamCentered": true,
+    "beamSweepsBothSides": true,
+    "ghostFlybysNonSolid": true,
+    "damageStatesVisible": true,
+    "authoredExplosionDeath": true,
+    "noBrowserErrors": true
+  },
+  "passed": true
+}

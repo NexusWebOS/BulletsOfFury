@@ -1,0 +1,146 @@
+{
+  "cases": [
+    {
+      "ship": "infernoreaver",
+      "name": "INFERNO REAVER",
+      "fx": [
+        "inferno_mg",
+        "inferno_shotgun"
+      ],
+      "beamFamilies": [
+        "inferno"
+      ],
+      "angleChecks": [
+        {
+          "id": 1,
+          "family": "inferno",
+          "samples": 164,
+          "maxAngleDrift": 0.7445769697059392,
+          "minAngle": 0.7855394214860806,
+          "maxAngle": 2.356084723811318,
+          "sweepRange": 1.5705453023252374,
+          "maxSouthOffset": 0.7852883970164215
+        }
+      ],
+      "live": [
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg",
+        "inferno_mg"
+      ],
+      "activeBeam": null,
+      "case": "INFERNO REAVER \u2014 STAGE 2 BOSS",
+      "capture": {
+        "w": 960,
+        "h": 1024,
+        "mime": "video/webm;codecs=vp9"
+      }
+    },
+    {
+      "ship": "rimewall",
+      "name": "CRYO SPEAR",
+      "fx": [
+        "cryo_ball"
+      ],
+      "beamFamilies": [
+        "rime"
+      ],
+      "angleChecks": [
+        {
+          "id": 1,
+          "family": "rime",
+          "samples": 88,
+          "maxAngleDrift": 0,
+          "minAngle": 2.394116205785938,
+          "maxAngle": 2.394116205785938,
+          "sweepRange": 0,
+          "maxSouthOffset": 0.8233198789910414
+        },
+        {
+          "id": 2,
+          "family": "rime",
+          "samples": 87,
+          "maxAngleDrift": 0,
+          "minAngle": 2.4927496336442756,
+          "maxAngle": 2.4927496336442756,
+          "sweepRange": 0,
+          "maxSouthOffset": 0.921953306849379
+        }
+      ],
+      "live": [
+        "cryo_ball",
+        "cryo_ball",
+        "cryo_ball",
+        "cryo_ball"
+      ],
+      "activeBeam": null,
+      "case": "CRYO SPEAR \u2014 STAGE 3 MINIBOSS",
+      "capture": {
+        "w": 960,
+        "h": 1024,
+        "mime": "video/webm;codecs=vp9"
+      }
+    },
+    {
+      "ship": "cryospear",
+      "name": "RIME WALL",
+      "fx": [
+        "rime_orb"
+      ],
+      "beamFamilies": [
+        "rime"
+      ],
+      "angleChecks": [
+        {
+          "id": 1,
+          "family": "rime",
+          "samples": 101,
+          "maxAngleDrift": 0,
+          "minAngle": 1.2607963267948965,
+          "maxAngle": 1.8807963267948966,
+          "sweepRange": 0.6200000000000001,
+          "maxSouthOffset": 0.31000000000000005
+        },
+        {
+          "id": 2,
+          "family": "rime",
+          "samples": 99,
+          "maxAngleDrift": 0,
+          "minAngle": 1.2607963267948965,
+          "maxAngle": 1.8807963267948966,
+          "sweepRange": 0.6200000000000001,
+          "maxSouthOffset": 0.31000000000000005
+        },
+        {
+          "id": 3,
+          "family": "rime",
+          "samples": 7,
+          "maxAngleDrift": 0,
+          "minAngle": 1.2607963267948965,
+          "maxAngle": 1.8807963267948966,
+          "sweepRange": 0.6200000000000001,
+          "maxSouthOffset": 0.31000000000000005
+        }
+      ],
+      "live": [],
+      "activeBeam": "rime",
+      "case": "RIME WALL \u2014 STAGE 3 BOSS",
+      "capture": {
+        "w": 960,
+        "h": 1024,
+        "mime": "video/webm;codecs=vp9"
+      }
+    }
+  ],
+  "pageErrors": [],
+  "consoleErrors": [],
+  "assetsReady": 56
+}

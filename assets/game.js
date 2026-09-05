@@ -12423,11 +12423,16 @@ function s9FusionRing(b){
 function s9FusionBossDraw(b){
   const F=b&&b._s9fusion;if(!F||F.phase==='tidal'||typeof XART==='undefined')return false;
   s9FusionRing(b);          // the aperture sits UNDER the pair, so they fuse inside it
-  const core='ns9_gatecore_'+(Math.floor(b.t*9)%4);
-  if(F.phase==='fuse'&&XART.rdy(core)){
-    const z=145+105*(F.gate||0);ctx.save();ctx.globalCompositeOperation='lighter';
-    ctx.drawImage(XART.get(core),VW/2-z/2,142-z/2,z,z);ctx.restore();
-  }
+  /* ⚠ THE GATE CORE NO LONGER DRAWS DURING THE FUSE (0905y). Mike, on the aperture: "theres an
+     enemy your spawning in the teleporter too instead of using the teleporter itself". He is
+     looking at `ns9_gatecore_0..3` - a 384x384 purple radial MACHINE (rendered:
+     docs/proofs/ns9_gatecore.png) that this draw scaled 145->250px into the middle of the ring. It
+     reads as a unit arriving inside the portal, which is precisely the thing the teleport is
+     supposed to be doing on its own. The chrift aperture IS the teleporter; it carries the beat
+     unaccompanied now.
+     ⚠ The ART IS LEFT REGISTERED and `F.gate` still drives the ring's scale, so restoring this is
+     one block if he ever wants a core inside the portal. This was its ONLY draw site - the keys are
+     now registered-but-undrawn, which this repo tracks deliberately rather than deleting. */
   for(const w of [F.left,F.right]){
     const ratio=w.hp/w.maxhp,key=ratio>.58?'ns9_warpsen_intact':(ratio>.24?'ns9_warpsen_damaged':'ns9_warpsen_critical');
     if(XART.rdy(key)){

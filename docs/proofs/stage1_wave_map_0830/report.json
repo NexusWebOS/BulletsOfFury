@@ -1,0 +1,520 @@
+{
+  "shown": {
+    "01_water_left_boats": [
+      {
+        "type": "s1boatpatrol",
+        "x": 138.4,
+        "y": -50,
+        "w": 52,
+        "h": 88,
+        "bodyW": 52,
+        "bodyH": 88,
+        "unitSquare": 0,
+        "wave": 0,
+        "kamikaze": false
+      },
+      {
+        "type": "s1boatgun",
+        "x": 205.6,
+        "y": -86,
+        "w": 55,
+        "h": 83,
+        "bodyW": 55,
+        "bodyH": 83,
+        "unitSquare": 0,
+        "wave": 0,
+        "kamikaze": false
+      }
+    ],
+    "02_coast_fast_jet_ripple": [
+      {
+        "type": "s1jetdelta",
+        "x": 282.4,
+        "y": -58.5,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "wave": 1,
+        "lead": 0,
+        "kamikaze": false
+      },
+      {
+        "type": "s1jetdelta",
+        "x": 498.4,
+        "y": -58.5,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "wave": 1,
+        "lead": 1,
+        "kamikaze": false
+      },
+      {
+        "type": "s1jetdelta",
+        "x": 181.60000000000002,
+        "y": -58.5,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "wave": 1,
+        "lead": 2,
+        "kamikaze": false
+      },
+      {
+        "type": "s1jetbomber",
+        "x": 397.6,
+        "y": -64,
+        "w": 131,
+        "h": 116,
+        "bodyW": 131,
+        "bodyH": 116,
+        "unitSquare": 0,
+        "wave": 1,
+        "lead": 3,
+        "kamikaze": false
+      }
+    ],
+    "03_land_tank_file": [
+      {
+        "type": "s1tankheavy",
+        "x": 514.4,
+        "y": -115.5,
+        "w": 103,
+        "h": 103,
+        "bodyW": 61,
+        "bodyH": 83,
+        "unitSquare": 103,
+        "wave": 0,
+        "kamikaze": false
+      },
+      {
+        "type": "s1tankheavy",
+        "x": 287.20000000000005,
+        "y": -242.5,
+        "w": 103,
+        "h": 103,
+        "bodyW": 61,
+        "bodyH": 83,
+        "unitSquare": 103,
+        "wave": 0,
+        "kamikaze": false
+      },
+      {
+        "type": "s1tankheavy",
+        "x": 381.6,
+        "y": -369.5,
+        "w": 103,
+        "h": 103,
+        "bodyW": 61,
+        "bodyH": 83,
+        "unitSquare": 103,
+        "wave": 0,
+        "kamikaze": false
+      },
+      {
+        "type": "s1tankheavy",
+        "x": 498.4,
+        "y": -496.5,
+        "w": 103,
+        "h": 103,
+        "bodyW": 61,
+        "bodyH": 83,
+        "unitSquare": 103,
+        "wave": 0,
+        "kamikaze": false
+      }
+    ],
+    "04_dam_kamikaze_approach": [
+      {
+        "type": "s1jetdelta_b",
+        "x": 407.2,
+        "y": -58.5,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "wave": 0,
+        "lead": 0,
+        "kamikaze": true
+      },
+      {
+        "type": "s1jetdelta_b",
+        "x": 157.6,
+        "y": -58.5,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "wave": 0,
+        "lead": 1,
+        "kamikaze": true
+      },
+      {
+        "type": "s1jetdelta_b",
+        "x": 522.4,
+        "y": -58.5,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "wave": 0,
+        "lead": 2,
+        "kamikaze": true
+      },
+      {
+        "type": "s1jetdelta_b",
+        "x": 272.79999999999995,
+        "y": -58.5,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "wave": 0,
+        "lead": 3,
+        "kamikaze": true
+      }
+    ]
+  },
+  "shownAfter": {
+    "01_water_left_boats": [
+      {
+        "type": "s1boatpatrol",
+        "x": 106.4,
+        "y": 99.29440000000001,
+        "w": 52,
+        "h": 88,
+        "bodyW": 52,
+        "bodyH": 88,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": true
+      },
+      {
+        "type": "s1boatgun",
+        "x": 45.60000000000002,
+        "y": 24.208800000000046,
+        "w": 55,
+        "h": 83,
+        "bodyW": 55,
+        "bodyH": 83,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": false
+      }
+    ],
+    "02_coast_fast_jet_ripple": [
+      {
+        "type": "s1jetdelta",
+        "x": 277,
+        "y": -11.330400000000012,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": false
+      },
+      {
+        "type": "s1jetdelta",
+        "x": 511.2499927043915,
+        "y": -13.815359999999984,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": false
+      },
+      {
+        "type": "s1jetdelta",
+        "x": 177.75,
+        "y": -23.75520000000001,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": false
+      },
+      {
+        "type": "s1jetbomber",
+        "x": 393.9999927043915,
+        "y": -149.05790999999988,
+        "w": 131,
+        "h": 116,
+        "bodyW": 131,
+        "bodyH": 116,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": false
+      }
+    ],
+    "03_land_tank_file": [
+      {
+        "type": "s1tankheavy",
+        "x": 514.4,
+        "y": 101.93599999999685,
+        "w": 103,
+        "h": 103,
+        "bodyW": 61,
+        "bodyH": 83,
+        "unitSquare": 103,
+        "dead": false,
+        "beached": false
+      },
+      {
+        "type": "s1tankheavy",
+        "x": 287.20000000000005,
+        "y": -25.064000000003148,
+        "w": 103,
+        "h": 103,
+        "bodyW": 61,
+        "bodyH": 83,
+        "unitSquare": 103,
+        "dead": false,
+        "beached": false
+      },
+      {
+        "type": "s1tankheavy",
+        "x": 381.6,
+        "y": -152.06400000000315,
+        "w": 103,
+        "h": 103,
+        "bodyW": 61,
+        "bodyH": 83,
+        "unitSquare": 103,
+        "dead": false,
+        "beached": false
+      },
+      {
+        "type": "s1tankheavy",
+        "x": 498.4,
+        "y": -279.06400000000315,
+        "w": 103,
+        "h": 103,
+        "bodyW": 61,
+        "bodyH": 83,
+        "unitSquare": 103,
+        "dead": false,
+        "beached": false
+      }
+    ],
+    "04_dam_kamikaze_approach": [
+      {
+        "type": "s1jetdelta_b",
+        "x": 407.2,
+        "y": 53.589600000000104,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": false
+      },
+      {
+        "type": "s1jetdelta_b",
+        "x": 157.6,
+        "y": 45.1896000000001,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": false
+      },
+      {
+        "type": "s1jetdelta_b",
+        "x": 522.4,
+        "y": 39.59519999999992,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": false
+      },
+      {
+        "type": "s1jetdelta_b",
+        "x": 272.79999999999995,
+        "y": 31.178400000000174,
+        "w": 95,
+        "h": 105,
+        "bodyW": 95,
+        "bodyH": 105,
+        "unitSquare": 0,
+        "dead": false,
+        "beached": false
+      }
+    ]
+  },
+  "arena": {
+    "scroll": 3280,
+    "sourceTop": 420,
+    "length": 82
+  },
+  "mechanics": {
+    "planCount": 19,
+    "mapYs": [
+      3660,
+      3510,
+      3360,
+      3200,
+      3050,
+      2910,
+      2760,
+      2640,
+      2470,
+      2350,
+      2170,
+      1980,
+      1810,
+      1590,
+      1400,
+      1180,
+      990,
+      760,
+      555
+    ],
+    "waterTypes": [
+      "s1boatpatrol",
+      "s1boatgun",
+      "s1boatpatrol",
+      "s1boatgun",
+      "s1boatpatrol",
+      "s1corvette",
+      "s1boatgun",
+      "s1boatpatrol",
+      "s1corvette",
+      "s1boatgun"
+    ],
+    "ripples": {
+      "1": [
+        {
+          "x": 498.4,
+          "lead": 0
+        },
+        {
+          "x": 397.6,
+          "lead": 1
+        },
+        {
+          "x": 282.4,
+          "lead": 2
+        },
+        {
+          "x": 181.60000000000002,
+          "lead": 3
+        }
+      ],
+      "2": [
+        {
+          "x": 272.79999999999995,
+          "lead": 0
+        },
+        {
+          "x": 517.6,
+          "lead": 1
+        },
+        {
+          "x": 162.4,
+          "lead": 2
+        },
+        {
+          "x": 407.2,
+          "lead": 3
+        }
+      ],
+      "3": [
+        {
+          "x": 412,
+          "lead": 0
+        },
+        {
+          "x": 196,
+          "lead": 1
+        },
+        {
+          "x": 503.2,
+          "lead": 2
+        },
+        {
+          "x": 301.6,
+          "lead": 3
+        }
+      ],
+      "4": [
+        {
+          "x": 157.6,
+          "lead": 0
+        },
+        {
+          "x": 263.20000000000005,
+          "lead": 1
+        },
+        {
+          "x": 388,
+          "lead": 2
+        },
+        {
+          "x": 522.4,
+          "lead": 3
+        }
+      ],
+      "5": [
+        {
+          "x": 493.59999999999997,
+          "lead": 0
+        },
+        {
+          "x": 402.4,
+          "lead": 1
+        },
+        {
+          "x": 292,
+          "lead": 2
+        },
+        {
+          "x": 186.39999999999998,
+          "lead": 3
+        }
+      ]
+    },
+    "releases": [
+      0,
+      2,
+      5,
+      7
+    ],
+    "tankDrift": 0,
+    "kamikazes": 8,
+    "kamikazeVectorDrift": 0,
+    "subboss": {
+      "at": 0.42,
+      "kind": "junglecruiser",
+      "afterScroll": 1400,
+      "afterWaveTime": 34
+    },
+    "stageLength": 82
+  },
+  "errors": [],
+  "tankFootprints": {
+    "allSquare": true,
+    "touching": false
+  }
+}

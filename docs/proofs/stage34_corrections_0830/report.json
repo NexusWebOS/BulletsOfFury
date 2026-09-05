@@ -1,0 +1,41 @@
+{
+  "audit": {
+    "types": [
+      "sharddart",
+      "s3interceptor",
+      "s3barge",
+      "glaciercarrier",
+      "cryoeye"
+    ],
+    "volcanic": [],
+    "tintKeys": [
+      "ndr_sharddart_idle_0",
+      "nef_s3_elite_ice_interceptor_intact"
+    ],
+    "orb": {
+      "staticSpin": true,
+      "shootable": false,
+      "frame0": "l23fx_rime_orb_0",
+      "family": "rime_orb"
+    },
+    "barrel": {
+      "x0": 205,
+      "x1": 205,
+      "y0": 210,
+      "y1": 271.19999999999936,
+      "spin": 0,
+      "vx": 0,
+      "vy": 0
+    },
+    "hp": {
+      "mul": 1.05,
+      "maxhp": 2625
+    },
+    "bullets": {
+      "mgCount": 12,
+      "mgStraight": true,
+      "generalStraight": true
+    }
+  },
+  "errors": []
+}

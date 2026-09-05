@@ -1,0 +1,804 @@
+{
+  "damage": {
+    "laser": {
+      "before": 200,
+      "after": 141.80000000000007,
+      "right": 200,
+      "dead": false,
+      "shots": 0,
+      "space": true,
+      "enter": false,
+      "trace": [
+        {
+          "i": 0,
+          "targets": [
+            {
+              "x": 144.55772786777268,
+              "y": 132.20912887787935,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 335.4422721322273,
+              "y": 132.20912887787935,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceLaser",
+            "x": 130.4457278677727,
+            "y": 381.888,
+            "w": 9,
+            "h": 38
+          }
+        },
+        {
+          "i": 5,
+          "targets": [
+            {
+              "x": 147.35075378979397,
+              "y": 133.2523805762577,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 332.64924621020606,
+              "y": 133.2523805762577,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceLaser",
+            "x": 130.4457278677727,
+            "y": 304.63800000000003,
+            "w": 9,
+            "h": 38
+          }
+        },
+        {
+          "i": 10,
+          "targets": [
+            {
+              "x": 150.11461210599305,
+              "y": 134.26750650686566,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 329.88538789400695,
+              "y": 134.26750650686566,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceImpact",
+            "x": 130.4457278677727,
+            "y": 227.3880000000001,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "i": 15,
+          "targets": [
+            {
+              "x": 152.8252440120016,
+              "y": 135.23170912978335,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 327.1747559879984,
+              "y": 135.23170912978335,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceImpact",
+            "x": 130.4457278677727,
+            "y": 227.3880000000001,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "i": 20,
+          "targets": [
+            {
+              "x": 155.4590540281385,
+              "y": 136.12333453279763,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 324.5409459718615,
+              "y": 136.12333453279763,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceImpact",
+            "x": 130.4457278677727,
+            "y": 227.3880000000001,
+            "w": 44,
+            "h": 44
+          }
+        },
+        {
+          "i": 25,
+          "targets": [
+            {
+              "x": 157.99311539308957,
+              "y": 136.92235873158708,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 322.00688460691043,
+              "y": 136.92235873158708,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceImpact",
+            "x": 130.4457278677727,
+            "y": 227.3880000000001,
+            "w": 44,
+            "h": 44
+          }
+        }
+      ]
+    },
+    "shadow": {
+      "before": 200,
+      "after": 152,
+      "right": 200,
+      "dead": false,
+      "shots": 0,
+      "space": true,
+      "enter": false,
+      "trace": [
+        {
+          "i": 0,
+          "targets": [
+            {
+              "x": 145.67912205767266,
+              "y": 132.62914984438606,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 334.32087794232734,
+              "y": 132.62914984438606,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "shadowOrb",
+            "x": 145.67912205767266,
+            "y": 366.96,
+            "w": 66,
+            "h": 66
+          }
+        },
+        {
+          "i": 5,
+          "targets": [
+            {
+              "x": 148.46336755785993,
+              "y": 133.66391838498996,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 331.5366324421401,
+              "y": 133.66391838498996,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "shadowOrb",
+            "x": 145.67912205767266,
+            "y": 319.46,
+            "w": 66,
+            "h": 66
+          }
+        },
+        {
+          "i": 10,
+          "targets": [
+            {
+              "x": 151.2087603837732,
+              "y": 134.66131890586212,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 328.7912396162268,
+              "y": 134.66131890586212,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "shadowOrb",
+            "x": 145.67912205767266,
+            "y": 271.96,
+            "w": 66,
+            "h": 66
+          }
+        },
+        {
+          "i": 15,
+          "targets": [
+            {
+              "x": 153.89140246924688,
+              "y": 135.59895194157178,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 326.1085975307531,
+              "y": 135.59895194157178,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "shadowOrb",
+            "x": 145.67912205767266,
+            "y": 224.45999999999998,
+            "w": 66,
+            "h": 66
+          }
+        },
+        {
+          "i": 20,
+          "targets": [
+            {
+              "x": 156.48794198009085,
+              "y": 136.45576027555379,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 323.51205801990915,
+              "y": 136.45576027555379,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "shadowOrb",
+            "x": 145.67912205767266,
+            "y": 176.95999999999998,
+            "w": 66,
+            "h": 66
+          }
+        },
+        {
+          "i": 25,
+          "targets": [
+            {
+              "x": 158.9757765868876,
+              "y": 137.212501839796,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 321.0242234131124,
+              "y": 137.212501839796,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "shadowOrb",
+            "x": 145.67912205767266,
+            "y": 129.45999999999998,
+            "w": 66,
+            "h": 66
+          }
+        }
+      ]
+    },
+    "volley": {
+      "before": 200,
+      "after": 167,
+      "right": 200,
+      "dead": false,
+      "shots": 0,
+      "space": true,
+      "enter": false,
+      "trace": [
+        {
+          "i": 0,
+          "targets": [
+            {
+              "x": 144,
+              "y": -120,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 336,
+              "y": -120,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceVolleySeed",
+            "x": 144,
+            "y": 366.96,
+            "w": 24,
+            "h": 28
+          }
+        },
+        {
+          "i": 5,
+          "targets": [
+            {
+              "x": 146.7959365850616,
+              "y": 133.0460669273152,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 333.2040634149384,
+              "y": 133.0460669273152,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceVolleySeed",
+            "x": 144,
+            "y": 329.9600000000001,
+            "w": 24,
+            "h": 28
+          }
+        },
+        {
+          "i": 10,
+          "targets": [
+            {
+              "x": 149.56753513118247,
+              "y": 134.06864144662939,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 330.43246486881753,
+              "y": 134.06864144662939,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceVolley",
+            "x": 134.3708343132098,
+            "y": 285.11136981812274,
+            "w": 13,
+            "h": 25
+          }
+        },
+        {
+          "i": 15,
+          "targets": [
+            {
+              "x": 152.2906694569234,
+              "y": 135.04475873877863,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 327.7093305430766,
+              "y": 135.04475873877863,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceVolley",
+            "x": 132.04465004955816,
+            "y": 245.5929812344106,
+            "w": 13,
+            "h": 25
+          }
+        },
+        {
+          "i": 20,
+          "targets": [
+            {
+              "x": 154.9416352516735,
+              "y": 135.95249731376524,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 325.0583647483265,
+              "y": 135.95249731376524,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceImpact",
+            "x": 134.07254945511994,
+            "y": 230.11151399612,
+            "w": 40,
+            "h": 40
+          }
+        },
+        {
+          "i": 25,
+          "targets": [
+            {
+              "x": 157.49735641668,
+              "y": 136.77147132016333,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            },
+            {
+              "x": 322.50264358332004,
+              "y": 136.77147132016333,
+              "w": 172,
+              "h": 172,
+              "sub": true
+            }
+          ],
+          "bullet": {
+            "kind": "spaceImpact",
+            "x": 134.07254945511994,
+            "y": 230.11151399612,
+            "w": 40,
+            "h": 40
+          }
+        }
+      ]
+    }
+  },
+  "kill": {
+    "one": {
+      "left": true,
+      "right": false,
+      "dead": false
+    },
+    "both": {
+      "left": true,
+      "right": true,
+      "dead": true,
+      "hp": 0
+    },
+    "cleared": true,
+    "done": true,
+    "active": false
+  },
+  "audio": {
+    "calls": [
+      {
+        "src": "reviewed_laser_cannon.wav",
+        "volume": 0.7616,
+        "loop": false,
+        "ready": 1,
+        "paused": true,
+        "status": "playing"
+      },
+      {
+        "src": "nsp_bof2_charge_shot.mp3",
+        "volume": 0,
+        "loop": true,
+        "ready": 1,
+        "paused": true,
+        "status": "reject:AbortError"
+      },
+      {
+        "src": "reviewed_shadow_orb_launch.wav",
+        "volume": 0.7480000000000001,
+        "loop": false,
+        "ready": 1,
+        "paused": true,
+        "status": "playing"
+      },
+      {
+        "src": "nsp_rocket_launch.mp3",
+        "volume": 0.7616,
+        "loop": false,
+        "ready": 1,
+        "paused": true,
+        "status": "playing"
+      },
+      {
+        "src": "reviewed_maverick_charge_build.wav",
+        "volume": 0.884,
+        "loop": false,
+        "ready": 1,
+        "paused": true,
+        "status": "playing"
+      },
+      {
+        "src": "reviewed_maverick_charge_loop.wav",
+        "volume": 1,
+        "loop": true,
+        "ready": 0,
+        "paused": true,
+        "status": "playing"
+      },
+      {
+        "src": "stage9_bonus_warp_run.mp3",
+        "volume": 0.4,
+        "loop": true,
+        "ready": 1,
+        "paused": true,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "expBig.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": false,
+        "status": "playing"
+      },
+      {
+        "src": "select.mp3",
+        "volume": 0.68,
+        "loop": false,
+        "ready": 1,
+        "paused": true,
+        "status": "playing"
+      }
+    ],
+    "pools": [
+      {
+        "name": "spaceLaserCannon",
+        "exists": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "paused": [
+          true,
+          true,
+          true
+        ]
+      },
+      {
+        "name": "spaceShadowRelease",
+        "exists": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "paused": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "name": "spaceVolleyLaunch",
+        "exists": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "paused": [
+          false,
+          false,
+          true
+        ]
+      },
+      {
+        "name": "helixChargeStart",
+        "exists": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "paused": [
+          false,
+          true,
+          true
+        ]
+      },
+      {
+        "name": "helixCharge",
+        "exists": true,
+        "ready": [
+          4,
+          4,
+          4
+        ],
+        "paused": [
+          true,
+          true,
+          true
+        ]
+      }
+    ],
+    "loop": {
+      "on": true,
+      "paused": false,
+      "ready": 4,
+      "volume": 0.7514
+    }
+  },
+  "pageErrors": []
+}

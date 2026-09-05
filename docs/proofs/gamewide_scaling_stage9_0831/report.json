@@ -1,0 +1,380 @@
+{
+  "scaling": {
+    "stages": [
+      {
+        "stage": 1,
+        "base": {
+          "hp": 1,
+          "spawn": 1.12,
+          "eHp": 6,
+          "pressure": 0,
+          "reinforcement": false
+        },
+        "hot": {
+          "hp": 1.1143296,
+          "spawn": 1.3575584,
+          "eHp": 7,
+          "pressure": 0,
+          "reinforcement": false,
+          "type": null,
+          "marked": false
+        },
+        "roster": []
+      },
+      {
+        "stage": 2,
+        "base": {
+          "hp": 1,
+          "spawn": 1.04,
+          "eHp": 6,
+          "pressure": 0,
+          "reinforcement": false
+        },
+        "hot": {
+          "hp": 1.1261568,
+          "spawn": 1.2845472,
+          "eHp": 7,
+          "pressure": 0.8151573333333333,
+          "reinforcement": true,
+          "type": "cinderwasp",
+          "marked": true
+        },
+        "roster": [
+          "ash",
+          "lance",
+          "cinderwasp"
+        ]
+      },
+      {
+        "stage": 3,
+        "base": {
+          "hp": 1.05,
+          "spawn": 1.04,
+          "eHp": 8,
+          "pressure": 0,
+          "reinforcement": false
+        },
+        "hot": {
+          "hp": 1.1948832,
+          "spawn": 1.291536,
+          "eHp": 10,
+          "pressure": 0.8384533333333333,
+          "reinforcement": true,
+          "type": "s3interceptor",
+          "marked": true
+        },
+        "roster": [
+          "s3interceptor",
+          "sharddart",
+          "cryoeye"
+        ]
+      },
+      {
+        "stage": 4,
+        "base": {
+          "hp": 1.1,
+          "spawn": 1.04,
+          "eHp": 9,
+          "pressure": 0,
+          "reinforcement": false
+        },
+        "hot": {
+          "hp": 1.2647923200000002,
+          "spawn": 1.2985248,
+          "eHp": 10,
+          "pressure": 0.8617493333333334,
+          "reinforcement": true,
+          "type": "s4rocket",
+          "marked": true
+        },
+        "roster": [
+          "s4interceptor",
+          "s4rocket",
+          "s4minitank"
+        ]
+      },
+      {
+        "stage": 5,
+        "base": {
+          "hp": 1.15,
+          "spawn": 1.04,
+          "eHp": 12,
+          "pressure": 0,
+          "reinforcement": false
+        },
+        "hot": {
+          "hp": 1.3358841599999998,
+          "spawn": 1.3055136,
+          "eHp": 13,
+          "pressure": 0.8850453333333335,
+          "reinforcement": true,
+          "type": "s5rammer",
+          "marked": true
+        },
+        "roster": [
+          "s5interceptor",
+          "s5skimmer",
+          "s5rammer"
+        ]
+      },
+      {
+        "stage": 6,
+        "base": {
+          "hp": 1.2,
+          "spawn": 1.04,
+          "eHp": 12,
+          "pressure": 0,
+          "reinforcement": false
+        },
+        "hot": {
+          "hp": 1.40815872,
+          "spawn": 1.3125024,
+          "eHp": 14,
+          "pressure": 0.9083413333333334,
+          "reinforcement": true,
+          "type": "s6dart",
+          "marked": true
+        },
+        "roster": [
+          "s6dart",
+          "s6lancer",
+          "s6skimmer"
+        ]
+      },
+      {
+        "stage": 7,
+        "base": {
+          "hp": 1.25,
+          "spawn": 1.04,
+          "eHp": 15,
+          "pressure": 0,
+          "reinforcement": false
+        },
+        "hot": {
+          "hp": 1.481616,
+          "spawn": 1.3194911999999999,
+          "eHp": 18,
+          "pressure": 0.9316373333333328,
+          "reinforcement": true,
+          "type": "s7skimmer",
+          "marked": true
+        },
+        "roster": [
+          "s7sampler",
+          "s7skimmer",
+          "s7lamprey"
+        ]
+      },
+      {
+        "stage": 8,
+        "base": {
+          "hp": 1.3,
+          "spawn": 1.04,
+          "eHp": 18,
+          "pressure": 0,
+          "reinforcement": false
+        },
+        "hot": {
+          "hp": 1.556256,
+          "spawn": 1.3264799999999999,
+          "eHp": 22,
+          "pressure": 0.9549333333333329,
+          "reinforcement": true,
+          "type": "s8scout",
+          "marked": true
+        },
+        "roster": [
+          "s8interceptor",
+          "s8needlejet",
+          "s8scout"
+        ]
+      },
+      {
+        "stage": 9,
+        "base": {
+          "hp": 1.32,
+          "spawn": 1.04,
+          "eHp": 18,
+          "pressure": 0,
+          "reinforcement": false
+        },
+        "hot": {
+          "hp": 1.5801984,
+          "spawn": 1.3264799999999999,
+          "eHp": 22,
+          "pressure": 0.9549333333333329,
+          "reinforcement": true,
+          "type": "s9interceptor",
+          "marked": true
+        },
+        "roster": [
+          "s9interceptor",
+          "s9warptank",
+          "s9comet"
+        ]
+      }
+    ],
+    "death": {
+      "dead": true,
+      "lifeT": 0,
+      "lifeThreat": 0,
+      "build": 0,
+      "reinforcementT": 6.5,
+      "reinforcementSeq": 0,
+      "deadBuild": 0,
+      "deadSurvived": 0
+    }
+  },
+  "spriteAudit": {
+    "removed_pixels": 14873,
+    "added_pixels": 0,
+    "changed_frames": 24,
+    "frames": [
+      {
+        "unit": "hyperspace_prism",
+        "frame": "01.png",
+        "removed_pixels": 679,
+        "added_pixels": 0
+      },
+      {
+        "unit": "hyperspace_prism",
+        "frame": "02.png",
+        "removed_pixels": 679,
+        "added_pixels": 0
+      },
+      {
+        "unit": "hyperspace_prism",
+        "frame": "03.png",
+        "removed_pixels": 684,
+        "added_pixels": 0
+      },
+      {
+        "unit": "hyperspace_prism",
+        "frame": "04.png",
+        "removed_pixels": 680,
+        "added_pixels": 0
+      },
+      {
+        "unit": "hyperspace_prism",
+        "frame": "05.png",
+        "removed_pixels": 679,
+        "added_pixels": 0
+      },
+      {
+        "unit": "hyperspace_prism",
+        "frame": "06.png",
+        "removed_pixels": 691,
+        "added_pixels": 0
+      },
+      {
+        "unit": "hyperspace_prism",
+        "frame": "07.png",
+        "removed_pixels": 679,
+        "added_pixels": 0
+      },
+      {
+        "unit": "hyperspace_prism",
+        "frame": "08.png",
+        "removed_pixels": 679,
+        "added_pixels": 0
+      },
+      {
+        "unit": "ring_drone",
+        "frame": "01.png",
+        "removed_pixels": 542,
+        "added_pixels": 0
+      },
+      {
+        "unit": "ring_drone",
+        "frame": "02.png",
+        "removed_pixels": 542,
+        "added_pixels": 0
+      },
+      {
+        "unit": "ring_drone",
+        "frame": "03.png",
+        "removed_pixels": 542,
+        "added_pixels": 0
+      },
+      {
+        "unit": "ring_drone",
+        "frame": "04.png",
+        "removed_pixels": 543,
+        "added_pixels": 0
+      },
+      {
+        "unit": "ring_drone",
+        "frame": "05.png",
+        "removed_pixels": 542,
+        "added_pixels": 0
+      },
+      {
+        "unit": "ring_drone",
+        "frame": "06.png",
+        "removed_pixels": 542,
+        "added_pixels": 0
+      },
+      {
+        "unit": "ring_drone",
+        "frame": "07.png",
+        "removed_pixels": 542,
+        "added_pixels": 0
+      },
+      {
+        "unit": "ring_drone",
+        "frame": "08.png",
+        "removed_pixels": 542,
+        "added_pixels": 0
+      },
+      {
+        "unit": "singularity_mine",
+        "frame": "01.png",
+        "removed_pixels": 635,
+        "added_pixels": 0
+      },
+      {
+        "unit": "singularity_mine",
+        "frame": "02.png",
+        "removed_pixels": 635,
+        "added_pixels": 0
+      },
+      {
+        "unit": "singularity_mine",
+        "frame": "03.png",
+        "removed_pixels": 636,
+        "added_pixels": 0
+      },
+      {
+        "unit": "singularity_mine",
+        "frame": "04.png",
+        "removed_pixels": 638,
+        "added_pixels": 0
+      },
+      {
+        "unit": "singularity_mine",
+        "frame": "05.png",
+        "removed_pixels": 635,
+        "added_pixels": 0
+      },
+      {
+        "unit": "singularity_mine",
+        "frame": "06.png",
+        "removed_pixels": 637,
+        "added_pixels": 0
+      },
+      {
+        "unit": "singularity_mine",
+        "frame": "07.png",
+        "removed_pixels": 635,
+        "added_pixels": 0
+      },
+      {
+        "unit": "singularity_mine",
+        "frame": "08.png",
+        "removed_pixels": 635,
+        "added_pixels": 0
+      }
+    ]
+  },
+  "errors": []
+}

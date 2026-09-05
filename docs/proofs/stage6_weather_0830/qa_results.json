@@ -1,0 +1,73 @@
+{
+  "phases": {
+    "01_blue_night": {
+      "phase": 0.02,
+      "meanRGB": [
+        2.18,
+        25.17,
+        102.18
+      ],
+      "storm": false
+    },
+    "02_black_squall_rain": {
+      "phase": 0.28,
+      "meanRGB": [
+        18.38,
+        20.55,
+        56.6
+      ],
+      "storm": true
+    },
+    "03_lightning_strike": {
+      "phase": 0.3,
+      "meanRGB": [
+        73.52,
+        81.27,
+        131.52
+      ],
+      "storm": true
+    },
+    "04_purple_dusk": {
+      "phase": 0.56,
+      "meanRGB": [
+        86.82,
+        51.99,
+        108.35
+      ],
+      "storm": false
+    },
+    "05_fire_dawn": {
+      "phase": 0.76,
+      "meanRGB": [
+        123.88,
+        81.39,
+        103.53
+      ],
+      "storm": false
+    },
+    "06_sunlight": {
+      "phase": 0.98,
+      "meanRGB": [
+        67.59,
+        57.84,
+        131.13
+      ],
+      "storm": false
+    }
+  },
+  "pageErrors": [],
+  "rainMotionMeanDelta": 8.802,
+  "scroll": {
+    "mapPxPerSec": 40.66,
+    "skyPxPerSec": 113.86,
+    "ratio": 2.8
+  },
+  "contact": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\docs\\proofs\\stage6_weather_0830\\stage6_weather_phase_contact.png",
+  "adjacentMoodDistances": [
+    48.59,
+    111.09,
+    39.64,
+    47.55,
+    66.97
+  ]
+}

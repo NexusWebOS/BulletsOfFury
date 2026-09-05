@@ -1,0 +1,348 @@
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/bof_gravity_mode_space_weapons.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/stage_runtime_atlases.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/fonts/bmf_maps.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/section_geom.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/stage5_runtime_atlas.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/manifest.js HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/data/ui_layout.json HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/main.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/logo.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/mapJungle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/newbootimage.jpg HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-idle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-idle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-idle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-idle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-idle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-idle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-idle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-idle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-idle.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/ui_dialogue.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/ui_menu_0.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/ui_menu_1.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/pilots_1.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/bof_player_ordnance_projectiles.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/nca_88.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/nca_89.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/pilots_0.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/bof_player_ships_barrel_rolls.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/ui_hud.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/player_weapons.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/bof_player_weapon_special_icons.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/en_s1.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_gate96/nfx_s5gate96_0.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_gate96/nfx_s5gate96_1.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_gate96/nfx_s5gate96_2.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_gate96/nfx_s5gate96_3.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_gate96/nfx_s5gate96_4.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_gate96/nfx_s5gate96_5.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_gate96/nfx_s5gate96_6.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_gate96/nfx_s5gate96_7.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_00.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_01.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_02.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_03.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_04.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_05.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_06.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_07.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_08.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_09.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_10.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_11.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_12.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_13.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_14.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/warp_fx/warp_tunnel_15.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-happy.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-laugh.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-anger.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-crash.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-victory.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-talk-closed.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-talk-small.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-talk-medium.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-talk-wide.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/axel-talk-o.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-happy.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-laugh.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-anger.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-crash.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-victory.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-talk-closed.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-talk-small.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-talk-medium.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-talk-wide.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/cole-talk-o.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-happy.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-laugh.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-anger.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-crash.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-victory.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-talk-closed.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-talk-small.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-talk-medium.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-talk-wide.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/decker-talk-o.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-happy.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-laugh.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-anger.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-crash.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-victory.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-talk-closed.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-talk-small.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-talk-medium.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-talk-wide.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/falva-talk-o.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-happy.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-laugh.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-anger.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-crash.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-victory.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-talk-closed.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-talk-small.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-talk-medium.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-talk-wide.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/freezer-talk-o.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-happy.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-laugh.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-anger.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-crash.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-victory.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-talk-closed.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-talk-small.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-talk-medium.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-talk-wide.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/juggernaut-talk-o.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-happy.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-laugh.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-anger.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-crash.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-victory.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-talk-closed.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-talk-small.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-talk-medium.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-talk-wide.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/lizzie-talk-o.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-happy.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-laugh.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-anger.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-crash.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-victory.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-talk-closed.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-talk-small.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-talk-medium.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-talk-wide.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/maverick-talk-o.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-happy.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-laugh.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-anger.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-sad.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-crash.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-victory.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-talk-closed.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-talk-small.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-talk-medium.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-talk-wide.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/pilot_portraits/yuri-talk-o.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/atlas/stage1_combat_fx.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/fonts/fury-dialogue-font/fury-dialogue-font-alpha.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/cf_boot.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/falvaChargeLoop.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/impactImminent.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/insertCoin.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/boot.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/chain_lightning_hit_1.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/chain_lightning_hit_2.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/stats_bar.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/countdown.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/continueVO.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/restrictedarea.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/enemyunits.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/enemyunit.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/over.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_bof2_shot.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_scatter_laser.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/grenade.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/enemy_machine_shot_light.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/hit.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/expSmall.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/expBig.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/bomb.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_bof2_pickup.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/weapon.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/life.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/select.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_console_beep.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_bof2_boss_warning.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/death.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/gameover.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/stageClear.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/victory.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/announce.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/selectpilot.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/goodluck.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/amb_airbase.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/amb_arctic.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/amb_jungle.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_meteor_shower.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/amb_sewer.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_stage6_wind_loop.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_space_rumble.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/amb_volcanic.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/allyArrive.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/allyLeave.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/bossPhase.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_bof2_ultra_blast.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/brake.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/crackle.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_comet_impact.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_alert_critical.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_rcs_thruster.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_rocket_flyby.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/enemyBig.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/falvaBurst.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/falvaCharge.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/flagPlant.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_solar_flare.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_bof2_stage_intro.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/go.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_charge_release.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_maverick_charge_loop.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_railgun.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_enemy_laser.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_pulse_laser.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_booster_ignite.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/lockAlert.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_warp_jump.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_nav_ping.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_rocket_launch.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/raceLose.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/raceObstacle.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/raceStart.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/raceWin.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/shatter.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/statCount.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/statTick.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_engine_loop.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/whip.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_heavy_laser.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_beam_sustain.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_bof2_charge_shot.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_asteroid_break.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_comet_flyby.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_docking_clamp.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_nav_lock.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_scanner_sweep.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_shield_down.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/nsp_shield_up.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/retina_charge.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/flame_wall.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/arc_flame_loop.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/arc_barrel_roll.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/lz_stack.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/jet_machinegun_shot_01.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_lizzie_heavy_mg.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_enemy_heavy_mg.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_decker_shotgun.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_decker_shell_eject.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_decker_reload.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_cole_sonic_release.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_cole_sonic_charge_start.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_cole_sonic_charge_loop.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_player_laser_beam_start.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_player_laser_beam_loop.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_player_laser_beam_end.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/shield_hit_light.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_flamethrower_start.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_flamethrower_loop.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_air_small_01.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_flamethrower_end.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/ice_breath_start.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/ice_breath_loop.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/ice_breath_release.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/enemy_ice_bolt.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_laser_cannon.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_shadow_orb_launch.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_plasma.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_air_medium.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/enemy_flame_bolt.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/enemy_electric_bolt.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/enemy_rail_cannon.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/enemy_boss_cannon.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_air_small_02.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_tank_cookoff.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_air_large.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_jet_breakup.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_fuel_air.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_boss_core.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_electrical.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_ice_burst.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/explosion_chain_sequence.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/boss_weapon_charge.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/shield_hit_heavy.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/shield_break_combat.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/debris_scatter_metal.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/projectile_ricochet.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_lizzie_atom_launch.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_lizzie_atom_impact.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_axel_mega_shield.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_special_pickup.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_maverick_charge_build.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_maverick_helix_release.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_ship_fusion_lock.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:47] "GET /assets/game/sounds/reviewed_ship_fusion_sequence.wav HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:50] "GET /assets/game/music/title_main_menu.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:50] "GET /assets/game/stage1.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:05:50] "GET /assets/game/stage2.png HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:06:46] "GET /assets/game/music/pilot_select.mp3 HTTP/1.1" 200 -
+127.0.0.1 - - [03/Sep/2026 09:06:46] "GET /assets/game/stage3.png HTTP/1.1" 200 -
+Traceback (most recent call last):
+  File "C:\Users\Mdogg\AppData\Local\Temp\claude\C--Users-Mdogg-Desktop-BOF-CODE\35677c5c-4881-439b-ac67-00f94a260205\scratchpad\verify_repack.py", line 38, in <module>
+    pg.screenshot(path=os.path.join(OUT, 'v01_%s.png' % st.lower()))
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Mdogg\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\sync_api\_generated.py", line 10872, in screenshot
+    self._sync(
+    ~~~~~~~~~~^
+        self._impl_obj.screenshot(
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<13 lines>...
+        )
+        ^
+    )
+    ^
+  File "C:\Users\Mdogg\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ~~~~~~~~~~~^^
+  File "C:\Users\Mdogg\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_page.py", line 828, in screenshot
+    encoded_binary = await self._channel.send(
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^
+        "screenshot", self._timeout_settings.timeout, params
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Mdogg\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 76, in send
+    return await self._connection.wrap_api_call(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ...<3 lines>...
+    )
+    ^
+  File "C:\Users\Mdogg\AppData\Local\Python\pythoncore-3.14-64\Lib\site-packages\playwright\_impl\_connection.py", line 632, in wrap_api_call
+    raise rewrite_error(error, f"{parsed_st['apiName']}: {error}") from None
+playwright._impl._errors.TimeoutError: Page.screenshot: Timeout 30000ms exceeded.
+Call log:
+  - taking page screenshot
+  - waiting for fonts to load...
+  - fonts loaded
+

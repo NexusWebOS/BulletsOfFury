@@ -1,0 +1,35 @@
+{
+  "minibosses": {
+    "junglecruiser": {
+      "hp": 900,
+      "maxhp": 900,
+      "ship": "junglecruiser"
+    },
+    "magmaward": {
+      "hp": 1144,
+      "maxhp": 1144,
+      "ship": "magmaward"
+    }
+  },
+  "helix": {
+    "before": {
+      "hp": 1826,
+      "maxhp": 1826
+    },
+    "after": {
+      "hp": 1369.5,
+      "maxhp": 1826
+    },
+    "dealt": 456.5,
+    "ratio": 0.25,
+    "survivingLances": 5
+  },
+  "pageErrors": [],
+  "assertions": {
+    "jungleCruiserAtLeast900": true,
+    "magmaWardAtLeast1100": true,
+    "helixExactlyQuarterGauge": true,
+    "noPageErrors": true
+  },
+  "passed": true
+}

@@ -1,0 +1,62 @@
+{
+  "gate": {
+    "count": 8,
+    "idx": 8,
+    "armed": true,
+    "done": true,
+    "taken": 1,
+    "warp": 1,
+    "speed": 2.7800000000000002,
+    "mix": 0.88,
+    "frames": [
+      0,
+      1,
+      2,
+      4,
+      4,
+      6,
+      7,
+      9,
+      10,
+      13,
+      14,
+      0,
+      1,
+      4,
+      5
+    ]
+  },
+  "stage9": {
+    "plan": 32,
+    "roles": [
+      "kamikaze",
+      "slider",
+      "orb",
+      "spinner",
+      "beam",
+      "jumper",
+      "laser"
+    ],
+    "meteorScales": [
+      4.5,
+      4
+    ],
+    "meteorBodies": [
+      198,
+      176
+    ],
+    "before": [
+      95,
+      -95
+    ],
+    "after": [
+      -72.16897940921035,
+      72.16897940921035
+    ],
+    "launched": true,
+    "bombsBefore": 2,
+    "bombsAfter": 1,
+    "volley": 3
+  },
+  "errors": []
+}

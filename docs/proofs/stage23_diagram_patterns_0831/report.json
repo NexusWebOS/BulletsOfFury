@@ -1,0 +1,50 @@
+{
+  "forward": {
+    "dir": 1,
+    "index": 0,
+    "x": 116,
+    "angle": 1.5707963267948966,
+    "slot": "L"
+  },
+  "reverse": {
+    "dir": -1,
+    "index": 0,
+    "x": 364,
+    "angle": 1.5707963267948966,
+    "slot": "R"
+  },
+  "douse": {
+    "angle": 1.039654775411968,
+    "arc": 0.6108652381980153,
+    "cornerSafe": [
+      true,
+      true,
+      true,
+      true
+    ],
+    "x": 240,
+    "y": 112
+  },
+  "spear": {
+    "order": [
+      "L",
+      "C",
+      "R"
+    ],
+    "angle": 1.5707963267948966,
+    "slot": "L"
+  },
+  "wall": {
+    "order": [
+      "R",
+      "C",
+      "L",
+      "C",
+      "R"
+    ],
+    "angle": 1.5707963267948966,
+    "slot": "R",
+    "giantAfter": true
+  },
+  "errors": []
+}

@@ -1,0 +1,26 @@
+{
+  "iceOnFire": {
+    "stage": 2,
+    "type": "golem",
+    "projectileElement": "ice",
+    "reaction": "ice",
+    "color": "#83d9ff",
+    "elementalObjects": 0,
+    "liveColor": "#83d9ff"
+  },
+  "fireOnIce": {
+    "stage": 3,
+    "type": "s3tank",
+    "projectileElement": "fire",
+    "reaction": "fire",
+    "color": "#ff3b30",
+    "elementalObjects": 0,
+    "liveColor": "#ff3b30"
+  },
+  "audio": {
+    "hit": 3,
+    "special": 0
+  },
+  "pageErrors": [],
+  "consoleErrors": []
+}

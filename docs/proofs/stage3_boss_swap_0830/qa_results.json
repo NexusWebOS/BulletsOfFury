@@ -1,0 +1,217 @@
+[
+  {
+    "ship": "rimewall",
+    "name": "CRYO SPEAR",
+    "key": "nsb_cryo_spear",
+    "role": "spear",
+    "w": 195,
+    "h": 195,
+    "hp": 716,
+    "shots": 83,
+    "muzzles": 36,
+    "kinds": {
+      "s3tracer": 38,
+      "s3lance": 36,
+      "s3wave": 9
+    },
+    "patterns": [
+      "s3spearburst",
+      "s3spearcross",
+      "s3spearcore"
+    ],
+    "matchedMuzzles": 23,
+    "maxAnchorError": 0,
+    "projectiles": [
+      {
+        "kind": "s3wave",
+        "bfam": "cryo",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "cryo",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "cryo",
+        "shootable": false
+      },
+      {
+        "kind": "s3lance",
+        "bfam": "cryo",
+        "shootable": true
+      },
+      {
+        "kind": "s3lance",
+        "bfam": "cryo",
+        "shootable": true
+      },
+      {
+        "kind": "s3lance",
+        "bfam": "cryo",
+        "shootable": true
+      },
+      {
+        "kind": "s3lance",
+        "bfam": "cryo",
+        "shootable": true
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "cryo",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "cryo",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "cryo",
+        "shootable": false
+      },
+      {
+        "kind": "s3lance",
+        "bfam": "cryo",
+        "shootable": true
+      },
+      {
+        "kind": "s3lance",
+        "bfam": "cryo",
+        "shootable": true
+      },
+      {
+        "kind": "s3lance",
+        "bfam": "cryo",
+        "shootable": true
+      },
+      {
+        "kind": "s3lance",
+        "bfam": "cryo",
+        "shootable": true
+      }
+    ],
+    "pageState": "play",
+    "bossActive": false,
+    "subBossActive": true,
+    "case": "CRYO SPEAR \u2014 MINIBOSS",
+    "capture": {
+      "w": 960,
+      "h": 1024,
+      "mime": "video/webm;codecs=vp9"
+    }
+  },
+  {
+    "ship": "cryospear",
+    "name": "RIME WALL",
+    "key": "nsb_rimewall_intact",
+    "role": "wall",
+    "w": 224,
+    "h": 236,
+    "hp": 2958,
+    "shots": 106,
+    "muzzles": 35,
+    "kinds": {
+      "s3shell": 30,
+      "s3lance": 36,
+      "s3mortar": 15,
+      "s3wave": 25
+    },
+    "patterns": [
+      "s3wallcannons",
+      "s3wallgate",
+      "s3wallhalo",
+      "s3walloverdrive"
+    ],
+    "matchedMuzzles": 17,
+    "maxAnchorError": 0,
+    "projectiles": [
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3shell",
+        "bfam": "glacier",
+        "shootable": true
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      },
+      {
+        "kind": "s3wave",
+        "bfam": "glacier",
+        "shootable": false
+      }
+    ],
+    "pageState": "play",
+    "bossActive": true,
+    "subBossActive": false,
+    "case": "RIME WALL \u2014 MAIN BOSS",
+    "capture": {
+      "w": 960,
+      "h": 1024,
+      "mime": "video/webm;codecs=vp9"
+    }
+  }
+]

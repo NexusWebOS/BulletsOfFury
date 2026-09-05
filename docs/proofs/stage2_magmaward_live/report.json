@@ -1,0 +1,35 @@
+{
+  "patterns": [
+    "magmaflame",
+    "magmaflamelaser",
+    "magmafireball",
+    "magmafireball",
+    "magmafireshield",
+    "magmafireshield"
+  ],
+  "shield": {
+    "before": 124.8,
+    "after": 124.8,
+    "blocked": true
+  },
+  "liveProjectiles": [
+    "ember",
+    "ember",
+    "ember",
+    "ember",
+    "ember",
+    "ember",
+    "ember",
+    "ember",
+    "ember",
+    "ember",
+    "ember",
+    "ember"
+  ],
+  "active": "magmafireshield",
+  "hp": 124.8,
+  "maxhp": 520,
+  "pageErrors": [],
+  "consoleErrors": [],
+  "allFourPatterns": true
+}

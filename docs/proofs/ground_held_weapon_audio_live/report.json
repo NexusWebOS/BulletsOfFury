@@ -1,0 +1,125 @@
+{
+  "flamethrower": {
+    "calls": [
+      {
+        "src": "reviewed_flamethrower_start.wav",
+        "volume": 1,
+        "loop": false,
+        "ready": 1,
+        "paused": true,
+        "currentTime": 0,
+        "status": "playing",
+        "at": 3937.5999999940395
+      },
+      {
+        "src": "reviewed_flamethrower_loop.wav",
+        "volume": 0,
+        "loop": true,
+        "ready": 0,
+        "paused": true,
+        "currentTime": 0,
+        "status": "playing",
+        "at": 3937.699999988079
+      }
+    ],
+    "context": "none",
+    "loop": {
+      "on": true,
+      "hold": 1,
+      "lvl": 1,
+      "paused": false,
+      "ready": 4,
+      "currentTime": 0.681709,
+      "volume": 1,
+      "nativeOutput": true,
+      "ended": false,
+      "error": null
+    },
+    "start": [
+      {
+        "ready": 4,
+        "paused": true,
+        "currentTime": 0.42,
+        "volume": 1,
+        "error": null
+      },
+      {
+        "ready": 4,
+        "paused": true,
+        "currentTime": 0,
+        "volume": 1,
+        "error": null
+      },
+      {
+        "ready": 4,
+        "paused": true,
+        "currentTime": 0,
+        "volume": 1,
+        "error": null
+      }
+    ],
+    "suspendIssuedState": "none"
+  },
+  "laser": {
+    "calls": [
+      {
+        "src": "reviewed_player_laser_beam_start.wav",
+        "volume": 0.95,
+        "loop": false,
+        "ready": 1,
+        "paused": true,
+        "currentTime": 0,
+        "status": "playing",
+        "at": 5791.299999982119
+      },
+      {
+        "src": "reviewed_player_laser_beam_loop.wav",
+        "volume": 0,
+        "loop": true,
+        "ready": 1,
+        "paused": true,
+        "currentTime": 0,
+        "status": "playing",
+        "at": 5791.5
+      }
+    ],
+    "context": "running",
+    "loop": {
+      "on": true,
+      "hold": 1,
+      "lvl": 1,
+      "paused": false,
+      "ready": 4,
+      "currentTime": 1.121333,
+      "volume": 0.666,
+      "nativeOutput": false,
+      "ended": false,
+      "error": null
+    },
+    "start": [
+      {
+        "ready": 4,
+        "paused": true,
+        "currentTime": 0.48,
+        "volume": 0.95,
+        "error": null
+      },
+      {
+        "ready": 4,
+        "paused": true,
+        "currentTime": 0,
+        "volume": 1,
+        "error": null
+      },
+      {
+        "ready": 4,
+        "paused": true,
+        "currentTime": 0,
+        "volume": 1,
+        "error": null
+      }
+    ],
+    "suspendIssuedState": "suspended"
+  },
+  "pageErrors": []
+}

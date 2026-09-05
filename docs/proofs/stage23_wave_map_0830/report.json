@@ -1,0 +1,932 @@
+{
+  "audit": {
+    "s2": {
+      "stage": 2,
+      "length": 48,
+      "subboss": {
+        "at": 0.45,
+        "kind": "magmaward",
+        "afterScroll": 961
+      },
+      "waves": [
+        {
+          "at": 2,
+          "spawns": [
+            {
+              "type": "ash",
+              "t": 0.01,
+              "x": 231.2,
+              "y": -48,
+              "w": 42,
+              "h": 39
+            },
+            {
+              "type": "ash",
+              "t": 0.24,
+              "x": 448.8,
+              "y": -70,
+              "w": 42,
+              "h": 39
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 4.2,
+          "spawns": [
+            {
+              "type": "skim",
+              "t": 0.01,
+              "x": 14,
+              "y": 61.4,
+              "w": 44,
+              "h": 39
+            },
+            {
+              "type": "skim",
+              "t": 0.43,
+              "x": 666,
+              "y": 112.6,
+              "w": 44,
+              "h": 39
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 6.6,
+          "spawns": [
+            {
+              "type": "cinderwasp",
+              "t": 0.01,
+              "x": 163.2,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cinderwasp",
+              "t": 0.24,
+              "x": 340,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cinderwasp",
+              "t": 0.48,
+              "x": 516.8,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 9.4,
+          "spawns": [
+            {
+              "type": "lance",
+              "t": 0.01,
+              "x": 176.8,
+              "y": -48,
+              "w": 39,
+              "h": 47
+            },
+            {
+              "type": "eye",
+              "t": 0.28,
+              "x": 340,
+              "y": -70,
+              "w": 44,
+              "h": 42
+            },
+            {
+              "type": "lance",
+              "t": 0.54,
+              "x": 503.2,
+              "y": -92,
+              "w": 39,
+              "h": 47
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 12,
+          "spawns": [
+            {
+              "type": "magmaorb",
+              "t": 0.01,
+              "x": 231.2,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "magmaorb",
+              "t": 0.3,
+              "x": 448.8,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 14.7,
+          "spawns": [
+            {
+              "type": "basaltbomber",
+              "t": 0.01,
+              "x": 149.6,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "basaltbomber",
+              "t": 0.28,
+              "x": 340,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "basaltbomber",
+              "t": 0.57,
+              "x": 530.4,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 17.8,
+          "spawns": [
+            {
+              "type": "cruc",
+              "t": 0.01,
+              "x": 183.6,
+              "y": -48,
+              "w": 62,
+              "h": 52
+            },
+            {
+              "type": "crawl",
+              "t": 0.37,
+              "x": 496.4,
+              "y": -70,
+              "w": 55,
+              "h": 47
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 20.3,
+          "spawns": [
+            {
+              "type": "lance",
+              "t": 0.01,
+              "x": 122.4,
+              "y": -48,
+              "w": 39,
+              "h": 47
+            },
+            {
+              "type": "ash",
+              "t": 0.22,
+              "x": 265.2,
+              "y": -70,
+              "w": 42,
+              "h": 39
+            },
+            {
+              "type": "ash",
+              "t": 0.44,
+              "x": 414.8,
+              "y": -92,
+              "w": 42,
+              "h": 39
+            },
+            {
+              "type": "lance",
+              "t": 0.67,
+              "x": 557.6,
+              "y": -48,
+              "w": 39,
+              "h": 47
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 24.2,
+          "spawns": [
+            {
+              "type": "miner",
+              "t": 0.01,
+              "x": 163.2,
+              "y": -48,
+              "w": 57,
+              "h": 49
+            },
+            {
+              "type": "lavamaw",
+              "t": 0.33,
+              "x": 340,
+              "y": -70,
+              "w": 52,
+              "h": 49
+            },
+            {
+              "type": "miner",
+              "t": 0.64,
+              "x": 516.8,
+              "y": -92,
+              "w": 57,
+              "h": 49
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 27.2,
+          "spawns": [
+            {
+              "type": "cinderwasp",
+              "t": 0.01,
+              "x": 122.4,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "magmaorb",
+              "t": 0.26,
+              "x": 340,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cinderwasp",
+              "t": 0.5,
+              "x": 557.6,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 30.5,
+          "spawns": [
+            {
+              "type": "pod",
+              "t": 0.01,
+              "x": 190.4,
+              "y": -48,
+              "w": 47,
+              "h": 47
+            },
+            {
+              "type": "carrier",
+              "t": 0.33,
+              "x": 340,
+              "y": -70,
+              "w": 68,
+              "h": 60
+            },
+            {
+              "type": "pod",
+              "t": 0.64,
+              "x": 489.6,
+              "y": -92,
+              "w": 47,
+              "h": 47
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 34,
+          "spawns": [
+            {
+              "type": "skim",
+              "t": 0.01,
+              "x": 14,
+              "y": 81.9,
+              "w": 44,
+              "h": 39
+            },
+            {
+              "type": "golem",
+              "t": 0.4,
+              "x": 340,
+              "y": -70,
+              "w": 73,
+              "h": 68
+            },
+            {
+              "type": "skim",
+              "t": 0.81,
+              "x": 666,
+              "y": 143.4,
+              "w": 44,
+              "h": 39
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 38,
+          "spawns": [
+            {
+              "type": "ash",
+              "t": 0.01,
+              "x": 108.8,
+              "y": -48,
+              "w": 42,
+              "h": 39
+            },
+            {
+              "type": "ash",
+              "t": 0.23,
+              "x": 258.4,
+              "y": -70,
+              "w": 42,
+              "h": 39
+            },
+            {
+              "type": "ash",
+              "t": 0.47,
+              "x": 421.6,
+              "y": -92,
+              "w": 42,
+              "h": 39
+            },
+            {
+              "type": "ash",
+              "t": 0.69,
+              "x": 571.2,
+              "y": -48,
+              "w": 42,
+              "h": 39
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 40.5,
+          "spawns": [
+            {
+              "type": "cinderwasp",
+              "t": 0.01,
+              "x": 136,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cinderwasp",
+              "t": 0.23,
+              "x": 285.6,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cinderwasp",
+              "t": 0.47,
+              "x": 435.2,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cinderwasp",
+              "t": 0.69,
+              "x": 557.6,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 44,
+          "spawns": [
+            {
+              "type": "disc",
+              "t": 0.01,
+              "x": 163.2,
+              "y": -48,
+              "w": 47,
+              "h": 44
+            },
+            {
+              "type": "eye",
+              "t": 0.3,
+              "x": 340,
+              "y": -70,
+              "w": 44,
+              "h": 42
+            },
+            {
+              "type": "disc",
+              "t": 0.6,
+              "x": 516.8,
+              "y": -92,
+              "w": 47,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        }
+      ]
+    },
+    "s3": {
+      "stage": 3,
+      "length": 50,
+      "subboss": {
+        "at": 0.45,
+        "kind": "rimewall",
+        "afterScroll": 1001
+      },
+      "waves": [
+        {
+          "at": 2,
+          "spawns": [
+            {
+              "type": "sharddart",
+              "t": 0.01,
+              "x": 108.8,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.24,
+              "x": 435.2,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.48,
+              "x": 299.2,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.72,
+              "x": 149.6,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.97,
+              "x": 353.6,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 1.21,
+              "x": 530.4,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 5.5,
+          "spawns": [
+            {
+              "type": "s3interceptor",
+              "t": 0.01,
+              "x": 136,
+              "y": -48,
+              "w": 49,
+              "h": 52
+            },
+            {
+              "type": "s3interceptor",
+              "t": 0.34,
+              "x": 299.2,
+              "y": -70,
+              "w": 49,
+              "h": 52
+            },
+            {
+              "type": "s3interceptor",
+              "t": 0.68,
+              "x": 462.4,
+              "y": -92,
+              "w": 49,
+              "h": 52
+            },
+            {
+              "type": "s3interceptor",
+              "t": 1.02,
+              "x": 571.2,
+              "y": -48,
+              "w": 49,
+              "h": 52
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 8.8,
+          "spawns": [
+            {
+              "type": "s3barge",
+              "t": 0.01,
+              "x": 163.2,
+              "y": -49,
+              "w": 70,
+              "h": 86
+            },
+            {
+              "type": "s3barge",
+              "t": 0.47,
+              "x": 516.8,
+              "y": -70,
+              "w": 70,
+              "h": 86
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 11.5,
+          "spawns": [
+            {
+              "type": "sharddart",
+              "t": 0.01,
+              "x": 190.4,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "glaciercarrier",
+              "t": 0.26,
+              "x": 285.6,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cryoeye",
+              "t": 0.5,
+              "x": 394.4,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.76,
+              "x": 503.2,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 14.8,
+          "spawns": [
+            {
+              "type": "s3barge",
+              "t": 0.01,
+              "x": 163.2,
+              "y": -49,
+              "w": 70,
+              "h": 86
+            },
+            {
+              "type": "s3barge",
+              "t": 0.48,
+              "x": 516.8,
+              "y": -70,
+              "w": 70,
+              "h": 86
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 17.2,
+          "spawns": [
+            {
+              "type": "sharddart",
+              "t": 0.01,
+              "x": 149.6,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "glaciercarrier",
+              "t": 0.24,
+              "x": 272,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cryoeye",
+              "t": 0.48,
+              "x": 408,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.72,
+              "x": 530.4,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 25.8,
+          "spawns": [
+            {
+              "type": "sharddart",
+              "t": 0.01,
+              "x": 163.2,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cryoeye",
+              "t": 0.24,
+              "x": 285.6,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "glaciercarrier",
+              "t": 0.48,
+              "x": 408,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.72,
+              "x": 530.4,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 29.2,
+          "spawns": [
+            {
+              "type": "s3barge",
+              "t": 0.01,
+              "x": 163.2,
+              "y": -49,
+              "w": 70,
+              "h": 86
+            },
+            {
+              "type": "s3barge",
+              "t": 0.47,
+              "x": 516.8,
+              "y": -70,
+              "w": 70,
+              "h": 86
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 32,
+          "spawns": [
+            {
+              "type": "sharddart",
+              "t": 0.01,
+              "x": 136,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "glaciercarrier",
+              "t": 0.23,
+              "x": 217.6,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cryoeye",
+              "t": 0.47,
+              "x": 299.2,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.69,
+              "x": 380.8,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "glaciercarrier",
+              "t": 0.92,
+              "x": 462.4,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cryoeye",
+              "t": 1.16,
+              "x": 544,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 1.38,
+              "x": 340,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 37.2,
+          "spawns": [
+            {
+              "type": "s3barge",
+              "t": 0.01,
+              "x": 163.2,
+              "y": -49,
+              "w": 70,
+              "h": 86
+            },
+            {
+              "type": "s3barge",
+              "t": 0.48,
+              "x": 516.8,
+              "y": -70,
+              "w": 70,
+              "h": 86
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 40,
+          "spawns": [
+            {
+              "type": "sharddart",
+              "t": 0.01,
+              "x": 122.4,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "glaciercarrier",
+              "t": 0.24,
+              "x": 258.4,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "cryoeye",
+              "t": 0.48,
+              "x": 421.6,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.72,
+              "x": 557.6,
+              "y": -48,
+              "w": 44,
+              "h": 44
+            }
+          ],
+          "touchingAtBirth": false
+        },
+        {
+          "at": 46,
+          "spawns": [
+            {
+              "type": "s3barge",
+              "t": 0.01,
+              "x": 163.2,
+              "y": -49,
+              "w": 70,
+              "h": 86
+            },
+            {
+              "type": "sharddart",
+              "t": 0.32,
+              "x": 258.4,
+              "y": -70,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "sharddart",
+              "t": 0.63,
+              "x": 421.6,
+              "y": -92,
+              "w": 44,
+              "h": 44
+            },
+            {
+              "type": "s3barge",
+              "t": 0.93,
+              "x": 516.8,
+              "y": -49,
+              "w": 70,
+              "h": 86
+            }
+          ],
+          "touchingAtBirth": false
+        }
+      ]
+    }
+  },
+  "s2Types": [
+    "ash",
+    "skim",
+    "cinderwasp",
+    "lance",
+    "eye",
+    "magmaorb",
+    "basaltbomber",
+    "cruc",
+    "crawl",
+    "miner",
+    "lavamaw",
+    "pod",
+    "carrier",
+    "golem",
+    "disc"
+  ],
+  "s3Types": [
+    "sharddart",
+    "s3interceptor",
+    "s3barge",
+    "glaciercarrier",
+    "cryoeye"
+  ],
+  "readiness": {
+    "ndr_cinderwasp_idle_0": true,
+    "ndr_basaltbomber_idle_0": true,
+    "ndr_magmaorb_idle_0": true,
+    "ndr_sharddart_idle_0": true,
+    "s3atk_barge_0": true
+  },
+  "errors": []
+}
