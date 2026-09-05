@@ -51722,6 +51722,39 @@ function uiFontArt(){
 }
 function artReady(a){ return a && a.img && a.img.complete && a.img.naturalWidth>0; }
 const _ftc=document.createElement('canvas'), _ftx=_ftc.getContext('2d');
+/* ============================================================
+   A GLYPH AS A SOLID SILHOUETTE (drop 0904ag)
+
+   Mike, on the debrief's stat bars: "you have to use 1px black edges on each letter so its more
+   visible".
+
+   ⚠ drawFrameTinted CANNOT PRODUCE THIS, and the reason is the note directly below it: it
+   composites in 'color', which takes hue and saturation from the tint and LUMINOSITY from the
+   plate. Black has neither hue nor saturation, so tinting a glyph black desaturates it to grey
+   and leaves every luminance step intact - an outline drawn that way would be a grey ghost of the
+   letter, not an edge.
+
+   `source-in` is the operator that answers it: draw the glyph, then flood the colour THROUGH its
+   own alpha. What comes back is the letter's exact shape in one flat colour, which is what an
+   outline pass needs. Its own scratch canvas, because drawFrameTinted's is live during a tinted
+   draw and sharing it would corrupt whichever finished second. ============================================================ */
+const _fsc=document.createElement('canvas'), _fsx=_fsc.getContext('2d');
+function drawFrameSolid(img,f,dx,dy,dw,dh,color,alpha){
+  _fsc.width=f[2]; _fsc.height=f[3];
+  _fsx.globalCompositeOperation='source-over'; _fsx.globalAlpha=1;
+  _fsx.clearRect(0,0,f[2],f[3]);
+  _fsx.drawImage(img,f[0],f[1],f[2],f[3],0,0,f[2],f[3]);
+  _fsx.globalCompositeOperation='source-in';
+  _fsx.fillStyle=color||'#000'; _fsx.fillRect(0,0,f[2],f[3]);
+  _fsx.globalCompositeOperation='source-over';
+  ctx.save(); ctx.imageSmoothingEnabled=false;
+  if(alpha!=null)ctx.globalAlpha=alpha;
+  ctx.drawImage(_fsc,0,0,f[2],f[3],dx,dy,dw,dh);
+  ctx.restore();
+}
+/* the eight neighbours - a full ring, so the edge closes on diagonals too. Four would leave the
+   corners of a letterform open, which is where a thin face leaks into a bright bar. */
+const _OUTLINE_RING=[[-1,-1],[0,-1],[1,-1],[-1,0],[1,0],[-1,1],[0,1],[1,1]];
 function drawFrameTinted(img,f,dx,dy,dw,dh,tintC,tintA,alpha){
   if(tintC){
     _ftc.width=f[2];_ftc.height=f[3];
@@ -52067,7 +52100,7 @@ function glyphBox(art, f, H, ch){
   }
   return {w: f[2]*sc, h: gh, dy: dy};
 }
-function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
+function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
   if(!art||!art.font) return;
   /* ⚠ THE GLYPH MAP CAN BE PRESENT WHILE THE SHEET IS NOT (drop 0810o), AND THIS DREW NOTHING AT
      ALL WHEN THAT HAPPENED — silently, with no fallback and no error.
@@ -52125,6 +52158,22 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul){
     const gb=glyphBox(g.art,g.f,H,ch); items.push([g.art,g.f,gb.w,gb,g.dbl?1:0]); total+=gb.w+sp;
   }
   total-=sp; let x=cx-total/2;
+  /* ⚠ THE OUTLINE IS ITS OWN FULL PASS, BEFORE ANY FACE IS DRAWN. Doing it per glyph would lay
+     the next letter's edge over the previous letter's face - at 1px and normal spacing that is a
+     dark nick on the right side of every character. Two passes cost one extra loop and cannot
+     produce it. */
+  if(outline>0){
+    let ox=x;
+    for(const it of items){
+      if(!it){ ox+=H*0.42+sp; continue; }
+      const ga=it[0], f=it[1], w=it[2], gb=it[3];
+      if(ga===null){ ox+=w+sp; continue; }         // the canvas rung already strokes itself
+      for(const d of _OUTLINE_RING)
+        drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,Math.round(cy-H/2+gb.dy)+d[1]*outline,
+                       Math.round(w),Math.round(gb.h),'#05070c',alpha);
+      ox+=w+sp;
+    }
+  }
   for(const it of items){
     if(!it){ x+=H*0.42+sp; continue; }
     const ga=it[0], f=it[1], w=it[2], gb=it[3];
@@ -55399,8 +55448,12 @@ function scFit(art,text,maxW,Hmax,Hmin,sp){
    luminance where it is not already clipped, which lifts basalt and sewer metal a long way and
    barely touches ice, so the faces converge on legible without any of them being repainted.
    ============================================================ */
-function scCenLift(art,text,cx,cy,H,tintC,tintA,alpha,sp,lift){
-  scCen(art,text,cx,cy,H,tintC,tintA,alpha,sp);
+function scCenLift(art,text,cx,cy,H,tintC,tintA,alpha,sp,lift,outline){
+  /* the edge goes down FIRST and once - the additive re-burn below must not lift it, or the
+     outline would brighten along with the letter it exists to separate */
+  if(outline>0 && art && art.font && typeof stageText==='function')
+    stageText(art,text,cx,cy,H,tintC,tintA,alpha,sp,outline);
+  else scCen(art,text,cx,cy,H,tintC,tintA,alpha,sp);
   if(!(lift>0) || !art || !art.font || typeof stageText!=='function') return;
   ctx.save(); ctx.globalCompositeOperation='lighter';
   stageText(art,text,cx,cy,H,tintC,tintA,(alpha==null?1:alpha)*lift,sp);
@@ -55543,7 +55596,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
     scFillBar(b[0]+b[2]*0.020, b[1]+b[3]*0.16, b[2]*0.960, b[3]*0.68, row.fill, frac, t);
     const txt=row.k+' = '+row.fmt(S);
     const H=scFit(art,txt,b[2]*0.90,b[3]*0.62,ph2*0.010,0.05);
-    scCenLift(art,txt,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,app,0.05,0.55);
+    scCenLift(art,txt,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,app,0.05,0.55,1);
   }
 
   /* ---- 5. SCORE / CLEAR TIME / RANK ---- */
@@ -55566,9 +55619,9 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
                        scFit(art,rTxt,colW3,b[3]*0.34,ph2*0.010,0.05));
       /* ⚠ UNTINTED. Mike, 0807q: "Dont color overlay the rank please". */
       const cy=b[1]+b[3]*0.50;
-      scCenLift(art,sTxt,b[0]+b[2]*0.185,cy,H,null,0,1,0.05,0.45);
-      scCenLift(art,cTxt,b[0]+b[2]*0.500,cy,H,null,0,1,0.05,0.45);
-      scCenLift(art,rTxt,b[0]+b[2]*0.820,cy,H,null,0,1,0.05,0.45);
+      scCenLift(art,sTxt,b[0]+b[2]*0.185,cy,H,null,0,1,0.05,0.45,1);
+      scCenLift(art,cTxt,b[0]+b[2]*0.500,cy,H,null,0,1,0.05,0.45,1);
+      scCenLift(art,rTxt,b[0]+b[2]*0.820,cy,H,null,0,1,0.05,0.45,1);
     }
     if(t>1.15 && drawStageClear._stamp<1){
       if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7);
