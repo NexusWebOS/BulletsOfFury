@@ -34881,7 +34881,15 @@ function applyS9Unit(c, type){
   const d=(typeof S9_UNITS!=='undefined') && S9_UNITS[type]; if(!d) return false;
   c.art=d.art;                       // the NAME; ENEMY_ART maps it to the base key
   c.w=d.w; c.h=d.h;
-  c.hp=EHP(d.hp); c.maxhp=c.hp; c.score=d.score;
+  /* ⚠ ABSOLUTE hp, NOT EHP() - the same correction the ELITEX block already carries, and the trap
+     CLAUDE.md documents as having capped every elite at 12. EHP is the FODDER shots-to-kill MODEL,
+     so it DISCARDS the input spread: measured live, all eight S9 specialists came out at hp 19 from
+     declared values of 24/20/36/30/38/28/42/52. The whole point of this table is that `cbreak` (52)
+     is more than twice `wskim` (24); flattened, the roster is eight units with one difficulty.
+     These carry shields and named behaviours - they are elites, so they scale by DIFF.eHp like the
+     minibosses. applyS1Tank / applyS1Jet / applyNefUnit share this line's SHAPE and are correctly
+     left on EHP: those are fodder. */
+  c.hp=Math.ceil(d.hp*((typeof DIFF!=='undefined'&&DIFF.eHp)||1)); c.maxhp=c.hp; c.score=d.score;
   if(d.pat) c.pattern=d.pat;
   if(d.foot!=null) c._foot=d.foot;   // explicit draw multiplier; see the comet rows
   if(d.s9) c._s9=d.s9;
@@ -34890,7 +34898,9 @@ function applyS9Unit(c, type){
   /* Only the hard Stage-9 specialists equip shields.  Directional families reflect eligible
      player rounds; full fields absorb and recharge through the existing shield controller. */
   if(d.shield && typeof run!=='undefined' && run.stage===9 && typeof enemyShieldEquip==='function')
-    enemyShieldEquip(c,d.shield,EHP(Math.max(12,d.hp*0.48)),{drawScale:d.s9==='dread'?1.55:2.45});
+    /* the shield share follows the REAL hp now, not an EHP() of the declared value - otherwise the
+       heaviest specialists would carry the same field as the lightest, for the same reason. */
+    enemyShieldEquip(c,d.shield,Math.ceil(Math.max(12,c.hp*0.48)),{drawScale:d.s9==='dread'?1.55:2.45});
   return true;
 }
 /* hp fraction -> which baked state. Same breakpoints as DMG_TIER so the two systems agree. */
