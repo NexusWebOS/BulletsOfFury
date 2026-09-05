@@ -5081,12 +5081,20 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      onward, and the concept body is defined ABOVE it - so a regex over _sc searches a window the
      code is not in and fails on correct source. Same trap as the 7000-char window this section
      already records one note above. */
-  ok(/const IX=px\+pw\*0\.046, IW=pw\*0\.905/.test(_g5) && /const gY=py\+ph\*0\.415/.test(_g5),
+  /* ⚠ REPOINTED AGAIN (0904ad) - and the property is now stronger than it was. These pinned the
+     constants of a layout drawn in CODE. Mike supplied a finished plate with every bay authored
+     into it, so nothing is positioned against the viewport OR against a computed panel: every bay
+     is a MEASURED fraction of his plate, resolved through one accessor. */
+  ok(/function scPanelRect\(\)/.test(_g5) && /function scBay\(R,f\)/.test(_g5) &&
+     /scBay\(P,SC_SLOTS\.stats\[i\]\)/.test(_g5),
      'stat rows are positioned against the PANEL, not the viewport');
+  ok(/const SC_SLOTS = \{/.test(_g5) && /statpanel_cf/.test(_g5),
+     "and every bay is a measured fraction of Mike's own plate rather than a drawn box");
   ok(/rowsX=_ci\[0\]; rowsW=_ci\[1\]/.test(_g5),
      'and the shared password block is handed that same panel-relative column');
   /* the portrait is centred in the LEFT COLUMN now, which is itself panel-relative (drop 0807o) */
-  ok(/const bY=py\+ph\*0\.170/.test(_g5) && /IX\+\(faW-w\)\/2, bY\+pad\+\(ah-h\)\/2/.test(_g5),
+  ok(/scBay\(P,SC_SLOTS\.pilot\)/.test(_g5) &&
+     /b\[0\]\+\(b\[2\]-w\)\/2, b\[1\]\+\(b\[3\]-h\)\/2/.test(_g5),
      'and so is the portrait, so neither can drift off the frame at another size');
   ok(_g5.indexOf('const inx=x+w*0.035')>0 && _g5.indexOf('ctx.clip();')>0,
      'the fill is ONE full-bar image clipped to the filled width, not stamped per segment');

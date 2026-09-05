@@ -2280,6 +2280,10 @@ const XART=(function(){
   for(const _cg in _CH_GROUP_COUNTS) for(let _ci=0;_ci<_CH_GROUP_COUNTS[_cg];_ci++)
     X._src['ch_'+_cg+'_'+_ci]='assets/game/chaos_harrier/ch_'+_cg+'_'+_ci+'.png';
   X._src['ch_ship_glow']='assets/game/chaos_harrier/ch_ship_glow.png';
+  /* Mike's own stat-screen plate (drop 0904ad). Every slot on the debrief screen is authored INTO
+     this frame; nothing about it is drawn in code. Stored at 960x720 so it blits 1:1 into the 2x
+     backing store at its drawn size, rather than being minified from 1448px every frame. */
+  X._src['statpanel_cf']='assets/game/ui/statpanel_cf.png';
   /* ============================================================
      ⚠ SIXTEEN s6mb_ FAMILIES WERE ASKED FOR BY NAME AND NONE OF THEM EXISTED (drop 0904aa)
 
@@ -55146,14 +55150,13 @@ const SC_FILL_RGB = {
   firepower:'#d78333', health:'#d4682a', missiles:'#61bc5e', speed:'#a1b866',
   special:'#bb5ec7',   shield:'#4d9ed3', bomb:'#d3b041',     armor:'#5395cd',
 };
-/* one slot: the authored frame, the authored fill clipped to `frac`, then the text ON it */
-function scSlot(x,y,w,h,type,frac,animT,alpha){
-  const fk='nui_bframe_large';
-  ctx.save(); if(alpha!=null)ctx.globalAlpha=alpha;
-  if(XART.rdy(fk)) ctx.drawImage(XART.get(fk), x, y, w, h);
-  else { ctx.fillStyle='rgba(8,16,26,0.72)'; ctx.fillRect(x,y,w,h);
-         ctx.strokeStyle='#5a6472'; ctx.lineWidth=1; ctx.strokeRect(x,y,w,h); }
-  if(frac>0 && type){
+/* THE FILL ONLY - no frame. Mike's plate already draws every recess; this lays the authored
+   coloured fill INSIDE one of them, which is the half of his brief that is about data
+   ("use colored fills we have with the text on top of the fills"). The frame-drawing half of the
+   old scSlot is gone: it was building bays the plate already has. */
+function scFillBar(x,y,w,h,type,frac,animT){
+  {
+    if(frac>0 && type){
     /* ============================================================
        ⚠ THE AUTHORED FILL ALONE DOES NOT READ AS A BAR UNDER TEXT.
 
@@ -55171,7 +55174,7 @@ function scSlot(x,y,w,h,type,frac,animT,alpha){
 
        The colours are MEASURED off the plates, not picked - the mean of every pixel above 40
        alpha in frame 0 of each family. ============================================================ */
-    const inx=x+w*0.035, iny=y+h*0.16, inw=w*0.930, inh=h*0.68;
+    const inx=x, iny=y, inw=w, inh=h;
     const fw=inw*Math.min(1,frac);
     const key='nui_fill_'+type+'_large_'+(Math.floor((animT||0)*10)%8);
     const im=XART.rdy(key)?XART.get(key):null;
@@ -55186,8 +55189,8 @@ function scSlot(x,y,w,h,type,frac,animT,alpha){
       ctx.fillStyle='#ffffff'; ctx.fillRect(inx+fw-Math.max(1,w*0.006), iny, Math.max(1,w*0.006), inh);
       ctx.restore();
     }
+    }
   }
-  ctx.restore();
 }
 /* centred text solved against a width, so a long value shrinks instead of running off its slot */
 function scFit(art,text,maxW,Hmax,Hmin,sp){
@@ -55201,176 +55204,192 @@ function scCen(art,text,cx,cy,H,tintC,tintA,alpha,sp){
          ctx.fillStyle=tintC||'#e8eef8'; ctx.font='bold '+Math.max(7,Math.round(H))+'px "BOFmil", monospace';
          ctx.fillText(String(text),cx,cy); ctx.restore(); ctx.textAlign='left'; ctx.textBaseline='alphabetic'; }
 }
+/* ============================================================
+   THE DEBRIEF SCREEN IS MIKE'S OWN PLATE (drop 0904ad)
+
+   Mike, on the first cut: "what the...please use the actual art I provided for our screen, this
+   looks terrible."
+
+   He was right, and the mistake was mine end to end. He supplied a finished 1448x1086 panel with
+   every bay authored INTO it - title bar, pilot bay, brief bay, six stat slots in two columns, a
+   wide score bar and a sign-off bar - and I read it as a LAYOUT REFERENCE and rebuilt those bays
+   in code out of `statscreen` (a green military frame) plus nui_bframe_large slots. So the screen
+   was the right arrangement in the wrong material, sitting inside a frame from another set.
+
+   Nothing here is drawn now. The plate is blitted and the content is placed into ITS bays.
+
+   ⚠ THE BAYS ARE MEASURED OFF THE PLATE, NOT ESTIMATED. Every recess is a dark navy field with a
+   cyan rim, so a connected-component pass over pixels below (40,52,74) with blue >= red finds all
+   eleven and nothing else. Stored as FRACTIONS of the plate, so they survive the resize below and
+   any future one:
+
+       title 0.140,0.061  pilot 0.068,0.195  brief 0.605,0.200
+       six stats at x 0.063 / 0.533, y 0.505 / 0.578 / 0.655
+       score 0.091,0.745  signoff 0.141,0.894
+
+   ⚠ AND THE PLATE IS STORED AT 960x720, NOT AT ITS 1448px SOURCE. It is drawn 480 wide into a 2x
+   backing store, i.e. 960 device pixels, so the shipped plate blits 1:1 with no resampling at all.
+   Minifying 1448 -> 960 every frame is the non-integer nearest-neighbour crawl this project has
+   chased repeatedly; done once, offline, with a good filter, it is just a sharp plate.
+
+   ⚠ IT IS 4:3 AND THE VIEWPORT IS TALLER THAN IT IS WIDE. Fitted by CONTAIN so his frame keeps its
+   proportions - stretching it to fill would distort the corner brackets and the LED clusters by
+   over 40%. The bands above and below are where PASSWORD and PRESS FIRE go, which keeps the
+   authored panel clean and gives those two the room the plate has no bay for.
+   ============================================================ */
+const SC_SLOTS = {
+  title  :[0.1402,0.0608,0.7196,0.0727],
+  pilot  :[0.0684,0.1952,0.1761,0.2366],
+  brief  :[0.6050,0.1998,0.3260,0.2403],
+  stats  :[[0.0628,0.5046,0.4012,0.0442],[0.5331,0.5046,0.4006,0.0442],
+           [0.0628,0.5783,0.4012,0.0451],[0.5331,0.5792,0.4006,0.0442],
+           [0.0628,0.6547,0.4012,0.0433],[0.5331,0.6547,0.4006,0.0433]],
+  score  :[0.0905,0.7449,0.8177,0.0930],
+  signoff:[0.1409,0.8941,0.7169,0.0580],
+};
+/* the plate's fitted rect on screen, and a bay resolved inside it */
+function scPanelRect(){
+  const AW=1448, AH=1086;                       // the authored aspect, kept whatever the plate ships at
+  const k=Math.min(VW/AW, VH/AH);
+  const w=AW*k, h=AH*k;
+  return [(VW-w)/2, (VH-h)/2, w, h];
+}
+function scBay(R,f){ return [R[0]+f[0]*R[2], R[1]+f[1]*R[3], f[2]*R[2], f[3]*R[3]]; }
 function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
   const S=(typeof stageStats!=='undefined')?stageStats:{};
-  const IX=px+pw*0.046, IW=pw*0.905;                   // the measured panel interior
-  const A=(d)=>Math.min(1,Math.max(0,(t-d)/0.28));     // one stagger curve for the whole screen
+  const P=scPanelRect();
+  const A=(d)=>Math.min(1,Math.max(0,(t-d)/0.28));
+  const ph2=P[3];                               // type scales off the PLATE, not the viewport
+
+  /* ---- the plate ---- */
+  if(XART.rdy('statpanel_cf')){
+    const slide=1-Math.pow(1-Math.min(1,t/0.32),3);
+    ctx.save(); ctx.globalAlpha=slide; ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(XART.get('statpanel_cf'), P[0], P[1]-(1-slide)*30, P[2], P[3]);
+    ctx.restore();
+  }
+  if(t<0.18){ return [P[0], P[2]]; }
 
   /* ---- 1. TITLE ---- */
-  const tiY=py+ph*0.088, tiH=ph*0.062;
-  /* ⚠ THE FILLS GO WHERE THEY MEAN SOMETHING. Mike asked for "colored fills we have with the
-     text on top", and on a STAT slot the fill is the value - it is information. Behind a title or
-     a paragraph it is just a hazard stripe under words, which is what the first cut looked like.
-     Title, brief and sign-off get the authored slot with no fill; the six stats and the score bar
-     get the fill, because those are the ones a fraction means something for. */
-  scSlot(IX,tiY,IW,tiH,null,0,0,A(0.16));
   {
-    const s='STAGE '+run.stage+' COMPLETE!';
-    const H=scFit(art,s,IW*0.90,tiH*0.62,ph*0.020,0.09);
-    scCen(art,s,IX+IW/2,tiY+tiH/2,H,null,0,A(0.20),0.09);
+    const b=scBay(P,SC_SLOTS.title), s='STAGE '+run.stage+' COMPLETE!';
+    const H=scFit(art,s,b[2]*0.90,b[3]*0.66,ph2*0.018,0.08);
+    scCen(art,s,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,A(0.20),0.08);
   }
 
   /* ---- 2. THE PILOT BAY - "Pilot face goes in here, centered." ---- */
-  const bY=py+ph*0.170, bH=ph*0.225;
-  const faW=IW*0.285, brX=IX+faW+IW*0.022, brW=IW-faW-IW*0.022;
-  scSlot(IX,bY,faW,bH,null,0,0,A(0.24));
-  if(R.face && XART.rdy(R.face)){
-    const im=XART.get(R.face);
-    const pad=Math.min(faW,bH)*0.10, aw=faW-pad*2, ah=bH-pad*2-ph*0.024;
-    const k=Math.min(aw/im.naturalWidth, ah/im.naturalHeight);
-    const w=im.naturalWidth*k, h=im.naturalHeight*k;
-    ctx.save(); ctx.globalAlpha=A(0.28);
-    /* CENTRED IN THE BAY ON BOTH AXES - his note on the mock is literally "centered" */
-    ctx.drawImage(im, IX+(faW-w)/2, bY+pad+(ah-h)/2, w, h);
-    ctx.restore();
-  }
   {
-    const nm=String(run.pilot||'').toUpperCase();
-    const H=scFit(art,nm,faW*0.88,ph*0.026,ph*0.014,0.06);
-    scCen(art,nm,IX+faW/2,bY+bH-ph*0.018,H,null,0,A(0.30),0.06);
+    const b=scBay(P,SC_SLOTS.pilot);
+    /* ⚠ THE FACE FILLS THE BAY. Mike's mock labels this bay "Pilot face goes in here, centered"
+       and nothing else - the first cut reserved a strip under it for a name label, which shrank
+       the portrait to about half the bay for a word the sign-off line already says ("GREAT JOB,
+       AXEL!"). The bay is his; the face gets all of it. */
+    if(R.face && XART.rdy(R.face)){
+      const im=XART.get(R.face);
+      const pad=Math.min(b[2],b[3])*0.045, aw=b[2]-pad*2, ah=b[3]-pad*2;
+      const k=Math.min(aw/im.naturalWidth, ah/im.naturalHeight);
+      const w=im.naturalWidth*k, h=im.naturalHeight*k;
+      ctx.save(); ctx.globalAlpha=A(0.26); ctx.imageSmoothingEnabled=false;
+      ctx.drawImage(im, b[0]+(b[2]-w)/2, b[1]+(b[3]-h)/2, w, h);   // centred on both axes
+      ctx.restore();
+    }
   }
 
-  /* ---- 3. THE BRIEF - boss defeated, and where you are sent next ---- */
-  scSlot(brX,bY,brW,bH,null,0,0,A(0.26));
+  /* ---- 3. THE BRIEF ---- */
   {
-    const nx=(typeof STAGES!=='undefined')?STAGES[(run.stage|0)]:null;   // STAGES is 0-indexed
+    const b=scBay(P,SC_SLOTS.brief);
+    const nx=(typeof STAGES!=='undefined')?STAGES[(run.stage|0)]:null;
     const bossNm=(run._lastBossName||scBossName((curStage&&curStage.boss)||'')||'ENEMY COMMAND');
-    /* Mike's mock makes STATUS one sentence - "Head to X and destroy Y. Our HQ reports heavy
-       activity in X, Z." - so it is one line here too. The first cut carried it as two and the
-       block ran onto the bay's bottom moulding, which is the collision this panel has had
-       reported four separate times. */
     const lines=['BOSS DEFEATED = '+bossNm];
     if(nx) lines.push('STATUS = HEAD TO '+String(nx.sub||nx.name)+' AND DESTROY '+scBossName(nx.boss)
                       +'. OUR HQ REPORTS HEAVY ACTIVITY THERE.');
     else   lines.push('STATUS = ALL SECTORS CLEAR. RETURN TO FURY HQ FOR DEBRIEF.');
-    const pad=brW*0.055, colW=brW-pad*2;
-    /* ⚠ SOLVED AGAINST THE BAY'S REAL INTERIOR, NOT ITS OUTER BOX. nui_bframe_large carries a
-       bevel of its own, so a block sized to bH sits ON the moulding. The 0.80 is that bevel. */
-    const room=bH*0.80;
-    let H=ph*0.023, gap=H*1.42, N=0;
-    for(;H>ph*0.010;H-=0.3){
-      gap=H*1.42; N=0;
-      for(const L of lines) N+=Math.max(1,stageWrapCount(art,L,H,colW,0.05));
+    const colW=b[2]*0.90, room=b[3]*0.88;
+    let H=ph2*0.026, gap=H*1.40, N=0;
+    for(;H>ph2*0.011;H-=0.3){
+      gap=H*1.40; N=0;
+      for(const l of lines) N+=Math.max(1,stageWrapCount(art,l,H,colW,0.05));
       if(N*gap<=room) break;
     }
-    /* centred in the bay on the vertical too - "center all ... text" */
-    let yy=bY+bH/2-(N*gap)/2;
+    let yy=b[1]+b[3]/2-(N*gap)/2;
     for(let i=0;i<lines.length;i++){
-      const L=lines[i];
-      const n=Math.max(1,stageWrapCount(art,L,H,colW,0.05));
-      stageWrapCen(art,L,brX+brW/2,yy+H/2,H,colW,1.42,A(0.32+i*0.06),0.05,i===0?'#ffd24a':null,i===0?1:0);
+      const n=Math.max(1,stageWrapCount(art,lines[i],H,colW,0.05));
+      stageWrapCen(art,lines[i],b[0]+b[2]/2,yy+H/2,H,colW,1.40,A(0.32+i*0.06),0.05,
+                   i===0?'#ffd24a':null,i===0?1:0);
       yy+=n*gap;
     }
   }
 
-  /* ---- 4. SIX STAT SLOTS, TWO COLUMNS, TEXT ON THE FILL ---- */
-  const gY=py+ph*0.415, gH=ph*0.235;
-  const colW=(IW-IW*0.020)/2, colX=[IX, IX+colW+IW*0.020];
-  const rowH=gH/3, slotH=rowH*0.84;
-  /* the fills still animate in one at a time, which is what made the old screen feel like a
-     readout rather than a static card - kept, just per SLOT instead of per row */
+  /* ---- 4. THE SIX STAT BAYS - the authored fill inside HIS recess, text on it ---- */
   if(t>0.42 && drawStageClear._row<SC_CONCEPT.length){
     drawStageClear._segT+=dt;
     if(drawStageClear._segT>=0.16){ drawStageClear._segT=0; drawStageClear._row++;
       if(Audio.SFX.statTick) Audio.SFX.statTick(); }
   }
-  for(let i=0;i<SC_CONCEPT.length;i++){
+  for(let i=0;i<SC_CONCEPT.length && i<SC_SLOTS.stats.length;i++){
     if(i>drawStageClear._row) break;
-    const row=SC_CONCEPT[i];
-    const cx=colX[i%2], cy=gY+Math.floor(i/2)*rowH;
+    const row=SC_CONCEPT[i], b=scBay(P,SC_SLOTS.stats[i]);
     const app=Math.min(1,(drawStageClear._row-i)+0.35);
     const frac=Math.max(0,Math.min(1,row.val(S)))*Math.min(1,app*1.6);
-    scSlot(cx,cy,colW,slotH,row.fill,frac,t,1);
+    /* inset so his cyan rim stays visible - the fill sits IN the recess, it does not replace it */
+    scFillBar(b[0]+b[2]*0.020, b[1]+b[3]*0.16, b[2]*0.960, b[3]*0.68, row.fill, frac, t);
     const txt=row.k+' = '+row.fmt(S);
-    const H=scFit(art,txt,colW*0.80,slotH*0.44,ph*0.010,0.05);
-    /* ⚠ NO DARK WASH UNDER THE TEXT. The first cut laid a 55%-black rect over 90% of the slot to
-       protect the letterforms and it hid the fill Mike asked to see - the stat bars read as grey
-       slots with coloured speckle showing through the word gaps. It is not needed: CLAUDE.md
-       records that every letter in this face is a bright face drawn over its OWN opaque dark drop
-       shadow, which is exactly the separation a wash was being added for. Text straight on the
-       fill, centred. */
-    scCen(art,txt,cx+colW/2,cy+slotH*0.50,H,null,0,app,0.05);
+    const H=scFit(art,txt,b[2]*0.90,b[3]*0.62,ph2*0.010,0.05);
+    scCen(art,txt,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,app,0.05);
   }
 
-  /* ---- 5. SCORE and RANK, one wide bar ---- */
-  const sY=py+ph*0.660, sH=ph*0.070;
-  if(t>0.95){
-    scSlot(IX,sY,IW,sH,'bomb',Math.max(0.06,Math.min(1,R.pct||0)),t*0.7,1);
-    const tgt=(run.score|0)+Math.round(R.bonus*Math.min(1,(t-0.95)/0.9));
-    if(drawStageClear._scoreShown<tgt){
-      drawStageClear._scoreShown=Math.min(tgt, drawStageClear._scoreShown+Math.max(1,Math.round(R.bonus*dt*1.4)));
-      if(Audio.SFX.blip && Math.random()<0.35) Audio.SFX.blip();
+  /* ---- 5. SCORE / CLEAR TIME / RANK ---- */
+  {
+    const b=scBay(P,SC_SLOTS.score);
+    if(t>0.95){
+      const tgt=(run.score|0)+Math.round(R.bonus*Math.min(1,(t-0.95)/0.9));
+      if(drawStageClear._scoreShown<tgt){
+        drawStageClear._scoreShown=Math.min(tgt, drawStageClear._scoreShown+Math.max(1,Math.round(R.bonus*dt*1.4)));
+        if(Audio.SFX.blip && Math.random()<0.35) Audio.SFX.blip();
+      }
+      /* Mike, 0904: "Clear Time - make this a metric on the screen but not in the box, down below
+         with the score and rank section." */
+      const sTxt='SCORE = '+String(drawStageClear._scoreShown|0);
+      const cTxt='CLEAR TIME = '+((typeof fmtTime==='function')?fmtTime(R.clearT||0):String(Math.round(R.clearT||0)));
+      const rTxt='RANK = '+(drawStageClear._stamp>0?R.rank:'-');
+      const colW3=b[2]*0.30;
+      const H=Math.min(scFit(art,sTxt,colW3,b[3]*0.34,ph2*0.010,0.05),
+                       scFit(art,cTxt,colW3,b[3]*0.34,ph2*0.010,0.05),
+                       scFit(art,rTxt,colW3,b[3]*0.34,ph2*0.010,0.05));
+      /* ⚠ UNTINTED. Mike, 0807q: "Dont color overlay the rank please". */
+      const cy=b[1]+b[3]*0.50;
+      scCen(art,sTxt,b[0]+b[2]*0.185,cy,H,null,0,1,0.05);
+      scCen(art,cTxt,b[0]+b[2]*0.500,cy,H,null,0,1,0.05);
+      scCen(art,rTxt,b[0]+b[2]*0.820,cy,H,null,0,1,0.05);
     }
-    /* ⚠ CLEAR TIME LIVES HERE, NOT IN THE GRID. Mike, 0904: "Clear Time - make this a metric on
-       the screen but not in the box, down below with the score and rank section." It is a run
-       summary like the score and the rank, not one of the six per-stat slots - so it shares their
-       bar and takes the middle third. */
-    const sTxt='SCORE = '+String(drawStageClear._scoreShown|0);
-    const cTxt='CLEAR TIME = '+((typeof fmtTime==='function')?fmtTime(R.clearT||0):String(Math.round(R.clearT||0)));
-    const rTxt='RANK = '+(drawStageClear._stamp>0?R.rank:'-');
-    /* solved against the widest of the three columns so the longest string sets the size and all
-       three stay on one type scale */
-    const colW3=IW*0.30;
-    const H=Math.min(scFit(art,sTxt,colW3,sH*0.46,ph*0.012,0.05),
-                     scFit(art,cTxt,colW3,sH*0.46,ph*0.012,0.05),
-                     scFit(art,rTxt,colW3,sH*0.46,ph*0.012,0.05));
-    /* ⚠ THE RANK AND THE SCORE DRAW UNTINTED. Mike, 0807q: "Dont color overlay the rank please"
-       - a tint composites in 'color' and the letter stops reading as the game's own lettering and
-       becomes a coloured shape. My first cut of this screen put the rank in gold and section 201
-       caught it, which is exactly what that assertion is for. */
-    scCen(art,sTxt,IX+IW*0.185,sY+sH*0.50,H,null,0,1,0.05);
-    scCen(art,cTxt,IX+IW*0.500,sY+sH*0.50,H,null,0,1,0.05);
-    scCen(art,rTxt,IX+IW*0.820,sY+sH*0.50,H,null,0,1,0.05);
-    /* the dividers his mock draws between the halves - two of them now, three columns */
-    ctx.save(); ctx.globalAlpha=0.5; ctx.fillStyle='#9fb4d0';
-    for(const fx of [0.345,0.655])
-      ctx.fillRect(IX+IW*fx, sY+sH*0.26, Math.max(1,pw*0.003), sH*0.48);
-    ctx.restore();
-  }
-  /* the rank stamp still drives _stamp, because PRESS FIRE and the password both gate on it */
-  if(t>1.15 && drawStageClear._stamp<1){
-    if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7);
-      if(Audio.SFX.rank) Audio.SFX.rank(); else if(Audio.SFX.blip) Audio.SFX.blip(); }
-    drawStageClear._stamp=Math.min(1, drawStageClear._stamp+dt/0.34);
+    if(t>1.15 && drawStageClear._stamp<1){
+      if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7);
+        if(Audio.SFX.rank) Audio.SFX.rank(); else if(Audio.SFX.blip) Audio.SFX.blip(); }
+      drawStageClear._stamp=Math.min(1, drawStageClear._stamp+dt/0.34);
+    }
   }
 
   /* ---- 6. THE SIGN-OFF ---- */
-  const mY=py+ph*0.745, mH=ph*0.066;
   if(drawStageClear._stamp>0){
-    scSlot(IX,mY,IW,mH,null,0,0,1);
+    const b=scBay(P,SC_SLOTS.signoff);
     const nx=(typeof STAGES!=='undefined')?STAGES[(run.stage|0)]:null;
     const who=String(run.pilot||'PILOT').toUpperCase();
     const msg = nx
       ? 'GREAT JOB, '+who+'! BUT THE BATTLE IS FAR FROM OVER! WE NEED YOU AT '+String(nx.sub||nx.name)+' ASAP!'
       : 'GREAT JOB, '+who+'! EVERY SECTOR IS CLEAR. FURY HQ SALUTES YOU!';
-    /* same bevel allowance as the brief bay - a block sized to the slot's OUTER box sits on the
-       moulding, which is how the first cut ran its second line onto the frame */
-    const mW=IW*0.84;
-    let H=ph*0.020;
-    for(;H>ph*0.009;H-=0.3){
-      if(stageWrapCount(art,msg,H,mW,0.05)*H*1.35 <= mH*0.62) break;
-    }
+    const mW=b[2]*0.92;
+    let H=ph2*0.022;
+    for(;H>ph2*0.009;H-=0.3){ if(stageWrapCount(art,msg,H,mW,0.05)*H*1.32 <= b[3]*0.88) break; }
     const n=Math.max(1,stageWrapCount(art,msg,H,mW,0.05));
-    /* the block is centred in the bar rather than hung from its top, so one line and three lines
-       both sit on the bar's own middle */
-    let yy=mY+mH/2-((n-1)*H*1.35)/2;
-    stageWrapCen(art,msg,IX+IW/2,yy,H,mW,1.35,1,0.05);
+    stageWrapCen(art,msg,b[0]+b[2]/2,b[1]+b[3]/2-((n-1)*H*1.32)/2,H,mW,1.32,1,0.05);
   }
-  return [IX, IW];
+
+  /* the password and PRESS FIRE go in the band BELOW his plate - it has no bay for them, and
+     putting them over the authored frame is what would spoil it */
+  drawStageClear._pwY = P[1]+P[3] + Math.max(10,(VH-(P[1]+P[3]))*0.34);
+  drawStageClear._pfY = P[1]+P[3] + Math.max(22,(VH-(P[1]+P[3]))*0.70);
+  return [P[0]+P[2]*0.10, P[2]*0.80];
 }
-/* stageWrap left-aligns its block; his mock centres every line, so this is the centred twin.
-   It measures through stageWidth for the same reason stageWrap does - a borrowed or
-   canvas-fallback glyph has to be measured at the width it will be drawn at. */
 function stageWrapCen(art,text,cx,y,H,maxW,lineMul,alpha,spacingMul,tintC,tintA){
   if(!art||!art.font) return 0;
   const words=String(text).split(' ');
@@ -55425,7 +55444,12 @@ function drawStageClear(dt){
      One subtlety worth keeping: the corners are scaled by the SMALLER of the two axis ratios, so
      a tall window does not give you tall corner brackets on a wide frame. ============================================================ */
   let px=VW*0.020, py=VH*0.026, pw=VW*0.960, ph=VH*0.950;
-  if(XART.rdy('statscreen')){
+  /* ⚠ THE 9-SLICED `statscreen` IS CO-OP'S FRAME NOW (drop 0904ad). The solo screen is Mike's own
+     authored plate, which carries its own frame AND every bay - drawing this behind it would put
+     his panel inside a second, different frame, which is most of what was wrong with the first
+     cut. Co-op still has no plate of its own, so it keeps this one. */
+  const _soloPlate = !(R.seats) && XART.rdy('statpanel_cf');
+  if(!_soloPlate && XART.rdy('statscreen')){
     const im=XART.get('statscreen');
     const IW=im.naturalWidth, IH=im.naturalHeight;
     const ML=264/1496, MR=270/1496, MT=171/980, MB=171/980;      // measured margins
@@ -55515,7 +55539,9 @@ function drawStageClear(dt){
       drawStageClear._pwB=(drawStageClear._pwB||0)+dt;
       if(drawStageClear._pwB>0.45){ drawStageClear._pwB=0; Audio.SFX.blip(); }
     }
-    const wy=py+ph*0.848;
+    /* the concept body publishes where the band below Mike's plate begins; the old fraction of
+       the viewport would have put the password ON his authored frame. */
+    const wy=(drawStageClear._pwY!=null)?drawStageClear._pwY:(py+ph*0.848);
     if(art && typeof stageText==='function'){
       /* PASSWORD is a LABEL in the same column as SCORE and the nine row labels, and it had the
          same edge-as-centre fault — measured 50px left of SCORE directly above it. The password
@@ -55551,11 +55577,11 @@ function drawStageClear(dt){
        decodes - the 0810o trap. */
     const _pfA=0.55+0.45*Math.sin(t*4);
     if(art && art.font && typeof stageText==='function'){
-      stageText(art,'PRESS FIRE', px+pw/2, py+ph*0.898, ph*0.030, null, null, _pfA, 0.06);
+      stageText(art,'PRESS FIRE', px+pw/2, (drawStageClear._pfY!=null?drawStageClear._pfY:py+ph*0.898), ph*0.030, null, null, _pfA, 0.06);
     } else {
       ctx.save(); ctx.globalAlpha=_pfA; ctx.textAlign='center';
       ctx.fillStyle='#cfd6e0'; ctx.font=F(ph*0.028);
-      ctx.fillText('PRESS FIRE', px+pw/2, py+ph*0.898); ctx.restore(); ctx.textAlign='left';
+      ctx.fillText('PRESS FIRE', px+pw/2, (drawStageClear._pfY!=null?drawStageClear._pfY:py+ph*0.898)); ctx.restore(); ctx.textAlign='left';
     }
   }
   /* MOUSE (drop 0812b). Stage clear says PRESS FIRE and had no pointer path at all, so a mouse
