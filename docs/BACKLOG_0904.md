@@ -102,52 +102,51 @@ import if the donor cannot supply them.
 
 ---
 
-## QUEUED
+## QUEUED — pruned 0904am against the code, not against memory
 
-### Art-led (needs SpriteCook)
+⚠ THIS SECTION WAS STALE. It still listed items 8, 9, 10, 11, 12, 13, 14, 15 and 16 as open when
+the DONE sections above record all nine as landed. Cross-checked before rewriting.
+
+### Still owed from Mike's 17-item list — FIVE of them
+**2. Cutscene shootdowns** — *"use our pseudo-3d graphics"* in the cutscenes where we shoot enemies
+down.
 **4. Stage-4 miniboss remake** — *"use spritecook, get proper attack frames, muzzle frames,
-projectiles etc. it should no longer get its helpers either."*
-Same shape as the Herald remake: intact/damaged/critical + ordnance, aligned to one footprint on
-import. Plus removing its helper spawns, which is a behaviour change in its tick.
-
+projectiles etc. it should no longer get its helpers either."* Art run + a behaviour change in its
+tick to stop the helper spawns.
+**5. Stage-4 boss helper projectiles** — larger. Small and isolated.
 **7. The laser telegraph** — *"that ugly field view before a laser comes out needs to be remade via
 sprite cook, and it should flash for 3 seconds on/off and an alert symbol of ours should pop up
-above the enemy, go from the yellow to red with the sound"*
-Art + behaviour + audio. The 1..2..3 / f.f.f telegraph from the earlier list belongs with this.
-
-### Behaviour / engine
-**2. Cutscene shootdowns** — *"use our pseudo-3d graphics"* in the cutscenes where we shoot enemies down.
-**5. Stage-4 boss helper projectiles** — larger. Small, isolated.
-**8. Stage 5 sky→space** — *"you were supposed to connect space and sky, do not stop the scroling and
-use clouds so we dont see the connection"*. Reopens 0903w/x; the scroll must never stop.
-**16. Stage 6** — *"do not ever stop scrolling, do not place the moon there either."*
-**10. Maverick's laser** — targets one enemy instead of homing to what's in front of it.
-**15. Volley missile impact FX** — bad, need correction.
+above the enemy, go from the yellow to red with the sound"*. Art + behaviour + audio; the
+1..2..3 / f.f.f telegraph from the earlier list belongs with this one.
 **17. Stage 3** — *"where are the new attacks, projectiles and animations for him?"*
 
-### Stage 9 — a cluster, probably one pass
-**11.** Losing all 5 lives + continue did NOT fail the stage and send us back to stage 5.
-**12.** Returning to stage 5 did not restore the exact position, did not show the water gun pickup,
-made no announcement.
-**13.** Screen stays flashed white when the final boss merges.
-**14.** Still has tanks and weird enemies that do not belong.
+### Art in the tree that nothing draws yet
+- **Six s6mb_ families** imported with the carrier pack and still unreferenced: `crystalimpact`,
+  `flakburst`, `gravityripple`, `omegabomb-reflected`, `prismbeam`, `ricochetimpact`.
+  `omegabomb-reflected` is the notable one - the deflect mechanic has a REFLECTED plate authored
+  for it and currently redraws the hostile one.
+- **The carrier's six named boss cycles** are art-only. Four already exist in spirit as the mega
+  phases; what the pack adds beyond the anchors and the flak airburst (both landed 0904ae) is the
+  exact authored geometry for the other cycles.
 
-### UI
-**9. Pilot select fonts** — delete them, use the current stage fonts.
-⚠ NEEDS A DECISION FROM MIKE BEFORE IT IS TOUCHED. Investigated and the obvious answer is wrong:
-  - the card art (`pcard_<pilot>`) carries NO baked text — the panel is clean;
-  - `drawPilot` already routes its own strings through `msgText`, with raw canvas text only as a
-    fallback when the bitmap face has not loaded;
-  - the card body already uses BOFmil, which a previous drop set deliberately after Mike asked for
-    "our dialogue font" — its own comment says so;
-  - and the STAGE screens use the same family: `'bold Npx "BOFmil", monospace'`.
-  So "use the actual stage fonts" cannot mean the typeface — they already match. What differs in
-  the screenshot is the FACE: the headers ("CHOOSE YOUR PILOT!", the pilot name) render through the
-  bitmap `fury-dialogue-font`, while the card interior and the footer render as thin canvas BOFmil.
-  Most likely Mike wants the card/footer on the bitmap face too. Worth one word from him rather
-  than restyling the whole screen on a guess.
+### Packs on disk, not yet imported
+- `CF_Stage9PortalCombatPickups-Lvl9` (179 entries, PortalFill families) at `C:\s9p`.
+- The four remaining `CF_EnemyTeleportFX-Vol.1` families - phase-needle, plasma-bloom,
+  crimson-shatter, gravity-maw. Only the Chaos Harrier's phase-rift was taken.
 
----
+### Decisions waiting on Mike
+- **The 2x cutscene face** (0904x) is live on drawCutscene, cinDialogue and campaignIntroCaption.
+  He sent the pack; he never asked for those surfaces to change. One accessor reverts it.
+- **`cinDialogue` is now dead code** - it was the beats renderer for the retired pilot openings.
+  Left on disk rather than deleted.
+- **The debrief shows six stats, not nine.** MISSILES FIRED, MISSILE HITS, SPECIAL DAMAGE, SPECIAL
+  HITS and CLEAR TIME were all asked for in 0807o; CLEAR TIME came back in the score row, the other
+  four are off the screen because his concept has six slots. SC_CONCEPT plus a row count restores
+  them as a 2x4 or 2x5 grid.
+
+### Standing, from earlier findings
+- The `cornerLR` / `curveR` pair and the stage-1 spawn fixture are FLAKY, not broken - they have
+  swapped places on nearly every run this session. Do not chase them without a seeded harness.
 
 ## Note on sequencing
 
