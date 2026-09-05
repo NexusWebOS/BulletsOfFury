@@ -14164,6 +14164,7 @@ function reaverOrbDraw(b){
 const L23_WARN_T   = 3.00;   // his number, verbatim
 const L23_WARN_RED = 0.60;   // fraction of the warn after which the sign flips yellow -> red
 const L23_WARN_MINY= 46;     // measured: clears the boss gauge band, which draws after the beam
+const L23_WARN_ARROWS=7;    // arrows revealed across the warn; the beep and the draw share it
 function l23WarnSymbolDraw(b,B){
   if(!b||!B||B.released||B.t>=B.warm||typeof XART==='undefined')return false;
   const f=clamp(B.t/Math.max(.001,B.warm),0,1),red=f>=L23_WARN_RED;
@@ -14191,11 +14192,20 @@ function l23WarnSymbolDraw(b,B){
   ctx.restore();return true;
 }
 function l23WarnSound(B){
-  /* an escalating alarm, not one beep per blink - the blink runs to 8Hz and would buzz */
+  /* ⚠ ONE ALERT PER ARROW, NOT A TIMED CADENCE (0905t). Mike: the arrows "appear 1 by 1 as they
+     fire the alert zones, using alert sounds we have, and the laser one should be a charge up one".
+     Tying the beep to the REVEAL means the sound and the picture are the same event - a fixed
+     0.26/0.52s cadence drifted against the arrows and read as an unrelated alarm running underneath.
+     `L23_WARN_ARROWS` is the count the draw reveals across the warn; the two must agree, so it is
+     one constant read by the tick and derived in the draw from the same k. */
   if(!B||B.released)return;
-  const f=clamp(B.t/Math.max(.001,B.warm),0,1),period=f>=L23_WARN_RED?.26:.52;
-  const step=Math.floor(B.t/period);if(step===B._warnStep)return;B._warnStep=step;
-  try{if(Audio.SFX){const fn=Audio.SFX.lockAlert||Audio.SFX.dangerAlert||Audio.SFX.uiMove;if(fn)fn();}}catch(_lw){}
+  const k=clamp(B.t/Math.max(.001,B.warm),0,1);
+  const n=Math.floor(k*L23_WARN_ARROWS);
+  if(n===B._arrowN)return; B._arrowN=n;
+  try{ if(Audio.SFX){
+    const fn=Audio.SFX.lockAlert||Audio.SFX.dangerAlert||Audio.SFX.uiMove;
+    if(fn)fn();
+  } }catch(_lw){}
 }
 function l23BossBeamStart(b,family,slots,angles,warm,active,retract,width,opts){
   if(!b||b._l23Beam)return false;
@@ -14204,7 +14214,10 @@ function l23BossBeamStart(b,family,slots,angles,warm,active,retract,width,opts){
     active:active||1.0,retract:retract||.20,width:width||38,released:false,spin:opts.spin||0,
     baseAngles:angles.slice(),sweepArc:(Array.isArray(opts.sweepArc)?opts.sweepArc.slice():(opts.sweepArc||0)),sweepRate:opts.sweepRate||0,
     sweepPhase:opts.sweepPhase||0};
-  try{if(Audio.SFX&&(Audio.SFX.retinaCharge||Audio.SFX.bossPhase))(Audio.SFX.retinaCharge||Audio.SFX.bossPhase)();}catch(_l23c){}
+  /* ⚠ THE LASER ITSELF CHARGES - Mike: "the laser one should be a charge up one". The per-arrow
+     beeps are the ALERT ZONES; this one shot at the start is the weapon spinning up, so the two
+     are not the same sound doing two jobs. */
+  try{if(Audio.SFX){const _c=Audio.SFX.bossWeaponCharge||Audio.SFX.retinaCharge||Audio.SFX.bossPhase;if(_c)_c();}}catch(_l23c){}
   return true;
 }
 function l23BossBeamTick(b,dt){
@@ -14352,22 +14365,43 @@ function l23BossBeamDraw(b){
            would also have cost an allocation per slot per frame; this reuses the tile already in
            hand. */
         const _a=Math.min(1,(_AL.a0+_AL.a1*k)*pulse*2.35);
+        /* ⚠ MIKE, 0905: "those arrows should be facing south the whole time, and they appear 1 by 1
+           as they fire the alert zones".
+           SOUTH: the whole lane is drawn inside `ctx.rotate(angle - PI/2)`, so every chevron used to
+           rotate WITH its lane - on the 78-degree sweep they pointed nearly sideways, which reads as
+           decoration instead of 'the danger comes from up there'. Each tile is now counter-rotated
+           by exactly that angle about its own centre, so the arrows hold south at every sweep
+           position while the corridor itself still follows the beam.
+           ⚠ THE TILES THEREFORE NO LONGER SEAM INTO A STRIP - each is a marker placed ALONG the
+           lane, which is what makes them read as separate arrows. That is deliberate; do not
+           'fix' it back to a continuous tile.
+           ONE BY ONE: an arrow is revealed once the rising charge has passed it (`_gy <= _mid`),
+           so they pop in from the far end up to the muzzle across the warn rather than all at once. */
+        /* ⚠ TWO PASSES, AND THE SECOND ONE IS WHY. Counter-rotating every tile made the arrows face
+           south (Mike's ask) but destroyed the CORRIDOR: the tiles stop seaming into a strip, so the
+           danger zone read as scattered markers instead of a lane. The corridor and the arrows are
+           different jobs, so they get different passes - the strip stays rotated WITH the beam and
+           continuous, and the arrows ride on top of it counter-rotated, revealed one by one. */
         const _gy=len*(1-k), _gh=Math.max(56,len*.17);
+        const _back=-(B.angles[i]-Math.PI/2);
+        ctx.globalCompositeOperation='source-over';
         for(let y=-_seg+_off;y<len;y+=_seg){
           const _mid=y+_seg*.5;
-          ctx.globalCompositeOperation='source-over';
-          ctx.globalAlpha=_a*(_clear>0?clamp(_mid/_clear,.34,1):1);
+          ctx.globalAlpha=_a*(_clear>0?clamp(_mid/_clear,.34,1):1)*.62;
           ctx.drawImage(_lim,-lane/2,y,lane,_seg);
+        }
+        /* the arrows: SOUTH at every sweep angle, and each appears only once the rising charge
+           has passed it, so they pop in from the far end up to the muzzle across the warn */
+        for(let y=-_seg+_off;y<len;y+=_seg){
+          const _mid=y+_seg*.5;
+          if(_mid<_gy-_seg*.35) continue;
+          const _pop=clamp((_gy-_mid+_seg*.35)/(_seg*.9),0,1);
           const _d=Math.abs(_mid-_gy);
-          if(_d<_gh){
-            ctx.globalCompositeOperation='lighter';
-            /* ⚠ the additive peak is CAPPED. At 0.34+0.58k it reached 0.92 on top of an already
-               2.35x base, and the last third of the charge blew the lanes to near-white - the
-               chevrons, and with them the hazard read, disappeared exactly when the warning matters
-               most. 0.30+0.34k still climbs visibly into the muzzle without bleaching the plate. */
-            ctx.globalAlpha=(1-_d/_gh)*(0.30+0.34*k);
-            ctx.drawImage(_lim,-lane/2,y,lane,_seg);
-          }
+          ctx.save();ctx.translate(0,_mid);ctx.rotate(_back);
+          ctx.globalCompositeOperation='lighter';
+          ctx.globalAlpha=(.30+.34*k)*(1-_pop*.7)*(_d<_gh?(1+(1-_d/_gh)*.85):1)*.9;
+          ctx.drawImage(_lim,-lane/2,-_seg/2,lane,_seg);
+          ctx.restore();
         }
         ctx.globalCompositeOperation='source-over';
         ctx.restore();
