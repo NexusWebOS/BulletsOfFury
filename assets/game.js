@@ -2582,6 +2582,24 @@ const XART=(function(){
     c.complete=true; c.naturalWidth=c.width; c.naturalHeight=c.height;
     return (_shipCells[k]=c);
   }
+  /* ⚠ A SHIP CELL IS CACHED BY KEY, SO REPOINTING ITS RECT DOES NOTHING WITHOUT THIS.
+     `_shipCells` is filled on first use and never re-read, which is right for art that never
+     moves - and wrong the moment a costume swaps what `ship_lizzie` points at. Repointing
+     `BOFX.ships` alone would change the table and leave every draw showing the plate it had
+     already baked, i.e. exactly the class of bug where the state is correct and the pixels
+     are not.
+
+     This exists so an alternate skin can be ONE edit rather than twenty-four. There are 24
+     sites in this file that build a `'ship_'+pk` key - the hull, the bank picker, the roll
+     reel, the launch cinematic, the pilot card, the roster, allies, rivals, the map icon -
+     and hand-patching them is the `_selfPat` mistake in a new costume: the one that gets
+     missed is invisible until someone happens to look at that surface. Swap the RECTS and
+     flush, and every path that exists now or later follows automatically. */
+  X._flushShipCells=function(pred){
+    let n=0;
+    for(const k in _shipCells){ if(!pred || pred(k)){ delete _shipCells[k]; n++; } }
+    return n;
+  };
   X._touch=function(k){
     /* CELLS ARE CHECKED FIRST (drop 0806u). BOFX.img still names the SHEET for every atlased
        key, so that any consumer asking "is this registered / is the file there" gets a true
@@ -52262,6 +52280,73 @@ function psLineupX(i){ return Math.round((VW - PS_COLS*PS_PITCH)/2 + i*PS_PITCH)
    `PS_POSE_STALE` removes those frames from his chain entirely; he shows a bust for the
    decode window and then his own art, and never the rejected design for even one frame.
    Any pilot whose cinematic poses are superseded goes in that table. */
+/* ============================================================
+   LIZZIE'S B-42 BOMBER, KEPT AS AN UNLOCKABLE ALTERNATE (Mike, 0906)
+
+   "store lizzie's old b-42 bomber sprites as an alternate costume pick if we use the password
+   bomber."
+
+   Her B-42 was replaced in 0906b - "As much as I like Lizzie's B-42 bomber, doesnt fit the game" -
+   by the golden/grey airframe. THE OLD ART WAS NEVER DELETED: that drop APPENDED a strip to the
+   ship atlas and repointed her rects at it, so all seventeen B-42 frames are still sitting in
+   bof_player_ships_barrel_rolls.png where they always were, unreferenced. Rendered to confirm
+   before any of this was written (docs/LIZZIE_B42_RECOVERED.png): base, no-flame, both banks, five
+   pseudo-3D views and the full eight-frame roll, every one intact. So this costs no art job and no
+   atlas edit - only the rects, recovered from the manifest at 554dd4f2^.
+
+   WHY THE RECTS LIVE HERE AND NOT IN THE MANIFEST. assets/manifest.js is generated; a hand-added
+   table there is one regeneration away from vanishing, and it would vanish SILENTLY because the
+   costume is opt-in and nobody would be looking at it. Seventeen rows in the file that uses them
+   cannot be lost that way.
+
+   AND THE SWAP IS BY RECT, NOT BY KEY, ON PURPOSE. Twenty-four sites in this file build a
+   'ship_'+pk key. Giving the B-42 its own key family would mean teaching all twenty-four about
+   costumes, and the one that got missed would show the wrong aircraft on one surface - the pilot
+   card, the map icon, the launch cinematic - with nothing failing anywhere. Repointing BOFX.ships
+   and flushing XART's cell cache changes what every one of them resolves, including any added
+   later. See the note at X._flushShipCells for why the flush is not optional.
+   ============================================================ */
+const LIZZIE_B42_RECTS={
+  "":[2430,6,222,236,0,22,222,280],
+  "_nf":[1248,969,151,213,33,36,222,280],
+  "_l":[2033,969,204,210,9,35,222,280],
+  "_r":[533,969,208,213,6,34,222,280],
+  "_pv0":[1411,969,151,213,33,36,222,280],
+  "_pv1":[2249,969,180,210,19,36,222,280],
+  "_pv2":[2664,6,222,236,0,22,222,280],
+  "_pv3":[2274,738,185,216,19,33,222,280],
+  "_pv4":[2335,504,154,220,35,31,222,280],
+  "_br0":[1570,738,183,218,12,26,208,271],
+  "_br1":[2816,1413,184,171,12,50,208,271],
+  "_br2":[1000,1413,163,183,22,44,208,271],
+  "_br3":[450,1413,168,185,20,43,208,271],
+  "_br4":[1335,269,184,222,12,24,208,271],
+  "_br5":[2621,1413,183,172,12,49,208,271],
+  "_br6":[1175,1413,163,183,23,44,208,271],
+  "_br7":[1350,1413,163,183,22,44,208,271]
+};
+/* her CURRENT rects, captured the first time the skin is applied rather than hard-coded, so this
+   keeps working if the golden airframe is ever re-imported at different coordinates */
+let _lizzieStockRects=null;
+let lizzieSkinUnlocked=false;   // password BOMBER, session only - see submitPassword
+let lizzieSkinOn=false;         // the pick itself
+
+/* returns true when the swap actually happened, so a caller can trust the flag it just set */
+function applyLizzieSkin(on){
+  if(typeof BOFX==='undefined' || !BOFX.ships) return false;
+  const suf=Object.keys(LIZZIE_B42_RECTS);
+  if(!_lizzieStockRects){
+    _lizzieStockRects={};
+    for(const s of suf){ const r=BOFX.ships['ship_lizzie'+s]; if(r) _lizzieStockRects[s]=r.slice(); }
+  }
+  const src = on ? LIZZIE_B42_RECTS : _lizzieStockRects;
+  let n=0;
+  for(const s of suf){ if(src[s]){ BOFX.ships['ship_lizzie'+s]=src[s].slice(); n++; } }
+  if(typeof XART!=='undefined' && XART._flushShipCells)
+    XART._flushShipCells(k=>k.indexOf('ship_lizzie')===0);
+  lizzieSkinOn=!!on;
+  return n>0;
+}
 const PS_POSE_STALE={yuri:1};
 /* the faction emblem for an affiliation string.
 
@@ -52575,6 +52660,29 @@ function drawPilot(dt){
         ctx.restore();
       }
     }
+    /* ⚠ THE COSTUME PROMPT ONLY EXISTS FOR SOMEONE WHO HAS EARNED IT. Shown under the ship
+       bay, on Lizzie, only once BOMBER has been entered - so it is a reward that announces
+       itself rather than a control nobody can use, and the other eight cards are untouched.
+       Placed at the FOOT of the ship bay because that is the thing it changes; a hint at the
+       bottom of the panel would sit under the stat bars and read as being about them. */
+    if(!locked && lizzieSkinUnlocked && P.key==='lizzie' && typeof msgText==='function'){
+      /* ⚠ LETTERS ONLY - THE ARROW GLYPHS DO NOT EXIST IN THIS FACE. The first cut read
+         'B-42 BOMBER \u25B2\u25BC STOCK' and would have drawn TWO SPACES where the arrows are:
+         checked the glyph map and 25C0/25B6 are mapped, 25B2/25BC are not, and a missing glyph
+         in this engine draws a space rather than failing. That is the stage-card alphabet bug
+         from 0903 ('CHOO E YOUR PILOT') arriving from the punctuation side, and it is why the
+         other prompts on this screen are letters and spaces. The wording also says what the
+         press will DO rather than naming the current state twice. */
+      /* ⚠ AND IT GOES INSIDE THE BAY, BECAUSE THERE IS NO ROOM UNDER IT. Rendered first at
+         SHY+SHH+11 with the full sentence: it ran THROUGH the SPEED bar (the bay's foot is 208
+         and the first bar's top is 216) and ~38px past the panel's right edge, because a
+         27-character line at size 8 is wider than the 126px bay it was centred on. Lizzie is
+         also the five-stat pilot, so she has the least room under the bay of anyone - the one
+         card this could collide on is the only card it appears on.
+         Short form, inside the frame, on the 7px of padding psBlitFit leaves below the hull. */
+      msgText(lizzieSkinOn?'UP: STOCK':'UP: B-42',
+              SHX+SHW/2, SHY+SHH-6, 7, lizzieSkinOn?'#ffc21a':'#9fb0c6', 0.95, 1, 0.10);
+    }
     if(locked && typeof msgText==='function'){
       /* the empty column read as a bug rather than as a secret. The hover prompt below only
          appears with a mouse over the panel, which is no use on a pad. */
@@ -52685,6 +52793,19 @@ function drawPilot(dt){
   if(pilotRot>0) return; // lock during spin
   if(Input.menuRight()) startPilotRot(1);
   if(Input.menuLeft()) startPilotRot(-1);
+  /* ⚠ THE COSTUME PICK. Mike: "an alternate costume pick if we use the password bomber" -
+     so the password UNLOCKS it and this is where it is chosen, rather than the password
+     forcing it on. UP/DOWN because this screen genuinely does not use them: menuUp/menuDown
+     exist on Input and drawPilot reads neither, so nothing is being taken away from anything
+     (checked, rather than assumed - the generic back handler eating the rebind key in 0903
+     is what that check is for).
+     Gated on the pilot SHOWN, not on run.pilot, so it cannot fire while you are scrolling
+     past her, and gated on the unlock so it is inert for anyone who has not entered BOMBER. */
+  if(lizzieSkinUnlocked && PILOTS[pilotIndex] && PILOTS[pilotIndex].key==='lizzie'
+     && (Input.menuUp()||Input.menuDown())){
+    applyLizzieSkin(!lizzieSkinOn);
+    Audio.SFX.select? Audio.SFX.select() : Audio.SFX.blip();
+  }
   const mx=Input.mouse.x, my=Input.mouse.y;
   if(Input.mouse.down && !drawPilot._md){
     /* ⚠ THE ROSTER IS CHECKED FIRST. It sits low on the screen and the panel is wide, so with
@@ -53247,7 +53368,17 @@ function drawPassword(dt){
     }
   }
   if(drawPassword.err>0){ drawPassword.err-=dt; passwordStageText(_pwFont,'INVALID CODE',VW/2,wy+wh+9,11,ww-40,'#ff4a4a',1,0.06); }
-  if(drawPassword.unlockMsg>0){ drawPassword.unlockMsg-=dt; passwordStageText(_pwFont,'COLE UNLOCKED!',VW/2,wy+wh+9,11,ww-40,'#8de23a',1,0.06); }
+  /* ⚠ THE BANNER USED TO SAY "COLE UNLOCKED!" WHATEVER HAD BEEN UNLOCKED. One flag drove it
+     and one string was baked in, so BOMBER would have lit a message naming a different
+     unlock - the confident-wrong kind of feedback that reads as the code not registering.
+     `unlockWho` is set alongside the timer at every site that starts it. */
+  if(drawPassword.unlockMsg>0){
+    drawPassword.unlockMsg-=dt;
+    const _uw=drawPassword.unlockWho||'cole';
+    const _um=(_uw==='bomber')?'B-42 BOMBER UNLOCKED!':'COLE UNLOCKED!';
+    const _uc=(_uw==='bomber')?'#ffc21a':'#8de23a';    // her tint / his
+    passwordStageText(_pwFont,_um,VW/2,wy+wh+9,11,ww-40,_uc,1,0.06);
+  }
   if(backButton()){ setState(GS.TITLE); menuIndex=0; pwInput=''; Audio.SFX.select(); }
 }
 function pwHotspots(wx,wy,ww,wh){
@@ -53281,10 +53412,20 @@ function pwKey(c){
   if(pwInput.length<6){ pwInput+=c; Audio.SFX.blip(); }
 }
 function submitPassword(){
+  /* ⚠ SIX CHARACTERS IS THE CEILING - pwKey caps pwInput at 6, so a longer code can never be
+     typed and would look like the password screen ignoring it. BOMBER is exactly six. */
+  if(pwInput==='BOMBER'){
+    lizzieSkinUnlocked=true;
+    /* session only, matching COLE4U above. Not persisted deliberately: the pilot roster and
+       Cole's unlock both work this way, and a costume that quietly survives a reload is a
+       save-format decision Mike has not made. */
+    Audio.SFX.life? Audio.SFX.life() : Audio.SFX.select();
+    drawPassword.unlockMsg=1.8; drawPassword.unlockWho='bomber'; pwInput=''; return;
+  }
   if(pwInput==='COLE4U'){
     coleUnlocked=true;   // session only — deliberately NOT persisted (drop 0801k)
     Audio.SFX.life? Audio.SFX.life() : Audio.SFX.select();
-    drawPassword.unlockMsg=1.8; pwInput=''; return;
+    drawPassword.unlockMsg=1.8; drawPassword.unlockWho='cole'; pwInput=''; return;
   }
   if(COLE_SCENE[pwInput]){
     const st=COLE_SCENE[pwInput];

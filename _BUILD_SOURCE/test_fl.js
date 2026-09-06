@@ -13504,6 +13504,86 @@ console.log("=== 277. pilot select: nine standing figures ===");
   ok(_src.indexOf('_sx=IX+2+(_ek?')>0 || _src.indexOf('_sx = IX+2+(_ek ?')>0,
      'the subtitle only indents when the emblem actually resolved');
 }
+// ===== 278. LIZZIE'S B-42 IS AN UNLOCKABLE COSTUME, NOT DELETED ART (drop 0906g) =====
+console.log("=== 278. lizzie B-42 alternate costume ===");
+{
+  /* Mike: "store lizzie's old b-42 bomber sprites as an alternate costume pick if we use the
+     password bomber." The pixels were never deleted - 0906b appended a strip to the ship atlas
+     and repointed her rects, leaving all seventeen B-42 frames in place and unreferenced.
+
+     The PIXEL half is proved by _BUILD_SOURCE/probe_lizzieskin_0906.py, which reads the canvas
+     XART actually serves before and after the toggle and again inside real PLAY. What is asserted
+     here is what a state check can honestly answer. */
+
+  ok(vm.runInContext("Object.keys(LIZZIE_B42_RECTS).length===17", ctxv),
+     'all seventeen B-42 frames are recorded (hull, no-flame, both banks, five pv, eight roll)');
+
+  /* every rect must land inside the atlas. A rect that runs off the sheet does not throw - it
+     draws a partial or empty cell - so an out-of-bounds row would be a silently blank aircraft. */
+  var _oob=vm.runInContext(
+    "(function(){var bad=[];for(var s in LIZZIE_B42_RECTS){var r=LIZZIE_B42_RECTS[s];" +
+    "if(!(r.length===8&&r[0]>=0&&r[1]>=0&&r[2]>0&&r[3]>0&&r[6]>0&&r[7]>0))bad.push(s);}" +
+    "return bad.join(',');})()", ctxv);
+  ok(_oob==='', 'every B-42 rect is well formed'+(_oob?': bad '+_oob:''));
+
+  /* the swap itself, both ways. Asserted on BOFX.ships rather than on lizzieSkinOn, because the
+     flag is set by the same function that does the repoint and is therefore true even if the
+     repoint is removed - it cannot fail in the way that matters. */
+  var _stock=vm.runInContext("BOFX.ships['ship_lizzie'].join(',')", ctxv);
+  vm.runInContext("applyLizzieSkin(true)", ctxv);
+  var _b42=vm.runInContext("BOFX.ships['ship_lizzie'].join(',')", ctxv);
+  ok(_b42!==_stock, 'turning the costume on repoints her hull rect');
+  ok(_b42===vm.runInContext("LIZZIE_B42_RECTS[''].join(',')", ctxv),
+     'and it points at the B-42 rect specifically, not at something else');
+  vm.runInContext("applyLizzieSkin(false)", ctxv);
+  ok(vm.runInContext("BOFX.ships['ship_lizzie'].join(',')", ctxv)===_stock,
+     'turning it off restores the stock rect exactly - a one-way toggle is a trap, not a pick');
+
+  /* all seventeen move, not just the hull: a partial swap gives a B-42 that banks into the
+     golden airframe, which is the sort of thing only a roll would reveal */
+  vm.runInContext("applyLizzieSkin(true)", ctxv);
+  var _n=vm.runInContext(
+    "(function(){var n=0;for(var s in LIZZIE_B42_RECTS)" +
+    "if(BOFX.ships['ship_lizzie'+s].join(',')===LIZZIE_B42_RECTS[s].join(','))n++;return n;})()", ctxv);
+  ok(_n===17, 'every one of the seventeen frames swaps, not only the hull ('+_n+'/17)');
+  vm.runInContext("applyLizzieSkin(false)", ctxv);
+
+  /* THE CACHE FLUSH IS THE LOAD-BEARING HALF. XART caches a ship cell by key on first use, so
+     without the flush the table changes and the screen keeps drawing the plate it already baked -
+     state correct, pixels wrong. Both the hook and its caller are pinned. */
+  ok(vm.runInContext("typeof XART._flushShipCells==='function'", ctxv),
+     'XART exposes the ship-cell flush the swap depends on');
+  var _as=vm.runInContext("applyLizzieSkin.toString()", ctxv)
+            .replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/[^\n]*/g,'');
+  ok(_as.indexOf('_flushShipCells')>0,
+     'and applyLizzieSkin actually calls it - repointing alone would change nothing on screen');
+  ok(_as.indexOf('_lizzieStockRects')>0,
+     'the stock rects are captured from the live table, not hard-coded beside the B-42 ones');
+
+  /* the password. pwKey caps pwInput at six characters, so a longer code could never be typed
+     and would look like the screen ignoring it. */
+  ok('BOMBER'.length<=6, 'BOMBER fits the six-character password field');
+  var _sp=vm.runInContext("submitPassword.toString()", ctxv);
+  ok(_sp.indexOf("'BOMBER'")>0 && _sp.indexOf('lizzieSkinUnlocked=true')>0,
+     'BOMBER unlocks the costume');
+  ok(vm.runInContext("PASSWORDS['BOMBER']===undefined && COLE_SCENE['BOMBER']===undefined", ctxv),
+     'and it is not also a stage code, so it cannot start a run by accident');
+
+  /* the unlock banner used to say COLE UNLOCKED whatever had been unlocked */
+  var _dp2=vm.runInContext("drawPassword.toString()", ctxv)
+             .replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/[^\n]*/g,'');
+  ok(_dp2.indexOf('unlockWho')>0,
+     'the unlock banner names what was unlocked instead of always saying COLE');
+
+  /* and the pick is gated on the unlock AND on the pilot shown, so it is inert for anyone who
+     has not entered the code and cannot fire while scrolling past her */
+  var _pt=vm.runInContext("drawPilot.toString()", ctxv)
+            .replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/[^\n]*/g,'');
+  ok(_pt.indexOf('lizzieSkinUnlocked')>0 && _pt.indexOf('applyLizzieSkin')>0,
+     'the pilot screen offers the pick');
+  ok(/lizzieSkinUnlocked\s*&&\s*PILOTS\[pilotIndex\]/.test(_pt),
+     'and it is gated on the unlock and on the pilot actually shown');
+}
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

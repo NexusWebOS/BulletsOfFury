@@ -424,3 +424,84 @@ out of the chain.
 
 Proofs: `docs/PILOT_SELECT_0906F.png` (all nine cards), `docs/PILOT_AVATARS_V2_0906.png`,
 `docs/PILOT_BODIES_0906.png`, `docs/AFFILIATIONS_0906.png`.
+
+---
+
+# 0906g — Lizzie's B-42 comes back as an unlockable costume, and it cost no art
+
+Mike: *"store lizzie's old b-42 bomber sprites as an alternate costume pick if we use the password
+bomber."*
+
+## The art was never gone
+
+0906b replaced her B-42 — *"As much as I like Lizzie's B-42 bomber, doesnt fit the game"* — and that
+drop **appended** a strip to the ship atlas and repointed her rects at it. So all **seventeen** B-42
+frames were still sitting in `bof_player_ships_barrel_rolls.png` exactly where they had always been,
+unreferenced. Rendered before a line was written (`docs/LIZZIE_B42_RECOVERED.png`): hull, no-flame,
+both banks, five pseudo-3D views and the full eight-frame roll — every one intact, 35–51% ink,
+nothing overwritten. The rects came out of the manifest at `554dd4f2^`. **No art job, no atlas edit,
+no regeneration.**
+
+⚠ **AND THAT IS ONLY TRUE BECAUSE THE IMPORT APPENDED.** If 0906b had packed the new strip over her
+old rows this would have been a regeneration instead. The rule this file already carries — *append a
+strip, repoint the rects, pixels and manifest in one write* — is what made a costume free three
+drops later. Worth knowing the next time a replacement looks like it should reuse the space.
+
+## The swap is by RECT, not by key, and that is the whole design
+
+⚠ **THERE ARE TWENTY-FOUR SITES IN `game.js` THAT BUILD A `'ship_'+pk` KEY** — the hull, the bank
+picker, the roll reel, the launch cinematic, the pilot card, the roster thumbnail, allies, rivals,
+the map icon. Giving the B-42 its own key family would mean teaching all twenty-four about costumes,
+and the one that got missed would show the wrong aircraft on one surface with **nothing failing
+anywhere**. That is `_selfPat` and the hand-written exemption list, in a new costume.
+
+Repointing `BOFX.ships` and flushing XART's cell cache changes what every one of them resolves,
+including any added later. Measured: the roster thumbnail changed with no edit anywhere near it.
+
+⚠ **THE FLUSH IS THE LOAD-BEARING HALF, AND `lizzieSkinOn` CANNOT DETECT ITS ABSENCE.** `_shipCells`
+is filled on first use and never re-read, so repointing alone changes the table and leaves every
+draw showing the plate it already baked — state correct, pixels wrong, which is this file's most
+repeated failure. `X._flushShipCells` exists for that one reason. And the flag is set by the same
+function that does the repoint, so it stays true even if the flush is deleted: **the probe reads the
+canvas XART actually serves, and the suite asserts on `BOFX.ships`, because neither can be satisfied
+by the flag.**
+
+⚠ **THE RECTS LIVE IN `game.js`, NOT THE MANIFEST.** `assets/manifest.js` is generated; a hand-added
+table there is one regeneration from vanishing, and it would vanish **silently**, because the costume
+is opt-in and nobody would be looking at it.
+
+## Traps hit while building it
+
+⚠ **THE FIRST HINT WOULD HAVE DRAWN TWO SPACES.** It read `B-42 BOMBER ▲▼ STOCK` — and the glyph map
+has `25C0`/`25B6` (◀▶) but **not** `25B2`/`25BC` (▲▼), and a missing glyph in this engine draws a
+space rather than failing. That is the 0903 stage-card bug (`CHOO E YOUR PILOT`) arriving from the
+punctuation side. Checked the map rather than assuming, and the prompt is letters only, like every
+other prompt on that screen.
+
+⚠ **AND ITS FIRST PLACEMENT RAN THROUGH THE SPEED BAR AND OFF THE PANEL.** At `SHY+SHH+11` the bay's
+foot is 208 and the first stat bar's top is 216, and a 27-character line at size 8 is wider than the
+126px bay it was centred on — ~38px past the panel's right edge. **Lizzie is the five-stat pilot**,
+so she has the least room under the bay of anyone, and the one card this could collide on is the
+only card it appears on. Moved inside the frame, onto the 7px `psBlitFit` leaves below the hull.
+
+⚠ **THE UNLOCK BANNER SAID `COLE UNLOCKED!` WHATEVER HAD BEEN UNLOCKED** — one flag drove it and one
+string was baked in, so BOMBER would have lit a message naming a different unlock, which reads as
+the code not registering. `unlockWho` is set alongside the timer at both sites.
+
+## What landed
+
+- `LIZZIE_B42_RECTS` — seventeen rows, recovered, in the file that uses them.
+- `applyLizzieSkin(on)` — repoint + flush, both directions, stock rects captured live rather than
+  hard-coded so it survives a re-import of the golden airframe.
+- **`BOMBER`** unlocks it (session only, matching `COLE4U`; persisting a costume is a save-format
+  decision Mike has not made). It is not also a stage code, so it cannot start a run by accident.
+- **UP/DOWN on the pilot screen picks it**, gated on the unlock and on the pilot actually shown.
+  `Input.menuUp`/`menuDown` exist and `drawPilot` read neither — checked, not assumed, because the
+  generic back handler eating the rebind key in 0903 is exactly what that check is for.
+- Suite section 278, 14 assertions. Probe `probe_lizzieskin_0906.py` reads the served canvas before
+  and after, both ways, **and inside real PLAY on stage 1** — because "the rect swap is global so it
+  follows" is a structural argument, and this file is a list of times those were wrong.
+
+Proofs: `docs/LIZZIE_SKIN_0906.png` (stock vs B-42 on the card),
+`docs/LIZZIE_B42_RECOVERED.png` (all seventeen frames as recovered),
+`docs/proofs/lizzieskin_0906/lizzie_b42_inplay.png` (flying stage 1).

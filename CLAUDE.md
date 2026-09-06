@@ -436,6 +436,37 @@ the latter to a black edge. A rim-only halo rule moved 28 px and left 10,397.
 (drive it off the round's own clock); those want opposite treatment and the IoU alone cannot tell
 them apart. The bead bolt's heights run 185/351/469/186 — a 61% spread, i.e. a sequence.
 
+## 0906g — a costume is a RECT swap, and a missing glyph draws a space (again)
+
+⚠ **TWENTY-FOUR SITES IN `game.js` BUILD A `'ship_'+pk` KEY** — hull, bank picker, roll reel, launch
+cinematic, pilot card, roster thumbnail, allies, rivals, map icon. An alternate skin given its own
+key family would mean teaching all twenty-four about costumes, and the one missed would show the
+wrong aircraft on one surface with **nothing failing**. Repoint `BOFX.ships` and flush instead:
+every path that exists now or later follows. `applyLizzieSkin` is the worked example.
+
+⚠ **AND THE FLUSH IS THE LOAD-BEARING HALF.** `XART`'s `_shipCells` is filled on first use and
+never re-read, so repointing alone changes the table and leaves every draw showing the plate it
+already baked — state correct, pixels wrong. `X._flushShipCells(pred)` exists for that one reason.
+**`lizzieSkinOn` cannot detect its absence**: the flag is set by the same function that does the
+repoint, so it stays true with the flush deleted. Assert on `BOFX.ships`, or read the canvas XART
+actually serves — never on the flag.
+
+⚠ **LIZZIE'S B-42 WAS NEVER DELETED, AND THAT IS BECAUSE 0906b APPENDED.** All seventeen frames sat
+in `bof_player_ships_barrel_rolls.png` unreferenced for three drops; the costume cost no art and no
+atlas edit, only the rects from the manifest at `554dd4f2^`. The standing rule — *append a strip,
+repoint the rects, pixels and manifest in ONE write* — is what made that possible. **Check the old
+rects before assuming replaced art is gone.**
+
+⚠ **▲ AND ▼ ARE NOT IN THE FONT, AND A MISSING GLYPH DRAWS A SPACE.** `25C0`/`25B6` (◀▶) are
+mapped; `25B2`/`25BC` are not. A hint reading `B-42 BOMBER ▲▼ STOCK` would have rendered with two
+blanks — the 0903 `CHOO E YOUR PILOT` bug from the punctuation side. **Check the glyph map before
+using a symbol**, and prefer letters, which is what every other prompt on that screen already does.
+
+⚠ **AND LIZZIE IS THE FIVE-STAT PILOT, SO SHE HAS THE LEAST ROOM ON HER CARD.** A hint placed under
+the ship bay ran through her SPEED bar and ~38px off the panel. Any new element on the pilot card
+should be checked against HER card first: the crowded case is the one that fails, and it is the only
+card a Lizzie-only element appears on.
+
 ## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
 
 **Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download
