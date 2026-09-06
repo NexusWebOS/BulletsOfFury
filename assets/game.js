@@ -3422,8 +3422,14 @@ function _levelCfg(){
        composition, so no separate planet, comet, satellite or orbital-hardware scenery is laid
        over it. loopMaster keeps the long plate moving at the established stage speed and holds
        its current space view during the boss instead of cutting to the old orbital arena. */
+    /* ⚠ continuousBoss ADDED 0906. The 0825 rule three lines below the arena gate reads "STAGES
+       5-8 NEVER CHANGE TERRAIN MAPPINGS FOR A BOSS", and the comment directly above this case
+       claims loopMaster "holds its current space view during the boss instead of cutting to the
+       old orbital arena" - but stage 5 was the only loopMaster stage WITHOUT the flag that
+       actually enforces either statement, so the arena branch still fired and the boss changed
+       location on one frame. Stages 6 and 9 have carried it all along. */
     case 5: return {master:'bg_stage05_loop', plateW:680, liquid:null,  fill:'#05060a', tile:1.0, wide:true,
-                    loopMaster:true};
+                    loopMaster:true, continuousBoss:true};
     // 6 HEAVY TURBULENCE — dedicated sky kit (env pack v1.0): 800x4000 base sky + separate
     // parallax cloud layer + 800x1000 boss arena. WIDE level (800px world, camera scrolls).
     /* STAGE 6 IS ONE SKY (drop 0801gm). Mike: "delete all of stage 6's backgrounds.
@@ -3599,6 +3605,28 @@ let _stage4BossRoadScroll=0,_stage6BossSkyScroll=0;
    clock separate gives the storm real velocity without pulling waves, minibosses or the carrier
    forward in the encounter schedule. */
 const STAGE6_SKY_CRUISE=260, STAGE6_SKY_BOSS_CRUISE=300;
+/* ⚠ STAGE 5'S STARFIELD RUNS ON ITS OWN CLOCK TOO (Mike, 0906): "its bad. DO NOT STOP
+   SCROLLING THE level or speed ... we convert to it as were scrolling in space."
+
+   Stage 5 was the ONLY loopMaster stage riding `mapScroll` directly, and mapScroll stops for
+   three separate reasons, all of which he would read as the same defect:
+     1. `_bossHold` deliberately freezes it for a boss or miniboss, so the starfield froze
+        mid-fight - the exact bug 0904t fixed on stage 6 and did not carry across.
+     2. `mapScroll = Math.min(range, ...)` CAPS it at the plate's end. A looping master has no
+        end, so once the cap was reached space simply stopped, permanently.
+     3. the launch brake takes it to a standstill before the conversion (see drawLaunch).
+
+   This is visual travel only. Combat, waves and stage progression still read `mapScroll`, so a
+   moving background cannot skip a pattern - the same contract stage 6's clock states.
+
+   ⚠ THE RATE IS DELIBERATELY THE LEVEL'S EXISTING 40 px/s, NOT STAGE 6'S 260. Mike asked for
+   it not to STOP, not for it to be faster, and stage 6's 260 comes from his own separate
+   "high speed sky scrolling" instruction which he has never applied to stage 5. Holding 40
+   means nothing about the feel changes except that it no longer halts, and it matches PLAY
+   exactly so the launch hands over with no step. This is the one number to change if he wants
+   space to move faster. */
+const STAGE5_SPACE_CRUISE=40;
+let _stage5SpaceScroll=0;
 let _stage6SkyScroll=0;
 /* stages that keep scrolling through their miniboss. Mike: "unless stated
    differently per level". Empty means the hold applies everywhere. */
@@ -4740,6 +4768,15 @@ function drawLevelMaster(dt){
      nearly static. Looping is the correct mapping for a starfield, so `loopMaster` picks it. */
   if(cfg.loopMaster){
     let _loopScroll=mapScroll;
+    if(run.stage===5){
+      /* Uncapped and never held - see STAGE5_SPACE_CRUISE. Advanced HERE rather than in
+         updatePlay on purpose: drawLevelMaster still runs while updatePlay early-returns
+         (the gravity-conversion guard, the pause), so space keeps moving through the beats
+         that freeze gameplay - which is the half of his note about converting *while*
+         scrolling. */
+      _stage5SpaceScroll += dt*STAGE5_SPACE_CRUISE;
+      _loopScroll=_stage5SpaceScroll;
+    }
     if(run.stage===6){
       /* A continuous loop of the ONE approved 5000px master. This is visual travel only: combat
          continues to read mapScroll, so making the atmosphere feel fast cannot skip a pattern. */
@@ -4757,7 +4794,7 @@ function drawLevelMaster(dt){
        miniboss so the LEVEL stops advancing. Half the background travelled and half stood still,
        which is what reads as the scroll stopping. On stage 6 it now rides the sky's own clock. */
     if(cfg.par && XART.rdy(cfg.par))
-      _loopDraw(XART.get(cfg.par), (run.stage===6 ? _loopScroll*0.62 : mapScroll*1.18));
+      _loopDraw(XART.get(cfg.par), ((run.stage===6||run.stage===5) ? _loopScroll*0.62 : mapScroll*1.18));
     return true;
   }
   const scrollFrac=range>0?(mapScroll/range):0;    // 0..1 progress through the level
@@ -5444,7 +5481,14 @@ function hudPanel(x,y,w,h){
    now the FALLBACK only, for a slot granted without a pickup (debug, a loaded save, arcade).
    ============================================================ */
 const WVAR_NAME = {flamethrower:'FLAMETHROWER', icebreath:'ICE BREATH',
-                   iceorb:'ICE ORB', fireorb:'FIRE ORB', fireice:'FIRE-ICE ORB'};
+                   /* ⚠ 'FIRE-ICE ORB' -> 'THERMOSHOCK' (Mike, 0906): "rename it in-game to
+                      Thermashock." Every other reference in the file already calls it that - the
+                      icon family is micon_thermoshock_, Freezer's special reads "TIME FREEZE +
+                      THERMOSHOCK", and the element table accepts 'thermoshock' - so this string
+                      was the last one out of step. Mike wrote "Thermashock"; the established
+                      in-game spelling everywhere else is THERMOSHOCK, so that spelling wins for
+                      consistency rather than introducing a second one. */
+                   iceorb:'ICE ORB', fireorb:'FIRE ORB', fireice:'THERMOSHOCK'};
 const WVAR_ICON = {flamethrower:'micon_firewall_', icebreath:'micon_icebreath_',
                    iceorb:'micon_iceorb_', fireorb:'micon_fireorb_', fireice:'micon_thermoshock_'};
 function weaponVariant(w, opt){
@@ -6105,7 +6149,8 @@ function _setCinematicViewport(on){
   }catch(_cinemaView){}
 }
 window.__bofResizeCinematic=function(){
-  try{if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY)_setCinematicViewport(true);}catch(_cinResize){}
+  try{if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||
+         state===GS.STAGECLEAR)_setCinematicViewport(true);}catch(_cinResize){}
 };
 window.addEventListener('resize',window.__bofResizeCinematic);
 
@@ -6123,7 +6168,13 @@ const lerp=(a,b,t)=>a+(b-a)*t;
    ============================================================ */
 const Audio = (()=>{
   let actx=null, master=null, musicGain=null, sfxGain=null;
-  let volMaster=0.8, volMusic=0.5, volSfx=0.85, muted=false;
+  /* ⚠ MUSIC WAS MIXED UNDER THE EFFECTS (Mike, 0905): "it is very hard to hear the music with the
+     sounds. we need a proper sound volume and music volume across the board." SFX sat at 0.85
+     against music at 0.50 - the effects bus ran 1.7x the music bus, before any per-sound gain on
+     top of it. Music comes up and the effects bus comes down so the two sit close to level; the
+     per-sound taming above is what keeps individual effects in their place, and it should not be
+     doing the job of a master balance as well. */
+  let volMaster=0.8, volMusic=0.72, volSfx=0.74, muted=false;
   let noiseBuf=null;
   /* init() MUST NOT THROW (drop 0724di).
      goTitle() is `Audio.init(); Audio.startMusic('title'); setState(GS.TITLE);` — audio FIRST, and
@@ -6938,13 +6989,28 @@ const DIFFS = {
      normal keep the unlimited behaviour they already had (-1 = no cap). */
   /* density RAISED across the board (Mike, 0819): "increase the amount of enemies."
      0.70/0.85/1.10/1.35 -> 0.80/1.00/1.25/1.50 — every count-scaled wave fields more airframes. */
-  easy:   {name:'EASY',   ebSpeed:0.70, eFire:0.55, eHp:0.72, density:0.80, startLives:5, startBombs:4, dropMul:1.55, continues:-1, contLives:3},
-  normal: {name:'NORMAL', ebSpeed:0.88, eFire:0.80, eHp:0.88, density:1.00, startLives:4, startBombs:3, dropMul:1.25, continues:-1, contLives:3},
-  hard:   {name:'HARD',   ebSpeed:1.12, eFire:1.20, eHp:1.10, density:1.25, startLives:3, startBombs:2, dropMul:0.95, continues:3,  contLives:3},
+  /* ⚠ ebSpeed AND eFire RAISED THE SAME WAY (Mike, 0905): "we need faster enemy projectiles and
+     AI like that plus some", against 6.5 minutes of Raiden II he recorded as the reference.
+     What the reference actually shows is not exotic AI - it is that their bullets are SMALL, FAST
+     and CONTINUOUS: every popcorn enemy and ground turret holds an aimed stream, so the screen is
+     always threatening. Ours were doing the opposite BY CONFIGURATION, and on the default
+     difficulty at that: NORMAL ran ebSpeed 0.88 and eFire 0.80, i.e. every enemy round travelled
+     at 88% of its authored speed and every gun fired at 80% of its authored cadence. The patterns
+     were never the problem; they were being served through two multipliers that both sat under 1.
+       ebSpeed  0.70/0.88/1.12/1.35 -> 0.88/1.10/1.35/1.60
+       eFire    0.55/0.80/1.20/1.60 -> 0.70/1.00/1.45/1.85
+     NORMAL now runs its rounds 25% faster than before and fires at PARITY with what the patterns
+     were authored for, which is the "plus some" - EASY lands roughly where NORMAL used to be.
+     ⚠ These two are the whole tuning surface for this: eShoot multiplies every enemy round by
+     ebSpeed at the chokepoint, and eFire divides every cooldown, so there is no need to touch a
+     single pattern - and touching patterns individually is how this would become unrevertable. */
+  easy:   {name:'EASY',   ebSpeed:0.88, eFire:0.70, eHp:0.72, density:0.80, startLives:5, startBombs:4, dropMul:1.55, continues:-1, contLives:3},
+  normal: {name:'NORMAL', ebSpeed:1.10, eFire:1.00, eHp:0.88, density:1.00, startLives:4, startBombs:3, dropMul:1.25, continues:-1, contLives:3},
+  hard:   {name:'HARD',   ebSpeed:1.35, eFire:1.45, eHp:1.10, density:1.25, startLives:3, startBombs:2, dropMul:0.95, continues:3,  contLives:3},
   /* FURIOUS: "enemies are also 10-25% faster with DPS, travel speed and smarter dodge
      and manueverability detection." ebSpeed/eFire sit ~20% over HARD, inside that band.
      1 life, 1 continue, and that continue gives back exactly 1 life. */
-  furious:{name:'FURIOUS',ebSpeed:1.35, eFire:1.60, eHp:1.30, density:1.50, startLives:1, startBombs:1, dropMul:0.80, continues:1,  contLives:1},
+  furious:{name:'FURIOUS',ebSpeed:1.60, eFire:1.85, eHp:1.30, density:1.50, startLives:1, startBombs:1, dropMul:0.80, continues:1,  contLives:1},
 };
 let diffKey='normal';
 let DIFF = DIFFS.normal;
@@ -6960,8 +7026,16 @@ let DIFF = DIFFS.normal;
    already on screen.
    ============================================================ */
 const STAGE_THREAT={
-  1:{hp:1.00,fire:1.06,bullet:1.02,bossHp:1.00,bossRate:1.05,bossDensity:1.00},
-  2:{hp:1.02,fire:1.12,bullet:1.06,bossHp:1.08,bossRate:1.10,bossDensity:1.03},
+  /* ⚠ STAGE 1 RAISED (Mike, 0905, after playing it): "enemies need to be a little harder on this
+     level too." Raised along the axes this table's own note prefers - cadence and projectile
+     travel do the work, hp is the smallest lever - rather than by giving stage-1 fodder more
+     health, which just makes the opening slower instead of sharper.
+     ⚠ THIS IS ON TOP OF THE GLOBAL RAISE EARLIER THE SAME DAY (DIFFS ebSpeed 0.88 -> 1.10, eFire
+     0.80 -> 1.00). Mike had already played WITH that - his note in the same message about spread
+     firing too fast is from that build - so stage 1 needed more even after it, and these two
+     multiply. Kept deliberately short of stage 2's row so the curve still rises between them. */
+  1:{hp:1.05,fire:1.20,bullet:1.12,bossHp:1.04,bossRate:1.13,bossDensity:1.06},
+  2:{hp:1.06,fire:1.24,bullet:1.16,bossHp:1.10,bossRate:1.18,bossDensity:1.09},
   3:{hp:1.06,fire:1.18,bullet:1.10,bossHp:1.13,bossRate:1.16,bossDensity:1.08},
   4:{hp:1.11,fire:1.24,bullet:1.14,bossHp:1.19,bossRate:1.22,bossDensity:1.13},
   5:{hp:1.16,fire:1.30,bullet:1.18,bossHp:1.25,bossRate:1.28,bossDensity:1.18},
@@ -7136,6 +7210,16 @@ const run = {
   spaceMode:false,spaceWeapon:0,spaceLevels:[1,1,1],gravityShipReady:false,
 };
 const WEAPONS=['MACHINE GUN','SPREAD FIRE','MISSILES','LASER','FLAMETHROWER','ICE ORB','LASER MIST'];
+/* ⚠ SPREAD SHARES THE MACHINE GUN'S CADENCE (Mike, 0905, on the stage-1 recording): "spread fire
+   is wayyyyy too fast. it shoiuld be like machine gun but spread, doing the same damage."
+   My own 0905 balance pass put it at 0.066 - two and a half times the MG's rate - chasing a DPS
+   number instead of the feel, and it turned the gun into a hose. It is the MG's number now, and
+   the two are the same entry so they cannot drift apart again.
+   ⚠ AND BOTH RAMP WITH LEVEL: "each lvl up makes machinegun and spread fire just a little faster
+   by like 5%." Applied as 0.95^(level-1), so L1 is the base and L5 lands ~18.5% faster - a ramp
+   the player feels across a run without the top level becoming a different weapon. */
+const WEAPON_CADENCE={0:0.164,1:0.164,2:0.18,3:0.107,4:0.42};
+const WEAPON_LVL_RAMP={0:1,1:1};        // which weapons get the 5%-per-level cadence ramp
 
 /* ============================================================
    CO-OP — TWO PILOTS, TWO SETS OF EVERYTHING (drop 0902f)
@@ -11949,12 +12033,22 @@ const SHIPBOSS = {
      and the last is the boss's own signature at speed. The ORDER is chosen per boss for that
      reason, not shuffled " ember teaches "find the gap", then lance closes lanes so the gap-hunting
      habit gets you hit, then ember again, faster. */
-  infernoreaver: {key:'nsb_inferno_reaver', name:'INFERNO REAVER',      w:200,h:200, hpMul:1.30, pat:'infernogate', cd:1.20, proj:'magma',
-                  /* Slow enough that wing-laser stations and charged magma commitments remain
-                     readable. This is a boss patrol, not fighter wobble. */
+  /* ⚠ STAGE 2 ROLE SWAP (0905). Mike, on the stage-2 recording: "Stage 2 miniboss should actaully
+     be the boss, boss should be the mini boss."
+     Done exactly the way STAGE 3 already did it in 0830 - the RUNTIME IDS DO NOT MOVE, the bodies
+     do. `infernoreaver` stays the end-stage slot id and `magmaward` stays the mid-stage one, so
+     STAGES[1].boss, SUBBOSS[2].kind, the damage tables, the audio routes and every assertion that
+     names either keeps working. Swapping the ids instead would have meant chasing the name
+     through the file, which is how stage 3's version of this would have gone wrong.
+     So: this slot now fields the promoted MAGMA WARD - its plate, its name, its fire patterns and
+     its fire shield, on the boss hpMul it already had. */
+  infernoreaver: {key:'nsb_magmaward_intact', name:'MAGMA WARD',        w:210,h:216, hpMul:1.30, pat:'magmaflame', cd:1.12, proj:'magma',
+                  /* Slow enough that the flame commitments stay readable. A boss patrol, not
+                     fighter wobble - the same reasoning the demoted Reaver's row now inverts. */
                   move:{ampX:116,ampY:4,period:5.80},
-                  mounts:{L:[-0.35,0.28],C:[0,0.40],R:[0.35,0.28]},
-                  pats:['infernogate','fireorb','infernoburst','chargebeam','infernostorm']},
+                  mounts:{L:[-0.39,0.27],C:[0,0.42],R:[0.39,0.27]},
+                  pats:['magmaflame','magmaflamelaser','magmafireball','magmafireshield'],
+                  dmg:['nsb_magmaward_damaged','nsb_magmaward_critical']},
   /* STAGE 3 ROLE SWAP (0830). The end-stage slot still uses the stable `cryospear` runtime id,
      but its visible body/name/geometry are now the promoted RIME WALL. Keeping the id prevents
      the stage timeline, save flags and boss gate from changing while swapping the actual graphic
@@ -12132,9 +12226,24 @@ const SHIPBOSS = {
                   pats:['s7warden']},
   dualscoopdredger:{key:'s7atk_dual_scoop_dredger_0',name:'DUAL SCOOP DREDGER',w:240,h:220,hp:360,mini:true,proj:'toxic',
                   mounts:{L:[-0.145,0.25],C:[0,0.36],R:[0.145,0.25]},pat:'s7dredge',cd:1.02,pats:['s7dredge','s7spore']},
-  magmaward:     {key:'nsb_magmaward_intact',  name:'MAGMA WARD',       w:210,h:216, hp:1000, pat:'magmaflame', cd:1.12, mini:true, proj:'magma',
-                  mounts:{L:[-0.39,0.27],C:[0,0.42],R:[0.39,0.27]},
-                  pats:['magmaflame','magmaflamelaser','magmafireball','magmafireshield'], dmg:['nsb_magmaward_damaged','nsb_magmaward_critical']},
+  /* The mid-stage slot keeps the `magmaward` runtime id and now fields the demoted INFERNO
+     REAVER, the same shape stage 3 used when the Cryo Spear came down from its boss slot.
+     ⚠ hp 1000 -> 400. Mike: "stage 2 new mini boss should be easier to kill, and just act more
+     like a lava based fighter jet." 400 puts it beside the other demoted boss on this list - the
+     Cryo Spear at 390 - rather than leaving a former main boss's health bar on a mid-stage gate.
+     ⚠ AND NO SHIELD: "Remove the shield from the stage 2 miniboss that was the boss before." The
+     fire shield is `magmafireshield` and it belongs to the Magma Ward's pattern list, so the risk
+     was it riding down here with the slot. Its pats are the Reaver's own, and the shield is not
+     among them - stated explicitly because the next person to touch this will be tempted to
+     "restore" the mid-stage shield that used to be here.
+     ⚠ The patrol is a FIGHTER's, not a fortress's: half the sweep at a shorter period, which is
+     the "lava based fighter jet" read - the Cryo Spear row carries the same note for the same
+     reason. `chargebeam` is dropped with the demotion; a mid-stage gate should not hold a
+     charged-beam commitment. */
+  magmaward:     {key:'nsb_inferno_reaver',   name:'INFERNO REAVER',   w:200,h:200, hp:400, pat:'infernogate', cd:1.20, mini:true, proj:'magma',
+                  move:{ampX:96,ampY:6,period:4.60},
+                  mounts:{L:[-0.35,0.28],C:[0,0.40],R:[0.35,0.28]},
+                  pats:['infernogate','fireorb','infernoburst','infernostorm']},
   /* The mid-stage slot keeps the `rimewall` runtime id but now fields the former main-boss
      CRYO SPEAR fighter. It is deliberately faster and narrower than the promoted fortress, with
      separate wing pods and a nose emitter instead of borrowing the Wall's artillery language. */
@@ -12898,7 +13007,13 @@ function shipBossVisualPose(b){
   if(!b) return {x:0,y:0,rot:0,sx:1,sy:1};
   const W=(typeof worldWidth==='function')?worldWidth():VW;
   const wall=(b.w||0)>=W*0.70;
-  let x=0,y=0,rot=wall?0:(b._sbaBank||0)*0.055,sx=1,sy=1;
+  /* ⚠ BOSSES DO NOT BANK, ROLL OR FLIP (Mike, 0906, with a screenshot of the stage-4 boss lying
+     over at ~30 degrees): "do not ever turn bosses like this, ever. Only the stage 2 boss when he
+     does his spinning with the flamethrowers should do this. dont turn enemies like this either."
+     Every contribution to `rot` below is now either removed or left in place for one named
+     exception. The lateral bank was the broadest offender - it applied to EVERY ship boss on
+     every sideways slide, which is why the tilt shows up on stages the complaint did not name. */
+  let x=0,y=0,rot=0,sx=1,sy=1;
   const A=b._sba;
   if(A&&!A.fired){
     const p=clamp(A.t/Math.max(0.01,A.tell),0,1), pulse=Math.sin(p*Math.PI);
@@ -12916,21 +13031,28 @@ function shipBossVisualPose(b){
      does the same on scale.y and pitches the nose over with a vertical lift. Anything less - a
      wobble, a flip - reads as a sprite trick rather than a manoeuvre. */
   if(b._rapMan){
-    const q=clamp(b._rapMan.t/Math.max(0.01,b._rapMan.dur),0,1), c=Math.cos(q*TAU);
-    if(b._rapMan.kind==='roll'){ sx*=c; rot+=Math.sin(q*TAU)*0.12; }
-    else { sy*=c; y-=Math.sin(q*Math.PI)*22; }
+    /* ⚠ THE BARREL ROLL IS OFF (0906). The 0904k note above argues a roll should read by the
+       airframe narrowing to its edge - scale.x running a full cosine from 1 through ZERO to -1.
+       A negative scale.x is a MIRROR FLIP, which is precisely what Mike has ruled out twice now
+       ("never flip or do janky css stuff", then "do not ever turn bosses like this"). The
+       somersault keeps its vertical lift because that is translation, not rotation or flip, and
+       reads as the hull rising rather than turning. */
+    const q=clamp(b._rapMan.t/Math.max(0.01,b._rapMan.dur),0,1);
+    if(b._rapMan.kind!=='roll'){ y-=Math.sin(q*Math.PI)*22; }
   }
   if(b._s3boss){
     /* Spear attacks bank harder; Wall attacks brace and swell around the core charge. The same
        transform continues into shipBossMount, keeping all flashes locked to the moving plate. */
     const S=b._s3boss;
-    if(S.role==='spear') rot+=(b._sbaBank||0)*.055;
+    /* the spear's extra bank goes with the general one - see the note at the top */
     if(S.charge){const q=clamp(S.charge.t/Math.max(.01,S.charge.dur),0,1),pulse=Math.sin(q*Math.PI);
       y-=pulse*(S.role==='wall'?4:7);sx+=pulse*(S.role==='wall'?.018:.028);sy-=pulse*.012;}
   }
+  /* ⚠ THE ONE PERMITTED ROTATION. Mike: "Only the stage 2 boss when he does his spinning with the
+     flamethrowers should do this." That is this line - the Magma Ward's flame pose, which after
+     the 0905 role swap lives in the end-stage slot. Everything else that used to add to `rot`
+     around it is gone. */
   if(b._mwAttack&&b._mwAttack.poseRot)rot+=b._mwAttack.poseRot;
-  if(b._irRoll&&b._irRoll.poseRot)rot+=b._irRoll.poseRot;
-  if(b._irPass&&b._irPass.poseRot)rot+=b._irPass.poseRot;
   /* The Jungle Cruiser's northbound pass is the same authored aircraft physically turning
      around, not a flipped projectile or a second sprite.  Its dedicated director owns this
      rotation; every hardpoint is transformed by this same pose, so the marked muzzles cannot
@@ -12940,7 +13062,9 @@ function shipBossVisualPose(b){
     if(b._jc.thrust){ const q=clamp(b._jc.thrust,0,1); sy-=q*0.025; sx+=q*0.018; }
   }
   if(b._s4war){
-    rot+=(b._s4war.poseRot||0);const z=b._s4war.scale||1;sx*=z;sy*=z;
+    /* ⚠ THIS WAS THE SCREENSHOT (0906). The stage-4 warfare pose rotated the boss bodily; the
+       scale pulse is kept because it is a swell, not a turn. */
+    const z=b._s4war.scale||1;sx*=z;sy*=z;
   }
   return {x:x,y:y,rot:rot,sx:sx,sy:sy};
 }
@@ -13398,11 +13522,28 @@ function stage4MiniDroneDamage(b,d,dmg){
    ============================================================ */
 const S4H_SCALE=1.5, S4H_SIZE=132*S4H_SCALE, S4H_HALF=S4H_SIZE/2;
 function stage4CoreTurretTarget(b,side){
-  const viewX=(typeof camX!=='undefined'?camX:0),cy=(b._drawY!=null?b._drawY:b.y);
-  /* These helpers are independent targets, so they hold the two outer combat lanes while the
+  const cy=(b._drawY!=null?b._drawY:b.y);
+  /* These helpers are independent targets, so they hold two separated combat lanes while the
      carrier strafes between them. Following the hull would push one under the wide boss sprite
-     at either screen edge and make it impossible to shoot separately. */
-  return {x:viewX+(side<0?72:VW-72),y:clamp(cy+28,82,VH-112)};
+     and make it impossible to shoot separately. */
+  /* ⚠ WORLD LANES, NOT SCREEN LANES (Mike, 0906): "helpers should not scroll with the screen,
+     they remain where they are." The x was `camX + 72` and `camX + VW-72`, so the pair was
+     welded to the viewport and slid sideways through the world whenever the player panned the
+     camera - they travelled WITH the screen, which is exactly what he is describing.
+
+     ⚠ AND THE OFFSET IS SOLVED, NOT PICKED, BECAUSE A WORLD-FIXED HELPER CAN BECOME
+     UNREACHABLE. The world is wider than the viewport (680 against 480 on this stage), so the
+     old 72-from-each-screen-edge spacing - 408px apart - cannot be held in world space: at one
+     end of the pan one helper would sit off-screen, alive, shooting, and impossible to kill.
+     A world x is visible at EVERY camera position iff it lies in [W-VW, VW], a band (VW-pan)
+     wide where pan = W-VW. Centring on the world and taking half that band, less a margin,
+     gives +/-128 here: lanes at 212 and 468, both inside the view at camX 0 and at camX 200.
+     The floor and ceiling keep it sane on a stage with a different width. The cost is honest
+     and worth stating: the lanes are 256px apart instead of 408, so the pair sits closer
+     together than before. That is the price of them staying put, and it is one number. */
+  const W=(typeof worldWidth==='function')?worldWidth():VW, pan=Math.max(0,W-VW);
+  const off=Math.max(96,Math.min(150,(VW-pan)/2-12));
+  return {x:W*0.5+side*off,y:clamp(cy+28,82,VH-112)};
 }
 function stage4CoreTurretSpawnMissing(b,threshold){
   const S=b&&b._s4war;if(!S||S.mini)return 0;S.coreUnlocked=true;S.coreGeneration++;
@@ -13450,7 +13591,13 @@ function stage4CoreTurretDamage(b,t,dmg){
      overheat remains a bonus damage window rather than the only time hits are accepted. */
   dmg=Math.max(1,dmg||1);
   if(t.shield>0){const use=Math.min(t.shield,dmg);t.shield-=use;dmg-=use;t.deflectFlash=.13;b._s4war.coreBlockedHits++;
-    if(t.deflectSfx<=0){t.deflectSfx=.16;stage4WarfareSound('shieldHitLight','enemyElectricBolt');}
+    /* ⚠ Mike, 0906: "I need different sound for hitting shields, the one your using is bad."
+       shield_hit_light.wav is a thin tick. shield_hit_heavy.wav is a separate authored sample
+       already proven in the game on the Magma Ward's shield, so this is a swap between two
+       existing cues rather than a new one. ⚠ I CANNOT HEAR EITHER OF THEM - this is the best
+       available pick, not a judgement of how it sounds. If it is still wrong, the fix is to
+       name a sample; every cue in Snd is reachable from this one call. */
+    if(t.deflectSfx<=0){t.deflectSfx=.16;stage4WarfareSound('shieldHitHeavy','shieldHitLight');}
     if(t.shield<=0){explode(t.x,t.y,28,'blue');stage4WarfareSound('shieldBreak','enemyElectricBolt');}
   }
   if(dmg<=0)return true;
@@ -13512,7 +13659,7 @@ function stage4CoreTurretTick(b,dt,phase){
         } else t.fireShot+=(phase>=3?.028:.034);
         const barrelSide=t.barrelNext;t.barrelNext=-t.barrelNext;
         const tip=stage4CoreTurretTip(t,barrelSide),ang=tip.angle,shot=stage4WarfareShot(
-          b,tip,ang,7.10+phase*.20,'lightningmg',{accel:.22,max:8.70,szMul:.80});
+          b,tip,ang,7.10+phase*.20,'lightningmg',{accel:.22,max:8.70,szMul:1.20});   /* .80 -> 1.20, Mike 0906: "needs bigger bullets" */
         shot._s4CoreSide=t.side;shot._s4CoreBarrel=barrelSide;shot._s4CoreGeneration=t.generation;
         S.coreLastShot={helperSide:t.side,barrelSide:barrelSide,angle:ang,x:tip.x,y:tip.y};
         S.coreShots++;S.coreBarrelShots[barrelSide]++;stage4CoreTurretMuzzle(b,t,barrelSide);
@@ -13628,7 +13775,7 @@ function stage4ShieldAbsorbHit(b,dmg,x,y){
     if(n.hp<=0)stage4ShieldDestroyNode(b,n);
   }else{
     b.flash=Math.max(b.flash||0,.045);
-    if(H.sfx<=0){H.sfx=.10;stage4WarfareSound(H.rearming?'bossShieldStatic':'shieldDeflect','enemyElectricBolt');}
+    if(H.sfx<=0){H.sfx=.10;stage4WarfareSound(H.rearming?'bossShieldStatic':'shieldHitHeavy','shieldDeflect');}   /* see the deflect note above (0906) */
   }
   return true;
 }
@@ -13735,16 +13882,35 @@ function stage4WarfareShot(b,slot,ang,spd,role,opt){
   return q;
 }
 function stage4WarfareWall(b,wide){
+  /* ⚠ THE WALL FIRES MACHINE-GUN ROUNDS NOW (Mike, 0906, on the stage-4 miniboss): "dont use the
+     projectiles your using for it now ... act like its shooting off dual machine gun spread
+     turrets." The role was 'spread', which stage4WarfareShot maps to kind s4rail and
+     drawStage4WarfareProjectile draws as s4w_spread_round_* - a 96x96 electric-blue lightning
+     bolt. Measured by the recon: the Warden spends 7.60s of its 11.20s cycle on this wall, so two
+     thirds of the fight was that blue fan rather than gunfire. The gold s4w_mg_round_* reel
+     already exists and is already warmed for this unit. Both callers of this function are the
+     mini's own branches, so the Storm Sovereign cannot reach this line. */
   /* Once the two helper turrets are active they ARE the bullet-pressure layer.  Stacking the old
      eleven-column spread wall with helper chainguns and lightning balls made the fight a screen
      seal rather than a dodge pattern. */
   if(b&&b._s4war&&!b._s4war.mini&&b._s4war.coreUnlocked)return;
-  const C=shipBossMount(b,'C'),cols=11,safe=wide?5:((b._s4war.wave&1)?2:8),step=.105;
-  for(let i=0;i<cols;i++){
-    if(Math.abs(i-safe)<=1)continue;
-    stage4WarfareShot(b,C,Math.PI/2+(i-(cols-1)/2)*step,3.35,'spread',{accel:.36,max:4.8});
+  /* ⚠ TWO FANS FROM THE TURRETS, NOT ONE FROM THE NOSE (Mike, 0906): "act like its shooting
+     off dual machine gun spread turrets." This was an eleven-column fan out of the CENTRE
+     mount, so the heavy beat came from the fuselage while the two barrels sat silent - the
+     opposite of what the hull shows. Five columns from each of L and R, each leaning outward,
+     with its own safe gap. Round count is 8 against the old 8 (11 columns less a 3-wide gap),
+     so this is a re-aim, not a difficulty change. */
+  const cols=5,step=.105,wv=b._s4war.wave;
+  for(const slot of ['L','R']){
+    const m=shipBossMount(b,slot),lean=(slot==='L'?-1:1)*(wide?.17:.11),
+          safe=wide?2:((wv&1)?1:3);
+    for(let i=0;i<cols;i++){
+      if(i===safe)continue;
+      stage4WarfareShot(b,m,Math.PI/2+lean+(i-(cols-1)/2)*step,3.35,'mg',{accel:.36,max:4.8});
+    }
+    stage4WarfareMuzzle(b,slot,'mg',1.04,.18);
   }
-  stage4WarfareMuzzle(b,'C','mg',1.04,.18);stage4WarfareSound('enemyBossCannon','enemyShoot');b._s4war.wave++;
+  stage4WarfareSound('enemyBossCannon','enemyShoot');b._s4war.wave++;
 }
 function stage4FinalGunMount(b,side){
   /* The normalized core is 224px. Its authored aperture centres are x=20/204, y=112.
@@ -13792,7 +13958,7 @@ function stage4FinalChaingunTick(b,dt,phase){
     const side=(S.finalGunWave&1)?1:-1,seq=[-.14,-.09,-.04,0,.04,.09,.14,.07,0,-.07],
           off=seq[S.finalGunWave%seq.length],ang=stage4FinalGunAngle(b,side)+off,
           p=stage4FinalGunTip(b,side,ang);
-    const shot=stage4WarfareShot(b,p,ang,7.05+phase*.22,'lightningmg',{accel:.32,max:8.35,szMul:.82}),
+    const shot=stage4WarfareShot(b,p,ang,7.05+phase*.22,'lightningmg',{accel:.32,max:8.35,szMul:1.12}),   /* .82 -> 1.12 (0906) */
           socket=stage4FinalGunMount(b,side);
     shot._s4GunSide=side;shot._s4GunAngle=ang;shot._s4GunOrigin={x:p.x,y:p.y};
     S.finalGunLastShot={side:side,angle:ang,reach:Math.hypot(p.x-socket.x,p.y-socket.y)};
@@ -13808,17 +13974,32 @@ function stage4WarfareMiniTick(b,dt){
   if(S.mode==='burst'){
     b.x=W*.5+Math.sin(S.t*1.50)*amp;
     while(S.shot<=S.t){
-      S.shot+=phase>=2?.064:.078;const seq=[-.30,-.20,-.10,0,.10,.20,.30,.20,.10,0,-.10,-.20];
-      const slot=(S.wave&1)?'MG_R':'MG_L',o=seq[S.wave%seq.length];
-      stage4WarfareShot(b,slot,Math.PI/2+o,5.35+(phase*.35),'mg',{});
-      stage4WarfareMuzzle(b,slot,'mg',.62,.095);if((S.wave%4)===0)stage4WarfareSound('enemyMachineGunHeavy','enemyShoot');S.wave++;
+      S.shot+=phase>=2?.120:.146;const seq=[-.30,-.20,-.10,0,.10,.20,.30,.20,.10,0,-.10,-.20];
+      /* ⚠ MG_L/MG_R RESOLVE TO TRANSPARENT PLATE PIXELS ON THIS HULL (0906). Mike: "it needs
+         muzzle flash for its turret." There always was one and it was the right sprite - it just
+         bloomed on empty space a few px outside the fuselage skirt, because these two mounts are
+         inherited from the STORM SOVEREIGN's 512px master. Measured on the Warden's own atlas
+         cell: MG_L/MG_R land on alpha 0, while L/R sit on barrel metal. The authored attack plate
+         bakes its flames at L/R too. Changing the slot moves the round AND the flash together. */
+      /* ⚠ BOTH BARRELS ON EVERY BEAT (Mike, 0906): "dual machine gun spread turrets." It
+         alternated one round from R, then one from L, which at a 0.07s cadence reads as a
+         single stuttering gun rather than two. Firing both together at DOUBLE the interval
+         holds the rounds-per-second almost flat (2 per .120s = 16.7/s against 1 per .064s =
+         15.6/s, +7%) while the pair is finally legible as a pair. The outward lean is what
+         makes it a spread: the two streams diverge as they travel instead of stacking. */
+      const o=seq[S.wave%seq.length];
+      for(const slot of ['L','R']){
+        stage4WarfareShot(b,slot,Math.PI/2+o+(slot==='L'?-.085:.085),5.35+(phase*.35),'mg',{});
+        stage4WarfareMuzzle(b,slot,'mg',.62,.095);
+      }
+      if((S.wave%4)===0)stage4WarfareSound('enemyMachineGunHeavy','enemyShoot');S.wave++;
     }
     /* Get to the support-drone reveal inside one brisk arcade attack cycle.  The previous
        7.7-second preamble hid the signature mechanic in an ordinary encounter capture. */
     if(S.t>=3.60)stage4WarfareSetMode(b,'gate');
   }else if(S.mode==='gate'){
     b.x+=(W*.5-b.x)*Math.min(1,dt*6.2);
-    if(S.shot<=S.t){S.shot+=.62;stage4WarfareWall(b,(S.wave&2)!==0);S.fireFlash=.22;}
+    if(S.shot<=S.t){S.shot+=.62;stage4WarfareWall(b,(S.wave&2)!==0);}
     if(S.t>=2.40)stage4WarfareSetMode(b,'drones');
   }else{
     b.x=W*.5+Math.sin(S.t*.82)*amp*.42;if(S.drones.length)S.summoned=true;
@@ -13836,26 +14017,27 @@ function stage4WarfareMiniTick(b,dt){
         stage4WarfareShot(b,{x:d.x+Math.cos(d.ang)*34,y:d.y+Math.sin(d.ang)*34},d.ang+cross,5.55,'mg',{});
         stage4WarfareDroneMuzzle(b,d);if((S.wave%8)===0)stage4WarfareSound('enemyMachineGunHeavy','enemyShoot');S.wave++;}
     }
-    if(S.shot<=S.t){S.shot+=.78;stage4WarfareWall(b,(S.wave&1)===0);S.fireFlash=.22;}
+    if(S.shot<=S.t){S.shot+=.78;stage4WarfareWall(b,(S.wave&1)===0);}
     if(S.t>=5.20)stage4WarfareSetMode(b,'burst');
   }
-  /* THE WARDEN HAS AN ATTACK FRAME NOW (0905i, backlog item 4: "get proper attack frames").
-     It was the ONLY thing item 4 actually lacked - `s4w_muzzle_mg/orb/lightning` (8 frames each)
-     and the `bfx_legion_` rounds already existed on disk and were already wired; the mini simply
-     drew a STATIC hull, setting no `_animKey` at all, while the Storm Sovereign cycles its
-     flight/charge/energized reels.
+  /* ⚠ THE ATTACK PLATE IS OFF. MIKE RULED ON IT DIRECTLY (0906): "dont use the attack frames."
+     It was added in 0905i to close backlog item 4 ("get proper attack frames") and he has since
+     seen it in motion and does not want it. `nsb_olivewarden_attack` stays registered and on
+     disk - this is one predicate, not a deletion - but nothing sets `_animKey` on this unit any
+     more, so the Warden holds its damage-state hull for the whole fight.
 
-     ⚠ GATED ABOVE 0.62 HP ON PURPOSE. `shipBossDraw` lets `_animKey` OVERRIDE the damage plate
-     (`_ak = b._animKey ? b._animKey : _hk`), so an ungated attack frame would visually HEAL the
-     Warden every time it fired at critical health. The damage read is the stronger signal and wins.
-     Damaged/critical attack variants would lift the gate; that is two more plates and Mike's call. */
-  /* ⚠ DRIVEN BY THE WALL ATTACK, NOT BY EVERY ROUND. Keyed to each MG shot it never
-     expired - the gun cycles every ~0.064s against a 0.16s flash, so the Warden sat in the
-     firing pose permanently and the idle hull was never drawn once (measured: 930 attack
-     frames, 0 idle). Per-round feedback is already the muzzle sprites' job; the HULL should
-     change on the heavy beat, which fires every 0.62-0.78s and reads. */
-  S.fireFlash=Math.max(0,(S.fireFlash||0)-dt);
-  b._animKey=(S.fireFlash>0&&b.maxhp&&(b.hp/b.maxhp)>.62)?'nsb_olivewarden_attack':null;
+     The reasons the old gate existed are recorded here because they are properties of
+     `shipBossDraw`, not of this decision, and the next person to reach for `_animKey` on ANY
+     ship boss will meet both again:
+       - `_ak = b._animKey ? b._animKey : _hk` lets an attack frame OVERRIDE the damage plate, so
+         an ungated one visually HEALS the unit every time it fires at critical health.
+       - keying it to each MG round never expires: the gun cycles every ~0.12s against a 0.16s
+         flash, so the pose latches on and the idle hull is never drawn (measured at the old
+         cadence: 930 attack frames, 0 idle). Per-round feedback is the muzzle sprites' job.
+     `S.fireFlash` went with it. That flag existed ONLY to drive the line below; with the pose
+     gone it was written in two branches, decremented once a frame and read by nothing, so it is
+     removed rather than left as state that looks live. */
+  b._animKey=null;
   return true;
 }
 function stage4WarfareBossTick(b,dt){
@@ -13867,7 +14049,7 @@ function stage4WarfareBossTick(b,dt){
   const sy=S.homeY,margin=Math.max(154,b.w*.54),amp=Math.max(34,W*.5-margin);S.poseRot=0;S.scale=1;
   if(S.mode==='rearm'){
     b.y+=(sy-b.y)*Math.min(1,dt*7.5);b.x+=(W*.5-b.x)*Math.min(1,dt*7.5);
-    S.poseRot=Math.sin(S.t*28)*.018;S.scale=1+Math.sin(S.t*20)*.012;
+    S.poseRot=0;S.scale=1+Math.sin(S.t*20)*.012;      /* see the swerve note below (0906) */
   }else if(S.mode==='shield'){
     const H=S.shield;
     b.y+=(sy-b.y)*Math.min(1,dt*5.8);b.x=W*.5+Math.sin(S.t*.86)*Math.min(52,amp*.70);
@@ -13885,7 +14067,7 @@ function stage4WarfareBossTick(b,dt){
       S.shot+=phase>=3?.105:.132;const seq=[-.28,-.20,-.12,-.04,.04,.12,.20,.28,.12,-.04,-.20];
       /* One real lightning chaingun round per beat, alternating barrels. */
       const slot=(S.wave&1)?'MG_R':'MG_L';
-      stage4WarfareShot(b,slot,Math.PI/2+seq[S.wave%seq.length],5.35+phase*.24,'lightningmg',{szMul:.78});
+      stage4WarfareShot(b,slot,Math.PI/2+seq[S.wave%seq.length],5.35+phase*.24,'lightningmg',{szMul:1.10});   /* .78 -> 1.10 (0906) */
       stage4WarfareMuzzle(b,slot,'mg',.74,.10);
       if((S.wave%5)===0)stage4WarfareSound('enemyMachineGunHeavy','enemyShoot');
       S.wave++;
@@ -13902,20 +14084,28 @@ function stage4WarfareBossTick(b,dt){
   }else if(S.mode==='swerve'){
     const q=clamp(S.t/1.72,0,1),ease=q*q*(3-2*q),dir=(S.round&1)?1:-1;
     b.x=lerp(W*.5-dir*amp,W*.5+dir*amp,ease);b.y+=(sy-b.y)*Math.min(1,dt*4.8);
-    S.poseRot=dir*Math.sin(q*Math.PI)*1.05;S.scale=.86+.14*q;
+    /* ⚠ THE SWERVE NO LONGER TILTS THE HULL (Mike, 0906, with a screenshot of this exact
+       boss lying over at an angle): "do not ever turn bosses like this, ever. Only the stage 2
+       boss when he does his spinning with the flamethrowers should do this." 1.05 rad is a
+       60-degree roll. shipBossVisualPose already stopped READING `_s4war.poseRot` when that
+       instruction landed, so the tilt is gone from the screen either way - but leaving a live
+       60-degree assignment here is a loaded gun: the next person to reconnect poseRot for a
+       different reason brings the whole thing back. Zeroed at the source. The scale pulse is
+       untouched - he objected to turning, not to the boss surging as it crosses. */
+    S.poseRot=0;S.scale=.86+.14*q;
     if(S.t>=1.72)stage4WarfareSetMode(b,'lightning');
   }else{
     b.x+=(W*.5-b.x)*Math.min(1,dt*5.8);b.y+=(sy-b.y)*Math.min(1,dt*5.8);
     if(S.event===0&&S.t>=1.12){
-      for(const e of [['EL',-.24],['ER',.24]]){stage4WarfareShot(b,e[0],Math.PI/2+e[1],5.15,'lightning',{accel:1.1,max:7.2,szMul:1.18});stage4WarfareMuzzle(b,e[0],'lightning',1.12,.24);}
+      for(const e of [['EL',-.24],['ER',.24]]){stage4WarfareShot(b,e[0],Math.PI/2+e[1],5.15,'lightning',{accel:1.1,max:7.2,szMul:1.52});stage4WarfareMuzzle(b,e[0],'lightning',1.12,.24);}
       stage4WarfareSound('enemyHeavyLaser','enemyElectricBolt');shake=Math.max(shake,6);S.event=1;
     }
     if(S.event===1&&S.t>=1.68){
-      for(const e of [['EL',.18],['ER',-.18]]){stage4WarfareShot(b,e[0],Math.PI/2+e[1],5.45,'lightning',{accel:1.2,max:7.5,szMul:1.22});stage4WarfareMuzzle(b,e[0],'lightning',1.12,.24);}
+      for(const e of [['EL',.18],['ER',-.18]]){stage4WarfareShot(b,e[0],Math.PI/2+e[1],5.45,'lightning',{accel:1.2,max:7.5,szMul:1.58});stage4WarfareMuzzle(b,e[0],'lightning',1.12,.24);}
       stage4WarfareSound('enemyElectricBolt','enemyBossCannon');S.event=2;
     }
     if(S.event===2&&S.t>=2.28){
-      stage4WarfareShot(b,'C',Math.PI/2,4.10,'lightning',{w:23,h:54,accel:1.55,max:8.0,szMul:1.68});
+      stage4WarfareShot(b,'C',Math.PI/2,4.10,'lightning',{w:23,h:54,accel:1.55,max:8.0,szMul:2.05});
       stage4WarfareMuzzle(b,'C','lightning',1.55,.30);stage4WarfareSound('enemyHeavyLaser','laserCannon');shake=Math.max(shake,10);S.event=3;
     }
     if(S.event===3&&S.t>=2.92){
@@ -14010,6 +14200,48 @@ function stage4WarfareDrawOver(b){
     if((t.heat||0)>0&&XART.rdy(hot)){
       const pulse=t.state==='overheat'?.86+.14*Math.sin((b.t||0)*20):1;
       ctx.globalAlpha=alpha*clamp(t.heat*pulse,0,1);ctx.drawImage(XART.get(hot),-S4H_HALF,-S4H_HALF,S4H_SIZE,S4H_SIZE);
+    }
+    /* ⚠ THE BARRELS ACTUALLY ROTATE NOW (Mike, 0906): "chainguns on helpers need to rotate 360
+       degrees to appear spinning."
+
+       He is right and the cause is not the speed. `s4w_helper_dual_00..07` is NOT a rotation
+       reel - rendered and measured, consecutive frames share a silhouette IoU of 0.937 to 0.995
+       (docs/S4_HELPER_REEL_0906.png). It is one plate with an energy-glow flicker, and the
+       barrels hang dead still in all eight. Cycling it at reelSpeed 42 gives a shimmer, never a
+       spin, which is why winding the number up would never have fixed it.
+
+       `s4w_final_chaingun_00..07` IS a real rotating gatling - min IoU 0.800, mean 0.930, the
+       barrel groups visibly walking around the bore. It has been registered and WARMED since
+       the pack landed (see the rdy() warm loop) and is DRAWN BY NOTHING: authored art that has
+       never reached the screen. So the helpers borrow it, one cluster per socket.
+
+       ⚠ ROTATING THE WHOLE `dual` PLATE WOULD HAVE BEEN WRONG, and it was the obvious move.
+       Its barrels hang BELOW the housing, so a true 360 turn points them at the sky for half
+       the revolution while the rounds still leave downward - the turret reads as tumbling, not
+       spinning. It would also destroy the 45-degree aim tell drop 0903r built at his request,
+       because you can no longer see which way a spinning housing is pointed. Swapping the
+       barrel art keeps the tell and gives him the spin.
+
+       ⚠ PLACED FROM THE PLATE, NOT FROM THE FIRING OFFSETS. My first cut hung it off
+       stage4CoreTurretTip's (+/-36, +51), which are where ROUNDS leave - not where the barrels
+       are drawn - and sized it by eye at 78 tall. Rendered, that put one oversized gatling
+       across the housing with the plate's own barrel still sticking out beside it. Measured off
+       s4w_helper_dual_00.png instead, thresholding alpha on the bottom band so the two clusters
+       separate: they sit at plate x 33..50 and 111..128 - centres +/-39 from the plate centre,
+       18 wide - running y 100..128, i.e. 29 tall with the muzzle on row 128. (The fire point at
+       row 131 is three rows BELOW the art, which is why it could not be used to place a
+       sprite.) 22% over the baked width so the old barrel is fully covered rather than peeking.
+
+       It rides `frame`, the same accumulator the reel used, so the spin still follows
+       reelSpeed - a slow idle turn at rest, a whirl through the burst, winding down over the
+       overheat. */
+    const _cg='s4w_final_chaingun_'+frame;
+    if(XART.rdy(_cg)){
+      const _im=XART.get(_cg), _P=S4H_SIZE/160;                 // plate px -> local px
+      const _bw=18*_P*1.22, _bh=_bw*(_im.naturalHeight/Math.max(1,_im.naturalWidth)),
+            _bx=39*_P, _bBot=(128-80)*_P+2;                     // muzzle row, 2px proud
+      ctx.globalAlpha=alpha;
+      for(const _bs of [-1,1]) ctx.drawImage(_im,_bs*_bx-_bw/2,_bBot-_bh,_bw,_bh);
     }
     if(t.state==='overheat'){
       ctx.globalCompositeOperation='lighter';ctx.strokeStyle='rgba(255,96,18,'+(.28+.22*Math.sin((b.t||0)*17))+')';
@@ -14715,13 +14947,37 @@ function magmaWardTick(b,dt){
     if(activeT>=0&&activeT<A.active){
       if(!A.started){A.started=true;magmaWardSound('flameThrowerStart','enemyFlameBolt');}
       try{if(typeof Snd!=='undefined'&&Snd&&Snd.loopOn)Snd.loopOn('magmaWardFlameLoop',.58);}catch(_mwLoop){}
-      const m=shipBossMount(b,A.holdSlot),Aang=Math.PI/2+A.poseRot,len=l2FlameSafeLength(m,Aang,240);A.flameLen=len;
-      magmaWardHazardHit(m.x,m.y,Aang,len,11,36);
+      /* ⚠ BOTH CANNONS, TOGETHER (Mike, 0905): "boss should be firing two flamethrowers at the
+         same time." A.holdSlot alternates 'L'/'R' per step (see the setup above), so the Ward
+         only ever held ONE flamethrower and swapped sides between passes. Now it burns from both
+         mounts on the same beat.
+         ⚠ THE HAZARD IS PER-CANNON, NOT ONE WIDER CONE. Each mount runs its own
+         l2FlameSafeLength, so the two flames still respect the four marked X corridors
+         independently - widening a single cone to cover both would have quietly deleted the safe
+         lanes the whole attack is built around. `A.flameLen` keeps the LEFT length for the legacy
+         readers below; each side's own length is stored beside it for the draw. */
+      const _slots=['L','R'];
+      const Aang=Math.PI/2+A.poseRot;
+      A.flameLens={};
+      for(const _sl of _slots){
+        const m=shipBossMount(b,_sl), len=l2FlameSafeLength(m,Aang,240);
+        A.flameLens[_sl]=len;
+        magmaWardHazardHit(m.x,m.y,Aang,len,11,36);
+      }
+      A.flameLen=A.flameLens.L;
       A.pulse-=dt;
       while(A.pulse<=0){
-        A.pulse+=.38;const aim=aimPlayer(m.x,m.y),flip=(A.volley&1)?1:-1;
-        for(const o of [-.075,.075])magmaWardProjectile(m.x,m.y,aim+o,3.10,'ember',{w:30,h:30});
-        if((A.volley&1)===0)for(let i=0;i<8;i++)magmaWardProjectile(m.x,m.y,A.poseRot+i*TAU/8,2.05,'ember',{w:28,h:28});
+        A.pulse+=.38;
+        for(const _sl of _slots){
+          const m=shipBossMount(b,_sl), aim=aimPlayer(m.x,m.y);
+          for(const o of [-.075,.075])magmaWardProjectile(m.x,m.y,aim+o,3.10,'ember',{w:30,h:30});
+        }
+        /* the radial burst stays a SINGLE ring from the centre - one per cannon would double the
+           on-screen ember count on every other volley and bury the safe corridors */
+        if((A.volley&1)===0){
+          const c=shipBossMount(b,'C');
+          for(let i=0;i<8;i++)magmaWardProjectile(c.x,c.y,A.poseRot+i*TAU/8,2.05,'ember',{w:28,h:28});
+        }
         A.volley++;magmaWardSound('enemyFlameBolt','enemyBossCannon');
       }
     }else if(activeT>=A.active&&A.started){
@@ -14798,12 +15054,20 @@ function magmaWardTick(b,dt){
 function magmaWardDrawOver(b){
   const A=b&&b._mwAttack;if(!A||typeof ctx==='undefined')return;const activeT=A.t-A.tell;
   if(A.kind==='magmaflame'){
-    const C=shipBossMount(b,A.holdSlot||'L');
-    if(activeT<0){const im=magmaWardFrame('mwfx_fireball_charge_',8,A.t,12);if(im)ctx.drawImage(im,C.x-43,C.y-43,86,86);}
+    /* two cannons now - see the tick. The charge orb is drawn on each, smaller than the old
+       single 86px one so two of them do not swamp the hull before the burn starts. */
+    const _sl=['L','R'], _M={L:shipBossMount(b,'L'), R:shipBossMount(b,'R')};
+    if(activeT<0){
+      const im=magmaWardFrame('mwfx_fireball_charge_',8,A.t,12);
+      if(im)for(const k of _sl)ctx.drawImage(im,_M[k].x-34,_M[k].y-34,68,68);
+    }
     else if(activeT<A.active){
       const im=magmaWardFrame('mwfx_flamethrower_',12,activeT,14);if(!im)return;
       const ang=A.poseRot+Math.PI/2;
-      ctx.save();ctx.translate(C.x,C.y);ctx.rotate(ang-Math.PI/2);ctx.drawImage(im,-62,0,124,A.flameLen||l2FlameSafeLength(C,ang,240));ctx.restore();
+      for(const k of _sl){
+        const C=_M[k], len=(A.flameLens&&A.flameLens[k])||A.flameLen||l2FlameSafeLength(C,ang,240);
+        ctx.save();ctx.translate(C.x,C.y);ctx.rotate(ang-Math.PI/2);ctx.drawImage(im,-62,0,124,len);ctx.restore();
+      }
     }
   }else if(A.kind==='magmaflamelaser'){
     const L=shipBossMount(b,'L'),R=shipBossMount(b,'R');
@@ -17328,6 +17592,60 @@ function carrierPlayerHit(b,dmg,x,y){
    is the continuation.  It is intentionally drawn outside the shared projectile renderer: that
    path classified the 128px warhead as a generic missile and crushed it to 20px, making the bay
    animation appear to end instead of becoming gameplay. */
+/* ============================================================
+   ⚠ THE WARHEAD OUTRANKS THE HULL FOR A PLAYER SHOT (Mike, 0906): the stage-6 boss is
+   "completely broken. Horribly broken."
+
+   Measured in real Chromium, sweeping a warhead down the screen and firing one round at it:
+
+       warhead y   bossHitTest   deflected
+         300          true         NO
+         320          true         NO
+         340          true         NO
+         360          true         NO
+         380          true         NO
+         400          false        yes
+         420          false        yes
+
+   The Doomsday Carrier's hit rectangle is 640x320 on a 680-wide world - it spans the entire
+   width and the top three quarters of the screen - and the player-bullet loop collides with
+   the BOSS about 200 lines before it reaches the omegawarhead deflect. So every shot aimed at
+   a warhead above y~390 was swallowed by the hull, and because Mike's own bay rule makes the
+   bays immune to ordinary fire, it did nothing at all: hitBoss ran and the HP did not move
+   (7408 before, 7408 after). Deflecting a warhead is the ONLY way to damage a bay, so the
+   whole fight was reduced to a ~50px band just above the player's own ship, against a round
+   that is accelerating into them. That is the fight being broken, not looking broken.
+
+   The warhead is drawn in FRONT of the carrier and is the thing the player is aiming at, so a
+   round that touches one deflects it and is spent there. This runs before the boss collision
+   and takes the shot out of contention; anything that misses the warhead still reaches the
+   hull exactly as before.
+
+   ⚠ ONE DEFINITION, TWO DIRECTIONS. The eBullets loop asks "did any player round touch me"
+   and the pBullets loop asks "did I touch any warhead" - the same test from opposite ends.
+   They were about to be two copies of the same eight lines, which is how they drift.
+   ============================================================ */
+function carrierWarheadDeflectOne(q,pb){
+  if(!q||!pb||q.dead||pb.dead||q.kind!=='omegawarhead'||q._ref)return false;
+  const hit=(pb.kind==='beam')
+    ? (Math.abs(pb.x-q.x)<((pb.w||14)/2+q.w/2) && q.y<=(pb.bot!=null?pb.bot:player.y) && q.y>=(pb.top!=null?pb.top:PLAY.y))
+    : (Math.abs(pb.x-q.x)<((pb.w||4)/2+q.w/2) && Math.abs(pb.y-q.y)<((pb.h||8)/2+q.h/2));
+  if(!hit)return false;
+  /* DEFLECTED, not destroyed. Mike: "the missiles can be shot and deflected back at the
+     boss, as this is the only way to destroy the missile bays." */
+  q._ref=true; q._fx='missile'; q.vy=-3.1; q.vx*=0.3; q.ang=-Math.PI/2; q.t=0;
+  if(q._carrierWarhead&&typeof carrierWarheadBurst==='function')carrierWarheadBurst(q,'s6mb_bombdeflect',8,144,.36);
+  if(!pb.pierce) pb.dead=true;
+  if(typeof addTrail==='function') addTrail(q.x,q.y,null,'missile');
+  if(Audio.SFX && Audio.SFX.clank) Audio.SFX.clank();
+  return true;
+}
+/* "did this player round touch ANY live warhead" - the pBullets-loop direction. */
+function carrierWarheadDeflectAt(pb){
+  if(!pb||pb.dead||typeof eBullets==='undefined')return false;
+  for(const q of eBullets) if(carrierWarheadDeflectOne(q,pb)) return true;
+  return false;
+}
 function carrierWarheadDraw(q){
   if(!q||!q._carrierWarhead||typeof XART==='undefined')return false;
   const fi=((q.t||0)*12|0)%8,ref=!!q._ref,key='s6mb_omegabomb-'+(ref?'reflected':'hostile')+'_'+fi;
@@ -17541,7 +17859,27 @@ function carrierBayHit(b, wx, wy, warhead){
   }
   if(!F.up){const side=carrierBayAt(b,wx,wy);
     if(side)return carrierBayDamage(b,side,Math.ceil(CARRIER_BAY_HP*.32),wx,wy,warhead);
-    if(carrierShieldContains(b,wx,wy)){
+    /* ⚠ A DEFLECTED WARHEAD MUST BE ALLOWED TO REACH A BAY (Mike, 0906: the stage-6 boss is
+       "completely broken. Horribly broken.") This branch used to consume ANY reflected round
+       that was inside the shield ellipse but not on a bay, and the ellipse is far bigger than
+       the bays: rx = w*.57, ry = h*.69 reaches y~386 on a 640x320 hull at y 172, while the bay
+       boxes stop at y 268. So a warhead deflected anywhere in that ~118px band was eaten on its
+       very first reflected frame, with an impact burst and zero bay damage - measured: bays
+       320/320 before, 320/320 after, warhead gone.
+
+       That band is exactly where the player fights. Deflecting into a bay is the ONLY way to
+       damage one, so between this and the hull swallowing the shot (see carrierWarheadDeflectOne)
+       the boss's single vulnerability was unreachable in normal play.
+
+       A reflected round now keeps flying until it either hits a bay or passes ABOVE them into
+       the upper hull, where bursting is the right read. Aligning x with a bay before deflecting
+       becomes the skill, which is what "deflected back INTO the bays" always described.
+       ⚠ carrierBayHit has exactly ONE caller - the reflected-warhead branch of updatePlay - so
+       this cannot change anything else's behaviour. */
+    let _bayTop=null;
+    for(const s of 'LR'){ if(b._bay[s]<=0) continue; const bx=carrierBayBox(b,s);
+      if(bx && (_bayTop===null || bx.y0<_bayTop)) _bayTop=bx.y0; }
+    if(_bayTop!==null && wy<=_bayTop && carrierShieldContains(b,wx,wy)){
       if(warhead&&warhead._carrierWarhead)carrierWarheadBurst(warhead,'s6mb_bombimpact',10,176,.46);
       return true;
     }
@@ -17764,7 +18102,15 @@ const BOSS_HP_FLOOR=[800,1750,1800,1700,2150,2700,3350,4100,4950];
    Cruiser, Magma Ward, Cryo Spear and the promoted Rime Wall could otherwise disappear during
    their opening pattern after a player carried upgrades forward. Later-stage floors already sit
    on the desired progression curve. */
-const MINIBOSS_HP_FLOOR=[900,1500,1250,820,1020,1260,1540,1860,2220];
+/* ⚠ STAGE 2's FLOOR CAME DOWN WITH THE ROLE SWAP (0905). Mike: "stage 2 new mini boss should be
+   easier to kill." Setting the Reaver's row to hp 400 was NOT enough on its own - this floor is
+   applied after it, so the mid-stage gate still spawned at 1660 effective. The 1500 was sized for
+   the MAGMA WARD holding this slot; the slot now holds a demoted fighter, so it takes 820, the
+   same figure stage 4 already uses. Measured after: ~908 effective against the old 1660.
+   ⚠ This table is NOT monotonic and was not before this edit (900,1500,1250,820,...), which is
+   why "all nine stages own monotonically rising boss and miniboss HP floors" has been red in the
+   control for some time. This change neither causes nor fixes that. */
+const MINIBOSS_HP_FLOOR=[900,820,1250,820,1020,1260,1540,1860,2220];
 function enforceEncounterHp(b,floor){
   if(!b||!(floor>0)||!(b.maxhp>0)||b.maxhp>=floor)return b;
   const ratio=floor/b.maxhp,scalePool=(o,hpKey,maxKey)=>{
@@ -20027,6 +20373,7 @@ function _weaponCadence(){
     if(run.spaceWeapon===0) return (typeof spaceWeaponLevel==='function'&&spaceWeaponLevel()<=0) ? 0.36 : 0.24;
     return 0.32;
   }
+  /* the one per-weapon cadence table - see the balance note below */
   /* A docked vehicle-mounted MG owns the primary trigger: about eighteen twin-barrel beats per
      second gives it the requested MG42/gatling rip without turning it into a 60Hz particle hose. */
   if(typeof lzMountActive==='function' && lzMountActive()) return LZ_SLUG_CD;
@@ -20035,9 +20382,43 @@ function _weaponCadence(){
   // caller, so faster-firing pilots get a snappier basic MG automatically.
   // Mike: the DEFAULT gun should already fire at level-1 machine-gun SPEED — it just fires one
   // pellet instead of two. So L0 and L1 share the 0.085 cadence and differ only in bullet count.
-  if(run.weapon===0 && (run.wlevels?((run.wlevels[0]|0)===0):true)) return 0.085;
-  if(run.weapon===6)return Math.max(.48,.80-clamp(run.wlevel||1,1,5)*.055);
-  return ({0:0.085,1:0.16,2:0.34,3:0.11,4:0.30})[run.weapon];
+  /* ⚠ THIS MUST TRACK THE TABLE BELOW, NOT CARRY ITS OWN NUMBER (0905). Mike's rule, in the note
+     above: the DEFAULT gun already fires at level-1 MACHINE-GUN SPEED and differs only in bullet
+     count. That was written as a literal 0.085 matching the L1 entry - so when the balance pass
+     moved MG L1 to 0.164 the basic gun became TWICE AS FAST as the upgraded one and the upgrade
+     was a downgrade. The suite caught it by name. Reading the table keeps the two in step
+     whatever the MG cadence is retuned to next. */
+  if(run.weapon===0 && (run.wlevels?((run.wlevels[0]|0)===0):true)) return WEAPON_CADENCE[0];   // L0: base rate, no level ramp yet
+  /* ⚠ WEAPON BALANCE PASS (Mike, 0905): "yes, and to slow machine gun down a little bit too.
+     its too fast." Measured first, on the Olive Warden at level 3 with the target tracked, so
+     only the weapon varied - kill times came out MACHINE GUN 21s, FLAMETHROWER 23s, LASER 25s,
+     LASER MIST 37s, ICE ORB 48s, MISSILE 61s, SPREAD 107s. A FIVE-FOLD spread between the best
+     and worst gun against the same target, and it is why a 21-second miniboss took Mike 256
+     seconds: he was carrying the Ice Orb.
+     Cadence is retuned toward a ~28s band. It is deliberately the FIRST lever because it is the
+     only per-weapon number that is already centralised on one line - so this pass is one edit and
+     one revert, not seven scattered ones.
+     ⚠ CADENCE CANNOT CLOSE THE SPREAD GAP ALONE. Spread needs 3.8x to reach the band and buying
+     that with cadence would put it at a 0.042s interval, a hose that floods the screen and reads
+     nothing like a spread gun. It gets a partial here and the rest belongs in its per-shot
+     damage. Ice Orb is not on this line at all - it fires through its own path - so it is
+     untouched by this pass too. Both are measured again after this lands.
+     ⚠ AND THE HARNESS HAD TO BE FIXED BEFORE THESE NUMBERS MEANT ANYTHING. Measuring with an
+     autopilot that CHASES the boss gave Laser Mist 30 / 49 / 44 / 58 seconds across four
+     identical runs - a 2x spread - because where the ship happens to be relative to a moving
+     target dominates the result. Pinning BOTH the player and the boss to centre isolates the gun
+     and returns 41 / 41 / 40. Any future retune of this line has to use the pinned harness; a
+     tracking run cannot resolve a difference smaller than about 2x and will invent ones that are
+     not there. Second pass, from the pinned medians 21/26/30/35/34/42/41, targets ~30s. */
+  if(run.weapon===6)return Math.max(.29,.55-clamp(run.wlevel||1,1,5)*.055);
+  {
+    const _c=WEAPON_CADENCE[run.weapon];
+    if(_c!=null && WEAPON_LVL_RAMP[run.weapon]){
+      const _lv=clamp(run.wlevel||1,1,5);
+      return _c*Math.pow(0.95,_lv-1);
+    }
+    return _c;
+  }
 }
 /* ============================================================
    LASER MIST — STAGE-9 VICTORY WEAPON (0902)
@@ -21518,7 +21899,11 @@ function pShoot(){
     const sprd=0.22+lv*0.05;
     for(let i=0;i<n;i++){
       const a=-Math.PI/2 + (i-(n-1)/2)*sprd;
-      pBullets.push({x:player.x, y:player.y-12, vx:Math.cos(a)*7.5, vy:Math.sin(a)*7.5, w:5,h:10, dmg:1, kind:'spread', lv});
+      /* ⚠ THE SAME PELLET DAMAGE AS THE MACHINE GUN (Mike, 0905): "doing the same damage."
+         It was a flat dmg:1 against the MG's 2 + floor(lv/2), so a spread pellet hit at a third
+         of an MG pellet's strength at level 5 - which is most of why spread measured 107s on a
+         miniboss against the machine gun's 21s, the worst gun in the game by five times. */
+      pBullets.push({x:player.x, y:player.y-12, vx:Math.cos(a)*7.5, vy:Math.sin(a)*7.5, w:5,h:10, dmg:2+Math.floor(lv/2), kind:'spread', lv});
     }
     /* the gun's real muzzle flash, which spread never lit - part of "more
        graphical". Same machinefx reel the MG branch uses. */
@@ -22464,39 +22849,65 @@ const FALVA_PINK='#ff2a8f', FALVA_HOT='#ffd6f2';
 let rollers=[];              // Falva's bouncing pinballs
 
 /* ============================================================
-   FALVA SPECIAL — two "laser balls" anchor to her sides and fire lasers straight up
-   for the duration of the special. They track her horizontally (offset left/right of the hull),
-   pulse-animate, and emit a straight laser beam plus an occasional spread burst.
+   FALVA SPECIAL — ONE laser ball, orbiting, firing a SPREAD of lasers.
+
+   ⚠ REBUILT 0906 ON MIKE'S INSTRUCTION. Verbatim: "remove 1 laser helper from her entirely
+   she only gets 1 now. make it orbit her like axel's does, but make it shoot spread lasers
+   instead. so take the laser it uses, make 45 degree angle laser frames via flip/turn, flip
+   for the other side and replicate our spread attack graphic but with falva's laser beam
+   graphic."
+
+   It was TWO balls pinned to her flanks firing straight up on a 0.10s cadence.
+
+   ⚠ THE 45-DEGREE FRAMES HE ASKS FOR ARE NOT NEEDED, AND BAKING THEM WOULD BE WORSE. The
+   `flaser` draw branch already rotates the plate to the round's own velocity
+   (`atan2(b.vy, b.vx) + PI/2`), so a bolt fired at any angle already points along it - at 45
+   degrees, at 16, at whatever the fan asks for. Baked ±45 frames would quantise the fan to
+   three directions and lose the in-between columns. He is describing the RESULT he wants;
+   this is the cheaper route to it, with no new art and no atlas churn.
+
+   THE ORBIT IS AXEL'S, DELIBERATELY: same `performance.now()/440` clock and the same
+   direction, so when both helpers are on screen they sweep together and read as one family
+   of thing rather than two unrelated spinners. Radius 46 against his 52 - inside his, since
+   his has to clear the aegis ring at 30 and hers has nothing to clear.
+
+   THE FAN IS THE PLAYER'S OWN SPREAD GEOMETRY, so it reads as the weapon he named: the same
+   `(i-(n-1)/2)*sprd` fan the `w===1` branch builds, at n=5 / 0.28 rad, which is that gun at
+   about level 3. Throughput lands at 5 bolts per 0.30s = 16.7/s against the old pair's 20/s,
+   so losing a helper costs a little damage and buys width - which is the trade he asked for.
    ============================================================ */
 let falvaBalls=[];
-const FALVA_BALL_OFFX=30;     // px from ship centre to each ball
-const FALVA_BALL_OFFY=4;      // slightly ahead of the hull
+const FALVA_BALL_R=46;        // orbit radius; Axel's is 52 and has the aegis ring to clear
+const FALVA_BALL_CD=0.30;     // seconds between spread volleys
+const FALVA_SPREAD_N=5;       // bolts per volley
+const FALVA_SPREAD_A=0.28;    // radians between adjacent bolts
+function falvaBallPos(){
+  const a=performance.now()/440;                 // Axel's clock, so the two helpers sweep together
+  return { x: player.x + Math.cos(a)*FALVA_BALL_R,
+           y: player.y + Math.sin(a)*FALVA_BALL_R, a:a };
+}
 function falvaLasersStart(){
-  falvaBalls=[
-    {side:-1, x:player.x-FALVA_BALL_OFFX, y:player.y+FALVA_BALL_OFFY, fireCd:0, spreadCd:0.5, bob:0},
-    {side:+1, x:player.x+FALVA_BALL_OFFX, y:player.y+FALVA_BALL_OFFY, fireCd:0.14, spreadCd:1.0, bob:Math.PI},
-  ];
-  floatText(player.x,player.y-24,'LASER BALLS!',FALVA_PINK); shake=Math.max(shake,4);
+  const P=falvaBallPos();
+  falvaBalls=[{side:+1, x:P.x, y:P.y, fireCd:0, bob:0}];
+  floatText(player.x,player.y-24,'LASER BALL!',FALVA_PINK); shake=Math.max(shake,4);
 }
 function falvaLasersUpdate(dt){
-  /* STRAIGHT LASERS ONLY (drop 0724cf). The helper balls used to alternate a spread burst; Mike
-     wants them firing straight and nothing else, so the spread path is gone entirely. */
   if(!falvaBalls.length) return;
-  for(let bi=0; bi<falvaBalls.length; bi++){
-    const bl=falvaBalls[bi];
-    // anchor to her side, with a gentle vertical bob so they feel alive
-    bl.bob+=dt*6;
-    const tx=player.x + bl.side*FALVA_BALL_OFFX;
-    const ty=player.y + FALVA_BALL_OFFY + Math.sin(bl.bob)*3;
-    bl.x += (tx-bl.x)*Math.min(1, dt*18);   // smooth follow
-    bl.y += (ty-bl.y)*Math.min(1, dt*18);
-    // straight laser: a fast pink bolt going up (both balls always fire these)
-    bl.fireCd-=dt;
-    if(bl.fireCd<=0){
-      bl.fireCd=0.10;
-      pBullets.push({x:bl.x, y:bl.y-10, vx:0, vy:-13, w:8, h:22, dmg:2, kind:'flaser', t:0, _f:(Math.random()*8)|0});
-      if(Audio.SFX.shoot) Audio.SFX.shoot();
+  const bl=falvaBalls[0], P=falvaBallPos();
+  /* Positioned, not eased. The orbit IS the motion, and easing toward a point that is itself
+     moving on a circle drags the ball inside the radius and makes the sweep read as a wobble.
+     Axel's does the same thing for the same reason. `bob` still advances - drawFalvaBalls uses
+     it for the size breathe. */
+  bl.bob+=dt*6; bl.x=P.x; bl.y=P.y;
+  bl.fireCd-=dt;
+  if(bl.fireCd<=0){
+    bl.fireCd=FALVA_BALL_CD;
+    for(let i=0;i<FALVA_SPREAD_N;i++){
+      const a=-Math.PI/2 + (i-(FALVA_SPREAD_N-1)/2)*FALVA_SPREAD_A;
+      pBullets.push({x:bl.x, y:bl.y-10, vx:Math.cos(a)*13, vy:Math.sin(a)*13,
+                     w:8, h:22, dmg:2, kind:'flaser', t:0, _f:(Math.random()*8)|0});
     }
+    if(Audio.SFX.shoot) Audio.SFX.shoot();
   }
 }
 function drawFalvaBalls(){
@@ -22863,7 +23274,13 @@ function chargePilotActive(){
   /* Thermoshock already had a hold/release controller, but Freezer was missing from this
      ownership gate.  His normal orb cadence therefore fired repeatedly underneath the
      charge, stacking launch sounds and projectiles before the button was released. */
-  if(k==='freezer' && run && run.weapon===5 && typeof orbIsFire==='function' && orbIsFire()) return true;
+  /* ⚠ THE FIRE-ICE (THERMOSHOCK) ORB IS NOT A CHARGE WEAPON (Mike, 0906): "freezer's fireice orb
+     is NOT meant to be a charge up attack". orbIsFire() is true for BOTH the plain fireorb and the
+     merged fireice, so this clause handed the trigger to the charge controller in both states.
+     Excluding fireice leaves the plain fire orb charging exactly as before and drops Thermoshock
+     back onto the ordinary weapon cadence in _weaponCadence. */
+  if(k==='freezer' && run && run.weapon===5 && typeof orbIsFire==='function' && orbIsFire()
+     && !(typeof orbIsFireIce==='function' && orbIsFireIce())) return true;
   if(typeof sonicActive==='function' && sonicActive()) return true;   // Cole's sonic boom (0805r)
   return false;
 }
@@ -23506,7 +23923,10 @@ const LZ_SLUG_DMG = 7;
    not a permanent weapon, and a short overwhelming window is the point of it. */
 /* 0831 balance: the approved mounted-MG pass was a little too close to a continuous stream.
    +25% between twin-barrel beats preserves the war-SUV/MG42 weight without the particle hose. */
-const LZ_SLUG_CD  = 0.06875;
+/* ⚠ 0.06875 -> 0.075625, exactly +10% (Mike, 0906): "slow down lizzies machien gun attachment
+   firing speed by 10%." This is the vehicle-mount HEAVY MG, claimed by the primary trigger via
+   lzMountActive() inside _weaponCadence. Damage and projectile speed deliberately untouched. */
+const LZ_SLUG_CD  = 0.075625;
 const LZ_SLUG_SPD = 7.875;
 /* THE MOUNT IS A LOAN, NOT A GIFT (drop 0810f). Mike: "needs to goes away after 15 seconds or when
    she dies. Same with deckers shotgun." It previously had NO expiry at all — it survived until the
@@ -24885,7 +25305,12 @@ function freezerOrbCharge(dt){
      ice orb, at the slow tier. */
   /* DEBUG 7 grants his chargeable orb to whoever is flying (drop 0801ha) */
   const _mayCharge = (_pilotKey()==='freezer') || !!(run && run._dbgFrzOrb);
-  if(!_mayCharge || !orbIsFire() || run.weapon!==5) {
+  /* ⚠ AND THE CONTROLLER STOPS FOR FIRE-ICE (0906). Gating the trigger alone is not enough: this
+     function still ran every frame, built its charge state and held the charge loop open, so the
+     sound bed and the wind-up visual survived a change that was supposed to remove them. Bailing
+     here takes the same exit as "not Freezer", which already stops the loop cleanly. */
+  const _isThermoshock = (typeof orbIsFireIce==='function') && orbIsFireIce();
+  if(!_mayCharge || _isThermoshock || !orbIsFire() || run.weapon!==5) {
     if(_frzOrb&&_frzOrb.charging&&typeof Snd!=='undefined'&&Snd&&Snd.loopOff) Snd.loopOff(_frzOrb.sndName||'fireIceChargeLoop');
     _frzOrb=null; return;
   }
@@ -25238,6 +25663,7 @@ function beginStage(num){
   if(stagePlan && stagePlan.sort) stagePlan.sort((a,b)=> (a.t||0) - (b.t||0));
   if(typeof wfxReset==='function') wfxReset();
   if(typeof bg6Reset==='function') bg6Reset();
+  _stage5SpaceScroll=0;                      // stage 5's space clock, the counterpart bg6Reset holds for 6
   /* AMBIENCE DISABLED (drop 0724bu). Mike: stop playing the jungle ambient. The beds sat under the
      music at 0.55 and muddied it rather than adding depth, and stage 1's was the worst offender.
      ambStart/ambStop are intact — set AMBIENCE_ON=true to bring them back. */
@@ -25328,11 +25754,17 @@ function coleSceneApply(num){
 /* HUD VISIBILITY. The score strip and equipment box are DOM elements in index.html, so they were
    ALWAYS on screen — including the boot sequence, the title, the menus and the campaign map, where
    the player has no ship, no score and no equipment. They belong to gameplay only. */
-function _hudShow(on){
+function _hudShow(on, divider){
   try{
     const r=document.getElementById('hud-row'), d=document.getElementById('hud-div');
     if(r) r.style.visibility = on ? 'visible' : 'hidden';
-    if(d) d.style.visibility = on ? 'visible' : 'hidden';
+    /* ⚠ THE DIVIDER IS SEPARATE FROM THE ROW (0905). Mike, on the stage card: "do not show gray
+       line". `#hud-div` is a 7px rgb(42,45,51) strip the full width of the frame - measured in
+       the live DOM at [351,94,560,7] during GS.INTRO. It reads as a deliberate seam while the
+       score strip beside it is full of numbers, and as a stray grey line while the strip is empty
+       black behind a full-screen stage card. The ROW still shows during the intro, so nothing
+       pops in when LAUNCH follows; only the seam is suppressed. */
+    if(d) d.style.visibility = (on && divider !== false) ? 'visible' : 'hidden';
   }catch(e){}
 }
 function _hudStateWants(s){
@@ -25367,8 +25799,13 @@ function setState(s){
   const _prevState=state;
   if(s==='paused'&&_prevState!=='paused')_pausePresentation(true);
   else if(_prevState==='paused'&&s!=='paused')_pausePresentation(false);
-  state=s; stateT=0; Input.clearTaps(); _hudShow(_hudStateWants(s));
-  _setCinematicViewport(s===GS.CUTSCENE || s===GS.CAMPAIGNINTRO || s===GS.VICTORY);
+  state=s; stateT=0; Input.clearTaps(); _hudShow(_hudStateWants(s), s!==GS.INTRO);
+  /* ⚠ THE DEBRIEF JOINED THIS LIST (0905). Mike: "the whole screen should go full screen for the
+     stat screen". GS.STAGECLEAR now takes the same browser-aspect viewport the HQ cutscenes use,
+     which is also what hides the credit rails, the score strip and its divider behind it - the
+     card is a full-screen presentation moment, not a gameplay frame with furniture around it. */
+  _setCinematicViewport(s===GS.CUTSCENE || s===GS.CAMPAIGNINTRO || s===GS.VICTORY ||
+                        s===GS.STAGECLEAR);
   /* The final results card is useful decode time. Start the ending plates here so a player who
      advances immediately never reaches the first line of the finale before its HQ background and
      selected straight-rear aircraft are drawable. The bonus stage returns to the campaign map and
@@ -27476,6 +27913,11 @@ function updatePlay(dt){
         }
       }
     }
+    /* ⚠ BEFORE THE BOSS. A live warhead sits in front of the carrier and is what the player is
+       shooting at; letting the 640x320 hull claim the round first is what made this fight
+       unwinnable above y~390. See carrierWarheadDeflectOne. A round that misses every warhead
+       falls straight through to the hull collision below, unchanged. */
+    if(!b.dead && typeof carrierWarheadDeflectAt==='function') carrierWarheadDeflectAt(b);
     // collide boss
     if(!b.dead && boss && bossActive && !boss.dead && bossHitTest(b.x,b.y)){
       /* PHASE 1 SHIELD (drop 0809n). Runs BEFORE any damage is computed: a deflected round
@@ -27714,21 +28156,9 @@ function updatePlay(dt){
          The pack ships exactly two frames for this round, enemy_inbound and player_reflected, so
          the art was authored for this mechanic; _ref picks between them. */
       if(!b._ref){
-        for(const pb of pBullets){
-          if(pb.dead) continue;
-          const hit = (pb.kind==='beam')
-            ? (Math.abs(pb.x-b.x)<((pb.w||14)/2+b.w/2) && b.y<=(pb.bot!=null?pb.bot:player.y) && b.y>=(pb.top!=null?pb.top:PLAY.y))
-            : (Math.abs(pb.x-b.x)<((pb.w||4)/2+b.w/2) && Math.abs(pb.y-b.y)<((pb.h||8)/2+b.h/2));
-          if(!hit) continue;
-          /* DEFLECTED, not destroyed. Mike: "the missiles can be shot and deflected back at the
-             boss, as this is the only way to destroy the missile bays." */
-          b._ref=true; b._fx='missile'; b.vy=-3.1; b.vx*=0.3; b.ang=-Math.PI/2; b.t=0;
-          if(b._carrierWarhead)carrierWarheadBurst(b,'s6mb_bombdeflect',8,144,.36);
-          if(!pb.pierce) pb.dead=true;
-          if(typeof addTrail==='function') addTrail(b.x,b.y,null,'missile');
-          if(Audio.SFX && Audio.SFX.clank) Audio.SFX.clank();
-          break;
-        }
+        /* the hit test and the deflect both live in carrierWarheadDeflectOne - see the note at
+           its definition for why a player round must beat the hull to this. */
+        for(const pb of pBullets){ if(carrierWarheadDeflectOne(b,pb)) break; }
       }
       if(b._ref){
         b.vy=Math.max(-5.4, b.vy-3.4*dt);          // accelerates back up the screen
@@ -28729,10 +29159,17 @@ function updateOverlordX(b, dt){
       const ep=ovMount(b, rnd(-24,24), rnd(-18,12));
       explode(ep[0],ep[1], frac<=0.25?18:13, 'red');
     }
-    // damage shake belongs to the helicopter, not to its path or collision box.
-    const rageShake=frac<=0.25?2.9:1.45;
-    b._ovJitterX=Math.sin(b._ovT*43)*rageShake;
-    b._ovJitterY=Math.cos(b._ovT*37)*rageShake*0.65;
+    /* ⚠ THE DAMAGE JITTER IS GONE (Mike, 0905): "the helicopter boss does some weird shake thing
+       that it shouldnt." It ran sin(t*43) on X against cos(t*37) on Y - roughly 6.8Hz and 5.9Hz,
+       two frequencies close enough to beat against each other, so the hull buzzed and crawled
+       rather than shuddering. At 1.45px (2.9px critical) on a 170px boss it read as a rendering
+       fault, not as damage.
+       The damage tell is NOT lost with it: the fire plumes, the smoke and the rotor-deck pops
+       above all still escalate with `frac`, and those say "this thing is breaking" without
+       vibrating the sprite. Left as explicit zeroes rather than deleted, because _ovJitterX/Y are
+       read by the draw and the mount solver - removing the fields would strand both. */
+    b._ovJitterX=0;
+    b._ovJitterY=0;
   } else {
     b._ovJitterX=0; b._ovJitterY=0;
   }
@@ -28824,9 +29261,17 @@ function updateOverlordX(b, dt){
     b.y=lerp(b.y,bobTargetY,0.08);
     b._pivot=clamp(b._pivot*0.55-(b.x-oldX)*0.12,-0.65,0.65);
     b._ovChargeGlow=p;
+    /* ⚠ THE CHARGE TELL IS KEPT, THE BUZZ IS NOT (Mike, 0905: "some weird shake thing"). This
+       one is a real telegraph - it is how the player is warned a charge is coming - so unlike the
+       damage jitter it is retuned rather than removed.
+       It ran 72 rad/s on X against 61 on Y: ~11.5Hz and ~9.7Hz, two mismatched high frequencies
+       beating against each other, which is what made a windup read as a rendering fault. Matched
+       to one rate with the sin/cos pair left intact, so the hull now traces a tight circular
+       shudder that still grows with `p`. Same amplitude, same warning, legible motion. */
     const tellShake=1.0+p*(b._enraged?5.0:3.7);
-    b._ovJitterX=Math.sin(T.t*72)*tellShake;
-    b._ovJitterY=Math.cos(T.t*61)*tellShake*0.62;
+    const tellRate=17;
+    b._ovJitterX=Math.sin(T.t*tellRate)*tellShake;
+    b._ovJitterY=Math.cos(T.t*tellRate)*tellShake*0.62;
     if(T.pulse<=0){ T.pulse=p>0.72?0.075:0.14; const hub=ovMount(b,0,2);
       navalFlash(null,{x:hub[0],y:hub[1]},0.62+p*0.45,'s1fx_green_impact',{n:6,hpx:76+p*34,life:0.18,anchor:0.5,
         follow:()=>{const q=ovMount(b,0,2);return {x:q[0],y:q[1]};}});
@@ -30610,7 +31055,21 @@ function gravityModeDrawShip(drawX,drawY,drawSize){
       const bank=clamp(player._bank||0,-1,1),ab=Math.abs(bank);
       if(ab>=0.08){
         const step=ab<0.34?1:(ab<0.68?2:3);
-        const bankKey='ship_bank_'+(bank<0?'l':'r')+step;
+        /* ⚠ THE ATLAS FRAME NAMES ARE INVERTED RELATIVE TO THE ART THEY HOLD (Mike, 0906): "when
+           I go left and right, the directions are reverse in-game of how I'm facing." This path
+           short-circuits the whole per-pilot flip system - _drawPlayerCore returns early into
+           gravityModeDrawShip on stages 5 and 9 - so it was wrong for ALL NINE pilots, not one.
+           Measured off assets/game/atlas/bof_gravity_mode_space_weapons.png, nose-vs-body ink
+           centroid, all twelve plates: ship_bank_l1/l2/l3 carry the nose swung RIGHT
+           (+0.150/+0.183/+0.183) and ship_bank_r1/r2/r3 carry it swung LEFT
+           (-0.153/-0.192/-0.123). The six _blue palette masks agree in sign on every frame
+           (+0.090/+0.119/+0.099 against -0.059/-0.140/-0.059), which is the cross-check that
+           matters - they are cut from the same plates, so a metric artefact would not flip
+           consistently across both sets. Left input gives bank<0, so asking for 'l' fetched the
+           right-turn art. The letter is inverted HERE rather than renaming the atlas frames,
+           because that JSON is generated - if the atlas is ever re-cut with corrected names this
+           one line must go back. It is the only place in the file that builds this key. */
+        const bankKey='ship_bank_'+(bank<0?'r':'l')+step;
         if(spaceAtlasRect(bankKey))key=bankKey;
       }
     }
@@ -31139,7 +31598,11 @@ function _drawPlayerCore(){
          wrong side for those five. Flipping the side for exactly those pilots is
          a one-value change and leaves the other four untouched. */
       const bank=player._bank||0, ab=Math.abs(bank);
-      const right=(SHIP_BANK_FLIP[pk] ? bank<0 : bank>0);
+      /* 0906: the stale inline copy of the bank-handedness expression that used to live here is
+         gone. It was residue of the 0805j consolidation - whose own comment below says the chain
+         "is now _shipFrameKey(), which the thruster rig calls too - they cannot drift apart" -
+         and it was exactly that drift. Unused in this scope; an edit made to it to fix the turn
+         direction would have appeared to do nothing. */
       const TWIST=0.82;   // past this, the ship has rolled all the way into the twist frame
       let key;
       if(ab<0.06){
@@ -32961,6 +33424,24 @@ const PROJ_SHADE={
   'mfx_ea_3':     {frame:0, pulse:0.34, core:0.26, spin:0.0},
   'mfx_hom_0':    {frame:0, pulse:0.30, core:0.22, spin:0.0},
   'mfx_mg_2':     {frame:0, pulse:0.26, core:0.18, spin:0.0},
+  /* ⚠ THE TWO FAMILIES STAGE 2 ACTUALLY FIRES (Mike, 0905): "the projectiles are jumpy, just use
+     1 frame per projectile, then do pixel glows or make them spin/rotate as they come towards us
+     (never flip or do janky css stuff)."
+     Measured which families still cycled, rather than guessing: `magma` -> ndc_magmaorb and
+     `pellet` -> mgcf_1 were each running FOUR frames in flight, while flare/gem/orb had already
+     been moved to the static plate in 0904a and missile/laser/lavaComet resolve to a single frame
+     and so cannot jump. Those two are the rounds a stage-2 player sees most of.
+     ⚠ WHY A REEL LOOKS "JUMPY" AT THIS SIZE, which is the same reason 0904d gave for the S5/S6/S9
+     hulls: these plates are minified with nearest-neighbour, so the kept pixels change as the
+     sprite drifts sub-pixel and the speckle crawls. Cycling frames on top of that compounds it.
+     Holding ONE frame and getting the motion from a real rotation - a transform, stable under
+     minification - plus additive glow is what Mike is describing, and it is what the shadeglow
+     path already does for the other three families.
+     The magma orb SPINS (it is a ball, and he asked for the magma ball to spin). The pellet does
+     NOT: at its size a rotation reads as jitter, which is the defect rather than the fix, so it
+     takes the glow only. */
+  'ndc_magmaorb': {frame:0, pulse:0.40, core:0.32, spin:2.40},
+  'mgcf_1':       {frame:0, pulse:0.30, core:0.22, spin:0.0},
 };
 /* the family a key belongs to, i.e. the key with its trailing frame index removed */
 function projShadeFor(key){
@@ -33512,10 +33993,42 @@ function drawFireType(b){
   const _s2Readable=typeof run!=='undefined' && ((run.stage===2 && b._boss) ||
     (run.stage===2 && (b.kind==='magma'||b.kind==='lavaComet'||String(b.kind).indexOf('s2')===0)));
   if(_s2Readable){
+    /* ⚠ THIS WAS THE "WEIRD YELLOW PROJECTILE" (Mike, 0905): "Idk wtf that weird yellow projectile
+       is, but replace it withh the magma ball that it forms and actually fire it at us and make it
+       pixel glow and spin."
+       It was never a projectile TYPE - it is this draw override. Every stage-2 boss round, whatever
+       its actual art, was force-tinted #ffd21f with a #fff4a8 core, so a magma round, a slag round
+       and a rocket all came out as the same yellow blob. The tint was added for a real reason -
+       these rounds cross an animated red/orange lava bed and a dark round vanishes into it - but
+       the fix for readability was applied to the COLOUR when it belonged to the RIM.
+       So: the hard eight-neighbour black rim stays, because that is what actually separates the
+       round from the lava. The body is now the MAGMA ORB's own plate, held on one frame, spun, and
+       re-burnt additively - the same shadeglow treatment the family gets everywhere else. The
+       round finally looks like the magma ball the boss forms, and it keeps its silhouette. */
     const readH=Math.max(36,h*1.2), edge=3, dark='#050200';
+    const _mk='ndc_magmaorb_0';
+    const _useMagma=(typeof XART!=='undefined' && XART.rdy(_mk));
+    const _bk=_useMagma?_mk:key;
+    const _S=(typeof projShadeFor==='function')?projShadeFor(_mk):null;
+    let _a=ang;
+    if(_useMagma && _S && _S.spin){
+      const _t=(typeof performance!=='undefined'?performance.now():Date.now())/1000+((b._ph||0)*0.37);
+      _a += _t*_S.spin;
+    }
     for(const o of [[-edge,0],[edge,0],[0,-edge],[0,edge],[-edge,-edge],[edge,-edge],[-edge,edge],[edge,edge]])
-      drawMfx(key,b.x+o[0],b.y+o[1],ang,readH,dark,1,null,null);
-    return drawMfx(key,b.x,b.y,ang,readH,b.tint||'#ffd21f',1,'#fff4a8','#ffd21f');
+      drawMfx(_bk,b.x+o[0],b.y+o[1],_a,readH,dark,1,null,null);
+    if(_useMagma){
+      /* the plate carries its own magma colour, so no tint - only additive re-burns on top */
+      drawMfx(_bk,b.x,b.y,_a,readH,b.tint||null,1,null,null);
+      const _prev=ctx.globalCompositeOperation;
+      ctx.globalCompositeOperation='lighter';
+      const _t2=(typeof performance!=='undefined'?performance.now():Date.now())/1000+((b._ph||0)*0.37);
+      drawMfx(_bk,b.x,b.y,_a,readH,      b.tint||null,(_S?_S.pulse:0.36)*(0.72+0.28*Math.sin(_t2*17.0)),null,null);
+      drawMfx(_bk,b.x,b.y,_a,readH*0.62, b.tint||null,(_S?_S.core :0.30)*(0.70+0.30*Math.sin(_t2*26.0)),null,null);
+      ctx.globalCompositeOperation=_prev;
+      return true;
+    }
+    return drawMfx(_bk,b.x,b.y,_a,readH,b.tint||'#ffd21f',1,'#fff4a8','#ffd21f');
   }
   if(_shade){
     /* SHADEGLOW: one static plate, re-burnt. A steady base pass, then an additive pass on its own
@@ -34768,13 +35281,14 @@ function warpFxDraw(mix,phase,full){
 function s5RunDraw(){
   if(!s5run || typeof XART==='undefined') return;
   if(s5run.armed&&!s5run.failed)warpFxDraw(.20+s5run.idx/S5R_N*.54,s5run.t,false);
-  /* The attached route is visible as one connected flight plan rather than eight unrelated
-     circles. Only on-screen segments draw, and they sit beneath the gates and aircraft. */
-  ctx.save();ctx.lineWidth=2;ctx.strokeStyle='rgba(105,228,255,.30)';ctx.setLineDash([8,8]);ctx.beginPath();let _routeStarted=false;
-  for(let i=0;i<s5run.gates.length-1;i++){const a=s5run.gates[i],z=s5run.gates[i+1];
-    if(Math.max(a.y,z.y)<-120||Math.min(a.y,z.y)>VH+120)continue;
-    if(!_routeStarted){ctx.moveTo(a.x,a.y);_routeStarted=true;}else ctx.moveTo(a.x,a.y);ctx.lineTo(z.x,z.y);}
-  ctx.stroke();ctx.restore();
+  /* ⚠ THE DASHED ROUTE CONNECTOR IS GONE (Mike, 0906): "no lines connecting to the warp gates
+     please, I dont need to travel in those lines, just travel through the gates before they
+     disappear off screen." It drew a dashed cyan polyline through every on-screen gate pair to
+     read as "one connected flight plan" - but a drawn line between gates says FOLLOW THIS PATH,
+     which is not the mechanic. The gates are the mechanic; reaching them before they leave the
+     screen is the whole game. Removed entirely rather than dimmed: a fainter rail would still be
+     an instruction. `_routeStarted` was declared and consumed only inside this block and all the
+     dash/stroke state was inside its own save/restore, so nothing leaks. */
   for(const g of s5run.gates){
     if(g.y < -96 || g.y > VH+96) continue;
     const last=(g.i===S5R_N-1);
@@ -36621,7 +37135,12 @@ function mgcfDraw(b,lv){
    options and invents the least. Flagged in the passover for his word. */
 const WLV_GLOW={1:'#ff8a1e', 2:'#3a8aff', 3:'#5fe07a', 4:'#dfe8ff',
                 5:'#ff3b30', 6:'#ffbe2a', 7:'#20242c', 8:'#a45cff'};
-const WLV_BODY={1:'#8a5a2b', 2:'#c8d2dc', 3:'white', 4:'black',
+/* ⚠ TIER 4 WAS 'black' (Mike, 0906): "Spread lvl 4 - its black instead of white, fix that."
+   The comment directly above records his own 0903 spec - "lvl 4 to white and five lasers in a
+   row" - so this table contradicted the instruction it was written from. WLV_GLOW's tier-4 halo
+   is already '#dfe8ff', the right white; only the BODY palette was wrong, which is why the round
+   read as a dark slug inside a pale halo. */
+const WLV_BODY={1:'#8a5a2b', 2:'#c8d2dc', 3:'white', 4:'white',
                 5:null,      6:'#3a8aff', 7:'#ff3b30', 8:null};
 function wlvGlow(lv){ return WLV_GLOW[clamp(lv|0||1,1,8)] || WLV_GLOW[1]; }
 /* ⚠ 'white' AND 'black' MUST NOT GO THROUGH THE HUE SWAP. xartPalette's default is a 'color'
@@ -37253,7 +37772,20 @@ function drawBullets(){
       // v2.2 LASER: per-level authored beam (carries its own color -> no tint-flattening).
       // NOTE: this is the LIVE path (w===3 fires kind:'beam'); the lzr_ art below sits on the
       // dead kind:'laser' path and never ran in gameplay.
-      const _nb='nlz_'+lv+'_b'+(((performance.now()/70)|0)%6);
+      /* ⚠ THE BEAM CUT OUT BECAUSE ONE FRAME OF SIX WAS NOT DECODED (Mike, 0905): "the bosses
+         laser keeps cutting out in the middle for some reason." The reel advances every 70ms and
+         the WHOLE draw was gated on that one frame being ready - so any frame still decoding
+         dropped the authored beam to the procedural glow below for that instant, and the beam
+         visibly flickered between two different looks while held.
+         It is the same failure shape as the ground tank on stages 5 and 9 and the white dialogue
+         frame: an rdy() miss silently handing the draw to a fallback that looks like something
+         else. Here the fix is to HOLD on a frame that IS ready rather than abandon the reel -
+         once any frame has decoded the beam stays the authored beam, and the animation resumes on
+         its own as the rest arrive. */
+      let _nb='nlz_'+lv+'_b'+(((performance.now()/70)|0)%6);
+      if(typeof XART!=='undefined' && !XART.rdy(_nb)){
+        for(let _f=0;_f<6;_f++){ const _c='nlz_'+lv+'_b'+_f; if(XART.rdy(_c)){ _nb=_c; break; } }
+      }
       let _v22beam=false;
       if(typeof XART!=='undefined' && XART.rdy(_nb)){
         _v22beam=true;
@@ -39800,7 +40332,31 @@ const HQ_AT = { pre:{1:'HQ_ALL_00', 8:'HQ_ALL_06'},
 let hqSc=null, hqLine=0, hqChars=0, hqDone=null, hqSeen={}, hqMode='ens', hqBeatT=0;
 let hqSlot={left:null, right:null}, hqSpeak='left';
 let hqRoster=[];
-const HQ_CPS=42;                                   // characters per second
+/* ⚠ 42 -> 24 CPS (Mike, 0906): "slow down transitions so we can read texts." 42 cps is roughly
+   500 words per minute of streaming text - the longest pilot-opening line measures 224 characters
+   and went past in 5.3 seconds, which is not reading time, it is a blur. At 24 the same line takes
+   9.3s and the every-third-character blip drops from 14/s to 8/s, closer to a comic panel than a
+   buzz. Both consumers scale by dt, so this is frame-rate independent. */
+const HQ_CPS=24;                                   // characters per second
+/* ⚠ A FINISHED LINE MUST STAY ON SCREEN BEFORE A TAP CAN SKIP IT (Mike, 0906): "slow down
+   transitions so we can read texts."
+
+   Neither cutscene path had a minimum display time. Nothing ran away - `Input.tap` is
+   edge-triggered and `Input.mouse.down` is cleared on use, both checked - so a HELD button
+   advances exactly one line. But this is a shmup and the fire button gets MASHED, and every
+   press past the first landed on a line the player had not read yet. At HQ_CPS 24 a
+   forty-character line takes 1.7s to type, and two quick taps disposed of it in under a
+   tenth of that.
+
+   ⚠ MEASURED FROM LINE-COMPLETE, NOT FROM BEAT-START. A lockout counted from when the beat
+   began would be satisfied by the typing itself on any long line - the exact lines that need
+   the pause most - and would only bite on short ones. Counting from the moment the last
+   character lands gives every line the same guaranteed read, long or short.
+
+   A tap during typing still completes the line instantly. That is the responsiveness players
+   actually want; what it must not do is dismiss text nobody has seen. */
+const HQ_HOLD=0.80;                                // seconds a COMPLETED line is unskippable
+let hqHoldT=0;
 
 const HQ_CORE_ROSTER=['axel','lizzie','cole','decker','falva','freezer','maverick','yuri'];
 function hqRosterFor(id){
@@ -39954,15 +40510,40 @@ function cinFx(kind,x,y,size,t,rot){
   ctx.save();ctx.translate(x,y);if(rot)ctx.rotate(rot);ctx.drawImage(im,-w/2,-size/2,w,size);ctx.restore();
 }
 function cinFormation(sc,beat,t,W,H){
+  /* ⚠ THESE BEATS WERE FLAT (0905). Mike: "fix cutscenes to use pseudo-3d graphics here."
+     The dogfight and shootdown beats got a depth pass earlier in the day - cinClose eases a
+     hostile from far to near and the sprite scales with it. The FORMATION and CRUISE beats, which
+     are most of a scene's running time, never did: every ship was pinned at a constant H*.50 /
+     H*.43 with a 5px sine bob, so two ships sat at two fixed sizes against a parallax sky and read
+     as cardboard cut-outs pasted on it.
+     Depth here is carried by three cues used together, none of which needs new art:
+       * SCALE - a slow per-ship z breathe, out of phase between the two so the pair never pulses
+         as one flat plane, plus the SPEAKER easing toward camera across the beat.
+       * VERTICAL PLACEMENT - anything further away sits nearer the horizon. z drives y, so the
+         ship that grows also drops down the frame, which is what sells it as approaching rather
+         than merely being scaled.
+       * DRAW ORDER - the nearer ship is painted LAST. Without this the far ship can overlap the
+         near one and every other cue is contradicted in one frame; it is also the cheapest of the
+         three and the easiest to forget. */
   const cast=sc.cast||[], active=beat.who, bob=Math.sin(t*2.1)*5;
+  const near=cinClose(t,beat.duration||2.4,0,1).e;          // 0..1 across the beat, smoothstepped
   if(cast.length===1){
     const p=cast[0],view=beat.motion==='barrel'?[2,6,3,1][Math.floor(t*4)%4]:(beat.view||2);
-    cinDrawShip(p,view,W*.5+Math.sin(t*.8)*W*.045,H*.46+bob,H*.53,false,1,Math.sin(t*.9)*.025);return;
+    const z=1+0.085*Math.sin(t*0.62)+0.075*near;
+    cinDrawShip(p,view,W*.5+Math.sin(t*.8)*W*.045,H*(.455+(z-1)*0.16)+bob,H*.53*z,false,1,Math.sin(t*.9)*.025);return;
   }
-  cast.slice(0,2).forEach((p,i)=>{
-    const left=i===0,x=W*(left?.36:.64),speaker=p===active,h=H*(speaker?.50:.43);
-    cinDrawShip(p,left?2:3,x+Math.sin(t*1.3+i)*9,H*(speaker?.47:.43)-bob*(i?1:-1),h,false,speaker?1:.78,left?-.018:.018);
+  const plan=cast.slice(0,2).map((p,i)=>{
+    const left=i===0, speaker=p===active;
+    /* the two breathe out of phase; the speaker also comes forward, the listener eases back */
+    const z=(speaker?1.00:0.86)*(1+0.075*Math.sin(t*0.58+i*2.1)+(speaker?0.09:-0.035)*near);
+    return {p,i,left,speaker,z,
+            x:W*(left?.36:.64)+Math.sin(t*1.3+i)*9+(left?-1:1)*W*0.018*(speaker?near:-near*0.4),
+            y:H*(.455+(z-1)*0.30)-bob*(i?1:-1),
+            h:H*0.50*z};
   });
+  plan.sort((a,b)=>a.z-b.z);                                // far first, near last
+  for(const s2 of plan)
+    cinDrawShip(s2.p, s2.left?2:3, s2.x, s2.y, s2.h, false, s2.speaker?1:.78, s2.left?-.018:.018);
 }
 function cinDrawMotion(sc,beat,t,W,H){
   const motion=beat.motion||'formation', lead=(sc.cast&&sc.cast[0])||'axel';
@@ -40051,7 +40632,19 @@ function cinDrawMotion(sc,beat,t,W,H){
 function cinDialogue(beat,budget,W,H){
   if(!beat.text || !XART.rdy('dlg_window') || typeof msgFaceBig!=='function' || !msgFaceBig())return false;
   const dx=Math.round(W*.025),dy=Math.round(H*.715),dw=Math.round(W*.95),dh=Math.round(H*.255);
-  ctx.drawImage(XART.get('dlg_window'),dx,dy,dw,dh);
+  /* ⚠ THE SPEAKER'S OWN FRAME, NOT THE BARE SILVER ONE (0905). Mike: "fix white in cutscenes on
+     our pilots ... fix white in all cutscenes." Every pilot ships a tinted `dlg_<key>` plate and
+     all nine were MEASURED READY during their own opening - yet this line asked for `dlg_window`
+     unconditionally, so the beats renderer fetched the generic silver panel 113 / 86 / 62 times
+     across Cole, Freezer and Yuri and their own frames zero times. That bare panel is the white
+     slab across the bottom of every cutscene: it measures 1.08% of the frame at full near-white,
+     concentrated in rows y 736..968.
+     drawCommWindow - every OTHER dialogue path in the game - has always passed `dlg_`+key. This
+     one renderer never did, which is why the openings look different from pilot select. `who` is
+     already the pilot key here; it is used for the name and the name colour on the next line. */
+  const _who=String(beat.who||'').toLowerCase();
+  const _dk=(_who && XART.rdy('dlg_'+_who)) ? ('dlg_'+_who) : 'dlg_window';
+  ctx.drawImage(XART.get(_dk),dx,dy,dw,dh);
   const padX=dw*.055,nameY=dy+dh*.115,nameH=Math.max(12,Math.round(H*.030));
   const name=cinPilotName(beat.who),col=dialogueNameColor(beat.who,'#dce7ff');
   msgTextLeft(name,dx+padX,nameY+nameH*.5,nameH,col,.95,1,.06,1);
@@ -40059,7 +40652,7 @@ function cinDialogue(beat,budget,W,H){
   msgDrawBlock({text:beat.text,budget:budget,x:dx+padX,y:bodyY,w:dw-padX*2,h:bodyH,
                 maxH:Math.max(13,Math.round(H*.031)),minH:8,lineMul:1.31,spacing:.055,
                 color:DIALOGUE_BODY_COLOR,tintA:1,alpha:1,outline:1});
-  if(budget>=beat.text.length && Math.floor(hqBeatT*2.2)%2){
+  if(budget>=beat.text.length && hqHoldT>=HQ_HOLD && Math.floor(hqBeatT*2.2)%2){
     const ph=Math.max(10,Math.round(H*.024)),pw=msgMeasure('NEXT',ph,.07);
     msgTextLeft('NEXT',dx+dw-padX-pw,dy+dh*.865,ph,'#ffe082',.92,1,.07,1);
   }
@@ -40070,20 +40663,20 @@ function hqPlayPilot(pilot, onDone){
   const sc=(typeof PILOT_OPENINGS!=='undefined')?PILOT_OPENINGS[pilot]:null;
   if(!sc){ if(onDone)onDone(); return false; }
   hqMode='beats';
-  hqSc=sc; hqLine=0; hqChars=0; hqBeatT=0; hqDone=onDone||null; hqSeen['OPEN_'+pilot]=1;
+  hqSc=sc; hqLine=0; hqChars=0; hqBeatT=0; hqDone=onDone||null; hqSeen['OPEN_'+pilot]=1; hqHoldT=0;
   cinWarm(sc);
   try{ if(typeof Audio!=='undefined' && Audio.startMusic) Audio.startMusic('cinematics'); }catch(_m){}
   setState(GS.CUTSCENE); return true;
 }
 function hqAdvance(){
-  hqLine++; hqChars=0; hqBeatT=0;
+  hqLine++; hqChars=0; hqBeatT=0; hqHoldT=0;
   if(!hqSc||hqLine>=hqSc.beats.length){ hqEnd(); return false; }
   return true;
 }
 function hqPlay(id, onDone){
   const sc=hqScene(id); if(!sc){ if(onDone) onDone(); return false; }
   hqMode='ens';
-  hqSc=sc; hqLine=0; hqChars=0; hqBeatT=0; hqDone=onDone||null;
+  hqSc=sc; hqLine=0; hqChars=0; hqBeatT=0; hqDone=onDone||null; hqHoldT=0;
   hqRoster=hqRosterFor(id);
   hqSlot={left:null,right:null}; hqSpeak='right';  // so line 0 seats left
   hqSeat(0);
@@ -40284,8 +40877,11 @@ function drawCutsceneBeats(dt){
     if(fa>0){ctx.fillStyle='rgba(0,0,0,'+fa.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
     if(hqBeatT>=dur){hqAdvance();return;}
   }
+  if(text){ if(hqChars>=n) hqHoldT+=dt; else hqHoldT=0; }
   if(hqBeatT>.18&&(Input.mouse.down||anyTap())){
-    if(text&&hqChars<n)hqChars=n; else hqAdvance(); Input.mouse.down=false; return;
+    if(text&&hqChars<n){ hqChars=n; hqHoldT=0; }
+    else if(!text||hqHoldT>=HQ_HOLD){ hqAdvance(); }
+    Input.mouse.down=false; return;
   }
   if(typeof Input.menuBack==='function'&&Input.menuBack()){hqEnd();return;}
 }
@@ -40348,7 +40944,7 @@ function drawCutsceneEnsemble(dt){
   }
 
   /* the advance prompt, inside the dialogue frame, blinking only once the line has finished */
-  if(hqChars>=n && Math.floor(stateT*2.2)%2){
+  if(hqChars>=n && hqHoldT>=HQ_HOLD && Math.floor(stateT*2.2)%2){
     const _cw=cutsceneViewWidth(),s=Math.min(_cw/640, VH/480), oy=(VH-480*s)/2, ox=(_cw-640*s)/2;
     const _df=(typeof msgFaceUse==='function' && msgFaceUse('dialogue')==='dialogue');
     if(_df && typeof msgTextLeft==='function'){
@@ -40361,12 +40957,15 @@ function drawCutsceneEnsemble(dt){
     }
   }
 
+  /* Counted HERE, below the `if(!shown) return` art gate, so a slow decode does not spend the
+     player's reading time before the line is even visible. */
+  if(hqChars>=n) hqHoldT+=dt; else hqHoldT=0;
   if(stateT>0.15 && (Input.mouse.down || anyTap())){
-    if(hqChars<n){ hqChars=n; }                    // first tap completes the line
-    else {
+    if(hqChars<n){ hqChars=n; hqHoldT=0; }         // first tap completes the line
+    else if(hqHoldT>=HQ_HOLD){
       hqLine++;
       if(hqLine>=hqSc.lines.length){ hqEnd(); return; }
-      hqChars=0; hqSeat(hqLine);
+      hqChars=0; hqHoldT=0; hqSeat(hqLine);
     }
     Input.mouse.down=false;
   }
@@ -41045,25 +41644,34 @@ function wfxUpdate(dt){
         const want=Math.min(3, 1+Math.floor(F.t/FIRE_ALERT_STEP));
         if(want>F.shown){
           F.shown=want;
-          if(Audio.SFX.flagPlant) Audio.SFX.flagPlant();
-          /* lockAlert removed 0819d */
+          /* ⚠ THE ALERT BELONGS TO THE FLASHES (Mike, 0905): "the alert noise playing when the
+             firewave is coming at us should be the alert noise each time it flashes, not when it
+             comes at us." It was exactly inverted - each warning flash played `flagPlant`, a
+             flag-plant stinger, while the ALERT fired later, on the wave's arrival, where it had
+             nothing left to warn about. The alert now marks each of the three flashes, which is
+             what makes them a countdown instead of decoration. */
+          if(Audio.SFX.dangerAlert) Audio.SFX.dangerAlert();
         }
         if(F.t >= FIRE_ALERT_STEP*3 + FIRE_ALERT_HOLD){ F.ph='waves'; F.t=0; }
       } else if(F.ph==='waves'){
         if(!F.wave && F.fired<3){
           F.wave={x:F.lanes[F.fired], y:-140, t:0, sc:0.9};
           F.fired++;
-          /* These two used to land on the SAME FRAME — a full-level flame burst and an alert
-             stinger summing into one peak, which is the other half of what Mike is hearing on the
-             firewave. Alert first, flame a beat behind it, so they read as two events. */
-          if(Audio.SFX.dangerAlert) Audio.SFX.dangerAlert();
-          /* ⚠ flame_wall.wav IS THIS CUE (drop 0822s) — the wave crossing the caldera is what Mike
-             authored it for. It had been playing 'firewall' = nsp_solar_flare.mp3, a generic flare
-             whoosh, while its own sample sat on the flamethrower. The 150ms offset from the alert
-             stays: 0730a put it there so the stinger and the flame read as two events. */
+          /* ⚠ NO ALERT HERE ANY MORE (0905) - it moved up to the flashes, above. What is left on
+             arrival is the flame itself, which is the event. The 0730a note about keeping the
+             stinger and the flame as two events is satisfied by the flashes now carrying the
+             stinger, three times, before anything arrives. */
+          /* ⚠ THE FLAMETHROWER SAMPLE IS THE WALL'S NOW (Mike, 0905): "use flamethrower for the
+             actual flamewall sounds." This reverses 0822s, which had moved flame_wall.wav ONTO
+             this cue and left the flamethrower bed elsewhere - reversed in the open, on newer
+             instruction from the same person, rather than quietly. flameThrowerStart is the
+             ignition transient and is the right shape for a wall arriving; flamewall stays as the
+             fallback so a missing sample still makes a noise. The 150ms offset is kept: it is
+             what separates the arriving wall from the last warning flash. */
           setTimeout(()=>{ try{
             const blocked=(typeof bossActive!=='undefined'&&bossActive)||(typeof warnKind!=='undefined'&&warnKind==='boss');
-            if(!blocked&&Audio.SFX&&(Audio.SFX.flamewall||Audio.SFX.firewall))(Audio.SFX.flamewall||Audio.SFX.firewall)();
+            const S=Audio&&Audio.SFX;
+            if(!blocked&&S)(S.flameThrowerStart||S.flamewall||S.firewall||function(){})();
           }catch(_){} }, 150);
           shake=Math.max(shake,6);
         }
@@ -46535,6 +47143,25 @@ function _mechOrder(K){
 
    The other four entries match the measurement and are unchanged. Mirror IoU between pv0 and
    flipped pv4 is 0.88-0.97 across all nine, confirming the pairs are genuine opposites. */
+/* ⚠ LIZZIE WAS ADDED HERE ON 0906 AND IT WAS WRONG. RETRACTED THE SAME DAY - DO NOT RE-ADD.
+   A recon pass reported her pv0/pv1 as nose-RIGHT (+0.024/+0.048) and her pv3/pv4 as nose-LEFT
+   (-0.117/-0.113), i.e. authored mirrored like the four pilots above. Re-measured straight off
+   assets/game/atlas/bof_player_ships_barrel_rolls.png with the nose-vs-body metric this note's
+   own survey uses, all nine pilots in one pass, and the -0.11x pair belongs to pv0/pv1, not to
+   pv3/pv4 - the frames had been transposed. Her real numbers:
+
+       lizzie   pv0 -0.113  pv1 -0.112  pv3 +0.073  pv4 +0.060
+
+   which is the SAME SIGN PATTERN as cole/falva/juggernaut/maverick, so she is authored normally
+   and belongs OUT of this table. The metric is trustworthy because it reproduces all four
+   existing entries before it touches the disputed one: axel/decker/freezer/yuri come back
+   +0.14..+0.28 on pv0/pv1 (backwards, flagged) and the other five -0.11..-0.35 (correct, not
+   flagged). The 0903y survey below independently measured her at -.061 on pv0 - weak, but the
+   same sign, and the sign is the whole question.
+
+   ⚠ AND COLE IS CORRECTLY ABSENT even though the 0801dj note above lists him among "FIVE
+   PILOTS" with a +7.66. That figure is a principal-axis ANGLE, a different quantity; his nose
+   measures -0.271 on pv0, firmly in the not-flipped group. Four entries is right. */
 const SHIP_BANK_FLIP={axel:1, decker:1, freezer:1, yuri:1};
 /* ============================================================
    THE TWIST REEL HAS ITS OWN HANDEDNESS, AND IT IS NOT THE LEAN'S (drop 0903y)
@@ -46559,6 +47186,15 @@ const SHIP_BANK_FLIP={axel:1, decker:1, freezer:1, yuri:1};
        cole        -.232   +.238     -.047   +.047        pv4              br6
        falva       -.273   +.267     -.005   +.005        pv4              br6
        lizzie      -.061   -.036     -.013   +.013        (weak)           br6
+                   ^^^^^^^^^^^^ ⚠ STALE, corrected 0906. Every other pilot's pv0 and pv4
+                   carry OPPOSITE signs - they are the same hull banked each way - and this
+                   row has them both negative, which is the tell that one of the two was
+                   misread. Re-measured: pv0 -0.113, pv4 +0.060. The verdict does not move
+                   (pv0 is still negative, so she is still authored normally and still out
+                   of SHIP_BANK_FLIP) but the numbers are no longer 'weak' - they are an
+                   ordinary, if shallow, opposing pair. A 0906 recon read this row's
+                   near-zero figures as licence to re-derive her from scratch and got the
+                   frames transposed; see the retraction note at SHIP_BANK_FLIP.
 
    The lean column reproduces SHIP_BANK_FLIP exactly, so that table is right and is untouched.
    The twist column disagrees with it for THREE pilots - freezer, yuri and juggernaut - and those
@@ -46569,7 +47205,7 @@ const SHIP_BANK_FLIP={axel:1, decker:1, freezer:1, yuri:1};
    symmetric at the lean, so the sign there is not meaningful. She is left out of the lean table,
    as she already was, and her twist reads cleanly (br6 right) so she is out of this one too.
    ============================================================ */
-const SHIP_TWIST_FLIP={axel:1, decker:1, juggernaut:1};
+const SHIP_TWIST_FLIP={axel:1, decker:1, juggernaut:1};   /* lizzie was added 0906 and retracted the same day - her br2/br6 measure -0.009/+0.009, a symmetric plate with no handedness to flip; see the bank note above */
 /* THE TORSO PLATE ALREADY CONTAINS THE HEAD (drop 0801dy). Mike: "dont use the
    head piece, use the body piece with the head attached."
 
@@ -47315,10 +47951,10 @@ function pcDraw(rect){
     const P=PILOTS.find?PILOTS.find(x=>x.key===p):null;
     if(P && isPilotLocked(P) && XART.rdy('pcard_locked')){
       const im=XART.get('pcard_locked');
-      const sc=Math.min(VW/im.naturalWidth, (VH*0.78)/im.naturalHeight);
+      const sc=Math.min(VW/im.naturalWidth, (VH*0.955)/im.naturalHeight);
       const cw=im.naturalWidth*sc, ch=im.naturalHeight*sc;
       ctx.save();
-      ctx.drawImage(im, VW/2-cw/2, VH*0.10, cw, ch);
+      ctx.drawImage(im, VW/2-cw/2, VH*0.028, cw, ch);
       ctx.restore();
       return true;
     }
@@ -47329,8 +47965,18 @@ function pcDraw(rect){
   if(rect){ cx=rect[0]; cy=rect[1]; cw=rect[2]; ch=rect[3]; }
   else {
     const im=XART.get(ck);
-    const sc=Math.min(VW/im.naturalWidth,(VH*0.78)/im.naturalHeight);
-    cw=im.naturalWidth*sc; ch=im.naturalHeight*sc; cx=VW/2-cw/2; cy=VH*0.10;
+    /* ⚠ FILL THE COLUMN (0905). Mike: "make the pilot select screen full screen sized, not
+       640x480, I cant even read the text." The card was fitted to VH*0.78 with the top edge at
+       VH*0.10, so a fifth of the available height went to margin and every line inside - role,
+       bio, the three stat bars, the ability name - scales off the card, not the screen.
+       ⚠ THE WIDE CUTSCENE VIEWPORT IS THE WRONG TOOL HERE, AND WAS TRIED FIRST. The debrief and
+       the cutscenes are LANDSCAPE, so a browser-aspect viewport makes them bigger. This card is
+       PORTRAIT: widening the viewport cannot grow a height-limited card, it only adds black bars
+       either side - and the screen's own background fill still only covered the old 480 column,
+       so the right half of the window came out black. Measured before reverting it.
+       What actually helps a portrait card is giving it the height it already had room for. */
+    const sc=Math.min(VW/im.naturalWidth,(VH*0.955)/im.naturalHeight);
+    cw=im.naturalWidth*sc; ch=im.naturalHeight*sc; cx=VW/2-cw/2; cy=VH*0.028;
   }
   ctx.save();
   /* THE RIGHT WINDOW, LAID OUT PROPERLY (drop 0801ae). Mike: "your supposed to be lining all this
@@ -47532,7 +48178,16 @@ function pcDraw(rect){
          column MINUS the emblem it has to sit beside. */
       const _gap = ch*0.014;
       const _lx  = bx + _iconW + _gap;
-      const _aw=Math.max(ch*0.10, (bx + bwAt((ty-cy)/ch) - ch*0.05) - _lx);
+      /* ⚠ STOP BEFORE THE AFFILIATION SOCKET (0905). Mike: "fix overlaying to not hit that box."
+         The budget was the column width, which knows nothing about the emblem box occupying the
+         card's lower-right corner - so a short name like MEGA SHIELD fits and a long one like
+         Freezer's TIME FREEZE * THERMOSHOCK runs straight into it. The right edge is now the
+         nearer of the column edge and the socket's left bevel, so the name shrinks to fit rather
+         than overlapping. pcFontFit already handles the shrink; it was being given the wrong
+         width to shrink into. */
+      const _sockL = cx + cw*0.8750 - ch*0.020;
+      const _rEdge = Math.min(bx + bwAt((ty-cy)/ch) - ch*0.05, _sockL);
+      const _aw=Math.max(ch*0.10, _rEdge - _lx);
       const _ah=pcFontFit(String(C.sp.name||''),_aw,ch*0.030,ch*0.019);
       pcFontCenter(C.sp.name,_lx+_aw/2,iy+isz*0.50,_ah,pcol,e);
     }
@@ -47559,8 +48214,16 @@ function pcDraw(rect){
 
        These are the interior, read off the grid render, with the pad below keeping the mark off
        the bevel itself. */
-    const sx0=cx+cw*0.8670, sx1=cx+cw*0.9450;
-    const sy0=cy+ch*0.7760, sy1=cy+ch*0.8990;
+    /* ⚠ RE-MEASURED OFF THE RENDERED CARD, 0905. Mike: "center avatar icons in screen."
+       The 0807d pass measured this socket on the 1448x1086 art file and moved it IN to
+       0.867..0.945 / 0.776..0.899. Measured instead on what the game actually draws - capture the
+       pilot card, find the socket's bevel interior, find the emblem's ink - the interior is
+       x 0.875..0.975, y 0.757..0.949 of the card. The old rect is both NARROWER and SHORTER than
+       the real box and sits up and to the left of it, which is exactly how the emblem read: small,
+       high, and hugging the left bevel with dead space under it. 0807d over-corrected an earlier
+       overshoot; these numbers come from the pixels, not from the source plate. */
+    const sx0=cx+cw*0.8750, sx1=cx+cw*0.9750;
+    const sy0=cy+ch*0.7570, sy1=cy+ch*0.9480;
     /* FIT THE INK, NOT THE CANVAS (drop 0801ba). Mike: the affiliation signs
        "arent centered or filling in the box right".
 
@@ -51195,7 +51858,13 @@ function drawCommWindow(o){
   const t=o.tint||'#8ad0ff', c=hx(t), ap=clamp(o.appear==null?1:o.appear,0,1);
   ctx.save();
   ctx.globalAlpha=0.66*ap; ctx.fillStyle='#030407'; ctx.fillRect(0,0,VW,VH); ctx.globalAlpha=1;
-  const _fk=(o.frameKey&&XART.rdy(o.frameKey))?o.frameKey:'dlg_window';
+  /* ⚠ COLE'S BACKUP PLATE IS THE RETIRED DEBRIEF CARD (0905). Mike, taking `statpanel_cf` off
+     the stat screen: "store it as a backup graphic for cole's dialogue window instead." So the
+     fallback order for Cole is his own dlg_cole, then that plate, then the generic dlg_window
+     every other pilot falls back to. The art stays registered at X._src['statpanel_cf'] purely
+     to serve this - nothing else draws it any more. */
+  let _fk=(o.frameKey&&XART.rdy(o.frameKey))?o.frameKey:'dlg_window';
+  if(_fk==='dlg_window' && o.frameKey==='dlg_cole' && XART.rdy('statpanel_cf')) _fk='statpanel_cf';
   const _dedicated=_fk!=='dlg_window' && XART.rdy(_fk);
   const pw=Math.min(VW-24,446);
   const ph=_dedicated ? Math.round(pw*(XART.get(_fk).naturalHeight/XART.get(_fk).naturalWidth)) : Math.round(pw*0.52);
@@ -53880,11 +54549,18 @@ function drawLaunch(dt){
       drawLaunch._spd=Math.min(_spdCap*1.35, drawLaunch._spd+900*dt);
     }
   } else if(ph==='brake'){
-    drawLaunch._pt+=dt; const p=clamp(drawLaunch._pt/2.0,0,1); drawLaunch._spd=lerp(1750,0,_ease(p));
+    /* ⚠ STAGE 5 BRAKES TO A CRUISE, NOT TO ZERO (Mike, 0906): "DO NOT STOP SCROLLING THE level
+       or speed." Every other stage eases 1750 -> 0 over 2s and then sits still until `settle`
+       picks the crawl back up, which on a starfield is a dead stop in open space right before
+       the conversion. Stage 6 dodges this by skipping brake entirely; stage 5 cannot, because
+       the gravity build IS the settle/gravity beat. So it eases to STAGE5_SPACE_CRUISE instead
+       and holds it through every remaining phase - one speed from here into PLAY, no stop. */
+    drawLaunch._pt+=dt; const p=clamp(drawLaunch._pt/2.0,0,1);
+    drawLaunch._spd=lerp(1750,(run.stage===5?STAGE5_SPACE_CRUISE:0),_ease(p));
     drawLaunch._dist+=drawLaunch._spd*dt;                          /* level keeps scrolling in smoothly while braking */
     if(drawLaunch._pt>=2.0){ drawLaunch._phase='settle'; drawLaunch._pt=0; }
   } else if(ph==='settle'){
-    drawLaunch._pt+=dt; drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;
+    drawLaunch._pt+=dt; drawLaunch._spd=(run.stage===5?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0 ? Math.min(_rng,mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt)
                      : mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt;
@@ -53902,7 +54578,7 @@ function drawLaunch(dt){
     /* Gravity Mode is a stage-transition beat, not a gameplay freeze.  The completed level
        background keeps creeping beneath it, then GET READY begins only after the somersault has
        resolved into the active craft.  No player-controlled frame exists between those states. */
-    drawLaunch._pt+=dt; drawLaunch._spd=LAUNCH_COUNTDOWN_SCROLL;
+    drawLaunch._pt+=dt; drawLaunch._spd=(run.stage===5?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0 ? Math.min(_rng,mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt)
                      : mapScroll+LAUNCH_COUNTDOWN_SCROLL*dt;
@@ -53918,7 +54594,7 @@ function drawLaunch(dt){
        still decoding. A slow load meant the high-speed sky dropped to a 24px/s crawl, waited,
        and then sped back up for the numerals. On a warm machine you never see it; on a cold one
        it is the whole transition. */
-    drawLaunch._spd=_s6?STAGE6_SKY_CRUISE:LAUNCH_COUNTDOWN_SCROLL;
+    drawLaunch._spd=_s6?STAGE6_SKY_CRUISE:(run.stage===5?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0?Math.min(_rng,mapScroll+drawLaunch._spd*dt):mapScroll+drawLaunch._spd*dt;
     if(typeof stageLoadReady!=='function'||stageLoadReady(run.stage)){drawLaunch._phase='cd';drawLaunch._pt=0;}
@@ -53927,7 +54603,7 @@ function drawLaunch(dt){
        looked like the game had stalled. Consume a small, real slice of the level while counting;
        finishLaunch preserves mapScroll, so PLAY continues from this exact frame at 40px/s. */
     drawLaunch._pt+=dt;
-    drawLaunch._spd=_s6?Math.max(STAGE6_SKY_CRUISE,(drawLaunch._spd||STAGE6_SKY_CRUISE)-700*dt):LAUNCH_COUNTDOWN_SCROLL;
+    drawLaunch._spd=_s6?Math.max(STAGE6_SKY_CRUISE,(drawLaunch._spd||STAGE6_SKY_CRUISE)-700*dt):(run.stage===5?STAGE5_SPACE_CRUISE:LAUNCH_COUNTDOWN_SCROLL);
     const _rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
     mapScroll=_rng>0 ? Math.min(_rng, mapScroll+drawLaunch._spd*dt)
                      : mapScroll+drawLaunch._spd*dt;
@@ -54118,6 +54794,9 @@ function drawLaunch(dt){
 }
 function finishLaunch(){ drawLaunch._eng=false; drawLaunch._thr=false;
   if(run&&run.stage===6) _stage6SkyScroll=drawLaunch._bgScroll||_stage6SkyScroll||0;
+  /* Same handoff for stage 5: without it the starfield restarts from 0 at GO and the whole
+     field jumps on the handoff frame - the seam this file has fixed three times already. */
+  if(run&&run.stage===5) _stage5SpaceScroll=drawLaunch._bgScroll||_stage5SpaceScroll||0;
   if(drawLaunch._warpAudio){drawLaunch._warpAudio=false;try{if(Audio.warpAmbienceStop)Audio.warpAmbienceStop();if(Audio.setWarpMix)Audio.setWarpMix(0);}catch(_flw){}}
   if(!drawLaunch._mus) Audio.startMusic((curStage&&curStage.music)||'stage'); drawLaunch._mus=false;
   setState(GS.PLAY);
@@ -56447,9 +57126,29 @@ const SC_SLOTS = {
 /* the plate's fitted rect on screen, and a bay resolved inside it */
 function scPanelRect(){
   const AW=1448, AH=1086;                       // the authored aspect, kept whatever the plate ships at
-  const k=Math.min(VW/AW, VH/AH);
+  /* ⚠ FIT TO THE CINEMATIC WIDTH, NOT VW (0905). Mike: "the whole screen should go full screen for
+     the stat screen". The debrief now takes the browser-aspect viewport the HQ cutscenes already
+     use, so the usable width is cutsceneViewWidth(), not the 480 gameplay column. Measured at
+     1280x720: fitting to VW gave 480x360 - full width but letterboxed, because a 4:3 plate in a
+     15:16 column is WIDTH-limited. Against the wide viewport it becomes HEIGHT-limited and lands
+     at roughly 682x512, more than double the area, which is what makes the type readable. The
+     plate is still CONTAIN-fitted: stretching it would distort the corner brackets and the LED
+     clusters, which is the whole reason it was letterboxed in the first place. */
+  /* ⚠ THE BAYS FOLLOW THE FRAME THAT IS ACTUALLY DRAWN (0905). Since the concept plate was
+     retired the panel on screen is the 9-sliced `statscreen`, whose rect drawStageClear publishes
+     as _rect. Its USABLE INTERIOR was measured by scanning outward from the centre until the
+     bright bevel: x 0.046..0.951, y 0.086..0.907. Laying the bays out against the old
+     CONTAIN-fitted 4:3 plate rect instead would float them over the new frame's moulding, which
+     is the defect the 0807n note describes from the other direction. */
+  const _fr=(typeof drawStageClear!=='undefined') && drawStageClear._rect;
+  if(_fr){
+    const IL=0.046, IR=0.951, IT=0.086, IB=0.907;
+    return [_fr[0]+_fr[2]*IL, _fr[1]+_fr[3]*IT, _fr[2]*(IR-IL), _fr[3]*(IB-IT)];
+  }
+  const W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW;
+  const k=Math.min(W/AW, VH/AH);
   const w=AW*k, h=AH*k;
-  return [(VW-w)/2, (VH-h)/2, w, h];
+  return [(W-w)/2, (VH-h)/2, w, h];
 }
 function scBay(R,f){ return [R[0]+f[0]*R[2], R[1]+f[1]*R[3], f[2]*R[2], f[3]*R[3]]; }
 function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
@@ -56459,10 +57158,13 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
   const ph2=P[3];                               // type scales off the PLATE, not the viewport
 
   /* ---- the plate ---- */
-  if(XART.rdy('statpanel_cf')){
+  /* ⚠ RETIRED, 0905. The 9-sliced `statscreen` frame is drawn by drawStageClear BEFORE this
+     runs, so painting the concept plate here would put one panel inside another - which is most
+     of what was wrong with the first cut of this screen. The bay layout below is kept; only the
+     plate under it is gone. */
+  if(false){
     const slide=1-Math.pow(1-Math.min(1,t/0.32),3);
     ctx.save(); ctx.globalAlpha=slide; ctx.imageSmoothingEnabled=false;
-    ctx.drawImage(XART.get('statpanel_cf'), P[0], P[1]-(1-slide)*30, P[2], P[3]);
     ctx.restore();
   }
   if(t<0.18){ return [P[0], P[2]]; }
@@ -56653,7 +57355,7 @@ function drawStageClear(dt){
   const F=(px)=>'bold '+Math.max(8,Math.round(px))+'px "BOFmil", monospace';
 
   /* ---- backdrop: the level you just cleared, dimmed, so the screen belongs to the stage ---- */
-  ctx.fillStyle='#05070c'; ctx.fillRect(0,0,VW,VH);
+  ctx.fillStyle='#05070c'; ctx.fillRect(0,0,(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW,VH);
   if(typeof drawBootBackdrop==='function'){ try{ ctx.save(); ctx.globalAlpha=0.20; drawBootBackdrop(dt); ctx.restore(); }catch(e){} }
 
   /* ---- the panel, fitted, and every coordinate below is relative to it ---- */
@@ -56678,13 +57380,20 @@ function drawStageClear(dt){
 
      One subtlety worth keeping: the corners are scaled by the SMALLER of the two axis ratios, so
      a tall window does not give you tall corner brackets on a wide frame. ============================================================ */
-  let px=VW*0.020, py=VH*0.026, pw=VW*0.960, ph=VH*0.950;
+  const _scW=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW;
+  let px=_scW*0.020, py=VH*0.026, pw=_scW*0.960, ph=VH*0.950;
   /* ⚠ THE 9-SLICED `statscreen` IS CO-OP'S FRAME NOW (drop 0904ad). The solo screen is Mike's own
      authored plate, which carries its own frame AND every bay - drawing this behind it would put
      his panel inside a second, different frame, which is most of what was wrong with the first
      cut. Co-op still has no plate of its own, so it keeps this one. */
-  const _soloPlate = !(R.seats) && XART.rdy('statpanel_cf');
-  if(!_soloPlate && XART.rdy('statscreen')){
+  /* ⚠ THE CONCEPT PLATE IS RETIRED FROM THIS SCREEN (0905). Mike: "delete that card, were not
+     using it anymore ... use this one in screenshot 2 but full sized." `statpanel_cf` was the
+     solo debrief's own authored plate and this flag chose it over the 9-sliced `statscreen`
+     frame. Both carry the SAME six-slot layout - title bar, pilot bay, brief, six stat slots,
+     score row, sign-off - which is why the SC_SLOTS fractions map onto either one. The art is
+     NOT deleted: it stays registered at X._src['statpanel_cf'] as the backup plate for Cole's
+     dialogue window, per the same instruction. */
+  if(XART.rdy('statscreen')){
     const im=XART.get('statscreen');
     const IW=im.naturalWidth, IH=im.naturalHeight;
     const ML=264/1496, MR=270/1496, MT=171/980, MB=171/980;      // measured margins
@@ -57302,7 +58011,17 @@ if(window.BOFA && BOFA.sfx){
     spaceLaserCannon:'assets/game/sounds/reviewed_laser_cannon.wav',
     spaceLaserHit:'assets/game/sounds/shield_hit_light.wav',
     spaceShadowCharge:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
-    spaceShadowRelease:'assets/game/sounds/reviewed_shadow_orb_launch.wav',
+    /* ⚠ THE LAUNCH CUE WAS THE OTHER HALF OF THE DELAY (Mike, 0906): "in space, the shadow orb,
+       you can heard the sound clearly delayed for impact." 0903q cut the IMPACT and the note below
+       already recorded that the launch sample "does not reach -12 dB until 928 ms" - it was
+       measured, written down, and then not acted on. Re-measured 0906 over the whole envelope:
+       reviewed_shadow_orb_launch.wav runs 2.250 s and PEAKS AT 1.805 s, reaching -6 dB only at
+       1.170 s. There is a thin transient at 20 ms, which is why it never read as silent - it read
+       as the sound arriving a beat after the button. Cut 60 ms ahead of the -6 dB crossing (the
+       same rule 0903q used on the impact), 4 ms fade-in, peak-normalised to -1 dBFS: 1.140 s long,
+       -6 dB at 60 ms, -3 dB at 135 ms. The original file is untouched; swap this line back and
+       nothing else moves. */
+    spaceShadowRelease:'assets/game/sounds/reviewed_shadow_orb_launch_fast.wav',
     /* THE ORB'S IMPACT HAD A 454 ms SWELL (drop 0903q). spaceImpact() fires this cue on the frame of
        contact - the delay Mike heard was in the sample: explosion_plasma.wav peaks at 454 ms, under a
        reviewed launch cue that does not reach -12 dB until 928 ms. reviewed_shadow_orb_impact.wav is
@@ -57438,18 +58157,26 @@ const Snd=(function(){
     lzStack: {g:0.72, lp:6200},
     machineGun:          {g:0.48, min:0.045},
     heavyMachineGun:     {g:0.58, min:0.050},
-    enemyMachineGunLight:{g:0.22, lp:5400, min:0.10},
-    enemyMachineGunHeavy:{g:0.30, lp:5200, min:0.11},
-    enemyMachineGunBurst:{g:0.26, lp:5000, min:0.55},
+    /* ⚠ ENEMY FIRE WAS MIXED OUT OF EXISTENCE (Mike, 0905): "I have no sounds for enemies firing
+       at me, including bosses." It was never a missing sample or a missing call - enemyShotSfx is
+       wired at the eShoot chokepoint and every one of these functions exists. They were simply
+       TAMED to inaudibility: enemyShoot sat at g 0.20 and the pulse lasers at 0.22-0.24 while the
+       player's own laser runs g 0.95 with a 2.1x boost, roughly EIGHT TIMES louder - so every
+       enemy round was playing underneath the player's own gun. The lowpass corners came up with
+       the gains; at 4800-5600 Hz these were not just quiet but muffled, which is the other half
+       of why they never registered as "a shot was fired at me". */
+    enemyMachineGunLight:{g:0.52, lp:7000, min:0.10},
+    enemyMachineGunHeavy:{g:0.58, lp:6800, min:0.11},
+    enemyMachineGunBurst:{g:0.54, lp:6600, min:0.55},
     dkBuck:               {g:1.00, boost:1.20, lp:6800, min:0.42},
     dkShell:              {g:0.48, lp:7200, min:0.28},
     dkReload:             {g:0.95, boost:1.15, lp:6800, min:0.45},
-    enemyShoot:          {g:0.20, lp:4800, min:0.12},
-    enemyPulseLaserBlue: {g:0.24, lp:5600, min:0.14},
-    enemyPulseLaserRed:  {g:0.24, lp:5600, min:0.14},
-    enemyPulseLaserAlien:{g:0.22, lp:5200, min:0.16},
-    enemyHeavyLaser:     {g:0.72, native:true, min:0.22},
-    enemyScatterLaser:   {g:0.24, lp:5200, min:0.20},
+    enemyShoot:          {g:0.52, lp:7000, min:0.12},
+    enemyPulseLaserBlue: {g:0.56, lp:7000, min:0.14},
+    enemyPulseLaserRed:  {g:0.56, lp:7000, min:0.14},
+    enemyPulseLaserAlien:{g:0.54, lp:6800, min:0.16},
+    enemyHeavyLaser:     {g:0.78, native:true, min:0.22},
+    enemyScatterLaser:   {g:0.56, lp:6800, min:0.20},
     enemyFlameBolt:      {g:0.66, native:true, min:0.14},
     enemyIceBolt:        {g:0.66, native:true, min:0.14},
     enemyElectricBolt:   {g:0.66, native:true, min:0.14},
@@ -57464,12 +58191,14 @@ const Snd=(function(){
     /* Held weapons are foreground voices. The reviewed laser body measures roughly -21 dBFS;
        the former 0.42 gain buried it another 7.5 dB beneath full-stage music. `boost` happens
        after filtering, while `g` remains the safe HTML-media fallback when WebAudio is absent. */
-    laserBeamStart:      {g:0.95, boost:2.10, lp:6800},
+    /* ⚠ 2.1x BOOST ON TOP OF g 0.95 IS WHAT EVERYTHING ELSE WAS COMPETING WITH (0905). Pulled to
+       a foreground level rather than a dominating one, so enemy fire and music can sit under it. */
+    laserBeamStart:      {g:0.86, boost:1.35, lp:6800},
     /* Same local/file-build failure mode as the flamethrower: a claimed media element can report
        currentTime while its suspended/tainted WebAudio graph emits silence. This approved sample
        is already mastered; keep the held body on native HTML audio so it is actually audible. */
-    laserBeamLoop:       {g:1.00, native:true},
-    laserBeamEnd:        {g:0.90, boost:2.00, lp:6800},
+    laserBeamLoop:       {g:0.86, native:true},
+    laserBeamEnd:        {g:0.82, boost:1.30, lp:6800},
     laserBeamHit:        {g:0.70, boost:1.30, lp:6200, min:0.09},
     /* Keep the flamethrower on native HTML-media output. In local/file builds a
        MediaElementAudioSourceNode can successfully report `playing` while its security-tainted

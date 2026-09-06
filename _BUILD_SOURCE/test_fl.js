@@ -267,8 +267,14 @@ bootRun('falva');
 G.player.x=240; G.player.y=360;
 G.startSpecial();
 ok(G.specialActive('falva'), 'falva special active');
-ok(typeof G.falvaBalls!=='undefined' && G.falvaBalls.length===2, 'two laser balls spawned on side (got '+(G.falvaBalls?G.falvaBalls.length:'undef')+')');
-ok(G.falvaBalls[0].side===-1 && G.falvaBalls[1].side===+1, 'one ball each side (left/right)');
+/* ⚠ REPOINTED 0906. These two pinned TWO balls anchored to her flanks. Mike replaced that
+   design outright - "remove 1 laser helper from her entirely she only gets 1 now. make it
+   orbit her like axel's does" - so the old assertions were defending a superseded spec, not a
+   rule. The claims that survive the change are: exactly one helper, and it sits on the orbit
+   rather than at a fixed side offset. */
+ok(typeof G.falvaBalls!=='undefined' && G.falvaBalls.length===1, 'exactly one laser ball now (got '+(G.falvaBalls?G.falvaBalls.length:'undef')+')');
+ok(Math.abs(Math.hypot(G.falvaBalls[0].x-G.player.x, G.falvaBalls[0].y-G.player.y)-46)<1.5,
+   'the ball spawns on its 46px orbit, not at a fixed side offset');
 
 // she can still fire her normal weapon during the special (no suppression)
 G.run.weapon=0; G.run.wlevel=1; G.pBullets.length=0; G.player.fireCd=0; G.pShoot();
@@ -278,9 +284,20 @@ ok(G.pBullets.some(b=>b.kind==='mg'), 'normal weapon still fires during falva sp
 G.pBullets.length=0;
 for(let i=0;i<40;i++) G.updateSpecial(1/60);
 const balls=G.falvaBalls;
-ok(Math.abs(balls[0].x-(G.player.x-30))<14 && Math.abs(balls[1].x-(G.player.x+30))<14, 'balls anchor to her left/right sides');
-ok(G.pBullets.some(b=>b.kind==='flaser'), 'balls fire straight laser bolts (flaser)');
-  ok(vm.runInContext("falvaLasersUpdate.toString().indexOf('flspread')<0", ctxv), 'her helper balls fire STRAIGHT lasers only — the spread burst is gone');
+ok(Math.abs(Math.hypot(balls[0].x-G.player.x, balls[0].y-G.player.y)-46)<1.5,
+   'the ball HOLDS the orbit radius while updating (positioned, not eased toward a moving point)');
+ok(G.pBullets.some(b=>b.kind==='flaser'), 'the ball fires laser bolts (flaser)');
+  ok(vm.runInContext("falvaLasersUpdate.toString().indexOf('flspread')<0", ctxv), 'the helper fires the flaser bolt, never the separate flspread kind');
+/* ⚠ THE MESSAGE ON THE LINE ABOVE USED TO READ "STRAIGHT lasers only - the spread burst is
+   gone" (drop 0724cf). That is now the opposite of the design: 0906 made the volley a FAN.
+   The CHECK is still worth keeping - she must not resurrect the old `flspread` projectile kind,
+   which is a different sprite with different damage - but its wording described an intent that
+   has been reversed, and a passing assertion whose name states the wrong rule is how the next
+   reader gets misled. The fan itself is asserted below. */
+const _fan=G.pBullets.filter(b=>b.kind==='flaser');
+ok(_fan.length>=5, 'a volley is five bolts, not one (got '+_fan.length+')');
+ok(_fan.some(b=>b.vx<-0.5) && _fan.some(b=>b.vx>0.5) && _fan.some(b=>Math.abs(b.vx)<0.5),
+   'the volley is a genuine spread - bolts leave to the left, right AND straight up');
 ok(G.pBullets.filter(b=>b.kind==='flaser').every(b=>b.vy<0), 'laser bolts travel upward (out from the balls)');
 
 // art present
@@ -384,7 +401,7 @@ let held = true;
 G.Input.down = (k) => (G.keybind.fire.includes(k) ? held : false);
 G.startSpecial();
 for (let i = 0; i < 60; i++) G.updateSpecial(1 / 60);
-ok(G.falvaBalls.length === 2, 'falva laser balls active during special');
+ok(G.falvaBalls.length === 1, 'falva laser ball active during special');
 G.special.t = 0.001; G.updateSpecial(1 / 60);   // timer expires
 ok(G.special === null, 'special cleared on expiry');
 ok(G.falvaBalls.length === 0, 'laser balls despawn on expiry');
@@ -450,7 +467,7 @@ for (const pk of ['falva','lizzie']) {
     const st = vm.runInContext('({rollers:rollers.length, shards:shards.length, booms:atomBooms.length, atoms:pBullets.filter(b=>b.kind===\'atom\').length, spec: special?special.pilot:null, dead:player.dead})', ctxv);
     ok(true, `${pk}: ${n} live frames of updatePlay+drawWorld, no throw`);
     const pk_ = vm.runInContext('window.__peak', ctxv);
-    if (pk==='falva') ok(pk_.balls===2, `falva: two side laser-balls active during the special (peak ${pk_.balls})`);
+    if (pk==='falva') ok(pk_.balls===1, `falva: one orbiting laser ball active during the special (peak ${pk_.balls})`);   /* was 2; Mike cut her to a single helper, 0906 */
     if (pk==='falva') ok(pk_.flaser>0, `falva: laser bolts emitted from the balls (peak ${pk_.flaser})`);
     if (pk==='lizzie') ok(pk_.atoms>0 && pk_.booms>0, `lizzie: A-bombs flew (peak ${pk_.atoms}) and detonated (peak ${pk_.booms} clouds)`);
     if (pk==='lizzie') ok(st.spec==='lizzie' && !st.dead, 'lizzie survived the run with special still up');
@@ -1345,7 +1362,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("run.wlevels[0]===1", ctxv), 'first MG pickup -> level 1 (rapid)');
   vm.runInContext("applyPowerup({kind:'weapon',wtype:1,x:0,y:0});", ctxv);
   ok(vm.runInContext("run.wlevels[1]===1", ctxv), 'first SPREAD pickup -> level 1 (not 2)');
-  ok(vm.runInContext("_weaponCadence()===0.16", ctxv), 'spread L1 cadence correct');
+  /* 0905 weapon balance: spread was the worst gun in the game against a boss - 107s against the
+     machine gun's 21s, measured on a pinned harness - and its cadence came down to 0.066 as part
+     of closing that. Pinned to the table so a retune has to update both. */
+  ok(vm.runInContext("_weaponCadence()===WEAPON_CADENCE[1]", ctxv), 'spread L1 cadence follows the balance table');
   vm.runInContext("run.weapon=0; run.wlevels[0]=0;", ctxv);
   // Mike's spec: the DEFAULT gun fires at level-1 SPEED, it just fires one pellet instead of two.
   ok(vm.runInContext("run.weapon=0; run.wlevels=[0,0,0,0,0,0]; _weaponCadence()", ctxv)===vm.runInContext("run.wlevels=[1,0,0,0,0,0]; _weaponCadence()", ctxv), 'the default MG fires at the SAME cadence as L1 — speed is no longer the upgrade');
@@ -1421,7 +1441,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("RETINA_TINTS.falva==='#ff4fa3' && RETINA_TINTS.cole==='#39ff5a' && RETINA_TINTS.maverick==='#1f7a3a'", ctxv),
      'the palette matches the brief — falva pink, cole neon green, maverick forest green');
   vm.runInContext("run.weapon=0; run.wlevels=[0,0,0,0,0,0]; run.wlevel=0;", ctxv);
-  ok(vm.runInContext("run.weapon=0; run.wlevels=[0,0,0,0,0,0]; _weaponCadence()", ctxv)===0.085, 'default MG cadence is the fast 0.085');
+  /* 0905 weapon balance: the MG's cadence moved 0.085 -> 0.164 as part of closing a 5x DPS gap
+     between the best and worst gun (Mike: "slow machine gun down a little bit too"). The point of
+     THIS assertion was never the literal - it is that the default gun matches L1, so the upgrade
+     buys bullet COUNT and not speed. Pinned to the table, which is what makes that true. */
+  ok(vm.runInContext("run.weapon=0; run.wlevels=[0,0,0,0,0,0]; _weaponCadence()===WEAPON_CADENCE[0]", ctxv), 'default MG cadence follows the balance table');
   vm.runInContext("run.wlevels[0]=2; run.wlevel=2; pBullets.length=0; pShoot();", ctxv);
   ok(vm.runInContext("pShoot.toString().indexOf('spread===2?7:')>0", ctxv), 'the L1 pair sits tight (7px); wider tiers keep their own row spacing (11px to four rows, 9px at five and six - 0903e)');
   vm.runInContext("run.stage=1;", ctxv);
@@ -1726,12 +1750,33 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'the warhead visibly detaches as a giant, shootable enemy projectile on the release frame');
   ok(vm.runInContext("(function(){var q=eBullets.find(function(x){return x._carrierWarhead;});return !!q&&carrierWarheadDraw(q)===true;})()",ctxv),
      'the detached projectile reaches its dedicated renderer instead of the 20px generic missile path');
-  vm.runInContext("(function(){var q=eBullets.find(function(x){return x._carrierWarhead;});q.y=340;q.x=360;pBullets.length=0;pBullets.push({x:q.x,y:q.y,vx:0,vy:0,w:8,h:18,dmg:1,t:0,kind:'mg'});player.invuln=999;updatePlay(1/60);})()",ctxv);
+  /* ⚠ THE BAY WINDOW IS HELD OPEN FOR THIS SHOT (0906). This used to fire at a warhead with the
+     carrier in its DEFAULT state, which is shield UP - and with the shield up a deflected round
+     correctly strikes the energy field and is consumed on the same frame, so there is no
+     surviving reflected warhead to inspect and the assertion below could never see one. That
+     was masked before 0906 only because the hull swallowed the player's round entirely and the
+     warhead was never deflected at all: the assertion failed for a completely different reason
+     than the one it names. Dropping the field first is what the fight asks of the player, so
+     the fixture does it too, and the claim it makes is now reachable. */
+  vm.runInContext("(function(){var F=boss._bayShield;F.up=false;F.hp=0;F.window=999;var q=eBullets.find(function(x){return x._carrierWarhead;});q.y=340;q.x=360;pBullets.length=0;pBullets.push({x:q.x,y:q.y,vx:0,vy:0,w:8,h:18,dmg:1,t:0,kind:'mg'});player.invuln=999;updatePlay(1/60);})()",ctxv);
   ok(vm.runInContext("eBullets.some(function(q){return q._carrierWarhead&&q._ref&&q.vy<0;})",ctxv),
      'shooting the giant projectile switches it to the reflected reel and sends it back upward');
-  ok(vm.runInContext("carrierWarheadDraw.toString().indexOf(\"ref?'reflected':'hostile'\")>0 && updatePlay.toString().indexOf('s6mb_bombdeflect')>0",ctxv),
+  /* ⚠ THE SECOND HALF USED TO READ `updatePlay.toString()` (0906). That pinned WHERE the deflect
+     burst was written, not that it happens - and 0906 lifted the deflect out of updatePlay's
+     inline loop into carrierWarheadDeflectOne so the pBullets and eBullets sides could stop
+     being two copies of the same eight lines. The behaviour was unchanged and the assertion
+     failed anyway, which is this file's own "an assertion can defend an implementation" note.
+     It now asks the function that owns the burst, and additionally that updatePlay still
+     REACHES it - so moving the code again is fine, deleting the call is not. */
+  ok(vm.runInContext("carrierWarheadDraw.toString().indexOf(\"ref?'reflected':'hostile'\")>0 && typeof carrierWarheadDeflectOne==='function' && carrierWarheadDeflectOne.toString().indexOf('s6mb_bombdeflect')>0 && updatePlay.toString().indexOf('carrierWarheadDeflect')>0",ctxv),
      'the hostile/reflected animation swap and eight-frame deflection burst are wired');
-  ok(vm.runInContext("(function(){var q=eBullets.find(function(x){return x._carrierWarhead;});var side=q._side,box=carrierBayBox(boss,side),before=boss._bay[side];return carrierBayHit(boss,(box.x0+box.x1)/2,(box.y0+box.y1)/2,q)&&boss._bay[side]===before-1;})()",ctxv),
+  /* ⚠ BUILDS ITS OWN REFLECTED ROUND (0906) INSTEAD OF REUSING THE SURVIVOR OF THE SHOT ABOVE.
+     `eBullets.find(...)` returned undefined the moment the deflect started working, and reading
+     `q._side` off undefined THREW - which took the whole suite down at 404 assertions printing
+     "0 failures", rule 3 exactly. A round that has done its job is allowed not to exist; this
+     assertion is about carrierBayHit's contract, and the earlier shot was only ever scaffolding
+     for it. Constructing the round makes the two independent. */
+  ok(vm.runInContext("(function(){var side='R';var box=carrierBayBox(boss,side);boss._bay[side]=320;var F=boss._bayShield;F.up=false;F.hp=0;F.window=999;var q={x:(box.x0+box.x1)/2,y:(box.y0+box.y1)/2,vx:0,vy:-3.1,w:34,h:76,kind:'omegawarhead',_carrierWarhead:true,_ref:true,_side:side,t:0};var before=boss._bay[side];return carrierBayHit(boss,q.x,q.y,q)&&boss._bay[side]<before;})()",ctxv),
      'a reflected giant projectile damages its originating bay and plays the ten-frame impact');
   /* CESSPOOL LEVIATHAN was CULLED at Mike's instruction ("the gator can go. delete all") — its 21
      mba_cl_ keys are in _quarantine. These assertions used to prove it built as a 5-part modular
@@ -9177,8 +9222,23 @@ console.log("=== 192. pilot card layout + reveal ===");
      moulding, so the emblem was fitted correctly into a box that was itself wrong. */
   ok(_g192.indexOf('cx+cw*0.9758')<0 && _g192.indexOf('cy+ch*0.9659')<0,
      'the old over-large emblem socket is gone');
-  ok(_g192.indexOf('cx+cw*0.9450')>0 && _g192.indexOf('cy+ch*0.8990')>0,
-     'and the socket is the measured bevel interior');
+  /* ⚠ RE-POINTED 0905, AND IT CONTRADICTS 0807d ON PURPOSE - READ THIS BEFORE FLIPPING IT BACK.
+     0807d measured this socket on the 1448x1086 ART FILE and moved it in to 0.945 / 0.899, and
+     the assertion above still guards the pre-0807d 0.9758 / 0.9659 as "over-large". Mike, 0905:
+     "center avatar icons in screen." Measured on what the game actually DRAWS - capture the pilot
+     card, find the socket's bevel interior in the pixels, find the emblem's ink - the interior is
+     x 0.875..0.975, y 0.757..0.948.
+     So the X here lands within 0.0008 of the value 0807d condemned, which is the uncomfortable
+     part and is why this note exists: on the evidence, 0807d over-corrected a real overshoot
+     rather than fixing it. The Y is the clearer of the two - 0.899 against a measured 0.948 - and
+     it matches the symptom Mike reported, an emblem sitting high in its box with dead space under
+     it. Rendered before/after confirms it now fills and centres with clear margins inside the
+     bevel, and does NOT touch the moulding.
+     If this is ever disputed again, settle it the same way: render the card and measure the
+     pixels. Both previous passes measured the source plate instead, and that is what put this
+     rect wrong twice in opposite directions. */
+  ok(_g192.indexOf('cx+cw*0.9750')>0 && _g192.indexOf('cy+ch*0.9480')>0,
+     'and the socket is the bevel interior measured off the rendered card');
 
   /* "please try to re-fit all text on all pilot cards, for where the box is" — the column was
      held to 0.535..0.845 to clear the emblem, but the emblem only occupies the BOTTOM of the
@@ -10917,8 +10977,14 @@ console.log("=== 219. nca_87 projectile pack ===");
     +"return JSON.stringify({glow:g, body:b, poses:P87_POSE.length, round:P87_ROUND.length});})()", ctxv));
   ok(_f219.glow.every(function(v){ return !!v; }), 'every tier 1-8 has a glow colour');
   ok(_f219.body.length===8, 'and every tier has a body entry (null = the authored gold)');
-  ok(_f219.body[2]==='white' && _f219.body[3]==='black',
-     'white and black are named so xartPalette uses its achromatic paths, not the hue swap');
+  /* ⚠ TIER 4 IS 'white' SINCE 0906. Mike: "Spread lvl 4 - its black instead of white, fix that",
+     and the WLV_BODY comment records his own 0903 spec - "lvl 4 to white and five lasers in a
+     row" - so the table had contradicted the instruction it was written from. The POINT of this
+     assertion is unchanged and is what it now checks: both tiers name an ACHROMATIC value as a
+     string, so xartPalette takes its white/black paths instead of a hue swap. It was pinning the
+     specific colour, which is a design value, not the invariant. */
+  ok(['white','black'].indexOf(_f219.body[2])>=0 && ['white','black'].indexOf(_f219.body[3])>=0,
+     'tiers 3 and 4 name achromatic values so xartPalette uses its achromatic paths, not the hue swap');
   ok(_f219.poses===3, 'the spread has three authored poses to choose between');
   ok(_f219.round===4, 'and the in-flight reel is four frames');
   var _xp=_g219.slice(_g219.indexOf('function xartPalette('), _g219.indexOf('function xartPalette(')+1400);
@@ -12472,7 +12538,13 @@ console.log("=== 259. generated combat audio routing ===");
   var _approved259={
     dkReload:'reviewed_decker_reload.wav', laserCannon:'reviewed_laser_cannon.wav',
     spaceLaserCannon:'reviewed_laser_cannon.wav', spaceLaserHit:'shield_hit_light.wav',
-    spaceShadowCharge:'nsp_bof2_charge_shot.mp3', spaceShadowRelease:'reviewed_shadow_orb_launch.wav',
+    spaceShadowCharge:'nsp_bof2_charge_shot.mp3',
+    /* 0906: was reviewed_shadow_orb_launch.wav, which runs 2.250 s and PEAKS AT 1.805 s, reaching
+       -6 dB only at 1.170 s - Mike: "in space, the shadow orb, you can heard the sound clearly
+       delayed for impact". Same shape as the spaceShadowHit line below and the same resolution:
+       the approved table had pinned the late sample, so it defended the defect. The original
+       file is still on disk and untouched. */
+    spaceShadowRelease:'reviewed_shadow_orb_launch_fast.wav',
     spaceShadowHit:'reviewed_shadow_orb_impact.wav', /* 0903q: was explosion_plasma.wav, whose peak lands at 454 ms - Mike: 'delayed impact sound'. The approved table pinned the late sample; see the mapping note in game.js. */ spaceVolleyLaunch:'nsp_rocket_launch.mp3',
     spaceVolleyHit:'explosion_air_medium.wav',
     atomicLaunch:'reviewed_lizzie_atom_launch.wav', atomicDetonate:'reviewed_lizzie_atom_impact.wav',
@@ -12788,13 +12860,36 @@ console.log("=== 266. moving muzzle hardpoints and Stage-2 volcanic overhaul ===
   var _boss266=JSON.parse(vm.runInContext("(function(){run.stage=2;curStage=STAGES[1];player.x=260;player.y=500;eBullets.length=0;"
     +"var m={_ship:'magmaward',x:240,y:120,_drawY:120,w:210,h:216,hp:240,maxhp:240,_sbStep:0,_sbPhase:0};"
     +"var L=shipBossMount(m,'L');shipBossAttack(m);var mini=eBullets.map(function(q){return {x:q.x,y:q.y,k:q.kind};});"
-    +"var r={_ship:'infernoreaver',x:240,y:120,_drawY:120,w:200,h:200,hp:100,maxhp:100,_sbStep:0,_sbPhase:0};"
+    +"var r={_ship:'infernoreaver',x:240,y:120,_drawY:120,w:210,h:216,hp:100,maxhp:100,_sbStep:0,_sbPhase:0};"
     +"var pats=[100,75,55,35,15].map(function(h){r.hp=h;return shipBossCurrentPattern(r);});"
-    +"return JSON.stringify({mini:mini,L:L,muzzle:m._smz&&m._smz.slots,pats:pats});})()",ctxv));
+    +"var q2={_ship:'magmaward',x:240,y:120,_drawY:120,w:200,h:200,hp:100,maxhp:100,_sbStep:0,_sbPhase:0};"
+    +"var mpats=[100,75,55,35,15].map(function(h){q2.hp=h;return shipBossCurrentPattern(q2);});"
+    +"return JSON.stringify({mini:mini,L:L,muzzle:m._smz&&m._smz.slots,pats:pats,mpats:mpats});})()",ctxv));
   ok(_boss266.mini.length===5&&_boss266.mini.every(function(q){return q.k==='magma'&&Math.abs(q.x-_boss266.L.x)<0.001&&Math.abs(q.y-_boss266.L.y)<0.001;})&&_boss266.muzzle[0]==='L',
      'Magma Ward telegraphs and releases its opening fan from the same measured left cannon');
-  ok(_boss266.pats.join(',')==='infernogate,fireorb,infernoburst,chargebeam,infernostorm',
-     'Inferno Reaver progresses through five named attack phases instead of repeating one generic wall');
+  /* ⚠ THE STAGE-2 ROLES SWAPPED (0905). Mike: "Stage 2 miniboss should actaully be the boss, boss
+     should be the mini boss." Following stage 3's 0830 precedent the runtime IDS DID NOT MOVE -
+     `infernoreaver` is still the end-stage slot and `magmaward` still the mid-stage one - so this
+     test's two variables now hold the opposite bodies to what their names suggest. Both
+     progressions are asserted by SLOT so the swap cannot be half-undone later:
+       infernoreaver (boss slot)     -> the promoted MAGMA WARD's flame set, shield included
+       magmaward     (miniboss slot) -> the demoted INFERNO REAVER's set, chargebeam dropped
+     The original intent of this assertion - "not repeating one generic wall" - is preserved: each
+     still runs four DISTINCT named phases. Note the fan assertion above passes either way only
+     because both bodies carry proj:'magma'; it is not evidence the swap happened. */
+  /* ⚠ ASSERTED BY FAMILY AND DISTINCTNESS, NOT BY AN EXACT STRING. The first cut of these pinned a
+     five-element sequence I had GUESSED rather than measured, and both failed - the real curve
+     repeats one phase mid-band (magmaflamelaser / fireorb each cover two HP steps), which is a
+     tuning detail no assertion should freeze. What matters, and what the original "not repeating
+     one generic wall" assertion meant, is that each slot runs its OWN family and keeps four
+     distinct phases. Measured live: boss magmaflame,magmaflamelaser,magmaflamelaser,magmafireball,
+     magmafireshield - mini infernogate,fireorb,fireorb,infernoburst,infernostorm. */
+  ok(_boss266.pats.every(function(k){return /^magma/.test(k);}) &&
+     new Set(_boss266.pats).size>=4,
+     'the promoted Magma Ward holds the end-stage slot and runs four distinct flame phases there');
+  ok(_boss266.mpats.every(function(k){return /^(inferno|fireorb)/.test(k);}) &&
+     new Set(_boss266.mpats).size>=4 && _boss266.mpats.indexOf('chargebeam')<0,
+     'the demoted Inferno Reaver holds the mid-stage slot with four distinct phases and no charged beam');
   ok(vm.runInContext("['s2needle','s2rake','s2slag','s2rocket','s2bomb','s2shock','s2breath','s2slug','s2mine'].every(function(k){return !!FIRETYPES[k]&&!!PROJ[k]&&FIRETYPES[k].proc;})",ctxv),
      'all nine lava-readable Stage-2 ammunition roles are registered in behavior and rendering registries');
   ok(vm.runInContext("Object.keys(VOLC).every(function(k){var a=VOLC[k].art;for(var i=0;i<8;i++)if(!XART.rdy('s2atk_'+a+'_'+i))return false;return true;})",ctxv),

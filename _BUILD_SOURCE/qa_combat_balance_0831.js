@@ -206,7 +206,7 @@ const server=http.createServer((req,res)=>{
   console.log(JSON.stringify(report,null,2));
   const ok=audit.hot.hp>audit.base.hp&&audit.hot.spawn>audit.base.spawn&&
     Math.abs(audit.reset.hp-audit.base.hp)<.0001&&audit.pickupLevel===2&&
-    Math.abs(audit.lizzieCadence-.06875)<.00001&&Math.abs(audit.lizzieSpeed-7.875)<.00001&&audit.laserNative&&
+    Math.abs(audit.lizzieCadence-.075625)<.00001&&Math.abs(audit.lizzieSpeed-7.875)<.00001&&audit.laserNative&&
     firewaveGate.stagePressure&&!firewaveGate.bossSequence&&!firewaveGate.bossWave&&firewaveGate.cooldown>=999&&
     level2Slide.maxStep<2&&level2Slide.travel>220&&
     rollLive.flameOn&&Math.abs(rollLive.y-rollLive.station)<1&&

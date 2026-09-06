@@ -446,3 +446,109 @@ explosion, grey smoke over the hull and **20,930 reel lookups**. `navalFlash`, w
 other impacts already use, gives the same reel at **1,650** — 12.7x lighter and it reads as a spark.
 ⚠ **`carrierPlayerHit` RETURNS AT THE SHIELD BRANCH WHILE THE SHIELD IS UP**, so a probe that does
 not drop `_bayShield.up` never reaches this code and measures zero.
+
+---
+
+## 0905 PLAYTEST LIST (Mike's, from the four recordings + screenshots)
+
+Mike's own items, in his order. Done ones keep their evidence so nobody re-opens them.
+
+- [x] **Stage card shows a grey line.** `#hud-div`, a 7px `rgb(42,45,51)` seam, measured live at
+  `[351,94,560,7]`. It is a deliberate divider between the score strip and the play area; on the
+  card the strip beside it is empty black so only the line reads. Hidden on `GS.INTRO` only.
+- [x] **Stat screen full size.** `GS.STAGECLEAR` now takes the browser-aspect viewport the HQ
+  cutscenes use. Canvas 560x597 -> 1280x720, panel 480x360 -> 874x486.
+- [x] **Retire the concept card**; it is Cole's dialogue-window backup plate now
+  (`dlg_cole` -> `statpanel_cf` -> `dlg_window`).
+- [x] **Centre the avatar icons.** The affiliation socket was measured on the ART FILE in 0807d and
+  moved in to 0.867..0.945 / 0.776..0.899. Measured on what the game actually DRAWS, the bevel
+  interior is **x 0.875..0.975, y 0.757..0.949** - the old rect is narrower, shorter, and up-left
+  of the real box, which is exactly how the emblem read.
+- [x] **Ability name must not hit that box.** Its width budget was the column, which knows nothing
+  about the socket in the lower-right corner - so MEGA SHIELD fits and TIME FREEZE * THERMOSHOCK
+  does not. Right edge is now the nearer of the column edge and the socket bevel.
+- [ ] **The blue red-chevron debrief panel** Mike pointed at is NOT in the current art set. The
+  debrief draws `statscreen` (a GREEN steel frame, cell of `ui_menu_0.png`, repacked 0903k) and the
+  retired plate is the GREEN glow one. Either the screenshot predates the repack or the art was
+  never imported. **Needs the file, or a decision to keep `statscreen`.**
+- [ ] **White on the pilots in cutscenes**, and white in all cutscenes.
+- [ ] **Cutscenes should use pseudo-3D graphics.**
+- [ ] **Faster enemy projectiles, and Raiden II-style AI.**
+
+## What the recordings show (gathered 0905, for the same list)
+
+- ⚠ **THE STAGE-4 MINIBOSS RUNS FOUR MINUTES.** In `2026-09-05 18-31-16.mp4` the Olive Warden is on
+  screen from t=7s to t=263s, lives draining x3 -> x0, ending in a CONTINUE at t=222s. Its declared
+  hp is 1180. This is the single biggest pacing defect in the footage and it is not on Mike's list
+  because he was busy dying to it.
+- ⚠ **A huge pale-white cloud sits on screen for ~50 seconds** in `18-28-40.mp4`, t=71s..t=121s,
+  covering a third of the play area. Almost certainly the same "white" complaint as the cutscenes.
+- **Raiden II** (`16-45-53.mp4`, 6.5 minutes of reference Mike recorded deliberately): its bullets
+  are SMALL, FAST and CONTINUOUS - every popcorn enemy and ground turret holds an aimed stream, so
+  the screen is always threatening. Ours fire slow bursts with long gaps between them. It also
+  keeps armed ground installations in the terrain constantly rather than in discrete waves. That
+  is the concrete content of "faster enemy projectiles and AI like that plus some".
+- The game renders in a narrow column with large black margins at 1280x720: `fit()` reserves
+  `min(vw*0.34, 420)` for the credit rails and caps height at `vh*0.94`, so at that size the scale
+  is HEIGHT-limited to 1.17. Worth knowing before tuning any HUD or card layout against a
+  screenshot.
+
+---
+
+# 0906 — the overnight run. What closed, and what is still owed.
+
+Mike's standing approval: *"You have a large large large list, you have my full approval to make a
+run through all these fixes."* Full writeup and the eight traps: `docs/PASSOVER_0906.md`.
+
+## Closed this run
+
+- [x] **Ship turning is reversed** — the gravity-mode path (stages 5 and 9) had the atlas side
+      letter inverted, which short-circuits the per-pilot flip system and so was wrong for **all
+      nine pilots**. ⚠ The per-pilot half was a FALSE ALARM: a `lizzie` flip had been added on a
+      recon that transposed her frame pairs, and it is retracted. She was correct as shipped.
+- [x] **Stage-4 miniboss: no attack frames** — `_animKey` retired, per Mike's direct instruction.
+- [x] **Stage-4 miniboss: dual MG spread turrets** — both barrels every beat instead of alternating
+      singles, and the heavy wall now fires from the two turrets instead of the nose. Round count
+      and rounds-per-second held nearly flat (+7%), so this is a re-aim, not a difficulty change.
+- [x] **Stage-4 boss: helpers no longer scroll with the screen** — world lanes at 212/468 instead of
+      `camX+72`. ⚠ The spacing had to shrink from 408px to 256px: a world-fixed helper outside
+      `[W-VW, VW]` goes off screen at one end of the pan and becomes unkillable.
+- [x] **Stage-4 boss: chainguns rotate 360°** — the helper reel was a glow flicker (silhouette IoU
+      0.937–0.995). The real rotating gatling `s4w_final_chaingun_*` existed, was warmed, and was
+      drawn by nothing.
+- [x] **Stage-4 boss: bigger bullets** — helper, burst, final gun and all three lightning volleys.
+- [x] **Stage-4 boss: different shield-hit sound** — ⚠ a pick between two existing samples, not a
+      judgement; I cannot hear either. Say the word and it changes.
+- [x] **The stage-4 boss no longer tilts** — a 60° roll, zeroed at source.
+- [x] **Stage 5 never stops scrolling** — three separate causes (boss hold, the plate-end cap on a
+      LOOPING master, and the launch brake reaching a standstill). Verified in real Chromium, and
+      the probe was proved able to fail before it was believed.
+- [x] **Stage-6 boss "horribly broken"** — measured: the carrier's 640x320 hit box swallowed every
+      shot aimed at a warhead above y≈390, and the bays are immune to ordinary fire, so the boss's
+      only vulnerability was unreachable. A second layer underneath it ate deflected warheads that
+      were inside the shield aura but below the bays.
+- [x] **Falva: one helper, orbiting, firing spread lasers.** ⚠ The 45° frames asked for are not
+      needed — the renderer already rotates the bolt to its velocity, so baking them would quantise
+      the fan to three directions.
+- [x] **Cinematics: slow down so the text can be read** — a completed line is unskippable for 0.80s,
+      measured from line-COMPLETE rather than beat-start.
+- [x] **Shadow orb sound delayed** — the launch cue peaked at 1.805s of a 2.250s file; re-cut.
+
+## Still owed — nothing started
+
+- [ ] **The three-state attack-range cone for every boss** (green 25% idle / yellow prep / red
+      imminent, hazard sign separate and flashing). Needs SpriteCook art. Recon: current arrows at
+      game.js 14614–14626 (`nwarn_lane`), no shared indicator exists, stage-7's danger columns are
+      painted GREEN against the vocabulary, and there is a dead `bossTelegraph` duplicate at 29362.
+- [ ] **Stage-4 boss: pixel glow on the energy sections, attack warnings, and blue lightning more
+      often once the shield is down.** The lightning rounds are enlarged; the FREQUENCY is not
+      changed.
+- [ ] **Stage-6 raptor** — face vertically, scale down, 16-bit; may need re-generation.
+- [ ] **Purple halos on stages 5 and 6**, and the procedural polygon hulls ("MS-paint triangles")
+      in `shipBossDraw`.
+- [ ] **Entrance size snap** — `playShipPose` returns ≈73–82.5px while PLAY blits at
+      `SHIP_DRAW_H = 60`: a ~21% pop on GO, 27% for Yuri. Stages 5/9 have a separate 76.1→48 drop.
+- [ ] **Cinematics, the creative half** — comic panel treatment, enemy snapshots, SpriteCook
+      dialogue windows, the two approved cutscene modes, and new dialogue content. ⚠ The dialogue
+      needs Mike's voice; bring a draft, do not invent plot.
+- [ ] **Faster enemy projectiles / Raiden II AI** — still the largest single item on the list.

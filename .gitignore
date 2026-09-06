@@ -11,3 +11,11 @@ _shots/
 
 # art backups written by the one-off conversion scripts
 *.bak
+
+# dated art backups from the one-off conversion scripts (*.bak already covers the plain form)
+*.bak-*
+
+# video frame dumps from extract_playtest_frames_*.py — 147 MB for one session's recordings,
+# and regenerable from Mike's own captures. The contact SHEETS are the useful output; the
+# per-frame PNGs are not worth the repo.
+docs/playtest_*/

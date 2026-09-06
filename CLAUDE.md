@@ -331,6 +331,72 @@ have meant skipping item 2 as dead code. **Check the caller, not the paragraph.*
 two airbursts were unconditional from t=0 and centred on the hostiles, so the enemies Juggernaut
 rams were never once visible. Nothing errored; the beat just looked like two explosions and a hull.
 
+## 0906 — six traps, and the one that made a boss unwinnable
+
+⚠ **A BOSS'S HIT RECTANGLE CAN SWALLOW THE SHOT ITS OWN FIGHT DEPENDS ON.** This is the whole of
+Mike's *"stage 6 boss - completely broken. Horribly broken."* The Doomsday Carrier's hit box is
+**640x320 on a 680-wide world** — full width, top three quarters of the screen — and the
+player-bullet loop collides with the BOSS about 200 lines before it reaches the omegawarhead
+deflect. Measured, sweeping one warhead down the screen and firing a single round at it: deflection
+was impossible at y 300/320/340/360/380 and worked only at 400/420. Above y≈390 the round was eaten
+by the hull and, because Mike's own rule makes the bays immune to ordinary fire, did **nothing** —
+`hitBoss` ran and HP did not move (7408 → 7408). Deflecting a warhead is the ONLY way to damage a
+bay, so the fight was compressed into a ~50px band just above the player's own ship.
+⚠ **AND THERE WAS A SECOND LAYER UNDERNEATH IT.** With the shield down, `carrierBayHit` consumed any
+reflected round inside the shield ELLIPSE but not on a bay — and the ellipse (`rx=w*.57, ry=h*.69`,
+reaching y≈386) is far bigger than the bay boxes (y 63..268). So even a successful deflect died for
+nothing in the 118px band between them. Both fixed; `carrierBayHit` has exactly ONE caller, which is
+what made the second fix safe to reason about.
+⚠ **FOUND BY TRAPPING THE WRITE, AFTER THREE WRONG GUESSES** (the `_shootable` block above it, the
+omega-bomb art not being registered, the bays' own hit test — all plausible, all wrong). A
+`defineProperty` setter on `pb.dead` recording `new Error().stack` named `game.js:27874` in one run.
+
+⚠ **AN 8-FRAME REEL IS NOT NECESSARILY AN ANIMATION OF WHAT ITS NAME SAYS.** Mike: *"chainguns on
+helpers need to rotate 360 degrees to appear spinning."* `s4w_helper_dual_00..07` has
+consecutive-frame silhouette IoU of **0.937–0.995** — one plate with a glow flicker, barrels dead
+still in all eight. No cadence change could ever have fixed it. `s4w_final_chaingun_00..07` **is** a
+real rotating gatling (min IoU 0.800), registered and warmed since the pack landed and **drawn by
+nothing**. Rule 1's sibling: render the reel and measure frame-to-frame difference before believing
+a family animates.
+⚠ **AND ROTATING THE OBVIOUS THING WOULD HAVE BEEN WRONG** — the `dual` plate's barrels hang BELOW
+its housing, so a true 360° turn points them at the sky for half the revolution while rounds still
+leave downward, and it would have destroyed the 45° aim tell 0903r built at Mike's request.
+⚠ **PLACE A SPRITE FROM THE PLATE, NOT FROM THE FIRING OFFSETS.** `stage4CoreTurretTip`'s
+`(±36, +51)` is where ROUNDS leave; the drawn barrels measure at plate x-offset **±39**, **18 wide**,
+muzzle on row **128** — and the fire point at row 131 is three rows *below the art*, so it cannot
+place a sprite at all.
+
+⚠ **A RECON'S NUMBERS CAN BE THE RIGHT MAGNITUDE ON THE WRONG FRAMES.** A `lizzie:1` addition to
+`SHIP_BANK_FLIP` rested on a measurement that had her `pv0/pv1` pair reported as `pv3/pv4`. Re-measured
+all nine pilots in one pass: the metric **reproduces all four existing entries** before touching the
+disputed one (axel/decker/freezer/yuri +0.14…+0.28 on pv0/pv1, the other five −0.11…−0.35), and
+lizzie belongs with the unflipped group. Retracted. **A metric that has not reproduced the
+known-correct cases is not evidence about the unknown one.** Cole is likewise correctly absent even
+though 0801dj's prose lists him among "FIVE PILOTS" — that +7.66 is a principal-axis ANGLE, a
+different quantity.
+
+⚠ **A COMMENT CAN DESCRIBE A CHANGE THE CODE NEVER RECEIVED.** `stage4WarfareWall` carried a nine-line
+note saying the wall "FIRES MACHINE-GUN ROUNDS NOW" while the code still passed `'spread'` — and the
+note had the two role names backwards on top of it. **And eight bare-LF lines had crept into this
+CRLF file** (13824–13831, from the same edit), which defeats exact-match editing and shows as a
+spurious diff. Audit line endings after any scripted edit, not just `node --check`.
+
+⚠ **`spawnBoss(kind)` TAKES AN ARGUMENT.** Bare, it builds the generic hull with `kind: undefined`,
+`name: ''` and no rig — which reads exactly like "this boss has no helpers". Same family as the
+`spawnSubBoss__inner` note above.
+
+⚠ **A PROBE THAT HAS ONLY EVER BEEN GREEN IS NOT EVIDENCE.** `probe_s5_scroll_0906.py` passed on the
+fixed build, so `STAGE5_SPACE_CRUISE` was temporarily set to 0 and it was re-run: **39/39 stalled
+samples**, then restored. It also carries stage 6 in-run as a known-good control.
+
+⚠ **AN APPROVED-MAPPING TABLE DEFENDS THE SAMPLE, NOT THE REQUIREMENT.** test_fl's `_approved259`
+sound ledger pinned `reviewed_shadow_orb_launch.wav` — the sample whose peak lands at **1.805 s** of
+a 2.250 s file, which is Mike's "delayed" complaint. 0903q hit the identical thing on the
+neighbouring line. Update the ledger with the reason; do not treat the failure as a regression.
+
+⚠ **SUITE OUTPUT IS BLOCK-BUFFERED WHEN REDIRECTED**, so the last few `ok` lines are LOST when the run
+throws. Do not infer from "the last printed assertion" where a crash happened — read the stack.
+
 ## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
 
 **Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download
@@ -915,7 +981,11 @@ bosses/minibosses, level-7 purple halos, wrong level-5 map region, background sq
 stage-8 chain lightning). The stage-6 "door/side sky overlay" he ordered deleted was **not** deleted:
 the obvious key renders as a flat blue noise field, not an overlay. Rule 1, third save.
 
-**→ START HERE: `docs/PASSOVER_0905.md` — the newest, and the handoff. It covers drops 0905g…0905t
+**→ START HERE: `docs/PASSOVER_0906.md` — the newest. Mike's overnight list, and its first
+section is eight traps rather than fixes: the stage-6 carrier's hit box swallowing the one shot
+its fight depends on, an 8-frame "reel" that is a glow flicker, and a retracted pilot-bank
+change that would have inverted a working pilot. Then `docs/PASSOVER_0905.md` — the previous
+handoff. It covers drops 0905g…0905t
 (SpriteCook going live, Mike's 17-item list closing, the carrier's six phases, the Rime Wall's
 telegraph), and its first section is nine MEASUREMENT traps rather than code ones: read that before
 writing a probe. `docs/CARRIER_MK2_PHASES.md` carries Mike's phase spec verbatim.
