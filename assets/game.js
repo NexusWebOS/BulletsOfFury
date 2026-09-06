@@ -7234,7 +7234,15 @@ const PILOTS=[
      15 rounds/sec and visibly faster than the rest of the roster. His tech identity is cloak and
      shotgun utility, not a hidden rapid-fire passive, so keep him in the normal MG band. */
   {key:'decker',    name:'DECKER',    role:'TECH CONNOISSEUR', tint:'#ffd24a', font:4, spd:-0.04,fire:0.08, range:0.12},
-  {key:'maverick',  name:'MAVERICK',  role:'VENOM STRIKE',     tint:'#8de23a', font:1, spd:0.14, fire:0.12, range:0.08},
+  /* ⚠ TEAL, NOT GREEN, SINCE 0906g. Mike: "palette swap maverick's ... green colors to a more
+     teal color so were not confused with him or Cole." Measured before moving it: his hull was
+     41% in hue 90-150 and COLE is 13% in 90-120 - the same band, which is the collision. This
+     one row drives his card, his HUD, his roster ring and his avatar's accent bars, so the
+     separation has to happen HERE as well as on the art or the ship is teal and everything
+     around it is still Cole's green. #8de23a appears 37 times in this file and 36 of them are
+     generic UI greens - weapon pips, pickup labels, Cole's own nuke text - so this is the only
+     one that may change. */
+  {key:'maverick',  name:'MAVERICK',  role:'VENOM STRIKE',     tint:'#3ad6c8', font:1, spd:0.14, fire:0.12, range:0.08},
   {key:'freezer',   name:'FREEZER',   role:'FROSTBITE',        tint:'#6fd0ff', font:3, spd:0.06, fire:0.06, range:-0.02},
   {key:'juggernaut',name:'JUGGERNAUT',role:'UNSTOPPABLE',      tint:'#c08a3a', font:5, spd:-0.08,fire:0.05, range:0.22},
   {key:'yuri',      name:'YURI',      role:'LIGHTNING STRIKE', tint:'#e23a3a', font:2, spd:0.18, fire:0.14, range:0.04},
