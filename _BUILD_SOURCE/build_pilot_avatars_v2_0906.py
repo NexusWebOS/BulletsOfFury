@@ -68,10 +68,12 @@ def main():
     write = '--write' in sys.argv
     made, rows = {}, []
     for p in PILOTS:
-        if p == 'yuri':
-            src, note = YURI_PLATE, 'authored (the reference plate)'
-        else:
-            src, note = os.path.join(GEN, 'av_%s.png' % p), 'generated'
+        # ⚠ YURI IS NO LONGER THE EXCEPTION. Through 0906f his authored plate was the style
+        # REFERENCE and was passed through untouched. Mike, 0906g: "Yuri looks very diff from the
+        # rest, he needs to match there art style" - so the reference is now the OTHER EIGHT, and
+        # his plate has been restyled to them rather than the other way round. Same slot as
+        # everyone else; the special case is gone rather than inverted.
+        src, note = os.path.join(GEN, 'av_%s.png' % p), 'generated'
         if not os.path.exists(src):
             rows.append((p, 'MISSING', '-', '-', note)); continue
         im = Image.open(src).convert('RGBA')

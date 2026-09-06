@@ -505,3 +505,91 @@ the code not registering. `unlockWho` is set alongside the timer at both sites.
 Proofs: `docs/LIZZIE_SKIN_0906.png` (stock vs B-42 on the card),
 `docs/LIZZIE_B42_RECOVERED.png` (all seventeen frames as recovered),
 `docs/proofs/lizzieskin_0906/lizzie_b42_inplay.png` (flying stage 1).
+
+---
+
+# 0906h/i — the ship and character pass: four ships, three characters, six badges, nine boxes
+
+Mike's list, worked in two commits (0906h ships, 0906i characters). Credits 1,066 → 556.
+
+## The measurements that decided things
+
+⚠ **DECKER'S SWAP BREAKS THE LUMINANCE RULE, AND ONLY HIS.** Measured: his hull is 47% grey at
+v≤0.25 and 18.4% in hue 30–60. Black and yellow sit at opposite ends of the value range, so
+"palette/luminance swaps, not overlays" would leave the hull dark everywhere the black was and the
+swap would be **invisible**. The two bands exchange their measured value RANGES instead of being
+flat-filled, so each pixel keeps its position inside its own band and every panel line survives.
+One pass over the original pixel — two passes would undo the first with the second.
+
+⚠ **MAVERICK'S GREEN REALLY IS COLE'S GREEN.** 41% of Maverick's hull is hue 90–150; Cole measures
+13% in 90–120. Teal at 177 clears the band. And he is moved on **every** surface — ship, 6 portrait
+cells, avatar, standing figure, `PILOTS[].tint` — because a pilot whose ship is teal and whose card,
+HUD and bars are still Cole-green has not been separated from Cole. `#8de23a` appears 37 times in
+game.js and **36 are generic UI greens**, so exactly one row changed.
+
+⚠ **THE PORTRAIT RECOLOUR DEDUPES BY RECT.** `port_maverick_idle` and `_smile` are the SAME rect.
+This repo has ~750 aliased cells; iterating keys is how a rule silently double-applies.
+
+⚠ **A GENERATED ROTATION SHEET FAILED FOR THE SECOND TIME.** 8×3 asked, 7×3 returned; row 2 came
+back **nose-left**; row 1 is 3/4 perspective, not top-down bank; and connected-component analysis
+found **20 components for 21 frames** because two pairs are drawn touching and merge into 870px
+blobs against a ~360px ship. A grid slice would have cut ships in half. So both new reels are
+**derived**: a barrel roll about the nose axis IS a horizontal cosine scale, which makes the roll
+exact (widths 200/141/20/141/200/141/20/141 = |cos| at 45° steps) and correctly ordered, symmetric
+and consistently lit by construction. **Bank angles measured off the authored ships** — Cole 0.94–1.00
+of hull width (17–20°), Freezer 0.89–0.99 (19–27°) — so the new ships belong to the same fleet.
+What is approximated is stated in the script: past 90° a real aircraft shows its underside and a
+plate has none, so the second half is the mirrored plate darkened.
+
+⚠ **LIZZIE'S BODY IS RECOLOURED, NOT REGENERATED — TWO ATTEMPTS WERE REFUSED.** `edit_asset_id` on
+her standing figure returned `content_policy_violation` twice; rewording her build to "solid and
+athletic" did not help. Rather than keep spending credits on refusals, her body takes a **measured
+skin shift sampled from her new portrait** (saturation ×0.643, value ×1.330). The correction that
+actually reads at the 212px the bay draws her at is the skin. Her build stays as authored — said
+plainly rather than quietly dropped.
+
+⚠ **AND FALVA'S ATLAS PORTRAITS NEVER HAD GREY HAIR — I PUT IT THERE.** Rendered the originals
+before assuming: `port_falva_*` is auburn-brown throughout. The white streak Mike objected to
+appeared in the AVATAR generated in 0906f and nowhere else. The instinct on "no gray or white hair"
+is to sweep her whole portrait set for pale pixels, which would have eaten the white trim on her
+flight suit to fix a defect that was not in those files.
+
+⚠ **THE AVATAR BOX COLOUR IS MEASURED OFF EACH SHIP, NOT READ FROM THE TINT TABLE.** `PILOTS[].tint`
+is close for most and WRONG for the three that changed this drop. The dominant hue is the saturated
+ink's **circular mean weighted by saturation** — a plain average is dragged to grey by the gunmetal
+every ship is mostly made of, and a modal hue picks whichever accent has the most pixels rather than
+the colour the ship reads as. Result: axel 213°, decker 47°, maverick 182°, freezer 278°,
+juggernaut 19°, yuri 355°, lizzie 29°, falva 333°, cole 108°.
+⚠ **AND ONLY THE FRAME MOVES.** Skin sits at 0.18–0.75 saturation in the same hue band as several
+of these tints, so a blanket rotation would turn faces blue for Axel and green for Cole. The
+portrait window is excluded by geometry as well as by saturation.
+
+⚠ **YURI IS NO LONGER THE STYLE REFERENCE — HE IS NOW THE ONE BEING MATCHED.** Through 0906f his
+authored plate was passed through untouched because everything else was generated to match it.
+Mike inverted that, so the special case is **gone** from the avatar builder rather than reversed:
+he goes through the same slot as everyone else. His first restyle put him in a grey girder room and
+lightened his hair; the retry pinned the flat near-black background and dark hair explicitly.
+
+## Landed
+
+- **Ships**: Decker's yellow/black exchange, Maverick teal, Juggernaut's new skull-free heavy
+  gunship (widest hull in the fleet, mirror-IoU 1.000), Falva cleaned (symmetry 0.954 → 1.000,
+  8,149 → 7,242 colours). Both new reels appended, never packed over the old rows.
+- **Characters**: Lizzie fair-skinned and mature across her portrait set and body; Falva young with
+  no grey; Yuri restyled to the others in avatar and standing figure.
+- **Six faction badges regenerated with real colour** — blue/silver, violet/gold, crimson steel,
+  furnace orange, magenta/gold, emerald/flame.
+- **Nine avatar boxes tinted to their own ship.**
+
+Proofs: `docs/SHIPS_0906G.png`, `docs/PILOT_SELECT_0906G.png`, `docs/PILOT_AVATARS_0906G.png`,
+`docs/AFFILIATIONS_0906.png`, `docs/CHARS_APPLIED_0906G.png`, `docs/JUGGERNAUT_SHIP_0906G.png`,
+`docs/FALVA_SHIP_0906G.png`, `docs/YURI_RESTYLE_0906G.png`.
+
+## Still owed on this list
+
+- **The cutscene emotion faces for Lizzie and Yuri.** Lizzie's six non-idle cells took the measured
+  skin shift, which lands her ethnicity but not the mid-thirties read; Yuri's seven are still the
+  painterly style. Both are generation jobs and neither shows on the pilot screen.
+- **Juggernaut's character still wears a small skull medallion** in his portrait and on his boots.
+  Mike asked for no death symbol **on the ship**, which is done — the character's own motif was not
+  in scope and has been left rather than assumed.
