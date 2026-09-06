@@ -47914,18 +47914,42 @@ const PC_SPECIAL = {
 };
 function pcSpecial(p){ return PC_SPECIAL[p] || {name:'SPECIAL', icon:null}; }
 /* stat values live in game data, exactly as the pack asks — never repainted into the card */
+/* ⚠ THIS READ NOTHING AND EVERY PILOT'S BARS WERE IDENTICAL (fixed 0906). Two faults stacked:
+
+     1. `PILOTS[p]` indexed an ARRAY by a pilot KEY string, so S was undefined for all nine and
+        every lookup fell through to its `||3` default.
+     2. even with S resolved, the field names were wrong - it asked for speed/rate/power/armor
+        and the table carries spd/fire/range.
+
+   So the bars were 10/10/10 for everybody, which is worse than no bars: it says the roster is
+   flat when the pilots genuinely differ. Nothing failed and nothing logged - the same shape as
+   the systems CLAUDE.md lists as declared-and-never-fired.
+
+   The table's spd/fire/range are OFFSETS from a baseline (-0.08..+0.22), not 0..6 ratings, so
+   they are mapped through the midpoint: 0 sits at half a bar and SPREAD scales the swing. At
+   2.2 the live values land across 6..20 of 20, which uses the bar without pinning anyone to an
+   end of it.
+
+   ⚠ DURABILITY AND MANEUVERABILITY HAVE NO AUTHORED DATA. Only Cole's profile asks for them.
+   They are DERIVED from speed - heavier flies slower, so durability is its inverse - and that
+   is a stand-in, not a stat Mike set. If those two should mean something, they need a number
+   in PILOTS, and this is the one place that would read it. */
+const PC_STAT_SPREAD = 2.2;
 function pcStats(p){
   const M=(typeof BOFX!=='undefined'&&BOFX.pilotcard&&BOFX.pilotcard[p])||null;
   const cats=(M&&M.stats&&M.stats.length)?M.stats:['Speed','Fire Rate','Attack Range'];
-  const S=(typeof PILOTS!=='undefined'&&PILOTS&&PILOTS[p])||{};
+  const S=(typeof PILOTS!=='undefined'&&PILOTS)?(PILOTS.find(q=>q&&q.key===p)||{}):{};
+  const bar=(off)=>Math.round((0.5 + (off||0)*PC_STAT_SPREAD) * PC_MAX_SEG);
   const pick=(n)=>{
     const k=n.toLowerCase();
-    if(k.indexOf('speed')>=0)  return Math.round((S.speed||3)/6*PC_MAX_SEG);
-    if(k.indexOf('fire')>=0)   return Math.round((S.rate ||3)/6*PC_MAX_SEG);
-    if(k.indexOf('range')>=0)  return Math.round((S.range||3)/6*PC_MAX_SEG);
-    if(k.indexOf('power')>=0||k.indexOf('attack')>=0) return Math.round((S.power||3)/6*PC_MAX_SEG);
-    if(k.indexOf('armor')>=0||k.indexOf('armour')>=0||k.indexOf('def')>=0) return Math.round((S.armor||3)/6*PC_MAX_SEG);
-    return 12;
+    if(k.indexOf('speed')>=0)  return bar(S.spd);
+    if(k.indexOf('fire')>=0)   return bar(S.fire);
+    if(k.indexOf('range')>=0)  return bar(S.range);
+    if(k.indexOf('power')>=0||k.indexOf('attack')>=0) return bar(S.fire);
+    if(k.indexOf('armor')>=0||k.indexOf('armour')>=0||k.indexOf('dur')>=0||k.indexOf('def')>=0)
+      return bar(-(S.spd||0));                    // derived, see the note above
+    if(k.indexOf('maneuv')>=0||k.indexOf('manoeuv')>=0||k.indexOf('agil')>=0) return bar(S.spd);
+    return Math.round(PC_MAX_SEG*0.5);
   };
   return cats.map(c=>({label:c.toUpperCase(), val:clamp(pick(c),1,PC_MAX_SEG)}));
 }
@@ -48092,7 +48116,18 @@ function pcFontWrap(text,maxW,H){
 /* pcDraw(rect) — the RUNTIME REVEAL ONLY (drop 0801s).
    The shell is drawn by drawPilot, inside its own rotate/slide transform, and hands us the exact
    rect it used. This used to draw the shell itself and size it independently, which is why the
-   old baked card and the new one were both on screen. Now: one shell, one reveal, one rect. */
+   old baked card and the new one were both on screen. Now: one shell, one reveal, one rect.
+
+   ⚠ NOTHING CALLS THIS SINCE 0906, AND THAT IS DELIBERATE - SAID OUT LOUD BECAUSE THIS FILE IS
+   FULL OF SYSTEMS THAT WENT QUIET BY ACCIDENT. The pilot screen is composed from parts now
+   (see the note above drawPilot's helpers) and draws the name, bio, special and stat bars
+   itself, so running the reveal too would print the same facts twice - the exact fault 0801s
+   removed the old baked card for.
+
+   It is KEPT, not deleted, along with pcStart/pcUpdate/pcSkip which drawPilot still ticks:
+   `pcard` is read elsewhere, the letter-by-letter reveal is Mike's own 0801j request and may
+   come back on a surface that wants it, and restoring it here is one call. If you are hunting
+   a missing reveal on the pilot screen, this is why - it was replaced, not lost. */
 function pcDraw(rect){
   const C=pcard; if(!C || typeof XART==='undefined') return false;
   const p=C.p;
@@ -52157,6 +52192,102 @@ function drawPilotComm(P,t){
   ctx.restore();
   // (emoji speech bubble removed per Mike)
 }
+/* ============================================================
+   THE PILOT SELECT IS COMPOSED FROM PARTS NOW, NOT A BAKED CARD (Mike, 0906)
+
+   "design a better system based off it ... spin our ships horizontally, show the pilot
+   standing, give the descriptions and bio fitted right and using the proper fonts and
+   dialogue fonts you can even make neater menu that show square avatars of our Pilot's AND
+   theyre ships in a full shot as all 9 lined up (1 being the ? or unlocked if we use the
+   password for Cole). This is how we avoid remaking cards since we have the pilots seperate
+   from their ships now."
+
+   That last sentence is the whole design. Every pilot already exists as SEPARATE pieces -
+   a face (port_<p>_idle), a hull (ship_<p>_pv2 and the br reel), a bio row in BOFX.pilotcard,
+   stats, a special - and the old screen threw that away by drawing ONE pre-baked plate per
+   pilot with all of it painted in. Anything new meant new art for nine people. Composing the
+   screen from the parts means a changed ship, a new portrait or an edited bio shows up here
+   with no art job at all, which is exactly what he is asking for.
+
+   ⚠ "SPIN OUR SHIPS HORIZONTALLY" NEEDS NO NEW ART EITHER. ship_<p>_br0..br7 IS a horizontal
+   spin - it is the barrel-roll reel, a full 360 about the nose axis - so the lineup and the
+   panel just play it. Every pilot has one.
+
+   ⚠ ONLY YURI HAS STANDING BODY ART TODAY (yuri_body_0..6, from the 0906 drop). The bay
+   falls back to that pilot's portrait framed as a bust, so the screen is complete for all nine
+   now and gets better for free the moment body art lands for the other eight. It is gated on
+   the ART, not on a name list, so nothing here needs editing when it does.
+   ============================================================ */
+const PS_COLS=9, PS_PITCH=52, PS_CELL=46;
+let psLineupRects=null;   // hit rects for the nine-across roster, rebuilt each frame
+function psLineupX(i){ return Math.round((VW - PS_COLS*PS_PITCH)/2 + i*PS_PITCH); }
+/* the standing figure, or null if this pilot has none yet */
+function psBodyKey(key){
+  const k=key+'_body_0';
+  return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
+}
+/* the horizontal spin. Falls back through the level frame to the bare hull so a pilot whose
+   roll reel has not decoded yet still shows a ship rather than a hole. */
+function psShipKey(key, spin){
+  if(typeof XART==='undefined') return null;
+  if(spin!=null){
+    const f='ship_'+key+'_br'+(((spin|0)%8)+8)%8;
+    if(XART.rdy(f)) return f;
+  }
+  for(const k of ['ship_'+key+'_pv2','ship_'+key]) if(XART.rdy(k)) return k;
+  return null;
+}
+function psBlitFit(key,cx,cy,maxW,maxH,alpha){
+  if(!key || typeof XART==='undefined' || !XART.rdy(key)) return false;
+  const im=XART.get(key); if(!im) return false;
+  const iw=im.naturalWidth||im.width, ih=im.naturalHeight||im.height;
+  if(!iw||!ih) return false;
+  const s=Math.min(maxW/iw, maxH/ih), w=iw*s, h=ih*s;
+  ctx.save(); if(alpha!=null) ctx.globalAlpha=alpha;
+  ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im, Math.round(cx-w/2), Math.round(cy-h/2), Math.round(w), Math.round(h));
+  ctx.restore(); return true;
+}
+function psPanelBox(x,y,w,h,tint,glow){
+  ctx.save();
+  ctx.fillStyle='rgba(8,11,18,0.78)'; ctx.fillRect(x,y,w,h);
+  ctx.strokeStyle=glow?tint:'rgba(120,140,170,0.45)'; ctx.lineWidth=glow?2:1;
+  if(glow){ ctx.shadowColor=tint; ctx.shadowBlur=10; }
+  ctx.strokeRect(x+0.5,y+0.5,w-1,h-1);
+  ctx.restore();
+}
+/* the nine-across roster: a square face over its ship, the locked slot a '?'. Returns the hit
+   rects so the mouse can pick a pilot directly instead of only scrolling to one. */
+function psDrawLineup(sel, y0, spin){
+  const rects=[];
+  for(let i=0;i<PILOTS.length && i<PS_COLS;i++){
+    const Q=PILOTS[i], x=psLineupX(i), on=(i===sel);
+    const lk=(typeof isPilotLocked==='function') && isPilotLocked(Q);
+    rects.push([x,y0,PS_CELL,PS_CELL*2+6]);
+    psPanelBox(x, y0, PS_CELL, PS_CELL, Q.tint, on);
+    if(lk){
+      /* ⚠ THE LOCKED SLOT IS A '?', WHICH IS WHAT HE ASKED FOR - not a dimmed portrait. A
+         greyed face still tells you who it is, and Cole is a password secret (0801k). */
+      const f=(typeof uiFontArt==='function')?uiFontArt():null;
+      if(f && typeof stageText==='function') stageText(f,'?',x+PS_CELL/2,y0+PS_CELL*0.70,26,'#7f8aa0',0.9,1,0.10);
+      else { ctx.save(); ctx.textAlign='center'; ctx.fillStyle='#7f8aa0';
+             ctx.font='bold 26px "BOFmil", monospace'; ctx.fillText('?',x+PS_CELL/2,y0+PS_CELL*0.72); ctx.restore(); }
+    } else {
+      ctx.save(); ctx.beginPath(); ctx.rect(x+2,y0+2,PS_CELL-4,PS_CELL-4); ctx.clip();
+      psBlitFit('port_'+Q.key+'_idle', x+PS_CELL/2, y0+PS_CELL/2, PS_CELL+12, PS_CELL+12, on?1:0.62);
+      ctx.restore();
+    }
+    const sy=y0+PS_CELL+6;
+    psPanelBox(x, sy, PS_CELL, PS_CELL, Q.tint, on);
+    if(lk){
+      ctx.save(); ctx.globalAlpha=0.30; psBlitFit(psShipKey(Q.key,null), x+PS_CELL/2, sy+PS_CELL/2, PS_CELL-8, PS_CELL-8, 0.3); ctx.restore();
+    } else {
+      /* the SELECTED ship spins; the rest hold their level frame so the row does not shimmer */
+      psBlitFit(psShipKey(Q.key, on?spin:null), x+PS_CELL/2, sy+PS_CELL/2, PS_CELL-6, PS_CELL-6, on?1:0.66);
+    }
+  }
+  return rects;
+}
 function drawPilot(dt){
   if(typeof uiFontWarm==='function') uiFontWarm();   // the menus run before any stage warms the face
   const N=PILOTS.length;
@@ -52217,42 +52348,120 @@ function drawPilot(dt){
      the horizontal-scale rotation between pilots, the slide-away on select, and the locked flash.
      Those stay; only the SOURCE changes, to the new shell (pcard_<pilot>) and the LOCKED shell.
      cardRect is still published for the hit-testing below. */
-  const k = locked ? (XART.rdy('pcard_locked') ? 'pcard_locked' : 'card_cole_locked')
-                   : (XART.rdy('pcard_'+P.key) ? 'pcard_'+P.key : 'card_'+P.key);
+  /* ============================ THE COMPOSED SCREEN ============================
+     Replaces the single baked pcard_<pilot> plate. Everything below is drawn from parts the
+     game already owns, so nothing here needs new art per pilot. Layout, top to bottom:
+
+         a standing pilot on the left, their ship spinning on the right of the info column,
+         name / callsign / affiliation, the bio wrapped to its own column, the special, the
+         stat bars, and the nine-across roster underneath.
+
+     ⚠ THE ROTATION AND SLIDE-AWAY TRANSITIONS ARE KEPT. The old block owned three behaviours the
+     screen still needs - the horizontal scale between pilots, the slide on select, and the locked
+     flash - and losing them was the easy mistake here. cardRect is still published, because the
+     input tail below hit-tests against it. */
   let cardRect=null;
-  if(XART.rdy(k)){
-    const im=XART.get(k);
-    let w=Math.min(VW-30,452), h=w*(im.naturalHeight/im.naturalWidth); const maxH=VH*0.62;
-    if(h>maxH){ h=maxH; w=h*(im.naturalWidth/im.naturalHeight); }
+  {
+    /* ⚠ PY CLEARS THE TITLE. At 40 the panel's top edge cut straight through "CHOOSE YOUR
+       PILOT!", which is drawn at y=42 - the heading was behind the frame in every screenshot.
+       The height comes down by the same amount so the roster below does not move. */
+    const PX=10, PY=58, PW=VW-20, PH=242;
     let sx=1;
     if(pilotRot>0){ sx=(pilotRot>0.5)?(pilotRot-0.5)/0.5:(0.5-pilotRot)/0.5; sx=Math.max(0.04,sx); }
-    const slideX=(pilotPending!=null)? -_ease(clamp(pilotSlide,0,1))*(VW*1.4) : 0;   // slide left & away on select
-    const cx=VW/2, cy=VH*0.455; cardRect=[cx-w/2,cy-h/2,w,h];
+    const slideX=(pilotPending!=null)? -_ease(clamp(pilotSlide,0,1))*(VW*1.4) : 0;
+    cardRect=[PX,PY,PW,PH];
+    /* ⚠ 130ms, NOT 90. Two of the eight roll frames (br2, br6) are edge-on slivers, so a
+       quarter of the reel is a thin line; at 90ms the ship read as flickering rather than
+       turning. Slower lets the broad frames hold long enough to see the hull. */
+    const spin=(performance.now()/130)|0;
     ctx.save();
-    if(pilotRot<0.04 && pilotPending==null){ ctx.shadowColor=P.tint; ctx.shadowBlur=30; }
-    ctx.translate(cx+slideX,cy); ctx.scale(sx,1);
-    ctx.drawImage(im,-w/2,-h/2,w,h);
-    if(locked && pilotFlash>0){ ctx.globalAlpha=Math.min(0.5,pilotFlash)*0.5/0.5; ctx.fillStyle='#ffffff'; ctx.globalAlpha=Math.min(1,pilotFlash)*0.5; ctx.fillRect(-w/2,-h/2,w,h); ctx.globalAlpha=1; }
+    ctx.translate(PX+PW/2+slideX, PY+PH/2); ctx.scale(sx,1); ctx.translate(-(PX+PW/2), -(PY+PH/2));
+
+    psPanelBox(PX,PY,PW,PH,P.tint,true);
+    const BX=PX+6, BY=PY+6, BW=142, BH=PH-12;          // the standing-pilot bay
+    psPanelBox(BX,BY,BW,BH,P.tint,false);
+    if(locked){
+      const f=(typeof uiFontArt==='function')?uiFontArt():null;
+      if(f && typeof stageText==='function') stageText(f,'?',BX+BW/2,BY+BH*0.58,72,'#6c7789',0.9,1,0.10);
+    } else {
+      const body=psBodyKey(P.key);
+      if(body) psBlitFit(body, BX+BW/2, BY+BH*0.52, BW-14, BH-18, 1);
+      else {
+        /* no standing art for this pilot yet - frame the portrait as a bust so the bay reads as
+           deliberate rather than empty, and so it upgrades silently when body art arrives */
+        psBlitFit('port_'+P.key+'_idle', BX+BW/2, BY+BH*0.40, BW-16, BH*0.62, 1);
+        const f2=(typeof uiFontArt==='function')?uiFontArt():null;
+        if(f2 && typeof stageText==='function')
+          stageText(f2,'NO FIELD PHOTO', BX+BW/2, BY+BH-13, 7, '#4e5866', 0.8, 0.6, 0.12);
+      }
+    }
+
+    const IX=BX+BW+10, IW=(PX+PW)-IX-6;                 // the info column
+    const SHW=86, SHX=IX+IW-SHW;                        // the spinning ship sits top-right of it
+    if(!locked){
+      psPanelBox(SHX, PY+30, SHW, 78, P.tint, false);
+      psBlitFit(psShipKey(P.key, spin), SHX+SHW/2, PY+30+39, SHW-10, 68, 1);
+    }
+
+    const face=_pilotFace;
+    if(face && typeof stageText==='function'){
+      /* stageText centres on the x it is given, so a left-aligned name needs half its own
+         width added. Measuring it rather than nudging by eye keeps every pilot's name on the
+         same left rail whatever their alphabet's widths are. */
+      const nm=locked?'LOCKED':P.name;
+      const nw=(typeof stageWidth==='function')?stageWidth(face,nm,22,0.07):0;
+      stageText(face, nm, locked?(IX+IW/2):(IX+2+nw/2), PY+26, 22, locked?'#8a93a6':P.tint, 1, 1, 0.07);
+    }
+    if(typeof msgFaceUse==='function') msgFaceUse('dialogue');
+    const M=(typeof BOFX!=='undefined'&&BOFX.pilotcard)?(BOFX.pilotcard[P.key]||{}):{};
+    if(!locked && typeof msgTextLeft==='function'){
+      const sub=(M.callsign?('"'+M.callsign+'"'):'')+(M.affil?('   '+M.affil.toUpperCase()):'');
+      if(sub) msgTextLeft(sub, IX+2, PY+44, 9, '#9fb0c6', 0.9, 1, 0.10, 0);
+      const bio=(M.desc||P.role||'');
+      if(bio && typeof msgWrap==='function'){
+        const colW=IW-SHW-10;
+        const rows=msgWrap(bio, colW, 9, 0.10)||[];
+        for(let r=0;r<rows.length && r<6;r++) msgTextLeft(rows[r], IX+2, PY+64+r*12, 9, '#d6dee9', 0.85, 1, 0.10, 0);
+      }
+      const SP=(typeof pcSpecial==='function')?pcSpecial(P.key):null;
+      if(SP && SP.name) msgTextLeft('SPECIAL: '+SP.name, IX+2, PY+140, 10, P.tint, 1, 1, 0.10, 0);
+      /* the stat bars, from game data - see the pcStats note about what these used to show */
+      const st=(typeof pcStats==='function')?pcStats(P.key):[];
+      for(let s=0;s<st.length && s<5;s++){
+        const yy=PY+158+s*19;
+        msgTextLeft(st[s].label, IX+2, yy, 8, '#8fa0b6', 0.9, 1, 0.10, 0);
+        const bx=IX+92, bw=IW-96, seg=Math.max(1,Math.round(bw/PC_MAX_SEG));
+        ctx.save();
+        for(let g=0;g<PC_MAX_SEG;g++){
+          ctx.fillStyle = (g<st[s].val) ? P.tint : 'rgba(90,104,126,0.35)';
+          ctx.fillRect(bx+g*seg, yy-5, Math.max(1,seg-1), 8);
+        }
+        ctx.restore();
+      }
+    }
+    if(locked && typeof msgText==='function'){
+      /* the empty column read as a bug rather than as a secret. The hover prompt below only
+         appears with a mouse over the panel, which is no use on a pad. */
+      /* centred on the INFO COLUMN's full width and dropped below where the ship box sits for
+         an unlocked pilot - at PY+92 the line ran under that frame and read as overlapping UI. */
+      msgText('THIS PILOT IS LOCKED', IX+IW/2, PY+124, 11, '#8a93a6', 0.9, 1, 0.10);
+      if(Math.sin(performance.now()/240)>-0.3)
+        msgText('ENTER HIS PASSWORD TO UNLOCK', IX+IW/2, PY+146, 10, '#ffe98a', 1, 1, 0.10);
+    }
+    if(typeof msgFaceUse==='function') msgFaceUse(null);
+    if(locked && pilotFlash>0){
+      ctx.save(); ctx.globalAlpha=Math.min(1,pilotFlash)*0.42; ctx.fillStyle='#ffffff';
+      ctx.fillRect(PX,PY,PW,PH); ctx.restore();
+    }
     ctx.restore();
-    /* the runtime reveal, over the shell we just drew and in its exact rect. Suppressed during
-       the rotation and the slide-away so it never smears across the transition. */
-    if(!locked && pilotRot<0.04 && pilotPending==null &&
-       typeof pcDraw==='function' && pcard) { try{ pcDraw(cardRect); }catch(_){} }
+
+    /* the nine-across roster. Outside the scale transform on purpose: the ROSTER does not spin
+       when you scroll, only the panel above it does - otherwise the whole screen lurches and you
+       lose the one element that tells you where you are in the list. */
+    if(pilotPending==null) psLineupRects = psDrawLineup(pilotIndex, PY+PH+14, spin);
+    else psLineupRects = null;
   }
   if(locked){ pilotFlash=Math.max(0,pilotFlash-dt*2.2); } else { pilotFlash=0; }
-  // pilot name in that pilot's own stage font, native colours (hidden while sliding away)
-  if(pilotRot<0.5 && pilotPending==null && !locked){
-    /* The big stage-font name under the card stays — it is the screen's title, not card data.
-       The SPECIAL line below it does NOT: the new card carries its own SPECIAL ABILITY section
-       with an icon, so printing it again underneath was the same fact twice. */
-    const pf=_pilotFace;
-    if(pf){ stageText(pf,P.name,VW/2,VH*0.80,28,P.tint,1,1,0.07); }
-    else if(typeof msgText==='function'){ msgText(P.name.toUpperCase(), VW/2, VH*0.80, 22, P.tint, 1, 1, 0.08); }
-    else { ctx.textAlign='center'; ctx.fillStyle=P.tint; ctx.font='bold 22px "BOFmil", monospace'; ctx.fillText(P.name,VW/2,VH*0.81); }
-    /* the SPECIAL line and its description used to print here, under the card. The new card has
-       its own SPECIAL ABILITY section with a real icon, so this was the same fact twice on one
-       screen. Removed — the card owns it now. */
-  }
   // nav arrows
   ctx.textAlign='center'; ctx.font='bold 30px "BOFmil", monospace';
   ctx.fillStyle=rgba(hx(P.tint),0.85); ctx.fillText('\u25C0',20,VH*0.46+10); ctx.fillText('\u25B6',VW-20,VH*0.46+10);
@@ -52340,11 +52549,31 @@ function drawPilot(dt){
   if(pilotRot>0) return; // lock during spin
   if(Input.menuRight()) startPilotRot(1);
   if(Input.menuLeft()) startPilotRot(-1);
-  const mx=Input.mouse.x;
+  const mx=Input.mouse.x, my=Input.mouse.y;
   if(Input.mouse.down && !drawPilot._md){
-    if(mx<VW*0.18) startPilotRot(-1);
-    else if(mx>VW*0.82) startPilotRot(1);
-    else if(cardRect && mx>cardRect[0] && mx<cardRect[0]+cardRect[2]){
+    /* ⚠ THE ROSTER IS CHECKED FIRST. It sits low on the screen and the panel is wide, so with
+       the panel tested first a click on a roster slot near the top of its box was swallowed as
+       "confirm the pilot already selected" - which launches the run instead of picking who he
+       clicked. Nine visible portraits that cannot be clicked is the sort of thing that reads as
+       the menu being broken. */
+    let _hit=-1;
+    if(psLineupRects) for(let i=0;i<psLineupRects.length;i++){
+      const R=psLineupRects[i];
+      if(mx>=R[0] && mx<=R[0]+R[2] && my>=R[1] && my<=R[1]+R[3]){ _hit=i; break; }
+    }
+    if(_hit>=0){
+      if(_hit===pilotIndex){
+        if(locked){ Audio.SFX.hit(); pilotFlash=1; } else confirmPilot();
+      } else {
+        /* jump straight to the clicked pilot rather than scrolling one step toward them */
+        pilotFrom=pilotIndex; pilotIndex=_hit; pilotRot=1; drawPilot._pcFor=null;
+        if(Audio.SFX && Audio.SFX.blip) Audio.SFX.blip();
+      }
+    }
+    else if(mx<VW*0.10) startPilotRot(-1);
+    else if(mx>VW*0.90) startPilotRot(1);
+    else if(cardRect && mx>cardRect[0] && mx<cardRect[0]+cardRect[2]
+            && my>cardRect[1] && my<cardRect[1]+cardRect[3]){
       if(locked){ Audio.SFX.hit(); pilotFlash=1; }
       else confirmPilot();
     }

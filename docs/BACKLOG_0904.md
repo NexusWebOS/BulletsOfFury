@@ -552,3 +552,42 @@ run through all these fixes."* Full writeup and the eight traps: `docs/PASSOVER_
       dialogue windows, the two approved cutscene modes, and new dialogue content. ⚠ The dialogue
       needs Mike's voice; bring a draft, do not invent plot.
 - [ ] **Faster enemy projectiles / Raiden II AI** — still the largest single item on the list.
+
+## 0906c — the pilot select is composed from parts now
+
+Mike: *"design a better system based off it ... spin our ships horizontally, show the pilot
+standing, give the descriptions and bio fitted right ... square avatars of our Pilot's AND theyre
+ships in a full shot as all 9 lined up (1 being the ? ...). This is how we avoid remaking cards
+since we have the pilots seperate from their ships now."*
+
+- [x] **The baked `pcard_<pilot>` plate is gone from the screen.** It carried the name, bio, stats
+      and special painted in, so any change meant new art for nine people. The screen now draws
+      from the parts that already exist — `port_<p>_idle`, the ship reels, `BOFX.pilotcard`,
+      `PILOTS`, `PC_SPECIAL` — and an edited bio or a replaced ship shows up with no art job.
+- [x] **Ships spin horizontally** — `ship_<p>_br0..7` IS a horizontal spin (the barrel roll), so
+      this needed no new art. 130ms/frame, because two of the eight frames are edge-on slivers and
+      at 90ms the hull read as flickering rather than turning.
+- [x] **Nine-across roster**, square face over full ship, click any slot to jump straight to that
+      pilot. Cole's slot is a **?**.
+- [x] **The pilot stands** where there is body art. ⚠ Only Yuri has it today; the other eight fall
+      back to a framed portrait bust marked NO FIELD PHOTO. Gated on the ART, so each one upgrades
+      silently as body art lands — see "still owed" below.
+- [x] **Bio, callsign, affiliation and special** in the dialogue face; headings and the name in the
+      pilot's own stage alphabet.
+- [x] ⚠ **THE STAT BARS WERE FILLER FOR EVERY PILOT AND NOBODY HAD NOTICED.** `pcStats` did
+      `PILOTS[p]` — indexing an ARRAY with a pilot KEY — so the lookup was `undefined` for all nine
+      and every value fell through to its default. Even resolved, it asked for `speed`/`rate` while
+      the table carries `spd`/`fire`. Two faults stacked, and the bars read 10/10/10 for everyone,
+      which is worse than no bars: it says the roster is flat when it is not. Now measured off the
+      real offsets — Juggernaut 6/12/20, Yuri 18/16/12.
+
+### Still owed on this screen
+
+- [ ] **Standing body art for the other eight pilots.** Yuri's seven-pose sheet is the template
+      (`yuri_body_0..6`); the screen reads `<key>_body_0` and needs nothing else wiring.
+- [ ] **DURABILITY and MANEUVERABILITY have no authored data** — only Cole's and the two women's
+      profiles ask for them, and they are currently DERIVED from speed as a stand-in. If they
+      should mean something they need real numbers in `PILOTS`; `pcStats` is the one place that
+      would read them.
+- [ ] The letter-by-letter reveal (`pcDraw`) is retired rather than deleted — kept in full with a
+      note, because it is Mike's own 0801j request and may want a home on another surface.
