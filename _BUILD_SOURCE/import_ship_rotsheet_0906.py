@@ -45,23 +45,54 @@ from PIL import Image
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ATLAS = os.path.join(ROOT, 'assets/game/atlas/bof_player_ships_barrel_rolls.png')
 MANIFEST = os.path.join(ROOT, 'assets/manifest.js')
-SHEETS = {'lizzie': os.path.join(ROOT, 'docs/spritecook_0906/lizzie_rotsheet.png'),
-          'yuri':   os.path.join(ROOT, 'docs/spritecook_0906/yuri_rotsheet.png'),
-          # ⚠ COLE IS THE v2 SHEET. The first generation drew his craft edge-to-edge in every cell
-          # (frames measured 341-344 wide in a 344px cell - touching both walls), so the grid slice
-          # cut the wings off and his banked frames imported as fragments. Regenerated with explicit
-          # spacing rules - "at most 65% of the cell", "a WIDE EMPTY MARGIN", "no craft may touch" -
-          # which also produced the even left-to-right bank progression the first sheet lacked.
-          'cole':   os.path.join(ROOT, 'docs/spritecook_0906/cole_rotsheet_v2.png')}
-# ⚠ AND THAT REGENERATION DREW THIN BLACK GRID LINES between the cells, which the magenta border
-# flood cannot touch and which would be trimmed INTO every frame as ink. Each cell is inset before
-# slicing. The margin the new prompt bought is what makes an inset safe: there is nothing but
-# background out there to throw away.
+# ⚠ A PILOT MAY DRAW FROM MORE THAN ONE SHEET, AND YURI IS WHY. His v2 regeneration finally gave a
+# clean symmetric top-down (0.98) but its bank row barely leans at all - the strongest pose on it is
+# 0.070, which would have produced a five-frame bank that is visually one frame. His v1 sheet is the
+# opposite: strong banks at -0.331/+0.331 and no usable top-down. They are the SAME SHIP, so the
+# level frame is taken from one and the banked poses from the other rather than paying for a third
+# roll of the dice and hoping one sheet happens to be good at both.
+#
+# Each entry is (path, cols, rows). The generator does not reliably honour the layout the prompt
+# asks for - Lizzie's v2 came back 7x4 while everything else is 8x3 - so the grid is recorded here
+# rather than assumed or detected. Automatic detection was tried and is not worth it: finding the
+# grid from clear rows fails because craft touch their cell walls, and finding it from connected
+# components fails because widening the magenta key enough to catch the dark separator lines also
+# fragments the hulls (24 ships became 92 pieces).
+SHEETS = {
+    'lizzie': [('docs/spritecook_0906/lizzie_rotsheet_v2.png', 7, 4),
+               ('docs/spritecook_0906/lizzie_rotsheet.png',    8, 3)],
+    'yuri':   [('docs/spritecook_0906/yuri_rotsheet_v2.png',   8, 3),
+               ('docs/spritecook_0906/yuri_rotsheet.png',      8, 3)],
+    'cole':   [('docs/spritecook_0906/cole_rotsheet_v2.png',   8, 3)],
+}
+# ⚠ EACH CELL IS INSET BEFORE SLICING. The regenerated sheets draw thin DARK MAGENTA separator
+# lines - measured (50,0,46), (63,0,64) - which the bright-magenta key cannot see and which would
+# otherwise be trimmed into every frame as a border. The inset throws them away with the cell edge.
+# Widening the key to catch them by hue was tried and is worse: it also eats the ships' own dark
+# pixels and fragments the hulls.
 INSET = 6
-COLS, ROWS = 8, 3
+COLS, ROWS = 8, 3          # the DEFAULT; detect_grid() overrides it per sheet - see below
 
 
+# ⚠ THE GENERATOR DOES NOT ALWAYS HONOUR THE LAYOUT THE PROMPT ASKS FOR, so the grid is recorded
+# per sheet rather than assumed. Lizzie's regenerated sheet came back as 7 COLUMNS by 4 ROWS while
+# every other sheet is 8x3. Sliced as 8x3 her cells straddled two craft each, and the symptom was
+# not "the grid is wrong" - it was that her frames scored 0.02-0.56 on bilateral symmetry and her
+# ship read as a tilted grey jet in-game. A LAYOUT error arriving as an ART error.
+#
+# ⚠ AND AUTOMATIC DETECTION WAS TRIED FIRST AND IS NOT WORTH IT. Finding the grid from clear
+# rows/columns fails because the craft touch their cell walls; finding it from connected components
+# fails because widening the key enough to catch the dark separator lines also fragments the hulls
+# (24 ships became 92 pieces). Three measured numbers beat a detector that is wrong in new ways.
+SHEET_GRID = {'lizzie': (7, 4)}          # everything else is 8x3
 def is_key(p):
+    """the bright magenta fill.
+
+    ⚠ DELIBERATELY NARROW, AFTER A WIDER ONE MADE THINGS WORSE. The separator lines on the
+    regenerated sheets are DARK magenta - (50,0,46), (63,0,64) - and widening this to catch them by
+    hue at any brightness also caught the ships' own dark pixels: connected-component counts went
+    from 24 expected to 92 fragments. The lines are handled by the INSET instead, which throws them
+    away with the cell edge and cannot touch the hull. Keep this testing the fill only."""
     r, g, b = p[0], p[1], p[2]
     return r > 150 and b > 150 and g < 95 and abs(r - b) < 80
 
@@ -123,6 +154,29 @@ def cut(im, r, c):
     return cell.crop(bb) if bb else cell
 
 
+def mirror_iou(img):
+    """how bilaterally symmetric this pose is - the test for "is this a clean top-down".
+
+    ⚠ THE LEVEL FRAME CANNOT BE PICKED BY NOSE-LEAN ALONE, WHICH IS THE BUG THIS FIXES. Lean asks
+    where the nose sits relative to the body, and a craft PITCHED forward, seen tail-on, or rolled
+    fully over all measure ~0 lean while being nothing like a top-down. Yuri and Lizzie both got a
+    level frame that way and their ships showed up in the roster as a spiky sliver and a tilted
+    grey jet. A true top-down aircraft is bilaterally symmetric and nothing else in the sheet is,
+    so mirroring the silhouette about its own centre and taking IoU separates them cleanly:
+    measured, the good frames score 0.97-0.99 and every banked or pitched pose scores below 0.87."""
+    bb = img.getbbox()
+    if not bb:
+        return 0.0
+    c = img.crop(bb)
+    px = c.load()
+    W, H = c.size
+    M = {(x, y) for y in range(H) for x in range(W) if px[x, y][3] > 32}
+    if len(M) < 60:
+        return 0.0
+    N = {(W - 1 - x, y) for (x, y) in M}
+    return len(M & N) / max(1, len(M | N))
+
+
 def lean(img):
     px = img.load()
     M = [(x, y) for y in range(img.height) for x in range(img.width) if px[x, y][3] > 32]
@@ -155,19 +209,46 @@ def main():
     PAD, MAXW = 2, atlas.width
 
     for pilot in who:
-        src = SHEETS.get(pilot)
-        if not src or not os.path.exists(src):
-            print('%-8s NO SHEET at %s' % (pilot, src)); continue
-        im = Image.open(src).convert('RGBA')
+        sheets = SHEETS.get(pilot)
+        if not sheets:
+            print('%-8s NO SHEET' % pilot); continue
         old = old_cells(pilot)
         if 'ship_%s_pv2' % pilot not in old:
             print('%-8s has no existing pv2 to match against' % pilot); continue
         CW, CH = old['ship_%s_pv2' % pilot][6], old['ship_%s_pv2' % pilot][7]
         old_h = old['ship_%s_pv2' % pilot][3]
+        print('')
+        print('%s  canvas %dx%d' % (pilot.upper(), CW, CH))
 
-        roll = [cut(im, 0, c) for c in range(8)]
-        somer = [cut(im, 1, c) for c in range(8)]
-        bankf = [cut(im, 2, c) for c in range(8)]
+        global COLS, ROWS
+        pools = {'roll': [], 'somer': [], 'bank': []}
+        prime = None
+        for si, (rel, cc, rr) in enumerate(sheets):
+            path = os.path.join(ROOT, rel)
+            if not os.path.exists(path):
+                print('  missing sheet %s' % rel); continue
+            im = Image.open(path).convert('RGBA')
+            COLS, ROWS = cc, rr
+            got = {'roll': [cut(im, 0, c) for c in range(cc)],
+                   'somer': [cut(im, 1, c) for c in range(cc)],
+                   'bank': [cut(im, 2, c) for c in range(cc)]}
+            if prime is None:
+                prime = got            # the FIRST sheet owns the reels; later ones only add candidates
+            for k in pools:
+                pools[k].extend((f, '%s%d/s%d' % (k, i, si)) for i, f in enumerate(got[k]))
+            print('  sheet %d: %s  %dx%d grid' % (si, os.path.basename(rel), cc, rr))
+
+        def to8(frames):
+            """⚠ RESAMPLE TO EIGHT SLOTS. A sheet may not have eight columns - Lizzie's is seven -
+               and br0..br7 / so0..so7 are fixed-width reels. Sampling proportionally keeps the
+               rotation evenly spaced instead of duplicating one frame at the end, which on a 360
+               roll would read as a stutter at the wrap."""
+            n = len(frames)
+            return [frames[min(n - 1, int(round(i * n / 8.0)))] for i in range(8)]
+
+        roll = to8(prime['roll'])
+        somer = to8(prime['somer'])
+        bankf = prime['bank']
         leans = [lean(f) for f in bankf]
         print('\n%s  sheet %dx%d  canvas %dx%d' % (pilot.upper(), im.width, im.height, CW, CH))
         print('  bank row lean: %s' % ' '.join('%+0.3f' % (v if v is not None else 0) for v in leans))
@@ -189,12 +270,11 @@ def main():
         # Candidates are drawn from the WHOLE sheet, not just row 2, and edge-on/tail-on frames are
         # excluded by ink width - a 55px sliver is a roll frame, not a bank pose.
         cand = []
-        for src_row, lst in (('bank', bankf), ('roll', roll)):
-            for i, f in enumerate(lst):
-                v = lean(f)
-                if v is None:
-                    continue
-                cand.append((v, f, '%s%d' % (src_row, i), f.width))
+        for f, tag in (pools['bank'] + pools['roll']):
+            v = lean(f)
+            if v is None:
+                continue
+            cand.append((v, f, tag, f.width))
         wmax = max(c[3] for c in cand)
         cand = [c for c in cand if c[3] >= wmax * 0.60]        # drop edge-on and tail-on poses
         # ⚠ AND WHICH SIDE IS THE GOOD ONE VARIES BY SHEET. The first cut always measured the LEFT
@@ -208,9 +288,15 @@ def main():
         # that - her idle hull came out as a narrow inverted sliver instead of the wide gold delta.
         # A true top-down delta is the WIDEST pose the craft has, so among everything within 0.06 of
         # level, take the widest; and prefer the bank row, which is the one authored top-down.
-        flat = [c for c in cand if abs(c[0]) < 0.06] or cand
-        bankflat = [c for c in flat if c[2].startswith('bank')]
-        lvlf = max(bankflat or flat, key=lambda c: c[3])
+        # the level frame is the most SYMMETRIC pose, not merely the flattest number - see mirror_iou
+        sym = [(mirror_iou(c[1]), c) for c in cand]
+        best_sym = max(s_ for s_, _ in sym)
+        lvlf = max((c for s_, c in sym if s_ >= best_sym - 0.02), key=lambda c: c[3])
+        print('  level frame %s: symmetry %.3f (best on the sheet %.3f)'
+              % (lvlf[2], dict((id(c), s_) for s_, c in sym)[id(lvlf)], best_sym))
+        if best_sym < 0.90:
+            print('  ** no frame on this sheet is a clean top-down (best %.2f) - the ship will look'
+                  ' angled in the roster. Regenerate the sheet rather than shipping this. **' % best_sym)
         strong = max(cand, key=lambda c: abs(c[0]))
         side = 1 if strong[0] > 0 else -1
         same = [c for c in cand if (c[0] * side) > 0.04]

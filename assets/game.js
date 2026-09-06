@@ -2158,6 +2158,13 @@ const XART=(function(){
      they register as loose files. yuri_body_0..6 are: idle, point, arm-across, salute, arms-out,
      side profile, and the back view with the CF jacket logo. */
   X._src.yuri_avatar='assets/game/yuri_v2/yuri_avatar.png';
+  /* ⚠ SQUARE BORDERED ROSTER AVATARS (Mike, 0906): "make sure you use square'd bordered
+     portraits for each pilot." One authored frame - lifted off his own Yuri avatar plate -
+     composited over each pilot's own portrait, so the only thing that changes between roster
+     slots is the face. See _BUILD_SOURCE/build_pilot_avatars_0906.py for why this is a
+     composite rather than nine separate generations. */
+  for(const _pa of ['axel','decker','maverick','freezer','juggernaut','yuri','lizzie','falva','cole'])
+    X._src['pav_'+_pa]='assets/game/pilot_avatars/pav_'+_pa+'.png';
   for(let _yb=0;_yb<7;_yb++) X._src['yuri_body_'+_yb]='assets/game/yuri_v2/yuri_body_'+_yb+'.png';
   /* ⚠ MIKE'S NEW FLAMETHROWER PLUME AND ITS IMPACT (0906): "I want to use this for
      flamethrower instead of what we have ... good replacement here." Four plume frames and a
@@ -52227,11 +52234,20 @@ function psBodyKey(key){
   return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
 }
 /* the horizontal spin. Falls back through the level frame to the bare hull so a pilot whose
-   roll reel has not decoded yet still shows a ship rather than a hole. */
+   roll reel has not decoded yet still shows a ship rather than a hole.
+
+   ⚠ THE REEL IS NOT PLAYED AT AN EVEN CADENCE, AND THAT IS THE POINT. br2 and br6 are the
+   EDGE-ON quarters - the ship as a vertical sliver - so a uniform 8-step cycle spends a quarter
+   of its time showing something you cannot identify a ship from. On a select screen, where the
+   player is deciding WHICH ship they want, that is the wrong quarter to give away. This
+   schedule holds the broad poses for three ticks and the edge-on ones for one, so the rotation
+   still reads as a full 360 while the hull is legible ~85% of the time instead of 75%.
+   Slowing the whole reel instead would have made the spin sluggish to fix a framing problem. */
+const PS_SPIN_SEQ=[0,0,0,1,1,2,3,3,3,4,4,4,5,5,6,7,7,7];
 function psShipKey(key, spin){
   if(typeof XART==='undefined') return null;
   if(spin!=null){
-    const f='ship_'+key+'_br'+(((spin|0)%8)+8)%8;
+    const f='ship_'+key+'_br'+PS_SPIN_SEQ[(((spin|0)%PS_SPIN_SEQ.length)+PS_SPIN_SEQ.length)%PS_SPIN_SEQ.length];
     if(XART.rdy(f)) return f;
   }
   for(const k of ['ship_'+key+'_pv2','ship_'+key]) if(XART.rdy(k)) return k;
@@ -52273,9 +52289,15 @@ function psDrawLineup(sel, y0, spin){
       else { ctx.save(); ctx.textAlign='center'; ctx.fillStyle='#7f8aa0';
              ctx.font='bold 26px "BOFmil", monospace'; ctx.fillText('?',x+PS_CELL/2,y0+PS_CELL*0.72); ctx.restore(); }
     } else {
-      ctx.save(); ctx.beginPath(); ctx.rect(x+2,y0+2,PS_CELL-4,PS_CELL-4); ctx.clip();
-      psBlitFit('port_'+Q.key+'_idle', x+PS_CELL/2, y0+PS_CELL/2, PS_CELL+12, PS_CELL+12, on?1:0.62);
-      ctx.restore();
+      /* the bordered avatar already carries its own frame, so it is drawn to the FULL cell and
+         unclipped; the bare portrait still needs the clip and the slight overscan. */
+      if(typeof XART!=='undefined' && XART.rdy('pav_'+Q.key)){
+        psBlitFit('pav_'+Q.key, x+PS_CELL/2, y0+PS_CELL/2, PS_CELL, PS_CELL, on?1:0.66);
+      } else {
+        ctx.save(); ctx.beginPath(); ctx.rect(x+2,y0+2,PS_CELL-4,PS_CELL-4); ctx.clip();
+        psBlitFit('port_'+Q.key+'_idle', x+PS_CELL/2, y0+PS_CELL/2, PS_CELL+12, PS_CELL+12, on?1:0.62);
+        ctx.restore();
+      }
     }
     const sy=y0+PS_CELL+6;
     psPanelBox(x, sy, PS_CELL, PS_CELL, Q.tint, on);
