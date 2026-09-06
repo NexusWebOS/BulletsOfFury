@@ -1,2921 +1,3541 @@
 {
-  "format": "coleforge.player-ship-barrel-roll-atlas.v1",
-  "atlas_key": "bof_player_ships_barrel_rolls_atlas",
-  "atlas": "bof_player_ships_barrel_rolls.png",
-  "size": [
-    3530,
-    1605
-  ],
-  "count": 153,
-  "pilots": 9,
-  "frames_per_pilot": 17,
-  "entries": [
-    {
-      "key": "ship_axel",
-      "pilot": "axel",
-      "kind": "flight",
-      "rect": [
-        3250,
-        1413,
-        80,
-        98
-      ],
-      "offset": [
-        5,
-        11
-      ],
-      "canvas": [
-        90,
-        120
-      ]
-    },
-    {
-      "key": "ship_axel_nf",
-      "pilot": "axel",
-      "kind": "flight",
-      "rect": [
-        414,
-        738,
-        177,
-        219
-      ],
-      "offset": [
-        13,
-        26
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_l",
-      "pilot": "axel",
-      "kind": "flight",
-      "rect": [
-        897,
-        6,
-        163,
-        244
-      ],
-      "offset": [
-        20,
-        13
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_r",
-      "pilot": "axel",
-      "kind": "flight",
-      "rect": [
-        714,
-        6,
-        171,
-        244
-      ],
-      "offset": [
-        16,
-        13
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_pv0",
-      "pilot": "axel",
-      "kind": "flight",
-      "rect": [
-        1120,
-        504,
-        172,
-        221
-      ],
-      "offset": [
-        14,
-        25
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_pv1",
-      "pilot": "axel",
-      "kind": "flight",
-      "rect": [
-        1304,
-        504,
-        165,
-        221
-      ],
-      "offset": [
-        17,
-        25
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_pv2",
-      "pilot": "axel",
-      "kind": "flight",
-      "rect": [
-        2947,
-        969,
-        175,
-        208
-      ],
-      "offset": [
-        12,
-        31
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_pv3",
-      "pilot": "axel",
-      "kind": "flight",
-      "rect": [
-        2287,
-        269,
-        165,
-        222
-      ],
-      "offset": [
-        17,
-        24
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_pv4",
-      "pilot": "axel",
-      "kind": "flight",
-      "rect": [
-        1481,
-        504,
-        165,
-        221
-      ],
-      "offset": [
-        17,
-        25
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_br0",
-      "pilot": "axel",
-      "kind": "barrel_roll",
-      "rect": [
-        1887,
-        1413,
-        140,
-        179
-      ],
-      "offset": [
-        30,
-        46
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_br1",
-      "pilot": "axel",
-      "kind": "barrel_roll",
-      "rect": [
-        6,
-        1413,
-        146,
-        186
-      ],
-      "offset": [
-        27,
-        42
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_br2",
-      "pilot": "axel",
-      "kind": "barrel_roll",
-      "rect": [
-        1630,
-        1195,
-        65,
-        201
-      ],
-      "offset": [
-        67,
-        35
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_br3",
-      "pilot": "axel",
-      "kind": "barrel_roll",
-      "rect": [
-        3424,
-        1195,
-        77,
-        189
-      ],
-      "offset": [
-        61,
-        41
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_br4",
-      "pilot": "axel",
-      "kind": "barrel_roll",
-      "rect": [
-        3123,
-        1413,
-        115,
-        169
-      ],
-      "offset": [
-        42,
-        51
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_br5",
-      "pilot": "axel",
-      "kind": "barrel_roll",
-      "rect": [
-        501,
-        1195,
-        72,
-        204
-      ],
-      "offset": [
-        64,
-        33
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_br6",
-      "pilot": "axel",
-      "kind": "barrel_roll",
-      "rect": [
-        1707,
-        1195,
-        65,
-        201
-      ],
-      "offset": [
-        68,
-        35
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_axel_br7",
-      "pilot": "axel",
-      "kind": "barrel_roll",
-      "rect": [
-        2177,
-        1413,
-        141,
-        176
-      ],
-      "offset": [
-        29,
-        47
-      ],
-      "canvas": [
-        200,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole",
-      "pilot": "cole",
-      "kind": "flight",
-      "rect": [
-        6,
-        738,
-        192,
-        219
-      ],
-      "offset": [
-        5,
-        26
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_nf",
-      "pilot": "cole",
-      "kind": "flight",
-      "rect": [
-        210,
-        738,
-        192,
-        219
-      ],
-      "offset": [
-        5,
-        26
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_l",
-      "pilot": "cole",
-      "kind": "flight",
-      "rect": [
-        1420,
-        6,
-        193,
-        242
-      ],
-      "offset": [
-        5,
-        14
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_r",
-      "pilot": "cole",
-      "kind": "flight",
-      "rect": [
-        1625,
-        6,
-        193,
-        242
-      ],
-      "offset": [
-        5,
-        14
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_pv0",
-      "pilot": "cole",
-      "kind": "flight",
-      "rect": [
-        187,
-        969,
-        168,
-        214
-      ],
-      "offset": [
-        29,
-        28
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_pv1",
-      "pilot": "cole",
-      "kind": "flight",
-      "rect": [
-        6,
-        969,
-        169,
-        214
-      ],
-      "offset": [
-        28,
-        28
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_pv2",
-      "pilot": "cole",
-      "kind": "flight",
-      "rect": [
-        3312,
-        738,
-        201,
-        214
-      ],
-      "offset": [
-        12,
-        28
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_pv3",
-      "pilot": "cole",
-      "kind": "flight",
-      "rect": [
-        2471,
-        738,
-        172,
-        216
-      ],
-      "offset": [
-        27,
-        27
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_pv4",
-      "pilot": "cole",
-      "kind": "flight",
-      "rect": [
-        2655,
-        738,
-        170,
-        216
-      ],
-      "offset": [
-        28,
-        27
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_br0",
-      "pilot": "cole",
-      "kind": "barrel_roll",
-      "rect": [
-        2785,
-        969,
-        150,
-        210
-      ],
-      "offset": [
-        38,
-        30
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_br1",
-      "pilot": "cole",
-      "kind": "barrel_roll",
-      "rect": [
-        367,
-        969,
-        154,
-        214
-      ],
-      "offset": [
-        36,
-        28
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_br2",
-      "pilot": "cole",
-      "kind": "barrel_roll",
-      "rect": [
-        318,
-        504,
-        126,
-        222
-      ],
-      "offset": [
-        50,
-        24
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_br3",
-      "pilot": "cole",
-      "kind": "barrel_roll",
-      "rect": [
-        456,
-        504,
-        126,
-        222
-      ],
-      "offset": [
-        50,
-        24
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_br4",
-      "pilot": "cole",
-      "kind": "barrel_roll",
-      "rect": [
-        1525,
-        1413,
-        138,
-        181
-      ],
-      "offset": [
-        44,
-        45
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_br5",
-      "pilot": "cole",
-      "kind": "barrel_roll",
-      "rect": [
-        1658,
-        504,
-        137,
-        221
-      ],
-      "offset": [
-        44,
-        25
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_br6",
-      "pilot": "cole",
-      "kind": "barrel_roll",
-      "rect": [
-        594,
-        504,
-        126,
-        222
-      ],
-      "offset": [
-        50,
-        24
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_cole_br7",
-      "pilot": "cole",
-      "kind": "barrel_roll",
-      "rect": [
-        2622,
-        969,
-        151,
-        210
-      ],
-      "offset": [
-        37,
-        30
-      ],
-      "canvas": [
-        226,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker",
-      "pilot": "decker",
-      "kind": "flight",
-      "rect": [
-        1120,
-        738,
-        143,
-        219
-      ],
-      "offset": [
-        30,
-        28
-      ],
-      "canvas": [
-        203,
-        276
-      ]
-    },
-    {
-      "key": "ship_decker_nf",
-      "pilot": "decker",
-      "kind": "flight",
-      "rect": [
-        1275,
-        738,
-        143,
-        219
-      ],
-      "offset": [
-        30,
-        28
-      ],
-      "canvas": [
-        203,
-        276
-      ]
-    },
-    {
-      "key": "ship_decker_l",
-      "pilot": "decker",
-      "kind": "flight",
-      "rect": [
-        1830,
-        6,
-        153,
-        242
-      ],
-      "offset": [
-        25,
-        17
-      ],
-      "canvas": [
-        203,
-        276
-      ]
-    },
-    {
-      "key": "ship_decker_r",
-      "pilot": "decker",
-      "kind": "flight",
-      "rect": [
-        1995,
-        6,
-        139,
-        242
-      ],
-      "offset": [
-        32,
-        17
-      ],
-      "canvas": [
-        203,
-        276
-      ]
-    },
-    {
-      "key": "ship_decker_pv0",
-      "pilot": "decker",
-      "kind": "flight",
-      "rect": [
-        919,
-        969,
-        153,
-        213
-      ],
-      "offset": [
-        12,
-        29
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_pv1",
-      "pilot": "decker",
-      "kind": "flight",
-      "rect": [
-        6,
-        504,
-        144,
-        222
-      ],
-      "offset": [
-        17,
-        24
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_pv2",
-      "pilot": "decker",
-      "kind": "flight",
-      "rect": [
-        753,
-        969,
-        154,
-        213
-      ],
-      "offset": [
-        12,
-        29
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_pv3",
-      "pilot": "decker",
-      "kind": "flight",
-      "rect": [
-        162,
-        504,
-        144,
-        222
-      ],
-      "offset": [
-        17,
-        24
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_pv4",
-      "pilot": "decker",
-      "kind": "flight",
-      "rect": [
-        1084,
-        969,
-        152,
-        213
-      ],
-      "offset": [
-        13,
-        29
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_br0",
-      "pilot": "decker",
-      "kind": "barrel_roll",
-      "rect": [
-        6,
-        1195,
-        132,
-        206
-      ],
-      "offset": [
-        23,
-        32
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_br1",
-      "pilot": "decker",
-      "kind": "barrel_roll",
-      "rect": [
-        1455,
-        1195,
-        79,
-        202
-      ],
-      "offset": [
-        49,
-        34
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_br2",
-      "pilot": "decker",
-      "kind": "barrel_roll",
-      "rect": [
-        363,
-        1195,
-        57,
-        206
-      ],
-      "offset": [
-        60,
-        32
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_br3",
-      "pilot": "decker",
-      "kind": "barrel_roll",
-      "rect": [
-        1546,
-        1195,
-        72,
-        201
-      ],
-      "offset": [
-        53,
-        35
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_br4",
-      "pilot": "decker",
-      "kind": "barrel_roll",
-      "rect": [
-        1938,
-        1195,
-        115,
-        200
-      ],
-      "offset": [
-        31,
-        35
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_br5",
-      "pilot": "decker",
-      "kind": "barrel_roll",
-      "rect": [
-        293,
-        1195,
-        58,
-        206
-      ],
-      "offset": [
-        60,
-        32
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_br6",
-      "pilot": "decker",
-      "kind": "barrel_roll",
-      "rect": [
-        432,
-        1195,
-        57,
-        206
-      ],
-      "offset": [
-        61,
-        32
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_decker_br7",
-      "pilot": "decker",
-      "kind": "barrel_roll",
-      "rect": [
-        150,
-        1195,
-        131,
-        206
-      ],
-      "offset": [
-        23,
-        32
-      ],
-      "canvas": [
-        178,
-        271
-      ]
-    },
-    {
-      "key": "ship_falva",
-      "pilot": "falva",
-      "kind": "flight",
-      "rect": [
-        6,
-        269,
-        152,
-        223
-      ],
-      "offset": [
-        0,
-        28
-      ],
-      "canvas": [
-        152,
-        280
-      ]
-    },
-    {
-      "key": "ship_falva_nf",
-      "pilot": "falva",
-      "kind": "flight",
-      "rect": [
-        170,
-        269,
-        152,
-        223
-      ],
-      "offset": [
-        0,
-        28
-      ],
-      "canvas": [
-        152,
-        280
-      ]
-    },
-    {
-      "key": "ship_falva_l",
-      "pilot": "falva",
-      "kind": "flight",
-      "rect": [
-        200,
-        6,
-        151,
-        250
-      ],
-      "offset": [
-        0,
-        15
-      ],
-      "canvas": [
-        152,
-        280
-      ]
-    },
-    {
-      "key": "ship_falva_r",
-      "pilot": "falva",
-      "kind": "flight",
-      "rect": [
-        556,
-        6,
-        146,
-        247
-      ],
-      "offset": [
-        3,
-        16
-      ],
-      "canvas": [
-        152,
-        280
-      ]
-    },
-    {
-      "key": "ship_falva_pv0",
-      "pilot": "falva",
-      "kind": "flight",
-      "rect": [
-        2898,
-        6,
-        109,
-        234
-      ],
-      "offset": [
-        21,
-        24
-      ],
-      "canvas": [
-        152,
-        280
-      ]
-    },
-    {
-      "key": "ship_falva_pv1",
-      "pilot": "falva",
-      "kind": "flight",
-      "rect": [
-        2146,
-        6,
-        132,
-        242
-      ],
-      "offset": [
-        10,
-        19
-      ],
-      "canvas": [
-        152,
-        280
-      ]
-    },
-    {
-      "key": "ship_falva_pv2",
-      "pilot": "falva",
-      "kind": "flight",
-      "rect": [
-        334,
-        269,
-        152,
-        223
-      ],
-      "offset": [
-        0,
-        28
-      ],
-      "canvas": [
-        152,
-        280
-      ]
-    },
-    {
-      "key": "ship_falva_pv3",
-      "pilot": "falva",
-      "kind": "flight",
-      "rect": [
-        2290,
-        6,
-        128,
-        241
-      ],
-      "offset": [
-        10,
-        20
-      ],
-      "canvas": [
-        152,
-        280
-      ]
-    },
-    {
-      "key": "ship_falva_pv4",
-      "pilot": "falva",
-      "kind": "flight",
-      "rect": [
-        3019,
-        6,
-        109,
-        234
-      ],
-      "offset": [
-        21,
-        24
-      ],
-      "canvas": [
-        152,
-        280
-      ]
-    },
-    {
-      "key": "ship_falva_br0",
-      "pilot": "falva",
-      "kind": "barrel_roll",
-      "rect": [
-        2837,
-        738,
-        146,
-        216
-      ],
-      "offset": [
-        14,
-        27
-      ],
-      "canvas": [
-        174,
-        271
-      ]
-    },
-    {
-      "key": "ship_falva_br1",
-      "pilot": "falva",
-      "kind": "barrel_roll",
-      "rect": [
-        2644,
-        504,
-        130,
-        220
-      ],
-      "offset": [
-        22,
-        25
-      ],
-      "canvas": [
-        174,
-        271
-      ]
-    },
-    {
-      "key": "ship_falva_br2",
-      "pilot": "falva",
-      "kind": "barrel_roll",
-      "rect": [
-        732,
-        504,
-        86,
-        222
-      ],
-      "offset": [
-        44,
-        24
-      ],
-      "canvas": [
-        174,
-        271
-      ]
-    },
-    {
-      "key": "ship_falva_br3",
-      "pilot": "falva",
-      "kind": "barrel_roll",
-      "rect": [
-        1430,
-        738,
-        128,
-        219
-      ],
-      "offset": [
-        23,
-        26
-      ],
-      "canvas": [
-        174,
-        271
-      ]
-    },
-    {
-      "key": "ship_falva_br4",
-      "pilot": "falva",
-      "kind": "barrel_roll",
-      "rect": [
-        2142,
-        738,
-        120,
-        217
-      ],
-      "offset": [
-        27,
-        27
-      ],
-      "canvas": [
-        174,
-        271
-      ]
-    },
-    {
-      "key": "ship_falva_br5",
-      "pilot": "falva",
-      "kind": "barrel_roll",
-      "rect": [
-        959,
-        738,
-        149,
-        219
-      ],
-      "offset": [
-        12,
-        26
-      ],
-      "canvas": [
-        174,
-        271
-      ]
-    },
-    {
-      "key": "ship_falva_br6",
-      "pilot": "falva",
-      "kind": "barrel_roll",
-      "rect": [
-        830,
-        504,
-        86,
-        222
-      ],
-      "offset": [
-        44,
-        24
-      ],
-      "canvas": [
-        174,
-        271
-      ]
-    },
-    {
-      "key": "ship_falva_br7",
-      "pilot": "falva",
-      "kind": "barrel_roll",
-      "rect": [
-        2501,
-        504,
-        131,
-        220
-      ],
-      "offset": [
-        21,
-        25
-      ],
-      "canvas": [
-        174,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer",
-      "pilot": "freezer",
-      "kind": "flight",
-      "rect": [
-        3224,
-        504,
-        197,
-        219
-      ],
-      "offset": [
-        6,
-        26
-      ],
-      "canvas": [
-        209,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_nf",
-      "pilot": "freezer",
-      "kind": "flight",
-      "rect": [
-        1911,
-        269,
-        176,
-        222
-      ],
-      "offset": [
-        22,
-        24
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_l",
-      "pilot": "freezer",
-      "kind": "flight",
-      "rect": [
-        3140,
-        6,
-        186,
-        230
-      ],
-      "offset": [
-        11,
-        20
-      ],
-      "canvas": [
-        209,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_r",
-      "pilot": "freezer",
-      "kind": "flight",
-      "rect": [
-        3338,
-        6,
-        185,
-        229
-      ],
-      "offset": [
-        12,
-        21
-      ],
-      "canvas": [
-        209,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_pv0",
-      "pilot": "freezer",
-      "kind": "flight",
-      "rect": [
-        1722,
-        269,
-        177,
-        222
-      ],
-      "offset": [
-        21,
-        24
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_pv1",
-      "pilot": "freezer",
-      "kind": "flight",
-      "rect": [
-        1531,
-        269,
-        179,
-        222
-      ],
-      "offset": [
-        20,
-        24
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_pv2",
-      "pilot": "freezer",
-      "kind": "flight",
-      "rect": [
-        1935,
-        738,
-        195,
-        217
-      ],
-      "offset": [
-        12,
-        27
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_pv3",
-      "pilot": "freezer",
-      "kind": "flight",
-      "rect": [
-        928,
-        504,
-        180,
-        221
-      ],
-      "offset": [
-        20,
-        25
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_pv4",
-      "pilot": "freezer",
-      "kind": "flight",
-      "rect": [
-        2099,
-        269,
-        176,
-        222
-      ],
-      "offset": [
-        22,
-        24
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_br0",
-      "pilot": "freezer",
-      "kind": "barrel_roll",
-      "rect": [
-        2065,
-        1195,
-        180,
-        198
-      ],
-      "offset": [
-        20,
-        36
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_br1",
-      "pilot": "freezer",
-      "kind": "barrel_roll",
-      "rect": [
-        2449,
-        1195,
-        117,
-        198
-      ],
-      "offset": [
-        51,
-        36
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_br2",
-      "pilot": "freezer",
-      "kind": "barrel_roll",
-      "rect": [
-        3245,
-        969,
-        85,
-        207
-      ],
-      "offset": [
-        67,
-        32
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_br3",
-      "pilot": "freezer",
-      "kind": "barrel_roll",
-      "rect": [
-        3342,
-        969,
-        85,
-        207
-      ],
-      "offset": [
-        67,
-        32
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_br4",
-      "pilot": "freezer",
-      "kind": "barrel_roll",
-      "rect": [
-        2785,
-        1195,
-        156,
-        195
-      ],
-      "offset": [
-        32,
-        38
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_br5",
-      "pilot": "freezer",
-      "kind": "barrel_roll",
-      "rect": [
-        3134,
-        969,
-        99,
-        207
-      ],
-      "offset": [
-        60,
-        32
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_br6",
-      "pilot": "freezer",
-      "kind": "barrel_roll",
-      "rect": [
-        3439,
-        969,
-        85,
-        207
-      ],
-      "offset": [
-        68,
-        32
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_freezer_br7",
-      "pilot": "freezer",
-      "kind": "barrel_roll",
-      "rect": [
-        2257,
-        1195,
-        180,
-        198
-      ],
-      "offset": [
-        20,
-        36
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut",
-      "pilot": "juggernaut",
-      "kind": "flight",
-      "rect": [
-        603,
-        738,
-        166,
-        219
-      ],
-      "offset": [
-        18,
-        28
-      ],
-      "canvas": [
-        203,
-        275
-      ]
-    },
-    {
-      "key": "ship_juggernaut_nf",
-      "pilot": "juggernaut",
-      "kind": "flight",
-      "rect": [
-        781,
-        738,
-        166,
-        219
-      ],
-      "offset": [
-        18,
-        28
-      ],
-      "canvas": [
-        203,
-        275
-      ]
-    },
-    {
-      "key": "ship_juggernaut_l",
-      "pilot": "juggernaut",
-      "kind": "flight",
-      "rect": [
-        1243,
-        6,
-        165,
-        243
-      ],
-      "offset": [
-        19,
-        16
-      ],
-      "canvas": [
-        203,
-        275
-      ]
-    },
-    {
-      "key": "ship_juggernaut_r",
-      "pilot": "juggernaut",
-      "kind": "flight",
-      "rect": [
-        1072,
-        6,
-        159,
-        244
-      ],
-      "offset": [
-        22,
-        15
-      ],
-      "canvas": [
-        203,
-        275
-      ]
-    },
-    {
-      "key": "ship_juggernaut_pv0",
-      "pilot": "juggernaut",
-      "kind": "flight",
-      "rect": [
-        1807,
-        504,
-        168,
-        220
-      ],
-      "offset": [
-        12,
-        25
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_pv1",
-      "pilot": "juggernaut",
-      "kind": "flight",
-      "rect": [
-        2464,
-        269,
-        165,
-        222
-      ],
-      "offset": [
-        13,
-        24
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_pv2",
-      "pilot": "juggernaut",
-      "kind": "flight",
-      "rect": [
-        2166,
-        504,
-        157,
-        220
-      ],
-      "offset": [
-        17,
-        25
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_pv3",
-      "pilot": "juggernaut",
-      "kind": "flight",
-      "rect": [
-        2641,
-        269,
-        164,
-        222
-      ],
-      "offset": [
-        14,
-        24
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_pv4",
-      "pilot": "juggernaut",
-      "kind": "flight",
-      "rect": [
-        1987,
-        504,
-        167,
-        220
-      ],
-      "offset": [
-        12,
-        25
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_br0",
-      "pilot": "juggernaut",
-      "kind": "barrel_roll",
-      "rect": [
-        164,
-        1413,
-        131,
-        186
-      ],
-      "offset": [
-        30,
-        42
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_br1",
-      "pilot": "juggernaut",
-      "kind": "barrel_roll",
-      "rect": [
-        1675,
-        1413,
-        95,
-        180
-      ],
-      "offset": [
-        48,
-        45
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_br2",
-      "pilot": "juggernaut",
-      "kind": "barrel_roll",
-      "rect": [
-        2516,
-        1413,
-        93,
-        173
-      ],
-      "offset": [
-        49,
-        49
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_br3",
-      "pilot": "juggernaut",
-      "kind": "barrel_roll",
-      "rect": [
-        2330,
-        1413,
-        65,
-        176
-      ],
-      "offset": [
-        63,
-        47
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_br4",
-      "pilot": "juggernaut",
-      "kind": "barrel_roll",
-      "rect": [
-        2407,
-        1413,
-        97,
-        173
-      ],
-      "offset": [
-        47,
-        49
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_br5",
-      "pilot": "juggernaut",
-      "kind": "barrel_roll",
-      "rect": [
-        3012,
-        1413,
-        99,
-        171
-      ],
-      "offset": [
-        46,
-        50
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_br6",
-      "pilot": "juggernaut",
-      "kind": "barrel_roll",
-      "rect": [
-        1782,
-        1413,
-        93,
-        180
-      ],
-      "offset": [
-        49,
-        45
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_juggernaut_br7",
-      "pilot": "juggernaut",
-      "kind": "barrel_roll",
-      "rect": [
-        307,
-        1413,
-        131,
-        186
-      ],
-      "offset": [
-        30,
-        42
-      ],
-      "canvas": [
-        192,
-        271
-      ]
-    },
-    {
-      "key": "ship_lizzie",
-      "pilot": "lizzie",
-      "kind": "flight",
-      "rect": [
-        2430,
-        6,
-        222,
-        236
-      ],
-      "offset": [
-        0,
-        22
-      ],
-      "canvas": [
-        222,
-        280
-      ]
-    },
-    {
-      "key": "ship_lizzie_nf",
-      "pilot": "lizzie",
-      "kind": "flight",
-      "rect": [
-        1248,
-        969,
-        151,
-        213
-      ],
-      "offset": [
-        33,
-        36
-      ],
-      "canvas": [
-        222,
-        280
-      ]
-    },
-    {
-      "key": "ship_lizzie_l",
-      "pilot": "lizzie",
-      "kind": "flight",
-      "rect": [
-        2033,
-        969,
-        204,
-        210
-      ],
-      "offset": [
-        9,
-        35
-      ],
-      "canvas": [
-        222,
-        280
-      ]
-    },
-    {
-      "key": "ship_lizzie_r",
-      "pilot": "lizzie",
-      "kind": "flight",
-      "rect": [
-        533,
-        969,
-        208,
-        213
-      ],
-      "offset": [
-        6,
-        34
-      ],
-      "canvas": [
-        222,
-        280
-      ]
-    },
-    {
-      "key": "ship_lizzie_pv0",
-      "pilot": "lizzie",
-      "kind": "flight",
-      "rect": [
-        1411,
-        969,
-        151,
-        213
-      ],
-      "offset": [
-        33,
-        36
-      ],
-      "canvas": [
-        222,
-        280
-      ]
-    },
-    {
-      "key": "ship_lizzie_pv1",
-      "pilot": "lizzie",
-      "kind": "flight",
-      "rect": [
-        2249,
-        969,
-        180,
-        210
-      ],
-      "offset": [
-        19,
-        36
-      ],
-      "canvas": [
-        222,
-        280
-      ]
-    },
-    {
-      "key": "ship_lizzie_pv2",
-      "pilot": "lizzie",
-      "kind": "flight",
-      "rect": [
-        2664,
-        6,
-        222,
-        236
-      ],
-      "offset": [
-        0,
-        22
-      ],
-      "canvas": [
-        222,
-        280
-      ]
-    },
-    {
-      "key": "ship_lizzie_pv3",
-      "pilot": "lizzie",
-      "kind": "flight",
-      "rect": [
-        2274,
-        738,
-        185,
-        216
-      ],
-      "offset": [
-        19,
-        33
-      ],
-      "canvas": [
-        222,
-        280
-      ]
-    },
-    {
-      "key": "ship_lizzie_pv4",
-      "pilot": "lizzie",
-      "kind": "flight",
-      "rect": [
-        2335,
-        504,
-        154,
-        220
-      ],
-      "offset": [
-        35,
-        31
-      ],
-      "canvas": [
-        222,
-        280
-      ]
-    },
-    {
-      "key": "ship_lizzie_br0",
-      "pilot": "lizzie",
-      "kind": "barrel_roll",
-      "rect": [
-        1570,
-        738,
-        183,
-        218
-      ],
-      "offset": [
-        12,
-        26
-      ],
-      "canvas": [
-        208,
-        271
-      ]
-    },
-    {
-      "key": "ship_lizzie_br1",
-      "pilot": "lizzie",
-      "kind": "barrel_roll",
-      "rect": [
-        2816,
-        1413,
-        184,
-        171
-      ],
-      "offset": [
-        12,
-        50
-      ],
-      "canvas": [
-        208,
-        271
-      ]
-    },
-    {
-      "key": "ship_lizzie_br2",
-      "pilot": "lizzie",
-      "kind": "barrel_roll",
-      "rect": [
-        1000,
-        1413,
-        163,
-        183
-      ],
-      "offset": [
-        22,
-        44
-      ],
-      "canvas": [
-        208,
-        271
-      ]
-    },
-    {
-      "key": "ship_lizzie_br3",
-      "pilot": "lizzie",
-      "kind": "barrel_roll",
-      "rect": [
-        450,
-        1413,
-        168,
-        185
-      ],
-      "offset": [
-        20,
-        43
-      ],
-      "canvas": [
-        208,
-        271
-      ]
-    },
-    {
-      "key": "ship_lizzie_br4",
-      "pilot": "lizzie",
-      "kind": "barrel_roll",
-      "rect": [
-        1335,
-        269,
-        184,
-        222
-      ],
-      "offset": [
-        12,
-        24
-      ],
-      "canvas": [
-        208,
-        271
-      ]
-    },
-    {
-      "key": "ship_lizzie_br5",
-      "pilot": "lizzie",
-      "kind": "barrel_roll",
-      "rect": [
-        2621,
-        1413,
-        183,
-        172
-      ],
-      "offset": [
-        12,
-        49
-      ],
-      "canvas": [
-        208,
-        271
-      ]
-    },
-    {
-      "key": "ship_lizzie_br6",
-      "pilot": "lizzie",
-      "kind": "barrel_roll",
-      "rect": [
-        1175,
-        1413,
-        163,
-        183
-      ],
-      "offset": [
-        23,
-        44
-      ],
-      "canvas": [
-        208,
-        271
-      ]
-    },
-    {
-      "key": "ship_lizzie_br7",
-      "pilot": "lizzie",
-      "kind": "barrel_roll",
-      "rect": [
-        1350,
-        1413,
-        163,
-        183
-      ],
-      "offset": [
-        22,
-        44
-      ],
-      "canvas": [
-        208,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick",
-      "pilot": "maverick",
-      "kind": "flight",
-      "rect": [
-        3007,
-        504,
-        205,
-        219
-      ],
-      "offset": [
-        4,
-        27
-      ],
-      "canvas": [
-        214,
-        273
-      ]
-    },
-    {
-      "key": "ship_maverick_nf",
-      "pilot": "maverick",
-      "kind": "flight",
-      "rect": [
-        3159,
-        269,
-        156,
-        222
-      ],
-      "offset": [
-        32,
-        24
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_l",
-      "pilot": "maverick",
-      "kind": "flight",
-      "rect": [
-        6,
-        6,
-        182,
-        251
-      ],
-      "offset": [
-        16,
-        11
-      ],
-      "canvas": [
-        214,
-        273
-      ]
-    },
-    {
-      "key": "ship_maverick_r",
-      "pilot": "maverick",
-      "kind": "flight",
-      "rect": [
-        363,
-        6,
-        181,
-        249
-      ],
-      "offset": [
-        16,
-        12
-      ],
-      "canvas": [
-        214,
-        273
-      ]
-    },
-    {
-      "key": "ship_maverick_pv0",
-      "pilot": "maverick",
-      "kind": "flight",
-      "rect": [
-        2817,
-        269,
-        161,
-        222
-      ],
-      "offset": [
-        29,
-        24
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_pv1",
-      "pilot": "maverick",
-      "kind": "flight",
-      "rect": [
-        3327,
-        269,
-        156,
-        222
-      ],
-      "offset": [
-        32,
-        24
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_pv2",
-      "pilot": "maverick",
-      "kind": "flight",
-      "rect": [
-        2578,
-        1195,
-        195,
-        196
-      ],
-      "offset": [
-        12,
-        37
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_pv3",
-      "pilot": "maverick",
-      "kind": "flight",
-      "rect": [
-        2990,
-        269,
-        157,
-        222
-      ],
-      "offset": [
-        31,
-        24
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_pv4",
-      "pilot": "maverick",
-      "kind": "flight",
-      "rect": [
-        1765,
-        738,
-        158,
-        218
-      ],
-      "offset": [
-        31,
-        26
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_br0",
-      "pilot": "maverick",
-      "kind": "barrel_roll",
-      "rect": [
-        630,
-        1413,
-        173,
-        183
-      ],
-      "offset": [
-        23,
-        44
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_br1",
-      "pilot": "maverick",
-      "kind": "barrel_roll",
-      "rect": [
-        3288,
-        1195,
-        124,
-        190
-      ],
-      "offset": [
-        48,
-        40
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_br2",
-      "pilot": "maverick",
-      "kind": "barrel_roll",
-      "rect": [
-        3046,
-        1195,
-        69,
-        194
-      ],
-      "offset": [
-        75,
-        38
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_br3",
-      "pilot": "maverick",
-      "kind": "barrel_roll",
-      "rect": [
-        2953,
-        1195,
-        81,
-        194
-      ],
-      "offset": [
-        69,
-        38
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_br4",
-      "pilot": "maverick",
-      "kind": "barrel_roll",
-      "rect": [
-        2039,
-        1413,
-        126,
-        178
-      ],
-      "offset": [
-        47,
-        46
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_br5",
-      "pilot": "maverick",
-      "kind": "barrel_roll",
-      "rect": [
-        3208,
-        1195,
-        68,
-        194
-      ],
-      "offset": [
-        76,
-        38
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_br6",
-      "pilot": "maverick",
-      "kind": "barrel_roll",
-      "rect": [
-        3127,
-        1195,
-        69,
-        194
-      ],
-      "offset": [
-        76,
-        38
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_maverick_br7",
-      "pilot": "maverick",
-      "kind": "barrel_roll",
-      "rect": [
-        815,
-        1413,
-        173,
-        183
-      ],
-      "offset": [
-        23,
-        44
-      ],
-      "canvas": [
-        220,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri",
-      "pilot": "yuri",
-      "kind": "flight",
-      "rect": [
-        1033,
-        1195,
-        199,
-        202
-      ],
-      "offset": [
-        2,
-        24
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_nf",
-      "pilot": "yuri",
-      "kind": "flight",
-      "rect": [
-        1244,
-        1195,
-        199,
-        202
-      ],
-      "offset": [
-        2,
-        24
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_l",
-      "pilot": "yuri",
-      "kind": "flight",
-      "rect": [
-        930,
-        269,
-        191,
-        222
-      ],
-      "offset": [
-        6,
-        24
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_r",
-      "pilot": "yuri",
-      "kind": "flight",
-      "rect": [
-        1133,
-        269,
-        190,
-        222
-      ],
-      "offset": [
-        6,
-        24
-      ],
-      "canvas": [
-        203,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_pv0",
-      "pilot": "yuri",
-      "kind": "flight",
-      "rect": [
-        498,
-        269,
-        204,
-        222
-      ],
-      "offset": [
-        16,
-        24
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_pv1",
-      "pilot": "yuri",
-      "kind": "flight",
-      "rect": [
-        585,
-        1195,
-        212,
-        202
-      ],
-      "offset": [
-        12,
-        34
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_pv2",
-      "pilot": "yuri",
-      "kind": "flight",
-      "rect": [
-        2786,
-        504,
-        209,
-        219
-      ],
-      "offset": [
-        13,
-        26
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_pv3",
-      "pilot": "yuri",
-      "kind": "flight",
-      "rect": [
-        809,
-        1195,
-        212,
-        202
-      ],
-      "offset": [
-        12,
-        34
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_pv4",
-      "pilot": "yuri",
-      "kind": "flight",
-      "rect": [
-        714,
-        269,
-        204,
-        222
-      ],
-      "offset": [
-        16,
-        24
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_br0",
-      "pilot": "yuri",
-      "kind": "barrel_roll",
-      "rect": [
-        2441,
-        969,
-        169,
-        210
-      ],
-      "offset": [
-        33,
-        30
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_br1",
-      "pilot": "yuri",
-      "kind": "barrel_roll",
-      "rect": [
-        2995,
-        738,
-        146,
-        216
-      ],
-      "offset": [
-        45,
-        27
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_br2",
-      "pilot": "yuri",
-      "kind": "barrel_roll",
-      "rect": [
-        3153,
-        738,
-        68,
-        216
-      ],
-      "offset": [
-        84,
-        27
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_br3",
-      "pilot": "yuri",
-      "kind": "barrel_roll",
-      "rect": [
-        1574,
-        969,
-        128,
-        212
-      ],
-      "offset": [
-        54,
-        29
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_br4",
-      "pilot": "yuri",
-      "kind": "barrel_roll",
-      "rect": [
-        1853,
-        969,
-        168,
-        211
-      ],
-      "offset": [
-        34,
-        30
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_br5",
-      "pilot": "yuri",
-      "kind": "barrel_roll",
-      "rect": [
-        1714,
-        969,
-        127,
-        212
-      ],
-      "offset": [
-        54,
-        29
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_br6",
-      "pilot": "yuri",
-      "kind": "barrel_roll",
-      "rect": [
-        3233,
-        738,
-        67,
-        216
-      ],
-      "offset": [
-        84,
-        27
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    },
-    {
-      "key": "ship_yuri_br7",
-      "pilot": "yuri",
-      "kind": "barrel_roll",
-      "rect": [
-        1784,
-        1195,
-        142,
-        200
-      ],
-      "offset": [
-        47,
-        35
-      ],
-      "canvas": [
-        236,
-        271
-      ]
-    }
-  ]
+ "format": "coleforge.player-ship-barrel-roll-atlas.v1",
+ "atlas_key": "bof_player_ships_barrel_rolls_atlas",
+ "atlas": "bof_player_ships_barrel_rolls.png",
+ "size": [
+  3530,
+  2887
+ ],
+ "count": 185,
+ "pilots": 9,
+ "frames_per_pilot": null,
+ "entries": [
+  {
+   "key": "ship_axel",
+   "pilot": "axel",
+   "kind": "flight",
+   "rect": [
+    3250,
+    1413,
+    80,
+    98
+   ],
+   "offset": [
+    5,
+    11
+   ],
+   "canvas": [
+    90,
+    120
+   ]
+  },
+  {
+   "key": "ship_axel_br0",
+   "pilot": "axel",
+   "kind": "barrel_roll",
+   "rect": [
+    1887,
+    1413,
+    140,
+    179
+   ],
+   "offset": [
+    30,
+    46
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_br1",
+   "pilot": "axel",
+   "kind": "barrel_roll",
+   "rect": [
+    6,
+    1413,
+    146,
+    186
+   ],
+   "offset": [
+    27,
+    42
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_br2",
+   "pilot": "axel",
+   "kind": "barrel_roll",
+   "rect": [
+    1630,
+    1195,
+    65,
+    201
+   ],
+   "offset": [
+    67,
+    35
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_br3",
+   "pilot": "axel",
+   "kind": "barrel_roll",
+   "rect": [
+    3424,
+    1195,
+    77,
+    189
+   ],
+   "offset": [
+    61,
+    41
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_br4",
+   "pilot": "axel",
+   "kind": "barrel_roll",
+   "rect": [
+    3123,
+    1413,
+    115,
+    169
+   ],
+   "offset": [
+    42,
+    51
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_br5",
+   "pilot": "axel",
+   "kind": "barrel_roll",
+   "rect": [
+    501,
+    1195,
+    72,
+    204
+   ],
+   "offset": [
+    64,
+    33
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_br6",
+   "pilot": "axel",
+   "kind": "barrel_roll",
+   "rect": [
+    1707,
+    1195,
+    65,
+    201
+   ],
+   "offset": [
+    68,
+    35
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_br7",
+   "pilot": "axel",
+   "kind": "barrel_roll",
+   "rect": [
+    2177,
+    1413,
+    141,
+    176
+   ],
+   "offset": [
+    29,
+    47
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_l",
+   "pilot": "axel",
+   "kind": "flight",
+   "rect": [
+    897,
+    6,
+    163,
+    244
+   ],
+   "offset": [
+    20,
+    13
+   ],
+   "canvas": [
+    203,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_nf",
+   "pilot": "axel",
+   "kind": "flight",
+   "rect": [
+    414,
+    738,
+    177,
+    219
+   ],
+   "offset": [
+    13,
+    26
+   ],
+   "canvas": [
+    203,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_pv0",
+   "pilot": "axel",
+   "kind": "flight",
+   "rect": [
+    1120,
+    504,
+    172,
+    221
+   ],
+   "offset": [
+    14,
+    25
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_pv1",
+   "pilot": "axel",
+   "kind": "flight",
+   "rect": [
+    1304,
+    504,
+    165,
+    221
+   ],
+   "offset": [
+    17,
+    25
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_pv2",
+   "pilot": "axel",
+   "kind": "flight",
+   "rect": [
+    2947,
+    969,
+    175,
+    208
+   ],
+   "offset": [
+    12,
+    31
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_pv3",
+   "pilot": "axel",
+   "kind": "flight",
+   "rect": [
+    2287,
+    269,
+    165,
+    222
+   ],
+   "offset": [
+    17,
+    24
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_pv4",
+   "pilot": "axel",
+   "kind": "flight",
+   "rect": [
+    1481,
+    504,
+    165,
+    221
+   ],
+   "offset": [
+    17,
+    25
+   ],
+   "canvas": [
+    200,
+    271
+   ]
+  },
+  {
+   "key": "ship_axel_r",
+   "pilot": "axel",
+   "kind": "flight",
+   "rect": [
+    714,
+    6,
+    171,
+    244
+   ],
+   "offset": [
+    16,
+    13
+   ],
+   "canvas": [
+    203,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole",
+   "pilot": "cole",
+   "kind": "flight",
+   "rect": [
+    2994,
+    2481,
+    163,
+    214
+   ],
+   "offset": [
+    31,
+    28
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_br0",
+   "pilot": "cole",
+   "kind": "barrel_roll",
+   "rect": [
+    946,
+    2481,
+    163,
+    222
+   ],
+   "offset": [
+    31,
+    24
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_br1",
+   "pilot": "cole",
+   "kind": "barrel_roll",
+   "rect": [
+    1275,
+    2481,
+    152,
+    221
+   ],
+   "offset": [
+    37,
+    25
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_br2",
+   "pilot": "cole",
+   "kind": "barrel_roll",
+   "rect": [
+    1591,
+    2481,
+    30,
+    221
+   ],
+   "offset": [
+    98,
+    25
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_br3",
+   "pilot": "cole",
+   "kind": "barrel_roll",
+   "rect": [
+    1656,
+    2481,
+    147,
+    221
+   ],
+   "offset": [
+    39,
+    25
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_br4",
+   "pilot": "cole",
+   "kind": "barrel_roll",
+   "rect": [
+    1968,
+    2481,
+    160,
+    214
+   ],
+   "offset": [
+    33,
+    28
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_br5",
+   "pilot": "cole",
+   "kind": "barrel_roll",
+   "rect": [
+    2294,
+    2481,
+    153,
+    180
+   ],
+   "offset": [
+    36,
+    45
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_br6",
+   "pilot": "cole",
+   "kind": "barrel_roll",
+   "rect": [
+    2611,
+    2481,
+    31,
+    221
+   ],
+   "offset": [
+    97,
+    25
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_br7",
+   "pilot": "cole",
+   "kind": "barrel_roll",
+   "rect": [
+    2677,
+    2481,
+    153,
+    180
+   ],
+   "offset": [
+    36,
+    45
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_l",
+   "pilot": "cole",
+   "kind": "flight",
+   "rect": [
+    3159,
+    2481,
+    156,
+    175
+   ],
+   "offset": [
+    35,
+    48
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_nf",
+   "pilot": "cole",
+   "kind": "flight",
+   "rect": [
+    2994,
+    2481,
+    163,
+    214
+   ],
+   "offset": [
+    31,
+    28
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_pv0",
+   "pilot": "cole",
+   "kind": "flight",
+   "rect": [
+    3159,
+    2481,
+    156,
+    175
+   ],
+   "offset": [
+    35,
+    48
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_pv1",
+   "pilot": "cole",
+   "kind": "flight",
+   "rect": [
+    3317,
+    2481,
+    153,
+    180
+   ],
+   "offset": [
+    36,
+    45
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_pv2",
+   "pilot": "cole",
+   "kind": "flight",
+   "rect": [
+    2994,
+    2481,
+    163,
+    214
+   ],
+   "offset": [
+    31,
+    28
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_pv3",
+   "pilot": "cole",
+   "kind": "flight",
+   "rect": [
+    160,
+    2705,
+    153,
+    180
+   ],
+   "offset": [
+    36,
+    45
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_pv4",
+   "pilot": "cole",
+   "kind": "flight",
+   "rect": [
+    2,
+    2705,
+    156,
+    175
+   ],
+   "offset": [
+    35,
+    48
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_r",
+   "pilot": "cole",
+   "kind": "flight",
+   "rect": [
+    2,
+    2705,
+    156,
+    175
+   ],
+   "offset": [
+    35,
+    48
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_so0",
+   "pilot": "cole",
+   "kind": "somersault",
+   "rect": [
+    1111,
+    2481,
+    162,
+    215
+   ],
+   "offset": [
+    32,
+    28
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_so1",
+   "pilot": "cole",
+   "kind": "somersault",
+   "rect": [
+    1429,
+    2481,
+    160,
+    194
+   ],
+   "offset": [
+    33,
+    38
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_so2",
+   "pilot": "cole",
+   "kind": "somersault",
+   "rect": [
+    1623,
+    2481,
+    31,
+    214
+   ],
+   "offset": [
+    97,
+    28
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_so3",
+   "pilot": "cole",
+   "kind": "somersault",
+   "rect": [
+    1805,
+    2481,
+    161,
+    57
+   ],
+   "offset": [
+    32,
+    107
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_so4",
+   "pilot": "cole",
+   "kind": "somersault",
+   "rect": [
+    2130,
+    2481,
+    162,
+    181
+   ],
+   "offset": [
+    32,
+    45
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_so5",
+   "pilot": "cole",
+   "kind": "somersault",
+   "rect": [
+    2449,
+    2481,
+    160,
+    175
+   ],
+   "offset": [
+    33,
+    48
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_so6",
+   "pilot": "cole",
+   "kind": "somersault",
+   "rect": [
+    2644,
+    2481,
+    31,
+    214
+   ],
+   "offset": [
+    97,
+    28
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_cole_so7",
+   "pilot": "cole",
+   "kind": "somersault",
+   "rect": [
+    2832,
+    2481,
+    160,
+    57
+   ],
+   "offset": [
+    33,
+    107
+   ],
+   "canvas": [
+    226,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker",
+   "pilot": "decker",
+   "kind": "flight",
+   "rect": [
+    1120,
+    738,
+    143,
+    219
+   ],
+   "offset": [
+    30,
+    28
+   ],
+   "canvas": [
+    203,
+    276
+   ]
+  },
+  {
+   "key": "ship_decker_br0",
+   "pilot": "decker",
+   "kind": "barrel_roll",
+   "rect": [
+    6,
+    1195,
+    132,
+    206
+   ],
+   "offset": [
+    23,
+    32
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_br1",
+   "pilot": "decker",
+   "kind": "barrel_roll",
+   "rect": [
+    1455,
+    1195,
+    79,
+    202
+   ],
+   "offset": [
+    49,
+    34
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_br2",
+   "pilot": "decker",
+   "kind": "barrel_roll",
+   "rect": [
+    363,
+    1195,
+    57,
+    206
+   ],
+   "offset": [
+    60,
+    32
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_br3",
+   "pilot": "decker",
+   "kind": "barrel_roll",
+   "rect": [
+    1546,
+    1195,
+    72,
+    201
+   ],
+   "offset": [
+    53,
+    35
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_br4",
+   "pilot": "decker",
+   "kind": "barrel_roll",
+   "rect": [
+    1938,
+    1195,
+    115,
+    200
+   ],
+   "offset": [
+    31,
+    35
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_br5",
+   "pilot": "decker",
+   "kind": "barrel_roll",
+   "rect": [
+    293,
+    1195,
+    58,
+    206
+   ],
+   "offset": [
+    60,
+    32
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_br6",
+   "pilot": "decker",
+   "kind": "barrel_roll",
+   "rect": [
+    432,
+    1195,
+    57,
+    206
+   ],
+   "offset": [
+    61,
+    32
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_br7",
+   "pilot": "decker",
+   "kind": "barrel_roll",
+   "rect": [
+    150,
+    1195,
+    131,
+    206
+   ],
+   "offset": [
+    23,
+    32
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_l",
+   "pilot": "decker",
+   "kind": "flight",
+   "rect": [
+    1830,
+    6,
+    153,
+    242
+   ],
+   "offset": [
+    25,
+    17
+   ],
+   "canvas": [
+    203,
+    276
+   ]
+  },
+  {
+   "key": "ship_decker_nf",
+   "pilot": "decker",
+   "kind": "flight",
+   "rect": [
+    1275,
+    738,
+    143,
+    219
+   ],
+   "offset": [
+    30,
+    28
+   ],
+   "canvas": [
+    203,
+    276
+   ]
+  },
+  {
+   "key": "ship_decker_pv0",
+   "pilot": "decker",
+   "kind": "flight",
+   "rect": [
+    919,
+    969,
+    153,
+    213
+   ],
+   "offset": [
+    12,
+    29
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_pv1",
+   "pilot": "decker",
+   "kind": "flight",
+   "rect": [
+    6,
+    504,
+    144,
+    222
+   ],
+   "offset": [
+    17,
+    24
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_pv2",
+   "pilot": "decker",
+   "kind": "flight",
+   "rect": [
+    753,
+    969,
+    154,
+    213
+   ],
+   "offset": [
+    12,
+    29
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_pv3",
+   "pilot": "decker",
+   "kind": "flight",
+   "rect": [
+    162,
+    504,
+    144,
+    222
+   ],
+   "offset": [
+    17,
+    24
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_pv4",
+   "pilot": "decker",
+   "kind": "flight",
+   "rect": [
+    1084,
+    969,
+    152,
+    213
+   ],
+   "offset": [
+    13,
+    29
+   ],
+   "canvas": [
+    178,
+    271
+   ]
+  },
+  {
+   "key": "ship_decker_r",
+   "pilot": "decker",
+   "kind": "flight",
+   "rect": [
+    1995,
+    6,
+    139,
+    242
+   ],
+   "offset": [
+    32,
+    17
+   ],
+   "canvas": [
+    203,
+    276
+   ]
+  },
+  {
+   "key": "ship_falva",
+   "pilot": "falva",
+   "kind": "flight",
+   "rect": [
+    6,
+    269,
+    152,
+    223
+   ],
+   "offset": [
+    0,
+    28
+   ],
+   "canvas": [
+    152,
+    280
+   ]
+  },
+  {
+   "key": "ship_falva_br0",
+   "pilot": "falva",
+   "kind": "barrel_roll",
+   "rect": [
+    2837,
+    738,
+    146,
+    216
+   ],
+   "offset": [
+    14,
+    27
+   ],
+   "canvas": [
+    174,
+    271
+   ]
+  },
+  {
+   "key": "ship_falva_br1",
+   "pilot": "falva",
+   "kind": "barrel_roll",
+   "rect": [
+    2644,
+    504,
+    130,
+    220
+   ],
+   "offset": [
+    22,
+    25
+   ],
+   "canvas": [
+    174,
+    271
+   ]
+  },
+  {
+   "key": "ship_falva_br2",
+   "pilot": "falva",
+   "kind": "barrel_roll",
+   "rect": [
+    732,
+    504,
+    86,
+    222
+   ],
+   "offset": [
+    44,
+    24
+   ],
+   "canvas": [
+    174,
+    271
+   ]
+  },
+  {
+   "key": "ship_falva_br3",
+   "pilot": "falva",
+   "kind": "barrel_roll",
+   "rect": [
+    1430,
+    738,
+    128,
+    219
+   ],
+   "offset": [
+    23,
+    26
+   ],
+   "canvas": [
+    174,
+    271
+   ]
+  },
+  {
+   "key": "ship_falva_br4",
+   "pilot": "falva",
+   "kind": "barrel_roll",
+   "rect": [
+    2142,
+    738,
+    120,
+    217
+   ],
+   "offset": [
+    27,
+    27
+   ],
+   "canvas": [
+    174,
+    271
+   ]
+  },
+  {
+   "key": "ship_falva_br5",
+   "pilot": "falva",
+   "kind": "barrel_roll",
+   "rect": [
+    959,
+    738,
+    149,
+    219
+   ],
+   "offset": [
+    12,
+    26
+   ],
+   "canvas": [
+    174,
+    271
+   ]
+  },
+  {
+   "key": "ship_falva_br6",
+   "pilot": "falva",
+   "kind": "barrel_roll",
+   "rect": [
+    830,
+    504,
+    86,
+    222
+   ],
+   "offset": [
+    44,
+    24
+   ],
+   "canvas": [
+    174,
+    271
+   ]
+  },
+  {
+   "key": "ship_falva_br7",
+   "pilot": "falva",
+   "kind": "barrel_roll",
+   "rect": [
+    2501,
+    504,
+    131,
+    220
+   ],
+   "offset": [
+    21,
+    25
+   ],
+   "canvas": [
+    174,
+    271
+   ]
+  },
+  {
+   "key": "ship_falva_l",
+   "pilot": "falva",
+   "kind": "flight",
+   "rect": [
+    200,
+    6,
+    151,
+    250
+   ],
+   "offset": [
+    0,
+    15
+   ],
+   "canvas": [
+    152,
+    280
+   ]
+  },
+  {
+   "key": "ship_falva_nf",
+   "pilot": "falva",
+   "kind": "flight",
+   "rect": [
+    170,
+    269,
+    152,
+    223
+   ],
+   "offset": [
+    0,
+    28
+   ],
+   "canvas": [
+    152,
+    280
+   ]
+  },
+  {
+   "key": "ship_falva_pv0",
+   "pilot": "falva",
+   "kind": "flight",
+   "rect": [
+    2898,
+    6,
+    109,
+    234
+   ],
+   "offset": [
+    21,
+    24
+   ],
+   "canvas": [
+    152,
+    280
+   ]
+  },
+  {
+   "key": "ship_falva_pv1",
+   "pilot": "falva",
+   "kind": "flight",
+   "rect": [
+    2146,
+    6,
+    132,
+    242
+   ],
+   "offset": [
+    10,
+    19
+   ],
+   "canvas": [
+    152,
+    280
+   ]
+  },
+  {
+   "key": "ship_falva_pv2",
+   "pilot": "falva",
+   "kind": "flight",
+   "rect": [
+    334,
+    269,
+    152,
+    223
+   ],
+   "offset": [
+    0,
+    28
+   ],
+   "canvas": [
+    152,
+    280
+   ]
+  },
+  {
+   "key": "ship_falva_pv3",
+   "pilot": "falva",
+   "kind": "flight",
+   "rect": [
+    2290,
+    6,
+    128,
+    241
+   ],
+   "offset": [
+    10,
+    20
+   ],
+   "canvas": [
+    152,
+    280
+   ]
+  },
+  {
+   "key": "ship_falva_pv4",
+   "pilot": "falva",
+   "kind": "flight",
+   "rect": [
+    3019,
+    6,
+    109,
+    234
+   ],
+   "offset": [
+    21,
+    24
+   ],
+   "canvas": [
+    152,
+    280
+   ]
+  },
+  {
+   "key": "ship_falva_r",
+   "pilot": "falva",
+   "kind": "flight",
+   "rect": [
+    556,
+    6,
+    146,
+    247
+   ],
+   "offset": [
+    3,
+    16
+   ],
+   "canvas": [
+    152,
+    280
+   ]
+  },
+  {
+   "key": "ship_freezer",
+   "pilot": "freezer",
+   "kind": "flight",
+   "rect": [
+    3224,
+    504,
+    197,
+    219
+   ],
+   "offset": [
+    6,
+    26
+   ],
+   "canvas": [
+    209,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_br0",
+   "pilot": "freezer",
+   "kind": "barrel_roll",
+   "rect": [
+    2065,
+    1195,
+    180,
+    198
+   ],
+   "offset": [
+    20,
+    36
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_br1",
+   "pilot": "freezer",
+   "kind": "barrel_roll",
+   "rect": [
+    2449,
+    1195,
+    117,
+    198
+   ],
+   "offset": [
+    51,
+    36
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_br2",
+   "pilot": "freezer",
+   "kind": "barrel_roll",
+   "rect": [
+    3245,
+    969,
+    85,
+    207
+   ],
+   "offset": [
+    67,
+    32
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_br3",
+   "pilot": "freezer",
+   "kind": "barrel_roll",
+   "rect": [
+    3342,
+    969,
+    85,
+    207
+   ],
+   "offset": [
+    67,
+    32
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_br4",
+   "pilot": "freezer",
+   "kind": "barrel_roll",
+   "rect": [
+    2785,
+    1195,
+    156,
+    195
+   ],
+   "offset": [
+    32,
+    38
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_br5",
+   "pilot": "freezer",
+   "kind": "barrel_roll",
+   "rect": [
+    3134,
+    969,
+    99,
+    207
+   ],
+   "offset": [
+    60,
+    32
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_br6",
+   "pilot": "freezer",
+   "kind": "barrel_roll",
+   "rect": [
+    3439,
+    969,
+    85,
+    207
+   ],
+   "offset": [
+    68,
+    32
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_br7",
+   "pilot": "freezer",
+   "kind": "barrel_roll",
+   "rect": [
+    2257,
+    1195,
+    180,
+    198
+   ],
+   "offset": [
+    20,
+    36
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_l",
+   "pilot": "freezer",
+   "kind": "flight",
+   "rect": [
+    3140,
+    6,
+    186,
+    230
+   ],
+   "offset": [
+    11,
+    20
+   ],
+   "canvas": [
+    209,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_nf",
+   "pilot": "freezer",
+   "kind": "flight",
+   "rect": [
+    1911,
+    269,
+    176,
+    222
+   ],
+   "offset": [
+    22,
+    24
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_pv0",
+   "pilot": "freezer",
+   "kind": "flight",
+   "rect": [
+    1722,
+    269,
+    177,
+    222
+   ],
+   "offset": [
+    21,
+    24
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_pv1",
+   "pilot": "freezer",
+   "kind": "flight",
+   "rect": [
+    1531,
+    269,
+    179,
+    222
+   ],
+   "offset": [
+    20,
+    24
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_pv2",
+   "pilot": "freezer",
+   "kind": "flight",
+   "rect": [
+    1935,
+    738,
+    195,
+    217
+   ],
+   "offset": [
+    12,
+    27
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_pv3",
+   "pilot": "freezer",
+   "kind": "flight",
+   "rect": [
+    928,
+    504,
+    180,
+    221
+   ],
+   "offset": [
+    20,
+    25
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_pv4",
+   "pilot": "freezer",
+   "kind": "flight",
+   "rect": [
+    2099,
+    269,
+    176,
+    222
+   ],
+   "offset": [
+    22,
+    24
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_freezer_r",
+   "pilot": "freezer",
+   "kind": "flight",
+   "rect": [
+    3338,
+    6,
+    185,
+    229
+   ],
+   "offset": [
+    12,
+    21
+   ],
+   "canvas": [
+    209,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut",
+   "pilot": "juggernaut",
+   "kind": "flight",
+   "rect": [
+    603,
+    738,
+    166,
+    219
+   ],
+   "offset": [
+    18,
+    28
+   ],
+   "canvas": [
+    203,
+    275
+   ]
+  },
+  {
+   "key": "ship_juggernaut_br0",
+   "pilot": "juggernaut",
+   "kind": "barrel_roll",
+   "rect": [
+    164,
+    1413,
+    131,
+    186
+   ],
+   "offset": [
+    30,
+    42
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_br1",
+   "pilot": "juggernaut",
+   "kind": "barrel_roll",
+   "rect": [
+    1675,
+    1413,
+    95,
+    180
+   ],
+   "offset": [
+    48,
+    45
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_br2",
+   "pilot": "juggernaut",
+   "kind": "barrel_roll",
+   "rect": [
+    2516,
+    1413,
+    93,
+    173
+   ],
+   "offset": [
+    49,
+    49
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_br3",
+   "pilot": "juggernaut",
+   "kind": "barrel_roll",
+   "rect": [
+    2330,
+    1413,
+    65,
+    176
+   ],
+   "offset": [
+    63,
+    47
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_br4",
+   "pilot": "juggernaut",
+   "kind": "barrel_roll",
+   "rect": [
+    2407,
+    1413,
+    97,
+    173
+   ],
+   "offset": [
+    47,
+    49
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_br5",
+   "pilot": "juggernaut",
+   "kind": "barrel_roll",
+   "rect": [
+    3012,
+    1413,
+    99,
+    171
+   ],
+   "offset": [
+    46,
+    50
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_br6",
+   "pilot": "juggernaut",
+   "kind": "barrel_roll",
+   "rect": [
+    1782,
+    1413,
+    93,
+    180
+   ],
+   "offset": [
+    49,
+    45
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_br7",
+   "pilot": "juggernaut",
+   "kind": "barrel_roll",
+   "rect": [
+    307,
+    1413,
+    131,
+    186
+   ],
+   "offset": [
+    30,
+    42
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_l",
+   "pilot": "juggernaut",
+   "kind": "flight",
+   "rect": [
+    1243,
+    6,
+    165,
+    243
+   ],
+   "offset": [
+    19,
+    16
+   ],
+   "canvas": [
+    203,
+    275
+   ]
+  },
+  {
+   "key": "ship_juggernaut_nf",
+   "pilot": "juggernaut",
+   "kind": "flight",
+   "rect": [
+    781,
+    738,
+    166,
+    219
+   ],
+   "offset": [
+    18,
+    28
+   ],
+   "canvas": [
+    203,
+    275
+   ]
+  },
+  {
+   "key": "ship_juggernaut_pv0",
+   "pilot": "juggernaut",
+   "kind": "flight",
+   "rect": [
+    1807,
+    504,
+    168,
+    220
+   ],
+   "offset": [
+    12,
+    25
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_pv1",
+   "pilot": "juggernaut",
+   "kind": "flight",
+   "rect": [
+    2464,
+    269,
+    165,
+    222
+   ],
+   "offset": [
+    13,
+    24
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_pv2",
+   "pilot": "juggernaut",
+   "kind": "flight",
+   "rect": [
+    2166,
+    504,
+    157,
+    220
+   ],
+   "offset": [
+    17,
+    25
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_pv3",
+   "pilot": "juggernaut",
+   "kind": "flight",
+   "rect": [
+    2641,
+    269,
+    164,
+    222
+   ],
+   "offset": [
+    14,
+    24
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_pv4",
+   "pilot": "juggernaut",
+   "kind": "flight",
+   "rect": [
+    1987,
+    504,
+    167,
+    220
+   ],
+   "offset": [
+    12,
+    25
+   ],
+   "canvas": [
+    192,
+    271
+   ]
+  },
+  {
+   "key": "ship_juggernaut_r",
+   "pilot": "juggernaut",
+   "kind": "flight",
+   "rect": [
+    1072,
+    6,
+    159,
+    244
+   ],
+   "offset": [
+    22,
+    15
+   ],
+   "canvas": [
+    203,
+    275
+   ]
+  },
+  {
+   "key": "ship_lizzie",
+   "pilot": "lizzie",
+   "kind": "flight",
+   "rect": [
+    2,
+    2224,
+    202,
+    236
+   ],
+   "offset": [
+    10,
+    22
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_br0",
+   "pilot": "lizzie",
+   "kind": "barrel_roll",
+   "rect": [
+    2,
+    1942,
+    207,
+    280
+   ],
+   "offset": [
+    7,
+    0
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_br1",
+   "pilot": "lizzie",
+   "kind": "barrel_roll",
+   "rect": [
+    420,
+    1942,
+    207,
+    194
+   ],
+   "offset": [
+    7,
+    43
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_br2",
+   "pilot": "lizzie",
+   "kind": "barrel_roll",
+   "rect": [
+    838,
+    1942,
+    207,
+    280
+   ],
+   "offset": [
+    7,
+    0
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_br3",
+   "pilot": "lizzie",
+   "kind": "barrel_roll",
+   "rect": [
+    1256,
+    1942,
+    207,
+    222
+   ],
+   "offset": [
+    7,
+    29
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_br4",
+   "pilot": "lizzie",
+   "kind": "barrel_roll",
+   "rect": [
+    1674,
+    1942,
+    207,
+    280
+   ],
+   "offset": [
+    7,
+    0
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_br5",
+   "pilot": "lizzie",
+   "kind": "barrel_roll",
+   "rect": [
+    2092,
+    1942,
+    207,
+    240
+   ],
+   "offset": [
+    7,
+    20
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_br6",
+   "pilot": "lizzie",
+   "kind": "barrel_roll",
+   "rect": [
+    2510,
+    1942,
+    207,
+    280
+   ],
+   "offset": [
+    7,
+    0
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_br7",
+   "pilot": "lizzie",
+   "kind": "barrel_roll",
+   "rect": [
+    2928,
+    1942,
+    194,
+    215
+   ],
+   "offset": [
+    14,
+    32
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_l",
+   "pilot": "lizzie",
+   "kind": "flight",
+   "rect": [
+    624,
+    2224,
+    207,
+    255
+   ],
+   "offset": [
+    7,
+    12
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_nf",
+   "pilot": "lizzie",
+   "kind": "flight",
+   "rect": [
+    2,
+    2224,
+    202,
+    236
+   ],
+   "offset": [
+    10,
+    22
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_pv0",
+   "pilot": "lizzie",
+   "kind": "flight",
+   "rect": [
+    624,
+    2224,
+    207,
+    255
+   ],
+   "offset": [
+    7,
+    12
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_pv1",
+   "pilot": "lizzie",
+   "kind": "flight",
+   "rect": [
+    833,
+    2224,
+    207,
+    219
+   ],
+   "offset": [
+    7,
+    30
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_pv2",
+   "pilot": "lizzie",
+   "kind": "flight",
+   "rect": [
+    2,
+    2224,
+    202,
+    236
+   ],
+   "offset": [
+    10,
+    22
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_pv3",
+   "pilot": "lizzie",
+   "kind": "flight",
+   "rect": [
+    415,
+    2224,
+    207,
+    219
+   ],
+   "offset": [
+    7,
+    30
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_pv4",
+   "pilot": "lizzie",
+   "kind": "flight",
+   "rect": [
+    206,
+    2224,
+    207,
+    255
+   ],
+   "offset": [
+    7,
+    12
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_r",
+   "pilot": "lizzie",
+   "kind": "flight",
+   "rect": [
+    206,
+    2224,
+    207,
+    255
+   ],
+   "offset": [
+    7,
+    12
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_so0",
+   "pilot": "lizzie",
+   "kind": "somersault",
+   "rect": [
+    211,
+    1942,
+    207,
+    280
+   ],
+   "offset": [
+    7,
+    0
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_so1",
+   "pilot": "lizzie",
+   "kind": "somersault",
+   "rect": [
+    629,
+    1942,
+    207,
+    213
+   ],
+   "offset": [
+    7,
+    33
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_so2",
+   "pilot": "lizzie",
+   "kind": "somersault",
+   "rect": [
+    1047,
+    1942,
+    207,
+    280
+   ],
+   "offset": [
+    7,
+    0
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_so3",
+   "pilot": "lizzie",
+   "kind": "somersault",
+   "rect": [
+    1465,
+    1942,
+    207,
+    200
+   ],
+   "offset": [
+    7,
+    40
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_so4",
+   "pilot": "lizzie",
+   "kind": "somersault",
+   "rect": [
+    1883,
+    1942,
+    207,
+    280
+   ],
+   "offset": [
+    7,
+    0
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_so5",
+   "pilot": "lizzie",
+   "kind": "somersault",
+   "rect": [
+    2301,
+    1942,
+    207,
+    200
+   ],
+   "offset": [
+    7,
+    40
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_so6",
+   "pilot": "lizzie",
+   "kind": "somersault",
+   "rect": [
+    2719,
+    1942,
+    207,
+    280
+   ],
+   "offset": [
+    7,
+    0
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_lizzie_so7",
+   "pilot": "lizzie",
+   "kind": "somersault",
+   "rect": [
+    3124,
+    1942,
+    205,
+    242
+   ],
+   "offset": [
+    8,
+    19
+   ],
+   "canvas": [
+    222,
+    280
+   ]
+  },
+  {
+   "key": "ship_maverick",
+   "pilot": "maverick",
+   "kind": "flight",
+   "rect": [
+    1449,
+    1607,
+    187,
+    196
+   ],
+   "offset": [
+    16,
+    37
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_br0",
+   "pilot": "maverick",
+   "kind": "barrel_roll",
+   "rect": [
+    2,
+    1607,
+    187,
+    198
+   ],
+   "offset": [
+    16,
+    36
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_br1",
+   "pilot": "maverick",
+   "kind": "barrel_roll",
+   "rect": [
+    191,
+    1607,
+    156,
+    184
+   ],
+   "offset": [
+    32,
+    43
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_br2",
+   "pilot": "maverick",
+   "kind": "barrel_roll",
+   "rect": [
+    349,
+    1607,
+    52,
+    198
+   ],
+   "offset": [
+    84,
+    36
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_br3",
+   "pilot": "maverick",
+   "kind": "barrel_roll",
+   "rect": [
+    403,
+    1607,
+    154,
+    186
+   ],
+   "offset": [
+    33,
+    42
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_br4",
+   "pilot": "maverick",
+   "kind": "barrel_roll",
+   "rect": [
+    559,
+    1607,
+    187,
+    198
+   ],
+   "offset": [
+    16,
+    36
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_br5",
+   "pilot": "maverick",
+   "kind": "barrel_roll",
+   "rect": [
+    748,
+    1607,
+    153,
+    185
+   ],
+   "offset": [
+    33,
+    43
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_br6",
+   "pilot": "maverick",
+   "kind": "barrel_roll",
+   "rect": [
+    903,
+    1607,
+    52,
+    198
+   ],
+   "offset": [
+    84,
+    36
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_br7",
+   "pilot": "maverick",
+   "kind": "barrel_roll",
+   "rect": [
+    957,
+    1607,
+    158,
+    183
+   ],
+   "offset": [
+    31,
+    44
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_l",
+   "pilot": "maverick",
+   "kind": "flight",
+   "rect": [
+    1117,
+    1607,
+    156,
+    183
+   ],
+   "offset": [
+    32,
+    44
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_nf",
+   "pilot": "maverick",
+   "kind": "flight",
+   "rect": [
+    1449,
+    1607,
+    187,
+    196
+   ],
+   "offset": [
+    16,
+    37
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_pv0",
+   "pilot": "maverick",
+   "kind": "flight",
+   "rect": [
+    1117,
+    1607,
+    156,
+    183
+   ],
+   "offset": [
+    32,
+    44
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_pv1",
+   "pilot": "maverick",
+   "kind": "flight",
+   "rect": [
+    1275,
+    1607,
+    172,
+    192
+   ],
+   "offset": [
+    24,
+    39
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_pv2",
+   "pilot": "maverick",
+   "kind": "flight",
+   "rect": [
+    1449,
+    1607,
+    187,
+    196
+   ],
+   "offset": [
+    16,
+    37
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_pv3",
+   "pilot": "maverick",
+   "kind": "flight",
+   "rect": [
+    1638,
+    1607,
+    172,
+    190
+   ],
+   "offset": [
+    24,
+    40
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_pv4",
+   "pilot": "maverick",
+   "kind": "flight",
+   "rect": [
+    1812,
+    1607,
+    164,
+    186
+   ],
+   "offset": [
+    28,
+    42
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_r",
+   "pilot": "maverick",
+   "kind": "flight",
+   "rect": [
+    1812,
+    1607,
+    164,
+    186
+   ],
+   "offset": [
+    28,
+    42
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_so0",
+   "pilot": "maverick",
+   "kind": "somersault",
+   "rect": [
+    1978,
+    1607,
+    187,
+    195
+   ],
+   "offset": [
+    16,
+    38
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_so1",
+   "pilot": "maverick",
+   "kind": "somersault",
+   "rect": [
+    2167,
+    1607,
+    201,
+    133
+   ],
+   "offset": [
+    9,
+    69
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_so2",
+   "pilot": "maverick",
+   "kind": "somersault",
+   "rect": [
+    2370,
+    1607,
+    215,
+    82
+   ],
+   "offset": [
+    2,
+    94
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_so3",
+   "pilot": "maverick",
+   "kind": "somersault",
+   "rect": [
+    2587,
+    1607,
+    194,
+    143
+   ],
+   "offset": [
+    13,
+    64
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_so4",
+   "pilot": "maverick",
+   "kind": "somersault",
+   "rect": [
+    2783,
+    1607,
+    187,
+    192
+   ],
+   "offset": [
+    16,
+    39
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_so5",
+   "pilot": "maverick",
+   "kind": "somersault",
+   "rect": [
+    2972,
+    1607,
+    194,
+    143
+   ],
+   "offset": [
+    13,
+    64
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_so6",
+   "pilot": "maverick",
+   "kind": "somersault",
+   "rect": [
+    3168,
+    1607,
+    214,
+    77
+   ],
+   "offset": [
+    3,
+    97
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_maverick_so7",
+   "pilot": "maverick",
+   "kind": "somersault",
+   "rect": [
+    2,
+    1807,
+    200,
+    133
+   ],
+   "offset": [
+    10,
+    69
+   ],
+   "canvas": [
+    220,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri",
+   "pilot": "yuri",
+   "kind": "flight",
+   "rect": [
+    156,
+    2481,
+    156,
+    219
+   ],
+   "offset": [
+    40,
+    26
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_br0",
+   "pilot": "yuri",
+   "kind": "barrel_roll",
+   "rect": [
+    1042,
+    2224,
+    156,
+    220
+   ],
+   "offset": [
+    40,
+    25
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_br1",
+   "pilot": "yuri",
+   "kind": "barrel_roll",
+   "rect": [
+    1358,
+    2224,
+    156,
+    201
+   ],
+   "offset": [
+    40,
+    35
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_br2",
+   "pilot": "yuri",
+   "kind": "barrel_roll",
+   "rect": [
+    1674,
+    2224,
+    156,
+    221
+   ],
+   "offset": [
+    40,
+    25
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_br3",
+   "pilot": "yuri",
+   "kind": "barrel_roll",
+   "rect": [
+    1990,
+    2224,
+    146,
+    193
+   ],
+   "offset": [
+    45,
+    39
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_br4",
+   "pilot": "yuri",
+   "kind": "barrel_roll",
+   "rect": [
+    2296,
+    2224,
+    156,
+    220
+   ],
+   "offset": [
+    40,
+    25
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_br5",
+   "pilot": "yuri",
+   "kind": "barrel_roll",
+   "rect": [
+    2612,
+    2224,
+    156,
+    200
+   ],
+   "offset": [
+    40,
+    35
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_br6",
+   "pilot": "yuri",
+   "kind": "barrel_roll",
+   "rect": [
+    2928,
+    2224,
+    156,
+    221
+   ],
+   "offset": [
+    40,
+    25
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_br7",
+   "pilot": "yuri",
+   "kind": "barrel_roll",
+   "rect": [
+    3244,
+    2224,
+    139,
+    193
+   ],
+   "offset": [
+    48,
+    39
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_l",
+   "pilot": "yuri",
+   "kind": "flight",
+   "rect": [
+    314,
+    2481,
+    156,
+    205
+   ],
+   "offset": [
+    40,
+    33
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_nf",
+   "pilot": "yuri",
+   "kind": "flight",
+   "rect": [
+    156,
+    2481,
+    156,
+    219
+   ],
+   "offset": [
+    40,
+    26
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_pv0",
+   "pilot": "yuri",
+   "kind": "flight",
+   "rect": [
+    314,
+    2481,
+    156,
+    205
+   ],
+   "offset": [
+    40,
+    33
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_pv1",
+   "pilot": "yuri",
+   "kind": "flight",
+   "rect": [
+    472,
+    2481,
+    156,
+    219
+   ],
+   "offset": [
+    40,
+    26
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_pv2",
+   "pilot": "yuri",
+   "kind": "flight",
+   "rect": [
+    156,
+    2481,
+    156,
+    219
+   ],
+   "offset": [
+    40,
+    26
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_pv3",
+   "pilot": "yuri",
+   "kind": "flight",
+   "rect": [
+    788,
+    2481,
+    156,
+    219
+   ],
+   "offset": [
+    40,
+    26
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_pv4",
+   "pilot": "yuri",
+   "kind": "flight",
+   "rect": [
+    630,
+    2481,
+    156,
+    205
+   ],
+   "offset": [
+    40,
+    33
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_r",
+   "pilot": "yuri",
+   "kind": "flight",
+   "rect": [
+    630,
+    2481,
+    156,
+    205
+   ],
+   "offset": [
+    40,
+    33
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_so0",
+   "pilot": "yuri",
+   "kind": "somersault",
+   "rect": [
+    1200,
+    2224,
+    156,
+    223
+   ],
+   "offset": [
+    40,
+    24
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_so1",
+   "pilot": "yuri",
+   "kind": "somersault",
+   "rect": [
+    1516,
+    2224,
+    156,
+    213
+   ],
+   "offset": [
+    40,
+    29
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_so2",
+   "pilot": "yuri",
+   "kind": "somersault",
+   "rect": [
+    1832,
+    2224,
+    156,
+    112
+   ],
+   "offset": [
+    40,
+    79
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_so3",
+   "pilot": "yuri",
+   "kind": "somersault",
+   "rect": [
+    2138,
+    2224,
+    156,
+    204
+   ],
+   "offset": [
+    40,
+    33
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_so4",
+   "pilot": "yuri",
+   "kind": "somersault",
+   "rect": [
+    2454,
+    2224,
+    156,
+    221
+   ],
+   "offset": [
+    40,
+    25
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_so5",
+   "pilot": "yuri",
+   "kind": "somersault",
+   "rect": [
+    2770,
+    2224,
+    156,
+    198
+   ],
+   "offset": [
+    40,
+    36
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_so6",
+   "pilot": "yuri",
+   "kind": "somersault",
+   "rect": [
+    3086,
+    2224,
+    156,
+    107
+   ],
+   "offset": [
+    40,
+    82
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  },
+  {
+   "key": "ship_yuri_so7",
+   "pilot": "yuri",
+   "kind": "somersault",
+   "rect": [
+    2,
+    2481,
+    152,
+    195
+   ],
+   "offset": [
+    42,
+    38
+   ],
+   "canvas": [
+    236,
+    271
+   ]
+  }
+ ],
+ "frames_by_pilot": {
+  "axel": 17,
+  "cole": 25,
+  "decker": 17,
+  "falva": 17,
+  "freezer": 17,
+  "juggernaut": 17,
+  "lizzie": 25,
+  "maverick": 25,
+  "yuri": 25
+ },
+ "note": "frames_per_pilot is null since 0906: Cole, Lizzie, Maverick and Yuri were re-imported from rotation sheets that carry an 8-frame somersault reel (so0..so7) the other five pilots do not have, so the per-pilot count is 25 for those four and 17 for the rest. Use frames_by_pilot."
 }

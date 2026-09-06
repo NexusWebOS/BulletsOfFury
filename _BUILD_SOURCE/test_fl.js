@@ -1387,13 +1387,22 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("for(var i=0;i<20;i++){ pShoot(); updatePlay(1/60); }", ctxv);
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='flame';}).length===1", ctxv), 'holding fire keeps exactly ONE flame jet, not a stream of projectiles');
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='fire';}).length===0", ctxv), 'the old firewall projectile is gone — one spawner, no second path');
-  /* ⚠ REPOINTED 0903z. This asserted flameReach(5)>flameReach(1) - the level-scaled plume Mike
-     removed: "it shouldnt get larger as it goes level 1-5, but instead do more damage, glow more
-     fiery and even douse enemies with fire." The SHORT half of the rule still holds and still
-     matters, so it is kept; the scaling half now asserts the opposite, which is the new contract.
-     Measured off the rendered plume at threshold 40 (the plate's full extent): lv1 and lv5 both
-     span 206px - identical silhouettes. What changes is the additive heat above it. */
-  ok(vm.runInContext("flameReach(5)===flameReach(1) && flameHalfWDrawn(5)===flameHalfWDrawn(1)", ctxv), 'the jet is ONE size at every level - draw and hitbox both');
+  /* ⚠ THIS ONE HAS NOW FLIPPED TWICE, ON MIKE'S WORD BOTH TIMES. Recorded in full because a
+     bare `>` here looks like it was never anything else, and the next person to "restore" the
+     other version needs to see that it was a decision, not a regression:
+
+       original  flameReach(5) > flameReach(1)   - the plume grew with level
+       0903z     flameReach(5) === flameReach(1) - Mike: "it shouldnt get larger as it goes
+                 level 1-5, but instead do more damage, glow more fiery and even douse
+                 enemies with fire."
+       0906      back to `>`   - Mike: "make it scale wider and higher as we level up from 1-5."
+
+     The 0906 curve is not a new invention: 0903z wrote down exactly what it was removing
+     (reach 148->268, half-width 19->35, flare 2.15->2.75) and that is what went back. The two
+     assertions below are UNCHANGED through all three states and are the part that never moved:
+     the jet stays short, and the level still drives damage and heat. So this drop ADDS size to
+     0903z's progression rather than trading it away. */
+  ok(vm.runInContext("flameReach(5)>flameReach(1) && flameHalfWDrawn(5)>flameHalfWDrawn(1)", ctxv), 'the jet scales with level again - draw and hitbox both (Mike 0906, reversing 0903z)');
   ok(vm.runInContext("flameReach(5)<VH*0.6", ctxv), 'and it stays SHORT — it never reaches the top of the screen');
   ok(vm.runInContext("flameDmg(5)>flameDmg(1)*2.5 && flameHeat(5)>flameHeat(1)", ctxv), 'the level goes into damage and heat instead');
   ok(vm.runInContext("flameHalfW(5,1)>flameHalfW(5,0)*2", ctxv), 'the jet flares into a cone — the tip is more than twice the nozzle');
@@ -7709,10 +7718,17 @@ console.log("=== 163. ship banking + palette collapse ===");
   var _flip=JSON.parse(vm.runInContext("JSON.stringify(SHIP_BANK_FLIP)", ctxv));
   ok(!_flip.cole,
      'Cole is OUT of SHIP_BANK_FLIP — his pv4 leans right, the normal convention, so the flag was inverting a pilot that was already correct');
-  ['axel','decker','freezer','yuri'].forEach(function(p){
+  ['axel','decker','freezer'].forEach(function(p){
     ok(!!_flip[p], p+' keeps the flag — measured pv4 leans LEFT, so his art is authored reversed');
   });
-  ok(Object.keys(_flip).length===4, 'exactly four pilots need the flag ('+Object.keys(_flip).length+')');
+  /* ⚠ YURI LEFT THIS LIST ON 0906 BECAUSE HIS SHIP WAS REPLACED, and that is the whole point of
+     the flag: it describes the PLATES, not the pilot. The old hull was authored mirrored, so he
+     needed it; the new one is imported nose-LEFT at pv0 by construction (measured -0.331/+0.331),
+     so keeping it would have inverted his controls. This assertion FAILING is exactly what should
+     happen when art is swapped without re-checking the table - it did its job. */
+  ok(!_flip.yuri,
+     'Yuri is OUT since his 0906 airframe swap — the new plates are authored the normal way round');
+  ok(Object.keys(_flip).length===3, 'exactly three pilots need the flag ('+Object.keys(_flip).length+')');
 
   /* The retina collapse: 72 keys -> 8 masters + a tint table. */
   var _M163=JSON.parse(fs.readFileSync(ROOT+'/assets/manifest.js','utf8').match(/window\.BOFX=([\s\S]*?\});/)[1]);
@@ -8070,8 +8086,14 @@ console.log("=== 169. ship atlas ===");
   var _S=_M169.ships||{};
   /* ⚠ 162 -> 153 (drop 0808h). The nine flame-baked _t variants are GONE. Mike: "you see those
      t variants, those are the thruster variants. remove those. were not using them anymore."
-     Each pilot keeps sixteen frames plus the plain one; the flame is drawn live from nthp_. */
-  ok(Object.keys(_S).length===153, '153 ship cells — the nine _t variants removed ('+Object.keys(_S).length+')');
+     Each pilot keeps sixteen frames plus the plain one; the flame is drawn live from nthp_.
+     ⚠ 153 -> 185 (0906). Mike replaced Cole's, Lizzie's, Maverick's and Yuri's airframes, and
+     those four sheets carry an 8-frame SOMERSAULT reel (so0..so7) the other five pilots do not
+     have - it is what the new double-tap-up move animates through. So the per-pilot count is no
+     longer uniform: 25 for those four, 17 for the rest, 4*25 + 5*17 = 185. The _t rule this
+     assertion was written for is unchanged and still checked below. */
+  ok(Object.keys(_S).length===185, '185 ship cells — 17 each plus an 8-frame somersault reel for four pilots ('+Object.keys(_S).length+')');
+  ok(!Object.keys(_S).some(function(k){return /_t$/.test(k);}), 'and no flame-baked _t variant came back');
   var _pilots=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
   /* 't' removed — the flame-baked variant is gone (drop 0808h) */
   var _frames=['pv0','pv1','pv2','pv3','pv4','br0','br1','br2','br3','br4','br5','br6','br7','l','r','nf'];
@@ -12311,8 +12333,17 @@ console.log("=== 254. production player atlases and frame preservation ===");
   var _shipMeta254=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','bof_player_ships_barrel_rolls.json'),'utf8'));
   ok(_shotMeta254.count===505 && Object.keys(_b254.playercells).length===505,
      'the ordnance/projectile atlas carries all 505 active animation and support cells');
-  ok(_shipMeta254.count===153 && _shipMeta254.pilots===9 && _shipMeta254.frames_per_pilot===17 && Object.keys(_b254.ships).length===153,
-     'the ship atlas carries all 153 full flight and barrel-roll frames');
+  /* ⚠ frames_per_pilot IS NULL SINCE 0906 and frames_by_pilot replaces it - four pilots carry an
+     extra 8-frame somersault reel, so one number can no longer describe every pilot. The
+     sidecar is regenerated from the manifest, so this checks the two agree rather than pinning
+     a literal that has to be edited by hand every time a reel is added. */
+  ok(_shipMeta254.count===185 && _shipMeta254.pilots===9 && Object.keys(_b254.ships).length===185 &&
+     _shipMeta254.count===_shipMeta254.entries.length,
+     'the ship atlas sidecar and the manifest agree on all 185 flight, barrel-roll and somersault frames');
+  ok(_shipMeta254.frames_per_pilot===null && _shipMeta254.frames_by_pilot &&
+     ['cole','lizzie','maverick','yuri'].every(function(p){return _shipMeta254.frames_by_pilot[p]===25;}) &&
+     ['axel','decker','falva','freezer','juggernaut'].every(function(p){return _shipMeta254.frames_by_pilot[p]===17;}),
+     'and the four re-imported pilots carry 25 frames each against the other five at 17');
   ok(_shipMeta254.entries.every(function(e){
        return e.rect[2]>0 && e.rect[3]>0 && e.offset[0]>=0 && e.offset[1]>=0 &&
               e.offset[0]+e.rect[2]<=e.canvas[0] && e.offset[1]+e.rect[3]<=e.canvas[1];

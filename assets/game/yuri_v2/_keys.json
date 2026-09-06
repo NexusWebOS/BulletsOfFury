@@ -1,0 +1,17 @@
+{
+ "yuri_avatar": "assets/game/yuri_v2/yuri_avatar.png",
+ "port_yuri_idle": "assets/game/yuri_v2/port_yuri_idle.png",
+ "port_yuri_anger": "assets/game/yuri_v2/port_yuri_anger.png",
+ "port_yuri_smile": "assets/game/yuri_v2/port_yuri_smile.png",
+ "port_yuri_crash": "assets/game/yuri_v2/port_yuri_crash.png",
+ "port_yuri_sad": "assets/game/yuri_v2/port_yuri_sad.png",
+ "port_yuri_laugh": "assets/game/yuri_v2/port_yuri_laugh.png",
+ "port_yuri_victory": "assets/game/yuri_v2/port_yuri_victory.png",
+ "yuri_body_0": "assets/game/yuri_v2/yuri_body_0.png",
+ "yuri_body_1": "assets/game/yuri_v2/yuri_body_1.png",
+ "yuri_body_2": "assets/game/yuri_v2/yuri_body_2.png",
+ "yuri_body_3": "assets/game/yuri_v2/yuri_body_3.png",
+ "yuri_body_4": "assets/game/yuri_v2/yuri_body_4.png",
+ "yuri_body_5": "assets/game/yuri_v2/yuri_body_5.png",
+ "yuri_body_6": "assets/game/yuri_v2/yuri_body_6.png"
+}

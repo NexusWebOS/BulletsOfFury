@@ -2152,6 +2152,21 @@ const XART=(function(){
   /* STAGE-4 WARFARE COMMAND (0831). The new boss hull, summoned chaingun drones, separately
      animated rotary barrels and attack FX are code-owned plates, not atlas fragments. Every
      frame shares one stable pivot and real alpha; no runtime colour overlay is involved. */
+  /* ⚠ YURI v2 (Mike, 0906): "this is the new Yuri. I never liked how Yuri turned out." His
+     seven emotion portraits went into the ui_dialogue atlas over the old port_yuri_* cells; the
+     hero avatar and the seven full-body cinematic poses are new art with no existing slot, so
+     they register as loose files. yuri_body_0..6 are: idle, point, arm-across, salute, arms-out,
+     side profile, and the back view with the CF jacket logo. */
+  X._src.yuri_avatar='assets/game/yuri_v2/yuri_avatar.png';
+  for(let _yb=0;_yb<7;_yb++) X._src['yuri_body_'+_yb]='assets/game/yuri_v2/yuri_body_'+_yb+'.png';
+  /* ⚠ MIKE'S NEW FLAMETHROWER PLUME AND ITS IMPACT (0906): "I want to use this for
+     flamethrower instead of what we have ... good replacement here." Four plume frames and a
+     four-frame impact star, cut by _BUILD_SOURCE/import_flame_v2_0906.py. Registered as a NEW
+     family so nfw_wall_0..7 stays live as the fallback and the ICE reel is untouched. */
+  for(let _f2=0;_f2<4;_f2++){
+    X._src['nfw2_'+_f2]='assets/game/flame_v2/nfw2_'+_f2+'.png';
+    X._src['nfx2_'+_f2]='assets/game/flame_v2/nfx2_'+_f2+'.png';
+  }
   X._src.s4w_boss_idle='assets/game/stage4_warfare/s4w_boss_idle.png';
   X._src.s4w_power_node='assets/game/stage4_warfare/s4w_power_node.png';
   X._src.s4w_drone_body='assets/game/stage4_warfare/s4w_drone_body.png';
@@ -5891,14 +5906,20 @@ function drawHUDStrip(g){
 
    Both are drawn in PLAY-area coordinates and anchored to the play rect's own corners, so a
    different viewport moves them with the frame instead of stranding them. ============================================================ */
-function drawRollCharge(){
-  if(typeof player==='undefined' || !player) return;
-  const cool=player._rollCool||0;
-  const k=(typeof BR_COOL==='number' && BR_COOL>0) ? clamp(1-(cool/BR_COOL),0,1) : 1;
+/* ⚠ TWO BARS NOW, AND THE SECOND ONLY EXISTS FOR MAVERICK (Mike, 0906): "should get a
+   seperate meter under roll titled Somersalt." One drawing routine takes the label, the fill
+   fraction and a row, because two hand-copied bars are two bars that drift apart the first
+   time one of them is restyled.
+
+   ⚠ ROLL MOVES UP A ROW RATHER THAN SOMERSAULT MOVING DOWN. The ROLL bar already sits 16px
+   off the bottom of the play rect with only 10px under it - not room for another bar and its
+   label - so "under roll" is achieved by lifting ROLL one row and putting SOMERSAULT in the
+   slot it vacated. For the other eight pilots nothing moves at all: with no somersault there
+   is no second row, and ROLL stays exactly where Mike signed it off in 0812p. */
+function _chargeBar(label, k, row){
   const W=54, H=6;
   const x=(typeof PLAY!=='undefined'?PLAY.x:0)+10;
-  const y=(typeof PLAY!=='undefined'?(PLAY.y+PLAY.h):VH)-16;
-  ctx.save();
+  const y=(typeof PLAY!=='undefined'?(PLAY.y+PLAY.h):VH)-16-row*18;
   ctx.globalAlpha=0.92;
   ctx.fillStyle='rgba(6,9,14,0.72)'; ctx.fillRect(x-2,y-2,W+4,H+4);
   ctx.fillStyle='#1b2430'; ctx.fillRect(x,y,W,H);
@@ -5910,7 +5931,18 @@ function drawRollCharge(){
   if(ready){ ctx.globalAlpha=0.35+0.35*Math.sin((typeof stateT==='number'?stateT:0)*7); ctx.fillStyle='#dfffc0'; ctx.fillRect(x,y,W,H); ctx.globalAlpha=0.92; }
   ctx.fillStyle=ready?'#cfe6ff':'#93a4b8';
   ctx.font='bold 7px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
-  ctx.fillText('ROLL', x, y-3);
+  ctx.fillText(label, x, y-3);
+}
+function drawRollCharge(){
+  if(typeof player==='undefined' || !player) return;
+  const _som=(typeof somersaultAvailable==='function') && somersaultAvailable();
+  const kR=(typeof BR_COOL==='number' && BR_COOL>0) ? clamp(1-((player._rollCool||0)/BR_COOL),0,1) : 1;
+  ctx.save();
+  _chargeBar('ROLL', kR, _som?1:0);
+  if(_som){
+    const kS=(typeof SS_COOL==='number' && SS_COOL>0) ? clamp(1-((player._somerCool||0)/SS_COOL),0,1) : 1;
+    _chargeBar('SOMERSAULT', kS, 0);
+  }
   ctx.restore();
 }
 function drawEquipCorner(){
@@ -8084,6 +8116,71 @@ function updateRoll(dt){
      double-tapping. */
   player.x = clamp(player.x, PLAY.x+10, worldWidth()-10);
   if(r.t>=r.dur){ player.roll=null; player._rollCool=BR_COOL; }
+}
+/* ---- SOMERSAULT (Mike, 0906) ------------------------------------------------
+   "I would love to see a somersalt effect in-game where if we double tap up we'll do a
+   literal somersalt like starfox 64. should get a seperate meter under roll titled
+   Somersalt. this will be demo'd and exclusive to maverick for now."
+
+   Deliberately built as the barrel roll's SIBLING rather than as a new kind of thing: double
+   tap, i-frames for the whole move, an animated reel that overrides the hull, a cooldown, and
+   a bar that shows it. A player who has learned the roll already knows how this behaves - the
+   only differences are the axis (up instead of sideways) and the reel.
+
+   THE ART IS ROW 1 OF MIKE'S ROTATION SHEET, which the first import pass wrote off as having
+   no slot. Read in order it is one clean pitch-plane 360: flat top-down, nose dropping, edge-on
+   from the side, tail-on (the "back" pseudo-3D view he names), edge-on again, back to flat.
+
+   ⚠ EXCLUSIVE TO MAVERICK, AND GATED ON THE ART RATHER THAN ONLY ON THE NAME. He said "for
+   now", so the pilot list is a table with one entry instead of a hardcoded string, and the
+   art check means a second pilot becomes eligible the moment their so0 reel exists - nothing
+   here needs editing to widen it.
+
+   ⚠ LONGER AND SLOWER THAN THE ROLL ON PURPOSE. 0.62s against the roll's 0.46, and a 7s
+   cooldown against 5. The roll is a twitch dodge; this is a committed move that takes you off
+   your line, and at the roll's cadence it would simply replace it as the default panic button.
+   Both numbers are Mike's to tune - see SS_DUR / SS_COOL. */
+const SS_WINDOW=0.26;    // same double-tap window as the roll, so the two inputs feel alike
+const SS_DUR=0.62;       // the flip is heavier than a roll
+const SS_SURGE=120;      // px of forward (up) travel across the flip
+const SS_COOL=7.0;       // seconds to re-arm - shown, like ROLL, because an unseen lockout is unfair
+const SOMER_PILOTS={maverick:1};                 // "exclusive to maverick FOR NOW"
+function somersaultAvailable(){
+  const pk=(typeof _pilotKey==='function')?_pilotKey():null;
+  if(!pk || !SOMER_PILOTS[pk]) return false;
+  return typeof XART!=='undefined' && XART.rdy('ship_'+pk+'_so0');
+}
+function startSomersault(){
+  if(!somersaultAvailable()) return;
+  /* the mount weighs Lizzie down and refuses her a roll; the same guard belongs here so any
+     future pilot inherits it rather than discovering it as a bug. */
+  if(typeof lzMountActive==='function' && lzMountActive()) return;
+  if(player.somer || player.roll || (player._somerCool||0)>0 || player.dead) return;
+  player.somer={t:0, dur:SS_DUR, y0:player.y};
+  player.invuln=Math.max(player.invuln, Math.ceil(SS_DUR*60)+4);
+  if(typeof Audio!=='undefined' && Audio.SFX){
+    (Audio.SFX.arcBarrelRoll||Audio.SFX.dash||Audio.SFX.select||function(){})();
+  }
+}
+function updateSomersault(dt){
+  if(player._somerCool>0) player._somerCool=Math.max(0,player._somerCool-dt);
+  const s=player.somer; if(!s) return;
+  const prev=s.t; s.t+=dt;
+  const k=clamp(s.t/s.dur,0,1), kp=clamp(prev/s.dur,0,1);
+  /* Up and back down: sin() over the move means the flip ENDS where it began rather than
+     teleporting the player up the screen every time they use it. The gain is the i-frames and
+     the reposition mid-move, not free ground. */
+  const arc=t=>Math.sin(clamp(t,0,1)*Math.PI);
+  player.y -= (arc(k)-arc(kp))*SS_SURGE;
+  if(typeof PLAY!=='undefined') player.y=clamp(player.y, PLAY.y+12, PLAY.y+PLAY.h-12);
+  if(s.t>=s.dur){ player.somer=null; player._somerCool=SS_COOL; }
+}
+function somerFrameKey(){
+  const s=player.somer; if(!s) return null;
+  const pk=(typeof _pilotKey==='function')?_pilotKey():null; if(!pk) return null;
+  const f=clamp(Math.floor((s.t/s.dur)*8),0,7);
+  const k='ship_'+pk+'_so'+f;
+  return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
 }
 function rollFrameKey(){
   const r=player.roll; if(!r) return null;
@@ -20577,10 +20674,31 @@ const FLAME_SEG  = 30;      // px between drawn segments up the jet
    0813a made the single source of the column that kills; holding the shape constant holds the
    hitbox constant with it, which is the point - the two cannot drift.
    ============================================================ */
-const FLAME_FIXED_LV = 3;                                        // the authored plume size
-function flameReach(lv){ return 118 + FLAME_FIXED_LV*30; }       // 208 at every level
-function flameBase(lv){ return 15 + FLAME_FIXED_LV*4; }          // 27 half-width at the nozzle
-function flameFlare(lv){ return 2.0 + FLAME_FIXED_LV*0.15; }     // 2.45 tip multiple
+/* ⚠ THE JET SCALES WITH LEVEL AGAIN (Mike, 0906): "make it scale wider and higher as we level
+   up from 1-5."
+
+   ⚠ THIS REVERSES HIS OWN 0903z INSTRUCTION, WHICH IS WHY BOTH ARE WRITTEN DOWN. That drop
+   says, in his words, "it shouldnt get larger as it goes level 1-5, but instead do more
+   damage, glow more fiery and even douse enemies with fire" - and the block above records the
+   whole reasoning for pinning it. He has changed his mind; the newer instruction wins, and the
+   older one is kept here so nobody "restores" the pin later thinking it was lost.
+
+   THE CURVE IS HIS OWN, NOT A NEW ONE. 0903z recorded exactly what it removed - reach
+   148->268, nozzle half-width 19->35, flare 2.15->2.75 - so putting `lv` back where
+   FLAME_FIXED_LV sits reproduces the shape he had before, to the pixel. No number is invented.
+
+   ⚠ AND THE HITBOX GROWS WITH IT, DELIBERATELY. flameHalfWDrawn/flameSpanTop are the single
+   source 0813a made for both the draw and the kill column, so a wider plume is a wider kill -
+   which is the point of "wider", and is why the two still cannot drift apart. Damage, heat and
+   douse still scale on top (FLAME_DMG, flameHeat, flameDouseSec); this is in ADDITION to
+   0903z's progression, not instead of it, so level 5 is now both bigger and harder-hitting.
+   FLAME_FIXED_LV is kept as the one constant to pin it again if he wants that back. */
+const FLAME_FIXED_LV = 3;                                        // the 0903z pinned size; unused while SCALES is on
+const FLAME_SCALES_WITH_LV = true;                               // Mike 0906 - set false to restore the 0903z pin
+function _flv(lv){ return FLAME_SCALES_WITH_LV ? clamp(lv,1,5) : FLAME_FIXED_LV; }
+function flameReach(lv){ return 118 + _flv(lv)*30; }             // 148 (lv1) .. 268 (lv5)
+function flameBase(lv){ return 15 + _flv(lv)*4; }                // 19 .. 35 half-width at the nozzle
+function flameFlare(lv){ return 2.0 + _flv(lv)*0.15; }           // 2.15 .. 2.75 tip multiple
 /* per-tick damage. FLAME_TICK is 0.08s, so lv5 is ~137 dps against lv1's ~45 - the upgrade the
    size used to be. Indexed 1..5; the 0 slot is unused and mirrors lv1 so a stray 0 cannot read
    undefined and silently deal NaN. */
@@ -20925,8 +21043,24 @@ function flameDraw(f){
     if(!XART.rdy(_fk)) _fk='nib_roll_7';
     if(!XART.rdy(_fk)) _fk='nib_wall_0';
   } else {
-    _fk='nfw_wall_'+(Math.floor((typeof performance!=='undefined'?performance.now():0)/71)%_nf);
-    if(!XART.rdy(_fk)) _fk='nfw_wall_0';
+    /* ⚠ THE NEW PLUME FIRST, THE OLD REEL AS THE FALLBACK (Mike, 0906). nfw2_0..3 is his
+       replacement art; nfw_wall_0..7 stays registered and still draws on a cold boot that has
+       not decoded the new files yet, so the jet can never come out empty. Same 71ms step, so
+       the cadence he already signed off on is unchanged - only the plates differ.
+
+       ⚠ THESE FOUR DO NOT SHARE A SILHOUETTE. Measured frame-to-frame IoU 0.742..0.790,
+       mean 0.767, against nfw_wall's 1.000 (that reel is ONE plate palette-cycled, which is
+       exactly why its outline cannot crawl). So the held jet now breathes at its edges where
+       it used to be rock solid. On a flame that reads as fire rather than as a defect, and it
+       is his authored art, so it ships as drawn - but it is a real change against 0801bb
+       ("make it a solid 100% image when I hold it") and he should see it before it is called
+       finished. Freezing it again is one line: pin the index to 0. */
+    const _f2n=4;
+    _fk='nfw2_'+(Math.floor((typeof performance!=='undefined'?performance.now():0)/71)%_f2n);
+    if(!XART.rdy(_fk)){
+      _fk='nfw_wall_'+(Math.floor((typeof performance!=='undefined'?performance.now():0)/71)%_nf);
+      if(!XART.rdy(_fk)) _fk='nfw_wall_0';
+    }
   }
   /* my line-range replacement ate `const key=_fk;` and flameDraw threw
      "key is not defined" on the very next line - the same class of bug as the
@@ -26214,8 +26348,12 @@ function updatePlay(dt){
     const _nowT=performance.now()/1000;
     if(Input.tapSeat(_seat,'left')){ if(_nowT-player._tapL<=BR_WINDOW) startRoll(-1); player._tapL=_nowT; player._tapR=-9; }
     if(Input.tapSeat(_seat,'right')){ if(_nowT-player._tapR<=BR_WINDOW) startRoll(1); player._tapR=_nowT; player._tapL=-9; }
+    /* double-tap UP -> somersault (Mike, 0906). Placed beside the roll taps so both are read
+       before movement and a flip can begin on the same frame it was asked for. */
+    if(Input.tapSeat(_seat,'up')){ if(_nowT-(player._tapU||-9)<=SS_WINDOW) startSomersault(); player._tapU=_nowT; }
     updateRoll(dt);
-    const _rolling=!!player.roll;
+    updateSomersault(dt);
+    const _rolling=!!player.roll || !!player.somer;   // a flip commits, same as a roll
     let mvx=0,mvy=0;
     /* NON-PLAYABLE THE MOMENT THE STAGE CLEARS (drop 0809v). Mike: "stop taking screen pauses
        and leaving my ship in the frame... simply make me non playable once the stage clears."
@@ -31557,7 +31695,10 @@ function _drawPlayerCore(){
   // ---- BARREL ROLL: pilot-specific spin frames override the normal hull ----
   // (drawn BEFORE the invuln-blink early-return: the roll grants i-frames, but the
   //  spin animation must stay solid, not strobe off like normal post-hit invulnerability)
-  const _rk=rollFrameKey();
+  /* the flip reel outranks the roll reel - they cannot both be live (startSomersault refuses
+     while rolling and vice versa), but ordering it explicitly means a future overlap degrades
+     to "draws the flip" rather than to whichever branch happened to come first. */
+  const _rk=somerFrameKey()||rollFrameKey();
   if(_rk){
     const im=XART.get(_rk);
     const h=64, w=h*(im.naturalWidth/im.naturalHeight);
@@ -47162,7 +47303,17 @@ function _mechOrder(K){
    ⚠ AND COLE IS CORRECTLY ABSENT even though the 0801dj note above lists him among "FIVE
    PILOTS" with a +7.66. That figure is a principal-axis ANGLE, a different quantity; his nose
    measures -0.271 on pv0, firmly in the not-flipped group. Four entries is right. */
-const SHIP_BANK_FLIP={axel:1, decker:1, freezer:1, yuri:1};
+/* ⚠ YURI CAME OUT OF THIS TABLE ON 0906, BECAUSE HIS AIRFRAME WAS REPLACED. The four entries
+   here exist because those pilots' art was AUTHORED MIRRORED - the flag is a property of the
+   plates, not of the pilot - so replacing the plates can invalidate an entry. Mike swapped
+   Yuri onto the new neon-red hull, and import_ship_rotsheet_0906.py builds every new bank set
+   to the NORMAL convention by construction: it takes the strongest banked pose off the sheet,
+   mirrors it for the opposite side, and always fills pv0 nose-LEFT. Measured on the imported
+   frames: yuri pv0 -0.328 / pv4 +0.328. Leaving him flagged would have inverted his controls -
+   the exact defect retracted for lizzie earlier the same day, arrived at from the other end.
+   Lizzie (-0.494/+0.494) and Cole (-0.329/+0.329) also import unflipped and are correctly
+   absent. If a pilot's ship is ever replaced again, re-check this table against the new art. */
+const SHIP_BANK_FLIP={axel:1, decker:1, freezer:1};
 /* ============================================================
    THE TWIST REEL HAS ITS OWN HANDEDNESS, AND IT IS NOT THE LEAN'S (drop 0903y)
 
