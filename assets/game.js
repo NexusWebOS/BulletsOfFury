@@ -52220,18 +52220,41 @@ function drawPilotComm(P,t){
    spin - it is the barrel-roll reel, a full 360 about the nose axis - so the lineup and the
    panel just play it. Every pilot has one.
 
-   ⚠ ONLY YURI HAS STANDING BODY ART TODAY (yuri_body_0..6, from the 0906 drop). The bay
-   falls back to that pilot's portrait framed as a bust, so the screen is complete for all nine
-   now and gets better for free the moment body art lands for the other eight. It is gated on
-   the ART, not on a name list, so nothing here needs editing when it does.
+   ⚠ AND EVERY PILOT ALREADY HAS A STANDING FIGURE - see psBodyKey. The bay draws the
+   cinematic pose art, so nine full-length pilots cost no art job either. Every part of this
+   screen is now something the game already owned.
    ============================================================ */
 const PS_COLS=9, PS_PITCH=52, PS_CELL=46;
 let psLineupRects=null;   // hit rects for the nine-across roster, rebuilt each frame
 function psLineupX(i){ return Math.round((VW - PS_COLS*PS_PITCH)/2 + i*PS_PITCH); }
-/* the standing figure, or null if this pilot has none yet */
+/* the standing figure.
+
+   ⚠ EVERY PILOT ALREADY HAD ONE AND I MISSED IT (Mike, 0906): "we do have the pilots on their
+   own, from the cinematics we have. we use their frames there. you can grab them from that."
+   `pose_<pilot>_0..5` is fifty-four cut, background-free standing figures on the pilots_1
+   atlas at 256x320 - six poses for all nine - and the first version of this screen fell back
+   to a portrait bust captioned NO FIELD PHOTO for eight of them. The art was there the whole
+   time; I looked for a `_body_` family and stopped when only Yuri had one. Searching for the
+   THING rather than for a NAME I had already decided on is the lesson, and it is the same one
+   CLAUDE.md's first rule keeps making.
+
+   ⚠ AND YURI'S CINEMATIC POSES ARE ART MIKE REJECTED, SO THEY ARE NOT A FALLBACK FOR HIM.
+   `pose_yuri_*` is the PREVIOUS Yuri - "I never liked how Yuri turned out, lets go with this
+   instead" - and `yuri_body_0..6` is the replacement. Ordering alone does not settle it,
+   because `yuri_body_0` is a LOOSE file: XART.rdy is false on its first call (that call is
+   what starts the load), so for the frames before it decodes an ordered chain falls straight
+   through to the design he replaced. Measured - the first probe run drew a 256x320 pose for
+   all nine including Yuri, which read as a clean pass and was the old character on screen.
+   `PS_POSE_STALE` removes those frames from his chain entirely; he shows a bust for the
+   decode window and then his own art, and never the rejected design for even one frame.
+   Any pilot whose cinematic poses are superseded goes in that table. */
+const PS_POSE_STALE={yuri:1};
 function psBodyKey(key){
-  const k=key+'_body_0';
-  return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
+  if(typeof XART==='undefined') return null;
+  const chain=[key+'_body_0'];
+  if(!PS_POSE_STALE[key]) chain.push('pose_'+key+'_0','pose_'+key+'_3');
+  for(const k of chain) if(XART.rdy(k)) return k;
+  return null;
 }
 /* the horizontal spin. Falls back through the level frame to the bare hull so a pilot whose
    roll reel has not decoded yet still shows a ship rather than a hole.
@@ -52409,20 +52432,31 @@ function drawPilot(dt){
       const body=psBodyKey(P.key);
       if(body) psBlitFit(body, BX+BW/2, BY+BH*0.52, BW-14, BH-18, 1);
       else {
-        /* no standing art for this pilot yet - frame the portrait as a bust so the bay reads as
-           deliberate rather than empty, and so it upgrades silently when body art arrives */
-        psBlitFit('port_'+P.key+'_idle', BX+BW/2, BY+BH*0.40, BW-16, BH*0.62, 1);
-        const f2=(typeof uiFontArt==='function')?uiFontArt():null;
-        if(f2 && typeof stageText==='function')
-          stageText(f2,'NO FIELD PHOTO', BX+BW/2, BY+BH-13, 7, '#4e5866', 0.8, 0.6, 0.12);
+        /* THE DECODE WINDOW, NOT A MISSING PILOT. Every one of the nine has a standing figure
+           now, so this branch is only reached on the frames before the atlas arrives - XART.rdy
+           is false on its FIRST call because that call is what starts the load. The portrait is
+           already warm from the roster below, so a bust holds the bay for those frames.
+
+           ⚠ IT CARRIED A 'NO FIELD PHOTO' CAPTION AND THAT WAS WRONG TWICE OVER: it was a
+           label for a permanent gap that no longer exists, and on a decode frame it would blink
+           on and straight back off. A fallback should be quiet. */
+        psBlitFit('port_'+P.key+'_idle', BX+BW/2, BY+BH*0.44, BW-16, BH*0.68, 1);
       }
     }
 
     const IX=BX+BW+10, IW=(PX+PW)-IX-6;                 // the info column
-    const SHW=86, SHX=IX+IW-SHW;                        // the spinning ship sits top-right of it
+    /* ⚠ THE SHIP BAY IS SIZED FROM WHAT MIKE ASKED FOR, AND IT CLOSES A DEAD BAND.
+       "spin our ships horizontally" makes the hull a FEATURE of this screen, and the first
+       cut gave it 86x78 in a 460-wide panel - smaller than the roster thumbnails below it.
+       Rendering all nine showed the cost twice over: the ship was too small to read the
+       roll on, and the wide bio column it left behind wrapped every bio to two lines, so
+       ~50px of the panel between the bio and SPECIAL was empty on every pilot. Widening the
+       bay narrows the bio column, which fills the top, and the bay itself fills the right -
+       one number fixing both halves of the same empty space. */
+    const SHW=126, SHH=120, SHX=IX+IW-SHW, SHY=PY+30;
     if(!locked){
-      psPanelBox(SHX, PY+30, SHW, 78, P.tint, false);
-      psBlitFit(psShipKey(P.key, spin), SHX+SHW/2, PY+30+39, SHW-10, 68, 1);
+      psPanelBox(SHX, SHY, SHW, SHH, P.tint, false);
+      psBlitFit(psShipKey(P.key, spin), SHX+SHW/2, SHY+SHH/2, SHW-12, SHH-14, 1);
     }
 
     const face=_pilotFace;
@@ -52439,24 +52473,56 @@ function drawPilot(dt){
     if(!locked && typeof msgTextLeft==='function'){
       const sub=(M.callsign?('"'+M.callsign+'"'):'')+(M.affil?('   '+M.affil.toUpperCase()):'');
       if(sub) msgTextLeft(sub, IX+2, PY+44, 9, '#9fb0c6', 0.9, 1, 0.10, 0);
+      /* ⚠ THE BIO FLOWS AND THE BLOCKS BELOW IT FOLLOW - NO FIXED Y. Nine pilots have nine
+         different bio lengths, so a hard-coded SPECIAL row is either crowded or stranded, and
+         at the old column width it was stranded on all nine. bioBot is where the text actually
+         ENDED, and everything under it is placed from that. */
       const bio=(M.desc||P.role||'');
+      let bioBot=PY+64;
       if(bio && typeof msgWrap==='function'){
-        const colW=IW-SHW-10;
+        const colW=IW-SHW-12;
         const rows=msgWrap(bio, colW, 9, 0.10)||[];
-        for(let r=0;r<rows.length && r<6;r++) msgTextLeft(rows[r], IX+2, PY+64+r*12, 9, '#d6dee9', 0.85, 1, 0.10, 0);
+        const nr=Math.min(rows.length, 6);
+        for(let r=0;r<nr;r++) msgTextLeft(rows[r], IX+2, PY+64+r*12, 9, '#d6dee9', 0.85, 1, 0.10, 0);
+        bioBot=PY+64+nr*12;
       }
       const SP=(typeof pcSpecial==='function')?pcSpecial(P.key):null;
-      if(SP && SP.name) msgTextLeft('SPECIAL: '+SP.name, IX+2, PY+140, 10, P.tint, 1, 1, 0.10, 0);
-      /* the stat bars, from game data - see the pcStats note about what these used to show */
+      /* the stat bars, from game data - see the pcStats note about what these used to show.
+         ⚠ THE BLOCK IS ANCHORED TO THE PANEL'S FOOT, NOT TO THE SPECIAL ROW, so the slack a
+         short bio leaves is shared between the two gaps instead of piling up under the bars.
+         It still takes the LOWER of the two, so a six-line bio pushes the bars down rather
+         than drawing them through itself. And it must clear the ship bay, because the bars
+         span the full info column while the text above them does not. */
       const st=(typeof pcStats==='function')?pcStats(P.key):[];
-      for(let s=0;s<st.length && s<5;s++){
-        const yy=PY+158+s*19;
+      /* ⚠ THE ROW COUNT IS NOT THE SAME FOR EVERY PILOT, AND ANCHORING ALONE OVERFLOWS.
+         pcStats returns THREE rows for most pilots and FIVE for Lizzie (she carries BOMB POWER
+         and DEFENSE), so a fixed pitch anchored to the panel foot ran her last row 10px past
+         the frame and printed DEFENSE across the roster below. Found by rendering all nine -
+         it is invisible on the eight pilots you would check first, which is CLAUDE.md's
+         "render the SET, not the complaint" in one screenshot.
+         So the pitch is SOLVED against the space that is left rather than assumed: it opens to
+         SPITCH when there is room and closes to fit when there is not, and the block is only
+         pushed down onto the foot in the first case. */
+      const SPITCH=22, stN=Math.min(st.length,5);
+      const stCeil=Math.max(bioBot+40, SHY+SHH+14);   // earliest the bars may begin
+      const stBase=PY+PH-14;                          // the last bar's row, inside the frame
+      const stPitch=(stN>1)?Math.min(SPITCH,(stBase-stCeil)/(stN-1)):SPITCH;
+      const stTop=Math.max(stCeil, stBase-(stN-1)*stPitch);
+      /* ⚠ SPECIAL IS THE STAT BLOCK'S HEADING, SO IT IS PLACED FROM THE BLOCK, NOT FROM THE
+         BIO. Flowed after the bio it came out stranded in open panel 48px above the bars it
+         belongs to, reading as a third floating element rather than as their title. Pinned
+         26px over the first bar, it groups; the slack then falls between the DESCRIPTION and
+         the STATS, which is the one place a gap says something. */
+      const spY=Math.max(bioBot+16, stTop-26);
+      if(SP && SP.name) msgTextLeft('SPECIAL: '+SP.name, IX+2, spY, 10, P.tint, 1, 1, 0.10, 0);
+      for(let s=0;s<stN;s++){
+        const yy=Math.round(stTop+s*stPitch);
         msgTextLeft(st[s].label, IX+2, yy, 8, '#8fa0b6', 0.9, 1, 0.10, 0);
         const bx=IX+92, bw=IW-96, seg=Math.max(1,Math.round(bw/PC_MAX_SEG));
         ctx.save();
         for(let g=0;g<PC_MAX_SEG;g++){
           ctx.fillStyle = (g<st[s].val) ? P.tint : 'rgba(90,104,126,0.35)';
-          ctx.fillRect(bx+g*seg, yy-5, Math.max(1,seg-1), 8);
+          ctx.fillRect(bx+g*seg, yy-6, Math.max(1,seg-1), 10);
         }
         ctx.restore();
       }

@@ -397,6 +397,45 @@ neighbouring line. Update the ledger with the reason; do not treat the failure a
 ⚠ **SUITE OUTPUT IS BLOCK-BUFFERED WHEN REDIRECTED**, so the last few `ok` lines are LOST when the run
 throws. Do not infer from "the last printed assertion" where a crash happened — read the stack.
 
+## 0906e — a size check scored nine wrong sprites as 9/9
+
+⚠ **A BLIT'S SIZE CANNOT TELL YOU WHOSE ART IT IS.** The pilot-select probe matched 256x320 blits
+inside the bay and reported all nine pilots green while the screen drew **`pose_axel_0` for every
+one of them** — every pose cell is 256x320, so the size says "a pose" and never "whose". Underneath
+it the probe was setting `pilotIdx`, **a variable nothing in the game reads** (it is `pilotIndex`,
+and `drawPilot` overrides even that with `pilotFrom` while `pilotRot > 0.5`). Two faults, one green
+result. Identify a blit by wrapping `XART.get` and recording the KEY — the route this file already
+prescribes because `XART.get` returns a fresh canvas with no `.src` — and **assert that a state
+change you made actually took**, rather than assuming the setter existed.
+
+⚠ **`pose_<pilot>_0..5` EXISTS FOR ALL NINE PILOTS** — 54 cut, background-free standing figures on
+`pilots_1` at 256x320. The first pilot-select rebuild fell back to a portrait bust for eight of them
+because I searched for a `_body_` family and stopped when only Yuri had one. **Search for the THING,
+not for the name you already picked.**
+⚠ **AND YURI'S POSE SET IS ART MIKE REJECTED** ("I never liked how Yuri turned out"). Preferring
+`yuri_body_0` by chain ORDER is not enough: it is a loose file, `XART.rdy` is false on its first
+call, and the decode window falls through to the replaced character. `PS_POSE_STALE` excludes it.
+
+⚠ **`pcStats` RETURNS THREE ROWS FOR MOST PILOTS AND FIVE FOR LIZZIE.** A fixed row pitch ran her
+last bar past the panel and printed DEFENSE across the roster. Invisible on the eight pilots you
+would check first; found by rendering all nine into one sheet. **Render the SET, not the complaint.**
+
+⚠ **A SOURCE ASSERTION IS DEFEATED BY THE COMMENT THAT EXPLAINS THE FIX.** Section 277 checks the
+`NO FIELD PHOTO` caption is gone via `drawPilot.toString()`, and the note inside `drawPilot` saying
+why it went names it. This file already records the identical shape from 0810j. **Strip comments by
+default in any `toString()` assertion**, not when you remember to.
+
+⚠ **THE FLAME IMPORTER'S DESPILL IS FIRE-ONLY AND WILL DESTROY OTHER FAMILIES.** `despill_fire`
+clamps blue to green — sound for fire, catastrophic for a cyan bolt (b>g by definition) and for a
+purple one, whose colour is the magenta key's own signature. And key ink that survives the border
+flood is **two different things**: enclosed background the flood could not reach (the cyan lance's
+branching arms trap 9,528 px of it) and halo/spill. Separate them by distance from **the plate's own
+background pixel** — measured, 28 blobs within 31 and 967 at 48+ — then punch the former and convert
+the latter to a black edge. A rim-only halo rule moved 28 px and left 10,397.
+⚠ **AND REPORT FRAME SIZE BEFORE IoU.** A low silhouette IoU means "crackle" (loop it) or "growth"
+(drive it off the round's own clock); those want opposite treatment and the IoU alone cannot tell
+them apart. The bead bolt's heights run 185/351/469/186 — a 61% spread, i.e. a sequence.
+
 ## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
 
 **Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download
@@ -981,8 +1020,9 @@ bosses/minibosses, level-7 purple halos, wrong level-5 map region, background sq
 stage-8 chain lightning). The stage-6 "door/side sky overlay" he ordered deleted was **not** deleted:
 the obvious key renders as a flat blue noise field, not an overlay. Rule 1, third save.
 
-**→ START HERE: `docs/PASSOVER_0906.md` — the newest. Mike's overnight list, and its first
-section is eight traps rather than fixes: the stage-6 carrier's hit box swallowing the one shot
+**→ START HERE: `docs/PASSOVER_0906.md` — the newest, and read its LAST section (0906e) first:
+the pilot-select rebuild, where a probe scored nine wrong sprites as 9/9 and three separate checks
+had to be made able to fail before any of them was believed. Then its opening list of traps: the stage-6 carrier's hit box swallowing the one shot
 its fight depends on, an 8-frame "reel" that is a glow flicker, and a retracted pilot-bank
 change that would have inverted a working pilot. Then `docs/PASSOVER_0905.md` — the previous
 handoff. It covers drops 0905g…0905t

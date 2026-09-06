@@ -237,3 +237,103 @@ Two assertions were repointed deliberately rather than "fixed":
 - the approved-0829 sound ledger pinned `reviewed_shadow_orb_launch.wav`, i.e. the late sample. The
   0903q drop hit the identical situation on the neighbouring line and resolved it the same way. **An
   approved-mapping table defends the sample, not the requirement.**
+
+---
+
+# 0906e — the standing pilots were already in the repo, and a size check called nine wrong ones right
+
+Mike: *"and we do have the pilots on their own, from the cinematics we have. we use their frames
+their. you can grab them from that."*
+
+He was right, and the first version of the pilot screen had shipped without them.
+**`pose_<pilot>_0..5` is fifty-four cut, background-free standing figures** on the `pilots_1` atlas
+at 256x320 — six poses for every one of the nine — and the bay was drawing a portrait bust
+captioned NO FIELD PHOTO for eight pilots because I had looked for a `_body_` family, found it only
+on Yuri, and stopped. **Searching for the THING instead of for a NAME I had already chosen is the
+lesson**, and it is rule 1 wearing different clothes.
+
+## The traps, which are worth more than the fix
+
+⚠ **A SIZE CHECK CANNOT TELL YOU WHOSE ART IT IS, AND IT SCORED NINE WRONG PILOTS AS 9/9.** The
+first probe matched blits of 256x320 inside the bay rect and reported every pilot green. Every pose
+cell is 256x320, so the size can say *"a pose"* and never *"whose"* — and the screen was in fact
+drawing `pose_axel_0` for all nine, because the probe was setting `pilotIdx`, **a variable nothing
+in the game reads** (it is `pilotIndex`, and `drawPilot` further overrides it with `pilotFrom`
+while `pilotRot > 0.5`). Two independent faults, one green result. The probe now wraps `XART.get`
+and records the KEY asked for — the identification route CLAUDE.md already prescribes, because
+`XART.get` returns a fresh canvas with no `.src` and no stable identity — and it asserts the pilot
+switch took effect instead of assuming it.
+
+⚠ **AND YURI'S CINEMATIC POSES ARE ART MIKE REJECTED, SO ORDERING ALONE WAS NOT ENOUGH.**
+`pose_yuri_*` is the previous Yuri — *"I never liked how Yuri turned out"* — and `yuri_body_0..6` is
+the 0906 replacement. A chain that simply prefers `_body_0` still falls through to the old
+character for the frames before it decodes, because `yuri_body_0` is a **loose file** and
+`XART.rdy` is false on its first call: that call is what starts the load. The key-accurate probe
+run caught exactly that. `PS_POSE_STALE` removes his pose set from the chain outright, so he shows
+a bust for the decode window and then his own art, and never the replaced design for one frame.
+
+⚠ **`pcStats` DOES NOT RETURN THE SAME NUMBER OF ROWS FOR EVERY PILOT, AND THE PANEL OVERFLOWED.**
+Three rows for most, **five for Lizzie** (BOMB POWER, DEFENSE). A fixed pitch anchored to the panel
+foot ran her last row 10px past the frame and printed DEFENSE across the roster below it. Found by
+rendering all nine into one sheet — it is invisible on the eight pilots you would check first,
+which is *"render the SET, not the complaint"* in one screenshot. The pitch is solved against the
+room left now, opening to 22 when there is space and closing when there is not.
+
+⚠ **AND MY OWN NEW ASSERTION FAILED ON CORRECT CODE, IN THE WAY THIS FILE ALREADY DOCUMENTS.**
+Section 277 checks that the `NO FIELD PHOTO` caption is gone by reading `drawPilot.toString()` — and
+the comment inside `drawPilot` explaining why the caption went **names the caption**. CLAUDE.md
+records this exact shape from the 0810j connectors work ("the comment explaining what was removed
+named what was removed"). Writing it again is the argument for stripping comments by default rather
+than when you remember to.
+
+## What landed
+
+- **`psBodyKey`** resolves `<key>_body_0` → `pose_<key>_0` → `pose_<key>_3`, minus any pilot in
+  `PS_POSE_STALE`. All nine bays draw a full standing figure; the NO FIELD PHOTO branch is gone and
+  the bust survives only as the quiet decode-window fallback.
+- **The info column flows.** The bio's real end drives what sits under it, the ship bay went
+  86x78 → **126x120** (Mike asked for the spin to be a feature; it was smaller than the roster
+  thumbnails), and narrowing the bio column to suit fills the top of the panel that the wide column
+  had left empty. SPECIAL is pinned 26px above the first stat bar because it is that block's
+  heading, not a third floating element.
+- **`_BUILD_SOURCE/probe_pilotbody_0906.py`** — real Chromium, identifies by key, unlocks Cole so
+  his bay is actually measured (a correctly-locked slot is not a missing figure), and reports the
+  spin. **It can fail**: `--bust` stubs `psBodyKey` to null and the same run reports 0/9.
+- **Suite section 277**, 12 assertions. **3,243 ok / 62 fail**, failure set identical to baseline.
+
+Measured: 9/9 pilots draw a standing figure of themselves, 0 console errors, 0 page errors, and
+Maverick's panel hull cycles all eight `br0..br7` over 240 frames while the roster stays level.
+Proofs: `docs/PILOT_SELECT_0906.png` (all nine), `docs/proofs/pilotbody_0906/`.
+
+## Also landed: Mike's three enemy bolt families, cut but NOT yet wired
+
+*"I have much better projectiles to use for enemies, orbs, lightning, shadow bolts."* Three plates
+share the flamethrower plate's 4x2 layout — the round in flight on row 0, a decaying impact on row 1
+— and are cut by `_BUILD_SOURCE/import_bolts_0906.py` into `assets/game/bolts_v1/`:
+`nbolt_{cyan,void,bead}_0..3` and `nboltx_{cyan,void,bead}_0..3`. Proof: `docs/BOLTS_0906.png`.
+
+⚠ **THE FLAME IMPORTER'S DESPILL RULE WOULD HAVE DESTROYED TWO OF THE THREE.** `despill_fire`
+clamps blue down to green, which is sound for fire (its ramp never has b>g) and catastrophic for
+cyan, which is b>g by definition, and for the purple bolt, whose colour **is the key's own
+signature**.
+
+⚠ **AND THE SURVIVING KEY INK IS TWO DIFFERENT THINGS.** My first pass called all of it halo and
+converted the ink's rim to a black edge per the standing rule — it moved **28 pixels on the cyan
+plate and left 10,397**, because the lightning's branching arms ENCLOSE pools of background the
+border flood cannot reach, and those are nowhere near an edge. Scoring every unreachable blob by
+its distance from **the plate's own background pixel** separates the two populations with no
+per-family list: 28 blobs (9,528 px) within 31, 967 blobs (5,180 px) at 48+, 9 in between. Still
+background and ≥20px → punch; anything else → black edge, never deleted. That is what makes it safe
+for the void family, whose art really is purple: its ink scores 67–90 and not one pixel is punched.
+A hand-written "which families may contain magenta" table would have had to get that family right
+on nothing but my say-so.
+
+⚠ **THE BEAD ROW IS A SEQUENCE, NOT A LOOP** — frame heights 185 / 351 / 469 / 186, a 61% spread.
+Looped it would pulse; it wants driving off the round's own clock, or using as power-graded
+variants. Cyan (1% spread) and void (11%) are loops. The importer reports size BEFORE IoU for
+exactly this reason: a low IoU means "crackle" or "growth" and those want opposite treatment.
+
+**NOT WIRED, DELIBERATELY.** Which enemies and stages fire which bolt is Mike's call, and CLAUDE.md's
+0905e note is explicit that the projectile resolution chain (`PROJ` → `_dedicated` → per-stage
+FIRETYPES rows) must be read end to end first — that note exists because reading half of it put an
+earlier drop one edit away from overwriting an authored design decision.

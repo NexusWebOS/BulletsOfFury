@@ -13387,6 +13387,82 @@ console.log("=== 276. cutscene shootdown beats ===");
   ok(/_d4\.e>0\.55/.test(_dm), 'the ram shows what it hits before it blows it up');
 }
 
+// ===== 277. PILOT SELECT IS COMPOSED, AND EVERY PILOT HAS A STANDING FIGURE (drop 0906e) =====
+console.log("=== 277. pilot select: nine standing figures ===");
+{
+  /* Mike, 0906: "a solution to our pilot card system ... spin our ships horizontally, show the
+     pilot standing, give the descriptions and bio fitted right" and then, on the art: "we do have
+     the pilots on their own, from the cinematics we have. we use their frames their."
+
+     This section exists because the PIXEL half of this screen is proved by
+     _BUILD_SOURCE/probe_pilotbody_0906.py in real Chromium, and the suite had NO coverage of the
+     screen at all. What is asserted here is what a state check can honestly answer: that the art
+     each pilot needs is registered, that psBodyKey hands back THAT pilot's own key, and that the
+     stat block solves its height rather than assuming one. */
+  var _PS=['axel','decker','maverick','freezer','juggernaut','yuri','lizzie','falva','cole'];
+
+  var _poses=vm.runInContext("Object.keys(BOFX.cells).filter(function(k){return /^pose_/.test(k);}).length", ctxv);
+  ok(_poses===54, 'all nine pilots have their six cinematic poses registered ('+_poses+' of 54)');
+
+  var _pav=0;
+  for (var a=0;a<_PS.length;a++)
+    if (vm.runInContext("!!XART._src['pav_'+"+JSON.stringify(_PS[a])+"]", ctxv)) _pav++;
+  ok(_pav===9, 'nine square bordered roster avatars are registered ('+_pav+')');
+
+  /* THE ONE THAT MATTERS: a standing figure for every pilot, and it must be THEIR OWN.
+     The probe's first key-accurate run caught drawPilot showing pose_axel_0 for all nine, and a
+     size-only check had scored that 9/9 - every pose cell is 256x320, so the size can say "a pose"
+     but never WHOSE. Asserted by identity here for the same reason. */
+  var _own=0, _bad=[];
+  for (var i=0;i<_PS.length;i++){
+    var k=vm.runInContext("psBodyKey("+JSON.stringify(_PS[i])+")", ctxv);
+    if (k && (k===_PS[i]+'_body_0' || k.indexOf('pose_'+_PS[i]+'_')===0)) _own++;
+    else _bad.push(_PS[i]+'->'+k);
+  }
+  ok(_own===9, 'every pilot draws a standing figure of THEMSELVES ('+_own+'/9'+(_bad.length?'; '+_bad.join(', '):'')+')');
+
+  /* Yuri's cinematic poses are the design Mike REPLACED ("I never liked how Yuri turned out"), so
+     chain order alone is not enough: yuri_body_0 is a LOOSE file and XART.rdy is false on its first
+     call, which drops him through to the old character for the frames before it decodes. */
+  ok(vm.runInContext("!!PS_POSE_STALE.yuri", ctxv), 'Yuri is marked as having superseded pose art');
+  ok(vm.runInContext("psBodyKey('yuri')==='yuri_body_0'", ctxv), 'and he draws his 0906 body art');
+  var _yc=vm.runInContext("psBodyKey.toString()", ctxv).replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/[^\n]*/g,'');
+  ok(_yc.indexOf('PS_POSE_STALE')>0, 'the exclusion is a table, not a name hard-coded into the chain');
+
+  var _dp=vm.runInContext("drawPilot.toString()", ctxv);
+  /* COMMENTS STRIPPED, and this assertion failed on correct code until it was: the note inside
+     drawPilot explaining why the caption went NAMES the caption. CLAUDE.md already records this
+     exact shape - "the comment explaining what was removed named what was removed" - and hitting
+     it again is the argument for stripping by default rather than when you remember to. */
+  var _src=_dp.replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/[^\n]*/g,'');
+  ok(_src.indexOf('NO FIELD PHOTO')<0,
+     'the "NO FIELD PHOTO" caption is gone - it labelled a gap that no longer exists');
+
+  /* pcStats is NOT the same length for every pilot, and that is exactly what overflowed the panel:
+     Lizzie carries BOMB POWER and DEFENSE, so five rows at a fixed pitch ran the last one past the
+     frame and printed it across the roster. Pinned so a sixth row fails HERE and not on screen. */
+  var _rows={}, _rangeOK=true, _maxRows=0, _seg=vm.runInContext("PC_MAX_SEG", ctxv);
+  for (var j=0;j<_PS.length;j++){
+    var st=JSON.parse(vm.runInContext("JSON.stringify(pcStats("+JSON.stringify(_PS[j])+")||[])", ctxv));
+    _rows[_PS[j]]=st.length;
+    if (st.length>_maxRows) _maxRows=st.length;
+    for (var g=0;g<st.length;g++){
+      var v=st[g].val;
+      if (!(typeof v==='number' && v>=0 && v<=_seg)) _rangeOK=false;
+    }
+  }
+  ok(_maxRows<=5, 'no pilot asks for more stat rows than the panel solves for (max '+_maxRows+')');
+  ok(_rows.lizzie===5, 'Lizzie is the crowded case the layout has to survive ('+_rows.lizzie+' rows)');
+  ok(_rangeOK, 'every stat bar value is inside 0..PC_MAX_SEG');
+
+  /* and the block must SOLVE its pitch against the space that is left rather than assume one -
+     that is the difference between the five-row case fitting and running off the frame.
+     Comments stripped: a source assertion a docstring can satisfy is measuring nothing. */
+  ok(_src.indexOf('stPitch')>0 && /stPitch\s*=\s*\(?\s*stN/.test(_src),
+     'the stat pitch is derived from the row count and the room available');
+  ok(_src.indexOf('bioBot')>0,
+     'the blocks under the bio are placed from where it actually ENDED, not from a fixed y');
+}
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 
