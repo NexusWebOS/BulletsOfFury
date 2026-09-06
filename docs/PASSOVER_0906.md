@@ -337,3 +337,90 @@ exactly this reason: a low IoU means "crackle" or "growth" and those want opposi
 0905e note is explicit that the projectile resolution chain (`PROJ` → `_dedicated` → per-stage
 FIRETYPES rows) must be read end to end first — that note exists because reading half of it put an
 earlier drop one edit away from overwriting an authored design decision.
+
+---
+
+# 0906f — the SpriteCook pass: nine bordered avatars, nine front-facing pilots, six faction badges
+
+Mike: *"now use spritecook and get me bordered avatars of each pilot, front facing frames of each
+pilot like Yuri is facing forward and there affiliation symbols should be regenerated and used on
+the cards."*
+
+All three landed. **1,066 credits at the start, 802 at the end** — 22 generations at 12 each.
+
+## The budget objection from 0906d is gone, and with it the composite
+
+`build_pilot_avatars_0906.py` composited ONE lifted frame over nine portraits, and its own header
+says why: 66 credits remained and a per-pilot edit is 12–18. Mike topped the account up, so each
+pilot now gets a real generation — `edit_asset_id` on their own authored portrait, which is a 1:1
+edit and not a lookalike. `build_pilot_avatars_v2_0906.py` supersedes it.
+
+## What was measured rather than assumed
+
+⚠ **THE PALETTE-LOCK RULE IN CLAUDE.md DOES NOT APPLY TO THIS ART CLASS, AND APPLYING IT WOULD HAVE
+MADE THINGS WORSE.** That rule ("pixel:true does NOT give you pixel art" → snap to the reference's
+palette) was measured on the Cryo Spear: an authored BOSS at **61 colours** against a 19,063-colour
+generation, swapping in at 62% HP, i.e. an art-style change mid-fight. Measured here instead: the
+authored portraits run **19,815–37,168** colours on opaque pixels and Yuri's own authored avatar is
+**120,327**. These are continuous-tone illustrated plates, not low-colour sprites, and the
+generations land at ~44,000–92,000 — inside that range. A lock would have flattened art that is
+meant to be smooth and made the new avatars LESS like the authored ones. **A rule carries the art
+class it was measured on.**
+
+⚠ **AND THE RAW/PIXEL CHOICE INVERTS BETWEEN THE TWO JOBS.** CLAUDE.md says prefer `raw_url` because
+`pixel_url` is crushed to the size hint — correct for the avatars, which are opaque. It is wrong for
+the standing figures: measured, `raw_url` comes back **RGB with no alpha at all** on a flat white
+background, and the cutout SpriteCook computed exists only on `pixel_url`. Re-keying the white
+myself is the worse option here — **Falva's suit is white and Lizzie's near-white**, so the flood
+threshold the emblems needed would eat into their clothing. Took the crushed plates (228–320px)
+against a bay that draws at 95x212.
+
+⚠ **SIX EMBLEMS FOR NINE PILOTS.** Two fly AIRFORCE, two are INDEPENDENT, two are PRINCESSES OF THE
+SKY. A faction badge is worn by its members, so keying per pilot would have produced two different
+Airforce badges and made the roster read as nine loners rather than six factions.
+
+⚠ **AND THE TWO AFFILIATION TABLES DISAGREE ABOUT TWO PILOTS — OPEN, FOR MIKE.**
+`BOFX.pilotcard[].affil` says **lizzie PRINCESSES OF THE SKY** and **cole THE RIGHT HAND MAN**;
+`AINTRO_AFFIL` says **STRATEGIC ORDNANCE** and **FURY FOUNDER**. The emblem follows the pilotcard
+table because that is what the CARD draws and the card is the surface he asked to change. Neither
+of Cole's is a faction — both are titles — so his badge is built from his callsign, Forge Master.
+**This needs his call**, and `affilEmblemKey` returns null for an unknown faction rather than
+borrowing another one, so a decision either way is one table row.
+
+⚠ **THE SIZE HINT BIT AGAIN, IN A NEW PLACE.** The eight bodies came back at eight different sizes
+(228, 240, 240, 280, 282, 284, 308, 320). Scaling each CANVAS to one size leaves every pilot a
+different height on screen, because the figure fills a different fraction of each. They are trimmed
+to ink and scaled so the FIGURE is one height — and **Yuri's authored 273px sets it**, so the new
+eight stand level with him rather than the reference being moved to suit the generations.
+
+⚠ **THE EMBLEM INDENT IS CONDITIONAL ON THE EMBLEM RESOLVING.** `XART.rdy` is false on its first
+call, so a fixed indent leaves the subtitle shunted right with an empty gap for the frames before
+the badge decodes.
+
+⚠ **AND MY OWN PROBE FLAGGED 8/9 AS WRONG ON A BUILD THAT HAD JUST GOT BETTER.** Its `DEDICATED` set
+still listed only Yuri, so once the other eight had dedicated body art the probe called every one of
+them a failure. Read the assertion before fixing the code: the expectation was stale, not the game.
+
+## Yuri is excluded from both regenerations, deliberately
+
+His plate is the reference. The gunmetal frame, corner bolt plates, accent bars, dark interior and
+rim light in all eight avatar prompts are described FROM it, and `yuri_body_0` is the stance the
+eight figures were generated to match. Running either back through the generator would replace
+authored art with an imitation of itself. `PS_POSE_STALE` still keeps his superseded `pose_yuri_*`
+out of the chain.
+
+## Landed
+
+- **`pav_<pilot>`** — nine bordered avatars, 256x256, each with its own `PILOTS[].tint` on the
+  accent bars, so the roster reads as one set and each slot still says whose it is.
+- **`<pilot>_body_0`** — nine front-facing figures on one 273px baseline. Lizzie and Falva were the
+  two genuinely off-pose in the cinematic set and both now stand square.
+- **`affil_<faction>`** — six badges, keyed by affiliation, drawn at the head of the card's subtitle
+  row. White keyed by border flood at the anti-aliasing band (232), not at pure white: each plate is
+  44–71% pure white with a further 100–800px of soft edge, and keying only >=250 leaves that as a
+  halo ring. Proof is rendered on MID-GREY so a halo would show; on black it would not.
+- Suite section 277 extended: every affiliation the card can print resolves to a badge, an unknown
+  one draws nothing rather than borrowing, and the indent is conditional.
+
+Proofs: `docs/PILOT_SELECT_0906F.png` (all nine cards), `docs/PILOT_AVATARS_V2_0906.png`,
+`docs/PILOT_BODIES_0906.png`, `docs/AFFILIATIONS_0906.png`.

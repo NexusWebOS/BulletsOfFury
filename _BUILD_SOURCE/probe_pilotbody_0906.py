@@ -26,8 +26,11 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import shoot as sh
 
 PILOTS = ['axel', 'decker', 'maverick', 'freezer', 'juggernaut', 'yuri', 'lizzie', 'falva', 'cole']
-# pilots whose cinematic poses are superseded and who must draw their OWN body art (PS_POSE_STALE)
-DEDICATED = {'yuri'}
+# Pilots with dedicated `<key>_body_0` art, who must draw THAT and not a cinematic pose.
+# Was {'yuri'} until 0906f generated the other eight; the probe then flagged 8/9 as WRONG on a
+# build that had just got BETTER. Left as a set rather than collapsed away, because it is the
+# thing under test: a pilot dropping out of it means their dedicated art stopped resolving.
+DEDICATED = {'axel', 'decker', 'maverick', 'freezer', 'juggernaut', 'yuri', 'lizzie', 'falva', 'cole'}
 OUT = os.path.join(sh.GAME, 'docs/proofs/pilotbody_0906')
 
 TRAP = r"""
@@ -81,7 +84,10 @@ READY = r"""
   for (const p of P) { if (XART.rdy('pose_'+p+'_0')) n++; }
   /* Yuri's own body art is a LOOSE file, not an atlas cell - wait for it too, or the run
      measures him during his decode window and reports a bust as a failure. */
-  return (n + (XART.rdy('yuri_body_0') ? 1 : 0)) / (P.length + 1);
+  let m=0; for (const p of P) if (XART.rdy(p+'_body_0')) m++;
+  let e=0; for (const a of ['airforce','matrix','independent','brotherhood','princesses','forge'])
+    if (XART.rdy('affil_'+a)) e++;
+  return (n + m + e) / (P.length*2 + 6);
 }
 """
 
@@ -118,7 +124,10 @@ def main():
         # touch every pose key, then WAIT for the atlas - XART.rdy is false on its first call
         pg.evaluate("() => { const P=['axel','decker','maverick','freezer','juggernaut','yuri',"
                     "'lizzie','falva','cole']; for(const p of P) XART.rdy('pose_'+p+'_0');"
-                    " for(let i=0;i<7;i++) XART.rdy('yuri_body_'+i); }")
+                    " for(let i=0;i<7;i++) XART.rdy('yuri_body_'+i);"
+                    " for(const q of P) XART.rdy(q+'_body_0');"
+                    " for(const a of ['airforce','matrix','independent','brotherhood',"
+                    "                 'princesses','forge']) XART.rdy('affil_'+a); }")
         try:
             pg.wait_for_function('(' + READY + ')() >= 1', timeout=15000)
         except Exception:

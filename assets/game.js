@@ -2166,6 +2166,20 @@ const XART=(function(){
   for(const _pa of ['axel','decker','maverick','freezer','juggernaut','yuri','lizzie','falva','cole'])
     X._src['pav_'+_pa]='assets/game/pilot_avatars/pav_'+_pa+'.png';
   for(let _yb=0;_yb<7;_yb++) X._src['yuri_body_'+_yb]='assets/game/yuri_v2/yuri_body_'+_yb+'.png';
+  /* ⚠ THE OTHER EIGHT FRONT-FACING FIGURES (Mike, 0906): "front facing frames of each pilot
+     like Yuri is facing forward." Generated per pilot from their own cinematic pose, so the
+     face and outfit are theirs and only the stance changed. YURI IS ABSENT FROM THIS LIST ON
+     PURPOSE - his is authored and is the pose the other eight were generated to match; the
+     line above already registers it, and adding him here would overwrite the reference with an
+     imitation of itself. Same key shape either way, so psBodyKey needs no special case. */
+  for(const _pb of ['axel','decker','maverick','freezer','juggernaut','lizzie','falva','cole'])
+    X._src[_pb+'_body_0']='assets/game/pilot_bodies/'+_pb+'_body_0.png';
+  /* ⚠ SIX AFFILIATION EMBLEMS FOR NINE PILOTS, KEYED BY FACTION AND NOT BY PILOT. Two pilots
+     fly AIRFORCE, two are INDEPENDENT, two are PRINCESSES OF THE SKY - a faction badge is worn
+     by its members, so keying these per pilot would have produced two different Airforce
+     badges and made the roster read as nine loners instead of six factions. */
+  for(const _af of ['airforce','matrix','independent','brotherhood','princesses','forge'])
+    X._src['affil_'+_af]='assets/game/affiliations/affil_'+_af+'.png';
   /* ⚠ MIKE'S NEW FLAMETHROWER PLUME AND ITS IMPACT (0906): "I want to use this for
      flamethrower instead of what we have ... good replacement here." Four plume frames and a
      four-frame impact star, cut by _BUILD_SOURCE/import_flame_v2_0906.py. Registered as a NEW
@@ -52249,6 +52263,28 @@ function psLineupX(i){ return Math.round((VW - PS_COLS*PS_PITCH)/2 + i*PS_PITCH)
    decode window and then his own art, and never the rejected design for even one frame.
    Any pilot whose cinematic poses are superseded goes in that table. */
 const PS_POSE_STALE={yuri:1};
+/* the faction emblem for an affiliation string.
+
+   ⚠ TWO TABLES IN THIS FILE DISAGREE ABOUT TWO PILOTS, AND THIS ONE FOLLOWS THE CARD.
+   `BOFX.pilotcard[].affil` has lizzie PRINCESSES OF THE SKY and cole THE RIGHT HAND MAN;
+   `AINTRO_AFFIL` has STRATEGIC ORDNANCE and FURY FOUNDER for the same two. The card draws the
+   pilotcard value, and the card is the surface Mike asked to change, so that is what the
+   emblem is keyed to - but the disagreement is REAL and is his to settle, which is why this is
+   a lookup with a null fallback rather than an assumption that every string has a badge. A
+   pilot whose affiliation is not in the table simply draws no emblem, which is the honest
+   outcome for a faction nobody has designed a badge for yet. */
+const AFFIL_EMBLEM={
+  'AIRFORCE':'airforce', 'ORDER OF THE MATRIX':'matrix', 'INDEPENDENT':'independent',
+  'BROTHERHOOD OF FURY':'brotherhood', 'PRINCESSES OF THE SKY':'princesses',
+  'THE RIGHT HAND MAN':'forge'
+};
+function affilEmblemKey(affil){
+  if(!affil) return null;
+  const s=AFFIL_EMBLEM[String(affil).toUpperCase()];
+  if(!s) return null;
+  const k='affil_'+s;
+  return (typeof XART!=='undefined' && XART.rdy(k)) ? k : null;
+}
 function psBodyKey(key){
   if(typeof XART==='undefined') return null;
   const chain=[key+'_body_0'];
@@ -52471,8 +52507,20 @@ function drawPilot(dt){
     if(typeof msgFaceUse==='function') msgFaceUse('dialogue');
     const M=(typeof BOFX!=='undefined'&&BOFX.pilotcard)?(BOFX.pilotcard[P.key]||{}):{};
     if(!locked && typeof msgTextLeft==='function'){
+      /* ⚠ THE FACTION EMBLEM LEADS THE SUBTITLE ROW, AND THE TEXT MOVES OUT OF ITS WAY.
+         Mike, 0906: "there affiliation symbols should be regenerated and used on the cards."
+         It sits before the callsign because that row already reads left-to-right as
+         who-you-are then who-you-fly-for, so the badge belongs at its head - and because the
+         RIGHT of this row is where the ship bay starts, and a badge there would collide with
+         it the moment a pilot has a long affiliation.
+         The indent is CONDITIONAL on the emblem resolving: XART.rdy is false on its first
+         call, so a fixed indent would leave the subtitle shunted right with nothing in the
+         gap for the frames before the badge decodes. */
       const sub=(M.callsign?('"'+M.callsign+'"'):'')+(M.affil?('   '+M.affil.toUpperCase()):'');
-      if(sub) msgTextLeft(sub, IX+2, PY+44, 9, '#9fb0c6', 0.9, 1, 0.10, 0);
+      const _ek=affilEmblemKey(M.affil);
+      const _sx=IX+2+(_ek?20:0);
+      if(_ek) psBlitFit(_ek, IX+2+8, PY+40, 17, 17, 1);
+      if(sub) msgTextLeft(sub, _sx, PY+44, 9, '#9fb0c6', 0.9, 1, 0.10, 0);
       /* ⚠ THE BIO FLOWS AND THE BLOCKS BELOW IT FOLLOW - NO FIXED Y. Nine pilots have nine
          different bio lengths, so a hard-coded SPECIAL row is either crowded or stranded, and
          at the old column width it was stranded on all nine. bioBot is where the text actually

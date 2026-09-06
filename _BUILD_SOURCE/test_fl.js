@@ -13462,6 +13462,47 @@ console.log("=== 277. pilot select: nine standing figures ===");
      'the stat pitch is derived from the row count and the room available');
   ok(_src.indexOf('bioBot')>0,
      'the blocks under the bio are placed from where it actually ENDED, not from a fixed y');
+
+  /* ---- 0906f: the SpriteCook pass. Bordered avatars, front-facing figures, faction emblems. ---- */
+
+  /* every pilot now has dedicated body art, so the cinematic-pose fallback should no longer be
+     what any of them draws. Asserted as "their own key", not "not a pose", so this still passes
+     if a pilot's dedicated art is ever withdrawn and the pose correctly picks the slack up. */
+  var _ded=0;
+  for (var d=0;d<_PS.length;d++)
+    if (vm.runInContext("XART.rdy("+JSON.stringify(_PS[d]+'_body_0')+")", ctxv)) _ded++;
+  ok(_ded===9, 'all nine pilots have their own front-facing standing figure registered ('+_ded+')');
+
+  /* SIX emblems for NINE pilots - a faction badge is worn by its members. Keying these per pilot
+     would give two different Airforce badges, which is the bug this shape prevents. */
+  var _AF=['airforce','matrix','independent','brotherhood','princesses','forge'];
+  var _em=0;
+  for (var e2=0;e2<_AF.length;e2++)
+    if (vm.runInContext("XART.rdy('affil_'+"+JSON.stringify(_AF[e2])+")", ctxv)) _em++;
+  ok(_em===6, 'six faction emblems are registered ('+_em+')');
+  ok(vm.runInContext("Object.keys(AFFIL_EMBLEM).length===6", ctxv),
+     'and the lookup covers exactly those six, not one per pilot');
+
+  /* every affiliation the CARD can print must resolve to a badge - otherwise a pilot silently
+     shows none, which is the "registered but never drawn" failure this repo keeps hitting. */
+  var _miss=[];
+  for (var f2=0;f2<_PS.length;f2++){
+    var af=vm.runInContext("((BOFX.pilotcard&&BOFX.pilotcard["+JSON.stringify(_PS[f2])+"])||{}).affil||''", ctxv);
+    var got=vm.runInContext("affilEmblemKey("+JSON.stringify(af)+")", ctxv);
+    if (!got) _miss.push(_PS[f2]+' ('+af+')');
+  }
+  ok(_miss.length===0, 'every pilot affiliation resolves to an emblem'+(_miss.length?': missing '+_miss.join(', '):''));
+
+  /* an unknown faction must draw NOTHING rather than fall back to somebody else's badge */
+  ok(vm.runInContext("affilEmblemKey('SOME FACTION NOBODY DESIGNED')===null", ctxv),
+     'an affiliation with no badge draws none, instead of borrowing another badge');
+  ok(vm.runInContext("affilEmblemKey('')===null && affilEmblemKey(null)===null", ctxv),
+     'and a blank affiliation is handled rather than throwing');
+
+  /* the indent must be conditional: XART.rdy is false on its first call, so a fixed one would
+     shunt the subtitle right with an empty gap for the frames before the badge decodes */
+  ok(_src.indexOf('_sx=IX+2+(_ek?')>0 || _src.indexOf('_sx = IX+2+(_ek ?')>0,
+     'the subtitle only indents when the emblem actually resolved');
 }
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
