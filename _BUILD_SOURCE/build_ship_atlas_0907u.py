@@ -56,6 +56,7 @@ MANIFEST = os.path.join(ROOT, 'assets/manifest.js')
 GAMEJS = os.path.join(ROOT, 'assets/game.js')
 TARGET_INK = 0.79
 PAD = 2
+CELL = 221         # the pack's own cell size - the coordinate system every affine is solved in
 STEADY = ['', '_l', '_r', '_pv0', '_pv1', '_pv2', '_pv3', '_pv4']   # the suffixes that carry phases
 
 
@@ -106,6 +107,12 @@ def plates(pilot, fmap):
     return out
 
 
+def spin_plates():
+    """the death spin-out reel (0907x). No glow phases: 0906s already ruled a roll or a spin-out
+    is over before a flicker could show."""
+    return {'_sp%d' % c: 'sp%d' % c for c in range(8)}
+
+
 def solve(pilot, cur, geom, fmap):
     """one scale + offset for this pilot, from his level frame
 
@@ -146,6 +153,7 @@ def build(write=False):
 
     made = {}        # (pilot, suffix) -> (RGBA trim image, offX, offY, canvasW, canvasH)
     report = []
+    spinrep = {}
     for p in pilots:
         S = solve(p, cur, geom, fmap)
         s, canvasH = S['s'], S['canvasH']
@@ -172,41 +180,98 @@ def build(write=False):
                           Image.LANCZOS)
             a = np.asarray(n)
             bb = ink_box(a)
-            scaled[suf] = (n, bb)
+            # ⚠ THE SPIN FRAMES LIVE IN A BIGGER BOX AND MUST BE PUT BACK INTO CELL COORDINATES.
+            # One affine per pilot is solved in the pack's 221px cell space and applied to every
+            # plate, so a plate stored in a 320px box - which the sp reel must be, because a
+            # rotated ~200px aircraft needs ~285px of room - is offset by half the difference.
+            # Derived from the file's own size rather than hardcoded, so it is right for any box.
+            cb = None
             if bb:
-                maxw = max(maxw, bb[2] - bb[0])
+                padx = (n.width - CELL * s) / 2.0
+                pady = (n.height - CELL * s) / 2.0
+                cb = (bb[0] - padx, bb[1] - pady, bb[2] - padx, bb[3] - pady)
+                maxw = max(maxw, cb[2] - cb[0])
+            scaled[suf] = (n, bb, cb)
         canvasW = int(maxw + 2 * PAD)
         # x offset so the level hull's centre sits on the canvas centre line
         tx = canvasW / 2.0 - S['cx'] * s
         ty = S['ty'] - S['cy'] * s
-        lo_y = min(bb[1] for _, bb in scaled.values() if bb)
-        hi_y = max(bb[3] for _, bb in scaled.values() if bb)
+        lo_y = min(cb[1] for _, _, cb in scaled.values() if cb)
+        hi_y = max(cb[3] for _, _, cb in scaled.values() if cb)
         shift = 0.0
         if ty + lo_y < 0:
             shift = -(ty + lo_y)
         elif ty + hi_y > canvasH:
             shift = canvasH - (ty + hi_y)
         ty += shift
-        for suf, (n, bb) in scaled.items():
+        for suf, (n, bb, cb) in scaled.items():
             if not bb:
                 continue
-            trim = n.crop(bb)
-            offX = int(round(tx + bb[0]))
-            offY = int(round(ty + bb[1]))
+            trim = n.crop(bb)                       # crop in the PLATE's own pixels
+            offX = int(round(tx + cb[0]))           # place in CELL coordinates
+            offY = int(round(ty + cb[1]))
             offX = max(0, min(canvasW - trim.width, offX))
             offY = max(0, min(canvasH - trim.height, offY))
             made[(p, suf)] = (trim, offX, offY, canvasW, canvasH)
+
+        # ---- the spin reel, on its OWN canvas ----------------------------------------------
+        # ⚠ A ROTATED AIRCRAFT'S BOUNDING BOX IS ~1.4x THE HULL'S AND IT MUST NOT BE ALLOWED TO
+        # SET THE HULL FRAMES' GEOMETRY. Sharing the canvas, the spin reel pushed the vertical
+        # extents until the anchor had to shift to fit - Maverick by +21.4 canvas px, which is 6
+        # screen px of the LEVEL ship moving because of art only a death plays.
+        # ⚠ AND THE CANVAS AND THE ART SCALE TOGETHER, OR THE SHIP CHANGES SIZE AS IT SPINS.
+        # `drawPlayer` blits every canvas at the same 60px, so drawn size is ink/canvasH: growing
+        # the canvas alone would shrink the aircraft the instant it started turning. Both grow by
+        # the same K, which keeps the ratio - and therefore the drawn size - identical.
+        spl = spin_plates()
+        sp = {}
+        needW = needH = 0
+        for suf, stem in spl.items():
+            im = Image.open(os.path.join(THRUST, p, stem + '.png')).convert('RGBA')
+            bb0 = ink_box(np.asarray(im))
+            if not bb0:
+                continue
+            sp[suf] = (im, bb0)
+            needW = max(needW, (bb0[2] - bb0[0]) * s)
+            needH = max(needH, (bb0[3] - bb0[1]) * s)
+        if sp:
+            # ⚠ SCALING THE ART BY K TOO WAS A NO-OP AND LEFT 10 FRAMES OVERFLOWING. `drawPlayer`
+            # blits every canvas at the same 60px, so on-screen scale is 60/canvasH: growing the
+            # canvas AND the art by the same K leaves ink/canvas identical, which is exactly the
+            # ratio that had to change for the frame to fit. Only the CANVAS grows. The cost is
+            # that the ship draws 1/K smaller while it spins - and K measures 1.00-1.06 across the
+            # fleet, because these airframes are tall and narrow and a 45-degree turn of a narrow
+            # shape barely widens its box. A 6% change on a death animation is not visible; a
+            # clipped wingtip would be.
+            K = max(1.0, (needW + 2 * PAD) / canvasW, (needH + 2 * PAD) / canvasH)
+            spW, spH = int(round(canvasW * K)), int(round(canvasH * K))
+            ss = s
+            for suf, (im, _) in sp.items():
+                n2 = im.resize((max(1, int(round(im.width * ss))), max(1, int(round(im.height * ss)))),
+                               Image.LANCZOS)
+                bb2 = ink_box(np.asarray(n2))
+                if not bb2:
+                    continue
+                trim = n2.crop(bb2)
+                ox = int(round(spW / 2.0 - trim.width / 2.0))
+                oy = int(round(spH / 2.0 - trim.height / 2.0))
+                ox = max(0, min(spW - trim.width, ox))
+                oy = max(0, min(spH - trim.height, oy))
+                made[(p, suf)] = (trim, ox, oy, spW, spH)
+            spinrep[p] = (K, spW, spH)
         nf = cur['ship_%s_nf' % p]
         report.append((p, s, S['canvasW_old'], canvasW, canvasH,
                        nf[3] / nf[7] * 60, TARGET_INK * 60, shift))
 
-    print('%-11s %-7s %-15s %-9s %-15s %s'
-          % ('pilot', 'scale', 'canvas', 'plates', 'hull draws', 'anchor shift'))
+    print('%-11s %-7s %-15s %-9s %-15s %-14s %s'
+          % ('pilot', 'scale', 'canvas', 'plates', 'hull draws', 'anchor shift', 'spin canvas'))
     for p, s, cw0, cw, ch, was, now, sh in report:
         n = sum(1 for k in made if k[0] == p)
-        print('%-11s %-7.3f %-15s %-9d %-15s %s'
+        K, sw, sh2 = spinrep.get(p, (1.0, 0, 0))
+        print('%-11s %-7.3f %-15s %-9d %-15s %-14s %s'
               % (p, s, '%dx%d (was %dx%d)' % (cw, ch, cw0, ch), n,
-                 '%.1f -> %.1f px' % (was, now), ('%+.1f px' % sh) if sh else '-'))
+                 '%.1f -> %.1f px' % (was, now), ('%+.1f px' % sh) if sh else '-',
+                 '%dx%d  x%.2f' % (sw, sh2, K)))
 
     # the B-42, lifted out of the last atlas that still has it
     #
@@ -313,7 +378,12 @@ def build(write=False):
 
     b42rows = {k[3:]: rows['B42' + k[3:]] for k in rows if k.startswith('B42')}
     # read game.js HERE, at write time - the table is only ever an OUTPUT of this script now
-    src = open(GAMEJS, encoding='utf-8', errors='surrogateescape').read()
+    # ⚠ newline='' ON BOTH THE READ AND THE WRITE, OR THIS CONVERTS THE WHOLE FILE.
+    # game.js is CRLF. Reading it in universal-newline mode turns every CRLF into LF in memory,
+    # and writing back with newline='' then writes LF - so a script that meant to change seventeen
+    # rects rewrote all 58,970 line endings and committed it as a whole-file diff. CLAUDE.md has
+    # warned about eight stray bare-LF lines in this file; this was the entire file.
+    src = open(GAMEJS, encoding='utf-8', errors='surrogateescape', newline='').read()
     m = re.search(r'const LIZZIE_B42_RECTS=\{(.*?)\n\};', src, re.S)
     assert m, 'LIZZIE_B42_RECTS not found in game.js'
     body = '\n'.join('  "%s":%s,' % (k, json.dumps(b42rows[k], separators=(',', ':')))

@@ -8249,6 +8249,131 @@ function rollFrameKey(){
   const k='ship_'+pk+'_br'+fi;
   return (typeof XART!=='undefined' && XART.rdy(k))?k:null;
 }
+/* ---- THE DEATH SPIN-OUT (Mike, 0907) ---------------------------------------
+   ⚠ THIS IS A HEADER RULE AND IT DOES NOT GET REDESIGNED. His words, giving it that status in
+   the same breath as the spec: "when we get hit, we spin while explosions anchor and fire anchor
+   on us and animate as we spin about 540-900 degrees and -crash- and die. secondly, when this
+   occurs, we get a shock ring and explosions used as part of the players blow up. this is a
+   header rule that should never changed."
+
+   So: hit -> spin 540-900 degrees with the fire and the explosions ANCHORED to the ship -> crash
+   -> shock ring and explosions as the blow-up. Built as the barrel roll's and the somersault's
+   third sibling, for the same reason 0906 built the somersault that way: a reel that overrides
+   the hull, a clock, and one frame picker.
+
+   ⚠ ANCHORED IS THE LOAD-BEARING WORD, AND THE OLD DEATH WAS THE OPPOSITE OF IT. It fired seven
+   `explode()` calls at fixed world points around wherever the player happened to be and then let
+   the corpse keep travelling, so the fire stayed behind and the ship flew out of its own death.
+   `explosions` entries are plain objects carrying their own x/y, so anchoring needs no new draw
+   path and no new art: keep the reference, rewrite x/y from the player every frame, and the
+   authored reel burns ON the aircraft while it turns.
+
+   ⚠ AND THE SHOCK RING BELONGS TO THE CRASH, NOT TO THE HIT. `fxBurst(...rings:2)` used to fire
+   on the frame the player was struck, spending the biggest beat of the death before the death had
+   started and leaving the spin with nothing to land on. */
+const DS_DUR   = 1.25;   // the spin itself
+const DS_CRASH = 0.55;   // the beat the wreck is on screen after it lands
+const DS_TURN_MIN = 540, DS_TURN_MAX = 900;   // degrees — Mike's range, used as a range
+const DS_FX_HZ = 18;     // anchored bursts per second while it turns
+const DS_ANCHOR_MAX = 26;
+function deathSpinAvailable(){
+  const pk = (typeof _pilotKey === 'function') ? _pilotKey() : null;
+  return !!pk && typeof XART !== 'undefined' && XART.rdy('ship_' + pk + '_sp0');
+}
+function startDeathSpin(){
+  /* the spin CARRIES: a wreck that stops dead reads as a freeze-frame, not a crash. Its drift is
+     small and its fall is the larger term, so it goes down and slightly sideways. */
+  player._spin = { t:0, dur:DS_DUR, crashT:DS_CRASH,
+                   turns: DS_TURN_MIN + Math.random() * (DS_TURN_MAX - DS_TURN_MIN),
+                   dir: (Math.random() < 0.5 ? -1 : 1),
+                   vx: rnd(-26, 26), vy: rnd(34, 78),
+                   fxT: 0, anchor: [], crashed: false };
+  player.deathT = DS_DUR + DS_CRASH;
+}
+/* keeps every anchored effect sitting on the aircraft, and drops the ones that have burned out */
+function deathSpinAnchor(){
+  const s = player._spin; if(!s) return;
+  const keep = [];
+  for(const a of s.anchor){
+    const e = a.e;
+    if(!e || (e.t != null && e.dur != null && e.t >= e.dur)) continue;
+    e.x = player.x + a.ox; e.y = player.y + a.oy;
+    keep.push(a);
+  }
+  s.anchor = keep;
+}
+function deathSpinBurst(ox, oy, size, pal){
+  const s = player._spin; if(!s) return;
+  const n0 = explosions.length;
+  explode(player.x + ox, player.y + oy, size, pal);
+  /* ⚠ TAKE THE OBJECT explode() ACTUALLY PUSHED, not `explosions[length-1]`. It pushes the
+     explosion FIRST and then appends smoke and sparks to other arrays, but a future edit that
+     adds a second explosion would silently anchor the wrong one. Index from where it started. */
+  const e = explosions[n0];
+  if(e){ s.anchor.push({e, ox, oy}); if(s.anchor.length > DS_ANCHOR_MAX) s.anchor.shift(); }
+  /* the FIRE half of Mike's rule: authored smoke/flame trails, anchored the same way */
+  if(typeof smokeTrails !== 'undefined' && smokeTrails.length){
+    const t = smokeTrails[smokeTrails.length - 1];
+    if(t) s.anchor.push({e:t, ox, oy});
+  }
+}
+function updateDeathSpin(dt){
+  const s = player._spin; if(!s) return;
+  s.t += dt;
+  const k = clamp(s.t / s.dur, 0, 1);
+  if(k < 1){
+    player.x += s.vx * dt;
+    player.y += s.vy * dt;
+    if(typeof PLAY !== 'undefined'){
+      player.x = clamp(player.x, PLAY.x + 8, worldWidth() - 8);
+      player.y = clamp(player.y, PLAY.y + 8, PLAY.y + PLAY.h - 8);
+    }
+    s.fxT -= dt;
+    if(s.fxT <= 0){
+      s.fxT = 1 / DS_FX_HZ;
+      const r = 13;
+      deathSpinBurst(rnd(-r, r), rnd(-r, r), rnd(15, 27), chance(0.25) ? 'blue' : 'red');
+    }
+  } else if(!s.crashed){
+    /* ---- THE CRASH: the shock ring and the blow-up, per the header rule ---- */
+    s.crashed = true;
+    s.anchor.length = 0;                      // the wreck is gone; nothing rides it any more
+    if(typeof fxBurst === 'function') fxBurst(player.x, player.y, 66, {color:'#7fd4ff', rings:2});
+    for(let i = 0; i < 7; i++)
+      explode(player.x + rnd(-18, 18), player.y + rnd(-15, 15), rnd(28, 54), 'red');
+    shake = 18; flashScreen = 0.7;
+    if(typeof Audio !== 'undefined' && Audio.SFX) Audio.SFX.death();
+  }
+  deathSpinAnchor();
+}
+/* the reel. ⚠ THE FRAME COMES FROM THE ANGLE TURNED, NOT FROM THE CLOCK — that is what makes
+   "540-900 degrees" a real quantity rather than a label: 540 is a frame every 0.104s and 900 is
+   one every 0.062s, off the same 8-frame reel. */
+function deathSpinKey(){
+  const s = player._spin; if(!s) return null;
+  const pk = (typeof _pilotKey === 'function') ? _pilotKey() : null; if(!pk) return null;
+  const deg = clamp(s.t / s.dur, 0, 1) * s.turns * s.dir;
+  const f = ((Math.round(deg / 45) % 8) + 8) % 8;
+  const key = 'ship_' + pk + '_sp' + f;
+  return (typeof XART !== 'undefined' && XART.rdy(key)) ? key : null;
+}
+/* the wreck, drawn while `player.dead` holds every other player draw off */
+function drawDeathSpin(){
+  const s = player._spin; if(!s || s.crashed) return;
+  const key = deathSpinKey(); if(!key) return;
+  const im = XART.get(key); if(!im || !im.naturalWidth) return;
+  const h = SHIP_DRAW_H, w = h * (im.naturalWidth / im.naturalHeight);
+  const g = ctx;
+  g.save();
+  /* it dims as it goes, so the crash arrives on a ship that is already half gone rather than on
+     a fully lit one that vanishes */
+  g.globalAlpha = 1 - 0.35 * clamp(s.t / s.dur, 0, 1);
+  const sm = g.imageSmoothingEnabled;
+  g.imageSmoothingEnabled = false;            // pack contract: nearest-neighbour (0811r)
+  g.drawImage(im, player.x - w / 2, player.y - h / 2, w, h);
+  g.imageSmoothingEnabled = sm;
+  g.restore();
+}
 
 function playerBaseSpeed(){ return (2.6 + run.speed*0.55)*(1+(PILOTMOD?PILOTMOD.spd:0)); }
 
@@ -26548,9 +26673,10 @@ function updatePlay(dt){
        keybind table, so handing it to both seats would let P1's spare key cycle P2's lock. */
     if(Input.tapSeat(_seat,'retina')||(_seat===1&&Input.tap('l'))) cycleLock();
     } else {
+    updateDeathSpin(dt);
     player.deathT-=dt;
     if(player.deathT<=0){
-      if(run.lives>0){ run.lives--; player.dead=false; player.reset(true); }   // hold position
+      if(run.lives>0){ run.lives--; player._spin=null; player.dead=false; player.reset(true); }   // hold position
       /* ---- SEPARATE LIVES (Mike's call, drop 0902f) ------------------------------------
          A seat that runs out does NOT end a co-op run. It goes `out` and sits the rest of the
          stage while its partner flies; only when BOTH seats are out does the run reach the
@@ -28943,15 +29069,24 @@ function playerHit(){
      SHIELD-BREAK branch a few lines up, which is why the test reported zero rings
      and zero chunks on death - the burst was firing when a shield popped, not
      when the ship was lost. */
-  if(typeof fxBurst==='function') fxBurst(player.x, player.y, 66, {color:'#7fd4ff', rings:2});
   if(typeof stageStats!=='undefined') stageStats.deaths++;
-  player.dead=true; player.deathT=1.4; player.alive=false;
+  player.dead=true; player.alive=false;
+  /* THE SPIN-OUT OWNS THE DEATH NOW (Mike's header rule, 0907). The shock ring and the seven
+     explosions that used to fire HERE are the CRASH, and they moved into updateDeathSpin so
+     they land at the end of the turn instead of on the frame of the hit. A pilot with no sp
+     reel keeps the old timing exactly, so a missing family degrades to the previous death
+     rather than to no death at all. */
+  if(deathSpinAvailable()){ startDeathSpin(); }
+  else {
+    player._spin=null; player.deathT=1.4;
+    if(typeof fxBurst==='function') fxBurst(player.x, player.y, 66, {color:'#7fd4ff', rings:2});
+    for(let _k=0;_k<7;_k++) explode(player.x+rnd(-16,16), player.y+rnd(-14,14), rnd(26,50), 'red');
+    shake=18; flashScreen=0.7; Audio.SFX.death();
+  }
   /* Adaptive pressure is earned per life. A real death (not a shield break) returns enemy HP and
      reinforcement density to their baseline along with the player's stripped powerups. */
   run._lifeCombatT=0; run._lifeThreat=0; run._threatBuild=0;
   _adaptiveSpawnT=6.5; _adaptiveSpawnSeq=0;
-  for(let _k=0;_k<7;_k++) explode(player.x+rnd(-16,16), player.y+rnd(-14,14), rnd(26,50), 'red');
-  shake=18; flashScreen=0.7; Audio.SFX.death();
   /* Death powers every weapon bank down to level 1. It does not erase the equipped weapon or its
      authored variant, and it cannot leave upgraded ground weapons hidden in the Stage-5/9 loadout
      snapshot ready to reappear after Gravity Mode ends. */
@@ -31426,7 +31561,8 @@ const PLUME_SEAT   = 4;    // world px the core should sit behind the nozzle (Co
 /* (the residual-gap note that stood here is superseded — the seat below is derived and applied) */
 const THRUSTER_MOUNTS={"axel": {"mounts": [0.0], "scale": 0.3, "note": "middle only, not the sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223}, "cole": {"mounts": [-0.1641, 0.1406], "scale": 0.16, "note": "twin thrusters, measured by brightness"}, "decker": {"mounts": [-0.0035], "scale": 0.26, "note": "already correct"}, "falva": {"mounts": [0.0], "scale": 0.28, "note": "middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223}, "freezer": {"mounts": [0.0], "scale": 0.28, "note": "one middle, no sides | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223}, "juggernaut": {"mounts": [-0.1687, 0.0, 0.1627], "scale": 0.16, "note": "three"}, "lizzie": {"mounts": [0.0], "scale": 0.3, "flip": true, "note": "centred and tucked just under the tail; her reel is a warbird flame, not a star burst, so it is flipped | dy +10px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": 0.0446}, "maverick": {"mounts": [0.0], "scale": 0.26, "note": "ONE, centred \u2014 Mike: 'maverick gets one, not double'"}, "yuri": {"mounts": [0.0], "scale": 0.28, "note": "one middle only, no twins | dy -5px at the 224px reference hull, stored as a fraction so it holds at any scale (0808f)", "dy": -0.0223}};
 function _drawPlayerCore(){
-  if(player.dead) return;
+  /* the death spin-out is the ONE thing drawn while dead - see startDeathSpin */
+  if(player.dead){ if(typeof drawDeathSpin==='function') drawDeathSpin(); return; }
   if(gravityMode && gravityModeDrawShip()) return;
   const x=player.x, y=player.y;
   // directional drop-shadow under the player ship (matches enemy shadows)
@@ -52115,22 +52251,22 @@ function psLineupX(i){ return Math.round((VW - PS_COLS*PS_PITCH)/2 + i*PS_PITCH)
    ============================================================ */
 const LIZZIE_B42_RECTS={
   "":[0,0,222,236,7,31,237,299],
-  "_nf":[2599,0,151,213,40,45,237,299],
-  "_l":[1348,238,204,210,16,44,237,299],
-  "_r":[2752,0,208,213,13,43,237,299],
-  "_pv0":[2962,0,151,213,40,45,237,299],
-  "_pv1":[1554,238,180,210,26,45,237,299],
+  "_nf":[2779,0,151,213,40,45,237,299],
+  "_l":[1528,238,204,210,16,44,237,299],
+  "_r":[2932,0,208,213,13,43,237,299],
+  "_pv0":[3142,0,151,213,40,45,237,299],
+  "_pv1":[1734,238,180,210,26,45,237,299],
   "_pv2":[224,0,222,236,7,31,237,299],
-  "_pv3":[1509,0,185,216,26,42,237,299],
+  "_pv3":[1689,0,185,216,26,42,237,299],
   "_pv4":[634,0,154,220,42,40,237,299],
   "_br0":[790,0,183,218,19,35,222,289],
-  "_br1":[3337,2210,184,171,19,59,222,289],
-  "_br2":[1385,1842,163,183,29,53,222,289],
-  "_br3":[1893,1654,168,185,27,52,222,289],
+  "_br1":[494,2584,184,171,19,59,222,289],
+  "_br2":[326,2040,163,183,29,53,222,289],
+  "_br3":[525,1852,168,185,27,52,222,289],
   "_br4":[448,0,184,222,19,33,222,289],
-  "_br5":[2206,2210,183,172,19,58,222,289],
-  "_br6":[1550,1842,163,183,30,53,222,289],
-  "_br7":[1715,1842,163,183,29,53,222,289]
+  "_br5":[3404,2407,183,172,19,58,222,289],
+  "_br6":[491,2040,163,183,30,53,222,289],
+  "_br7":[656,2040,163,183,29,53,222,289]
 };
 /* her CURRENT rects, captured the first time the skin is applied rather than hard-coded, so this
    keeps working if the golden airframe is ever re-imported at different coordinates */

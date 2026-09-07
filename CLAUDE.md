@@ -213,6 +213,26 @@ two tank-*shaped* units. **When a draw helper declines a frame, check what picks
   `CARRIER_BAY` records it as built *exactly as asked*), and the quad-laser miniboss's four
   cannons ship that way in the authored pack. Neither is a boss coming apart. Ripping them out
   in the name of this rule would delete work he specifically wanted.
+- **THE PLAYER DEATH IS A SPIN-OUT, AND THIS IS A HEADER RULE THAT NEVER CHANGES.**
+  Mike, 2026-09-07, giving it that status in the same breath as the spec:
+  *"when we get hit, we spin while explosions anchor and fire anchor on us and animate as we spin
+  about 540-900 degrees and -crash- and die. secondly, when this occurs, we get a shock ring and
+  explosions used as part of the players blow up. this is a header rule that should never
+  changed."*
+  So the sequence is fixed: **hit → spin 540-900° with the explosions and the fire ANCHORED to the
+  ship and animating as it turns → crash → shock ring + explosions as the blow-up.**
+  ⚠ **ANCHORED is the load-bearing word.** The pre-0907 death fired seven `explode()` calls at
+  fixed world points around where the player happened to be, so they stayed behind while the ship
+  kept moving — a puff of smoke the ship flies out of, not a burning aircraft. The FX must ride the
+  player's own position every frame, for as long as the spin lasts.
+  ⚠ **AND THE SHOCK RING BELONGS TO THE CRASH, NOT TO THE HIT.** `fxBurst(...rings:2)` used to fire
+  the instant the player was struck, which spends the biggest beat of the death on its first frame
+  and leaves the spin with nothing to land on.
+  ⚠ **THE SPIN REEL IS ROW 3 OF THE THRUSTER PACK, AND IT IS THE ONE MANOEUVRE WHERE DERIVING BY
+  ROTATION IS CORRECT.** A bank must never be made by rotating a sprite (0906y) and never by
+  mirroring one (0907b) — but a spin-out IS an image-plane rotation, so a frame turned 45k° off the
+  pilot's own level plate is exact and carries its direction for free. That is the licensed repair,
+  and it is licensed HERE ONLY.
 - Mike gives high-level direction. **Measure before changing** — pixel positions, frame sizes,
   mount offsets. Do not stop to ask; continue and fix. His approvals are direct: "Ding ding ding."
 
