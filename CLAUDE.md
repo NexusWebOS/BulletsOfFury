@@ -507,6 +507,25 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0907b — a cosine roll is LEFT-RIGHT SYMMETRIC, so the derived banks have no direction
+
+⚠ **`_l` AND `_r` ARE PIXEL-IDENTICAL ON EVERY DERIVED SHIP, AND SO ARE `pv0`/`pv4`, `pv1`/`pv3`
+AND `br1`/`br7`.** `roll_frame` scales by `abs(cos t)` about a centred axis, and that is symmetric
+in t, so a 20-degree bank left and a 20-degree bank right render the same pixels. The frames read
+as "banking" and never as WHICH WAY. Measured with a byte-for-byte compare, all four pairs
+IDENTICAL on decker.
+
+⚠ **THE AUTHORED SHIPS DO NOT HAVE THIS PROBLEM, WHICH IS THE POINT.** Maverick's `_l` and `_r` are
+different SIZES (156x209 against 164x213); lizzie's and yuri's differ pixel-wise on all three
+pairs. Hand-drawn banks show the SIDE of the fuselage as it leans - the ship is not a flat plate,
+so rolling right reveals the right side-wall - and a silhouette squash cannot produce that at all.
+
+⚠⚠ **SO THE DERIVER MUST NEVER OVERWRITE AN AUTHORED BANK REEL.** Seven of the nine ships still
+carry hand-drawn `_l/_r/_pv*/_br*`; running `append_ship_strip` for one of them writes all 17 and
+would silently replace direction-carrying art with direction-less art, on a screen where nothing
+fails. Only decker and axel have no authored banks and no alternative. Add `_so*` to the other
+seven; leave their turn, pivot and twist frames alone.
+
 ## 0906z — the `so` reels are FOUR DIFFERENT MANOEUVRES, and only two are somersaults
 
 ⚠ **`ship_<pilot>_so0..so7` DOES NOT MEAN THE SAME THING ON THE FOUR PILOTS THAT HAVE IT.** Rendered
