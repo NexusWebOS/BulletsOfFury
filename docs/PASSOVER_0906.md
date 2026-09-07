@@ -759,3 +759,44 @@ The new frames were swept for the Yuri fragment defect as they were written: **0
 
 Proofs: `docs/JUGGERNAUT_BROWN_SWEEP_0906M.png`, `docs/JUGGERNAUT_BROWN_0906M.png`,
 `docs/SHIPS_0906M.png`.
+
+---
+
+# 0906n — Juggernaut redesigned to belong to the squadron
+
+Mike: *"juggs ship looks very out of place, we need a re-design to fit the other ships but with the
+ram and turret somehow."*
+
+He is right and it was diagnosable: the other eight share one construction — a central fuselage
+spine, a glowing coloured canopy set into it, sharply swept wings built from layered overlapping
+plates, and paired engine nacelles at the tail. jugv2_b had none of those. It was a flat slab with
+rectangular wings and no canopy, so it read as a flying brick parked next to eight fighters.
+
+⚠ **THE FIX WAS TO SHOW THE GENERATOR THE FLEET, NOT TO DESCRIBE IT.** Four real hulls (axel,
+maverick, cole, yuri) were composited into one plate and passed as `reference_asset_id`. Every
+previous Juggernaut attempt referenced only HIS OWN old ship, which is why each one came back in
+its own idiom — the reference was the thing that was already wrong. Prose like "greebled panels,
+swept wings" had been in those prompts all along and did not produce a squadron member; one look at
+the actual squadron did.
+
+⚠ **AND THE CANDIDATES WERE JUDGED AGAINST TWO REAL FLEET SHIPS IN THE SAME IMAGE**, not on their
+own. "Does this belong" is a comparison and cannot be answered by looking at the candidate alone,
+which is how the slab got approved in the first place.
+
+⚠ **THREE OF THE FOUR CAME BACK UPSIDE DOWN AGAIN** — ram at the bottom, exhaust at the top — and
+the fourth had no ram at all. Flipped vertically rather than regenerated: a vertical flip is free,
+deterministic and loses nothing on a top-down sprite, where re-rolling costs credits and a fresh
+chance of losing the features that were finally right.
+
+**Chosen `jug3_c` flipped**, over the other two: `bf` carries a TEAL canopy, which collides with
+Maverick's identity colour, and `df` had gone back to flat rectangular wing slabs, i.e. the original
+complaint. `cf` has his own orange canopy, warm copper-brown plating, twin nacelles and genuinely
+swept wings.
+
+Facing confirmed by eye, not by the glow heuristic — that test is unreliable on a warm hull and had
+already produced a false SOUTH on the brown plate in 0906m.
+
+New frames swept for the Yuri fragment defect as written: **0 of 17**.
+
+Proofs: `docs/JUGGERNAUT_V3_0906N.png` (candidates beside two fleet ships),
+`docs/JUGGERNAUT_V3_FLIPPED_0906N.png`, `docs/SHIPS_0906N.png`.
