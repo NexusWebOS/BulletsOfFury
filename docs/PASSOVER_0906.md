@@ -721,3 +721,41 @@ drops later.
 The old reel is still on the atlas, unreferenced, as every replacement in this project now is.
 
 Proofs: `docs/JUGGERNAUT_V2_0906L.png` (current + three candidates), `docs/SHIPS_0906L.png`.
+
+---
+
+# 0906m — Juggernaut on jugv2_b, swapped to browns
+
+Mike: *"use jugv2b as the ship but palette swap to shades of brown and brown/orange."*
+
+MEASURED FIRST: jugv2_b is 62% desaturated grey (median value 0.27), 27.1% already in hue 0-30 and
+5.4% in 30-60. So the job is the grey PLATING; the warm pixels are the engine glow and a few lit
+copper edges, and recolouring those would have flattened the exhaust into the hull.
+
+⚠ **"SHADES OF BROWN" IS A RANGE, SO THE HUE MOVES WITH VALUE.** A single brown at one saturation
+gives a flat brown silhouette — the failure the Lizzie gold rule avoided in 0906b and the same
+mechanism as the font's E→B bug. The darkest plating takes a deep brown (16 deg) and the lit faces
+run up to brown-orange (28 deg), saturation riding value. **Value is untouched**, so every rivet,
+bevel and panel line survives; the one deliberate exception this project has made to that rule was
+Decker's black/yellow exchange, where the bands had to trade brightness or the swap would have been
+invisible, and nothing like that applies here.
+
+⚠ **THE ANGLES WERE CHOSEN FROM A RENDERED SWEEP, NOT PICKED.** Four treatments side by side
+(`docs/JUGGERNAUT_BROWN_SWEEP_0906M.png`): 18-34 at s.34-.64 came out khaki-olive, 14-26 at s.55-.82
+tipped into rust-orange and stopped reading as brown, 20-32 went pale tan. 16-28 at s.45-.72 is the
+one that reads as asked.
+
+## The facing heuristic gave a FALSE POSITIVE here, which is worth recording
+
+The hot-exhaust test that correctly caught the upside-down hull in 0906k returned **"SOUTH — DO NOT
+USE"** on the recoloured plate. It is wrong: the ship is plainly nose-up, ram at the top, both
+engines burning at the bottom. The reason is direct — **the recolour makes the entire hull warm**,
+so a test that keys on "hot warm pixels" can no longer separate exhaust from plating. It was already
+recorded as a weak hint in 0906k after flagging Maverick and Yuri; this is the same weakness
+arriving from the other side, and it is why the plate was rendered and looked at before being used.
+A metric that stops working the moment you change the art is not a gate.
+
+The new frames were swept for the Yuri fragment defect as they were written: **0 of 17**.
+
+Proofs: `docs/JUGGERNAUT_BROWN_SWEEP_0906M.png`, `docs/JUGGERNAUT_BROWN_0906M.png`,
+`docs/SHIPS_0906M.png`.
