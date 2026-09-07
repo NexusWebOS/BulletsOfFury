@@ -644,3 +644,52 @@ crops used as sources), `docs/CARDBASED_LF_0906J.png` (before/after on all four)
 
 **Not changed:** their `port_*` emotion cells. Those are a separate set and neither shows on the
 pilot screen; the card-derived look now differs slightly from them, which is worth a pass of its own.
+
+---
+
+# 0906k — Juggernaut was flying backwards, and Yuri's hull was two ships
+
+Mike, on the pilot-select roster: *"fix yuri's ship graphic here as shown, and Is juggernauts ship
+facing vertically north or south I cant see it?"* — then, shown it at size: *"yeah its upside down."*
+
+## Juggernaut: the check I ran could not have caught it
+
+0906h picked that hull partly on **mirror-LR IoU 1.000**, and reported it as clean. ⚠ **THAT METRIC
+IS BLIND TO VERTICAL FACING**: a sprite rotated 180 degrees has exactly the same left-right symmetry
+as the original, so a perfect score says nothing at all about which way the ship points. I measured
+the one axis the defect was not on. Rendered at 3x the answer is obvious — engine nozzles at the
+TOP, four wing cannons pointing DOWN, armoured prow at the BOTTOM — but I never rendered it large
+until Mike asked.
+
+⚠ **AND A GLOW-POSITION TEST IS NOT A REPLACEMENT.** Scoring "bright saturated pixels above or below
+the ink centroid" across the fleet flagged Juggernaut correctly and **also flagged Maverick and Yuri,
+whose ships are fine** — it cannot tell an exhaust from a lit canopy. Recorded as a weak hint. The
+reliable test for facing is a person looking at the hull at size.
+
+Flipped in place, so the rects do not move. ⚠ **`offY` STILL HAD TO BE RECOMPUTED** (`canvasH - offY
+- h`) on all 17 frames: the cell is built at canvas size with the trim blitted at `(offX, offY)`, so
+turning the pixels over without turning the offset over leaves the hull at its old vertical position
+and the ship jumps up or down the screen by however far it sat off centre.
+
+## Yuri: 19 of 25 frames were carrying a neighbour's tail
+
+`ship_yuri` was never one aircraft. Counting contiguous inked ROWS inside each declared rect found
+three runs — a 52-row fragment, a 3-row separator, and the real 162-row hull. **19 of his 25 frames**
+were like this, every one declared at `y=2180, h=219`, which spans a row boundary in the appended
+strip; the six clean ones happen to sit on rows of their own.
+
+⚠ **THIS IS A PRE-EXISTING DEFECT FROM THE 0906b ROTSHEET IMPORT.** His ship was replaced there and
+the slicer wrote ONE height for every frame instead of each frame's own. It has been shipping since,
+because at the 60px the game draws a hull the extra reads as "some stray red bits" rather than as a
+second aircraft. Mike caught it on the ROSTER, where the thumbnail is small but the whole cell shows.
+
+⚠ **AND THE FIX HAD TO BE PER FRAME.** The fragment is ABOVE the ship on the hull frames (junk 0-51,
+ship 57-218) and BELOW it on the barrel-roll frames (ship 0-161, junk 185-218). A single "shift
+everything down by 57" would have repaired nine frames and destroyed eight. Each rect is re-derived
+from its own largest contiguous run, with `offY` grown by exactly the rows trimmed off its top.
+
+**Swept the whole fleet afterwards on the same test: 0 broken frames across all nine pilots.** Yuri
+was the only one, and it is worth having the sweep because the same slicer wrote Lizzie's and Cole's
+rows in that drop.
+
+Proofs: `docs/JUGGERNAUT_FLIP_0906K.png`, `docs/YURI_RECTS_0906K.png`, `docs/SHIPS_0906K.png`.

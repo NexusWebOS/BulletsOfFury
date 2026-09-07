@@ -467,6 +467,30 @@ the ship bay ran through her SPEED bar and ~38px off the panel. Any new element 
 should be checked against HER card first: the crowded case is the one that fails, and it is the only
 card a Lizzie-only element appears on.
 
+## 0906k — mirror symmetry cannot see which way a ship points
+
+⚠ **MIRROR-LR IoU IS BLIND TO VERTICAL FACING.** 0906h accepted Juggernaut's new hull partly on
+IoU **1.000** and it was flying SOUTH — engines at the top, guns pointing down, prow at the bottom.
+A sprite rotated 180 degrees scores identically on left-right symmetry, so that metric answers "is
+this a tidy top-down?" and never "which way is it going." **Render a new hull at 3x and look at it.**
+⚠ **AND A GLOW-POSITION TEST DOES NOT SUBSTITUTE** — scoring bright saturated pixels above/below the
+ink centroid flagged Juggernaut correctly and ALSO flagged Maverick and Yuri, whose ships are fine.
+It cannot tell an exhaust from a lit canopy.
+
+⚠ **FLIPPING A SHIP IN PLACE STILL MEANS RECOMPUTING `offY`.** A row is
+`[x,y,w,h,offX,offY,canvasW,canvasH]` and `_shipCell` builds the cell at canvas size with the trim
+blitted at `(offX,offY)`. Turn the pixels over without turning the offset over (`canvasH-offY-h`)
+and the hull holds its old vertical position — the art flips and the ship jumps up or down the
+screen by however far it sat off centre. The same applies when TRIMMING rows off a rect's top.
+
+⚠ **A SHIP RECT CAN CONTAIN TWO SHIPS, AND IT SHIPPED FOR THREE DROPS.** 19 of Yuri's 25 frames
+carried a neighbour's tail plus the 3px strip separator, all declared at `y=2180,h=219` — the 0906b
+rotsheet slicer wrote ONE height for every frame instead of each frame's own. Invisible at the 60px
+the game draws a hull; obvious on the pilot-select roster. **Count contiguous inked ROWS inside a
+rect: more than one run means a fragment rode along.** And fix it per frame — the junk was ABOVE the
+ship on the hull frames and BELOW it on the roll frames, so one global shift would have repaired
+half and destroyed the rest.
+
 ## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
 
 **Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download
