@@ -507,6 +507,99 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0907u — five colour detectors, a costume broken for a drop, and a script that ate its own output
+
+⚠⚠ **THERE IS NO FLEET-WIDE FLAME COLOUR, BECAUSE COLE'S EXHAUST IS GREEN AND FREEZER'S AND
+MAVERICK'S ARE CYAN.** Only four of the nine burn orange, and two of the HULLS (Yuri red, Falva
+pink) are themselves flame-coloured. So no window in colour space contains every flame and excludes
+every hull, and five detectors proved it one ship at a time: a warm-pixel count fired on Yuri's
+paint (0907h); tightening it with `r-b > 40` reported **Falva with NO FLAME on 30 of 32 cells**
+because her exhaust is pale pink-white; a white-hot-core count strict enough to reject Lizzie's gold
+wing streaks **erased Axel, Cole, Falva, Freezer and Maverick entirely**; a seeded region grow ran
+down Lizzie's gold wings to **11,424 px of a 16,000 px hull**; and a learned per-pilot palette
+matched most of her ship. Every fix broke a ship the previous one had right. **When the fourth
+threshold breaks the case the third one fixed, stop threshold-hunting and find a different signal.**
+
+⚠ **THE SIGNAL WAS ALREADY IN THE PACK: IT SHIPS EACH POSE TWICE, AT TWO THROTTLE SETTINGS.** The
+hull is registered between the pair — measured on all nine, only **72–543 px of ~15,000** differ,
+76–94% of them in the aircraft's bottom quarter — so the flame is *what responds to throttle*,
+whatever colour it is. **The shipped build contains no flame mask at all.** The glow is weighted per
+pixel by `|long − short|`, which is 0906s's own "weight the modulation by the SIZE of the change"
+aimed at a better input. ⚠ **AND THE WEIGHT'S RANGE IS MEASURED, NOT PICKED**: hull redraw drift
+fills everything to p90 (11–132) and the exhaust lives in the top 1% (158–757), so 180..430 is the
+empty band between two populations. The first guess (120) put w≈1 on drift and pulsed the whole
+airframe — 0906s's exact failure, reproduced by not looking at the histogram first.
+
+⚠⚠ **`LIZZIE_B42_RECTS` IS A SECOND CONSUMER OF THE SHIP SHEET AND IT LIVES IN `game.js`, AND
+0906z's COMPACTION BROKE IT.** Seventeen rects hard-coded there deliberately (a manifest
+regeneration cannot lose them), and the repack moved every ship rect without touching them. Against
+the shipped atlas they resolved to **fragments of Cole's, Freezer's and Maverick's aircraft**;
+against any pre-compaction backup, the intact yellow bomber. The costume behind the BOMBER password
+had been chopped-up pieces of other pilots' ships for a drop, with nothing failing. 0906z's own
+safety note read *"`BOFX.cells` has ZERO rows on it, so the ship rects are the only consumers and
+can all be enumerated"* — true of the manifest, and there was another consumer in the file that note
+was written in. **Enumerate the consumers of a SHEET, not the rows of one table that points at it.**
+
+⚠⚠ **AND THE BYTE-COMPARE THAT WAS MEANT TO PROVE THE CARRY PASSED WHILE IT WAS WRONG, TWICE.** The
+builder read the rect table from `game.js` and then REWROTE `game.js`, so the second run cropped the
+NEW sheet's coordinates out of the OLD sheet and the bomber came back as four fragments — and the
+verify compared the packed plate against the same bad crop on both sides. That is this file's own
+*"a probe that recomputes the thing under test cannot find the bug"*, self-inflicted, and it got
+worse each run. **A script that consumes its own output is not idempotent.** The source rects moved
+to `assets/data/lizzie_b42_source_rects.json`, the build is now byte-identical across runs, and the
+check that actually caught it — **an aeroplane is ONE connected body; the broken one was four** —
+runs before the write and refuses. A verification that cannot fail is not a verification.
+
+⚠ **A DERIVED TABLE CAUGHT TWO BANK FAULTS A HAND-WRITTEN ONE WOULD HAVE SHIPPED.** **COLE and
+LIZZIE have `c2` and `c5` TRANSPOSED** (+0.099/−0.099 and +0.179/−0.190) — one frame from each side
+sitting in the other's block, so both would have banked the wrong way on two frames each with
+nothing failing. **FALVA barely banks at all** (±0.06 against everyone else's ±0.3): her frames are
+near-pure rolls, so her ladder orders by width, and her noise floor was tripping the Cole/Lizzie
+swap rule until the threshold moved to 0.085. ⚠ **And my own first cut ran the ladder BACKWARDS on
+all nine** — the names are consumed `_pv1`(17°), `_l`(20°), `_pv0`(27°), so sorting by −|lean| put
+the DEEPEST frame on the smallest input.
+
+⚠ **THE CANVAS IS SIZED TO THE ART, NOT THE ART TO THE OLD CANVAS.** Keeping each pilot's existing
+canvas height made the scale **1.15–1.40 on every pilot** — upscaling 221px source and storing it at
+250–310px, which is resolution the art does not have, an extra resample in front of a sprite the
+game reduces to 47px, and **13.6 MB against the 6.6 MB it replaced**. Nothing depends on the
+canvas's absolute size, only its ratios: `drawPlayer` blits at a fixed `SHIP_DRAW_H` and takes width
+from `naturalWidth/naturalHeight`. `canvasH = hull/0.79` gives scale 1.000 and **8.2 MB**, drawn
+size unchanged. ⚠ **The B-42 keeps its own canvas but must be scaled onto the same hull ratio**, or
+toggling the skin resizes the aircraft by 7% on the same pilot.
+
+⚠ **ALL NINE HULLS NOW DRAW AT 47.3–47.5 px, A 0.4% SPREAD WHERE IT WAS 47%.** Falva and Yuri sat at
+0.593/0.598 of their canvas against a fleet at 0.72–0.84 — the outlier open since 0906x — so they
+grow 33% and 32%; nobody else moves more than 9%. **The hull/exhaust split comes from the ink WIDTH
+profile** (a hull row spans the wingspan, a plume row does not), drawn on all nine and checked by eye
+before it was used for anything. The throttle-response map was tried for it first and returned
+`total/hull = 1.000` on seven of nine, because scanning for "the last row that is not mostly flame"
+runs straight to the bottom of the ink.
+
+⚠ **`_nf` MUST ACTUALLY BE FLAMELESS AND THE FIRST BUILD MADE IT A COPY OF THE BASE.** Nothing
+consumes `ship_*_nf` today — which is precisely why it would have sat wrong until something did.
+This repo has already shipped `ship_<pilot>_t` under a comment calling it "the flameless airframe"
+when it was the flame-BAKED one.
+
+⚠ **A NOSE-ON FRAME HAS NO EXHAUST BY DESIGN, AND AN INVERTED ONE HAS IT AT THE TOP.** A "below the
+aircraft's centroid" rule rejected the flame on exactly the belly frames where the ship is upside
+down (decker and yuri `r1c4` both measured 0 px on a plate with two lit engines), and the tell was
+Maverick coming out "reversed against Maverick". **Somersault direction is settled by which quarter
+frame shows lit bells**: measured on all nine, `c2` is TAIL-ON and `c6` NOSE-ON, unanimously — the
+pack is internally consistent, so Mike's *"they all must somersalt the same way"* is satisfied by
+using row 1 as authored. It flips Maverick's and Lizzie's OLD direction (0906z had nose-on at so2);
+their reels are replaced wholesale, so matching the pack beats reversing nine to chase one legacy.
+
+Row 3 of every sheet is a full **360° in-plane SPIN** (each cell matched against the level frame
+turned by each eighth of a circle: monotone, fit 0.76–0.90). Nothing in the game uses it — it is a
+ready-made spin-out reel, left unwired. **Still open:** Axel, Decker and Falva's tail-on bells are
+drawn dark (Yuri's partly) — one frame each of 25, the only real "missing exhaust" in 288 cells.
+
+⚠ **THE SUITE CRASHES AT ~1,536 ASSERTIONS AND IT IS NOT THIS DROP.** Section 122 dereferences a
+`_CF={...}` match that is null because **`_CF=` is absent from `game.js` at HEAD too**; a clean
+worktree at HEAD crashes identically at 1,537 with the same 7 failures and the same assertion names.
+Rule 3 exactly — 0 failures printed, and only the COUNT and a baseline run tell you.
+
 ## 0907h — the ship animation pack, and three things measured before slicing a pixel
 
 ⚠ **THE KEY COLOUR IS NOT THE SAME ON EVERY SHEET. FALVA'S IS CYAN.** Six sheets key on magenta
