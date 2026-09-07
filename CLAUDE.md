@@ -507,6 +507,38 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0906v — the purple dots were in MY PROOF RENDERS, not in the game
+
+⚠⚠ **`.convert('RGB')` ON AN RGBA CELL DISCARDS ALPHA AND PAINTS THE OLD CHROMA KEY BACK ON.**
+Mike reported purple dots four times across 0906t/u and I chased them through four increasingly
+elaborate detectors — boundary rings, depth decay, hue outliers, connected-component size, a
+channel-signature test — converting 155,441 pixels in the process. **The dots were never in the
+game.** These plates carry a magenta RGB payload under their FULLY TRANSPARENT pixels (cole 267,
+yuri 336, lizzie 233, maverick 205), left behind when the key was punched to alpha. `convert('RGB')`
+throws the alpha away and renders that payload, so every zoomed proof I produced — and every
+screenshot Mike was reacting to — had dots the engine cannot draw. **Composite onto a background
+(`paste(img, (0,0), img)`), never `convert()`, in any proof render.** Measured in real Chromium on
+the live stage-1 frame: **0 magenta-cast pixels of 74,244** around the ship.
+
+⚠ **AND THE REAL CLEANUP STILL MATTERED, WHICH IS WHY THIS TOOK SO LONG TO SPOT.** The first two
+passes fixed a genuine 2-3 px violet fringe on OPAQUE pixels (boundary darkness 84.5% → 92.0%),
+so each round did improve the ships — just never the dots he was pointing at. **A fix that helps
+is not evidence that you found the right cause.**
+
+⚠ **THREE STRING-REPLACE PATCHES SILENTLY NO-OPED AND TWO COMMIT MESSAGES DESCRIBED CHANGES THE
+CODE NEVER RECEIVED.** `FLAME_W_F` was computed and never read, `nozzles()` defined and never
+called, `MOUNT_NUDGE_PX` declared and never applied — because `str.replace` does not raise when its
+needle is absent, and the bake ran happily on the old geometry. This is the 0906 "a comment can
+describe a change the code never received" trap, self-inflicted by patching a file with `replace`
+instead of an anchored edit. The baker now **asserts its own bake loop** contains each new call
+before it will write. **A scripted patch that cannot fail is a scripted patch that did not land.**
+
+⚠ **ROUNDING EACH MOUNT INDEPENDENTLY MADE EVERY TWIN PAIR LOPSIDED.** `int(round(mx - fw/2))`
+applied separately to mid−m and mid+m put the right plume closer to the spine on all five twins:
+lizzie −1.75 px, yuri −1.39, cole −1.30, maverick −1.20. No mount value could fix it because the
+mounts were symmetric BEFORE rounding — which is why moving them kept not settling it. The right
+plume is now the mirror of the left about an integer centre; measured 0.00 px on four of five.
+
 ## 0906u — a nudge that overrides a measurement, and where the halo cleanup STOPS
 
 ⚠ **MIKE'S EYE OVERRODE A MEASUREMENT THAT SAID "ALREADY CENTRED", AND THE MEASUREMENT WAS CHECKED

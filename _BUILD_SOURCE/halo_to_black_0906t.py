@@ -54,7 +54,7 @@ def is_halo(p):
         return False
     h, s, v = colorsys.rgb_to_hsv(r / 255., g / 255., b / 255.)
     d = h * 360.0
-    return s >= 0.25 and v >= 0.12 and 255.0 <= d <= 330.0
+    return s >= 0.25 and v >= 0.12 and 248.0 <= d <= 345.0
 
 
 DEPTH = 2          # how far in the fringe is allowed to reach
@@ -167,50 +167,77 @@ def despeckle(cell):
     return len(hits)
 
 
+SPECK_MAX = 24     # a violet blob this small is dirt, not paint
+THIN_MAX  = 80     # ...and so is a longer blob that is at most 2 px thick
+
+
 def depurple(cell):
-    """the purple SPILL DOTS the fringe pass cannot reach - vivid, and alone in their own hue.
+    """violet dirt by CONNECTED-COMPONENT SIZE, which is the only thing that separates it from a
+    ship that is painted violet.
 
-    ⚠ THE FRINGE PASS ONLY SEES PIXELS THAT TOUCH TRANSPARENCY, AND THE WORST DOTS DO NOT. They sit
-    one pixel inside, embedded in the black edge, so they have neighbours on all four sides and
-    never qualify as boundary. 10,884 of them survived 0906t across the nine hulls.
+    ⚠ EVERY PER-PIXEL TEST I TRIED SCORED REAL PAINT. A hue list cannot work (freezer's hull is
+    violet, falva's is pink); "is it on the boundary" misses the dots buried one pixel inside the
+    black edge; "is it unlike its neighbours" took 69,995 px and started eating airframes, and a
+    hue-agnostic version scored 1,000 hits on juggernaut, whose copper highlights are paint.
 
-    ⚠ AND THE COMPANION TEST IS WHAT MAKES THIS SAFE ON A PURPLE SHIP. Freezer's aircraft is violet
-    and Falva's is pink; their own hull pixels sit among other pixels of the same hue, so they have
-    companions and are never touched. A spill dot is alone in its hue by definition - that is what
-    makes it a dot. This is the same reasoning as the depth-decay test one pass up, applied
-    laterally instead of inward, and it means neither ship needs to be named.
+    ⚠ THE SIZE HISTOGRAM IS UNAMBIGUOUS AND IT IS WHAT SHOULD HAVE BEEN MEASURED FIRST. Of the
+    violet components left on the nine hulls: **8,146 are a single pixel**, 2,441 are two, 1,070
+    are three — and only 182 are 64 px or larger. Falva's 82,240 violet pixels and Freezer's
+    37,756 are their AIRCRAFT and live almost entirely in those large components, so a size cut
+    removes the dirt and cannot touch either hull. No pilot is named, and a repainted ship
+    re-classifies itself.
 
-    ⚠ RESTRICTED TO PURPLE ON PURPOSE. The same measurement finds vivid green, cyan and blue dots
-    too, but Cole's hull IS green, Maverick's IS teal and Axel's IS blue, and at that point the
-    rule starts scoring real paint - juggernaut's copper highlights came back as 1,000 hits under
-    a hue-agnostic version. Mike asked for the purple; the rest is left alone rather than guessed."""
+    ⚠ AND A THIN COMPONENT IS DIRT EVEN WHEN IT IS LONG - key spill runs along an edge as a 1-2 px
+    filament that can total 40-60 px while never being more than two wide."""
     px = cell.load()
     w, h = cell.size
-    hits = []
-    for y in range(h):
-        for x in range(w):
-            p0 = px[x, y]
-            if p0[3] <= 16:
+    seen = [[False] * w for _ in range(h)]
+    killed = 0
+    for y0 in range(h):
+        for x0 in range(w):
+            if seen[y0][x0] or not is_violet(px[x0, y0]):
                 continue
-            h0, s0, v0 = colorsys.rgb_to_hsv(p0[0] / 255., p0[1] / 255., p0[2] / 255.)
-            if s0 < 0.45 or not (283.0 <= h0 * 360.0 <= 325.0):
-                continue
-            same = 0
-            for dx in (-1, 0, 1):
-                for dy in (-1, 0, 1):
-                    if dx == 0 and dy == 0:
-                        continue
-                    nx, ny = x + dx, y + dy
-                    if nx < 0 or ny < 0 or nx >= w or ny >= h or px[nx, ny][3] <= 16:
-                        continue
-                    q = colorsys.rgb_to_hsv(*[v / 255. for v in px[nx, ny][:3]])
-                    if q[1] >= 0.30 and hue_gap(h0, q[0]) <= 40:
-                        same += 1
-            if same <= 1:
-                hits.append((x, y))
-    for (x, y) in hits:
-        px[x, y] = (EDGE[0], EDGE[1], EDGE[2], px[x, y][3])
-    return len(hits)
+            q = deque([(x0, y0)])
+            seen[y0][x0] = True
+            pts = []
+            while q:
+                a2, b2 = q.popleft()
+                pts.append((a2, b2))
+                for nx, ny in ((a2 + 1, b2), (a2 - 1, b2), (a2, b2 + 1), (a2, b2 - 1),
+                               (a2 + 1, b2 + 1), (a2 - 1, b2 - 1), (a2 + 1, b2 - 1), (a2 - 1, b2 + 1)):
+                    if 0 <= nx < w and 0 <= ny < h and not seen[ny][nx] and is_violet(px[nx, ny]):
+                        seen[ny][nx] = True
+                        q.append((nx, ny))
+            xs = [q2[0] for q2 in pts]; ys = [q2[1] for q2 in pts]
+            bw = max(xs) - min(xs) + 1; bh = max(ys) - min(ys) + 1
+            thin = min(bw, bh) <= 2
+            if len(pts) < SPECK_MAX or (thin and len(pts) < THIN_MAX):
+                for (x, y) in pts:
+                    px[x, y] = (EDGE[0], EDGE[1], EDGE[2], px[x, y][3])
+                killed += len(pts)
+    return killed
+
+
+def is_violet(p):
+    """a magenta cast, by CHANNEL PATTERN rather than by saturation.
+
+    ⚠ SATURATION IS THE WRONG TEST ON A DARK PIXEL, AND THAT IS WHY FOUR PASSES LEFT DOTS BEHIND.
+    The survivors sampled off Cole's shipped hull are (57,48,62), (52,43,55), (29,21,29),
+    (22,0,21) - violet, plainly visible at zoom against a near-black hull, and sitting at
+    saturation 0.20-0.27, just under every threshold I tried. Raising the threshold instead would
+    have started taking real shadow.
+
+    What every one of them HAS is the magenta signature: red and blue both above green. That holds
+    at any brightness, which is exactly what saturation does not. Grey stays grey (r=g=b gives a
+    gap of 0) and a hull colour that genuinely leans violet is still protected by the
+    component-SIZE rule one level up."""
+    r, g, b, a = p
+    if a <= 16:
+        return False
+    h, s, v = colorsys.rgb_to_hsv(r / 255., g / 255., b / 255.)
+    if s >= 0.28 and v >= 0.10 and 248.0 <= h * 360.0 <= 352.0:
+        return True
+    return r > g and b > g and min(r, b) - g >= 5 and max(r, b) >= 14
 
 
 def boundary_dark(cell):

@@ -337,9 +337,14 @@ def nozzles(cell, ox, oy, n, fixed=None, band=0.34, nudge=0.0):
     # kept seeing on the green ship. A bell measures 11-14% of hull width on every pilot where the
     # groups DO separate (yuri 21/145, lizzie 25/222, maverick 21/187), so the two bells sit half
     # a bell width in from each END of the merged run, not a quarter of it from the centre.
+    # ⚠ AND THE MERGED PAIR IS CENTRED ON THE HULL, NOT ON THE RUN. Insetting from each end of the
+    # run puts the pair on the RUN's centre, which sits 2 px right of Cole's spine - measured as a
+    # 0.50 px pair offset, i.e. his two flames symmetric about the wrong axis. Solve the half-span
+    # from the run, then hang it off `mid`.
     g = max(groups, key=len)
-    half = max(3.0, 0.12 * W / 2.0) - nudge * W
-    return [(ox + min(g) + half, mouth_of(g)), (ox + max(g) - half, mouth_of(g))]
+    half = max(3.0, 0.12 * W / 2.0)
+    m = (max(g) - min(g)) / 2.0 - half + nudge * W
+    return [(ox + mid - m, mouth_of(g)), (ox + mid + m, mouth_of(g))]
 
 
 def nozzle_bottom(cell, ox, oy, cx, band):
@@ -382,6 +387,19 @@ def main():
     old = json.load(open(os.path.join(ROOT, 'assets/data/thruster_mounts.json')))
     tints = pilot_tints()
 
+    # ⚠ THIS SCRIPT SHIPPED TWICE WITH A BAKE LOOP THAT IGNORED ITS OWN NEW CODE. FLAME_W_F was
+    # computed and never read, `nozzles()` was defined and never called, and MOUNT_NUDGE_PX was
+    # declared and never applied - three string-replace patches that silently no-oped because
+    # `str.replace` does not raise when its needle is absent, so two commit messages described
+    # changes the code had not received. The guard below fails the run rather than quietly baking
+    # the old geometry again.
+    import inspect
+    _body = inspect.getsource(main)
+    for _need in ('FLAME_W_F * hull_w', 'nozzles(cell', 'MOUNT_NUDGE_PX.get'):
+        if _need not in _body:
+            raise SystemExit('bake loop is not using %r - refusing to write the old geometry' % _need)
+    print('bake loop verified: hull-width sizing, bell mounts, nudge, mirrored pair')
+
     baked, offs, changed, short = {}, {}, 0, []
     for key, r in sorted(R.items()):
         x, y, w, h, ox, oy, cw, ch = r
@@ -395,31 +413,51 @@ def main():
         bb = cell.getbbox()
         if not bb:
             continue
-        s = ch / REF_CH                                # this canvas against Juggernaut's
-        fw = max(3, int(round(tmpl.width * s)))
-        fh = max(4, int(round(tmpl.height * s)))
+        # ⚠ THE FLAME IS A SHARE OF THE HULL'S WIDTH, NOT OF ITS CANVAS. The canvases are all
+        # near-identical heights while the hulls run 143 to 222 wide, so `ch/275` came out 48% too
+        # wide on Cole, 65% on Yuri and 70% on Decker. Juggernaut's flames measure 15-16 px on a
+        # 203-wide hull, which is what FLAME_W_F reproduces on his own ship.
+        hull_w = bb[2] - bb[0]
+        fw = max(3, int(round(FLAME_W_F * hull_w * FLAME_SCALE.get(p, 1.0))))
+        fh = max(4, int(round(fw * tmpl.height / float(tmpl.width))))
         plume = tint_flame(tmpl, tints.get(p, (255, 150, 60)), HREF).resize((fw, fh), Image.LANCZOS)
 
-        mt = MOUNT_FIXED.get(p) or tail_mounts(cell, MOUNT_N.get(p, 1))
-        hull_cx = ox + (bb[0] + bb[2]) / 2.0
-        hull_w = bb[2] - bb[0]
+        nz = nozzles(cell, ox, oy, MOUNT_N.get(p, 1), MOUNT_FIXED.get(p),
+                     nudge=MOUNT_NUDGE_PX.get(p, 0.0) / float(hull_w))
+        if not nz:
+            nz = [(ox + (bb[0] + bb[2]) / 2.0, oy + bb[3])]
 
         canvas = Image.new('RGBA', (cw, ch), (0, 0, 0, 0))
         layer = Image.new('RGBA', (cw, ch), (0, 0, 0, 0))
-        for mf in mt:
-            mx = hull_cx + mf * hull_w
-            nzb = nozzle_bottom(cell, ox, oy, mx, max(6, fw * 1.5))
-            if nzb is None:
-                nzb = oy + bb[3]
-            # ⚠ THE FLAME HAS TO CLEAR THE NOZZLE, AND SEATING IT ON JUGGERNAUT'S OWN GAP DOES
-            # NOT. His plumes are painted INTO open engine bells, so his sit above his ink bottom
-            # and still show. Every other hull is solid there, and the plume is composited BEHIND
-            # the hull on purpose (so it trails from under the tail) - so a flame seated the same
-            # way is covered completely. The first render of this looked flameless on eight of
-            # nine ships for exactly that reason. EMERGE is the share that clears the tail.
-            top = int(round(nzb - fh * (1.0 - EMERGE)))
-            top = max(0, min(ch - fh, top))            # never past the canvas floor
-            layer.alpha_composite(plume, (int(round(mx - fw / 2.0)), top))
+        # ⚠ THE FLAME HAS TO CLEAR THE NOZZLE, AND SEATING IT ON JUGGERNAUT'S OWN GAP DOES NOT.
+        # His plumes are painted INTO open engine bells, so his sit above his ink bottom and still
+        # show. Every other hull is solid there, so a flame seated the same way and composited
+        # behind the hull is covered completely — the first render looked flameless on eight of
+        # nine ships for exactly that reason. The OVERLAY five seat at the mouth exactly, or the
+        # template's hidden top rows read as a pale notch on the bell lip.
+        em = 1.0 if p in OVERLAY else EMERGE
+
+        def seat(mouth):
+            return max(0, min(ch - fh, int(round(mouth - fh * (1.0 - em)))))
+
+        if len(nz) == 2:
+            # ⚠ ROUNDING EACH MOUNT INDEPENDENTLY MAKES THE PAIR LOPSIDED, AND IT DID ON ALL FIVE
+            # TWIN SHIPS. `int(round(mx - fw/2))` is applied to mid-m and mid+m separately, so when
+            # the centre lands on .5 or the offset is fractional the two plumes end up at different
+            # distances from the spine. Measured on the shipped plate: lizzie -1.75 px, yuri -1.39,
+            # cole -1.30, maverick -1.20, juggernaut -0.69, the RIGHT plume always the closer one.
+            # No mount value could fix that, because the mounts were symmetric before rounding —
+            # which is why moving them kept not settling it. The right plume is now the MIRROR of
+            # the left, reflected about an integer centre, so the pair is symmetric by construction.
+            (lx, lmouth), (rx, rmouth) = nz[0], nz[1]
+            C = int(round((lx + rx) / 2.0))
+            left = int(round(lx - fw / 2.0))
+            mirror = plume.transpose(Image.FLIP_LEFT_RIGHT)
+            layer.alpha_composite(plume, (left, seat(lmouth)))
+            layer.alpha_composite(mirror, (2 * C - left - fw, seat(rmouth)))
+        else:
+            for (mx, mouth) in nz:
+                layer.alpha_composite(plume, (int(round(mx - fw / 2.0)), seat(mouth)))
         glow = layer.filter(ImageFilter.GaussianBlur(max(1, int(round(fh * GLOW_F)))))
         glow.putalpha(glow.getchannel('A').point(lambda v: int(v * GLOW_A)))
         if p in OVERLAY:
