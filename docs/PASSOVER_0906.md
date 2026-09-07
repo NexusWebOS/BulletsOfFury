@@ -593,3 +593,54 @@ Proofs: `docs/SHIPS_0906G.png`, `docs/PILOT_SELECT_0906G.png`, `docs/PILOT_AVATA
 - **Juggernaut's character still wears a small skull medallion** in his portrait and on his boots.
   Mike asked for no death symbol **on the ship**, which is done — the character's own motif was not
   in scope and has been left rather than assumed.
+
+---
+
+# 0906j — Lizzie and Falva, rebuilt from their own authored cards
+
+Mike: *"go look at falva and lizzies original pilot cards we have and re-generate avatar/actual
+frames please."*
+
+## He was right, and it corrects a drift I introduced
+
+`card_lizzie` and `card_falva` are full authored pilot cards on the `pilots_0` atlas, 958x718 each,
+with a large hero illustration and — on the `pcard_` variants — a **full standing figure**. Rendered
+before anything was regenerated, and they settle two things I had been guessing at:
+
+- **Lizzie on her own card is already the fair-skinned, curvy, mature woman Mike described.** The
+  correction he asked for in 0906i was never a change — it was a request to stop drifting from art
+  that already existed. Her gold suit has a harness, belt, thigh straps and a BOMBSHELL name tape
+  that none of my generated versions carried.
+- **Falva on her own card has auburn-brown curls**, not the near-black hair my 0906i regeneration
+  gave her. The "no gray or white hair" note was about a streak I introduced; the fix was to go
+  back to her card, not to darken her further.
+
+⚠ **SO THE LESSON IS THE ONE THIS FILE KEEPS WRITING DOWN.** I had a character description from
+Mike and generated toward it three times, drifting a little each pass, while a definitive authored
+reference sat in the atlas under a key I never looked up. **Search for the art before generating
+art.** `pcard_*` and `card_*` are twenty keys covering all nine pilots and a locked slot.
+
+## What was used, and why the source differs between the two
+
+- **Both avatars** are `edit_asset_id` on a head-and-shoulders crop of the authored card art, so the
+  likeness is theirs and the frame is described to match the other seven.
+- **Falva's body** comes from her card's hero figure (standing, arms crossed, leaning on her jet),
+  restaged to arms-at-sides with the aircraft and background deleted.
+- ⚠ **LIZZIE'S BODY COMES FROM `pcard_lizzie`, NOT FROM HER HERO ILLUSTRATION.** Her hero art is
+  SEATED on a bomb rack, and it is also the source that got refused twice by the content filter in
+  0906i. `pcard_lizzie` carries a **standing** full-length figure of her in the same suit, on a plain
+  dark grid — a better pose reference and a neutral enough plate that the edit went through first
+  time. Two problems solved by looking one key further along.
+
+## Landed
+
+`pav_lizzie`, `pav_falva`, `lizzie_body_0`, `falva_body_0` — all four rebuilt from the cards, then
+put through the same normaliser as the other seven (figure scaled to Yuri's authored 273px baseline)
+and the same box tinting (Lizzie 29 deg, Falva 333 deg, measured off their ships).
+
+Proofs: `docs/ORIGINAL_CARDS_LF.png` (the authored cards as found), `docs/CARDCUTS_LF.png` (the
+crops used as sources), `docs/CARDBASED_LF_0906J.png` (before/after on all four),
+`docs/PILOT_CARDS_LF_0906J.png` (both finished screens).
+
+**Not changed:** their `port_*` emotion cells. Those are a separate set and neither shows on the
+pilot screen; the card-derived look now differs slightly from them, which is worth a pass of its own.
