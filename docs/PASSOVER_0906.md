@@ -693,3 +693,31 @@ was the only one, and it is worth having the sweep because the same slicer wrote
 rows in that drop.
 
 Proofs: `docs/JUGGERNAUT_FLIP_0906K.png`, `docs/YURI_RECTS_0906K.png`, `docs/SHIPS_0906K.png`.
+
+---
+
+# 0906l — Juggernaut rebuilt: the ram stays, the side turrets go
+
+Mike: *"he cant have turrets on his sides like that, as all pilots fire from the nose. I do like the
+ram attachment though. make a turret poking out through the ram, no turrets."*
+
+A gameplay-truth note, not a taste one: **every pilot's rounds leave from the nose**, so a hull with
+four wing cannons is telling the player something the code does not do. The ram plate he liked is
+kept and is now the weapon mount — one cannon protruding through a reinforced port in the centre of
+the wedge, and the wings are bare armour.
+
+⚠ **THE FACING WAS VERIFIED BEFORE DERIVING SEVENTEEN FRAMES FROM IT, WHICH IS THE 0906k LESSON
+APPLIED.** Mirror symmetry cannot see which way a hull points, so the pick was scored on where its
+HOT EXHAUST sits relative to the ink centroid: burn at y 0.775 against a centroid of 0.578, i.e.
+the engines are behind the ship. Three candidates were generated and all three came back nose-up
+this time; one (`jugv2_a`) carried a stray cyan tint on a wing edge and was dropped for it.
+
+⚠ **AND THE NEW FRAMES WERE SWEPT FOR THE YURI DEFECT IMMEDIATELY.** 19 of Yuri's 25 rows came out
+of this same append-and-repoint path in 0906b carrying a neighbour's tail, so the fragment test now
+runs against the frames the appender just wrote: **0 of 17 juggernaut frames carry a stray run.**
+Checking the operation that has already failed once is cheaper than finding it on a roster three
+drops later.
+
+The old reel is still on the atlas, unreferenced, as every replacement in this project now is.
+
+Proofs: `docs/JUGGERNAUT_V2_0906L.png` (current + three candidates), `docs/SHIPS_0906L.png`.
