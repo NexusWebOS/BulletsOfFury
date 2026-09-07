@@ -507,6 +507,28 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0907e — a detached thruster, and a centroid that cannot measure a 2px shift
+
+⚠ **THE FIXED-MOUNT BRANCH TOOK ITS MOUTH FROM THE WIDEST DEEP-INK GROUP, NOT FROM THE MOUNT.**
+`mouth_of(max(groups, key=len))` returns the deepest row of whichever group happens to be widest,
+and on Freezer that is a fin well outboard and **16 canvas px (3.5 screen px) lower than his centre
+tail** - so his flame was seated 16 px below the hull and hung in space. Falva measured at exactly
+**0**, touching but not overlapping, which reads as a hairline. Both are Mike's "attach the
+thrusters properly". Read the ink bottom in a narrow band around the MOUNT instead.
+
+⚠ **AND SEATING ON THE MOUTH IS NOT ENOUGH - FORCE AN OVERLAP.** A mouth that is a pixel off on any
+one frame leaves a gap that nothing in the pipeline can see. `OVERLAP_F` starts every plume INSIDE
+the tail by a share of its own height, so no frame can float. Measured across all nine after the
+fix: gaps run -4 to -28 px, i.e. every flame overlaps its hull, zero detached.
+
+⚠ **A CENTROID OF "PIXELS THAT CHANGED" CANNOT MEASURE A SMALL LATERAL SHIFT ON AN OVERLAY SHIP.**
+Checking Mike's 2 px shift on Decker, the diff-centroid reported **+0.15 px** and I nearly called
+the shift dead. On an OVERLAY pilot the glow composites over the HULL, so hundreds of hull pixels
+also "differ" and they swamp a 16 px plume. The plume itself moved exactly as asked - placement
+went from x93 to x95 - and integer placement of an even-width sprite makes the centroid land half
+a pixel off regardless. **Measure a sprite's placement from its own edges, not from a diff, and
+never on a layer something else was composited over.**
+
 ## 0907c — DERIVED vs AUTHORED is a byte compare, and judging it by width got it wrong twice
 
 ⚠ **A WIDTH PROGRESSION THAT LOOKS PERFECT IS THE SIGNATURE OF A DERIVED REEL, NOT OF A GOOD ONE.**

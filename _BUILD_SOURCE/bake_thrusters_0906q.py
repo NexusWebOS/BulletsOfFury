@@ -69,6 +69,15 @@ FLAME_SCALE = {'cole': 0.90}
 # MOUTH rather than the housing, and the art is his. Stored in INK PIXELS and divided by each
 # frame's own hull width so a banked frame gets the same visual shift as the hull one.
 MOUNT_NUDGE_PX = {'lizzie': +3.0, 'yuri': -3.0}      # + spreads the pair, - closes it
+# ⚠ A LATERAL SHIFT, WHICH IS NOT THE SAME AS A NUDGE. The nudge above moves a symmetric PAIR
+# apart or together; this slides a mount sideways, which is what a single centred thruster needs.
+# Mike, 0907: "shift deckers thruster about 2 pixels right." In INK pixels, so it holds per frame.
+MOUNT_SHIFT_PX = {'decker': +2.0}
+# ⚠ AND THE FLAME IS FORCED TO OVERLAP THE HULL. Seating it exactly on the nozzle mouth leaves a
+# hairline on any frame whose mouth is a pixel off, and Falva measured at exactly 0 - touching, not
+# attached. This guarantees the plume starts INSIDE the tail by a share of its own height, so no
+# frame can ever float. Measured before/after in docs/THRUSTER_ATTACH_0907E.png.
+OVERLAP_F = 0.16
 BORE_F = 0.86                              # flame width as a share of the nozzle's measured bore
 EMERGE = 0.92                              # the share of the flame that clears the nozzle
 GLOW_F = 0.28                              # glow blur as a fraction of the flame's own height
@@ -317,7 +326,19 @@ def nozzles(cell, ox, oy, n, fixed=None, band=0.34, nudge=0.0):
         return oy + max(prof[c] for c in g)
 
     if fixed:
-        return [(ox + mid + mf * W, mouth_of(max(groups, key=len))) for mf in fixed]
+        # ⚠ THE MOUTH MUST COME FROM THE MOUNT'S OWN COLUMN, NOT FROM THE WIDEST GROUP.
+        # `mouth_of(max(groups, key=len))` returns the deepest row of whichever deep-ink group
+        # happens to be widest, and on Freezer that is a fin well outboard and 16 px lower than
+        # his actual centre tail - so his flame was seated 16 canvas px (3.5 screen px) BELOW the
+        # hull and read as detached, which is exactly what Mike saw. Falva landed at 0, a
+        # hairline. Read the ink bottom in a narrow band around the mount instead.
+        out = []
+        for mf in fixed:
+            tx = mid + mf * W
+            near = [prof[c] for c in prof if abs(c - tx) <= max(4, 0.05 * W)]
+            m = (oy + max(near)) if near else mouth_of(max(groups, key=len))
+            out.append((ox + tx, m))
+        return out
 
     if n == 1:
         g = max(groups, key=len)
@@ -424,6 +445,9 @@ def main():
 
         nz = nozzles(cell, ox, oy, MOUNT_N.get(p, 1), MOUNT_FIXED.get(p),
                      nudge=MOUNT_NUDGE_PX.get(p, 0.0) / float(hull_w))
+        sx = MOUNT_SHIFT_PX.get(p, 0.0)
+        if sx:
+            nz = [(mx + sx, mouth) for (mx, mouth) in nz]
         if not nz:
             nz = [(ox + (bb[0] + bb[2]) / 2.0, oy + bb[3])]
 
@@ -438,7 +462,10 @@ def main():
         em = 1.0 if p in OVERLAY else EMERGE
 
         def seat(mouth):
-            return max(0, min(ch - fh, int(round(mouth - fh * (1.0 - em)))))
+            # the plume always starts INSIDE the tail by OVERLAP_F of its own height, so a mouth
+            # that is a pixel off can never leave a hairline
+            top = mouth - fh * (1.0 - em) - fh * OVERLAP_F
+            return max(0, min(ch - fh, int(round(top))))
 
         if len(nz) == 2:
             # ⚠ ROUNDING EACH MOUNT INDEPENDENTLY MAKES THE PAIR LOPSIDED, AND IT DID ON ALL FIVE
