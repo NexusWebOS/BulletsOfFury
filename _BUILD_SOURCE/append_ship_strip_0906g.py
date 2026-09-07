@@ -54,6 +54,15 @@ def main():
         if not base:
             print('  %s has no existing rows - refusing' % p); return 1
         cw, ch = base[6], base[7]
+        # ⚠ AN OVERRIDE WINS, BECAUSE THE BASE ROW IS NOT ALWAYS THE RIGHT CANVAS. Axel's base
+        # frame sits on 90x120 while his other sixteen use 203x271, so taking the canvas from the
+        # base row would have packed a whole new reel into the small one and drawn him at a third
+        # of the fleet's size. fit_new_hulls writes the intended canvas beside the hero plate.
+        ov = os.path.join(ROOT, '_BUILD_SOURCE/sc_hero_0906x/%s_canvas.json' % p)
+        if os.path.exists(ov):
+            j = json.load(open(ov))
+            cw, ch = j['canvasW'], j['canvasH']
+            print('  %s: canvas override %dx%d (base row says %dx%d)' % (p, cw, ch, base[6], base[7]))
         for s in SUF:
             f = os.path.join(DERIVED, p, 'ship_%s%s.png' % (p, s))
             if not os.path.exists(f):
@@ -70,8 +79,10 @@ def main():
         offx, offy = (bb[0], bb[1]) if bb else (0, 0)
         # the derived frame is drawn on the HERO plate's canvas; rescale so its canvas matches the
         # pilot's authored canvas, or the ship changes size the moment the new rows go live
-        sx, sy = cw / im.width, ch / im.height
-        s2 = min(sx, sy)
+        # ⚠ AND A FRAME THAT ALREADY FITS IS NOT RESCALED. The hero plate was fitted to this
+        # canvas on purpose (ink height = 0.79 of it, the fleet's own ratio); scaling it again to
+        # fill the canvas would undo that and draw the ship 15% oversize.
+        s2 = 1.0 if (im.width <= cw and im.height <= ch) else min(cw / im.width, ch / im.height)
         trim = trim.resize((max(1, round(trim.width * s2)), max(1, round(trim.height * s2))), Image.LANCZOS)
         offx = int(round(offx * s2 + (cw - im.width * s2) / 2))
         offy = int(round(offy * s2 + (ch - im.height * s2) / 2))

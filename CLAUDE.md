@@ -507,6 +507,34 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0906x — two new hulls, and the canvas is what sets a ship's size
+
+⚠ **A NEW HULL'S INK HEIGHT MUST LAND ON 0.79 OF ITS CANVAS, OR IT DRAWS THE WRONG SIZE.**
+`drawPlayer` blits at a fixed `SHIP_DRAW_H` against the CANVAS, and 0724cm records why the fleet
+normalises on content HEIGHT: scaling to a fixed width made the narrow airframes draw far taller
+than the wide ones (Falva a third bigger than Cole). The `_CF` table is that ratio, 0.79-0.84 for
+all nine. A generated plate arrives at whatever aspect the model felt like — Decker's came back
+182x182 against his old 143x242 — so it is scaled to the ratio, not dropped in.
+
+⚠ **AND WIDTH FOLLOWS THE DESIGN BY MOVING THE CANVAS, NOT BY SQUEEZING THE PLATE.** Drawn width is
+`SHIP_DRAW_H * canvasW/canvasH`, so a wider aircraft needs a wider canvas; squeezing is how you get
+a ship that is the right size and the wrong shape. Axel's new hull is squarer than his old one, so
+his canvas widened 203 -> 236 and he draws ~15% wider. That is the design, rendered honestly.
+
+⚠ **`append_ship_strip` TAKES ITS CANVAS FROM THE BASE ROW, AND AXEL'S BASE ROW IS THE ODD ONE OUT
+— 90x120 against 203x271 on his other sixteen frames.** Unnoticed, it would have packed a whole
+new reel into the small canvas and drawn him at a third of the fleet's size, with nothing failing.
+Pre-existing inconsistency; the tool now takes an explicit override written beside the hero plate.
+⚠ **It also rescales a frame to FILL the canvas, which undoes a plate that was fitted on purpose.**
+A frame that already fits is left alone now.
+
+⚠ **REFERENCE THE FLEET, NOT THE SHIP YOU ARE REPLACING.** Both hulls were generated against a
+composited sheet of the four that read right (lizzie/maverick/yuri/juggernaut) as
+`reference_asset_id`. This is the 0906n lesson repeated: pointing the generator at Juggernaut's own
+wrong ship kept producing the wrong ship. And the first pass came back correct in colour but FLAT —
+"heavy plating, bevelled edges, greebles, recessed panel lines, cylindrical tail nacelle" is what
+moved it into the fleet's detail density, so **name the rendering properties, not just the subject.**
+
 ## 0906v — the purple dots were in MY PROOF RENDERS, not in the game
 
 ⚠⚠ **`.convert('RGB')` ON AN RGBA CELL DISCARDS ALPHA AND PAINTS THE OLD CHROMA KEY BACK ON.**
