@@ -507,6 +507,30 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0906z — the `so` reels are FOUR DIFFERENT MANOEUVRES, and only two are somersaults
+
+⚠ **`ship_<pilot>_so0..so7` DOES NOT MEAN THE SAME THING ON THE FOUR PILOTS THAT HAVE IT.** Rendered
+side by side (`docs/SO_REELS_0906Z.png`), with the `so2` frame as the tell:
+  - **maverick 215x117** and **lizzie 222x87** - wide and short: a true SOMERSAULT, pitching through
+    a nose-on view, over the belly, and back. This is the manoeuvre Mike's reference sheet shows.
+  - **cole 31x219** - narrow and tall: that is a KNIFE-EDGE, i.e. a BARREL ROLL. His `so` reel
+    duplicates what his `br` frames already do.
+  - **yuri 136x121** against a 145x185 hull, and every one of his eight frames within 9 px of every
+    other - it barely animates at all, and the frames are smaller than his own aircraft.
+Five pilots (axel, decker, falva, freezer, juggernaut) have no `so` frames whatsoever.
+
+⚠ **AND A CROSS-FADE MODEL FITS MAVERICK AND FITS NOTHING ELSE**, which is how the above was found.
+Modelling the somersault as `|cos t|` between the top view and the nose-on view reproduces
+maverick's frame sizes to within 3% on width, and then misses cole's so3 height by **186%** - because
+cole's so3 is not the same pose at all. **When a model fits one case and explodes on another, check
+whether the cases are the same thing before improving the model.**
+
+⚠ **THE SOMERSAULT NEEDS FOUR AUTHORED VIEWS, AND ALL FOUR ARE VIEWS RATHER THAN ROTATIONS** - which
+is the half the generator can actually do (0906y). Maverick's reel passes through TOP (so0), a
+nose-on front view (so2), the BELLY (so4) and a tail-on view showing the engine bells face-on
+(so6, 214x112). Generate those four per ship and the eight frames derive from them by vertical
+foreshortening, the same way the barrel roll derives from top+belly by horizontal foreshortening.
+
 ## 0906y — the generator YAWS when you ask it to ROLL, and the one pose it can draw
 
 ⚠ **ASKED FOR A BANK, IT ROTATES THE SPRITE IN THE IMAGE PLANE.** Mike: *"you'll have to generate
