@@ -46,12 +46,11 @@
   },
   "juggernaut": {
     "mounts": [
-      -0.1687,
-      0.0,
-      0.1627
+      -0.1383,
+      0.1398
     ],
     "scale": 0.16,
-    "note": "three",
+    "note": "measured 0906p from the x-centroids of the baked exhaust on his own hull, which is the only unambiguous source any of the nine has; the previous three-mount row was authored against an airframe replaced twice since",
     "flip": true
   },
   "lizzie": {

@@ -842,3 +842,65 @@ needs Mike's word first.
 
 Proofs: `docs/DECKER_DIAG_0906O.png`, `docs/DECKER_SWEEP_0906O.png`,
 `docs/DECKER_REDONE_0906O.png`, `docs/SHIPS_0906O.png`.
+
+---
+
+# 0906p — the flameless frame, and why the thruster rebuild needs Mike before it can proceed
+
+Mike: *"just make sure you get a frame without the thrusters, and we will need frames of all ships
+with thrusters properly attached. then from there you do pixel glow of the thrusters, this would
+remove those janky thrusters we have in the cinematics, intro's and in-game."*
+
+## He has asked for this before, and game.js already says so
+
+The note at `game.js:31548` records it verbatim: **"nthp_ is not a plume. Measured, it is a
+four-pointed STAR/burst"** — frames 81x102, 136x158, 170x192, 81x135, so cycling them pulses the
+SIZE rather than flickering — and *"the real fix is the one he asked for originally: make the ship
+graphics we have with thrusters, make thruster pixels glow, i.e. light the exhaust pixels ON THE
+HULL rather than pasting a separate sprite under it. That is a different build and it is written
+up, not bodged in here."* Rendered the plumes to confirm: they are stars. That is the jank.
+
+## What landed
+
+⚠ **ONLY ONE HULL OF THE NINE ACTUALLY HAS BAKED FLAME, AND THE COUNT SAID FIVE.** A hot-pixel tally
+over the tail band reported flame on falva (850 px), juggernaut (369), decker (168), lizzie (140)
+and yuri (103). Rendering the tails settled it: on every one but Juggernaut those are **nozzle
+interiors and white metal highlights**. The count was measuring brightness; only the picture could
+say what was bright. So eight hulls were already flameless and needed nothing.
+
+Juggernaut's flame is stripped, giving the frame Mike asked for. Two bugs on the way, both worth
+keeping:
+- ⚠ **"reaches the tail" as the last two rows found ZERO blobs** — his flame ends 7px above the ink
+  bottom, so a hull with plainly visible exhaust measured as flameless. It is the bottom 15% now.
+- ⚠ **A WHITE-HOT FLAME CORE HAS NEAR-ZERO SATURATION.** Requiring `s >= 0.35` kept the hottest part
+  of the exhaust and removed only the orange around it, leaving a pale ghost in each nozzle. Fire
+  runs orange → yellow → WHITE, so the top of that ramp is desaturated by definition and has to be
+  caught on brightness alone. Same family as `despill_fire`'s b-vs-g rule in 0906.
+- A faint dark rim remains inside the bells. Left deliberately: at the 60px the game draws a hull it
+  reads as nozzle shading, and the thresholds needed to chase it start eating copper plating.
+
+**And his mounts are now measured rather than guessed** — the x-centroids of his own baked exhaust,
+±0.138/±0.140, replacing a stale three-mount row authored against an airframe replaced twice since.
+
+## ⚠ WHY THE REST IS NOT DONE YET — FIVE PILOTS' MOUNTS ARE STALE AND I CANNOT MEASURE THEM
+
+Attaching thrusters needs to know where the engines are, and `thruster_mounts.json` is Mike's own
+data — CLAUDE.md: *"Do not change these from a guess — he has corrected them once already."*
+
+Drawing the authored mounts onto the art (`docs/THRUSTER_MOUNTS_CHECK.png`) shows a clean pattern:
+they land correctly on **axel, decker, freezer and cole** — and those are exactly the four ships
+whose art has NOT been replaced. The other five (maverick, lizzie, yuri, juggernaut, falva) have had
+new airframes since, so their mounts point at engines that no longer exist: maverick, yuri and
+lizzie all have twin engines with the single mount sitting in the gap between them.
+
+A detector was written to re-measure them and **it failed its own validation** — constrained to the
+fuselage it still reproduced only **1 of the 4** known-good ships, finding wingtip and canopy
+highlights. Per this repo's own rule, a metric that has not reproduced the known-correct cases is
+not evidence about the unknown ones, so it was not used to move anything. Juggernaut is the single
+exception and only because his exhaust is drawn on the plate.
+
+**So four mount rows need Mike**: maverick, lizzie, yuri, falva. Once those are right, the attached
+plume and its pixel glow are a build, not a question — and the `nthp_` star paste comes out at the
+same time so there is one thruster system rather than two.
+
+Proofs: `docs/JUG_FLAMELESS_0906P.png`, `docs/THRUSTER_MOUNTS_CHECK.png`, `docs/_nthp.png`.
