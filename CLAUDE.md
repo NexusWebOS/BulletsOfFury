@@ -507,6 +507,57 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0906q — six drops of seating work were tuning the wrong SHAPE
+
+⚠ **`nthp_` IS NOT A PLUME. IT IS A FOUR-POINTED STAR, ON EIGHT OF THE NINE PILOTS.** Rendered all
+36 cells (`docs/NTHP_REEL_0906Q.png`): one starburst hue-rotated eight ways, with a spike pointing
+**UP INTO THE HULL** and spikes out to either side. Lizzie's is the lone exception — a real warbird
+flame, which is why `thruster_mounts.json` carries a `flip` for her and nobody else. **A star under
+a tail cannot read as thrust at any size, seat or offset**, so 0724ck/cl/cm/cn/co, 0805j and 0819c
+were six drops of increasingly careful placement work applied to a sprite that was never going to
+work. Mike has reported it as "janky" across all of them. The art is now baked onto the airframes
+and the three runtime draws are gated off behind `SHIP_FLAME_BAKED`.
+
+⚠ **AND THE SIZE WAS THE WHOLE OF "what your doing is wrong".** Mike stopped the first two attempts
+flat. Both sized the baked flame off the RUNTIME plume — 23.5 screen px — when Juggernaut's, the
+one he approved, is **15x22 in a 275-tall canvas that draws at 60: 3.3 x 4.8 screen px, a seventh
+of it.** Attempt 1 upscaled his 15px crop 5x into smooth coloured mittens; attempt 2 swapped in
+Lizzie's 151x205 flame so nothing was upscaled and drew it at the same 23.5px — honest art, still
+four times too big, still blobs. **I read two rendered proofs as a template problem and it was the
+same size error both times.** At his own proportion (`ch/275`) it fits every canvas as they stand.
+
+⚠ **WHICH KILLED A LARGE SELF-INFLICTED CHANGE.** Sized wrong, the flame did not fit any of the
+nine canvases, and the fix for that was going to be growing every `canvasH` by 1.54 with
+`SHIP_DRAW_H` 60 → 92, `SPACE_SHIP_SIZE` and three launch lerps moved to match — the entire 0819c
+blast radius, carried because of a number that was wrong. **When a change starts requiring a global
+constant to move, check the input that made it necessary.**
+
+⚠ **A BRIGHTNESS DETECTOR CANNOT LIFT A FLAME, ONLY ITS CORE.** The 0906p hot-pixel finder returned
+Juggernaut's luminous interior and left the darker red cone that gives the plume its shape — the
+stripped plate still carries a visible red OUTLINE of each flame (`docs/JUG_TAIL_ZOOM_0906Q.png`).
+Baked onto the other eight, that core-only template was a 3px speck, invisible on five of six
+pilots in the proof. Lift it **geometrically** — the footprint from where the two plates differ,
+then every inked pixel of the pre-strip plate inside it.
+
+⚠ **AND SEATING IT LIKE HIS HIDES IT ON EVERY OTHER HULL.** His plumes are painted into OPEN ENGINE
+BELLS, so they sit *above* his ink bottom and still show; his ink measures 203x213 with the flame
+and without it. Every other hull is solid there, and the plume composites BEHIND the hull on
+purpose, so the same seat is covered completely. First render: flameless on eight of nine.
+
+⚠ **THE NOZZLE DETECTOR WAS VALIDATED ON THE ONE HULL WITH A REAL EXHAUST BEFORE IT WAS TRUSTED.**
+Juggernaut's own flame centroids are ground truth — measured `[-0.1383, +0.1398]`, detected
+`[-0.1404, +0.1404]`, under a pixel at draw size. **And the fuselage bound is load-bearing**:
+unbounded, the same detector put axel at -0.21, falva at -0.26, freezer at -0.37 and one of yuri's
+at -0.46 — wingtips and fin trailing edges, which genuinely are the lowest ink on those hulls.
+game.js already warned about this at the mount table. The four SINGLES are not detected at all —
+Mike specified them centred ("axel is in the middle not the sides", "freezer, one middle thruster,
+no sides"), and a detector overriding that would be replacing a decision with a measurement.
+
+⚠ **A `getbbox()` CLIP TEST FIRES ON A GAUSSIAN TAIL AT ALPHA 1 AND ON ART THAT ALWAYS LOOKED LIKE
+THAT.** It reported 119 of 185 frames clipped when the glow's invisible fringe touched the border,
+and then reported alpha 255 on every Falva frame — her hull already spans her full canvas WIDTH in
+the source. Judge a cut by **alpha at the edge**, on the axis you actually changed.
+
 ## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
 
 **Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download

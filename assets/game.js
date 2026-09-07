@@ -31367,6 +31367,27 @@ function drawPlayer(){
    this file — publish one value so two consumers cannot disagree.
    ============================================================ */
 const SHIP_DRAW_H = 60;              // the hull blit's own height; the thruster measures from it
+/* ============================================================
+   THE FLAME IS ON THE AIRFRAME NOW (drop 0906q). Mike: "we will need frames of all ships with
+   thrusters properly attached ... this would remove those janky thrusters we have in the
+   cinematics, intro's and in-game", then "I meant like what juggernaut had!".
+
+   ⚠ `nthp_` WAS NEVER A PLUME. Rendered, all 36 cells are one four-pointed STAR hue-rotated eight
+   ways — a spike pointing UP INTO THE HULL and spikes out to either side — with Lizzie's warbird
+   flame the single exception. A star under a tail cannot read as thrust at any size or seat,
+   which is why every previous fix moved it and none of them made it look right. Six drops of
+   seating work (0724ck/cl/cm/cn/co, 0805j, 0819c) were tuning the placement of the wrong shape.
+
+   Juggernaut's hull is the one that always looked right because his exhaust is PAINTED ON, at
+   10.3% of his hull height, sitting in his engine bells. 0906q lifts that flame and bakes it onto
+   the other eight at the same proportion, tinted per pilot, on nozzles found from each hull's own
+   tail profile — a detector validated against Juggernaut's real flame positions first
+   ([-0.1383,+0.1398] measured vs [-0.1404,+0.1404] found) before it was trusted on anyone else.
+
+   So the three runtime draws are OFF, not deleted: this flag restores them in one edit if Mike
+   wants the old rig back. `ship_*_nf` stays flameless for any surface that wants a cold airframe.
+   ============================================================ */
+const SHIP_FLAME_BAKED = true;
 /* where the flame's luminance core sits inside its plate — measured across all nine plumes
    (0.575-0.590), so one constant rather than nine table rows. See the seat note below. */
 const PLUME_CORE_F = 0.58;
@@ -31405,7 +31426,7 @@ function _drawPlayerCore(){
        she is on the single plume now and reads. */
     const _HB={axel:0.9041, cole:0.9041, decker:0.8949, falva:0.8964, freezer:0.9041, juggernaut:0.8982, lizzie:0.9214, maverick:0.9011, yuri:0.8339};
     const _nk='nthp_'+(run.pilot||'cole')+'_'+(((performance.now()/70)|0)%4);
-    if(XART.rdy(_nk)){
+    if(!SHIP_FLAME_BAKED && XART.rdy(_nk)){
       const im=XART.get(_nk);
       const thr=(Input.up?1:0.62)+(run.speedLevel||0)*0.09;
       /* SIZE BY HEIGHT, NOT WIDTH (drop 0724cm).
@@ -54892,6 +54913,7 @@ function _shipK(suf){ const p=(typeof _pilotKey==='function'?_pilotKey():((run&&
    thruster drawn under it from the same THRUSTER_MOUNTS table gameplay uses. One system, one set
    of mounts, one place to fix it. ============================================================ */
 function drawShipThruster(x, y, h, pilot, alpha){
+  if(SHIP_FLAME_BAKED) return;   // 0906q: the flame is baked into every hull
   if(typeof XART==='undefined' || typeof THRUSTER_MOUNTS==='undefined') return;
   const p=pilot||(run&&run.pilot)||'cole';
   const cfg=THRUSTER_MOUNTS[p]; if(!cfg) return;
@@ -55371,7 +55393,7 @@ function drawLaunch(dt){
      transition showed the ship with nothing behind it. */
   if(!_drawGravityShip && typeof XART!=='undefined'){
     const _tk='nthp_'+(run.pilot||'cole')+'_'+(((performance.now()/70)|0)%4);
-    if(XART.rdy(_tk)){
+    if(!SHIP_FLAME_BAKED && XART.rdy(_tk)){
       const im=XART.get(_tk);
       /* ⚠ THE SAME BUG AS THE PLAY DRAW, WEARING A DIFFERENT HAT (drop 0808c). This one keeps
          each frame's aspect — but it scales EVERY frame to the same _th, so the 81x102 frame and
