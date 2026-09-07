@@ -1,0 +1,106 @@
+[
+  {
+    "file": "Decker/decker-earlier-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "9928ad7e3ba8de6dbd64c2ae8421c6740a67cf7a7a115cc9ae7990936bda8eef"
+  },
+  {
+    "file": "Decker/decker-latest-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "59af75cb4952a46e6a6175f55c79f12c2f876f0e2f11ea53d7d7b6c69fd5e8a7"
+  },
+  {
+    "file": "Axel/axel-earlier-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "581115c2f6a52efe2764638e9ae39f6867daa2f6e269efae0ba37eff94f4c41d"
+  },
+  {
+    "file": "Axel/axel-latest-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "755e96eb4be6cb6097090bba0600114cdf650d28ac99147860ad7f96f96eda45"
+  },
+  {
+    "file": "Yuri/yuri-earlier-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "4103f888e51d9dd15b79b250b3e9a4e665f842bb71aa9e61630b202930255584"
+  },
+  {
+    "file": "Yuri/yuri-latest-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "f310181dcd2b4c8a7bf129cf21a168e68e1b9bf65c0e254d80e58e4074fd8763"
+  },
+  {
+    "file": "Lizzie/lizzie-bronze-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "1d6d7ab8b0b80fdbca137db742ff78448f3b2b2b3bf582671ec75eac554183d4"
+  },
+  {
+    "file": "Lizzie/lizzie-golden-latest-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "4088715d8b11a8baad391563a3058f3fe1a9782f30e17e4f8c9edf71c3b71457"
+  },
+  {
+    "file": "Falva/falva-magenta-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "74f1839312dc186d29efc4724ae75d3f5198c98e3b7042d4ce371eb04dc9ebba"
+  },
+  {
+    "file": "Falva/falva-cyan-latest-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "9a8753b479bb7fa572a57f87876a07c17f4d9ef20e372144988cde63477d4532"
+  },
+  {
+    "file": "Cole/cole-latest-source.png",
+    "dimensions": [
+      1774,
+      887
+    ],
+    "sha256": "a0055d8ab38927efb568f01b6130b85c18b639ddb9b6feb8c9f111662ee8b206"
+  },
+  {
+    "file": "References/maverick-motion-reference.png",
+    "dimensions": [
+      2046,
+      768
+    ],
+    "sha256": "5c4bfbc8b263a87239da668cb57832161a35f6723baefcd98e887e6cddd96979"
+  },
+  {
+    "file": "References/six-ships-top-belly-reference.png",
+    "dimensions": [
+      1260,
+      470
+    ],
+    "sha256": "7991439b170cbfca86242d754ba9b625a533d593c6e305bd878671c6d2c75736"
+  }
+]
