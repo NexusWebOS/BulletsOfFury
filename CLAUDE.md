@@ -507,6 +507,40 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0906y — the generator YAWS when you ask it to ROLL, and the one pose it can draw
+
+⚠ **ASKED FOR A BANK, IT ROTATES THE SPRITE IN THE IMAGE PLANE.** Mike: *"you'll have to generate
+the twist, pivot, turned and barrel roll frames."* Measured by principal axis, where +90 deg means
+the nose points straight up: the hero plate and every DERIVED frame sit at **+90.0**; the generated
+27-degree bank came back at **-49.1**, i.e. the whole aircraft yawed diagonally. Restating the
+constraint - "do NOT rotate the image, the nose must point exactly to the TOP, the fuselage
+centreline stays vertical", three times in one prompt - made it **worse, -64.4**. And de-rotating
+the result does not rescue it: the ship comes back **upside down** and resampled.
+⚠ **AND IT CANNOT DRAW A KNIFE-EDGE.** Asked for a 90-degree roll it returned a 39 px wide narrowed
+top view with the canopy still fully visible, against the **18 px** a true edge-on measures. That is
+the third independent confirmation of the same limit: 0906b (a 7x4 layout ignored), 0906g (7x3 for
+an 8x3, row 2 nose-left, two frames merged into one blob), and now per-frame editing.
+
+⚠ **BUT IT CAN DRAW THE BELLY, BECAUSE THAT IS NOT A ROTATION.** An underside view is just another
+nose-north top-down view, and asked for one it came back at **+90.0** with real pylons, gear doors,
+hardpoints and belly plating. **So generate the VIEWS and derive the ROTATION between them.**
+`derive_ship_reel` now takes an optional belly plate and the second half of the barrel roll
+interpolates two authored views instead of one plate mirrored and dimmed - which is exactly what
+that script's own docstring had been asking for since 0906g. Without the plate the old path still
+runs, so no existing reel changed.
+⚠ **FIT THE BELLY TO THE TOP PLATE, DO NOT TRUST ITS SIZE.** `size_behavior` is a "hint": Decker's
+top is 176x218 and his belly came back 172x192. Unfitted, the ship changes shape mid-roll.
+
+⚠ **AND SIX APPENDS ORPHANED 59% OF THE ATLAS.** "Append a strip, repoint the rects" is the right
+rule and it has earned its keep twice, but every append leaves the previous strip in the file:
+28.6 Mpx with 11.9 referenced, and the PNG at **21.1 MB against 11.7 before the drop**. Compacted to
+**6.7 MB** - smaller than it started - by repacking the 329 referenced rects.
+⚠ **THAT COMPACTION IS SAFE ON THIS SHEET FOR ONE SPECIFIC REASON: `BOFX.cells` has ZERO rows on
+it**, so the ship rects are the only consumers and can all be enumerated. On any other sheet this
+file's own warning applies - "a key does not own its file, ~750 cells are aliased" - and a repack
+walking one table would silently drop the other's art. Verify by PIXELS (every cell compared byte
+for byte old vs new), never by counts: a rect moved one pixel is invisible to a count.
+
 ## 0906x — two new hulls, and the canvas is what sets a ship's size
 
 ⚠ **A NEW HULL'S INK HEIGHT MUST LAND ON 0.79 OF ITS CANVAS, OR IT DRAWS THE WRONG SIZE.**
