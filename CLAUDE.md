@@ -507,6 +507,35 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0906r — "ALMOST aligned perfectly but not quite" was two measurements, both mine
+
+⚠ **A FLAME IS A SHARE OF THE HULL'S WIDTH, NOT OF ITS CANVAS.** 0906q scaled the baked plume by
+`ch/275`, which is a canvas ratio, so it came out **48% too wide on Cole, 65% on Yuri and 70% on
+Decker** — the canvases are near-identical heights while the hulls run 143 to 222 wide. Juggernaut's
+own flames measure 15–16 px on a 203-wide hull, so the constant is **`FLAME_W_F = 0.0887` of the
+hull's INK width**, which reproduces his 18 px template exactly on his own ship.
+
+⚠ **AND THE ENGINE BELL IS THE DEEPEST INK ON THE FUSELAGE — THAT IS THE ONLY MOUNT SIGNAL THAT
+GENERALISES.** Three detectors were tried on this. A contiguous "tail run" measures the whole
+fuselage: **one 51-wide run holding both of Cole's bells, and 63 px on Decker**, so sizing off it
+gave a flame wider than the ship's nozzle. A cluster centroid put Yuri **2.3 px outboard** of his
+bells — small enough to pass every check and large enough for Mike to see it at a glance. Grouping
+the columns whose ink reaches within 4 px of the hull's lowest row picks the bell tips out cleanly:
+yuri two 21-wide groups at ±0.137 against five narrow fin tips, maverick two 21-wide at ±0.149
+either side of a 9-wide spine, lizzie two 25-wide at ±0.190.
+⚠ **THE SPINE IS EXCLUDED BY POSITION, NOT BY SIZE** — Maverick's centre group sits exactly on the
+mid-line, so "take the widest N groups" would have used it as a nozzle.
+⚠ **VALIDATED ON THE ONE HULL WITH A PAINTED EXHAUST BEFORE IT WAS TRUSTED ANYWHERE.** Juggernaut's
+flames measure at ink x **73.0 / 129.5**; the detector returns **73.2 / 129.8** and a width of 18
+against his authored 18. A metric that has not reproduced the known case is not evidence.
+
+⚠ **AND THE FLAME GOES OVER THE HULL ON A SHIP WITH OPEN BELLS.** Mike: *"you have to layer the
+thrusters overlayer, not underlayer on cole, decker, yuri, maverick and lizzie."* Compositing the
+plume BEHIND the hull is correct where the tail is flush, and on those five the bell's lower lip
+cuts a **straight flat edge across the top of every plume** — obvious at 6x, invisible at the 60 px
+the game draws. **And an overlaid flame must seat at the bell MOUTH, not inside it**: the template's
+top rows are meant to be hidden by the bell, and drawn over they read as a pale notch on the lip.
+
 ## 0906q — six drops of seating work were tuning the wrong SHAPE
 
 ⚠ **`nthp_` IS NOT A PLUME. IT IS A FOUR-POINTED STAR, ON EIGHT OF THE NINE PILOTS.** Rendered all

@@ -49,6 +49,13 @@ FLAME_SRC = ATLAS + '.0906p.bak'          # the plate that still carries Juggern
 
 PILOTS = ['axel', 'cole', 'decker', 'falva', 'freezer', 'juggernaut', 'lizzie', 'maverick', 'yuri']
 REF_CH = 275.0                             # Juggernaut's canvas height - the scale reference
+# ⚠ THE FLAME GOES OVER THE HULL ON THESE FIVE (Mike, 0906r): "you have to layer the thrusters
+# overlayer, not underlayer on cole, decker, yuri, maverick and lizzie". Their nozzles are drawn as
+# BELLS the eye reads as open, so a flame composited behind the hull is cut off flat by the bell's
+# own lower lip - visible at 6x as a straight edge across the top of every plume. The other three
+# have flush tails where behind is right, and Juggernaut's is painted into his plate.
+OVERLAY = {'cole', 'decker', 'yuri', 'maverick', 'lizzie'}
+BORE_F = 0.86                              # flame width as a share of the nozzle's measured bore
 EMERGE = 0.92                              # the share of the flame that clears the nozzle
 GLOW_F = 0.28                              # glow blur as a fraction of the flame's own height
 GLOW_A = 0.45
@@ -227,6 +234,71 @@ def tail_mounts(cell, n, band=0.28):
     return [-m, m]
 
 
+FLAME_W_F = None                           # set from Juggernaut's own art at run time
+
+
+def nozzles(cell, ox, oy, n, fixed=None, band=0.34):
+    """each nozzle's CENTRE and MOUTH row, from the DEEPEST ink in the fuselage.
+
+    ⚠ THE ENGINE BELL IS THE DEEPEST THING ON THE FUSELAGE, AND THAT IS THE ONLY SIGNAL THAT
+    GENERALISES. Two earlier detectors failed here: a contiguous "tail run" measures the whole
+    fuselage on Cole (one 51-wide run holding both his bells) and 63 px on Decker, and a cluster
+    centroid landed Yuri 2.3 px outboard of his nozzles - Mike's "ALMOST aligned them perfectly
+    but not quite". Grouping the columns whose ink reaches within 4 px of the hull's lowest row
+    picks the bell tips out cleanly: yuri gives two 21-wide groups at +/-0.137 against five
+    narrow fin tips, maverick two 21-wide at +/-0.149 either side of a 9-wide spine, lizzie two
+    25-wide at +/-0.190.
+
+    ⚠ AND THE SPINE HAS TO BE EXCLUDED BY POSITION, NOT BY SIZE. Maverick's centre group is a
+    tail spine sitting exactly on the mid-line; taking the widest N groups would have used it."""
+    bb = cell.getbbox()
+    if not bb:
+        return []
+    px = cell.load(); x0, y0, x1, y1 = bb
+    mid = (x0 + x1) / 2.0; W = x1 - x0
+    lo, hi = mid - band * W, mid + band * W
+    prof = {}
+    for x in range(x0, x1):
+        if not (lo <= x <= hi):
+            continue
+        for y in range(y1 - 1, y0 - 1, -1):
+            if px[x, y][3] > 24:
+                prof[x] = y; break
+    if not prof:
+        return []
+    mxv = max(prof.values())
+    deep = sorted(x for x, v in prof.items() if v >= mxv - 4)
+    groups = []; cur = [deep[0]]
+    for c in deep[1:]:
+        if c - cur[-1] <= 3:
+            cur.append(c)
+        else:
+            groups.append(cur); cur = [c]
+    groups.append(cur)
+
+    def mouth_of(g):
+        return oy + max(prof[c] for c in g)
+
+    if fixed:
+        return [(ox + mid + mf * W, mouth_of(max(groups, key=len))) for mf in fixed]
+
+    if n == 1:
+        g = max(groups, key=len)
+        return [(ox + sum(g) / float(len(g)), mouth_of(g))]
+
+    # a twin pair: the widest group on each side of the spine
+    L = [g for g in groups if sum(g) / float(len(g)) < mid - 0.04 * W]
+    R2 = [g for g in groups if sum(g) / float(len(g)) > mid + 0.04 * W]
+    if L and R2:
+        gl = max(L, key=len); gr = max(R2, key=len)
+        m = ((mid - sum(gl) / float(len(gl))) + (sum(gr) / float(len(gr)) - mid)) / 2.0
+        return [(ox + mid - m, mouth_of(gl)), (ox + mid + m, mouth_of(gr))]
+    g = max(groups, key=len)
+    m = len(g) / 4.0
+    c = sum(g) / float(len(g))
+    return [(ox + c - m, mouth_of(g)), (ox + c + m, mouth_of(g))]
+
+
 def nozzle_bottom(cell, ox, oy, cx, band):
     """the lowest inked row in this mount's own column band - the nozzle it sits under.
 
@@ -251,6 +323,11 @@ def main():
     A = Image.open(ATLAS).convert('RGBA')
     B = Image.open(FLAME_SRC).convert('RGBA')
     tmpl, seat_f, nb = lift_flame(R)
+    global FLAME_W_F
+    _jbb = A.crop((R['ship_juggernaut'][0], R['ship_juggernaut'][1],
+                   R['ship_juggernaut'][0] + R['ship_juggernaut'][2],
+                   R['ship_juggernaut'][1] + R['ship_juggernaut'][3])).getbbox()
+    FLAME_W_F = tmpl.width / float(_jbb[2] - _jbb[0])
     print('flame template %dx%d off juggernaut (%d plume(s) on his plate), seat %.4f of canvas'
           % (tmpl.width, tmpl.height, nb, seat_f))
     print('   at his own canvas that is %.1f%% of the hull height - the size Mike approved'
@@ -301,9 +378,14 @@ def main():
             layer.alpha_composite(plume, (int(round(mx - fw / 2.0)), top))
         glow = layer.filter(ImageFilter.GaussianBlur(max(1, int(round(fh * GLOW_F)))))
         glow.putalpha(glow.getchannel('A').point(lambda v: int(v * GLOW_A)))
-        canvas.alpha_composite(glow)
-        canvas.alpha_composite(layer)
-        canvas.alpha_composite(cell, (ox, oy))
+        if p in OVERLAY:
+            canvas.alpha_composite(cell, (ox, oy))
+            canvas.alpha_composite(glow)
+            canvas.alpha_composite(layer)
+        else:
+            canvas.alpha_composite(glow)
+            canvas.alpha_composite(layer)
+            canvas.alpha_composite(cell, (ox, oy))
         nb2 = canvas.getbbox()
         if nb2 and nb2[3] >= ch:
             short.append(key)
