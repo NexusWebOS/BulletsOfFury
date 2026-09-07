@@ -507,6 +507,34 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0907c — DERIVED vs AUTHORED is a byte compare, and judging it by width got it wrong twice
+
+⚠ **A WIDTH PROGRESSION THAT LOOKS PERFECT IS THE SIGNATURE OF A DERIVED REEL, NOT OF A GOOD ONE.**
+Juggernaut's bank widths run **203/194/190/181/143/21/143** - a textbook cosine - and 0907b called
+him "CLEAN, LEAVE ALONE" and made him the pose reference on the strength of it. He is derived: his
+hull was replaced in 0906m and the reel derived from it, so his `_l` and `_r` are the SAME PIXELS.
+The widths were perfect *because* a cosine produced them. Falva was called fine for the same reason
+and is also derived. **The only test that separates the two is a byte compare of `_l` against `_r`
+and `pv0` against `pv4`** - symmetric means derived, means no direction, whatever the widths say:
+
+    DERIVED   juggernaut, decker, axel, falva
+    AUTHORED  maverick, lizzie, yuri, cole, freezer
+
+⚠ **AND THE POSE REFERENCE MUST BE AN AUTHORED REEL, OR IT TEACHES THE DEFECT.** Handing an artist
+Juggernaut's frames to copy would have taught them the exact left-right symmetry the hand-authoring
+exists to remove. Maverick is authored and his l/r genuinely differ, so he teaches the POSE; his own
+widths are degenerate (l, pv0 and br1 all 156) so the size table governs, not the picture.
+
+⚠ **AND THE AUTHORED ONES ARE NOT AUTOMATICALLY GOOD.** Yuri's every bank and roll frame is 145 px,
+exactly his hull width - he never banks at all. Lizzie's three pivot steps share one width. Cole's
+27-degree bank is WIDER than his 17-degree one. Being hand-drawn only guarantees direction, not
+that the reel progresses.
+
+⚠ **PLAN FOR RETURNED ART TO DRIFT.** GPT-authored frames come back slightly off size and lightly
+restyled, which is the same "size is a hint" problem SpriteCook has. Fit to the reel HEIGHT and
+align by silhouette IoU, never by bounding box. What cannot be absorbed is drift BETWEEN frames of
+one ship - that morphs the aircraft mid-lean - so check frame-to-frame consistency, not just size.
+
 ## 0907b — a cosine roll is LEFT-RIGHT SYMMETRIC, so the derived banks have no direction
 
 ⚠ **`_l` AND `_r` ARE PIXEL-IDENTICAL ON EVERY DERIVED SHIP, AND SO ARE `pv0`/`pv4`, `pv1`/`pv3`
