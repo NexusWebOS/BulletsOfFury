@@ -1905,7 +1905,7 @@ const XART=(function(){
      The BOSS sheets (87, 88) are deliberately NOT here: they are 10MB between them and are not
      needed until the end of a stage, by which point lazy loading has had minutes. Preloading
      them would put that on the boot path for no gain. */
-  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|bof_player_(?:weapon_special_icons|ordnance_projectiles|ships_barrel_rolls)_atlas|ship_|nthp_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nfx_(?:warp_tunnel|s5gate96)_|nca_(?:s1combatfx|en_s1|8[7-9])|aintro_)/;
+  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|bof_player_(?:weapon_special_icons|ordnance_projectiles|ships_barrel_rolls)_atlas|ship_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nfx_(?:warp_tunnel|s5gate96)_|nca_(?:s1combatfx|en_s1|8[7-9])|aintro_)/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
   /* Approved close-camera Fury HQ command deck.  Keep the stable runtime key so every existing
      campaign scene inherits the new room without duplicating story data or carrying the former
@@ -31388,6 +31388,35 @@ const SHIP_DRAW_H = 60;              // the hull blit's own height; the thruster
    wants the old rig back. `ship_*_nf` stays flameless for any surface that wants a cold airframe.
    ============================================================ */
 const SHIP_FLAME_BAKED = true;
+/* ============================================================
+   THE FLAME FLICKERS BY ANIMATING THE GLOW INSIDE IT (drop 0906s).
+   Mike: "now you may make them animate via pixel glow inside and viola."
+
+   `ship_<pilot><suffix>_g1` / `_g2` are the same plate as the base frame with only the flame's
+   interior brightness changed — same silhouette, same hull, same trim rect and offsets, so a
+   phase drops in exactly where the base frame sat. 0906q/r spent two rounds getting each plume
+   sized to its bell and centred on it; an animation that moved the flame would put that back at
+   risk 60 times a second, and an outline that jitters reads as a sprite glitch rather than as
+   combustion.
+
+   ⚠ THE PHASE IS GATED ON `BOFX.ships`, NOT ON `XART.rdy`. rdy() is false on its FIRST call —
+   that call is what starts the lazy load — so gating on it makes the very first frame of every
+   phase fall back to the base plate and the flame stutter on entry. The manifest table is
+   synchronous and knows the answer immediately.
+
+   ⚠ AND ONLY THE EIGHT STEADY FRAMES CARRY PHASES (base/l/r/pv0..pv4). A barrel roll or a
+   spin-out is over in a few frames and cannot show a flicker, so phasing those would have cost
+   320 extra cells to animate something nobody can see. The lookup falls back by itself.
+   ============================================================ */
+const SHIP_GLOW_SEQ = ['', 'g1', '', 'g2'];   // 0 -> flare -> 0 -> settle
+const SHIP_GLOW_MS  = 70;
+function shipGlowKey(key){
+  if(!SHIP_FLAME_BAKED || !key) return key;
+  const ph=SHIP_GLOW_SEQ[((performance.now()/SHIP_GLOW_MS)|0)%SHIP_GLOW_SEQ.length];
+  if(!ph) return key;
+  const k2=key+'_'+ph;
+  return (typeof BOFX!=='undefined' && BOFX.ships && BOFX.ships[k2]) ? k2 : key;
+}
 /* where the flame's luminance core sits inside its plate — measured across all nine plumes
    (0.575-0.590), so one constant rather than nine table rows. See the seat note below. */
 const PLUME_CORE_F = 0.58;
@@ -31406,259 +31435,7 @@ function _drawPlayerCore(){
      The airframe now has no baked flame, so this is the ONLY engine on screen — no stacking. It is
      drawn BEFORE the hull so the plume emerges from behind the tail rather than sitting on top of
      it, pilot-tinted, and reactive to throttle. */
-  if(typeof XART!=='undefined'){
-    /* THRUSTER: UNIFORM SIZE, ANCHORED TO EACH HULL'S REAL BOTTOM (drop 0724ck).
 
-       SIZE is now a constant fraction of the ship's drawn width for EVERY pilot, so all nine
-       plumes read at the same scale instead of tracking each sprite's own proportions.
-
-       POSITION could not be a constant. Measured where the opaque content actually ENDS in each
-       plain sprite, as a fraction of its canvas height:
-           yuri 0.834 ... lizzie 0.921 — an 8.8% spread.
-       A fixed offset would leave Yuri's plume floating in the gap below his tail and bury
-       Lizzie's inside her fuselage. _HB holds each pilot's measured hull bottom so the thruster
-       attaches DIRECTLY under the airframe, just proud of it, on all nine. */
-    /* PER-PILOT PALETTE (drop 0724cl). Mike picked the two best plumes and they are now the only
-       shapes used: DECKER/MAVERICK's twin for airframes with two exhausts, YURI's single for one.
-       Lizzie keeps her own — classic warbird. Each is hue-rotated to its pilot (axel blue/white,
-       maverick green/orange, freezer purple/orange, and so on), rotating HUE only so the authored
-       shading and the white-hot core survive. Falva was invisible on the old type 2 at this scale;
-       she is on the single plume now and reads. */
-    const _HB={axel:0.9041, cole:0.9041, decker:0.8949, falva:0.8964, freezer:0.9041, juggernaut:0.8982, lizzie:0.9214, maverick:0.9011, yuri:0.8339};
-    const _nk='nthp_'+(run.pilot||'cole')+'_'+(((performance.now()/70)|0)%4);
-    if(!SHIP_FLAME_BAKED && XART.rdy(_nk)){
-      const im=XART.get(_nk);
-      const thr=(Input.up?1:0.62)+(run.speedLevel||0)*0.09;
-      /* SIZE BY HEIGHT, NOT WIDTH (drop 0724cm).
-         The ships were scaled to a fixed WIDTH. Their content heights are near-identical
-         (202-236px) but their widths run 143 (decker) to 222 (lizzie) — so width-scaling made the
-         narrow airframes draw far taller than the wide ones. Falva at 150px wide came out 385px
-         tall against Cole's 279 — around a third bigger — which is why her plume ended up far
-         below everyone else's and read as missing.
-         Normalising on CONTENT HEIGHT makes every pilot the same size on screen, which is what the
-         game wants anyway, and the thruster anchor then lands identically for all nine.
-         Measured: Falva 128 -> 88 drawn height; every other pilot moves by under 8 percent. */
-      const _sk0='ship_'+(run.pilot||'cole');
-      const _shi=XART.rdy(_sk0)?XART.get(_sk0):null;
-      const _CF={axel:0.8081, cole:0.8081, decker:0.7935, falva:0.7929, freezer:0.8081, juggernaut:0.7964, lizzie:0.8429, maverick:0.8022, yuri:0.7454};
-      const _cf=(_CF[run.pilot]!=null)?_CF[run.pilot]:0.80;
-      /* ⚠ FROM THE HULL'S OWN DRAWN HEIGHT (0819c) — see SHIP_DRAW_H. This used to be
-         `(player.h||34)*2.05`, a second opinion about how big the ship is, and it was 43%
-         over the truth. _dh is the drawn CANVAS height, so `hb` (the measured hull bottom as
-         a fraction of that canvas) lands on the real tail and the mounts scale off the real
-         width. */
-      const _dh=SHIP_DRAW_H;                               // the canvas the hull is drawn at
-      const _targetContent=_dh*_cf;                        // the content height that yields
-      const _dw=_shi ? _dh*(_shi.naturalWidth/_shi.naturalHeight) : (player.w||34)*2.05;
-      /* IDENTICAL SIZE ON EVERY PLANE (drop 0724cn).
-         Sizing off _dw made the plumes differ, because _dw now follows each hull's aspect — and
-         the three plume shapes have different aspects of their own (twin 0.88, single 1.13,
-         Lizzie's warbird 1.36). A shared WIDTH therefore produced three different lengths, with
-         Lizzie's running far longer than the rest.
-         Normalising on LENGTH instead: every plume is the same fraction of the constant target
-         hull height, so all nine read at one size. Width follows each shape's own aspect, which is
-         correct — a twin plume is two nozzles side by side and should span wider than a single. */
-      const th=Math.max(16, _targetContent*0.46)*(0.88+0.30*thr);
-      const tw=th/(im.naturalHeight/im.naturalWidth);
-      /* TWIN ENGINES GET THE SINGLE PLUME, DRAWN TWICE (drop 0724co).
-         The twin composite was one wide image with its two flames at a FIXED spacing that matched
-         no ship, and being wide it also read oversized beside the singles. Every pilot now uses
-         the same single shape; twin-engine airframes draw it at each of their OWN measured nozzle
-         offsets. Same size everywhere, and it lines up by construction rather than by luck.
-         Offsets are the INNERMOST symmetric pair at the tail — the engine bells sit either side of
-         the spine, never out at the wingtips, which is what my first two detections kept catching. */
-      /* PER-FRAME RIG (drop 0805j). _NZ/_HB were ONE offset and ONE hull-bottom per pilot,
-         applied to all seventeen frames. SHIP_THR carries both per frame, measured from the
-         art, plus the airframe's own axis so the plume tilts with the ship instead of hanging
-         vertically off a banked tail. _HB is kept ONLY as the fallback if a frame is missing
-         from the rig, so nothing can end up with no anchor at all. */
-      const _rig=(typeof _shipThrRig==='function')?_shipThrRig(run.pilot||'cole'):null;
-      const hb=_rig?_rig[1]:((_HB[run.pilot]!=null)?_HB[run.pilot]:0.90);
-      const _axisA=_rig?_rig[2]:0;
-      const _cxF=_rig?_rig[0]:0.5;
-      /* ⚠ MOUNTS COME FROM THE SPEC TABLE NOW (drop 0808e). Mike, pilot by pilot: "juggernaut
-         gets three. axel is in the middle not the sides, he only gets 1. cole gets two from the
-         twin thrusters he has. decker is good. falva, she has a middle thruster only, no twins.
-         freezer, one middle thruster, no sides. lizzie is good, but ... centered and just under
-         the tail of her plane. maverick is good but needs centering. yuri only has 1 middle
-         thruster and no twins."
-
-         The rig's own mount list put five pilots on twin plumes at fractions that came from
-         nowhere I can find — Maverick's landed under his outboard wing roots rather than his
-         engine, which is what he saw as "doubling them up". Cole's twins here are MEASURED off
-         the hull by nozzle brightness (+/-0.15); the rest are Mike's call.
-
-         assets/data/thruster_mounts.json also carries a per-pilot SCALE, because a plume sized
-         off ship height came out bigger than the aircraft on the narrow airframes. */
-      const _tm=(typeof THRUSTER_MOUNTS!=='undefined')?THRUSTER_MOUNTS[run.pilot||'cole']:null;
-      const _mounts=(_tm&&_tm.mounts&&_tm.mounts.length)?_tm.mounts.map(v=>v*_dw)
-                   :((_rig&&_rig[3]&&_rig[3].length)?_rig[3].map(v=>v*_dw):[0]);
-      /* ============================================================
-         SEAT THE FLAME'S CORE, NOT THE PLATE'S EDGE (Mike, 0819c)
-
-         The old anchor put the plate's EDGE 3px inside the tail. But the flame does not start at
-         the plate edge — its luminance core sits at PLUME_CORE_F of the plate height — so the
-         visible flame landed that far BELOW the nozzle, and since it is a fraction of the PLUME,
-         the error grew with the plume. Measured in play, screen px, core below the hull's content
-         bottom:
-
-             axel  22.8 (plume 45.0)   freezer 22.1 (43.1)   decker 16.2 (38.3)
-             falva 14.3 (30.3)         cole     7.9 (23.9)   juggernaut 7.7 (23.6)
-
-         ⚠ THE RATIO IS NOT CONSTANT (0.33 to 0.51), WHICH IS WHY A SINGLE PROPORTIONAL SEAT
-         COULD NOT WORK — I tried one and it buried the small plumes while fixing the big ones.
-         Solved in closed form instead: put the CORE a fixed distance behind the nozzle and let
-         the plume's own height fall out of the equation.
-
-             core = tailY - dy + th*CORE_F     (both branches; derived, then confirmed against the
-             want: core = hullBottom + SEAT     table above)
-             so   tailY = hullBottom + SEAT - th*CORE_F
-
-         SEAT is 4px because that is what COLE measures at (7.9 screen px = 3.9 world), and Cole
-         is the one pilot whose plume already reads as attached — so the number is taken from the
-         case that looks right rather than picked. `dy` still nudges each pilot on top of this,
-         which is exactly what Mike tuned it for ("move lizzies about 10 pixels down").
-         ============================================================ */
-      const _pwA=(_tm&&_tm.scale)?_tm.scale*_dw:0;                      // the plume's drawn size...
-      const _thA=_pwA?im.naturalHeight*(_pwA/Math.max(1,im.naturalWidth)):0;   // ...and its height
-      const tailY = (y - _dh/2) + _dh*hb + PLUME_SEAT - _thA*PLUME_CORE_F;
-      const tailX = x + (_cxF-0.5)*_dw;
-      ctx.save();
-      ctx.globalAlpha=clamp(0.55+0.40*thr,0,1);
-      ctx.globalCompositeOperation='lighter';
-      /* FLIPPED VERTICALLY (drop 0801fp). Mike: "the thursters, should be flipped
-         verticall where the large section contacts the back of my pilots ships,
-         and the thurster animated top to bottom."
-
-         The plume art is authored with its WIDE end at the top of the canvas and
-         its taper at the bottom. Drawn straight, that put the narrow tip against
-         the hull and the broad flare trailing away - backwards. A negative Y
-         scale about the tail line puts the large section against the ship where
-         the nozzle is, and the taper running away behind, so the flame reads as
-         leaving the engine rather than pointing into it.
-
-         Flipping the sprite also reverses the reel's apparent travel, which is
-         the "animated top to bottom" half of the same change: the frames now
-         sweep away from the hull instead of toward it. */
-      for(const _mx of _mounts){
-        ctx.save();
-        ctx.translate(tailX+_mx, tailY);
-        /* THE PLUME LEANS WITH THE AIRFRAME (drop 0805j). Rotating about the tail contact
-           point, by the frame's measured axis, is what stops a banked ship firing its engine
-           sideways. Straight-and-level frames measure ~0 so nothing moves when nothing should. */
-        if(_axisA) ctx.rotate(_axisA);
-        ctx.scale(1,-1);                      // flip about the tail contact line
-        /* THE PIXELS GLOW AND MOVE (drop 0805j). Mike: "make thruster pixels glow and transform
-           to appear moving on all ships."
-
-           The reel already advances four authored frames. What it lacked was LIFE between them,
-           so at low throttle it read as a static cone. Three cheap things, all driven off the
-           same clock so they stay in phase:
-
-             1. LENGTH breathes with throttle plus a fast flicker — a jet does not hold a
-                constant plume, and a rigid one is most of what reads as fake.
-             2. A HOT CORE is drawn over it, shorter and narrower, on 'lighter'. That is the
-                glow: brightest at the bell and falling away, from the plume's own pixels
-                rather than an invented sprite.
-             3. The core runs on a DIFFERENT clock from the body, so the inside appears to
-                travel down the flame while the outline holds — motion without new frames. */
-        /* ONE PASS, NOT TWO (drop 0806b). 0805j drew the plate and then a narrower "hot core"
-           over it on a second clock, to give the flame internal motion. On a real plume that
-           reads as depth. On THIS art it reads as a second thruster:
-
-           nthp_ is not a plume. Measured, it is a four-pointed STAR/burst — and its frames are
-           81x102, 136x158, 170x192, 81x135, so cycling them also makes it jump in size rather
-           than flicker. Stacking a second copy of a star on a star is what Mike saw as
-           "duplicated". The core pass is gone; the per-frame ANCHOR and ANGLE from 0805j stay,
-           because those were measured against the art and are correct regardless of what the
-           art depicts.
-
-           The real fix is the one he asked for originally — "make the ship graphics we have
-           with thrusters, make thruster pixels glow" — i.e. light the exhaust pixels ON THE
-           HULL rather than pasting a separate sprite under it. That is a different build and
-           it is written up, not bodged in here. */
-        /* ⚠ THE REEL IS A SIZE PULSE, AND FORCING IT INTO A FIXED BOX DESTROYED IT (drop 0808c).
-           Mike: "those are indeed thrusters yes. The problem is, your not utilizing them right
-           with our planes."
-
-           Measured across the nine reels: the four frames are 81x102, 136x158, 170x192, 81x135 —
-           a 2.1x swing in linear size, with ASPECTS from 0.60 to 0.89. The old draw stretched
-           every one of them into the same _wid x _len rectangle, so each frame was distorted by a
-           DIFFERENT amount and the flame squashed and stretched frame to frame instead of
-           flickering. That is what makes it read as a sprite pasted under the plane rather than
-           the plane's own exhaust.
-
-           Drawn correctly: one scale for the whole reel, taken from the LARGEST frame, and every
-           frame keeps its own aspect. The size variation the artist built in then does what it
-           was drawn to do — the flame pulses — and because it is anchored at the NOZZLE rather
-           than centred, it grows downward out of the hull instead of swelling around a point. */
-        const _fl = 1 + 0.05*Math.sin(performance.now()/38);
-        const _len = th*(0.80+0.34*thr)*_fl;
-        /* the reel's own reference: its biggest frame. Everything scales against this, so a
-           small frame draws small instead of being inflated to fill the box. */
-        let _refH = 0;
-        for(let _q=0;_q<4;_q++){
-          const _r=XART.rdy('nthp_'+(run.pilot||'cole')+'_'+_q) && XART.get('nthp_'+(run.pilot||'cole')+'_'+_q);
-          if(_r && _r.naturalHeight>_refH) _refH=_r.naturalHeight;
-        }
-        if(!_refH) _refH=im.naturalHeight||1;
-        /* SCALE TO THE NOZZLE, NOT THE SHIP (drop 0808e). Sizing off ship height gave narrow
-           airframes a flame wider than the aircraft. The table carries a per-pilot fraction of
-           HULL WIDTH, so the plume matches the engine it comes out of. */
-        const _pw = (_tm&&_tm.scale) ? _tm.scale*_dw : null;
-        const _k = _pw ? (_pw/im.naturalWidth) : (_len/_refH);
-        const _th2 = im.naturalHeight*_k;
-        const _tw2 = im.naturalWidth*_k;
-        /* lizzie's reel is a warbird flame, not a star burst — it points the other way */
-        /* PER-PILOT VERTICAL NUDGE (drop 0808f). Mike, eyeing the render: "move lizzies about 10
-           pixels down. move yuri's up 5 pixels, move axel and freezer and falvas up 5 pixels.
-           this way they contact the thruster they are coming out of."
-
-           Stored as a FRACTION of hull height, not raw pixels — the ship draws around 44px in
-           play and up to 128px in the launch cinematic, so a fixed pixel offset would drift
-           between the two. The fraction keeps the flame welded to its nozzle at any size. */
-        const _dy = (_tm && _tm.dy) ? _tm.dy*_dh : 0;
-        /* ============================================================
-           SEAT THE FLAME, NOT THE PLATE (Mike, 0819c)
-
-           ⚠ THE PLUME PLATES HAVE NO TRANSPARENT MARGIN — measured, every `nthp_` cell's bbox is
-           the whole cell — so "no margin" was taken to mean "the plate edge IS the flame". It is
-           not. The luminance-weighted core of the flame sits at **0.58 of the plate height**, and
-           that figure is the same for every pilot (measured 0.575 to 0.590 across all nine). The
-           draw anchored the plate EDGE at the tail, so the visible flame always landed about
-           0.58 of a plate below the nozzle.
-
-           That is why it read as "wrong for every pilot" and why it looked worse on some: the
-           error is a FRACTION OF THE PLUME, so Cole's small twin (scale 0.16) sat nearly against
-           his tail while Axel's and Lizzie's (scale 0.30) floated clear of theirs. Chasing it per
-           pilot in the mount table could never have worked — the table was innocent.
-
-           ⚠ THE SIGN IS PER BRANCH, because the two are in opposite spaces: the outer
-           `scale(1,-1)` means screen y = tailY - local y, so moving the flame UP the screen means
-           adding to local y — while the flip branch cancels that flip and needs the opposite. */
-        if(_tm && _tm.flip){ ctx.scale(1,-1); ctx.drawImage(im, -_tw2/2, -_dy, _tw2, _th2); }
-        else ctx.drawImage(im, -_tw2/2, -_th2+_dy, _tw2, _th2);
-        ctx.restore();
-      }
-      ctx.restore();
-    }
-    else {
-    /* returning here would skip the ship itself — the thruster is drawn BEFORE the hull, so the
-       fallback must be an else branch, not an early exit out of the whole draw. */
-    const _tc=(typeof PILOT_TRAIL!=='undefined' && PILOT_TRAIL[run.pilot]) ? PILOT_TRAIL[run.pilot] : 'ab';
-    const _tk='ntr_'+_tc+'_'+(((performance.now()/55)|0)%8);
-    if(XART.rdy(_tk)){
-      const im=XART.get(_tk);
-      const thr=(Input.up?1:0.62)+(run.speedLevel||0)*0.09;
-      const tw=14, th=(30+20*(thr-0.62))*clamp(thr,0.62,1.6);
-      ctx.save();
-      ctx.globalAlpha=clamp(0.45+0.40*thr,0,0.95);
-      ctx.globalCompositeOperation='lighter';
-      ctx.drawImage(im, x-tw/2, y+14, tw, th);   // starts at the tail of the flameless hull
-      ctx.restore();
-    }
-    }
-  }
   // REAL machinefx muzzle flash at the nose while the MG is firing (level-colored row,
   // same row map as the bullets). Art attachment is at the RIGHT edge -> rotate +90 so the
   // flame points UP with the attachment sitting on the gun.
@@ -31838,6 +31615,7 @@ function _drawPlayerCore(){
          thruster had no way to know which frame was on screen. It is now _shipFrameKey(), which
          the thruster rig calls too — they cannot drift apart. */
       else key=_shipFrameKey(pk);
+      key=shipGlowKey(key);   // 0906s: the flame's interior flickers; the hull does not
       const im=XART.get(key);
       // legacy 'player_thrust' blit removed — it was a THIRD engine stacked on the other two
       const h=SHIP_DRAW_H, w=h*(im.naturalWidth/im.naturalHeight);
@@ -54912,57 +54690,13 @@ function _shipK(suf){ const p=(typeof _pilotKey==='function'?_pilotKey():((run&&
    `_t` is refused here. Every caller gets the PLAIN hull at the requested height, with the live
    thruster drawn under it from the same THRUSTER_MOUNTS table gameplay uses. One system, one set
    of mounts, one place to fix it. ============================================================ */
-function drawShipThruster(x, y, h, pilot, alpha){
-  if(SHIP_FLAME_BAKED) return;   // 0906q: the flame is baked into every hull
-  if(typeof XART==='undefined' || typeof THRUSTER_MOUNTS==='undefined') return;
-  const p=pilot||(run&&run.pilot)||'cole';
-  const cfg=THRUSTER_MOUNTS[p]; if(!cfg) return;
-  const key='nthp_'+p+'_'+(((performance.now()/70)|0)%4);
-  if(!XART.rdy(key)) return;
-  const im=XART.get(key);
-  const k0=_shipK(''); if(!k0) return;
-  const hull=XART.get(k0);
-  /* ⚠ MATCH THE PLAY PATH EXACTLY (drop 0809b). Mike: "whats up with the different thrusters as
-     shown in cinematic and in-game?"
 
-     In play the plume is sized against the hull's CANVAS width, which is derived by dividing the
-     target content height by a per-pilot content factor (~0.80) — the sprite has transparent
-     margin, so the canvas is about 25% bigger than the aircraft you see. This function sized
-     against the drawn height directly, with no such division, so its hull reference came out
-     ~25% small and the plume ~25% oversized. That is the whole discrepancy: same table, same
-     scale value, different denominator.
-
-     The content factors are duplicated from _drawPlayerCore rather than shared, which is a wart —
-     but a wrong number here is a visible bug and a shared constant is a refactor. Noted for the
-     next structural pass. */
-  const _CFC={axel:0.8081, cole:0.8081, decker:0.7935, falva:0.7929, freezer:0.8081,
-              juggernaut:0.7964, lizzie:0.8429, maverick:0.8022, yuri:0.7454};
-  const _cfc=(_CFC[p]!=null)?_CFC[p]:0.80;
-  const canvasH=h/_cfc;                                       // the canvas that yields this content height
-  const w=canvasH*(hull.naturalWidth/hull.naturalHeight);     // the hull's CANVAS width, as in play
-  const pw=Math.max(4, (cfg.scale||0.26)*w);
-  const kk=pw/im.naturalWidth;
-  const tw=im.naturalWidth*kk, th=im.naturalHeight*kk;
-  const dy=(cfg.dy||0)*canvasH;
-  ctx.save();
-  ctx.globalCompositeOperation='lighter';
-  ctx.globalAlpha=(alpha==null?0.95:alpha);
-  for(const mx of (cfg.mounts||[0])){
-    const px=x+mx*w;
-    /* anchored at the hull's own tail, as in play — h/2 is the DRAWN half-height, not the canvas */
-    if(cfg.flip){ ctx.save(); ctx.translate(px, y+h/2+dy); ctx.scale(1,-1);
-                  ctx.drawImage(im, -tw/2, 0, tw, th); ctx.restore(); }
-    else ctx.drawImage(im, px-tw/2, y+h/2+dy, tw, th);
-  }
-  ctx.restore();
-}
 function drawShipSprite(x,y,h,suf){
   /* the baked-in variant is never used, whatever a caller asks for */
   const _s=(suf==='_t')?'':suf;
   let k=_shipK(_s); if(!k) k=_shipK('');
   if(k){
     const im=XART.get(k); const w=h*(im.naturalWidth/im.naturalHeight);
-    drawShipThruster(x,y,h,(typeof _pilotKey==='function'?_pilotKey():((run&&run.pilot)||'cole')), 0.95);   // behind the hull
     ctx.drawImage(im,x-w/2,y-h/2,w,h); return; }
   if(ASSETS.has&&ASSETS.has('player')){ const fr=ASSETS.dims('player'), sc=h/fr.h;
     // legacy player_thrust blit removed (drop 0724cj) — a second engine under our own
@@ -55392,45 +55126,7 @@ function drawLaunch(dt){
      and already in PRELOAD, but it was only ever drawn during PLAY - the
      transition showed the ship with nothing behind it. */
   if(!_drawGravityShip && typeof XART!=='undefined'){
-    const _tk='nthp_'+(run.pilot||'cole')+'_'+(((performance.now()/70)|0)%4);
-    if(!SHIP_FLAME_BAKED && XART.rdy(_tk)){
-      const im=XART.get(_tk);
-      /* ⚠ THE SAME BUG AS THE PLAY DRAW, WEARING A DIFFERENT HAT (drop 0808c). This one keeps
-         each frame's aspect — but it scales EVERY frame to the same _th, so the 81x102 frame and
-         the 170x192 frame come out the same height and the pulse the artist built into the reel
-         is flattened out of it. The transition showed a thruster that never changed.
 
-         Scaled against the reel's LARGEST frame instead, so the small frames draw small. */
-      let _refH=0;
-      for(let _q=0;_q<4;_q++){
-        const _r=XART.rdy('nthp_'+(run.pilot||'cole')+'_'+_q) && XART.get('nthp_'+(run.pilot||'cole')+'_'+_q);
-        if(_r && _r.naturalHeight>_refH) _refH=_r.naturalHeight;
-      }
-      if(!_refH) _refH=im.naturalHeight||1;
-      const _k=(shipH*1.15)/_refH;
-      const _th=im.naturalHeight*_k, _tw=im.naturalWidth*_k;
-      ctx.save();
-      ctx.globalCompositeOperation='lighter';
-      ctx.globalAlpha=(ph==='run')?0.95:0.55;      // full burn on the run, banked on the brake
-      /* ⚠ THE LAUNCH PLUME IS SEATED DIFFERENTLY FROM PLAY, AND UNIFYING IT NEEDS THE
-         SIZING UNIFIED FIRST (drop 0822n, attempted and reverted). PLAY seats the flame with
-         0819c's closed form and flips it so the wide end meets the nozzle; this draws it
-         straight at a hardcoded 0.30 of the hull. Porting the seat ALONE moved it wrong twice
-         — once above the aircraft, once over the hull — because PLAY sizes the plume from the
-         per-pilot MOUNT scale while this sizes it to shipH*1.15 against the reel's largest
-         frame, so the `- _th*PLUME_CORE_F` term over-corrects at this scale.
-         ⚠ AND IT IS NOT A DUPLICATE DRAW EITHER — attempt 3 (0822t) deleted this block on the
-         reading that drawShipSprite already calls drawShipThruster() one line above, so the
-         launch was drawing two plumes. Measured in pixels: with this block gone the launch has
-         essentially NO flame, just two specks. drawShipThruster renders tiny at launch scale,
-         so THIS block is the visible plume and that one contributes almost nothing here.
-         Three attempts, three reverts. What is actually needed is to work out why
-         drawShipThruster comes out that small at shipH 62-128 when it is correct at PLAY's
-         SHIP_DRAW_H of 60 — start there, not at this block. Until then it ships as it is:
-         a badly-seated flame beats no flame and beats a flame in front of the aircraft. */
-      ctx.drawImage(im, shipX-_tw/2, shipY+shipH*0.30, _tw, _th);
-      ctx.restore();
-    }
   }
   /* The Stage 9 exit flash belongs in front of the retained Fury ship.  Keep it here in the
      launch composite (and out of every stage background renderer) so the craft visibly emerges
@@ -56755,7 +56451,6 @@ function drawRivalShip(){
   if(typeof XART!=='undefined' && XART.rdy(k)){
     const im=XART.get(k), w=44, h=w*(im.naturalHeight/im.naturalWidth);
     ctx.save(); ctx.translate(rival.x,rival.y);
-    try{ if(typeof drawShipThruster==='function') drawShipThruster(0,0,h,rival.key,0.9); }catch(e){}
     ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
   }
 }

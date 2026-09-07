@@ -507,6 +507,41 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0906s — the flame animates from the inside, and the star system is gone
+
+⚠ **`nthp_` IS DELETED — 36 cells, 36 img rows, 338 lines of game.js.** Mike: *"we can delete
+those ugly ass old thrusters we were using."* `drawShipThruster`, both inline plume blocks and the
+family's PRELOAD entry went with it. **The family was registered TWICE and a single regex only
+found half of it** — a rect in `BOFX.cells` and a sheet path in `BOFX.img`, with different value
+shapes — which would have left 36 rows pointing at cells that no longer exist, i.e. this file's own
+"family referenced by name that does not exist" trap, created by the cleanup meant to prevent it.
+
+⚠ **AN ANIMATION MUST NOT MOVE THE SILHOUETTE.** 0906q/r took two rounds to get each plume sized to
+its bell and centred on it; a reel that redrew the flame would put that back at risk every frame,
+and an outline that jitters reads as a sprite glitch rather than combustion. `ship_<pilot><suffix>_g1`
+and `_g2` are the same plate with only the flame's INTERIOR brightness changed — same hull, same
+trim rect, same offsets — so a phase drops in exactly where the base frame sat.
+
+⚠ **AND "DID THIS PIXEL CHANGE" PULSED THE WHOLE AIRFRAME.** The flame is recovered by diffing the
+baked plate against the 0906q backup, which is exact — but on the five OVERLAY pilots the glow is
+composited over the hull, so a wide halo of hull pixels differs by a few levels each. Modulating
+all of them equally made the entire ship brighten and dim; the first proof shows it plainly on
+Cole, Yuri and Lizzie while Juggernaut (not overlaid) was correct. **Weight the modulation by the
+SIZE of the change** — the flame core moved 100+ levels and takes the full effect, the haze moved
+2-5 and takes almost none.
+
+⚠ **GATE A FRAME VARIANT ON `BOFX.ships`, NEVER ON `XART.rdy`.** rdy() is false on its FIRST call —
+that call is what starts the load — so a phase gated on it falls back to the base plate for the
+first frame of every cycle and the flame stutters on entry. The manifest table answers
+synchronously. (Only the eight steady frames per pilot carry phases; a barrel roll or spin-out is
+over before a flicker could show, and phasing all 185 would have cost 320 cells for nothing.)
+
+⚠ **A SIZE CHECK CANNOT VERIFY THIS AND NEITHER CAN A SCREENSHOT.** Every phase cell is byte-for-byte
+the same SIZE as its base frame by construction — that is the point — so the 0906e trap applies at
+full force. `probe_thrusterglow_0906s.py` wraps `XART.get` and records the KEY, and `--bust` forces
+the sequence flat: **3 distinct keys armed, 1 busted.** Verifier: all 6954 cells resolve; its two
+failures (VICTORY, the sheet ratio) reproduce identically on a clean worktree at HEAD.
+
 ## 0906r — "ALMOST aligned perfectly but not quite" was two measurements, both mine
 
 ⚠ **A FLAME IS A SHARE OF THE HULL'S WIDTH, NOT OF ITS CANVAS.** 0906q scaled the baked plume by
