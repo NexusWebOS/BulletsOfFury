@@ -19,3 +19,9 @@ _shots/
 # and regenerable from Mike's own captures. The contact SHEETS are the useful output; the
 # per-frame PNGs are not worth the repo.
 docs/playtest_*/
+
+# intermediate ship plates cut from the thruster pack by bake_pack_thrusters_0907p.py.
+# 864 PNGs / 29 MB, and every one is reproducible in a single command from the sources in
+# _ART_SOURCES_THRUSTERS, which ARE committed. The atlas built from them is what ships.
+assets/game/ships_thrust/
+assets/game/ships_sliced/
