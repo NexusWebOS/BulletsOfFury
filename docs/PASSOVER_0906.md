@@ -800,3 +800,45 @@ New frames swept for the Yuri fragment defect as written: **0 of 17**.
 
 Proofs: `docs/JUGGERNAUT_V3_0906N.png` (candidates beside two fleet ships),
 `docs/JUGGERNAUT_V3_FLIPPED_0906N.png`, `docs/SHIPS_0906N.png`.
+
+---
+
+# 0906o — Decker's swap redone: my recolour was the defect, not his ship
+
+Mike: *"and deckers also looks bad."*
+
+⚠ **HE IS RIGHT AND IT IS MY 0906h RECOLOUR.** Measured on the hull frame: **7,666 colours before
+the swap, 3,707 after** — the recolour destroyed half his palette — while saturation went 0.11 to
+0.60, so the result is simultaneously flatter and noisier. At 3x it is visibly speckled and the
+panel structure that reads clearly on the original is mush.
+
+⚠ **THE CAUSE IS EXACTLY WHAT THE LUMINANCE RULE PREVENTS, AND I OVERRODE IT DELIBERATELY.** 0906h
+mapped his black band (value 0.00–0.25) onto the gold band's range (0.02–0.95) — a **3.7x stretch of
+a narrow band across a wide one**. Every one-step dither in the near-black hull became a four-step
+jump, which is the speckle, and the quantisation is what halved the colour count. The ARGUMENT for
+breaking the rule was sound — black and yellow must trade brightness or the swap is invisible — but
+a range exchange is not the only way to trade brightness, and it was the wrong one. **Breaking a
+standing rule for a good reason still leaves you owing a careful implementation.**
+
+Redone as a gentle GAIN rather than a range remap: the grey takes the gold hue at its own value
+times 1.7 with a small floor, so the hull lifts into gold while the SPACING between neighbouring
+values is nearly preserved — dither stays dither instead of becoming banding. Gold accents drop to
+0.22 of their value. Mike's original brief still holds: yellow-dominant, black where the yellow was.
+
+⚠ **AND IT RE-RUNS FROM THE PRE-SWAP BACKUP, NOT THE CURRENT ATLAS.** Recolouring the already
+recoloured plate would compound the loss — a halved palette cannot be recovered by a second pass
+over the lossy result. Decker's rects have not moved since 0906h (every append that grew the atlas
+landed below him), so the same rectangles read the original pixels out of
+`bof_player_ships_barrel_rolls.png.0906g.bak`.
+
+Result: 2,473 colours, clean gold plating, panel structure legible, no speckle.
+
+⚠ **ONE AMBIGUITY, LEFT OPEN RATHER THAN GUESSED.** "Looks bad" arrived straight after asking for
+Juggernaut to be redesigned to fit the fleet, so it could mean the SHAPE. It almost certainly does
+not: Decker's hull is one of the nine authored fleet ships and shares their construction exactly —
+spine, canopy, swept layered wings, nacelles — and the only thing that changed under him was my
+colour pass, which is measurably damaged. The recolour is fixed; a redesign of authored fleet art
+needs Mike's word first.
+
+Proofs: `docs/DECKER_DIAG_0906O.png`, `docs/DECKER_SWEEP_0906O.png`,
+`docs/DECKER_REDONE_0906O.png`, `docs/SHIPS_0906O.png`.

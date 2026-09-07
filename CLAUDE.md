@@ -491,6 +491,22 @@ rect: more than one run means a fragment rode along.** And fix it per frame — 
 ship on the hull frames and BELOW it on the roll frames, so one global shift would have repaired
 half and destroyed the rest.
 
+## 0906o — breaking the luminance rule still owes you a careful implementation
+
+⚠ **A VALUE-RANGE EXCHANGE IS A PALETTE SHREDDER.** Decker's 0906h swap mapped his black band
+(v 0.00-0.25) onto the gold band's range (0.02-0.95) to make black and yellow trade places. That is
+a **3.7x stretch of a narrow band across a wide one**: every one-step dither became a four-step jump
+(the speckle) and the quantisation **halved his palette, 7,666 colours to 3,707**, while saturation
+went 0.11 to 0.60. Flatter AND noisier at once. The ARGUMENT for overriding "palette/luminance
+swaps, not overlays" was sound - the two bands must trade brightness or the swap is invisible - but
+the implementation was not, and a range exchange is not the only way to trade brightness. Use a
+GENTLE GAIN (value x1.7 with a floor) so neighbouring values keep their spacing.
+⚠ **COUNT THE COLOURS BEFORE AND AFTER ANY RECOLOUR.** A halved opaque-colour count is the
+signature of this damage and it is one line to check; the eye catches it only at 3x.
+⚠ **AND RE-RUN A BAD RECOLOUR FROM THE BACKUP, NEVER FROM THE RESULT.** A lost palette cannot be
+recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
+to, so the pre-swap backup still reads correctly at the same rectangles months later.
+
 ## Current state (2026-09-03) — the beta pass, on `codex/coop-0902f`
 
 **Landed and verified in real Chromium:** the pilot-select blocker (`_dialogueReady`), boot download
