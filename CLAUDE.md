@@ -507,6 +507,44 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0906t — the purple halo, and why a flame with one hue is not a flame
+
+⚠ **SETTING THE HUE FLATTENS A FLAME; ROTATING IT DOES NOT.** Mike: *"the animation should be as
+visible as juggernauts with shading."* Juggernaut's plume is not one colour — it runs white-hot
+core -> yellow -> orange -> deep red at the rim, and that HUE GRADIENT is most of what makes it
+read as fire. 0906q/r's tint wrote one hue into every pixel and blended saturation toward the pilot
+tint's own, which erased the gradient and pushed the mid-tones to a flat high-saturation slab;
+Cole's came out a uniform green shape. A **rotation** by `pilot_hue - template_hue`, with S and V
+untouched, carries the whole gradient across intact. That is what this file's own
+"palette/luminance swaps, not overlays" rule has always meant, applied to a plume.
+
+⚠ **THE HALO IS 2-3 PX THICK, SO A ONE-PIXEL RULE LEAVES IT VISIBLE.** Measured by distance from
+the silhouette: cole 376/470/96/1, lizzie 377/559/208/12, yuri 355/321/70/5, maverick 279/228/77/51.
+Converting only the ring that touches transparency turns the outer pixel black and leaves the
+violet one behind it — a black line with a purple line inside it, which is exactly what was still
+on screen after the first pass reported the boundary "93.3% dark".
+
+⚠ **AND THAT SAME DEPTH PROFILE IS WHAT SEPARATES A HALO FROM A SHIP THAT IS GENUINELY PURPLE.**
+A halo DECAYS sharply inward and reaches ~0 by depth 3. A hull colour does not: falva runs
+54/96/49/31/28/49 flat and freezer 4/6/13/12/15/18, **increasing** with depth, because her
+aircraft is pink and his is violet. Eroding a fixed 2 px would have taken a bite out of both.
+Testing the decay per frame skips them automatically — **nobody is hand-listed, and a repainted
+hull re-classifies itself**, which is this file's standing preference over a hand-written list.
+Result: 74,010 px converted across seven pilots, falva and freezer untouched, alpha never modified
+so no silhouette moved. Juggernaut's 2 px is the tell for why his ship always looked cleanest.
+
+⚠ **A MERGED TAIL RUN CANNOT BE SPLIT DOWN THE MIDDLE.** Cole's two bells AND the spine between
+them all reach the same depth, so they arrive as one 51-wide group with no second group to pair
+with. Halving it (+/- width/4) put his flames 4 px too close together on each side. A bell measures
+11-14% of hull width on every pilot where the groups DO separate (yuri 21/145, lizzie 25/222,
+maverick 21/187), so the two sit half a bell width in from each END of the merged run.
+
+⚠ **A DERIVED PLATE'S BASELINE MUST BE RE-TAKEN WHEN THE SOURCE CHANGES.** The glow phases are
+built by diffing the baked atlas against the pre-bake plate. After 0906t blacked 42,688 halo pixels
+that diff would have reported every one of them as "added by the bake" and handed them to the glow
+modulation — a pulsing violet rim around each airframe. The baseline is re-snapshotted immediately
+before the flames go on, and the same applies to Juggernaut's flame source, which is diffed too.
+
 ## 0906s — the flame animates from the inside, and the star system is gone
 
 ⚠ **`nthp_` IS DELETED — 36 cells, 36 img rows, 338 lines of game.js.** Mike: *"we can delete

@@ -37,7 +37,7 @@ in its own column band, which is the nozzle it sits under.
 ⚠ JUGGERNAUT IS RESTORED, NOT RE-BAKED. His flame is the thing Mike approved, so his frames come
 straight back off `.0906p.bak` rather than being reconstructed from a template lifted out of them.
 """
-import os, re, sys, json, shutil, subprocess, colorsys
+import os, re, sys, json, math, shutil, subprocess, colorsys
 from collections import deque
 from PIL import Image, ImageFilter, ImageDraw, ImageFont
 
@@ -55,6 +55,10 @@ REF_CH = 275.0                             # Juggernaut's canvas height - the sc
 # own lower lip - visible at 6x as a straight edge across the top of every plume. The other three
 # have flush tails where behind is right, and Juggernaut's is painted into his plate.
 OVERLAY = {'cole', 'decker', 'yuri', 'maverick', 'lizzie'}
+# ⚠ COLE'S FLAMES COME DOWN 10% (Mike, 0906t: "in #3 they might need to be scaled down about
+# 10%"). His bells are the widest of the nine relative to his hull, so one global share of hull
+# width lands slightly over-scale on him alone.
+FLAME_SCALE = {'cole': 0.90}
 BORE_F = 0.86                              # flame width as a share of the nozzle's measured bore
 EMERGE = 0.92                              # the share of the flame that clears the nozzle
 GLOW_F = 0.28                              # glow blur as a fraction of the flame's own height
@@ -139,12 +143,37 @@ def lift_flame(rows):
     return t, (ink - y1) / REF_CH, len(runs)
 
 
-def tint_flame(tmpl, rgb):
-    """hue-swap the plume to a pilot's colour, LEAVING THE WHITE-HOT CORE.
+def tmpl_hue(tmpl):
+    """the template's own dominant hue, as a saturation-weighted CIRCULAR mean"""
+    px = tmpl.load()
+    sx = sy = 0.0
+    for y in range(tmpl.height):
+        for x in range(tmpl.width):
+            r, g, b, a = px[x, y]
+            if a < 8:
+                continue
+            h, s, v = colorsys.rgb_to_hsv(r / 255., g / 255., b / 255.)
+            if s < 0.15:
+                continue
+            w = s * v
+            sx += w * math.cos(2 * math.pi * h)
+            sy += w * math.sin(2 * math.pi * h)
+    return (math.atan2(sy, sx) / (2 * math.pi)) % 1.0
 
-    ⚠ tinting the core too is what makes a recoloured flame read as a coloured blob - fire runs
-    orange -> yellow -> WHITE, and the white is what says "hot"."""
-    h0, s0, _ = colorsys.rgb_to_hsv(rgb[0] / 255., rgb[1] / 255., rgb[2] / 255.)
+
+def tint_flame(tmpl, rgb, href):
+    """ROTATE the hue to the pilot's colour. Saturation and value are untouched.
+
+    ⚠ SETTING THE HUE INSTEAD OF ROTATING IT FLATTENS THE FLAME, WHICH IS MIKE'S "the animation
+    should be as visible as juggernauts with shading". Juggernaut's plume is not one colour: it
+    runs white-hot core -> yellow -> orange -> deep red at the rim, and that HUE GRADIENT is most
+    of what makes it read as fire. The first cut wrote one hue into every pixel and blended
+    saturation toward the pilot tint's own, which erased the gradient and pushed the mid-tones to
+    a flat high-saturation slab - Cole's came out a uniform green shape. A rotation carries the
+    whole gradient across intact, which is exactly what this file means by "palette/luminance
+    swaps, not overlays"."""
+    h0, _, _ = colorsys.rgb_to_hsv(rgb[0] / 255., rgb[1] / 255., rgb[2] / 255.)
+    d = (h0 - href) % 1.0
     out = tmpl.copy()
     px = out.load()
     for y in range(out.height):
@@ -153,11 +182,9 @@ def tint_flame(tmpl, rgb):
             if a < 8:
                 continue
             h, s, v = colorsys.rgb_to_hsv(r / 255., g / 255., b / 255.)
-            if s < 0.22:
+            if s < 0.12:
                 continue                                  # white-hot core: untouched
-            f = min(1.0, s / 0.55)
-            ns = s * (1 - f) + min(1.0, s0 * 1.05) * f
-            rr, gg, bb = colorsys.hsv_to_rgb(h0, max(0., min(1., ns)), v)
+            rr, gg, bb = colorsys.hsv_to_rgb((h + d) % 1.0, s, v)
             px[x, y] = (int(rr * 255 + .5), int(gg * 255 + .5), int(bb * 255 + .5), a)
     return out
 
@@ -293,10 +320,15 @@ def nozzles(cell, ox, oy, n, fixed=None, band=0.34):
         gl = max(L, key=len); gr = max(R2, key=len)
         m = ((mid - sum(gl) / float(len(gl))) + (sum(gr) / float(len(gr)) - mid)) / 2.0
         return [(ox + mid - m, mouth_of(gl)), (ox + mid + m, mouth_of(gr))]
+    # ⚠ COLE'S TWO BELLS AND THE SPINE BETWEEN THEM ALL REACH THE SAME DEPTH, so they arrive as
+    # ONE 51-wide group and there is no second group to pair with. Splitting it down the middle
+    # (+/- width/4) puts the flames 4 px too close together on each side - the misalignment Mike
+    # kept seeing on the green ship. A bell measures 11-14% of hull width on every pilot where the
+    # groups DO separate (yuri 21/145, lizzie 25/222, maverick 21/187), so the two bells sit half
+    # a bell width in from each END of the merged run, not a quarter of it from the centre.
     g = max(groups, key=len)
-    m = len(g) / 4.0
-    c = sum(g) / float(len(g))
-    return [(ox + c - m, mouth_of(g)), (ox + c + m, mouth_of(g))]
+    half = max(3.0, 0.12 * W / 2.0)
+    return [(ox + min(g) + half, mouth_of(g)), (ox + max(g) - half, mouth_of(g))]
 
 
 def nozzle_bottom(cell, ox, oy, cx, band):
@@ -323,6 +355,7 @@ def main():
     A = Image.open(ATLAS).convert('RGBA')
     B = Image.open(FLAME_SRC).convert('RGBA')
     tmpl, seat_f, nb = lift_flame(R)
+    HREF = tmpl_hue(tmpl)
     global FLAME_W_F
     _jbb = A.crop((R['ship_juggernaut'][0], R['ship_juggernaut'][1],
                    R['ship_juggernaut'][0] + R['ship_juggernaut'][2],
@@ -354,7 +387,7 @@ def main():
         s = ch / REF_CH                                # this canvas against Juggernaut's
         fw = max(3, int(round(tmpl.width * s)))
         fh = max(4, int(round(tmpl.height * s)))
-        plume = tint_flame(tmpl, tints.get(p, (255, 150, 60))).resize((fw, fh), Image.LANCZOS)
+        plume = tint_flame(tmpl, tints.get(p, (255, 150, 60)), HREF).resize((fw, fh), Image.LANCZOS)
 
         mt = MOUNT_FIXED.get(p) or tail_mounts(cell, MOUNT_N.get(p, 1))
         hull_cx = ox + (bb[0] + bb[2]) / 2.0

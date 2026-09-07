@@ -31,9 +31,13 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ATLAS = os.path.join(ROOT, 'assets/game/atlas/bof_player_ships_barrel_rolls.png')
-PREBAKE = ATLAS + '.0906q.bak'
+# ⚠ THE PRE-BAKE REFERENCE MUST MATCH THE HULLS THE BAKE USED, HALO CONVERSION INCLUDED. Diffing
+# against the 0906q plate after 0906t blacked 42,688 halo pixels would report every one of them as
+# "added by the bake" and hand them to the glow modulation - a pulsing violet rim around the whole
+# airframe. 0906t2 is the plate as it stood immediately before the flames went on.
+PREBAKE = ATLAS + '.0906t2.bak'
 MANIFEST = os.path.join(ROOT, 'assets/manifest.js')
-PREMAN = MANIFEST + '.0906q.bak'
+PREMAN = MANIFEST + '.0906t2.bak'
 
 PILOTS = ['axel', 'cole', 'decker', 'falva', 'freezer', 'juggernaut', 'lizzie', 'maverick', 'yuri']
 STEADY = {'', 'l', 'r', 'pv0', 'pv1', 'pv2', 'pv3', 'pv4'}
