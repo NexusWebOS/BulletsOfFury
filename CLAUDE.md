@@ -507,6 +507,34 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0906u — a nudge that overrides a measurement, and where the halo cleanup STOPS
+
+⚠ **MIKE'S EYE OVERRODE A MEASUREMENT THAT SAID "ALREADY CENTRED", AND THE MEASUREMENT WAS CHECKED
+FIRST.** *"lizzie, move the left thruster to the left ... yuri - move the left to the right."* Before
+applying it: the bell BODIES measure at ±0.185…0.194 for lizzie and ±0.138…0.145 for yuri across
+three separate row bands above the mouth — exactly where the flames already sat — and the flame
+template is centred in its own box to within **0.24 px**, so neither was a placement defect. He is
+judging against the visible bell MOUTH rather than the housing, and the art is his call. Stored as
+`MOUNT_NUDGE_PX` in INK pixels and divided by each frame's own hull width, so a banked frame gets
+the same visual shift as the hull frame. **Check before you nudge — a fudge factor that papers over
+a real bug is the thing this file exists to prevent — then apply his call anyway.**
+
+⚠ **THE SPILL THE FRINGE PASS CANNOT SEE IS THE SPILL ONE PIXEL IN.** 0906t only converts pixels
+that TOUCH transparency, and the worst dots sit embedded in the black edge with neighbours on all
+four sides. 10,884 survived. They are vivid and **alone in their own hue**, which is what makes them
+dots — and that same aloneness is what makes them safe to convert on a purple ship, because
+Freezer's violet and Falva's pink pixels sit among others of their own hue and always have
+companions. Same reasoning as the depth-decay test one pass up, applied laterally.
+
+⚠ **AND THE CLEANUP STOPS AT PURPLE, DELIBERATELY.** The same metric finds vivid green, cyan and
+blue dots too — 18,697 hue-outliers clustering at 120-135°, 165-195°, 240-255° and 300-315°, the
+corners of the colour cube, which is a chroma-key signature. But **Cole's hull IS green, Maverick's
+IS teal and Axel's IS blue**, and a hue-agnostic version scored **1,000 hits on Juggernaut, whose
+copper highlights are paint**; relaxing the neighbour test to catch dots in a black edge took the
+total to **69,995**, which is eating airframes. Mike asked for the purple. The rest is left alone
+and recorded rather than guessed at — **a cleanup that cannot tell dirt from paint should stop at
+the part where it can.**
+
 ## 0906t — the purple halo, and why a flame with one hue is not a flame
 
 ⚠ **SETTING THE HUE FLATTENS A FLAME; ROTATING IT DOES NOT.** Mike: *"the animation should be as

@@ -116,6 +116,103 @@ def convert(cell):
     return len(hits)
 
 
+def hue_gap(a, b):
+    d = abs(a - b) % 1.0
+    return min(d, 1.0 - d) * 360.0
+
+
+def despeckle(cell):
+    """key SPILL on the silhouette: a saturated pixel whose hue matches almost none of its neighbours.
+
+    ⚠ THE MAGENTA RULE ONLY EVER CAUGHT A QUARTER OF THIS. Measured across all nine hulls, 18,697
+    boundary pixels are saturated AND unlike 75%+ of their own neighbours, and their hues cluster
+    at 120-135 deg (4,535), 240-255 (3,707), 300-315 (3,570) and 165-195 (2,644) - green, blue,
+    magenta and cyan, i.e. the CORNERS OF THE COLOUR CUBE. That is chroma-key spill, not paint, and
+    a magenta-only sweep leaves the green and cyan dots on every wing edge - which is what was
+    still speckling the hulls after 0906t.
+
+    ⚠ AND "UNLIKE ITS NEIGHBOURS" IS WHAT MAKES IT SAFE ON A SHIP THAT IS THAT COLOUR. Cole's hull
+    is green and Maverick's is teal; their green and teal pixels sit among other green and teal
+    pixels, so they never qualify. A hue LIST would have had to special-case both."""
+    px = cell.load()
+    w, h = cell.size
+    hits = []
+    for y in range(h):
+        for x in range(w):
+            p0 = px[x, y]
+            if p0[3] <= 16:
+                continue
+            h0, s0, v0 = colorsys.rgb_to_hsv(p0[0] / 255., p0[1] / 255., p0[2] / 255.)
+            if s0 < 0.30:
+                continue
+            nb = []
+            edge = False
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    if dx == 0 and dy == 0:
+                        continue
+                    nx, ny = x + dx, y + dy
+                    if nx < 0 or ny < 0 or nx >= w or ny >= h or px[nx, ny][3] <= 16:
+                        edge = True
+                        continue
+                    q = colorsys.rgb_to_hsv(*[v / 255. for v in px[nx, ny][:3]])
+                    if q[1] >= 0.10:
+                        nb.append(q[0])
+            if not edge or len(nb) < 2:
+                continue
+            if sum(1 for q in nb if hue_gap(h0, q) > 55) >= len(nb) * 0.75:
+                hits.append((x, y))
+    for (x, y) in hits:
+        px[x, y] = (EDGE[0], EDGE[1], EDGE[2], px[x, y][3])
+    return len(hits)
+
+
+def depurple(cell):
+    """the purple SPILL DOTS the fringe pass cannot reach - vivid, and alone in their own hue.
+
+    ⚠ THE FRINGE PASS ONLY SEES PIXELS THAT TOUCH TRANSPARENCY, AND THE WORST DOTS DO NOT. They sit
+    one pixel inside, embedded in the black edge, so they have neighbours on all four sides and
+    never qualify as boundary. 10,884 of them survived 0906t across the nine hulls.
+
+    ⚠ AND THE COMPANION TEST IS WHAT MAKES THIS SAFE ON A PURPLE SHIP. Freezer's aircraft is violet
+    and Falva's is pink; their own hull pixels sit among other pixels of the same hue, so they have
+    companions and are never touched. A spill dot is alone in its hue by definition - that is what
+    makes it a dot. This is the same reasoning as the depth-decay test one pass up, applied
+    laterally instead of inward, and it means neither ship needs to be named.
+
+    ⚠ RESTRICTED TO PURPLE ON PURPOSE. The same measurement finds vivid green, cyan and blue dots
+    too, but Cole's hull IS green, Maverick's IS teal and Axel's IS blue, and at that point the
+    rule starts scoring real paint - juggernaut's copper highlights came back as 1,000 hits under
+    a hue-agnostic version. Mike asked for the purple; the rest is left alone rather than guessed."""
+    px = cell.load()
+    w, h = cell.size
+    hits = []
+    for y in range(h):
+        for x in range(w):
+            p0 = px[x, y]
+            if p0[3] <= 16:
+                continue
+            h0, s0, v0 = colorsys.rgb_to_hsv(p0[0] / 255., p0[1] / 255., p0[2] / 255.)
+            if s0 < 0.45 or not (283.0 <= h0 * 360.0 <= 325.0):
+                continue
+            same = 0
+            for dx in (-1, 0, 1):
+                for dy in (-1, 0, 1):
+                    if dx == 0 and dy == 0:
+                        continue
+                    nx, ny = x + dx, y + dy
+                    if nx < 0 or ny < 0 or nx >= w or ny >= h or px[nx, ny][3] <= 16:
+                        continue
+                    q = colorsys.rgb_to_hsv(*[v / 255. for v in px[nx, ny][:3]])
+                    if q[1] >= 0.30 and hue_gap(h0, q[0]) <= 40:
+                        same += 1
+            if same <= 1:
+                hits.append((x, y))
+    for (x, y) in hits:
+        px[x, y] = (EDGE[0], EDGE[1], EDGE[2], px[x, y][3])
+    return len(hits)
+
+
 def boundary_dark(cell):
     """what fraction of the outer boundary is dark - the thing the conversion is trying to fix"""
     px = cell.load()
@@ -158,7 +255,7 @@ def main():
             cell = A.crop((x, y, x + w, y + h))
             d, t = boundary_dark(cell)
             d_before += d; b_before += t
-            n = convert(cell)
+            n = convert(cell) + despeckle(cell) + depurple(cell)
             if n:
                 A.paste(cell, (x, y))
             pk = k[5:].split('_')[0]

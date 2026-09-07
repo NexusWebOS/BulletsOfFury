@@ -59,6 +59,16 @@ OVERLAY = {'cole', 'decker', 'yuri', 'maverick', 'lizzie'}
 # 10%"). His bells are the widest of the nine relative to his hull, so one global share of hull
 # width lands slightly over-scale on him alone.
 FLAME_SCALE = {'cole': 0.90}
+# ⚠ MIKE'S CALL, AND IT OVERRIDES A MEASUREMENT THAT SAYS THEY ARE ALREADY CENTRED (0906u).
+# "lizzie, move the left thruster to the left to get it centered a lil more, same with the right.
+#  yuri - move the left to the right a little more, move the right to the left a little more."
+# Checked first, because a nudge that papers over a real bug is worth catching: the bell bodies
+# measure at +/-0.185..0.194 for lizzie and +/-0.138..0.145 for yuri across three row bands above
+# the mouth - i.e. exactly where the flames already sit - and the flame template is centred in its
+# own box to within 0.24 px, so neither is a placement defect. He is looking at the visible bell
+# MOUTH rather than the housing, and the art is his. Stored in INK PIXELS and divided by each
+# frame's own hull width so a banked frame gets the same visual shift as the hull one.
+MOUNT_NUDGE_PX = {'lizzie': +3.0, 'yuri': -3.0}      # + spreads the pair, - closes it
 BORE_F = 0.86                              # flame width as a share of the nozzle's measured bore
 EMERGE = 0.92                              # the share of the flame that clears the nozzle
 GLOW_F = 0.28                              # glow blur as a fraction of the flame's own height
@@ -264,7 +274,7 @@ def tail_mounts(cell, n, band=0.28):
 FLAME_W_F = None                           # set from Juggernaut's own art at run time
 
 
-def nozzles(cell, ox, oy, n, fixed=None, band=0.34):
+def nozzles(cell, ox, oy, n, fixed=None, band=0.34, nudge=0.0):
     """each nozzle's CENTRE and MOUTH row, from the DEEPEST ink in the fuselage.
 
     ⚠ THE ENGINE BELL IS THE DEEPEST THING ON THE FUSELAGE, AND THAT IS THE ONLY SIGNAL THAT
@@ -319,6 +329,7 @@ def nozzles(cell, ox, oy, n, fixed=None, band=0.34):
     if L and R2:
         gl = max(L, key=len); gr = max(R2, key=len)
         m = ((mid - sum(gl) / float(len(gl))) + (sum(gr) / float(len(gr)) - mid)) / 2.0
+        m += nudge
         return [(ox + mid - m, mouth_of(gl)), (ox + mid + m, mouth_of(gr))]
     # ⚠ COLE'S TWO BELLS AND THE SPINE BETWEEN THEM ALL REACH THE SAME DEPTH, so they arrive as
     # ONE 51-wide group and there is no second group to pair with. Splitting it down the middle
@@ -327,7 +338,7 @@ def nozzles(cell, ox, oy, n, fixed=None, band=0.34):
     # groups DO separate (yuri 21/145, lizzie 25/222, maverick 21/187), so the two bells sit half
     # a bell width in from each END of the merged run, not a quarter of it from the centre.
     g = max(groups, key=len)
-    half = max(3.0, 0.12 * W / 2.0)
+    half = max(3.0, 0.12 * W / 2.0) - nudge * W
     return [(ox + min(g) + half, mouth_of(g)), (ox + max(g) - half, mouth_of(g))]
 
 
