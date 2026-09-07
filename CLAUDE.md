@@ -507,6 +507,31 @@ signature of this damage and it is one line to check; the eye catches it only at
 recovered by a second pass over the lossy plate. Ship rects do not move when the atlas is APPENDED
 to, so the pre-swap backup still reads correctly at the same rectangles months later.
 
+## 0907h — the ship animation pack, and three things measured before slicing a pixel
+
+⚠ **THE KEY COLOUR IS NOT THE SAME ON EVERY SHEET. FALVA'S IS CYAN.** Six sheets key on magenta
+(hue ~300, rgb ~248,3,250); **Falva's keys on CYAN (hue 181, rgb 3,250,253)** because her aircraft
+is pink and magenta would collide with her own hull. A de-key routine hardcoded to magenta leaves
+her entire background intact - 74% of the sheet - and one hardcoded the other way would punch a
+hole through six ships. Read the key from each sheet's own corner.
+
+⚠ **AND A HOT-PIXEL "IS THERE A FLAME ON THIS SHEET" TEST FIRES ON THE HULL.** Checking the sheets
+were flameless (they must be - the build bakes the flame on, and a drawn one doubles), the warm
+pixel count flagged **Yuri at 3,163 and Falva at 550**. Neither has a flame: Yuri's aircraft is RED
+and Falva's is PINK, so the test was measuring their paint. Same family as 0906p, where a
+brightness count reported flame on five hulls and only Juggernaut had one. **Confirm with the
+picture; a colour count cannot tell a red ship from a lit engine.**
+
+⚠ **THE PACK'S OWN README IS THE MOST USEFUL THING IN IT AND IT WARNS YOU.** "source drafts, not
+cleaned, sliced, or dimension-matched... known issues include repeated angles, underside/design
+drift, and inconsistent rotation order." So the 8x4 grid is a starting assumption, not a fact:
+verify each row's pose order and check for repeated frames per ship before mapping anything onto
+the game's names. This is the same slicer trap as 0906k, where one height was written for every
+frame and 19 of Yuri's 25 rects carried a neighbour's tail.
+
+All seven sheets are 1774x887 on a 221x221 grid, every file verified against the pack's own
+sha256 manifest, and none carries a drawn flame.
+
 ## 0907e — a detached thruster, and a centroid that cannot measure a 2px shift
 
 ⚠ **THE FIXED-MOUNT BRANCH TOOK ITS MOUTH FROM THE WIDEST DEEP-INK GROUP, NOT FROM THE MOUNT.**
