@@ -146,7 +146,12 @@ def solve(pilot, cur, geom, fmap):
 
 
 def build(write=False):
-    cur = load_json('docs/_ships_current.json')
+    # ⚠ THE PRE-DROP SHIPS TABLE IS A BUILD INPUT, NOT A SCRATCH DUMP, AND IT IS NOT REGENERABLE
+    # ONCE THIS SCRIPT HAS RUN. Every pilot's canvas height and `_nf` anchor is read from it to
+    # keep the ship where it already sat on screen - and the moment the manifest is overwritten,
+    # the only other copy is git history. It lived in docs/ under a leading underscore, was
+    # untracked, and would have been lost to a clean checkout.
+    cur = load_json('assets/data/ships_pre0907u.json')
     geom = load_json('docs/PACK_HULL_GEOM_0907T.json')
     fmap = load_json('assets/data/pack_frame_map_0907s.json')
     pilots = sorted(fmap)

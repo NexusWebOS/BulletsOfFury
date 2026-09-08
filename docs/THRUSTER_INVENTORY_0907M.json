@@ -1,0 +1,1352 @@
+{
+ "juggernaut": {
+  "long r0c0": {
+   "flame": 1251,
+   "detached": 0,
+   "clipped": 27,
+   "trapped": 0,
+   "hull": 15287
+  },
+  "long r0c1": {
+   "flame": 1292,
+   "detached": 0,
+   "clipped": 17,
+   "trapped": 0,
+   "hull": 14404
+  },
+  "long r0c2": {
+   "flame": 850,
+   "detached": 0,
+   "clipped": 30,
+   "trapped": 0,
+   "hull": 8006
+  },
+  "long r0c3": {
+   "flame": 1319,
+   "detached": 0,
+   "clipped": 32,
+   "trapped": 0,
+   "hull": 14017
+  },
+  "long r0c4": {
+   "flame": 1014,
+   "detached": 0,
+   "clipped": 34,
+   "trapped": 2,
+   "hull": 15840
+  },
+  "long r0c5": {
+   "flame": 1286,
+   "detached": 0,
+   "clipped": 31,
+   "trapped": 0,
+   "hull": 14096
+  },
+  "long r0c6": {
+   "flame": 797,
+   "detached": 0,
+   "clipped": 29,
+   "trapped": 0,
+   "hull": 7909
+  },
+  "long r0c7": {
+   "flame": 1355,
+   "detached": 0,
+   "clipped": 28,
+   "trapped": 0,
+   "hull": 14276
+  },
+  "long r1c0": {
+   "flame": 1378,
+   "detached": 218,
+   "clipped": 54,
+   "trapped": 0,
+   "hull": 15300
+  },
+  "long r1c1": {
+   "flame": 1634,
+   "detached": 173,
+   "clipped": 17,
+   "trapped": 0,
+   "hull": 12423
+  },
+  "long r1c2": {
+   "flame": 729,
+   "detached": 503,
+   "clipped": 30,
+   "trapped": 0,
+   "hull": 6168
+  },
+  "long r1c3": {
+   "flame": 1411,
+   "detached": 273,
+   "clipped": 46,
+   "trapped": 1,
+   "hull": 14369
+  },
+  "long r1c4": {
+   "flame": 1435,
+   "detached": 359,
+   "clipped": 51,
+   "trapped": 0,
+   "hull": 14942
+  },
+  "long r1c5": {
+   "flame": 1398,
+   "detached": 270,
+   "clipped": 47,
+   "trapped": 0,
+   "hull": 14447
+  },
+  "long r1c6": {
+   "flame": 344,
+   "detached": 497,
+   "clipped": 30,
+   "trapped": 0,
+   "hull": 6694
+  },
+  "long r1c7": {
+   "flame": 1383,
+   "detached": 195,
+   "clipped": 53,
+   "trapped": 0,
+   "hull": 15321
+  },
+  "long r2c0": {
+   "flame": 1560,
+   "detached": 200,
+   "clipped": 26,
+   "trapped": 1,
+   "hull": 13668
+  },
+  "long r2c1": {
+   "flame": 1614,
+   "detached": 0,
+   "clipped": 10,
+   "trapped": 0,
+   "hull": 14644
+  },
+  "long r2c2": {
+   "flame": 1485,
+   "detached": 0,
+   "clipped": 8,
+   "trapped": 0,
+   "hull": 14023
+  },
+  "long r2c3": {
+   "flame": 1358,
+   "detached": 64,
+   "clipped": 28,
+   "trapped": 0,
+   "hull": 14413
+  },
+  "long r2c4": {
+   "flame": 1374,
+   "detached": 64,
+   "clipped": 70,
+   "trapped": 1227,
+   "hull": 15572
+  },
+  "long r2c5": {
+   "flame": 1525,
+   "detached": 63,
+   "clipped": 22,
+   "trapped": 1,
+   "hull": 14266
+  },
+  "long r2c6": {
+   "flame": 1617,
+   "detached": 0,
+   "clipped": 8,
+   "trapped": 0,
+   "hull": 14406
+  },
+  "long r2c7": {
+   "flame": 1365,
+   "detached": 210,
+   "clipped": 52,
+   "trapped": 0,
+   "hull": 15265
+  },
+  "long r3c0": {
+   "flame": 1355,
+   "detached": 0,
+   "clipped": 7,
+   "trapped": 0,
+   "hull": 15147
+  },
+  "long r3c1": {
+   "flame": 1421,
+   "detached": 0,
+   "clipped": 9,
+   "trapped": 3,
+   "hull": 13360
+  },
+  "long r3c2": {
+   "flame": 1287,
+   "detached": 0,
+   "clipped": 28,
+   "trapped": 0,
+   "hull": 14958
+  },
+  "long r3c3": {
+   "flame": 1503,
+   "detached": 145,
+   "clipped": 45,
+   "trapped": 0,
+   "hull": 14050
+  },
+  "long r3c4": {
+   "flame": 1199,
+   "detached": 0,
+   "clipped": 65,
+   "trapped": 907,
+   "hull": 15209
+  },
+  "long r3c5": {
+   "flame": 1407,
+   "detached": 64,
+   "clipped": 21,
+   "trapped": 0,
+   "hull": 14112
+  },
+  "long r3c6": {
+   "flame": 1231,
+   "detached": 0,
+   "clipped": 25,
+   "trapped": 1,
+   "hull": 14591
+  },
+  "long r3c7": {
+   "flame": 1684,
+   "detached": 193,
+   "clipped": 26,
+   "trapped": 6,
+   "hull": 13973
+  },
+  "short r0c0": {
+   "flame": 1016,
+   "detached": 0,
+   "clipped": 13,
+   "trapped": 0,
+   "hull": 15314
+  },
+  "short r0c1": {
+   "flame": 991,
+   "detached": 0,
+   "clipped": 10,
+   "trapped": 0,
+   "hull": 14443
+  },
+  "short r0c2": {
+   "flame": 517,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 8169
+  },
+  "short r0c3": {
+   "flame": 821,
+   "detached": 0,
+   "clipped": 10,
+   "trapped": 0,
+   "hull": 14156
+  },
+  "short r0c4": {
+   "flame": 867,
+   "detached": 0,
+   "clipped": 15,
+   "trapped": 0,
+   "hull": 15735
+  },
+  "short r0c5": {
+   "flame": 794,
+   "detached": 0,
+   "clipped": 12,
+   "trapped": 0,
+   "hull": 14188
+  },
+  "short r0c6": {
+   "flame": 515,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 8032
+  },
+  "short r0c7": {
+   "flame": 1045,
+   "detached": 0,
+   "clipped": 8,
+   "trapped": 0,
+   "hull": 14272
+  },
+  "short r1c0": {
+   "flame": 976,
+   "detached": 0,
+   "clipped": 15,
+   "trapped": 0,
+   "hull": 15282
+  },
+  "short r1c1": {
+   "flame": 1112,
+   "detached": 0,
+   "clipped": 8,
+   "trapped": 0,
+   "hull": 12013
+  },
+  "short r1c2": {
+   "flame": 426,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 5898
+  },
+  "short r1c3": {
+   "flame": 902,
+   "detached": 38,
+   "clipped": 10,
+   "trapped": 0,
+   "hull": 13757
+  },
+  "short r1c4": {
+   "flame": 889,
+   "detached": 0,
+   "clipped": 13,
+   "trapped": 0,
+   "hull": 14591
+  },
+  "short r1c5": {
+   "flame": 921,
+   "detached": 41,
+   "clipped": 10,
+   "trapped": 0,
+   "hull": 13795
+  },
+  "short r1c6": {
+   "flame": 11,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 6490
+  },
+  "short r1c7": {
+   "flame": 981,
+   "detached": 0,
+   "clipped": 16,
+   "trapped": 0,
+   "hull": 15276
+  },
+  "short r2c0": {
+   "flame": 1037,
+   "detached": 0,
+   "clipped": 6,
+   "trapped": 0,
+   "hull": 13264
+  },
+  "short r2c1": {
+   "flame": 1105,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 14354
+  },
+  "short r2c2": {
+   "flame": 1047,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 13752
+  },
+  "short r2c3": {
+   "flame": 1003,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 14164
+  },
+  "short r2c4": {
+   "flame": 988,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 14164
+  },
+  "short r2c5": {
+   "flame": 1023,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 13957
+  },
+  "short r2c6": {
+   "flame": 1041,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 14094
+  },
+  "short r2c7": {
+   "flame": 997,
+   "detached": 0,
+   "clipped": 7,
+   "trapped": 0,
+   "hull": 15049
+  },
+  "short r3c0": {
+   "flame": 1030,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 14993
+  },
+  "short r3c1": {
+   "flame": 930,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 3,
+   "hull": 12979
+  },
+  "short r3c2": {
+   "flame": 978,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 14114
+  },
+  "short r3c3": {
+   "flame": 613,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 13479
+  },
+  "short r3c4": {
+   "flame": 1000,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 14589
+  },
+  "short r3c5": {
+   "flame": 574,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 13547
+  },
+  "short r3c6": {
+   "flame": 955,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 14200
+  },
+  "short r3c7": {
+   "flame": 934,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 1,
+   "hull": 13134
+  }
+ },
+ "yuri": {
+  "long r0c0": {
+   "flame": 2387,
+   "detached": 0,
+   "clipped": 32,
+   "trapped": 0,
+   "hull": 13307
+  },
+  "long r0c1": {
+   "flame": 1792,
+   "detached": 0,
+   "clipped": 17,
+   "trapped": 0,
+   "hull": 11929
+  },
+  "long r0c2": {
+   "flame": 1178,
+   "detached": 0,
+   "clipped": 25,
+   "trapped": 0,
+   "hull": 6588
+  },
+  "long r0c3": {
+   "flame": 1757,
+   "detached": 0,
+   "clipped": 16,
+   "trapped": 1,
+   "hull": 12427
+  },
+  "long r0c4": {
+   "flame": 1512,
+   "detached": 0,
+   "clipped": 33,
+   "trapped": 0,
+   "hull": 14924
+  },
+  "long r0c5": {
+   "flame": 1638,
+   "detached": 0,
+   "clipped": 17,
+   "trapped": 0,
+   "hull": 12582
+  },
+  "long r0c6": {
+   "flame": 1115,
+   "detached": 0,
+   "clipped": 25,
+   "trapped": 0,
+   "hull": 6533
+  },
+  "long r0c7": {
+   "flame": 1967,
+   "detached": 0,
+   "clipped": 17,
+   "trapped": 0,
+   "hull": 11784
+  },
+  "long r1c0": {
+   "flame": 2555,
+   "detached": 261,
+   "clipped": 60,
+   "trapped": 0,
+   "hull": 13306
+  },
+  "long r1c1": {
+   "flame": 1778,
+   "detached": 127,
+   "clipped": 16,
+   "trapped": 1,
+   "hull": 11279
+  },
+  "long r1c2": {
+   "flame": 740,
+   "detached": 218,
+   "clipped": 25,
+   "trapped": 0,
+   "hull": 6309
+  },
+  "long r1c3": {
+   "flame": 925,
+   "detached": 117,
+   "clipped": 17,
+   "trapped": 0,
+   "hull": 10350
+  },
+  "long r1c4": {
+   "flame": 1607,
+   "detached": 268,
+   "clipped": 32,
+   "trapped": 0,
+   "hull": 11961
+  },
+  "long r1c5": {
+   "flame": 855,
+   "detached": 115,
+   "clipped": 16,
+   "trapped": 0,
+   "hull": 10265
+  },
+  "long r1c6": {
+   "flame": 680,
+   "detached": 213,
+   "clipped": 25,
+   "trapped": 0,
+   "hull": 6018
+  },
+  "long r1c7": {
+   "flame": 1914,
+   "detached": 115,
+   "clipped": 16,
+   "trapped": 0,
+   "hull": 11403
+  },
+  "long r2c0": {
+   "flame": 1871,
+   "detached": 159,
+   "clipped": 59,
+   "trapped": 0,
+   "hull": 12101
+  },
+  "long r2c1": {
+   "flame": 2100,
+   "detached": 303,
+   "clipped": 32,
+   "trapped": 2,
+   "hull": 12312
+  },
+  "long r2c2": {
+   "flame": 1708,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 1,
+   "hull": 11606
+  },
+  "long r2c3": {
+   "flame": 2330,
+   "detached": 0,
+   "clipped": 27,
+   "trapped": 0,
+   "hull": 13349
+  },
+  "long r2c4": {
+   "flame": 2172,
+   "detached": 0,
+   "clipped": 7,
+   "trapped": 0,
+   "hull": 12666
+  },
+  "long r2c5": {
+   "flame": 1841,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11596
+  },
+  "long r2c6": {
+   "flame": 2002,
+   "detached": 32,
+   "clipped": 14,
+   "trapped": 6,
+   "hull": 12115
+  },
+  "long r2c7": {
+   "flame": 2609,
+   "detached": 0,
+   "clipped": 14,
+   "trapped": 4,
+   "hull": 13960
+  },
+  "long r3c0": {
+   "flame": 2316,
+   "detached": 0,
+   "clipped": 6,
+   "trapped": 0,
+   "hull": 13160
+  },
+  "long r3c1": {
+   "flame": 2119,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 4,
+   "hull": 12410
+  },
+  "long r3c2": {
+   "flame": 1882,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 12093
+  },
+  "long r3c3": {
+   "flame": 2042,
+   "detached": 99,
+   "clipped": 24,
+   "trapped": 0,
+   "hull": 12200
+  },
+  "long r3c4": {
+   "flame": 1871,
+   "detached": 0,
+   "clipped": 7,
+   "trapped": 1,
+   "hull": 11162
+  },
+  "long r3c5": {
+   "flame": 2026,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11790
+  },
+  "long r3c6": {
+   "flame": 1827,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11778
+  },
+  "long r3c7": {
+   "flame": 2172,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 1,
+   "hull": 12423
+  },
+  "short r0c0": {
+   "flame": 2044,
+   "detached": 0,
+   "clipped": 8,
+   "trapped": 5,
+   "hull": 13372
+  },
+  "short r0c1": {
+   "flame": 1275,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 5,
+   "hull": 11586
+  },
+  "short r0c2": {
+   "flame": 778,
+   "detached": 0,
+   "clipped": 4,
+   "trapped": 0,
+   "hull": 6502
+  },
+  "short r0c3": {
+   "flame": 1267,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 12033
+  },
+  "short r0c4": {
+   "flame": 1140,
+   "detached": 0,
+   "clipped": 8,
+   "trapped": 0,
+   "hull": 15055
+  },
+  "short r0c5": {
+   "flame": 1063,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 12236
+  },
+  "short r0c6": {
+   "flame": 754,
+   "detached": 0,
+   "clipped": 4,
+   "trapped": 0,
+   "hull": 6417
+  },
+  "short r0c7": {
+   "flame": 1392,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 2,
+   "hull": 11483
+  },
+  "short r1c0": {
+   "flame": 1942,
+   "detached": 0,
+   "clipped": 21,
+   "trapped": 1,
+   "hull": 13707
+  },
+  "short r1c1": {
+   "flame": 1468,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11095
+  },
+  "short r1c2": {
+   "flame": 185,
+   "detached": 0,
+   "clipped": 2,
+   "trapped": 0,
+   "hull": 6499
+  },
+  "short r1c3": {
+   "flame": 946,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 10403
+  },
+  "short r1c4": {
+   "flame": 1099,
+   "detached": 0,
+   "clipped": 6,
+   "trapped": 1,
+   "hull": 13919
+  },
+  "short r1c5": {
+   "flame": 912,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 10180
+  },
+  "short r1c6": {
+   "flame": 170,
+   "detached": 0,
+   "clipped": 2,
+   "trapped": 0,
+   "hull": 6024
+  },
+  "short r1c7": {
+   "flame": 1329,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11123
+  },
+  "short r2c0": {
+   "flame": 1343,
+   "detached": 61,
+   "clipped": 15,
+   "trapped": 0,
+   "hull": 11388
+  },
+  "short r2c1": {
+   "flame": 1390,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11637
+  },
+  "short r2c2": {
+   "flame": 1292,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 1,
+   "hull": 11470
+  },
+  "short r2c3": {
+   "flame": 1905,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 6,
+   "hull": 13352
+  },
+  "short r2c4": {
+   "flame": 1684,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 12437
+  },
+  "short r2c5": {
+   "flame": 1381,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11439
+  },
+  "short r2c6": {
+   "flame": 1352,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 2,
+   "hull": 11756
+  },
+  "short r2c7": {
+   "flame": 1912,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 13479
+  },
+  "short r3c0": {
+   "flame": 1929,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 1,
+   "hull": 13466
+  },
+  "short r3c1": {
+   "flame": 1328,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 2,
+   "hull": 12036
+  },
+  "short r3c2": {
+   "flame": 1630,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 12496
+  },
+  "short r3c3": {
+   "flame": 1519,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11998
+  },
+  "short r3c4": {
+   "flame": 986,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11192
+  },
+  "short r3c5": {
+   "flame": 1575,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 1,
+   "hull": 11916
+  },
+  "short r3c6": {
+   "flame": 1618,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 3,
+   "hull": 12396
+  },
+  "short r3c7": {
+   "flame": 1601,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 11809
+  }
+ },
+ "falva": {
+  "long r0c0": {
+   "flame": 138,
+   "detached": 0,
+   "clipped": 18,
+   "trapped": 2,
+   "hull": 16553
+  },
+  "long r0c1": {
+   "flame": 97,
+   "detached": 0,
+   "clipped": 19,
+   "trapped": 6,
+   "hull": 12631
+  },
+  "long r0c2": {
+   "flame": 33,
+   "detached": 0,
+   "clipped": 24,
+   "trapped": 0,
+   "hull": 6846
+  },
+  "long r0c3": {
+   "flame": 97,
+   "detached": 0,
+   "clipped": 15,
+   "trapped": 6,
+   "hull": 13374
+  },
+  "long r0c4": {
+   "flame": 126,
+   "detached": 0,
+   "clipped": 11,
+   "trapped": 13,
+   "hull": 16347
+  },
+  "long r0c5": {
+   "flame": 110,
+   "detached": 0,
+   "clipped": 14,
+   "trapped": 1,
+   "hull": 13391
+  },
+  "long r0c6": {
+   "flame": 54,
+   "detached": 0,
+   "clipped": 26,
+   "trapped": 0,
+   "hull": 6841
+  },
+  "long r0c7": {
+   "flame": 91,
+   "detached": 0,
+   "clipped": 21,
+   "trapped": 7,
+   "hull": 12961
+  },
+  "long r1c0": {
+   "flame": 139,
+   "detached": 0,
+   "clipped": 35,
+   "trapped": 1,
+   "hull": 16545
+  },
+  "long r1c1": {
+   "flame": 143,
+   "detached": 224,
+   "clipped": 18,
+   "trapped": 3,
+   "hull": 13290
+  },
+  "long r1c2": {
+   "flame": 0,
+   "detached": 491,
+   "clipped": 24,
+   "trapped": 1,
+   "hull": 6703
+  },
+  "long r1c3": {
+   "flame": 80,
+   "detached": 112,
+   "clipped": 13,
+   "trapped": 6,
+   "hull": 12458
+  },
+  "long r1c4": {
+   "flame": 85,
+   "detached": 0,
+   "clipped": 11,
+   "trapped": 0,
+   "hull": 15035
+  },
+  "long r1c5": {
+   "flame": 74,
+   "detached": 115,
+   "clipped": 14,
+   "trapped": 6,
+   "hull": 12319
+  },
+  "long r1c6": {
+   "flame": 0,
+   "detached": 566,
+   "clipped": 25,
+   "trapped": 0,
+   "hull": 7774
+  },
+  "long r1c7": {
+   "flame": 143,
+   "detached": 290,
+   "clipped": 20,
+   "trapped": 0,
+   "hull": 13430
+  },
+  "long r2c0": {
+   "flame": 139,
+   "detached": 184,
+   "clipped": 34,
+   "trapped": 0,
+   "hull": 14079
+  },
+  "long r2c1": {
+   "flame": 107,
+   "detached": 0,
+   "clipped": 15,
+   "trapped": 0,
+   "hull": 12580
+  },
+  "long r2c2": {
+   "flame": 150,
+   "detached": 0,
+   "clipped": 15,
+   "trapped": 0,
+   "hull": 13626
+  },
+  "long r2c3": {
+   "flame": 130,
+   "detached": 0,
+   "clipped": 16,
+   "trapped": 5,
+   "hull": 15252
+  },
+  "long r2c4": {
+   "flame": 132,
+   "detached": 0,
+   "clipped": 16,
+   "trapped": 7,
+   "hull": 15217
+  },
+  "long r2c5": {
+   "flame": 124,
+   "detached": 0,
+   "clipped": 15,
+   "trapped": 1,
+   "hull": 13599
+  },
+  "long r2c6": {
+   "flame": 97,
+   "detached": 0,
+   "clipped": 15,
+   "trapped": 0,
+   "hull": 12561
+  },
+  "long r2c7": {
+   "flame": 145,
+   "detached": 0,
+   "clipped": 15,
+   "trapped": 0,
+   "hull": 14878
+  },
+  "long r3c0": {
+   "flame": 134,
+   "detached": 0,
+   "clipped": 31,
+   "trapped": 6,
+   "hull": 16398
+  },
+  "long r3c1": {
+   "flame": 110,
+   "detached": 135,
+   "clipped": 14,
+   "trapped": 5,
+   "hull": 13903
+  },
+  "long r3c2": {
+   "flame": 76,
+   "detached": 140,
+   "clipped": 26,
+   "trapped": 0,
+   "hull": 13386
+  },
+  "long r3c3": {
+   "flame": 1,
+   "detached": 190,
+   "clipped": 25,
+   "trapped": 2,
+   "hull": 12293
+  },
+  "long r3c4": {
+   "flame": 96,
+   "detached": 144,
+   "clipped": 15,
+   "trapped": 0,
+   "hull": 13436
+  },
+  "long r3c5": {
+   "flame": 0,
+   "detached": 141,
+   "clipped": 19,
+   "trapped": 13,
+   "hull": 12272
+  },
+  "long r3c6": {
+   "flame": 77,
+   "detached": 136,
+   "clipped": 19,
+   "trapped": 0,
+   "hull": 13395
+  },
+  "long r3c7": {
+   "flame": 145,
+   "detached": 140,
+   "clipped": 15,
+   "trapped": 4,
+   "hull": 13825
+  },
+  "short r0c0": {
+   "flame": 1,
+   "detached": 0,
+   "clipped": 14,
+   "trapped": 4,
+   "hull": 16680
+  },
+  "short r0c1": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 14,
+   "trapped": 10,
+   "hull": 12702
+  },
+  "short r0c2": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 19,
+   "trapped": 0,
+   "hull": 6707
+  },
+  "short r0c3": {
+   "flame": 1,
+   "detached": 0,
+   "clipped": 16,
+   "trapped": 6,
+   "hull": 13600
+  },
+  "short r0c4": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 14,
+   "trapped": 13,
+   "hull": 16669
+  },
+  "short r0c5": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 16,
+   "trapped": 1,
+   "hull": 13649
+  },
+  "short r0c6": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 19,
+   "trapped": 0,
+   "hull": 6768
+  },
+  "short r0c7": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 14,
+   "trapped": 8,
+   "hull": 12993
+  },
+  "short r1c0": {
+   "flame": 0,
+   "detached": 47,
+   "clipped": 22,
+   "trapped": 3,
+   "hull": 16529
+  },
+  "short r1c1": {
+   "flame": 0,
+   "detached": 53,
+   "clipped": 13,
+   "trapped": 2,
+   "hull": 13066
+  },
+  "short r1c2": {
+   "flame": 0,
+   "detached": 187,
+   "clipped": 18,
+   "trapped": 0,
+   "hull": 6405
+  },
+  "short r1c3": {
+   "flame": 0,
+   "detached": 87,
+   "clipped": 16,
+   "trapped": 2,
+   "hull": 12395
+  },
+  "short r1c4": {
+   "flame": 0,
+   "detached": 52,
+   "clipped": 13,
+   "trapped": 1,
+   "hull": 15086
+  },
+  "short r1c5": {
+   "flame": 0,
+   "detached": 86,
+   "clipped": 15,
+   "trapped": 0,
+   "hull": 12276
+  },
+  "short r1c6": {
+   "flame": 0,
+   "detached": 186,
+   "clipped": 18,
+   "trapped": 0,
+   "hull": 7396
+  },
+  "short r1c7": {
+   "flame": 0,
+   "detached": 56,
+   "clipped": 13,
+   "trapped": 3,
+   "hull": 13152
+  },
+  "short r2c0": {
+   "flame": 1,
+   "detached": 0,
+   "clipped": 7,
+   "trapped": 0,
+   "hull": 13890
+  },
+  "short r2c1": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 12520
+  },
+  "short r2c2": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 13494
+  },
+  "short r2c3": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 5,
+   "trapped": 11,
+   "hull": 15330
+  },
+  "short r2c4": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 6,
+   "trapped": 0,
+   "hull": 15341
+  },
+  "short r2c5": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 3,
+   "hull": 13493
+  },
+  "short r2c6": {
+   "flame": 3,
+   "detached": 0,
+   "clipped": 3,
+   "trapped": 1,
+   "hull": 12561
+  },
+  "short r2c7": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 1,
+   "hull": 14830
+  },
+  "short r3c0": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 5,
+   "hull": 16248
+  },
+  "short r3c1": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 3,
+   "hull": 13650
+  },
+  "short r3c2": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 0,
+   "hull": 13231
+  },
+  "short r3c3": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 3,
+   "trapped": 3,
+   "hull": 12604
+  },
+  "short r3c4": {
+   "flame": 1,
+   "detached": 0,
+   "clipped": 3,
+   "trapped": 2,
+   "hull": 13664
+  },
+  "short r3c5": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 16,
+   "hull": 12653
+  },
+  "short r3c6": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 1,
+   "hull": 13247
+  },
+  "short r3c7": {
+   "flame": 0,
+   "detached": 0,
+   "clipped": 0,
+   "trapped": 5,
+   "hull": 13630
+  }
+ }
+}
