@@ -5612,7 +5612,13 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      the screen than everyone else's. */
   var _gD=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok(_gD.indexOf('SIZE BY HEIGHT, NOT WIDTH')>0, 'sizing is normalised on content height');
-  var _cf=_gD.match(/_CF=\{([^}]*)\}/);
+  /* ⚠ THIS MATCHED `_CF` AND THE TABLE IS NOW `_CFO` (fixed 0908a). The rename made the match
+     null, and the SECOND use of it below - added later, outside this block's own guard - threw on
+     `_cf[1]`. The suite died at 1,536 of 3,291 assertions reporting ZERO failures, which is
+     CLAUDE.md rule 3 exactly: a crash wearing a pass. Half the suite has been blind.
+     Matched on the real name, and every use is inside the guard now, so the next rename costs ONE
+     assertion instead of the other 1,755. */
+  var _cf=_gD.match(/_CFO\s*=\s*\{([^}]*)\}/);
   ok(!!_cf, 'per-pilot content-height fractions are baked in');
   if(_cf){
     var vals=_cf[1].split(',').map(function(x){ return parseFloat(x.split(':')[1]); });
@@ -5631,10 +5637,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'and the hull blit draws at that same number — one value, both uses');
   ok(_gD.indexOf('_dw=_shi ? _dh*(_shi.naturalWidth/_shi.naturalHeight)')>0, 'and the width follows the aspect, instead of driving it');
   // the point of the change: every pilot ends up the same on-screen height
-  var _CFv={}; _cf[1].split(',').forEach(function(x){ var p2=x.split(':'); _CFv[p2[0].trim()]=parseFloat(p2[1]); });
-  var _hs=Object.keys(_CFv).map(function(k){ return 1/_CFv[k]; });
-  var _spread=(Math.max.apply(null,_hs)-Math.min.apply(null,_hs))/Math.min.apply(null,_hs);
-  ok(_spread<0.16, 'drawn heights now agree within '+Math.round(_spread*100)+'% across all nine (was 38% for Falva alone)');
+  if(_cf){
+    var _CFv={}; _cf[1].split(',').forEach(function(x){ var p2=x.split(':'); _CFv[p2[0].trim()]=parseFloat(p2[1]); });
+    var _hs=Object.keys(_CFv).map(function(k){ return 1/_CFv[k]; });
+    var _spread=(Math.max.apply(null,_hs)-Math.min.apply(null,_hs))/Math.min.apply(null,_hs);
+    ok(_spread<0.16, 'drawn heights now agree within '+Math.round(_spread*100)+'% across all nine (was 38% for Falva alone)');
+  } else ok(false, 'drawn heights agree across all nine - SKIPPED, the content-fraction table was not found');
 
 
   // ===== 123. IDENTICAL PLUME SIZE (drop 0724cn) =====
