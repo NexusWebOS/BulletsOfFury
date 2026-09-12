@@ -25,3 +25,12 @@ docs/playtest_*/
 # _ART_SOURCES_THRUSTERS, which ARE committed. The atlas built from them is what ships.
 assets/game/ships_thrust/
 assets/game/ships_sliced/
+
+# API KEYS — NEVER COMMITTED
+# _BUILD_SOURCE/.secrets.json holds the ElevenLabs key (and anything like it). It is read by
+# _BUILD_SOURCE/elevenlabs.py at run time and must never enter the repo or a capture. If a key
+# has ever been pasted into a chat, a log or a screenshot, rotate it - ignoring the file does
+# not un-expose a key that has already been seen.
+.secrets.json
+_BUILD_SOURCE/.secrets.json
+*.key

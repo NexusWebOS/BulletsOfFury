@@ -1,0 +1,482 @@
+{
+ "asset": "cursors",
+ "frame_count": 16,
+ "alpha": "binary",
+ "atlas": {
+  "columns": 4,
+  "rows": 4,
+  "cell": [
+   241,
+   251
+  ],
+  "rects": [
+   {
+    "frame": 1,
+    "x": 52,
+    "y": 11,
+    "w": 137,
+    "h": 219
+   },
+   {
+    "frame": 2,
+    "x": 313,
+    "y": 0,
+    "w": 168,
+    "h": 230
+   },
+   {
+    "frame": 3,
+    "x": 553,
+    "y": 11,
+    "w": 179,
+    "h": 219
+   },
+   {
+    "frame": 4,
+    "x": 856,
+    "y": 21,
+    "w": 106,
+    "h": 199
+   },
+   {
+    "frame": 5,
+    "x": 0,
+    "y": 261,
+    "w": 241,
+    "h": 241
+   },
+   {
+    "frame": 6,
+    "x": 281,
+    "y": 271,
+    "w": 200,
+    "h": 231
+   },
+   {
+    "frame": 7,
+    "x": 553,
+    "y": 282,
+    "w": 179,
+    "h": 199
+   },
+   {
+    "frame": 8,
+    "x": 794,
+    "y": 271,
+    "w": 219,
+    "h": 220
+   },
+   {
+    "frame": 9,
+    "x": 0,
+    "y": 595,
+    "w": 241,
+    "h": 95
+   },
+   {
+    "frame": 10,
+    "x": 323,
+    "y": 522,
+    "w": 106,
+    "h": 241
+   },
+   {
+    "frame": 11,
+    "x": 543,
+    "y": 543,
+    "w": 200,
+    "h": 199
+   },
+   {
+    "frame": 12,
+    "x": 804,
+    "y": 543,
+    "w": 201,
+    "h": 199
+   },
+   {
+    "frame": 13,
+    "x": 0,
+    "y": 773,
+    "w": 241,
+    "h": 251
+   },
+   {
+    "frame": 14,
+    "x": 271,
+    "y": 783,
+    "w": 231,
+    "h": 241
+   },
+   {
+    "frame": 15,
+    "x": 532,
+    "y": 783,
+    "w": 232,
+    "h": 241
+   },
+   {
+    "frame": 16,
+    "x": 783,
+    "y": 783,
+    "w": 241,
+    "h": 241
+   }
+  ]
+ },
+ "items": [
+  {
+   "index": 1,
+   "name": "pointer",
+   "source_rect": [
+    52,
+    11,
+    189,
+    230
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    137,
+    219
+   ],
+   "hotspot": [
+    8,
+    9
+   ]
+  },
+  {
+   "index": 2,
+   "name": "pointer-active",
+   "source_rect": [
+    313,
+    0,
+    481,
+    230
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    168,
+    230
+   ],
+   "hotspot": [
+    10,
+    9
+   ]
+  },
+  {
+   "index": 3,
+   "name": "link",
+   "source_rect": [
+    553,
+    11,
+    732,
+    230
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    179,
+    219
+   ],
+   "hotspot": [
+    63,
+    22
+   ]
+  },
+  {
+   "index": 4,
+   "name": "text",
+   "source_rect": [
+    856,
+    21,
+    962,
+    220
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    106,
+    199
+   ],
+   "hotspot": [
+    53,
+    100
+   ]
+  },
+  {
+   "index": 5,
+   "name": "move",
+   "source_rect": [
+    0,
+    261,
+    241,
+    502
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    241,
+    241
+   ],
+   "hotspot": [
+    120,
+    120
+   ]
+  },
+  {
+   "index": 6,
+   "name": "grab",
+   "source_rect": [
+    281,
+    271,
+    481,
+    502
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    200,
+    231
+   ],
+   "hotspot": [
+    90,
+    104
+   ]
+  },
+  {
+   "index": 7,
+   "name": "grabbing",
+   "source_rect": [
+    553,
+    282,
+    732,
+    481
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    179,
+    199
+   ],
+   "hotspot": [
+    84,
+    94
+   ]
+  },
+  {
+   "index": 8,
+   "name": "precision",
+   "source_rect": [
+    794,
+    271,
+    1013,
+    491
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    219,
+    220
+   ],
+   "hotspot": [
+    110,
+    110
+   ]
+  },
+  {
+   "index": 9,
+   "name": "resize-horizontal",
+   "source_rect": [
+    0,
+    595,
+    241,
+    690
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    241,
+    95
+   ],
+   "hotspot": [
+    120,
+    48
+   ]
+  },
+  {
+   "index": 10,
+   "name": "resize-vertical",
+   "source_rect": [
+    323,
+    522,
+    429,
+    763
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    106,
+    241
+   ],
+   "hotspot": [
+    53,
+    120
+   ]
+  },
+  {
+   "index": 11,
+   "name": "resize-nwse",
+   "source_rect": [
+    543,
+    543,
+    743,
+    742
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    200,
+    199
+   ],
+   "hotspot": [
+    100,
+    100
+   ]
+  },
+  {
+   "index": 12,
+   "name": "resize-nesw",
+   "source_rect": [
+    804,
+    543,
+    1005,
+    742
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    201,
+    199
+   ],
+   "hotspot": [
+    100,
+    100
+   ]
+  },
+  {
+   "index": 13,
+   "name": "rotate",
+   "source_rect": [
+    0,
+    773,
+    241,
+    1024
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    241,
+    251
+   ],
+   "hotspot": [
+    120,
+    126
+   ]
+  },
+  {
+   "index": 14,
+   "name": "zoom-in",
+   "source_rect": [
+    271,
+    783,
+    502,
+    1024
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    231,
+    241
+   ],
+   "hotspot": [
+    97,
+    101
+   ]
+  },
+  {
+   "index": 15,
+   "name": "zoom-out",
+   "source_rect": [
+    532,
+    783,
+    764,
+    1024
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    232,
+    241
+   ],
+   "hotspot": [
+    97,
+    101
+   ]
+  },
+  {
+   "index": 16,
+   "name": "unavailable",
+   "source_rect": [
+    783,
+    783,
+    1024,
+    1024
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    241,
+    241
+   ],
+   "hotspot": [
+    120,
+    120
+   ]
+  }
+ ],
+ "notes": "Generated by _BUILD_SOURCE/bod_pack_map_0912f.py. Cells found by GRID slice, then sorted into reading order and named from the prompt order. rectOf() pairs items[i] with atlas.rects[i], so the rects are per-sprite and need not be a lattice."
+}

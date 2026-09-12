@@ -1,0 +1,72 @@
+{
+  "asset": "fov-neon-red",
+  "frame_count": 2,
+  "frame_size": [
+    640,
+    640
+  ],
+  "alpha": "constant-128",
+  "opacity": 0.5,
+  "facing": "south (+Y)",
+  "origin_markers": false,
+  "width_multiplier": 0.5,
+  "height_multiplier": 1.25,
+  "atlas": {
+    "columns": 2,
+    "rows": 1,
+    "cell": [
+      640,
+      640
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 640,
+        "h": 640
+      },
+      {
+        "frame": 2,
+        "x": 680,
+        "y": 0,
+        "w": 640,
+        "h": 640
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "wide",
+      "file": "fov-neon-red-alpha-01.png",
+      "master_visible_size": [
+        1138,
+        971
+      ],
+      "master_origin": [
+        724.0,
+        50
+      ],
+      "runtime_origin": [
+        320,
+        22
+      ]
+    },
+    {
+      "name": "narrow-tall",
+      "file": "fov-neon-red-alpha-02.png",
+      "master_visible_size": [
+        569,
+        1214
+      ],
+      "master_origin": [
+        723.5,
+        50
+      ],
+      "runtime_origin": [
+        320,
+        22
+      ]
+    }
+  ]
+}

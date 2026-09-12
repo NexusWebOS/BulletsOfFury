@@ -166,7 +166,8 @@ run('assets/manifest.js', 'manifest');
    — which is the whole reason "a harness pass is not a game pass" keeps being true. */
 run('assets/section_geom.js', 'section_geom');
 run('assets/game.js', 'game');
-if(errors.length){ console.log('LOAD ERRORS:'); errors.forEach(e=>console.log('  '+e)); process.exit(1); }
+if(errors.length){ console.log('LOAD ERRORS:'); errors.forEach(e=>
+console.log('  '+e)); process.exit(1); }
 
 /* top-level const/let in a vm script live in the lexical scope, not on the global object.
    Bridge them out with getters/setters so the harness can read + write real engine state. */
@@ -214,6 +215,26 @@ function cellSize(M, k, pngSize){
   return M.img[k] ? pngSize(M.img[k]) : null;
 }
 function ok(c, m) { if (!c) errors.push('ASSERT FAIL: ' + m); else console.log('  ok  ' + m); }
+
+/* ============================================================
+   THE STAR THRUSTER SYSTEM WAS DELETED ON PURPOSE (drop 0906s) - okThr()
+
+   Mike: "now you may make them animate via pixel glow inside and viola. we've solved a major
+   problem and we can delete those ugly ass old thrusters we were using."
+
+   0906s removed nthp_ (36 cells, 36 img rows), drawShipThruster, both inline plume blocks and
+   the PRELOAD entry - 338 lines - and replaced the overlay plume with ship_<pilot><suffix>_g1/_g2
+   phase cells picked by shipGlowKey(): the same silhouette with only the flame's INTERIOR
+   brightness changed, so the plume that 0906q/r spent two rounds seating cannot drift.
+
+   Two dozen assertions here test that deleted system - its source-comment markers, its mount
+   geometry, its content-height normalisation. They were failing against a game that is correct.
+   Retired the same way the Magma Colossus mech block is: the assertion stays, in place and
+   reversible, and records the retirement instead of asserting a system nothing can reach. If the
+   overlay thruster ever comes back, flip THRUSTER_GONE and all two dozen light up again.
+   ============================================================ */
+let THRUSTER_GONE = true, _thrSkipped = 0;
+function okThr(c, m) { if (THRUSTER_GONE) { _thrSkipped++; return; } ok(c, m); }
 
 console.log('\n=== 1. manifest / asset keys ===');
 const need = [];
@@ -563,6 +584,55 @@ console.log('\n=== 15. barrel roll ===');
   const axStart = 240;
   ok(vm.runInContext("!!player.roll", ctxv), 'roll still triggers for a pilot without br art (dash works)');
   vm.runInContext("player.roll=null; run.pilot='yuri';", ctxv);
+}
+
+console.log('\n=== 15b. the somersault is wired for every pilot who has the reel (0908c) ===');
+{
+  /* ⚠ THE REEL EXISTED FOR ALL NINE AND ONLY MAVERICK COULD USE IT. somersaultAvailable() tests
+     SOMER_PILOTS **and** the art, while the comment above it claimed the art check alone decided
+     - so eight complete so0..so7 reels sat in the atlas unreachable. Mike, 0908: "just please wire
+     up the pilot frames you have."
+
+     Asserted on the FUNCTION, not on the table, because the table is the thing most likely to be
+     edited: a pilot dropped from it must show up here as a pilot who cannot somersault. */
+  /* ⚠ LIZZIE IS OUT OF THIS LIST SINCE 0909 AND IT IS A KNOWN LOSS, NOT A REGRESSION.
+     Mike ruled her resolution-pack hull final and had the old-hull frames retired. The pack
+     ships her a ROLL and nothing else: her flight and bank keys alias onto it and her spin-out
+     is rotated off the new level plate, but a SOMERSAULT needs authored nose-on and tail-on
+     views that rotation cannot produce, so so0..so7 were deleted with no replacement.
+     somersaultAvailable() gates on the art, so she degrades cleanly to "cannot somersault".
+     Put her back in this list the day that art exists - the assertion below is what will tell
+     you it is wired. */
+  /* ⚠ 0912a: SHE HAS ONE NOW, AND THE NOTE ABOVE IS LEFT STANDING because it records why she did
+     not. "a SOMERSAULT needs authored nose-on and tail-on views that rotation cannot produce" was
+     the right objection to rotating her ROLL frames - a roll presents the chord, a pitch presents
+     the span, and the cell sizes prove it (maverick so2 196x78 against br2 39x184). Her reel is
+     built by PITCH-TRANSFORMING her own level plate on the profile measured off Maverick's
+     authored eight, which is a different operation from the one that note refuses. See
+     _BUILD_SOURCE/lizzie_somersault_0912a.py. */
+  var _somerPil=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
+  ok(vm.runInContext("XART.rdy('ship_lizzie_so0')", ctxv),
+     'lizzie has a somersault reel at last — all nine pilots can flip (Mike, 0912)');
+  var _noArt=[], _noGate=[];
+  _somerPil.forEach(function(pk){
+    var frames=true;
+    for(var f=0;f<8;f++){ if(!vm.runInContext("XART.rdy('ship_"+pk+"_so"+f+"')", ctxv)) frames=false; }
+    if(!frames) _noArt.push(pk);
+    vm.runInContext("run.pilot='"+pk+"';", ctxv);
+    if(!vm.runInContext("somersaultAvailable()", ctxv)) _noGate.push(pk);
+  });
+  ok(_noArt.length===0, 'every pilot with a somersault carries a full 8-frame reel'+(_noArt.length?' — missing: '+_noArt.join(', '):''));
+  ok(_noGate.length===0, 'and every one of them can actually reach it'+(_noGate.length?' — gated out: '+_noGate.join(', '):''));
+  /* the reel must ANIMATE, not sit on one frame - somerFrameKey walks so0..so7 off the clock */
+  vm.runInContext("run.pilot='axel'; player.somer={t:0,dur:1};", ctxv);
+  var _sk=new Set();
+  for(var i3=0;i3<8;i3++){
+    vm.runInContext("player.somer.t="+(i3/8+0.01)+";", ctxv);
+    _sk.add(vm.runInContext("somerFrameKey()", ctxv));
+  }
+  ok(_sk.size===8 && [..._sk].every(function(k){ return k && k.indexOf('ship_axel_so')===0; }),
+     'and it cycles all 8 of that pilot own frames ('+_sk.size+' distinct)');
+  vm.runInContext("player.somer=null; run.pilot='yuri';", ctxv);
 }
 
 console.log('\n=== 16. pivot: angled turns animate into the twist ===');
@@ -1505,9 +1575,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      and why no mount table could line up against it.
 
      Inverted: it now proves _t is NOT used and the live thruster IS. */
-  ok(vm.runInContext("_drawPlayerCore.toString().indexOf('nthp_')>=0", ctxv),
+  okThr(vm.runInContext("_drawPlayerCore.toString().indexOf('nthp_')>=0", ctxv),
      'the player core draws the live thruster reel');
-  ok(vm.runInContext("drawShipSprite.toString().indexOf('drawShipThruster')>=0", ctxv),
+  okThr(vm.runInContext("drawShipSprite.toString().indexOf('drawShipThruster')>=0", ctxv),
      'and drawShipSprite draws the live thruster instead of the baked-in variant');
   ok(vm.runInContext("/const _s=\\(suf===._t.\\)/.test(drawShipSprite.toString())", ctxv),
      'refusing _t whatever a caller asks for');
@@ -2723,7 +2793,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // --- BUG 1: the airframe must NOT alternate poses. It used to swap _t / _pv2 at ~11Hz.
   ok(vm.runInContext("_drawPlayerCore.toString().indexOf('|0)%2===0')<0", ctxv), 'the ~11Hz body-frame alternation is gone');
   ok(vm.runInContext("_drawPlayerCore.toString().indexOf('STABLE AIRFRAME')>0", ctxv), 'level flight holds ONE airframe pose');
-  ok(vm.runInContext("_drawPlayerCore.toString().indexOf(\"'ntr_'+_tc\")>0", ctxv), 'we draw our OWN animated thruster');
+  okThr(vm.runInContext("_drawPlayerCore.toString().indexOf(\"'ntr_'+_tc\")>0", ctxv), 'we draw our OWN animated thruster');
   // --- BUG 2: the stage-1 miniboss was permanently invulnerable
   vm.runInContext("run.stage=1; curStage=STAGES[0]; enemies.length=0; pBullets.length=0; eBullets.length=0; boss=null; subBoss=null; subBossActive=false; subBossDone=false; subBossTriggered=false; player.dead=false; player.invuln=999999; player.x=240; player.y=400; spawnSubBoss('quadlaser');", ctxv);
   ok(vm.runInContext("!!subBoss && subBoss.enter===true", ctxv), 'siege crawler spawns in its entry state');
@@ -4586,6 +4656,28 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("!fontGlyph(curFontArt(),'@')", ctxv), 'unsupported marks do not fall through to a deleted password font');
   vm.runInContext("run.stage=1;", ctxv);
 
+  /* SHIP DESTROYED IS LETTERED IN THE STAGE YOU DIED ON (Mike, 0910e). It drew through msgText -
+     the dialogue face - which is the 0904af/0904v fault still live on the banner the player sees
+     most. Every glyph of it must resolve on every stage: the stage-5 card alphabet has no S, which
+     is the 0903 CHOO E YOUR PILOT bug, and this string is two thirds S and E. */
+  /* the comment above the draw does not contain this exact call, so the raw source is enough -
+     no comment-stripping regex, which is where the last two of these pins went wrong. */
+  var _dw=vm.runInContext("drawWorld.toString()", ctxv);
+  ok(_dw.indexOf("stageText(_sdArt,'SHIP DESTROYED'")>0, 'SHIP DESTROYED draws through the authored stage face');
+  ok(_dw.indexOf("msgText('SHIP DESTROYED'")<0 || _dw.indexOf("else if(typeof msgText")>0,
+     'and msgText survives only as the pre-decode fallback');
+  ok(_dw.indexOf('curFontArt')>0, 'and picks it per stage rather than borrowing one');
+  var _sdg=[];
+  for(var _s=1;_s<=9;_s++){
+    vm.runInContext("run.stage="+_s+";", ctxv);
+    var _bad='SHIP DESTROYED'.split('').filter(function(c){ return c!==' ' && !vm.runInContext("!!fontGlyph(curFontArt(), "+JSON.stringify(c)+")", ctxv); });
+    if(_bad.length) _sdg.push(_s+':'+_bad.join(''));
+  }
+  ok(_sdg.length===0, 'and every letter of it resolves on all nine stages'+(_sdg.length?(' - missing '+_sdg.join(' ')):''));
+  ok(vm.runInContext("run.stage=5; stageFitH(curFontArt(),'SHIP DESTROYED',VW-36,26,13,0.10)<=26", ctxv),
+     'it is shrunk to fit the field - the stage faces are wide and this is fourteen characters');
+  vm.runInContext("run.stage=1;", ctxv);
+
 
   // ===== 101. TURRETS vs DRONES, UNIFORM SCALE, NO DEATH FRAMES (drop 0724bo) =====
   console.log("=== 101. turrets ===");
@@ -5045,8 +5137,32 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      the gauge is drawn now, so none of them can hold. What must still be true is the BEHAVIOUR
      they were protecting: the gauge drains by fraction rather than squashing, it pulses when
      critical, and it does not guess its own space. */
-  ok(vm.runInContext("drawHealthBarV2.toString().indexOf('w * frac')>0", ctxv), 'the gauge drains BY FRACTION rather than scaling one bar');
-  ok(vm.runInContext("drawHealthBarV2.toString().indexOf('frac<=0.25')>0", ctxv), 'and the authored pulse plays under 25%');
+  /* 0910b: drawHealthBarV2 is a two-line dispatcher now - the pack's art bar first, the 0810n drawn
+     gauge as the fallback - so the behaviour is pinned on BOTH bodies, and it must hold on each. */
+  var _gArt=vm.runInContext("drawHealthBarArt.toString()", ctxv), _gDrawn=vm.runInContext("drawHealthBarDrawn.toString()", ctxv);
+  ok(_gArt.indexOf('w * frac')>0 && _gDrawn.indexOf('w * frac')>0, 'the gauge drains BY FRACTION rather than scaling one bar - on the art path and the fallback');
+  ok(_gArt.indexOf('frac<=0.25')>0 && _gDrawn.indexOf('frac<=0.25')>0, 'and the authored pulse plays under 25% on both');
+  ok(/ctx\.clip\(\)/.test(_gArt) && !/drawImage\([^)]*fw\*frac/.test(_gArt), 'the art fill is CLIPPED at the fraction, never drawn narrower (Mike: "we do not want to shrink it")');
+  ok(vm.runInContext("BOFX.img['nca_ui_bossbar']==='assets/game/atlas/ui_bossbar.png' && ['bmbar_frame_boss','bmbar_frame_mini','bmbar_fill_seg','bmbar_fill_grey','bmbar_fill_orange','bmbar_fill_red','bmbar_fill_cyan','bmbar_fill_green'].every(function(k){ return BOFX.cells[k] && BOFX.cells[k][0]==='ui_bossbar'; })", ctxv), 'the two frames and six fills of the pack are registered as cells on ui_bossbar');
+  ok(fs.existsSync(ROOT+'/assets/game/atlas/ui_bossbar.png'), 'and the sheet is on disk');
+  ok(vm.runInContext("[1,2,3,4,5,6,7,8,9].every(function(n){ return BMBAR_STAGE[n] && (BMBAR_STAGE[n].plate||BMBAR_STAGE[n].hex); })", ctxv), 'every stage names its fill: an authored plate or a palette swap');
+  ok(vm.runInContext("BMBAR_STAGE[1].plate==='green' && BMBAR_STAGE[2].plate==='orange' && BMBAR_STAGE[3].plate==='cyan' && BMBAR_STAGE[8].plate==='red'", ctxv), 'stages that match an authored fill use it untouched');
+  /* 0910c: the fill goes in the BLACK, measured per frame - not the whole opening, which still
+     covered the rails and both end caps. Mike: "dont overlay the line ... center the fill graphic
+     inside the black properly to fill." */
+  ok(vm.runInContext("['mini','boss'].every(function(k){ var O=BMBAR[k]; return O.dx>50 && O.dy>8 && O.w<BMBAR.frameW*0.9 && O.h<BMBAR.frameH*0.45; })", ctxv),
+     'both fills sit inside the frame black interior - inboard of the caps and clear of the rails');
+  ok(vm.runInContext("BMBAR.mini.dy!==BMBAR.boss.dy || BMBAR.mini.h!==BMBAR.boss.h", ctxv),
+     'and each frame carries its OWN interior - the boss frame lit top rail is a row thicker');
+  /* every boss/miniboss NAME label is gone from the HUD (Mike, 0910c) */
+  var _gAll=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(!/fillText\([^)]*boss\.name/i.test(_gAll), 'no HUD path prints a boss or miniboss name any more');
+  ok(_gAll.indexOf("'!! '+boss.name")<0, 'and the !! NAME !! entrance banner is gone with them');
+  ok(vm.runInContext("drawHealthBarArt.toString().indexOf('subBoss.name')<0 && drawHealthBarDrawn.toString().indexOf('subBoss.name')<0", ctxv),
+     'neither gauge body labels the miniboss');
+  ok(!/hbDraw\('(bossmain|miniboss)'[^)]*name/.test(_gAll), 'and neither legacy hbDraw call passes a name label');
+  var _bs=vm.runInContext("beginStage.toString()", ctxv);
+  ok(_bs.indexOf('bossBarWarm(num)')>0, 'beginStage warms the gauge art so the first warning never draws the fallback');
   ok(vm.runInContext("drawHealthBarV2('boss',0.5,240,20,300)===true && drawHealthBarV2('mini',0.5,240,20,200,false)===true", ctxv),
      'and it ALWAYS draws — no art to wait on, so no decode race can leave the bar empty');
   ok(vm.runInContext("drawSubBossBar.toString().indexOf('drawHealthBarV2')>0", ctxv), 'the miniboss bar uses it');
@@ -5225,7 +5341,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   });
   ok(_fl.length===0, 'all 9 pilots have a flameless plain airframe'+(_fl.length?(' — MISSING '+_fl.join(', ')):''));
   ok(_st.length===0, 'and NO pilot still carries a flame-baked _t variant'+(_st.length?(' — STILL THERE: '+_st.join(', ')):''));
-  ok(vm.runInContext("_drawPlayerCore.toString().indexOf('PILOT_TRAIL')>0", ctxv), 'and the thruster is pilot-tinted');
+  okThr(vm.runInContext("_drawPlayerCore.toString().indexOf('PILOT_TRAIL')>0", ctxv), 'and the thruster is pilot-tinted');
 
 
   // ===== 113. HUD BARS ARE SCREEN-FIXED (drop 0724cc) =====
@@ -5258,7 +5374,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // every bar goes through it
   var _g7=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   ok((_g7.match(/screenBar\(function\(\)/g)||[]).length>=4, 'all four in-world bars use it (miniboss x2, special meter, missile meter)');
-  ok(vm.runInContext("drawHealthBarV2.toString().indexOf(\"inWorld===true\")>0", ctxv),
+  ok(vm.runInContext("drawHealthBarArt.toString().indexOf(\"inWorld===true\")>0 && drawHealthBarDrawn.toString().indexOf(\"inWorld===true\")>0", ctxv),   /* both bodies since 0910b */
      'and the gauge still takes its space from the CALLER rather than guessing from the world width');
   ok(vm.runInContext("drawSpecialHUD.toString().indexOf('screenBar')>0", ctxv), 'the special meter is pinned');
   ok(vm.runInContext("drawMissileRushHUD.toString().indexOf('screenBar')>0", ctxv), 'the missile meter is pinned');
@@ -5483,8 +5599,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(new Set(_bm).size===8, 'and no two share one ('+new Set(_bm).size+' distinct)');
   ok(_gA.indexOf("Audio.startMusic('boss'+run.stage)")>0, 'the engine picks the track by stage');
   // THRUSTERS mapped to every pilot
-  ok(_gA.indexOf("THRUSTER: UNIFORM SIZE")>0, 'the authored thruster sheet is wired');
-  ok(_gA.indexOf('PER-PILOT PALETTE')>0, 'each pilot has its own palette-swapped plume');
+  okThr(_gA.indexOf("THRUSTER: UNIFORM SIZE")>0, 'the authored thruster sheet is wired');
+  okThr(_gA.indexOf('PER-PILOT PALETTE')>0, 'each pilot has its own palette-swapped plume');
   var _tm=true; for(var t=0;t<6;t++) if(!vm.runInContext("XART.rdy('nthr"+t+"_0')", ctxv)) _tm=false;
   ok(_tm, 'all 6 thruster types resolve');
   // ROLLERBALL SHRAPNEL
@@ -5525,10 +5641,33 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     if(!vm.runInContext("XART.rdy('ship_"+pk+"')", ctxv)) _pl=false;
   });
   ok(_pl, 'all 9 pilots have their plain frame');
-  // FALVA is the only pilot whose turn/roll frames carry an engine
-  ok(_gB.indexOf('FALVA IS THE EXCEPTION')>0, "Falva's rolls hold her idle frame instead of her thruster-bearing roll frames");
-  /* moved into _shipFrameKey() in 0805j so the thruster rig reads the same frame the hull does */
-  ok(_gB.indexOf("if(pk==='falva') return 'ship_falva';")>0, 'and so do her banks and twists');
+  /* ⚠ REPOINTED 0908b, AND THE RULE IT DEFENDED WAS WRONG. These two pinned the PROSE of the
+     0724cj carve-out - the words 'FALVA IS THE EXCEPTION' and the literal line
+     `if(pk==='falva') return 'ship_falva';` - on the claim that she is the only pilot whose
+     turn/roll frames carry a baked engine. Measured the hot-white ink in the bottom 28% of every
+     plate, idle against br1..br7: eight of the nine carry a plume in BOTH, and seven of those roll
+     with it every day. Cole is the only pilot actually drawn without one. Her idle carries the same
+     plume as her roll frames, so the fallback put the flame on screen anyway.
+
+     The bank half of it had ALREADY been deleted in 0812h (Mike: "falva doesnt twist at all") and
+     this assertion had been failing silently ever since - which is exactly what pinning a source
+     literal buys you. Both are repointed onto BEHAVIOUR: she must resolve her own reel, like the
+     other eight, and no pilot may be hard-bailed out of the frame picker. */
+  {
+    var _fvSaved=vm.runInContext("run.pilot", ctxv);
+    vm.runInContext("run.pilot='falva'; player.roll=null; player._rollCool=0; startRoll(1);", ctxv);
+    var _fvKeys=new Set(), _fvN=0;
+    while(vm.runInContext("!!player.roll", ctxv) && _fvN<120){
+      _fvKeys.add(vm.runInContext("rollFrameKey()", ctxv));
+      vm.runInContext("updateRoll(1/60);", ctxv); _fvN++;
+    }
+    var _fvGot=[..._fvKeys].filter(function(k){ return !!k; });
+    ok(_fvGot.length>0 && _fvGot.every(function(k){ return k.indexOf('ship_falva_br')===0; }),
+       'Falva rolls on her OWN reel like the other eight ('+_fvGot.length+' distinct br frames)');
+    ok(vm.runInContext("rollFrameKey.toString().indexOf(\"return null;\")<0 || rollFrameKey.toString().indexOf(\"==='falva'\")<0", ctxv),
+       'and no pilot is hard-bailed out of the roll frame picker');
+    vm.runInContext("player.roll=null; player._rollCool=0; run.pilot="+JSON.stringify(_fvSaved)+";", ctxv);
+  }
   // no third engine
   ok(_gB.indexOf("ASSETS.blit('player_thrust'")<0, "the legacy player_thrust blit is gone — it was a THIRD engine on top of the other two");
   // exactly ONE thruster source remains
@@ -5540,12 +5679,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // ===== 120. THRUSTER SIZE + ATTACH POINT (drop 0724ck) =====
   console.log("=== 120. thruster fit ===");
   var _gC=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_gC.indexOf("THRUSTER: UNIFORM SIZE")>0, 'the thruster is uniformly sized and hull-anchored');
-  ok(_gC.indexOf('IDENTICAL SIZE ON EVERY PLANE')>0, 'every pilot gets the same plume LENGTH — one size across all nine');
-  ok(_gC.indexOf('const tw=th/(im.naturalHeight/im.naturalWidth)')>0, 'and width follows each shape, so a twin still spans wider than a single');
+  okThr(_gC.indexOf("THRUSTER: UNIFORM SIZE")>0, 'the thruster is uniformly sized and hull-anchored');
+  okThr(_gC.indexOf('IDENTICAL SIZE ON EVERY PLANE')>0, 'every pilot gets the same plume LENGTH — one size across all nine');
+  okThr(_gC.indexOf('const tw=th/(im.naturalHeight/im.naturalWidth)')>0, 'and width follows each shape, so a twin still spans wider than a single');
   // the anchor CANNOT be a constant: measured hull bottoms span 0.834 to 0.921
   var _hb=_gC.match(/_HB=\{([^}]*)\}/);
-  ok(!!_hb, 'per-pilot hull anchors are baked in');
+  okThr(!!_hb, 'per-pilot hull anchors are baked in');
   if(_hb){
     var vals=_hb[1].split(',').map(function(s2){ return parseFloat(s2.split(':')[1]); });
     ok(vals.length===9, 'one anchor per pilot ('+vals.length+')');
@@ -5561,11 +5700,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      plume can no longer hang lower than a small one. Measured in play, core-below-tail in screen
      px went axel 22.8->10.7, freezer 22.1->11.1, decker 16.2->8.0, while cole and juggernaut
      (already correct) held at 8.0. */
-  ok(/tailY = \(y - _dh\/2\) \+ _dh\*hb \+ PLUME_SEAT - _thA\*PLUME_CORE_F/.test(_gC),
+  okThr(/tailY = \(y - _dh\/2\) \+ _dh\*hb \+ PLUME_SEAT - _thA\*PLUME_CORE_F/.test(_gC),
      'the plume is seated by its FLAME CORE a fixed distance behind the tail, not by its plate edge');
   ok(/const PLUME_SEAT\s*=\s*\d/.test(_gC) && /const PLUME_CORE_F\s*=\s*0\.\d/.test(_gC),
      'and both halves of that seat are named constants, measured rather than tuned');
-  ok(_gC.indexOf('SIZE BY HEIGHT, NOT WIDTH')>0, 'ships are normalised on CONTENT HEIGHT so every pilot draws the same size');
+  okThr(_gC.indexOf('SIZE BY HEIGHT, NOT WIDTH')>0, 'ships are normalised on CONTENT HEIGHT so every pilot draws the same size');
 
 
   // ===== 121. PER-PILOT THRUSTER PALETTE (drop 0724cl) =====
@@ -5584,7 +5723,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     "JSON.stringify(Object.keys(SHIP_THR).filter(function(p){" +
     "  var e=SHIP_THR[p].nf||SHIP_THR[p].pv2; return e && e[3] && e[3].length>1; }))", ctxv));
   ok(_twinN.length>=4, 'twin-engine airframes draw it TWICE at their own nozzles ('+_twinN.length+': '+_twinN.join(', ')+')');
-  ok(_gC.indexOf('TWIN ENGINES GET THE SINGLE PLUME, DRAWN TWICE')>0, 'so a twin is two singles, not a wider composite');
+  okThr(_gC.indexOf('TWIN ENGINES GET THE SINGLE PLUME, DRAWN TWICE')>0, 'so a twin is two singles, not a wider composite');
   ok(_tmap.lizzie.hue===null, 'Lizzie keeps hers unchanged — classic warbird');
   // palette swaps are genuinely different from each other
   var _cols=Object.keys(_tmap).map(function(k){ return _tmap[k].mean.join(','); });
@@ -5600,7 +5739,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _all=true;
   Object.keys(_tmap).forEach(function(pk){ for(var f=0;f<4;f++) if(!vm.runInContext("XART.rdy('nthp_"+pk+"_"+f+"')", ctxv)) _all=false; });
   ok(_all, 'all 36 per-pilot frames are registered (9 x 4)');
-  ok(_gC.indexOf("'nthp_'+(run.pilot||'cole')")>0, 'and the draw picks by pilot');
+  okThr(_gC.indexOf("'nthp_'+(run.pilot||'cole')")>0, 'and the draw picks by pilot');
 
 
   // ===== 122. SHIP SIZE NORMALISED ON HEIGHT (drop 0724cm) =====
@@ -5611,7 +5750,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      Cole's 279 — her hull, and therefore her correctly-anchored plume, sat a third further down
      the screen than everyone else's. */
   var _gD=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_gD.indexOf('SIZE BY HEIGHT, NOT WIDTH')>0, 'sizing is normalised on content height');
+  okThr(_gD.indexOf('SIZE BY HEIGHT, NOT WIDTH')>0, 'sizing is normalised on content height');
   /* ⚠ THIS MATCHED `_CF` AND THE TABLE IS NOW `_CFO` (fixed 0908a). The rename made the match
      null, and the SECOND use of it below - added later, outside this block's own guard - threw on
      `_cf[1]`. The suite died at 1,536 of 3,291 assertions reporting ZERO failures, which is
@@ -5631,11 +5770,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      WHERE the canvas comes from. It used to be invented here (`player.h*2.05`), 43% larger than
      the hull actually drawn, which is why every pilot's plume hung below its tail. It now comes
      from the hull's own drawn height, so the two cannot disagree. */
-  ok(_gD.indexOf('_dh=SHIP_DRAW_H')>0 && _gD.indexOf('_targetContent=_dh*_cf')>0,
+  okThr(_gD.indexOf('_dh=SHIP_DRAW_H')>0 && _gD.indexOf('_targetContent=_dh*_cf')>0,
      'the plume measures from the hull own drawn height (SHIP_DRAW_H), with the content fraction relating the two');
   ok(/const h=SHIP_DRAW_H, w=h\*/.test(_gD),
      'and the hull blit draws at that same number — one value, both uses');
-  ok(_gD.indexOf('_dw=_shi ? _dh*(_shi.naturalWidth/_shi.naturalHeight)')>0, 'and the width follows the aspect, instead of driving it');
+  okThr(_gD.indexOf('_dw=_shi ? _dh*(_shi.naturalWidth/_shi.naturalHeight)')>0, 'and the width follows the aspect, instead of driving it');
   // the point of the change: every pilot ends up the same on-screen height
   if(_cf){
     var _CFv={}; _cf[1].split(',').forEach(function(x){ var p2=x.split(':'); _CFv[p2[0].trim()]=parseFloat(p2[1]); });
@@ -5652,12 +5791,12 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      shared WIDTH therefore produced three different LENGTHS, Lizzie's running far longer. */
   var _gE=fs.readFileSync(ROOT+'/assets/game.js','utf8');
   var _i3=_gE.indexOf('IDENTICAL SIZE ON EVERY PLANE');
-  ok(_i3>0, 'plume size is normalised on length');
+  okThr(_i3>0, 'plume size is normalised on length');
   var _seg=_gE.slice(_i3, _i3+900);
   var _thLine=(_seg.match(/const th=[^\n]*/)||[''])[0];
-  ok(_thLine.indexOf('_targetContent')>0, 'length is a fraction of the CONSTANT target hull height');
+  okThr(_thLine.indexOf('_targetContent')>0, 'length is a fraction of the CONSTANT target hull height');
   ok(!/run\.pilot|_CF\[|_HB\[|_THR\[/.test(_thLine), 'and the length formula contains NO per-pilot term — so it cannot differ between planes');
-  ok(_seg.indexOf('const tw=th/(im.naturalHeight/im.naturalWidth)')>0, 'width follows each shape, so a twin still spans wider than a single');
+  okThr(_seg.indexOf('const tw=th/(im.naturalHeight/im.naturalWidth)')>0, 'width follows each shape, so a twin still spans wider than a single');
   // width DOES still vary, and that is intentional
   var _pm=JSON.parse(fs.readFileSync(fxJson('_thruster_map.json'),'utf8'));
   ok(Object.keys(_pm).length===9, 'all nine still have their own palette and shape');
@@ -5668,13 +5807,13 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   /* The twin composite was ONE wide image with its two flames at a FIXED spacing that matched no
      ship's nozzles, and being wide it also read oversized beside the singles. */
   var _gF=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_gF.indexOf('TWIN ENGINES GET THE SINGLE PLUME, DRAWN TWICE')>0, 'twins draw the same single plume twice');
+  okThr(_gF.indexOf('TWIN ENGINES GET THE SINGLE PLUME, DRAWN TWICE')>0, 'twins draw the same single plume twice');
   /* THE BLIT WAS REWRITTEN TO FLIP THE PLUME (drop 0801fp). Mike: "the thursters
      should be flipped verticall where the large section contacts the back of my
      pilots ships." The one-liner became a save/translate/scale(1,-1)/restore block,
      so the old exact string is gone - but it still loops _mounts and still draws
      the same plume at each. Testing that instead of the literal text. */
-  ok(_gF.indexOf('for(const _mx of _mounts)')>0 && _gF.indexOf('ctx.scale(1,-1)')>0,
+  okThr(_gF.indexOf('for(const _mx of _mounts)')>0 && _gF.indexOf('ctx.scale(1,-1)')>0,
      'at their own mount offsets, same size each, flipped to meet the tail');
   /* THE RIG REPLACES _NZ (drop 0805j) — mounts are per frame, measured, not one per pilot. */
   var _rig=JSON.parse(vm.runInContext("JSON.stringify(SHIP_THR)", ctxv));
@@ -5699,7 +5838,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     var as=Object.keys(_rig[p]).map(function(f){ return _rig[p][f][2]; });
     return (Math.max.apply(null,as)-Math.min.apply(null,as))>0.15; });
   ok(_tilted.length>=7, 'and the plume angle leans with the airframe ('+_tilted.length+'/9)');
-  ok(_gF.indexOf('if(_axisA) ctx.rotate(_axisA);')>0, 'the rotation is actually applied at draw time');
+  okThr(_gF.indexOf('if(_axisA) ctx.rotate(_axisA);')>0, 'the rotation is actually applied at draw time');
   // every pilot now uses ONE plume shape, so nothing can be a different size
   var _pm2=JSON.parse(fs.readFileSync(fxJson('_thruster_map.json'),'utf8'));
   var _shapes={}; Object.keys(_pm2).forEach(function(k){ _shapes[_pm2[k].src]=1; });
@@ -6240,11 +6379,30 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ['cf_boot','scard_1'].forEach(function(k){
     ok(_pre.indexOf(k)>=0, 'preloads '+k+' — the opening cannot wait on it');
   });
-  /* ONE SHEET REPLACES NINE AIRFRAMES (drop 0805q). The opening flies a ship immediately, so
-     this used to preload all nine pilots individually — and only their PLAIN frame, never a
-     bank or a roll. Preloading nsa_ships covers every pilot AND every frame in one request,
-     which is the whole argument for the sheet: the same decode regardless of who is picked. */
-  ok(_pre.indexOf('nsa_ships')>=0, 'preloads the ship sheet — the opening cannot wait on it');
+  /* ⚠ INVERTED 0909, AND IT WAS DEFENDING THE COST RATHER THAN THE REQUIREMENT.
+     0805q's argument was "one request covers every pilot AND every frame, the same decode
+     regardless of who is picked" - true, and the same decode is 11 MB of which eight ninths is
+     aircraft the run will never draw. Mike, 0909: "make seperate atlas sheets for all nine
+     pilots ships ... no need to have the other 8 or 7 if co-op when not in use."
+
+     Ships are nine per-pilot sheets now and NONE is preloaded. Measured in real Chromium: a
+     decker stage-1 run requests ship_decker.png and nothing else, 1.16 MB against 11.04.
+     Asserted as the RULE - no ship sheet on the boot path, and every ship key resolving to its
+     own pilot's sheet - rather than as the name of whichever file happens to be current. */
+  ok(_pre.indexOf('nsa_ships')<0 && !_pre.some(function(k){ return /^nsa_ship_/.test(k); }),
+     'no ship sheet is on the boot path — they load per pilot, on use');
+  var _shipSheets=_all.filter(function(k){ return /^nsa_ship_[a-z]+$/.test(k); });
+  ok(_shipSheets.length===9, 'all nine pilots have their own ship sheet ('+_shipSheets.length+')');
+  var _gSplit=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(_gSplit.indexOf('function _shipSheetOf(')>0 && /_shipCell[\s\S]{0,400}_shipSheetOf\(k\)/.test(_gSplit),
+     'and _shipCell resolves a key to its owner sheet rather than to one combined atlas');
+  var _shipKeys=Object.keys(_M3.ships||{});
+  var _orphan=_shipKeys.filter(function(k){
+    var m=/^ship_([a-z]+)/.exec(k);
+    return !m || _shipSheets.indexOf('nsa_ship_'+m[1])<0;
+  });
+  ok(_orphan.length===0, 'every one of the '+_shipKeys.length+' ship cells names a pilot that has a sheet'+
+     (_orphan.length?' — orphans: '+_orphan.slice(0,5).join(', '):''));
   var _shipMiss=['cole','maverick','falva','yuri','lizzie','axel','decker','freezer','juggernaut']
     .filter(function(pk){ return !(_M3.ships && _M3.ships['ship_'+pk]); });
   ok(_shipMiss.length===0, 'and every pilot is a cell in it'+(_shipMiss.length?(' — missing '+_shipMiss.join(', ')):''));
@@ -8089,18 +8247,42 @@ console.log("=== 168. icon atlas ===");
 console.log("=== 169. ship atlas ===");
 {
   var _M169=JSON.parse(fs.readFileSync(ROOT+'/assets/manifest.js','utf8').match(/window\.BOFX=([\s\S]*?\});/)[1]);
-  ok(!!_M169.img['nsa_ships'] && fs.existsSync(ROOT+'/'+_M169.img['nsa_ships']),
-     'the ship sheet is registered and on disk');
+  /* ⚠ ONE SHEET PER PILOT SINCE 0909; nsa_ships and the 11 MB combined atlas are deleted. */
+  var _sheets169=Object.keys(_M169.img).filter(function(k){ return /^nsa_ship_/.test(k); });
+  ok(_sheets169.length===10 && _sheets169.every(function(k){ return fs.existsSync(ROOT+'/'+_M169.img[k]); })
+     && !_M169.img['nsa_ships'],
+     'every pilot ship sheet is registered and on disk, and the combined one is gone ('+_sheets169.length+')');
   var _S=_M169.ships||{};
-  /* ⚠ 162 -> 153 (drop 0808h). The nine flame-baked _t variants are GONE. Mike: "you see those
-     t variants, those are the thruster variants. remove those. were not using them anymore."
-     Each pilot keeps sixteen frames plus the plain one; the flame is drawn live from nthp_.
-     ⚠ 153 -> 185 (0906). Mike replaced Cole's, Lizzie's, Maverick's and Yuri's airframes, and
-     those four sheets carry an 8-frame SOMERSAULT reel (so0..so7) the other five pilots do not
-     have - it is what the new double-tap-up move animates through. So the per-pilot count is no
-     longer uniform: 25 for those four, 17 for the rest, 4*25 + 5*17 = 185. The _t rule this
-     assertion was written for is unchanged and still checked below. */
-  ok(Object.keys(_S).length===185, '185 ship cells — 17 each plus an 8-frame somersault reel for four pilots ('+Object.keys(_S).length+')');
+  /* ⚠ 162 -> 153 -> 185 -> 441 -> 417, AND PINNING THE TOTAL WAS THE MISTAKE.
+     0808h removed the nine _t variants (Mike: "those are the thruster variants ... were not
+     using them anymore"). 0906 gave four pilots a somersault reel, making the per-pilot count
+     non-uniform at 4*25 + 5*17 = 185. Then the reels were re-imported for everyone and the true
+     figure became 441 - and this assertion sat RED for drops, reporting a number nobody acted on,
+     which is worse than no assertion at all. 0909 retired Lizzie's old-hull frames, taking it to
+     417, and the label would have gone stale a fifth time.
+
+     So it checks the RULES the count was standing in for, and each of them says why it exists:
+       - every pilot owns a complete flight set, because a missing one draws nothing
+       - no _t variant has crept back, which is the rule 0808h actually asked for
+       - every key names one of the nine, so nothing is orphaned on a sheet that will not load
+     The total is reported, never asserted. */
+  var _P169=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
+  var _missing169=[];
+  _P169.forEach(function(p){
+    ['','_nf','_l','_r','_pv0','_pv1','_pv2','_pv3','_pv4'].forEach(function(f){
+      if(!_S['ship_'+p+f]) _missing169.push(p+(f||' (idle)'));
+    });
+  });
+  ok(_missing169.length===0,
+     'all nine pilots carry a complete flight and bank set'+(_missing169.length?' — missing '+_missing169.slice(0,6).join(', '):'')+
+     ' ('+Object.keys(_S).length+' ship cells in total)');
+  ok(!Object.keys(_S).some(function(k){ return /_t$/.test(k); }),
+     'and no flame-baked _t variant has come back');
+  var _orph169=Object.keys(_S).filter(function(k){
+    var m=/^ship_([a-z]+)/.exec(k); return !m || _P169.indexOf(m[1])<0;
+  });
+  ok(_orph169.length===0,
+     'every ship cell belongs to one of the nine'+(_orph169.length?' — orphans: '+_orph169.slice(0,5).join(', '):''));
   ok(!Object.keys(_S).some(function(k){return /_t$/.test(k);}), 'and no flame-baked _t variant came back');
   var _pilots=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
   /* 't' removed — the flame-baked variant is gone (drop 0808h) */
@@ -9952,15 +10134,15 @@ console.log("=== 205. pilot thrusters ===");
      Both now scale against the reel's LARGEST frame and keep each frame's own aspect, anchored
      at the nozzle so the flame grows downward out of the hull. */
   var _g205=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok((_g205.match(/the reel's own reference: its biggest frame|scaled against the reel's LARGEST frame/g)||[]).length>=1,
+  okThr((_g205.match(/the reel's own reference: its biggest frame|scaled against the reel's LARGEST frame/g)||[]).length>=1,
      'the play draw scales against the reel, not a fixed box');
-  ok(_g205.indexOf('const _th=im.naturalHeight*_k, _tw=im.naturalWidth*_k;')>0,
+  okThr(_g205.indexOf('const _th=im.naturalHeight*_k, _tw=im.naturalWidth*_k;')>0,
      'and the launch draw keeps each frame at its own size too');
   /* the draw now sizes to the NOZZLE via THRUSTER_MOUNTS rather than to _dw/_dh (drop 0808e) */
   /* the draw carries a per-pilot dy now, so the anchor expression gained a term (drop 0808f) */
-  ok(_g205.indexOf('ctx.drawImage(im, -_tw2/2, -_th2+_dy, _tw2, _th2);')>0,
+  okThr(_g205.indexOf('ctx.drawImage(im, -_tw2/2, -_th2+_dy, _tw2, _th2);')>0,
      'the flame is anchored at the nozzle and grows downward');
-  ok(_g205.indexOf('const _dy = (_tm && _tm.dy) ? _tm.dy*_dh : 0;')>0,
+  okThr(_g205.indexOf('const _dy = (_tm && _tm.dy) ? _tm.dy*_dh : 0;')>0,
      'and its vertical nudge is a FRACTION of hull height, so it holds at any draw scale');
   ok(_g205.indexOf('const THRUSTER_MOUNTS=')>0, 'and its mounts come from the per-pilot spec table');
 
@@ -10684,9 +10866,9 @@ console.log("=== 214. thruster parity ===");
        p+"'s plume is the same size in the cinematic as in play (ratio "+_p214[p]+')');
   });
   var _g214=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_g214.indexOf('const canvasH=h/_cfc;')>0,
+  okThr(_g214.indexOf('const canvasH=h/_cfc;')>0,
      'drawShipThruster divides by the content factor, as the play path does');
-  ok(_g214.indexOf('const dy=(cfg.dy||0)*canvasH;')>0,
+  okThr(_g214.indexOf('const dy=(cfg.dy||0)*canvasH;')>0,
      'and its vertical nudge is against the same reference, so the mount lands identically');
 }
 
@@ -10706,7 +10888,8 @@ console.log("=== 215. menu navigation ===");
      Handled once in drawScene from a TABLE, so the next screen added inherits it rather than
      being the sixth one somebody forgot. */
   var _mb=JSON.parse(vm.runInContext("JSON.stringify(MENU_BACK)", ctxv));
-  ok(Object.keys(_mb).length===7, 'all seven menus have a back destination ('+Object.keys(_mb).length+')');
+  /* eight since 0910a: the DEBUG menu joined the table (Mike: the fights end back on the debug menu, and K backs out of it) */
+  ok(Object.keys(_mb).length===9, 'all nine menus have a back destination — HELP joined them in 0912a ('+Object.keys(_mb).length+')');
   [['pilot','modesel'],['password','title'],['options','title'],['diff','title'],
    ['credits','title'],['stagesel','modesel'],['modesel','title']].forEach(function(p){
     ok(_mb[p[0]]===p[1], p[0]+' backs out to '+p[1]);
@@ -12333,31 +12516,40 @@ console.log("=== 254. production player atlases and frame preservation ===");
   var _b254=sandbox.window.BOFX;
   var _iconKey254='bof_player_weapon_special_icons_atlas';
   var _shotKey254='bof_player_ordnance_projectiles_atlas';
-  var _shipKey254='bof_player_ships_barrel_rolls_atlas';
-  ok([_iconKey254,_shotKey254,_shipKey254].every(function(k){
+  /* ⚠ THE COMBINED SHIP SHEET IS DELETED AS OF 0909 AND SO IS ITS SIDECAR. Ships are nine
+     per-pilot sheets plus Lizzie's B-42 costume; nothing resolves to the old 11 MB atlas, so
+     keeping it on disk was pure download weight. Five assertions here named it or its JSON.
+
+     Two of them had been FAILING for drops: they pinned 185 cells and 25/17 frames per pilot
+     against a manifest that has carried 441 since the reels were re-imported, and the sidecar
+     was never regenerated. They are replaced by checks on what is actually true now.
+
+     ⚠ AND THE PER-PILOT WARM WAS VERIFIED THROUGH THE REAL FLOW, NOT THROUGH shoot.py's SETUP.
+     SETUP calls beginStage directly and never reaches confirmPilot, where warmPlayerAtlases
+     lives - so the first measurement showed one 1.16 MB sheet while a genuine title -> pilot
+     select -> launch would still have pulled the whole monolith. Driving the real path found it.
+     A path that skips the code under test cannot clear it. */
+  ok([_iconKey254,_shotKey254].every(function(k){
        var rel=_b254.img[k]; return rel && fs.existsSync(path.join(ROOT,rel));
-     }), 'all three explicitly named production atlas textures are registered and present');
+     }), 'both named production atlas textures are registered and present');
+  var _shipSheets254=Object.keys(_b254.img).filter(function(k){ return /^nsa_ship_/.test(k); });
+  ok(_shipSheets254.length===10 && _shipSheets254.every(function(k){
+       return fs.existsSync(path.join(ROOT,_b254.img[k])); }),
+     'nine per-pilot ship sheets plus the B-42 costume are registered and on disk ('+_shipSheets254.length+')');
+  ok(!fs.existsSync(path.join(ROOT,'assets','game','atlas','bof_player_ships_barrel_rolls.png')) &&
+     !fs.existsSync(path.join(ROOT,'assets','game','atlas','bof_player_ships_barrel_rolls.json')) &&
+     _b254.img.nsa_ships===undefined && _b254.img['bof_player_ships_barrel_rolls_atlas']===undefined,
+     'the combined ship sheet, its sidecar and both of its registrations are gone');
+  var _gWarm=fs.readFileSync(ROOT+'/assets/game.js','utf8');
+  ok(_gWarm.indexOf("'bof_player_ships_barrel_rolls_atlas'")<0,
+     'and nothing in game.js warms it any more — warmPlayerAtlases takes the seats own sheets');
   var _shotMeta254=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','bof_player_ordnance_projectiles.json'),'utf8'));
-  var _shipMeta254=JSON.parse(fs.readFileSync(path.join(ROOT,'assets','game','atlas','bof_player_ships_barrel_rolls.json'),'utf8'));
   ok(_shotMeta254.count===505 && Object.keys(_b254.playercells).length===505,
      'the ordnance/projectile atlas carries all 505 active animation and support cells');
-  /* ⚠ frames_per_pilot IS NULL SINCE 0906 and frames_by_pilot replaces it - four pilots carry an
-     extra 8-frame somersault reel, so one number can no longer describe every pilot. The
-     sidecar is regenerated from the manifest, so this checks the two agree rather than pinning
-     a literal that has to be edited by hand every time a reel is added. */
-  ok(_shipMeta254.count===185 && _shipMeta254.pilots===9 && Object.keys(_b254.ships).length===185 &&
-     _shipMeta254.count===_shipMeta254.entries.length,
-     'the ship atlas sidecar and the manifest agree on all 185 flight, barrel-roll and somersault frames');
-  ok(_shipMeta254.frames_per_pilot===null && _shipMeta254.frames_by_pilot &&
-     ['cole','lizzie','maverick','yuri'].every(function(p){return _shipMeta254.frames_by_pilot[p]===25;}) &&
-     ['axel','decker','falva','freezer','juggernaut'].every(function(p){return _shipMeta254.frames_by_pilot[p]===17;}),
-     'and the four re-imported pilots carry 25 frames each against the other five at 17');
-  ok(_shipMeta254.entries.every(function(e){
-       return e.rect[2]>0 && e.rect[3]>0 && e.offset[0]>=0 && e.offset[1]>=0 &&
-              e.offset[0]+e.rect[2]<=e.canvas[0] && e.offset[1]+e.rect[3]<=e.canvas[1];
+  ok(Object.keys(_b254.ships).every(function(k){
+       var e=_b254.ships[k];
+       return e[2]>0 && e[3]>0 && e[4]>=0 && e[5]>=0 && e[4]+e[2]<=e[6] && e[5]+e[3]<=e[7];
      }), 'every trimmed ship cell reconstructs wholly inside its original authored canvas');
-  ok(_b254.shipAtlas===_shipKey254 && _b254.img.nsa_ships===_b254.img[_shipKey254],
-     'ship extraction uses the named atlas while retaining the boot-time compatibility alias');
   ok(!fs.existsSync(path.join(ROOT,'assets','game','atlas','nca_4.png')) &&
      !Object.values(_b254.cells).some(function(v){return v[0]===4;}),
      'the superseded mixed ship sheet and every nca_4 cell registration are gone');
@@ -12379,10 +12571,17 @@ console.log("=== 254. production player atlases and frame preservation ===");
 console.log("=== 255. player atlas cold-start warming ===");
 {
   var _warm255=vm.runInContext("(function(){var old=XART._touch,seen=[];_playerAtlasesWarmed=false;XART._touch=function(k){seen.push(k);return null;};var n=warmPlayerAtlases();var latched=_playerAtlasesWarmed;XART._touch=old;return {n:n,seen:seen,latched:latched};})()",ctxv);
-  ok(_warm255.n===3 && _warm255.latched===true,
-     'one warm starts exactly the three shared player textures and latches idempotently');
-  ok(['bof_player_weapon_special_icons_atlas','bof_player_ordnance_projectiles_atlas','bof_player_ships_barrel_rolls_atlas'].every(function(k){return _warm255.seen.indexOf(k)>=0;}),
-     'weapon icons, player ordnance and ship/roll textures all begin decoding before gameplay');
+  /* ⚠ THE WARM TAKES THE SEATS' OWN SHIPS SINCE 0909, NOT ONE SHEET FOR ALL NINE.
+     It used to touch the 11 MB combined atlas, which is deleted. What matters now is that the
+     two shared textures still start AND that the warm reaches a per-pilot ship sheet - because
+     this is the path a real playthrough takes and the path shoot.py's SETUP skips. */
+  ok(_warm255.latched===true && _warm255.n>=3,
+     'one warm starts the shared textures and the seats own ships, and latches ('+_warm255.n+')');
+  ok(['bof_player_weapon_special_icons_atlas','bof_player_ordnance_projectiles_atlas'].every(function(k){return _warm255.seen.indexOf(k)>=0;}),
+     'weapon icons and player ordnance both begin decoding before gameplay');
+  ok(_warm255.seen.some(function(k){ return /^nsa_ship_/.test(k); }) &&
+     _warm255.seen.indexOf('bof_player_ships_barrel_rolls_atlas')<0,
+     'and it warms a per-pilot ship sheet rather than the deleted combined atlas');
   var _src255=fs.readFileSync(path.join(ROOT,'assets','game.js'),'utf8');
   var _confirm255=_src255.slice(_src255.indexOf('function confirmPilot()'),_src255.indexOf('/* CREDITS */'));
   var _start255=_src255.slice(_src255.indexOf('function startRun('),_src255.indexOf('/* WARM WHAT THE STAGE'));
@@ -13084,8 +13283,36 @@ console.log("=== 269. Stage-6 storm fleet and Doomsday mega boss ===");
     +"for(var i=0;i<p.length;i++){enemies.length=0;p[i].fn();for(var j=0;j<enemies.length;j++)seen[enemies[j].type]=1;}return JSON.stringify(Object.keys(seen));})()",ctxv));
   ok(_fleet269.every(function(k){return _plan269.indexOf(k)>=0;}),
      'Stage 6 schedules all twelve supplied Heavy Turbulence airframes');
-  ok(['l6v_b0','l6v_b1','l6v_b2','l6v_s0','l6v_s1','l6v_s2'].every(function(k){return _plan269.indexOf(k)<0;}),
-     'the rebuilt storm plan contains no palette-swapped legacy fleet');
+  /* ============================================================
+     ⚠ THIS ASSERTION WAS OVERRULED BY MIKE, 0912d. IT IS INVERTED, NOT DELETED.
+
+     It read: "the rebuilt storm plan contains no palette-swapped legacy fleet", and required that
+     stage 6 schedule NONE of l6v_b0/b1/b2/s0/s1/s2. Mike, 2026-09-12:
+
+         "Ive noticed we have an l6 fleet folder of enemies that should be used on level 6
+          immediately. make sure these enemies spawn"
+
+     So it was defending a decision he has reversed - CLAUDE.md's own "assertions can defend a bug",
+     and the third time this file has recorded one (the siege ember in 0813g, weaponVariant's
+     withheld flame slot in 0814a). The finding underneath was worse than a stale test: the L6
+     fleet's config block had been spliced into `switch(b._sbm)` - the ship-boss MANOEUVRE switch -
+     referencing `type` and `c`, which do not exist in shipBossManoeuvre. It was unreachable from
+     the moment it was written in August, so `L6_FLEET` had nine authored units (STEEL / ROYAL /
+     BLACKICE lancers, broadwings and deltas, 27 registered plates) that nothing could ever spawn.
+
+     What must be true now is that they DO arrive, and that they arrive as themselves - the "palette
+     swap" complaint the old assertion was written against is answered by each carrying its own art
+     key (n6v{0,1,2}_{steel,royal,blackice}), not by keeping them off the stage. */
+  var _l6v269=['l6v_s0','l6v_s1','l6v_s2','l6v_r0','l6v_r1','l6v_r2','l6v_b0','l6v_b1','l6v_b2'];
+  var _l6vOn=_l6v269.filter(function(k){return _plan269.indexOf(k)>=0;});
+  ok(_l6vOn.length>=6,
+     'the L6 fleet reaches stage 6 at last - ' + _l6vOn.length + ' of 9 scheduled (Mike 0912d: ' +
+     '"we have an l6 fleet folder of enemies that should be used on level 6 immediately"); the ' +
+     'config block had been spliced into switch(b._sbm) and was unreachable since August');
+  ok(vm.runInContext("Object.keys(L6_FLEET).length===9 && "
+     +"Object.keys(L6_FLEET).every(function(k){return /^n6v[012]_(steel|royal|blackice)$/.test(L6_FLEET[k].art);})", ctxv),
+     'and each carries its OWN authored plate rather than a palette swap, which is what the ' +
+     'assertion this replaces was actually protecting');
 
   var _owned269=JSON.parse(vm.runInContext("(function(){run.stage=6;curStage=STAGES[5];enemies.length=0;var o={};"
     +"Object.keys(S6STORM).forEach(function(k){var e=spawnEnemy(k,240,-90,{});o[k]={p:e.pattern,s:e.shoots,f:e.fk,a:S6STORM[k].art};});return JSON.stringify(o);})()",ctxv));
@@ -13523,8 +13750,28 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      XART actually serves before and after the toggle and again inside real PLAY. What is asserted
      here is what a state check can honestly answer. */
 
-  ok(vm.runInContext("Object.keys(LIZZIE_B42_RECTS).length===17", ctxv),
-     'all seventeen B-42 frames are recorded (hull, no-flame, both banks, five pv, eight roll)');
+  /* ⚠ THIRTY-FIVE ROWS SINCE 0909, NOT SEVENTEEN, AND THE EXTRA EIGHTEEN ARE A PROPELLER.
+     Mike ruled the costume's thruster had to be "like what you said - a propeller" rather than
+     the jet plume her stock hull burns, so the nine level-ish frames each carry _g1 and _g2 with
+     the prop turned 40 and 80 degrees about its hub. shipGlowKey already cycles ['','g1','','g2']
+     every 70ms for the flame flicker, so the prop spins on machinery that was already there.
+     Asserted as the SHAPE of the table - seventeen aircraft frames, phases only on the level-ish
+     ones - rather than as a total, which is the number most likely to move again. */
+  var _b42=Object.keys(vm.runInContext("LIZZIE_B42_RECTS", ctxv));
+  var _b42base=_b42.filter(function(k){ return !/_g[12]$/.test(k); });
+  var _b42ph=_b42.filter(function(k){ return /_g[12]$/.test(k); });
+  /* ⚠ 25 SINCE 0912a: the eight `_so` rows. They are in this table and not only in BOFX.ships
+     because applyLizzieSkin walks THESE KEYS - a `so` row registered on the stock atlas alone
+     would keep its stock rect while the costume was on and crop the B-42 page at stock
+     coordinates, which is the asymmetric-key-set failure the swap note already describes. */
+  ok(_b42base.length===25,
+     'all twenty-five B-42 aircraft frames are recorded (hull, no-flame, banks, five pv, eight roll, eight somersault) — '+_b42base.length);
+  var _lvl=['','_nf','_l','_r','_pv0','_pv1','_pv2','_pv3','_pv4'];
+  ok(_b42ph.length===_lvl.length*2 && _lvl.every(function(f){
+       return _b42ph.indexOf(f+'_g1')>=0 && _b42ph.indexOf(f+'_g2')>=0; }),
+     'and each of the nine level-ish frames carries both propeller phases ('+_b42ph.length+')');
+  ok(!_b42ph.some(function(k){ return /_br[0-7]_g[12]$/.test(k); }),
+     'the roll frames have no phases — a rotated warbird needs its prop drawn per orientation');
 
   /* every rect must land inside the atlas. A rect that runs off the sheet does not throw - it
      draws a partial or empty cell - so an out-of-bounds row would be a silently blank aircraft. */
@@ -13553,7 +13800,14 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   var _n=vm.runInContext(
     "(function(){var n=0;for(var s in LIZZIE_B42_RECTS)" +
     "if(BOFX.ships['ship_lizzie'+s].join(',')===LIZZIE_B42_RECTS[s].join(','))n++;return n;})()", ctxv);
-  ok(_n===17, 'every one of the seventeen frames swaps, not only the hull ('+_n+'/17)');
+  var _want=Object.keys(vm.runInContext("LIZZIE_B42_RECTS", ctxv)).length;
+  ok(_n===_want, 'every one of the '+_want+' costume rows swaps, not only the hull ('+_n+'/'+_want+')');
+  /* ⚠ AND THE SWAP MUST BE SYMMETRIC. The costume carries suffixes the stock hull does not, so
+     turning it OFF has to DELETE those keys rather than skip them - leave them and her own ship
+     flickers into a B-42 three times a second, because shipGlowKey keeps finding a phase. */
+  vm.runInContext("applyLizzieSkin(false)", ctxv);
+  ok(vm.runInContext("BOFX.ships['ship_lizzie_g1']==null", ctxv),
+     'and turning it off deletes the phase keys the stock hull does not have');
   vm.runInContext("applyLizzieSkin(false)", ctxv);
 
   /* THE CACHE FLUSH IS THE LOAD-BEARING HALF. XART caches a ship cell by key on first use, so
@@ -13592,6 +13846,499 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   ok(/lizzieSkinUnlocked\s*&&\s*PILOTS\[pilotIndex\]/.test(_pt),
      'and it is gated on the unlock and on the pilot actually shown');
 }
+// ===== 279. DEBUG MODE, THE RECORDER AND THE BOSS MODE HOST (drop 0910a) =====
+{
+  /* Mike: "Up Up Down Down A B C ... unlock a debug button ... select each mini boss fight and boss
+     fight ... when fight ends/boss dies, do the explosion phase fly us off, and then fade us back to
+     the debug menu ... a recorder option by pressing R". Behavioural where the engine can be driven
+     headless; source-pinned where the hook is the whole point (setState routing, the loop ticks). */
+  ok(vm.runInContext("GS.DEBUG==='debugmenu' && GS.DEBUGFADE==='debugfade' && GS.BMHOST==='bmhost'", ctxv), 'the three debug states exist');
+  ok(vm.runInContext("MENU_BACK[GS.DEBUG]===GS.TITLE", ctxv), 'the debug menu is backable to the title through the shared handler');
+  ok(vm.runInContext("debugUnlocked===false", ctxv), 'a fresh boot is locked (session-only, like the settings)');
+  /* the code: own edge detection on Input.down, so a HELD key is one symbol.
+     ⚠ Section 16 replaces Input.down wholesale with a stub that does not read Input.keys, and the
+     stub outlives it - the first cut of this fixture failed on that, not on the code. Restored for
+     the duration of the check, then put back. */
+  vm.runInContext("var _dbgDownRestore=Input.down;", ctxv);
+  vm.runInContext("Input.down=function(k){ return !!Input.keys[k]; }", ctxv);
+  vm.runInContext("(function(){ var seq=['arrowup','arrowup','arrowdown','a','b','c']; for(var i=0;i<seq.length;i++){ Input.keys[seq[i]]=true; debugCodeTick(); Input.keys[seq[i]]=false; debugCodeTick(); } })()", ctxv);
+  ok(vm.runInContext("debugUnlocked===false", ctxv), 'U U D A B C (one DOWN short) does not unlock');
+  vm.runInContext("(function(){ var seq=['arrowup','arrowup','arrowdown','arrowdown','a','b','c']; for(var i=0;i<seq.length;i++){ Input.keys[seq[i]]=true; debugCodeTick(); debugCodeTick(); Input.keys[seq[i]]=false; debugCodeTick(); } })()", ctxv);
+  ok(vm.runInContext("debugUnlocked===true", ctxv), 'UP UP DOWN DOWN A B C unlocks, and a held key counts once');
+  vm.runInContext("Input.down=_dbgDownRestore", ctxv);
+  /* the fight list is the stage tables, not a hand list */
+  var _fl=JSON.parse(vm.runInContext("JSON.stringify(debugFightList())", ctxv));
+  ok(_fl.length===18, 'eighteen fights: a mini and a boss for each of the nine stages ('+_fl.length+')');
+  ok(_fl.every(function(f){ return f.name && f.name!==f.kind.toUpperCase(); }), 'every fight carries an authored name, not its kind id');
+  ok(vm.runInContext("debugFightFor(2,'boss').kind===STAGES[1].boss && debugFightFor(2,'mini').kind===SUBBOSS[2].kind", ctxv), 'stage 2 resolves to STAGES[].boss and SUBBOSS[].kind');
+  /* routing: every stage exit lands on the fade while a fight is live, the fly-off passes through */
+  ok(vm.runInContext("debugFight=null; debugRouteState(GS.STAGECLEAR)===GS.STAGECLEAR", ctxv), 'with no debug fight, setState routing is a no-op');
+  ok(vm.runInContext("debugFight={stage:1,role:'boss',kind:'x',name:'X',t:0}; var r=debugRouteState(GS.FLYOVER); r===GS.FLYOVER && debugFight!==null", ctxv), 'the FLYOVER is let through - it IS the exit Mike asked for');
+  ok(vm.runInContext("var r=debugRouteState(GS.STAGECLEAR); r===GS.DEBUGFADE && debugFight===null", ctxv), 'STAGECLEAR after a debug fight becomes the fade back to the menu');
+  ok(vm.runInContext("debugFight={stage:1,role:'boss',kind:'x',name:'X',t:0}; debugRouteState(GS.CONTINUE)===GS.DEBUGFADE", ctxv)
+     && vm.runInContext("debugFight={stage:1,role:'boss',kind:'x',name:'X',t:0}; debugRouteState(GS.GAMEOVER)===GS.DEBUGFADE", ctxv)
+     && vm.runInContext("debugFight={stage:1,role:'boss',kind:'x',name:'X',t:0}; debugRouteState(GS.WARPENTRY)===GS.DEBUGFADE", ctxv),
+     'so do CONTINUE, GAMEOVER and the stage-7 warp - a death cannot strand the player in a debug run');
+  vm.runInContext("debugFight=null", ctxv);
+  var _ss=vm.runInContext("setState.toString()", ctxv).replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/[^\n]*/g,'');
+  ok(_ss.indexOf('debugRouteState')>0 && _ss.indexOf('debugRouteState')<_ss.indexOf('_prevState'), 'setState routes through debugRouteState before it does anything else');
+  var _lp=vm.runInContext("loop.toString()", ctxv).replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/[^\n]*/g,'');
+  ok(_lp.indexOf('debugLoopTick(dt)')>0 && _lp.indexOf('debugRecOverlay()')>0, 'the loop ticks the debug switchboard and paints the REC clock after the scene');
+  var _dt=vm.runInContext("drawTitle.toString()", ctxv).replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/[^\n]*/g,'');
+  ok(_dt.indexOf('drawDebugButton(dt)')>0, 'the title draws the DEBUG button');
+  var _ds=vm.runInContext("drawScene.toString()", ctxv);
+  ok(_ds.indexOf('case GS.DEBUG:')>0 && _ds.indexOf('case GS.DEBUGFADE:')>0 && _ds.indexOf('case GS.BMHOST:')>0, 'drawScene dispatches the three states');
+  /* a real jump: the stage-2 boss, through the game's own warning */
+  ok(vm.runInContext("(function(){ try{ ASSETS.ready=true; return debugStartFight(debugFightFor(2,'boss')); }catch(e){ return 'threw '+e.message; } })()", ctxv)===true, 'debugStartFight(stage 2 boss) runs');
+  ok(vm.runInContext("state===GS.PLAY && run.stage===2 && run.mode==='arcade' && warnKind==='boss' && warnT>0 && bossWarned && subBossDone", ctxv), 'it lands in PLAY on stage 2 with the boss warning raised, not with a boss dropped in cold');
+  ok(vm.runInContext("waveIdx>=999 && aminiTriggered && _sc1 && _mc1", ctxv), 'the wave script, the arsenal mini and the crates are spent - nothing else arrives');
+  vm.runInContext("for(var f=0;f<200;f++){ try{ updatePlay(1/60); }catch(e){} }", ctxv);
+  ok(vm.runInContext("bossActive && boss && boss._ship==='infernoreaver'", ctxv), 'the stage-2 boss spawns from the warning: '+vm.runInContext("boss?boss.name:null", ctxv));
+  ok(vm.runInContext("enemies.length===0", ctxv), 'with zero wave enemies on the field');
+  ok(vm.runInContext("BOSSMODE.kill()===true && boss.dead && bossDefeated", ctxv), 'BOSSMODE.kill() takes the death branch (barriers absorb a hit; this cannot be absorbed)');
+  vm.runInContext("for(var f=0;f<400;f++){ try{ updatePlay(1/60); }catch(e){} }", ctxv);
+  ok(vm.runInContext("state===GS.FLYOVER", ctxv), 'after the cook-off the stage hands over to the fly-off (state='+vm.runInContext("state", ctxv)+')');
+  vm.runInContext("(function(){ for(var f=0;f<400;f++){ try{ loop(50000+f*16.7); }catch(e){} if(state===GS.DEBUG) break; } })()", ctxv);
+  ok(vm.runInContext("state===GS.DEBUG && debugFight===null && boss===null", ctxv), 'and the fly-off fades back to the DEBUG menu with the fight cleaned up (state='+vm.runInContext("state", ctxv)+')');
+  /* a miniboss has no stage exit of its own - the tick raises one once its death reel has run */
+  ok(vm.runInContext("debugStartFight(debugFightFor(2,'mini'))===true && warnKind==='sub'", ctxv), 'the stage-2 MINI launches with the sub-boss warning');
+  vm.runInContext("for(var f=0;f<200;f++){ try{ updatePlay(1/60); debugLoopTick(1/60); }catch(e){} }", ctxv);
+  ok(vm.runInContext("subBossActive && subBoss && subBoss._ship==='magmaward'", ctxv), 'the mini spawns: '+vm.runInContext("subBoss?subBoss.name:null", ctxv));
+  ok(vm.runInContext("BOSSMODE.kill()===true && subBoss.dead", ctxv), 'kill() reaches a miniboss too');
+  vm.runInContext("for(var f=0;f<180;f++){ try{ updatePlay(1/60); debugLoopTick(1/60); }catch(e){} }", ctxv);
+  ok(vm.runInContext("subBossDone && bossDefeated && stageEnding>=3.4", ctxv), 'once its death reel ran (1.9s) the tick raised the stage exit with the clock most of the way to endT');
+  vm.runInContext("for(var f=0;f<300;f++){ try{ updatePlay(1/60); debugLoopTick(1/60); }catch(e){} }", ctxv);
+  ok(vm.runInContext("state===GS.FLYOVER", ctxv), 'so a mini kill flies off the same way (state='+vm.runInContext("state", ctxv)+')');
+  vm.runInContext("(function(){ for(var f=0;f<400;f++){ try{ loop(90000+f*16.7); }catch(e){} if(state===GS.DEBUG) break; } })()", ctxv);
+  ok(vm.runInContext("state===GS.DEBUG", ctxv), 'and lands on the menu');
+  /* the recorder degrades to nothing, never to a throw: this vm has no captureStream */
+  ok(vm.runInContext("(function(){ try{ var r=debugRecStart(); return r===false && !debugRecActive(); }catch(e){ return 'threw '+e.message; } })()", ctxv)===true, 'a browser with no MediaRecorder loses the recorder, not the game');
+  /* 0910d: the clip is hud + equip + play, composited from the END of loop - AFTER drawHUDStrip has
+     filled the strip for this frame, or every clip carries the previous frame's HUD. */
+  ok(_lp.indexOf('debugRecFrame()')>0 && _lp.indexOf('drawHUDStrip')>0 && _lp.indexOf('drawHUDStrip')<_lp.indexOf('debugRecFrame()'),
+     'the recorder composites the whole cabinet, and does it after the HUD strip is drawn');
+  ok(vm.runInContext("debugRecStart.toString().indexOf('debugRecGeom()')>0 && /const stream=c\.captureStream/.test(debugRecStart.toString())", ctxv),
+     'and it captures the composite canvas, not the play canvas alone');
+  /* the host API and the override store */
+  ok(vm.runInContext("typeof BOSSMODE==='object' && ['start','stop','pause','snapshot','kill','fights','tables','patternSlots'].every(function(k){ return typeof BOSSMODE[k]==='function'; }) && typeof BOSSMODE.override.apply==='function' && typeof BOSSMODE.art.keysFor==='function'", ctxv), 'window.BOSSMODE carries the editor surface');
+  ok(vm.runInContext("(function(){ var D=SHIPBOSS.infernoreaver; bossmodeApplyOverride('infernoreaver',{name:'TEST ROW',w:123,mounts:{C:[0,0.5]}},{noSave:true}); return SHIPBOSS.infernoreaver===D && D.name==='MAGMA WARD' && D.w!==123; })()", ctxv), 'an override saved on a normal boot is NOT laid onto the row (blank game state, Mike 0909)');
+  ok(vm.runInContext("(function(){ bossmodeOverridesArm(true); var D=SHIPBOSS.infernoreaver; return D.name==='TEST ROW' && D.w===123 && D.mounts.C[1]===0.5 && D.mounts.L===undefined && D.pats.length===4; })()", ctxv), 'armed, the patch lays onto the SAME object: patched fields replace, untouched fields stay stock');
+  ok(vm.runInContext("(function(){ bossmodeResetOverride('infernoreaver'); var D=SHIPBOSS.infernoreaver; return D.name==='MAGMA WARD' && D.w===210 && D.mounts.L && D.mounts.L[0]===-0.39 && BOSSMODE_OVERRIDES.infernoreaver===undefined; })()", ctxv), 'reset restores the shipped row byte for byte and forgets the patch');
+  vm.runInContext("bossmodeOverridesArm(false)", ctxv);
+  ok(vm.runInContext("bossmodeArtKeys('infernoreaver').length>=40 && bossmodeArtKeys('infernoreaver').every(function(k){ return !!(BOFX.cells[k]||BOFX.img[k]); })", ctxv), 'the graphics browser lists only registered keys for a kind ('+vm.runInContext("bossmodeArtKeys('infernoreaver').length", ctxv)+' for the Magma Ward)');
+  /* the editor's own files */
+  ok(fs.existsSync(path.join(ROOT,'bossmode.html')) && fs.existsSync(path.join(ROOT,'assets/bossmode/bossmode.js')) && fs.existsSync(path.join(ROOT,'assets/bossmode/bossmode.css')), 'bossmode.html and its script/style ship');
+  var _uiOk=['buttonsfiles','buttonseditor','icons','windows','loading','fontupper','fontlower','fontsymbols','logo','cursors'].every(function(n){ return fs.existsSync(path.join(ROOT,'assets/bossmode/ui/'+n+'.png')) && fs.existsSync(path.join(ROOT,'assets/bossmode/ui/'+n+'.json')); });
+  ok(_uiOk && fs.existsSync(path.join(ROOT,'assets/bossmode/ui/boot.png')) && fs.existsSync(path.join(ROOT,'assets/bossmode/ui/cur_pointer.png')), 'the Boss Mode pack (atlases + maps + boot plate + cursors) is in assets/bossmode/ui');
+  var _bfm=JSON.parse(fs.readFileSync(path.join(ROOT,'assets/bossmode/ui/buttonsfiles.json'),'utf8'));
+  ok(['new-boss','open-boss','save','save-as','import','export','play-test','stop-test'].every(function(n){ return _bfm.items.some(function(it){ return it.name===n+'-normal'; }); }), 'every file button the editor asks for is in the map');
+  vm.runInContext("try{ debugFight=null; boss=null; subBoss=null; bossActive=false; subBossActive=false; bossDefeated=false; stageEnding=0; enemies.length=0; eBullets.length=0; setState(GS.TITLE); }catch(e){}", ctxv);
+}
+// ===== 280. THE SCENE DIRECTOR AND THE SCENE EDITOR (drop 0911a) =====
+{
+  /* Mike: "a boss editor section where it's a scene editor essentially, but with a grid/tile based
+     system ... drag my boss across horizontally, vertically, diagonally, spin, rotate ... zones where
+     the boss would go, attack zones, safe zones for the player, and a list of the in-game projectiles
+     to key to the boss, the flashes, the effects." The engine half is driven here on a live stage-2
+     boss: the grid path, the rotation, a keyed volley, the safe/attack/boss zones, ownFire. */
+  ok(vm.runInContext("typeof sceneAttach==='function' && typeof sceneDirectorTick==='function' && typeof sceneZoneTick==='function' && typeof sceneEmitBeat==='function' && typeof sceneDrawWorld==='function'", ctxv), 'the director, its zone tick, its emitter and its field draw exist');
+  ok(vm.runInContext("BM_LIVE_FIELDS.indexOf('scene')>=0", ctxv), 'a scene rides the override like any other live field');
+  var _sbi=vm.runInContext("shipBossInit.toString()", ctxv);
+  ok(_sbi.indexOf('sceneAttach(b, D.scene)')>0, 'shipBossInit attaches the row scene at spawn');
+  var _sbm=vm.runInContext("shipBossManoeuvre.toString()", ctxv);
+  ok(_sbm.indexOf('sceneDirectorTick(b,dt)')>0 && _sbm.indexOf('sceneDirectorTick(b,dt)')<_sbm.indexOf('stage4WarfareTick'), 'the director runs inside shipBossManoeuvre, before the stage-specific ticks');
+  ok(_sbm.indexOf('sceneClampTick(b)')>0, 'and the boss zone fences the manoeuvre from the same function');
+  var _pose=vm.runInContext("shipBossVisualPose.toString()", ctxv);
+  ok(_pose.indexOf('b._scene.rot')>0, 'the visual pose carries the scene rotation - authored, not an engine tilt');
+  var _dw2=vm.runInContext("drawWorld.toString()", ctxv);
+  ok(_dw2.indexOf('sceneDrawWorld()')>0 && _dw2.indexOf('sceneDrawWorld()')>_dw2.indexOf('drawSubBoss()'), 'the field draws zone telegraphs after the units');
+  ok(vm.runInContext("['bmfx_fov_red_wide','bmfx_fov_green_tall','bmfx_alert_yellow_danger','bmfx_alert_red_incoming_projectile','bmfx_badge_red','bmfx_badge_green'].every(function(k){ return BOFX.cells[k]&&BOFX.cells[k][0]==='ui_bossmode_fx'; }) && !!BOFX.img['nca_ui_bossmode_fx']", ctxv), 'the pack FOV cones, alerts and badges are registered as in-game cells');
+  ok(fs.existsSync(path.join(ROOT,'assets/game/atlas/ui_bossmode_fx.png')), 'and the sheet is on disk');
+  /* a live fight, then a scene laid on it */
+  ok(vm.runInContext("(function(){ try{ ASSETS.ready=true; return debugStartFight(debugFightFor(2,'boss')); }catch(e){ return 'threw '+e.message; } })()", ctxv)===true, 'stage-2 boss fight up for the scene');
+  vm.runInContext("for(var f=0;f<260;f++){ try{ updatePlay(1/60); }catch(e){} }", ctxv);
+  ok(vm.runInContext("bossActive && boss && boss._ship==='infernoreaver' && !boss.enter", ctxv), 'the boss has entered');
+  var _scene=JSON.stringify({grid:{cell:32}, ownFire:false, tracks:[{name:'t', trigger:{type:'start'}, mode:'once', keys:[
+     {x:3,y:4,t:0.5,ease:'linear',hold:0.2}, {x:12,y:4,t:0.5,ease:'linear',hold:0.2,actions:[{type:'fire',shape:'fan',n:5,spread:50,speed:3,anchor:'C'}]},
+     {x:12,y:4,rot:360,t:1.0,ease:'linear'} ]}], zones:[{name:'safe',type:'safe',x:1,y:13,w:4,h:2},{name:'kill',type:'attack',x:5,y:9,w:5,h:3,telegraph:'fov'},{name:'box',type:'boss',x:4,y:2,w:7,h:3}]});
+  ok(vm.runInContext("BOSSMODE.scene.attach("+_scene+")", ctxv)===true, 'BOSSMODE.scene.attach lays a scene on the live boss');
+  vm.runInContext("player.invuln=1e9; for(var f=0;f<36;f++){ try{ updatePlay(1/60); }catch(e){} }", ctxv);   // 0.6s: key 1 reached, inside its hold
+  var _p1=vm.runInContext("[boss.x,boss.y]", ctxv);
+  ok(Math.abs(_p1[0]-96)<3 && Math.abs(_p1[1]-128)<3, 'key 1 lands on the grid: tiles (3,4) @32 -> ('+_p1[0].toFixed(0)+','+_p1[1].toFixed(0)+')');
+  var _nb0=vm.runInContext("eBullets.length", ctxv);
+  vm.runInContext("for(var f=0;f<42;f++){ try{ updatePlay(1/60); }catch(e){} }", ctxv);   // +0.7s: hold, run, key 2 reached and held
+  var _p2=vm.runInContext("[boss.x,boss.y]", ctxv);
+  ok(Math.abs(_p2[0]-384)<3 && Math.abs(_p2[1]-128)<3, 'key 2: the horizontal run to (12,4) -> ('+_p2[0].toFixed(0)+','+_p2[1].toFixed(0)+')');
+  var _nb1=vm.runInContext("eBullets.length", ctxv);
+  ok(_nb1-_nb0>=5, 'the fan action on key 2 fired '+(_nb1-_nb0)+' rounds');
+  ok(vm.runInContext("eBullets.some(function(q){ return q._bfam==='magma'; })", ctxv), 'as the boss OWN round family (kind:boss goes through _shipShot)');
+  vm.runInContext("for(var f=0;f<42;f++){ try{ updatePlay(1/60); }catch(e){} }", ctxv);   // into the spin
+  var _rot=vm.runInContext("BOSSMODE.scene.state().rotDeg", ctxv);
+  ok(_rot>60 && _rot<340, 'the spin key is interpolated raw (0 -> 360 is a full turn): '+_rot.toFixed(0)+' deg mid-spin');
+  ok(Math.abs(vm.runInContext("shipBossVisualPose(boss).rot*180/Math.PI", ctxv)-_rot)<1, 'and the drawn pose carries it');
+  vm.runInContext("eBullets.push({x:96,y:448,vx:0,vy:0,w:6,h:6,dmg:1,t:0,kind:'eshot'}); try{ updatePlay(1/60); }catch(e){}", ctxv);
+  ok(vm.runInContext("!eBullets.some(function(q){ return q.x===96&&q.y===448&&!q.dead; })", ctxv), 'a round inside the SAFE zone is removed');
+  ok(vm.runInContext("boss.fireCd>=0.4", ctxv), 'ownFire:false keeps the engine own patterns quiet');
+  vm.runInContext("for(var f=0;f<80;f++){ try{ updatePlay(1/60); }catch(e){} }", ctxv);
+  ok(vm.runInContext("BOSSMODE.scene.state().done===1 && BOSSMODE.scene.state().trackName===null", ctxv), 'a once-track finishes and releases the hull');
+  vm.runInContext("for(var f=0;f<150;f++){ try{ updatePlay(1/60); }catch(e){} }", ctxv);
+  var _p3=vm.runInContext("[boss.x,boss.y]", ctxv);
+  ok(_p3[0]>=127 && _p3[0]<=353 && _p3[1]>=63 && _p3[1]<=161, 'with no track live the BOSS zone fences the engine own manoeuvre: ('+_p3[0].toFixed(0)+','+_p3[1].toFixed(0)+')');
+  ok(vm.runInContext("BOSSMODE.scene.detach() && boss._scene===null", ctxv), 'detach clears it');
+  /* the palette the editor keys from is the engine own registry, not a hand list */
+  var _pal=JSON.parse(vm.runInContext("JSON.stringify(BOSSMODE.scene.fx())", ctxv));
+  ok(_pal.muzzle.length>=5 && _pal.explode.length>=8 && _pal.round.length>=10, 'the fx palette lists '+_pal.muzzle.length+' muzzle, '+_pal.explode.length+' explode, '+_pal.round.length+' round families');
+  ok(_pal.muzzle.every(function(f){ return vm.runInContext("!!(BOFX.cells['"+f+"_0']||BOFX.img['"+f+"_0'])", ctxv); }), 'and every one of them is registered');
+  ok(vm.runInContext("BOSSMODE.scene.kinds().length>=40 && BOSSMODE.scene.shapes.length===11", ctxv), 'FIRETYPES kinds and the eleven shapes are on offer');
+  /* the editor half ships */
+  ok(fs.existsSync(path.join(ROOT,'assets/bossmode/scene.js')), 'scene.js ships');
+  var _bh=fs.readFileSync(path.join(ROOT,'bossmode.html'),'utf8');
+  ok(_bh.indexOf('data-tab="scene"')>0 && _bh.indexOf('id="pane-scene"')>0 && _bh.indexOf('assets/bossmode/scene.js')>0, 'the SCENE tab, pane and script are in the page');
+  ok(['pointmarkers','pathingguides','bulletpatterns','phaseemittertools','firinghitboxguides','markers','shields','maneuvericons','alerts-neonred','fov-neon-red','armoreddangeralerts'].every(function(n){ return fs.existsSync(path.join(ROOT,'assets/bossmode/ui/'+n+'.png')) && fs.existsSync(path.join(ROOT,'assets/bossmode/ui/'+n+'.json')); }), 'the Complete pack tool atlases and maps are in assets/bossmode/ui');
+  var _bmjs=fs.readFileSync(path.join(ROOT,'assets/bossmode/bossmode.js'),'utf8');
+  ok(_bmjs.indexOf('p.scene=clone(d.scene)')>0 && _bmjs.indexOf('window.BM=')>0, 'the editor puts the scene on the patch and exposes the surface scene.js hangs off');
+  vm.runInContext("try{ debugFight=null; boss=null; subBoss=null; bossActive=false; subBossActive=false; bossDefeated=false; stageEnding=0; enemies.length=0; eBullets.length=0; setState(GS.TITLE); }catch(e){}", ctxv);
+}
+
+// ===== 281. THE NINE SOMERSAULTS, THE CHARGE, THE OPENER AND HELP (drop 0912a) =====
+{
+  /* ---- every pilot can flip, and each on their OWN reel ---- */
+  var _SP=vm.runInContext('SOMER_PILOTS', ctxv);
+  var _all9=['axel','cole','decker','falva','freezer','juggernaut','lizzie','maverick','yuri'];
+  ok(_all9.every(function(k){ return _SP[k]; }) && Object.keys(_SP).length===9,
+     'SOMER_PILOTS lists all nine (' + Object.keys(_SP).length + ')');
+  var _missSo=[];
+  _all9.forEach(function(pk){
+    for(var i=0;i<8;i++) if(!vm.runInContext("XART.rdy('ship_"+pk+"_so"+i+"')", ctxv)) _missSo.push(pk+'_so'+i);
+  });
+  ok(_missSo.length===0, 'all nine pilots carry a full so0..so7 (72 cells) - missing: '+(_missSo.join(',')||'none'));
+  /* ⚠ AND THE `so` REEL IS NOT THE `br` REEL. If a future import ever aliases one onto the other the
+     game would play a barrel roll under the somersault's name and every assertion above would still
+     pass. A pitch presents the SPAN and loses height; a roll presents the chord and keeps it. */
+  var _aliased=_all9.filter(function(pk){
+    var a=vm.runInContext("JSON.stringify(BOFX.ships['ship_"+pk+"_so2']||null)", ctxv);
+    var b=vm.runInContext("JSON.stringify(BOFX.ships['ship_"+pk+"_br2']||null)", ctxv);
+    return a && a===b;
+  });
+  ok(_aliased.length===0, 'no pilot somersault is an alias of their barrel roll - '+(_aliased.join(',')||'none'));
+
+  /* ---- the binds Mike asked for, including the two side mouse buttons ---- */
+  var _kb=vm.runInContext('KEYBIND_DEFAULT', ctxv);
+  ok(_kb.retina.indexOf(' ')>=0, 'SPACE is the C / retina button (it already was - pinned so it cannot quietly go away)');
+  ok(_kb.retina.indexOf('mouse3')>=0, 'side mouse button 4 is C / retina (e.button 3 -> mouse3)');
+  ok(_kb.charge && _kb.charge.indexOf('h')>=0 && _kb.charge.indexOf('mouse4')>=0,
+     'CHARGE is H plus side mouse button 5 (e.button 4 -> mouse4)');
+  ok(vm.runInContext('KEYBIND2_DEFAULT.charge && KEYBIND2_DEFAULT.charge.length>0', ctxv),
+     'seat 2 has a charge bind too - an action only P1 can reach vanishes in co-op');
+  ok(vm.runInContext("CTRL_ACTS.indexOf('charge')>=0 && CTRL_LABELS.length===CTRL_ACTS.length", ctxv),
+     'CHARGE is rebindable and the label list still matches the action list');
+  ok(vm.runInContext('OPT_CTRL.length===8', ctxv), 'the other controls screen lists it too');
+
+  /* ---- the charge is Juggernaut's, and only with the crate ---- */
+  ok(vm.runInContext("run.pilot='yuri'; special=null; chargeAvailable()===false", ctxv), 'no charge for another pilot');
+  ok(vm.runInContext("run.pilot='juggernaut'; special=null; chargeAvailable()===false", ctxv), 'and none for him without the crate');
+  ok(vm.runInContext("run.pilot='juggernaut'; special={pilot:'juggernaut',t:9,dur:15}; player.dead=false; player.roll=null; player.somer=null; chargeAvailable()===true", ctxv),
+     'the crate arms it');
+  var _rows=vm.runInContext('JSON.stringify(barRows())', ctxv);
+  ok(_rows==='{"charge":0,"somersault":1,"roll":2}', 'bar rows bottom-up are CHARGE, SOMERSAULT, ROLL - '+_rows);
+  ok(vm.runInContext('special=null; JSON.stringify(barRows())', ctxv)==='{"somersault":0,"roll":1}',
+     'and the CHARGE row disappears with the crate, leaving the other two where they were');
+  ok(vm.runInContext('CHG_MAX>CHG_MIN && CHG_DMAX>CHG_DMIN && CHG_ARM<CHG_FULL', ctxv),
+     'the charge curve is monotonic: a longer hold buys a further ram');
+
+  /* ---- the wrecking balls: two rings, opposite ways ---- */
+  var _rings=JSON.parse(vm.runInContext('JSON.stringify(WB_RING)', ctxv));
+  ok(_rings.length===2 && _rings[0].spin*_rings[1].spin<0,
+     'two rings of wrecking balls, counter-rotating - '+_rings.map(function(r){return r.spin;}).join(' / '));
+  ok(_rings.reduce(function(a,r){return a+r.n;},0)===6, 'six balls in total');
+  /* ⚠ the inner ring has to clear the ~50px hull. At 44 the six chains converged on the ship and
+     buried it - a shield you cannot see your own aircraft inside is a blindfold. */
+  ok(vm.runInContext('WB_RING[0].r > 50 && WB_CHAIN0 > 20', ctxv),
+     'the inner ring and the chain start clear of the hull rather than on top of it');
+  ['jwb_ball','jwb_ball_hot','jwb_link','jwb_burst','jchg_0','jchg_1','jchg_2','jchg_3'].forEach(function(k){
+    ok(vm.runInContext("!!(BOFX.cells && BOFX.cells['"+k+"'])", ctxv), 'the '+k+' cell is registered');
+  });
+  ok(fs.existsSync(path.join(ROOT,'assets/game/atlas/jugg_charge_wreck.png')), 'their atlas ships');
+
+  /* ---- the arcade opener ---- */
+  ok(vm.runInContext("GS.OPENER==='opener' && GS.INTRO==='intro' && GS.OPENER!==GS.INTRO", ctxv),
+     'the opener has its OWN state - GS.INTRO is the stage card and must not be reused');
+  var _opn=JSON.parse(vm.runInContext('JSON.stringify(OPN)', ctxv));
+  ok(_opn.length===9 && _opn.map(function(b){return b.k;}).join(',')==='sil,sil,roll,face,demo,demo,demo,nine,logo',
+     'nine beats in order: '+_opn.map(function(b){return b.k;}).join(' '));
+  var _lines=_opn.filter(function(b){return b.t;}).map(function(b){return b.t;});
+  ['EARTH IS IN TROUBLE!', "WE NEED FURY HQ'S HELP!", '9 ELITE PILOTS',
+   "99 PROBLEMS BUT A FLIGHT AIN'T 1!", 'DOUBLE THE ACTION', 'TRIPLE THE TROUBLE',
+   'THREAT UNKNOWN?'].forEach(function(t){
+    ok(_lines.indexOf(t)>=0, 'the trailer card is in the reel: '+t);
+  });
+  var _acts=JSON.parse(vm.runInContext('JSON.stringify(OPN_NINE.map(function(q){return q.act;}))', ctxv));
+  ok(_acts.length===9
+     && _acts.filter(function(a){return a==='die';}).length===3
+     && _acts.filter(function(a){return a==='kill';}).length===3
+     && _acts.filter(function(a){return a==='dodge';}).length===3,
+     'the nine-screen finale is 3 that fall, 3 that finish a boss, 3 that fly out - '+_acts.join(','));
+  ok(vm.runInContext("!!(window.BOFA && BOFA.music && BOFA.music.opener && /stage9_bonus_warp_run/.test(BOFA.music.opener))", ctxv),
+     'it runs on the one track the manifest never mapped');
+  ok(fs.existsSync(path.join(ROOT,'assets/game/music/stage9_bonus_warp_run.mp3')), 'and that file is actually there');
+  /* ⚠ THE SILHOUETTE SOURCE MUST BE A CUTOUT. port_cf_* portraits are 77% opaque framed busts and
+     silhouette into a black BOX; the cinematic ship cutouts are ~43% and silhouette into an
+     aeroplane. Pinned because the key name gives no hint which is which, and the first cut of this
+     beat shipped a rectangle with a rim light round it. */
+  ok(vm.runInContext("OPN_SIL_KEY('axel')==='cinship_axel_2'", ctxv),
+     'the silhouettes are cut from the ship cutouts, not from the framed portraits');
+  ok(vm.runInContext("!!(XART._src && XART._src['cinship_axel_2'])", ctxv), 'and that cutout is registered');
+
+  /* ---- HELP ---- */
+  ok(vm.runInContext("TITLE_ITEMS.length===6 && TITLE_ITEMS[3]==='HELP'", ctxv), 'HELP is the fourth title button');
+  ok(vm.runInContext('MENU_KEYS.length===TITLE_ITEMS.length', ctxv), 'and every title item has a plate');
+  /* ⚠ FOUR PLACES KNEW THIS MENU WAS FIVE LONG: two wrap sites in handleTitleInput, the art draw
+     loop and the mouse hit-test. Fixing only the wraps left the sixth button invisible AND
+     unclickable, which a code read did not catch and a screenshot did. */
+  var _s281=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
+  ok(_s281.indexOf('for(let i=0;i<MENU_KEYS.length;i++)')>0
+     && _s281.indexOf('for(let i=0;i<TITLE_ITEMS.length;i++){ const cy=TMENU_Y0')>0,
+     'the title draw loop and the mouse hit-test both count the table, not a literal 5');
+  ok(vm.runInContext("!!(BOFX.cells && BOFX.cells['btn_help'])", ctxv), 'the HELP plate is registered');
+  ok(fs.existsSync(path.join(ROOT,'assets/game/atlas/ui_help.png')), 'the help atlas ships');
+  ['pad_a','pad_b','pad_c','pad_x','pad_y','pad_z','pad_start','pad_select','pad_dpad','pad_stick'].forEach(function(k){
+    ok(vm.runInContext("!!(BOFX.cells && BOFX.cells['"+k+"'])", ctxv), 'the '+k+' glyph is registered');
+  });
+  ok(vm.runInContext('HELP_PAGES.length===3', ctxv), 'HELP has three pages');
+  /* ⚠ THE FACE AND THE FLOOR, PINNED TOGETHER (Mike, 0912b: "whatever font is being used here is
+     bad. please use stage fonts only the proper ones"). Two separate faults wearing one symptom:
+     uiFontArt() is the stage-1 CARD alphabet (a decorative set that stops at stage 5) where
+     curFontArt() is the authored CF_BOFStageFonts Vol.2 per-stage face - AND the page was drawing
+     at 7-9px, where BOTH faces lose their counters (rendered side by side at 8/9/10/11/13/16 in
+     probe_font_compare.py). Fixing the face alone would not have fixed the screenshot. */
+  ok(vm.runInContext('HELP_MIN>=11', ctxv), 'the help screen has an 11px floor under every label');
+  var _hlp=_s281.slice(_s281.indexOf('function helpLabel('), _s281.indexOf('function helpKeyCap('));
+  ok(_hlp.indexOf('curFontArt')>0 && _hlp.indexOf('uiFontArt')<0,
+     'helpLabel draws in the authored stage face, not the card alphabet');
+  var _opt=_s281.slice(_s281.indexOf('function opnText('), _s281.indexOf('function opnBackdrop('));
+  ok(_opt.indexOf('curFontArt')>0 && _opt.indexOf('uiFontArt')<0,
+     'and so do the trailer cards in the opener');
+  /* no label may ask for less than the floor - caught by reading the sizes the screen passes */
+  var _sizes=[], _m, _re=/helpLabel\([^;]*?,\s*(\d+),\s*'#/g;
+  var _pages=_s281.slice(_s281.indexOf('function helpPageControls('), _s281.indexOf('function drawHelp('));
+  while((_m=_re.exec(_pages))) _sizes.push(+_m[1]);
+  ok(_sizes.length>10 && Math.min.apply(null,_sizes)>=11,
+     'every helpLabel call asks for 11px or more (' + _sizes.length + ' calls, smallest ' + Math.min.apply(null,_sizes) + ')');
+  ok(vm.runInContext("MENU_BACK[GS.HELP]===GS.TITLE", ctxv), 'and it is backable like every other menu');
+  /* ⚠ THE LABELS MUST COME FROM THE BIND TABLE. A help screen that hard-codes 'FIRE: J' is wrong the
+     moment anyone rebinds, and it is wrong SILENTLY - the player follows it, nothing happens, and
+     they conclude the game is broken. */
+  ok(vm.runInContext("keybind.fire=['q']; var r=helpBind('fire',1); keybind=_loadBinds('bof_keys',KEYBIND_DEFAULT); r==='Q'", ctxv),
+     'HELP reads the live bind table rather than typed key names');
+  vm.runInContext("try{ run.pilot='yuri'; special=null; setState(GS.TITLE); menuIndex=0; }catch(e){}", ctxv);
+}
+
+// ===== 282. WHAT REPLACED THE THRUSTERS, AND WHETHER IT STILL WORKS (0906s, audited 0912c) =====
+{
+  ok(THRUSTER_GONE && _thrSkipped > 0,
+     _thrSkipped + ' star-thruster assertions retired, not failed - 0906s deleted that system at ' +
+     'Mike’s request and shipGlowKey()’s phase cells replaced it (see okThr)');
+
+  /* the replacement is wired in the engine */
+  ok(vm.runInContext("typeof shipGlowKey==='function'", ctxv), 'shipGlowKey() is the replacement picker');
+  ok(vm.runInContext("SHIP_FLAME_BAKED===true", ctxv), 'and SHIP_FLAME_BAKED declares the flames are in the plates');
+  var _gs = fs.readFileSync(path.join(ROOT, 'assets/game.js'), 'utf8');
+  ok(_gs.indexOf('key=shipGlowKey(key);') > 0, 'the frame-key chokepoint calls it');
+
+  /* ⚠ AND HERE IS THE BUG IT WAS HIDING (found 0912c).
+     0906s baked 144 `ship_<pilot><suffix>_g1/_g2` phase cells and they are still in the manifest at
+     HEAD. In the working tree there are ZERO - the 0909 re-pack onto one sheet per pilot
+     (nsa_ship_<pilot>) rebuilt BOFX.ships and the phase rows did not survive it. The new hulls are
+     a different size too (axel_nf trims 178x177 at HEAD, 136x155 now), so the old phase art cannot
+     simply be re-pointed; it needs re-baking against the current plates.
+
+     shipGlowKey FAILS SOFT - `return (BOFX.ships[k2]) ? k2 : key` - so nothing throws, nothing
+     logs, and every flame is simply static. Measured in real Chromium on the eight keys that DID
+     carry phases (base, _l, _r, _pv0.._pv4 - note NOT _nf, which never had one): one distinct key
+     over a full 300ms cycle, on every one. 0906s measured three.
+
+     ⚠ AND THE OLD CELLS CANNOT SIMPLY BE RE-POINTED. Rendered HEAD's ship_axel / _g1 / _g2 beside
+     the working tree's ship_axel: it is a DIFFERENT AEROPLANE - the hull was replaced after HEAD
+     (178x200 with a pale flame, against 136x155 with a cyan one). The phases are the same
+     silhouette as the plate they were baked from, so they belong to the old hull and nothing else.
+     Restoring the flicker means re-baking the 144 phases against the CURRENT plates - Mike's art,
+     and his call.
+
+     This assertion is SUPPOSED to be red until the cells are re-baked. It is the one failure that
+     replaces the two dozen retired above, and unlike them it describes something actually wrong. */
+  var _phase = vm.runInContext(
+    "Object.keys(BOFX.ships).filter(function(k){return /_g[12]$/.test(k);}).length", ctxv);
+  ok(!vm.runInContext("SHIP_FLAME_BAKED", ctxv) || _phase > 0,
+     'SHIP_FLAME_BAKED is on, so the _g1/_g2 phase cells must exist - found ' + _phase +
+     ' (0906s baked 144; the 0909 per-pilot re-pack dropped them, so no flame flickers)');
+
+  /* and the proof that it is the CELLS and not the picker: the one costume that still carries its
+     own phase rows in code rather than in the manifest does still flicker */
+  ok(vm.runInContext(
+      "Object.keys(LIZZIE_B42_RECTS).filter(function(k){return /_g[12]$/.test(k);}).length===18", ctxv),
+     'the B-42 propeller keeps its 18 phase rows in LIZZIE_B42_RECTS, which is why that one still animates');
+}
+
+// ===== 283. THE WORLD->OVERLAY MAPPING IN BULLETS OF DEBUG (0912h) =====
+/* ⚠⚠ A WORLD COORDINATE DRAWN INTO SCREEN SPACE WITH NO CAMERA, FOR THE FIFTH TIME.
+
+   CLAUDE.md records this class four times already - the launch seam (0810a), the outbound routes
+   (0810c), the level-1 opening's ship (0810e), and probe_seam.py, which RECOMPUTED `player.x - camX`
+   instead of recording what was drawn and so asserted the very fix it was meant to test. Bullets of
+   Debug's FOV cone made it five: it mapped a unit's world x straight onto its own canvas, which is
+   correct only while camX is 0, and sat ~190px right of the ship the moment the camera scrolled.
+
+   Every number the editor printed was right. Only the screenshot was wrong.
+
+   These are SOURCE assertions deliberately - the behavioural check is probe_bod_overlay_0912h.py,
+   which compares the engine's own CTM against the point the overlay actually drew, in page space,
+   and runs a busted arm first so that it can fail. What is pinned here is that the three terms are
+   present at all, because each of them is invisible when it is missing:
+
+     camX      - dormant at camX 0, i.e. every screenshot taken at the left edge of a stage
+     the zoom  - dormant at 680/680, which is EVERY stage today (measured, all nine)
+     the rect  - dormant only if the iframe sat at the page origin, which it never does
+
+   ⚠ COMMENTS ARE STRIPPED. The notes in bod.js explaining this fix quote the wrong formulas by
+   name ("NOT y*vz"), so a raw indexOf matches the explanation rather than the code - section 47's
+   trap, self-inflicted. */
+{
+  console.log("=== 283. bullets of debug: world -> overlay ===");
+  var _bodp = path.join(ROOT, 'assets/bulletsofdebug/bod.js');
+  if (!fs.existsSync(_bodp)) {
+    ok(false, 'assets/bulletsofdebug/bod.js is missing - the Bullets of Debug editor has no script');
+  } else {
+    var _bod = fs.readFileSync(_bodp, 'utf8')
+                 .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '');
+    var _gsrc283 = fs.readFileSync(path.join(ROOT, 'assets/game.js'), 'utf8');
+
+    /* the bridge must hand the camera over at all - the editor cannot see a module-scope `let` */
+    ok(_gsrc283.indexOf('function _camEff()') > 0,
+       'BOFDEBUG reports an EFFECTIVE camera, not the raw camX');
+    ok(/_camEff[\s\S]{0,500}worldWidth\(\)\s*>\s*viewW\(\)/.test(_gsrc283),
+       'and _camEff gates on worldWidth()>viewW(), because drawWorld only applies the translate ' +
+       'then - a stage that does not scroll can hold a stale camX that NOTHING subtracted');
+
+    /* the horizontal term */
+    ok(/\(x\s*-\s*cam\)\s*\*\s*vz/.test(_bod),
+       'the overlay maps x through the camera AND the zoom: (x-cam)*vz');
+
+    /* the vertical term - drawWorld anchors the BOTTOM edge, so it is not y*vz */
+    ok(/y\s*\*\s*vz\s*\+\s*s\.VH\s*\*\s*\(\s*1\s*-\s*vz\s*\)/.test(_bod),
+       'and y through the bottom-edge anchor: y*vz + VH*(1-vz), which is what drawWorld installs ' +
+       '(scale, then translate(0, VH*(1-vz)/vz)) - plain y*vz is right only at zoom 1.00');
+
+    /* the letterbox is MEASURED, not computed */
+    ok(_bod.indexOf("getElementById('screen')") > 0 && _bod.indexOf('getBoundingClientRect') > 0,
+       'the overlay is pinned to the guest canvas it measures, the way bossmode.js always did - ' +
+       'deriving the letterbox arithmetically was 19.3px out across and 19.8px down');
+    ok(/fr\.left\s*\+\s*r\.left\s*-\s*pr\.left/.test(_bod),
+       'and the guest rect is carried into page space by the IFRAME own rect first - without that ' +
+       'middle term the overlay is out by exactly the iframe offset (measured -51px, -106px)');
+
+    /* the probe that proves it behaviourally must exist and must carry its busted arm */
+    var _ovp = path.join(ROOT, '_BUILD_SOURCE/probe_bod_overlay_0912h.py');
+    ok(fs.existsSync(_ovp), 'probe_bod_overlay_0912h.py is the behavioural check for all of the above');
+    if (fs.existsSync(_ovp)) {
+      var _ov = fs.readFileSync(_ovp, 'utf8');
+      ok(_ov.indexOf('bustCam') > 0 && _ov.indexOf('BUST_MIN') > 0,
+         'and it runs a BUSTED arm first, so a green result is evidence rather than a formality');
+      ok(_ov.indexOf('xform.get') > 0,
+         'and it reads the engine own CTM rather than rebuilding (x-camX)*vz - a probe that ' +
+         'recomputes the thing under test cannot find the bug');
+    }
+    ok(_bod.indexOf('bustCam') > 0, 'the editor carries the bust switch the probe drives');
+
+    /* the FIRE default - shapes()[0] is `stream`, which fires ONE round */
+    ok(/FIRE_SHAPE0\s*=\s*'fan'/.test(_bod),
+       'FIRE ONCE defaults to `fan`, not to shapes()[0] - the vocabulary starts with `stream`, ' +
+       'which fires a single round and reads as a broken button');
+  }
+}
+
+// ===== 284. BULLETS OF DEBUG: THE FIRE TAB, AND THE DIALS IT REFUSES TO SHIP (0912h) =====
+/* ⚠⚠ MIKE ASKED FOR "damage or damage per second" AND THIS ENGINE HAS NEITHER, FOR ENEMY FIRE.
+
+   Measured, before a single control was drawn: `playerHit()` takes ZERO arguments, there is no
+   `player.hp` anywhere in the file, and the enemy-bullet collision never looks at the bullet. Every
+   enemy round costs exactly one shield pip or one life. Four eBullets carry `dmg:1` and it is read
+   by nothing - so a damage slider would read back the value you wrote, change nothing, and be
+   indistinguishable from a working one. That is the exact failure mode this whole file exists to
+   stop, and it is why the FIRE tab ships an INERT list instead.
+
+   Twelve dials are named there, each with the measurement that condemned it. These assertions pin
+   that the list EXISTS and stays populated - not its prose. If someone later makes one of them real,
+   the right move is to delete that entry and ship the control.
+
+   The other half is the resolution rule. `shadowed` says a FIRETYPES row can never be selected, and
+   it is a DERIVATION the editor must not re-implement: the first cut re-derived it in the UI and
+   labelled `blast` shadowed on screen, when PROJ.blast.type IS 'blast' and it resolves to itself.
+   Exactly 8 rows are genuinely unreachable, and that is authored art nothing can draw. */
+{
+  console.log("=== 284. bullets of debug: the FIRE tab ===");
+  var _gs284 = fs.readFileSync(path.join(ROOT, 'assets/game.js'), 'utf8');
+
+  /* --- the bridge half --- */
+  ok(_gs284.indexOf('inert:function()') > 0,
+     'BOFDEBUG.inert() exists - the dials that cannot work are DATA, not a comment nobody reads');
+  var _in284 = _gs284.slice(_gs284.indexOf('inert:function()'));
+  _in284 = _in284.slice(0, _in284.indexOf('\n    },'));
+  var _dials = (_in284.match(/\{dial:/g) || []).length;
+  ok(_dials >= 10,
+     _dials + ' inert dials are named with the measurement that condemned each one');
+  ok(/playerHit\(\) takes ZERO arguments/.test(_in284),
+     'and the headline one is the damage slider Mike asked for - playerHit() takes no arguments, so ' +
+     'there is no per-round damage to tune and no DPS that follows from it');
+
+  /* the burst driver - five of the twelve shapes are ONE round per beat by design */
+  ok(_gs284.indexOf('burst:function(') > 0 && _gs284.indexOf('function bodBurstTick') > 0,
+     'a BURST driver exists, because spiral and sweep read the beat index and stream/aimed/sine ' +
+     'emit one round per beat - a one-shot preview renders five of twelve shapes as a single round');
+  ok(/function updateEffects\(dt\)\{\s*\r?\n\s*bodBurstTick\(dt\);/.test(_gs284),
+     "and it is pumped by the game's own effects tick, so a preview inherits pause and time scale " +
+     'rather than running on the editor wall clock');
+
+  /* the mount fix - measured inert on ordinary enemies before 0912h */
+  ok(/\(b&&b\._mounts&&b\._mounts\[slot\]\)/.test(_gs284),
+     'shipBossMount honours a per-unit _mounts - all twelve anchor slots returned ONE point on an ' +
+     'ordinary enemy before this, because only SHIPBOSS rows carry mounts');
+  ok(_gs284.indexOf('setMount:function') > 0 && _gs284.indexOf('mountPoint:function') > 0,
+     'and the bridge can write one and read back the resolved WORLD point');
+
+  /* the volley write must reach both spellings */
+  ok(/norm\(k\)===want/.test(_gs284),
+     'setVolley finds every ENEMY_VOLLEY row that NORMALISES to the same key - the table is keyed ' +
+     'in both spellings on purpose, and deriving them from the caller key reaches only one');
+
+  /* the shadow derivation, in the bridge */
+  ok(/shadowed:!!\(row && !dedic\(k\) && cls && cls!==k\)/.test(_gs284),
+     'a FIRETYPES row is shadowed only when it is not dedicated AND PROJ names a DIFFERENT row - ' +
+     'the clause a naive test drops is cls!==k, which is what cleared `blast`');
+
+  /* --- the editor half --- */
+  var _bodp284 = path.join(ROOT, 'assets/bulletsofdebug/bod.js');
+  if (fs.existsSync(_bodp284)) {
+    var _bod284 = fs.readFileSync(_bodp284, 'utf8')
+                    .replace(/\/\*[\s\S]*?\*\//g, '').replace(/\/\/[^\n]*/g, '');
+    ok(_bod284.indexOf('function renderFire') > 0, 'the editor has a FIRE panel');
+    ok(/ONE_SHOT_SHAPES\s*=\s*\{[^}]*spiral[^}]*sine/.test(_bod284),
+       'and it knows which shapes ignore ROUNDS, so it disables that slider instead of leaving one ' +
+       'that does nothing');
+    ok(_bod284.indexOf('d.inert()') > 0 || _bod284.indexOf('d.inert?') > 0,
+       'and it renders the inert list rather than re-listing it, so the two cannot drift apart');
+    ok(!/id="f-dmg"|id="f-damage"/.test(_bod284),
+       'and there is NO damage slider on it');
+    ok(/FIRE_SHAPE0\s*=\s*'fan'/.test(_bod284) && /kind:'pellet'/.test(_bod284),
+       'the defaults are a real pattern and a real kind - `stream` fires one round and `e` is not a ' +
+       'registered kind at all, so both first impressions were of a broken panel');
+  } else {
+    ok(false, 'assets/bulletsofdebug/bod.js is missing');
+  }
+
+  var _fp284 = path.join(ROOT, '_BUILD_SOURCE/probe_bod_fire_0912h.py');
+  ok(fs.existsSync(_fp284), 'probe_bod_fire_0912h.py drives the tab like a user (18 ok / 0 fail)');
+}
+
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
 

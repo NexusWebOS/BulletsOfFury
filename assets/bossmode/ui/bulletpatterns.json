@@ -1,0 +1,200 @@
+{
+  "asset": "bulletpatterns",
+  "frame_count": 16,
+  "frame_size": [
+    396,
+    346
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 4,
+    "rows": 4,
+    "cell": [
+      396,
+      346
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 2,
+        "x": 396,
+        "y": 0,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 3,
+        "x": 792,
+        "y": 0,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 4,
+        "x": 1188,
+        "y": 0,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 346,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 6,
+        "x": 396,
+        "y": 346,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 7,
+        "x": 792,
+        "y": 346,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 8,
+        "x": 1188,
+        "y": 346,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 692,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 10,
+        "x": 396,
+        "y": 692,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 11,
+        "x": 792,
+        "y": 692,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 12,
+        "x": 1188,
+        "y": 692,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 1038,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 14,
+        "x": 396,
+        "y": 1038,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 15,
+        "x": 792,
+        "y": 1038,
+        "w": 396,
+        "h": 346
+      },
+      {
+        "frame": 16,
+        "x": 1188,
+        "y": 1038,
+        "w": 396,
+        "h": 346
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "straight-stream",
+      "file": "bulletpatterns-alpha-01.png"
+    },
+    {
+      "name": "spread-three",
+      "file": "bulletpatterns-alpha-02.png"
+    },
+    {
+      "name": "fan-five",
+      "file": "bulletpatterns-alpha-03.png"
+    },
+    {
+      "name": "radial-burst",
+      "file": "bulletpatterns-alpha-04.png"
+    },
+    {
+      "name": "spiral-clockwise",
+      "file": "bulletpatterns-alpha-05.png"
+    },
+    {
+      "name": "spiral-counterclockwise",
+      "file": "bulletpatterns-alpha-06.png"
+    },
+    {
+      "name": "dual-spiral",
+      "file": "bulletpatterns-alpha-07.png"
+    },
+    {
+      "name": "concentric-rings",
+      "file": "bulletpatterns-alpha-08.png"
+    },
+    {
+      "name": "aimed-burst",
+      "file": "bulletpatterns-alpha-09.png"
+    },
+    {
+      "name": "sweep-fan",
+      "file": "bulletpatterns-alpha-10.png"
+    },
+    {
+      "name": "mirrored-streams",
+      "file": "bulletpatterns-alpha-11.png"
+    },
+    {
+      "name": "sine-wave",
+      "file": "bulletpatterns-alpha-12.png"
+    },
+    {
+      "name": "bullet-wall",
+      "file": "bulletpatterns-alpha-13.png"
+    },
+    {
+      "name": "bullet-rain",
+      "file": "bulletpatterns-alpha-14.png"
+    },
+    {
+      "name": "orbiting-satellites",
+      "file": "bulletpatterns-alpha-15.png"
+    },
+    {
+      "name": "laser-star",
+      "file": "bulletpatterns-alpha-16.png"
+    }
+  ]
+}

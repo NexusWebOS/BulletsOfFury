@@ -1,0 +1,156 @@
+{
+  "asset": "specialabilityicons",
+  "frame_count": 12,
+  "frame_size": [
+    408,
+    425
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 4,
+    "rows": 3,
+    "cell": [
+      408,
+      425
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 2,
+        "x": 408,
+        "y": 0,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 3,
+        "x": 816,
+        "y": 0,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 4,
+        "x": 1224,
+        "y": 0,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 425,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 6,
+        "x": 408,
+        "y": 425,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 7,
+        "x": 816,
+        "y": 425,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 8,
+        "x": 1224,
+        "y": 425,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 850,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 10,
+        "x": 408,
+        "y": 850,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 11,
+        "x": 816,
+        "y": 850,
+        "w": 408,
+        "h": 425
+      },
+      {
+        "frame": 12,
+        "x": 1224,
+        "y": 850,
+        "w": 408,
+        "h": 425
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "rotary-cannon",
+      "file": "specialabilityicons-alpha-01.png"
+    },
+    {
+      "name": "heavy-cannon",
+      "file": "specialabilityicons-alpha-02.png"
+    },
+    {
+      "name": "plasma-orb",
+      "file": "specialabilityicons-alpha-03.png"
+    },
+    {
+      "name": "flamethrower",
+      "file": "specialabilityicons-alpha-04.png"
+    },
+    {
+      "name": "proximity-mine",
+      "file": "specialabilityicons-alpha-05.png"
+    },
+    {
+      "name": "drone-deploy",
+      "file": "specialabilityicons-alpha-06.png"
+    },
+    {
+      "name": "emp-pulse",
+      "file": "specialabilityicons-alpha-07.png"
+    },
+    {
+      "name": "chain-lightning",
+      "file": "specialabilityicons-alpha-08.png"
+    },
+    {
+      "name": "cloak",
+      "file": "specialabilityicons-alpha-09.png"
+    },
+    {
+      "name": "teleport",
+      "file": "specialabilityicons-alpha-10.png"
+    },
+    {
+      "name": "repair",
+      "file": "specialabilityicons-alpha-11.png"
+    },
+    {
+      "name": "overdrive",
+      "file": "specialabilityicons-alpha-12.png"
+    }
+  ]
+}

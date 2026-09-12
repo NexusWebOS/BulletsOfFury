@@ -1,0 +1,544 @@
+{
+  "asset": "icons",
+  "frame_count": 20,
+  "frame_size": [
+    279,
+    274
+  ],
+  "alpha": "binary",
+  "tags": [],
+  "atlas": {
+    "columns": 6,
+    "rows": 4,
+    "cell": [
+      279,
+      274
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 2,
+        "x": 319,
+        "y": 0,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 3,
+        "x": 638,
+        "y": 0,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 4,
+        "x": 957,
+        "y": 0,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 5,
+        "x": 1276,
+        "y": 0,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 6,
+        "x": 1595,
+        "y": 0,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 7,
+        "x": 0,
+        "y": 314,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 8,
+        "x": 319,
+        "y": 314,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 9,
+        "x": 638,
+        "y": 314,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 10,
+        "x": 957,
+        "y": 314,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 11,
+        "x": 1276,
+        "y": 314,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 12,
+        "x": 1595,
+        "y": 314,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 628,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 14,
+        "x": 319,
+        "y": 628,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 15,
+        "x": 638,
+        "y": 628,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 16,
+        "x": 957,
+        "y": 628,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 17,
+        "x": 1276,
+        "y": 628,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 18,
+        "x": 1595,
+        "y": 628,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 19,
+        "x": 0,
+        "y": 942,
+        "w": 279,
+        "h": 274
+      },
+      {
+        "frame": 20,
+        "x": 319,
+        "y": 942,
+        "w": 279,
+        "h": 274
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "application",
+      "file": "icons-alpha-01.png",
+      "source_rect": [
+        49,
+        59,
+        261,
+        270
+      ],
+      "placement": [
+        33,
+        31
+      ],
+      "visible_size": [
+        212,
+        211
+      ]
+    },
+    {
+      "index": 2,
+      "name": "new",
+      "file": "icons-alpha-02.png",
+      "source_rect": [
+        350,
+        70,
+        505,
+        259
+      ],
+      "placement": [
+        62,
+        42
+      ],
+      "visible_size": [
+        155,
+        189
+      ]
+    },
+    {
+      "index": 3,
+      "name": "open",
+      "file": "icons-alpha-03.png",
+      "source_rect": [
+        596,
+        90,
+        802,
+        258
+      ],
+      "placement": [
+        36,
+        53
+      ],
+      "visible_size": [
+        206,
+        168
+      ]
+    },
+    {
+      "index": 4,
+      "name": "save",
+      "file": "icons-alpha-04.png",
+      "source_rect": [
+        877,
+        71,
+        1058,
+        259
+      ],
+      "placement": [
+        49,
+        43
+      ],
+      "visible_size": [
+        181,
+        188
+      ]
+    },
+    {
+      "index": 5,
+      "name": "settings",
+      "file": "icons-alpha-05.png",
+      "source_rect": [
+        1141,
+        63,
+        1350,
+        274
+      ],
+      "placement": [
+        35,
+        31
+      ],
+      "visible_size": [
+        209,
+        211
+      ]
+    },
+    {
+      "index": 6,
+      "name": "boss",
+      "file": "icons-alpha-06.png",
+      "source_rect": [
+        35,
+        311,
+        274,
+        538
+      ],
+      "placement": [
+        20,
+        23
+      ],
+      "visible_size": [
+        239,
+        227
+      ]
+    },
+    {
+      "index": 7,
+      "name": "part",
+      "file": "icons-alpha-07.png",
+      "source_rect": [
+        337,
+        334,
+        528,
+        523
+      ],
+      "placement": [
+        44,
+        42
+      ],
+      "visible_size": [
+        191,
+        189
+      ]
+    },
+    {
+      "index": 8,
+      "name": "cannon",
+      "file": "icons-alpha-08.png",
+      "source_rect": [
+        598,
+        328,
+        802,
+        528
+      ],
+      "placement": [
+        37,
+        37
+      ],
+      "visible_size": [
+        204,
+        200
+      ]
+    },
+    {
+      "index": 9,
+      "name": "missiles",
+      "file": "icons-alpha-09.png",
+      "source_rect": [
+        875,
+        329,
+        1080,
+        523
+      ],
+      "placement": [
+        37,
+        40
+      ],
+      "visible_size": [
+        205,
+        194
+      ]
+    },
+    {
+      "index": 10,
+      "name": "hitbox",
+      "file": "icons-alpha-10.png",
+      "source_rect": [
+        1149,
+        325,
+        1342,
+        518
+      ],
+      "placement": [
+        43,
+        40
+      ],
+      "visible_size": [
+        193,
+        193
+      ]
+    },
+    {
+      "index": 11,
+      "name": "pattern",
+      "file": "icons-alpha-11.png",
+      "source_rect": [
+        35,
+        571,
+        274,
+        805
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        239,
+        234
+      ]
+    },
+    {
+      "index": 12,
+      "name": "path",
+      "file": "icons-alpha-12.png",
+      "source_rect": [
+        325,
+        593,
+        518,
+        772
+      ],
+      "placement": [
+        43,
+        47
+      ],
+      "visible_size": [
+        193,
+        179
+      ]
+    },
+    {
+      "index": 13,
+      "name": "phases",
+      "file": "icons-alpha-13.png",
+      "source_rect": [
+        598,
+        582,
+        794,
+        787
+      ],
+      "placement": [
+        41,
+        34
+      ],
+      "visible_size": [
+        196,
+        205
+      ]
+    },
+    {
+      "index": 14,
+      "name": "shield",
+      "file": "icons-alpha-14.png",
+      "source_rect": [
+        876,
+        575,
+        1063,
+        796
+      ],
+      "placement": [
+        46,
+        26
+      ],
+      "visible_size": [
+        187,
+        221
+      ]
+    },
+    {
+      "index": 15,
+      "name": "damage",
+      "file": "icons-alpha-15.png",
+      "source_rect": [
+        1136,
+        578,
+        1357,
+        795
+      ],
+      "placement": [
+        29,
+        28
+      ],
+      "visible_size": [
+        221,
+        217
+      ]
+    },
+    {
+      "index": 16,
+      "name": "play",
+      "file": "icons-alpha-16.png",
+      "source_rect": [
+        72,
+        850,
+        239,
+        1048
+      ],
+      "placement": [
+        56,
+        38
+      ],
+      "visible_size": [
+        167,
+        198
+      ]
+    },
+    {
+      "index": 17,
+      "name": "pause",
+      "file": "icons-alpha-17.png",
+      "source_rect": [
+        344,
+        857,
+        500,
+        1039
+      ],
+      "placement": [
+        61,
+        46
+      ],
+      "visible_size": [
+        156,
+        182
+      ]
+    },
+    {
+      "index": 18,
+      "name": "stop",
+      "file": "icons-alpha-18.png",
+      "source_rect": [
+        612,
+        857,
+        782,
+        1038
+      ],
+      "placement": [
+        54,
+        46
+      ],
+      "visible_size": [
+        170,
+        181
+      ]
+    },
+    {
+      "index": 19,
+      "name": "undo",
+      "file": "icons-alpha-19.png",
+      "source_rect": [
+        878,
+        855,
+        1064,
+        1047
+      ],
+      "placement": [
+        46,
+        41
+      ],
+      "visible_size": [
+        186,
+        192
+      ]
+    },
+    {
+      "index": 20,
+      "name": "delete",
+      "file": "icons-alpha-20.png",
+      "source_rect": [
+        1154,
+        844,
+        1332,
+        1048
+      ],
+      "placement": [
+        50,
+        35
+      ],
+      "visible_size": [
+        178,
+        204
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

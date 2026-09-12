@@ -1,0 +1,15 @@
+# ============================================================
+# LINE ENDINGS ARE PART OF THIS REPO'S CONTRACT. DO NOT CONVERT THEM.
+#
+# assets/game.js is LF. _BUILD_SOURCE/test_fl.js is CRLF. Both are edited by
+# anchored exact-match scripts, so a conversion on checkout silently breaks
+# every one of them - and CLAUDE.md already records a drop where eight bare-LF
+# lines crept into the CRLF file and "defeats exact-match editing".
+#
+# CLAUDE.md says core.autocrlf=false is "pinned locally so a revert restores
+# byte-identical files". Measured 0912: the local pin was GONE and the system
+# config had autocrlf=true, so a fresh clone would have written game.js back as
+# CRLF. A LOCAL CONFIG DOES NOT TRAVEL WITH A CLONE - that is the flaw in
+# relying on one. This file does, so the guarantee is portable now.
+# ============================================================
+* -text

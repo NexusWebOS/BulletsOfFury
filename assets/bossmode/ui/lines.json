@@ -1,0 +1,358 @@
+{
+  "asset": "lines",
+  "frame_count": 16,
+  "frame_size": [
+    416,
+    288
+  ],
+  "alpha": "binary",
+  "vertical_row_gap": 40,
+  "atlas": {
+    "columns": 4,
+    "rows": 4,
+    "cell": [
+      416,
+      288
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 2,
+        "x": 456,
+        "y": 0,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 3,
+        "x": 912,
+        "y": 0,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 4,
+        "x": 1368,
+        "y": 0,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 328,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 6,
+        "x": 456,
+        "y": 328,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 7,
+        "x": 912,
+        "y": 328,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 8,
+        "x": 1368,
+        "y": 328,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 656,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 10,
+        "x": 456,
+        "y": 656,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 11,
+        "x": 912,
+        "y": 656,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 12,
+        "x": 1368,
+        "y": 656,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 984,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 14,
+        "x": 456,
+        "y": 984,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 15,
+        "x": 912,
+        "y": 984,
+        "w": 416,
+        "h": 288
+      },
+      {
+        "frame": 16,
+        "x": 1368,
+        "y": 984,
+        "w": 416,
+        "h": 288
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "line-horizontal",
+      "file": "lines-alpha-01.png",
+      "source_rect": [
+        0,
+        0,
+        384,
+        256
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-vertical",
+      "file": "lines-alpha-02.png",
+      "source_rect": [
+        384,
+        0,
+        768,
+        256
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-rise",
+      "file": "lines-alpha-03.png",
+      "source_rect": [
+        768,
+        0,
+        1152,
+        256
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-fall",
+      "file": "lines-alpha-04.png",
+      "source_rect": [
+        1152,
+        0,
+        1536,
+        256
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-elbow",
+      "file": "lines-alpha-05.png",
+      "source_rect": [
+        0,
+        256,
+        384,
+        512
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-arc",
+      "file": "lines-alpha-06.png",
+      "source_rect": [
+        384,
+        256,
+        768,
+        512
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-s-curve",
+      "file": "lines-alpha-07.png",
+      "source_rect": [
+        768,
+        256,
+        1152,
+        512
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-zigzag",
+      "file": "lines-alpha-08.png",
+      "source_rect": [
+        1152,
+        256,
+        1536,
+        512
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "arrow-forward",
+      "file": "lines-alpha-09.png",
+      "source_rect": [
+        0,
+        512,
+        384,
+        768
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "arrow-both",
+      "file": "lines-alpha-10.png",
+      "source_rect": [
+        384,
+        512,
+        768,
+        768
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "arrow-curve",
+      "file": "lines-alpha-11.png",
+      "source_rect": [
+        768,
+        512,
+        1152,
+        768
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "arrow-rotate",
+      "file": "lines-alpha-12.png",
+      "source_rect": [
+        1152,
+        512,
+        1536,
+        768
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-dashed",
+      "file": "lines-alpha-13.png",
+      "source_rect": [
+        0,
+        768,
+        384,
+        1024
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-dotted",
+      "file": "lines-alpha-14.png",
+      "source_rect": [
+        384,
+        768,
+        768,
+        1024
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "line-branch",
+      "file": "lines-alpha-15.png",
+      "source_rect": [
+        768,
+        768,
+        1152,
+        1024
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    },
+    {
+      "name": "span-bracket",
+      "file": "lines-alpha-16.png",
+      "source_rect": [
+        1152,
+        768,
+        1536,
+        1024
+      ],
+      "center": [
+        208.0,
+        144.0
+      ]
+    }
+  ]
+}

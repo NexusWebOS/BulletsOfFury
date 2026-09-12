@@ -1,0 +1,50 @@
+{
+  "asset": "windowfullsize",
+  "frame_count": 1,
+  "frame_size": [
+    1561,
+    827
+  ],
+  "alpha": "binary",
+  "tags": [],
+  "atlas": {
+    "columns": 1,
+    "rows": 1,
+    "cell": [
+      1561,
+      827
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 1561,
+        "h": 827
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "1",
+      "file": "windowfullsize-alpha-01.png",
+      "source_rect": [
+        70,
+        65,
+        1591,
+        852
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        1521,
+        787
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

@@ -1,0 +1,643 @@
+{
+ "asset": "icons",
+ "frame_count": 25,
+ "alpha": "binary",
+ "atlas": {
+  "columns": 5,
+  "rows": 5,
+  "cell": [
+   190,
+   188
+  ],
+  "rects": [
+   {
+    "frame": 1,
+    "x": 0,
+    "y": 0,
+    "w": 189,
+    "h": 188
+   },
+   {
+    "frame": 2,
+    "x": 209,
+    "y": 0,
+    "w": 189,
+    "h": 188
+   },
+   {
+    "frame": 3,
+    "x": 417,
+    "y": 0,
+    "w": 190,
+    "h": 188
+   },
+   {
+    "frame": 4,
+    "x": 626,
+    "y": 0,
+    "w": 189,
+    "h": 188
+   },
+   {
+    "frame": 5,
+    "x": 835,
+    "y": 0,
+    "w": 189,
+    "h": 188
+   },
+   {
+    "frame": 6,
+    "x": 5,
+    "y": 209,
+    "w": 184,
+    "h": 188
+   },
+   {
+    "frame": 7,
+    "x": 214,
+    "y": 209,
+    "w": 184,
+    "h": 188
+   },
+   {
+    "frame": 8,
+    "x": 423,
+    "y": 209,
+    "w": 184,
+    "h": 188
+   },
+   {
+    "frame": 9,
+    "x": 632,
+    "y": 209,
+    "w": 183,
+    "h": 188
+   },
+   {
+    "frame": 10,
+    "x": 841,
+    "y": 209,
+    "w": 183,
+    "h": 188
+   },
+   {
+    "frame": 11,
+    "x": 5,
+    "y": 418,
+    "w": 184,
+    "h": 188
+   },
+   {
+    "frame": 12,
+    "x": 214,
+    "y": 418,
+    "w": 184,
+    "h": 188
+   },
+   {
+    "frame": 13,
+    "x": 423,
+    "y": 418,
+    "w": 184,
+    "h": 188
+   },
+   {
+    "frame": 14,
+    "x": 632,
+    "y": 418,
+    "w": 184,
+    "h": 188
+   },
+   {
+    "frame": 15,
+    "x": 841,
+    "y": 418,
+    "w": 183,
+    "h": 188
+   },
+   {
+    "frame": 16,
+    "x": 5,
+    "y": 632,
+    "w": 184,
+    "h": 183
+   },
+   {
+    "frame": 17,
+    "x": 214,
+    "y": 632,
+    "w": 184,
+    "h": 183
+   },
+   {
+    "frame": 18,
+    "x": 423,
+    "y": 632,
+    "w": 184,
+    "h": 183
+   },
+   {
+    "frame": 19,
+    "x": 632,
+    "y": 632,
+    "w": 184,
+    "h": 183
+   },
+   {
+    "frame": 20,
+    "x": 841,
+    "y": 632,
+    "w": 183,
+    "h": 183
+   },
+   {
+    "frame": 21,
+    "x": 5,
+    "y": 841,
+    "w": 184,
+    "h": 183
+   },
+   {
+    "frame": 22,
+    "x": 214,
+    "y": 841,
+    "w": 184,
+    "h": 183
+   },
+   {
+    "frame": 23,
+    "x": 423,
+    "y": 841,
+    "w": 184,
+    "h": 183
+   },
+   {
+    "frame": 24,
+    "x": 632,
+    "y": 841,
+    "w": 184,
+    "h": 183
+   },
+   {
+    "frame": 25,
+    "x": 841,
+    "y": 841,
+    "w": 183,
+    "h": 183
+   }
+  ]
+ },
+ "items": [
+  {
+   "index": 1,
+   "name": "enemy",
+   "source_rect": [
+    0,
+    0,
+    189,
+    188
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    189,
+    188
+   ]
+  },
+  {
+   "index": 2,
+   "name": "waves",
+   "source_rect": [
+    209,
+    0,
+    398,
+    188
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    189,
+    188
+   ]
+  },
+  {
+   "index": 3,
+   "name": "projectile",
+   "source_rect": [
+    417,
+    0,
+    607,
+    188
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    190,
+    188
+   ]
+  },
+  {
+   "index": 4,
+   "name": "background",
+   "source_rect": [
+    626,
+    0,
+    815,
+    188
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    189,
+    188
+   ]
+  },
+  {
+   "index": 5,
+   "name": "background-alt",
+   "source_rect": [
+    835,
+    0,
+    1024,
+    188
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    189,
+    188
+   ]
+  },
+  {
+   "index": 6,
+   "name": "play",
+   "source_rect": [
+    5,
+    209,
+    189,
+    397
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    188
+   ]
+  },
+  {
+   "index": 7,
+   "name": "pause",
+   "source_rect": [
+    214,
+    209,
+    398,
+    397
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    188
+   ]
+  },
+  {
+   "index": 8,
+   "name": "stop",
+   "source_rect": [
+    423,
+    209,
+    607,
+    397
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    188
+   ]
+  },
+  {
+   "index": 9,
+   "name": "reload",
+   "source_rect": [
+    632,
+    209,
+    815,
+    397
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    183,
+    188
+   ]
+  },
+  {
+   "index": 10,
+   "name": "reload-alt",
+   "source_rect": [
+    841,
+    209,
+    1024,
+    397
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    183,
+    188
+   ]
+  },
+  {
+   "index": 11,
+   "name": "target",
+   "source_rect": [
+    5,
+    418,
+    189,
+    606
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    188
+   ]
+  },
+  {
+   "index": 12,
+   "name": "fov",
+   "source_rect": [
+    214,
+    418,
+    398,
+    606
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    188
+   ]
+  },
+  {
+   "index": 13,
+   "name": "select",
+   "source_rect": [
+    423,
+    418,
+    607,
+    606
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    188
+   ]
+  },
+  {
+   "index": 14,
+   "name": "path",
+   "source_rect": [
+    632,
+    418,
+    816,
+    606
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    188
+   ]
+  },
+  {
+   "index": 15,
+   "name": "path-alt",
+   "source_rect": [
+    841,
+    418,
+    1024,
+    606
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    183,
+    188
+   ]
+  },
+  {
+   "index": 16,
+   "name": "save",
+   "source_rect": [
+    5,
+    632,
+    189,
+    815
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    183
+   ]
+  },
+  {
+   "index": 17,
+   "name": "open",
+   "source_rect": [
+    214,
+    632,
+    398,
+    815
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    183
+   ]
+  },
+  {
+   "index": 18,
+   "name": "export",
+   "source_rect": [
+    423,
+    632,
+    607,
+    815
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    183
+   ]
+  },
+  {
+   "index": 19,
+   "name": "import",
+   "source_rect": [
+    632,
+    632,
+    816,
+    815
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    183
+   ]
+  },
+  {
+   "index": 20,
+   "name": "delete",
+   "source_rect": [
+    841,
+    632,
+    1024,
+    815
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    183,
+    183
+   ]
+  },
+  {
+   "index": 21,
+   "name": "brush",
+   "source_rect": [
+    5,
+    841,
+    189,
+    1024
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    183
+   ]
+  },
+  {
+   "index": 22,
+   "name": "eyedropper",
+   "source_rect": [
+    214,
+    841,
+    398,
+    1024
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    183
+   ]
+  },
+  {
+   "index": 23,
+   "name": "grid",
+   "source_rect": [
+    423,
+    841,
+    607,
+    1024
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    183
+   ]
+  },
+  {
+   "index": 24,
+   "name": "settings",
+   "source_rect": [
+    632,
+    841,
+    816,
+    1024
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    184,
+    183
+   ]
+  },
+  {
+   "index": 25,
+   "name": "settings-alt",
+   "source_rect": [
+    841,
+    841,
+    1024,
+    1024
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    183,
+    183
+   ]
+  }
+ ],
+ "notes": "Generated by _BUILD_SOURCE/bod_pack_map_0912f.py. Cells found by GRID slice, then sorted into reading order and named from the prompt order. rectOf() pairs items[i] with atlas.rects[i], so the rects are per-sprite and need not be a lattice."
+}

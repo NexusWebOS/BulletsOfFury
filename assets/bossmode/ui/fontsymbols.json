@@ -1,0 +1,856 @@
+{
+  "asset": "fontsymbols",
+  "frame_count": 32,
+  "frame_size": [
+    180,
+    218
+  ],
+  "alpha": "binary",
+  "tags": [],
+  "atlas": {
+    "columns": 6,
+    "rows": 6,
+    "cell": [
+      180,
+      218
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 2,
+        "x": 220,
+        "y": 0,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 3,
+        "x": 440,
+        "y": 0,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 4,
+        "x": 660,
+        "y": 0,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 5,
+        "x": 880,
+        "y": 0,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 6,
+        "x": 1100,
+        "y": 0,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 7,
+        "x": 0,
+        "y": 258,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 8,
+        "x": 220,
+        "y": 258,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 9,
+        "x": 440,
+        "y": 258,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 10,
+        "x": 660,
+        "y": 258,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 11,
+        "x": 880,
+        "y": 258,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 12,
+        "x": 1100,
+        "y": 258,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 516,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 14,
+        "x": 220,
+        "y": 516,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 15,
+        "x": 440,
+        "y": 516,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 16,
+        "x": 660,
+        "y": 516,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 17,
+        "x": 880,
+        "y": 516,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 18,
+        "x": 1100,
+        "y": 516,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 19,
+        "x": 0,
+        "y": 774,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 20,
+        "x": 220,
+        "y": 774,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 21,
+        "x": 440,
+        "y": 774,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 22,
+        "x": 660,
+        "y": 774,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 23,
+        "x": 880,
+        "y": 774,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 24,
+        "x": 1100,
+        "y": 774,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 25,
+        "x": 0,
+        "y": 1032,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 26,
+        "x": 220,
+        "y": 1032,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 27,
+        "x": 440,
+        "y": 1032,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 28,
+        "x": 660,
+        "y": 1032,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 29,
+        "x": 880,
+        "y": 1032,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 30,
+        "x": 1100,
+        "y": 1032,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 31,
+        "x": 0,
+        "y": 1290,
+        "w": 180,
+        "h": 218
+      },
+      {
+        "frame": 32,
+        "x": 220,
+        "y": 1290,
+        "w": 180,
+        "h": 218
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "!",
+      "file": "fontsymbols-alpha-01.png",
+      "source_rect": [
+        61,
+        123,
+        120,
+        291
+      ],
+      "placement": [
+        60,
+        25
+      ],
+      "visible_size": [
+        59,
+        168
+      ]
+    },
+    {
+      "index": 2,
+      "name": "?",
+      "file": "fontsymbols-alpha-02.png",
+      "source_rect": [
+        167,
+        122,
+        302,
+        290
+      ],
+      "placement": [
+        22,
+        25
+      ],
+      "visible_size": [
+        135,
+        168
+      ]
+    },
+    {
+      "index": 3,
+      "name": ".",
+      "file": "fontsymbols-alpha-03.png",
+      "source_rect": [
+        353,
+        227,
+        419,
+        294
+      ],
+      "placement": [
+        57,
+        75
+      ],
+      "visible_size": [
+        66,
+        67
+      ]
+    },
+    {
+      "index": 4,
+      "name": ",",
+      "file": "fontsymbols-alpha-04.png",
+      "source_rect": [
+        491,
+        227,
+        559,
+        319
+      ],
+      "placement": [
+        56,
+        63
+      ],
+      "visible_size": [
+        68,
+        92
+      ]
+    },
+    {
+      "index": 5,
+      "name": ":",
+      "file": "fontsymbols-alpha-05.png",
+      "source_rect": [
+        653,
+        141,
+        713,
+        280
+      ],
+      "placement": [
+        60,
+        39
+      ],
+      "visible_size": [
+        60,
+        139
+      ]
+    },
+    {
+      "index": 6,
+      "name": ";",
+      "file": "fontsymbols-alpha-06.png",
+      "source_rect": [
+        796,
+        141,
+        860,
+        319
+      ],
+      "placement": [
+        58,
+        20
+      ],
+      "visible_size": [
+        64,
+        178
+      ]
+    },
+    {
+      "index": 7,
+      "name": "'",
+      "file": "fontsymbols-alpha-07.png",
+      "source_rect": [
+        951,
+        124,
+        1008,
+        219
+      ],
+      "placement": [
+        61,
+        61
+      ],
+      "visible_size": [
+        57,
+        95
+      ]
+    },
+    {
+      "index": 8,
+      "name": "\"",
+      "file": "fontsymbols-alpha-08.png",
+      "source_rect": [
+        1067,
+        124,
+        1179,
+        215
+      ],
+      "placement": [
+        34,
+        63
+      ],
+      "visible_size": [
+        112,
+        91
+      ]
+    },
+    {
+      "index": 9,
+      "name": "(",
+      "file": "fontsymbols-alpha-09.png",
+      "source_rect": [
+        49,
+        400,
+        131,
+        577
+      ],
+      "placement": [
+        49,
+        20
+      ],
+      "visible_size": [
+        82,
+        177
+      ]
+    },
+    {
+      "index": 10,
+      "name": ")",
+      "file": "fontsymbols-alpha-10.png",
+      "source_rect": [
+        188,
+        400,
+        273,
+        577
+      ],
+      "placement": [
+        47,
+        20
+      ],
+      "visible_size": [
+        85,
+        177
+      ]
+    },
+    {
+      "index": 11,
+      "name": "[",
+      "file": "fontsymbols-alpha-11.png",
+      "source_rect": [
+        335,
+        400,
+        424,
+        575
+      ],
+      "placement": [
+        45,
+        21
+      ],
+      "visible_size": [
+        89,
+        175
+      ]
+    },
+    {
+      "index": 12,
+      "name": "]",
+      "file": "fontsymbols-alpha-12.png",
+      "source_rect": [
+        480,
+        400,
+        568,
+        575
+      ],
+      "placement": [
+        46,
+        21
+      ],
+      "visible_size": [
+        88,
+        175
+      ]
+    },
+    {
+      "index": 13,
+      "name": "{",
+      "file": "fontsymbols-alpha-13.png",
+      "source_rect": [
+        628,
+        400,
+        727,
+        576
+      ],
+      "placement": [
+        40,
+        21
+      ],
+      "visible_size": [
+        99,
+        176
+      ]
+    },
+    {
+      "index": 14,
+      "name": "}",
+      "file": "fontsymbols-alpha-14.png",
+      "source_rect": [
+        774,
+        400,
+        873,
+        577
+      ],
+      "placement": [
+        40,
+        20
+      ],
+      "visible_size": [
+        99,
+        177
+      ]
+    },
+    {
+      "index": 15,
+      "name": "<",
+      "file": "fontsymbols-alpha-15.png",
+      "source_rect": [
+        916,
+        423,
+        1027,
+        562
+      ],
+      "placement": [
+        34,
+        39
+      ],
+      "visible_size": [
+        111,
+        139
+      ]
+    },
+    {
+      "index": 16,
+      "name": ">",
+      "file": "fontsymbols-alpha-16.png",
+      "source_rect": [
+        1073,
+        423,
+        1180,
+        562
+      ],
+      "placement": [
+        36,
+        39
+      ],
+      "visible_size": [
+        107,
+        139
+      ]
+    },
+    {
+      "index": 17,
+      "name": "+",
+      "file": "fontsymbols-alpha-17.png",
+      "source_rect": [
+        32,
+        726,
+        150,
+        841
+      ],
+      "placement": [
+        31,
+        51
+      ],
+      "visible_size": [
+        118,
+        115
+      ]
+    },
+    {
+      "index": 18,
+      "name": "-",
+      "file": "fontsymbols-alpha-18.png",
+      "source_rect": [
+        185,
+        758,
+        287,
+        817
+      ],
+      "placement": [
+        39,
+        79
+      ],
+      "visible_size": [
+        102,
+        59
+      ]
+    },
+    {
+      "index": 19,
+      "name": "=",
+      "file": "fontsymbols-alpha-19.png",
+      "source_rect": [
+        322,
+        733,
+        448,
+        841
+      ],
+      "placement": [
+        27,
+        55
+      ],
+      "visible_size": [
+        126,
+        108
+      ]
+    },
+    {
+      "index": 20,
+      "name": "/",
+      "file": "fontsymbols-alpha-20.png",
+      "source_rect": [
+        472,
+        690,
+        586,
+        852
+      ],
+      "placement": [
+        33,
+        28
+      ],
+      "visible_size": [
+        114,
+        162
+      ]
+    },
+    {
+      "index": 21,
+      "name": "\\",
+      "file": "fontsymbols-alpha-21.png",
+      "source_rect": [
+        624,
+        690,
+        739,
+        852
+      ],
+      "placement": [
+        32,
+        28
+      ],
+      "visible_size": [
+        115,
+        162
+      ]
+    },
+    {
+      "index": 22,
+      "name": "*",
+      "file": "fontsymbols-alpha-22.png",
+      "source_rect": [
+        775,
+        698,
+        907,
+        844
+      ],
+      "placement": [
+        24,
+        36
+      ],
+      "visible_size": [
+        132,
+        146
+      ]
+    },
+    {
+      "index": 23,
+      "name": "_",
+      "file": "fontsymbols-alpha-23.png",
+      "source_rect": [
+        937,
+        801,
+        1066,
+        854
+      ],
+      "placement": [
+        25,
+        82
+      ],
+      "visible_size": [
+        129,
+        53
+      ]
+    },
+    {
+      "index": 24,
+      "name": "|",
+      "file": "fontsymbols-alpha-24.png",
+      "source_rect": [
+        1112,
+        688,
+        1167,
+        855
+      ],
+      "placement": [
+        62,
+        25
+      ],
+      "visible_size": [
+        55,
+        167
+      ]
+    },
+    {
+      "index": 25,
+      "name": "@",
+      "file": "fontsymbols-alpha-25.png",
+      "source_rect": [
+        32,
+        967,
+        158,
+        1115
+      ],
+      "placement": [
+        27,
+        35
+      ],
+      "visible_size": [
+        126,
+        148
+      ]
+    },
+    {
+      "index": 26,
+      "name": "#",
+      "file": "fontsymbols-alpha-26.png",
+      "source_rect": [
+        173,
+        966,
+        302,
+        1114
+      ],
+      "placement": [
+        25,
+        35
+      ],
+      "visible_size": [
+        129,
+        148
+      ]
+    },
+    {
+      "index": 27,
+      "name": "$",
+      "file": "fontsymbols-alpha-27.png",
+      "source_rect": [
+        324,
+        956,
+        449,
+        1123
+      ],
+      "placement": [
+        27,
+        25
+      ],
+      "visible_size": [
+        125,
+        167
+      ]
+    },
+    {
+      "index": 28,
+      "name": "%",
+      "file": "fontsymbols-alpha-28.png",
+      "source_rect": [
+        466,
+        967,
+        601,
+        1111
+      ],
+      "placement": [
+        22,
+        37
+      ],
+      "visible_size": [
+        135,
+        144
+      ]
+    },
+    {
+      "index": 29,
+      "name": "&",
+      "file": "fontsymbols-alpha-29.png",
+      "source_rect": [
+        629,
+        967,
+        764,
+        1111
+      ],
+      "placement": [
+        22,
+        37
+      ],
+      "visible_size": [
+        135,
+        144
+      ]
+    },
+    {
+      "index": 30,
+      "name": "^",
+      "file": "fontsymbols-alpha-30.png",
+      "source_rect": [
+        791,
+        972,
+        915,
+        1066
+      ],
+      "placement": [
+        28,
+        62
+      ],
+      "visible_size": [
+        124,
+        94
+      ]
+    },
+    {
+      "index": 31,
+      "name": "~",
+      "file": "fontsymbols-alpha-31.png",
+      "source_rect": [
+        939,
+        1000,
+        1079,
+        1084
+      ],
+      "placement": [
+        20,
+        67
+      ],
+      "visible_size": [
+        140,
+        84
+      ]
+    },
+    {
+      "index": 32,
+      "name": "`",
+      "file": "fontsymbols-alpha-32.png",
+      "source_rect": [
+        1096,
+        963,
+        1176,
+        1036
+      ],
+      "placement": [
+        50,
+        72
+      ],
+      "visible_size": [
+        80,
+        73
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

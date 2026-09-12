@@ -1,0 +1,156 @@
+{
+  "asset": "firinghitboxguides",
+  "frame_count": 12,
+  "frame_size": [
+    405,
+    431
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 3,
+    "rows": 4,
+    "cell": [
+      405,
+      431
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 2,
+        "x": 405,
+        "y": 0,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 3,
+        "x": 810,
+        "y": 0,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 4,
+        "x": 0,
+        "y": 431,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 5,
+        "x": 405,
+        "y": 431,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 6,
+        "x": 810,
+        "y": 431,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 7,
+        "x": 0,
+        "y": 862,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 8,
+        "x": 405,
+        "y": 862,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 9,
+        "x": 810,
+        "y": 862,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 10,
+        "x": 0,
+        "y": 1293,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 11,
+        "x": 405,
+        "y": 1293,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 12,
+        "x": 810,
+        "y": 1293,
+        "w": 405,
+        "h": 431
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "firing-radius",
+      "file": "firinghitboxguides-alpha-01.png"
+    },
+    {
+      "name": "firing-cone",
+      "file": "firinghitboxguides-alpha-02.png"
+    },
+    {
+      "name": "laser-corridor",
+      "file": "firinghitboxguides-alpha-03.png"
+    },
+    {
+      "name": "hitbox-rectangle",
+      "file": "firinghitboxguides-alpha-04.png"
+    },
+    {
+      "name": "hitbox-circle",
+      "file": "firinghitboxguides-alpha-05.png"
+    },
+    {
+      "name": "hitbox-capsule",
+      "file": "firinghitboxguides-alpha-06.png"
+    },
+    {
+      "name": "rotation-ring",
+      "file": "firinghitboxguides-alpha-07.png"
+    },
+    {
+      "name": "translate-xy",
+      "file": "firinghitboxguides-alpha-08.png"
+    },
+    {
+      "name": "scale-diagonal",
+      "file": "firinghitboxguides-alpha-09.png"
+    },
+    {
+      "name": "angular-sweep",
+      "file": "firinghitboxguides-alpha-10.png"
+    },
+    {
+      "name": "distance-rings",
+      "file": "firinghitboxguides-alpha-11.png"
+    },
+    {
+      "name": "selection-marquee",
+      "file": "firinghitboxguides-alpha-12.png"
+    }
+  ]
+}

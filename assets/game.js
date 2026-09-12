@@ -1891,11 +1891,20 @@ const XART=(function(){
      loaded, that meant the first shots of a life rendered nothing (or, before
      this drop, fell through to another weapon's art). Preloading them removes
      the question entirely: by the time the player can fire, the art is decoded. */
-  /* nsa_ships REPLACES ship_ IN THE PRELOAD (drop 0805q). This used to preload NINE pilot
-     airframes so the opening would not stall on whichever one got picked. One sheet covers all
-     nine — and every bank and roll frame besides, which the old pattern never reached. Fewer
-     preloads, more coverage. ship_ stays in the pattern harmlessly: those keys are cells now,
-     so nothing matches it, and leaving it costs nothing if a loose ship file ever returns. */
+  /* ⚠ THE SHIP SHEET IS OFF THE BOOT PATH SINCE 0909, AND THAT IS THE WHOLE POINT OF THE SPLIT.
+     0805q put the single combined sheet in here so the opening would not stall on whichever
+     pilot got picked - one preload covering all nine. That is 11 MB decoded before the player
+     can act, and eight ninths of it is aircraft this run will never draw.
+
+     Mike, 0909: "no need to have the other 8 or 7 if co-op when not in use." Ships are nine
+     per-pilot sheets now (nsa_ship_<pilot>, 1.1-1.9 MB each) and NONE of them is preloaded:
+     _shipSheetOf resolves a key to its owner's sheet and _shipCell touches it on first use,
+     already returning undefined and retrying for the frames it takes to decode.
+
+     `ship_` stays in the pattern harmlessly - those keys are cells, so nothing matches it - and
+     `nsa_ships` is gone from it. The old combined sheet is still registered and still on disk;
+     nothing resolves to it any more, so it is dead download weight and can be deleted once this
+     has had a run in front of Mike. */
   /* THE STAGE 1-3 ENEMY SHEETS ARE EAGER (drop 0809l). Measured in shoot.py by logging
      XART.rdy per draw call: nca_80 was still false 600 draw calls in and only came true around
      3000 — so the first seconds of stage 1 ran with every new enemy invisible. They spawn, they
@@ -1905,7 +1914,7 @@ const XART=(function(){
      The BOSS sheets (87, 88) are deliberately NOT here: they are 10MB between them and are not
      needed until the end of a stage, by which point lazy loading has had minutes. Preloading
      them would put that on the boot path for no gain. */
-  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|nsa_ships|bof_player_(?:weapon_special_icons|ordnance_projectiles|ships_barrel_rolls)_atlas|ship_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nfx_(?:warp_tunnel|s5gate96)_|nca_(?:s1combatfx|en_s1|8[7-9])|aintro_)/;
+  const PRELOAD = /^(cf_boot|cf_logo|logo|startile|newbootimage|bootimage|scard_1|bof_player_(?:weapon_special_icons|ordnance_projectiles)_atlas|ship_|port_|card_|face_|menu|btn_|nui_|nhxv_|nhxsb_|nfw_|nfx_(?:warp_tunnel|s5gate96)_|nca_(?:s1combatfx|en_s1|8[7-9])|aintro_)/;
   X._src = (window.BOFX && BOFX.img) ? BOFX.img : {};
   /* Approved close-camera Fury HQ command deck.  Keep the stable runtime key so every existing
      campaign scene inherits the new room without duplicating story data or carrying the former
@@ -2165,14 +2174,25 @@ const XART=(function(){
      composite rather than nine separate generations. */
   for(const _pa of ['axel','decker','maverick','freezer','juggernaut','yuri','lizzie','falva','cole'])
     X._src['pav_'+_pa]='assets/game/pilot_avatars/pav_'+_pa+'.png';
-  for(let _yb=0;_yb<7;_yb++) X._src['yuri_body_'+_yb]='assets/game/yuri_v2/yuri_body_'+_yb+'.png';
-  /* ⚠ THE OTHER EIGHT FRONT-FACING FIGURES (Mike, 0906): "front facing frames of each pilot
-     like Yuri is facing forward." Generated per pilot from their own cinematic pose, so the
-     face and outfit are theirs and only the stance changed. YURI IS ABSENT FROM THIS LIST ON
-     PURPOSE - his is authored and is the pose the other eight were generated to match; the
-     line above already registers it, and adding him here would overwrite the reference with an
-     imitation of itself. Same key shape either way, so psBodyKey needs no special case. */
-  for(const _pb of ['axel','decker','maverick','freezer','juggernaut','lizzie','falva','cole'])
+  /* ⚠ ALL NINE FRONT-FACING FIGURES, ONE FOLDER, ONE LOOP (Mike, 0909: "should be part of the
+     same row/atlas. his other frames you can drop, theyre bad for Yuri").
+
+     0906 registered Yuri's seven yuri_body_* separately because his was authored and the other
+     eight were generated to match his stance. Only _0 is a front-facing figure; 1..6 are point,
+     arm-across, salute, arms-out, side profile and the back view, and NOTHING IN THE GAME EVER
+     DREW THEM - psBodyKey's chain reaches <pilot>_body_0 and then pose_<pilot>_0/_3, so those six
+     were registered, downloaded and unreachable.
+
+     They were also broken. Their cutout keyed the black costume out along with the background:
+     trousers, boots, tank top and gloves are transparent, so each figure fragments into 24-52
+     pieces against yuri_body_0's one. It reads fine on the near-black select bay and is hollow on
+     anything lighter. Not repairable either - every pixel under the alpha is (0,0,0), so the
+     shading is gone rather than merely masked, and refilling the ENCLOSED holes recovers nothing
+     because the black reaches the outside through the gaps between his arms and his legs.
+     Deleted on his call; git holds them if that is ever revisited.
+
+     Yuri's _0 moved to pilot_bodies/ with the rest, so the nine are one folder and one loop. */
+  for(const _pb of ['axel','decker','maverick','freezer','juggernaut','lizzie','falva','cole','yuri'])
     X._src[_pb+'_body_0']='assets/game/pilot_bodies/'+_pb+'_body_0.png';
   /* ⚠ SIX AFFILIATION EMBLEMS FOR NINE PILOTS, KEYED BY FACTION AND NOT BY PILOT. Two pilots
      fly AIRFORCE, two are INDEPENDENT, two are PRINCESSES OF THE SKY - a faction badge is worn
@@ -2567,12 +2587,39 @@ const XART=(function(){
     c.complete=true; c.naturalWidth=c.width; c.naturalHeight=c.height;
     return (_playerCells[k]=c);
   }
+  /* ⚠ ONE SHEET PER PILOT SINCE 0909, AND THE SHEET IS DERIVED FROM THE KEY.
+     Mike: "make seperate atlas sheets for all nine pilots ships ... no need to have the other 8
+     or 7 if co-op when not in use." Every ship key is ship_<pilot> or ship_<pilot>_<suffix>, so
+     the owner is in the name and `BOFX.ships` rows stay 8 wide - adding a sheet field would have
+     meant finding every consumer of that row shape, and there is provably more than one.
+     Falls back to the old combined sheet for any key that does not parse, so a stray key draws
+     the aircraft it always did rather than nothing. */
+  const _SHIP_SHEET={};
+  function _shipSheetOf(k){
+    let v=_SHIP_SHEET[k];
+    if(v!==undefined) return v;
+    const m=/^ship_([a-z]+)/.exec(k);
+    /* ⚠ LIZZIE IS THE ONE PILOT WHOSE SHEET IS NOT DECIDED BY THE KEY (0909). Her B-42 costume
+       reuses the SAME ship_lizzie_* keys - applyLizzieSkin repoints BOFX.ships in place - so the
+       name cannot say which of her two sheets a rect belongs to and the live flag has to. That
+       also means THIS CACHE MUST BE FLUSHED WHEN THE SKIN TOGGLES, exactly like _shipCells; see
+       applyLizzieSkin. Flushing one and not the other leaves the table changed and every draw
+       still showing the plate it already baked. */
+    if(m && m[1]==='lizzie' && typeof lizzieSkinOn!=='undefined' && lizzieSkinOn
+       && X._src && X._src['nsa_ship_lizzie_b42']) return 'nsa_ship_lizzie_b42';
+    /* the combined sheet is deleted as of 0909, so there is nothing to fall back TO. An unknown
+       pilot yields a name nothing is registered under and the cell simply does not draw, which is
+       the honest outcome - falling back to another pilot's sheet would draw the wrong aircraft. */
+    v=(m ? ('nsa_ship_'+m[1]) : 'nsa_ship_?');
+    return (_SHIP_SHEET[k]=v);
+  }
+  X._flushShipSheets=function(){ for(const k in _SHIP_SHEET) delete _SHIP_SHEET[k]; };
   const _shipCells={};
   function _shipCell(k){
     if(_shipCells[k]!==undefined) return _shipCells[k];
     const T=(window.BOFX&&BOFX.ships)?BOFX.ships[k]:null;
     if(!T){ return (_shipCells[k]=undefined); }
-    const sheet=X._touch((window.BOFX&&BOFX.shipAtlas)||'nsa_ships');
+    const sheet=X._touch(_shipSheetOf(k));
     if(!(sheet&&sheet.complete&&sheet.naturalWidth>0)) return undefined;   // not decoded yet: retry next frame
     const c=document.createElement('canvas');
     c.width=T[6]; c.height=T[7];                       // the ORIGINAL canvas, not the trim
@@ -2648,7 +2695,7 @@ const XART=(function(){
     if(window.BOFX&&BOFX.playercells&&(T=BOFX.playercells[k])) return T[0];
     if(window.BOFX&&BOFX.cells&&(T=BOFX.cells[k])) return 'nca_'+T[0];
     if(window.BOFX&&BOFX.ecells&&(T=BOFX.ecells[k])) return 'nes_'+T[0];
-    if(window.BOFX&&BOFX.ships&&BOFX.ships[k]) return (BOFX.shipAtlas||'nsa_ships');
+    if(window.BOFX&&BOFX.ships&&BOFX.ships[k]) return _shipSheetOf(k);
     return k;
   };
   X.releaseRoot=function(root){
@@ -5752,7 +5799,6 @@ function drawHUDCustom(){
         ctx.fillRect(VW/2-_bw/2, _by, _bw*_r, 13);
       }
       ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center';
-      ctx.fillText(String(boss.name||'BOSS'), VW/2, _by-4);
       ctx.textAlign='left';
       ctx.restore();
     }
@@ -5828,7 +5874,7 @@ function drawHUDCustomImg(){
        decode race. The legacy gradient and drawBarArtNS go with it. */
     const H2=13;
     drawHealthBarV2('boss', r, VW/2, by+H2/2, bw);
-    ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText((boss.name||'BOSS'),VW/2,by-4); ctx.textAlign='left';
+    ctx.textAlign='left';
   }
 }
 function _miniShipG(g,x,y){ g.fillStyle='#d7dbe2'; g.fillRect(x+2,y,2,8); g.fillStyle='#c81f24';
@@ -5972,16 +6018,53 @@ function _chargeBar(label, k, row){
   ctx.font='bold 7px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='alphabetic';
   ctx.fillText(label, x, y-3);
 }
+/* ⚠ A THIRD BAR, AND IT ONLY EXISTS WHILE THE CRATE IS LIVE (Mike, 0912): "a new bar under both
+   the somersalt and barrel roll bars called Charge. This is for Juggernaut exclusively when he
+   gets his charge powerup special. He still gets a timer on it before the charge bar goes away."
+
+   Same trick 0906 used to put SOMERSAULT under ROLL: rows are counted UP from the bottom, so
+   "under" is everything above being lifted a row rather than this one being pushed down into the
+   10px that is not there. Nothing moves for the other eight pilots, and nothing moves for
+   Juggernaut until he picks the crate up.
+
+   ⚠ IT CARRIES BOTH NUMBERS BECAUSE HE ASKED FOR BOTH. The FILL is the wind-up - it is called
+   CHARGE and that is what a player reads off it - and the special's remaining window is a rail
+   UNDER the fill, so you can see the chance to use it closing. One of the two on its own would
+   have been a bar that lies about its own name, or a timer with no way to see the dash coming. */
+function _chargeTimerRail(row, frac){
+  const W=54;
+  const x=(typeof PLAY!=='undefined'?PLAY.x:0)+10;
+  const y=(typeof PLAY!=='undefined'?(PLAY.y+PLAY.h):VH)-16-row*18;
+  ctx.globalAlpha=0.92;
+  ctx.fillStyle='#2a1a10'; ctx.fillRect(x,y+7,W,2);
+  ctx.fillStyle=(frac<0.25)?'#ff4a4a':'#ff8a1a'; ctx.fillRect(x,y+7,Math.round(W*clamp(frac,0,1)),2);
+}
+/* which bar sits on which row, as ONE answer. The draw reads it and so does the debug bridge -
+   a probe that recomputed the layout would be asserting its own copy of the rule, which is the
+   two-copies-drift this file has recorded a dozen times. Rows count UP from the bottom. */
+function barRows(){
+  const r={};
+  let n=0;
+  if((typeof chargeAvailable==='function') && chargeAvailable()) r.charge=n++;
+  if((typeof somersaultAvailable==='function') && somersaultAvailable()) r.somersault=n++;
+  r.roll=n;
+  return r;
+}
 function drawRollCharge(){
   if(typeof player==='undefined' || !player) return;
-  const _som=(typeof somersaultAvailable==='function') && somersaultAvailable();
-  const kR=(typeof BR_COOL==='number' && BR_COOL>0) ? clamp(1-((player._rollCool||0)/BR_COOL),0,1) : 1;
+  const R=barRows();
   ctx.save();
-  _chargeBar('ROLL', kR, _som?1:0);
-  if(_som){
-    const kS=(typeof SS_COOL==='number' && SS_COOL>0) ? clamp(1-((player._somerCool||0)/SS_COOL),0,1) : 1;
-    _chargeBar('SOMERSAULT', kS, 0);
+  if(R.charge!=null){
+    _chargeBar('CHARGE', (typeof chargeLevel==='function')?chargeLevel():0, R.charge);
+    if(typeof special!=='undefined' && special && special.dur)
+      _chargeTimerRail(R.charge, special.t/special.dur);
   }
+  if(R.somersault!=null){
+    const kS=(typeof SS_COOL==='number' && SS_COOL>0) ? clamp(1-((player._somerCool||0)/SS_COOL),0,1) : 1;
+    _chargeBar('SOMERSAULT', kS, R.somersault);
+  }
+  const kR=(typeof BR_COOL==='number' && BR_COOL>0) ? clamp(1-((player._rollCool||0)/BR_COOL),0,1) : 1;
+  _chargeBar('ROLL', kR, R.roll);
   ctx.restore();
 }
 function drawEquipCorner(){
@@ -6050,7 +6133,6 @@ function drawHUDOverlay(){
        and the bar covered what remained. Reserve a real name row, then put the gauge beneath it. */
     const nameY=13, barY=27;
     ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center';
-    ctx.fillText((boss.name||'BOSS'),VW/2,nameY);
     drawHealthBarV2('boss', r, VW/2, barY, bw);
     ctx.textAlign='left';
   }
@@ -6107,7 +6189,6 @@ function drawHUDCustomLegacy(){
        reported wrong in a different way each time. They all call the drawn gauge now. */
     drawHealthBarV2('boss', r, VW/2, by+6, bw);
     ctx.strokeStyle='#6a1a1a'; ctx.lineWidth=1; ctx.strokeRect(bxs,by,bw,7);
-    ctx.fillStyle='#ffd0d0'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText((boss.name||'BOSS'),VW/2,by-4);
   }
   ctx.textAlign='left'; ctx.textBaseline='alphabetic';
 }
@@ -6584,7 +6665,30 @@ const Audio = (()=>{
    keybindValidate only refills an action that is MISSING or EMPTY, so anyone who has already
    played keeps whatever is in their localStorage and would never see a replacement anyway. Adding
    costs nothing and taking away would strand the existing layout. */
-const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','pad_b2']};
+/* ⚠ START IS THE PAUSE BUTTON (Mike, 0909: "Pause - in game it should be toggled via Start
+   button aka enter or whatever is binded, not P"). It was a bare Input.tap('p'), the only
+   gameplay input in the file that was not bindable and the only one a pad could not reach.
+   pad_b9 is Start on an XInput layout. `p` is kept as a second default so nobody's muscle memory
+   breaks, and because keybindValidate only refills an action that is MISSING or EMPTY, anyone
+   with saved binds picks this up without losing what they already set. */
+/* ⚠ THE TWO SIDE MOUSE BUTTONS, AND CHARGE AS A FIFTH ACTION (Mike, 0912): "make space
+   operate like the L/C button, and additionally map the C button to my side mouse button 4 and
+   the Charge button to mouse button 5, aka the two side buttons on the left."
+
+   ⚠ SPACE WAS ALREADY ON RETINA and has been since 0812a - checked, not assumed. The C button IS
+   retina on this layout (fire=J, missile=K, retina=L/C), so `' '` already sitting in `retina` is
+   exactly what he is asking for. Nothing to add; it is asserted in the suite now so it cannot
+   quietly go away.
+
+   ⚠ HIS "BUTTON 4 / BUTTON 5" ARE e.button 3 AND 4, which MOUSE_KEY already pushes into `keys` as
+   mouse3/mouse4 (0812a: "mouse buttons become mouse0/1/2 in exactly that map, so every consumer
+   that already understands a bind understands a click"). A physical side button is 1-indexed to
+   the human and 0-indexed to the browser - binding 'mouse4' to the C role would have put it on
+   the FORWARD thumb button, one off from the one he means.
+
+   ⚠ CHARGE IS A BIND, NOT A LITERAL 'h'. He named the key, but a hardcoded letter is an action
+   the rebind screen cannot reach and the second seat cannot have. See CTRL_ACTS, which it joins. */
+const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','mouse3','pad_b2'],charge:['h','mouse4','pad_b3'],start:['enter','p','pad_b9']};
 /* KEYBINDS MUST BE VALIDATED, NOT JUST FILLED IN (drop 0724dl).
 
    Mike's readout said it all: `state title, kd40 ku41, last shift, menu 0`. Forty keypresses
@@ -6629,6 +6733,11 @@ const KEY_UNBINDABLE = ['shift','control','alt','meta','capslock','contextmenu',
 const KEYBIND2_DEFAULT={
   up:['t','pad2_up'], down:['g','pad2_down'], left:['f','pad2_left'], right:['h','pad2_right'],
   fire:['v','pad2_b0','pad2_b7'], bomb:['b','pad2_b1','pad2_b6'], retina:['n','pad2_b2'],
+  /* seat 2 gets CHARGE too - an action only P1 can reach is one that vanishes in co-op */
+  charge:['m','pad2_b3'],
+  /* P2 gets START on the pad only. The options screen builds a row per CTRL_ACTS for BOTH
+     seats, so leaving this out would draw P2 a PAUSE row with nothing bound to it. */
+  start:['pad2_b9'],
 };
 /* `defaults` is a parameter now rather than a captured constant, so P2's table is healed by the
    same validator that heals P1's. A second copy of this function is how one player ends up
@@ -6650,16 +6759,32 @@ function keybindValidate(kb, defaults, saveKey){
   out.__fixed = fixed;
   return out;
 }
-let keybind=(function(){
+/* ⚠ THE GAME BOOTS ON DEFAULT SETTINGS (Mike, 0909: "upon game start, blank game state. blank
+   game settings/goes to default settings").
+
+   Binds are still SAVED - optApply writes them and they are readable for the rest of the session -
+   but a fresh load starts from KEYBIND_DEFAULT rather than from whatever localStorage holds. That
+   is a deliberate reversal: this file already records a session where the binds were broken AND
+   SAVED, so reinstalling never helped because the fault lived in localStorage rather than in any
+   build (0724dl). Booting clean makes that class of problem impossible to carry across a reload.
+
+   One flag, so restoring the old behaviour is one word rather than an archaeology exercise.
+   ⚠ THE TRADE IS REAL AND IT IS MIKE'S: rebinds no longer survive a reload. */
+const BOOT_DEFAULT_SETTINGS=true;
+function _loadBinds(key, defaults){
+  /* ⚠ A CLONE, NOT keybindValidate(null,...). The validator HEALS the save as a side effect -
+     every action would land in `fixed` and it would write the defaults straight over the
+     player's stored binds on every single boot, which destroys them rather than just ignoring
+     them. Booting clean must not be destructive. */
+  if(BOOT_DEFAULT_SETTINGS){
+    const out={}; for(const a in defaults) out[a]=defaults[a].slice(); out.__fixed=[]; return out;
+  }
   let j=null;
-  try{ j=JSON.parse(localStorage.getItem('bof_keys')||'null'); }catch(e){ j=null; }
-  return keybindValidate(j, KEYBIND_DEFAULT, 'bof_keys');
-})();
-let keybind2=(function(){
-  let j=null;
-  try{ j=JSON.parse(localStorage.getItem('bof_keys2')||'null'); }catch(e){ j=null; }
-  return keybindValidate(j, KEYBIND2_DEFAULT, 'bof_keys2');
-})();
+  try{ j=JSON.parse(localStorage.getItem(key)||'null'); }catch(e){ j=null; }
+  return keybindValidate(j, defaults, key);
+}
+let keybind=_loadBinds('bof_keys', KEYBIND_DEFAULT);
+let keybind2=_loadBinds('bof_keys2', KEYBIND2_DEFAULT);
 function saveKeybind(){
   try{ localStorage.setItem('bof_keys',JSON.stringify(keybind)); }catch(e){}
   try{ localStorage.setItem('bof_keys2',JSON.stringify(keybind2)); }catch(e){}
@@ -6668,6 +6793,14 @@ function saveKeybind(){
    to seat 1's table if keybind2 somehow failed to build, because a co-op player with NO controls
    is worse than two players sharing a stick. */
 function keybindFor(seat){ return (seat===2 && keybind2) ? keybind2 : keybind; }
+/* PAUSE, from either seat, resolved through the bind tables rather than a literal key. */
+function pauseTapped(){
+  for(const seat of [1,2]){
+    const t=keybindFor(seat); if(!t || !t.start) continue;
+    for(const k of t.start) if(Input.tap(k)) return true;
+  }
+  return false;
+}
 const Input = (()=>{
   const keys={}, pressed={};
   const mouse={x:VW/2,y:VH*0.75,down:false,inside:false,active:false,moved:false,_lx:-1,_ly:-1};
@@ -6934,7 +7067,13 @@ const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
   PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
   /* the co-op wing muster: both chosen pilots side by side before deploy (drop 0902f) */
-  COOPROSTER:'cooproster' };
+  COOPROSTER:'cooproster',
+  /* ⚠ 'opener' AND NOT 'intro'. GS.INTRO is the STAGE card that precedes GS.LAUNCH and has been
+     since 0810j - reusing it for the arcade opener would have put a movie trailer between the
+     pilot select and every stage. Mike's opener is its own state. */
+  OPENER:'opener',
+  /* the controls reference Mike asked for as a sixth title button (0912) */
+  HELP:'help' };
 let state = GS.BOOT;
 /* ============================================================
    DEBUG SWITCHBOARD (drop 0724do)
@@ -8191,7 +8330,15 @@ const SS_WINDOW=0.26;    // same double-tap window as the roll, so the two input
 const SS_DUR=0.62;       // the flip is heavier than a roll
 const SS_SURGE=120;      // px of forward (up) travel across the flip
 const SS_COOL=7.0;       // seconds to re-arm - shown, like ROLL, because an unseen lockout is unfair
-const SOMER_PILOTS={maverick:1};                 // "exclusive to maverick FOR NOW"
+/* ⚠ WIDENED TO ALL NINE (Mike, 0908: "just please wire up the pilot frames you have").
+   0724-era this was `{maverick:1}` on his "exclusive to maverick FOR NOW", and the note above
+   claimed the art check meant "a second pilot becomes eligible the moment their so0 reel exists -
+   nothing here needs editing to widen it". That was NOT true: somersaultAvailable() tests this
+   table AND the art, so the eight other reels sat in the atlas unreachable. All nine pilots now
+   carry a full so0..so7 (checked against the manifest, 9 x 8 = 72 cells), so the table is filled
+   rather than deleted - narrowing it again is one line, which is the point of it being a table.
+   The art gate below still stands, so a pilot with no reel stays ineligible whatever is listed. */
+const SOMER_PILOTS={axel:1,cole:1,decker:1,falva:1,freezer:1,juggernaut:1,lizzie:1,maverick:1,yuri:1};
 function somersaultAvailable(){
   const pk=(typeof _pilotKey==='function')?_pilotKey():null;
   if(!pk || !SOMER_PILOTS[pk]) return false;
@@ -8241,14 +8388,326 @@ function rollFrameKey(){
      index that is. See SHIP_TWIST_FLIP. */
   const _rev=((r.dir>0) !== !!SHIP_TWIST_FLIP[pk]);
   const fi=_rev?((8-f)%8):f;   // a RIGHT roll rotates rightward (br0,7,6,5,4,3,2,1); left rolls 0..7
-  /* FALVA IS THE EXCEPTION (drop 0724cj). Every other pilot's turn and barrel-roll frames are
-     drawn WITHOUT an engine — hers are the only ones with a thruster baked in, so using them would
-     put her flame back the moment she rolled. She keeps her flameless idle frame through the roll
-     instead, which is the option Mike offered, and our own thruster stays attached to it. */
-  if(pk==='falva') return null;
+  /* ⚠ FALVA'S ROLL WAS SWITCHED OFF FOR A REASON THAT WAS NEVER TRUE (drop 0908b). 0724cj claimed
+     "every other pilot's barrel-roll frames are drawn WITHOUT an engine — hers are the only ones
+     with a thruster baked in", and returned null so she flew her idle through the entire roll.
+
+     Measured the hot-white ink in the bottom 28% of every plate, which is where a baked plume
+     lives, idle against br1..br7:
+
+         axel 107 / 102-228      decker 101 / 102-117    falva 196 / 155-188
+         freezer 150 / 188-366   juggernaut 120 / 51-127  lizzie 114 / 67-124
+         maverick 156 / 57-177   yuri 212 / 84-204        cole 1 / 0-8
+
+     Eight of the nine carry a plume in BOTH the idle and the roll frames, and seven of those roll
+     with it every day. Cole is the only pilot actually drawn without one. Falva was never the
+     exception — and because her idle carries the same plume, the frame she was falling back to put
+     the flame on screen anyway, so the guard bought nothing and cost her the entire reel.
+
+     Her br0..br7 are all present (184x206 down to 47x206, a real 360 with belly frames at br3-br5)
+     and all eight are already rigged in SHIP_THR. Deleting the guard is the whole fix. */
   const k='ship_'+pk+'_br'+fi;
   return (typeof XART!=='undefined' && XART.rdy(k))?k:null;
 }
+/* ---- THE CHARGE, AND THE WRECKING BALLS (Mike, 0912) ------------------------
+   "a new bar under both the somersalt and barrel roll bars called Charge. This is for
+   Juggernaut exclusively when he gets his charge powerup special. He still gets a timer on it
+   before the charge bar goes away but we dont need to use the special bar anymore, instead you
+   will generate him a new special ability icon that is a Wrecking Ball icon, and generate us
+   chain wrecking balls we can anchor to juggernaut that swing in a circle in opposite
+   directions around him like a destructive shield."
+
+   "For the charge, this operates as a quick dash forward by holding down H, then holding UP.
+   this begins to charge up your dash ... depending on how long you charge up for is how long
+   you can project yourself forward."
+
+   So his 15s special is now THREE things at once and they share one window:
+
+     WRECKING BALLS   six iron balls on chains, two counter-rotating rings, that shred what they
+                      touch and eat enemy fire. This is what his existing rage-mode invulnerability
+                      LOOKS like - the i-frames at hitPlayer were already there and had nothing on
+                      screen to explain them.
+     THE CHARGE DASH  hold CHARGE + UP to wind up, release to ram forward. Hold time buys distance.
+     THE CHARGE BAR   row 0, under SOMERSAULT and ROLL, replacing the generic SPECIAL bar for him.
+
+   ⚠ BUILT AS THE ROLL AND SOMERSAULT'S FOURTH SIBLING, for the reason 0906 gave for the
+   somersault: a committed move with i-frames, a reel-or-effect that overrides the hull, a clock
+   and a bar that shows it. A player who has learned the roll already knows how this behaves.
+
+   ⚠ THE WIND-UP PINS HIM, and that is not a bug. UP is half the input, so a charge that let you
+   keep flying would launch him off the top of the play rect before he had charged anything. He
+   plants, winds up, and goes - which is also what makes it read as a ram rather than a boost.
+   See _rolling in updatePlay, which this joins.
+
+   ⚠ THE BALLS DO NOT USE A NEW DAMAGE PATH. specialActive('juggernaut') already rams enemies for
+   999 and bosses for 6 on a 0.2s clock (see the collision block); the balls carry the SAME calls
+   on their own per-ball cooldown so a ring passing through a boss cannot out-damage the hull ram
+   that was already balanced. What is new is that they cull enemy bullets - that is the "shield"
+   half of Mike's "destructive shield", and it is the only reason to fly INTO fire rather than
+   around it.
+
+   ⚠ ART IS OPTIONAL AND THE MOVE IS NOT. Every draw here falls back to shapes if the plate has
+   not decoded - XART.rdy() is false on its first call, which is what would otherwise make the
+   first charge of a session invisible. --------------------------------------------------- */
+const CHG_FULL=1.30;      // seconds of hold for a full charge
+const CHG_ARM=0.16;       // under this the hold is ignored - brushing the key is not a dash
+const CHG_MIN=110, CHG_MAX=360;    // px of forward travel, minimum charge vs full
+const CHG_DMIN=0.16, CHG_DMAX=0.40; // and how long the ram takes, so a long dash is not a teleport
+const CHG_PILOT='juggernaut';
+
+/* The charge is HIS, and only while the crate is live - "for Juggernaut exclusively when he gets
+   his charge powerup special". Gated on the special rather than on the pilot alone, so the bar
+   and the move appear and expire together. */
+function chargeAvailable(){
+  if(typeof player==='undefined' || !player || player.dead) return false;
+  if(typeof specialActive!=='function' || !specialActive(CHG_PILOT)) return false;
+  return !player.roll && !player.somer;
+}
+function chargeHeld(){
+  const t=(typeof keybindFor==='function')?keybindFor(1):keybind;
+  if(!t || !t.charge) return false;
+  return t.charge.some(function(k){ return Input.down(k); });
+}
+function chargeUpHeld(){
+  const t=(typeof keybindFor==='function')?keybindFor(1):keybind;
+  return !!(t && t.up && t.up.some(function(k){ return Input.down(k); }));
+}
+/* how far along the wind-up we are, 0..1 - the bar, the aura and the ram distance all read this */
+function chargeLevel(){ return clamp((player&&player._chgT||0)/CHG_FULL,0,1); }
+function chargeWinding(){ return !!(player && player._chgOn); }
+function chargeDashing(){ return !!(player && player._chgDash); }
+
+function chargeStart(){
+  if(player._chgOn) return;
+  player._chgOn=true; player._chgT=0;
+  if(typeof Audio!=='undefined' && Audio.SFX)
+    (Audio.SFX.sonicChargeStart||Audio.SFX.fireIceChargeStart||Audio.SFX.select||function(){})();
+}
+function chargeRelease(){
+  const t=player._chgT||0;
+  player._chgOn=false; player._chgT=0;
+  if(t<CHG_ARM) return;                       // a tap is not a ram
+  const k=clamp(t/CHG_FULL,0,1);
+  const dur=CHG_DMIN+(CHG_DMAX-CHG_DMIN)*k;
+  player._chgDash={t:0, dur:dur, dist:CHG_MIN+(CHG_MAX-CHG_MIN)*k, k:k, y0:player.y};
+  /* i-frames for the whole ram, like the roll and the flip. He is already invulnerable to bullets
+     while the special runs; this covers the CONTACT he is about to make on purpose. */
+  player.invuln=Math.max(player.invuln, Math.ceil(dur*60)+6);
+  if(typeof shake!=='undefined') shake=Math.max(shake, 5+7*k);
+  if(typeof Audio!=='undefined' && Audio.SFX)
+    (Audio.SFX.coleSonicBoom||Audio.SFX.arcBarrelRoll||Audio.SFX.dash||function(){})();
+  if(typeof floatText==='function' && k>0.85) floatText(player.x,player.y-22,'RAMMING SPEED','#ff8a1a');
+}
+function chargeTick(dt){
+  if(typeof player==='undefined' || !player) return;
+  /* the ram runs to completion even if the special expires mid-dash - cutting a committed move
+     off at the knees because a timer ticked over is how a move stops feeling trustworthy */
+  const d=player._chgDash;
+  if(d){
+    const prev=d.t; d.t+=dt;
+    const k=clamp(d.t/d.dur,0,1), kp=clamp(prev/d.dur,0,1);
+    const ez=function(t){ return 1-(1-t)*(1-t); };          // hard out of the blocks, settling
+    player.y -= (ez(k)-ez(kp))*d.dist;
+    if(typeof PLAY!=='undefined') player.y=clamp(player.y, PLAY.y+12, PLAY.y+PLAY.h-6);
+    /* the ram leaves a wake, so the distance you bought is visible after the fact */
+    if(typeof particles!=='undefined' && particles.length<420){
+      for(let i=0;i<2;i++) particles.push({x:player.x+rnd(-12,12), y:player.y+rnd(4,20),
+        vx:rnd(-0.6,0.6), vy:rnd(1.6,3.4), life:rnd(0.18,0.42), t:0, r:rnd(1.2,3),
+        color:chance(.5)?'#ffd08a':'#ff7a24'});
+    }
+    if(d.t>=d.dur) player._chgDash=null;
+    return;
+  }
+  if(!chargeAvailable()){
+    if(player._chgOn){ player._chgOn=false; player._chgT=0; }
+    return;
+  }
+  const hold=chargeHeld(), up=chargeUpHeld();
+  if(hold && up){
+    if(!player._chgOn) chargeStart();
+    player._chgT=Math.min(CHG_FULL,(player._chgT||0)+dt);
+    if(typeof particles!=='undefined' && particles.length<420 && chance(0.55)){
+      /* sparks rushing INWARD, so the wind-up reads as gathering rather than venting */
+      const a=Math.random()*TAU, r=34+26*Math.random();
+      particles.push({x:player.x+Math.cos(a)*r, y:player.y+Math.sin(a)*r,
+        vx:-Math.cos(a)*rnd(1.2,2.6), vy:-Math.sin(a)*rnd(1.2,2.6),
+        life:rnd(0.14,0.3), t:0, r:rnd(1,2.2), color:chance(.4)?'#fff0c0':'#ffae3a'});
+    }
+  } else if(player._chgOn){
+    chargeRelease();
+  }
+}
+/* the four-stage charge plate, or rings if it has not decoded */
+function drawChargeFX(){
+  if(!chargeWinding() && !chargeDashing()) return;
+  const k=chargeDashing()?1:chargeLevel();
+  if(k<=0.02) return;
+  ctx.save();
+  ctx.globalCompositeOperation='lighter';
+  const f=clamp(Math.floor(k*4),0,3);
+  const key='jchg_'+f;
+  if(typeof XART!=='undefined' && XART.rdy(key)){
+    const im=XART.get(key);
+    const s=(54+66*k)/Math.max(1,im.naturalWidth);
+    const w=im.naturalWidth*s, h=im.naturalHeight*s;
+    ctx.globalAlpha=0.55+0.45*k;
+    ctx.drawImage(im, player.x-w/2, player.y-h/2, w, h);
+  } else {
+    const R=26+34*k;
+    ctx.strokeStyle='#ffae3a'; ctx.lineWidth=2+3*k; ctx.globalAlpha=0.5+0.4*k;
+    ctx.beginPath(); ctx.arc(player.x,player.y,R,0,TAU); ctx.stroke();
+    ctx.strokeStyle='#fff0c0'; ctx.lineWidth=1+2*k; ctx.globalAlpha=0.35+0.5*k;
+    ctx.beginPath(); ctx.arc(player.x,player.y,R*0.68,0,TAU); ctx.stroke();
+  }
+  if(k>=0.995){   // FULL reads as a flash, not as a slightly bigger ring
+    ctx.globalAlpha=0.30+0.25*Math.sin((typeof stateT==='number'?stateT:0)*22);
+    ctx.fillStyle='#fff6d8';
+    ctx.beginPath(); ctx.arc(player.x,player.y,16,0,TAU); ctx.fill();
+  }
+  ctx.restore(); ctx.globalAlpha=1;
+}
+
+/* ---- THE WRECKING BALLS -----------------------------------------------------
+   Six balls, two rings, spinning OPPOSITE ways ("swing in a circle in opposite directions
+   around him"). Anchored to the ship every frame rather than integrated, so they cannot drift
+   off him during a roll, a flip or a ram. */
+/* ⚠ THESE RADII ARE MEASURED AGAINST THE HULL, NOT PICKED. The first cut ran the inner ring at
+   44px with the chain starting at the ship's centre: six chains x ~7 links all converging on one
+   point drew a solid knot of iron exactly where Juggernaut is, and the photograph showed a cluster
+   of wrecking balls with no aircraft anywhere in it. A shield you cannot see your own ship inside
+   is not a shield, it is a blindfold. The hull is ~50px across, so the inner ring clears it and
+   the chain starts outside it. */
+const WB_RING=[{n:3, r:58, spin: 2.25, ph:0},
+               {n:3, r:94, spin:-1.55, ph:Math.PI/3}];
+const WB_HIT=17;          // ball radius for CONTACT - the draw is smaller, see drawWreckBalls
+const WB_DRAW=15;         // ⚠ drawn a little under the hit radius: six 37px balls read as a wall
+const WB_CHAIN0=24;       // where the chain leaves the ship, i.e. outside the hull
+const WB_CD=0.22;         // per-ball re-hit clock, matching the hull ram's own 0.2s
+let wreckBalls=[];
+function wreckActive(){ return typeof specialActive==='function' && specialActive('juggernaut'); }
+function wreckInit(){
+  wreckBalls=[];
+  for(const R of WB_RING)
+    for(let i=0;i<R.n;i++)
+      wreckBalls.push({a:R.ph+i*(TAU/R.n), r:R.r, spin:R.spin, cd:0, x:player.x, y:player.y, hot:0});
+}
+function wreckTick(dt){
+  if(!wreckActive()){ if(wreckBalls.length) wreckBalls=[]; return; }
+  if(typeof player==='undefined' || !player) return;
+  if(!wreckBalls.length) wreckInit();
+  for(const b of wreckBalls){
+    b.a+=b.spin*dt;
+    /* a ram flings them out behind him - the chain is slack when he accelerates */
+    const stretch = chargeDashing() ? 1.18 : 1;
+    b.x=player.x+Math.cos(b.a)*b.r*stretch;
+    b.y=player.y+Math.sin(b.a)*b.r*stretch;
+    if(b.cd>0) b.cd=Math.max(0,b.cd-dt);
+    if(b.hot>0) b.hot=Math.max(0,b.hot-dt*4);
+    /* THE SHIELD HALF: enemy rounds are batted out of the air. This is the only reason to fly
+       INTO fire with the special up rather than simply tanking it somewhere safe. */
+    if(typeof eBullets!=='undefined'){
+      for(const e of eBullets){
+        if(!e || e.dead) continue;
+        if(Math.hypot(e.x-b.x, e.y-b.y) <= WB_HIT+(e.r||3)){
+          e.dead=true; b.hot=1;
+          if(typeof particles!=='undefined' && particles.length<420)
+            particles.push({x:e.x,y:e.y,vx:rnd(-1.4,1.4),vy:rnd(-1.4,1.4),life:0.2,t:0,r:2,color:'#ffd08a'});
+        }
+      }
+    }
+    if(b.cd>0) continue;
+    /* THE DESTRUCTIVE HALF, on the paths the rage ram already uses */
+    if(typeof enemies!=='undefined' && typeof hitEnemy==='function'){
+      for(const e of enemies){
+        if(!e || e.dead || e.ghost) continue;
+        if(Math.hypot(e.x-b.x, e.y-b.y) <= WB_HIT+Math.max(6,(e.w||14)*0.4)){
+          hitEnemy(e,999); b.cd=WB_CD; b.hot=1;
+          if(typeof explode==='function') explode(b.x,b.y,20,'red');
+          if(typeof shake!=='undefined') shake=Math.max(shake,4);
+          break;
+        }
+      }
+    }
+    if(b.cd>0) continue;
+    const _tgt=(typeof bossActive!=='undefined'&&bossActive&&typeof boss!=='undefined'&&boss&&!boss.dead)?boss
+             :((typeof subBossActive!=='undefined'&&subBossActive&&typeof subBoss!=='undefined'&&subBoss&&!subBoss.dead)?subBoss:null);
+    if(_tgt && Math.abs(_tgt.x-b.x)<=(_tgt.w||60)/2+WB_HIT && Math.abs(_tgt.y-b.y)<=(_tgt.h||60)/2+WB_HIT){
+      if(_tgt===boss && typeof hitBoss==='function') hitBoss(6);
+      else if(typeof hitSubBoss==='function') hitSubBoss(6);
+      b.cd=WB_CD; b.hot=1;
+      if(typeof explode==='function') explode(b.x,b.y,18,'red');
+      if(typeof shake!=='undefined') shake=Math.max(shake,5);
+    }
+  }
+}
+/* ⚠ THE CHAINS ARE A SEPARATE PASS BECAUSE THEY GO UNDER THE SHIP. Drawn with the balls, six
+   chains converge on the hull and hide it (see WB_RING). Drawn before drawPlayer, the aircraft
+   sits on top of its own rigging and the balls still swing over everything - which is the read
+   Mike asked for: anchored TO him, swinging AROUND him. */
+function drawWreckChains(){
+  if(!wreckBalls.length || typeof player==='undefined' || !player) return;
+  const linkOK=(typeof XART!=='undefined' && XART.rdy('jwb_link'));
+  ctx.save();
+  for(const b of wreckBalls){
+    const dx=b.x-player.x, dy=b.y-player.y, len=Math.hypot(dx,dy)||1, ang=Math.atan2(dy,dx);
+    if(linkOK){
+      const im=XART.get('jwb_link');
+      const lh=9, lw=lh*(im.naturalWidth/Math.max(1,im.naturalHeight));
+      const step=lh*0.78;
+      ctx.save(); ctx.translate(player.x,player.y); ctx.rotate(ang+Math.PI/2);
+      ctx.globalAlpha=0.95; ctx.imageSmoothingEnabled=false;
+      for(let d=WB_CHAIN0; d<len-WB_DRAW*0.6; d+=step) ctx.drawImage(im, -lw/2, d-lh/2, lw, lh);
+      ctx.restore();
+    } else {
+      const x0=player.x+Math.cos(ang)*WB_CHAIN0, y0=player.y+Math.sin(ang)*WB_CHAIN0;
+      ctx.strokeStyle='#5d6169'; ctx.lineWidth=3.5; ctx.globalAlpha=0.9;
+      ctx.beginPath(); ctx.moveTo(x0,y0); ctx.lineTo(b.x,b.y); ctx.stroke();
+      ctx.strokeStyle='#aeb5c0'; ctx.lineWidth=1.2;
+      ctx.beginPath(); ctx.moveTo(x0,y0); ctx.lineTo(b.x,b.y); ctx.stroke();
+    }
+  }
+  ctx.restore(); ctx.globalAlpha=1;
+}
+function drawWreckBalls(){
+  if(!wreckBalls.length) return;
+  const ballOK=(typeof XART!=='undefined' && XART.rdy('jwb_ball'));
+  const hotOK =(typeof XART!=='undefined' && XART.rdy('jwb_ball_hot'));
+  ctx.save();
+  for(const b of wreckBalls){
+    const hot=b.hot>0;
+    const key=(hot&&hotOK)?'jwb_ball_hot':'jwb_ball';
+    if((hot&&hotOK)||ballOK){
+      const im=XART.get(key);
+      const s=(WB_DRAW*2)/Math.max(1,im.naturalWidth);
+      const w=im.naturalWidth*s, h=im.naturalHeight*s;
+      ctx.globalAlpha=1; ctx.imageSmoothingEnabled=false;
+      if(hot){ ctx.shadowColor='#ff7a24'; ctx.shadowBlur=12; }
+      ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(b.a*1.7);
+      ctx.drawImage(im,-w/2,-h/2,w,h); ctx.restore();
+      ctx.shadowBlur=0;
+      /* the impact plate rides the SAME b.hot ramp the hot ball does, so a strike is one event
+         with two halves rather than two clocks that can disagree */
+      if(hot && typeof XART!=='undefined' && XART.rdy('jwb_burst')){
+        const bu=XART.get('jwb_burst'), bs=(WB_DRAW*2.6*(1.4-0.4*b.hot))/Math.max(1,bu.naturalWidth);
+        const bw2=bu.naturalWidth*bs, bh2=bu.naturalHeight*bs;
+        ctx.save(); ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=b.hot;
+        ctx.drawImage(bu, b.x-bw2/2, b.y-bh2/2, bw2, bh2); ctx.restore();
+      }
+    } else {
+      ctx.globalAlpha=1;
+      ctx.fillStyle=hot?'#ff9a3a':'#4a4640';
+      if(hot){ ctx.shadowColor='#ff7a24'; ctx.shadowBlur=12; }
+      ctx.beginPath(); ctx.arc(b.x,b.y,WB_DRAW,0,TAU); ctx.fill();
+      ctx.shadowBlur=0;
+      ctx.fillStyle=hot?'#ffe0a0':'#6b6459';
+      ctx.beginPath(); ctx.arc(b.x-WB_DRAW*0.28,b.y-WB_DRAW*0.28,WB_DRAW*0.42,0,TAU); ctx.fill();
+      ctx.strokeStyle='#20211f'; ctx.lineWidth=1.5;
+      ctx.beginPath(); ctx.arc(b.x,b.y,WB_DRAW,0,TAU); ctx.stroke();
+    }
+  }
+  ctx.restore(); ctx.globalAlpha=1;
+}
+
 /* ---- THE DEATH SPIN-OUT (Mike, 0907) ---------------------------------------
    ⚠ THIS IS A HEADER RULE AND IT DOES NOT GET REDESIGNED. His words, giving it that status in
    the same breath as the spec: "when we get hit, we spin while explosions anchor and fire anchor
@@ -10438,6 +10897,31 @@ const SHIPS=[];
       c.impact=!!H.impact;
       break;
     }
+    /* ⚠ THE LEVEL-6 FLEET'S CONFIG BLOCK WAS IN THE WRONG SWITCH ENTIRELY (found 0912d).
+       Mike: "Ive noticed we have an l6 fleet folder of enemies that should be used on level 6
+       immediately. make sure these enemies spawn."
+
+       It was not that the waves were missing - though they were. This case list was spliced into
+       `switch(b._sbm)` inside shipBossManoeuvre, between SBM_STRAFE and SBM_RAM: a switch that
+       dispatches on a BOSS's numeric manoeuvre state. A case labelled 'l6v_s0' can never match it,
+       and if it somehow did the body would throw, because neither `type` nor `c` exists in
+       shipBossManoeuvre(b, dt). So the nine roster entries in L6_FLEET, all 27 registered plates
+       and the whole _pfam tracer mapping have been unreachable since 0825 - spawnEnemy fell to its
+       default and produced a nameless 1-HP blank.
+
+       Moved verbatim to the switch it was written for, beside the other stage-6 air roster.
+       ⚠ It keeps `c.maxhp`, NOT the `c._maxhp` its neighbours use: _vaultState reads `e.maxhp` to
+       pick intact/dama/crit, so the underscore would have frozen every hull on its intact plate. */
+    case 'l6v_s0': case 'l6v_s1': case 'l6v_s2':
+    case 'l6v_r0': case 'l6v_r1': case 'l6v_r2':
+    case 'l6v_b0': case 'l6v_b1': case 'l6v_b2': {
+      const F=L6_FLEET[type];
+      c.name=F.name; c.w=F.w; c.h=F.h; c.hp=c.maxhp=EHP(F.hp); c.score=F.score;
+      c._vk=F.art; c._vkind='air'; c._pfam=F.pfam;
+      c.vy=F.vy; c.pattern=opt.pattern||F.pattern; c.dropOk=true;
+      c.shoots=true; c.fk='mg'; c.fireRate=F.fireRate;
+      break;
+    }
     case 's6lancer': case 's6cyclone': case 's6bomber': case 's6mine':
     case 's6skimmer': case 's6buoy':
     case 's6dart': case 's6thunder': case 's6turbine': case 's6probe': {
@@ -11595,6 +12079,33 @@ function buildStagePlan(stageNum){
     add(40.0,()=> { spawnEnemy('s6skimmer',W6+90,VH*.20,{_side:-1}); spawnEnemy('s6dart',-70,VH*.34,{_side:1,_stagger:.20}); });
     add(44.0,()=> spawnEnemy('s6bomber',W6*.50,-112,{}));
     add(48.0,()=> { spawnEnemy('s6mine',W6*.25,-82,{}); spawnEnemy('s6probe',W6*.75,-104,{_stagger:.32}); });
+    /* ⚠ THE LEVEL-6 FLEET FLIES AGAIN (Mike, 0912d): "we have an l6 fleet folder of enemies that
+       should be used on level 6 immediately. make sure these enemies spawn."
+
+       They had waves once - nine `add(...)` lines - and f55c2ce4 (25 Aug) dropped them when the
+       stage was rebuilt around the twelve storm silhouettes. Reading that rebuild's own note, the
+       fleet was collateral rather than the target: "the old nine palette swaps and generic AI-wave
+       wrappers no longer define the stage" is about the stage's IDENTITY, and these are a roster
+       with their own hulls, damage states and tracer families - not palette swaps of a vault jet.
+
+       ⚠ SO THEY ARE INTERLEAVED, NOT SWAPPED BACK IN. The twelve storm hulls are the stage Mike
+       signed off and they keep every beat they had; the fleet flies between them as the squadron
+       traffic the storm units are not. One squadron per pass, steel -> royal -> black/ice, so the
+       liveries escalate with the stage rather than arriving as one wall of nine.
+
+       ⚠ AND THEIR CONFIG ONLY WORKS BECAUSE OF THE SWITCH FIX ABOVE. Adding these lines alone
+       would have spawned nine nameless 1-HP blanks. */
+    add(6.5, ()=> { spawnEnemy('l6v_s0',W6*.18,-70,{}); spawnEnemy('l6v_s0',W6*.82,-96,{_stagger:.28}); });
+    add(10.5,()=> spawnEnemy('l6v_s2',W6*.50,-80,{}));
+    add(14.5,()=> { spawnEnemy('l6v_s1',W6*.34,-84,{}); spawnEnemy('l6v_s1',W6*.66,-112,{_stagger:.30}); });
+    add(19.0,()=> { spawnEnemy('l6v_r0',W6*.24,-72,{}); spawnEnemy('l6v_r0',W6*.50,-98,{_stagger:.22}); spawnEnemy('l6v_r0',W6*.76,-124,{_stagger:.44}); });
+    add(26.0,()=> spawnEnemy('l6v_r2',W6*.50,-86,{}));
+    add(30.0,()=> { spawnEnemy('l6v_r1',W6*.30,-90,{}); spawnEnemy('l6v_r1',W6*.70,-118,{_stagger:.26}); });
+    add(34.5,()=> { spawnEnemy('l6v_b0',W6*.20,-76,{}); spawnEnemy('l6v_b0',W6*.80,-104,{_stagger:.30}); });
+    add(42.0,()=> spawnEnemy('l6v_b2',W6*.50,-92,{}));
+    add(46.5,()=> { spawnEnemy('l6v_b1',W6*.28,-96,{}); spawnEnemy('l6v_b1',W6*.72,-126,{_stagger:.34}); });
+    /* the black/ice pair leads the last storm push, so the stage ends on its heaviest squadron */
+    add(curStage.length-9,()=> { spawnEnemy('l6v_b2',W6*.38,-88,{}); spawnEnemy('l6v_b1',W6*.62,-116,{_stagger:.30}); });
     add(22.0,()=> spawnEnemy('xelite_glacierlance',W6*.50,-72,{}));   /* Vol.1 aces (0903): Mike's favourite leads */
     add(38.0,()=> spawnEnemy('xelite_tempest',W6*.30,-70,{}));
     add(38.0,()=> spawnEnemy('xelite_solarwarden',W6*.70,-70,{}));
@@ -12901,7 +13412,8 @@ function shipBossInit(b, kind){
   if(D.ty!=null) b.ty=D.ty;
   b.hp=b.maxhp = D.hp ? Math.ceil(D.hp*DIFF.eHp) : Math.ceil((b.maxhp||200)*D.hpMul);
   b.fireCd=D.cd; b._sbT=0; b._sbStep=0;
-  b._entryDur=1.05;                // package contract: readable, bounded 1050ms entrance
+  b._entryDur=1.05;
+  if(D.scene && typeof sceneAttach==='function') sceneAttach(b, D.scene); else b._scene=null;   // the editor's scene, if the row carries one (0911a)                // package contract: readable, bounded 1050ms entrance
   /* START THE LOAD AT SPAWN (drop 0811d). Mike: "I dont see my level 2 miniboss or level 2 boss at
      all." Measured: rdy=false, preloaded=false, shipBossDraw returned false " the boss had a name,
      a health bar, HP and an attack, and drew NOTHING. XART.rdy is what STARTS a lazy load and it is
@@ -13016,7 +13528,18 @@ function _shipShot(x,y,vx,vy,w,owner){
 }
 function shipBossMount(b, slot){
   const D=b&&b._ship?SHIPBOSS[b._ship]:null;
-  const M=D&&D.mounts&&D.mounts[slot];
+  /* ⚠ AN ORDINARY ENEMY HAS NO `_ship`, SO IT HAS NO MOUNTS, AND EVERY ANCHOR RESOLVED TO THE SAME
+     POINT (0912h). Measured on a stage-1 delta jet: all twelve slot names - C, L, R, LW, RW, nose,
+     tail, bay, b1, b2, gunL, gunR - returned `(b.x, b.y + b.h*0.30)`, one point, because `M` was
+     null for every one of them. A real ship boss gives three distinct points from its own
+     SHIPBOSS.mounts and the rest fall back the same way.
+
+     That is correct for the engine as shipped - only ship bosses have authored mounts - but it
+     means "adjust the anchor point" is inert on the units Bullets of Debug exists to tune. `_mounts`
+     is an optional per-unit table in the SAME normalised form SHIPBOSS uses ({slot:[fx,fy]}, a
+     fraction of w and h), so it composes with the pose rotation and scale below for free and
+     changes nothing for any unit that does not carry one. */
+  const M=(D&&D.mounts&&D.mounts[slot]) || (b&&b._mounts&&b._mounts[slot]) || null;
   const y=(b&&b._drawY!=null)?b._drawY:(b?b.y:0);
   const P=(typeof shipBossVisualPose==='function')?shipBossVisualPose(b):{x:0,y:0,rot:0,sx:1,sy:1};
   const lx=M?b.w*M[0]*P.sx:0, ly=(M?b.h*M[1]:b.h*0.30)*P.sy;
@@ -13283,6 +13806,8 @@ function shipBossVisualPose(b){
      exception. The lateral bank was the broadest offender - it applied to EVERY ship boss on
      every sideways slide, which is why the tilt shows up on stages the complaint did not name. */
   let x=0,y=0,rot=0,sx=1,sy=1;
+  /* an authored SCENE may key rotation and scale - Mike's own design, not an engine tilt (0911a) */
+  if(b._scene){ rot+=b._scene.rot||0; sx*=(b._scene.sx||1); sy*=(b._scene.sy||1); }
   const A=b._sba;
   if(A&&!A.fired){
     const p=clamp(A.t/Math.max(0.01,A.tell),0,1), pulse=Math.sin(p*Math.PI);
@@ -15698,6 +16223,7 @@ function shipBossManoeuvre(b, dt){
   if(b._ship==='junglecruiser'&&typeof jungleCruiserDirector==='function')return jungleCruiserDirector(b,dt);
   if(b._s7warden&&typeof s7WardenTick==='function')return s7WardenTick(b,dt);
   shipBossActionTick(b,dt);
+  if(b._scene && typeof sceneDirectorTick==='function' && sceneDirectorTick(b,dt)) return true;   // a scene TRACK owns the hull (0911a)
   if(b._s4war&&typeof stage4WarfareTick==='function')return stage4WarfareTick(b,dt);
   if(b._xenoRig&&typeof xenoRegentTick==='function')xenoRegentTick(b,dt);
   if(b._s6mini&&typeof stage6MiniTick==='function')return stage6MiniTick(b,dt);
@@ -15800,18 +16326,6 @@ function shipBossManoeuvre(b, dt){
       }
       break;
     }
-    /* 0825 recovered Level-6 fleet — three hulls across steel, royal, and black/ice squadrons.
-       These are real roster types, not generic gunship/scout spawns wearing different pictures. */
-    case 'l6v_s0': case 'l6v_s1': case 'l6v_s2':
-    case 'l6v_r0': case 'l6v_r1': case 'l6v_r2':
-    case 'l6v_b0': case 'l6v_b1': case 'l6v_b2': {
-      const F=L6_FLEET[type];
-      c.name=F.name; c.w=F.w; c.h=F.h; c.hp=c.maxhp=EHP(F.hp); c.score=F.score;
-      c._vk=F.art; c._vkind='air'; c._pfam=F.pfam;
-      c.vy=F.vy; c.pattern=opt.pattern||F.pattern; c.dropOk=true;
-      c.shoots=true; c.fk='mg'; c.fireRate=F.fireRate;
-      break;
-    }
     case SBM_RAM: {
       const sp=520;
       const dirs=[1,-1,1];                          // south, north, south
@@ -15836,6 +16350,7 @@ function shipBossManoeuvre(b, dt){
       break;
     }
   }
+  if(b._scene && typeof sceneClampTick==='function') sceneClampTick(b);   // a `boss` zone fences the manoeuvre (0911a)
   b.x=clamp(b.x, -b.w*0.7, W+b.w*0.7);
   /* ⚠ A WALL CANNOT SWEEP OFF THE FIELD (drop 0822y). The clamp above lets a boss travel
      almost entirely out of view, which is correct for one that flies in and out — but the
@@ -19654,7 +20169,251 @@ function subBossAttack(){
    quarter so a nearly-dead boss announces itself.
    ============================================================ */
 const _gaugeLag = {};
+/* ============================================================
+   THE BOSS AND MINIBOSS GAUGES ARE THE BOSS MODE PACK'S BARS (drop 0910b)
+
+   Mike: "take the health bars from the boss mode assets I gave you, we should use 1 specific bar
+   for minibosses, 1 specific bar for bosses. use the different fills per levels and via palette
+   swapping to get what we need ... we do not want to shrink it."
+
+   Two frames and six fills ship in CF_BossModeAssets-Vol.1/Loading, baked to one small sheet
+   (assets/game/atlas/ui_bossbar.png, 704x258) at the size the HUD actually draws them so nothing
+   is resampled 4.6x at runtime:
+
+     BOSS      bmbar_frame_boss  the orange-lit rails       + bmbar_fill_seg  the hazard stripes
+     MINIBOSS  bmbar_frame_mini  the plain silver rails     + a solid fill
+
+   THE FILL IS CLIPPED, NEVER SCALED. It is drawn at its frame-fitted size every frame and
+   ctx.clip() cuts it at `w * frac` from the left, which is exactly how the pack's own loading
+   bars are meant to drain. A fill squashed to the fraction would move its bevel and end-cap
+   with the health, which is the "shrink" he does not want.
+
+   PER-STAGE COLOUR is xartPalette on the fill (hue and saturation from the stage, luminosity
+   from the plate, so the bevel survives). Where a stage already IS one of the authored fills the
+   plate is used untouched: 1 green, 2 orange, 3 cyan, 8 red. The grey fill-disabled plate is the
+   damage-lag ghost behind the live fill.
+
+   The drawn gauge from 0810n stays underneath as the FALLBACK for the frames before the sheet
+   decodes, so this function still ALWAYS draws - the decode race that made three bars out of one
+   is not reopened. ============================================================ */
+const BMBAR={ frameW:700, frameH:33,
+  /* ⚠ THE FILL GOES IN THE BLACK, AND THE BLACK IS NOT THE WHOLE FRAME (Mike, 0910c: "ensure you
+     dont overlay the line, but you center the fill graphic inside the black properly to fill").
+     The pack's fill plates are 1605 wide in a 1609 frame - laid in at their own placement they
+     cover the rails AND both end caps. The interior is measured off each frame's own pixels as the
+     longest contiguous run of near-black: x 140..1468 on both, y 24..53 on the mini frame and
+     25..53 on the boss frame (its lit top rail is a row thicker). The fill is fitted to THAT.
+     Baked at the larger of the two wells; each kind draws its own rect, so neither overlaps a rail. */
+  mini:{dx:60.91, dy:10.44, w:577.75, h:12.62}, boss:{dx:60.91, dy:10.88, w:577.75, h:12.18} };
+/* the stage's fill: an authored plate where one matches, else the orange plate swapped to the hue */
+const BMBAR_STAGE={ 1:{plate:'green'}, 2:{plate:'orange'}, 3:{plate:'cyan'}, 4:{hex:'#ffc23a'}, 5:{hex:'#b06aff'},
+                    6:{hex:'#5a8cff'}, 7:{hex:'#9be23a'}, 8:{plate:'red'}, 9:{hex:'#ff4ad0'} };
+function bmbarFill(kind, stage){
+  const S=BMBAR_STAGE[stage|0]||BMBAR_STAGE[2];
+  if(kind==='boss'){
+    // the stripes carry their own orange/black; a stage that is not orange gets them swapped
+    if(S.plate==='orange') return XART.rdy('bmbar_fill_seg')?XART.get('bmbar_fill_seg'):null;
+    const hex=S.hex||{green:'#5fd66a',cyan:'#4ac8ff',red:'#ff3a3a'}[S.plate];
+    return xartPalette('bmbar_fill_seg', hex);
+  }
+  if(S.plate){ const k='bmbar_fill_'+S.plate; return XART.rdy(k)?XART.get(k):null; }
+  return xartPalette('bmbar_fill_orange', S.hex);
+}
+function bossBarWarm(stage){
+  try{ for(const k of ['bmbar_frame_boss','bmbar_frame_mini','bmbar_fill_grey','bmbar_fill_seg','bmbar_fill_orange','bmbar_fill_green','bmbar_fill_cyan','bmbar_fill_red']){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_e){}
+}
 function drawHealthBarV2(kind, frac, cx, cy, w, inWorld){
+  if(typeof ctx==='undefined') return false;
+  const ok = drawHealthBarArt(kind, frac, cx, cy, w, inWorld)
+          || drawHealthBarDrawn(kind, frac, cx, cy, w, inWorld);
+  /* ⚠ THE SHIELD BAR HANGS OFF THE GAUGE, NOT OFF A CALL SITE (Mike, 0912e). There are FOUR boss
+     bar callers - the HUD strip, the world pass and two stage paths - and the first cut patched
+     two of them, neither of which is the one stage 2 actually draws through. Measured:
+     drawShieldBarArt returned true when called by hand and was reached ZERO times in a live
+     fight. Hung here, every caller gets it and a fifth caller added later does too.
+
+     ⚠ GUARDED AGAINST RE-ENTRY. drawShieldBarArt draws the same frame with a different fill; if it
+     ever routed back through this function the pair would recurse. `_bmShieldDepth` makes that
+     impossible rather than relying on it not happening.
+
+     ⚠ AND IT ONLY EXISTS WHERE A SHIELD DOES. bossShieldFrac returns null for the bosses that
+     carry none, so nothing is reserved and nothing shifts for them. */
+  if(ok && kind==='boss' && !_bmShieldDepth && typeof bossShieldFrac==='function'){
+    const b=(typeof boss!=='undefined')?boss:null;
+    const sf=bossShieldFrac(b);
+    if(sf!=null && typeof drawShieldBarArt==='function'){
+      _bmShieldDepth=1;
+      try{
+        /* ⚠ THE GAP HAS TO CLEAR THE SHIELD BAR'S OWN TAB, not just the bar. The tab is drawn
+           ABOVE whatever bar it labels, so a gap sized for the bar alone put SHIELD straight
+           across the middle of the HP bar - measured at ~10px of overlap. One tab height plus a
+           couple of pixels leaves it sitting in clear air between the two. */
+        const sc=w/BMBAR.frameW;
+        const h=BMBAR.frameH*sc, tabH=BMTAB.h*sc;
+        const sy=cy-h/2+h+tabH+2;
+        if(drawShieldBarArt(sf, cx, sy+h/2, w) && typeof drawBossTab==='function')
+          drawBossTab('shield', cx, sy, w);
+      } finally { _bmShieldDepth=0; }
+    }
+  }
+  return ok;
+}
+let _bmShieldDepth=0;
+  /* ⚠ NO NAME ON THE GAUGE, AND NOT ON ANY OF THEM (Mike, 0910c): "stop displaying the name of
+     the boss entirely for ALL mini and regular bosses." Every HUD label that printed a boss or
+     miniboss name is gone - the four boss-bar callers, both gauge bodies, the miniboss fallback,
+     the two hbDraw label arguments and the '!! NAME !!' entrance banner. The bar is the readout.
+     The debrief still names what you beat (run._lastBossName) and the radio still substitutes
+     {BOSS_NAME} - those are screens and dialogue, not the HUD. */
+function drawHealthBarArt(kind, frac, cx, cy, w, inWorld){
+  const boss=(kind==='boss'), stage=(typeof run!=='undefined'&&run&&run.stage)|0;
+  const fk=boss?'bmbar_frame_boss':'bmbar_frame_mini';
+  if(typeof XART==='undefined' || !XART.rdy(fk) || !XART.rdy('bmbar_fill_grey')) return false;
+  const fill=bmbarFill(kind, stage); if(!fill) return false;
+  frac=clamp(frac||0,0,1);
+  const key=kind||'boss';
+  const prev=(_gaugeLag[key]==null)?frac:_gaugeLag[key];
+  const lag=(frac<prev)?Math.max(frac, prev-0.012):frac;
+  _gaugeLag[key]=lag;
+  const _shift=(inWorld===true && typeof camX==='number')?camX:0;
+  const s=w/BMBAR.frameW, h=BMBAR.frameH*s;
+  const x=Math.round(cx-w/2), y=Math.round(cy-h/2);
+  const O=boss?BMBAR.boss:BMBAR.mini;
+  const fx=x+O.dx*s, fy=y+O.dy*s, fw=O.w*s, fh=O.h*s;
+  ctx.save();
+  if(_shift) ctx.translate(_shift,0);
+  ctx.imageSmoothingEnabled=true;                 // ~1:1 already; the mini bar is a 0.85 downscale
+  ctx.drawImage(XART.get(fk), x, y, w, h);
+  /* the connected name tab, above the bar's own top edge (Mike, 0912e) */
+  if(typeof drawBossTab==='function') drawBossTab(kind, cx, y, w);
+  if(lag>frac){                                   // the ghost: the authored grey plate, clipped to the lag
+    ctx.save(); ctx.beginPath(); ctx.rect(fx, fy, fw*lag, fh); ctx.clip();
+    ctx.drawImage(XART.get('bmbar_fill_grey'), fx, fy, fw, fh); ctx.restore();
+  }
+  const lit = w * frac;                           // the drain is a CLIP at the fraction, never a scale
+  if(frac>0){
+    ctx.save(); ctx.beginPath(); ctx.rect(fx, fy, fw*frac, fh); ctx.clip();
+    ctx.drawImage(fill, fx, fy, fw, fh);
+    if(frac<=0.25){                               // critical: the authored pulse, a brightness flash
+      const t=(typeof stateT!=='undefined')?stateT:0;
+      ctx.globalAlpha=0.18+0.18*Math.sin(t*9); ctx.fillStyle='#ffffff'; ctx.fillRect(fx, fy, fw, fh); ctx.globalAlpha=1;
+    }
+    ctx.restore();
+  }
+  ctx.restore();
+  return lit>=0;
+}
+/* ---- THE NAME TAB, AND THE SHIELD BAR (Mike, 0912e) -------------------------
+   "we need our hud bars for the bosses regenerated but with BOSS embed into the center above the
+   above but within a tab connnected to the bar. you may use the same designs, same fills just
+   regenerated bars. Also, we will need an additional SHIELD hud bar for the bosses too with
+   forcefield/shield like fills too."
+
+   ⚠ THE TAB IS A SEPARATE PLATE DRAWN FLUSH, NOT A TALLER FRAME. BMBAR.mini/boss carry interior
+   offsets measured off each frame's own pixels in 0910c - the drop where he asked for the fill to be
+   "centered inside the black properly to fill". Growing the frame would move every one of those and
+   put that seating back at risk for nothing. Drawn with its bottom edge ON the bar's top edge, so
+   the two read as one connected piece while the approved fill geometry is untouched.
+
+   ⚠ AND THE WORD IS LETTERED AT DRAW TIME, not baked into the plate. Same rule 0809r and 0810z
+   record for the attract cards and the aintro panels: the art provides the socket, the game
+   provides the words. One plate therefore serves BOSS, MINI BOSS and SHIELD.
+
+   ⚠ THIS IS A CATEGORY, NOT A NAME. 0910c removed every boss NAME from the HUD at his request
+   ("stop displaying the name of the boss entirely for ALL mini and regular bosses"). BOSS /
+   MINI BOSS / SHIELD label what the bar IS; they are not the boss's name and must not become it.
+   ------------------------------------------------------------------------- */
+const BMTAB={ w:204, h:30 };
+function bmbarTabLabel(kind){ return kind==='boss' ? 'BOSS' : kind==='shield' ? 'SHIELD' : 'MINI BOSS'; }
+/* the tab sits centred on the bar, its bottom edge flush with the bar's top edge */
+function drawBossTab(kind, cx, barTopY, barW){
+  const art=(kind==='mini')?'bmbar_tab_mini':'bmbar_tab_boss';
+  if(typeof XART==='undefined' || !XART.rdy(art)) return false;
+  const s=barW/BMBAR.frameW;                       // the tab scales with the bar, never independently
+  const tw=BMTAB.w*s, th=BMTAB.h*s;
+  const tx=Math.round(cx-tw/2), ty=Math.round(barTopY-th)+1;   // +1: overlap the seam so there is no hairline
+  ctx.save();
+  ctx.imageSmoothingEnabled=true;
+  ctx.drawImage(XART.get(art), tx, ty, tw, th);
+  const lbl=bmbarTabLabel(kind);
+  const face=(typeof curFontArt==='function')?curFontArt():null;
+  if(face && typeof stageText==='function'){
+    /* fitted to the tab's own interior so MINI BOSS cannot run over the rails, and floored at 11
+       because 0912b measured this face losing its counters below that */
+    const inner=tw*0.80;
+    let H=th*0.52;
+    if(typeof stageFitH==='function') H=stageFitH(face, lbl, inner, H, 9, 0.10);
+    stageText(face, lbl, cx, ty+th*0.72, Math.max(9,H), '#ffe9b0', 0.95, 1, 0.10);
+  } else if(typeof msgText==='function'){
+    msgText(lbl, cx, ty+th*0.72, Math.max(9,th*0.5), '#ffe9b0', 0, 1, 0.10);
+  }
+  ctx.restore();
+  return true;
+}
+/* ---- the boss's shield, as one number ---------------------------------------
+   ⚠ THERE IS NO SHARED SHIELD FIELD ON A BOSS, so this resolves the systems that actually exist
+   rather than inventing a tenth. Returns null when the boss has no shield at all, which is what
+   keeps the bar off screen for the eight bosses that do not carry one.
+       _mwBarrier        Magma Ward / Inferno Reaver - a real hp/maxhp barrier
+       _s4war.shield     Storm Sovereign - node based, so the fraction is live nodes / total
+       _shieldHp/Max     the generic pair, for anything authored later (and for Boss Mode) */
+function bossShieldFrac(b){
+  if(!b) return null;
+  const H=b._mwBarrier;
+  if(H && H.maxhp>0) return H.active ? clamp(H.hp/H.maxhp,0,1) : 0;
+  const S=b._s4war && b._s4war.shield;
+  if(S && S.nodes && S.nodes.length){
+    if(!S.active && !S.rearming) return 0;
+    const live=S.nodes.reduce(function(n,q){ return n + ((q && !q.dead) ? 1 : 0); }, 0);
+    return clamp(live/S.nodes.length, 0, 1);
+  }
+  if(typeof b._shieldMax==='number' && b._shieldMax>0) return clamp((b._shieldHp||0)/b._shieldMax,0,1);
+  return null;
+}
+/* the shield fill escalates with how much is left, so a field about to drop looks like one */
+/* ⚠ THE KEY IS ITS OWN FUNCTION because an atlas cell is a CANVAS, not an Image - XART.get()
+   returns a drawable with no .src, so a probe cannot ask a returned fill which plate it is. The
+   picker is the thing worth asserting; splitting it out is the only way to assert it. */
+function bmbarShieldFillKey(frac){
+  return (frac>0.85) ? 'bmbar_sfill_over'
+       : (frac>0.55) ? 'bmbar_sfill_hex'
+       : (frac>0.22) ? 'bmbar_sfill_plasma'
+       :               'bmbar_sfill_low';
+}
+function bmbarShieldFill(frac){
+  const k=bmbarShieldFillKey(frac);
+  if(typeof XART!=='undefined' && XART.rdy(k)) return XART.get(k);
+  return (typeof XART!=='undefined' && XART.rdy('bmbar_sfill_hex')) ? XART.get('bmbar_sfill_hex') : null;
+}
+/* Drawn with the BOSS frame and the boss well, so the shield bar is the same bar - only its fill
+   and its tab differ. Returns false if the art has not decoded, exactly like drawHealthBarArt. */
+function drawShieldBarArt(frac, cx, cy, w){
+  if(typeof XART==='undefined' || !XART.rdy('bmbar_frame_boss')) return false;
+  const fill=bmbarShieldFill(frac); if(!fill) return false;
+  frac=clamp(frac||0,0,1);
+  const s=w/BMBAR.frameW, h=BMBAR.frameH*s;
+  const x=Math.round(cx-w/2), y=Math.round(cy-h/2);
+  const O=BMBAR.boss;
+  const fx=x+O.dx*s, fy=y+O.dy*s, fw=O.w*s, fh=O.h*s;
+  ctx.save();
+  ctx.imageSmoothingEnabled=true;
+  ctx.drawImage(XART.get('bmbar_frame_boss'), x, y, w, h);
+  if(frac>0){
+    ctx.save(); ctx.beginPath(); ctx.rect(fx, fy, fw*frac, fh); ctx.clip();
+    ctx.drawImage(fill, fx, fy, fw, fh);
+    /* a field carries a travelling shimmer - it is energy, not paint */
+    const t=(typeof stateT==='number')?stateT:0;
+    ctx.globalAlpha=0.13+0.10*Math.sin(t*5);
+    ctx.fillStyle='#dffbff'; ctx.fillRect(fx, fy, fw, fh);
+    ctx.globalAlpha=1;
+    ctx.restore();
+  }
+  ctx.restore();
+  return true;
+}
+
+/* the 0810n drawn gauge, kept as the fallback for the frames before the sheet decodes */
+function drawHealthBarDrawn(kind, frac, cx, cy, w, inWorld){
   if(typeof ctx==='undefined') return false;
   const boss = (kind==='boss');
   frac = clamp(frac||0, 0, 1);
@@ -19708,11 +20467,6 @@ function drawHealthBarV2(kind, frac, cx, cy, w, inWorld){
   /* THE MINIBOSS CARRIES ITS OWN NAME. drawSubBossBar only labels the bar in the branch it takes
      when this function FAILS, so a successful draw used to leave the miniboss anonymous. The boss
      caller draws its own name after this returns, so labelling both here would double it. */
-  if(!boss && typeof subBoss!=='undefined' && subBoss && subBoss.name){
-    ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='left';
-    ctx.fillStyle='#05070a'; ctx.fillText(String(subBoss.name), x+1, y-5);
-    ctx.fillStyle='#ffd9a8'; ctx.fillText(String(subBoss.name), x,   y-6);
-  }
 
   ctx.restore();
   return true;
@@ -19729,7 +20483,12 @@ function drawSubBossBar(b){
        correction still leaves the zoom attached, which is why the photographed
        bar sat over the miniboss instead of directly below the HUD. */
     let _ok=false;
-    screenBar(function(){ _ok=drawHealthBarV2('mini', _fr, VW/2, 20, VW*0.62, false); });
+    /* ⚠ ROOM FOR THE TAB (0912e). This drew at cy=20, which puts the bar's top edge at ~12 and
+       leaves the tab - drawn ABOVE whatever bar it labels - at y=-3, clipped clean off the play
+       rect. Photographed: the mini bar with no tab at all while the boss bar had one. Dropped by
+       one tab height so MINI BOSS sits on screen; the bar itself moves 15px and nothing else. */
+    const _mtab=BMTAB.h*((VW*0.62)/BMBAR.frameW);
+    screenBar(function(){ _ok=drawHealthBarV2('mini', _fr, VW/2, 20+_mtab+3, VW*0.62, false); });
     if(_ok) return;
   }
   screenBar(function(){
@@ -19741,8 +20500,6 @@ function drawSubBossBar(b){
     ctx.fillStyle=g; ctx.fillRect(x,y,Math.round(w*frac),h);
     if(frac<=0.25 && (Math.floor(stateT*8)%2)===0){ ctx.globalAlpha=0.55; ctx.fillStyle='#fff'; ctx.fillRect(x,y,Math.round(w*frac),h); }
     ctx.globalAlpha=1;
-    ctx.fillStyle='#ffe9a8'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='left';
-    ctx.fillText(String(b.name||'MINIBOSS'), x, y-4);
   });
 }
 /* ============================================================
@@ -20131,7 +20888,7 @@ function drawSubBoss(){
       /* the MINI BOSS bar gets its own authored frame — smaller than the main one, which is the
          right visual hierarchy for a unit that is not the stage's finale */
       const _r=clamp(b.hp/b.maxhp,0,1);
-      if(typeof hbDraw==='function' && hbDraw('miniboss', VW*0.14, 34, VW*0.72, _r, b.name)) return;
+      if(typeof hbDraw==='function' && hbDraw('miniboss', VW*0.14, 34, VW*0.72, _r, null)) return;
       ctx.fillStyle='rgba(0,0,0,0.5)'; ctx.fillRect(VW/2-106,40,212,7);
       ctx.fillStyle='#ffb43a'; ctx.fillRect(VW/2-105,41,bw,5);
       ctx.fillStyle='#ffe1a0'; ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText(b.name,VW/2,58);
@@ -23140,6 +23897,7 @@ function updateSpecial(dt){
   if(k==='maverick'){ mavCharge(dt); }
   // Maverick's charge ring is the SAME four frames, palette-swapped neon green (nchgM_).
   if(k==='juggernaut'){
+    if(typeof wreckTick==='function') wreckTick(dt);
     if(Math.random()<0.5) particles.push({x:player.x+rnd(-14,14),y:player.y+rnd(-10,14),vx:rnd(-0.5,0.5),vy:rnd(0.4,1.4),life:rnd(0.2,0.5),t:0,r:rnd(1,2.4),color:chance(.5)?'#ff5a2a':'#ff9a3a'});
   }
   if(special.t<=0 || (k==='cole' && special.strikes<=0 && !special._lastBoomT)) { if(special.t<=0) endSpecial(); }
@@ -24931,6 +25689,11 @@ function drawSpecialHUD(){
 }
 function _drawSpecialHUDInner(){
   const frac=clamp(special.t/special.dur,0,1), col=_pilotTint();
+  /* ⚠ JUGGERNAUT'S TIMER MOVED TO THE CHARGE BAR (Mike, 0912): "we dont need to use the special
+     bar anymore". His icon still draws - it is how you know WHICH crate you picked up - but the
+     centre bar and its SPECIAL label would now be a second copy of the rail under CHARGE, and two
+     readouts of one clock is how they drift. */
+  const _jug=(special.pilot==='juggernaut');
   // per-pilot weapon-readable special icon next to the bar
   const _sk=(typeof specialArtKey==='function')
     ? specialArtKey('spicon_'+(special.pilot||''))
@@ -24941,10 +25704,17 @@ function _drawSpecialHUDInner(){
     ctx.save(); ctx.shadowColor=col; ctx.shadowBlur=8;
     iconBlit(ctx,_sk,VW/2-98,VH-27,26,true); ctx.restore();
   }
-  ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.fillRect(VW/2-81,VH-34,162,8);
-  ctx.fillStyle=col; ctx.fillRect(VW/2-80,VH-33,160*frac,6);
-  ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillStyle=col;
-  ctx.fillText('SPECIAL',VW/2,VH-38);
+  if(!_jug){
+    ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.fillRect(VW/2-81,VH-34,162,8);
+    ctx.fillStyle=col; ctx.fillRect(VW/2-80,VH-33,160*frac,6);
+    ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillStyle=col;
+    ctx.fillText('SPECIAL',VW/2,VH-38);
+  } else {
+    ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillStyle=col;
+    ctx.fillText('WRECKING BALL',VW/2,VH-33);
+    ctx.font='7px "BOFmil", monospace'; ctx.fillStyle='#9fb0c4';
+    ctx.fillText('CHARGE + UP TO RAM',VW/2,VH-24);
+  }
   if(special.pilot==='cole' || special.pilot==='lizzie'){
     const _cole=(special.pilot==='cole'), _c=_cole?'#8de23a':'#ffc21a', _lbl=_cole?'NUKES x':'A-BOMBS x';
     const ns=special.strikes||0;
@@ -25260,14 +26030,37 @@ function uiFontWarm(){
 let _playerAtlasesWarmed=false;
 function warmPlayerAtlases(){
   if(_playerAtlasesWarmed || typeof XART==='undefined' || !XART._touch) return 0;
+  /* ⚠ THIS WAS STILL WARMING THE 11 MB COMBINED SHIP SHEET AFTER THE 0909 SPLIT, AND MY OWN
+     VERIFICATION MISSED IT. The per-pilot measurement was taken through shoot.py's SETUP, which
+     calls beginStage directly and never reaches confirmPilot - so the request log showed one
+     1.16 MB sheet while a REAL playthrough, going title -> pilot select -> launch, would still
+     have pulled the whole monolith here. A path that skips the code under test cannot clear it.
+
+     It warms the SEATS' OWN sheets now, both of them in co-op, plus the B-42 when the costume is
+     on. _playerAtlasesWarmed is deliberately not latched on the ship sheets: seat 2 can be chosen
+     after seat 1 confirms, so this has to stay callable. */
   const keys=['bof_player_weapon_special_icons_atlas',
-              'bof_player_ordnance_projectiles_atlas',
-              'bof_player_ships_barrel_rolls_atlas'];
+              'bof_player_ordnance_projectiles_atlas'];
   let started=0;
   for(const k of keys){
     if(!XART._src || XART._src[k]){ XART._touch(k); started++; }
   }
-  if(started===keys.length) _playerAtlasesWarmed=true;
+  const seats=[];
+  try{
+    if(typeof PILOTS!=='undefined' && typeof pilotIndex==='number' && PILOTS[pilotIndex])
+      seats.push(PILOTS[pilotIndex].key);
+    if(typeof run!=='undefined' && typeof run.pilot==='string' && run.pilot) seats.push(run.pilot);
+    if(typeof coopActive==='function' && coopActive() && typeof p2Pilot==='function'){
+      const p2=p2Pilot(); if(p2 && p2.key) seats.push(p2.key);
+    }
+  }catch(e){}
+  for(const pk of seats){
+    const sk='nsa_ship_'+pk;
+    if(XART._src && XART._src[sk]){ XART._touch(sk); started++; }
+  }
+  if(typeof lizzieSkinOn!=='undefined' && lizzieSkinOn && XART._src && XART._src['nsa_ship_lizzie_b42'])
+    XART._touch('nsa_ship_lizzie_b42');
+  if(started>=keys.length+1) _playerAtlasesWarmed=true;
   return started;
 }
 function warmStage(n){
@@ -25828,6 +26621,7 @@ const STAGE9_LIVES = 5;
 function beginStage(num){
   try{ window.sselCommitted=false; }catch(e){}
   try{ if(typeof warmStage==='function') warmStage(arguments[0]); }catch(e){}
+  try{ if(typeof bossBarWarm==='function') bossBarWarm(num); }catch(e){}   // the pack's gauge art, before any warning can show it (0910b)
   curStage=STAGES[num-1];
   /* the secret is SPENT once it is entered, so the map is not stuck on stage 9 forever (0822ad) */
   if(num===9 && typeof campaign!=='undefined') campaign.bonusUnlocked=0;
@@ -26092,6 +26886,8 @@ function _pausePresentation(on){
   }catch(_pa){}
 }
 function setState(s){
+  /* a live DEBUG fight ends on the debug menu whatever exit the stage took; the boss-mode host has no title (0910a) */
+  if(typeof debugRouteState==='function') s=debugRouteState(s);
   /* BACKING OUT OF A CAMPAIGN UNLOCKS CONTINUE (drop 0809l). Mike: "if they are playing
      campaign and decide to back out of the campaign mode, continue game will be unlocked
      and they can simply use that to continue their game if they decide to go to a menu or
@@ -26525,7 +27321,10 @@ function updatePlay(dt){
     if(Input.tapSeat(_seat,'up')){ if(_nowT-(player._tapU||-9)<=SS_WINDOW) startSomersault(); player._tapU=_nowT; }
     updateRoll(dt);
     updateSomersault(dt);
-    const _rolling=!!player.roll || !!player.somer;   // a flip commits, same as a roll
+    /* the charge winds up and rams on the same pass, so a dash can begin on the frame it was
+       asked for - and the wind-up PINS him, because UP is half of its own input (see the block) */
+    if(_seat===1 && typeof chargeTick==='function') chargeTick(dt);
+    const _rolling=!!player.roll || !!player.somer || !!player._chgDash || !!player._chgOn;   // a flip commits, same as a roll
     let mvx=0,mvy=0;
     /* NON-PLAYABLE THE MOMENT THE STAGE CLEARS (drop 0809v). Mike: "stop taking screen pauses
        and leaving my ship in the frame... simply make me non playable once the stage clears."
@@ -26539,9 +27338,16 @@ function updatePlay(dt){
     const sp=playerBaseSpeed();
     if((mvx||mvy) && !_rolling){                 // the roll drives x itself; allow only vertical nudge mid-roll
       const l=Math.hypot(mvx,mvy)||1; player.x+=mvx/l*sp*1.35; player.y+=mvy/l*sp*1.35;
-    } else if(_rolling && mvy){
+    } else if(_rolling && mvy && !player._chgOn && !player._chgDash){
       player.y+=mvy*sp*0.9;                       // you can still climb/dive a little while rolling
     }
+    /* ⚠ THE CHARGE IS THE ONE COMMITTED MOVE THAT DOES NOT GET THE MID-ROLL CLIMB, and leaving it
+       in cost the feature twice over (measured, 0912a). The allowance above exists so a roll or a
+       flip can still be steered a little - harmless, because neither of those is STARTED by a
+       direction you are still holding. The charge is: UP is half of "hold H, then hold UP", so the
+       climb ran for the entire wind-up and carried him 189px into the ceiling. He then had no room
+       left to ram, which is why a FULL charge measured SHORTER than a quick one (152px against
+       171px) - a bug that reads as "the charge is weak" rather than as "movement is leaking". */
     player.x=clamp(player.x,10,worldWidth()-10); player.y=clamp(player.y,PLAY.y+12,PLAY.y+PLAY.h-6);
     /* THE PLAYER'S VELOCITY, MEASURED RATHER THAN INFERRED (drop 0822i). Nothing tracked it,
        so no enemy could aim anywhere but at where you already are. Taken AFTER the clamp so a
@@ -26699,7 +27505,9 @@ function updatePlay(dt){
     })) { _seatHalt = true; break; }
   }
   if(_seatHalt){ setState(GS.CONTINUE); return; }
-  if(Input.tap('p')){ setState('paused'); return; }
+  /* either seat's START pauses - in co-op the player who is not holding the pad still has to be
+     able to stop the game. */
+  if(pauseTapped()){ setState('paused'); return; }
 
   // ---- powerup containers ----
   /* POWERUPS KEEP COMING DURING BOSS FIGHTS. This was gated on !bossActive, so the moment a boss
@@ -30309,7 +31117,22 @@ function bossAttack__inner(){
 /* ============================================================
    EFFECTS UPDATE
    ============================================================ */
+/* ⚠ THE BULLETS OF DEBUG BURST PUMP LIVES HERE, NOT IN THE BRIDGE'S OWN rAF.
+
+   A burst is the only way to see five of the twelve scene-director shapes - `spiral` and `sweep`
+   read the incrementing beat index, and `stream`, `aimed` and `sine` emit exactly one round per
+   beat by design. Driving it from the editor's own timer would run while the game is paused and
+   would use wall-clock time rather than the engine's dt, so a preview would not match what a real
+   fight does. updateEffects is the game's own per-frame effects tick and already stops when play
+   stops, so the preview inherits pause, time scale and frame pacing for free.
+   It is EMPTY on every normal boot; nothing is pushed unless the editor asks. */
+let _bodBursts=[];
+function bodBurstTick(dt){
+  if(!_bodBursts.length) return;
+  _bodBursts=_bodBursts.filter(function(step){ try{ return step(dt); }catch(e){ return false; } });
+}
 function updateEffects(dt){
+  bodBurstTick(dt);
   for(const fx of pilotFx){
     fx.t=(fx.t||0)+dt;
     if(fx.type==='venom'){
@@ -32140,7 +32963,30 @@ function _vaultState(e){
    pasted under 16-bit art: it does not match the sprites, it smears against the terrain, and it is
    exactly the "shadow stuff" Mike wants gone. The function is kept as a NO-OP so the ~6 call sites
    stay harmless, rather than leaving holes for something to be re-added into later. */
-function drawUnitShadow(){ /* intentionally does nothing */ }
+/* ⚠ STILL OFF BY DEFAULT, AND THAT IS 0724bd'S CALL, NOT AN OVERSIGHT. Mike had the procedural
+   drop shadow deleted because "it is a procedural CSS-style effect pasted under 16-bit art: it does
+   not match the sprites, it smears against the terrain". The note above stands.
+
+   0912g gives it back as a PER-ENEMY OPT-IN for the Bullets of Debug lab, because Mike asked to
+   "enable/disable automatic shadowing underneath the enemy" while tuning one unit. Nothing draws
+   unless an editor sets `e._bodShadow`, so the shipping game is byte-for-byte unchanged and there
+   is no global switch for anyone to flip by accident.
+
+   ⚠ THE ENEMY HAS TO BE PASSED IN. The four call sites hand over (x,y,w,h,alpha) only, so this
+   function had no way to know WHICH unit it was drawing - which is why the toggle is a sixth
+   argument at the two enemy sites rather than a lookup. */
+function drawUnitShadow(x,y,w,h,a,e){
+  if(!e || !e._bodShadow) return;
+  if(typeof ctx==='undefined') return;
+  ctx.save();
+  ctx.globalAlpha=(a==null?0.28:a);
+  ctx.fillStyle='#000';
+  ctx.beginPath();
+  ctx.ellipse(x, y+(h||20)*0.30, Math.max(4,(w||20)*0.46), Math.max(2,(h||20)*0.20), 0, 0, Math.PI*2);
+  ctx.fill();
+  ctx.restore();
+  ctx.globalAlpha=1;
+}
 function drawVaultVehicle(e){
   if(typeof XART==='undefined') return false;
   const k=_vaultKeyFor(e); if(!k) return false;
@@ -32158,7 +33004,7 @@ function drawVaultVehicle(e){
     if(!XART.rdy(key)) return false;
     const im=XART.get(key);
     const dw=e.w*2.15, dh=dw*(im.naturalHeight/im.naturalWidth);
-    drawUnitShadow(e.x,e.y,dw,dh,0.3);
+    drawUnitShadow(e.x,e.y,dw,dh,0.3,e);
     // Some hull art natively points the barrel DOWN (toward the player) and some points UP. Flip only the
     // ones that need it so every tank ends up facing the player. tk0/tk1/tk4 (jungle set) already face down.
     const _facesDownNatively = /^(tk0|tk1|tk4)$/.test(k);
@@ -32227,7 +33073,7 @@ function drawVaultVehicle(e){
         ctx.save(); ctx.globalAlpha=st==='crit'?0.85:0.6; ctx.translate(e.x, e.y-dh*0.35); ctx.scale(1,-1);
         ctx.drawImage(tim, -tw2/2, 0, tw2, th2); ctx.restore(); }
     }
-    drawUnitShadow(e.x,e.y,dw,dh,0.26);
+    drawUnitShadow(e.x,e.y,dw,dh,0.26,e);
     ctx.save(); ctx.translate(e.x,e.y);
     // TRUE ROTATION (not a mirror flip): the art natively points UP (away from the player). We rotate
     // the whole sprite. 0 rad = pointing up/away (its entry pose); PI = pointing down, rushing the player.
@@ -39546,7 +40392,7 @@ function drawHUD(){
       const ratio=clamp(boss.hp/boss.maxhp,0,1);
       const K=boss._mech;
       if(K && typeof hbLimbDraw==='function' && hbLimbDraw(boss, K, VW*0.06, 42, VW*0.88)) return;
-      if(typeof hbDraw==='function' && hbDraw('bossmain', VW*0.06, 40, VW*0.88, ratio, boss.name||'BOSS')) return;
+      if(typeof hbDraw==='function' && hbDraw('bossmain', VW*0.06, 40, VW*0.88, ratio, null)) return;
       metalPanel(40,48,VW-80,16);
       ctx.fillStyle='#e23a3a'; ctx.font='bold 8px "BOFmil", monospace'; ctx.textAlign='center';
       ctx.fillText('BOSS',VW/2,58);
@@ -39881,6 +40727,8 @@ function drawScene(dt){
     case GS.OPENING: return drawOpening(dt);
     case GS.BOOT:    return drawBoot(dt);
     case GS.ATTRACT: return drawAttract(dt);
+    case GS.OPENER:  return drawOpener(dt);
+    case GS.HELP:    return drawHelp(dt);
     case GS.CUTSCENE: return drawCutsceneState(dt);
     case GS.LOADING: return drawLoading(dt);
     case GS.TITLE:   return drawTitle(dt);
@@ -39907,10 +40755,419 @@ function drawScene(dt){
     case GS.MODESEL: return drawModeSelect(dt);
     case GS.CAMPHUB: return drawCampaignHub(dt);
     case GS.CAMPAIGNINTRO: return drawCampaignIntro(dt);
+    case GS.DEBUG:     return drawDebugMenu(dt);
+    case GS.DEBUGFADE: return drawDebugFade(dt);
+    case GS.BMHOST:    return drawBmHost(dt);
   }
 }
 
 /* BOOT — press-start gate (unlocks audio) then ColeForge cinematic */
+/* ============================================================
+   THE ARCADE OPENER (Mike, 0912) - GS.OPENER
+
+   "make an opener to Bullets of Fury like an arcade intro. use some of our music we didnt map but
+   have, and do a silhoutte side show of each pilot and do a movie trailer style appraoch as thyere
+   scrolling cutting to the scree nof it sown with text like 'Earth is in trouble!' 'We need Fury
+   HQ's Help!' '9 Elite Pilots' '99 problems but a flight aint 1!' 'Double the action' 'Triple the
+   Trouble' 'Threat Unknown?'. And just be very graphically fun about it with their frontal views,
+   then gameplay footage of them in-game ... Then when its all said and done and your doing a side
+   by side 9 screen video playback of each of them in intense settings and some of them die, some
+   them defeat the bosses and some of them manuever out of danger and then it just goes to 'Bullets
+   of Fury!' using our logo and the - Press Start - flashing, like a true video game intro arcade
+   style before you officially go into the main menu."
+
+   Nine beats, one clock, in his order: two silhouette cards, the nine-pilot sweep, the frontal
+   portraits, three live gameplay cuts, the nine-screen montage, the logo.
+
+   ⚠ THIS IS NOT THE ATTRACT REEL AND IT DOES NOT REPLACE IT. drawAttract is the idle loop that
+   cycles nine pilots with their authored aintro plates; this runs ONCE, off the ColeForge logo,
+   before the menu has ever been seen. Both exist, both are skippable, and neither calls the other.
+   0811d had routed boot straight to the title ("remove the arcade intros, just go to the title
+   screen") - that decision is superseded here by his own ask, and the attract reel it disabled is
+   still sitting there untouched for whenever he wants it back.
+
+   ⚠ THE SILHOUETTES ARE CUT FROM THE REAL ART, not drawn. openerSil() runs the authored portrait
+   through a source-in black fill on an offscreen canvas, so every silhouette is exactly the pilot
+   the game ships and cannot drift from them. Cached, because doing that per frame for nine 256px
+   plates is nine canvas allocations every frame.
+
+   ⚠ THE GAMEPLAY CUTS ARE THE REAL GAME. Same machinery drawAttract uses - run.pilot is set,
+   beginStage runs, updatePlay and drawWorld are called directly - so nothing here can go stale
+   when a weapon or a stage changes, and it costs no art. attractDemoStart now takes the state to
+   return to, rather than being copied.
+
+   ⚠ THE NINE-SCREEN MONTAGE IS CHOREOGRAPHED, NOT SIMULATED. Nine live stages cannot run at once,
+   and nine recorded clips would be nine files to keep in sync with the game. Each panel is a
+   scripted vignette drawn from the SAME art the game uses - the pilot's own hull, a real boss
+   plate, the real spin-out reel - on its own clock, so the three outcomes Mike named (die, defeat
+   the boss, manoeuvre out of danger) are authored rather than hoped for.
+
+   ⚠ ANY INPUT TAKES IT, AT ANY MOMENT, including mid-beat. An opener you cannot escape is a
+   cutscene, and this one is 30 seconds long.
+   ============================================================ */
+const OPN = [
+  {k:'sil',  p:'axel',       t:'EARTH IS IN TROUBLE!',               d:2.10},
+  {k:'sil',  p:'decker',     t:"WE NEED FURY HQ'S HELP!",            d:2.10},
+  {k:'roll',                 t:'9 ELITE PILOTS',                     d:2.90},
+  {k:'face',                 t:"99 PROBLEMS BUT A FLIGHT AIN'T 1!",  d:2.70},
+  {k:'demo', p:'yuri',       t:'DOUBLE THE ACTION',                  d:3.20},
+  {k:'demo', p:'maverick',   t:'TRIPLE THE TROUBLE',                 d:3.20},
+  {k:'demo', p:'juggernaut', t:'THREAT UNKNOWN?',                    d:3.20},
+  {k:'nine',                                                         d:6.60},
+  {k:'logo',                                                         d:7.00},
+];
+const OPN_ORDER=['axel','lizzie','decker','freezer','juggernaut','yuri','cole','falva','maverick'];
+/* three that fall, three that finish a boss, three that fly out of it - Mike named all three */
+const OPN_NINE=[
+  {p:'cole',       act:'kill',  boss:'nsb_xenoregent_intact'},
+  {p:'axel',       act:'dodge'},
+  {p:'lizzie',     act:'die'},
+  {p:'falva',      act:'die'},
+  {p:'yuri',       act:'kill',  boss:'nsb_rimewall_intact'},
+  {p:'maverick',   act:'die'},
+  {p:'decker',     act:'dodge'},
+  {p:'freezer',    act:'kill',  boss:'nsb_magmaward_intact'},
+  {p:'juggernaut', act:'dodge'},
+];
+let opnI=0, opnT=0, opnDemoOn=false, opnFrame=0, opnDone=false;
+const _opnSil={};
+
+function openerStart(){
+  opnI=0; opnT=0; opnDemoOn=false; opnFrame=0; opnDone=false;
+  /* ⚠ ONE TRACK THE GAME OWNS AND HAS NEVER PLAYED (Mike: "use some of our music we didnt map but
+     have"). stage9_bonus_warp_run was the only file in assets/game/music that the manifest did not
+     register at all - measured, not guessed. It falls back down to the title track, because a
+     silent opener is worse than a familiar one. */
+  /* ⚠ startMusic RETURNS NOTHING, so `if(!startMusic(x)) startMusic(y)` would always play y -
+     checked, not assumed. The track has to be tested for BEFORE it is asked for. */
+  try{
+    const _has=(typeof Snd!=='undefined' && Snd.music && Snd.music.opener);
+    if(Audio.startMusic) Audio.startMusic(_has?'opener':'title');
+  }catch(e){}
+  setState(GS.OPENER);
+}
+function openerToTitle(){
+  opnDone=true;
+  try{ attractDemoEnd(); }catch(e){}
+  /* the opener has its own track, so unlike the attract reel this one DOES hand the menu its
+     music back - otherwise the warp-run bed would keep running under the main menu */
+  try{ Audio.startMusic('title'); }catch(e){}
+  setState(GS.TITLE); menuIndex=0;
+}
+/* ⚠ THE SILHOUETTE SOURCE IS THE SHIP CUTOUT, NOT THE PORTRAIT, AND THAT WAS MEASURED. The first
+   cut silhouetted port_cf_<pilot>_idle and rendered a solid black SQUARE with a rim light round it,
+   which is exactly what a silhouette of an opaque image is. The portraits are framed busts - 77%
+   of their pixels are opaque - while the cinematic cutouts are 40-43%, i.e. actual cut-out
+   aircraft with sky around them. The portraits are still used, in COLOUR, on the frontal-views
+   beat where being a full plate is the point.
+       port_cf_axel_idle            256x256   77% opaque  -> a box
+       cinship_axel_2 (front 3/4)   318x317   43% opaque  -> an aeroplane
+   This is the CLAUDE.md render-it rule doing its job: the key existed, the load succeeded, rdy()
+   was true and the picture was wrong. */
+const OPN_SIL_KEY=function(pk){ return 'cinship_'+pk+'_2'; };   // 02_front_left_3q, native cutout
+/* a true silhouette, cut from the authored plate rather than drawn. ⚠ rdy() is false on its FIRST
+   call - that call is what starts the load - so a miss is not cached and the next frame re-asks. */
+function openerSil(key){
+  if(_opnSil[key]) return _opnSil[key];
+  if(typeof XART==='undefined' || !XART.rdy(key)) return null;
+  const im=XART.get(key);
+  if(!im.naturalWidth) return null;
+  const c=document.createElement('canvas');
+  c.width=im.naturalWidth; c.height=im.naturalHeight;
+  const g=c.getContext('2d');
+  g.drawImage(im,0,0);
+  g.globalCompositeOperation='source-in';
+  g.fillStyle='#000'; g.fillRect(0,0,c.width,c.height);
+  return (_opnSil[key]=c);
+}
+function opnFade(t,d){ if(t<0.30) return t/0.30; if(t>d-0.28) return Math.max(0,(d-t)/0.28); return 1; }
+/* the trailer card, in the game's own lettering. stageText is the stage face; uiFontArt is the
+   menu face - either is the right answer and a canvas font is not, which is the note 0809r left. */
+function opnText(str, cx, cy, size, col, a){
+  if(!(a>0.02) || !str) return;
+  /* the authored per-stage face, not the stage-1 card alphabet, and the same 11px floor the help
+     screen uses - this face loses its counters below that (Mike, 0912b) */
+  const art=(typeof curFontArt==='function')?curFontArt():null;
+  const H=Math.max(11, size);
+  if(art && typeof stageText==='function'){
+    const fit=Math.max(11,(typeof stageFitH==='function')?stageFitH(art,str,VW-40,H,11,0.10):H);
+    stageText(art, str, cx, cy, fit, col||'#ffe082', 0.92, a, 0.10);
+  } else if(typeof msgText==='function'){
+    msgText(str, cx, cy, H, col||'#ffe082', 0, a, 0.10);
+  }
+}
+/* spotlight + rushing speed-lines: the bed every card sits on, so cuts read as one piece */
+function opnBackdrop(t, warm){
+  const g=ctx.createRadialGradient(VW/2, VH*0.42, 20, VW/2, VH*0.42, VH*0.78);
+  g.addColorStop(0, warm?'#2a1508':'#141a28');
+  g.addColorStop(1, '#000000');
+  ctx.fillStyle=g; ctx.fillRect(0,0,VW,VH);
+  ctx.save(); ctx.globalAlpha=0.5;
+  for(let i=0;i<26;i++){
+    const s=(i*97)%VW, y=((i*53)+ (t*(120+ (i%5)*70)))%VH;
+    ctx.fillStyle=(i%3)?'#3a4a68':'#5a3a20';
+    ctx.fillRect(s, y, 2, 26+ (i%4)*18);
+  }
+  ctx.restore();
+}
+/* letterbox bars: the single cheapest thing that says "trailer" rather than "menu" */
+function opnBars(a){
+  const h=Math.round(VH*0.085*clamp(a,0,1));
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,h); ctx.fillRect(0,VH-h,VW,h);
+}
+
+/* ---- beat: one pilot's silhouette sliding across a spotlight ---- */
+function opnBeatSil(B, t, a){
+  opnBackdrop(t, false);
+  const sil=openerSil(OPN_SIL_KEY(B.p));
+  if(sil){
+    const h=VH*0.62, w=h*(sil.width/sil.height);
+    const e=clamp(t/1.5,0,1), ez=1-Math.pow(1-e,3);
+    const x=lerp(-w*0.5, VW*0.52-w/2, ez);
+    ctx.save(); ctx.globalAlpha=a;
+    /* rim light first, then the silhouette on top: the pilot stays a shape, the edge catches */
+    const P=(typeof PILOTS!=='undefined')?PILOTS.find(q=>q.key===B.p):null;
+    ctx.shadowColor=(P&&P.tint)||'#ff8a1a'; ctx.shadowBlur=26;
+    ctx.drawImage(sil, x, VH*0.20, w, h);
+    ctx.shadowBlur=0;
+    ctx.restore();
+    const P2=(typeof PILOTS!=='undefined')?PILOTS.find(q=>q.key===B.p):null;
+    if(P2) opnText(P2.name, VW/2, VH*0.175, 16, (P2.tint||'#ffd36b'), a*0.9);
+  }
+  opnText(B.t, VW/2, VH*0.845, 22, '#ffe082', a);
+}
+/* ---- beat: all nine sweeping past, "9 ELITE PILOTS" ---- */
+function opnBeatRoll(B, t, a){
+  opnBackdrop(t, false);
+  /* ⚠ SPACED WIDER THAN THEY ARE TALL. At VH*0.48 and VW/3.1 apart the aircraft overlapped into a
+     single black mass - nine silhouettes that read as one. The gap has to exceed the widest hull. */
+  const n=OPN_ORDER.length, cw=VW*0.62;
+  ctx.save(); ctx.globalAlpha=a;
+  for(let i=0;i<n;i++){
+    const sil=openerSil(OPN_SIL_KEY(OPN_ORDER[i]));
+    if(!sil) continue;
+    const h=VH*0.30, w=h*(sil.width/sil.height);
+    let x=VW + i*cw - t*((VW*0.62*n+VW)/2.9);
+    if(x<-w || x>VW) continue;
+    const P=(typeof PILOTS!=='undefined')?PILOTS.find(q=>q.key===OPN_ORDER[i]):null;
+    ctx.shadowColor=(P&&P.tint)||'#ff8a1a'; ctx.shadowBlur=18;
+    ctx.drawImage(sil, x, VH*0.34+Math.sin(i*1.7+t*2)*14, w, h);
+  }
+  ctx.shadowBlur=0; ctx.restore();
+  opnText(B.t, VW/2, VH*0.845, 26, '#ffd36b', a);
+}
+/* ---- beat: the frontal views, in colour, snapping in three at a time ---- */
+function opnBeatFace(B, t, a){
+  opnBackdrop(t, true);
+  const step=0.22;
+  ctx.save();
+  for(let i=0;i<9;i++){
+    const q=clamp((t-i*step*0.42)/0.26,0,1);
+    if(q<=0) continue;
+    const key='port_cf_'+OPN_ORDER[i]+'_'+(i%3===0?'anger':(i%3===1?'idle':'victory'));
+    if(typeof XART==='undefined' || !XART.rdy(key)) continue;
+    const im=XART.get(key);
+    const cw=VW/3, ch=(VH*0.70)/3;
+    const cx=(i%3)*cw, cy=VH*0.09+Math.floor(i/3)*ch;
+    const s=Math.min(cw/im.naturalWidth, ch/im.naturalHeight)*(0.86+0.14*q);
+    const w=im.naturalWidth*s, h=im.naturalHeight*s;
+    ctx.globalAlpha=a*q;
+    ctx.drawImage(im, cx+(cw-w)/2, cy+(ch-h)/2, w, h);
+  }
+  ctx.restore(); ctx.globalAlpha=1;
+  opnText(B.t, VW/2, VH*0.875, 18, '#ffe082', a);
+}
+/* ---- beat: the real game, with the ability firing on cue ---- */
+function opnBeatDemo(B, t, dur, a){
+  if(!opnDemoOn){
+    if(typeof attractDemoStart==='function') attractDemoStart(B.p, GS.OPENER);
+    opnDemoOn=!!(typeof attractDemoOn!=='undefined' && attractDemoOn);
+    opnFrame=0;
+    if(!opnDemoOn){ opnT=dur; return; }         // could not start: skip rather than hang
+  }
+  if(t<0.55){
+    const e=t/0.55;
+    player.x=VW/2; player.y=VH+40-(VH*0.34+40)*e*e*(3-2*e);
+  } else {
+    const q=t-0.55;
+    player.x=VW/2+Math.sin(q*2.2)*VW*0.32;
+    player.y=VH*0.68+Math.sin(q*1.5)*VH*0.06;
+    if((opnFrame++ % 3)===0 && typeof pShoot==='function') pShoot();
+    if(t>1.15 && typeof specialActive==='function' && !specialActive() && typeof startSpecial==='function') startSpecial();
+  }
+  try{ updatePlay(dt0); }catch(e){}
+  try{ drawWorld(dt0); }catch(e){}
+  if(a<1){ ctx.save(); ctx.globalAlpha=1-clamp(a,0,1); ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH); ctx.restore(); }
+  opnBars(1);
+  opnText(B.t, VW/2, VH*0.935, 20, '#ffe082', a);
+}
+/* ---- beat: nine screens at once ---- */
+function opnPanel(P, px, py, pw, ph, q, a){
+  ctx.save();
+  ctx.beginPath(); ctx.rect(px,py,pw,ph); ctx.clip();
+  /* the setting */
+  const warm = (P.act==='kill');
+  const g=ctx.createLinearGradient(px,py,px,py+ph);
+  g.addColorStop(0, warm?'#2a1206':'#0b1020'); g.addColorStop(1,'#05070c');
+  ctx.fillStyle=g; ctx.fillRect(px,py,pw,ph);
+  for(let i=0;i<10;i++){
+    const sx=px+((i*37)%pw), sy=py+(((i*61)+q*ph*2.6)%ph);
+    ctx.fillStyle='#2b3a56'; ctx.fillRect(sx,sy,1,7);
+  }
+  /* the boss, for the three that finish one */
+  if(P.act==='kill' && typeof XART!=='undefined' && XART.rdy(P.boss)){
+    const im=XART.get(P.boss);
+    const bw=pw*0.66, bh=bw*(im.naturalHeight/im.naturalWidth);
+    const dying=q>0.58;
+    ctx.save();
+    if(dying){ ctx.globalAlpha=Math.max(0,1-(q-0.58)/0.30); ctx.translate(rnd(-2,2),rnd(-2,2)); }
+    ctx.drawImage(im, px+(pw-bw)/2, py+ph*0.06, bw, bh);
+    ctx.restore();
+    if(dying){
+      for(let i=0;i<7;i++){
+        const r=(q-0.58)*pw*1.5*(0.4+(i%4)*0.2);
+        ctx.globalAlpha=Math.max(0,1-(q-0.58)/0.30)*0.9;
+        ctx.fillStyle=(i%2)?'#ffd08a':'#ff6a1e';
+        circle(px+pw*0.5+Math.cos(i*1.9)*r*0.5, py+ph*0.22+Math.sin(i*1.9)*r*0.4, 3+((i*5)%7));
+      }
+      ctx.globalAlpha=1;
+    }
+  }
+  /* incoming fire, for everyone */
+  const shots=(P.act==='dodge')?16:8;
+  for(let i=0;i<shots;i++){
+    const bx=px+((i*29+7)%pw), by=py+(((i*43)+q*ph*3.2)%ph);
+    ctx.fillStyle=(i%3)?'#ff8a4a':'#8ad0ff';
+    ctx.fillRect(bx,by,2,5);
+  }
+  /* the pilot */
+  const dead=(P.act==='die' && q>0.52);
+  let key='ship_'+P.p+'_nf';
+  if(P.act==='dodge'){
+    const f=Math.floor(q*14)%8;
+    if(XART.rdy('ship_'+P.p+'_br'+f)) key='ship_'+P.p+'_br'+f;
+  } else if(dead){
+    const f=Math.floor((q-0.52)*26)%8;
+    if(XART.rdy('ship_'+P.p+'_sp'+f)) key='ship_'+P.p+'_sp'+f;
+  }
+  if(typeof XART!=='undefined' && XART.rdy(key)){
+    const im=XART.get(key);
+    const sw=pw*0.26, sh=sw*(im.naturalHeight/Math.max(1,im.naturalWidth));
+    const sx=px+pw*0.5+Math.sin(q*7.5+P.p.length)*pw*(P.act==='dodge'?0.30:0.16)-sw/2;
+    const sy=py+ph*(dead?(0.62+(q-0.52)*0.6):0.66)-sh/2;
+    ctx.save();
+    if(dead) ctx.globalAlpha=Math.max(0,1-(q-0.52)/0.42);
+    ctx.drawImage(im, sx, sy, sw, sh);
+    ctx.restore();
+  }
+  if(dead && q>0.80){
+    ctx.globalAlpha=clamp((q-0.80)/0.12,0,1)*0.85;
+    ctx.fillStyle='#ff3a1e';
+    circle(px+pw*0.5, py+ph*0.74, pw*0.22*(1+(q-0.80)*4));
+    ctx.globalAlpha=1;
+  }
+  ctx.restore();
+  /* the frame, so nine panels read as nine screens */
+  ctx.strokeStyle='rgba(150,180,220,0.5)'; ctx.lineWidth=1;
+  ctx.strokeRect(px+0.5,py+0.5,pw-1,ph-1);
+}
+function opnBeatNine(B, t, dur, a){
+  ctx.fillStyle='#05070c'; ctx.fillRect(0,0,VW,VH);
+  const M=6, cols=3, rows=3;
+  const pw=(VW-M*(cols+1))/cols, ph=(VH*0.86-M*(rows+1))/rows;
+  const y0=VH*0.07;
+  ctx.save(); ctx.globalAlpha=a;
+  for(let i=0;i<9;i++){
+    /* each panel opens on its own beat, so the wall assembles rather than appearing */
+    const born=clamp((t-0.06*i)/0.30,0,1);
+    if(born<=0) continue;
+    const px=M+(i%3)*(pw+M), py=y0+Math.floor(i/3)*(ph+M);
+    const q=clamp((t-0.06*i-0.30)/Math.max(0.4,dur-1.1),0,1);
+    ctx.save(); ctx.globalAlpha=a*born;
+    opnPanel(OPN_NINE[i], px, py, pw, ph, q, a);
+    ctx.restore();
+  }
+  ctx.restore(); ctx.globalAlpha=1;
+}
+/* ---- beat: the logo, and PRESS START ---- */
+function opnBeatLogo(t, a){
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
+  opnBackdrop(t*0.4, true);
+  /* ⚠ nbl_logo IS THE GAME'S LOGO. ASSETS.menuLogo and XART 'logo' are both the COLEFORGE ENGINE
+     plate - "Cole Forge Engine / Rail Shooter Edition" - which is the right thing on the boot
+     screen and the wrong thing here: Mike asked for "'Bullets of Fury!' using our logo", and the
+     first cut ended a 30-second trailer on the engine's name. Rendered the three candidates side
+     by side rather than picking by key name; nbl_logo on ui_menu_1 is the only BULLETS OF FURY
+     wordmark in the build. The engine plate stays as the fallback - a wrong logo beats none. */
+  const lg=(typeof XART!=='undefined' && XART.rdy('nbl_logo')) ? XART.get('nbl_logo')
+          : ((typeof ASSETS!=='undefined' && ASSETS.rdy && ASSETS.rdy(ASSETS.menuLogo)) ? ASSETS.menuLogo
+          : ((typeof XART!=='undefined' && XART.rdy('logo')) ? XART.get('logo') : null));
+  if(lg){
+    const e=clamp(t/0.7,0,1), ez=1-Math.pow(1-e,3);
+    const w=Math.min(VW-30, 440)*(0.80+0.20*ez);
+    const h=w*(lg.naturalHeight/lg.naturalWidth);
+    ctx.save(); ctx.globalAlpha=a*e;
+    ctx.shadowColor='#ff8a1a'; ctx.shadowBlur=24;
+    ctx.drawImage(lg, (VW-w)/2, VH*0.30-h/2+VH*0.06, w, h);
+    ctx.restore(); ctx.shadowBlur=0;
+  } else {
+    opnText('BULLETS OF FURY', VW/2, VH*0.36, 34, '#ffd36b', a);
+  }
+  if(t>0.9 && Math.floor(t*1.8)%2)
+    opnText('PRESS START', VW/2, VH*0.70, 20, '#ffe082', a);
+  opnText('© 2026 COLEFORGE PRODUCTIONS', VW/2, VH*0.92, 11, '#7f8c9e', a*0.8);
+}
+
+/* a read-only window onto the opener, so a probe asserts the ENGINE's beat rather than counting
+   seconds and hoping. Three globals, no behaviour. */
+if(typeof window!=='undefined'){
+  window.__BOFSTATE=function(){ return state; };
+  window.__BOFOPENERSTART=function(){ openerStart(); };
+  window.__BOFHELP=function(){
+    return {items:TITLE_ITEMS.slice(), idx:menuIndex, page:helpPage,
+            pageName:HELP_PAGES[helpPage]||'?',
+            btnArt:(typeof XART!=='undefined' && XART.rdy('btn_help')),
+            widest:_helpWidest, field:VW-28,
+            labels:{fire:helpBind('fire',3), bomb:helpBind('bomb',3),
+                    retina:helpBind('retina',4), charge:helpBind('charge',3),
+                    start:helpBind('start',3)},
+            rebind:function(act,k){ keybind[act]=[k]; },
+            restore:function(){ keybind=_loadBinds('bof_keys', KEYBIND_DEFAULT); }};
+  };
+  window.__BOFOPN=function(){
+    const B=OPN[opnI]||{};
+    return {i:opnI, k:B.k||null, t:B.t||null, tt:+opnT.toFixed(2), n:OPN.length,
+            nine:OPN_NINE.length, acts:OPN_NINE.map(function(q){return q.act;}),
+            music:!!(typeof Snd!=='undefined' && Snd.music && Snd.music.opener)};
+  };
+}
+let dt0=1/60;      // the beat draws need dt inside helpers that do not take it
+function drawOpener(dt){
+  dt0=dt;
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH);
+  /* ANY input, ANY time - including mid-beat and including the mouse */
+  if(stateT>0.15 && (Input.mouse.down || (typeof anyTap==='function' && anyTap()))){
+    openerToTitle(); return;
+  }
+  if(opnI>=OPN.length){ openerToTitle(); return; }
+  const B=OPN[opnI], dur=B.d;
+  opnT+=dt;
+  const a=opnFade(opnT,dur);
+  switch(B.k){
+    case 'sil':  opnBeatSil(B, opnT, a);  opnBars(1); break;
+    case 'roll': opnBeatRoll(B, opnT, a); opnBars(1); break;
+    case 'face': opnBeatFace(B, opnT, a); opnBars(0.6); break;
+    case 'demo': opnBeatDemo(B, opnT, dur, a); break;
+    case 'nine': opnBeatNine(B, opnT, dur, a); opnBars(0.5); break;
+    case 'logo': opnBeatLogo(opnT, a); break;
+  }
+  if(opnT>=dur){
+    if(B.k==='demo'){ try{ attractDemoEnd(); }catch(e){} opnDemoOn=false; }
+    opnT=0; opnI++;
+    if(opnI>=OPN.length){ openerToTitle(); }
+  }
+}
+
 /* ============================================================
    THE ARCADE ATTRACT REEL (drop 0809p)
 
@@ -40048,8 +41305,12 @@ function attractCardText(pk, R, a){
   ctx.restore(); ctx.globalAlpha=1;
 }
 
-function attractDemoStart(){
-  const k=attractPilot();
+/* ⚠ THE PILOT AND THE STATE ARE PARAMETERS NOW (0912a). The arcade opener runs the identical
+   demo under GS.OPENER; copying twenty lines to change one setState is how the two drift, and this
+   file has that failure recorded a dozen times. Both default to the attract reel's own behaviour,
+   so every existing caller is unchanged. */
+function attractDemoStart(pilot, st){
+  const k=pilot||attractPilot();
   try{
     run.pilot=k;
     const _pi=PILOTS.findIndex(function(p){ return p.key===k; });
@@ -40061,7 +41322,7 @@ function attractDemoStart(){
        capture came back state=opening with the attract beat frozen. Take it straight back, the
        same way test_fl and shoot.py do (beginStage then force the state they want). updatePlay
        has no state gate of its own, so it runs perfectly happily under GS.ATTRACT. */
-    setState(GS.ATTRACT);
+    setState(st||GS.ATTRACT);
     if(player && player.reset) player.reset();
     player.invuln=1e9;                              // the demo never dies on camera
     run.weapon=0; run.wlevel=2; run.missileLevel=1;
@@ -41152,7 +42413,12 @@ function drawBoot(dt){
        into the menu - that half of the original brief still holds.
        attractStart() and drawAttract are LEFT IN PLACE, not deleted: the reel is a working
        system and this is a routing decision he may reverse. Nothing else calls it now. */
-    if(t>DONE){ Audio.startMusic('title'); setState(GS.TITLE); }
+    /* ⚠ 0811d's "straight to the title" is SUPERSEDED by Mike's 0912 ask for an opener, and the
+       note above is left standing because it records the decision this reverses. The opener owns
+       its own track and hands the title its music back on the way out, so the unbroken-music half
+       of the 0809 brief moves into openerToTitle rather than being lost. The HOST never sees it:
+       debugRouteState sends GS.OPENER to GS.BMHOST like every other front door. */
+    if(t>DONE){ if(typeof openerStart==='function') openerStart(); else { Audio.startMusic('title'); setState(GS.TITLE); } }
     return;
   }
   // star tile parallax — scroll DOWN, fade in then out
@@ -50328,7 +51594,15 @@ function campSnapshot(){
        exactly the pre-0814a behaviour. Bumping would have invalidated every existing save to
        add an optional field. */
     wvars:(run.wvars||[]).slice(),
-    unlockedMax:campaign.unlockedMax||1, rank:Object.assign({},campaign.rank||{}) };
+    unlockedMax:campaign.unlockedMax||1, rank:Object.assign({},campaign.rank||{}),
+    /* ⚠ PASSWORD UNLOCKS RIDE THE SAVE, AND NOTHING ELSE (Mike, 0909: "if the player loads his
+       campaign data and had unlocked her ship or Cole as those are the only passwords currently,
+       they remain unlocked per save data only. upon game start, blank game state").
+       So they are NOT in localStorage on their own and NOT global: a fresh boot has neither, and
+       they come back only by loading a slot that had them. CAMP_SAVE_VER is deliberately NOT
+       bumped - an older slot simply has no unlocks field and campApply reads it as false, which
+       is the pre-0909 behaviour and the correct one. */
+    unlocks:{bomber:!!lizzieSkinUnlocked, cole:!!coleUnlocked} };
 }
 /* A slot written by an older build must never half-apply — version out, or nothing. */
 function campApply(s){
@@ -50348,6 +51622,13 @@ function campApply(s){
   if(s.diff) diffKey=s.diff;
   campaign.unlockedMax=Math.max(1, s.unlockedMax||1);
   campaign.rank=Object.assign({}, s.rank||{});
+  /* Loading a slot ADOPTS its unlocks wholesale, in both directions - a slot saved before BOMBER
+     was entered turns the costume back off. Anything else and a session that typed the password
+     once would leak it into every save the player touched afterwards. */
+  lizzieSkinUnlocked=!!(s.unlocks && s.unlocks.bomber);
+  coleUnlocked=!!(s.unlocks && s.unlocks.cole);
+  if(!lizzieSkinUnlocked && typeof lizzieSkinOn!=='undefined' && lizzieSkinOn
+     && typeof applyLizzieSkin==='function') applyLizzieSkin(false);
   return true;
 }
 function campReadSlot(i){ try{ return JSON.parse(localStorage.getItem(campSlotKey(i))||'null'); }catch(e){ return null; } }
@@ -51641,11 +52922,17 @@ function drawStaticPlayer(){
   ctx.fillStyle='#e23a3a'; ctx.beginPath();ctx.moveTo(0,-22);ctx.lineTo(-4,-10);ctx.lineTo(4,-10);ctx.fill();
   px(-2,-12,4,7,'#1f4e8a'); px(-3,12,6,8,'#3aa0ff');
 }
-const TITLE_ITEMS=['NEW GAME','PASSWORD','OPTIONS','CREDITS','EXIT GAME'];
-const MENU_KEYS=['btn_newgame','btn_password','btn_options','btn_credits','btn_exit'];
+/* ⚠ SIX BUTTONS NOW, AND THE WRAP IS NO LONGER A LITERAL 5 (Mike, 0912). handleTitleInput wrapped
+   the cursor with `%5` in two places; adding a row without those would have made the last item
+   unreachable from below and produced a cursor that skips - the exact symptom 0801r spent a drop
+   chasing. Driven off TITLE_ITEMS.length now, so a seventh button is one edit. */
+const TITLE_ITEMS=['NEW GAME','PASSWORD','OPTIONS','HELP','CREDITS','EXIT GAME'];
+const MENU_KEYS=['btn_newgame','btn_password','btn_options','btn_help','btn_credits','btn_exit'];
 /* SPACING (drop 0801bu). Five title buttons: gap 58 -> 66 gives each one clear
    air without pushing the last past the copyright line. */
-const TMENU_Y0=172, TMENU_GAP=66, TMENU_W=330;
+/* six buttons: gap 66 -> 56 and the stack starts higher, so the last one still clears the
+   copyright line that 0801bu sized the original five against */
+const TMENU_Y0=158, TMENU_GAP=56, TMENU_W=330;
 let _menuScrollX=0;
 function drawTitle(dt){
   if(typeof uiFontWarm==='function') uiFontWarm();   // earliest menu: start the face here, not at stage 1
@@ -51696,6 +52983,7 @@ function drawTitle(dt){
   }
   ctx.fillStyle='rgba(210,216,226,0.85)'; ctx.font='8px "BOFmil", monospace'; ctx.textAlign='center';
   ctx.fillText('COPYRIGHT 2026 COLEFORGE STUDIOS',VW/2,VH-6);
+  drawDebugButton(dt);   // top-right, only once UP UP DOWN DOWN A B C is in (0910a)
   handleTitleInput();
   /* HARD RESET, ALWAYS AVAILABLE (drop 0724dm).
      Mike's binds were broken AND SAVED, and no rebuild could clear them because the fault lived in
@@ -51724,7 +53012,8 @@ function drawTitle(dt){
     if(m===0){ setState(GS.MODESEL); modeIndex=1; menuIndex=1; }   // NEW GAME -> mode select (boot-05)
     else if(m===1){ setState(GS.PASSWORD); pwInput=''; }
     else if(m===2){ setState(GS.OPTIONS); menuIndex=0; }
-    else if(m===3){ setState('credits'); }
+    else if(m===3){ setState(GS.HELP); helpPage=0; helpT=0; }
+    else if(m===4){ setState('credits'); }
     else { tryExit(); } }
 }
 function drawMenuButton(cx,cy,w,h,label,sel,icon){
@@ -51751,10 +53040,13 @@ function drawMenuIcon(icon,cx,cy){
 }
 function drawMenuButtons(dt){
   if(!XART.rdy('btn_newgame')){
-    for(let i=0;i<TITLE_ITEMS.length;i++) drawMenuButton(VW/2, TMENU_Y0+i*TMENU_GAP, 250, 40, TITLE_ITEMS[i], i===menuIndex, ['ship','lock','gear','star','door'][i]);
+    for(let i=0;i<TITLE_ITEMS.length;i++) drawMenuButton(VW/2, TMENU_Y0+i*TMENU_GAP, 250, 40, TITLE_ITEMS[i], i===menuIndex, ['ship','lock','gear','help','star','door'][i]);
     return;
   }
-  for(let i=0;i<5;i++){
+  /* ⚠ MENU_KEYS.length, NOT 5. Adding HELP fixed the two wrap sites in handleTitleInput and the
+     sixth button still did not appear, because the DRAW loop and the mouse hit-test carried their
+     own copies of the count. Four places knew how long this menu was. Photograph caught it. */
+  for(let i=0;i<MENU_KEYS.length;i++){
     const im=XART.get(MENU_KEYS[i]); if(!XART.rdy(MENU_KEYS[i])) continue;
     const sel=(i===menuIndex), w=sel?TMENU_W*1.04:TMENU_W, h=w*(im.naturalHeight/im.naturalWidth);
     const cx=VW/2, cy=TMENU_Y0+i*TMENU_GAP;
@@ -51801,8 +53093,8 @@ function handleTitleInput(){
     let _g = Input.down('enter')     || Input.down(' ') || Input.down('z');
     try{ if(typeof Input.menuDown==='function' && Input.menuDown()) _d=true; }catch(_){}
     try{ if(typeof Input.menuUp  ==='function' && Input.menuUp())   _u=true; }catch(_){}
-    if(_d && !handleTitleInput._pd){ menuIndex=(menuIndex+1)%5; try{ if(window.__menudiag) window.__menudiag.lastMove='down->'+menuIndex; }catch(_){} try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_){} }
-    if(_u && !handleTitleInput._pu){ menuIndex=(menuIndex+4)%5; try{ if(window.__menudiag) window.__menudiag.lastMove='up->'+menuIndex; }catch(_){} try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_){} }
+    if(_d && !handleTitleInput._pd){ menuIndex=(menuIndex+1)%TITLE_ITEMS.length; try{ if(window.__menudiag) window.__menudiag.lastMove='down->'+menuIndex; }catch(_){} try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_){} }
+    if(_u && !handleTitleInput._pu){ menuIndex=(menuIndex+TITLE_ITEMS.length-1)%TITLE_ITEMS.length; try{ if(window.__menudiag) window.__menudiag.lastMove='up->'+menuIndex; }catch(_){} try{ Audio.SFX.blip&&Audio.SFX.blip(); }catch(_){} }
     handleTitleInput._pd=_d; handleTitleInput._pu=_u;
     if(_g && !handleTitleInput._pg){ handleTitleInput._pg=true; try{ chooseTitle(); }catch(_){} }
     if(!_g) handleTitleInput._pg=false;
@@ -51835,7 +53127,7 @@ function _handleTitleInputRest(){
   // hover only steals selection when the mouse actually MOVED this frame (keyboard/pad nav isn't overridden)
   const moved=Input.consumeMouseMoved();
   const my=Input.mouse.y;
-  for(let i=0;i<5;i++){ const cy=TMENU_Y0+i*TMENU_GAP;
+  for(let i=0;i<TITLE_ITEMS.length;i++){ const cy=TMENU_Y0+i*TMENU_GAP;
     /* The x test required the pointer within 165px of centre. Mike's readout put his pointer at
        x=471 on a 480-wide field, so every click missed on x alone. The rows read as full-width
        bands on screen, so the hit box now matches what the player sees. */
@@ -52250,23 +53542,68 @@ function psLineupX(i){ return Math.round((VW - PS_COLS*PS_PITCH)/2 + i*PS_PITCH)
    later. See the note at X._flushShipCells for why the flush is not optional.
    ============================================================ */
 const LIZZIE_B42_RECTS={
-  "":[0,0,222,236,7,31,237,299],
-  "_nf":[2779,0,151,213,40,45,237,299],
-  "_l":[1528,238,204,210,16,44,237,299],
-  "_r":[2932,0,208,213,13,43,237,299],
-  "_pv0":[3142,0,151,213,40,45,237,299],
-  "_pv1":[1734,238,180,210,26,45,237,299],
-  "_pv2":[224,0,222,236,7,31,237,299],
-  "_pv3":[1689,0,185,216,26,42,237,299],
-  "_pv4":[634,0,154,220,42,40,237,299],
-  "_br0":[790,0,183,218,19,35,222,289],
-  "_br1":[494,2584,184,171,19,59,222,289],
-  "_br2":[326,2040,163,183,29,53,222,289],
-  "_br3":[525,1852,168,185,27,52,222,289],
-  "_br4":[448,0,184,222,19,33,222,289],
-  "_br5":[3404,2407,183,172,19,58,222,289],
-  "_br6":[491,2040,163,183,30,53,222,289],
-  "_br7":[656,2040,163,183,29,53,222,289]
+  /* ⚠ THE SOMERSAULT REEL IS IN HERE BECAUSE applyLizzieSkin WALKS THESE KEYS (0912a).
+     She is the one pilot whose SHEET is chosen by a live flag rather than by the key
+     (_shipSheetOf), so a `so` row registered on the stock atlas alone would keep its stock
+     rect while the costume was on and crop the B-42 page at stock coordinates. Her own
+     note below already calls an asymmetric key set out as what breaks a two-way swap. */
+  "_so0":[2,1726,151,198,40,45,224,243],
+  "_so1":[228,1726,163,160,34,64,224,243],
+  "_so2":[454,1726,169,87,31,100,224,243],
+  "_so3":[680,1726,162,176,34,56,224,243],
+  "_so4":[2,1971,149,190,41,49,224,243],
+  "_so5":[228,1971,157,174,37,57,224,243],
+  "_so6":[454,1971,169,107,31,90,224,243],
+  "_so7":[680,1971,163,160,34,64,224,243],
+
+  /* ⚠ TWO OF THESE ARE ALIASES AND THAT IS A REPAIR, NOT THE AUTHORED LAYOUT (0909).
+     (base) and _pv2 - the costume's LEVEL frames, i.e. what you look at for almost the whole
+     run - cropped Juggernaut's and Maverick's aircraft, in the pre-0909 atlas too. Both now
+     name _nf, which IS a clean level bomber. _br1 and _br5 are still stubs and are left
+     alone: a roll frame has no obviously correct stand-in the way a level frame does.
+
+     ⚠ THE _g1/_g2 ROWS ARE THE PROPELLER AND THEY ARE TRIPLE-BLADED (Mike, 0909: "just make
+     it switch from the dual to the triple really fast and it'll look like a propeller").
+     The base plate is the authored two-blade prop; both phases are three blades, the second
+     offset 60 degrees. shipGlowKey cycles ['','g1','','g2'] every 70ms, so the aircraft
+     alternates dual/triple at about 14Hz. Only the nine level-ish frames carry phases; the
+     roll frames fall back to their base plate, which is what shipGlowKey does when a phase
+     is absent. */
+  "":[191,242,151,213,40,45,224,243],
+  "_nf":[191,242,151,213,40,45,224,243],
+  "_l":[713,242,204,210,16,44,224,243],
+  "_r":[346,242,208,213,13,43,224,243],
+  "_pv0":[558,242,151,213,40,45,224,243],
+  "_pv1":[2,462,180,210,26,45,224,243],
+  "_pv2":[191,242,151,213,40,45,224,243],
+  "_pv3":[2,242,185,216,26,42,224,243],
+  "_pv4":[642,2,154,220,42,40,224,243],
+  "_br0":[800,2,183,218,19,35,224,243],
+  "_br1":[189,676,184,171,19,59,224,243],
+  "_br2":[358,462,163,183,29,53,224,243],
+  "_br3":[186,462,168,185,27,52,224,243],
+  "_br4":[454,2,184,222,19,33,224,243],
+  "_br5":[2,676,183,172,19,58,224,243],
+  "_br6":[525,462,163,183,30,53,224,243],
+  "_br7":[692,462,163,183,29,53,224,243],
+  "_g1":[696,854,151,213,40,45,224,243],
+  "_g2":[851,854,151,213,40,45,224,243],
+  "_nf_g1":[2,1078,151,213,40,45,224,243],
+  "_nf_g2":[157,1078,151,213,40,45,224,243],
+  "_l_g1":[467,1295,204,210,16,44,224,243],
+  "_l_g2":[675,1295,204,210,16,44,224,243],
+  "_r_g1":[312,1078,208,213,13,43,224,243],
+  "_r_g2":[524,1078,208,213,13,43,224,243],
+  "_pv0_g1":[736,1078,151,213,40,45,224,243],
+  "_pv0_g2":[2,1295,151,213,40,45,224,243],
+  "_pv1_g1":[2,1512,180,210,26,45,224,243],
+  "_pv1_g2":[186,1512,180,210,26,45,224,243],
+  "_pv2_g1":[157,1295,151,213,40,45,224,243],
+  "_pv2_g2":[312,1295,151,213,40,45,224,243],
+  "_pv3_g1":[318,854,185,216,26,42,224,243],
+  "_pv3_g2":[507,854,185,216,26,42,224,243],
+  "_pv4_g1":[2,854,154,220,42,40,224,243],
+  "_pv4_g2":[160,854,154,220,42,40,224,243],
 };
 /* her CURRENT rects, captured the first time the skin is applied rather than hard-coded, so this
    keeps working if the golden airframe is ever re-imported at different coordinates */
@@ -52284,10 +53621,20 @@ function applyLizzieSkin(on){
   }
   const src = on ? LIZZIE_B42_RECTS : _lizzieStockRects;
   let n=0;
-  for(const s of suf){ if(src[s]){ BOFX.ships['ship_lizzie'+s]=src[s].slice(); n++; } }
+  /* ⚠ TURNING THE SKIN OFF MUST DELETE WHAT THE STOCK SHIP DOES NOT HAVE (0909).
+     The costume carries suffixes the stock hull does not - since the propeller landed, eighteen
+     _g1/_g2 phase keys. `if(src[s])` alone SKIPS a missing stock rect, so those keys would keep
+     pointing at bomber cells after the toggle and her own ship would flicker into a B-42 three
+     times a second, on a screen where nothing fails. Same shape as the pv note in
+     lizzie_new_hull_only_0909.py: an asymmetric key set is what breaks a two-way swap. */
+  for(const s of suf){
+    if(src[s]){ BOFX.ships['ship_lizzie'+s]=src[s].slice(); n++; }
+    else if(!on){ delete BOFX.ships['ship_lizzie'+s]; n++; }
+  }
+  lizzieSkinOn=!!on;   /* set BEFORE the flush: _shipSheetOf reads it while rebuilding */
   if(typeof XART!=='undefined' && XART._flushShipCells)
     XART._flushShipCells(k=>k.indexOf('ship_lizzie')===0);
-  lizzieSkinOn=!!on;
+  if(typeof XART!=='undefined' && XART._flushShipSheets) XART._flushShipSheets();
   return n>0;
 }
 const PS_POSE_STALE={yuri:1};
@@ -53359,14 +54706,13 @@ function submitPassword(){
      typed and would look like the password screen ignoring it. BOMBER is exactly six. */
   if(pwInput==='BOMBER'){
     lizzieSkinUnlocked=true;
-    /* session only, matching COLE4U above. Not persisted deliberately: the pilot roster and
-       Cole's unlock both work this way, and a costume that quietly survives a reload is a
-       save-format decision Mike has not made. */
+    /* Not global, and not localStorage of its own: it lives in the campaign slot from 0909, so a
+       fresh boot never has it and saving a campaign is what makes it survive. See campSnapshot. */
     Audio.SFX.life? Audio.SFX.life() : Audio.SFX.select();
     drawPassword.unlockMsg=1.8; drawPassword.unlockWho='bomber'; pwInput=''; return;
   }
   if(pwInput==='COLE4U'){
-    coleUnlocked=true;   // session only — deliberately NOT persisted (drop 0801k)
+    coleUnlocked=true;   // rides the campaign slot from 0909 - see campSnapshot
     Audio.SFX.life? Audio.SFX.life() : Audio.SFX.select();
     drawPassword.unlockMsg=1.8; drawPassword.unlockWho='cole'; pwInput=''; return;
   }
@@ -53391,7 +54737,1630 @@ function submitPassword(){
   else { drawPassword.err=1.4; Audio.SFX.hit(); pwInput=''; }
 }
 
+/* ============================================================
+   DEBUG MODE + BOSS MODE HOST (drop 0910a)
+
+   Mike: "upon entering the main menu, allow me to freely input the following combination to
+   unlock the debug mode button - Up Up Down Down A B C. it will unlock a debug button in the top
+   right corner. next, in that button should open a sub menu and allow me to select each mini boss
+   fight and boss fight, when selected, jumps me to the direct fight. when fight ends/boss dies,
+   do the explosion phase fly us off, and then fade us back to the debug menu. In the debug menu,
+   allow a recorder option by pressing R while fighting a boss."
+
+   FOUR PIECES, AND EACH ONE RIDES AN EXISTING PATH RATHER THAN A PARALLEL ONE:
+
+     THE CODE      Own edge detection on Input.down, on the title only. Keyboard A/B/C are the
+                   literal keys; UP/DOWN accept the arrows, W/S and the pad's d-pad. Session-only
+                   by design - "upon game start, blank game state" (Mike, 0909) applies to this
+                   too. `?debug=1` on the URL unlocks it for the harness.
+
+     THE JUMP      debugStartFight runs the REAL startRun -> beginStage so the stage is built
+                   exactly as play builds it (roster, scroll, music routes, the arena hold), then
+                   moves the clock and raises the game's OWN warning (warnT/warnKind) so the
+                   alarm, the music switch and the spawn all happen where they always happen.
+                   This is coleSceneApply's route (the COLE1..9 codes), minus the HP sliver.
+
+     THE EXIT      Nothing new is drawn. A boss death runs its authored 5.8s cook-off and the
+                   ordinary FLYOVER (the fly-off Mike specified in 0801bd). What changes is the
+                   destination: setState routes every post-fight state (STAGECLEAR, GAMEOVER,
+                   CONTINUE, OUTBOUND, the stage-7 warp, the stage-9 rift fallback...) into
+                   DEBUGFADE and back to the menu while a debug fight is live. Centralised in
+                   setState for the same reason campSuspend is: there are a dozen ways out of a
+                   stage and a per-site hook always misses one.
+                   A MINIBOSS has no stage exit of its own - the level just carries on - so once
+                   its death reel has run, debugLoopTick raises bossDefeated with stageEnding
+                   already most of the way to endT, which is the "no boss authored" route the
+                   stage-6 placeholder used. Same fly-off, no dead air.
+
+     THE RECORDER  captureStream + MediaRecorder on a composite of all THREE canvases (hud strip,
+                   equip box, play field), webm, 60fps, saved to Downloads on stop as
+                   BOF_<stage>_<role>_<kind>_<stamp>.webm. VIDEO ONLY: the music plays through
+                   HTMLAudio elements that are not routed through one AudioContext graph, so
+                   there is no single node to tap. The REC clock is painted onto the canvas after
+                   the scene, so it lands in the file - deliberately, it is the timestamp we will
+                   be talking to each other about.
+
+   ⚠ THE BOSS MODE HOST. `index.html?bossmode=1` is the same game with the boot gate auto-pressed
+   and the title routed to GS.BMHOST, a black waiting screen. bossmode.html embeds it in an
+   iframe and drives it through window.BOSSMODE below - the editor never runs its own copy of
+   the engine, so "play the boss fight in real time in this editor" is literally this game.
+
+   ⚠ OVERRIDES ARE NOT APPLIED TO A NORMAL BOOT. The editor saves its per-kind patches to
+   localStorage (bof_bossmode); the host applies them on load, the ordinary game only when the
+   debug menu's OVERRIDES toggle (F4) is on for the session. A boss that Mike tuned in the editor
+   last week must not quietly show up in his campaign run today.
+   ============================================================ */
+GS.DEBUG='debugmenu'; GS.DEBUGFADE='debugfade'; GS.BMHOST='bmhost';
+MENU_BACK[GS.DEBUG]=GS.TITLE;
+MENU_BACK[GS.HELP]=GS.TITLE;   // BACK / Esc / pad-B leaves HELP the way it leaves every other menu
+var debugUnlocked=false;
+var debugFight=null;            // {stage, role:'mini'|'boss', kind, name, t, spawned}
+var _bmHost=false;
+try{ const _q=new URLSearchParams(location.search); _bmHost=(_q.get('bossmode')==='1'); if(_q.get('debug')==='1'||_bmHost) debugUnlocked=true; }catch(_dq){}
+const debugMenu={row:0, col:1, pilot:0, autoRec:false, overrides:false, sceneOverlay:false, msg:'', msgT:0};
+try{ debugMenu.pilot=Math.max(0, PILOTS.findIndex(function(p){ return p.key==='cole'; })); }catch(_dp){}
+/* the scroll position each stage's boss warning fires at, measured in 0805b (see SUBBOSS) - so
+   the arena is where the boss was authored to be met, not the first frame of the level */
+const DEBUG_BOSS_SCROLL={1:2481,2:1921,3:2001,4:2081,5:2241,6:2241,7:2321,8:2401,9:0};
+const DEBUG_CODE='UUDDABC';
+const _dbgSym={U:['arrowup','w','pad_up'], D:['arrowdown','s','pad_down'], A:['a','pad_b0'], B:['b','pad_b1'], C:['c','pad_b2']};
+let _dbgBuf='', _dbgHeld={}, _dbgFlash=0;
+function debugCodeTick(){
+  if(debugUnlocked) return;
+  for(const s in _dbgSym){
+    const on=_dbgSym[s].some(function(k){ return Input.down(k); });
+    if(on && !_dbgHeld[s]){
+      _dbgBuf=(_dbgBuf+s).slice(-DEBUG_CODE.length);
+      if(_dbgBuf===DEBUG_CODE) debugUnlock();
+    }
+    _dbgHeld[s]=on;
+  }
+}
+function debugUnlock(){
+  if(debugUnlocked) return;
+  debugUnlocked=true; _dbgFlash=2.6;
+  try{ if(Audio.SFX&&(Audio.SFX.life||Audio.SFX.select)) (Audio.SFX.life||Audio.SFX.select)(); }catch(_e){}
+}
+/* the button Mike asked for: top-right of the title, present only once the code is in */
+const DBG_BTN={x:VW-84,y:8,w:76,h:24};
+function drawDebugButton(dt){
+  if(_dbgFlash>0){
+    _dbgFlash-=dt||0;
+    const p=0.5+0.5*Math.sin(performance.now()/90);
+    ctx.save(); ctx.textAlign='center'; ctx.font='bold 14px "BOFmil", monospace';
+    ctx.shadowColor='#8de23a'; ctx.shadowBlur=10+p*10; ctx.fillStyle=p>0.5?'#e6ffd0':'#8de23a';
+    ctx.fillText('DEBUG MODE UNLOCKED', VW/2, VH-92); ctx.restore();
+  }
+  if(!debugUnlocked) return;
+  const B=DBG_BTN, m=Input.mouse;
+  const on=!!(m && m.inside!==false && m.x>=B.x && m.x<=B.x+B.w && m.y>=B.y && m.y<=B.y+B.h);
+  ctx.save();
+  octFill(B.x,B.y,B.w,B.h,5, on?'#3a3032':'#26282c');
+  ctx.strokeStyle=on?'#8de23a':'#5a5d63'; ctx.lineWidth=2;
+  ctx.beginPath(); const c=5,x=B.x,y=B.y,w=B.w,h=B.h;
+  ctx.moveTo(x+c,y);ctx.lineTo(x+w-c,y);ctx.lineTo(x+w,y+c);ctx.lineTo(x+w,y+h-c);
+  ctx.lineTo(x+w-c,y+h);ctx.lineTo(x+c,y+h);ctx.lineTo(x,y+h-c);ctx.lineTo(x,y+c);ctx.closePath(); ctx.stroke();
+  ctx.fillStyle=on?'#ffffff':'#8de23a'; ctx.font='bold 12px "BOFmil", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.fillText('DEBUG', B.x+B.w/2, B.y+B.h/2+1);
+  ctx.restore();
+  if(on && m.down && !drawDebugButton._md) debugOpen();
+  drawDebugButton._md=!!(m&&m.down);
+  if(Input.tap('f2')) debugOpen();
+}
+function debugOpen(){
+  if(!debugUnlocked) return;
+  try{ if(Audio.SFX&&Audio.SFX.select) Audio.SFX.select(); }catch(_e){}
+  debugMenu.msgT=0; drawDebugMenu._md=true; setState(GS.DEBUG);
+}
+/* ---- the fight list: one entry per authored slot, straight off STAGES and SUBBOSS ------------ */
+const DEBUG_BOSS_NAMES={damkeeper:'JUNGLE OVERLORD-X', vileexistence:'BLACK COCOON', tidalfusion:'WARP SENTINELS',
+  voidhorizon:'EVENT HORIZON', chaosharrier:'CHAOS HARRIER', quadlaser:'QUAD-LASER GUNSHIP', hellwing:'HELLWING DEATH CARRIER',
+  dreadnought:'HELLFIRE GUNSHIP', wargod:'THE WAR GOD', spider:'ARACHNON MK-IX', leviathan:'LEVIATHAN CORE',
+  ironrev:'IRON REVENANT', cesspool:'CESSPOOL LEVIATHAN', unitybreaker:'UNITY BREAKER', magmacolossus:'MAGMA COLOSSUS'};
+function debugBossName(kind){
+  if(!kind) return '-';
+  const D=(typeof SHIPBOSS!=='undefined')?SHIPBOSS[kind]:null; if(D&&D.name) return D.name;
+  if(DEBUG_BOSS_NAMES[kind]) return DEBUG_BOSS_NAMES[kind];
+  if(typeof MEGABOSS!=='undefined'&&MEGABOSS[kind]) return MEGABOSS[kind].name;
+  return String(kind).toUpperCase();
+}
+function debugFightList(){
+  const L=[];
+  for(const S of STAGES){
+    const n=S.n, SB=SUBBOSS[n];
+    if(SB&&SB.kind) L.push({stage:n, role:'mini', kind:SB.kind, name:debugBossName(SB.kind)});
+    if(S.boss) L.push({stage:n, role:'boss', kind:S.boss, name:debugBossName(S.boss)});
+  }
+  return L;
+}
+function debugFightFor(stage, role){
+  return debugFightList().find(function(f){ return f.stage===stage && f.role===role; })||null;
+}
+/* ---- the jump ------------------------------------------------------------------------------- */
+function debugStartFight(entry, opts){
+  opts=opts||{};
+  if(!entry) return false;
+  debugRecStop();
+  debugFight=null;                                     // beginStage's INTRO must not be routed
+  run.mode='arcade'; diffKey=diffKey||'normal'; _coleScene=0;
+  run._l78Entry=0; try{ if(typeof campaign!=='undefined'&&campaign) campaign._l78Pending=0; }catch(_e){}
+  run._s5ResumeArm=0;
+  if(opts.pilot){ const i=PILOTS.findIndex(function(p){ return p.key===opts.pilot; }); if(i>=0) pilotIndex=i; }
+  else pilotIndex=clamp(debugMenu.pilot|0,0,PILOTS.length-1);
+  coopOn=false; PENDING_STAGE=1;
+  startRun(entry.stage);                               // the stage as play builds it
+  debugFight={stage:entry.stage, role:entry.role, kind:entry.kind, name:entry.name, t:0, spawned:false};
+  debugJump(entry);
+  setState(GS.PLAY);
+  if(curStage&&curStage.music&&Audio.startMusic) Audio.startMusic(curStage.music);
+  if(debugMenu.autoRec||opts.record) debugRecStart();
+  return true;
+}
+function debugJump(entry){
+  enemies.length=0; eBullets.length=0; pBullets.length=0; powerups.length=0; enemyShieldFx.length=0;
+  waveIdx=999; spawnClock=9999;                        // the wave script is spent
+  aminiTriggered=true; _sc1=_sc2=_mc1=_mc2=true; lifeUpRolled=true;
+  const SB=SUBBOSS[entry.stage];
+  if(entry.role==='mini'){
+    stageTimer=Math.max(curStage.length*((SB&&SB.at)||0.45), (SB&&SB.afterWaveTime)||0);
+    mapScroll=(SB&&SB.afterScroll)||0;
+    subBossTriggered=true; subBossDone=false; subBossActive=false; subBoss=null;
+    warnT=2.4; warnKind='sub';
+  } else {
+    subBossDone=true; subBossTriggered=true; subBossActive=false; subBoss=null; _sbMusicResumed=true;
+    stageTimer=9999;
+    mapScroll=DEBUG_BOSS_SCROLL[entry.stage]||0;
+    bossWarned=true; warnT=2.4; warnKind='boss';
+    try{ if(typeof arcStageCard==='function'&&typeof _bossCard!=='undefined'){ const _bw=arcStageCard(run.stage,'boss_warning'); if(_bw) _bossCard={lines:_bw,t:0}; } }catch(_e){}
+  }
+  try{ Audio.SFX.bossAlarm(); }catch(_e){}
+  shake=Math.max(shake,4);
+  player.invuln=Math.max(player.invuln||0, 2.5);       // long enough to see where you are
+  floatText(VW/2, 120, 'DEBUG: '+entry.name, '#8de23a');
+}
+/* every exit a stage can take, while a debug fight is live, lands back on the menu */
+var _DBG_EXITS={};
+[GS.STAGECLEAR,GS.GAMEOVER,GS.CONTINUE,GS.OUTBOUND,GS.VICTORY,GS.STAGESEL,GS.RIVAL,GS.WARPENTRY,GS.INTRO,
+ GS.LAUNCH,GS.TITLE,GS.MODESEL,GS.CAMPHUB,GS.RIFTFALLBACK,GS.CUTSCENE,GS.FLYOVER].forEach(function(s){ _DBG_EXITS[s]=1; });
+var _dbgFade={from:'world', t:0};
+function debugReturnState(){ return _bmHost?GS.BMHOST:GS.DEBUG; }
+function debugRouteState(s){
+  if(_bmHost && (s===GS.TITLE||s===GS.ATTRACT||s===GS.OPENER||s===GS.MODESEL)) return GS.BMHOST;   // the host has no front door
+  if(!debugFight || !_DBG_EXITS || !_DBG_EXITS[s]) return s;
+  if(s===GS.FLYOVER) return s;                         // the fly-off IS the exit; let it run
+  debugRecStop();
+  try{ Audio.stopMusic(); }catch(_e){}
+  _dbgFade={from:(state===GS.FLYOVER)?'black':'world', t:0};
+  debugFight=null;
+  return GS.DEBUGFADE;
+}
+function debugLoopTick(dt){
+  if(state===GS.TITLE) debugCodeTick();
+  /* the host has nobody at the keyboard: press START for it, and keep pressing until the boot
+     lets go. anyTap() walks Input.keys, so the key has to EXIST there for an injected tap to count. */
+  if(_bmHost && state===GS.BOOT && stateT>0.4){ debugLoopTick._n=(debugLoopTick._n|0)+1; if(debugLoopTick._n%20===0){ if(Input.keys.enter===undefined) Input.keys.enter=false; Input.injectTap('enter'); } }
+  if(debugUnlocked && (state===GS.PLAY||state==='paused') && Input.tap('r')){ if(debugRecActive()) debugRecStop(); else debugRecStart(); }
+  if(debugUnlocked && (state===GS.PLAY||state==='paused') && Input.tap('f6')){ debugMenu.sceneOverlay=!debugMenu.sceneOverlay; floatText(VW/2,140,'SCENE OVERLAY '+(debugMenu.sceneOverlay?'ON':'OFF'),'#4aa8ff'); }
+  if(!debugFight) return;
+  debugFight.t+=dt||0;
+  if(state!==GS.PLAY) return;
+  if(subBossActive||bossActive) debugFight.spawned=true;
+  if(debugFight.role==='mini' && !bossDefeated && !subBossActive && subBossDone &&
+     (debugFight.spawned || (warnT<=0 && debugFight.t>4))){
+    /* the mini's death reel has run (1.9s in updateSubBoss). Raise the stage exit with the
+       ending clock most of the way to endT=5.8 - the fly-off follows in ~2.4s, no dead air. */
+    bossDefeated=true; stageEnding=3.4;
+  }
+}
+/* ---- the recorder ---------------------------------------------------------------------------- */
+const debugRec={rec:null, chunks:[], t0:0, last:null, err:'', label:'', cv:null, cx:null, geom:null};
+/* ⚠ THE CLIP IS THE WHOLE CABINET, NOT JUST THE PLAY CANVAS (0910d).
+   index.html has THREE canvases - #hud (the score/lives/bombs strip), #equipcv (the EQUIPPED box)
+   and #screen - and capturing #screen alone drops the two that say how the fight is going. It is
+   the same gap shoot.py already records at its own capture, and the same layout is used here so a
+   frame of the clip and a frame of the harness are the same picture. The composite is drawn once
+   per frame from the END of loop(), AFTER drawHUDStrip has filled the strip for this frame -
+   compositing any earlier records the previous frame's HUD over this frame's play field. */
+function debugRecGeom(){
+  const h=document.getElementById('hud'), e=document.getElementById('equipcv');
+  const hw=h?h.width:0, hh=h?h.height:0, ew=e?e.width:0, eh=e?e.height:0;
+  const rowH=Math.max(hh,eh), W=Math.max(hw+ew, cv.width), H=rowH+cv.height;
+  return {h, e, hw, rowH, W, H};
+}
+function debugRecFrame(){
+  if(!debugRecActive() || !debugRec.cx || !debugRec.geom) return;
+  const R=debugRec.geom, x=debugRec.cx;
+  x.fillStyle='#000'; x.fillRect(0,0,R.W,R.H);
+  /* each source is drawn into the slot measured at START, scaled if the page resized under us -
+     the recorder's canvas may not change size mid-stream or the track reconfigures. */
+  try{ if(R.h) x.drawImage(R.h, 0, 0, R.hw||R.h.width, R.rowH); }catch(_h){}
+  try{ if(R.e) x.drawImage(R.e, R.hw, 0, R.W-R.hw, R.rowH); }catch(_e){}
+  try{ x.drawImage(cv, 0, R.rowH, R.W, R.H-R.rowH); }catch(_s){}
+}
+/* the stream starts the instant captureStream is called, so paint one frame into it first or the
+   clip opens on black for however long it takes the next loop() to come round. */
+function debugRecFrameSeed(R){
+  const x=debugRec.cx; if(!x) return;
+  x.fillStyle='#000'; x.fillRect(0,0,R.W,R.H);
+  try{ if(R.h) x.drawImage(R.h, 0, 0, R.hw||R.h.width, R.rowH); }catch(_h){}
+  try{ if(R.e) x.drawImage(R.e, R.hw, 0, R.W-R.hw, R.rowH); }catch(_e){}
+  try{ x.drawImage(cv, 0, R.rowH, R.W, R.H-R.rowH); }catch(_s){}
+}
+function debugRecActive(){ return !!(debugRec.rec && debugRec.rec.state==='recording'); }
+function _dbgStamp(){ const d=new Date(), z=function(n){ return (n<10?'0':'')+n; };
+  return d.getFullYear()+z(d.getMonth()+1)+z(d.getDate())+'-'+z(d.getHours())+z(d.getMinutes())+z(d.getSeconds()); }
+function debugRecStart(){
+  if(debugRecActive()) return false;
+  try{
+    if(typeof MediaRecorder==='undefined' || !cv.captureStream){ debugRec.err='NO MEDIARECORDER IN THIS BROWSER'; debugMenu.msg=debugRec.err; debugMenu.msgT=6; return false; }
+    const R=debugRecGeom();
+    let c=debugRec.cv;
+    if(!c){ c=debugRec.cv=document.createElement('canvas'); }
+    if(c.width!==R.W || c.height!==R.H){ c.width=R.W; c.height=R.H; }
+    debugRec.cx=c.getContext('2d'); debugRec.geom=R;
+    if(!debugRec.cx || !c.captureStream) throw new Error('no captureStream');
+    debugRecFrameSeed(R);
+    const stream=c.captureStream(60);
+    const mt=['video/webm;codecs=vp9','video/webm;codecs=vp8','video/webm'].find(function(m){ try{ return MediaRecorder.isTypeSupported(m); }catch(_e){ return false; } })||'';
+    const r=new MediaRecorder(stream, mt?{mimeType:mt, videoBitsPerSecond:8000000}:undefined);
+    debugRec.chunks=[];
+    r.ondataavailable=function(e){ if(e.data&&e.data.size) debugRec.chunks.push(e.data); };
+    r.onstop=function(){ debugRecFinish(); };
+    r.start(500);
+    debugRec.rec=r; debugRec.t0=performance.now(); debugRec.err='';
+    debugRec.label=debugFight?('s'+debugFight.stage+'_'+debugFight.role+'_'+debugFight.kind):('stage'+(run.stage||0));
+    floatText(VW/2, 150, 'REC', '#ff4a4a');
+    return true;
+  }catch(e){ debugRec.err=String((e&&e.message)||e); debugMenu.msg='RECORDER FAILED: '+debugRec.err; debugMenu.msgT=6; return false; }
+}
+function debugRecStop(){ if(!debugRecActive()) return false; try{ debugRec.rec.stop(); }catch(_e){} return true; }
+function debugRecFinish(){
+  const r=debugRec.rec; debugRec.rec=null;
+  const chunks=debugRec.chunks; debugRec.chunks=[];
+  if(!chunks.length) return;
+  const blob=new Blob(chunks,{type:(r&&r.mimeType)||'video/webm'});
+  const dur=(performance.now()-debugRec.t0)/1000;
+  const name='BOF_'+(debugRec.label||'fight')+'_'+_dbgStamp()+'.webm';
+  const url=URL.createObjectURL(blob);
+  if(debugRec.last&&debugRec.last.url){ try{ URL.revokeObjectURL(debugRec.last.url); }catch(_e){} }
+  debugRec.last={url:url, name:name, size:blob.size, dur:dur, blob:blob};
+  try{ const a=document.createElement('a'); a.href=url; a.download=name; document.body.appendChild(a); a.click(); a.remove(); }catch(_e){}
+  debugMenu.msg='SAVED '+name+'  '+(blob.size/1e6).toFixed(1)+' MB  '+dur.toFixed(0)+'s'; debugMenu.msgT=10;
+  try{ if(typeof window.BOSSMODE_ONREC==='function') window.BOSSMODE_ONREC(debugRec.last); }catch(_e){}
+}
+function debugRecOverlay(){
+  if(!debugRecActive()) return;
+  const t=(performance.now()-debugRec.t0)/1000, mm=Math.floor(t/60), ss=Math.floor(t%60);
+  ctx.save(); ctx.setTransform(SS,0,0,SS,0,0);
+  ctx.fillStyle='rgba(0,0,0,0.55)'; ctx.fillRect(VW-76,4,72,18);
+  if(Math.floor(t*2)%2===0){ ctx.fillStyle='#ff3a3a'; ctx.beginPath(); ctx.arc(VW-66,13,4.5,0,TAU); ctx.fill(); }
+  ctx.fillStyle='#ffffff'; ctx.font='bold 10px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='middle';
+  ctx.fillText('REC '+(mm<10?'0':'')+mm+':'+(ss<10?'0':'')+ss, VW-58, 13);
+  ctx.restore();
+}
+/* ---- the menu -------------------------------------------------------------------------------- */
+const DBG_ROW0=128, DBG_ROWH=28, DBG_COLX=[70,276], DBG_COLW=198;
+function drawDebugMenu(dt, inert){
+  if(typeof drawTitleBackdrop==='function'){ try{ drawTitleBackdrop(dt); }catch(_e){ ctx.fillStyle='#080611'; ctx.fillRect(0,0,VW,VH); } }
+  else { ctx.fillStyle='#080611'; ctx.fillRect(0,0,VW,VH); }
+  ctx.fillStyle='rgba(4,4,10,0.62)'; ctx.fillRect(0,0,VW,VH);
+  const L=debugFightList(), M=debugMenu, m=Input.mouse;
+  const P=PILOTS[clamp(M.pilot|0,0,PILOTS.length-1)];
+  const nStages=STAGES.length;
+  // header
+  ctx.save(); ctx.textAlign='center'; ctx.textBaseline='alphabetic';
+  ctx.font='bold 26px "BOFmil", monospace'; ctx.shadowColor='#8de23a'; ctx.shadowBlur=14; ctx.fillStyle='#e6ffd0';
+  ctx.fillText('DEBUG MODE', VW/2, 44);
+  ctx.shadowBlur=0; ctx.font='10px "BOFmil", monospace'; ctx.fillStyle='#9fb0cd';
+  ctx.fillText('PICK A FIGHT  ·  IT ENDS BACK HERE', VW/2, 60);
+  // pilot row
+  const pilotSel=(M.row===-1);
+  ctx.font='bold 13px "BOFmil", monospace';
+  ctx.fillStyle=pilotSel?'#ffffff':'#cfd6e0';
+  ctx.fillText('PILOT   ◀  '+P.name+'  ▶', VW/2, 96);
+  if(pilotSel){ ctx.fillStyle='rgba(141,226,58,0.18)'; ctx.fillRect(VW/2-110,82,220,20); }
+  ctx.restore();
+  // grid
+  let hover=null;
+  for(let i=0;i<nStages;i++){
+    const S=STAGES[i], y=DBG_ROW0+i*DBG_ROWH;
+    ctx.save(); ctx.font='bold 11px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='middle';
+    ctx.fillStyle=(M.row===i)?'#ffe682':'#8a919c'; ctx.fillText('STAGE '+S.n, 10, y+DBG_ROWH/2); ctx.restore();
+    for(let c=0;c<2;c++){
+      const role=c?'boss':'mini';
+      const F=L.find(function(f){ return f.stage===S.n && f.role===role; });
+      const x=DBG_COLX[c], w=DBG_COLW, h=DBG_ROWH-5;
+      const sel=(M.row===i && M.col===c);
+      const over=!!(m && m.x>=x && m.x<=x+w && m.y>=y && m.y<=y+h);
+      if(over && F) hover={row:i,col:c};
+      octFill(x,y,w,h,4, sel?'#3a3032':'#1c1e24');
+      ctx.strokeStyle=sel?(c?'#ff3a3a':'#4aa8ff'):'#3a3d44'; ctx.lineWidth=sel?2:1;
+      ctx.strokeRect(x+0.5,y+0.5,w-1,h-1);
+      ctx.save(); ctx.font='bold 9px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='middle';
+      ctx.fillStyle=c?'#ff8a7a':'#8fd0ff'; ctx.fillText(c?'BOSS':'MINI', x+6, y+h/2+1);
+      ctx.fillStyle=F?(sel?'#ffffff':'#cfd6e0'):'#4a4d55';
+      let nm=F?F.name:'- NONE -'; if(nm.length>24) nm=nm.slice(0,23)+'…';
+      ctx.fillText(nm, x+38, y+h/2+1); ctx.restore();
+    }
+  }
+  // footer
+  ctx.save(); ctx.textAlign='center'; ctx.textBaseline='alphabetic'; ctx.font='9px "BOFmil", monospace';
+  const ov=Object.keys(BOSSMODE_OVERRIDES).length;
+  ctx.fillStyle='#cfd6e0';
+  ctx.fillText('ENTER / CLICK = FIGHT      R IN FIGHT = RECORD      P = PLAY LAST CLIP', VW/2, VH-66);
+  ctx.fillStyle=M.autoRec?'#8de23a':'#8a919c';
+  ctx.fillText('F3 AUTO-REC: '+(M.autoRec?'ON':'OFF')+'      F4 EDITOR OVERRIDES: '+(M.overrides?'ON':'OFF')+(ov?(' ('+ov+' SAVED)'):''), VW/2, VH-52);
+  ctx.fillStyle='#8a919c';
+  ctx.fillText('E = OPEN BOSS MODE EDITOR      K / BACKSPACE = BACK', VW/2, VH-38);
+  if(M.msgT>0){ M.msgT-=dt||0; ctx.fillStyle='#ffe682'; ctx.font='bold 9px "BOFmil", monospace';
+    let s=M.msg; if(s.length>70) s=s.slice(0,69)+'…'; ctx.fillText(s, VW/2, VH-18); }
+  else if(debugRec.last){ ctx.fillStyle='#6f7f8f'; ctx.fillText('LAST CLIP: '+debugRec.last.name.slice(0,44), VW/2, VH-18); }
+  ctx.restore();
+  if(inert) return;
+  // ---- input ----
+  if(hover && Input.consumeMouseMoved()){ M.row=hover.row; M.col=hover.col; }
+  const click=!!(m && m.down && !drawDebugMenu._md); drawDebugMenu._md=!!(m&&m.down);
+  if(Input.menuUp()){ M.row=Math.max(-1,M.row-1); try{Audio.SFX.blip();}catch(_e){} }
+  if(Input.menuDown()){ M.row=Math.min(nStages-1,M.row+1); try{Audio.SFX.blip();}catch(_e){} }
+  const _ml=Input.menuLeft(), _mr=Input.menuRight();   // read once each: taps are consumed
+  if(_ml||_mr){
+    const d=_ml?-1:1;
+    if(M.row===-1){ M.pilot=(M.pilot+d+PILOTS.length)%PILOTS.length; }
+    else M.col=1-M.col;
+    try{Audio.SFX.blip();}catch(_e){}
+  }
+  if(Input.tap('f3')){ M.autoRec=!M.autoRec; try{Audio.SFX.select();}catch(_e){} }
+  if(Input.tap('f4')){ debugMenu.overrides=!debugMenu.overrides; bossmodeOverridesArm(debugMenu.overrides); try{Audio.SFX.select();}catch(_e){} }
+  if(Input.tap('e')){ try{ window.open('bossmode.html','_blank'); }catch(_e){} }
+  if(Input.tap('p')&&debugRec.last){ try{ window.open(debugRec.last.url,'_blank'); }catch(_e){} }
+  if((Input.menuConfirm()||(click&&hover)) ){
+    if(click&&hover){ M.row=hover.row; M.col=hover.col; }
+    if(M.row>=0){
+      const F=L.find(function(f){ return f.stage===STAGES[M.row].n && f.role===(M.col?'boss':'mini'); });
+      if(F){ try{Audio.SFX.select();}catch(_e){} debugStartFight(F); }
+      else { try{Audio.SFX.hit();}catch(_e){} }
+    }
+  }
+}
+function drawDebugFade(dt){
+  const F=_dbgFade; F.t+=dt; const IN=0.45, OUT=0.5;
+  if(F.from==='world' && F.t<IN){
+    try{ drawWorld(0); }catch(_e){ ctx.fillStyle='#000'; ctx.fillRect(0,0,VW,VH); }
+    ctx.setTransform(SS,0,0,SS,0,0);
+    ctx.fillStyle='rgba(0,0,0,'+clamp(F.t/IN,0,1).toFixed(3)+')'; ctx.fillRect(0,0,VW,VH); return;
+  }
+  const t2=F.t-(F.from==='world'?IN:0);
+  if(_bmHost) drawBmHost(dt); else drawDebugMenu(dt, true);
+  ctx.fillStyle='rgba(0,0,0,'+clamp(1-t2/OUT,0,1).toFixed(3)+')'; ctx.fillRect(0,0,VW,VH);
+  if(t2>=OUT){
+    // the fight's leftovers must not draw under the next menu frame or ride into the next fight
+    boss=null; subBoss=null; bossActive=false; subBossActive=false; enemies.length=0; eBullets.length=0; pBullets.length=0;
+    explosions.length=0; particles.length=0; shake=0; whiteBlast=0; timeScale=1;
+    setState(debugReturnState());
+    if(!_bmHost && Audio.startMusic) Audio.startMusic('title');
+  }
+}
+/* ---- the boss mode host screen ---------------------------------------------------------------- */
+function drawBmHost(dt){
+  if(stateT<0.05){ try{ Audio.stopMusic(); }catch(_e){} }
+  ctx.fillStyle='#07080c'; ctx.fillRect(0,0,VW,VH);
+  const p=0.5+0.5*Math.sin(performance.now()/600);
+  ctx.save(); ctx.textAlign='center'; ctx.textBaseline='middle';
+  ctx.font='bold 22px "BOFmil", monospace'; ctx.fillStyle='#ffb040'; ctx.shadowColor='#ff6a1a'; ctx.shadowBlur=12;
+  ctx.fillText('BOSS MODE', VW/2, VH/2-22);
+  ctx.shadowBlur=0; ctx.font='11px "BOFmil", monospace'; ctx.fillStyle='rgba(207,214,224,'+(0.45+0.5*p).toFixed(2)+')';
+  ctx.fillText('ENGINE READY  -  WAITING FOR THE EDITOR', VW/2, VH/2+8);
+  ctx.font='9px "BOFmil", monospace'; ctx.fillStyle='#6f7f8f';
+  ctx.fillText('PRESS PLAY TEST TO LOAD A FIGHT', VW/2, VH/2+26);
+  ctx.restore();
+}
+/* ---- editor overrides ------------------------------------------------------------------------ */
+const BOSSMODE_OVERRIDES={};      // kind -> patch, as saved by the editor
+const _bmStock={};                // kind -> the shipped SHIPBOSS row, taken before the first patch
+const BM_LIVE_FIELDS=['key','name','w','h','ty','hp','hpMul','pat','cd','proj','pats','move','mounts','dmg','drawW','drawH','scene'];
+let _bmArmed=false;               // whether patches are laid onto SHIPBOSS right now
+function _bmClone(o){ return (o===undefined)?undefined:JSON.parse(JSON.stringify(o)); }
+function _bmLay(kind){
+  const D=SHIPBOSS[kind]; if(!D) return false;
+  if(!_bmStock[kind]) _bmStock[kind]=_bmClone(D);
+  for(const k of Object.keys(D)) delete D[k];
+  Object.assign(D, _bmClone(_bmStock[kind]));
+  const patch=_bmArmed?BOSSMODE_OVERRIDES[kind]:null;
+  if(patch) for(const k of BM_LIVE_FIELDS){ if(patch[k]!==undefined) D[k]=_bmClone(patch[k]); }
+  // a live unit of this kind takes the fields shipBossInit copied off the row
+  const b=(typeof boss!=='undefined'&&boss&&boss._ship===kind)?boss:((typeof subBoss!=='undefined'&&subBoss&&subBoss._ship===kind)?subBoss:null);
+  if(b&&!b.dead){ b.name=D.name; b.w=D.w; b.h=D.h; if(D.ty!=null) b.ty=D.ty; if(typeof sceneAttach==='function'){ if(D.scene) sceneAttach(b, D.scene); else b._scene=null; } }
+  return true;
+}
+function bossmodeApplyOverride(kind, patch, opts){
+  opts=opts||{};
+  if(!SHIPBOSS[kind]) return false;
+  if(patch) BOSSMODE_OVERRIDES[kind]=_bmClone(patch); else delete BOSSMODE_OVERRIDES[kind];
+  if(!opts.noSave) bossmodeSaveOverrides();
+  _bmLay(kind);
+  if(opts.hp){ const b=(boss&&boss._ship===kind)?boss:((subBoss&&subBoss._ship===kind)?subBoss:null); const D=SHIPBOSS[kind];
+    if(b&&D){ const mx=D.hp?Math.ceil(D.hp*DIFF.eHp):b.maxhp; b.maxhp=mx; b.hp=Math.min(b.hp,mx); } }
+  return true;
+}
+function bossmodeResetOverride(kind){ return bossmodeApplyOverride(kind, null); }
+function bossmodeOverridesArm(on){ _bmArmed=!!on; for(const k in BOSSMODE_OVERRIDES) _bmLay(k); for(const k in _bmStock) if(!BOSSMODE_OVERRIDES[k]) _bmLay(k); }
+function bossmodeSaveOverrides(){ try{ localStorage.setItem('bof_bossmode', JSON.stringify(BOSSMODE_OVERRIDES)); }catch(_e){} }
+function bossmodeLoadOverrides(){
+  try{ const j=JSON.parse(localStorage.getItem('bof_bossmode')||'{}'); for(const k in j) if(SHIPBOSS[k]) BOSSMODE_OVERRIDES[k]=j[k]; }catch(_e){}
+  if(_bmHost){ debugMenu.overrides=true; bossmodeOverridesArm(true); }   // the host is the editor's engine
+}
+bossmodeLoadOverrides();
+/* every registered key that belongs to a kind's art, for the editor's graphics browser */
+const BM_ART_EXTRA={magmaward:['mwfx_'], infernoreaver:['l23fx_inferno','mwfx_'], rimewall:['l23fx_rime','l23fx_cryo'],
+  cryospear:['l23fx_rime','l23fx_cryo'], stormsovereign:['s4w_'], olivewarden:['s4w_','nsb_olivewarden'], xenoregent:['s5atk_','s5fracture'],
+  blacksteel:['s6atk_','s6mb_','nsb_rap'], junglecruiser:['s1fx_','nsb_jungle'], dualscoopdredger:['s7atk_'], sludgeemperor:['cfx_stage7'],
+  heralddeath:['nhd_'], voidhorizon:['ns9_'], tidalfusion:['ns9_'], chaosharrier:['s5'], quadlaser:['nqx_'], damkeeper:['chopper','death_'],
+  vileexistence:['nvx_','mbv'], doomsdaycarriermk2:['nsb_dcarrmk','s6mb_'], doomsdaycarrier:['nsb_dcarrier'], siegeember:['nsb_siege'],
+  thornrime:['nsb_thorn'], lavamaw:['nvl_'], spawncarrier:['nsb_spawncarrier'], glacierfortress:['mbg3f'], voidbat:['nsb_void']};
+function bossmodeArtKeys(kind){
+  const D=SHIPBOSS[kind], stems=[];
+  if(D){
+    if(D.key) stems.push(D.key.replace(/_(intact|idle|closed|master|damaged|critical|v2)$/,'').replace(/_\d+$/,''));
+    if(D.proj) stems.push('bfx_'+D.proj+'_');
+    (D.dmg||[]).forEach(function(k){ stems.push(k.replace(/_(damaged|critical)$/,'')); });
+  }
+  (BM_ART_EXTRA[kind]||[]).forEach(function(s){ stems.push(s); });
+  const out=[], seen={};
+  const scan=function(keys){ for(const k of keys){ if(seen[k]) continue; for(const s of stems){ if(s && k.indexOf(s)===0){ seen[k]=1; out.push(k); break; } } } };
+  if(window.BOFX){ if(BOFX.cells) scan(Object.keys(BOFX.cells)); if(BOFX.img) scan(Object.keys(BOFX.img)); }
+  return out.sort().slice(0,600);
+}
+/* ============================================================
+   THE SCENE DIRECTOR (drop 0911a)
+
+   Mike: "a boss editor section where it's a scene editor essentially, but with a grid/tile based
+   system ... drag my boss across horizontally, vertically, diagonally, spin, rotate etc.
+   Additionally, we can create zones where the boss would go, attack zones, safe zones for the
+   player, and a list of the in-game projectiles to key to the boss, the flashes, the effects."
+
+   A SCENE is data on a SHIPBOSS row (`scene`, laid on by the editor like any other override):
+
+     grid     {cell}                        the tile size; every position below is in TILES
+     tracks   [{name, trigger, mode, speed, repeat, keys:[{x,y,rot,sx,sy,t,hold,ease,actions}]}]
+     zones    [{name, type:'boss'|'attack'|'safe', x,y,w,h, from,to, phase, telegraph, symbol,
+                anchor, enforce}]
+     ownFire  true   the engine's own pats keep firing under the scene; false = scene actions only
+
+   The director OWNS MOVEMENT only while a track is live. Between tracks the boss runs its own
+   manoeuvre state machine exactly as before, so a scene that only adds zones and a volley or two
+   costs the fight nothing it had. Positions are tiles x the cell, interpolated with the key's own
+   ease; rotation is DEGREES and interpolated raw, so 0 -> 360 is one full spin, not a no-op.
+
+   ⚠ ROTATION HERE IS MIKE'S OWN AUTHORING. shipBossVisualPose carries his standing rule that
+   bosses never bank, roll or flip - that rule is about the ENGINE inventing a tilt on a sideways
+   slide. A rot keyed in the scene editor is a design decision made on purpose, so the pose adds it,
+   and only for a boss that carries a scene with rot on a key.
+
+   ZONES mean something in play, not just in the editor:
+     safe    enemy rounds that enter an active safe zone are removed (enforce:false to record only)
+     attack  telegraphed on the field with the pack's FOV cone / alert symbol / armoured badge while
+             active, and a fire action can aim at it ('zone:NAME')
+     boss    while no track is live, the boss's own manoeuvre is clamped inside it
+   Activity is by time window (from/to on the scene clock), by phase, or by an action toggling it.
+
+   ACTIONS live on keys and run when the key is reached:
+     fire   {shape, kind, anchor, aim, n, spread, speed, burst, interval, step, flash, curve}
+            shapes follow the pack's own pattern sheet: stream, spread, fan, radial, spiral,
+            aimed, sweep, mirrored, wall, rain, sine
+     fx     {fam|size|palette, anchor, dx, dy}       explode() from an anchor
+     flash  {fam, anchor, scale}                     a muzzle flash family from an anchor
+     sfx    {name}      shake {amount}     zone {name, on}
+   `kind:'boss'` (or none) fires the boss's OWN round through _shipShot, so the family, hit box
+   and stage skin are exactly what the fight already fires; any FIRETYPES kind goes through eShootT.
+   ============================================================ */
+const SCENE_SCHEMA='bof-bossscene/1';
+const SCENE_SHAPES=['stream','spread','fan','radial','spiral','aimed','sweep','mirrored','wall','rain','sine'];
+function sceneAttach(b, def){
+  if(!b) return false;
+  if(!def || !def.tracks && !def.zones){ b._scene=null; return false; }
+  b._scene={def:def, t:0, track:null, ti:-1, kf:0, kt:0, dir:1, fired:{}, hold:0, from:null, loops:0,
+            rot:0, sx:1, sy:1, zones:(def.zones||[]).map(function(z){ return Object.assign({}, z); }), done:{}, bursts:[]};
+  sceneWarm(def);
+  return true;
+}
+/* ⚠ XART.rdy IS FALSE ON ITS FIRST CALL - that call is what starts the load. A flash family keyed
+   on a key and first asked for at the moment of firing draws nothing the first time round; the
+   probe measured exactly that (keyed muzzle: 0 flashes). Everything a scene names is touched at
+   attach, which is the whole entrance to decode in. */
+function sceneWarm(def){
+  try{
+    const touch=function(k){ if(k&&typeof XART!=='undefined'){ XART.rdy(k); if(XART._touch) XART._touch(k); } };
+    for(const tr of (def.tracks||[])) for(const k of (tr.keys||[])) for(const a of (k.actions||[])){
+      if(a.flash&&a.flash!=='none') touch(a.flash+'_0');
+      if(a.type==='fx'&&a.fam) touch(a.fam+'_0');
+      if(a.type==='flash'&&a.fam) touch(a.fam+'_0');
+    }
+    for(const z of (def.zones||[])){ const col=z.type==='safe'?'green':(z.type==='attack'?'red':'yellow');
+      if(z.telegraph==='fov'||z.telegraph==='fovtall') touch('bmfx_fov_'+col+'_'+(z.telegraph==='fovtall'?'tall':'wide'));
+      touch('bmfx_alert_'+col+'_danger'); touch('bmfx_badge_'+col); if(z.symbol) touch('bmfx_alert_'+col+'_'+String(z.symbol).replace(/-/g,'_')); }
+  }catch(_e){}
+}
+function sceneGrid(def){ return Math.max(4, (def&&def.grid&&def.grid.cell)||32); }
+function sceneZoneRect(S, z){ const c=sceneGrid(S.def); return {x:z.x*c, y:z.y*c, w:z.w*c, h:z.h*c}; }
+function sceneZoneActive(b, S, z){
+  if(z.on===false) return false;
+  if(z.phase!=null && z.phase!=='' && shipBossPhase(b)!==(z.phase|0)) return false;
+  if(z.from!=null && z.from!=='' && S.t<+z.from) return false;
+  if(z.to!=null && z.to!=='' && S.t>+z.to) return false;
+  return true;
+}
+function sceneTrackReady(b, S, tr, i){
+  if(S.done[i]) return false;
+  const T=tr.trigger||{type:'start'};
+  switch(T.type){
+    case 'time':      return S.t>=(+T.t||0);
+    case 'phase':     return shipBossPhase(b)>=(T.phase|0);
+    case 'hp':        return (b.hp/(b.maxhp||1))<=(T.hp!=null?+T.hp:0.5);
+    case 'proximity': { const P=(typeof targetShip==='function')?targetShip(b.x,b.y):player; return !!P && Math.hypot(P.x-b.x,P.y-b.y)<=(+T.dist||160); }
+    default:          return true;
+  }
+}
+function sceneEase(kind, p){
+  if(kind==='in') return p*p;
+  if(kind==='out') return 1-(1-p)*(1-p);
+  if(kind==='inout') return p<0.5 ? 2*p*p : 1-Math.pow(-2*p+2,2)/2;
+  return p;
+}
+/* the per-frame owner of a boss with a scene. Returns true while a TRACK is moving the hull. */
+function sceneDirectorTick(b, dt){
+  const S=b&&b._scene; if(!S||!S.def) return false;
+  S.t+=dt;
+  sceneZoneTick(b, S, dt);
+  sceneBurstTick(b, S, dt);
+  if(S.def.ownFire===false) b.fireCd=Math.max(b.fireCd||0, 0.5);   // the engine's own pats stay quiet
+  if(!S.track){
+    const trs=S.def.tracks||[];
+    for(let i=0;i<trs.length;i++){
+      if(trs[i]&&trs[i].keys&&trs[i].keys.length&&sceneTrackReady(b,S,trs[i],i)){
+        S.track=trs[i]; S.ti=i; S.kf=0; S.kt=0; S.dir=1; S.fired={}; S.hold=0; S.from=null; S.loops=0; break;
+      }
+    }
+  }
+  const tr=S.track; if(!tr) return false;
+  const keys=tr.keys, cell=sceneGrid(S.def), spd=Math.max(0.05,+tr.speed||1);
+  const cur=keys[S.kf]; if(!cur){ S.track=null; return false; }
+  if(!S.from){ S.from={x:b.x, y:b.y, rot:S.rot||0, sx:S.sx||1, sy:S.sy||1}; S.kt=0; }
+  const dur=Math.max(0.0001, (cur.t!=null?+cur.t:1)/spd);
+  S.kt+=dt;
+  const p=Math.min(1, S.kt/dur), e=sceneEase(cur.ease, p);
+  const tx=(+cur.x||0)*cell, ty=(+cur.y||0)*cell, trot=(+cur.rot||0)*Math.PI/180;
+  const tsx=(cur.sx!=null&&cur.sx!=='')?+cur.sx:1, tsy=(cur.sy!=null&&cur.sy!=='')?+cur.sy:1;
+  b.x=S.from.x+(tx-S.from.x)*e; b.y=S.from.y+(ty-S.from.y)*e;
+  S.rot=S.from.rot+(trot-S.from.rot)*e;
+  S.sx=S.from.sx+(tsx-S.from.sx)*e; S.sy=S.from.sy+(tsy-S.from.sy)*e;
+  if(p>=1){
+    if(!S.fired[S.kf]){ S.fired[S.kf]=true; sceneRunActions(b, S, cur.actions||[]); S.hold=(+cur.hold||0)/spd; }
+    S.hold-=dt;
+    if(S.hold<=0){
+      S.from={x:tx, y:ty, rot:trot, sx:tsx, sy:tsy}; S.kt=0;
+      let n=S.kf+S.dir;
+      if(n>=keys.length || n<0){
+        S.loops++;
+        const rep=(+tr.repeat||0);
+        if(tr.mode==='loop' && !(rep&&S.loops>=rep)){ n=0; S.fired={}; }
+        else if(tr.mode==='pingpong' && !(rep&&S.loops>=rep)){ S.dir=-S.dir; n=S.kf+S.dir; S.fired={}; if(n<0||n>=keys.length) n=S.kf; }
+        else { S.done[S.ti]=true; S.track=null; S.from=null; S.rot=trot; return true; }
+      }
+      S.kf=n;
+    }
+  }
+  return true;
+}
+/* while no track owns the hull, a `boss` zone fences the engine's own manoeuvre */
+function sceneClampTick(b){
+  const S=b&&b._scene; if(!S||S.track) return;
+  for(const z of S.zones){
+    if(z.type!=='boss' || !sceneZoneActive(b,S,z)) continue;
+    const r=sceneZoneRect(S,z);
+    b.x=clamp(b.x, r.x, r.x+r.w); b.y=clamp(b.y, r.y, r.y+r.h);
+    if(b.ty!=null) b.ty=clamp(b.ty, r.y, r.y+r.h);
+    break;
+  }
+}
+function sceneZoneTick(b, S, dt){
+  for(const z of S.zones){
+    if(z.type!=='safe' || z.enforce===false || !sceneZoneActive(b,S,z)) continue;
+    const r=sceneZoneRect(S,z);
+    for(const q of eBullets){
+      if(q.dead) continue;
+      if(q.x>=r.x && q.x<=r.x+r.w && q.y>=r.y && q.y<=r.y+r.h){
+        q.dead=true;
+        if(z.fizzle!==false && Math.random()<0.5) explode(q.x, q.y, 9, 'blue');
+      }
+    }
+  }
+}
+function sceneRunActions(b, S, acts){
+  for(const a of acts){ try{ sceneAction(b, S, a); }catch(e){ if(typeof DBG!=='undefined'&&DBG.verbose) console.error('scene action', a&&a.type, e); } }
+}
+function sceneAction(b, S, a){
+  if(!a) return;
+  switch(a.type){
+    case 'fire':  S.bursts.push({a:a, i:0, n:Math.max(1,a.burst|0||1), next:0, phase:0}); break;
+    case 'fx': {
+      const m=a.anchor?shipBossMount(b,a.anchor):{x:b.x,y:(b._drawY!=null?b._drawY:b.y)};
+      explode(m.x+(+a.dx||0), m.y+(+a.dy||0), +a.size||40, a.palette||'red', null, a.fam||null); break;
+    }
+    case 'flash': {
+      const m=shipBossMount(b, a.anchor||'C');
+      navalFlash(null, m, +a.scale||1, a.fam||'bpfx_muzzle_kinetic', {n:+a.n||6, hpx:+a.hpx||40, life:+a.life||0.16}); break;
+    }
+    case 'sfx':   if(typeof Audio!=='undefined'&&Audio.SFX&&typeof Audio.SFX[a.name]==='function') Audio.SFX[a.name](); break;
+    case 'shake': shake=Math.max(shake, +a.amount||6); break;
+    case 'zone':  { const z=S.zones.find(function(z){ return z.name===a.name; }); if(z) z.on=(a.on!==false); break; }
+  }
+}
+function sceneAim(b, S, a, m){
+  if(a.aim==='player' || a.shape==='aimed'){ const P=(typeof targetShip==='function')?targetShip(m.x,m.y):player; if(P) return Math.atan2(P.y-m.y, P.x-m.x); }
+  if(typeof a.aim==='string' && a.aim.indexOf('zone:')===0){
+    const z=S.zones.find(function(z){ return z.name===a.aim.slice(5); });
+    if(z){ const r=sceneZoneRect(S,z); return Math.atan2(r.y+r.h/2-m.y, r.x+r.w/2-m.x); }
+  }
+  return (a.angle!=null&&a.angle!=='') ? (+a.angle)*Math.PI/180 : Math.PI/2;   // degrees, 90 = straight down
+}
+function sceneRound(b, a, x, y, ang, i){
+  const sp=(+a.speed||3);
+  if(!a.kind || a.kind==='boss'){ _shipShot(x, y, Math.cos(ang)*sp, Math.sin(ang)*sp, +a.w||11, b); return; }
+  eShootT(x, y, ang, sp, a.kind, {w:+a.w||undefined, h:+a.h||undefined, curve:+a.curve||0, silent:i>0});
+}
+/* one beat of a fire action: the shape decides how many rounds and where */
+function sceneEmitBeat(b, S, a, beat){
+  const anchor=a.anchor||'C';
+  const m=shipBossMount(b, anchor);
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  const base=sceneAim(b, S, a, m), n=Math.max(1, a.n|0||1), spread=(+a.spread||40)*Math.PI/180, step=(+a.step||20)*Math.PI/180;
+  const shape=a.shape||'stream';
+  let i=0;
+  const fire=function(x,y,ang){ sceneRound(b, a, x, y, ang, i++); };
+  switch(shape){
+    case 'spread': case 'fan':
+      for(let k=0;k<n;k++){ const t=(n===1)?0:(k/(n-1)-0.5); fire(m.x, m.y, base+t*spread); } break;
+    case 'radial': case 'ring':
+      for(let k=0;k<n;k++) fire(m.x, m.y, base+k*(Math.PI*2/n)); break;
+    case 'spiral':
+      fire(m.x, m.y, base+beat*step*(a.ccw?-1:1)); break;
+    case 'sweep': {
+      const c=base+(beat-(Math.max(1,a.burst|0||1)-1)/2)*step;
+      for(let k=0;k<n;k++){ const t=(n===1)?0:(k/(n-1)-0.5); fire(m.x, m.y, c+t*spread); } break;
+    }
+    case 'mirrored':
+      fire(m.x, m.y, base-spread/2); fire(m.x, m.y, base+spread/2); break;
+    case 'wall': {
+      const gap=(a.gap!=null&&a.gap!=='')?(a.gap|0):-1;
+      for(let k=0;k<n;k++){ if(k===gap) continue; fire((k+0.5)*W/n, m.y, Math.PI/2); } break;
+    }
+    case 'rain':
+      for(let k=0;k<n;k++) fire(Math.random()*W, (typeof viewTopY==='function'?viewTopY():0)-8, Math.PI/2); break;
+    case 'sine':
+      fire(m.x, m.y, base); break;
+    default:  // stream, aimed
+      fire(m.x, m.y, base);
+  }
+  if(a.flash!=='none'){
+    if(a.flash) navalFlash(null, m, +a.flashScale||1, a.flash, {n:+a.flashN||6, hpx:+a.flashPx||40, life:0.16, follow:function(){ return shipBossMount(b, anchor); }});
+    else shipBossMuzzleStart(b, [anchor]);
+  }
+  if(a.sfx && typeof Audio!=='undefined'&&Audio.SFX&&typeof Audio.SFX[a.sfx]==='function') Audio.SFX[a.sfx]();
+}
+function sceneBurstTick(b, S, dt){
+  if(!S.bursts.length) return;
+  for(const q of S.bursts){
+    q.next-=dt;
+    while(q.next<=0 && q.i<q.n){
+      if(q.a.shape==='sine') q.a=Object.assign({}, q.a, {curve:(q.i&1?1:-1)*(+q.a.curveAmt||0.5)});
+      sceneEmitBeat(b, S, q.a, q.i); q.i++; q.next+=Math.max(0.02, +q.a.interval||0.1);
+    }
+  }
+  S.bursts=S.bursts.filter(function(q){ return q.i<q.n; });
+}
+/* ---- the field: zone telegraphs in play, the design overlay under the debug toggle ---------- */
+function sceneDrawZone(b, S, z){
+  const r=sceneZoneRect(S,z);
+  const col=z.type==='safe'?'green':(z.type==='attack'?'red':'yellow');
+  const rgb=col==='green'?'90,255,130':(col==='red'?'255,64,64':'255,210,48');
+  ctx.save();
+  const tg=z.telegraph;
+  if(tg==='fov'||tg==='fovtall'){
+    const k='bmfx_fov_'+col+'_'+(tg==='fovtall'?'tall':'wide');
+    if(XART.rdy(k)){
+      const im=XART.get(k), m=shipBossMount(b, z.anchor||'C');
+      const h=Math.max(40, (r.y+r.h)-m.y), w=h*(tg==='fovtall'?0.5:1.0)*1.25;
+      /* the plates are alpha 128 by authoring - drawn at opacity 1, per the pack README */
+      ctx.drawImage(im, m.x-w/2, m.y, w, h);
+    }
+  } else if(tg==='rect'||tg==='badge'||tg==='symbol'||(!tg&&z.type!=='boss')){
+    ctx.fillStyle='rgba('+rgb+',0.14)'; ctx.fillRect(r.x, r.y, r.w, r.h);
+    ctx.strokeStyle='rgba('+rgb+',0.75)'; ctx.lineWidth=1.5; ctx.setLineDash([6,4]); ctx.strokeRect(r.x+0.5, r.y+0.5, r.w-1, r.h-1); ctx.setLineDash([]);
+    const sym=(tg==='badge')?('bmfx_badge_'+col):(z.symbol?('bmfx_alert_'+col+'_'+String(z.symbol).replace(/-/g,'_')):(z.type==='attack'?('bmfx_alert_'+col+'_danger'):null));
+    if(sym && XART.rdy(sym)){
+      const im=XART.get(sym), s=Math.max(16, Math.min(44, r.w*0.5, r.h*0.5));
+      ctx.globalAlpha=0.7+0.3*Math.sin(S.t*6);
+      ctx.drawImage(im, r.x+r.w/2-s/2, r.y+r.h/2-s/2, s, s); ctx.globalAlpha=1;
+    }
+  }
+  ctx.restore();
+}
+function sceneDrawWorld(){
+  const overlay=(typeof debugUnlocked!=='undefined'&&debugUnlocked&&debugMenu.sceneOverlay);
+  for(const b of [boss, subBoss]){
+    if(!b||!b._scene||b.dead) continue;
+    const S=b._scene;
+    for(const z of S.zones){
+      if(!sceneZoneActive(b,S,z)) continue;
+      if(z.telegraph || overlay) sceneDrawZone(b, S, z);
+    }
+    if(overlay && S.track && S.track.keys){
+      const c=sceneGrid(S.def); ctx.save(); ctx.strokeStyle='rgba(74,168,255,0.8)'; ctx.lineWidth=1.5; ctx.beginPath();
+      S.track.keys.forEach(function(k,i){ const x=(+k.x||0)*c, y=(+k.y||0)*c; if(i) ctx.lineTo(x,y); else ctx.moveTo(x,y); }); ctx.stroke();
+      S.track.keys.forEach(function(k,i){ const x=(+k.x||0)*c, y=(+k.y||0)*c; ctx.fillStyle=(i===S.kf)?'#8de23a':'#4aa8ff'; ctx.beginPath(); ctx.arc(x,y,4,0,TAU); ctx.fill(); });
+      ctx.restore();
+    }
+  }
+}
+function sceneSnapshot(b){
+  const S=b&&b._scene; if(!S) return null;
+  return {t:S.t, track:S.ti, trackName:(S.track&&S.track.name)||null, kf:S.kf, kt:S.kt, rotDeg:S.rot*180/Math.PI, sx:S.sx, sy:S.sy,
+          zones:S.zones.map(function(z){ return {name:z.name, type:z.type, active:sceneZoneActive(b,S,z)}; }), bursts:S.bursts.length, done:Object.keys(S.done).length};
+}
+/* ---- the editor's window onto the engine ----------------------------------------------------- */
+try{
+window.BOSSMODE={
+  host:_bmHost, version:'0910a',
+  get state(){ return state; }, get stateT(){ return stateT; }, GS:GS,
+  get ready(){ return (typeof ASSETS!=='undefined') && !!ASSETS.ready && state!==GS.BOOT && state!==GS.LOADING && state!==GS.ATTRACT; },
+  fights:debugFightList, name:debugBossName,
+  tables:function(){ return {SHIPBOSS:SHIPBOSS, STAGES:STAGES, SUBBOSS:SUBBOSS, MEGABOSS:MEGABOSS, NEWBOSS:NEWBOSS, MINIBOSS:MINIBOSS,
+    PILOTS:PILOTS, SHIP_ACTION_PROFILE:(typeof SHIP_ACTION_PROFILE!=='undefined')?SHIP_ACTION_PROFILE:null,
+    BOSS_HP_FLOOR:BOSS_HP_FLOOR, MINIBOSS_HP_FLOOR:MINIBOSS_HP_FLOOR, DEBUG_BOSS_SCROLL:DEBUG_BOSS_SCROLL, DIFF:DIFF}; },
+  patternSlots:function(pat,step){ return shipBossPatternSlots(pat,step|0); },
+  start:function(stage, role, pilot, record){ const F=debugFightFor(stage|0, role); return F?debugStartFight(F,{pilot:pilot,record:!!record}):false; },
+  stop:function(){ if(debugFight) setState(GS.STAGECLEAR); else if(state!==GS.BMHOST&&_bmHost) setState(GS.BMHOST); },
+  pause:function(on){ if(on&&state===GS.PLAY) setState('paused'); else if(!on&&state==='paused') setState(GS.PLAY); },
+  get fight(){ return debugFight; }, get boss(){ return boss; }, get subBoss(){ return subBoss; },
+  get player(){ return player; }, get run(){ return run; }, get enemies(){ return enemies; }, get eBullets(){ return eBullets; },
+  snapshot:function(){
+    const b=(bossActive&&boss)?boss:((subBossActive&&subBoss)?subBoss:(boss||subBoss));
+    const o={state:state, fight:debugFight, warnT:warnT, bossActive:bossActive, subBossActive:subBossActive, bossDefeated:bossDefeated,
+      stageEnding:stageEnding, eBullets:eBullets.length, enemies:enemies.length, recording:debugRecActive(), timeScale:timeScale,
+      lives:run.lives, score:run.score, player:{x:player.x,y:player.y,dead:!!player.dead,invuln:player.invuln},
+      camX:(typeof camX==='number')?camX:0, vz:(typeof viewZoom==='function')?viewZoom():1, VW:VW, VH:VH,
+      worldW:(typeof worldWidth==='function')?worldWidth():VW, scene:(b&&typeof sceneSnapshot==='function')?sceneSnapshot(b):null, overlay:!!debugMenu.sceneOverlay};
+    if(b) o.boss={kind:b.kind, name:b.name, ship:b._ship||null, hp:b.hp, maxhp:b.maxhp, x:b.x, y:b.y, w:b.w, h:b.h, t:b.t, dead:!!b.dead,
+      dying:b.dying||0, enter:!!b.enter, phase:b.phase, pat:b._pat||b.pat||null, step:b._sbStep, fireCd:b.fireCd, sub:!!b.sub, mini:!!b.mini};
+    return o;
+  },
+  override:{ apply:bossmodeApplyOverride, reset:bossmodeResetOverride, arm:bossmodeOverridesArm, get armed(){ return _bmArmed; },
+    get:function(k){ return BOSSMODE_OVERRIDES[k]||null; }, all:function(){ return BOSSMODE_OVERRIDES; },
+    stock:function(k){ return _bmStock[k]||SHIPBOSS[k]||null; }, live:function(k){ return SHIPBOSS[k]||null; } },
+  art:{ rdy:function(k){ return XART.rdy(k); }, raw:function(k){ return XART.raw(k); }, keysFor:bossmodeArtKeys,
+    cell:function(k){ return (window.BOFX&&BOFX.cells)?BOFX.cells[k]:null; }, img:function(k){ return (window.BOFX&&BOFX.img)?BOFX.img[k]:null; } },
+  rec:{ start:debugRecStart, stop:debugRecStop, active:debugRecActive, last:function(){ return debugRec.last; } },
+  setInvuln:function(v){ player.invuln=v?1e9:0; }, setTimeScale:function(v){ timeScale=Math.max(0.05,Math.min(2,+v||1)); },
+  setBossHp:function(v){ const b=(bossActive&&boss)?boss:((subBossActive&&subBoss)?subBoss:null); if(b){ b.hp=Math.max(1,Math.min(b.maxhp,+v||1)); } },
+  /* the death BRANCHES, not a hit: barriers (magmaward), wing pools (blacksteel) and part gates
+     (quadlaser) all absorb a hit before the hull sees it, so hp=1 + hitX() killed nothing */
+  kill:function(){
+    if(boss&&bossActive&&!boss.dead){ boss.hp=0; bossDie(); return true; }
+    if(subBoss&&subBossActive&&!subBoss.dead){ const b=subBoss; b.hp=0; b.dead=true; b.dying=0; b._jcGhost=false;
+      if(b._ship==='magmaward'&&typeof magmaWardFinish==='function') magmaWardFinish(b);
+      try{ Audio.SFX.expBig(); }catch(_e){} shake=Math.max(shake,10); return true; }
+    return false;
+  },
+  injectTap:function(k){ Input.injectTap(k); },
+  /* 0912: the charge, the balls and the bind table, read-only, so a probe asserts the ENGINE's
+     answer rather than its own copy of the rule. grantSpecial is the crate without the crate. */
+  binds:function(){ return keybind; }, binds2:function(){ return keybind2; },
+  /* hold a key DOWN, which injectTap cannot do - a tap is an edge and the charge is a hold.
+     Input is lexical, so a probe has no other way to reach it. */
+  hold:function(k,on){ Input.keys[k]=!!on; if(on) Input.injectTap(k); },
+  ctrlActs:function(){ return CTRL_ACTS.slice(); },
+  chargeAvailable:function(){ try{ return chargeAvailable(); }catch(_){ return false; } },
+  chargeLevel:function(){ try{ return chargeLevel(); }catch(_){ return 0; } },
+  chargeDashing:function(){ try{ return chargeDashing(); }catch(_){ return false; } },
+  grantSpecial:function(){ try{ startSpecial(); return true; }catch(_){ return false; } },
+  wreck:function(){ return wreckBalls; },
+  barRows:function(){ try{ return barRows(); }catch(_){ return null; } },
+  get win(){ return window; },
+  /* the manoeuvre reels, so a probe can assert WHICH frames a flip walked rather than only that
+     a flag was set - that is the difference between 'she somersaults' and 'she plays someone
+     else's reel'. Read-only, and both already exist. */
+  somerFrameKey:function(){ try{ return somerFrameKey(); }catch(_){ return null; } },
+  rollFrameKey:function(){ try{ return rollFrameKey(); }catch(_){ return null; } },
+  somersaultAvailable:function(){ try{ return somersaultAvailable(); }catch(_){ return false; } },
+  /* the scene editor's half (0911a): attach a scene to the LIVE boss without saving it, fire one action for a preview,
+     read the runtime state, toggle the in-play overlay, and list the art the palette can key */
+  scene:{ attach:function(def){ const b=(bossActive&&boss)?boss:((subBossActive&&subBoss)?subBoss:null); return !!(b&&sceneAttach(b,def)); },
+          detach:function(){ const b=(bossActive&&boss)?boss:((subBossActive&&subBoss)?subBoss:null); if(b) b._scene=null; return !!b; },
+          state:function(){ const b=(bossActive&&boss)?boss:((subBossActive&&subBoss)?subBoss:null); return b?sceneSnapshot(b):null; },
+          action:function(a){ const b=(bossActive&&boss)?boss:((subBossActive&&subBoss)?subBoss:null); if(!b) return false; if(!b._scene) sceneAttach(b,{zones:[],tracks:[]}); sceneAction(b,b._scene,a); return true; },
+          overlay:function(on){ debugMenu.sceneOverlay=!!on; }, shapes:SCENE_SHAPES, schema:SCENE_SCHEMA,
+          kinds:function(){ return Object.keys(FIRETYPES); },
+          fx:function(){ const out={muzzle:[],explode:[],round:[]}; const seen={}; const keys=Object.keys(BOFX.cells).concat(Object.keys(BOFX.img));
+            for(const k of keys){ let m; if((m=k.match(/^(bpfx_muzzle_[a-z]+|bfx_[a-z]+_m|mfx_(?:bmg|bshot|spr)_\d|s1fx_[a-z_]+?|mlaunch)_0$/))){ if(!seen[m[1]]){ seen[m[1]]=1; out.muzzle.push(m[1]); } }
+              else if((m=k.match(/^(nxp_[a-z]+|nx_[a-z]+|nex_[a-z]+|s1fx_[a-z_]+?)_0$/))){ if(!seen[m[1]]){ seen[m[1]]=1; out.explode.push(m[1]); } }
+              else if((m=k.match(/^(bfx_[a-z]+_p)_0$/))){ if(!seen[m[1]]){ seen[m[1]]=1; out.round.push(m[1]); } } }
+            out.muzzle.sort(); out.explode.sort(); out.round.sort(); return out; },
+          sfx:function(){ try{ return Object.keys(Audio.SFX).filter(function(k){ return typeof Audio.SFX[k]==='function'; }).sort(); }catch(e){ return []; } } },
+};
+
+/* ============================================================
+   BULLETS OF DEBUG! — THE BRIDGE (Mike, 0912g)
+
+   "Make an additional extension to my Boss Mode Debug Editor but overall for the entire game
+   outside of the bosses, calling it 'Bullets of Debug!' ... adjust everything from the level
+   backgrounds, waves, enemies, projectiles, master game stuff, menu layouts, button layouts ...
+   demo how enemies operate and like bosses, change their properties, data, hp, speed, attack,
+   firing range, etc."
+
+   window.BOSSMODE is the boss editor's surface. This is its sibling for everything else.
+
+   ⚠ WHY A BRIDGE IS NEEDED AT ALL, given the editor is same-origin and can reach into the iframe.
+   MEASURED, not assumed: every column-0 `function` declaration in game.js IS a property of the
+   iframe window — spawnEnemy, eShootT, eShoot, sceneEmitBeat, aiShadowDraw, buildStagePlan,
+   encounterRipple, _levelCfg, updatePlay and drawWorld all resolve as 'function' from the parent —
+   and `window.XART` / `window.BOFX` are explicitly exported. So the editor needs NO help to call
+   behaviour.
+
+   What it cannot reach is the DATA. Every roster table is a `const` at module scope, i.e. a
+   lexical binding and not a window property: S1_TANKS, NEF_S1, PROJ, FIRETYPES, ENEMY_VOLLEY,
+   STAGE_AI_PROFILE and L6_FLEET all measured `undefined` from the parent frame. The same is true
+   of the live arrays — `enemies`, `eBullets`, `pBullets`, `particles` are NOT on window; only
+   BOSSMODE's getters reach them. THAT is what this object exists to hand over.
+
+   ⚠ EVERY ARRAY IS A GETTER, NEVER A STORED REFERENCE. `enemies` is REASSIGNED once per frame at
+   the cull (`enemies=enemies.filter(e=>!e.dead)`), so an editor that grabs the array once is
+   reading a corpse from the next frame onward. Same shape as the BOSSMODE getters above.
+   ============================================================ */
+window.BOFDEBUG=(function(){
+  /* the roster tables, by reference so an edit through this object is an edit to the live table.
+     ⚠ NOT every enemy is in a table: 17 legacy types exist only as hand-written switch bodies
+     inside spawnEnemy, and they have no row to hand back. roster() reports those with row:null
+     rather than pretending, so the editor can grey them instead of showing empty fields. */
+  /* ⚠ THE CAMERA TRANSLATE IS CONDITIONAL, SO `camX` ALONE IS NOT THE OFFSET THAT WAS DRAWN.
+     drawWorld only applies translate(-camX) when worldWidth() > viewW(); on a stage that does not
+     scroll the variable can hold a stale value that NOTHING subtracted. An overlay trusting it
+     there is adrift by exactly that amount - the inverse of the bug it was added to fix. Report
+     what the frame actually used. */
+  function _camEff(){
+    try{
+      if(typeof worldWidth!=='function'||typeof viewW!=='function') return camX||0;
+      return (worldWidth()>viewW()) ? (camX||0) : 0;
+    }catch(e){ return 0; }
+  }
+  function _tables(){
+    const T={};
+    const put=function(n,v){ if(typeof v!=='undefined' && v) T[n]=v; };
+    try{ put('S1_TANKS',S1_TANKS); }catch(e){}
+    try{ put('S1_JETS',S1_JETS); }catch(e){}
+    try{ put('NEF_S1',NEF_S1); }catch(e){}
+    try{ put('NEF_S2',NEF_S2); }catch(e){}
+    try{ put('NEF_S3',NEF_S3); }catch(e){}
+    try{ put('VOLC',VOLC); }catch(e){}
+    try{ put('S3ICE',S3ICE); }catch(e){}
+    try{ put('S4CHASE',S4CHASE); }catch(e){}
+    try{ put('S5SPACE',S5SPACE); }catch(e){}
+    try{ put('S6STORM',S6STORM); }catch(e){}
+    try{ put('S7TOXIC',S7TOXIC); }catch(e){}
+    try{ put('S8MEGA',S8MEGA); }catch(e){}
+    try{ put('S9VOID',S9VOID); }catch(e){}
+    try{ put('S9_UNITS',S9_UNITS); }catch(e){}
+    try{ put('SEWER',SEWER); }catch(e){}
+    try{ put('ORBITAL',ORBITAL); }catch(e){}
+    try{ put('ELITEX',ELITEX); }catch(e){}
+    try{ put('ELITE8',ELITE8); }catch(e){}
+    try{ put('L6_FLEET',L6_FLEET); }catch(e){}
+    try{ put('L6X',L6X); }catch(e){}
+    try{ put('L6JETS',L6JETS); }catch(e){}
+    try{ put('DRONE_BEHAV',DRONE_BEHAV); }catch(e){}
+    try{ put('ENEMY_VOLLEY',ENEMY_VOLLEY); }catch(e){}
+    try{ put('ENEMY_ART',ENEMY_ART); }catch(e){}
+    try{ put('EX8_PROFILE',EX8_PROFILE); }catch(e){}
+    try{ put('PROJ',PROJ); }catch(e){}
+    try{ put('FIRETYPES',FIRETYPES); }catch(e){}
+    try{ put('STAGE_AI_PROFILE',STAGE_AI_PROFILE); }catch(e){}
+    try{ put('STAGES',STAGES); }catch(e){}
+    try{ put('SUBBOSS',SUBBOSS); }catch(e){}
+    try{ put('PILOTS',PILOTS); }catch(e){}
+    return T;
+  }
+  /* the union of every reachable enemy name, with the table it came from.
+     ⚠ NAMES COLLIDE ACROSS TABLES - 'talon' is in ELITE8 and L6JETS, 'lance' in VOLC and L6JETS -
+     so the row carries its table name and the editor must key on type+table, never on type alone. */
+  function _roster(){
+    const T=_tables(), out=[], seen={};
+    const SKIP={ENEMY_ART:1,PROJ:1,FIRETYPES:1,STAGE_AI_PROFILE:1,STAGES:1,SUBBOSS:1,PILOTS:1,
+                EX8_PROFILE:1,DRONE_BEHAV:1,ENEMY_VOLLEY:1};
+    for(const tn in T){
+      if(SKIP[tn]) continue;
+      const tab=T[tn];
+      if(!tab || typeof tab!=='object' || Array.isArray(tab)) continue;
+      for(const k in tab){
+        out.push({type:k, table:tn, row:tab[k]});
+        seen[k]=1;
+      }
+    }
+    /* the hand-coded ones, which have no row at all */
+    for(const k of ['assault','bcarrier','drone','gunboat','gunship','htank','jet_cic','jetflyby',
+                    'jungletank','mech','mine','octo','roadtank','sandtank','stationship','scout','intcp'])
+      if(!seen[k]) out.push({type:k, table:'(switch body)', row:null});
+    out.sort(function(a,b){ return a.type<b.type?-1:a.type>b.type?1:0; });
+    return out;
+  }
+  /* THE LAB: a quiet field with no waves, no boss and no death, so one unit can be watched.
+     Modelled on debugJump, which already knows how to silence a stage (waveIdx spent, crates
+     cleared) - the difference is that this one does NOT raise a boss. */
+  let _lab=false, _labStage=1;
+  function labOn(stage){
+    _labStage=Math.max(1,Math.min(9,stage|0||1));
+    try{
+      run.mode='arcade';
+      if(typeof coopOn!=='undefined') coopOn=false;
+      startRun(_labStage);
+      setState(GS.PLAY);
+      /* spend the wave script and the boss gate: nothing arrives unless the editor asks */
+      waveIdx=999; spawnClock=9999; stageTimer=0;
+      if(typeof nextWave!=='undefined') nextWave=0;
+      player.invuln=1e9;
+      clear();
+      _lab=true;
+      return true;
+    }catch(e){ _lab=false; return false; }
+  }
+  function labOff(){ _lab=false; try{ setState(GS.BMHOST); }catch(e){} }
+  function clear(){
+    try{
+      enemies.length=0; eBullets.length=0; pBullets.length=0;
+      if(typeof powerups!=='undefined') powerups.length=0;
+      if(typeof particles!=='undefined') particles.length=0;
+      if(typeof explosions!=='undefined') explosions.length=0;
+    }catch(e){}
+  }
+  /* ⚠ spawnEnemy RETURNS null ON THREE PATHS (the _DELETE set, the TURRET_TYPES gate, and the
+     drone branch, which builds a different object). It also does not return the enemy on every
+     path, so the spawned unit is taken off the END of the live array rather than from the call. */
+  function spawn(type, x, y, opt){
+    const n0=enemies.length;
+    let r=null;
+    try{ r=spawnEnemy(type, (x==null?VW/2:x), (y==null?120:y), opt||{}); }catch(e){ return {err:String(e).slice(0,200)}; }
+    const e=(enemies.length>n0)?enemies[enemies.length-1]:(r||null);
+    if(!e) return {err:'spawnEnemy produced nothing - '+type+' is gated (_DELETE / TURRET_TYPES) or drone-routed'};
+    return e;
+  }
+  /* every movement pattern the engine dispatches, read off the switch rather than listed by hand */
+  function patterns(){
+    const src=(typeof updatePlay==='function')?updatePlay.toString():'';
+    const m=src.match(/case\s*'([a-z0-9_]+)'\s*:/gi)||[];
+    const out={};
+    for(const c of m){ const k=/'([a-z0-9_]+)'/i.exec(c); if(k) out[k[1]]=1; }
+    return Object.keys(out).sort();
+  }
+  return {
+    version:'0912g',
+    get ready(){ return typeof spawnEnemy==='function' && typeof XART!=='undefined'; },
+    get state(){ return state; },
+    tables:_tables,
+    roster:_roster,
+    /* ⚠ getters, never stored refs - `enemies` is reassigned by the cull every frame */
+    get enemies(){ return enemies; },
+    get eBullets(){ return eBullets; },
+    get pBullets(){ return pBullets; },
+    get player(){ return player; },
+    get run(){ return run; },
+    lab:{ on:labOn, off:labOff, get active(){ return _lab; }, get stage(){ return _labStage; } },
+    spawn:spawn, clear:clear, patterns:patterns,
+    /* fire any pattern off any enemy. sceneEmitBeat needs (b,S,a,beat) and only reads x/y/w/h off
+       `b` via shipBossMount - measured working on a plain object with no boss anywhere. */
+    emit:function(e, act, beat){
+      try{ sceneEmitBeat(e, {grid:{cell:32,w:15,h:16}}, act||{}, beat|0); return true; }
+      catch(err){ return String(err).slice(0,200); }
+    },
+    /* ⚠ TWO PATTERN VOCABULARIES EXIST AND THEY ARE NOT THE SAME LIST. `shapes()` is the SCENE
+       DIRECTOR's - what sceneEmitBeat dispatches, i.e. what the bosses fire. `volleyPatterns()` is
+       what ORDINARY enemies fire through ENEMY_VOLLEY, which runs on its OWN clock outside the
+       `if(e.shoots)` dispatch (0810x/0819a). They overlap on `fan` and `wall` and agree nowhere
+       else, so an editor offering one list for both would silently mis-name half of them. */
+    shapes:function(){
+      /* derived from the dispatch, not hand-listed - a shape added to the director appears here
+         with nothing to update. The literal list below is the FALLBACK for a minified build. */
+      const src=(typeof sceneEmitBeat==='function')?sceneEmitBeat.toString():'';
+      const m=src.match(/case\s*'([a-z0-9_]+)'\s*:/gi)||[];
+      const out={};
+      for(const c of m){ const k=/'([a-z0-9_]+)'/i.exec(c); if(k) out[k[1]]=1; }
+      const got=Object.keys(out);
+      return got.length>=6 ? got.sort()
+        : ['aimed','fan','mirrored','radial','rain','ring','sine','spiral','spread','stream','sweep','wall'];
+    },
+    /* every pattern ENEMY_VOLLEY actually names, counted - measured 8: wall 18, fan 17, rake 17,
+       pincer 13, salvo 6, stagger 5, ripple 3, curtain 2. */
+    volleyPatterns:function(){
+      const out={};
+      try{
+        for(const k in ENEMY_VOLLEY){ const r=ENEMY_VOLLEY[k];
+          if(r.pat) out[r.pat]=(out[r.pat]||0)+1;
+          if(r.alt) r.alt.forEach(function(a){ out[a]=(out[a]||0)+1; }); }
+      }catch(e){}
+      return Object.keys(out).sort().map(function(k){ return {pat:k, uses:out[k]}; });
+    },
+    /* ⚠ ENEMY_VOLLEY IS KEYED IN BOTH SPELLINGS ON PURPOSE - `s1jetdelta` AND `s1jetDelta` are
+       separate rows pointing at the same data (0811l: "BOTH SPELLINGS ARE REQUIRED"; rosterKey()
+       normalises it). 52 rows cover 50 distinct types. An editor writing only one spelling would
+       edit a row half the engine does not read. */
+    volleyFor:function(type){
+      if(!type) return null;
+      try{
+        const k=(typeof rosterKey==='function')?rosterKey(type):String(type).toLowerCase();
+        const r=ENEMY_VOLLEY[k]||ENEMY_VOLLEY[type]||ENEMY_VOLLEY[String(type).toLowerCase()];
+        return r? {key:k, row:JSON.parse(JSON.stringify(r))} : {key:k, row:null};
+      }catch(e){ return null; }
+    },
+    /* the projectile registries, joined the way the engine reads them.
+       ⚠ PROJ IS A CLASSIFICATION, NOT THE ART (0905e). Measured: 106 kinds collapse to just 16
+       distinct {type,slot} pairs, and `_dedicated` sends any s[1-9] kind to its own FIRETYPES row
+       regardless of what PROJ says - stage 3's shards classify as `comet` and draw as authored
+       silhouettes. So the editor must show BOTH columns and never present PROJ's type as the art. */
+    fireKinds:function(){
+      const out=[]; const seen={};
+      let P={}, F={};
+      try{ P=PROJ||{}; }catch(e){}
+      try{ F=FIRETYPES||{}; }catch(e){}
+      /* ⚠ "SHADOWED" IS A DERIVATION, NOT A GUESS, AND THE EDITOR MUST NOT RE-DERIVE IT.
+         Resolution is: if the kind is DEDICATED (key matches /^s[1-9]/, or is exactly magma or
+         lavaComet) its own FIRETYPES row wins; otherwise PROJ.type wins. So a row is shadowed only
+         when the kind has BOTH a PROJ row and its own FIRETYPES row, is not dedicated, AND
+         PROJ.type names a DIFFERENT row. That last clause is the one a naive test drops - `blast`
+         has both and is not dedicated, but PROJ.blast.type is 'blast', so it resolves to itself and
+         is perfectly reachable. The first cut of the FIRE tab labelled it shadowed on screen.
+         Measured: exactly 8 rows are genuinely unreachable - the six deriveFireType products
+         (venomDart, voidOrb, emberGem, frostComet, kingPellet, eshot) plus railshot (drawn as a
+         comet) and laser (drawn as a missile). That is authored art nothing can reach, which is
+         worth showing Mike rather than hiding. */
+      const dedic=function(k){ return k==='magma'||k==='lavaComet'||/^s[1-9]/.test(String(k)); };
+      for(const k in P){
+        seen[k]=1;
+        const row=F[k]||null;
+        const cls=(P[k]&&P[k].type)||null;
+        out.push({kind:k, cls:cls, slot:(P[k]&&P[k].slot), own:!!row, dedicated:dedic(k),
+                  shadowed:!!(row && !dedic(k) && cls && cls!==k),
+                  resolves:(dedic(k)&&row)?k:(cls||k),
+                  h:row?row.h:null, glow:(row&&typeof row.glow==='string')?row.glow:null,
+                  align:row?!!row.align:null, proc:row?Object.keys(row).filter(function(f){return f.indexOf('proc')===0;}):[]});
+      }
+      for(const k in F){
+        if(seen[k]) continue;
+        const row=F[k];
+        out.push({kind:k, cls:null, slot:null, own:true, dedicated:dedic(k), shadowed:false, resolves:k,
+                  h:row.h, glow:(typeof row.glow==='string')?row.glow:null, align:!!row.align,
+                  proc:Object.keys(row).filter(function(f){return f.indexOf('proc')===0;})});
+      }
+      return out.sort(function(a,b){ return a.kind<b.kind?-1:1; });
+    },
+    /* ============================================================
+       THE FIRE TAB'S HALF OF THE BRIDGE (0912h)
+
+       Mike asked the editor to cover "projectiles ... muzzle flashes, firing speed, damage or
+       damage per second, projectile patterning ... anchor points". Reconnaissance across seven
+       subsystems found that a straightforward reading of that list produces a panel of dials that
+       LOOK live and change nothing, so what is exposed here is deliberately narrower than the ask,
+       and `inert()` below names every dial that was left out and why.
+       ============================================================ */
+
+    /* A SHAPE IS NOT A PATTERN UNTIL IT HAS BEATS. sceneEmitBeat draws ONE beat; the movement in
+       `spiral` and `sweep` comes from the incrementing `beat` index, and `stream`, `aimed` and
+       `sine` emit exactly one round per beat by design (the switch's own `default:` comment names
+       stream and aimed). So a one-shot preview renders five of the twelve shapes as a single round
+       and reads as a broken button - which is exactly how the first cut of the FIRE panel looked.
+       ⚠ `sine` ALSO needs the burst, because the per-round curve is applied by sceneBurstTick
+       alternating a.curve, not by the shape. */
+    burst:function(e, act, n, interval){
+      if(!e) return 'no unit';
+      const a=Object.assign({}, act||{});
+      const N=Math.max(1, Math.min(64, n|0||1));
+      const iv=Math.max(0.02, +interval||0.12);
+      let i=0, acc=0;
+      const step=function(dt){
+        acc+=dt;
+        while(acc>=0 && i<N){
+          const aa=(a.shape==='sine') ? Object.assign({}, a, {curve:(i&1?1:-1)*(+a.curveAmt||0.5)}) : a;
+          try{ sceneEmitBeat(e, {grid:{cell:32,w:15,h:16}, zones:[]}, aa, i); }catch(err){}
+          i++; acc-=iv;
+        }
+        return i<N;
+      };
+      _bodBursts.push(step);
+      return true;
+    },
+    /* ⚠ MOUNTS ARE THE REASON "ADJUST THE ANCHOR POINT" DID NOT WORK. Measured on a stage-1 delta
+       jet: all twelve slot names returned ONE point, (b.x, b.y + b.h*0.30), because shipBossMount
+       reads SHIPBOSS[b._ship].mounts and an ordinary enemy has no _ship. shipBossMount now also
+       honours a per-unit `_mounts` in the same normalised form, so these write real anchors. */
+    mounts:function(e){
+      if(!e) return null;
+      const out={};
+      try{
+        const D=e._ship?SHIPBOSS[e._ship]:null;
+        if(D&&D.mounts) for(const k in D.mounts) out[k]={from:'SHIPBOSS', f:D.mounts[k]};
+        if(e._mounts)   for(const k in e._mounts) out[k]={from:'unit',     f:e._mounts[k]};
+      }catch(err){}
+      return out;
+    },
+    setMount:function(e, slot, fx, fy){
+      if(!e||!slot) return false;
+      if(!e._mounts) e._mounts={};
+      e._mounts[slot]=[+fx||0, (fy==null?0.30:+fy)];
+      return true;
+    },
+    clearMounts:function(e){ if(e){ delete e._mounts; } return true; },
+    /* the resolved WORLD point, so an overlay draws the anchor where the round will actually leave */
+    mountPoint:function(e, slot){
+      if(!e) return null;
+      try{ const m=shipBossMount(e, slot||'C'); return {x:m.x, y:m.y}; }catch(err){ return null; }
+    },
+    /* ⚠ THE DEFAULT MUZZLE FLASH IS BOSS-ONLY AND FAILS SILENTLY. With no `a.flash`, sceneEmitBeat
+       calls shipBossMuzzleStart, which returns immediately unless `b._ship && SHIPBOSS[b._ship].proj
+       && .mounts` - and shipBossMuzzleDraw re-gates on the same. Firing off an ordinary enemy with
+       the default therefore produces ZERO flashes. The editor must name a family, which routes to
+       navalFlash instead; these are the ones that exist. */
+    /* ⚠ `_navalFlashes` IS A MODULE-SCOPE ARRAY, SO IT IS NOT ON `window` - the same scope rule
+       that makes this whole object necessary. An editor (or a probe) checking whether a muzzle
+       flash was actually raised has no other way to see it, and "the flash never happened" and
+       "I cannot read the queue" look identical from outside. */
+    get flashes(){ return (typeof _navalFlashes!=='undefined')?_navalFlashes:[]; },
+    flashFams:function(){
+      const B=(typeof BOFX!=='undefined')?BOFX:{};
+      const cells=B.cells||{}, imgs=B.img||{};
+      const want=['bpfx_muzzle_kinetic','bpfx_muzzle_laser','bpfx_muzzle_missile','bpfx_muzzle_void',
+                  'nmz_2','nmz_4','s1fx_military_muzzle','s1fx_rotary_muzzle','bfx_magma_m'];
+      return want.map(function(f){
+        let n=0;
+        while(cells[f+'_'+n]||imgs[f+'_'+n]) n++;
+        return {fam:f, frames:n, ok:n>0};
+      }).filter(function(x){ return x.ok; });
+    },
+    /* ⚠ enemyVolley(e,false) TAKES THE DEAD PATH and mostly returns false without firing, because it
+       tests `e._volN % V.every` and nothing increments _volN. Always force. */
+    volleyFire:function(e){
+      if(!e) return 'no unit';
+      /* ⚠ enemyVolley IS (e, force) - TWO ARGUMENTS. There is no per-call pattern override; it
+         reads ENEMY_VOLLEY[e.type] and nothing else, so a third argument is silently dropped and
+         an editor passing one would watch the shape never change. Changing the shape means
+         patching the ROW, which is shared by every unit of that type - setVolley says so. */
+      try{
+        if(!ENEMY_VOLLEY[e.type]) return 'no ENEMY_VOLLEY row for '+e.type+' - this unit has no volley';
+        return !!enemyVolley(e, true);
+      }catch(err){ return String(err).slice(0,200); }
+    },
+    /* ⚠ THIS EDITS THE TABLE, NOT THE UNIT, AND THE TABLE IS SHARED. Every live unit of this type
+       changes with it, and the row is keyed in BOTH spellings on purpose (0811l: "BOTH SPELLINGS
+       ARE REQUIRED") - writing one leaves the other pointing at the old shape, which is how stages
+       4 and 6 fielded 26x26 one-hp jets for six drops. Both are written here. */
+    setVolley:function(type, patch){
+      if(!type||!patch) return false;
+      /* ⚠ DERIVING THE SPELLINGS FROM THE KEY YOU WERE GIVEN IS NOT ENOUGH. The roster hands the
+         editor `s1jetdelta` (the tables are keyed lower), so building [type, type.toLowerCase()]
+         would never reach the `s1jetDelta` row that also exists - exactly half the fix, which is
+         the shape of the 0811l bug this guards against. Find every row that NORMALISES to the same
+         key instead, so both spellings move whichever one the caller happened to hold. */
+      const norm=function(k){
+        try{ if(typeof rosterKey==='function') return rosterKey(k); }catch(e){}
+        return String(k).toLowerCase();
+      };
+      const want=norm(type);
+      const hit=[];
+      for(const k in ENEMY_VOLLEY){ if(norm(k)===want || String(k).toLowerCase()===String(type).toLowerCase()) hit.push(k); }
+      for(const k of hit){ const r=ENEMY_VOLLEY[k]; for(const f in patch) r[f]=patch[f]; }
+      return hit.length ? {written:hit.length, keys:hit} : false;
+    },
+
+    /* ============================================================
+       ⚠⚠ THE DIALS THAT LOOK LIVE AND ARE NOT. READ THIS BEFORE ADDING A SLIDER.
+
+       Every entry here was MEASURED, and every one of them would read back the value you wrote -
+       which is the worst kind of false positive, and precisely the failure mode CLAUDE.md was
+       written to stop. The editor renders these greyed with the reason attached rather than
+       pretending, so the list is a shipped feature and not a comment nobody reads.
+       ============================================================ */
+    inert:function(){
+      return [
+        {dial:'damage (enemy round -> player)', why:
+         'There is no player damage number in this engine. playerHit() takes ZERO arguments, there '+
+         'is no player.hp anywhere in the file, and the collision that fires it never looks at the '+
+         'bullet. Every enemy round costs exactly one shield pip or one life. Four eBullets carry '+
+         'dmg:1 and it is read by nothing.'},
+        {dial:'damage per second', why:
+         'Follows from the above: with no per-round damage there is no DPS for enemy fire. What IS '+
+         'real is rounds-per-second (cadence) and how much of the screen a pattern denies, which is '+
+         'what this tab measures instead.'},
+        {dial:'curve', why:
+         '_curve is written by eShootT and read only by updateRollers over `rollers`, which is '+
+         "Falva's player pinball pool - enemy bullets never enter it. sceneEmitBeat's sine path "+
+         'sets curveAmt->curve and therefore does nothing for enemy fire.'},
+        {dial:'homing / turn', why:
+         'The steering gate is `b.homing && run.stage===1`. Setting b.turn on a round whose muzzle '+
+         'did not grant homing is inert, and homing itself is inert on stages 2-9 (0819a made it a '+
+         'GRANT on purpose).'},
+        {dial:'speed (on emissile / _shootable kinds)', why:
+         "The steering block rewrites b.vx/b.vy from (b.spd||2.7)*DIFF.ebSpeed every frame, so a "+
+         'speed set at birth is overwritten on frame 1. It is live for every other kind.'},
+        {dial:'PROJ.slot / szMul / tint / spin / pal', why:
+         'PROJ is a pure classifier - only .type is ever read. Those five fields have no reader '+
+         'anywhere in the file. The szMul that DOES work is the one on the bullet, from eShootT opts.'},
+        {dial:'SHIPBOSS[kind].dmg', why:
+         'An array of SPRITE KEYS for the damaged and critical plates, not a damage number, and '+
+         'game.js says twice that nothing reads it. It is in BM_LIVE_FIELDS, so Boss Mode can patch '+
+         'it, see the patch persist, and see no effect.'},
+        {dial:'ENEMY_VOLLEY n / spread', why:
+         'Neither key exists on any of the 52 rows. `spread` is an e.fk VALUE in the generic '+
+         'dispatch, a different system entirely.'},
+        {dial:'_volSeed', why:
+         'Exists only in a comment. The real per-unit stagger is _volCd = rnd(0.25,0.8) and the '+
+         'shape offset is _tOff on the shared TABLE ROW.'},
+        {dial:'CFX_STAGE_PROJECTILE rows', why:
+         'Object.freeze’d. A live patch silently no-ops in sloppy mode.'},
+        {dial:'FIRETYPES art/h/glow/align/spin on a BPFX kind', why:
+         'The premium path is an unconditional return, not a try-then-fall-back. For the 52 kinds '+
+         'in BPFX_STAGE_PROJECTILE and 19 boss kinds, drawBossProjectileArt has already drawn the '+
+         'round before FIRETYPES is consulted.'},
+        {dial:'a new FIRETYPES row for an existing kind', why:
+         'Unreachable unless the key starts with s1..s9, is exactly magma/lavaComet, or the kind '+
+         'has no PROJ row at all. Otherwise resolution takes PROJ.type first and the row is shadowed.'},
+      ];
+    },
+    /* ⚠ A LIVE ROUND CARRIES NO DAMAGE FIELD. Measured on a fired bullet, the fields are
+       x,y,vx,vy,spd,ang,w,h,kind,t,_ph,pal,tint,szMul,hp,_shootable,_curve,_s1Impact,_threatBullet
+       - there is no `dmg`. So an editor cannot tune "damage per round" by writing to the bullet,
+       and anything claiming to would be a slider wired to nothing. This reports what a round
+       actually carries so the UI can only offer what exists. */
+    bulletFields:function(){
+      const b=eBullets[eBullets.length-1];
+      if(!b) return null;
+      const o={};
+      for(const k in b) o[k]=(typeof b[k]==='function')?'<fn>':(b[k]&&typeof b[k]==='object'?'<obj>':b[k]);
+      return o;
+    },
+    /* ⚠ _levelCfg RETURNS A FRESH LITERAL EVERY CALL, so what comes back is a SNAPSHOT and writing
+       to it changes nothing. The editor shows it read-only and drives the background by other means. */
+    levelCfg:function(stage){
+      const s=(typeof run!=='undefined'&&run)?run.stage:1;
+      try{ if(stage){ run.stage=stage|0; } const c=_levelCfg(); run.stage=s; return c; }
+      catch(e){ run.stage=s; return null; }
+    },
+    /* the sprite override: XART.img[key] is the decoded cache and accepts a canvas, because atlas
+       cells ARE canvases in this engine. See art.override below for the cells caveat. */
+    art:{
+      keys:function(){
+        const B=(typeof BOFX!=='undefined')?BOFX:{};
+        const s=new Set();
+        for(const store of ['img','cells','ships','playercells','icons'])
+          if(B[store]) for(const k in B[store]) s.add(k);
+        return Array.from(s).sort();
+      },
+      rdy:function(k){ return XART.rdy(k); },
+      get:function(k){ return XART.get(k); },
+      /* ⚠ CELLS ARE CHECKED BEFORE THE CACHE. X._touch looks at BOFX.playercells and BOFX.cells
+         FIRST and rebuilds the canvas from the sheet, so writing XART.img[k] alone is ignored for
+         those keys. The row has to be lifted out of the way, and kept so it can be put back. */
+      _shelf:{},
+      override:function(k, canvas){
+        try{
+          const B=BOFX;
+          for(const store of ['playercells','cells']){
+            if(B[store] && B[store][k] && !this._shelf[store+'/'+k]){
+              this._shelf[store+'/'+k]=B[store][k];
+              delete B[store][k];
+            }
+          }
+          canvas.complete=true;
+          canvas.naturalWidth=canvas.width; canvas.naturalHeight=canvas.height;
+          XART.img[k]=canvas;
+          if(XART._flushShipCells) XART._flushShipCells(function(q){ return q===k; });
+          return true;
+        }catch(e){ return String(e).slice(0,200); }
+      },
+      restore:function(k){
+        try{
+          for(const store of ['playercells','cells']){
+            const s=this._shelf[store+'/'+k];
+            if(s){ BOFX[store][k]=s; delete this._shelf[store+'/'+k]; }
+          }
+          delete XART.img[k];
+          if(XART._flushShipCells) XART._flushShipCells(function(q){ return q===k; });
+          return true;
+        }catch(e){ return String(e).slice(0,200); }
+      },
+      overridden:function(){ return Object.keys(this._shelf).map(function(s){ return s.split('/')[1]; }); },
+    },
+    /* the FOV cone cells the scene director already ships, reused to show an ordinary enemy's reach */
+    fovKeys:function(){
+      const B=(typeof BOFX!=='undefined')?BOFX:{};
+      return Object.keys(B.cells||{}).filter(function(k){ return k.indexOf('bmfx_fov_')===0; }).sort();
+    },
+    /* ⚠ drawUnitShadow IS A DELIBERATE NO-OP (0724bd) and aiShadowDraw is the live one. A per-enemy
+       shadow toggle therefore cannot go through drawUnitShadow; the editor sets e._bodShadow and
+       the draw hook below honours it. */
+    shadow:function(e, on){ if(e) e._bodShadow=!!on; return !!(e&&e._bodShadow); },
+    /* ⚠ camX AND THE ZOOM ARE IN HERE BECAUSE AN OVERLAY WITHOUT THEM IS WRONG ON EVERY WIDE
+       STAGE. drawWorld runs under translate(-camX) and a zoom, so an editor that maps a unit's
+       world x straight onto its own canvas draws the marker in the right place on stage 2 (world
+       480) and up to 200px adrift on stage 6 (world 680). CLAUDE.md records this exact class four
+       times - the launch seam, the outbound routes, the level-1 ship, and a probe that recomputed
+       it - and the Bullets of Debug FOV cone made it five until this landed. */
+    /* ============================================================
+       THE WORLD MATRIX, AS THE ENGINE INSTALLED IT — NOT AS ANYONE RECOMPUTED IT.
+
+       An editor drawing an overlay over this game has to map world -> canvas, and CLAUDE.md records
+       that class of bug FIVE times now (the launch seam, the outbound routes, the level-1 ship, a
+       probe that recomputed it, and this editor's own FOV cone). The fifth is the instructive one:
+       a probe that rebuilds `(x-camX)*vz` to check an overlay that computes `(x-camX)*vz` asserts
+       its own arithmetic and passes on a broken frame.
+
+       So this hands back the live CTM, captured off `ctx` itself during a real frame while
+       `_inWorldXform` is true. ⚠ It must wrap `ctx.drawImage` on the INSTANCE: the context carries
+       its own copy of the method, so a CanvasRenderingContext2D.prototype trap records nothing
+       (0905h, measured — 0 blits on a draw that was provably running).
+       ============================================================ */
+    xform:(function(){
+      let _m=null, _armed=false;
+      return {
+        arm:function(){
+          if(_armed) return true;
+          if(typeof ctx==='undefined'||!ctx) return false;
+          const orig=ctx.drawImage;
+          ctx.drawImage=function(){
+            if(_inWorldXform && !_m){ try{ _m=this.getTransform(); }catch(e){} }
+            return orig.apply(this, arguments);
+          };
+          _armed=true; return true;
+        },
+        clear:function(){ _m=null; return true; },
+        /* the matrix as {a,b,c,d,e,f}, plus the point it maps a world coord to */
+        get:function(wx, wy){
+          if(!_m) return null;
+          const o={a:_m.a,b:_m.b,c:_m.c,d:_m.d,e:_m.e,f:_m.f,
+                   cw:(ctx&&ctx.canvas)?ctx.canvas.width:0, ch:(ctx&&ctx.canvas)?ctx.canvas.height:0};
+          if(typeof wx==='number'){ o.x=_m.a*wx+_m.c*wy+_m.e; o.y=_m.b*wx+_m.d*wy+_m.f; }
+          return o;
+        }
+      };
+    })(),
+    snapshot:function(){
+      return {state:state, lab:_lab, labStage:_labStage,
+              enemies:enemies.length, eBullets:eBullets.length,
+              stageTimer:(typeof stageTimer==='number')?Math.round(stageTimer):0,
+              VW:VW, VH:VH, worldW:(typeof worldWidth==='function')?worldWidth():VW,
+              camX:_camEff(), vz:(typeof viewZoom==='function')?viewZoom():1};
+    },
+  };
+})();
+}catch(_bmApi){}
+
 /* OPTIONS */
+/* ============================================================
+   HELP (Mike, 0912) - GS.HELP
+
+   "you need to generate a matching button in the main menu to our current ones titled Help that
+   when selected, shows how all controls work in game via screenshots and generated directonal pad
+   and buttons like A B C X Y Z START SELECT in our unique signature ColeForge graphical style."
+
+   Three pages, LEFT/RIGHT to turn, BACK to leave:
+
+     1 CONTROLS   the pad and the face buttons, each labelled with the key that is ACTUALLY bound
+     2 MOVES      roll, somersault, charge - each drawn with the pilot's own reel, mid-move
+     3 HUD        the real bars and the real equip box, captioned
+
+   ⚠ EVERY LABEL IS READ OUT OF `keybind`, NEVER TYPED. A help screen that hard-codes "FIRE: J" is
+   wrong the moment anyone opens the rebind screen, and it is wrong silently - the player follows
+   it, nothing happens, and they conclude the game is broken. helpBind() formats the live table, so
+   this page cannot disagree with the game it is describing. That is also why CHARGE appears here
+   automatically: it was added to CTRL_ACTS, so it is already in the table this reads.
+
+   ⚠ THE "SCREENSHOTS" ARE LIVE DRAWS OF THE REAL ART, not captures. A PNG of the HUD is a PNG that
+   goes stale the next time a bar moves - and this file has that exact failure recorded for the
+   attract cards (0810z) and the aintro panels (0809r): the art provides the frame, the game
+   provides the current truth. So page 2 draws the actual `ship_<pilot>_so*` and `_br*` frames and
+   page 3 calls the same `_chargeBar` the play HUD calls.
+   ============================================================ */
+const HELP_PAGES=['CONTROLS','MOVES','HUD'];
+let helpPage=0, helpT=0;
+
+/* the live bind, formatted for a human. Mouse and pad binds are spelled out rather than shown as
+   'mouse3', because 'mouse3' is a browser fact and not something a player can act on. */
+const HELP_KEYNAME={' ':'SPACE', arrowup:'UP', arrowdown:'DOWN', arrowleft:'LEFT', arrowright:'RIGHT',
+  mouse0:'L-CLICK', mouse1:'M-CLICK', mouse2:'R-CLICK', mouse3:'MOUSE 4', mouse4:'MOUSE 5',
+  pad_up:'PAD UP', pad_down:'PAD DOWN', pad_left:'PAD LEFT', pad_right:'PAD RIGHT',
+  pad_b0:'PAD A', pad_b1:'PAD B', pad_b2:'PAD X', pad_b3:'PAD Y', pad_b6:'PAD LT', pad_b7:'PAD RT',
+  pad_b8:'SELECT', pad_b9:'START'};
+function helpBind(act, max){
+  const t=(typeof keybind!=='undefined')?keybind:null;
+  const L=(t&&t[act])?t[act]:[];
+  const out=[];
+  for(const k of L){ out.push(HELP_KEYNAME[k]||String(k).toUpperCase()); if(out.length>=(max||3)) break; }
+  return out.length?out.join('  /  '):'-';
+}
+function helpGlyph(key, cx, cy, h, a){
+  if(typeof XART==='undefined' || !XART.rdy(key)) return 0;
+  const im=XART.get(key);
+  const w=h*(im.naturalWidth/Math.max(1,im.naturalHeight));
+  ctx.save(); ctx.globalAlpha=(a==null?1:a); ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im, Math.round(cx-w/2), Math.round(cy-h/2), Math.round(w), Math.round(h));
+  ctx.restore();
+  return w;
+}
+/* ⚠ stageText IS CENTRE-ONLY - it lays out from `cx - total/2`, and its tenth argument is
+   `outline`, not an alignment. An align string passed there would have set an outline flag and
+   moved nothing, which is the quietest kind of wrong. So every label on this screen is centred on
+   a column position rather than started at one.
+
+   ⚠ curFontArt, NOT uiFontArt (Mike, 0912b: "whatever font is being used here is bad. please use
+   stage fonts only the proper ones"). uiFontArt() hands back ASSETS.stageArt['1'] - the stage-1
+   CARD alphabet, a decorative stone face whose set stops at stage 5. curFontArt() hands back
+   CF_BOFStageFonts Vol.2 (stageFontV4), the authored per-stage face, and falls back to the card
+   sheet itself only for the frames before it has decoded. That fallback matters: stageText draws
+   NOTHING when its sheet has not landed, which is the 0810o trap.
+
+   ⚠ AND THE SIZE WAS HALF THE FAULT. Rendered both faces side by side at 8/9/10/11/13/16px
+   (probe_font_compare.py): BOTH of them mush below about 11px - the strokes on this face are one
+   pixel at that scale and the counters close up. The page was drawing captions at 9 and bind
+   lines at 7-8. HELP_MIN is the floor; nothing on this screen may ask for less. */
+const HELP_MIN=11;
+/* every string the screen has drawn this frame, widest-first - so a probe can assert that nothing
+   overflows the field at the floor size instead of someone spotting it in a screenshot later */
+let _helpWidest={w:0, s:''};
+function helpLabel(str, cx, y, size, col){
+  const art=(typeof curFontArt==='function')?curFontArt():null;
+  const H=Math.max(HELP_MIN, size);
+  if(art && typeof stageWidth==='function'){
+    try{
+      const w=stageWidth(art, str, Math.max(HELP_MIN, Math.min(H, (typeof stageFitH==='function')?stageFitH(art,str,VW-28,H,HELP_MIN,0.10):H)), 0.10);
+      if(w>_helpWidest.w) _helpWidest={w:Math.round(w), s:str};
+    }catch(e){}
+  }
+  if(art && typeof stageText==='function'){
+    /* long lines shrink to fit the field rather than running off it - but never below the floor */
+    const fit=(typeof stageFitH==='function')?Math.max(HELP_MIN, stageFitH(art,str,VW-28,H,HELP_MIN,0.10)):H;
+    stageText(art, str, cx, y, fit, col||'#cfe2ff', 0.9, 1, 0.10);
+    return;
+  }
+  ctx.save(); ctx.textAlign='center'; ctx.textBaseline='alphabetic';
+  ctx.font='bold '+Math.round(H)+'px "BOFmil", monospace'; ctx.fillStyle=col||'#cfe2ff';
+  ctx.fillText(str, cx, y); ctx.restore();
+}
+/* a glyph with its bound key under it - the unit this whole page is made of */
+function helpKeyCap(glyph, act, cx, cy, h, caption){
+  helpGlyph(glyph, cx, cy, h);
+  if(caption) helpLabel(caption, cx, cy+h*0.62+12, 12, '#ffd36b');
+  helpLabel(helpBind(act,1), cx, cy+h*0.62+(caption?26:12), 11, '#9fb4c8');
+}
+
+function helpPageControls(){
+  const cy0=VH*0.24;
+  helpLabel('MOVE', VW*0.22, cy0-48, 12, '#ffd36b');
+  helpGlyph('pad_dpad', VW*0.22, cy0, 68);
+  helpLabel('WASD / ARROWS', VW*0.22, cy0+50, 11, '#9fb4c8');
+  helpLabel('STICK / D-PAD', VW*0.22, cy0+63, 11, '#5f7288');
+
+  /* the three action caps, in the arcade A / B / C order the cabinet uses */
+  /* ⚠ ONE BIND PER CAP. At this column width two ran into the neighbouring cap's label and the
+     three read as one run-on string - "J / L-CLICK K / R-CLICK C / SPACE". The full list for every
+     action is on the MOUSE lines below and in OPTIONS; the caps just need the primary key. */
+  const bx=VW*0.62, by=cy0-14, gap=VW*0.165;
+  helpKeyCap('pad_a', 'fire',   bx-gap, by, 40, 'FIRE');
+  helpKeyCap('pad_b', 'bomb',   bx,     by, 40, 'MISSILE');
+  helpKeyCap('pad_c', 'retina', bx+gap, by, 40, 'RETINA / C');
+
+  const y2=VH*0.52;
+  helpKeyCap('pad_y',     'charge', VW*0.29, y2, 40, 'CHARGE');
+  helpGlyph('pad_start',  VW*0.66, y2, 30);
+  helpLabel('PAUSE', VW*0.66, y2+31, 12, '#ffd36b');
+  helpLabel(helpBind('start',1), VW*0.66, y2+45, 11, '#9fb4c8');
+
+  /* the mouse, spelled out - three of these binds are the reason this page exists. Kept SHORT so
+     every line clears the field at the 11px floor instead of being shrunk under it. */
+  const y3=VH*0.745;
+  helpLabel('MOUSE', VW/2, y3, 13, '#ffd36b');
+  helpLabel('L-CLICK FIRE    R-CLICK MISSILE', VW/2, y3+18, 11, '#9fb4c8');
+  helpLabel('SIDE 4 RETINA    SIDE 5 CHARGE', VW/2, y3+33, 11, '#9fb4c8');
+  helpLabel('KEYS - MOUSE - PAD ALL LIVE AT ONCE', VW/2, y3+50, 11, '#5f7288');
+}
+
+function helpPageMoves(){
+  const pk=(typeof _pilotKey==='function')?_pilotKey():'yuri';
+  /* ⚠ NOT THE EDGE-ON FRAME. br2 / so2 are the quarter-turn slivers - 38px wide against 184 tall -
+     and at illustration size they render as a dark splinter that says nothing about the move. The
+     BANKED frames read as a manoeuvre in a still. Checked on screen, not chosen from the key list. */
+  const rows=[
+    {ttl:'BARREL ROLL', how:'DOUBLE-TAP  LEFT  or  RIGHT',
+     n1:'FULL I-FRAMES - '+(typeof BR_COOL==='number'?BR_COOL:5)+'S COOLDOWN',
+     n2:'A TWITCH DODGE - NOT WITH THE MOUNT ON',
+     key:'ship_'+pk+'_br1'},
+    {ttl:'SOMERSAULT',  how:'DOUBLE-TAP  UP',
+     n1:'ALL NINE PILOTS - '+(typeof SS_COOL==='number'?SS_COOL:7)+'S COOLDOWN',
+     n2:'HEAVIER THAN A ROLL - ENDS WHERE IT BEGAN',
+     key:'ship_'+pk+'_so3'},
+    {ttl:'CHARGE',      how:'HOLD  '+helpBind('charge',1)+'  THEN HOLD  UP',
+     n1:'JUGGERNAUT ONLY, WITH HIS CRATE LIVE',
+     n2:'HOLD LONGER TO RAM FURTHER',
+     key:'jchg_3'},
+  ];
+  let y=VH*0.215;
+  for(const r of rows){
+    helpGlyph(r.key, VW*0.15, y+6, 56);
+    helpLabel(r.ttl, VW*0.60, y-16, 14, '#ffd36b');
+    helpLabel(r.how, VW*0.60, y+2,  11, '#cfe2ff');
+    helpLabel(r.n1,  VW*0.60, y+18, 11, '#9fb4c8');
+    helpLabel(r.n2,  VW*0.60, y+33, 11, '#6d8096');
+    y += VH*0.225;
+  }
+  helpLabel('DRAWN WITH YOUR OWN PILOT - '+String(pk).toUpperCase(),
+            VW/2, VH*0.90, 11, '#5f7288');
+}
+
+function helpPageHud(){
+  /* the REAL bars, drawn by the function the play HUD uses, so this cannot describe a bar the
+     game does not have any more */
+  const bx=VW*0.14, by=VH*0.22;
+  ctx.save();
+  ctx.translate(bx-((typeof PLAY!=='undefined'?PLAY.x:0)+10), by-((typeof PLAY!=='undefined'?(PLAY.y+PLAY.h):VH)-16));
+  if(typeof _chargeBar==='function'){
+    _chargeBar('CHARGE', 0.62, 0);
+    _chargeBar('SOMERSAULT', 1, 1);
+    _chargeBar('ROLL', 0.35, 2);
+  }
+  ctx.restore();
+  helpLabel('GREEN IS READY - AMBER IS REFILLING', VW*0.62, by-16, 11, '#9fb4c8');
+  helpLabel('CHARGE SHOWS FOR JUGGERNAUT ONLY', VW*0.62, by+1, 11, '#9fb4c8');
+  helpLabel('AND ONLY WITH HIS CRATE LIVE', VW*0.62, by+16, 11, '#9fb4c8');
+
+  const ey=VH*0.58;
+  helpLabel('EQUIPPED', VW*0.24, ey-54, 13, '#ffd36b');
+  if(typeof XART!=='undefined' && XART.rdy('nequipbox')){
+    const im=XART.get('nequipbox'), h=76, w=h*(im.naturalWidth/im.naturalHeight);
+    ctx.save(); ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(im, VW*0.24-w/2, ey-h/2, w, h); ctx.restore();
+  }
+  helpLabel('THE WEAPON YOU HOLD, AND ITS LEVEL', VW*0.62, ey-8, 11, '#9fb4c8');
+  helpLabel('RED CRATE IS YOUR SPECIAL', VW*0.62, ey+8, 11, '#9fb4c8');
+  helpLabel('THE BOSS GAUGE RUNS ACROSS THE TOP', VW/2, VH*0.84, 11, '#7f93a8');
+}
+
+function drawHelp(dt){
+  helpT+=dt;
+  if(typeof scrollSpaceBG==='function') scrollSpaceBG(dt); else { ctx.fillStyle='#080a12'; ctx.fillRect(0,0,VW,VH); }
+  ctx.save(); ctx.fillStyle='rgba(4,7,12,0.72)'; ctx.fillRect(0,0,VW,VH); ctx.restore();
+
+  if(typeof bofTitle==='function') bofTitle('HELP', VW/2, 20, 16);
+  else helpLabel('HELP', VW/2, 30, 18, '#ffd36b');
+
+  helpLabel('◀   '+HELP_PAGES[helpPage]+'   ▶', VW/2, 54, 13, '#ffd36b');
+  for(let i=0;i<HELP_PAGES.length;i++){
+    ctx.fillStyle=(i===helpPage)?'#ffd36b':'#3a4454';
+    ctx.fillRect(VW/2-18+i*14, 58, 10, 3);
+  }
+
+  if(helpPage===0) helpPageControls();
+  else if(helpPage===1) helpPageMoves();
+  else helpPageHud();
+
+  helpLabel('LEFT / RIGHT TURN PAGE    BACK RETURNS', VW/2, VH-14, 11, '#5f7288');
+
+  /* page turn. menuLeft/menuRight CONSUME their tap, so each is read exactly once. */
+  let _l=false,_r=false;
+  try{ _l=Input.menuLeft(); }catch(e){}
+  try{ _r=Input.menuRight(); }catch(e){}
+  if(_l){ helpPage=(helpPage+HELP_PAGES.length-1)%HELP_PAGES.length; try{Audio.SFX.blip&&Audio.SFX.blip();}catch(e){} }
+  if(_r){ helpPage=(helpPage+1)%HELP_PAGES.length; try{Audio.SFX.blip&&Audio.SFX.blip();}catch(e){} }
+  /* ⚠ ONLY THE ON-SCREEN BACK BOX IS HANDLED HERE. Esc / backspace / k / pad-B are already taken
+     by menuBackTick, which MENU_BACK[GS.HELP] opted this screen into - and that handler resets
+     menuIndex to 0 on purpose ("a stray menu index following you back out is its own bug"). My
+     first cut restored the cursor to HELP here, which was both dead code (the generic handler
+     consumes the tap first) and a disagreement with every other backable screen. Matching. */
+  if(typeof backButton==='function' && backButton()){ menuIndex=0; setState(GS.TITLE); try{Audio.SFX.select&&Audio.SFX.select();}catch(e){} }
+}
+
 function backButton(){
   const bw=92,bh=32,bx=10,by=10, m=Input.mouse;
   const on = m.x>=bx && m.x<=bx+bw && m.y>=by && m.y<=by+bh;
@@ -53414,7 +56383,7 @@ function backButton(){
   return !!(m.down && on);
 }
 const OPT_VOL=['MASTER VOL','MUSIC VOL','SFX VOL'];
-const OPT_CTRL=[['up','UP'],['down','DOWN'],['left','LEFT'],['right','RIGHT'],['fire','FIRE'],['bomb','MISSILE'],['retina','RETINA']];
+const OPT_CTRL=[['up','UP'],['down','DOWN'],['left','LEFT'],['right','RIGHT'],['fire','FIRE'],['bomb','MISSILE'],['retina','RETINA'],['charge','CHARGE']];
 let rebindAction=null;
 function keyName(k){ if(!k) return '-'; const m={arrowup:'UP',arrowdown:'DOWN',arrowleft:'LEFT',arrowright:'RIGHT',' ':'SPACE',
   pad_up:'PAD \u2191',pad_down:'PAD \u2193',pad_left:'PAD \u2190',pad_right:'PAD \u2192',
@@ -53492,8 +56461,8 @@ function bofTitle(txt,cx,cy,H){
   ctx.restore(); ctx.textBaseline='alphabetic';
 }
 const VOL_KINDS=['master','music','sfx','voice'];
-const CTRL_ACTS=['left','right','up','down','fire','bomb','retina'];
-const CTRL_LABELS=['MOVE LEFT','MOVE RIGHT','MOVE UP','MOVE DOWN','FIRE','MISSILE','RETINA LOCK'];
+const CTRL_ACTS=['left','right','up','down','fire','bomb','retina','charge','start'];
+const CTRL_LABELS=['MOVE LEFT','MOVE RIGHT','MOVE UP','MOVE DOWN','FIRE','MISSILE','RETINA LOCK','CHARGE','PAUSE (START)'];
 let voiceVol=1.0, optScroll=0, optSnap=null, optDrag=-1, optSbDrag=false, optSelIdx=0;
 /* Which seat's table an armed rebind writes to: 1 or 2 (drop 0902f). */
 let rebindWho=1;
@@ -53518,13 +56487,13 @@ function drawOptions(dt){
   const rows=[{t:'head',label:'VOLUME'}]; const vk=['master','music','sfx','voice'], vl=['MASTER','MUSIC','SFX','VOICE'];
   for(let i=0;i<4;i++) rows.push({t:'vol',k:vk[i],label:vl[i]});
   rows.push({t:'head',label:'CONTROLS'});
-  for(let i=0;i<7;i++) rows.push({t:'ctrl',act:CTRL_ACTS[i],label:CTRL_LABELS[i],who:1});
+  for(let i=0;i<CTRL_ACTS.length;i++) rows.push({t:'ctrl',act:CTRL_ACTS[i],label:CTRL_LABELS[i],who:1});
   /* PLAYER 2 CONTROLS (drop 0902f) - Mike asked for "2 player controller settings", and this is
      it: the same seven actions against `keybind2`, rebound by the same flow. Shown ALWAYS rather
      than only in co-op, because you configure a second stick BEFORE you start a co-op run, and a
      settings block that only appears once you are already in the mode is a block nobody finds. */
   rows.push({t:'head',label:'PLAYER 2 CONTROLS'});
-  for(let i=0;i<7;i++) rows.push({t:'ctrl',act:CTRL_ACTS[i],label:CTRL_LABELS[i],who:2});
+  for(let i=0;i<CTRL_ACTS.length;i++) rows.push({t:'ctrl',act:CTRL_ACTS[i],label:CTRL_LABELS[i],who:2});
   const selectable=rows.map((r,i)=>({r,i})).filter(o=>o.r.t!=='head');
   /* ⚠ CANCEL AND APPLY JOIN THE CURSOR LIST (drop 0822af). Mike: "I have no way to apply in
      the options menu with my controller or a keyboard. I have to do it with the mouse."
@@ -55712,6 +58681,7 @@ function drawWorld(dt){
   if(boss) drawBoss();
   if(boss && boss._morphT!=null && typeof vileMorphDraw==='function') vileMorphDraw(boss);
   if(subBoss){drawSubBoss();encounterDamageOverlay(subBoss,true);}
+  if(typeof sceneDrawWorld==='function'){ try{ sceneDrawWorld(); }catch(_sc){} }   // zone telegraphs + the debug path overlay (0911a)
   /* ⚠ THE LASER ALERT SIGN DRAWS HERE, AFTER THE HULLS, AND THAT PLACEMENT IS THE WHOLE FIX.
      It lived inside l23BossBeamDraw first, which runs BEFORE the boss hull - so the boss was
      painted straight over it every frame. Trapped at world (352,46) under a scale-2 / tx-200
@@ -55769,12 +58739,17 @@ function drawWorld(dt){
      ⚠ SEAT 2 IS SKIPPED WHILE `out`. A seat that has spent its last life keeps `dead` set, and
      drawPlayer's own death handling would otherwise keep drawing its wreck for the rest of the
      stage. */
+  if(typeof drawWreckChains==='function') drawWreckChains();   // rigging goes UNDER the aircraft
   for(const _s of seatList().slice().reverse()) withSeat(_s, function(){
     if(player.out) return;
     drawPlayer();
   });
   if(run.stage===5 && typeof s5RunForegroundDraw==='function') s5RunForegroundDraw();
   if(typeof lzMountDraw==='function') lzMountDraw();  // pack: "above ship body"
+  /* Juggernaut's charge aura and his wrecking balls ride OVER the hull, with the rest of the
+     anchored-special group. Both no-op when he is not the pilot or the crate is not live. */
+  if(typeof drawChargeFX==='function') drawChargeFX();
+  if(typeof drawWreckBalls==='function') drawWreckBalls();
   drawFalvaOrbs();     // orbs swirling AROUND her + the ball forming at the nose — OVER the ship
   drawMavCoilOver();   // Maverick: the other strand IN FRONT — together they wrap the ship
   drawRollers(); drawFalvaBalls();
@@ -55837,12 +58812,21 @@ function drawWorld(dt){
   if(flashScreen>0){ ctx.fillStyle=`rgba(255,120,60,${clamp(flashScreen*0.5,0,0.5)})`; ctx.fillRect(0,0,VW,VH); }
   // CRT scanlines
   drawScanlines();
-  // boss approaching banner
-  if(boss && boss.enter){ ctx.fillStyle='#ff3a3a'; ctx.font='bold 16px "BOFmil", monospace'; ctx.textAlign='center';
-    ctx.globalAlpha=0.6+0.4*Math.sin(performance.now()/120);
-    ctx.fillText('!! '+boss.name+' !!',VW/2,VH*0.4); ctx.globalAlpha=1; }
-  if(player.dead){ ctx.textAlign='center';
-    if(run.lives>0) msgText('SHIP DESTROYED',VW/2,VH/2,26,null,0,1,0.10); }
+  /* ⚠ SHIP DESTROYED IS LETTERED IN THE STAGE YOU DIED ON (Mike, 0910e): "remove this font, use the
+     correct font here please for all stages." It was drawing through msgText, i.e. the DIALOGUE
+     face - the same fault 0904af fixed on the debrief and 0904v on GET READY / 3-2-1 / GO, still
+     live on the one banner the player sees most. curFontArt() is the accessor that answers it: the
+     authored Vol.2 face for run.stage, with the card alphabet behind it for the frames before the
+     sheet decodes. Shrink-to-fit because the stage faces are wide and this is fourteen characters
+     on a 480px field - at a fixed 26 the longest faces run off both edges. */
+  if(player.dead && run.lives>0){
+    ctx.textAlign='center';
+    const _sdArt=(typeof curFontArt==='function')?curFontArt():null;
+    if(_sdArt && typeof stageText==='function'){
+      const _sdH=(typeof stageFitH==='function')?stageFitH(_sdArt,'SHIP DESTROYED',VW-36,26,13,0.10):26;
+      stageText(_sdArt,'SHIP DESTROYED',VW/2,VH/2,_sdH,null,null,1,0.10);
+    } else if(typeof msgText==='function') msgText('SHIP DESTROYED',VW/2,VH/2,26,null,0,1,0.10);
+  }
 }
 /* EQUIPPED box is drawn OUT OF BOUNDS (page DOM, right of the game canvas) by updateEquippedBoxDom().
    The in-canvas draw was removed so it no longer sits inside the play area. */
@@ -55857,8 +58841,8 @@ function drawPaused(){
   ctx.textAlign='center';
   msgText('PAUSED',VW/2,VH/2-10,30,null,0,1,0.12);
   ctx.fillStyle='#cfd6e0'; ctx.font='bold 10px "BOFmil", monospace';
-  ctx.fillText('P = RESUME   ·   BACKSPACE = QUIT',VW/2,VH/2+20);
-  if(Input.tap('p')){ setState(GS.PLAY); }
+  ctx.fillText('START = RESUME   ·   BACKSPACE = QUIT',VW/2,VH/2+20);
+  if(pauseTapped()){ setState(GS.PLAY); }
   if(Input.tap('backspace')){ Audio.stopMusic(); setState(GS.TITLE); menuIndex=0; Audio.startMusic('title'); }
 }
 
@@ -56867,7 +59851,7 @@ function drawFlyover(dt){
      level, start the stats music there, fly the pilot away, then keep that exact playback
      position through the handoff. The latch is reset when PLAY enters FLYOVER, so no per-frame
      start can rewind it. */
-  const _clearText='STAGE '+run.stage+' CLEAR';
+  const _clearText=(typeof debugFight!=='undefined'&&debugFight)?'FIGHT CLEAR':('STAGE '+run.stage+' CLEAR');   // a debug fight is not a cleared stage (0910a)
   const _typeStart=0.12, _typeStep=0.075;
   if(!drawFlyover._clearStarted){
     drawFlyover._clearStarted=true;
@@ -58386,6 +61370,8 @@ function loop(now){
   }catch(_updErr){
     if(!loop._uReported){ loop._uReported=true; try{ console.error('update error in state', state, _updErr); }catch(e){} }
   }
+  /* the debug switchboard: the title code, the R recorder key, the miniboss exit (0910a) */
+  try{ debugLoopTick(dt); }catch(_dbgErr){ if(typeof DBG!=='undefined'&&DBG.verbose) console.error('debug tick', _dbgErr); }
   /* INPUT BEFORE DRAW (drop 0801n). Belt and braces on the same bug.
 
      Menu input lives INSIDE the draw functions, which means a broken draw has always been able
@@ -58409,6 +61395,7 @@ function loop(now){
   }catch(_frameErr){
     if((typeof DBG!=='undefined' && DBG.verbose) || !loop._reported){ loop._reported=true; try{ console.error('draw error in state', state, _frameErr); }catch(e){} }
   }
+  try{ debugRecOverlay(); }catch(_recErr){}   // the REC clock, painted into the recording on purpose (0910a)
   /* SELECTION FLASH — painted in the FRAME LOOP, over whatever the scene drew.
      It was previously injected INTO drawScene's dispatch by splitting the switch in two, which
      left the second half as `switch(0){ case -1: ... }` — a switch that can never match. That
@@ -58472,6 +61459,7 @@ function loop(now){
   if(typeof selFlashTick==='function') selFlashTick(dt);
   if(typeof selFlashDraw==='function') selFlashDraw();
   if(hudctx){ hudctx.clearRect(0,0,VW,HUDH); if(state===GS.PLAY||state==='paused'){ if(typeof drawHUDStrip==='function') drawHUDStrip(hudctx); } }
+  try{ debugRecFrame(); }catch(_recFrame){}   // the clip takes hud + equip + play, in that order (0910d)
   /* SUSTAINED SFX BEDS (drop 0730a). Held weapons keep their loop alive by calling loopOn every
      time they fire; this is what fades one out once they stop. It has to run OUTSIDE the play
      state too, or a jet held while the player dies or pauses would roar forever. */
@@ -58492,6 +61480,12 @@ window.addEventListener('pointerdown',()=>{ try{ Audio.init(); }catch(_){} },{on
    their own score without replacing stage, boss, menu, campaign-map, or credits music. */
 if(window.BOFA && BOFA.music){
   BOFA.music.cinematics='assets/game/music/cinematics_rapbeat.mp3';
+  /* ⚠ THE OPENER'S TRACK, AND IT IS THE ONE FILE THE MANIFEST NEVER REGISTERED (Mike, 0912: "use
+     some of our music we didnt map but have"). Measured against the folder rather than chosen by
+     ear: of the 27 files in assets/game/music, exactly two were absent from BOFA.music -
+     cinematics_rapbeat, which the line above claims, and this one. Code-owned for the same reason
+     that one is: manifest.js is generated and has reverted hand-edited audio mappings before. */
+  BOFA.music.opener='assets/game/music/stage9_bonus_warp_run.mp3';
 }
 if(window.BOFA && BOFA.sfx){
   Object.assign(BOFA.sfx, {

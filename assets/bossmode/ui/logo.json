@@ -1,0 +1,50 @@
+{
+  "asset": "logo",
+  "frame_count": 1,
+  "frame_size": [
+    1760,
+    702
+  ],
+  "alpha": "binary",
+  "tags": [],
+  "atlas": {
+    "columns": 1,
+    "rows": 1,
+    "cell": [
+      1760,
+      702
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 1760,
+        "h": 702
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "1",
+      "file": "logo-alpha-01.png",
+      "source_rect": [
+        32,
+        86,
+        1752,
+        748
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        1720,
+        662
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

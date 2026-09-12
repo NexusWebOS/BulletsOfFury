@@ -1,0 +1,66 @@
+{
+ "pointer": [
+  1,
+  1
+ ],
+ "pointer-active": [
+  1,
+  1
+ ],
+ "link": [
+  9,
+  3
+ ],
+ "text": [
+  9,
+  16
+ ],
+ "move": [
+  16,
+  16
+ ],
+ "grab": [
+  12,
+  14
+ ],
+ "grabbing": [
+  14,
+  15
+ ],
+ "precision": [
+  16,
+  16
+ ],
+ "resize-horizontal": [
+  16,
+  6
+ ],
+ "resize-vertical": [
+  7,
+  16
+ ],
+ "resize-nwse": [
+  16,
+  16
+ ],
+ "resize-nesw": [
+  16,
+  16
+ ],
+ "rotate": [
+  15,
+  16
+ ],
+ "zoom-in": [
+  13,
+  13
+ ],
+ "zoom-out": [
+  13,
+  13
+ ],
+ "unavailable": [
+  16,
+  16
+ ]
+}

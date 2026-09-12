@@ -1,0 +1,156 @@
+{
+  "asset": "missileicons",
+  "frame_count": 12,
+  "frame_size": [
+    405,
+    431
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 4,
+    "rows": 3,
+    "cell": [
+      405,
+      431
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 2,
+        "x": 405,
+        "y": 0,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 3,
+        "x": 810,
+        "y": 0,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 4,
+        "x": 1215,
+        "y": 0,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 431,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 6,
+        "x": 405,
+        "y": 431,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 7,
+        "x": 810,
+        "y": 431,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 8,
+        "x": 1215,
+        "y": 431,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 862,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 10,
+        "x": 405,
+        "y": 862,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 11,
+        "x": 810,
+        "y": 862,
+        "w": 405,
+        "h": 431
+      },
+      {
+        "frame": 12,
+        "x": 1215,
+        "y": 862,
+        "w": 405,
+        "h": 431
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "single-missile",
+      "file": "missileicons-alpha-01.png"
+    },
+    {
+      "name": "paired-missiles",
+      "file": "missileicons-alpha-02.png"
+    },
+    {
+      "name": "salvo-rack",
+      "file": "missileicons-alpha-03.png"
+    },
+    {
+      "name": "homing-missile",
+      "file": "missileicons-alpha-04.png"
+    },
+    {
+      "name": "lock-on",
+      "file": "missileicons-alpha-05.png"
+    },
+    {
+      "name": "split-warhead",
+      "file": "missileicons-alpha-06.png"
+    },
+    {
+      "name": "cluster-missile",
+      "file": "missileicons-alpha-07.png"
+    },
+    {
+      "name": "spiral-missile",
+      "file": "missileicons-alpha-08.png"
+    },
+    {
+      "name": "heavy-warhead",
+      "file": "missileicons-alpha-09.png"
+    },
+    {
+      "name": "proximity-missile",
+      "file": "missileicons-alpha-10.png"
+    },
+    {
+      "name": "delayed-launch",
+      "file": "missileicons-alpha-11.png"
+    },
+    {
+      "name": "guided-waypoints",
+      "file": "missileicons-alpha-12.png"
+    }
+  ]
+}

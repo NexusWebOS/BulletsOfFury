@@ -1,0 +1,648 @@
+{
+  "asset": "buttonseditor",
+  "frame_count": 24,
+  "frame_size": [
+    352,
+    131
+  ],
+  "alpha": "binary",
+  "tags": [],
+  "atlas": {
+    "columns": 6,
+    "rows": 4,
+    "cell": [
+      352,
+      131
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 2,
+        "x": 392,
+        "y": 0,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 3,
+        "x": 784,
+        "y": 0,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 4,
+        "x": 1176,
+        "y": 0,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 5,
+        "x": 1568,
+        "y": 0,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 6,
+        "x": 1960,
+        "y": 0,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 7,
+        "x": 0,
+        "y": 171,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 8,
+        "x": 392,
+        "y": 171,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 9,
+        "x": 784,
+        "y": 171,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 10,
+        "x": 1176,
+        "y": 171,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 11,
+        "x": 1568,
+        "y": 171,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 12,
+        "x": 1960,
+        "y": 171,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 342,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 14,
+        "x": 392,
+        "y": 342,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 15,
+        "x": 784,
+        "y": 342,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 16,
+        "x": 1176,
+        "y": 342,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 17,
+        "x": 1568,
+        "y": 342,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 18,
+        "x": 1960,
+        "y": 342,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 19,
+        "x": 0,
+        "y": 513,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 20,
+        "x": 392,
+        "y": 513,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 21,
+        "x": 784,
+        "y": 513,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 22,
+        "x": 1176,
+        "y": 513,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 23,
+        "x": 1568,
+        "y": 513,
+        "w": 352,
+        "h": 131
+      },
+      {
+        "frame": 24,
+        "x": 1960,
+        "y": 513,
+        "w": 352,
+        "h": 131
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "add-part-normal",
+      "file": "buttonseditor-alpha-01.png",
+      "source_rect": [
+        65,
+        69,
+        376,
+        157
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 2,
+      "name": "add-part-hover",
+      "file": "buttonseditor-alpha-02.png",
+      "source_rect": [
+        452,
+        69,
+        763,
+        157
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 3,
+      "name": "add-part-pressed",
+      "file": "buttonseditor-alpha-03.png",
+      "source_rect": [
+        839,
+        68,
+        1151,
+        158
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        312,
+        90
+      ]
+    },
+    {
+      "index": 4,
+      "name": "weapons-normal",
+      "file": "buttonseditor-alpha-04.png",
+      "source_rect": [
+        65,
+        208,
+        376,
+        294
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        86
+      ]
+    },
+    {
+      "index": 5,
+      "name": "weapons-hover",
+      "file": "buttonseditor-alpha-05.png",
+      "source_rect": [
+        452,
+        208,
+        763,
+        295
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        87
+      ]
+    },
+    {
+      "index": 6,
+      "name": "weapons-pressed",
+      "file": "buttonseditor-alpha-06.png",
+      "source_rect": [
+        839,
+        206,
+        1151,
+        295
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        89
+      ]
+    },
+    {
+      "index": 7,
+      "name": "hitboxes-normal",
+      "file": "buttonseditor-alpha-07.png",
+      "source_rect": [
+        65,
+        350,
+        376,
+        438
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 8,
+      "name": "hitboxes-hover",
+      "file": "buttonseditor-alpha-08.png",
+      "source_rect": [
+        452,
+        350,
+        763,
+        438
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 9,
+      "name": "hitboxes-pressed",
+      "file": "buttonseditor-alpha-09.png",
+      "source_rect": [
+        839,
+        349,
+        1151,
+        439
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        312,
+        90
+      ]
+    },
+    {
+      "index": 10,
+      "name": "phases-normal",
+      "file": "buttonseditor-alpha-10.png",
+      "source_rect": [
+        65,
+        496,
+        376,
+        583
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        87
+      ]
+    },
+    {
+      "index": 11,
+      "name": "phases-hover",
+      "file": "buttonseditor-alpha-11.png",
+      "source_rect": [
+        452,
+        496,
+        763,
+        583
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        87
+      ]
+    },
+    {
+      "index": 12,
+      "name": "phases-pressed",
+      "file": "buttonseditor-alpha-12.png",
+      "source_rect": [
+        839,
+        496,
+        1151,
+        585
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        89
+      ]
+    },
+    {
+      "index": 13,
+      "name": "patterns-normal",
+      "file": "buttonseditor-alpha-13.png",
+      "source_rect": [
+        65,
+        640,
+        376,
+        727
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        87
+      ]
+    },
+    {
+      "index": 14,
+      "name": "patterns-hover",
+      "file": "buttonseditor-alpha-14.png",
+      "source_rect": [
+        452,
+        640,
+        763,
+        727
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        87
+      ]
+    },
+    {
+      "index": 15,
+      "name": "patterns-pressed",
+      "file": "buttonseditor-alpha-15.png",
+      "source_rect": [
+        839,
+        639,
+        1151,
+        728
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        89
+      ]
+    },
+    {
+      "index": 16,
+      "name": "apply-normal",
+      "file": "buttonseditor-alpha-16.png",
+      "source_rect": [
+        65,
+        785,
+        376,
+        873
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 17,
+      "name": "apply-hover",
+      "file": "buttonseditor-alpha-17.png",
+      "source_rect": [
+        452,
+        785,
+        763,
+        873
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 18,
+      "name": "apply-pressed",
+      "file": "buttonseditor-alpha-18.png",
+      "source_rect": [
+        839,
+        784,
+        1151,
+        874
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        312,
+        90
+      ]
+    },
+    {
+      "index": 19,
+      "name": "undo-normal",
+      "file": "buttonseditor-alpha-19.png",
+      "source_rect": [
+        65,
+        929,
+        376,
+        1017
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 20,
+      "name": "undo-hover",
+      "file": "buttonseditor-alpha-20.png",
+      "source_rect": [
+        452,
+        929,
+        763,
+        1017
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 21,
+      "name": "undo-pressed",
+      "file": "buttonseditor-alpha-21.png",
+      "source_rect": [
+        839,
+        927,
+        1151,
+        1018
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        312,
+        91
+      ]
+    },
+    {
+      "index": 22,
+      "name": "cancel-normal",
+      "file": "buttonseditor-alpha-22.png",
+      "source_rect": [
+        65,
+        1080,
+        376,
+        1169
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        89
+      ]
+    },
+    {
+      "index": 23,
+      "name": "cancel-hover",
+      "file": "buttonseditor-alpha-23.png",
+      "source_rect": [
+        452,
+        1080,
+        763,
+        1169
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        89
+      ]
+    },
+    {
+      "index": 24,
+      "name": "cancel-pressed",
+      "file": "buttonseditor-alpha-24.png",
+      "source_rect": [
+        839,
+        1079,
+        1151,
+        1170
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        312,
+        91
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

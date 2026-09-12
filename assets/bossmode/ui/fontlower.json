@@ -1,0 +1,700 @@
+{
+  "asset": "fontlower",
+  "frame_count": 26,
+  "frame_size": [
+    215,
+    234
+  ],
+  "alpha": "binary",
+  "tags": [],
+  "atlas": {
+    "columns": 6,
+    "rows": 5,
+    "cell": [
+      215,
+      234
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 2,
+        "x": 255,
+        "y": 0,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 3,
+        "x": 510,
+        "y": 0,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 4,
+        "x": 765,
+        "y": 0,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 5,
+        "x": 1020,
+        "y": 0,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 6,
+        "x": 1275,
+        "y": 0,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 7,
+        "x": 0,
+        "y": 274,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 8,
+        "x": 255,
+        "y": 274,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 9,
+        "x": 510,
+        "y": 274,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 10,
+        "x": 765,
+        "y": 274,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 11,
+        "x": 1020,
+        "y": 274,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 12,
+        "x": 1275,
+        "y": 274,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 548,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 14,
+        "x": 255,
+        "y": 548,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 15,
+        "x": 510,
+        "y": 548,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 16,
+        "x": 765,
+        "y": 548,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 17,
+        "x": 1020,
+        "y": 548,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 18,
+        "x": 1275,
+        "y": 548,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 19,
+        "x": 0,
+        "y": 822,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 20,
+        "x": 255,
+        "y": 822,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 21,
+        "x": 510,
+        "y": 822,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 22,
+        "x": 765,
+        "y": 822,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 23,
+        "x": 1020,
+        "y": 822,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 24,
+        "x": 1275,
+        "y": 822,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 25,
+        "x": 0,
+        "y": 1096,
+        "w": 215,
+        "h": 234
+      },
+      {
+        "frame": 26,
+        "x": 255,
+        "y": 1096,
+        "w": 215,
+        "h": 234
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "a",
+      "file": "fontlower-alpha-01.png",
+      "source_rect": [
+        49,
+        103,
+        186,
+        229
+      ],
+      "placement": [
+        39,
+        54
+      ],
+      "visible_size": [
+        137,
+        126
+      ]
+    },
+    {
+      "index": 2,
+      "name": "b",
+      "file": "fontlower-alpha-02.png",
+      "source_rect": [
+        247,
+        59,
+        386,
+        228
+      ],
+      "placement": [
+        38,
+        32
+      ],
+      "visible_size": [
+        139,
+        169
+      ]
+    },
+    {
+      "index": 3,
+      "name": "c",
+      "file": "fontlower-alpha-03.png",
+      "source_rect": [
+        444,
+        103,
+        579,
+        228
+      ],
+      "placement": [
+        40,
+        54
+      ],
+      "visible_size": [
+        135,
+        125
+      ]
+    },
+    {
+      "index": 4,
+      "name": "d",
+      "file": "fontlower-alpha-04.png",
+      "source_rect": [
+        636,
+        59,
+        767,
+        228
+      ],
+      "placement": [
+        42,
+        32
+      ],
+      "visible_size": [
+        131,
+        169
+      ]
+    },
+    {
+      "index": 5,
+      "name": "e",
+      "file": "fontlower-alpha-05.png",
+      "source_rect": [
+        832,
+        102,
+        979,
+        228
+      ],
+      "placement": [
+        34,
+        54
+      ],
+      "visible_size": [
+        147,
+        126
+      ]
+    },
+    {
+      "index": 6,
+      "name": "f",
+      "file": "fontlower-alpha-06.png",
+      "source_rect": [
+        1057,
+        73,
+        1177,
+        227
+      ],
+      "placement": [
+        47,
+        40
+      ],
+      "visible_size": [
+        120,
+        154
+      ]
+    },
+    {
+      "index": 7,
+      "name": "g",
+      "file": "fontlower-alpha-07.png",
+      "source_rect": [
+        47,
+        322,
+        185,
+        484
+      ],
+      "placement": [
+        38,
+        36
+      ],
+      "visible_size": [
+        138,
+        162
+      ]
+    },
+    {
+      "index": 8,
+      "name": "h",
+      "file": "fontlower-alpha-08.png",
+      "source_rect": [
+        245,
+        284,
+        382,
+        450
+      ],
+      "placement": [
+        39,
+        34
+      ],
+      "visible_size": [
+        137,
+        166
+      ]
+    },
+    {
+      "index": 9,
+      "name": "i",
+      "file": "fontlower-alpha-09.png",
+      "source_rect": [
+        460,
+        285,
+        551,
+        450
+      ],
+      "placement": [
+        62,
+        34
+      ],
+      "visible_size": [
+        91,
+        165
+      ]
+    },
+    {
+      "index": 10,
+      "name": "j",
+      "file": "fontlower-alpha-10.png",
+      "source_rect": [
+        636,
+        285,
+        750,
+        479
+      ],
+      "placement": [
+        50,
+        20
+      ],
+      "visible_size": [
+        114,
+        194
+      ]
+    },
+    {
+      "index": 11,
+      "name": "k",
+      "file": "fontlower-alpha-11.png",
+      "source_rect": [
+        836,
+        293,
+        980,
+        450
+      ],
+      "placement": [
+        35,
+        38
+      ],
+      "visible_size": [
+        144,
+        157
+      ]
+    },
+    {
+      "index": 12,
+      "name": "l",
+      "file": "fontlower-alpha-12.png",
+      "source_rect": [
+        1054,
+        288,
+        1161,
+        452
+      ],
+      "placement": [
+        54,
+        35
+      ],
+      "visible_size": [
+        107,
+        164
+      ]
+    },
+    {
+      "index": 13,
+      "name": "m",
+      "file": "fontlower-alpha-13.png",
+      "source_rect": [
+        44,
+        560,
+        208,
+        681
+      ],
+      "placement": [
+        25,
+        56
+      ],
+      "visible_size": [
+        164,
+        121
+      ]
+    },
+    {
+      "index": 14,
+      "name": "n",
+      "file": "fontlower-alpha-14.png",
+      "source_rect": [
+        252,
+        559,
+        391,
+        682
+      ],
+      "placement": [
+        38,
+        55
+      ],
+      "visible_size": [
+        139,
+        123
+      ]
+    },
+    {
+      "index": 15,
+      "name": "o",
+      "file": "fontlower-alpha-15.png",
+      "source_rect": [
+        444,
+        559,
+        585,
+        682
+      ],
+      "placement": [
+        37,
+        55
+      ],
+      "visible_size": [
+        141,
+        123
+      ]
+    },
+    {
+      "index": 16,
+      "name": "p",
+      "file": "fontlower-alpha-16.png",
+      "source_rect": [
+        636,
+        559,
+        778,
+        717
+      ],
+      "placement": [
+        36,
+        38
+      ],
+      "visible_size": [
+        142,
+        158
+      ]
+    },
+    {
+      "index": 17,
+      "name": "q",
+      "file": "fontlower-alpha-17.png",
+      "source_rect": [
+        828,
+        557,
+        984,
+        724
+      ],
+      "placement": [
+        29,
+        33
+      ],
+      "visible_size": [
+        156,
+        167
+      ]
+    },
+    {
+      "index": 18,
+      "name": "r",
+      "file": "fontlower-alpha-18.png",
+      "source_rect": [
+        1046,
+        562,
+        1176,
+        682
+      ],
+      "placement": [
+        42,
+        57
+      ],
+      "visible_size": [
+        130,
+        120
+      ]
+    },
+    {
+      "index": 19,
+      "name": "s",
+      "file": "fontlower-alpha-19.png",
+      "source_rect": [
+        48,
+        788,
+        189,
+        921
+      ],
+      "placement": [
+        37,
+        50
+      ],
+      "visible_size": [
+        141,
+        133
+      ]
+    },
+    {
+      "index": 20,
+      "name": "t",
+      "file": "fontlower-alpha-20.png",
+      "source_rect": [
+        249,
+        759,
+        378,
+        916
+      ],
+      "placement": [
+        43,
+        38
+      ],
+      "visible_size": [
+        129,
+        157
+      ]
+    },
+    {
+      "index": 21,
+      "name": "u",
+      "file": "fontlower-alpha-21.png",
+      "source_rect": [
+        437,
+        783,
+        587,
+        915
+      ],
+      "placement": [
+        32,
+        51
+      ],
+      "visible_size": [
+        150,
+        132
+      ]
+    },
+    {
+      "index": 22,
+      "name": "v",
+      "file": "fontlower-alpha-22.png",
+      "source_rect": [
+        626,
+        783,
+        779,
+        914
+      ],
+      "placement": [
+        31,
+        51
+      ],
+      "visible_size": [
+        153,
+        131
+      ]
+    },
+    {
+      "index": 23,
+      "name": "w",
+      "file": "fontlower-alpha-23.png",
+      "source_rect": [
+        816,
+        783,
+        991,
+        914
+      ],
+      "placement": [
+        20,
+        51
+      ],
+      "visible_size": [
+        175,
+        131
+      ]
+    },
+    {
+      "index": 24,
+      "name": "x",
+      "file": "fontlower-alpha-24.png",
+      "source_rect": [
+        1039,
+        782,
+        1189,
+        915
+      ],
+      "placement": [
+        32,
+        50
+      ],
+      "visible_size": [
+        150,
+        133
+      ]
+    },
+    {
+      "index": 25,
+      "name": "y",
+      "file": "fontlower-alpha-25.png",
+      "source_rect": [
+        47,
+        1014,
+        188,
+        1182
+      ],
+      "placement": [
+        37,
+        33
+      ],
+      "visible_size": [
+        141,
+        168
+      ]
+    },
+    {
+      "index": 26,
+      "name": "z",
+      "file": "fontlower-alpha-26.png",
+      "source_rect": [
+        240,
+        1012,
+        385,
+        1153
+      ],
+      "placement": [
+        35,
+        46
+      ],
+      "visible_size": [
+        145,
+        141
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

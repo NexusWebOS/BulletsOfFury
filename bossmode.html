@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Boss Mode — Bullets of Fury</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="assets/bossmode/ui/cur_pointer.png">
+<link rel="stylesheet" href="assets/bossmode/bossmode.css">
+</head>
+<body>
+<!-- ============================================================
+     BOSS MODE (drop 0910a; theater layout 0911b) — the boss fight editor.
+
+     Mike: "make an expansive program called Boss Mode ... play the boss fight in real time in this
+     editor" and then "a more theater and full screen for 75% screen like approach and a more modern
+     editor style for the editor."
+
+     The layout is an editor, not a cabinet: a 48px icon RAIL of views on the left, the VIEWPORT
+     (stage / plate / scene / graphics / json / clips) filling ~75% of the screen as a dark theater,
+     the INSPECTOR as a dock on the right that folds away (Tab), the BOSS LIST as a drawer that
+     slides over (L), and THEATER (T / F11) that drops both so the view has the whole width. The
+     pack's chrome carries the identity - logo, file buttons, icons, cursors, the window frame on
+     the OPEN dialog - on flat panels rather than framed windows.
+
+     The ENGINE is the real game: index.html?bossmode=1 in the iframe below, driven through
+     window.BOSSMODE (see the DEBUG MODE block in assets/game.js). Nothing here re-implements a
+     fight — PLAY TEST is the shipping boss loop, with your edits laid onto its SHIPBOSS row live.
+     ============================================================ -->
+<div id="boot">
+  <img id="boot-plate" src="assets/bossmode/ui/boot.png" alt="">
+  <div id="boot-bar"><div id="boot-bar-fill"></div><div id="boot-bar-txt">LOADING ENGINE</div></div>
+</div>
+
+<header id="top">
+  <img id="logo" src="assets/bossmode/ui/logo.png" alt="Boss Mode">
+  <div id="filebar">
+    <button class="pb sm" data-set="files" data-name="new-boss"  id="b-new"    title="Duplicate the open fight as a new variant document"></button>
+    <button class="pb sm" data-set="files" data-name="open-boss" id="b-open"   title="Open a boss or miniboss fight  (L opens the list)"></button>
+    <button class="pb sm" data-set="files" data-name="save"      id="b-save"   title="Save into the game (Ctrl+S) — the host applies it live"></button>
+    <button class="pb sm" data-set="files" data-name="save-as"   id="b-saveas" title="Download this fight as a .json under a name you choose"></button>
+    <button class="pb sm" data-set="files" data-name="import"    id="b-import" title="Load a .json (one fight, or an overrides bundle)"></button>
+    <button class="pb sm" data-set="files" data-name="export"    id="b-export" title="Download this fight's .json"></button>
+    <button class="pb sm" data-set="files" data-name="play-test" id="b-play"   title="Run the fight in the real engine, with your edits applied  (F5)"></button>
+    <button class="pb sm" data-set="files" data-name="stop-test" id="b-stop"   title="End the fight and return the engine to idle  (F6)"></button>
+  </div>
+  <div id="view-title"><span id="vt-tab">STAGE</span><span id="vt-name"></span></div>
+  <div id="viewctl">
+    <button class="tb" id="v-list"    title="Boss list drawer  (L)"><span class="ico" data-icon="boss"></span><span class="lbl">BOSSES</span></button>
+    <button class="tb" id="v-insp"    title="Inspector dock  (Tab)"><span class="ico" data-icon="settings"></span><span class="lbl">INSPECTOR</span></button>
+    <button class="tb" id="v-theater" title="Theater: the view takes the whole width  (T / F11)"><span class="ico" data-icon="application"></span><span class="lbl">THEATER</span></button>
+  </div>
+  <div id="hoststat"><span id="host-led" class="led"></span><span id="host-txt">ENGINE BOOTING</span><span id="ver">v0911b</span></div>
+</header>
+
+<main id="app">
+  <!-- ---- the rail: one icon per view ---- -->
+  <nav id="rail">
+    <div id="tabs">
+      <button class="tab on" data-tab="stage"    title="Stage — the real fight"><span class="ico" data-icon="play"></span><i>STAGE</i></button>
+      <button class="tab"    data-tab="plate"    title="Plate — the hull, its anchors and hit box"><span class="ico" data-icon="boss"></span><i>PLATE</i></button>
+      <button class="tab"    data-tab="scene"    title="Scene — paths, zones, keyed attacks on the grid"><span class="ico" data-icon="path"></span><i>SCENE</i></button>
+      <button class="tab"    data-tab="graphics" title="Graphics — every registered key for this boss"><span class="ico" data-icon="part"></span><i>ART</i></button>
+      <button class="tab"    data-tab="json"     title="JSON — the fight document"><span class="ico" data-icon="save"></span><i>JSON</i></button>
+      <button class="tab"    data-tab="clips"    title="Clips — recordings"><span class="ico" data-icon="pattern"></span><i>CLIPS</i><b id="clip-n"></b></button>
+    </div>
+    <button class="tab rail-bottom" id="rail-list" title="Boss list  (L)"><span class="ico" data-icon="open"></span><i>LIST</i></button>
+  </nav>
+
+  <!-- ---- the boss list: a drawer that slides over the theater ---- -->
+  <aside id="drawer">
+    <div class="panel-h"><span class="bm" data-bm="BOSS LIST"></span><button class="hx" id="drawer-close" title="close (L)">✕</button></div>
+    <div id="list-groups"></div>
+  </aside>
+
+  <!-- ---- the viewport: the theater ---- -->
+  <section id="w-view">
+    <div class="pane on" id="pane-stage">
+      <div class="toolbar" id="stage-tools">
+        <label>PILOT <select id="t-pilot"></select></label>
+        <button class="tb" id="t-rec" title="R in the fight also toggles this"><span class="ico" data-icon="pattern"></span>REC</button>
+        <button class="tb" id="t-invuln"><span class="ico" data-icon="shield"></span>INVULN</button>
+        <label>SPEED <input type="range" id="t-speed" min="0.1" max="1" step="0.05" value="1"><span id="t-speed-v">1.00</span></label>
+        <button class="tb" id="t-pause"><span class="ico" data-icon="pause"></span>PAUSE</button>
+        <button class="tb" id="t-kill"><span class="ico" data-icon="damage"></span>KILL</button>
+        <label>HP <input type="number" id="t-hp" min="1" max="100" value="100" style="width:52px">%</label>
+        <button class="tb" id="t-sethp">SET</button>
+        <label class="chk"><input type="checkbox" id="t-overlay" checked> ANCHORS</label>
+      </div>
+      <div id="stage-wrap">
+        <iframe id="host" src="index.html?bossmode=1" title="engine" allow="autoplay"></iframe>
+        <canvas id="stage-overlay"></canvas>
+        <div id="stage-hint">CLICK THE STAGE TO TAKE THE CONTROLS · R = RECORD · START = PAUSE</div>
+      </div>
+    </div>
+
+    <div class="pane" id="pane-scene"></div>
+
+    <div class="pane" id="pane-plate">
+      <div class="toolbar" id="plate-tools">
+        <button class="tb st on" data-state="0">INTACT</button>
+        <button class="tb st" data-state="1">DAMAGED</button>
+        <button class="tb st" data-state="2">CRITICAL</button>
+        <label>ZOOM <input type="range" id="p-zoom" min="0.5" max="4" step="0.25" value="1.5"><span id="p-zoom-v">1.50</span></label>
+        <button class="tb" id="p-addanchor"><span class="ico" data-icon="path"></span>ADD ANCHOR</button>
+        <button class="tb" id="p-addhit"><span class="ico" data-icon="hitbox"></span>ADD HITBOX</button>
+        <label class="chk"><input type="checkbox" id="p-live" checked> LIVE APPLY</label>
+      </div>
+      <div id="plate-wrap"><canvas id="plate"></canvas><div id="plate-readout"></div></div>
+    </div>
+
+    <div class="pane" id="pane-graphics">
+      <div class="toolbar" id="gfx-tools">
+        <span id="gfx-count"></span>
+        <input type="text" id="gfx-filter" placeholder="filter keys">
+        <button class="tb" id="gfx-plate">USE AS PLATE</button>
+        <button class="tb" id="gfx-dmg">USE AS DAMAGED</button>
+        <button class="tb" id="gfx-crit">USE AS CRITICAL</button>
+      </div>
+      <div id="gfx-grid"></div>
+      <div id="gfx-big"><canvas id="gfx-big-cv"></canvas><div id="gfx-big-txt"></div></div>
+    </div>
+
+    <div class="pane" id="pane-json">
+      <div class="toolbar" id="json-tools">
+        <button class="tb" id="j-apply"><span class="ico" data-icon="save"></span>APPLY JSON</button>
+        <button class="tb" id="j-copy">COPY</button>
+        <button class="tb" id="j-bundle">EXPORT ALL OVERRIDES</button>
+        <span id="j-err"></span>
+      </div>
+      <textarea id="json" spellcheck="false"></textarea>
+    </div>
+
+    <div class="pane" id="pane-clips">
+      <div id="clips-list"></div>
+      <video id="clip-video" controls></video>
+    </div>
+  </section>
+
+  <!-- ---- the inspector dock ---- -->
+  <aside id="dock">
+    <div class="panel-h"><span class="bm" data-bm="INSPECTOR"></span><span id="dock-sub"></span><button class="hx" id="dock-close" title="fold away (Tab)">›</button></div>
+    <div id="dock-main">
+      <div id="editbar">
+        <button class="pb sm" data-set="editor" data-name="add-part" id="e-addpart"></button>
+        <button class="pb sm" data-set="editor" data-name="weapons"  data-sec="weapons"></button>
+        <button class="pb sm" data-set="editor" data-name="hitboxes" data-sec="hitboxes"></button>
+        <button class="pb sm" data-set="editor" data-name="phases"   data-sec="phases"></button>
+        <button class="pb sm" data-set="editor" data-name="patterns" data-sec="patterns"></button>
+      </div>
+      <div id="insp"></div>
+    </div>
+    <div id="dock-scene"></div>
+    <div id="applybar">
+      <button class="pb sm" data-set="editor" data-name="apply"  id="e-apply"></button>
+      <button class="pb sm" data-set="editor" data-name="undo"   id="e-undo"></button>
+      <button class="pb sm" data-set="editor" data-name="cancel" id="e-cancel"></button>
+    </div>
+  </aside>
+  <button id="dock-open" title="Inspector (Tab)">‹</button>
+</main>
+
+<footer id="tele">
+  <div id="tele-hp"><div id="tele-hp-fill"></div><span id="tele-hp-txt">—</span></div>
+  <span class="tf" id="tf-state">idle</span>
+  <span class="tf" id="tf-boss">no boss</span>
+  <span class="tf" id="tf-pat"></span>
+  <span class="tf" id="tf-pos"></span>
+  <span class="tf" id="tf-rec"></span>
+  <span class="tf grow" id="tf-msg"></span>
+  <span class="tf" id="tf-keys">L list · Tab inspector · T theater · F5 play · F6 stop · Ctrl+S save</span>
+</footer>
+
+<!-- OPEN BOSS -->
+<div id="modal" class="hidden">
+  <div class="win" id="w-open">
+    <div class="win-title" data-bm="OPEN BOSS"></div>
+    <div class="win-body">
+      <div id="open-list"></div>
+      <div class="row right"><button class="pb sm" data-set="editor" data-name="cancel" id="open-cancel"></button></div>
+    </div>
+  </div>
+</div>
+
+<input type="file" id="file-in" accept=".json,application/json" hidden>
+
+<script src="assets/bossmode/bossmode.js"></script>
+<script src="assets/bossmode/scene.js"></script>
+</body>
+</html>

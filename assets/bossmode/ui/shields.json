@@ -1,0 +1,274 @@
+{
+  "asset": "shields",
+  "frame_count": 12,
+  "frame_size": [
+    394,
+    394
+  ],
+  "alpha": "binary",
+  "vertical_row_gap": 40,
+  "atlas": {
+    "columns": 4,
+    "rows": 3,
+    "cell": [
+      394,
+      394
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 2,
+        "x": 434,
+        "y": 0,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 3,
+        "x": 868,
+        "y": 0,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 4,
+        "x": 1302,
+        "y": 0,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 434,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 6,
+        "x": 434,
+        "y": 434,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 7,
+        "x": 868,
+        "y": 434,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 8,
+        "x": 1302,
+        "y": 434,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 868,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 10,
+        "x": 434,
+        "y": 868,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 11,
+        "x": 868,
+        "y": 868,
+        "w": 394,
+        "h": 394
+      },
+      {
+        "frame": 12,
+        "x": 1302,
+        "y": 868,
+        "w": 394,
+        "h": 394
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "shield-circle",
+      "file": "shields-alpha-01.png",
+      "source_rect": [
+        0,
+        0,
+        362,
+        362
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-oval-wide",
+      "file": "shields-alpha-02.png",
+      "source_rect": [
+        362,
+        0,
+        724,
+        362
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-oval-tall",
+      "file": "shields-alpha-03.png",
+      "source_rect": [
+        724,
+        0,
+        1086,
+        362
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-hexagon",
+      "file": "shields-alpha-04.png",
+      "source_rect": [
+        1086,
+        0,
+        1448,
+        362
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-top",
+      "file": "shields-alpha-05.png",
+      "source_rect": [
+        0,
+        362,
+        362,
+        724
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-bottom",
+      "file": "shields-alpha-06.png",
+      "source_rect": [
+        362,
+        362,
+        724,
+        724
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-left",
+      "file": "shields-alpha-07.png",
+      "source_rect": [
+        724,
+        362,
+        1086,
+        724
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-right",
+      "file": "shields-alpha-08.png",
+      "source_rect": [
+        1086,
+        362,
+        1448,
+        724
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-quarter",
+      "file": "shields-alpha-09.png",
+      "source_rect": [
+        0,
+        724,
+        362,
+        1086
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-three-quarter",
+      "file": "shields-alpha-10.png",
+      "source_rect": [
+        362,
+        724,
+        724,
+        1086
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-segmented",
+      "file": "shields-alpha-11.png",
+      "source_rect": [
+        724,
+        724,
+        1086,
+        1086
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    },
+    {
+      "name": "shield-double",
+      "file": "shields-alpha-12.png",
+      "source_rect": [
+        1086,
+        724,
+        1448,
+        1086
+      ],
+      "center": [
+        197.0,
+        197.0
+      ]
+    }
+  ]
+}

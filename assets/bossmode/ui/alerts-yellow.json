@@ -1,0 +1,54 @@
+{
+  "asset": "alerts-yellow",
+  "frame_count": 3,
+  "frame_size": [
+    384,
+    384
+  ],
+  "alpha": "binary",
+  "atlas": {
+    "columns": 3,
+    "rows": 1,
+    "cell": [
+      384,
+      384
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 384,
+        "h": 384
+      },
+      {
+        "frame": 2,
+        "x": 424,
+        "y": 0,
+        "w": 384,
+        "h": 384
+      },
+      {
+        "frame": 3,
+        "x": 848,
+        "y": 0,
+        "w": 384,
+        "h": 384
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "danger",
+      "file": "alerts-yellow-alpha-01.png"
+    },
+    {
+      "name": "impact-imminent",
+      "file": "alerts-yellow-alpha-02.png"
+    },
+    {
+      "name": "incoming-projectile",
+      "file": "alerts-yellow-alpha-03.png"
+    }
+  ]
+}

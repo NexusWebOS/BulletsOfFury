@@ -1,0 +1,156 @@
+{
+  "asset": "shielddefenseicons",
+  "frame_count": 12,
+  "frame_size": [
+    446,
+    399
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 4,
+    "rows": 3,
+    "cell": [
+      446,
+      399
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 2,
+        "x": 446,
+        "y": 0,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 3,
+        "x": 892,
+        "y": 0,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 4,
+        "x": 1338,
+        "y": 0,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 399,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 6,
+        "x": 446,
+        "y": 399,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 7,
+        "x": 892,
+        "y": 399,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 8,
+        "x": 1338,
+        "y": 399,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 798,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 10,
+        "x": 446,
+        "y": 798,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 11,
+        "x": 892,
+        "y": 798,
+        "w": 446,
+        "h": 399
+      },
+      {
+        "frame": 12,
+        "x": 1338,
+        "y": 798,
+        "w": 446,
+        "h": 399
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "armor-shield",
+      "file": "shielddefenseicons-alpha-01.png"
+    },
+    {
+      "name": "energy-bubble",
+      "file": "shielddefenseicons-alpha-02.png"
+    },
+    {
+      "name": "segmented-shield",
+      "file": "shielddefenseicons-alpha-03.png"
+    },
+    {
+      "name": "forward-shield",
+      "file": "shielddefenseicons-alpha-04.png"
+    },
+    {
+      "name": "shield-recharge",
+      "file": "shielddefenseicons-alpha-05.png"
+    },
+    {
+      "name": "shield-regenerate",
+      "file": "shielddefenseicons-alpha-06.png"
+    },
+    {
+      "name": "shield-break",
+      "file": "shielddefenseicons-alpha-07.png"
+    },
+    {
+      "name": "shield-overload",
+      "file": "shielddefenseicons-alpha-08.png"
+    },
+    {
+      "name": "invulnerability",
+      "file": "shielddefenseicons-alpha-09.png"
+    },
+    {
+      "name": "reflection",
+      "file": "shielddefenseicons-alpha-10.png"
+    },
+    {
+      "name": "shield-satellites",
+      "file": "shielddefenseicons-alpha-11.png"
+    },
+    {
+      "name": "reinforced-armor",
+      "file": "shielddefenseicons-alpha-12.png"
+    }
+  ]
+}

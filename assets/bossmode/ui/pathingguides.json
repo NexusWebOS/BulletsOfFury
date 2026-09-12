@@ -1,0 +1,200 @@
+{
+  "asset": "pathingguides",
+  "frame_count": 16,
+  "frame_size": [
+    419,
+    304
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 4,
+    "rows": 4,
+    "cell": [
+      419,
+      304
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 2,
+        "x": 419,
+        "y": 0,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 3,
+        "x": 838,
+        "y": 0,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 4,
+        "x": 1257,
+        "y": 0,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 304,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 6,
+        "x": 419,
+        "y": 304,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 7,
+        "x": 838,
+        "y": 304,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 8,
+        "x": 1257,
+        "y": 304,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 608,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 10,
+        "x": 419,
+        "y": 608,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 11,
+        "x": 838,
+        "y": 608,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 12,
+        "x": 1257,
+        "y": 608,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 912,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 14,
+        "x": 419,
+        "y": 912,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 15,
+        "x": 838,
+        "y": 912,
+        "w": 419,
+        "h": 304
+      },
+      {
+        "frame": 16,
+        "x": 1257,
+        "y": 912,
+        "w": 419,
+        "h": 304
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "straight-right",
+      "file": "pathingguides-alpha-01.png"
+    },
+    {
+      "name": "straight-down",
+      "file": "pathingguides-alpha-02.png"
+    },
+    {
+      "name": "diagonal-down-right",
+      "file": "pathingguides-alpha-03.png"
+    },
+    {
+      "name": "elbow",
+      "file": "pathingguides-alpha-04.png"
+    },
+    {
+      "name": "curve-quarter",
+      "file": "pathingguides-alpha-05.png"
+    },
+    {
+      "name": "u-turn",
+      "file": "pathingguides-alpha-06.png"
+    },
+    {
+      "name": "s-curve",
+      "file": "pathingguides-alpha-07.png"
+    },
+    {
+      "name": "zigzag",
+      "file": "pathingguides-alpha-08.png"
+    },
+    {
+      "name": "orbit-clockwise",
+      "file": "pathingguides-alpha-09.png"
+    },
+    {
+      "name": "orbit-counterclockwise",
+      "file": "pathingguides-alpha-10.png"
+    },
+    {
+      "name": "figure-eight",
+      "file": "pathingguides-alpha-11.png"
+    },
+    {
+      "name": "patrol",
+      "file": "pathingguides-alpha-12.png"
+    },
+    {
+      "name": "waypoint-line",
+      "file": "pathingguides-alpha-13.png"
+    },
+    {
+      "name": "bezier",
+      "file": "pathingguides-alpha-14.png"
+    },
+    {
+      "name": "acceleration-dots",
+      "file": "pathingguides-alpha-15.png"
+    },
+    {
+      "name": "branch-y",
+      "file": "pathingguides-alpha-16.png"
+    }
+  ]
+}

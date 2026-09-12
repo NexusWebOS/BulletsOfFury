@@ -1,0 +1,960 @@
+{
+  "asset": "fontupper",
+  "frame_count": 36,
+  "frame_size": [
+    199,
+    189
+  ],
+  "alpha": "binary",
+  "tags": [],
+  "atlas": {
+    "columns": 6,
+    "rows": 6,
+    "cell": [
+      199,
+      189
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 2,
+        "x": 239,
+        "y": 0,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 3,
+        "x": 478,
+        "y": 0,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 4,
+        "x": 717,
+        "y": 0,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 5,
+        "x": 956,
+        "y": 0,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 6,
+        "x": 1195,
+        "y": 0,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 7,
+        "x": 0,
+        "y": 229,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 8,
+        "x": 239,
+        "y": 229,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 9,
+        "x": 478,
+        "y": 229,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 10,
+        "x": 717,
+        "y": 229,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 11,
+        "x": 956,
+        "y": 229,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 12,
+        "x": 1195,
+        "y": 229,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 458,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 14,
+        "x": 239,
+        "y": 458,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 15,
+        "x": 478,
+        "y": 458,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 16,
+        "x": 717,
+        "y": 458,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 17,
+        "x": 956,
+        "y": 458,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 18,
+        "x": 1195,
+        "y": 458,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 19,
+        "x": 0,
+        "y": 687,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 20,
+        "x": 239,
+        "y": 687,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 21,
+        "x": 478,
+        "y": 687,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 22,
+        "x": 717,
+        "y": 687,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 23,
+        "x": 956,
+        "y": 687,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 24,
+        "x": 1195,
+        "y": 687,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 25,
+        "x": 0,
+        "y": 916,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 26,
+        "x": 239,
+        "y": 916,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 27,
+        "x": 478,
+        "y": 916,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 28,
+        "x": 717,
+        "y": 916,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 29,
+        "x": 956,
+        "y": 916,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 30,
+        "x": 1195,
+        "y": 916,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 31,
+        "x": 0,
+        "y": 1145,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 32,
+        "x": 239,
+        "y": 1145,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 33,
+        "x": 478,
+        "y": 1145,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 34,
+        "x": 717,
+        "y": 1145,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 35,
+        "x": 956,
+        "y": 1145,
+        "w": 199,
+        "h": 189
+      },
+      {
+        "frame": 36,
+        "x": 1195,
+        "y": 1145,
+        "w": 199,
+        "h": 189
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "A",
+      "file": "fontupper-alpha-01.png",
+      "source_rect": [
+        49,
+        61,
+        179,
+        200
+      ],
+      "placement": [
+        34,
+        25
+      ],
+      "visible_size": [
+        130,
+        139
+      ]
+    },
+    {
+      "index": 2,
+      "name": "B",
+      "file": "fontupper-alpha-02.png",
+      "source_rect": [
+        253,
+        61,
+        378,
+        200
+      ],
+      "placement": [
+        37,
+        25
+      ],
+      "visible_size": [
+        125,
+        139
+      ]
+    },
+    {
+      "index": 3,
+      "name": "C",
+      "file": "fontupper-alpha-03.png",
+      "source_rect": [
+        447,
+        61,
+        578,
+        200
+      ],
+      "placement": [
+        34,
+        25
+      ],
+      "visible_size": [
+        131,
+        139
+      ]
+    },
+    {
+      "index": 4,
+      "name": "D",
+      "file": "fontupper-alpha-04.png",
+      "source_rect": [
+        644,
+        60,
+        776,
+        200
+      ],
+      "placement": [
+        33,
+        24
+      ],
+      "visible_size": [
+        132,
+        140
+      ]
+    },
+    {
+      "index": 5,
+      "name": "E",
+      "file": "fontupper-alpha-05.png",
+      "source_rect": [
+        844,
+        60,
+        972,
+        200
+      ],
+      "placement": [
+        35,
+        24
+      ],
+      "visible_size": [
+        128,
+        140
+      ]
+    },
+    {
+      "index": 6,
+      "name": "F",
+      "file": "fontupper-alpha-06.png",
+      "source_rect": [
+        1045,
+        60,
+        1172,
+        200
+      ],
+      "placement": [
+        36,
+        24
+      ],
+      "visible_size": [
+        127,
+        140
+      ]
+    },
+    {
+      "index": 7,
+      "name": "G",
+      "file": "fontupper-alpha-07.png",
+      "source_rect": [
+        49,
+        260,
+        184,
+        402
+      ],
+      "placement": [
+        32,
+        23
+      ],
+      "visible_size": [
+        135,
+        142
+      ]
+    },
+    {
+      "index": 8,
+      "name": "H",
+      "file": "fontupper-alpha-08.png",
+      "source_rect": [
+        248,
+        260,
+        383,
+        402
+      ],
+      "placement": [
+        32,
+        23
+      ],
+      "visible_size": [
+        135,
+        142
+      ]
+    },
+    {
+      "index": 9,
+      "name": "I",
+      "file": "fontupper-alpha-09.png",
+      "source_rect": [
+        471,
+        260,
+        549,
+        402
+      ],
+      "placement": [
+        60,
+        23
+      ],
+      "visible_size": [
+        78,
+        142
+      ]
+    },
+    {
+      "index": 10,
+      "name": "J",
+      "file": "fontupper-alpha-10.png",
+      "source_rect": [
+        638,
+        260,
+        766,
+        402
+      ],
+      "placement": [
+        35,
+        23
+      ],
+      "visible_size": [
+        128,
+        142
+      ]
+    },
+    {
+      "index": 11,
+      "name": "K",
+      "file": "fontupper-alpha-11.png",
+      "source_rect": [
+        837,
+        260,
+        974,
+        402
+      ],
+      "placement": [
+        31,
+        23
+      ],
+      "visible_size": [
+        137,
+        142
+      ]
+    },
+    {
+      "index": 12,
+      "name": "L",
+      "file": "fontupper-alpha-12.png",
+      "source_rect": [
+        1044,
+        260,
+        1175,
+        402
+      ],
+      "placement": [
+        34,
+        23
+      ],
+      "visible_size": [
+        131,
+        142
+      ]
+    },
+    {
+      "index": 13,
+      "name": "M",
+      "file": "fontupper-alpha-13.png",
+      "source_rect": [
+        47,
+        461,
+        183,
+        600
+      ],
+      "placement": [
+        31,
+        25
+      ],
+      "visible_size": [
+        136,
+        139
+      ]
+    },
+    {
+      "index": 14,
+      "name": "N",
+      "file": "fontupper-alpha-14.png",
+      "source_rect": [
+        247,
+        461,
+        383,
+        600
+      ],
+      "placement": [
+        31,
+        25
+      ],
+      "visible_size": [
+        136,
+        139
+      ]
+    },
+    {
+      "index": 15,
+      "name": "O",
+      "file": "fontupper-alpha-15.png",
+      "source_rect": [
+        443,
+        461,
+        579,
+        600
+      ],
+      "placement": [
+        31,
+        25
+      ],
+      "visible_size": [
+        136,
+        139
+      ]
+    },
+    {
+      "index": 16,
+      "name": "P",
+      "file": "fontupper-alpha-16.png",
+      "source_rect": [
+        641,
+        460,
+        771,
+        600
+      ],
+      "placement": [
+        34,
+        24
+      ],
+      "visible_size": [
+        130,
+        140
+      ]
+    },
+    {
+      "index": 17,
+      "name": "Q",
+      "file": "fontupper-alpha-17.png",
+      "source_rect": [
+        837,
+        460,
+        980,
+        609
+      ],
+      "placement": [
+        28,
+        20
+      ],
+      "visible_size": [
+        143,
+        149
+      ]
+    },
+    {
+      "index": 18,
+      "name": "R",
+      "file": "fontupper-alpha-18.png",
+      "source_rect": [
+        1042,
+        461,
+        1175,
+        600
+      ],
+      "placement": [
+        33,
+        25
+      ],
+      "visible_size": [
+        133,
+        139
+      ]
+    },
+    {
+      "index": 19,
+      "name": "S",
+      "file": "fontupper-alpha-19.png",
+      "source_rect": [
+        48,
+        666,
+        184,
+        805
+      ],
+      "placement": [
+        31,
+        25
+      ],
+      "visible_size": [
+        136,
+        139
+      ]
+    },
+    {
+      "index": 20,
+      "name": "T",
+      "file": "fontupper-alpha-20.png",
+      "source_rect": [
+        247,
+        666,
+        379,
+        805
+      ],
+      "placement": [
+        33,
+        25
+      ],
+      "visible_size": [
+        132,
+        139
+      ]
+    },
+    {
+      "index": 21,
+      "name": "U",
+      "file": "fontupper-alpha-21.png",
+      "source_rect": [
+        441,
+        665,
+        579,
+        804
+      ],
+      "placement": [
+        30,
+        25
+      ],
+      "visible_size": [
+        138,
+        139
+      ]
+    },
+    {
+      "index": 22,
+      "name": "V",
+      "file": "fontupper-alpha-22.png",
+      "source_rect": [
+        635,
+        666,
+        775,
+        804
+      ],
+      "placement": [
+        29,
+        25
+      ],
+      "visible_size": [
+        140,
+        138
+      ]
+    },
+    {
+      "index": 23,
+      "name": "W",
+      "file": "fontupper-alpha-23.png",
+      "source_rect": [
+        824,
+        665,
+        983,
+        804
+      ],
+      "placement": [
+        20,
+        25
+      ],
+      "visible_size": [
+        159,
+        139
+      ]
+    },
+    {
+      "index": 24,
+      "name": "X",
+      "file": "fontupper-alpha-24.png",
+      "source_rect": [
+        1031,
+        666,
+        1177,
+        805
+      ],
+      "placement": [
+        26,
+        25
+      ],
+      "visible_size": [
+        146,
+        139
+      ]
+    },
+    {
+      "index": 25,
+      "name": "Y",
+      "file": "fontupper-alpha-25.png",
+      "source_rect": [
+        47,
+        869,
+        182,
+        1005
+      ],
+      "placement": [
+        32,
+        26
+      ],
+      "visible_size": [
+        135,
+        136
+      ]
+    },
+    {
+      "index": 26,
+      "name": "Z",
+      "file": "fontupper-alpha-26.png",
+      "source_rect": [
+        242,
+        868,
+        377,
+        1006
+      ],
+      "placement": [
+        32,
+        25
+      ],
+      "visible_size": [
+        135,
+        138
+      ]
+    },
+    {
+      "index": 27,
+      "name": "0",
+      "file": "fontupper-alpha-27.png",
+      "source_rect": [
+        441,
+        868,
+        575,
+        1007
+      ],
+      "placement": [
+        32,
+        25
+      ],
+      "visible_size": [
+        134,
+        139
+      ]
+    },
+    {
+      "index": 28,
+      "name": "1",
+      "file": "fontupper-alpha-28.png",
+      "source_rect": [
+        656,
+        869,
+        764,
+        1007
+      ],
+      "placement": [
+        45,
+        25
+      ],
+      "visible_size": [
+        108,
+        138
+      ]
+    },
+    {
+      "index": 29,
+      "name": "2",
+      "file": "fontupper-alpha-29.png",
+      "source_rect": [
+        836,
+        868,
+        969,
+        1007
+      ],
+      "placement": [
+        33,
+        25
+      ],
+      "visible_size": [
+        133,
+        139
+      ]
+    },
+    {
+      "index": 30,
+      "name": "3",
+      "file": "fontupper-alpha-30.png",
+      "source_rect": [
+        1034,
+        868,
+        1169,
+        1007
+      ],
+      "placement": [
+        32,
+        25
+      ],
+      "visible_size": [
+        135,
+        139
+      ]
+    },
+    {
+      "index": 31,
+      "name": "4",
+      "file": "fontupper-alpha-31.png",
+      "source_rect": [
+        47,
+        1070,
+        182,
+        1211
+      ],
+      "placement": [
+        32,
+        24
+      ],
+      "visible_size": [
+        135,
+        141
+      ]
+    },
+    {
+      "index": 32,
+      "name": "5",
+      "file": "fontupper-alpha-32.png",
+      "source_rect": [
+        245,
+        1070,
+        377,
+        1211
+      ],
+      "placement": [
+        33,
+        24
+      ],
+      "visible_size": [
+        132,
+        141
+      ]
+    },
+    {
+      "index": 33,
+      "name": "6",
+      "file": "fontupper-alpha-33.png",
+      "source_rect": [
+        441,
+        1069,
+        575,
+        1211
+      ],
+      "placement": [
+        32,
+        23
+      ],
+      "visible_size": [
+        134,
+        142
+      ]
+    },
+    {
+      "index": 34,
+      "name": "7",
+      "file": "fontupper-alpha-34.png",
+      "source_rect": [
+        641,
+        1070,
+        769,
+        1211
+      ],
+      "placement": [
+        35,
+        24
+      ],
+      "visible_size": [
+        128,
+        141
+      ]
+    },
+    {
+      "index": 35,
+      "name": "8",
+      "file": "fontupper-alpha-35.png",
+      "source_rect": [
+        836,
+        1069,
+        969,
+        1211
+      ],
+      "placement": [
+        33,
+        23
+      ],
+      "visible_size": [
+        133,
+        142
+      ]
+    },
+    {
+      "index": 36,
+      "name": "9",
+      "file": "fontupper-alpha-36.png",
+      "source_rect": [
+        1037,
+        1069,
+        1172,
+        1211
+      ],
+      "placement": [
+        32,
+        23
+      ],
+      "visible_size": [
+        135,
+        142
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

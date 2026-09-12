@@ -1,0 +1,468 @@
+{
+ "asset": "buttons",
+ "frame_count": 18,
+ "alpha": "binary",
+ "atlas": {
+  "columns": 3,
+  "rows": 6,
+  "cell": [
+   320,
+   147
+  ],
+  "rects": [
+   {
+    "frame": 1,
+    "x": 0,
+    "y": 0,
+    "w": 319,
+    "h": 141
+   },
+   {
+    "frame": 2,
+    "x": 341,
+    "y": 0,
+    "w": 319,
+    "h": 141
+   },
+   {
+    "frame": 3,
+    "x": 681,
+    "y": 0,
+    "w": 320,
+    "h": 141
+   },
+   {
+    "frame": 4,
+    "x": 0,
+    "y": 170,
+    "w": 319,
+    "h": 141
+   },
+   {
+    "frame": 5,
+    "x": 341,
+    "y": 170,
+    "w": 319,
+    "h": 141
+   },
+   {
+    "frame": 6,
+    "x": 682,
+    "y": 170,
+    "w": 319,
+    "h": 141
+   },
+   {
+    "frame": 7,
+    "x": 0,
+    "y": 344,
+    "w": 319,
+    "h": 141
+   },
+   {
+    "frame": 8,
+    "x": 341,
+    "y": 344,
+    "w": 319,
+    "h": 141
+   },
+   {
+    "frame": 9,
+    "x": 682,
+    "y": 344,
+    "w": 319,
+    "h": 141
+   },
+   {
+    "frame": 10,
+    "x": 0,
+    "y": 515,
+    "w": 319,
+    "h": 144
+   },
+   {
+    "frame": 11,
+    "x": 341,
+    "y": 515,
+    "w": 319,
+    "h": 144
+   },
+   {
+    "frame": 12,
+    "x": 681,
+    "y": 515,
+    "w": 320,
+    "h": 144
+   },
+   {
+    "frame": 13,
+    "x": 0,
+    "y": 686,
+    "w": 319,
+    "h": 147
+   },
+   {
+    "frame": 14,
+    "x": 341,
+    "y": 686,
+    "w": 319,
+    "h": 147
+   },
+   {
+    "frame": 15,
+    "x": 682,
+    "y": 686,
+    "w": 319,
+    "h": 147
+   },
+   {
+    "frame": 16,
+    "x": 0,
+    "y": 858,
+    "w": 320,
+    "h": 144
+   },
+   {
+    "frame": 17,
+    "x": 341,
+    "y": 858,
+    "w": 319,
+    "h": 144
+   },
+   {
+    "frame": 18,
+    "x": 682,
+    "y": 858,
+    "w": 319,
+    "h": 144
+   }
+  ]
+ },
+ "items": [
+  {
+   "index": 1,
+   "name": "spawn",
+   "source_rect": [
+    0,
+    0,
+    319,
+    141
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    141
+   ]
+  },
+  {
+   "index": 2,
+   "name": "spawn-hover",
+   "source_rect": [
+    341,
+    0,
+    660,
+    141
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    141
+   ]
+  },
+  {
+   "index": 3,
+   "name": "spawn-down",
+   "source_rect": [
+    681,
+    0,
+    1001,
+    141
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    320,
+    141
+   ]
+  },
+  {
+   "index": 4,
+   "name": "waves",
+   "source_rect": [
+    0,
+    170,
+    319,
+    311
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    141
+   ]
+  },
+  {
+   "index": 5,
+   "name": "waves-hover",
+   "source_rect": [
+    341,
+    170,
+    660,
+    311
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    141
+   ]
+  },
+  {
+   "index": 6,
+   "name": "waves-down",
+   "source_rect": [
+    682,
+    170,
+    1001,
+    311
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    141
+   ]
+  },
+  {
+   "index": 7,
+   "name": "enemy",
+   "source_rect": [
+    0,
+    344,
+    319,
+    485
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    141
+   ]
+  },
+  {
+   "index": 8,
+   "name": "enemy-hover",
+   "source_rect": [
+    341,
+    344,
+    660,
+    485
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    141
+   ]
+  },
+  {
+   "index": 9,
+   "name": "enemy-down",
+   "source_rect": [
+    682,
+    344,
+    1001,
+    485
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    141
+   ]
+  },
+  {
+   "index": 10,
+   "name": "stage",
+   "source_rect": [
+    0,
+    515,
+    319,
+    659
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    144
+   ]
+  },
+  {
+   "index": 11,
+   "name": "stage-hover",
+   "source_rect": [
+    341,
+    515,
+    660,
+    659
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    144
+   ]
+  },
+  {
+   "index": 12,
+   "name": "stage-down",
+   "source_rect": [
+    681,
+    515,
+    1001,
+    659
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    320,
+    144
+   ]
+  },
+  {
+   "index": 13,
+   "name": "sprite",
+   "source_rect": [
+    0,
+    686,
+    319,
+    833
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    147
+   ]
+  },
+  {
+   "index": 14,
+   "name": "sprite-hover",
+   "source_rect": [
+    341,
+    686,
+    660,
+    833
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    147
+   ]
+  },
+  {
+   "index": 15,
+   "name": "sprite-down",
+   "source_rect": [
+    682,
+    686,
+    1001,
+    833
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    147
+   ]
+  },
+  {
+   "index": 16,
+   "name": "apply",
+   "source_rect": [
+    0,
+    858,
+    320,
+    1002
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    320,
+    144
+   ]
+  },
+  {
+   "index": 17,
+   "name": "apply-hover",
+   "source_rect": [
+    341,
+    858,
+    660,
+    1002
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    144
+   ]
+  },
+  {
+   "index": 18,
+   "name": "apply-down",
+   "source_rect": [
+    682,
+    858,
+    1001,
+    1002
+   ],
+   "placement": [
+    0,
+    0
+   ],
+   "visible_size": [
+    319,
+    144
+   ]
+  }
+ ],
+ "notes": "Generated by _BUILD_SOURCE/bod_pack_map_0912f.py. Cells found by GRID slice, then sorted into reading order and named from the prompt order. rectOf() pairs items[i] with atlas.rects[i], so the rects are per-sprite and need not be a lattice."
+}

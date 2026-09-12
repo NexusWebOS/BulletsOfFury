@@ -1,0 +1,260 @@
+{
+  "asset": "windows",
+  "frame_count": 9,
+  "frame_size": [
+    1269,
+    484
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 6,
+    "rows": 2,
+    "cell": [
+      1269,
+      484
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 1269,
+        "h": 484
+      },
+      {
+        "frame": 2,
+        "x": 1309,
+        "y": 0,
+        "w": 1269,
+        "h": 484
+      },
+      {
+        "frame": 3,
+        "x": 2618,
+        "y": 0,
+        "w": 1269,
+        "h": 484
+      },
+      {
+        "frame": 4,
+        "x": 3927,
+        "y": 0,
+        "w": 1269,
+        "h": 484
+      },
+      {
+        "frame": 5,
+        "x": 5236,
+        "y": 0,
+        "w": 1269,
+        "h": 484
+      },
+      {
+        "frame": 6,
+        "x": 6545,
+        "y": 0,
+        "w": 1269,
+        "h": 484
+      },
+      {
+        "frame": 7,
+        "x": 0,
+        "y": 524,
+        "w": 1269,
+        "h": 484
+      },
+      {
+        "frame": 8,
+        "x": 1309,
+        "y": 524,
+        "w": 1269,
+        "h": 484
+      },
+      {
+        "frame": 9,
+        "x": 2618,
+        "y": 524,
+        "w": 1269,
+        "h": 484
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "1",
+      "file": "windows-alpha-01.png",
+      "source_rect": [
+        32,
+        72,
+        799,
+        516
+      ],
+      "placement": [
+        251,
+        20
+      ],
+      "visible_size": [
+        767,
+        444
+      ]
+    },
+    {
+      "index": 2,
+      "name": "2",
+      "file": "windows-alpha-02.png",
+      "source_rect": [
+        858,
+        73,
+        1121,
+        516
+      ],
+      "placement": [
+        503,
+        20
+      ],
+      "visible_size": [
+        263,
+        443
+      ]
+    },
+    {
+      "index": 3,
+      "name": "3",
+      "file": "windows-alpha-03.png",
+      "source_rect": [
+        1178,
+        100,
+        1510,
+        442
+      ],
+      "placement": [
+        468,
+        71
+      ],
+      "visible_size": [
+        332,
+        342
+      ]
+    },
+    {
+      "index": 4,
+      "name": "4",
+      "file": "windows-alpha-04.png",
+      "source_rect": [
+        32,
+        612,
+        799,
+        709
+      ],
+      "placement": [
+        251,
+        193
+      ],
+      "visible_size": [
+        767,
+        97
+      ]
+    },
+    {
+      "index": 5,
+      "name": "5",
+      "file": "windows-alpha-05.png",
+      "source_rect": [
+        842,
+        612,
+        1265,
+        709
+      ],
+      "placement": [
+        423,
+        193
+      ],
+      "visible_size": [
+        423,
+        97
+      ]
+    },
+    {
+      "index": 6,
+      "name": "6",
+      "file": "windows-alpha-06.png",
+      "source_rect": [
+        1353,
+        593,
+        1390,
+        909
+      ],
+      "placement": [
+        616,
+        84
+      ],
+      "visible_size": [
+        37,
+        316
+      ]
+    },
+    {
+      "index": 7,
+      "name": "7",
+      "file": "windows-alpha-07.png",
+      "source_rect": [
+        1442,
+        594,
+        1480,
+        909
+      ],
+      "placement": [
+        615,
+        84
+      ],
+      "visible_size": [
+        38,
+        315
+      ]
+    },
+    {
+      "index": 8,
+      "name": "8",
+      "file": "windows-alpha-08.png",
+      "source_rect": [
+        40,
+        779,
+        1269,
+        818
+      ],
+      "placement": [
+        20,
+        222
+      ],
+      "visible_size": [
+        1229,
+        39
+      ]
+    },
+    {
+      "index": 9,
+      "name": "9",
+      "file": "windows-alpha-09.png",
+      "source_rect": [
+        40,
+        870,
+        1269,
+        909
+      ],
+      "placement": [
+        20,
+        222
+      ],
+      "visible_size": [
+        1229,
+        39
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

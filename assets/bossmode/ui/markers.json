@@ -1,0 +1,358 @@
+{
+  "asset": "markers",
+  "frame_count": 16,
+  "frame_size": [
+    394,
+    304
+  ],
+  "alpha": "binary",
+  "vertical_row_gap": 40,
+  "atlas": {
+    "columns": 4,
+    "rows": 4,
+    "cell": [
+      394,
+      304
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 2,
+        "x": 434,
+        "y": 0,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 3,
+        "x": 868,
+        "y": 0,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 4,
+        "x": 1302,
+        "y": 0,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 344,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 6,
+        "x": 434,
+        "y": 344,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 7,
+        "x": 868,
+        "y": 344,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 8,
+        "x": 1302,
+        "y": 344,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 688,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 10,
+        "x": 434,
+        "y": 688,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 11,
+        "x": 868,
+        "y": 688,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 12,
+        "x": 1302,
+        "y": 688,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 1032,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 14,
+        "x": 434,
+        "y": 1032,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 15,
+        "x": 868,
+        "y": 1032,
+        "w": 394,
+        "h": 304
+      },
+      {
+        "frame": 16,
+        "x": 1302,
+        "y": 1032,
+        "w": 394,
+        "h": 304
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "anchor",
+      "file": "markers-alpha-01.png",
+      "source_rect": [
+        0,
+        0,
+        362,
+        272
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "joint",
+      "file": "markers-alpha-02.png",
+      "source_rect": [
+        362,
+        0,
+        724,
+        272
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "attachment",
+      "file": "markers-alpha-03.png",
+      "source_rect": [
+        724,
+        0,
+        1086,
+        272
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "component-link",
+      "file": "markers-alpha-04.png",
+      "source_rect": [
+        1086,
+        0,
+        1448,
+        272
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "muzzle",
+      "file": "markers-alpha-05.png",
+      "source_rect": [
+        0,
+        272,
+        362,
+        543
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "fire-cone-narrow",
+      "file": "markers-alpha-06.png",
+      "source_rect": [
+        362,
+        272,
+        724,
+        543
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "fire-cone-wide",
+      "file": "markers-alpha-07.png",
+      "source_rect": [
+        724,
+        272,
+        1086,
+        543
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "aim-line",
+      "file": "markers-alpha-08.png",
+      "source_rect": [
+        1086,
+        272,
+        1448,
+        543
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "weak-spot",
+      "file": "markers-alpha-09.png",
+      "source_rect": [
+        0,
+        543,
+        362,
+        814
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "hitbox-rectangle",
+      "file": "markers-alpha-10.png",
+      "source_rect": [
+        362,
+        543,
+        724,
+        814
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "hitbox-capsule",
+      "file": "markers-alpha-11.png",
+      "source_rect": [
+        724,
+        543,
+        1086,
+        814
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "section-corners",
+      "file": "markers-alpha-12.png",
+      "source_rect": [
+        1086,
+        543,
+        1448,
+        814
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "detach-outline",
+      "file": "markers-alpha-13.png",
+      "source_rect": [
+        0,
+        814,
+        362,
+        1086
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "effect-radius",
+      "file": "markers-alpha-14.png",
+      "source_rect": [
+        362,
+        814,
+        724,
+        1086
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "symmetry-axis",
+      "file": "markers-alpha-15.png",
+      "source_rect": [
+        724,
+        814,
+        1086,
+        1086
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    },
+    {
+      "name": "callout-leader",
+      "file": "markers-alpha-16.png",
+      "source_rect": [
+        1086,
+        814,
+        1448,
+        1086
+      ],
+      "center": [
+        197.0,
+        152.0
+      ]
+    }
+  ]
+}

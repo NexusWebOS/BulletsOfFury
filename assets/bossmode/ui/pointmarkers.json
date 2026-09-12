@@ -1,0 +1,244 @@
+{
+  "asset": "pointmarkers",
+  "frame_count": 20,
+  "frame_size": [
+    353,
+    359
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 5,
+    "rows": 4,
+    "cell": [
+      353,
+      359
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 2,
+        "x": 353,
+        "y": 0,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 3,
+        "x": 706,
+        "y": 0,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 4,
+        "x": 1059,
+        "y": 0,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 5,
+        "x": 1412,
+        "y": 0,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 6,
+        "x": 0,
+        "y": 359,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 7,
+        "x": 353,
+        "y": 359,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 8,
+        "x": 706,
+        "y": 359,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 9,
+        "x": 1059,
+        "y": 359,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 10,
+        "x": 1412,
+        "y": 359,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 11,
+        "x": 0,
+        "y": 718,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 12,
+        "x": 353,
+        "y": 718,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 13,
+        "x": 706,
+        "y": 718,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 14,
+        "x": 1059,
+        "y": 718,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 15,
+        "x": 1412,
+        "y": 718,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 16,
+        "x": 0,
+        "y": 1077,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 17,
+        "x": 353,
+        "y": 1077,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 18,
+        "x": 706,
+        "y": 1077,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 19,
+        "x": 1059,
+        "y": 1077,
+        "w": 353,
+        "h": 359
+      },
+      {
+        "frame": 20,
+        "x": 1412,
+        "y": 1077,
+        "w": 353,
+        "h": 359
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "anchor-normal",
+      "file": "pointmarkers-alpha-01.png"
+    },
+    {
+      "name": "anchor-hover",
+      "file": "pointmarkers-alpha-02.png"
+    },
+    {
+      "name": "anchor-selected",
+      "file": "pointmarkers-alpha-03.png"
+    },
+    {
+      "name": "anchor-disabled",
+      "file": "pointmarkers-alpha-04.png"
+    },
+    {
+      "name": "anchor-locked",
+      "file": "pointmarkers-alpha-05.png"
+    },
+    {
+      "name": "muzzle-normal",
+      "file": "pointmarkers-alpha-06.png"
+    },
+    {
+      "name": "muzzle-hover",
+      "file": "pointmarkers-alpha-07.png"
+    },
+    {
+      "name": "muzzle-selected",
+      "file": "pointmarkers-alpha-08.png"
+    },
+    {
+      "name": "muzzle-disabled",
+      "file": "pointmarkers-alpha-09.png"
+    },
+    {
+      "name": "muzzle-locked",
+      "file": "pointmarkers-alpha-10.png"
+    },
+    {
+      "name": "target-normal",
+      "file": "pointmarkers-alpha-11.png"
+    },
+    {
+      "name": "target-hover",
+      "file": "pointmarkers-alpha-12.png"
+    },
+    {
+      "name": "target-selected",
+      "file": "pointmarkers-alpha-13.png"
+    },
+    {
+      "name": "target-disabled",
+      "file": "pointmarkers-alpha-14.png"
+    },
+    {
+      "name": "target-locked",
+      "file": "pointmarkers-alpha-15.png"
+    },
+    {
+      "name": "waypoint-normal",
+      "file": "pointmarkers-alpha-16.png"
+    },
+    {
+      "name": "waypoint-hover",
+      "file": "pointmarkers-alpha-17.png"
+    },
+    {
+      "name": "waypoint-selected",
+      "file": "pointmarkers-alpha-18.png"
+    },
+    {
+      "name": "waypoint-disabled",
+      "file": "pointmarkers-alpha-19.png"
+    },
+    {
+      "name": "waypoint-locked",
+      "file": "pointmarkers-alpha-20.png"
+    }
+  ]
+}

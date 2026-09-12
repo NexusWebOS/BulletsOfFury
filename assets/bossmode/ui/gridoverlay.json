@@ -1,0 +1,35 @@
+{
+  "asset": "gridoverlay",
+  "frame_count": 1,
+  "frame_size": [
+    1480,
+    1118
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 1,
+    "rows": 1,
+    "cell": [
+      1480,
+      1118
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 1480,
+        "h": 1118
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "grid-overlay",
+      "file": "gridoverlay-alpha-01.png"
+    }
+  ]
+}

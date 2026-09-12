@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Bullets of Debug!</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="icon" href="assets/bulletsofdebug/ui/cur_pointer.png">
+<link rel="stylesheet" href="assets/bulletsofdebug/bod.css">
+</head>
+<body data-tab="enemy">
+<!-- ============================================================
+     BULLETS OF DEBUG! (drop 0912g) — the editor for everything that is not a boss.
+
+     Mike: "Make an additional extension to my Boss Mode Debug Editor but overall for the entire
+     game outside of the bosses ... level backgrounds, waves, enemies, projectiles, master game
+     stuff, menu layouts, button layouts ... demo how enemies operate and like bosses, change their
+     properties, data, hp, speed, attack, firing range."
+
+     SIBLING OF BOSS MODE, NOT A FORK. Same host/guest shape: the shipping game runs in the iframe
+     below at index.html?bossmode=1 and is driven through window.BOFDEBUG (assets/game.js), exactly
+     as bossmode.html drives window.BOSSMODE. Same theater layout — icon rail, viewport, folding
+     dock. The pack is the only thing that differs, and deliberately: cyan instead of orange, so a
+     screenshot of one is never mistaken for the other.
+
+     WHY A BRIDGE EXISTS AT ALL: every column-0 function in game.js IS a window property, so the
+     editor can already CALL the engine. What it cannot reach is the DATA — every roster table is a
+     lexical `const`. BOFDEBUG hands those over, and nothing else.
+     ============================================================ -->
+<header id="top">
+  <img id="logo" src="assets/bulletsofdebug/ui/logo.png" alt="Bullets of Debug!">
+  <div id="filebar">
+    <button class="pb" data-btn="spawn"  id="b-spawn"  title="Spawn the selected unit into the lab  (S)"></button>
+    <button class="pb" data-btn="enemy"  id="b-clear"  title="Clear the field  (C)"></button>
+    <button class="pb" data-btn="apply"  id="b-apply"  title="Apply the inspector to the live unit"></button>
+  </div>
+  <div id="view-title"><span id="vt-tab">ENEMY LAB</span><span id="vt-name"></span></div>
+  <div id="viewctl">
+    <button class="tb" id="v-list"  title="Roster drawer (L)"><span class="ico" data-icon="enemy"></span><span class="lbl">ROSTER</span></button>
+    <button class="tb" id="v-insp"  title="Inspector dock (Tab)"><span class="ico" data-icon="settings"></span><span class="lbl">INSPECTOR</span></button>
+    <button class="tb" id="v-theater" title="Theater (T)"><span class="ico" data-icon="select"></span><span class="lbl">THEATER</span></button>
+  </div>
+  <div id="hoststat"><span id="host-led" class="led"></span><span id="host-txt">ENGINE BOOTING</span><span id="ver">v0912g</span></div>
+</header>
+
+<main id="app">
+  <nav id="rail">
+    <div id="tabs">
+      <button class="tab on" data-tab="enemy" title="Enemy lab — spawn one unit and tune it"><span class="ico" data-icon="enemy"></span><i>ENEMY</i></button>
+      <button class="tab"    data-tab="fire"  title="Projectiles — patterns, cadence, families"><span class="ico" data-icon="projectile"></span><i>FIRE</i></button>
+      <button class="tab"    data-tab="stage" title="Stage — background, scroll, AI profile"><span class="ico" data-icon="background"></span><i>STAGE</i></button>
+      <button class="tab"    data-tab="art"   title="Art — browse, edit and replace a sprite"><span class="ico" data-icon="brush"></span><i>ART</i></button>
+      <button class="tab"    data-tab="json"  title="JSON — the roster row"><span class="ico" data-icon="save"></span><i>JSON</i></button>
+    </div>
+    <button class="tab rail-bottom" id="rail-list" title="Roster (L)"><span class="ico" data-icon="open"></span><i>LIST</i></button>
+  </nav>
+
+  <aside id="drawer">
+    <div class="panel-h"><span class="ttl">ROSTER</span><span id="roster-n"></span><button class="hx" id="drawer-close" title="close (L)">✕</button></div>
+    <input type="text" id="roster-filter" placeholder="filter 226 types…">
+    <div id="roster"></div>
+  </aside>
+
+  <section id="view">
+    <div class="toolbar">
+      <label>STAGE <select id="t-stage"></select></label>
+      <button class="tb" id="t-lab" title="Open a quiet stage with the wave script spent"><span class="ico" data-icon="play"></span>LAB</button>
+      <button class="tb" id="t-pause"><span class="ico" data-icon="pause"></span>PAUSE</button>
+      <label class="chk"><input type="checkbox" id="t-fov" checked> FOV</label>
+      <label class="chk"><input type="checkbox" id="t-anchor" checked> ANCHORS</label>
+      <label class="chk"><input type="checkbox" id="t-hull"> HULL</label>
+      <span class="grow"></span>
+      <span id="t-count" class="mono"></span>
+    </div>
+    <div id="stage-wrap">
+      <iframe id="host" src="index.html?bossmode=1" title="engine" allow="autoplay"></iframe>
+      <canvas id="overlay"></canvas>
+      <div id="hint">PICK A UNIT FROM THE ROSTER · S SPAWNS IT · C CLEARS THE FIELD</div>
+    </div>
+  </section>
+
+  <aside id="dock">
+    <div class="panel-h"><span class="ttl">INSPECTOR</span><span id="dock-sub"></span><button class="hx" id="dock-close" title="fold (Tab)">›</button></div>
+    <div id="insp"></div>
+    <div id="applybar">
+      <button class="pb sm" data-btn="apply" id="e-apply" title="Push the inspector onto the live unit"></button>
+      <button class="pb sm" data-btn="sprite" id="e-respawn" title="Respawn with these values"></button>
+    </div>
+  </aside>
+  <button id="dock-open" title="Inspector (Tab)">‹</button>
+</main>
+
+<footer id="tele">
+  <span class="tf" id="tf-state">idle</span>
+  <span class="tf" id="tf-unit">no unit</span>
+  <span class="tf" id="tf-pos"></span>
+  <span class="tf grow" id="tf-msg"></span>
+  <span class="tf" id="tf-keys">L roster · Tab inspector · T theater · S spawn · C clear</span>
+</footer>
+
+<script src="assets/bulletsofdebug/bod.js"></script>
+</body>
+</html>

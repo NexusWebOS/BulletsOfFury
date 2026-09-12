@@ -1,0 +1,200 @@
+{
+  "asset": "phaseemittertools",
+  "frame_count": 16,
+  "frame_size": [
+    355,
+    386
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 4,
+    "rows": 4,
+    "cell": [
+      355,
+      386
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 2,
+        "x": 355,
+        "y": 0,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 3,
+        "x": 710,
+        "y": 0,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 4,
+        "x": 1065,
+        "y": 0,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 386,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 6,
+        "x": 355,
+        "y": 386,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 7,
+        "x": 710,
+        "y": 386,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 8,
+        "x": 1065,
+        "y": 386,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 772,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 10,
+        "x": 355,
+        "y": 772,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 11,
+        "x": 710,
+        "y": 772,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 12,
+        "x": 1065,
+        "y": 772,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 1158,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 14,
+        "x": 355,
+        "y": 1158,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 15,
+        "x": 710,
+        "y": 1158,
+        "w": 355,
+        "h": 386
+      },
+      {
+        "frame": 16,
+        "x": 1065,
+        "y": 1158,
+        "w": 355,
+        "h": 386
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "add-keyframe",
+      "file": "phaseemittertools-alpha-01.png"
+    },
+    {
+      "name": "remove-keyframe",
+      "file": "phaseemittertools-alpha-02.png"
+    },
+    {
+      "name": "delay",
+      "file": "phaseemittertools-alpha-03.png"
+    },
+    {
+      "name": "repeat",
+      "file": "phaseemittertools-alpha-04.png"
+    },
+    {
+      "name": "link-emitters",
+      "file": "phaseemittertools-alpha-05.png"
+    },
+    {
+      "name": "unlink-emitters",
+      "file": "phaseemittertools-alpha-06.png"
+    },
+    {
+      "name": "synchronize",
+      "file": "phaseemittertools-alpha-07.png"
+    },
+    {
+      "name": "alternate",
+      "file": "phaseemittertools-alpha-08.png"
+    },
+    {
+      "name": "phase-transition",
+      "file": "phaseemittertools-alpha-09.png"
+    },
+    {
+      "name": "health-trigger",
+      "file": "phaseemittertools-alpha-10.png"
+    },
+    {
+      "name": "destruction-trigger",
+      "file": "phaseemittertools-alpha-11.png"
+    },
+    {
+      "name": "proximity-trigger",
+      "file": "phaseemittertools-alpha-12.png"
+    },
+    {
+      "name": "mirror-pattern",
+      "file": "phaseemittertools-alpha-13.png"
+    },
+    {
+      "name": "randomize",
+      "file": "phaseemittertools-alpha-14.png"
+    },
+    {
+      "name": "burst-count",
+      "file": "phaseemittertools-alpha-15.png"
+    },
+    {
+      "name": "fire-rate",
+      "file": "phaseemittertools-alpha-16.png"
+    }
+  ]
+}

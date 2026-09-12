@@ -1,0 +1,648 @@
+{
+  "asset": "buttonsfiles",
+  "frame_count": 24,
+  "frame_size": [
+    352,
+    132
+  ],
+  "alpha": "binary",
+  "tags": [],
+  "atlas": {
+    "columns": 6,
+    "rows": 4,
+    "cell": [
+      352,
+      132
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 2,
+        "x": 392,
+        "y": 0,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 3,
+        "x": 784,
+        "y": 0,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 4,
+        "x": 1176,
+        "y": 0,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 5,
+        "x": 1568,
+        "y": 0,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 6,
+        "x": 1960,
+        "y": 0,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 7,
+        "x": 0,
+        "y": 172,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 8,
+        "x": 392,
+        "y": 172,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 9,
+        "x": 784,
+        "y": 172,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 10,
+        "x": 1176,
+        "y": 172,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 11,
+        "x": 1568,
+        "y": 172,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 12,
+        "x": 1960,
+        "y": 172,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 13,
+        "x": 0,
+        "y": 344,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 14,
+        "x": 392,
+        "y": 344,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 15,
+        "x": 784,
+        "y": 344,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 16,
+        "x": 1176,
+        "y": 344,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 17,
+        "x": 1568,
+        "y": 344,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 18,
+        "x": 1960,
+        "y": 344,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 19,
+        "x": 0,
+        "y": 516,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 20,
+        "x": 392,
+        "y": 516,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 21,
+        "x": 784,
+        "y": 516,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 22,
+        "x": 1176,
+        "y": 516,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 23,
+        "x": 1568,
+        "y": 516,
+        "w": 352,
+        "h": 132
+      },
+      {
+        "frame": 24,
+        "x": 1960,
+        "y": 516,
+        "w": 352,
+        "h": 132
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "new-boss-normal",
+      "file": "buttonsfiles-alpha-01.png",
+      "source_rect": [
+        65,
+        69,
+        376,
+        157
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 2,
+      "name": "new-boss-hover",
+      "file": "buttonsfiles-alpha-02.png",
+      "source_rect": [
+        451,
+        69,
+        763,
+        157
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        312,
+        88
+      ]
+    },
+    {
+      "index": 3,
+      "name": "new-boss-pressed",
+      "file": "buttonsfiles-alpha-03.png",
+      "source_rect": [
+        838,
+        68,
+        1150,
+        158
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        90
+      ]
+    },
+    {
+      "index": 4,
+      "name": "open-boss-normal",
+      "file": "buttonsfiles-alpha-04.png",
+      "source_rect": [
+        65,
+        207,
+        376,
+        295
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 5,
+      "name": "open-boss-hover",
+      "file": "buttonsfiles-alpha-05.png",
+      "source_rect": [
+        451,
+        207,
+        763,
+        295
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        312,
+        88
+      ]
+    },
+    {
+      "index": 6,
+      "name": "open-boss-pressed",
+      "file": "buttonsfiles-alpha-06.png",
+      "source_rect": [
+        838,
+        206,
+        1150,
+        295
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        89
+      ]
+    },
+    {
+      "index": 7,
+      "name": "save-normal",
+      "file": "buttonsfiles-alpha-07.png",
+      "source_rect": [
+        65,
+        350,
+        376,
+        438
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 8,
+      "name": "save-hover",
+      "file": "buttonsfiles-alpha-08.png",
+      "source_rect": [
+        452,
+        349,
+        763,
+        438
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        89
+      ]
+    },
+    {
+      "index": 9,
+      "name": "save-pressed",
+      "file": "buttonsfiles-alpha-09.png",
+      "source_rect": [
+        838,
+        348,
+        1150,
+        439
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        312,
+        91
+      ]
+    },
+    {
+      "index": 10,
+      "name": "save-as-normal",
+      "file": "buttonsfiles-alpha-10.png",
+      "source_rect": [
+        65,
+        495,
+        376,
+        584
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        89
+      ]
+    },
+    {
+      "index": 11,
+      "name": "save-as-hover",
+      "file": "buttonsfiles-alpha-11.png",
+      "source_rect": [
+        451,
+        495,
+        762,
+        584
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        89
+      ]
+    },
+    {
+      "index": 12,
+      "name": "save-as-pressed",
+      "file": "buttonsfiles-alpha-12.png",
+      "source_rect": [
+        838,
+        495,
+        1150,
+        585
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        90
+      ]
+    },
+    {
+      "index": 13,
+      "name": "import-normal",
+      "file": "buttonsfiles-alpha-13.png",
+      "source_rect": [
+        65,
+        639,
+        376,
+        727
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 14,
+      "name": "import-hover",
+      "file": "buttonsfiles-alpha-14.png",
+      "source_rect": [
+        451,
+        638,
+        763,
+        727
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        89
+      ]
+    },
+    {
+      "index": 15,
+      "name": "import-pressed",
+      "file": "buttonsfiles-alpha-15.png",
+      "source_rect": [
+        838,
+        638,
+        1150,
+        728
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        90
+      ]
+    },
+    {
+      "index": 16,
+      "name": "export-normal",
+      "file": "buttonsfiles-alpha-16.png",
+      "source_rect": [
+        65,
+        785,
+        376,
+        873
+      ],
+      "placement": [
+        20,
+        22
+      ],
+      "visible_size": [
+        311,
+        88
+      ]
+    },
+    {
+      "index": 17,
+      "name": "export-hover",
+      "file": "buttonsfiles-alpha-17.png",
+      "source_rect": [
+        452,
+        785,
+        762,
+        873
+      ],
+      "placement": [
+        21,
+        22
+      ],
+      "visible_size": [
+        310,
+        88
+      ]
+    },
+    {
+      "index": 18,
+      "name": "export-pressed",
+      "file": "buttonsfiles-alpha-18.png",
+      "source_rect": [
+        838,
+        785,
+        1150,
+        874
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        89
+      ]
+    },
+    {
+      "index": 19,
+      "name": "play-test-normal",
+      "file": "buttonsfiles-alpha-19.png",
+      "source_rect": [
+        65,
+        928,
+        376,
+        1017
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        89
+      ]
+    },
+    {
+      "index": 20,
+      "name": "play-test-hover",
+      "file": "buttonsfiles-alpha-20.png",
+      "source_rect": [
+        451,
+        928,
+        763,
+        1017
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        312,
+        89
+      ]
+    },
+    {
+      "index": 21,
+      "name": "play-test-pressed",
+      "file": "buttonsfiles-alpha-21.png",
+      "source_rect": [
+        838,
+        926,
+        1150,
+        1018
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        312,
+        92
+      ]
+    },
+    {
+      "index": 22,
+      "name": "stop-test-normal",
+      "file": "buttonsfiles-alpha-22.png",
+      "source_rect": [
+        65,
+        1080,
+        376,
+        1169
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        89
+      ]
+    },
+    {
+      "index": 23,
+      "name": "stop-test-hover",
+      "file": "buttonsfiles-alpha-23.png",
+      "source_rect": [
+        452,
+        1079,
+        763,
+        1169
+      ],
+      "placement": [
+        20,
+        21
+      ],
+      "visible_size": [
+        311,
+        90
+      ]
+    },
+    {
+      "index": 24,
+      "name": "stop-test-pressed",
+      "file": "buttonsfiles-alpha-24.png",
+      "source_rect": [
+        838,
+        1079,
+        1150,
+        1170
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        312,
+        91
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

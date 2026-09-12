@@ -1,0 +1,156 @@
+{
+  "asset": "lasericons",
+  "frame_count": 12,
+  "frame_size": [
+    410,
+    431
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 4,
+    "rows": 3,
+    "cell": [
+      410,
+      431
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 2,
+        "x": 410,
+        "y": 0,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 3,
+        "x": 820,
+        "y": 0,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 4,
+        "x": 1230,
+        "y": 0,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 431,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 6,
+        "x": 410,
+        "y": 431,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 7,
+        "x": 820,
+        "y": 431,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 8,
+        "x": 1230,
+        "y": 431,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 862,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 10,
+        "x": 410,
+        "y": 862,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 11,
+        "x": 820,
+        "y": 862,
+        "w": 410,
+        "h": 431
+      },
+      {
+        "frame": 12,
+        "x": 1230,
+        "y": 862,
+        "w": 410,
+        "h": 431
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "single-laser",
+      "file": "lasericons-alpha-01.png"
+    },
+    {
+      "name": "twin-laser",
+      "file": "lasericons-alpha-02.png"
+    },
+    {
+      "name": "pulse-laser",
+      "file": "lasericons-alpha-03.png"
+    },
+    {
+      "name": "heavy-beam",
+      "file": "lasericons-alpha-04.png"
+    },
+    {
+      "name": "sweep-laser",
+      "file": "lasericons-alpha-05.png"
+    },
+    {
+      "name": "rotating-turret",
+      "file": "lasericons-alpha-06.png"
+    },
+    {
+      "name": "split-laser",
+      "file": "lasericons-alpha-07.png"
+    },
+    {
+      "name": "ricochet-laser",
+      "file": "lasericons-alpha-08.png"
+    },
+    {
+      "name": "piercing-laser",
+      "file": "lasericons-alpha-09.png"
+    },
+    {
+      "name": "lock-on-laser",
+      "file": "lasericons-alpha-10.png"
+    },
+    {
+      "name": "laser-charge",
+      "file": "lasericons-alpha-11.png"
+    },
+    {
+      "name": "laser-overheat",
+      "file": "lasericons-alpha-12.png"
+    }
+  ]
+}

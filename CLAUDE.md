@@ -900,7 +900,8 @@ before the flames go on, and the same applies to Juggernaut's flame source, whic
 
 ## 0906s — the flame animates from the inside, and the star system is gone
 
-⚠ **`nthp_` IS DELETED — 36 cells, 36 img rows, 338 lines of game.js.** Mike: *"we can delete
+⚠ **`nthp_` IS DELETED — 36 cells, 36 img rows, 338 lines of game.js.**
+⚠⚠ **CORRECTION, MEASURED 0910: THE CODE IS GONE AND THE REGISTRATIONS ARE NOT.** `drawShipThruster` has **0** definitions and `SHIP_FLAME_BAKED` is true, but the manifest still carries **36 `nthp_` cells and 36 img rows**. They point at `pilots_1.png`, a sheet that ships for other art, so nothing extra is downloaded — but the paragraph below claims a deletion the manifest never received (either it was reverted or a regeneration put it back), and ~14 of the suite's red assertions still test the live plume that no longer exists. Do not trust this note over a grep. Mike: *"we can delete
 those ugly ass old thrusters we were using."* `drawShipThruster`, both inline plume blocks and the
 family's PRELOAD entry went with it. **The family was registered TWICE and a single regex only
 found half of it** — a rect in `BOFX.cells` and a sheet path in `BOFX.img`, with different value
@@ -2934,3 +2935,361 @@ alongside `px`/`py`, rather than the current `camX`, which keeps drifting after 
 
 ⚠ **The bosses are being wired in another chat in this same tree.** Nothing has been committed
 there since `73b3009`, but check `git log` before touching boss code.
+
+## 0910a — debug mode, the recorder, and Boss Mode
+
+**Title: UP UP DOWN DOWN A B C → the DEBUG button (F2).** 18 fights off `STAGES`/`SUBBOSS`; a pick
+runs the REAL stage (`startRun → beginStage`) and raises the game's own warning, the way COLE1..9
+do; every exit routes back to the menu through ONE hook at the top of `setState`. **R records** the
+play canvas to a `.webm` (video only). `bossmode.html` is the editor: the real game in an iframe
+(`index.html?bossmode=1` → `GS.BMHOST`) driven through `window.BOSSMODE`; edits are `SHIPBOSS`
+overrides in `localStorage.bof_bossmode`. Read `docs/PASSOVER_0910A.md` and `assets/bossmode/README.md`.
+
+⚠ **OVERRIDES ARE NEVER APPLIED ON A NORMAL BOOT** (Mike 0909, blank game state). The host arms
+them; the game only while the debug menu's F4 toggle is on. Do not "fix" that.
+
+⚠ **`anyTap()` WALKS `Input.keys`, SO `Input.injectTap(k)` IS INVISIBLE TO IT UNTIL `keys[k]`
+EXISTS.** The host's boot gate sat on BOOT forever with a tap injected every frame. Set the key
+false first. **And there is no `frameCount` global** — a cadence on it throws inside a try/catch and
+looks like a gate that never opens.
+
+⚠ **`hp=1` + `hitBoss()` DOES NOT KILL A BOSS WITH A BARRIER** (Magma Ward, quad-laser, Blacksteel
+absorb the hit first). Force-kill is the death BRANCH: `boss.hp=0; bossDie()`, or the sub-boss dead
+block — `BOSSMODE.kill()` is the worked example. 0814c said the same of modular bosses.
+
+⚠ **`Input.menuLeft()` CONSUMES ITS TAP.** `if(menuLeft()||menuRight()){ d=menuLeft()?-1:1 }` is
+always +1. Read each once into a local.
+
+⚠ **THE BROWSER PANE STARVES AN IFRAME OF rAF** — the host showed 27 frames in 25 s and never left
+BOOT there. Verify the editor with `probe_bossmode_editor.py` (real Chromium); use the pane only to
+look, after driving the host by hand.
+
+## 0910b — the gauges are the Boss Mode pack's bars
+
+`drawHealthBarV2` dispatches to `drawHealthBarArt` (the pack: boss = lit frame + hazard stripes,
+mini = plain frame + solid fill, stage colour by `xartPalette`, grey plate as the lag ghost) with
+the 0810n drawn gauge as `drawHealthBarDrawn` underneath — it still always draws. **The fill is
+CLIPPED at the fraction, never scaled** (Mike: "we do not want to shrink it"); §-pins check both
+bodies. ⚠ **The pack's fills span the whole frame and COVER BOTH END CAPS if placed at the map's
+offset** — the fill goes in the measured opening (x 139..1469 of 1609). Sheet
+`assets/game/atlas/ui_bossbar.png`, baked at draw size; `probe_bossbar_0910b.py` renders all nine.
+
+## 0910c — the name is off every gauge, and the fill goes in the BLACK
+
+Mike: *"stop displaying the name of the boss entirely for ALL mini and regular bosses. Next, ensure
+you dont overlay the line, but you center the fill graphic inside the black properly to fill."*
+
+**Every HUD name label is gone** - the four boss-bar callers, both gauge bodies' miniboss label, the
+miniboss fallback bar, both legacy `hbDraw` label arguments, and the `'!! NAME !!'` entrance banner
+that flashed while a boss flew in. `run._lastBossName` (the debrief) and the `{BOSS_NAME}` radio
+substitution stay: those are screens and dialogue, not the HUD.
+
+⚠ **THE FRAME OPENING IS NOT THE BLACK.** 0910b fitted the fill to the opening between the cap
+squares, which still ran the fill over the top and bottom RAILS. The interior is measured off each
+frame's own pixels - the longest contiguous run of near-black - and the two frames differ: x
+140..1468 on both, y **24..53** on the mini frame and **25..53** on the boss frame, whose lit top
+rail is a row thicker. Each kind now draws its own rect. ⚠ **And take the LONGEST CONTIGUOUS run,
+not min..max** - a dark strip above the rail made the mini well measure as y 2..53, i.e. the whole
+frame, which is how the fill got over the rails in the first place.
+
+## 0910d — the clip is the whole cabinet
+
+The recorder captured `#screen` alone, so every clip dropped the score/lives/bombs strip and the
+EQUIPPED box — the two surfaces that say how the fight is going. It composites all three canvases
+now, in shoot.py's own layout (hud + equip on a row above the play field), so a frame of a clip and
+a frame of the harness are the same picture. ⚠ **The composite runs at the END of `loop()`, after
+`drawHUDStrip` has filled the strip for this frame** — composited any earlier it records the
+PREVIOUS frame's HUD over this frame's play field, which is invisible until you go looking for a
+number in a clip. One seed frame is painted before `captureStream`, or the clip opens on black.
+Measured: 960x1152 composite against a 960x1024 screen, 31,509 lit pixels in the HUD row.
+Audio is still not captured and is a bigger job — see the README.
+
+## 0910e — SHIP DESTROYED is lettered in the stage you died on
+
+Mike: *"remove this font, use the correct font here please for all stages."* It was drawing through
+`msgText`, i.e. the DIALOGUE face — the same fault 0904af fixed on the debrief and 0904v on
+GET READY / 3-2-1 / GO, still live on the banner the player sees most. It goes through
+`stageText(curFontArt(), …)` now, shrink-to-fit (`stageFitH`) because the stage faces are wide and
+this is fourteen characters on a 480px field. `msgText` survives only as the pre-decode fallback,
+and `stageText` keeps its own BOFmil fallback, so a slow decode still costs letterforms and nothing
+else. Rendered on all nine stages by killing the ship in each (`docs/proofs/`-style contact sheet):
+every glyph resolves, including the S that the stage-5 CARD alphabet does not have — the borrow
+chain covers it, which is the 0903 CHOO E YOUR PILOT bug not reappearing.
+
+## 0911a — the scene director and the scene editor
+
+A `scene` on a `SHIPBOSS` row (tracks of tiled keys with rot/scale/actions; safe/attack/boss zones)
+is consumed by `sceneDirectorTick` inside `shipBossManoeuvre` — it OWNS the hull only while a track
+is live, and the engine's own manoeuvre runs between tracks. `shipBossVisualPose` adds the scene's
+rot: **authored rotation is Mike's own design, distinct from the engine-tilt rule.** Safe zones
+cull enemy rounds; attack zones telegraph with the pack's cones/alerts (`ui_bossmode_fx`); boss
+zones fence the manoeuvre. `kind:'boss'` fires through `_shipShot`. The editor is `scene.js` (the
+SCENE tab) on the Complete pack's markers/guides/pattern icons. ⚠ `sceneWarm` at attach: a flash
+family first asked for at the moment of firing is the first-call trap and measured 0 flashes.
+Probes: `probe_scene_0911a.py` (engine, 23/23) and `probe_scene_editor_0911a.py` (mouse, 16/16).
+Read `docs/PASSOVER_0910A.md` §0911A.
+
+## 0911b — the editor is a theater
+
+`bossmode.html` = RAIL (icon tabs) | THEATER (`#w-view`, ~76-80% of the width) | DOCK (`#dock`: the
+fight inspector, or the SCENE inspector — `body[data-tab]` picks). The BOSS LIST is a drawer (L),
+Tab folds the dock, T/F11 is theater; `localStorage.bof_bm_layout` remembers dock+theater. All the
+probe selectors survive (`#tabs .tab[data-tab]`, `#insp`, `#sc-insp`, `#e-apply`, `#b-play`,
+`#stage-overlay`, `#list-groups .li`). ⚠ body is a grid: keep `minmax(0,1fr)` on its column or the
+header's min-content widens the page past the window. ⚠ never put `background-size` on `.ico` /
+`.pb` / `.pk` — the atlas rules crop in atlas pixels. `probe_theater_0911b.py` 16/16. Read
+`docs/PASSOVER_0910A.md` §0911B.
+
+## 0912a — nine somersaults, Juggernaut's charge, the arcade opener, HELP
+
+**All nine pilots somersault.** `SOMER_PILOTS` already listed nine; the manifest carried 64 `so`
+cells, not 72 — Lizzie had none. Her reel is PITCH-TRANSFORMED from her own level plate on the
+profile measured off Maverick's authored eight (`_BUILD_SOURCE/lizzie_somersault_0912a.py`).
+⚠ `so` IS NOT `br`: maverick so2 is 196x78, br2 is 39x184 — a pitch presents the span, a roll the
+chord. Aliasing one onto the other ships a barrel roll wearing a somersault's name; the suite pins
+it. ⚠ Her reel is registered on BOTH her sheets and `_so0.._so7` added to `LIZZIE_B42_RECTS`,
+because `applyLizzieSkin` only walks that table's keys and `_shipSheetOf` picks her page off a live
+flag — a stock-only row crops the B-42 page at stock coordinates.
+
+**Juggernaut's charge + wrecking balls.** His 15s special is now three things on one window:
+six iron balls on chains in two counter-rotating rings (they cull enemy fire and carry the ram's
+own damage calls), a CHARGE dash (hold CHARGE + UP, release; hold time buys distance), and a CHARGE
+bar at row 0 under SOMERSAULT and ROLL that replaces the generic SPECIAL bar for him. ⚠ The wind-up
+must be excluded from the mid-roll climb allowance — UP is half its own input, so leaving it in
+flew him 189px into the ceiling and made a FULL charge measure SHORTER than a quick one. ⚠ The
+inner ring is 58px and the chain starts at 24px: at 44/0 the six chains converged on the hull and
+buried the aircraft. `barRows()` is the single source for which bar sits where.
+
+**Binds.** Space was ALREADY on retina (0812a) — checked, then pinned. Added `mouse3` to retina and
+a new `charge` action on `h`/`mouse4`/`pad_b3`, both seats, both control screens. ⚠ His "button 4
+and 5" are `e.button` 3 and 4: a side button is 1-indexed to the human, 0-indexed to the browser.
+
+**The arcade opener** is `GS.OPENER` (⚠ NOT `GS.INTRO`, which is the stage card). Nine beats off the
+ColeForge logo: two silhouette cards, the nine-pilot sweep, the frontal portraits, three live
+gameplay cuts, a nine-screen montage (3 die / 3 kill a boss / 3 evade), then the logo and PRESS
+START. Any input skips it. ⚠ Silhouettes come from `cinship_<p>_2` (43% opaque cutouts), NOT
+`port_cf_*` (77% opaque framed busts, which silhouette into a black box). ⚠ The logo is `nbl_logo`;
+`ASSETS.menuLogo` and `'logo'` are both the ColeForge ENGINE plate. Music: `BOFA.music.opener` =
+stage9_bonus_warp_run, the one file the manifest never registered.
+
+**HELP** is a sixth title button (`btn_help`, generated against the existing buttons as a
+`reference_asset_id`) opening `GS.HELP` — three pages, every label read from the live `keybind`
+table. ⚠ FOUR places knew the title menu was five long: two wrap sites, the art draw loop and the
+mouse hit-test. Fixing only the wraps left the sixth button invisible and unclickable — a
+screenshot caught it, a code read did not.
+
+⚠ `assets/game.js` is **LF**; `_BUILD_SOURCE/test_fl.js` is **CRLF**. Detecting the ending from the
+file is not enough once a stray CRLF is in there — check both.
+⚠ SpriteCook `raw_url` renders transparency as a CHECKERBOARD, not black. Cut sprites from
+`pixel_url` and upscale; a luminance key on the raw shipped a chessboard that was invisible on a
+transparency-checkered contact sheet and obvious in-engine.
+
+Probes: `probe_somersault_0912a.py` 10/10, `probe_charge_0912a.py` 21/21,
+`probe_opener_0912a.py` 8/8, `probe_help_0912a.py` 13/13, suite section 281.
+Read `docs/PASSOVER_0910A.md` §0912A.
+
+## 0912b — the proper stage face, and a floor under it
+
+Mike, on the HELP controls page: "whatever font is being used here is bad. please use stage fonts
+only the proper ones."
+
+**Two faults, one symptom.** ⚠ `uiFontArt()` returns `ASSETS.stageArt['1']` — the stage-1 **card
+alphabet**, a decorative set that stops at stage 5. `curFontArt()` returns `ASSETS.stageFontV4[n]`
+— CF_BOFStageFonts Vol.2, the authored per-stage face, with the card sheet as its own
+not-yet-decoded fallback (stageText draws NOTHING when its sheet has not landed — the 0810o trap).
+⚠ AND THE SIZE WAS HALF OF IT: rendered both faces at 8/9/10/11/13/16px side by side
+(`probe_font_compare.py`) — **both mush below ~11px**, and the page was drawing captions at 9 and
+bind lines at 7–8. Switching the face alone would not have fixed the screenshot.
+
+`HELP_MIN=11` is the floor; `helpLabel` and `opnText` both clamp to it and `stageFitH` shrinks long
+lines only down to it — which means an over-long string **runs off the edge instead of shrinking**,
+so `_helpWidest` records the widest line drawn and the probe asserts it fits the field.
+
+⚠ This face has no usable apostrophe or middle dot at UI size — `'` sits on the baseline (LIZZIE'S
+reads as LIZZIE,S) and `·` is a low period. Use hyphens and plain spaces in UI strings.
+
+Pinned in suite 281 (face, floor, and every `helpLabel` size). `probe_help_0912a.py` 14/14,
+`probe_opener_0912a.py` 8/8, suite still at the 90–91 baseline.
+
+
+## 0912c — the suite audit, and the flame flicker that quietly died
+
+**The suite's 91 standing failures were mostly one dead system.** 29 of them tested the star
+thruster overlay that **0906s deleted at Mike's request** ("we can delete those ugly ass old
+thrusters we were using") — `nthp_`, `drawShipThruster`, `'ntr_'+_tc`, `PILOT_TRAIL`, and the
+source-comment markers and mount geometry of the deleted draw. Retired via `okThr()`, which keeps
+every assertion in place and reversible (flip `THRUSTER_GONE`) and records the retirement — the
+same idiom as the Magma Colossus mech block. **91 → 63.**
+
+⚠ **AND RETIRING THEM SURFACED A REAL REGRESSION.** 0906s replaced the overlay with 144
+`ship_<pilot><suffix>_g1/_g2` phase cells picked by `shipGlowKey()` — the flame's interior
+brightness flickering inside a fixed silhouette. Those cells are in the manifest **at HEAD** and
+**absent from the working tree**: the 0909 re-pack onto one sheet per pilot (`nsa_ship_<pilot>`)
+rebuilt `BOFX.ships` and the phase rows did not survive it. `shipGlowKey` fails soft
+(`return BOFX.ships[k2] ? k2 : key`), so nothing throws, nothing logs, and **every flame is
+static**. Measured in Chromium on the eight keys that carried phases (base, `_l`, `_r`,
+`_pv0.._pv4` — ⚠ NOT `_nf`, which never had one): one distinct key over a 300ms cycle, on all nine
+pilots. 0906s measured three.
+
+⚠ **The old cells cannot be re-pointed.** Rendered HEAD's `ship_axel`/`_g1`/`_g2` beside the
+working tree's `ship_axel`: it is a different aeroplane (178x200 with a pale flame vs 136x155 with
+a cyan one). The hull was replaced after HEAD, and a phase shares its plate's silhouette by
+design, so those phases belong to the old hull only. Restoring the flicker means **re-baking** the
+144 phases against the current plates — Mike's art, and his call. Suite section 282 carries the one
+red that says so.
+
+⚠ The B-42 propeller still flickers, because its 18 phase rows live in `LIZZIE_B42_RECTS` in
+game.js rather than in the generated manifest — which is the proof that the picker is fine and the
+cells are what went missing.
+
+
+## 0912g/h — Bullets of Debug, and the world-vs-screen trap for the fifth time
+
+**`bulletsofdebug.html` is Boss Mode's sibling, for everything that is not a boss.** Same host/guest
+shape — the shipping game in an iframe at `index.html?bossmode=1`, driven through a new
+**`window.BOFDEBUG`** bridge; same theater layout (rail | viewport | folding dock); cyan instead of
+orange so a screenshot of one is never mistaken for the other. The bridge exists because every
+roster table is a lexical `const`: it hands over **226 types across 22 tables** plus the 17
+hand-coded `switch`-body types (reported with `row:null` rather than hidden), `PROJ`, `FIRETYPES`,
+`ENEMY_VOLLEY`, `STAGE_AI_PROFILE`, `L6_FLEET`, the movement vocabulary read off `updatePlay`, the
+scene-director shapes, and an in-memory sprite override/restore.
+
+⚠⚠ **AND ITS FOV CONE MAPPED A WORLD COORDINATE STRAIGHT ONTO ITS OWN CANVAS.** That is the class
+CLAUDE.md already records **four** times — the launch seam (0810a), the outbound routes (0810c), the
+level-1 ship (0810e), and `probe_seam.py` recomputing `player.x - camX` instead of recording what was
+drawn. This was the fifth. Three separate terms were missing and **each one is dormant in the case
+you would screenshot first**:
+
+- **`camX`** — zero at the left edge of every stage, so the cone looked perfect until the camera
+  scrolled, then sat ~190px right of the ship.
+- **the zoom** — `viewZoom()` is **1.00 on all nine stages today** (measured, every one: world 680
+  against `VIEW_PLATE_W` 680). game.js's own comment at `viewZoom()` still says stages 1/2/3/7/8 are
+  800 and is **stale**. So the term is dormant, and a plate-width change — "that is the whole dial" —
+  would silently break every overlay in the editor.
+- **the letterbox** — derived arithmetically it was **19.3px out across and 19.8px down**, because
+  index.html places its canvas inside the iframe with its own layout. `bossmode.js` has always read
+  `#screen`'s `getBoundingClientRect` and pinned its overlay there; doing the same makes the
+  letterbox a MEASUREMENT. ⚠ **And the guest rect is in the IFRAME's coordinate system** — carrying
+  it into page space by the iframe's own rect is a third term, worth exactly the iframe's page
+  offset (measured **-51px, -106px**: the rail's width and the header+toolbar's height).
+
+⚠ **`y` IS NOT `y*vz`.** `drawWorld` scales and then anchors the BOTTOM edge
+(`translate(0, VH*(1-vz)/vz)`), so world y=VH stays on the bottom of the screen and the zoom reveals
+rows ABOVE y=0. `bossmode.js:419` already had the correct pair; reading the sibling editor would have
+been quicker than rediscovering it.
+⚠ **AND `camX` ALONE IS NOT THE OFFSET THAT WAS DRAWN** — the translate is applied only while
+`worldWidth() > viewW()`, so on a non-scrolling stage the variable can hold a value nothing
+subtracted. `BOFDEBUG.snapshot().camX` reports the EFFECTIVE camera (`_camEff`), not the raw one.
+
+**`BOFDEBUG.xform` is the general answer, and it is why the probe can be trusted.** It wraps
+`ctx.drawImage` — ⚠ **on the INSTANCE, because the context carries its own copy and a
+`CanvasRenderingContext2D.prototype` trap records nothing (0905h)** — and captures the live CTM
+during a real frame while `_inWorldXform` is true. `probe_bod_overlay_0912h.py` compares that matrix
+against `BOD.S._mark`, the point the overlay actually drew, **in page space, through
+`getBoundingClientRect` on both sides** — so neither side's arithmetic is used to check the other.
+Measured **0.3px across, 2.0px down**; the busted arm (`BOD.S.bustCam`) is **282px** off, so the
+check can fail. Forcing `viewZoom` to 0.85 — it is a column-0 function, so it IS a window property —
+exercises the dormant zoom term and still lands within tolerance.
+
+⚠ **THREE PROBE FAULTS FOUND ON THE WAY, ALL WORTH KEEPING.** (1) The probe MOVED the unit and then
+compared the engine's mapping of its new position against `S._mark` from the previous frame — that
+measures the unit's own travel, reported **+71px across and +134px down on a correct build**. Seating
+is its own step now, a frame earlier. (2) The subject was a fast mover in a lab that runs real time,
+so across four measurements it flew off the bottom and was culled — which read as "the cone stopped
+painting" and "FIRE fired nothing" rather than as a unit that was simply gone. (3) Writing `S.unit`
+by hand does not render the inspector: `S.unit` is a FLAG (`unit()` re-fetches the live object every
+time, because `enemies` is reassigned every frame by the cull) and the inspector is rendered by
+`pick()`/`spawn()`. Drive the editor's own path.
+
+⚠ **`FIRE ONCE` DEFAULTED TO `shapes()[0]`, WHICH IS `stream`, WHICH FIRES ONE ROUND.** The pattern
+system was working perfectly and the first click a user ever makes looked like a broken button.
+`FIRE_SHAPE0='fan'`.
+
+⚠ **`art.override` MUST DELETE THE `BOFX.playercells`/`BOFX.cells` ROW BEFORE WRITING `XART.img[k]`**
+(shelved for restore) — cells are checked before the cache, so writing the cache alone changes
+nothing. Same shape as 0906g's `_flushShipCells`.
+
+Probes: `probe_bofdebug_0912g.py` 18/18 (the bridge), `probe_bod_editor_0912g.py` 21/21 (the editor
+driven like a user), `probe_bod_overlay_0912h.py` 13/13 (the mapping, with its busted arm). Suite
+section 283 pins all three terms in SOURCE, with comments stripped — the notes explaining the fix
+quote the wrong formulas by name, which is section 47's trap self-inflicted.
+
+## 0912i — the FIRE tab, and the twelve dials it refuses to ship
+
+Mike asked Bullets of Debug to cover *"projectiles ... muzzle flashes, firing speed, damage or
+damage per second, projectile patterning ... anchor points"*. Seven subsystems were read before a
+control was drawn — `PROJ`/`FIRETYPES`, `drawBullets`, the muzzle functions, `ENEMY_VOLLEY`, the
+flash families, damage, and the scene director — and the finding that shaped the whole tab is that
+**a literal reading of that list produces sliders that read back the value you wrote and change
+nothing.**
+
+⚠⚠ **THERE IS NO ENEMY-TO-PLAYER DAMAGE NUMBER IN THIS ENGINE.** `playerHit()` takes **zero
+arguments**, there is no `player.hp` anywhere in the file, and the enemy-bullet collision never
+looks at the bullet. Every enemy round costs exactly one shield pip or one life. Four `eBullets`
+carry `dmg:1` and it is read by nothing — *"the worst kind of false positive"*. So a damage slider,
+and the DPS that would follow from it, cannot exist; `BOFDEBUG.inert()` names them and eleven others
+with the measurement that condemned each, and the tab RENDERS that list rather than shipping the
+controls. The honest dials are cadence (rounds/second), pattern geometry, and how much screen a
+pattern denies.
+
+**The other eleven, all measured:** `curve` (`_curve` is read only by `updateRollers` over `rollers`,
+Falva's player pinball pool — enemy bullets never enter it); `homing`/`turn` (gated on
+`b.homing && run.stage===1`); `speed` on `emissile`/`_shootable` kinds (the steering block rewrites
+`vx/vy` from `spd*DIFF.ebSpeed` every frame); `PROJ.slot/szMul/tint/spin/pal` (**only `.type` is ever
+read** — PROJ is looked up in exactly one place in 61,812 lines); `SHIPBOSS[kind].dmg` (an array of
+**sprite keys**, and it is in `BM_LIVE_FIELDS`, so Boss Mode can patch it and see no effect);
+`ENEMY_VOLLEY` `n`/`spread` (neither key exists on any of the 52 rows); `_volSeed` (exists only in a
+comment); `CFX_STAGE_PROJECTILE` (`Object.freeze`'d); FIRETYPES fields on a BPFX kind (the premium
+path is an unconditional `return`, not a try-then-fall-back); and a new FIRETYPES row for a kind that
+already has a PROJ row.
+
+⚠ **FIVE OF THE TWELVE SHAPES EMIT ONE ROUND PER BEAT, BY DESIGN.** `sceneEmitBeat`'s switch has
+cases for only ten — its `default:` comment names **stream and aimed** — and `spiral` and `sine` each
+call `fire()` exactly once, while `mirrored` always calls it twice. The movement in `spiral` and
+`sweep` comes from the incrementing `beat` index. So a one-shot preview renders five of twelve as a
+single round, which is what made `FIRE ONCE` look like a broken button. `BOFDEBUG.burst()` is the
+fix, and ⚠ **it is pumped from `updateEffects`, the game's own per-frame tick** — an editor-side
+timer would run while the game is paused and on wall-clock time, so the preview would not match a
+real fight.
+
+⚠ **THE ANCHOR WAS INERT ON EVERY ORDINARY ENEMY.** Measured on a stage-1 delta jet: all twelve slot
+names — C, L, R, LW, RW, nose, tail, bay, b1, b2, gunL, gunR — returned **one point**,
+`(x, y + h*0.30)`, because `shipBossMount` reads `SHIPBOSS[b._ship].mounts` and an ordinary enemy has
+no `_ship`. A real ship boss gives three distinct points. `shipBossMount` now also honours a per-unit
+`_mounts` in the same normalised form, so it composes with the pose rotation and scale for free;
+measured byte-identical on the Void Bat before and after.
+
+⚠ **AND THE DEFAULT MUZZLE FLASH IS BOSS-ONLY AND FAILS SILENTLY.** With no `a.flash`,
+`sceneEmitBeat` calls `shipBossMuzzleStart`, which returns immediately unless `b._ship` AND that
+SHIPBOSS row has both `.proj` and `.mounts` — so firing off an ordinary enemy with the default
+produces **zero** flashes. Measured: naming a family queues 1, the default queues 0. The tab has no
+"default" option for that reason; the nine families that exist are read off the atlas with their
+frame counts.
+
+⚠ **`shadowed` IS A DERIVATION AND THE EDITOR MUST NOT RE-IMPLEMENT IT.** Resolution takes
+`PROJ.type` first unless the kind is dedicated (`/^s[1-9]/`, or exactly `magma`/`lavaComet`), so a
+row is unreachable only when it is not dedicated AND `PROJ.type` names a **different** row. The first
+cut re-derived it in the UI, dropped that last clause, and labelled `blast` shadowed on screen — when
+`PROJ.blast.type` IS `blast`, i.e. it resolves to itself. Derived in the bridge, it reproduces
+exactly the eight the recon named — `emberGem`, `eshot`, `frostComet`, `kingPellet`, `laser`,
+`railshot`, `venomDart`, `voidOrb` — and clears `blast` and `s3shard`. **That is eight authored
+projectile rows nothing in the game can draw**, which is worth showing rather than hiding.
+
+⚠ **`setVolley` MUST FIND ROWS BY NORMALISED KEY, NOT BY DERIVING SPELLINGS.** `ENEMY_VOLLEY` is
+keyed in both spellings deliberately (0811l) and the roster hands the editor the lower one, so
+building `[type, type.toLowerCase()]` never reaches `s1jetDelta`. That is exactly half the fix, which
+is the shape of the bug that had stages 4 and 6 fielding 26x26 one-hp jets for six drops.
+⚠ **And `enemyVolley` is `(e, force)` — two arguments.** There is no per-call pattern override; it
+reads `ENEMY_VOLLEY[e.type]` and nothing else, so a third argument is silently dropped. Unforced it
+takes the dead path and mostly returns false without firing.
+
+⚠ **TWO BAD DEFAULTS, BOTH FIRST IMPRESSIONS.** `FIRE ONCE` defaulted to `shapes()[0]` = `stream`
+(one round), and the projectile kind defaulted to `'e'`, **which is not a registered kind at all** —
+it has no `PROJ` row and no `FIRETYPES` row, so it falls through the whole draw chain to the 12x11
+fallback pip. Now `fan` and `pellet`.
+
+Probe: `probe_bod_fire_0912h.py` **18 ok / 0 fail** — it asserts that the shipped controls move
+something measurable (a fan lays n distinct headings; a spiral BURST rotates them 24° a beat; a wall
+leaves the gap it is told to; the anchor slider moves the mount AND the round leaves from it) and
+that the ones that cannot work are **named rather than shipped**. Suite section 284 pins both halves,
+including that there is no damage slider.

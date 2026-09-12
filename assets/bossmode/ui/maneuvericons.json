@@ -1,0 +1,156 @@
+{
+  "asset": "maneuvericons",
+  "frame_count": 12,
+  "frame_size": [
+    443,
+    407
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 4,
+    "rows": 3,
+    "cell": [
+      443,
+      407
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 2,
+        "x": 443,
+        "y": 0,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 3,
+        "x": 886,
+        "y": 0,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 4,
+        "x": 1329,
+        "y": 0,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 5,
+        "x": 0,
+        "y": 407,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 6,
+        "x": 443,
+        "y": 407,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 7,
+        "x": 886,
+        "y": 407,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 8,
+        "x": 1329,
+        "y": 407,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 9,
+        "x": 0,
+        "y": 814,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 10,
+        "x": 443,
+        "y": 814,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 11,
+        "x": 886,
+        "y": 814,
+        "w": 443,
+        "h": 407
+      },
+      {
+        "frame": 12,
+        "x": 1329,
+        "y": 814,
+        "w": 443,
+        "h": 407
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "spin-clockwise",
+      "file": "maneuvericons-alpha-01.png"
+    },
+    {
+      "name": "spin-counterclockwise",
+      "file": "maneuvericons-alpha-02.png"
+    },
+    {
+      "name": "bank-left",
+      "file": "maneuvericons-alpha-03.png"
+    },
+    {
+      "name": "bank-right",
+      "file": "maneuvericons-alpha-04.png"
+    },
+    {
+      "name": "barrel-roll-left",
+      "file": "maneuvericons-alpha-05.png"
+    },
+    {
+      "name": "barrel-roll-right",
+      "file": "maneuvericons-alpha-06.png"
+    },
+    {
+      "name": "somersault-forward",
+      "file": "maneuvericons-alpha-07.png"
+    },
+    {
+      "name": "somersault-backward",
+      "file": "maneuvericons-alpha-08.png"
+    },
+    {
+      "name": "boost",
+      "file": "maneuvericons-alpha-09.png"
+    },
+    {
+      "name": "strafe",
+      "file": "maneuvericons-alpha-10.png"
+    },
+    {
+      "name": "evasive-zigzag",
+      "file": "maneuvericons-alpha-11.png"
+    },
+    {
+      "name": "orbit-target",
+      "file": "maneuvericons-alpha-12.png"
+    }
+  ]
+}

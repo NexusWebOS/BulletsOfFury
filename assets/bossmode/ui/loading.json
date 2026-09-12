@@ -1,0 +1,232 @@
+{
+  "asset": "loading",
+  "frame_count": 8,
+  "frame_size": [
+    1649,
+    117
+  ],
+  "alpha": "binary",
+  "tags": [],
+  "atlas": {
+    "columns": 6,
+    "rows": 2,
+    "cell": [
+      1649,
+      117
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 1649,
+        "h": 117
+      },
+      {
+        "frame": 2,
+        "x": 1689,
+        "y": 0,
+        "w": 1649,
+        "h": 117
+      },
+      {
+        "frame": 3,
+        "x": 3378,
+        "y": 0,
+        "w": 1649,
+        "h": 117
+      },
+      {
+        "frame": 4,
+        "x": 5067,
+        "y": 0,
+        "w": 1649,
+        "h": 117
+      },
+      {
+        "frame": 5,
+        "x": 6756,
+        "y": 0,
+        "w": 1649,
+        "h": 117
+      },
+      {
+        "frame": 6,
+        "x": 8445,
+        "y": 0,
+        "w": 1649,
+        "h": 117
+      },
+      {
+        "frame": 7,
+        "x": 0,
+        "y": 157,
+        "w": 1649,
+        "h": 117
+      },
+      {
+        "frame": 8,
+        "x": 1689,
+        "y": 157,
+        "w": 1649,
+        "h": 117
+      }
+    ]
+  },
+  "items": [
+    {
+      "index": 1,
+      "name": "empty",
+      "file": "loading-alpha-01.png",
+      "source_rect": [
+        82,
+        52,
+        1691,
+        129
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        1609,
+        77
+      ]
+    },
+    {
+      "index": 2,
+      "name": "empty-highlight",
+      "file": "loading-alpha-02.png",
+      "source_rect": [
+        82,
+        165,
+        1691,
+        242
+      ],
+      "placement": [
+        20,
+        20
+      ],
+      "visible_size": [
+        1609,
+        77
+      ]
+    },
+    {
+      "index": 3,
+      "name": "fill-orange",
+      "file": "loading-alpha-03.png",
+      "source_rect": [
+        86,
+        280,
+        1691,
+        339
+      ],
+      "placement": [
+        22,
+        29
+      ],
+      "visible_size": [
+        1605,
+        59
+      ]
+    },
+    {
+      "index": 4,
+      "name": "fill-red",
+      "file": "loading-alpha-04.png",
+      "source_rect": [
+        86,
+        378,
+        1691,
+        438
+      ],
+      "placement": [
+        22,
+        28
+      ],
+      "visible_size": [
+        1605,
+        60
+      ]
+    },
+    {
+      "index": 5,
+      "name": "fill-cyan",
+      "file": "loading-alpha-05.png",
+      "source_rect": [
+        86,
+        478,
+        1691,
+        538
+      ],
+      "placement": [
+        22,
+        28
+      ],
+      "visible_size": [
+        1605,
+        60
+      ]
+    },
+    {
+      "index": 6,
+      "name": "fill-green",
+      "file": "loading-alpha-06.png",
+      "source_rect": [
+        86,
+        578,
+        1691,
+        638
+      ],
+      "placement": [
+        22,
+        28
+      ],
+      "visible_size": [
+        1605,
+        60
+      ]
+    },
+    {
+      "index": 7,
+      "name": "fill-disabled",
+      "file": "loading-alpha-07.png",
+      "source_rect": [
+        86,
+        679,
+        1691,
+        739
+      ],
+      "placement": [
+        22,
+        28
+      ],
+      "visible_size": [
+        1605,
+        60
+      ]
+    },
+    {
+      "index": 8,
+      "name": "fill-segmented",
+      "file": "loading-alpha-08.png",
+      "source_rect": [
+        86,
+        780,
+        1691,
+        838
+      ],
+      "placement": [
+        22,
+        29
+      ],
+      "visible_size": [
+        1605,
+        58
+      ]
+    }
+  ],
+  "vertical_row_gap": 40,
+  "notes": "Source artwork retained. PNG font glyphs are bitmap art, not an installed font. Cursor PNGs require hotspot assignment in the consuming application."
+}

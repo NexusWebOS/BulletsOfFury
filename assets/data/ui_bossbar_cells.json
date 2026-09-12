@@ -1,0 +1,89 @@
+{
+ "scale": 0.435052827843381,
+ "well_px": {
+  "mini": [
+   140,
+   24,
+   1328,
+   29
+  ],
+  "boss": [
+   140,
+   25,
+   1328,
+   28
+  ]
+ },
+ "well_draw": {
+  "mini": [
+   60.91,
+   10.44,
+   577.75,
+   12.62
+  ],
+  "boss": [
+   60.91,
+   10.88,
+   577.75,
+   12.18
+  ]
+ },
+ "cells": {
+  "bmbar_frame_mini": [
+   "ui_bossbar",
+   2,
+   2,
+   700,
+   33
+  ],
+  "bmbar_frame_boss": [
+   "ui_bossbar",
+   2,
+   39,
+   700,
+   33
+  ],
+  "bmbar_fill_orange": [
+   "ui_bossbar",
+   2,
+   76,
+   578,
+   13
+  ],
+  "bmbar_fill_red": [
+   "ui_bossbar",
+   2,
+   93,
+   578,
+   13
+  ],
+  "bmbar_fill_cyan": [
+   "ui_bossbar",
+   2,
+   110,
+   578,
+   13
+  ],
+  "bmbar_fill_green": [
+   "ui_bossbar",
+   2,
+   127,
+   578,
+   13
+  ],
+  "bmbar_fill_grey": [
+   "ui_bossbar",
+   2,
+   144,
+   578,
+   13
+  ],
+  "bmbar_fill_seg": [
+   "ui_bossbar",
+   2,
+   161,
+   578,
+   13
+  ]
+ }
+}

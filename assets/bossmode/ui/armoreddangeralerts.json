@@ -1,0 +1,57 @@
+{
+  "asset": "armoreddangeralerts",
+  "frame_count": 3,
+  "frame_size": [
+    756,
+    756
+  ],
+  "alpha": "binary",
+  "tags": [
+    "ui"
+  ],
+  "atlas": {
+    "columns": 3,
+    "rows": 1,
+    "cell": [
+      756,
+      756
+    ],
+    "rects": [
+      {
+        "frame": 1,
+        "x": 0,
+        "y": 0,
+        "w": 756,
+        "h": 756
+      },
+      {
+        "frame": 2,
+        "x": 756,
+        "y": 0,
+        "w": 756,
+        "h": 756
+      },
+      {
+        "frame": 3,
+        "x": 1512,
+        "y": 0,
+        "w": 756,
+        "h": 756
+      }
+    ]
+  },
+  "items": [
+    {
+      "name": "danger-light-green",
+      "file": "armoreddangeralerts-alpha-01.png"
+    },
+    {
+      "name": "danger-yellow",
+      "file": "armoreddangeralerts-alpha-02.png"
+    },
+    {
+      "name": "danger-neon-red",
+      "file": "armoreddangeralerts-alpha-03.png"
+    }
+  ]
+}

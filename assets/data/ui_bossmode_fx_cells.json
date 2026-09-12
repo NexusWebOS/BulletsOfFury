@@ -1,0 +1,128 @@
+{
+ "bmfx_fov_green_wide": [
+  "ui_bossmode_fx",
+  2,
+  2,
+  320,
+  320
+ ],
+ "bmfx_fov_green_tall": [
+  "ui_bossmode_fx",
+  326,
+  2,
+  320,
+  320
+ ],
+ "bmfx_fov_yellow_wide": [
+  "ui_bossmode_fx",
+  650,
+  2,
+  320,
+  320
+ ],
+ "bmfx_fov_yellow_tall": [
+  "ui_bossmode_fx",
+  2,
+  326,
+  320,
+  320
+ ],
+ "bmfx_fov_red_wide": [
+  "ui_bossmode_fx",
+  326,
+  326,
+  320,
+  320
+ ],
+ "bmfx_fov_red_tall": [
+  "ui_bossmode_fx",
+  650,
+  326,
+  320,
+  320
+ ],
+ "bmfx_alert_green_danger": [
+  "ui_bossmode_fx",
+  2,
+  650,
+  93,
+  87
+ ],
+ "bmfx_alert_green_impact_imminent": [
+  "ui_bossmode_fx",
+  99,
+  650,
+  91,
+  92
+ ],
+ "bmfx_alert_green_incoming_projectile": [
+  "ui_bossmode_fx",
+  194,
+  650,
+  34,
+  97
+ ],
+ "bmfx_alert_yellow_danger": [
+  "ui_bossmode_fx",
+  232,
+  650,
+  93,
+  87
+ ],
+ "bmfx_alert_yellow_impact_imminent": [
+  "ui_bossmode_fx",
+  329,
+  650,
+  92,
+  93
+ ],
+ "bmfx_alert_yellow_incoming_projectile": [
+  "ui_bossmode_fx",
+  425,
+  650,
+  34,
+  98
+ ],
+ "bmfx_alert_red_danger": [
+  "ui_bossmode_fx",
+  463,
+  650,
+  93,
+  87
+ ],
+ "bmfx_alert_red_impact_imminent": [
+  "ui_bossmode_fx",
+  560,
+  650,
+  92,
+  93
+ ],
+ "bmfx_alert_red_incoming_projectile": [
+  "ui_bossmode_fx",
+  656,
+  650,
+  34,
+  98
+ ],
+ "bmfx_badge_green": [
+  "ui_bossmode_fx",
+  694,
+  650,
+  149,
+  131
+ ],
+ "bmfx_badge_yellow": [
+  "ui_bossmode_fx",
+  847,
+  650,
+  150,
+  131
+ ],
+ "bmfx_badge_red": [
+  "ui_bossmode_fx",
+  2,
+  785,
+  150,
+  131
+ ]
+}
