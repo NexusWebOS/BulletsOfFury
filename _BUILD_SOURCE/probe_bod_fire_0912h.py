@@ -192,6 +192,18 @@ def main():
         pg.screenshot(path=os.path.join(a.out, '02_fired.png'))
 
         # ---- the anchor is drawn on the overlay ----
+        # ⚠ PIN THE SUBJECT FIRST. This assertion flaked 1 run in 3 at "0 px", and it is the SAME
+        # probe fault probe_bod_overlay_0912h already records: s1jetdelta is a mover, the lab runs
+        # real time, and by the time the ink is counted the unit can have drifted off and been
+        # culled - at which point drawOverlay correctly returns early and the canvas is blank.
+        # "the marker is not drawn" and "there is no longer a unit to mark" look identical from a
+        # pixel count, so the probe says which.
+        pinned = pg.evaluate("""() => { const W=document.querySelector('#host').contentWindow;
+            const u=window.BOD.unit(); if(!u) return false;
+            u.vx=0; u.vy=0; u._dyingT=null; u.x=Math.round(W.player.x-40); u.y=170; return true; }""")
+        ok(pinned, 'the subject is still alive to mark (a culled unit and an unmarked one look the '
+                   'same to a pixel count)')
+        pg.wait_for_timeout(450)
         ink = pg.evaluate("""() => { const c=document.querySelector('#overlay');
             if(!c.width||c.width<2) return 0;
             const d=c.getContext('2d').getImageData(0,0,c.width,c.height).data;

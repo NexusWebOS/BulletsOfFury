@@ -167,6 +167,8 @@ function renderInspector(){
      uses for its fight/scene inspectors, rather than two docks fighting over the same column. */
   if(S.tab==='fire'){ return renderFire(); }
   if(S.tab==='stage'){ return renderStage(); }
+  if(S.tab==='art'){ return renderArt(); }
+  if(S.tab==='json'){ return renderJson(); }
   const box=$('#insp'); const d=api();
   if(!d){ box.innerHTML='<div class="hint">waiting for the engine…</div>'; return; }
   if(!S.sel){ box.innerHTML='<div class="hint">Pick a unit from the ROSTER drawer (L).</div>'; return; }
@@ -594,6 +596,238 @@ function wireStage() {
   });
 }
 
+/* ============================================================
+   THE ART TAB (drop 0912m)
+
+   Mike: "allowing us to edit our frame/sprite and then save the frame/sprite as an image and also
+   save our change as a replacement in game if we select."
+
+   ⚠ THE EDIT HAPPENS IN HIS OWN TOOL, AND THAT IS THE HONEST SHAPE OF IT. A pixel editor inside
+   this panel is its own project, and a half-built one would be worse than none - this repo's whole
+   art history is hand-authored plates and palette rules that a crude in-browser paint tool would
+   quietly violate (0906o's palette shredder is the worked example). So this builds the ROUND TRIP:
+
+       browse -> EXPORT a PNG -> edit it wherever you like -> IMPORT it -> live in the game -> restore
+
+   The swap is in memory, so nothing on disk changes until Mike decides it should. `restore` puts
+   the original back with no reload.
+
+   ⚠ XART.rdy(k) IS FALSE ON ITS FIRST CALL - that call is what starts the lazy load - so a preview
+   that checks once and gives up reports perfectly good art as missing. This polls.
+   ⚠ AND XART.get(k) RETURNS A CANVAS, NOT AN Image, so it has no `.src`. It is drawn with
+   drawImage straight out of the guest document, which is same-origin.
+   ============================================================ */
+
+const AR = {key: null, keys: null, filter: '', zoom: 4, busy: false};
+
+function artKeys() {
+  const d = api(); if (!d || !d.art) return [];
+  if (!AR.keys) AR.keys = d.art.keys();
+  return AR.keys;
+}
+
+function renderArt() {
+  const box = $('#insp'), d = api();
+  if (!d) { box.innerHTML = '<div class="hint">waiting for the engine…</div>'; return; }
+  const all = artKeys();
+  const f = AR.filter.toLowerCase();
+  const hits = f ? all.filter(k => k.toLowerCase().indexOf(f) >= 0) : [];
+  let h = '';
+
+  h += sec('ak', 'FIND A SPRITE', all.length + ' keys',
+    '<div class="f wide"><label>FILTER</label><input type="text" id="a-filter" value="' +
+      AR.filter.replace(/"/g, '&quot;') + '" placeholder="ship_cole, s6dart, nbl_…"></div>' +
+    (f
+      ? ('<div class="hint">' + hits.length + ' match' + (hits.length === 1 ? '' : 'es') +
+         (hits.length > 60 ? ' — showing the first 60' : '') + '</div>' +
+         hits.slice(0, 60).map(k =>
+           '<div class="f wide ak' + (k === AR.key ? ' on' : '') + '" data-key="' + k +
+           '" style="cursor:var(--cur-pointer)"><label>' + (k === AR.key ? '▸' : '') +
+           '</label><span class="v mono">' + k + '</span></div>').join(''))
+      : '<div class="hint">There are ' + all.length + ' registered keys across five stores — type ' +
+        'to narrow. ⚠ A key does not own its file: roughly 750 are aliases onto the same cell, so ' +
+        'replacing one can change another surface too.</div>'));
+
+  if (AR.key) {
+    h += sec('ap', 'PREVIEW', AR.key,
+      '<div class="row"><canvas id="a-canvas" width="256" height="256" ' +
+        'style="background:#0b1118;border:1px solid var(--line);image-rendering:pixelated"></canvas></div>' +
+      '<div class="f"><label>ZOOM</label><input type="range" id="a-zoom" min="1" max="12" step="1" value="' +
+        AR.zoom + '"><span class="v" id="av-zoom">' + AR.zoom + '×</span></div>' +
+      '<div class="f wide"><label>SIZE</label><span class="v mono" id="a-size">—</span></div>' +
+      '<div class="hint" id="a-note"></div>');
+
+    const over = d.art.overridden();
+    h += sec('ax', 'ROUND TRIP', over.indexOf(AR.key) >= 0 ? 'OVERRIDDEN' : 'stock',
+      '<div class="row"><button class="tb" id="a-export"><span class="ico" data-icon="save"></span>EXPORT PNG</button>' +
+      '<label class="tb" style="cursor:var(--cur-pointer)">IMPORT PNG<input type="file" id="a-import" accept="image/png,image/*" style="display:none"></label>' +
+      '<button class="tb" id="a-restore">RESTORE</button></div>' +
+      '<div class="hint">Export, edit it in whatever you use, import it back. ⚠ The swap is IN ' +
+      'MEMORY — nothing on disk changes, and RESTORE puts the original back with no reload. To make ' +
+      'it permanent the file has to be written into the atlas and the manifest regenerated, which ' +
+      'is a build step and not something an editor should do behind your back.</div>' +
+      (over.length
+        ? ('<div class="hint warn">⚠ ' + over.length + ' key' + (over.length === 1 ? '' : 's') +
+           ' currently overridden: ' + over.slice(0, 8).join(', ') +
+           '</div><div class="row"><button class="tb" id="a-restore-all">RESTORE ALL</button></div>')
+        : ''));
+  } else {
+    h += '<div class="hint">Pick a key above to preview it.</div>';
+  }
+
+  box.innerHTML = h;
+  wireSections(); wireArt();
+  if (AR.key) drawArt();
+}
+
+function drawArt() {
+  const d = api(), cv = $('#a-canvas');
+  if (!cv || !AR.key) return;
+  const g = cv.getContext('2d');
+  g.clearRect(0, 0, cv.width, cv.height);
+  /* ⚠ rdy() is false on the FIRST call because that call starts the load. Poll rather than
+     concluding the art is missing - this repo has reported good sprites as absent that way. */
+  if (!d.art.rdy(AR.key)) {
+    $('#a-note').textContent = 'decoding… (rdy() is false on its first call — that call is what starts the load)';
+    setTimeout(drawArt, 180);
+    return;
+  }
+  const im = d.art.get(AR.key);
+  if (!im || !im.width) { $('#a-note').textContent = 'the key resolves to nothing'; return; }
+  const z = AR.zoom;
+  const w = Math.min(cv.width, im.width * z), hh = Math.min(cv.height, im.height * z);
+  g.imageSmoothingEnabled = false;
+  try {
+    g.drawImage(im, 0, 0, im.width, im.height,
+      Math.round((cv.width - w) / 2), Math.round((cv.height - hh) / 2), w, hh);
+  } catch (e) { $('#a-note').textContent = 'draw failed: ' + e; return; }
+  $('#a-size').textContent = im.width + ' × ' + im.height;
+  $('#a-note').textContent = 'drawn at ' + z + '× — nearest neighbour, so what you see is the real pixels';
+}
+
+function wireArt() {
+  const d = api();
+  const f = $('#a-filter');
+  if (f) {
+    f.oninput = () => { AR.filter = f.value; renderArt();
+      const n = $('#a-filter'); if (n) { n.focus(); n.setSelectionRange(n.value.length, n.value.length); } };
+  }
+  $$('#insp .ak[data-key]').forEach(el => {
+    el.onclick = () => { AR.key = el.dataset.key; renderArt(); msg('art: ' + AR.key); };
+  });
+  const z = $('#a-zoom');
+  if (z) z.oninput = () => { AR.zoom = +z.value; $('#av-zoom').textContent = AR.zoom + '×'; drawArt(); };
+
+  const ex = $('#a-export');
+  if (ex) ex.onclick = () => {
+    const im = d.art.get(AR.key);
+    if (!im || !im.width) return msg('nothing to export');
+    /* draw at 1:1 into a host canvas so the PNG is the real cell, not the zoomed preview */
+    const c = document.createElement('canvas');
+    c.width = im.width; c.height = im.height;
+    c.getContext('2d').drawImage(im, 0, 0);
+    try {
+      c.toBlob(bl => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(bl);
+        a.download = AR.key + '.png';
+        document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+        msg('exported ' + AR.key + '.png (' + im.width + '×' + im.height + ')');
+      }, 'image/png');
+    } catch (e) {
+      /* ⚠ a canvas built from a file:// image is TAINTED and toBlob throws. Serve the editor over
+         http (BulletsOfDebug.bat does) rather than opening the html off disk. */
+      msg('export blocked — the canvas is tainted. Serve over http, not file://');
+    }
+  };
+
+  const im = $('#a-import');
+  if (im) im.onchange = () => {
+    const file = im.files && im.files[0]; if (!file) return;
+    const url = URL.createObjectURL(file);
+    const img = new Image();
+    img.onload = () => {
+      const c = document.createElement('canvas');
+      c.width = img.naturalWidth; c.height = img.naturalHeight;
+      c.getContext('2d').drawImage(img, 0, 0);
+      const r = d.art.override(AR.key, c);
+      URL.revokeObjectURL(url);
+      msg(r === true ? ('replaced ' + AR.key + ' with ' + c.width + '×' + c.height + ' (in memory)')
+                     : ('override: ' + r));
+      renderArt();
+    };
+    img.onerror = () => { URL.revokeObjectURL(url); msg('could not read that image'); };
+    img.src = url;
+  };
+
+  const rs = $('#a-restore');
+  if (rs) rs.onclick = () => { msg('restore: ' + d.art.restore(AR.key)); renderArt(); };
+  const ra = $('#a-restore-all');
+  if (ra) ra.onclick = () => {
+    const list = d.art.overridden().slice();
+    list.forEach(k => d.art.restore(k));
+    msg('restored ' + list.length); renderArt();
+  };
+}
+
+/* ============================================================
+   THE JSON TAB (drop 0912m) — what the editor is looking at, as text you can take away.
+   ============================================================ */
+function renderJson() {
+  const box = $('#insp'), d = api();
+  if (!d) { box.innerHTML = '<div class="hint">waiting for the engine…</div>'; return; }
+  const u = unit();
+  const payload = {
+    selected: S.sel ? {type: S.sel.type, table: S.sel.table, row: S.sel.row} : null,
+    liveUnit: u ? pickUnit(u) : null,
+    fire: (typeof fireAction === 'function') ? fireAction() : null,
+    stage: {n: SA.stage, cfg: d.levelCfg(SA.stage), ai: d.aiProfile(SA.stage)},
+    art: {key: AR.key, overridden: d.art.overridden()},
+    snapshot: d.snapshot()
+  };
+  const txt = JSON.stringify(payload, null, 2);
+  box.innerHTML = sec('js', 'JSON', (txt.length / 1024).toFixed(1) + ' KB',
+    '<div class="row"><button class="tb" id="j-copy">COPY</button>' +
+    '<button class="tb" id="j-save"><span class="ico" data-icon="save"></span>SAVE .json</button></div>' +
+    '<div class="hint">Everything the editor is currently looking at — the roster row, the live ' +
+    'unit, the fire action, the stage and its AI profile, and what art is overridden. ⚠ The roster ' +
+    'row is the AUTHORED data; the live unit is what spawning actually produced, and they differ on ' +
+    'purpose (EHP re-projects hp against a shots-to-kill band).</div>' +
+    '<textarea id="j-text" readonly style="width:100%;height:460px;background:#0b1118;color:#9fe8ff;' +
+    'border:1px solid var(--line);border-radius:5px;font:11px Consolas,monospace;padding:7px">' +
+    txt.replace(/</g, '&lt;') + '</textarea>');
+  wireSections();
+  const c = $('#j-copy');
+  if (c) c.onclick = () => {
+    const t = $('#j-text'); t.select();
+    try { document.execCommand('copy'); msg('copied ' + (txt.length / 1024).toFixed(1) + ' KB'); }
+    catch (e) { msg('copy failed — select and copy by hand'); }
+  };
+  const sv = $('#j-save');
+  if (sv) sv.onclick = () => {
+    const bl = new Blob([txt], {type: 'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(bl);
+    a.download = 'bod_' + (S.sel ? S.sel.type : 'state') + '.json';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    msg('saved');
+  };
+}
+/* a live enemy carries engine internals that JSON.stringify chokes on (circular owner refs,
+   canvases). Take the fields an editor actually means by "the unit". */
+function pickUnit(u) {
+  const o = {};
+  for (const k in u) {
+    const v = u[k];
+    const t = typeof v;
+    if (t === 'number' || t === 'string' || t === 'boolean' || v === null) o[k] = v;
+    else if (Array.isArray(v) && v.every(q => typeof q !== 'object')) o[k] = v;
+  }
+  return o;
+}
+
 /* ---------------- the overlay: FOV, anchors, hull ---------------- */
 function drawOverlay(){
   const cv=$('#overlay'), wrap=$('#stage-wrap');
@@ -720,8 +954,7 @@ function selectTab(t){
   S.tab=t; document.body.dataset.tab=t;
   $$('#tabs .tab').forEach(b=>b.classList.toggle('on', b.dataset.tab===t));
   $('#vt-tab').textContent={enemy:'ENEMY LAB',fire:'PROJECTILES',stage:'STAGE',art:'ART',json:'JSON'}[t]||t.toUpperCase();
-  if(t==='enemy'||t==='fire'||t==='stage') renderInspector();
-  else msg(t.toUpperCase()+' tab lands in a later increment — ENEMY LAB, FIRE and STAGE are live now.');
+  renderInspector();
 }
 
 /* ---------------- boot ---------------- */

@@ -968,3 +968,46 @@ row fires that wave for real.
 
 `probe_bod_stage_0912L.py` **12 ok / 0 fail**. Editor 21/21, FIRE 18/18, overlay 13/13, bridge 18/18
 all unchanged. Suite 3,427 ok / 65 fail, zero new failures.
+
+
+## 0912m — the ART round trip and the JSON tab: Bullets of Debug is feature-complete
+
+Mike: *"allowing us to edit our frame/sprite and then save the frame/sprite as an image and also
+save our change as a replacement in game if we select."*
+
+⚠ **THE EDIT HAPPENS IN HIS TOOL, AND THAT IS THE HONEST SHAPE OF IT.** A pixel editor inside the
+panel is its own project, and a crude one would quietly violate the palette rules this repo's art
+history is built on — 0906o's value-range exchange **halved a pilot's palette, 7,666 colours to
+3,707**, and did it while looking plausible. So what is built is the ROUND TRIP:
+
+    browse → preview → EXPORT a PNG → edit it anywhere → IMPORT it → live in the game → RESTORE
+
+**10,689 keys** across the five stores, filtered and previewed at nearest-neighbour zoom so what is
+on screen is the real pixels. ⚠ **The preview POLLS `rdy()`** — it is false on its first call
+because that call is what starts the lazy load, and a one-shot check reports good art as missing.
+
+⚠ **THE ASSERTIONS ARE ON THE PIXELS THE ENGINE SERVES, NOT ON A FLAG.** CLAUDE.md records why:
+`lizzieSkinOn` could not detect a missing `_flushShipCells` because the same function set the flag
+and did the repoint, so it stayed true with the work deleted. The probe reads back through
+`XART.get` at every step — measured 120×146 → import a 48×48 → the engine serves `[0,229,255,255]`
+→ RESTORE → 120×146 again, with no reload.
+
+⚠ **THE SWAP IS IN MEMORY AND THE PANEL SAYS SO.** Making it permanent means writing the file into
+the atlas and regenerating the manifest — a build step, and not something an editor should do behind
+your back.
+
+**The JSON tab** emits everything the editor is looking at — roster row, live unit, fire action,
+stage and its AI profile, what art is overridden — as parseable JSON, copyable and saveable. ⚠ It
+strips engine internals per field (circular owner refs and canvases make `JSON.stringify` throw),
+and it shows the authored row *and* the live unit side by side, because they differ on purpose:
+`EHP()` re-projects hp against a shots-to-kill band.
+
+⚠ **A FLAKE FIXED AT THE SOURCE RATHER THAN LIVED WITH.** The FIRE tab's mount-marker assertion
+failed 1 run in 3 at "0 px" — the same fault `probe_bod_overlay_0912h` already records. `s1jetdelta`
+is a mover and the lab runs real time, so by the time the ink is counted the unit can have drifted
+off and been culled, at which point `drawOverlay` correctly returns early and the canvas is blank.
+**"The marker is not drawn" and "there is no longer a unit to mark" are identical to a pixel count**,
+so the probe now pins the subject and says which. Three consecutive clean runs, 19/19.
+
+Probes: `probe_bod_art_0912m.py` 13/13, FIRE 19/19, STAGE 12/12, editor 21/21, overlay 13/13, bridge
+18/18. Suite 3,427 ok / 65 fail, zero new failures.

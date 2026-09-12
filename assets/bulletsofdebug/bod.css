@@ -164,3 +164,9 @@ body.drawer #drawer{transform:none}
 .tf{color:var(--dim);white-space:nowrap}
 .tf.grow{flex:1;overflow:hidden;text-overflow:ellipsis;color:var(--hot2)}
 #tf-keys{color:var(--mute);font-size:10px}
+
+/* ---- ART tab: the key list and the selected row (drop 0912m) ---- */
+.ak{border-radius:4px;padding:1px 3px;transition:background .1s}
+.ak:hover{background:#132430}
+.ak.on{background:#16323f}
+.ak.on .v{color:var(--hot2)}
