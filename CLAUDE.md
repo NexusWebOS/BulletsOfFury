@@ -213,6 +213,10 @@ two tank-*shaped* units. **When a draw helper declines a frame, check what picks
   `CARRIER_BAY` records it as built *exactly as asked*), and the quad-laser miniboss's four
   cannons ship that way in the authored pack. Neither is a boss coming apart. Ripping them out
   in the name of this rule would delete work he specifically wanted.
+  ⚠ **ONE NAMED EXCEPTION: THE FURNACE TYRANT'S HEAD (Mike, 0912, asked directly: "Keep it as
+  approved").** The stage-2 Furnace encounter he approved detaches its head for a final phase that
+  flies alone. That is his authored design for THAT boss only - it is not a licence for any other
+  boss to come apart, and the rule above stands everywhere else.
 - **THE PLAYER DEATH IS A SPIN-OUT, AND THIS IS A HEADER RULE THAT NEVER CHANGES.**
   Mike, 2026-09-07, giving it that status in the same breath as the spec:
   *"when we get hit, we spin while explosions anchor and fire anchor on us and animate as we spin
@@ -3517,3 +3521,40 @@ it has been, with its one deliberate red now GREEN and nothing replacing it.
 Tools: `_BUILD_SOURCE/flame_mask_0912n.py` (the detector, with its own proof render),
 `_BUILD_SOURCE/bake_ship_glow_0912n.py` (the bake; refuses to run twice, since it appends).
 Backups: `_BUILD_SOURCE/_backups/ships_pre0912n/` and `manifest.js.pre0912n`.
+
+## 0912q — the retina lock is a HEADER RULE
+
+Mike: *"when bosses want to fire homing missiles on you, target a retina on the player and make it
+flash and beep with the retina noise and beep rapidly as they are about to fire off and then the
+missiles come at us the retina stays locked until we either barrel roll to shake it off, dodge at the
+last second, somersalt or shoot down the missiles. this should be a header rule for most enemies and
+mini bosses and bosses."*
+
+**Any unit that fires homing missiles goes through `enemyLockOn(src, delay, {fire})`.** A lock is
+`arming` (the `retm_` retina on the player, shrinking, flashing on the beep) → `locked` (missiles
+away, `retmb_` solid, its rounds STEER) → `broken` (a barrel roll, somersault or charge dash STARTED
+after the lock) or `released` (every missile it launched is dead or culled). A locked round inside
+`LOCK_COMMIT_PX` freezes its heading for good — that is the last-second dodge. `_lockLaunch` tags
+whatever the fire callback pushed, so a caller never has to know the rule exists. Salvos routed
+through it: `enemyVolley` salvo, `shipBossAttack` mslhome, `vileAttack`, `updateModularBoss` racks,
+the helicopter's phase-3 pair and re-entry rockets, the mauler and every racer phase.
+
+⚠⚠ **IT SUPERSEDES TWO RULINGS, EACH FOR LOCK-BOUND MISSILES ONLY.** 0813a's silent lock (the
+complaint was a triple-beep PER LOCK stacking into a siren) and 0819e's *no homing past the
+helicopter*. Rounds with no lock still fly the vector they launched on, and §230 now counts the two
+populations apart so it still proves that.
+⚠ **THE SIREN CANNOT COME BACK BY CONSTRUCTION.** `Audio.SFX.retinaLockBeep` has exactly ONE caller —
+the scheduler in `updatePlayerLocks`, rescheduled off the SOONEST pending launch — and a unit that
+is still arming queues further launches on the retina it already holds. §21's old "≥3 simultaneous
+locks" assertion pinned the stack itself and now counts launches on one retina.
+⚠ **THE EVASION IS AN EDGE.** A lock placed mid-roll is not broken by that roll, or every lock landing
+in the 5 s roll window would evaporate on frame one.
+⚠ **`ovReticleVolley` WAS A SECOND PUSHER OF THE OLD LOCK SHAPE** (`{delay,fired,_visualOnly}`), found
+only because the suite crashed on `L.launches is not iterable` at section 20 — rule 3's zero-failure
+crash, caught by the COUNT (179). Grep for `playerLocks.push` before changing the lock object again.
+⚠ **The helicopter's own `homing` torpedoes keep their authored steering while locked**; the lock
+only decides when they stop (`!b._committed` now gates the homing block too).
+
+Sound: `retinaCharge` once at acquire (TAME min 0.80), `retinaLockBeep` = `nsp_console_beep.mp3`
+(TAME min 0.045). `probe_retina_lock_0912q.py` 26/26 — every clause driven in real Chromium, including
+a real player round shooting the missile down. Suite §285.

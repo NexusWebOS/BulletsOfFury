@@ -12634,7 +12634,8 @@ function enemyVolley(e, force){
          level 1 is the worst offender") and that gate is per-stage; a new missile source that
          ignored it would quietly undo his cut. */
       if(typeof _eMslAllow!=='function' || _eMslAllow()){
-        if(typeof eMissileHoming==='function'){ eMissileHoming(e.x, y, -1); eMissileHoming(e.x, y, 1); }
+        if(typeof eMissileHoming==='function'){ const _oy=y-e.y;   // THE RETINA LOCK (0912): telegraph, then launch
+          enemyLockOn(e, 0.55, {fire:function(){ eMissileHoming(e.x, e.y+_oy, -1); eMissileHoming(e.x, e.y+_oy, 1); }}); }
         else for(const t of [-0.5,0.5]) eShoot(e.x, y, D+t, 2.2, 'flare');
       }
       break;
@@ -17981,9 +17982,15 @@ function shipBossAttack(b){
     /* HOMING SALVO — alternating sides so they converge from BOTH, which is eMissileHoming's own
        design; firing them all one way makes a wall you simply stand beside. */
     if(typeof eMissileHoming==='function'){
-      eMissileHoming(mL.x,mL.y,-1);
-      eMissileHoming(mR.x,mR.y, 1);
-      if(ph>=1) eMissileHoming(mC.x,mC.y,(step%2)?1:-1);
+      /* THE RETINA LOCK (0912): the mounts are carried as offsets so the salvo leaves from where
+         the hull IS at launch, not where it was when the retina went on */
+      const _l={x:mL.x-b.x,y:mL.y-b.y}, _r={x:mR.x-b.x,y:mR.y-b.y}, _c={x:mC.x-b.x,y:mC.y-b.y};
+      const _dir=(step%2)?1:-1, _ph=ph;
+      enemyLockOn(b, 0.55, {fire:function(){
+        eMissileHoming(b.x+_l.x,b.y+_l.y,-1);
+        eMissileHoming(b.x+_r.x,b.y+_r.y, 1);
+        if(_ph>=1) eMissileHoming(b.x+_c.x,b.y+_c.y,_dir);
+      }});
     }
   } else if(pat==='pincer2'){
     /* two angled walls leaving the middle open, so the safe ground is directly under the boss "
@@ -23806,73 +23813,158 @@ function arcWeaponAnnounce(slot, lv, opt){
 let special=null;            // {pilot,t,dur,strikes,prevShield,golden}
 let retina={target:null};
 
-/* ===== ENEMY LOCK-ON: red targeting reticle drawn ON the player before a missile launches ===== */
-let playerLocks=[];   // active locks from enemies onto the player
-function enemyLockOn(srcEnemy, delay){
-  /* THE GUN MODE MEANS NO MISSILES, ANYWHERE (drop 0801jy). Mike: "now there
-     shooting large bullets at me". Setting fk='gun' stopped the FIRE MODE from
-     launching one, but the racer's flight phases - curl, dive, flee - call
-     enemyLockOn directly, so the large rounds kept coming.
+/* ============================================================
+   THE RETINA LOCK - A HEADER RULE (Mike, 0912)
 
-     Gating here catches every caller at once rather than hunting each phase. */
-  if(arguments[0] && arguments[0].fk === 'gun') return;
+   "when bosses want to fire homing missiles on you, target a retina on the player and make it
+   flash and beep with the retina noise and beep rapidly as they are about to fire off and then
+   the missiles come at us the retina stays locked until we either barrel roll to shake it off,
+   dodge at the last second, somersalt or shoot down the missiles. this should be a header rule
+   for most enemies and mini bosses and bosses."
 
-  // start a lock: reticle appears on the player, shrinks/blinks for `delay`s, then the missile fires
-  playerLocks.push({src:srcEnemy, t:0, delay:(delay||0.7), fired:false});
-  /* NO ALARM ON A MISSILE LOCK (drop 0813a)
-     Mike: "Stop using that annoying beep noise wehn homing missiles are shot off at us too."
-     lockAlert is a rising triple-beep and enemyLockOn is called by every racer flight phase, so a
-     busy screen stacked it into a continuous siren. The shrinking reticle updatePlayerLocks draws
-     on the player is the telegraph now - it carries the same warning without the noise.
-     The three remaining lockAlert calls are the WALL-OF-FIRE announce, a different mechanic that
-     has no reticle to read and that Mike did not ask to change. */
+   A lock lives through these states:
+     arming    the retina sits on the player, shrinking, flashing and beeping faster as launch nears
+     locked    missiles are away; the retina holds solid and its missiles steer while it does
+     broken    a barrel roll, a somersault or Juggernaut's charge dash shook it off - its missiles
+               keep their last heading and never re-acquire
+     released  every missile it launched is gone (shot down, spent on the player, off the screen)
+   A missile that gets inside LOCK_COMMIT_PX stops steering for good - the fire orb's commit
+   (0813a) - and that is what makes the last-second dodge work.
+
+   ⚠ THIS SUPERSEDES 0813a's "NO ALARM ON A MISSILE LOCK". That complaint was a rising
+   triple-beep fired once PER LOCK by every racer flight phase, which stacked into a siren. Two
+   things stop that here: the beep is ONE voice for the whole screen, scheduled off the most
+   imminent launch rather than per lock, and a unit that ripples several missiles holds ONE
+   retina with a queue of launches rather than one retina each.
+
+   ⚠ STEERING IS STILL A GRANT (0819a). A round steers only while the lock that launched it is
+   'locked'; every other emissile flies exactly as it did. Mike's 0819e "no homing past the
+   helicopter" is superseded for LOCK-BOUND missiles only, by this rule.
+
+   ⚠ THE EVASION IS AN EDGE, NOT A LEVEL. A lock placed while the player is already mid-roll is
+   not broken by that roll - otherwise any lock landing during the 5s roll window would evaporate
+   on its first frame. The player has to START a manoeuvre after the retina is on them.
+   ============================================================ */
+const LOCK_TURN=0.05;         // rad per frame while locked - a 64px turning circle at 3.2px/frame
+const LOCK_COMMIT_PX=86;      // inside this a locked missile freezes its heading: dodge late and it sails past
+const LOCK_MAX_T=9;           // no lock outlives this, whatever its missiles are doing
+const LOCK_FADE=0.35;         // how long a broken or released retina takes to clear
+let playerLocks=[], _lockSeq=0, _lockBeepT=0;
+function lockById(id){ for(const L of playerLocks) if(L.id===id) return L; return null; }
+function lockEvading(){ return !!(player && (player.roll || player.somer || player._chgDash)); }
+function lockPending(L){ let m=Infinity; for(const sh of L.launches) if(!sh.done) m=Math.min(m, sh.at-L.t); return m; }
+function playerLockState(){
+  return playerLocks.map(L=>({id:L.id, state:L.state, t:+L.t.toFixed(3), launches:L.launches.length,
+    fired:L.launches.filter(sh=>sh.done).length, missiles:L.missiles.length}));
+}
+function enemyLockOn(srcEnemy, delay, opts){
+  /* THE GUN MODE MEANS NO MISSILES, ANYWHERE (drop 0801jy) - gated here so every caller is covered. */
+  if(srcEnemy && srcEnemy.fk === 'gun') return null;
+  if(typeof player==='undefined' || !player || player.dead) return null;
+  const d=(delay!=null?delay:0.7), fire=(opts&&opts.fire)||null;
+  /* ONE RETINA PER FIRING UNIT: a ripple from a unit that is still arming queues its launch on
+     the lock it already holds - no second retina, no second charge sound. */
+  for(const L of playerLocks){
+    if(L.src===srcEnemy && L.state==='arming'){ L.launches.push({at:L.t+d, fire:fire}); L.dur=Math.max(L.dur, L.t+d); return L; }
+  }
+  const L={id:++_lockSeq, src:srcEnemy, t:0, dur:d, launches:[{at:d, fire:fire}], missiles:[],
+           state:'arming', endT:0, spin:Math.random()*6, ev0:lockEvading()};
+  playerLocks.push(L);
+  if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.retinaCharge) Audio.SFX.retinaCharge();
+  _lockBeepT=Math.min(_lockBeepT, 0.10);
+  return L;
+}
+function _lockLaunch(L, shot){
+  const src=L.src;
+  if(!src || src.dead) return;
+  const n0=eBullets.length;
+  if(shot.fire){ try{ shot.fire(L); }catch(_lf){} }
+  else {
+    // launch from the source's MUZZLE: tanks = the end of the barrel, jets = the nose
+    let mx, my;
+    if(src.pattern==='tankhold' && typeof tankMuzzle==='function'){ const m=tankMuzzle(src); mx=m.x; my=m.y; }
+    else { const fa=(src._faceAng!=null)?src._faceAng:Math.PI;
+           mx=src.x + Math.sin(fa)*(src.h||20)*0.4; my=src.y - Math.cos(fa)*(src.h||20)*0.4; }
+    eHomingMissile(mx, my, src);
+  }
+  /* every missile the launch put into eBullets belongs to this lock - a fire callback does not
+     have to know the rule exists */
+  for(let i=n0;i<eBullets.length;i++){ const m=eBullets[i];
+    if(m && (m._shootable || m.kind==='emissile' || m.kind==='s1jungleMissile')){ m._lockId=L.id; L.missiles.push(m); } }
 }
 function updatePlayerLocks(dt){
+  if(!playerLocks.length){ _lockBeepT=0; return; }
+  if(typeof player==='undefined' || !player || player.dead){ playerLocks=[]; _lockBeepT=0; return; }
+  const evading=lockEvading();
+  let soonest=Infinity, holding=false;
   for(const L of playerLocks){
     L.t+=dt;
-    if(!L.fired && L.t>=L.delay){
-      L.fired=true;
-      // launch the missile from the source's MUZZLE (if still alive): tanks = the end of the barrel,
-      // jets = the nose (wherever the rotation points)
-      if(L.src && !L.src.dead){
-        let mx, my;
-        if(L.src.pattern==='tankhold' && typeof tankMuzzle==='function'){ const m=tankMuzzle(L.src); mx=m.x; my=m.y; }
-        else { const fa=(L.src._faceAng!=null)?L.src._faceAng:Math.PI;
-               mx=L.src.x + Math.sin(fa)*(L.src.h||20)*0.4; my=L.src.y - Math.cos(fa)*(L.src.h||20)*0.4; }
-        eHomingMissile(mx, my, L.src);   // the grant is per FIRING UNIT now, not per stage
-      }
+    L.spin+=dt*(L.state==='broken'?10:(L.state==='locked'?1.4:3.4));
+    if(!evading) L.ev0=false;
+    else if(!L.ev0 && (L.state==='arming' || L.state==='locked')){ L.state='broken'; L.endT=0; }
+    for(const sh of L.launches){ if(!sh.done && L.t>=sh.at){ sh.done=true; _lockLaunch(L, sh); } }
+    if(L.missiles.length) L.missiles=L.missiles.filter(m=>!m.dead && eBullets.indexOf(m)>=0);
+    const pend=lockPending(L);
+    if(L.state==='arming' && L.missiles.length) L.state='locked';
+    if((L.state==='arming' || L.state==='locked') && pend===Infinity && !L.missiles.length){ L.state='released'; L.endT=0; }
+    if(L.state==='broken' || L.state==='released') L.endT+=dt;
+    if(L.state==='arming' || L.state==='locked'){
+      if(pend<Infinity) soonest=Math.min(soonest, pend);
+      else holding=true;
     }
   }
-  // keep a lock a little after firing so the reticle "confirms" then clears
-  playerLocks=playerLocks.filter(L=> L.t < L.delay+0.25);
+  /* a broken lock still owes its queued launches - the enemy fires anyway, just unguided */
+  playerLocks=playerLocks.filter(L=> L.t<LOCK_MAX_T &&
+    !((L.state==='broken' || L.state==='released') && L.endT>=LOCK_FADE && lockPending(L)===Infinity));
+  /* ONE BEEP VOICE FOR THE SCREEN: rapid as a launch closes in, a slow pulse while missiles hold */
+  let gap=Infinity;
+  if(soonest<Infinity) gap=clamp(soonest*0.42, 0.055, 0.30);
+  else if(holding) gap=0.50;
+  if(gap===Infinity){ _lockBeepT=0; return; }
+  _lockBeepT-=dt;
+  if(_lockBeepT<=0){
+    _lockBeepT=gap;
+    if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.retinaLockBeep) Audio.SFX.retinaLockBeep();
+  }
 }
 function drawPlayerLocks(){
-  if(!playerLocks.length || player.dead) return;
-  const x=player.x, y=player.y;
+  if(!playerLocks.length || typeof player==='undefined' || !player || player.dead) return;
+  const x=player.x, y=player.y, now=performance.now();
   for(const L of playerLocks){
-    const p=clamp(L.t/L.delay,0,1);
-    const locked=L.fired;
-    // red reticle: brackets closing in as it locks, solid + flash when locked
-    const R = locked ? 16 : (34 - 18*p);            // shrinks toward the player as it locks
-    const blink = locked ? (Math.floor(L.t*30)%2===0) : true;
-    if(!blink) continue;
-    ctx.save();
-    ctx.strokeStyle = locked ? '#ff2020' : '#ff5a3a';
-    ctx.lineWidth = locked ? 2.5 : 2;
-    ctx.shadowColor='#ff2020'; ctx.shadowBlur= locked ? 10 : 5;
-    // four corner brackets
-    const b=6;
-    for(const [sx,sy] of [[-1,-1],[1,-1],[-1,1],[1,1]]){
-      const cx=x+sx*R, cy=y+sy*R;
-      ctx.beginPath();
-      ctx.moveTo(cx, cy - sy*b); ctx.lineTo(cx, cy); ctx.lineTo(cx - sx*b, cy);
-      ctx.stroke();
+    const pend=lockPending(L);
+    let R, alpha=0.95, fam='retmb_', col='#ff2323', on=true;
+    if(L.state==='arming'){
+      const p=clamp(L.t/Math.max(0.05,L.dur),0,1);
+      R=48-22*p; fam='retm_'; col='#ff4a2e';
+      const per=clamp(pend*0.42, 0.055, 0.30);                 // the flash rides the beep
+      on=(Math.floor(L.t/per)%2)===0;
+    } else if(L.state==='locked'){
+      R=26+Math.sin(L.t*9)*1.5;
+      if(pend<Infinity){ const per=clamp(pend*0.42,0.055,0.30); on=(Math.floor(L.t/per)%2)===0; }
+    } else {
+      const k=clamp(L.endT/LOCK_FADE,0,1);
+      if(k>=1) continue;
+      alpha=0.95*(1-k);
+      if(L.state==='broken'){ R=26+40*k; col='#ffd2a0'; }      // shaken off: it flies apart
+      else R=26-10*k;
     }
-    // center crosshair when locked
-    if(locked){
-      ctx.beginPath(); ctx.moveTo(x-8,y); ctx.lineTo(x+8,y); ctx.moveTo(x,y-8); ctx.lineTo(x,y+8); ctx.stroke();
-      // rotating ring
-      ctx.globalAlpha=0.7; ctx.beginPath(); ctx.arc(x,y,R+3,L.t*6,L.t*6+Math.PI*1.3); ctx.stroke();
+    if(!on) continue;
+    const fi=Math.floor(now/110)%4;
+    const im=(typeof nuoTinted==='function')?nuoTinted(fam+fi, col):null;
+    ctx.save();
+    ctx.globalAlpha=alpha;
+    if(im){
+      const iw=im.width||im.naturalWidth, ih=im.height||im.naturalHeight, sc=(R*2)/Math.max(1,iw);
+      ctx.translate(x,y); ctx.rotate(L.spin);
+      ctx.drawImage(im, -iw*sc/2, -ih*sc/2, iw*sc, ih*sc);
+    } else {
+      /* the retina plate is decoding (rdy() is false on its first call) - brackets until it lands */
+      ctx.strokeStyle=col; ctx.lineWidth=2;
+      const bl=6;
+      for(const [sx,sy] of [[-1,-1],[1,-1],[-1,1],[1,1]]){
+        const cx=x+sx*R, cy=y+sy*R;
+        ctx.beginPath(); ctx.moveTo(cx, cy-sy*bl); ctx.lineTo(cx, cy); ctx.lineTo(cx-sx*bl, cy); ctx.stroke();
+      }
     }
     ctx.restore();
   }
@@ -26685,6 +26777,8 @@ function beginStage(num){
   try{ if(typeof warmStage==='function') warmStage(arguments[0]); }catch(e){}
   try{ if(typeof bossBarWarm==='function') bossBarWarm(num); }catch(e){}   // the pack's gauge art, before any warning can show it (0910b)
   curStage=STAGES[num-1];
+  playerLocks=[]; _lockBeepT=0;   // a retina never follows the player into the next stage (0912)
+  try{ for(let _ri=0;_ri<4;_ri++){ XART.rdy('retm_'+_ri); XART.rdy('retmb_'+_ri); } }catch(_rw){}
   /* the secret is SPENT once it is entered, so the map is not stuck on stage 9 forever (0822ad) */
   if(num===9 && typeof campaign!=='undefined') campaign.bonusUnlocked=0;
   /* STAGE 9 HANDS YOU FIVE LIVES (Mike, 0902): "when entering stage 9 - you are given 5
@@ -29318,7 +29412,7 @@ function updatePlay(dt){
          Now a round steers only if its muzzle set b.homing, and the grant only exists on stage 1
          (the helicopter boss keeps its swerving torpedoes — eMissileHoming stage-gates itself).
          Everything else flies the vector it launched on, and stays shootable on the way in. */
-      if(b.homing && (typeof run==='undefined' || run.stage===1)){
+      if(b.homing && !b._committed && (typeof run==='undefined' || run.stage===1)){
         // SWERVE: while _swerve is counting down the missile sweeps outward (weak turn);
         // once it expires it locks on and hauls back into the player (hard turn).
         let _tr=(b.turn||0.05);
@@ -29327,6 +29421,18 @@ function updatePlay(dt){
           else { _tr=b._turnLock||0.085; if(!b._locked){ b._locked=true; if(typeof addTrail==='function') addTrail(b.x,b.y,null,'missile'); } }
         }
         const ta=Math.atan2(targetShip(b.x,b.y).y-b.y,targetShip(b.x,b.y).x-b.x); let da=((ta-ang+Math.PI*3)%(Math.PI*2))-Math.PI; ang+=clamp(da,-_tr,_tr);
+      }
+      /* THE RETINA LOCK'S GRANT (0912) - see enemyLockOn. A lock-bound round steers only while its
+         lock holds, and freezes its heading for good once it is close or the lock is gone. */
+      if(b._lockId && !b._committed){
+        const _L=lockById(b._lockId);
+        if(_L && _L.state==='locked' && player && !player.dead){
+          const _dx=player.x-b.x, _dy=player.y-b.y;
+          if(_dx*_dx+_dy*_dy < LOCK_COMMIT_PX*LOCK_COMMIT_PX) b._committed=true;
+          else if(!b.homing){ const _ta=Math.atan2(_dy,_dx); const _da=((_ta-ang+Math.PI*3)%(Math.PI*2))-Math.PI; ang+=clamp(_da,-LOCK_TURN,LOCK_TURN); }
+          /* a round with its own authored homing (the helicopter's torpedoes) keeps its own steering
+             while the lock holds - the lock only decides WHEN it stops */
+        } else if(!_L || _L.state!=='arming') b._committed=true;
       }
       if(b._accel){ b.spd=Math.min(b._maxspd||4.0,(b.spd||2.4)+b._accel); }   // missile builds speed after launch (readable then fast)
       const spd=(b.spd||2.7)*(DIFF?DIFF.ebSpeed:1); b.vx=Math.cos(ang)*spd; b.vy=Math.sin(ang)*spd; b.ang=ang;
@@ -30284,11 +30390,6 @@ function ovRocketSide(b, side, fan){
   /* Weapon report only—no lock-on alarm. */
   if(Audio.SFX&&(Audio.SFX.missile||Audio.SFX.enemyBossCannon))(Audio.SFX.missile||Audio.SFX.enemyBossCannon)();
 }
-function ovReticleVolley(b){
-  // Jungle missiles own this volley. Do not call enemyLockOn here: that helper launches an
-  // additional generic missile after its reticle, which mixed the wrong projectile into the fight.
-  playerLocks.push({src:b,t:0,delay:0.72,fired:true,_visualOnly:true});
-}
 function ovGreenVolley(b){
   const mounts=[ovMount(b,-48,41),ovMount(b,-10,54),ovMount(b,0,58),ovMount(b,10,54),ovMount(b,46,41)];
   const offsets=[-0.22,-0.09,0,0.09,0.22];
@@ -30423,9 +30524,12 @@ function updateOverlordX(b, dt){
       // HOMING ROCKETS: fire a VISIBLE pair per blast, alternate sides, wait 2-3s (Mike's 1 ... 2 ... spec).
       // Slower launch + wider fan so the player clearly sees them leave the pods and track in.
       b._rkSide=(b._rkSide||1)*-1;
-      ovRocketSide(b, b._rkSide);
-      ovRocketSide(b, b._rkSide, 0.5);                  // a second rocket from the same pod, slight fan = readable volley
-      b._muzL = b._rkSide<0?0.2:0; b._muzR = b._rkSide>0?0.2:0;
+      { const _side=b._rkSide;                            // THE RETINA LOCK (0912): telegraph, then the pair
+        enemyLockOn(b, 0.55, {fire:function(){
+          ovRocketSide(b, _side);
+          ovRocketSide(b, _side, 0.5);                    // a second rocket from the same pod, slight fan = readable volley
+          b._muzL = _side<0?0.2:0; b._muzR = _side>0?0.2:0;
+        }}); }
       b._rkN=(b._rkN||0)+1;
       if(b._rkN>=4){ b._rkN=0; b.fireCd=0.9; b._ovPhase=4; }
       else { b.fireCd=b._enraged?1.15:1.65; }
@@ -30508,7 +30612,6 @@ function updateOverlordX(b, dt){
       b.y=lerp(re.startY,VH*0.18,e)-Math.sin(u*Math.PI)*42;
       b._pivot=lerp(b._pivot,-re.from*0.76,0.22);
     } else if(re.t<3.16){
-      if(!re.reticle){ re.reticle=true; ovReticleVolley(b); }
       const u=clamp((re.t-0.56)/2.60,0,1);
       const startA=re.from<0?Math.PI:0;
       const a=startA+(-re.from)*TAU*1.25*u;
@@ -30520,7 +30623,11 @@ function updateOverlordX(b, dt){
       if(re.fire<=0){ re.fire=b._enraged?0.085:0.125; ovTwinMG(b); }
       re.rocket-=dt;
       if(re.rocket<=0 && re.rkN<4){
-        const side=(re.rkN%2===0)?-1:1; ovRocketSide(b,side,re.rkN===3?0.4:0);
+        /* THE RETINA LOCK (0912): each rocket queues on the one retina the helicopter holds - the
+           lock's fire callback launches the JUNGLE missile, so no generic round is mixed in (the
+           reason the old visual-only reticle existed) */
+        const side=(re.rkN%2===0)?-1:1, fan=re.rkN===3?0.4:0;
+        enemyLockOn(b, 0.45, {fire:function(){ ovRocketSide(b,side,fan); }});
         re.rkN++; re.rocket=b._enraged?0.48:0.62;
       }
     } else {
@@ -46958,8 +47065,11 @@ function vileAttack(b){
     for(let k=-2;k<=2;k++)vileAnnihilationShot(k&1?rp.x:lp.x,k&1?rp.y:lp.y,a0+k*.10,3.65,'s8nf_needle',{silent:k!==-2});
     vileMuzzle(b,-.27,.27,'needle_interceptor',.92,.15);vileMuzzle(b,.27,.27,'needle_interceptor',.92,.15);
     if((step%2)===0 && typeof eMissileHoming==='function'){
-      eMissileHoming(b.x-b.w*0.26, y, -1);
-      eMissileHoming(b.x+b.w*0.26, y,  1);
+      const _oy=y-b.y;   // THE RETINA LOCK (0912)
+      enemyLockOn(b, 0.55, {fire:function(){
+        eMissileHoming(b.x-b.w*0.26, b.y+_oy, -1);
+        eMissileHoming(b.x+b.w*0.26, b.y+_oy,  1);
+      }});
     }
     b.fireCd=1.05;
   } else if(f===2){
@@ -50340,15 +50450,17 @@ function updateModularBoss(b, dt){
     b._mcd=2.0+Math.random()*0.8;
     // Homing salvo: every live rack launches a PAIR — one sweeping left, one right —
     // so they arc out wide and swerve back into the player from both sides.
-    let _i=0;
-    for(const p of b.parts){ if(p.role==='rack'&&!p.destroyed){
-      const bx=b.x+p.ax, by=b.y+p.ay;
-      if(typeof eMissileHoming==='function'){
-        eMissileHoming(bx, by, -1);
-        eMissileHoming(bx, by, +1);
-      } else eMissile(bx, by);
-      _i++;
-    } }
+    /* THE RETINA LOCK (0912): one retina for the whole salvo, and the racks are read at LAUNCH so a
+       rack shot off during the telegraph does not fire */
+    enemyLockOn(b, 0.6, {fire:function(){
+      for(const p of b.parts){ if(p.role==='rack'&&!p.destroyed){
+        const bx=b.x+p.ax, by=b.y+p.ay;
+        if(typeof eMissileHoming==='function'){
+          eMissileHoming(bx, by, -1);
+          eMissileHoming(bx, by, +1);
+        } else eMissile(bx, by);
+      } }
+    }});
   }
   if(!b.enter && b._ccd<=0){
     b._ccd=1.1;
@@ -61788,6 +61900,8 @@ if(window.BOFA && BOFA.sfx){
     alertBossIncoming:'assets/game/sounds/alert_boss_incoming.wav',
     alertDanger:'assets/game/sounds/alert_danger.wav',
     alertLockon:'assets/game/sounds/alert_lockon.wav',
+    /* THE RETINA LOCK's beep (0912) - one short tick, rescheduled faster as a launch closes in */
+    retinaLockBeep:'assets/game/sounds/nsp_console_beep.mp3',
     alertBeamCharge:'assets/game/sounds/alert_beam_charge.wav',
     firewallArrive:'assets/game/sounds/firewall_arrive.wav',
     firewallPass:'assets/game/sounds/firewall_pass.wav',
@@ -61999,6 +62113,11 @@ const Snd=(function(){
     alertBossIncoming:{g:0.52, lp:4600, min:2.60},
     alertDanger:      {g:0.48, lp:6400, min:0.90},
     alertLockon:      {g:0.44, lp:6000, min:1.10},
+    /* the retina lock (0912): the beep's gate is SHORT on purpose - it has to be able to beep rapidly -
+       and updatePlayerLocks is its only caller, one voice for the whole screen. The charge swell is
+       gated long so a wave of racers locking at once plays it once. */
+    retinaLockBeep:   {g:0.34, lp:7200, min:0.045},
+    retinaCharge:     {g:0.50, lp:6400, min:0.80},
     alertBeamCharge:  {g:0.50, lp:5600, min:1.40},
     firewallArrive:   {g:0.60, lp:5200, min:1.50},
     firewallPass:     {g:0.46, lp:4200, min:1.20},

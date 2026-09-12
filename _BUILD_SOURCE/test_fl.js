@@ -1021,7 +1021,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      the point - so this test needs a type that still carries missiles. bomber does. */
   vm.runInContext("eBullets.length=0; playerLocks=[]; var e2=spawnEnemy('bomber',240,150,{}); if(e2) e2.fk='aimed'; enemyLockOn(e2, 0.5);", ctxv);
   ok(vm.runInContext("playerLocks.length", ctxv)===1, 'enemyLockOn places a targeting reticle on the player');
-  ok(vm.runInContext("playerLocks[0].fired", ctxv)===false, 'reticle is locking (missile not yet fired)');
+  ok(vm.runInContext("playerLocks[0].state", ctxv)==='arming', 'reticle is ARMING (missile not yet fired) - the 0912 retina lock');
   for(let f=0;f<40;f++) vm.runInContext("updatePlayerLocks(1/60);", ctxv);   // past the 0.5s delay
   ok(vm.runInContext("eBullets.filter(function(b){return b.kind==='emissile';}).length", ctxv)>=1, 'missile launches after the lock completes');
   // draw reticle runs (renders red brackets on the player; pixel-verified in render harness)
@@ -1062,14 +1062,18 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(sswp['enter']&&sswp['curl']&&sswp['dive'], 'sideswirl runs enter(side) -> swirl -> dive-at-player');
   ok(ssw>Math.PI*1.9 && ssw<Math.PI*2.25, 'sideswirl swirls ONCE ('+(ssw/Math.PI).toFixed(2)+'PI)');
   // jetflyby: top entry, ripples 4 locks 1-by-1 (~0.16s apart), banks out a side and is culled
+  /* THE RETINA LOCK (0912) QUEUES A RIPPLE ON ONE RETINA. The old assertion here wanted three or more
+     simultaneous reticles - the exact stack that made the 0813a lock beep a siren. The ripple is
+     still four launches 1-by-1; they now count as LAUNCHES on the one retina the jet holds. */
   vm.runInContext("enemies.length=0; playerLocks=[]; var jb=spawnEnemy('jetflyby',300,-40,{}); window.__jb=jb;", ctxv);
-  let firsts=[], peak=0;
+  let firsts=[], peak=0, peakRet=0;
   for(let f=0;f<340;f++){ vm.runInContext("updatePlay(1/60);", ctxv);
-    const n=vm.runInContext("playerLocks.length",ctxv); if(n>peak)peak=n;
+    const n=vm.runInContext("playerLocks.reduce(function(a,L){return a+L.launches.length;},0)",ctxv); if(n>peak)peak=n;
+    const r=vm.runInContext("playerLocks.filter(function(L){return L.src===window.__jb;}).length",ctxv); if(r>peakRet)peakRet=r;
     if(firsts.length<4 && n>firsts.length) firsts.push(f); }
   const gaps=firsts.slice(1).map((v,i)=>v-firsts[i]);
   ok(firsts.length===4 && Math.max.apply(null,gaps)<=14, 'jetflyby ripples 4 locks 1-by-1 quickly (gaps '+gaps.join(',')+' frames)');
-  ok(peak>=3, 'reticle alert cascade: '+peak+' simultaneous locks on the player');
+  ok(peak>=3 && peakRet===1, 'the ripple queues '+peak+' launches on ONE retina (peak '+peakRet+') - one telegraph, not a siren');
   ok(vm.runInContext("window.__jb.dead",ctxv), 'jetflyby banks out the side and leaves the screen (culled)');
   // tank map boundaries (logic-level: this harness has no real pixels, so inject a synthetic mask —
   // the pixel-accurate mask build from the real master is verified in the node-canvas render harness)
@@ -10672,11 +10676,14 @@ console.log("=== 213a. volley patterns ===");
     +"  enemies.length=0; eBullets.length=0;"
     +"  var e=spawnEnemy('s1jetdelta',240,120,{}); if(!e){ o[p]={n:0}; return; }"
     +"  var saved=ENEMY_VOLLEY[e.type]; ENEMY_VOLLEY[e.type]={pat:p, every:1};"
+    /* ⚠ AND SINCE 0912q THE SALVO IS TELEGRAPHED BY THE RETINA LOCK: its missiles leave when the lock
+       scheduler ticks, so the fixture ticks it for a second before counting. */
     /* salvo is gated on the per-stage missile budget (Math.random()<0.45 here), so ONE roll
        failing is the budget working. Roll it until it fires or we run out of patience. */
     +"  var n=0, xs=[], tries=(p==='salvo')?40:1;"
     +"  for(var t=0;t<tries && !n;t++){ eBullets.length=0; e._volN=t; e._volSeed=0;"
-    +"    enemyVolley(e,true); n=eBullets.length; xs=eBullets.map(function(b){return b.x;}); }"
+    +"    playerLocks=[]; enemyVolley(e,true); if(p==='salvo'){ for(var q=0;q<60;q++) updatePlayerLocks(1/60); }"
+    +"    n=eBullets.length; xs=eBullets.map(function(b){return b.x;}); }"
     +"  ENEMY_VOLLEY[e.type]=saved;"
     +"  o[p]={n:n, span:xs.length?Math.round(Math.max.apply(null,xs)-Math.min.apply(null,xs)):0};"
     +"});"
@@ -11649,7 +11656,7 @@ console.log("=== 229. flame/ice hitbox + reaver colour + fire orb ===");
   /* the CALL, not the word — the comment above the removal names lockAlert to explain why it went,
      and a bare substring search reads that comment as the bug it is documenting. */
   ok(_lockFn.indexOf('Audio.SFX.lockAlert()')<0 && _lockFn.indexOf('SFX.lockAlert(')<0,
-     'a missile lock no longer beeps — the shrinking reticle is the telegraph');
+     'a missile lock never uses lockAlert - the 0912 retina lock beeps through its own retinaLockBeep scheduler (section 285)');
   ok(_g229.indexOf('lockAlert')>0,
      'but lockAlert still exists for the wall-of-fire announce, which Mike did not ask to change');
 
@@ -11753,7 +11760,10 @@ console.log("=== 230. Stage-1 gunfighters + scoped loopcharge/homing ===");
   ok(_st['6'] && _st['6'].pat==='s1jet',
      'and so does stage 6');
 
-  /* --- NOTHING a boss fires past stage 1 may steer --- */
+  /* --- NOTHING a boss fires past stage 1 may steer - UNLESS A RETINA LOCK GRANTED IT (0912) ---
+     Mike's 0912 header rule lets a lock-bound missile steer while its retina holds, and breaks it on a
+     roll, somersault, charge dash, late dodge or shoot-down. Rounds with no lock still may not bend, so
+     the two populations are counted apart: curve = unlocked (must stay 0), lcurve = lock-bound. */
   var _hom=JSON.parse(vm.runInContext("(function(){"
     +"var o={};"
     +"[[1,0],[2,1],[3,2],[4,3],[5,4],[6,5],[7,6],[8,7]].forEach(function(p){"
@@ -11762,7 +11772,7 @@ console.log("=== 230. Stage-1 gunfighters + scoped loopcharge/homing ===");
     +"  enemies.length=0; eBullets.length=0; pBullets.length=0;"
     +"  player.x=140; player.y=470; player.invuln=999999;"
     +"  if(curStage.boss) spawnBoss(curStage.boss); else { o[p[0]]={noboss:1}; return; }"
-    +"  var homing=0, seen=0, curve=0;"
+    +"  var homing=0, seen=0, curve=0, lcurve=0;"
     +"  for(var f=0;f<60*30;f++){ player.hp=99;"
     +"    var pre={};"
     +"    for(var i=0;i<eBullets.length;i++){ var b=eBullets[i];"
@@ -11774,8 +11784,8 @@ console.log("=== 230. Stage-1 gunfighters + scoped loopcharge/homing ===");
     +"      if(c.homing) homing++;"
     +"      var d=Math.abs(Math.atan2(Math.sin(Math.atan2(c.vy,c.vx)-pre[j]),"
     +"                                Math.cos(Math.atan2(c.vy,c.vx)-pre[j])));"
-    +"      if(d>0.004) curve++; } }"
-    +"  o[p[0]]={seen:seen, homing:homing, curve:curve}; });"
+    +"      if(d>0.004){ if(c._lockId) lcurve++; else curve++; } } }"
+    +"  o[p[0]]={seen:seen, homing:homing, curve:curve, lcurve:lcurve}; });"
     +"return JSON.stringify(o);})()", ctxv));
 
   [2,3,4,5,6,7,8].forEach(function(s){
@@ -11783,12 +11793,12 @@ console.log("=== 230. Stage-1 gunfighters + scoped loopcharge/homing ===");
     ok(R.homing===0,
        'stage '+s+"'s boss launches ZERO homing rounds ("+R.homing+' of '+R.seen+' missile-frames)');
     ok(R.curve===0,
-       '  and not one of them bends in flight ('+R.curve+' curving frames) — measured on the ROUND, not the roster');
+       '  and not one round WITHOUT a retina lock bends in flight ('+R.curve+' curving frames; '+R.lcurve+' on lock-bound rounds, which the 0912 rule lets steer) — measured on the ROUND, not the roster');
   });
   /* the control: stage 1's helicopter KEEPS its swerving torpedoes, or this whole section would
      also pass on an engine that simply deleted enemy missiles */
-  ok(_hom[1] && _hom[1].seen>0 && _hom[1].curve>0,
-     'CONTROL: stage 1 still fields tracking ordnance ('+((_hom[1]||{}).curve||0)+' curving frames) — the cut is scoped, not a deletion');
+  ok(_hom[1] && _hom[1].seen>0 && (_hom[1].curve+_hom[1].lcurve)>0,
+     'CONTROL: stage 1 still fields tracking ordnance ('+(((_hom[1]||{}).curve||0)+((_hom[1]||{}).lcurve||0))+' curving frames) — the cut is scoped, not a deletion');
 
   /* --- fodder: a lock-on may still be TELEGRAPHED, but the round flies straight --- */
   var _fod=JSON.parse(vm.runInContext("(function(){"
@@ -13028,9 +13038,11 @@ console.log("=== 265. Stage-1 VFX edge safety and Overlord hunter flight ===");
   ok(_charge265.state==='chargeOff'&&Math.abs(_charge265.x-_charge265.lane)<0.01,
      'the actual charge commits to the warned lane and cannot home onto a late evade');
 
+  /* THE RETINA LOCK (0912q) launches the re-entry rockets: each one queues on the helicopter's retina
+     and leaves when updatePlayerLocks ticks, so an isolated updateOverlordX loop must tick it too. */
   var _swirl265=JSON.parse(vm.runInContext("(function(){"
     +"var b=boss;b._ovState='reentry';b._re={t:0,from:-1,startX:-115,startY:VH*0.70,fire:0.12,rocket:0.72,rkN:0};b.x=-115;b.y=VH*0.70;b._ovChargeCd=999;"
-    +"var minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9,miss=0;for(var i=0;i<250;i++){updateOverlordX(b,1/60);minX=Math.min(minX,b.x);maxX=Math.max(maxX,b.x);minY=Math.min(minY,b.y);maxY=Math.max(maxY,b.y);miss=Math.max(miss,eBullets.filter(function(q){return q.kind==='s1jungleMissile';}).length);}"
+    +"var minX=1e9,maxX=-1e9,minY=1e9,maxY=-1e9,miss=0;for(var i=0;i<250;i++){updateOverlordX(b,1/60);updatePlayerLocks(1/60);minX=Math.min(minX,b.x);maxX=Math.max(maxX,b.x);minY=Math.min(minY,b.y);maxY=Math.max(maxY,b.y);miss=Math.max(miss,eBullets.filter(function(q){return q.kind==='s1jungleMissile';}).length);}"
     +"return JSON.stringify({minX:minX,maxX:maxX,minY:minY,maxY:maxY,state:b._ovState,miss:miss});})()",ctxv));
   ok(_swirl265.minX<0&&_swirl265.maxX>410&&_swirl265.minY<45&&_swirl265.maxY>250,
      'side re-entry draws one continuous 1.25-turn path around all four playfield corners');
@@ -14378,6 +14390,73 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
 
   var _fp284 = path.join(ROOT, '_BUILD_SOURCE/probe_bod_fire_0912h.py');
   ok(fs.existsSync(_fp284), 'probe_bod_fire_0912h.py drives the tab like a user (18 ok / 0 fail)');
+}
+
+// ===== 285. THE RETINA LOCK IS A HEADER RULE (0912q) =====
+/* Mike, 0912: "when bosses want to fire homing missiles on you, target a retina on the player and
+   make it flash and beep with the retina noise and beep rapidly as they are about to fire off and
+   then the missiles come at us the retina stays locked until we either barrel roll to shake it off,
+   dodge at the last second, somersalt or shoot down the missiles. this should be a header rule for
+   most enemies and mini bosses and bosses."
+
+   ⚠ IT SUPERSEDES 0813a's silent lock, and the reason that complaint happened is what these pin:
+   the old beep fired PER LOCK from every racer phase and stacked into a siren. The new one is ONE
+   scheduler for the whole screen, and a unit that ripples locks holds ONE retina.
+   ⚠ The behaviour is proved in real Chromium by probe_retina_lock_0912q.py - these pin the SOURCE
+   so a later edit cannot quietly put the siren back or drop an evasion. Comments are stripped:
+   the notes explaining the fix name the old code. */
+{
+  console.log("=== 285. the retina lock header rule ===");
+  var _g285 = fs.readFileSync(path.join(ROOT, 'assets/game.js'), 'utf8')
+                .replace(/\/\*[\s\S]*?\*\//g, '').replace(/([^:'"])\/\/[^\n]*/g, '$1');
+  function _fn285(name) {
+    var i = _g285.indexOf('function ' + name + '(');
+    if (i < 0) return '';
+    var j = _g285.indexOf('\nfunction ', i + 10);
+    return _g285.slice(i, j < 0 ? i + 6000 : j);
+  }
+  var _ev = _fn285('lockEvading'), _on = _fn285('enemyLockOn'), _up = _fn285('updatePlayerLocks'),
+      _dr = _fn285('drawPlayerLocks');
+
+  ok(/player\.roll/.test(_ev) && /player\.somer/.test(_ev) && /player\._chgDash/.test(_ev),
+     'a barrel roll, a somersault and the charge dash are each an evasion the lock reads');
+  ok(/retinaCharge/.test(_on), 'acquiring a lock plays the retina noise');
+  ok(/L\.src===srcEnemy && L\.state==='arming'/.test(_on) && /launches\.push/.test(_on),
+     'a unit that is already arming queues its next launch on the SAME retina - one retina per unit');
+  ok(/fk === 'gun'/.test(_on), 'gun mode still refuses a lock (0801jy)');
+
+  ok((_g285.match(/Audio\.SFX\.retinaLockBeep\(\)/g) || []).length === 1 && /retinaLockBeep\(\)/.test(_up),
+     'the lock beep has exactly ONE caller, the scheduler in updatePlayerLocks - it cannot be fired per lock');
+  ok(/clamp\(soonest\*0\.42/.test(_up), 'and its interval shrinks with the time to the soonest launch');
+  ok(!/L\.delay\+0\.25/.test(_up), 'the old fixed quarter-second lifetime is gone: a lock lasts until its missiles do');
+  ok(/state='broken'/.test(_up) && /state='released'/.test(_up),
+     'a lock can be BROKEN (shaken off) and RELEASED (its missiles are gone)');
+  ok(/player\.dead\)\{ playerLocks=\[\]/.test(_up), 'a dead player carries no locks');
+
+  ok(/retm_/.test(_dr) && /nuoTinted\(fam\+fi/.test(_dr), 'the lock draws the RETINA art, tinted');
+
+  var _mv = _g285.slice(_g285.indexOf('if(b._lockId && !b._committed)'));
+  _mv = _mv.slice(0, 700);
+  ok(_mv.length > 100 && /_L\.state==='locked'/.test(_mv) && /LOCK_COMMIT_PX/.test(_mv) && /b\._committed=true/.test(_mv),
+     'a lock-bound missile steers only while its lock is LOCKED, and commits for good when close or shaken off');
+
+  var _bs = _fn285('beginStage');
+  ok(/playerLocks=\[\]/.test(_bs), 'a new stage starts with no retina on the player');
+
+  ['enemyVolley', 'shipBossAttack', 'vileAttack', 'updateModularBoss'].forEach(function (f) {
+    var body = _fn285(f);
+    var calls = (body.match(/eMissileHoming\(/g) || []).length;
+    ok(calls > 0 && /enemyLockOn\(/.test(body),
+       f + ' fires its homing salvo THROUGH the lock (' + calls + ' eMissileHoming calls) - the header rule');
+  });
+
+  var _tame = _g285.slice(_g285.indexOf('A.TAME = {'));
+  ok(/retinaLockBeep:\s*\{[^}]*min:0\.0[0-9]+/.test(_tame), 'the beep has a SHORT TAME gate, so it can beep rapidly');
+  ok(/retinaCharge:\s*\{[^}]*min:0\.[5-9]/.test(_tame), 'and the retina noise a LONG one, so a wave locking at once plays it once');
+  ok(/retinaLockBeep:'assets\/game\/sounds\/nsp_console_beep\.mp3'/.test(_g285), 'the beep is registered in the code-owned block');
+
+  ok(fs.existsSync(path.join(ROOT, '_BUILD_SOURCE/probe_retina_lock_0912q.py')),
+     'probe_retina_lock_0912q.py drives every clause of the rule in real Chromium');
 }
 
 console.log('\n============================================');
