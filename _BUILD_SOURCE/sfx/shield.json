@@ -1,0 +1,60 @@
+{
+  "_note": [
+    "SHIELD IMPACTS. Mike, 2026-09-12: 'generate me proper 16-bit shield impact noises'.",
+    "",
+    "The shipped shield_hit_light.wav peaks at 68% of its own length - the transient arrives",
+    "two thirds of the way in, which is the same 'delayed' defect CLAUDE.md already records for",
+    "reviewed_shadow_orb_launch.wav. Measured by sfx_gen.py audit, not guessed.",
+    "",
+    "Every prompt below names the ERA and the DRYNESS explicitly, because ElevenLabs defaults to",
+    "cinematic sound design - a swell, a long tail, and a beat of silence first. The post-process",
+    "in sfx_gen.py band-limits and cuts the tail on top of that; the prompt is only half the job.",
+    "",
+    "Ordered light -> heavy -> break so the set reads as one family under fire."
+  ],
+  "sounds": [
+    {
+      "key": "shield_hit_light",
+      "seconds": 0.9,
+      "max_seconds": 0.42,
+      "influence": 0.75,
+      "prompt": "Instant short metallic energy shield deflect. A hard bright ping on the very first millisecond, like a bullet skipping off an electrified plate, then a quick descending synthetic shimmer. Dry, no reverb, no room tone, no music. Retro arcade video game sound effect, punchy and clipped."
+    },
+    {
+      "key": "shield_hit_heavy",
+      "seconds": 1.1,
+      "max_seconds": 0.60,
+      "influence": 0.75,
+      "prompt": "Heavy impact on an energy barrier. A deep thudding slam at the very start with a bright electric crack layered on top, then a short buzzing electrical wobble that dies fast. Dry and close, no reverb tail, no music. Retro 16-bit arcade video game hit sound, thick and punchy."
+    },
+    {
+      "key": "shield_break",
+      "seconds": 1.6,
+      "max_seconds": 0.95,
+      "influence": 0.7,
+      "prompt": "An energy shield shattering and failing. Sharp glassy crack immediately, then collapsing electrical fizz and a falling synthetic tone as the field dies out. Dry, arcade, no reverb, no music. Retro video game shield destroyed sound effect."
+    },
+    {
+      "key": "shield_up",
+      "seconds": 1.2,
+      "max_seconds": 0.70,
+      "influence": 0.7,
+      "prompt": "An energy shield snapping on. A fast rising electric whoosh that locks into a clean sustained hum, bright and synthetic. Quick, dry, no reverb, no music. Retro arcade video game power-up barrier sound."
+    },
+    {
+      "key": "shield_graze",
+      "seconds": 0.8,
+      "max_seconds": 0.32,
+      "influence": 0.8,
+      "prompt": "A very short electric tick, a single small spark against a force field. Tiny, bright, instant, gone. Dry, no reverb, no music. Retro arcade video game blip.",
+      "peak": 0.72
+    },
+    {
+      "key": "shield_low",
+      "seconds": 1.4,
+      "max_seconds": 0.85,
+      "influence": 0.7,
+      "prompt": "A warning that a shield is nearly gone. Two quick descending electronic tones with a faint unstable crackle underneath, urgent but not shrill. Dry, no reverb, no music. Retro arcade video game low energy alert."
+    }
+  ]
+}

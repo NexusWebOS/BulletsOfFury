@@ -1,0 +1,47 @@
+{
+  "_note": [
+    "The six alert cues the first pass refused, re-declared with the CLASS each one actually is.",
+    "",
+    "Five of the six refusals were the gate being wrong, not the sound: a deep boss klaxon IS dark",
+    "and a lock-on sweep IS supposed to rise. Those are now class:swell and keep their shape. Only",
+    "warn_telegraph and shield_boss_absorb were genuinely dead (0.061 and 0.001 above 2kHz for cues",
+    "that are supposed to be a bright chirp and a metallic clang) and those two are re-prompted."
+  ],
+  "sounds": [
+    {
+      "key": "alert_boss_incoming", "class": "swell",
+      "seconds": 1.8, "max_seconds": 1.30, "influence": 0.7,
+      "prompt": "A heavy warning klaxon for an approaching capital ship. One deep rising horn blast with a metallic edge and a low rumble underneath, ominous and final. Dry, no music, no long reverb tail. Retro arcade video game boss warning."
+    },
+    {
+      "key": "alert_lockon", "class": "swell",
+      "seconds": 1.2, "max_seconds": 0.75, "influence": 0.75,
+      "prompt": "A targeting system acquiring a lock. A fast tightening electronic sweep that snaps into one solid confirming tone, mechanical and cold. Short. Dry, no reverb, no music. Retro arcade video game missile lock."
+    },
+    {
+      "key": "firewall_arrive", "class": "impact", "min_bright": 0.05, "retro_sr": 32000,
+      "seconds": 1.8, "max_seconds": 1.25, "influence": 0.8,
+      "prompt": "A towering wall of fire erupting. A sharp hissing IGNITION crack at the very first instant, bright and spitting, then a huge roaring blaze with crackling embers underneath it. The ignition is the loudest moment and it is immediate. Dry and close, no reverb tail, no music. Retro arcade video game firewall hazard."
+    },
+    {
+      "key": "firewall_pass", "class": "swell", "min_bright": 0.04, "retro_sr": 32000,
+      "seconds": 1.2, "max_seconds": 0.80, "influence": 0.7,
+      "prompt": "A sheet of flame sweeping past and receding. A rushing airy whoosh with a fading crackle. Dry, no reverb, no music. Retro arcade video game flame sweep."
+    },
+    {
+      "key": "warn_telegraph", "class": "tone", "min_bright": 0.14, "retro_sr": 32000,
+      "seconds": 0.9, "max_seconds": 0.50, "influence": 0.85,
+      "prompt": "Two very short high electronic chirps, thin and piercing like a handheld console alert, clean square-wave tone with an instant attack and no body at all. Bright. Dry, no reverb, no music. Retro video game alert chirp."
+    },
+    {
+      "key": "shield_boss_absorb", "class": "impact", "min_bright": 0.10, "retro_sr": 32000,
+      "seconds": 0.9, "max_seconds": 0.50, "influence": 0.85,
+      "prompt": "A bright metallic CLANG of a heavy armour plate refusing a hit, like a hammer striking a thick steel shield, ringing briefly with a low denying thrum underneath. The clang is immediate and bright. Dry, no reverb, no music. Retro arcade video game blocked hit."
+    },
+    {
+      "key": "bossfire_vileexistence", "class": "impact", "min_bright": 0.10, "retro_sr": 32000,
+      "seconds": 0.6, "max_seconds": 0.35, "influence": 0.88,
+      "prompt": "One sharp wet SNAP, immediate, like a snapping tendon, bright and sudden, with a very short hiss after it. Nothing before the snap. Dry, no reverb, no music. Retro arcade video game creature attack."
+    }
+  ]
+}

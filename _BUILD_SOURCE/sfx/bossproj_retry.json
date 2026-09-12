@@ -1,0 +1,29 @@
+{
+  "_note": [
+    "RETRY of the three boss cues the gates refused. All three failed the SAME way and it is a",
+    "pattern worth recording: prompts whose subject is inherently low-frequency - fire, a missile",
+    "launch, a fleshy organic thing - come back as almost pure bass (0.027, 0.050, 0.055 of energy",
+    "above 2kHz against a 0.12 floor). ElevenLabs renders the body of the thing and not the crack.",
+    "",
+    "The fix is to name the BRIGHT TRANSIENT first and the body second, and to raise retro_sr so",
+    "the band-limit is not also taking from a cue that had little to spare. Same correction that",
+    "rescued shield_hit_heavy, which went 0.000 -> 0.96 on exactly this change."
+  ],
+  "sounds": [
+    {
+      "key": "bossfire_infernoreaver",
+      "seconds": 0.9, "max_seconds": 0.45, "influence": 0.85, "retro_sr": 32000, "min_bright": 0.12,
+      "prompt": "A sharp hissing ignition CRACK as pressurised fuel catches, bright and spitting, followed by a short roaring flame burst underneath. The crack is first and loudest. Crisp top end, dry, no reverb, no music. Retro arcade video game flame cannon shot."
+    },
+    {
+      "key": "bossfire_doomsdaycarriermk2",
+      "seconds": 1.0, "max_seconds": 0.55, "influence": 0.85, "retro_sr": 32000, "min_bright": 0.12,
+      "prompt": "A bright metallic CLANK of a launch rail releasing, then a sharp hissing rocket exhaust screaming away. Metallic and airy with plenty of high frequency detail, a thump only underneath. Dry, no reverb, no music. Retro arcade video game missile launch."
+    },
+    {
+      "key": "bossfire_vileexistence",
+      "seconds": 0.8, "max_seconds": 0.45, "influence": 0.85, "retro_sr": 32000, "min_bright": 0.12,
+      "prompt": "A sharp wet SNAP of tearing flesh, bright and sudden like a snapping tendon, with a brief hissing spray after it and a low growl beneath. The snap is immediate and is the loudest part. Dry, no reverb, no music. Retro arcade video game creature attack."
+    }
+  ]
+}

@@ -7767,7 +7767,11 @@ function enemyShieldIntercept(e,dmg,b){
   if(reflected){
     if(Audio.SFX.projectileRicochet) Audio.SFX.projectileRicochet();
     else if(Audio.SFX.shieldImpact) Audio.SFX.shieldImpact();
-  } else if(Audio.SFX.shieldImpact) Audio.SFX.shieldImpact();
+  /* ⚠ THE 55ms `impactCd` ABOVE THROTTLES THE VISUAL ONLY - the sound sat outside it and fired
+     once per INTERCEPTED BULLET. The authored shield cue goes first now, and it carries its own
+     TAME gate; the synth shieldImpact stays as the fallback it always was. */
+  } else if(Audio.SFX.shieldHitLight) Audio.SFX.shieldHitLight();
+  else if(Audio.SFX.shieldImpact) Audio.SFX.shieldImpact();
   else if(Audio.SFX.shieldHitLight) Audio.SFX.shieldHitLight();
   if(s.energy<=0){
     s.phase='broken'; s.breakT=s.breakDelay; s.animT=0; s.hitT=0;
@@ -13595,6 +13599,47 @@ const BOSS_FIRE_SFX={
   void:   ['enemyElectricBolt','enemyHeavyLaser','enemyShoot'],
   kinetic:['enemyMachineGunHeavy','enemyMachineGunLight','enemyShoot']
 };
+/* ============================================================
+   ONE ORDNANCE VOICE PER BOSS (drop 0912j)
+
+   Mike: "proper boss projectile noises for each one that we have."
+
+   BOSS_FIRE_SFX above is keyed by ORDNANCE FAMILY - four buckets for nine bosses - so the Rime
+   Wall and the Storm Sovereign both came out as `enemyHeavyLaser` and read as the same event. This
+   table is keyed by the boss KIND and is consulted FIRST, so each stage boss announces itself and
+   anything without a row still falls through to the family exactly as before.
+
+   ⚠ KEYED ON `b.kind`, NOT ON THE DISPLAY NAME. SHIPBOSS.infernoreaver is called "MAGMA WARD" and
+   SHIPBOSS.magmaward is called "INFERNO REAVER" - the kinds and the names are crossed in the
+   table, and keying on what is printed on screen would give two bosses each other's voice.
+
+   ⚠ AND `_shipShot` STILL MAKES NO SOUND. The voice is raised at the TELL by shipBossQueueAttack,
+   which is deliberate and predates this - it is what lets one cue cover a whole volley instead of
+   one per round. Nothing here changes that; it only changes WHICH cue.
+   ============================================================ */
+const BOSS_KIND_SFX={
+  damkeeper:         'bossfireDamkeeper',
+  infernoreaver:     'bossfireInfernoreaver',
+  cryospear:         'bossfireCryospear',
+  stormsovereign:    'bossfireStormsovereign',
+  xenoregent:        'bossfireXenoregent',
+  doomsdaycarrier:   'bossfireDoomsdaycarrier',
+  doomsdaycarriermk2:'bossfireDoomsdaycarrier',
+  sludgeemperor:     'bossfireSludgeemperor',
+  vileexistence:     'bossfireVileexistence',
+  tidalfusion:       'bossfireTidalfusion',
+  tidalsovereign:    'bossfireTidalfusion',
+  /* the minibosses that share a stage's element borrow its voice rather than going generic */
+  magmaward:         'bossfireInfernoreaver',
+  rimewall:          'bossfireCryospear',
+  thornrime:         'bossfireCryospear',
+  siegeember:        'bossfireInfernoreaver',
+  blacksteel:        'bossfireStormsovereign',
+  voidbat:           'bossfireXenoregent',
+  olivewarden:       'bossfireDoomsdaycarrier',
+  dualscoopdredger:  'bossfireSludgeemperor',
+  lavamaw:           'bossfireInfernoreaver'
+};
 let _bossFireAt=0;
 function bossAttackSfx(b){
   const S=(typeof Audio!=='undefined'&&Audio.SFX)?Audio.SFX:null; if(!S) return false;
@@ -13602,6 +13647,9 @@ function bossAttackSfx(b){
   const n=(typeof performance!=='undefined'?performance.now():Date.now());
   if(n-_bossFireAt < 90) return false;
   _bossFireAt=n;
+  /* the boss's OWN voice first, then the ordnance family it belongs to */
+  const own=b&&(BOSS_KIND_SFX[b.kind]||BOSS_KIND_SFX[b._ship]);
+  if(own && typeof S[own]==='function'){ try{ S[own](); }catch(e){} return true; }
   const famKey=(b&&b._ship&&_bossMzLookup[b._ship])||'';
   const fam=famKey.replace('bpfx_muzzle_','')||'kinetic';
   const list=BOSS_FIRE_SFX[fam]||BOSS_FIRE_SFX.kinetic;
@@ -15369,8 +15417,16 @@ function l23WarnSound(B){
   const k=clamp(B.t/Math.max(.001,B.warm),0,1);
   const n=Math.floor(k*L23_WARN_ARROWS);
   if(n===B._arrowN)return; B._arrowN=n;
+  /* ⚠ THIS FIRED SEVEN TIMES PER TELEGRAPH, WITH NO GATE, FROM TEN BEAM-START SITES.
+     Mike, 0813a: "Stop using that annoying beep noise wehn homing missiles are shot off at us
+     too." That was fixed at enemyLockOn - which is silent to this day - and the SAME sample came
+     straight back here on every boss laser warn. It is one rising alert on the FIRST arrow now,
+     not one per arrow, and alertLockon carries a 1.10s TAME gate on top so ten beam sites cannot
+     stack it either. The arrows still draw all seven; they were always the readable part. */
+  if(n>0 && B._warnSfx) return;
+  B._warnSfx=1;
   try{ if(Audio.SFX){
-    const fn=Audio.SFX.lockAlert||Audio.SFX.dangerAlert||Audio.SFX.uiMove;
+    const fn=Audio.SFX.alertLockon||Audio.SFX.dangerAlert||Audio.SFX.lockAlert;
     if(fn)fn();
   } }catch(_lw){}
 }
@@ -18355,6 +18411,12 @@ function carrierPlayerHit(b,dmg,x,y){
   if(b._bay.L<=0&&b._bay.R<=0)return false;
   if(F.up){F.flash=Math.max(F.flash,.16);F.reformT=0;
     if(typeof combatAtlasFx==='function')combatAtlasFx(x,y,'cfx_stage6_carrier_shield',4,2,0,4,{life:.20,hpx:72,wpx:90,blend:'lighter'});
+    /* ⚠ THE BIGGEST SHIELD IN THE GAME WAS SILENT ON ORDINARY FIRE - it painted a 196px field FX
+       and played nothing, so the one mechanic the whole stage-6 fight is built on (bays immune to
+       ordinary fire, damaged only by a deflected warhead) had no audible feedback at all. The
+       player could not hear that they were being refused. shieldBossAbsorb carries a 0.13s TAME
+       gate so a held trigger reads as one sustained refusal rather than a stutter. */
+    try{ if(Audio.SFX&&Audio.SFX.shieldBossAbsorb) Audio.SFX.shieldBossAbsorb(); }catch(e){}
     return true;
   }
   const side=b._carrierBayHit||carrierBayAt(b,x,y);b._carrierBayHit=null;
@@ -27642,7 +27704,8 @@ function updatePlay(dt){
     let _sbLive=0;
     for(const _se of enemies){ if(_se.dead || _se._dyingT!=null || _se._prop) continue; _sbLive++; }
     if(SB && _sbScrollOK && _sbWaveOK && !subBossTriggered && !subBossDone && stageTimer>=curStage.length*SB.at && _sbLive<=9){
-      subBossTriggered=true; warnT=2.4; warnKind='sub'; Audio.SFX.bossAlarm();
+      subBossTriggered=true; warnT=2.4; warnKind='sub';
+        (Audio.SFX.alertDanger||Audio.SFX.bossAlarm)();
       if(typeof storyPlay==='function') storyPlay(run.stage,'miniboss'); if(Audio.SFX.enemyApproach) Audio.SFX.enemyApproach(); shake=Math.max(shake,4);
     }
     if(warnT>0){
@@ -27671,7 +27734,10 @@ function updatePlay(dt){
     }
     // trigger boss (via WARNING)
     if(!bossWarned && stageTimer>=curStage.length && enemies.length<=7){
-      bossWarned=true; warnT=2.4; warnKind='boss'; Audio.SFX.bossAlarm(); shake=Math.max(shake,4);
+      bossWarned=true; warnT=2.4; warnKind='boss';
+      /* the new klaxon, with bossAlarm behind it. 2.60s TAME gate - a warning that can retrigger
+         is not a warning. */
+      (Audio.SFX.alertBossIncoming||Audio.SFX.bossAlarm)(); shake=Math.max(shake,4);
       if(typeof arcStageCard==='function'){ const _bw=arcStageCard(run.stage,'boss_warning'); if(_bw) _bossCard={lines:_bw,t:0}; }
       if(typeof storyPlay==='function') storyPlay(run.stage,'boss');   // one line at a time, no box
       /* Clear anything still driving down at the dam. On stage 1 the level halts at the wall, so a
@@ -43039,7 +43105,7 @@ function wfxUpdate(dt){
              flag-plant stinger, while the ALERT fired later, on the wave's arrival, where it had
              nothing left to warn about. The alert now marks each of the three flashes, which is
              what makes them a countdown instead of decoration. */
-          if(Audio.SFX.dangerAlert) Audio.SFX.dangerAlert();
+          (Audio.SFX.alertDanger||Audio.SFX.dangerAlert||function(){})();
         }
         if(F.t >= FIRE_ALERT_STEP*3 + FIRE_ALERT_HOLD){ F.ph='waves'; F.t=0; }
       } else if(F.ph==='waves'){
@@ -43060,7 +43126,13 @@ function wfxUpdate(dt){
           setTimeout(()=>{ try{
             const blocked=(typeof bossActive!=='undefined'&&bossActive)||(typeof warnKind!=='undefined'&&warnKind==='boss');
             const S=Audio&&Audio.SFX;
-            if(!blocked&&S)(S.flameThrowerStart||S.flamewall||S.firewall||function(){})();
+            /* ⚠ THE WALL ARRIVING HAD NO VOICE OF ITS OWN - it borrowed the flamethrower's
+               ignition, and only when no boss was alive. Mike, 0912j: "other improvement sounds we
+               need like alerts, when the firewall comes and more." firewallArrive is authored for
+               this beat: the ignition is the loudest moment and it is immediate, so the cue lands
+               with the wall rather than after it. The `blocked` rule is UNCHANGED - it is a
+               deliberate call from 0801ad and not mine to overturn. */
+            if(!blocked&&S)(S.firewallArrive||S.flameThrowerStart||S.flamewall||S.firewall||function(){})();
           }catch(_){} }, 150);
           shake=Math.max(shake,6);
         }
@@ -61583,7 +61655,51 @@ if(window.BOFA && BOFA.sfx){
     fireIceChargeLoop:'assets/game/sounds/nsp_bof2_charge_shot.mp3',
     gravityTransform:'assets/game/sounds/reviewed_ship_fusion_sequence.wav',
     gravityFuse:'assets/game/sounds/reviewed_ship_fusion_lock.wav',
-    amb_storm:'assets/game/sounds/reviewed_stage6_wind_loop.wav'
+    amb_storm:'assets/game/sounds/reviewed_stage6_wind_loop.wav',
+
+    /* ============================================================
+       THE 0912j ELEVENLABS SET. Mike: "get rid of those annoying sounds I've complained about and
+       generate me proper 16-bit shield impact noises, proper boss projectile noises for each one
+       that we have and other improvement sounds we need like alerts, when the firewall comes."
+
+       ⚠ REGISTERED HERE AND NOT IN manifest.js, for the reason the block's own header gives: the
+       manifest is GENERATED and has reverted hand-edited audio mappings before.
+
+       ⚠ AND EVERY ONE OF THESE NEEDS A `TAME` ROW BELOW. A key with no TAME entry plays at g=1,
+       unfiltered, with NO RETRIGGER GATE - which is the exact mechanism behind every beeping
+       complaint in this project's history. Adding a sound without adding its gate is how you ship
+       the next one.
+
+       Each file was gated before it was allowed in: the transient must land early (the "delayed"
+       defect, measured on the shipped shield_hit_light at 68% of its own length), the tail is cut
+       rather than faded, and an impact must carry real energy above 2kHz. See _BUILD_SOURCE/
+       sfx_gen.py, and _BUILD_SOURCE/sfx_proof.py for the rendered waveform/spectrogram proof.
+       ============================================================ */
+    shieldHitLight:'assets/game/sounds/shield_hit_light.wav',
+    shieldHitHeavy:'assets/game/sounds/shield_hit_heavy.wav',
+    shieldBreakCombat:'assets/game/sounds/shield_break.wav',
+    shieldGraze:'assets/game/sounds/shield_graze.wav',
+    shieldUp:'assets/game/sounds/shield_up.wav',
+    shieldLow:'assets/game/sounds/shield_low.wav',
+    shieldBossAbsorb:'assets/game/sounds/shield_boss_absorb.wav',
+
+    /* one signature ordnance voice per stage boss - see BOSS_KIND_SFX */
+    bossfireDamkeeper:'assets/game/sounds/bossfire_damkeeper.wav',
+    bossfireInfernoreaver:'assets/game/sounds/bossfire_infernoreaver.wav',
+    bossfireCryospear:'assets/game/sounds/bossfire_cryospear.wav',
+    bossfireStormsovereign:'assets/game/sounds/bossfire_stormsovereign.wav',
+    bossfireXenoregent:'assets/game/sounds/bossfire_xenoregent.wav',
+    bossfireDoomsdaycarrier:'assets/game/sounds/bossfire_doomsdaycarriermk2.wav',
+    bossfireSludgeemperor:'assets/game/sounds/bossfire_sludgeemperor.wav',
+    bossfireVileexistence:'assets/game/sounds/bossfire_vileexistence.wav',
+    bossfireTidalfusion:'assets/game/sounds/bossfire_tidalfusion.wav',
+
+    alertBossIncoming:'assets/game/sounds/alert_boss_incoming.wav',
+    alertDanger:'assets/game/sounds/alert_danger.wav',
+    alertLockon:'assets/game/sounds/alert_lockon.wav',
+    alertBeamCharge:'assets/game/sounds/alert_beam_charge.wav',
+    firewallArrive:'assets/game/sounds/firewall_arrive.wav',
+    firewallPass:'assets/game/sounds/firewall_pass.wav'
   });
 }
 
@@ -61653,6 +61769,58 @@ const Snd=(function(){
      the context is actually running, and any throw drops that sound back to plain playback for
      good — the level cut and the throttle still apply either way. */
   A.TAME = {
+    /* ============================================================
+       THE 0912j GATES. ⚠ A KEY WITH NO ROW HERE PLAYS AT g=1, UNFILTERED, WITH NO RETRIGGER GATE,
+       and that - not the samples - is the mechanism behind every beeping complaint in this
+       project's history. Measured, before this drop:
+
+         whip        11 jet-manoeuvre sites, NO row. Four racers crossing is 16 unthrottled
+                     swooshes. That is Mike's "an annoying noise every time a jet flies" (0807q),
+                     recorded as NOT STARTED and still live three drops later.
+         lockAlert   fired 7x per boss beam telegraph (L23_WARN_ARROWS), NO row, from 10 beam-start
+                     sites. Mike killed this beep on missile locks in 0813a and it came back on
+                     boss lasers with the same sample.
+         shieldHit*  fired per INTERCEPTED BULLET with no row - the visual has a 55ms cooldown
+                     (s.impactCd) and the sound was left outside it.
+
+       ⚠ AND THE THROTTLE 0822ae DOCUMENTS IS DEAD CODE. Its ESHOOT_GAP=90 guard lives inside the
+       SYNTH enemyShoot body, and enemyShoot is a BOFA.sfx key, so the sample bridge overwrites
+       Audio.SFX.enemyShoot and the guard is unreachable. The live gate is this table's `min`.
+       ============================================================ */
+    whip:     {g:0.44, lp:5200, min:0.34},
+    lockAlert:{g:0.40, lp:5200, min:0.55},
+
+    /* the new shield vocabulary. `min` is longer than the 55ms visual cooldown on purpose: a
+       stream of deflections should read as ONE sustained event, not as a machine gun. */
+    shieldHitLight:   {g:0.50, lp:7200, min:0.085},
+    shieldHitHeavy:   {g:0.60, lp:6200, min:0.11},
+    shieldBreakCombat:{g:0.66, lp:6000, min:0.45},
+    shieldGraze:      {g:0.34, lp:8000, min:0.070},
+    shieldUp:         {g:0.52, lp:6400, min:0.40},
+    shieldLow:        {g:0.50, lp:6400, min:1.60},
+    shieldBossAbsorb: {g:0.54, lp:5600, min:0.13},
+
+    /* boss ordnance. 0.13 sits just above bossAttackSfx's own 90ms global gate so a boss that
+       fires through both paths cannot double-strike. */
+    bossfireDamkeeper:      {g:0.56, lp:5200, min:0.13},
+    bossfireInfernoreaver:  {g:0.56, lp:5600, min:0.13},
+    bossfireCryospear:      {g:0.52, lp:7600, min:0.13},
+    bossfireStormsovereign: {g:0.54, lp:7200, min:0.13},
+    bossfireXenoregent:     {g:0.54, lp:5600, min:0.13},
+    bossfireDoomsdaycarrier:{g:0.56, lp:5200, min:0.15},
+    bossfireSludgeemperor:  {g:0.54, lp:6000, min:0.13},
+    bossfireVileexistence:  {g:0.56, lp:6400, min:0.13},
+    bossfireTidalfusion:    {g:0.54, lp:6400, min:0.13},
+
+    /* alerts are ONE-SHOT EVENTS. The long `min` is the whole point - an alert that can repeat
+       is not an alert, it is the noise Mike has complained about three times. */
+    alertBossIncoming:{g:0.52, lp:4600, min:2.60},
+    alertDanger:      {g:0.48, lp:6400, min:0.90},
+    alertLockon:      {g:0.44, lp:6000, min:1.10},
+    alertBeamCharge:  {g:0.50, lp:5600, min:1.40},
+    firewallArrive:   {g:0.60, lp:5200, min:1.50},
+    firewallPass:     {g:0.46, lp:4200, min:1.20},
+
     missile:  {g:0.62, lp:4200, min:0.11},
     firewall: {g:0.58, lp:3400, min:0.10},
     /* flame_wall.wav replaced 'firewall' on the flamethrower in 0801km. TAME is keyed

@@ -1,0 +1,27 @@
+{
+  "_note": [
+    "The last three. Two of them are dark BECAUSE THAT IS WHAT THEY ARE - a deep capital-ship",
+    "klaxon and a receding flame whoosh have almost no energy above 2kHz, and insisting otherwise",
+    "would be the gate overriding the design. min_bright is set to 0 for those two DELIBERATELY and",
+    "the reason is here rather than in a silently relaxed default.",
+    "warn_telegraph gets one more attempt with a completely different framing - 'tiny speaker' and",
+    "'terminal button' rather than 'chirp', because three chirp promptsbrought back bass each time."
+  ],
+  "sounds": [
+    {
+      "key": "alert_boss_incoming", "class": "swell", "min_bright": 0,
+      "seconds": 1.8, "max_seconds": 1.30, "influence": 0.7,
+      "prompt": "A heavy warning klaxon for an approaching capital ship. One deep rising horn blast with a metallic edge and a low rumble underneath, ominous and final. Dry, no music, no long reverb tail. Retro arcade video game boss warning."
+    },
+    {
+      "key": "firewall_pass", "class": "swell", "min_bright": 0, "retro_sr": 32000,
+      "seconds": 1.2, "max_seconds": 0.80, "influence": 0.7,
+      "prompt": "A sheet of flame sweeping past and receding. A rushing airy whoosh with a fading crackle. Dry, no reverb, no music. Retro arcade video game flame sweep."
+    },
+    {
+      "key": "warn_telegraph", "class": "tone", "min_bright": 0.10, "retro_sr": 32000,
+      "seconds": 0.8, "max_seconds": 0.45, "influence": 0.9,
+      "prompt": "A tiny cheap speaker emitting two rapid high pitched electronic pips, like a wristwatch alarm or a microwave finishing, thin and shrill with no bass whatsoever. Very small and very bright. Dry, no reverb, no music."
+    }
+  ]
+}

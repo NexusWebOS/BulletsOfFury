@@ -1,0 +1,44 @@
+{
+  "_note": [
+    "RETRY of the three shield cues the rendered proof caught. All three passed every numeric gate",
+    "and two of them were EMPTY above 1 kHz - a thud with no crack. See sfx_gen.py brightness().",
+    "",
+    "What changed, per cue, rather than re-rolling the same prompt and hoping:",
+    "  hit_heavy  the word 'deep' dominated and the generation came back all body and no crack.",
+    "             Now the crack is named FIRST and the body second, and retro_sr is raised to 32k",
+    "             so the band-limit stops eating the part that was missing.",
+    "  low        'descending tones' produced one low sine. Now explicitly two SHORT BRIGHT beeps.",
+    "  graze      came back as repeated ticking over 0.32s instead of one tick. Cut to 0.18s and",
+    "             the prompt says ONE, once."
+  ],
+  "sounds": [
+    {
+      "key": "shield_hit_heavy",
+      "seconds": 1.0,
+      "max_seconds": 0.55,
+      "influence": 0.8,
+      "retro_sr": 32000,
+      "min_bright": 0.10,
+      "prompt": "A sharp bright metallic CRACK the instant a heavy slug slams an energy barrier, like a hammer on a steel plate, with a deep thump underneath it and a brief electrical sizzle. The crack is the loudest part and it happens immediately. Dry and close, no reverb, no room, no music. Retro arcade video game heavy hit."
+    },
+    {
+      "key": "shield_low",
+      "seconds": 1.2,
+      "max_seconds": 0.80,
+      "influence": 0.8,
+      "retro_sr": 32000,
+      "min_bright": 0.10,
+      "prompt": "Two short bright electronic warning beeps in quick succession, high and clean like an arcade cabinet alarm, with a thin unstable crackle behind them. Sharp attack on each beep. Dry, no reverb, no music. Retro video game low shield alarm."
+    },
+    {
+      "key": "shield_graze",
+      "seconds": 0.6,
+      "max_seconds": 0.18,
+      "influence": 0.85,
+      "retro_sr": 32000,
+      "min_bright": 0.20,
+      "peak": 0.72,
+      "prompt": "One single tiny electric tick. A single spark snapping against a force field, once, then silence. Extremely short and bright. Dry, no reverb, no repeats, no music. Retro arcade video game blip."
+    }
+  ]
+}

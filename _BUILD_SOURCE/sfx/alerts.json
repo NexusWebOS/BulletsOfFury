@@ -1,0 +1,57 @@
+{
+  "_note": [
+    "ALERTS, THE FIREWALL, AND THE CUES THAT WERE MISSING. Mike, 2026-09-12: 'other improvement",
+    "sounds we need like alerts, when the firewall comes and more'.",
+    "",
+    "⚠ THE POINT OF AN ALERT IS THAT IT FIRES ONCE AND MEANS SOMETHING. Mike has complained about",
+    "beeping three separate times - the jet flyby (0807q), the missile lock-on (0813A) and 'beep",
+    "beep beep with all these bosses' (0822ae, which was enemyShoot firing per BULLET). In every",
+    "case the fault was REPETITION, not the sample. These are written to be heard once, at a moment",
+    "that matters, and they are wired with a cooldown.",
+    "",
+    "So none of these is a beep. An alert that repeats becomes noise however good it sounds."
+  ],
+  "sounds": [
+    {
+      "key": "alert_boss_incoming",
+      "seconds": 1.6, "max_seconds": 1.10, "influence": 0.7, "min_bright": 0.10,
+      "prompt": "A heavy warning klaxon for an approaching capital ship. One deep rising horn blast with a metallic edge and a low rumble underneath, ominous and final. Starts immediately at full weight. Dry, no music, no reverb tail. Retro arcade video game boss warning."
+    },
+    {
+      "key": "alert_danger",
+      "seconds": 1.0, "max_seconds": 0.60, "influence": 0.75, "min_bright": 0.18,
+      "prompt": "A single urgent alarm blip, bright and hard edged, one short rising electronic tone with a sharp attack. Clean and immediate. Dry, no reverb, no music, no repeat. Retro arcade video game warning."
+    },
+    {
+      "key": "alert_lockon",
+      "seconds": 1.2, "max_seconds": 0.70, "influence": 0.75, "min_bright": 0.18,
+      "prompt": "A targeting system acquiring a lock. A fast tightening electronic sweep that snaps into one solid confirming tone, mechanical and cold. Sharp and short. Dry, no reverb, no music. Retro arcade video game missile lock."
+    },
+    {
+      "key": "alert_beam_charge",
+      "seconds": 1.6, "max_seconds": 1.20, "influence": 0.7, "min_bright": 0.14,
+      "no_retro": false,
+      "prompt": "A huge weapon charging to fire. A rising electrical whine building in pitch and intensity with crackling energy, tense and threatening, ending right as it peaks. Dry, no reverb, no music. Retro arcade video game charge up."
+    },
+    {
+      "key": "firewall_arrive",
+      "seconds": 1.8, "max_seconds": 1.20, "influence": 0.75, "min_bright": 0.14,
+      "prompt": "A towering wall of fire erupting across the screen. A deep igniting WHOOMPH at the very start then a sustained roaring blaze with crackling embers, huge and dangerous. The ignition is the loudest moment. Dry and close, no reverb tail, no music. Retro arcade video game firewall hazard."
+    },
+    {
+      "key": "firewall_pass",
+      "seconds": 1.2, "max_seconds": 0.70, "influence": 0.7, "min_bright": 0.12,
+      "prompt": "A sheet of flame sweeping past and dying down. A rushing airy whoosh with a fading crackle, receding fast. Dry, no reverb, no music. Retro arcade video game flame sweep."
+    },
+    {
+      "key": "warn_telegraph",
+      "seconds": 1.0, "max_seconds": 0.55, "influence": 0.78, "min_bright": 0.20,
+      "prompt": "A short two-note electronic warning chirp, bright and clipped, the sound a cabinet makes right before something dangerous happens. Sharp attack, no tail. Dry, no reverb, no music. Retro arcade video game telegraph cue."
+    },
+    {
+      "key": "shield_boss_absorb",
+      "seconds": 1.0, "max_seconds": 0.55, "influence": 0.78, "min_bright": 0.14,
+      "prompt": "A heavy armoured barrier absorbing a hit and refusing it. A dull metallic clang immediately followed by a low denying synthetic thrum, solid and unbreakable. Dry, no reverb, no music. Retro arcade video game blocked hit."
+    }
+  ]
+}

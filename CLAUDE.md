@@ -3293,3 +3293,89 @@ something measurable (a fan lays n distinct headings; a spiral BURST rotates the
 leaves the gap it is told to; the anchor slider moves the mount AND the round leaves from it) and
 that the ones that cannot work are **named rather than shipped**. Suite section 284 pins both halves,
 including that there is no damage slider.
+
+## 0912j — the audio, and why every beeping complaint was the THROTTLE
+
+Mike: *"get rid of those annoying sounds I've complained about and generate me proper 16-bit shield
+impact noises, proper boss projectile noises for each one that we have and other improvement sounds
+we need like alerts, when the firewall comes and more."*
+
+⚠⚠ **EVERY BEEPING COMPLAINT IN THIS PROJECT'S HISTORY WAS REPETITION, NOT A BAD SAMPLE**, and the
+mechanism is one table. `Snd.TAME` (game.js) carries `{g, lp, boost, min, native}` per KEY, and
+**`min` is the only retrigger gate in the engine**. Measured before this drop: **118 of 189 keys had
+no row at all**, so they played at `g=1`, unfiltered, with no gate.
+
+- **`whip`** — 11 jet-manoeuvre call sites, **no row**. Four racers crossing is **16 unthrottled
+  swooshes**. That is *"an annoying noise every time a jet flies"* (0807q), recorded as NOT STARTED
+  and still live five drops later.
+- **`lockAlert`** — Mike killed this on missile locks in 0813a (`enemyLockOn` is silent to this day,
+  correctly) and **the same sample came straight back on boss beam telegraphs**: `l23WarnSound`
+  fired it once per revealed arrow, `L23_WARN_ARROWS=7`, from **ten** beam-start sites, **no row**.
+- ⚠ **AND THE THROTTLE 0822ae DOCUMENTS IS DEAD CODE.** Its `ESHOOT_GAP=90` guard lives inside the
+  **synth** `enemyShoot` body — and `enemyShoot` is a `BOFA.sfx` key, so the sample bridge
+  (`for(const m in BOFA.sfx){ Audio.SFX[m]=...Snd.play(m) }`) **overwrites it**. `ESHOOT_GAP` has
+  exactly one reference in the file, inside the unreachable body. The dial that passover advertises
+  does nothing; the live gate is `TAME.enemyShoot.min`.
+
+So the deliverable is **a sound that cannot be spammed**, and the probe measures that directly: 40
+rapid calls to `shieldHitLight` → **2 played, 38 refused**.
+
+### The generator, and the two gates that earned their place
+
+`_BUILD_SOURCE/sfx_gen.py` drives ElevenLabs `/v1/sound-generation`. ⚠ **It returns CINEMATIC sound
+design** — a swell, a long tail, often a beat of silence first — which is the opposite of an arcade
+cue. Two gates, both measured, both derived from cases already in this repo:
+
+1. **THE TRANSIENT MUST LAND EARLY.** CLAUDE.md already records `reviewed_shadow_orb_launch.wav`
+   peaking at 1.805 s of 2.250 s as *"Mike's 'delayed' complaint"*. Auditing the shipped library
+   against that rule found **10 one-shots of 104 carry it — including `shield_hit_light.wav` at 68%**,
+   the exact sound he asked me to replace. ⚠ **A FRACTION ALONE PUNISHES SHORT CUES**: a 0.18 s tick
+   peaking at 40% peaks 72 ms in, which nobody perceives as delay. The gate is fraction **AND** 90 ms
+   absolute — verified against all ten known-bad cues, which peak at 0.21 s or later, so the floor
+   rescues none of them.
+2. ⚠ **"MUFFLED" IS MEASURABLE AND THE NUMBERS ALONE MISSED IT.** `shield_hit_heavy` and
+   `shield_low` came back with a perfect transient, a legal duration and a correct level — and a
+   spectrogram **empty above 1 kHz**. A thud with no crack does not read as an impact at any volume.
+   Only the *rendered picture* showed it (rule 1, in a medium with no habit of it), which is why
+   `_BUILD_SOURCE/sfx_proof.py` exists — waveform over spectrogram, new against shipped. The
+   threshold reproduces the known-good cases first: shipped impacts measure 0.156–0.176 of energy
+   above 2 kHz, the two dead generations measured **0.000**.
+
+⚠ **AND A CUE'S CLASS DECIDES WHICH RULES APPLY — forgetting that refused six good sounds.** A deep
+klaxon *is* dark (0.009 above 2 kHz) and a lock-on sweep *is* supposed to rise. `class: impact |
+swell | tone` fixes the gate rather than the sound. This is the same swells-vs-one-shots distinction
+the tool's own library audit already made, which had not been carried into the generator.
+
+⚠ **PROMPTS WHOSE SUBJECT IS INHERENTLY LOW-FREQUENCY COME BACK AS PURE BASS** — fire, a missile
+launch, a fleshy organic thing measured 0.027 / 0.050 / 0.055 above 2 kHz. Naming the **bright
+transient first and the body second** is what rescued them; `shield_hit_heavy` went **0.000 → 0.96**
+on exactly that change.
+
+### What landed
+
+**22 new cues**, all gated, all registered in the **code-owned override block** and not in
+`manifest.js` — ⚠ that file is GENERATED and has reverted hand-edited audio mappings before.
+
+- **shields** — light / heavy / break / graze / up / low / boss-absorb.
+- **nine boss ordnance voices**, one per stage boss. `BOSS_FIRE_SFX` buckets nine bosses into **four
+  ordnance families**, which is why the Rime Wall and the Storm Sovereign sounded identical;
+  `BOSS_KIND_SFX` is consulted first and anything without a row still falls through to the family.
+  ⚠ **Keyed on `b.kind`, never the display name** — `SHIPBOSS.infernoreaver` is called *"MAGMA WARD"*
+  and `SHIPBOSS.magmaward` is called *"INFERNO REAVER"*; the kinds and names are crossed, so keying
+  on what is printed on screen gives two bosses each other's voice.
+- **alerts + the firewall** — a boss klaxon (2.6 s gate), a danger blip, a lock-on sweep, a beam
+  charge, and `firewallArrive`, which is the first cue the wall-of-fire has ever had of its own (it
+  borrowed the flamethrower's ignition). The `blocked` rule is untouched — it is 0801ad's call.
+
+**Two silences fixed.** ⚠ **The stage-6 carrier's shield was silent on ordinary fire** — it painted a
+196 px field effect and played nothing, so the one mechanic the whole fight is built on had no
+audible feedback. And ⚠ **the enemy-shield sound sat OUTSIDE its own 55 ms cooldown** (`s.impactCd`
+throttles the visual only), so it fired once per intercepted bullet.
+
+⚠ **A VACUOUS PASS IN MY OWN PROBE, worth keeping.** Reading `window.Snd.TAME` returns undefined —
+`Snd` is a module-scope const, so it is in the global *lexical* environment and is **not** a window
+property (CLAUDE.md records this exact trap). With the table read as `{}`, "every key has a TAME row"
+failed while **"every one carries a `min`" PASSED** — because an empty list satisfies `all()`. Two
+checks disagreeing about one table is the tell; the burst test was the honest one.
+
+`probe_sfx_0912j.py` **13 ok / 0 fail**. Suite **3,427 ok / 65 fail**, zero new failures.

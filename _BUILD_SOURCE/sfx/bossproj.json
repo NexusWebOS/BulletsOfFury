@@ -1,0 +1,65 @@
+{
+  "_note": [
+    "BOSS ORDNANCE - one signature firing cue per boss. Mike, 2026-09-12: 'proper boss projectile",
+    "noises for each one that we have'.",
+    "",
+    "Today every ship boss fires through _shipShot and they all sound alike, which is why a Rime",
+    "Wall volley and a Magma Ward volley read as the same event. Each cue below is written to the",
+    "boss's OWN element so the player can hear which boss is shooting without looking.",
+    "",
+    "Keyed bossfire_<kind> against the nine STAGES[].boss kinds, measured off the table:",
+    "  damkeeper  infernoreaver  cryospear  stormsovereign  xenoregent",
+    "  doomsdaycarriermk2  sludgeemperor  vileexistence  tidalfusion",
+    "",
+    "⚠ ALL SHORT. A boss fires a lot, and a long cue stacks into mud - which is the mechanism",
+    "behind Mike's 'beep beep beep with all these bosses' (enemyShoot, once per BULLET, no",
+    "throttle). The sound is only half that fix; the throttle is the other half."
+  ],
+  "sounds": [
+    {
+      "key": "bossfire_damkeeper",
+      "seconds": 0.8, "max_seconds": 0.40, "influence": 0.8, "min_bright": 0.12,
+      "prompt": "A heavy helicopter gunship cannon firing one round. Deep percussive thump with a hard metallic snap on the front and a short mechanical clack. Immediate, dry, no reverb, no music. Retro arcade video game heavy weapon shot."
+    },
+    {
+      "key": "bossfire_infernoreaver",
+      "seconds": 0.9, "max_seconds": 0.45, "influence": 0.8, "min_bright": 0.12,
+      "prompt": "A gout of molten fire launched from a cannon. A sharp igniting crack followed by a thick roaring whoosh of flame that cuts off fast. Dry and close, no reverb, no music. Retro arcade video game fire weapon shot."
+    },
+    {
+      "key": "bossfire_cryospear",
+      "seconds": 0.8, "max_seconds": 0.42, "influence": 0.8, "min_bright": 0.20,
+      "prompt": "A spear of ice fired from a crystal cannon. A bright glassy shattering crack with a cold ringing shimmer trailing briefly behind it. Crisp and high. Dry, no reverb, no music. Retro arcade video game ice weapon shot."
+    },
+    {
+      "key": "bossfire_stormsovereign",
+      "seconds": 0.8, "max_seconds": 0.40, "influence": 0.8, "min_bright": 0.20,
+      "prompt": "A bolt of lightning discharged from a coil. A vicious electric snap and zap with crackling static, instant and violent, gone immediately. Dry, no reverb, no music. Retro arcade video game electric weapon shot."
+    },
+    {
+      "key": "bossfire_xenoregent",
+      "seconds": 0.9, "max_seconds": 0.48, "influence": 0.8, "min_bright": 0.14,
+      "prompt": "An alien energy weapon firing. A warped synthetic pulse with a metallic wobble and an eerie descending whine, otherworldly and cold. Sharp start. Dry, no reverb, no music. Retro arcade video game alien weapon shot."
+    },
+    {
+      "key": "bossfire_doomsdaycarriermk2",
+      "seconds": 1.0, "max_seconds": 0.55, "influence": 0.8, "min_bright": 0.12,
+      "prompt": "A missile launching from a warship bay. A hard percussive launch thud followed immediately by a rushing rocket hiss that fades quickly. Dry and close, no reverb, no music. Retro arcade video game missile launch."
+    },
+    {
+      "key": "bossfire_sludgeemperor",
+      "seconds": 0.9, "max_seconds": 0.45, "influence": 0.8, "min_bright": 0.12,
+      "prompt": "A blob of corrosive acid spat under pressure. A wet bursting splat with a hissing acidic fizz, thick and slimy, cutting off fast. Dry, no reverb, no music. Retro arcade video game toxic weapon shot."
+    },
+    {
+      "key": "bossfire_vileexistence",
+      "seconds": 0.9, "max_seconds": 0.48, "influence": 0.8, "min_bright": 0.14,
+      "prompt": "A grotesque organic creature launching a living projectile. A fleshy wet snap with a low guttural growl underneath and a brief squelching hiss. Sharp start, dry, no reverb, no music. Retro arcade video game monster attack."
+    },
+    {
+      "key": "bossfire_tidalfusion",
+      "seconds": 1.0, "max_seconds": 0.52, "influence": 0.8, "min_bright": 0.16,
+      "prompt": "A high energy fusion cannon discharging. A bright charged snap opening into a surging synthetic energy beam pulse with a watery shimmer, powerful and clean. Immediate attack. Dry, no reverb, no music. Retro arcade video game plasma cannon shot."
+    }
+  ]
+}
