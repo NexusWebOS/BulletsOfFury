@@ -13794,6 +13794,11 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   ok(vm.runInContext("BOFX.ships['ship_lizzie'].join(',')", ctxv)===_stock,
      'turning it off restores the stock rect exactly - a one-way toggle is a trap, not a pick');
 
+  /* ⚠ CAPTURED BEFORE THE COSTUME GOES ON. The first cut of the 0912n assertion below read this
+     AFTER applyLizzieSkin(true) and so compared the B-42 rect against the restored stock one - a
+     check that could only ever fail, and did. Read the stock value while the ship is stock. */
+  var _lizStockG1 = vm.runInContext("(BOFX.ships['ship_lizzie_g1']||[]).join(',')", ctxv);
+
   /* all seventeen move, not just the hull: a partial swap gives a B-42 that banks into the
      golden airframe, which is the sort of thing only a roll would reveal */
   vm.runInContext("applyLizzieSkin(true)", ctxv);
@@ -13802,12 +13807,30 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
     "if(BOFX.ships['ship_lizzie'+s].join(',')===LIZZIE_B42_RECTS[s].join(','))n++;return n;})()", ctxv);
   var _want=Object.keys(vm.runInContext("LIZZIE_B42_RECTS", ctxv)).length;
   ok(_n===_want, 'every one of the '+_want+' costume rows swaps, not only the hull ('+_n+'/'+_want+')');
-  /* ⚠ AND THE SWAP MUST BE SYMMETRIC. The costume carries suffixes the stock hull does not, so
-     turning it OFF has to DELETE those keys rather than skip them - leave them and her own ship
-     flickers into a B-42 three times a second, because shipGlowKey keeps finding a phase. */
+  /* ⚠ THE SWAP MUST BE SYMMETRIC, AND WHAT SYMMETRIC MEANS CHANGED UNDER IT (0912n).
+     This used to assert that turning the costume OFF DELETES ship_lizzie_g1, because the stock hull
+     had no phase keys and leaving a B-42 rect behind would flicker her own ship into a bomber three
+     times a second. The stock hull HAS phases now - 0912n re-baked all nine pilots - so the correct
+     behaviour is to RESTORE the stock rect, not delete the key, and applyLizzieSkin already does
+     that: _lizzieStockRects snapshots every suffix in LIZZIE_B42_RECTS on the first call, so a
+     stock rect that exists is captured and put back.
+     ⚠ THE POINT OF THE ASSERTION SURVIVES INTACT - a costume toggle must not leave her wearing the
+     wrong flame. It is now checked the stronger way: the rect must come back EXACTLY, and her
+     flicker must still work afterwards. The old form would have passed on a build that deleted her
+     new stock phases and left her the only pilot with a static flame. */
+  var _lizOnG1 = vm.runInContext("(BOFX.ships['ship_lizzie_g1']||[]).join(',')", ctxv);
+  ok(_lizOnG1 !== _lizStockG1 && _lizOnG1 !== '',
+     'the costume repoints her phase rect too, not only her hull');
   vm.runInContext("applyLizzieSkin(false)", ctxv);
-  ok(vm.runInContext("BOFX.ships['ship_lizzie_g1']==null", ctxv),
-     'and turning it off deletes the phase keys the stock hull does not have');
+  ok(vm.runInContext("(BOFX.ships['ship_lizzie_g1']||[]).join(',')", ctxv) === _lizStockG1 &&
+     _lizStockG1 !== '',
+     'and turning it off restores her STOCK phase rect exactly, rather than deleting the key');
+  ok(vm.runInContext(
+      "(function(){var s={};for(var i=0;i<SHIP_GLOW_SEQ.length;i++){var p=SHIP_GLOW_SEQ[i];" +
+      "var k=p?('ship_lizzie_'+p):'ship_lizzie'; if(BOFX.ships[k])s[k]=1;}return Object.keys(s).length;})()",
+      ctxv) === 3,
+     'and her flame still flickers after a full costume round trip - she is not left the only ' +
+     'pilot with a static plume');
   vm.runInContext("applyLizzieSkin(false)", ctxv);
 
   /* THE CACHE FLUSH IS THE LOAD-BEARING HALF. XART caches a ship cell by key on first use, so
@@ -14168,9 +14191,27 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      replaces the two dozen retired above, and unlike them it describes something actually wrong. */
   var _phase = vm.runInContext(
     "Object.keys(BOFX.ships).filter(function(k){return /_g[12]$/.test(k);}).length", ctxv);
-  ok(!vm.runInContext("SHIP_FLAME_BAKED", ctxv) || _phase > 0,
-     'SHIP_FLAME_BAKED is on, so the _g1/_g2 phase cells must exist - found ' + _phase +
-     ' (0906s baked 144; the 0909 per-pilot re-pack dropped them, so no flame flickers)');
+  /* ⚠ THIS WAS THE SUITE'S ONE DELIBERATE RED AND IT IS GREEN NOW (0912n). Mike: "re-bake against
+     the current plates." The cells are rebuilt FROM the current art rather than re-pointed at the
+     old ones - 0912c established that HEAD's phases belong to a different aeroplane (178x200 with a
+     pale flame against 136x155 with a cyan one), so re-pointing was never available.
+     ⚠ 144 again, and not by coincidence worth trusting blindly: the 0909 pack aliases _pv2 onto the
+     base and _pv1/_pv3 onto _l/_r, so 8 phase-bearing keys per pilot resolve to 5 DISTINCT rects.
+     45 frames, 90 baked cells, 144 rows once the aliases point at them - the same count as 0906s
+     by a different route. */
+  ok(!vm.runInContext("SHIP_FLAME_BAKED", ctxv) || _phase === 144,
+     'SHIP_FLAME_BAKED is on and the phase cells are back - ' + _phase + ' of 144 (90 baked cells ' +
+     'behind 45 distinct rects; shipGlowKey measured returning 3 distinct keys on all nine pilots ' +
+     'over a real 400ms window, up from 1)');
+  /* ⚠ AND A PHASE MUST SHARE ITS BASE FRAME'S SIZE AND OFFSETS EXACTLY. 0906s: an animation that
+     moves the silhouette reads as a sprite glitch rather than as combustion. The bake never writes
+     alpha for the same reason - measured 0 alpha delta on all nine. */
+  var _sameRect = vm.runInContext(
+    "(function(){var bad=0;for(var k in BOFX.ships){var m=/^(.*)_g[12]$/.exec(k);if(!m)continue;" +
+    "var b=BOFX.ships[m[1]],g=BOFX.ships[k];if(!b||!g)continue;" +
+    "for(var i=2;i<8;i++) if(b[i]!==g[i]){bad++;break;}}return bad;})()", ctxv);
+  ok(_sameRect === 0,
+     'and every phase carries its base frame size and offsets exactly (' + _sameRect + ' mismatched)');
 
   /* and the proof that it is the CELLS and not the picker: the one costume that still carries its
      own phase rows in code rather than in the manifest does still flicker */

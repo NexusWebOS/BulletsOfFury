@@ -1011,3 +1011,65 @@ so the probe now pins the subject and says which. Three consecutive clean runs, 
 
 Probes: `probe_bod_art_0912m.py` 13/13, FIRE 19/19, STAGE 12/12, editor 21/21, overlay 13/13, bridge
 18/18. Suite 3,427 ok / 65 fail, zero new failures.
+
+## 0912n — the flame flicker is back, re-baked from the current plates
+
+Mike: *"re-bake against the current plates."*
+
+⚠ **BOTH ROUTES THIS FILE RECOMMENDS WERE UNAVAILABLE.** 0906s recovered the flame by DIFFING the
+baked plate against a pre-bake backup; 0907u used the source pack's THROTTLE PAIR (each pose shipped
+twice, hull registered between them). Neither exists here:
+
+- **`ship_<pilot>_nf` IS AN ALIAS OF THE BASE ON ALL NINE** — identical rects, measured. So
+  `base − _nf` is zero. That is 0907u's *"`_nf` MUST ACTUALLY BE FLAMELESS"* bug, reintroduced by
+  the 0909 per-pilot re-pack.
+- The 0909 pack has no phase art and no throttle pair, and ⚠ **its own build script records the
+  deletion as DELIBERATE** — *"the pack has no phase art, and shipGlowKey falls back to the base
+  frame when a phase is absent."* 0912c read it as a silent loss; it was a documented decision.
+
+⚠ **AND A COLOUR DETECTOR CANNOT DO THIS — 0907u proved it with five of them**, each breaking a ship
+the last one fixed (Cole's exhaust is GREEN, Freezer's and Maverick's CYAN, while Yuri's hull is RED
+and Falva's PINK). **So the signal here is GEOMETRY FIRST, BRIGHTNESS SECOND**, and that ordering is
+the whole idea. Rendering the nine tails at 3× *before writing a line* shows the plumes plainly: they
+PROTRUDE BELOW THE METAL and are the lowest ink on the fuselage. Bound the search to the bell columns
+(the 0906r detector) and inside that small region the flame is unambiguously the bright part whatever
+its hue — the hull colours that defeated every previous attempt are elsewhere and never considered.
+
+⚠ **VALIDATED ON JUGGERNAUT BEFORE BEING TRUSTED ANYWHERE.** 0906r measured his authored flames at
+ink x **73.0 / 129.5** on a 203-wide hull = **0.360 / 0.638**. This detector returns **59.0 / 104.5**
+on his current 164-wide hull = **0.360 / 0.637**. Exact once normalised. Falva's pink plume is caught
+without her pink hull; Yuri's red without his red hull.
+
+**Two modulation lessons, both found by rendering at 7× and neither by a number.**
+⚠ **A HOTTER FLAME DOES NOT GET BRIGHTER, IT GOES WHITER** — the plume core is authored at V=1.0, so
+every brightness gain simply CLIPS: measured, the flare moved **7,282** against the settle's 24,511,
+then **501** after a headroom reweight. Saturation is where the room is, and pulling the core toward
+white is what a flame gaining energy actually does.
+⚠ **AND A COOLING FLAME DOES NOT GO GREY, IT GOES DEEPER IN ITS OWN COLOUR** — a flat value scale
+turned Cole's white-green core ASHEN and Yuri's white-red to grey, because darkening a near-white
+pixel walks it toward neutral. The settle is the true inverse: toward the fully saturated version of
+its own hue, then dim. **Hue is untouched in both**, so 0906t's gradient survives.
+
+⚠ **ALPHA IS NEVER WRITTEN — measured 0 delta on all nine.** *An animation must not move the
+silhouette* (0906s); a phase shares its base frame's rect exactly, and the suite now asserts it.
+
+⚠ **45 DISTINCT RECTS, NOT 72.** The 0909 pack aliases `_pv2` onto the base and `_pv1`/`_pv3` onto
+`_l`/`_r`, so 8 phase-bearing keys per pilot resolve to 5 distinct frames: **90 baked cells, 144
+rows** — the same count as 0906s by a different route.
+
+⚠ **AND IT BROKE LIZZIE'S COSTUME TOGGLE, WHICH AN ASSERTION CAUGHT.** `applyLizzieSkin(false)` used
+to DELETE `ship_lizzie_g1`, correctly, because the stock hull had no phase keys and a leftover B-42
+rect would flicker her own ship into a bomber. With stock phases existing, the right behaviour is to
+RESTORE — which `applyLizzieSkin` already does, since `_lizzieStockRects` snapshots every suffix. The
+assertion's *expectation* was stale, not the code, and it is repointed to the stronger claim: the
+rect must come back exactly AND her flicker must survive the round trip. Measured: it does, at 3 keys.
+⚠ My first repoint of it read the stock value AFTER the costume was applied, so it compared the B-42
+rect against the restored stock one — a check that could only ever fail, and did.
+
+**Measured in Chromium: `shipGlowKey` returns 3 distinct keys on all nine pilots over a real 400ms
+window, up from 1.** All 7,045 atlas cells still resolve. Suite **3,432 ok / 63 fail** — the lowest
+it has been, with its one deliberate red now GREEN and nothing replacing it.
+
+Tools: `_BUILD_SOURCE/flame_mask_0912n.py` (the detector, with its own proof render),
+`_BUILD_SOURCE/bake_ship_glow_0912n.py` (the bake; refuses to run twice, since it appends).
+Backups: `_BUILD_SOURCE/_backups/ships_pre0912n/` and `manifest.js.pre0912n`.
