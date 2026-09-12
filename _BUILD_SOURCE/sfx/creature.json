@@ -1,0 +1,61 @@
+{
+  "_note": [
+    "THE NINE SILENT CUES THAT HAD NO EQUIVALENT IN THE LIBRARY (drop 0912k).",
+    "",
+    "The other eleven silent cues were repointed at samples that already existed under another",
+    "name - that is the cheap half. These nine had nothing to borrow: there is no creature roar,",
+    "no mech footfall, no teleport in 164 files. They are the boss-presence cues, and their absence",
+    "is why the Magma Colossus, the Olive Warden and the Toxic Portal Warden move and attack without",
+    "ever sounding ALIVE.",
+    "",
+    "Classes are declared per cue, after the first alert pass taught that a klaxon is dark by nature",
+    "and a rise is supposed to rise. A roar is a swell; a footfall and a clank are impacts."
+  ],
+  "sounds": [
+    {
+      "key": "mechRoar", "class": "swell", "min_bright": 0.02, "retro_sr": 32000,
+      "seconds": 2.0, "max_seconds": 1.40, "influence": 0.75,
+      "prompt": "A colossal armoured war machine bellowing. A deep grinding metallic roar with a distorted mechanical growl inside it, huge and slow, rising then falling. Menacing and heavy. Dry, no music, no long reverb tail. Retro arcade video game boss roar."
+    },
+    {
+      "key": "mechScream", "class": "swell", "min_bright": 0.06, "retro_sr": 32000,
+      "seconds": 2.0, "max_seconds": 1.40, "influence": 0.78,
+      "prompt": "A giant machine screaming as it is destroyed. A tearing metallic shriek with servo whine and collapsing structural groans underneath, agonised and mechanical, falling in pitch as it dies. Dry, no music. Retro arcade video game boss death cry."
+    },
+    {
+      "key": "wardenRoar", "class": "swell", "min_bright": 0.03, "retro_sr": 32000,
+      "seconds": 2.0, "max_seconds": 1.40, "influence": 0.78,
+      "prompt": "An enormous organic creature roaring from deep in its chest. A wet guttural bellow with a rasping edge, monstrous and alive, swelling and then cutting off. Dry, no music, no reverb tail. Retro arcade video game monster roar."
+    },
+    {
+      "key": "wardenScream", "class": "swell", "min_bright": 0.08, "retro_sr": 32000,
+      "seconds": 2.0, "max_seconds": 1.40, "influence": 0.78,
+      "prompt": "A huge creature shrieking in pain as it dies. A high tearing organic screech breaking into a wet gurgling collapse, falling away. Dry, no music. Retro arcade video game monster death."
+    },
+    {
+      "key": "clank", "class": "impact", "min_bright": 0.14, "retro_sr": 32000,
+      "seconds": 0.8, "max_seconds": 0.40, "influence": 0.85,
+      "prompt": "A single heavy metal CLANK, a thick steel plate struck once, bright and ringing on the attack with a short metallic tail. Immediate. Dry, no reverb, no music. Retro arcade video game metal hit."
+    },
+    {
+      "key": "mechFootWhir", "class": "impact", "min_bright": 0.08, "retro_sr": 32000,
+      "seconds": 1.0, "max_seconds": 0.60, "influence": 0.8,
+      "prompt": "A giant mech taking one step. A heavy hydraulic servo whir then a solid weighty thud as the foot lands, with a small metallic rattle. The thud is the loudest part. Dry, no reverb, no music. Retro arcade video game mech footstep."
+    },
+    {
+      "key": "enemyToxicSpit", "class": "impact", "min_bright": 0.14, "retro_sr": 32000,
+      "seconds": 0.8, "max_seconds": 0.40, "influence": 0.85,
+      "prompt": "A sharp hissing spit of acid launched under pressure. A bright wet hiss with a spraying fizz, quick and venomous, gone fast. Dry, no reverb, no music. Retro arcade video game toxic attack."
+    },
+    {
+      "key": "teleportIn", "class": "swell", "min_bright": 0.10, "retro_sr": 32000,
+      "seconds": 1.2, "max_seconds": 0.75, "influence": 0.8,
+      "prompt": "Something materialising out of nowhere. A rising reversed synthetic shimmer that snaps into existence with a bright electric pop at the end. Clean and otherworldly. Dry, no reverb, no music. Retro arcade video game teleport in."
+    },
+    {
+      "key": "teleportOut", "class": "impact", "min_bright": 0.12, "retro_sr": 32000,
+      "seconds": 1.0, "max_seconds": 0.60, "influence": 0.8,
+      "prompt": "Something vanishing instantly. A bright electric snap immediately collapsing into a descending synthetic shimmer that shrinks away to nothing. Dry, no reverb, no music. Retro arcade video game teleport out."
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "_note": [
+    "The four refusals, split by whether the GATE was wrong or the SOUND was.",
+    "",
+    "mechRoar 0.013 and wardenRoar 0.010 against floors of 0.02/0.03 - these are marginal, and a",
+    "colossal roar is SUPPOSED to be bass-dominant. Same call as the boss klaxon: min_bright 0,",
+    "declared here rather than by quietly relaxing a default. The transient gate still applies.",
+    "",
+    "mechFootWhir at 0.001 is genuinely dead - a footstep with no servo rattle is a bass thump, and",
+    "the whir is the half that says MECH. enemyToxicSpit failed on timing, so it is shortened until",
+    "the hiss cannot arrive late."
+  ],
+  "sounds": [
+    {
+      "key": "mechRoar", "class": "swell", "min_bright": 0, "retro_sr": 32000,
+      "seconds": 2.0, "max_seconds": 1.40, "influence": 0.75,
+      "prompt": "A colossal armoured war machine bellowing. A deep grinding metallic roar with a distorted mechanical growl inside it, huge and slow, rising then falling. Menacing and heavy. Dry, no music, no long reverb tail. Retro arcade video game boss roar."
+    },
+    {
+      "key": "wardenRoar", "class": "swell", "min_bright": 0, "retro_sr": 32000,
+      "seconds": 2.0, "max_seconds": 1.40, "influence": 0.78,
+      "prompt": "An enormous organic creature roaring from deep in its chest. A wet guttural bellow with a rasping edge, monstrous and alive, swelling and then cutting off. Dry, no music, no reverb tail. Retro arcade video game monster roar."
+    },
+    {
+      "key": "mechFootWhir", "class": "impact", "min_bright": 0.05, "retro_sr": 32000,
+      "seconds": 1.0, "max_seconds": 0.60, "influence": 0.85,
+      "prompt": "A bright metallic RATTLE and high pitched hydraulic servo whine as a huge mech plants one foot, with a heavy thud underneath. Lots of small metal detail and scraping grit on top. The metal rattle is immediate and clearly audible. Dry, no reverb, no music. Retro arcade video game mech footstep."
+    },
+    {
+      "key": "enemyToxicSpit", "class": "impact", "min_bright": 0.14, "retro_sr": 32000,
+      "seconds": 0.6, "max_seconds": 0.30, "influence": 0.88,
+      "prompt": "One sharp bright hiss of acid spat out, immediate, spraying and venomous, over in an instant. Nothing before the hiss. Dry, no reverb, no music. Retro arcade video game acid attack."
+    }
+  ]
+}

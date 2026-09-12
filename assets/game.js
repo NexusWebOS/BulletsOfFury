@@ -61699,7 +61699,57 @@ if(window.BOFA && BOFA.sfx){
     alertLockon:'assets/game/sounds/alert_lockon.wav',
     alertBeamCharge:'assets/game/sounds/alert_beam_charge.wav',
     firewallArrive:'assets/game/sounds/firewall_arrive.wav',
-    firewallPass:'assets/game/sounds/firewall_pass.wav'
+    firewallPass:'assets/game/sounds/firewall_pass.wav',
+
+    /* ============================================================
+       TWENTY CUES THE CODE ASKS FOR AND THE ENGINE DOES NOT HAVE (drop 0912k)
+
+       Measured, not guessed: every `Audio.SFX.<name>` in this file was resolved against the live
+       table. 182 distinct names are asked for; 47 resolve to nothing, and once the false hits are
+       removed (`sx`, `spd`, `turn` and friends are object fields, not cues) TWENTY are real cues
+       with real call sites that play SILENCE.
+
+       ⚠ THEY FAIL SOFT, WHICH IS WHY NOBODY NOTICED. Every site is `if(Audio.SFX.x) ...` or
+       `(a||b)()`, so a missing cue costs no error and no log - the beat simply has no sound. The
+       worst of them: `explodeBig` has SIX call sites and one of them is the stage-9 fusion merge,
+       the single biggest beat of that fight; `enemyBossHit` is the Blacksteel wing being destroyed,
+       which fires an explosion and a shake beside it and says nothing.
+
+       MOST OF THEM ALREADY HAD THE RIGHT SAMPLE SITTING REGISTERED UNDER ANOTHER NAME. That is the
+       cheap half and it is done here by repointing. The creature, mech and teleport cues had no
+       equivalent in the library at all and are newly generated - see _BUILD_SOURCE/sfx/creature.json.
+       ⚠ EVERY ONE OF THESE NEEDS A TAME ROW TOO. See the note at A.TAME.
+       ============================================================ */
+    explodeBig:'assets/game/sounds/explosion_boss_core.wav',
+    explosion:'assets/game/sounds/explosion_air_medium.wav',
+    enemyBossHit:'assets/game/sounds/explosion_air_small_01.wav',
+    missileHit:'assets/game/sounds/explosion_air_small_02.wav',
+    grenadeHit:'assets/game/sounds/explosion_fuel_air.wav',
+    fireOrbImpact:'assets/game/sounds/explosion_plasma.wav',
+    iceOrbImpact:'assets/game/sounds/explosion_ice_burst.wav',
+    boom:'assets/game/sounds/explosion_air_large.wav',
+    nuclearDetonate:'assets/game/sounds/explosion_chain_sequence.wav',
+    nuclearLaunch:'assets/game/sounds/nsp_rocket_launch.mp3',
+    chargeStart:'assets/game/sounds/boss_weapon_charge.wav',
+    rank:'assets/game/sounds/stats_bar.mp3',
+    bodyDrop:'assets/game/sounds/debris_scatter_metal.wav',
+    coreUnlocked:'assets/game/sounds/nsp_docking_clamp.mp3',
+    flameOut:'assets/game/sounds/reviewed_flamethrower_end.wav',
+    iceBreathStop:'assets/game/sounds/ice_breath_release.wav',
+
+    /* the nine that had nothing to borrow - there is no creature roar, no mech footfall and no
+       teleport anywhere in the 164-file library. These are the boss-PRESENCE cues, and their
+       absence is why the Colossus, the Olive Warden and the Toxic Portal Warden move and attack
+       without ever sounding alive. */
+    mechRoar:'assets/game/sounds/mechRoar.wav',
+    mechScream:'assets/game/sounds/mechScream.wav',
+    mechFootWhir:'assets/game/sounds/mechFootWhir.wav',
+    wardenRoar:'assets/game/sounds/wardenRoar.wav',
+    wardenScream:'assets/game/sounds/wardenScream.wav',
+    clank:'assets/game/sounds/clank.wav',
+    enemyToxicSpit:'assets/game/sounds/enemyToxicSpit.wav',
+    teleportIn:'assets/game/sounds/teleportIn.wav',
+    teleportOut:'assets/game/sounds/teleportOut.wav'
   });
 }
 
@@ -61789,6 +61839,38 @@ const Snd=(function(){
        ============================================================ */
     whip:     {g:0.44, lp:5200, min:0.34},
     lockAlert:{g:0.40, lp:5200, min:0.55},
+
+    /* the 0912k rescues - twenty cues the code asked for and the engine did not have. The
+       explosion-class ones inherit long gaps because they are punctuation, not texture; `clank`
+       and `mechFootWhir` are the two that can fire in a stream (a walking mech) and are gated
+       tightest. */
+    explodeBig:      {g:0.62, lp:4600, min:0.40},
+    explosion:       {g:0.58, lp:4800, min:0.22},
+    enemyBossHit:    {g:0.54, lp:5200, min:0.14},
+    missileHit:      {g:0.54, lp:5000, min:0.12},
+    grenadeHit:      {g:0.58, lp:4600, min:0.18},
+    fireOrbImpact:   {g:0.54, lp:5400, min:0.12},
+    iceOrbImpact:    {g:0.54, lp:6000, min:0.12},
+    boom:            {g:0.62, lp:4400, min:0.45},
+    nuclearDetonate: {g:0.66, lp:4200, min:1.80},
+    nuclearLaunch:   {g:0.58, lp:4800, min:0.35},
+    chargeStart:     {g:0.50, lp:5200, min:0.80},
+    rank:            {g:0.44, lp:6000, min:0.25},
+    bodyDrop:        {g:0.50, lp:5000, min:0.20},
+    coreUnlocked:    {g:0.52, lp:5400, min:0.60},
+    flameOut:        {g:0.48, lp:5200, min:0.30},
+    iceBreathStop:   {g:0.48, lp:5600, min:0.30},
+
+    /* the presence cues. A roar is a statement - it gets a long lockout so it can never stutter. */
+    mechRoar:        {g:0.60, lp:4200, min:2.20},
+    mechScream:      {g:0.62, lp:4800, min:2.20},
+    mechFootWhir:    {g:0.44, lp:6400, min:0.26},
+    wardenRoar:      {g:0.60, lp:4400, min:2.20},
+    wardenScream:    {g:0.62, lp:5200, min:2.20},
+    clank:           {g:0.46, lp:5600, min:0.14},
+    enemyToxicSpit:  {g:0.50, lp:6400, min:0.13},
+    teleportIn:      {g:0.50, lp:6800, min:0.35},
+    teleportOut:     {g:0.50, lp:6800, min:0.35},
 
     /* the new shield vocabulary. `min` is longer than the 55ms visual cooldown on purpose: a
        stream of deflections should read as ONE sustained event, not as a machine gun. */

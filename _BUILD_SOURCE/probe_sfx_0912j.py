@@ -24,7 +24,7 @@ project's history was REPETITION, not a bad sound:
 So this counts PLAYS, by wrapping Snd.play, and asserts the gates hold under a burst. A sound that
 cannot be spammed is the deliverable.
 """
-import os, sys, argparse
+import os, io, sys, argparse
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import shoot
 
@@ -34,10 +34,55 @@ NEW_KEYS = ['shieldHitLight', 'shieldHitHeavy', 'shieldBreakCombat', 'shieldGraz
             'bossfireStormsovereign', 'bossfireXenoregent', 'bossfireDoomsdaycarrier',
             'bossfireSludgeemperor', 'bossfireVileexistence', 'bossfireTidalfusion',
             'alertBossIncoming', 'alertDanger', 'alertLockon', 'alertBeamCharge',
-            'firewallArrive', 'firewallPass']
+            'firewallArrive', 'firewallPass',
+            # 0912k - the twenty cues the code asked for and the engine did not have
+            'explodeBig', 'explosion', 'enemyBossHit', 'missileHit', 'grenadeHit', 'fireOrbImpact',
+            'iceOrbImpact', 'boom', 'nuclearDetonate', 'nuclearLaunch', 'chargeStart', 'rank',
+            'bodyDrop', 'coreUnlocked', 'flameOut', 'iceBreathStop',
+            'mechRoar', 'mechScream', 'mechFootWhir', 'wardenRoar', 'wardenScream', 'clank',
+            'enemyToxicSpit', 'teleportIn', 'teleportOut']
+
+
+FALLBACK_ONLY = {
+    # ⚠ A LEDGER, NOT A SUPPRESSION. These names have no handle of their own and that is FINE -
+    # every call site chains `||` to a cue that does resolve, which was checked one at a time.
+    # They are listed so a NEW silent cue cannot hide among them; the reason travels with the name.
+    'fireOrbLaunch':  'chains to spread || shoot',
+    'iceOrbLaunch':   'chains to spread || shoot',
+    'flameIgnite':    'chains to crackle (and flameThrowerStart at the live site)',
+    'shieldRestore':  'chains to bossWeaponCharge || crackle',
+    'sludge':         'chains to bossPhase',
+    'warp':           'chains to gravityTransform',
+}
+
+
+def asked_names():
+    """Every cue name game.js asks Audio.SFX for, read off the source.
+
+    ⚠ The `(a||b)()` fallback idiom means a missing cue costs no error and no log, so the only way
+    to find one is to enumerate what is ASKED and resolve it against the live table.
+
+    ⚠ COMMENTS ARE STRIPPED FIRST, AND NOT STRIPPING THEM BIT IMMEDIATELY: the note I wrote in
+    game.js explaining this very fix contains the words `if(Audio.SFX.x)` as an EXAMPLE, and the
+    first run duly reported `x` as a missing cue. That is CLAUDE.md's own "a source assertion is
+    defeated by the comment that explains the fix", self-inflicted inside the probe written to
+    enforce it.
+    """
+    import re
+    src = io.open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..',
+                               'assets', 'game.js'), encoding='utf-8').read()
+    src = re.sub(r'/\*[\s\S]*?\*/', '', src)
+    src = re.sub(r'//[^\n]*', '', src)
+    names = set(re.findall(r"Audio\.SFX\.([A-Za-z_][A-Za-z0-9_]*)\s*(?:\(|\|\||\)|;|,)", src))
+    return sorted(names - set(FALLBACK_ONLY))
+
+
+ASKED = []
 
 
 def main():
+    global ASKED
+    ASKED = asked_names()
     ap = argparse.ArgumentParser(); ap.add_argument('--out', default='/tmp/sfxprobe'); a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
     from playwright.sync_api import sync_playwright
@@ -167,6 +212,28 @@ def main():
         ok(beam <= 1,
            'a full 3s beam telegraph raises %d alert, not seven - L23_WARN_ARROWS is 7 and it used '
            'to fire on every arrow, from ten beam-start sites' % beam)
+
+        # ---- THE REAL DELIVERABLE: nothing the code asks for resolves to nothing ----
+        # ⚠ MEASURED AGAINST THE SOURCE, not against a list I keep by hand. Every `Audio.SFX.<name>`
+        # in game.js is resolved against the live table, so a cue added later with no handle shows
+        # up here instead of failing soft forever. Before 0912k this measured 20 silent cues with
+        # real call sites - explodeBig alone had six, one of them the stage-9 fusion merge.
+        silent = pg.evaluate("""(names) => {
+            const S=(window.Audio&&Audio.SFX)||{};
+            return names.filter(n => typeof S[n]!=='function'); }""", ASKED)
+        ok(not silent,
+           'every cue the code asks for resolves to something - %d names checked, plus %d on the '
+           'deliberate fallback ledger%s'
+           % (len(ASKED), len(FALLBACK_ONLY),
+              '' if not silent else ' - STILL SILENT: ' + ', '.join(sorted(silent))))
+        # and the ledger itself must stay honest: each entry's chain has to resolve
+        chains = pg.evaluate("""(names) => {
+            const S=(window.Audio&&Audio.SFX)||{};
+            return names.filter(n => typeof S[n]==='function'); }""", sorted(FALLBACK_ONLY))
+        ok(not chains,
+           'and the %d ledger entries are still genuinely handle-less, so the ledger is not hiding '
+           'a cue that quietly gained one%s'
+           % (len(FALLBACK_ONLY), '' if not chains else ' - now live: ' + ', '.join(chains)))
 
         # ---- no 404s on the new files ----
         pg.evaluate("() => { for(const k in BOFA.sfx){ if(/^shield|^bossfire|^alert|^firewall/.test(k)){ const a=new window.Audio(); a.src=BOFA.sfx[k]; a.load(); } } }")
