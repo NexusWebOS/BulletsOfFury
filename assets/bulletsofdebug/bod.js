@@ -166,6 +166,7 @@ function renderInspector(){
   /* the dock shows ONE panel, chosen by the active tab - the same body[data-tab] switch Boss Mode
      uses for its fight/scene inspectors, rather than two docks fighting over the same column. */
   if(S.tab==='fire'){ return renderFire(); }
+  if(S.tab==='stage'){ return renderStage(); }
   const box=$('#insp'); const d=api();
   if(!d){ box.innerHTML='<div class="hint">waiting for the engine…</div>'; return; }
   if(!S.sel){ box.innerHTML='<div class="hint">Pick a unit from the ROSTER drawer (L).</div>'; return; }
@@ -452,6 +453,147 @@ function applyMount(){
   if(hh&&mp) hh.textContent=F.slot+'  '+Math.round(mp.x)+','+Math.round(mp.y);
 }
 
+/* ============================================================
+   THE STAGE TAB (drop 0912L)
+
+   Mike's Bullets of Debug brief opens with "level backgrounds, waves".
+
+   ⚠ ONE OF THOSE TWO IS EDITABLE AND THE OTHER IS NOT, AND THE PANEL SAYS SO RATHER THAN
+   PRETENDING. `_levelCfg()` returns a FRESH OBJECT LITERAL on every call, so what the bridge hands
+   back is a SNAPSHOT - writing to it changes nothing, and a background panel full of live-looking
+   inputs would be exactly the placebo the FIRE tab's inert list exists to prevent. The background
+   is shown read-only with the reason attached.
+
+   What IS live: STAGE_AI_PROFILE (read every frame by the wave pump), the scroll position, and the
+   wave plan, which can be dry-run to see what it contains and fired one wave at a time.
+   ============================================================ */
+
+const SA = {stage: 1, plan: null, scrollF: 0};
+
+function stageOpts() {
+  const d = api(); if (!d || !d.stages) return '';
+  return d.stages().map(s =>
+    '<option value="' + s.idx + '"' + (s.idx === SA.stage ? ' selected' : '') + '>' +
+    s.idx + ' — ' + s.name + '</option>').join('');
+}
+
+function renderStage() {
+  const box = $('#insp'), d = api();
+  if (!d) { box.innerHTML = '<div class="hint">waiting for the engine…</div>'; return; }
+  let h = '';
+
+  const st = d.stages().find(s => s.idx === SA.stage) || {};
+  h += sec('sg', 'STAGE', st.name || '',
+    '<div class="f wide"><label>STAGE</label><select id="s-stage">' + stageOpts() + '</select></div>' +
+    '<div class="f wide"><label>SUBTITLE</label><span class="v mono">' + (st.sub || '—') + '</span></div>' +
+    '<div class="f wide"><label>BOSS</label><span class="v mono">' + (st.boss || '—') + '</span></div>' +
+    '<div class="f wide"><label>LENGTH</label><span class="v mono">' + (st.length || '—') + 's</span></div>' +
+    '<div class="f wide"><label>MUSIC</label><span class="v mono">' + (st.music || '—') + '</span></div>' +
+    '<div class="row"><button class="tb" id="s-open"><span class="ico" data-icon="play"></span>OPEN THIS STAGE</button></div>');
+
+  /* the background - READ ONLY, and the reason is the point */
+  const cfg = d.levelCfg(SA.stage) || {};
+  h += sec('sb', 'BACKGROUND', cfg.master || '—',
+    Object.keys(cfg).map(k =>
+      '<div class="f wide"><label>' + k + '</label><span class="v mono">' +
+      String(cfg[k]).slice(0, 30) + '</span></div>').join('') +
+    '<div class="hint warn">⚠ READ ONLY, and not as a limitation - <code>_levelCfg()</code> builds a ' +
+    'FRESH OBJECT LITERAL on every call, so this is a snapshot and writing to it changes nothing. ' +
+    'A panel of live-looking inputs here would be a placebo. Changing a stage\'s plate means ' +
+    'changing the table in game.js.</div>');
+
+  /* the scroll - genuinely scrubbable, which is how you look at the whole plate */
+  const sc = d.scroll || {at: 0, range: 0};
+  h += sec('ss', 'SCROLL', sc.range ? (sc.at + ' / ' + sc.range) : '—',
+    '<div class="f"><label>POSITION</label><input type="range" id="s-scroll" min="0" max="1" step="0.005" value="' +
+      (sc.range ? (sc.at / sc.range) : 0) + '"><span class="v" id="sv-scroll">' +
+      Math.round((sc.range ? sc.at / sc.range : 0) * 100) + '%</span></div>' +
+    '<div class="hint">Scrub the level to inspect any part of the plate. ⚠ <code>mapScroll</code> is ' +
+    'advanced inside <code>drawLevelMaster</code>, not in the update - so this writes it and the ' +
+    'next DRAW picks it up. Play will move it again the moment the stage is running.</div>');
+
+  /* the AI profile - live, every frame */
+  const ai = d.aiProfile(SA.stage);
+  h += sec('sa', 'AI PROFILE', ai ? ('cap ' + ai.cap) : '—',
+    ai ? [
+      ['move', 0.5, 2.0, 0.01, 'movement speed multiplier'],
+      ['formation', 0.5, 2.0, 0.01, 'formation tightness'],
+      ['waveGap', 0.3, 2.0, 0.01, 'seconds between waves'],
+      ['cap', 1, 24, 1, 'how many units may be on screen at once'],
+      ['spawn', 0.02, 0.6, 0.01, 'spawn cadence']
+    ].map(F =>
+      '<div class="f"><label>' + F[0].toUpperCase() + '</label><input type="range" data-ai="' + F[0] +
+      '" min="' + F[1] + '" max="' + F[2] + '" step="' + F[3] + '" value="' + ai[F[0]] +
+      '"><span class="v" data-aiv="' + F[0] + '">' + ai[F[0]] + '</span></div>').join('') +
+      '<div class="hint">These ARE live - <code>STAGE_AI_PROFILE</code> is read every frame by the ' +
+      'wave pump, so a change lands immediately. ⚠ <code>cap</code> is the on-screen limit the pump ' +
+      'gates on: set it low and the wave index stops advancing, which reads as a broken wave script ' +
+      'and is not. That is what froze the L6 fleet probe at wave 9 with 10 units alive.</div>'
+      : '<div class="hint">no profile row for this stage</div>');
+
+  /* the wave plan */
+  h += sec('sw', 'WAVE PLAN', SA.plan ? (SA.plan.length + ' waves') : '—',
+    '<div class="row"><button class="tb" id="s-plan">READ THE PLAN</button>' +
+    '<button class="tb" id="s-clear2">CLEAR FIELD</button></div>' +
+    (SA.plan ? planHtml() : '<div class="hint">Reading the plan DRY-RUNS every wave to see what it ' +
+      'contains - that is the only way to know, because a wave is a function that spawns rather ' +
+      'than a list. The field and the current stage are saved and put back.</div>'));
+
+  box.innerHTML = h;
+  wireSections(); wireStage();
+}
+
+function planHtml() {
+  const tot = SA.plan.reduce((a, w) => a + (w.n || 0), 0);
+  const bad = SA.plan.filter(w => w.err);
+  return '<div class="hint">' + SA.plan.length + ' waves, ' + tot + ' units' +
+    (bad.length ? (' — ⚠ ' + bad.length + ' threw') : '') + '. Click a row to fire that wave now.</div>' +
+    SA.plan.map(w =>
+      '<div class="f wide wv" data-wave="' + w.i + '" style="cursor:var(--cur-pointer)">' +
+      '<label>' + (w.t) + 's</label><span class="v mono">' +
+      (w.err ? ('⚠ ' + w.err) : (w.n + '× ' + (w.types || []).slice(0, 3).join(', ') +
+        ((w.types || []).length > 3 ? '…' : ''))) + '</span></div>').join('');
+}
+
+function wireStage() {
+  const d = api();
+  const sel = $('#s-stage');
+  if (sel) sel.onchange = () => { SA.stage = +sel.value; SA.plan = null; renderStage(); };
+  const op = $('#s-open');
+  if (op) op.onclick = () => {
+    const t = $('#t-stage'); if (t) { t.value = SA.stage; }
+    labOpen(); msg('stage ' + SA.stage + ' open');
+  };
+  const scr = $('#s-scroll');
+  if (scr) scr.oninput = () => {
+    const r = d.scrollTo(parseFloat(scr.value));
+    $('#sv-scroll').textContent = Math.round(scr.value * 100) + '%';
+    if (r === false) msg('no scroll range - open a stage first');
+  };
+  $$('#insp input[data-ai]').forEach(r => {
+    r.oninput = () => {
+      const k = r.dataset.ai, v = parseFloat(r.value);
+      const out = $('#insp [data-aiv="' + k + '"]'); if (out) out.textContent = v;
+      const p = {}; p[k] = v;
+      d.setAiProfile(SA.stage, p);
+    };
+  });
+  const pl = $('#s-plan');
+  if (pl) pl.onclick = () => {
+    msg('dry-running every wave on stage ' + SA.stage + '…');
+    SA.plan = d.stagePlan(SA.stage);
+    renderStage();
+    msg(SA.plan.length + ' waves read');
+  };
+  const cl = $('#s-clear2'); if (cl) cl.onclick = () => clearField();
+  $$('#insp .wv').forEach(el => {
+    el.onclick = () => {
+      const r = d.runWave(SA.stage, +el.dataset.wave);
+      msg(typeof r === 'object' ? ('wave ' + el.dataset.wave + ': ' + r.spawned + ' spawned') : ('wave: ' + r));
+    };
+  });
+}
+
 /* ---------------- the overlay: FOV, anchors, hull ---------------- */
 function drawOverlay(){
   const cv=$('#overlay'), wrap=$('#stage-wrap');
@@ -578,8 +720,8 @@ function selectTab(t){
   S.tab=t; document.body.dataset.tab=t;
   $$('#tabs .tab').forEach(b=>b.classList.toggle('on', b.dataset.tab===t));
   $('#vt-tab').textContent={enemy:'ENEMY LAB',fire:'PROJECTILES',stage:'STAGE',art:'ART',json:'JSON'}[t]||t.toUpperCase();
-  if(t==='enemy'||t==='fire') renderInspector();
-  else msg(t.toUpperCase()+' tab lands in a later increment — ENEMY LAB and FIRE are live now.');
+  if(t==='enemy'||t==='fire'||t==='stage') renderInspector();
+  else msg(t.toUpperCase()+' tab lands in a later increment — ENEMY LAB, FIRE and STAGE are live now.');
 }
 
 /* ---------------- boot ---------------- */

@@ -935,3 +935,36 @@ failed while **"every one carries a `min`" PASSED** — because an empty list sa
 checks disagreeing about one table is the tell; the burst test was the honest one.
 
 `probe_sfx_0912j.py` **13 ok / 0 fail**. Suite **3,427 ok / 65 fail**, zero new failures.
+
+
+## 0912L — the STAGE tab, and the difference between a snapshot and a live table
+
+Mike's Bullets of Debug brief opens with *"level backgrounds, waves"*. Both are reachable; **only
+one of them is editable**, and the panel says so rather than pretending.
+
+⚠ **`_levelCfg()` RETURNS A FRESH OBJECT LITERAL ON EVERY CALL**, so what the bridge hands back is a
+SNAPSHOT — writing to it changes nothing. A background panel full of live-looking inputs would be
+exactly the placebo the FIRE tab's inert list exists to prevent, so it is rendered **read-only with
+the reason attached**, and the probe asserts it contains **zero** input elements.
+
+**What IS live:** `STAGE_AI_PROFILE` (read every frame by the wave pump — measured writing `cap`
+11 → 17 and taking effect), the scroll position, and the wave plan.
+
+⚠ **A WAVE IS A FUNCTION THAT SPAWNS, NOT A LIST**, so the only way to know what one contains is to
+run it. `stagePlan()` dry-runs all 28 and **saves and restores everything it touches** — `run.stage`,
+`curStage`, and the whole `enemies` array. Without that, reading stage 6's plan while looking at
+stage 1 would strand stage 6's units in stage 1 and move `run.stage` out from under everything else.
+Measured: `run.stage` 1→1, field 0→0. ⚠ **And the restore assigns a fresh array** rather than
+splicing the old one — `enemies` is reassigned every frame by the cull, so a spliced reference is a
+corpse on the next frame.
+
+⚠ **`mapScroll` IS ADVANCED INSIDE `drawLevelMaster`, NOT IN THE UPDATE** (CLAUDE.md records a
+fixture that measured it as +0 and read the level as dead). So the scrub writes it and the next
+DRAW picks it up; play moves it again the moment the stage runs.
+
+The wave list doubles as a check on earlier work: **all nine `l6v_*` types are visible in stage 6's
+plan from inside the editor**, which is the 0912d fleet fix seen from the other end. Clicking a wave
+row fires that wave for real.
+
+`probe_bod_stage_0912L.py` **12 ok / 0 fail**. Editor 21/21, FIRE 18/18, overlay 13/13, bridge 18/18
+all unchanged. Suite 3,427 ok / 65 fail, zero new failures.

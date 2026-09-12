@@ -56082,6 +56082,97 @@ window.BOFDEBUG=(function(){
          'has no PROJ row at all. Otherwise resolution takes PROJ.type first and the row is shadowed.'},
       ];
     },
+    /* ============================================================
+       THE STAGE TAB'S HALF (drop 0912L)
+
+       Mike's Bullets of Debug brief opens with "level backgrounds, waves". Both are reachable, but
+       only one of them is EDITABLE, and the difference matters enough to be structural here.
+       ============================================================ */
+
+    /* ⚠ THE WAVE PLAN IS DRY-RUN, AND THAT SPAWNS REAL ENEMIES. `buildStagePlan` returns
+       [{t, fn}] where fn() is the thing that actually pushes units, so the only way to know what a
+       wave CONTAINS is to run it and look. Everything it touches is saved and put back:
+       run.stage, curStage and the whole enemies array. Without that, asking what stage 6 contains
+       would leave stage 6's units standing in whatever stage you were looking at.
+       ⚠ And `enemies` is reassigned every frame by the cull, so the restore assigns a NEW array
+       rather than splicing the old one - a spliced reference is a corpse on the next frame. */
+    stagePlan:function(stage){
+      const st=stage|0||1;
+      const s0=(typeof run!=='undefined'&&run)?run.stage:1;
+      const c0=(typeof curStage!=='undefined')?curStage:null;
+      const e0=enemies.slice();
+      const out=[];
+      try{
+        run.stage=st; curStage=STAGES[st-1]||curStage;
+        const plan=buildStagePlan(st)||[];
+        for(let i=0;i<plan.length;i++){
+          enemies.length=0;
+          let err=null;
+          try{ plan[i].fn(); }catch(e){ err=String(e).slice(0,90); }
+          out.push({i:i, t:Math.round((plan[i].t||0)*100)/100,
+                    n:enemies.length,
+                    types:enemies.map(function(e){ return e.type; }),
+                    err:err});
+        }
+      }catch(e){
+        out.push({i:-1, err:String(e).slice(0,160)});
+      }
+      enemies.length=0;
+      for(const e of e0) enemies.push(e);
+      run.stage=s0; if(c0) curStage=c0;
+      return out;
+    },
+    /* run ONE wave for real, into whatever is on screen now */
+    runWave:function(stage, idx){
+      const st=stage|0||1;
+      const s0=(typeof run!=='undefined'&&run)?run.stage:1;
+      const c0=(typeof curStage!=='undefined')?curStage:null;
+      try{
+        run.stage=st; curStage=STAGES[st-1]||curStage;
+        const plan=buildStagePlan(st)||[];
+        const w=plan[idx|0];
+        if(!w) return 'no wave '+idx+' on stage '+st;
+        const n0=enemies.length;
+        w.fn();
+        return {spawned:enemies.length-n0, at:w.t};
+      }catch(e){ return String(e).slice(0,200); }
+      finally{ run.stage=s0; if(c0) curStage=c0; }
+    },
+    /* ⚠ THIS ONE IS GENUINELY EDITABLE, UNLIKE levelCfg. STAGE_AI_PROFILE rows are read live every
+       frame by the wave pump, so writing here changes the stage as it runs - cap is the on-screen
+       limit that froze the L6 probe's wave index at 9, waveGap and spawn are the cadence. */
+    aiProfile:function(stage){
+      try{ const r=STAGE_AI_PROFILE[stage|0||1]; return r?JSON.parse(JSON.stringify(r)):null; }
+      catch(e){ return null; }
+    },
+    setAiProfile:function(stage, patch){
+      try{ const r=STAGE_AI_PROFILE[stage|0||1]; if(!r||!patch) return false;
+        for(const k in patch) if(typeof r[k]==='number') r[k]=+patch[k];
+        return JSON.parse(JSON.stringify(r));
+      }catch(e){ return false; }
+    },
+    /* ⚠ mapScroll IS ADVANCED INSIDE drawLevelMaster, NOT IN THE UPDATE - a fixture looping
+       updatePlay measures it as +0 and reads the level as dead (CLAUDE.md). So scrubbing means
+       writing it directly and letting the next DRAW pick it up. */
+    scrollTo:function(frac){
+      try{
+        const rng=(typeof levelScrollRange==='function')?levelScrollRange():0;
+        if(!rng) return false;
+        mapScroll=Math.max(0, Math.min(1, +frac||0))*rng;
+        return {mapScroll:Math.round(mapScroll), range:Math.round(rng)};
+      }catch(e){ return false; }
+    },
+    get scroll(){
+      try{ return {at:(typeof mapScroll==='number')?Math.round(mapScroll):0,
+                   range:(typeof levelScrollRange==='function')?Math.round(levelScrollRange()):0}; }
+      catch(e){ return null; }
+    },
+    stages:function(){
+      try{ return STAGES.map(function(s,i){ return s?{n:s.n, name:s.name, sub:s.sub, bg:s.bg,
+                 music:s.music, length:s.length, boss:s.boss, idx:i+1}:null; }).filter(Boolean); }
+      catch(e){ return []; }
+    },
+
     /* ⚠ A LIVE ROUND CARRIES NO DAMAGE FIELD. Measured on a fired bullet, the fields are
        x,y,vx,vy,spd,ang,w,h,kind,t,_ph,pal,tint,szMul,hp,_shootable,_curve,_s1Impact,_threatBullet
        - there is no `dmg`. So an editor cannot tune "damage per round" by writing to the bullet,
