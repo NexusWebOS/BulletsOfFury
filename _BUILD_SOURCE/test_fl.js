@@ -13957,9 +13957,9 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      'and it captures the composite canvas, not the play canvas alone');
   /* the host API and the override store */
   ok(vm.runInContext("typeof BOSSMODE==='object' && ['start','stop','pause','snapshot','kill','fights','tables','patternSlots'].every(function(k){ return typeof BOSSMODE[k]==='function'; }) && typeof BOSSMODE.override.apply==='function' && typeof BOSSMODE.art.keysFor==='function'", ctxv), 'window.BOSSMODE carries the editor surface');
-  ok(vm.runInContext("(function(){ var D=SHIPBOSS.infernoreaver; bossmodeApplyOverride('infernoreaver',{name:'TEST ROW',w:123,mounts:{C:[0,0.5]}},{noSave:true}); return SHIPBOSS.infernoreaver===D && D.name==='MAGMA WARD' && D.w!==123; })()", ctxv), 'an override saved on a normal boot is NOT laid onto the row (blank game state, Mike 0909)');
+  ok(vm.runInContext("(function(){ var D=SHIPBOSS.infernoreaver; bossmodeApplyOverride('infernoreaver',{name:'TEST ROW',w:123,mounts:{C:[0,0.5]}},{noSave:true}); return SHIPBOSS.infernoreaver===D && D.name==='FURNACE TYRANT' && D.w!==123; })()", ctxv), 'an override saved on a normal boot is NOT laid onto the row (blank game state, Mike 0909)');
   ok(vm.runInContext("(function(){ bossmodeOverridesArm(true); var D=SHIPBOSS.infernoreaver; return D.name==='TEST ROW' && D.w===123 && D.mounts.C[1]===0.5 && D.mounts.L===undefined && D.pats.length===4; })()", ctxv), 'armed, the patch lays onto the SAME object: patched fields replace, untouched fields stay stock');
-  ok(vm.runInContext("(function(){ bossmodeResetOverride('infernoreaver'); var D=SHIPBOSS.infernoreaver; return D.name==='MAGMA WARD' && D.w===210 && D.mounts.L && D.mounts.L[0]===-0.39 && BOSSMODE_OVERRIDES.infernoreaver===undefined; })()", ctxv), 'reset restores the shipped row byte for byte and forgets the patch');
+  ok(vm.runInContext("(function(){ bossmodeResetOverride('infernoreaver'); var D=SHIPBOSS.infernoreaver; return D.name==='FURNACE TYRANT' && D.w===190 && D.mounts.L && D.mounts.L[0]===-0.39 && BOSSMODE_OVERRIDES.infernoreaver===undefined; })()", ctxv), 'reset restores the shipped row byte for byte and forgets the patch');
   vm.runInContext("bossmodeOverridesArm(false)", ctxv);
   ok(vm.runInContext("bossmodeArtKeys('infernoreaver').length>=40 && bossmodeArtKeys('infernoreaver').every(function(k){ return !!(BOFX.cells[k]||BOFX.img[k]); })", ctxv), 'the graphics browser lists only registered keys for a kind ('+vm.runInContext("bossmodeArtKeys('infernoreaver').length", ctxv)+' for the Magma Ward)');
   /* the editor's own files */
@@ -14514,6 +14514,54 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
      'on exactly the Jungle Cruiser mounts, so every muzzle stays bolted to the same pixels');
   ok(fs.existsSync(path.join(ROOT, '_BUILD_SOURCE/probe_razorback_0912r.py')) && fs.existsSync(path.join(ROOT, '_BUILD_SOURCE/probe_frostcruiser_0912s.py')),
      'both probes exist');
+}
+
+// ===== 287. THE FURNACE TYRANT IS STAGE 2's BOSS, IN THE MAGMA WARD's FIRE SHIELD (0912t) =====
+/* Mike, 0912: "the ember boss should be the new stage 2 boss, replacing our old one but use the old
+   one's fire shield instead of this ones. its pretty straight forward although the laser targetting
+   could be better" - and "faster projectiles".
+   Behaviour is proved in real Chromium by probe_furnace_0912t.py. These pin the wiring in SOURCE,
+   comments stripped, so a later edit cannot quietly drop the shield or put the guessing lasers back. */
+{
+  console.log("=== 287. the furnace tyrant ===");
+  var _g287 = fs.readFileSync(path.join(ROOT, 'assets/game.js'), 'utf8')
+                .replace(/\/\*[\s\S]*?\*\//g, '').replace(/([^:'"])\/\/[^\n]*/g, '$1');
+  function _fn287(name) {
+    var i = _g287.indexOf('function ' + name + '(');
+    if (i < 0) return '';
+    var j = _g287.indexOf('\nfunction ', i + 10);
+    return _g287.slice(i, j < 0 ? i + 9000 : j);
+  }
+  ok(vm.runInContext("STAGES[1].boss", ctxv) === 'infernoreaver' && vm.runInContext("SHIPBOSS.infernoreaver.name", ctxv) === 'FURNACE TYRANT',
+     "stage 2's boss is the FURNACE TYRANT, on the stage-2 boss id");
+  ok(vm.runInContext("SHIPBOSS.infernoreaver.key", ctxv) === 'fzt_body_intact', 'and its row draws the Furnace torso');
+  ok(/if\(kind==='infernoreaver' && typeof furnaceInit==='function'\) furnaceInit\(b\)/.test(_fn287('shipBossInit')),
+     'shipBossInit hands the stage-2 boss to the Furnace rig');
+  var _man = _fn287('shipBossManoeuvre');
+  ok(_man.indexOf('magmaWardBarrierTick') > 0 && _man.indexOf('furnaceTick') > _man.indexOf('magmaWardBarrierTick'),
+     "the Magma Ward's fire shield ticks BEFORE the rig takes the hull - it comes with the id, as asked");
+  var _hb = _fn287('hitBoss');
+  ok(_hb.indexOf('magmaWardBarrierDamage') > 0 && _hb.indexOf('furnaceHit(') > _hb.indexOf('magmaWardBarrierDamage'),
+     'and hitBoss asks the fire shield before the rig sees the round');
+  ok(/if\(boss\._furnace && typeof furnaceHitTest==='function'\) return furnaceHitTest/.test(_fn287('bossHitTest')),
+     'only the shield or the exposed part stops a shot');
+  ok(vm.runInContext("Object.keys(BOFX.img).filter(function(k){return k.indexOf('fzt_shield')===0;}).length", ctxv) === 0,
+     "the pack's OWN shield plates are not shipped - Mike wanted the old one's");
+  var _fzk = JSON.parse(vm.runInContext("JSON.stringify(Object.keys(BOFX.img).filter(function(k){return k.indexOf('fzt_')===0;}).map(function(k){return BOFX.img[k];}))", ctxv));
+  var _fzMissing = _fzk.filter(function (p) { return !fs.existsSync(path.join(ROOT, p)); });
+  ok(_fzk.length === 45 && _fzMissing.length === 0, 'all 45 Furnace plates are registered and on disk (' + _fzMissing.join(',') + ')');
+
+  var _cb = _fn287('furnaceCombat');
+  ok(/-4\.0\*dt,4\.0\*dt/.test(_cb) && /-0\.85\*dt,0\.85\*dt/.test(_cb),
+     'THE EYE LASERS TRACK - they slew onto the player through the charge and keep a slow slew while burning');
+  ok(!/vx\*\.23|pvx\*0\.23/.test(_cb), "and the pack's 0.23s commit-to-a-guess lead is gone (a late reversal beat it every time)");
+  ok(/-28\*FZT_S\*dt,28\*FZT_S\*dt/.test(_cb), 'the furnace lance creeps toward the player while it burns');
+  ok(vm.runInContext("FZT_PFAST>1", ctxv), 'its projectiles run faster than the pack authored them');
+  ok(/magmaWardBarrierRearm\(b,0\.70\)/.test(_fn287('furnaceEnter')), 'the fire shield rearms once, at 70%, for the core');
+  var _cm = fs.readFileSync(path.join(ROOT, 'CLAUDE.md'), 'utf8');
+  ok(_cm.indexOf("THE FURNACE TYRANT'S HEAD") > 0 && _cm.indexOf('Keep it as') > 0,
+     "the head phase is recorded in CLAUDE.md as the one named exception to NO BOSS SPLITS, in Mike's words");
+  ok(fs.existsSync(path.join(ROOT, '_BUILD_SOURCE/probe_furnace_0912t.py')), 'probe_furnace_0912t.py exists');
 }
 
 console.log('\n============================================');

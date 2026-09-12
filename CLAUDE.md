@@ -3597,3 +3597,43 @@ the kinds and names are crossed on these rows, as 0912j already recorded.)
 and every random draw shifts it. The retina's spin is derived from the lock id.
 
 Probes: `probe_razorback_0912r.py` 19/19, `probe_frostcruiser_0912s.py` 6/6. Suite §286.
+
+## 0912t — the Furnace Tyrant is stage 2's boss, wearing the Magma Ward's fire shield
+
+Mike: *"the ember boss should be the new stage 2 boss, replacing our old one but use the old one's fire
+shield instead of this ones. its pretty straight forward although the laser targetting could be better"*
+and *"faster projectiles"*.
+
+**His approved Chainborn encounter, ported as a boss rig** (`furnaceInit/Tick/Combat/Draw/Hit/HitTest`,
+`b._furnace`, `b._fz`). ⚠ **IT TAKES OVER THE `infernoreaver` ID ON PURPOSE** — every Magma Ward barrier
+function is gated on that id and `hitBoss` asks the barrier BEFORE the rig sees a round, so the old fire
+shield arrives with the id. The pack's own shield plates are not shipped. The shield rearms once, at 70%,
+as the core opens; the head phase carries none.
+Phases as approved: ARMS (flamethrower 900-degree spin, cannon, cross-screen sweep) -> CORE (reactor nova
+rings, furnace lance, double helix) -> HEAD, which flies alone — the named NO BOSS SPLITS exception above.
+
+⚠ **THE PACK'S EYE LASERS COMMITTED TO A 0.23s GUESS**, so reversing during the charge missed every volley.
+Now each eye slews onto the player through the charge (4.0 rad/s, 0.10s lead), holds a short lock, and
+keeps a slow 0.85 rad/s track while burning. Measured: a player who reversed late is 0.000 rad off when
+the beam opens; a committed 170px dodge takes 0 hits; standing still takes 29. The lance creeps toward
+the player at 28px/s while it burns.
+⚠ **THE ASSEMBLY DESCENDS FROM ABOVE** — the pack rose from below its arena, which here is the player.
+Chains, latches and cue timing are the pack's (chain launch/reel, arm lock, power surge: its six
+synthesized WAVs, registered as `furnace*` with TAME rows).
+⚠ **THE WHOLE RIG SITS `FZT_YOFF` 38px LOWER THAN THE PACK MAPS TO.** The top 77 world px are the BOSS and
+SHIELD gauges; at the pack's heights the predator head — phase 3's only target — flew half under the
+SHIELD bar. Found in the probe's screenshot after 25 green assertions; no number could see it.
+⚠ **A PROBE THAT CALLS `furnaceHit` DIRECTLY MOVES A PART POOL AND NEVER THE BOSS'S HP**, so it cannot reach
+`bossDie`. Drive `hitBoss` with `_lastHitX/_lastHitY` set — the real path.
+⚠ **THIS BASH TOOL COLLAPSES A DOUBLED BACKSLASH TO ONE INSIDE HEREDOCS.** A Python needle written as
+two backslashes and an `n` arrived as a single backslash-escape, i.e. a real newline, and matched nothing;
+the same collapse produced the `invalid escape sequence` warnings. Scripts containing backslashes go
+through the Write tool, never a heredoc.
+
+Projectiles: pack px/s x `FZT_S` (0.70) to per-frame, x `FZT_PFAST` 1.35 (cannon 3.09 -> 4.17 px/frame).
+HP keeps the pack's proportions of whatever maxhp the engine settles on (the Razorback's hpSync lesson).
+⚠ **A RIG THAT RETURNS EARLY FROM `shipBossManoeuvre` SILENCES BOSS MODE SCENES ON THAT BOSS.** The first cut
+of the Furnace hook returned before `sceneDirectorTick`, so an authored scene moved, fired and culled nothing -
+caught only because the scene fixtures happen to use the stage-2 boss. The director now runs first, the
+rig between tracks, and `sceneClampTick` still fences it. Any future rig hook needs the same order.
+Probe: `probe_furnace_0912t.py` 25/25. Suite §287.

@@ -14,6 +14,9 @@ if(typeof window!=='undefined' && window.BOFX && BOFX.img){
   for(const _rz of ['hull_0','hull_1','hull_2','hull_3','hull_4','hull_5','hull_6','hull_7','hull_base','turret','turret_damaged',
     'machinegun','missile_pod','rotor','tread','wreck','debris','sonic_bullet','sonic_wave','sonic_ring','razor_missile',
     'sonic_charge','muzzle','sonic_impact','dust']) BOFX.img['rzb_'+_rz]='assets/game/bosses/razorback/rzb_'+_rz+'.png';
+  /* the FURNACE TYRANT (0912t) - Mike's approved Chainborn encounter, 45 of its 56 plates. Its own shield set is
+     deliberately NOT shipped: he asked for the Magma Ward's fire shield instead of the pack's. */
+  for(const _fz of ['body_intact', 'body_damaged', 'body_exposed', 'body_wreck', 'arm_flame_intact', 'arm_flame_damaged', 'arm_flame_exposed', 'arm_cannon_intact', 'arm_cannon_damaged', 'arm_cannon_exposed', 'debris_flame', 'debris_cannon', 'body_rotor', 'body_rotor_damaged', 'flame_jet_0', 'flame_jet_1', 'charge_0', 'charge_1', 'charge_2', 'cannon_flash', 'fireball_0', 'fireball_1', 'fireball_impact', 'damage_smoke_0', 'damage_smoke_1', 'damage_fire_0', 'damage_fire_1', 'boss_explosion', 'overload_wave', 'torso_yaw_0', 'torso_yaw_1', 'torso_yaw_2', 'torso_yaw_3', 'torso_yaw_4', 'torso_yaw_5', 'torso_yaw_6', 'torso_yaw_7', 'head_intact', 'head_damaged', 'head_charged', 'head_wreck', 'chain_link', 'chain_edge', 'laser_muzzle', 'fire_laser']) BOFX.img['fzt_'+_fz]='assets/game/bosses/furnace/fzt_'+_fz+'.png';
 }
 
 const VW = 480, VH = 512;                 // internal virtual resolution (camera window)
@@ -12838,7 +12841,7 @@ const SHIPBOSS = {
      through the file, which is how stage 3's version of this would have gone wrong.
      So: this slot now fields the promoted MAGMA WARD - its plate, its name, its fire patterns and
      its fire shield, on the boss hpMul it already had. */
-  infernoreaver: {key:'nsb_magmaward_intact', name:'MAGMA WARD',        w:210,h:216, hpMul:1.30, pat:'magmaflame', cd:1.12, proj:'magma',
+  infernoreaver: {key:'fzt_body_intact', name:'FURNACE TYRANT',       w:190,h:200, hpMul:1.30, pat:'magmaflame', cd:1.12, proj:'magma',
                   /* Slow enough that the flame commitments stay readable. A boss patrol, not
                      fighter wobble - the same reasoning the demoted Reaver's row now inverts. */
                   move:{ampX:116,ampY:4,period:5.80},
@@ -13506,6 +13509,7 @@ function shipBossInit(b, kind){
   if(kind==='sludgeemperor'&&typeof s7WardenInit==='function')s7WardenInit(b);
   if(kind==='blacksteel'&&run.stage===6&&typeof stage6MiniInit==='function')stage6MiniInit(b);
   if((kind==='magmaward'||kind==='infernoreaver') && typeof magmaWardBarrierInit==='function')magmaWardBarrierInit(b);
+  if(kind==='infernoreaver' && typeof furnaceInit==='function') furnaceInit(b);   // the FURNACE TYRANT owns stage 2 (0912t)
   return true;
 }
 /* Fire/lava hulls own the authored magma orb on every volley, not only on their signature attack.
@@ -16287,6 +16291,18 @@ function shipBossManoeuvre(b, dt){
   if(!b || !b._ship || b.dead || b.enter) return false;
   shipBossMuzzleTick(b, dt);
   if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierTick==='function')magmaWardBarrierTick(b,dt);
+  if(b._furnace && typeof furnaceTick==='function'){
+    /* ⚠ MIKE'S BOSS MODE SCENES STILL OWN THE HULL WHILE A TRACK IS LIVE (0911a). The first cut returned
+       here before sceneDirectorTick ever ran, so an authored scene on the stage-2 boss moved nothing,
+       fired nothing and culled nothing - eight suite assertions, and his editor silently dead on
+       this boss. The director goes first (it also runs the zone tick), the rig runs between tracks,
+       and a boss zone still fences the rig. */
+    if(b._scene && typeof sceneDirectorTick==='function' && sceneDirectorTick(b,dt)){
+      if(b._fz){ b._fz.beams=[]; b._fz.tells=[]; } b.fireCd=999; return true; }
+    const _fr=furnaceTick(b,dt);
+    if(b._scene && typeof sceneClampTick==='function') sceneClampTick(b);
+    return _fr;
+  }
   if((b._ship==='magmaward'||b._ship==='infernoreaver')&&(b._mwStun||0)>0){
     const _sy=shipBossStationY(b),_cx=(typeof worldWidth==='function'?worldWidth():VW)*.5;
     b.x+=(_cx-b.x)*Math.min(1,dt*4.2);b.y+=(_sy-b.y)*Math.min(1,dt*5.0);
@@ -16638,6 +16654,10 @@ function razorbackUpdate(b,dt){
   R.pvx=(P.x-R.ppx)/Math.max(1e-4,dt); R.ppx=P.x;
   R.trans=Math.max(0,R.trans-dt);
   razorbackMove(b,dt);
+  /* THE DRIVETRAIN IS AUDIBLE: the pack's servo whirr while the hull is actually moving, gated by its
+     TAME row and a 2.2s cadence so it reads as machinery rather than a repeating blip */
+  R.servoT=(R.servoT||0)-dt;
+  if(R.speed>20*RZB_S && R.servoT<=0){ R.servoT=2.2; rzbSfx('furnaceServo'); }
   const ta=rzbAim(b,{x:P.x+R.pvx*0.16, y:P.y});
   R.turret+=clamp(rzbWrap(ta-R.turret), -1.85*dt, 1.85*dt);
   for(const k of ['left','right']){ const g=rzbWorld(b,k==='left'?-57:57,96);
@@ -16714,7 +16734,8 @@ function razorbackCombat(b){
     if(t>4.5) razorbackNext(b);
   } else if(R.attack==='ram'){
     const W=(typeof worldWidth==='function')?worldWidth():VW;
-    if(t<1){ R.charge=t; R.tgt={x:b.x,y:b.y}; R.ramX=clamp(player.x, b.w*0.5, W-b.w*0.5); }
+    if(t<1){ R.charge=t; R.tgt={x:b.x,y:b.y}; R.ramX=clamp(player.x, b.w*0.5, W-b.w*0.5);
+      if(R.beat<0){ R.beat=0; rzbSfx('furnacePowerSurge'); } }   // the rush winds up audibly
     else if(t<2.5) R.tgt={x:R.ramX, y:VH*0.68};
     else R.tgt={x:W/2, y:VH*0.26};
     if(t>4.7) razorbackNext(b);
@@ -16819,6 +16840,459 @@ function razorbackProjectileDraw(q){
   if(!im) return false;
   const sz=q.kind==='rzbMissile'?34:Math.max(20,q.w*1.9);
   ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(a); ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im,-sz/2,-sz/2,sz,sz); ctx.restore();
+  return true;
+}
+/* ============================================================
+   THE FURNACE TYRANT - "CHAINBORN", STAGE 2 BOSS (Mike, 0912)
+
+   "the ember boss should be the new stage 2 boss, replacing our old one but use the old one's fire
+   shield instead of this ones. its pretty straight forward although the laser targetting could be
+   better" - and "faster projectiles, etc."
+
+   Ported from his approved standalone encounter (Documents/New project/output/furnace-encounter).
+   It TAKES OVER the stage-2 boss id `infernoreaver`, which is what brings the Magma Ward's fire
+   shield with it: magmaWardBarrierInit/Tick/Damage/Draw are all gated on that id, and hitBoss asks
+   the barrier BEFORE this rig sees a round. The pack's own shield plates are not shipped.
+
+   PHASES, as approved: ARMS (flamethrower + cannon, either first) -> CORE (the rotor torso: nova
+   rings, the furnace lance, a double helix of flame) -> HEAD (the predator head flies alone).
+   ⚠ THE HEAD PHASE IS THE ONE NAMED EXCEPTION TO "NO BOSS SPLITS" - Mike, asked directly: "Keep it
+   as approved." It is recorded under the rule in CLAUDE.md. Nothing else here comes apart.
+
+   WHAT CHANGED TO FIT THE ENGINE, AND WHY:
+   - THE ASSEMBLY DESCENDS FROM ABOVE. The pack's torso rose from BELOW the arena, which in this game
+     is where the player sits; it would drive the boss up through the ship. The chains, the latches
+     and their timing are the pack's.
+   - THE EYE LASERS TRACK INSTEAD OF GUESSING. The pack aimed at the player's position 0.23s ahead
+     and committed - so reversing direction during the charge was a guaranteed miss, every volley.
+     Here each eye SLEWS toward the player (with a small lead) during the charge, holds a short lock
+     so the telegraph is honest, and keeps a slow slew while firing: standing still is punished, a
+     committed dodge still works. That is Mike's "the laser targetting could be better".
+   - THE FURNACE LANCE keeps a slow creep toward the player while it burns instead of freezing where
+     the charge ended.
+   - PROJECTILES are pack px/s x FZT_S converted to per-frame motion, then x FZT_PFAST.
+   - HP keeps the pack's proportions (arms 21% each, core 38%, head 21%) of whatever maxhp the
+     engine settles on after its stage floor.
+   ============================================================ */
+const FZT_S=0.70, FZT_PFAST=1.35;
+const FZT_SHARE={left:0.208, right:0.208, body:0.376, head:0.208};
+const FZT_ATTACKS={arms:['spin900','cannon','sweep','cannon'], core:['ring','coreLaser','rotor','ring','coreLaser'], head:['eyeBurst','eyeSweep']};
+function fztPx(p){ return (typeof worldWidth==='function'?worldWidth():VW)*p/900; }
+/* THE WHOLE RIG SITS 38px LOWER THAN THE PACK'S ARENA MAPS TO. The top 77 world px are the BOSS and
+   SHIELD gauges, and at the pack's own heights the predator head - the only target in phase 3 - flew
+   half under the SHIELD bar (seen in the probe's screenshot, not in any number). */
+const FZT_YOFF=38;
+function fztPy(p){ return VH*p/1000+FZT_YOFF; }
+function fztPt(x,y,a,d){ return {x:x-Math.sin(a)*d, y:y+Math.cos(a)*d}; }
+function fztAim(a,b){ return Math.atan2(a.x-b.x, b.y-a.y); }
+function fztWrap(a){ return Math.atan2(Math.sin(a),Math.cos(a)); }
+function fztSmooth(t){ t=clamp(t,0,1); return t*t*(3-2*t); }
+function fztMix(a,b,t){ return a+(b-a)*t; }
+function fztSfx(n){ try{ const f=Audio&&Audio.SFX&&Audio.SFX[n]; if(f) f(); }catch(_fs){} }
+function fztImg(k){ return (typeof XART!=='undefined' && XART.rdy(k)) ? XART.get(k) : null; }
+function fztPivot(key,w,h){
+  if(/fzt_arm_/.test(key)) return [64,40];
+  if(/fzt_flame_jet_/.test(key)) return [128,12];
+  if(/fzt_damage_(smoke|fire)_/.test(key)) return [128,232];
+  if(key==='fzt_laser_muzzle') return [96,18];
+  if(key==='fzt_fire_laser') return [48,0];
+  return [w/2,h/2];
+}
+function fztSprite(key,x,y,a,s,alpha,sx,sy){
+  const im=fztImg(key); if(!im) return false;
+  const w=im.width||im.naturalWidth, h=im.height||im.naturalHeight, pv=fztPivot(key,w,h), sc=(s==null?1:s)*FZT_S;
+  ctx.save(); ctx.translate(x,y); ctx.rotate(a||0); ctx.scale(sc*(sx||1), sc*(sy||1));
+  if(alpha!=null) ctx.globalAlpha=clamp(alpha,0,1);
+  ctx.drawImage(im,-pv[0],-pv[1],w,h); ctx.restore(); return true;
+}
+
+function furnaceInit(b){
+  b._furnace=true; b.enter=false; b.fireCd=999; b.name='FURNACE TYRANT';
+  const W=(typeof worldWidth==='function')?worldWidth():VW;
+  b.x=W/2;
+  b._fz={phase:'intro', pt:0, t:0, attack:'assembly', at:0, idx:-1, serial:0, dir:1, a:0,
+    arm:{left:{a:0,recoil:0,charge:0}, right:{a:0,recoil:0,charge:0}}, pools:{}, max:{}, hpSync:false,
+    beams:[], tells:[], fx:[], charge:0, trans:0, shotBeat:-1, burstBeat:-1, startX:W/2, endX:W/2,
+    introY0:null, cues:{}, eye:{'-1':Math.PI*0, '1':0}, eyeLock:0, lanceX:W/2, ppx:null, pvx:0, pvy:0, ppy:null, flash:{}};
+  try{ if(typeof XART!=='undefined') for(const k in BOFX.img) if(k.indexOf('fzt_')===0){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_fw){}
+}
+function furnaceSync(b){
+  const F=b._fz; if(F.hpSync) return; F.hpSync=true;
+  let sum=0; for(const k in FZT_SHARE){ F.pools[k]=Math.max(1,Math.round((b.maxhp||2000)*FZT_SHARE[k])); F.max[k]=F.pools[k]; sum+=F.pools[k]; }
+  b.hp=b.maxhp=sum;
+}
+function furnaceWorld(b,x,y){ const F=b._fz, c=Math.cos(F.a), s=Math.sin(F.a);
+  return {x:b.x+(x*c-y*s)*FZT_S, y:b.y+(x*s+y*c)*FZT_S}; }
+function furnaceMount(b,side){ const F=b._fz, p=furnaceWorld(b, side==='left'?-66:69, 0), a=F.a+F.arm[side].a;
+  const q=fztPt(p.x,p.y,a,-F.arm[side].recoil*FZT_S); q.a=a; return q; }
+function furnaceMuzzle(b,side){ const m=furnaceMount(b,side), q=fztPt(m.x,m.y,m.a,138*FZT_S); q.a=m.a; return q; }
+function furnaceHead(b){ return b._fz.phase==='head' ? {x:b.x,y:b.y} : furnaceWorld(b,0,-113); }
+function furnaceVulnerable(b){ const F=b._fz;
+  if(F.phase==='arms') return ['left','right'].filter(k=>F.pools[k]>0);
+  if(F.phase==='core') return ['body'];
+  if(F.phase==='head') return ['head'];
+  return []; }
+function furnaceBoxes(b){ const F=b._fz;
+  return furnaceVulnerable(b).map(k=>{ let p;
+    if(k==='body') p={x:b.x,y:b.y}; else if(k==='head') p=furnaceHead(b);
+    else { const m=furnaceMount(b,k); p=fztPt(m.x,m.y,m.a,76*FZT_S); }
+    return {key:k, x:p.x, y:p.y, r:(k==='head'?48:k==='body'?66:37)*FZT_S}; }); }
+function furnaceHitTest(b,x,y){
+  const F=b&&b._fz; if(!F || b.dead || F.phase==='intro' || F.trans>0) return false;
+  const H=b._mwBarrier;
+  if(H && H.active){ const r=150*FZT_S*1.45; return (x-b.x)*(x-b.x)+(y-b.y)*(y-b.y) < r*r; }   // the fire shield takes the round
+  for(const q of furnaceBoxes(b)) if((x-q.x)*(x-q.x)+(y-q.y)*(y-q.y) < q.r*q.r) return true;
+  return false;
+}
+function furnaceHit(b,dmg,hx,hy){
+  const F=b&&b._fz; if(!F || b.dead || F.phase==='intro' || F.trans>0) return 0;
+  const boxes=furnaceBoxes(b); if(!boxes.length) return 0;
+  let q=null;
+  const beam=(typeof _dmgBullet!=='undefined' && _dmgBullet && (_dmgBullet.kind==='beam' || _dmgBullet.pierce));
+  if(Number.isFinite(hx) && Number.isFinite(hy)){
+    for(const c of boxes){ if((hx-c.x)*(hx-c.x)+(hy-c.y)*(hy-c.y) < c.r*c.r){ q=c; break; } }
+    if(!q && beam) for(const c of boxes){ if(Math.abs(hx-c.x)<c.r){ q=c; break; } }        // a beam is a column, not a point
+  } else q=boxes[0];                                                                          // a bomb has no impact point
+  if(!q) return 0;
+  const d=Math.min(F.pools[q.key], dmg);
+  F.pools[q.key]-=d; F.flash[q.key]=0.12;
+  if(F.pools[q.key]<=0) furnaceBreak(b,q.key);
+  if(q.key==='head' && F.pools.head<=0) return Math.max(d, b.hp);
+  return d;
+}
+function furnaceClear(b){ const F=b._fz; F.beams=[]; F.tells=[]; F.charge=0; for(const e of eBullets) if(e._fzt) e.dead=true; }
+function furnaceBreak(b,key){
+  const F=b._fz;
+  shake=Math.max(shake||0,14);
+  if(key==='left'||key==='right'){
+    const m=furnaceMount(b,key);
+    F.fx.push({key:key==='left'?'fzt_debris_flame':'fzt_debris_cannon',x:m.x,y:m.y+80*FZT_S,s:1.1,life:1.3,max:1.3,spin:3,a:Math.random()*6});
+    F.fx.push({key:'fzt_fireball_impact',x:m.x,y:m.y+60*FZT_S,s:1,life:0.65,max:0.65,spin:0,a:0});
+    if(typeof explode==='function') explode(m.x,m.y+40*FZT_S,34,'red');
+    fztSfx('explodeBig');
+    if(F.pools.left<=0 && F.pools.right<=0) furnaceEnter(b,'core');
+  } else if(key==='body'){
+    F.fx.push({key:'fzt_body_wreck',x:b.x,y:b.y,s:1,life:1.3,max:1.3,spin:2,a:0},{key:'fzt_boss_explosion',x:b.x,y:b.y,s:1.9,life:1.3,max:1.3,spin:0,a:0});
+    if(typeof fxBurst==='function') fxBurst(b.x,b.y,90,{color:'#ff7a16',rings:2,chunks:14,sparks:26});
+    fztSfx('explosionBossCore');
+    furnaceEnter(b,'head');
+  } else {
+    F.fx.push({key:'fzt_head_wreck',x:b.x,y:b.y,s:1.4,life:2,max:2,spin:2,a:0},{key:'fzt_boss_explosion',x:b.x,y:b.y,s:2.8,life:2,max:2,spin:0,a:0});
+    furnaceClear(b);
+  }
+}
+function furnaceEnter(b,phase){
+  const F=b._fz, hp=furnaceHead(b);
+  F.phase=phase; F.pt=0; F.at=0; F.idx=-1; F.serial=0; F.shotBeat=-1; F.burstBeat=-1;
+  F.trans=(phase==='core'||phase==='head')?1.8:0; furnaceClear(b); b.flash=Math.max(b.flash||0,0.35);
+  if(phase==='head'){ b.x=hp.x; b.y=clamp(hp.y, fztPy(155), fztPy(280)); F.a=0; if(b._mwBarrier){ b._mwBarrier.active=false; b._mwBarrier.breakT=0; } }
+  else F.a=0;
+  if(phase==='core'){
+    /* the fire shield comes back ONCE, at 70%, as the armour falls away - the Magma Ward's rearm rule */
+    if(b._mwBarrier && !b._mwBarrier.active && b._mwBarrier.rearms<1 && typeof magmaWardBarrierRearm==='function') magmaWardBarrierRearm(b,0.70);
+    fztSfx('furnaceReactorHum');
+  }
+  if(phase!=='intro') fztSfx('bossPhase');
+  if(phase==='arms'||phase==='core'||phase==='head') furnaceNext(b);
+}
+function furnaceNext(b){
+  const F=b._fz, W=(typeof worldWidth==='function')?worldWidth():VW, list=FZT_ATTACKS[F.phase]; if(!list) return;
+  F.attack=list[++F.idx%list.length]; F.at=0; F.serial++; F.dir*=-1; F.startX=b.x; F.endX=F.dir>0?W*0.767:W*0.233;
+  F.shotBeat=-1; F.burstBeat=-1; F.beams=[];
+  if(F.phase==='head'){ for(const side of [-1,1]){ const p={x:b.x+side*19*FZT_S,y:b.y}; F.eye[side]=fztAim(p,player); } }
+}
+function fztShot(b,x,y,a,spdPack,rPack){
+  const v=spdPack*FZT_S*FZT_PFAST/60, r=Math.max(8,Math.round(rPack*1.1*FZT_S)), ga=a+Math.PI/2;
+  eBullets.push({x,y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,w:r,h:r,kind:'fztFireball',t:0,_fzt:true,ang:ga,_r:rPack});
+}
+function fztBeam(F,x,y,a,lenPack,widthPack,kind){ if(widthPack<=0.5) return;
+  const e=fztPt(x,y,a,lenPack*FZT_S); F.beams.push({x,y,ex:e.x,ey:e.y,a,len:lenPack*FZT_S,width:widthPack*FZT_S,kind:kind||'flame'}); }
+function fztTell(F,x,y,a,lenPack,progress,kind){ const e=fztPt(x,y,a,lenPack*FZT_S); F.tells.push({x,y,ex:e.x,ey:e.y,progress,kind:kind||'line'}); }
+
+function furnaceTick(b,dt){
+  const F=b._fz; if(!F) return false;
+  b.fireCd=999;                                   // the generic ship attack queue never runs underneath the rig
+  furnaceSync(b);
+  F.t+=dt; F.pt+=dt; F.beams=[]; F.tells=[];
+  for(const e of F.fx) e.life-=dt; F.fx=F.fx.filter(e=>e.life>0);
+  for(const k in F.flash) F.flash[k]=Math.max(0,F.flash[k]-dt);
+  F.trans=Math.max(0,F.trans-dt);
+  const P=player;
+  if(F.ppx==null){ F.ppx=P.x; F.ppy=P.y; }
+  F.pvx=(P.x-F.ppx)/Math.max(1e-4,dt); F.pvy=(P.y-F.ppy)/Math.max(1e-4,dt); F.ppx=P.x; F.ppy=P.y;
+  if(F.phase==='intro'){ furnaceIntro(b,dt); b._drawY=b.y; return true; }
+  if(b.dead){ b._drawY=b.y; return true; }
+  if(F.trans>0){
+    F.charge=1-F.trans/1.8;
+    b.y=fztMix(b.y, fztPy(F.phase==='head'?180:250), Math.min(1,dt*2));
+  } else if((b._mwStun||0)>0){
+    /* the shield just broke: the committed attack is cancelled and the rig holds its guns for the
+       punish window, exactly as the Magma Ward did */
+    const W=(typeof worldWidth==='function')?worldWidth():VW;
+    b.x+=(W/2-b.x)*Math.min(1,dt*3); F.arm.left.recoil=F.arm.right.recoil=0;
+  } else {
+    F.at+=dt; furnaceCombat(b,dt);
+  }
+  // beams and contact hurt; bullets hurt through the ordinary enemy-bullet path
+  if(!P.dead && typeof playerHit==='function'){
+    for(const q of F.beams){
+      const dx=q.ex-q.x, dy=q.ey-q.y, L2=dx*dx+dy*dy||1, u=clamp(((P.x-q.x)*dx+(P.y-q.y)*dy)/L2,0,1);
+      const d=Math.hypot(P.x-q.x-dx*u, P.y-q.y-dy*u);
+      if(d < q.width/2+6*FZT_S){ playerHit(); break; }
+    }
+    if(F.trans<=0) for(const q of furnaceBoxes(b)) if(Math.hypot(q.x-P.x,q.y-P.y) < q.r+10*FZT_S){ playerHit(); break; }
+  }
+  b._drawY=b.y;
+  return true;
+}
+function furnaceIntro(b,dt){
+  /* 9.2s, the pack's cues - but the torso DESCENDS from above; see the header note */
+  const F=b._fz, t=F.pt, W=(typeof worldWidth==='function')?worldWidth():VW;
+  if(F.introY0==null) F.introY0=Math.min(b.y, -140);
+  b.x=W/2; F.a=0;
+  const cue=(n,fn)=>{ if(!F.cues[n]){ F.cues[n]=true; fn(); } };
+  if(t<2.7) b.y=fztMix(F.introY0, fztPy(340), fztSmooth(t/2.7));
+  if(t>=2.7) cue('cL',()=>fztSfx('furnaceChainLaunch'));
+  if(t>=3.1) cue('rL',()=>fztSfx('furnaceChainReel'));
+  if(t>=3.73) cue('lL',()=>{ fztSfx('furnaceArmLock'); shake=Math.max(shake||0,10); F.fx.push({key:'fzt_cannon_flash',x:b.x-66*FZT_S,y:b.y,s:0.42,life:0.2,max:0.2,spin:0,a:0}); });
+  if(t>=3.85) cue('cR',()=>fztSfx('furnaceChainLaunch'));
+  if(t>=4.25) cue('rR',()=>fztSfx('furnaceChainReel'));
+  if(t>=4.88) cue('lR',()=>{ fztSfx('furnaceArmLock'); shake=Math.max(shake||0,10); F.fx.push({key:'fzt_cannon_flash',x:b.x+69*FZT_S,y:b.y,s:0.42,life:0.2,max:0.2,spin:0,a:0}); });
+  if(t>=5.0) cue('cH',()=>fztSfx('furnaceChainLaunch'));
+  if(t>=5.42) cue('rH',()=>fztSfx('furnaceChainReel'));
+  if(t>=6.43) cue('lH',()=>{ fztSfx('furnaceArmLock'); shake=Math.max(shake||0,13); });
+  if(t>=6.65) cue('ps',()=>{ fztSfx('furnacePowerSurge'); shake=Math.max(shake||0,11); });
+  if(t>8.1) b.y=fztMix(fztPy(340), fztPy(240), fztSmooth((t-8.1)/1.1));
+  if(t>=9.2){ b.y=fztPy(240); furnaceEnter(b,'arms'); }
+}
+function furnaceCannon(b,t,period){
+  const F=b._fz; if(F.pools.right<=0) return;
+  const cycle=t%period, beat=Math.floor(t/period), m0=furnaceMount(b,'right');
+  const pred={x:player.x+F.pvx*0.12, y:player.y};
+  const a=fztAim(m0,pred);
+  F.arm.right.a=fztWrap(a-F.a);
+  F.arm.right.recoil=cycle<1.05 ? 18*fztSmooth(cycle/1.05) : 35*Math.exp(-(cycle-1.05)*12);
+  const m=furnaceMuzzle(b,'right');
+  if(cycle<1.05){ fztTell(F,m.x,m.y,m.a,350,cycle/1.05); F.arm.right.charge=cycle/1.05; if(cycle<0.03) fztSfx('bossWeaponCharge'); }
+  else { F.arm.right.charge=0;
+    if(beat>F.shotBeat){ F.shotBeat=beat; fztShot(b,m.x,m.y,m.a,265,25);
+      F.fx.push({key:'fzt_cannon_flash',x:m.x,y:m.y,s:0.6,life:0.2,max:0.2,spin:0,a:0}); shake=Math.max(shake||0,5); fztSfx('enemyBossCannon'); } }
+}
+function furnaceCombat(b,dt){
+  const F=b._fz, t=F.at, W=(typeof worldWidth==='function')?worldWidth():VW, P=player;
+  F.charge=0; F.arm.left.recoil=0; F.arm.right.recoil=0; F.arm.left.charge=0; F.arm.right.charge=0;
+  if(F.idx<0) furnaceNext(b);
+  if(F.phase==='arms'){
+    if(F.attack==='spin900'){
+      const u=clamp((t-1)/4.8,0,1);
+      b.x=fztMix(F.startX,F.endX,fztSmooth(u)); b.y=fztPy(260)+Math.sin(u*Math.PI)*35*FZT_S;
+      F.a=F.dir*5*Math.PI*fztSmooth(u); F.arm.left.a=0.20; F.arm.right.a=0;
+      const m=furnaceMuzzle(b,'left');
+      if(F.pools.left>0){ if(t<1){ F.arm.left.charge=t; fztTell(F,m.x,m.y,m.a,430,t); if(t<0.03) fztSfx('furnaceFlameIgnite'); }
+        else if(t<5.8) fztBeam(F,m.x,m.y,m.a,430,25,'flame'); else if(t<5.83) fztSfx('furnaceFlameRelease'); }
+      if(F.pools.right>0 && t>1.3) furnaceCannon(b,t-1.3,2.15);
+      if(t>6.65){ F.a=0; furnaceNext(b); }
+    } else if(F.attack==='cannon'){
+      F.a=0; b.x+=Math.sin(F.t*0.9)*dt*35*FZT_S; b.y=fztPy(240); F.arm.left.a=0.22*Math.sin(F.t);
+      furnaceCannon(b,t,2.05);
+      if(t>6.3) furnaceNext(b);
+    } else if(F.attack==='sweep'){
+      const u=clamp((t-1.05)/4,0,1);
+      F.a=0; b.x=fztMix(F.startX,F.endX,fztSmooth(u)); b.y=fztPy(255)+Math.sin(u*Math.PI)*55*FZT_S;
+      F.arm.left.a=fztMix(-0.7,0.7,F.dir>0?u:1-u); F.arm.right.a=0;
+      const m=furnaceMuzzle(b,'left');
+      if(F.pools.left>0){ if(t<1.05){ fztTell(F,m.x,m.y,m.a,600,t/1.05); if(t<0.03) fztSfx('furnaceFlameIgnite'); }
+        else if(t<5.05) fztBeam(F,m.x,m.y,m.a,600,34,'flame'); }
+      if(F.pools.right>0 && t>1.5) furnaceCannon(b,t-1.5,2.7);
+      if(t>5.85) furnaceNext(b);
+    }
+    if(F.pools.left<=0 && F.attack!=='cannon' && F.pools.right>0) furnaceCannon(b,t,1.6);
+  } else if(F.phase==='core'){
+    F.a=(F.attack==='rotor')?F.a:0; b.y=fztPy(235)+Math.sin(F.t*0.8)*14*FZT_S;
+    if(F.attack==='ring'){
+      b.x+=clamp(W/2-b.x,-70*FZT_S*dt,70*FZT_S*dt);
+      F.charge=clamp(t/1.45,0,1);
+      if(t<1.45){ fztTell(F,b.x,b.y,0,0,t/1.45,'ring'); if(t<0.03) fztSfx('bossWeaponCharge'); }
+      const beat=Math.floor((t-1.45)/0.7);
+      if(t>=1.45 && beat>=0 && beat<3 && beat>F.burstBeat){
+        F.burstBeat=beat;
+        for(let i=0;i<18;i++) fztShot(b,b.x,b.y,beat*0.13+F.serial*0.1+i*Math.PI*2/18,145+beat*22,15);
+        F.fx.push({key:'fzt_overload_wave',x:b.x,y:b.y,s:0.45,life:0.7,max:0.7,spin:0,a:0});
+        shake=Math.max(shake||0,7); fztSfx('bossfireInfernoreaver');
+      }
+      if(t>4.8) furnaceNext(b);
+    } else if(F.attack==='coreLaser'){
+      const lo=fztPx(190), hi=fztPx(710);
+      if(t<1.5){ b.x+=clamp(clamp(P.x,lo,hi)-b.x,-65*FZT_S*dt,65*FZT_S*dt); F.charge=t/1.5;
+        fztTell(F,b.x,b.y+25*FZT_S,0,1000,F.charge); if(t<0.03) fztSfx('furnaceLaserStart'); }
+      else if(t<5.2){
+        /* THE LANCE CREEPS AFTER YOU WHILE IT BURNS - slowly, so moving away always beats it */
+        b.x+=clamp(clamp(P.x,lo,hi)-b.x,-28*FZT_S*dt,28*FZT_S*dt);
+        F.charge=1; const u=(t-1.5)/3.7, width=12+190*Math.pow(Math.sin(u*Math.PI),1.4);
+        fztBeam(F,b.x,b.y+25*FZT_S,0,1400,width,'core'); shake=Math.max(shake||0,2+width/90);
+        if(F.burstBeat<0){ F.burstBeat=0; fztSfx('furnaceHeavyLaser'); }
+      } else if(F.burstBeat===0){ F.burstBeat=1; fztSfx('furnaceLaserEnd'); }
+      if(t>6.15) furnaceNext(b);
+    } else if(F.attack==='rotor'){
+      const u=clamp((t-1)/4.4,0,1);
+      F.a=F.dir*Math.PI*2*1.6*fztSmooth(u); b.x=W/2+Math.sin(u*Math.PI*2)*190*FZT_S;
+      for(const side of [-1,1]){ const p=furnaceWorld(b,side*88,0), a=F.a-side*Math.PI/2;
+        if(t<1){ fztTell(F,p.x,p.y,a,390,t); } else if(t<5.4) fztBeam(F,p.x,p.y,a,390,25,'flame'); }
+      if(t<0.03) fztSfx('furnaceFlameIgnite');
+      F.charge=0.5;
+      if(t>6.1){ F.a=0; furnaceNext(b); }
+    }
+  } else if(F.phase==='head'){
+    F.a=0; b.x=W/2+Math.sin(F.t*1.1)*260*FZT_S; b.y=fztPy(180)+Math.sin(F.t*1.8)*45*FZT_S;
+    const cycle=t%1.25, beat=Math.floor(t/1.25);
+    F.charge=clamp(cycle/0.65,0,1);
+    const lead={x:P.x+F.pvx*0.10, y:P.y+F.pvy*0.10};
+    for(const side of [-1,1]){
+      const p={x:b.x+side*19*FZT_S, y:b.y};
+      if(cycle<0.65){
+        /* CHARGE: the eye SLEWS onto the player - the telegraph line visibly follows them */
+        F.eye[side]+=clamp(fztWrap(fztAim(p,lead)-F.eye[side]),-4.0*dt,4.0*dt);
+        fztTell(F,p.x,p.y,F.eye[side],1100,cycle/0.65);
+        if(side===1 && cycle<0.02) fztSfx('bossWeaponCharge');
+      } else if(cycle<0.72){
+        fztTell(F,p.x,p.y,F.eye[side],1100,1);                                // LOCK: an honest last beat
+      } else if(cycle<0.99){
+        F.eye[side]+=clamp(fztWrap(fztAim(p,P)-F.eye[side]),-0.85*dt,0.85*dt); // FIRE: a slow track, a committed dodge wins
+        const sweep=(F.attack==='eyeSweep')?(cycle-0.85)*F.dir*0.75:0;
+        fztBeam(F,p.x,p.y,F.eye[side]+sweep,1150,11+Math.sin((cycle-0.72)/0.27*Math.PI)*5,'eye');
+        if(side===1 && beat>F.shotBeat){ F.shotBeat=beat; fztSfx('furnaceLaserStart'); }
+      }
+    }
+    if(t>6.25) furnaceNext(b);
+  }
+}
+function fztCharge(x,y,q,scale){
+  if(q<=0) return;
+  ctx.save(); ctx.globalCompositeOperation='lighter';
+  const r=(35+q*70)*scale*FZT_S, g=ctx.createRadialGradient(x,y,0,x,y,r);
+  g.addColorStop(0,'rgba(255,90,10,'+(0.25+q*0.4)+')'); g.addColorStop(1,'rgba(255,90,10,0)');
+  ctx.fillStyle=g; ctx.fillRect(x-r,y-r,r*2,r*2); ctx.restore();
+  fztSprite('fzt_charge_'+Math.min(2,Math.floor(q*3)),x,y,-(performance.now()/500),(0.12+q*0.5)*scale);
+}
+function fztHeadDraw(x,y,charged,a,hpRatio,s){
+  fztSprite(charged>0.55?'fzt_head_charged':(hpRatio<0.5?'fzt_head_damaged':'fzt_head_intact'),x,y,a,s||1);
+  if(charged>0){ const p={x:-Math.sin(a)*(-24)*FZT_S, y:Math.cos(a)*(-24)*FZT_S}; fztCharge(x-p.x*0,y+p.y,charged,0.42); }
+}
+function fztSmoke(p,ratio,scale){
+  if(ratio>=0.5) return;
+  const n=performance.now();
+  fztSprite('fzt_damage_smoke_'+(Math.floor(n/166)%2),p.x,p.y,0,scale||0.43,0.72);
+  fztSprite('fzt_damage_fire_'+(Math.floor(n/111)%2),p.x,p.y,0,(scale||0.43)*0.67);
+}
+function fztChain(a,b,alpha){
+  const dx=b.x-a.x, dy=b.y-a.y, len=Math.hypot(dx,dy), ang=Math.atan2(-dx,dy), n=Math.ceil(len/(18*FZT_S));
+  for(let i=0;i<=n;i++){ const u=i/Math.max(n,1); fztSprite(i%2?'fzt_chain_edge':'fzt_chain_link',fztMix(a.x,b.x,u),fztMix(a.y,b.y,u),ang,0.65,alpha); }
+}
+function furnaceIntroDraw(b){
+  const F=b._fz, t=F.pt, W=(typeof worldWidth==='function')?worldWidth():VW, S=FZT_S;
+  if(t<2.7){ const fr=Math.floor(fztSmooth(t/2.7)*16)%8; fztSprite('fzt_torso_yaw_'+fr,b.x,b.y,0,1); return; }
+  fztSprite('fzt_body_intact',b.x,b.y,0,1);
+  const Lk={x:b.x-66*S,y:b.y}, Rk={x:b.x+69*S,y:b.y};
+  for(const [side,start,socket,far] of [['left',2.7,Lk,{x:-110,y:b.y+145*S}],['right',3.85,Rk,{x:W+110,y:b.y+145*S}]]){
+    const u=t-start; if(u<0) continue;
+    const pull=fztSmooth((u-0.4)/0.63), p={x:fztMix(far.x,socket.x,pull), y:fztMix(far.y,socket.y,pull)};
+    if(u<0.4) fztChain(socket,{x:fztMix(socket.x,far.x,fztSmooth(u/0.3)), y:fztMix(socket.y,far.y,fztSmooth(u/0.3))});
+    else if(u<1.12) fztChain(socket,p);
+    let a=0; if(t>6.65 && t<8.1){ const angry=Math.sin(clamp((t-6.65)/1.45,0,1)*Math.PI); a=(side==='left'?1:-1)*2.45*angry; }
+    fztSprite(side==='left'?'fzt_arm_flame_intact':'fzt_arm_cannon_intact',p.x,p.y,a,1);
+  }
+  if(t>5){
+    const u=t-5, pull=fztSmooth((u-0.42)/1.0), hy=fztMix(-120, b.y-113*S, pull);
+    if(u<0.42){ for(const side of [-1,1]){ const a=side<0?Lk:Rk; fztChain(a,{x:b.x+side*28*S, y:fztMix(a.y,-120,fztSmooth(u/0.33))}); } }
+    else { if(u<1.6){ fztChain(Lk,{x:b.x-28*S,y:hy}); fztChain(Rk,{x:b.x+28*S,y:hy}); }
+      fztHeadDraw(b.x,hy,clamp((t-6.65)/1.2,0,1),0,1,1); }
+  }
+  if(t>6.65){ fztCharge(b.x,b.y,Math.sin(clamp((t-6.65)/1.45,0,1)*Math.PI),0.7);
+    if(t>7.45) fztSprite('fzt_overload_wave',b.x,b.y,F.t*0.2,fztMix(0.2,1.15,fztSmooth((t-7.45)/1.0)),0.6); }
+}
+function fztBeamDraw(q){
+  ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(q.a); ctx.imageSmoothingEnabled=false;
+  const n=performance.now();
+  if(q.kind==='flame'){
+    const im=fztImg('fzt_flame_jet_'+(Math.floor(n/77)%2));
+    if(im){ const w=q.width*2.8; ctx.drawImage(im,70,0,116,240,-w/2,-8*FZT_S,w,q.len+8*FZT_S); }
+  } else {
+    const fl=1+Math.sin(n/14)*0.035;
+    ctx.globalCompositeOperation='lighter'; ctx.globalAlpha=0.20;
+    const halo=ctx.createLinearGradient(-q.width*0.82,0,q.width*0.82,0);
+    halo.addColorStop(0,'rgba(255,79,9,0)'); halo.addColorStop(0.5,'rgba(255,79,9,1)'); halo.addColorStop(1,'rgba(255,79,9,0)');
+    ctx.fillStyle=halo; ctx.fillRect(-q.width*0.82,0,q.width*1.64,q.len); ctx.globalAlpha=1;
+    const im=fztImg('fzt_fire_laser');
+    if(im) ctx.drawImage(im,5,0,86,218,-q.width*0.7,0,q.width*1.4*fl,q.len);
+    ctx.fillStyle='#fff5b0'; ctx.globalAlpha=0.9; ctx.fillRect(-q.width*0.14,0,q.width*0.28,q.len); ctx.globalAlpha=1;
+    ctx.globalCompositeOperation='source-over';
+    ctx.restore(); ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(q.a);
+    fztSprite('fzt_laser_muzzle',0,0,0,clamp(q.width/(110*FZT_S),0.18,1.6));
+  }
+  ctx.restore();
+}
+function fztTellDraw(q){
+  ctx.save(); ctx.strokeStyle='#ffb84f'; ctx.lineWidth=2; ctx.globalAlpha=0.2+q.progress*0.6;
+  ctx.setLineDash([12*FZT_S,10*FZT_S]); ctx.lineDashOffset=-(performance.now()/20);
+  if(q.kind==='ring'){ for(let i=0;i<3;i++){ ctx.beginPath(); ctx.arc(q.x,q.y,(45+i*35+q.progress*25)*FZT_S,0,Math.PI*2); ctx.stroke(); } }
+  else { ctx.beginPath(); ctx.moveTo(q.x,q.y); ctx.lineTo(q.ex,q.ey); ctx.stroke(); }
+  ctx.restore();
+}
+function furnaceDraw(b){
+  const F=b._fz; if(!F) return false;
+  ctx.save(); ctx.imageSmoothingEnabled=false;
+  if(b.dead){
+    if(F.phase==='head') fztSprite('fzt_head_wreck',b.x,b.y,0,1.1);
+    else fztSprite('fzt_body_wreck',b.x,b.y,F.a,1);
+    ctx.restore(); return true;
+  }
+  if(F.phase==='intro'){ furnaceIntroDraw(b); ctx.restore(); return true; }
+  for(const q of F.tells) fztTellDraw(q);
+  const S=FZT_S;
+  if(F.phase==='arms'){
+    const intact=(F.pools.left+F.pools.right)/Math.max(1,F.max.left+F.max.right);
+    const bk='fzt_body_'+(intact<0.25?'exposed':intact<0.5?'damaged':'intact');
+    fztSprite(bk,b.x,b.y,F.a,1);
+    for(const side of ['left','right']){
+      if(F.pools[side]<=0) continue;
+      const m=furnaceMount(b,side), ratio=F.pools[side]/Math.max(1,F.max[side]);
+      const ak='fzt_arm_'+(side==='left'?'flame_':'cannon_')+(ratio<0.25?'exposed':ratio<0.5?'damaged':'intact');
+      fztSprite(ak,m.x,m.y,m.a,1,1,1+F.arm[side].recoil*0.001,1);
+      if((F.flash[side]||0)>0 && typeof xartTint==='function'){ const tt=xartTint(ak,'#ffffff',0.9);
+        if(tt){ ctx.save(); ctx.translate(m.x,m.y); ctx.rotate(m.a); ctx.scale(S,S); ctx.globalAlpha=0.75; ctx.drawImage(tt,-64,-40); ctx.restore(); } }
+      fztSmoke(fztPt(m.x,m.y,m.a,65*S),ratio);
+      const mz=furnaceMuzzle(b,side); fztCharge(mz.x,mz.y,F.arm[side].charge,0.65);
+    }
+    const h=furnaceHead(b); fztHeadDraw(h.x,h.y,0,F.a,1,1);
+    if(intact<0.5){ fztSmoke(furnaceWorld(b,-32,-38),intact); fztSmoke(furnaceWorld(b,32,-38),intact); }
+  } else if(F.phase==='core'){
+    const r=F.pools.body/Math.max(1,F.max.body);
+    const rk=r<0.5?'fzt_body_rotor_damaged':'fzt_body_rotor';
+    fztSprite(rk,b.x,b.y,F.a,1);
+    if((F.flash.body||0)>0 && typeof xartTint==='function'){ const tt=xartTint(rk,'#ffffff',0.9);
+      if(tt){ ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(F.a); ctx.scale(S,S); ctx.globalAlpha=0.7; ctx.drawImage(tt,-128,-128); ctx.restore(); } }
+    const h=furnaceHead(b); fztHeadDraw(h.x,h.y,F.charge*0.8,F.a,1,1);
+    fztCharge(b.x,b.y,F.charge,0.95);
+    fztSmoke(furnaceWorld(b,-30,-35),r); fztSmoke(furnaceWorld(b,30,-35),r);
+  } else if(F.phase==='head'){
+    const r=F.pools.head/Math.max(1,F.max.head);
+    fztHeadDraw(b.x,b.y,F.charge,0,r,1.1);
+    if((F.flash.head||0)>0 && typeof xartTint==='function'){ const k=F.charge>0.55?'fzt_head_charged':(r<0.5?'fzt_head_damaged':'fzt_head_intact'), tt=xartTint(k,'#ffffff',0.9);
+      if(tt){ ctx.save(); ctx.translate(b.x,b.y); ctx.scale(S*1.1,S*1.1); ctx.globalAlpha=0.7; ctx.drawImage(tt,-72,-80); ctx.restore(); } }
+    fztSmoke({x:b.x+25*S,y:b.y+8*S},r,0.28);
+  }
+  if(typeof magmaWardBarrierDraw==='function' && F.phase!=='head') magmaWardBarrierDraw(b);   // the Magma Ward's fire shield, as asked
+  for(const q of F.beams) fztBeamDraw(q);
+  for(const e of F.fx){ const u=1-e.life/e.max; fztSprite(e.key,e.x,e.y,(e.a||0)+u*(e.spin||0),e.s*(0.7+u*0.65),1-u); }
+  ctx.restore();
+  return true;
+}
+function furnaceProjectileDraw(q){
+  if(q.kind!=='fztFireball') return false;
+  const im=fztImg('fzt_fireball_'+(Math.floor(performance.now()/100)%2)); if(!im) return false;
+  const sz=320*((q._r||20)/50)*FZT_S*0.62;
+  ctx.save(); ctx.translate(q.x,q.y); ctx.rotate((q.ang||0)-Math.PI/2); ctx.imageSmoothingEnabled=false;
   ctx.drawImage(im,-sz/2,-sz/2,sz,sz); ctx.restore();
   return true;
 }
@@ -19188,6 +19662,7 @@ function heraldDeathDraw(b){
 }
 function shipBossDraw(b){
   const D=SHIPBOSS[b&&b._ship]; if(!D) return false;
+  if(b._furnace && typeof furnaceDraw==='function') return furnaceDraw(b);
   if(b._herald && typeof heraldDeathDraw==='function') return heraldDeathDraw(b);
   if(b._s7warden&&typeof s7WardenDraw==='function')return s7WardenDraw(b);
   if(typeof XART==='undefined' || !XART.rdy(D.key)){
@@ -30490,6 +30965,7 @@ function triggerVictory(){
    ============================================================ */
 function bossHitTest(x,y){
   if(!boss) return false;
+  if(boss._furnace && typeof furnaceHitTest==='function') return furnaceHitTest(boss,x,y);
   if(boss._s7warden&&boss._s7warden.noHit)return false;
   if(boss._ship==='stormsovereign'&&boss._s4war){
     boss._s4CoreHit=stage4CoreTurretAt(boss,x,y,2);
@@ -30545,6 +31021,12 @@ function hitBoss(dmg){
   }
   if(boss._ship==='infernoreaver'&&typeof magmaWardBarrierDamage==='function'&&
      magmaWardBarrierDamage(boss,dmg,_lastHitX,_lastHitY)){weaponHitSfx('normal');return;}
+  if(boss._furnace && typeof furnaceHit==='function'){
+    const _fx=(_dmgBullet&&Number.isFinite(_dmgBullet.x))?_dmgBullet.x:_lastHitX, _fy=(_dmgBullet&&Number.isFinite(_dmgBullet.y))?_dmgBullet.y:_lastHitY;
+    const _fd=furnaceHit(boss,dmg,_fx,_fy);
+    if(!(_fd>0)){ weaponHitSfx('normal'); return; }
+    dmg=_fd;
+  }
   if(typeof stage4CoreTurretAbsorbHit==='function'&&stage4CoreTurretAbsorbHit(boss,dmg)){
     weaponHitSfx('normal');return;
   }
@@ -35674,7 +36156,7 @@ const PROJ = {
   homing:{type:'homing',slot:4},
   missile:{type:'missile',slot:5}, emr:{type:'missile',slot:5},
   emissile:{type:'missile',slot:5}, rocketW:{type:'missile',slot:5},
-  rzbMissile:{type:'missile',slot:5}, rzbSonic:{type:'orb',slot:3},   // the Razorback's rounds (0912r) - razorbackProjectileDraw draws them first
+  rzbMissile:{type:'missile',slot:5}, rzbSonic:{type:'orb',slot:3}, fztFireball:{type:'comet',slot:2},   // the Razorback's rounds (0912r) - razorbackProjectileDraw draws them first
   laser:{type:'missile',slot:5,tint:'#8fff9f'},
   /* THE LAST THREE, FOUND BY SCANNING THE SOURCE RATHER THAN BY WATCHING PLAY
      (drop 0801kp). A probe only sees what actually spawned in the window it ran;
@@ -39879,6 +40361,7 @@ function drawBullets(){
   // enemy — master fire-type art first (legacy kinds alias onto shared FIRETYPES)
   for(const b of eBullets){
     if(b._rzb&&typeof razorbackProjectileDraw==='function'&&razorbackProjectileDraw(b))continue;
+    if(b._fzt&&typeof furnaceProjectileDraw==='function'&&furnaceProjectileDraw(b))continue;
     if(b._s4wKind&&typeof drawStage4WarfareProjectile==='function'&&drawStage4WarfareProjectile(b))continue;
     if(b._l23fx&&typeof l23ProjectileDraw==='function'&&l23ProjectileDraw(b))continue;
     if(b._mwKind&&typeof magmaWardProjectileDraw==='function'&&magmaWardProjectileDraw(b))continue;
@@ -62284,6 +62767,18 @@ if(window.BOFA && BOFA.sfx){
     alertLockon:'assets/game/sounds/alert_lockon.wav',
     /* THE RETINA LOCK's beep (0912) - one short tick, rescheduled faster as a launch closes in */
     retinaLockBeep:'assets/game/sounds/nsp_console_beep.mp3',
+    /* the FURNACE TYRANT (0912t): the pack's six synthesized assembly cues, plus the shipped samples it layered */
+    furnaceChainLaunch:'assets/game/sounds/furnace_chain_launch.wav',
+    furnaceChainReel:'assets/game/sounds/furnace_chain_reel.wav',
+    furnaceArmLock:'assets/game/sounds/furnace_arm_lock.wav',
+    furnacePowerSurge:'assets/game/sounds/furnace_power_surge.wav',
+    furnaceReactorHum:'assets/game/sounds/furnace_reactor_hum.wav',
+    furnaceServo:'assets/game/sounds/furnace_servo_whirr.wav',
+    furnaceFlameIgnite:'assets/game/sounds/flamethrower_ignite.wav',
+    furnaceFlameRelease:'assets/game/sounds/flamethrower_release.wav',
+    furnaceLaserStart:'assets/game/sounds/laser_beam_start.wav',
+    furnaceLaserEnd:'assets/game/sounds/laser_beam_end.wav',
+    furnaceHeavyLaser:'assets/game/sounds/enemy_heavy_laser.wav',
     alertBeamCharge:'assets/game/sounds/alert_beam_charge.wav',
     firewallArrive:'assets/game/sounds/firewall_arrive.wav',
     firewallPass:'assets/game/sounds/firewall_pass.wav',
@@ -62499,6 +62994,17 @@ const Snd=(function(){
        and updatePlayerLocks is its only caller, one voice for the whole screen. The charge swell is
        gated long so a wave of racers locking at once plays it once. */
     retinaLockBeep:   {g:0.34, lp:7200, min:0.045},
+    furnaceChainLaunch:{g:0.56, lp:6000, min:0.30},
+    furnaceChainReel: {g:0.50, lp:5200, min:0.40},
+    furnaceArmLock:   {g:0.62, lp:5600, min:0.40},
+    furnacePowerSurge:{g:0.58, lp:5600, min:1.20},
+    furnaceReactorHum:{g:0.40, lp:3600, min:1.60},
+    furnaceServo:     {g:0.34, lp:4800, min:1.20},
+    furnaceFlameIgnite:{g:0.52, lp:5200, min:0.45},
+    furnaceFlameRelease:{g:0.46, lp:5000, min:0.45},
+    furnaceLaserStart:{g:0.50, lp:6200, min:0.30},
+    furnaceLaserEnd:  {g:0.42, lp:5600, min:0.30},
+    furnaceHeavyLaser:{g:0.48, lp:6400, min:0.22},
     retinaCharge:     {g:0.50, lp:6400, min:0.80},
     alertBeamCharge:  {g:0.50, lp:5600, min:1.40},
     firewallArrive:   {g:0.60, lp:5200, min:1.50},
