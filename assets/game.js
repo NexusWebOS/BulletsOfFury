@@ -61861,6 +61861,15 @@ const Snd=(function(){
     flameOut:        {g:0.48, lp:5200, min:0.30},
     iceBreathStop:   {g:0.48, lp:5600, min:0.30},
 
+    /* ⚠ enemyFlameBolt HAD NO GATE and magmaWardSound calls it from three sites, one of them a
+       per-volley counter. Its sample was also one of ten shipped one-shots whose transient landed
+       late (78% of its own length, with 0ms of leading silence, so a trim could not fix it) and
+       was regenerated - the old file is at _BUILD_SOURCE/_backups/enemy_flame_bolt.wav.pre0912k.
+       ⚠ THE OTHER SEVEN LATE ONE-SHOTS ARE `reviewed_*`, i.e. Mike's approved and mastered pack,
+       and are LEFT ALONE. Replacing those is his call, not a measurement's. arc_barrel_roll is
+       left too: a barrel roll is a sweep, and a sweep peaking mid-way is the klaxon lesson again. */
+    enemyFlameBolt:  {g:0.52, lp:5600, min:0.13},
+
     /* the presence cues. A roar is a statement - it gets a long lockout so it can never stutter. */
     mechRoar:        {g:0.60, lp:4200, min:2.20},
     mechScream:      {g:0.62, lp:4800, min:2.20},
