@@ -3656,3 +3656,24 @@ alpha and leftover red — and the proof was read at full size on the live Stage
 ⚠ **`*.zip` IS GITIGNORED**; `!_STAGING/*.zip` is the one exception, for hand-off drops.
 ⚠ **`leviathan` IS ALREADY A `spawnBoss` KIND** (LEVIATHAN CORE) and five other units carry LEVIATHAN names —
 the passover names the new kind `tempestleviathan`.
+
+## 0912v — the Tempest Leviathan's light-gray brother is STAGED for Stage 8's miniboss (not wired)
+
+Mike: *"remove the giant reaper mini boss, and add another levithan ship in there, but palette swap that one
+ot be more light gray then black. this will be its brother ship that does diagonal motions and vertical
+motions and horizontal motions, but overall flys across the screen up and down, side to side off screen and
+returning to flake you out."*
+
+⚠ **"THE GIANT REAPER" IS THE HERALD OF DEATH (`heralddeath`, SUBBOSS[8]) — FOUND BY RENDERING, NOT BY NAME.**
+No stage table names a reaper (GRAY REAPER is only a mega-boss form). Four candidates were drawn side by side:
+the Blacksteel Raptor is an F-22-style jet; the Herald is a bone-winged skull. `assets/game.js` is still
+unchanged — the Herald keeps the slot until the brother is wired, so Stage 8 is never left without a miniboss.
+
+The brother lives beside the black ship in `_STAGING/tempest_leviathan_0912u/encounter/`: `engine-brother.js`
+(a subclass — `engine.js` and the black ship's axis-only test are untouched), `brother.html`,
+`brother-test.cjs`, `assets/brother*.png`. Plan: `docs/PASSOVER_TEMPEST_LEVIATHAN_0912U.md` §7.
+⚠ **LIFTING DARK METAL TO LIGHT GRAY IS A RANGE STRETCH** — `tempest_grayswap_0912v.py` uses an offset plus a
+~1.3 gain (0906o), keeps the outer 2px outline dark, and was refused once for leaving a ~1,000px red rim in
+that outline ring (paint there is now desaturated with its value kept).
+⚠ **A HITTABLE FLAG SET BEFORE A MOVE IS WRONG FOR ONE FRAME PER EXIT** — measured 62 times per showcase run
+by the brother's test; it is decided after the move now. Same trap anywhere a unit leaves the screen.

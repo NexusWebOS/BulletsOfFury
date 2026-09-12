@@ -1,4 +1,7 @@
-# PASSOVER 0912u — Tempest Leviathan, black/dark gray: the new Stage 6 miniboss (STAGED, NOT WIRED)
+# PASSOVER 0912u/v — The Tempest Leviathan brothers: BLACK for Stage 6, LIGHT GRAY for Stage 8 (STAGED, NOT WIRED)
+
+> **0912v addition:** the light-gray brother (a different flight style) and the Stage 8 plan are in **§7**.
+> Everything in §1–§6 is about the black ship and still applies to it.
 
 Mike, 2026-09-12: *"now snag the new tempest levithan, palette swap the red to black/dark gray. this is our
 new mini-boss and fighting style for level 6's miniboss. upload this to the github as a seperate zip and
@@ -10,6 +13,8 @@ file set with a passover so my main pc can understadn waht to do"*
   `SUBBOSS[6] = blacksteel` (BLACKSTEEL RAPTOR, `stage6MiniInit/Tick/DrawOver`). Stage 6's boss is still
   `doomsdaycarriermk2`. ⚠ The comment on the `SUBBOSS[6]` row ("STORM SOVEREIGN … Leviathan keeps the boss
   slot") is stale — read the row, not the comment.
+- **Stage 8 is unchanged too:** `SUBBOSS[8] = heralddeath` (HERALD OF DEATH — the "giant reaper" Mike asked to
+  remove) still spawns, so the stage is never left without a miniboss before the brother is wired (§7).
 - **What IS done:** the encounter is copied into the repo as a playable file set, the red paint is
   palette-swapped to black/dark gray and verified, and this document says how to wire it in.
 - Repo HEAD this was staged on top of: `694e84ae` (Furnace Tyrant). Suite baseline there:
@@ -24,6 +29,12 @@ file set with a passover so my main pc can understadn waht to do"*
 | `_STAGING/tempest_leviathan_0912u/blackswap_proof.png` | red vs black on a dark field and on the live Stage 6 field (the purple night storm) |
 | `_STAGING/tempest_leviathan_0912u.zip` | the same folder, zipped (the repo ignores `*.zip`; `.gitignore` carries `!_STAGING/*.zip` for this) |
 | `_BUILD_SOURCE/tempest_blackswap_0912u.py` | the swap tool, with its measurements in its docstring |
+| `…/encounter/brother.html` | **the light-gray brother's playable page** (same server, `http://127.0.0.1:8783/brother.html`) |
+| `…/encounter/engine-brother.js` | the brother's flight: `class Brother extends Jet` — `engine.js` itself is unchanged |
+| `…/encounter/brother-test.cjs` | the brother's regression test (`node brother-test.cjs`) |
+| `…/encounter/assets/brother.png`, `brother-damaged.png` | the light-gray plates (from `sources/red_originals`) |
+| `_STAGING/tempest_leviathan_0912u/grayswap_proof.png` | red / black / light gray, and both ships on the live Stage 8 field |
+| `_BUILD_SOURCE/tempest_grayswap_0912v.py` | the light-gray swap tool |
 | `docs/PASSOVER_TEMPEST_LEVIATHAN_0912U.md` | this file (a copy is inside the zip) |
 
 Play it standalone:
@@ -140,3 +151,74 @@ Its code sits beside `jungleCruiserInit` in `assets/game.js` and its CLAUDE.md s
 - The two pack beats in step 8 (player-moving overtake; escape cinematic).
 - Whether the needle missile's small red fins should also go black (ordnance rule keeps them red).
 - Whether the Blacksteel Raptor becomes `ALTBOSS[6]`.
+- Brother: whether the two brothers should ever appear together (they are planned for different stages).
+- Brother: whether the Herald of Death is kept unassigned (recommended — its art and encounter stay on disk,
+  like the quad-laser) or deleted outright. Mike said "remove"; nothing has been deleted yet.
+
+## 7. The light-gray brother — Stage 8's miniboss (0912v, STAGED, NOT WIRED)
+
+Mike, 2026-09-12: *"remove the giant reaper mini boss, and add another levithan ship in there, but palette swap
+that one ot be more light gray then black. this will be its brother ship that does diagonal motions and
+vertical motions and horizontal motions, but overall flys across the screen up and down, side to side off
+screen and returning to flake you out."*
+
+### 7.1 Which miniboss is "the giant reaper"
+`heralddeath` — **HERALD OF DEATH**, Stage 8's miniboss (`SUBBOSS[8]`, a bone-winged skull carrier). Nothing in
+the stage tables is literally named "reaper" (GRAY REAPER is only a mega-boss form name), so the four
+candidates were rendered side by side before deciding: the Blacksteel Raptor (Stage 6) is an F-22-style jet,
+the Inferno Reaver (Stage 2) is a lava ship, and the Herald is the reaper. Stage 8 is **FURIOUS DEATH**, a dark
+space field; its boss is `vileexistence` (BLACK COCOON).
+
+### 7.2 The art
+`assets/brother.png` / `brother-damaged.png`, built from the **red originals** by
+`_BUILD_SOURCE/tempest_grayswap_0912v.py`:
+- red wing paint → light gray; the black titanium hull → mid/light gray (body value median 0.13 → 0.47);
+- the outer **2px outline stays dark** (black-edge rule) so the silhouette holds on any field;
+- violet reactor, cyan apertures, blue engines and the damaged plate's orange scorch are untouched; alpha 0 delta;
+- guards: 221/256 and 227/256 value levels kept, 0 saturated red left (the first run was refused for a red
+  rim left in the outline ring). The lift is an offset plus a ~1.3 gain, not a stretch (CLAUDE.md 0906o).
+- On the live Stage 8 field it reads clearly — see `grayswap_proof.png`.
+
+### 7.3 The flight style (what makes it the brother, not a copy)
+The black ship moves on exactly ONE axis per step and stays in the arena. The brother does the opposite:
+- **Any-line flight** — diagonal, horizontal and vertical runs (`glide`). It still never yaws, rotates or flips.
+- **It leaves the screen and comes back from another edge**: every run starts off-screen, crosses, and exits.
+- **Runs per phase** (same HP gates as the black ship):
+  - `chase` 100–75%: corner-to-corner DIAGONAL crossing · SIDE PASS with a mid-screen braking laser stop ·
+    VERTICAL PLUNGE down the player's column.
+  - `pursuit` 75–50%: FEINT (dives at the player's row on a diagonal, then V-turns up and out the far top
+    corner) · side pass · diagonal · plunge (can come UP from the bottom now).
+  - `hell` 50–25%: ZIGZAG — diagonal bounces between the walls with needle missiles at every apex · plunge · diagonal.
+  - `frenzy` 25–0%: all of them, 1.22× faster, shorter warnings.
+- **Flaking you out, fairly:** each return is announced by a red **entry marker at the exact edge point it will
+  come through, with the line it will fly** (0.6s, 0.38s when hard; the marker is kept clear of the top HUD strip - in the game that band is the 77px boss gauge). The feint is a V-turn AFTER it has
+  entered — never a warning at the wrong edge. It is **invulnerable while off-screen** and **hovers high for a
+  counterattack window** after each run, firing rear lasers.
+- It **never uses the black ship's overtake/return beats** (which move the player); those phase changes become
+  an off-screen regroup.
+
+Measured by `node brother-test.cjs` over three seeded full showcase runs (all reach victory in ~130 s):
+~4,100–4,400 diagonal frames, ~1,900–2,100 horizontal-only and ~3,650–3,800 vertical-only; 62–63 screen exits,
+off every edge (x −170..1070, y −180..1180); 62–65 returns, **every one warned**; 4–5 feints; 0 hittable frames
+off-screen; 0 rotation; all positions finite; apertures still silence. The same run asserts the black ship
+still has **0** diagonal frames.
+
+### 7.4 Wiring it in as Stage 8's miniboss — what differs from §5
+Follow §5 for everything shared (Razorback pattern, art registration, hooks, HP floor sync, retina lock for the
+needle missiles, sound keys). The differences:
+1. **Kind id `tempestbrother`** (display `TEMPEST LEVIATHAN II` or Mike's choice; the debug name must not equal
+   the kind in capitals). Replace `SUBBOSS[8].kind` (`heralddeath`) with it.
+2. **The Herald of Death:** remove it from the slot, keep its code and art on disk unless Mike says delete
+   (recommend `ALTBOSS[8]`, exactly like `ALTBOSS[3]`; do NOT add it to `DEAD_SUBBOSS` if it may return).
+   Repoint suite assertions that pin `SUBBOSS[8]` / `heralddeath` (grep `test_fl.js`).
+3. **Diagonal movement is correct for THIS unit** — do not carry the black ship's axis-only rule onto it.
+4. ⚠ **Exits and entries are screen edges, i.e. CAMERA edges** (`camLeftX()/camRightX()`, the 480 camera on the
+   680 world), not world edges — an off-world entry on a panning stage arrives unwarned (0811s/0813x).
+5. ⚠ **The entry marker is drawn in screen space**, so it must carry the camera translate exactly like every
+   other overlay (the world-vs-screen trap CLAUDE.md records five times).
+6. ⚠ **Off-screen means unhittable**: `subBossHitPart` must return null while it is off-camera, and the hittable
+   flag is decided AFTER the move (the brother's own test caught it one frame late on every exit).
+7. The top 77 world px are the boss gauge band — the counterattack hover (pack y 210) must land below it.
+8. Verify with a `probe_tempestbrother_*.py` (BOSSMODE `start(8,'mini',…)`): diagonal + axis-only frames, exits
+   off camera edges, warned returns, 0 off-camera hits, key-identified draws of `tlvb_*` plates, screenshots
+   over the Stage 8 field; then the full suite with a failure-name diff.
