@@ -1219,8 +1219,8 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      four independently destructible cannons, from window.BOFQL. */
   ok(vm.runInContext("window.__l1s && window.__l1s._ql===true && window.__l1s.name==='QUAD-LASER GUNSHIP'", ctxv), "the QUAD-LASER GUNSHIP still builds (kept, unassigned)");
   vm.runInContext("subBoss=null;subBossActive=false; spawnSubBoss(SUBBOSS[1].kind); window.__l1j=subBoss;", ctxv);
-  ok(vm.runInContext("window.__l1j && window.__l1j._ship==='junglecruiser' && window.__l1j.name==='JUNGLE CRUISER'", ctxv),
-     "level 1 fields the JUNGLE CRUISER (drop 0812e, Mike's word)");
+  ok(vm.runInContext("window.__l1j && !!window.__l1j._rzb && window.__l1j.name==='RAZORBACK'", ctxv),
+     "level 1 fields the RAZORBACK (Mike, 0912 - it replaced the Jungle Cruiser, which moved to stage 3 in ice)");
   ok(vm.runInContext("window.__l1s && window.__l1s._qlCan && window.__l1s._qlCan.length===4", ctxv), 'quad-laser has its four destructible cannons (from the pack map)');
   vm.runInContext("boss=null;bossActive=false; spawnBoss(STAGES[0].boss); window.__l1b=boss;", ctxv);
   ok(vm.runInContext("window.__l1b && window.__l1b.name==='JUNGLE OVERLORD-X' && NEWBOSS[1].idle==='chopper_idle'", ctxv), 'level 1 boss is JUNGLE OVERLORD-X (chopper art)');
@@ -1273,8 +1273,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
      'drawing nvl_maw — the 223x220 six-frame caldera whose art 0801ip deliberately KEPT when the enemy spawn was deleted');
   ok(vm.runInContext("SHIPBOSS.lavamaw.w>150 && SHIPBOSS.lavamaw.w<=223", ctxv),
      'sized UNDER its authored 223px, so the vent is scaled down and never upscaled');
-  /* thorn rime pulled at Mike's instruction; RIME WALL is his replacement art (0813h). */
-  ok(vm.runInContext("SUBBOSS[3].kind==='rimewall'", ctxv), 'level 3 miniboss is the RIME WALL');
+  /* thorn rime pulled at Mike's instruction; RIME WALL is his replacement art (0813h).
+     And in 0912 he moved it to ALTBOSS3 for later, with the Jungle Cruiser in ice taking stage 3. */
+  ok(vm.runInContext("SUBBOSS[3].kind==='frostcruiser' && ALTBOSS[3].kind==='rimewall'", ctxv), 'level 3 miniboss is the FROST CRUISER; the RIME WALL is ALTBOSS3');
   ok(vm.runInContext("!!SHIPBOSS.rimewall && SHIPBOSS.rimewall.mini===true", ctxv),
      'and stage 3 is not left with an empty miniboss slot');
 
@@ -6295,9 +6296,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("ARSENAL_MINI_DEF.dambreaker.size===180",ctxv),
      'Dambreaker is scaled up exactly 50% (120px -> 180px) in both rendered and collision size');
   /* the tier displaces nothing: the real minibosses are still where they were */
-  ok(vm.runInContext("SUBBOSS[1].kind==='junglecruiser'", ctxv), 'and SUBBOSS[1] is the JUNGLE CRUISER');
+  ok(vm.runInContext("SUBBOSS[1].kind==='razorback'", ctxv), 'and SUBBOSS[1] is the RAZORBACK (Mike, 0912: it replaces the Jungle Cruiser entirely)');
   ok(vm.runInContext("SUBBOSS[2].kind==='magmaward'", ctxv), 'SUBBOSS[2] is the MAGMA WARD (0813h)');
-  ok(vm.runInContext("SUBBOSS[3].kind==='rimewall'", ctxv), 'SUBBOSS[3] is the RIME WALL (0813h)');
+  ok(vm.runInContext("SUBBOSS[3].kind==='frostcruiser' && ALTBOSS[3].kind==='rimewall'", ctxv), 'SUBBOSS[3] is the FROST CRUISER, and the RIME WALL is stored as ALTBOSS3 (Mike, 0912)');
   ok(vm.runInContext("SUBBOSS[4].kind==='olivewarden'", ctxv), 'SUBBOSS[4] is the OLIVE WARDEN (0813h)');
   ok(vm.runInContext("SUBBOSS[6].kind==='blacksteel'", ctxv), 'SUBBOSS[6] is the BLACKSTEEL, moved from stage 4');
   ok(vm.runInContext("SUBBOSS[7].kind==='dualscoopdredger'", ctxv), 'SUBBOSS[7] uses the supplied DUAL SCOOP DREDGER');
@@ -10009,8 +10010,8 @@ console.log("=== 202. quadlaser shield aura ===");
     +"(b._qlCan||[]).forEach(function(c){ c.dead=true; }); b._qlHullOpen=true; var open=count();"
     +"return JSON.stringify({sealed:sealed, open:open, n:(b._qlCan||[]).length, reached:reached});})()", ctxv));
   unseedWaves();
-  ok(!_a.err && _a.reached==='JUNGLE CRUISER',
-     'stage 1 reaches its miniboss by PLAYING it — the JUNGLE CRUISER ('+(_a.reached||'none')+')');
+  ok(!_a.err && _a.reached==='RAZORBACK',
+     'stage 1 reaches its miniboss by PLAYING it — the RAZORBACK ('+(_a.reached||'none')+')');
   ok(!_a.err && _a.n===4, 'and the quad-laser still fields four turrets when spawned');
   ok(_a.sealed>_a.open, 'it draws its aura while sealed even when nothing is hitting it ('+_a.sealed+' vs '+_a.open+')');
 }
@@ -11232,7 +11233,7 @@ console.log("=== 220. named minibosses ===");
   }
   ok(_generic.length===0,
      'every stage 1-8 fields a NAMED miniboss'+(_generic.length?(' — generic: '+_generic.join(', ')):''));
-  ok(_f220[1].ship==='junglecruiser', "stage 1 is the JUNGLE CRUISER (Mike's word, 0812e)");
+  ok(_f220[1].kind==='razorback' && _f220[1].name==='RAZORBACK', "stage 1 is the RAZORBACK (Mike's word, 0912)");
   ok(_f220[6].ship==='blacksteel',  'stage 6 is the BLACKSTEEL - Mike moved it here from stage 4 (0813h)');
 
   /* ⚠ NO MINIBOSS OR BOSS IS RECOLOURED AT DRAW TIME (drop 0812h). Mike: "The minibosses, dont
@@ -14457,6 +14458,62 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
 
   ok(fs.existsSync(path.join(ROOT, '_BUILD_SOURCE/probe_retina_lock_0912q.py')),
      'probe_retina_lock_0912q.py drives every clause of the rule in real Chromium');
+}
+
+// ===== 286. THE RAZORBACK, THE FROST CRUISER AND ALTBOSS3 (0912r/s) =====
+/* Mike, 0912: the Razorback "should replace the stage 1 miniboss entirely. Take THAT stage 1 miniboss,
+   palette swap to an icey combination, and use as the new stage 3 mini boss. store that stage 3
+   miniboss were replacing for later as ALTBOSS3."
+
+   Behaviour is proved in real Chromium by probe_razorback_0912r.py (the tank twists, fires 1-by-1
+   down a spread through ONE retina, takes damage only on the exposed part) and
+   probe_frostcruiser_0912s.py. These pin the wiring in SOURCE, comments stripped. */
+{
+  console.log("=== 286. razorback, frost cruiser, altboss3 ===");
+  var _g286 = fs.readFileSync(path.join(ROOT, 'assets/game.js'), 'utf8')
+                .replace(/\/\*[\s\S]*?\*\//g, '').replace(/([^:'"])\/\/[^\n]*/g, '$1');
+  function _fn286(name) {
+    var i = _g286.indexOf('function ' + name + '(');
+    if (i < 0) return '';
+    var j = _g286.indexOf('\nfunction ', i + 10);
+    return _g286.slice(i, j < 0 ? i + 8000 : j);
+  }
+  ok(vm.runInContext("SUBBOSS[1].kind", ctxv) === 'razorback', "stage 1's miniboss is the RAZORBACK");
+  ok(vm.runInContext("SUBBOSS[3].kind", ctxv) === 'frostcruiser', "stage 3's miniboss is the FROST CRUISER");
+  ok(vm.runInContext("typeof ALTBOSS!=='undefined' && ALTBOSS[3] && ALTBOSS[3].kind", ctxv) === 'rimewall',
+     'the Rime Thorn it replaced is stored as ALTBOSS[3]');
+  ok(vm.runInContext("!!SHIPBOSS.rimewall && !(typeof DEAD_SUBBOSS!=='undefined' && DEAD_SUBBOSS.rimewall)", ctxv),
+     'and ALTBOSS3 is stored, not retired - its row survives and DEAD_SUBBOSS does not name it');
+  ok(vm.runInContext("!!SHIPBOSS.junglecruiser", ctxv), 'the Jungle Cruiser row survives too (the frost cruiser is built on it)');
+
+  /* --- the tank --- */
+  var _mv = _fn286('razorbackCombat');
+  ok(/enemyLockOn\(b, 0\.9\+i\*0\.22/.test(_mv), 'the Razor Rack queues its missiles 1-by-1 on the retina lock, 0.22s apart');
+  ok(!/for\(const off of \[[^\]]*\]\) rzbMissile/.test(_mv), 'and no loop fires a spread of missiles in one go');
+  ok(/RZB_FAN\[i%RZB_FAN\.length\]/.test(_mv) && /side=\(i%2\)\?1:-1/.test(_mv), 'alternating pods down a narrowing fan');
+  ok(/rzbShot\(b,m,R\.turret\+off,240,18,'rzbSonic'\)/.test(_mv) && /R\.waves\.push/.test(_mv), 'the Sonic Hammer fires rounds AND a pressure wave');
+  ok(/coleSonicBoom/.test(_mv), "with Cole's sonic release");
+  var _pa = _fn286('razorbackPartAt');
+  ok(/R\.state==='arrival' \|\| R\.trans>0\) return null/.test(_pa), 'no part can be hit while it rolls in or between phases');
+  ok(/if\(b\._rzb && typeof razorbackPartAt==='function'\) return razorbackPartAt/.test(_g286), 'subBossHitPart answers per exposed part, so shots over bare armour fly on');
+  ok(/if\(b\._rzb && typeof razorbackHit==='function'\)\{ const _rd=razorbackHit\(b,dmg,hx,hy\); if\(!\(_rd>0\)\) return; dmg=_rd; \}/.test(_g286), 'hitSubBoss routes damage through the part pools');
+  ok(/R\.hpSync/.test(_fn286('razorbackUpdate')), 'the part pools re-proportion to the HP floor the engine applies after spawn');
+  ok(/rzbWrap\(R\.a-i\*Math\.PI\/4\)/.test(_fn286('razorbackDraw')) && /'rzb_hull_'\+i/.test(_fn286('razorbackDraw')), 'the hull draws the nearest authored compass frame, turned by the residual');
+  ok(!/fillRect\(-115\*S/.test(_fn286('razorbackDraw')), 'and its shadow is the hull silhouette, not a rectangle that reads as a hitbox square');
+  ok(vm.runInContext("Object.keys(BOFX.img).filter(function(k){return k.indexOf('rzb_')===0;}).length", ctxv) === 25, 'all 25 Razorback plates are registered');
+  var _missing286 = vm.runInContext("JSON.stringify(Object.keys(BOFX.img).filter(function(k){return k.indexOf('rzb_')===0;}).map(function(k){return BOFX.img[k];}))", ctxv);
+  _missing286 = JSON.parse(_missing286).filter(function (p) { return !fs.existsSync(path.join(ROOT, p)); });
+  ok(_missing286.length === 0, 'and every one of them is on disk (' + _missing286.join(',') + ')');
+
+  /* --- the frost cruiser --- */
+  var _jcs = (_g286.match(/b\._ship==='junglecruiser'/g) || []).length;
+  ok(_jcs <= 1, 'no branch tests the Jungle Cruiser by its bare kind any more - they all ask jcShip(b) (' + _jcs + ' left)');
+  ok(vm.runInContext("SHIPBOSS.frostcruiser.key", ctxv) === 'nsb_frost_cruiser' && fs.existsSync(path.join(ROOT, 'assets/game/nsb_frost_cruiser.png')),
+     'the frost cruiser draws its own recoloured plate, and the file is on disk');
+  ok(vm.runInContext("JSON.stringify(SHIPBOSS.frostcruiser.mounts)===JSON.stringify(SHIPBOSS.junglecruiser.mounts)", ctxv),
+     'on exactly the Jungle Cruiser mounts, so every muzzle stays bolted to the same pixels');
+  ok(fs.existsSync(path.join(ROOT, '_BUILD_SOURCE/probe_razorback_0912r.py')) && fs.existsSync(path.join(ROOT, '_BUILD_SOURCE/probe_frostcruiser_0912s.py')),
+     'both probes exist');
 }
 
 console.log('\n============================================');

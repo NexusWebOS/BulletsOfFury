@@ -9,6 +9,11 @@
 if(typeof window!=='undefined' && window.BOFX && BOFX.img){
   for(let i=0;i<8;i++) BOFX.img['nfx_s5gate96_'+i]='assets/game/warp_gate96/nfx_s5gate96_'+i+'.png';
   for(let i=0;i<16;i++) BOFX.img['nfx_warp_tunnel_'+i]='assets/game/warp_fx/warp_tunnel_'+String(i).padStart(2,'0')+'.png';
+  /* the RAZORBACK sonic siege tank (0912r) - Mike's approved pack, neon green palette-swapped to forest
+     green by _BUILD_SOURCE/forest_swap_0912p.py. Loose files: the rig is 25 parts at their own pivots. */
+  for(const _rz of ['hull_0','hull_1','hull_2','hull_3','hull_4','hull_5','hull_6','hull_7','hull_base','turret','turret_damaged',
+    'machinegun','missile_pod','rotor','tread','wreck','debris','sonic_bullet','sonic_wave','sonic_ring','razor_missile',
+    'sonic_charge','muzzle','sonic_impact','dust']) BOFX.img['rzb_'+_rz]='assets/game/bosses/razorback/rzb_'+_rz+'.png';
 }
 
 const VW = 480, VH = 512;                 // internal virtual resolution (camera window)
@@ -1943,6 +1948,7 @@ const XART=(function(){
      so, and 0810h lost work to editing it. `_src` is a plain key->path map, so adding to it in
      code is the same registration by a route that survives the next regeneration. ============================================================ */
   X._src['nsb_jungle_cruiser'] = 'assets/game/nsb_jungle_cruiser.png';
+  X._src['nsb_frost_cruiser']  = 'assets/game/nsb_frost_cruiser.png';   // the same hull swapped to ice (0912s, _BUILD_SOURCE/ice_swap_0912s.py)
   X._src['nsb_olive_carrier']  = 'assets/game/nsb_olive_carrier.png';
   /* LASER MIST REWARD ATLAS (0902). One decoded sheet owns the five pickup plates, twenty
      travelling-water frames and all impact/ripple/bubble animation. Runtime rects below keep
@@ -8919,6 +8925,11 @@ let subBoss=null, subBossActive=false, subBossDone=false, subBossTriggered=false
 let warnT=0, warnKind=null, bossWarned=false, _sc1=false, _sc2=false, _mc1=false, _mc2=false;
 let aminiTriggered=false;   // the arsenal mini has been sent this stage
 // per-stage sub-boss: mid-level mini-boss. {at: fraction of stage length, kind}
+/* ALTERNATE MINIBOSSES - STORED, NOT RETIRED (Mike, 0912): "store that stage 3 miniboss were replacing
+   for later as ALTBOSS3. We'll use him later." The Rime Thorn keeps its SHIPBOSS row, its art and its
+   whole encounter, and still spawns by kind - it is deliberately NOT in DEAD_SUBBOSS. Putting him back is
+   swapping one kind into SUBBOSS[3]. */
+const ALTBOSS={3:{kind:'rimewall', at:0.45, afterScroll:1001, name:'ALTBOSS3'}};
 const SUBBOSS={
   /* QUAD-LASER replaces the SIEGE CRAWLER (drop 0801em). Mike: "I have a
      replacement miniboss for level 1" and "theres still an invisible boss
@@ -9000,7 +9011,7 @@ const SUBBOSS={
      the beach tanks and the grass jets, and that sequencing is about the STAGE, not the unit. */
   /* 0830 encounter-map pass: the miniboss follows fast-jet ripple two. Its combat is deliberately
      unchanged until Mike and Codex review it together. */
-  1:{at:0.42, kind:'junglecruiser', afterScroll:1400, afterWaveTime:34},
+  1:{at:0.42, kind:'razorback', afterScroll:1400, afterWaveTime:34},   // Mike 0912: the Razorback replaces the Jungle Cruiser entirely
                                   // Flipped so its turrets face you; crawls up/down only; quad MGs.
   2:{at:0.45, kind:'magmaward',  afterScroll:961},      // MAGMA VENT (0813g) — Mike pulled siege ember; picked out of the unused pool
   6:{at:0.45, kind:'blacksteel',   afterScroll:1121},         // STORM SOVEREIGN — level 6 sub-boss (Leviathan keeps the boss slot)
@@ -9017,7 +9028,7 @@ const SUBBOSS={
      reserved for the true final encounter, where two of them must be disabled before they fuse
      into the Tidal Sovereign. */
   9:{at:0.45, kind:'voidhorizon', afterScroll:1201},
-  3:{at:0.45, kind:'rimewall',  afterScroll:1001},      // RIME THORN (0810s) — Mike scrapped the glacier rail
+  3:{at:0.45, kind:'frostcruiser', afterScroll:1001},   // Mike 0912: the Jungle Cruiser in ice; the Rime Thorn is ALTBOSS[3]      // RIME THORN (0810s) — Mike scrapped the glacier rail
   4:{at:0.45, kind:'olivewarden',afterScroll:1041},   // was 'subreactor', which is RETIRED - stage 4 had no miniboss (0811b)
   5:{at:0.45, kind:'chaosharrier', afterScroll:1121}, // CHAOS HARRIER — authored space interceptor, replaces retired ENERGY CORE
 };
@@ -13114,6 +13125,14 @@ const SHIPBOSS = {
                      bolted to metal while the aircraft banks, dives, reverses and orbits. */
                   mounts:{L:[-0.22,0.29],C:[0,0.455],R:[0.22,0.29],SL:[-0.17,0.02],SR:[0.17,0.02]},
                   pats:['jungleburst','jungletempest']},
+  /* THE FROST CRUISER (Mike, 0912): "Take THAT stage 1 miniboss, palette swap to an icey combination, and
+     use as the new stage 3 mini boss." The same authored encounter - director, missiles, beam, enrage -
+     on a plate recoloured in TWO bands (olive -> steel ice, rust -> frost accents), because the hull is
+     olive drab rather than green and one rotation would have turned its rust trim teal. jcShip(b) is the
+     one test every Jungle Cruiser branch asks, so the two can never drift apart. */
+  frostcruiser:  {key:'nsb_frost_cruiser', name:'FROST CRUISER', w:168,h:168, hp:900, pat:'jungleburst', cd:1.05, mini:true, proj:'warhawk',
+                  mounts:{L:[-0.22,0.29],C:[0,0.455],R:[0.22,0.29],SL:[-0.17,0.02],SR:[0.17,0.02]},
+                  pats:['jungleburst','jungletempest']},
   /* ⚠ STAGE 6's MINIBOSS WAS A PLACEHOLDER WITH NO CASE AT ALL. SUBBOSS[6] named 'ss', and
      spawnSubBoss__inner's switch has no arm for it — so it fell through to the generic 130x120
      default and spawned literally named "SUB-BOSS", with no art, no attack profile and the stock
@@ -13480,7 +13499,7 @@ function shipBossInit(b, kind){
     b._s7dredger=true;
     try{for(let i=0;i<8;i++)XART.rdy('s7atk_dual_scoop_dredger_'+i);for(let i=0;i<12;i++)XART.rdy('s7spore_'+i);}catch(_s7load){}
   }
-  if(kind==='junglecruiser' && typeof jungleCruiserInit==='function') jungleCruiserInit(b);
+  if((kind==='junglecruiser'||kind==='frostcruiser') && typeof jungleCruiserInit==='function') jungleCruiserInit(b);
   if((kind==='rimewall'||kind==='cryospear') && typeof stage3BossInit==='function') stage3BossInit(b);
   if((kind==='stormsovereign'||kind==='olivewarden') && typeof stage4WarfareInit==='function') stage4WarfareInit(b);
   if(kind==='xenoregent'&&typeof xenoRegentInit==='function')xenoRegentInit(b);
@@ -13570,7 +13589,7 @@ const BOSS_MUZZLE_FAM={
   missile:['doomsdaycarrier','doomsdaycarriermk2','olivewarden','spawncarrier','heralddeath'],
   laser:  ['stormsovereign','rimewall','cryospear','thornrime','blacksteel'],
   void:   ['xenoregent','voidbat','infernoreaver'],
-  kinetic:['magmaward','siegeember','junglecruiser','olivecarrier','dualscoopdredger']
+  kinetic:['magmaward','siegeember','junglecruiser','frostcruiser','olivecarrier','dualscoopdredger']
 };
 const _bossMzLookup=(function(){
   const m={};
@@ -13802,7 +13821,7 @@ function shipBossQueueAttack(b){
   b._sba={pat:pat,t:0,tell:A.tell,recover:A.recover,kick:A.kick,shake:A.shake,fired:false};
   b.fireCd=Math.max(b.fireCd||0,A.tell+A.recover+0.04);
   /* The Jungle Cruiser owns a green wind telegraph; other ships use their registered boss reel. */
-  if(b._ship==='junglecruiser'){
+  if(jcShip(b)){
     const _jm=shipBossMount(b,'C');
     navalFlash(null,_jm,1.0,'s1fx_wind_vortex',{n:6,hpx:76,life:A.tell,anchor:0.5,
       follow:()=>shipBossMount(b,'C')});
@@ -13900,7 +13919,7 @@ function shipBossVisualPose(b){
      around, not a flipped projectile or a second sprite.  Its dedicated director owns this
      rotation; every hardpoint is transformed by this same pose, so the marked muzzles cannot
      detach during the reversal, beam sweep or enraged orbit. */
-  if(b._ship==='junglecruiser' && b._jc){
+  if(jcShip(b) && b._jc){
     rot+=(b._jc.rot||0);
     if(b._jc.thrust){ const q=clamp(b._jc.thrust,0,1); sy-=q*0.025; sx+=q*0.018; }
   }
@@ -16277,7 +16296,7 @@ function shipBossManoeuvre(b, dt){
   /* The Jungle Cruiser is a complete authored encounter. Letting the generic manoeuvre and
      shipBossQueueAttack paths run underneath it would double-move the hull and reintroduce the
      retired green-vortex volley between its missile/beam phases. */
-  if(b._ship==='junglecruiser'&&typeof jungleCruiserDirector==='function')return jungleCruiserDirector(b,dt);
+  if(jcShip(b)&&typeof jungleCruiserDirector==='function')return jungleCruiserDirector(b,dt);
   if(b._s7warden&&typeof s7WardenTick==='function')return s7WardenTick(b,dt);
   shipBossActionTick(b,dt);
   if(b._scene && typeof sceneDirectorTick==='function' && sceneDirectorTick(b,dt)) return true;   // a scene TRACK owns the hull (0911a)
@@ -16450,6 +16469,360 @@ function shipBossPhase(b){
 const JC_TRACK_SAMPLE=0.20, JC_POD_GAP=0.20, JC_RAGE_POD_GAP=0.095;
 const JC_GUN_GAP=0.045, JC_BEAM_CHARGE=1.25, JC_BEAM_HOLD=8.6;
 const JC_BEAM_SWEEP=Math.PI/6, JC_BEAM_PERIOD=2.55, JC_BEAM_CENTER_SPEED=330;
+/* ============================================================
+   THE RAZORBACK - SONIC SIEGE TANK, STAGE 1 MINIBOSS (Mike, 0912)
+
+   "the tank. recolor the neon green down to forest green via palette swapping. This tank should be
+   a sonic wave/sonic boom and missile tank that makes sense. it cant fire off 3 missiles in spread
+   at once, but it can certainly rapid fire and twist and turn and fire off 1 by 1 rapidly in spread
+   and be adjusted to match our engine framework and within the game. This one, should replace the
+   stage 1 miniboss entirely."
+
+   Ported from his approved standalone pack (Documents/New project/output/razor-tank/engine.js),
+   whose fight he signed off: guns -> turret -> hull, each part exposed in turn, with SUPPRESSION,
+   SONIC HAMMER, RAZOR RACK, RESONANCE NOVA and ARMORED RUSH. What changed to fit the engine:
+
+   - SIZES are the pack's pixels x RZB_S. The pack arena is 900 wide; the hull ink is 258px there,
+     and at 0.46 it reads as a miniboss on a 680 world beside a 47px player ship.
+   - SPEEDS are pack px/s converted to this engine's per-FRAME bullet motion, then x RZB_PFAST -
+     Mike: "faster projectiles".
+   - THE RAZOR RACK GOES THROUGH THE RETINA LOCK (0912q). The pack homed each missile for 1.55s on
+     its own; here all of them queue on ONE retina, launch 1-by-1 from alternating pods down a
+     narrowing fan, steer while the lock holds and break on a roll, somersault, dash, late dodge or
+     shoot-down. Never three at once.
+   - ONLY THE EXPOSED PART STOPS A SHOT (the 0805c pellet box): subBossHitPart answers per part, so a
+     round over empty armour flies on instead of dying on a bounding box.
+   - HP is scaled to this engine's miniboss band (the Jungle Cruiser it replaces was 900), keeping the
+     pack's proportions: guns 11% each, turret 51%, hull 27%.
+   - PACK ANGLES: 0 points SOUTH (down the screen), which is how every plate is authored, so a sprite
+     drawn with rotate(a) is already correct. rzbGameAng converts to this engine's atan2 convention.
+
+   ⚠ THE TANK IS A RIG, AND THAT IS NOT A BOSS SPLIT. It is a MINIBOSS whose authored pack ships the
+   guns, pods and turret as mounted parts - the quad-laser's cannons are the precedent CLAUDE.md
+   records. Nothing comes off and flies; parts are destroyed in place.
+   ============================================================ */
+const RZB_S=0.46, RZB_PFAST=1.35;
+const RZB_HP={left:110, right:110, turret:520, hull:270};
+const RZB_R={gun:17, turret:34, hull:52};                 // hit radii, already in game px
+const RZB_FAN=[0.80,0.80,0.64,0.64,0.48,0.48,0.32,0.32,0.16,0.16];
+const RZB_ATTACKS={guns:['suppression','sonic','missiles','nova','sonic'], turret:['suppression','sonic','missiles','nova','sonic'],
+                   hull:['nova','ram','missiles','sonic','ram']};
+function rzbWrap(a){ return Math.atan2(Math.sin(a),Math.cos(a)); }
+function rzbAim(f,t){ return Math.atan2(f.x-t.x, t.y-f.y); }                    // pack convention, 0 = south
+function rzbFwd(p,a,d){ return {x:p.x-Math.sin(a)*d, y:p.y+Math.cos(a)*d}; }
+function rzbGameAng(a){ return a+Math.PI/2; }
+function rzbWorld(b,lx,ly){ const a=b._rzb.a, c=Math.cos(a), s=Math.sin(a);
+  return {x:b.x+(lx*c-ly*s)*RZB_S, y:b.y+(lx*s+ly*c)*RZB_S}; }
+function rzbPxFrame(spdPack){ return spdPack*RZB_S*RZB_PFAST/60; }
+function rzbImg(k){ return (typeof XART!=='undefined' && XART.rdy(k)) ? XART.get(k) : null; }
+function rzbSfx(name){ try{ const f=Audio&&Audio.SFX&&Audio.SFX[name]; if(f) f(); }catch(_rs){} }
+
+function razorbackInit(b){
+  const W=(typeof worldWidth==='function')?worldWidth():VW, mul=(typeof DIFF!=='undefined'&&DIFF.eHp)?DIFF.eHp:1;
+  b.name='RAZORBACK'; b.mini=true; b._rzb=null;
+  b.w=Math.round(270*RZB_S); b.h=Math.round(270*RZB_S);
+  b.x=W/2; b.y=-150; b.ty=VH*0.27; b.enter=false; b._tracked=true; b.fireCd=999;
+  const pools={}; let tot=0;
+  for(const k in RZB_HP){ pools[k]=Math.ceil(RZB_HP[k]*mul); tot+=pools[k]; }
+  b.hp=b.maxhp=tot;
+  b._rzb={state:'arrival', pt:0, attack:'arrival', at:0, idx:-1, a:0, turret:0, tgt:{x:W/2,y:VH*0.27},
+    speed:0, travel:{left:0,right:0}, charge:0, recoil:0, guns:{left:{a:0,flash:0},right:{a:0,flash:0}},
+    pods:[0,0], pools:pools, max:Object.assign({},pools), flash:{}, waves:[], fx:[], beat:-1, mgBeat:-1,
+    trans:0, ramX:W/2, pid:0, ppx:player?player.x:W/2, pvx:0, shake:0, clankT:0};
+  try{ if(typeof XART!=='undefined') for(const k in BOFX.img) if(k.indexOf('rzb_')===0){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_rw){}
+}
+function razorbackPartAt(b,x,y){
+  const R=b&&b._rzb; if(!R || b.dead || R.state==='arrival' || R.trans>0) return null;
+  if(R.state==='guns'){
+    for(const k of ['left','right']) if(R.pools[k]>0){ const g=rzbWorld(b,k==='left'?-57:57,96);
+      if((x-g.x)*(x-g.x)+(y-g.y)*(y-g.y) < RZB_R.gun*RZB_R.gun) return k; }
+    return null;
+  }
+  const r=R.state==='turret'?RZB_R.turret:RZB_R.hull;
+  return ((x-b.x)*(x-b.x)+(y-b.y)*(y-b.y) < r*r) ? R.state : null;
+}
+function razorbackHit(b,dmg,hx,hy){
+  const R=b&&b._rzb; if(!R || b.dead) return 0;
+  let key=null;
+  if(hx!=null && hy!=null) key=razorbackPartAt(b,hx,hy);
+  else if(R.state!=='arrival' && R.trans<=0)                     // a bomb or a ram has no impact point
+    key=(R.state==='guns') ? (R.pools.left>0?'left':(R.pools.right>0?'right':null)) : R.state;
+  if(!key){
+    if(R.clankT<=0){ R.clankT=0.14; rzbSfx('clank'); }
+    if(hx!=null && typeof explode==='function') explode(hx,hy,5,'white');
+    return 0;
+  }
+  const d=Math.min(R.pools[key], dmg);
+  R.pools[key]-=d; R.flash[key]=0.12;
+  if(R.pools[key]<=0) razorbackBreak(b,key);
+  if(key==='hull' && R.pools.hull<=0) return Math.max(d, b.hp);   // the last pool always takes the bar to zero
+  return d;
+}
+function razorbackClear(b){
+  const R=b._rzb; R.pid++; R.waves=[]; R.charge=0;
+  for(const q of eBullets) if(q._rzb) q.dead=true;
+  if(typeof playerLocks!=='undefined') playerLocks=playerLocks.filter(L=>L.src!==b);
+}
+function razorbackBreak(b,key){
+  const R=b._rzb, p=(key==='left'||key==='right')?rzbWorld(b,key==='left'?-57:57,96):{x:b.x,y:b.y};
+  R.fx.push({key:'rzb_debris',x:p.x,y:p.y,s:0.8,life:1.2,max:1.2},{key:'rzb_sonic_impact',x:p.x,y:p.y,s:1,life:1,max:1});
+  if(typeof explode==='function') explode(p.x,p.y,26,'red');
+  if(typeof fxBurst==='function') fxBurst(p.x,p.y,34,{color:'#c8ff6a',rings:1});
+  shake=Math.max(shake||0,10);
+  rzbSfx(key==='hull'?'explodeBig':'expBig');
+  if(key==='left'||key==='right'){ if(R.pools.left<=0 && R.pools.right<=0) razorbackEnter(b,'turret'); }
+  else if(key==='turret'){ R.fx.push({key:'rzb_turret_damaged',x:p.x,y:p.y,s:1,life:1.8,max:1.8,spin:1}); razorbackEnter(b,'hull'); }
+  else razorbackClear(b);                                         // the hull: hitSubBoss runs the death
+}
+function razorbackEnter(b,state){
+  const R=b._rzb; R.state=state; R.pt=0; R.trans=1.4; R.idx=-1; razorbackClear(b);
+  rzbSfx('bossPhase'); razorbackNext(b);
+}
+function razorbackNext(b){
+  const R=b._rzb, W=(typeof worldWidth==='function')?worldWidth():VW, list=RZB_ATTACKS[R.state]||RZB_ATTACKS.guns;
+  R.attack=list[++R.idx%list.length]; R.at=0; R.beat=-1; R.mgBeat=-1; R.charge=0;
+  R.tgt={x:(R.idx%2)?W*0.27:W*0.73, y:(R.idx%3===0)?VH*0.36:VH*0.24};
+  if(R.attack==='sonic'||R.attack==='nova') rzbSfx('sonicChargeStart');
+}
+function rzbShot(b,p,a,spdPack,rPack,kind){
+  const v=rzbPxFrame(spdPack), r=Math.max(6,Math.round(rPack*2*RZB_S)), ga=rzbGameAng(a);
+  eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,w:r,h:r,kind:kind,t:0,_rzb:true,ang:ga,spin:Math.random()*6});
+}
+function rzbMissile(b,p,a){
+  const ga=rzbGameAng(a), v=rzbPxFrame(160);
+  eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,ang:ga,w:10,h:16,kind:'rzbMissile',hp:1,
+    _shootable:true,spd:v,_accel:0.022,_maxspd:4.2,t:0,_rzb:true});
+  rzbSfx('missile');
+}
+function razorbackMove(b,dt){
+  const R=b._rzb, dx=R.tgt.x-b.x, dy=R.tgt.y-b.y, d=Math.hypot(dx,dy), oldA=R.a;
+  const top=(R.attack==='ram' && R.at>1) ? 330*RZB_S : 92*RZB_S;
+  const speed=Math.min(d*1.7, top);
+  if(d>2){
+    b.x+=dx/d*speed*dt; b.y+=dy/d*speed*dt;
+    if(speed>8*RZB_S) R.a+=clamp(rzbWrap(rzbAim({x:0,y:0},{x:dx,y:dy})-R.a), -1.65*dt, 1.65*dt);
+  }
+  R.speed=d>2?speed:0;
+  const turn=rzbWrap(R.a-oldA)/Math.max(1e-4,dt);
+  R.travel.left +=(R.speed/RZB_S - turn*78)*dt;
+  R.travel.right+=(R.speed/RZB_S + turn*78)*dt;
+}
+function razorbackUpdate(b,dt){
+  const R=b._rzb; if(!R) return;
+  /* ⚠ THE ENGINE RAISES A MINIBOSS TO ITS STAGE'S HP FLOOR AFTER SPAWN (measured: 890 in the part
+     pools against a 938 maxhp), so the pools are re-proportioned to whatever maxhp it settled on.
+     Without this the hull pool empties with 48 hp still on the bar and the tank cannot die. */
+  if(!R.hpSync){
+    R.hpSync=true;
+    let tot=0; for(const k in R.pools) tot+=R.pools[k];
+    if(b.maxhp && tot>0 && Math.abs(b.maxhp-tot)>0.5){
+      const f=b.maxhp/tot; let sum=0;
+      for(const k in R.pools){ R.pools[k]=Math.max(1,Math.round(R.pools[k]*f)); R.max[k]=R.pools[k]; sum+=R.pools[k]; }
+      b.hp=b.maxhp=sum;
+    }
+  }
+  R.shake=Math.max(0,R.shake-dt*24); R.recoil=Math.max(0,R.recoil-dt*100); R.clankT=Math.max(0,R.clankT-dt);
+  for(const k of ['left','right']) R.guns[k].flash=Math.max(0,R.guns[k].flash-dt);
+  R.pods[0]=Math.max(0,R.pods[0]-dt); R.pods[1]=Math.max(0,R.pods[1]-dt);
+  for(const k in R.flash) R.flash[k]=Math.max(0,R.flash[k]-dt);
+  for(const e of R.fx) e.life-=dt;
+  R.fx=R.fx.filter(e=>e.life>0);
+  R.pt+=dt;
+  if(R.state==='arrival'){
+    R.tgt={x:(typeof worldWidth==='function'?worldWidth():VW)/2, y:VH*0.27};
+    razorbackMove(b,dt);
+    if(R.pt>3.2 || Math.abs(b.y-R.tgt.y)<3) razorbackEnter(b,'guns');
+    return;
+  }
+  const P=player;
+  R.pvx=(P.x-R.ppx)/Math.max(1e-4,dt); R.ppx=P.x;
+  R.trans=Math.max(0,R.trans-dt);
+  razorbackMove(b,dt);
+  const ta=rzbAim(b,{x:P.x+R.pvx*0.16, y:P.y});
+  R.turret+=clamp(rzbWrap(ta-R.turret), -1.85*dt, 1.85*dt);
+  for(const k of ['left','right']){ const g=rzbWorld(b,k==='left'?-57:57,96);
+    R.guns[k].a=R.a+clamp(rzbWrap(rzbAim(g,P)-R.a), -1.1, 1.1); }
+  if(R.trans<=0){ R.at+=dt; razorbackCombat(b); }
+  // pressure waves: expand, and hurt whoever stands on the ring inside its arc
+  for(const w of R.waves){
+    w.r+=w.speed*dt; w.life-=dt;
+    if(!P.dead){ const dd=Math.hypot(P.x-w.x,P.y-w.y), aa=rzbAim(w,P);
+      if(Math.abs(dd-w.r)<w.width+7*RZB_S && Math.abs(rzbWrap(aa-w.a))<w.arc && typeof playerHit==='function') playerHit(); }
+  }
+  R.waves=R.waves.filter(w=>w.life>0);
+  if(!P.dead && Math.hypot(b.x-P.x,b.y-P.y)<105*RZB_S && typeof playerHit==='function') playerHit();   // the hull runs you over
+}
+function razorbackCombat(b){
+  const R=b._rzb, t=R.at, m=rzbFwd(b,R.turret,(142-R.recoil)*RZB_S);
+  R.charge=0;
+  if(R.attack==='suppression' && R.state!=='guns'){
+    // guns gone: the turret fires rapid three-round sonic bursts
+    const beat=Math.floor(t/0.38);
+    if(beat>R.beat){ R.beat=beat; for(const off of [-0.18,0,0.18]) rzbShot(b,m,R.turret+off,300,10,'rzbSonic');
+      R.recoil=10; rzbSfx('coleSonicBoom'); }
+    if(t>3.5) razorbackNext(b);
+  } else if(R.attack==='suppression'){
+    const beat=Math.floor(t/0.15);
+    if(beat>R.mgBeat && (t%1.8)<1.15){
+      R.mgBeat=beat;
+      for(const k of ['left','right']) if(R.pools[k]>0){
+        const g=rzbWorld(b,k==='left'?-57:57,96), a=R.guns[k].a, mz=rzbFwd(g,a,49*RZB_S);
+        const n0=eBullets.length;
+        if(typeof eMG==='function') eMG(mz.x,mz.y,rzbGameAng(a+Math.sin(beat*1.9)*0.07),rzbPxFrame(380));
+        for(let i=n0;i<eBullets.length;i++) eBullets[i]._rzb=true;
+        R.guns[k].flash=0.08;
+      }
+    }
+    if(t>5) razorbackNext(b);
+  } else if(R.attack==='sonic'){
+    // SONIC HAMMER: charge, then a five-round spread and a directional pressure wave
+    const cycle=t%2.4, beat=Math.floor(t/2.4);
+    R.charge=Math.min(1,cycle/1.2);
+    if(cycle>=1.2){ R.charge=0;
+      if(beat>R.beat){ R.beat=beat;
+        for(const off of [-0.28,-0.14,0,0.14,0.28]) rzbShot(b,m,R.turret+off,240,18,'rzbSonic');
+        R.waves.push({x:m.x,y:m.y,r:10*RZB_S,a:R.turret,arc:0.65,speed:180*RZB_S*RZB_PFAST,width:15*RZB_S,life:5});
+        R.recoil=24; shake=Math.max(shake||0,5); rzbSfx('coleSonicBoom');
+        if(beat>=0 && t<2.5) rzbSfx('sonicChargeStart');
+      } }
+    if(t>5.1) razorbackNext(b);
+  } else if(R.attack==='missiles'){
+    R.charge=t<0.9?t/0.9:0;
+    if(R.beat<0){
+      /* RAZOR RACK through the RETINA LOCK: one retina, launches queued 1-by-1 from alternating pods
+         down a narrowing fan. A launch belongs to this attack only - R.pid moves on a phase change,
+         so a queued missile cannot leave a tank whose rack was just destroyed. */
+      R.beat=0; const N=R.state==='hull'?8:10, pid=R.pid;
+      for(let i=0;i<N;i++){
+        const side=(i%2)?1:-1, off=RZB_FAN[i%RZB_FAN.length];
+        enemyLockOn(b, 0.9+i*0.22, {fire:function(){
+          if(!b._rzb || b.dead || R.pid!==pid) return;
+          rzbMissile(b, rzbWorld(b,side*105,10), R.turret+side*off);
+          R.pods[side<0?0:1]=0.14;
+        }});
+      }
+    }
+    if(t>0.9+(R.state==='hull'?8:10)*0.22+1.2) razorbackNext(b);
+  } else if(R.attack==='nova'){
+    // RESONANCE NOVA: an expanding arc with a gap BEHIND the tank, plus a slow ring
+    R.charge=clamp(t/1.55,0,1);
+    if(t>1.55 && R.beat<0){ R.beat=0;
+      R.waves.push({x:b.x,y:b.y,r:35*RZB_S,a:R.a,arc:2.66,speed:200*RZB_S*RZB_PFAST,width:17*RZB_S,life:5.6});
+      for(let i=0;i<16;i++) rzbShot(b,{x:b.x,y:b.y},i*Math.PI*2/16,145,12,'rzbSonic');
+      shake=Math.max(shake||0,8); rzbSfx('coleSonicBoom'); }
+    if(t>1.55) R.charge=0;
+    if(t>4.5) razorbackNext(b);
+  } else if(R.attack==='ram'){
+    const W=(typeof worldWidth==='function')?worldWidth():VW;
+    if(t<1){ R.charge=t; R.tgt={x:b.x,y:b.y}; R.ramX=clamp(player.x, b.w*0.5, W-b.w*0.5); }
+    else if(t<2.5) R.tgt={x:R.ramX, y:VH*0.68};
+    else R.tgt={x:W/2, y:VH*0.26};
+    if(t>4.7) razorbackNext(b);
+  }
+}
+function rzbSprite(key,x,y,a,s,alpha,px,py){
+  const im=rzbImg(key); if(!im) return false;
+  const w=im.width||im.naturalWidth, h=im.height||im.naturalHeight;
+  const ox=(px!=null?px:w/2), oy=(py!=null?py:h/2), sc=s*RZB_S;
+  ctx.save(); ctx.translate(x,y); ctx.rotate(a||0); if(alpha!=null) ctx.globalAlpha=alpha;
+  ctx.drawImage(im,-ox*sc,-oy*sc,w*sc,h*sc); ctx.restore(); return true;
+}
+function rzbFlash(key,x,y,a,s,px,py,amt){
+  if(!(amt>0) || typeof xartTint!=='function') return;
+  const t=xartTint(key,'#ffffff',0.9); if(!t) return;
+  const w=t.width, h=t.height, ox=(px!=null?px:w/2), oy=(py!=null?py:h/2), sc=s*RZB_S;
+  ctx.save(); ctx.translate(x,y); ctx.rotate(a||0); ctx.globalAlpha=Math.min(1,amt/0.12)*0.8;
+  ctx.drawImage(t,-ox*sc,-oy*sc,w*sc,h*sc); ctx.restore();
+}
+function razorbackDraw(b){
+  const R=b._rzb; if(!R) return;
+  const S=RZB_S;
+  ctx.save(); ctx.imageSmoothingEnabled=false;
+  if(b.dead){
+    const k=clamp((b.dying||0)/1.9,0,1);
+    rzbSprite('rzb_wreck',b.x,b.y,R.a,1,1-k*0.85);
+    ctx.restore(); return;
+  }
+  /* ground shadow: the hull's own SILHOUETTE flooded black and offset. The pack drew a translucent
+     rectangle, which on this engine's terrain reads as exactly the "hitbox square" Mike has
+     reported on minibosses before - a shadow must have the tank's shape. */
+  { const sk=R.state==='hull'?'rzb_wreck':'rzb_hull_'+(((Math.round(R.a/(Math.PI/4))%8)+8)%8);
+    const sh=(typeof xartTint==='function')?xartTint(sk,'#000000',1):null;
+    if(sh){ const sc=S, sa=R.state==='hull'?R.a:rzbWrap(R.a-(((Math.round(R.a/(Math.PI/4))%8)+8)%8)*Math.PI/4);
+      ctx.save(); ctx.translate(b.x+10*S,b.y+14*S); ctx.rotate(sa); ctx.globalAlpha=0.34;
+      ctx.drawImage(sh,-sh.width*sc/2,-sh.height*sc/2,sh.width*sc,sh.height*sc); ctx.restore(); } }
+  if(R.speed>5*S){ for(const side of [-1,1]){ const p=rzbWorld(b,side*85,-100);
+    rzbSprite('rzb_dust',p.x,p.y,(b.t||0)*0.12,0.36+Math.sin((b.t||0)*10+side)*0.08,0.25); } }
+  // hull: nearest authored compass frame, turned by the residual; the hull phase shows the wreck plate
+  const i=((Math.round(R.a/(Math.PI/4))%8)+8)%8, resid=rzbWrap(R.a-i*Math.PI/4);
+  const hk=R.state==='hull'?'rzb_wreck':'rzb_hull_'+i, ha=R.state==='hull'?R.a:resid;
+  rzbSprite(hk,b.x,b.y,ha,1);
+  if(R.state==='hull') rzbFlash(hk,b.x,b.y,ha,1,null,null,R.flash.hull);
+  // treads scroll by the distance each side actually travelled
+  const tr=rzbImg('rzb_tread');
+  if(tr){ ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(R.a);
+    for(const side of [-1,1]){ ctx.save(); ctx.beginPath(); ctx.rect((side*81-19)*S,-98*S,38*S,218*S); ctx.clip();
+      const off=((R.travel[side<0?'left':'right']*0.65)%42+42)%42;
+      for(let j=-4;j<6;j++){ const tw=tr.width*0.62*S, th=tr.height*0.62*S;
+        ctx.drawImage(tr, side*81*S-tw/2, (j*65+off)*S-th/2, tw, th); }
+      ctx.restore(); }
+    ctx.restore(); }
+  for(let n=0;n<4;n++){
+    const mt=[[-65,-46],[65,-46],[-70,33],[68,33]][n], p=rzbWorld(b,mt[0],mt[1]), side=n%2?'right':'left';
+    ctx.fillStyle='#171b1b'; ctx.beginPath(); ctx.ellipse(p.x,p.y,19*S,17*S,R.a,0,Math.PI*2); ctx.fill();
+    rzbSprite('rzb_rotor',p.x,p.y,R.a+R.travel[side]/25,0.43);
+  }
+  for(const s of [-1,1]){ const p=rzbWorld(b,s*105,10); rzbSprite('rzb_missile_pod',p.x,p.y,R.a,0.55);
+    if(R.pods[s<0?0:1]>0){ const q=rzbFwd(p,R.turret+s*0.6,26*S); rzbSprite('rzb_muzzle',q.x,q.y,R.turret,0.2); } }
+  for(const k of ['left','right']) if(R.pools[k]>0){
+    const p=rzbWorld(b,k==='left'?-57:57,96), g=R.guns[k];
+    rzbSprite('rzb_machinegun',p.x,p.y,g.a,1,null,64,65);
+    rzbFlash('rzb_machinegun',p.x,p.y,g.a,1,64,65,R.flash[k]);
+    if(g.flash>0){ const m=rzbFwd(p,g.a,49*S); rzbSprite('rzb_muzzle',m.x,m.y,g.a,0.34); }
+  }
+  if(R.pools.turret>0){
+    const p=rzbFwd({x:b.x,y:b.y},R.turret,-R.recoil*S), tk=(R.pools.turret<R.max.turret*0.5)?'rzb_turret_damaged':'rzb_turret';
+    rzbSprite(tk,p.x,p.y,R.turret,1,null,128,128);
+    if(R.state==='turret') rzbFlash(tk,p.x,p.y,R.turret,1,128,128,R.flash.turret);
+  }
+  if(R.charge>0){
+    const m=(R.attack==='sonic')?rzbFwd(b,R.turret,142*S):{x:b.x,y:b.y};
+    ctx.save(); ctx.globalCompositeOperation='lighter';
+    const rr=(45+R.charge*65)*S, g=ctx.createRadialGradient(m.x,m.y,0,m.x,m.y,rr);
+    g.addColorStop(0,'rgba(174,255,49,'+(0.22+R.charge*0.4)+')'); g.addColorStop(1,'rgba(174,255,49,0)');
+    ctx.fillStyle=g; ctx.fillRect(m.x-rr,m.y-rr,rr*2,rr*2); ctx.restore();
+    rzbSprite('rzb_sonic_charge',m.x,m.y,(b.t||0)*0.8,0.16+R.charge*0.5);
+    if(R.attack==='sonic'){ const e=rzbFwd(m,R.turret,750*S); ctx.save(); ctx.setLineDash([10*S,12*S]);
+      ctx.strokeStyle='rgba(184,238,94,0.5)'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(m.x,m.y); ctx.lineTo(e.x,e.y); ctx.stroke(); ctx.restore(); }
+    if(R.attack==='ram'){ ctx.save(); ctx.strokeStyle='rgba(255,200,36,0.45)'; ctx.lineWidth=36*S;
+      ctx.beginPath(); ctx.moveTo(b.x,b.y); ctx.lineTo(R.ramX,VH*0.85); ctx.stroke(); ctx.restore(); }
+  }
+  for(const w of R.waves) razorbackWaveDraw(w);
+  for(const e of R.fx){ const u=1-e.life/e.max;
+    rzbSprite(e.key,e.x,e.y,(e.spin?u*3:0),e.s*(0.7+u*0.6),1-u, e.key==='rzb_turret_damaged'?128:null, e.key==='rzb_turret_damaged'?128:null); }
+  ctx.restore();
+}
+function razorbackWaveDraw(w){
+  const im=rzbImg('rzb_sonic_ring');
+  ctx.save(); ctx.translate(w.x,w.y);
+  ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,w.r+w.width+5,w.a+Math.PI/2-w.arc,w.a+Math.PI/2+w.arc); ctx.closePath(); ctx.clip();
+  ctx.beginPath(); ctx.arc(0,0,w.r+w.width,0,Math.PI*2); ctx.arc(0,0,Math.max(0,w.r-w.width),0,Math.PI*2,true); ctx.clip();
+  if(im){ const sz=256*(w.r+15*RZB_S)/105; ctx.globalAlpha=0.9; ctx.drawImage(im,-sz/2,-sz/2,sz,sz); }
+  ctx.restore();
+  ctx.save(); ctx.strokeStyle='rgba(202,255,119,0.5)'; ctx.lineWidth=2; ctx.beginPath();
+  ctx.arc(w.x,w.y,w.r,w.a+Math.PI/2-w.arc,w.a+Math.PI/2+w.arc); ctx.stroke(); ctx.restore();
+}
+function razorbackProjectileDraw(q){
+  if(q.kind!=='rzbSonic' && q.kind!=='rzbMissile') return false;
+  const a=(q.ang!=null?q.ang:Math.atan2(q.vy,q.vx))-Math.PI/2;
+  const key=q.kind==='rzbMissile'?'rzb_razor_missile':'rzb_sonic_bullet', im=rzbImg(key);
+  if(!im) return false;
+  const sz=q.kind==='rzbMissile'?34:Math.max(20,q.w*1.9);
+  ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(a); ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im,-sz/2,-sz/2,sz,sz); ctx.restore();
+  return true;
+}
+function jcShip(b){ return !!b && (b._ship==='junglecruiser' || b._ship==='frostcruiser'); }
 function jungleCruiserInit(b){
   if(!b) return;
   b._jc={state:'acquire',t:0,shot:0,sample:0,targetX:b.x,rot:0,thrust:0,
@@ -16720,7 +17093,7 @@ function jungleCruiserDrawOver(b,key,w,h,cy,P){
   /* Bottom-to-top internal pixel illumination. xartTint preserves the hull alpha and luminance;
      the moving clip reveals only pixels already inside the aircraft, so there is no halo. */
   if(J.charge>0){
-    const tint=typeof xartTint==='function'?xartTint(key,'#35ff62',0.94):null;
+    const tint=typeof xartTint==='function'?xartTint(key,(b._ship==='frostcruiser'?'#8fe6ff':'#35ff62'),0.94):null;
     if(tint){
       const reveal=h*clamp(J.charge,0,1),top=h*.5-reveal;
       ctx.save();ctx.beginPath();ctx.rect(-w*.5,top,w,reveal);ctx.clip();
@@ -16754,7 +17127,7 @@ function jungleCruiserDrawOver(b,key,w,h,cy,P){
     ctx.globalCompositeOperation='lighter';ctx.globalAlpha=1;ctx.drawImage(im,w*z.ox-sz*.5,h*z.oy-sz*.5,sz,sz);
   }
   if((J.state==='rageOrbit'||J.state==='ragePounce'||J.state==='rageSlide')&&J.charge>=0.72){
-    const C=SHIPBOSS.junglecruiser.mounts.C,im=XART.rdy('nhxsb_g_2')?XART.get('nhxsb_g_2'):null;
+    const C=(SHIPBOSS[b._ship]||SHIPBOSS.junglecruiser).mounts.C,im=XART.rdy('nhxsb_g_2')?XART.get('nhxsb_g_2'):null;
     if(im){const pulse=50+7*Math.sin((b.t||0)*15);ctx.globalCompositeOperation='lighter';ctx.globalAlpha=0.86;
       ctx.drawImage(im,w*C[0]-pulse*.5,h*C[1]-pulse*.5,pulse,pulse);}
   }
@@ -17778,7 +18151,7 @@ function shipBossAttack(b){
     stage3BossAttack(b,pat,step,ph,cdMul);
     return;
   }
-  if(b._ship==='junglecruiser'){
+  if(jcShip(b)){
     jungleCruiserAttack(b,pat,step,ph,cdMul);
     return;
   }
@@ -18853,7 +19226,7 @@ function shipBossDraw(b){
   if(b._brk && typeof beamRakeDraw==='function') beamRakeDraw(b);
   if(b._l23Beam&&typeof l23BossBeamDraw==='function')l23BossBeamDraw(b);
   if(b._ship==='infernoreaver'&&b._irRoll&&typeof infernoReaverRollDraw==='function')infernoReaverRollDraw(b);
-  if(b._ship==='junglecruiser'&&typeof jungleCruiserDrawUnder==='function')jungleCruiserDrawUnder(b);
+  if(jcShip(b)&&typeof jungleCruiserDrawUnder==='function')jungleCruiserDrawUnder(b);
   if(b._s7Flood)sludgeFloodDraw(b);
   if(b._s7Rosette)sludgeRosetteDraw(b);
   if(b._s9Cascade)tidalCascadeDraw(b);
@@ -18922,7 +19295,7 @@ function shipBossDraw(b){
   }
   ctx.restore();
   if(b._s3boss&&typeof stage3BossDrawOver==='function') stage3BossDrawOver(b);
-  if(b._ship==='junglecruiser'&&typeof jungleCruiserDrawOver==='function')jungleCruiserDrawOver(b,_ak,w,h,cy,P);
+  if(jcShip(b)&&typeof jungleCruiserDrawOver==='function')jungleCruiserDrawOver(b,_ak,w,h,cy,P);
   if(b._ship==='magmaward')magmaWardDrawOver(b);
   if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof reaverOrbDraw==='function')reaverOrbDraw(b);
   if((b._ship==='magmaward'||b._ship==='infernoreaver')&&typeof magmaWardBarrierDraw==='function')magmaWardBarrierDraw(b);
@@ -19264,9 +19637,10 @@ function spawnSubBoss__inner(kind){
     case 'lavamaw':                                    // MAGMA VENT — same build path as the nsb_ minis
     case 'spawncarrier':                               // stage 8's lock mini (0814e) — replaces the herald
     case 'heralddeath':                                // generated Hellwing Death Carrier, Stage 8
-    case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'olivecarrier':
+    case 'siegeember': case 'thornrime': case 'blacksteel': case 'junglecruiser': case 'frostcruiser': case 'olivecarrier':
     case 'dualscoopdredger':
       b.mini=true; shipBossInit(b, kind); break;
+    case 'razorback': razorbackInit(b); break;          // RAZORBACK sonic siege tank (0912r)
     case 'quadlaser': {
       /* Built from the pack's own map rather than eyeballed: BOFQL carries the
          384x384 canvas, the pivot, the body collision boxes and the four cannon
@@ -19678,11 +20052,11 @@ function updateSubBoss(dt){
        class-sized death takeover instead of a spray of generic fireballs. */
     if(!b._deathFxStarted){
       if(b._herald) b._deathFxStarted=true;
-      else if(b._ship==='junglecruiser'&&typeof unitDeathFX==='function'){
+      else if(jcShip(b)&&typeof unitDeathFX==='function'){
         /* No dissolve/fade. The intact hull is immediately replaced by a boss-scale authored
            explosion takeover, large enough to engulf the full 168px aircraft. */
         if(typeof jungleCruiserBeamAudio==='function')jungleCruiserBeamAudio(b,false);
-        unitDeathFX(b,'boss','green');
+        unitDeathFX(b,'boss',b._ship==='frostcruiser'?'blue':'green');
       }else if(typeof unitDeathFX==='function') unitDeathFX(b,'mini',(curStage&&curStage.bg==='ice')?'blue':'red');
     }
     if(T>=1.9){ subBoss=null; subBossActive=false; subBossDone=true; if(typeof dropPowerup==='function') dropPowerup(b.x,b.y,'weapon'); }
@@ -19690,6 +20064,7 @@ function updateSubBoss(dt){
   }
   if(b._s9rift){ s9VoidHorizonTick(b,dt); return; }
   if(b._harrier){ chaosHarrierUpdate(b,dt); return; }
+  if(b._rzb){ razorbackUpdate(b,dt); return; }          // the tank owns its arrival, drive and weapons (0912r)
   if(b.enter){
     b._entT=(b._entT||0)+dt;
     b.y=lerp(b.y,b.ty,0.05);
@@ -19727,7 +20102,7 @@ function updateSubBoss(dt){
   /* The authored Jungle Cruiser director has already moved and fired this frame. Returning here
      is essential: otherwise the generic attack queue adds the retired vortex/warhawk pattern on
      top and destroys the one-weapon-at-a-time reads designed for this fight. */
-  if(b._ship==='junglecruiser')return;
+  if(jcShip(b))return;
   b.fireCd-=dt*DIFF.eFire;
   if(b.fireCd<=0){
     if(b._ship&&typeof shipBossQueueAttack==='function') shipBossQueueAttack(b);
@@ -20734,6 +21109,7 @@ function drawSubBoss(){
   if(b._s9rift){ s9VoidHorizonDraw(b); return; }
   if(typeof drawSubBossBar==='function') drawSubBossBar(b);
   if(b._harrier){ chaosHarrierDraw(b); return; }
+  if(b._rzb){ razorbackDraw(b); return; }
   if(b._ship && typeof shipBossDraw==='function' && shipBossDraw(b)){
     if(b.flash>0) b.flash-=0.016; return; }
   /* THE QUAD-LASER GUNSHIP (drop 0801em). Body plate first, then the damaged
@@ -21022,6 +21398,7 @@ function drawSubBoss(){
 function subBossHitPart(x, y){
   const b = (typeof subBoss!=='undefined') ? subBoss : null;
   if(!b) return null;
+  if(b._rzb && typeof razorbackPartAt==='function') return razorbackPartAt(b,x,y);   // only the EXPOSED part stops a shot
   if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'){
     const d=stage4MiniDroneAt(b,x,y,2);if(d)return d.side<0?'s4droneL':'s4droneR';
   }
@@ -21249,7 +21626,9 @@ function hitSubBoss(dmg, hx, hy){
   }
   /* The damaged stealth hull is deliberately vulnerable. This shortens the back half while its
      faster rockets, smoke and enraged charge make that time much more dangerous. */
-  if(b._ship==='junglecruiser'&&b.maxhp&&b.hp/b.maxhp<=0.50)dmg*=1.35;
+  if(jcShip(b)&&b.maxhp&&b.hp/b.maxhp<=0.50)dmg*=1.35;
+  /* the Razorback routes damage into the exposed part's own pool; armour elsewhere shrugs it off */
+  if(b._rzb && typeof razorbackHit==='function'){ const _rd=razorbackHit(b,dmg,hx,hy); if(!(_rd>0)) return; dmg=_rd; }
   const _elemHit=(typeof opposingElementImpact==='function')?opposingElementImpact(b,'subboss',_dmgBullet):null;
   b.hp-=dmg; b.flash=0.18;
   weaponHitSfx('normal');
@@ -21270,13 +21649,13 @@ function hitSubBoss(dmg, hx, hy){
      One assignment makes the existing pulse reachable. The colour is Mike's — 0807b said "do not
      let the hull flash white until you break all the turrets", and the turrets are broken. */
   if(b._ql && b._qlHullOpen) b._qlArmor = 0.30;
-  if(b._ship==='junglecruiser'&&b._jc&&b.hp/b.maxhp<=0.25){
+  if(jcShip(b)&&b._jc&&b.hp/b.maxhp<=0.25){
     b._jc.blasts.push({ox:rnd(-0.30,0.30),oy:rnd(-0.18,0.28),t:0,life:rnd(0.42,0.66),s:rnd(0.72,1.08)});
     if(b._jc.blasts.length>8)b._jc.blasts.shift();
   }
   if(b.hp<=0){
     b.dead=true;b.dying=0;b._jcGhost=false;
-    if(b._ship==='junglecruiser'&&typeof jungleCruiserBeamAudio==='function')jungleCruiserBeamAudio(b,false);
+    if(jcShip(b)&&typeof jungleCruiserBeamAudio==='function')jungleCruiserBeamAudio(b,false);
     if(b._ship==='magmaward')magmaWardFinish(b);
     Audio.SFX.expBig();shake=Math.max(shake,10);
   }
@@ -23868,7 +24247,7 @@ function enemyLockOn(srcEnemy, delay, opts){
     if(L.src===srcEnemy && L.state==='arming'){ L.launches.push({at:L.t+d, fire:fire}); L.dur=Math.max(L.dur, L.t+d); return L; }
   }
   const L={id:++_lockSeq, src:srcEnemy, t:0, dur:d, launches:[{at:d, fire:fire}], missiles:[],
-           state:'arming', endT:0, spin:Math.random()*6, ev0:lockEvading()};
+           state:'arming', endT:0, spin:(_lockSeq*1.7)%6, ev0:lockEvading()};   // NOT Math.random: a lock must not shift the wave plan's random sequence
   playerLocks.push(L);
   if(typeof Audio!=='undefined' && Audio.SFX && Audio.SFX.retinaCharge) Audio.SFX.retinaCharge();
   _lockBeepT=Math.min(_lockBeepT, 0.10);
@@ -26376,7 +26755,8 @@ function warmStage(n){
       /* the 0812e hulls warm their SOURCE plate — a palette-swapped hull still decodes the same
          key, and xartPalette cannot build its canvas until that key is ready. Miss this and the
          new minis open the fight on the silhouette fallback, which is the whole 0812c bug. */
-      junglecruiser:'nsb_jungle_cruiser', olivecarrier:'nsb_olive_carrier',
+      junglecruiser:'nsb_jungle_cruiser', frostcruiser:'nsb_frost_cruiser', olivecarrier:'nsb_olive_carrier',
+      razorback:'rzb_',
     };
     const _sb = (typeof SUBBOSS!=='undefined' && SUBBOSS[n]) ? SUBBOSS[n].kind : null;
     if(_sb && _PACKOF[_sb]) addPrefix(_PACKOF[_sb]);
@@ -35294,6 +35674,7 @@ const PROJ = {
   homing:{type:'homing',slot:4},
   missile:{type:'missile',slot:5}, emr:{type:'missile',slot:5},
   emissile:{type:'missile',slot:5}, rocketW:{type:'missile',slot:5},
+  rzbMissile:{type:'missile',slot:5}, rzbSonic:{type:'orb',slot:3},   // the Razorback's rounds (0912r) - razorbackProjectileDraw draws them first
   laser:{type:'missile',slot:5,tint:'#8fff9f'},
   /* THE LAST THREE, FOUND BY SCANNING THE SOURCE RATHER THAN BY WATCHING PLAY
      (drop 0801kp). A probe only sees what actually spawned in the window it ran;
@@ -39497,6 +39878,7 @@ function drawBullets(){
   ctx.imageSmoothingEnabled = false;
   // enemy — master fire-type art first (legacy kinds alias onto shared FIRETYPES)
   for(const b of eBullets){
+    if(b._rzb&&typeof razorbackProjectileDraw==='function'&&razorbackProjectileDraw(b))continue;
     if(b._s4wKind&&typeof drawStage4WarfareProjectile==='function'&&drawStage4WarfareProjectile(b))continue;
     if(b._l23fx&&typeof l23ProjectileDraw==='function'&&l23ProjectileDraw(b))continue;
     if(b._mwKind&&typeof magmaWardProjectileDraw==='function'&&magmaWardProjectileDraw(b))continue;
@@ -55037,7 +55419,7 @@ function debugOpen(){
   debugMenu.msgT=0; drawDebugMenu._md=true; setState(GS.DEBUG);
 }
 /* ---- the fight list: one entry per authored slot, straight off STAGES and SUBBOSS ------------ */
-const DEBUG_BOSS_NAMES={damkeeper:'JUNGLE OVERLORD-X', vileexistence:'BLACK COCOON', tidalfusion:'WARP SENTINELS',
+const DEBUG_BOSS_NAMES={razorback:'RAZORBACK SIEGE TANK', damkeeper:'JUNGLE OVERLORD-X', vileexistence:'BLACK COCOON', tidalfusion:'WARP SENTINELS',
   voidhorizon:'EVENT HORIZON', chaosharrier:'CHAOS HARRIER', quadlaser:'QUAD-LASER GUNSHIP', hellwing:'HELLWING DEATH CARRIER',
   dreadnought:'HELLFIRE GUNSHIP', wargod:'THE WAR GOD', spider:'ARACHNON MK-IX', leviathan:'LEVIATHAN CORE',
   ironrev:'IRON REVENANT', cesspool:'CESSPOOL LEVIATHAN', unitybreaker:'UNITY BREAKER', magmacolossus:'MAGMA COLOSSUS'};
@@ -55377,7 +55759,7 @@ bossmodeLoadOverrides();
 /* every registered key that belongs to a kind's art, for the editor's graphics browser */
 const BM_ART_EXTRA={magmaward:['mwfx_'], infernoreaver:['l23fx_inferno','mwfx_'], rimewall:['l23fx_rime','l23fx_cryo'],
   cryospear:['l23fx_rime','l23fx_cryo'], stormsovereign:['s4w_'], olivewarden:['s4w_','nsb_olivewarden'], xenoregent:['s5atk_','s5fracture'],
-  blacksteel:['s6atk_','s6mb_','nsb_rap'], junglecruiser:['s1fx_','nsb_jungle'], dualscoopdredger:['s7atk_'], sludgeemperor:['cfx_stage7'],
+  blacksteel:['s6atk_','s6mb_','nsb_rap'], junglecruiser:['s1fx_','nsb_jungle'], frostcruiser:['s1fx_','nsb_frost'], dualscoopdredger:['s7atk_'], sludgeemperor:['cfx_stage7'],
   heralddeath:['nhd_'], voidhorizon:['ns9_'], tidalfusion:['ns9_'], chaosharrier:['s5'], quadlaser:['nqx_'], damkeeper:['chopper','death_'],
   vileexistence:['nvx_','mbv'], doomsdaycarriermk2:['nsb_dcarrmk','s6mb_'], doomsdaycarrier:['nsb_dcarrier'], siegeember:['nsb_siege'],
   thornrime:['nsb_thorn'], lavamaw:['nvl_'], spawncarrier:['nsb_spawncarrier'], glacierfortress:['mbg3f'], voidbat:['nsb_void']};

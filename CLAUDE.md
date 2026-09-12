@@ -3557,4 +3557,43 @@ only decides when they stop (`!b._committed` now gates the homing block too).
 
 Sound: `retinaCharge` once at acquire (TAME min 0.80), `retinaLockBeep` = `nsp_console_beep.mp3`
 (TAME min 0.045). `probe_retina_lock_0912q.py` 26/26 — every clause driven in real Chromium, including
-a real player round shooting the missile down. Suite §285.
+a real player round shooting the missile down. Suite §285.
+
+## 0912r/s — the Razorback is stage 1's miniboss; the Jungle Cruiser goes to stage 3 in ice; ALTBOSS3
+
+Mike: *"the tank ... should replace the stage 1 miniboss entirely. Take THAT stage 1 miniboss, palette
+swap to an icey combination, and use as the new stage 3 mini boss. store that stage 3 miniboss were
+replacing for later as ALTBOSS3."*
+
+**The RAZORBACK** is his approved standalone pack ported as a sub-boss rig (`razorbackInit/Update/Draw/
+Hit/PartAt`, `b._rzb`), hooked like the Chaos Harrier: its own arrival, drive and weapons, per-part hit
+geometry through `subBossHitPart`, damage routed into part pools through `hitSubBoss`. Guns -> turret ->
+hull; Suppression, Sonic Hammer (rounds + a pressure wave, Cole's `coleSonicBoom`), Razor Rack, Resonance
+Nova, Armored Rush. Art: 25 loose plates `rzb_*` from the forest swap (hue 87 -> 118, measured on the
+file AND on the live canvas; the eye called it neon and was wrong).
+⚠ **THE RAZOR RACK IS THE RETINA LOCK'S FIRST NATIVE USER** — ten launches queued on ONE retina, 0.22s
+apart from alternating pods down a narrowing fan. Never three at once (Mike). Measured: max 1 missile
+per frame, 10 distinct headings, 10/10 lock-bound.
+⚠ **THE ENGINE RAISES A MINIBOSS TO ITS STAGE HP FLOOR AFTER SPAWN** — 890 in the part pools against a
+938 maxhp, so the hull emptied with 48 hp on the bar and the tank could not die. `R.hpSync` re-proportions
+the pools to whatever maxhp the engine settles on. Any future part-pool unit needs the same.
+⚠ **THE PACK'S SHADOW WAS A TRANSLUCENT RECTANGLE** — on this engine's terrain that is exactly the
+"hitbox square" Mike has reported before. It is the hull silhouette flooded black now.
+⚠ **`debugFightList` REJECTS A NAME EQUAL TO ITS KIND IN CAPITALS**, so "RAZORBACK" failed the
+authored-name check by construction. The debug table carries "RAZORBACK SIEGE TANK".
+
+**The FROST CRUISER** is `frostcruiser`: the Jungle Cruiser's whole authored encounter on
+`nsb_frost_cruiser.png`. ⚠ **THE CRUISER IS OLIVE DRAB, NOT GREEN** — 195 green pixels of 18,360;
+the hull sits at hue 55-75 with rust trim at 18-30, so one rotation would have turned the trim teal.
+`_BUILD_SOURCE/ice_swap_0912s.py` rotates TWO bands with gentle gains (palette 60 -> 59, alpha delta 0).
+Every `b._ship==='junglecruiser'` branch (11 sites) now asks `jcShip(b)`, so the two cannot drift.
+⚠ Ice on the ice field is lower contrast than jungle on jungle — his call, flagged, not changed.
+
+**ALTBOSS3**: `const ALTBOSS={3:{kind:'rimewall',...}}`. Stored, NOT retired: its row, art and encounter
+survive and it still spawns by kind; `DEAD_SUBBOSS` does not name it. (Its display name is CRYO SPEAR —
+the kinds and names are crossed on these rows, as 0912j already recorded.)
+
+⚠ **A LOCK MUST NOT CALL `Math.random()`** — the sand-tank ordering fixture reads the unseeded wave plan,
+and every random draw shifts it. The retina's spin is derived from the lock id.
+
+Probes: `probe_razorback_0912r.py` 19/19, `probe_frostcruiser_0912s.py` 6/6. Suite §286.
