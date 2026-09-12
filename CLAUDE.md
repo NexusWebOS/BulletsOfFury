@@ -3637,3 +3637,22 @@ of the Furnace hook returned before `sceneDirectorTick`, so an authored scene mo
 caught only because the scene fixtures happen to use the stage-2 boss. The director now runs first, the
 rig between tracks, and `sceneClampTick` still fences it. Any future rig hook needs the same order.
 Probe: `probe_furnace_0912t.py` 25/25. Suite §287.
+
+## 0912u — the Tempest Leviathan is STAGED for Stage 6's miniboss (not wired)
+
+Mike: *"snag the new tempest levithan, palette swap the red to black/dark gray. this is our new mini-boss
+and fighting style for level 6's miniboss. upload this to the github as a seperate zip and file set with a
+passover so my main pc can understadn waht to do"*
+
+**Nothing in `assets/game.js` changed.** The playable encounter, black plates, proof and zip live in
+`_STAGING/tempest_leviathan_0912u/` (+ `.zip`); the wiring plan is `docs/PASSOVER_TEMPEST_LEVIATHAN_0912U.md`.
+Stage 6's miniboss is still `blacksteel` until someone follows that plan.
+
+⚠ **A CHROMA-REMOVING SWAP CANNOT PASS THE 20%-PALETTE GUARD, AND THAT IS MEASURED, NOT ASSUMED.** Red to
+dark gray lost 34-37% of RGB colours at every one of five settings (sat x0.10-0.22, value x0.52-0.66, with
+and without a hue rotation). A ratio that does not move with the parameters is intrinsic, not a shredder.
+`tempest_blackswap_0912u.py` guards on distinct VALUE levels in the painted band instead (182/255, 200/255),
+alpha and leftover red — and the proof was read at full size on the live Stage 6 field first.
+⚠ **`*.zip` IS GITIGNORED**; `!_STAGING/*.zip` is the one exception, for hand-off drops.
+⚠ **`leviathan` IS ALREADY A `spawnBoss` KIND** (LEVIATHAN CORE) and five other units carry LEVIATHAN names —
+the passover names the new kind `tempestleviathan`.

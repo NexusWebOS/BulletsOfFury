@@ -1,0 +1,6 @@
+{
+  "tool": "built-in image_gen",
+  "ship": "New compact black titanium alien interceptor, red swept wings and violet reactor, nose up in strict orthographic top view. Two integral long armored laser nacelles, each with cyan firing apertures facing straight forward and backward. No separate turrets or attached miniature ships. Intact and damaged versions in equal side-by-side cells; no baked projectiles, shadows, text or labels; true transparent background and clear margins. Pixel arcade detail readable at 108px.",
+  "projectiles": "Transparent 2x2 atlas: straight vertical white-core cyan/violet laser segment, up-facing pointed cyan plasma bolt, circular cyan charge corona, up-facing violet/cyan metallic needle missile. Separate isolated effects with transparent glow and no labels or diagonal trajectories.",
+  "normalization": "Ship cells cropped around shared frame bounds, rendered at 108x118 with fixed orientation; effects extracted individually; laser center strip stretched along the beam; shadows derive from each ship alpha silhouette at runtime."
+}
