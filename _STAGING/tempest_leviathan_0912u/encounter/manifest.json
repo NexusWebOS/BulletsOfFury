@@ -331,14 +331,27 @@
   "currentArt": "interceptor / interceptor-damaged; integrated dual-ended cannons",
   "palette": "0912u: red paint swapped to black/dark gray by _BUILD_SOURCE/tempest_blackswap_0912u.py; red originals in sources/red_originals/",
   "plannedSlots": {
-    "interceptor (black)": "Stage 6 miniboss, replacing blacksteel (BLACKSTEEL RAPTOR)",
-    "brother (light gray)": "Stage 8 miniboss, replacing heralddeath (HERALD OF DEATH)"
+    "interceptor (black) + brother (light gray)": "TOGETHER as Stage 6 miniboss, replacing blacksteel (BLACKSTEEL RAPTOR); not used on Stage 8 (Mike, 0913)"
   },
   "brother": {
     "page": "brother.html",
     "engine": "engine-brother.js (class Brother extends Jet; engine.js unchanged)",
     "test": "brother-test.cjs",
     "art": "brother / brother-damaged: light gray from sources/red_originals by _BUILD_SOURCE/tempest_grayswap_0912v.py",
-    "flight": "diagonal, horizontal and vertical runs; crosses and exits every edge; returns after an entry warning; mid-run V-turn feints; invulnerable off-screen; never rotates"
+    "flight": "diagonal, horizontal and vertical runs; crosses and exits every edge; returns after an entry warning; mid-run V-turn feints; invulnerable off-screen; never rotates",
+    "plannedSlot": "Stage 6 only, fighting alongside the black ship"
+  },
+  "duo": {
+    "page": "duo.html",
+    "engine": "engine-duo.js (Duo owns the shared player, fire, collisions and ending; DuoBlack/DuoBrother add the tag-team rules; engine.js and engine-brother.js unchanged)",
+    "test": "duo-test.cjs",
+    "rules": [
+      "black never starts a ram while the brother is warning in or crossing",
+      "brother waits off-screen while the black ship lines up, rams or changes phase",
+      "pincer: brother crosses under the black ship laser lanes",
+      "vengeance: survivor fights on alone, gray 15% faster",
+      "one escape after both are down",
+      "the duo never moves the player"
+    ]
   }
 }

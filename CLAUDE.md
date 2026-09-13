@@ -3677,3 +3677,24 @@ The brother lives beside the black ship in `_STAGING/tempest_leviathan_0912u/enc
 that outline ring (paint there is now desaturated with its value kept).
 ⚠ **A HITTABLE FLAG SET BEFORE A MOVE IS WRONG FOR ONE FRAME PER EXIT** — measured 62 times per showcase run
 by the brother's test; it is decided after the move now. Same trap anywhere a unit leaves the screen.
+
+## 0913 — the Herald of Death is STORED (ALTBOSS[8]); the Tempest brothers fight together on Stage 6 only
+
+Mike: *"store the hod. and yes they fight together. they are meant to fight together on stage 6 only. not used
+on stage 8 at all.."*
+
+**Game change:** `SUBBOSS[8]` is empty and `ALTBOSS[8]={kind:'heralddeath',…}` stores the Herald exactly like
+`ALTBOSS[3]` — row, art, reels kept, still spawnable, NOT in `DEAD_SUBBOSS`. **Stage 8 has no miniboss** until Mike
+picks one. ⚠ **An empty `SUBBOSS[n]` is safe, and that was checked before emptying it:** the trigger is guarded
+(`if(SB && …)`), `debugJump`/`warmStage`/`debugFightList` all guard, and the boss gate is the stage clock
+(`stageTimer>=curStage.length`), not `subBossDone` — the suite's 140-second stage-8 soak still reaches VILE EXISTENCE.
+⚠ **FIVE suite assertions pinned the old slot, found in two passes** — §43's `SUBBOSS[8].kind` read (null-safe now),
+§220's named-miniboss loop, §238's row pin, the debug menu's 18-fight count (17), and §218's "all eight stages name a
+miniboss", which the first grep missed because its wording differs. Grep for the table INDEX (`SUBBOSS[8]`,
+`i<=8`), not for a phrase, when a roster slot changes.
+
+**Staged (not wired):** `duo.html` / `engine-duo.js` / `duo-test.cjs` — both brothers in one Stage-6 fight with
+tag-team rules (no ram during a crossing; the gray waits off-screen while the black rams; pincer; survivor fights on;
+one escape; the player is never moved). Passover §8 is the wiring plan.
+⚠ **Two duo rules failed their first cut:** a hold checked BEFORE a regroup that exits and plans in the same call
+never fires (0 held frames), and a run still inbound from off-screen must count as a crossing (310 conflict frames).

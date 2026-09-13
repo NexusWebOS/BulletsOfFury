@@ -1,7 +1,11 @@
-# PASSOVER 0912u/v — The Tempest Leviathan brothers: BLACK for Stage 6, LIGHT GRAY for Stage 8 (STAGED, NOT WIRED)
+# PASSOVER 0912u/v/w — The Tempest Leviathan brothers: BOTH on Stage 6, fighting together (STAGED, NOT WIRED)
 
-> **0912v addition:** the light-gray brother (a different flight style) and the Stage 8 plan are in **§7**.
-> Everything in §1–§6 is about the black ship and still applies to it.
+> **0913 — Mike's decisions, read these first:**
+> - *"yes they fight together. they are meant to fight together on stage 6 only. not used on stage 8 at all."*
+>   → the black ship and its light-gray brother are **ONE Stage 6 miniboss encounter**. Wire it per **§8**.
+> - *"store the hod."* → the HERALD OF DEATH is **stored in the game as `ALTBOSS[8]`** (done, see §1). **Stage 8 now
+>   has NO miniboss** until Mike picks one.
+> - §1–§6 describe the black ship and still apply to it. §7 describes the gray ship on its own — **its Stage 8 plan is VOID**.
 
 Mike, 2026-09-12: *"now snag the new tempest levithan, palette swap the red to black/dark gray. this is our
 new mini-boss and fighting style for level 6's miniboss. upload this to the github as a seperate zip and
@@ -9,12 +13,16 @@ file set with a passover so my main pc can understadn waht to do"*
 
 ## 1. What state this is in — read first
 
-- **The game is unchanged.** `assets/game.js` does not know this unit exists. Stage 6's miniboss is still
+- **The Leviathans are not in the game yet.** `assets/game.js` does not know either ship exists. Stage 6's miniboss is still
   `SUBBOSS[6] = blacksteel` (BLACKSTEEL RAPTOR, `stage6MiniInit/Tick/DrawOver`). Stage 6's boss is still
   `doomsdaycarriermk2`. ⚠ The comment on the `SUBBOSS[6]` row ("STORM SOVEREIGN … Leviathan keeps the boss
   slot") is stale — read the row, not the comment.
-- **Stage 8 is unchanged too:** `SUBBOSS[8] = heralddeath` (HERALD OF DEATH — the "giant reaper" Mike asked to
-  remove) still spawns, so the stage is never left without a miniboss before the brother is wired (§7).
+- **The ONE game change in this drop — Stage 8's miniboss is stored (0913).** `SUBBOSS[8]` is now empty and the HERALD
+  OF DEATH (`heralddeath`, the "giant reaper") is `ALTBOSS[8]` — exactly like `ALTBOSS[3]`: its SHIPBOSS row, art,
+  custom reels and death reel are kept, it still spawns by kind, and it is NOT in `DEAD_SUBBOSS`. Stage 8 still
+  reaches its boss (VILE EXISTENCE): the boss gate is the stage clock (`stageTimer>=curStage.length`), not
+  `subBossDone`, and the suite's 140-second Stage 8 soak asserts the boss arrives. The debug menu now lists 17
+  fights. Putting the Herald back is one line: copy `ALTBOSS[8]` into `SUBBOSS[8]`.
 - **What IS done:** the encounter is copied into the repo as a playable file set, the red paint is
   palette-swapped to black/dark gray and verified, and this document says how to wire it in.
 - Repo HEAD this was staged on top of: `694e84ae` (Furnace Tyrant). Suite baseline there:
@@ -35,6 +43,9 @@ file set with a passover so my main pc can understadn waht to do"*
 | `…/encounter/assets/brother.png`, `brother-damaged.png` | the light-gray plates (from `sources/red_originals`) |
 | `_STAGING/tempest_leviathan_0912u/grayswap_proof.png` | red / black / light gray, and both ships on the live Stage 8 field |
 | `_BUILD_SOURCE/tempest_grayswap_0912v.py` | the light-gray swap tool |
+| `…/encounter/duo.html` | **BOTH brothers in one fight — the Stage 6 miniboss as Mike wants it** (`http://127.0.0.1:8783/duo.html`) |
+| `…/encounter/engine-duo.js` | `Duo` (shared player, fire, collisions, ending) + `DuoBlack` / `DuoBrother` (the tag-team rules); the two ship engines are unchanged |
+| `…/encounter/duo-test.cjs` | the duo's regression test (`node duo-test.cjs`) |
 | `docs/PASSOVER_TEMPEST_LEVIATHAN_0912U.md` | this file (a copy is inside the zip) |
 
 Play it standalone:
@@ -151,11 +162,11 @@ Its code sits beside `jungleCruiserInit` in `assets/game.js` and its CLAUDE.md s
 - The two pack beats in step 8 (player-moving overtake; escape cinematic).
 - Whether the needle missile's small red fins should also go black (ordnance rule keeps them red).
 - Whether the Blacksteel Raptor becomes `ALTBOSS[6]`.
-- Brother: whether the two brothers should ever appear together (they are planned for different stages).
-- Brother: whether the Herald of Death is kept unassigned (recommended — its art and encounter stay on disk,
-  like the quad-laser) or deleted outright. Mike said "remove"; nothing has been deleted yet.
+- ~~Brother: whether the two brothers should ever appear together~~ — **answered 0913: together, Stage 6 only.**
+- ~~Brother: whether the Herald of Death is kept or deleted~~ — **answered 0913: stored (`ALTBOSS[8]`, done).**
+- **NEW: Stage 8 has no miniboss now.** Leave it empty, or pick a replacement.
 
-## 7. The light-gray brother — Stage 8's miniboss (0912v, STAGED, NOT WIRED)
+## 7. The light-gray brother on its own (0912v) — ⚠ its Stage 8 plan is VOID since 0913; see §8
 
 Mike, 2026-09-12: *"remove the giant reaper mini boss, and add another levithan ship in there, but palette swap
 that one ot be more light gray then black. this will be its brother ship that does diagonal motions and
@@ -203,7 +214,7 @@ off every edge (x −170..1070, y −180..1180); 62–65 returns, **every one wa
 off-screen; 0 rotation; all positions finite; apertures still silence. The same run asserts the black ship
 still has **0** diagonal frames.
 
-### 7.4 Wiring it in as Stage 8's miniboss — what differs from §5
+### 7.4 ⚠ VOID (0913): the brother is not used on Stage 8. Kept only for its engine-level notes, which §8 reuses
 Follow §5 for everything shared (Razorback pattern, art registration, hooks, HP floor sync, retina lock for the
 needle missiles, sound keys). The differences:
 1. **Kind id `tempestbrother`** (display `TEMPEST LEVIATHAN II` or Mike's choice; the debug name must not equal
@@ -222,3 +233,62 @@ needle missiles, sound keys). The differences:
 8. Verify with a `probe_tempestbrother_*.py` (BOSSMODE `start(8,'mini',…)`): diagonal + axis-only frames, exits
    off camera edges, warned returns, 0 off-camera hits, key-identified draws of `tlvb_*` plates, screenshots
    over the Stage 8 field; then the full suite with a failure-name diff.
+
+## 8. The brothers together — Stage 6's miniboss (0912w, STAGED, NOT WIRED)
+
+Mike, 2026-09-13: *"store the hod. and yes they fight together. they are meant to fight together on stage 6
+only. not used on stage 8 at all.."*
+
+### 8.1 What the duo is
+`duo.html` / `engine-duo.js`. Both ships fly the SAME fight on one screen against one player:
+- **BLACK** (engine.js `Jet`, unchanged) holds the arena: one-axis strafes, twin laser lanes, side rams.
+- **GRAY** (engine-brother.js `Brother`, unchanged) crosses from anywhere: diagonal / horizontal / vertical runs off
+  every edge and back, feints, zigzag missiles, counterattack hovers.
+- Each keeps its **own 8,000 HP, its own four 300-HP apertures and its own four phase gates**. `Duo` owns the player,
+  the player's fire, every collision and the ending. The HUD bar shows the pair's average integrity.
+
+### 8.2 The tag-team rules (they are what keep two dangerous ships readable — port them, do not drop them)
+1. **The black ship never STARTS a side ram while its brother is warning in or crossing** — including a run still
+   flying in from off-screen (`DuoBlack.change` defers `ram-warn` and keeps lining up on the row).
+2. **The brother waits OFF-SCREEN, unwarned and unhittable, while the black ship lines up, rams or changes phase**
+   (`DuoBrother.fly` replaces its regroup with a hold).
+3. **PINCER** — while the black ship burns its twin rear laser lanes from the top, the brother's next run is a side
+   pass UNDERNEATH it, between the black ship and the player.
+4. **VENGEANCE** — when one brother goes down its falling reactor plays, it leaves the fight, and the survivor fights
+   on alone: no more waiting, and the gray one flies 15% faster.
+5. **One escape**, after BOTH are down.
+6. **The duo never moves the player** — the black ship's overtake/return still move the black SHIP, but not the player.
+
+⚠ Two of these rules failed on their first cut and the fixes are recorded in `engine-duo.js`: the hold ran BEFORE the
+regroup (which leaves the screen and plans in the same call, so it never caught the brother waiting — 0 held frames),
+and a run still inbound from off-screen did not count as a crossing (310 frames of ram-during-crossing on one seed).
+
+### 8.3 Measured
+`node duo-test.cjs`, three seeded full showcase runs — every one ends in **victory** (141–151 s):
+- both ships on screen together ~8,200–8,400 frames; **0** frames of the black ship ramming during a crossing;
+- brother held off-screen 528–811 frames; black ram deferrals 509–735; pincers 10–11;
+- the black ship keeps **0** diagonal steps inside the duo; the gray keeps its diagonal, horizontal and vertical runs
+  and 67–73 screen exits; **0** player jumps (nothing but input moves the player);
+- one brother falls first (the black, ~120 s, in all three) and the survivor fights on alone; one escape after both;
+- no rotation, all positions finite. `node brother-test.cjs` and `node interceptor-test.cjs` still pass.
+Chromium: `duo.html` builds `Duo` with `DuoBlack` + `DuoBrother`, loads both plate sets, shows both ships on screen
+and the entry marker, **0 console errors**; `index.html` and `brother.html` still load their single ship.
+
+### 8.4 Wiring it in as Stage 6's miniboss
+Everything in §5 (Razorback pattern, art registration, hooks, HP-floor sync, retina lock for the needle missiles,
+sound keys) and the engine notes in §7.4 (diagonal flight is correct for the gray ship, camera-edge exits,
+screen-space entry marker, off-camera unhittable, the 77px gauge band) still applies. On top of that:
+1. **One kind for the pair: `tempestbrothers`** in `SUBBOSS[6]`, replacing `blacksteel`. `subBoss` is a single global,
+   so the sub-boss owns BOTH ship states (the `Duo` shape): `b._tlv={black:{…}, gray:{…}}`.
+2. **Hit routing per ship and aperture** — `subBossHitPart` returns part keys like `B0..B3` / `Bhull` / `G0..G3` / `Ghull`
+   (null for an off-camera gray ship); `hitSubBoss` routes damage into that ship's pools.
+3. **The HP bar is the PAIR** (sum of both pools, re-proportioned to the engine's HP floor). The sub-boss dies only when
+   BOTH ships are down; the first ship's fall is an explosion and a removal, not the sub-boss death branch.
+4. **Port the tag-team rules as written** — they depend on the black ship's state names (`edge`, `row`, `ram-warn`,
+   `ram`, `punish-rise`, `laser-track`), so keep those names if the state machine is ported.
+5. This is **two ships, not a boss splitting** — NO BOSS SPLITS does not apply (and it is a miniboss).
+6. The Blacksteel Raptor: store as `ALTBOSS[6]` like `ALTBOSS[3]`/`ALTBOSS[8]` if Mike agrees (still open), and repoint
+   the suite assertions that pin `SUBBOSS[6]` / "stage 6 is the BLACKSTEEL".
+7. Verify with a `probe_tempestbrothers_*.py` (`BOSSMODE.start(6,'mini',…)`) porting duo-test's assertions — both on
+   screen, 0 ram-during-crossing, holds, pincers, survivor alone, one death — with key-identified draws of both plate
+   sets and screenshots over the purple Stage 6 field; then the full suite with a failure-name diff.

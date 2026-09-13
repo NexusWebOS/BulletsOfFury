@@ -8932,7 +8932,13 @@ let aminiTriggered=false;   // the arsenal mini has been sent this stage
    for later as ALTBOSS3. We'll use him later." The Rime Thorn keeps its SHIPBOSS row, its art and its
    whole encounter, and still spawns by kind - it is deliberately NOT in DEAD_SUBBOSS. Putting him back is
    swapping one kind into SUBBOSS[3]. */
-const ALTBOSS={3:{kind:'rimewall', at:0.45, afterScroll:1001, name:'ALTBOSS3'}};
+/* ALTBOSS[8] (Mike, 0913): "store the hod." The HERALD OF DEATH - the "giant reaper" he asked to remove -
+   is stored exactly like ALTBOSS[3]: SHIPBOSS row, art, custom reels and death reel all kept, still
+   spawnable by kind, NOT in DEAD_SUBBOSS. Stage 8 now fields NO miniboss: the Tempest Leviathan brothers
+   that were considered for the slot "are meant to fight together on stage 6 only. not used on stage 8 at
+   all." The stage still reaches its boss - the boss gate is the stage clock, not subBossDone. */
+const ALTBOSS={3:{kind:'rimewall', at:0.45, afterScroll:1001, name:'ALTBOSS3'},
+               8:{kind:'heralddeath', at:0.45, afterScroll:1201, name:'ALTBOSS8'}};
 const SUBBOSS={
   /* QUAD-LASER replaces the SIEGE CRAWLER (drop 0801em). Mike: "I have a
      replacement miniboss for level 1" and "theres still an invisible boss
@@ -9026,7 +9032,7 @@ const SUBBOSS={
      spawning all eight minis and reading the pixels. The lock pack ships the slot's authored unit
      (Enemies/Stage08/spawn_carrier_miniboss); the old herald code stays, unassigned, like the
      magma/cryo rigs. */
-  8:{at:0.45, kind:'heralddeath', afterScroll:1201},
+  // 8: none - the HERALD OF DEATH is stored as ALTBOSS[8] (Mike, 0913); stage 8 fields no miniboss
   /* The violet/ion pair are the Stage-9 SUB-BOSSES.  The black-and-blue Warp Sentinel hull is
      reserved for the true final encounter, where two of them must be disabled before they fuse
      into the Tidal Sovereign. */
