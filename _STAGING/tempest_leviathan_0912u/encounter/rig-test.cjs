@@ -1,0 +1,1 @@
+require('./interceptor-test.cjs');

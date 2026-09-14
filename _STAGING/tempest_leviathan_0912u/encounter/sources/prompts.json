@@ -1,0 +1,7 @@
+{
+  "tool": "Built-in image_gen",
+  "jet": "Production 2x2 transparent sprite sheet: massive top-down alien jet inspired by Yuri angular crimson/black armor and Maverick organic cyan technology; intact and damaged hulls; separate twin turret; separate homing razor missile. Nose up, four empty turret rail sockets, violet reactor, clean contained silhouettes, no labels.",
+  "sky": "Seamless repeating top-down high-altitude pale blue sky with wispy cloud streaks and subtle banks, no horizon, sun, ground, objects or text. Quiet center, detailed retro arcade background, equal edges, square image.",
+  "weather": "Transparent 3x2 effects atlas: white overhead cloud, dark storm cloud, branching blue lightning, blue rain streaks, billowing gray smoke, orange fire with embers. Isolated cells, soft alpha edges, arcade painted style, no labels.",
+  "normalization": "Jet/effects cropped into independent RGBA cells. Sky mirrored into exact periodic tile and palette variants; render layers scroll independently."
+}

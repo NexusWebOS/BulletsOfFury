@@ -9,3 +9,5 @@ Latest gameplay verification: syntax passed; 15 native Chromium checks passed, n
 GitHub's three incoming Tempest commits through f936f106 were inspected before integration. They preserve the staged source encounter and Herald's stored ALTBOSS[8] slot. The local game includes the Stage-6 duo. The incoming Stage-8 empty-miniboss decision is retained during integration.
 
 Publication scope includes the game's runtime assets, source/build tools, art sources, project notes and verification records. Unrelated nested projects, personal tool settings and ignored scratch captures remain local. Original music recordings on the Desktop are preserved.
+
+After integration: syntax passed, 15/15 native checks passed, zero browser errors. Full suite completed with 3,850 passing assertions and 58 inherited failures (exit 1), no new failing names. See [integration proof](qa/github_build_0914.json).

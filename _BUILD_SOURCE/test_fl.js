@@ -2243,7 +2243,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
              that the declared unit actually turns up — which is what the stage-7 row next to it
              already argues for: "a runtime observation, not a name pin". A future recast changes
              the table and this follows it. */
-          if(vm.runInContext("subBoss.kind===SUBBOSS[8].kind || !!subBoss._herald", ctxv)) _herald8=true;
+          if(vm.runInContext("(!!SUBBOSS[8] && subBoss.kind===SUBBOSS[8].kind) || !!subBoss._herald", ctxv)) _herald8=true;
           if(!_sbKind) _sbKind=vm.runInContext("String(subBoss.name||subBoss.kind||'?')", ctxv);
         }
         if(vm.runInContext("!!(boss&&boss._vile)", ctxv)){ _boss8=true; _forms[vm.runInContext("boss._vForm",ctxv)]=1; }
@@ -2256,7 +2256,11 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _fleet8=Object.keys(vm.runInContext("S8MEGA",ctxv)),_sv8=_fleet8.filter(function(k){return _seen8[k];});
   ok(_sv8.length===12, 'all 12 native mega enemies appeared in the finale ('+_sv8.length+'/12)');
   ok(_rolls>=0, 'the smart-roll sampler remained valid during the full run ('+_rolls+' sampled roll frames)');
-  ok(_herald8, "stage 8's declared sub-boss triggered mid-stage"+(_herald8?' ('+_sbKind+')':(' [sub-boss seen: '+_sbAny+', kind: '+_sbKind+']')));
+  /* 0913: stage 8 fields NO miniboss - Mike: "store the hod" (the Herald of Death is ALTBOSS[8]) and the
+     Tempest Leviathan brothers are "not used on stage 8 at all". What this protects now is the other half:
+     with no miniboss the stage must still run clean and still reach its boss (the next assertion). */
+  ok(!_sbAny && vm.runInContext("typeof SUBBOSS[8]==='undefined'", ctxv),
+     "stage 8 fields no miniboss by Mike's call - nothing spawned in the slot"+(_sbAny?(' [but saw: '+_sbKind+']'):''));
   ok(_boss8, 'VILE EXISTENCE reached the boss slot');
   ok(vm.runInContext("enemies.every(function(e){return isFinite(e.x)&&isFinite(e.y);})", ctxv), 'no non-finite enemies after the stage-8 soak');
   ok(vm.runInContext("eBullets.every(function(b){return isFinite(b.x)&&isFinite(b.y);})", ctxv), 'no NaN bullets in the finale');
@@ -11151,7 +11155,10 @@ console.log("=== 218. miniboss art warming ===");
     +"return JSON.stringify(o);})()", ctxv));
   var _nokind=[];
   for(var _s=1;_s<=8;_s++) if(!_f218[_s]) _nokind.push(_s);
-  ok(_nokind.length===0, 'all eight stages name a miniboss'+(_nokind.length?(' — missing: '+_nokind.join(', ')):''));
+  /* 0913: stage 8 fields no miniboss by Mike's call ("store the hod" - the Herald of Death is ALTBOSS[8] - and
+     the Tempest Leviathan brothers are "not used on stage 8 at all"). The warm path is guarded on SUBBOSS[n],
+     so an empty slot warms nothing; what matters is that no OTHER stage lost its miniboss by accident. */
+  ok(_nokind.join()==='8', 'every stage 1-7 names a miniboss to warm, and stage 8 is empty by design'+(_nokind.join()!=='8'?(' — missing: '+_nokind.join(', ')):''));
 }
 
 // ===== 219. THE nca_87 PACK ON THE MG AND THE SPREAD (drop 0812d) =====
@@ -11231,13 +11238,16 @@ console.log("=== 220. named minibosses ===");
     +" try{ spawnSubBoss__inner(k); }catch(e){}"
     +" o[i]={kind:k, name:subBoss?subBoss.name:null, ship:subBoss?(subBoss._ship||null):null}; }"
     +"return JSON.stringify(o);})()", ctxv));
-  var _generic=[];
+  var _generic=[], _empty220=[];
   for(var _s2=1;_s2<=8;_s2++){
     var _e=_f220[_s2];
+    if(!_e.kind){ _empty220.push(_s2); continue; }          // a stage may field none by design (stage 8, 0913)
     if(!_e.name || _e.name==='SUB-BOSS') _generic.push(_s2+':'+_e.kind);
   }
   ok(_generic.length===0,
-     'every stage 1-8 fields a NAMED miniboss'+(_generic.length?(' — generic: '+_generic.join(', ')):''));
+     'every stage 1-8 that fields a miniboss fields a NAMED one'+(_generic.length?(' — generic: '+_generic.join(', ')):''));
+  ok(_empty220.join()==='8',
+     'and stage 8 is the only one without a miniboss - the Herald of Death is stored as ALTBOSS[8] (Mike, 0913) ['+_empty220.join()+']');
   ok(_f220[1].kind==='razorback' && _f220[1].name==='RAZORBACK', "stage 1 is the RAZORBACK (Mike's word, 0912)");
   /* ⚠ REPOINTED 0913b. This pinned the Blacksteel, which Mike moved here from stage 4 in 0813h; in 0912 he replaced it:
      "this is our new mini-boss and fighting style for level 6's miniboss". It is ALTBOSS[6] now (section 290). */
@@ -12021,8 +12031,8 @@ console.log("=== 238. exact pilot kit rules ===");
      "Stage 2 doubles only Freezer's ICE BREATH, not an orb or thermoshock");
   ok(_m238.f3thermo===2 && _m238.f3fire===1 && _m238.f3breath===1 && _m238.f4thermo===1,
      "Stage 3 doubles only Freezer's FIRE-ICE ball, and the bonus does not leak to Stage 4");
-  ok(vm.runInContext("SUBBOSS[8].kind==='heralddeath' && SHIPBOSS.heralddeath.name==='HERALD OF DEATH' && SHIPBOSS.heralddeath.key==='nhd_idle_0'",ctxv),
-     'Stage 8 fields the newly generated Hellwing HERALD OF DEATH, not the old Spawn Carrier');
+  ok(vm.runInContext("typeof SUBBOSS[8]==='undefined' && !!ALTBOSS[8] && ALTBOSS[8].kind==='heralddeath' && SHIPBOSS.heralddeath.name==='HERALD OF DEATH' && SHIPBOSS.heralddeath.key==='nhd_idle_0' && !(typeof DEAD_SUBBOSS!=='undefined' && DEAD_SUBBOSS.heralddeath)",ctxv),
+     'the Hellwing HERALD OF DEATH is STORED as ALTBOSS[8] - row, art and spawnable kind kept, not retired (Mike, 0913: "store the hod")');
 }
 
 // ===== 239. REAL WEAPON IDENTITY + SINGLE AUTHORED 125% DEATH =====
@@ -13915,7 +13925,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   vm.runInContext("Input.down=_dbgDownRestore", ctxv);
   /* the fight list is the stage tables, not a hand list */
   var _fl=JSON.parse(vm.runInContext("JSON.stringify(debugFightList())", ctxv));
-  ok(_fl.length===18, 'eighteen fights: a mini and a boss for each of the nine stages ('+_fl.length+')');
+  ok(_fl.length===17, 'seventeen fights: a boss for each of the nine stages, a mini for the eight that field one - stage 8 has none since 0913 ('+_fl.length+')');
   ok(_fl.every(function(f){ return f.name && f.name!==f.kind.toUpperCase(); }), 'every fight carries an authored name, not its kind id');
   ok(vm.runInContext("debugFightFor(2,'boss').kind===STAGES[1].boss && debugFightFor(2,'mini').kind===SUBBOSS[2].kind", ctxv), 'stage 2 resolves to STAGES[].boss and SUBBOSS[].kind');
   /* routing: every stage exit lands on the fade while a fight is live, the fly-off passes through */

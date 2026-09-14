@@ -1,6 +1,8 @@
 # scratch and generated
 _superseded/
 *.zip
+# staged hand-off drops for Mike's other PC are the one place a zip belongs in the repo (0912u)
+!_STAGING/*.zip
 node_modules/
 __pycache__/
 .DS_Store

@@ -398,3 +398,8 @@ Mike supplied minderaser (Boss 1), Hazardous-Death (Boss 2), and Lie Down or Sta
 ## 0914 - Frost Cruiser nose laser correction
 
 Mike clarified the wing pods are missile turrets and the nose must shoot Falva-style black/blue lasers. Read docs/FROST_NOSE_LASER_0914.md and docs/qa/frost_nose_laser_0914.json. Nose now launches fixed-frame fllaser_0 bolts at 24x112 and 0.34s cadence, with cached black/blue palette, four-step pixel lighting, laser muzzle/audio, nose-tail launch anchoring, committed aim and oriented shaft collision. Wing missiles and shared Jungle Cruiser nose remain unchanged. Full-tail culling and lazy-ready release guard verified. Native15/15, zero browser errors; nine-second silent native preview under _shots/frost_nose_laser_0914. Syntax passed; full suite 3852/58, exit1, no new names. No source-art/atlas/test-harness/music changes or commit/push. Checklist S3-14 added complete: 139 entries, 62 complete / 10 partial / 67 pending (77 unfinished). The charged sweeping beam and new difficulty attacks remain pending; next queue item UI-09.
+
+
+## 0914 - GitHub integration and publication
+
+Mike authorized committing and pushing the complete current build. Local build commit 45174735 collects game changes, art, new boss music storage and verification notes. Integrated origin/main through f936f106, preserving the Stage-6 duo and both stored ALTBOSS6/ALTBOSS8 encounters; Stage 8 now has no miniboss as requested in the incoming commit. Both sets of development notes are retained. Post-merge syntax passed, native15/15 with no browser errors; suite 3850/58, exit1, no new names. Read docs/GITHUB_BUILD_0914.md and docs/qa/github_build_0914.json. Unrelated nested projects and ignored scratch remain local.
