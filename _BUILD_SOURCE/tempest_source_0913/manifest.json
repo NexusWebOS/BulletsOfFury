@@ -1,0 +1,357 @@
+{
+  "name": "Tempest Leviathan",
+  "assets": {
+    "cloud.png": {
+      "file": "assets/cloud.png",
+      "bytes": 444252,
+      "sha256": "7276c671fdc2b776200c27b9cc2c4f770aae7c403121ef7c668500d5bbbf5371",
+      "width": 512,
+      "height": 512
+    },
+    "enemy_machine_shot_heavy.wav": {
+      "file": "assets/enemy_machine_shot_heavy.wav",
+      "bytes": 15920,
+      "sha256": "438a3008efce10724e2b76d9e757fd6b6d394c9c12bf049c2d7410b137adced2"
+    },
+    "explosion-0.png": {
+      "file": "assets/explosion-0.png",
+      "bytes": 3890,
+      "sha256": "c12c40d1c02a518477db75017f36d8da3540431176ae50d0e2af876d27b81074",
+      "width": 256,
+      "height": 256
+    },
+    "explosion-1.png": {
+      "file": "assets/explosion-1.png",
+      "bytes": 35861,
+      "sha256": "d87336e1d32c8333b521edd01ac50f6254c0590bf7fdd220367e5d56a2e68cf7",
+      "width": 256,
+      "height": 256
+    },
+    "explosion-2.png": {
+      "file": "assets/explosion-2.png",
+      "bytes": 47948,
+      "sha256": "112b7f39863c0a4af4ffe347ce26eff559fe203cf165c3ea19d93a6407caabda",
+      "width": 256,
+      "height": 256
+    },
+    "explosion-3.png": {
+      "file": "assets/explosion-3.png",
+      "bytes": 53488,
+      "sha256": "fc8d43f8b3a1b83ee77cb1e4d9f42e40b203c979dc61693a6e700f5bf5168162",
+      "width": 256,
+      "height": 256
+    },
+    "explosion-4.png": {
+      "file": "assets/explosion-4.png",
+      "bytes": 80781,
+      "sha256": "61b07e08fff420ffe6f8b93bb7560cf39b893175a97e572269328980f175bb54",
+      "width": 256,
+      "height": 256
+    },
+    "explosion-5.png": {
+      "file": "assets/explosion-5.png",
+      "bytes": 55260,
+      "sha256": "e281abf82eca76a00c62fd1a5fad799d5ab37a7043f90a9f5a1e0928f72909d8",
+      "width": 256,
+      "height": 256
+    },
+    "explosion-6.png": {
+      "file": "assets/explosion-6.png",
+      "bytes": 33840,
+      "sha256": "0477ef8e284b396cd696e700a30585dd62c2b1e51d3b63778d59f9b26505c7d9",
+      "width": 256,
+      "height": 256
+    },
+    "explosion-7.png": {
+      "file": "assets/explosion-7.png",
+      "bytes": 11553,
+      "sha256": "c61a364c79f78adb6c7f1abd1332665ca458a112aedee0778b4e4f5b1a265e99",
+      "width": 256,
+      "height": 256
+    },
+    "explosion_air_small_01.wav": {
+      "file": "assets/explosion_air_small_01.wav",
+      "bytes": 63548,
+      "sha256": "7a4a082cee4779ad2c62c1cf9deb7f07349f7f5901f1a5d0fe8b5ece12e8525c"
+    },
+    "explosion_boss_core.wav": {
+      "file": "assets/explosion_boss_core.wav",
+      "bytes": 247004,
+      "sha256": "8068d721044d9ef5af266b3e6cbee1ff703b4a3a033f0da9d80988a577745e8a"
+    },
+    "explosion_jet_breakup.wav": {
+      "file": "assets/explosion_jet_breakup.wav",
+      "bytes": 158804,
+      "sha256": "05f4b2b0900abcb0b8181ab882d7114ececc21e330765d354de587a482ebb018"
+    },
+    "fire.png": {
+      "file": "assets/fire.png",
+      "bytes": 655708,
+      "sha256": "52a8249a1fa627127a6488e7826e6de63c1b3c5decfd55c3b5758e246762a6e9",
+      "width": 512,
+      "height": 512
+    },
+    "jet-damaged.png": {
+      "file": "assets/jet-damaged.png",
+      "bytes": 598264,
+      "sha256": "bf68eca090112dd0abdd7504a806cc8fb76a220dfbb96d02734bb393e2c9bb28",
+      "width": 627,
+      "height": 627
+    },
+    "jet.png": {
+      "file": "assets/jet.png",
+      "bytes": 573793,
+      "sha256": "9bb0e0584f9e9c635d92615a338cc5e7f076c0b21ca0c4d9c871fd4e37378ad3",
+      "width": 627,
+      "height": 627
+    },
+    "lightning.png": {
+      "file": "assets/lightning.png",
+      "bytes": 594353,
+      "sha256": "5148a51ea00a813a9dfed1a64dba8d2e5db77b917eb3a56fc3aa7e3d578d0b07",
+      "width": 512,
+      "height": 512
+    },
+    "missile.png": {
+      "file": "assets/missile.png",
+      "bytes": 117752,
+      "sha256": "ee9465041a4a8e67cb42d97f1a3f62184c13c631bab0acde4933d00c45b66c35",
+      "width": 627,
+      "height": 627
+    },
+    "player.png": {
+      "file": "assets/player.png",
+      "bytes": 665665,
+      "sha256": "c51616ae3b1c06d336653adf5c564daf97ca56925aaa163ed935e229ac8c35dd",
+      "width": 940,
+      "height": 1034
+    },
+    "rain.png": {
+      "file": "assets/rain.png",
+      "bytes": 555076,
+      "sha256": "0eefb36748a46dc3d5916e3f4da6403838ce96a84b1c84335a9f8701656dd565",
+      "width": 512,
+      "height": 512
+    },
+    "reviewed_maverick_helix_release.wav": {
+      "file": "assets/reviewed_maverick_helix_release.wav",
+      "bytes": 243918,
+      "sha256": "6b06693cfc208dcf37b4249df3c07c913a1b0459640ea1d21e39694eeb15f506"
+    },
+    "sky-dawn.png": {
+      "file": "assets/sky-dawn.png",
+      "bytes": 1341822,
+      "sha256": "5645db0e8f70426d7508844635e8d2248ad4438ceab15faa4015ba2a1f972a75",
+      "width": 1024,
+      "height": 1024
+    },
+    "sky-day.png": {
+      "file": "assets/sky-day.png",
+      "bytes": 1783495,
+      "sha256": "b49ee6ed03a17d305c6b0e89478455e21f70233ffcdd0f76e8a6495233d2a945",
+      "width": 1024,
+      "height": 1024
+    },
+    "sky-loop.png": {
+      "file": "assets/sky-loop.png",
+      "bytes": 1783495,
+      "sha256": "b49ee6ed03a17d305c6b0e89478455e21f70233ffcdd0f76e8a6495233d2a945",
+      "width": 1024,
+      "height": 1024
+    },
+    "sky-morning.png": {
+      "file": "assets/sky-morning.png",
+      "bytes": 1660321,
+      "sha256": "efe36d8ba05bf6451e165e6e1311b290d8259614ee11466e760e11285aef89de",
+      "width": 1024,
+      "height": 1024
+    },
+    "sky-night.png": {
+      "file": "assets/sky-night.png",
+      "bytes": 798964,
+      "sha256": "b27d947a2a0325bc375ae17c84cb2eefec07b1b61bf2c588b6ddc88171712c20",
+      "width": 1024,
+      "height": 1024
+    },
+    "sky.png": {
+      "file": "assets/sky.png",
+      "bytes": 1909360,
+      "sha256": "10b3fbcd178f02b946544595c9d7e201b23414ec07f113024433314eb1921f0c",
+      "width": 1254,
+      "height": 1254
+    },
+    "smoke.png": {
+      "file": "assets/smoke.png",
+      "bytes": 562332,
+      "sha256": "c9506cad6e175714c5b6edd308953238f71e5e2da523561afbf4d8558ffbb1c7",
+      "width": 512,
+      "height": 512
+    },
+    "storm.png": {
+      "file": "assets/storm.png",
+      "bytes": 461353,
+      "sha256": "bb3c662eeb834162eb5c6ff7227d874f43ae95ada56736e01957ab36c57aa755",
+      "width": 512,
+      "height": 512
+    },
+    "turret.png": {
+      "file": "assets/turret.png",
+      "bytes": 372329,
+      "sha256": "c2d7e41d8743dc706ed5cec1a2663c4bcdb15dc7ce978b486332848d5efa3a92",
+      "width": 627,
+      "height": 627
+    },
+    "enemy-pellet.png": {
+      "file": "assets/enemy-pellet.png",
+      "bytes": 285,
+      "sha256": "566d4f67264f422febf707c5599bd0b5bd173af656d332c5d6586b62fda36193",
+      "width": 6,
+      "height": 16
+    },
+    "turret-carriage.png": {
+      "file": "assets/turret-carriage.png",
+      "bytes": 1014866,
+      "sha256": "3f103a41be37c33839fdd511612d3ee8a4355c3e54097d10d77402d57c30c934",
+      "width": 1024,
+      "height": 1024
+    },
+    "turret-mounted.png": {
+      "file": "assets/turret-mounted.png",
+      "bytes": 1036888,
+      "sha256": "8384c8df5a58a86a26f65342625e1b11905fd5725598b1bbc7f4c65cd88d0af5",
+      "width": 1024,
+      "height": 1024
+    },
+    "interceptor-damaged.png": {
+      "file": "assets/interceptor-damaged.png",
+      "bytes": 586839,
+      "sha256": "a2b13c400246184e6f15c90ba207e3a55832510369cd90fe328f5dabe6091629",
+      "width": 807,
+      "height": 700
+    },
+    "interceptor.png": {
+      "file": "assets/interceptor.png",
+      "bytes": 551421,
+      "sha256": "2bb6184063650ceca3a3a7711c82c30fd5a0c5500cf5818dc7ac1f72e3d217ca",
+      "width": 807,
+      "height": 700
+    },
+    "laser-beam.png": {
+      "file": "assets/laser-beam.png",
+      "bytes": 200016,
+      "sha256": "382fce50b99549d4884bc6b6ae6877f123ebb305e90d8e0cc98be9d22feb9f84",
+      "width": 240,
+      "height": 617
+    },
+    "laser-charge.png": {
+      "file": "assets/laser-charge.png",
+      "bytes": 435264,
+      "sha256": "a871731e2d4f5892d51b42fcfae30d676495c587d56aa82fafccf04f87e21ecb",
+      "width": 627,
+      "height": 627
+    },
+    "needle-missile.png": {
+      "file": "assets/needle-missile.png",
+      "bytes": 142951,
+      "sha256": "171c851d271bda0297b5336709e1c8e98c9f7bb4e496be66528f217c29205508",
+      "width": 627,
+      "height": 627
+    },
+    "plasma-bolt.png": {
+      "file": "assets/plasma-bolt.png",
+      "bytes": 159703,
+      "sha256": "01a950eae58d63b6e3da7af719b72db2ae96ab58918dc10fb188c27906506928",
+      "width": 627,
+      "height": 627
+    },
+    "ram-boost.wav": {
+      "file": "assets/ram-boost.wav",
+      "bytes": 243918,
+      "sha256": "6b06693cfc208dcf37b4249df3c07c913a1b0459640ea1d21e39694eeb15f506"
+    },
+    "reviewed_enemy_laser.wav": {
+      "file": "assets/reviewed_enemy_laser.wav",
+      "bytes": 97998,
+      "sha256": "f03b6546db546c11509905c72222e09f92374e525f328dcb4758456fa1d489c9"
+    },
+    "brother.png": {
+      "file": "assets/brother.png",
+      "bytes": 666913,
+      "sha256": "d6e03c1a15c56e2315370c6c5d4f6d8e893228a2524efdd96d176ccb194c9b75",
+      "width": 807,
+      "height": 700
+    },
+    "brother-damaged.png": {
+      "file": "assets/brother-damaged.png",
+      "bytes": 709443,
+      "sha256": "e069deadbaa2691ee43297e73675070bc1e01cba3b117e8e29e89cb8fd39ce9c",
+      "width": 807,
+      "height": 700
+    }
+  },
+  "rig": {
+    "hullDraw": [
+      108,
+      118
+    ],
+    "playerDraw": [
+      48,
+      59
+    ],
+    "ports": [
+      [
+        -19,
+        -44
+      ],
+      [
+        -19,
+        40
+      ],
+      [
+        19,
+        -44
+      ],
+      [
+        19,
+        40
+      ]
+    ],
+    "apertureHP": 300,
+    "orientation": "fixed nose up; no yaw or flip",
+    "movement": "exactly one axis per simulation step",
+    "deathExplosion": [
+      135,
+      148
+    ]
+  },
+  "sourceGame": "BulletsOfFury local assets",
+  "explosionFrames": "nxp_barrage_0 through nxp_barrage_7, fx_explosions atlas, 256px",
+  "sky": "sky-loop and all four palettes have pixel-identical opposing edges",
+  "behaviorReference": "sources/bof-behavior-reference.md",
+  "currentArt": "interceptor / interceptor-damaged; integrated dual-ended cannons",
+  "palette": "0912u: red paint swapped to black/dark gray by _BUILD_SOURCE/tempest_blackswap_0912u.py; red originals in sources/red_originals/",
+  "plannedSlots": {
+    "interceptor (black) + brother (light gray)": "TOGETHER as Stage 6 miniboss, replacing blacksteel (BLACKSTEEL RAPTOR); not used on Stage 8 (Mike, 0913)"
+  },
+  "brother": {
+    "page": "brother.html",
+    "engine": "engine-brother.js (class Brother extends Jet; engine.js unchanged)",
+    "test": "brother-test.cjs",
+    "art": "brother / brother-damaged: light gray from sources/red_originals by _BUILD_SOURCE/tempest_grayswap_0912v.py",
+    "flight": "diagonal, horizontal and vertical runs; crosses and exits every edge; returns after an entry warning; mid-run V-turn feints; invulnerable off-screen; never rotates",
+    "plannedSlot": "Stage 6 only, fighting alongside the black ship"
+  },
+  "duo": {
+    "page": "duo.html",
+    "engine": "engine-duo.js (Duo owns the shared player, fire, collisions and ending; DuoBlack/DuoBrother add the tag-team rules; engine.js and engine-brother.js unchanged)",
+    "test": "duo-test.cjs",
+    "rules": [
+      "black never starts a ram while the brother is warning in or crossing",
+      "brother waits off-screen while the black ship lines up, rams or changes phase",
+      "pincer: brother crosses under the black ship laser lanes",
+      "vengeance: survivor fights on alone, gray 15% faster",
+      "one escape after both are down",
+      "the duo never moves the player"
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "canvas": [
+    256,
+    256
+  ],
+  "anchor": [
+    0.5,
+    0.5
+  ],
+  "units": {
+    "armored_gunship": {
+      "source": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_BUILD_SOURCE\\stage8_symbiote_generated\\fleet_sources\\Armored_Gunship_Front_Source.png",
+      "palette": "ORIGINAL STEEL / RUBY",
+      "bounds": [
+        21,
+        18,
+        235,
+        238
+      ],
+      "muzzles": [
+        [
+          -0.34,
+          0.27
+        ],
+        [
+          0.34,
+          0.27
+        ],
+        [
+          0,
+          0.43
+        ]
+      ],
+      "idle_frames": 1
+    },
+    "needle_interceptor": {
+      "source": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_BUILD_SOURCE\\stage8_symbiote_generated\\fleet_sources\\Needle_Interceptor_Front_Source.png",
+      "palette": "OBSIDIAN VIOLET / CYAN",
+      "bounds": [
+        56,
+        18,
+        200,
+        238
+      ],
+      "muzzles": [
+        [
+          -0.25,
+          0.22
+        ],
+        [
+          0.25,
+          0.22
+        ],
+        [
+          0,
+          0.44
+        ]
+      ],
+      "idle_frames": 1
+    },
+    "scout_drone": {
+      "source": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_BUILD_SOURCE\\stage8_symbiote_generated\\fleet_sources\\Scout_Drone_Front_Source.png",
+      "palette": "ROYAL BLUE / ACID GREEN",
+      "bounds": [
+        18,
+        35,
+        238,
+        220
+      ],
+      "muzzles": [
+        [
+          -0.31,
+          0.25
+        ],
+        [
+          0.31,
+          0.25
+        ],
+        [
+          0,
+          0.34
+        ]
+      ],
+      "idle_frames": 1
+    },
+    "solar_corvette": {
+      "source": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_BUILD_SOURCE\\stage8_symbiote_generated\\fleet_sources\\Solar_Corvette_Front_Source.png",
+      "palette": "BURNISHED GOLD / VIOLET",
+      "bounds": [
+        18,
+        20,
+        238,
+        236
+      ],
+      "muzzles": [
+        [
+          -0.4,
+          0.2
+        ],
+        [
+          0.4,
+          0.2
+        ],
+        [
+          0,
+          0.42
+        ]
+      ],
+      "idle_frames": 1
+    },
+    "spread_wing_fighter": {
+      "source": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_BUILD_SOURCE\\stage8_symbiote_generated\\fleet_sources\\Spread_Wing_Fighter_Front_Source.png",
+      "palette": "CRIMSON ARMOR / COBALT",
+      "bounds": [
+        18,
+        71,
+        238,
+        184
+      ],
+      "muzzles": [
+        [
+          -0.25,
+          0.23
+        ],
+        [
+          0.25,
+          0.23
+        ],
+        [
+          0,
+          0.39
+        ]
+      ],
+      "idle_frames": 1
+    },
+    "stealth_crescent": {
+      "source": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_BUILD_SOURCE\\stage8_symbiote_generated\\fleet_sources\\Stealth_Crescent_Front_Source.png",
+      "palette": "DARK TEAL / ULTRAVIOLET",
+      "bounds": [
+        23,
+        18,
+        232,
+        238
+      ],
+      "muzzles": [
+        [
+          -0.18,
+          0.23
+        ],
+        [
+          0.18,
+          0.23
+        ],
+        [
+          0,
+          0.35
+        ]
+      ],
+      "idle_frames": 1
+    }
+  }
+}

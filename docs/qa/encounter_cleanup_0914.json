@@ -1,0 +1,2949 @@
+{
+  "date": "2026-09-14",
+  "suite": {
+    "passed": 3734,
+    "failed": 60,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "newSection300Passed": 9,
+    "baseline": "docs/qa/stage_1_5_0914.json",
+    "comparison": "Assertion names compared with dynamic numeric observations normalized.",
+    "newFailureNames": [],
+    "missingBaselineFailureNames": [
+      "ASSERT FAIL: stage 1: the sand tanks spawn (scroll never)"
+    ],
+    "failureNames": [
+      "ASSERT FAIL: Stage 7 results go straight to the Stage 8 card with the portal-entry latch set",
+      "ASSERT FAIL: far from firing -> idle reel",
+      "ASSERT FAIL: idle reel cycles all 6 frames at 8fps",
+      "ASSERT FAIL: inside the tell window -> attack-charge reel",
+      "ASSERT FAIL: tell reaches its final frame just before the shot",
+      "ASSERT FAIL: morphing to FURIOUS DEATH repoints the reel to form 4",
+      "ASSERT FAIL: stage-2 roster rebuilt around all twelve unique volcanic hulls",
+      "ASSERT FAIL: stage-8 roster includes the native twelve-hull mega fleet",
+      "ASSERT FAIL: all 12 native mega enemies appeared in the finale (17/12)",
+      "ASSERT FAIL: the first charged-ball wave is five directions x seven independent lances (25)",
+      "ASSERT FAIL: and five seven-lance Level-5 volleys fan out behind it as individual rounds",
+      "ASSERT FAIL: five directions x seven independent lances launch from the ball (25)",
+      "ASSERT FAIL: all eight native ice-field hulls have explicit Stage-3 rows",
+      "ASSERT FAIL: the drop-shadow ellipse is gone",
+      "ASSERT FAIL: kept as a no-op so its call sites stay harmless",
+      "ASSERT FAIL: stage 1: five yellow fast-jet ripples are authored, four aircraft each",
+      "ASSERT FAIL: stage 1: the two purple dam-approach waves are committed kamikaze jets",
+      "ASSERT FAIL: stage 6 scrolls one physical blue master instead of looping or swapping skies",
+      "ASSERT FAIL: Stage 6 has no animated weather or cloud overlay over the baked still clouds",
+      "ASSERT FAIL: and a jet aimed at the far corner still fires two mg rounds, downward",
+      "ASSERT FAIL: every enemy-bullet kind in the source is in PROJ \u2014 jcHelix",
+      "ASSERT FAIL: and the map prefetches the highlighted stage, giving it the whole selection to finish",
+      "ASSERT FAIL: stage 1 keeps its exact approved rebuilt cast (s1jetbomber, s1jetdelta)",
+      "ASSERT FAIL: and warms its morph and final implosion overlays before the boss cinematic",
+      "ASSERT FAIL: the comm window body wraps and draws in the authored face",
+      "ASSERT FAIL: and canvas text is only the not-decoded fallback",
+      "ASSERT FAIL: the wrap runs on the FULL text, so lines do not move while it types",
+      "ASSERT FAIL: stage 3 fields its complete authored native plan (8 waves)",
+      "ASSERT FAIL: and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)",
+      "ASSERT FAIL: all six shield families are reserved \u2014 ordinary enemies never auto-equip one",
+      "ASSERT FAIL: the ship continues flying into its bottom play lane throughout the countdown",
+      "ASSERT FAIL: the flamethrower alone keeps a new, throttled contact/kill transient",
+      "ASSERT FAIL: Stage 4 cycles fast turret fire, discrete blue energy bolts and its existing pincer \u2014 no continuous beam phase",
+      "ASSERT FAIL: the twin machine-gun turrets fire a timed six-beat blue-tracer burst from their exact barrel tips",
+      "ASSERT FAIL: each machine-gun beat overlays the jet muzzle reel on both barrel hardpoints at the faster cadence",
+      "ASSERT FAIL: the blue attack is five separate animated storm bolts from the coil/nose emitters, never a beam rake",
+      "ASSERT FAIL: a boss visibly anticipates first and releases its unchanged attack only on the authored beat",
+      "ASSERT FAIL: crossing a real boss phase cancels the old tell and performs a readable power-up reset",
+      "ASSERT FAIL: the river corvette fires a five-beat port/starboard broadside from alternating physical cannons",
+      "ASSERT FAIL: moving arrival shots use the aerial HQ view and top-down ships only",
+      "ASSERT FAIL: Maverick progression is locked to 3 purple, 4 blue, 5 green, 6 black and 7 helix lances",
+      "ASSERT FAIL: each trigger launches the exact tier count as independently phased lance entities",
+      "ASSERT FAIL: all seven Level-V lances animate on separate spiral paths instead of one rigid formation",
+      "ASSERT FAIL: Shadow Orb I-V advances damage, blast radius and piercing charge\u2014not just icon art",
+      "ASSERT FAIL: all twelve authored events field only the exact twelve-family Velocity Void cast",
+      "ASSERT FAIL: Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route",
+      "ASSERT FAIL: a live shared beam sustains one loop route and expiry fades it before the release cue",
+      "ASSERT FAIL: Maverick Level III keeps five discrete lances and never starts the shared held-beam bed",
+      "ASSERT FAIL: Jungle Cruiser fires a timed twin-machine-gun burst punctuated by separate green lances",
+      "ASSERT FAIL: its enraged pattern combines green laser volleys, curving wind blades and slow vortex pressure",
+      "ASSERT FAIL: Stage 2 fields all 12 unique volcanic hulls and none of the rejected art aliases",
+      "ASSERT FAIL: Magma Ward telegraphs and releases its opening fan from the same measured left cannon",
+      "ASSERT FAIL: Stage 3 schedules every one of its eight native ice-field hulls",
+      "ASSERT FAIL: Rime Wall switches from dark-edged mortars to broad cryo waves instead of pale generic pellets",
+      "ASSERT FAIL: Olive Warden switches between Blacksite missile pincers and a rail attack",
+      "ASSERT FAIL: Sludge Emperor advances through pressure, warned flood, crown and reactor-purge phases",
+      "ASSERT FAIL: Stage 7 has a reinforced four-phase boss and the supplied dedicated miniboss",
+      "ASSERT FAIL: Stage 5 keeps the approved Chaos Harrier and gains a reinforced four-phase boss",
+      "ASSERT FAIL: all twelve hulls resolve eight attack plus eight barrel-roll/twist frames",
+      "ASSERT FAIL: all nine stages own monotonically rising boss and miniboss HP floors"
+    ]
+  },
+  "browser": {
+    "checks": [
+      {
+        "pass": true,
+        "label": "natural stage-1 jets fire straight paired gun lanes without extra spreads"
+      },
+      {
+        "pass": true,
+        "label": "existing jet gun rounds do not steer when the player changes column"
+      },
+      {
+        "pass": true,
+        "label": "authored damage plumes and clean stage-1 hull decode"
+      },
+      {
+        "pass": true,
+        "label": "half-health fodder uses animated authored fire over a clean plate"
+      },
+      {
+        "pass": true,
+        "label": "damage smoke actually advances multiple rendered frames"
+      },
+      {
+        "pass": true,
+        "label": "healthy stage-1 fodder has no damage plume"
+      },
+      {
+        "pass": true,
+        "label": "native Razorback suppression plays its dedicated weapon report"
+      },
+      {
+        "pass": true,
+        "label": "Razorback sonic release is audible without borrowing the player trigger"
+      },
+      {
+        "pass": true,
+        "label": "Overlord actual gunfire and continuous rotor bed are wired"
+      },
+      {
+        "pass": true,
+        "label": "Overlord rockets, lances, wind and charge each have audible cues"
+      },
+      {
+        "pass": true,
+        "label": "stage-2 authored flight art decodes before capture"
+      },
+      {
+        "pass": true,
+        "label": "stage-2 round keeps the same authored source rectangle throughout flight"
+      },
+      {
+        "pass": true,
+        "label": "stage-3 director launches approved ice enemies and no stored boats"
+      },
+      {
+        "pass": true,
+        "label": "ice-drone authored projectile art decodes"
+      },
+      {
+        "pass": true,
+        "label": "ordinary ice drones draw the enlarged authored flight plate in the real canvas"
+      },
+      {
+        "pass": true,
+        "label": "stage-3 FOV and authored laser charge art decode"
+      },
+      {
+        "pass": true,
+        "label": "stage-3 held beams leave only side cannon tips while the central aperture charges a separate pulse"
+      },
+      {
+        "pass": true,
+        "label": "green and red authored FOV warnings reach drawImage"
+      },
+      {
+        "pass": true,
+        "label": "stage-4 machine bullets and rocket flight plates decode"
+      },
+      {
+        "pass": true,
+        "label": "Warden no longer renders blue chaingun attachments"
+      },
+      {
+        "pass": true,
+        "label": "Warden machine bullets actually render the approved orange tracer pixels"
+      },
+      {
+        "pass": true,
+        "label": "both mounted spread guns and both center barrels fire actual machine bullets"
+      },
+      {
+        "pass": true,
+        "label": "Warden rocket salvos leave both mounted turrets"
+      },
+      {
+        "pass": true,
+        "label": "Warden gun acts, rack tell and rocket salvos are audible"
+      },
+      {
+        "pass": true,
+        "label": "whole helpers sit outside the shield width directly above their generator columns"
+      },
+      {
+        "pass": true,
+        "label": "both helpers and all four complete generator sprites fit in the visible camera"
+      },
+      {
+        "pass": true,
+        "label": "one piercing laser tick destroys both generators in the left column without damaging the shielded carrier"
+      },
+      {
+        "pass": true,
+        "label": "the second column breaks the field when both generators are destroyed"
+      },
+      {
+        "pass": true,
+        "label": "unpowered Sovereign warns, dives fully offscreen, flies overhead and returns from the opposite edge"
+      },
+      {
+        "pass": true,
+        "label": "Sovereign clears its whole hull before the offscreen turn"
+      },
+      {
+        "pass": true,
+        "label": "the overhead flight cannot cause an invisible ground-plane hull hit"
+      },
+      {
+        "pass": true,
+        "label": "frame-shaped shadow crosses the player row during the overflight"
+      },
+      {
+        "pass": true,
+        "label": "native Sovereign helpers use authored gun, cooling and windup reports with no legacy synth fallback"
+      },
+      {
+        "pass": true,
+        "label": "native held laser input pierces both generators in one column while preserving the other column"
+      },
+      {
+        "pass": true,
+        "label": "native stage-5 launch stays in the extended sky for three seconds and keeps scenery scrolling"
+      },
+      {
+        "pass": true,
+        "label": "passive space rack launches three real independent homing missiles immediately"
+      },
+      {
+        "pass": true,
+        "label": "space missiles fly forward or produce actual impacts without orbiting or NaNs"
+      },
+      {
+        "pass": true,
+        "label": "Shadow Orb direct payload and its inherited detonation payload are 35 percent stronger"
+      },
+      {
+        "pass": true,
+        "label": "space Laser Cannon volume is reduced at its own sound route"
+      },
+      {
+        "pass": true,
+        "label": "stage 5 uses the finished authored spaceship for the selected pilot"
+      },
+      {
+        "pass": true,
+        "label": "stage-5 scenery continues scrolling throughout the boss fight"
+      },
+      {
+        "pass": true,
+        "label": "Regent warns the next formation opening after the first row releases"
+      },
+      {
+        "pass": true,
+        "label": "Regent escorts use visible locked charge beats and native release reports"
+      },
+      {
+        "pass": true,
+        "label": "dense space volleys cannot pile opaque generic explosions over the playfield"
+      },
+      {
+        "pass": true,
+        "label": "Furnace head locks its pose and eyes before release and cannot chase a late dodge"
+      },
+      {
+        "pass": true,
+        "label": "shared head warning renders all three authored FOV charge colors"
+      },
+      {
+        "pass": true,
+        "label": "zero Chromium page, console or controlled-loop errors"
+      }
+    ],
+    "errors": [],
+    "details": {
+      "jetShots": [
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        },
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        },
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        },
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        },
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        },
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        },
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        },
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        },
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        },
+        {
+          "kind": "s1bullet",
+          "vx": 3.477404862411034e-16,
+          "vy": 5.679033113600001
+        }
+      ],
+      "burn": {
+        "art": "nef_s1_camo_attack_jet_intact",
+        "blits": [
+          {
+            "key": "nxp_upward_1",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_2",
+            "args": [
+              -15.106058733199227,
+              -19.826702087323984,
+              30.212117466398453,
+              39.65340417464797
+            ],
+            "alpha": 0.06991362325265545
+          },
+          {
+            "key": "nsd_chim_4",
+            "args": [
+              -12.481058733199227,
+              -16.381389587323984,
+              24.962117466398453,
+              32.76277917464797
+            ],
+            "alpha": 0.3549136232526554
+          },
+          {
+            "key": "nxp_upward_1",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_2",
+            "args": [
+              -15.184808733199226,
+              -19.930061462323984,
+              30.369617466398452,
+              39.86012292464797
+            ],
+            "alpha": 0.0613636232526555
+          },
+          {
+            "key": "nsd_chim_4",
+            "args": [
+              -12.559808733199226,
+              -16.484748962323984,
+              25.119617466398452,
+              32.96949792464797
+            ],
+            "alpha": 0.34636362325265535
+          },
+          {
+            "key": "nxp_upward_1",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -15.263558733199226,
+              -20.033420837323984,
+              30.52711746639845,
+              40.06684167464797
+            ],
+            "alpha": 0.05281362325265556
+          },
+          {
+            "key": "nsd_chim_5",
+            "args": [
+              -12.638558733199226,
+              -16.588108337323984,
+              25.27711746639845,
+              33.17621667464797
+            ],
+            "alpha": 0.3378136232526555
+          },
+          {
+            "key": "nxp_upward_1",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -15.342308733199223,
+              -20.13678021232398,
+              30.684617466398446,
+              40.27356042464796
+            ],
+            "alpha": 0.044263623252655614
+          },
+          {
+            "key": "nsd_chim_5",
+            "args": [
+              -12.717308733199223,
+              -16.69146771232398,
+              25.434617466398446,
+              33.38293542464796
+            ],
+            "alpha": 0.32926362325265573
+          },
+          {
+            "key": "nxp_upward_1",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -15.421058733199226,
+              -20.240139587323984,
+              30.842117466398452,
+              40.48027917464797
+            ],
+            "alpha": 0.03571362325265554
+          },
+          {
+            "key": "nsd_chim_5",
+            "args": [
+              -12.796058733199226,
+              -16.794827087323984,
+              25.592117466398452,
+              33.58965417464797
+            ],
+            "alpha": 0.3207136232526554
+          },
+          {
+            "key": "nxp_upward_2",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -15.499808733199224,
+              -20.34349896232398,
+              30.999617466398448,
+              40.68699792464796
+            ],
+            "alpha": 0.027163623252655603
+          },
+          {
+            "key": "nsd_chim_5",
+            "args": [
+              -12.874808733199224,
+              -16.89818646232398,
+              25.749617466398448,
+              33.79637292464796
+            ],
+            "alpha": 0.31216362325265556
+          },
+          {
+            "key": "nxp_upward_2",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -15.578558733199223,
+              -20.44685833732398,
+              31.157117466398446,
+              40.89371667464796
+            ],
+            "alpha": 0.01861362325265566
+          },
+          {
+            "key": "nsd_chim_5",
+            "args": [
+              -12.953558733199223,
+              -17.00154583732398,
+              25.907117466398446,
+              34.00309167464796
+            ],
+            "alpha": 0.3036136232526558
+          },
+          {
+            "key": "nxp_upward_2",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -15.657308733199224,
+              -20.55021771232398,
+              31.31461746639845,
+              41.10043542464796
+            ],
+            "alpha": 0.010063623252655715
+          },
+          {
+            "key": "nsd_chim_5",
+            "args": [
+              -13.032308733199224,
+              -17.10490521232398,
+              26.06461746639845,
+              34.20981042464796
+            ],
+            "alpha": 0.29506362325265567
+          },
+          {
+            "key": "nxp_upward_2",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -15.736058733199224,
+              -20.65357708732398,
+              31.472117466398448,
+              41.30715417464796
+            ],
+            "alpha": 0.0015136232526557713
+          },
+          {
+            "key": "nsd_chim_5",
+            "args": [
+              -13.111058733199224,
+              -17.20826458732398,
+              26.222117466398448,
+              34.41652917464796
+            ],
+            "alpha": 0.2865136232526556
+          },
+          {
+            "key": "nxp_upward_2",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -15.736058733199224,
+              -20.65357708732398,
+              31.472117466398448,
+              41.30715417464796
+            ],
+            "alpha": 0.0015136232526557713
+          },
+          {
+            "key": "nsd_chim_5",
+            "args": [
+              -13.111058733199224,
+              -17.20826458732398,
+              26.222117466398448,
+              34.41652917464796
+            ],
+            "alpha": 0.2865136232526556
+          }
+        ]
+      },
+      "razorback": [
+        [
+          537,
+          "razorbackGun",
+          1
+        ],
+        [
+          546,
+          "razorbackGun",
+          1
+        ],
+        [
+          555,
+          "razorbackGun",
+          1
+        ],
+        [
+          564,
+          "razorbackGun",
+          1
+        ],
+        [
+          573,
+          "razorbackGun",
+          1
+        ],
+        [
+          582,
+          "razorbackGun",
+          1
+        ],
+        [
+          591,
+          "razorbackGun",
+          1
+        ],
+        [
+          600,
+          "razorbackGun",
+          1
+        ],
+        [
+          645,
+          "razorbackGun",
+          1
+        ],
+        [
+          654,
+          "razorbackGun",
+          1
+        ],
+        [
+          663,
+          "razorbackGun",
+          1
+        ],
+        [
+          672,
+          "razorbackGun",
+          1
+        ],
+        [
+          681,
+          "razorbackGun",
+          1
+        ],
+        [
+          690,
+          "razorbackGun",
+          1
+        ],
+        [
+          699,
+          "razorbackGun",
+          1
+        ]
+      ],
+      "s2": [
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        }
+      ],
+      "roster": [
+        "sharddart",
+        "s3interceptor",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "glaciercarrier",
+        "cryoeye",
+        "glaciercarrier",
+        "glaciercarrier",
+        "glaciercarrier",
+        "sharddart",
+        "s3interceptor",
+        "cryoeye",
+        "sharddart",
+        "cryoeye",
+        "glaciercarrier",
+        "cryoeye",
+        "cryoeye",
+        "s3interceptor",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "glaciercarrier",
+        "sharddart",
+        "s3interceptor",
+        "cryoeye",
+        "sharddart",
+        "sharddart"
+      ],
+      "s3boss": [
+        {
+          "slots": [
+            "L",
+            "R"
+          ],
+          "angles": [
+            1.5707963267948966,
+            1.5707963267948966
+          ],
+          "charge": {
+            "t": 0,
+            "dur": 3,
+            "slot": "C",
+            "kind": "centerPulse",
+            "released": false
+          },
+          "origins": [
+            {
+              "x": 320.33763489115194,
+              "y": 222.85226240219288
+            },
+            {
+              "x": 385.297634891152,
+              "y": 222.85226240219288
+            }
+          ]
+        },
+        {
+          "slots": [
+            "L",
+            "R"
+          ],
+          "angles": [
+            2.2907963267948963,
+            0.8507963267948966
+          ],
+          "charge": {
+            "t": 0,
+            "dur": 3,
+            "slot": "C",
+            "kind": "centerPulse",
+            "released": false
+          },
+          "origins": [
+            {
+              "x": 219.02406636436197,
+              "y": 221.4800000108897
+            },
+            {
+              "x": 283.984066364362,
+              "y": 221.4800000108897
+            }
+          ]
+        },
+        {
+          "slots": [
+            "R"
+          ],
+          "angles": [
+            1.5707963267948966
+          ],
+          "charge": {
+            "t": 0,
+            "dur": 3,
+            "slot": "C",
+            "kind": "centerPulse",
+            "released": false
+          },
+          "origins": [
+            {
+              "x": 283.984066364362,
+              "y": 221.4800000108897
+            }
+          ]
+        },
+        {
+          "slots": [
+            "L",
+            "R"
+          ],
+          "angles": [
+            2.5207963267948967,
+            0.6207963267948966
+          ],
+          "charge": {
+            "t": 0,
+            "dur": 3,
+            "slot": "C",
+            "kind": "centerPulse",
+            "released": false
+          },
+          "origins": [
+            {
+              "x": 219.02406636436197,
+              "y": 221.4800000108897
+            },
+            {
+              "x": 283.984066364362,
+              "y": 221.4800000108897
+            }
+          ]
+        }
+      ],
+      "warden": {
+        "shots": [
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 302.4183222482587,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 420.0183222482587,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 311.79400787780384,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 429.39400787780386,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 321.5178204438486,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 439.11782044384864,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 330.1063767407332,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 447.7063767407332,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 337.31784295225094,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 454.91784295225096,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 342.40683006799753,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 460.00683006799756,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 346.49896527860216,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 464.0989652786022,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 348.7524331484102,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 466.3524331484102,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 349.1594486671581,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 466.7594486671581,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 347.8100391279968,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 465.4100391279968,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 344.5850454506905,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 462.1850454506905,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 340.2160846589157,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 457.8160846589157,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 333.7367913541832,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 451.3367913541832,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 325.77818391267925,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 443.3781839126793,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 316.56435825259314,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 434.16435825259316,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 307.52959341572466,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 425.1295934157247,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 296.67550018826495,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 414.27550018826497,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 285.38565278526426,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 402.9856527852643,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 275.2412861036856,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 392.8412861036856,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 263.99857937747385,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 381.59857937747387,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 253.24022474136035,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 370.8402247413604,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 304.7072627768053,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 319.8272627768053,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 314.49060015378643,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 329.61060015378644,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 322.67819774456905,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 337.79819774456905,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 326.6483989179329,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 341.7683989179329,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 329.29023092750344,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 344.41023092750345,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 330.5712665949176,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 345.6912665949176,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 331.4236871357913,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 346.5436871357913,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 331.88727705131885,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.00727705131885,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.1120737888453,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.2320737888453,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.26165694368103,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.38165694368104,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.3341904567488,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.4541904567488,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.3824553552316,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.50245535523163,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.40870427714015,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.52870427714015,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.42143249190707,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.5414324919071,
+            "y": 222.88
+          }
+        ],
+        "rockets": [
+          {
+            "slot": "L",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "R",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "L",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "R",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "L",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "R",
+            "kind": "s4rocket"
+          }
+        ],
+        "sounds": [
+          [
+            2003,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2019,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2027,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2036,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2045,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2054,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2062,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2071,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2080,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2088,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2097,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2106,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2114,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2123,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2132,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2141,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2149,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2158,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2167,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2175,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2184,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2193,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2196,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2208,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2221,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2234,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2241,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2254,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2267,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2274,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2283,
+            "wardenRackCharge",
+            1
+          ],
+          [
+            2324,
+            "wardenRocket",
+            1
+          ],
+          [
+            2353,
+            "wardenRocket",
+            1
+          ],
+          [
+            2382,
+            "wardenRocket",
+            1
+          ]
+        ],
+        "blue": []
+      },
+      "layout": {
+        "x": 341.39999928641055,
+        "w": 264,
+        "left": 100,
+        "right": 580,
+        "turrets": [
+          {
+            "x": 129,
+            "y": 105
+          },
+          {
+            "x": 551,
+            "y": 105
+          }
+        ],
+        "nodes": [
+          {
+            "x": 128.9999196214193,
+            "y": 165.95971748958652,
+            "side": -1
+          },
+          {
+            "x": 550.9999179976095,
+            "y": 165.95971748958652,
+            "side": 1
+          },
+          {
+            "x": 128.9999196214193,
+            "y": 290.0397255436827,
+            "side": -1
+          },
+          {
+            "x": 550.9999179976095,
+            "y": 290.0397255436827,
+            "side": 1
+          }
+        ],
+        "size": 52.800000000000004
+      },
+      "ram": [
+        {
+          "mode": "ramTell",
+          "x": 340.40492445514315,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.1171170699618,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.033873992796,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.0097974393341,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.00283373200443,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.0008196056948,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 185.4999999999936,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 242.88888888887013,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 319.16666666663,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 414.3333333332733,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 528.3888888887999,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 651.7222222221154,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramOff",
+          "x": 340,
+          "y": 762.7222222220994,
+          "air": false,
+          "noHit": true,
+          "shadow": 722,
+          "contact": false
+        },
+        {
+          "mode": "ramOff",
+          "x": 340,
+          "y": 762.7222222220994,
+          "air": false,
+          "noHit": true,
+          "shadow": 722,
+          "contact": false
+        },
+        {
+          "mode": "ramOff",
+          "x": 340,
+          "y": 762.7222222220994,
+          "air": false,
+          "noHit": true,
+          "shadow": 722,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 735.0133333333373,
+          "air": true,
+          "noHit": true,
+          "shadow": 753.0133333333373,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 600.0800000000236,
+          "air": true,
+          "noHit": true,
+          "shadow": 618.0800000000236,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 465.1466666667099,
+          "air": true,
+          "noHit": true,
+          "shadow": 483.1466666667099,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 330.21333333339635,
+          "air": true,
+          "noHit": true,
+          "shadow": 348.21333333339635,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 195.2800000000824,
+          "air": true,
+          "noHit": true,
+          "shadow": 213.2800000000824,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 60.34666666676844,
+          "air": true,
+          "noHit": true,
+          "shadow": 78.34666666676844,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": -74.5866666665454,
+          "air": true,
+          "noHit": true,
+          "shadow": -56.5866666665454,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": -209.51999999985856,
+          "air": true,
+          "noHit": true,
+          "shadow": -191.51999999985856,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -214.6000000000042,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -166.26666666667788,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -117.93333333335156,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -69.60000000002523,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -21.26666666669892,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": 27.06666666662737,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": 75.39999999995368,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": 123.73333333328,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        }
+      ],
+      "helperAudio": {
+        "sounds": [
+          "bossPhase",
+          "enemyElectricBolt",
+          "sovereignWindup",
+          "sovereignContact",
+          "sovereignBreak",
+          "enemyElectricBolt",
+          "hit",
+          "shieldHitHeavy",
+          "sovereignDive",
+          "missile",
+          "sovereignFlyby",
+          "sovereignHelperGun",
+          "sovereignHelperGun",
+          "sovereignHelperGun",
+          "sovereignHelperGun",
+          "sovereignFlyby",
+          "sovereignWindup",
+          "sovereignHelperGun",
+          "sovereignHeat",
+          "sovereignHelperGun",
+          "missile",
+          "sovereignHelperGun",
+          "sovereignHelperGun",
+          "sovereignWindup",
+          "sovereignHelperGun",
+          "sovereignWindup",
+          "sovereignHelperGun",
+          "sovereignLaser",
+          "sovereignHeat",
+          "enemyElectricBolt"
+        ],
+        "legacy": []
+      },
+      "sky": {
+        "phase": "settle",
+        "time": 3.0500000000008836,
+        "scroll": 17153.916666667432
+      },
+      "missiles": [
+        {
+          "kind": "spaceImpact",
+          "vy": 0,
+          "x": 304.98807911424655,
+          "y": 338.562494901057,
+          "dead": false
+        },
+        {
+          "kind": "spaceImpact",
+          "vy": 0,
+          "x": 342.875058037102,
+          "y": 335.574599726415,
+          "dead": false
+        },
+        {
+          "kind": "spaceImpact",
+          "vy": 0,
+          "x": 374.15062076723007,
+          "y": 353.36321774951455,
+          "dead": false
+        }
+      ],
+      "shadow": {
+        "dmg": 279.45000000000005,
+        "expected": 279.45000000000005,
+        "burst": 0.76
+      },
+      "impactBudget": {
+        "visible": 6,
+        "explosions": 0
+      },
+      "headBefore": {
+        "eyes": [
+          0.5656695354803356,
+          0.6364859799847135
+        ],
+        "x": 445.33858244672695,
+        "y": 144.13122157175061
+      },
+      "headAfter": {
+        "eyes": [
+          0.5656695354803356,
+          0.6364859799847135
+        ],
+        "x": 445.33858244672695,
+        "y": 144.13122157175061,
+        "beams": 2
+      },
+      "error": null
+    }
+  },
+  "runtime": {
+    "sha256": "04a4b1dcb8b22211fc168b9b2c2518c56b25aba53ea4778daa48380080615b63",
+    "beforeSha256": "9e47b07ae53365f944d0c9347688703c0ce678cced5e64e4e4d98c4282946d60",
+    "testSha256": "39315f87f09d1fc7158b15cc4382fbacadac74be81748234f9139d1fed9f63e8",
+    "readableSourcesReproduceRuntime": true,
+    "LF": true,
+    "testsCRLF": true
+  },
+  "art": {
+    "mgcf_1_5": [
+      16,
+      20
+    ],
+    "s4w_muzzle_mg_4": [
+      96,
+      96
+    ],
+    "s4w_mg_round_4": [
+      40,
+      64
+    ],
+    "bpfx_muzzle_void_4": [
+      128,
+      128
+    ],
+    "bpfx_proj_missile_0": [
+      128,
+      128
+    ],
+    "l23fx_rime_laser_3": [
+      96,
+      256
+    ],
+    "nlz_3_b3": [
+      64,
+      320
+    ],
+    "bfx_cryo_p_3": [
+      130,
+      257
+    ],
+    "nsb_rimewall_intact": [
+      242,
+      256
+    ],
+    "nsb_olivewarden_intact": [
+      234,
+      256
+    ],
+    "s4w_boss_idle": [
+      512,
+      512
+    ],
+    "errors": []
+  },
+  "storedBoats": {
+    "reason": "Mike 0914: remove boats from stage 3, store them for now",
+    "type": "s3barge",
+    "originalEvents": [
+      "    add(8.8, ()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.46));",
+      "    add(14.8,()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.48));",
+      "    add(29.2,()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.46));",
+      "    add(37.2,()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.48));"
+    ],
+    "finalWaveBoats": [
+      {
+        "fx": 0.24,
+        "scale": 0.72,
+        "opt": {
+          "inPlace": 1
+        }
+      },
+      {
+        "fx": 0.76,
+        "scale": 0.72,
+        "opt": {
+          "inPlace": 1
+        }
+      }
+    ],
+    "artAndController": "Preserved in NEF_S3, S3ICE and XART; no assets removed."
+  },
+  "video": {
+    "file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\encounter_cleanup_0914\\video\\BulletsOfFury_Readable_Attacks_0914.mp4",
+    "frames": 1110,
+    "fps": 30,
+    "seconds": 37,
+    "bytes": 87741416,
+    "sha256": "7f31b9cd36d0980d01d331533ba260ec45401bea28a2b4acf9c49f652f27ac43",
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "audioHz": 48000,
+    "audioChannels": 2,
+    "decodeExitCode": 0,
+    "errors": [],
+    "protectedDemoPilot": true,
+    "nativeDebugEncounters": true,
+    "fixtures": "Native debug encounters, straight jet waves and selected Stage-3 cannon/Stage-2 head attack windows. Player damage disabled for recording. Regent runs its native encounter for 18 seconds.",
+    "audioScope": "Accepted native sound samples, loops and game-module cues, aligned to captured frames. Music is not included. Sound-pool voice reuse is reproduced; audio is not normalized for export.",
+    "takes": [
+      {
+        "name": "s1_guns_clean",
+        "stage": 1,
+        "role": null,
+        "seconds": 6,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.17967000603675842,
+          "rms": 0.04104156114480517,
+          "counts": {
+            "snd": 31,
+            "cut": 0,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "enemyMachineGunLight"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s3_cannon_lasers",
+        "stage": 3,
+        "role": "boss",
+        "seconds": 7,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RIME WALL",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RIME WALL",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RIME WALL",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 6.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RIME WALL",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.675557017326355,
+          "rms": 0.11107240708631913,
+          "counts": {
+            "snd": 7,
+            "cut": 0,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "alertLockon",
+          "bossWeaponCharge",
+          "bossfireCryospear",
+          "enemyHeavyLaser",
+          "missile"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s2_head_locked",
+        "stage": 2,
+        "role": "boss",
+        "seconds": 6,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "FURNACE TYRANT",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "FURNACE TYRANT",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "FURNACE TYRANT",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.35264649987220764,
+          "rms": 0.06721649794259277,
+          "counts": {
+            "snd": 5,
+            "cut": 0,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "alertLockon",
+          "furnaceLaserStart",
+          "missile"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s5_regent_and_volley",
+        "stage": 5,
+        "role": "boss",
+        "seconds": 18,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 3
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 2
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 6.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 8.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 3
+          },
+          {
+            "seconds": 10.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 3
+          },
+          {
+            "seconds": 12.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 14.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 3
+          },
+          {
+            "seconds": 16.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 3
+          }
+        ],
+        "audio": {
+          "peak": 0.9177563190460205,
+          "rms": 0.17880592951710847,
+          "counts": {
+            "snd": 428,
+            "cut": 117,
+            "loopSeg": 1,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "alertLockon",
+          "bossPhase",
+          "bossWeaponCharge",
+          "bossfireXenoregent",
+          "enemyPulseLaserAlien",
+          "enemyShoot",
+          "expBig",
+          "expSmall",
+          "explosionPlasma",
+          "hit",
+          "missile",
+          "nsp_asteroid_break",
+          "shieldHitLight",
+          "spaceLaserCannon",
+          "spaceLaserHit",
+          "spaceShadowHit",
+          "spaceShadowRelease",
+          "spaceVolleyHit",
+          "spaceVolleyLaunch"
+        ],
+        "loops": [
+          "spaceShadowCharge"
+        ]
+      }
+    ]
+  },
+  "audio": {
+    "s1_guns_clean": {
+      "peak": 0.17967000603675842,
+      "rms": 0.04104156114480517,
+      "counts": {
+        "snd": 31,
+        "cut": 0,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s3_cannon_lasers": {
+      "peak": 0.675557017326355,
+      "rms": 0.11107240708631913,
+      "counts": {
+        "snd": 7,
+        "cut": 0,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s2_head_locked": {
+      "peak": 0.35264649987220764,
+      "rms": 0.06721649794259277,
+      "counts": {
+        "snd": 5,
+        "cut": 0,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s5_regent_and_volley": {
+      "peak": 0.9177563190460205,
+      "rms": 0.17880592951710847,
+      "counts": {
+        "snd": 428,
+        "cut": 117,
+        "loopSeg": 1,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    }
+  },
+  "settings": {
+    "warningSeconds": 3,
+    "headWarningSeconds": 1.65,
+    "headAimLockSeconds": 0.7,
+    "playerFlameScale": 0.75,
+    "furnaceFlameWidthMultiplier": 1.25,
+    "spaceImpactDecorationCap": 6
+  },
+  "sources": {
+    "append_tests.py": "4dda82a283459425e69ad675f4f7456dda91506438df3300e6f0562ce87edb97",
+    "diagnose.py": "1a2b77b52f15085418c65f027560a3a351dfb9ba9015d960cd0642d46e6becfb",
+    "engine.js": "e4c095acf26b766c6a69552dd951039cf33062c8373956d5cc6c844fd5eacf59",
+    "inspect_art.py": "399705a3fd785717b97dec5a0e877bda50cbf8bbbe3c705402fe55cdf5caf372",
+    "integrate.py": "318dae7549f6694a298430f6d7e864309869be4eb073dc9cc1e5e43de1adb413",
+    "probe.py": "3ae1d4e7624682020358dedfb4ac8ddac64416051e4327a945fc6368bd8517fb",
+    "record.py": "723db24a00108088e1c3f393a5d858d2f8fcbaebea298189f2d26734df444610",
+    "tests.js": "fe960952abafc217aa4fcfe4a86c3d0150c3a00ba08c207e91be8bfe722309ca",
+    "validate.py": "9031747128ede40dbbfe2dda22a5f64ac4bbb11b54e260f4d8b01bd6357b8d68"
+  }
+}

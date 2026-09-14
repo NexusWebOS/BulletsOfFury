@@ -1,0 +1,314 @@
+{
+ "results": [
+  [
+   true,
+   "the map in pieces is registered and on",
+   {
+    "on": true,
+    "keys": 59
+   }
+  ],
+  [
+   true,
+   "every piece, flag, panel and cursor decoded",
+   117
+  ],
+  [
+   true,
+   "the boot frames the WHOLE world",
+   {
+    "x": 470,
+    "y": 360,
+    "z": 0.6102808218376758
+   }
+  ],
+  [
+   true,
+   "the boot sequence completes and hands over",
+   0
+  ],
+  [
+   true,
+   "the camera settles at the live zoom",
+   0.9977
+  ],
+  [
+   true,
+   "the ocean and the bar are drawn from their plates",
+   [
+    482,
+    386
+   ]
+  ],
+  [
+   true,
+   "all eight stage islands and the citadel draw in colour when unlocked",
+   [
+    "1",
+    "2",
+    "3",
+    "4",
+    "5",
+    "6",
+    "7",
+    "8",
+    "hub"
+   ]
+  ],
+  [
+   true,
+   "the unearned portal draws in its slate lock bake",
+   [
+    482,
+    0
+   ]
+  ],
+  [
+   true,
+   "clouds drift over the map",
+   ""
+  ],
+  [
+   true,
+   "the flags stand on the islands",
+   ""
+  ],
+  [
+   true,
+   "RIGHT moves the cursor to the stage physically to the right",
+   [
+    4,
+    4
+   ]
+  ],
+  [
+   true,
+   "and the camera flies there",
+   {
+    "cam": {
+     "x": 719.4925343363116,
+     "y": 378.2208264021091,
+     "z": 0.9999476724061583
+    },
+    "target": {
+     "x": 720,
+     "y": 379.75
+    }
+   }
+  ],
+  [
+   true,
+   "LEFT moves back the other way",
+   [
+    5,
+    5
+   ]
+  ],
+  [
+   true,
+   "UP climbs to the button bar",
+   "bar"
+  ],
+  [
+   true,
+   "on the bar RIGHT walks button to button and the map cursor does not move",
+   [
+    1,
+    5,
+    5
+   ]
+  ],
+  [
+   true,
+   "FIRE on a button strobes it white (Phoenix rule)",
+   ""
+  ],
+  [
+   true,
+   "LOAD unrolls its slot drop-down from the bar",
+   {
+    "mode": "load",
+    "bar": true,
+    "sel": 0
+   }
+  ],
+  [
+   true,
+   "the drop-down owns UP/DOWN and the map cannot move under it",
+   [
+    1,
+    5,
+    5
+   ]
+  ],
+  [
+   true,
+   "BACK closes the drop-down and leaves you on the bar",
+   [
+    null,
+    "bar"
+   ]
+  ],
+  [
+   true,
+   "EXIT asks first, with STAY highlighted",
+   {
+    "mode": "exit",
+    "bar": true,
+    "sel": 1
+   }
+  ],
+  [
+   true,
+   "DOWN comes back to the map",
+   "map"
+  ],
+  [
+   true,
+   "Start climbs to the bar too",
+   "bar"
+  ],
+  [
+   true,
+   "and Start again comes back down",
+   "map"
+  ],
+  [
+   true,
+   "BACK also comes down off the bar",
+   "map"
+  ],
+  [
+   true,
+   "LEFT walks back to SAVE",
+   0
+  ],
+  [
+   true,
+   "SAVE writes the chosen slot (slot 2) and closes",
+   [
+    {
+     "stage": 1,
+     "v": 1
+    },
+    null
+   ]
+  ],
+  [
+   true,
+   "and the receipt names the slot that was written (0810p)",
+   "SAVED TO SLOT 2"
+  ],
+  [
+   true,
+   "pointing at a button selects it",
+   [
+    "bar",
+    2
+   ]
+  ],
+  [
+   true,
+   "pointing at an island hands the focus back to the map",
+   "map"
+  ],
+  [
+   true,
+   "a click on EXIT opens its confirm",
+   {
+    "mode": "exit",
+    "bar": true,
+    "sel": 1
+   }
+  ],
+  [
+   true,
+   "FIRE deploys, and the deploy zoom centres on the flag in SCREEN space",
+   {
+    "zoom": {
+     "x": 231.6500000002297,
+     "y": 267.29954073834625
+    },
+    "flag": {
+     "x": 231.65000000073258,
+     "y": 267.1867299964842
+    }
+   }
+  ],
+  [
+   true,
+   "and hands over to the chosen stage",
+   [
+    5,
+    5
+   ]
+  ],
+  [
+   true,
+   "the unlock pushes in on the new island",
+   {
+    "x": 729.4147022581246,
+    "y": 570.7680078393884,
+    "z": 1.1945733811188983
+   }
+  ],
+  [
+   true,
+   "on stage 5, not the parked cursor",
+   {
+    "cam": {
+     "x": 729.4147022581246,
+     "y": 570.7680078393884,
+     "z": 1.1945733811188983
+    },
+    "target": {
+     "x": 730.65,
+     "y": 575.5
+    }
+   }
+  ],
+  [
+   true,
+   "and lands with stage 5 unlocked and selected",
+   [
+    5,
+    5
+   ]
+  ],
+  [
+   true,
+   "the secret frames BOTH nodes in the open sea - the portal clear of the bar, stage 5 clear of the card",
+   {
+    "p9": {
+     "x": 273.7557959597735,
+     "y": 87.07246876654773
+    },
+    "p5": {
+     "x": 206.42587645175695,
+     "y": 348.3323854929665
+    },
+    "top": 46,
+    "bot": 390
+   }
+  ],
+  [
+   true,
+   "the portal island comes up in colour as the secret unlocks",
+   33
+  ],
+  [
+   true,
+   "the secret is earned and selected",
+   [
+    1,
+    9
+   ]
+  ],
+  [
+   true,
+   "the map drew without a single swallowed throw",
+   0
+  ]
+ ],
+ "errors": []
+}

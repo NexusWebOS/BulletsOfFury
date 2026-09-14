@@ -1,0 +1,4 @@
+from pathlib import Path
+R=Path(__file__).resolve().parents[2];H=Path(__file__).parent;O=R/'_shots/supply_audit_0914';p=R/'_BUILD_SOURCE/test_fl.js';b=(O/'test.before.js').read_bytes();s=b.decode('utf-8').replace('\r\n','\n')
+a="roll(k,.10251,.4)===''";assert s.count(a)==1;s=s.replace(a,"roll(k,.10251,.4)!=='life'")
+a="console.log('\\n============================================');";assert s.count(a)==1;s=s.replace(a,(H/'tests.js').read_text(encoding='utf-8-sig')+'\n'+a);x=s.replace('\n','\r\n').encode('utf-8');assert p.read_bytes()in[b,x];p.write_bytes(x)

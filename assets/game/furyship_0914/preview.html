@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Furyship asset review</title>
+<style>
+body{margin:0;background:#101720;color:#e5edf3;font:16px system-ui}main{max-width:1040px;margin:36px auto;padding:0 24px}h1{font-size:28px;margin-bottom:8px}p{color:#a8bccb;line-height:1.5}.controls{display:flex;gap:14px;align-items:center;flex-wrap:wrap;margin:24px 0}select,button{background:#243545;color:#edf9ff;border:1px solid #456376;border-radius:6px;padding:10px;font:inherit}button{cursor:pointer}.viewer{display:grid;grid-template-columns:minmax(300px,640px) 1fr;gap:24px}canvas{width:100%;background:#1a2633;border:1px solid #354b60;border-radius:8px;image-rendering:pixelated}.frames{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:18px}.frames button{padding:3px;font-size:12px}.frames img{width:100%;height:84px;object-fit:contain;image-rendering:pixelated}.frames button.active{border-color:#56e8f0;background:#294752}aside img{width:192px;image-rendering:pixelated}small{display:block;color:#97adbe;line-height:1.6}a{color:#72dbe8}@media(max-width:700px){.viewer{grid-template-columns:1fr}main{margin:18px auto}}
+</style>
+<main><h1>Furyship · asset review</h1><p>Generated candidates based on somersault frame 13. This viewer previews the art; the playable game still uses its existing ship.</p>
+<div class="controls"><label>Reel <select id="family"></select></label><label>Pilot <select id="pilot"></select></label><button id="pause">Pause</button><label>Scale <select id="scale"><option value="1">1× native</option><option value="2" selected>2×</option><option value="3">3×</option></select></label><span id="counter"></span></div>
+<div class="viewer"><section><canvas width="640" height="480" id="preview"></canvas><div id="frames" class="frames"></div></section><aside><h3>Approved reference</h3><img src="../gravity_mode/furyship_somersault_13.png" alt="Approved Furyship top-down reference"><p id="description"></p><small>82 candidate frames.<br>30 component views · 8 roll poses · 32 effect frames.<br><br>Assembly sockets, the match to the original hull, palette verification in actual flight and gameplay integration remain to be finished.</small><p><a href="pack.json">Frame catalog</a></p></aside></div></main>
+<script src="catalog.js"></script><script src="palette.js"></script>
+<script>
+const views=['top','front','left','back','right'];
+const groups={nose:views.map(v=>'nose_'+v),hull:views.map(v=>'hull_'+v),wing_left:views.map(v=>'wing_left_'+v),wing_right:views.map(v=>'wing_right_'+v),engine_left:views.map(v=>'engine_left_'+v),engine_right:views.map(v=>'engine_right_'+v)};
+for(const k of ['assembly','veil','speed','thrusters','roll'])groups[k]=Array.from({length:8},(_,i)=>k+'_'+String(i).padStart(2,'0'));
+groups.somersault=Array.from({length:12},(_,i)=>'somersault_'+String(i).padStart(2,'0'));
+const pilotSelect=document.querySelector('#pilot');for(const [k,v] of Object.entries(FURYSHIP_CANDIDATES.palettes)){const o=document.createElement('option');o.value=k;o.textContent=k+' / '+v.model;pilotSelect.append(o);}
+const descriptions={somersault:'Forward pitch over the wing axis: top, rear end-on, underside, front end-on and recovery.',assembly:'Energy orbit, joint-lock burst and dispersal.',veil:'Energy curtain closes and opens around a background handoff.',speed:'Looping speed streaks with an open center corridor.',thrusters:'Twin-engine ignition, sustained thrust and taper.',roll:'Generated full-ship roll: top, banks, edge-on and underside views.'};
+const selector=document.querySelector('#family'),canvas=document.querySelector('#preview'),g=canvas.getContext('2d'),images={};
+for(const f of Object.values(FURYSHIP_CANDIDATES.frames)){for(const path of [f.path,f.paletteMask].filter(Boolean)){const im=new Image();im.src=path;images[path]=im;}}
+const resolve=path=>{const im=images[path];return im&&im.complete&&im.naturalWidth?im:null;};
+let current='nose',t=0,last=0,paused=false,forced=null;
+for(const k of Object.keys(groups)){const o=document.createElement('option');o.value=k;o.textContent=k.replaceAll('_',' ');selector.append(o);for(const key of groups[k]){const im=new Image();im.src=key+'.png';images[key]=im;}}
+function choose(k){current=k;t=0;forced=null;document.querySelector('#description').textContent=descriptions[k]||'Five views at a shared scale: top, front, left side, back and right side.';const list=document.querySelector('#frames');list.replaceChildren();groups[k].forEach((key,i)=>{const b=document.createElement('button');const im=document.createElement('img');im.src=key+'.png';im.alt=key;b.append(im,document.createTextNode(views.length===groups[k].length?views[i]:String(i)));b.onclick=()=>{forced=i;paused=true;document.querySelector('#pause').textContent='Play';};list.append(b);});}
+selector.onchange=()=>choose(selector.value);
+document.querySelector('#pause').onclick=()=>{paused=!paused;if(!paused)forced=null;document.querySelector('#pause').textContent=paused?'Play':'Pause';};
+current=Object.hasOwn(groups,location.hash.slice(1))?location.hash.slice(1):current;selector.value=current;choose(current);
+function draw(now){const dt=last?Math.min(.1,(now-last)/1000):0;last=now;if(!paused)t+=dt;const keys=groups[current],fps=keys.length===5?2:10,i=forced===null?Math.floor(t*fps)%keys.length:forced,im=furyCandidatePalette(keys[i],pilotSelect.value,resolve),s=Number(document.querySelector('#scale').value);g.clearRect(0,0,640,480);g.imageSmoothingEnabled=false;if(im){const fit=Math.min(s,600/im.width,440/im.height);g.drawImage(im,(640-im.width*fit)/2,(480-im.height*fit)/2,im.width*fit,im.height*fit);}document.querySelector('#counter').textContent='Frame '+(i+1)+' / '+keys.length;[...document.querySelector('#frames').children].forEach((b,n)=>b.classList.toggle('active',n===i));requestAnimationFrame(draw);}
+requestAnimationFrame(draw);
+</script></html>

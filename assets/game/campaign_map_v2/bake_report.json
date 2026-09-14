@@ -1,0 +1,356 @@
+{
+ "bar.png": {
+  "w": 860,
+  "h": 86,
+  "colours": 97,
+  "opaque": 0.975
+ },
+ "btn_exit.png": {
+  "w": 246,
+  "h": 52,
+  "colours": 9660,
+  "opaque": 0.983
+ },
+ "btn_load.png": {
+  "w": 193,
+  "h": 52,
+  "colours": 7247,
+  "opaque": 0.96
+ },
+ "btn_save.png": {
+  "w": 193,
+  "h": 52,
+  "colours": 7303,
+  "opaque": 0.972
+ },
+ "cloud_0.png": {
+  "w": 260,
+  "h": 220,
+  "colours": 96,
+  "opaque": 0.642
+ },
+ "cloud_0_shadow.png": {
+  "w": 260,
+  "h": 220,
+  "colours": 1,
+  "opaque": 0.642
+ },
+ "cloud_1.png": {
+  "w": 278,
+  "h": 196,
+  "colours": 96,
+  "opaque": 0.594
+ },
+ "cloud_1_shadow.png": {
+  "w": 278,
+  "h": 196,
+  "colours": 1,
+  "opaque": 0.594
+ },
+ "cloud_2.png": {
+  "w": 274,
+  "h": 180,
+  "colours": 96,
+  "opaque": 0.645
+ },
+ "cloud_2_shadow.png": {
+  "w": 274,
+  "h": 180,
+  "colours": 1,
+  "opaque": 0.645
+ },
+ "cloud_3.png": {
+  "w": 260,
+  "h": 226,
+  "colours": 96,
+  "opaque": 0.585
+ },
+ "cloud_3_shadow.png": {
+  "w": 260,
+  "h": 226,
+  "colours": 1,
+  "opaque": 0.585
+ },
+ "cloud_4.png": {
+  "w": 260,
+  "h": 220,
+  "colours": 96,
+  "opaque": 0.642
+ },
+ "cloud_4_shadow.png": {
+  "w": 260,
+  "h": 220,
+  "colours": 1,
+  "opaque": 0.642
+ },
+ "cloud_5.png": {
+  "w": 278,
+  "h": 196,
+  "colours": 96,
+  "opaque": 0.594
+ },
+ "cloud_5_shadow.png": {
+  "w": 278,
+  "h": 196,
+  "colours": 1,
+  "opaque": 0.594
+ },
+ "cloud_6.png": {
+  "w": 274,
+  "h": 180,
+  "colours": 96,
+  "opaque": 0.645
+ },
+ "cloud_6_shadow.png": {
+  "w": 274,
+  "h": 180,
+  "colours": 1,
+  "opaque": 0.645
+ },
+ "isl_1.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 129,
+  "opaque": 0.657
+ },
+ "isl_1_glow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.059
+ },
+ "isl_1_lock.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 88,
+  "opaque": 0.657
+ },
+ "isl_1_shadow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.777
+ },
+ "isl_2.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 129,
+  "opaque": 0.652
+ },
+ "isl_2_glow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.066
+ },
+ "isl_2_lock.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 80,
+  "opaque": 0.652
+ },
+ "isl_2_shadow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.779
+ },
+ "isl_3.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 129,
+  "opaque": 0.626
+ },
+ "isl_3_glow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.059
+ },
+ "isl_3_lock.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 105,
+  "opaque": 0.626
+ },
+ "isl_3_shadow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.746
+ },
+ "isl_4.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 129,
+  "opaque": 0.631
+ },
+ "isl_4_glow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.057
+ },
+ "isl_4_lock.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 100,
+  "opaque": 0.631
+ },
+ "isl_4_shadow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.746
+ },
+ "isl_5.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 129,
+  "opaque": 0.545
+ },
+ "isl_5_glow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.062
+ },
+ "isl_5_lock.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 88,
+  "opaque": 0.545
+ },
+ "isl_5_shadow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.668
+ },
+ "isl_6.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 129,
+  "opaque": 0.709
+ },
+ "isl_6_glow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.059
+ },
+ "isl_6_lock.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 89,
+  "opaque": 0.709
+ },
+ "isl_6_shadow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.825
+ },
+ "isl_7.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 129,
+  "opaque": 0.634
+ },
+ "isl_7_glow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.067
+ },
+ "isl_7_lock.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 85,
+  "opaque": 0.634
+ },
+ "isl_7_shadow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.765
+ },
+ "isl_8.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 129,
+  "opaque": 0.641
+ },
+ "isl_8_glow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.068
+ },
+ "isl_8_lock.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 72,
+  "opaque": 0.641
+ },
+ "isl_8_shadow.png": {
+  "w": 380,
+  "h": 380,
+  "colours": 1,
+  "opaque": 0.769
+ },
+ "isl_9.png": {
+  "w": 260,
+  "h": 260,
+  "colours": 129,
+  "opaque": 0.613
+ },
+ "isl_9_glow.png": {
+  "w": 260,
+  "h": 260,
+  "colours": 1,
+  "opaque": 0.107
+ },
+ "isl_9_lock.png": {
+  "w": 260,
+  "h": 260,
+  "colours": 81,
+  "opaque": 0.613
+ },
+ "isl_9_shadow.png": {
+  "w": 260,
+  "h": 260,
+  "colours": 1,
+  "opaque": 0.801
+ },
+ "isl_hub.png": {
+  "w": 480,
+  "h": 480,
+  "colours": 129,
+  "opaque": 0.691
+ },
+ "isl_hub_glow.png": {
+  "w": 480,
+  "h": 480,
+  "colours": 1,
+  "opaque": 0.044
+ },
+ "isl_hub_lock.png": {
+  "w": 480,
+  "h": 480,
+  "colours": 88,
+  "opaque": 0.691
+ },
+ "isl_hub_shadow.png": {
+  "w": 480,
+  "h": 480,
+  "colours": 1,
+  "opaque": 0.78
+ },
+ "ocean.png": {
+  "w": 512,
+  "h": 512,
+  "colours": 56,
+  "opaque": 1.0
+ }
+}

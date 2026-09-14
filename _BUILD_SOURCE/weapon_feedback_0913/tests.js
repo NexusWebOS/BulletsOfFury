@@ -1,0 +1,48 @@
+// ===== 298. COLE, JUGGERNAUT AND LASER MIST OWN THEIR FEEDBACK (0913) =====
+{
+  console.log('=== 298. four authored weapon feedback systems ===');
+  vm.runInContext("boss=null;bossActive=false;subBoss=null;subBossActive=false;enemies=[];eBullets=[];pBullets=[];pImpacts=[];particles=[];playerLocks=[];special=null;player.dead=false;player.alive=true;player.roll=null;player.somer=null;player.x=340;player.y=430;run.pilot='cole';run.sonicT=22;run._sonicChg=0;run._sonicSnd=false;",ctxv);
+  vm.runInContext("var oldSound298=weaponFeedbackSound,sounds298=[];weaponFeedbackSound=function(n,v){sounds298.push([n,v]);return true;};sonicCharge(SONIC_MAX,true);",ctxv);
+  ok(vm.runInContext("pBullets.length===0&&run._sonicChg===SONIC_MAX",ctxv),'held Sonic Boom remains a charge with no duplicate projectile');
+  vm.runInContext("sonicCharge(0,false);var wave298=pBullets[0];",ctxv);
+  ok(vm.runInContext("pBullets.length===1&&wave298.pierce&&wave298.dmg===14&&Math.abs(wave298.life-1.024)<1e-9",ctxv),'full pressure feedback preserves the one piercing wave, damage and finite range');
+  ok(vm.runInContext("sounds298.filter(e=>e[0]==='colePressureRelease').length===1&&sounds298.find(e=>e[0]==='colePressureRelease')[1]===1",ctxv),'full pressure release receives one full-strength sound');
+  ok(vm.runInContext("sonicFrontGeometry(wave298).w>sonicFrontGeometry({w:34,_p:.2}).w&&sonicFrontGeometry(wave298).h>sonicFrontGeometry({_p:.2}).h",ctxv),'the visible sonic front now reflects charge strength');
+  vm.runInContext("var time298=wave298.t;sonicDrawFront(wave298);sonicDrawFront(wave298);",ctxv);
+  ok(vm.runInContext("wave298.t===time298",ctxv),'drawing a pressure front cannot accelerate its animation or lifetime');
+  vm.runInContext("sonicTick(1/60);",ctxv);
+  ok(vm.runInContext("Math.abs(wave298.t-time298-1/60)<1e-9",ctxv),'sonic animation advances once on the simulation clock');
+  vm.runInContext("run.sonicT=0;sonicCharge(1/60,true);",ctxv);
+  ok(vm.runInContext("!run._sonicChg&&!run._sonicSnd&&Snd.loops.colePressureLoop.hold===0",ctxv),'expired Sonic Boom drops charge and releases its own held sound');
+  vm.runInContext("run.pilot='juggernaut';special={pilot:'juggernaut',t:15};pImpacts=[];player._chgT=CHG_FULL;chargeRelease();",ctxv);
+  ok(vm.runInContext("player._chgDash.dist===360&&player._chgDash.dur===.40",ctxv),'the new ram feedback preserves full charge distance and duration');
+  ok(vm.runInContext("sounds298.some(e=>e[0]==='juggernautRamLaunch')&&!sounds298.some(e=>e[0]==='maverickHelixRelease')",ctxv),'Juggernaut launches with his own sound');
+  vm.runInContext("endSpecial();chargeTick(.4);",ctxv);
+  ok(vm.runInContext("!player._chgDash&&sounds298.some(e=>e[0]==='juggernautRamStop')",ctxv),'a committed ram still lands when the special expires mid-dash');
+  vm.runInContext("special={pilot:'juggernaut',t:15};wreckInit();",ctxv);
+  ok(vm.runInContext("wreckBalls.length===2&&wreckBalls[0].spin===-wreckBalls[1].spin&&WB_HIT===17&&WB_DRAW===17",ctxv),'two opposite flails keep their original contact radius and readable steel size');
+  vm.runInContext("pImpacts=[];var ball298=wreckBalls[0];wreckStrike(ball298,250,290,true);player.x+=100;ball298.a+=.5;wreckSync();",ctxv);
+  ok(vm.runInContext("pImpacts[0].x===250&&pImpacts[0].y===290&&pImpacts[0]._weaponFx==='wreck'",ctxv),'the steel strike flash remains at the actual collision instead of chasing the ball');
+  vm.runInContext("endSpecial();",ctxv);
+  ok(vm.runInContext("wreckBalls.length===0&&Snd.loops.juggernautChains.hold===0",ctxv),'flails and chain ambience end together');
+  vm.runInContext("special=null;run.pilot='yuri';pBullets=[];pImpacts=[];sounds298=[];laserMistFire(5);var roots298=pBullets.slice(),ledger298=roots298[0]._mistLedger;",ctxv);
+  ok(vm.runInContext("roots298.length===3&&pImpacts.length===3&&roots298.every(b=>b._mistLedger===ledger298)",ctxv),'Laser Mist launches three blue emitters sharing the existing damage ledger');
+  vm.runInContext("roots298.forEach(b=>laserMistSplit(b,false));var mids298=pBullets.filter(b=>!b.dead);",ctxv);
+  ok(vm.runInContext("mids298.length===9&&sounds298.filter(e=>e[0]==='laserMistSplit').length===1",ctxv),'nine first-split lances receive one coordinated sound beat');
+  vm.runInContext("mids298.forEach(b=>laserMistSplit(b,true));var fan298=pBullets.filter(b=>!b.dead);",ctxv);
+  ok(vm.runInContext("fan298.length===27&&fan298.every(b=>b._mistLedger===ledger298&&Math.abs(b.dmg-5.55)<1e-9)&&sounds298.filter(e=>e[0]==='laserMistBloom').length===1",ctxv),'twenty-seven final lances retain damage and receive one bloom sound');
+  vm.runInContext("var target298={},hits298=[];for(var i=0;i<9;i++)hits298.push(laserMistLedgerHit(fan298[0],target298));",ctxv);
+  ok(vm.runInContext("hits298.filter(Boolean).length===7",ctxv),'the level-five shared hit budget remains seven hits per target');
+  vm.runInContext("laserMistFire(5);laserMistFire(5);var refused298=laserMistFire(5);",ctxv);
+  ok(vm.runInContext("refused298===false",ctxv),'the visual upgrade preserves the three-wave simulation ceiling');
+  vm.runInContext("particles=[];for(var i=0;i<30;i++)laserMistImpact(300,240,5,true);",ctxv);
+  ok(vm.runInContext("particles.filter(p=>p._lmBubble).length<=72&&pImpacts.length<=180",ctxv),'mist bubble and impact caps bound feedback in dense formations');
+  vm.runInContext(_pre297+"pImpacts=[];b._drawY=b.y;var mist298={kind:'lasermist',x:b.x,y:b.y,vx:0,vy:0,w:16,h:39,dmg:7,lv:5,t:0,life:3.2,_mistStage:2,_mistAge:0,_mistLedger:{hits:[]}},hp298=b.hp;_dmgBullet=mist298;laserMistTick(mist298,0);_dmgBullet=null;",ctxv);
+  ok(vm.runInContext("!mist298.dead&&b.hp===hp298&&mist298._mistLedger.hits.length===0&&pImpacts.length===0",ctxv),'mist armor passes cannot generate fake wet impacts or consume the shared damage budget');
+  vm.runInContext("var q=rzbWorld(b,-57,96),before298=R.pools.left;mist298.x=q.x;mist298.y=q.y;_dmgBullet=mist298;laserMistTick(mist298,0);_dmgBullet=null;",ctxv);
+  ok(vm.runInContext("mist298.dead&&R.pools.left<before298&&pImpacts.length>0",ctxv),'a live rotated gun still receives mist damage and a real wet impact');
+  vm.runInContext("weaponFeedbackSound=oldSound298;pBullets=[];pImpacts=[];particles=[];sonicTrail=[];run.sonicT=0;special=null;subBoss=null;subBossActive=false;player._chgDash=null;player._chgOn=false;Snd.loopStopAll();",ctxv);
+  var audio298=JSON.parse(fs.readFileSync(path.join(ROOT,'_BUILD_SOURCE/weapon_feedback_0913/audio-build.json'),'utf8'));
+  ok(Object.values(audio298).every(a=>fs.existsSync(path.join(ROOT,a.file))&&a.peak<.8&&a.rms>0),'all sixteen authored sound mixes exist with measured headroom');
+  ok(vm.runInContext("Object.keys(BOFA.sfx).filter(k=>/^(colePressure|juggernaut|laserMist)/.test(k)).every(k=>Snd.TAME[k]&&Snd.TAME[k].g<=.85&&typeof Snd.TAME[k].min==='number')",ctxv),'every new sound route has an explicit gain and retrigger policy');
+}

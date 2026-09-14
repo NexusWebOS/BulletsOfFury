@@ -1,0 +1,27 @@
+--- a/assets/game.js
++++ b/assets/game.js
+@@ -37869,15 +37869,20 @@
+ });
+ function drawCfxStageProjectile(b){
+   const S=b&&CFX_STAGE_PROJECTILE[b.kind];if(!S||typeof combatAtlasDraw!=='function')return false;
+-  const fixed=stage2FlightFrame(b.kind),fi=fixed==null?((b.t||0)*14|0)%4:fixed,mul=b.szMul||1,a=Math.atan2(b.vy||1,b.vx||0);
++  const fixed=/^s5/.test(b.kind)?1:stage2FlightFrame(b.kind),fi=fixed==null?((b.t||0)*14|0)%4:fixed,mul=b.szMul||1,a=Math.atan2(b.vy||1,b.vx||0);
+   /* Generated directional art is either authored pointing north (`up`) or east (`right`). Keep
+      that source orientation explicit instead of making every missile inherit the same 90deg bug. */
+   const angle=S[3]==='spin'?(b.t||0)*2.25:(S[3]==='right'?a:a+Math.PI/2);
+   const drawn=combatAtlasDraw(S[0],4,S[1],S[2]*4+fi,b.x,b.y,S[4]*mul,S[4]*mul,{angle:angle});
+   if(drawn&&fixed!=null){
+-    /* A moving pixel light band animates only existing art; flight silhouette never swaps. */
+-    ctx.save();ctx.translate(b.x,b.y);ctx.rotate(angle);ctx.beginPath();const size=S[4]*mul;ctx.rect(-size/2,-size/2+((b.t||0)*75%size),size,6);ctx.clip();
+-    combatAtlasDraw(S[0],4,S[1],S[2]*4+fi,0,0,size,size,{blend:'lighter',alpha:.35});ctx.restore();
++    /* These columns are size/charge examples, not onion-aligned flight frames. Keep the
++       authored second cell throughout flight, including the lava saws. Only its pixels glow:
++       four discrete light levels and a hard-edged band, with no blur or changing footprint. */
++    const size=S[4]*mul,tick=Math.floor((b.t||0)*12),light=[.12,.22,.34,.22][((tick%4)+4)%4];
++    ctx.save();ctx.translate(b.x,b.y);ctx.rotate(angle);
++    combatAtlasDraw(S[0],4,S[1],S[2]*4+fi,0,0,size,size,{blend:'lighter',alpha:light});
++    ctx.beginPath();const row=(tick*6)%Math.ceil(size);ctx.rect(-size/2,-size/2+row,size,6);ctx.clip();
++    combatAtlasDraw(S[0],4,S[1],S[2]*4+fi,0,0,size,size,{blend:'lighter',alpha:.32});ctx.restore();
+   }
+   return drawn;
+ }

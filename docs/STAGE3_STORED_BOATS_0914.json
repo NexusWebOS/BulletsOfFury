@@ -1,0 +1,27 @@
+{
+  "reason": "Mike 0914: remove boats from stage 3, store them for now",
+  "type": "s3barge",
+  "originalEvents": [
+    "    add(8.8, ()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.46));",
+    "    add(14.8,()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.48));",
+    "    add(29.2,()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.46));",
+    "    add(37.2,()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.48));"
+  ],
+  "finalWaveBoats": [
+    {
+      "fx": 0.24,
+      "scale": 0.72,
+      "opt": {
+        "inPlace": 1
+      }
+    },
+    {
+      "fx": 0.76,
+      "scale": 0.72,
+      "opt": {
+        "inPlace": 1
+      }
+    }
+  ],
+  "artAndController": "Preserved in NEF_S3, S3ICE and XART; no assets removed."
+}

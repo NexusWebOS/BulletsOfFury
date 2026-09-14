@@ -1,0 +1,34 @@
+{
+  "native": {
+    "scope": "Candidate asset rendering only; no gameplay integration or behavior verification",
+    "renderedAssets": 83,
+    "palettes": {
+      "checked": 450,
+      "protectedErrors": 0,
+      "masks": 50
+    },
+    "pageAndConsoleErrors": [],
+    "loopError": null,
+    "runtimeSha256": "41a0790603c5e4d8320839e1083b19a6e123e9075fce334a744825dea888d7d5",
+    "screenshots": [
+      "native_assembly.png",
+      "native_components.png",
+      "native_nine_palettes.png",
+      "native_reference_comparison.png",
+      "native_roll.png",
+      "native_somersault.png",
+      "native_speed.png",
+      "native_thrusters.png",
+      "native_veil.png"
+    ]
+  },
+  "viewer": {
+    "families": 12,
+    "pause": true,
+    "frameSelection": true,
+    "errors": [],
+    "scope": "standalone asset viewer only"
+  },
+  "packSha256": "8fbd4b15d4168ca8b00029cb1a17f8da802c866296a32c02ac9919590954e1bd",
+  "status": "82 candidate frames and nine palettes; gameplay integration pending"
+}

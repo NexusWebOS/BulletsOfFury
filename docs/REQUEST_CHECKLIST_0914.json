@@ -1,0 +1,1396 @@
+{
+  "updated": "2026-09-14",
+  "scope": "Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.",
+  "items": [
+    {
+      "id": "PRE-01",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "complete",
+      "request": "Trailer end card: BUILT WITH THE ASSISTANCE OF AI & HUMAN TOOLS.",
+      "evidence": "qa/trailer_endcard_0913_validation.json",
+      "dependency": ""
+    },
+    {
+      "id": "PRE-02",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "complete",
+      "request": "Tempest: two independent south-facing jets; red-to-green hit feedback, rapid turns/slides and charge/thrust sounds.",
+      "evidence": "TEMPEST_FIGHTER_0913.md",
+      "dependency": ""
+    },
+    {
+      "id": "PRE-03",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "complete",
+      "request": "Tempest: face thrust direction, leave the entire screen and return with fluid flight.",
+      "evidence": "TEMPEST_RETURN_0913.md",
+      "dependency": ""
+    },
+    {
+      "id": "PRE-04",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "complete",
+      "request": "Cole Sonic Boom: authored charge/release/contact visuals and dedicated sounds.",
+      "evidence": "WEAPON_FEEDBACK_0913.md",
+      "dependency": ""
+    },
+    {
+      "id": "PRE-05",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "complete",
+      "request": "Juggernaut charge dash: visible anchored boost, motion and launch/landing sounds.",
+      "evidence": "WEAPON_FEEDBACK_0913.md",
+      "dependency": ""
+    },
+    {
+      "id": "PRE-06",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "complete",
+      "request": "Juggernaut wrecking balls: ship-anchored chains, readable steel impacts and separate chain/hit sounds.",
+      "evidence": "WEAPON_FEEDBACK_0913.md",
+      "dependency": ""
+    },
+    {
+      "id": "PRE-07",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "complete",
+      "request": "Laser Mist: emitter/split/impact visuals and sounds; preserve its 3-to-9-to-27 pattern.",
+      "evidence": "WEAPON_FEEDBACK_0913.md",
+      "dependency": ""
+    },
+    {
+      "id": "PRE-08",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "complete",
+      "request": "Cole's silent middle nuclear detonation: separate impacts now each receive their sound.",
+      "evidence": "BUGFIX_0913.md",
+      "dependency": ""
+    },
+    {
+      "id": "PRE-09",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "complete",
+      "request": "Razorback and rotated Tempest collision fixes: pellets and held lasers respect exposed parts and finite beam geometry.",
+      "evidence": "BUGFIX_0913.md",
+      "dependency": ""
+    },
+    {
+      "id": "PRE-10",
+      "group": "Earlier handoff, weapons and Tempest",
+      "status": "partial",
+      "request": "Existing ship used in space, pilot palettes, transformation and space death/roll support have proof; the later replacement concept and complete new frame set are still pending.",
+      "evidence": "proofs/spaceship_0913a/report.json",
+      "dependency": "",
+      "workOrder": 81,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "ENG-01",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Shared laser-family warning: three-second green/yellow/red FOV charge with overhead alert.",
+      "evidence": "qa/shared_laser_warnings_0914.json",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-02",
+      "group": "Shared combat, warnings and targeting",
+      "status": "partial",
+      "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule; laser families are covered.",
+      "evidence": "READABLE_ATTACKS_0914.md",
+      "dependency": "",
+      "workOrder": 51,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ENG-03",
+      "group": "Shared combat, warnings and targeting",
+      "status": "partial",
+      "request": "Reusable horizontal gliding/follow helper exists; integrate and verify it in the requested encounters.",
+      "evidence": "READABLE_ATTACKS_0914.md",
+      "dependency": "",
+      "workOrder": 13,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "ENG-04",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Player flamethrower: 25% smaller draw and collision footprint, Fire Orb palette, nozzle remains connected.",
+      "evidence": "READABLE_ATTACKS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-05",
+      "group": "Shared combat, warnings and targeting",
+      "status": "pending",
+      "request": "No default enemy dies to a single hit: consistent damage accounting across ordinary enemies, pieces, shields and high-damage weapons.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 34,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ENG-06",
+      "group": "Shared combat, warnings and targeting",
+      "status": "partial",
+      "request": "Tap Retina targets known live boss parts, nodes and helpers, excluding protected hulls; complete the remaining encounter/weapon-router audit.",
+      "evidence": "RETINA_TARGETS_0914.md",
+      "dependency": "",
+      "workOrder": 27,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ENG-07",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Stage-6 Retina: select electrical nodes and open bays while protected hull remains excluded; manual missiles damage the selected piece.",
+      "evidence": "RETINA_TARGETS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-08",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Retina Scan upgrade: hold Retina and tap direction to acquire up to four distinct visible targets.",
+      "evidence": "RETINA_SCAN_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-09",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Multi-lock launch: manual missiles release sequentially at 50ms spacing, spending one ammo per actual launch.",
+      "evidence": "RETINA_SCAN_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-10",
+      "group": "Shared combat, warnings and targeting",
+      "status": "complete",
+      "request": "Multi-lock lifecycle: five-second firing window, flashing expiry, death cancellation and pause freeze.",
+      "evidence": "RETINA_SCAN_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "ENG-11",
+      "group": "Shared combat, warnings and targeting",
+      "status": "pending",
+      "request": "Shared enemy shield break/stun: dizzy levitation/spin and bounded splash damage, reusing authored boss/helper effects.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 30,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ENG-12",
+      "group": "Shared combat, warnings and targeting",
+      "status": "pending",
+      "request": "Shared elemental absorption: fire absorbs 50% fire damage and ice absorbs ice, with matching absorbed-damage popup text.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 28,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ENG-13",
+      "group": "Shared combat, warnings and targeting",
+      "status": "pending",
+      "request": "Shared elemental weakness: fire deals 2x to ice and ice 2x to fire across relevant enemy, boss, helper and shield routes.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 29,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ENG-14",
+      "group": "Shared combat, warnings and targeting",
+      "status": "partial",
+      "request": "All pilots retain barrel roll and somersault access; existing ground/space support is present, but full nine-pilot regression and the replacement ship frames remain.",
+      "evidence": "proofs/spaceship_0913a/report.json",
+      "dependency": "",
+      "workOrder": 82,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "ENG-15",
+      "group": "Shared combat, warnings and targeting",
+      "status": "pending",
+      "request": "HUD incoming-lock indicator above Equipped: gray idle, red flashing and distance-accelerated beeps until evasion or hit.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 50,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "S1-01",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "complete",
+      "request": "Surviving fodder burns at half HP with animated fire/smoke; remove static damaged fire plates.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S1-02",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "complete",
+      "request": "Jet guns: remove the extra generic steering/spread volley; use authored straight twin guns/rocket sequence.",
+      "evidence": "READABLE_ATTACKS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S1-03",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "complete",
+      "request": "Miniboss and boss weapon/charge sounds wired to their attacks.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S1-04",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "complete",
+      "request": "Razorback baseline: faster projectiles, sonic boom and movement.",
+      "evidence": "RAZORBACK_SPEED_0914.md",
+      "dependency": "",
+      "workOrder": 8,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "S1-05",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "pending",
+      "request": "Hard Razorback: fight two simultaneously.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 74,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S1-06",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "pending",
+      "request": "Furious Razorback: 50% larger, Furious palette, hyper tank behavior and Furious sonic waves.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 75,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S1-07",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "pending",
+      "request": "Jungle chopper: remove erratic motion while retaining the approved attack patterns.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 15,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "S1-08",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "partial",
+      "request": "Chopper rotor bed exists; obtain and tune the requested proper helicopter/propeller sound through the available sound engine or ElevenLabs.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": "",
+      "workOrder": 16,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "S1-09",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "pending",
+      "request": "Dam entrance: fly up from below above the player, whole-frame shadow, quick whip spin into position.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 53,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S1-10",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "pending",
+      "request": "Chopper introduction: boss bar fades in, fills left-to-right with repeated existing chimes; fight/music start after filling.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 52,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S1-11",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "pending",
+      "request": "Below 50%: frenzy plus four alternating down/up passes across distinct lanes; passes two and four rain bullets.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 55,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S1-12",
+      "group": "Stage 1: fodder, Razorback and jungle chopper",
+      "status": "pending",
+      "request": "Chopper pass warning: eight synchronized red flashes/beeps, then committed fast but reactable charge with a shooting window.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 54,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S2-01",
+      "group": "Stage 2: lava enemies, Magma Ward and Furnace Tyrant",
+      "status": "complete",
+      "request": "Enemy projectile strips: use reviewed stable flight poses with pixel animation instead of misaligned growth frames.",
+      "evidence": "PROJECTILE_PIXEL_GLOW_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S2-02",
+      "group": "Stage 2: lava enemies, Magma Ward and Furnace Tyrant",
+      "status": "pending",
+      "request": "Lava/magma fodder: tougher hulls and weak breakable shields using the shared stun/break system.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 32,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "S2-03",
+      "group": "Stage 2: lava enemies, Magma Ward and Furnace Tyrant",
+      "status": "complete",
+      "request": "Furnace head lasers: commit aim before release and provide a predictable dodge window.",
+      "evidence": "READABLE_ATTACKS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S2-04",
+      "group": "Stage 2: lava enemies, Magma Ward and Furnace Tyrant",
+      "status": "complete",
+      "request": "Furnace flamethrower: 25% wider visual and collision footprint.",
+      "evidence": "READABLE_ATTACKS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S2-05",
+      "group": "Stage 2: lava enemies, Magma Ward and Furnace Tyrant",
+      "status": "complete",
+      "request": "Furnace flame shield: use the actual authored flame shield from the first frame through every phase.",
+      "evidence": "ENCOUNTER_VISUAL_0914.md",
+      "dependency": "",
+      "workOrder": 7,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "S2-06",
+      "group": "Stage 2: lava enemies, Magma Ward and Furnace Tyrant",
+      "status": "pending",
+      "request": "Furnace rollerball: slow-to-medium-to-fast-to-super-fast spin and accelerating horizontal travel, dodgeable by roll/somersault.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 56,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S2-07",
+      "group": "Stage 2: lava enemies, Magma Ward and Furnace Tyrant",
+      "status": "pending",
+      "request": "Hard miniboss and boss: additional 25% HP and 50% fire absorption using the shared elemental rules.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 33,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "S2-08",
+      "group": "Stage 2: lava enemies, Magma Ward and Furnace Tyrant",
+      "status": "partial",
+      "request": "Missile-sequence head fight is recorded as a design note; distinct Super Missile Box and encounter sequence remain to be built.",
+      "evidence": "OVERNIGHT_REQUESTS_0914.md",
+      "dependency": "",
+      "workOrder": 76,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S2-09",
+      "group": "Stage 2: lava enemies, Magma Ward and Furnace Tyrant",
+      "status": "pending",
+      "request": "Generate improved authored Furnace giant-beam graphics that also support the Stage-3 Furious palette variant.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 60,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S3-01",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "complete",
+      "request": "Remove the ten boat spawns and store their definitions/assets for later use.",
+      "evidence": "STAGE3_STORED_BOATS_0914.json",
+      "dependency": ""
+    },
+    {
+      "id": "S3-02",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "complete",
+      "request": "Ice-drone projectiles: larger visible dark-edged blue art over the snow.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S3-03",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "complete",
+      "request": "Rime Wall: beams originate only at the visible side cannon exits; middle uses a warned finite charge/pulse, not another full beam.",
+      "evidence": "READABLE_ATTACKS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S3-04",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "complete",
+      "request": "Rime Wall beam palette: strong dark-blue rim, restrained light core readable over ice.",
+      "evidence": "qa/shared_laser_warnings_0914.json",
+      "dependency": ""
+    },
+    {
+      "id": "S3-05",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "pending",
+      "request": "Miniboss baseline: more aggressive, player-X-aligned return and horizontal following until laser commitment.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 14,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "S3-06",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "pending",
+      "request": "Miniboss laser: darken screen, crackling lightning charge and laser sounds; widen 25%, sweep across the viewport with the intended diagonal escape route.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 57,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S3-07",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "complete",
+      "request": "Hard/Furious miniboss: black/royal-dark-blue palette and 35% larger hull.",
+      "evidence": "FROST_CRUISER_VARIANT_0914.md",
+      "dependency": "",
+      "workOrder": 9,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "S3-08",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "pending",
+      "request": "Hard/Furious miniboss: player Retina lock, charged shootable spiral rocket volley alternating left/right.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 58,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S3-09",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "pending",
+      "request": "Furious miniboss: combine rockets with a late committed charge into the player.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 59,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S3-10",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "pending",
+      "request": "Hard boss: Juggernaut-like dash with authored charge effects, fluid circular return and persistent hull-shaped shadow.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 61,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S3-11",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "pending",
+      "request": "Hard boss below 50%: double laser firing and shootable homing laser balls; evade by leaving the screen or breaking lock with roll/somersault.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 62,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S3-12",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "pending",
+      "request": "Furious boss: black/blue palette and all Hard patterns, plus giant beam derived from the improved Furnace art.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 64,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S3-13",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "pending",
+      "request": "Furious cannon feints: faster Simon-Says sequencing, yellow/red/yellow/red/red-flash then fire; no green and no overhead asterisk only on Furious.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 63,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S3-14",
+      "group": "Stage 3: ice enemies, miniboss and Rime Wall",
+      "status": "complete",
+      "request": "Frost Cruiser: missiles stay on wing turrets; nose shoots broad, tall Falva-style black/blue laser bolts with stable art and animated pixel glow.",
+      "evidence": "FROST_NOSE_LASER_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S4-01",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "complete",
+      "request": "Warden: remove blue chainguns; mounted spread machine guns, center dual straight guns and mounted rocket salvos with anchored flashes/sounds.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S4-02",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "complete",
+      "request": "Audit stage-4 apparent orange beams and upper rocket racks: short machine shots and mapped muzzle origins verified; long lines are road markings and racks belong to the authored whole Warden hull.",
+      "evidence": "ENCOUNTER_VISUAL_0914.md",
+      "dependency": "",
+      "workOrder": 6,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "S4-03",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "complete",
+      "request": "Sovereign helpers: stay outside the shield above each generator column.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S4-04",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "complete",
+      "request": "Wide piercing laser: hit/destroy both generator nodes in its column on the same tick and reach live helpers.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S4-05",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "complete",
+      "request": "Unpowered Sovereign: warned charge, fully offscreen exit, overhead hull/shadow pass and opposite-edge return.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "S4-06",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Hard Warden: rapid turret spreads/center flurries plus circular/glide/charge/shake ramming sequence.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 65,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S4-07",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Warden helpers: two on Hard, three on Furious; matching palettes, shielded stationary MG fighter and aggressive player-like missile protector.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 68,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S4-08",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Furious third helper: elite black camo, opaque black/white Maverick-style ball with glowing blue charge growth.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 83,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "S4-09",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Dark Chromium attack: fade darker, shatter/disintegrate the ball into dual rotating energy flames with appropriate sounds.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 84,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "S4-10",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Dark Chromium lethal hit: explicitly requested ship-disintegration death and sound; preserve ordinary burn/spin/crash deaths elsewhere.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 85,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "S4-11",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Hard/Furious Sovereign helpers: 50% more shield HP, faster straight/diagonal attacks and forward horizontal blocking row.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 69,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S4-12",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Generator hit enrages helpers red with an asterisk; move to screen sides and face player for 5-7 seconds of staggered rapid streams with traversable gaps.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 70,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S4-13",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Enraged helpers react to generator damage with limited upward/backward tracking, preserving the edge-hugging/spider-walk dodge route.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 71,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S4-14",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Hard Sovereign chain lightning: double and widen with extra projectiles; Furious faster/wider and more frequent lightning balls.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 72,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S4-15",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Furious Sovereign giant lightning strike: five-second charge, yellow/red FOV, red flash, darkened screen/crackling core; bottom corners remain safe.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 73,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "S4-16",
+      "group": "Stage 4: Olive Warden and Sovereign",
+      "status": "pending",
+      "request": "Authored left/right escape arrows: flipped pair, flashing with synchronized warning sounds for the giant strike.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 25,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "SPACE-01",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Stage 5 scrolling continues through extended five-second sky launch and boss fight.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "SPACE-02",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Laser Cannon volume reduced at its game sound route.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "SPACE-03",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Shadow Orb direct/inherited detonation damage increased 35%.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "SPACE-04",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Space Volley Missiles: three independently targeted passive homing rounds using the authored space ordnance style.",
+      "evidence": "STAGE_1_5_CORRECTIONS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "SPACE-05",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Regent port readability: serialize warned ports and helper tells; remove overlapping full-screen grid/impact clutter.",
+      "evidence": "READABLE_ATTACKS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "SPACE-06",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "partial",
+      "request": "Stage 5 full enemy/projectile/boss balance round: first readability fixes have proof; full natural-play review with Mike remains.",
+      "evidence": "READABLE_ATTACKS_0914.md",
+      "dependency": "",
+      "workOrder": 87,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "SPACE-07",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "pending",
+      "request": "Stage 6 full enemy/projectile behavior cleanup round with Mike; separate from the completed Tempest/Retina work.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 88,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "SPACE-08",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "pending",
+      "request": "Stage 7 full enemy/projectile behavior cleanup round with Mike.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 89,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "SPACE-09",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "pending",
+      "request": "Stage 8 full enemy/projectile behavior cleanup round with Mike.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 90,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "SPACE-10",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "pending",
+      "request": "Stage 9 full enemy/projectile behavior cleanup round with Mike.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 91,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "SPACE-11",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Identify and inspect the replacement ship concept: Mike approved furyship_somersault_13.png; source and existing reel inspected. New asset production remains SPACE-12/13/14.",
+      "evidence": "FURYSHIP_REFERENCE_0914.md",
+      "dependency": "",
+      "workOrder": 5,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "SPACE-12",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "partial",
+      "request": "New ship and flight reels integrated. Twelve large solid top-view components rise from below individually with sound, then rotate and orbit without fades or mirrored perspective tricks. Remaining: flight-reel silhouette/wingspan consistency and exact final component fit.",
+      "evidence": "FURYSHIP_SOLID_ASSEMBLY_0914.md",
+      "dependency": "",
+      "workOrder": 78,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "SPACE-13",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Intro sustains 1,000 px/s vertical travel through a finite cloud deck and clearing. Travelling top/bottom caps removed; fixed side banks remain. Compact assembly energy, full white reveal, speed effects and animated exhaust integrated.",
+      "evidence": "FURYSHIP_SOLID_ASSEMBLY_0914.md",
+      "dependency": "",
+      "workOrder": 79,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "SPACE-14",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "All nine pilot palettes integrated across ship and components; new flight, Stage 9 and space death rendering verified. SPCBOY selects the preserved original ship and campaign snapshots save/restore that selection.",
+      "evidence": "FURYSHIP_LIVE_0914.md",
+      "dependency": "",
+      "workOrder": 80,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "SPACE-15",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Rename Gravity Mode announcement to Space Fighter variants: Yuri Yamado; Maverick Moonraker; Lizzie Lavender; Falva Foxtrout; Cole Collisto; Juggernaut Janis; Axel Aristotle; Freezer Falcon.",
+      "evidence": "EASY_QUEUE_0914.md",
+      "dependency": "",
+      "workOrder": 1,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "SPACE-16",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Decker Space Fighter model: Draven; use SPACE FIGHTER DRAVEN in the assembly/reveal announcement.",
+      "evidence": "SUPPLY_AUDIT_0914.md",
+      "dependency": "",
+      "workOrder": 3,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "MSL-01",
+      "group": "Manual missile tiers and supplies",
+      "status": "complete",
+      "request": "Missile crates spawn during live boss/miniboss fights, with a shared live-box limit.",
+      "evidence": "MISSILE_SUPPLIES_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "MSL-02",
+      "group": "Manual missile tiers and supplies",
+      "status": "complete",
+      "request": "Remove x2 grants: stages 1-7 use x5/x10/x20; stage 8 uses x50/x100. Stage 9 retains existing quantities because none were specified.",
+      "evidence": "MISSILE_SUPPLIES_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "MSL-03",
+      "group": "Manual missile tiers and supplies",
+      "status": "complete",
+      "request": "Ordinary enemy RNG drops one/two spinning authored missiles, scattering pairs; no loose drops from bosses/minibosses.",
+      "evidence": "MISSILE_SUPPLIES_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "MSL-04",
+      "group": "Manual missile tiers and supplies",
+      "status": "pending",
+      "request": "Manual tier damage/size progression: Standard -> Super x1.25 -> Ultra x1.5625 -> Uber x1.953125; keep passive missiles separate.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 35,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "MSL-05",
+      "group": "Manual missile tiers and supplies",
+      "status": "pending",
+      "request": "Hard ammo caps: Super 50, Ultra 35, Uber 20 across every pickup, save/load and firing route.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 36,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "MSL-06",
+      "group": "Manual missile tiers and supplies",
+      "status": "pending",
+      "request": "Tier acquisition replaces current manual missile; death resets to Standard.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 37,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "MSL-07",
+      "group": "Manual missile tiers and supplies",
+      "status": "pending",
+      "request": "Ultra eligibility requires Super plus survival until the next spawn wave; Uber requires the same after Ultra.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 38,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "MSL-08",
+      "group": "Manual missile tiers and supplies",
+      "status": "pending",
+      "request": "Generate matching Super/Ultra/Uber upgrade icons and ammo boxes, including the distinct Super Missile Box.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 23,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "MSL-09",
+      "group": "Manual missile tiers and supplies",
+      "status": "complete",
+      "request": "Hard/Furious missile supply frequency +25% across boss clocks, loose/legacy ammo drops and scheduled/scripted crates; queued extras avoid overlap and recursive bonuses.",
+      "evidence": "SUPPLY_AUDIT_0914.md",
+      "dependency": "",
+      "workOrder": 4,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "UI-01",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Pause Backspace protection; remove the old basic instructional text.",
+      "evidence": "PAUSE_MENU_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "UI-02",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Pause engine presentation: frozen grayscale combat, music ducked to 28%, green flashing authored selector.",
+      "evidence": "PAUSE_MENU_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "UI-03",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Pause rows: Resume, Return to Main Menu, Restart Level, Options, Help, Quit; top-row default, drop-in motion and sound.",
+      "evidence": "PAUSE_MENU_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "UI-04",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Paused Options/Help reuse their existing screens and return to pause; restart and resume use the selected actions.",
+      "evidence": "PAUSE_MENU_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "UI-05",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Return/Quit: verified campaign autosave with visible Autosav0X.json notice, complete death/GAME OVER sequence and fade to title/exit. Saves are browser records, not disk JSON files.",
+      "evidence": "PAUSE_MENU_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "UI-06",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "pending",
+      "request": "Generate any missing dedicated pause/menu bitmap buttons; current pause uses existing authored font/cursor and game UI chrome.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 19,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "UI-07",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "pending",
+      "request": "Title/intro silhouettes: all nine front-facing pilots beside their ships, scrolling from Cole through the remaining roster.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 18,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "UI-08",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "pending",
+      "request": "Pilot select fills the screen rather than the old 640x480 presentation.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 11,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "UI-09",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "pending",
+      "request": "Pilot-select words reveal letter-by-letter and stat bars fill left-to-right.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 10,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "UI-10",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "pending",
+      "request": "Pilot-select ship animation: onion-align and center every rotation frame.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 17,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "UI-11",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Use the approved new Yuri and his seven expressions throughout portrait routes; match compact dialogue avatar framing for all nine pilots, with red for Yuri. Existing approved art reused per latest instruction.",
+      "evidence": "READABLE_TYPE_YURI_0914.md",
+      "dependency": "",
+      "workOrder": 20,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "UI-12",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Generate better stage fonts for all nine stages and a matching menu/stage-select/announcer font.",
+      "evidence": "READABLE_TYPE_YURI_0914.md",
+      "dependency": "",
+      "workOrder": 77,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "UI-13",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Readable all-capitals 16-bit dialogue font; compact nine-pilot portraits, centered text and panels clear of the weapon HUD.",
+      "evidence": "READABLE_TYPE_YURI_0914.md",
+      "dependency": "",
+      "workOrder": 21,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "ACH-01",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Persistent once-per-profile/account achievement registry, points and future Steam mapping.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 39,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-02",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Achievement menu/button and bottom-center unlock notification that slides/fades downward.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 40,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-03",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Nine Campaign Clear - <Pilot> achievements for Campaign or Arcade completion, 100 points each.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 41,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-04",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Each stage cleared on Normal or above: 10 points.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 42,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-05",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Each stage on Normal or above without losing a life: 200 points.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 43,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-06",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Entire game without spending a continue: 1000 points plus a generated trophy avatar.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 47,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-07",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Each stage without firing a manual missile: 100 points, unlock once per profile.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 44,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-08",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Each weapon maxed to level 5: its own 20-point achievement.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 45,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-09",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Boss-fight timer in upper right, 00:00 format, correct pause/entry/death lifecycle.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 12,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "ACH-10",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Stage-1 boss/miniboss speed awards: under two minutes 200 points; under one minute 500. Stacking policy not yet settled.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 46,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-11",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Hard boss victories: individual 200-point achievements; Furious victories: 500 points each.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 48,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-12",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "New-game menu order: Campaign, Arcade, Co-op, Boss Rush, Time Attack, with missing mode buttons generated.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 24,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "ACH-13",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Boss Rush/Time Attack gray chain-and-lock presentation using Nexus II art, denial sound on selection, unlock only on final campaign clear.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 49,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "ACH-14",
+      "group": "Achievements, timers and unlockable modes",
+      "status": "pending",
+      "request": "Wire playable Boss Rush and Time Attack behind their real unlock condition; do not fake a final campaign clear.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 86,
+      "difficulty": 5,
+      "difficultyBand": "Largest asset, mode and full-stage passes"
+    },
+    {
+      "id": "MODE-01",
+      "group": "Arcade and shared difficulty rewards",
+      "status": "partial",
+      "request": "Arcade mirrors the same encounters without campaign map/cutscenes; core start flow exists and Stage-9 credit fallback is now excluded, but all transition routes still need a parity audit.",
+      "evidence": "ARCADE_RULES_0914.md",
+      "dependency": "",
+      "workOrder": 26,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "MODE-02",
+      "group": "Arcade and shared difficulty rewards",
+      "status": "complete",
+      "request": "Arcade lives Easy/Normal/Hard/Furious = 7/5/3/3; continues = 7/5/3/1. Continue restores the same stock and the bank is run-wide, including Stage 9.",
+      "evidence": "ARCADE_RULES_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "MODE-03",
+      "group": "Arcade and shared difficulty rewards",
+      "status": "complete",
+      "request": "Difficulty descriptions show actual mode-specific lives/credits, continue prompt shows remaining Arcade credits; campaign loads restore campaign tuning.",
+      "evidence": "ARCADE_RULES_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "MODE-04",
+      "group": "Arcade and shared difficulty rewards",
+      "status": "pending",
+      "request": "Hard enemies and shields get +15% HP across Campaign and Arcade, with explicit encounter-specific modifiers applied consistently.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 31,
+      "difficulty": 3,
+      "difficultyBand": "Shared systems and progression"
+    },
+    {
+      "id": "MODE-05",
+      "group": "Arcade and shared difficulty rewards",
+      "status": "pending",
+      "request": "Hard/Furious elite duplicates: authored palette variations, shields and capable aggressive fighter behavior; Furious more demanding.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 66,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "MODE-06",
+      "group": "Arcade and shared difficulty rewards",
+      "status": "complete",
+      "request": "Hard/Furious Life Up frequency increased by 25%.",
+      "evidence": "EASY_QUEUE_0914.md",
+      "dependency": "",
+      "workOrder": 2,
+      "difficulty": 1,
+      "difficultyBand": "Small changes and focused checks"
+    },
+    {
+      "id": "MODE-07",
+      "group": "Arcade and shared difficulty rewards",
+      "status": "pending",
+      "request": "Continue Up reward in all modes for qualifying deathless sections, or Hard/Furious elite kills; enforce defined reward eligibility.",
+      "evidence": "",
+      "dependency": "",
+      "workOrder": 67,
+      "difficulty": 4,
+      "difficultyBand": "Complex encounter choreography"
+    },
+    {
+      "id": "MODE-08",
+      "group": "Arcade and shared difficulty rewards",
+      "status": "pending",
+      "request": "Regenerate Life Up and create Continue Up pickup art matching Bullets of Fury through SpriteCook.",
+      "evidence": "",
+      "dependency": "SpriteCook",
+      "workOrder": 22,
+      "difficulty": 2,
+      "difficultyBand": "Moderate presentation and behavior work"
+    },
+    {
+      "id": "UI-14",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Generate a rectangular 16-bit dialogue frame with a cool border, centered text, and palette swaps for all nine pilots; share it across in-game dialogue.",
+      "evidence": "DIALOGUE_HAZARDS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "SPACE-17",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Remove transparent scenery asteroids/comets: visible bodies must be opaque physical objects that can be avoided or destroyed.",
+      "evidence": "DIALOGUE_HAZARDS_0914.md",
+      "dependency": ""
+    },
+    {
+      "id": "SPACE-18",
+      "group": "Stages 5-9: space and encounter cleanup",
+      "status": "complete",
+      "request": "Replace Stage-5 projectile size/growth animation with one reviewed static source frame and stepped pixel glow; confirm the same stable-frame treatment on Stage-2 lava saw blades.",
+      "evidence": "PROJECTILE_PIXEL_GLOW_0914.md",
+      "dependency": ""
+    }
+  ],
+  "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
+  "latestBatch": {
+    "description": "Frost Cruiser nose corrected to spaced Falva-style black/blue laser bolts with pixel glow, laser audio, anchored launch and rotated collision; wing turret missiles preserved.",
+    "evidence": "FROST_NOSE_LASER_0914.md"
+  }
+}

@@ -1,0 +1,2726 @@
+[
+  {
+    "unit": "alien_beacon",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          66,
+          43,
+          189,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 4,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 13241,
+            "bbox": [
+              66,
+              43,
+              189,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          66,
+          43,
+          189,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 3,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 13241,
+            "bbox": [
+              66,
+              43,
+              189,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          66,
+          43,
+          189,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 13241,
+            "bbox": [
+              66,
+              43,
+              189,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          66,
+          43,
+          189,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 5,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 13311,
+            "bbox": [
+              66,
+              43,
+              189,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          66,
+          43,
+          189,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 4,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 13306,
+            "bbox": [
+              66,
+              43,
+              189,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          66,
+          43,
+          189,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 13241,
+            "bbox": [
+              66,
+              43,
+              189,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          66,
+          43,
+          189,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 4,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 13241,
+            "bbox": [
+              66,
+              43,
+              189,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          66,
+          43,
+          189,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 3,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 13241,
+            "bbox": [
+              66,
+              43,
+              189,
+              212
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "chronal_crawler_tank",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          28,
+          47,
+          228,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21701,
+            "bbox": [
+              28,
+              47,
+              228,
+              209
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          28,
+          47,
+          228,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21701,
+            "bbox": [
+              28,
+              47,
+              228,
+              209
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          28,
+          47,
+          228,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21890,
+            "bbox": [
+              28,
+              47,
+              228,
+              209
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          28,
+          46,
+          228,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21773,
+            "bbox": [
+              28,
+              46,
+              228,
+              209
+            ]
+          },
+          {
+            "pixels": 155,
+            "bbox": [
+              112,
+              187,
+              129,
+              209
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          28,
+          46,
+          228,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 2,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 22072,
+            "bbox": [
+              28,
+              46,
+              228,
+              209
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          28,
+          47,
+          228,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 7,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21890,
+            "bbox": [
+              28,
+              47,
+              228,
+              209
+            ]
+          },
+          {
+            "pixels": 5,
+            "bbox": [
+              119,
+              199,
+              121,
+              202
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          28,
+          47,
+          228,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21701,
+            "bbox": [
+              28,
+              47,
+              228,
+              209
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          28,
+          47,
+          228,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21701,
+            "bbox": [
+              28,
+              47,
+              228,
+              209
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "comet_skimmer",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          32,
+          45,
+          224,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17268,
+            "bbox": [
+              32,
+              45,
+              224,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          32,
+          45,
+          224,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17268,
+            "bbox": [
+              32,
+              45,
+              224,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          45,
+          224,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17418,
+            "bbox": [
+              31,
+              45,
+              224,
+              210
+            ]
+          },
+          {
+            "pixels": 127,
+            "bbox": [
+              81,
+              177,
+              99,
+              193
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          45,
+          224,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 2,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17370,
+            "bbox": [
+              31,
+              45,
+              224,
+              210
+            ]
+          },
+          {
+            "pixels": 92,
+            "bbox": [
+              78,
+              176,
+              92,
+              191
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          32,
+          45,
+          224,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17690,
+            "bbox": [
+              32,
+              45,
+              224,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          46,
+          224,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 10,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17365,
+            "bbox": [
+              31,
+              46,
+              224,
+              210
+            ]
+          },
+          {
+            "pixels": 128,
+            "bbox": [
+              83,
+              175,
+              97,
+              192
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          32,
+          45,
+          224,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17268,
+            "bbox": [
+              32,
+              45,
+              224,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          32,
+          45,
+          224,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17268,
+            "bbox": [
+              32,
+              45,
+              224,
+              210
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "dimensional_gunship",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          48,
+          43,
+          207,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 14899,
+            "bbox": [
+              48,
+              43,
+              207,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          48,
+          43,
+          207,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 14899,
+            "bbox": [
+              48,
+              43,
+              207,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          48,
+          43,
+          207,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 14920,
+            "bbox": [
+              48,
+              43,
+              207,
+              213
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          48,
+          43,
+          207,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 14923,
+            "bbox": [
+              48,
+              43,
+              207,
+              213
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          48,
+          43,
+          207,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 14895,
+            "bbox": [
+              48,
+              43,
+              207,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          48,
+          44,
+          207,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 14889,
+            "bbox": [
+              48,
+              44,
+              207,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          48,
+          43,
+          207,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 14899,
+            "bbox": [
+              48,
+              43,
+              207,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          48,
+          43,
+          207,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 14899,
+            "bbox": [
+              48,
+              43,
+              207,
+              212
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "galaxy_interceptor",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          57,
+          40,
+          199,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 5,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 8949,
+            "bbox": [
+              57,
+              40,
+              199,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          57,
+          40,
+          199,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 4,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 8949,
+            "bbox": [
+              57,
+              40,
+              199,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          57,
+          40,
+          199,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 9008,
+            "bbox": [
+              57,
+              40,
+              199,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          57,
+          40,
+          199,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 9056,
+            "bbox": [
+              57,
+              40,
+              199,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          57,
+          40,
+          199,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 4,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 9056,
+            "bbox": [
+              57,
+              40,
+              199,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          57,
+          40,
+          199,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 5,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 8987,
+            "bbox": [
+              57,
+              40,
+              199,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          57,
+          40,
+          199,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 5,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 8949,
+            "bbox": [
+              57,
+              40,
+              199,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          57,
+          40,
+          199,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 4,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 8949,
+            "bbox": [
+              57,
+              40,
+              199,
+              215
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "gate_carrier",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          40,
+          40,
+          216,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 8,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19270,
+            "bbox": [
+              40,
+              40,
+              216,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          40,
+          40,
+          216,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 8,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19270,
+            "bbox": [
+              40,
+              40,
+              216,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          40,
+          40,
+          216,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19264,
+            "bbox": [
+              40,
+              40,
+              216,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          40,
+          40,
+          216,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19247,
+            "bbox": [
+              40,
+              40,
+              216,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          40,
+          40,
+          216,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19301,
+            "bbox": [
+              40,
+              40,
+              216,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          40,
+          40,
+          216,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19271,
+            "bbox": [
+              40,
+              40,
+              216,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          40,
+          40,
+          216,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 8,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19270,
+            "bbox": [
+              40,
+              40,
+              216,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          40,
+          40,
+          216,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 8,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19270,
+            "bbox": [
+              40,
+              40,
+              216,
+              215
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "gate_turret",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          46,
+          39,
+          210,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17566,
+            "bbox": [
+              46,
+              39,
+              210,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          46,
+          39,
+          210,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17566,
+            "bbox": [
+              46,
+              39,
+              210,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          46,
+          39,
+          210,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17565,
+            "bbox": [
+              46,
+              39,
+              210,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          46,
+          39,
+          210,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17616,
+            "bbox": [
+              46,
+              39,
+              210,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          46,
+          39,
+          210,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17617,
+            "bbox": [
+              46,
+              39,
+              210,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          46,
+          39,
+          210,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17565,
+            "bbox": [
+              46,
+              39,
+              210,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          46,
+          39,
+          210,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17566,
+            "bbox": [
+              46,
+              39,
+              210,
+              216
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          46,
+          39,
+          210,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17566,
+            "bbox": [
+              46,
+              39,
+              210,
+              216
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "gravity_artillery",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          47,
+          42,
+          208,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 2,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 16835,
+            "bbox": [
+              47,
+              42,
+              208,
+              213
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          47,
+          42,
+          208,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 16835,
+            "bbox": [
+              47,
+              42,
+              208,
+              213
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          47,
+          42,
+          208,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 16999,
+            "bbox": [
+              47,
+              42,
+              208,
+              213
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          47,
+          42,
+          208,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 2,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 16993,
+            "bbox": [
+              47,
+              42,
+              208,
+              213
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          47,
+          42,
+          208,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 2,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 17219,
+            "bbox": [
+              47,
+              42,
+              208,
+              213
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          47,
+          42,
+          208,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 5,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 16983,
+            "bbox": [
+              47,
+              42,
+              208,
+              213
+            ]
+          },
+          {
+            "pixels": 6,
+            "bbox": [
+              131,
+              206,
+              133,
+              209
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          47,
+          42,
+          208,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 2,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 16835,
+            "bbox": [
+              47,
+              42,
+              208,
+              213
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          47,
+          42,
+          208,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 16835,
+            "bbox": [
+              47,
+              42,
+              208,
+              213
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "hyperspace_prism",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21731,
+            "bbox": [
+              44,
+              36,
+              211,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21731,
+            "bbox": [
+              44,
+              36,
+              211,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21740,
+            "bbox": [
+              44,
+              36,
+              211,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21739,
+            "bbox": [
+              44,
+              36,
+              211,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21729,
+            "bbox": [
+              44,
+              36,
+              211,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          214
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21732,
+            "bbox": [
+              44,
+              36,
+              211,
+              214
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21731,
+            "bbox": [
+              44,
+              36,
+              211,
+              215
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 21731,
+            "bbox": [
+              44,
+              36,
+              211,
+              215
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "mini_warp_tank",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          51,
+          224,
+          205
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 18482,
+            "bbox": [
+              31,
+              51,
+              224,
+              205
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          51,
+          224,
+          205
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 18482,
+            "bbox": [
+              31,
+              51,
+              224,
+              205
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          50,
+          224,
+          206
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 18701,
+            "bbox": [
+              31,
+              50,
+              224,
+              206
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          51,
+          224,
+          205
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 18660,
+            "bbox": [
+              31,
+              51,
+              224,
+              205
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          50,
+          224,
+          205
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 18798,
+            "bbox": [
+              31,
+              50,
+              224,
+              205
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          51,
+          224,
+          205
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 3,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 18673,
+            "bbox": [
+              31,
+              51,
+              224,
+              205
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          51,
+          224,
+          205
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 18482,
+            "bbox": [
+              31,
+              51,
+              224,
+              205
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          31,
+          51,
+          224,
+          205
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 18482,
+            "bbox": [
+              31,
+              51,
+              224,
+              205
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "ring_drone",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          60,
+          38,
+          219,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 20490,
+            "bbox": [
+              60,
+              38,
+              219,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          60,
+          38,
+          219,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 20490,
+            "bbox": [
+              60,
+              38,
+              219,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          60,
+          37,
+          219,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 20490,
+            "bbox": [
+              60,
+              37,
+              219,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          60,
+          37,
+          219,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 20490,
+            "bbox": [
+              60,
+              37,
+              219,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          60,
+          38,
+          219,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 20490,
+            "bbox": [
+              60,
+              38,
+              219,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          60,
+          38,
+          219,
+          211
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 20504,
+            "bbox": [
+              60,
+              38,
+              219,
+              211
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          60,
+          38,
+          219,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 20490,
+            "bbox": [
+              60,
+              38,
+              219,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          60,
+          38,
+          219,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 1,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 20490,
+            "bbox": [
+              60,
+              38,
+              219,
+              210
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "unit": "singularity_mine",
+    "frames": [
+      {
+        "frame": "01.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19607,
+            "bbox": [
+              44,
+              36,
+              211,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "02.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19607,
+            "bbox": [
+              44,
+              36,
+              211,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "03.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19608,
+            "bbox": [
+              44,
+              36,
+              211,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "04.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19512,
+            "bbox": [
+              44,
+              36,
+              211,
+              212
+            ]
+          },
+          {
+            "pixels": 6,
+            "bbox": [
+              126,
+              208,
+              130,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "05.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          211
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19447,
+            "bbox": [
+              44,
+              36,
+              211,
+              211
+            ]
+          },
+          {
+            "pixels": 6,
+            "bbox": [
+              126,
+              208,
+              130,
+              210
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "06.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19609,
+            "bbox": [
+              44,
+              36,
+              211,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "07.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19607,
+            "bbox": [
+              44,
+              36,
+              211,
+              212
+            ]
+          }
+        ]
+      },
+      {
+        "frame": "08.png",
+        "size": [
+          256,
+          256
+        ],
+        "bbox": [
+          44,
+          36,
+          211,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0,
+        "transparent_rgb_pixels": 0,
+        "components": [
+          {
+            "pixels": 19607,
+            "bbox": [
+              44,
+              36,
+              211,
+              212
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

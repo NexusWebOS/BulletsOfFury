@@ -1,0 +1,423 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "the real stage-3 roster spawns Frost Cruiser, not the alternate Cryo Spear"
+    },
+    {
+      "pass": true,
+      "label": "Easy and Normal retain the original 168px hull"
+    },
+    {
+      "pass": true,
+      "label": "Hard and Furious enlarge both hull dimensions by exactly 35 percent"
+    },
+    {
+      "pass": true,
+      "label": "wing weapon origins grow with the hull instead of remaining at the old width"
+    },
+    {
+      "pass": true,
+      "label": "palette preserves every alpha pixel, black outline, warm accent and bright emitter"
+    },
+    {
+      "pass": true,
+      "label": "armor receives shaded black and royal-dark-blue tones"
+    },
+    {
+      "pass": true,
+      "label": "intact, damaged and enraged states keep the enlarged variant in real drawImage calls"
+    },
+    {
+      "pass": true,
+      "label": "actual pod missiles and nose rounds leave scaled mounts and retain their ordnance families"
+    },
+    {
+      "pass": true,
+      "label": "existing hull-hit routing expands with the larger target and rejects points outside it"
+    },
+    {
+      "pass": true,
+      "label": "stage-3 end boss is not accidentally enlarged or recolored"
+    },
+    {
+      "pass": true,
+      "label": "the shared Jungle Cruiser encounter does not inherit the frost-only variant"
+    },
+    {
+      "pass": true,
+      "label": "no page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "difficulties": [
+      {
+        "difficulty": "easy",
+        "kind": "frostcruiser",
+        "variant": false,
+        "w": 168,
+        "h": 168,
+        "mounts": [
+          {
+            "slot": "L",
+            "x": 303.04,
+            "y": 198.72
+          },
+          {
+            "slot": "C",
+            "x": 340,
+            "y": 226.44
+          },
+          {
+            "slot": "R",
+            "x": 376.96,
+            "y": 198.72
+          }
+        ],
+        "x": 340,
+        "y": 150
+      },
+      {
+        "difficulty": "normal",
+        "kind": "frostcruiser",
+        "variant": false,
+        "w": 168,
+        "h": 168,
+        "mounts": [
+          {
+            "slot": "L",
+            "x": 303.04,
+            "y": 198.72
+          },
+          {
+            "slot": "C",
+            "x": 340,
+            "y": 226.44
+          },
+          {
+            "slot": "R",
+            "x": 376.96,
+            "y": 198.72
+          }
+        ],
+        "x": 340,
+        "y": 150
+      },
+      {
+        "difficulty": "hard",
+        "kind": "frostcruiser",
+        "variant": true,
+        "w": 226.8,
+        "h": 226.8,
+        "mounts": [
+          {
+            "slot": "L",
+            "x": 290.104,
+            "y": 215.772
+          },
+          {
+            "slot": "C",
+            "x": 340,
+            "y": 253.19400000000002
+          },
+          {
+            "slot": "R",
+            "x": 389.896,
+            "y": 215.772
+          }
+        ],
+        "x": 340,
+        "y": 150
+      },
+      {
+        "difficulty": "furious",
+        "kind": "frostcruiser",
+        "variant": true,
+        "w": 226.8,
+        "h": 226.8,
+        "mounts": [
+          {
+            "slot": "L",
+            "x": 290.104,
+            "y": 215.772
+          },
+          {
+            "slot": "C",
+            "x": 340,
+            "y": 253.19400000000002
+          },
+          {
+            "slot": "R",
+            "x": 389.896,
+            "y": 215.772
+          }
+        ],
+        "x": 340,
+        "y": 150
+      }
+    ],
+    "palette": {
+      "key": "nsb_frost_cruiser",
+      "alpha": 0,
+      "protectedChanged": 0,
+      "changed": 16771,
+      "blue": 16771,
+      "outline": 1589,
+      "luminanceRatio": 0.5987680588026284
+    },
+    "origins": [
+      {
+        "slot": "L",
+        "match": true,
+        "unchanged": true
+      },
+      {
+        "slot": "R",
+        "match": true,
+        "unchanged": true
+      },
+      {
+        "slot": "C",
+        "match": true,
+        "unchanged": true
+      }
+    ],
+    "runtimeSha256": "36ae75a5cb0e2fe0b38394cbc6a43d55acc0e30c93f71a5fdf3fc639d79c292a"
+  },
+  "fixture": "Real debug fights across four difficulties; controlled HP snapshots and capture-only invincibility. Silent seven-second Hard preview.",
+  "syntaxExitCode": 0,
+  "suite": {
+    "passed": 3851,
+    "failed": 59,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "failureNames": [
+      "ASSERT FAIL: Jungle Cruiser fires a timed twin-machine-gun burst punctuated by separate green lances",
+      "ASSERT FAIL: Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route",
+      "ASSERT FAIL: Magma Ward telegraphs and releases its opening fan from the same measured left cannon",
+      "ASSERT FAIL: Maverick Level III keeps five discrete lances and never starts the shared held-beam bed",
+      "ASSERT FAIL: Maverick progression is locked to 3 purple, 4 blue, 5 green, 6 black and 7 helix lances",
+      "ASSERT FAIL: Olive Warden switches between Blacksite missile pincers and a rail attack",
+      "ASSERT FAIL: Rime Wall switches from dark-edged mortars to broad cryo waves instead of pale generic pellets",
+      "ASSERT FAIL: Shadow Orb I-V advances damage, blast radius and piercing charge\u2014not just icon art",
+      "ASSERT FAIL: Sludge Emperor advances through pressure, warned flood, crown and reactor-purge phases",
+      "ASSERT FAIL: Stage 2 fields all 12 unique volcanic hulls and none of the rejected art aliases",
+      "ASSERT FAIL: Stage 3 schedules every one of its eight native ice-field hulls",
+      "ASSERT FAIL: Stage 4 cycles fast turret fire, discrete blue energy bolts and its existing pincer \u2014 no continuous beam phase",
+      "ASSERT FAIL: Stage 5 keeps the approved Chaos Harrier and gains a reinforced four-phase boss",
+      "ASSERT FAIL: Stage 6 has no animated weather or cloud overlay over the baked still clouds",
+      "ASSERT FAIL: Stage 7 has a reinforced four-phase boss and the supplied dedicated miniboss",
+      "ASSERT FAIL: Stage 7 results go straight to the Stage 8 card with the portal-entry latch set",
+      "ASSERT FAIL: a boss visibly anticipates first and releases its unchanged attack only on the authored beat",
+      "ASSERT FAIL: a live shared beam sustains one loop route and expiry fades it before the release cue",
+      "ASSERT FAIL: all 12 native mega enemies appeared in the finale (17/12)",
+      "ASSERT FAIL: all eight native ice-field hulls have explicit Stage-3 rows",
+      "ASSERT FAIL: all nine stages own monotonically rising boss and miniboss HP floors",
+      "ASSERT FAIL: all seven Level-V lances animate on separate spiral paths instead of one rigid formation",
+      "ASSERT FAIL: all six shield families are reserved \u2014 ordinary enemies never auto-equip one",
+      "ASSERT FAIL: all twelve authored events field only the exact twelve-family Velocity Void cast",
+      "ASSERT FAIL: all twelve hulls resolve eight attack plus eight barrel-roll/twist frames",
+      "ASSERT FAIL: and a jet aimed at the far corner still fires two mg rounds, downward",
+      "ASSERT FAIL: and five seven-lance Level-5 volleys fan out behind it as individual rounds",
+      "ASSERT FAIL: and the map prefetches the highlighted stage, giving it the whole selection to finish",
+      "ASSERT FAIL: and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)",
+      "ASSERT FAIL: and warms its morph and final implosion overlays before the boss cinematic",
+      "ASSERT FAIL: crossing a real boss phase cancels the old tell and performs a readable power-up reset",
+      "ASSERT FAIL: each machine-gun beat overlays the jet muzzle reel on both barrel hardpoints at the faster cadence",
+      "ASSERT FAIL: each trigger launches the exact tier count as independently phased lance entities",
+      "ASSERT FAIL: every enemy-bullet kind in the source is in PROJ \u2014 jcHelix",
+      "ASSERT FAIL: far from firing -> idle reel",
+      "ASSERT FAIL: five directions x seven independent lances launch from the ball (25)",
+      "ASSERT FAIL: idle reel cycles all 6 frames at 8fps",
+      "ASSERT FAIL: inside the tell window -> attack-charge reel",
+      "ASSERT FAIL: its enraged pattern combines green laser volleys, curving wind blades and slow vortex pressure",
+      "ASSERT FAIL: kept as a no-op so its call sites stay harmless",
+      "ASSERT FAIL: morphing to FURIOUS DEATH repoints the reel to form 4",
+      "ASSERT FAIL: moving arrival shots use the aerial HQ view and top-down ships only",
+      "ASSERT FAIL: road tank changes among the eight drive headings instead of sliding on one axis (7)",
+      "ASSERT FAIL: stage 1 keeps its exact approved rebuilt cast (s1jetbomber, s1jetdelta)",
+      "ASSERT FAIL: stage 1: five yellow fast-jet ripples are authored, four aircraft each",
+      "ASSERT FAIL: stage 1: the sand tanks spawn (scroll never)",
+      "ASSERT FAIL: stage 1: the two purple dam-approach waves are committed kamikaze jets",
+      "ASSERT FAIL: stage 3 fields its complete authored native plan (8 waves)",
+      "ASSERT FAIL: stage 6 scrolls one physical blue master instead of looping or swapping skies",
+      "ASSERT FAIL: stage-2 roster rebuilt around all twelve unique volcanic hulls",
+      "ASSERT FAIL: stage-8 roster includes the native twelve-hull mega fleet",
+      "ASSERT FAIL: tell reaches its final frame just before the shot",
+      "ASSERT FAIL: the blue attack is five separate animated storm bolts from the coil/nose emitters, never a beam rake",
+      "ASSERT FAIL: the drop-shadow ellipse is gone",
+      "ASSERT FAIL: the first charged-ball wave is five directions x seven independent lances (25)",
+      "ASSERT FAIL: the flamethrower alone keeps a new, throttled contact/kill transient",
+      "ASSERT FAIL: the river corvette fires a five-beat port/starboard broadside from alternating physical cannons",
+      "ASSERT FAIL: the ship continues flying into its bottom play lane throughout the countdown",
+      "ASSERT FAIL: the twin machine-gun turrets fire a timed six-beat blue-tracer burst from their exact barrel tips"
+    ],
+    "newFailureNames": [],
+    "newlyObservedAgainstRecentBaseline": [
+      "ASSERT FAIL: road tank changes among the eight drive headings instead of sliding on one axis (7)"
+    ],
+    "baseline": "docs/qa/razorback_speed_0914.json, docs/qa/encounter_visual_0914.json, docs/qa/readable_type_yuri_0914.json and the controlled pre-change road-tank reproduction below"
+  },
+  "roadTankBaseline": {
+    "fixture": "Unchanged test_fl.js prefix through section 46. Seeded startup (LCG seed 1), followed by nine constant RNG samples for the same 2400-frame road patrol check; assets/game.js reads redirected to the pre-turn backup for the baseline only. No shipped test/game mutation.",
+    "preChangeSha256": "58ff59ba6fac9bbf9ce712192d87767d5fe762e8c41708499b230865af8014cc",
+    "before": [
+      {
+        "fixed": 0,
+        "dirs": [
+          "0",
+          "4"
+        ],
+        "span": 391.31255555555555
+      },
+      {
+        "fixed": 0.125,
+        "dirs": [
+          "1",
+          "5"
+        ],
+        "span": 392.578886775711
+      },
+      {
+        "fixed": 0.25,
+        "dirs": [
+          "2",
+          "6"
+        ],
+        "span": 391.5005459474324
+      },
+      {
+        "fixed": 0.375,
+        "dirs": [
+          "3",
+          "7"
+        ],
+        "span": 390.34688515912273
+      },
+      {
+        "fixed": 0.5,
+        "dirs": [
+          "4",
+          "5",
+          "6"
+        ],
+        "span": 398.1815250338803
+      },
+      {
+        "fixed": 0.625,
+        "dirs": [
+          "5",
+          "6"
+        ],
+        "span": 415.5319082211064
+      },
+      {
+        "fixed": 0.75,
+        "dirs": [
+          "0",
+          "6"
+        ],
+        "span": 400.97570404627334
+      },
+      {
+        "fixed": 0.875,
+        "dirs": [
+          "2",
+          "7"
+        ],
+        "span": 397.122004354666
+      },
+      {
+        "fixed": 0.999,
+        "dirs": [
+          "7"
+        ],
+        "span": 396.20290647475156
+      }
+    ],
+    "after": [
+      {
+        "fixed": 0,
+        "dirs": [
+          "0",
+          "4"
+        ],
+        "span": 391.31255555555555
+      },
+      {
+        "fixed": 0.125,
+        "dirs": [
+          "1",
+          "5"
+        ],
+        "span": 392.578886775711
+      },
+      {
+        "fixed": 0.25,
+        "dirs": [
+          "2",
+          "6"
+        ],
+        "span": 391.5005459474324
+      },
+      {
+        "fixed": 0.375,
+        "dirs": [
+          "3",
+          "7"
+        ],
+        "span": 390.34688515912273
+      },
+      {
+        "fixed": 0.5,
+        "dirs": [
+          "4",
+          "5",
+          "6"
+        ],
+        "span": 398.1815250338803
+      },
+      {
+        "fixed": 0.625,
+        "dirs": [
+          "5",
+          "6"
+        ],
+        "span": 415.5319082211064
+      },
+      {
+        "fixed": 0.75,
+        "dirs": [
+          "0",
+          "6"
+        ],
+        "span": 400.97570404627334
+      },
+      {
+        "fixed": 0.875,
+        "dirs": [
+          "2",
+          "7"
+        ],
+        "span": 397.122004354666
+      },
+      {
+        "fixed": 0.999,
+        "dirs": [
+          "7"
+        ],
+        "span": 396.20290647475156
+      }
+    ],
+    "result": "Identical movement/heading results in all nine cases. RNG .999 reproduces the exact (7) failure in both versions; the other eight cases pass. This additional intermittent failure predates the Frost Cruiser edits.",
+    "reproScript": "_shots/cryo_variant_0914/road_baseline.cjs"
+  },
+  "visualReview": [
+    "palette_comparison.png",
+    "hard_attack.png",
+    "hard_pattern.png",
+    "hard_damaged.png",
+    "hard_enraged.png"
+  ]
+}

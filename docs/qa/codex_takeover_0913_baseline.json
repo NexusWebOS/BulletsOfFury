@@ -1,0 +1,47 @@
+{
+  "date": "2026-09-13",
+  "head": "694e84ae125760f008f3c93760007546f7da332e",
+  "liveGitHubMain": "f936f106d85d935aaf518fbac5ab34756bc26724",
+  "inputs": [
+    {
+      "path": "assets/game.js",
+      "sha256": "8EEB7C44D6DF362A130CB8C08D2F3EDADE73CC705F88C719534D47C7D8F90A8A"
+    },
+    {
+      "path": "assets/manifest.js",
+      "sha256": "CEEFD26C4F0BAC385341572AECAB485DF3A44F613A218773263311EF61AD8C50"
+    },
+    {
+      "path": "_BUILD_SOURCE/test_fl.js",
+      "sha256": "E3D48E4B7C83EAACF9749C271AD7FE64F06E557956A3E51FD09B0039545F4917"
+    },
+    {
+      "path": "_BUILD_SOURCE/shoot.py",
+      "sha256": "FED3E2AA876EB1F2C0F82BAB4D70B8BA48422F655B269B4D0CC516AEF5A08EF4"
+    }
+  ],
+  "syntax": "passed",
+  "suite": {
+    "exitCode": 1,
+    "passed": 3627,
+    "failed": 60
+  },
+  "tempest": {
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "passed": 30,
+    "failed": 0
+  },
+  "spaceship": {
+    "passed": 31,
+    "loopThrows": 0,
+    "seconds": 231,
+    "consoleErrors": 0,
+    "pageErrors": 0,
+    "failed": 0
+  },
+  "atlas": {
+    "exitCode": 1,
+    "failed": 3
+  }
+}

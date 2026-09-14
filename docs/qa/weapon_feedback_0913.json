@@ -1,0 +1,1489 @@
+{
+  "date": "2026-09-13",
+  "suite": {
+    "passed": 3703,
+    "failed": 61,
+    "exitCode": 1,
+    "newFailureNames": [],
+    "failureNames": [
+      "ASSERT FAIL: Stage 7 results go straight to the Stage 8 card with the portal-entry latch set",
+      "ASSERT FAIL: far from firing -> idle reel",
+      "ASSERT FAIL: idle reel cycles all 6 frames at 8fps",
+      "ASSERT FAIL: inside the tell window -> attack-charge reel",
+      "ASSERT FAIL: tell reaches its final frame just before the shot",
+      "ASSERT FAIL: morphing to FURIOUS DEATH repoints the reel to form 4",
+      "ASSERT FAIL: stage-2 roster rebuilt around all twelve unique volcanic hulls",
+      "ASSERT FAIL: stage-8 roster includes the native twelve-hull mega fleet",
+      "ASSERT FAIL: all 12 native mega enemies appeared in the finale (17/12)",
+      "ASSERT FAIL: the first charged-ball wave is five directions x seven independent lances (25)",
+      "ASSERT FAIL: and five seven-lance Level-5 volleys fan out behind it as individual rounds",
+      "ASSERT FAIL: five directions x seven independent lances launch from the ball (25)",
+      "ASSERT FAIL: all eight native ice-field hulls have explicit Stage-3 rows",
+      "ASSERT FAIL: the drop-shadow ellipse is gone",
+      "ASSERT FAIL: kept as a no-op so its call sites stay harmless",
+      "ASSERT FAIL: stage 1: the sand tanks spawn (scroll never)",
+      "ASSERT FAIL: stage 1: five yellow fast-jet ripples are authored, four aircraft each",
+      "ASSERT FAIL: stage 1: the two purple dam-approach waves are committed kamikaze jets",
+      "ASSERT FAIL: stage 6 scrolls one physical blue master instead of looping or swapping skies",
+      "ASSERT FAIL: Stage 6 has no animated weather or cloud overlay over the baked still clouds",
+      "ASSERT FAIL: and a jet aimed at the far corner still fires two mg rounds, downward",
+      "ASSERT FAIL: every enemy-bullet kind in the source is in PROJ \u2014 jcHelix",
+      "ASSERT FAIL: and the map prefetches the highlighted stage, giving it the whole selection to finish",
+      "ASSERT FAIL: stage 1 keeps its exact approved rebuilt cast (s1jetbomber, s1jetdelta)",
+      "ASSERT FAIL: and warms its morph and final implosion overlays before the boss cinematic",
+      "ASSERT FAIL: the comm window body wraps and draws in the authored face",
+      "ASSERT FAIL: and canvas text is only the not-decoded fallback",
+      "ASSERT FAIL: the wrap runs on the FULL text, so lines do not move while it types",
+      "ASSERT FAIL: stage 3 fields its complete authored native plan (12 waves)",
+      "ASSERT FAIL: and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)",
+      "ASSERT FAIL: all six shield families are reserved \u2014 ordinary enemies never auto-equip one",
+      "ASSERT FAIL: the ship continues flying into its bottom play lane throughout the countdown",
+      "ASSERT FAIL: the flamethrower alone keeps a new, throttled contact/kill transient",
+      "ASSERT FAIL: Stage 4 cycles fast turret fire, discrete blue energy bolts and its existing pincer \u2014 no continuous beam phase",
+      "ASSERT FAIL: the twin machine-gun turrets fire a timed six-beat blue-tracer burst from their exact barrel tips",
+      "ASSERT FAIL: each machine-gun beat overlays the jet muzzle reel on both barrel hardpoints at the faster cadence",
+      "ASSERT FAIL: the blue attack is five separate animated storm bolts from the coil/nose emitters, never a beam rake",
+      "ASSERT FAIL: a boss visibly anticipates first and releases its unchanged attack only on the authored beat",
+      "ASSERT FAIL: crossing a real boss phase cancels the old tell and performs a readable power-up reset",
+      "ASSERT FAIL: the river corvette fires a five-beat port/starboard broadside from alternating physical cannons",
+      "ASSERT FAIL: moving arrival shots use the aerial HQ view and top-down ships only",
+      "ASSERT FAIL: Maverick progression is locked to 3 purple, 4 blue, 5 green, 6 black and 7 helix lances",
+      "ASSERT FAIL: each trigger launches the exact tier count as independently phased lance entities",
+      "ASSERT FAIL: all seven Level-V lances animate on separate spiral paths instead of one rigid formation",
+      "ASSERT FAIL: Shadow Orb I-V advances damage, blast radius and piercing charge\u2014not just icon art",
+      "ASSERT FAIL: all twelve authored events field only the exact twelve-family Velocity Void cast",
+      "ASSERT FAIL: Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route",
+      "ASSERT FAIL: a live shared beam sustains one loop route and expiry fades it before the release cue",
+      "ASSERT FAIL: Maverick Level III keeps five discrete lances and never starts the shared held-beam bed",
+      "ASSERT FAIL: Jungle Cruiser fires a timed twin-machine-gun burst punctuated by separate green lances",
+      "ASSERT FAIL: its enraged pattern combines green laser volleys, curving wind blades and slow vortex pressure",
+      "ASSERT FAIL: Stage 2 fields all 12 unique volcanic hulls and none of the rejected art aliases",
+      "ASSERT FAIL: Magma Ward telegraphs and releases its opening fan from the same measured left cannon",
+      "ASSERT FAIL: Stage 3 schedules every one of its eight native ice-field hulls",
+      "ASSERT FAIL: Rime Wall switches from dark-edged mortars to broad cryo waves instead of pale generic pellets",
+      "ASSERT FAIL: Olive Warden switches between Blacksite missile pincers and a rail attack",
+      "ASSERT FAIL: Sludge Emperor advances through pressure, warned flood, crown and reactor-purge phases",
+      "ASSERT FAIL: Stage 7 has a reinforced four-phase boss and the supplied dedicated miniboss",
+      "ASSERT FAIL: Stage 5 keeps the approved Chaos Harrier and gains a reinforced four-phase boss",
+      "ASSERT FAIL: all twelve hulls resolve eight attack plus eight barrel-roll/twist frames",
+      "ASSERT FAIL: all nine stages own monotonically rising boss and miniboss HP floors"
+    ],
+    "finalSummaryReached": true
+  },
+  "browser": {
+    "checks": [
+      {
+        "pass": true,
+        "label": "all selected authored art and sixteen sound mixes decode in Chromium"
+      },
+      {
+        "pass": true,
+        "label": "Cole holding the trigger charges without duplicate firing"
+      },
+      {
+        "pass": true,
+        "label": "Cole compression rings reach the actual game drawImage"
+      },
+      {
+        "pass": true,
+        "label": "one fully charged release produces one piercing pressure front"
+      },
+      {
+        "pass": true,
+        "label": "full Sonic Boom receives its stronger dedicated release sound"
+      },
+      {
+        "pass": true,
+        "label": "Cole charge bed fades and stops after release"
+      },
+      {
+        "pass": true,
+        "label": "exactly two opposite wrecking balls remain anchored"
+      },
+      {
+        "pass": true,
+        "label": "full-opacity authored steel balls reach drawImage"
+      },
+      {
+        "pass": true,
+        "label": "a real bullet interception plays the short metal deflection cue"
+      },
+      {
+        "pass": true,
+        "label": "a real steel contact damages its target and plays the heavy strike"
+      },
+      {
+        "pass": true,
+        "label": "steel impact flashes stay at contact points while balls keep orbiting"
+      },
+      {
+        "pass": true,
+        "label": "Juggernaut full wind-up owns its mechanical charge bed"
+      },
+      {
+        "pass": true,
+        "label": "the committed dash draws two aft authored exhausts"
+      },
+      {
+        "pass": true,
+        "label": "the dash owns a distinct boost sound bed"
+      },
+      {
+        "pass": true,
+        "label": "landing thump fires once and both charge/boost beds stop"
+      },
+      {
+        "pass": true,
+        "label": "flails and chain sound leave together when the special ends"
+      },
+      {
+        "pass": true,
+        "label": "Laser Mist passes inactive armor without fake wet impacts or consuming its hit budget"
+      },
+      {
+        "pass": true,
+        "label": "Laser Mist still damages a live rotated gun and produces its real wet impact"
+      },
+      {
+        "pass": true,
+        "label": "Laser Mist launches three blue emitters without a borrowed MG flash"
+      },
+      {
+        "pass": true,
+        "label": "the first split preserves nine independent lances"
+      },
+      {
+        "pass": true,
+        "label": "the final bloom preserves all twenty-seven independent lances"
+      },
+      {
+        "pass": true,
+        "label": "each split beat receives one sound per wave instead of one per parent"
+      },
+      {
+        "pass": true,
+        "label": "wet impact bubbles retain the independent performance cap"
+      },
+      {
+        "pass": true,
+        "label": "death cancels uncommitted feedback and stops Juggernaut beds"
+      },
+      {
+        "pass": true,
+        "label": "pause immediately stops every held feedback sound"
+      },
+      {
+        "pass": true,
+        "label": "Sonic Boom expiry releases its audio and charge ownership"
+      },
+      {
+        "pass": true,
+        "label": "zero page, console, and deterministic-loop errors"
+      }
+    ],
+    "errors": [],
+    "details": {
+      "cole": {
+        "waves": [
+          {
+            "power": 1,
+            "damage": 14,
+            "life": 0.8906666666666679,
+            "geometry": {
+              "w": 78.88000000000001,
+              "h": 34,
+              "alpha": 0.96,
+              "frame": 2
+            }
+          }
+        ],
+        "blits": [
+          {
+            "key": "nsw_dist_0",
+            "width": 128,
+            "height": 128,
+            "args": [
+              -39.698238095238096,
+              -15,
+              79.39647619047619,
+              30
+            ],
+            "alpha": 0.29107142857142865,
+            "op": "lighter"
+          },
+          {
+            "key": "nsw_dist_0",
+            "width": 128,
+            "height": 128,
+            "args": [
+              -39.49164761904762,
+              -15,
+              78.98329523809524,
+              30
+            ],
+            "alpha": 0.2982142857142857,
+            "op": "lighter"
+          },
+          {
+            "key": "nsw_dist_2",
+            "width": 128,
+            "height": 128,
+            "args": [
+              -39.440000000000005,
+              -17,
+              78.88000000000001,
+              34
+            ],
+            "alpha": 0.96,
+            "op": "lighter"
+          },
+          {
+            "key": "nsw_dist_0",
+            "width": 128,
+            "height": 128,
+            "args": [
+              -39.698238095238096,
+              -15,
+              79.39647619047619,
+              30
+            ],
+            "alpha": 0.29107142857142865,
+            "op": "lighter"
+          },
+          {
+            "key": "nsw_dist_0",
+            "width": 128,
+            "height": 128,
+            "args": [
+              -39.49164761904762,
+              -15,
+              78.98329523809524,
+              30
+            ],
+            "alpha": 0.2982142857142857,
+            "op": "lighter"
+          }
+        ],
+        "release": [
+          [
+            78,
+            "colePressureRelease",
+            1
+          ]
+        ]
+      },
+      "strike": [
+        {
+          "x": 397.105781628179,
+          "y": 454.1439372231361,
+          "t": 0,
+          "size": 28
+        },
+        {
+          "x": 255.26238855173443,
+          "y": 465.82648749239553,
+          "t": 0,
+          "size": 58
+        }
+      ],
+      "dash": {
+        "dash": {
+          "t": 0.050000000000000905,
+          "dur": 0.4,
+          "dist": 360,
+          "k": 1,
+          "y0": 430
+        },
+        "blits": [
+          {
+            "key": "ndr_dambreaker_bottomthruster_0",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.82,
+            "op": "source-over"
+          },
+          {
+            "key": "ndr_dambreaker_bottomthruster_0",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.82,
+            "op": "source-over"
+          },
+          {
+            "key": "ndr_dambreaker_bottomthruster_0",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.8097499999999999,
+            "op": "source-over"
+          },
+          {
+            "key": "ndr_dambreaker_bottomthruster_0",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.8097499999999999,
+            "op": "source-over"
+          },
+          {
+            "key": "ndr_dambreaker_bottomthruster_0",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.7994999999999995,
+            "op": "source-over"
+          },
+          {
+            "key": "ndr_dambreaker_bottomthruster_0",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.7994999999999995,
+            "op": "source-over"
+          },
+          {
+            "key": "ndr_dambreaker_bottomthruster_1",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.7892499999999995,
+            "op": "source-over"
+          },
+          {
+            "key": "ndr_dambreaker_bottomthruster_1",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.7892499999999995,
+            "op": "source-over"
+          },
+          {
+            "key": "ndr_dambreaker_bottomthruster_1",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.7892499999999995,
+            "op": "source-over"
+          },
+          {
+            "key": "ndr_dambreaker_bottomthruster_1",
+            "width": 64,
+            "height": 96,
+            "args": [
+              -17,
+              -65.5,
+              34,
+              131
+            ],
+            "alpha": 0.7892499999999995,
+            "op": "source-over"
+          }
+        ],
+        "sounds": [
+          [
+            119,
+            "juggernautWreckBlock",
+            0.55
+          ],
+          [
+            119,
+            "juggernautWreckHit",
+            1
+          ],
+          [
+            123,
+            "juggernautChargeStart",
+            1
+          ],
+          [
+            133,
+            "juggernautWreckHit",
+            1
+          ],
+          [
+            201,
+            "juggernautRamLaunch",
+            1
+          ]
+        ],
+        "y": 345.62499999999864
+      },
+      "mist": {
+        "splits": [
+          [
+            280,
+            "laserMistSplit",
+            1
+          ],
+          [
+            296,
+            "laserMistBloom",
+            1
+          ]
+        ],
+        "ledger": {
+          "hits": [],
+          "wave": 1,
+          "_splitSound": true,
+          "_bloomSound": true
+        },
+        "impacts": 9
+      },
+      "runtimeError": null
+    }
+  },
+  "legacyWreckDash": {
+    "passed": 23,
+    "failed": 0,
+    "pageErrors": 0,
+    "consoleErrors": 0
+  },
+  "audio": {
+    "cole_sonic": {
+      "peak": 0.7124340534210205,
+      "rms": 0.11792065909570244,
+      "counts": {
+        "snd": 44,
+        "cut": 0,
+        "loopSeg": 4,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "juggernaut_dash": {
+      "peak": 0.8542730808258057,
+      "rms": 0.17188217018463023,
+      "counts": {
+        "snd": 94,
+        "cut": 0,
+        "loopSeg": 7,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "juggernaut_flails": {
+      "peak": 0.6810109615325928,
+      "rms": 0.1507001844850972,
+      "counts": {
+        "snd": 71,
+        "cut": 0,
+        "loopSeg": 1,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "laser_mist": {
+      "peak": 0.7898528575897217,
+      "rms": 0.13577047008419948,
+      "counts": {
+        "snd": 166,
+        "cut": 0,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    }
+  },
+  "video": {
+    "file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\weapon_feedback_0913\\video\\BulletsOfFury_Weapon_Feedback_0913.mp4",
+    "frames": 1200,
+    "fps": 30,
+    "seconds": 40,
+    "bytes": 42571417,
+    "sha256": "a8a10309f52fcd1dc08ea5da614693e1133d56c2a3d1d76d71740b64437fd855",
+    "takes": [
+      {
+        "name": "cole_sonic",
+        "stage": 1,
+        "role": "boss",
+        "pilot": "cole",
+        "seconds": 10,
+        "peakMist": 0,
+        "dashFrames": 0,
+        "audio": {
+          "peak": 0.7124340534210205,
+          "rms": 0.11792065909570244,
+          "counts": {
+            "snd": 44,
+            "cut": 0,
+            "loopSeg": 4,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "bossPhase",
+          "colePressureImpact",
+          "colePressureRelease",
+          "colePressureStart",
+          "enemyMachineGunBurst",
+          "hit",
+          "missile",
+          "retinaCharge",
+          "retinaLockBeep"
+        ],
+        "loops": [
+          "colePressureLoop"
+        ],
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "px": 332.4184,
+            "py": 414,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "damkeeper",
+              "hp": 1822.7361152
+            },
+            "error": null
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "px": 423.3975999999998,
+            "py": 414,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "damkeeper",
+              "hp": 1794.7361152
+            },
+            "error": null
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "px": 226.2760000000003,
+            "py": 414,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "damkeeper",
+              "hp": 1786.7361152
+            },
+            "error": null
+          },
+          {
+            "seconds": 6.0,
+            "state": "play",
+            "dead": false,
+            "px": 355.16319999999996,
+            "py": 414,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "damkeeper",
+              "hp": 1786.7361152
+            },
+            "error": null
+          },
+          {
+            "seconds": 8.0,
+            "state": "play",
+            "dead": false,
+            "px": 415.8159999999998,
+            "py": 414,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "damkeeper",
+              "hp": 1758.7361152
+            },
+            "error": null
+          }
+        ]
+      },
+      {
+        "name": "juggernaut_dash",
+        "stage": 4,
+        "role": "mini",
+        "pilot": "juggernaut",
+        "seconds": 10,
+        "peakMist": 0,
+        "dashFrames": 36,
+        "audio": {
+          "peak": 0.8542730808258057,
+          "rms": 0.17188217018463023,
+          "counts": {
+            "snd": 94,
+            "cut": 0,
+            "loopSeg": 7,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "bossWeaponCharge",
+          "enemyBossCannon",
+          "enemyMachineGunHeavy",
+          "hit",
+          "juggernautChargeStart",
+          "juggernautRamImpact",
+          "juggernautRamLaunch",
+          "juggernautRamStop",
+          "juggernautWreckBlock",
+          "juggernautWreckHit"
+        ],
+        "loops": [
+          "juggernautChains",
+          "juggernautChargeLoop",
+          "juggernautRamLoop"
+        ],
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "px": 340,
+            "py": 414,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "olivewarden",
+              "hp": 1648
+            },
+            "error": null
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "px": 364.72551374246086,
+            "py": 100.99262748492156,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "olivewarden",
+              "hp": 1618
+            },
+            "error": null
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "px": 218.58860380277383,
+            "py": 372.3241767506041,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "olivewarden",
+              "hp": 1570
+            },
+            "error": null
+          },
+          {
+            "seconds": 6.0,
+            "state": "play",
+            "dead": false,
+            "px": 262.9188097233108,
+            "py": 99.10100592053674,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "olivewarden",
+              "hp": 1540
+            },
+            "error": null
+          },
+          {
+            "seconds": 8.0,
+            "state": "play",
+            "dead": false,
+            "px": 431.88961184107393,
+            "py": 410.15660803829934,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "olivewarden",
+              "hp": 1432
+            },
+            "error": null
+          }
+        ]
+      },
+      {
+        "name": "juggernaut_flails",
+        "stage": 4,
+        "role": "mini",
+        "pilot": "juggernaut",
+        "seconds": 8,
+        "peakMist": 0,
+        "dashFrames": 0,
+        "audio": {
+          "peak": 0.6810109615325928,
+          "rms": 0.1507001844850972,
+          "counts": {
+            "snd": 71,
+            "cut": 0,
+            "loopSeg": 1,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "bossWeaponCharge",
+          "enemyBossCannon",
+          "enemyMachineGunHeavy",
+          "hit",
+          "juggernautWreckBlock",
+          "juggernautWreckHit"
+        ],
+        "loops": [
+          "juggernautChains"
+        ],
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "px": 344.5667784356152,
+            "py": 409.4332215643848,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "olivewarden",
+              "hp": 1648
+            },
+            "error": null
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "px": 443.6032668109176,
+            "py": 258.72953318908253,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "olivewarden",
+              "hp": 1606
+            },
+            "error": null
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "px": 243.39286681091812,
+            "py": 258.72953318908253,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "olivewarden",
+              "hp": 1582
+            },
+            "error": null
+          },
+          {
+            "seconds": 6.0,
+            "state": "play",
+            "dead": false,
+            "px": 307.97686681091795,
+            "py": 258.72953318908253,
+            "dash": false,
+            "mist": 0,
+            "target": {
+              "name": "olivewarden",
+              "hp": 1522
+            },
+            "error": null
+          }
+        ]
+      },
+      {
+        "name": "laser_mist",
+        "stage": 1,
+        "role": "mini",
+        "pilot": "falva",
+        "seconds": 12,
+        "peakMist": 36,
+        "dashFrames": 0,
+        "audio": {
+          "peak": 0.7898528575897217,
+          "rms": 0.13577047008419948,
+          "counts": {
+            "snd": 166,
+            "cut": 0,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "coleSonicBoom",
+          "enemyMachineGunLight",
+          "expBig",
+          "furnaceServo",
+          "hit",
+          "laserMistBloom",
+          "laserMistFire",
+          "laserMistImpact",
+          "laserMistSplit",
+          "missile",
+          "retinaCharge",
+          "retinaLockBeep",
+          "sonicChargeStart"
+        ],
+        "loops": [],
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "px": 340,
+            "py": 414,
+            "dash": false,
+            "mist": 3,
+            "target": {
+              "name": "razorback",
+              "hp": 938
+            },
+            "error": null
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "px": 434.34879999999976,
+            "py": 414,
+            "dash": false,
+            "mist": 23,
+            "target": {
+              "name": "razorback",
+              "hp": 915.0500000000004
+            },
+            "error": null
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "px": 316.41280000000006,
+            "py": 414,
+            "dash": false,
+            "mist": 33,
+            "target": {
+              "name": "razorback",
+              "hp": 881.900000000001
+            },
+            "error": null
+          },
+          {
+            "seconds": 6.0,
+            "state": "play",
+            "dead": false,
+            "px": 253.51360000000022,
+            "py": 414,
+            "dash": false,
+            "mist": 36,
+            "target": {
+              "name": "razorback",
+              "hp": 881.900000000001
+            },
+            "error": null
+          },
+          {
+            "seconds": 8.0,
+            "state": "play",
+            "dead": false,
+            "px": 387.1743999999999,
+            "py": 414,
+            "dash": false,
+            "mist": 21,
+            "target": {
+              "name": "razorback",
+              "hp": 866.6000000000013
+            },
+            "error": null
+          },
+          {
+            "seconds": 10.0,
+            "state": "play",
+            "dead": false,
+            "px": 418.6239999999998,
+            "py": 414,
+            "dash": false,
+            "mist": 33,
+            "target": {
+              "name": "razorback",
+              "hp": 841.1000000000017
+            },
+            "error": null
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "protectedDemoPilot": true,
+    "sourceHealthGatesUnchanged": true
+  },
+  "runtime": {
+    "sha256": "0740c11a9f10a9a55a9661c4970c89f85241a7721d7e678b3facfb5b4222ed80",
+    "beforeSha256": "236c36dc522b740ea80caf8d58e22c964ef21ff9e7ba7bb0f387294239089d58",
+    "readableSourcesReproduceRuntime": true,
+    "LF": true,
+    "testsCRLF": true
+  },
+  "art": {
+    "dims": {
+      "nsw_ring_0": {
+        "w": 96,
+        "h": 96,
+        "nw": 96,
+        "nh": 96
+      },
+      "nsw_ring_1": {
+        "w": 96,
+        "h": 96,
+        "nw": 96,
+        "nh": 96
+      },
+      "nsw_ring_2": {
+        "w": 96,
+        "h": 96,
+        "nw": 96,
+        "nh": 96
+      },
+      "nsw_ring_3": {
+        "w": 96,
+        "h": 96,
+        "nw": 96,
+        "nh": 96
+      },
+      "nsw_circ_0": {
+        "w": 128,
+        "h": 128,
+        "nw": 128,
+        "nh": 128
+      },
+      "nsw_circ_1": {
+        "w": 128,
+        "h": 128,
+        "nw": 128,
+        "nh": 128
+      },
+      "nsw_circ_2": {
+        "w": 128,
+        "h": 128,
+        "nw": 128,
+        "nh": 128
+      },
+      "nsw_circ_3": {
+        "w": 128,
+        "h": 128,
+        "nw": 128,
+        "nh": 128
+      },
+      "nsw_dist_0": {
+        "w": 128,
+        "h": 128,
+        "nw": 128,
+        "nh": 128
+      },
+      "nsw_dist_1": {
+        "w": 128,
+        "h": 128,
+        "nw": 128,
+        "nh": 128
+      },
+      "nsw_dist_2": {
+        "w": 128,
+        "h": 128,
+        "nw": 128,
+        "nh": 128
+      },
+      "nsw_dist_3": {
+        "w": 128,
+        "h": 128,
+        "nw": 128,
+        "nh": 128
+      },
+      "jchg_0": {
+        "w": 84,
+        "h": 88,
+        "nw": 84,
+        "nh": 88
+      },
+      "jchg_1": {
+        "w": 128,
+        "h": 132,
+        "nw": 128,
+        "nh": 132
+      },
+      "jchg_2": {
+        "w": 152,
+        "h": 152,
+        "nw": 152,
+        "nh": 152
+      },
+      "jchg_3": {
+        "w": 164,
+        "h": 164,
+        "nw": 164,
+        "nh": 164
+      },
+      "jwb_ball": {
+        "w": 88,
+        "h": 87,
+        "nw": 88,
+        "nh": 87
+      },
+      "jwb_ball_hot": {
+        "w": 89,
+        "h": 87,
+        "nw": 89,
+        "nh": 87
+      },
+      "jwb_link": {
+        "w": 72,
+        "h": 72,
+        "nw": 72,
+        "nh": 72
+      },
+      "jwb_burst": {
+        "w": 85,
+        "h": 85,
+        "nw": 85,
+        "nh": 85
+      },
+      "ndr_dambreaker_bottomthruster_0": {
+        "w": 64,
+        "h": 96,
+        "nw": 64,
+        "nh": 96
+      },
+      "ndr_dambreaker_bottomthruster_1": {
+        "w": 64,
+        "h": 96,
+        "nw": 64,
+        "nh": 96
+      },
+      "ndr_dambreaker_bottomthruster_2": {
+        "w": 64,
+        "h": 96,
+        "nw": 64,
+        "nh": 96
+      },
+      "ndr_dambreaker_bottomthruster_3": {
+        "w": 64,
+        "h": 96,
+        "nw": 64,
+        "nh": 96
+      }
+    },
+    "errors": []
+  },
+  "authoredAudio": {
+    "cole_pressure_start": {
+      "file": "assets/game/sounds/cole_pressure_start_0913.wav",
+      "seconds": 0.48,
+      "peak": 0.64,
+      "rms": 0.14022478645070255,
+      "layers": [
+        [
+          "reviewed_cole_sonic_charge_start.wav",
+          0.8,
+          0,
+          0.92
+        ],
+        [
+          "nsp_rcs_thruster.mp3",
+          0.2,
+          0,
+          0.85
+        ]
+      ],
+      "loop": false
+    },
+    "cole_pressure_loop": {
+      "file": "assets/game/sounds/cole_pressure_loop_0913.wav",
+      "seconds": 1.135,
+      "peak": 0.48,
+      "rms": 0.07935661802464897,
+      "layers": [
+        [
+          "reviewed_cole_sonic_charge_loop.wav",
+          0.75,
+          0,
+          0.9
+        ],
+        [
+          "ice_breath_loop.wav",
+          0.15,
+          0,
+          0.75
+        ]
+      ],
+      "loop": true
+    },
+    "cole_pressure_release": {
+      "file": "assets/game/sounds/cole_pressure_release_0913.wav",
+      "seconds": 0.7,
+      "peak": 0.76,
+      "rms": 0.14203245906052459,
+      "layers": [
+        [
+          "reviewed_cole_sonic_release.wav",
+          0.8,
+          0,
+          0.83
+        ],
+        [
+          "explosion_air_small_02.wav",
+          0.23,
+          0,
+          0.76
+        ]
+      ],
+      "loop": false
+    },
+    "cole_pressure_impact": {
+      "file": "assets/game/sounds/cole_pressure_impact_0913.wav",
+      "seconds": 0.28,
+      "peak": 0.6,
+      "rms": 0.08545298081077035,
+      "layers": [
+        [
+          "shield_hit_heavy.wav",
+          0.5,
+          0,
+          0.76
+        ],
+        [
+          "reviewed_cole_sonic_release.wav",
+          0.23,
+          0,
+          1.3
+        ]
+      ],
+      "loop": false
+    },
+    "juggernaut_charge_start": {
+      "file": "assets/game/sounds/juggernaut_charge_start_0913.wav",
+      "seconds": 0.48,
+      "peak": 0.66,
+      "rms": 0.21250181897114975,
+      "layers": [
+        [
+          "furnace_chain_reel.wav",
+          0.5,
+          0,
+          1.15
+        ],
+        [
+          "nsp_booster_ignite.mp3",
+          0.34,
+          0,
+          0.65
+        ]
+      ],
+      "loop": false
+    },
+    "juggernaut_charge_loop": {
+      "file": "assets/game/sounds/juggernaut_charge_loop_0913.wav",
+      "seconds": 0.855,
+      "peak": 0.48,
+      "rms": 0.2151803616645182,
+      "layers": [
+        [
+          "nsp_engine_loop.mp3",
+          0.6,
+          0,
+          0.64
+        ],
+        [
+          "furnace_chain_reel.wav",
+          0.18,
+          0,
+          0.83
+        ]
+      ],
+      "loop": true
+    },
+    "juggernaut_ram_launch": {
+      "file": "assets/game/sounds/juggernaut_ram_launch_0913.wav",
+      "seconds": 0.45,
+      "peak": 0.7600000000000001,
+      "rms": 0.4142285238208941,
+      "layers": [
+        [
+          "nsp_booster_ignite.mp3",
+          0.68,
+          0,
+          0.75
+        ],
+        [
+          "furnace_chain_launch.wav",
+          0.22,
+          0,
+          0.8
+        ]
+      ],
+      "loop": false
+    },
+    "juggernaut_ram_loop": {
+      "file": "assets/game/sounds/juggernaut_ram_loop_0913.wav",
+      "seconds": 0.505,
+      "peak": 0.52,
+      "rms": 0.22327573376222837,
+      "layers": [
+        [
+          "nsp_engine_loop.mp3",
+          0.6,
+          0,
+          1.18
+        ],
+        [
+          "ice_breath_loop.wav",
+          0.25,
+          0,
+          1.6
+        ]
+      ],
+      "loop": true
+    },
+    "juggernaut_ram_stop": {
+      "file": "assets/game/sounds/juggernaut_ram_stop_0913.wav",
+      "seconds": 0.36,
+      "peak": 0.72,
+      "rms": 0.19664577212188336,
+      "layers": [
+        [
+          "explosion_air_small_01.wav",
+          0.65,
+          0,
+          0.65
+        ],
+        [
+          "debris_scatter_metal.wav",
+          0.2,
+          0,
+          1.15
+        ]
+      ],
+      "loop": false
+    },
+    "juggernaut_chains": {
+      "file": "assets/game/sounds/juggernaut_chains_0913.wav",
+      "seconds": 1.105,
+      "peak": 0.35,
+      "rms": 0.09402229503790692,
+      "layers": [
+        [
+          "furnace_chain_reel.wav",
+          0.6,
+          0,
+          1.05
+        ],
+        [
+          "debris_scatter_metal.wav",
+          0.13,
+          0,
+          0.75
+        ]
+      ],
+      "loop": true
+    },
+    "juggernaut_wreck_hit": {
+      "file": "assets/game/sounds/juggernaut_wreck_hit_0913.wav",
+      "seconds": 0.36,
+      "peak": 0.73,
+      "rms": 0.12708537439631382,
+      "layers": [
+        [
+          "shield_hit_heavy.wav",
+          0.7,
+          0,
+          0.65
+        ],
+        [
+          "debris_scatter_metal.wav",
+          0.28,
+          0,
+          0.9
+        ],
+        [
+          "explosion_air_small_02.wav",
+          0.16,
+          0,
+          0.8
+        ]
+      ],
+      "loop": false
+    },
+    "juggernaut_wreck_block": {
+      "file": "assets/game/sounds/juggernaut_wreck_block_0913.wav",
+      "seconds": 0.16,
+      "peak": 0.54,
+      "rms": 0.09070832461400376,
+      "layers": [
+        [
+          "shield_hit_light.wav",
+          0.55,
+          0,
+          1.35
+        ],
+        [
+          "debris_scatter_metal.wav",
+          0.17,
+          0,
+          1.5
+        ]
+      ],
+      "loop": false
+    },
+    "laser_mist_fire": {
+      "file": "assets/game/sounds/laser_mist_fire_0913.wav",
+      "seconds": 0.3,
+      "peak": 0.68,
+      "rms": 0.19032620047308044,
+      "layers": [
+        [
+          "ice_breath_release.wav",
+          0.64,
+          0,
+          1.25
+        ],
+        [
+          "reviewed_player_laser_beam_start.wav",
+          0.4,
+          0,
+          1.3
+        ]
+      ],
+      "loop": false
+    },
+    "laser_mist_split": {
+      "file": "assets/game/sounds/laser_mist_split_0913.wav",
+      "seconds": 0.16,
+      "peak": 0.48,
+      "rms": 0.18899748608798192,
+      "layers": [
+        [
+          "ice_breath_start.wav",
+          0.6,
+          0,
+          1.7
+        ],
+        [
+          "shield_graze.wav",
+          0.2,
+          0,
+          1.5
+        ]
+      ],
+      "loop": false
+    },
+    "laser_mist_bloom": {
+      "file": "assets/game/sounds/laser_mist_bloom_0913.wav",
+      "seconds": 0.24,
+      "peak": 0.56,
+      "rms": 0.15245487452843545,
+      "layers": [
+        [
+          "ice_breath_release.wav",
+          0.58,
+          0,
+          1.8
+        ],
+        [
+          "reviewed_player_laser_beam_start.wav",
+          0.24,
+          0,
+          1.65
+        ]
+      ],
+      "loop": false
+    },
+    "laser_mist_impact": {
+      "file": "assets/game/sounds/laser_mist_impact_0913.wav",
+      "seconds": 0.24,
+      "peak": 0.6,
+      "rms": 0.14203993605934093,
+      "layers": [
+        [
+          "ice_breath_release.wav",
+          0.5,
+          0,
+          1.9
+        ],
+        [
+          "shield_hit_light.wav",
+          0.23,
+          0,
+          1.55
+        ]
+      ],
+      "loop": false
+    }
+  }
+}

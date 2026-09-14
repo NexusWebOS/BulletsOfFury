@@ -1,0 +1,86 @@
+[
+  {
+    "file": "capture3.py",
+    "bytes": 36534,
+    "sha256": "7F06B94D16648620C8E9DBA440AAC75504B1D11A92B18C0647916B84B0CD289F",
+    "matchesOriginal": true
+  },
+  {
+    "file": "edit3.py",
+    "bytes": 57301,
+    "sha256": "BF48A4602E9DB8A92FD52DA89373D104752092CB0BB2E5C068E7FAE3B0B903B4",
+    "matchesOriginal": true
+  },
+  {
+    "file": "mix3.py",
+    "bytes": 12854,
+    "sha256": "02E0D84D35F0E6D5315C76B75002C756B3E03D1E0D24ECDC1D9520AB231EE835",
+    "matchesOriginal": true
+  },
+  {
+    "file": "render_v7.sh",
+    "bytes": 1442,
+    "sha256": "CEB0519CDB61AB69BF17AE9A8A09922D9FAA9F5211EFCFCB66D605FF84F0763B",
+    "matchesOriginal": true
+  },
+  {
+    "file": "render_audio.py",
+    "bytes": 13011,
+    "sha256": "FE9FA9FECC1C41F48FCEEFD1F9C9DFD9FF47938EFBBB6D88F8AF7162B7568C15",
+    "matchesOriginal": true
+  },
+  {
+    "file": "check_warn_pick.py",
+    "bytes": 1570,
+    "sha256": "BCF216AB70C1CA784C767A4E24D56E741C215FDEFA89929D86E4577E8D07F42C",
+    "matchesOriginal": true
+  },
+  {
+    "file": "compose.py",
+    "bytes": 19358,
+    "sha256": "D10B97A84AC8A1F934C7A9E06278659F97C0DE60ED2217A06FD8FEFDAA08B384",
+    "matchesOriginal": true
+  },
+  {
+    "file": "mixcheck3.py",
+    "bytes": 4501,
+    "sha256": "9F84C6E185347B2FF2563379C2BBD2EFE9E2A511830B9ADD1C46C726B31700E9",
+    "matchesOriginal": true
+  },
+  {
+    "file": "phone3.py",
+    "bytes": 2909,
+    "sha256": "C329C9CD7B67F99A866051196EF029BDA3326DBB25B25EFB3B2F2AE8250C0F93",
+    "matchesOriginal": true
+  },
+  {
+    "file": "stills3.py",
+    "bytes": 4741,
+    "sha256": "EC43583EBC6E6DDC9CB78807E1248974C1B4F4557E7EB73082E56ACD6A93CA3A",
+    "matchesOriginal": true
+  },
+  {
+    "file": "typeset.py",
+    "bytes": 6749,
+    "sha256": "AF395069E75B6822615DFA6EB6E56FF3AE70D8AF18211272BF766C163B5CC477",
+    "matchesOriginal": true
+  },
+  {
+    "file": "beatmap.json",
+    "bytes": 12866,
+    "sha256": "8366C741135198346FB1C7442ABE2545DF89577AF1E83F2B0B109EE1E3302E3B",
+    "matchesOriginal": true
+  },
+  {
+    "file": "edl3.json",
+    "bytes": 138404,
+    "sha256": "25C55305E11B6ED8AE909B89212D97976863F8FCD87768299BBF64FF1074934F",
+    "matchesOriginal": true
+  },
+  {
+    "file": "capture_v7.sh",
+    "bytes": 716,
+    "sha256": "33F5F3306F64019AD42F7887580796BFA0463469DE5F6BA86BCB79602BDE7975",
+    "matchesOriginal": true
+  }
+]

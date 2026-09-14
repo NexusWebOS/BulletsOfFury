@@ -1,0 +1,3832 @@
+{
+  "date": "2026-09-14",
+  "suite": {
+    "passed": 3724,
+    "failed": 61,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "newSection299Passed": 21,
+    "baseline": "docs/qa/weapon_feedback_0913.json",
+    "comparison": "Assertion names compared with dynamic numeric observations normalized.",
+    "newFailureNames": [],
+    "missingBaselineFailureNames": [],
+    "failureNames": [
+      "ASSERT FAIL: Stage 7 results go straight to the Stage 8 card with the portal-entry latch set",
+      "ASSERT FAIL: far from firing -> idle reel",
+      "ASSERT FAIL: idle reel cycles all 6 frames at 8fps",
+      "ASSERT FAIL: inside the tell window -> attack-charge reel",
+      "ASSERT FAIL: tell reaches its final frame just before the shot",
+      "ASSERT FAIL: morphing to FURIOUS DEATH repoints the reel to form 4",
+      "ASSERT FAIL: stage-2 roster rebuilt around all twelve unique volcanic hulls",
+      "ASSERT FAIL: stage-8 roster includes the native twelve-hull mega fleet",
+      "ASSERT FAIL: all 12 native mega enemies appeared in the finale (17/12)",
+      "ASSERT FAIL: the first charged-ball wave is five directions x seven independent lances (25)",
+      "ASSERT FAIL: and five seven-lance Level-5 volleys fan out behind it as individual rounds",
+      "ASSERT FAIL: five directions x seven independent lances launch from the ball (25)",
+      "ASSERT FAIL: all eight native ice-field hulls have explicit Stage-3 rows",
+      "ASSERT FAIL: the drop-shadow ellipse is gone",
+      "ASSERT FAIL: kept as a no-op so its call sites stay harmless",
+      "ASSERT FAIL: stage 1: the sand tanks spawn (scroll never)",
+      "ASSERT FAIL: stage 1: five yellow fast-jet ripples are authored, four aircraft each",
+      "ASSERT FAIL: stage 1: the two purple dam-approach waves are committed kamikaze jets",
+      "ASSERT FAIL: stage 6 scrolls one physical blue master instead of looping or swapping skies",
+      "ASSERT FAIL: Stage 6 has no animated weather or cloud overlay over the baked still clouds",
+      "ASSERT FAIL: and a jet aimed at the far corner still fires two mg rounds, downward",
+      "ASSERT FAIL: every enemy-bullet kind in the source is in PROJ \u2014 jcHelix",
+      "ASSERT FAIL: and the map prefetches the highlighted stage, giving it the whole selection to finish",
+      "ASSERT FAIL: stage 1 keeps its exact approved rebuilt cast (s1jetbomber, s1jetdelta)",
+      "ASSERT FAIL: and warms its morph and final implosion overlays before the boss cinematic",
+      "ASSERT FAIL: the comm window body wraps and draws in the authored face",
+      "ASSERT FAIL: and canvas text is only the not-decoded fallback",
+      "ASSERT FAIL: the wrap runs on the FULL text, so lines do not move while it types",
+      "ASSERT FAIL: stage 3 fields its complete authored native plan (8 waves)",
+      "ASSERT FAIL: and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)",
+      "ASSERT FAIL: all six shield families are reserved \u2014 ordinary enemies never auto-equip one",
+      "ASSERT FAIL: the ship continues flying into its bottom play lane throughout the countdown",
+      "ASSERT FAIL: the flamethrower alone keeps a new, throttled contact/kill transient",
+      "ASSERT FAIL: Stage 4 cycles fast turret fire, discrete blue energy bolts and its existing pincer \u2014 no continuous beam phase",
+      "ASSERT FAIL: the twin machine-gun turrets fire a timed six-beat blue-tracer burst from their exact barrel tips",
+      "ASSERT FAIL: each machine-gun beat overlays the jet muzzle reel on both barrel hardpoints at the faster cadence",
+      "ASSERT FAIL: the blue attack is five separate animated storm bolts from the coil/nose emitters, never a beam rake",
+      "ASSERT FAIL: a boss visibly anticipates first and releases its unchanged attack only on the authored beat",
+      "ASSERT FAIL: crossing a real boss phase cancels the old tell and performs a readable power-up reset",
+      "ASSERT FAIL: the river corvette fires a five-beat port/starboard broadside from alternating physical cannons",
+      "ASSERT FAIL: moving arrival shots use the aerial HQ view and top-down ships only",
+      "ASSERT FAIL: Maverick progression is locked to 3 purple, 4 blue, 5 green, 6 black and 7 helix lances",
+      "ASSERT FAIL: each trigger launches the exact tier count as independently phased lance entities",
+      "ASSERT FAIL: all seven Level-V lances animate on separate spiral paths instead of one rigid formation",
+      "ASSERT FAIL: Shadow Orb I-V advances damage, blast radius and piercing charge\u2014not just icon art",
+      "ASSERT FAIL: all twelve authored events field only the exact twelve-family Velocity Void cast",
+      "ASSERT FAIL: Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route",
+      "ASSERT FAIL: a live shared beam sustains one loop route and expiry fades it before the release cue",
+      "ASSERT FAIL: Maverick Level III keeps five discrete lances and never starts the shared held-beam bed",
+      "ASSERT FAIL: Jungle Cruiser fires a timed twin-machine-gun burst punctuated by separate green lances",
+      "ASSERT FAIL: its enraged pattern combines green laser volleys, curving wind blades and slow vortex pressure",
+      "ASSERT FAIL: Stage 2 fields all 12 unique volcanic hulls and none of the rejected art aliases",
+      "ASSERT FAIL: Magma Ward telegraphs and releases its opening fan from the same measured left cannon",
+      "ASSERT FAIL: Stage 3 schedules every one of its eight native ice-field hulls",
+      "ASSERT FAIL: Rime Wall switches from dark-edged mortars to broad cryo waves instead of pale generic pellets",
+      "ASSERT FAIL: Olive Warden switches between Blacksite missile pincers and a rail attack",
+      "ASSERT FAIL: Sludge Emperor advances through pressure, warned flood, crown and reactor-purge phases",
+      "ASSERT FAIL: Stage 7 has a reinforced four-phase boss and the supplied dedicated miniboss",
+      "ASSERT FAIL: Stage 5 keeps the approved Chaos Harrier and gains a reinforced four-phase boss",
+      "ASSERT FAIL: all twelve hulls resolve eight attack plus eight barrel-roll/twist frames",
+      "ASSERT FAIL: all nine stages own monotonically rising boss and miniboss HP floors"
+    ]
+  },
+  "browser": {
+    "checks": [
+      {
+        "pass": true,
+        "label": "authored damage plumes and clean stage-1 hull decode"
+      },
+      {
+        "pass": true,
+        "label": "half-health fodder uses animated authored fire over a clean plate"
+      },
+      {
+        "pass": true,
+        "label": "damage smoke actually advances multiple rendered frames"
+      },
+      {
+        "pass": true,
+        "label": "healthy stage-1 fodder has no damage plume"
+      },
+      {
+        "pass": true,
+        "label": "native Razorback suppression plays its dedicated weapon report"
+      },
+      {
+        "pass": true,
+        "label": "Razorback sonic release is audible without borrowing the player trigger"
+      },
+      {
+        "pass": true,
+        "label": "Overlord actual gunfire and continuous rotor bed are wired"
+      },
+      {
+        "pass": true,
+        "label": "Overlord rockets, lances, wind and charge each have audible cues"
+      },
+      {
+        "pass": true,
+        "label": "stage-2 authored flight art decodes before capture"
+      },
+      {
+        "pass": true,
+        "label": "stage-2 round keeps the same authored source rectangle throughout flight"
+      },
+      {
+        "pass": true,
+        "label": "stage-3 director launches approved ice enemies and no stored boats"
+      },
+      {
+        "pass": true,
+        "label": "ice-drone authored projectile art decodes"
+      },
+      {
+        "pass": true,
+        "label": "ordinary ice drones draw the enlarged authored flight plate in the real canvas"
+      },
+      {
+        "pass": true,
+        "label": "stage-3 FOV and authored laser charge art decode"
+      },
+      {
+        "pass": true,
+        "label": "every stage-3 boss phase fires only from cannon tips with a charged center laser"
+      },
+      {
+        "pass": true,
+        "label": "green and red authored FOV warnings reach drawImage"
+      },
+      {
+        "pass": true,
+        "label": "stage-4 machine bullets and rocket flight plates decode"
+      },
+      {
+        "pass": true,
+        "label": "Warden no longer renders blue chaingun attachments"
+      },
+      {
+        "pass": true,
+        "label": "Warden machine bullets actually render the approved orange tracer pixels"
+      },
+      {
+        "pass": true,
+        "label": "both mounted spread guns and both center barrels fire actual machine bullets"
+      },
+      {
+        "pass": true,
+        "label": "Warden rocket salvos leave both mounted turrets"
+      },
+      {
+        "pass": true,
+        "label": "Warden gun acts, rack tell and rocket salvos are audible"
+      },
+      {
+        "pass": true,
+        "label": "whole helpers sit outside the shield width directly above their generator columns"
+      },
+      {
+        "pass": true,
+        "label": "both helpers and all four complete generator sprites fit in the visible camera"
+      },
+      {
+        "pass": true,
+        "label": "one piercing laser tick destroys both generators in the left column without damaging the shielded carrier"
+      },
+      {
+        "pass": true,
+        "label": "the second column breaks the field when both generators are destroyed"
+      },
+      {
+        "pass": true,
+        "label": "unpowered Sovereign warns, dives fully offscreen, flies overhead and returns from the opposite edge"
+      },
+      {
+        "pass": true,
+        "label": "Sovereign clears its whole hull before the offscreen turn"
+      },
+      {
+        "pass": true,
+        "label": "the overhead flight cannot cause an invisible ground-plane hull hit"
+      },
+      {
+        "pass": true,
+        "label": "frame-shaped shadow crosses the player row during the overflight"
+      },
+      {
+        "pass": true,
+        "label": "native Sovereign helpers use authored gun, cooling and windup reports with no legacy synth fallback"
+      },
+      {
+        "pass": true,
+        "label": "native held laser input pierces both generators in one column while preserving the other column"
+      },
+      {
+        "pass": true,
+        "label": "native stage-5 launch stays in the extended sky for three seconds and keeps scenery scrolling"
+      },
+      {
+        "pass": true,
+        "label": "passive space rack launches three real independent homing missiles immediately"
+      },
+      {
+        "pass": true,
+        "label": "space missiles fly forward or produce actual impacts without orbiting or NaNs"
+      },
+      {
+        "pass": true,
+        "label": "Shadow Orb direct payload and its inherited detonation payload are 35 percent stronger"
+      },
+      {
+        "pass": true,
+        "label": "space Laser Cannon volume is reduced at its own sound route"
+      },
+      {
+        "pass": true,
+        "label": "stage 5 uses the finished authored spaceship for the selected pilot"
+      },
+      {
+        "pass": true,
+        "label": "stage-5 scenery continues scrolling throughout the boss fight"
+      },
+      {
+        "pass": true,
+        "label": "Regent warns the next formation opening after the first row releases"
+      },
+      {
+        "pass": true,
+        "label": "Regent escorts use visible locked charge beats and native release reports"
+      },
+      {
+        "pass": true,
+        "label": "zero Chromium page, console or controlled-loop errors"
+      }
+    ],
+    "errors": [],
+    "details": {
+      "burn": {
+        "art": "nef_s1_camo_attack_jet_intact",
+        "blits": [
+          {
+            "key": "nxp_upward_6",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_1",
+            "args": [
+              -14.238695607480368,
+              -18.688287984817983,
+              28.477391214960736,
+              37.376575969635965
+            ],
+            "alpha": 0.16408447690213135
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -11.613695607480368,
+              -15.242975484817983,
+              23.227391214960736,
+              30.485950969635965
+            ],
+            "alpha": 0.44908447690213144
+          },
+          {
+            "key": "nxp_upward_7",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_1",
+            "args": [
+              -14.317445607480371,
+              -18.791647359817986,
+              28.634891214960742,
+              37.58329471963597
+            ],
+            "alpha": 0.15553447690213126
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -11.692445607480371,
+              -15.346334859817986,
+              23.384891214960742,
+              30.692669719635973
+            ],
+            "alpha": 0.4405344769021311
+          },
+          {
+            "key": "nxp_upward_7",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_1",
+            "args": [
+              -14.396195607480372,
+              -18.89500673481799,
+              28.792391214960745,
+              37.79001346963598
+            ],
+            "alpha": 0.14698447690213107
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -11.771195607480372,
+              -15.449694234817988,
+              23.542391214960745,
+              30.899388469635976
+            ],
+            "alpha": 0.43198447690213104
+          },
+          {
+            "key": "nxp_upward_7",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_1",
+            "args": [
+              -14.474945607480372,
+              -18.998366109817987,
+              28.949891214960743,
+              37.99673221963597
+            ],
+            "alpha": 0.138434476902131
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -11.849945607480372,
+              -15.553053609817988,
+              23.699891214960743,
+              31.106107219635977
+            ],
+            "alpha": 0.423434476902131
+          },
+          {
+            "key": "nxp_upward_7",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_1",
+            "args": [
+              -14.553695607480373,
+              -19.10172548481799,
+              29.107391214960746,
+              38.20345096963598
+            ],
+            "alpha": 0.12988447690213095
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -11.928695607480373,
+              -15.65641298481799,
+              23.857391214960746,
+              31.31282596963598
+            ],
+            "alpha": 0.4148844769021309
+          },
+          {
+            "key": "nxp_upward_7",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_1",
+            "args": [
+              -14.632445607480374,
+              -19.20508485981799,
+              29.26489121496075,
+              38.41016971963598
+            ],
+            "alpha": 0.12133447690213087
+          },
+          {
+            "key": "nsd_chim_3",
+            "args": [
+              -12.007445607480374,
+              -15.75977235981799,
+              24.01489121496075,
+              31.51954471963598
+            ],
+            "alpha": 0.40633447690213087
+          },
+          {
+            "key": "nxp_upward_0",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_2",
+            "args": [
+              -14.711195607480374,
+              -19.30844423481799,
+              29.422391214960747,
+              38.61688846963598
+            ],
+            "alpha": 0.1127844769021308
+          },
+          {
+            "key": "nsd_chim_4",
+            "args": [
+              -12.086195607480374,
+              -15.86313173481799,
+              24.172391214960747,
+              31.72626346963598
+            ],
+            "alpha": 0.39778447690213076
+          },
+          {
+            "key": "nxp_upward_0",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_2",
+            "args": [
+              -14.789945607480375,
+              -19.41180360981799,
+              29.57989121496075,
+              38.82360721963598
+            ],
+            "alpha": 0.10423447690213085
+          },
+          {
+            "key": "nsd_chim_4",
+            "args": [
+              -12.164945607480375,
+              -15.966491109817992,
+              24.32989121496075,
+              31.932982219635985
+            ],
+            "alpha": 0.3892344769021307
+          },
+          {
+            "key": "nxp_upward_0",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_2",
+            "args": [
+              -14.868695607480372,
+              -19.515162984817987,
+              29.737391214960745,
+              39.030325969635975
+            ],
+            "alpha": 0.09568447690213092
+          },
+          {
+            "key": "nsd_chim_4",
+            "args": [
+              -12.243695607480372,
+              -16.069850484817987,
+              24.487391214960745,
+              32.139700969635975
+            ],
+            "alpha": 0.38068447690213086
+          },
+          {
+            "key": "nxp_upward_0",
+            "args": [
+              -8,
+              -8,
+              16,
+              16
+            ],
+            "alpha": 0.84
+          },
+          {
+            "key": "nsd_chim_2",
+            "args": [
+              -14.868695607480372,
+              -19.515162984817987,
+              29.737391214960745,
+              39.030325969635975
+            ],
+            "alpha": 0.09568447690213092
+          },
+          {
+            "key": "nsd_chim_4",
+            "args": [
+              -12.243695607480372,
+              -16.069850484817987,
+              24.487391214960745,
+              32.139700969635975
+            ],
+            "alpha": 0.38068447690213086
+          }
+        ]
+      },
+      "razorback": [
+        [
+          431,
+          "razorbackGun",
+          1
+        ],
+        [
+          440,
+          "razorbackGun",
+          1
+        ],
+        [
+          449,
+          "razorbackGun",
+          1
+        ],
+        [
+          458,
+          "razorbackGun",
+          1
+        ],
+        [
+          467,
+          "razorbackGun",
+          1
+        ],
+        [
+          476,
+          "razorbackGun",
+          1
+        ],
+        [
+          485,
+          "razorbackGun",
+          1
+        ],
+        [
+          494,
+          "razorbackGun",
+          1
+        ],
+        [
+          539,
+          "razorbackGun",
+          1
+        ],
+        [
+          548,
+          "razorbackGun",
+          1
+        ],
+        [
+          557,
+          "razorbackGun",
+          1
+        ],
+        [
+          566,
+          "razorbackGun",
+          1
+        ],
+        [
+          575,
+          "razorbackGun",
+          1
+        ],
+        [
+          584,
+          "razorbackGun",
+          1
+        ],
+        [
+          593,
+          "razorbackGun",
+          1
+        ]
+      ],
+      "s2": [
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 1
+        },
+        {
+          "key": "cfx_stage2_volcanic_projectiles",
+          "args": [
+            256,
+            256,
+            256,
+            256,
+            -36,
+            -36,
+            72,
+            72
+          ],
+          "alpha": 0.35
+        }
+      ],
+      "roster": [
+        "sharddart",
+        "s3interceptor",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "glaciercarrier",
+        "cryoeye",
+        "glaciercarrier",
+        "glaciercarrier",
+        "glaciercarrier",
+        "sharddart",
+        "s3interceptor",
+        "cryoeye",
+        "sharddart",
+        "cryoeye",
+        "glaciercarrier",
+        "cryoeye",
+        "cryoeye",
+        "s3interceptor",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "sharddart",
+        "glaciercarrier",
+        "sharddart",
+        "s3interceptor",
+        "cryoeye",
+        "sharddart",
+        "sharddart"
+      ],
+      "s3boss": [
+        {
+          "slots": [
+            "L",
+            "C",
+            "R"
+          ],
+          "angles": [
+            1.5707963267948966,
+            1.5707963267948966,
+            1.5707963267948966
+          ],
+          "charge": {
+            "t": 0,
+            "dur": 3,
+            "slot": "C",
+            "kind": "centerBeam"
+          },
+          "origins": [
+            {
+              "x": 320.33763489115194,
+              "y": 222.85226240219288
+            },
+            {
+              "x": 352.81763489115195,
+              "y": 107.21226240219286
+            },
+            {
+              "x": 385.297634891152,
+              "y": 222.85226240219288
+            }
+          ]
+        },
+        {
+          "slots": [
+            "L",
+            "C",
+            "R"
+          ],
+          "angles": [
+            2.2907963267948963,
+            1.5707963267948966,
+            0.8507963267948966
+          ],
+          "charge": {
+            "t": 0,
+            "dur": 3,
+            "slot": "C",
+            "kind": "centerBeam"
+          },
+          "origins": [
+            {
+              "x": 219.02406636436197,
+              "y": 221.4800000108897
+            },
+            {
+              "x": 251.50406636436196,
+              "y": 105.84000001088971
+            },
+            {
+              "x": 283.984066364362,
+              "y": 221.4800000108897
+            }
+          ]
+        },
+        {
+          "slots": [
+            "C",
+            "R"
+          ],
+          "angles": [
+            1.5707963267948966,
+            1.5707963267948966
+          ],
+          "charge": {
+            "t": 0,
+            "dur": 3,
+            "slot": "C",
+            "kind": "centerBeam"
+          },
+          "origins": [
+            {
+              "x": 251.50406636436196,
+              "y": 105.84000001088971
+            },
+            {
+              "x": 283.984066364362,
+              "y": 221.4800000108897
+            }
+          ]
+        },
+        {
+          "slots": [
+            "L",
+            "C",
+            "R"
+          ],
+          "angles": [
+            2.5207963267948967,
+            1.5707963267948966,
+            0.6207963267948966
+          ],
+          "charge": {
+            "t": 0,
+            "dur": 3,
+            "slot": "C",
+            "kind": "centerBeam"
+          },
+          "origins": [
+            {
+              "x": 219.02406636436197,
+              "y": 221.4800000108897
+            },
+            {
+              "x": 251.50406636436196,
+              "y": 105.84000001088971
+            },
+            {
+              "x": 283.984066364362,
+              "y": 221.4800000108897
+            }
+          ]
+        }
+      ],
+      "warden": {
+        "shots": [
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 302.4183222482587,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 420.0183222482587,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 311.79400787780384,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 429.39400787780386,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 321.5178204438486,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 439.11782044384864,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 330.1063767407332,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 447.7063767407332,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 337.31784295225094,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 454.91784295225096,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 342.40683006799753,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 460.00683006799756,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 346.49896527860216,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 464.0989652786022,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 348.7524331484102,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 466.3524331484102,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 349.1594486671581,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 466.7594486671581,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 347.8100391279968,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 465.4100391279968,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 344.5850454506905,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 462.1850454506905,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 340.2160846589157,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 457.8160846589157,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 333.7367913541832,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 451.3367913541832,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 325.77818391267925,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 443.3781839126793,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 316.56435825259314,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 434.16435825259316,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 307.52959341572466,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 425.1295934157247,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 296.67550018826495,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 414.27550018826497,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 285.38565278526426,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 402.9856527852643,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 275.2412861036856,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 392.8412861036856,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 263.99857937747385,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 381.59857937747387,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "L",
+            "x": 253.24022474136035,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "R",
+            "x": 370.8402247413604,
+            "y": 168.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 304.7072627768053,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 319.8272627768053,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 314.49060015378643,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 329.61060015378644,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 322.67819774456905,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 337.79819774456905,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 326.6483989179329,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 341.7683989179329,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 329.29023092750344,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 344.41023092750345,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 330.5712665949176,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 345.6912665949176,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 331.4236871357913,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 346.5436871357913,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 331.88727705131885,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.00727705131885,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.1120737888453,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.2320737888453,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.26165694368103,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.38165694368104,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.3341904567488,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.4541904567488,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.3824553552316,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.50245535523163,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.40870427714015,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.52870427714015,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CL",
+            "x": 332.42143249190707,
+            "y": 222.88
+          },
+          {
+            "kind": "mg",
+            "slot": "CR",
+            "x": 347.5414324919071,
+            "y": 222.88
+          }
+        ],
+        "rockets": [
+          {
+            "slot": "L",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "R",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "L",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "R",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "L",
+            "kind": "s4rocket"
+          },
+          {
+            "slot": "R",
+            "kind": "s4rocket"
+          }
+        ],
+        "sounds": [
+          [
+            1896,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1912,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1920,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1929,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1938,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1947,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1955,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1964,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1973,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1981,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1990,
+            "wardenGun",
+            0.9
+          ],
+          [
+            1999,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2007,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2016,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2025,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2034,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2042,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2051,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2060,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2068,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2077,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2086,
+            "wardenGun",
+            0.9
+          ],
+          [
+            2089,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2101,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2114,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2127,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2134,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2147,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2160,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2167,
+            "wardenCenterGun",
+            0.85
+          ],
+          [
+            2176,
+            "wardenRackCharge",
+            1
+          ],
+          [
+            2217,
+            "wardenRocket",
+            1
+          ],
+          [
+            2246,
+            "wardenRocket",
+            1
+          ],
+          [
+            2275,
+            "wardenRocket",
+            1
+          ]
+        ],
+        "blue": []
+      },
+      "layout": {
+        "x": 341.39999928641055,
+        "w": 264,
+        "left": 100,
+        "right": 580,
+        "turrets": [
+          {
+            "x": 129,
+            "y": 105
+          },
+          {
+            "x": 551,
+            "y": 105
+          }
+        ],
+        "nodes": [
+          {
+            "x": 128.9999196214193,
+            "y": 165.95971748958652,
+            "side": -1
+          },
+          {
+            "x": 550.9999179976095,
+            "y": 165.95971748958652,
+            "side": 1
+          },
+          {
+            "x": 128.9999196214193,
+            "y": 290.0397255436827,
+            "side": -1
+          },
+          {
+            "x": 550.9999179976095,
+            "y": 290.0397255436827,
+            "side": 1
+          }
+        ],
+        "size": 52.800000000000004
+      },
+      "ram": [
+        {
+          "mode": "ramTell",
+          "x": 340.40492445514315,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.1171170699618,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.033873992796,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.0097974393341,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.00283373200443,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramTell",
+          "x": 340.0008196056948,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 185.4999999999936,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 242.88888888887013,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 319.16666666663,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 414.3333333332733,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 528.3888888887999,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramDive",
+          "x": 340,
+          "y": 651.7222222221154,
+          "air": false,
+          "noHit": false,
+          "shadow": 722,
+          "contact": true
+        },
+        {
+          "mode": "ramOff",
+          "x": 340,
+          "y": 762.7222222220994,
+          "air": false,
+          "noHit": true,
+          "shadow": 722,
+          "contact": false
+        },
+        {
+          "mode": "ramOff",
+          "x": 340,
+          "y": 762.7222222220994,
+          "air": false,
+          "noHit": true,
+          "shadow": 722,
+          "contact": false
+        },
+        {
+          "mode": "ramOff",
+          "x": 340,
+          "y": 762.7222222220994,
+          "air": false,
+          "noHit": true,
+          "shadow": 722,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 735.0133333333373,
+          "air": true,
+          "noHit": true,
+          "shadow": 753.0133333333373,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 600.0800000000236,
+          "air": true,
+          "noHit": true,
+          "shadow": 618.0800000000236,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 465.1466666667099,
+          "air": true,
+          "noHit": true,
+          "shadow": 483.1466666667099,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 330.21333333339635,
+          "air": true,
+          "noHit": true,
+          "shadow": 348.21333333339635,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 195.2800000000824,
+          "air": true,
+          "noHit": true,
+          "shadow": 213.2800000000824,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": 60.34666666676844,
+          "air": true,
+          "noHit": true,
+          "shadow": 78.34666666676844,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": -74.5866666665454,
+          "air": true,
+          "noHit": true,
+          "shadow": -56.5866666665454,
+          "contact": false
+        },
+        {
+          "mode": "ramOver",
+          "x": 340,
+          "y": -209.51999999985856,
+          "air": true,
+          "noHit": true,
+          "shadow": -191.51999999985856,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -214.6000000000042,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -166.26666666667788,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -117.93333333335156,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -69.60000000002523,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": -21.26666666669892,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": 27.06666666662737,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": 75.39999999995368,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "ramReturn",
+          "x": 340,
+          "y": 123.73333333328,
+          "air": false,
+          "noHit": true,
+          "shadow": -232,
+          "contact": false
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        },
+        {
+          "mode": "lightning",
+          "x": 340,
+          "y": 150,
+          "air": false,
+          "noHit": false,
+          "shadow": null,
+          "contact": true
+        }
+      ],
+      "helperAudio": {
+        "sounds": [
+          "bossPhase",
+          "enemyElectricBolt",
+          "sovereignWindup",
+          "sovereignContact",
+          "sovereignBreak",
+          "enemyElectricBolt",
+          "hit",
+          "shieldHitHeavy",
+          "sovereignDive",
+          "missile",
+          "sovereignFlyby",
+          "sovereignHelperGun",
+          "sovereignHelperGun",
+          "sovereignHelperGun",
+          "sovereignHelperGun",
+          "sovereignFlyby",
+          "sovereignWindup",
+          "sovereignHelperGun",
+          "sovereignHeat",
+          "sovereignHelperGun",
+          "missile",
+          "sovereignHelperGun",
+          "sovereignHelperGun",
+          "sovereignWindup",
+          "sovereignHelperGun",
+          "sovereignWindup",
+          "sovereignHelperGun",
+          "sovereignLaser",
+          "sovereignHeat",
+          "enemyElectricBolt"
+        ],
+        "legacy": []
+      },
+      "sky": {
+        "phase": "settle",
+        "time": 3.0500000000008836,
+        "scroll": 17153.916666664994
+      },
+      "missiles": [
+        {
+          "kind": "spaceImpact",
+          "vy": 0,
+          "x": 305.01940490590965,
+          "y": 338.5554071333142,
+          "dead": false
+        },
+        {
+          "kind": "spaceImpact",
+          "vy": 0,
+          "x": 342.875058037102,
+          "y": 335.574599726415,
+          "dead": false
+        },
+        {
+          "kind": "spaceImpact",
+          "vy": 0,
+          "x": 374.15062076723007,
+          "y": 353.36321774951455,
+          "dead": false
+        }
+      ],
+      "shadow": {
+        "dmg": 279.45000000000005,
+        "expected": 279.45000000000005,
+        "burst": 0.76
+      },
+      "error": null
+    }
+  },
+  "runtime": {
+    "sha256": "9e47b07ae53365f944d0c9347688703c0ce678cced5e64e4e4d98c4282946d60",
+    "beforeSha256": "0740c11a9f10a9a55a9661c4970c89f85241a7721d7e678b3facfb5b4222ed80",
+    "testSha256": "572d08bc27269b100a1ec20c8f1bff59b239b2ed772c24fa1542a015c4fbbe41",
+    "readableSourcesReproduceRuntime": true,
+    "LF": true,
+    "testsCRLF": true
+  },
+  "art": {
+    "nef_s1_camo_attack_jet_intact": [
+      205,
+      228
+    ],
+    "nef_s1_camo_attack_jet_damaged": [
+      205,
+      228
+    ],
+    "nef_s1_camo_attack_jet_critical": [
+      205,
+      228
+    ],
+    "nef_s1_jungle_tank_intact": [
+      167,
+      228
+    ],
+    "nsd_chim_0": [
+      256,
+      336
+    ],
+    "nsd_chim_4": [
+      256,
+      336
+    ],
+    "nxp_upward_0": [
+      256,
+      256
+    ],
+    "nxp_upward_4": [
+      256,
+      256
+    ],
+    "s4w_boss_idle": [
+      512,
+      512
+    ],
+    "nsb_olivewarden_intact": [
+      234,
+      256
+    ],
+    "nsb_xenoregent_intact": [
+      256,
+      246
+    ],
+    "l23fx_inferno_mg_0": [
+      40,
+      64
+    ],
+    "l23fx_inferno_mg_1": [
+      40,
+      64
+    ],
+    "l23fx_inferno_mg_2": [
+      40,
+      64
+    ],
+    "l23fx_inferno_mg_3": [
+      40,
+      64
+    ],
+    "l23fx_inferno_mg_4": [
+      40,
+      64
+    ],
+    "l23fx_inferno_mg_5": [
+      40,
+      64
+    ],
+    "l23fx_inferno_mg_6": [
+      40,
+      64
+    ],
+    "l23fx_inferno_mg_7": [
+      40,
+      64
+    ],
+    "l23fx_inferno_shotgun_0": [
+      56,
+      76
+    ],
+    "l23fx_inferno_shotgun_1": [
+      56,
+      76
+    ],
+    "l23fx_inferno_shotgun_2": [
+      56,
+      76
+    ],
+    "l23fx_inferno_shotgun_3": [
+      56,
+      76
+    ],
+    "l23fx_inferno_shotgun_4": [
+      56,
+      76
+    ],
+    "l23fx_inferno_shotgun_5": [
+      56,
+      76
+    ],
+    "l23fx_inferno_shotgun_6": [
+      56,
+      76
+    ],
+    "l23fx_inferno_shotgun_7": [
+      56,
+      76
+    ],
+    "bpfx_proj_laser_0": [
+      128,
+      128
+    ],
+    "bpfx_proj_missile_0": [
+      128,
+      128
+    ],
+    "bfx_cryo_p_0": [
+      130,
+      257
+    ],
+    "s4w_mg_round_0": [
+      40,
+      64
+    ],
+    "s4w_helper_dual_0": [
+      160,
+      160
+    ],
+    "1mini": {
+      "kind": "razorback",
+      "ship": null,
+      "name": "RAZORBACK",
+      "x": 402.7818127530009,
+      "y": 65.2644822846613,
+      "w": 124,
+      "h": 124,
+      "slots": {},
+      "war": null,
+      "shots": [
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        }
+      ]
+    },
+    "1boss": {
+      "kind": "damkeeper",
+      "ship": null,
+      "name": "JUNGLE OVERLORD-X",
+      "x": 230.88412119840282,
+      "y": 120.25437512037767,
+      "w": 170,
+      "h": 130,
+      "slots": {},
+      "war": null,
+      "shots": [
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "mg",
+          "fx": null,
+          "s4": null
+        }
+      ]
+    },
+    "3boss": {
+      "kind": "cryospear",
+      "ship": "cryospear",
+      "name": "RIME WALL",
+      "x": 308.50116117067614,
+      "y": 120.00000000193005,
+      "w": 224,
+      "h": 236,
+      "slots": {
+        "L": {
+          "x": 276.0211611706761,
+          "y": 221.48000000193005
+        },
+        "C": {
+          "x": 308.50116117067614,
+          "y": 105.84000000193005
+        },
+        "R": {
+          "x": 340.98116117067616,
+          "y": 221.48000000193005
+        },
+        "TL": {
+          "x": 255.86116117067616,
+          "y": 95.22000000193005
+        },
+        "TR": {
+          "x": 361.1411611706761,
+          "y": 95.22000000193005
+        },
+        "V1": {
+          "x": 241.30116117067615,
+          "y": 105.84000000193005
+        },
+        "V2": {
+          "x": 375.70116117067613,
+          "y": 105.84000000193005
+        }
+      },
+      "war": null,
+      "shots": []
+    },
+    "4mini": {
+      "kind": "olivewarden",
+      "ship": "olivewarden",
+      "name": "OLIVE WARDEN",
+      "x": 329.84448781646773,
+      "y": 130,
+      "w": 210,
+      "h": 216,
+      "slots": {
+        "L": {
+          "x": 271.0444878164677,
+          "y": 168.88
+        },
+        "C": {
+          "x": 329.84448781646773,
+          "y": 222.88
+        },
+        "R": {
+          "x": 388.64448781646774,
+          "y": 168.88
+        },
+        "MG_L": {
+          "x": 289.94448781646776,
+          "y": 196.95999999999998
+        },
+        "MG_R": {
+          "x": 369.7444878164677,
+          "y": 196.95999999999998
+        }
+      },
+      "war": {
+        "mode": "gate",
+        "nodes": null
+      },
+      "shots": [
+        {
+          "kind": "s4brass",
+          "fx": null,
+          "s4": "mg"
+        },
+        {
+          "kind": "s4brass",
+          "fx": null,
+          "s4": "mg"
+        },
+        {
+          "kind": "s4brass",
+          "fx": null,
+          "s4": "mg"
+        },
+        {
+          "kind": "s4brass",
+          "fx": null,
+          "s4": "mg"
+        },
+        {
+          "kind": "s4brass",
+          "fx": null,
+          "s4": "mg"
+        },
+        {
+          "kind": "s4brass",
+          "fx": null,
+          "s4": "mg"
+        },
+        {
+          "kind": "s4brass",
+          "fx": null,
+          "s4": "mg"
+        },
+        {
+          "kind": "s4brass",
+          "fx": null,
+          "s4": "mg"
+        }
+      ]
+    },
+    "4boss": {
+      "kind": "stormsovereign",
+      "ship": "stormsovereign",
+      "name": "STORM SOVEREIGN MK II",
+      "x": 304.2865228040418,
+      "y": 150,
+      "w": 286,
+      "h": 286,
+      "slots": {
+        "MG_L": {
+          "x": 265.6765228040418,
+          "y": 240.09
+        },
+        "MG_R": {
+          "x": 342.8965228040418,
+          "y": 240.09
+        },
+        "ORB_L": {
+          "x": 214.1965228040418,
+          "y": 141.42
+        },
+        "ORB_R": {
+          "x": 394.37652280404177,
+          "y": 141.42
+        },
+        "L": {
+          "x": 237.07652280404182,
+          "y": 211.49
+        },
+        "EL": {
+          "x": 237.07652280404182,
+          "y": 211.49
+        },
+        "C": {
+          "x": 304.2865228040418,
+          "y": 275.84000000000003
+        },
+        "ER": {
+          "x": 371.4965228040418,
+          "y": 211.49
+        },
+        "R": {
+          "x": 371.4965228040418,
+          "y": 211.49
+        }
+      },
+      "war": {
+        "mode": "shield",
+        "nodes": [
+          {
+            "side": -1,
+            "row": -1,
+            "hp": 70,
+            "maxhp": 70,
+            "dead": false,
+            "x": 93.39055337680533,
+            "y": 82.78999999999996,
+            "spin": 5.719999999992203,
+            "flash": 0,
+            "materialize": 1
+          },
+          {
+            "side": 1,
+            "row": -1,
+            "hp": 70,
+            "maxhp": 70,
+            "dead": false,
+            "x": 523.9905533768053,
+            "y": 82.78999999999996,
+            "spin": 13.799999999991512,
+            "flash": 0,
+            "materialize": 1
+          },
+          {
+            "side": -1,
+            "row": 1,
+            "hp": 70,
+            "maxhp": 70,
+            "dead": false,
+            "x": 93.39055337680533,
+            "y": 217.2099999999999,
+            "spin": 4.066666666657926,
+            "flash": 0,
+            "materialize": 1
+          },
+          {
+            "side": 1,
+            "row": 1,
+            "hp": 70,
+            "maxhp": 70,
+            "dead": false,
+            "x": 523.9905533768053,
+            "y": 217.2099999999999,
+            "spin": 12.146666666657241,
+            "flash": 0,
+            "materialize": 1
+          }
+        ]
+      },
+      "shots": [
+        {
+          "kind": "s4bomb",
+          "fx": null,
+          "s4": "orb"
+        },
+        {
+          "kind": "s4bomb",
+          "fx": null,
+          "s4": "orb"
+        },
+        {
+          "kind": "s4bomb",
+          "fx": null,
+          "s4": "orb"
+        },
+        {
+          "kind": "s4bomb",
+          "fx": null,
+          "s4": "orb"
+        },
+        {
+          "kind": "s4bomb",
+          "fx": null,
+          "s4": "orb"
+        }
+      ]
+    },
+    "5boss": {
+      "kind": "xenoregent",
+      "ship": "xenoregent",
+      "name": "XENO REGENT",
+      "x": 121.40760387394891,
+      "y": 134.47457823585358,
+      "w": 216,
+      "h": 208,
+      "slots": {
+        "L": {
+          "x": 73.60248387394896,
+          "y": 182.69489823585383
+        },
+        "C": {
+          "x": 121.40760387394891,
+          "y": 219.9851382358538
+        },
+        "R": {
+          "x": 169.21272387394887,
+          "y": 182.69489823585383
+        }
+      },
+      "war": null,
+      "shots": [
+        {
+          "kind": "emissile",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "emissile",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "s5fracture",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "s5null",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "s5fracture",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "s5fracture",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "s5null",
+          "fx": null,
+          "s4": null
+        },
+        {
+          "kind": "s5fracture",
+          "fx": null,
+          "s4": null
+        }
+      ]
+    },
+    "errors": []
+  },
+  "storedBoats": {
+    "reason": "Mike 0914: remove boats from stage 3, store them for now",
+    "type": "s3barge",
+    "originalEvents": [
+      "    add(8.8, ()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.46));",
+      "    add(14.8,()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.48));",
+      "    add(29.2,()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.46));",
+      "    add(37.2,()=> encounterRipple([\n      {type:'s3barge',fx:.24,scale:.72,opt:{inPlace:1}},{type:'s3barge',fx:.76,scale:.72,opt:{inPlace:1}}\n    ],.48));"
+    ],
+    "finalWaveBoats": [
+      {
+        "fx": 0.24,
+        "scale": 0.72,
+        "opt": {
+          "inPlace": 1
+        }
+      },
+      {
+        "fx": 0.76,
+        "scale": 0.72,
+        "opt": {
+          "inPlace": 1
+        }
+      }
+    ],
+    "artAndController": "Preserved in NEF_S3, S3ICE and XART; no assets removed."
+  },
+  "video": {
+    "file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\stage_1_5_0914\\video\\BulletsOfFury_Stages_1_to_5_0914.mp4",
+    "frames": 2280,
+    "fps": 30,
+    "seconds": 76,
+    "bytes": 115939156,
+    "sha256": "995d20055307035ebdcc3bd29ad7e8b8a1abe6ba8e7b39867140a4f8c0f2621e",
+    "videoCodec": "h264",
+    "audioCodec": "aac",
+    "audioHz": 48000,
+    "audioChannels": 2,
+    "decodeExitCode": 0,
+    "errors": [],
+    "protectedDemoPilot": true,
+    "nativeDebugEncounters": true,
+    "fixtures": "Native debug encounters and selected attack windows. Stage-4 demo starts after the 75/50-percent health gates with 1-HP nodes, then uses actual held laser input. Player damage disabled for recording.",
+    "audioScope": "Accepted native sound samples, loops and game-module cues, aligned to captured frames. Music is not included. Sound-pool voice reuse is reproduced; audio is not normalized for export.",
+    "takes": [
+      {
+        "name": "s1_burning_fodder",
+        "stage": 1,
+        "role": null,
+        "seconds": 5,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.18263188004493713,
+          "rms": 0.039363422701765356,
+          "counts": {
+            "snd": 24,
+            "cut": 0,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "enemyMachineGunLight"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s1_razorback",
+        "stage": 1,
+        "role": "mini",
+        "seconds": 6,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RAZORBACK",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RAZORBACK",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RAZORBACK",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.8482608795166016,
+          "rms": 0.15529662231086427,
+          "counts": {
+            "snd": 16,
+            "cut": 5,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "furnaceServo",
+          "razorbackCharge",
+          "razorbackGun",
+          "razorbackPressure"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s1_overlord",
+        "stage": 1,
+        "role": "boss",
+        "seconds": 6,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "JUNGLE OVERLORD-X",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "JUNGLE OVERLORD-X",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "JUNGLE OVERLORD-X",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.9149922132492065,
+          "rms": 0.1899827290933208,
+          "counts": {
+            "snd": 17,
+            "cut": 8,
+            "loopSeg": 1,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "overlordGun",
+          "overlordLance",
+          "overlordRocket",
+          "overlordWind"
+        ],
+        "loops": [
+          "overlordRotor"
+        ]
+      },
+      {
+        "name": "s2_flight_pixels",
+        "stage": 2,
+        "role": null,
+        "seconds": 4,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.8093975782394409,
+          "rms": 0.15588654713272457,
+          "counts": {
+            "snd": 15,
+            "cut": 1,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "enemyElectricBolt",
+          "enemyShoot",
+          "expSmall",
+          "missile"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s3_drone_visibility",
+        "stage": 3,
+        "role": null,
+        "seconds": 4,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.1787879467010498,
+          "rms": 0.02382898761473779,
+          "counts": {
+            "snd": 7,
+            "cut": 0,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "enemyShoot"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s3_cannon_lasers",
+        "stage": 3,
+        "role": "boss",
+        "seconds": 6,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RIME WALL",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RIME WALL",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "RIME WALL",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.675557017326355,
+          "rms": 0.10331442002115551,
+          "counts": {
+            "snd": 7,
+            "cut": 0,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "alertLockon",
+          "bossWeaponCharge",
+          "bossfireCryospear",
+          "enemyHeavyLaser",
+          "missile"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s4_warmachine",
+        "stage": 4,
+        "role": "mini",
+        "seconds": 9,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "OLIVE WARDEN",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "OLIVE WARDEN",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "OLIVE WARDEN",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 6.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "OLIVE WARDEN",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 8.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "OLIVE WARDEN",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.7965711951255798,
+          "rms": 0.22945278937499183,
+          "counts": {
+            "snd": 42,
+            "cut": 23,
+            "loopSeg": 0,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "wardenCenterGun",
+          "wardenGun",
+          "wardenRackCharge",
+          "wardenRocket"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s4_helpers_and_dive",
+        "stage": 4,
+        "role": "boss",
+        "seconds": 12,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "STORM SOVEREIGN MK II",
+            "mode": "shield",
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "STORM SOVEREIGN MK II",
+            "mode": "shield",
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "STORM SOVEREIGN MK II",
+            "mode": "ramTell",
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 6.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "STORM SOVEREIGN MK II",
+            "mode": "ramOff",
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 8.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "STORM SOVEREIGN MK II",
+            "mode": "ramReturn",
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 10.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "STORM SOVEREIGN MK II",
+            "mode": "lightning",
+            "launch": null,
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.9317120313644409,
+          "rms": 0.13988577244379968,
+          "counts": {
+            "snd": 53,
+            "cut": 0,
+            "loopSeg": 2,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "bossPhase",
+          "enemyElectricBolt",
+          "enemyMachineGunHeavy",
+          "hit",
+          "laserBeamEnd",
+          "laserBeamStart",
+          "missile",
+          "shieldHitHeavy",
+          "sovereignBreak",
+          "sovereignContact",
+          "sovereignDive",
+          "sovereignFlyby",
+          "sovereignHeat",
+          "sovereignHelperGun",
+          "sovereignLaser",
+          "sovereignWindup"
+        ],
+        "loops": [
+          "laserBeamLoop"
+        ]
+      },
+      {
+        "name": "s5_sky_and_spaceship",
+        "stage": 5,
+        "role": "launch",
+        "seconds": 14,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "launch",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": "settle",
+            "missiles": 0
+          },
+          {
+            "seconds": 2.0,
+            "state": "launch",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": "settle",
+            "missiles": 0
+          },
+          {
+            "seconds": 4.0,
+            "state": "launch",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": "settle",
+            "missiles": 0
+          },
+          {
+            "seconds": 6.0,
+            "state": "launch",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": "gravity",
+            "missiles": 0
+          },
+          {
+            "seconds": 8.0,
+            "state": "launch",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": "gravity",
+            "missiles": 0
+          },
+          {
+            "seconds": 10.0,
+            "state": "launch",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": "gravity",
+            "missiles": 0
+          },
+          {
+            "seconds": 12.0,
+            "state": "launch",
+            "dead": false,
+            "error": null,
+            "target": null,
+            "mode": null,
+            "launch": "gravity",
+            "missiles": 0
+          }
+        ],
+        "audio": {
+          "peak": 0.5883015394210815,
+          "rms": 0.09528064213352053,
+          "counts": {
+            "snd": 4,
+            "cut": 0,
+            "loopSeg": 0,
+            "syn": 8,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "getready",
+          "gravityFuse",
+          "gravityTransform"
+        ],
+        "loops": []
+      },
+      {
+        "name": "s5_regent_and_volley",
+        "stage": 5,
+        "role": "boss",
+        "seconds": 10,
+        "timeline": [
+          {
+            "seconds": 0.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 3
+          },
+          {
+            "seconds": 2.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 2
+          },
+          {
+            "seconds": 4.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 6.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 0
+          },
+          {
+            "seconds": 8.0,
+            "state": "play",
+            "dead": false,
+            "error": null,
+            "target": "XENO REGENT",
+            "mode": null,
+            "launch": null,
+            "missiles": 3
+          }
+        ],
+        "audio": {
+          "peak": 0.7931529879570007,
+          "rms": 0.18118630526128054,
+          "counts": {
+            "snd": 253,
+            "cut": 58,
+            "loopSeg": 1,
+            "syn": 0,
+            "warp": 0,
+            "skipped": 0
+          },
+          "errs": []
+        },
+        "sounds": [
+          "bossPhase",
+          "bossWeaponCharge",
+          "bossfireXenoregent",
+          "enemyPulseLaserAlien",
+          "enemyShoot",
+          "expBig",
+          "expSmall",
+          "explosionPlasma",
+          "hit",
+          "missile",
+          "nsp_asteroid_break",
+          "shieldHitLight",
+          "spaceLaserCannon",
+          "spaceLaserHit",
+          "spaceShadowHit",
+          "spaceShadowRelease",
+          "spaceVolleyHit",
+          "spaceVolleyLaunch"
+        ],
+        "loops": [
+          "spaceShadowCharge"
+        ]
+      }
+    ]
+  },
+  "audio": {
+    "s1_burning_fodder": {
+      "peak": 0.18263188004493713,
+      "rms": 0.039363422701765356,
+      "counts": {
+        "snd": 24,
+        "cut": 0,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s1_razorback": {
+      "peak": 0.8482608795166016,
+      "rms": 0.15529662231086427,
+      "counts": {
+        "snd": 16,
+        "cut": 5,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s1_overlord": {
+      "peak": 0.9149922132492065,
+      "rms": 0.1899827290933208,
+      "counts": {
+        "snd": 17,
+        "cut": 8,
+        "loopSeg": 1,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s2_flight_pixels": {
+      "peak": 0.8093975782394409,
+      "rms": 0.15588654713272457,
+      "counts": {
+        "snd": 15,
+        "cut": 1,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s3_drone_visibility": {
+      "peak": 0.1787879467010498,
+      "rms": 0.02382898761473779,
+      "counts": {
+        "snd": 7,
+        "cut": 0,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s3_cannon_lasers": {
+      "peak": 0.675557017326355,
+      "rms": 0.10331442002115551,
+      "counts": {
+        "snd": 7,
+        "cut": 0,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s4_warmachine": {
+      "peak": 0.7965711951255798,
+      "rms": 0.22945278937499183,
+      "counts": {
+        "snd": 42,
+        "cut": 23,
+        "loopSeg": 0,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s4_helpers_and_dive": {
+      "peak": 0.9317120313644409,
+      "rms": 0.13988577244379968,
+      "counts": {
+        "snd": 53,
+        "cut": 0,
+        "loopSeg": 2,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s5_sky_and_spaceship": {
+      "peak": 0.5883015394210815,
+      "rms": 0.09528064213352053,
+      "counts": {
+        "snd": 4,
+        "cut": 0,
+        "loopSeg": 0,
+        "syn": 8,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    },
+    "s5_regent_and_volley": {
+      "peak": 0.7931529879570007,
+      "rms": 0.18118630526128054,
+      "counts": {
+        "snd": 253,
+        "cut": 58,
+        "loopSeg": 1,
+        "syn": 0,
+        "warp": 0,
+        "skipped": 0
+      },
+      "errs": []
+    }
+  },
+  "settings": {
+    "laserCannonGain": 0.3,
+    "regentCombatEffectsGain": 0.4,
+    "shadowOrbDamageMultiplier": 1.35,
+    "stage5SkyLeadSeconds": 5,
+    "encounterSoundRoutes": 24
+  },
+  "sources": {
+    "append_tests.py": "d1b08743fb142e204b335217f6724aa6cacea06bcfb5ec047c2e1f11f637c2ee",
+    "audio_export.py": "76ba7d33dc8067c482672a3b1ac25c15a1a622d5f58e6f13ca13188a371b3750",
+    "inspect_art.py": "30b6c019c402cfd9ca48dbfa3cbafb57fec9854419ca697d4aad457bb5273d9e",
+    "integrate.py": "83722e62f239f4efdeeea918c9c0209373531e2dbafafea65b00eb9bd4c2249e",
+    "probe.py": "6f35afcaf874d60f0486de25d930c88b51a78389bb0c6dfb57759275cd867cb6",
+    "record.py": "be6d9dd71cf0cb1192074a84fd575814206af8cc83514f69abe7b99197d5e092",
+    "runtime.js": "e1e742774a653bb70247ece80ce465f1a4c9cd144aad9d86d255626026249162",
+    "validate.py": "57a76bc2f9f58179b532fab72f0c2f01c32698d4599fb5f559ac74ab15ec395d"
+  }
+}

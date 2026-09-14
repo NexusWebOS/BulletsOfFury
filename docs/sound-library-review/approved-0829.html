@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bullets of Fury — Approved Sound Map 08/29</title>
+  <style>
+    :root{color-scheme:dark;--ink:#eaf4ff;--muted:#8ea1b8;--panel:#101927;--line:#26384c;--cyan:#35d8ff;--green:#77f58c}
+    *{box-sizing:border-box} body{margin:0;background:#07101a;color:var(--ink);font:14px system-ui,sans-serif}
+    header{position:sticky;top:0;z-index:2;padding:22px 26px;background:rgba(7,16,26,.96);border-bottom:1px solid var(--line)}
+    h1{margin:2px 0 6px;font-size:25px}.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;letter-spacing:.18em}
+    p{margin:0;color:var(--muted)} main{padding:18px 26px 70px;max-width:1100px;margin:auto}
+    .bar{display:flex;gap:10px;align-items:center;margin:0 0 16px}.bar button{background:#193048;color:var(--ink);border:1px solid #3b6385;border-radius:6px;padding:9px 14px;cursor:pointer}
+    table{width:100%;border-collapse:collapse;background:var(--panel);border:1px solid var(--line)}
+    th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:left;vertical-align:middle}th{color:var(--cyan);font-size:11px;letter-spacing:.08em}
+    td:first-child{font-weight:750;white-space:nowrap}td:nth-child(2){color:var(--muted)}audio{width:290px;height:34px}.ok{color:var(--green)}
+    @media(max-width:800px){main{padding:12px}header{padding:16px}table,tbody,tr,td{display:block}thead{display:none}tr{border-bottom:1px solid var(--line)}td{border:0;padding:6px 10px}audio{width:100%}}
+  </style>
+</head>
+<body>
+  <header><span class="eyebrow">COLEFORGE AUDIO LAB · PRODUCTION MAP</span><h1>Approved SoundFX — August 29</h1><p>Rendered cuts and gameplay-ready charge/loop composites. Only one preview plays at a time.</p></header>
+  <main>
+    <div class="bar"><button id="stop">Stop all</button><span class="ok" id="count"></span></div>
+    <table><thead><tr><th>Gameplay event</th><th>Approved treatment</th><th>Production preview</th></tr></thead><tbody id="rows"></tbody></table>
+  </main>
+  <script>
+    const root='../../assets/game/sounds/';
+    const bank=[
+      ['Enemy heavy MG','Heavy MG 1 · last clip','reviewed_enemy_heavy_mg.wav'],
+      ["Lizzie's heavy MG",'Heavy MG 4 · last clip','reviewed_lizzie_heavy_mg.wav'],
+      ["Decker's reload",'Shotgun Reload 1','reviewed_decker_reload.wav'],
+      ['Enemy laser projectile','Laser Blast 2 · last part','reviewed_enemy_laser.wav'],
+      ['Laser cannon','Laser Energy 4 · middle sound','reviewed_laser_cannon.wav'],
+      ["Lizzie's atom launch",'Atomic Bomb Detonation','reviewed_lizzie_atom_launch.wav'],
+      ["Lizzie's atom impact",'Bomb Impact','reviewed_lizzie_atom_impact.wav'],
+      ['Flamethrower ignition','Flamethrower head','reviewed_flamethrower_start.wav'],
+      ['Flamethrower sustain','Click-safe reviewed loop','reviewed_flamethrower_loop.wav'],
+      ['Flamethrower release','Flamethrower tail','reviewed_flamethrower_end.wav'],
+      ['Stage 6 atmosphere','Howling Wind / Crush · static-sky bed','reviewed_stage6_wind_loop.wav'],
+      ['Shadow Orb launch','Approved full launch','reviewed_shadow_orb_launch.wav'],
+      ['Shared laser beam start','Fusion Energy 1 · 8632','reviewed_player_laser_beam_start.wav'],
+      ['Shared laser beam sustain','Fusion Energy 1 · two-second bed','reviewed_player_laser_beam_loop.wav'],
+      ['Shared laser beam release','Fusion Energy 1 · tail','reviewed_player_laser_beam_end.wav'],
+      ['Maverick charge build','8632 · rising pitch build','reviewed_maverick_charge_build.wav'],
+      ['Maverick held charge','8632 · infinite two-second whir','reviewed_maverick_charge_loop.wav'],
+      ['Maverick Helix release','Laser Energy 3','reviewed_maverick_helix_release.wav'],
+      ['Ship parts swirl','Ship Fusion 2 0826 + rising pitch + fusion lock','reviewed_ship_fusion_sequence.wav'],
+      ['Ship fusion lock','Fusion Energy ending 8418','reviewed_ship_fusion_lock.wav'],
+      ['Axel Mega Shield','Mega Shield 3 · beginning removed','reviewed_axel_mega_shield.wav'],
+      ['Other pilot specials','Special Item 1 · last part','reviewed_special_pickup.wav'],
+      ['Cole Sonic charge start','Layered/pitched sonic candidates','reviewed_cole_sonic_charge_start.wav'],
+      ['Cole Sonic charge loop','Two-second arcade pressure whir','reviewed_cole_sonic_charge_loop.wav'],
+      ['Cole Sonic Boom release','Low/mid/high three-clip composite','reviewed_cole_sonic_release.wav']
+    ];
+    const rows=document.querySelector('#rows');
+    bank.forEach(([event,note,file])=>{const tr=document.createElement('tr');tr.innerHTML=`<td>${event}</td><td>${note}</td><td><audio controls preload="metadata" src="${root+file}"></audio></td>`;rows.appendChild(tr)});
+    const players=[...document.querySelectorAll('audio')];
+    players.forEach(a=>a.addEventListener('play',()=>players.forEach(b=>{if(b!==a)b.pause()})));
+    document.querySelector('#stop').onclick=()=>players.forEach(a=>{a.pause();a.currentTime=0});
+    document.querySelector('#count').textContent=bank.length+' approved previews';
+  </script>
+</body>
+</html>

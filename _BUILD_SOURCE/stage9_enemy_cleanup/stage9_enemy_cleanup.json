@@ -1,0 +1,151 @@
+{
+  "removed_pixels": 14873,
+  "added_pixels": 0,
+  "changed_frames": 24,
+  "frames": [
+    {
+      "unit": "hyperspace_prism",
+      "frame": "01.png",
+      "removed_pixels": 679,
+      "added_pixels": 0
+    },
+    {
+      "unit": "hyperspace_prism",
+      "frame": "02.png",
+      "removed_pixels": 679,
+      "added_pixels": 0
+    },
+    {
+      "unit": "hyperspace_prism",
+      "frame": "03.png",
+      "removed_pixels": 684,
+      "added_pixels": 0
+    },
+    {
+      "unit": "hyperspace_prism",
+      "frame": "04.png",
+      "removed_pixels": 680,
+      "added_pixels": 0
+    },
+    {
+      "unit": "hyperspace_prism",
+      "frame": "05.png",
+      "removed_pixels": 679,
+      "added_pixels": 0
+    },
+    {
+      "unit": "hyperspace_prism",
+      "frame": "06.png",
+      "removed_pixels": 691,
+      "added_pixels": 0
+    },
+    {
+      "unit": "hyperspace_prism",
+      "frame": "07.png",
+      "removed_pixels": 679,
+      "added_pixels": 0
+    },
+    {
+      "unit": "hyperspace_prism",
+      "frame": "08.png",
+      "removed_pixels": 679,
+      "added_pixels": 0
+    },
+    {
+      "unit": "ring_drone",
+      "frame": "01.png",
+      "removed_pixels": 542,
+      "added_pixels": 0
+    },
+    {
+      "unit": "ring_drone",
+      "frame": "02.png",
+      "removed_pixels": 542,
+      "added_pixels": 0
+    },
+    {
+      "unit": "ring_drone",
+      "frame": "03.png",
+      "removed_pixels": 542,
+      "added_pixels": 0
+    },
+    {
+      "unit": "ring_drone",
+      "frame": "04.png",
+      "removed_pixels": 543,
+      "added_pixels": 0
+    },
+    {
+      "unit": "ring_drone",
+      "frame": "05.png",
+      "removed_pixels": 542,
+      "added_pixels": 0
+    },
+    {
+      "unit": "ring_drone",
+      "frame": "06.png",
+      "removed_pixels": 542,
+      "added_pixels": 0
+    },
+    {
+      "unit": "ring_drone",
+      "frame": "07.png",
+      "removed_pixels": 542,
+      "added_pixels": 0
+    },
+    {
+      "unit": "ring_drone",
+      "frame": "08.png",
+      "removed_pixels": 542,
+      "added_pixels": 0
+    },
+    {
+      "unit": "singularity_mine",
+      "frame": "01.png",
+      "removed_pixels": 635,
+      "added_pixels": 0
+    },
+    {
+      "unit": "singularity_mine",
+      "frame": "02.png",
+      "removed_pixels": 635,
+      "added_pixels": 0
+    },
+    {
+      "unit": "singularity_mine",
+      "frame": "03.png",
+      "removed_pixels": 636,
+      "added_pixels": 0
+    },
+    {
+      "unit": "singularity_mine",
+      "frame": "04.png",
+      "removed_pixels": 638,
+      "added_pixels": 0
+    },
+    {
+      "unit": "singularity_mine",
+      "frame": "05.png",
+      "removed_pixels": 635,
+      "added_pixels": 0
+    },
+    {
+      "unit": "singularity_mine",
+      "frame": "06.png",
+      "removed_pixels": 637,
+      "added_pixels": 0
+    },
+    {
+      "unit": "singularity_mine",
+      "frame": "07.png",
+      "removed_pixels": 635,
+      "added_pixels": 0
+    },
+    {
+      "unit": "singularity_mine",
+      "frame": "08.png",
+      "removed_pixels": 635,
+      "added_pixels": 0
+    }
+  ]
+}

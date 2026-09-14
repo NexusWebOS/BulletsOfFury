@@ -1,0 +1,10739 @@
+{
+"clips": [
+{
+"t0": 0.0,
+"t1": 4.0,
+"panes": [],
+"layers": [
+{
+"kind": "image",
+"src": "brand/cf_logo.png",
+"x": 960.0,
+"y": 530,
+"prescale": 0.72,
+"anchor": "c",
+"t_in": 0.35,
+"t_out": 3.9,
+"in": "fade",
+"out": "fade",
+"fade": 0.8,
+"fade_out": 0.5,
+"drift": 0.01
+}
+],
+"label": "COLEFORGE PHOENIX ENGINE + chime"
+},
+{
+"t0": 4.0,
+"t1": 5.461,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "A_title",
+"src": 0,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.2,
+"tint": [
+0,
+0,
+0,
+0.3
+]
+}
+],
+"layers": [],
+"label": "title screen breathes in",
+"fade_in": 0.8
+},
+{
+"t0": 5.461,
+"t1": 7.477,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "A_title",
+"src": 88,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.5,
+"tint": [
+0,
+0,
+0,
+0.62
+]
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/nbl_logo.png",
+"x": 960.0,
+"y": 510,
+"prescale": 2.0,
+"anchor": "c",
+"t_in": 5.461,
+"t_out": 7.477,
+"in": "slam",
+"out": "cut",
+"shadow": true,
+"drift": 0.025
+}
+],
+"label": "BULLETS OF FURY slam"
+},
+{
+"t0": 7.477,
+"t1": 8.7577,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "A_walk",
+"src": 86,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 420,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "NEW GAME"
+},
+{
+"t0": 8.7577,
+"t1": 11.541,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "A_walk",
+"src": 163,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 380,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "SELECT MODE -> CAMPAIGN"
+},
+{
+"t0": 11.541,
+"t1": 12.0505,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "A_walk",
+"src": 374,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 400,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "CAMPAIGN hub"
+},
+{
+"t0": 12.0505,
+"t1": 13.579,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "A_mapboot",
+"src": 226,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 2.5,
+"ease": "in",
+"cx": 480,
+"cy": 470,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "campaign map v2 boot, zooming into BOOM"
+},
+{
+"t0": 13.579,
+"t1": 14.5975,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s4",
+"src": 0,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 640,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_s4 x2"
+},
+{
+"t0": 14.5975,
+"t1": 15.616,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s3",
+"src": 573,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_s3"
+},
+{
+"t0": 15.616,
+"t1": 16.6345,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s1",
+"src": 232,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 640,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_s1 x2"
+},
+{
+"t0": 16.6345,
+"t1": 17.653,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s2",
+"src": 827,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_s2"
+},
+{
+"t0": 17.653,
+"t1": 19.669,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "X_launch5",
+"src": 396,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "SPACESHIP transformation"
+},
+{
+"t0": 19.669,
+"t1": 20.1785,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C2_missiles",
+"src": 5,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 640,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "C2_missiles"
+},
+{
+"t0": 20.1785,
+"t1": 20.688,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_mg",
+"src": 241,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 640,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "C_mg"
+},
+{
+"t0": 20.688,
+"t1": 21.1975,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C2_spread",
+"src": 134,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 640,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "C2_spread"
+},
+{
+"t0": 21.1975,
+"t1": 21.707,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "W_warp",
+"src": 292,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "WARP GATE jump"
+},
+{
+"t0": 21.707,
+"t1": 22.2163,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_intro_s1",
+"src": 90,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 530,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_intro_s1 stage card"
+},
+{
+"t0": 22.2163,
+"t1": 22.7255,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_intro_s2",
+"src": 90,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 530,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_intro_s2 stage card"
+},
+{
+"t0": 22.7255,
+"t1": 23.2347,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_intro_s3",
+"src": 90,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 530,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_intro_s3 stage card"
+},
+{
+"t0": 23.2347,
+"t1": 23.744,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_intro_s4",
+"src": 90,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 530,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_intro_s4 stage card"
+},
+{
+"t0": 23.744,
+"t1": 24.2508,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_intro_s5",
+"src": 90,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 530,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_intro_s5 stage card"
+},
+{
+"t0": 24.2508,
+"t1": 24.7575,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_intro_s6",
+"src": 90,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 530,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_intro_s6 stage card"
+},
+{
+"t0": 24.7575,
+"t1": 25.2643,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_intro_s7",
+"src": 90,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 530,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_intro_s7 stage card"
+},
+{
+"t0": 25.2643,
+"t1": 25.771,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_intro_s8",
+"src": 90,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 530,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_intro_s8 stage card"
+},
+{
+"t0": 25.771,
+"t1": 27.808,
+"panes": [],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_axel.png",
+"x": 144,
+"y": 430,
+"prescale": 0.75,
+"anchor": "c",
+"t_in": 25.771,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_yuri.png",
+"x": 348,
+"y": 430,
+"prescale": 0.75,
+"anchor": "c",
+"t_in": 25.899,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_freezer.png",
+"x": 552,
+"y": 430,
+"prescale": 0.75,
+"anchor": "c",
+"t_in": 26.027,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_falva.png",
+"x": 756,
+"y": 430,
+"prescale": 0.75,
+"anchor": "c",
+"t_in": 26.155,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_decker.png",
+"x": 960,
+"y": 430,
+"prescale": 0.75,
+"anchor": "c",
+"t_in": 26.2829,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_juggernaut.png",
+"x": 1164,
+"y": 430,
+"prescale": 0.75,
+"anchor": "c",
+"t_in": 26.4109,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_maverick.png",
+"x": 1368,
+"y": 430,
+"prescale": 0.75,
+"anchor": "c",
+"t_in": 26.5389,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_cole.png",
+"x": 1572,
+"y": 430,
+"prescale": 0.75,
+"anchor": "c",
+"t_in": 26.6669,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_lizzie.png",
+"x": 1776,
+"y": 430,
+"prescale": 0.75,
+"anchor": "c",
+"t_in": 26.7949,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "9 PILOTS",
+"face": "final",
+"height": 150,
+"x": 960.0,
+"y": 800,
+"anchor": "c",
+"t_in": 26.7895,
+"t_out": 27.808,
+"in": "slam",
+"out": "cut"
+}
+],
+"label": "9 PILOTS"
+},
+{
+"t0": 27.808,
+"t1": 29.845,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_axel",
+"src": 0,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "AXEL  MEGA SHIELD"
+},
+{
+"t0": 29.845,
+"t1": 31.872,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_yuri",
+"src": 0,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "YURI  CHAIN LIGHTNING"
+},
+{
+"t0": 31.872,
+"t1": 32.8905,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_freezer",
+"src": 0,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "FREEZER  TIME FREEZE + THERMOSHOCK (the freeze)"
+},
+{
+"t0": 32.8905,
+"t1": 33.909,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_thermo",
+"src": 47,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "FREEZER  TIME FREEZE + THERMOSHOCK (thermoshock balls)"
+},
+{
+"t0": 33.909,
+"t1": 35.947,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_icebreath",
+"src": 14,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "FREEZER  ICE BREATH"
+},
+{
+"t0": 35.947,
+"t1": 37.973,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_falva",
+"src": 34,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "FALVA  ROLLER BALL"
+},
+{
+"t0": 37.973,
+"t1": 40.011,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_decker",
+"src": 0,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "DECKER  CLOAKING SYSTEM"
+},
+{
+"t0": 40.011,
+"t1": 42.048,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_shotgun",
+"src": 110,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "DECKER  INCENDIARY SHOTGUN"
+},
+{
+"t0": 42.048,
+"t1": 44.075,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_juggernaut",
+"src": 0,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "JUGGERNAUT  WRECKING BALL"
+},
+{
+"t0": 44.075,
+"t1": 46.112,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "J_charge",
+"src": 234,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "JUGGERNAUT  CHARGE DASH"
+},
+{
+"t0": 46.112,
+"t1": 48.149,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_maverick",
+"src": 89,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "MAVERICK  HELIX BEAM"
+},
+{
+"t0": 48.149,
+"t1": 48.82,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_cole",
+"src": 36,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "COLE  NUKE STRIKE"
+},
+{
+"t0": 48.82,
+"t1": 49.45,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_cole",
+"src": 76,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.05,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"hold": 0.0,
+"desat": 0.75,
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "freeze on the stop"
+},
+{
+"t0": 49.45,
+"t1": 50.176,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_cole",
+"src": 77,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.05,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "COLE  NUKE STRIKE - after the stop"
+},
+{
+"t0": 50.176,
+"t1": 52.213,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_sonic",
+"src": 117,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.6,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": "player",
+"lead": -140
+}
+}
+],
+"layers": [],
+"label": "COLE  SONIC BOOM"
+},
+{
+"t0": 52.213,
+"t1": 54.24,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_lizzie",
+"src": 2,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "LIZZIE  ATOM BOMB"
+},
+{
+"t0": 54.24,
+"t1": 56.277,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_turret",
+"src": 169,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "LIZZIE  HEAVY MG"
+},
+{
+"t0": 56.277,
+"t1": 58.315,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s3",
+"src": 36,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 450,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "ENEMY APPROACHING!"
+},
+{
+"t0": 58.315,
+"t1": 59.328,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s1",
+"src": 148,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "MINI s1"
+},
+{
+"t0": 59.328,
+"t1": 60.341,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s2",
+"src": 178,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "MINI s2"
+},
+{
+"t0": 60.341,
+"t1": 61.36,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s3",
+"src": 175,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "MINI s3"
+},
+{
+"t0": 61.36,
+"t1": 62.379,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s4",
+"src": 176,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "MINI s4"
+},
+{
+"t0": 62.379,
+"t1": 63.392,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s5",
+"src": 132,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "MINI s5"
+},
+{
+"t0": 63.392,
+"t1": 65.424,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "L_rack",
+"src": 290,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "RETINA LOCK - the Razor Rack salvo"
+},
+{
+"t0": 65.424,
+"t1": 67.4615,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "T_tempest",
+"src": 250,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "TEMPEST LEVIATHAN duel (stage 6 mini - Mike, v6)"
+},
+{
+"t0": 67.4615,
+"t1": 67.9708,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s1",
+"src": 452,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "inout",
+"cx": 480,
+"cy": 328,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "KILL D_s1"
+},
+{
+"t0": 67.9708,
+"t1": 68.48,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s2",
+"src": 452,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "inout",
+"cx": 480,
+"cy": 260,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "KILL D_s2"
+},
+{
+"t0": 68.48,
+"t1": 68.9868,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s4",
+"src": 452,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "inout",
+"cx": 480,
+"cy": 260,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "KILL D_s4"
+},
+{
+"t0": 68.9868,
+"t1": 69.4935,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s5",
+"src": 452,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "inout",
+"cx": 480,
+"cy": 236,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "KILL D_s5"
+},
+{
+"t0": 69.4935,
+"t1": 72.544,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D_s3",
+"src": 452,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.15,
+"ease": "inout",
+"cx": 480,
+"cy": 260,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "KILL D_s3"
+},
+{
+"t0": 72.544,
+"t1": 74.571,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_spread",
+"src": 178,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 640,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "SPREAD FIRE",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 72.584,
+"t_out": 74.571,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "SPREAD FIRE"
+},
+{
+"t0": 74.571,
+"t1": 76.608,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C2_mg",
+"src": 178,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "MACHINE GUN",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 74.611,
+"t_out": 76.608,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "MACHINE GUN"
+},
+{
+"t0": 76.608,
+"t1": 78.635,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_missiles",
+"src": 156,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 640,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "MISSILES",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 76.648,
+"t_out": 78.635,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "MISSILES"
+},
+{
+"t0": 78.635,
+"t1": 80.672,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_laser",
+"src": 161,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "LASER",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 78.675,
+"t_out": 80.672,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "LASER"
+},
+{
+"t0": 80.672,
+"t1": 82.699,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_flame",
+"src": 178,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 640,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "FLAMETHROWER",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 80.712,
+"t_out": 82.699,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "FLAMETHROWER"
+},
+{
+"t0": 82.699,
+"t1": 84.725,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_fireorb",
+"src": 178,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "FIRE ORB",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 82.739,
+"t_out": 84.725,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "FIRE ORB"
+},
+{
+"t0": 84.725,
+"t1": 86.763,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_iceorb",
+"src": 0,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 640,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "ICE ORB",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 84.765,
+"t_out": 86.763,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "ICE ORB"
+},
+{
+"t0": 86.763,
+"t1": 88.789,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_lasermist",
+"src": 124,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"gain": 2.2
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "LASER MIST",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 86.803,
+"t_out": 88.789,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "LASER MIST"
+},
+{
+"t0": 88.789,
+"t1": 90.827,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_lasercannon",
+"src": 2,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "LASER CANNON",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 88.829,
+"t_out": 90.827,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "LASER CANNON"
+},
+{
+"t0": 90.827,
+"t1": 92.853,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_shadoworb",
+"src": 210,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [
+{
+"kind": "text",
+"text": "SHADOW ORB",
+"face": "final",
+"height": 80,
+"x": 90,
+"y": 985,
+"anchor": "l",
+"t_in": 90.867,
+"t_out": 92.853,
+"in": "slide-l",
+"out": "cut",
+"band": 0.55
+}
+],
+"label": "SHADOW ORB"
+},
+{
+"t0": 92.853,
+"t1": 94.88,
+"panes": [
+{
+"rect": [
+0,
+0,
+640,
+1080
+],
+"take": "C_spread",
+"src": 45,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+640,
+0,
+640,
+1080
+],
+"take": "C2_mg",
+"src": 0,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+1280,
+0,
+640,
+1080
+],
+"take": "C_laser",
+"src": 23,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "arsenal split 1"
+},
+{
+"t0": 94.88,
+"t1": 96.907,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E_s5",
+"src": 44,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.35,
+"s1": 2.6,
+"ease": "out",
+"cx": 480,
+"cy": 600,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "ALERT! boss warning"
+},
+{
+"t0": 96.907,
+"t1": 98.944,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E_s1",
+"src": 176,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "BOSS s1",
+"letterbox": 56
+},
+{
+"t0": 98.944,
+"t1": 100.971,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E3_s2_form",
+"src": 360,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "BOSS s2 forming",
+"letterbox": 56
+},
+{
+"t0": 100.971,
+"t1": 102.997,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E_s3",
+"src": 298,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "BOSS s3",
+"letterbox": 56
+},
+{
+"t0": 102.997,
+"t1": 105.024,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E_s4",
+"src": 162,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "BOSS s4",
+"letterbox": 56
+},
+{
+"t0": 105.024,
+"t1": 107.051,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E_s5",
+"src": 173,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "BOSS s5",
+"letterbox": 56
+},
+{
+"t0": 107.051,
+"t1": 109.067,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s1",
+"src": 321,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 480,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "vs boss E2_s1"
+},
+{
+"t0": 109.067,
+"t1": 111.104,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E3_s2_arms",
+"src": 850,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "vs FURNACE - the second arm breaks, the core opens"
+},
+{
+"t0": 111.104,
+"t1": 113.131,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s3",
+"src": 163,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 480,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "vs boss E2_s3"
+},
+{
+"t0": 113.131,
+"t1": 115.157,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E3_s2_core",
+"src": 340,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "FURNACE core phase"
+},
+{
+"t0": 115.157,
+"t1": 117.173,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E3_s2_head",
+"src": 680,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "FURNACE head flies alone, then dies"
+},
+{
+"t0": 117.173,
+"t1": 117.4264,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E_s4",
+"src": 382,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 500,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "escalate E_s4"
+},
+{
+"t0": 117.4264,
+"t1": 117.6797,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E_s2",
+"src": 329,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 500,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "escalate E_s2"
+},
+{
+"t0": 117.6797,
+"t1": 117.9331,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E_s5",
+"src": 312,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 500,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "escalate E_s5"
+},
+{
+"t0": 117.9331,
+"t1": 118.1865,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E_s1",
+"src": 304,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 500,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "escalate E_s1"
+},
+{
+"t0": 118.1865,
+"t1": 119.2,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "G_death",
+"src": 85,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 622,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "SHIP DESTROYED (header rule)"
+},
+{
+"t0": 119.2,
+"t1": 119.4865,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "G_death",
+"src": 146,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 622,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "spin -> crash"
+},
+{
+"t0": 119.4865,
+"t1": 122.57,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "G_death",
+"src": 163,
+"speed": 0.18,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.45,
+"ease": "inout",
+"cx": 480,
+"cy": 622,
+"track": null,
+"lead": 0
+},
+"desat": 0.6
+}
+],
+"layers": [],
+"label": "grey slow motion through the stop"
+},
+{
+"t0": 122.57,
+"t1": 123.57,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s1",
+"src": 484,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 900,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "STAB E2_s1"
+},
+{
+"t0": 123.57,
+"t1": 125.34,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s1",
+"src": 544,
+"speed": 0.35,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.16,
+"ease": "inout",
+"cx": 480,
+"cy": 900,
+"track": null,
+"lead": 0
+},
+"desat": 0.45
+}
+],
+"layers": [],
+"label": "grey slow motion E2_s1"
+},
+{
+"t0": 125.34,
+"t1": 125.694,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s2",
+"src": 484,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 342,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "STAB E2_s2"
+},
+{
+"t0": 125.694,
+"t1": 125.93,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s2",
+"src": 505,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.12,
+"ease": "inout",
+"cx": 480,
+"cy": 342,
+"track": null,
+"lead": 0
+},
+"hold": 0.0,
+"desat": 0.55,
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "freeze E2_s2"
+},
+{
+"t0": 125.93,
+"t1": 126.332,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s3",
+"src": 484,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 240,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "STAB E2_s3"
+},
+{
+"t0": 126.332,
+"t1": 126.6,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s3",
+"src": 508,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.12,
+"ease": "inout",
+"cx": 480,
+"cy": 240,
+"track": null,
+"lead": 0
+},
+"hold": 0.0,
+"desat": 0.55,
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "freeze E2_s3"
+},
+{
+"t0": 126.6,
+"t1": 126.702,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s4",
+"src": 484,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 300,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "STAB E2_s4"
+},
+{
+"t0": 126.702,
+"t1": 126.77,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s4",
+"src": 490,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.12,
+"ease": "inout",
+"cx": 480,
+"cy": 300,
+"track": null,
+"lead": 0
+},
+"hold": 0.0,
+"desat": 0.55,
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "freeze E2_s4"
+},
+{
+"t0": 126.77,
+"t1": 126.968,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s5",
+"src": 484,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 240,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "STAB E2_s5"
+},
+{
+"t0": 126.968,
+"t1": 127.1,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "E2_s5",
+"src": 496,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.12,
+"ease": "inout",
+"cx": 480,
+"cy": 240,
+"track": null,
+"lead": 0
+},
+"hold": 0.0,
+"desat": 0.55,
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "freeze E2_s5"
+},
+{
+"t0": 127.1,
+"t1": 127.52,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D2_s5",
+"src": 424,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 224,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "STAB D2_s5"
+},
+{
+"t0": 127.52,
+"t1": 127.95,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D2_s5",
+"src": 449,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.12,
+"ease": "inout",
+"cx": 480,
+"cy": 224,
+"track": null,
+"lead": 0
+},
+"hold": 0.0,
+"desat": 0.55,
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "freeze D2_s5"
+},
+{
+"t0": 127.95,
+"t1": 128.95,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_cole",
+"src": 239,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.8,
+"s1": 1.8,
+"ease": "out",
+"cx": 480,
+"cy": 224,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "STAB S2_cole"
+},
+{
+"t0": 128.95,
+"t1": 129.3,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_cole",
+"src": 299,
+"speed": 0.35,
+"bg": "blur",
+"cam": {
+"s0": 1.8,
+"s1": 1.9440000000000002,
+"ease": "inout",
+"cx": 480,
+"cy": 224,
+"track": null,
+"lead": 0
+},
+"desat": 0.45
+}
+],
+"layers": [],
+"label": "grey slow motion S2_cole"
+},
+{
+"t0": 129.3,
+"t1": 131.317,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_lizzie",
+"src": 278,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 420,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "STAB S2_lizzie"
+},
+{
+"t0": 131.317,
+"t1": 131.821,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s1",
+"src": 368,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "beat F_s1"
+},
+{
+"t0": 131.821,
+"t1": 132.325,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "W_warp",
+"src": 422,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "beat W_warp"
+},
+{
+"t0": 132.325,
+"t1": 132.829,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s2",
+"src": 380,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "beat F_s2"
+},
+{
+"t0": 132.829,
+"t1": 133.333,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_yuri",
+"src": 139,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "beat S1_yuri"
+},
+{
+"t0": 133.333,
+"t1": 133.8398,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s3",
+"src": 535,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "beat F_s3"
+},
+{
+"t0": 133.8398,
+"t1": 134.3465,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "W_warp",
+"src": 668,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "beat W_warp"
+},
+{
+"t0": 134.3465,
+"t1": 134.8533,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s5",
+"src": 514,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "beat F_s5"
+},
+{
+"t0": 134.8533,
+"t1": 135.36,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 626,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "beat F_s6"
+},
+{
+"t0": 135.36,
+"t1": 135.864,
+"panes": [
+{
+"rect": [
+0,
+0,
+960,
+1080
+],
+"take": "S1_axel",
+"src": 306,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+},
+{
+"rect": [
+960,
+0,
+960,
+1080
+],
+"take": "S1_decker",
+"src": 247,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+}
+],
+"layers": [],
+"label": "split S1_axel|S1_decker"
+},
+{
+"t0": 135.864,
+"t1": 136.368,
+"panes": [
+{
+"rect": [
+0,
+0,
+960,
+1080
+],
+"take": "C_mg",
+"src": 1,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+},
+{
+"rect": [
+960,
+0,
+960,
+1080
+],
+"take": "C_missiles",
+"src": 293,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+}
+],
+"layers": [],
+"label": "split C_mg|C_missiles"
+},
+{
+"t0": 136.368,
+"t1": 136.872,
+"panes": [
+{
+"rect": [
+0,
+0,
+960,
+1080
+],
+"take": "S1_freezer",
+"src": 381,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+},
+{
+"rect": [
+960,
+0,
+960,
+1080
+],
+"take": "S1_juggernaut",
+"src": 364,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+}
+],
+"layers": [],
+"label": "split S1_freezer|S1_juggernaut"
+},
+{
+"t0": 136.872,
+"t1": 137.376,
+"panes": [
+{
+"rect": [
+0,
+0,
+960,
+1080
+],
+"take": "F_s4",
+"src": 218,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+},
+{
+"rect": [
+960,
+0,
+960,
+1080
+],
+"take": "C_spread",
+"src": 3,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+}
+],
+"layers": [],
+"label": "split F_s4|C_spread"
+},
+{
+"t0": 137.376,
+"t1": 137.88,
+"panes": [
+{
+"rect": [
+0,
+0,
+960,
+1080
+],
+"take": "S1_falva",
+"src": 293,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+},
+{
+"rect": [
+960,
+0,
+960,
+1080
+],
+"take": "S1_maverick",
+"src": 311,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+}
+],
+"layers": [],
+"label": "split S1_falva|S1_maverick"
+},
+{
+"t0": 137.88,
+"t1": 138.384,
+"panes": [
+{
+"rect": [
+0,
+0,
+960,
+1080
+],
+"take": "C_fireorb",
+"src": 0,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+},
+{
+"rect": [
+960,
+0,
+960,
+1080
+],
+"take": "C_iceorb",
+"src": 165,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+}
+],
+"layers": [],
+"label": "split C_fireorb|C_iceorb"
+},
+{
+"t0": 138.384,
+"t1": 138.888,
+"panes": [
+{
+"rect": [
+0,
+0,
+960,
+1080
+],
+"take": "S1_cole",
+"src": 272,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+},
+{
+"rect": [
+960,
+0,
+960,
+1080
+],
+"take": "S1_lizzie",
+"src": 277,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+}
+],
+"layers": [],
+"label": "split S1_cole|S1_lizzie"
+},
+{
+"t0": 138.888,
+"t1": 139.392,
+"panes": [
+{
+"rect": [
+0,
+0,
+960,
+1080
+],
+"take": "C_thermo",
+"src": 157,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+},
+{
+"rect": [
+960,
+0,
+960,
+1080
+],
+"take": "C_turret",
+"src": 69,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.7
+}
+],
+"layers": [],
+"label": "split C_thermo|C_turret"
+},
+{
+"t0": 139.392,
+"t1": 140.4,
+"panes": [
+{
+"rect": [
+0,
+0,
+640,
+1080
+],
+"take": "S2_axel",
+"src": 271,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+640,
+0,
+640,
+1080
+],
+"take": "S2_decker",
+"src": 42,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+1280,
+0,
+640,
+1080
+],
+"take": "S2_yuri",
+"src": 0,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "three-way S2_axel|S2_decker|S2_yuri"
+},
+{
+"t0": 140.4,
+"t1": 141.408,
+"panes": [
+{
+"rect": [
+0,
+0,
+640,
+1080
+],
+"take": "E2_s1",
+"src": 0,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+640,
+0,
+640,
+1080
+],
+"take": "E2_s3",
+"src": 388,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+1280,
+0,
+640,
+1080
+],
+"take": "E2_s5",
+"src": 176,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "three-way E2_s1|E2_s3|E2_s5"
+},
+{
+"t0": 141.408,
+"t1": 142.416,
+"panes": [
+{
+"rect": [
+0,
+0,
+640,
+1080
+],
+"take": "C_sonic",
+"src": 245,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+640,
+0,
+640,
+1080
+],
+"take": "C_shotgun",
+"src": 20,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+1280,
+0,
+640,
+1080
+],
+"take": "C_lasermist",
+"src": 4,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "three-way C_sonic|C_shotgun|C_lasermist"
+},
+{
+"t0": 142.416,
+"t1": 143.424,
+"panes": [
+{
+"rect": [
+0,
+0,
+640,
+1080
+],
+"take": "S2_falva",
+"src": 135,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+640,
+0,
+640,
+1080
+],
+"take": "S2_freezer",
+"src": 317,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+},
+{
+"rect": [
+1280,
+0,
+640,
+1080
+],
+"take": "S2_juggernaut",
+"src": 0,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.6
+}
+],
+"layers": [],
+"label": "three-way S2_falva|S2_freezer|S2_juggernaut"
+},
+{
+"t0": 143.424,
+"t1": 145.44,
+"panes": [
+{
+"rect": [
+0,
+0,
+640,
+360
+],
+"take": "S1_axel",
+"src": 342,
+"speed": 0.55,
+"bg": "black",
+"cam": {
+"s0": 0.62,
+"s1": 0.62,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.4
+},
+{
+"rect": [
+640,
+0,
+640,
+360
+],
+"take": "S2_yuri",
+"src": 267,
+"speed": 0.55,
+"bg": "black",
+"cam": {
+"s0": 0.62,
+"s1": 0.62,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.4
+},
+{
+"rect": [
+1280,
+0,
+640,
+360
+],
+"take": "S1_freezer",
+"src": 70,
+"speed": 0.55,
+"bg": "black",
+"cam": {
+"s0": 0.62,
+"s1": 0.62,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.4
+},
+{
+"rect": [
+0,
+360,
+640,
+360
+],
+"take": "S2_falva",
+"src": 270,
+"speed": 0.55,
+"bg": "black",
+"cam": {
+"s0": 0.62,
+"s1": 0.62,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.4
+},
+{
+"rect": [
+640,
+360,
+640,
+360
+],
+"take": "S1_decker",
+"src": 171,
+"speed": 0.55,
+"bg": "black",
+"cam": {
+"s0": 0.62,
+"s1": 0.62,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.4
+},
+{
+"rect": [
+1280,
+360,
+640,
+360
+],
+"take": "S2_juggernaut",
+"src": 350,
+"speed": 0.55,
+"bg": "black",
+"cam": {
+"s0": 0.62,
+"s1": 0.62,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.4
+},
+{
+"rect": [
+0,
+720,
+640,
+360
+],
+"take": "S1_maverick",
+"src": 236,
+"speed": 0.55,
+"bg": "black",
+"cam": {
+"s0": 0.62,
+"s1": 0.62,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.4
+},
+{
+"rect": [
+640,
+720,
+640,
+360
+],
+"take": "S2_cole",
+"src": 59,
+"speed": 0.55,
+"bg": "black",
+"cam": {
+"s0": 0.62,
+"s1": 0.62,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.4
+},
+{
+"rect": [
+1280,
+720,
+640,
+360
+],
+"take": "S1_lizzie",
+"src": 313,
+"speed": 0.55,
+"bg": "black",
+"cam": {
+"s0": 0.62,
+"s1": 0.62,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.4
+}
+],
+"layers": [],
+"label": "nine specials (third windows)"
+},
+{
+"t0": 145.44,
+"t1": 147.467,
+"panes": [
+{
+"rect": [
+0,
+0,
+640,
+540
+],
+"take": "E_s1",
+"src": 444,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 0.75,
+"s1": 0.75,
+"ease": "out",
+"cx": 480,
+"cy": 130,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.5
+},
+{
+"rect": [
+640,
+0,
+640,
+540
+],
+"take": "E_s2",
+"src": 444,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 0.75,
+"s1": 0.75,
+"ease": "out",
+"cx": 480,
+"cy": 424,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.5
+},
+{
+"rect": [
+1280,
+0,
+640,
+540
+],
+"take": "E_s3",
+"src": 444,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 0.75,
+"s1": 0.75,
+"ease": "out",
+"cx": 480,
+"cy": 240,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.5
+},
+{
+"rect": [
+0,
+540,
+640,
+540
+],
+"take": "E_s4",
+"src": 444,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 0.75,
+"s1": 0.75,
+"ease": "out",
+"cx": 480,
+"cy": 300,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.5
+},
+{
+"rect": [
+640,
+540,
+640,
+540
+],
+"take": "E_s5",
+"src": 444,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 0.75,
+"s1": 0.75,
+"ease": "out",
+"cx": 480,
+"cy": 278,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.5
+},
+{
+"rect": [
+1280,
+540,
+640,
+540
+],
+"take": "D2_s3",
+"src": 414,
+"speed": 1.0,
+"bg": "black",
+"cam": {
+"s0": 0.75,
+"s1": 0.75,
+"ease": "out",
+"cx": 480,
+"cy": 260,
+"track": null,
+"lead": 0
+},
+"border": [
+10,
+10,
+12
+],
+"gain": 0.5
+}
+],
+"layers": [],
+"label": "six boss deaths"
+},
+{
+"t0": 147.467,
+"t1": 147.719,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 227,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.4,
+"tint": [
+0,
+0,
+0,
+0.72
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_axel.png",
+"x": 960.0,
+"y": 540,
+"prescale": 2.5,
+"anchor": "c",
+"t_in": 147.467,
+"t_out": 147.719,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+}
+],
+"label": "portrait axel"
+},
+{
+"t0": 147.719,
+"t1": 147.971,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_freezer",
+"src": 9,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 240,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "blast S2_freezer"
+},
+{
+"t0": 147.971,
+"t1": 148.223,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 257,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.4,
+"tint": [
+0,
+0,
+0,
+0.72
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_yuri.png",
+"x": 960.0,
+"y": 540,
+"prescale": 2.5,
+"anchor": "c",
+"t_in": 147.971,
+"t_out": 148.223,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+}
+],
+"label": "portrait yuri"
+},
+{
+"t0": 148.223,
+"t1": 148.475,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_axel",
+"src": 137,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 232,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "blast S2_axel"
+},
+{
+"t0": 148.475,
+"t1": 148.727,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 287,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.4,
+"tint": [
+0,
+0,
+0,
+0.72
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_freezer.png",
+"x": 960.0,
+"y": 540,
+"prescale": 2.5,
+"anchor": "c",
+"t_in": 148.475,
+"t_out": 148.727,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+}
+],
+"label": "portrait freezer"
+},
+{
+"t0": 148.727,
+"t1": 148.979,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C_thermo",
+"src": 114,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 260,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "blast C_thermo"
+},
+{
+"t0": 148.979,
+"t1": 149.231,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 318,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.4,
+"tint": [
+0,
+0,
+0,
+0.72
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_falva.png",
+"x": 960.0,
+"y": 540,
+"prescale": 2.5,
+"anchor": "c",
+"t_in": 148.979,
+"t_out": 149.231,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+}
+],
+"label": "portrait falva"
+},
+{
+"t0": 149.231,
+"t1": 149.483,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_maverick",
+"src": 196,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 260,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "blast S2_maverick"
+},
+{
+"t0": 149.483,
+"t1": 149.735,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 348,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.4,
+"tint": [
+0,
+0,
+0,
+0.72
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_decker.png",
+"x": 960.0,
+"y": 540,
+"prescale": 2.5,
+"anchor": "c",
+"t_in": 149.483,
+"t_out": 149.735,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+}
+],
+"label": "portrait decker"
+},
+{
+"t0": 149.735,
+"t1": 149.987,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_falva",
+"src": 354,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 390,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "blast S2_falva"
+},
+{
+"t0": 149.987,
+"t1": 150.239,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 378,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.4,
+"tint": [
+0,
+0,
+0,
+0.72
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_juggernaut.png",
+"x": 960.0,
+"y": 540,
+"prescale": 2.5,
+"anchor": "c",
+"t_in": 149.987,
+"t_out": 150.239,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+}
+],
+"label": "portrait juggernaut"
+},
+{
+"t0": 150.239,
+"t1": 150.491,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_decker",
+"src": 314,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 314,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "blast S2_decker"
+},
+{
+"t0": 150.491,
+"t1": 150.743,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 408,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.4,
+"tint": [
+0,
+0,
+0,
+0.72
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_maverick.png",
+"x": 960.0,
+"y": 540,
+"prescale": 2.5,
+"anchor": "c",
+"t_in": 150.491,
+"t_out": 150.743,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+}
+],
+"label": "portrait maverick"
+},
+{
+"t0": 150.743,
+"t1": 150.995,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_yuri",
+"src": 66,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 260,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "blast S2_yuri"
+},
+{
+"t0": 150.995,
+"t1": 151.247,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 439,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.4,
+"tint": [
+0,
+0,
+0,
+0.72
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_cole.png",
+"x": 960.0,
+"y": 540,
+"prescale": 2.5,
+"anchor": "c",
+"t_in": 150.995,
+"t_out": 151.247,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+}
+],
+"label": "portrait cole"
+},
+{
+"t0": 151.247,
+"t1": 151.499,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s6",
+"src": 454,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.4,
+"tint": [
+0,
+0,
+0,
+0.72
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/pav_lizzie.png",
+"x": 960.0,
+"y": 540,
+"prescale": 2.5,
+"anchor": "c",
+"t_in": 151.247,
+"t_out": 151.499,
+"in": "slam",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+}
+],
+"label": "portrait lizzie"
+},
+{
+"t0": 151.499,
+"t1": 152.003,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "A_mapfly",
+"src": 133,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"gain": 0.9
+}
+],
+"layers": [],
+"label": "campaign map: stage to stage"
+},
+{
+"t0": 152.003,
+"t1": 152.507,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "W_warp",
+"src": 1095,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.15,
+"ease": "in",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "WARP DRIVE jump"
+},
+{
+"t0": 152.507,
+"t1": 153.011,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_maverick",
+"src": 404,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "helix release (third)"
+},
+{
+"t0": 153.011,
+"t1": 153.515,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s2",
+"src": 452,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 600,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "F_s2 blast"
+},
+{
+"t0": 153.515,
+"t1": 153.767,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_cole",
+"src": 169,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 420,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "strobe S1_cole"
+},
+{
+"t0": 153.767,
+"t1": 154.019,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D2_s2",
+"src": 432,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 260,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "strobe D2_s2"
+},
+{
+"t0": 154.019,
+"t1": 154.271,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_lizzie",
+"src": 169,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 420,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "strobe S1_lizzie"
+},
+{
+"t0": 154.271,
+"t1": 154.523,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D2_s4",
+"src": 432,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 260,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "strobe D2_s4"
+},
+{
+"t0": 154.523,
+"t1": 154.775,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "D2_s1",
+"src": 432,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 276,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "strobe D2_s1"
+},
+{
+"t0": 154.775,
+"t1": 155.027,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S2_juggernaut",
+"src": 222,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 520,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "strobe S2_juggernaut"
+},
+{
+"t0": 155.027,
+"t1": 155.279,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "F_s5",
+"src": 562,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 520,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "strobe F_s5"
+},
+{
+"t0": 155.279,
+"t1": 155.531,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "W_warp",
+"src": 1044,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 560,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "strobe W_warp"
+},
+{
+"t0": 155.531,
+"t1": 156.03,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "G_death2",
+"src": 40,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 696,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "death spin"
+},
+{
+"t0": 156.03,
+"t1": 156.53,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_cole",
+"src": 237,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "cole strike"
+},
+{
+"t0": 156.53,
+"t1": 156.7,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "S1_lizzie",
+"src": 261,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "out",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "lizzie strike"
+},
+{
+"t0": 156.7,
+"t1": 157.38,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "C2_missiles",
+"src": 228,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 2.0,
+"s1": 2.0,
+"ease": "out",
+"cx": 480,
+"cy": 600,
+"track": null,
+"lead": 0
+}
+}
+],
+"layers": [],
+"label": "last blast C2_missiles"
+},
+{
+"t0": 157.38,
+"t1": 165.0,
+"panes": [
+{
+"rect": [
+0,
+0,
+1920,
+1080
+],
+"take": "A_mapboot",
+"src": 560,
+"speed": 1.0,
+"bg": "blur",
+"cam": {
+"s0": 1.0,
+"s1": 1.0,
+"ease": "inout",
+"cx": 480,
+"cy": 512,
+"track": null,
+"lead": 0
+},
+"desat": 0.35,
+"tint": [
+0,
+0,
+0,
+0.8
+],
+"bgonly": true,
+"gain": 0.0
+}
+],
+"layers": [
+{
+"kind": "image",
+"src": "brand/nbl_logo.png",
+"x": 960.0,
+"y": 440,
+"prescale": 2.1,
+"anchor": "c",
+"t_in": 157.38,
+"t_out": 165.0,
+"in": "slam",
+"out": "cut",
+"shadow": true,
+"drift": 0.006
+},
+{
+"kind": "text",
+"text": "COMING SOON",
+"face": "final",
+"height": 86,
+"x": 960.0,
+"y": 850,
+"anchor": "c",
+"t_in": 159.9,
+"t_out": 165.0,
+"in": "rise",
+"out": "cut"
+},
+{
+"kind": "text",
+"text": "BUILT WITH THE ASSISTANCE OF AI & HUMAN TOOLS.",
+"face": "final",
+"height": 44,
+"x": 960.0,
+"y": 935,
+"anchor": "c",
+"t_in": 161.0,
+"t_out": 165.0,
+"in": "fade",
+"out": "cut",
+"fade": 0.5
+},
+{
+"kind": "image",
+"src": "brand/cf_logo.png",
+"x": 960.0,
+"y": 1012,
+"prescale": 0.12,
+"anchor": "c",
+"t_in": 160.6,
+"t_out": 165.0,
+"in": "fade",
+"out": "cut",
+"fade": 0.6
+}
+],
+"label": "END CARD",
+"fade_out": 1.2
+}
+],
+"overlays": [
+{
+"kind": "image",
+"src": "brand/body_axel.png",
+"x": 250,
+"y": 610,
+"prescale": 2.35,
+"anchor": "c",
+"t_in": 27.808,
+"t_out": 29.845,
+"in": "slide-l",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_axel.png",
+"x": 1672,
+"y": 560,
+"prescale": 1.45,
+"anchor": "c",
+"t_in": 28.064,
+"t_out": 29.845,
+"in": "slide-r",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "AXEL",
+"face": "final",
+"height": 104,
+"x": 960.0,
+"y": 104,
+"anchor": "c",
+"t_in": 27.808,
+"t_out": 29.845,
+"in": "slam",
+"out": "cut",
+"band": 0.6,
+"tint": "#3a8aff"
+},
+{
+"kind": "text",
+"text": "MEGA SHIELD",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 28.3199,
+"t_out": 29.845,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#3a8aff"
+},
+{
+"kind": "image",
+"src": "brand/body_yuri.png",
+"x": 250,
+"y": 610,
+"prescale": 2.35,
+"anchor": "c",
+"t_in": 29.845,
+"t_out": 31.872,
+"in": "slide-l",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_yuri.png",
+"x": 1672,
+"y": 560,
+"prescale": 1.45,
+"anchor": "c",
+"t_in": 30.101,
+"t_out": 31.872,
+"in": "slide-r",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "YURI",
+"face": "final",
+"height": 104,
+"x": 960.0,
+"y": 104,
+"anchor": "c",
+"t_in": 29.845,
+"t_out": 31.872,
+"in": "slam",
+"out": "cut",
+"band": 0.6,
+"tint": "#e23a3a"
+},
+{
+"kind": "text",
+"text": "CHAIN LIGHTNING",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 30.3569,
+"t_out": 31.872,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#e23a3a"
+},
+{
+"kind": "image",
+"src": "brand/body_freezer.png",
+"x": 250,
+"y": 610,
+"prescale": 2.35,
+"anchor": "c",
+"t_in": 31.872,
+"t_out": 35.947,
+"in": "slide-l",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_freezer.png",
+"x": 1672,
+"y": 560,
+"prescale": 1.45,
+"anchor": "c",
+"t_in": 32.128,
+"t_out": 35.947,
+"in": "slide-r",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "FREEZER",
+"face": "final",
+"height": 104,
+"x": 960.0,
+"y": 104,
+"anchor": "c",
+"t_in": 31.872,
+"t_out": 35.947,
+"in": "slam",
+"out": "cut",
+"band": 0.6,
+"tint": "#6fd0ff"
+},
+{
+"kind": "text",
+"text": "TIME FREEZE",
+"face": "final",
+"height": 64,
+"x": 960.0,
+"y": 210,
+"anchor": "c",
+"t_in": 32.3839,
+"t_out": 33.909,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#6fd0ff"
+},
+{
+"kind": "text",
+"text": "THERMOSHOCK",
+"face": "final",
+"height": 64,
+"x": 960.0,
+"y": 290,
+"anchor": "c",
+"t_in": 32.3839,
+"t_out": 33.909,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#6fd0ff"
+},
+{
+"kind": "text",
+"text": "ICE BREATH",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 33.909,
+"t_out": 35.947,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#6fd0ff"
+},
+{
+"kind": "image",
+"src": "brand/body_falva.png",
+"x": 250,
+"y": 610,
+"prescale": 2.35,
+"anchor": "c",
+"t_in": 35.947,
+"t_out": 37.973,
+"in": "slide-l",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_falva.png",
+"x": 1672,
+"y": 560,
+"prescale": 1.45,
+"anchor": "c",
+"t_in": 36.203,
+"t_out": 37.973,
+"in": "slide-r",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "FALVA",
+"face": "final",
+"height": 104,
+"x": 960.0,
+"y": 104,
+"anchor": "c",
+"t_in": 35.947,
+"t_out": 37.973,
+"in": "slam",
+"out": "cut",
+"band": 0.6,
+"tint": "#ff2a8f"
+},
+{
+"kind": "text",
+"text": "ROLLER BALL",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 36.4589,
+"t_out": 37.973,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#ff2a8f"
+},
+{
+"kind": "image",
+"src": "brand/body_decker.png",
+"x": 250,
+"y": 610,
+"prescale": 2.35,
+"anchor": "c",
+"t_in": 37.973,
+"t_out": 42.048,
+"in": "slide-l",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_decker.png",
+"x": 1672,
+"y": 560,
+"prescale": 1.45,
+"anchor": "c",
+"t_in": 38.229,
+"t_out": 42.048,
+"in": "slide-r",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "DECKER",
+"face": "final",
+"height": 104,
+"x": 960.0,
+"y": 104,
+"anchor": "c",
+"t_in": 37.973,
+"t_out": 42.048,
+"in": "slam",
+"out": "cut",
+"band": 0.6,
+"tint": "#ffd24a"
+},
+{
+"kind": "text",
+"text": "CLOAKING SYSTEM",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 38.4849,
+"t_out": 40.011,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#ffd24a"
+},
+{
+"kind": "text",
+"text": "INCENDIARY SHOTGUN",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 40.011,
+"t_out": 42.048,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#ffd24a"
+},
+{
+"kind": "image",
+"src": "brand/body_juggernaut.png",
+"x": 250,
+"y": 610,
+"prescale": 2.35,
+"anchor": "c",
+"t_in": 42.048,
+"t_out": 46.112,
+"in": "slide-l",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_juggernaut.png",
+"x": 1672,
+"y": 560,
+"prescale": 1.45,
+"anchor": "c",
+"t_in": 42.304,
+"t_out": 46.112,
+"in": "slide-r",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "JUGGERNAUT",
+"face": "final",
+"height": 104,
+"x": 960.0,
+"y": 104,
+"anchor": "c",
+"t_in": 42.048,
+"t_out": 46.112,
+"in": "slam",
+"out": "cut",
+"band": 0.6,
+"tint": "#c08a3a"
+},
+{
+"kind": "text",
+"text": "WRECKING BALL",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 42.5599,
+"t_out": 44.075,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#c08a3a"
+},
+{
+"kind": "text",
+"text": "CHARGE DASH",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 44.075,
+"t_out": 46.112,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#c08a3a"
+},
+{
+"kind": "image",
+"src": "brand/body_maverick.png",
+"x": 250,
+"y": 610,
+"prescale": 2.35,
+"anchor": "c",
+"t_in": 46.112,
+"t_out": 48.149,
+"in": "slide-l",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_maverick.png",
+"x": 1672,
+"y": 560,
+"prescale": 1.45,
+"anchor": "c",
+"t_in": 46.368,
+"t_out": 48.149,
+"in": "slide-r",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "MAVERICK",
+"face": "final",
+"height": 104,
+"x": 960.0,
+"y": 104,
+"anchor": "c",
+"t_in": 46.112,
+"t_out": 48.149,
+"in": "slam",
+"out": "cut",
+"band": 0.6,
+"tint": "#3ad6c8"
+},
+{
+"kind": "text",
+"text": "HELIX BEAM",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 46.6239,
+"t_out": 48.149,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#3ad6c8"
+},
+{
+"kind": "image",
+"src": "brand/body_cole.png",
+"x": 250,
+"y": 610,
+"prescale": 2.35,
+"anchor": "c",
+"t_in": 48.149,
+"t_out": 52.213,
+"in": "slide-l",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_cole.png",
+"x": 1672,
+"y": 560,
+"prescale": 1.45,
+"anchor": "c",
+"t_in": 48.405,
+"t_out": 52.213,
+"in": "slide-r",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "COLE",
+"face": "final",
+"height": 104,
+"x": 960.0,
+"y": 104,
+"anchor": "c",
+"t_in": 48.149,
+"t_out": 52.213,
+"in": "slam",
+"out": "cut",
+"band": 0.6,
+"tint": "#7ad63a"
+},
+{
+"kind": "text",
+"text": "NUKE STRIKE",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 48.6609,
+"t_out": 50.176,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#7ad63a"
+},
+{
+"kind": "text",
+"text": "SONIC BOOM",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 50.176,
+"t_out": 52.213,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#7ad63a"
+},
+{
+"kind": "image",
+"src": "brand/body_lizzie.png",
+"x": 250,
+"y": 610,
+"prescale": 2.35,
+"anchor": "c",
+"t_in": 52.213,
+"t_out": 56.277,
+"in": "slide-l",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "image",
+"src": "brand/pav_lizzie.png",
+"x": 1672,
+"y": 560,
+"prescale": 1.45,
+"anchor": "c",
+"t_in": 52.469,
+"t_out": 56.277,
+"in": "slide-r",
+"out": "cut",
+"resample": "nearest",
+"shadow": true
+},
+{
+"kind": "text",
+"text": "LIZZIE",
+"face": "final",
+"height": 104,
+"x": 960.0,
+"y": 104,
+"anchor": "c",
+"t_in": 52.213,
+"t_out": 56.277,
+"in": "slam",
+"out": "cut",
+"band": 0.6,
+"tint": "#ffc21a"
+},
+{
+"kind": "text",
+"text": "ATOM BOMB",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 52.7249,
+"t_out": 54.24,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#ffc21a"
+},
+{
+"kind": "text",
+"text": "HEAVY MG",
+"face": "final",
+"height": 78,
+"x": 960.0,
+"y": 218,
+"anchor": "c",
+"t_in": 54.24,
+"t_out": 56.277,
+"in": "slam",
+"out": "cut",
+"band": 0.45,
+"tint": "#ffc21a"
+},
+{
+"kind": "text",
+"text": "8 LEVELS",
+"face": "final",
+"height": 170,
+"x": 960.0,
+"y": 540,
+"anchor": "c",
+"t_in": 122.57,
+"t_out": 125.34,
+"in": "slam",
+"out": "cut",
+"band": 0.62
+},
+{
+"kind": "text",
+"text": "18 BOSSES",
+"face": "final",
+"height": 170,
+"x": 960.0,
+"y": 540,
+"anchor": "c",
+"t_in": 127.95,
+"t_out": 129.3,
+"in": "slam",
+"out": "cut",
+"band": 0.62
+},
+{
+"kind": "text",
+"text": "1 HELL OF A CAMPAIGN",
+"face": "final",
+"height": 130,
+"x": 960.0,
+"y": 540,
+"anchor": "c",
+"t_in": 129.3,
+"t_out": 131.317,
+"in": "slam",
+"out": "cut",
+"band": 0.62
+}
+],
+"hits": [
+{
+"t": 0.62,
+"kind": "flash",
+"dur": 0.6,
+"amp": 0.14
+},
+{
+"t": 5.461,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.96
+},
+{
+"t": 5.461,
+"kind": "shake",
+"dur": 0.42,
+"amp": 19.2
+},
+{
+"t": 5.461,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.066
+},
+{
+"t": 5.461,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 9.6
+},
+{
+"t": 8.541,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.041999999999999996
+},
+{
+"t": 8.541,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.6
+},
+{
+"t": 8.541,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.3
+},
+{
+"t": 10.2077,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.025199999999999997
+},
+{
+"t": 10.2077,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 3.36
+},
+{
+"t": 10.2077,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.18
+},
+{
+"t": 11.541,
+"kind": "flash",
+"dur": 0.14,
+"amp": 0.45
+},
+{
+"t": 12.0505,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 12.0505,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 13.2695,
+"kind": "rgb",
+"dur": 0.31,
+"amp": 16
+},
+{
+"t": 13.579,
+"kind": "flash",
+"dur": 0.16,
+"amp": 1.0
+},
+{
+"t": 13.579,
+"kind": "shake",
+"dur": 0.42,
+"amp": 22.4
+},
+{
+"t": 13.579,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.077
+},
+{
+"t": 13.579,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 11.2
+},
+{
+"t": 13.579,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.25
+},
+{
+"t": 13.579,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 13.579,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 14.5975,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.024
+},
+{
+"t": 14.5975,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 3.2
+},
+{
+"t": 15.616,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.25
+},
+{
+"t": 15.616,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 15.616,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 16.6345,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.024
+},
+{
+"t": 16.6345,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 3.2
+},
+{
+"t": 19.165,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.4
+},
+{
+"t": 17.653,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 17.653,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 19.669,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 19.669,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 20.1785,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 20.1785,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 20.688,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 20.688,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 21.1975,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 21.1975,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 21.707,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.35
+},
+{
+"t": 21.707,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 21.707,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 22.2163,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.35
+},
+{
+"t": 22.2163,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 22.2163,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 22.7255,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.35
+},
+{
+"t": 22.7255,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 22.7255,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 23.2347,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.35
+},
+{
+"t": 23.2347,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 23.2347,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 23.744,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.35
+},
+{
+"t": 23.744,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 23.744,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 24.2508,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.35
+},
+{
+"t": 24.2508,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 24.2508,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 24.7575,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.35
+},
+{
+"t": 24.7575,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 24.7575,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 25.2643,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.35
+},
+{
+"t": 25.2643,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 25.2643,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 25.771,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.015
+},
+{
+"t": 25.771,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 2.0
+},
+{
+"t": 25.899,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.015
+},
+{
+"t": 25.899,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 2.0
+},
+{
+"t": 26.027,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.015
+},
+{
+"t": 26.027,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 2.0
+},
+{
+"t": 26.155,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.015
+},
+{
+"t": 26.155,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 2.0
+},
+{
+"t": 26.2829,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.015
+},
+{
+"t": 26.2829,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 2.0
+},
+{
+"t": 26.4109,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.015
+},
+{
+"t": 26.4109,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 2.0
+},
+{
+"t": 26.5389,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.015
+},
+{
+"t": 26.5389,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 2.0
+},
+{
+"t": 26.6669,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.015
+},
+{
+"t": 26.6669,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 2.0
+},
+{
+"t": 26.7949,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.015
+},
+{
+"t": 26.7949,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 2.0
+},
+{
+"t": 26.7895,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.96
+},
+{
+"t": 26.7895,
+"kind": "shake",
+"dur": 0.42,
+"amp": 19.2
+},
+{
+"t": 26.7895,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.066
+},
+{
+"t": 26.7895,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 9.6
+},
+{
+"t": 27.808,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 27.808,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 28.0626,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 28.0626,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 28.0626,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 28.0626,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 29.845,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 29.845,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 30.0984,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 30.0984,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 30.0984,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 30.0984,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 31.872,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 31.872,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 32.3813,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 32.3813,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 32.3813,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 32.3813,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 33.909,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 33.909,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 35.947,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 35.947,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 36.96,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.7200000000000001
+},
+{
+"t": 36.96,
+"kind": "shake",
+"dur": 0.42,
+"amp": 14.4
+},
+{
+"t": 36.96,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0495
+},
+{
+"t": 36.96,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 7.2
+},
+{
+"t": 37.973,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 37.973,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 38.2278,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 38.2278,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 38.2278,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 38.2278,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 40.011,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 40.011,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 42.048,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 42.048,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 42.3014,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 42.3014,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 42.3014,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 42.3014,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 44.075,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 44.075,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 45.0935,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.7200000000000001
+},
+{
+"t": 45.0935,
+"kind": "shake",
+"dur": 0.42,
+"amp": 14.4
+},
+{
+"t": 45.0935,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0495
+},
+{
+"t": 45.0935,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 7.2
+},
+{
+"t": 46.112,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 46.112,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 47.1305,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.7200000000000001
+},
+{
+"t": 47.1305,
+"kind": "shake",
+"dur": 0.42,
+"amp": 14.4
+},
+{
+"t": 47.1305,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0495
+},
+{
+"t": 47.1305,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 7.2
+},
+{
+"t": 48.149,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 48.149,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 48.82,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6400000000000001
+},
+{
+"t": 48.82,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.8
+},
+{
+"t": 48.82,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.044000000000000004
+},
+{
+"t": 48.82,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.4
+},
+{
+"t": 49.55,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8800000000000001
+},
+{
+"t": 49.55,
+"kind": "shake",
+"dur": 0.42,
+"amp": 17.6
+},
+{
+"t": 49.55,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.060500000000000005
+},
+{
+"t": 49.55,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.8
+},
+{
+"t": 50.176,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 50.176,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 51.1945,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.7200000000000001
+},
+{
+"t": 51.1945,
+"kind": "shake",
+"dur": 0.42,
+"amp": 14.4
+},
+{
+"t": 51.1945,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0495
+},
+{
+"t": 51.1945,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 7.2
+},
+{
+"t": 52.213,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 52.213,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 53.2265,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.7200000000000001
+},
+{
+"t": 53.2265,
+"kind": "shake",
+"dur": 0.42,
+"amp": 14.4
+},
+{
+"t": 53.2265,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0495
+},
+{
+"t": 53.2265,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 7.2
+},
+{
+"t": 54.24,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.033
+},
+{
+"t": 54.24,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.4
+},
+{
+"t": 56.277,
+"kind": "flash",
+"dur": 0.12,
+"amp": 0.45
+},
+{
+"t": 56.277,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 56.277,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 58.315,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 58.315,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 58.8269,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 58.8269,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 58.8269,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 58.8269,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 59.328,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 59.328,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 59.8399,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 59.8399,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 59.8399,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 59.8399,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 60.341,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 60.341,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 60.8529,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 60.8529,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 60.8529,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 60.8529,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 61.36,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 61.36,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 61.8719,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 61.8719,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 61.8719,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 61.8719,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 62.379,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 62.379,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 62.8909,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 62.8909,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 62.8909,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 62.8909,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 63.392,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 63.392,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 65.424,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 65.424,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 67.4615,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6000000000000001
+},
+{
+"t": 67.4615,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.0
+},
+{
+"t": 67.4615,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.04125
+},
+{
+"t": 67.4615,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.0
+},
+{
+"t": 67.9708,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6000000000000001
+},
+{
+"t": 67.9708,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.0
+},
+{
+"t": 67.9708,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.04125
+},
+{
+"t": 67.9708,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.0
+},
+{
+"t": 68.48,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6000000000000001
+},
+{
+"t": 68.48,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.0
+},
+{
+"t": 68.48,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.04125
+},
+{
+"t": 68.48,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.0
+},
+{
+"t": 68.9868,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6000000000000001
+},
+{
+"t": 68.9868,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.0
+},
+{
+"t": 68.9868,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.04125
+},
+{
+"t": 68.9868,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.0
+},
+{
+"t": 69.4935,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 69.4935,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 69.4935,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 69.4935,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 72.544,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 72.544,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 72.544,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 74.571,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 74.571,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 74.571,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 76.608,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 76.608,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 76.608,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 78.635,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 78.635,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 78.635,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 80.672,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 80.672,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 80.672,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 82.699,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 82.699,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 82.699,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 84.725,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 84.725,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 84.725,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 86.763,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 86.763,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 86.763,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 88.789,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 88.789,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 88.789,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 90.827,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 90.827,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 90.827,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.22
+},
+{
+"t": 92.853,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6400000000000001
+},
+{
+"t": 92.853,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.8
+},
+{
+"t": 92.853,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.044000000000000004
+},
+{
+"t": 92.853,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.4
+},
+{
+"t": 94.88,
+"kind": "flash",
+"dur": 0.2,
+"amp": 0.6
+},
+{
+"t": 95.93,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.3
+},
+{
+"t": 95.93,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 95.93,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 96.27,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.3
+},
+{
+"t": 96.27,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 96.27,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 96.6,
+"kind": "flash",
+"dur": 0.1,
+"amp": 0.3
+},
+{
+"t": 96.6,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 96.6,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 96.907,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 96.907,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 97.4162,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.68
+},
+{
+"t": 97.4162,
+"kind": "shake",
+"dur": 0.42,
+"amp": 13.6
+},
+{
+"t": 97.4162,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.04675
+},
+{
+"t": 97.4162,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.8
+},
+{
+"t": 98.944,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 98.944,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 99.4507,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.68
+},
+{
+"t": 99.4507,
+"kind": "shake",
+"dur": 0.42,
+"amp": 13.6
+},
+{
+"t": 99.4507,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.04675
+},
+{
+"t": 99.4507,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.8
+},
+{
+"t": 100.971,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 100.971,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 101.4775,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.68
+},
+{
+"t": 101.4775,
+"kind": "shake",
+"dur": 0.42,
+"amp": 13.6
+},
+{
+"t": 101.4775,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.04675
+},
+{
+"t": 101.4775,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.8
+},
+{
+"t": 102.997,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 102.997,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 103.5037,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.68
+},
+{
+"t": 103.5037,
+"kind": "shake",
+"dur": 0.42,
+"amp": 13.6
+},
+{
+"t": 103.5037,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.04675
+},
+{
+"t": 103.5037,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.8
+},
+{
+"t": 105.024,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 105.024,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 105.5307,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.68
+},
+{
+"t": 105.5307,
+"kind": "shake",
+"dur": 0.42,
+"amp": 13.6
+},
+{
+"t": 105.5307,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.04675
+},
+{
+"t": 105.5307,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.8
+},
+{
+"t": 107.307,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.5599999999999999
+},
+{
+"t": 107.307,
+"kind": "shake",
+"dur": 0.42,
+"amp": 11.2
+},
+{
+"t": 107.307,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0385
+},
+{
+"t": 107.307,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 5.6
+},
+{
+"t": 109.323,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.5599999999999999
+},
+{
+"t": 109.323,
+"kind": "shake",
+"dur": 0.42,
+"amp": 11.2
+},
+{
+"t": 109.323,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0385
+},
+{
+"t": 109.323,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 5.6
+},
+{
+"t": 111.36,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.5599999999999999
+},
+{
+"t": 111.36,
+"kind": "shake",
+"dur": 0.42,
+"amp": 11.2
+},
+{
+"t": 111.36,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0385
+},
+{
+"t": 111.36,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 5.6
+},
+{
+"t": 113.387,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.5599999999999999
+},
+{
+"t": 113.387,
+"kind": "shake",
+"dur": 0.42,
+"amp": 11.2
+},
+{
+"t": 113.387,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0385
+},
+{
+"t": 113.387,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 5.6
+},
+{
+"t": 115.413,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.5599999999999999
+},
+{
+"t": 115.413,
+"kind": "shake",
+"dur": 0.42,
+"amp": 11.2
+},
+{
+"t": 115.413,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0385
+},
+{
+"t": 115.413,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 5.6
+},
+{
+"t": 117.173,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 117.173,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 117.4264,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 117.4264,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 117.6797,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 117.6797,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 117.9331,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 117.9331,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 118.2665,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 118.2665,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 118.2665,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 118.2665,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 122.57,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 122.57,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 122.57,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 122.57,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 125.34,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 125.34,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 125.34,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 125.34,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 125.93,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 125.93,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 125.93,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 125.93,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 126.6,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 126.6,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 126.6,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 126.6,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 126.77,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 126.77,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 126.77,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 126.77,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 127.1,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 127.1,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 127.1,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 127.1,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 127.95,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 127.95,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 127.95,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 127.95,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 129.3,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 129.3,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 129.3,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 129.3,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 131.317,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 131.317,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 131.821,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 131.821,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 132.325,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 132.325,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 132.829,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 132.829,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 133.333,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 133.333,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 133.8398,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 133.8398,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 134.3465,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 134.3465,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 134.8533,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.036
+},
+{
+"t": 134.8533,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.8
+},
+{
+"t": 135.36,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 135.36,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 135.864,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 135.864,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 136.368,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 136.368,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 136.872,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 136.872,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 137.376,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 137.376,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 137.88,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 137.88,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 138.384,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 138.384,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 138.888,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.03
+},
+{
+"t": 138.888,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 4.0
+},
+{
+"t": 139.392,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 139.392,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 139.392,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 139.392,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 140.4,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 140.4,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 140.4,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 140.4,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 141.408,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 141.408,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 141.408,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 141.408,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 142.416,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.48
+},
+{
+"t": 142.416,
+"kind": "shake",
+"dur": 0.42,
+"amp": 9.6
+},
+{
+"t": 142.416,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.033
+},
+{
+"t": 142.416,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 4.8
+},
+{
+"t": 143.424,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8
+},
+{
+"t": 143.424,
+"kind": "shake",
+"dur": 0.42,
+"amp": 16.0
+},
+{
+"t": 143.424,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.055
+},
+{
+"t": 143.424,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.0
+},
+{
+"t": 145.44,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.8800000000000001
+},
+{
+"t": 145.44,
+"kind": "shake",
+"dur": 0.42,
+"amp": 17.6
+},
+{
+"t": 145.44,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.060500000000000005
+},
+{
+"t": 145.44,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 8.8
+},
+{
+"t": 147.467,
+"kind": "flash",
+"dur": 0.08,
+"amp": 0.18
+},
+{
+"t": 147.719,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.041999999999999996
+},
+{
+"t": 147.719,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.6
+},
+{
+"t": 147.971,
+"kind": "flash",
+"dur": 0.08,
+"amp": 0.18
+},
+{
+"t": 148.223,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.041999999999999996
+},
+{
+"t": 148.223,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.6
+},
+{
+"t": 148.475,
+"kind": "flash",
+"dur": 0.08,
+"amp": 0.18
+},
+{
+"t": 148.727,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.041999999999999996
+},
+{
+"t": 148.727,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.6
+},
+{
+"t": 148.979,
+"kind": "flash",
+"dur": 0.08,
+"amp": 0.18
+},
+{
+"t": 149.231,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.041999999999999996
+},
+{
+"t": 149.231,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.6
+},
+{
+"t": 149.483,
+"kind": "flash",
+"dur": 0.08,
+"amp": 0.18
+},
+{
+"t": 149.735,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.041999999999999996
+},
+{
+"t": 149.735,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.6
+},
+{
+"t": 149.987,
+"kind": "flash",
+"dur": 0.08,
+"amp": 0.18
+},
+{
+"t": 150.239,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.041999999999999996
+},
+{
+"t": 150.239,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.6
+},
+{
+"t": 150.491,
+"kind": "flash",
+"dur": 0.08,
+"amp": 0.18
+},
+{
+"t": 150.743,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.041999999999999996
+},
+{
+"t": 150.743,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.6
+},
+{
+"t": 150.995,
+"kind": "flash",
+"dur": 0.08,
+"amp": 0.18
+},
+{
+"t": 151.247,
+"kind": "flash",
+"dur": 0.08,
+"amp": 0.18
+},
+{
+"t": 151.499,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6400000000000001
+},
+{
+"t": 151.499,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.8
+},
+{
+"t": 151.499,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.044000000000000004
+},
+{
+"t": 151.499,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.4
+},
+{
+"t": 152.003,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6400000000000001
+},
+{
+"t": 152.003,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.8
+},
+{
+"t": 152.003,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.044000000000000004
+},
+{
+"t": 152.003,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.4
+},
+{
+"t": 152.507,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6400000000000001
+},
+{
+"t": 152.507,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.8
+},
+{
+"t": 152.507,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.044000000000000004
+},
+{
+"t": 152.507,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.4
+},
+{
+"t": 153.011,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.6400000000000001
+},
+{
+"t": 153.011,
+"kind": "shake",
+"dur": 0.42,
+"amp": 12.8
+},
+{
+"t": 153.011,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.044000000000000004
+},
+{
+"t": 153.011,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 6.4
+},
+{
+"t": 153.515,
+"kind": "flash",
+"dur": 0.07,
+"amp": 0.5
+},
+{
+"t": 153.515,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 153.515,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 153.767,
+"kind": "flash",
+"dur": 0.07,
+"amp": 0.3
+},
+{
+"t": 153.767,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 153.767,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 154.019,
+"kind": "flash",
+"dur": 0.07,
+"amp": 0.5
+},
+{
+"t": 154.019,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 154.019,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 154.271,
+"kind": "flash",
+"dur": 0.07,
+"amp": 0.3
+},
+{
+"t": 154.271,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 154.271,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 154.523,
+"kind": "flash",
+"dur": 0.07,
+"amp": 0.5
+},
+{
+"t": 154.523,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 154.523,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 154.775,
+"kind": "flash",
+"dur": 0.07,
+"amp": 0.3
+},
+{
+"t": 154.775,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 154.775,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 155.027,
+"kind": "flash",
+"dur": 0.07,
+"amp": 0.5
+},
+{
+"t": 155.027,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 155.027,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 155.279,
+"kind": "flash",
+"dur": 0.07,
+"amp": 0.3
+},
+{
+"t": 155.279,
+"kind": "punch",
+"dur": 0.14,
+"amp": 0.039
+},
+{
+"t": 155.279,
+"kind": "rgb",
+"dur": 0.07,
+"amp": 5.2
+},
+{
+"t": 155.531,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.7200000000000001
+},
+{
+"t": 155.531,
+"kind": "shake",
+"dur": 0.42,
+"amp": 14.4
+},
+{
+"t": 155.531,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0495
+},
+{
+"t": 155.531,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 7.2
+},
+{
+"t": 156.03,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.7200000000000001
+},
+{
+"t": 156.03,
+"kind": "shake",
+"dur": 0.42,
+"amp": 14.4
+},
+{
+"t": 156.03,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0495
+},
+{
+"t": 156.03,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 7.2
+},
+{
+"t": 156.53,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.7200000000000001
+},
+{
+"t": 156.53,
+"kind": "shake",
+"dur": 0.42,
+"amp": 14.4
+},
+{
+"t": 156.53,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0495
+},
+{
+"t": 156.53,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 7.2
+},
+{
+"t": 156.7,
+"kind": "flash",
+"dur": 0.16,
+"amp": 0.7200000000000001
+},
+{
+"t": 156.7,
+"kind": "shake",
+"dur": 0.42,
+"amp": 14.4
+},
+{
+"t": 156.7,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.0495
+},
+{
+"t": 156.7,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 7.2
+},
+{
+"t": 157.38,
+"kind": "flash",
+"dur": 0.16,
+"amp": 1.0
+},
+{
+"t": 157.38,
+"kind": "shake",
+"dur": 0.42,
+"amp": 25.6
+},
+{
+"t": 157.38,
+"kind": "punch",
+"dur": 0.24,
+"amp": 0.08800000000000001
+},
+{
+"t": 157.38,
+"kind": "rgb",
+"dur": 0.12,
+"amp": 12.8
+},
+{
+"t": 157.38,
+"kind": "flash",
+"dur": 0.5,
+"amp": 1.0
+}
+],
+"audio": {
+"length": 165.0,
+"t0": 4.0,
+"song": "C:\\Users\\Mdogg\\Desktop\\cowboyfromhell.wav",
+"song_gain_db": -6.3,
+"song_fade_in": 0.45,
+"song_end": null,
+"chime": {
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\cf_boot.mp3",
+"t": 0.55,
+"gain_db": -0.6
+},
+"sfx": [
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 5.461,
+"gain_db": -15
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\announce.mp3",
+"t": 5.451,
+"gain_db": 3.0,
+"duck_db": 9.0
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 13.579,
+"gain_db": -7
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 17.703,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 19.165,
+"gain_db": -5
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_air_large.wav",
+"t": 26.7895,
+"gain_db": -11
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\selectpilot.mp3",
+"t": 25.821,
+"gain_db": 2.0,
+"duck_db": 6.0
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\nsp_console_beep.mp3",
+"t": 25.771,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\nsp_console_beep.mp3",
+"t": 25.899,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\nsp_console_beep.mp3",
+"t": 26.027,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\nsp_console_beep.mp3",
+"t": 26.155,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\nsp_console_beep.mp3",
+"t": 26.2829,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\nsp_console_beep.mp3",
+"t": 26.4109,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\nsp_console_beep.mp3",
+"t": 26.5389,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\nsp_console_beep.mp3",
+"t": 26.6669,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\nsp_console_beep.mp3",
+"t": 26.7949,
+"gain_db": -8
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 27.808,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\flagPlant.wav",
+"t": 27.808,
+"gain_db": -4
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 28.3199,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 29.845,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\flagPlant.wav",
+"t": 29.845,
+"gain_db": -4
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 30.3569,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 31.872,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\flagPlant.wav",
+"t": 31.872,
+"gain_db": -4
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 32.3839,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 33.909,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 35.947,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\flagPlant.wav",
+"t": 35.947,
+"gain_db": -4
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 36.4589,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 37.973,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\flagPlant.wav",
+"t": 37.973,
+"gain_db": -4
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 38.4849,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 40.011,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 42.048,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\flagPlant.wav",
+"t": 42.048,
+"gain_db": -4
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 42.5599,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 44.075,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 46.112,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\flagPlant.wav",
+"t": 46.112,
+"gain_db": -4
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 46.6239,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 48.149,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\flagPlant.wav",
+"t": 48.149,
+"gain_db": -4
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 48.6609,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_air_medium.wav",
+"t": 48.82,
+"gain_db": -13
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 50.176,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\whip.wav",
+"t": 52.213,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\flagPlant.wav",
+"t": 52.213,
+"gain_db": -4
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 52.7249,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\reviewed_special_pickup.wav",
+"t": 54.24,
+"gain_db": -6
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 122.57,
+"gain_db": -16
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 125.34,
+"gain_db": -16
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 125.93,
+"gain_db": -16
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 126.6,
+"gain_db": -16
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 126.77,
+"gain_db": -16
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 127.1,
+"gain_db": -16
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 127.95,
+"gain_db": -16
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 129.3,
+"gain_db": -16
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_air_large.wav",
+"t": 122.57,
+"gain_db": -12
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_air_large.wav",
+"t": 127.95,
+"gain_db": -12
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_air_large.wav",
+"t": 129.3,
+"gain_db": -12
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\explosion_boss_core.wav",
+"t": 157.38,
+"gain_db": -5
+},
+{
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\cf_boot.mp3",
+"t": 160.6,
+"gain_db": -1
+}
+],
+"fade_out": 1.2,
+"takes_dir": "C:\\Users\\Mdogg\\AppData\\Local\\Temp\\claude\\C--Users-Mdogg-Desktop-BOF-CODE\\35677c5c-4881-439b-ac67-00f94a260205\\scratchpad\\trailer\\takes3",
+"beds": [
+{
+"t0": 0.0,
+"t1": 4.0,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 4.0,
+"t1": 5.461,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 5.461,
+"t1": 7.477,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 7.477,
+"t1": 8.7577,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 8.7577,
+"t1": 11.541,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 11.541,
+"t1": 12.0505,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 12.0505,
+"t1": 13.579,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 13.579,
+"t1": 14.5975,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 14.5975,
+"t1": 15.616,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 15.616,
+"t1": 16.6345,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 16.6345,
+"t1": 17.653,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 17.653,
+"t1": 19.669,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 19.669,
+"t1": 20.1785,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 20.1785,
+"t1": 20.688,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 20.688,
+"t1": 21.1975,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 21.1975,
+"t1": 21.707,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 21.707,
+"t1": 22.2163,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 22.2163,
+"t1": 22.7255,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 22.7255,
+"t1": 23.2347,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 23.2347,
+"t1": 23.744,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 23.744,
+"t1": 24.2508,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 24.2508,
+"t1": 24.7575,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_storm.mp3"
+},
+{
+"t0": 24.7575,
+"t1": 25.2643,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 25.2643,
+"t1": 25.771,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 25.771,
+"t1": 27.808,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 27.808,
+"t1": 29.845,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 29.845,
+"t1": 31.872,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 31.872,
+"t1": 32.8905,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 32.8905,
+"t1": 33.909,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 33.909,
+"t1": 35.947,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 35.947,
+"t1": 37.973,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 37.973,
+"t1": 40.011,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 40.011,
+"t1": 42.048,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 42.048,
+"t1": 44.075,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 44.075,
+"t1": 46.112,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 46.112,
+"t1": 48.149,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 48.149,
+"t1": 48.82,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 48.82,
+"t1": 49.45,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 49.45,
+"t1": 50.176,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 50.176,
+"t1": 52.213,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 52.213,
+"t1": 54.24,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 54.24,
+"t1": 56.277,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 56.277,
+"t1": 58.315,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 58.315,
+"t1": 59.328,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 59.328,
+"t1": 60.341,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 60.341,
+"t1": 61.36,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 61.36,
+"t1": 62.379,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 62.379,
+"t1": 63.392,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 63.392,
+"t1": 65.424,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 65.424,
+"t1": 67.4615,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_storm.mp3"
+},
+{
+"t0": 67.4615,
+"t1": 67.9708,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 67.9708,
+"t1": 68.48,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 68.48,
+"t1": 68.9868,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 68.9868,
+"t1": 69.4935,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 69.4935,
+"t1": 72.544,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 72.544,
+"t1": 74.571,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 74.571,
+"t1": 76.608,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 76.608,
+"t1": 78.635,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 78.635,
+"t1": 80.672,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 80.672,
+"t1": 82.699,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 82.699,
+"t1": 84.725,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 84.725,
+"t1": 86.763,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 86.763,
+"t1": 88.789,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 88.789,
+"t1": 90.827,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 90.827,
+"t1": 92.853,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 92.853,
+"t1": 94.88,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 94.88,
+"t1": 96.907,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 96.907,
+"t1": 98.944,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 98.944,
+"t1": 100.971,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 100.971,
+"t1": 102.997,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 102.997,
+"t1": 105.024,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 105.024,
+"t1": 107.051,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 107.051,
+"t1": 109.067,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 109.067,
+"t1": 111.104,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 111.104,
+"t1": 113.131,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 113.131,
+"t1": 115.157,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 115.157,
+"t1": 117.173,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 117.173,
+"t1": 117.4264,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 117.4264,
+"t1": 117.6797,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 117.6797,
+"t1": 117.9331,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 117.9331,
+"t1": 118.1865,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 118.1865,
+"t1": 119.2,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 119.2,
+"t1": 119.4865,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 119.4865,
+"t1": 122.57,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 122.57,
+"t1": 123.57,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 123.57,
+"t1": 125.34,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 125.34,
+"t1": 125.694,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 125.694,
+"t1": 125.93,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 125.93,
+"t1": 126.332,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 126.332,
+"t1": 126.6,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 126.6,
+"t1": 126.702,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 126.702,
+"t1": 126.77,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 126.77,
+"t1": 126.968,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 126.968,
+"t1": 127.1,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 127.1,
+"t1": 127.52,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 127.52,
+"t1": 127.95,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 127.95,
+"t1": 128.95,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 128.95,
+"t1": 129.3,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 129.3,
+"t1": 131.317,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 131.317,
+"t1": 131.821,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 131.821,
+"t1": 132.325,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 132.325,
+"t1": 132.829,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 132.829,
+"t1": 133.333,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 133.333,
+"t1": 133.8398,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 133.8398,
+"t1": 134.3465,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 134.3465,
+"t1": 134.8533,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 134.8533,
+"t1": 135.36,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_storm.mp3"
+},
+{
+"t0": 135.36,
+"t1": 135.864,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 135.864,
+"t1": 136.368,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 136.368,
+"t1": 136.872,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 136.872,
+"t1": 137.376,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 137.376,
+"t1": 137.88,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 137.88,
+"t1": 138.384,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 138.384,
+"t1": 138.888,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 138.888,
+"t1": 139.392,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 139.392,
+"t1": 140.4,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 140.4,
+"t1": 141.408,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 141.408,
+"t1": 142.416,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 142.416,
+"t1": 143.424,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 143.424,
+"t1": 145.44,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 145.44,
+"t1": 147.467,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 147.467,
+"t1": 147.719,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 147.719,
+"t1": 147.971,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 147.971,
+"t1": 148.223,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 148.223,
+"t1": 148.475,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 148.475,
+"t1": 148.727,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 148.727,
+"t1": 148.979,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 148.979,
+"t1": 149.231,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 149.231,
+"t1": 149.483,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 149.483,
+"t1": 149.735,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 149.735,
+"t1": 149.987,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 149.987,
+"t1": 150.239,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 150.239,
+"t1": 150.491,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 150.491,
+"t1": 150.743,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 150.743,
+"t1": 150.995,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_arctic.mp3"
+},
+{
+"t0": 150.995,
+"t1": 151.247,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 151.247,
+"t1": 151.499,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 151.499,
+"t1": 152.003,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 152.003,
+"t1": 152.507,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 152.507,
+"t1": 153.011,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 153.011,
+"t1": 153.515,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 153.515,
+"t1": 153.767,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 153.767,
+"t1": 154.019,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 154.019,
+"t1": 154.271,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 154.271,
+"t1": 154.523,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 154.523,
+"t1": 154.775,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 154.775,
+"t1": 155.027,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 155.027,
+"t1": 155.279,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 155.279,
+"t1": 155.531,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 155.531,
+"t1": 156.03,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_volcanic.mp3"
+},
+{
+"t0": 156.03,
+"t1": 156.53,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_jungle.mp3"
+},
+{
+"t0": 156.53,
+"t1": 156.7,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 156.7,
+"t1": 157.38,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+},
+{
+"t0": 157.38,
+"t1": 165.0,
+"file": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\assets\\game\\sounds\\amb_airbase.mp3"
+}
+]
+}
+}

@@ -1,0 +1,434 @@
+{
+  "comm_axel_idle": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_idle.png",
+    "source": "assets/game/pilot_portraits/axel-idle.png"
+  },
+  "comm_axel_happy": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_happy.png",
+    "source": "assets/game/pilot_portraits/axel-happy.png"
+  },
+  "comm_axel_laugh": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_laugh.png",
+    "source": "assets/game/pilot_portraits/axel-laugh.png"
+  },
+  "comm_axel_anger": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_anger.png",
+    "source": "assets/game/pilot_portraits/axel-anger.png"
+  },
+  "comm_axel_sad": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_sad.png",
+    "source": "assets/game/pilot_portraits/axel-sad.png"
+  },
+  "comm_axel_crash": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_crash.png",
+    "source": "assets/game/pilot_portraits/axel-crash.png"
+  },
+  "comm_axel_victory": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_victory.png",
+    "source": "assets/game/pilot_portraits/axel-victory.png"
+  },
+  "comm_axel_talk-closed": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_talk-closed.png",
+    "source": "assets/game/pilot_portraits/axel-talk-closed.png"
+  },
+  "comm_axel_talk-small": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_talk-small.png",
+    "source": "assets/game/pilot_portraits/axel-talk-small.png"
+  },
+  "comm_axel_talk-medium": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_talk-medium.png",
+    "source": "assets/game/pilot_portraits/axel-talk-medium.png"
+  },
+  "comm_axel_talk-wide": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_talk-wide.png",
+    "source": "assets/game/pilot_portraits/axel-talk-wide.png"
+  },
+  "comm_axel_talk-o": {
+    "image": "assets/game/comm_portraits_0914/comm_axel_talk-o.png",
+    "source": "assets/game/pilot_portraits/axel-talk-o.png"
+  },
+  "comm_cole_idle": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_idle.png",
+    "source": "assets/game/pilot_portraits/cole-idle.png"
+  },
+  "comm_cole_happy": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_happy.png",
+    "source": "assets/game/pilot_portraits/cole-happy.png"
+  },
+  "comm_cole_laugh": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_laugh.png",
+    "source": "assets/game/pilot_portraits/cole-laugh.png"
+  },
+  "comm_cole_anger": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_anger.png",
+    "source": "assets/game/pilot_portraits/cole-anger.png"
+  },
+  "comm_cole_sad": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_sad.png",
+    "source": "assets/game/pilot_portraits/cole-sad.png"
+  },
+  "comm_cole_crash": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_crash.png",
+    "source": "assets/game/pilot_portraits/cole-crash.png"
+  },
+  "comm_cole_victory": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_victory.png",
+    "source": "assets/game/pilot_portraits/cole-victory.png"
+  },
+  "comm_cole_talk-closed": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_talk-closed.png",
+    "source": "assets/game/pilot_portraits/cole-talk-closed.png"
+  },
+  "comm_cole_talk-small": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_talk-small.png",
+    "source": "assets/game/pilot_portraits/cole-talk-small.png"
+  },
+  "comm_cole_talk-medium": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_talk-medium.png",
+    "source": "assets/game/pilot_portraits/cole-talk-medium.png"
+  },
+  "comm_cole_talk-wide": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_talk-wide.png",
+    "source": "assets/game/pilot_portraits/cole-talk-wide.png"
+  },
+  "comm_cole_talk-o": {
+    "image": "assets/game/comm_portraits_0914/comm_cole_talk-o.png",
+    "source": "assets/game/pilot_portraits/cole-talk-o.png"
+  },
+  "comm_decker_idle": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_idle.png",
+    "source": "assets/game/pilot_portraits/decker-idle.png"
+  },
+  "comm_decker_happy": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_happy.png",
+    "source": "assets/game/pilot_portraits/decker-happy.png"
+  },
+  "comm_decker_laugh": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_laugh.png",
+    "source": "assets/game/pilot_portraits/decker-laugh.png"
+  },
+  "comm_decker_anger": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_anger.png",
+    "source": "assets/game/pilot_portraits/decker-anger.png"
+  },
+  "comm_decker_sad": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_sad.png",
+    "source": "assets/game/pilot_portraits/decker-sad.png"
+  },
+  "comm_decker_crash": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_crash.png",
+    "source": "assets/game/pilot_portraits/decker-crash.png"
+  },
+  "comm_decker_victory": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_victory.png",
+    "source": "assets/game/pilot_portraits/decker-victory.png"
+  },
+  "comm_decker_talk-closed": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_talk-closed.png",
+    "source": "assets/game/pilot_portraits/decker-talk-closed.png"
+  },
+  "comm_decker_talk-small": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_talk-small.png",
+    "source": "assets/game/pilot_portraits/decker-talk-small.png"
+  },
+  "comm_decker_talk-medium": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_talk-medium.png",
+    "source": "assets/game/pilot_portraits/decker-talk-medium.png"
+  },
+  "comm_decker_talk-wide": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_talk-wide.png",
+    "source": "assets/game/pilot_portraits/decker-talk-wide.png"
+  },
+  "comm_decker_talk-o": {
+    "image": "assets/game/comm_portraits_0914/comm_decker_talk-o.png",
+    "source": "assets/game/pilot_portraits/decker-talk-o.png"
+  },
+  "comm_falva_idle": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_idle.png",
+    "source": "assets/game/pilot_portraits/falva-idle.png"
+  },
+  "comm_falva_happy": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_happy.png",
+    "source": "assets/game/pilot_portraits/falva-happy.png"
+  },
+  "comm_falva_laugh": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_laugh.png",
+    "source": "assets/game/pilot_portraits/falva-laugh.png"
+  },
+  "comm_falva_anger": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_anger.png",
+    "source": "assets/game/pilot_portraits/falva-anger.png"
+  },
+  "comm_falva_sad": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_sad.png",
+    "source": "assets/game/pilot_portraits/falva-sad.png"
+  },
+  "comm_falva_crash": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_crash.png",
+    "source": "assets/game/pilot_portraits/falva-crash.png"
+  },
+  "comm_falva_victory": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_victory.png",
+    "source": "assets/game/pilot_portraits/falva-victory.png"
+  },
+  "comm_falva_talk-closed": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_talk-closed.png",
+    "source": "assets/game/pilot_portraits/falva-talk-closed.png"
+  },
+  "comm_falva_talk-small": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_talk-small.png",
+    "source": "assets/game/pilot_portraits/falva-talk-small.png"
+  },
+  "comm_falva_talk-medium": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_talk-medium.png",
+    "source": "assets/game/pilot_portraits/falva-talk-medium.png"
+  },
+  "comm_falva_talk-wide": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_talk-wide.png",
+    "source": "assets/game/pilot_portraits/falva-talk-wide.png"
+  },
+  "comm_falva_talk-o": {
+    "image": "assets/game/comm_portraits_0914/comm_falva_talk-o.png",
+    "source": "assets/game/pilot_portraits/falva-talk-o.png"
+  },
+  "comm_freezer_idle": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_idle.png",
+    "source": "assets/game/pilot_portraits/freezer-idle.png"
+  },
+  "comm_freezer_happy": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_happy.png",
+    "source": "assets/game/pilot_portraits/freezer-happy.png"
+  },
+  "comm_freezer_laugh": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_laugh.png",
+    "source": "assets/game/pilot_portraits/freezer-laugh.png"
+  },
+  "comm_freezer_anger": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_anger.png",
+    "source": "assets/game/pilot_portraits/freezer-anger.png"
+  },
+  "comm_freezer_sad": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_sad.png",
+    "source": "assets/game/pilot_portraits/freezer-sad.png"
+  },
+  "comm_freezer_crash": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_crash.png",
+    "source": "assets/game/pilot_portraits/freezer-crash.png"
+  },
+  "comm_freezer_victory": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_victory.png",
+    "source": "assets/game/pilot_portraits/freezer-victory.png"
+  },
+  "comm_freezer_talk-closed": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_talk-closed.png",
+    "source": "assets/game/pilot_portraits/freezer-talk-closed.png"
+  },
+  "comm_freezer_talk-small": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_talk-small.png",
+    "source": "assets/game/pilot_portraits/freezer-talk-small.png"
+  },
+  "comm_freezer_talk-medium": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_talk-medium.png",
+    "source": "assets/game/pilot_portraits/freezer-talk-medium.png"
+  },
+  "comm_freezer_talk-wide": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_talk-wide.png",
+    "source": "assets/game/pilot_portraits/freezer-talk-wide.png"
+  },
+  "comm_freezer_talk-o": {
+    "image": "assets/game/comm_portraits_0914/comm_freezer_talk-o.png",
+    "source": "assets/game/pilot_portraits/freezer-talk-o.png"
+  },
+  "comm_juggernaut_idle": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_idle.png",
+    "source": "assets/game/pilot_portraits/juggernaut-idle.png"
+  },
+  "comm_juggernaut_happy": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_happy.png",
+    "source": "assets/game/pilot_portraits/juggernaut-happy.png"
+  },
+  "comm_juggernaut_laugh": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_laugh.png",
+    "source": "assets/game/pilot_portraits/juggernaut-laugh.png"
+  },
+  "comm_juggernaut_anger": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_anger.png",
+    "source": "assets/game/pilot_portraits/juggernaut-anger.png"
+  },
+  "comm_juggernaut_sad": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_sad.png",
+    "source": "assets/game/pilot_portraits/juggernaut-sad.png"
+  },
+  "comm_juggernaut_crash": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_crash.png",
+    "source": "assets/game/pilot_portraits/juggernaut-crash.png"
+  },
+  "comm_juggernaut_victory": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_victory.png",
+    "source": "assets/game/pilot_portraits/juggernaut-victory.png"
+  },
+  "comm_juggernaut_talk-closed": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_talk-closed.png",
+    "source": "assets/game/pilot_portraits/juggernaut-talk-closed.png"
+  },
+  "comm_juggernaut_talk-small": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_talk-small.png",
+    "source": "assets/game/pilot_portraits/juggernaut-talk-small.png"
+  },
+  "comm_juggernaut_talk-medium": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_talk-medium.png",
+    "source": "assets/game/pilot_portraits/juggernaut-talk-medium.png"
+  },
+  "comm_juggernaut_talk-wide": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_talk-wide.png",
+    "source": "assets/game/pilot_portraits/juggernaut-talk-wide.png"
+  },
+  "comm_juggernaut_talk-o": {
+    "image": "assets/game/comm_portraits_0914/comm_juggernaut_talk-o.png",
+    "source": "assets/game/pilot_portraits/juggernaut-talk-o.png"
+  },
+  "comm_lizzie_idle": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_idle.png",
+    "source": "assets/game/pilot_portraits/lizzie-idle.png"
+  },
+  "comm_lizzie_happy": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_happy.png",
+    "source": "assets/game/pilot_portraits/lizzie-happy.png"
+  },
+  "comm_lizzie_laugh": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_laugh.png",
+    "source": "assets/game/pilot_portraits/lizzie-laugh.png"
+  },
+  "comm_lizzie_anger": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_anger.png",
+    "source": "assets/game/pilot_portraits/lizzie-anger.png"
+  },
+  "comm_lizzie_sad": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_sad.png",
+    "source": "assets/game/pilot_portraits/lizzie-sad.png"
+  },
+  "comm_lizzie_crash": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_crash.png",
+    "source": "assets/game/pilot_portraits/lizzie-crash.png"
+  },
+  "comm_lizzie_victory": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_victory.png",
+    "source": "assets/game/pilot_portraits/lizzie-victory.png"
+  },
+  "comm_lizzie_talk-closed": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_talk-closed.png",
+    "source": "assets/game/pilot_portraits/lizzie-talk-closed.png"
+  },
+  "comm_lizzie_talk-small": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_talk-small.png",
+    "source": "assets/game/pilot_portraits/lizzie-talk-small.png"
+  },
+  "comm_lizzie_talk-medium": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_talk-medium.png",
+    "source": "assets/game/pilot_portraits/lizzie-talk-medium.png"
+  },
+  "comm_lizzie_talk-wide": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_talk-wide.png",
+    "source": "assets/game/pilot_portraits/lizzie-talk-wide.png"
+  },
+  "comm_lizzie_talk-o": {
+    "image": "assets/game/comm_portraits_0914/comm_lizzie_talk-o.png",
+    "source": "assets/game/pilot_portraits/lizzie-talk-o.png"
+  },
+  "comm_maverick_idle": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_idle.png",
+    "source": "assets/game/pilot_portraits/maverick-idle.png"
+  },
+  "comm_maverick_happy": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_happy.png",
+    "source": "assets/game/pilot_portraits/maverick-happy.png"
+  },
+  "comm_maverick_laugh": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_laugh.png",
+    "source": "assets/game/pilot_portraits/maverick-laugh.png"
+  },
+  "comm_maverick_anger": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_anger.png",
+    "source": "assets/game/pilot_portraits/maverick-anger.png"
+  },
+  "comm_maverick_sad": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_sad.png",
+    "source": "assets/game/pilot_portraits/maverick-sad.png"
+  },
+  "comm_maverick_crash": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_crash.png",
+    "source": "assets/game/pilot_portraits/maverick-crash.png"
+  },
+  "comm_maverick_victory": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_victory.png",
+    "source": "assets/game/pilot_portraits/maverick-victory.png"
+  },
+  "comm_maverick_talk-closed": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_talk-closed.png",
+    "source": "assets/game/pilot_portraits/maverick-talk-closed.png"
+  },
+  "comm_maverick_talk-small": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_talk-small.png",
+    "source": "assets/game/pilot_portraits/maverick-talk-small.png"
+  },
+  "comm_maverick_talk-medium": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_talk-medium.png",
+    "source": "assets/game/pilot_portraits/maverick-talk-medium.png"
+  },
+  "comm_maverick_talk-wide": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_talk-wide.png",
+    "source": "assets/game/pilot_portraits/maverick-talk-wide.png"
+  },
+  "comm_maverick_talk-o": {
+    "image": "assets/game/comm_portraits_0914/comm_maverick_talk-o.png",
+    "source": "assets/game/pilot_portraits/maverick-talk-o.png"
+  },
+  "comm_yuri_idle": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_idle.png",
+    "source": "assets/game/yuri_v2/port_yuri_idle.png"
+  },
+  "comm_yuri_happy": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_happy.png",
+    "source": "assets/game/yuri_v2/port_yuri_smile.png"
+  },
+  "comm_yuri_laugh": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_laugh.png",
+    "source": "assets/game/yuri_v2/port_yuri_laugh.png"
+  },
+  "comm_yuri_anger": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_anger.png",
+    "source": "assets/game/yuri_v2/port_yuri_anger.png"
+  },
+  "comm_yuri_sad": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_sad.png",
+    "source": "assets/game/yuri_v2/port_yuri_sad.png"
+  },
+  "comm_yuri_crash": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_crash.png",
+    "source": "assets/game/yuri_v2/port_yuri_crash.png"
+  },
+  "comm_yuri_victory": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_victory.png",
+    "source": "assets/game/yuri_v2/port_yuri_victory.png"
+  },
+  "comm_yuri_talk-closed": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_talk-closed.png",
+    "source": "assets/game/yuri_v2/port_yuri_idle.png"
+  },
+  "comm_yuri_talk-small": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_talk-small.png",
+    "source": "assets/game/yuri_v2/port_yuri_idle.png"
+  },
+  "comm_yuri_talk-medium": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_talk-medium.png",
+    "source": "assets/game/yuri_v2/port_yuri_idle.png"
+  },
+  "comm_yuri_talk-wide": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_talk-wide.png",
+    "source": "assets/game/yuri_v2/port_yuri_idle.png"
+  },
+  "comm_yuri_talk-o": {
+    "image": "assets/game/comm_portraits_0914/comm_yuri_talk-o.png",
+    "source": "assets/game/yuri_v2/port_yuri_idle.png"
+  }
+}

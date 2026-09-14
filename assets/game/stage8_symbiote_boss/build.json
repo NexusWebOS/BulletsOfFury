@@ -1,0 +1,15 @@
+{
+  "boss_mode": "imagegen new four-form horizontal master; deterministic fixed-pivot split",
+  "entrance_mode": "imagegen sixteen-frame 4x4 master; deterministic row-major split",
+  "weapon_mode": "imagegen six-family 6x8 master; deterministic fixed-cell split",
+  "form_count": 4,
+  "form_hp_share": [
+    0.25,
+    0.25,
+    0.25,
+    0.25
+  ],
+  "entrance_frames": 16,
+  "muzzle_frames_per_unit": 4,
+  "projectile_frames_per_unit": 4
+}

@@ -3637,3 +3637,397 @@ of the Furnace hook returned before `sceneDirectorTick`, so an authored scene mo
 caught only because the scene fixtures happen to use the stage-2 boss. The director now runs first, the
 rig between tracks, and `sceneClampTick` still fences it. Any future rig hook needs the same order.
 Probe: `probe_furnace_0912t.py` 25/25. Suite §287.
+
+## 0912u — the fire themes, and a miniboss that never had music of its own
+
+Mike: *"use fireboss for fireboss mini boss fight theme, store the miniboss fight theme and name it
+unused_fire. Use bossfight3 for the 2nd level boss fight theme, store the 2nd level boss fight theme
+as unusued_fire2. use cowboyfromhell as the boss fight for level 4, and scrap what we had for it."*
+
+⚠ **A MINIBOSS AND ITS STAGE BOSS PLAYED THE SAME KEY.** The sub-boss spawn in `updatePlay` asked
+for `'boss'+run.stage` — exactly what the boss spawn two lines below asks for — so no miniboss in
+the game had a theme of its own: the Magma Ward and the stage-2 boss both played
+`boss2_magma_colossus.mp3`. The spawn now asks for `'mini'+stage` first and falls back to
+`'boss'+stage`, so only a stage that registers a `mini<N>` key changes. **Registering `mini<N>` in
+the code-owned `BOFA.music` block is all it takes to give another miniboss its own theme.**
+⚠ **SO "STORE THE MINIBOSS THEME" AND "STORE THE STAGE-2 BOSS THEME" WERE ONE FILE.** It is stored
+once as `unused_fire.mp3`, and `unused_fire` and `unused_fire2` both resolve to it rather than
+shipping the same 2.45 MB twice.
+⚠ **THE STAGE-4 MINIBOSS RIDES THE FALLBACK**, so scrapping `boss4_iron_revenant.mp3` put Cowboy
+From Hell on the Olive Warden as well. A `mini4` key is what separates them.
+⚠ **THE NEW TRACKS ARRIVED ~5 dB HOTTER THAN THE BOSS SCORES BESIDE THEM** (`volumedetect` mean
+-10.5..-11.3 dB on the WAVs with peaks at 0.0, against -16.1..-16.6 / -2.2..-3.0 for boss1-5). The
+global music slider cannot fix one hot track, so they were gain-matched on encode — volume only, no
+compression — landing at -16.7..-16.8 with peaks of -4.2..-4.9. Encoded at the format every boss
+track uses, **112k CBR / 44.1 kHz stereo** (about 6 MB for the three, from 80 MB of WAV). Nothing on
+PATH encodes MP3; `imageio_ffmpeg` in the system Python bundles an ffmpeg with `libmp3lame`.
+⚠ **REGISTERED IN THE CODE-OWNED `BOFA.music` BLOCK IN game.js**, beside `cinematics` and
+`opener`, because that block's own note records the generated manifest reverting hand-edited audio
+mappings. `boss2` and `boss4` were ALSO repointed in manifest.js so nothing in it names a renamed or
+deleted file.
+⚠ **CLAUDE.md HAS MIXED LINE ENDINGS ON MAIN** (3265 CRLF / 374 bare LF, measured before this note).
+`.gitattributes` only fixes game.js (LF) and test_fl.js (CRLF), so this file has no contract and an
+append that assumed one was refused by its own assertion. This note matches the ending of the section
+it follows; nothing else in the file was normalized.
+Verified in Chromium with the rAF loop frozen so nothing could swap music under the test: the real
+spawn path asks for `mini2` (stage-2 miniboss), `boss2`, `boss4` (stage-4 miniboss and boss) and
+`boss1` (stage-1 miniboss, the control); all four tracks reach readyState 4 and advance, durations
+137.2 / 124.8 / 155.6 / 174.8 s, HTTP 200, 0 console errors. Suite 3,488 ok / 64 fail before and
+after, identical failure names.
+
+## 0912v — the campaign map in pieces, its button bar, and the stage-5 warp drive
+
+Mike: *"Use spritecook, regenerate the entire map but this time as seperate pieces, a parallax background
+you can amke scrolll and animate, a better UI, instead of the pause menu you can put the buttons up top like
+a menu to select by pressing up or down at any time and using left or right while on the stages to go stage
+to stage, or button to button if you go up to the buttons. Next, we need proper warp gate effects when
+entering the warp gate on stage 5, they are janky what you have. I need warp drive effects really, and warp
+drive screen effects as we enter all 8 gates and eventually warp to stage 9."*
+
+**The map is ten SpriteCook islands, an ocean tile, seven clouds and a button bar** (`assets/game/campaign_map_v2/`,
+baked by `_BUILD_SOURCE/campaign_map_v2_0912v.py`, registered as `cm2_*` in code - manifest.js is generated).
+Layers: ocean (parallax 0.38, drifting, a counter-drifting swell) -> island shadows -> bobbing islands, locked
+ones in a slate luminance bake -> ambient FX from families cmapFxDraw already used -> cloud shadows -> clouds
+(1.28). The camera flies to the screen's subject; the boot frames the whole world. The old plate path is kept
+as the fallback, so every pinned string in `_drawStageSelectInner` still describes live code.
+⚠ **world = SSEL_POS * 1.45 + 10 IS A UNIFORM SCALE, ON PURPOSE.** The screen-direction navigator
+(`sselMoveHorizontal`) and every relation section 243 pins are preserved by construction, so Mike's "Left from
+stage 6 flew right" regression cannot come back through the new layout.
+⚠ **`sselFlagXY` RETURNS WORLD COORDINATES WHILE THE MAP IS ON.** Everything drawn on the map runs inside
+`cmap2ApplyCamera`; the deploy zoom and the pointer are SCREEN space and ask `sselFlagScreenXY`. That is the
+world-vs-screen trap this file has recorded five times, named at the split so it is not six. Markers keep
+their screen size through `_fz` (1/zoom), or the boot overview shrinks every flag to a speck.
+⚠ **THE SECRET'S STREAK (5 -> 9) IS 517 WORLD PX TALL AND NO SINGLE-ISLAND ZOOM HOLDS IT.** The first cut framed
+the midpoint and the camera fence pinned it: the portal sat under the bar and stage 5 under the stage card, on
+the probe's own frame. `cmap2Frame` fits both nodes between the bar and the card, with the fence lifted.
+
+**The pause modal is now the bar across the top.** UP climbs to it from anywhere on the live map, DOWN comes back,
+LEFT/RIGHT walk stage to stage on the map and button to button on the bar, FIRE presses, Start toggles, BACK
+comes down. SAVE / LOAD / EXIT (still `CAMP_PAUSE_BTN`) open a drop-down that unrolls out of the bar and rides
+the modal's own state (`campPause.bar`), so every gate that already stopped the map reading keys under the menu
+holds unchanged. ⚠ **EXIT ASKS FIRST (STAY lit) - MY CALL, NOT MIKE'S:** the old modal needed Enter to open, the
+bar is one UP away, and RETURN TO MAIN MENU loses the campaign session. One `if` to take out if he wants it gone.
+⚠ The authored button plates are 52 backing px tall and the bar's blue channel is 30 (rows 26..57, measured):
+the buttons sit ON the rails deliberately, which is what reads right in the render.
+⚠ **THE FIRST CLOUD SHEET READ CHUNKY BESIDE THE ISLANDS** - seven small clouds at x3 is 3px grain against the
+islands' 1px detail. The second plate (four large clouds, x2) is sliced by its empty GUTTERS, not by connected
+alpha: a cloud's loose puffs are separate alpha islands and a component slice drops them or hands each its own
+sprite. Mirrored for seven shapes. (9 credits; 134 left.)
+
+**The warp drive.** What was janky, read out of the source first: `warpFxDraw` ran INSIDE drawWorld's camera and
+pasted the canvas back through `translate(-camX)`, so the "refraction" was the stage re-drawn up to 200px
+sideways; its tunnel, rings and the eight pips were in world space and slid with the camera; a pass changed an
+alpha and played a tone; the warp-out lerped `player.x` (WORLD) toward `VW/2` (SCREEN) and drew its portal at a
+fixed screen point while the gates vanished; the white faded back out over the frozen stage before the map cut in.
+Now one drive level (gates passed / 8, 1.25 through the jump) drives: space accelerating (the stage-5 loop runs up
+to 8x cruise), streaks pouring out of a vanishing point that leans toward the next gate, the authored tunnel web
+(`nfx_warp_tunnel_`) turning around it - all UNDER the fight, in screen space via `_wdScreenM`, the matrix
+drawWorld holds before its camera (never `setTransform(1,0,0,1,0,0)`, 0814b). Every pass: the gate flares and
+implodes, `ch_warp_` fires in it, stage 5's own `nsr_comet_` ring throws off it, the camera kicks, one flash. The
+jump: the portal forms IN gate eight (`nfx_wportal_`), the ship is carried under it in WORLD space and punched
+through the mouth, `chrift_` tears open, the screen HOLDS white and the map resolves out of that white
+(`drawStageSelect._whiteIn`). ⚠ **Gate speed, spacing, the 28px mouth and the pass test are untouched** - the run
+is no easier or harder. ⚠ `_speedLines` is the streak renderer now, called from ONE place, which is exactly what
+section 241 always pinned ("remain only in the Stage-5 interactive gate run") - it had been failing since the
+gate run stopped calling it.
+
+⚠⚠ **THREE PROBE FAULTS, ALL MINE, ALL WORTH KEEPING.**
+1. **Pinning `invuln` at 99999 hid the ship for the whole recording.** The damage blink is
+   `Math.floor(invuln/4)%2`, and 99999 sits on the hidden phase; eight gates were passed by nothing on screen,
+   and every state check was green. Keep a probe pilot alive by stubbing `playerHit`, never by pinning invuln.
+2. **Tagging the tunnel's blits by "the warp-out is live" mixed two callers** - through the jump the drive AND
+   `warpFxDraw` both blit it - and two runs in a row reported a 105.6px "offset" that was |VW/2 - vpx| exactly.
+   Tag by CALLER (wrap the function; a top-level declaration's binding is reassignable).
+3. **The bar's three buttons WRAP.** The map probe pressed LEFT three times from EXIT, landed back on EXIT, and
+   "confirmed" RETURN TO MAIN MENU - so every later check ran on the title screen and failed. Walk a wrapping
+   menu by reading its index, not by counting presses.
+⚠ **THE LEDGER'S `sha12` IS sha256 OF THE FILE IN THE REPO, first 12 hex** - verified against four Warden entries.
+And it is 2-space CRLF JSON: a `json.dump` rewrite changes the formatting of every entry, so entries are appended
+as text (the first attempt refused itself on exactly that check).
+
+Probes: `probe_cmap2_0912v.py` 39 ok / 0 fail, `probe_warpdrive_0912v.py` 18 ok / 0 fail
+(page errors: 0 and 0), both in real Chromium through shoot.py's server, TRAP_RAF and STEP, every input
+a real key tap. Suite section 288 (33 assertions) and 215 updated for the bar. Suite **3,523 ok / 62
+fail** against the 3,488 / 64 baseline: +33 new, 2 repaired (241's streak count, 156's arming pin), 0 new failures
+- the one stage-select name in the red list ("the map prefetches the highlighted stage") pins `sselIndex`, a name
+0807e removed on purpose, and predates this drop.
+
+⚠ **THE MAP'S MOVE PING FIRED AT 60Hz, AND THE TRAILER CAPTURE'S SOUND LOG FOUND IT - NOT AN EAR, NOT A PROBE.**
+`sselShipUpdate` played `mapMove` whenever its target point differed from last frame's: a test for "the cursor
+moved" that was only true on a cursor change while the flags stood still. On the map in pieces `sselFlagXY` is
+the island's bobbing world point (`cmap2FlagXY` adds `cmap2Bob`), so it was true on EVERY frame - **1,200 plays in
+1,140 frames**, the three-element pool restarting `nsp_nav_ping.mp3` at 60Hz for as long as the map was up, and
+`mapMove` has no TAME row, so no retrigger gate caught it. It compares the stage now (`sselShip.cur`); re-recorded,
+**7 plays for 7 stage moves**. Suite unchanged at 3,523 ok / 62 fail.
+⚠ **A POINT THAT MOVES FOR A COSMETIC REASON IS NOT AN EVENT.** Anything that diffs a flag position, or any `cmap2`
+world point, to detect a change inherits exactly this fault.
+
+## 0912w - two wrecking balls, not six
+
+Mike: *"Juggernaut should only get two wrecking balls attached to him that swing in opposite circles around him like a
+smashing shield."* `WB_RING` is two rings of ONE ball each - radii 62 and 92, the same 2.4 rad/s in opposite directions,
+half a turn apart. 0912a's six (three to a ring) read as a cage of iron around him rather than two flails.
+⚠ **THE RINGS KEEP DIFFERENT RADII ON PURPOSE.** At one radius, opposite spins put both balls on the same circle and
+they would pass THROUGH each other twice a revolution; one ring outside the other, their paths cross in front of him and
+behind him and never overlap. Ball size, hit radius, re-hit clock and damage are unchanged - two balls simply cover less
+of the circle than six did, which is what he asked for.
+`probe_charge_0912a.py` 21 ok / 0 fail in real Chromium (radii [62, 92], spins [-2.4, 2.4], balls cull rounds and hit
+the boss); suite section 281's ball count now asserts two, one per ring. Suite 3,523 ok / 62 fail, unchanged.
+
+## 0912x - the level-3 laser warns with the pack's FOV cones and alert frames
+
+Mike: *"Use the proper pov frames for the level 3 boss that we have now"* and *"When the alert frames show the laser
+about to fire. Use those new ones we got that were green yellow and red."*
+
+⚠ **"POV FRAMES" ARE THE FOV CONES, AND A GREP FOR "pov" CANNOT FIND THEM** - it finds only Stop Resisting. 0905h
+already records him calling the laser lane *"that ugly field view"*, and the Boss Mode pack ships
+`fov-light-green/-yellow/-neon-red.png` beside `alerts-lightgreen/-yellow/-neonred.png`. Both were already cells on
+`ui_bossmode_fx` (`bmfx_fov_<col>_tall`, `bmfx_alert_<col>_danger`), drawn by nothing but the scene director's zones.
+A round went to asking him which frames he meant. **Search `assets/bossmode/ui/` by meaning before asking.**
+
+**His own 0906 spec says how to use them:** green at 25% while the lane is safe, yellow while the attack is prepped
+with the hazard flashing above it (*"the hazard shouold not be part of our warning area"*), red when it is
+*"literally coming"* - *"not with arrows at all"*. `l23FovDraw` steps the cone green -> yellow -> red across
+`L23_WARN_T`, a third each, and `l23WarnSymbolDraw` wears the alert frame in the same colour: green held steady at
+0.62, yellow and red on the existing accelerating blink.
+⚠ **KEYED BY FAMILY (`L23_FOV`), THE SAME WAY `L23_ALERT` IS.** Only `rime` has a row, so the lava and legion lanes
+still draw exactly as they shipped. The arrow plate is the fallback while the frames decode - a laser is never left
+without a tell.
+⚠ **THE PLATES ARE ALPHA 128 BY AUTHORING** (every cell 0 or 128): opacity 1 is the pack's 50%, and his 25% green is 0.5.
+⚠ **THE CONE IS SIZED TO THE BEAM, NOT BY `sceneDrawZone`'s MAPPING** (0.625x its height), which at a laser's length
+warns a ~180px wedge for a 27px beam. Apex on the muzzle, the LIVE swept angle, curved base on the bottom edge of the
+field, widest row 2x the beam's lane. Cell geometry measured, identical on all three colours: apex (159.5, 11),
+widest row 126px at y 251, arc bottom y 278.
+⚠ **SMOOTHED ON PURPOSE.** The cone is stretched ~4x down the lane, and nearest-neighbour turns its edge into a
+staircase - exactly the "jagginess" he asked this art to remove.
+⚠ **WARMED AT SPAWN AND AT EVERY WARN** - `XART.rdy` is false on its first call, and the green third is the first
+frame asked for.
+
+`probe_fov_telegraph_0912x.py` PASS in real Chromium: warn 3.00s; per third the cone drew on 27/27, 25/25 and 27/27
+frames with 0 wrong colours, 0 arrow lanes and 0 old signs; the green frame held steady while yellow (13 on / 12 off)
+and red (16 on / 11 off) flashed; the lava control still asked for `nwarn_lane` and never a cone; the lane below the C
+cannon shifted R-B +141 in the yellow third and R-G +67 in the red against a no-beam baseline; 0 errors. Proof:
+`docs/proofs/fov_telegraph_0912x/_phases.png`. Suite section 289, 8/8. Suite **3,531 ok / 62 fail** against 0912w's
+3,523 / 62, failure names identical with the numbers masked.
+
+## 0912y - every hit flashes, the Furnace Tyrant included
+
+Mike: *"Ensure all weapons cause enemy flashes including our new stage 2 boss."*
+
+⚠ **THE FLASH WAS SET AFTER THE ROUTERS.** `hitEnemy`, `hitSubBoss` and `hitBoss` all set a flash, but only after every
+shield, barrier, wing pool and part router had its chance to swallow the hit. So the Furnace Tyrant never flashed under
+the Magma Ward's fire shield (the whole opening, and again from the core phase), a round that missed its small part
+circles returned before any flash, the Blacksteel's wings and a shielded Magma Ward took hits in silence, and ship
+bosses drew a 0.08 flash against a 0.18 scale that burned down twice a frame - about 38% for two frames, i.e. invisible.
+`markHit(t)` is called FIRST in all three and never shortens a longer flash.
+⚠ **A RIG THAT DRAWS ITS OWN PARTS MUST HONOUR `b.flash` ITSELF** - `shipBossDraw` hands the Furnace to `furnaceDraw`
+before its own tint runs. `furnaceDraw` now collects every plate it draws and re-blits them tinted through
+`fztFlashSprite` (fztSprite's own pivot): 0.8, or 0.55 while the fire shield is up so steady fire does not strobe the
+boss white.
+⚠ **`furnaceHit` RETURNED 0 FOR ANY ROUND BESIDE A PART** - orbs, fireballs, blasts, shards: no damage and no flash, which
+reads as "that weapon does nothing to the boss". The nearest open part within 2.6 radii takes it. And two impact points
+read an undeclared `p` (strict mode: always null), throwing the real point away.
+Six enemy draws had no hit tint at all - `drawTur360`, `drawBunker`, `drawElite` (a composite canvas: additive re-blit),
+`sandTankDraw`, `drawS9VoidEnemy`, the kamikaze rotated branch - and two of them carried comments claiming one.
+(0913: a sealed quad-laser is exempt - it keeps its blue shield pulse, 0807b.) `probe_hitflash_0912y.py` PASS in real Chromium: a shield-up Furnace hit 1,298 white px against 0 once burnt out, a
+direct arm hit 634 vs 0 with the pool dropping, a hit 1.8 radii beside the arm now does damage, the cryospear 923 vs 523,
+the sand tank tinted, a Blacksteel wing hit flashes 0.16, 0 errors. (The bunker and 360 turret did not spawn on stage 1
+in the probe - source-pinned only.) Suite §291.
+
+## 0912z - Juggernaut's balls stay on their chains, and the ram can be seen
+
+Mike: *"Juggernauts wrecking balls need to be anchored to his chains and the chain anchored to the ship at all times.
+The charge dash needs more visibility."*
+
+⚠ **THE CHAIN WAS DRAWN POINTING AWAY FROM ITS BALL, ON EVERY FRAME.** `rotate(ang+PI/2)` with the links laid down local
++y puts them at ang+PI - 46-121px from the ball. The line fallback was right, so nothing looked wrong until the link art
+decoded. Found by wrapping the game context's OWN `drawImage` and carrying each blit through `getTransform()`.
+⚠ **A ONE-FRAME LAG.** `wreckTick` placed the balls before the roll, somersault, dash and movement moved the ship (3px in
+flight, 13px in a roll, 29px on a dash's first frame). Both draws now place every ball from the LIVE ship
+(`wreckPos`/`wreckSync`), which also carries them through the stage-exit flyover.
+⚠ **THE DASH STRETCH SWITCHED** 1.18x on and off in one frame - a 17px pop each way. Eased (`b.st`).
+⚠ **STALE BALLS.** The only clear lived inside `wreckTick`, which `updateSpecial` never reaches once `special` is null, so a
+stage start or the attract demo left two frozen balls and 400px chains drawing under the next pilot. Both draws gate on
+`wreckActive()`; `endSpecial`, `clearPilotFX` and `attractDemoEnd` empty the array.
+The chain leaves from under the hull now (`WB_CHAIN0` 14). The ram: a shock ring and a burst where it launched, orange
+afterimages every other frame (`drawChargeGhosts`, under the hull), speed streaks, the `jchg` plate stretched along the
+run, a bigger wake allowed past the particle cap, a held shake, a ring and a thump where it lands, and the ram-boost
+sample (`maverickHelixRelease`) instead of Cole's boom.
+⚠ **A PROBE THAT COUNTS "LINKS ON THE FAR SIDE OF A BALL" FAILS ON CORRECT CODE** - the two balls often orbit opposite each
+other, so ball B's chain sits behind ball A. Count links that point at NO ball instead.
+`probe_wreckdash_0912z.py` 23/23: every chain points at its ball, last-link gap at most 16px, first link 14px from the
+ship, 0 orphan links in hover, strafe and a full dash; 7 afterimages on one dash frame; 0 balls or links after switching
+pilot. `probe_charge_0912a.py` 21/21 unchanged. Suite §292.
+
+## 0913a - the spaceship is the ship everywhere in space, and the transformation flows
+
+Mike: *"You must wire up the new space ship we have and do the palette swap for each player."* and *"Show the spaceship
+transformation scene and make it properly fixed and working in-game."*
+
+⚠ **THE WEAPONS AND THE HULL ASKED TWO DIFFERENT QUESTIONS.** The space weapons ask `run.spaceMode`; the hull asked
+`gravityMode`, which only the stage-5 LAUNCH creates - so every route into space that skipped the cinematic (BOSSMODE,
+`debugStartFight`, shoot.py's SETUP, the trailer harness) flew the pilot's PLANE firing space weapons: 44 of 91 play frames
+drew the plane, the spaceship 1, 0 and 0. `spaceModeStage` now establishes the ship (`gravityModeRetain(num===9)`) and
+`_drawPlayerCore` asks `spaceShipActive()` - the weapons' own test. One funnel, not a patch per caller.
+⚠ **`run.gravityShipReady` WAS SET AND READ BY NOTHING**, so the stage-9 rift return replayed the whole build (832 plane
+frames). `drawLaunch` latches `_build` from it.
+⚠ **THE LAUNCH JANK, EACH MEASURED OFF `ctx.drawImage`:** the plane dropped 63 -> 34px on the kit's arrival (`gravityPlaneH`
+keeps its height); a one-frame 92px flash at brake -> settle; a 42px jump at 3-2-1 and a 76 -> 48px drop (every space phase
+now starts from the pose the last frame DREW, and a carried ship flies settle -> countdown as one 3.45s ease); **the frame
+GO handed to PLAY was a cleared canvas** - `_setCinematicViewport` resized the canvas even when its size had not changed,
+and resizing clears it; and the fusion's shake 14 and flash 0.72 landed on PLAY (decayed inside the transformation now).
+⚠ **THE SWEEP WAS STILL CROSSFADING** the level in over 63 frames - the fade Mike ruled out. The space band draws the level
+itself now (`stage5SweepFrac`), starting at the 40px/s scroll and finishing under the fusion white.
+Death in space spins the SPACESHIP (`gravityDeathSpinDraw`: its level plate in the plane reel's 45-degree steps - the licensed
+derivation), and a somersault walks a derived PITCH reel `ship_so_00..07` appended to the space atlas
+(`_BUILD_SOURCE/spaceship_somersault_0913a.py`). ⚠ **Re-running `build_gravity_mode_v2.py` drops those frames - run the
+somersault builder after it.**
+Palettes are `GRAVITY_PILOT_PAL` plus a `GRAVITY_PILOT_LUM` lift (a multiply can only darken): Cole #7ad63a (was grey
+#181b22, chroma 3.1), Maverick #3ad6c8 (wore Cole's green), Decker #ffe030 against Lizzie #b88a1c (4.6 dE apart, now
+18.6), Juggernaut #e0662a, Yuri #ff3030, Freezer #a060ff, Falva #ff2a8f, Axel authored and untinted.
+`probe_spaceship_0913a.py` 31/0 (the unchanged tree scored 11/17): kit arrival 0.08px, worst plane step 1.17px,
+fusion -> play 0.31px, countdown 0px, GO hand-off 0/0/0 on a real picture, 0 crossfaded frames, the spaceship on 91/91 play
+frames on all three direct routes, the rift return with 0 plane frames, death 74/74 spaceship frames;
+`probe_gravity_stage5_stage9.py` still passes. Suite 3,586 / 63 against the tree's own 3,554 / 64 - the only name
+difference is the repaired §256 pin; §293 31/31.
+Open for Mike: re-entering stage 5 from the map no longer replays the build once it is earned (one condition to change);
+the sweep speeds up to ~2x to finish under the white; the rift return holds the ship at the gate mouth through 3-2-1; the
+fusion shake no longer reaches GO; authored pitch frames would beat the derived reel.
+
+## 0913b - the Tempest Leviathan is stage 6's miniboss; ALTBOSS6
+
+Mike: *"this is our new mini-boss and fighting style for level 6's miniboss"* (the 0912u staging on GitHub), then on the
+trailer *"Showcase the new level 6 mini boss dual ship fight"* - one black jet dogfighting the player. Labelled 0913b
+because 0912y/0912z were taken by the time it landed.
+
+Ported from the approved pack (`_STAGING/tempest_leviathan_0912u/encounter`, `engine.js` + its `game.js` renderer;
+`engine-v3.js` is an older snapshot) exactly the way the Razorback (0912r) and the Furnace Tyrant (0912t) were:
+`tempestInit/Update/Draw/PartAt/Hit/ProjectileDraw` on `b._tlv`, beside the Razorback's code; `SUBBOSS[6].kind =
+'tempestleviathan'`; the **Blacksteel Raptor kept as `ALTBOSS[6]`** (row, rig and art intact, not in `DEAD_SUBBOSS`);
+`tlv_*` plates in `assets/game/bosses/tempest/`; `PROJ` rows `tlvBolt`/`tlvNeedle`; `_PACKOF`; `DEBUG_BOSS_NAMES`
+('TEMPEST LEVIATHAN', not its kind in capitals); `enemyMachineShotHeavy` registered WITH a TAME row.
+⚠ **ONE AXIS PER STEP, FIXED NOSE-UP - that is the fighting style.** `tempestMove()` is the only mover, called at most once
+per update, on x OR y. Measured 0 diagonal of 1,720 steps and 0 rotated of 3,523 hull-sized blits.
+⚠ **THE PACK MOVED THE PLAYER'S Y for overtake/return** - replaced by the jet crossing the player on its own column behind a
+0.45s warning band (the passover's recommendation). **No escape cinematic** - the ordinary sub-boss death branch.
+⚠ **GATES ARE SHARES OF THE SETTLED maxhp** (75/50/25%) - the engine raises a miniboss to its stage floor after spawn (the
+Razorback's hpSync lesson) - and `tempestHullDamage` clamps a round at the gate.
+⚠ **SCREEN SPACE:** x from `camLeftX()` scaled by VW/900; y = 78 + 0.45 x pack y, so nothing targetable parks in the 77px gauge
+band (the hull top never above y 121 while targetable); rams park 47px in from the CAMERA edge, never the world edge.
+⚠ **THE NEEDLES GO THROUGH THE RETINA LOCK** (0912q header rule): one retina, launches one at a time, steering while it holds.
+They are 1-hit, not the pack's 2-hit (the engine's shootable-round contract kills on first contact), and at 7.49 px/frame
+they are the fastest enemy round in the game - the first knob if it reads unfair.
+⚠ **`subBossSolidAt` has a branch for it**, so a pellet over bare air beside the hull flies on. **The Razorback never got one**
+(found in passing, not changed).
+Known, not changed: the frenzy's front lasers draw over the MINI BOSS gauge lettering (the gauge draws before any rig); a
+right-edge ram park can sit half under the EQUIPPED box when the player flies low; a player hugging the bottom (y > ~478)
+cannot be cleared by the pursuer below; since 0912y `markHit` whitens the whole hull on aperture hits too (the quad-laser
+precedent lit only the hit turret) - flagged for Mike.
+`probe_tempest_0913b.py` 30/0 in real Chromium on the live tree, 0 page/console errors; suite §290.
+
+
+## 0914 Arcade credit rules and request tally
+Mike asked to continue unfinished work and maintain a tally. Read docs/REQUEST_CHECKLIST_0914.md: 135 entries, 44 complete / 11 partial / 80 pending. Its editable source is docs/REQUEST_CHECKLIST_0914.json; regenerate with python _BUILD_SOURCE/update_request_checklist.py. Do not count partial encounter passes as finished designs.
+Arcade stocks now match Easy/Normal/Hard/Furious lives 7/5/3/3, continues 7/5/3/1, including a run-wide bank in Stage 9. Campaign/co-op tuning stays separate; campaign loads refresh DIFF. Native difficulty and credit prompts verified with real Enter input; the Stage-9 retreat cannot refund Arcade credits. Proof and limits: docs/ARCADE_RULES_0914.md and docs/qa/arcade_rules_0914.json.
+Full suite 3804/60, exit 1, final summary reached, no new failing assertion names; section306 17/0. Native Chromium 22/0 with no page/console/loop errors. Runtime SHA256 41ee9c77220592dc818374cd5a1fba54d870ac22036c113c38284d48c9b15835. Runtime LF and test CRLF preserved. Current patch sources _BUILD_SOURCE/arcade_rules_0914; do not apply older integrators over this build. No commits, pushes or user-data deletion.
+Next shared foundations remain universal no-one-shot damage and elemental/shield behavior; encounter variants, production assets and achievements remain on the checklist. The overnight schedule expired; this was Mike's resumed interactive request, not a new background automation.
+
+
+## 0914 easiest-to-hardest queue — first two entries verified
+Mike asked for the full list in chat and work ordered easiest to hardest. Current queue is docs/WORK_ORDER_0914.md, generated from workOrder/difficulty fields in docs/REQUEST_CHECKLIST_0914.json. Tally: 135 entries, 46 complete / 11 partial / 78 pending (89 unfinished). Follow ascending ready work; respect dependencies and skip unavailable external assets. This replaces the earlier foundation-first ordering.
+Completed SPACE-15: eight supplied Space Fighter model announcements; Decker currently displays SPACE FIGHTER DECKER pending Mike's requested naming response (SPACE-16). Completed MODE-06: Hard/Furious Life Up chance +25% on both midpoint and ordinary death routes, without stealing ammo/shield outcomes. Midpoint pickups use visible camera bounds. New ship and Life Up replacement art remain pending.
+Proof docs/EASY_QUEUE_0914.md and docs/qa/easy_queue_0914.json. Native Chromium25/0, no page/console/loop errors; section30715/0; full suite3818/61 exit1, final summary reached, no new failure names. Historical random sand-tank assertion failed this time. Runtime SHA256 e2e95dfbd9e0d65bfe55ac40d4989f3be1aba6d3ad4f33c9c89efe5f57674533. Sources _BUILD_SOURCE/easy_queue_0914; LF/CRLF preserved. No commits/pushes, new atlas art, data deletion or background automation.
+Next ready item: MSL-09 remaining missile-supply frequency audit, then SPACE-11 source-ship inspection, S4-02 screenshot review and S2-05 actual flame shield from the opening frame. Decker naming is independently pending; do not invent a model.
+
+
+## 0914 Draven and complete missile supply frequency
+Mike named Decker's Space Fighter Draven and asked to continue. SPACE-16 and MSL-09 are now complete. Read docs/SUPPLY_AUDIT_0914.md and docs/qa/supply_audit_0914.json. Hard/Furious boss opening/repeat times 5.6/14.4s; fodder loose chance 12.5%; legacy single-ammo chance 7.75%; scheduled/scripted boxes receive one 25% bonus roll with a two-second, existing-box-clear queue. No recursive bonus or double bonus on the boss clock. Forced scripted x10 stays guaranteed.
+Native27/0, real crate shooting/collection and real player death, zero page/console/loop errors. Full suite3839/61 exit1, final summary, section30821/0, no new failure names; historical random sand-tank assertion failed. One section307 fixture now allows the extra ammo interval above its life boundary. Current runtime SHA256 41a0790603c5e4d8320839e1083b19a6e123e9075fce334a744825dea888d7d5. Sources _BUILD_SOURCE/supply_audit_0914; LF/CRLF preserved. No commits/pushes/atlas edits/user-data deletion.
+Tally 135: 48 complete / 10 partial / 77 pending. Follow docs/WORK_ORDER_0914.md. Next SPACE-11: distinct new SpriteCook ship concept not yet identified; current ledger contains Warden/map assets and the known active ship traces to _ART_SOURCES/gravity_mode_v2. Do not select the already-shipped ship or GPT component master as the new concept without evidence. Then S4-02 screenshot review and S2-05 actual flame shield opening.
+
+
+## Codex update — September 14: Furyship source selected
+
+Mike approved `assets/game/gravity_mode/furyship_somersault_13.png` as the top-down replacement reference. Actual PNG and the existing sixteen-frame reel were inspected. SPACE-11 is complete; new parts, perspective frames, transformation and speed effects remain pending. See `docs/FURYSHIP_REFERENCE_0914.md`. SpriteCook is unavailable; tool-choice clarification is pending. No runtime or atlas change in this pass.
+
+
+## Codex update — September 14: Furyship generated candidates
+
+Mike approved built-in image generation for the ship. Eight master sheets and 70 normalized transparent candidate frames are saved with prompts/build metadata. Native Chromium rendered 71 assets including the approved reference with zero browser errors. Interactive preview also checked. See `docs/FURYSHIP_ASSETS_0914.md`. Exact assembly fit, intermediate animation/palettes and gameplay integration remain; SPACE-12/13 are partial. Runtime unchanged, no gameplay-suite rerun.
+
+
+## Codex update — September 14: somersault and nine palettes
+
+Added 12 generated somersault candidate frames (82 total frames) and 50 blue/cyan masks. Verified all 450 pilot/frame palette combinations and preserved all unmasked pixels. Native render: 83 assets including reference, no browser errors. See `docs/FURYSHIP_SOMERSAULT_0914.md`. Runtime integration/assembly fit and some frame-width drift remain. SPACE-14 is now partial; runtime unchanged, no gameplay-suite rerun.
+
+
+## Codex update — September 14: Furyship installed in the game
+
+Read docs/FURYSHIP_LIVE_0914.md and docs/qa/furyship_live_0914.json. The approved frame-13 hull, six-part assembly, 12 somersault poses, both eight-frame rolls, transition/speed effects and all nine palettes now run in the game. SPCBOY selects the preserved original fighter; campaign snapshots save/restore the selection. New cannon anchors and space death/Stage 9 rendering verified. Sources _BUILD_SOURCE/furyship_live_0914; no atlas repack or shipping-manifest changes in this batch.
+
+Native Chromium 26/0, no page/console/loop errors. Full suite 3,849 passed / 61 failed, exit 1, final summary reached; failure names exactly match docs/qa/supply_audit_0914.json. Section309 10/0; two older replacement-sensitive assertions updated with separate legacy checks. Runtime SHA256 3fc67f9238c635ee3367f574a2a57bd2a1094ffadcf52aae1b7e76de59a02e45. LF/CRLF preserved.
+
+Video: _shots/furyship_live_0914/video/BulletsOfFury_Furyship_0914.mp4 (26 seconds, actual game sound events, export gain prevents clipping, full decode passed). Capture skips completed HQ dialogue/entrance and uses fixture-only invincibility; this is not a full balance run. SPACE-13/14 complete; SPACE-12 partial for wingspan/silhouette drift and smoother component turns/fit. Tally 135: 51 complete / 11 partial / 73 pending, 84 unfinished. Preserve docs/WORK_ORDER_0914.md; the larger encounter requests are still open. No commits/pushes/deletion/background automation.
+
+
+## Codex update — September 14: cloud-flight intro revision
+
+Mike rejected the small six-piece assembly and slow sweep. Read docs/FURYSHIP_CLOUD_INTRO_0914.md and docs/qa/furyship_cloud_intro_0914.json. The new Stage-5 intro now stays at 420px/s through sky, clouds, clearing, assembly, white fade and countdown. Twelve independent pieces use the existing authored kit; full-size loose cells draw at 194.7px around a 118px cinematic hull. The local energy ring is smaller. Space replaces sky only under opaque white, which also covers HQ and scanlines. Latest request explicitly supersedes the old no-fade rule for this intro. Retained new fighters skip rebuilding and stay 48px; other stages/legacy route unchanged.
+
+Native full launch from t=0 including all HQ dialogue: 11/0; separate retained/animated-exhaust probe passed; zero page/console/loop errors. Full suite 3,850/60 exit1, final summary, no new failure names. Historical random sand-tank assertion passed; no fix claimed. Test file unchanged. Runtime SHA256 3d55604968cc2af62926ed8ef7ed296a03cf051c57d87686ad6434d9405e2978. LF/CRLF preserved. Video _shots/furyship_cloud_0914/BulletsOfFury_Cloud_Transformation_0914.mp4 (26 seconds, game sound effects, fully decoded). Sources _BUILD_SOURCE/furyship_cloud_0914; do not reapply prior integrators over this build.
+
+Tally still 135: 51 complete / 11 partial / 73 pending. SPACE-12 retains art consistency/fit/perspective refinement; SPACE-13 evidence updated for the revised staging. No commit/push/atlas edits/user-data deletion/background automation.
+
+
+## Codex update — September 14: solid parts, individual arrivals and faster sky
+
+Mike rejected part fades, perspective flips and travelling top/bottom clouds. Read docs/FURYSHIP_SOLID_ASSEMBLY_0914.md and docs/qa/furyship_solid_assembly_0914.json. Parts now use opaque top plates only, rotated in evenly spaced orbits. Twelve individual bottom entrances begin in the cloud section, 0.54s apart, each with the new game-engine furyPartArrival sound. Incoming kit draws above clouds, plane beneath the holes. Entire kit stays opaque until the full white transition hides the completed-hull substitution. No per-part fade or mirrored transform. Side banks hold fixed positions; the central cloud deck passes once and does not wrap. Intro speed 1,000px/s, no braking. Flight roll/somersault frames unchanged.
+
+Native full-launch checks 17/0, actual draw opacity/key/transform and twelve sound-cue timing audit passed; zero page/console/loop errors. Video _shots/furyship_solid_0914/BulletsOfFury_Solid_Assembly_0914.mp4 (26 seconds, game sound, full decode passed). Full suite 3,849/61 exit1, final summary, exact failure names from furyship_live_0914 baseline. Historical random sand-tank assertion failed. Test file unchanged; LF/CRLF preserved. Runtime SHA256 5150c9c4134da494bec2d2789b9e7fecfd4c022f8647302a470945f4072109b5. Sources _BUILD_SOURCE/furyship_solid_0914. Do not reapply old integrators over this build.
+
+Checklist remains 51 complete / 11 partial / 73 pending. SPACE-12's assembly perspective blending is superseded by the opaque top-view rotation requirement; flight silhouette consistency and exact fit remain. No new bitmap/atlas/manifest changes, commit, push, user-data deletion or automation.
+
+
+## 0914 - Solid space hazards and shared dialogue frame
+
+See docs/DIALOGUE_HAZARDS_0914.md and docs/qa/dialogue_hazards_0914.json. Generated pilot-tinted rectangular dialogue plate, centered stable typewriter text, no decorative asteroid/comet ghosts, physical shootable hazards and real contact checks. Native 12/12, no browser errors. Full suite 3852 pass / 58 inherited failures, exit 1, no new failing assertion names. Preserve all working changes; no commit or push. Checklist updated.
+
+
+## 0914 - Static projectile cells and pixel glow
+
+Read docs/PROJECTILE_PIXEL_GLOW_0914.md and docs/qa/projectile_glow_0914.json. Stage-5 CFX rows now hold column 1; Stage-2 saws already held that column. Shared fixed-frame shots get stepped pixel lighting without blur or growing sprites. Spin/trajectory/collision unchanged. Native 19/19, zero browser errors. Full suite 3853/57, exit1, no new failure names. No atlas/test changes or commit/push.
+
+
+## 0914 - New Yuri and readable typography
+
+Read docs/READABLE_TYPE_YURI_0914.md and docs/qa/readable_type_yuri_0914.json. Legacy Yuri portrait routes now use the approved seven new expressions; talking holds the approved idle pose. All nine pilots have compact dialogue portraits. Added uppercase Command Signal dialogue/TrueType, Command Alloy game labels and nine biome stage font variants. In-play panels clear the bottom HUD. Native 9/9, zero browser errors. Full suite 3852 pass / 58 inherited failures, exit 1; no new failure names against recorded baselines. Font/portrait source assets retained, no existing atlases changed. Harness loads current font registrations and updated obsolete font/portrait expectations. Checklist: 57 complete, 11 partial, 70 pending (81 unfinished). No commit or push.
+
+
+## 0914 - Pilot name flair
+
+See docs/PILOT_NAME_FLAIR_0914.md and docs/qa/pilot_name_flair_0914.json. Shared bitmap nameplates now have pilot-colored edges, white highlights, dark keylines and a slow three-second halo in dialogue, cinematic dialogue, comms and pilot selection. Authored portraits/body lettering preserved. Native 11/11, no browser errors. Full suite 3853 pass / 57 inherited failures, exit 1; no new failing names. One obsolete source-call assertion now checks pilotNameDraw. No atlas changes, commit or push. Tally remains 57 complete / 11 partial / 70 pending.
+
+
+## 0914 - Stage-4 visual audit and Furnace flame shield
+
+Read docs/ENCOUNTER_VISUAL_0914.md and docs/qa/encounter_visual_0914.json. S4-02 closed by native visual review: the apparent orange beams are road markings; Warden emits short machine rounds at its mapped mounts and upper racks are part of the whole authored plate. S2-05 fixed: actual Magma Ward flame shield now draws throughout Furnace assembly; the intro-only overload-wave substitute is removed. Lazy cells hold a decoded flame frame; break, core rearm and vulnerable head lifecycle verified. Native 16/16, no browser errors; two silent gameplay clips under _shots/encounter_visual_0914. Syntax passed; full suite 3853 pass / 57 inherited failures, exit 1, no new names. No atlas/test edits or commit/push. Tally 59 complete / 10 partial / 69 pending (79 unfinished). Next ready item is S1-04 Razorback baseline speeds, then S3-07 Hard/Furious size/palette.
+
+
+## 0914 - Razorback baseline speed
+
+See docs/RAZORBACK_SPEED_0914.md and docs/qa/razorback_speed_0914.json. S1-04 done: travel +30%, turn +20%, shots and rocket acceleration/cap +20%, Sonic Hammer/Nova expansion +25%. Warning/attack timing, HP and authored art unchanged. Native 12/12, zero browser errors; standing-hit versus post-release keyboard escape verified. Syntax passed; suite 3852/58, exit 1, no new failure names against recorded baselines. No test/atlas edits or commit/push. Tally 60 complete / 10 partial / 68 pending (78 unfinished). Next S3-07: Hard/Furious miniboss royal-dark-blue/black palette and +35% size.
+
+
+## 0914 - Frost Cruiser Hard/Furious hull variant
+
+Read docs/FROST_CRUISER_VARIANT_0914.md and docs/qa/frost_cruiser_variant_0914.json. S3-07 complete: the actual stage-3 miniboss is Frost Cruiser, not alternate Cryo Spear. Hard/Furious hull dimensions increase 168 to 226.8 (+35%) and use cached black/royal-dark-blue armor, preserving alpha, linework and protected emitters. Actual mounts, ordnance origins, collision bounds and damage/enrage rendering verified; Easy/Normal and other encounters excluded. Native 12/12, zero browser errors. Syntax passed; full suite 3851/59, exit 1: 58 recorded failures plus one intermittent road-tank heading failure reproduced identically against the pre-change backup (nine controlled cases). No newly introduced failure found. Silent seven-second native preview under _shots/cryo_variant_0914. No source-art, atlas or test-harness edits; no commit/push. Tally 61 complete / 10 partial / 67 pending (77 unfinished). Next UI-09: pilot-select letter reveal and stat-bar fill, followed by UI-08 fullscreen presentation.
+
+
+## 0914 - Three new boss music tracks stored
+
+Mike supplied minderaser (Boss 1), Hazardous-Death (Boss 2), and Lie Down or Stay Down (Boss 3). Original WAV copies are in assets/game/music/newboss/; see docs/NEW_BOSS_MUSIC_0914.md and the folder inventory.json. SHA-256 verified against Desktop originals. Stored only: no existing music replaced, no runtime registration or encounter music assignments changed. Boss numbers are inventory labels pending future direction.
+
+
+## 0914 - Frost Cruiser nose laser correction
+
+Mike clarified the wing pods are missile turrets and the nose must shoot Falva-style black/blue lasers. Read docs/FROST_NOSE_LASER_0914.md and docs/qa/frost_nose_laser_0914.json. Nose now launches fixed-frame fllaser_0 bolts at 24x112 and 0.34s cadence, with cached black/blue palette, four-step pixel lighting, laser muzzle/audio, nose-tail launch anchoring, committed aim and oriented shaft collision. Wing missiles and shared Jungle Cruiser nose remain unchanged. Full-tail culling and lazy-ready release guard verified. Native15/15, zero browser errors; nine-second silent native preview under _shots/frost_nose_laser_0914. Syntax passed; full suite 3852/58, exit1, no new names. No source-art/atlas/test-harness/music changes or commit/push. Checklist S3-14 added complete: 139 entries, 62 complete / 10 partial / 67 pending (77 unfinished). The charged sweeping beam and new difficulty attacks remain pending; next queue item UI-09.

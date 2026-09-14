@@ -1,0 +1,331 @@
+{
+  "runtimeSha256": "903c600d2493579911d64172ca02615d14e20d11e4b7d90d42c6189a80202fc6",
+  "syntaxExitCode": 0,
+  "suite": {
+    "passed": 3853,
+    "failed": 57,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "failureNames": [
+      "ASSERT FAIL: Stage 7 results go straight to the Stage 8 card with the portal-entry latch set",
+      "ASSERT FAIL: far from firing -> idle reel",
+      "ASSERT FAIL: idle reel cycles all 6 frames at 8fps",
+      "ASSERT FAIL: inside the tell window -> attack-charge reel",
+      "ASSERT FAIL: tell reaches its final frame just before the shot",
+      "ASSERT FAIL: morphing to FURIOUS DEATH repoints the reel to form 4",
+      "ASSERT FAIL: stage-2 roster rebuilt around all twelve unique volcanic hulls",
+      "ASSERT FAIL: stage-8 roster includes the native twelve-hull mega fleet",
+      "ASSERT FAIL: all 12 native mega enemies appeared in the finale (17/12)",
+      "ASSERT FAIL: the first charged-ball wave is five directions x seven independent lances (25)",
+      "ASSERT FAIL: and five seven-lance Level-5 volleys fan out behind it as individual rounds",
+      "ASSERT FAIL: five directions x seven independent lances launch from the ball (25)",
+      "ASSERT FAIL: all eight native ice-field hulls have explicit Stage-3 rows",
+      "ASSERT FAIL: the drop-shadow ellipse is gone",
+      "ASSERT FAIL: kept as a no-op so its call sites stay harmless",
+      "ASSERT FAIL: stage 1: five yellow fast-jet ripples are authored, four aircraft each",
+      "ASSERT FAIL: stage 1: the two purple dam-approach waves are committed kamikaze jets",
+      "ASSERT FAIL: stage 6 scrolls one physical blue master instead of looping or swapping skies",
+      "ASSERT FAIL: Stage 6 has no animated weather or cloud overlay over the baked still clouds",
+      "ASSERT FAIL: and a jet aimed at the far corner still fires two mg rounds, downward",
+      "ASSERT FAIL: every enemy-bullet kind in the source is in PROJ \u2014 jcHelix",
+      "ASSERT FAIL: and the map prefetches the highlighted stage, giving it the whole selection to finish",
+      "ASSERT FAIL: stage 1 keeps its exact approved rebuilt cast (s1jetbomber, s1jetdelta)",
+      "ASSERT FAIL: and warms its morph and final implosion overlays before the boss cinematic",
+      "ASSERT FAIL: stage 3 fields its complete authored native plan (8 waves)",
+      "ASSERT FAIL: and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)",
+      "ASSERT FAIL: all six shield families are reserved \u2014 ordinary enemies never auto-equip one",
+      "ASSERT FAIL: the ship continues flying into its bottom play lane throughout the countdown",
+      "ASSERT FAIL: the flamethrower alone keeps a new, throttled contact/kill transient",
+      "ASSERT FAIL: Stage 4 cycles fast turret fire, discrete blue energy bolts and its existing pincer \u2014 no continuous beam phase",
+      "ASSERT FAIL: the twin machine-gun turrets fire a timed six-beat blue-tracer burst from their exact barrel tips",
+      "ASSERT FAIL: each machine-gun beat overlays the jet muzzle reel on both barrel hardpoints at the faster cadence",
+      "ASSERT FAIL: the blue attack is five separate animated storm bolts from the coil/nose emitters, never a beam rake",
+      "ASSERT FAIL: a boss visibly anticipates first and releases its unchanged attack only on the authored beat",
+      "ASSERT FAIL: crossing a real boss phase cancels the old tell and performs a readable power-up reset",
+      "ASSERT FAIL: the river corvette fires a five-beat port/starboard broadside from alternating physical cannons",
+      "ASSERT FAIL: moving arrival shots use the aerial HQ view and top-down ships only",
+      "ASSERT FAIL: Maverick progression is locked to 3 purple, 4 blue, 5 green, 6 black and 7 helix lances",
+      "ASSERT FAIL: each trigger launches the exact tier count as independently phased lance entities",
+      "ASSERT FAIL: all seven Level-V lances animate on separate spiral paths instead of one rigid formation",
+      "ASSERT FAIL: Shadow Orb I-V advances damage, blast radius and piercing charge\u2014not just icon art",
+      "ASSERT FAIL: all twelve authored events field only the exact twelve-family Velocity Void cast",
+      "ASSERT FAIL: Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route",
+      "ASSERT FAIL: a live shared beam sustains one loop route and expiry fades it before the release cue",
+      "ASSERT FAIL: Maverick Level III keeps five discrete lances and never starts the shared held-beam bed",
+      "ASSERT FAIL: Jungle Cruiser fires a timed twin-machine-gun burst punctuated by separate green lances",
+      "ASSERT FAIL: its enraged pattern combines green laser volleys, curving wind blades and slow vortex pressure",
+      "ASSERT FAIL: Stage 2 fields all 12 unique volcanic hulls and none of the rejected art aliases",
+      "ASSERT FAIL: Magma Ward telegraphs and releases its opening fan from the same measured left cannon",
+      "ASSERT FAIL: Stage 3 schedules every one of its eight native ice-field hulls",
+      "ASSERT FAIL: Rime Wall switches from dark-edged mortars to broad cryo waves instead of pale generic pellets",
+      "ASSERT FAIL: Olive Warden switches between Blacksite missile pincers and a rail attack",
+      "ASSERT FAIL: Sludge Emperor advances through pressure, warned flood, crown and reactor-purge phases",
+      "ASSERT FAIL: Stage 7 has a reinforced four-phase boss and the supplied dedicated miniboss",
+      "ASSERT FAIL: Stage 5 keeps the approved Chaos Harrier and gains a reinforced four-phase boss",
+      "ASSERT FAIL: all twelve hulls resolve eight attack plus eight barrel-roll/twist frames",
+      "ASSERT FAIL: all nine stages own monotonically rising boss and miniboss HP floors"
+    ],
+    "newFailureNames": [],
+    "baseline": "dialogue_hazards_0914.json",
+    "comparison": "Assertion words and numbers unchanged; punctuation normalized for redirected Windows log encoding."
+  },
+  "native": {
+    "checks": [
+      {
+        "pass": true,
+        "label": "s2slag uses one source cell and constant size"
+      },
+      {
+        "pass": true,
+        "label": "s2slag has visible stepped pixel lighting"
+      },
+      {
+        "pass": true,
+        "label": "s2mine uses one source cell and constant size"
+      },
+      {
+        "pass": true,
+        "label": "s2mine has visible stepped pixel lighting"
+      },
+      {
+        "pass": true,
+        "label": "s5fracture uses one source cell and constant size"
+      },
+      {
+        "pass": true,
+        "label": "s5fracture has visible stepped pixel lighting"
+      },
+      {
+        "pass": true,
+        "label": "s5split uses one source cell and constant size"
+      },
+      {
+        "pass": true,
+        "label": "s5split has visible stepped pixel lighting"
+      },
+      {
+        "pass": true,
+        "label": "s5prism uses one source cell and constant size"
+      },
+      {
+        "pass": true,
+        "label": "s5prism has visible stepped pixel lighting"
+      },
+      {
+        "pass": true,
+        "label": "s5null uses one source cell and constant size"
+      },
+      {
+        "pass": true,
+        "label": "s5null has visible stepped pixel lighting"
+      },
+      {
+        "pass": true,
+        "label": "s5missile uses one source cell and constant size"
+      },
+      {
+        "pass": true,
+        "label": "s5missile has visible stepped pixel lighting"
+      },
+      {
+        "pass": true,
+        "label": "s5chaos uses one source cell and constant size"
+      },
+      {
+        "pass": true,
+        "label": "s5chaos has visible stepped pixel lighting"
+      },
+      {
+        "pass": true,
+        "label": "s5halo uses one source cell and constant size"
+      },
+      {
+        "pass": true,
+        "label": "s5halo has visible stepped pixel lighting"
+      },
+      {
+        "pass": true,
+        "label": "zero page, console and game-loop errors"
+      }
+    ],
+    "errors": [],
+    "projectiles": [
+      {
+        "kind": "s2slag",
+        "indices": [
+          9
+        ],
+        "sizes": [
+          "72,72"
+        ],
+        "pixelSums": [
+          211059,
+          215738,
+          214021,
+          213733,
+          214852,
+          217629,
+          221119,
+          216564
+        ]
+      },
+      {
+        "kind": "s2mine",
+        "indices": [
+          29
+        ],
+        "sizes": [
+          "78,78"
+        ],
+        "pixelSums": [
+          177627,
+          186962,
+          189256,
+          187313,
+          179370,
+          187733,
+          192328,
+          184153
+        ]
+      },
+      {
+        "kind": "s5fracture",
+        "indices": [
+          1
+        ],
+        "sizes": [
+          "72,72"
+        ],
+        "pixelSums": [
+          121220,
+          124003,
+          126883,
+          125674,
+          124113,
+          126130,
+          128844,
+          125428
+        ]
+      },
+      {
+        "kind": "s5split",
+        "indices": [
+          5
+        ],
+        "sizes": [
+          "76,76"
+        ],
+        "pixelSums": [
+          216737,
+          229932,
+          232709,
+          226082,
+          228623,
+          228595,
+          239153,
+          236159
+        ]
+      },
+      {
+        "kind": "s5prism",
+        "indices": [
+          9
+        ],
+        "sizes": [
+          "72,72"
+        ],
+        "pixelSums": [
+          153812,
+          161167,
+          164798,
+          164057,
+          160781,
+          171108,
+          168838,
+          167083
+        ]
+      },
+      {
+        "kind": "s5null",
+        "indices": [
+          13
+        ],
+        "sizes": [
+          "78,78"
+        ],
+        "pixelSums": [
+          112876,
+          114876,
+          115632,
+          115632,
+          114537,
+          116378,
+          117099,
+          116660
+        ]
+      },
+      {
+        "kind": "s5missile",
+        "indices": [
+          17
+        ],
+        "sizes": [
+          "84,84"
+        ],
+        "pixelSums": [
+          145033,
+          149106,
+          153207,
+          149106,
+          145033,
+          150907,
+          159585,
+          154466
+        ]
+      },
+      {
+        "kind": "s5chaos",
+        "indices": [
+          21
+        ],
+        "sizes": [
+          "88,88"
+        ],
+        "pixelSums": [
+          425702,
+          430291,
+          438161,
+          428695,
+          425716,
+          439482,
+          447468,
+          433487
+        ]
+      },
+      {
+        "kind": "s5halo",
+        "indices": [
+          25
+        ],
+        "sizes": [
+          "96,96"
+        ],
+        "pixelSums": [
+          303865,
+          316356,
+          329604,
+          320404,
+          307692,
+          321045,
+          337014,
+          332170
+        ]
+      }
+    ],
+    "runtimeSha256": "903c600d2493579911d64172ca02615d14e20d11e4b7d90d42c6189a80202fc6",
+    "video": "C:\\Users\\Mdogg\\Desktop\\BOF-CODE\\BulletsOfFury\\_shots\\projectile_glow_0914\\Static_Projectile_Glow_0914.mp4",
+    "videoSeconds": 6,
+    "videoDecodeExitCode": 0,
+    "fixture": "Actual game renderer and update loop, scripted projectile spawns and capture-only invincibility; silent video."
+  }
+}

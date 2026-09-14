@@ -1,0 +1,17 @@
+# Directional Retina Scan — September 14, 2026
+
+Mike's hold-Retina/direction multi-lock request is implemented with the existing authored Retina plates. Collect the rotating Retina Scan pickup from an eligible missile crate on Stage 2 or later. Hold the configured Retina button and tap a direction to scan visible targets in that sector. This pass uses four targets maximum. An existing single target joins the scan; duplicate targets cannot fill extra slots.
+
+Each reticle acquires for 0.45 seconds and then has five seconds to fire. The final 1.2 seconds flash before expiry; holding Retina does not extend the deadline. One missile press queues the acquired targets, with 50 milliseconds between launches and one ammo spent per actual missile. Dead or newly protected targets are skipped without spending ammo. The existing shield/node/helper eligibility rules still apply. Pilot specials keep their missile-button priority, and passive Volley Missiles retain their separate system.
+
+Scanning direction taps run before roll/somersault taps. With Retina released, normal evasive input remains available. Pause freezes lock timers. Death and stage changes clear marks/queues; the upgrade survives those events and is included in campaign snapshots. A new run clears it. Queue state is held on each player and launched rounds carry their seat; the recorded native control pass uses solo Yuri.
+
+Visual QA caught an existing crate flash-ring stored as floating text, causing the word undefined to appear. It now enters the existing authored particle-ring renderer. Scan lock chimes are grouped over a short interval, and queued missiles use the actual missile-launch cue instead of stacking the generic weapon cue.
+
+Verification: node syntax check passed. Complete suite reached its final summary: 3,787 passed, 60 failures, exit 1. No new failing assertion names against the 61-failure baseline; the historical random sand-tank spawn assertion passed this run and is not claimed as a fix. Section 305 has 16 passing checks. Real Chromium has 13 passing checks and no page, console or controlled-loop errors. Actual keyboard inputs, pickup collision, four node locks, separate missile launches/ammo, expiry, pause and death were exercised. Screenshots and XART/game-context drawImage calls were inspected.
+
+Proof: docs/qa/retina_scan_0914.json. Readable sources: _BUILD_SOURCE/retina_scan_0914/. Current runtime SHA256: 3e8159683cba3b65b344244e50de5ee300e0f7371e2119eb5b30bd9511a14212. Runtime LF and suite CRLF preserved. No commits or pushes.
+
+Preview: _shots/retina_scan_0914/video/BulletsOfFury_Retina_MultiLock_0914.mp4. Fourteen seconds, 420 fully decoded frames, native sounds at 60% in-game SFX and 80% master, peak 0.864, no export normalization and no music. Protected demo pilot, native Stage-6 encounter with node HP and cooldown set for the demonstration, unchanged authored node positions. The earlier dense carrier mix at 74% SFX peaked slightly above full scale after the scanner-specific fixes; broader encounter audio balancing remains pending.
+
+Still pending: the universal no-one-shot damage rule, Super/Ultra/Uber missile tiers, Hard/Furious encounter variants and their achievements, and the other requests in docs/OVERNIGHT_REQUESTS_0914.md. Requested SpriteCook production assets remain unavailable through authenticated callable tools; no substitute generator was used. Four-target capacity and the Stage-2-or-later crate distribution are implementation choices for this first reviewable pass.

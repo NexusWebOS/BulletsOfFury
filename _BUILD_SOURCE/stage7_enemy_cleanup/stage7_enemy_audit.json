@@ -1,0 +1,1190 @@
+[
+  {
+    "unit": "armored_lamprey",
+    "union_bbox": [
+      47,
+      47,
+      210,
+      224
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          47,
+          48,
+          210,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          47,
+          48,
+          210,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          47,
+          47,
+          210,
+          220
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          47,
+          47,
+          210,
+          224
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          47,
+          48,
+          210,
+          220
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          47,
+          49,
+          210,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          47,
+          48,
+          210,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          47,
+          48,
+          210,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "armored_sludge_barge",
+    "union_bbox": [
+      49,
+      47,
+      208,
+      210
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          49,
+          48,
+          208,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          49,
+          48,
+          208,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          49,
+          47,
+          208,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          49,
+          47,
+          208,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          49,
+          48,
+          208,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          49,
+          49,
+          208,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          49,
+          48,
+          208,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          49,
+          48,
+          208,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "dual_scoop_dredger",
+    "union_bbox": [
+      52,
+      47,
+      204,
+      216
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          52,
+          48,
+          204,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          52,
+          48,
+          204,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          52,
+          47,
+          204,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          52,
+          47,
+          204,
+          216
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          52,
+          48,
+          204,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          52,
+          49,
+          204,
+          210
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          52,
+          48,
+          204,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          52,
+          48,
+          204,
+          209
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "pipe_crawler",
+    "union_bbox": [
+      78,
+      39,
+      178,
+      220
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          78,
+          40,
+          178,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          78,
+          40,
+          178,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          78,
+          40,
+          178,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          78,
+          39,
+          178,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          78,
+          39,
+          178,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          78,
+          40,
+          178,
+          220
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          78,
+          40,
+          178,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          78,
+          40,
+          178,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "piston_pump_walker",
+    "union_bbox": [
+      62,
+      43,
+      194,
+      224
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          62,
+          44,
+          194,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          62,
+          44,
+          194,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          62,
+          44,
+          194,
+          220
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          62,
+          43,
+          194,
+          221
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          62,
+          43,
+          194,
+          221
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          62,
+          44,
+          194,
+          224
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          62,
+          44,
+          194,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          62,
+          44,
+          194,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "sampling_drone",
+    "union_bbox": [
+      39,
+      45,
+      217,
+      212
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          39,
+          45,
+          217,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          39,
+          45,
+          217,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          39,
+          45,
+          217,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          39,
+          45,
+          217,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          39,
+          45,
+          217,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          39,
+          46,
+          217,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          39,
+          45,
+          217,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          39,
+          45,
+          217,
+          212
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "sewer_serpent",
+    "union_bbox": [
+      86,
+      43,
+      171,
+      213
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          86,
+          44,
+          171,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          86,
+          44,
+          171,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          86,
+          43,
+          171,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          86,
+          43,
+          171,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          86,
+          44,
+          171,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          86,
+          45,
+          171,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          86,
+          44,
+          171,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          86,
+          44,
+          171,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "sludge_mine",
+    "union_bbox": [
+      41,
+      43,
+      215,
+      214
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          41,
+          44,
+          215,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          41,
+          44,
+          215,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          41,
+          44,
+          215,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          41,
+          43,
+          215,
+          214
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          41,
+          43,
+          215,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          41,
+          44,
+          215,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          41,
+          44,
+          215,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          41,
+          44,
+          215,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "toxic_canister",
+    "union_bbox": [
+      73,
+      39,
+      183,
+      217
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          73,
+          40,
+          183,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          73,
+          40,
+          183,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          73,
+          40,
+          183,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          73,
+          39,
+          183,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          73,
+          39,
+          183,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          73,
+          40,
+          183,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          73,
+          40,
+          183,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          73,
+          40,
+          183,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "toxic_mini_tank",
+    "union_bbox": [
+      52,
+      39,
+      204,
+      220
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          52,
+          40,
+          204,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          52,
+          40,
+          204,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          52,
+          40,
+          204,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          52,
+          39,
+          204,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          52,
+          39,
+          204,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          52,
+          40,
+          204,
+          220
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          52,
+          40,
+          204,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          52,
+          40,
+          204,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "toxic_skimmer",
+    "union_bbox": [
+      39,
+      42,
+      217,
+      215
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          39,
+          43,
+          217,
+          214
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          39,
+          43,
+          217,
+          214
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          39,
+          42,
+          217,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          39,
+          42,
+          217,
+          213
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          39,
+          43,
+          217,
+          214
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          39,
+          44,
+          217,
+          215
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          39,
+          43,
+          217,
+          214
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          39,
+          43,
+          217,
+          214
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  },
+  {
+    "unit": "valve_turret",
+    "union_bbox": [
+      41,
+      39,
+      216,
+      217
+    ],
+    "frames": [
+      {
+        "frame": "01.png",
+        "bbox": [
+          41,
+          40,
+          216,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "02.png",
+        "bbox": [
+          41,
+          40,
+          216,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "03.png",
+        "bbox": [
+          41,
+          40,
+          216,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "04.png",
+        "bbox": [
+          41,
+          39,
+          216,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "05.png",
+        "bbox": [
+          41,
+          39,
+          216,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "06.png",
+        "bbox": [
+          41,
+          40,
+          216,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "07.png",
+        "bbox": [
+          41,
+          40,
+          216,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      },
+      {
+        "frame": "08.png",
+        "bbox": [
+          41,
+          40,
+          216,
+          217
+        ],
+        "touches_canvas": [],
+        "magenta_edge_pixels": 0
+      }
+    ]
+  }
+]

@@ -1,0 +1,3 @@
+FAIL  all 20 non-play states draw 90 frames — BROKEN: VICTORY (drew NOTHING)
+FAIL  all 8 stages play 100s without throwing — stage 2: ctx.setLineDash is not a function
+FAIL  the overwhelming majority of art comes from sheets (7045 vs 3311)

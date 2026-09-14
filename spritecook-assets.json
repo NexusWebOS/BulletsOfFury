@@ -49,6 +49,76 @@
       "asset_id": "ed50b924-9092-462c-ab0c-b58b72656ad7",
       "sha12": "38ebf09b4318",
       "label": "Toxic Portal Warden final last stand"
+    },
+    {
+      "asset_id": "ca4a8423-9b9e-4cf8-bbb6-300741415a5f",
+      "sha12": "5b54baee010c",
+      "label": "Campaign map v2 (0912v) stage 1 jungle island, baked isl_1"
+    },
+    {
+      "asset_id": "5f68f885-6e34-4528-ba98-5a711c77626b",
+      "sha12": "fcd3f1e52ca2",
+      "label": "Campaign map v2 (0912v) stage 2 volcano island, baked isl_2"
+    },
+    {
+      "asset_id": "21fb8787-53db-4684-9e39-7737ef6b018d",
+      "sha12": "5ef164eb8ef7",
+      "label": "Campaign map v2 (0912v) stage 3 ice fortress island, baked isl_3"
+    },
+    {
+      "asset_id": "ec47ee89-ef80-4dcd-8d04-0d25d5ad8e34",
+      "sha12": "6d0e3057974f",
+      "label": "Campaign map v2 (0912v) stage 4 desert airbase island, baked isl_4"
+    },
+    {
+      "asset_id": "3c6baa4f-c976-43f7-b52c-0a9992a81cb6",
+      "sha12": "6a7e6ab8f8a4",
+      "label": "Campaign map v2 (0912v) stage 5 launch complex island, baked isl_5"
+    },
+    {
+      "asset_id": "53570536-f844-45dc-83ee-8159d25db83a",
+      "sha12": "a12a1123758b",
+      "label": "Campaign map v2 (0912v) stage 6 storm fortress island, baked isl_6"
+    },
+    {
+      "asset_id": "ed2e15ef-c149-4f68-b9b0-06a569847b3b",
+      "sha12": "444da35ce14c",
+      "label": "Campaign map v2 (0912v) stage 7 toxic sewer island, baked isl_7"
+    },
+    {
+      "asset_id": "1b08afe8-8636-4ee0-aa4e-2f0db88783d0",
+      "sha12": "9551c47124e3",
+      "label": "Campaign map v2 (0912v) stage 8 crimson ruins island, baked isl_8"
+    },
+    {
+      "asset_id": "3baa876b-657f-4b74-9c34-77a89c1b7230",
+      "sha12": "fc33f63c4b74",
+      "label": "Campaign map v2 (0912v) stage 9 secret portal island, baked isl_9"
+    },
+    {
+      "asset_id": "24efcb6c-fdda-407b-acef-289fdd2eb8ec",
+      "sha12": "32c5711f31d1",
+      "label": "Campaign map v2 (0912v) central citadel island, baked isl_hub"
+    },
+    {
+      "asset_id": "879aa12d-8da8-4bac-8a88-450ed51e710c",
+      "sha12": "655a02527fb7",
+      "label": "Campaign map v2 (0912v) ocean tile, baked ocean"
+    },
+    {
+      "asset_id": "45e12df3-d276-4f6f-a06d-be17eab5f1f8",
+      "sha12": "a2a1559e8284",
+      "label": "Campaign map v2 (0912v) four large clouds, baked cloud_0..6"
+    },
+    {
+      "asset_id": "083c68ea-3d10-464f-87b7-6d001bb505b6",
+      "sha12": "4eaff75a7498",
+      "label": "Campaign map v2 (0912v) top menu bar, baked bar"
+    },
+    {
+      "asset_id": "74fafde9-9458-4486-9919-3b5a9c5d64a2",
+      "sha12": "4661445373eb",
+      "label": "Campaign map v2 (0912v) first cloud sheet - SUPERSEDED, not shipped (its 3px grain read chunky beside the islands)"
     }
   ]
 }

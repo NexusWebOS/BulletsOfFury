@@ -10,7 +10,7 @@ Drives the real engine through the debug host:
   * the charge is HIS and only while the crate is live - no bar and no dash for anyone else
   * hold CHARGE+UP -> the wind-up climbs, pins him, and release rams him forward, with a LONGER
     hold buying a LONGER ram (measured twice at two hold times, not asserted once)
-  * six wrecking balls, two rings, counter-rotating, anchored to the ship
+  * two wrecking balls (six until 0912), one per ring, counter-rotating, anchored to the ship
   * they eat enemy fire and they damage a boss
   * the CHARGE bar is the bottom row with SOMERSAULT and ROLL lifted above it
 """
@@ -103,7 +103,7 @@ def main():
         pg.wait_for_timeout(400)
         wb=pg.evaluate("() => window.BOSSMODE.wreck().map(b=>({r:Math.round(Math.hypot(b.x-window.BOSSMODE.player.x,b.y-window.BOSSMODE.player.y)), spin:b.spin}))")
         radii=sorted(set(w['r'] for w in wb)); spins=sorted(set(w['spin'] for w in wb))
-        ok(len(wb)==6 and len(radii)==2, 'six wrecking balls on two rings, radii %s' % radii)
+        ok(len(wb)==2 and len(radii)==2, 'two wrecking balls, one per ring, radii %s' % radii)
         ok(len(spins)==2 and spins[0]<0<spins[1],
            'the two rings swing in OPPOSITE directions: %s rad/s' % spins)
         a1=pg.evaluate("() => window.BOSSMODE.wreck()[0].a")

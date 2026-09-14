@@ -1,0 +1,140 @@
+{
+ "results": [
+  [
+   true,
+   "stage 5 is live with the eight-gate convoy formed",
+   {
+    "state": "play",
+    "gates": 8,
+    "ww": 680,
+    "vw": 480
+   }
+  ],
+  [
+   true,
+   "the drive art decoded before the first gate (rdy polled against real time)",
+   ""
+  ],
+  [
+   true,
+   "the warp-out anchors on the gate that finished the run, in world space",
+   {
+    "gate": {
+     "x": 122.39999999999999,
+     "y": 369.0333333333461
+    },
+    "s9": {
+     "ph": "draw",
+     "t": 0.03333333333333576,
+     "gx": 122.39999999999999,
+     "gy": 369.0333333333461,
+     "px": 122.39999999999999,
+     "py": 368.35938439967794,
+     "gone": false
+    }
+   }
+  ],
+  [
+   true,
+   "the map opens INSIDE the held white",
+   0.981
+  ],
+  [
+   true,
+   "and resolves out of it in under a second",
+   -0.016
+  ],
+  [
+   true,
+   "the pilot flew the run with no damage blink, so every frame shows the ship",
+   0
+  ],
+  [
+   true,
+   "every gate is passed by flying its line, no partial credit",
+   8
+  ],
+  [
+   true,
+   "the drive level climbs gate by gate",
+   {
+    "1": 0.096,
+    "2": 0.219,
+    "3": 0.345,
+    "4": 0.469,
+    "5": 0.595,
+    "6": 0.719,
+    "7": 0.843,
+    "8": 1.154
+   }
+  ],
+  [
+   true,
+   "space itself accelerates with the drive (px/s of the stage-5 loop)",
+   {
+    "before": 40.0,
+    "gate7+": 266.9
+   }
+  ],
+  [
+   true,
+   "every pass fires the authored jump burst and stage 5's own shock ring",
+   {
+    "ch_warp": 288,
+    "nsr_comet": 188
+   }
+  ],
+  [
+   true,
+   "the portal forms inside gate eight while it glows, before the jump",
+   24
+  ],
+  [
+   true,
+   "the rift tears open through the jump",
+   ""
+  ],
+  [
+   true,
+   "the drive's tunnel is drawn in SCREEN space: on the vanishing point to the pixel while the camera travels",
+   {
+    "blits": 1011,
+    "worst_px": 0.0,
+    "camX_span": 200.0
+   }
+  ],
+  [
+   true,
+   "and the jump's bend (warpFxDraw) is centred on the SCREEN, not dragged by the camera",
+   {
+    "blits": 42,
+    "worst_px": 0.0
+   }
+  ],
+  [
+   true,
+   "the ship is carried under gate eight in world space, not toward a screen point",
+   0.0
+  ],
+  [
+   true,
+   "and is punched through the mouth and gone before the white",
+   true
+  ],
+  [
+   true,
+   "the map takes over and runs the bonus unlock",
+   {
+    "state": "stagesel",
+    "cine": null,
+    "bonus": 1
+   }
+  ],
+  [
+   true,
+   "no page errors, no swallowed throws",
+   []
+  ]
+ ],
+ "errors": []
+}

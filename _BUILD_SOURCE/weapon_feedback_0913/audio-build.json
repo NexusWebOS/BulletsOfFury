@@ -1,0 +1,344 @@
+{
+  "cole_pressure_start": {
+    "file": "assets/game/sounds/cole_pressure_start_0913.wav",
+    "seconds": 0.48,
+    "peak": 0.64,
+    "rms": 0.14022478645070255,
+    "layers": [
+      [
+        "reviewed_cole_sonic_charge_start.wav",
+        0.8,
+        0,
+        0.92
+      ],
+      [
+        "nsp_rcs_thruster.mp3",
+        0.2,
+        0,
+        0.85
+      ]
+    ],
+    "loop": false
+  },
+  "cole_pressure_loop": {
+    "file": "assets/game/sounds/cole_pressure_loop_0913.wav",
+    "seconds": 1.135,
+    "peak": 0.48,
+    "rms": 0.07935661802464897,
+    "layers": [
+      [
+        "reviewed_cole_sonic_charge_loop.wav",
+        0.75,
+        0,
+        0.9
+      ],
+      [
+        "ice_breath_loop.wav",
+        0.15,
+        0,
+        0.75
+      ]
+    ],
+    "loop": true
+  },
+  "cole_pressure_release": {
+    "file": "assets/game/sounds/cole_pressure_release_0913.wav",
+    "seconds": 0.7,
+    "peak": 0.76,
+    "rms": 0.14203245906052459,
+    "layers": [
+      [
+        "reviewed_cole_sonic_release.wav",
+        0.8,
+        0,
+        0.83
+      ],
+      [
+        "explosion_air_small_02.wav",
+        0.23,
+        0,
+        0.76
+      ]
+    ],
+    "loop": false
+  },
+  "cole_pressure_impact": {
+    "file": "assets/game/sounds/cole_pressure_impact_0913.wav",
+    "seconds": 0.28,
+    "peak": 0.6,
+    "rms": 0.08545298081077035,
+    "layers": [
+      [
+        "shield_hit_heavy.wav",
+        0.5,
+        0,
+        0.76
+      ],
+      [
+        "reviewed_cole_sonic_release.wav",
+        0.23,
+        0,
+        1.3
+      ]
+    ],
+    "loop": false
+  },
+  "juggernaut_charge_start": {
+    "file": "assets/game/sounds/juggernaut_charge_start_0913.wav",
+    "seconds": 0.48,
+    "peak": 0.66,
+    "rms": 0.21250181897114975,
+    "layers": [
+      [
+        "furnace_chain_reel.wav",
+        0.5,
+        0,
+        1.15
+      ],
+      [
+        "nsp_booster_ignite.mp3",
+        0.34,
+        0,
+        0.65
+      ]
+    ],
+    "loop": false
+  },
+  "juggernaut_charge_loop": {
+    "file": "assets/game/sounds/juggernaut_charge_loop_0913.wav",
+    "seconds": 0.855,
+    "peak": 0.48,
+    "rms": 0.2151803616645182,
+    "layers": [
+      [
+        "nsp_engine_loop.mp3",
+        0.6,
+        0,
+        0.64
+      ],
+      [
+        "furnace_chain_reel.wav",
+        0.18,
+        0,
+        0.83
+      ]
+    ],
+    "loop": true
+  },
+  "juggernaut_ram_launch": {
+    "file": "assets/game/sounds/juggernaut_ram_launch_0913.wav",
+    "seconds": 0.45,
+    "peak": 0.7600000000000001,
+    "rms": 0.4142285238208941,
+    "layers": [
+      [
+        "nsp_booster_ignite.mp3",
+        0.68,
+        0,
+        0.75
+      ],
+      [
+        "furnace_chain_launch.wav",
+        0.22,
+        0,
+        0.8
+      ]
+    ],
+    "loop": false
+  },
+  "juggernaut_ram_loop": {
+    "file": "assets/game/sounds/juggernaut_ram_loop_0913.wav",
+    "seconds": 0.505,
+    "peak": 0.52,
+    "rms": 0.22327573376222837,
+    "layers": [
+      [
+        "nsp_engine_loop.mp3",
+        0.6,
+        0,
+        1.18
+      ],
+      [
+        "ice_breath_loop.wav",
+        0.25,
+        0,
+        1.6
+      ]
+    ],
+    "loop": true
+  },
+  "juggernaut_ram_stop": {
+    "file": "assets/game/sounds/juggernaut_ram_stop_0913.wav",
+    "seconds": 0.36,
+    "peak": 0.72,
+    "rms": 0.19664577212188336,
+    "layers": [
+      [
+        "explosion_air_small_01.wav",
+        0.65,
+        0,
+        0.65
+      ],
+      [
+        "debris_scatter_metal.wav",
+        0.2,
+        0,
+        1.15
+      ]
+    ],
+    "loop": false
+  },
+  "juggernaut_chains": {
+    "file": "assets/game/sounds/juggernaut_chains_0913.wav",
+    "seconds": 1.105,
+    "peak": 0.35,
+    "rms": 0.09402229503790692,
+    "layers": [
+      [
+        "furnace_chain_reel.wav",
+        0.6,
+        0,
+        1.05
+      ],
+      [
+        "debris_scatter_metal.wav",
+        0.13,
+        0,
+        0.75
+      ]
+    ],
+    "loop": true
+  },
+  "juggernaut_wreck_hit": {
+    "file": "assets/game/sounds/juggernaut_wreck_hit_0913.wav",
+    "seconds": 0.36,
+    "peak": 0.73,
+    "rms": 0.12708537439631382,
+    "layers": [
+      [
+        "shield_hit_heavy.wav",
+        0.7,
+        0,
+        0.65
+      ],
+      [
+        "debris_scatter_metal.wav",
+        0.28,
+        0,
+        0.9
+      ],
+      [
+        "explosion_air_small_02.wav",
+        0.16,
+        0,
+        0.8
+      ]
+    ],
+    "loop": false
+  },
+  "juggernaut_wreck_block": {
+    "file": "assets/game/sounds/juggernaut_wreck_block_0913.wav",
+    "seconds": 0.16,
+    "peak": 0.54,
+    "rms": 0.09070832461400376,
+    "layers": [
+      [
+        "shield_hit_light.wav",
+        0.55,
+        0,
+        1.35
+      ],
+      [
+        "debris_scatter_metal.wav",
+        0.17,
+        0,
+        1.5
+      ]
+    ],
+    "loop": false
+  },
+  "laser_mist_fire": {
+    "file": "assets/game/sounds/laser_mist_fire_0913.wav",
+    "seconds": 0.3,
+    "peak": 0.68,
+    "rms": 0.19032620047308044,
+    "layers": [
+      [
+        "ice_breath_release.wav",
+        0.64,
+        0,
+        1.25
+      ],
+      [
+        "reviewed_player_laser_beam_start.wav",
+        0.4,
+        0,
+        1.3
+      ]
+    ],
+    "loop": false
+  },
+  "laser_mist_split": {
+    "file": "assets/game/sounds/laser_mist_split_0913.wav",
+    "seconds": 0.16,
+    "peak": 0.48,
+    "rms": 0.18899748608798192,
+    "layers": [
+      [
+        "ice_breath_start.wav",
+        0.6,
+        0,
+        1.7
+      ],
+      [
+        "shield_graze.wav",
+        0.2,
+        0,
+        1.5
+      ]
+    ],
+    "loop": false
+  },
+  "laser_mist_bloom": {
+    "file": "assets/game/sounds/laser_mist_bloom_0913.wav",
+    "seconds": 0.24,
+    "peak": 0.56,
+    "rms": 0.15245487452843545,
+    "layers": [
+      [
+        "ice_breath_release.wav",
+        0.58,
+        0,
+        1.8
+      ],
+      [
+        "reviewed_player_laser_beam_start.wav",
+        0.24,
+        0,
+        1.65
+      ]
+    ],
+    "loop": false
+  },
+  "laser_mist_impact": {
+    "file": "assets/game/sounds/laser_mist_impact_0913.wav",
+    "seconds": 0.24,
+    "peak": 0.6,
+    "rms": 0.14203993605934093,
+    "layers": [
+      [
+        "ice_breath_release.wav",
+        0.5,
+        0,
+        1.9
+      ],
+      [
+        "shield_hit_light.wav",
+        0.23,
+        0,
+        1.55
+      ]
+    ],
+    "loop": false
+  }
+}

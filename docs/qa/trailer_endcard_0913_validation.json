@@ -1,0 +1,18 @@
+{
+  "credit": "BUILT WITH THE ASSISTANCE OF AI & HUMAN TOOLS.",
+  "durationSeconds": 165,
+  "frames": 9900,
+  "fps": 60,
+  "dimensions": [
+    1920,
+    1080
+  ],
+  "decodeExitCode": 0,
+  "duplicateFrames": 0,
+  "droppedFrames": 0,
+  "videoPrefixFrames": 9566,
+  "prefixMatchesOriginal": true,
+  "audioMatchesOriginal": true,
+  "outputBytes": 588252712,
+  "outputSha256": "1297389FC1778E3BD3B0B6180699FF06554EA9ADCEAB4CE32F88A4209CD279ED"
+}

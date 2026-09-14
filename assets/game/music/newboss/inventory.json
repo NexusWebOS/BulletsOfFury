@@ -1,0 +1,42 @@
+{
+  "added": "2026-09-14",
+  "status": "Stored only; not registered or assigned in the game. Boss numbers are Mike's inventory labels, not changes to current encounter music.",
+  "tracks": [
+    {
+      "label": "Boss 1",
+      "title": "minderaser",
+      "file": "assets/game/music/newboss/boss1_minderaser.wav",
+      "originalFilename": "minderaser.wav",
+      "bytes": 16274508,
+      "sha256": "071fc8c2c94183037d0410fa6ea77ba9fcbdff46273a84f3b218f5d35c53a44f",
+      "seconds": 84.76,
+      "sampleRate": 48000,
+      "channels": 2,
+      "sampleBits": 16
+    },
+    {
+      "label": "Boss 2",
+      "title": "Hazardous-Death",
+      "file": "assets/game/music/newboss/boss2_hazardous-death.wav",
+      "originalFilename": "Hazardous-Death.wav",
+      "bytes": 15206988,
+      "sha256": "67443d5e96293ff8445836cf1b9bca9de6381862efad6630180ea8bcf6793643",
+      "seconds": 79.2,
+      "sampleRate": 48000,
+      "channels": 2,
+      "sampleBits": 16
+    },
+    {
+      "label": "Boss 3",
+      "title": "Lie Down or Stay Down",
+      "file": "assets/game/music/newboss/boss3_lie_down_or_stay_down.wav",
+      "originalFilename": "Lie Down or Stay Down.wav",
+      "bytes": 27725388,
+      "sha256": "dd920d58b557eb274e2eaaaa75d52e7a2985ce9cb705e3e348d01545b2741d8e",
+      "seconds": 144.4,
+      "sampleRate": 48000,
+      "channels": 2,
+      "sampleBits": 16
+    }
+  ]
+}
