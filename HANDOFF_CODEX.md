@@ -533,3 +533,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 ## Codex update — 2026-09-15: Stage-9 Horizon/Sentinel volley warnings
 
 - ENG-02 advances: Event Horizon and both Warp Sentinels now warn for 0.62 seconds before their eight-lane radial or committed five-lane aimed volleys. Focused 9/9, Chromium 14/14 zero errors, full suite exact 57-name baseline. Evidence: docs/STAGE9_HORIZON_SHARED_VOLLEY_WARNING_0915.md.
+
+## Codex update — 2026-09-15: dedicated Life Up and Continue Up art
+
+- MODE-08 is complete: SpriteCook produced a matched pair of rugged gunmetal pickup plates, with red/orange `1UP` and blue/cyan `C` faces baked into separate transparent assets. The live renderer draws each at a proportional 48–50 px height and retains the shipped Life Up only as a cold-load fallback.
+- Focused 7/7 and native Chromium decode/render checks pass with zero errors. The full suite has the exact established 57 failure names. Evidence: docs/MODE_UP_ART_0915.md. Tally: 123 complete / 9 partial / 17 pending.

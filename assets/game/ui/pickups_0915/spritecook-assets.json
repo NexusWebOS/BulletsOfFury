@@ -1,0 +1,34 @@
+{
+  "source_asset_id": "779c4d87-c2e6-419e-9807-2ea6f20eb6c1",
+  "job_id": "30e0c1a0-2b62-4e24-a3ce-99f88255a742",
+  "credits": 8,
+  "source_sha12": "1025711de66b",
+  "assets": [
+    {
+      "asset_id": "779c4d87-c2e6-419e-9807-2ea6f20eb6c1",
+      "file": "life_up.png",
+      "source_region": [
+        32,
+        237,
+        474,
+        783
+      ],
+      "sha12": "656d382138fa",
+      "width": 442,
+      "height": 546
+    },
+    {
+      "asset_id": "779c4d87-c2e6-419e-9807-2ea6f20eb6c1",
+      "file": "continue_up.png",
+      "source_region": [
+        548,
+        237,
+        990,
+        783
+      ],
+      "sha12": "ad3128b575bd",
+      "width": 442,
+      "height": 546
+    }
+  ]
+}

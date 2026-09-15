@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-15",
+  "checklistId": "MODE-08",
+  "status": "complete",
+  "spritecook": {
+    "jobId": "30e0c1a0-2b62-4e24-a3ce-99f88255a742",
+    "assetId": "779c4d87-c2e6-419e-9807-2ea6f20eb6c1",
+    "model": "gpt-image-2.5-flare",
+    "creditsUsed": 8,
+    "creditsRemaining": 14
+  },
+  "runtimeAssets": [
+    {
+      "file": "assets/game/ui/pickups_0915/life_up.png",
+      "width": 442,
+      "height": 546,
+      "sha12": "656d382138fa"
+    },
+    {
+      "file": "assets/game/ui/pickups_0915/continue_up.png",
+      "width": 442,
+      "height": 546,
+      "sha12": "ad3128b575bd"
+    }
+  ],
+  "focused": {
+    "test": "_BUILD_SOURCE/test_mode_up_art_0915.cjs",
+    "passed": 7,
+    "failed": 0
+  },
+  "chromium": {
+    "url": "http://127.0.0.1:8785/_shots/mode08_0915/review.html?qa=4",
+    "lifeDecoded": true,
+    "continueDecoded": true,
+    "pickupCount": 2,
+    "consoleErrors": 0,
+    "observed": "both dedicated plates readable at live gameplay scale"
+  },
+  "fullSuite": {
+    "test": "_BUILD_SOURCE/test_fl.js",
+    "passedAssertions": 4337,
+    "failed": 57,
+    "baselineFailureCount": 57,
+    "newFailureNames": [],
+    "didNotRecurFromPrior58NameRun": "Stage 7 results go straight to the Stage 8 card with the portal-entry latch set"
+  },
+  "syntax": "passed",
+  "lineEndings": {
+    "assets/game.js": "LF",
+    "_BUILD_SOURCE/test_fl.js": "CRLF"
+  },
+  "commit": false,
+  "push": false
+}

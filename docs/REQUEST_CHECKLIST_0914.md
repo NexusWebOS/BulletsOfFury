@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-15. **149 entries: 122 complete / 9 partial / 18 pending.**
+Updated 2026-09-15. **149 entries: 123 complete / 9 partial / 17 pending.**
 
-**27 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**26 remain unfinished.** 11 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Stage-9 Event Horizon and twin Warp Sentinel radial/aimed volleys with independent committed 0.62-second shared warnings [Proof](STAGE9_HORIZON_SHARED_VOLLEY_WARNING_0915.md).
+Just verified: dedicated SpriteCook Life Up and Continue Up pickup plates integrated through the live powerup renderer [Proof](MODE_UP_ART_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -32,7 +32,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Manual missile tiers and supplies | 6 | 2 | 1 | 9 |
 | Pause, saving, title and pilot selection | 15 | 0 | 0 | 15 |
 | Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
-| Arcade and shared difficulty rewards | 7 | 0 | 1 | 8 |
+| Arcade and shared difficulty rewards | 8 | 0 | 0 | 8 |
 
 ## Checklist
 
@@ -216,7 +216,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **MODE-05 · Complete** — Hard/Furious elite duplicates: authored palette variations, shields and capable aggressive fighter behavior; Furious more demanding. [Evidence](DIFFICULTY_ELITE_ACES_0915.md).
 - [x] **MODE-06 · Complete** — Hard/Furious Life Up frequency increased by 25%. [Evidence](EASY_QUEUE_0914.md).
 - [x] **MODE-07 · Complete** — Continue Up reward in all modes for qualifying deathless sections, or Hard/Furious elite kills; enforce defined reward eligibility. [Evidence](CONTINUE_UP_REWARDS_0915.md).
-- [ ] **MODE-08 · Pending** — Regenerate Life Up and create Continue Up pickup art matching Bullets of Fury through SpriteCook. Dependency: SpriteCook.
+- [x] **MODE-08 · Complete** — Regenerate Life Up and create Continue Up pickup art matching Bullets of Fury through SpriteCook. [Evidence](MODE_UP_ART_0915.md).
 
 ## Keeping this tally current
 

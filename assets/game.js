@@ -1971,6 +1971,8 @@ const XART=(function(){
   for(const k of ['ship','ball','leap','charge','reticle','boomerang_body','boomerang_hammer'])X._src['hammer_'+k]='assets/game/stage5_hammer/'+k+'.png';
   X._src['s4_chase_0915']='assets/game/stage4_highway_0915.png';
   X._src['pause_button_0915']='assets/game/ui/pause_0915/button.png';
+  X._src['mode_life_up_0915']='assets/game/ui/pickups_0915/life_up.png';
+  X._src['mode_continue_up_0915']='assets/game/ui/pickups_0915/continue_up.png';
   /* Generated mode plates use a source crop because the generator baked a checkerboard beyond
      their beveled frames. The exact Nexus II chain plate is clipped over the same silhouette. */
   X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
@@ -45296,22 +45298,25 @@ function drawCapsule(x,y,t,flash){
   ctx.font='bold 17px "BOFmil", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('S',0,1);
   ctx.restore();
 }
+function drawModeUpPickup(p,y){
+  const key=p.kind==='life'?'mode_life_up_0915':p.kind==='continueup'?'mode_continue_up_0915':null;
+  if(!key||typeof XART==='undefined'||!XART.rdy(key))return false;
+  const im=XART.get(key),pulse=.5+.5*Math.sin((p.t||0)*7.5),h=48+2*pulse,w=h*(im.naturalWidth/im.naturalHeight);
+  ctx.save();ctx.translate(Math.round(p.x),Math.round(y));ctx.imageSmoothingEnabled=false;
+  ctx.globalAlpha=.97;ctx.shadowColor=p.kind==='life'?'#ff5b20':'#4deaff';ctx.shadowBlur=3+3*pulse;
+  ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
+}
 function drawPowerups(){
   for(const p of powerups){
     if(p.kind==='missilepack2')p.kind='missilepack';
     if(looseMissilePickupDraw(p))continue;
     const yb=p.y+Math.sin(p.t*4)*2;
+    if((p.kind==='life'||p.kind==='continueup')&&drawModeUpPickup(p,yb))continue;
     if(p.kind==='continueup'){
-      /* MODE-08 will replace this composed presentation with its dedicated SpriteCook plate.
-         Every pixel of the current base still comes from the shipped Life Up artwork. */
+      /* Cold-load fallback only; the dedicated cyan badge replaces this as soon as it decodes. */
       if(ASSETS.ready&&ASSETS.has('pu_life')){
-        const d=ASSETS.dims('pu_life'),s=46/Math.max(d.w,d.h),pulse=.5+.5*Math.sin((p.t||0)*8);
-        ctx.save();ctx.translate(p.x,yb);ctx.shadowColor='#62e6ff';ctx.shadowBlur=10+pulse*8;
-        ASSETS.blit('pu_life',0,0,d.w*s,d.h*s);ctx.globalCompositeOperation='lighter';
-        ctx.strokeStyle='rgba(98,230,255,'+(.55+pulse*.35)+')';ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,25+pulse*2,0,TAU);ctx.stroke();
-        ctx.globalCompositeOperation='source-over';ctx.fillStyle='#071326';ctx.strokeStyle='#e9ffff';ctx.lineWidth=3;
-        ctx.font='bold 18px "BOFmil", monospace';ctx.textAlign='center';ctx.textBaseline='middle';ctx.strokeText('C',0,1);ctx.fillText('C',0,1);ctx.restore();
-        continue;
+        const d=ASSETS.dims('pu_life'),z=46/Math.max(d.w,d.h);
+        ctx.save();ctx.translate(p.x,yb);ASSETS.blit('pu_life',0,0,d.w*z,d.h*z);ctx.restore();continue;
       }
     }
     if(p.kind==='crate'){ drawCrate(p.x,yb,p.t,p.flash||0); continue; }
@@ -61761,6 +61766,7 @@ window.BOFDEBUG=(function(){
     get enemies(){ return enemies; },
     get eBullets(){ return eBullets; },
     get pBullets(){ return pBullets; },
+    get powerups(){ return powerups; },
     get player(){ return player; },
     get run(){ return run; },
     lab:{ on:labOn, off:labOff, get active(){ return _lab; }, get stage(){ return _labStage; } },

@@ -4297,3 +4297,6 @@ ENG-02 advances: Furious Death commits the center of its 0.78-second Annihilatio
 
 ## 2026-09-15 Stage-9 Horizon/Sentinel shared volley warnings
 ENG-02 advances: Event Horizon and both Warp Sentinels now preview radial wheels and committed aimed fans through independent 0.62-second shared warnings. Focused 9/9, Chromium 14/14 zero errors, full suite exact 57-name baseline. See docs/STAGE9_HORIZON_SHARED_VOLLEY_WARNING_0915.md.
+
+## 2026-09-15 dedicated Life Up and Continue Up art
+MODE-08 complete. SpriteCook produced matched rugged-gunmetal `1UP` and cyan `C` pickup plates as separate transparent assets. The live renderer uses a proportional 48–50 px height and keeps the old Life Up only as a cold-load fallback. Focused 7/7 and native Chromium checks pass with zero errors; full suite exact 57-name baseline. Tally 123 complete / 9 partial / 17 pending. See docs/MODE_UP_ART_0915.md.
