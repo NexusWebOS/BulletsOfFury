@@ -514,3 +514,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: the Stage-7 Toxic Portal Warden rail fan now commits its aim and safe-side gap at charge start. Five shared green/yellow/red fields show every released spear lane; one matching overhead alert renders in front of the giant hull.
 - Focused 7/7 and corrected Chromium 15/15 pass with zero errors; the confirmation suite has the exact 57-name baseline. Evidence: docs/STAGE7_WARDEN_SHARED_RAIL_WARNING_0915.md. Tally remains 122 complete / 9 partial / 18 pending.
+
+## Codex update — 2026-09-15: Toxic Portal Warden minefield warning
+
+- ENG-02 advances: the Stage-7 Toxic Portal Warden now commits its safe minefield column when the charge begins. Six shared green/yellow/red fields preview every mined column while leaving the seventh lane open; one matching alert renders in front of the giant hull.
+- Moving after the warning begins cannot relocate the gap, and all six mine anchors match their previews. Focused 7/7 and Chromium 16/16 pass with zero errors; the confirmation suite has the exact 57-name baseline. Evidence: docs/STAGE7_WARDEN_SHARED_MINE_WARNING_0915.md. Tally remains 122 complete / 9 partial / 18 pending.

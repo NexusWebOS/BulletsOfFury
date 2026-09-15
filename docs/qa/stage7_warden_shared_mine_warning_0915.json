@@ -1,0 +1,414 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-7 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the live Warden commits six mine lanes and one safe gap"
+    },
+    {
+      "pass": true,
+      "label": "authored Warden, mine and green/yellow/red warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green displays the six committed mine lanes and safe gap"
+    },
+    {
+      "pass": true,
+      "label": "green draws shared fields and one matching alert"
+    },
+    {
+      "pass": true,
+      "label": "yellow does not chase a late move across the arena"
+    },
+    {
+      "pass": true,
+      "label": "yellow draws committed shared fields and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "red preserves all six committed mine lanes and the safe gap"
+    },
+    {
+      "pass": true,
+      "label": "red draws committed shared fields and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "six mines release only after the full warning"
+    },
+    {
+      "pass": true,
+      "label": "released mines use the six previewed anchors and leave the committed gap open"
+    },
+    {
+      "pass": true,
+      "label": "warden_mine_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_mine_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_mine_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_mine_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "TOXIC PORTAL WARDEN",
+    "kind": "sludgeemperor",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "TOXIC PORTAL WARDEN",
+    "gap": 3,
+    "targets": [
+      {
+        "x": 48.57142857142857,
+        "y": 296.96,
+        "index": 0
+      },
+      {
+        "x": 145.71428571428572,
+        "y": 296.96,
+        "index": 1
+      },
+      {
+        "x": 242.85714285714286,
+        "y": 296.96,
+        "index": 2
+      },
+      {
+        "x": 437.14285714285717,
+        "y": 296.96,
+        "index": 4
+      },
+      {
+        "x": 534.2857142857143,
+        "y": 296.96,
+        "index": 5
+      },
+      {
+        "x": 631.4285714285714,
+        "y": 296.96,
+        "index": 6
+      }
+    ],
+    "world": 680
+  },
+  "green": {
+    "mode": "minefield",
+    "t": 0.12,
+    "event": 0,
+    "gap": 3,
+    "targets": [
+      {
+        "x": 48.57142857142857,
+        "y": 296.96,
+        "index": 0
+      },
+      {
+        "x": 145.71428571428572,
+        "y": 296.96,
+        "index": 1
+      },
+      {
+        "x": 242.85714285714286,
+        "y": 296.96,
+        "index": 2
+      },
+      {
+        "x": 437.14285714285717,
+        "y": 296.96,
+        "index": 4
+      },
+      {
+        "x": 534.2857142857143,
+        "y": 296.96,
+        "index": 5
+      },
+      {
+        "x": 631.4285714285714,
+        "y": 296.96,
+        "index": 6
+      }
+    ],
+    "playerX": 360,
+    "warn": {
+      "t": 0.12,
+      "warm": 0.72,
+      "released": false
+    },
+    "mines": [],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_green_tall",
+      "cfx_stage7_warden_rail",
+      "bmfx_alert_green_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "mode": "minefield",
+    "t": 0.36,
+    "event": 0,
+    "gap": 3,
+    "targets": [
+      {
+        "x": 48.57142857142857,
+        "y": 296.96,
+        "index": 0
+      },
+      {
+        "x": 145.71428571428572,
+        "y": 296.96,
+        "index": 1
+      },
+      {
+        "x": 242.85714285714286,
+        "y": 296.96,
+        "index": 2
+      },
+      {
+        "x": 437.14285714285717,
+        "y": 296.96,
+        "index": 4
+      },
+      {
+        "x": 534.2857142857143,
+        "y": 296.96,
+        "index": 5
+      },
+      {
+        "x": 631.4285714285714,
+        "y": 296.96,
+        "index": 6
+      }
+    ],
+    "playerX": 40,
+    "warn": {
+      "t": 0.36,
+      "warm": 0.72,
+      "released": false
+    },
+    "mines": [],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_yellow_tall",
+      "cfx_stage7_warden_rail",
+      "bmfx_alert_yellow_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "mode": "minefield",
+    "t": 0.648,
+    "event": 0,
+    "gap": 3,
+    "targets": [
+      {
+        "x": 48.57142857142857,
+        "y": 296.96,
+        "index": 0
+      },
+      {
+        "x": 145.71428571428572,
+        "y": 296.96,
+        "index": 1
+      },
+      {
+        "x": 242.85714285714286,
+        "y": 296.96,
+        "index": 2
+      },
+      {
+        "x": 437.14285714285717,
+        "y": 296.96,
+        "index": 4
+      },
+      {
+        "x": 534.2857142857143,
+        "y": 296.96,
+        "index": 5
+      },
+      {
+        "x": 631.4285714285714,
+        "y": 296.96,
+        "index": 6
+      }
+    ],
+    "playerX": 230,
+    "warn": {
+      "t": 0.648,
+      "warm": 0.72,
+      "released": false
+    },
+    "mines": [],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_red_tall",
+      "cfx_stage7_warden_rail",
+      "bmfx_alert_red_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "mode": "minefield",
+    "t": 0.73,
+    "event": 1,
+    "gap": 3,
+    "targets": [
+      {
+        "x": 48.57142857142857,
+        "y": 296.96,
+        "index": 0
+      },
+      {
+        "x": 145.71428571428572,
+        "y": 296.96,
+        "index": 1
+      },
+      {
+        "x": 242.85714285714286,
+        "y": 296.96,
+        "index": 2
+      },
+      {
+        "x": 437.14285714285717,
+        "y": 296.96,
+        "index": 4
+      },
+      {
+        "x": 534.2857142857143,
+        "y": 296.96,
+        "index": 5
+      },
+      {
+        "x": 631.4285714285714,
+        "y": 296.96,
+        "index": 6
+      }
+    ],
+    "playerX": 70,
+    "warn": {
+      "t": 0.72,
+      "warm": 0.72,
+      "released": true
+    },
+    "mines": [
+      {
+        "x": 240,
+        "y": 265.4,
+        "anchor": {
+          "x": 48.57142857142857,
+          "y": 296.96,
+          "life": 4.8
+        }
+      },
+      {
+        "x": 240,
+        "y": 265.4,
+        "anchor": {
+          "x": 145.71428571428572,
+          "y": 296.96,
+          "life": 4.8
+        }
+      },
+      {
+        "x": 240,
+        "y": 265.4,
+        "anchor": {
+          "x": 242.85714285714286,
+          "y": 296.96,
+          "life": 4.8
+        }
+      },
+      {
+        "x": 240,
+        "y": 265.4,
+        "anchor": {
+          "x": 437.14285714285717,
+          "y": 296.96,
+          "life": 4.8
+        }
+      },
+      {
+        "x": 240,
+        "y": 265.4,
+        "anchor": {
+          "x": 534.2857142857143,
+          "y": 296.96,
+          "life": 4.8
+        }
+      },
+      {
+        "x": 240,
+        "y": 265.4,
+        "anchor": {
+          "x": 631.4285714285714,
+          "y": 296.96,
+          "life": 4.8
+        }
+      }
+    ],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "cfx_stage7_warden_rail",
+      "cfx_stage7_warden_mine",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage7_warden_shared_mine_warning_0915\\warden_mine_01_green.png",
+    "_shots\\stage7_warden_shared_mine_warning_0915\\warden_mine_02_yellow.png",
+    "_shots\\stage7_warden_shared_mine_warning_0915\\warden_mine_03_red.png",
+    "_shots\\stage7_warden_shared_mine_warning_0915\\warden_mine_04_release.png"
+  ]
+}

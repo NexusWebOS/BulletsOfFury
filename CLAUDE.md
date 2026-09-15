@@ -4285,3 +4285,6 @@ ENG-02 advances: the Chrome Hammer leap/slam now uses the shared green/yellow/re
 
 ## 2026-09-15 Toxic Portal Warden shared rail warning
 ENG-02 advances: the Stage-7 Warden commits its five-spear rail fan and safe-side gap at charge start, then previews the actual paths through shared green/yellow/red fields and one matching alert. Fields render behind the boss; the alert renders in front after Chromium exposed hull occlusion in the first capture. Focused 7/7 and corrected Chromium 15/15 pass with zero errors; the confirmation suite has the exact 57-name baseline. ENG-02 remains partial. See docs/STAGE7_WARDEN_SHARED_RAIL_WARNING_0915.md.
+
+## 2026-09-15 Toxic Portal Warden shared minefield warning
+ENG-02 advances: the Stage-7 Warden commits one safe minefield column at charge start, previews the other six columns through shared green/yellow/red fields and an unobscured overhead alert, then releases six mines to the exact previewed anchors. Late movement cannot relocate the gap. Focused 7/7 and Chromium 16/16 pass with zero errors; the confirmation suite has the exact 57-name baseline. ENG-02 remains partial. See docs/STAGE7_WARDEN_SHARED_MINE_WARNING_0915.md.
