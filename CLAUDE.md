@@ -4288,3 +4288,6 @@ ENG-02 advances: the Stage-7 Warden commits its five-spear rail fan and safe-sid
 
 ## 2026-09-15 Toxic Portal Warden shared minefield warning
 ENG-02 advances: the Stage-7 Warden commits one safe minefield column at charge start, previews the other six columns through shared green/yellow/red fields and an unobscured overhead alert, then releases six mines to the exact previewed anchors. Late movement cannot relocate the gap. Focused 7/7 and Chromium 16/16 pass with zero errors; the confirmation suite has the exact 57-name baseline. ENG-02 remains partial. See docs/STAGE7_WARDEN_SHARED_MINE_WARNING_0915.md.
+
+## 2026-09-15 Toxic Portal Warden shared cannon-burst warning
+ENG-02 advances: the Stage-7 Warden commits its ten-round toxic cannon aim at the start of a 0.48-second charge, previews the five lanes used twice through shared green/yellow/red fields and an unobscured alert, and keeps the original alternating-cannon cadence. Opening and post-stun direct entries now arm the same warning. Focused 7/7 and Chromium 16/16 pass with zero errors; the complete suite has the exact 57-name baseline. ENG-02 remains partial. See docs/STAGE7_WARDEN_SHARED_BURST_WARNING_0915.md.

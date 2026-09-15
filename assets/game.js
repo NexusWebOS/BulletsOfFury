@@ -20176,9 +20176,12 @@ function s7WardenInit(b){
       'cfx_stage7_warden_roar','cfx_stage7_warden_cripple','cfx_stage7_warden_laststand'])XART._touch(k);
   }}catch(_s7wi){}
 }
+function s7WardenBurstArm(b){
+  const S=b._s7warden;S.aim=aimPlayer(b.x,b.y+b.h*.22);combatWarningTick(b,'stage7-warden-burst',0,.48,true);
+}
 function s7WardenMode(b,mode){
   const S=b._s7warden;S.mode=mode;S.mt=0;S.shot=0;S.event=0;S.noHit=false;S.step++;
-  if(mode==='burst')S.aim=aimPlayer(b.x,b.y+b.h*.22);
+  if(mode==='burst')s7WardenBurstArm(b);
   if(mode==='rail'){S.railAim=aimPlayer(b.x,b.y);S.railSafe=player.x<b.x?-1:1;combatWarningTick(b,'stage7-warden-rail',0,.86,true);}
   if(mode==='minefield'){const cols=7;S.mineGap=clamp(Math.floor(player.x/(worldWidth()/cols)),1,cols-2);combatWarningTick(b,'stage7-warden-minefield',0,.72,true);}
   if(mode==='teleport'){
@@ -20324,7 +20327,7 @@ function s7WardenFinalTick(b,dt){
   }
   if(F.phase==='roar'){
     S.noHit=true;if(!F.beat){F.beat=1;s7WardenMechSound('roar');shake=Math.max(shake,8);}
-    if(F.t>=1.34){b._s7FinalNoBar=false;S.mode='burst';S.mt=0;S.noHit=false;s7WardenPhase(b,'fight');}
+    if(F.t>=1.34){b._s7FinalNoBar=false;S.mode='burst';S.mt=0;S.noHit=false;s7WardenPhase(b,'fight');s7WardenBurstArm(b);}
     return true;
   }
   if(F.phase==='fight'){
@@ -20332,7 +20335,7 @@ function s7WardenFinalTick(b,dt){
   }
   if(F.phase==='stun'){
     S.noHit=false;const q=clamp(F.t/.46,0,1),e=1-Math.pow(1-q,3);b.y=lerp(F.stunFrom,F.stunTo,e);
-    shake=Math.max(shake,F.t<.46?8:2);if(F.t>=3.65){S.mode='burst';s7WardenPhase(b,'fight');}
+    shake=Math.max(shake,F.t<.46?8:2);if(F.t>=3.65){S.mode='burst';s7WardenPhase(b,'fight');s7WardenBurstArm(b);}
     return true;
   }
   if(F.phase==='hyper'){
@@ -20408,8 +20411,9 @@ function s7WardenTick(b,dt){
        Guarded HERE rather than at the two call sites, because this is the one place that
        CONSUMES the angle - a third path into burst cannot reopen it. Once finite it is never
        resampled, so the volley still commits to one lane, as the note above describes. */
-    if(!isFinite(S.aim)) S.aim=aimPlayer(b.x,b.y+b.h*.22);
-    while(S.shot<10&&S.mt>=.48+S.shot*.105){const slot=(S.shot&1)?'R':'L',o=(S.shot%5-2)*.025;
+    if(!isFinite(S.aim)){S.aim=aimPlayer(b.x,b.y+b.h*.22);combatWarningTick(b,'stage7-warden-burst',0,.48,true);}
+    const tell=.48;combatWarningTick(b,'stage7-warden-burst',Math.min(S.mt,tell),tell);
+    while(S.shot<10&&S.mt>=tell+S.shot*.105){const slot=(S.shot&1)?'R':'L',o=(S.shot%5-2)*.025;
       s7WardenShot(b,slot,S.aim+o,5.0,'shell',{silent:S.shot>0});s7WardenMuzzle(b,slot,false);S.shot++;}
     if(S.mt>1.78)s7WardenMode(b,'patrol');
   }else if(S.mode==='minefield'){
@@ -20437,6 +20441,16 @@ function s7WardenTick(b,dt){
   }
   b.x=clamp(b.x,left,right);return true;
 }
+function s7WardenBurstAngles(S){
+  if(!S||!Number.isFinite(S.aim))return [];return [-.05,-.025,0,.025,.05].map(o=>S.aim+o);
+}
+function s7WardenBurstWarningDraw(b,front){
+  const S=b&&b._s7warden;if(!S||S.mode!=='burst'||S.shot>0||S.mt>=.48)return false;
+  const p=shipBossMount(b,'C'),k=clamp(S.mt/.48,0,1),angles=s7WardenBurstAngles(S);
+  if(!front)for(const a of angles)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.x+Math.cos(a)*650,ey:p.y+Math.sin(a)*650,progress:k,width:16,fieldOnly:true});
+  else{const a=Number.isFinite(S.aim)?S.aim:Math.PI/2;combatWarningDraw(b,{x:p.x,y:p.y,ex:p.x+Math.cos(a)*650,ey:p.y+Math.sin(a)*650,progress:k,alertOnly:true});}
+  return true;
+}
 function s7WardenMineTargets(S){
   if(!S||!Number.isFinite(S.mineGap))return [];const cols=7,W=worldWidth();
   return Array.from({length:cols},(_,i)=>i).filter(i=>i!==S.mineGap).map(i=>({x:(i+.5)*W/cols,y:VH*.58,index:i}));
@@ -20462,7 +20476,7 @@ function s7WardenRailWarningDraw(b,front){
 function s7WardenDraw(b){
   const S=b&&b._s7warden;if(!S)return false;const F=S.final,phase=F&&F.phase;
   if(phase==='portalClose'||(F&&F.bossHidden))return true;
-  s7WardenRailWarningDraw(b,false);s7WardenMineWarningDraw(b,false);
+  s7WardenBurstWarningDraw(b,false);s7WardenRailWarningDraw(b,false);s7WardenMineWarningDraw(b,false);
   const baseY=(b._drawY!=null?b._drawY:b.y);let cy=baseY+(S.bodyDrop||0),size=b.w*1.12;
   let alpha=1;if(S.mode==='teleport')alpha=S.mt<.76?1-clamp((S.mt-.20)/.38,0,1):clamp((S.mt-.84)/.38,0,1);
   /* The entrance reel belongs to the portal aperture, not to a second floating circle around
@@ -20516,7 +20530,7 @@ function s7WardenDraw(b){
     if(hi&&iw){const sw=iw/8,sh=ih,sx=fi*sw,sy=0;ctx.save();ctx.imageSmoothingEnabled=true;ctx.globalAlpha=Math.min(.78,b.flash*5);
       ctx.translate(b.x,cy);ctx.scale(flip?-1:1,1);ctx.drawImage(hi,sx,sy,sw,sh,-size/2,-drawH/2,size,drawH);ctx.restore();}
   }
-  s7WardenRailWarningDraw(b,true);s7WardenMineWarningDraw(b,true);
+  s7WardenBurstWarningDraw(b,true);s7WardenRailWarningDraw(b,true);s7WardenMineWarningDraw(b,true);
   return true;
 }
 /* ============================================================

@@ -1,0 +1,287 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-7 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the live Warden commits the five-lane toxic burst at charge start"
+    },
+    {
+      "pass": true,
+      "label": "authored cannon, shell and green/yellow/red warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green displays the five lanes committed when charge starts"
+    },
+    {
+      "pass": true,
+      "label": "green draws the shared fields and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "yellow does not chase a late move across the arena"
+    },
+    {
+      "pass": true,
+      "label": "yellow draws the committed shared fields and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "red preserves all five committed cannon lanes"
+    },
+    {
+      "pass": true,
+      "label": "red draws the committed shared fields and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "the first shell releases only after the full warning"
+    },
+    {
+      "pass": true,
+      "label": "the original ten-round two-cannon burst keeps its exact five-lane cadence while its leading round exits normally"
+    },
+    {
+      "pass": true,
+      "label": "warden_burst_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_burst_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_burst_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_burst_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "TOXIC PORTAL WARDEN",
+    "kind": "sludgeemperor",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "TOXIC PORTAL WARDEN",
+    "aim": 0.9599920538702177,
+    "angles": [
+      0.9099920538702176,
+      0.9349920538702177,
+      0.9599920538702177,
+      0.9849920538702177,
+      1.0099920538702176
+    ]
+  },
+  "green": {
+    "mode": "burst",
+    "t": 0.08,
+    "shot": 0,
+    "aim": 0.9599920538702177,
+    "angles": [
+      0.9099920538702176,
+      0.9349920538702177,
+      0.9599920538702177,
+      0.9849920538702177,
+      1.0099920538702176
+    ],
+    "playerX": 360,
+    "warn": {
+      "t": 0.08,
+      "warm": 0.48,
+      "released": false
+    },
+    "shells": [],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_green_tall",
+      "cfx_stage7_warden_cannon",
+      "bmfx_alert_green_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "mode": "burst",
+    "t": 0.24,
+    "shot": 0,
+    "aim": 0.9599920538702177,
+    "angles": [
+      0.9099920538702176,
+      0.9349920538702177,
+      0.9599920538702177,
+      0.9849920538702177,
+      1.0099920538702176
+    ],
+    "playerX": 40,
+    "warn": {
+      "t": 0.24,
+      "warm": 0.48,
+      "released": false
+    },
+    "shells": [],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_yellow_tall",
+      "cfx_stage7_warden_cannon",
+      "bmfx_alert_yellow_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "mode": "burst",
+    "t": 0.432,
+    "shot": 0,
+    "aim": 0.9599920538702177,
+    "angles": [
+      0.9099920538702176,
+      0.9349920538702177,
+      0.9599920538702177,
+      0.9849920538702177,
+      1.0099920538702176
+    ],
+    "playerX": 230,
+    "warn": {
+      "t": 0.432,
+      "warm": 0.48,
+      "released": false
+    },
+    "shells": [],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_red_tall",
+      "cfx_stage7_warden_cannon",
+      "bmfx_alert_red_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "firstRelease": {
+    "shot": 1,
+    "released": true,
+    "shells": 1
+  },
+  "release": {
+    "mode": "burst",
+    "t": 1.44,
+    "shot": 10,
+    "aim": 0.9599920538702177,
+    "angles": [
+      0.9099920538702176,
+      0.9349920538702177,
+      0.9599920538702177,
+      0.9849920538702177,
+      1.0099920538702176
+    ],
+    "playerX": 70,
+    "warn": {
+      "t": 0.48,
+      "warm": 0.48,
+      "released": true
+    },
+    "shells": [
+      {
+        "x": 505.0099554354628,
+        "y": 525.7379741660872,
+        "a": 0.9349920538702177
+      },
+      {
+        "x": 370.0849839953615,
+        "y": 496.9055451400402,
+        "a": 0.9599920538702177
+      },
+      {
+        "x": 437.8741988226623,
+        "y": 460.9358909540415,
+        "a": 0.9849920538702176
+      },
+      {
+        "x": 306.56378214907056,
+        "y": 429.35761269741744,
+        "a": 1.0099920538702176
+      },
+      {
+        "x": 400.78352571361916,
+        "y": 383.3731007351522,
+        "a": 0.9099920538702176
+      },
+      {
+        "x": 264.9321418341527,
+        "y": 347.12999006387975,
+        "a": 0.9349920538702177
+      },
+      {
+        "x": 339.0242299116323,
+        "y": 315.058209390447,
+        "a": 0.9599920538702177
+      },
+      {
+        "x": 211.29728180977733,
+        "y": 281.7432596828803,
+        "a": 0.9849920538702176
+      },
+      {
+        "x": 284.51018329744716,
+        "y": 241.37447311204298,
+        "a": 1.0099920538702176
+      }
+    ],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "cfx_stage7_warden_projectiles",
+      "bpfx_muzzle_laser_7",
+      "bpfx_muzzle_laser_0",
+      "cfx_stage7_warden_cannon",
+      "cfx_stage7_warden_shell",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage7_warden_shared_burst_warning_0915\\warden_burst_01_green.png",
+    "_shots\\stage7_warden_shared_burst_warning_0915\\warden_burst_02_yellow.png",
+    "_shots\\stage7_warden_shared_burst_warning_0915\\warden_burst_03_red.png",
+    "_shots\\stage7_warden_shared_burst_warning_0915\\warden_burst_04_release.png"
+  ]
+}

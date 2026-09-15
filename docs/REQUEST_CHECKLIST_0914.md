@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Stage-7 Toxic Portal Warden minefield with a charge-start safe-column commitment, six shared green/yellow/red lane fields, one unobscured alert and exact preview-to-release anchors [Proof](STAGE7_WARDEN_SHARED_MINE_WARNING_0915.md).
+Just verified: Stage-7 Toxic Portal Warden ten-round toxic cannon burst with charge-start aim commitment, five shared green/yellow/red lanes, one unobscured alert and unchanged alternating-cannon cadence [Proof](STAGE7_WARDEN_SHARED_BURST_WARNING_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -52,7 +52,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 ### Shared combat, warnings and targeting
 
 - [x] **ENG-01 · Complete** — Shared laser-family warning: three-second green/yellow/red FOV charge with overhead alert. [Evidence](qa/shared_laser_warnings_0914.json).
-- [ ] **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Chrome Hammer, Xeno Regent, Furnace eyes and rollerball, Stage-3 central pulse, Jungle Overlord-X charge, Storm Sovereign ram, Razorback rams, Chrome Hammer leap, and Toxic Portal Warden rail/minefield are covered; remaining encounter families need review. [Evidence](SHARED_NONLASER_WARNING_0915.md).
+- [ ] **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Chrome Hammer, Xeno Regent, Furnace eyes and rollerball, Stage-3 central pulse, Jungle Overlord-X charge, Storm Sovereign ram, Razorback rams, Chrome Hammer leap, and Toxic Portal Warden rail/minefield/cannon burst are covered; remaining encounter families need review. [Evidence](SHARED_NONLASER_WARNING_0915.md).
 - [x] **ENG-03 · Complete** — Shared bounded horizontal glide/follow integrated and verified in Frost Cruiser and Jungle chopper; later Warden choreography remains S4-06. [Evidence](MOVEMENT_BATCH_0914.md).
 - [x] **ENG-04 · Complete** — Player flamethrower: 25% smaller draw and collision footprint, Fire Orb palette, nozzle remains connected. [Evidence](READABLE_ATTACKS_0914.md).
 - [x] **ENG-05 · Complete** — No default enemy dies to a single hit: consistent damage accounting across ordinary enemies, pieces, shields and high-damage weapons. [Evidence](NO_ONE_SHOT_RULE_0915.md).

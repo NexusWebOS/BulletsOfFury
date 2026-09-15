@@ -24,7 +24,7 @@ Completed entries are excluded. The list below contains every unfinished item ex
 8. **ACH-02 · Pending** — Achievement menu/button and bottom-center unlock notification that slides/fades downward. Dependency: SpriteCook.
 9. **ACH-06 · Partial** — Entire game without spending a continue: 1000 points plus a generated trophy avatar. Award trigger is complete; SpriteCook trophy avatar remains. Dependency: SpriteCook.
 10. **ENG-15 · Pending** — HUD incoming-lock indicator above Equipped: gray idle, red flashing and distance-accelerated beeps until evasion or hit. Dependency: SpriteCook.
-11. **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Chrome Hammer, Xeno Regent, Furnace eyes and rollerball, Stage-3 central pulse, Jungle Overlord-X charge, Storm Sovereign ram, Razorback rams, Chrome Hammer leap, and Toxic Portal Warden rail/minefield are covered; remaining encounter families need review.
+11. **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Chrome Hammer, Xeno Regent, Furnace eyes and rollerball, Stage-3 central pulse, Jungle Overlord-X charge, Storm Sovereign ram, Razorback rams, Chrome Hammer leap, and Toxic Portal Warden rail/minefield/cannon burst are covered; remaining encounter families need review.
 
 ## Complex encounter choreography
 
