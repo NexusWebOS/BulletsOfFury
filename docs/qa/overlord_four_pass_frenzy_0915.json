@@ -1,0 +1,413 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-1 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Overlord, warning and projectile plates decode before the frenzy"
+    },
+    {
+      "pass": true,
+      "label": "four committed crossings run in exact order"
+    },
+    {
+      "pass": true,
+      "label": "crossings alternate down, up, down, up"
+    },
+    {
+      "pass": true,
+      "label": "all four crossings use distinct player-sampled lane bands"
+    },
+    {
+      "pass": true,
+      "label": "each crossing receives its complete eight-beat warning"
+    },
+    {
+      "pass": true,
+      "label": "only passes two and four rain machine bullets downfield"
+    },
+    {
+      "pass": true,
+      "label": "authored machine rounds are visible during both bullet-rain passes"
+    },
+    {
+      "pass": true,
+      "label": "the bounded frenzy exits into the existing curved return"
+    },
+    {
+      "pass": true,
+      "label": "overlord_pass_1_warning_top is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_pass_1_down is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_pass_2_warning_bottom is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_pass_2_up_bullet_rain is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_pass_3_down is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_pass_4_up_bullet_rain is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "JUNGLE OVERLORD-X",
+      "kind": "damkeeper",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "w1": {
+      "state": "chargeTell",
+      "pass": 0,
+      "dir": 1,
+      "lane": 86,
+      "x": 110.54026752288988,
+      "y": 112.6381623316809,
+      "pivot": 0.05955797169711084,
+      "bullets": 0,
+      "beeps": 5,
+      "rains": []
+    },
+    "p1": {
+      "state": "chargeOff",
+      "pass": 0,
+      "dir": 1,
+      "lane": 109.99739595520123,
+      "x": 109.99739595520123,
+      "y": 240.11770047331484,
+      "pivot": 8.484180637438551e-05,
+      "bullets": 0,
+      "beeps": 8,
+      "rains": []
+    },
+    "w2": {
+      "state": "chargeTell",
+      "pass": 1,
+      "dir": -1,
+      "lane": 188,
+      "x": 146.0325707163754,
+      "y": 400.9385535666714,
+      "pivot": 2.920317862482262,
+      "bullets": 0,
+      "beeps": 14,
+      "rains": []
+    },
+    "p2": {
+      "state": "chargeOff",
+      "pass": 1,
+      "dir": -1,
+      "lane": 146.0045570783979,
+      "x": 146.0045570783979,
+      "y": 239.53217868002994,
+      "pivot": 2.9216707342448345,
+      "bullets": 15,
+      "beeps": 16,
+      "rains": [
+        {
+          "pass": 1,
+          "x": 146.01025470124637,
+          "y": 395.5044009022523
+        },
+        {
+          "pass": 1,
+          "x": 146.00565500991385,
+          "y": 368.20440090225225
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 334.5044009022522
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 294.4044009022522
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 247.90440090225218
+        }
+      ]
+    },
+    "p3": {
+      "state": "chargeOff",
+      "pass": 2,
+      "dir": 1,
+      "lane": 380.00151902613266,
+      "x": 380.00151902613266,
+      "y": 240.04562124719033,
+      "pivot": -0.00016919856231728336,
+      "bullets": 12,
+      "beeps": 24,
+      "rains": [
+        {
+          "pass": 1,
+          "x": 146.01025470124637,
+          "y": 395.5044009022523
+        },
+        {
+          "pass": 1,
+          "x": 146.00565500991385,
+          "y": 368.20440090225225
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 334.5044009022522
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 294.4044009022522
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 247.90440090225218
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 195.00440090225212
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 135.70440090225208
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 70.00440090225206
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": -2.0955990977479253
+        }
+      ]
+    },
+    "p4": {
+      "state": "chargeOff",
+      "pass": 3,
+      "dir": -1,
+      "lane": 333.99544292160215,
+      "x": 333.99544292160215,
+      "y": 239.53215653739161,
+      "pivot": 2.9216810987171593,
+      "bullets": 36,
+      "beeps": 32,
+      "rains": [
+        {
+          "pass": 1,
+          "x": 146.01025470124637,
+          "y": 395.5044009022523
+        },
+        {
+          "pass": 1,
+          "x": 146.00565500991385,
+          "y": 368.20440090225225
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 334.5044009022522
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 294.4044009022522
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 247.90440090225218
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 195.00440090225212
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 135.70440090225208
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 70.00440090225206
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": -2.0955990977479253
+        },
+        {
+          "pass": 3,
+          "x": 333.99944626252517,
+          "y": 395.504378759614
+        },
+        {
+          "pass": 3,
+          "x": 333.9964579788521,
+          "y": 373.1988232040584
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 346.44882320405833
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 315.25437875961387
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 279.61548987072496
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 239.53215653739161
+        }
+      ]
+    },
+    "final": {
+      "state": "reentry",
+      "beeps": 32,
+      "rains": [
+        {
+          "pass": 1,
+          "x": 146.01025470124637,
+          "y": 395.5044009022523
+        },
+        {
+          "pass": 1,
+          "x": 146.00565500991385,
+          "y": 368.20440090225225
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 334.5044009022522
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 294.4044009022522
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 247.90440090225218
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 195.00440090225212
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 135.70440090225208
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": 70.00440090225206
+        },
+        {
+          "pass": 1,
+          "x": 146.0045570783979,
+          "y": -2.0955990977479253
+        },
+        {
+          "pass": 3,
+          "x": 333.99944626252517,
+          "y": 395.504378759614
+        },
+        {
+          "pass": 3,
+          "x": 333.9964579788521,
+          "y": 373.1988232040584
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 346.44882320405833
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 315.25437875961387
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 279.61548987072496
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 239.53215653739161
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 195.0043787596138
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 146.03215653739153
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 92.61548987072484
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": 34.75437875961373
+        },
+        {
+          "pass": 3,
+          "x": 333.99544292160215,
+          "y": -27.551176795941796
+        }
+      ],
+      "used": true
+    }
+  },
+  "shots": [
+    "_shots\\overlord_four_pass_frenzy_0915\\overlord_pass_1_warning_top.png",
+    "_shots\\overlord_four_pass_frenzy_0915\\overlord_pass_1_down.png",
+    "_shots\\overlord_four_pass_frenzy_0915\\overlord_pass_2_warning_bottom.png",
+    "_shots\\overlord_four_pass_frenzy_0915\\overlord_pass_2_up_bullet_rain.png",
+    "_shots\\overlord_four_pass_frenzy_0915\\overlord_pass_3_down.png",
+    "_shots\\overlord_four_pass_frenzy_0915\\overlord_pass_4_up_bullet_rain.png"
+  ]
+}

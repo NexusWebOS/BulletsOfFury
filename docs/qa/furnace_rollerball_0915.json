@@ -1,0 +1,147 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-2 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Furnace core and shared warning plates decode before the attack"
+    },
+    {
+      "pass": true,
+      "label": "the lane telegraph is visible before contact becomes dangerous"
+    },
+    {
+      "pass": true,
+      "label": "the rollerball commits to the sampled player lane"
+    },
+    {
+      "pass": true,
+      "label": "captured slow, fast and super-fast crossings from the live sequence"
+    },
+    {
+      "pass": true,
+      "label": "horizontal travel speed more than doubles across the sequence"
+    },
+    {
+      "pass": true,
+      "label": "rotation visibly accelerates with travel"
+    },
+    {
+      "pass": true,
+      "label": "the authored whole boss crosses nearly the full playfield"
+    },
+    {
+      "pass": true,
+      "label": "the bounded set piece restores the normal core rotation"
+    },
+    {
+      "pass": true,
+      "label": "furnace_rollerball_warning is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "furnace_rollerball_slow is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "furnace_rollerball_fast is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "furnace_rollerball_superfast is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "FURNACE TYRANT",
+      "kind": "infernoreaver",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "warning": {
+      "attack": "rollerball",
+      "t": 0.9166666666666679,
+      "leg": -1,
+      "live": false,
+      "x": 170.74777184006726,
+      "y": 225.44102304773156,
+      "a": 2.001123634465852,
+      "tells": 1,
+      "locked": 378
+    },
+    "slow": {
+      "attack": "rollerball",
+      "t": 2.0499999999999976,
+      "leg": 0,
+      "live": true,
+      "x": 328.19764358363125,
+      "y": 378,
+      "a": 8.483943034328913,
+      "tells": 0,
+      "locked": 378
+    },
+    "fast": {
+      "attack": "rollerball",
+      "t": 4.099999999999991,
+      "leg": 2,
+      "live": true,
+      "x": 349.1480937499912,
+      "y": 378,
+      "a": 36.67607548677199,
+      "tells": 0,
+      "locked": 378
+    },
+    "superfast": {
+      "attack": "rollerball",
+      "t": 5.899999999999984,
+      "leg": 5,
+      "live": true,
+      "x": 290.4002629602064,
+      "y": 378,
+      "a": 74.88990951485053,
+      "tells": 0,
+      "locked": 378
+    },
+    "final": {
+      "attack": "rotor",
+      "a": 0,
+      "stats": {
+        "min": 96,
+        "max": 584,
+        "peak": [
+          590.2486395965957,
+          731.9240888888896,
+          914.8517361111044,
+          1143.460422092005,
+          1407.1524300814212,
+          1661.9813840888196
+        ],
+        "spin": [
+          12.115226620004833,
+          16.306540383902828,
+          19.356338116343323,
+          21.644765714665795,
+          23.50463049170031,
+          24.97758266241533
+        ],
+        "lastX": 340,
+        "lastA": 0,
+        "locked": 378
+      }
+    }
+  },
+  "shots": [
+    "_shots\\furnace_rollerball_0915\\furnace_rollerball_warning.png",
+    "_shots\\furnace_rollerball_0915\\furnace_rollerball_slow.png",
+    "_shots\\furnace_rollerball_0915\\furnace_rollerball_fast.png",
+    "_shots\\furnace_rollerball_0915\\furnace_rollerball_superfast.png"
+  ]
+}

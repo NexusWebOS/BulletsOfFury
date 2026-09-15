@@ -1,0 +1,15 @@
+const fs=require('fs'),path=require('path');
+const root=path.resolve(__dirname,'..'),gamePath=path.join(root,'assets','game.js');
+let game=fs.readFileSync(gamePath,'utf8');
+if(game.includes('\r\n'))throw new Error('assets/game.js must remain LF');
+const from="crop:[0,78,2170,515]",to="crop:[0,80,2125,555]";
+const count=game.split(from).length-1;
+if(count!==2)throw new Error('expected two old crops, got '+count);
+game=game.split(from).join(to);
+fs.writeFileSync(gamePath,game,'utf8');
+const testPath=path.join(root,'_BUILD_SOURCE','test_locked_modes_0915.cjs');
+let test=fs.readFileSync(testPath,'utf8');
+const oldTest="x.crop.join(',')==='0,78,2170,515'",newTest="x.crop.join(',')==='0,80,2125,555'";
+if(test.split(oldTest).length!==2)throw new Error('test crop guard failed');
+test=test.replace(oldTest,newTest);fs.writeFileSync(testPath,test,'utf8');
+console.log('refined generated mode source crop to measured plate bounds');

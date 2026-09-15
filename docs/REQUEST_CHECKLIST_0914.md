@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-15. **148 entries: 79 complete / 8 partial / 61 pending.**
+Updated 2026-09-15. **149 entries: 114 complete / 9 partial / 26 pending.**
 
-**69 remain unfinished.** 13 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**35 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Stage 4 cinematic defeat and regenerated highway; playable SpriteCook Stage 5 transformer on Easy/Normal. Stage 2 identity answer still required; full difficulty balancing remains SPACE-06. [Proof](BOSS_BATCH_0915.md).
+Just verified: Completed difficulty-only Olive Warden escorts: two on Hard, three on Furious, with authored olive hulls, shield-first pools, mounted machine bursts and player-like missile protectors. [Proof](OLIVE_WARDEN_ESCORTS_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -23,16 +23,16 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Area | Complete | Partial | Pending | Total |
 | --- | ---: | ---: | ---: | ---: |
 | Earlier handoff, weapons and Tempest | 9 | 1 | 0 | 10 |
-| Shared combat, warnings and targeting | 7 | 3 | 5 | 15 |
-| Stage 1: fodder, Razorback and jungle chopper | 6 | 0 | 6 | 12 |
-| Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 4 | 1 | 6 | 11 |
-| Stage 3: ice enemies, miniboss and Rime Wall | 7 | 0 | 7 | 14 |
-| Stage 4: Olive Warden and Sovereign | 7 | 0 | 11 | 18 |
-| Stages 5-9: space and encounter cleanup | 16 | 2 | 4 | 22 |
-| Manual missile tiers and supplies | 4 | 0 | 5 | 9 |
+| Shared combat, warnings and targeting | 12 | 2 | 1 | 15 |
+| Stage 1: fodder, Razorback and jungle chopper | 10 | 0 | 2 | 12 |
+| Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
+| Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
+| Stage 4: Olive Warden and Sovereign | 9 | 0 | 9 | 18 |
+| Stages 5-9: space and encounter cleanup | 17 | 2 | 4 | 23 |
+| Manual missile tiers and supplies | 6 | 2 | 1 | 9 |
 | Pause, saving, title and pilot selection | 15 | 0 | 0 | 15 |
-| Achievements, timers and unlockable modes | 1 | 0 | 13 | 14 |
-| Arcade and shared difficulty rewards | 3 | 1 | 4 | 8 |
+| Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
+| Arcade and shared difficulty rewards | 6 | 0 | 2 | 8 |
 
 ## Checklist
 
@@ -52,18 +52,18 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 ### Shared combat, warnings and targeting
 
 - [x] **ENG-01 · Complete** — Shared laser-family warning: three-second green/yellow/red FOV charge with overhead alert. [Evidence](qa/shared_laser_warnings_0914.json).
-- [ ] **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule; laser families are covered. [Evidence](READABLE_ATTACKS_0914.md).
+- [ ] **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Chrome Hammer, Xeno Regent, Furnace eyes and rollerball, Stage-3 central pulse and Jungle Overlord-X charge are covered; remaining encounter families need review. [Evidence](SHARED_NONLASER_WARNING_0915.md).
 - [x] **ENG-03 · Complete** — Shared bounded horizontal glide/follow integrated and verified in Frost Cruiser and Jungle chopper; later Warden choreography remains S4-06. [Evidence](MOVEMENT_BATCH_0914.md).
 - [x] **ENG-04 · Complete** — Player flamethrower: 25% smaller draw and collision footprint, Fire Orb palette, nozzle remains connected. [Evidence](READABLE_ATTACKS_0914.md).
-- [ ] **ENG-05 · Pending** — No default enemy dies to a single hit: consistent damage accounting across ordinary enemies, pieces, shields and high-damage weapons.
-- [ ] **ENG-06 · Partial** — Tap Retina targets known live boss parts, nodes and helpers, excluding protected hulls; complete the remaining encounter/weapon-router audit. [Evidence](RETINA_TARGETS_0914.md).
+- [x] **ENG-05 · Complete** — No default enemy dies to a single hit: consistent damage accounting across ordinary enemies, pieces, shields and high-damage weapons. [Evidence](NO_ONE_SHOT_RULE_0915.md).
+- [x] **ENG-06 · Complete** — Tap Retina targets all authored live boss/miniboss parts, nodes and helpers while excluding protected, sealed, transitional and destroyed hull regions; missiles route through each encounter's existing part damage. [Evidence](RETINA_AUDIT_0915.md).
 - [x] **ENG-07 · Complete** — Stage-6 Retina: select electrical nodes and open bays while protected hull remains excluded; manual missiles damage the selected piece. [Evidence](RETINA_TARGETS_0914.md).
 - [x] **ENG-08 · Complete** — Retina Scan upgrade: hold Retina and tap direction to acquire up to four distinct visible targets. [Evidence](RETINA_SCAN_0914.md).
 - [x] **ENG-09 · Complete** — Multi-lock launch: manual missiles release sequentially at 50ms spacing, spending one ammo per actual launch. [Evidence](RETINA_SCAN_0914.md).
 - [x] **ENG-10 · Complete** — Multi-lock lifecycle: five-second firing window, flashing expiry, death cancellation and pause freeze. [Evidence](RETINA_SCAN_0914.md).
-- [ ] **ENG-11 · Pending** — Shared enemy shield break/stun: dizzy levitation/spin and bounded splash damage, reusing authored boss/helper effects.
-- [ ] **ENG-12 · Pending** — Shared elemental absorption: fire absorbs 50% fire damage and ice absorbs ice, with matching absorbed-damage popup text.
-- [ ] **ENG-13 · Pending** — Shared elemental weakness: fire deals 2x to ice and ice 2x to fire across relevant enemy, boss, helper and shield routes.
+- [x] **ENG-11 · Complete** — Shared enemy shield break/stun: a 1.15-second dizzy lift/spin freezes movement and weapons, emits authored shield-impact effects and bounded splash, then hands one-way shields into existing frenzy. [Evidence](ENEMY_SHIELD_STUN_0915.md).
+- [x] **ENG-12 · Complete** — Shared elemental absorption: fire-aligned enemies retain 50% fire damage and ice-aligned enemies retain 50% ice damage, with throttled matching popup text at enemy, miniboss and boss boundaries. [Evidence](ELEMENTAL_ABSORPTION_0915.md).
+- [x] **ENG-13 · Complete** — Shared elemental weakness: fire deals 2x to ice and ice 2x to fire across enemy, miniboss, boss, component/helper and shield damage routes; Freezer's authored x2 attacks do not stack to x4. [Evidence](ELEMENTAL_WEAKNESS_0915.md).
 - [ ] **ENG-14 · Partial** — All pilots retain barrel roll and somersault access; existing ground/space support is present, but full nine-pilot regression and the replacement ship frames remain. [Evidence](proofs/spaceship_0913a/report.json).
 - [ ] **ENG-15 · Pending** — HUD incoming-lock indicator above Equipped: gray idle, red flashing and distance-accelerated beeps until evasion or hit. Dependency: SpriteCook.
 
@@ -77,20 +77,20 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [ ] **S1-06 · Pending** — Furious Razorback: 50% larger, Furious palette, hyper tank behavior and Furious sonic waves.
 - [x] **S1-07 · Complete** — Jungle chopper pursuit and orbit transitions stabilized while retaining its attack patterns. [Evidence](MOVEMENT_BATCH_0914.md).
 - [x] **S1-08 · Complete** — Chopper rotor bed exists; obtain and tune the requested proper helicopter/propeller sound through the available sound engine or ElevenLabs. [Evidence](ROTOR_AUDIO_0914.md).
-- [ ] **S1-09 · Pending** — Dam entrance: fly up from below above the player, whole-frame shadow, quick whip spin into position.
-- [ ] **S1-10 · Pending** — Chopper introduction: boss bar fades in, fills left-to-right with repeated existing chimes; fight/music start after filling.
-- [ ] **S1-11 · Pending** — Below 50%: frenzy plus four alternating down/up passes across distinct lanes; passes two and four rain bullets.
-- [ ] **S1-12 · Pending** — Chopper pass warning: eight synchronized red flashes/beeps, then committed fast but reactable charge with a shooting window.
+- [x] **S1-09 · Complete** — Dam entrance: fly up from below above the player, whole-frame shadow, quick whip spin into position. [Evidence](OVERLORD_FLYOVER_INTRO_0915.md).
+- [x] **S1-10 · Complete** — Chopper introduction: boss bar fades in, fills left-to-right with repeated existing chimes; fight/music start after filling. [Evidence](OVERLORD_GAUGE_INTRO_0915.md).
+- [x] **S1-11 · Complete** — Below 50%: frenzy plus four alternating down/up passes across distinct lanes; passes two and four rain bullets. [Evidence](OVERLORD_FOUR_PASS_FRENZY_0915.md).
+- [x] **S1-12 · Complete** — Chopper pass warning: eight synchronized red flashes/beeps, then committed fast but reactable charge with a shooting window. [Evidence](OVERLORD_EIGHT_BEAT_WARNING_0915.md).
 
 ### Stage 2: lava enemies, Magma Ward and Furnace Tyrant
 
 - [x] **S2-01 · Complete** — Enemy projectile strips: use reviewed stable flight poses with pixel animation instead of misaligned growth frames. [Evidence](PROJECTILE_PIXEL_GLOW_0914.md).
-- [ ] **S2-02 · Pending** — Lava/magma fodder: tougher hulls and weak breakable shields using the shared stun/break system.
+- [x] **S2-02 · Complete** — Lava/magma fodder: tougher hulls and weak breakable shields using the shared stun/break system. [Evidence](STAGE2_THERMAL_FODDER_0915.md).
 - [x] **S2-03 · Complete** — Furnace head lasers: commit aim before release and provide a predictable dodge window. [Evidence](READABLE_ATTACKS_0914.md).
 - [x] **S2-04 · Complete** — Furnace flamethrower: 25% wider visual and collision footprint. [Evidence](READABLE_ATTACKS_0914.md).
 - [x] **S2-05 · Complete** — Furnace flame shield: use the actual authored flame shield from the first frame through every phase. [Evidence](ENCOUNTER_VISUAL_0914.md).
-- [ ] **S2-06 · Pending** — Furnace rollerball: slow-to-medium-to-fast-to-super-fast spin and accelerating horizontal travel, dodgeable by roll/somersault.
-- [ ] **S2-07 · Pending** — Hard miniboss and boss: additional 25% HP and 50% fire absorption using the shared elemental rules.
+- [x] **S2-06 · Complete** — Furnace rollerball: slow-to-medium-to-fast-to-super-fast spin and accelerating horizontal travel, dodgeable by roll/somersault. [Evidence](FURNACE_ROLLERBALL_0915.md).
+- [x] **S2-07 · Complete** — Hard miniboss and boss: additional 25% HP and 50% fire absorption using the shared elemental rules. [Evidence](STAGE2_HARD_ENCOUNTERS_0915.md).
 - [ ] **S2-08 · Partial** — Missile-sequence head fight is recorded as a design note; distinct Super Missile Box and encounter sequence remain to be built. [Evidence](OVERNIGHT_REQUESTS_0914.md).
 - [ ] **S2-09 · Pending** — Generate improved authored Furnace giant-beam graphics that also support the Stage-3 Furious palette variant. Dependency: SpriteCook.
 - [ ] **S2-10 · Pending** — Accelerating screaming head frames and shrieks/shake; two fire-ring X cycles; final white flash, absent boss and residual explosions. Dependency: Mike: Stage 2 boss identity. [Evidence](BOSS_BATCH_0915.md).
@@ -103,14 +103,14 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S3-03 · Complete** — Rime Wall: beams originate only at the visible side cannon exits; middle uses a warned finite charge/pulse, not another full beam. [Evidence](READABLE_ATTACKS_0914.md).
 - [x] **S3-04 · Complete** — Rime Wall beam palette: strong dark-blue rim, restrained light core readable over ice. [Evidence](qa/shared_laser_warnings_0914.json).
 - [x] **S3-05 · Complete** — Frost Cruiser tracks sampled player X, returns from above on a committed vertical lane and follows horizontally until laser commitment. [Evidence](MOVEMENT_BATCH_0914.md).
-- [ ] **S3-06 · Pending** — Miniboss laser: darken screen, crackling lightning charge and laser sounds; widen 25%, sweep across the viewport with the intended diagonal escape route.
+- [x] **S3-06 · Complete** — Miniboss laser: darken screen, crackling lightning charge and laser sounds; widen 25%, sweep across the viewport with the intended diagonal escape route. [Evidence](FROST_CRUISER_SWEEP_0915.md).
 - [x] **S3-07 · Complete** — Hard/Furious miniboss: black/royal-dark-blue palette and 35% larger hull. [Evidence](FROST_CRUISER_VARIANT_0914.md).
-- [ ] **S3-08 · Pending** — Hard/Furious miniboss: player Retina lock, charged shootable spiral rocket volley alternating left/right.
-- [ ] **S3-09 · Pending** — Furious miniboss: combine rockets with a late committed charge into the player.
+- [x] **S3-08 · Complete** — Hard/Furious miniboss: player Retina lock, charged shootable spiral rocket volley alternating left/right. [Evidence](FROST_CRUISER_SPIRAL_VOLLEY_0915.md).
+- [x] **S3-09 · Complete** — Furious miniboss: combine rockets with a late committed charge into the player. [Evidence](FROST_CRUISER_FURIOUS_CHARGE_0915.md).
 - [ ] **S3-10 · Pending** — Hard boss: Juggernaut-like dash with authored charge effects, fluid circular return and persistent hull-shaped shadow. Dependency: SpriteCook.
-- [ ] **S3-11 · Pending** — Hard boss below 50%: double laser firing and shootable homing laser balls; evade by leaving the screen or breaking lock with roll/somersault.
+- [x] **S3-11 · Complete** — Hard boss below 50%: double laser firing and shootable homing laser balls; evade by leaving the screen or breaking lock with roll/somersault. [Evidence](RIME_WALL_HARD_LASER_BALLS_0915.md).
 - [ ] **S3-12 · Pending** — Furious boss: black/blue palette and all Hard patterns, plus giant beam derived from the improved Furnace art. Dependency: SpriteCook.
-- [ ] **S3-13 · Pending** — Furious cannon feints: faster Simon-Says sequencing, yellow/red/yellow/red/red-flash then fire; no green and no overhead asterisk only on Furious.
+- [x] **S3-13 · Complete** — Furious cannon feints: faster Simon-Says sequencing, yellow/red/yellow/red/red-flash then fire; no green and no overhead asterisk only on Furious. [Evidence](RIME_WALL_FURIOUS_SIMON_0915.md).
 - [x] **S3-14 · Complete** — Frost Cruiser: missiles stay on wing turrets; nose shoots broad, tall Falva-style black/blue laser bolts with stable art and animated pixel glow. [Evidence](FROST_NOSE_LASER_0914.md).
 
 ### Stage 4: Olive Warden and Sovereign
@@ -120,8 +120,8 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S4-03 · Complete** — Sovereign helpers: stay outside the shield above each generator column. [Evidence](STAGE_1_5_CORRECTIONS_0914.md).
 - [x] **S4-04 · Complete** — Wide piercing laser: hit/destroy both generator nodes in its column on the same tick and reach live helpers. [Evidence](STAGE_1_5_CORRECTIONS_0914.md).
 - [x] **S4-05 · Complete** — Unpowered Sovereign: warned charge, fully offscreen exit, overhead hull/shadow pass and opposite-edge return. [Evidence](STAGE_1_5_CORRECTIONS_0914.md).
-- [ ] **S4-06 · Pending** — Hard Warden: rapid turret spreads/center flurries plus circular/glide/charge/shake ramming sequence.
-- [ ] **S4-07 · Pending** — Warden helpers: two on Hard, three on Furious; matching palettes, shielded stationary MG fighter and aggressive player-like missile protector.
+- [x] **S4-06 · Complete** — Hard Warden: rapid turret spreads/center flurries plus circular/glide/charge/shake ramming sequence. [Evidence](OLIVE_WARDEN_HARD_ASSAULT_0915.md).
+- [x] **S4-07 · Complete** — Warden helpers: two on Hard, three on Furious; matching palettes, shielded stationary MG fighter and aggressive player-like missile protector. [Evidence](OLIVE_WARDEN_ESCORTS_0915.md).
 - [ ] **S4-08 · Pending** — Furious third helper: elite black camo, opaque black/white Maverick-style ball with glowing blue charge growth. Dependency: SpriteCook.
 - [ ] **S4-09 · Pending** — Dark Chromium attack: fade darker, shatter/disintegrate the ball into dual rotating energy flames with appropriate sounds. Dependency: SpriteCook.
 - [ ] **S4-10 · Pending** — Dark Chromium lethal hit: explicitly requested ship-disintegration death and sound; preserve ordinary burn/spin/crash deaths elsewhere. Dependency: SpriteCook.
@@ -158,16 +158,17 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **SPACE-20 · Complete** — Easy/Normal Stage 5 replacement: harmless bottom flyby, top return and unfold; retain Xenoregent without assigning it to Stage 6/9. [Evidence](BOSS_BATCH_0915.md).
 - [x] **SPACE-21 · Complete** — 15-second bouncing spiked ball; ordinary fire enrages into faster laser volleys, manual missiles knock back; x10/x20 supplies only. [Evidence](BOSS_BATCH_0915.md).
 - [x] **SPACE-22 · Complete** — Hammer leap attacks with generated green/yellow/red committed target reticles, upward charge scan, return leap or follow-up strike. [Evidence](BOSS_BATCH_0915.md).
+- [x] **SPACE-23 · Complete** — Chrome Hammer one-hand boomerang: rapidly spin and charge the hammer, throw it vertically down a committed player lane, then visibly retract it to the raised hand at medium magnetic speed with sounds. [Evidence](CHROME_HAMMER_BOOMERANG_0915.md).
 
 ### Manual missile tiers and supplies
 
 - [x] **MSL-01 · Complete** — Missile crates spawn during live boss/miniboss fights, with a shared live-box limit. [Evidence](MISSILE_SUPPLIES_0914.md).
 - [x] **MSL-02 · Complete** — Remove x2 grants: stages 1-7 use x5/x10/x20; stage 8 uses x50/x100. Stage 9 retains existing quantities because none were specified. [Evidence](MISSILE_SUPPLIES_0914.md).
 - [x] **MSL-03 · Complete** — Ordinary enemy RNG drops one/two spinning authored missiles, scattering pairs; no loose drops from bosses/minibosses. [Evidence](MISSILE_SUPPLIES_0914.md).
-- [ ] **MSL-04 · Pending** — Manual tier damage/size progression: Standard -> Super x1.25 -> Ultra x1.5625 -> Uber x1.953125; keep passive missiles separate.
-- [ ] **MSL-05 · Pending** — Hard ammo caps: Super 50, Ultra 35, Uber 20 across every pickup, save/load and firing route.
-- [ ] **MSL-06 · Pending** — Tier acquisition replaces current manual missile; death resets to Standard.
-- [ ] **MSL-07 · Pending** — Ultra eligibility requires Super plus survival until the next spawn wave; Uber requires the same after Ultra.
+- [x] **MSL-04 · Complete** — Manual tier damage/size progression: Standard -> Super x1.25 -> Ultra x1.5625 -> Uber x1.953125; keep passive missiles separate. [Evidence](MANUAL_MISSILE_TIERS_0915.md).
+- [x] **MSL-05 · Complete** — Hard ammo caps: Super 50, Ultra 35, Uber 20 across every pickup, save/load and firing route. [Evidence](MANUAL_MISSILE_TIERS_0915.md).
+- [ ] **MSL-06 · Partial** — Engine acquisition and death reset are implemented. Remaining: spawn and collect the authored Super/Ultra/Uber upgrade boxes in ordinary play. [Evidence](MISSILE_UPGRADE_LIFECYCLE_0915.md).
+- [ ] **MSL-07 · Partial** — Per-player next-wave Ultra/Uber eligibility, persistence and co-op state are implemented. Remaining: connect the gate to authored upgrade-box spawning. [Evidence](MISSILE_UPGRADE_LIFECYCLE_0915.md).
 - [ ] **MSL-08 · Pending** — Generate matching Super/Ultra/Uber upgrade icons and ammo boxes, including the distinct Super Missile Box. Dependency: SpriteCook.
 - [x] **MSL-09 · Complete** — Hard/Furious missile supply frequency +25% across boss clocks, loose/legacy ammo drops and scheduled/scripted crates; queued extras avoid overlap and recursive bonuses. [Evidence](SUPPLY_AUDIT_0914.md).
 
@@ -191,28 +192,28 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 
 ### Achievements, timers and unlockable modes
 
-- [ ] **ACH-01 · Pending** — Persistent once-per-profile/account achievement registry, points and future Steam mapping.
+- [x] **ACH-01 · Complete** — Persistent once-per-profile/account achievement registry, points and future Steam mapping. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
 - [ ] **ACH-02 · Pending** — Achievement menu/button and bottom-center unlock notification that slides/fades downward. Dependency: SpriteCook.
-- [ ] **ACH-03 · Pending** — Nine Campaign Clear - <Pilot> achievements for Campaign or Arcade completion, 100 points each.
-- [ ] **ACH-04 · Pending** — Each stage cleared on Normal or above: 10 points.
-- [ ] **ACH-05 · Pending** — Each stage on Normal or above without losing a life: 200 points.
-- [ ] **ACH-06 · Pending** — Entire game without spending a continue: 1000 points plus a generated trophy avatar. Dependency: SpriteCook.
-- [ ] **ACH-07 · Pending** — Each stage without firing a manual missile: 100 points, unlock once per profile.
-- [ ] **ACH-08 · Pending** — Each weapon maxed to level 5: its own 20-point achievement.
+- [x] **ACH-03 · Complete** — Nine Campaign Clear - <Pilot> achievements for Campaign or Arcade completion, 100 points each. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
+- [x] **ACH-04 · Complete** — Each stage cleared on Normal or above: 10 points. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
+- [x] **ACH-05 · Complete** — Each stage on Normal or above without losing a life: 200 points. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
+- [ ] **ACH-06 · Partial** — Entire game without spending a continue: 1000 points plus a generated trophy avatar. Award trigger is complete; SpriteCook trophy avatar remains. Dependency: SpriteCook. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
+- [x] **ACH-07 · Complete** — Each stage without firing a manual missile: 100 points, unlock once per profile. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
+- [x] **ACH-08 · Complete** — Each weapon maxed to level 5: its own 20-point achievement. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
 - [x] **ACH-09 · Complete** — Upper-right 00:00 boss/miniboss timer with pause, entrance, respawn and defeat lifecycle. [Evidence](BOSS_TIMER_0914.md).
-- [ ] **ACH-10 · Pending** — Stage-1 boss/miniboss speed awards: under two minutes 200 points; under one minute 500. Stacking policy not yet settled.
-- [ ] **ACH-11 · Pending** — Hard boss victories: individual 200-point achievements; Furious victories: 500 points each.
-- [ ] **ACH-12 · Pending** — New-game menu order: Campaign, Arcade, Co-op, Boss Rush, Time Attack, with missing mode buttons generated. Dependency: SpriteCook.
-- [ ] **ACH-13 · Pending** — Boss Rush/Time Attack gray chain-and-lock presentation using Nexus II art, denial sound on selection, unlock only on final campaign clear.
+- [x] **ACH-10 · Complete** — Stage-1 boss/miniboss speed awards: under two minutes 200 points; under one minute 500. Stacking policy not yet settled. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
+- [x] **ACH-11 · Complete** — Hard boss victories: individual 200-point achievements; Furious victories: 500 points each. [Evidence](ACHIEVEMENT_REGISTRY_0915.md).
+- [x] **ACH-12 · Complete** — New-game menu order: Campaign, Arcade, Co-op, Boss Rush, Time Attack, with missing mode buttons generated. [Evidence](LOCKED_MODES_0915.md).
+- [x] **ACH-13 · Complete** — Boss Rush/Time Attack gray chain-and-lock presentation using Nexus II art, denial sound on selection, unlock only on final campaign clear. [Evidence](LOCKED_MODES_0915.md).
 - [ ] **ACH-14 · Pending** — Wire playable Boss Rush and Time Attack behind their real unlock condition; do not fake a final campaign clear.
 
 ### Arcade and shared difficulty rewards
 
-- [ ] **MODE-01 · Partial** — Arcade mirrors the same encounters without campaign map/cutscenes; core start flow exists and Stage-9 credit fallback is now excluded, but all transition routes still need a parity audit. [Evidence](ARCADE_RULES_0914.md).
+- [x] **MODE-01 · Complete** — Arcade preserves the authored Campaign encounter roster through all nine stages while skipping Campaign story/map routes; Stage 7 payouts, Stage 5 dialogue omission, campaign isolation, conditional boss transitions and solo/co-op results are verified. Co-op increases pressure only from existing encounter families. [Evidence](ARCADE_NATURAL_PARITY_0915.md).
 - [x] **MODE-02 · Complete** — Arcade lives Easy/Normal/Hard/Furious = 7/5/3/3; continues = 7/5/3/1. Continue restores the same stock and the bank is run-wide, including Stage 9. [Evidence](ARCADE_RULES_0914.md).
 - [x] **MODE-03 · Complete** — Difficulty descriptions show actual mode-specific lives/credits, continue prompt shows remaining Arcade credits; campaign loads restore campaign tuning. [Evidence](ARCADE_RULES_0914.md).
-- [ ] **MODE-04 · Pending** — Hard enemies and shields get +15% HP across Campaign and Arcade, with explicit encounter-specific modifiers applied consistently.
-- [ ] **MODE-05 · Pending** — Hard/Furious elite duplicates: authored palette variations, shields and capable aggressive fighter behavior; Furious more demanding.
+- [x] **MODE-04 · Complete** — Hard enemies and shields get +15% HP across Campaign and Arcade, with explicit encounter-specific modifiers applied consistently. [Evidence](HARD_ENEMY_HP_0915.md).
+- [x] **MODE-05 · Complete** — Hard/Furious elite duplicates: authored palette variations, shields and capable aggressive fighter behavior; Furious more demanding. [Evidence](DIFFICULTY_ELITE_ACES_0915.md).
 - [x] **MODE-06 · Complete** — Hard/Furious Life Up frequency increased by 25%. [Evidence](EASY_QUEUE_0914.md).
 - [ ] **MODE-07 · Pending** — Continue Up reward in all modes for qualifying deathless sections, or Hard/Furious elite kills; enforce defined reward eligibility.
 - [ ] **MODE-08 · Pending** — Regenerate Life Up and create Continue Up pickup art matching Bullets of Fury through SpriteCook. Dependency: SpriteCook.

@@ -1,0 +1,17 @@
+const fs=require('fs');
+const path=require('path');
+const root=path.resolve(__dirname,'..');
+const game=path.join(root,'assets','game.js');
+let s=fs.readFileSync(game,'utf8');
+if(s.includes('\r'))throw new Error('assets/game.js must remain LF-only');
+const backup=path.join(root,'_shots','backups','game_pre_difficulty_elite_warm_0915.js');
+fs.mkdirSync(path.dirname(backup),{recursive:true});
+if(!fs.existsSync(backup))fs.writeFileSync(backup,s,'utf8');
+const oldText="if(typeof XART!=='undefined'){try{XART.rdy('xelite_'+kind);if(XART._touch)XART._touch('xelite_'+kind);}catch(_eliteWarm){}}";
+const newText="if(typeof XART!=='undefined'){try{for(const k of ['xelite_'+kind+'_idle','xelite_'+kind]){XART.rdy(k);if(XART._touch)XART._touch(k);}}catch(_eliteWarm){}}";
+const n=s.split(oldText).length-1;
+if(n!==1)throw new Error('elite warm route expected once, found '+n);
+s=s.replace(oldText,newText);
+if(s.includes('\r'))throw new Error('patch introduced CR characters');
+fs.writeFileSync(game,s,'utf8');
+console.log('FIXED_DIFFICULTY_ELITE_WARM_0915');

@@ -5,6 +5,11 @@
     "sheet": "boot",
     "note": "the boot graphic without its text"
   },
+  "hammer_boomerang_": {
+    "role": "boss",
+    "sheet": null,
+    "note": "Stage 5 Chrome Hammer detachable one-hand boomerang components; visually inspected at source and native gameplay scale 0915"
+  },
   "mfx_": {
     "role": "KEEP",
     "sheet": null,

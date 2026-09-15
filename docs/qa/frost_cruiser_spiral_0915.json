@@ -1,0 +1,355 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-3 miniboss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Frost hull, lightning and Retina plates decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "Hard cruiser visibly charges both pods under one player Retina"
+    },
+    {
+      "pass": true,
+      "label": "first charged rocket releases from the left pod as the Retina locks"
+    },
+    {
+      "pass": true,
+      "label": "six-round volley alternates physical left and right launch pods"
+    },
+    {
+      "pass": true,
+      "label": "all live rockets visibly spiral, remain shootable and share one lock"
+    },
+    {
+      "pass": true,
+      "label": "each independent rocket release owns one missile sound beat"
+    },
+    {
+      "pass": true,
+      "label": "a real player machine round destroys one incoming spiral rocket"
+    },
+    {
+      "pass": true,
+      "label": "Normal retains its established missile phase with no added Retina"
+    },
+    {
+      "pass": true,
+      "label": "frost_spiral_charge is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_spiral_first_release is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_spiral_full_volley is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_spiral_intercept is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "FROST CRUISER",
+      "kind": "frostcruiser",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "charge": {
+      "state": "frostRocketCharge",
+      "t": 0.8000000000000008,
+      "charge": 0.5925925925925931,
+      "locks": [
+        {
+          "id": 1,
+          "state": "arming",
+          "t": 0.8,
+          "launches": 6,
+          "fired": 0,
+          "missiles": 0
+        }
+      ],
+      "born": [],
+      "atlas": 2,
+      "sounds": 0,
+      "live": []
+    },
+    "first": {
+      "state": "frostRocketCharge",
+      "t": 1.4499999999999997,
+      "charge": 1,
+      "locks": [
+        {
+          "id": 1,
+          "state": "locked",
+          "t": 1.45,
+          "launches": 6,
+          "fired": 1,
+          "missiles": 1
+        }
+      ],
+      "born": [
+        {
+          "slot": "L",
+          "i": 0,
+          "lock": null,
+          "swirl": true
+        }
+      ],
+      "atlas": 4,
+      "sounds": 1,
+      "live": [
+        {
+          "x": 158.9492707107055,
+          "y": 222.99255063250416,
+          "slot": "L",
+          "i": 0,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        }
+      ]
+    },
+    "volley": {
+      "state": "frostRocketCharge",
+      "t": 2.2999999999999967,
+      "charge": 1,
+      "locks": [
+        {
+          "id": 1,
+          "state": "locked",
+          "t": 2.3,
+          "launches": 6,
+          "fired": 6,
+          "missiles": 6
+        }
+      ],
+      "born": [
+        {
+          "slot": "L",
+          "i": 0,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "R",
+          "i": 1,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "L",
+          "i": 2,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "R",
+          "i": 3,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "L",
+          "i": 4,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "R",
+          "i": 5,
+          "lock": null,
+          "swirl": true
+        }
+      ],
+      "atlas": 6,
+      "sounds": 6,
+      "live": [
+        {
+          "x": 148.41707496581893,
+          "y": 480.8716723297214,
+          "slot": "L",
+          "i": 0,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        },
+        {
+          "x": 170.93644228505497,
+          "y": 404.50941693778867,
+          "slot": "R",
+          "i": 1,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        },
+        {
+          "x": 136.7629630308599,
+          "y": 355.68137721784785,
+          "slot": "L",
+          "i": 2,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        },
+        {
+          "x": 207.07082528520758,
+          "y": 295.1946140548885,
+          "slot": "R",
+          "i": 3,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        },
+        {
+          "x": 145.5770210512048,
+          "y": 251.62257225957785,
+          "slot": "L",
+          "i": 4,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        },
+        {
+          "x": 239.64271531929222,
+          "y": 207.36966012071855,
+          "slot": "R",
+          "i": 5,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        }
+      ]
+    },
+    "intercept": {
+      "had": true,
+      "before": 6,
+      "after": 5,
+      "targetDead": true
+    },
+    "after": {
+      "state": "frostRocketCharge",
+      "t": 2.3166666666666633,
+      "charge": 1,
+      "locks": [
+        {
+          "id": 1,
+          "state": "locked",
+          "t": 2.317,
+          "launches": 6,
+          "fired": 6,
+          "missiles": 6
+        }
+      ],
+      "born": [
+        {
+          "slot": "L",
+          "i": 0,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "R",
+          "i": 1,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "L",
+          "i": 2,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "R",
+          "i": 3,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "L",
+          "i": 4,
+          "lock": null,
+          "swirl": true
+        },
+        {
+          "slot": "R",
+          "i": 5,
+          "lock": null,
+          "swirl": true
+        }
+      ],
+      "atlas": 8,
+      "sounds": 6,
+      "live": [
+        {
+          "x": 169.88392750311274,
+          "y": 410.25550869794074,
+          "slot": "R",
+          "i": 1,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        },
+        {
+          "x": 138.0168729388931,
+          "y": 360.968738859114,
+          "slot": "L",
+          "i": 2,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        },
+        {
+          "x": 206.8597989708802,
+          "y": 300.19556162270294,
+          "slot": "R",
+          "i": 3,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        },
+        {
+          "x": 146.79956467442886,
+          "y": 255.9887324350974,
+          "slot": "L",
+          "i": 4,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        },
+        {
+          "x": 239.5031911267734,
+          "y": 211.3862046517253,
+          "slot": "R",
+          "i": 5,
+          "shootable": true,
+          "swirl": true,
+          "lock": 1
+        }
+      ]
+    },
+    "normal": {
+      "hard": false,
+      "state": "missiles",
+      "locks": 0
+    }
+  },
+  "shots": [
+    "_shots\\frost_cruiser_spiral_0915\\frost_spiral_charge.png",
+    "_shots\\frost_cruiser_spiral_0915\\frost_spiral_first_release.png",
+    "_shots\\frost_cruiser_spiral_0915\\frost_spiral_full_volley.png",
+    "_shots\\frost_cruiser_spiral_0915\\frost_spiral_intercept.png"
+  ]
+}

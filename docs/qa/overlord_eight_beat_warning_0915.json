@@ -1,0 +1,307 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-1 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "all authored FOV, alert and Overlord plates decode before the warning"
+    },
+    {
+      "pass": true,
+      "label": "the warning emits exactly eight ordered beats"
+    },
+    {
+      "pass": true,
+      "label": "all eight existing Retina beeps stay at a readable 0.20-second cadence"
+    },
+    {
+      "pass": true,
+      "label": "each sampled beep visibly forces the authored lane and alert red"
+    },
+    {
+      "pass": true,
+      "label": "the complete warning remains a shooting window"
+    },
+    {
+      "pass": true,
+      "label": "the player lane locks halfway through and cannot chase afterward"
+    },
+    {
+      "pass": true,
+      "label": "the eighth beat releases a committed vertical charge"
+    },
+    {
+      "pass": true,
+      "label": "overlord_warning_beep_1 is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_warning_beep_4 is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_warning_beep_6_locked is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_warning_beep_8_committed is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_warning_release is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "JUNGLE OVERLORD-X",
+      "kind": "damkeeper",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "b1": {
+      "state": "chargeTell",
+      "t": 0.016666666666666666,
+      "beat": 0,
+      "flash": 0.105,
+      "locked": false,
+      "lane": 240,
+      "x": 240,
+      "y": 112.0512,
+      "draw": [
+        {
+          "phase": "red",
+          "p": 0.999,
+          "field": true,
+          "alert": false
+        },
+        {
+          "phase": "red",
+          "p": 0.999,
+          "field": false,
+          "alert": true
+        }
+      ],
+      "beeps": [
+        {
+          "n": 0,
+          "t": 0.016666666666666666
+        }
+      ],
+      "vulnerable": true
+    },
+    "b4": {
+      "state": "chargeTell",
+      "t": 0.6000000000000002,
+      "beat": 3,
+      "flash": 0.105,
+      "locked": false,
+      "lane": 240,
+      "x": 240,
+      "y": 112.6081916048126,
+      "draw": [
+        {
+          "phase": "red",
+          "p": 0.999,
+          "field": true,
+          "alert": false
+        },
+        {
+          "phase": "red",
+          "p": 0.999,
+          "field": false,
+          "alert": true
+        }
+      ],
+      "beeps": [
+        {
+          "n": 0,
+          "t": 0.016666666666666666
+        },
+        {
+          "n": 1,
+          "t": 0.21666666666666665
+        },
+        {
+          "n": 2,
+          "t": 0.41666666666666663
+        },
+        {
+          "n": 3,
+          "t": 0.6000000000000002
+        }
+      ],
+      "vulnerable": true
+    },
+    "b6": {
+      "state": "chargeTell",
+      "t": 1.0000000000000013,
+      "beat": 5,
+      "flash": 0.105,
+      "locked": true,
+      "lane": 240,
+      "x": 240,
+      "y": 112.63570018654153,
+      "draw": [
+        {
+          "phase": "red",
+          "p": 0.999,
+          "field": true,
+          "alert": false
+        },
+        {
+          "phase": "red",
+          "p": 0.999,
+          "field": false,
+          "alert": true
+        }
+      ],
+      "beeps": [
+        {
+          "n": 0,
+          "t": 0.016666666666666666
+        },
+        {
+          "n": 1,
+          "t": 0.21666666666666665
+        },
+        {
+          "n": 2,
+          "t": 0.41666666666666663
+        },
+        {
+          "n": 3,
+          "t": 0.6000000000000002
+        },
+        {
+          "n": 4,
+          "t": 0.8000000000000008
+        },
+        {
+          "n": 5,
+          "t": 1.0000000000000013
+        }
+      ],
+      "vulnerable": true
+    },
+    "b8": {
+      "state": "chargeTell",
+      "t": 1.4166666666666665,
+      "beat": 7,
+      "flash": 0.105,
+      "locked": true,
+      "lane": 240,
+      "x": 240,
+      "y": 112.63946525676585,
+      "draw": [
+        {
+          "phase": "red",
+          "p": 0.999,
+          "field": true,
+          "alert": false
+        },
+        {
+          "phase": "red",
+          "p": 0.999,
+          "field": false,
+          "alert": true
+        }
+      ],
+      "beeps": [
+        {
+          "n": 0,
+          "t": 0.016666666666666666
+        },
+        {
+          "n": 1,
+          "t": 0.21666666666666665
+        },
+        {
+          "n": 2,
+          "t": 0.41666666666666663
+        },
+        {
+          "n": 3,
+          "t": 0.6000000000000002
+        },
+        {
+          "n": 4,
+          "t": 0.8000000000000008
+        },
+        {
+          "n": 5,
+          "t": 1.0000000000000013
+        },
+        {
+          "n": 6,
+          "t": 1.2000000000000006
+        },
+        {
+          "n": 7,
+          "t": 1.4166666666666665
+        }
+      ],
+      "vulnerable": true
+    },
+    "dash": {
+      "state": "chargeOff",
+      "t": null,
+      "beat": null,
+      "flash": null,
+      "locked": null,
+      "lane": 240,
+      "x": 240,
+      "y": 112.63980339288679,
+      "draw": [],
+      "beeps": [
+        {
+          "n": 0,
+          "t": 0.016666666666666666
+        },
+        {
+          "n": 1,
+          "t": 0.21666666666666665
+        },
+        {
+          "n": 2,
+          "t": 0.41666666666666663
+        },
+        {
+          "n": 3,
+          "t": 0.6000000000000002
+        },
+        {
+          "n": 4,
+          "t": 0.8000000000000008
+        },
+        {
+          "n": 5,
+          "t": 1.0000000000000013
+        },
+        {
+          "n": 6,
+          "t": 1.2000000000000006
+        },
+        {
+          "n": 7,
+          "t": 1.4166666666666665
+        }
+      ],
+      "vulnerable": true
+    }
+  },
+  "shots": [
+    "_shots\\overlord_eight_beat_warning_0915\\overlord_warning_beep_1.png",
+    "_shots\\overlord_eight_beat_warning_0915\\overlord_warning_beep_4.png",
+    "_shots\\overlord_eight_beat_warning_0915\\overlord_warning_beep_6_locked.png",
+    "_shots\\overlord_eight_beat_warning_0915\\overlord_warning_beep_8_committed.png",
+    "_shots\\overlord_eight_beat_warning_0915\\overlord_warning_release.png"
+  ]
+}

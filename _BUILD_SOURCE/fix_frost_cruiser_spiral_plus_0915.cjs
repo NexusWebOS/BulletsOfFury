@@ -1,0 +1,14 @@
+const fs=require('fs');
+const path=require('path');
+const file=path.resolve(__dirname,'..','assets','game.js');
+let s=fs.readFileSync(file,'utf8');
+if(/\r\n/.test(s))throw new Error('assets/game.js must remain LF-only');
+const lines=s.split('\n');
+const hits=[];
+for(let i=0;i<lines.length;i++)if(lines[i].startsWith('+'))hits.push(i);
+if(hits.length!==25)throw new Error('expected 25 accidental patch prefixes, got '+hits.length);
+for(const i of hits)lines[i]=lines[i].slice(1);
+s=lines.join('\n');
+if(/^\+/m.test(s))throw new Error('leading patch prefix remains');
+fs.writeFileSync(file,s,'utf8');
+console.log('removed 25 accidental prefixes');

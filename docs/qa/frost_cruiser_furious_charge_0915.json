@@ -1,0 +1,262 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-3 miniboss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored hull, Retina, lightning and shared FOV plates decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "Furious opens with the complete alternating spiral Retina volley"
+    },
+    {
+      "pass": true,
+      "label": "body-charge FOV follows the player during its readable opening"
+    },
+    {
+      "pass": true,
+      "label": "the charge commits late to the new player lane"
+    },
+    {
+      "pass": true,
+      "label": "moving away after lock leaves the boss facing and thrusting down the committed lane"
+    },
+    {
+      "pass": true,
+      "label": "the last-second lateral dodge clears the committed body charge"
+    },
+    {
+      "pass": true,
+      "label": "boss exits fully, returns safely from above and preserves the combo order"
+    },
+    {
+      "pass": true,
+      "label": "offscreen return is bounded and restores the encounter"
+    },
+    {
+      "pass": true,
+      "label": "staying in the committed lane takes a real sub-boss body hit"
+    },
+    {
+      "pass": true,
+      "label": "frost_fury_spiral_combo is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_fury_tracking_warning is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_fury_late_lock is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_fury_committed_dash is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_fury_offscreen_return is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "FROST CRUISER",
+      "kind": "frostcruiser",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "volley": {
+      "state": "furyChargeWarn",
+      "t": 0,
+      "aimX": 120,
+      "aimY": 500,
+      "locked": false,
+      "rot": 0,
+      "ghost": false,
+      "born": [
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "states": [
+        "furyRocketCharge",
+        "furyChargeWarn"
+      ],
+      "hits": 0,
+      "minDash": 1000000000,
+      "locks": [
+        {
+          "id": 1,
+          "state": "locked",
+          "t": 2.583,
+          "launches": 6,
+          "fired": 6,
+          "missiles": 4
+        }
+      ],
+      "live": 4
+    },
+    "yellow": {
+      "state": "furyChargeWarn",
+      "t": 0.7000000000000005,
+      "aimX": 120,
+      "aimY": 500,
+      "locked": false,
+      "rot": 0.2459164930124824,
+      "ghost": false,
+      "born": [
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "states": [
+        "furyRocketCharge",
+        "furyChargeWarn"
+      ],
+      "hits": 0,
+      "minDash": 1000000000,
+      "locks": [
+        {
+          "id": 1,
+          "state": "locked",
+          "t": 3.283,
+          "launches": 6,
+          "fired": 6,
+          "missiles": 1
+        }
+      ],
+      "live": 0
+    },
+    "prelock": {
+      "locked": false,
+      "aim": 520
+    },
+    "red": {
+      "state": "furyChargeWarn",
+      "t": 0.9333333333333346,
+      "aimX": 520,
+      "aimY": 500,
+      "locked": true,
+      "rot": -0.5268114396622352,
+      "ghost": false,
+      "born": [
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "states": [
+        "furyRocketCharge",
+        "furyChargeWarn"
+      ],
+      "hits": 0,
+      "minDash": 1000000000,
+      "locks": [
+        {
+          "id": 1,
+          "state": "released",
+          "t": 3.517,
+          "launches": 6,
+          "fired": 6,
+          "missiles": 0
+        }
+      ],
+      "live": 0
+    },
+    "dash": {
+      "state": "furyDash",
+      "t": 0.06666666666666667,
+      "aimX": 520,
+      "aimY": 500,
+      "locked": true,
+      "rot": -0.6919671668497034,
+      "ghost": false,
+      "born": [
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "states": [
+        "furyRocketCharge",
+        "furyChargeWarn",
+        "furyDash"
+      ],
+      "hits": 0,
+      "minDash": 361.6477392723468,
+      "locks": [],
+      "live": 0
+    },
+    "returned": {
+      "state": "furyReturn",
+      "t": 0,
+      "aimX": 520,
+      "aimY": 500,
+      "locked": true,
+      "rot": 0,
+      "ghost": true,
+      "born": [
+        "L",
+        "R",
+        "L",
+        "R",
+        "L",
+        "R"
+      ],
+      "states": [
+        "furyRocketCharge",
+        "furyChargeWarn",
+        "furyDash",
+        "furyReturn"
+      ],
+      "hits": 0,
+      "minDash": 323.40883311316566,
+      "locks": [],
+      "live": 0
+    },
+    "recovered": {
+      "state": "recover",
+      "ghost": false,
+      "hits": 0,
+      "minDash": 323.40883311316566,
+      "states": [
+        "furyRocketCharge",
+        "furyChargeWarn",
+        "furyDash",
+        "furyReturn",
+        "recover"
+      ]
+    },
+    "contact": {
+      "hits": 1,
+      "state": "furyDash",
+      "ghost": false
+    }
+  },
+  "shots": [
+    "_shots\\frost_cruiser_furious_charge_0915\\frost_fury_spiral_combo.png",
+    "_shots\\frost_cruiser_furious_charge_0915\\frost_fury_tracking_warning.png",
+    "_shots\\frost_cruiser_furious_charge_0915\\frost_fury_late_lock.png",
+    "_shots\\frost_cruiser_furious_charge_0915\\frost_fury_committed_dash.png",
+    "_shots\\frost_cruiser_furious_charge_0915\\frost_fury_offscreen_return.png"
+  ]
+}

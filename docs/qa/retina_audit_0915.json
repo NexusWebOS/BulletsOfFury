@@ -1,0 +1,28 @@
+{
+  "date": "2026-09-15",
+  "baseCommit": "7635330b",
+  "runtimeSha256": "e7b2bdf464e2bd39c98d4330511194c0a89c32746a3b69cd18e2abdc984841de",
+  "syntaxExitCode": 0,
+  "suite": {
+    "passed": 3862,
+    "failed": 58,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "newFailureNames": [],
+    "baseline": "boss_designs_0915.json",
+    "focusedSection": {"name": "304b Retina encounter router audit", "passed": 12, "failed": 0},
+    "log": "_shots/retina_audit_0915/full_suite_final.log"
+  },
+  "native": {
+    "passed": 13,
+    "failed": 0,
+    "errors": [],
+    "results": "_shots/retina_audit_0915/results.json",
+    "screenshot": "_shots/retina_audit_0915/furnace_arm_retina.png",
+    "actualInput": ["Retina tap", "held Retina plus missile"]
+  },
+  "lineEndings": {"runtime": "LF", "suite": "CRLF"},
+  "limitations": [
+    "Difficulty-specific encounter patterns and the universal no-one-shot rule remain separate checklist requests."
+  ]
+}

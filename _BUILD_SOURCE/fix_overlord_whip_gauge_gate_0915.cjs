@@ -1,0 +1,3 @@
+const fs=require('fs'),path=require('path');const p=path.resolve(__dirname,'..','assets','game.js');let s=fs.readFileSync(p,'utf8');if(s.includes('\r\n'))throw new Error('game must remain LF');
+const a="if(b.kind==='damkeeper'&&b._ovIntro&&!b._ovIntro.done)return b._ovIntro.phase!=='approach';",b="if(b.kind==='damkeeper'&&b._ovIntro&&!b._ovIntro.done)return b._ovIntro.phase!=='approach'&&b._ovIntro.phase!=='whip';";
+if(s.split(a).length!==2)throw new Error('whip gauge gate anchor must match once');s=s.replace(a,b);fs.writeFileSync(p,s,'utf8');console.log('kept the boss gauge hidden through the whip spin');

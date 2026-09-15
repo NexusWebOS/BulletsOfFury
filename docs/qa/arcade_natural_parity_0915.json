@@ -1,0 +1,36 @@
+{
+  "date": "2026-09-15",
+  "baseCommit": "7635330b",
+  "runtimeSha256": "6775ed3f61f5f3b53ce8aef3202b280e1cc63bcefbb2a29b954d488ee1726207",
+  "syntaxExitCode": 0,
+  "native": {
+    "passed": 64,
+    "failed": 0,
+    "errors": [],
+    "results": "_shots/arcade_natural_parity_0915/results.json"
+  },
+  "routeRegressions": [
+    {"name": "Arcade routes", "passed": 20, "failed": 0},
+    {"name": "Arcade campaign isolation", "passed": 24, "failed": 0},
+    {"name": "Arcade dialogue and co-op results", "passed": 14, "failed": 0}
+  ],
+  "suite": {
+    "passed": 3997,
+    "failed": 57,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "baselineFailureNames": 56,
+    "additionalFailureNames": [
+      "stage 1: the sand tanks spawn (scroll never)"
+    ],
+    "classification": "Unchanged runtime hash; the prior 3998/56 run passed this timing-sensitive headless assertion, while native Chromium consumed all 19 Stage 1 waves in Campaign, Arcade and co-op.",
+    "log": "_shots/arcade_natural_parity_0915/full_suite_rerun.log"
+  },
+  "stage5": {
+    "authoredArrivals": 29,
+    "campaignRandomSmallComets": 9,
+    "arcadeRandomSmallComets": 8,
+    "authoredWaves": 14
+  },
+  "limitations": []
+}

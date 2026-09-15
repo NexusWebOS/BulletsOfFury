@@ -1,0 +1,64 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-1 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored helicopter body and rotor decode before the flyover"
+    },
+    {
+      "pass": true,
+      "label": "helicopter begins below the screen with its boss gauge hidden"
+    },
+    {
+      "pass": true,
+      "label": "the authored hull and its complete shadow cross above the player"
+    },
+    {
+      "pass": true,
+      "label": "flyover settles into the dedicated whip phase before the gauge"
+    },
+    {
+      "pass": true,
+      "label": "quick whip visibly rotates the complete helicopter plate"
+    },
+    {
+      "pass": true,
+      "label": "whip returns level before the empty gauge fades in"
+    },
+    {
+      "pass": true,
+      "label": "overlord_rising_from_bottom is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_shadow_over_player is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_whip_start is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_whip_spin is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_whip_settled is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "shots": [
+    "_shots\\overlord_flyover_intro_0915\\overlord_rising_from_bottom.png",
+    "_shots\\overlord_flyover_intro_0915\\overlord_shadow_over_player.png",
+    "_shots\\overlord_flyover_intro_0915\\overlord_whip_start.png",
+    "_shots\\overlord_flyover_intro_0915\\overlord_whip_spin.png",
+    "_shots\\overlord_flyover_intro_0915\\overlord_whip_settled.png"
+  ]
+}

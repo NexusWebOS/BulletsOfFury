@@ -22,6 +22,10 @@ Normal hammer form; red rage charge reel; blue shield charge reel; curl/transfor
 
 Manual missile-button missiles knock ball back without enraging; passive weapon homing missiles must not qualify. During this fight allow only x10/x20 missile supplies, disable x5. Return transformation into hammer form after ball timer. Hammer charge has bottom-to-top pixel flash, green/yellow/red target warning reticles, leap to committed player location, then jump backward to station or retarget player vicinity and leap again. Long-range weapons and manual missile management are central.
 
+### One-hand vertical hammer boomerang
+
+Chrome Hammer alternates the leap sequence with a separate one-hand throw. He raises the hammer in his right hand, spins it progressively faster while charging, and commits a green/yellow/red vertical warning lane to the player's position. At red he throws the detached hammer rapidly down that fixed lane. It turns below the playfield like a boomerang and retracts visibly to the same raised hand at a slower, capped magnetic speed. The outbound and return legs both remain hazards. The body and hammer are separate authored layers, so no duplicate weapon remains attached during flight. Charge, throw, magnetic return and catch each receive their own sound.
+
 ## Asset production
 
 First SpriteCook robot concept asset 50b3ae6e-e2a6-4c69-8055-951158696a0f; job 31c5d936-108d-4054-abbf-698e785915b3. Model gpt-image-2.5-flare, 8 credits. Concept only; not a completed transformation/attack asset family and not integrated as the playable Stage 5 boss yet. Preserve and reuse this identity for follow-up assets.

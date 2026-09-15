@@ -1,0 +1,62 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "both generated mode cards and the exact Nexus lock decode"
+    },
+    {
+      "pass": true,
+      "label": "both final-clear modes carry the visible Nexus chain layer"
+    },
+    {
+      "pass": true,
+      "label": "all five authored cards draw in one menu frame"
+    },
+    {
+      "pass": true,
+      "label": "five-card layout stays clear of adjacent cards and the hint bar"
+    },
+    {
+      "pass": true,
+      "label": "confirming a locked card stays put and plays the denial alert"
+    },
+    {
+      "pass": true,
+      "label": "a final Campaign clear reveals both modes and persists the account gate"
+    },
+    {
+      "pass": true,
+      "label": "the revealed cards restore full color and remove both chain overlays"
+    },
+    {
+      "pass": true,
+      "label": "revealed card cannot enter the unfinished ACH-14 route"
+    },
+    {
+      "pass": true,
+      "label": "boss_rush_locked is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "time_attack_locked is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "bonus_modes_revealed is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "Chromium decodes the two full generated plates and exact 1100x614 Nexus source"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "shots": [
+    "_shots\\locked_modes_0915\\boss_rush_locked.png",
+    "_shots\\locked_modes_0915\\time_attack_locked.png",
+    "_shots\\locked_modes_0915\\bonus_modes_revealed.png"
+  ]
+}

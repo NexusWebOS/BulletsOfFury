@@ -1,0 +1,73 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-1 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "Overlord hull, rotor and authored boss gauge decode"
+    },
+    {
+      "pass": true,
+      "label": "approach keeps the boss gauge hidden"
+    },
+    {
+      "pass": true,
+      "label": "authored gauge fades in empty"
+    },
+    {
+      "pass": true,
+      "label": "boss gauge fills left-to-right over time"
+    },
+    {
+      "pass": true,
+      "label": "full gauge completes before fight music begins"
+    },
+    {
+      "pass": true,
+      "label": "fight and Stage-1 boss music begin together after the gauge"
+    },
+    {
+      "pass": true,
+      "label": "eight menu-chime beats and one completion chord sound during the fill"
+    },
+    {
+      "pass": true,
+      "label": "overlord_approach_no_gauge is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_gauge_fade is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_gauge_fill_early is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_gauge_fill_late is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_gauge_full is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_fight_music_start is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "shots": [
+    "_shots\\overlord_gauge_intro_0915\\overlord_approach_no_gauge.png",
+    "_shots\\overlord_gauge_intro_0915\\overlord_gauge_fade.png",
+    "_shots\\overlord_gauge_intro_0915\\overlord_gauge_fill_early.png",
+    "_shots\\overlord_gauge_intro_0915\\overlord_gauge_fill_late.png",
+    "_shots\\overlord_gauge_intro_0915\\overlord_gauge_full.png",
+    "_shots\\overlord_gauge_intro_0915\\overlord_fight_music_start.png"
+  ]
+}

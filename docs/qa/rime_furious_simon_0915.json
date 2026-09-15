@@ -1,0 +1,437 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-3 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored hull, yellow/red FOV, beam, Retina and Rime-orb art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "the real boss attack selector enters the Furious overdrive feint"
+    },
+    {
+      "pass": true,
+      "label": "the repaired live route also opens the Hard-pattern Retina laser-ball pair"
+    },
+    {
+      "pass": true,
+      "label": "the visible cue sequence is exactly yellow/red/yellow/red/red"
+    },
+    {
+      "pass": true,
+      "label": "Furious never requests the green FOV"
+    },
+    {
+      "pass": true,
+      "label": "Furious requests no overhead asterisk/alert plate"
+    },
+    {
+      "pass": true,
+      "label": "both physical cannons feint and the final red flash identifies the firing side"
+    },
+    {
+      "pass": true,
+      "label": "the final committed lane visibly flashes with authored red pixels"
+    },
+    {
+      "pass": true,
+      "label": "only the final Simon-Says cannon releases a live beam"
+    },
+    {
+      "pass": true,
+      "label": "the committed beam does not retarget after the player moves"
+    },
+    {
+      "pass": true,
+      "label": "the released final lane reaches the real player-hit boundary"
+    },
+    {
+      "pass": true,
+      "label": "Hard keeps the standard three-color beam and receives its live laser-ball pair"
+    },
+    {
+      "pass": true,
+      "label": "Normal keeps the standard beam and receives no Hard-only laser balls"
+    },
+    {
+      "pass": true,
+      "label": "fury_simon_01_yellow is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "fury_simon_02_red is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "fury_simon_03_yellow is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "fury_simon_04_red is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "fury_simon_05_red_flash is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "fury_simon_06_committed_beam is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "RIME WALL",
+      "kind": "cryospear",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "started": {
+      "pat": "s3walloverdrive",
+      "feint": true,
+      "locks": 1,
+      "launches": 2,
+      "actual": "L"
+    },
+    "yellow1": {
+      "gets": [
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nst3_master",
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_0",
+        "nsd_fog_0",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_3",
+        "nsd_fog_5",
+        "nsd_fog_5",
+        "nsd_fog_3",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "bmfx_fov_yellow_tall",
+        "nsb_rimewall_critical",
+        "bfx_glacier_m_0",
+        "nsd_chim_0",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "nsd_chim_6",
+        "nxp_dense_0",
+        "nwf_snowD_0",
+        "retm_1",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas",
+        "bmbar_fill_seg",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ],
+      "draws": 95,
+      "feint": {
+        "t": 0.08333333333333333,
+        "i": 0,
+        "slot": "R",
+        "color": "yellow"
+      },
+      "beam": null
+    },
+    "red1": {
+      "gets": [
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nst3_master",
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_0",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_3",
+        "nsd_fog_5",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "bmfx_fov_red_tall",
+        "nsb_rimewall_critical",
+        "bfx_glacier_m_1",
+        "nsd_chim_3",
+        "nxp_dense_2",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "nsd_chim_6",
+        "nxp_dense_1",
+        "nwf_snowD_0",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ],
+      "draws": 96,
+      "feint": {
+        "t": 0.3833333333333333,
+        "i": 1,
+        "slot": "L",
+        "color": "red"
+      },
+      "beam": null
+    },
+    "yellow2": {
+      "gets": [
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nst3_master",
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_0",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_3",
+        "nsd_fog_5",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "bfx_glacier_m_5",
+        "bmfx_fov_yellow_tall",
+        "nsb_rimewall_critical",
+        "bfx_glacier_m_2",
+        "nsd_chim_5",
+        "nxp_dense_7",
+        "nxp_dense_3",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "nsd_chim_6",
+        "nxp_dense_1",
+        "nwf_snowD_0",
+        "l23fx_rime_orb_0",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ],
+      "draws": 98,
+      "feint": {
+        "t": 0.733333333333334,
+        "i": 2,
+        "slot": "L",
+        "color": "yellow"
+      },
+      "beam": null
+    },
+    "red2": {
+      "gets": [
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nst3_master",
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_0",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_3",
+        "nsd_fog_5",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "bmfx_fov_red_tall",
+        "nsb_rimewall_critical",
+        "bfx_glacier_m_3",
+        "nsd_chim_0",
+        "nxp_dense_2",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "nsd_chim_6",
+        "nxp_dense_2",
+        "nwf_snowD_0",
+        "retmb_1",
+        "l23fx_rime_orb_0",
+        "l23fx_rime_orb_0",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ],
+      "draws": 100,
+      "feint": {
+        "t": 1.0666666666666678,
+        "i": 3,
+        "slot": "R",
+        "color": "red"
+      },
+      "beam": null
+    },
+    "final": {
+      "gets": [
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nst3_master",
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_0",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_3",
+        "nsd_fog_5",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "bmfx_fov_red_tall",
+        "nsb_rimewall_critical",
+        "bfx_glacier_m_4",
+        "nsd_chim_3",
+        "nxp_dense_2",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "nsd_chim_6",
+        "nxp_dense_2",
+        "nwf_snowD_0",
+        "l23fx_rime_orb_0",
+        "l23fx_rime_orb_0",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ],
+      "draws": 99,
+      "feint": {
+        "t": 1.3833333333333333,
+        "i": 4,
+        "slot": "L",
+        "color": "red"
+      },
+      "beam": null
+    },
+    "release": {
+      "gets": [
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nst3_master",
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_0",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_3",
+        "nsd_fog_5",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "bfx_glacier_m_0",
+        "l23fx_rime_laser_3",
+        "l23fx_rime_laser_3",
+        "l23fx_rime_laser_3",
+        "nsb_rimewall_critical",
+        "bfx_glacier_m_5",
+        "nsd_chim_5",
+        "nxp_dense_7",
+        "nxp_dense_2",
+        "bfx_glacier_m_0",
+        "nsd_chim_0",
+        "nsd_chim_3",
+        "nsd_chim_6",
+        "nxp_dense_3",
+        "nwf_snowD_0",
+        "l23fx_rime_orb_0",
+        "l23fx_rime_orb_0",
+        "l23fx_rime_orb_0",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas",
+        "bmbar_frame_boss",
+        "bmbar_tab_boss"
+      ],
+      "draws": 105,
+      "feint": null,
+      "beam": {
+        "slots": [
+          "L"
+        ],
+        "angles": [
+          2.5207963267948967
+        ],
+        "t": 3,
+        "warm": 3,
+        "active": 1.05,
+        "furious": true,
+        "released": true
+      }
+    },
+    "collision": {
+      "calls": 1,
+      "lives0": 5,
+      "lives1": 5,
+      "inv": 0,
+      "dead": false,
+      "before": {
+        "t": 3.133333333333333,
+        "warm": 3,
+        "active": 1.05,
+        "p": {
+          "x": 365.7668683481556,
+          "y": 221.48000000000002
+        },
+        "player": {
+          "x": 166.480069674759,
+          "y": 363.99235691865147
+        },
+        "along": 245,
+        "across": 2.842170943040401e-14
+      },
+      "afterT": 3.1499999999999995
+    },
+    "isolation": {
+      "hard": {
+        "feint": false,
+        "beam": true,
+        "locks": 1
+      },
+      "normal": {
+        "feint": false,
+        "beam": true,
+        "locks": 0
+      }
+    }
+  },
+  "shots": [
+    "_shots\\rime_furious_simon_0915\\fury_simon_01_yellow.png",
+    "_shots\\rime_furious_simon_0915\\fury_simon_02_red.png",
+    "_shots\\rime_furious_simon_0915\\fury_simon_03_yellow.png",
+    "_shots\\rime_furious_simon_0915\\fury_simon_04_red.png",
+    "_shots\\rime_furious_simon_0915\\fury_simon_05_red_flash.png",
+    "_shots\\rime_furious_simon_0915\\fury_simon_06_committed_beam.png"
+  ]
+}

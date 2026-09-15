@@ -1,0 +1,24 @@
+{
+  "date": "2026-09-15",
+  "requestId": "S2-07",
+  "stage": 2,
+  "hard": {
+    "bossAndMinibossHpMultiplier": 1.25,
+    "sameElementFireDamageRetained": 0.5,
+    "opposingIceDamageMultiplier": 2
+  },
+  "furiousEncounterMultiplier": 1.3,
+  "focusedVm": { "section": "304h", "passed": 6, "failed": 0 },
+  "nativeChromium": {
+    "tool": "_BUILD_SOURCE/shoot.py",
+    "frames": 3,
+    "boss": "FURNACE TYRANT",
+    "normalHp": 2589,
+    "hardHp": 3236,
+    "fireAbsorptionPopupVisible": true,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "proofFrame": "_shots/stage2_hard_encounters_0915/native/shot_0001.png"
+  },
+  "fullSuite": { "passed": 3916, "recordedFailures": 56, "baselineFailureNames": 57, "exitCode": 1, "newFailureNames": 0 }
+}

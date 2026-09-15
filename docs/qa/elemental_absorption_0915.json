@@ -1,0 +1,30 @@
+{
+  "date": "2026-09-15",
+  "baseCommit": "7635330b",
+  "runtimeSha256": "1c292363cd0aad2e486cfa959aca52206d8e53b76ca9a19406bb7b7d5677141c",
+  "syntaxExitCode": 0,
+  "suite": {
+    "passed": 3873,
+    "failed": 57,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "newFailureNames": [],
+    "baseline": "boss_designs_0915.json",
+    "baselineNamesAbsentThisRun": ["stage 1: the sand tanks spawn (scroll never)"],
+    "focusedSection": {"name": "304c shared same-element absorption", "passed": 10, "failed": 0},
+    "log": "_shots/retina_audit_0915/full_suite_elemental_final.log"
+  },
+  "native": {
+    "passed": 16,
+    "failed": 0,
+    "errors": [],
+    "results": "_shots/retina_audit_0915/results.json",
+    "log": "_shots/retina_audit_0915/native_elemental_final.log",
+    "screenshot": "_shots/retina_audit_0915/furnace_fire_absorbed.png",
+    "actualInput": ["Retina tap", "held Retina plus missile", "held primary fire"]
+  },
+  "lineEndings": {"runtime": "LF", "suite": "CRLF"},
+  "limitations": [
+    "Difficulty-specific HP and attack-pattern changes remain separate checklist requests."
+  ]
+}

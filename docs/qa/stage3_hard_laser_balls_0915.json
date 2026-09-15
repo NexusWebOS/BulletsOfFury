@@ -1,0 +1,249 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-3 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Rime Wall, laser-ball and Retina plates decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "one Retina warns for both delayed laser-ball releases"
+    },
+    {
+      "pass": true,
+      "label": "first laser ball releases from the physical left mount"
+    },
+    {
+      "pass": true,
+      "label": "second release produces a two-mount pair under one lock"
+    },
+    {
+      "pass": true,
+      "label": "both authored laser balls are shootable two-hit threats"
+    },
+    {
+      "pass": true,
+      "label": "locked laser ball visibly turns toward the moved player"
+    },
+    {
+      "pass": true,
+      "label": "a real barrel roll breaks the shared Retina"
+    },
+    {
+      "pass": true,
+      "label": "a real player machine round destroys one laser ball"
+    },
+    {
+      "pass": true,
+      "label": "the surviving broken-lock ball flies off screen and is culled"
+    },
+    {
+      "pass": true,
+      "label": "Normal receives no added below-half Retina pair"
+    },
+    {
+      "pass": true,
+      "label": "rime_hard_retina_charge is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "rime_hard_first_laser_ball is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "rime_hard_laser_pair is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "rime_hard_tracking_pair is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "rime_hard_roll_break is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "RIME WALL",
+      "kind": "cryospear",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "arming": {
+      "locks": [
+        {
+          "id": 1,
+          "state": "arming",
+          "t": 0.417,
+          "launches": 2,
+          "fired": 0,
+          "missiles": 0
+        }
+      ],
+      "balls": [],
+      "born": [],
+      "roll": false
+    },
+    "first": {
+      "locks": [
+        {
+          "id": 1,
+          "state": "locked",
+          "t": 0.617,
+          "launches": 2,
+          "fired": 1,
+          "missiles": 1
+        }
+      ],
+      "balls": [
+        {
+          "x": 336.9439407352629,
+          "y": 228.91094671587229,
+          "a": 2.245700766273902,
+          "lock": 1,
+          "hp": 2,
+          "shootable": true
+        }
+      ],
+      "born": [
+        "L"
+      ],
+      "roll": false
+    },
+    "pair": {
+      "locks": [
+        {
+          "id": 1,
+          "state": "locked",
+          "t": 0.883,
+          "launches": 2,
+          "fired": 2,
+          "missiles": 2
+        }
+      ],
+      "balls": [
+        {
+          "x": 305.22794002075807,
+          "y": 268.5426625338577,
+          "a": 2.245700766273902,
+          "lock": 1,
+          "hp": 2,
+          "shootable": true
+        },
+        {
+          "x": 412.48181511843813,
+          "y": 230.0861797634169,
+          "a": 2.3963012967510986,
+          "lock": 1,
+          "hp": 2,
+          "shootable": true
+        }
+      ],
+      "born": [
+        "L",
+        "R"
+      ],
+      "roll": false
+    },
+    "tracking": {
+      "locks": [
+        {
+          "id": 1,
+          "state": "locked",
+          "t": 1.05,
+          "launches": 2,
+          "fired": 2,
+          "missiles": 2
+        }
+      ],
+      "balls": [
+        {
+          "x": 293.0034221973594,
+          "y": 297.4640712166007,
+          "a": 1.7457007662739024,
+          "lock": 1,
+          "hp": 2,
+          "shootable": true
+        },
+        {
+          "x": 396.056531003956,
+          "y": 256.84616403036637,
+          "a": 1.8963012967510997,
+          "lock": 1,
+          "hp": 2,
+          "shootable": true
+        }
+      ],
+      "born": [
+        "L",
+        "R"
+      ],
+      "roll": false
+    },
+    "broken": {
+      "locks": [
+        {
+          "id": 1,
+          "state": "broken",
+          "t": 1.083,
+          "launches": 2,
+          "fired": 2,
+          "missiles": 2
+        }
+      ],
+      "balls": [
+        {
+          "x": 291.89930314009615,
+          "y": 303.7122666446734,
+          "a": 1.7457007662739024,
+          "lock": 1,
+          "hp": 2,
+          "shootable": true
+        },
+        {
+          "x": 394.02748071063365,
+          "y": 262.8579840465651,
+          "a": 1.8963012967510997,
+          "lock": 1,
+          "hp": 2,
+          "shootable": true
+        }
+      ],
+      "born": [
+        "L",
+        "R"
+      ],
+      "roll": true
+    },
+    "intercept": {
+      "had": true,
+      "before": 2,
+      "after": 1,
+      "targetDead": true
+    },
+    "spent": {
+      "live": 0,
+      "locks": []
+    },
+    "normal": {
+      "started": false,
+      "locks": 0
+    }
+  },
+  "shots": [
+    "_shots\\stage3_hard_laser_balls_0915\\rime_hard_retina_charge.png",
+    "_shots\\stage3_hard_laser_balls_0915\\rime_hard_first_laser_ball.png",
+    "_shots\\stage3_hard_laser_balls_0915\\rime_hard_laser_pair.png",
+    "_shots\\stage3_hard_laser_balls_0915\\rime_hard_tracking_pair.png",
+    "_shots\\stage3_hard_laser_balls_0915\\rime_hard_roll_break.png"
+  ]
+}

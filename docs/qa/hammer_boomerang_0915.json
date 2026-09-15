@@ -1,0 +1,71 @@
+{
+  "date": "2026-09-15",
+  "requestId": "SPACE-23",
+  "stage": 5,
+  "boss": "CHROME HAMMER",
+  "modes": [
+    "easy",
+    "normal"
+  ],
+  "timing": {
+    "spinSeconds": 1.55,
+    "outboundSeconds": 0.7,
+    "returnPixelsPerSecond": 315
+  },
+  "mechanics": {
+    "committedLane": true,
+    "lateTracking": false,
+    "hazardOutbound": true,
+    "hazardReturn": true,
+    "snapReturn": false,
+    "alternatesWithLeap": true
+  },
+  "focusedVm": {
+    "section": "304e",
+    "passed": 12,
+    "failed": 0
+  },
+  "fullSuite": {
+    "passed": 3897,
+    "recordedFailures": 57,
+    "exitCode": 1,
+    "newFailureNames": 0
+  },
+  "nativeChromium": {
+    "tool": "_BUILD_SOURCE/shoot.py",
+    "frames": 50,
+    "fps": 12,
+    "seconds": 4.17,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "reviewedFrames": [
+      "shot_0012.png",
+      "shot_0022.png",
+      "shot_0034.png"
+    ],
+    "video": "_shots/hammer_boomerang_0915/BulletsOfFury_ChromeHammer_Boomerang_0915.mp4"
+  },
+  "assets": [
+    {
+      "file": "assets/game/stage5_hammer/boomerang_components_source_0915.png",
+      "width": 1774,
+      "height": 887,
+      "sha256": "26f09e20e1fe2388780c9d7323a34fcb543fe802971a93b55c89edf2695e3d54"
+    },
+    {
+      "file": "assets/game/stage5_hammer/boomerang_body.png",
+      "width": 753,
+      "height": 883,
+      "sha256": "8e9d4367d23a374853646b4064288c4126492bac3532caf77ac127e9bb9634ca"
+    },
+    {
+      "file": "assets/game/stage5_hammer/boomerang_hammer.png",
+      "width": 799,
+      "height": 309,
+      "sha256": "633a76f5fbae6a29cd282ce2f0d922f530ae5fa359df3813175c36cac198985c"
+    }
+  ],
+  "limitations": [
+    "Invulnerable deterministic visual scene; SPACE-06 retains full natural-play balance review."
+  ]
+}

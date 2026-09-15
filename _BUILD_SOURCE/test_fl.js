@@ -1360,7 +1360,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
 
   // ===== 29. Overlord-X boss AI: MG bursts, rockets, 50% charge/reentry, HP-gated smoke =====
   console.log('=== 29. Overlord-X boss AI ===');
-  vm.runInContext("run.stage=1; beginStage(1); setState(GS.PLAY); player.reset(); player.x=240; player.y=440; spawnBoss('damkeeper'); boss.enter=false; boss.y=boss.ty=140; boss.x=240;", ctxv);
+  vm.runInContext("run.stage=1; beginStage(1); setState(GS.PLAY); player.reset(); player.x=240; player.y=440; spawnBoss('damkeeper'); boss._ovIntro.done=true; boss._noHit=false; boss.enter=false; boss.y=boss.ty=140; boss.x=240;", ctxv);
   let ovmg=0, ovrk=0, ovpiv=0;
   for(let f=0;f<600;f++){ vm.runInContext("player.x=200+Math.sin("+f+"*0.02)*120; updatePlay(1/60);", ctxv);
     ovmg=Math.max(ovmg, vm.runInContext("eBullets.filter(function(b){return b.kind==='emg'||b.kind==='mg';}).length", ctxv));
@@ -1370,7 +1370,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(ovmg>=4, 'Overlord-X fires twin machine-gun bursts (peak '+ovmg+' pellets)');
   ok(ovrk>=1, 'Overlord-X fires homing rockets');
   // rockets must be VISIBLE: fire the rocket phase and confirm multiple rockets travel across the screen
-  vm.runInContext("eBullets.length=0; boss._ovState='fight'; boss._ovPhase=3; boss.fireCd=0; boss._rkN=0;", ctxv);
+  vm.runInContext("eBullets.length=0; boss._ovState='fight'; boss._ovPhase=3; boss.fireCd=0; boss._rkN=0; boss._ovChargeCd=999; player.invuln=999;", ctxv);
   let rkPeak=0, rkMoved=false, ry0=null;
   for(let f=0;f<300;f++){ vm.runInContext("updatePlay(1/60);", ctxv);
     rkPeak=Math.max(rkPeak, vm.runInContext("eBullets.filter(function(b){return b.kind==='s1jungleMissile';}).length", ctxv));
@@ -1379,6 +1379,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   }
   ok(rkPeak>=2, 'rockets are on screen during the rocket phase (peak '+rkPeak+')');
   ok(rkMoved, 'rockets travel across the screen (not stuck at the launch point)');
+  vm.runInContext("player.invuln=0;",ctxv);
   ok(ovpiv>20, 'Overlord-X pivots/banks between attacks ('+ovpiv+' frames)');
   vm.runInContext("boss.hp=boss.maxhp*0.49;", ctxv);
   let charge=false, reentry=false, reticle=false, smoke=0;
@@ -1416,10 +1417,13 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   vm.runInContext("run.pilot='maverick'; run.wlevel=1; setState(GS.PLAY); player.reset(); player.x=240; player.y=440; special={pilot:'maverick',t:99}; pBullets.length=0; pShoot();", ctxv);
   ok(vm.runInContext("pBullets.filter(function(b){return b.kind==='venomx';}).length===1", ctxv), 'venom special fires ONE heavy helix lance (not the rapid pair)');
   ok(vm.runInContext("(pBullets[0]||{}).dmg>=12 && (pBullets[0]||{}).pierce===true", ctxv), 'lance does massive damage and pierces');
-  // kills a column of drones with one shot
-  vm.runInContext("enemies.length=0; for(var k=0;k<3;k++){ spawnEnemy('drone',{x:240,y:360-k*70}); } enemies.forEach(function(e,k){e.x=240;e.y=360-k*70;e.hp=3;});", ctxv);
+  // The first lance wounds the full column to one point; a second lance may finish it.
+  vm.runInContext("enemies.length=0; for(var k=0;k<3;k++){ spawnEnemy('drone',{x:240,y:360-k*70}); } enemies.forEach(function(e,k){e.x=240;e.y=360-k*70;e.hp=3;e.maxhp=3;});", ctxv);
   for(let f=0;f<100;f++){ vm.runInContext("updatePlay(1/60); enemies.forEach(function(e,k){ if(!e.dead && e._dyingT==null){ e.x=240; e.y=360-k*70; e.vx=0; e.vy=0; } });", ctxv); }
-  ok(vm.runInContext("enemies.filter(function(e){return !e.dead && e._dyingT==null && e.hp>0;}).length===0", ctxv), 'one lance pierces and destroys a 3-drone column');
+  ok(vm.runInContext("enemies.filter(function(e){return !e.dead&&e._dyingT==null;}).every(function(e){return e.hp===1;})", ctxv), 'one lance pierces and wounds every full-health drone without one-shotting it');
+  vm.runInContext("player.fireCd=0;pBullets.length=0;pShoot();",ctxv);
+  for(let f=0;f<100;f++){ vm.runInContext("updatePlay(1/60); enemies.forEach(function(e,k){ if(!e.dead && e._dyingT==null){ e.x=240; e.y=360-k*70; e.vx=0; e.vy=0; } });", ctxv); }
+  ok(vm.runInContext("enemies.filter(function(e){return !e.dead&&e._dyingT==null&&e.hp>0;}).length===0",ctxv),'a second lance may destroy the wounded 3-drone column');
   // the special tap remains ONE animated helix for its entire screen crossing
   vm.runInContext("run.pilot='maverick'; run.wlevel=1; setState(GS.PLAY); player.reset(); player.x=240; player.y=490; special={pilot:'maverick',t:99}; pBullets.length=0; pShoot();", ctxv);
   vm.runInContext("for(var f=0;f<30;f++) updatePlay(1/60);", ctxv);
@@ -1713,8 +1717,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(/const _sx=lerp\(_startX,_l7x,_pull\)/.test(_g7p) && !/player\.x\s*=\s*lerp\(\(flyoverStartX/.test(_g7p),
      'the cinematic craft is pulled into the portal without mutating every stage exit');
   ok(/_l7t<0\.98/.test(_g7p), 'the ship disappears inside the aperture before frames 5-7 close it');
-  ok(/run\.stage===7\)\{ run\._l78Entry=1; beginStage\(8\)/.test(_g7p),
-     'Stage 7 results go straight to the Stage 8 card with the portal-entry latch set');
+  ok(/else if\(run\.stage===7\)\{[\s\S]*?run\.mode==='campaign'[\s\S]*?openStageSelect\(8,\{unlock:8\}\)/.test(_g7p),
+     'Campaign Stage 7 results return through the unlocked Stage 8 campaign-map route');
+  ok(/else\{run\._l78Entry=1;beginStage\(8\);\}/.test(_g7p),
+     'Arcade Stage 7 results still go straight to the Stage 8 card with the portal-entry latch');
   ok(/run\.stage===8 && run\._l78Entry/.test(_g7p) && /setState\(GS\.WARPENTRY\)/.test(_g7p),
      'the Stage 8 card hands to the portal exit instead of the traditional launch');
   ok(/function drawL78Entry\(dt\)/.test(_g7p) && /run\._l78Entry=0; l78entry=null; setState\(GS\.PLAY\)/.test(_g7p),
@@ -2683,8 +2689,9 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   // the climb is over the LEVEL, never liquid — that was Mike's actual complaint
   ok(vm.runInContext("outboundDraw.toString().indexOf('cfg.master')>0", ctxv), 'the climb draws the level master they just cleared, not a liquid bed');
   ok(vm.runInContext("outboundDraw.toString().indexOf('_liquidFrame')<0", ctxv), 'no liquid anywhere in the outbound');
-  // stage clear routes through it
-  ok(vm.runInContext("drawStageClear.toString().indexOf('outboundStart')>0", ctxv), 'stage clear routes into the outbound cinematic');
+  // Arcade confirms its score and advances without a campaign transition (0915).
+  ok(vm.runInContext(fs.readFileSync(path.join(__dirname,'arcade_routes_0915/result_route_check.js'),'utf8'),ctxv),
+     'Arcade stage clear awards its score and advances directly to Stage 2');
   /* ⚠ THESE TWO PINNED THE RUNWAY PLATES INSIDE drawLaunch, AND THE TWO DIRECTLY BELOW THEM SAID
      THE OPPOSITE — worth keeping as the clearest example of rule 2 in this file. 'no OTHER stage
      flies a runway' passed for drops on end, because it asks seqRunway, which returns null for
@@ -3737,7 +3744,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
     vm.runInContext("run.stage="+pr[1]+"; curStage=STAGES["+(pr[1]-1)+"]; enemies.length=0; explosions.length=0; spawnEnemy('"+pr[0]+"',240,200,{});", ctxv);
     if(!vm.runInContext("enemies.length>0", ctxv)) return;
     var w=vm.runInContext("Math.max(enemies[0].w,enemies[0].h)", ctxv);
-    vm.runInContext("enemies[0].hp=1; hitEnemy(enemies[0],999);", ctxv);
+    vm.runInContext("enemies[0].hp=1; enemies[0].maxhp=1; hitEnemy(enemies[0],999); hitEnemy(enemies[0],999);", ctxv);
     var mx=vm.runInContext("explosions.length?explosions[0].max*1.25:0", ctxv);
     _scales.push(pr[0]+' '+w+'px->'+Math.round(mx)+'px');
     ok(Math.abs(mx-w*1.25)<=3, pr[0]+' blast is 1.25x its unit ('+w+'px unit, '+Math.round(mx)+'px blast)');
@@ -6521,9 +6528,10 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   var _n1=JSON.parse(vm.runInContext("JSON.stringify(furyRing(boss,boss.x,boss.y,furyOf(boss),120,'eg'))", ctxv)).length;
   ok(_n1 > _n0, 'and it fires MORE at desperate, not fewer ('+_n0+' -> '+_n1+' shots)');
   /* TELEGRAPH: unreadable is not the same as hard. */
-  ok(vm.runInContext("typeof bossTelegraph==='function' && typeof bossTelegraphDraw==='function'", ctxv), 'patterns telegraph before they fire');
+  ok(vm.runInContext("typeof combatWarningTick==='function' && typeof combatWarningDraw==='function' && typeof mechBossTelegraph==='function'", ctxv), 'patterns use the shared authored warning rule before they fire');
   var _gP=fs.readFileSync(ROOT+'/assets/game.js','utf8');
-  ok(_gP.indexOf('TELEGRAPH FIRST, under everything else')>0, 'and the wind-up draws beneath the boss so it is visible');
+  ok((_gP.match(/function bossTelegraph\s*\(/g)||[]).length===0&&_gP.indexOf('function mechBossTelegraph(b,K)')>0,
+     'the mech telegraph has a distinct owner and cannot shadow the shared warning rule');
   /* WOUNDED ANIMAL: a sectional boss that has lost limbs fights harder with what is left. */
   vm.runInContext("boss.hp=boss.maxhp*0.5;", ctxv);
   var _r0=vm.runInContext("furyOf(boss).rate", ctxv);
@@ -7430,8 +7438,10 @@ function _wv(st,pk,w,roll){ return vm.runInContext("weaponVariant("+w+",{stage:"
   /* the bonus is a LATCH, not campaign.unlockedMax: stage 9 is outside the linear progression
      and putting it on unlockedMax would make the arrows walk into it. */
   ok(/campaign\.bonusUnlocked=1/.test(_g5r), 'the unlock is its own latch, not campaign.unlockedMax');
-  ok(/if\(num===9 && typeof campaign!=='undefined'\) campaign\.bonusUnlocked=0;/.test(_g5r),
-     'and it is SPENT on entry, so the map is not stuck on stage 9 forever');
+  // Actual entry in a separate VM: only Campaign may spend its map unlock.
+  const bonusIsolation=require('./test_arcade_isolation_0915.cjs');
+  ok(bonusIsolation.arcadeKeeps&&bonusIsolation.campaignSpends,
+     'Campaign bonus entry spends its unlock while Arcade preserves it');
   ok(/const _lo = _bonus \? 9 : 1;/.test(_g5r), 'while it is live the map allows ONLY stage 9 - Mike');
   /* Mike: "the portal is already built into the campaign map, dont place one" */
   ok(_g5r.indexOf("ns9_gate0_'+((((performance.now()")<0,
@@ -13051,10 +13061,12 @@ console.log("=== 265. Stage-1 VFX edge safety and Overlord hunter flight ===");
 
   var _charge265=JSON.parse(vm.runInContext("(function(){"
     +"var b=boss;b.x=240;b.y=110;b._ovState='fight';b._ovChargeCd=999;b.hp=b.maxhp;player.x=125;ovStartChargeTell(b);"
-    +"for(var i=0;i<35;i++)updateOverlordX(b,1/60);var lane=b._chargeTell.lane,locked=b._chargeTell.locked,glow=b._ovChargeGlow;"
+    +"for(var i=0;i<50;i++)updateOverlordX(b,1/60);var lane=b._chargeTell.lane,locked=b._chargeTell.locked,glow=b._ovChargeGlow,warn=b._combatWarnings&&b._combatWarnings['overlord-charge'],beat=b._chargeTell.beat;"
     +"player.x=410;for(var j=0;j<16;j++)updateOverlordX(b,1/60);var held=b._chargeTell.lane;"
     +"while(b._ovState==='chargeTell')updateOverlordX(b,1/60);player.x=80;for(var k=0;k<14;k++)updateOverlordX(b,1/60);"
-    +"return JSON.stringify({lane:lane,held:held,locked:locked,glow:glow,state:b._ovState,x:b.x});})()",ctxv));
+    +"return JSON.stringify({lane:lane,held:held,locked:locked,glow:glow,beat:beat,warn:warn?{t:warn.t,warm:warn.warm}:null,state:b._ovState,x:b.x});})()",ctxv));
+  ok(_charge265.warn&&_charge265.warn.t>0.8&&_charge265.warn.warm===1.60&&_charge265.beat>=4,
+     'the Overlord charge advances the shared green-yellow-red FOV and synchronized alert clock');
   ok(_charge265.locked&&_charge265.glow>0.45&&Math.abs(_charge265.held-_charge265.lane)<0.01,
      'the glow tell tracks early, then visibly locks one lane for a guaranteed dodge window');
   ok(_charge265.state==='chargeOff'&&Math.abs(_charge265.x-_charge265.lane)<0.01,
@@ -13394,9 +13406,9 @@ console.log("=== 269. Stage-6 storm fleet and Doomsday mega boss ===");
     +"var b={_ship:'doomsdaycarriermk2',x:VW/2,y:120,_drawY:120,w:640,h:320,hp:1000,maxhp:1000,flash:0,dead:false};carrierInit(b);carrierMegaInit(b);b._lc.playing=false;"
     +"function beat(frac,n){b.hp=b.maxhp*frac;b._mega.cd=0;var at=eBullets.length;for(var i=0;i<n;i++)carrierMegaTick(b,.12);return eBullets.slice(at).map(function(q){return q.kind;});}"
     +"var p0=beat(.90,2),p1=beat(.70,10),p2=beat(.45,24),p3=beat(.20,48),node=b._mega.nodes[0],pos=carrierMegaNodePos(b,node),hit=carrierMegaNodeAt(b,pos.x,pos.y)===node;"
-    +"carrierMegaNodeDamage(b,node,99);return JSON.stringify({p:[p0,p1,p2,p3],phase:b._mega.phase,nodes:b._mega.nodes.length,hit:hit,dead:node.dead,fl:_navalFlashes.length});})()",ctxv));
-  ok(_mega269.nodes===4&&_mega269.hit&&_mega269.dead,
-     'the mega boss fields four independently hittable and destructible animated storm nodes');
+    +"carrierMegaNodeDamage(b,node,99);var first=node.hp===1&&!node.dead;carrierMegaNodeDamage(b,node,99);return JSON.stringify({p:[p0,p1,p2,p3],phase:b._mega.phase,nodes:b._mega.nodes.length,hit:hit,first:first,dead:node.dead,fl:_navalFlashes.length});})()",ctxv));
+  ok(_mega269.nodes===4&&_mega269.hit&&_mega269.first&&_mega269.dead,
+     'the mega boss fields four independently hittable nodes with a first-impact survival window');
   /* ⚠ THESE TWO PINNED THE OLD FOUR-PHASE, HEALTH-DRIVEN FIGHT and failed the moment Mike's six
      landed (0905o). Read before fixed, per CLAUDE.md: they described a structure he replaced, so
      they are repointed onto what he actually specified rather than reverted. The health bands are
@@ -15481,6 +15493,20 @@ console.log('=== 304. Retina component targets ===');
  for(var k of Object.keys(rt304))ok(rt304[k],'Retina component eligibility and damage: '+k);
 }
 
+require('./test_retina_audit_0915.cjs')(vm,ctxv,ok);
+
+require('./test_elemental_absorb_0915.cjs')(vm,ctxv,ok);
+
+require('./test_enemy_shield_stun_0915.cjs')(vm,ctxv,ok);
+
+require('./test_hammer_boomerang_0915.cjs')(vm,ctxv,ok);
+require('./test_hard_enemy_hp_0915.cjs')(vm,ctxv,ok);
+require('./test_stage2_thermal_fodder_0915.cjs')(vm,ctxv,ok);
+require('./test_stage2_hard_encounters_0915.cjs')(vm,ctxv,ok);
+require('./test_no_one_shot_0915.cjs')(vm,ctxv,ok);
+require('./test_manual_missile_tiers_0915.cjs')(vm,ctxv,ok);
+require('./test_achievement_registry_0915.cjs')(vm,ctxv,ok);
+
 // ===== 305. DIRECTIONAL RETINA SCAN, 0914 =====
 console.log('=== 305. directional Retina scan ===');
 {
@@ -15615,6 +15641,21 @@ try {
   ok(vm.runInContext('!furyLegacyShip',ctxv),'repeating SPCBOY restores the replacement without removing old art');
   vm.runInContext('furyLegacyShip='+saved309,ctxv);
 } catch(e){ok(false,'Furyship verification threw: '+e.stack);}
+
+require('./test_locked_modes_0915.cjs')(vm,ctxv,ok);
+require('./test_overlord_gauge_intro_0915.cjs')(vm,ctxv,ok);
+require('./test_overlord_flyover_intro_0915.cjs')(vm,ctxv,ok);
+require('./test_overlord_eight_beat_warning_0915.cjs')(vm,ctxv,ok);
+require('./test_overlord_four_pass_frenzy_0915.cjs')(vm,ctxv,ok);
+require('./test_furnace_rollerball_0915.cjs')(vm,ctxv,ok);
+require('./test_frost_cruiser_sweep_0915.cjs')(vm,ctxv,ok);
+require('./test_frost_cruiser_spiral_0915.cjs')(vm,ctxv,ok);
+require('./test_frost_cruiser_furious_charge_0915.cjs')(vm,ctxv,ok);
+require('./test_stage3_hard_laser_balls_0915.cjs')(vm,ctxv,ok);
+require('./test_rime_furious_simon_0915.cjs')(vm,ctxv,ok);
+require('./test_olive_warden_hard_ram_0915.cjs')(vm,ctxv,ok);
+require('./test_difficulty_elite_aces_0915.cjs')(vm,ctxv,ok);
+require('./test_olive_warden_escorts_0915.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

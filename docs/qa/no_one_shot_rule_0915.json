@@ -1,0 +1,53 @@
+{
+  "date": "2026-09-15",
+  "requestId": "ENG-05",
+  "rule": "A fresh enemy hull, authored shield or destructible component survives one lethal damage event at 1 HP or energy; a later distinct impact or beam tick may finish it.",
+  "coverage": [
+    "ordinary enemy hulls",
+    "authored ordinary-enemy shields",
+    "Stage 4 drones, helpers and generators",
+    "Razorback, Blacksteel, Tempest and Furnace pieces",
+    "Stage 6 mech limbs, Carrier nodes and bays",
+    "Stage 7 toxic cores",
+    "Xeno, modular and sectional components",
+    "missile, elemental, laser and shrapnel damage routes"
+  ],
+  "exceptions": [
+    "The approved Stage 4 wide piercing player laser may destroy both aligned generator nodes in one pass.",
+    "Destroyable scenery, race obstacles and hostile projectile objects keep their authored object-health rules.",
+    "Main boss and miniboss hulls retain encounter-specific HP floors and phase gates."
+  ],
+  "focusedVm": {
+    "section": "304i",
+    "passed": 14,
+    "failed": 0
+  },
+  "fullSuite": {
+    "passed": 3931,
+    "recordedFailures": 56,
+    "exitCode": 1,
+    "baselineFailureNames": 57,
+    "newFailureNames": 0,
+    "resolvedBaselineNames": [
+      "Stage 7 results go straight to the Stage 8 card with the portal-entry latch set"
+    ],
+    "intermittentObserved": [
+      "stage 1: the sand tanks spawn (scroll never) failed on the first final run and passed on confirmation"
+    ]
+  },
+  "nativeChromium": {
+    "tool": "_BUILD_SOURCE/shoot.py",
+    "frames": 16,
+    "fps": 4,
+    "seconds": 4,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "reviewedFrames": [
+      "_shots/no_one_shot_0915/native/shot_0002.png",
+      "_shots/no_one_shot_0915/native/shot_0004.png",
+      "_shots/no_one_shot_0915/native/shot_0007.png",
+      "_shots/no_one_shot_0915/native/shot_0010.png",
+      "_shots/no_one_shot_0915/native/shot_0013.png"
+    ]
+  }
+}

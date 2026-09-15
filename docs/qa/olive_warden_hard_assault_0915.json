@@ -1,0 +1,681 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-4 miniboss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Warden hull, ammunition and three-color warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "rapid spread fire leaves both authored side turrets"
+    },
+    {
+      "pass": true,
+      "label": "the middle section fires a dual straight machine-gun flurry"
+    },
+    {
+      "pass": true,
+      "label": "Hard mode performs a visible circular assault without a position snap"
+    },
+    {
+      "pass": true,
+      "label": "the circular assault keeps firing mounted machine rounds"
+    },
+    {
+      "pass": true,
+      "label": "the orbit flows into the horizontal glide state"
+    },
+    {
+      "pass": true,
+      "label": "the glide uses both center gun hardpoints"
+    },
+    {
+      "pass": true,
+      "label": "the charge lane begins with the shared green FOV"
+    },
+    {
+      "pass": true,
+      "label": "the same charge lane advances to yellow"
+    },
+    {
+      "pass": true,
+      "label": "the final committed dodge window visibly flashes red"
+    },
+    {
+      "pass": true,
+      "label": "the Warden turns the tracked warning into a committed dodge lane"
+    },
+    {
+      "pass": true,
+      "label": "the whole upright Warden commits south through the player lane"
+    },
+    {
+      "pass": true,
+      "label": "the active body ram reaches the real player-hit boundary"
+    },
+    {
+      "pass": true,
+      "label": "the off-screen curved return cannot deal a hidden collision"
+    },
+    {
+      "pass": true,
+      "label": "Normal retains the established three-pattern Warden cycle"
+    },
+    {
+      "pass": true,
+      "label": "Hard and Furious both inherit the new assault cycle"
+    },
+    {
+      "pass": true,
+      "label": "the authored whole boss plate remains upright through the new movement"
+    },
+    {
+      "pass": true,
+      "label": "warden_01_rapid_spread is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_02_center_flurry is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_03_circular_assault is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_04_glide_flurry is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_05_warning_green is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_06_warning_yellow is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_07_warning_red is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_08_committed_ram is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_09_safe_curved_return is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "OLIVE WARDEN",
+      "kind": "olivewarden",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "burst": {
+      "mode": "burst",
+      "x": 355.10493905110997,
+      "y": 130,
+      "scale": 1,
+      "safe": false,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "s4w_muzzle_mg_2",
+        "s4w_muzzle_mg_2",
+        "bmbar_fill_orange",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "nsb_olivewarden_intact",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ],
+      "bullets": [
+        {
+          "kind": "machine",
+          "slot": "L",
+          "x": 270.96342914897457,
+          "y": 264.3012449362037,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "R",
+          "x": 411.5750900895446,
+          "y": 264.3012449362037,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "L",
+          "x": 274.2417618205205,
+          "y": 231.56032924151089,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "R",
+          "x": 407.12212223491423,
+          "y": 232.92420555681917,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "L",
+          "x": 290.55572673309166,
+          "y": 184.25103065611023,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "R",
+          "x": 411.9386990628933,
+          "y": 184.88227440006472,
+          "w": 4,
+          "h": 14
+        }
+      ]
+    },
+    "center": {
+      "mode": "center",
+      "x": 346.9027465761125,
+      "y": 130,
+      "scale": 1,
+      "safe": false,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "s4w_muzzle_mg_7",
+        "s4w_muzzle_mg_7",
+        "s4w_muzzle_mg_2",
+        "s4w_muzzle_mg_2",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "nsb_olivewarden_intact",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ],
+      "bullets": [
+        {
+          "kind": "machine",
+          "slot": "CL",
+          "x": 346.28619413018413,
+          "y": 303.28173962463995,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CR",
+          "x": 361.40619413018413,
+          "y": 303.28173962463995,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CL",
+          "x": 343.10509513152493,
+          "y": 276.48115974975997,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CR",
+          "x": 358.22509513152494,
+          "y": 276.48115974975997,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CL",
+          "x": 339.9702689921227,
+          "y": 240.74705324992,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CR",
+          "x": 355.09026899212273,
+          "y": 240.74705324992,
+          "w": 4,
+          "h": 14
+        }
+      ]
+    },
+    "circle": {
+      "mode": "hardCircle",
+      "x": 318.03064274804376,
+      "y": 99.01482554270541,
+      "scale": 1,
+      "safe": false,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "nsb_olivewarden_intact",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ],
+      "bullets": [
+        {
+          "kind": "machine",
+          "slot": "R",
+          "x": 454.53803756694384,
+          "y": 399.2389314417086,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "L",
+          "x": 326.1586084323499,
+          "y": 300.6177325359344,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "R",
+          "x": 383.31746500522786,
+          "y": 196.69799793155443,
+          "w": 4,
+          "h": 14
+        }
+      ]
+    },
+    "glide": {
+      "mode": "hardGlide",
+      "x": 367.55129248931405,
+      "y": 130,
+      "scale": 1,
+      "safe": false,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "s4w_muzzle_mg_2",
+        "s4w_muzzle_mg_2",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "nsb_olivewarden_intact",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "mgcf_1_5",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ],
+      "bullets": [
+        {
+          "kind": "machine",
+          "slot": "R",
+          "x": 360.5632833254166,
+          "y": 502.21298386821434,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "L",
+          "x": 319.9910429684849,
+          "y": 392.7809250334754,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CL",
+          "x": 426.187668764346,
+          "y": 383.6834792492799,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CR",
+          "x": 441.307668764346,
+          "y": 383.6834792492799,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CL",
+          "x": 420.409616945273,
+          "y": 347.94937274943993,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CR",
+          "x": 435.529616945273,
+          "y": 347.94937274943993,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CL",
+          "x": 399.2704843090069,
+          "y": 294.34821299967996,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CR",
+          "x": 414.3904843090069,
+          "y": 294.34821299967996,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CL",
+          "x": 366.36626886145405,
+          "y": 240.74705324992,
+          "w": 4,
+          "h": 14
+        },
+        {
+          "kind": "machine",
+          "slot": "CR",
+          "x": 381.48626886145405,
+          "y": 240.74705324992,
+          "w": 4,
+          "h": 14
+        }
+      ]
+    },
+    "green": {
+      "mode": "hardWarn",
+      "x": 367.55129248931405,
+      "y": 130,
+      "scale": 1.0036806762794594,
+      "safe": false,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "s4w_muzzle_mg_2",
+        "s4w_muzzle_mg_2",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "nsb_olivewarden_intact",
+        "bmfx_fov_green_tall",
+        "bmfx_alert_green_danger",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ],
+      "bullets": []
+    },
+    "yellow": {
+      "mode": "hardWarn",
+      "x": 367.55129248931405,
+      "y": 130,
+      "scale": 1.0076764153955917,
+      "safe": false,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "s4w_muzzle_mg_2",
+        "s4w_muzzle_mg_2",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "nsb_olivewarden_intact",
+        "bmfx_fov_yellow_tall",
+        "bmfx_alert_yellow_danger",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ],
+      "bullets": []
+    },
+    "red": {
+      "mode": "hardWarn",
+      "x": 367.55129248931405,
+      "y": 130,
+      "scale": 1.0260932945464927,
+      "safe": false,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "s4w_muzzle_mg_2",
+        "s4w_muzzle_mg_2",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "nsb_olivewarden_intact",
+        "bmfx_fov_red_tall",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ],
+      "bullets": []
+    },
+    "locked": {
+      "lane": 430,
+      "locked": true,
+      "x": 367.55129248931405
+    },
+    "lockedAfter": {
+      "lane": 430,
+      "locked": true,
+      "x": 367.55129248931405
+    },
+    "ram": {
+      "mode": "hardRam",
+      "x": 430,
+      "y": 169.75,
+      "scale": 1.025,
+      "safe": false,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "nsb_olivewarden_intact",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ],
+      "bullets": []
+    },
+    "collision": {
+      "ramHits": 1,
+      "returnHits": 0,
+      "safe": true,
+      "mode": "hardReturn",
+      "pre": {
+        "active": true,
+        "dead": false,
+        "enter": false,
+        "safe": false,
+        "px": 430,
+        "py": 450,
+        "pinv": 0,
+        "pdead": false,
+        "bx": 430,
+        "by": 450,
+        "dy": 450,
+        "seats": 1
+      },
+      "after": {
+        "px": 430,
+        "py": 450,
+        "pinv": 0,
+        "pdead": false,
+        "bx": 429.49073016244466,
+        "by": 449.9531507960854,
+        "dy": 449.9531507960854
+      }
+    },
+    "return": {
+      "mode": "hardReturn",
+      "x": 142.93820282782377,
+      "y": 477.06123505446106,
+      "scale": 0.9443902439024391,
+      "safe": true,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "bmbar_frame_mini",
+        "bmbar_tab_mini",
+        "nsb_olivewarden_intact",
+        "ship_yuri_g1",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ],
+      "bullets": []
+    },
+    "isolation": {
+      "normal": {
+        "mode": "burst",
+        "ram": 0,
+        "hard": false
+      },
+      "hard": {
+        "mode": "hardCircle",
+        "ram": 0,
+        "hard": true
+      },
+      "furious": {
+        "mode": "hardCircle",
+        "ram": 0,
+        "hard": true
+      }
+    },
+    "pose": {
+      "x": 0,
+      "y": 0,
+      "rot": 0,
+      "sx": 1,
+      "sy": 1
+    }
+  },
+  "shots": [
+    "_shots\\olive_warden_hard_assault_0915\\warden_01_rapid_spread.png",
+    "_shots\\olive_warden_hard_assault_0915\\warden_02_center_flurry.png",
+    "_shots\\olive_warden_hard_assault_0915\\warden_03_circular_assault.png",
+    "_shots\\olive_warden_hard_assault_0915\\warden_04_glide_flurry.png",
+    "_shots\\olive_warden_hard_assault_0915\\warden_05_warning_green.png",
+    "_shots\\olive_warden_hard_assault_0915\\warden_06_warning_yellow.png",
+    "_shots\\olive_warden_hard_assault_0915\\warden_07_warning_red.png",
+    "_shots\\olive_warden_hard_assault_0915\\warden_08_committed_ram.png",
+    "_shots\\olive_warden_hard_assault_0915\\warden_09_safe_curved_return.png"
+  ]
+}

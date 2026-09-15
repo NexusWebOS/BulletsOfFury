@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-15",
+  "baseCommit": "7635330b",
+  "runtimeSha256": "145c0126eca3716d83fa11ebb4f0fcbf756347a561e498511da7b2b0c6326acf",
+  "syntaxExitCode": 0,
+  "suite": {
+    "passed": 3884,
+    "failed": 57,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "newFailureNames": [],
+    "baselineNamesAbsentThisRun": [
+      "stage 1: the sand tanks spawn (scroll never)"
+    ],
+    "baseline": "boss_designs_0915.json",
+    "focusedSection": {
+      "name": "304d shared enemy shield break stun",
+      "passed": 8,
+      "failed": 0
+    },
+    "log": "_shots/enemy_shield_stun_0915/full_suite.log"
+  },
+  "native": {
+    "passed": 9,
+    "failed": 0,
+    "errors": [],
+    "results": "_shots/enemy_shield_stun_0915/results.json",
+    "screenshot": "_shots/enemy_shield_stun_0915/shield_break_stun.png",
+    "actualInput": [
+      "held primary fire with Freezer Ice Breath"
+    ]
+  },
+  "bounds": {
+    "stunSeconds": 1.15,
+    "liftPixels": 14,
+    "splashRadiusMin": 78,
+    "splashRadiusMax": 124,
+    "splashDamageMax": 16,
+    "splashTargetCap": 6,
+    "secondarySplashChains": false
+  },
+  "lineEndings": {
+    "runtime": "LF",
+    "suite": "CRLF"
+  }
+}

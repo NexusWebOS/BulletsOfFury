@@ -1,0 +1,54 @@
+{
+  "date": "2026-09-15",
+  "requestIds": [
+    "MSL-04",
+    "MSL-05"
+  ],
+  "tiers": [
+    {"id": "standard", "damageMultiplier": 1, "runtimeDamage": 24, "sizeMultiplier": 1, "ammoCap": 999},
+    {"id": "super", "damageMultiplier": 1.25, "runtimeDamage": 30, "sizeMultiplier": 1.25, "ammoCap": 50},
+    {"id": "ultra", "damageMultiplier": 1.5625, "runtimeDamage": 37.5, "sizeMultiplier": 1.5625, "ammoCap": 35},
+    {"id": "uber", "damageMultiplier": 1.953125, "runtimeDamage": 46.875, "sizeMultiplier": 1.953125, "ammoCap": 20}
+  ],
+  "passiveMissilesSeparate": true,
+  "coveredAmmoRoutes": [
+    "single and compatibility missile packs",
+    "x20, x35, x50 and x100 packs",
+    "cinematic grant",
+    "firing",
+    "campaign save and load",
+    "missile rush restore",
+    "continue and rift return",
+    "independent co-op seat state"
+  ],
+  "focusedVm": {
+    "section": "304j",
+    "passed": 18,
+    "failed": 0
+  },
+  "fullSuite": {
+    "passed": 3949,
+    "recordedFailures": 56,
+    "exitCode": 1,
+    "baselineFailureNames": 57,
+    "newFailureNames": 0,
+    "resolvedBaselineNames": [
+      "Stage 7 results go straight to the Stage 8 card with the portal-entry latch set"
+    ]
+  },
+  "nativeChromium": {
+    "tool": "_BUILD_SOURCE/shoot.py",
+    "warmFrames": 60,
+    "frames": 2,
+    "fps": 2,
+    "seconds": 1,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "reviewedFrames": [
+      "_shots/manual_missile_tiers_0915/native_caps/shot_0001.png"
+    ]
+  },
+  "remaining": [
+    "MSL-06 owns upgrade acquisition and reset-to-Standard on death."
+  ]
+}

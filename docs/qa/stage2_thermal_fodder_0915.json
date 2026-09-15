@@ -1,0 +1,26 @@
+{
+  "date": "2026-09-15",
+  "requestId": "S2-02",
+  "stage": 2,
+  "thermalHullMultiplier": 1.25,
+  "combatHullCount": 12,
+  "shield": {
+    "allCombatHulls": true,
+    "oneWay": true,
+    "ratioRange": [0.18, 0.22],
+    "minimumEnergy": 4,
+    "families": ["bubble_fire", "bubble_hex", "bubble_volt"],
+    "sharedBreakStun": true,
+    "propsExcluded": true,
+    "bossesExcluded": true
+  },
+  "focusedVm": { "section": "304g", "passed": 6, "failed": 0 },
+  "nativeChromium": {
+    "tool": "_BUILD_SOURCE/shoot.py",
+    "frames": 3,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "proofFrame": "_shots/stage2_thermal_fodder_0915/native/shot_0001.png"
+  },
+  "fullSuite": { "passed": 3909, "recordedFailures": 57, "exitCode": 1, "newFailureNames": 0 }
+}

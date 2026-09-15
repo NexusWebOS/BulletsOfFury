@@ -1,0 +1,164 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-3 miniboss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Frost hull, lightning, beam and warning plates decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "left-side player commits a right-to-left sweep while authored lightning crackles"
+    },
+    {
+      "pass": true,
+      "label": "three-second charge reaches its red warning with repeated crackle cues"
+    },
+    {
+      "pass": true,
+      "label": "arena visibly darkens further as the laser charge builds"
+    },
+    {
+      "pass": true,
+      "label": "beam starts at the far right and crosses the centre once"
+    },
+    {
+      "pass": true,
+      "label": "live laser sweeps monotonically across the complete viewport"
+    },
+    {
+      "pass": true,
+      "label": "visible beam and collision share the exact 25%-wider width"
+    },
+    {
+      "pass": true,
+      "label": "single sweep is bounded and restores the encounter"
+    },
+    {
+      "pass": true,
+      "label": "frost_sweep_baseline is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_sweep_charge is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_sweep_red_warning is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_sweep_start_right is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_sweep_middle is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "frost_sweep_end_left is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "FROST CRUISER",
+      "kind": "frostcruiser",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "baseline": {
+      "state": "acquire",
+      "t": 0,
+      "charge": 0,
+      "ang": 0,
+      "dir": 1,
+      "active": false,
+      "crackles": 0,
+      "atlas": 0
+    },
+    "charge": {
+      "state": "beamCharge",
+      "t": 1.4999999999999996,
+      "charge": 0.49999999999999983,
+      "ang": -0.78,
+      "dir": 1,
+      "active": false,
+      "crackles": 6,
+      "atlas": 4
+    },
+    "red": {
+      "state": "beamCharge",
+      "t": 2.749999999999995,
+      "charge": 0.9166666666666651,
+      "ang": -0.78,
+      "dir": 1,
+      "active": false,
+      "crackles": 10,
+      "atlas": 8
+    },
+    "start": {
+      "state": "beamSweep",
+      "t": 0.03333333333333333,
+      "charge": 1,
+      "ang": -0.7798085141354373,
+      "dir": 1,
+      "active": true,
+      "crackles": 11,
+      "atlas": 8
+    },
+    "middle": {
+      "state": "beamSweep",
+      "t": 2.583333333333329,
+      "charge": 1,
+      "ang": -0.007499897271533773,
+      "dir": 1,
+      "active": true,
+      "crackles": 11,
+      "atlas": 8
+    },
+    "end": {
+      "state": "beamSweep",
+      "t": 4.783333333333322,
+      "charge": 1,
+      "ang": 0.7515570553911883,
+      "dir": 1,
+      "active": true,
+      "crackles": 11,
+      "atlas": 8
+    },
+    "stats": {
+      "state": "recover",
+      "active": false,
+      "crackles": 11,
+      "atlas": 8,
+      "min": -0.78,
+      "max": 0.78,
+      "monotonic": true,
+      "width": 52.5
+    },
+    "means": [
+      102.11466685435437,
+      86.5057568506006,
+      68.74792088963964,
+      79.77824042792793,
+      78.06548423423423,
+      82.72583145645645
+    ]
+  },
+  "shots": [
+    "_shots\\frost_cruiser_sweep_0915\\frost_sweep_baseline.png",
+    "_shots\\frost_cruiser_sweep_0915\\frost_sweep_charge.png",
+    "_shots\\frost_cruiser_sweep_0915\\frost_sweep_red_warning.png",
+    "_shots\\frost_cruiser_sweep_0915\\frost_sweep_start_right.png",
+    "_shots\\frost_cruiser_sweep_0915\\frost_sweep_middle.png",
+    "_shots\\frost_cruiser_sweep_0915\\frost_sweep_end_left.png"
+  ]
+}

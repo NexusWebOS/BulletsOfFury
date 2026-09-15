@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-15",
+  "baseCommit": "7635330b",
+  "runtimeSha256": "6c5ec27a2c12c5362337d9dedeaea9d1eafeffaa039f3546dab672c718dfffdcb",
+  "syntaxExitCode": 0,
+  "suite": {
+    "passed": 3851,
+    "failed": 57,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "newFailureNames": [],
+    "baseline": "arcade_isolation_0915.json",
+    "log": "_shots/arcade_dialogue_coop_0915/full_suite.log"
+  },
+  "native": {
+    "passed": 14,
+    "failed": 0,
+    "errors": [],
+    "results": "_shots/arcade_dialogue_coop_0915/results.json",
+    "contactSheet": "_shots/arcade_dialogue_coop_0915/contact.png"
+  },
+  "regressions": [
+    {"name": "Arcade routes", "passed": 20, "failed": 0},
+    {"name": "Arcade campaign isolation", "passed": 24, "failed": 0}
+  ],
+  "limitations": [
+    "MODE-01 remains partial for full natural-play parity and conditional encounter routes."
+  ]
+}

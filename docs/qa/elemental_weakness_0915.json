@@ -1,0 +1,46 @@
+{
+  "date": "2026-09-15",
+  "baseCommit": "7635330b",
+  "runtimeSha256": "b53ae3c6b49fd166a9051b8defa15aecebe91f5d3aefe1ee0749cb18f93324dc",
+  "syntaxExitCode": 0,
+  "suite": {
+    "passed": 3875,
+    "failed": 58,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "newFailureNames": [],
+    "missingBaselineNames": [],
+    "baseline": "boss_designs_0915.json",
+    "focusedSection": {
+      "name": "304c shared elemental damage rules",
+      "passed": 13,
+      "failed": 0
+    },
+    "log": "_shots/retina_audit_0915/full_suite_weakness_exact.log"
+  },
+  "native": {
+    "passed": 19,
+    "failed": 0,
+    "errors": [],
+    "results": "_shots/retina_audit_0915/results.json",
+    "log": "_shots/retina_audit_0915/native_weakness_final.log",
+    "screenshot": "_shots/retina_audit_0915/stage3_fire_weakness.png",
+    "actualInput": [
+      "held primary fire on an authored Stage-3 ice enemy"
+    ]
+  },
+  "damageRules": {
+    "fireOnIce": 2,
+    "iceOnFire": 2,
+    "sameElement": 0.5,
+    "freezerAuthoredBonusAfterSharedRule": 2,
+    "shieldUsesResolvedDamage": true
+  },
+  "lineEndings": {
+    "runtime": "LF",
+    "suite": "CRLF"
+  },
+  "limitations": [
+    "Difficulty-specific HP and attack-pattern changes remain separate checklist requests."
+  ]
+}

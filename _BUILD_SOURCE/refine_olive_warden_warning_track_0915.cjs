@@ -1,0 +1,17 @@
+const fs=require('fs');
+const path=require('path');
+const root=path.resolve(__dirname,'..');
+const game=path.join(root,'assets','game.js');
+let s=fs.readFileSync(game,'utf8');
+if(s.includes('\r'))throw new Error('assets/game.js must remain LF-only');
+const backup=path.join(root,'_shots','backups','game_pre_olive_warden_warning_track_0915.js');
+fs.mkdirSync(path.dirname(backup),{recursive:true});
+if(!fs.existsSync(backup))fs.writeFileSync(backup,s,'utf8');
+const oldText="b.x+=(H.lane-b.x)*Math.min(1,dt*8);b.y+=(S.homeY-b.y)*Math.min(1,dt*7);";
+const newText="b.x+=(H.lane-b.x)*Math.min(1,dt*6);b.y+=(S.homeY-b.y)*Math.min(1,dt*7);";
+const n=s.split(oldText).length-1;
+if(n!==1)throw new Error('warning tracker expected once, found '+n);
+s=s.replace(oldText,newText);
+if(s.includes('\r'))throw new Error('patch introduced CR characters');
+fs.writeFileSync(game,s,'utf8');
+console.log('REFINED_OLIVE_WARDEN_WARNING_TRACK_0915');

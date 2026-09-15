@@ -1,0 +1,81 @@
+{
+  "date": "2026-09-15",
+  "checklistId": "ACH-01",
+  "status": "complete",
+  "storage": {
+    "key": "bof_achievements_v1",
+    "version": 1,
+    "scope": "account/profile",
+    "campaignSlotIndependent": true
+  },
+  "definitions": {
+    "total": 66,
+    "campaignClear": 9,
+    "stageClear": 9,
+    "stageNoDeath": 9,
+    "stageNoManualMissile": 9,
+    "hardBoss": 9,
+    "furiousBoss": 9,
+    "weaponMax": 7,
+    "noContinue": 1,
+    "stage1Speed": 4,
+    "uniqueSteamKeys": 66
+  },
+  "focused": {
+    "passed": 37,
+    "failed": 0,
+    "test": "_BUILD_SOURCE/test_achievement_registry_0915.cjs"
+  },
+  "fullSuite": {
+    "passed": 3998,
+    "failed": 56,
+    "exitCode": 1,
+    "baselineFailureCount": 57,
+    "failureNameDifference": {
+      "appeared": null,
+      "didNotRecur": "a second lance may destroy the wounded 3-drone column"
+    }
+  },
+  "chromium": {
+    "frames": 16,
+    "fps": 5,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "finalScreenshot": "_shots/achievement_registry_0915/native/shot_0015.png",
+    "observed": {
+      "unlocked": 2,
+      "points": 110,
+      "duplicateBlocked": true,
+      "persistentReload": true
+    }
+  },
+  "triggers": {
+    "stageClear": true,
+    "stageNoDeath": true,
+    "stageNoManualMissile": true,
+    "campaignOrArcadePilotClear": true,
+    "noContinue": true,
+    "weaponMax": true,
+    "bossDifficulty": true,
+    "stage1SpeedExclusive": true,
+    "coopRequiresBothSeats": true,
+    "chromium": {
+      "frames": 20,
+      "fps": 5,
+      "pageErrors": 0,
+      "consoleErrors": 0,
+      "finalScreenshot": "_shots/achievement_registry_0915/native_triggers/shot_0019.png",
+      "observed": {
+        "unlocked": 7,
+        "points": 1630,
+        "duplicateBlocked": true
+      }
+    }
+  },
+  "lineEndings": {
+    "assets/game.js": "LF",
+    "_BUILD_SOURCE/test_fl.js": "CRLF"
+  },
+  "commit": false,
+  "push": false
+}

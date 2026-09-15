@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-15",
+  "requestId": "MODE-04",
+  "rule": {
+    "difficulty": "hard",
+    "ordinaryEnemyMultiplier": 1.15,
+    "campaign": true,
+    "arcade": true,
+    "shieldDerivedFromScaledHull": true,
+    "bossAndMinibossScalingSeparate": true
+  },
+  "focusedVm": {
+    "section": "304f",
+    "passed": 6,
+    "failed": 0
+  },
+  "nativeChromium": {
+    "tool": "_BUILD_SOURCE/shoot.py",
+    "frames": 3,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "normal": { "hull": 12, "shield": 4 },
+    "hard": { "hull": 14, "shield": 5 },
+    "proofFrame": "_shots/hard_enemy_hp_0915/native/shot_0001.png"
+  },
+  "fullSuite": {
+    "passed": 3904,
+    "recordedFailures": 56,
+    "exitCode": 1,
+    "newFailureNames": 0,
+    "baselineFailureNames": 57
+  }
+}

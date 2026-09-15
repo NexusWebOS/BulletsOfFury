@@ -1,0 +1,692 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "all nine live plans inject zero/one/two aces on Normal/Hard/Furious"
+    },
+    {
+      "pass": true,
+      "label": "difficulty injection preserves chronological scheduling in every live plan"
+    },
+    {
+      "pass": true,
+      "label": "Stage 1 draws its authored razorback ace plate"
+    },
+    {
+      "pass": true,
+      "label": "Stage 1 ace is shielded, tagged and reward-eligible"
+    },
+    {
+      "pass": true,
+      "label": "Stage 1 live renderer requests the exact authored hull"
+    },
+    {
+      "pass": true,
+      "label": "Stage 1 elite frame is non-empty native gameplay"
+    },
+    {
+      "pass": true,
+      "label": "Stage 2 draws its authored emberwing ace plate"
+    },
+    {
+      "pass": true,
+      "label": "Stage 2 ace is shielded, tagged and reward-eligible"
+    },
+    {
+      "pass": true,
+      "label": "Stage 2 live renderer requests the exact authored hull"
+    },
+    {
+      "pass": true,
+      "label": "Stage 2 elite frame is non-empty native gameplay"
+    },
+    {
+      "pass": true,
+      "label": "Stage 3 draws its authored glacierlance ace plate"
+    },
+    {
+      "pass": true,
+      "label": "Stage 3 ace is shielded, tagged and reward-eligible"
+    },
+    {
+      "pass": true,
+      "label": "Stage 3 live renderer requests the exact authored hull"
+    },
+    {
+      "pass": true,
+      "label": "Stage 3 elite frame is non-empty native gameplay"
+    },
+    {
+      "pass": true,
+      "label": "Stage 4 draws its authored furytalon ace plate"
+    },
+    {
+      "pass": true,
+      "label": "Stage 4 ace is shielded, tagged and reward-eligible"
+    },
+    {
+      "pass": true,
+      "label": "Stage 4 live renderer requests the exact authored hull"
+    },
+    {
+      "pass": true,
+      "label": "Stage 4 elite frame is non-empty native gameplay"
+    },
+    {
+      "pass": true,
+      "label": "Stage 5 draws its authored voidreaver ace plate"
+    },
+    {
+      "pass": true,
+      "label": "Stage 5 ace is shielded, tagged and reward-eligible"
+    },
+    {
+      "pass": true,
+      "label": "Stage 5 live renderer requests the exact authored hull"
+    },
+    {
+      "pass": true,
+      "label": "Stage 5 elite frame is non-empty native gameplay"
+    },
+    {
+      "pass": true,
+      "label": "Stage 6 draws its authored tempest ace plate"
+    },
+    {
+      "pass": true,
+      "label": "Stage 6 ace is shielded, tagged and reward-eligible"
+    },
+    {
+      "pass": true,
+      "label": "Stage 6 live renderer requests the exact authored hull"
+    },
+    {
+      "pass": true,
+      "label": "Stage 6 elite frame is non-empty native gameplay"
+    },
+    {
+      "pass": true,
+      "label": "Stage 7 draws its authored ironserpent ace plate"
+    },
+    {
+      "pass": true,
+      "label": "Stage 7 ace is shielded, tagged and reward-eligible"
+    },
+    {
+      "pass": true,
+      "label": "Stage 7 live renderer requests the exact authored hull"
+    },
+    {
+      "pass": true,
+      "label": "Stage 7 elite frame is non-empty native gameplay"
+    },
+    {
+      "pass": true,
+      "label": "Stage 8 draws its authored nighthammer ace plate"
+    },
+    {
+      "pass": true,
+      "label": "Stage 8 ace is shielded, tagged and reward-eligible"
+    },
+    {
+      "pass": true,
+      "label": "Stage 8 live renderer requests the exact authored hull"
+    },
+    {
+      "pass": true,
+      "label": "Stage 8 elite frame is non-empty native gameplay"
+    },
+    {
+      "pass": true,
+      "label": "Stage 9 draws its authored solarwarden ace plate"
+    },
+    {
+      "pass": true,
+      "label": "Stage 9 ace is shielded, tagged and reward-eligible"
+    },
+    {
+      "pass": true,
+      "label": "Stage 9 live renderer requests the exact authored hull"
+    },
+    {
+      "pass": true,
+      "label": "Stage 9 elite frame is non-empty native gameplay"
+    },
+    {
+      "pass": true,
+      "label": "the live ace dodges incoming fire while strafing toward the player"
+    },
+    {
+      "pass": true,
+      "label": "the live Furious ace releases its complete aimed volley"
+    },
+    {
+      "pass": true,
+      "label": "the behavior proof retains authored identity and shield state"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "plans": {
+    "1": {
+      "normal": {
+        "count": 0,
+        "times": [],
+        "sorted": true
+      },
+      "hard": {
+        "count": 1,
+        "times": [
+          33.808749999999996
+        ],
+        "sorted": true
+      },
+      "furious": {
+        "count": 2,
+        "times": [
+          33.808749999999996,
+          55.82375
+        ],
+        "sorted": true
+      }
+    },
+    "2": {
+      "normal": {
+        "count": 0,
+        "times": [],
+        "sorted": true
+      },
+      "hard": {
+        "count": 1,
+        "times": [
+          18.919999999999998
+        ],
+        "sorted": true
+      },
+      "furious": {
+        "count": 2,
+        "times": [
+          18.919999999999998,
+          31.24
+        ],
+        "sorted": true
+      }
+    },
+    "3": {
+      "normal": {
+        "count": 0,
+        "times": [],
+        "sorted": true
+      },
+      "hard": {
+        "count": 1,
+        "times": [
+          19.78
+        ],
+        "sorted": true
+      },
+      "furious": {
+        "count": 2,
+        "times": [
+          19.78,
+          32.66
+        ],
+        "sorted": true
+      }
+    },
+    "4": {
+      "normal": {
+        "count": 0,
+        "times": [],
+        "sorted": true
+      },
+      "hard": {
+        "count": 1,
+        "times": [
+          20.64
+        ],
+        "sorted": true
+      },
+      "furious": {
+        "count": 2,
+        "times": [
+          20.64,
+          34.08
+        ],
+        "sorted": true
+      }
+    },
+    "5": {
+      "normal": {
+        "count": 0,
+        "times": [],
+        "sorted": true
+      },
+      "hard": {
+        "count": 1,
+        "times": [
+          22.36
+        ],
+        "sorted": true
+      },
+      "furious": {
+        "count": 2,
+        "times": [
+          22.36,
+          36.92
+        ],
+        "sorted": true
+      }
+    },
+    "6": {
+      "normal": {
+        "count": 0,
+        "times": [],
+        "sorted": true
+      },
+      "hard": {
+        "count": 1,
+        "times": [
+          22.36
+        ],
+        "sorted": true
+      },
+      "furious": {
+        "count": 2,
+        "times": [
+          22.36,
+          36.92
+        ],
+        "sorted": true
+      }
+    },
+    "7": {
+      "normal": {
+        "count": 0,
+        "times": [],
+        "sorted": true
+      },
+      "hard": {
+        "count": 1,
+        "times": [
+          23.22
+        ],
+        "sorted": true
+      },
+      "furious": {
+        "count": 2,
+        "times": [
+          23.22,
+          38.339999999999996
+        ],
+        "sorted": true
+      }
+    },
+    "8": {
+      "normal": {
+        "count": 0,
+        "times": [],
+        "sorted": true
+      },
+      "hard": {
+        "count": 1,
+        "times": [
+          24.08
+        ],
+        "sorted": true
+      },
+      "furious": {
+        "count": 2,
+        "times": [
+          24.08,
+          39.76
+        ],
+        "sorted": true
+      }
+    },
+    "9": {
+      "normal": {
+        "count": 0,
+        "times": [],
+        "sorted": true
+      },
+      "hard": {
+        "count": 1,
+        "times": [
+          17.157
+        ],
+        "sorted": true
+      },
+      "furious": {
+        "count": 2,
+        "times": [
+          17.157,
+          28.328999999999997
+        ],
+        "sorted": true
+      }
+    }
+  },
+  "stages": {
+    "1": {
+      "art": "xelite_razorback",
+      "variant": "razorback",
+      "tag": "hard",
+      "eligible": true,
+      "shield": {
+        "family": "crimson",
+        "phase": "active",
+        "energy": 62
+      },
+      "waveTime": 33.808749999999996,
+      "gets": [
+        "nwl_water_0",
+        "nwl_water_1",
+        "nwl_water_2",
+        "nwl_water_3",
+        "bg_stage01_intact",
+        "nwl_water_0",
+        "nwl_water_1",
+        "nwl_water_2",
+        "nwl_water_3",
+        "nes_crimson_b_4",
+        "xelite_razorback_idle",
+        "nes_crimson_f_4",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    "2": {
+      "art": "xelite_emberwing",
+      "variant": "emberwing",
+      "tag": "hard",
+      "eligible": true,
+      "shield": {
+        "family": "crimson",
+        "phase": "active",
+        "energy": 94
+      },
+      "waveTime": 18.919999999999998,
+      "gets": [
+        "nlq3_lava_0",
+        "nlq3_lava_1",
+        "nlq3_lava_2",
+        "nlq3_lava_3",
+        "nlq3_lava_4",
+        "nlq3_lava_5",
+        "nlq3_lava_6",
+        "nlq3_lava_7",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_0",
+        "nl6c_heavy_rain_cloud_2",
+        "nl6c_rain_cloud_0",
+        "nl6c_heavy_rain_cloud_4",
+        "nes_crimson_b_4",
+        "xelite_emberwing_idle",
+        "nes_crimson_f_4",
+        "ship_axel",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    "3": {
+      "art": "xelite_glacierlance",
+      "variant": "glacierlance",
+      "tag": "hard",
+      "eligible": true,
+      "shield": {
+        "family": "ion",
+        "phase": "active",
+        "energy": 185
+      },
+      "waveTime": 19.78,
+      "gets": [
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nst3_master",
+        "nwl_ice_0",
+        "nwl_ice_1",
+        "nwl_ice_2",
+        "nwl_ice_3",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_0",
+        "nsd_fog_0",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_3",
+        "nsd_fog_5",
+        "nsd_fog_5",
+        "nsd_fog_3",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nes_ion_b_4",
+        "xelite_glacierlance_idle",
+        "nes_ion_f_4",
+        "ship_axel",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    "4": {
+      "art": "xelite_furytalon",
+      "variant": "furytalon",
+      "tag": "hard",
+      "eligible": true,
+      "shield": {
+        "family": "gold",
+        "phase": "active",
+        "energy": 75
+      },
+      "waveTime": 20.64,
+      "gets": [
+        "bg_stage04_master",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nsd_fog_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_5",
+        "nl6c_heavy_rain_cloud_2",
+        "nsd_fog_1",
+        "xelite_furytalon_idle",
+        "nes_gold_3",
+        "ship_axel",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    "5": {
+      "art": "xelite_voidreaver",
+      "variant": "voidreaver",
+      "tag": "hard",
+      "eligible": true,
+      "shield": {
+        "family": "violet",
+        "phase": "active",
+        "energy": 116
+      },
+      "waveTime": 22.36,
+      "gets": [
+        "bg_stage05_loop",
+        "nes_violet_b_4",
+        "xelite_voidreaver_idle",
+        "nes_violet_f_4",
+        "fury_thrusters_04",
+        "fury_base",
+        "ngm_space_atlas",
+        "nequipbox",
+        "ngm_space_atlas"
+      ]
+    },
+    "6": {
+      "art": "xelite_tempest",
+      "variant": "tempest",
+      "tag": "hard",
+      "eligible": true,
+      "shield": {
+        "family": "ion",
+        "phase": "active",
+        "energy": 88
+      },
+      "waveTime": 22.36,
+      "gets": [
+        "stage6_blue_master",
+        "stage6_blue_master",
+        "stage6_blue_master",
+        "nl6c_low_rolling_bank_0",
+        "nl6c_low_rolling_bank_2",
+        "nl6c_low_rolling_bank_2",
+        "nl6c_low_rolling_bank_1",
+        "nl6c_low_rolling_bank_1",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_0",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_1",
+        "nl6c_rain_cloud_2",
+        "nl6c_rain_cloud_2",
+        "nl6c_low_rolling_bank_0",
+        "nl6c_low_rolling_bank_5",
+        "nl6c_low_rolling_bank_5",
+        "nl6c_low_rolling_bank_5",
+        "nl6c_low_rolling_bank_4",
+        "nl6c_low_rolling_bank_4",
+        "nl6c_low_rolling_bank_4",
+        "nl6c_low_rolling_bank_1",
+        "nl6c_low_rolling_bank_1",
+        "nl6c_low_rolling_bank_1",
+        "nl6c_low_rolling_bank_0",
+        "nl6c_low_rolling_bank_0",
+        "nl6c_low_rolling_bank_0",
+        "nl6c_heavy_rain_cloud_0",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_heavy_rain_cloud_1",
+        "nl6c_heavy_rain_cloud_1",
+        "nes_ion_b_4",
+        "xelite_tempest_idle",
+        "nes_ion_f_4",
+        "ship_axel",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    "7": {
+      "art": "xelite_ironserpent",
+      "variant": "ironserpent",
+      "tag": "hard",
+      "eligible": true,
+      "shield": {
+        "family": "hex",
+        "phase": "active",
+        "energy": 66
+      },
+      "waveTime": 23.22,
+      "gets": [
+        "nwl_sludge_0",
+        "nwl_sludge_1",
+        "nwl_sludge_2",
+        "nwl_sludge_3",
+        "nst7_master_v3",
+        "nwl_sludge_0",
+        "nwl_sludge_1",
+        "nwl_sludge_2",
+        "nwl_sludge_3",
+        "nst7_master_v3",
+        "xelite_ironserpent_idle",
+        "nes_hex_3",
+        "ship_axel",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    "8": {
+      "art": "xelite_nighthammer",
+      "variant": "nighthammer",
+      "tag": "hard",
+      "eligible": true,
+      "shield": {
+        "family": "prism",
+        "phase": "active",
+        "energy": 146
+      },
+      "waveTime": 24.08,
+      "gets": [
+        "nst8_sky_crimson",
+        "nl6c_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_0",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_4",
+        "nl6c_heavy_rain_cloud_3",
+        "nl6c_heavy_rain_cloud_4",
+        "nl6c_rain_cloud_3",
+        "nl6c_rain_cloud_2",
+        "nl6c_heavy_rain_cloud_2",
+        "xelite_nighthammer_idle",
+        "nes_prism_3",
+        "ship_axel",
+        "nequipbox",
+        "bof_player_weapon_special_icons_atlas"
+      ]
+    },
+    "9": {
+      "art": "xelite_solarwarden",
+      "variant": "solarwarden",
+      "tag": "hard",
+      "eligible": true,
+      "shield": {
+        "family": "gold",
+        "phase": "active",
+        "energy": 151
+      },
+      "waveTime": 17.157,
+      "gets": [
+        "nst9_starfield",
+        "xelite_solarwarden_idle",
+        "nes_gold_3",
+        "fury_thrusters_04",
+        "fury_base",
+        "nequipbox"
+      ]
+    }
+  },
+  "behavior": {
+    "roll": true,
+    "moved": true,
+    "shots": 4,
+    "want": 4,
+    "shield": true,
+    "kind": "tempest"
+  },
+  "shots": [
+    "_shots\\difficulty_elite_aces_0915\\elite_stage_01_razorback.png",
+    "_shots\\difficulty_elite_aces_0915\\elite_stage_02_emberwing.png",
+    "_shots\\difficulty_elite_aces_0915\\elite_stage_03_glacierlance.png",
+    "_shots\\difficulty_elite_aces_0915\\elite_stage_04_furytalon.png",
+    "_shots\\difficulty_elite_aces_0915\\elite_stage_05_voidreaver.png",
+    "_shots\\difficulty_elite_aces_0915\\elite_stage_06_tempest.png",
+    "_shots\\difficulty_elite_aces_0915\\elite_stage_07_ironserpent.png",
+    "_shots\\difficulty_elite_aces_0915\\elite_stage_08_nighthammer.png",
+    "_shots\\difficulty_elite_aces_0915\\elite_stage_09_solarwarden.png"
+  ]
+}

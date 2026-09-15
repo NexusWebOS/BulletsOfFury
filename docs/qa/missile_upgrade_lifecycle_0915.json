@@ -1,0 +1,45 @@
+{
+  "date": "2026-09-15",
+  "requestIds": ["MSL-06", "MSL-07"],
+  "status": "partial",
+  "implemented": [
+    "Super replaces Standard",
+    "Ultra unlocks after surviving the next authored wave following Super",
+    "Uber unlocks after surviving the next authored wave following Ultra",
+    "tier acquisition clamps the existing ammo bank",
+    "out-of-order and duplicate upgrades are refused",
+    "real player death resets the tier and gate to Standard",
+    "campaign snapshots preserve tier, gate and monotonic wave serial",
+    "co-op players own independent upgrade state"
+  ],
+  "futurePickupKinds": ["missileup_super", "missileup_ultra", "missileup_uber"],
+  "remaining": [
+    "Produce and register the authored Super, Ultra and Uber pickup icon/box art in MSL-08.",
+    "Spawn and collect those authored pickups during ordinary gameplay."
+  ],
+  "focusedVm": {"section": "304j", "passed": 30, "failed": 0},
+  "fullSuite": {
+    "passed": 3960,
+    "recordedFailures": 57,
+    "exitCode": 1,
+    "baselineFailureNames": 57,
+    "newFailureNames": ["stage 1: the sand tanks spawn (scroll never)"],
+    "resolvedBaselineNames": ["Stage 7 results go straight to the Stage 8 card with the portal-entry latch set"],
+    "notes": "The sand-tank assertion is documented in the repository as intermittent and passed in the immediately preceding confirmation suite."
+  },
+  "nativeChromium": {
+    "tool": "_BUILD_SOURCE/shoot.py",
+    "warmFrames": 60,
+    "frames": 23,
+    "fps": 5,
+    "seconds": 4.6,
+    "pageErrors": 0,
+    "consoleErrors": 0,
+    "reviewedFrames": [
+      "_shots/manual_missile_upgrade_0915/native/shot_0002.png",
+      "_shots/manual_missile_upgrade_0915/native/shot_0006.png",
+      "_shots/manual_missile_upgrade_0915/native/shot_0013.png",
+      "_shots/manual_missile_upgrade_0915/native/shot_0018.png"
+    ]
+  }
+}

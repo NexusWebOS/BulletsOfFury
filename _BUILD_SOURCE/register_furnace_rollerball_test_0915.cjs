@@ -1,0 +1,14 @@
+const fs=require('fs');
+const path=require('path');
+const file=path.resolve(__dirname,'test_fl.js');
+let src=fs.readFileSync(file,'utf8');
+const hadCrlf=src.includes('\r\n');
+const from="require('./test_overlord_four_pass_frenzy_0915.cjs')(vm,ctxv,ok);\r\n\r\nconsole.log('\\n============================================');";
+const to="require('./test_overlord_four_pass_frenzy_0915.cjs')(vm,ctxv,ok);\r\nrequire('./test_furnace_rollerball_0915.cjs')(vm,ctxv,ok);\r\n\r\nconsole.log('\\n============================================');";
+const count=src.split(from).length-1;
+if(count!==1)throw new Error('expected one suite tail, found '+count);
+src=src.replace(from,to);
+if(hadCrlf&&!src.includes('\r\n'))throw new Error('lost CRLF');
+if(/(^|[^\r])\n/.test(src))throw new Error('test_fl.js gained bare LF');
+fs.writeFileSync(file,src,'utf8');
+console.log('REGISTERED_FURNACE_ROLLERBALL_TEST_0915');

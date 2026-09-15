@@ -1,0 +1,153 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-1 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "all authored FOV, alert and Overlord plates decode before the attack"
+    },
+    {
+      "pass": true,
+      "label": "early tracking draws the authored green FOV"
+    },
+    {
+      "pass": true,
+      "label": "the attack locks its lane during the authored yellow FOV"
+    },
+    {
+      "pass": true,
+      "label": "the committed lane turns authored red immediately before release"
+    },
+    {
+      "pass": true,
+      "label": "the matching authored overhead alert is visible during the warning"
+    },
+    {
+      "pass": true,
+      "label": "the released helicopter charges down the exact warned lane"
+    },
+    {
+      "pass": true,
+      "label": "overlord_charge_green is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_charge_yellow_locked is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_charge_red_committed is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "overlord_charge_dash is a non-empty native game frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or controlled-loop errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "fight": {
+      "ok": true,
+      "name": "JUNGLE OVERLORD-X",
+      "kind": "damkeeper",
+      "pilot": "yuri",
+      "state": "play"
+    },
+    "green": {
+      "blits": [
+        {
+          "type": "fov",
+          "phase": "green",
+          "drawn": true,
+          "k": 0.104,
+          "x": 240.4,
+          "y": 118.9,
+          "lane": 42
+        },
+        {
+          "type": "alert",
+          "phase": "green",
+          "drawn": true
+        }
+      ],
+      "state": "chargeTell",
+      "locked": false,
+      "p": 0.10416666666666854,
+      "x": 240,
+      "lane": 240,
+      "y": 112.36199138929688,
+      "err": null
+    },
+    "yellow": {
+      "blits": [
+        {
+          "type": "fov",
+          "phase": "yellow",
+          "drawn": true,
+          "k": 0.5,
+          "x": 242.4,
+          "y": 123.6,
+          "lane": 42
+        },
+        {
+          "type": "alert",
+          "phase": "yellow",
+          "drawn": true
+        }
+      ],
+      "state": "chargeTell",
+      "locked": true,
+      "p": 0.4999999999999974,
+      "x": 240,
+      "lane": 240,
+      "y": 112.62830512224436,
+      "err": null
+    },
+    "red": {
+      "blits": [
+        {
+          "type": "fov",
+          "phase": "red",
+          "drawn": true,
+          "k": 0.708,
+          "x": 241.5,
+          "y": 123.9,
+          "lane": 42
+        },
+        {
+          "type": "alert",
+          "phase": "red",
+          "drawn": true
+        }
+      ],
+      "state": "chargeTell",
+      "locked": true,
+      "p": 0.7083333333333236,
+      "x": 240,
+      "lane": 240,
+      "y": 112.63779325458214,
+      "err": null
+    },
+    "dash": {
+      "blits": [],
+      "state": "chargeOff",
+      "locked": false,
+      "p": null,
+      "x": 240,
+      "lane": 240,
+      "y": 220.20647005954808,
+      "err": null
+    }
+  },
+  "shots": [
+    "_shots\\shared_nonlaser_warning_0915\\overlord_charge_green.png",
+    "_shots\\shared_nonlaser_warning_0915\\overlord_charge_yellow_locked.png",
+    "_shots\\shared_nonlaser_warning_0915\\overlord_charge_red_committed.png",
+    "_shots\\shared_nonlaser_warning_0915\\overlord_charge_dash.png"
+  ]
+}

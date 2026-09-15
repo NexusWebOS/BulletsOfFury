@@ -50,9 +50,33 @@
       "frames": 1,
       "width": 1024,
       "height": 1024
+    },
+    {
+      "file": "boomerang_components_source_0915.png",
+      "label": "Image-generated Chrome Hammer boomerang component source",
+      "generator": "OpenAI ImageGen",
+      "width": 1774,
+      "height": 887,
+      "sha12": "26f09e20e1fe"
+    },
+    {
+      "file": "boomerang_body.png",
+      "label": "Transparent hammerless one-hand Chrome Hammer runtime body",
+      "generator": "deterministic chroma-key crop from imagegen source",
+      "width": 753,
+      "height": 883,
+      "sha12": "8e9d4367d23a"
+    },
+    {
+      "file": "boomerang_hammer.png",
+      "label": "Transparent detached Chrome Hammer runtime hammer",
+      "generator": "deterministic chroma-key crop from imagegen source",
+      "width": 799,
+      "height": 309,
+      "sha12": "633a76f5fbae"
     }
   ],
-  "status": "Playable Easy/Normal Stage 5 integration; native form/attack review complete; full natural-play balance remains SPACE-06",
+  "status": "Playable Easy/Normal Stage 5 integration plus one-hand vertical boomerang; full natural-play balance remains SPACE-06",
   "credits_spent": 96,
   "credits_remaining": 22
 }
