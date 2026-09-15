@@ -35,7 +35,8 @@
      at, so it is the one that needed it. */
   #screen-area canvas{display:block;position:absolute;left:50%;top:50%;
     transform:translate(-50%,-50%);image-rendering:pixelated;background:#000;}
-  #hint{position:fixed;left:8px;bottom:6px;font-size:11px;color:#3a4350;opacity:.55;pointer-events:none;}
+  #hint{position:fixed;left:8px;right:8px;bottom:6px;display:flex;flex-wrap:wrap;justify-content:center;gap:12px;font-size:10px;color:#afbdce;pointer-events:none;}
+  #hint span{display:inline-flex;align-items:center;gap:5px;} #hint canvas{image-rendering:pixelated;}
 
   /* ---- FULLSCREEN button ---- */
   #fs-btn{position:fixed;right:12px;top:12px;z-index:50;width:40px;height:40px;
@@ -116,7 +117,7 @@
   <svg id="fs-icon-enter" viewBox="0 0 24 24"><path d="M4 9V4h5v2H6v3H4zm0 6h2v3h3v2H4v-5zm16 0v5h-5v-2h3v-3h2zM20 9h-2V6h-3V4h5v5z"/></svg>
   <svg id="fs-icon-exit" viewBox="0 0 24 24" style="display:none"><path d="M9 4v5H4V7h3V4h2zm11 3v2h-5V4h2v3h3zM9 20H7v-3H4v-2h5v5zm11-5v2h-3v3h-2v-5h5z"/></svg>
 </div>
-<div id="hint">MOVE: mouse / WASD &nbsp; FIRE: J &nbsp; BOMB: K &nbsp; START/OK: Enter &nbsp; PAUSE: P &nbsp; FULLSCREEN: F</div>
+<div id="hint" aria-label="Game controls"></div>
 <script>
 (function(){
   // OUT-OF-BOUNDS EQUIPPED box: renders the current weapon pickup icon in the box art,

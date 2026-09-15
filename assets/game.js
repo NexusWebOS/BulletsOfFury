@@ -1968,6 +1968,9 @@ const XART=(function(){
     X._src['cm2_cloud_'+_c+'_shadow']='assets/game/campaign_map_v2/cloud_'+_c+'_shadow.png';
   }
   X._src['dlg_rect_0914']='assets/game/dialogue_0914/frame.png';
+  for(const k of ['ship','ball','leap','charge','reticle'])X._src['hammer_'+k]='assets/game/stage5_hammer/'+k+'.png';
+  X._src['s4_chase_0915']='assets/game/stage4_highway_0915.png';
+  X._src['pause_button_0915']='assets/game/ui/pause_0915/button.png';
   for(const _f of ['ocean','bar','btn_save','btn_load','btn_exit']) X._src['cm2_'+_f]='assets/game/campaign_map_v2/'+_f+'.png';
   /* LASER MIST REWARD ATLAS (0902). One decoded sheet owns the five pickup plates, twenty
      travelling-water frames and all impact/ripple/bubble animation. Runtime rects below keep
@@ -4469,24 +4472,49 @@ function roadSignY(stage, y){
    A soft dark pad plus a one-pixel drop shadow gives it an edge on any background without a box.
 
    Both call sites - mode select and pilot select - go through here so they cannot drift apart. */
-function drawHintBar(text){
-  const y=VH-18;
-  const breathe=0.86+0.10*Math.sin(stateT*2.2);      // 0.76..0.96, slow. was 0.10..1.00 at 5/s
-  ctx.save();
-  ctx.textAlign='center';
-  ctx.font='10px "BOFmil", monospace';
-  const w=ctx.measureText(text).width;
-  /* a soft pad under the line - wide enough to clear the text, faded at the alpha it sits on */
-  ctx.globalAlpha=0.34*breathe;
-  ctx.fillStyle='#05070c';
-  ctx.fillRect(VW/2-w/2-10, y-11, w+20, 15);
-  /* drop shadow, then the face */
-  ctx.globalAlpha=0.55*breathe; ctx.fillStyle='#000000';
-  ctx.fillText(text, VW/2+1, y+1);
-  ctx.globalAlpha=breathe;      ctx.fillStyle='#dfe6f0';
-  ctx.fillText(text, VW/2, y);
+/* Shared cabinet controls (0914): use the authored Help atlas everywhere. The captions
+   describe actions; physical keyboard assignments belong in Help and Options. */
+function controlHintRow(items,y=VH-20,cx=VW/2,maxW=VW-24,h=24){
+  const H=11,gap=14;
+  const sizes=items.map(([key,label])=>{
+    const cell=BOFX.cells&&BOFX.cells[key], iw=cell?h*cell[3]/cell[4]:h;
+    const tw=bmfMeasure('dialogue',label,H)||label.length*H*.6;
+    return {iw,tw,w:iw+6+tw};
+  });
+  const total=sizes.reduce((n,q)=>n+q.w,0)+Math.max(0,items.length-1)*gap;
+  const scale=Math.min(1,maxW/Math.max(1,total));
+  ctx.save();ctx.translate(cx,y);ctx.scale(scale,scale);
+  let x=-total/2;
+  items.forEach(([key,label],i)=>{
+    const q=sizes[i];helpGlyph(key,x+q.iw/2,0,h);
+    msgTextLeft(label,x+q.iw+6,0,H,'#dce7f5',0,1,.10,0);
+    x+=q.w+gap;
+  });
   ctx.restore();
-  ctx.globalAlpha=1; ctx.textAlign='left';
+}
+function drawHintBar(items){controlHintRow(items);}
+function menuControlFooter(){
+  if(state===GS.TITLE) controlHintRow([['pad_dpad','MENU'],['pad_a','SELECT'],['pad_start','SELECT']],VH-30);
+  else if(state===GS.DIFF) controlHintRow([['pad_dpad','DIFFICULTY'],['pad_a','SELECT'],['pad_b','BACK']]);
+  else if((state===GS.OPTIONS||(state==='paused'&&playPause&&playPause.mode==='options'))&&!rebindAction) controlHintRow([['pad_dpad','ADJUST'],['pad_a','SELECT'],['pad_b','CANCEL']]);
+  else if(state===GS.PASSWORD) controlHintRow([['pad_dpad','KEYPAD'],['pad_a','SELECT'],['pad_b','BACK']]);
+  else if(state==='paused'&&playPause&&playPause.mode==='root') controlHintRow([['pad_dpad','MENU'],['pad_a','SELECT'],['pad_start','RESUME']]);
+}
+function controlHintShellTick(){
+  if(controlHintShellTick.done)return;
+  const box=document.getElementById('hint');
+  if(!box||typeof box.replaceChildren!=='function')return;
+  const items=[['pad_dpad','MOVE'],['pad_a','FIRE / SELECT'],['pad_b','MISSILE / BACK'],['pad_c','RETINA'],['pad_y','CHARGE'],['pad_start','PAUSE / MENU']];
+  if(items.some(([key])=>!XART.rdy(key)))return;
+  box.replaceChildren();
+  for(const [key,label] of items){
+    const im=XART.get(key),cell=BOFX.cells[key],canvas=document.createElement('canvas');
+    canvas.height=22;canvas.width=Math.round(22*cell[3]/cell[4]);
+    canvas.setAttribute('aria-label',key.slice(4).toUpperCase());canvas.setAttribute('role','img');
+    const g=canvas.getContext('2d');g.imageSmoothingEnabled=false;g.drawImage(im,0,0,canvas.width,canvas.height);
+    const item=document.createElement('span');item.append(canvas,document.createTextNode(label));box.append(item);
+  }
+  controlHintShellTick.done=true;
 }
 
 /* stages whose roadside signs Mike has retired. Drop 0813j: "get rid of the signs ... for stage
@@ -4945,8 +4973,11 @@ function drawLevelMaster(dt){
   /* Stage 4's boss is a chase, not a roadblock. Loop the clean upper-highway kilometre at more
      than four times the stage cruise speed until the boss dies. Restricting the source window to
      rows 0..1024 keeps hangars/checkpoints from teleporting into the chase loop. */
-  if(run.stage===4&&_realBossRun){
-    const chaseSpan=Math.max(1,Math.min(512,(img.naturalHeight||img.height)-winH));
+  if(run.stage===4&&(_realBossRun||(boss&&boss._cinDeath&&boss.dying<9.8))){
+    const roadReady=XART.rdy('s4_chase_0915');
+    const road=roadReady?XART.get('s4_chase_0915'):null;
+    const tileH=road?road.height*drawW/road.width:0;
+    const chaseSpan=road?tileH*2:Math.max(1,Math.min(512,(img.naturalHeight||img.height)-winH));
     /* The Sovereign is a real pursuit now. 460px/s is visibly faster than the level cruise;
        its fly-away/orb pass pushes to 620px/s so distance opens while the road keeps screaming
        underneath instead of looking paused behind a moving sprite. */
@@ -4954,6 +4985,17 @@ function drawLevelMaster(dt){
     const _s4spd=_s4mode==='flyaway'?620:(_s4mode==='swerve'?560:480);
     _stage4BossRoadScroll=(_stage4BossRoadScroll+dt*_s4spd)%chaseSpan;
     srcY=chaseSpan-_stage4BossRoadScroll;
+    if(road){
+      const offset=_stage4BossRoadScroll, top=_floorDy+_winTop;
+      ctx.save();ctx.beginPath();ctx.rect(0,top,drawW,winH);ctx.clip();
+      for(let n=-3;n<3;n++){
+        const y=top+offset+n*tileH;if(y>top+winH||y+tileH<top)continue;
+        ctx.save();ctx.translate(0,y);
+        if(Math.abs(n%2)===1){ctx.translate(0,tileH);ctx.scale(1,-1);}
+        ctx.drawImage(road,0,0,drawW,tileH);ctx.restore();
+      }
+      ctx.restore();_masterSrcY=srcY-_floorDy-_winTop;_groundPublish(srcY);return true;
+    }
   }else if(run.stage===4)_stage4BossRoadScroll=0;
   /* SKIP A BAND OF THE MASTER (drop 0813i)
      Mike: "get rid of that door on level 6. get rid of that bridge on level 8" -> "dont use those
@@ -6151,6 +6193,39 @@ function drawEquipCorner(){
   ctx.fillText('L'+wlv, ix+iw-1, iy+ih-1);
   ctx.restore();
 }
+/* Encounter time belongs to the unit, so stages, retries and replacement bosses cannot
+   inherit an earlier fight. Count active simulation time, including respawns and later morphs;
+   initial entrance and paused/menu frames do not count. Retain seconds on the defeated unit
+   for future speed awards, without granting achievements here. */
+function encounterClockTick(b,active,dt){
+  if(!b)return;
+  if(b.dead){if(b._fightClock)b._fightClock.finished=true;return;}
+  if(!active||state!==GS.PLAY)return;
+  if(!b._fightClock){
+    if(b.enter)return;
+    if(b._mech&&b._mech.phase!=='fight')return;
+    b._fightClock={seconds:0,finished:false};
+  }
+  if(!b._fightClock.finished && Number.isFinite(dt)&&dt>0)b._fightClock.seconds+=dt;
+}
+function encounterClockText(seconds){
+  const t=Math.min(5999,Math.max(0,Math.floor(Number.isFinite(seconds)?seconds:0)));
+  return String(Math.floor(t/60)).padStart(2,'0')+':'+String(t%60).padStart(2,'0');
+}
+function drawEncounterClocks(){
+  if(state!==GS.PLAY)return;
+  const rows=[[boss,bossActive,'BOSS'],[subBoss,subBossActive,'MINI']];
+  ctx.save();ctx.setTransform(SS,0,0,SS,0,0);ctx.globalAlpha=1;
+  let y=67;
+  for(const [b,active,label] of rows){
+    if(!b||!active||b.dead||!b._fightClock)continue;
+    ctx.fillStyle='rgba(5,9,17,.85)';ctx.fillRect(VW-119,y-13,111,23);
+    msgTextLeft(label,VW-112,y,8,'#b3c4d8',0,1,.08,0);
+    msgTextLeft(encounterClockText(b._fightClock.seconds),VW-67,y,12,'#f5e4aa',0,1,.08,0);
+    y+=26;
+  }
+  ctx.restore();
+}
 function drawHUDOverlay(){
   if(typeof drawRollCharge==='function') drawRollCharge();
   if(typeof drawEquipCorner==='function') drawEquipCorner();
@@ -6320,6 +6395,17 @@ fitCanvas();window.addEventListener('resize', fitCanvas); fitCanvas();
    true widescreen virtual width. Gameplay restores the original backing on the state change. */
 let CINEMA_VW=VW;
 function cutsceneViewWidth(){return CINEMA_VW;}
+function pilotViewSize(){
+  const ar=Math.max(.25,window.innerWidth/Math.max(1,window.innerHeight));
+  return {w:Math.round(Math.max(VW,VH*ar)),h:Math.round(Math.max(VH,VW/ar))};
+}
+function _setPilotViewport(){
+  const v=pilotViewSize();
+  if(cv.width!==v.w*SS||cv.height!==v.h*SS){cv.width=v.w*SS;cv.height=v.h*SS;}
+  if(document.body&&document.body.classList)document.body.classList.add('cinematic-full');
+  ctx.imageSmoothingEnabled=false;
+  if(window.__bofFit)window.__bofFit();
+}
 function _setCinematicViewport(on){
   try{
     /* ⚠ ASSIGNING A CANVAS'S WIDTH CLEARS IT, EVEN TO THE VALUE IT ALREADY HAS (0913a). setState calls this on EVERY
@@ -6342,7 +6428,7 @@ function _setCinematicViewport(on){
   }catch(_cinemaView){}
 }
 window.__bofResizeCinematic=function(){
-  try{if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||
+  try{if(state===GS.PILOT){_setPilotViewport();return;}if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||
          state===GS.STAGECLEAR)_setCinematicViewport(true);}catch(_cinResize){}
 };
 window.addEventListener('resize',window.__bofResizeCinematic);
@@ -6920,7 +7006,8 @@ const Input = (()=>{
     const r=cv.getBoundingClientRect();
     const cx=(e.touches?e.touches[0].clientX:e.clientX);
     const cy=(e.touches?e.touches[0].clientY:e.clientY);
-    const nx=clamp((cx-r.left)/r.width*VW,0,VW), ny=clamp((cy-r.top)/r.height*VH,0,VH);
+    const v=state===GS.PILOT?pilotViewSize():{w:VW,h:VH};
+    const nx=clamp((cx-r.left)/r.width*v.w,0,v.w), ny=clamp((cy-r.top)/r.height*v.h,0,v.h);
     if(Math.abs(nx-mouse.x)>0.5 || Math.abs(ny-mouse.y)>0.5) mouse.moved=true;   // real movement
     mouse.x=nx; mouse.y=ny; mouse.active=true;
   }
@@ -7036,16 +7123,14 @@ const Input = (()=>{
      whatever is under the cursor. If a left click also counted as "confirm the highlighted item",
      one click would do two things: activate the button you aimed at AND the row the keyboard
      cursor happened to be on. Gameplay keeps the click; menus keep their own semantics. */
-  function menuConfirm(){ return tap('enter')||tap(' ')||tapAny(keybind.fire.filter(k=>!/^mouse\d/.test(k)))||tap('pad_b0')||tap('pad_b9'); }
+  function menuConfirm(){ return menuStart()||tap(' ')||tapAny(keybind.fire.filter(k=>!/^mouse\d/.test(k)))||tap('pad_b0')||tap('pad_b9'); }
   /* START IS ITS OWN CAMPAIGN-MAP COMMAND (0826). It deliberately excludes FIRE/A so the
      selected stage can still be deployed with the assigned fire button while Enter or the
      controller Start button opens the save/load/exit menu. */
-  function menuStart(){ return tap('enter')||tap('pad_b9'); }
-  /* K IS BACK (drop 0801bv). I bound 'b' last drop and that was wrong: on this
-     layout the gamepad B button IS 'k' (fire=J, missile=K, retina=L), so 'b' was
-     an unrelated key. 'b' is REMOVED rather than kept alongside — a stray letter
-     closing menus is exactly the kind of thing that fires by accident. */
-  function menuBack(){ return tap('backspace')||tap('escape')||tap('k')||tap('pad_b1')||tap('pad_b8'); }
+  function menuStart(){ return tapAny((keybind.start||['enter']).filter(k=>!/^mouse\d/.test(k)))||tap('pad_b9'); }
+  /* B is the cabinet's missile/back action. Respect its remapped keyboard/controller
+     bindings, but leave mouse clicks to each screen's own hit testing. Backspace edits text. */
+  function menuBack(){ return tapAny((keybind.bomb||[]).filter(k=>!/^mouse\d/.test(k)&&k!=='backspace'))||tap('pad_b1')||tap('escape'); }
   function consumeMouseMoved(){ const m=mouse.moved; mouse.moved=false; return m; }
   /* ⚠ A CLICK SYNTHESISES THE CONFIRM THE KEYBOARD PATH ALREADY HANDLES (drop 0812b).
      Five menu screens were pointer-dead, and each one's activation is a different block —
@@ -18818,6 +18903,13 @@ function jungleCruiserSetState(b,state){
 }
 function jungleCruiserStalk(b,dt){
   const J=b._jc,W=(typeof worldWidth==='function')?worldWidth():VW,margin=Math.max(60,b.w*.45);
+  if(b._ship==='frostcruiser'){
+    J.sample-=dt;
+    if(J.sample<=0){J.sample=JC_TRACK_SAMPLE;J.targetX=targetShip(b.x,b.y).x;}
+    enemyGlideTick(b,dt,{follow:true,targetX:J.targetX,speed:J.enraged?205:175});
+    b.y+=(shipBossStationY(b)-b.y)*Math.min(1,dt*5);
+    return;
+  }
   J.sample-=dt;
   if(J.sample<=0){
     J.sample=JC_TRACK_SAMPLE;
@@ -18972,7 +19064,7 @@ function jungleCruiserDirector(b,dt){
   switch(J.state){
     case 'acquire':
       jungleCruiserStalk(b,dt);
-      if(J.t>=1.35)jungleCruiserSetState(b,'missiles');
+      if(J.t>=(b._ship==='frostcruiser'?.90:1.35))jungleCruiserSetState(b,'missiles');
       break;
     case 'missiles': {
       jungleCruiserStalk(b,dt);const gap=J.damaged?0.145:JC_POD_GAP,count=4;
@@ -19001,12 +19093,22 @@ function jungleCruiserDirector(b,dt){
       J.ghost=true;b._jcGhost=true;J.rot=Math.PI;J.thrust=1;b.y-=735*dt;
       if(!J.loopFired&&b.y<=sy+18){J.loopFired=true;jungleCruiserLoopMissiles(b);}
       if(b.y<-b.h*.72){
-        b.y=-b.h*.66;J.rot=0;J.loopFired=false;jungleCruiserSetState(b,'returnTop');
+        b.y=-b.h*.66;J.rot=0;J.loopFired=false;
+        if(b._ship==='frostcruiser'){
+          const margin=b.w*.5;
+          b.x=clamp(targetShip(b.x,b.y).x,camLeftX()+margin,camRightX()-margin);
+          J.returnX=b.x;
+        }
+        jungleCruiserSetState(b,'returnTop');
       }
       break;
     case 'returnTop':
-      J.rot=0;b.y+=92*dt;
-      if(b.y>=sy){b.y=sy;J.ghost=false;b._jcGhost=false;jungleCruiserSetState(b,'beamCharge');}
+      J.rot=0;b.y+=(b._ship==='frostcruiser'?150:92)*dt;
+      if(b.y>=sy){b.y=sy;J.ghost=false;b._jcGhost=false;jungleCruiserSetState(b,b._ship==='frostcruiser'?'frostTrack':'beamCharge');}
+      break;
+    case 'frostTrack':
+      jungleCruiserStalk(b,dt);
+      if(J.t>=1.15)jungleCruiserSetState(b,'beamCharge');
       break;
     case 'beamCharge': {
       /* The laser is an arena sweep, so its origin must be the arena centre.  The previous
@@ -21318,6 +21420,7 @@ function enforceEncounterHp(b,floor){
   return b;
 }
 function spawnBoss(kind){
+  if(kind==='xenoregent'&&run.stage===5&&(diffKey==='easy'||diffKey==='normal'))kind='chromehammer';
   const sn=curStage.n;
   /* ============================================================
      ⚠ BOSS HP CLIMBS FROM STAGE 2 ON (drop 0812l). Mike: "Beef up mini boss and boss hp from
@@ -21350,6 +21453,7 @@ function spawnBoss(kind){
        to its default, so all three came back 160x120 with no name and drew a placeholder.
        shipBossInit itself was never the problem - probed directly it sets w/h/name correctly.
        Two spawners, two switches; a kind must be registered in the one that matches its ROLE. */
+    case 'chromehammer': hammerBossInit(b); break;
     case 'tidalfusion': s9FusionBossInit(b,hpBase); break;
     case 'infernoreaver': case 'cryospear': case 'voidbat':
     case 'tidalsovereign': case 'warpsentinel':   // stage 9's bonus pair (0822ab)
@@ -25949,6 +26053,7 @@ function mslBigPackForStage(stage){
 /* One place decides what a broken missile crate yields, so the two call sites
    (the breakable supply box and the mcrate pickup) can never drift apart. */
 function mslPackRoll(){
+ if(boss&&boss._hammer&&!boss.dead)return Math.random()<.6?'missilepack10':'missilepack20';
  const stage=run.stage|0,r=Math.random();
  if(stage===8)return r<.5?'missilepack50':'missilepack100';
  if(stage>=1&&stage<=7)return r<.50?'missilepack':r<.80?'missilepack10':'missilepack20';
@@ -29603,7 +29708,8 @@ function setState(s){
      stat screen". GS.STAGECLEAR now takes the same browser-aspect viewport the HQ cutscenes use,
      which is also what hides the credit rails, the score strip and its divider behind it - the
      card is a full-screen presentation moment, not a gameplay frame with furniture around it. */
-  _setCinematicViewport(s===GS.CUTSCENE || s===GS.CAMPAIGNINTRO || s===GS.VICTORY ||
+  if(s===GS.PILOT)_setPilotViewport();
+  else _setCinematicViewport(s===GS.CUTSCENE || s===GS.CAMPAIGNINTRO || s===GS.VICTORY ||
                         s===GS.STAGECLEAR);
   /* The final results card is useful decode time. Start the ending plates here so a player who
      advances immediately never reaches the first line of the finale before its HQ background and
@@ -30214,6 +30320,8 @@ function updatePlay(dt){
   /* either seat's START pauses - in co-op the player who is not holding the pad still has to be
      able to stop the game. */
   if(pauseTapped()){ setState('paused'); return; }
+  encounterClockTick(boss,bossActive,dt);
+  encounterClockTick(subBoss,subBossActive,dt);
 
   missileSupplyBonusTick(dt);
   bossMissileSupplyTick(dt);
@@ -32089,7 +32197,7 @@ function updatePlay(dt){
       if(withSeat(_s, function(){
       if(player.dead || player.invuln>0) return false;
       const _hx=(player._hx!=null?player._hx:9), _hy=(player._hy!=null?player._hy:10);
-      if(b._frostNoseLaser ? frostNoseLaserHit(b,targetShip(b.x,b.y),_hx,_hy) :
+      if(b._hammerLaser ? hammerLaserHit(b,targetShip(b.x,b.y),_hx,_hy) : b._frostNoseLaser ? frostNoseLaserHit(b,targetShip(b.x,b.y),_hx,_hy) :
         (Math.abs(b.x-targetShip(b.x,b.y).x)<(_hx+b.w*0.15) && Math.abs(b.y-targetShip(b.x,b.y).y)<(_hy+b.h*0.15))){
         /* the magma round lands on its OWN authored impact (Mike, 0819) — `bfx_magma_i`, the third
            plate of the set, a burst that scatters into cooling debris. explode() counts a named
@@ -32118,7 +32226,7 @@ function updatePlay(dt){
        bad frame poisoning a whole run. (The Warden's undefined burst aim, fixed this drop,
        was one such source.) */
     { const _mw=(typeof worldWidth==='function')?worldWidth():VW;
-      const pad=b._frostNoseLaser?Math.hypot(b.w,b.h)/2+2:16;
+      const pad=(b._frostNoseLaser||b._hammerLaser)?Math.hypot(b.w,b.h)/2+2:16;
       if(!isFinite(b.x)||!isFinite(b.y)||b.y<-pad||b.y>VH+pad||b.x<-pad||b.x>_mw+pad) b.dead=true; }
   }
   eBullets=eBullets.filter(b=>!b.dead);
@@ -32204,7 +32312,7 @@ function updatePlay(dt){
     /* ⚠ STAGE 1 IS BACK TO THE ORDINARY OUTRO (Mike, 0819d). 0814d stretched it to 9.2s purely
        so the dam flyover could be watched; there is no flyover now, so the extra 3.4s was
        just the player sitting still after the kill. */
-    const endT = 5.8;
+    const endT = boss&&boss._cinDeath?9.8:5.8;
     if(stageEnding>endT){
       whiteBlast=0;
       if(run.stage>=5){ if(run.score>highScore){ highScore=run.score; try{localStorage.setItem('bof_hi',highScore);}catch(e){} } }
@@ -32692,6 +32800,7 @@ function triggerVictory(){
    ============================================================ */
 function bossHitTest(x,y){
   if(!boss) return false;
+  if(boss._hammer){if(boss._noHit||boss.dead)return false;const r=boss._hammer.state==='ball'?46:66;return dist2(x,y,boss.x,boss.y)<r*r;}
   if(boss._furnace && typeof furnaceHitTest==='function') return furnaceHitTest(boss,x,y);
   if(boss._s7warden&&boss._s7warden.noHit)return false;
   if(boss._ship==='stormsovereign'&&boss._s4war){
@@ -32734,6 +32843,7 @@ function hitBoss(dmg){
   /* MECH: route the hit to whichever component is under the impact, so shooting an arm breaks
      THAT arm. Front-to-back, so the topmost piece takes it. During assembly nothing is hittable. */
   if(!boss||boss.dead) return;
+  if(boss._hammer){dmg=hammerBossDamage(boss,dmg);if(dmg<=0)return;}
   if(boss._s4war&&boss._noHit&&!boss._s4CoreHit)return;
   markHit(boss);   // 0912y: before any shield, barrier or part router can swallow the hit
   if(boss._s7warden&&typeof s7WardenHit==='function'){
@@ -32915,6 +33025,169 @@ function bossDeathAlpha(T){
 /* how far the hull has charred toward black — the same curve the stage-1 chopper used */
 function bossDeathChar(T){ return Math.min(0.7, (T||0) * 0.3); }
 let _bossFade = 1;
+/* Stage 4's authored ship remains intact beneath its accelerating cook-off. */
+/* Stage 5 Easy/Normal: authored chrome transformer. Xenoregent remains available. */
+function hammerLaser(x,y,a,speed){
+  XART.rdy('eglaser_0');
+  eBullets.push({x,y,vx:Math.cos(a)*speed,vy:Math.sin(a)*speed,ang:a,w:8,h:42,
+    kind:'eglaser',_hammerLaser:true,_noArsenal:true,_boss:true,t:0,dmg:1});
+  if(Audio.SFX.enemyPulseLaserAlien)Audio.SFX.enemyPulseLaserAlien();
+}
+function hammerLaserDraw(b){
+  if(!XART.rdy('eglaser_0'))return;
+  const im=XART.get('eglaser_0');ctx.save();ctx.translate(b.x,b.y);
+  ctx.rotate(Math.atan2(b.vy,b.vx)-Math.PI/2);ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im,-b.w/2,-b.h/2,b.w,b.h);ctx.restore();
+}
+function hammerLaserHit(b,p,hx,hy){
+  const a=Math.atan2(b.vy,b.vx),dx=p.x-b.x,dy=p.y-b.y;
+  return Math.abs(dx*Math.cos(a)+dy*Math.sin(a))<=b.h/2+Math.max(hx,hy)&&
+    Math.abs(-dx*Math.sin(a)+dy*Math.cos(a))<=b.w/2+Math.min(hx,hy);
+}
+function hammerBossInit(b){
+  b.name='CHROME HAMMER';b.w=154;b.h=168;b.y=VH+130;b.ty=VH*.35;
+  b._hammer={state:'flyby',t:0,cycle:0,rage:0,shotCd:1,angle:0,vx:0,vy:0};
+  b._noHit=true;b.enter=true;
+  for(const k of ['ship','ball','leap','charge','reticle'])XART.rdy('hammer_'+k);
+}
+function hammerState(b,state){const h=b._hammer;h.state=state;h.t=0;h.ox=b.x;h.oy=b.y;}
+function hammerTarget(b){const h=b._hammer;h.tx=clamp(player.x,camLeftX()+65,camRightX()-65);h.ty=clamp(player.y,PLAY.y+65,PLAY.y+PLAY.h-65);}
+function hammerBossTick(b,dt){
+  const h=b._hammer;h.t+=dt;h.shotCd-=dt;h.rage=Math.max(0,h.rage-dt);
+  const homeX=(camLeftX()+camRightX())/2,homeY=VH*.35;
+  if(h.state==='flyby'){
+    b.x=homeX;b.y-=620*dt;
+    if(b.y < -b.h){hammerState(b,'return');b.y=-b.h;}
+  }else if(h.state==='return'){
+    b.y=Math.min(homeY,b.y+220*dt);
+    if(b.y===homeY)hammerState(b,'unfold');
+  }else if(h.state==='unfold'){
+    if(h.t>=1.8){b._noHit=false;b.enter=false;hammerState(b,'hammer');}
+  }else if(h.state==='hammer'){
+    b.x+=clamp(homeX-b.x,-95*dt,95*dt);b.y+=clamp(homeY-b.y,-100*dt,100*dt);
+    if(h.t>1.6){hammerTarget(b);hammerState(b,'warn');}
+  }else if(h.state==='warn'){
+    /* Commit immediately: the warning never chases the player after appearing. */
+    if(h.t>=1.2){hammerState(b,'leap');Audio.SFX.enemyShoot();}
+  }else if(h.state==='leap'||h.state==='back'){
+    const p=clamp(h.t/.52,0,1),q=p*p*(3-2*p);
+    b.x=lerp(h.ox,h.tx,q);b.y=lerp(h.oy,h.ty,q);
+    if(p>=1){
+      if(h.state==='leap'){
+        shake=Math.max(shake,11);explode(b.x,b.y+32,65,'blue');Audio.SFX.expBig();
+        for(let i=0;i<8;i++)hammerLaser(b.x,b.y,TAU*i/8,3.3);
+        hammerState(b,'recover');
+      }else hammerState(b,'shield');
+    }
+  }else if(h.state==='recover'){
+    if(h.t>.8){
+      if(!h.follow&&Math.random()<.55){h.follow=true;hammerTarget(b);hammerState(b,'warn');}
+      else{h.follow=false;h.tx=homeX;h.ty=homeY;hammerState(b,'back');}
+    }
+  }else if(h.state==='shield'){
+    if(h.t>1.3)hammerState(b,'curl');
+  }else if(h.state==='curl'){
+    if(h.t>1.4){h.rage=0;h.vx=130*(Math.random()<.5?-1:1);h.vy=150;h.shotCd=.8;hammerState(b,'ball');}
+  }else if(h.state==='ball'){
+    const sp=h.rage>0?2.25:1,rad=46;
+    b.x+=h.vx*dt*sp;b.y+=h.vy*dt*sp;h.angle+=dt*(h.rage>0?15:7);
+    const l=camLeftX()+rad,r=camRightX()-rad,t=PLAY.y+rad,bt=PLAY.y+PLAY.h-rad;
+    if(b.x<l){b.x=l;h.vx=Math.abs(h.vx);}if(b.x>r){b.x=r;h.vx=-Math.abs(h.vx);}
+    if(b.y<t){b.y=t;h.vy=Math.abs(h.vy);}if(b.y>bt){b.y=bt;h.vy=-Math.abs(h.vy);}
+    if(h.rage>0&&h.shotCd<=0){
+      h.shotCd=.8;const aim=Math.atan2(player.y-b.y,player.x-b.x);
+      for(let i=0;i<6;i++){const a=aim+i*TAU/6;hammerLaser(b.x+Math.cos(a)*42,b.y+Math.sin(a)*42,a,4.4);}
+    }
+    if(h.t>=15){h.cycle++;hammerState(b,'uncurl');}
+  }else if(h.state==='uncurl'){
+    if(h.t>1.4)hammerState(b,'hammer');
+  }
+  /* Upgrade crates already in flight too; an old x5 cannot slip into this fight. */
+  for(const p of powerups){if(p.kind==='missilepack')p.kind='missilepack10';if(p._pack==='missilepack')p._pack='missilepack10';}
+}
+function hammerBossDamage(b,dmg){
+  const h=b._hammer;if(b._noHit)return 0;
+  if(h.state==='ball'){
+    if(_dmgBullet&&_dmgBullet.kind==='gmiss'){
+      let dx=b.x-_dmgBullet.x,dy=b.y-_dmgBullet.y,mag=Math.hypot(dx,dy);
+      if(mag<1){dx=b.x-player.x;dy=b.y-player.y;mag=Math.hypot(dx,dy)||1;}
+      h.vx=dx/mag*190;h.vy=dy/mag*190;h.rage=0;h.shotCd=Math.max(h.shotCd,.6);
+      b.x=clamp(b.x+dx/mag*22,camLeftX()+46,camRightX()-46);
+      b.y=clamp(b.y+dy/mag*22,PLAY.y+46,PLAY.y+PLAY.h-46);
+      return dmg;
+    }
+    if(h.rage<=0)h.shotCd=Math.max(h.shotCd,.45);h.rage=3;return dmg*.15;
+  }
+  return h.state==='shield'?dmg*.25:dmg;
+}
+const hammerTintCache=new Map();
+function hammerFrame(key,frame,tint){
+  const id=key+':'+frame+':'+(tint||'');if(hammerTintCache.has(id))return hammerTintCache.get(id);
+  if(!XART.rdy('hammer_'+key))return null;
+  const im=XART.get('hammer_'+key),count=key==='reticle'?1:12,w=im.width/count,h=im.height;
+  const c=document.createElement('canvas');c.width=w;c.height=h;const g=c.getContext('2d');g.drawImage(im,frame*w,0,w,h,0,0,w,h);
+  if(tint){const d=g.getImageData(0,0,w,h);for(let i=0;i<d.data.length;i+=4){if(!d.data[i+3])continue;const l=(d.data[i]*.21+d.data[i+1]*.72+d.data[i+2]*.07);const co=tint==='red'?[1.55,.23,.22]:tint==='yellow'?[1.4,1.25,.15]:tint==='white'?[2,2,2]:[.22,.65,1.65];for(let k=0;k<3;k++)d.data[i+k]=Math.min(255,l*co[k]);}g.putImageData(d,0,0);}
+  hammerTintCache.set(id,c);return c;
+}
+function hammerBossDraw(b){
+  const h=b._hammer,s=h.state;let key='leap',f=0;
+  if(s==='flyby'||s==='return'){key='ship';f=11;}
+  if(s==='unfold'){key='ship';f=11-Math.min(11,Math.floor(h.t/1.8*12));}
+  if(s==='curl'||s==='uncurl'){key='ball';f=Math.min(11,Math.floor(h.t/1.4*12));if(s==='uncurl')f=11-f;}
+  if(s==='ball'){key='ball';f=11;}
+  if(s==='shield'){key='charge';f=Math.min(5,Math.floor(h.t/1.3*6));}
+  if(s==='warn'){key='charge';f=6+Math.min(5,Math.floor(h.t/1.2*6));}
+  if(s==='leap'||s==='back'){key='leap';f=Math.min(11,Math.floor(h.t/.52*12));}
+  if(s==='warn'){
+    const ri=hammerFrame('reticle',0,h.t<.4?null:h.t<.8?'yellow':'red');
+    if(ri){ctx.save();ctx.globalAlpha=.7+.3*Math.sin(h.t*30);ctx.drawImage(ri,h.tx-50,h.ty-50,100,100);ctx.restore();}
+  }
+  const tint=b.flash>0?'white':s==='ball'&&h.rage>0?'red':s==='shield'?'blue':null;
+  const im=hammerFrame(key,f,tint);if(!im)return;
+  const z=s==='ball'?126:184;
+  ctx.save();ctx.translate(b.x,b.y);if(s==='ball')ctx.rotate(h.angle);
+  ctx.imageSmoothingEnabled=false;ctx.drawImage(im,-z/2,-z/2,z,z);
+  if(s==='warn'){
+    const wh=hammerFrame(key,f,'white'),rise=clamp(h.t/1.2,0,1)*z;
+    if(wh){ctx.beginPath();ctx.rect(-z/2,z/2-rise,z,Math.min(10,rise));ctx.clip();ctx.drawImage(wh,-z/2,-z/2,z,z);}
+  }
+  ctx.restore();
+}
+
+function stage4DefeatStart(b){
+  b._cinDeath={stage:4,originY:b.y,ring:false,blast:false,cd:0,explosions:0};
+  b._s4Airborne=false;b._noHit=true;
+  if(b._s4war){b._s4war.ram=null;if(b._s4war.shield)b._s4war.shield.active=false;}
+  for(let i=0;i<8;i++)XART.rdy('nsd_ring_'+i);
+}
+function stage4DefeatTick(b,dt){
+  const D=b._cinDeath;b.dying+=dt;const t=b.dying;
+  if(!D.ring&&t>=.12){
+    D.ring=true;
+    for(const angle of [0,Math.PI/2,Math.PI/4,-Math.PI/4])
+      _smokeRings.push({x:b.x,y:b.y,t:0,life:1.65,size:Math.max(b.w,b.h)*1.2,angle,flat:.35,still:true,front:true});
+  }
+  if(t>=.95&&t<6.7){
+    b.y=D.originY+(t-.95)*18;
+    if(!D.blast){D.blast=true;explode(b.x,b.y,Math.max(b.w,b.h)*1.15,'red',null,'nxp_dense','boss');Audio.SFX.expBig();}
+    D.cd-=dt;
+    while(D.cd<=0){
+      D.cd+=Math.max(.055,.36-(t-.95)*.07);D.explosions++;
+      explode(b.x+rnd(-.43,.43)*b.w,b.y+rnd(-.43,.43)*b.h,Math.max(b.w,b.h)*rnd(.18,.32),'red',null,D.explosions%2?'nxp_barrage':'nxp_dense','boss');
+    }
+    shake=Math.max(shake,Math.min(16,4+t*1.6));
+  }else if(t>=6.7&&t<9.4){
+    D.cd-=dt;if(D.cd<=0){D.cd=.14+(t-6.7)*.09;explode(b.x+rnd(-.55,.55)*b.w,b.y+rnd(-.45,.45)*b.h,Math.max(b.w,b.h)*rnd(.15,.28),'red',null,'nxp_clus','boss');}
+  }
+  whiteBlast=t<6?0:t<6.7?(t-6)/.7:t<7.3?1:t<8.6?1-(t-7.3)/1.3:0;
+}
+function stage4DefeatDraw(b){
+  if(b.dying>=6.7)return;
+  const key='s4w_boss_idle';if(!XART.rdy(key))return;
+  const im=XART.get(key),w=b.w,h=b.h;
+  ctx.drawImage(im,b.x-w/2,b.y-h/2,w,h);
+  drawSmokeRings(true);
+}
 function bossDie(){
   if(boss&&boss._s7warden&&typeof s7WardenBeginDefeat==='function'){s7WardenBeginDefeat(boss);return;}
   /* Only the actual Stage-9 boss death grants Laser Mist. Entering the stage, seeing the boss,
@@ -32924,6 +33197,7 @@ function bossDie(){
      taken here, at the one moment it is certainly correct, rather than re-derived from a kind. */
   try{ if(boss&&boss.name) run._lastBossName=String(boss.name); }catch(_bn){}
   boss.dead=true; boss.dying=0; boss._blasted=false; bossActive=false; bossDefeated=true;
+  if(run.stage===4)stage4DefeatStart(boss);
   /* Side cores are real destructible units, but none may linger after their carrier dies. */
   if(boss._s4war&&boss._s4war.coreTurrets)for(const t of boss._s4war.coreTurrets){
     if(t.dead)continue;t.dead=true;t.hp=0;explode(t.x,t.y,64,'blue');
@@ -32931,7 +33205,7 @@ function bossDie(){
   }
   /* One authored boss-class origin blast, sized from the boss frame. The longer cook-off below
      adds waves, but it no longer begins with the old generic fxBurst placeholder. */
-  if(typeof unitDeathFX==='function') unitDeathFX(boss,'boss',(curStage&&curStage.bg==='ice')?'blue':'red');
+  if(!boss._cinDeath&&typeof unitDeathFX==='function') unitDeathFX(boss,'boss',(curStage&&curStage.bg==='ice')?'blue':'red');
   run.score+=5000*run.stage; eBullets.length=0;
   /* THE STAGE END. Every enemy still alive when the boss dies was detonated at a FIXED 38px —
      a 20px turret and a 58px hauler produced identical blasts, which is exactly the mismatched
@@ -33075,19 +33349,23 @@ function updateOverlordX(b, dt){
     // motion: banked curves and pursuit, never a side-to-side wobble.
     b._ovFlightT=(b._ovFlightT||0)+dt;
     const flightDur=b._ovFlight==='hunt'?(b._enraged?2.4:3.1):(b._enraged?1.9:2.6);
-    if(b._ovFlightT>=flightDur){ b._ovFlightT=0; b._ovFlight=b._ovFlight==='hunt'?'orbit':'hunt'; }
+    if(b._ovFlightT>=flightDur){
+      b._ovFlightT=0;b._ovFlight=b._ovFlight==='hunt'?'orbit':'hunt';
+      if(b._ovFlight==='orbit')b._ovOrbitStart=Math.atan2((b.y-bobTargetY)/(VH*.115),(b.x-VW*.5)/(VW*.34));
+    }
     const oldX=b.x;
     if(b._ovFlight==='hunt'){
-      const lead=Math.sin(b._ovT*(b._enraged?2.8:2.1))*38;
-      const huntX=clamp(player.x+lead,70,VW-70);
-      b.x=lerp(b.x,huntX,b._enraged?0.105:0.072);
-      b.y=lerp(b.y,bobTargetY+Math.sin(b._ovBob*1.7)*10,b._enraged?0.075:0.052);
+      b._ovTrackT=(b._ovTrackT||0)-dt;
+      if(b._ovTrackT<=0){b._ovTrackT=.20;b._ovTargetX=targetShip(b.x,b.y).x;}
+      enemyGlideTick(b,dt,{follow:true,targetX:b._ovTargetX,speed:b._enraged?190:155});
+      b.y=lerp(b.y,bobTargetY+Math.sin(b._ovBob*1.7)*10,1-Math.pow(1-(b._enraged?.075:.052),dt*60));
     } else {
-      const a=(b._ovFlightT/flightDur)*TAU+(b.x<VW/2?Math.PI:0);
+      const a=(b._ovFlightT/flightDur)*TAU+(b._ovOrbitStart||0);
       const orbitX=VW*0.5+Math.cos(a)*VW*0.34;
       const orbitY=bobTargetY+Math.sin(a)*VH*0.115;
-      b.x=lerp(b.x,clamp(orbitX,64,VW-64),0.115);
-      b.y=lerp(b.y,orbitY,0.10);
+      enemyGlideTick(b,dt,{follow:true,targetX:orbitX,speed:b._enraged?225:190});
+      const oy=(orbitY-b.y)*(1-Math.pow(.90,dt*60));
+      b.y+=clamp(oy,-105*dt,105*dt);
     }
     const lateral=b.x-oldX;
     b._pivot=clamp(b._pivot*0.58-lateral*0.11,-0.72,0.72);
@@ -33240,7 +33518,9 @@ function updateOverlordX(b, dt){
 }
 
 function updateBoss(dt){
-  const b=boss; b.t+=dt; if(!b.dead) b.rotor+=dt*30;
+  const b=boss;
+  if(b._hammer&&!b.dead){b.t+=dt;b.flash=Math.max(0,b.flash-dt);hammerBossTick(b,dt);return;}
+  b.t+=dt; if(!b.dead) b.rotor+=dt*30;
   if(b._firing>0) b._firing-=dt;
   if(b.flash>0) b.flash-=dt;
   /* ⚠ THE PHASE GATE MOVED INSIDE THE TICK (0905x). It used to sit HERE, so once the merge flipped
@@ -33361,6 +33641,7 @@ function updateBoss(dt){
     return;
   }
   if(!b.dead && bossActive && !b.enter){ b._hm=(b._hm==null?2.6:b._hm-dt); if(b._hm<=0){ b._hm=3.4; eMissile(b.x-b.w*0.16,b.y+b.h*0.30); eMissile(b.x+b.w*0.16,b.y+b.h*0.30); } }
+  if(b.dead&&b._cinDeath&&b._cinDeath.stage===4){stage4DefeatTick(b,dt);return;}
   if(b.dead){
     b.dying+=dt; const T=b.dying;
     // explosions: accelerate to constant, HOLD through the white fade, keep going on the revealed map, then taper
@@ -37052,6 +37333,7 @@ function drawBoss(){
   /* The death-visibility rule lives here at the one entry point. bossDeathAlpha is deliberately
      binary: full-opacity hull, then authored explosion takeover; never a dissolve. */
   const _b = boss;
+  if(_b&&_b.dead&&_b._cinDeath&&_b._cinDeath.stage===4){stage4DefeatDraw(_b);return;}
   _bossFade = (_b && _b.dead) ? bossDeathAlpha(_b.dying || 0) : 1;
   if(_bossFade <= 0) return;                 // gone: the explosion has the screen to itself now
   if(_bossFade >= 1){drawBossInner();encounterDamageOverlay(_b,false);return;}
@@ -37065,6 +37347,7 @@ function drawBoss(){
   _bossFade = 1;
 }
 function drawBossInner(){
+  if(boss&&boss._hammer){hammerBossDraw(boss);return;}
   /* the rake draws under the hull, and like the tick it has to reach the non-ship paths too */
   if(boss && !boss._ship && boss._brk && typeof beamRakeDraw==='function') beamRakeDraw(boss);
   /* TELEGRAPH FIRST, under everything else — the wind-up ring has to be visible before the shots
@@ -39983,7 +40266,7 @@ function looseMissilePickupDraw(p){
 const PLAY_PAUSE_ROWS=['RESUME','RETURN TO MAIN MENU','RESTART LEVEL','OPTIONS','HELP','QUIT GAME'];
 let playPause=null;
 function pauseMusicDuck(){return state==='paused'?.28:1;}
-function playPauseBegin(){playPause={sel:0,mode:'root',t:0,shown:0,msg:'',mouseDown:!!Input.mouse.down};}
+function playPauseBegin(){XART.rdy('pause_button_0915');playPause={sel:0,mode:'root',t:0,shown:0,msg:'',mouseDown:!!Input.mouse.down};}
 function playPauseSubmenuReturn(){
   if(playPause){playPause.mode='root';playPause.t=.85;}
   Input.clearTaps();return true;
@@ -40047,6 +40330,19 @@ function playPauseWorldDraw(){
   const g=P.frame.getContext('2d');g.clearRect(0,0,P.frame.width,P.frame.height);g.drawImage(screen,0,0);
   ctx.save();ctx.filter='grayscale(1) brightness(.82)';ctx.drawImage(P.frame,0,0,VW,VH);ctx.restore();
 }
+const PAUSE_BUTTON_RECT=[81, 410, 862, 201];
+/* Preserve the authored metal endcaps; only the empty center stretches to fit. */
+function playPauseButtonArt(cx,cy,w,h,selected){
+  if(!XART.rdy('pause_button_0915'))return false;
+  const im=XART.get('pause_button_0915'),r=PAUSE_BUTTON_RECT;
+  const cap=Math.min(r[3]*.65,r[2]/3),dc=Math.min(h*.65,w/3);
+  ctx.save();ctx.globalAlpha*=selected?1:.72;
+  if(selected){ctx.shadowColor='#2aff5a';ctx.shadowBlur=9;}
+  ctx.drawImage(im,r[0],r[1],cap,r[3],cx-w/2,cy-h/2,dc,h);
+  ctx.drawImage(im,r[0]+cap,r[1],r[2]-cap*2,r[3],cx-w/2+dc,cy-h/2,w-dc*2,h);
+  ctx.drawImage(im,r[0]+r[2]-cap,r[1],cap,r[3],cx+w/2-dc,cy-h/2,dc,h);
+  ctx.restore();return true;
+}
 function playPauseDraw(dt){
   dt=Number.isFinite(dt)?dt:1/60;if(!playPause)playPauseBegin();
   const P=playPause;
@@ -40071,8 +40367,11 @@ function playPauseDraw(dt){
     const k=clamp((P.t-i*.085)/.28,0,1);if(k<=0)continue;
     if(i>=P.shown){P.shown=i+1;if(Audio.SFX.blip)Audio.SFX.blip();}
     const y=y0+i*gap-(1-k)*(1-k)*VH*.75,selected=i===P.sel;
-    ctx.save();ctx.globalAlpha=k;octFill(VW/2-w/2,y-h/2,w,h,7,selected?'#133623':'#141b19');
-    ctx.strokeStyle=selected?'#2aff5a':'#3c5550';ctx.lineWidth=selected?2:1;ctx.strokeRect(VW/2-w/2+4,y-h/2+3,w-8,h-6);
+    ctx.save();ctx.globalAlpha=k;
+    if(!playPauseButtonArt(VW/2,y,w,h,selected)){
+      octFill(VW/2-w/2,y-h/2,w,h,7,selected?'#133623':'#141b19');
+      ctx.strokeStyle=selected?'#2aff5a':'#3c5550';ctx.lineWidth=selected?2:1;ctx.strokeRect(VW/2-w/2+4,y-h/2+3,w-8,h-6);
+    }
     campText(PLAY_PAUSE_ROWS[i],VW/2,y+4,12,selected?'#dfffe9':'#a0b2a8');
     if(selected)menuSelMark(VW/2,y,w/2,'green');ctx.restore();
     if(k===1&&m.inside&&Math.abs(m.x-VW/2)<=w/2&&Math.abs(m.y-y)<h/2){
@@ -40102,10 +40401,11 @@ function combatWarningTick(owner,id,elapsed,duration){
   B.t=elapsed;B.warm=duration;l23WarnSound(B);
 }
 function enemyGlideTick(e,dt,opt){
-  if(!e||e.dead)return;opt=opt||{};
-  const left=camLeftX()+Math.max(24,e.w*.5),right=camRightX()-Math.max(24,e.w*.5),
-    speed=opt.speed||85,aim=opt.follow?clamp(player.x,left,right):
-      (e._glideSide===-1?left:right);
+  if(!e||e.dead||!Number.isFinite(dt)||dt<=0)return;opt=opt||{};
+  const margin=Math.max(24,(e.w||48)*.5),left=camLeftX()+margin,
+    right=Math.max(left,camRightX()-margin),speed=Math.max(0,opt.speed==null?85:opt.speed),
+    target=Number.isFinite(opt.targetX)?opt.targetX:player.x,
+    aim=opt.follow?clamp(target,left,right):(e._glideSide===-1?left:right);
   e.x+=clamp(aim-e.x,-speed*dt,speed*dt);
   if(!opt.follow&&Math.abs(e.x-aim)<2)e._glideSide=e._glideSide===-1?1:-1;
 }
@@ -43165,6 +43465,7 @@ function drawBullets(){
   ctx.imageSmoothingEnabled = false;
   // enemy — master fire-type art first (legacy kinds alias onto shared FIRETYPES)
   for(const b of eBullets){
+    if(b._hammerLaser){hammerLaserDraw(b);continue;}
     if(b._frostNoseLaser){frostNoseLaserDraw(b);continue;}
     if(stage3DroneShotDraw(b))continue;
     if(b._rzb&&typeof razorbackProjectileDraw==='function'&&razorbackProjectileDraw(b))continue;
@@ -44666,9 +44967,9 @@ function drawScene(dt){
    cutscene, and this one is 30 seconds long.
    ============================================================ */
 const OPN = [
-  {k:'sil',  p:'axel',       t:'EARTH IS IN TROUBLE!',               d:2.10},
+  {k:'sil',  p:'cole',       t:'EARTH IS IN TROUBLE!',               d:2.10},
   {k:'sil',  p:'decker',     t:"WE NEED FURY HQ'S HELP!",            d:2.10},
-  {k:'roll',                 t:'9 ELITE PILOTS',                     d:2.90},
+  {k:'roll',                 t:'9 ELITE PILOTS',                     d:12.00},
   {k:'face',                 t:"99 PROBLEMS BUT A FLIGHT AIN'T 1!",  d:2.70},
   {k:'demo', p:'yuri',       t:'DOUBLE THE ACTION',                  d:3.20},
   {k:'demo', p:'maverick',   t:'TRIPLE THE TROUBLE',                 d:3.20},
@@ -44676,7 +44977,7 @@ const OPN = [
   {k:'nine',                                                         d:6.60},
   {k:'logo',                                                         d:7.00},
 ];
-const OPN_ORDER=['axel','lizzie','decker','freezer','juggernaut','yuri','cole','falva','maverick'];
+const OPN_ORDER=['cole','axel','lizzie','decker','freezer','juggernaut','yuri','falva','maverick'];
 /* three that fall, three that finish a boss, three that fly out of it - Mike named all three */
 const OPN_NINE=[
   {p:'cole',       act:'kill',  boss:'nsb_xenoregent_intact'},
@@ -44692,8 +44993,33 @@ const OPN_NINE=[
 let opnI=0, opnT=0, opnDemoOn=false, opnFrame=0, opnDone=false;
 const _opnSil={};
 
+/* Front-facing authored cutouts, paired with their own cinematic aircraft.
+   These are transparent figures, so their silhouettes retain heads and limbs. */
+function openerPairKeys(pk){ return [pk+'_body_0',OPN_SIL_KEY(pk)]; }
+function openerPairsReady(keys){
+  let ready=true;
+  for(const pk of keys)for(const key of openerPairKeys(pk))if(!XART.rdy(key))ready=false;
+  return ready;
+}
+function openerPair(pk,cx,cy,pairW,pairH,alpha){
+  const P=PILOTS.find(p=>p.key===pk),keys=openerPairKeys(pk);
+  ctx.save();ctx.globalAlpha=alpha;
+  for(let i=0;i<keys.length;i++){
+    const key=keys[i],sil=openerSil(key);if(!sil)continue;
+    const maxW=pairW*(i?.53:.35),maxH=pairH*(i?.80:1);
+    const scale=Math.min(maxW/sil.width,maxH/sil.height),w=sil.width*scale,h=sil.height*scale;
+    const x=cx+pairW*(i?.22:-.30)-w/2,y=cy-h/2;
+    ctx.shadowColor=P?P.tint:'#ffae48';ctx.shadowBlur=18;
+    ctx.drawImage(sil,x,y,w,h);ctx.shadowBlur=0;
+    // A trace of the authored colors makes the paired identities readable in the dark.
+    const im=XART.get(key);if(im){ctx.globalAlpha=alpha*.22;ctx.drawImage(im,x,y,w,h);ctx.globalAlpha=alpha;}
+  }
+  ctx.restore();
+  if(P)opnText(P.name,cx,cy+pairH/2+24,14,P.tint,alpha);
+}
 function openerStart(){
   opnI=0; opnT=0; opnDemoOn=false; opnFrame=0; opnDone=false;
+  drawOpener._artWait=0;openerPairsReady(OPN_ORDER);
   /* ⚠ ONE TRACK THE GAME OWNS AND HAS NEVER PLAYED (Mike: "use some of our music we didnt map but
      have"). stage9_bonus_warp_run was the only file in assets/game/music that the manifest did not
      register at all - measured, not guessed. It falls back down to the title track, because a
@@ -44724,13 +45050,13 @@ function openerToTitle(){
        cinship_axel_2 (front 3/4)   318x317   43% opaque  -> an aeroplane
    This is the CLAUDE.md render-it rule doing its job: the key existed, the load succeeded, rdy()
    was true and the picture was wrong. */
-const OPN_SIL_KEY=function(pk){ return 'cinship_'+pk+'_2'; };   // 02_front_left_3q, native cutout
+const OPN_SIL_KEY=function(pk){ return pk==='lizzie'?'ship_lizzie_pv2':'cinship_'+pk+'_2'; };   // 02_front_left_3q, native cutout
 /* a true silhouette, cut from the authored plate rather than drawn. ⚠ rdy() is false on its FIRST
    call - that call is what starts the load - so a miss is not cached and the next frame re-asks. */
 function openerSil(key){
-  if(_opnSil[key]) return _opnSil[key];
   if(typeof XART==='undefined' || !XART.rdy(key)) return null;
   const im=XART.get(key);
+  if(_opnSil[key]&&_opnSil[key]._source===im)return _opnSil[key];
   if(!im.naturalWidth) return null;
   const c=document.createElement('canvas');
   c.width=im.naturalWidth; c.height=im.naturalHeight;
@@ -44738,7 +45064,7 @@ function openerSil(key){
   g.drawImage(im,0,0);
   g.globalCompositeOperation='source-in';
   g.fillStyle='#000'; g.fillRect(0,0,c.width,c.height);
-  return (_opnSil[key]=c);
+  c._source=im;return (_opnSil[key]=c);
 }
 function opnFade(t,d){ if(t<0.30) return t/0.30; if(t>d-0.28) return Math.max(0,(d-t)/0.28); return 1; }
 /* the trailer card, in the game's own lettering. stageText is the stage face; uiFontArt is the
@@ -44777,44 +45103,25 @@ function opnBars(a){
 }
 
 /* ---- beat: one pilot's silhouette sliding across a spotlight ---- */
-function opnBeatSil(B, t, a){
-  opnBackdrop(t, false);
-  const sil=openerSil(OPN_SIL_KEY(B.p));
-  if(sil){
-    const h=VH*0.62, w=h*(sil.width/sil.height);
-    const e=clamp(t/1.5,0,1), ez=1-Math.pow(1-e,3);
-    const x=lerp(-w*0.5, VW*0.52-w/2, ez);
-    ctx.save(); ctx.globalAlpha=a;
-    /* rim light first, then the silhouette on top: the pilot stays a shape, the edge catches */
-    const P=(typeof PILOTS!=='undefined')?PILOTS.find(q=>q.key===B.p):null;
-    ctx.shadowColor=(P&&P.tint)||'#ff8a1a'; ctx.shadowBlur=26;
-    ctx.drawImage(sil, x, VH*0.20, w, h);
-    ctx.shadowBlur=0;
-    ctx.restore();
-    const P2=(typeof PILOTS!=='undefined')?PILOTS.find(q=>q.key===B.p):null;
-    if(P2) opnText(P2.name, VW/2, VH*0.175, 16, (P2.tint||'#ffd36b'), a*0.9);
-  }
-  opnText(B.t, VW/2, VH*0.845, 22, '#ffe082', a);
+function opnBeatSil(B,t,a){
+  opnBackdrop(t,false);
+  const e=1-Math.pow(1-clamp(t/.85,0,1),3);
+  openerPair(B.p,lerp(-VW*.45,VW/2,e),VH*.46,VW*.80,VH*.48,a);
+  opnText(B.t,VW/2,VH*.845,22,'#ffe082',a);
 }
-/* ---- beat: all nine sweeping past, "9 ELITE PILOTS" ---- */
-function opnBeatRoll(B, t, a){
-  opnBackdrop(t, false);
-  /* ⚠ SPACED WIDER THAN THEY ARE TALL. At VH*0.48 and VW/3.1 apart the aircraft overlapped into a
-     single black mass - nine silhouettes that read as one. The gap has to exceed the widest hull. */
-  const n=OPN_ORDER.length, cw=VW*0.62;
-  ctx.save(); ctx.globalAlpha=a;
-  for(let i=0;i<n;i++){
-    const sil=openerSil(OPN_SIL_KEY(OPN_ORDER[i]));
-    if(!sil) continue;
-    const h=VH*0.30, w=h*(sil.width/sil.height);
-    let x=VW + i*cw - t*((VW*0.62*n+VW)/2.9);
-    if(x<-w || x>VW) continue;
-    const P=(typeof PILOTS!=='undefined')?PILOTS.find(q=>q.key===OPN_ORDER[i]):null;
-    ctx.shadowColor=(P&&P.tint)||'#ff8a1a'; ctx.shadowBlur=18;
-    ctx.drawImage(sil, x, VH*0.34+Math.sin(i*1.7+t*2)*14, w, h);
+/* Every pair crosses the central spotlight; Cole leads, no roster member skipped. */
+function openerRollX(i,t,d){
+  const pitch=VW*.88,start=VW*1.46;
+  return start+i*pitch-clamp(t/d,0,1)*(start+(OPN_ORDER.length-1)*pitch+VW*.46);
+}
+function opnBeatRoll(B,t,a){
+  opnBackdrop(t,false);
+  for(let i=0;i<OPN_ORDER.length;i++){
+    const x=openerRollX(i,t,B.d);
+    if(x<-VW*.48||x>VW*1.48)continue;
+    openerPair(OPN_ORDER[i],x,VH*.44,VW*.76,VH*.44,a);
   }
-  ctx.shadowBlur=0; ctx.restore();
-  opnText(B.t, VW/2, VH*0.845, 26, '#ffd36b', a);
+  opnText(B.t,VW/2,VH*.845,26,'#ffd36b',a);
 }
 /* ---- beat: the frontal views, in colour, snapping in three at a time ---- */
 function opnBeatFace(B, t, a){
@@ -44974,7 +45281,7 @@ function opnBeatLogo(t, a){
     opnText('BULLETS OF FURY', VW/2, VH*0.36, 34, '#ffd36b', a);
   }
   if(t>0.9 && Math.floor(t*1.8)%2)
-    opnText('PRESS START', VW/2, VH*0.70, 20, '#ffe082', a);
+    controlHintRow([['pad_start','PLAY']],VH*.70);
   opnText('© 2026 COLEFORGE PRODUCTIONS', VW/2, VH*0.92, 11, '#7f8c9e', a*0.8);
 }
 
@@ -45011,6 +45318,11 @@ function drawOpener(dt){
   }
   if(opnI>=OPN.length){ openerToTitle(); return; }
   const B=OPN[opnI], dur=B.d;
+  // Prime every pair together. Do not consume their screen time during normal lazy decode.
+  const pairBeat=B.k==='sil'||B.k==='roll';
+  if(pairBeat&&!openerPairsReady(B.k==='roll'?OPN_ORDER:[B.p])&&(drawOpener._artWait||0)<4){
+    drawOpener._artWait=(drawOpener._artWait||0)+dt;opnBackdrop(opnT,false);return;
+  }
   opnT+=dt;
   const a=opnFade(opnT,dur);
   switch(B.k){
@@ -45326,7 +45638,7 @@ function drawAttract(dt){
       if(Math.floor(stateT*1.7)%2){
         const _f=(typeof uiFontArt==='function')?uiFontArt():null;
         if(_f && typeof stageText==='function')
-          stageText(_f,'PRESS START', VW/2, VH-24, 14, '#ffe082',0.9,1,0.10);
+          controlHintRow([['pad_start','PLAY']],VH-24);
       }
     }
   }
@@ -46092,7 +46404,7 @@ function drawCampaignIntro(dt){
     const ca=Math.min(clamp(local/.28,0,1),clamp((B.to-t)/.32,0,1));campaignIntroCaption(B,W,H,ca);
     const fi=clamp(1-t/.42,0,1);if(fi>0){ctx.fillStyle='rgba(0,0,0,'+fi.toFixed(3)+')';ctx.fillRect(0,0,W,H);}
   }else campaignIntroFinale(C,t,W,H);
-  msgFaceUse('dialogue');if(Math.floor(t*2)%2)msgText('PRESS ANY BUTTON TO SKIP',W/2,H-10,Math.max(9,H*.020),'#cfd6e0',0,.82,.075);msgFaceUse(null);
+  msgFaceUse('dialogue');if(Math.floor(t*2)%2)controlHintRow([['pad_start','SKIP']],H-20,W/2,W-24);msgFaceUse(null);
   const click=Input.mouse.down&&!C.md;C.md=!!Input.mouse.down;
   if(stateT>.35&&(click||(typeof anyTap==='function'&&anyTap()))){Input.mouse.down=false;campaignIntroFinish();return;}
   if(t>=CAMPAIGN_INTRO_DONE)campaignIntroFinish();
@@ -46232,8 +46544,8 @@ function drawBoot(dt){
       ctx.restore();
     }
     ctx.textAlign='center';
-    if(Math.floor(stateT*1.6)%2){ ctx.fillStyle='#ffe082'; ctx.font='bold 17px "BOFmil", monospace'; ctx.fillText('PRESS START', VW/2, VH*0.66); }
-    ctx.fillStyle='#9aa0aa'; ctx.font='9px "BOFmil", monospace'; ctx.fillText('click or press any key', VW/2, VH*0.71);
+    if(Math.floor(stateT*1.6)%2){ ctx.fillStyle='#ffe082'; ctx.font='bold 17px "BOFmil", monospace'; controlHintRow([['pad_start','PLAY']],VH*.66); }
+
     if(stateT>0.25 && (Input.mouse.down || anyTap())){
       drawBoot._started=true; drawBoot._ct=0; drawBoot._chimed=false;
       Audio.init(); Audio.resume(); if(BootChime) BootChime.unlock();
@@ -49927,14 +50239,15 @@ function tickSmokeRings(dt){
     const r=_smokeRings[i];
     r.t+=dt;
     if(r.t>=r.life){ _smokeRings.splice(i,1); continue; }
-    r.y -= 34*dt;                      // rises, slowly, like real smoke
+    if(!r.still)r.y -= 34*dt;                      // rises, slowly, like real smoke
   }
 }
-function drawSmokeRings(){
+function drawSmokeRings(front){
   if(!_smokeRings.length || typeof XART==='undefined') return;
   let n=0; while(XART.rdy('nsd_ring_'+n)) n++;
   if(!n) return;
   for(const r of _smokeRings){
+    if(!!r.front!==!!front)continue;
     const k=clamp(r.t/r.life,0,1);
     const im=XART.get('nsd_ring_'+Math.min(n-1, Math.floor(k*n)));
     if(!im || !im.naturalWidth) continue;
@@ -49946,7 +50259,8 @@ function drawSmokeRings(){
     const w=r.size*grow, h=w*(im.naturalHeight/Math.max(1,im.naturalWidth));
     ctx.save();
     ctx.globalAlpha=(k<0.55) ? 0.85 : 0.85*(1-(k-0.55)/0.45);   // holds, then thins on the tail
-    ctx.drawImage(im, r.x-w/2, r.y-h/2, w, h);
+    if(r.angle!=null){ctx.translate(r.x,r.y);ctx.rotate(r.angle);ctx.drawImage(im,-w/2,-h*(r.flat||1)/2,w,h*(r.flat||1));}
+    else ctx.drawImage(im, r.x-w/2, r.y-h/2, w, h);
     ctx.restore();
   }
 }
@@ -53065,6 +53379,26 @@ function pcStats(p){
   };
   return cats.map(c=>({label:c.toUpperCase(), val:clamp(pick(c),1,PC_MAX_SEG)}));
 }
+/* The composed roster uses different copy from the legacy card. Count the strings actually
+   drawn so the reveal and its stat ticks finish together. Full strings still determine layout. */
+function pcScreenCopy(P){
+  const M=(BOFX.pilotcard&&BOFX.pilotcard[P.key])||{}, SP=pcSpecial(P.key);
+  return [P.name,
+    (M.callsign?('"'+M.callsign+'"'):'')+(M.affil?('   '+M.affil.toUpperCase()):''),
+    M.desc||P.role||'', SP&&SP.name?'SPECIAL: '+SP.name:'',
+    ...pcStats(P.key).map(s=>s.label)];
+}
+function pcRevealText(copy,index){
+  if(!pcard||pcard.done) return copy[index]||'';
+  const before=copy.slice(0,index).reduce((n,s)=>n+s.length,0);
+  return (copy[index]||'').slice(0,Math.max(0,Math.floor(pcard.typed)-before));
+}
+function pcVisibleSegments(index,value){
+  const C=pcard;
+  if(!C||C.done||C.phase==='special'||C.phase==='hold') return value;
+  if(C.phase!=='bars'||index>C.bar) return 0;
+  return index<C.bar?value:Math.min(value,C.seg);
+}
 function pcStart(p){
   pcard = {p:p, t:0, phase:'in', typed:0, bar:0, seg:0, segT:0, done:false,
            stats:pcStats(p), sp:pcSpecial(p), spT:0};
@@ -53086,7 +53420,7 @@ function pcUpdate(dt){
     return;
   }
   if(C.phase==='type'){
-    const total=pcLines(C.p).join('').length;
+    const total=C.textTotal==null?pcLines(C.p).join('').length:C.textTotal;
     C.typed += PC_TYPE_CPS*dt;
     if((C.typed|0)%3===0 && Math.random()<0.5) uiBlipRep();
     if(C.typed>=total){ C.typed=total; C.phase='bars'; C.t=0; C.bar=0; C.seg=0; C.segT=0; }
@@ -55231,7 +55565,7 @@ function drawModeSelect(dt){
     }
     ctx.restore();
   }
-  drawHintBar('ARROWS: SELECT   FIRE: CONFIRM   BACK: TITLE');
+  drawHintBar([['pad_dpad','SELECT'],['pad_a','CONFIRM'],['pad_b','BACK']]);
   /* ⚠ 'up' IS NOT A KEY NAME (drop 0822af). keyName() returns e.key.toLowerCase(), so the arrow
      key is 'arrowup' — Input.tap('up') has never matched anything. These menus therefore moved
      on W/S only: no arrow keys, no d-pad, and no respect for a rebind. Mike, on this screen:
@@ -55265,7 +55599,7 @@ function drawModeSelect(dt){
     }
     else { if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
   };
-  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))) _modeGo();
+  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())) _modeGo();
   /* ============================================================
      ⚠ THE MOUSE STOPPED WORKING ONE SCREEN INTO THE GAME (drop 0812a).
 
@@ -55297,7 +55631,7 @@ function drawModeSelect(dt){
     if(hov>=0 && m.down && !drawModeSelect._md && stateT>0.3){ modeIndex=hov; _modeGo(); }
     drawModeSelect._md=m.down;
   }
-  if(Input.tap('backspace')||(typeof backButton==='function'&&backButton())){ setState(GS.TITLE); menuIndex=0; }
+  if(Input.menuBack()||(typeof backButton==='function'&&backButton())){ setState(GS.TITLE); menuIndex=0; }
 }
 /* ===== STAGE SELECT — world map (DROP 0719b, built to STAGE_SELECT_CONFIG.json) =====
    Shown at run start and between stages. Map 640x480 scaled 0.75 -> 480x360 with the title
@@ -55595,8 +55929,7 @@ function drawCampaignHub(dt){
   }
   if(campHubMsgT>0){ campHubMsgT-=dt;
     campText(campHubMsg, VW/2, VH-40, 12, '#9fe8a0'); }
-  campText('ARROWS SELECT   FIRE CONFIRM', VW/2, VH-18, 11, '#cfd6e0',
-           0.55+0.45*Math.sin(stateT*5));
+  controlHintRow([['pad_dpad','SELECT'],['pad_a','CONFIRM'],['pad_b','BACK']]);
   ctx.globalAlpha=1; ctx.textAlign='left';
   /* MOUSE (drop 0812b) — must run BEFORE campHubInput, because the click injects the 'enter' tap
      that campHubInput then reads and clears in this same frame. */
@@ -55637,8 +55970,7 @@ function drawCampSlots(dt){
   }
   if(campHubMsgT>0){ campHubMsgT-=dt;
     campText(campHubMsg, VW/2, VH-40, 12, '#9fe8a0'); }
-  campText('ARROWS SELECT   FIRE CONFIRM   BACK CANCEL', VW/2, VH-18, 11, '#cfd6e0',
-           0.55+0.45*Math.sin(stateT*5));
+  controlHintRow([['pad_dpad','SELECT'],['pad_a','CONFIRM'],['pad_b','CANCEL']]);
   ctx.globalAlpha=1;
   /* MOUSE (drop 0812b) — rows are cy=170+i*54, w=330, h=42; before campSlotInput for the same
      reason as the hub: the click injects the tap that call then consumes. */
@@ -55651,7 +55983,7 @@ function campHubInput(){
   const n=CAMPHUB_ITEMS.length;
   if(Input.menuUp()){ campHubIndex=(campHubIndex+n-1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }        // 0822af: was tap('up'), a dead key name
   if(Input.menuDown()){ campHubIndex=(campHubIndex+1)%n; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){
+  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){
     const it=CAMPHUB_ITEMS[campHubIndex];
     if(!campHubEnabled(it.act)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip();
       campHubSay(it.act==='continue'?'NO CAMPAIGN IN PROGRESS':it.act==='load'?'NO SAVED GAMES':'START A CAMPAIGN FIRST'); return; }
@@ -55666,7 +55998,7 @@ function campHubInput(){
 function campSlotInput(){
   if(Input.menuUp()){ campHubIndex=(campHubIndex+CAMP_SLOTS-1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }   // 0822af
   if(Input.menuDown()){ campHubIndex=(campHubIndex+1)%CAMP_SLOTS; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
-  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){
+  if(stateT>0.25 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){
     const i=campHubIndex, mode=campPick;
     if(mode==='load' && !campSlotUsed(i)){ if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); campHubSay('THAT SLOT IS EMPTY'); return; }
     selFlash(function(){
@@ -56197,7 +56529,7 @@ const BG_H={nbg1_boss:1000,nbg1_loop1:1000,nbg1_loop2:1000,nbg1_loop3:1000,nbg1_
 const OPEN_MAX = 22, OUT_MAX = 14;      // seconds; both are ~1.5x the authored runtime
 function cinematicEscape(){
   if(typeof Input==='undefined') return false;
-  if(Input.tap('backspace') || Input.tap('escape')){
+  if(Input.menuBack()){
     opening=null; outbound=null;
     if(Audio && Audio.SFX && Audio.SFX.select) Audio.SFX.select();
     setState(GS.TITLE); menuIndex=0;
@@ -57201,7 +57533,7 @@ function _drawStageSelectInner(dt){
      and scale, so on a tall map it landed in the middle of the briefing text and overlapped it.
      Anchoring to VH-18 puts it where the title screen's identical hint already lives, so the two
      agree and it never collides with the map content. */
-  if(sselBoot===0) drawHintBar(_c2 ? cmap2HintText() : 'ARROWS: SELECT   FIRE: DEPLOY   ENTER/START: MENU');
+  if(sselBoot===0) drawHintBar([['pad_dpad',_c2&&cmap2.focus==='bar'?'MENU':'STAGE'],['pad_a',_c2&&cmap2.focus==='bar'?'SELECT':'DEPLOY'],['pad_start','MENU']]);
   /* LOCK ONCE COMMITTED (drop 0801fe). Mike: "when we select a level to go to
      being our j/a button, do not allow me to keep moving or pressing stuff. lock
      that ability until we enter the level so it doesnt bug out."
@@ -57285,7 +57617,7 @@ function _drawStageSelectInner(dt){
       }
       _drawStageSelectInner._md=m.down;
     }
-    if(stateT>0.4 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){
+    if(stateT>0.4 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){
       if(sselCursor<=_hi){   // can't deploy to a locked level
         /* WHITE FLASH -> ZOOM IN ON THE FLAG + "GOOD LUCK" -> stage card. It used to cut straight
            to beginStage with nothing in between. */
@@ -57595,7 +57927,7 @@ function drawDiff(dt){
   { const desc=difficultyDescription(menuIndex);
     const parts=desc.split(' \u00B7 ');
     const uf=pilotFont(1);
-    let yy=VH-72;
+    let yy=VH-48-(parts.length-1)*20;
     for(const line of parts){ if(uf && typeof stageText==='function'){ stageText(uf,line,VW/2,yy,15,null,null,1,0.08); } else { ctx.textAlign='center'; ctx.fillStyle='#eaf2ff'; ctx.font='13px "BOFmil", monospace'; ctx.fillText(line,VW/2,yy); } yy+=20; }
   }
   if(diffFlash>0) diffFlash-=dt;
@@ -57627,6 +57959,7 @@ function pickDiff(){ diffKey=DIFF_KEYS[menuIndex]; Audio.SFX.select();
   pilotComm=null; pilotCommT=0; pilotPending=null; pilotSlide=0; pilotRot=0; pilotFlash=0; }
 /* PILOT SELECT — "Choose your Pilot!" left cards in a row */
 function drawPilotBG(tint){
+  const {w:VW,h:VH}=pilotViewSize();
   const c=hx(tint);
   ctx.fillStyle='#08080e'; ctx.fillRect(0,0,VW,VH);
   const g=ctx.createLinearGradient(0,0,0,VH);
@@ -57937,15 +58270,49 @@ function psShipKey(key, spin){
   for(const k of ['ship_'+key+'_pv2','ship_'+key]) if(XART.rdy(k)) return k;
   return null;
 }
+/* Pilot-menu alignment only. Cache by decoded image, so costume cache flushes
+   naturally acquire fresh bounds. Keep the family's authored canvas scale: fitting
+   each visible silhouette separately would inflate the edge-on rotation frames. */
+const psShipBoundsCache=new WeakMap();
+function psShipBounds(im){
+  let b=psShipBoundsCache.get(im); if(b) return b;
+  const w=im.naturalWidth||im.width,h=im.naturalHeight||im.height;
+  if(!w||!h) return null;
+  try{
+    const c=document.createElement('canvas'); c.width=w;c.height=h;
+    const g=c.getContext('2d');g.drawImage(im,0,0);
+    const d=g.getImageData(0,0,w,h).data;
+    let x0=w,y0=h,x1=-1,y1=-1;
+    for(let y=0;y<h;y++)for(let x=0;x<w;x++)if(d[(y*w+x)*4+3]>24){
+      x0=Math.min(x0,x);y0=Math.min(y0,y);x1=Math.max(x1,x);y1=Math.max(y1,y);
+    }
+    b=x1<0?{x:w/2,y:h/2}:{x:(x0+x1+1)/2,y:(y0+y1+1)/2};
+    psShipBoundsCache.set(im,b);return b;
+  }catch(e){return null;}
+}
+function psShipPlacement(key,im,maxW,maxH){
+  const m=/^ship_([a-z]+)(?:_br[0-7]|_pv2)?$/.exec(key);
+  if(!m) return null;
+  const b=psShipBounds(im);if(!b)return null;
+  let w=im.naturalWidth||im.width,h=im.naturalHeight||im.height;
+  // Metadata is available before lazy decoding, preventing a scale change mid-spin.
+  const table=typeof BOFX!=='undefined'&&BOFX.ships;
+  if(table)for(const suffix of ['', '_pv2','_br0','_br1','_br2','_br3','_br4','_br5','_br6','_br7']){
+    const r=table['ship_'+m[1]+suffix];if(r){w=Math.max(w,r[6]);h=Math.max(h,r[7]);}
+  }
+  return {x:b.x,y:b.y,scale:Math.min(maxW/w,maxH/h)};
+}
 function psBlitFit(key,cx,cy,maxW,maxH,alpha){
   if(!key || typeof XART==='undefined' || !XART.rdy(key)) return false;
   const im=XART.get(key); if(!im) return false;
   const iw=im.naturalWidth||im.width, ih=im.naturalHeight||im.height;
   if(!iw||!ih) return false;
-  const s=Math.min(maxW/iw, maxH/ih), w=iw*s, h=ih*s;
+  const placement=psShipPlacement(key,im,maxW,maxH);
+  const s=placement?placement.scale:Math.min(maxW/iw,maxH/ih),w=iw*s,h=ih*s;
+  const ax=placement?placement.x:iw/2,ay=placement?placement.y:ih/2;
   ctx.save(); if(alpha!=null) ctx.globalAlpha=alpha;
   ctx.imageSmoothingEnabled=false;
-  ctx.drawImage(im, Math.round(cx-w/2), Math.round(cy-h/2), Math.round(w), Math.round(h));
+  ctx.drawImage(im, Math.round(cx-ax*s), Math.round(cy-ay*s), Math.round(w), Math.round(h));
   ctx.restore(); return true;
 }
 function psPanelBox(x,y,w,h,tint,glow){
@@ -57959,6 +58326,8 @@ function psPanelBox(x,y,w,h,tint,glow){
 /* the nine-across roster: a square face over its ship, the locked slot a '?'. Returns the hit
    rects so the mouse can pick a pilot directly instead of only scrolling to one. */
 function psDrawLineup(sel, y0, spin){
+  const {w}=pilotViewSize(), PS_CELL=Math.min(64,Math.floor((w-24)/9)-6), PS_PITCH=PS_CELL+6;
+  const psLineupX=i=>Math.round((w-PS_COLS*PS_PITCH)/2+i*PS_PITCH);
   const rects=[];
   for(let i=0;i<PILOTS.length && i<PS_COLS;i++){
     const Q=PILOTS[i], x=psLineupX(i), on=(i===sel);
@@ -57995,22 +58364,25 @@ function psDrawLineup(sel, y0, spin){
   return rects;
 }
 function drawPilot(dt){
+  const {w:VW,h:VH}=pilotViewSize();
   if(typeof uiFontWarm==='function') uiFontWarm();   // the menus run before any stage warms the face
   const N=PILOTS.length;
   // fresh entry into the pilot screen: clear any stale comm/selection transient so nothing stacks
-  if(stateT<0.05 && !drawPilot._entered){ drawPilot._entered=true; pilotComm=null; pilotCommT=0; pilotPending=null; pilotSlide=0; pilotRot=0;
+  if(stateT<0.05 && !drawPilot._entered){ drawPilot._entered=true; drawPilot._pcFor=null; pilotComm=null; pilotCommT=0; pilotPending=null; pilotSlide=0; pilotRot=0;
     pilotInputArmed=!(run && run.mode==='campaign'); }
   if(stateT>0.2) drawPilot._entered=false;
   const pilotInputReady=pilotInputGateTick();
   if(pilotRot>0 && pilotPending==null){ pilotRot=Math.max(0,pilotRot-dt/0.34); }
   const showIdx=(pilotRot>0.5)?pilotFrom:pilotIndex;
   const P=PILOTS[showIdx];
+  const revealCopy=pcScreenCopy(P);
   /* PILOT CARD (drop 0801j). Mike: "Your going to have us select each pilot, where the card pops
      up, and the text all forms letter by 1 letter, stat bar by star like a Mega Man X menu
      screen." The card restarts whenever the selection changes, so scrolling the roster replays
      the reveal for whoever you land on. */
   if(typeof pcStart==='function'){
     if(drawPilot._pcFor!==P.key){ drawPilot._pcFor=P.key; pcStart(P.key); }
+    pcard.textTotal=revealCopy.reduce((n,s)=>n+s.length,0);
     if(typeof pcUpdate==='function') pcUpdate(dt);
     // any input skips the flourish rather than making the player wait it out
     /* ORDER MATTERS (drop 0801bk). Mike: "pressing enter should work."
@@ -58071,7 +58443,7 @@ function drawPilot(dt){
     /* ⚠ PY CLEARS THE TITLE. At 40 the panel's top edge cut straight through "CHOOSE YOUR
        PILOT!", which is drawn at y=42 - the heading was behind the frame in every screenshot.
        The height comes down by the same amount so the roster below does not move. */
-    const PX=10, PY=58, PW=VW-20, PH=242;
+    const PX=16, PY=58, PW=VW-32, PH=Math.max(242,VH-246);
     let sx=1;
     if(pilotRot>0){ sx=(pilotRot>0.5)?(pilotRot-0.5)/0.5:(0.5-pilotRot)/0.5; sx=Math.max(0.04,sx); }
     const slideX=(pilotPending!=null)? -_ease(clamp(pilotSlide,0,1))*(VW*1.4) : 0;
@@ -58084,7 +58456,7 @@ function drawPilot(dt){
     ctx.translate(PX+PW/2+slideX, PY+PH/2); ctx.scale(sx,1); ctx.translate(-(PX+PW/2), -(PY+PH/2));
 
     psPanelBox(PX,PY,PW,PH,P.tint,true);
-    const BX=PX+6, BY=PY+6, BW=142, BH=PH-12;          // the standing-pilot bay
+    const BX=PX+6, BY=PY+6, BW=Math.min(220,Math.max(136,PW*.25)), BH=PH-12;          // the standing-pilot bay
     psPanelBox(BX,BY,BW,BH,P.tint,false);
     if(locked){
       const f=(typeof uiFontArt==='function')?uiFontArt():null;
@@ -58114,7 +58486,7 @@ function drawPilot(dt){
        ~50px of the panel between the bio and SPECIAL was empty on every pilot. Widening the
        bay narrows the bio column, which fills the top, and the bay itself fills the right -
        one number fixing both halves of the same empty space. */
-    const SHW=126, SHH=120, SHX=IX+IW-SHW, SHY=PY+30;
+    const SHW=Math.min(196,Math.max(126,IW*.30)), SHH=Math.min(150,PH-122), SHX=IX+IW-SHW, SHY=PY+30;
     if(!locked){
       psPanelBox(SHX, SHY, SHW, SHH, P.tint, false);
       psBlitFit(psShipKey(P.key, spin), SHX+SHW/2, SHY+SHH/2, SHW-12, SHH-14, 1);
@@ -58128,7 +58500,16 @@ function drawPilot(dt){
       const nm=locked?'LOCKED':P.name;
       const nw=(typeof stageWidth==='function')?stageWidth(face,nm,22,0.07):0;
       if(locked)stageText(face,nm,IX+IW/2,PY+26,22,'#8a93a6',1,1,.07);
-      else pilotNameDraw(nm,IX+2+bmfMeasure('dialogue',nm,22)/2,PY+26,22,P.tint,1);
+      else {
+        const shown=pcRevealText(revealCopy,0);
+        if(shown){
+          // Clip the complete name plate: its center and cached artwork never shift per letter.
+          ctx.save(); ctx.beginPath();
+          ctx.rect(IX-2,PY+8,bmfMeasure('dialogue',shown,22)+8,38); ctx.clip();
+          pilotNameDraw(nm,IX+2+bmfMeasure('dialogue',nm,22)/2,PY+26,22,P.tint,1);
+          ctx.restore();
+        }
+      }
     }
     if(typeof msgFaceUse==='function') msgFaceUse('dialogue');
     const M=(typeof BOFX!=='undefined'&&BOFX.pilotcard)?(BOFX.pilotcard[P.key]||{}):{};
@@ -58146,7 +58527,7 @@ function drawPilot(dt){
       const _ek=affilEmblemKey(M.affil);
       const _sx=IX+2+(_ek?20:0);
       if(_ek) psBlitFit(_ek, IX+2+8, PY+40, 17, 17, 1);
-      if(sub) msgTextLeft(sub, _sx, PY+44, 9, '#9fb0c6', 0.9, 1, 0.10, 0);
+      if(sub) msgTextLeft(pcRevealText(revealCopy,1), _sx, PY+44, 9, '#9fb0c6', 0.9, 1, 0.10, 0);
       /* ⚠ THE BIO FLOWS AND THE BLOCKS BELOW IT FOLLOW - NO FIXED Y. Nine pilots have nine
          different bio lengths, so a hard-coded SPECIAL row is either crowded or stranded, and
          at the old column width it was stranded on all nine. bioBot is where the text actually
@@ -58157,7 +58538,16 @@ function drawPilot(dt){
         const colW=IW-SHW-12;
         const rows=msgWrap(bio, colW, 9, 0.10)||[];
         const nr=Math.min(rows.length, 6);
-        for(let r=0;r<nr;r++) msgTextLeft(rows[r], IX+2, PY+64+r*12, 9, '#d6dee9', 0.85, 1, 0.10, 0);
+        const bioVisible=pcRevealText(revealCopy,2).length;
+        let bioOffset=0;
+        for(let r=0;r<nr;r++){
+          // Wrap the complete biography, then reveal within its fixed rows.
+          const at=bio.indexOf(rows[r],bioOffset);
+          if(at>=0) bioOffset=at;
+          const shown=rows[r].slice(0,Math.max(0,bioVisible-bioOffset));
+          msgTextLeft(shown, IX+2, PY+64+r*12, 9, '#d6dee9', 0.85, 1, 0.10, 0);
+          bioOffset+=rows[r].length;
+        }
         bioBot=PY+64+nr*12;
       }
       const SP=(typeof pcSpecial==='function')?pcSpecial(P.key):null;
@@ -58188,14 +58578,14 @@ function drawPilot(dt){
          26px over the first bar, it groups; the slack then falls between the DESCRIPTION and
          the STATS, which is the one place a gap says something. */
       const spY=Math.max(bioBot+16, stTop-26);
-      if(SP && SP.name) msgTextLeft('SPECIAL: '+SP.name, IX+2, spY, 10, P.tint, 1, 1, 0.10, 0);
+      if(SP && SP.name) msgTextLeft(pcRevealText(revealCopy,3), IX+2, spY, 10, P.tint, 1, 1, 0.10, 0);
       for(let s=0;s<stN;s++){
         const yy=Math.round(stTop+s*stPitch);
-        msgTextLeft(st[s].label, IX+2, yy, 8, '#8fa0b6', 0.9, 1, 0.10, 0);
+        msgTextLeft(pcRevealText(revealCopy,4+s), IX+2, yy, 8, '#8fa0b6', 0.9, 1, 0.10, 0);
         const bx=IX+92, bw=IW-96, seg=Math.max(1,Math.round(bw/PC_MAX_SEG));
         ctx.save();
         for(let g=0;g<PC_MAX_SEG;g++){
-          ctx.fillStyle = (g<st[s].val) ? P.tint : 'rgba(90,104,126,0.35)';
+          ctx.fillStyle = (g<pcVisibleSegments(s,st[s].val)) ? P.tint : 'rgba(90,104,126,0.35)';
           ctx.fillRect(bx+g*seg, yy-6, Math.max(1,seg-1), 10);
         }
         ctx.restore();
@@ -58250,18 +58640,7 @@ function drawPilot(dt){
   // nav arrows
   ctx.textAlign='center'; ctx.font='bold 30px "BOFmil", monospace';
   ctx.fillStyle=rgba(hx(P.tint),0.85); ctx.fillText('\u25C0',20,VH*0.46+10); ctx.fillText('\u25B6',VW-20,VH*0.46+10);
-  { const _backKey=(typeof keyName==='function' && keybind && keybind.back)?keyName(keybind.back[0]):'BKSP';
-    const _hint=(run && run.mode==='campaign')
-      ? '\u25C0 \u25B6 SCROLL   \u2022   ENTER = LAUNCH'
-      : '\u25C0 \u25B6 SCROLL   \u2022   ENTER = LAUNCH   \u2022   '+_backKey+' = BACK';
-    /* Mike, 0904: "...and our pilot select card screen fonts please." The heading and the pilot
-       name were already on the authored face; the footer and the unlock prompt were the two lines
-       still coming out as thin canvas text, which is the mismatch visible in his screenshots. Both
-       are on the stage lettering now, and stageText's new last-rung fallback is what keeps the
-       arrow and bullet marks in this string alive - no face carries them. */
-    if(_pilotFace && typeof stageText==='function'){ stageText(_pilotFace,_hint,VW/2,VH-14,12,'#cfd6e0',0.7,0.9,0.10); }
-    else if(typeof msgText==='function'){ msgText(_hint, VW/2, VH-14, 12, '#cfd6e0', 0.7, 0.9, 0.10); }
-    else { ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='8px "BOFmil", monospace'; ctx.fillText(_hint,VW/2,VH-12); } }
+  controlHintRow((run&&run.mode==='campaign')?[['pad_dpad','PILOT'],['pad_start','LAUNCH']]:[['pad_dpad','PILOT'],['pad_start','LAUNCH'],['pad_b','BACK']],VH-20,VW/2,VW-24);
   // (pip/dot indicator removed per Mike — the player discovers the roster by scrolling)
   // hover check (locked card) -> glow pulse + flashing unlock prompt
   const hoverLocked = locked && cardRect && Input.mouse.x>cardRect[0] && Input.mouse.x<cardRect[0]+cardRect[2] && Input.mouse.y>cardRect[1] && Input.mouse.y<cardRect[1]+cardRect[3];
@@ -58377,7 +58756,7 @@ function drawPilot(dt){
     }
   }
   drawPilot._md=Input.mouse.down;
-  if(Input.menuConfirm()){ if(locked){ Audio.SFX.hit(); pilotFlash=1; } else confirmPilot(); }
+  if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){ if(locked){ Audio.SFX.hit(); pilotFlash=1; } else confirmPilot(); }
   if(Input.menuBack()){
     /* In co-op, back from P2's pass hands the roster BACK to P1 rather than dropping both
        players out to difficulty — losing a partner's confirmed pick because you wanted to change
@@ -58553,10 +58932,10 @@ function drawCoopRoster(dt){
     coopText('TWO OF THE SAME AIRFRAME', VW/2, CY+CH+62, 10, '#ffd36b', P1.font||1, 1);
   }
 
-  coopText('ENTER DEPLOY  -  K BACK', VW/2, VH-18, 10, '#8fa0bd', P1.font||1, 1);
+  controlHintRow([['pad_a','DEPLOY'],['pad_b','BACK']]);
 
   if(typeof Input==='undefined') return;
-  if(Input.menuConfirm()){
+  if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
     selFlash(function(){
       const _ps=(typeof PENDING_STAGE!=='undefined'&&PENDING_STAGE)||1;
       startRun(_ps);
@@ -58632,13 +59011,13 @@ function drawCredits(dt){
     }
     else { ctx.save(); ctx.shadowColor='rgba(120,180,255,0.5)'; ctx.shadowBlur=6; ctx.fillStyle='#eaf2ff'; ctx.font='bold 14px "BOFmil", monospace'; ctx.fillText(txt, VW/2, y); ctx.restore(); y+=26; }
   });
-  ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace'; ctx.fillText('ENTER / BACKSPACE TO RETURN',VW/2,VH-18);
+  ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace'; controlHintRow([['pad_b','BACK']]);
   /* MOUSE (drop 0812b). Credits is a single "any key returns" screen, so the whole panel is the
      target — there is no list to hover. Edge-detected, or the click that OPENED credits from the
      title would be re-read here on the first frame and bounce straight back out. */
   if(Input.mouse.down && !drawCredits._md) Input.injectTap('enter');
   drawCredits._md=Input.mouse.down;
-  if(Input.tap('enter')||Input.tap('backspace')||Input.tap(' ')||backButton()){ setState(GS.TITLE); menuIndex=3; }
+  if(Input.menuConfirm()||Input.menuBack()||backButton()){ setState(GS.TITLE); menuIndex=3; }
 }
 function drawTitleBackdrop(dt){
   if(ASSETS.rdy(ASSETS.starplanets)){
@@ -58732,6 +59111,10 @@ const MENU_BACK = {
 };
 function menuBackTick(){
   const dest=MENU_BACK[state];
+  if(state===GS.PASSWORD&&drawPassword.typing){
+    if(Input.tapAny((keybind.bomb||[]).filter(k=>/^pad_/.test(k)))||Input.tap('pad_b1')){drawPassword.typing=false;Audio.SFX.blip();}
+    return false;
+  }
   if(dest==null) return false;
   /* ============================================================
      A REBIND IN PROGRESS OWNS EVERY KEY (Mike, 0903: "while assigning buttons, pressing b/back should
@@ -58783,7 +59166,7 @@ function drawPassword(dt){
   if(_pwFont && _pwFont.img) void _pwFont.img;
   if(typeof drawCanonBackdrop==='function' && drawCanonBackdrop('nbt_3',0.62)){} else drawBootBackdrop(dt,0.66);
   passwordStageText(_pwFont,'ENTER PASSWORD',VW/2,24,16,VW-48,'#f2f5ff',1,0.08);
-  const _panelDef={x:16,y:42,w:VW-32,h:VH-42-16};
+  const _panelDef={x:16,y:42,w:VW-32,h:VH-42-52};
   const _panel=uiRect('password','panel',_panelDef);
   const wx=_panel.x, wy=_panel.y, ww=_panel.w, wh=_panel.h;
   bofPanel(wx,wy,ww,wh);
@@ -58827,7 +59210,7 @@ function drawPassword(dt){
     ctx.fillStyle=gg; roundRectFill(TYPETGT.x,TYPETGT.y,TYPETGT.w,TYPETGT.h,5);
     ctx.strokeStyle=drawPassword.typing?'#bff3a4':(on?'#ffe6a0':'#57607a'); ctx.lineWidth=2;
     ctx.strokeRect(TYPETGT.x,TYPETGT.y,TYPETGT.w,TYPETGT.h);
-    passwordStageText(_pwFont,drawPassword.typing?'TYPING - K TO STOP':'ENTER PASSWORD',
+    passwordStageText(_pwFont,drawPassword.typing?'TYPING':'ENTER PASSWORD',
       VW/2,TYPETGT.y+TYPETGT.h/2,12,TYPETGT.w-14,(on||drawPassword.typing)?'#ffffff':'#cfd6e0',1,0.06);
     ctx.textBaseline='alphabetic';
   }
@@ -58868,7 +59251,7 @@ function drawPassword(dt){
     if(on) ctx.restore();
     ctx.strokeStyle= on?'#ffe6a0':'#57607a'; ctx.lineWidth=1.5; ctx.strokeRect(h.x,h.y,h.w,h.h);
     ctx.fillStyle='rgba(255,255,255,0.10)'; ctx.fillRect(h.x+2,h.y+2,h.w-4,2);
-    passwordStageText(_pwFont,h.c,h.x+h.w/2,h.y+h.h/2,h.wide?11:12,h.w-6,on?'#1a1408':'#e8ecf4',1,0.05);
+    passwordStageText(_pwFont,h.c==='BACK'?'DELETE':h.c,h.x+h.w/2,h.y+h.h/2,h.wide?11:12,h.w-6,on?'#1a1408':'#e8ecf4',1,0.05);
   }
   ctx.textBaseline='alphabetic';
   // MOUSE: click a keypad button
@@ -58891,20 +59274,14 @@ function drawPassword(dt){
     if(t && t.isType){ drawPassword.typing=!drawPassword.typing; Audio.SFX.select(); return; }
     else if(t){ pwKey(t.c); }
   }
-  // KEYBOARD: letters/digits type directly; Enter submits; Backspace deletes (or exits when empty).
+  // KEYBOARD: letters/digits type directly; Enter submits; Backspace only deletes.
   // Enter must NEVER insert the highlighted keypad letter — that caused the "stuck on B" typing.
   if(Input.tap('enter')){ submitPassword(); }
-  else if(Input.tap('backspace')||Input.tap('pad_b1')||Input.tap('pad_b8')){
-    if(drawPassword.typing){ drawPassword.typing=false; Audio.SFX.blip(); }   // leave type mode first
-    else if(pwInput.length) pwKey('BACK');
-    else { setState(GS.TITLE); menuIndex=0; }
-  }
+  else if(Input.tap('backspace')){ if(pwInput.length) pwKey('BACK'); }
   else if(drawPassword.typing && Input.tap('escape')){ drawPassword.typing=false; Audio.SFX.blip(); }
   else if(drawPassword.typing){
-    /* RAW KEYBOARD ONLY IN TYPE MODE. 'k' is reserved as the exit, so it is the
-       one letter the keyboard will not write — the on-screen keypad still can. */
+    /* Text entry owns letter keys, including the keyboard mapping of B. */
     for(const k in Input.keys){
-      if(k==='k'){ if(Input.tap(k)){ drawPassword.typing=false; Audio.SFX.blip(); } continue; }
       if(k.length===1 && /[a-z0-9]/i.test(k) && Input.tap(k)){ pwKey(k.toUpperCase()); }
     }
   }
@@ -58928,7 +59305,7 @@ function pwHotspots(wx,wy,ww,wh){
   const rowH=26, rowGap=6;
   // anchor the keypad to the BOTTOM of the screen (4 rows + the action row)
   const totalKbH=(rowH+rowGap)*3 + (rowH+4) + 8;
-  const rowY0=VH-16-totalKbH;
+  const rowY0=Math.min(VH-52,wy+wh-8)-totalKbH;
   // row1: 13 letters
   { const n=13, bw=(gw-(n-1)*4)/n;
     for(let i=0;i<n;i++) H.push({c:r1[i], x:gx0+i*(bw+4), y:rowY0, w:bw, h:rowH}); }
@@ -58947,7 +59324,7 @@ function pwHotspots(wx,wy,ww,wh){
   return H;
 }
 function pwKey(c){
-  if(c==='BACK'){ if(pwInput.length){pwInput=pwInput.slice(0,-1);Audio.SFX.blip();} else { setState(GS.TITLE); menuIndex=0; } return; }
+  if(c==='BACK'){ if(pwInput.length){pwInput=pwInput.slice(0,-1);Audio.SFX.blip();} return; }
   if(c==='CLEAR'){ pwInput=''; Audio.SFX.blip(); return; }
   if(c==='ENTER'){ submitPassword(); return; }
   if(pwInput.length<6){ pwInput+=c; Audio.SFX.blip(); }
@@ -59342,11 +59719,11 @@ function drawDebugMenu(dt, inert){
   ctx.save(); ctx.textAlign='center'; ctx.textBaseline='alphabetic'; ctx.font='9px "BOFmil", monospace';
   const ov=Object.keys(BOSSMODE_OVERRIDES).length;
   ctx.fillStyle='#cfd6e0';
-  ctx.fillText('ENTER / CLICK = FIGHT      R IN FIGHT = RECORD      P = PLAY LAST CLIP', VW/2, VH-66);
+  ctx.fillText('R IN FIGHT = RECORD      P = PLAY LAST CLIP',VW/2,VH-66); controlHintRow([['pad_a','FIGHT']],VH-84,VW/2,180,19);
   ctx.fillStyle=M.autoRec?'#8de23a':'#8a919c';
   ctx.fillText('F3 AUTO-REC: '+(M.autoRec?'ON':'OFF')+'      F4 EDITOR OVERRIDES: '+(M.overrides?'ON':'OFF')+(ov?(' ('+ov+' SAVED)'):''), VW/2, VH-52);
   ctx.fillStyle='#8a919c';
-  ctx.fillText('E = OPEN BOSS MODE EDITOR      K / BACKSPACE = BACK', VW/2, VH-38);
+  ctx.fillText('E = OPEN BOSS MODE EDITOR',VW/2,VH-38); controlHintRow([['pad_b','BACK']],VH-38,VW-54,100,19);
   if(M.msgT>0){ M.msgT-=dt||0; ctx.fillStyle='#ffe682'; ctx.font='bold 9px "BOFmil", monospace';
     let s=M.msg; if(s.length>70) s=s.slice(0,69)+'…'; ctx.fillText(s, VW/2, VH-18); }
   else if(debugRec.last){ ctx.fillStyle='#6f7f8f'; ctx.fillText('LAST CLIP: '+debugRec.last.name.slice(0,44), VW/2, VH-18); }
@@ -60694,7 +61071,7 @@ function drawHelp(dt){
   else if(helpPage===1) helpPageMoves();
   else helpPageHud();
 
-  helpLabel('LEFT / RIGHT TURN PAGE    BACK RETURNS', VW/2, VH-14, 11, '#5f7288');
+  controlHintRow([['pad_dpad','PAGE'],['pad_b','BACK']]);
 
   /* page turn. menuLeft/menuRight CONSUME their tap, so each is read exactly once. */
   let _l=false,_r=false;
@@ -60725,7 +61102,7 @@ function backButton(){
   ctx.restore();
   // arrow + BACK label in the stage bitmap font, scaled to fit
   ctx.save(); ctx.fillStyle=on?'#ffffff':'#cfe2ff'; ctx.font='bold 15px "BOFmil", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle';
-  ctx.fillText('\u25C0', bx+16, by+bh/2+1);
+  helpGlyph('pad_b',bx+17,by+bh/2,24);
   ctx.restore();
   if(typeof msgText==='function'){ msgText('BACK', bx+bw/2+8, by+bh/2, 13, on?'#ffffff':'#cfe2ff', 0, 1, 0.10); }
   else { ctx.fillStyle=on?'#fff':'#cfe2ff'; ctx.font='bold 12px "BOFmil", monospace'; ctx.textAlign='center'; ctx.textBaseline='middle'; ctx.fillText('BACK', bx+bw/2+8, by+bh/2+1); ctx.textBaseline='alphabetic'; ctx.textAlign='left'; }
@@ -60829,7 +61206,7 @@ function drawOptions(dt){
   if(optSnap==null) optSnapshot();
   const m=Input.mouse;
   ctx.textBaseline='alphabetic'; bofTitle('OPTIONS',VW/2,20,16);
-  const _panelDef={x:28,y:40,w:VW-56,h:VH-40-58};
+  const _panelDef={x:28,y:40,w:VW-56,h:VH-40-82};
   const _panel=uiRect('options','panel',_panelDef);
   const wx=_panel.x, wy=_panel.y, ww=_panel.w, wh=_panel.h;
   bofPanel(wx,wy,ww,wh);
@@ -60870,7 +61247,7 @@ function drawOptions(dt){
     if(Input.menuLeft()) adjustVol(selRow.k,-1/SEG);
     if(Input.menuRight()) adjustVol(selRow.k, 1/SEG);
   }
-  if(!rebindAction && selRow && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){ rebindAction=selRow.act; rebindWho=(selRow.who||1); Audio.SFX.blip(); }
+  if(!rebindAction && selRow && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ rebindAction=selRow.act; rebindWho=(selRow.who||1); Audio.SFX.blip(); }
   /* on the buttons: left/right picks between them, confirm presses the one you are on */
   if(!rebindAction && onBtn){
     if(Input.menuLeft()  && btnIdx>0){ optSelIdx--; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
@@ -60993,7 +61370,7 @@ function drawOptions(dt){
         else { const pads=cur.filter(isPad); _kb[rebindAction]=[k].concat(pads); }
       }
       rebindAction=null; rebindWho=1; Audio.SFX.select(); break; } } }
-  const _cDef={x:wx,y:VH-48,w:(ww-16)/2,h:30}, _aDef={x:wx+(ww-16)/2+16,y:VH-48,w:(ww-16)/2,h:30};
+  const _cDef={x:wx,y:VH-72,w:(ww-16)/2,h:30}, _aDef={x:wx+(ww-16)/2+16,y:VH-72,w:(ww-16)/2,h:30};
   const _cBtn=uiRect('options','btnCancel',_cDef), _aBtn=uiRect('options','btnApply',_aDef);
   const by=_cBtn.y, bh2=_cBtn.h, bw2=_cBtn.w, cbx=_cBtn.x, abx=_aBtn.x;
   const overC=(m.x>cbx&&m.x<cbx+bw2&&m.y>by&&m.y<by+bh2), overA=(m.x>abx&&m.x<abx+bw2&&m.y>by&&m.y<by+bh2);
@@ -61052,7 +61429,7 @@ function drawOptionsLegacy(dt){
   if(Input.menuUp()){menuIndex=(menuIndex+N-1)%N;Audio.SFX.blip();}
   if(menuIndex<3){ if(Input.tap('arrowleft')){ Audio.setVol(kinds[menuIndex],clamp(vols[menuIndex]-0.1,0,1)); } if(Input.tap('arrowright')){ Audio.setVol(kinds[menuIndex],clamp(vols[menuIndex]+0.1,0,1)); } }
   if(Input.tap('enter')||Input.tap('j')){ if(menuIndex>=3 && menuIndex<3+OPT_CTRL.length){ rebindAction=OPT_CTRL[menuIndex-3][0]; } else if(menuIndex===N-1){ setState(GS.TITLE); menuIndex=2; } }
-  if(Input.tap('backspace')){ setState(GS.TITLE); menuIndex=2; }
+  if(Input.menuBack()){ setState(GS.TITLE); menuIndex=2; }
   if(backButton()){ setState(GS.TITLE); menuIndex=2; Audio.SFX.select(); }
 }
 /* ===== STAGE INTRO + STAGE FONT/* ===== STAGE INTRO + STAGE FONT (master-art) ===== */
@@ -62072,7 +62449,7 @@ function drawIntro(dt){
   // (torch/skull card FX removed per Mike)
   ctx.restore();
   if(t>=CD){ proceedIntro(); }
-  if(t>0.7 && t<CD && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){ stateT=CD-0.001; }
+  if(t>0.7 && t<CD && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ stateT=CD-0.001; }
 }
 
 /* legacy procedural intro (stages without master art) */
@@ -62091,10 +62468,10 @@ function drawIntroLegacy(dt){
     ctx.save(); ctx.globalAlpha=fade; ctx.shadowColor='#000'; ctx.shadowBlur=14;
     ctx.drawImage(card, Math.round(VW/2-bw/2), Math.round(yy-bh/2), bw, bh); ctx.restore();
     // press-start hint
-    if(stateT>0.7 && fade>0.5 && Math.floor(stateT*2)%2){ ctx.fillStyle='#dfe7f2'; ctx.font='bold 10px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText('PRESS  FIRE',VW/2,VH*0.42+bh/2+22); }
+    if(stateT>0.7 && fade>0.5 && Math.floor(stateT*2)%2){ ctx.fillStyle='#dfe7f2'; ctx.font='bold 10px "BOFmil", monospace'; ctx.textAlign='center'; controlHintRow([['pad_a','CONTINUE']],VH*.42+bh/2+22); }
     if(stateT>0.3 && !drawIntro._snd){ drawIntro._snd=true; Audio.SFX.select(); }
     if(stateT>3.0){ proceed(); }
-    else if(stateT>0.6 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){ proceed(); }
+    else if(stateT>0.6 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ proceed(); }
     return;
   }
   // ---- fallback: legacy procedural banner ----
@@ -62112,7 +62489,7 @@ function drawIntroLegacy(dt){
   ctx.restore();
   if(t>0.6 && !drawIntro._snd){ drawIntro._snd=true; Audio.SFX.select(); }
   if(t>2.6){ proceed(); }
-  if(t>1.0 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k)))){ proceed(); }
+  if(t>1.0 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ proceed(); }
 }
 /* ===== SIGNATURE LAUNCH CINEMATIC ===== */
 const LAUNCH_TERR=['terr_grass','terr_desert','terr_ice','terr_road','terr_war'];
@@ -63908,8 +64285,8 @@ function drawRivalSeq(dt){
       drawCommWindow({tint:speaker.tint, name:speaker.name, frameKey:'dlg_'+speaker.key, portraitKey:pilotPortrait(_pk,_emo), cardKey:'card_'+speaker.key, text:line.text, appear, charsShown:_tw});
       if(rival.dlgT>0.45){
         ctx.save(); ctx.globalAlpha=0.5+0.5*Math.sin(rival.dlgT*4); ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace';
-        ctx.fillText(rival.dlgIdx<rival.script.length-1 ? '\u25B6' : 'PRESS FIRE / ENTER', VW/2, VH*0.34-24); ctx.restore();
-        if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))){
+        controlHintRow([['pad_a',rival.dlgIdx<rival.script.length-1?'NEXT':'CONTINUE']],VH*.34-24); ctx.restore();
+        if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
           if(!typeRevealDone(rival, line.text)){ rival._twChars=line.text.length; Audio.SFX.blip(); }   // 1st press: reveal all
           else {
             Audio.SFX.blip();
@@ -64028,8 +64405,8 @@ function drawRivalEnding(dt){
     drawCommWindow({tint:rival.tint, name:rival.name, frameKey:'dlg_'+rival.key, portraitKey:pilotPortrait(rival.key,'idle'), cardKey:'card_'+rival.key, text:lines[rival.dlgIdx], appear});
     if(rival.dlgT>0.45){
       ctx.save(); ctx.globalAlpha=0.5+0.5*Math.sin(rival.dlgT*4); ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace';
-      ctx.fillText(rival.dlgIdx<lines.length-1?'\u25B6':'PRESS FIRE / ENTER', VW/2, VH*0.34-24); ctx.restore();
-      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))){
+      controlHintRow([['pad_a',rival.dlgIdx<lines.length-1?'NEXT':'CONTINUE']],VH*.34-24); ctx.restore();
+      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
         Audio.SFX.blip();
         if(rival.dlgIdx<lines.length-1){ rival.dlgIdx++; rival.dlgT=0; }
         else {
@@ -64049,8 +64426,8 @@ function drawRivalEnding(dt){
     drawCommWindow({tint:rival.tint, name:rival.name, frameKey:'dlg_'+rival.key, portraitKey:pilotPortrait(rival.key,'idle'), cardKey:'card_'+rival.key, text:lines[rival.dlgIdx], appear});
     if(rival.dlgT>0.45){
       ctx.save(); ctx.globalAlpha=0.5+0.5*Math.sin(rival.dlgT*4); ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace';
-      ctx.fillText(rival.dlgIdx<lines.length-1?'\u25B6':'PRESS FIRE / ENTER', VW/2, VH*0.34-24); ctx.restore();
-      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))){
+      controlHintRow([['pad_a',rival.dlgIdx<lines.length-1?'NEXT':'CONTINUE']],VH*.34-24); ctx.restore();
+      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
         Audio.SFX.blip();
         if(rival.dlgIdx<lines.length-1){ rival.dlgIdx++; rival.dlgT=0; }
         else {
@@ -64105,8 +64482,8 @@ function drawRivalEnding(dt){
     typewriter(rival.revealText, frac, VW/2, VH*0.46, 20, rival.revealCol);
     if(frac>=1 && rival.t>1.6){
       ctx.save(); ctx.globalAlpha=0.5+0.5*Math.sin(rival.t*4); ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace';
-      ctx.fillText('PRESS FIRE / ENTER', VW/2, VH*0.46+30); ctx.restore();
-      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))){ Audio.SFX.select(); rival=null; beginStage(3); }
+      controlHintRow([['pad_a','CONTINUE']],VH*.46+30); ctx.restore();
+      if(Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){ Audio.SFX.select(); rival=null; beginStage(3); }
     }
     return;
   }
@@ -65572,14 +65949,7 @@ function drawStageClear(dt){
        different typeface from every label above it. Same face the rows use (`art` = uiFontArt),
        with the canvas face kept behind it because stageText draws NOTHING before its sheet
        decodes - the 0810o trap. */
-    const _pfA=0.55+0.45*Math.sin(t*4);
-    if(art && art.font && typeof stageText==='function'){
-      stageText(art,'PRESS FIRE', px+pw/2, (drawStageClear._pfY!=null?drawStageClear._pfY:py+ph*0.898), ph*0.030, null, null, _pfA, 0.06);
-    } else {
-      ctx.save(); ctx.globalAlpha=_pfA; ctx.textAlign='center';
-      ctx.fillStyle='#cfd6e0'; ctx.font=F(ph*0.028);
-      ctx.fillText('PRESS FIRE', px+pw/2, (drawStageClear._pfY!=null?drawStageClear._pfY:py+ph*0.898)); ctx.restore(); ctx.textAlign='left';
-    }
+    controlHintRow([['pad_a','CONTINUE']],drawStageClear._pfY!=null?drawStageClear._pfY:py+ph*0.898,px+pw/2,pw-20);
   }
   /* MOUSE (drop 0812b). Stage clear says PRESS FIRE and had no pointer path at all, so a mouse
      player was stranded on the results screen after every level. Click anywhere — it is a
@@ -65588,7 +65958,7 @@ function drawStageClear(dt){
   if(Input.mouse.down && !drawStageClear._md) Input.injectTap('enter');
   drawStageClear._md=Input.mouse.down;
   /* any input SKIPS the flourish rather than making the player sit through it */
-  if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))){
+  if(Input.tap('enter') || keybind.fire.some(k=>Input.tap(k))||Input.menuStart()){
     if(!ready){
       R.rows.forEach(function(r){ r._shown=r.segs; });
       drawStageClear._row=R.rows.length;
@@ -65680,8 +66050,8 @@ function drawGameOver(dt){
      arcGameOver bands its line by how far the player got and the longest band is two rows. */
   if(stateT>1.4){ ctx.globalAlpha=0.5+0.5*Math.sin(stateT*4); ctx.fillStyle='#cfd6e0';
     ctx.font='10px "BOFmil", monospace';
-    ctx.fillText('ENTER = TITLE',VW/2,VH/2+104); ctx.globalAlpha=1; }
-  if(stateT>1.2&&(Input.tap('enter')||Input.mouse.down)){ setState(GS.TITLE); menuIndex=0; Audio.startMusic('title'); }
+    controlHintRow([['pad_start','TITLE']],VH/2+104); ctx.globalAlpha=1; }
+  if(stateT>1.2&&(Input.menuConfirm()||Input.mouse.down)){ setState(GS.TITLE); menuIndex=0; Audio.startMusic('title'); }
 }
 
 /* ============================================================
@@ -65830,7 +66200,7 @@ function victoryFinalCard(t,W,H){
   if(q>.95){const b=clamp((q-.95)/.55,0,1);msgText('BULLETS OF FURY,',W/2,H*.49,Math.max(28,H*.072),'#ffe082',1,b,.05);}
   if(q>1.75){const c=clamp((q-1.75)/.55,0,1);msgText('WILL RETURN!',W/2,H*.61,Math.max(18,H*.046),'#ff4b55',1,c,.065);}
   if(q>3.0){msgText('FINAL SCORE  '+pad(run.score,8),W/2,H*.75,Math.max(10,H*.024),'#cfd6e0',0,clamp((q-3)/.4,0,1),.07);}
-  if(q>5.0&&Math.floor(q*2)%2)msgText('PRESS ENTER TO RETURN TO TITLE',W/2,H-16,Math.max(9,H*.020),'#9fb0cd',0,.86,.075);
+  if(q>5.0&&Math.floor(q*2)%2)controlHintRow([['pad_start','TITLE']],H-20,W/2,W-24);
   msgFaceUse(null);
 }
 function drawVictory(dt){
@@ -65866,7 +66236,7 @@ function drawVictory(dt){
   else if(t<VICTORY_CARD_AT)victoryStinger(t,W,H,S);
   else victoryFinalCard(t,W,H);
   const click=!!Input.mouse.down&&!drawVictory._md;drawVictory._md=!!Input.mouse.down;
-  if(t>VICTORY_CARD_AT+5 && (Input.tap('enter')||click)){
+  if(t>VICTORY_CARD_AT+5 && (Input.menuConfirm()||click)){
     drawVictory._t=0;drawVictory._scroll=0;drawVictory._sfx={};drawVictory._ready=false;setState(GS.TITLE);menuIndex=0;Audio.startMusic('title');
   }
 }
@@ -65877,8 +66247,8 @@ function drawExited(){
   ctx.textAlign='center'; ctx.fillStyle='#5a606a'; ctx.font='bold 12px "BOFmil", monospace';
   ctx.fillText('THANKS FOR PLAYING',VW/2,VH/2-6);
   ctx.fillText('BULLETS OF FURY',VW/2,VH/2+12);
-  ctx.font='9px "BOFmil", monospace'; ctx.fillText('press ENTER to return',VW/2,VH/2+40);
-  if(Input.tap('enter')||Input.mouse.down){ setState(GS.TITLE); menuIndex=0; Audio.init(); Audio.startMusic('title'); }
+  ctx.font='9px "BOFmil", monospace'; controlHintRow([['pad_start','RETURN']],VH/2+40);
+  if(Input.menuConfirm()||Input.mouse.down){ setState(GS.TITLE); menuIndex=0; Audio.init(); Audio.startMusic('title'); }
 }
 
 /* ============================================================
@@ -65943,7 +66313,7 @@ function loop(now){
   }catch(_inErr){}
   try{
     if(state==='exited'){ drawExited(); }
-    else { drawScene(dt); }
+    else { drawScene(dt); drawEncounterClocks(); menuControlFooter(); controlHintShellTick(); }
   }catch(_frameErr){
     if((typeof DBG!=='undefined' && DBG.verbose) || !loop._reported){ loop._reported=true; try{ console.error('draw error in state', state, _frameErr); }catch(e){} }
   }
@@ -66224,7 +66594,7 @@ if(window.BOFA && BOFA.sfx){
     overlordLance:'assets/game/sounds/reviewed_enemy_laser.wav',
     overlordWind:'assets/game/sounds/cole_pressure_release_0913.wav',
     overlordCharge:'assets/game/sounds/furnace_power_surge.wav',
-    overlordRotor:'assets/game/sounds/furnace_servo_whirr.wav',
+    overlordRotor:'assets/game/sounds/overlord_helicopter_rotor.wav',
     wardenGun:'assets/game/sounds/reviewed_enemy_heavy_mg.wav',
     wardenCenterGun:'assets/game/sounds/enemy_machine_shot_light.wav',
     wardenRocket:'assets/game/sounds/nsp_rocket_launch.mp3',
@@ -66959,8 +67329,8 @@ function drawContinue(dt){
     if(artReady(art))stageText(art,label,VW/2,VH*.84,13,null,null,1,.055);
     else {ctx.textAlign='center';ctx.fillStyle='#eaf2ff';ctx.font='13px "BOFmil", monospace';ctx.fillText(label,VW/2,VH*.84);}
   }
-  if(stateT>0.3 && Math.floor(stateT*2)%2){ ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='bold 11px "BOFmil", monospace'; ctx.fillText('PRESS FIRE TO CONTINUE',VW/2,VH*0.74); }
-  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.mouse.down)){
+  if(stateT>0.3 && Math.floor(stateT*2)%2){ ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='bold 11px "BOFmil", monospace'; controlHintRow([['pad_a','CONTINUE']],VH*.74); }
+  if(stateT>0.3 && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart()||Input.mouse.down)){
     // Campaign keeps its rift limit; Arcade spends one shared bank across every stage.
     const _capNow = continueCap();
     if(_capNow>=0 && (run.contUsed||0)>=_capNow){

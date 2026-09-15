@@ -10961,8 +10961,8 @@ console.log("=== 215. menu navigation ===");
      'Exit Game is the only campaign-menu action that returns directly to the main screen');
   ok(vm.runInContext("(function(){ var hit=[]; var old=Audio.startMusic; Audio.startMusic=function(n){hit.push(n);}; setState(GS.TITLE); Audio.startMusic=old; return hit.join(','); })()", ctxv)==='title',
      'every route back to TITLE replaces campaign/gameplay music with the title theme');
-  ok(vm.runInContext("Input.menuBack.toString().indexOf(\"'k'\")>0", ctxv),
-     'the K key is one of the back bindings');
+  ok(vm.runInContext("(function(){var saved=keybind.bomb;Input.clearTaps();keybind.bomb=['k'];Input.injectTap('k');var original=Input.menuBack();keybind.bomb=['u'];Input.injectTap('u');var remapped=Input.menuBack();Input.injectTap('backspace');var editsOnly=!Input.menuBack();Input.clearTaps();keybind.bomb=saved;return original&&remapped&&editsOnly;})()",ctxv),
+     'menu Back follows the bound B action and never treats Backspace as navigation');
 
   /* ---- keyboard password entry ---- */
   var _pw=JSON.parse(vm.runInContext("(function(){"
@@ -12356,8 +12356,8 @@ console.log("=== 247. Campaign pilot-select input lock ===");
   ok(!_pl247.release && _pl247.next,
      'releasing every control arms the screen, and only the following fresh frame accepts input');
   var _s247=fs.readFileSync(path.join(ROOT,'assets/game.js'),'utf8');
-  ok(_s247.indexOf("const _hint=(run && run.mode==='campaign')")>0,
-     'Campaign pilot select no longer advertises a Back command that Campaign intentionally owns');
+  ok(vm.runInContext("(function(){var old=controlHintRow,mode=run.mode,seen=[];try{controlHintRow=function(items){seen.push(items.some(function(q){return q[0]==='pad_b';}));};run.mode='campaign';drawPilot(0);run.mode='arcade';drawPilot(0);return seen.length===2&&!seen[0]&&seen[1];}finally{controlHintRow=old;run.mode=mode;}})()",ctxv),
+     'Campaign pilot select omits Back while arcade pilot select shows its generated B icon');
 }
 
 // ===== 248. DECKER CARD MATCHES HIS LIVE CLOAK =====

@@ -1,0 +1,188 @@
+{
+  "date": "2026-09-15",
+  "runtimeSha256": "169300c18403e5260933c52b8feea9e2bba0f8769eb2b0a216abce06a03e12e6",
+  "syntaxExitCode": 0,
+  "focused": {
+    "passed": 20,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "Normal stage 5 routes to new boss",
+        "ok": true
+      },
+      {
+        "name": "harmless bottom entrance",
+        "ok": true
+      },
+      {
+        "name": "entrance rejects direct damage",
+        "ok": true
+      },
+      {
+        "name": "entrance, transformation and hammer cycle run",
+        "ok": true
+      },
+      {
+        "name": "reticle commits before leap",
+        "ok": true
+      },
+      {
+        "name": "ball reflects at bottom and right bounds",
+        "ok": true
+      },
+      {
+        "name": "ball reflects at top and left bounds",
+        "ok": true
+      },
+      {
+        "name": "passive homing fire enrages",
+        "ok": true
+      },
+      {
+        "name": "sustained weapon fire does not suppress rage laser release",
+        "ok": true
+      },
+      {
+        "name": "manual missile knocks away without rage",
+        "ok": true
+      },
+      {
+        "name": "fight supply rolls only x10 and x20",
+        "ok": true
+      },
+      {
+        "name": "existing x5 pickups upgrade",
+        "ok": true
+      },
+      {
+        "name": "ball lasts full 15 seconds",
+        "ok": true
+      },
+      {
+        "name": "ball exits into authored uncurl",
+        "ok": true
+      },
+      {
+        "name": "Hard retains Xenoregent",
+        "ok": true
+      },
+      {
+        "name": "stage 4 cinematic death hook",
+        "ok": true
+      },
+      {
+        "name": "four crossing front rings",
+        "ok": true
+      },
+      {
+        "name": "fall and accelerating cookoff",
+        "ok": true
+      },
+      {
+        "name": "white hides ship removal at seven seconds",
+        "ok": true
+      },
+      {
+        "name": "normal scene returns after flash",
+        "ok": true
+      }
+    ]
+  },
+  "suite": {
+    "passed": 3850,
+    "failed": 58,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "failureNames": [
+      "Stage 7 results go straight to the Stage 8 card with the portal-entry latch set",
+      "far from firing -> idle reel",
+      "idle reel cycles all 6 frames at 8fps",
+      "inside the tell window -> attack-charge reel",
+      "tell reaches its final frame just before the shot",
+      "morphing to FURIOUS DEATH repoints the reel to form 4",
+      "stage-2 roster rebuilt around all twelve unique volcanic hulls",
+      "stage-8 roster includes the native twelve-hull mega fleet",
+      "all 12 native mega enemies appeared in the finale (17/12)",
+      "the first charged-ball wave is five directions x seven independent lances (25)",
+      "and five seven-lance Level-5 volleys fan out behind it as individual rounds",
+      "five directions x seven independent lances launch from the ball (25)",
+      "all eight native ice-field hulls have explicit Stage-3 rows",
+      "the drop-shadow ellipse is gone",
+      "kept as a no-op so its call sites stay harmless",
+      "stage 1: the sand tanks spawn (scroll never)",
+      "stage 1: five yellow fast-jet ripples are authored, four aircraft each",
+      "stage 1: the two purple dam-approach waves are committed kamikaze jets",
+      "stage 6 scrolls one physical blue master instead of looping or swapping skies",
+      "Stage 6 has no animated weather or cloud overlay over the baked still clouds",
+      "and a jet aimed at the far corner still fires two mg rounds, downward",
+      "every enemy-bullet kind in the source is in PROJ — jcHelix",
+      "and the map prefetches the highlighted stage, giving it the whole selection to finish",
+      "stage 1 keeps its exact approved rebuilt cast (s1jetbomber, s1jetdelta)",
+      "and warms its morph and final implosion overlays before the boss cinematic",
+      "stage 3 fields its complete authored native plan (8 waves)",
+      "and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)",
+      "all six shield families are reserved — ordinary enemies never auto-equip one",
+      "the ship continues flying into its bottom play lane throughout the countdown",
+      "the flamethrower alone keeps a new, throttled contact/kill transient",
+      "Stage 4 cycles fast turret fire, discrete blue energy bolts and its existing pincer — no continuous beam phase",
+      "the twin machine-gun turrets fire a timed six-beat blue-tracer burst from their exact barrel tips",
+      "each machine-gun beat overlays the jet muzzle reel on both barrel hardpoints at the faster cadence",
+      "the blue attack is five separate animated storm bolts from the coil/nose emitters, never a beam rake",
+      "a boss visibly anticipates first and releases its unchanged attack only on the authored beat",
+      "crossing a real boss phase cancels the old tell and performs a readable power-up reset",
+      "the river corvette fires a five-beat port/starboard broadside from alternating physical cannons",
+      "moving arrival shots use the aerial HQ view and top-down ships only",
+      "Maverick progression is locked to 3 purple, 4 blue, 5 green, 6 black and 7 helix lances",
+      "each trigger launches the exact tier count as independently phased lance entities",
+      "all seven Level-V lances animate on separate spiral paths instead of one rigid formation",
+      "Shadow Orb I-V advances damage, blast radius and piercing charge—not just icon art",
+      "all twelve authored events field only the exact twelve-family Velocity Void cast",
+      "Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route",
+      "a live shared beam sustains one loop route and expiry fades it before the release cue",
+      "Maverick Level III keeps five discrete lances and never starts the shared held-beam bed",
+      "Jungle Cruiser fires a timed twin-machine-gun burst punctuated by separate green lances",
+      "its enraged pattern combines green laser volleys, curving wind blades and slow vortex pressure",
+      "Stage 2 fields all 12 unique volcanic hulls and none of the rejected art aliases",
+      "Magma Ward telegraphs and releases its opening fan from the same measured left cannon",
+      "Stage 3 schedules every one of its eight native ice-field hulls",
+      "Rime Wall switches from dark-edged mortars to broad cryo waves instead of pale generic pellets",
+      "Olive Warden switches between Blacksite missile pincers and a rail attack",
+      "Sludge Emperor advances through pressure, warned flood, crown and reactor-purge phases",
+      "Stage 7 has a reinforced four-phase boss and the supplied dedicated miniboss",
+      "Stage 5 keeps the approved Chaos Harrier and gains a reinforced four-phase boss",
+      "all twelve hulls resolve eight attack plus eight barrel-roll/twist frames",
+      "all nine stages own monotonically rising boss and miniboss HP floors"
+    ],
+    "newFailureNames": [],
+    "baseline": "qa/pilot_reveal_0914.json"
+  },
+  "native": {
+    "stage4": [
+      "four crossing smoke rings",
+      "intact ship falling under accelerated explosion overlays",
+      "white screen at 7 seconds",
+      "absent ship and residual explosions at 9 seconds",
+      "regenerated highway vegetation and reflected repeat join"
+    ],
+    "stage5": [
+      "ship flyby",
+      "authored unfold",
+      "chrome hammer form",
+      "red charge and yellow committed target",
+      "black spinning ball",
+      "red rage",
+      "six authored green laser shafts",
+      "manual missile cancels rage and knocks ball away"
+    ],
+    "reviewPageError": "Initial fixture-only onclick-before-DOM error corrected. No new errors after corrected reload.",
+    "screenshots": [
+      "_shots/boss_designs_0915/hammer-robot.png",
+      "_shots/boss_designs_0915/hammer-manual-missile.png"
+    ]
+  },
+  "limitations": [
+    "Stage 2 identity response pending; head/shrieks/rings/dialogue not implemented",
+    "Full natural-play difficulty balance remains SPACE-06",
+    "Raw highway PNG is not claimed periodic; runtime reflected-edge tiling makes joins match"
+  ]
+}

@@ -1,0 +1,222 @@
+{
+  "date": "2026-09-14",
+  "request": "Generated controls and B navigation",
+  "runtimeSha256": "26e0a05c371ee63264abb55b4a5aa35cd1a3db38674036b968a599a0585a1c38",
+  "syntaxExitCode": 0,
+  "focused": {
+    "passed": 25,
+    "failed": 0,
+    "checks": [
+      {
+        "name": "remapped keyboard B backs out",
+        "ok": true
+      },
+      {
+        "name": "physical controller B backs out",
+        "ok": true
+      },
+      {
+        "name": "Backspace is not navigation",
+        "ok": true
+      },
+      {
+        "name": "mouse binding does not trigger unrelated menu navigation",
+        "ok": true
+      },
+      {
+        "name": "remapped Start works",
+        "ok": true
+      },
+      {
+        "name": "controller Start confirms",
+        "ok": true
+      },
+      {
+        "name": "HELP ignores Backspace navigation",
+        "ok": true
+      },
+      {
+        "name": "HELP B returns to title",
+        "ok": true
+      },
+      {
+        "name": "CREDITS ignores Backspace navigation",
+        "ok": true
+      },
+      {
+        "name": "CREDITS B returns to title",
+        "ok": true
+      },
+      {
+        "name": "DIFF ignores Backspace navigation",
+        "ok": true
+      },
+      {
+        "name": "DIFF B returns to title",
+        "ok": true
+      },
+      {
+        "name": "MODESEL ignores Backspace navigation",
+        "ok": true
+      },
+      {
+        "name": "MODESEL B returns to title",
+        "ok": true
+      },
+      {
+        "name": "OPTIONS ignores Backspace navigation",
+        "ok": true
+      },
+      {
+        "name": "OPTIONS B returns to title",
+        "ok": true
+      },
+      {
+        "name": "PASSWORD ignores Backspace navigation",
+        "ok": true
+      },
+      {
+        "name": "PASSWORD B returns to title",
+        "ok": true
+      },
+      {
+        "name": "rebinding owns B until capture finishes",
+        "ok": true
+      },
+      {
+        "name": "delete on empty password does not exit",
+        "ok": true
+      },
+      {
+        "name": "delete removes exactly one character",
+        "ok": true
+      },
+      {
+        "name": "typing owns the keyboard B letter",
+        "ok": true
+      },
+      {
+        "name": "shared menu rows use authored D-pad, A, B and Start assets",
+        "ok": true
+      },
+      {
+        "name": "captions describe actions without conflicting physical keys",
+        "ok": true
+      },
+      {
+        "name": "all control icons resolve to the inspected generated Help atlas",
+        "ok": true
+      }
+    ]
+  },
+  "suite": {
+    "passed": 3851,
+    "failed": 57,
+    "exitCode": 1,
+    "failureNames": [
+      "ASSERT FAIL: Jungle Cruiser fires a timed twin-machine-gun burst punctuated by separate green lances",
+      "ASSERT FAIL: Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route",
+      "ASSERT FAIL: Magma Ward telegraphs and releases its opening fan from the same measured left cannon",
+      "ASSERT FAIL: Maverick Level III keeps five discrete lances and never starts the shared held-beam bed",
+      "ASSERT FAIL: Maverick progression is locked to 3 purple, 4 blue, 5 green, 6 black and 7 helix lances",
+      "ASSERT FAIL: Olive Warden switches between Blacksite missile pincers and a rail attack",
+      "ASSERT FAIL: Rime Wall switches from dark-edged mortars to broad cryo waves instead of pale generic pellets",
+      "ASSERT FAIL: Shadow Orb I-V advances damage, blast radius and piercing charge\u2014not just icon art",
+      "ASSERT FAIL: Sludge Emperor advances through pressure, warned flood, crown and reactor-purge phases",
+      "ASSERT FAIL: Stage 2 fields all 12 unique volcanic hulls and none of the rejected art aliases",
+      "ASSERT FAIL: Stage 3 schedules every one of its eight native ice-field hulls",
+      "ASSERT FAIL: Stage 4 cycles fast turret fire, discrete blue energy bolts and its existing pincer \u2014 no continuous beam phase",
+      "ASSERT FAIL: Stage 5 keeps the approved Chaos Harrier and gains a reinforced four-phase boss",
+      "ASSERT FAIL: Stage 6 has no animated weather or cloud overlay over the baked still clouds",
+      "ASSERT FAIL: Stage 7 has a reinforced four-phase boss and the supplied dedicated miniboss",
+      "ASSERT FAIL: Stage 7 results go straight to the Stage 8 card with the portal-entry latch set",
+      "ASSERT FAIL: a boss visibly anticipates first and releases its unchanged attack only on the authored beat",
+      "ASSERT FAIL: a live shared beam sustains one loop route and expiry fades it before the release cue",
+      "ASSERT FAIL: all 12 native mega enemies appeared in the finale (17/12)",
+      "ASSERT FAIL: all eight native ice-field hulls have explicit Stage-3 rows",
+      "ASSERT FAIL: all nine stages own monotonically rising boss and miniboss HP floors",
+      "ASSERT FAIL: all seven Level-V lances animate on separate spiral paths instead of one rigid formation",
+      "ASSERT FAIL: all six shield families are reserved \u2014 ordinary enemies never auto-equip one",
+      "ASSERT FAIL: all twelve authored events field only the exact twelve-family Velocity Void cast",
+      "ASSERT FAIL: all twelve hulls resolve eight attack plus eight barrel-roll/twist frames",
+      "ASSERT FAIL: and a jet aimed at the far corner still fires two mg rounds, downward",
+      "ASSERT FAIL: and five seven-lance Level-5 volleys fan out behind it as individual rounds",
+      "ASSERT FAIL: and the map prefetches the highlighted stage, giving it the whole selection to finish",
+      "ASSERT FAIL: and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)",
+      "ASSERT FAIL: and warms its morph and final implosion overlays before the boss cinematic",
+      "ASSERT FAIL: crossing a real boss phase cancels the old tell and performs a readable power-up reset",
+      "ASSERT FAIL: each machine-gun beat overlays the jet muzzle reel on both barrel hardpoints at the faster cadence",
+      "ASSERT FAIL: each trigger launches the exact tier count as independently phased lance entities",
+      "ASSERT FAIL: every enemy-bullet kind in the source is in PROJ \u2014 jcHelix",
+      "ASSERT FAIL: far from firing -> idle reel",
+      "ASSERT FAIL: five directions x seven independent lances launch from the ball (25)",
+      "ASSERT FAIL: idle reel cycles all 6 frames at 8fps",
+      "ASSERT FAIL: inside the tell window -> attack-charge reel",
+      "ASSERT FAIL: its enraged pattern combines green laser volleys, curving wind blades and slow vortex pressure",
+      "ASSERT FAIL: kept as a no-op so its call sites stay harmless",
+      "ASSERT FAIL: morphing to FURIOUS DEATH repoints the reel to form 4",
+      "ASSERT FAIL: moving arrival shots use the aerial HQ view and top-down ships only",
+      "ASSERT FAIL: stage 1 keeps its exact approved rebuilt cast (s1jetbomber, s1jetdelta)",
+      "ASSERT FAIL: stage 1: five yellow fast-jet ripples are authored, four aircraft each",
+      "ASSERT FAIL: stage 1: the two purple dam-approach waves are committed kamikaze jets",
+      "ASSERT FAIL: stage 3 fields its complete authored native plan (8 waves)",
+      "ASSERT FAIL: stage 6 scrolls one physical blue master instead of looping or swapping skies",
+      "ASSERT FAIL: stage-2 roster rebuilt around all twelve unique volcanic hulls",
+      "ASSERT FAIL: stage-8 roster includes the native twelve-hull mega fleet",
+      "ASSERT FAIL: tell reaches its final frame just before the shot",
+      "ASSERT FAIL: the blue attack is five separate animated storm bolts from the coil/nose emitters, never a beam rake",
+      "ASSERT FAIL: the drop-shadow ellipse is gone",
+      "ASSERT FAIL: the first charged-ball wave is five directions x seven independent lances (25)",
+      "ASSERT FAIL: the flamethrower alone keeps a new, throttled contact/kill transient",
+      "ASSERT FAIL: the river corvette fires a five-beat port/starboard broadside from alternating physical cannons",
+      "ASSERT FAIL: the ship continues flying into its bottom play lane throughout the countdown",
+      "ASSERT FAIL: the twin machine-gun turrets fire a timed six-beat blue-tracer burst from their exact barrel tips"
+    ],
+    "newFailureNames": [],
+    "baseline": "docs/qa/pilot_reveal_0914.json",
+    "scope": "Full suite ran after input changes. Final text removal and spacing changes subsequently checked by syntax, focused tests and Chromium."
+  },
+  "native": {
+    "method": "Real index/scripts with controlled frame buttons, operated through native Chromium",
+    "screenshots": [
+      {
+        "file": "_shots/control_hints_0914/boot.png",
+        "sha256": "c2c9f2fc96902316c55b9f88bd3ed3e69397d17b844cd387d18a44e3adde4733"
+      },
+      {
+        "file": "_shots/control_hints_0914/credits.png",
+        "sha256": "d80d800f107ef9dc9401426703771d9645d2c9276ab83017cffb1eea47912e79"
+      },
+      {
+        "file": "_shots/control_hints_0914/diff.png",
+        "sha256": "083810c984489d3f3fc1f9cd36ec5886ae865e17482cdb208874e78132d97c6e"
+      },
+      {
+        "file": "_shots/control_hints_0914/help.png",
+        "sha256": "37d35392c713be3e8b5b9f5669959acfcd9fad294e32e2b9e3f233935a28c5e4"
+      },
+      {
+        "file": "_shots/control_hints_0914/modesel.png",
+        "sha256": "eae2a712bd9ec8ed74d0dc22c34a42811f8fbbd7d2f939d05b31395c4168886f"
+      },
+      {
+        "file": "_shots/control_hints_0914/options.png",
+        "sha256": "11340080ddc6ef5e7966613e82aba259cdd820a6ab924b37cba8cec3edc94278"
+      },
+      {
+        "file": "_shots/control_hints_0914/password.png",
+        "sha256": "b36398b98d56d71abc68cae279474a501282723709f781cfa5dbf2e194279211"
+      },
+      {
+        "file": "_shots/control_hints_0914/pilot.png",
+        "sha256": "8f0868290c7ee20c8c27435be118c6272bf3efaa605949ab843e85293102d6ee"
+      },
+      {
+        "file": "_shots/control_hints_0914/title.png",
+        "sha256": "a5badc063d0f4cdb4ff9943b3ab7e1ee16a6e45fb91a696aced9cbe009b2d341"
+      }
+    ],
+    "backCheck": "Pilot: Backspace retained screen; controller B returned to mode selection.",
+    "limitation": "Direct campaign-hub preview cannot render: CAMPHUB_ITEMS is undefined; same absent definition and references exist in task-start source. No campaign-hub visual certification. Other checked screens produced no console errors."
+  }
+}

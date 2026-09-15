@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-14. **139 entries: 62 complete / 10 partial / 67 pending.**
+Updated 2026-09-15. **148 entries: 79 complete / 8 partial / 61 pending.**
 
-**77 remain unfinished.** 14 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**69 remain unfinished.** 13 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Frost Cruiser nose corrected to spaced Falva-style black/blue laser bolts with pixel glow, laser audio, anchored launch and rotated collision; wing turret missiles preserved. [Proof](FROST_NOSE_LASER_0914.md).
+Just verified: Stage 4 cinematic defeat and regenerated highway; playable SpriteCook Stage 5 transformer on Easy/Normal. Stage 2 identity answer still required; full difficulty balancing remains SPACE-06. [Proof](BOSS_BATCH_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -23,15 +23,15 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Area | Complete | Partial | Pending | Total |
 | --- | ---: | ---: | ---: | ---: |
 | Earlier handoff, weapons and Tempest | 9 | 1 | 0 | 10 |
-| Shared combat, warnings and targeting | 6 | 4 | 5 | 15 |
-| Stage 1: fodder, Razorback and jungle chopper | 4 | 1 | 7 | 12 |
-| Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 4 | 1 | 4 | 9 |
-| Stage 3: ice enemies, miniboss and Rime Wall | 6 | 0 | 8 | 14 |
-| Stage 4: Olive Warden and Sovereign | 5 | 0 | 11 | 16 |
-| Stages 5-9: space and encounter cleanup | 12 | 2 | 4 | 18 |
+| Shared combat, warnings and targeting | 7 | 3 | 5 | 15 |
+| Stage 1: fodder, Razorback and jungle chopper | 6 | 0 | 6 | 12 |
+| Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 4 | 1 | 6 | 11 |
+| Stage 3: ice enemies, miniboss and Rime Wall | 7 | 0 | 7 | 14 |
+| Stage 4: Olive Warden and Sovereign | 7 | 0 | 11 | 18 |
+| Stages 5-9: space and encounter cleanup | 16 | 2 | 4 | 22 |
 | Manual missile tiers and supplies | 4 | 0 | 5 | 9 |
-| Pause, saving, title and pilot selection | 9 | 0 | 5 | 14 |
-| Achievements, timers and unlockable modes | 0 | 0 | 14 | 14 |
+| Pause, saving, title and pilot selection | 15 | 0 | 0 | 15 |
+| Achievements, timers and unlockable modes | 1 | 0 | 13 | 14 |
 | Arcade and shared difficulty rewards | 3 | 1 | 4 | 8 |
 
 ## Checklist
@@ -53,7 +53,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 
 - [x] **ENG-01 · Complete** — Shared laser-family warning: three-second green/yellow/red FOV charge with overhead alert. [Evidence](qa/shared_laser_warnings_0914.json).
 - [ ] **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule; laser families are covered. [Evidence](READABLE_ATTACKS_0914.md).
-- [ ] **ENG-03 · Partial** — Reusable horizontal gliding/follow helper exists; integrate and verify it in the requested encounters. [Evidence](READABLE_ATTACKS_0914.md).
+- [x] **ENG-03 · Complete** — Shared bounded horizontal glide/follow integrated and verified in Frost Cruiser and Jungle chopper; later Warden choreography remains S4-06. [Evidence](MOVEMENT_BATCH_0914.md).
 - [x] **ENG-04 · Complete** — Player flamethrower: 25% smaller draw and collision footprint, Fire Orb palette, nozzle remains connected. [Evidence](READABLE_ATTACKS_0914.md).
 - [ ] **ENG-05 · Pending** — No default enemy dies to a single hit: consistent damage accounting across ordinary enemies, pieces, shields and high-damage weapons.
 - [ ] **ENG-06 · Partial** — Tap Retina targets known live boss parts, nodes and helpers, excluding protected hulls; complete the remaining encounter/weapon-router audit. [Evidence](RETINA_TARGETS_0914.md).
@@ -75,8 +75,8 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S1-04 · Complete** — Razorback baseline: faster projectiles, sonic boom and movement. [Evidence](RAZORBACK_SPEED_0914.md).
 - [ ] **S1-05 · Pending** — Hard Razorback: fight two simultaneously.
 - [ ] **S1-06 · Pending** — Furious Razorback: 50% larger, Furious palette, hyper tank behavior and Furious sonic waves.
-- [ ] **S1-07 · Pending** — Jungle chopper: remove erratic motion while retaining the approved attack patterns.
-- [ ] **S1-08 · Partial** — Chopper rotor bed exists; obtain and tune the requested proper helicopter/propeller sound through the available sound engine or ElevenLabs. [Evidence](STAGE_1_5_CORRECTIONS_0914.md).
+- [x] **S1-07 · Complete** — Jungle chopper pursuit and orbit transitions stabilized while retaining its attack patterns. [Evidence](MOVEMENT_BATCH_0914.md).
+- [x] **S1-08 · Complete** — Chopper rotor bed exists; obtain and tune the requested proper helicopter/propeller sound through the available sound engine or ElevenLabs. [Evidence](ROTOR_AUDIO_0914.md).
 - [ ] **S1-09 · Pending** — Dam entrance: fly up from below above the player, whole-frame shadow, quick whip spin into position.
 - [ ] **S1-10 · Pending** — Chopper introduction: boss bar fades in, fills left-to-right with repeated existing chimes; fight/music start after filling.
 - [ ] **S1-11 · Pending** — Below 50%: frenzy plus four alternating down/up passes across distinct lanes; passes two and four rain bullets.
@@ -93,6 +93,8 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [ ] **S2-07 · Pending** — Hard miniboss and boss: additional 25% HP and 50% fire absorption using the shared elemental rules.
 - [ ] **S2-08 · Partial** — Missile-sequence head fight is recorded as a design note; distinct Super Missile Box and encounter sequence remain to be built. [Evidence](OVERNIGHT_REQUESTS_0914.md).
 - [ ] **S2-09 · Pending** — Generate improved authored Furnace giant-beam graphics that also support the Stage-3 Furious palette variant. Dependency: SpriteCook.
+- [ ] **S2-10 · Pending** — Accelerating screaming head frames and shrieks/shake; two fire-ring X cycles; final white flash, absent boss and residual explosions. Dependency: Mike: Stage 2 boss identity. [Evidence](BOSS_BATCH_0915.md).
+- [ ] **S2-11 · Pending** — Continue scrolling after defeat; RNG different-pilot dialogue addressing the player about the assimilated military mech. Dependency: S2-10. [Evidence](BOSS_BATCH_0915.md).
 
 ### Stage 3: ice enemies, miniboss and Rime Wall
 
@@ -100,7 +102,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S3-02 · Complete** — Ice-drone projectiles: larger visible dark-edged blue art over the snow. [Evidence](STAGE_1_5_CORRECTIONS_0914.md).
 - [x] **S3-03 · Complete** — Rime Wall: beams originate only at the visible side cannon exits; middle uses a warned finite charge/pulse, not another full beam. [Evidence](READABLE_ATTACKS_0914.md).
 - [x] **S3-04 · Complete** — Rime Wall beam palette: strong dark-blue rim, restrained light core readable over ice. [Evidence](qa/shared_laser_warnings_0914.json).
-- [ ] **S3-05 · Pending** — Miniboss baseline: more aggressive, player-X-aligned return and horizontal following until laser commitment.
+- [x] **S3-05 · Complete** — Frost Cruiser tracks sampled player X, returns from above on a committed vertical lane and follows horizontally until laser commitment. [Evidence](MOVEMENT_BATCH_0914.md).
 - [ ] **S3-06 · Pending** — Miniboss laser: darken screen, crackling lightning charge and laser sounds; widen 25%, sweep across the viewport with the intended diagonal escape route.
 - [x] **S3-07 · Complete** — Hard/Furious miniboss: black/royal-dark-blue palette and 35% larger hull. [Evidence](FROST_CRUISER_VARIANT_0914.md).
 - [ ] **S3-08 · Pending** — Hard/Furious miniboss: player Retina lock, charged shootable spiral rocket volley alternating left/right.
@@ -129,6 +131,8 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [ ] **S4-14 · Pending** — Hard Sovereign chain lightning: double and widen with extra projectiles; Furious faster/wider and more frequent lightning balls.
 - [ ] **S4-15 · Pending** — Furious Sovereign giant lightning strike: five-second charge, yellow/red FOV, red flash, darkened screen/crackling core; bottom corners remain safe.
 - [ ] **S4-16 · Pending** — Authored left/right escape arrows: flipped pair, flashing with synchronized warning sounds for the giant strike. Dependency: SpriteCook.
+- [x] **S4-17 · Complete** — Regenerated repeating highway with matching roadside vegetation across loop boundaries. [Evidence](BOSS_BATCH_0915.md).
+- [x] **S4-18 · Complete** — Four crossed smoke rings, intact falling ship with accelerating overlaid explosions, white flash and residual blasts. [Evidence](BOSS_BATCH_0915.md).
 
 ### Stages 5-9: space and encounter cleanup
 
@@ -150,6 +154,10 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **SPACE-16 · Complete** — Decker Space Fighter model: Draven; use SPACE FIGHTER DRAVEN in the assembly/reveal announcement. [Evidence](SUPPLY_AUDIT_0914.md).
 - [x] **SPACE-17 · Complete** — Remove transparent scenery asteroids/comets: visible bodies must be opaque physical objects that can be avoided or destroyed. [Evidence](DIALOGUE_HAZARDS_0914.md).
 - [x] **SPACE-18 · Complete** — Replace Stage-5 projectile size/growth animation with one reviewed static source frame and stepped pixel glow; confirm the same stable-frame treatment on Stage-2 lava saw blades. [Evidence](PROJECTILE_PIXEL_GLOW_0914.md).
+- [x] **SPACE-19 · Complete** — SpriteCook chrome hammer robot, ship transformation, blue/red charge and black spiked-ball animation family. [Evidence](BOSS_BATCH_0915.md).
+- [x] **SPACE-20 · Complete** — Easy/Normal Stage 5 replacement: harmless bottom flyby, top return and unfold; retain Xenoregent without assigning it to Stage 6/9. [Evidence](BOSS_BATCH_0915.md).
+- [x] **SPACE-21 · Complete** — 15-second bouncing spiked ball; ordinary fire enrages into faster laser volleys, manual missiles knock back; x10/x20 supplies only. [Evidence](BOSS_BATCH_0915.md).
+- [x] **SPACE-22 · Complete** — Hammer leap attacks with generated green/yellow/red committed target reticles, upward charge scan, return leap or follow-up strike. [Evidence](BOSS_BATCH_0915.md).
 
 ### Manual missile tiers and supplies
 
@@ -170,15 +178,16 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **UI-03 · Complete** — Pause rows: Resume, Return to Main Menu, Restart Level, Options, Help, Quit; top-row default, drop-in motion and sound. [Evidence](PAUSE_MENU_0914.md).
 - [x] **UI-04 · Complete** — Paused Options/Help reuse their existing screens and return to pause; restart and resume use the selected actions. [Evidence](PAUSE_MENU_0914.md).
 - [x] **UI-05 · Complete** — Return/Quit: verified campaign autosave with visible Autosav0X.json notice, complete death/GAME OVER sequence and fade to title/exit. Saves are browser records, not disk JSON files. [Evidence](PAUSE_MENU_0914.md).
-- [ ] **UI-06 · Pending** — Generate any missing dedicated pause/menu bitmap buttons; current pause uses existing authored font/cursor and game UI chrome. Dependency: SpriteCook.
-- [ ] **UI-07 · Pending** — Title/intro silhouettes: all nine front-facing pilots beside their ships, scrolling from Cole through the remaining roster.
-- [ ] **UI-08 · Pending** — Pilot select fills the screen rather than the old 640x480 presentation.
-- [ ] **UI-09 · Pending** — Pilot-select words reveal letter-by-letter and stat bars fill left-to-right.
-- [ ] **UI-10 · Pending** — Pilot-select ship animation: onion-align and center every rotation frame.
+- [x] **UI-06 · Complete** — Generate any missing dedicated pause/menu bitmap buttons; current pause uses existing authored font/cursor and game UI chrome. [Evidence](PAUSE_ART_0915.md).
+- [x] **UI-07 · Complete** — Title/intro silhouettes: all nine front-facing pilots beside their ships, scrolling from Cole through the remaining roster. [Evidence](OPENER_LINEUP_0915.md).
+- [x] **UI-08 · Complete** — Pilot select fills the browser viewport; desktop, portrait and live-resize presentation verified. [Evidence](PILOT_FULLSCREEN_0914.md).
+- [x] **UI-09 · Complete** — Pilot-select words reveal letter-by-letter and stat bars fill left-to-right. [Evidence](PILOT_REVEAL_0914.md).
+- [x] **UI-10 · Complete** — Pilot-select ship animation: onion-align and center every rotation frame. [Evidence](SHIP_ALIGNMENT_0914.md).
 - [x] **UI-11 · Complete** — Use the approved new Yuri and his seven expressions throughout portrait routes; match compact dialogue avatar framing for all nine pilots, with red for Yuri. Existing approved art reused per latest instruction. [Evidence](READABLE_TYPE_YURI_0914.md).
 - [x] **UI-12 · Complete** — Generate better stage fonts for all nine stages and a matching menu/stage-select/announcer font. [Evidence](READABLE_TYPE_YURI_0914.md).
 - [x] **UI-13 · Complete** — Readable all-capitals 16-bit dialogue font; compact nine-pilot portraits, centered text and panels clear of the weapon HUD. [Evidence](READABLE_TYPE_YURI_0914.md).
 - [x] **UI-14 · Complete** — Generate a rectangular 16-bit dialogue frame with a cool border, centered text, and palette swaps for all nine pilots; share it across in-game dialogue. [Evidence](DIALOGUE_HAZARDS_0914.md).
+- [x] **UI-15 · Complete** — B is Back; use generated D-pad, action-button and Start graphics consistently for navigation prompts. [Evidence](CONTROL_HINTS_0914.md).
 
 ### Achievements, timers and unlockable modes
 
@@ -190,7 +199,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [ ] **ACH-06 · Pending** — Entire game without spending a continue: 1000 points plus a generated trophy avatar. Dependency: SpriteCook.
 - [ ] **ACH-07 · Pending** — Each stage without firing a manual missile: 100 points, unlock once per profile.
 - [ ] **ACH-08 · Pending** — Each weapon maxed to level 5: its own 20-point achievement.
-- [ ] **ACH-09 · Pending** — Boss-fight timer in upper right, 00:00 format, correct pause/entry/death lifecycle.
+- [x] **ACH-09 · Complete** — Upper-right 00:00 boss/miniboss timer with pause, entrance, respawn and defeat lifecycle. [Evidence](BOSS_TIMER_0914.md).
 - [ ] **ACH-10 · Pending** — Stage-1 boss/miniboss speed awards: under two minutes 200 points; under one minute 500. Stacking policy not yet settled.
 - [ ] **ACH-11 · Pending** — Hard boss victories: individual 200-point achievements; Furious victories: 500 points each.
 - [ ] **ACH-12 · Pending** — New-game menu order: Campaign, Arcade, Co-op, Boss Rush, Time Attack, with missing mode buttons generated. Dependency: SpriteCook.

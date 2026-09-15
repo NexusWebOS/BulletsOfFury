@@ -1,0 +1,34 @@
+{
+  "audio": {
+    "sampleRate": 44100,
+    "seconds": 6,
+    "channels": 1,
+    "peak": 0.78,
+    "rms": 0.30421000553211996,
+    "seamJump": 0.02068328479549092,
+    "maxAdjacentJump": 0.06775164511733717,
+    "sha256": "1037dce3cabc38c69ca279726757bda93a0693bf6b95f650461aa68c1bf43e8c",
+    "provenance": "Original deterministic synthesis: periodic blade pulses, band-limited turbulent air and engine harmonics."
+  },
+  "suite": {
+    "passes": 3850,
+    "failures": 58,
+    "exitCode": 1,
+    "newFailures": []
+  },
+  "runtimeSha256": "0fcfd8ab50eb1db772ca8f62cd88c60b28865706155fbc0783268910cc6a34fa",
+  "native": {
+    "browser": "Chromium, in-app",
+    "source": "overlord_helicopter_rotor.wav",
+    "readyState": 4,
+    "duration": 6,
+    "observedLoopWraps": 3,
+    "context": "running",
+    "playingVolume": 0.066304,
+    "releaseIntermediateLevel": 0.16666666666666657,
+    "releaseFinalLevel": 0,
+    "releasePaused": true,
+    "consoleErrors": 0,
+    "scope": "Actual Snd mixer on isolated review page; subjective listening and full encounter pause/death were not independently repeated."
+  }
+}

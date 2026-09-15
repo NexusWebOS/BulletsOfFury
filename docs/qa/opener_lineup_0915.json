@@ -1,0 +1,30 @@
+{
+  "runtimeSha256": "a4cc270364ebd95e21b9c683fda0e66f869d2fd4ebbefb2569beef4d3976e891",
+  "order": [
+    "cole",
+    "axel",
+    "lizzie",
+    "decker",
+    "freezer",
+    "juggernaut",
+    "yuri",
+    "falva",
+    "maverick"
+  ],
+  "sweepSeconds": 12,
+  "native": {
+    "allNinePairsInspected": true,
+    "allPairSourcesReady": true,
+    "frontalBodiesInspected": true,
+    "lizzieUsesCurrentShip": true,
+    "skipViaRegisteredEnterProbe": "title",
+    "consoleErrors": 0,
+    "limitation": "Controlled time samples of the real opener renderer; later gameplay montage not re-played. Initial synthetic pad_start probe was invalid and replaced with a registered Enter input."
+  },
+  "suite": {
+    "passed": 3850,
+    "failed": 58,
+    "exitCode": 1,
+    "newFailures": []
+  }
+}

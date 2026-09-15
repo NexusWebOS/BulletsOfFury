@@ -4097,3 +4097,45 @@ Mike clarified the wing pods are missile turrets and the nose must shoot Falva-s
 ## 0914 - GitHub integration and publication
 
 Mike authorized committing and pushing the complete current build. Local build commit 45174735 collects game changes, art, new boss music storage and verification notes. Integrated origin/main through f936f106, preserving the Stage-6 duo and both stored ALTBOSS6/ALTBOSS8 encounters; Stage 8 now has no miniboss as requested in the incoming commit. Both sets of development notes are retained. Post-merge syntax passed, native15/15 with no browser errors; suite 3850/58, exit1, no new names. Read docs/GITHUB_BUILD_0914.md and docs/qa/github_build_0914.json. Unrelated nested projects and ignored scratch remain local.
+
+
+## 0914 - Pilot text and stat reveal (UI-09)
+
+Read docs/PILOT_REVEAL_0914.md and docs/qa/pilot_reveal_0914.json. The composed drawPilot screen now consumes the existing pcard reveal state for names, subtitle, biography, special and stat labels, then fills each bar from its left edge. Layout uses full strings; styled names keep one cached plate. Screen re-entry resets the reveal; Enter skips without same-press confirmation. Nine-pilot VM checks pass. Native controlled-time screenshots cover partial text, intermediate bars, skip and roster layouts; ordinary intro path not completed, and a review tab crashed during a large synchronous render batch before recovery with bounded steps. Full suite 3850/58, exit 1, no new failure names. UI-09 complete; tally 63 complete / 10 partial / 66 pending (76 unfinished). Next UI-08 fullscreen pilot screen, then ACH-09 boss fight timer. No commit/push.
+
+## 2026-09-14 — generated input prompts / B is Back
+
+Implemented Mike's consistent generated D-pad/action/Start prompts and logical B navigation; Backspace is deletion only. See docs/CONTROL_HINTS_0914.md and docs/qa/control_hints_0914.json. Final focused checks 25/0; full suite 3851/57, exit 1, no new failure names. Campaign-hub native proof is limited by the pre-existing missing CAMPHUB_ITEMS definition. AGENTS.md preserves the convention. Existing UI-08 and later work remain queued; nothing committed or pushed.
+
+## 0914 — Pilot fullscreen desktop pass (UI-08 partial)
+
+Read docs/PILOT_FULLSCREEN_0914.md and docs/qa/pilot_fullscreen_0914.json. Pilot now owns a proportional browser-sized buffer; card/roster expand and pointer mapping follows. Desktop Axel/Lizzie five-stat layouts and B return verified. Portrait bounds and backing pixels are valid, but resize screenshots remain black; fresh default tabs recover. Keep UI-08 partial and first in queue until this is resolved. Viewport override reset. Syntax passes, reveal9/0, controls25/0, full suite3851/57 exit1 with no new names. No commit/push.
+
+## 0914 — UI-08 complete and ACH-09 boss timer
+
+Pilot resize verified in a real game iframe at 390x844 and 1100x620, both directions; earlier native viewport capture gap closed. Read docs/PILOT_FULLSCREEN_0914.md follow-up. Added upper-right unit-owned boss/miniboss timer: excludes initial entry/pause, includes respawns/later transforms, freezes on defeat. Read docs/BOSS_TIMER_0914.md and QA. Focused12/0, full3851/57 exit1 with no new names; native timer review no errors. 66 complete / 10 partial / 64 pending; 74 unfinished. Next ENG-03 shared gliding/follow integration, then S3-05 miniboss movement and S1-07 chopper movement. No commit/push.
+
+## 0914 — Shared glide and two encounter movement fixes
+
+ENG-03, S3-05 and S1-07 complete. Read docs/MOVEMENT_BATCH_0914.md and docs/qa/movement_batch_0914.json. Frost tracks sampled player X, returns vertically on a committed lane and follows 1.15s before beam charge. Chopper orbit phase latches once; pursuit and orbit-entry speeds are bounded. Weapon patterns retained. Focused23/0, suite3850/58 exit1, no new names; native both encounters no errors. 69 complete / 9 partial / 62 pending, 71 unfinished. Next S1-08 rotor audio, UI-10 ship frame alignment, UI-07 title silhouettes. No commit/push.
+
+
+## 2026-09-14 Overlord rotor audio
+Dedicated original helicopter rotor WAV replaces the servo placeholder. Native loop/release verified; syntax passes; full suite 3850 passed / 58 known failures, exit 1, no new names. See docs/ROTOR_AUDIO_0914.md. Checklist: 70 complete, 8 partial, 62 pending; UI-10 ship-frame alignment next. No commit or push.
+
+
+## 2026-09-14 Pilot ship alignment
+UI-10 complete: menu-only alpha-bound centers and shared reel scale. Native 72 stock frames, nine onion pairs, Axel/Decker menu verified. See docs/SHIP_ALIGNMENT_0914.md. Syntax passed; suite 3850/58 known failures, exit 1, no new names. 71 complete / 8 partial / 61 pending, 69 unfinished. UI-07 next. No commit or push.
+
+
+## 2026-09-15 Opener pilot pairs
+UI-07 complete: nine frontal bodies beside ships, Cole-first 12s sweep. Corrected Lizzie to current ship. Native nine pairs and Enter-to-title verified; full suite 3850/58 known failures, exit 1, no new names. See docs/OPENER_LINEUP_0915.md. 72 complete / 8 partial / 60 pending; 68 unfinished. No commit/push.
+
+
+## 2026-09-15 Generated pause-button art
+UI-06 complete, six rows share generated plate with preserved endcaps and bitmap labels. Native selection/resume verified; suite 3851/57 known failures, exit 1, no new names. See docs/PAUSE_ART_0915.md. SpriteCook spent 16, balance 118. 73 complete / 8 partial / 59 pending, 67 unfinished. MODE-08 Life/Continue Up art next. No commit/push.
+
+
+## 2026-09-15 Stage 4 death / Stage 5 transformer
+Read docs/BOSS_BATCH_0915.md and docs/BOSS_DESIGNS_0915.md. New Easy/Normal Stage 5 chrome hammer transformer, authored SpriteCook reels, distinct manual missile knockback, 15-second ball and warned hammer leaps. Stage 4 cinematic cookoff and regenerated reflected-edge highway loop. Stage 2 identity question unanswered; do not replace its boss or generate the wrong head. Full natural-play balance remains SPACE-06. QA in docs/qa/boss_designs_0915.json. Preserve all dirty work; no commit/push.
+Final 0915 boss QA: syntax pass; focused 20/0; full suite 3850 pass / 58 recorded failures, exit 1, no new names. Checklist 148 total: 79 complete / 8 partial / 61 pending (69 unfinished). SpriteCook balance 22.

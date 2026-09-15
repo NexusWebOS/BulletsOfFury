@@ -1,0 +1,220 @@
+{
+  "date": "2026-09-14",
+  "request": "UI-09",
+  "runtimeSha256": "b7a587758a00d212306c9af99828d2be33d5d20bfa9939e3ee0959541332b30a",
+  "syntaxExitCode": 0,
+  "focused": {
+    "passed": 9,
+    "failed": 0,
+    "rows": [
+      {
+        "pilot": "axel",
+        "seconds": 2.517,
+        "stats": 3,
+        "partialText": true,
+        "progressiveBars": true,
+        "skip": true,
+        "reset": true
+      },
+      {
+        "pilot": "decker",
+        "seconds": 2.867,
+        "stats": 3,
+        "partialText": true,
+        "progressiveBars": true,
+        "skip": true,
+        "reset": true
+      },
+      {
+        "pilot": "maverick",
+        "seconds": 2.442,
+        "stats": 3,
+        "partialText": true,
+        "progressiveBars": true,
+        "skip": true,
+        "reset": true
+      },
+      {
+        "pilot": "freezer",
+        "seconds": 2.85,
+        "stats": 3,
+        "partialText": true,
+        "progressiveBars": true,
+        "skip": true,
+        "reset": true
+      },
+      {
+        "pilot": "juggernaut",
+        "seconds": 3,
+        "stats": 3,
+        "partialText": true,
+        "progressiveBars": true,
+        "skip": true,
+        "reset": true
+      },
+      {
+        "pilot": "yuri",
+        "seconds": 2.342,
+        "stats": 3,
+        "partialText": true,
+        "progressiveBars": true,
+        "skip": true,
+        "reset": true
+      },
+      {
+        "pilot": "lizzie",
+        "seconds": 3.35,
+        "stats": 5,
+        "partialText": true,
+        "progressiveBars": true,
+        "skip": true,
+        "reset": true
+      },
+      {
+        "pilot": "falva",
+        "seconds": 3.008,
+        "stats": 5,
+        "partialText": true,
+        "progressiveBars": true,
+        "skip": true,
+        "reset": true
+      },
+      {
+        "pilot": "cole",
+        "seconds": 3.575,
+        "stats": 5,
+        "partialText": true,
+        "progressiveBars": true,
+        "skip": true,
+        "reset": true
+      }
+    ]
+  },
+  "suite": {
+    "passed": 3850,
+    "failed": 58,
+    "exitCode": 1,
+    "finalSummaryReached": true,
+    "failureNames": [
+      "ASSERT FAIL: Jungle Cruiser fires a timed twin-machine-gun burst punctuated by separate green lances",
+      "ASSERT FAIL: Laser Cannon, held Shadow Orb and Volley Missiles each reach their dedicated launch audio route",
+      "ASSERT FAIL: Magma Ward telegraphs and releases its opening fan from the same measured left cannon",
+      "ASSERT FAIL: Maverick Level III keeps five discrete lances and never starts the shared held-beam bed",
+      "ASSERT FAIL: Maverick progression is locked to 3 purple, 4 blue, 5 green, 6 black and 7 helix lances",
+      "ASSERT FAIL: Olive Warden switches between Blacksite missile pincers and a rail attack",
+      "ASSERT FAIL: Rime Wall switches from dark-edged mortars to broad cryo waves instead of pale generic pellets",
+      "ASSERT FAIL: Shadow Orb I-V advances damage, blast radius and piercing charge—not just icon art",
+      "ASSERT FAIL: Sludge Emperor advances through pressure, warned flood, crown and reactor-purge phases",
+      "ASSERT FAIL: Stage 2 fields all 12 unique volcanic hulls and none of the rejected art aliases",
+      "ASSERT FAIL: Stage 3 schedules every one of its eight native ice-field hulls",
+      "ASSERT FAIL: Stage 4 cycles fast turret fire, discrete blue energy bolts and its existing pincer — no continuous beam phase",
+      "ASSERT FAIL: Stage 5 keeps the approved Chaos Harrier and gains a reinforced four-phase boss",
+      "ASSERT FAIL: Stage 6 has no animated weather or cloud overlay over the baked still clouds",
+      "ASSERT FAIL: Stage 7 has a reinforced four-phase boss and the supplied dedicated miniboss",
+      "ASSERT FAIL: Stage 7 results go straight to the Stage 8 card with the portal-entry latch set",
+      "ASSERT FAIL: a boss visibly anticipates first and releases its unchanged attack only on the authored beat",
+      "ASSERT FAIL: a live shared beam sustains one loop route and expiry fades it before the release cue",
+      "ASSERT FAIL: all 12 native mega enemies appeared in the finale (17/12)",
+      "ASSERT FAIL: all eight native ice-field hulls have explicit Stage-3 rows",
+      "ASSERT FAIL: all nine stages own monotonically rising boss and miniboss HP floors",
+      "ASSERT FAIL: all seven Level-V lances animate on separate spiral paths instead of one rigid formation",
+      "ASSERT FAIL: all six shield families are reserved — ordinary enemies never auto-equip one",
+      "ASSERT FAIL: all twelve authored events field only the exact twelve-family Velocity Void cast",
+      "ASSERT FAIL: all twelve hulls resolve eight attack plus eight barrel-roll/twist frames",
+      "ASSERT FAIL: and a jet aimed at the far corner still fires two mg rounds, downward",
+      "ASSERT FAIL: and five seven-lance Level-5 volleys fan out behind it as individual rounds",
+      "ASSERT FAIL: and the map prefetches the highlighted stage, giving it the whole selection to finish",
+      "ASSERT FAIL: and the on-screen cap rises with it (9 on stage 1, 6 elsewhere)",
+      "ASSERT FAIL: and warms its morph and final implosion overlays before the boss cinematic",
+      "ASSERT FAIL: crossing a real boss phase cancels the old tell and performs a readable power-up reset",
+      "ASSERT FAIL: each machine-gun beat overlays the jet muzzle reel on both barrel hardpoints at the faster cadence",
+      "ASSERT FAIL: each trigger launches the exact tier count as independently phased lance entities",
+      "ASSERT FAIL: every enemy-bullet kind in the source is in PROJ — jcHelix",
+      "ASSERT FAIL: far from firing -> idle reel",
+      "ASSERT FAIL: five directions x seven independent lances launch from the ball (25)",
+      "ASSERT FAIL: idle reel cycles all 6 frames at 8fps",
+      "ASSERT FAIL: inside the tell window -> attack-charge reel",
+      "ASSERT FAIL: its enraged pattern combines green laser volleys, curving wind blades and slow vortex pressure",
+      "ASSERT FAIL: kept as a no-op so its call sites stay harmless",
+      "ASSERT FAIL: morphing to FURIOUS DEATH repoints the reel to form 4",
+      "ASSERT FAIL: moving arrival shots use the aerial HQ view and top-down ships only",
+      "ASSERT FAIL: stage 1 keeps its exact approved rebuilt cast (s1jetbomber, s1jetdelta)",
+      "ASSERT FAIL: stage 1: five yellow fast-jet ripples are authored, four aircraft each",
+      "ASSERT FAIL: stage 1: the sand tanks spawn (scroll never)",
+      "ASSERT FAIL: stage 1: the two purple dam-approach waves are committed kamikaze jets",
+      "ASSERT FAIL: stage 3 fields its complete authored native plan (8 waves)",
+      "ASSERT FAIL: stage 6 scrolls one physical blue master instead of looping or swapping skies",
+      "ASSERT FAIL: stage-2 roster rebuilt around all twelve unique volcanic hulls",
+      "ASSERT FAIL: stage-8 roster includes the native twelve-hull mega fleet",
+      "ASSERT FAIL: tell reaches its final frame just before the shot",
+      "ASSERT FAIL: the blue attack is five separate animated storm bolts from the coil/nose emitters, never a beam rake",
+      "ASSERT FAIL: the drop-shadow ellipse is gone",
+      "ASSERT FAIL: the first charged-ball wave is five directions x seven independent lances (25)",
+      "ASSERT FAIL: the flamethrower alone keeps a new, throttled contact/kill transient",
+      "ASSERT FAIL: the river corvette fires a five-beat port/starboard broadside from alternating physical cannons",
+      "ASSERT FAIL: the ship continues flying into its bottom play lane throughout the countdown",
+      "ASSERT FAIL: the twin machine-gun turrets fire a timed six-beat blue-tracer burst from their exact barrel tips"
+    ],
+    "newFailureNames": [],
+    "baseline": "docs/qa/github_build_0914.json"
+  },
+  "native": {
+    "renderer": "Actual index.html scripts and assets in Chromium, driven through CUA controls on an ignored fixture; no substitute canvas or sprite renderer.",
+    "observed": [
+      "Axel partial text with empty bars",
+      "Axel bar 0 at 10 segments with later rows empty",
+      "Enter completed the reveal while state remained pilot",
+      "Restart and pilot change reset reveal to phase in / typed 0",
+      "Completed Decker, Maverick, Freezer, Juggernaut, Yuri, Lizzie and Falva cards",
+      "Cole locked card retains its lock prompt"
+    ],
+    "limitations": [
+      "The normal intro route was not completed during this pass.",
+      "One preview tab crashed during a synchronous 360-frame QA batch; recovered in a fresh tab with quality=low and bounded steps / one-frame completion. Cause not established.",
+      "Cole unlocked text progression is covered by the nine-pilot VM checks; native Cole screenshot covers the locked state.",
+      "The pre-existing six-row biography limit and cabinet sizing belong to pending UI-08."
+    ],
+    "screenshots": [
+      {
+        "file": "_shots/pilot_reveal_0914/axel-bars.png",
+        "sha256": "c968b5ab6042f3b366016df3ca3290e5ca770e3d6717d321205979599922c10b"
+      },
+      {
+        "file": "_shots/pilot_reveal_0914/axel-typing.png",
+        "sha256": "c94d8baa5938032de1875f284c60e1dc1706de6bec64c9155670f5d0637beb53"
+      },
+      {
+        "file": "_shots/pilot_reveal_0914/cole-complete.png",
+        "sha256": "d1bb2df0a18f7d437bcda1485113c179a8a19ada594854eb9530e1d5a569fddc"
+      },
+      {
+        "file": "_shots/pilot_reveal_0914/decker-complete.png",
+        "sha256": "7a862723533e9a968d9e6e1efb8fd9d3a4aa5f49b646712d80b2686d9df35e27"
+      },
+      {
+        "file": "_shots/pilot_reveal_0914/falva-complete.png",
+        "sha256": "717a4842f21e8d6ec7939b14793be96ca7cf910ae3d4b65c3e9d406a1e178135"
+      },
+      {
+        "file": "_shots/pilot_reveal_0914/freezer-complete.png",
+        "sha256": "c95758ca1af7e9b9b04af4eac2224f53f5b210b8f456399302cec720f545373b"
+      },
+      {
+        "file": "_shots/pilot_reveal_0914/juggernaut-complete.png",
+        "sha256": "12a588695326c5b827224f3a947b8731da30a93583113577b14e5d029c721258"
+      },
+      {
+        "file": "_shots/pilot_reveal_0914/lizzie-complete.png",
+        "sha256": "f3e5d84f5449ffe26b1f4068cac0b92b5b4d7b778bcd3aea782d8f2d8840dad1"
+      },
+      {
+        "file": "_shots/pilot_reveal_0914/maverick-complete.png",
+        "sha256": "f3941640bd5b822d54c3aca2563ac2a2580373775bd11e6338032b7bb813f6f6"
+      },
+      {
+        "file": "_shots/pilot_reveal_0914/yuri-complete.png",
+        "sha256": "5fc4d5215706fe4e972f6c8fa51f754a229b8464d957930e2ea3b436c780a654"
+      }
+    ]
+  }
+}

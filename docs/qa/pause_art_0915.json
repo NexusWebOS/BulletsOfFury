@@ -1,0 +1,41 @@
+{
+  "runtimeSha256": "321ac6a7c75675ea0fc5043791a15d06cec316450f38bb5565fa8607fee73e85",
+  "asset": {
+    "asset_id": "14645f9f-f9fd-4f7e-9429-4e12a28193cf",
+    "label": "Bullets of Fury pause button backplate",
+    "generationJob": "8c22f1ec-98cf-4223-bdef-ee5784de9a00",
+    "model": "gpt-image-2.5-flare",
+    "batchCreditsUsed": 16,
+    "rejectedAssets": [
+      "56100a66-d872-4aca-952a-e14616033aad",
+      "f1cc4f2a-831d-5ec2-9dba-cc4837fc5911"
+    ],
+    "rejectionReason": "Processed output clipped the left endcap; replacement preserves the entire plate.",
+    "sha12": "e1d60a66ed5d",
+    "sourceBounds": [
+      81,
+      410,
+      862,
+      201
+    ]
+  },
+  "native": {
+    "rows": 6,
+    "sourceReady": true,
+    "longestLabelFits": true,
+    "selectionChanged": [
+      0,
+      1
+    ],
+    "resumeState": "play",
+    "consoleErrors": 0,
+    "scope": "Actual pause renderer on Stage 1; navigation and resume. Save/quit operations were not repeated for this art-only change."
+  },
+  "suite": {
+    "passed": 3851,
+    "failed": 57,
+    "exitCode": 1,
+    "newFailures": []
+  },
+  "creditsRemaining": 118
+}

@@ -20,6 +20,10 @@ current Git state and runtime before relying on them.
 
 ## Creative constraints
 
+- Use the existing generated pad_* graphics for D-pad, action-button and Start prompts
+  on game screens. B is the logical Back action; Backspace only deletes text. Show
+  physical keyboard assignments in Help/Options, not competing navigation prompts.
+
 - Use authored art; do not add placeholder or procedural sprites. Render candidate
   art before trusting its name. Consult `assets/data/ART_TAXONOMY.json`.
 - Preserve authored stage biomes. Palette changes must retain luminance, outlines,

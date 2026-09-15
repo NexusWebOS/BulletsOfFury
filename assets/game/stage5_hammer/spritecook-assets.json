@@ -1,0 +1,58 @@
+{
+  "assets": [
+    {
+      "asset_id": "50b3ae6e-e2a6-4c69-8055-951158696a0f",
+      "file": "concept.png",
+      "label": "Canonical chrome hammer robot",
+      "sha12": "748c7f7a37b9"
+    },
+    {
+      "asset_id": "fd82332a-e522-42ed-8966-67dd583ba3a6",
+      "job_id": "0b757d8d-08f3-43db-a2d2-28a6e20adcb0",
+      "file": "ship.png",
+      "frames": 12,
+      "frame_width": 640,
+      "frame_height": 640,
+      "sha12": "a332cbc805d2"
+    },
+    {
+      "asset_id": "3fa36cbf-7865-4e9e-a4ff-724479c08347",
+      "job_id": "75c0bdc1-2d03-433b-bc23-03101db120f5",
+      "file": "ball.png",
+      "frames": 12,
+      "frame_width": 640,
+      "frame_height": 640,
+      "sha12": "a2ff871d2f1a"
+    },
+    {
+      "asset_id": "7e24d6aa-aa5e-497a-b4e3-903497fda53b",
+      "job_id": "3e075789-6d2c-4db3-9b11-a8f4a32badd8",
+      "file": "leap.png",
+      "frames": 12,
+      "frame_width": 640,
+      "frame_height": 640,
+      "sha12": "8a2ed5c44b05"
+    },
+    {
+      "asset_id": "6563e994-1df0-4437-8c55-836e44d77996",
+      "job_id": "0168cd46-41d3-4dea-a8c5-85c7d529f885",
+      "file": "charge.png",
+      "sha12": "79486b4f3ae3",
+      "frames": 12,
+      "width": 7680,
+      "height": 640
+    },
+    {
+      "asset_id": "bb3e173d-d62f-4ea0-849c-84301903143b",
+      "job_id": "0128c1cf-7395-4f07-bdec-a08f66f76dbe",
+      "file": "reticle.png",
+      "sha12": "1e5ea87278df",
+      "frames": 1,
+      "width": 1024,
+      "height": 1024
+    }
+  ],
+  "status": "Playable Easy/Normal Stage 5 integration; native form/attack review complete; full natural-play balance remains SPACE-06",
+  "credits_spent": 96,
+  "credits_remaining": 22
+}
