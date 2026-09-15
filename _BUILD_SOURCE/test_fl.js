@@ -15670,6 +15670,7 @@ require('./test_hammer_shared_leap_warning_0915.cjs')(vm,ctxv,ok);
 require('./test_stage7_warden_shared_rail_warning_0915.cjs')(vm,ctxv,ok);
 require('./test_stage7_warden_shared_mine_warning_0915.cjs')(vm,ctxv,ok);
 require('./test_stage7_warden_shared_burst_warning_0915.cjs')(vm,ctxv,ok);
+require('./test_stage8_vile_shared_annihilation_warning_0915.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

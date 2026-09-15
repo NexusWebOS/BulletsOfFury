@@ -52429,15 +52429,16 @@ function vileAnnihilationStart(b){
   /* converging cross first, then the radial burst behind it. */
   if(!b||b._annihilation)return false;
   b._annihilation={t:0,tell:.78,wave:0,waves:3,next:.78,tx:clamp(player.x,54,worldWidth()-54),ty:clamp(player.y,PLAY.y+120,VH-70)};
+  combatWarningTick(b,'stage8-vile-annihilation',0,.78,true);
   b._annihilationUsed=true;b.fireCd=Math.max(b.fireCd||0,2.6);b.flash=Math.max(b.flash||0,.46);
   if(typeof floatText==='function')floatText(b.x,b.y-b.h*.40,'ANNIHILATION!','#ff764f');
   if(Audio.SFX&&(Audio.SFX.bossPhase||Audio.SFX.enemyBossCannon))(Audio.SFX.bossPhase||Audio.SFX.enemyBossCannon)();
   return true;
 }
 function vileAnnihilationTick(b,dt){
-  const A=b&&b._annihilation;if(!A)return false;A.t+=dt;
+  const A=b&&b._annihilation;if(!A)return false;A.t+=dt;combatWarningTick(b,'stage8-vile-annihilation',Math.min(A.t,A.tell),A.tell);
   if(A.t>=A.next&&A.wave<A.waves){
-    const W=worldWidth(),pad=18,src=[[pad,A.ty],[W-pad,A.ty],[A.tx,PLAY.y+pad],[A.tx,VH-pad]];
+    const src=vileAnnihilationSources(A);
     for(let i=0;i<src.length;i++){
       const p=src[i],ang=Math.atan2(A.ty-p[1],A.tx-p[0]);
       vileAnnihilationShot(p[0],p[1],ang,3.75+A.wave*.45,'s8nf_needle',{silent:i>0});
@@ -52455,11 +52456,15 @@ function vileAnnihilationTick(b,dt){
   }
   if(A.burst&&A.t>A.next+.82){b._annihilation=null;b.fireCd=.54;return false;}return true;
 }
-function vileAnnihilationDraw(b){
-  const A=b&&b._annihilation;if(!A||A.t>=A.tell)return;const W=worldWidth(),pulse=.32+.28*Math.sin(A.t*24);
-  ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=pulse;ctx.strokeStyle='#ff6b43';ctx.lineWidth=5;
-  ctx.beginPath();ctx.moveTo(0,A.ty);ctx.lineTo(W,A.ty);ctx.moveTo(A.tx,PLAY.y);ctx.lineTo(A.tx,VH);ctx.stroke();
-  ctx.globalAlpha=.95;ctx.strokeStyle='#fff0b8';ctx.lineWidth=2;ctx.strokeRect(A.tx-22,A.ty-22,44,44);ctx.restore();
+function vileAnnihilationSources(A){
+  const W=worldWidth(),pad=18;return [[pad,A.ty],[W-pad,A.ty],[A.tx,PLAY.y+pad],[A.tx,VH-pad]];
+}
+function vileAnnihilationDraw(b,front){
+  const A=b&&b._annihilation;if(!A||A.t>=A.tell)return false;const k=clamp(A.t/A.tell,0,1),src=vileAnnihilationSources(A);
+  if(!front){for(const p of src)combatWarningDraw(b,{x:p[0],y:p[1],ex:A.tx,ey:A.ty,progress:k,width:22,fieldOnly:true});
+    ctx.save();ctx.globalAlpha=.95;ctx.strokeStyle='#fff0b8';ctx.lineWidth=2;ctx.strokeRect(A.tx-22,A.ty-22,44,44);ctx.restore();}
+  else combatWarningDraw(b,{x:b.x,y:b.y,ex:A.tx,ey:A.ty,progress:k,alertOnly:true});
+  return true;
 }
 function vileBuildForm(b, idx){
   const F=VILE_FORMS[idx];
@@ -56470,7 +56475,7 @@ function drawModularBoss(b){
   /* During a shell change the black growth reel is drawn in the boss-FX pass;
      do not expose the invisible legacy component grid underneath it. */
   if(b._vile&&b._morphT!=null)return;
-  if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b);
+  if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,false);
   if(b._impT!=null && typeof vileImplosionDraw==='function'){ vileImplosionDraw(b); }
   // ANIMATED BASE (VILE EXISTENCE): the form's idle/attack reel replaces the intact layers.
   // Its silhouette is pixel-identical to the composited clean components, so undamaged parts
@@ -56495,7 +56500,7 @@ function drawModularBoss(b){
   /* The new symbiote forms are complete authored silhouettes. Their modular
      parts exist solely as five independently hittable HP regions; attempting
      to paint the former component plates over them causes seams and mutations. */
-  if(b._vile&&_animK&&_animK.indexOf('s8symboss_form_')===0)return;
+  if(b._vile&&_animK&&_animK.indexOf('s8symboss_form_')===0){if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,true);return;}
   if(b._be && typeof bossEntryPowerDraw==='function' && _animK){
     bossEntryPowerDraw(b, _animK, b.x-b.w/2, b.y-b.h/2, b.w, b.h);
   }

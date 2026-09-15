@@ -1,0 +1,15 @@
+const fs=require('fs'),path=require('path'),p=path.resolve(__dirname,'..','assets','game.js');let s=fs.readFileSync(p,'utf8');if(s.includes('\r'))throw new Error('game.js must remain LF-only');
+function one(a,b,label){const n=s.split(a).length-1;if(n!==1)throw new Error(label+' expected once, found '+n);s=s.replace(a,b);}
+one(
+"  b._annihilation={t:0,tell:.78,wave:0,waves:3,next:.78,tx:clamp(player.x,54,worldWidth()-54),ty:clamp(player.y,PLAY.y+120,VH-70)};\n  b._annihilationUsed=true;",
+"  b._annihilation={t:0,tell:.78,wave:0,waves:3,next:.78,tx:clamp(player.x,54,worldWidth()-54),ty:clamp(player.y,PLAY.y+120,VH-70)};\n  combatWarningTick(b,'stage8-vile-annihilation',0,.78,true);\n  b._annihilationUsed=true;",
+'arm annihilation shared warning');
+one("  const A=b&&b._annihilation;if(!A)return false;A.t+=dt;","  const A=b&&b._annihilation;if(!A)return false;A.t+=dt;combatWarningTick(b,'stage8-vile-annihilation',Math.min(A.t,A.tell),A.tell);",'tick annihilation shared warning');
+one("    const W=worldWidth(),pad=18,src=[[pad,A.ty],[W-pad,A.ty],[A.tx,PLAY.y+pad],[A.tx,VH-pad]];","    const src=vileAnnihilationSources(A);",'release from the exact previewed sources');
+one(
+"function vileAnnihilationDraw(b){\n  const A=b&&b._annihilation;if(!A||A.t>=A.tell)return;const W=worldWidth(),pulse=.32+.28*Math.sin(A.t*24);\n  ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=pulse;ctx.strokeStyle='#ff6b43';ctx.lineWidth=5;\n  ctx.beginPath();ctx.moveTo(0,A.ty);ctx.lineTo(W,A.ty);ctx.moveTo(A.tx,PLAY.y);ctx.lineTo(A.tx,VH);ctx.stroke();\n  ctx.globalAlpha=.95;ctx.strokeStyle='#fff0b8';ctx.lineWidth=2;ctx.strokeRect(A.tx-22,A.ty-22,44,44);ctx.restore();\n}",
+"function vileAnnihilationSources(A){\n  const W=worldWidth(),pad=18;return [[pad,A.ty],[W-pad,A.ty],[A.tx,PLAY.y+pad],[A.tx,VH-pad]];\n}\nfunction vileAnnihilationDraw(b,front){\n  const A=b&&b._annihilation;if(!A||A.t>=A.tell)return false;const k=clamp(A.t/A.tell,0,1),src=vileAnnihilationSources(A);\n  if(!front){for(const p of src)combatWarningDraw(b,{x:p[0],y:p[1],ex:A.tx,ey:A.ty,progress:k,width:22,fieldOnly:true});\n    ctx.save();ctx.globalAlpha=.95;ctx.strokeStyle='#fff0b8';ctx.lineWidth=2;ctx.strokeRect(A.tx-22,A.ty-22,44,44);ctx.restore();}\n  else combatWarningDraw(b,{x:b.x,y:b.y,ex:A.tx,ey:A.ty,progress:k,alertOnly:true});\n  return true;\n}",
+'replace custom red cross with shared warning layers');
+one("  if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b);","  if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,false);",'annihilation fields behind hull');
+one("  if(b._vile&&_animK&&_animK.indexOf('s8symboss_form_')===0)return;","  if(b._vile&&_animK&&_animK.indexOf('s8symboss_form_')===0){if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,true);return;}",'annihilation alert in front of authored form');
+fs.writeFileSync(p,s,'utf8');console.log('PATCHED_STAGE8_VILE_SHARED_ANNIHILATION_WARNING_0915');

@@ -1,0 +1,397 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-8 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the live final form commits four converging annihilation paths"
+    },
+    {
+      "pass": true,
+      "label": "authored final form, projectiles, muzzle and green/yellow/red warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green displays the four committed converging paths"
+    },
+    {
+      "pass": true,
+      "label": "green draws four shared fields and one matching alert"
+    },
+    {
+      "pass": true,
+      "label": "yellow does not chase a late move"
+    },
+    {
+      "pass": true,
+      "label": "yellow draws the committed shared fields and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "red preserves the committed cross center"
+    },
+    {
+      "pass": true,
+      "label": "red draws the committed shared fields and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "the first eight-shot cross wave releases only after the full warning"
+    },
+    {
+      "pass": true,
+      "label": "all eight rounds follow the four previewed paths"
+    },
+    {
+      "pass": true,
+      "label": "vile_annihilation_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_annihilation_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_annihilation_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "vile_annihilation_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "BLACK COCOON",
+    "kind": "vileexistence",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "FURIOUS DEATH",
+    "tx": 360,
+    "ty": 400,
+    "sources": [
+      [
+        18,
+        400
+      ],
+      [
+        662,
+        400
+      ],
+      [
+        360,
+        64
+      ],
+      [
+        360,
+        494
+      ]
+    ],
+    "world": 680
+  },
+  "green": {
+    "t": 0.13,
+    "wave": 0,
+    "tx": 360,
+    "ty": 400,
+    "sources": [
+      [
+        18,
+        400
+      ],
+      [
+        662,
+        400
+      ],
+      [
+        360,
+        64
+      ],
+      [
+        360,
+        494
+      ]
+    ],
+    "playerX": 360,
+    "playerY": 400,
+    "warn": {
+      "t": 0.13,
+      "warm": 0.78,
+      "released": false
+    },
+    "shots": [],
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_4",
+      "nl8c_lg_0",
+      "nl8c_lg_3",
+      "nl8c_rim_5",
+      "nl8c_prop_9",
+      "nl8c_prop_6",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "s8rift_6",
+      "s8rift_10",
+      "s8rift_3",
+      "bmfx_fov_green_tall",
+      "s8symboss_form_3",
+      "bmfx_alert_green_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "t": 0.39,
+    "wave": 0,
+    "tx": 360,
+    "ty": 400,
+    "sources": [
+      [
+        18,
+        400
+      ],
+      [
+        662,
+        400
+      ],
+      [
+        360,
+        64
+      ],
+      [
+        360,
+        494
+      ]
+    ],
+    "playerX": 40,
+    "playerY": 260,
+    "warn": {
+      "t": 0.39,
+      "warm": 0.78,
+      "released": false
+    },
+    "shots": [],
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_4",
+      "nl8c_lg_0",
+      "nl8c_lg_3",
+      "nl8c_rim_5",
+      "nl8c_prop_9",
+      "nl8c_prop_6",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "s8rift_6",
+      "s8rift_10",
+      "s8rift_3",
+      "bmfx_fov_yellow_tall",
+      "s8symboss_form_3",
+      "bmfx_alert_yellow_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "t": 0.702,
+    "wave": 0,
+    "tx": 360,
+    "ty": 400,
+    "sources": [
+      [
+        18,
+        400
+      ],
+      [
+        662,
+        400
+      ],
+      [
+        360,
+        64
+      ],
+      [
+        360,
+        494
+      ]
+    ],
+    "playerX": 230,
+    "playerY": 450,
+    "warn": {
+      "t": 0.702,
+      "warm": 0.78,
+      "released": false
+    },
+    "shots": [],
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_4",
+      "nl8c_lg_0",
+      "nl8c_lg_3",
+      "nl8c_rim_5",
+      "nl8c_prop_9",
+      "nl8c_prop_6",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "s8rift_6",
+      "s8rift_10",
+      "s8rift_3",
+      "bmfx_fov_red_tall",
+      "s8symboss_form_3",
+      "bmfx_alert_red_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "t": 0.79,
+    "wave": 1,
+    "tx": 360,
+    "ty": 400,
+    "sources": [
+      [
+        18,
+        400
+      ],
+      [
+        662,
+        400
+      ],
+      [
+        360,
+        64
+      ],
+      [
+        360,
+        494
+      ]
+    ],
+    "playerX": 70,
+    "playerY": 260,
+    "warn": {
+      "t": 0.78,
+      "warm": 0.78,
+      "released": true
+    },
+    "shots": [
+      {
+        "x": 18,
+        "y": 400,
+        "a": 0
+      },
+      {
+        "x": 18,
+        "y": 414,
+        "a": 0
+      },
+      {
+        "x": 662,
+        "y": 400,
+        "a": 3.141592653589793
+      },
+      {
+        "x": 662,
+        "y": 386,
+        "a": 3.141592653589793
+      },
+      {
+        "x": 360,
+        "y": 64,
+        "a": 1.5707963267948966
+      },
+      {
+        "x": 346,
+        "y": 64,
+        "a": 1.5707963267948966
+      },
+      {
+        "x": 360,
+        "y": 494,
+        "a": -1.5707963267948966
+      },
+      {
+        "x": 374,
+        "y": 494,
+        "a": -1.5707963267948966
+      }
+    ],
+    "gets": [
+      "nst8_sky_crimson",
+      "nl6c_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_2",
+      "nl8c_lg_4",
+      "nl8c_lg_0",
+      "nl8c_lg_3",
+      "nl8c_rim_5",
+      "nl8c_prop_9",
+      "nl8c_prop_6",
+      "nl8c_prop_3",
+      "nl8c_prop_4",
+      "nl8c_prop_0",
+      "s8rift_6",
+      "s8rift_10",
+      "s8rift_3",
+      "s8nf_stealth_crescent_muzzle_0",
+      "s8symboss_form_3",
+      "s8nf_needle_interceptor_projectile_0",
+      "s8nf_stealth_crescent_projectile_0",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage8_vile_shared_annihilation_warning_0915\\vile_annihilation_01_green.png",
+    "_shots\\stage8_vile_shared_annihilation_warning_0915\\vile_annihilation_02_yellow.png",
+    "_shots\\stage8_vile_shared_annihilation_warning_0915\\vile_annihilation_03_red.png",
+    "_shots\\stage8_vile_shared_annihilation_warning_0915\\vile_annihilation_04_release.png"
+  ]
+}

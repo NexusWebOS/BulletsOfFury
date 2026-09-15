@@ -4291,3 +4291,6 @@ ENG-02 advances: the Stage-7 Warden commits one safe minefield column at charge 
 
 ## 2026-09-15 Toxic Portal Warden shared cannon-burst warning
 ENG-02 advances: the Stage-7 Warden commits its ten-round toxic cannon aim at the start of a 0.48-second charge, previews the five lanes used twice through shared green/yellow/red fields and an unobscured alert, and keeps the original alternating-cannon cadence. Opening and post-stun direct entries now arm the same warning. Focused 7/7 and Chromium 16/16 pass with zero errors; the complete suite has the exact 57-name baseline. ENG-02 remains partial. See docs/STAGE7_WARDEN_SHARED_BURST_WARNING_0915.md.
+
+## 2026-09-15 Stage-8 Vile shared Annihilation warning
+ENG-02 advances: Furious Death commits the center of its 0.78-second Annihilation cross at charge start, previews the exact four converging paths through shared green/yellow/red fields plus an unobscured alert, and retains its square target reticle. Late movement cannot move the cross; the first eight rounds follow the previewed paths. Focused 7/7 and corrected Chromium 16/16 pass with zero errors; the complete suite has a 56-name subset of the established 57-name baseline. ENG-02 remains partial. See docs/STAGE8_VILE_SHARED_ANNIHILATION_WARNING_0915.md.
