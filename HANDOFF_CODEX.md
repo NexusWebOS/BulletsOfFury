@@ -543,3 +543,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - MSL-08 is complete: SpriteCook produced three separate S/U/X upgrade badges and three matching armored tier boxes, including the distinct Super Missile Box. Six dedicated runtime keys preserve aspect and rising tier scale without changing quantity-box art.
 - Focused 15/15 and native Chromium six-asset decode/render checks pass with zero errors. The full suite retains the exact 57-name baseline. Evidence: docs/MISSILE_TIER_ART_0915.md. Tally: 124 complete / 9 partial / 16 pending; MSL-06/MSL-07 can now be wired in ordinary play.
+
+## Codex update — 2026-09-15: ordinary-play missile-tier boxes
+
+- MSL-06 and MSL-07 are complete: authored waves offer Super from wave two, then Ultra and Uber only after their required survived wave. Offers retry if missed, suppress duplicates and bind to the correct co-op seat; collection reuses the existing grant/cap path and death still resets to Standard.
+- Focused 12/12 and native Chromium progression proof pass with zero errors. The full suite retains the exact 57-name baseline. Evidence: docs/MISSILE_UPGRADE_SPAWNS_0915.md. Tally: 126 complete / 7 partial / 16 pending.

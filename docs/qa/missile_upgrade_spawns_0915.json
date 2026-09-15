@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-15",
+  "checklistIds": [
+    "MSL-06",
+    "MSL-07"
+  ],
+  "status": "complete",
+  "behavior": {
+    "firstSuperWave": 2,
+    "ultraDelayWaves": 1,
+    "uberDelayWaves": 1,
+    "singleActivePerSeat": true,
+    "missedOfferRetries": true,
+    "seatBoundCoop": true,
+    "deathReset": true,
+    "caps": {
+      "super": 50,
+      "ultra": 35,
+      "uber": 20
+    }
+  },
+  "focused": {
+    "test": "_BUILD_SOURCE/test_missile_upgrade_spawns_0915.cjs",
+    "passed": 12,
+    "failed": 0
+  },
+  "chromium": {
+    "url": "http://127.0.0.1:8785/_shots/missile_upgrade_spawns_0915/review.html?qa=1",
+    "superOffered": true,
+    "ultraOfferedAfterWave": true,
+    "uberOfferedAfterWave": true,
+    "consoleErrors": 0
+  },
+  "fullSuite": {
+    "test": "_BUILD_SOURCE/test_fl.js",
+    "passedAssertions": 4337,
+    "failed": 57,
+    "baselineFailureCount": 57,
+    "newFailureNames": []
+  },
+  "testIsolation": {
+    "quantityAssertionsExplicitTier": "standard",
+    "testFlCRLF": true
+  },
+  "syntax": "passed",
+  "commit": false,
+  "push": false
+}

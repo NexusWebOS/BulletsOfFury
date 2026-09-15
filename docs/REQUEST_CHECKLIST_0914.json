@@ -958,9 +958,9 @@
     {
       "id": "MSL-06",
       "group": "Manual missile tiers and supplies",
-      "status": "partial",
+      "status": "complete",
       "request": "Engine acquisition and death reset are implemented. Remaining: spawn and collect the authored Super/Ultra/Uber upgrade boxes in ordinary play.",
-      "evidence": "MISSILE_UPGRADE_LIFECYCLE_0915.md",
+      "evidence": "MISSILE_UPGRADE_SPAWNS_0915.md",
       "dependency": "",
       "workOrder": 39,
       "difficulty": 3,
@@ -969,9 +969,9 @@
     {
       "id": "MSL-07",
       "group": "Manual missile tiers and supplies",
-      "status": "partial",
+      "status": "complete",
       "request": "Per-player next-wave Ultra/Uber eligibility, persistence and co-op state are implemented. Remaining: connect the gate to authored upgrade-box spawning.",
-      "evidence": "MISSILE_UPGRADE_LIFECYCLE_0915.md",
+      "evidence": "MISSILE_UPGRADE_SPAWNS_0915.md",
       "dependency": "",
       "workOrder": 40,
       "difficulty": 3,
@@ -1476,7 +1476,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "SpriteCook Super, Ultra and Uber upgrade badges plus their three matching missile-tier boxes",
-    "evidence": "MISSILE_TIER_ART_0915.md"
+    "description": "ordinary-play Super, Ultra and Uber box offers connected to survived-wave progression with seat-bound co-op collection",
+    "evidence": "MISSILE_UPGRADE_SPAWNS_0915.md"
   }
 }

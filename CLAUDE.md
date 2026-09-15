@@ -4303,3 +4303,6 @@ MODE-08 complete. SpriteCook produced matched rugged-gunmetal `1UP` and cyan `C`
 
 ## 2026-09-15 Super, Ultra and Uber missile-tier art
 MSL-08 complete. SpriteCook produced separate S/U/X upgrade badges and three matching armored tier boxes, including the distinct Super Missile Box. Six dedicated runtime keys preserve aspect and rising tier scale; existing quantity boxes are unchanged. Focused 15/15, native Chromium six-asset proof zero errors, full suite exact 57-name baseline. Tally 124 complete / 9 partial / 16 pending. See docs/MISSILE_TIER_ART_0915.md.
+
+## 2026-09-15 ordinary-play missile-tier boxes
+MSL-06 and MSL-07 complete. Authored waves offer Super from wave two, then Ultra and Uber after each required survived wave. Missed offers retry, duplicates are blocked, co-op pickups are seat-bound, tier caps share the existing grant path and death resets to Standard. Focused 12/12, native Chromium zero errors, full suite exact 57-name baseline. Tally 126 complete / 7 partial / 16 pending. See docs/MISSILE_UPGRADE_SPAWNS_0915.md.

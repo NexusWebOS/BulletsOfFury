@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-15. **149 entries: 124 complete / 9 partial / 16 pending.**
+Updated 2026-09-15. **149 entries: 126 complete / 7 partial / 16 pending.**
 
-**25 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**23 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: SpriteCook Super, Ultra and Uber upgrade badges plus their three matching missile-tier boxes [Proof](MISSILE_TIER_ART_0915.md).
+Just verified: ordinary-play Super, Ultra and Uber box offers connected to survived-wave progression with seat-bound co-op collection [Proof](MISSILE_UPGRADE_SPAWNS_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -29,7 +29,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
 | Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
 | Stages 5-9: space and encounter cleanup | 17 | 2 | 4 | 23 |
-| Manual missile tiers and supplies | 7 | 2 | 0 | 9 |
+| Manual missile tiers and supplies | 9 | 0 | 0 | 9 |
 | Pause, saving, title and pilot selection | 15 | 0 | 0 | 15 |
 | Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
 | Arcade and shared difficulty rewards | 8 | 0 | 0 | 8 |
@@ -167,8 +167,8 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **MSL-03 · Complete** — Ordinary enemy RNG drops one/two spinning authored missiles, scattering pairs; no loose drops from bosses/minibosses. [Evidence](MISSILE_SUPPLIES_0914.md).
 - [x] **MSL-04 · Complete** — Manual tier damage/size progression: Standard -> Super x1.25 -> Ultra x1.5625 -> Uber x1.953125; keep passive missiles separate. [Evidence](MANUAL_MISSILE_TIERS_0915.md).
 - [x] **MSL-05 · Complete** — Hard ammo caps: Super 50, Ultra 35, Uber 20 across every pickup, save/load and firing route. [Evidence](MANUAL_MISSILE_TIERS_0915.md).
-- [ ] **MSL-06 · Partial** — Engine acquisition and death reset are implemented. Remaining: spawn and collect the authored Super/Ultra/Uber upgrade boxes in ordinary play. [Evidence](MISSILE_UPGRADE_LIFECYCLE_0915.md).
-- [ ] **MSL-07 · Partial** — Per-player next-wave Ultra/Uber eligibility, persistence and co-op state are implemented. Remaining: connect the gate to authored upgrade-box spawning. [Evidence](MISSILE_UPGRADE_LIFECYCLE_0915.md).
+- [x] **MSL-06 · Complete** — Engine acquisition and death reset are implemented. Remaining: spawn and collect the authored Super/Ultra/Uber upgrade boxes in ordinary play. [Evidence](MISSILE_UPGRADE_SPAWNS_0915.md).
+- [x] **MSL-07 · Complete** — Per-player next-wave Ultra/Uber eligibility, persistence and co-op state are implemented. Remaining: connect the gate to authored upgrade-box spawning. [Evidence](MISSILE_UPGRADE_SPAWNS_0915.md).
 - [x] **MSL-08 · Complete** — Generate matching Super/Ultra/Uber upgrade icons and ammo boxes, including the distinct Super Missile Box. [Evidence](MISSILE_TIER_ART_0915.md).
 - [x] **MSL-09 · Complete** — Hard/Furious missile supply frequency +25% across boss clocks, loose/legacy ammo drops and scheduled/scripted crates; queued extras avoid overlap and recursive bonuses. [Evidence](SUPPLY_AUDIT_0914.md).
 

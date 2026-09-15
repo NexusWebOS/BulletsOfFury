@@ -26989,6 +26989,11 @@ function applyPowerup(p){
       lzMountGrant(); if(typeof arcadeBanner==='function') arcadeBanner('TURRET MOUNT'); break;
     case 'dkshotbox':
       dkGrant(); if(typeof arcadeBanner==='function') arcadeBanner('INCENDIARY SHOTGUN'); break;
+    case 'missileupbox_super':
+    case 'missileupbox_ultra':
+    case 'missileupbox_uber':
+      p=Object.assign({},p,{kind:p.kind.replace('missileupbox_','missileup_')});
+      /* falls through: a tier box grants the same gated upgrade represented by its badge */
     case 'missileup_super':
     case 'missileup_ultra':
     case 'missileup_uber': {
@@ -29587,9 +29592,25 @@ function manualMissileApplyUpgrade(id,r){
   r.missileUpgrade=next?{next,ready:false,readyAfter:(r._missileWaveSerial||0)+1}:null;
   return true;
 }
+function manualMissileUpgradeOfferTier(r){
+  r=r||run;const cur=manualMissileSpec(r.missileTier).id,g=r.missileUpgrade;
+  if(cur==='standard')return (r._missileWaveSerial||0)>=2?'super':null;
+  return g&&g.ready&&manualMissileUpgradeCanSpawn(g.next,r)?g.next:null;
+}
+function manualMissileSpawnWaveOffers(){
+  const seats=(typeof seatList==='function')?seatList():[1],left=camLeftX(),right=camRightX(),span=right-left;
+  for(const n of seats){
+    const r=(typeof seatRun==='function')?seatRun(n):run,tier=manualMissileUpgradeOfferTier(r);if(!tier)continue;
+    if(powerups.some(p=>!p.dead&&p._missileSeat===n&&/^missileupbox_/.test(p.kind||'')))continue;
+    const rank=tier==='super'?0:tier==='ultra'?1:2,x=left+span*(seats.length>1?(n===1?.34:.66):.5);
+    powerups.push({kind:'missileupbox_'+tier,x,y:-34,vy:.62,t:0,bob:n*Math.PI,w:46+rank*5,h:46+rank*5,_missileSeat:n,_missileTier:tier});
+    try{if(typeof stageStats!=='undefined'&&stageStats.pickupsSeen!=null)stageStats.pickupsSeen++;}catch(_muSeen){}
+  }
+}
 function manualMissileObserveWave(){
   const seats=(typeof seatList==='function')?seatList():[1];
   for(const n of seats){const r=(typeof seatRun==='function')?seatRun(n):run;r._missileWaveSerial=(r._missileWaveSerial||0)+1;const g=r.missileUpgrade;if(g&&!g.ready&&r._missileWaveSerial>=g.readyAfter)g.ready=true;}
+  manualMissileSpawnWaveOffers();
 }
 function manualMissileResetOnDeath(r){r=r||run;r.missileTier='standard';r.missileUpgrade=null;r.bombs=clampManualMissiles(r.bombs,'standard');}
 function useBomb(forcedTarget){
@@ -33307,6 +33328,8 @@ function updatePlay(dt){
        heat goes to P1; arbitrary, but it has to be somebody, and `break` stops it being both. */
     for(const _s of seatList()){
       if(withSeat(_s, function(){
+        if(p._missileSeat&&p._missileSeat!==_s)return false;
+        if(/^missileupbox_/.test(p.kind||'')&&!manualMissileUpgradeCanSpawn(p.kind.slice('missileupbox_'.length),run))return false;
         if(!player.dead && p.kind!=='crate' && p.kind!=='capsule' && p.kind!=='scrate' && p.kind!=='mcrate' && dist2(p.x,p.y,player.x,player.y)<22*22){ applyPowerup(p); run.score+=50; return true; }
         return false;
       })) { p.dead=true; break; }
@@ -61786,6 +61809,11 @@ window.BOFDEBUG=(function(){
     get player(){ return player; },
     get run(){ return run; },
     lab:{ on:labOn, off:labOff, get active(){ return _lab; }, get stage(){ return _labStage; } },
+    missileUpgrade:{
+      wave:function(){ manualMissileObserveWave(); return true; },
+      collect:function(p,seat){ return withSeat(seat||1,function(){ applyPowerup(p); return manualMissileSpec(run.missileTier).id; }); },
+      snapshot:function(seat){ const r=seatRun(seat||1); return {tier:manualMissileSpec(r.missileTier).id,gate:r.missileUpgrade?Object.assign({},r.missileUpgrade):null,wave:r._missileWaveSerial||0,bombs:r.bombs}; }
+    },
     spawn:spawn, clear:clear, patterns:patterns,
     /* fire any pattern off any enemy. sceneEmitBeat needs (b,S,a,beat) and only reads x/y/w/h off
        `b` via shipBossMount - measured working on a plain object with no boss anywhere. */

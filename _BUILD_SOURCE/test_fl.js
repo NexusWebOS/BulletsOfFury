@@ -7073,9 +7073,9 @@ console.log('=== 153. new sounds + the 20/35/50/100 missile crates (drop 0801km)
      'and is granted by script for the end cinematic');
 
   /* Actually collect one and check the stock, rather than trusting the table. */
-  ok(vm.runInContext("(function(){run.bombs=0;applyPowerup({kind:'missilepack50',x:0,y:0});return run.bombs===50;})()", ctxv),
+  ok(vm.runInContext("(function(){run.missileTier='standard';run.bombs=0;applyPowerup({kind:'missilepack50',x:0,y:0});return run.bombs===50;})()", ctxv),
      'collecting the 50 crate grants exactly 50');
-  ok(vm.runInContext("(function(){run.bombs=20;applyPowerup({kind:'bomb',x:0,y:0});return run.bombs===21;})()", ctxv),
+  ok(vm.runInContext("(function(){run.missileTier='standard';run.bombs=20;applyPowerup({kind:'bomb',x:0,y:0});return run.bombs===21;})()", ctxv),
      'a single missile on top of 20 gives 21, not 9');
 }
 

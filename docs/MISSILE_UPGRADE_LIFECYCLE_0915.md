@@ -17,7 +17,7 @@ The gate uses a monotonic per-player wave serial rather than the stage-local `wa
 
 ## Current limitation
 
-`MSL-06` and `MSL-07` remain partial because the Super/Ultra/Uber pickup icons and boxes tracked by `MSL-08` have not been produced through SpriteCook. The engine lifecycle is live and verified, but ordinary gameplay cannot spawn or draw those pickup kinds yet.
+`MSL-06` and `MSL-07` are complete. The SpriteCook boxes from `MSL-08` now spawn from authored-wave boundaries, obey the existing next-wave gate, retry after missed offers, and remain seat-bound in co-op. See [ordinary-play spawn proof](MISSILE_UPGRADE_SPAWNS_0915.md).
 
 ## Verification
 
