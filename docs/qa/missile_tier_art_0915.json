@@ -1,0 +1,48 @@
+{
+  "date": "2026-09-15",
+  "checklistId": "MSL-08",
+  "status": "complete",
+  "spritecook": {
+    "jobId": "a6e2e79b-399a-4e4b-bb54-175b8518cac2",
+    "assetId": "3b97b686-8256-45ac-9ed7-423114cbbd9f",
+    "model": "gpt-image-2.5-flare",
+    "creditsUsed": 8,
+    "creditsRemaining": 6
+  },
+  "runtime": {
+    "directory": "assets/game/ui/missile_tiers_0915",
+    "icons": [
+      "super_icon.png",
+      "ultra_icon.png",
+      "uber_icon.png"
+    ],
+    "boxes": [
+      "super_box.png",
+      "ultra_box.png",
+      "uber_box.png"
+    ],
+    "independentKeys": 6,
+    "quantityBoxRendererUnchanged": true
+  },
+  "focused": {
+    "test": "_BUILD_SOURCE/test_msl08_art_0915.cjs",
+    "passed": 15,
+    "failed": 0
+  },
+  "chromium": {
+    "url": "http://127.0.0.1:8785/_shots/msl08_0915/review.html?qa=2",
+    "decoded": 6,
+    "rendered": 6,
+    "consoleErrors": 0
+  },
+  "fullSuite": {
+    "test": "_BUILD_SOURCE/test_fl.js",
+    "passedAssertions": 4337,
+    "failed": 57,
+    "baselineFailureCount": 57,
+    "newFailureNames": []
+  },
+  "syntax": "passed",
+  "commit": false,
+  "push": false
+}

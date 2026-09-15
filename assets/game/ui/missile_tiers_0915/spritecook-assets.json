@@ -1,0 +1,81 @@
+{
+  "source_asset_id": "3b97b686-8256-45ac-9ed7-423114cbbd9f",
+  "job_id": "a6e2e79b-399a-4e4b-bb54-175b8518cac2",
+  "credits": 8,
+  "credits_remaining": 6,
+  "source_sha12": "d8b07b9810c2",
+  "assets": [
+    {
+      "file": "super_icon.png",
+      "source_region": [
+        45,
+        110,
+        294,
+        425
+      ],
+      "width": 249,
+      "height": 315,
+      "sha12": "2a386b3a6be6"
+    },
+    {
+      "file": "ultra_icon.png",
+      "source_region": [
+        380,
+        92,
+        645,
+        432
+      ],
+      "width": 265,
+      "height": 340,
+      "sha12": "b49c3a9625ae"
+    },
+    {
+      "file": "uber_icon.png",
+      "source_region": [
+        700,
+        56,
+        991,
+        457
+      ],
+      "width": 291,
+      "height": 401,
+      "sha12": "ff4410d33f09"
+    },
+    {
+      "file": "super_box.png",
+      "source_region": [
+        36,
+        606,
+        304,
+        896
+      ],
+      "width": 268,
+      "height": 290,
+      "sha12": "8d91aae4b0c6"
+    },
+    {
+      "file": "ultra_box.png",
+      "source_region": [
+        346,
+        596,
+        679,
+        902
+      ],
+      "width": 333,
+      "height": 306,
+      "sha12": "0cfc1fbe7076"
+    },
+    {
+      "file": "uber_box.png",
+      "source_region": [
+        694,
+        584,
+        1009,
+        903
+      ],
+      "width": 315,
+      "height": 319,
+      "sha12": "926def42ac9b"
+    }
+  ]
+}

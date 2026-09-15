@@ -1973,6 +1973,10 @@ const XART=(function(){
   X._src['pause_button_0915']='assets/game/ui/pause_0915/button.png';
   X._src['mode_life_up_0915']='assets/game/ui/pickups_0915/life_up.png';
   X._src['mode_continue_up_0915']='assets/game/ui/pickups_0915/continue_up.png';
+  for(const tier of ['super','ultra','uber']){
+    X._src['missile_'+tier+'_icon_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_icon.png';
+    X._src['missile_'+tier+'_box_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_box.png';
+  }
   /* Generated mode plates use a source crop because the generator baked a checkerboard beyond
      their beveled frames. The exact Nexus II chain plate is clipped over the same silhouette. */
   X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
@@ -45306,12 +45310,24 @@ function drawModeUpPickup(p,y){
   ctx.globalAlpha=.97;ctx.shadowColor=p.kind==='life'?'#ff5b20':'#4deaff';ctx.shadowBlur=3+3*pulse;
   ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
 }
+function drawMissileTierPickup(p,y){
+  const m=/^missileup(box)?_(super|ultra|uber)$/.exec(p.kind||'');if(!m)return false;
+  const isBox=!!m[1],tier=m[2],key='missile_'+tier+'_'+(isBox?'box':'icon')+'_0915';
+  if(typeof XART==='undefined'||!XART.rdy(key))return false;
+  const im=XART.get(key),rank=tier==='super'?0:tier==='ultra'?1:2;
+  const h=(isBox?52:48)+rank*5,w=h*(im.naturalWidth/im.naturalHeight),pulse=.5+.5*Math.sin((p.t||0)*7+rank);
+  const col=tier==='super'?'#ff542b':tier==='ultra'?'#52e8ff':'#bd70ff';
+  ctx.save();ctx.translate(Math.round(p.x),Math.round(y));ctx.imageSmoothingEnabled=false;
+  ctx.globalAlpha=.96+.04*pulse;ctx.shadowColor=col;ctx.shadowBlur=5+5*pulse;
+  ctx.drawImage(im,-w/2,-h/2,w,h);ctx.restore();return true;
+}
 function drawPowerups(){
   for(const p of powerups){
     if(p.kind==='missilepack2')p.kind='missilepack';
     if(looseMissilePickupDraw(p))continue;
     const yb=p.y+Math.sin(p.t*4)*2;
     if((p.kind==='life'||p.kind==='continueup')&&drawModeUpPickup(p,yb))continue;
+    if(drawMissileTierPickup(p,yb))continue;
     if(p.kind==='continueup'){
       /* Cold-load fallback only; the dedicated cyan badge replaces this as soon as it decodes. */
       if(ASSETS.ready&&ASSETS.has('pu_life')){

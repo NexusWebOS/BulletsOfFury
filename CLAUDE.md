@@ -4300,3 +4300,6 @@ ENG-02 advances: Event Horizon and both Warp Sentinels now preview radial wheels
 
 ## 2026-09-15 dedicated Life Up and Continue Up art
 MODE-08 complete. SpriteCook produced matched rugged-gunmetal `1UP` and cyan `C` pickup plates as separate transparent assets. The live renderer uses a proportional 48–50 px height and keeps the old Life Up only as a cold-load fallback. Focused 7/7 and native Chromium checks pass with zero errors; full suite exact 57-name baseline. Tally 123 complete / 9 partial / 17 pending. See docs/MODE_UP_ART_0915.md.
+
+## 2026-09-15 Super, Ultra and Uber missile-tier art
+MSL-08 complete. SpriteCook produced separate S/U/X upgrade badges and three matching armored tier boxes, including the distinct Super Missile Box. Six dedicated runtime keys preserve aspect and rising tier scale; existing quantity boxes are unchanged. Focused 15/15, native Chromium six-asset proof zero errors, full suite exact 57-name baseline. Tally 124 complete / 9 partial / 16 pending. See docs/MISSILE_TIER_ART_0915.md.

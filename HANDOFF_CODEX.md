@@ -538,3 +538,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - MODE-08 is complete: SpriteCook produced a matched pair of rugged gunmetal pickup plates, with red/orange `1UP` and blue/cyan `C` faces baked into separate transparent assets. The live renderer draws each at a proportional 48–50 px height and retains the shipped Life Up only as a cold-load fallback.
 - Focused 7/7 and native Chromium decode/render checks pass with zero errors. The full suite has the exact established 57 failure names. Evidence: docs/MODE_UP_ART_0915.md. Tally: 123 complete / 9 partial / 17 pending.
+
+## Codex update — 2026-09-15: Super, Ultra and Uber missile-tier art
+
+- MSL-08 is complete: SpriteCook produced three separate S/U/X upgrade badges and three matching armored tier boxes, including the distinct Super Missile Box. Six dedicated runtime keys preserve aspect and rising tier scale without changing quantity-box art.
+- Focused 15/15 and native Chromium six-asset decode/render checks pass with zero errors. The full suite retains the exact 57-name baseline. Evidence: docs/MISSILE_TIER_ART_0915.md. Tally: 124 complete / 9 partial / 16 pending; MSL-06/MSL-07 can now be wired in ordinary play.

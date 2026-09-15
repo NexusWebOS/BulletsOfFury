@@ -980,10 +980,10 @@
     {
       "id": "MSL-08",
       "group": "Manual missile tiers and supplies",
-      "status": "pending",
+      "status": "complete",
       "request": "Generate matching Super/Ultra/Uber upgrade icons and ammo boxes, including the distinct Super Missile Box.",
-      "evidence": "",
-      "dependency": "SpriteCook",
+      "evidence": "MISSILE_TIER_ART_0915.md",
+      "dependency": "",
       "workOrder": 25,
       "difficulty": 2,
       "difficultyBand": "Moderate presentation and behavior work"
@@ -1476,7 +1476,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "dedicated SpriteCook Life Up and Continue Up pickup plates integrated through the live powerup renderer",
-    "evidence": "MODE_UP_ART_0915.md"
+    "description": "SpriteCook Super, Ultra and Uber upgrade badges plus their three matching missile-tier boxes",
+    "evidence": "MISSILE_TIER_ART_0915.md"
   }
 }
