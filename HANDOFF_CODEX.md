@@ -529,3 +529,7 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: Furious Death now previews its committed Annihilation cross through four shared green/yellow/red fields converging from the exact release sources onto the retained square target. One overhead alert renders in front of the authored final form.
 - Late movement cannot move the cross, and the first eight rounds follow the four previewed paths. Focused 7/7 and corrected Chromium 16/16 pass with zero errors; the complete suite has a 56-name subset of the established 57-name baseline. Evidence: docs/STAGE8_VILE_SHARED_ANNIHILATION_WARNING_0915.md. Tally remains 122 complete / 9 partial / 18 pending.
+
+## Codex update — 2026-09-15: Stage-9 Horizon/Sentinel volley warnings
+
+- ENG-02 advances: Event Horizon and both Warp Sentinels now warn for 0.62 seconds before their eight-lane radial or committed five-lane aimed volleys. Focused 9/9, Chromium 14/14 zero errors, full suite exact 57-name baseline. Evidence: docs/STAGE9_HORIZON_SHARED_VOLLEY_WARNING_0915.md.

@@ -13552,7 +13552,7 @@ console.log("=== 272. Stage-9 void fleet and Rift Wardens ===");
   ok(vm.runInContext("drawS9Void.toString().indexOf(\"if(!XART.rdy(key))return true\")>=0",ctxv),
      'drawS9Void does not hand an undecoded void hull to the generic draw path');
   ok(vm.runInContext("(function(){for(var i=0;i<12;i++)if(!XART.rdy('s9lattice_'+i))return false;return true;})()",ctxv),'the supplied twelve-frame warp lattice resolves');
-  var _mini272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];player.x=250;player.y=500;spawnSubBoss('voidhorizon');for(var i=0;i<90;i++)updateSubBoss(1/60);var F=subBoss._s9rift;eBullets.length=0;F.core._fire=0;s9VoidHorizonTick(subBoss,1/60);return JSON.stringify({kind:subBoss.kind,name:subBoss.name,single:!!(F&&F.core&&!F.left&&!F.right),hp:F.core.hp,shots:eBullets.map(function(q){return q.kind;})});})()",ctxv));
+  var _mini272=JSON.parse(vm.runInContext("(function(){run.stage=9;curStage=STAGES[8];player.x=250;player.y=500;spawnSubBoss('voidhorizon');for(var i=0;i<90;i++)updateSubBoss(1/60);var F=subBoss._s9rift;eBullets.length=0;F.core._fire=0;s9VoidHorizonTick(subBoss,1/60);for(var j=0;j<39;j++)s9VoidHorizonTick(subBoss,1/60);return JSON.stringify({kind:subBoss.kind,name:subBoss.name,single:!!(F&&F.core&&!F.left&&!F.right),hp:F.core.hp,shots:eBullets.map(function(q){return q.kind;})});})()",ctxv));
   ok(_mini272.kind==='voidhorizon'&&_mini272.name==='EVENT HORIZON'&&_mini272.single&&_mini272.hp>0&&_mini272.shots.length>0,'the Stage-9 sub-boss gate is held by ONE armed body - Mike 0905: "I did not want two enemies as a mini boss"');
   var _damage272=JSON.parse(vm.runInContext("(function(){function fresh(){subBoss=null;subBossActive=false;subBossDone=false;subBossTriggered=false;pBullets.length=0;spawnSubBoss('voidhorizon');for(var i=0;i<90;i++)updateSubBoss(1/60);var F=subBoss._s9rift;player.dead=false;player.x=F.core.x;player.y=410;return F;}function fly(n){for(var i=0;i<n;i++){for(var j=0;j<pBullets.length;j++)if(!pBullets[j].dead)spaceBulletTick(pBullets[j],1/60);pBullets=pBullets.filter(function(b){return !b.dead;});}}run.stage=9;run.spaceMode=true;run.spaceLevels=[5,5,5];var F=fresh(),a=F.core.hp;spaceLaserFire();fly(45);var laser=a-F.core.hp;F=fresh();a=F.core.hp;spaceShadowRelease(1.2);fly(70);var shadow=a-F.core.hp;F=fresh();a=F.core.hp;spaceVolleyFire();fly(80);var volley=a-F.core.hp;return JSON.stringify({laser:laser,shadow:shadow,volley:volley});})()",ctxv));
   ok(_damage272.laser>0&&_damage272.shadow>0&&_damage272.volley>0,
@@ -15671,6 +15671,7 @@ require('./test_stage7_warden_shared_rail_warning_0915.cjs')(vm,ctxv,ok);
 require('./test_stage7_warden_shared_mine_warning_0915.cjs')(vm,ctxv,ok);
 require('./test_stage7_warden_shared_burst_warning_0915.cjs')(vm,ctxv,ok);
 require('./test_stage8_vile_shared_annihilation_warning_0915.cjs')(vm,ctxv,ok);
+require('./test_stage9_horizon_shared_volley_warning_0915.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

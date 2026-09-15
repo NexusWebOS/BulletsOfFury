@@ -13709,7 +13709,8 @@ function s9VoidHorizonTick(b,dt){
     w._fire-=dt*DIFF.eFire;
     /* reuses the wardens' authored volley rather than inventing a second one; the cadence
        tightens as the hull darkens, which is the only thing the second phase changes. */
-    if(w._fire<=0){s9FusionWardenFire(w,F.t);w._fire=(w.hp<=w.maxhp*.5)?rnd(.58,.84):rnd(.76,1.08);}
+    if(w._s9VolleyWarn){if(s9FusionWardenWarningTick(b,w,dt))w._fire=(w.hp<=w.maxhp*.5)?rnd(.58,.84):rnd(.76,1.08);}
+    else if(w._fire<=0)s9FusionWardenWarningStart(b,w,F.t,'stage9-event-horizon');
   }
   b.hp=w.hp;return true;
 }
@@ -13724,12 +13725,14 @@ function s9VoidHorizonDraw(b){
   let key=(dark?'ns9x_horizonblk_':'ns9x_horizon_')+fi;
   if(!XART.rdy(key))key=(dark?'ns9x_horizonblk_':'ns9x_horizon_')+0;
   if(!XART.rdy(key))return false;
+  s9FusionWardenWarningDraw(b,w,false);
   ctx.save();ctx.translate(w.x,w.y);ctx.rotate(w.spin||0);ctx.globalAlpha=w.disabled?.58:1;
   ctx.drawImage(XART.get(key),-w.w/2,-w.h/2,w.w,w.h);
   if(w.flash>0&&typeof xartTint==='function'){
     const hi=xartTint(key,'#ffffff',.88);if(hi){ctx.globalAlpha=clamp(w.flash/.16,0,1);ctx.drawImage(hi,-w.w/2,-w.h/2,w.w,w.h);}
   }
   ctx.restore();
+  s9FusionWardenWarningDraw(b,w,true);
   screenBar(function(){
     const bw=VW*.72,bh=8,y=31,x=VW*.14,r=clamp(w.hp/w.maxhp,0,1);
     ctx.fillStyle='#06101b';ctx.fillRect(x,y,bw,bh);
@@ -13783,7 +13786,7 @@ function s9FusionHit(b,dmg){
     if(Audio.SFX&&(Audio.SFX.gravityTransform||Audio.SFX.warp))(Audio.SFX.gravityTransform||Audio.SFX.warp)();
   }
 }
-function s9FusionWardenFire(w,phase){
+function s9FusionWardenFire(w,phase,committedAim){
   /* Simulation time owns the wheel. performance.now() kept moving while paused and made the same
      encounter produce different lanes in headless runs, replays and slow frames. The Wardens
      counter-rotate from the encounter clock instead. */
@@ -13791,11 +13794,29 @@ function s9FusionWardenFire(w,phase){
   if((Math.floor(phase*2)&1)===0){
     for(let i=0;i<10;i++){if(i===2||i===7)continue;eShootT(w.x,w.y+38,rot+i*TAU/10,2.75,'s9warp',{w:18,h:28,silent:i>0});}
   }else{
-    const a=Math.atan2(player.y-w.y,player.x-w.x);
+    const a=Number.isFinite(committedAim)?committedAim:Math.atan2(player.y-w.y,player.x-w.x);
     for(let i=-2;i<=2;i++)eShootT(w.x,w.y+38,a+i*0.13,3.75,'s9needle',{w:8,h:34,silent:i>-2});
   }
   navalFlash(null,{x:w.x,y:w.y+38},.84,BPFX_MUZZLE_LASER,{n:8,hpx:52,life:.14,
     follow:()=>w&&!w.disabled?{x:w.x,y:w.y+38}:null});
+}
+function s9FusionWardenWarningStart(owner,w,phase,key){
+  const radial=(Math.floor(phase*2)&1)===0;w._s9VolleyWarn={t:0,warm:.62,phase,radial,aim:radial?null:Math.atan2(player.y-w.y,player.x-w.x),key};
+  combatWarningTick(owner,key,0,.62,true);return w._s9VolleyWarn;
+}
+function s9FusionWardenWarningAngles(w){
+  const A=w&&w._s9VolleyWarn;if(!A)return [];if(!A.radial)return [-2,-1,0,1,2].map(i=>A.aim+i*.13);
+  const rot=A.phase+(w.side==='L'?1:-1)*A.phase*1.85,out=[];for(let i=0;i<10;i++)if(i!==2&&i!==7)out.push(rot+i*TAU/10);return out;
+}
+function s9FusionWardenWarningTick(owner,w,dt){
+  const A=w&&w._s9VolleyWarn;if(!A)return false;A.t+=dt;combatWarningTick(owner,A.key,Math.min(A.t,A.warm),A.warm);
+  if(A.t<A.warm)return false;s9FusionWardenFire(w,A.phase,A.aim);w._s9VolleyWarn=null;return true;
+}
+function s9FusionWardenWarningDraw(owner,w,front){
+  const A=w&&w._s9VolleyWarn;if(!A||w.disabled)return false;const p={x:w.x,y:w.y+38},k=clamp(A.t/A.warm,0,1),angles=s9FusionWardenWarningAngles(w);
+  if(!front)for(const a of angles)combatWarningDraw(owner,{x:p.x,y:p.y,ex:p.x+Math.cos(a)*650,ey:p.y+Math.sin(a)*650,progress:k,width:A.radial?15:18,fieldOnly:true});
+  else{const a=A.radial?Math.PI/2:A.aim;combatWarningDraw(owner,{x:p.x,y:p.y,ex:p.x+Math.cos(a)*650,ey:p.y+Math.sin(a)*650,progress:k,alertOnly:true});}
+  return true;
 }
 function s9FusionBossTick(b,dt){
   const F=b._s9fusion;if(!F)return false;
@@ -13814,7 +13835,8 @@ function s9FusionBossTick(b,dt){
     for(const w of [F.left,F.right]){
       if(w.flash>0)w.flash=Math.max(0,w.flash-dt);
       w.spin=Math.sin(b.t*1.65+(w.side==='R'?Math.PI:0))*.16;
-      if(!b.enter&&!w.disabled){w._fire-=dt*DIFF.eFire;if(w._fire<=0){s9FusionWardenFire(w,F.t);w._fire=rnd(.68,.98);}}
+      if(!b.enter&&!w.disabled){if(w._s9VolleyWarn){if(s9FusionWardenWarningTick(b,w,dt))w._fire=rnd(.68,.98);}
+        else{w._fire-=dt*DIFF.eFire;if(w._fire<=0)s9FusionWardenWarningStart(b,w,F.t,'stage9-warp-sentinel-'+w.side);}}
     }
     b.hp=F.left.hp+F.right.hp;
   }else if(F.phase==='fuse'){
@@ -13917,6 +13939,7 @@ function s9FusionBossDraw(b){
      ⚠ The ART IS LEFT REGISTERED and `F.gate` still drives the ring's scale, so restoring this is
      one block if he ever wants a core inside the portal. This was its ONLY draw site - the keys are
      now registered-but-undrawn, which this repo tracks deliberately rather than deleting. */
+  for(const w of [F.left,F.right])s9FusionWardenWarningDraw(b,w,false);
   for(const w of [F.left,F.right]){
     const ratio=w.hp/w.maxhp,key=ratio>.58?'ns9_warpsen_intact':(ratio>.24?'ns9_warpsen_damaged':'ns9_warpsen_critical');
     if(XART.rdy(key)){
@@ -13927,6 +13950,7 @@ function s9FusionBossDraw(b){
       }
     }
   }
+  for(const w of [F.left,F.right])s9FusionWardenWarningDraw(b,w,true);
   return true;
 }
 

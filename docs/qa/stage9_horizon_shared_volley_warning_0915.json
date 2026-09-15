@@ -1,0 +1,103 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-9 route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "Event Horizon commits an eight-lane wheel"
+    },
+    {
+      "pass": true,
+      "label": "boss and shared warning art decode"
+    },
+    {
+      "pass": true,
+      "label": "radial green warning renders"
+    },
+    {
+      "pass": true,
+      "label": "radial red warning renders"
+    },
+    {
+      "pass": true,
+      "label": "eight radial rounds release after warning"
+    },
+    {
+      "pass": true,
+      "label": "aimed fan stays committed after player movement"
+    },
+    {
+      "pass": true,
+      "label": "two Sentinels preview independent radial and aimed volleys"
+    },
+    {
+      "pass": true,
+      "label": "horizon_01_green is a non-empty native frame"
+    },
+    {
+      "pass": true,
+      "label": "horizon_02_red is a non-empty native frame"
+    },
+    {
+      "pass": true,
+      "label": "horizon_03_radial_release is a non-empty native frame"
+    },
+    {
+      "pass": true,
+      "label": "horizon_04_aimed_yellow is a non-empty native frame"
+    },
+    {
+      "pass": true,
+      "label": "sentinels_05_independent_red is a non-empty native frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "WARP SENTINELS",
+    "kind": "tidalfusion",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "EVENT HORIZON",
+    "angles": [
+      -0.08500000000000002,
+      0.5433185307179587,
+      1.799955592153876,
+      2.4282741228718345,
+      3.056592653589793,
+      3.6849111843077518,
+      4.941548245743669,
+      5.569866776461628
+    ]
+  },
+  "aimed": {
+    "aim": 1.1412969288698602,
+    "now": 1.1412969288698602,
+    "angles": [
+      0.8812969288698602,
+      1.0112969288698603,
+      1.1412969288698602,
+      1.2712969288698601,
+      1.4012969288698602
+    ]
+  },
+  "pair": {
+    "L": 8,
+    "R": 5
+  },
+  "shots": [
+    "_shots\\stage9_horizon_shared_volley_warning_0915\\horizon_01_green.png",
+    "_shots\\stage9_horizon_shared_volley_warning_0915\\horizon_02_red.png",
+    "_shots\\stage9_horizon_shared_volley_warning_0915\\horizon_03_radial_release.png",
+    "_shots\\stage9_horizon_shared_volley_warning_0915\\horizon_04_aimed_yellow.png",
+    "_shots\\stage9_horizon_shared_volley_warning_0915\\sentinels_05_independent_red.png"
+  ]
+}
