@@ -1,0 +1,38 @@
+{
+  "date": "2026-09-15",
+  "checklistId": "UI-16",
+  "status": "complete",
+  "artDirectory": "assets/game/ui/input_prompts_0915",
+  "runtimeAssets": 6,
+  "assets": [
+    "mouse_neutral",
+    "mouse_left_click",
+    "mouse_right_click",
+    "mouse_wheel",
+    "key_spacebar",
+    "key_r"
+  ],
+  "integration": [
+    "Help mouse control row",
+    "Options live binding buttons"
+  ],
+  "focused": {
+    "test": "_BUILD_SOURCE/test_input_prompts_0915.cjs",
+    "passed": 16,
+    "failed": 0
+  },
+  "syntax": "passed",
+  "chromium": {
+    "url": "http://127.0.0.1:8785/_shots/input_prompts_0915/review.html",
+    "decoded": 6,
+    "status": "READY \u2014 6 / 6 DECODED"
+  },
+  "commit": false,
+  "push": false,
+  "fullSuite": {
+    "test": "_BUILD_SOURCE/test_fl.js",
+    "passedAssertions": 4337,
+    "failed": 57,
+    "scope": "existing unrelated failure set; no input-prompt assertion failed"
+  }
+}

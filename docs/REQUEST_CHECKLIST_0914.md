@@ -1,6 +1,6 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-15. **150 entries: 127 complete / 7 partial / 16 pending.**
+Updated 2026-09-15. **151 entries: 128 complete / 7 partial / 16 pending.**
 
 **23 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Fury HQ Space Division crate with Helper Orb, Akimbo and proximity-mine rewards [Proof](SPACE_ARMORY_0915.md).
+Just verified: matching mouse and keyboard prompt art wired into Help and Options [Proof](INPUT_PROMPTS_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -30,7 +30,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
 | Stages 5-9: space and encounter cleanup | 18 | 2 | 4 | 24 |
 | Manual missile tiers and supplies | 9 | 0 | 0 | 9 |
-| Pause, saving, title and pilot selection | 15 | 0 | 0 | 15 |
+| Pause, saving, title and pilot selection | 16 | 0 | 0 | 16 |
 | Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
 | Arcade and shared difficulty rewards | 8 | 0 | 0 | 8 |
 
@@ -190,6 +190,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **UI-13 · Complete** — Readable all-capitals 16-bit dialogue font; compact nine-pilot portraits, centered text and panels clear of the weapon HUD. [Evidence](READABLE_TYPE_YURI_0914.md).
 - [x] **UI-14 · Complete** — Generate a rectangular 16-bit dialogue frame with a cool border, centered text, and palette swaps for all nine pilots; share it across in-game dialogue. [Evidence](DIALOGUE_HAZARDS_0914.md).
 - [x] **UI-15 · Complete** — B is Back; use generated D-pad, action-button and Start graphics consistently for navigation prompts. [Evidence](CONTROL_HINTS_0914.md).
+- [x] **UI-16 · Complete** — Matching neutral mouse, red left/right click, wheel, Spacebar and R input icons; generated graphics render in Help and live Options bindings. [Evidence](INPUT_PROMPTS_0915.md).
 
 ### Achievements, timers and unlockable modes
 

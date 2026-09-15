@@ -1480,11 +1480,19 @@
       "request": "Fury HQ Space Division crate with a three-reward RNG bag: autonomous helper orb, Akimbo projectile upgrade, and proximity mine with splash plus authored shrapnel.",
       "evidence": "SPACE_ARMORY_0915.md",
       "dependency": ""
+    },
+    {
+      "id": "UI-16",
+      "group": "Pause, saving, title and pilot selection",
+      "status": "complete",
+      "request": "Generate matching neutral mouse, red left-click, red right-click, mouse-wheel, Spacebar and R input icons; use the graphics in Help and live binding displays.",
+      "evidence": "INPUT_PROMPTS_0915.md",
+      "dependency": ""
     }
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "Fury HQ Space Division crate and three functional space rewards",
-    "evidence": "SPACE_ARMORY_0915.md"
+    "description": "mouse and keyboard input prompt art with live Help and Options integration",
+    "evidence": "INPUT_PROMPTS_0915.md"
   }
 }

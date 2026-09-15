@@ -1,0 +1,122 @@
+{
+  "date": "2026-09-15",
+  "source": "input_prompts_magenta_source.png",
+  "styleReference": "codex-clipboard-fac8ed2b-7fee-4858-ab73-491e6cb1a531.png",
+  "backgroundRemoval": "magenta chroma key",
+  "assets": [
+    {
+      "name": "mouse_neutral",
+      "file": "mouse_neutral.png",
+      "sourceCell": [
+        0,
+        0
+      ],
+      "sourceRegion": [
+        35,
+        55,
+        480,
+        500
+      ],
+      "size": [
+        421,
+        417
+      ],
+      "sha256": "ac8f997197463493cfad38085e5057e73d81975dc38415bea0037f9c74e92988"
+    },
+    {
+      "name": "mouse_left_click",
+      "file": "mouse_left_click.png",
+      "sourceCell": [
+        1,
+        0
+      ],
+      "sourceRegion": [
+        545,
+        55,
+        990,
+        505
+      ],
+      "size": [
+        423,
+        419
+      ],
+      "sha256": "7c51a3945f9d95444de3a91e4587986ca422b20125a06c3efebfd691e1cb3dcc"
+    },
+    {
+      "name": "mouse_right_click",
+      "file": "mouse_right_click.png",
+      "sourceCell": [
+        2,
+        0
+      ],
+      "sourceRegion": [
+        1045,
+        55,
+        1495,
+        505
+      ],
+      "size": [
+        423,
+        419
+      ],
+      "sha256": "1faf17a72a5cbb6c50f1f47cbd68574ccec350d1f9cf12c284ece6ccda899be5"
+    },
+    {
+      "name": "mouse_wheel",
+      "file": "mouse_wheel.png",
+      "sourceCell": [
+        0,
+        1
+      ],
+      "sourceRegion": [
+        35,
+        545,
+        480,
+        990
+      ],
+      "size": [
+        420,
+        417
+      ],
+      "sha256": "00a92607334a1b5b2db737a2b76cb975bf36d1d125f7526cd85057151c1dd9f0"
+    },
+    {
+      "name": "key_spacebar",
+      "file": "key_spacebar.png",
+      "sourceCell": [
+        1,
+        1
+      ],
+      "sourceRegion": [
+        510,
+        595,
+        1100,
+        940
+      ],
+      "size": [
+        565,
+        306
+      ],
+      "sha256": "6b63d427734e146dda424c424899915e24f89cee266dd0e8808b7c81aa880696"
+    },
+    {
+      "name": "key_r",
+      "file": "key_r.png",
+      "sourceCell": [
+        2,
+        1
+      ],
+      "sourceRegion": [
+        1135,
+        595,
+        1505,
+        940
+      ],
+      "size": [
+        327,
+        309
+      ],
+      "sha256": "a89812ee17f3a42f2894a9bf7a280c800f08c9e2e656b16d2ddff007ce20308a"
+    }
+  ]
+}

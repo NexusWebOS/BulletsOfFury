@@ -1986,6 +1986,12 @@ const XART=(function(){
   X._src.hq_space_mine_0915=_hqSpaceRoot+'proximity_mine.png';
   X._src.hq_space_shrapnel_long_0915=_hqSpaceRoot+'shrapnel_long.png';
   X._src.hq_space_shrapnel_forked_0915=_hqSpaceRoot+'shrapnel_forked.png';
+  const _inputPromptRoot='assets/game/ui/input_prompts_0915/';
+  for(const [_key,_file] of Object.entries({
+    input_mouse_neutral_0915:'mouse_neutral.png',input_mouse_left_0915:'mouse_left_click.png',
+    input_mouse_right_0915:'mouse_right_click.png',input_mouse_wheel_0915:'mouse_wheel.png',
+    input_key_space_0915:'key_spacebar.png',input_key_r_0915:'key_r.png'
+  })) X._src[_key]=_inputPromptRoot+_file;
   /* Generated mode plates use a source crop because the generator baked a checkerboard beyond
      their beveled frames. The exact Nexus II chain plate is clipped over the same silhouette. */
   X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
@@ -62480,6 +62486,11 @@ function helpBind(act, max){
   for(const k of L){ out.push(HELP_KEYNAME[k]||String(k).toUpperCase()); if(out.length>=(max||3)) break; }
   return out.length?out.join('  /  '):'-';
 }
+const INPUT_PROMPT_ART={
+  mouse0:'input_mouse_left_0915',mouse1:'input_mouse_wheel_0915',mouse2:'input_mouse_right_0915',
+  ' ':'input_key_space_0915',space:'input_key_space_0915',r:'input_key_r_0915'
+};
+function inputPromptArt(key){return INPUT_PROMPT_ART[String(key==null?'':key).toLowerCase()]||null;}
 function helpGlyph(key, cx, cy, h, a){
   if(typeof XART==='undefined' || !XART.rdy(key)) return 0;
   const im=XART.get(key);
@@ -62557,13 +62568,15 @@ function helpPageControls(){
   helpLabel('PAUSE', VW*0.66, y2+31, 12, '#ffd36b');
   helpLabel(helpBind('start',1), VW*0.66, y2+45, 11, '#9fb4c8');
 
-  /* the mouse, spelled out - three of these binds are the reason this page exists. Kept SHORT so
-     every line clears the field at the 11px floor instead of being shrunk under it. */
-  const y3=VH*0.745;
-  helpLabel('MOUSE', VW/2, y3, 13, '#ffd36b');
-  helpLabel('L-CLICK FIRE    R-CLICK MISSILE', VW/2, y3+18, 11, '#9fb4c8');
-  helpLabel('SIDE 4 RETINA    SIDE 5 CHARGE', VW/2, y3+33, 11, '#9fb4c8');
-  helpLabel('KEYS - MOUSE - PAD ALL LIVE AT ONCE', VW/2, y3+50, 11, '#5f7288');
+  /* Authored mouse prompts replace the old L-CLICK/R-CLICK text. Neutral, pressed and wheel
+     silhouettes stay readable at the same small UI scale as the cabinet-button atlas. */
+  const y3=VH*0.725,mousePrompts=[
+    ['input_mouse_neutral_0915','POINTER'],['input_mouse_left_0915','FIRE'],
+    ['input_mouse_right_0915','MISSILE'],['input_mouse_wheel_0915','WHEEL']
+  ];
+  helpLabel('MOUSE', VW/2, y3-8, 13, '#ffd36b');
+  mousePrompts.forEach((q,i)=>{const x=VW*(.17+i*.22);helpGlyph(q[0],x,y3+23,40);helpLabel(q[1],x,y3+52,11,i===1||i===2?'#ff796d':'#9fb4c8');});
+  helpLabel('KEYS - MOUSE - PAD ALL LIVE AT ONCE', VW/2, y3+70, 11, '#5f7288');
 }
 
 function helpPageMoves(){
@@ -62912,7 +62925,9 @@ function drawOptions(dt){
         ctx.fillStyle=kg; roundRectFill(bx,cy-bh/2,bw,bh,5);
         ctx.strokeStyle=active?'#ffe27a':(isSel?'#ffb347':'#57607a'); ctx.lineWidth=1.5; ctx.strokeRect(bx,cy-bh/2,bw,bh);
         ctx.fillStyle='rgba(255,255,255,0.10)'; ctx.fillRect(bx+2,cy-bh/2+2,bw-4,3);
-        ctx.fillStyle=active?'#1a0f02':'#e8ecf4'; ctx.font='bold 11px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText(active?'PRESS KEY':keyName(((keybindFor(r.who||1)||{})[r.act]||[])[0]),bx+bw/2,cy);
+        const _shownBind=((keybindFor(r.who||1)||{})[r.act]||[])[0],_promptArt=!active&&inputPromptArt(_shownBind);
+        if(_promptArt && XART.rdy(_promptArt)) helpGlyph(_promptArt,bx+bw/2,cy,18);
+        else {ctx.fillStyle=active?'#1a0f02':'#e8ecf4'; ctx.font='bold 11px "BOFmil", monospace'; ctx.textAlign='center'; ctx.fillText(active?'PRESS KEY':keyName(_shownBind),bx+bw/2,cy);}
         if(m.down && !drawOptions._md && m.x>bx && m.x<bx+bw && Math.abs(m.y-cy)<bh/2 && m.y>wy && m.y<wy+wh){ rebindAction=r.act; rebindWho=(r.who||1); optSelIdx=selectable.findIndex(o=>o.r===r); Audio.SFX.blip(); } }
     }
     y+=rh;
