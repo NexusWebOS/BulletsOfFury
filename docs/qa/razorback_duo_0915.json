@@ -1,0 +1,165 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "production game API boots before the encounter probe"
+    },
+    {
+      "pass": true,
+      "label": "native Stage-1 miniboss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "Hard creates two real Razorback actors in the campaign miniboss slot"
+    },
+    {
+      "pass": true,
+      "label": "authored Razorback hull, guns and ordnance decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "both tanks complete their authored arrival and materialize into combat"
+    },
+    {
+      "pass": true,
+      "label": "the pair enters together with offset suppression and sonic attack books"
+    },
+    {
+      "pass": true,
+      "label": "the two complete tank silhouettes keep separate lanes"
+    },
+    {
+      "pass": true,
+      "label": "Retina exposes both destructible guns on each tank"
+    },
+    {
+      "pass": true,
+      "label": "native five-second duo capture encodes cleanly"
+    },
+    {
+      "pass": true,
+      "label": "both tanks independently own live hostile ordnance"
+    },
+    {
+      "pass": true,
+      "label": "the simultaneous pressure includes sonic fire and machine rounds"
+    },
+    {
+      "pass": true,
+      "label": "the open lane between the two hulls remains non-colliding"
+    },
+    {
+      "pass": true,
+      "label": "a gun hit routes to only the tank under the impact point"
+    },
+    {
+      "pass": true,
+      "label": "destroying one tank leaves the second tank and encounter active"
+    },
+    {
+      "pass": true,
+      "label": "the native renderer draws authored Razorback hull plates"
+    },
+    {
+      "pass": true,
+      "label": "screenshots and video contain non-empty native gameplay frames"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "entered": {
+      "states": [
+        "guns",
+        "guns"
+      ],
+      "attacks": [
+        "suppression",
+        "sonic"
+      ],
+      "xs": [
+        227.04639994406043,
+        422.530104557273
+      ],
+      "ys": [
+        107.32248718903246,
+        103.79718665683104
+      ],
+      "w": 124,
+      "h": 124,
+      "max": [
+        1160,
+        1160
+      ],
+      "bar": 2320,
+      "targets": [
+        "0:left",
+        "0:right",
+        "1:left",
+        "1:right"
+      ]
+    },
+    "pressure": {
+      "owners": [
+        6,
+        5
+      ],
+      "kinds": [
+        "rzbSonic",
+        "mg"
+      ],
+      "gap": true,
+      "gets": [
+        "rzb_hull_0",
+        "rzb_dust",
+        "rzb_tread",
+        "rzb_rotor",
+        "rzb_missile_pod",
+        "rzb_machinegun",
+        "rzb_turret",
+        "rzb_muzzle",
+        "rzb_sonic_charge",
+        "rzb_sonic_ring",
+        "rzb_sonic_bullet"
+      ],
+      "hp": [
+        1160,
+        1160
+      ],
+      "sum": 2320
+    },
+    "damage": {
+      "before": [
+        1160,
+        1160
+      ],
+      "after": [
+        1147,
+        1160
+      ],
+      "firstGone": true,
+      "secondAlive": true,
+      "pairAlive": true
+    },
+    "runtimeSha256": "959b6886c77c5b151b17b167ff9765bf0497b3c3b4b36c92bc1c7789b64cd29f"
+  },
+  "fight": {
+    "ok": true,
+    "name": "RAZORBACK SIEGE TANK",
+    "kind": "razorback",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "shots": [
+    "_shots\\razorback_duo_0915\\razorback_duo_01_offset_attacks.png",
+    "_shots\\razorback_duo_0915\\razorback_duo_02.png",
+    "_shots\\razorback_duo_0915\\razorback_duo_03.png",
+    "_shots\\razorback_duo_0915\\razorback_duo_04.png",
+    "_shots\\razorback_duo_0915\\razorback_duo_05.png",
+    "_shots\\razorback_duo_0915\\razorback_duo_06_one_tank_remaining.png"
+  ],
+  "video": "_shots\\razorback_duo_0915\\Razorback_Duo_Hard_0915.mp4"
+}

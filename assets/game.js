@@ -17336,6 +17336,66 @@ function razorbackInit(b){
     trans:0, ramX:W/2, pid:0, ppx:player?player.x:W/2, pvx:0, shake:0, clankT:0};
   try{ if(typeof XART!=='undefined') for(const k in BOFX.img) if(k.indexOf('rzb_')===0){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_rw){}
 }
+/* Hard mode fields two complete tanks inside the one campaign miniboss slot. Each actor keeps its
+   own authored rig, phase pools, projectiles and locks; the controller owns only the combined gauge,
+   broad-phase bounds and one encounter completion. */
+function razorbackPairInit(b){
+  if(!b||!b._rzb||typeof diffKey==='undefined'||diffKey!=='hard')return false;
+  const W=worldWidth(),L=camLeftX(),span=camRightX()-L,single=b.maxhp,actors=[];
+  for(const side of [-1,1]){
+    const p={kind:'razorback',x:W/2,y:-150,ty:VH*.27,t:0,enter:false,hp:single,maxhp:single,w:b.w,h:b.h,
+      flash:0,dead:false,dying:0,fireCd:999,drift:0,atkPhase:0,phaseT:1.2,sub:true,name:'RAZORBACK'};
+    razorbackInit(p);p.hp=p.maxhp=single;p.enter=false;p._pairController=b;p._rzb.pairSide=side;
+    p._rzb.homeX=L+span*(side<0 ? .28 : .72);p._rzb.tgt.x=p._rzb.homeX;p.x=p._rzb.homeX;
+    /* Offset the attack books by one entry: two tanks fight together without stacking the same
+       release on the same frame. */
+    p._rzb.attackOffset=side<0?0:1;p._rzb.idx=-1+p._rzb.attackOffset;actors.push(p);
+  }
+  delete b._rzb;b._rzbPair={actors:actors,singleMax:single,cleared:false};b.name='RAZORBACK DUO';
+  b.hp=b.maxhp=single*2;b.enter=false;b.fireCd=999;razorbackPairSync(b);return true;
+}
+function razorbackPairSync(b){
+  const P=b&&b._rzbPair;if(!P)return;const shown=P.actors.filter(p=>!p._rzbGone),live=P.actors.filter(p=>!p.dead);
+  b.hp=live.reduce((n,p)=>n+Math.max(0,p.hp),0);
+  const boxes=shown.length?shown:P.actors;if(!boxes.length)return;
+  const l=Math.min(...boxes.map(p=>p.x-p.w*.5)),r=Math.max(...boxes.map(p=>p.x+p.w*.5)),
+        t=Math.min(...boxes.map(p=>p.y-p.h*.5)),bot=Math.max(...boxes.map(p=>p.y+p.h*.5));
+  b.x=(l+r)*.5;b.y=(t+bot)*.5;b._drawY=b.y;b.w=b._drawW=r-l;b.h=b._drawH=bot-t;
+}
+function razorbackPairPartAt(b,x,y){
+  if(!b||b.dead||!b._rzbPair)return null;
+  for(let i=b._rzbPair.actors.length-1;i>=0;i--){const p=b._rzbPair.actors[i],part=razorbackPartAt(p,x,y);if(part)return i+':'+part;}
+  return null;
+}
+function razorbackPairBeamHit(b,beam){
+  if(!b||b.dead||!b._rzbPair)return null;let best=null;
+  for(let i=0;i<b._rzbPair.actors.length;i++){const p=b._rzbPair.actors[i],q=razorbackBeamHit(p,beam);if(q&&(!best||q.entry>best.entry))best=Object.assign({},q,{actor:i});}
+  return best;
+}
+function razorbackPairContact(b,x,y){
+  return !!(b&&b._rzbPair&&b._rzbPair.actors.some(p=>!p.dead&&!p._rzbGone&&Math.abs(p.x-x)<p.w*.5+10&&Math.abs(p.y-y)<p.h*.5+10));
+}
+function razorbackPairHit(b,dmg,hx,hy){
+  const P=b&&b._rzbPair;if(!P||b.dead||!(dmg>0))return 0;let targets=[];
+  if(typeof _dmgBullet!=='undefined'&&_dmgBullet&&_dmgBullet.kind==='beam'){
+    const q=razorbackPairBeamHit(b,_dmgBullet);if(q)targets=[P.actors[q.actor]];
+  }else if(hx!=null&&hy!=null){const id=razorbackPairPartAt(b,hx,hy);if(id)targets=[P.actors[+id.split(':')[0]]];}
+  else if(typeof _dmgBullet!=='undefined'&&_dmgBullet&&_dmgBullet.kind==='flame'&&typeof flameHit==='function')
+    targets=P.actors.filter(p=>!p.dead&&flameHit(_dmgBullet,p.x,p.y,p.w,p.h));
+  else targets=P.actors.filter(p=>!p.dead);
+  const before=b.hp;for(const p of targets){if(!p||p.dead)continue;const dealt=razorbackHit(p,dmg,hx,hy);if(!(dealt>0))continue;
+    p.hp=Math.max(0,p.hp-dealt);p.flash=.18;if(typeof markHit==='function')markHit(p);weaponHitSfx('normal');
+    if(p.hp<=0&&!p.dead){p.dead=true;p.dying=0;razorbackClear(p);if(typeof unitDeathFX==='function')unitDeathFX(p,'mini','red');}
+  }
+  razorbackPairSync(b);if(typeof stageStats!=='undefined')stageStats.dmgDealt+=Math.max(0,before-b.hp);return Math.max(0,before-b.hp);
+}
+function razorbackPairUpdate(b,dt){
+  const P=b._rzbPair;for(const p of P.actors){p.t+=dt;if(p.dead){p.dying+=dt;if(p.dying>=1.05)p._rzbGone=true;}else razorbackUpdate(p,dt);}
+  razorbackPairSync(b);
+  if(!P.cleared&&P.actors.every(p=>p._rzbGone)){P.cleared=true;b.dead=true;b.dying=0;b._deathFxStarted=true;
+    achievementEncounterDefeat(b,'miniboss');rzbSfx('expBig');shake=Math.max(shake||0,10);}
+}
+function razorbackPairDraw(b){for(const p of b._rzbPair.actors)if(!p._rzbGone)razorbackDraw(p);}
 function razorbackPartAt(b,x,y){
   const R=b&&b._rzb; if(!R || b.dead || R.state==='arrival' || R.trans>0) return null;
   if(R.state==='guns'){
@@ -17365,7 +17425,7 @@ function razorbackHit(b,dmg,hx,hy){
 }
 function razorbackClear(b){
   const R=b._rzb; R.pid++; R.waves=[]; R.charge=0;
-  for(const q of eBullets) if(q._rzb) q.dead=true;
+  for(const q of eBullets) if(q._rzb&&(!q._rzbOwner||q._rzbOwner===b)) q.dead=true;
   if(typeof playerLocks!=='undefined') playerLocks=playerLocks.filter(L=>L.src!==b);
 }
 function razorbackBreak(b,key){
@@ -17380,23 +17440,24 @@ function razorbackBreak(b,key){
   else razorbackClear(b);                                         // the hull: hitSubBoss runs the death
 }
 function razorbackEnter(b,state){
-  const R=b._rzb; R.state=state; R.pt=0; R.trans=1.4; R.idx=-1; razorbackClear(b);
+  const R=b._rzb; R.state=state; R.pt=0; R.trans=1.4; R.idx=-1+(R.attackOffset||0); razorbackClear(b);
   rzbSfx('bossPhase'); razorbackNext(b);
 }
 function razorbackNext(b){
-  const R=b._rzb, W=(typeof worldWidth==='function')?worldWidth():VW, list=RZB_ATTACKS[R.state]||RZB_ATTACKS.guns;
+  const R=b._rzb, W=(typeof worldWidth==='function')?worldWidth():VW, L=camLeftX(),span=camRightX()-L,list=RZB_ATTACKS[R.state]||RZB_ATTACKS.guns;
   R.attack=list[++R.idx%list.length]; R.at=0; R.beat=-1; R.mgBeat=-1; R.charge=0;
-  R.tgt={x:(R.idx%2)?W*0.27:W*0.73, y:(R.idx%3===0)?VH*0.36:VH*0.24};
+  if(R.pairSide){const inner=(R.idx%2)!==0;R.homeX=L+span*(R.pairSide<0 ? .28 : .72);R.tgt={x:L+span*(R.pairSide<0 ? (inner ? .34 : .25) : (inner ? .66 : .75)),y:(R.idx%3===0)?VH*.36:VH*.24};}
+  else R.tgt={x:(R.idx%2)?W*0.27:W*0.73, y:(R.idx%3===0)?VH*.36:VH*.24};
   if(R.attack==='sonic'||R.attack==='nova') stageRevisionCue(b,'razorbackCharge',.16);
 }
 function rzbShot(b,p,a,spdPack,rPack,kind){
   const v=rzbPxFrame(spdPack), r=Math.max(6,Math.round(rPack*2*RZB_S)), ga=rzbGameAng(a);
-  eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,w:r,h:r,kind:kind,t:0,_rzb:true,ang:ga,spin:Math.random()*6});
+  eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,w:r,h:r,kind:kind,t:0,_rzb:true,_rzbOwner:b,ang:ga,spin:Math.random()*6});
 }
 function rzbMissile(b,p,a){
   const ga=rzbGameAng(a), v=rzbPxFrame(160);
   eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,ang:ga,w:10,h:16,kind:'rzbMissile',hp:1,
-    _shootable:true,spd:v,_accel:0.0264,_maxspd:5.04,t:0,_rzb:true});
+    _shootable:true,spd:v,_accel:0.0264,_maxspd:5.04,t:0,_rzb:true,_rzbOwner:b});
   stageRevisionCue(b,'razorbackRocket',.10);
 }
 function razorbackMove(b,dt){
@@ -17434,7 +17495,7 @@ function razorbackUpdate(b,dt){
   R.fx=R.fx.filter(e=>e.life>0);
   R.pt+=dt;
   if(R.state==='arrival'){
-    R.tgt={x:(typeof worldWidth==='function'?worldWidth():VW)/2, y:VH*0.27};
+    R.tgt={x:R.homeX==null?(typeof worldWidth==='function'?worldWidth():VW)/2:R.homeX, y:VH*0.27};
     razorbackMove(b,dt);
     if(R.pt>3.2 || Math.abs(b.y-R.tgt.y)<3) razorbackEnter(b,'guns');
     return;
@@ -17478,7 +17539,7 @@ function razorbackCombat(b){
         const g=rzbWorld(b,k==='left'?-57:57,96), a=R.guns[k].a, mz=rzbFwd(g,a,49*RZB_S);
         const n0=eBullets.length;
         eShootT(mz.x,mz.y,eAimDown(rzbGameAng(a+Math.sin(beat*1.9)*0.07)),rzbPxFrame(380),'mg',{w:4,h:14,silent:true});
-        for(let i=n0;i<eBullets.length;i++) eBullets[i]._rzb=true;
+        for(let i=n0;i<eBullets.length;i++){eBullets[i]._rzb=true;eBullets[i]._rzbOwner=b;}
         R.guns[k].flash=0.08;stageRevisionCue(b,'razorbackGun',.12);
       }
     }
@@ -17526,9 +17587,10 @@ function razorbackCombat(b){
   } else if(R.attack==='ram'){
     const W=(typeof worldWidth==='function')?worldWidth():VW;
     if(t<1){ R.charge=t; R.tgt={x:b.x,y:b.y}; R.ramX=clamp(player.x, b.w*0.5, W-b.w*0.5);
+      if(R.pairSide){const L=camLeftX(),right=camRightX(),half=(L+right)*.5,gap=b.w*.5+9;R.ramX=clamp(R.ramX,R.pairSide<0?L+b.w*.5:half+gap,R.pairSide<0?half-gap:right-b.w*.5);}
       if(R.beat<0){ R.beat=0; stageRevisionCue(b,'razorbackRam',.12); } }   // the rush winds up audibly
     else if(t<2.5) R.tgt={x:R.ramX, y:VH*0.68};
-    else R.tgt={x:W/2, y:VH*0.26};
+    else R.tgt={x:R.homeX==null?W/2:R.homeX, y:VH*0.26};
     if(t>4.7) razorbackNext(b);
   }
 }
@@ -22487,6 +22549,7 @@ function spawnSubBoss__inner(kind){
   if(typeof coopActive==='function' && coopActive() && b && b.maxhp>0){
     b.maxhp=Math.ceil(b.maxhp*COOP_BOSS_MUL); b.hp=b.maxhp;
   }
+  if(kind==='razorback'&&typeof razorbackPairInit==='function')razorbackPairInit(b);
   continueRewardMark(b);
   subBoss=b; subBossActive=true;
 }
@@ -22804,6 +22867,7 @@ function updateSubBoss(dt){
   }
   if(b._s9rift){ s9VoidHorizonTick(b,dt); return; }
   if(b._harrier){ chaosHarrierUpdate(b,dt); return; }
+  if(b._rzbPair){razorbackPairUpdate(b,dt);return;}
   if(b._rzb){ razorbackUpdate(b,dt); return; }          // the tank owns its arrival, drive and weapons (0912r)
   if(b._tempestDuo){ tempestBrothersUpdate(b,dt); return; }
   if(b._tlv){ tempestUpdate(b,dt); return; }           // the jet owns its arrival, flight and weapons (0913b)
@@ -23856,6 +23920,7 @@ function drawSubBoss(){
   if(b._tempestDuo){ tempestBrothersDraw(b); drawSubBossBar(b); return; }
   if(typeof drawSubBossBar==='function') drawSubBossBar(b);
   if(b._harrier){ chaosHarrierDraw(b); return; }
+  if(b._rzbPair){razorbackPairDraw(b);return;}
   if(b._rzb){ razorbackDraw(b); return; }
   if(b._tlv){ tempestDraw(b); return; }
   if(b._ship && typeof shipBossDraw==='function' && shipBossDraw(b)){
@@ -24146,6 +24211,7 @@ function drawSubBoss(){
 function subBossHitPart(x, y){
   const b = (typeof subBoss!=='undefined') ? subBoss : null;
   if(!b) return null;
+  if(b._rzbPair&&typeof razorbackPairPartAt==='function')return razorbackPairPartAt(b,x,y);
   if(b._rzb && typeof razorbackPartAt==='function') return razorbackPartAt(b,x,y);   // only the EXPOSED part stops a shot
   if(b._tempestDuo) return tempestBrothersPartAt(b,x,y);
   if(b._tlv && typeof tempestPartAt==='function') return tempestPartAt(b,x,y);     // only a LIVE aperture or the hull stops a shot (0913b)
@@ -24211,6 +24277,7 @@ function razorbackBeamHit(b,beam){
 }
 function subBossBeamImpact(b,beam){
   if(b._tempestDuo)return tempestBrothersBeamHit(b,beam);
+  if(b._rzbPair)return razorbackPairBeamHit(b,beam);
   if(b._rzb)return razorbackBeamHit(b,beam);
   return null;
 }
@@ -24242,6 +24309,7 @@ function subBossSolidAt(x, y){
   const b = (typeof subBoss!=='undefined') ? subBoss : null;
   if(!b) return null;
   if(b._jcGhost) return false; // safe scripted fly-through: neither body nor bullets collide
+  if(b._rzbPair)return razorbackPairPartAt(b,x,y)!==null;
   if(b._rzb) return razorbackPartAt(b,x,y)!==null;
   if(b._ship==='olivewarden'&&typeof stage4MiniDroneAt==='function'&&stage4MiniDroneAt(b,x,y,2))return true;
   if(b._s9rift) return !!s9VoidHorizonPart(b,x,y);
@@ -24312,6 +24380,7 @@ function hitSubBoss(dmg, hx, hy){
     sxHit(subBoss, dmg, (_lastHitX!=null?_lastHitX:subBoss.x), (_lastHitY!=null?_lastHitY:subBoss.y));
   }
   if(b._tempestDuo){ tempestBrothersHit(b,dmg,hx,hy); return; }
+  if(b._rzbPair){razorbackPairHit(b,dmg,hx,hy);return;}
   if(b._jcGhost) return;
   if(b._harrier && !b._chCollision) return;   // the hull is absent inside the authored warp aperture
   /* ...but a SEALED quad-laser shows its shield pulse and never white - Mike, 0807b: "do not let the hull flash white until
@@ -28178,6 +28247,11 @@ function retinaBossTargets(b){
     if(U&&!b._armored&&!b._shielded)for(const id of U.parts)if(!b._sx.dead[id]){
       const state=()=>{const o=sxPartOffset(b._sx.code,id,b);return{x:b.x+o.x,y:b.y+o.y,hp:b._sx.hp[id],dead:b._sx.dead[id]};};
       a.push(retinaImpactTarget(b,id,'section '+id,state,48,48));
+    }
+  }else if(b._rzbPair){
+    sectional=true;for(let ai=0;ai<b._rzbPair.actors.length;ai++){const p=b._rzbPair.actors[ai],R=p._rzb,ids=R.state==='guns'?['left','right']:[R.state];
+      if(!p.dead&&R.state!=='arrival'&&R.trans<=0)for(const id of ids)if(R.pools[id]>0){const rid=ai+':'+id,state=()=>{const q=id==='left'||id==='right'?rzbWorld(p,id==='left'?-57:57,96):{x:p.x,y:p.y};return{x:q.x,y:q.y,hp:R.pools[id],dead:p.dead||R.pools[id]<=0||R.state!==((id==='left'||id==='right')?'guns':id)||R.trans>0};};
+        a.push(retinaImpactTarget(b,rid,'razorback '+(ai+1)+' '+id,state,(RZB_R[id==='left'||id==='right'?'gun':id]||34)*2,(RZB_R[id==='left'||id==='right'?'gun':id]||34)*2));}
     }
   }else if(b._rzb){
     sectional=true;const R=b._rzb,ids=R.state==='guns'?['left','right']:[R.state];
@@ -32534,7 +32608,7 @@ function updatePlay(dt){
       if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter){
         b._sbt=(b._sbt||0)-dt;
         const sy=(subBoss._drawY||subBoss.y);
-        if(b._sbt<=0&&(subBoss._rzb||subBoss._tempestDuo)){
+        if(b._sbt<=0&&(subBoss._rzb||subBoss._rzbPair||subBoss._tempestDuo)){
           const impact=subBossBeamImpact(subBoss,b);
           if(impact){hitSubBoss(b.dmg,impact.x,impact.y);weaponHitSfx('laser');b._sbt=0.05;}
         }else if(b._sbt<=0 && sy<=b.bot && Math.abs(b.x-subBoss.x)<(subBoss.w/2+b.w/2)){ hitSubBoss(b.dmg, b.x, sy); weaponHitSfx('laser'); b._sbt=0.05; }
@@ -33136,7 +33210,7 @@ function updatePlay(dt){
       if(specialActive('juggernaut')){ player._ramT=(player._ramT||0)-dt; if(player._ramT<=0){ hitBoss(6); player._ramT=0.2; juggernautRamImpact(player.x,player.y-10); shake=Math.max(shake,6); } }
       else playerHit();
     }
-    if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter && !subBoss._jcGhost && !subBoss._s4MiniSafe && (!subBoss._harrier||subBoss._chCollision) && (!subBoss._tempestDuo||tempestBrothersContact(subBoss,player.x,player.y)) && Math.abs(subBoss.x-player.x)<(subBoss.w/2+10) && Math.abs((subBoss._drawY||subBoss.y)-player.y)<(subBoss.h/2+10)){
+    if(typeof subBoss!=='undefined' && subBoss && subBossActive && !subBoss.dead && !subBoss.enter && !subBoss._jcGhost && !subBoss._s4MiniSafe && (!subBoss._harrier||subBoss._chCollision) && (!subBoss._tempestDuo||tempestBrothersContact(subBoss,player.x,player.y)) && (!subBoss._rzbPair||razorbackPairContact(subBoss,player.x,player.y)) && Math.abs(subBoss.x-player.x)<(subBoss.w/2+10) && Math.abs((subBoss._drawY||subBoss.y)-player.y)<(subBoss.h/2+10)){
       if(specialActive('juggernaut')){ player._ramT=(player._ramT||0)-dt; if(player._ramT<=0){ hitSubBoss(6); player._ramT=0.2; juggernautRamImpact(player.x,player.y-10); shake=Math.max(shake,6); } }
       else playerHit();
     }
@@ -38348,6 +38422,7 @@ function attractDraw(){
    the art is taken from the authored chimney and dense-burst reels, so this remains consistent
    across bespoke renderers without fading or replacing their hull frames. */
 function encounterDamageOverlay(b,isMini){
+  if(b&&b._rzbPair){for(const p of b._rzbPair.actors)encounterDamageOverlay(p,true);return;}
   if(!b||b.dead||!(b.maxhp>0)||b.hp/b.maxhp>.50||typeof XART==='undefined')return;
   b._encDmgT=(b._encDmgT||0)+(_lastDt||1/60);const t=b._encDmgT,frac=clamp(b.hp/b.maxhp,0,1);
   const cy=(b._drawY!=null?b._drawY:b.y),w=b._drawW||b.w||120,h=b._drawH||b.h||120;

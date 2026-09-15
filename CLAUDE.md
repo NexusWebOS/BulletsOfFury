@@ -4267,3 +4267,6 @@ S4-14 complete. Normal retains 5 bolts/1 ball; Hard fires nine wider chain bolts
 
 ## 2026-09-15 Sovereign giant lightning strike
 S4-15 complete. Furious now follows its expanded chain phase with an exact five-second giant-lightning tell: shared yellow/red FOV and alert art, darkened screen, authored crackling core, final red flash, central seven-column strike, and 17% safe lanes at both camera edges. Helpers/final guns pause during the event; Normal/Hard are unchanged. Focused 13/13, Chromium 15/15 zero errors, full suite exact 57-name baseline. Tally 120 complete / 9 partial / 20 pending. See docs/SOVEREIGN_GIANT_LIGHTNING_0915.md.
+
+## 2026-09-15 Hard Razorback duo
+S1-05 complete. Hard Stage 1 now fields two complete Razorback siege tanks under one combined miniboss gauge. Each actor owns its authored rig, component pools, attack book, ordnance, locks and death; camera-relative lanes keep both readable and one tank continues after its partner dies. Normal and Furious remain single. Focused 14/14, Chromium 17/17 zero errors, full suite exact 57-name baseline. Tally 121 complete / 9 partial / 19 pending. See docs/RAZORBACK_DUO_0915.md.

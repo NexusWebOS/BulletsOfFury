@@ -15662,6 +15662,7 @@ require('./test_sovereign_helper_enrage_0915.cjs')(vm,ctxv,ok);
 require('./test_sovereign_helper_spider_walk_0915.cjs')(vm,ctxv,ok);
 require('./test_sovereign_chain_lightning_0915.cjs')(vm,ctxv,ok);
 require('./test_sovereign_giant_strike_0915.cjs')(vm,ctxv,ok);
+require('./test_razorback_duo_0915.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

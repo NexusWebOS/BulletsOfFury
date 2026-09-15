@@ -270,9 +270,9 @@
     {
       "id": "S1-05",
       "group": "Stage 1: fodder, Razorback and jungle chopper",
-      "status": "pending",
+      "status": "complete",
       "request": "Hard Razorback: fight two simultaneously.",
-      "evidence": "",
+      "evidence": "RAZORBACK_DUO_0915.md",
       "dependency": "",
       "workOrder": 76,
       "difficulty": 4,
@@ -1476,7 +1476,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "Furious Storm Sovereign five-second giant lightning strike with shared yellow/red warnings, authored charge art, red release flash, suspended helper fire, and two measured safe corner lanes",
-    "evidence": "SOVEREIGN_GIANT_LIGHTNING_0915.md"
+    "description": "Hard Stage-1 Razorback duo with two complete authored tanks, independent component pools and attacks, camera-safe lanes, actor-specific damage and two-kill completion",
+    "evidence": "RAZORBACK_DUO_0915.md"
   }
 }

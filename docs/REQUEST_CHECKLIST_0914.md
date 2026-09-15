@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-15. **149 entries: 120 complete / 9 partial / 20 pending.**
+Updated 2026-09-15. **149 entries: 121 complete / 9 partial / 19 pending.**
 
-**29 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**28 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Furious Storm Sovereign five-second giant lightning strike with shared yellow/red warnings, authored charge art, red release flash, suspended helper fire, and two measured safe corner lanes [Proof](SOVEREIGN_GIANT_LIGHTNING_0915.md).
+Just verified: Hard Stage-1 Razorback duo with two complete authored tanks, independent component pools and attacks, camera-safe lanes, actor-specific damage and two-kill completion [Proof](RAZORBACK_DUO_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -24,7 +24,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | --- | ---: | ---: | ---: | ---: |
 | Earlier handoff, weapons and Tempest | 9 | 1 | 0 | 10 |
 | Shared combat, warnings and targeting | 12 | 2 | 1 | 15 |
-| Stage 1: fodder, Razorback and jungle chopper | 10 | 0 | 2 | 12 |
+| Stage 1: fodder, Razorback and jungle chopper | 11 | 0 | 1 | 12 |
 | Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
 | Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
@@ -73,7 +73,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S1-02 · Complete** — Jet guns: remove the extra generic steering/spread volley; use authored straight twin guns/rocket sequence. [Evidence](READABLE_ATTACKS_0914.md).
 - [x] **S1-03 · Complete** — Miniboss and boss weapon/charge sounds wired to their attacks. [Evidence](STAGE_1_5_CORRECTIONS_0914.md).
 - [x] **S1-04 · Complete** — Razorback baseline: faster projectiles, sonic boom and movement. [Evidence](RAZORBACK_SPEED_0914.md).
-- [ ] **S1-05 · Pending** — Hard Razorback: fight two simultaneously.
+- [x] **S1-05 · Complete** — Hard Razorback: fight two simultaneously. [Evidence](RAZORBACK_DUO_0915.md).
 - [ ] **S1-06 · Pending** — Furious Razorback: 50% larger, Furious palette, hyper tank behavior and Furious sonic waves.
 - [x] **S1-07 · Complete** — Jungle chopper pursuit and orbit transitions stabilized while retaining its attack patterns. [Evidence](MOVEMENT_BATCH_0914.md).
 - [x] **S1-08 · Complete** — Chopper rotor bed exists; obtain and tune the requested proper helicopter/propeller sound through the available sound engine or ElevenLabs. [Evidence](ROTOR_AUDIO_0914.md).
