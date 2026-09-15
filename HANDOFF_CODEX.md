@@ -504,3 +504,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: every live Razorback body ram now owns the shared green/yellow/red field and matching overhead alert. Tracking ends when yellow begins, so late dodges cannot move the committed lane.
 - Normal, both Hard actors and Furious retain their existing movement envelopes. Focused 9/9, Chromium 15/15 with zero errors, full suite exact 57-name baseline. Evidence: docs/RAZORBACK_SHARED_RAM_WARNING_0915.md. Tally remains 122 complete / 9 partial / 18 pending.
+
+## Codex update — 2026-09-15: Chrome Hammer shared leap warning
+
+- ENG-02 advances: the Chrome Hammer leap/slam now owns the shared green/yellow/red path field and matching overhead alert while preserving the original committed landing reticle. Late player movement cannot steer the attack.
+- The completed one-hand boomerang timing and behavior are unchanged. Focused 7/7, Chromium 16/16 with zero errors, full suite 56-name subset of the 57-name baseline and no new failure names. Evidence: docs/HAMMER_SHARED_LEAP_WARNING_0915.md. Tally remains 122 complete / 9 partial / 18 pending.

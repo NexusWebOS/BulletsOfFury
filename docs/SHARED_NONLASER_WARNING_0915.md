@@ -49,3 +49,7 @@ The unpowered Storm Sovereign ram now uses the same shared field and overhead al
 ## Razorback body-ram follow-up
 
 The Razorback body ram now uses the shared green/yellow/red FOV and overhead alert. It tracks only during green, commits at yellow and holds through red and release on Normal, both independent Hard tanks and the Furious hyper tank. Chromium 15/15 and focused section 333 9/9 pass. See [RAZORBACK_SHARED_RAM_WARNING_0915.md](RAZORBACK_SHARED_RAM_WARNING_0915.md).
+
+## Chrome Hammer leap/slam follow-up
+
+The Chrome Hammer leap/slam now projects the shared green/yellow/red FOV and overhead alert down its committed travel corridor while retaining the authored landing reticle. The target is sampled once before the tell and cannot chase a late dodge. Its completed one-hand boomerang remains unchanged. Chromium 16/16 and focused section 334 7/7 pass. See [HAMMER_SHARED_LEAP_WARNING_0915.md](HAMMER_SHARED_LEAP_WARNING_0915.md).

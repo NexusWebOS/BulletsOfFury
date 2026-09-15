@@ -1,0 +1,209 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-5 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the Easy/Normal Stage-5 replacement is the Chrome Hammer"
+    },
+    {
+      "pass": true,
+      "label": "the completed one-hand boomerang timing remains intact"
+    },
+    {
+      "pass": true,
+      "label": "authored Hammer, reticle and green/yellow/red warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green begins on the committed player impact point"
+    },
+    {
+      "pass": true,
+      "label": "green draws the shared field and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "yellow preserves the committed point after a late dodge"
+    },
+    {
+      "pass": true,
+      "label": "yellow draws the shared field and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "red preserves the same leap corridor and landing reticle"
+    },
+    {
+      "pass": true,
+      "label": "red draws the shared field and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "release begins the leap only after the complete warning"
+    },
+    {
+      "pass": true,
+      "label": "hammer_leap_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "hammer_leap_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "hammer_leap_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "hammer_leap_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "XENO REGENT",
+    "kind": "xenoregent",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "CHROME HAMMER",
+    "target": {
+      "x": 326,
+      "y": 392
+    },
+    "boomerang": {
+      "spin": 1.55,
+      "out": 0.7,
+      "returnSpeed": 315
+    }
+  },
+  "green": {
+    "state": "warn",
+    "t": 0.2,
+    "target": {
+      "x": 326,
+      "y": 392
+    },
+    "player": {
+      "x": 326,
+      "y": 392
+    },
+    "warn": {
+      "t": 0.2,
+      "warm": 1.2,
+      "released": false
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "bmfx_fov_green_tall",
+      "bmfx_alert_green_danger",
+      "hammer_reticle",
+      "hammer_charge",
+      "fury_thrusters_04",
+      "alert_up",
+      "ngm_space_atlas",
+      "nequipbox",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "state": "warn",
+    "t": 0.6,
+    "target": {
+      "x": 326,
+      "y": 392
+    },
+    "player": {
+      "x": 80,
+      "y": 270
+    },
+    "warn": {
+      "t": 0.6,
+      "warm": 1.2,
+      "released": false
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "bmfx_fov_yellow_tall",
+      "bmfx_alert_yellow_danger",
+      "hammer_reticle",
+      "hammer_charge",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "state": "warn",
+    "t": 1.08,
+    "target": {
+      "x": 326,
+      "y": 392
+    },
+    "player": {
+      "x": 425,
+      "y": 300
+    },
+    "warn": {
+      "t": 1.08,
+      "warm": 1.2,
+      "released": false
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "bmfx_fov_red_tall",
+      "bmfx_alert_red_danger",
+      "hammer_reticle",
+      "hammer_charge",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "state": "leap",
+    "t": 0,
+    "target": {
+      "x": 326,
+      "y": 392
+    },
+    "player": {
+      "x": 425,
+      "y": 300
+    },
+    "warn": {
+      "t": 1.2,
+      "warm": 1.2,
+      "released": true
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "hammer_leap",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\hammer_shared_leap_warning_0915\\hammer_leap_01_green.png",
+    "_shots\\hammer_shared_leap_warning_0915\\hammer_leap_02_yellow.png",
+    "_shots\\hammer_shared_leap_warning_0915\\hammer_leap_03_red.png",
+    "_shots\\hammer_shared_leap_warning_0915\\hammer_leap_04_release.png"
+  ]
+}

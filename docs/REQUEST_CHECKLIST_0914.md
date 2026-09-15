@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Shared non-laser warning migration for the Razorback body ram, with green-only tracking and a yellow/red committed dodge lane across Normal, Hard and Furious [Proof](RAZORBACK_SHARED_RAM_WARNING_0915.md).
+Just verified: Shared green/yellow/red corridor and overhead warning for the Chrome Hammer committed leap/slam while retaining its landing reticle and one-hand boomerang [Proof](HAMMER_SHARED_LEAP_WARNING_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 

@@ -34092,7 +34092,8 @@ function hammerBossTick(b,dt){
     hammerBoomerangTick(b,dt);
   }else if(h.state==='warn'){
     /* Commit immediately: the warning never chases the player after appearing. */
-    if(h.t>=1.2){hammerState(b,'leap');Audio.SFX.enemyShoot();}
+    const warn=1.2;combatWarningTick(b,'chrome-hammer-leap',Math.min(h.t,warn),warn);
+    if(h.t>=warn){hammerState(b,'leap');Audio.SFX.enemyShoot();}
   }else if(h.state==='leap'||h.state==='back'){
     const p=clamp(h.t/.52,0,1),q=p*p*(3-2*p);
     b.x=lerp(h.ox,h.tx,q);b.y=lerp(h.oy,h.ty,q);
@@ -34195,6 +34196,8 @@ function hammerBossDraw(b){
   if(s==='warn'){key='charge';f=6+Math.min(5,Math.floor(h.t/1.2*6));}
   if(s==='leap'||s==='back'){key='leap';f=Math.min(11,Math.floor(h.t/.52*12));}
   if(s==='warn'){
+    const k=clamp(h.t/1.2,0,1);
+    combatWarningDraw(b,{x:b.x,y:b.y,ex:h.tx,ey:h.ty,progress:k,width:96});
     const ri=hammerFrame('reticle',0,h.t<.4?null:h.t<.8?'yellow':'red');
     if(ri){ctx.save();ctx.globalAlpha=.7+.3*Math.sin(h.t*30);ctx.drawImage(ri,h.tx-50,h.ty-50,100,100);ctx.restore();}
   }
