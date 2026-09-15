@@ -1,0 +1,195 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-4 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Sovereign, lightning-lance and lightning-ball art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "Normal retains the exact original chain-lightning count and width"
+    },
+    {
+      "pass": true,
+      "label": "Hard doubles both side-cannon volleys and retains the heavy center bolt"
+    },
+    {
+      "pass": true,
+      "label": "Hard visibly widens eight distinct side-cannon lanes"
+    },
+    {
+      "pass": true,
+      "label": "the Hard render requests the authored chain-lightning combat atlas"
+    },
+    {
+      "pass": true,
+      "label": "Furious completes nine bolts plus three lightning balls on its faster clock"
+    },
+    {
+      "pass": true,
+      "label": "the three shootable balls alternate the authored left/right racks"
+    },
+    {
+      "pass": true,
+      "label": "the Furious render requests the authored animated lightning-ball reel"
+    },
+    {
+      "pass": true,
+      "label": "Furious exits its accelerated lightning phase at the explicit beat"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_chain_01_hard_wide_double is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_chain_02_furious_balls is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "STORM SOVEREIGN MK II",
+    "kind": "stormsovereign",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "normal": {
+    "bolts": 5,
+    "orbs": 1,
+    "profile": {
+      "hard": false,
+      "furious": false,
+      "beats": [
+        1.12,
+        1.68,
+        2.28
+      ],
+      "end": 4.12,
+      "orbTimes": [
+        2.92
+      ],
+      "speed": 1,
+      "outer": [
+        -0.24,
+        0.24
+      ],
+      "inner": [
+        0.18,
+        -0.18
+      ]
+    }
+  },
+  "hard": {
+    "mode": "lightning",
+    "bolts": 9,
+    "orbs": 0,
+    "angles": [
+      -0.38,
+      -0.18,
+      0.18,
+      0.38,
+      0.1,
+      0.32,
+      -0.32,
+      -0.1
+    ],
+    "balls": [],
+    "gets": [
+      "bg_stage04_master",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_boss_energized_3",
+      "s4w_lightning_shield_3",
+      "s4w_power_node_3",
+      "s4w_power_node_7",
+      "s4w_power_node_11",
+      "s4w_power_node_0",
+      "s4w_drone_barrel_6",
+      "cfx_stage4_chain_lightning",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_over"
+    ]
+  },
+  "furious": {
+    "mode": "lightning",
+    "bolts": 9,
+    "orbs": 3,
+    "angles": [],
+    "balls": [
+      {
+        "i": 0,
+        "side": -1,
+        "shootable": true,
+        "x": 270.81270654082954,
+        "y": 201.12307139244322
+      },
+      {
+        "i": 1,
+        "side": 1,
+        "shootable": true,
+        "x": 422.30033506317955,
+        "y": 144.47703997018428
+      },
+      {
+        "i": 2,
+        "side": -1,
+        "shootable": true,
+        "x": 251.88252942302802,
+        "y": 119.874663040646
+      }
+    ],
+    "gets": [
+      "bg_stage04_master",
+      "s4_chase_0915",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_muzzle_orb_5",
+      "s4w_boss_energized_8",
+      "s4w_lightning_shield_5",
+      "s4w_power_node_2",
+      "s4w_power_node_9",
+      "s4w_power_node_14",
+      "s4w_power_node_5",
+      "s4w_drone_barrel_0",
+      "s4w_lightning_ball_0",
+      "s4w_lightning_ball_9",
+      "waf_rocket_2",
+      "s4w_lightning_ball_2",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_over"
+    ]
+  },
+  "shots": [
+    "_shots\\sovereign_chain_lightning_0915\\sovereign_chain_01_hard_wide_double.png",
+    "_shots\\sovereign_chain_lightning_0915\\sovereign_chain_02_furious_balls.png"
+  ]
+}

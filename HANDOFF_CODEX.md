@@ -474,3 +474,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 - S4-13 is complete: generator damage during the red side phase makes both helpers walk upward and back within explicit 58px Hard / 72px Furious limits, while preserving the edge route, separated streams, and pause windows.
 - Different nodes are recognized, repeated damage cannot pin the motion at its start, and a new response can begin after the pair returns. Normal is unchanged.
 - Verification: focused 9/9, Chromium 13/13 with zero errors, full suite no new failure names. Evidence: docs/SOVEREIGN_HELPER_SPIDER_WALK_0915.md.
+
+## Codex update — 2026-09-15: Sovereign chain lightning
+
+- S4-14 is complete: Hard doubles and widens both chain-lightning side volleys for nine total bolts; Furious accelerates and widens the cycle and adds three distinct shootable balls from alternating authored racks. Normal preserves its original 5-bolt/1-ball pattern.
+- Verification: focused 10/10, Chromium 13/13 with zero errors, full suite exact 57-name baseline. Evidence: docs/SOVEREIGN_CHAIN_LIGHTNING_0915.md.

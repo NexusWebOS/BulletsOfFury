@@ -718,9 +718,9 @@
     {
       "id": "S4-14",
       "group": "Stage 4: Olive Warden and Sovereign",
-      "status": "pending",
+      "status": "complete",
       "request": "Hard Sovereign chain lightning: double and widen with extra projectiles; Furious faster/wider and more frequent lightning balls.",
-      "evidence": "",
+      "evidence": "SOVEREIGN_CHAIN_LIGHTNING_0915.md",
       "dependency": "",
       "workOrder": 74,
       "difficulty": 4,

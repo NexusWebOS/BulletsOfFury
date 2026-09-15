@@ -4261,3 +4261,6 @@ S4-12 complete. A Hard/Furious generator hit enrages the surviving Sovereign hel
 
 ## 2026-09-15 Sovereign helper spider walk
 S4-13 complete. Continued generator damage during the red side-stream phase synchronizes a bounded upward-and-back helper walk: 58px Hard, 72px Furious, one response per trigger without damage-tick resets, retriggerable after return. Edge stations, separated lanes and pause windows remain intact; Normal is unchanged. Focused section 327 passes 9/9; Chromium 13/13 zero errors; full suite has 56 established names and no new failures, with only the known flaky sand-tank spawn assertion absent. See docs/SOVEREIGN_HELPER_SPIDER_WALK_0915.md.
+
+## 2026-09-15 Sovereign chain lightning
+S4-14 complete. Normal retains 5 bolts/1 ball; Hard fires nine wider chain bolts; Furious widens and accelerates the nine-bolt cycle and launches three separately timed shootable balls from alternating L/R/L authored racks. Focused section 328 passes 10/10; Chromium 13/13 zero errors; full suite exact 57-name baseline. See docs/SOVEREIGN_CHAIN_LIGHTNING_0915.md.
