@@ -707,9 +707,9 @@
     {
       "id": "S4-13",
       "group": "Stage 4: Olive Warden and Sovereign",
-      "status": "pending",
+      "status": "complete",
       "request": "Enraged helpers react to generator damage with limited upward/backward tracking, preserving the edge-hugging/spider-walk dodge route.",
-      "evidence": "",
+      "evidence": "SOVEREIGN_HELPER_SPIDER_WALK_0915.md",
       "dependency": "",
       "workOrder": 73,
       "difficulty": 4,

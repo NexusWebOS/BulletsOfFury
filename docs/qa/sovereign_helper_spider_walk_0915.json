@@ -1,0 +1,150 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-4 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored boss and helper plates decode before the walk capture"
+    },
+    {
+      "pass": true,
+      "label": "a second live generator hit arms one bounded spider walk"
+    },
+    {
+      "pass": true,
+      "label": "Hard reaches its limited 58-pixel upward bound"
+    },
+    {
+      "pass": true,
+      "label": "the pair reverses and walks back toward its starting row"
+    },
+    {
+      "pass": true,
+      "label": "both halves of the walk preserve the edge-hugging route"
+    },
+    {
+      "pass": true,
+      "label": "both offset streams and their pause windows continue through the walk"
+    },
+    {
+      "pass": true,
+      "label": "another generator hit can restart the bounded response after it returns"
+    },
+    {
+      "pass": true,
+      "label": "Furious uses the explicit 72-pixel bound without leaving the side lane"
+    },
+    {
+      "pass": true,
+      "label": "Normal remains isolated from helper spider-walk behavior"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_spider_01_up is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_spider_02_back is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "STORM SOVEREIGN MK II",
+    "kind": "stormsovereign",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "first": {
+    "flag": true,
+    "reacts": 0,
+    "walk": false
+  },
+  "second": {
+    "flag": true,
+    "reacts": 1,
+    "walk": true
+  },
+  "up": {
+    "walk": {
+      "active": true,
+      "t": 1.5833333333333326,
+      "offset": -55.788472367996135,
+      "depth": 58,
+      "up": true,
+      "back": false,
+      "reacts": 1
+    },
+    "helpers": [
+      {
+        "side": -1,
+        "x": 147.99999982516377,
+        "y": 227.572186110968,
+        "rage": true
+      },
+      {
+        "side": 1,
+        "x": 532.0000001748361,
+        "y": 227.572186110968,
+        "rage": true
+      }
+    ],
+    "shots": 8,
+    "left": 5,
+    "right": 3,
+    "gaps": 2
+  },
+  "back": {
+    "walk": {
+      "active": true,
+      "t": 3.0833333333333273,
+      "offset": -7.271250178316598,
+      "depth": 58,
+      "up": true,
+      "back": true,
+      "reacts": 1
+    },
+    "helpers": [
+      {
+        "side": -1,
+        "x": 147.99999999999994,
+        "y": 272.53379928916917,
+        "rage": true
+      },
+      {
+        "side": 1,
+        "x": 532.0000000000002,
+        "y": 272.53379928916917,
+        "rage": true
+      }
+    ],
+    "shots": 11,
+    "left": 6,
+    "right": 5,
+    "gaps": 7
+  },
+  "again": {
+    "flag": true,
+    "reacts": 2,
+    "walk": true
+  },
+  "fury": {
+    "depth": 72,
+    "offset": -71.99825009745383
+  },
+  "normal": {
+    "flag": false,
+    "reacts": null,
+    "walk": false
+  },
+  "shots": [
+    "_shots\\sovereign_helper_spider_walk_0915\\sovereign_spider_01_up.png",
+    "_shots\\sovereign_helper_spider_walk_0915\\sovereign_spider_02_back.png"
+  ]
+}

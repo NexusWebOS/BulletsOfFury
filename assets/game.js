@@ -15004,10 +15004,23 @@ function stage4CoreEnrageStart(b,node){
   const S=b&&b._s4war,D=stage4CoreDifficulty();if(!S||!S.coreUnlocked||!D.hard||S.coreEnrage&&S.coreEnrage.active)return false;
   const live=S.coreTurrets.filter(t=>!t.dead&&t.materialize>=.92);if(!live.length)return false;
   const duration=D.furious?6.8:5.6;
-  S.coreEnrage={active:true,t:0,dur:duration,mode:'deploy',sourceSide:node&&node.side||0,shots:0,leftShots:0,rightShots:0,gaps:0};
+  S.coreEnrage={active:true,t:0,dur:duration,mode:'deploy',sourceSide:node&&node.side||0,shots:0,leftShots:0,rightShots:0,gaps:0,
+    walkActive:false,walkT:0,walkOffset:0,walkDepth:D.furious?72:58,walkDuration:D.furious?3.15:3.45,reacts:0,walkSeenUp:false,walkSeenBack:false};
   S.coreEnrageCount++;
   for(const t of live){t.rage=true;t.rageFrom={x:t.x,y:t.y};t.rageShot=t.side>0?.16:0;t.rageBurst=0;t.state='rage';t.heat=.78;t.vulnerable=false;}
   stage4WarfareSound('bossPhase','enemyLightningChaingun');shake=Math.max(shake,8);return true;
+}
+function stage4CoreEnrageReact(b,node){
+  const S=b&&b._s4war,R=S&&S.coreEnrage;if(!R||!R.active||R.mode==='retreat')return false;
+  R.reacts++;if(!R.walkActive){R.walkActive=true;R.walkT=0;R.walkOffset=0;R.walkSeenUp=false;R.walkSeenBack=false;
+    stage4WarfareSound('bossShieldStatic','enemyElectricBolt');}
+  return true;
+}
+function stage4CoreEnrageWalkTick(R,dt){
+  if(!R||!R.walkActive)return 0;R.walkT+=dt;const q=clamp(R.walkT/Math.max(.1,R.walkDuration),0,1),turn=.52;
+  if(q<=turn){const u=q/turn,e=u*u*(3-2*u);R.walkOffset=-R.walkDepth*e;if(u>.20)R.walkSeenUp=true;}
+  else{const u=(q-turn)/(1-turn),e=u*u*(3-2*u);R.walkOffset=-R.walkDepth*(1-e);if(u>.20)R.walkSeenBack=true;}
+  if(q>=1){R.walkActive=false;R.walkOffset=0;}return R.walkOffset;
 }
 function stage4CoreEnrageTick(b,dt,phase){
   const S=b&&b._s4war,R=S&&S.coreEnrage;if(!R||!R.active)return false;
@@ -15015,7 +15028,8 @@ function stage4CoreEnrageTick(b,dt,phase){
   if(!live.length){stage4CoreEnrageEnd(b);return false;}
   R.t+=dt;const travel=.62,retreatAt=R.dur-travel;
   R.mode=R.t<travel?'deploy':(R.t<retreatAt?'fire':'retreat');
-  const left=camLeftX(),right=camRightX(),sideY=clamp((S.homeY||150)+205,292,VH-230),target=typeof targetShip==='function'?targetShip((left+right)*.5,sideY):player;
+  const left=camLeftX(),right=camRightX(),baseSideY=clamp((S.homeY||150)+205,292,VH-230),
+        sideY=baseSideY+stage4CoreEnrageWalkTick(R,dt),target=typeof targetShip==='function'?targetShip((left+right)*.5,sideY):player;
   for(const t of live){
     t.flash=Math.max(0,(t.flash||0)-dt);t.deflectFlash=Math.max(0,(t.deflectFlash||0)-dt);t.deflectSfx=Math.max(0,(t.deflectSfx||0)-dt);
     const sideTarget={x:t.side<0?left+48:right-48,y:sideY},home=stage4GeneratorColumn(b,t.side),homeTarget={x:home.x,y:clamp(home.y-123,80,108)};
@@ -15270,7 +15284,10 @@ function stage4ShieldAbsorbHit(b,dmg,x,y){
   if(H.active&&n&&!n.dead){
     /* The Sovereign's paired generator nodes are the named exception: Mike explicitly made the
        player's wide piercing laser destroy both nodes in a column on the same pass. */
-    if(!n._coreRageTriggered&&stage4CoreEnrageStart(b,n))n._coreRageTriggered=true;
+    if(!n._coreRageTriggered){
+      if(stage4CoreEnrageStart(b,n))n._coreRageTriggered=true;
+      else if(b._s4war.coreEnrage&&b._s4war.coreEnrage.active){n._coreRageTriggered=true;stage4CoreEnrageReact(b,n);}
+    }else stage4CoreEnrageReact(b,n);
     if(_dmgBullet&&(_dmgBullet.kind==='beam'||_dmgBullet._stage4WideBeam))n.hp-=Math.max(1,dmg||1);
     else enemyPoolDamage(n,'hp',Math.max(1,dmg||1),'stage4Generator','maxhp');
     n.flash=.16;stage4ContactFeedback(b,x==null?n.x:x,y==null?n.y:y,8,'blue');

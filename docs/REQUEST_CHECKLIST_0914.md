@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-15. **149 entries: 117 complete / 9 partial / 23 pending.**
+Updated 2026-09-15. **149 entries: 118 complete / 9 partial / 22 pending.**
 
-**32 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**31 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -27,7 +27,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Stage 1: fodder, Razorback and jungle chopper | 10 | 0 | 2 | 12 |
 | Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
-| Stage 4: Olive Warden and Sovereign | 11 | 0 | 7 | 18 |
+| Stage 4: Olive Warden and Sovereign | 12 | 0 | 6 | 18 |
 | Stages 5-9: space and encounter cleanup | 17 | 2 | 4 | 23 |
 | Manual missile tiers and supplies | 6 | 2 | 1 | 9 |
 | Pause, saving, title and pilot selection | 15 | 0 | 0 | 15 |
@@ -127,7 +127,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [ ] **S4-10 · Pending** — Dark Chromium lethal hit: explicitly requested ship-disintegration death and sound; preserve ordinary burn/spin/crash deaths elsewhere. Dependency: SpriteCook.
 - [x] **S4-11 · Complete** — Hard/Furious Sovereign helpers: 50% more shield HP, faster straight/diagonal attacks and forward horizontal blocking row. [Evidence](SOVEREIGN_HELPER_BLOCKADE_0915.md).
 - [x] **S4-12 · Complete** — Generator hit enrages helpers red with an asterisk; move to screen sides and face player for 5-7 seconds of staggered rapid streams with traversable gaps. [Evidence](SOVEREIGN_HELPER_ENRAGE_0915.md).
-- [ ] **S4-13 · Pending** — Enraged helpers react to generator damage with limited upward/backward tracking, preserving the edge-hugging/spider-walk dodge route.
+- [x] **S4-13 · Complete** — Enraged helpers react to generator damage with limited upward/backward tracking, preserving the edge-hugging/spider-walk dodge route. [Evidence](SOVEREIGN_HELPER_SPIDER_WALK_0915.md).
 - [ ] **S4-14 · Pending** — Hard Sovereign chain lightning: double and widen with extra projectiles; Furious faster/wider and more frequent lightning balls.
 - [ ] **S4-15 · Pending** — Furious Sovereign giant lightning strike: five-second charge, yellow/red FOV, red flash, darkened screen/crackling core; bottom corners remain safe.
 - [ ] **S4-16 · Pending** — Authored left/right escape arrows: flipped pair, flashing with synchronized warning sounds for the giant strike. Dependency: SpriteCook.
