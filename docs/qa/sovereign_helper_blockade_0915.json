@@ -1,0 +1,304 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-4 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Sovereign, helper, rotary barrel, shield and node art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "Normal helpers keep the existing shield pool"
+    },
+    {
+      "pass": true,
+      "label": "Normal helpers never enter the difficulty blockade row"
+    },
+    {
+      "pass": true,
+      "label": "Hard gives both helper shields exactly 50 percent more capacity"
+    },
+    {
+      "pass": true,
+      "label": "Hard completes a timed forward advance and holds the row"
+    },
+    {
+      "pass": true,
+      "label": "both helpers form one forward horizontal line"
+    },
+    {
+      "pass": true,
+      "label": "the paired row anchors on the player with a traversable center spacing"
+    },
+    {
+      "pass": true,
+      "label": "the live draw uses authored helper hulls and rotating barrel frames"
+    },
+    {
+      "pass": true,
+      "label": "the blocking row follows the player horizontally during its hold and respects the edge lane"
+    },
+    {
+      "pass": true,
+      "label": "Hard and Furious progressively accelerate the straight rotary stream"
+    },
+    {
+      "pass": true,
+      "label": "Hard and Furious helper rounds travel progressively faster"
+    },
+    {
+      "pass": true,
+      "label": "Furious inherits the reinforced shields and its faster difficulty profile"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_helpers_01_normal_home is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_helpers_02_hard_blockade is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_helpers_03_hard_tracking is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "STORM SOVEREIGN MK II",
+    "kind": "stormsovereign",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "normalSetup": {
+    "shields": [
+      102,
+      102
+    ]
+  },
+  "normal": {
+    "mode": "home",
+    "mix": 0,
+    "anchor": null,
+    "gets": [
+      "bg_stage04_master",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_muzzle_lightning_0",
+      "s4w_boss_idle",
+      "s4w_lightning_shield_0",
+      "s4w_power_node_0",
+      "s4w_power_node_4",
+      "s4w_power_node_8",
+      "s4w_power_node_12",
+      "s4w_helper_dual_7",
+      "s4w_helper_dual_hot_7",
+      "s4w_final_chaingun_7",
+      "s4w_helper_dual_5",
+      "s4w_helper_dual_hot_5",
+      "s4w_final_chaingun_5",
+      "s4w_drone_barrel_0",
+      "s4w_lightning_mg_round_0",
+      "ship_yuri_g1",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_over"
+    ],
+    "turrets": [
+      {
+        "side": -1,
+        "x": 129,
+        "y": 105,
+        "shield": 102,
+        "maxShield": 102,
+        "state": "overheat",
+        "ang": 1.5707963267948966
+      },
+      {
+        "side": 1,
+        "x": 551,
+        "y": 105,
+        "shield": 102,
+        "maxShield": 102,
+        "state": "windup",
+        "ang": 1.5707963267948966
+      }
+    ],
+    "shotCount": 59
+  },
+  "hardSetup": {
+    "shields": [
+      153,
+      153
+    ]
+  },
+  "hard": {
+    "mode": "hold",
+    "mix": 1,
+    "anchor": 280,
+    "gets": [
+      "bg_stage04_master",
+      "s4_chase_0915",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_muzzle_lightning_0",
+      "s4w_boss_idle",
+      "s4w_lightning_shield_0",
+      "s4w_power_node_0",
+      "s4w_power_node_4",
+      "s4w_power_node_8",
+      "s4w_power_node_12",
+      "s4w_helper_dual_0",
+      "s4w_helper_dual_hot_0",
+      "s4w_final_chaingun_0",
+      "s4w_helper_dual_6",
+      "s4w_helper_dual_hot_6",
+      "s4w_final_chaingun_6",
+      "s4w_drone_barrel_0",
+      "s4w_lightning_mg_round_0",
+      "ship_yuri_g1",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_over"
+    ],
+    "turrets": [
+      {
+        "side": -1,
+        "x": 221.93298387534355,
+        "y": 325.8521899845402,
+        "shield": 153,
+        "maxShield": 153,
+        "state": "overheat",
+        "ang": 1.5707963267948966
+      },
+      {
+        "side": 1,
+        "x": 338.13764389674947,
+        "y": 325.8521899845402,
+        "shield": 153,
+        "maxShield": 153,
+        "state": "windup",
+        "ang": 1.5707963267948966
+      }
+    ],
+    "shotCount": 77
+  },
+  "tracked": {
+    "mode": "hold",
+    "mix": 1,
+    "anchor": 459.5935241439298,
+    "gets": [
+      "bg_stage04_master",
+      "s4_chase_0915",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_muzzle_lightning_0",
+      "s4w_boss_idle",
+      "s4w_lightning_shield_0",
+      "s4w_power_node_0",
+      "s4w_power_node_4",
+      "s4w_power_node_8",
+      "s4w_power_node_12",
+      "s4w_helper_dual_3",
+      "s4w_helper_dual_hot_3",
+      "s4w_final_chaingun_3",
+      "s4w_helper_dual_1",
+      "s4w_helper_dual_hot_1",
+      "s4w_final_chaingun_1",
+      "s4w_drone_barrel_0",
+      "s4w_lightning_mg_round_0",
+      "ship_yuri_g1",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_over"
+    ],
+    "turrets": [
+      {
+        "side": -1,
+        "x": 397.98186761428155,
+        "y": 325.99976392605436,
+        "shield": 153,
+        "maxShield": 153,
+        "state": "overheat",
+        "ang": 1.5707963267948966
+      },
+      {
+        "side": 1,
+        "x": 513.9821944858986,
+        "y": 325.99976392605436,
+        "shield": 153,
+        "maxShield": 153,
+        "state": "fire",
+        "ang": 1.5707963267948966
+      }
+    ],
+    "shotCount": 82
+  },
+  "normalFire": {
+    "count": 24,
+    "speed": 9.412719624
+  },
+  "hardFire": {
+    "count": 32,
+    "speed": 12.352910953823999
+  },
+  "furiousFire": {
+    "count": 38,
+    "speed": 15.425450826240002
+  },
+  "furiousSetup": {
+    "shields": [
+      153,
+      153
+    ],
+    "spec": {
+      "hard": true,
+      "furious": true,
+      "shieldMul": 1.5,
+      "windup": 0.94,
+      "straightBeat": 0.022,
+      "diagBeat": 0.037,
+      "diagGap": 0.21,
+      "shotSpeed": 8.05,
+      "aimGain": 9.5,
+      "hold": 3
+    }
+  },
+  "shots": [
+    "_shots\\sovereign_helper_blockade_0915\\sovereign_helpers_01_normal_home.png",
+    "_shots\\sovereign_helper_blockade_0915\\sovereign_helpers_02_hard_blockade.png",
+    "_shots\\sovereign_helper_blockade_0915\\sovereign_helpers_03_hard_tracking.png"
+  ]
+}

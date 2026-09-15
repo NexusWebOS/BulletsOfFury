@@ -14894,7 +14894,9 @@ function stage4WarfareInit(b){
     coreTurrets:[],coreUnlocked:false,coreGeneration:0,coreBurstSerial:0,coreShots:0,
     coreBarrelShots:{'-1':0,'1':0},coreBlockedHits:0,coreVulnerableHits:0,
     coreCycleSeen:{windup:false,fire:false,overheat:false},coreSpreadCd:0,coreSpreadWave:0,
-    coreSpreadShots:0,coreSpreadLast:null,miniHard:null,miniRamCount:0,miniHardLog:[]};
+    coreSpreadShots:0,coreSpreadLast:null,coreFormationT:0,coreFormationMix:0,
+    coreFormationMode:'home',coreFormationAnchor:null,coreFormationSeen:{advance:false,hold:false,retreat:false},
+    miniHard:null,miniRamCount:0,miniHardLog:[]};
   if(mini){
     /* THE OLIVE WARDEN FIGHTS ALONE (0905h). Mike, item 4: "it should no longer get its helpers
        either." The two chaingun drones were built HERE, at init - the 'drones' MODE only revealed
@@ -14958,14 +14960,45 @@ function stage4MiniDroneDamage(b,d,dmg){
    chosen at the START of windup, so the turn is the tell - you see it angle before it fires.
    ============================================================ */
 const S4H_SCALE=.40, S4H_SIZE=132*S4H_SCALE, S4H_HALF=S4H_SIZE/2;
-function stage4CoreTurretTarget(b,side){const p=stage4GeneratorColumn(b,side);return {x:p.x,y:clamp(p.y-123,80,108)};}
+function stage4CoreDifficulty(){
+  const key=typeof diffKey==='undefined'?'normal':diffKey,furious=key==='furious',hard=furious||key==='hard';
+  return {hard:hard,furious:furious,shieldMul:hard?1.5:1,windup:furious?.94:(hard?1.08:1.35),
+    straightBeat:furious?.022:(hard?.026:null),diagBeat:furious?.037:(hard?.043:.055),
+    diagGap:furious?.21:(hard?.25:.32),shotSpeed:furious?8.05:(hard?7.62:7.10),
+    aimGain:furious?9.5:(hard?8:6),hold:furious?3.0:2.55};
+}
+function stage4CoreFormationTick(b,dt){
+  const S=b&&b._s4war,D=stage4CoreDifficulty();if(!S||!S.coreUnlocked)return;
+  const live=S.coreTurrets.filter(t=>!t.dead&&t.materialize>=.92);
+  if(!D.hard||live.length<2){S.coreFormationMode='home';S.coreFormationMix=0;S.coreFormationT=0;return;}
+  S.coreFormationT=(S.coreFormationT||0)+dt;
+  const home=2.20,travel=.72,hold=D.hold,cycle=home+travel+hold+travel+1.45,u=S.coreFormationT%cycle;
+  let mode='home',mix=0;
+  if(u>=home&&u<home+travel){mode='advance';const q=(u-home)/travel;mix=q*q*(3-2*q);}
+  else if(u<home+travel+hold){mode='hold';mix=1;}
+  else if(u<home+travel+hold+travel){mode='retreat';const q=(u-home-travel-hold)/travel;mix=1-q*q*(3-2*q);}
+  S.coreFormationMode=mode;S.coreFormationMix=mix;
+  if(S.coreFormationSeen&&mode!=='home')S.coreFormationSeen[mode]=true;
+  const left=camLeftX(),right=camRightX(),mid=(left+right)*.5,target=typeof targetShip==='function'?targetShip(mid,315):player;
+  const desired=clamp(target&&target.x!=null?target.x:mid,left+105,right-105);
+  if(S.coreFormationAnchor==null)S.coreFormationAnchor=desired;
+  S.coreFormationAnchor+=(desired-S.coreFormationAnchor)*Math.min(1,dt*(D.furious?6.8:5.8));
+}
+function stage4CoreTurretTarget(b,side){
+  const S=b._s4war,p=stage4GeneratorColumn(b,side),home={x:p.x,y:clamp(p.y-123,80,108)},mix=S.coreFormationMix||0;
+  if(mix<=0)return home;
+  const left=camLeftX(),right=camRightX(),anchor=clamp(S.coreFormationAnchor==null?(left+right)*.5:S.coreFormationAnchor,left+105,right-105),
+        row={x:anchor+side*58,y:clamp((S.homeY||150)+176,286,350)};
+  return {x:lerp(home.x,row.x,mix),y:lerp(home.y,row.y,mix)};
+}
 function stage4CoreTurretSpawnMissing(b,threshold){
   const S=b&&b._s4war;if(!S||S.mini)return 0;S.coreUnlocked=true;S.coreGeneration++;
+  const D=stage4CoreDifficulty();
   let spawned=0;
   for(const side of [-1,1]){
     const old=S.coreTurrets.find(q=>q.side===side);
     if(old&&!old.dead)continue;
-    const p=stage4CoreTurretTarget(b,side),hp=170+S.coreGeneration*20,shield=90+S.coreGeneration*12,
+    const p=stage4CoreTurretTarget(b,side),hp=170+S.coreGeneration*20,shield=Math.ceil((90+S.coreGeneration*12)*D.shieldMul),
           t={side:side,x:p.x,y:p.y,hp:hp,maxhp:hp,shield:shield,maxShield:shield,dead:false,spawnT:0,materialize:0,
              flash:0,deflectFlash:0,deflectSfx:0,ang:Math.PI/2,aimTo:Math.PI/2,mode:'down',burstLeft:0,spin:side<0?0:4,
              /* The right helper is one half-cycle behind the left. Their fire and orange punish
@@ -15044,22 +15077,22 @@ function stage4CoreTurretMuzzle(b,t,barrelSide){
   navalFlash(null,p,.70,'s4w_muzzle_lightning',{n:8,hpx:42*S4H_SCALE,life:.095,anchor:.27,angle:p.angle,follow:follow});
 }
 function stage4CoreTurretTick(b,dt,phase){
-  const S=b&&b._s4war;if(!S||!S.coreUnlocked)return;
+  const S=b&&b._s4war;if(!S||!S.coreUnlocked)return;const D=stage4CoreDifficulty();stage4CoreFormationTick(b,dt);
   for(const t of S.coreTurrets){
     if(t.dead)continue;const p=stage4CoreTurretTarget(b,t.side);
     t.spawnT+=dt;t.materialize=clamp(t.spawnT/.62,0,1);t.flash=Math.max(0,t.flash-dt);
     t.deflectFlash=Math.max(0,(t.deflectFlash||0)-dt);t.deflectSfx=Math.max(0,(t.deflectSfx||0)-dt);
     t.x+=(p.x-t.x)*Math.min(1,dt*8);t.y+=(p.y-t.y)*Math.min(1,dt*8);
     if(t.aimTo==null)t.aimTo=Math.PI/2;
-    t.ang=(t.ang==null?Math.PI/2:t.ang)+stage4AngleDelta(t.ang==null?Math.PI/2:t.ang,t.aimTo)*Math.min(1,dt*6);
+    t.ang=(t.ang==null?Math.PI/2:t.ang)+stage4AngleDelta(t.ang==null?Math.PI/2:t.ang,t.aimTo)*Math.min(1,dt*D.aimGain);
     if(t.materialize<1)continue;
     t.stateT+=dt;t.vulnerable=t.state==='overheat';S.coreCycleSeen[t.state]=true;
     if(t.state==='windup'){
       if(t.stateT<0){t.reelSpeed=0;t.heat=0;continue;}
       if(!t.windupSfx){t.windupSfx=true;stage4WarfareSound('bossWeaponCharge','enemyElectricBolt');}
-      const q=clamp(t.stateT/1.35,0,1);
+      const q=clamp(t.stateT/D.windup,0,1);
       t.reelSpeed=2.5+(31+phase*2.5)*q*q;t.heat=.04+.12*q;
-      if(t.stateT>=1.35){t.state='fire';t.stateT=0;t.fireShot=0;t.heat=.16;t.burstLeft=(t.mode==='diag')?4:0;
+      if(t.stateT>=D.windup){t.state='fire';t.stateT=0;t.fireShot=0;t.heat=.16;t.burstLeft=(t.mode==='diag')?4:0;
         t.barrelNext=t.side<0?-1:1;S.coreBurstSerial++;
         stage4WarfareSound('enemyLightningChaingun','enemyMachineGunHeavy');}
     }else if(t.state==='fire'){
@@ -15068,12 +15101,12 @@ function stage4CoreTurretTick(b,dt,phase){
       while(t.fireShot<=0&&t.stateT<2.0){
         if(t.mode==='diag'){
           /* 4 rounds 55 ms apart, then a beat - "burst round firing patterns" */
-          if(t.burstLeft>1){t.burstLeft--;t.fireShot+=.055;}
-          else{t.burstLeft=4;t.fireShot+=.32;}
-        } else t.fireShot+=(phase>=3?.028:.034);
+          if(t.burstLeft>1){t.burstLeft--;t.fireShot+=D.diagBeat;}
+          else{t.burstLeft=4;t.fireShot+=D.diagGap;}
+        } else t.fireShot+=D.straightBeat||(phase>=3?.028:.034);
         const barrelSide=t.barrelNext;t.barrelNext=-t.barrelNext;
         const tip=stage4CoreTurretTip(t,barrelSide),ang=tip.angle,shot=stage4WarfareShot(
-          b,tip,ang,7.10+phase*.20,'lightningmg',{accel:.22,max:8.70,szMul:1.20});   /* .80 -> 1.20, Mike 0906: "needs bigger bullets" */
+          b,tip,ang,D.shotSpeed+phase*.20,'lightningmg',{accel:D.hard?.30:.22,max:(D.furious?10.1:(D.hard?9.55:8.70)),szMul:1.20});   /* .80 -> 1.20, Mike 0906: "needs bigger bullets" */
         shot._s4CoreSide=t.side;shot._s4CoreBarrel=barrelSide;shot._s4CoreGeneration=t.generation;
         S.coreLastShot={helperSide:t.side,barrelSide:barrelSide,angle:ang,x:tip.x,y:tip.y};
         S.coreShots++;S.coreBarrelShots[barrelSide]++;stage4CoreTurretMuzzle(b,t,barrelSide);

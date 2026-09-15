@@ -15657,6 +15657,7 @@ require('./test_olive_warden_hard_ram_0915.cjs')(vm,ctxv,ok);
 require('./test_difficulty_elite_aces_0915.cjs')(vm,ctxv,ok);
 require('./test_olive_warden_escorts_0915.cjs')(vm,ctxv,ok);
 require('./test_continue_up_rewards_0915.cjs')(vm,ctxv,ok);
+require('./test_sovereign_helper_blockade_0915.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

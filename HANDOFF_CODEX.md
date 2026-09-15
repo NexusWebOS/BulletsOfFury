@@ -456,3 +456,9 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 - Either co-op seat dying blocks the deathless reward. The collected credit extends the shared finite bank, survives campaign save/load, and is shown on the Continue screen.
 - Current art is a clearly marked composition of the authored Life Up; MODE-08 still owns the dedicated SpriteCook pickup art.
 - Verification: focused 18/18, Chromium 18/18 with zero errors, full suite exact 57-name recorded baseline. Evidence: docs/CONTINUE_UP_REWARDS_0915.md.
+
+## Codex update — 2026-09-15: Sovereign helper blockade
+
+- S4-11 is complete: Hard/Furious Sovereign helpers get 50% more shield capacity, faster attack handling and a timed forward blocking row that follows the player before returning to its generator stations.
+- Normal remains unchanged. S4-12 and S4-13 still own the generator-hit enrage and side-stream follow-up.
+- Verification: focused 14/14, Chromium 17/17 with zero errors, and the exact established 57-name full-suite baseline. Evidence: docs/SOVEREIGN_HELPER_BLOCKADE_0915.md.

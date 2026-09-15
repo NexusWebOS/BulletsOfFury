@@ -685,9 +685,9 @@
     {
       "id": "S4-11",
       "group": "Stage 4: Olive Warden and Sovereign",
-      "status": "pending",
+      "status": "complete",
       "request": "Hard/Furious Sovereign helpers: 50% more shield HP, faster straight/diagonal attacks and forward horizontal blocking row.",
-      "evidence": "",
+      "evidence": "SOVEREIGN_HELPER_BLOCKADE_0915.md",
       "dependency": "",
       "workOrder": 71,
       "difficulty": 4,

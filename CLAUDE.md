@@ -4252,3 +4252,6 @@ Read docs/OLIVE_WARDEN_ESCORTS_0915.md and docs/qa/olive_warden_escorts_0915.jso
 
 ## 2026-09-15 Continue Up rewards
 MODE-07 complete. Hard/Furious authored aces and deathless miniboss/boss encounter sections now drop one physical Continue Up. Either co-op seat dying invalidates a deathless encounter reward. Collection extends finite banks, persists in campaign saves and appears on the Continue screen. Current presentation composes the authored Life Up with a cyan C/ring; dedicated SpriteCook art remains MODE-08. Focused section 324 passes 18/18; Chromium passes 18/18 with zero errors; full suite retains the exact 57-name baseline. See docs/CONTINUE_UP_REWARDS_0915.md.
+
+## 2026-09-15 Sovereign helper blockade
+S4-11 complete. Hard/Furious Storm Sovereign helpers have 50% more shield capacity, progressively faster turns/fire/rounds, and a timed forward horizontal row that tracks the player inside safe camera edges before withdrawing. Normal remains unchanged. Focused section 325 passes 14/14; Chromium passes 17/17 with zero errors; full suite retains the exact 57-name baseline. See docs/SOVEREIGN_HELPER_BLOCKADE_0915.md.
