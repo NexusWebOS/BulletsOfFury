@@ -16192,9 +16192,9 @@ function l23WarnSymbolDraw(b,B){
      Occlusion is not off-screen, and only the picture tells them apart: two probes passed on this
      (one counting the art key, one counting red pixels that turned out to be the RIME WALL name
      text) before a screenshot showed the sign was never there. 46 clears the gauge band. */
-  const sy=Math.max(L23_WARN_MINY,top-h-12);
+  const sy=Number.isFinite(B.alertY)?Math.max(L23_WARN_MINY,B.alertY):Math.max(L23_WARN_MINY,top-h-12),sx=Number.isFinite(B.alertX)?B.alertX:b.x;
   ctx.save();ctx.imageSmoothingEnabled=false;ctx.globalAlpha=steady?.62:(red?1:.92);
-  ctx.drawImage(im,Math.round(b.x-w/2),Math.round(sy),w,h);
+  ctx.drawImage(im,Math.round(sx-w/2),Math.round(sy),w,h);
   ctx.restore();return true;
 }
 function l23WarnSound(B){
@@ -41515,7 +41515,7 @@ const PLAYER_FLAME_SCALE=.75;
 function combatWarningDraw(owner,q){
   if(!owner||!q||q.progress==null)return;
   const k=clamp(q.progress,0,1),a=Math.atan2(q.ey-q.y,q.ex-q.x),p={x:q.x,y:q.y},
-    B={family:'rime',angles:[a],t:(owner.t||stateT||0),warm:1,released:false};
+    B={family:'rime',angles:[a],t:(owner.t||stateT||0),warm:1,released:false,alertX:q.alertX,alertY:q.alertY};
   if(!q.alertOnly){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(a-Math.PI/2);
     l23FovDraw(owner,B,0,p,k,q.width||20);ctx.restore();}
   B.t=k;if(!q.fieldOnly)l23WarnSymbolDraw(owner,B);
@@ -41914,6 +41914,7 @@ function stage4RamTick(b,dt){
   if(S.mode==='ramTell'){
     if(R.t<.40)R.lane=clamp(player.x,72,worldWidth()-72);else R.locked=true;
     b.x+=(R.lane-b.x)*Math.min(1,dt*7);b.y+=(S.homeY-b.y)*Math.min(1,dt*6);
+    combatWarningTick(b,'sovereign-unpowered-ram',R.t,1.0);
     if(R.t>=1.0){S.mode='ramDive';R.t=0;stageRevisionCue(b,'sovereignFlyby',0,.90);}
   }else if(S.mode==='ramDive'){
     R.speed=Math.min(740,R.speed+680*dt);b.x=R.lane;b.y+=R.speed*dt;
@@ -41934,8 +41935,8 @@ function stage4RamTick(b,dt){
 function stage4RamShadowDraw(b){
   const S=b&&b._s4war,R=S&&S.ram;if(!R)return;
   if(S.mode==='ramTell'){
-    const p=shipBossMount(b,'C'),key='bmfx_fov_'+l23FovPhase(R.t)+'_tall';
-    if(XART.rdy(key)){ctx.save();ctx.translate(R.lane,p.y);l23FovDraw(b,{family:'rime',angles:[Math.PI/2],t:R.t},0,p,R.t,38);ctx.restore();}
+    const p=shipBossMount(b,'C'),q=clamp(R.t/1.0,0,1);
+    combatWarningDraw(b,{x:p.x,y:p.y,ex:R.lane,ey:VH+40,progress:q,width:76,alertX:b.x,alertY:80});
   }
   if(S.mode!=='ramOver')return;
   const key=b._animKey,im=xartTint(key,'#02040a',1);if(!im)return;

@@ -494,3 +494,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - S1-06 is complete: Furious Stage 1 fields one exact 150%-scale crimson Razorback with matching hardpoints/collision, faster movement/turn/attack clocks and expanded sonic, resonance-nova and Razor Rack pressure.
 - Normal remains the original single tank and Hard remains the independent two-tank fight. Focused 14/14, Chromium 17/17 with zero errors, full suite exact 57-name baseline. Evidence: docs/RAZORBACK_FURIOUS_0915.md. Tally: 122 complete / 9 partial / 18 pending; S2-08 is the next unfinished queue item.
+
+## Codex update — 2026-09-15: Sovereign shared ram warning
+
+- ENG-02 advances: the live unpowered Sovereign ram now owns the shared green/yellow/red field and matching overhead alert, commits after 0.40 seconds and releases at one second without changing its dive/flyover/return.
+- The shared warning renderer accepts an encounter alert anchor; Stage 4 uses it below the dual gauges. Focused 8/8 and Chromium 14/14 with zero errors; the full suite has 56 established names and no new failures. Evidence: docs/SOVEREIGN_SHARED_RAM_WARNING_0915.md. The tally remains 122 complete / 9 partial / 18 pending.

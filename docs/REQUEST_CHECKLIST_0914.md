@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Furious Stage-1 Razorback hyper tank with an exact 150% authored silhouette, crimson palette, accelerated drivetrain and expanded sonic, nova and missile pressure [Proof](RAZORBACK_FURIOUS_0915.md).
+Just verified: Shared non-laser warning migration for the Storm Sovereign unpowered ram, including an unobscured alert anchor below its dual gauges [Proof](SOVEREIGN_SHARED_RAM_WARNING_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 

@@ -4273,3 +4273,6 @@ S1-05 complete. Hard Stage 1 now fields two complete Razorback siege tanks under
 
 ## 2026-09-15 Furious Razorback hyper tank
 S1-06 complete. Furious Stage 1 now fields one 150%-scale crimson Razorback with scaled hardpoints/hit geometry, a 62%-faster drivetrain, 55%-faster turning, 30%-faster attack clock, nine-round sonic fan, giant pressure wave, 28-round nova and fourteen-missile Razor Rack. Normal and the Hard duo remain unchanged. Focused 14/14, Chromium 17/17 zero errors, full suite exact 57-name baseline. Tally 122 complete / 9 partial / 18 pending. See docs/RAZORBACK_FURIOUS_0915.md.
+
+## 2026-09-15 Sovereign shared ram warning
+ENG-02 advances: the unpowered Stage-4 Sovereign ram now uses the shared green/yellow/red FOV and overhead alert while preserving early tracking, late lane commitment and its complete dive/flyover/return. A shared optional alert anchor keeps the sign below the dual boss/shield gauges. Focused 8/8, Chromium 14/14 zero errors, full suite 56 established names with no new failures. ENG-02 remains partial. See docs/SOVEREIGN_SHARED_RAM_WARNING_0915.md.

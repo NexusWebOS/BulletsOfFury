@@ -1,0 +1,216 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-4 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored green, yellow and red FOV/alert art decodes before capture"
+    },
+    {
+      "pass": true,
+      "label": "green warning tracks the player during the early aiming window"
+    },
+    {
+      "pass": true,
+      "label": "green uses the shared authored field and overhead alert"
+    },
+    {
+      "pass": true,
+      "label": "yellow commits after following the player to a new lane"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses the shared authored field and overhead alert"
+    },
+    {
+      "pass": true,
+      "label": "red retains the committed lane through a late dodge"
+    },
+    {
+      "pass": true,
+      "label": "red uses the shared authored field and overhead alert"
+    },
+    {
+      "pass": true,
+      "label": "the Sovereign releases only after the full shared warning and dives on the committed lane"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_ram_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_ram_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_ram_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_ram_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "STORM SOVEREIGN MK II",
+    "kind": "stormsovereign",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "green": {
+    "mode": "ramTell",
+    "t": 0.19999999999999998,
+    "lane": 220,
+    "locked": false,
+    "y": 150,
+    "warn": {
+      "t": 0.19999999999999998,
+      "warm": 1,
+      "released": false
+    },
+    "gets": [
+      "bg_stage04_master",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_boss_charge_2",
+      "bmfx_fov_green_tall",
+      "bmfx_alert_green_danger",
+      "s4w_drone_barrel_4",
+      "iceorb_0",
+      "ship_yuri",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_low"
+    ]
+  },
+  "yellow": {
+    "mode": "ramTell",
+    "t": 0.49999999999999994,
+    "lane": 438,
+    "locked": true,
+    "y": 150,
+    "warn": {
+      "t": 0.49999999999999994,
+      "warm": 1,
+      "released": false
+    },
+    "gets": [
+      "bg_stage04_master",
+      "s4_chase_0915",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_boss_charge_5",
+      "bmfx_fov_yellow_tall",
+      "bmfx_alert_yellow_danger",
+      "s4w_drone_barrel_2",
+      "iceorb_0",
+      "ship_yuri",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_low"
+    ]
+  },
+  "red": {
+    "mode": "ramTell",
+    "t": 0.7000000000000005,
+    "lane": 438,
+    "locked": true,
+    "y": 150,
+    "warn": {
+      "t": 0.7000000000000005,
+      "warm": 1,
+      "released": false
+    },
+    "gets": [
+      "bg_stage04_master",
+      "s4_chase_0915",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_boss_charge_8",
+      "bmfx_fov_red_tall",
+      "bmfx_alert_red_danger",
+      "s4w_drone_barrel_7",
+      "iceorb_0",
+      "ship_yuri",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_low"
+    ]
+  },
+  "release": {
+    "mode": "ramDive",
+    "t": 0.016666666666666666,
+    "lane": 438,
+    "locked": true,
+    "y": 153.1888888888889,
+    "warn": {
+      "t": 1.0000000000000013,
+      "warm": 1,
+      "released": true
+    },
+    "gets": [
+      "bg_stage04_master",
+      "s4_chase_0915",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_boss_flight_0",
+      "s4w_drone_barrel_6",
+      "iceorb_0",
+      "ship_yuri",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_low"
+    ]
+  },
+  "shots": [
+    "_shots\\sovereign_shared_ram_warning_0915\\sovereign_ram_01_green.png",
+    "_shots\\sovereign_shared_ram_warning_0915\\sovereign_ram_02_yellow.png",
+    "_shots\\sovereign_shared_ram_warning_0915\\sovereign_ram_03_red.png",
+    "_shots\\sovereign_shared_ram_warning_0915\\sovereign_ram_04_release.png"
+  ]
+}

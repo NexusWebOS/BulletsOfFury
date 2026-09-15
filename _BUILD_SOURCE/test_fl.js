@@ -15664,6 +15664,7 @@ require('./test_sovereign_chain_lightning_0915.cjs')(vm,ctxv,ok);
 require('./test_sovereign_giant_strike_0915.cjs')(vm,ctxv,ok);
 require('./test_razorback_duo_0915.cjs')(vm,ctxv,ok);
 require('./test_razorback_furious_0915.cjs')(vm,ctxv,ok);
+require('./test_sovereign_shared_ram_warning_0915.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

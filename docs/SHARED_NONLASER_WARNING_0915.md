@@ -41,3 +41,7 @@ same warning renderer. See `docs/FURNACE_ROLLERBALL_0915.md` and
 `docs/qa/furnace_rollerball_0915.json`; its native Chromium proof is 14/14 with zero errors.
 
 No atlas, source-art, balance, Git, or save-data operation was performed.
+
+## Stage 4 Sovereign follow-up
+
+The unpowered Storm Sovereign ram now uses the same shared field and overhead alert. Its 0.40-second tracking window, committed lane and one-second release remain intact. An optional shared alert anchor places the sign below Stage 4's dual gauges so it is fully visible. Chromium 14/14 and focused section 332 8/8 pass. See [SOVEREIGN_SHARED_RAM_WARNING_0915.md](SOVEREIGN_SHARED_RAM_WARNING_0915.md).
