@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: ordinary-play Super, Ultra and Uber box offers connected to survived-wave progression with seat-bound co-op collection [Proof](MISSILE_UPGRADE_SPAWNS_0915.md).
+Just verified: winged Life Up regeneration with symmetrical armored jet wings and unchanged Continue Up [Proof](LIFE_UP_WINGS_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 

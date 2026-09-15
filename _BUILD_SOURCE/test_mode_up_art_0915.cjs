@@ -5,7 +5,7 @@ const boot=harness.slice(0,harness.indexOf('/* top-level const/let'));
 const test=`
 const result=vm.runInContext(\`(()=>{
  const checks=[];const check=(v,n)=>{checks.push({name:n,ok:!!v});if(!v)throw Error(n);};
- check(XART._src.mode_life_up_0915==='assets/game/ui/pickups_0915/life_up.png','Life Up source registered');
+ check(XART._src.mode_life_up_0915==='assets/game/ui/pickups_0915/life_up_wings.png','Life Up source registered');
  check(XART._src.mode_continue_up_0915==='assets/game/ui/pickups_0915/continue_up.png','Continue Up source registered');
  const oldR=XART.rdy,oldG=XART.get,oldD=ctx.drawImage,calls=[];
  XART.rdy=k=>k==='mode_life_up_0915'||k==='mode_continue_up_0915';

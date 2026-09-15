@@ -1971,7 +1971,7 @@ const XART=(function(){
   for(const k of ['ship','ball','leap','charge','reticle','boomerang_body','boomerang_hammer'])X._src['hammer_'+k]='assets/game/stage5_hammer/'+k+'.png';
   X._src['s4_chase_0915']='assets/game/stage4_highway_0915.png';
   X._src['pause_button_0915']='assets/game/ui/pause_0915/button.png';
-  X._src['mode_life_up_0915']='assets/game/ui/pickups_0915/life_up.png';
+  X._src['mode_life_up_0915']='assets/game/ui/pickups_0915/life_up_wings.png';
   X._src['mode_continue_up_0915']='assets/game/ui/pickups_0915/continue_up.png';
   for(const tier of ['super','ultra','uber']){
     X._src['missile_'+tier+'_icon_0915']='assets/game/ui/missile_tiers_0915/'+tier+'_icon.png';

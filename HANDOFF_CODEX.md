@@ -548,3 +548,7 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - MSL-06 and MSL-07 are complete: authored waves offer Super from wave two, then Ultra and Uber only after their required survived wave. Offers retry if missed, suppress duplicates and bind to the correct co-op seat; collection reuses the existing grant/cap path and death still resets to Standard.
 - Focused 12/12 and native Chromium progression proof pass with zero errors. The full suite retains the exact 57-name baseline. Evidence: docs/MISSILE_UPGRADE_SPAWNS_0915.md. Tally: 126 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-15: winged Life Up
+
+- Life Up now uses a cache-safe 1520x882 transparent edit with broad symmetrical gunmetal/red jet wings and orange vents. The central `1UP` badge and Continue Up remain unchanged. Focused 7/7 and native Chromium gameplay-scale proof pass with zero errors. Evidence: docs/LIFE_UP_WINGS_0915.md. Tally remains 126 complete / 7 partial / 16 pending.

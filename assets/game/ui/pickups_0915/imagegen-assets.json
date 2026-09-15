@@ -1,0 +1,19 @@
+{
+  "date": "2026-09-15",
+  "generator": "built-in image_gen",
+  "mode": "precise-object-edit",
+  "edit_source": "assets/game/ui/pickups_0915/life_up.png",
+  "active_file": "life_up_wings.png",
+  "generated_file": "C:/Users/Mike/.codex/generated_images/01a092a0-0744-71b1-8d8d-c95ab7f90646/exec-9fe05ee6-7753-43f0-9a16-766af8617856.png",
+  "source_crop": [
+    8,
+    71,
+    1528,
+    953
+  ],
+  "alpha_clear_below": 8,
+  "width": 1520,
+  "height": 882,
+  "sha12": "fa7e2b8d3cad",
+  "prompt_summary": "Preserve the 1UP badge and add symmetric compact gunmetal jet wings with red panels and orange vents."
+}

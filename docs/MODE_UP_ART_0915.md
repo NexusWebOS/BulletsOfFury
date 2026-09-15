@@ -10,6 +10,7 @@ MODE-08 is complete. Life Up and Continue Up now use separate authored pickup pl
 - Credits: 8 used; 14 remained after generation
 - Canonical source: `assets/game/ui/pickups_0915/life_continue_source.png`
 - Runtime crops: `life_up.png` and `continue_up.png`, each 442 x 546 RGBA
+- Active Life Up replacement: `life_up_wings.png`, a 1520 x 882 transparent winged edit; see [wing regeneration](LIFE_UP_WINGS_0915.md).
 - Alpha cleanup removed only source pixels below alpha 8. The authored edge translucency remains intact.
 - Crop coordinates, dimensions, hashes and SpriteCook provenance are recorded in `assets/game/ui/pickups_0915/spritecook-assets.json`.
 

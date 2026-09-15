@@ -1,0 +1,33 @@
+{
+  "date": "2026-09-15",
+  "status": "complete",
+  "generator": "built-in image_gen",
+  "mode": "precise-object-edit",
+  "activeAsset": "assets/game/ui/pickups_0915/life_up_wings.png",
+  "sourceAsset": "assets/game/ui/pickups_0915/life_up.png",
+  "dimensions": [
+    1520,
+    882
+  ],
+  "sha12": "fa7e2b8d3cad",
+  "focused": {
+    "test": "_BUILD_SOURCE/test_mode_up_art_0915.cjs",
+    "passed": 7,
+    "failed": 0
+  },
+  "chromium": {
+    "url": "http://127.0.0.1:8785/_shots/mode08_0915/review.html?wings=1",
+    "lifeDecoded": true,
+    "continueDecoded": true,
+    "pickupCount": 2,
+    "consoleErrors": 0
+  },
+  "syntax": "passed",
+  "fullSuiteBaseline": {
+    "passedAssertions": 4337,
+    "failed": 57,
+    "sourceCommit": "bd507038"
+  },
+  "commit": false,
+  "push": false
+}
