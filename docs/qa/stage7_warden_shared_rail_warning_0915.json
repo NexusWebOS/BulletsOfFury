@@ -1,0 +1,234 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-7 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the live Warden commits the five actual rail lanes and a safe-side gap"
+    },
+    {
+      "pass": true,
+      "label": "authored Warden, spear and green/yellow/red warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green displays the lanes committed when charge starts"
+    },
+    {
+      "pass": true,
+      "label": "green draws the five shared fields and one matching alert"
+    },
+    {
+      "pass": true,
+      "label": "yellow does not chase a late move across the arena"
+    },
+    {
+      "pass": true,
+      "label": "yellow draws the committed shared fields and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "red preserves every committed rail lane and the safe-side gap"
+    },
+    {
+      "pass": true,
+      "label": "red draws the committed shared fields and matching alert"
+    },
+    {
+      "pass": true,
+      "label": "five rail spears release only after the full warning"
+    },
+    {
+      "pass": true,
+      "label": "warden_rail_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_rail_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_rail_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_rail_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "TOXIC PORTAL WARDEN",
+    "kind": "sludgeemperor",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "TOXIC PORTAL WARDEN",
+    "aim": 1.075244653309068,
+    "safe": 1,
+    "angles": [
+      0.6352446533090681,
+      0.775244653309068,
+      0.915244653309068,
+      1.075244653309068,
+      1.235244653309068
+    ]
+  },
+  "green": {
+    "mode": "rail",
+    "t": 0.15,
+    "event": 0,
+    "aim": 1.075244653309068,
+    "safe": 1,
+    "angles": [
+      0.6352446533090681,
+      0.775244653309068,
+      0.915244653309068,
+      1.075244653309068,
+      1.235244653309068
+    ],
+    "playerX": 360,
+    "warn": {
+      "t": 0.15,
+      "warm": 0.86,
+      "released": false
+    },
+    "shots": 0,
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_green_tall",
+      "cfx_stage7_warden_rail",
+      "bmfx_alert_green_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "mode": "rail",
+    "t": 0.43,
+    "event": 0,
+    "aim": 1.075244653309068,
+    "safe": 1,
+    "angles": [
+      0.6352446533090681,
+      0.775244653309068,
+      0.915244653309068,
+      1.075244653309068,
+      1.235244653309068
+    ],
+    "playerX": 55,
+    "warn": {
+      "t": 0.43,
+      "warm": 0.86,
+      "released": false
+    },
+    "shots": 0,
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_yellow_tall",
+      "cfx_stage7_warden_rail",
+      "bmfx_alert_yellow_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "mode": "rail",
+    "t": 0.774,
+    "event": 0,
+    "aim": 1.075244653309068,
+    "safe": 1,
+    "angles": [
+      0.6352446533090681,
+      0.775244653309068,
+      0.915244653309068,
+      1.075244653309068,
+      1.235244653309068
+    ],
+    "playerX": 430,
+    "warn": {
+      "t": 0.774,
+      "warm": 0.86,
+      "released": false
+    },
+    "shots": 0,
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_red_tall",
+      "cfx_stage7_warden_rail",
+      "bmfx_alert_red_danger",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "mode": "rail",
+    "t": 0.87,
+    "event": 1,
+    "aim": 1.075244653309068,
+    "safe": 1,
+    "angles": [
+      0.6352446533090681,
+      0.775244653309068,
+      0.915244653309068,
+      1.075244653309068,
+      1.235244653309068
+    ],
+    "playerX": 70,
+    "warn": {
+      "t": 0.86,
+      "warm": 0.86,
+      "released": true
+    },
+    "shots": 5,
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "cfx_stage7_warden_rail",
+      "cfx_stage7_warden_spear",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage7_warden_shared_rail_warning_0915\\warden_rail_01_green.png",
+    "_shots\\stage7_warden_shared_rail_warning_0915\\warden_rail_02_yellow.png",
+    "_shots\\stage7_warden_shared_rail_warning_0915\\warden_rail_03_red.png",
+    "_shots\\stage7_warden_shared_rail_warning_0915\\warden_rail_04_release.png"
+  ]
+}

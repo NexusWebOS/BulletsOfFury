@@ -4282,3 +4282,6 @@ ENG-02 advances: Razorback body rams now use the shared green/yellow/red FOV and
 
 ## 2026-09-15 Chrome Hammer shared leap warning
 ENG-02 advances: the Chrome Hammer leap/slam now uses the shared green/yellow/red FOV and overhead alert along its committed travel corridor while retaining the exact landing reticle. Late dodges do not redirect it, and the completed one-hand boomerang is unchanged. Focused 7/7, Chromium 16/16 zero errors, full suite 56-name subset of the 57-name baseline with no new failures. ENG-02 remains partial. See docs/HAMMER_SHARED_LEAP_WARNING_0915.md.
+
+## 2026-09-15 Toxic Portal Warden shared rail warning
+ENG-02 advances: the Stage-7 Warden commits its five-spear rail fan and safe-side gap at charge start, then previews the actual paths through shared green/yellow/red fields and one matching alert. Fields render behind the boss; the alert renders in front after Chromium exposed hull occlusion in the first capture. Focused 7/7 and corrected Chromium 15/15 pass with zero errors; the confirmation suite has the exact 57-name baseline. ENG-02 remains partial. See docs/STAGE7_WARDEN_SHARED_RAIL_WARNING_0915.md.

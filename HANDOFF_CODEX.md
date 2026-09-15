@@ -509,3 +509,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: the Chrome Hammer leap/slam now owns the shared green/yellow/red path field and matching overhead alert while preserving the original committed landing reticle. Late player movement cannot steer the attack.
 - The completed one-hand boomerang timing and behavior are unchanged. Focused 7/7, Chromium 16/16 with zero errors, full suite 56-name subset of the 57-name baseline and no new failure names. Evidence: docs/HAMMER_SHARED_LEAP_WARNING_0915.md. Tally remains 122 complete / 9 partial / 18 pending.
+
+## Codex update — 2026-09-15: Toxic Portal Warden rail warning
+
+- ENG-02 advances: the Stage-7 Toxic Portal Warden rail fan now commits its aim and safe-side gap at charge start. Five shared green/yellow/red fields show every released spear lane; one matching overhead alert renders in front of the giant hull.
+- Focused 7/7 and corrected Chromium 15/15 pass with zero errors; the confirmation suite has the exact 57-name baseline. Evidence: docs/STAGE7_WARDEN_SHARED_RAIL_WARNING_0915.md. Tally remains 122 complete / 9 partial / 18 pending.

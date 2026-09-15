@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Shared green/yellow/red corridor and overhead warning for the Chrome Hammer committed leap/slam while retaining its landing reticle and one-hand boomerang [Proof](HAMMER_SHARED_LEAP_WARNING_0915.md).
+Just verified: Stage-7 Toxic Portal Warden rail fan with charge-start aim and safe-gap commitment, five shared green/yellow/red path fields and one unobscured overhead alert [Proof](STAGE7_WARDEN_SHARED_RAIL_WARNING_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 

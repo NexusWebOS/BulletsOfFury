@@ -20179,6 +20179,7 @@ function s7WardenInit(b){
 function s7WardenMode(b,mode){
   const S=b._s7warden;S.mode=mode;S.mt=0;S.shot=0;S.event=0;S.noHit=false;S.step++;
   if(mode==='burst')S.aim=aimPlayer(b.x,b.y+b.h*.22);
+  if(mode==='rail'){S.railAim=aimPlayer(b.x,b.y);S.railSafe=player.x<b.x?-1:1;combatWarningTick(b,'stage7-warden-rail',0,.86,true);}
   if(mode==='teleport'){
     const left=(typeof camLeftX==='function'?camLeftX():0)+b.w*.57,right=(typeof camRightX==='function'?camRightX():worldWidth())-b.w*.57;
     S.teleFrom=b.x;S.teleTo=clamp(player.x<(left+right)/2?right:left,left,right);
@@ -20418,7 +20419,8 @@ function s7WardenTick(b,dt){
       if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.enemyToxicSpit))(Audio.SFX.enemyBossCannon||Audio.SFX.enemyToxicSpit)();}
     if(S.mt>2.20)s7WardenMode(b,'patrol');
   }else if(S.mode==='rail'){
-    if(!S.event&&S.mt>.86){S.event=1;const base=aimPlayer(b.x,b.y),safe=(player.x<b.x)?-1:1;
+    const tell=.86;combatWarningTick(b,'stage7-warden-rail',Math.min(S.mt,tell),tell);
+    if(!S.event&&S.mt>tell){S.event=1;const base=S.railAim,safe=S.railSafe;
       for(const o of [-.44,-.30,-.16,0,.16,.30,.44]){if(Math.sign(o)===safe&&Math.abs(o)>.28)continue;
         s7WardenShot(b,'C',base+o,4.15,'rail',{silent:o!==-.44,szMul:Math.abs(o)<.02?1.28:1});}
       s7WardenMuzzle(b,'C',true);shake=Math.max(shake,8);
@@ -20433,9 +20435,21 @@ function s7WardenTick(b,dt){
   }
   b.x=clamp(b.x,left,right);return true;
 }
+function s7WardenRailAngles(S){
+  if(!S||!Number.isFinite(S.railAim))return [];const safe=S.railSafe;
+  return [-.44,-.30,-.16,0,.16,.30,.44].filter(o=>!(Math.sign(o)===safe&&Math.abs(o)>.28)).map(o=>S.railAim+o);
+}
+function s7WardenRailWarningDraw(b,front){
+  const S=b&&b._s7warden;if(!S||S.mode!=='rail'||S.event||S.mt>=.86)return false;
+  const p=shipBossMount(b,'C'),k=clamp(S.mt/.86,0,1),angles=s7WardenRailAngles(S);
+  if(!front)for(const a of angles)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.x+Math.cos(a)*650,ey:p.y+Math.sin(a)*650,progress:k,width:20,fieldOnly:true});
+  else{const a=Number.isFinite(S.railAim)?S.railAim:Math.PI/2;combatWarningDraw(b,{x:p.x,y:p.y,ex:p.x+Math.cos(a)*650,ey:p.y+Math.sin(a)*650,progress:k,alertOnly:true});}
+  return true;
+}
 function s7WardenDraw(b){
   const S=b&&b._s7warden;if(!S)return false;const F=S.final,phase=F&&F.phase;
   if(phase==='portalClose'||(F&&F.bossHidden))return true;
+  s7WardenRailWarningDraw(b,false);
   const baseY=(b._drawY!=null?b._drawY:b.y);let cy=baseY+(S.bodyDrop||0),size=b.w*1.12;
   let alpha=1;if(S.mode==='teleport')alpha=S.mt<.76?1-clamp((S.mt-.20)/.38,0,1):clamp((S.mt-.84)/.38,0,1);
   /* The entrance reel belongs to the portal aperture, not to a second floating circle around
@@ -20489,6 +20503,7 @@ function s7WardenDraw(b){
     if(hi&&iw){const sw=iw/8,sh=ih,sx=fi*sw,sy=0;ctx.save();ctx.imageSmoothingEnabled=true;ctx.globalAlpha=Math.min(.78,b.flash*5);
       ctx.translate(b.x,cy);ctx.scale(flip?-1:1,1);ctx.drawImage(hi,sx,sy,sw,sh,-size/2,-drawH/2,size,drawH);ctx.restore();}
   }
+  s7WardenRailWarningDraw(b,true);
   return true;
 }
 /* ============================================================

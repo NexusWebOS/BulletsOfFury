@@ -53,3 +53,7 @@ The Razorback body ram now uses the shared green/yellow/red FOV and overhead ale
 ## Chrome Hammer leap/slam follow-up
 
 The Chrome Hammer leap/slam now projects the shared green/yellow/red FOV and overhead alert down its committed travel corridor while retaining the authored landing reticle. The target is sampled once before the tell and cannot chase a late dodge. Its completed one-hand boomerang remains unchanged. Chromium 16/16 and focused section 334 7/7 pass. See [HAMMER_SHARED_LEAP_WARNING_0915.md](HAMMER_SHARED_LEAP_WARNING_0915.md).
+
+## Toxic Portal Warden rail follow-up
+
+The Stage-7 Toxic Portal Warden now commits its rail aim and safe-side gap when the 0.86-second charge begins. Five shared green/yellow/red fields preview the five spear paths and one matching alert renders in front of the giant hull. Chromium 15/15 and focused section 335 7/7 pass. See [STAGE7_WARDEN_SHARED_RAIL_WARNING_0915.md](STAGE7_WARDEN_SHARED_RAIL_WARNING_0915.md).
