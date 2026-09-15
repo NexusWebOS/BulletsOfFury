@@ -4276,3 +4276,6 @@ S1-06 complete. Furious Stage 1 now fields one 150%-scale crimson Razorback with
 
 ## 2026-09-15 Sovereign shared ram warning
 ENG-02 advances: the unpowered Stage-4 Sovereign ram now uses the shared green/yellow/red FOV and overhead alert while preserving early tracking, late lane commitment and its complete dive/flyover/return. A shared optional alert anchor keeps the sign below the dual boss/shield gauges. Focused 8/8, Chromium 14/14 zero errors, full suite 56 established names with no new failures. ENG-02 remains partial. See docs/SOVEREIGN_SHARED_RAM_WARNING_0915.md.
+
+## 2026-09-15 Razorback shared ram warning
+ENG-02 advances: Razorback body rams now use the shared green/yellow/red FOV and overhead alert, track only in green and commit for yellow/red through release. Normal, Hard pair actors and Furious all preserve their movement limits. Focused 9/9, Chromium 15/15 zero errors, full suite exact 57-name baseline. ENG-02 remains partial. See docs/RAZORBACK_SHARED_RAM_WARNING_0915.md.

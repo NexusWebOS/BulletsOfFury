@@ -45,3 +45,7 @@ No atlas, source-art, balance, Git, or save-data operation was performed.
 ## Stage 4 Sovereign follow-up
 
 The unpowered Storm Sovereign ram now uses the same shared field and overhead alert. Its 0.40-second tracking window, committed lane and one-second release remain intact. An optional shared alert anchor places the sign below Stage 4's dual gauges so it is fully visible. Chromium 14/14 and focused section 332 8/8 pass. See [SOVEREIGN_SHARED_RAM_WARNING_0915.md](SOVEREIGN_SHARED_RAM_WARNING_0915.md).
+
+## Razorback body-ram follow-up
+
+The Razorback body ram now uses the shared green/yellow/red FOV and overhead alert. It tracks only during green, commits at yellow and holds through red and release on Normal, both independent Hard tanks and the Furious hyper tank. Chromium 15/15 and focused section 333 9/9 pass. See [RAZORBACK_SHARED_RAM_WARNING_0915.md](RAZORBACK_SHARED_RAM_WARNING_0915.md).

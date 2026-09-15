@@ -17450,7 +17450,7 @@ function razorbackEnter(b,state){
 }
 function razorbackNext(b){
   const R=b._rzb, W=(typeof worldWidth==='function')?worldWidth():VW, L=camLeftX(),span=camRightX()-L,list=RZB_ATTACKS[R.state]||RZB_ATTACKS.guns;
-  R.attack=list[++R.idx%list.length]; R.at=0; R.beat=-1; R.mgBeat=-1; R.charge=0;
+  R.attack=list[++R.idx%list.length]; R.at=0; R.beat=-1; R.mgBeat=-1; R.charge=0; R.ramLocked=false;
   if(R.pairSide){const inner=(R.idx%2)!==0;R.homeX=L+span*(R.pairSide<0 ? .28 : .72);R.tgt={x:L+span*(R.pairSide<0 ? (inner ? .34 : .25) : (inner ? .66 : .75)),y:(R.idx%3===0)?VH*.36:VH*.24};}
   else R.tgt={x:(R.idx%2)?W*0.27:W*0.73, y:(R.idx%3===0)?VH*.36:VH*.24};
   if(R.attack==='sonic'||R.attack==='nova') stageRevisionCue(b,'razorbackCharge',.16);
@@ -17591,9 +17591,11 @@ function razorbackCombat(b){
     if(t>1.55) R.charge=0;
     if(t>4.5) razorbackNext(b);
   } else if(R.attack==='ram'){
-    const W=(typeof worldWidth==='function')?worldWidth():VW;
-    if(t<1){ R.charge=t; R.tgt={x:b.x,y:b.y}; R.ramX=clamp(player.x, b.w*0.5, W-b.w*0.5);
-      if(R.pairSide){const L=camLeftX(),right=camRightX(),half=(L+right)*.5,gap=b.w*.5+9;R.ramX=clamp(R.ramX,R.pairSide<0?L+b.w*.5:half+gap,R.pairSide<0?half-gap:right-b.w*.5);}
+    const W=(typeof worldWidth==='function')?worldWidth():VW;combatWarningTick(b,'razorback-body-ram',Math.min(t,1),1.0);
+    if(t<1){ R.charge=t; R.tgt={x:b.x,y:b.y};
+      if(t<L23_FOV_YEL){R.ramX=clamp(player.x,b.w*0.5,W-b.w*0.5);
+        if(R.pairSide){const L=camLeftX(),right=camRightX(),half=(L+right)*.5,gap=b.w*.5+9;R.ramX=clamp(R.ramX,R.pairSide<0?L+b.w*.5:half+gap,R.pairSide<0?half-gap:right-b.w*.5);}}
+      else R.ramLocked=true;
       if(R.beat<0){ R.beat=0; stageRevisionCue(b,'razorbackRam',.12); } }   // the rush winds up audibly
     else if(t<2.5) R.tgt={x:R.ramX, y:VH*0.68};
     else R.tgt={x:R.homeX==null?W/2:R.homeX, y:VH*0.26};
@@ -17674,8 +17676,7 @@ function razorbackDraw(b){
     rzbSprite('rzb_sonic_charge',m.x,m.y,(b.t||0)*(R.furious?1.7:0.8),0.16+R.charge*(R.furious?0.78:0.5),null,null,null,mul,R.furious?'#ff1838':null);
     if(R.attack==='sonic'){ const e=rzbFwd(m,R.turret,750*S); ctx.save(); ctx.setLineDash([10*S,12*S]);
       ctx.strokeStyle=R.furious?'rgba(255,32,58,0.72)':'rgba(184,238,94,0.5)'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(m.x,m.y); ctx.lineTo(e.x,e.y); ctx.stroke(); ctx.restore(); }
-    if(R.attack==='ram'){ ctx.save(); ctx.strokeStyle='rgba(255,200,36,0.45)'; ctx.lineWidth=36*S;
-      ctx.beginPath(); ctx.moveTo(b.x,b.y); ctx.lineTo(R.ramX,VH*0.85); ctx.stroke(); ctx.restore(); }
+    if(R.attack==='ram') combatWarningDraw(b,{x:b.x,y:b.y,ex:R.ramX,ey:VH*0.85,progress:R.charge,width:80*mul});
   }
   for(const w of R.waves) razorbackWaveDraw(w);
   for(const e of R.fx){ const u=1-e.life/e.max;

@@ -1,0 +1,229 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-1 miniboss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "the shared warning runs on the distinct 150-percent Furious tank"
+    },
+    {
+      "pass": true,
+      "label": "authored tank and green/yellow/red warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green tracks the current player lane"
+    },
+    {
+      "pass": true,
+      "label": "green uses the shared authored field and alert"
+    },
+    {
+      "pass": true,
+      "label": "yellow commits instead of following a late player move"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses the shared authored field and alert"
+    },
+    {
+      "pass": true,
+      "label": "red retains the committed lane through the opposite dodge"
+    },
+    {
+      "pass": true,
+      "label": "red uses the shared authored field and alert"
+    },
+    {
+      "pass": true,
+      "label": "release closes the warning and drives toward the committed lane"
+    },
+    {
+      "pass": true,
+      "label": "razorback_ram_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "razorback_ram_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "razorback_ram_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "razorback_ram_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "RAZORBACK SIEGE TANK",
+    "kind": "razorback",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "FURIOUS RAZORBACK",
+    "scale": 1.5,
+    "lane": 350
+  },
+  "green": {
+    "t": 0.2,
+    "lane": 350,
+    "locked": null,
+    "charge": 0.2,
+    "target": {
+      "x": 340,
+      "y": 165
+    },
+    "warn": {
+      "t": 0.2,
+      "warm": 1,
+      "released": false
+    },
+    "gets": [
+      "nwl_water_0",
+      "nwl_water_1",
+      "nwl_water_2",
+      "nwl_water_3",
+      "bg_stage01_intact",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_4",
+      "nsd_fog_5",
+      "nl6c_rain_cloud_3",
+      "bmbar_fill_green",
+      "bmbar_frame_mini",
+      "bmbar_tab_mini",
+      "rzb_hull_0",
+      "rzb_tread",
+      "rzb_rotor",
+      "rzb_missile_pod",
+      "rzb_machinegun",
+      "rzb_turret",
+      "rzb_sonic_charge",
+      "bmfx_fov_green_tall",
+      "bmfx_alert_green_danger",
+      "enemy_approaching",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas"
+    ]
+  },
+  "yellow": {
+    "t": 0.45,
+    "lane": 350,
+    "locked": true,
+    "charge": 0.45,
+    "target": {
+      "x": 340,
+      "y": 165
+    },
+    "warn": {
+      "t": 0.45,
+      "warm": 1,
+      "released": false
+    },
+    "gets": [
+      "nwl_water_0",
+      "nwl_water_1",
+      "nwl_water_2",
+      "nwl_water_3",
+      "bg_stage01_intact",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_4",
+      "nsd_fog_5",
+      "nl6c_rain_cloud_3",
+      "bmbar_fill_green",
+      "bmbar_frame_mini",
+      "bmbar_tab_mini",
+      "bmfx_fov_yellow_tall",
+      "bmfx_alert_yellow_danger",
+      "enemy_approaching",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas"
+    ]
+  },
+  "red": {
+    "t": 0.72,
+    "lane": 350,
+    "locked": true,
+    "charge": 0.72,
+    "target": {
+      "x": 340,
+      "y": 165
+    },
+    "warn": {
+      "t": 0.72,
+      "warm": 1,
+      "released": false
+    },
+    "gets": [
+      "nwl_water_0",
+      "nwl_water_1",
+      "nwl_water_2",
+      "nwl_water_3",
+      "bg_stage01_intact",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_4",
+      "nsd_fog_5",
+      "nl6c_rain_cloud_3",
+      "bmbar_fill_green",
+      "bmbar_frame_mini",
+      "bmbar_tab_mini",
+      "bmfx_fov_red_tall",
+      "bmfx_alert_red_danger",
+      "enemy_approaching",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas"
+    ]
+  },
+  "release": {
+    "t": 1.01,
+    "lane": 350,
+    "locked": true,
+    "charge": 0,
+    "target": {
+      "x": 350,
+      "y": 348.16
+    },
+    "warn": {
+      "t": 1,
+      "warm": 1,
+      "released": true
+    },
+    "gets": [
+      "nwl_water_0",
+      "nwl_water_1",
+      "nwl_water_2",
+      "nwl_water_3",
+      "bg_stage01_intact",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_rain_cloud_4",
+      "nsd_fog_5",
+      "nl6c_rain_cloud_3",
+      "bmbar_fill_green",
+      "bmbar_frame_mini",
+      "bmbar_tab_mini",
+      "rzb_dust",
+      "enemy_approaching",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas"
+    ]
+  },
+  "shots": [
+    "_shots\\razorback_shared_ram_warning_0915\\razorback_ram_01_green.png",
+    "_shots\\razorback_shared_ram_warning_0915\\razorback_ram_02_yellow.png",
+    "_shots\\razorback_shared_ram_warning_0915\\razorback_ram_03_red.png",
+    "_shots\\razorback_shared_ram_warning_0915\\razorback_ram_04_release.png"
+  ]
+}

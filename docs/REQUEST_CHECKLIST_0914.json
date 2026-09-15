@@ -1476,7 +1476,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "Shared non-laser warning migration for the Storm Sovereign unpowered ram, including an unobscured alert anchor below its dual gauges",
-    "evidence": "SOVEREIGN_SHARED_RAM_WARNING_0915.md"
+    "description": "Shared non-laser warning migration for the Razorback body ram, with green-only tracking and a yellow/red committed dodge lane across Normal, Hard and Furious",
+    "evidence": "RAZORBACK_SHARED_RAM_WARNING_0915.md"
   }
 }
