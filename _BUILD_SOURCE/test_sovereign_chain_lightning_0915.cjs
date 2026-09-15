@@ -19,7 +19,7 @@ module.exports=function(vm,ctxv,ok){
       o.furiousWidest=Math.max.apply(null,furyFirst.map(x=>Math.abs(x._s4ChainAngle)))===.46;
       o.furiousBalls=orbs.length===3&&orbs.every(x=>x._shootable&&x._s4ChainOrbIndex>=0)&&S.chainOrbs===3;
       o.alternatingRacks=orbs[0]._s4wLift.side===-1&&orbs[1]._s4wLift.side===1&&orbs[2]._s4wLift.side===-1;
-      at(b,3.35);o.fasterCycle=S.mode==='burst';
+      at(b,3.35);o.fasterCycle=S.mode==='giantStrike'&&!!S.giantStrike;
       o.tagged=eBullets.filter(x=>x._s4ChainBolt).every(x=>x._s4ChainGroup>=0&&x._s4ChainAngle!=null);
       return JSON.stringify(o);
     }finally{boss=save.boss;bossActive=save.active;run.stage=save.runStage;curStage=save.curStage;diffKey=save.diffKey;DIFF=save.DIFF;eBullets=save.bullets;pBullets=save.pb;enemies=save.en;stagePlan=save.plan;player.x=save.px;player.y=save.py;player.dead=save.pdead;player.invuln=save.pinv;}

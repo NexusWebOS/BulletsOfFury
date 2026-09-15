@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-15. **149 entries: 119 complete / 9 partial / 21 pending.**
+Updated 2026-09-15. **149 entries: 120 complete / 9 partial / 20 pending.**
 
-**30 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**29 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Completed difficulty-only Olive Warden escorts: two on Hard, three on Furious, with authored olive hulls, shield-first pools, mounted machine bursts and player-like missile protectors. [Proof](OLIVE_WARDEN_ESCORTS_0915.md).
+Just verified: Furious Storm Sovereign five-second giant lightning strike with shared yellow/red warnings, authored charge art, red release flash, suspended helper fire, and two measured safe corner lanes [Proof](SOVEREIGN_GIANT_LIGHTNING_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -27,7 +27,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Stage 1: fodder, Razorback and jungle chopper | 10 | 0 | 2 | 12 |
 | Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
-| Stage 4: Olive Warden and Sovereign | 13 | 0 | 5 | 18 |
+| Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
 | Stages 5-9: space and encounter cleanup | 17 | 2 | 4 | 23 |
 | Manual missile tiers and supplies | 6 | 2 | 1 | 9 |
 | Pause, saving, title and pilot selection | 15 | 0 | 0 | 15 |
@@ -129,7 +129,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **S4-12 · Complete** — Generator hit enrages helpers red with an asterisk; move to screen sides and face player for 5-7 seconds of staggered rapid streams with traversable gaps. [Evidence](SOVEREIGN_HELPER_ENRAGE_0915.md).
 - [x] **S4-13 · Complete** — Enraged helpers react to generator damage with limited upward/backward tracking, preserving the edge-hugging/spider-walk dodge route. [Evidence](SOVEREIGN_HELPER_SPIDER_WALK_0915.md).
 - [x] **S4-14 · Complete** — Hard Sovereign chain lightning: double and widen with extra projectiles; Furious faster/wider and more frequent lightning balls. [Evidence](SOVEREIGN_CHAIN_LIGHTNING_0915.md).
-- [ ] **S4-15 · Pending** — Furious Sovereign giant lightning strike: five-second charge, yellow/red FOV, red flash, darkened screen/crackling core; bottom corners remain safe.
+- [x] **S4-15 · Complete** — Furious Sovereign giant lightning strike: five-second charge, yellow/red FOV, red flash, darkened screen/crackling core; bottom corners remain safe. [Evidence](SOVEREIGN_GIANT_LIGHTNING_0915.md).
 - [ ] **S4-16 · Pending** — Authored left/right escape arrows: flipped pair, flashing with synchronized warning sounds for the giant strike. Dependency: SpriteCook.
 - [x] **S4-17 · Complete** — Regenerated repeating highway with matching roadside vegetation across loop boundaries. [Evidence](BOSS_BATCH_0915.md).
 - [x] **S4-18 · Complete** — Four crossed smoke rings, intact falling ship with accelerating overlaid explosions, white flash and residual blasts. [Evidence](BOSS_BATCH_0915.md).

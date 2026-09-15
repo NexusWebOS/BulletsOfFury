@@ -729,9 +729,9 @@
     {
       "id": "S4-15",
       "group": "Stage 4: Olive Warden and Sovereign",
-      "status": "pending",
+      "status": "complete",
       "request": "Furious Sovereign giant lightning strike: five-second charge, yellow/red FOV, red flash, darkened screen/crackling core; bottom corners remain safe.",
-      "evidence": "",
+      "evidence": "SOVEREIGN_GIANT_LIGHTNING_0915.md",
       "dependency": "",
       "workOrder": 75,
       "difficulty": 4,
@@ -1476,7 +1476,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "Completed difficulty-only Olive Warden escorts: two on Hard, three on Furious, with authored olive hulls, shield-first pools, mounted machine bursts and player-like missile protectors.",
-    "evidence": "OLIVE_WARDEN_ESCORTS_0915.md"
+    "description": "Furious Storm Sovereign five-second giant lightning strike with shared yellow/red warnings, authored charge art, red release flash, suspended helper fire, and two measured safe corner lanes",
+    "evidence": "SOVEREIGN_GIANT_LIGHTNING_0915.md"
   }
 }

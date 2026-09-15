@@ -4264,3 +4264,6 @@ S4-13 complete. Continued generator damage during the red side-stream phase sync
 
 ## 2026-09-15 Sovereign chain lightning
 S4-14 complete. Normal retains 5 bolts/1 ball; Hard fires nine wider chain bolts; Furious widens and accelerates the nine-bolt cycle and launches three separately timed shootable balls from alternating L/R/L authored racks. Focused section 328 passes 10/10; Chromium 13/13 zero errors; full suite exact 57-name baseline. See docs/SOVEREIGN_CHAIN_LIGHTNING_0915.md.
+
+## 2026-09-15 Sovereign giant lightning strike
+S4-15 complete. Furious now follows its expanded chain phase with an exact five-second giant-lightning tell: shared yellow/red FOV and alert art, darkened screen, authored crackling core, final red flash, central seven-column strike, and 17% safe lanes at both camera edges. Helpers/final guns pause during the event; Normal/Hard are unchanged. Focused 13/13, Chromium 15/15 zero errors, full suite exact 57-name baseline. Tally 120 complete / 9 partial / 20 pending. See docs/SOVEREIGN_GIANT_LIGHTNING_0915.md.

@@ -1,0 +1,195 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-4 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored yellow/red FOV, alert, core and lightning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "the first charge phase is yellow and nonlethal"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses the authored system FOV and alert frame"
+    },
+    {
+      "pass": true,
+      "label": "the final charge phase turns red before release"
+    },
+    {
+      "pass": true,
+      "label": "red uses the authored system FOV and alert frame"
+    },
+    {
+      "pass": true,
+      "label": "the giant strike releases only after the five-second charge"
+    },
+    {
+      "pass": true,
+      "label": "the released strike is built from the authored chain-lightning atlas"
+    },
+    {
+      "pass": true,
+      "label": "the ship survives untouched in the left safe corner"
+    },
+    {
+      "pass": true,
+      "label": "the central lightning field hits once while the corners stay safe"
+    },
+    {
+      "pass": true,
+      "label": "native pixels show a bright central strike with two visibly clear corner lanes"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_giant_01_yellow_charge is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_giant_02_red_charge is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_giant_03_strike is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "STORM SOVEREIGN MK II",
+    "kind": "stormsovereign",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "yellow": {
+    "mode": "giantStrike",
+    "t": 2.199999999999997,
+    "released": false,
+    "color": "yellow",
+    "bounds": {
+      "left": 169.60000000000002,
+      "right": 486.4,
+      "safe": 81.60000000000001,
+      "viewLeft": 88,
+      "viewRight": 568
+    },
+    "hits": 0,
+    "gets": [
+      "bg_stage04_master",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_boss_charge_5",
+      "bmfx_fov_yellow_tall",
+      "bmfx_alert_yellow_danger",
+      "cfx_stage4_chain_lightning",
+      "s4w_lightning_ball_7",
+      "s4w_drone_barrel_0",
+      "iceorb_3",
+      "ship_yuri_g1",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_low"
+    ]
+  },
+  "red": {
+    "mode": "giantStrike",
+    "t": 4.266666666666657,
+    "released": false,
+    "color": "red",
+    "bounds": {
+      "left": 159.04000000000002,
+      "right": 475.84000000000003,
+      "safe": 81.60000000000001,
+      "viewLeft": 77.44,
+      "viewRight": 557.44
+    },
+    "hits": 0,
+    "gets": [
+      "bg_stage04_master",
+      "s4_chase_0915",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_boss_charge_10",
+      "bmfx_fov_red_tall",
+      "bmfx_alert_red_danger",
+      "cfx_stage4_chain_lightning",
+      "s4w_lightning_ball_12",
+      "s4w_drone_barrel_5",
+      "iceorb_3",
+      "ship_yuri_g1",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_low"
+    ]
+  },
+  "strike": {
+    "mode": "giantStrike",
+    "t": 5.083333333333333,
+    "released": true,
+    "color": "red",
+    "bounds": {
+      "left": 149.74720000000002,
+      "right": 466.5472,
+      "safe": 81.60000000000001,
+      "viewLeft": 68.1472,
+      "viewRight": 548.1472
+    },
+    "hits": 0,
+    "gets": [
+      "bg_stage04_master",
+      "s4_chase_0915",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_0",
+      "nsd_fog_3",
+      "nl6c_heavy_rain_cloud_1",
+      "nl6c_rain_cloud_3",
+      "nl6c_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nsd_fog_1",
+      "s4w_boss_energized_8",
+      "cfx_stage4_chain_lightning",
+      "s4w_drone_barrel_0",
+      "iceorb_3",
+      "ship_yuri_g1",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss",
+      "bmbar_sfill_low"
+    ]
+  },
+  "centralHits": 1,
+  "shots": [
+    "_shots\\sovereign_giant_strike_0915\\sovereign_giant_01_yellow_charge.png",
+    "_shots\\sovereign_giant_strike_0915\\sovereign_giant_02_red_charge.png",
+    "_shots\\sovereign_giant_strike_0915\\sovereign_giant_03_strike.png"
+  ]
+}

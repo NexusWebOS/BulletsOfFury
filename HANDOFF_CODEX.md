@@ -479,3 +479,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - S4-14 is complete: Hard doubles and widens both chain-lightning side volleys for nine total bolts; Furious accelerates and widens the cycle and adds three distinct shootable balls from alternating authored racks. Normal preserves its original 5-bolt/1-ball pattern.
 - Verification: focused 10/10, Chromium 13/13 with zero errors, full suite exact 57-name baseline. Evidence: docs/SOVEREIGN_CHAIN_LIGHTNING_0915.md.
+
+## Codex update — 2026-09-15: Sovereign giant lightning strike
+
+- S4-15 is complete: Furious Sovereign follows chain lightning with an exact five-second yellow/red warning, darkened authored core charge, red release flash, and seven-column central lightning field. Both 17% camera-edge lanes remain safe and helper/final-gun fire pauses for readability.
+- Normal/Hard routing is unchanged. Focused 13/13, Chromium 15/15 with zero errors, full suite exact 57-name baseline. Evidence: docs/SOVEREIGN_GIANT_LIGHTNING_0915.md. Tally: 120 complete / 9 partial / 20 pending.
