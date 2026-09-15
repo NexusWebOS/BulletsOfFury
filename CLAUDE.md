@@ -4270,3 +4270,6 @@ S4-15 complete. Furious now follows its expanded chain phase with an exact five-
 
 ## 2026-09-15 Hard Razorback duo
 S1-05 complete. Hard Stage 1 now fields two complete Razorback siege tanks under one combined miniboss gauge. Each actor owns its authored rig, component pools, attack book, ordnance, locks and death; camera-relative lanes keep both readable and one tank continues after its partner dies. Normal and Furious remain single. Focused 14/14, Chromium 17/17 zero errors, full suite exact 57-name baseline. Tally 121 complete / 9 partial / 19 pending. See docs/RAZORBACK_DUO_0915.md.
+
+## 2026-09-15 Furious Razorback hyper tank
+S1-06 complete. Furious Stage 1 now fields one 150%-scale crimson Razorback with scaled hardpoints/hit geometry, a 62%-faster drivetrain, 55%-faster turning, 30%-faster attack clock, nine-round sonic fan, giant pressure wave, 28-round nova and fourteen-missile Razor Rack. Normal and the Hard duo remain unchanged. Focused 14/14, Chromium 17/17 zero errors, full suite exact 57-name baseline. Tally 122 complete / 9 partial / 18 pending. See docs/RAZORBACK_FURIOUS_0915.md.

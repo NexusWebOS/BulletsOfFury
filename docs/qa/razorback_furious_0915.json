@@ -1,0 +1,150 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-1 miniboss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "Furious keeps one separate hyper-tank encounter"
+    },
+    {
+      "pass": true,
+      "label": "the complete Furious collision silhouette is exactly 50 percent larger"
+    },
+    {
+      "pass": true,
+      "label": "authored Razorback hull, weapons, charge and ordnance decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "the giant tank completes its authored arrival and becomes attackable"
+    },
+    {
+      "pass": true,
+      "label": "the furious sonic attack still gives a readable charged warning before release"
+    },
+    {
+      "pass": true,
+      "label": "the native renderer palette-swaps the complete tank through luminance-preserving authored plates"
+    },
+    {
+      "pass": true,
+      "label": "release creates the nine-round Furious fan and one much wider pressure wave"
+    },
+    {
+      "pass": true,
+      "label": "the Furious wave is over twice the baseline width and expansion speed"
+    },
+    {
+      "pass": true,
+      "label": "charge, wave and sonic ordnance use the visible red Furious palette"
+    },
+    {
+      "pass": true,
+      "label": "hyper mode advances movement, turn and attack clocks together"
+    },
+    {
+      "pass": true,
+      "label": "native five-second hyper-tank capture encodes cleanly"
+    },
+    {
+      "pass": true,
+      "label": "the live showcase reaches the 28-round Furious resonance nova"
+    },
+    {
+      "pass": true,
+      "label": "the larger visual owns matching projectile and held-beam component geometry"
+    },
+    {
+      "pass": true,
+      "label": "native release pixels visibly contain the crimson Furious hull and red attack treatment"
+    },
+    {
+      "pass": true,
+      "label": "screenshots and video contain non-empty native gameplay frames"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "details": {
+    "setup": {
+      "normal": {
+        "w": 124,
+        "h": 124
+      },
+      "w": 186,
+      "h": 186,
+      "name": "FURIOUS RAZORBACK",
+      "pair": false
+    },
+    "charge": {
+      "charge": 0.8416666666666544,
+      "bullets": 0,
+      "waves": 0,
+      "pals": [
+        "rzb_hull_0|#d51f3b",
+        "rzb_tread|#d51f3b",
+        "rzb_rotor|#d51f3b",
+        "rzb_missile_pod|#d51f3b",
+        "rzb_machinegun|#d51f3b",
+        "rzb_turret|#d51f3b",
+        "rzb_hull_7|#d51f3b",
+        "rzb_hull_6|#d51f3b",
+        "rzb_sonic_charge|#ff1838"
+      ]
+    },
+    "sonic": {
+      "bullets": 9,
+      "waves": 1,
+      "arc": 1.05,
+      "width": 16.560000000000002,
+      "speed": 314.38125,
+      "pals": [
+        "rzb_hull_0|#d51f3b",
+        "rzb_tread|#d51f3b",
+        "rzb_rotor|#d51f3b",
+        "rzb_missile_pod|#d51f3b",
+        "rzb_machinegun|#d51f3b",
+        "rzb_turret|#d51f3b",
+        "rzb_hull_7|#d51f3b",
+        "rzb_hull_6|#d51f3b",
+        "rzb_sonic_charge|#ff1838",
+        "rzb_sonic_ring|#ff1838",
+        "rzb_sonic_bullet|#ff1838"
+      ]
+    },
+    "motion": {
+      "travel": 88.68360501168019,
+      "attack": 1.300000000000002,
+      "speedMul": 1.62,
+      "turnMul": 1.55
+    },
+    "nova": {
+      "shots": 28,
+      "waves": 1,
+      "furious": true
+    },
+    "crimsonPixels": 325975,
+    "runtimeSha256": "70f2fb42565fd27b56009dc1d0b0fa9383e3dfda6d3890f879f64313609cbd31"
+  },
+  "fight": {
+    "ok": true,
+    "name": "RAZORBACK SIEGE TANK",
+    "kind": "razorback",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "shots": [
+    "_shots\\razorback_furious_0915\\furious_razorback_01_sonic_charge.png",
+    "_shots\\razorback_furious_0915\\furious_razorback_02_sonic_release.png",
+    "_shots\\razorback_furious_0915\\furious_razorback_03.png",
+    "_shots\\razorback_furious_0915\\furious_razorback_04.png",
+    "_shots\\razorback_furious_0915\\furious_razorback_05.png",
+    "_shots\\razorback_furious_0915\\furious_razorback_06.png"
+  ],
+  "video": "_shots\\razorback_furious_0915\\Furious_Razorback_Hyper_Tank_0915.mp4"
+}

@@ -489,3 +489,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - S1-05 is complete: Hard Stage 1 fields two full Razorbacks at once with independent destructible components, offset attack books, owned ordnance/locks, camera-safe movement and a combined gauge that requires both kills.
 - Normal and Furious remain single for their distinct designs. Focused 14/14, Chromium 17/17 with zero errors, full suite exact 57-name baseline. Evidence: docs/RAZORBACK_DUO_0915.md. Tally: 121 complete / 9 partial / 19 pending; S1-06 is the next ready encounter.
+
+## Codex update — 2026-09-15: Furious Razorback hyper tank
+
+- S1-06 is complete: Furious Stage 1 fields one exact 150%-scale crimson Razorback with matching hardpoints/collision, faster movement/turn/attack clocks and expanded sonic, resonance-nova and Razor Rack pressure.
+- Normal remains the original single tank and Hard remains the independent two-tank fight. Focused 14/14, Chromium 17/17 with zero errors, full suite exact 57-name baseline. Evidence: docs/RAZORBACK_FURIOUS_0915.md. Tally: 122 complete / 9 partial / 18 pending; S2-08 is the next unfinished queue item.

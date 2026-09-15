@@ -14527,7 +14527,7 @@ console.log("=== 278. lizzie B-42 alternate costume ===");
   ok(/enemyLockOn\(b, 0\.9\+i\*0\.22/.test(_mv), 'the Razor Rack queues its missiles 1-by-1 on the retina lock, 0.22s apart');
   ok(!/for\(const off of \[[^\]]*\]\) rzbMissile/.test(_mv), 'and no loop fires a spread of missiles in one go');
   ok(/RZB_FAN\[i%RZB_FAN\.length\]/.test(_mv) && /side=\(i%2\)\?1:-1/.test(_mv), 'alternating pods down a narrowing fan');
-  ok(/rzbShot\(b,m,R\.turret\+off,240,18,'rzbSonic'\)/.test(_mv) && /R\.waves\.push/.test(_mv), 'the Sonic Hammer fires rounds AND a pressure wave');
+  ok(/rzbShot\(b,m,R\.turret\+off,(?:240|R\.furious\?300:240),(?:18|R\.furious\?22:18),'rzbSonic'\)/.test(_mv) && /R\.waves\.push/.test(_mv), 'the Sonic Hammer fires rounds AND a pressure wave');
   ok(/razorbackPressure/.test(_mv), "with its dedicated pressure release");
   var _pa = _fn286('razorbackPartAt');
   ok(/R\.state==='arrival' \|\| R\.trans>0\) return null/.test(_pa), 'no part can be hit while it rolls in or between phases');
@@ -15663,6 +15663,7 @@ require('./test_sovereign_helper_spider_walk_0915.cjs')(vm,ctxv,ok);
 require('./test_sovereign_chain_lightning_0915.cjs')(vm,ctxv,ok);
 require('./test_sovereign_giant_strike_0915.cjs')(vm,ctxv,ok);
 require('./test_razorback_duo_0915.cjs')(vm,ctxv,ok);
+require('./test_razorback_furious_0915.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

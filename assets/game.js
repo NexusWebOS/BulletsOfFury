@@ -17315,9 +17315,10 @@ function rzbWrap(a){ return Math.atan2(Math.sin(a),Math.cos(a)); }
 function rzbAim(f,t){ return Math.atan2(f.x-t.x, t.y-f.y); }                    // pack convention, 0 = south
 function rzbFwd(p,a,d){ return {x:p.x-Math.sin(a)*d, y:p.y+Math.cos(a)*d}; }
 function rzbGameAng(a){ return a+Math.PI/2; }
-function rzbWorld(b,lx,ly){ const a=b._rzb.a, c=Math.cos(a), s=Math.sin(a);
-  return {x:b.x+(lx*c-ly*s)*RZB_S, y:b.y+(lx*s+ly*c)*RZB_S}; }
-function rzbPxFrame(spdPack){ return spdPack*RZB_S*RZB_PFAST/60; }
+function rzbScale(b){return RZB_S*((b&&b._rzb&&b._rzb.scale)||1);}
+function rzbWorld(b,lx,ly){ const a=b._rzb.a, c=Math.cos(a), s=Math.sin(a), z=rzbScale(b);
+  return {x:b.x+(lx*c-ly*s)*z, y:b.y+(lx*s+ly*c)*z}; }
+function rzbPxFrame(spdPack,b){ return spdPack*RZB_S*RZB_PFAST*((b&&b._rzb&&b._rzb.furious)?1.22:1)/60; }
 function rzbImg(k){ return (typeof XART!=='undefined' && XART.rdy(k)) ? XART.get(k) : null; }
 function rzbSfx(name){ try{ const f=Audio&&Audio.SFX&&Audio.SFX[name]; if(f) f(); }catch(_rs){} }
 
@@ -17334,6 +17335,10 @@ function razorbackInit(b){
     speed:0, travel:{left:0,right:0}, charge:0, recoil:0, guns:{left:{a:0,flash:0},right:{a:0,flash:0}},
     pods:[0,0], pools:pools, max:Object.assign({},pools), flash:{}, waves:[], fx:[], beat:-1, mgBeat:-1,
     trans:0, ramX:W/2, pid:0, ppx:player?player.x:W/2, pvx:0, shake:0, clankT:0};
+  if(typeof diffKey!=='undefined'&&diffKey==='furious'){
+    const R=b._rzb;R.furious=true;R.scale=1.5;R.speedMul=1.62;R.turnMul=1.55;R.rate=1.30;
+    b.name='FURIOUS RAZORBACK';b.w=Math.round(270*RZB_S*R.scale);b.h=Math.round(270*RZB_S*R.scale);
+  }
   try{ if(typeof XART!=='undefined') for(const k in BOFX.img) if(k.indexOf('rzb_')===0){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_rw){}
 }
 /* Hard mode fields two complete tanks inside the one campaign miniboss slot. Each actor keeps its
@@ -17400,10 +17405,10 @@ function razorbackPartAt(b,x,y){
   const R=b&&b._rzb; if(!R || b.dead || R.state==='arrival' || R.trans>0) return null;
   if(R.state==='guns'){
     for(const k of ['left','right']) if(R.pools[k]>0){ const g=rzbWorld(b,k==='left'?-57:57,96);
-      if((x-g.x)*(x-g.x)+(y-g.y)*(y-g.y) < RZB_R.gun*RZB_R.gun) return k; }
+      const rr=RZB_R.gun*(R.scale||1);if((x-g.x)*(x-g.x)+(y-g.y)*(y-g.y) < rr*rr) return k; }
     return null;
   }
-  const r=R.state==='turret'?RZB_R.turret:RZB_R.hull;
+  const r=(R.state==='turret'?RZB_R.turret:RZB_R.hull)*(R.scale||1);
   return ((x-b.x)*(x-b.x)+(y-b.y)*(y-b.y) < r*r) ? R.state : null;
 }
 function razorbackHit(b,dmg,hx,hy){
@@ -17451,22 +17456,22 @@ function razorbackNext(b){
   if(R.attack==='sonic'||R.attack==='nova') stageRevisionCue(b,'razorbackCharge',.16);
 }
 function rzbShot(b,p,a,spdPack,rPack,kind){
-  const v=rzbPxFrame(spdPack), r=Math.max(6,Math.round(rPack*2*RZB_S)), ga=rzbGameAng(a);
-  eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,w:r,h:r,kind:kind,t:0,_rzb:true,_rzbOwner:b,ang:ga,spin:Math.random()*6});
+  const v=rzbPxFrame(spdPack,b), r=Math.max(6,Math.round(rPack*2*rzbScale(b))), ga=rzbGameAng(a);
+  eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,w:r,h:r,kind:kind,t:0,_rzb:true,_rzbOwner:b,_rzbFurious:!!b._rzb.furious,ang:ga,spin:Math.random()*6});
 }
 function rzbMissile(b,p,a){
-  const ga=rzbGameAng(a), v=rzbPxFrame(160);
-  eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,ang:ga,w:10,h:16,kind:'rzbMissile',hp:1,
-    _shootable:true,spd:v,_accel:0.0264,_maxspd:5.04,t:0,_rzb:true,_rzbOwner:b});
+  const ga=rzbGameAng(a), v=rzbPxFrame(160,b),furious=!!b._rzb.furious;
+  eBullets.push({x:p.x,y:p.y,vx:Math.cos(ga)*v,vy:Math.sin(ga)*v,ang:ga,w:furious?15:10,h:furious?24:16,kind:'rzbMissile',hp:1,
+    _shootable:true,spd:v,_accel:furious?0.034:0.0264,_maxspd:furious?6.25:5.04,t:0,_rzb:true,_rzbOwner:b,_rzbFurious:furious});
   stageRevisionCue(b,'razorbackRocket',.10);
 }
 function razorbackMove(b,dt){
-  const R=b._rzb, dx=R.tgt.x-b.x, dy=R.tgt.y-b.y, d=Math.hypot(dx,dy), oldA=R.a;
-  const top=((R.attack==='ram' && R.at>1)?330:92)*RZB_S*RZB_MOVE;
-  const speed=Math.min(d*1.7*RZB_MOVE,top);
+  const R=b._rzb, dx=R.tgt.x-b.x, dy=R.tgt.y-b.y, d=Math.hypot(dx,dy), oldA=R.a,hyper=R.speedMul||1;
+  const top=((R.attack==='ram' && R.at>1)?330:92)*RZB_S*RZB_MOVE*hyper;
+  const speed=Math.min(d*1.7*RZB_MOVE*hyper,top);
   if(d>2){
     b.x+=dx/d*speed*dt; b.y+=dy/d*speed*dt;
-    if(speed>8*RZB_S) R.a+=clamp(rzbWrap(rzbAim({x:0,y:0},{x:dx,y:dy})-R.a), -1.65*RZB_TURN*dt, 1.65*RZB_TURN*dt);
+    if(speed>8*RZB_S) R.a+=clamp(rzbWrap(rzbAim({x:0,y:0},{x:dx,y:dy})-R.a), -1.65*RZB_TURN*(R.turnMul||1)*dt, 1.65*RZB_TURN*(R.turnMul||1)*dt);
   }
   R.speed=d>2?speed:0;
   const turn=rzbWrap(R.a-oldA)/Math.max(1e-4,dt);
@@ -17509,21 +17514,21 @@ function razorbackUpdate(b,dt){
   R.servoT=(R.servoT||0)-dt;
   if(R.speed>20*RZB_S && R.servoT<=0){ R.servoT=2.2; rzbSfx('furnaceServo'); }
   const ta=rzbAim(b,{x:P.x+R.pvx*0.16, y:P.y});
-  R.turret+=clamp(rzbWrap(ta-R.turret), -1.85*dt, 1.85*dt);
+  R.turret+=clamp(rzbWrap(ta-R.turret), -1.85*(R.turnMul||1)*dt, 1.85*(R.turnMul||1)*dt);
   for(const k of ['left','right']){ const g=rzbWorld(b,k==='left'?-57:57,96);
     R.guns[k].a=R.a+clamp(rzbWrap(rzbAim(g,P)-R.a), -1.1, 1.1); }
-  if(R.trans<=0){ R.at+=dt; razorbackCombat(b); }
+  if(R.trans<=0){ R.at+=dt*(R.rate||1); razorbackCombat(b); }
   // pressure waves: expand, and hurt whoever stands on the ring inside its arc
   for(const w of R.waves){
     w.r+=w.speed*dt; w.life-=dt;
     if(!P.dead){ const dd=Math.hypot(P.x-w.x,P.y-w.y), aa=rzbAim(w,P);
-      if(Math.abs(dd-w.r)<w.width+7*RZB_S && Math.abs(rzbWrap(aa-w.a))<w.arc && typeof playerHit==='function') playerHit(); }
+      if(Math.abs(dd-w.r)<w.width+7*rzbScale(b) && Math.abs(rzbWrap(aa-w.a))<w.arc && typeof playerHit==='function') playerHit(); }
   }
   R.waves=R.waves.filter(w=>w.life>0);
-  if(!P.dead && Math.hypot(b.x-P.x,b.y-P.y)<105*RZB_S && typeof playerHit==='function') playerHit();   // the hull runs you over
+  if(!P.dead && Math.hypot(b.x-P.x,b.y-P.y)<105*rzbScale(b) && typeof playerHit==='function') playerHit();   // the hull runs you over
 }
 function razorbackCombat(b){
-  const R=b._rzb, t=R.at, m=rzbFwd(b,R.turret,(142-R.recoil)*RZB_S);
+  const R=b._rzb, t=R.at, S=rzbScale(b),m=rzbFwd(b,R.turret,(142-R.recoil)*S);
   R.charge=0;
   if(R.attack==='suppression' && R.state!=='guns'){
     // guns gone: the turret fires rapid three-round sonic bursts
@@ -17536,10 +17541,10 @@ function razorbackCombat(b){
     if(beat>R.mgBeat && (t%1.8)<1.15){
       R.mgBeat=beat;
       for(const k of ['left','right']) if(R.pools[k]>0){
-        const g=rzbWorld(b,k==='left'?-57:57,96), a=R.guns[k].a, mz=rzbFwd(g,a,49*RZB_S);
+        const g=rzbWorld(b,k==='left'?-57:57,96), a=R.guns[k].a, mz=rzbFwd(g,a,49*S);
         const n0=eBullets.length;
-        eShootT(mz.x,mz.y,eAimDown(rzbGameAng(a+Math.sin(beat*1.9)*0.07)),rzbPxFrame(380),'mg',{w:4,h:14,silent:true});
-        for(let i=n0;i<eBullets.length;i++){eBullets[i]._rzb=true;eBullets[i]._rzbOwner=b;}
+        eShootT(mz.x,mz.y,eAimDown(rzbGameAng(a+Math.sin(beat*1.9)*0.07)),rzbPxFrame(380,b),'mg',{w:R.furious?6:4,h:R.furious?19:14,silent:true});
+        for(let i=n0;i<eBullets.length;i++){eBullets[i]._rzb=true;eBullets[i]._rzbOwner=b;eBullets[i]._rzbFurious=!!R.furious;}
         R.guns[k].flash=0.08;stageRevisionCue(b,'razorbackGun',.12);
       }
     }
@@ -17552,8 +17557,9 @@ function razorbackCombat(b){
     if(cycle<1.2&&R._sonicAudioBeat!==audioBeat){R._sonicAudioBeat=audioBeat;stageRevisionCue(b,'razorbackCharge',.16);}
     if(cycle>=1.2){ R.charge=0;
       if(beat>R.beat){ R.beat=beat;
-        for(const off of [-0.28,-0.14,0,0.14,0.28]) rzbShot(b,m,R.turret+off,240,18,'rzbSonic');
-        R.waves.push({x:m.x,y:m.y,r:10*RZB_S,a:R.turret,arc:0.65,speed:180*RZB_S*RZB_WFAST,width:15*RZB_S,life:5});
+        const offs=R.furious?[-0.56,-0.42,-0.28,-0.14,0,0.14,0.28,0.42,0.56]:[-0.28,-0.14,0,0.14,0.28];
+        for(const off of offs)rzbShot(b,m,R.turret+off,R.furious?300:240,R.furious?22:18,'rzbSonic');
+        R.waves.push({x:m.x,y:m.y,r:10*S,a:R.turret,arc:R.furious?1.05:0.65,speed:(R.furious?270:180)*S*RZB_WFAST,width:(R.furious?24:15)*S,life:R.furious?6:5,furious:!!R.furious});
         R.recoil=24; shake=Math.max(shake||0,5); stageRevisionCue(b,'razorbackPressure',.12);
         // Charge report belongs to the windup above; release has its own cue.
       } }
@@ -17564,7 +17570,7 @@ function razorbackCombat(b){
       /* RAZOR RACK through the RETINA LOCK: one retina, launches queued 1-by-1 from alternating pods
          down a narrowing fan. A launch belongs to this attack only - R.pid moves on a phase change,
          so a queued missile cannot leave a tank whose rack was just destroyed. */
-      R.beat=0; const N=R.state==='hull'?8:10, pid=R.pid;
+      R.beat=0; const N=R.furious?14:(R.state==='hull'?8:10), pid=R.pid;
       for(let i=0;i<N;i++){
         const side=(i%2)?1:-1, off=RZB_FAN[i%RZB_FAN.length];
         enemyLockOn(b, 0.9+i*0.22, {fire:function(){
@@ -17579,8 +17585,8 @@ function razorbackCombat(b){
     // RESONANCE NOVA: an expanding arc with a gap BEHIND the tank, plus a slow ring
     R.charge=clamp(t/1.55,0,1);
     if(t>1.55 && R.beat<0){ R.beat=0;
-      R.waves.push({x:b.x,y:b.y,r:35*RZB_S,a:R.a,arc:2.66,speed:200*RZB_S*RZB_WFAST,width:17*RZB_S,life:5.6});
-      for(let i=0;i<16;i++) rzbShot(b,{x:b.x,y:b.y},i*Math.PI*2/16,145,12,'rzbSonic');
+      R.waves.push({x:b.x,y:b.y,r:35*S,a:R.a,arc:R.furious?2.92:2.66,speed:(R.furious?260:200)*S*RZB_WFAST,width:(R.furious?25:17)*S,life:R.furious?6.4:5.6,furious:!!R.furious});
+      const n=R.furious?28:16;for(let i=0;i<n;i++)rzbShot(b,{x:b.x,y:b.y},i*Math.PI*2/n,R.furious?205:145,R.furious?15:12,'rzbSonic');
       shake=Math.max(shake||0,8); stageRevisionCue(b,'razorbackPressure',.12); }
     if(t>1.55) R.charge=0;
     if(t>4.5) razorbackNext(b);
@@ -17594,27 +17600,27 @@ function razorbackCombat(b){
     if(t>4.7) razorbackNext(b);
   }
 }
-function rzbSprite(key,x,y,a,s,alpha,px,py){
-  const im=rzbImg(key); if(!im) return false;
+function rzbSprite(key,x,y,a,s,alpha,px,py,mul,tint){
+  const im=(tint&&typeof xartPalette==='function'&&xartPalette(key,tint))||rzbImg(key); if(!im) return false;
   const w=im.width||im.naturalWidth, h=im.height||im.naturalHeight;
-  const ox=(px!=null?px:w/2), oy=(py!=null?py:h/2), sc=s*RZB_S;
+  const ox=(px!=null?px:w/2), oy=(py!=null?py:h/2), sc=s*RZB_S*(mul||1);
   ctx.save(); ctx.translate(x,y); ctx.rotate(a||0); if(alpha!=null) ctx.globalAlpha=alpha;
   ctx.drawImage(im,-ox*sc,-oy*sc,w*sc,h*sc); ctx.restore(); return true;
 }
-function rzbFlash(key,x,y,a,s,px,py,amt){
+function rzbFlash(key,x,y,a,s,px,py,amt,mul){
   if(!(amt>0) || typeof xartTint!=='function') return;
   const t=xartTint(key,'#ffffff',0.9); if(!t) return;
-  const w=t.width, h=t.height, ox=(px!=null?px:w/2), oy=(py!=null?py:h/2), sc=s*RZB_S;
+  const w=t.width, h=t.height, ox=(px!=null?px:w/2), oy=(py!=null?py:h/2), sc=s*RZB_S*(mul||1);
   ctx.save(); ctx.translate(x,y); ctx.rotate(a||0); ctx.globalAlpha=Math.min(1,amt/0.12)*0.8;
   ctx.drawImage(t,-ox*sc,-oy*sc,w*sc,h*sc); ctx.restore();
 }
 function razorbackDraw(b){
   const R=b._rzb; if(!R) return;
-  const S=RZB_S;
+  const mul=R.scale||1,S=rzbScale(b),bodyTint=R.furious?'#d51f3b':null;
   ctx.save(); ctx.imageSmoothingEnabled=false;
   if(b.dead){
     const k=clamp((b.dying||0)/1.9,0,1);
-    rzbSprite('rzb_wreck',b.x,b.y,R.a,1,1-k*0.85);
+    rzbSprite('rzb_wreck',b.x,b.y,R.a,1,1-k*0.85,null,null,mul,bodyTint);
     ctx.restore(); return;
   }
   /* ground shadow: the hull's own SILHOUETTE flooded black and offset. The pack drew a translucent
@@ -17626,14 +17632,14 @@ function razorbackDraw(b){
       ctx.save(); ctx.translate(b.x+10*S,b.y+14*S); ctx.rotate(sa); ctx.globalAlpha=0.34;
       ctx.drawImage(sh,-sh.width*sc/2,-sh.height*sc/2,sh.width*sc,sh.height*sc); ctx.restore(); } }
   if(R.speed>5*S){ for(const side of [-1,1]){ const p=rzbWorld(b,side*85,-100);
-    rzbSprite('rzb_dust',p.x,p.y,(b.t||0)*0.12,0.36+Math.sin((b.t||0)*10+side)*0.08,0.25); } }
+    rzbSprite('rzb_dust',p.x,p.y,(b.t||0)*0.12,0.36+Math.sin((b.t||0)*10+side)*0.08,0.25,null,null,mul); } }
   // hull: nearest authored compass frame, turned by the residual; the hull phase shows the wreck plate
   const i=((Math.round(R.a/(Math.PI/4))%8)+8)%8, resid=rzbWrap(R.a-i*Math.PI/4);
   const hk=R.state==='hull'?'rzb_wreck':'rzb_hull_'+i, ha=R.state==='hull'?R.a:resid;
-  rzbSprite(hk,b.x,b.y,ha,1);
-  if(R.state==='hull') rzbFlash(hk,b.x,b.y,ha,1,null,null,R.flash.hull);
+  rzbSprite(hk,b.x,b.y,ha,1,null,null,null,mul,bodyTint);
+  if(R.state==='hull') rzbFlash(hk,b.x,b.y,ha,1,null,null,R.flash.hull,mul);
   // treads scroll by the distance each side actually travelled
-  const tr=rzbImg('rzb_tread');
+  const tr=(bodyTint&&typeof xartPalette==='function'&&xartPalette('rzb_tread',bodyTint))||rzbImg('rzb_tread');
   if(tr){ ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(R.a);
     for(const side of [-1,1]){ ctx.save(); ctx.beginPath(); ctx.rect((side*81-19)*S,-98*S,38*S,218*S); ctx.clip();
       const off=((R.travel[side<0?'left':'right']*0.65)%42+42)%42;
@@ -17644,20 +17650,20 @@ function razorbackDraw(b){
   for(let n=0;n<4;n++){
     const mt=[[-65,-46],[65,-46],[-70,33],[68,33]][n], p=rzbWorld(b,mt[0],mt[1]), side=n%2?'right':'left';
     ctx.fillStyle='#171b1b'; ctx.beginPath(); ctx.ellipse(p.x,p.y,19*S,17*S,R.a,0,Math.PI*2); ctx.fill();
-    rzbSprite('rzb_rotor',p.x,p.y,R.a+R.travel[side]/25,0.43);
+    rzbSprite('rzb_rotor',p.x,p.y,R.a+R.travel[side]/25,0.43,null,null,null,mul,bodyTint);
   }
-  for(const s of [-1,1]){ const p=rzbWorld(b,s*105,10); rzbSprite('rzb_missile_pod',p.x,p.y,R.a,0.55);
-    if(R.pods[s<0?0:1]>0){ const q=rzbFwd(p,R.turret+s*0.6,26*S); rzbSprite('rzb_muzzle',q.x,q.y,R.turret,0.2); } }
+  for(const s of [-1,1]){ const p=rzbWorld(b,s*105,10); rzbSprite('rzb_missile_pod',p.x,p.y,R.a,0.55,null,null,null,mul,bodyTint);
+    if(R.pods[s<0?0:1]>0){ const q=rzbFwd(p,R.turret+s*0.6,26*S); rzbSprite('rzb_muzzle',q.x,q.y,R.turret,0.2,null,null,null,mul); } }
   for(const k of ['left','right']) if(R.pools[k]>0){
     const p=rzbWorld(b,k==='left'?-57:57,96), g=R.guns[k];
-    rzbSprite('rzb_machinegun',p.x,p.y,g.a,1,null,64,65);
-    rzbFlash('rzb_machinegun',p.x,p.y,g.a,1,64,65,R.flash[k]);
-    if(g.flash>0){ const m=rzbFwd(p,g.a,49*S); rzbSprite('rzb_muzzle',m.x,m.y,g.a,0.34); }
+    rzbSprite('rzb_machinegun',p.x,p.y,g.a,1,null,64,65,mul,bodyTint);
+    rzbFlash('rzb_machinegun',p.x,p.y,g.a,1,64,65,R.flash[k],mul);
+    if(g.flash>0){ const m=rzbFwd(p,g.a,49*S); rzbSprite('rzb_muzzle',m.x,m.y,g.a,0.34,null,null,null,mul); }
   }
   if(R.pools.turret>0){
     const p=rzbFwd({x:b.x,y:b.y},R.turret,-R.recoil*S), tk=(R.pools.turret<R.max.turret*0.5)?'rzb_turret_damaged':'rzb_turret';
-    rzbSprite(tk,p.x,p.y,R.turret,1,null,128,128);
-    if(R.state==='turret') rzbFlash(tk,p.x,p.y,R.turret,1,128,128,R.flash.turret);
+    rzbSprite(tk,p.x,p.y,R.turret,1,null,128,128,mul,bodyTint);
+    if(R.state==='turret') rzbFlash(tk,p.x,p.y,R.turret,1,128,128,R.flash.turret,mul);
   }
   if(R.charge>0){
     const m=(R.attack==='sonic')?rzbFwd(b,R.turret,142*S):{x:b.x,y:b.y};
@@ -17665,33 +17671,33 @@ function razorbackDraw(b){
     const rr=(45+R.charge*65)*S, g=ctx.createRadialGradient(m.x,m.y,0,m.x,m.y,rr);
     g.addColorStop(0,'rgba(174,255,49,'+(0.22+R.charge*0.4)+')'); g.addColorStop(1,'rgba(174,255,49,0)');
     ctx.fillStyle=g; ctx.fillRect(m.x-rr,m.y-rr,rr*2,rr*2); ctx.restore();
-    rzbSprite('rzb_sonic_charge',m.x,m.y,(b.t||0)*0.8,0.16+R.charge*0.5);
+    rzbSprite('rzb_sonic_charge',m.x,m.y,(b.t||0)*(R.furious?1.7:0.8),0.16+R.charge*(R.furious?0.78:0.5),null,null,null,mul,R.furious?'#ff1838':null);
     if(R.attack==='sonic'){ const e=rzbFwd(m,R.turret,750*S); ctx.save(); ctx.setLineDash([10*S,12*S]);
-      ctx.strokeStyle='rgba(184,238,94,0.5)'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(m.x,m.y); ctx.lineTo(e.x,e.y); ctx.stroke(); ctx.restore(); }
+      ctx.strokeStyle=R.furious?'rgba(255,32,58,0.72)':'rgba(184,238,94,0.5)'; ctx.lineWidth=2; ctx.beginPath(); ctx.moveTo(m.x,m.y); ctx.lineTo(e.x,e.y); ctx.stroke(); ctx.restore(); }
     if(R.attack==='ram'){ ctx.save(); ctx.strokeStyle='rgba(255,200,36,0.45)'; ctx.lineWidth=36*S;
       ctx.beginPath(); ctx.moveTo(b.x,b.y); ctx.lineTo(R.ramX,VH*0.85); ctx.stroke(); ctx.restore(); }
   }
   for(const w of R.waves) razorbackWaveDraw(w);
   for(const e of R.fx){ const u=1-e.life/e.max;
-    rzbSprite(e.key,e.x,e.y,(e.spin?u*3:0),e.s*(0.7+u*0.6),1-u, e.key==='rzb_turret_damaged'?128:null, e.key==='rzb_turret_damaged'?128:null); }
+    rzbSprite(e.key,e.x,e.y,(e.spin?u*3:0),e.s*(0.7+u*0.6),1-u, e.key==='rzb_turret_damaged'?128:null, e.key==='rzb_turret_damaged'?128:null,mul,bodyTint); }
   ctx.restore();
 }
 function razorbackWaveDraw(w){
-  const im=rzbImg('rzb_sonic_ring');
+  const im=(w.furious&&typeof xartPalette==='function'&&xartPalette('rzb_sonic_ring','#ff1838'))||rzbImg('rzb_sonic_ring');
   ctx.save(); ctx.translate(w.x,w.y);
   ctx.beginPath(); ctx.moveTo(0,0); ctx.arc(0,0,w.r+w.width+5,w.a+Math.PI/2-w.arc,w.a+Math.PI/2+w.arc); ctx.closePath(); ctx.clip();
   ctx.beginPath(); ctx.arc(0,0,w.r+w.width,0,Math.PI*2); ctx.arc(0,0,Math.max(0,w.r-w.width),0,Math.PI*2,true); ctx.clip();
   if(im){ const sz=256*(w.r+15*RZB_S)/105; ctx.globalAlpha=0.9; ctx.drawImage(im,-sz/2,-sz/2,sz,sz); }
   ctx.restore();
-  ctx.save(); ctx.strokeStyle='rgba(202,255,119,0.5)'; ctx.lineWidth=2; ctx.beginPath();
+  ctx.save(); ctx.strokeStyle=w.furious?'rgba(255,40,65,0.72)':'rgba(202,255,119,0.5)'; ctx.lineWidth=2; ctx.beginPath();
   ctx.arc(w.x,w.y,w.r,w.a+Math.PI/2-w.arc,w.a+Math.PI/2+w.arc); ctx.stroke(); ctx.restore();
 }
 function razorbackProjectileDraw(q){
   if(q.kind!=='rzbSonic' && q.kind!=='rzbMissile') return false;
   const a=(q.ang!=null?q.ang:Math.atan2(q.vy,q.vx))-Math.PI/2;
-  const key=q.kind==='rzbMissile'?'rzb_razor_missile':'rzb_sonic_bullet', im=rzbImg(key);
+  const key=q.kind==='rzbMissile'?'rzb_razor_missile':'rzb_sonic_bullet', im=(q._rzbFurious&&typeof xartPalette==='function'&&xartPalette(key,'#ff1838'))||rzbImg(key);
   if(!im) return false;
-  const sz=q.kind==='rzbMissile'?34:Math.max(20,q.w*1.9);
+  const sz=q.kind==='rzbMissile'?(q._rzbFurious?51:34):Math.max(20,q.w*1.9);
   ctx.save(); ctx.translate(q.x,q.y); ctx.rotate(a); ctx.imageSmoothingEnabled=false;
   ctx.drawImage(im,-sz/2,-sz/2,sz,sz); ctx.restore();
   return true;
@@ -24269,7 +24275,7 @@ function razorbackBeamHit(b,beam){
   for(const key of parts){
     if(!(R.pools[key]>0))continue;
     const q=key==='left'||key==='right'?rzbWorld(b,key==='left'?-57:57,96):{x:b.x,y:b.y};
-    const r=R.state==='guns'?RZB_R.gun:R.state==='turret'?RZB_R.turret:RZB_R.hull;
+    const r=(R.state==='guns'?RZB_R.gun:R.state==='turret'?RZB_R.turret:RZB_R.hull)*(R.scale||1);
     const hit=beamCircleImpact(q,r,range);
     if(hit&&(!best||hit.entry>best.entry))best=Object.assign(hit,{key:key});
   }
@@ -28251,13 +28257,13 @@ function retinaBossTargets(b){
   }else if(b._rzbPair){
     sectional=true;for(let ai=0;ai<b._rzbPair.actors.length;ai++){const p=b._rzbPair.actors[ai],R=p._rzb,ids=R.state==='guns'?['left','right']:[R.state];
       if(!p.dead&&R.state!=='arrival'&&R.trans<=0)for(const id of ids)if(R.pools[id]>0){const rid=ai+':'+id,state=()=>{const q=id==='left'||id==='right'?rzbWorld(p,id==='left'?-57:57,96):{x:p.x,y:p.y};return{x:q.x,y:q.y,hp:R.pools[id],dead:p.dead||R.pools[id]<=0||R.state!==((id==='left'||id==='right')?'guns':id)||R.trans>0};};
-        a.push(retinaImpactTarget(b,rid,'razorback '+(ai+1)+' '+id,state,(RZB_R[id==='left'||id==='right'?'gun':id]||34)*2,(RZB_R[id==='left'||id==='right'?'gun':id]||34)*2));}
+        const rr=(RZB_R[id==='left'||id==='right'?'gun':id]||34)*(R.scale||1)*2;a.push(retinaImpactTarget(b,rid,'razorback '+(ai+1)+' '+id,state,rr,rr));}
     }
   }else if(b._rzb){
     sectional=true;const R=b._rzb,ids=R.state==='guns'?['left','right']:[R.state];
     if(R.state!=='arrival'&&R.trans<=0)for(const id of ids)if(R.pools[id]>0){
       const state=()=>{const q=id==='left'||id==='right'?rzbWorld(b,id==='left'?-57:57,96):{x:b.x,y:b.y};return{x:q.x,y:q.y,hp:R.pools[id],dead:R.pools[id]<=0||R.state!==((id==='left'||id==='right')?'guns':id)||R.trans>0};};
-      a.push(retinaImpactTarget(b,id,'razorback '+id,state,(RZB_R[id==='left'||id==='right'?'gun':id]||34)*2,(RZB_R[id==='left'||id==='right'?'gun':id]||34)*2));
+      const rr=(RZB_R[id==='left'||id==='right'?'gun':id]||34)*(R.scale||1)*2;a.push(retinaImpactTarget(b,id,'razorback '+id,state,rr,rr));
     }
   }else if(b._tempestDuo){
     sectional=true;

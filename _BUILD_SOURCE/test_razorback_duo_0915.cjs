@@ -12,7 +12,7 @@ module.exports=function(vm,ctxv,ok){
       R.tgt={x:p._rzb.homeX||p.x,y:VH*.27};p.x=R.tgt.x;p.y=R.tgt.y;R.a=0;R.hpSync=true;}
     try{
       var n=spawn('normal');o.normalSingle=!!n._rzb&&!n._rzbPair&&n.name==='RAZORBACK';
-      var f=spawn('furious');o.furiousReserved=!!f._rzb&&!f._rzbPair&&f.name==='RAZORBACK';
+      var f=spawn('furious');o.furiousSeparate=!!f._rzb&&!f._rzbPair&&f._rzb.furious&&f.name==='FURIOUS RAZORBACK';
       var b=spawn('hard'),P=b._rzbPair,a=P&&P.actors;o.hardPair=!!P&&a.length===2&&!b._rzb&&b.name==='RAZORBACK DUO';
       o.fullIndependentHp=a.every(p=>p.maxhp===P.singleMax&&p.hp===P.singleMax)&&b.maxhp===P.singleMax*2;
       o.distinctHomes=Math.abs(a[0]._rzb.homeX-(camLeftX()+(camRightX()-camLeftX())*.28))<.01&&Math.abs(a[1]._rzb.homeX-(camLeftX()+(camRightX()-camLeftX())*.72))<.01;
