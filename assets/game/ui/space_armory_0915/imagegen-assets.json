@@ -1,0 +1,153 @@
+{
+  "generator": "OpenAI imagegen",
+  "source": "space_armory_magenta_source.png",
+  "background": "magenta chroma key",
+  "prompt_summary": "Fury HQ Space Division crate; Helper Orb, Akimbo and Proximity Mine badges; deployed orb and mine; two authored shrapnel projectiles.",
+  "source_sha12": "24d53cc19365",
+  "assets": [
+    {
+      "file": "fury_hq_box.png",
+      "source_region": [
+        0,
+        0,
+        450,
+        512
+      ],
+      "trim_region": [
+        23,
+        86,
+        447,
+        508
+      ],
+      "width": 424,
+      "height": 422,
+      "sha12": "f409971a9bfc"
+    },
+    {
+      "file": "helper_orb_icon.png",
+      "source_region": [
+        430,
+        0,
+        790,
+        512
+      ],
+      "trim_region": [
+        14,
+        89,
+        342,
+        511
+      ],
+      "width": 328,
+      "height": 422,
+      "sha12": "6a6f3a9d85cf"
+    },
+    {
+      "file": "akimbo_icon.png",
+      "source_region": [
+        700,
+        0,
+        1150,
+        512
+      ],
+      "trim_region": [
+        29,
+        61,
+        450,
+        512
+      ],
+      "width": 421,
+      "height": 451,
+      "sha12": "0010aec7893a"
+    },
+    {
+      "file": "proximity_mine_icon.png",
+      "source_region": [
+        1120,
+        0,
+        1536,
+        512
+      ],
+      "trim_region": [
+        9,
+        60,
+        406,
+        512
+      ],
+      "width": 397,
+      "height": 452,
+      "sha12": "bcb7133d5359"
+    },
+    {
+      "file": "helper_orb.png",
+      "source_region": [
+        0,
+        512,
+        450,
+        1024
+      ],
+      "trim_region": [
+        27,
+        82,
+        437,
+        409
+      ],
+      "width": 410,
+      "height": 327,
+      "sha12": "336dc20362db"
+    },
+    {
+      "file": "proximity_mine.png",
+      "source_region": [
+        430,
+        512,
+        820,
+        1024
+      ],
+      "trim_region": [
+        20,
+        75,
+        370,
+        420
+      ],
+      "width": 350,
+      "height": 345,
+      "sha12": "eea9d0f4739e"
+    },
+    {
+      "file": "shrapnel_long.png",
+      "source_region": [
+        850,
+        512,
+        1120,
+        1024
+      ],
+      "trim_region": [
+        90,
+        82,
+        192,
+        424
+      ],
+      "width": 102,
+      "height": 342,
+      "sha12": "a130223cc993"
+    },
+    {
+      "file": "shrapnel_forked.png",
+      "source_region": [
+        1120,
+        512,
+        1536,
+        1024
+      ],
+      "trim_region": [
+        95,
+        69,
+        320,
+        440
+      ],
+      "width": 225,
+      "height": 371,
+      "sha12": "985534b78eb9"
+    }
+  ]
+}

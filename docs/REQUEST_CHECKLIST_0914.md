@@ -1,6 +1,6 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-15. **149 entries: 126 complete / 7 partial / 16 pending.**
+Updated 2026-09-15. **150 entries: 127 complete / 7 partial / 16 pending.**
 
 **23 remain unfinished.** 10 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: winged Life Up regeneration with symmetrical armored jet wings and unchanged Continue Up [Proof](LIFE_UP_WINGS_0915.md).
+Just verified: Fury HQ Space Division crate with Helper Orb, Akimbo and proximity-mine rewards [Proof](SPACE_ARMORY_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -28,7 +28,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Stage 2: lava enemies, Magma Ward and Furnace Tyrant | 7 | 1 | 3 | 11 |
 | Stage 3: ice enemies, miniboss and Rime Wall | 12 | 0 | 2 | 14 |
 | Stage 4: Olive Warden and Sovereign | 14 | 0 | 4 | 18 |
-| Stages 5-9: space and encounter cleanup | 17 | 2 | 4 | 23 |
+| Stages 5-9: space and encounter cleanup | 18 | 2 | 4 | 24 |
 | Manual missile tiers and supplies | 9 | 0 | 0 | 9 |
 | Pause, saving, title and pilot selection | 15 | 0 | 0 | 15 |
 | Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
@@ -159,6 +159,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **SPACE-21 · Complete** — 15-second bouncing spiked ball; ordinary fire enrages into faster laser volleys, manual missiles knock back; x10/x20 supplies only. [Evidence](BOSS_BATCH_0915.md).
 - [x] **SPACE-22 · Complete** — Hammer leap attacks with generated green/yellow/red committed target reticles, upward charge scan, return leap or follow-up strike. [Evidence](BOSS_BATCH_0915.md).
 - [x] **SPACE-23 · Complete** — Chrome Hammer one-hand boomerang: rapidly spin and charge the hammer, throw it vertically down a committed player lane, then visibly retract it to the raised hand at medium magnetic speed with sounds. [Evidence](CHROME_HAMMER_BOOMERANG_0915.md).
+- [x] **SPACE-24 · Complete** — Fury HQ Space Division crate with a three-reward RNG bag: autonomous helper orb, Akimbo projectile upgrade, and proximity mine with splash plus authored shrapnel. [Evidence](SPACE_ARMORY_0915.md).
 
 ### Manual missile tiers and supplies
 

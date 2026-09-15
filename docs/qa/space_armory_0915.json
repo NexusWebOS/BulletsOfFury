@@ -1,0 +1,59 @@
+{
+  "date": "2026-09-15",
+  "checklistId": "SPACE-24",
+  "status": "complete",
+  "art": {
+    "directory": "assets/game/ui/space_armory_0915",
+    "source": "space_armory_magenta_source.png",
+    "runtimeAssets": 8,
+    "background": "magenta chroma key"
+  },
+  "gameplay": {
+    "stages": [
+      5,
+      9
+    ],
+    "rngBag": [
+      "spacehelper",
+      "spaceakimbo",
+      "spacemine"
+    ],
+    "helperLifetimeSeconds": 30,
+    "akimbo": {
+      "laserHardpoints": 4,
+      "shadowOrbs": 2,
+      "volleyMissiles": 4
+    },
+    "mine": {
+      "armSeconds": 0.42,
+      "triggerRadius": 62,
+      "splashRadius": 104,
+      "splashDamage": 20,
+      "shrapnelCount": 12,
+      "shrapnelDamage": 7
+    }
+  },
+  "focused": {
+    "test": "_BUILD_SOURCE/test_space_armory_0915.cjs",
+    "passed": 23,
+    "failed": 0
+  },
+  "chromium": {
+    "url": "http://127.0.0.1:8785/_shots/space_armory_0915/review.html?qa=2",
+    "decoded": 8,
+    "consoleErrors": 0
+  },
+  "fullSuite": {
+    "test": "_BUILD_SOURCE/test_fl.js",
+    "passedAssertions": 4338,
+    "failed": 56,
+    "baselineFailureCount": 57,
+    "newFailureNames": [],
+    "resolvedBaselineNames": [
+      "stage 1: the sand tanks spawn (scroll never)"
+    ]
+  },
+  "syntax": "passed",
+  "commit": false,
+  "push": false
+}
