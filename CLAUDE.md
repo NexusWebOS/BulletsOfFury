@@ -4255,3 +4255,6 @@ MODE-07 complete. Hard/Furious authored aces and deathless miniboss/boss encount
 
 ## 2026-09-15 Sovereign helper blockade
 S4-11 complete. Hard/Furious Storm Sovereign helpers have 50% more shield capacity, progressively faster turns/fire/rounds, and a timed forward horizontal row that tracks the player inside safe camera edges before withdrawing. Normal remains unchanged. Focused section 325 passes 14/14; Chromium passes 17/17 with zero errors; full suite retains the exact 57-name baseline. See docs/SOVEREIGN_HELPER_BLOCKADE_0915.md.
+
+## 2026-09-15 Sovereign helper enrage
+S4-12 complete. A Hard/Furious generator hit enrages the surviving Sovereign helpers once per node cycle: true red palette, glowing asterisk, opposite side stations, inward hull aim and staggered six-round rapid streams with repeated traversable gaps. The boss holds and pauses unrelated orb/final-gun pressure during the 5.6s Hard / 6.8s Furious phase. Focused section 326 passes 12/12; Chromium 19/19 with zero errors; repeat full suite exact 57-name baseline. See docs/SOVEREIGN_HELPER_ENRAGE_0915.md.

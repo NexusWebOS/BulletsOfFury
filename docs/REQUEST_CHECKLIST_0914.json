@@ -696,9 +696,9 @@
     {
       "id": "S4-12",
       "group": "Stage 4: Olive Warden and Sovereign",
-      "status": "pending",
+      "status": "complete",
       "request": "Generator hit enrages helpers red with an asterisk; move to screen sides and face player for 5-7 seconds of staggered rapid streams with traversable gaps.",
-      "evidence": "",
+      "evidence": "SOVEREIGN_HELPER_ENRAGE_0915.md",
       "dependency": "",
       "workOrder": 72,
       "difficulty": 4,

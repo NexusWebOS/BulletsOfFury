@@ -1,0 +1,298 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-4 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Sovereign helper and shield art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "the real hit route damages the selected generator instead of the hull"
+    },
+    {
+      "pass": true,
+      "label": "Normal generator hits do not activate the difficulty-only enrage"
+    },
+    {
+      "pass": true,
+      "label": "a real Hard generator hit triggers the surviving helpers exactly once"
+    },
+    {
+      "pass": true,
+      "label": "repeated rounds on the same generator do not restart the sequence"
+    },
+    {
+      "pass": true,
+      "label": "both enraged helpers reach opposite screen-side firing stations"
+    },
+    {
+      "pass": true,
+      "label": "both live helpers remain in the explicit rage state"
+    },
+    {
+      "pass": true,
+      "label": "the live renderer draws two asterisks and uses the red palette plate"
+    },
+    {
+      "pass": true,
+      "label": "both side helpers visibly turn inward toward the player"
+    },
+    {
+      "pass": true,
+      "label": "both helpers release marked rapid streams from their own side"
+    },
+    {
+      "pass": true,
+      "label": "the dedicated enrage phase does not bury its dodge gap under the boss orb cycle"
+    },
+    {
+      "pass": true,
+      "label": "six-round bursts create repeated synchronized dodge gaps"
+    },
+    {
+      "pass": true,
+      "label": "the two staggered streams preserve separate lanes instead of colliding into one wall"
+    },
+    {
+      "pass": true,
+      "label": "the 5.6-second Hard sequence withdraws cleanly to the normal helper cycle"
+    },
+    {
+      "pass": true,
+      "label": "Furious extends the same readable enrage sequence to 6.8 seconds"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_enrage_01_side_deploy is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "sovereign_enrage_02_staggered_streams is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "STORM SOVEREIGN MK II",
+    "kind": "stormsovereign",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "normalHit": {
+    "nodeHpBefore": 70,
+    "nodeHpAfter": 69,
+    "hullBefore": 2564,
+    "hullAfter": 2564,
+    "triggered": false,
+    "count": 0
+  },
+  "normal": {
+    "rage": false,
+    "count": 0
+  },
+  "hardSetup": {
+    "nodes": 4,
+    "helpers": 2
+  },
+  "hardHit": {
+    "nodeHpBefore": 70,
+    "nodeHpAfter": 69,
+    "hullBefore": 2820,
+    "hullAfter": 2820,
+    "triggered": true,
+    "count": 1
+  },
+  "deploy": {
+    "rage": true,
+    "mode": "fire",
+    "t": 0.8000000000000008,
+    "dur": 5.6,
+    "stats": {
+      "shots": 5,
+      "left": 4,
+      "right": 1,
+      "gaps": 0
+    },
+    "helpers": [
+      {
+        "side": -1,
+        "x": 147.9536422729978,
+        "y": 281.5681411747689,
+        "ang": 0.7607367011904353,
+        "rage": true,
+        "state": "rage"
+      },
+      {
+        "side": 1,
+        "x": 532.0463577270021,
+        "y": 281.5681411747689,
+        "ang": 2.209377419772204,
+        "rage": true,
+        "state": "rage"
+      }
+    ],
+    "asterisks": 2,
+    "ragePlate": true,
+    "nonRageShots": 0,
+    "shots": [
+      {
+        "side": -1,
+        "lane": -1,
+        "ang": 0.7994706608377067,
+        "x": 240.033838658652,
+        "y": 391.8426553342913
+      },
+      {
+        "side": -1,
+        "lane": -1,
+        "ang": 0.781152712873502,
+        "x": 238.11405061078744,
+        "y": 348.5946829650253
+      },
+      {
+        "side": -1,
+        "lane": -1,
+        "ang": 0.7666514279521233,
+        "x": 185.96314522022368,
+        "y": 337.69994771004303
+      },
+      {
+        "side": 1,
+        "lane": 1,
+        "ang": 2.2083206739180694,
+        "x": 517.7040513135178,
+        "y": 325.01208449532226
+      },
+      {
+        "side": -1,
+        "lane": -1,
+        "ang": 0.7607367011904352,
+        "x": 181.04617669639273,
+        "y": 293.18693561739644
+      }
+    ]
+  },
+  "streams": {
+    "rage": true,
+    "mode": "fire",
+    "t": 2.549999999999996,
+    "dur": 5.6,
+    "stats": {
+      "shots": 36,
+      "left": 18,
+      "right": 18,
+      "gaps": 6
+    },
+    "helpers": [
+      {
+        "side": -1,
+        "x": 147.99999999999994,
+        "y": 281.99999999999966,
+        "ang": 0.7531512809630274,
+        "rage": true,
+        "state": "rage"
+      },
+      {
+        "side": 1,
+        "x": 532.0000000000002,
+        "y": 281.99999999999966,
+        "ang": 2.214297435587642,
+        "rage": true,
+        "state": "rage"
+      }
+    ],
+    "asterisks": 2,
+    "ragePlate": true,
+    "nonRageShots": 0,
+    "shots": [
+      {
+        "side": -1,
+        "lane": -1,
+        "ang": 0.7531512811022549,
+        "x": 375.49300123584993,
+        "y": 475.5361477362357
+      },
+      {
+        "side": 1,
+        "lane": 1,
+        "ang": 2.214297435530127,
+        "x": 355.3774333185272,
+        "y": 493.49675560184636
+      },
+      {
+        "side": -1,
+        "lane": -1,
+        "ang": 0.7531512810340102,
+        "x": 330.4502854821537,
+        "y": 472.7856836449219
+      },
+      {
+        "side": 1,
+        "lane": 1,
+        "ang": 2.2142974355643608,
+        "x": 406.21062725513,
+        "y": 473.71916366888587
+      },
+      {
+        "side": -1,
+        "lane": -1,
+        "ang": 0.7531512809916594,
+        "x": 316.3541749964692,
+        "y": 420.0934980884286
+      },
+      {
+        "side": 1,
+        "lane": 1,
+        "ang": 2.2142974355759715,
+        "x": 404.0155227105923,
+        "y": 428.645969723149
+      },
+      {
+        "side": 1,
+        "lane": 1,
+        "ang": 2.2142974355831737,
+        "x": 454.84871665375584,
+        "y": 408.8683777962218
+      },
+      {
+        "side": 1,
+        "lane": 1,
+        "ang": 2.214297435586128,
+        "x": 459.6019105975891,
+        "y": 354.5307858702272
+      }
+    ]
+  },
+  "ended": {
+    "rage": false,
+    "helpers": [
+      {
+        "rage": false,
+        "state": "windup"
+      },
+      {
+        "rage": false,
+        "state": "windup"
+      }
+    ],
+    "mode": "hold"
+  },
+  "furious": {
+    "dur": 6.8,
+    "helpers": [
+      true,
+      true
+    ]
+  },
+  "shots": [
+    "_shots\\sovereign_helper_enrage_0915\\sovereign_enrage_01_side_deploy.png",
+    "_shots\\sovereign_helper_enrage_0915\\sovereign_enrage_02_staggered_streams.png"
+  ]
+}

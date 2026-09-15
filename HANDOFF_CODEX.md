@@ -462,3 +462,9 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 - S4-11 is complete: Hard/Furious Sovereign helpers get 50% more shield capacity, faster attack handling and a timed forward blocking row that follows the player before returning to its generator stations.
 - Normal remains unchanged. S4-12 and S4-13 still own the generator-hit enrage and side-stream follow-up.
 - Verification: focused 14/14, Chromium 17/17 with zero errors, and the exact established 57-name full-suite baseline. Evidence: docs/SOVEREIGN_HELPER_BLOCKADE_0915.md.
+
+## Codex update — 2026-09-15: Sovereign helper enrage
+
+- S4-12 is complete: real Hard/Furious generator damage sends surviving helpers red to opposite edges with glowing asterisks, inward hull aim, and staggered six-round streams separated by recurring dodge gaps.
+- The dedicated phase lasts 5.6s on Hard and 6.8s on Furious; unrelated boss orb/final-gun pressure pauses so the intended route remains visible. Normal is unchanged, and S4-13 still owns the later spider-walk tracking response.
+- Verification: focused 12/12, Chromium 19/19 with zero errors, repeat full suite exact 57-name baseline. Evidence: docs/SOVEREIGN_HELPER_ENRAGE_0915.md.
