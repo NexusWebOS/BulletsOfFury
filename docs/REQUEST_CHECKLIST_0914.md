@@ -1,8 +1,8 @@
 # Bullets of Fury — request checklist
 
-Updated 2026-09-15. **149 entries: 114 complete / 9 partial / 26 pending.**
+Updated 2026-09-15. **149 entries: 115 complete / 9 partial / 25 pending.**
 
-**35 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
+**34 remain unfinished.** 12 depend on SpriteCook production assets; 0 needs a model-name decision. These are included in the totals.
 
 Consolidated requests in this conversation; superseded variants folded into the latest request. Rows count deliverables, not effort or percent of development time.
 
@@ -32,7 +32,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 | Manual missile tiers and supplies | 6 | 2 | 1 | 9 |
 | Pause, saving, title and pilot selection | 15 | 0 | 0 | 15 |
 | Achievements, timers and unlockable modes | 11 | 1 | 2 | 14 |
-| Arcade and shared difficulty rewards | 6 | 0 | 2 | 8 |
+| Arcade and shared difficulty rewards | 7 | 0 | 1 | 8 |
 
 ## Checklist
 
@@ -215,7 +215,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **MODE-04 · Complete** — Hard enemies and shields get +15% HP across Campaign and Arcade, with explicit encounter-specific modifiers applied consistently. [Evidence](HARD_ENEMY_HP_0915.md).
 - [x] **MODE-05 · Complete** — Hard/Furious elite duplicates: authored palette variations, shields and capable aggressive fighter behavior; Furious more demanding. [Evidence](DIFFICULTY_ELITE_ACES_0915.md).
 - [x] **MODE-06 · Complete** — Hard/Furious Life Up frequency increased by 25%. [Evidence](EASY_QUEUE_0914.md).
-- [ ] **MODE-07 · Pending** — Continue Up reward in all modes for qualifying deathless sections, or Hard/Furious elite kills; enforce defined reward eligibility.
+- [x] **MODE-07 · Complete** — Continue Up reward in all modes for qualifying deathless sections, or Hard/Furious elite kills; enforce defined reward eligibility. [Evidence](CONTINUE_UP_REWARDS_0915.md).
 - [ ] **MODE-08 · Pending** — Regenerate Life Up and create Continue Up pickup art matching Bullets of Fury through SpriteCook. Dependency: SpriteCook.
 
 ## Keeping this tally current

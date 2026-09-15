@@ -1,0 +1,126 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native beginStage opens Stage 4 in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "authored Life Up base plate is decoded for the temporary composed pickup"
+    },
+    {
+      "pass": true,
+      "label": "a real Hard authored ace death drops exactly one Continue Up"
+    },
+    {
+      "pass": true,
+      "label": "the reward came from the authored difficulty-elite boundary"
+    },
+    {
+      "pass": true,
+      "label": "the game canvas draws the authored base plate for the visible pickup"
+    },
+    {
+      "pass": true,
+      "label": "real pickup collision extends the Hard Arcade bank from three to four"
+    },
+    {
+      "pass": true,
+      "label": "collection consumes the pickup and announces the remaining reserve"
+    },
+    {
+      "pass": true,
+      "label": "collection reaches the existing authored Life Up sound route once"
+    },
+    {
+      "pass": true,
+      "label": "a deathless encounter resolves once at its marked boundary"
+    },
+    {
+      "pass": true,
+      "label": "a life lost inside the marked encounter blocks the reward"
+    },
+    {
+      "pass": true,
+      "label": "the real miniboss spawn and death-completion hooks award one clean-section pickup"
+    },
+    {
+      "pass": true,
+      "label": "the real boss spawn and death hooks award one clean-section pickup"
+    },
+    {
+      "pass": true,
+      "label": "finite Continue screen displays the earned reserve before it is spent"
+    },
+    {
+      "pass": true,
+      "label": "the augmented fourth credit restores the configured Hard stock"
+    },
+    {
+      "pass": true,
+      "label": "continue_up_01_elite_drop is a non-empty native frame"
+    },
+    {
+      "pass": true,
+      "label": "continue_up_02_collected_banner is a non-empty native frame"
+    },
+    {
+      "pass": true,
+      "label": "continue_up_03_augmented_continue_prompt is a non-empty native frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page or console errors"
+    }
+  ],
+  "errors": [],
+  "elite": {
+    "drop": true,
+    "source": "elite",
+    "count": 1,
+    "blits": [
+      "pu_life",
+      "player",
+      "expr0"
+    ],
+    "drawImages": 53,
+    "eligible": true,
+    "variant": "furytalon"
+  },
+  "collected": {
+    "bonus": 1,
+    "cap": 4,
+    "left": 1,
+    "present": false,
+    "banner": "CONTINUE UP - 1 READY",
+    "lifeSfx": 1
+  },
+  "deathless": {
+    "clean": true,
+    "one": 1,
+    "duplicate": false,
+    "blocked": false,
+    "sources": [
+      "miniboss"
+    ]
+  },
+  "prompt": {
+    "cap": 4,
+    "labels": [
+      "CONTINUE?",
+      "10",
+      "1 CONTINUE REMAINING"
+    ]
+  },
+  "spent": {
+    "state": "play",
+    "used": 4,
+    "lives": 3,
+    "cap": 4
+  },
+  "shots": [
+    "_shots\\continue_up_rewards_0915\\continue_up_01_elite_drop.png",
+    "_shots\\continue_up_rewards_0915\\continue_up_02_collected_banner.png",
+    "_shots\\continue_up_rewards_0915\\continue_up_03_augmented_continue_prompt.png"
+  ]
+}

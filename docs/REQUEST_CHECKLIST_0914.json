@@ -1344,9 +1344,9 @@
     {
       "id": "MODE-07",
       "group": "Arcade and shared difficulty rewards",
-      "status": "pending",
+      "status": "complete",
       "request": "Continue Up reward in all modes for qualifying deathless sections, or Hard/Furious elite kills; enforce defined reward eligibility.",
-      "evidence": "",
+      "evidence": "CONTINUE_UP_REWARDS_0915.md",
       "dependency": "",
       "workOrder": 69,
       "difficulty": 4,

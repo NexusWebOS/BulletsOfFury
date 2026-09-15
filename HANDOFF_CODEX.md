@@ -449,3 +449,10 @@ Final 0915 boss QA: syntax pass; focused 20/0; full suite 3850 pass / 58 recorde
 ## 2026-09-15 Overnight gameplay continuation
 
 Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty aces are injected across all nine stages, and Olive Warden Hard/Furious has both its warned assault cycle and difficulty-only two/three-escort formations. Read docs/CHROME_HAMMER_BOOMERANG_0915.md, docs/DIFFICULTY_ELITE_ACES_0915.md, docs/OLIVE_WARDEN_HARD_ASSAULT_0915.md and docs/OLIVE_WARDEN_ESCORTS_0915.md. Final focused sections 304e and 321-323 pass. Latest full suite has only the established 57 named failures; latest native proofs are 50-frame/zero-error hammer capture, 28/28 Warden assault, 42/42 nine-stage aces and 15/15 Warden escorts. Checklist 149: 114 complete / 9 partial / 26 pending, 35 unfinished. Mike explicitly authorized committing and pushing the completed overnight batch to GitHub.
+
+## Codex update — 2026-09-15: Continue Up rewards
+
+- MODE-07 is complete: deathless miniboss/boss encounters and Hard/Furious authored aces drop a physical Continue Up exactly once.
+- Either co-op seat dying blocks the deathless reward. The collected credit extends the shared finite bank, survives campaign save/load, and is shown on the Continue screen.
+- Current art is a clearly marked composition of the authored Life Up; MODE-08 still owns the dedicated SpriteCook pickup art.
+- Verification: focused 18/18, Chromium 18/18 with zero errors, full suite exact 57-name recorded baseline. Evidence: docs/CONTINUE_UP_REWARDS_0915.md.
