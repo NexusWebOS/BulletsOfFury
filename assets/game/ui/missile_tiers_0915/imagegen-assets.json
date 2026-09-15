@@ -1,0 +1,125 @@
+{
+  "generator": "OpenAI imagegen",
+  "generated_sources": {
+    "family_checker_source": "missile_tiers_source.png (canonical transparent rebuild)",
+    "uber_magenta_source": "uber_magenta_source.png"
+  },
+  "prompt_summary": "Distinct M missile upgrades: navy Super, orange/black Ultra, and a regenerated nuclear-green Uber with physically connected wings and a solid magenta key background; matching full-name badges and armored boxes.",
+  "source_sha12": "292bc08ea3a5",
+  "assets": [
+    {
+      "file": "super_icon.png",
+      "source_region": [
+        0,
+        0,
+        512,
+        512
+      ],
+      "source": "family_checker_source",
+      "trim_region": [
+        107,
+        47,
+        416,
+        496
+      ],
+      "width": 309,
+      "height": 449,
+      "sha12": "30562c3112aa"
+    },
+    {
+      "file": "ultra_icon.png",
+      "source_region": [
+        512,
+        0,
+        1024,
+        512
+      ],
+      "source": "family_checker_source",
+      "trim_region": [
+        87,
+        22,
+        424,
+        496
+      ],
+      "width": 337,
+      "height": 474,
+      "sha12": "e21a590253fb"
+    },
+    {
+      "file": "super_box.png",
+      "source_region": [
+        0,
+        512,
+        512,
+        1024
+      ],
+      "source": "family_checker_source",
+      "trim_region": [
+        59,
+        43,
+        465,
+        465
+      ],
+      "width": 406,
+      "height": 422,
+      "sha12": "de4bc1486034"
+    },
+    {
+      "file": "ultra_box.png",
+      "source_region": [
+        512,
+        512,
+        1024,
+        1024
+      ],
+      "source": "family_checker_source",
+      "trim_region": [
+        42,
+        38,
+        469,
+        471
+      ],
+      "width": 427,
+      "height": 433,
+      "sha12": "8e905f2a8dab"
+    },
+    {
+      "file": "uber_icon.png",
+      "source_region": [
+        0,
+        0,
+        800,
+        887
+      ],
+      "source": "uber_magenta_source",
+      "trim_region": [
+        84,
+        18,
+        749,
+        864
+      ],
+      "width": 665,
+      "height": 846,
+      "sha12": "c23cb9a01a95"
+    },
+    {
+      "file": "uber_box.png",
+      "source_region": [
+        800,
+        0,
+        1774,
+        887
+      ],
+      "source": "uber_magenta_source",
+      "trim_region": [
+        49,
+        27,
+        891,
+        851
+      ],
+      "width": 842,
+      "height": 824,
+      "sha12": "2696e7fc2e05"
+    }
+  ]
+}
