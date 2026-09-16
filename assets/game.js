@@ -2005,7 +2005,11 @@ const XART=(function(){
     /* the WASD cluster the HELP page's MOUSE + KEY row needs (Mike, 0916). There was no letter-key
        art at all before this - only SPACE and R - so the keyboard half of that row was drawing a
        D-pad. Generated to the same gunmetal keycap language as the mouse prompts. */
-    input_key_wasd_0916:'key_wasd.png'
+    input_key_wasd_0916:'key_wasd.png',
+    /* the five letter keys the game actually binds - H charge, J fire, K missile, L lock,
+       C retina (Mike, 0916). Same keycap language as WASD and the mouse prompts. */
+    input_key_h_0916:'key_h.png', input_key_j_0916:'key_j.png', input_key_k_0916:'key_k.png',
+    input_key_l_0916:'key_l.png', input_key_c_0916:'key_c.png'
   })) X._src[_key]=_inputPromptRoot+_file;
   /* Generated mode plates use a source crop because the generator baked a checkerboard beyond
      their beveled frames. The exact Nexus II chain plate is clipped over the same silhouette. */
@@ -6897,7 +6901,7 @@ const Audio = (()=>{
 
    ⚠ CHARGE IS A BIND, NOT A LITERAL 'h'. He named the key, but a hardcoded letter is an action
    the rebind screen cannot reach and the second seat cannot have. See CTRL_ACTS, which it joins. */
-const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','mouse3','pad_b3'],charge:['h','mouse4','pad_b2'],start:['enter','p','pad_b9']};
+const KEYBIND_DEFAULT={up:['w','arrowup','pad_up'],down:['s','arrowdown','pad_down'],left:['a','arrowleft','pad_left'],right:['d','arrowright','pad_right'],fire:['j','mouse0','pad_b0','pad_b7'],bomb:['k','mouse2','pad_b1','pad_b6'],retina:['c',' ','mouse3','pad_b3','pad_b5'],charge:['h','mouse4','pad_b2'],start:['enter','p','pad_b9']};
 /* KEYBINDS MUST BE VALIDATED, NOT JUST FILLED IN (drop 0724dl).
 
    Mike's readout said it all: `state title, kd40 ku41, last shift, menu 0`. Forty keypresses
@@ -6941,7 +6945,7 @@ const KEY_UNBINDABLE = ['shift','control','alt','meta','capslock','contextmenu',
    ============================================================ */
 const KEYBIND2_DEFAULT={
   up:['t','pad2_up'], down:['g','pad2_down'], left:['f','pad2_left'], right:['h','pad2_right'],
-  fire:['v','pad2_b0','pad2_b7'], bomb:['b','pad2_b1','pad2_b6'], retina:['n','pad2_b3'],
+  fire:['v','pad2_b0','pad2_b7'], bomb:['b','pad2_b1','pad2_b6'], retina:['n','pad2_b3','pad2_b5'],
   /* seat 2 gets CHARGE too - an action only P1 can reach is one that vanishes in co-op */
   charge:['m','pad2_b2'],
   /* P2 gets START on the pad only. The options screen builds a row per CTRL_ACTS for BOTH
@@ -60151,19 +60155,10 @@ function drawTitle(dt){
     try{ localStorage.removeItem('bof_keys'); localStorage.removeItem('bof_opts'); bofStorageResetKeepSaves(); }catch(e){}
     try{ location.reload(); }catch(e){}
   }
-  {
-    const _rl='F1 = RESET CONTROLS';
-    ctx.save(); ctx.textAlign='center'; ctx.font='9px "BOFmil", monospace';
-    ctx.fillStyle='#7f8aa0'; ctx.fillText(_rl, VW/2, VH-15);
-    const m=Input.mouse;
-    if(m && m.down && m.y>VH-23 && m.y<VH-8 && Math.abs(m.x-VW/2)<90 && !drawTitle._rdown){
-      drawTitle._rdown=true;
-      try{ bofStorageResetKeepSaves(); }catch(e){}
-      try{ location.reload(); }catch(e){}
-    }
-    if(m && !m.down) drawTitle._rdown=false;
-    ctx.restore();
-  }
+  /* ⚠ THE F1 LABEL IS GONE FROM THE TITLE (Mike, 0916: "Remove the F1 = Reset Controls, make a
+     reset controls button in the options menu"). The KEY above still works and is deliberately
+     silent: it is the hatch for a saved bad bind, and the options row cannot be the only way out
+     when a broken bind is what stops you reaching options. */
   if(menuFlash>0) menuFlash-=dt;
   if(titlePending!=null && menuFlash<=0){ const m=titlePending; titlePending=null; menuFlashIdx=-1;
     if(m===0){ setState(GS.MODESEL); modeIndex=1; menuIndex=1; }   // NEW GAME -> mode select (boot-05)
@@ -60825,8 +60820,16 @@ function drawPilot(dt){
        reached Input.menuConfirm() further down. Enter could not select a pilot
        at all. Guard on the state first; only reach for the key when a skip is
        actually possible. */
+    /* ⚠ ONE PRESS DEPLOYS (Mike, 0916: "I still cannot get past the pilot select screen"). This
+       used to consume the press as a SKIP and require a second one to select - so the first thing
+       a player does on this screen produced no visible answer at all, which reads as a dead
+       button on a screen that is otherwise finished. The skip still happens; the same press now
+       carries straight on into confirmPilot, which is idempotent and refuses a locked pilot. */
     if(pilotInputReady && typeof Input!=='undefined' && pcard && !pcard.done && typeof pcSkip==='function'
-       && (Input.tap('fire')||Input.tap('enter')||Input.tap(' '))){ pcSkip(); }
+       && (Input.tap('fire')||Input.tap('enter')||Input.tap(' '))){
+      pcSkip();
+      if(!coopActive() && typeof confirmPilot==='function' && !isPilotLocked(PILOTS[pilotIndex])) confirmPilot();
+    }
   }
   drawPilotBG(P.tint);
   /* the reveal (typed text + stat bars + special) is drawn AFTER the shell, over the same rect —
@@ -63420,46 +63423,53 @@ function helpKeyCap(glyph, act, cx, cy, h, caption){
    rather than hidden, because a six-button pad with three buttons on it is not this controller.
    ⚠ AND THE LETTERS FOLLOW THE BINDS, NOT THE OTHER WAY AROUND: charge is on X (his call) and the
    retina moved to Y, so the two faces printed here are the two the pad actually sends. */
-const HELP_FACES_TOP=[['pad_x','charge','CHARGE'],['pad_y','retina','RETINA'],['pad_z',null,'-']];
-const HELP_FACES_BOT=[['pad_a','fire','FIRE'],['pad_b','bomb','MISSILE'],['pad_c',null,'-']];
+/* ⚠ RETINA IS ON C (Mike, 0916: "Retina should be C") - on a Genesis pad the third face of the
+   bottom row is where it belongs, and C is also its keyboard key, so the screen says one thing.
+   Its pad bind carries pad_b5 as well as pad_b3, because a six-button pad reports C as the
+   right shoulder in XInput while an ordinary pad calls that face Y. */
+const HELP_FACES_TOP=[['pad_x','charge','CHARGE'],['pad_y',null,'-'],['pad_z',null,'-']];
+const HELP_FACES_BOT=[['pad_a','fire','FIRE'],['pad_b','bomb','MISSILE'],['pad_c','retina','RETINA']];
 function helpPageControls(){
-  helpLabel('CONTROLLER', VW/2, VH*0.172, 13, '#ffd36b');   // clears the page name at y 54
+  /* ⚠ THE HEADER SAT ON THE PAGE NAME. "CONTROLS" is drawn at y 54 by drawHelp and this row was at
+     VH*0.172 = 88 with the face captions 20px above their glyphs, so CHARGE/RETINA climbed into it.
+     The pad block starts lower now and the whole screen is laid out from three stacked bands. */
+  helpLabel('CONTROLLER', VW/2, VH*0.178, 13, '#ffd36b');
 
-  const padY=VH*0.295;
+  const padY=VH*0.315;
   helpGlyph('pad_dpad', VW*0.19, padY, 62);
   helpLabel('MOVE', VW*0.19, padY+46, 12, '#ffd36b');
-
-  /* the six faces, in the pad's own two rows */
-  /* the faces climb to the right, which is the arc a Genesis pad actually has - three in a row at
-     one height is an arcade panel, not this controller */
-  const fx=[VW*0.52, VW*0.68, VW*0.84], arc=[0,-5,-11], topY=padY-26, botY=padY+20;
-  for(let i=0;i<3;i++){
-    const t=HELP_FACES_TOP[i], b=HELP_FACES_BOT[i], dy=arc[i];
-    helpGlyph(t[0], fx[i], topY+dy, 28, t[1]?1:0.35);
-    helpLabel(t[2], fx[i], topY+dy-20, 11, t[1]?'#ffd36b':'#4a5568');
-    helpGlyph(b[0], fx[i], botY+dy, 28, b[1]?1:0.35);
-    helpLabel(b[2], fx[i], botY+dy+22, 11, b[1]?'#ffd36b':'#4a5568');
-  }
   helpGlyph('pad_start', VW*0.19, padY+74, 26);
   helpLabel('PAUSE', VW*0.19, padY+96, 11, '#9fb4c8');
 
-  /* MOUSE + KEY. ⚠ The wheel prompt used to say WHEEL and the wheel did nothing in play - it was
-     read in exactly one place in the file, the OPTIONS list scroll. It cycles the retina lock now
-     (Mike, 0916: "Make wheel lock on"), so the prompt finally describes a live control. */
-  helpLabel('MOUSE + KEY', VW/2, VH*0.535, 13, '#ffd36b');
-  const ky=VH*0.645;
-  if(!helpGlyph('input_key_wasd_0916', VW*0.19, ky, 66)) helpGlyph('pad_dpad', VW*0.19, ky, 52, 0.8);
-  helpLabel('MOVE', VW*0.19, ky+42, 11, '#9fb4c8');
+  /* the faces climb to the right, which is the arc a Genesis pad actually has */
+  const fx=[VW*0.49, VW*0.665, VW*0.845], arc=[0,-5,-11], topY=padY-26, botY=padY+22;
+  for(let i=0;i<3;i++){
+    const t=HELP_FACES_TOP[i], b=HELP_FACES_BOT[i], dy=arc[i];
+    helpGlyph(t[0], fx[i], topY+dy, 28, t[1]?1:0.35);
+    helpLabel(t[2], fx[i], topY+dy-19, 11, t[1]?'#ffd36b':'#4a5568');
+    helpGlyph(b[0], fx[i], botY+dy, 28, b[1]?1:0.35);
+    helpLabel(b[2], fx[i], botY+dy+21, 11, b[1]?'#ffd36b':'#4a5568');
+  }
+
+  /* KEYBOARD. Every key the game binds now has its own cap rather than a line of text. */
+  helpLabel('KEYBOARD', VW/2, VH*0.545, 13, '#ffd36b');
+  const ky=VH*0.635;
+  helpGlyph('input_key_wasd_0916', VW*0.145, ky, 60);
+  helpLabel('MOVE', VW*0.145, ky+40, 11, '#9fb4c8');
+  const keys=[['input_key_j_0916','FIRE'],['input_key_k_0916','MISSILE'],
+              ['input_key_c_0916','RETINA'],['input_key_h_0916','CHARGE'],['input_key_l_0916','LOCK']];
+  /* five caps across a 480px field: 0.32..0.92 keeps LOCK's label inside the edge */
+  keys.forEach(function(q,i){ const x=VW*(0.32+i*0.15); helpGlyph(q[0],x,ky,32); helpLabel(q[1],x,ky+32,11,'#9fb4c8'); });
+
+  /* MOUSE. The wheel prompt describes a live control now - it cycles the retina lock. */
+  const my=VH*0.80;
+  helpLabel('MOUSE', VW*0.145, my, 12, '#ffd36b');
   const mouse=[['input_mouse_left_0915','FIRE','#ff796d'],
                ['input_mouse_right_0915','MISSILE','#ff796d'],
                ['input_mouse_wheel_0915','LOCK ON','#9fd6ff']];
-  mouse.forEach(function(q,i){ const x=VW*(0.45+i*0.19); helpGlyph(q[0],x,ky,40); helpLabel(q[1],x,ky+40,11,q[2]); });
+  mouse.forEach(function(q,i){ const x=VW*(0.42+i*0.20); helpGlyph(q[0],x,my,34); helpLabel(q[1],x,my+30,11,q[2]); });
 
-  /* the live bind table, one line, read off keybind so a rebind shows here immediately */
-  const row=VH*0.815;
-  helpLabel('FIRE '+helpBind('fire',1)+'   MISSILE '+helpBind('bomb',1), VW/2, row, 11, '#9fb4c8');
-  helpLabel('RETINA '+helpBind('retina',1)+'   CHARGE '+helpBind('charge',1)+'   PAUSE '+helpBind('start',1), VW/2, row+15, 11, '#9fb4c8');
-  helpLabel('KEYS - MOUSE - PAD ALL LIVE AT ONCE', VW/2, row+34, 11, '#5f7288');
+  helpLabel('KEYS - MOUSE - PAD ALL LIVE AT ONCE', VW/2, VH*0.905, 11, '#5f7288');
 }
 
 function helpPageMoves(){
@@ -63669,6 +63679,19 @@ function optSnapshot(){ optSnap={master:Audio.getVol('master'),music:Audio.getVo
 function optCancel(){ if(optSnap){ Audio.setVol('master',optSnap.master); Audio.setVol('music',optSnap.music); Audio.setVol('sfx',optSnap.sfx); voiceVol=optSnap.voice; Audio.setVol('voice',voiceVol); for(const a in optSnap.keybind){ if(Array.isArray(optSnap.keybind[a])) keybind[a]=optSnap.keybind[a].slice(); }
   if(optSnap.keybind2) for(const a in optSnap.keybind2){ if(Array.isArray(optSnap.keybind2[a])) keybind2[a]=optSnap.keybind2[a].slice(); } }
   optSnap=null; optScroll=0; rebindAction=null; rebindWho=1; setState(GS.TITLE); menuIndex=2; Audio.SFX.select(); }
+function optResetControls(){
+  /* the shipped tables, copied rather than referenced - handing the live binds the DEFAULT object
+     would let the next rebind edit the defaults themselves, and then nothing could restore them */
+  try{
+    keybind=JSON.parse(JSON.stringify(KEYBIND_DEFAULT));
+    if(typeof keybind2!=='undefined' && typeof KEYBIND2_DEFAULT!=='undefined') keybind2=JSON.parse(JSON.stringify(KEYBIND2_DEFAULT));
+    if(typeof saveKeybind==='function') saveKeybind();
+  }catch(_optReset){}
+  rebindAction=null; rebindWho=1;
+  optResetControls._t=1.8;
+  try{ Audio.SFX.select&&Audio.SFX.select(); }catch(_){}
+}
+optResetControls._t=0;
 function optApply(){ saveKeybind(); if(Audio.saveVol)Audio.saveVol(); optSnap=null; optScroll=0; rebindAction=null; rebindWho=1; setState(GS.TITLE); menuIndex=2; Audio.SFX.select(); }
 function drawOptions(dt){
   if(typeof drawCanonBackdrop==='function' && drawCanonBackdrop('nbt_4',0.60,1)){} else drawTitleBackdrop(dt);
@@ -63689,6 +63712,10 @@ function drawOptions(dt){
      settings block that only appears once you are already in the mode is a block nobody finds. */
   rows.push({t:'head',label:'PLAYER 2 CONTROLS'});
   for(let i=0;i<CTRL_ACTS.length;i++) rows.push({t:'ctrl',act:CTRL_ACTS[i],label:CTRL_LABELS[i],who:2});
+  /* RESET CONTROLS (Mike, 0916). It restores the shipped defaults for BOTH seats and writes them,
+     so it is a one-press way back from any rebind - the job the title's F1 line used to advertise,
+     in the screen where controls actually live. */
+  rows.push({t:'reset',label:'RESET CONTROLS'});
   const selectable=rows.map((r,i)=>({r,i})).filter(o=>o.r.t!=='head');
   /* ⚠ CANCEL AND APPLY JOIN THE CURSOR LIST (drop 0822af). Mike: "I have no way to apply in
      the options menu with my controller or a keyboard. I have to do it with the mouse."
@@ -63717,6 +63744,7 @@ function drawOptions(dt){
     if(Input.menuRight()) adjustVol(selRow.k, 1/SEG);
   }
   if(!rebindAction && selRow && selRow.t==='ctrl' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ rebindAction=selRow.act; rebindWho=(selRow.who||1); Audio.SFX.blip(); }
+  if(!rebindAction && selRow && selRow.t==='reset' && (Input.tap('enter')||keybind.fire.some(k=>Input.tap(k))||Input.menuStart())){ optResetControls(); }
   /* on the buttons: left/right picks between them, confirm presses the one you are on */
   if(!rebindAction && onBtn){
     if(Input.menuLeft()  && btnIdx>0){ optSelIdx--; if(Audio.SFX&&Audio.SFX.blip)Audio.SFX.blip(); }
@@ -63776,6 +63804,12 @@ function drawOptions(dt){
             ctx.strokeStyle='rgba(255,179,71,0.18)'; ctx.lineWidth=1; ctx.strokeRect(bx+1,cy-7,segW-2,14); }
         }
         ctx.fillStyle='#ffd36b'; ctx.font='bold 9px "BOFmil", monospace'; ctx.textAlign='left'; ctx.fillText(Math.round(vol*100)+'%',sx1+8,cy);
+      }
+      else if(r.t==='reset'){ ctx.fillStyle=isSel?menuSelWhite():'#cfd6e0'; ctx.font='bold 11px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='middle'; ctx.fillText(r.label,wx+16,cy);
+        ctx.fillStyle=(optResetControls._t>0)?'#8de23a':'#9aa0aa'; ctx.font='bold 10px "BOFmil", monospace';
+        ctx.fillText((optResetControls._t>0)?'DEFAULTS RESTORED':'PRESS TO RESTORE DEFAULTS',wx+ww-172,cy);
+        if(optResetControls._t>0) optResetControls._t-=dt;
+        ctx.textBaseline='alphabetic';
       }
       else if(r.t==='ctrl'){ ctx.fillStyle=isSel?menuSelWhite():'#cfd6e0'; ctx.font='bold 11px "BOFmil", monospace'; ctx.textAlign='left'; ctx.textBaseline='middle'; ctx.fillText(r.label,wx+16,cy);
         /* YELLOW on options (drop 0801bk), per Mike. NOTE: gamecode.js also has a
