@@ -136,6 +136,23 @@ Build in this order:
   (flood the recesses, take fractions) — see `SC_SLOTS_FULL` and the note beside it. Weapon icons
   already exist for every slot (`micon_*`); fusions need one icon each.
 
+## Art rule for the Forge (Mike, 0916)
+
+*"have missile icons, laser beam icons, machine gun pellets, laser beams, fire balls, ice balls,
+lightning balls, lightning projectiles, and use our in-game projectiles for these so we dont waste
+credits."* The icon column and the preview bay use the game's OWN art: `micon_*` for the weapon
+slots, and the live projectile cells (`mfx_*` pellets, the laser plates, `nts_orb_` fire/ice balls,
+`ylo_orb_`/`ylo_bolt_` lightning) for what a fusion fires. The concept plates' generic gun icons are
+placeholders for layout only and are not to be shipped. Nothing here is generated per weapon.
+
+**The inventory is measured, not listed from memory:** `assets/data/FORGE_TEMPLATES_0916.json` and
+`docs/forge_0916/inventory_sheet.png` - every key rendered through the game's own `iconBlit` in real
+Chromium, with its store and pixel size. Twelve weapon icon families at five tiers each, the
+five-colour machine-gun pellet families, the twelve-frame Thermoshock fire/ice orb reel, and Yuri's
+lightning orb and bolt reels all resolve. ⚠ `micon_lasermist_*` does NOT resolve through iconBlit -
+it goes through `laserMistAtlasBlit`, its own path, so a Forge UI must call that for slot 6 or draw
+nothing.
+
 ## Open questions for Mike
 
 - Do fusions persist across a campaign save, or reset every stage?

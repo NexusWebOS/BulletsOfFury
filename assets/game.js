@@ -2030,6 +2030,11 @@ const XART=(function(){
      letter, each in its own metal: F molten, S gold, A silver, B bronze, C steel, D scorched
      iron, L cracked grey. */
   for(const _rk of ['f','s','a','b','c','d','l']) X._src['rank_'+_rk+'_0916']='assets/game/ui/debrief_0916/rank_'+_rk+'.png';
+  /* MIKE'S OWN RANK PLATES (0916): shield + word in one authored graphic, keyed from his magenta
+     plates. The enclosed key between LOSER's chains was punched to alpha (10,311px the border flood
+     could not reach) and the pink fringe beside it converted to a black edge. The small badges
+     above stay as the decode fallback. */
+  for(const _rk of ['f','s','a','b','c','d','l']) X._src['rankplate_'+_rk+'_0916']='assets/game/ui/debrief_0916/rankplate_'+_rk+'.png';
   X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
   X._src['mode_time_attack_0915']='assets/game/ui/modes_0915/time_attack.png';
   X._src['mode_lock_nexus_0915']='assets/game/ui/modes_0915/nexus_chains.webp';
@@ -67655,7 +67660,7 @@ const SC_SEGS = 24;                    // segments in a full bar
    game's hardest difficulty, so F above S is his own vocabulary rather than a school grade, and
    L takes the floor that F used to hold. The thresholds keep the old S..D bands and add one band
    at each end. */
-const SC_RANK_NAME={F:'FURIOUS',S:'SPECTACULAR',A:'AWESOME',B:'BETTER',C:'CARELESS',D:'SELF-DESTRUCTIVE',L:'LOSER'};
+const SC_RANK_NAME={F:'FURIOUS',S:'SPECTACULAR',A:'AWESOME',B:'BETTER',C:'CARELESS',D:'DUMMY',L:'LOSER'};   // D is DUMMY on Mike's own plate (0916)
 /* ⚠ MEASURED OFF EACH BADGE, NOT PICKED (Mike, 0916: "the font color should match each rank/badge
    color"). Every plate's own face colour: the opaque pixels are binned by hue, the dominant bin's
    median saturation and value are taken, and the value is floored so the word still reads on a
@@ -68424,9 +68429,31 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
          AWESOME. Still untinted (Mike, 0807q: "Dont color overlay the rank please"). */
       {
         const _rk=String(rVal||'-').toUpperCase();
-        const _key='rank_'+_rk.toLowerCase()+'_0916';
+        const _key='rank_'+_rk.toLowerCase()+'_0916', _pkey='rankplate_'+_rk.toLowerCase()+'_0916';
         const _rx=b[0]+b[2]*0.820, _av=(typeof XART!=='undefined')&&XART.rdy(_key);
-        if(_av && drawStageClear._stamp>0){
+        const _pav=(typeof XART!=='undefined')&&XART.rdy(_pkey);
+        if(_pav && drawStageClear._stamp>0){
+          /* his plate carries the word, so it is the whole reading: fitted to the column's width
+             and let to stand taller than the bar - it is the one thing on this row meant to be
+             looked at, and it lands on the stamp beat the letter always had */
+          const im=XART.get(_pkey), colW=b[2]*0.30;
+          const k=0.72+0.28*Math.min(1,drawStageClear._stamp);
+          /* ⚠ CAPPED TO THE BAR, NOT TO THE COLUMN'S WIDTH. His plate is a shield ABOVE a word
+             banner - about 1:1.3 - so fitting it to a 30%-wide column made it three times the bar's
+             height and the banner fell out of the panel entirely. It overhangs by a quarter and no
+             more, which is what lets it read as a stamp pressed onto the row. */
+          /* ⚠ IT OVERHANGS THE BAR ON PURPOSE. His plate is a shield ABOVE a word banner, so fitting
+             it INSIDE a 32px row renders that banner at five pixels and the word cannot be read -
+             which is the whole reason the word is on the plate. The bays above and below the score
+             bar leave ~18px of plating each; at 2.1x the bar it fills that and the word comes up to
+             a readable size, and a rank stamp pressed across the row reads as deliberate. Drawn
+             after the row's own text, so nothing is drawn over it. */
+          const ph_=Math.min(b[3]*2.1, colW*0.95*(im.naturalHeight/im.naturalWidth))*k, pw_=ph_*(im.naturalWidth/im.naturalHeight);
+          ctx.save(); ctx.imageSmoothingEnabled=false;
+          ctx.drawImage(im, Math.round(_rx-pw_/2), Math.round(cy-ph_/2), Math.round(pw_), Math.round(ph_));
+          ctx.restore();
+        }
+        else if(_av && drawStageClear._stamp>0){
           const im=XART.get(_key), bh=b[3]*0.86, bw=bh*(im.naturalWidth/Math.max(1,im.naturalHeight));
           const word=SC_RANK_NAME[_rk]||'';
           let wh=H; const wmax=b[2]*0.30-bw-b[2]*0.012;

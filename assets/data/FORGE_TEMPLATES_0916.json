@@ -1,0 +1,403 @@
+{
+ "_note": "Template inventory for the Forge and any weapon UI (Mike, 0916: 'use our in-game projectiles for these so we dont waste credits'). Every entry was RENDERED through the game's own iconBlit in real Chromium and measured there - see docs/forge_0916/inventory_sheet.png. ok=false means the key did not resolve in any of the three art stores after a warm.",
+ "_stores": "XART = BOFX.img/cells lazy families; icons = BOFX.icons rects on nia_icons sheets; cells = BOFX.cells atlas rows",
+ "_warning": "XART.rdy(k) is FALSE on its first call - that call starts the load. Touch, wait, then measure.",
+ "groups": {
+  "ICON machine gun": [
+   {
+    "key": "micon_mg_1",
+    "ok": true,
+    "w": 58,
+    "h": 66,
+    "store": "icons"
+   },
+   {
+    "key": "micon_mg_3",
+    "ok": true,
+    "w": 79,
+    "h": 96,
+    "store": "icons"
+   },
+   {
+    "key": "micon_mg_5",
+    "ok": true,
+    "w": 80,
+    "h": 96,
+    "store": "icons"
+   }
+  ],
+  "ICON spread": [
+   {
+    "key": "micon_spread_1",
+    "ok": true,
+    "w": 60,
+    "h": 66,
+    "store": "icons"
+   },
+   {
+    "key": "micon_spread_3",
+    "ok": true,
+    "w": 78,
+    "h": 96,
+    "store": "icons"
+   },
+   {
+    "key": "micon_spread_5",
+    "ok": true,
+    "w": 79,
+    "h": 96,
+    "store": "icons"
+   }
+  ],
+  "ICON missiles": [
+   {
+    "key": "micon_missile_1",
+    "ok": true,
+    "w": 50,
+    "h": 66,
+    "store": "icons"
+   },
+   {
+    "key": "micon_missile_3",
+    "ok": true,
+    "w": 72,
+    "h": 96,
+    "store": "icons"
+   },
+   {
+    "key": "micon_missile_5",
+    "ok": true,
+    "w": 72,
+    "h": 96,
+    "store": "icons"
+   }
+  ],
+  "ICON laser": [
+   {
+    "key": "micon_laser_1",
+    "ok": true,
+    "w": 60,
+    "h": 66,
+    "store": "icons"
+   },
+   {
+    "key": "micon_laser_3",
+    "ok": true,
+    "w": 80,
+    "h": 96,
+    "store": "icons"
+   },
+   {
+    "key": "micon_laser_5",
+    "ok": true,
+    "w": 80,
+    "h": 96,
+    "store": "icons"
+   }
+  ],
+  "ICON laser mist": [
+   {
+    "key": "micon_lasermist_1",
+    "ok": false,
+    "w": 0,
+    "h": 0,
+    "store": ""
+   },
+   {
+    "key": "micon_lasermist_3",
+    "ok": false,
+    "w": 0,
+    "h": 0,
+    "store": ""
+   },
+   {
+    "key": "micon_lasermist_5",
+    "ok": false,
+    "w": 0,
+    "h": 0,
+    "store": ""
+   }
+  ],
+  "ICON chaingun": [
+   {
+    "key": "micon_chaingun_1",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   },
+   {
+    "key": "micon_chaingun_3",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   },
+   {
+    "key": "micon_chaingun_5",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   }
+  ],
+  "ICON flame": [
+   {
+    "key": "micon_firewall_1",
+    "ok": true,
+    "w": 57,
+    "h": 66,
+    "store": "icons"
+   },
+   {
+    "key": "micon_firewall_3",
+    "ok": true,
+    "w": 58,
+    "h": 67,
+    "store": "icons"
+   },
+   {
+    "key": "micon_firewall_5",
+    "ok": true,
+    "w": 78,
+    "h": 96,
+    "store": "icons"
+   }
+  ],
+  "ICON ice breath": [
+   {
+    "key": "micon_icebreath_1",
+    "ok": true,
+    "w": 96,
+    "h": 112,
+    "store": "icons"
+   },
+   {
+    "key": "micon_icebreath_3",
+    "ok": true,
+    "w": 98,
+    "h": 112,
+    "store": "icons"
+   },
+   {
+    "key": "micon_icebreath_5",
+    "ok": true,
+    "w": 99,
+    "h": 112,
+    "store": "icons"
+   }
+  ],
+  "ICON fire orb": [
+   {
+    "key": "micon_fireorb_1",
+    "ok": true,
+    "w": 96,
+    "h": 112,
+    "store": "icons"
+   },
+   {
+    "key": "micon_fireorb_3",
+    "ok": true,
+    "w": 98,
+    "h": 112,
+    "store": "icons"
+   },
+   {
+    "key": "micon_fireorb_5",
+    "ok": true,
+    "w": 99,
+    "h": 112,
+    "store": "icons"
+   }
+  ],
+  "ICON ice orb": [
+   {
+    "key": "micon_iceorb_1",
+    "ok": true,
+    "w": 50,
+    "h": 66,
+    "store": "icons"
+   },
+   {
+    "key": "micon_iceorb_3",
+    "ok": true,
+    "w": 49,
+    "h": 66,
+    "store": "icons"
+   },
+   {
+    "key": "micon_iceorb_5",
+    "ok": true,
+    "w": 71,
+    "h": 96,
+    "store": "icons"
+   }
+  ],
+  "ICON thermoshock": [
+   {
+    "key": "micon_thermoshock_1",
+    "ok": true,
+    "w": 112,
+    "h": 112,
+    "store": "icons"
+   },
+   {
+    "key": "micon_thermoshock_3",
+    "ok": true,
+    "w": 112,
+    "h": 112,
+    "store": "icons"
+   },
+   {
+    "key": "micon_thermoshock_5",
+    "ok": true,
+    "w": 112,
+    "h": 112,
+    "store": "icons"
+   }
+  ],
+  "ICON lightning orb": [
+   {
+    "key": "micon_lightningorb_1",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   },
+   {
+    "key": "micon_lightningorb_3",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   },
+   {
+    "key": "micon_lightningorb_5",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   }
+  ],
+  "PROJ mg pellet": [
+   {
+    "key": "mfx_mg_0_0",
+    "ok": true,
+    "w": 18,
+    "h": 20,
+    "store": "XART"
+   },
+   {
+    "key": "mfx_mg_0_2",
+    "ok": true,
+    "w": 20,
+    "h": 46,
+    "store": "XART"
+   },
+   {
+    "key": "mfx_mg_1_2",
+    "ok": true,
+    "w": 19,
+    "h": 47,
+    "store": "XART"
+   },
+   {
+    "key": "mfx_mg_2_2",
+    "ok": true,
+    "w": 20,
+    "h": 45,
+    "store": "XART"
+   },
+   {
+    "key": "mfx_mg_3_2",
+    "ok": true,
+    "w": 19,
+    "h": 52,
+    "store": "XART"
+   },
+   {
+    "key": "mfx_mg_4_2",
+    "ok": true,
+    "w": 19,
+    "h": 40,
+    "store": "XART"
+   }
+  ],
+  "PROJ fire/ice orb": [
+   {
+    "key": "nts_orb_0",
+    "ok": true,
+    "w": 224,
+    "h": 224,
+    "store": "XART"
+   },
+   {
+    "key": "nts_orb_3",
+    "ok": true,
+    "w": 224,
+    "h": 224,
+    "store": "XART"
+   },
+   {
+    "key": "nts_orb_6",
+    "ok": true,
+    "w": 224,
+    "h": 224,
+    "store": "XART"
+   },
+   {
+    "key": "nts_orb_9",
+    "ok": true,
+    "w": 224,
+    "h": 224,
+    "store": "XART"
+   }
+  ],
+  "PROJ lightning orb": [
+   {
+    "key": "ylo_orb_1",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   },
+   {
+    "key": "ylo_orb_3",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   },
+   {
+    "key": "ylo_orb_5",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   }
+  ],
+  "PROJ lightning bolt": [
+   {
+    "key": "ylo_bolt_1",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   },
+   {
+    "key": "ylo_bolt_3",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   },
+   {
+    "key": "ylo_bolt_5",
+    "ok": true,
+    "w": 64,
+    "h": 64,
+    "store": "XART"
+   }
+  ]
+ }
+}

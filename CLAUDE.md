@@ -4455,3 +4455,24 @@ width than the cell was, so the title draws it at 82 not 88.
 **Cover art** candidates and the Forge plates are in `docs/marketing_0916/`; the Forge design is
 `docs/UPGRADE_SYSTEM_CONCEPT_0916.md` - four concepts (fusion, mods, special tuning, arcade draft)
 with the build order and the code seams they would use. Nothing of it is wired.
+
+## 0916 (later still) - Mike's own rank plates, and the Forge's art inventory
+
+**`rankplate_<letter>_0916`** are Mike's authored rank graphics - shield AND word banner in one
+plate - keyed from his magenta the usual way. ⚠ **LOSER's plate has ENCLOSED key the border flood
+cannot reach** (10,311px between its hanging chains), so it needs a second pass that punches pure
+magenta to alpha ANYWHERE, then converts what is left of the pink fringe to a black edge. The
+generated badges from earlier stay registered as the decode fallback.
+⚠ **AND IT MAY NOT BE FITTED INSIDE THE SCORE BAR.** The plate is a shield ABOVE a banner (~1:1.3),
+so at the bar's 32px the word renders at five pixels and cannot be read - which is the entire point
+of the word being on the plate. It is drawn at 2.1x the bar, overhanging into the plating above and
+below, after the row's own text. **D is DUMMY on his plate**, not SELF-DESTRUCTIVE; SC_RANK_NAME
+follows the art.
+
+**`assets/data/FORGE_TEMPLATES_0916.json`** + `docs/forge_0916/inventory_sheet.png` are the weapon
+icon and projectile inventory for any weapon UI (Mike: *"use our in-game projectiles for these so we
+dont waste credits"*). Every key was RENDERED through `iconBlit` in real Chromium and measured
+there, with its store and size. ⚠ `micon_lasermist_*` does not resolve through `iconBlit` - it has
+its own path, `laserMistAtlasBlit` - so slot 6 draws nothing unless a UI calls that. ⚠ And the
+first pass reported 15 keys missing that are all fine: `XART.rdy` is false on its FIRST call, so a
+catalogue has to touch every key, WAIT, and then measure.
