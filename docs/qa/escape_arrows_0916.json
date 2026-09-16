@@ -1,0 +1,110 @@
+{
+ "drop": "0916 S4-16 escape arrows verified",
+ "request": "Mike, S4-16: \"Authored left/right escape arrows: flipped pair, flashing with synchronized warning sounds for the giant strike.\"",
+ "context": "8ed5f1a8 shipped these unverified and said so; docs/RESUME_0916.md made verifying them the first item.",
+ "arrows_as_shipped": "correct - 234 of 330 charge frames, two per lit frame, one mirrored, both safe lanes, 7 bursts (L23_WARN_ARROWS)",
+ "defect_found": {
+  "what": "l23WarnSound divides by B.warm; the giant strike object never set it, so k and n were NaN",
+  "consequence": "NaN defeats BOTH guards (n===B._arrowN and n>0 && B._warnSfx): the alert fired every frame",
+  "measured_before": "279 alert calls across one 5.00s charge",
+  "measured_after": "2 calls - alertLockon on the first arrow, dangerAlert at the yellow->red transition",
+  "fix": "warm: S4_GIANT_STRIKE.charge on the strike object (one field)"
+ },
+ "probe": "_BUILD_SOURCE/probe_escape_0916.py",
+ "probe_result": {
+  "ok": 16,
+  "fail": 0,
+  "page_errors": 0,
+  "console_errors": 0,
+  "browser": "real Chromium, index.html?bossmode=1, live rAF"
+ },
+ "checks": [
+  {
+   "pass": true,
+   "label": "the Stage-4 Sovereign is up with its warfare rig ({'boss': True, 'war': True, 'mini': False, 'diff': 'furious'})"
+  },
+  {
+   "pass": true,
+   "label": "on furious, which is the only difficulty that fields the strike"
+  },
+  {
+   "pass": true,
+   "label": "the authored escape arrow plate decoded"
+  },
+  {
+   "pass": true,
+   "label": "the giant strike started"
+  },
+  {
+   "pass": true,
+   "label": "the escape arrows DRAW during the charge (234 of 330 charge frames)"
+  },
+  {
+   "pass": true,
+   "label": "exactly two arrows on every frame they are lit"
+  },
+  {
+   "pass": true,
+   "label": "one of the pair is drawn mirrored - it is one plate, flipped"
+  },
+  {
+   "pass": true,
+   "label": "one arrow each side of the strike (234 left, 234 right)"
+  },
+  {
+   "pass": true,
+   "label": "the left arrow sits inside the left safe lane (worst 140.5 of 181.6)"
+  },
+  {
+   "pass": true,
+   "label": "the right arrow sits inside the right safe lane (best 539.5 of 498.4)"
+  },
+  {
+   "pass": true,
+   "label": "they flash rather than hold (96 of 330 charge frames dark)"
+  },
+  {
+   "pass": true,
+   "label": "one flash per revealed arrow: 7 bursts against L23_WARN_ARROWS=7"
+  },
+  {
+   "pass": true,
+   "label": "the warning's arrow index is a number, not NaN (0 frames NaN)"
+  },
+  {
+   "pass": true,
+   "label": "the warning alert fires on its own beat, not every frame (2 calls across the charge)"
+  },
+  {
+   "pass": true,
+   "label": "a proof frame was captured inside a lit frame"
+  },
+  {
+   "pass": true,
+   "label": "no page or console errors (0)"
+  }
+ ],
+ "probe_faults_fixed": [
+  "a world coordinate compared against a canvas one with no camX - reported the right arrow 59px inside the danger zone on correct code",
+  "the proof frame was taken after the run and showed no arrows at all; it is now read inside the rAF callback that drew it"
+ ],
+ "suite": {
+  "command": "node _BUILD_SOURCE/test_fl.js",
+  "ok": 4579,
+  "fail": 57,
+  "exit": 1,
+  "final_summary_reached": true,
+  "section": "362 (11/11)",
+  "baseline": {
+   "worktree": "97265703",
+   "ok": 4552,
+   "fail": 57
+  },
+  "failure_names_new": [],
+  "failure_names_repaired": [],
+  "note": "names compared with numbers masked; identical both sides"
+ },
+ "proofs": [
+  "docs/proofs/escape_0916/strike_arrows_lit.png"
+ ]
+}

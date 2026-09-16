@@ -15740,7 +15740,16 @@ function stage4GiantStrikeColor(G){return G.t<G.charge*.56?'yellow':'red';}
 function stage4GiantStrikeStart(b){
   const S=b&&b._s4war;if(!S||S.mini||S.giantStrike||typeof diffKey==='undefined'||diffKey!=='furious')return false;
   stage4WarfareSetMode(b,'giantStrike');const R=stage4GiantStrikeBounds();
-  S.giantStrike={t:0,charge:S4_GIANT_STRIKE.charge,active:S4_GIANT_STRIKE.active,recover:S4_GIANT_STRIKE.recover,
+  /* ⚠ `warm` IS WHAT l23WarnSound DIVIDES BY, AND WITHOUT IT THE ALERT FIRED EVERY FRAME (0916q).
+     That function is shared with the beam warns, where the field is called `warm`; this object
+     only had `charge`. `B.t/Math.max(.001,undefined)` is NaN, so `n` is NaN, `n===B._arrowN` is
+     false for ever (NaN equals nothing, itself included) AND the `n>0` guard that limits it to one
+     alert is false too - measured 279 calls across one five-second charge, where the design is
+     ONE. It also made S4-16's "synchronized with the warning sounds" impossible by construction:
+     the arrows flash on `q=t/charge` and the sound had no beat at all. One field, and the two now
+     derive the same k from the same number. */
+  S.giantStrike={t:0,charge:S4_GIANT_STRIKE.charge,warm:S4_GIANT_STRIKE.charge,
+    active:S4_GIANT_STRIKE.active,recover:S4_GIANT_STRIKE.recover,
     left:R.left,right:R.right,safe:R.safe,released:false,redWarned:false,hitSeats:{},_arrowN:-1,_warnSfx:0};
   S.giantStrikeCount++;l23FovWarm();
   try{if(typeof XART!=='undefined')for(const k of ['cfx_stage4_chain_lightning','s4w_lightning_ball_0'])XART.rdy(k);}catch(_s4gw){}

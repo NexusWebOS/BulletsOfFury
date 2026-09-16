@@ -4,7 +4,12 @@ Everything below is pushed to `origin/main`. Last commit: `8ed5f1a8`.
 
 ## Do this first
 
-**`8ed5f1a8` (S4-16, escape arrows) is NOT verified in the running game.** It parses and is guarded
+~~**`8ed5f1a8` (S4-16, escape arrows) is NOT verified in the running game.**~~ **DONE 0916r** -
+`_BUILD_SOURCE/probe_escape_0916.py` is the probe this section asked for and it is in the repo now.
+The steps below are what it does; it found one real defect, recorded in `docs/ESCAPE_ARROWS_0916.md`.
+The original note follows.
+
+**`8ed5f1a8` (S4-16, escape arrows) was NOT verified in the running game.** It parses and is guarded
 (`if(charging)` + `XART.rdy`), but the probe that would have proved it was interrupted before it ran.
 Verify before anything else:
 
@@ -48,7 +53,7 @@ in the repo. Rewriting it is ~20 lines against `_BUILD_SOURCE/shoot.py`'s server
 
 | id | wo | what |
 |---|---|---|
-| S4-16 | 27 | **in progress** — verify the arrows above |
+| ~~S4-16~~ | 27 | **DONE 0916r** - verified in Chromium (16/0). The arrows were right; the warning SOUND was firing 279 times a charge (`l23WarnSound` divides by `B.warm`, which the strike never set). See `docs/ESCAPE_ARROWS_0916.md`. |
 | ACH-02 | 42 | achievement menu/button + bottom-centre unlock notification that slides/fades down |
 | ENG-15 | 52 | HUD incoming-lock indicator above EQUIPPED: grey idle, red flashing, distance-accelerated beeps |
 | ENG-02 | — | still partial: the remaining non-laser boss attacks that need the shared warning |

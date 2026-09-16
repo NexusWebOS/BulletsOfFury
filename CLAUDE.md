@@ -4504,3 +4504,33 @@ to the grant sites now (stage 4 `yuriLightningOrbGrantStage4`, stage 5 `chaingun
 `probe_unlocks_0916.py` 25/0 (real debrief, real key tap, icon identified by KEY and by the SHEET the
 blit came from). Suite 4,568 ok / 57 fail against a clean worktree at `97265703`'s 4,552 / 57 -
 failure names identical with the numbers masked. `docs/UNLOCK_ANNOUNCEMENTS_0916.md`.
+
+## 0916 - S4-16 verified, and NaN defeating two guards at once
+
+`8ed5f1a8` shipped the Stage-4 giant strike's escape arrows UNVERIFIED and said so; the resume note
+made checking them the first job. **The arrows were right** - 234 of 330 charge frames, two per lit
+frame, one drawn with a NEGATIVE x scale (it is one plate, mirrored), both inside the 17% safe lanes
+at the camera edges, at the player's altitude, flashing in SEVEN bursts = `L23_WARN_ARROWS`.
+
+⚠⚠ **WHAT WAS BROKEN WAS THE THING THEY WERE MEANT TO BE SYNCHRONIZED WITH.** `l23WarnSound(B)`
+divides by `B.warm` - the field the BEAM warns carry - and the giant strike's object only ever had
+`charge`. So `k` is NaN, `n` is NaN, and **NaN defeats both guards in that function**: the
+`n===B._arrowN` "already fired on this arrow" test is false for ever because NaN equals nothing
+including itself, and the `n>0 && B._warnSfx` "only the first arrow speaks" test is false too.
+Measured on the shipped build: **279 alert calls across one five-second charge**, where the design
+is ONE - audible only because `alertLockon` carries a 1.10s TAME row, which is the difference
+between a shipped siren and a shipped near-siren. It also made S4-16's own headline claim
+impossible: the arrows flash on `q=t/charge` and the sound had no beat at all. One field
+(`warm:S4_GIANT_STRIKE.charge`) and both derive the same k from the same number: **2 calls now**,
+the first-arrow alert plus the separate yellow->red danger alert.
+⚠ **THE SHAPE IS THE LESSON, NOT THE FIELD.** `l23WarnSound` takes any warn-shaped object and
+nothing checks it carries what the function divides by; section 362 pins a bare object STILL
+producing NaN so the trap stays visible. Any new caller must carry `warm`.
+⚠ **AND THE PROBE MADE THE WORLD-VS-SCREEN MISTAKE, THE SIXTH TIME IN THIS REPO** - it compared a
+canvas-space blit against world-space lane bounds with `camX` (100) missing, and reported the RIGHT
+arrow 59px inside the danger zone on correct code. ⚠ **Its first proof frame was also taken AFTER
+the run**, so it showed the strike with no arrows in it at all - a picture indistinguishable from
+"they never drew" on a build where they drew 234 times. Read the frame inside the rAF callback that
+drew it.
+`probe_escape_0916.py` 16/0, 0 errors. Suite 4,579 ok / 57 fail, names identical to a clean
+worktree at `97265703`. `docs/ESCAPE_ARROWS_0916.md`, section 362.

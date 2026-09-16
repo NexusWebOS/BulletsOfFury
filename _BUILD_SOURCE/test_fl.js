@@ -15710,6 +15710,7 @@ require('./test_archmage_core_recovery_0916.cjs')(vm,ctxv,ok);
 require('./test_stage2_reaver_shared_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_pilot_deploy_pad_0916.cjs')(vm,ctxv,ok);
 require('./test_unlock_announcements_0916.cjs')(vm,ctxv,ok);
+require('./test_escape_arrows_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }
