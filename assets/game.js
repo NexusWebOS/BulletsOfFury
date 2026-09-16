@@ -68996,6 +68996,32 @@ const UNLOCK_ROWS={ x:0.0818, y:0.3609, w:0.8364, h:0.3948, gap:0.055 };
    These are the fractions SC_SLOTS_FULL already carries for `rank` and `rankword`; they are named
    here so the row layout and the debrief cannot disagree about where the art is. */
 const UNLOCK_ART={ box:[0.5220,0.6466,0.1111,0.1579], strip:[0.6667,0.6880,0.2453,0.0677] };
+/* ⚠ THE NAME IS LETTERED IN ITS WEAPON'S OWN ELEMENT (Mike, 0916): "Recolor each text to match
+   what the weapon type is - Bullet weapons - Orange, Lightning - yellow, thermoshock - red/blue
+   shade, laser mist - aqua blue, ice - ice blue, fire - neon red etc."
+
+   Keyed off the icon key's FAMILY (`micon_<family>_<tier>`), which is the only thing a row carries
+   besides its name - so a row added later is coloured by existing code rather than by a second
+   table someone has to remember to extend. An unknown family keeps the old green, which is a
+   visible default rather than a silent one.
+
+   THERMOSHOCK is his "red/blue shade": the weapon is half fire and half ice, and a single tint can
+   only be one colour, so it takes the violet the two mix to. MISSILE is grouped with the bullets as
+   kinetic ordnance, and LASER keeps the green - he named neither, so both are flagged in the
+   passover rather than guessed at silently. */
+const UNLOCK_TINT={
+  mg:'#ff9a3a', spread:'#ff9a3a', chaingun:'#ff9a3a', missile:'#ff9a3a',   // bullets - orange
+  lightningorb:'#ffe03a',                                                   // lightning - yellow
+  thermoshock:'#c07cff',                                                    // fire AND ice - violet
+  lasermist:'#3fe3ff',                                                      // aqua blue
+  icebreath:'#9fdcff', iceorb:'#9fdcff',                                    // ice blue
+  fireorb:'#ff3b2a', firewall:'#ff3b2a'                                     // neon red
+};
+const UNLOCK_TINT_DEF='#8de23a';
+function unlockTint(key){
+  const m=/^micon_([a-z0-9]+)_/.exec(String(key||''));
+  return (m && UNLOCK_TINT[m[1]]) || UNLOCK_TINT_DEF;
+}
 /* ⚠ THE STRIP IS 3-SLICED, THE BOX IS NOT. The strip's source is 6.5:1 and a row's rectangle is
    nearer 8:1, so a straight stretch would pull its rounded end caps into ovals; the caps are blitted
    at their own scale and only the middle is stretched. The box is drawn at its SOURCE aspect (1.24)
@@ -69151,7 +69177,7 @@ function drawUnlocks(dt){
       const lH=(typeof stageFitH==='function')?stageFitH(art,full,room,rh*0.52,9,0.06):rh*0.45;
       const fw=(typeof stageWidth==='function')?stageWidth(art,full,lH,0.06):0;
       const sw=(typeof stageWidth==='function')?stageWidth(art,shown,lH,0.06):0;
-      stageText(art,shown,rx2+rw2/2-fw/2+sw/2,ry+rh/2,lH,'#8de23a',0.85,a,0.06);
+      stageText(art,shown,rx2+rw2/2-fw/2+sw/2,ry+rh/2,lH,unlockTint(r[1]),0.85,a,0.06);
     }
     /* ⚠ THE SECTION SAYS WHEN THERE IS MORE (Mike: "flexible scrollable section"). Two small
        drawn triangles - NOT glyphs: CLAUDE.md records that 25B2/25BC are absent from this face and

@@ -160,15 +160,25 @@ LAYOUT = r"""async ([n, presses]) => {
   for (let i = 0; i + 3 < panels.length; i += 4) {
     const box = panels[i], sl = panels.slice(i + 1, i + 4);
     const x0 = Math.min.apply(null, sl.map(q => q.x)), x1 = Math.max.apply(null, sl.map(q => q.x + q.w));
-    const sx = Math.round(x0), sy = Math.round(box.y), sw = Math.round(x1 - x0), sh = Math.round(box.h);
+    /* \u26a0 THE INK TEST CANNOT BE KEYED TO A COLOUR ANY MORE. The names are lettered in their own
+       weapon's element now (orange, yellow, violet, aqua, ice blue, neon red), so a green-only
+       detector would report every row as empty. It samples the strip's INTERIOR - inset past the
+       bronze rail, which is itself bright enough to be mistaken for ink - and takes anything lit. */
+    const ix = Math.round(x0 + (x1 - x0) * 0.04), iy = Math.round(box.y + box.h * 0.22);
+    const sx = ix, sy = iy;
+    const sw = Math.max(2, Math.round((x1 - x0) * 0.92)), sh = Math.max(2, Math.round(box.h * 0.56));
     let d = null; try { d = ctx.getImageData(sx, sy, sw, sh); } catch (e) {}
-    let a0 = 1e9, a1 = -1, cnt = 0;
+    let a0 = 1e9, a1 = -1, cnt = 0, sr = 0, sg = 0, sb = 0;
     if (d) for (let y = 0; y < sh; y++) for (let x = 0; x < sw; x++) {
       const q = (y * sw + x) * 4, r = d.data[q], g = d.data[q + 1], b2 = d.data[q + 2];
-      if (g > 110 && g > r * 1.25 && g > b2 * 1.25) { cnt++; if (x < a0) a0 = x; if (x > a1) a1 = x; }
+      if ((r * 299 + g * 587 + b2 * 114) / 1000 > 88) {
+        cnt++; sr += r; sg += g; sb += b2;
+        if (x < a0) a0 = x; if (x > a1) a1 = x;
+      }
     }
     out.push({box: {x: Math.round(box.x), w: Math.round(box.w), h: Math.round(box.h)},
               strip: {x: sx, w: sw}, ink: cnt,
+              rgb: cnt ? [Math.round(sr / cnt), Math.round(sg / cnt), Math.round(sb / cnt)] : null,
               off: cnt ? (((a0 + a1) / 2) - (sw - 1) / 2) : null});
   }
   return {rows: out, scroll: unlocks ? unlocks.scroll : -1, n: n,
@@ -176,6 +186,12 @@ LAYOUT = r"""async ([n, presses]) => {
           briefBelow: briefBelow(), briefBase: base, downKey: DK,
           shot: (document.getElementById('screen') || {toDataURL: () => null}).toDataURL('image/png')};
 }"""
+
+
+# the same recorder, driven with explicit [name, iconKey] rows
+LAYOUT_KEYS = LAYOUT.replace("async ([n, presses]) => {", "async ([pairs]) => {\n  const n = pairs.length, presses = 0;") \
+                    .replace("const rows = []; for (let i = 0; i < n; i++) rows.push([NM[i], KY[i]]);",
+                             "const rows = pairs.map(p => [p[1].toUpperCase() + ' TEST', p[0]]);")
 
 
 def main():
@@ -346,6 +362,74 @@ def main():
         L2 = pg.evaluate(LAYOUT, [4, 0])
         if L2.get('shot'):
             open(os.path.join(OUT, '03_four_rows.png'), 'wb').write(base64.b64decode(L2['shot'].split(',', 1)[1]))
+
+        # ---- 8. every name is lettered in its weapon's own element ---------------------------
+        TINT = pg.evaluate("""() => ({
+          table: UNLOCK_TINT, def: UNLOCK_TINT_DEF,
+          mg: unlockTint('micon_mg_3'), chaingun: unlockTint('micon_chaingun_3'),
+          lightning: unlockTint('micon_lightningorb_3'), thermo: unlockTint('micon_thermoshock_3'),
+          mist: unlockTint('micon_lasermist_3'), ice: unlockTint('micon_icebreath_3'),
+          fire: unlockTint('micon_fireorb_3'), unknown: unlockTint('micon_nosuchweapon_3')
+        })""")
+
+        def hexrgb(h):
+            return (int(h[1:3], 16), int(h[3:5], 16), int(h[5:7], 16))
+
+        cr, cg, cb = hexrgb(TINT['chaingun'])
+        ok(cr > 200 and 120 < cg < 190 and cb < 90, 'a bullet weapon letters ORANGE (%s)' % TINT['chaingun'])
+        ok(TINT['mg'] == TINT['chaingun'], 'and every bullet weapon shares it')
+        cr, cg, cb = hexrgb(TINT['lightning'])
+        ok(cr > 200 and cg > 190 and cb < 110, 'lightning letters YELLOW (%s)' % TINT['lightning'])
+        cr, cg, cb = hexrgb(TINT['mist'])
+        ok(cb > 200 and cg > 180 and cr < 120, 'laser mist letters AQUA (%s)' % TINT['mist'])
+        cr, cg, cb = hexrgb(TINT['ice'])
+        ok(cb > 200 and cr < 190 and cb > cr, 'ice letters ICE BLUE (%s)' % TINT['ice'])
+        cr, cg, cb = hexrgb(TINT['fire'])
+        ok(cr > 220 and cg < 110 and cb < 90, 'fire letters NEON RED (%s)' % TINT['fire'])
+        cr, cg, cb = hexrgb(TINT['thermo'])
+        ok(cr > 140 and cb > 200 and cg < 160, 'thermoshock letters a RED/BLUE violet (%s)' % TINT['thermo'])
+        ok(TINT['unknown'] == TINT['def'], 'an unknown family keeps the visible default (%s)' % TINT['unknown'])
+
+        # the chaingun's icons are badges now, in the family's own geometry
+        CG = pg.evaluate("""async () => {
+          /* the reference key is warmed too - XART.rdy is false on its FIRST call and that call is
+             what starts the load, so asking for it cold returned null and the check failed on a
+             build where the art is fine */
+          for (let i = 1; i <= 5; i++) XART.rdy('micon_chaingun_' + i);
+          XART.rdy('micon_icebreath_3');
+          for (let t = 0; t < 40; t++) { if ([1,2,3,4,5].every(i => XART.rdy('micon_chaingun_' + i)) && XART.rdy('micon_icebreath_3')) break;
+            await new Promise(r => setTimeout(r, 80)); }
+          const out = [];
+          for (let i = 1; i <= 5; i++) {
+            const im = XART.rdy('micon_chaingun_' + i) ? XART.get('micon_chaingun_' + i) : null;
+            out.push(im ? [im.naturalWidth || im.width, im.naturalHeight || im.height] : null);
+          }
+          /* ⚠ THE REFERENCE IS NOT IN XART. micon_* icons are rects in BOFX.icons - the third art
+             store CLAUDE.md records, the one iconBlit exists to reach - so XART.get returned null
+             for it and the check failed against a build where the art is fine. The chaingun's own
+             icons ARE loose XART files, which is exactly why the two had to be read differently. */
+          const ic = (typeof BOFX !== 'undefined' && BOFX.icons) ? BOFX.icons['micon_icebreath_3'] : null;
+          return {cg: out, ref: ic ? [ic[2], ic[3]] : null};
+        }""")
+        ok(all(c and c[1] == 112 for c in CG['cg']),
+           'every chaingun tier is a full badge, not a loose 64x64 sprite (%s)' % CG['cg'])
+        ok(CG['ref'] and CG['cg'][2][1] == CG['ref'][1],
+           'at the family geometry the other weapon badges use (%s vs %s)' % (CG['cg'][2], CG['ref']))
+
+        # and the pixels agree: one row per element, read back off the canvas
+        ELEM = [('micon_fireorb_3', 'fire'), ('micon_icebreath_3', 'ice'),
+                ('micon_chaingun_3', 'bullet'), ('micon_lasermist_3', 'aqua')]
+        Zt = pg.evaluate(LAYOUT_KEYS, [[list(e) for e in ELEM]])
+        got = [row['rgb'] for row in Zt['rows'] if row.get('rgb')]
+        ok(len(got) == len(ELEM), 'all four element rows carry ink (%d)' % len(got))
+        if len(got) == 4:
+            fire, ice, bullet, aqua = got
+            ok(fire[0] > fire[2] + 40, 'the fire row reads warm on the canvas (%s)' % fire)
+            ok(ice[2] > ice[0] + 30, 'the ice row reads cold (%s)' % ice)
+            ok(bullet[0] > bullet[2] + 40 and bullet[1] > bullet[2], 'the bullet row reads orange (%s)' % bullet)
+            ok(aqua[2] >= aqua[1] and aqua[2] > aqua[0] + 60, 'the laser mist row reads aqua (%s)' % aqua)
+        if Zt.get('shot'):
+            open(os.path.join(OUT, '06_elements.png'), 'wb').write(base64.b64decode(Zt['shot'].split(',', 1)[1]))
 
         ok(not errs, 'no page or console errors (%d)' % len(errs))
         for e in errs[:6]:

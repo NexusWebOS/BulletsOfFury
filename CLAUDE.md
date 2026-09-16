@@ -4598,3 +4598,44 @@ as every panel cut from it), putting every row one slot out and reporting a cons
 centre** on text that is dead centre; and it counted "gold pixels below the bay" with NO CONTROL,
 reporting 948 where the plate's own warm metal lives. Every fault in the page AND in the probe was
 found by rendering it; not one of them moved a number.
+
+## 0916 - the chaingun's icons, and a name lettered in its own element
+
+Mike, with a strip in which the chaingun is the odd one out: *"generatre new chaingun icons to match
+our current style of icons. Recolor each text to match what the weapon type is - Bullet weapons -
+Orange, Lightning - yellow, thermoshock - red/blue shade, laser mist - aqua blue, ice - ice blue,
+fire - neon red etc."*
+
+⚠ **THE WEAPON BADGES ARE COLOUR-CODED PER TIER, NOT PER WEAPON** - orange, blue, green, silver, red
+for I..V. That is why every icon in the strip he sent is green: they are all tier 3. A cut that read
+"green = the special family" found no ring at all on four of five tiers.
+
+The new icons are **two pieces of authored art composited** - `micon_icebreath_N` for the frame and
+its Roman-numeral tag, the existing `chaingun_icon_N` art as the emblem - because the standing rule
+is to search the existing art before drawing anything. The old files are kept as `*.pre0916.png`.
+
+⚠ **CLEARING THE BADGE'S INTERIOR TOOK FOUR CUTS AND EVERY ONE FAILED DIFFERENTLY:** flood from the
+centre (the centre IS the emblem, so it flooded nothing); largest enclosed black island (the ring is
+SEGMENTED and its joints are near-black, so the field and the outer outline are ONE region - it
+returned 7x3px pockets); bounded by the green ring (see above); and a per-row layer walk
+(outline -> ring -> field), which runs straight through the donor's crystal wherever a ray TOUCHES
+the ring and leaves streaks in the lower corners. **What holds: the ring is a constant thickness on
+a hex**, so the inset is measured once as the median over the unambiguous rows and applied to every
+row - no row depends on its own pixels being clean.
+⚠ **AND THE OLD ICON'S OWN TIER TAG TOUCHES THE GUN ON THREE OF FIVE TIERS**, so "largest connected
+island" carried it inside the badge as a second, smaller numeral. It is cut at the gap in the row
+profile, which all five files have.
+⚠ **A TAG GUARD OF "anything bright in the bottom third" PROTECTS THE EMBLEM TOO** - the crystal
+survived below a hard horizontal edge across the badge. Bound it to the tag's own measured geometry.
+
+**`UNLOCK_TINT`** letters each name in its weapon's element, keyed off the icon key's FAMILY so a row
+added later is coloured by existing code. Thermoshock is his "red/blue shade" as the violet fire and
+ice mix to, since one tint can only be one colour. An unknown family keeps a VISIBLE default.
+
+⚠ **AND THE THREE-STORE TRAP CAUGHT THE PROBE, NOT THE GAME.** `micon_*` icons are rects in
+`BOFX.icons` - the store `iconBlit` exists to reach - so asking `XART` for the reference badge read
+null and failed against art that is fine. The chaingun's OWN icons are loose XART files, which is
+exactly why the two must be read differently. (It was also asked cold: `XART.rdy` is false on its
+first call.)
+`probe_unlocks_0916.py` 66/0, 0 errors - the table AND the pixels, one row per element read back off
+the canvas. Suite 4,628 ok / 56 fail, no new names. `docs/CHAINGUN_ICONS_0916.md`.

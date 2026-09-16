@@ -76,6 +76,36 @@ module.exports=function testUnlockAnnouncements(vm,ctxv,ok){
   ok(/stageWrapCount/.test(du), 'the stage-clear message is fitted by row COUNT, not just by width');
   ok(/rx2\+rw2\/2-fw\/2\+sw\/2/.test(du.replace(/\s+/g,'')),
      'the name is centred on the whole string, so the typewriter does not walk it sideways');
+
+  /* ---- each name is lettered in its weapon's own element (Mike, 0916) ---- */
+  ok(/unlockTint\(r\[1\]\)/.test(du.replace(/\s+/g,'')),
+     'the name takes its colour from the row, not from a literal');
+  const tint=(k)=>vm.runInContext("unlockTint('"+k+"')",ctxv);
+  const rgb=(h)=>[parseInt(h.slice(1,3),16),parseInt(h.slice(3,5),16),parseInt(h.slice(5,7),16)];
+  let c=rgb(tint('micon_chaingun_3'));
+  ok(c[0]>200&&c[1]>120&&c[1]<190&&c[2]<90, 'a bullet weapon letters ORANGE ('+tint('micon_chaingun_3')+')');
+  ok(tint('micon_mg_3')===tint('micon_chaingun_3')&&tint('micon_spread_3')===tint('micon_chaingun_3'),
+     'and every bullet weapon shares that colour');
+  c=rgb(tint('micon_lightningorb_3'));
+  ok(c[0]>200&&c[1]>190&&c[2]<110, 'lightning letters YELLOW ('+tint('micon_lightningorb_3')+')');
+  c=rgb(tint('micon_lasermist_3'));
+  ok(c[2]>200&&c[1]>180&&c[0]<120, 'laser mist letters AQUA ('+tint('micon_lasermist_3')+')');
+  c=rgb(tint('micon_icebreath_3'));
+  ok(c[2]>200&&c[2]>c[0], 'ice letters ICE BLUE ('+tint('micon_icebreath_3')+')');
+  ok(tint('micon_iceorb_3')===tint('micon_icebreath_3'), 'both ice weapons share it');
+  c=rgb(tint('micon_fireorb_3'));
+  ok(c[0]>220&&c[1]<110&&c[2]<90, 'fire letters NEON RED ('+tint('micon_fireorb_3')+')');
+  ok(tint('micon_firewall_3')===tint('micon_fireorb_3'), 'the firewall shares it');
+  c=rgb(tint('micon_thermoshock_3'));
+  ok(c[0]>140&&c[2]>200&&c[1]<160,
+     'thermoshock - half fire, half ice - letters the violet the two mix to ('+tint('micon_thermoshock_3')+')');
+  /* \u26a0 an unknown family must keep a VISIBLE default rather than fall through to nothing */
+  ok(vm.runInContext("unlockTint('micon_nosuchweapon_3')===UNLOCK_TINT_DEF&&/^#/.test(UNLOCK_TINT_DEF)",ctxv),
+     'an unknown weapon keeps the visible default');
+
+  /* the chaingun's icons are registered per tier and are the badge-sized files now */
+  ok(vm.runInContext("[1,2,3,4,5].every(i=>/chaingun_icon_/.test(String(XART._src['micon_chaingun_'+i]||'')))",ctxv),
+     'all five chaingun icon tiers are registered');
   ok(!/slots\[i\*2\]/.test(du), 'it no longer borrows the thin stat bays');
 
   /* ⚠ THIS PIN USED TO REQUIRE `box=rh`, A SQUARE. Mike overruled it in the same breath as
