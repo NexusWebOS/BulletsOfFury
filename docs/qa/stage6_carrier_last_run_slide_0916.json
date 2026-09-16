@@ -1,0 +1,128 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-6 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "live Carrier enters its sixth Last Run phase"
+    },
+    {
+      "pass": true,
+      "label": "authored Carrier hull decodes before capture"
+    },
+    {
+      "pass": true,
+      "label": "Carrier moves during an ordinary cooldown frame"
+    },
+    {
+      "pass": true,
+      "label": "Carrier keeps moving while the beam controller owns the frame"
+    },
+    {
+      "pass": true,
+      "label": "Carrier keeps moving while the cannon controller owns the frame"
+    },
+    {
+      "pass": true,
+      "label": "traverse remains smooth and bounded on its return"
+    },
+    {
+      "pass": true,
+      "label": "carrier_last_run_01_slide is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "carrier_last_run_02_beam_slide is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "carrier_last_run_03_cannon_slide is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "carrier_last_run_04_return_slide is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "DOOMSDAY CARRIER MK II",
+    "kind": "doomsdaycarriermk2",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "DOOMSDAY CARRIER MK II",
+    "hull": "nsb_dcarrmk2_closed",
+    "world": 680,
+    "center": 340,
+    "amp": 60,
+    "cd": 99
+  },
+  "cooldown": {
+    "before": {
+      "x": 340,
+      "t": 0,
+      "cd": 99
+    },
+    "x": 362.39445816745985,
+    "t": 0.45,
+    "cd": 98.391633948,
+    "phase": 5,
+    "expected": 362.39445816745985
+  },
+  "beam": {
+    "before": {
+      "x": 362.39445816745985,
+      "t": 0.45,
+      "cd": 98.391633948
+    },
+    "x": 381.5522199138041,
+    "t": 0.9,
+    "cd": 98.391633948,
+    "phase": 5,
+    "expected": 381.5522199138041
+  },
+  "cannon": {
+    "before": {
+      "x": 381.5522199138041,
+      "t": 0.9,
+      "cd": 98.391633948
+    },
+    "x": 394.7043922201751,
+    "t": 1.35,
+    "cd": 98.391633948,
+    "phase": 5,
+    "expected": 394.7043922201751
+  },
+  "return": {
+    "before": {
+      "x": 394.7043922201751,
+      "t": 1.35,
+      "cd": 98.391633948
+    },
+    "x": 388.15426397480485,
+    "t": 2.6,
+    "cd": 96.70172824800001,
+    "phase": 5,
+    "expected": 388.15426397480485
+  },
+  "shots": [
+    "_shots\\stage6_carrier_last_run_slide_0916\\carrier_last_run_01_slide.png",
+    "_shots\\stage6_carrier_last_run_slide_0916\\carrier_last_run_02_beam_slide.png",
+    "_shots\\stage6_carrier_last_run_slide_0916\\carrier_last_run_03_cannon_slide.png",
+    "_shots\\stage6_carrier_last_run_slide_0916\\carrier_last_run_04_return_slide.png"
+  ],
+  "suite": {
+    "passing": 4463,
+    "failures": 56,
+    "failureNames": "exact established 56-name baseline",
+    "focused": "section 352: 7/7"
+  }
+}

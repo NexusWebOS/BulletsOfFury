@@ -21727,6 +21727,10 @@ function carrierMegaTick(b,dt){
     if(Audio.SFX&&Audio.SFX.bossPhase)Audio.SFX.bossPhase();
     if(phase===1)carrierThunderheadStart(b);
   }
+  /* PHASE 6 "CONSTANTLY SLIDES". This traverse belongs to the frame clock, including warning,
+     cannon and cooldown frames. Keeping it before every controller return makes the giant hull
+     continue flying while its live hardpoints, fields and effects remain anchored to it. */
+  if(M.phase===5){const W=worldWidth(),amp=Math.max(60,W*.5-Math.max(150,b.w*.5));b.x=W*.5+Math.sin(M.t*.85)*amp;}
   if(carrierThunderheadTick(b,dt))return;
   if(carrierCycloneFanTick(b,dt))return;
   if(carrierNodeFanTick(b,dt))return;
@@ -21737,10 +21741,6 @@ function carrierMegaTick(b,dt){
   if(b._cn||(b._lc&&b._lc.playing))return;
   M.cd-=dt*bossCadencePressure(b);if(M.cd>0)return;M.step++;
   const L=shipBossMount(b,'L'),C=shipBossMount(b,'C'),R=shipBossMount(b,'R');
-  /* ⚠ PHASE 6 "CONSTANTLY SLIDES" - a continuous traverse, driven per FRAME, not per volley. It
-     has to sit above the M.cd gate below or it would only move when the guns happen to fire. */
-  if(M.phase===5){ const _W=worldWidth(), _amp=Math.max(60,_W*0.5-Math.max(150,b.w*0.5));
-    b.x=_W*0.5+Math.sin(M.t*0.85)*_amp; }
   if(M.phase===0||M.phase===2){
     /* PHASES 1 AND 3 (Mike's numbering): shield UP, the bays working. Twin rotary batteries rake
        converging cyclone lanes between warheads. Phase 3 is the same siege with the player already

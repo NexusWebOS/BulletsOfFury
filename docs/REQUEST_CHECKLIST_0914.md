@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: Stage-6 Doomsday Carrier Mk II committed paired gravity-mine warning [Proof](STAGE6_CARRIER_GRAVITY_MINE_WARNING_0916.md).
+Just verified: Stage-6 Doomsday Carrier Mk II continuous Last Run traverse repair [Proof](STAGE6_CARRIER_LAST_RUN_SLIDE_0916.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
