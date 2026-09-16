@@ -4534,3 +4534,45 @@ the run**, so it showed the strike with no arrows in it at all - a picture indis
 drew it.
 `probe_escape_0916.py` 16/0, 0 errors. Suite 4,579 ok / 57 fail, names identical to a clean
 worktree at `97265703`. `docs/ESCAPE_ARROWS_0916.md`, section 362.
+
+## 0916 - the gauges: a centred label, the shield's own bar, our own fills
+
+Mike, with a shot of the BOSS tab: *"text in boss bars and min boss bars shold centered all around
+including vertically. Shield should get it's own shield like boss bar, not the same as the boss bar.
+our own custom solid/shield fills too. and Shield should be colored Blue as text."*
+
+⚠ **THE LABEL IS CENTRED IN THE SOCKET, NOT IN THE PLATE.** It was drawn at `ty+th*0.72`; the tab's
+dark socket is rows **5..29 of 30** (the longest contiguous near-black run, identical on all three
+tabs), so the centre is 17.5 and the word sat **4.6px low at plate scale** - the air above it and the
+feet on the seam in his screenshot. `BMTAB.in` is that socket and the fit is against it too.
+⚠ **`stageText`'s `cy` IS THE CENTRE OF THE CAP BOX** (it draws at `cy-H/2+gb.dy`), so handing it a
+socket centre centres the lettering and nothing else needs an offset. Measured on the canvas:
+**0.00px off centre** on BOSS, SHIELD and MINI BOSS.
+
+**The shield's own bar** is `bmbar_frame_shield` + `bmbar_tab_shield`: the boss frame **hue-ROTATED**
++151 degrees to ice, never repainted - rails, bevels, rivets, lamp and hazard block all intact,
+opaque colours 9,057 -> 8,279 (0.91), which the builder asserts before it writes (0906o). The two
+bars are therefore the same object in two liveries and `BMBAR.boss` still describes the shield's well,
+so 0910c's seating is untouched. Its well carries a faint hex lattice so an EMPTY shield bar still
+reads as a field.
+⚠ **AND THE TAB MUST BE BUILT FROM THE CLEAN FRAME.** `build_tab` samples a 60x8 patch of the well
+and stretches it to 204x30 - harmless on flat black, catastrophic on a texture. Latticing the frame
+first gave a tab of five stretched hexes the height of the plate: obvious at 2x in the `--check`
+render, and **no number in the build said a word about it**.
+⚠ **A FILL IS AUTHORED AT A LUMINANCE RAMP, NOT AT A COLOUR** - `xartPalette` composites in `'color'`
+and takes luminosity from the plate, so a flat interior tints to a flat slab. `bmbar_fill_solid` (the
+HP tube, replacing the pack's hazard stripes) and `bmbar_sf2_*` (the blue hex field, four charge
+states from ONE construction) both carry the lit top row and shaded bottom rows this sheet's authored
+fills carry. `bmbar_fill_seg` stays registered: the stripes are one key away.
+⚠ **AND SIZE CANNOT IDENTIFY ANY OF THESE PLATES** - both frames are 700x33, all three tabs 204x30,
+every fill 578x13. `probe_gauge_0916.py` wraps `XART.get` for the KEY and reads the label's ink back
+out of the canvas with `getImageData`; a source assertion that the code passes a centre would pass on
+a build that drew the word somewhere else. 25/0, 0 errors. Suite 4,598 ok / 56 fail, no new names.
+`docs/BOSS_GAUGES_0916.md`, section 363.
+
+**Also 0916 - the unlock page's layout.** Mike: *"at most we might unlock 3 at once like Freezer. you
+can list 4 at once, but use square boxes plus rectangle text next to them."* `UNLOCK_MAX=4` is the cap
+AND the layout; the rows use the LEFT column only (slots 0,2,4,6) so a name can never wrap into the
+right column and read as a fifth unlock. The square box is drawn in the PLATE'S OWN socket colours,
+measured off `stat_panel_full.png` at both a stat bay and the rank bay: a bronze rail at rgb(112,88,72)
+around a rgb(22,22,32) well, identical on the two.

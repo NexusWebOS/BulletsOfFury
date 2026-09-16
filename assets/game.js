@@ -23965,16 +23965,26 @@ const BMBAR_STAGE={ 1:{plate:'green'}, 2:{plate:'orange'}, 3:{plate:'cyan'}, 4:{
 function bmbarFill(kind, stage){
   const S=BMBAR_STAGE[stage|0]||BMBAR_STAGE[2];
   if(kind==='boss'){
-    // the stripes carry their own orange/black; a stage that is not orange gets them swapped
-    if(S.plate==='orange') return XART.rdy('bmbar_fill_seg')?XART.get('bmbar_fill_seg'):null;
+    /* ⚠ OUR OWN SOLID FILL (Mike, 0916: "our own custom solid/shield fills too"). The pack's boss
+       fill is hazard stripes; this is a solid tube authored at the sheet's own gold-orange with the
+       lit top row and shaded bottom rows every fill on this sheet carries - which is the part that
+       SURVIVES an xartPalette swap, since that composites in 'color' and takes luminosity from the
+       plate. `bmbar_fill_seg` stays registered: putting the stripes back is this one key. */
+    const base=XART.rdy('bmbar_fill_solid') ? 'bmbar_fill_solid' : 'bmbar_fill_seg';
+    if(S.plate==='orange') return XART.rdy(base)?XART.get(base):null;
     const hex=S.hex||{green:'#5fd66a',cyan:'#4ac8ff',red:'#ff3a3a'}[S.plate];
-    return xartPalette('bmbar_fill_seg', hex);
+    return xartPalette(base, hex);
   }
   if(S.plate){ const k='bmbar_fill_'+S.plate; return XART.rdy(k)?XART.get(k):null; }
   return xartPalette('bmbar_fill_orange', S.hex);
 }
 function bossBarWarm(stage){
-  try{ for(const k of ['bmbar_frame_boss','bmbar_frame_mini','bmbar_fill_grey','bmbar_fill_seg','bmbar_fill_orange','bmbar_fill_green','bmbar_fill_cyan','bmbar_fill_red']){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_e){}
+  /* ⚠ A PLATE FIRST ASKED FOR AT THE MOMENT A SHIELD DROPS IS THE FIRST-CALL TRAP: XART.rdy is
+     false on its first call and that call is what starts the load, so the bar would open on the
+     fallback for a frame or two every time. All of them are warmed with the stage. */
+  try{ for(const k of ['bmbar_frame_boss','bmbar_frame_mini','bmbar_fill_grey','bmbar_fill_seg','bmbar_fill_orange','bmbar_fill_green','bmbar_fill_cyan','bmbar_fill_red',
+                       'bmbar_frame_shield','bmbar_tab_shield','bmbar_tab_boss','bmbar_tab_mini','bmbar_fill_solid',
+                       'bmbar_sf2_over','bmbar_sf2_hex','bmbar_sf2_plasma','bmbar_sf2_low']){ XART.rdy(k); if(XART._touch) XART._touch(k); } }catch(_e){}
 }
 function drawHealthBarV2(kind, frac, cx, cy, w, inWorld){
   if(typeof ctx==='undefined') return false;
@@ -24081,11 +24091,25 @@ function drawHealthBarArt(kind, frac, cx, cy, w, inWorld){
    ("stop displaying the name of the boss entirely for ALL mini and regular bosses"). BOSS /
    MINI BOSS / SHIELD label what the bar IS; they are not the boss's name and must not become it.
    ------------------------------------------------------------------------- */
-const BMTAB={ w:204, h:30 };
+/* ⚠ THE LABEL IS CENTRED IN THE TAB'S SOCKET, NOT IN THE TAB (Mike, 0916: "text in boss bars and
+   min boss bars shold centered all around including vertically"). The socket is measured off the
+   plate's own pixels - the longest contiguous near-black run, rows 5..29 and cols 5..198 of the
+   204x30 plate, identical on the boss, mini and shield tabs - so its centre is (102.0, 17.5) and
+   NOT the plate's own centre. The word had been drawn at 0.72 of the tab height, which is 4.6px
+   low at plate scale: air above it and its feet on the seam.
+   ⚠ stageText's `cy` IS THE CENTRE of the H-tall cap box (it draws at `cy-H/2+gb.dy`), so handing
+   it the socket centre centres the lettering - nothing else needs an offset. */
+const BMTAB={ w:204, h:30, in:{ dx:5, dy:5, w:194, h:25 } };
 function bmbarTabLabel(kind){ return kind==='boss' ? 'BOSS' : kind==='shield' ? 'SHIELD' : 'MINI BOSS'; }
+/* the shield speaks in its own colour (Mike, 0916: "Shield should be colored Blue as text") */
+function bmbarTabColour(kind){ return kind==='shield' ? '#7fd8ff' : '#ffe9b0'; }
 /* the tab sits centred on the bar, its bottom edge flush with the bar's top edge */
 function drawBossTab(kind, cx, barTopY, barW){
-  const art=(kind==='mini')?'bmbar_tab_mini':'bmbar_tab_boss';
+  /* the shield carries its OWN tab, in the shield bar's livery; it falls back to the boss tab only
+     while that plate is still decoding */
+  const art=(kind==='mini')?'bmbar_tab_mini'
+           :(kind==='shield' && typeof XART!=='undefined' && XART.rdy('bmbar_tab_shield'))?'bmbar_tab_shield'
+           :'bmbar_tab_boss';
   if(typeof XART==='undefined' || !XART.rdy(art)) return false;
   const s=barW/BMBAR.frameW;                       // the tab scales with the bar, never independently
   const tw=BMTAB.w*s, th=BMTAB.h*s;
@@ -24093,17 +24117,19 @@ function drawBossTab(kind, cx, barTopY, barW){
   ctx.save();
   ctx.imageSmoothingEnabled=true;
   ctx.drawImage(XART.get(art), tx, ty, tw, th);
-  const lbl=bmbarTabLabel(kind);
+  const lbl=bmbarTabLabel(kind), col=bmbarTabColour(kind);
+  /* the socket in drawn pixels - the word is centred on ITS centre, across and down */
+  const I=BMTAB.in, ix=tx+I.dx*s, iy=ty+I.dy*s, iw=I.w*s, ih=I.h*s;
+  const lcx=ix+iw/2, lcy=iy+ih/2;
   const face=(typeof curFontArt==='function')?curFontArt():null;
   if(face && typeof stageText==='function'){
-    /* fitted to the tab's own interior so MINI BOSS cannot run over the rails, and floored at 11
-       because 0912b measured this face losing its counters below that */
-    const inner=tw*0.80;
-    let H=th*0.52;
-    if(typeof stageFitH==='function') H=stageFitH(face, lbl, inner, H, 9, 0.10);
-    stageText(face, lbl, cx, ty+th*0.72, Math.max(9,H), '#ffe9b0', 0.95, 1, 0.10);
+    /* fitted to the socket so MINI BOSS cannot run over the rails, and floored at 9 - 0912b
+       measured this face losing its counters below ~11 and the bar cannot always afford 11 */
+    let H=ih*0.62;
+    if(typeof stageFitH==='function') H=stageFitH(face, lbl, iw*0.88, H, 9, 0.10);
+    stageText(face, lbl, lcx, lcy, Math.max(9,H), col, 0.95, 1, 0.10);
   } else if(typeof msgText==='function'){
-    msgText(lbl, cx, ty+th*0.72, Math.max(9,th*0.5), '#ffe9b0', 0, 1, 0.10);
+    msgText(lbl, lcx, lcy, Math.max(9,ih*0.6), col, 0, 1, 0.10);
   }
   ctx.restore();
   return true;
@@ -24132,21 +24158,33 @@ function bossShieldFrac(b){
 /* ⚠ THE KEY IS ITS OWN FUNCTION because an atlas cell is a CANVAS, not an Image - XART.get()
    returns a drawable with no .src, so a probe cannot ask a returned fill which plate it is. The
    picker is the thing worth asserting; splitting it out is the only way to assert it. */
+/* ⚠ OUR OWN SHIELD FILLS (Mike, 0916: "our own custom solid/shield fills too"). bmbar_sf2_* is a
+   hex field in four charge states from _BUILD_SOURCE/bossbar_shield_0916.py - ONE construction at
+   four energies, so a shield at 90% and one at 10% are the same field with different power in it
+   rather than two materials. The 0912e plates stay registered as the decode fallback. */
 function bmbarShieldFillKey(frac){
-  return (frac>0.85) ? 'bmbar_sfill_over'
-       : (frac>0.55) ? 'bmbar_sfill_hex'
-       : (frac>0.22) ? 'bmbar_sfill_plasma'
-       :               'bmbar_sfill_low';
+  return (frac>0.85) ? 'bmbar_sf2_over'
+       : (frac>0.55) ? 'bmbar_sf2_hex'
+       : (frac>0.22) ? 'bmbar_sf2_plasma'
+       :               'bmbar_sf2_low';
 }
 function bmbarShieldFill(frac){
   const k=bmbarShieldFillKey(frac);
   if(typeof XART!=='undefined' && XART.rdy(k)) return XART.get(k);
+  const old=k.replace('bmbar_sf2_','bmbar_sfill_');
+  if(typeof XART!=='undefined' && XART.rdy(old)) return XART.get(old);
   return (typeof XART!=='undefined' && XART.rdy('bmbar_sfill_hex')) ? XART.get('bmbar_sfill_hex') : null;
 }
-/* Drawn with the BOSS frame and the boss well, so the shield bar is the same bar - only its fill
-   and its tab differ. Returns false if the art has not decoded, exactly like drawHealthBarArt. */
+/* ⚠ THE SHIELD HAS ITS OWN BAR (Mike, 0916: "Shield should get it's own shield like boss bar, not
+   the same as the boss bar"). `bmbar_frame_shield` is the boss frame hue-ROTATED to ice - the same
+   object in a second livery, so its rails, rivets, lamp and hazard block still line up and its well
+   geometry is BMBAR.boss unchanged. Its well also carries a faint hex lattice, so an EMPTY shield
+   bar still reads as a field rather than as an empty hp bar. It falls back to the boss frame only
+   while the new plate is decoding. */
 function drawShieldBarArt(frac, cx, cy, w){
-  if(typeof XART==='undefined' || !XART.rdy('bmbar_frame_boss')) return false;
+  if(typeof XART==='undefined') return false;
+  const fk=XART.rdy('bmbar_frame_shield') ? 'bmbar_frame_shield' : 'bmbar_frame_boss';
+  if(!XART.rdy(fk)) return false;
   const fill=bmbarShieldFill(frac); if(!fill) return false;
   frac=clamp(frac||0,0,1);
   const s=w/BMBAR.frameW, h=BMBAR.frameH*s;
@@ -24155,7 +24193,7 @@ function drawShieldBarArt(frac, cx, cy, w){
   const fx=x+O.dx*s, fy=y+O.dy*s, fw=O.w*s, fh=O.h*s;
   ctx.save();
   ctx.imageSmoothingEnabled=true;
-  ctx.drawImage(XART.get('bmbar_frame_boss'), x, y, w, h);
+  ctx.drawImage(XART.get(fk), x, y, w, h);
   if(frac>0){
     ctx.save(); ctx.beginPath(); ctx.rect(fx, fy, fw*frac, fh); ctx.clip();
     ctx.drawImage(fill, fx, fy, fw, fh);
@@ -68927,10 +68965,14 @@ const SC_UNLOCKS = {
   5: { all:[['CHAINGUN','micon_chaingun_3']] },
   9: { all:[['LASER MIST','micon_lasermist_3']] },
 };
+/* ⚠ FOUR IS THE MOST THAT CAN EVER BE ANNOUNCED (Mike, 0916): "we dont need to have multiple
+   listed weapon unlocks like that, at most we might unlock 3 at once like Freezer. you can list 4
+   at once". The page lays out FOUR rows in one column, so the cap and the layout are one number. */
+const UNLOCK_MAX=4;
 function unlockRowsFor(stage, pk){
   const T=SC_UNLOCKS[stage|0]; if(!T) return [];
   const rows=(pk && T[pk]) ? T[pk] : (T.all||[]);
-  return rows.slice();
+  return rows.slice(0, UNLOCK_MAX);
 }
 let unlocks=null;
 function unlocksStart(rows, onDone){
@@ -68979,14 +69021,27 @@ function drawUnlocks(dt){
     const mH=Math.max(9,Math.min(b[3]*0.26, (typeof stageFitH==='function')?stageFitH(art,msg,b[2]*0.90*2.2,b[3]*0.26,9,0.05):12));
     if(typeof stageWrapCen==='function') stageWrapCen(art,msg,b[0]+b[2]/2,b[1]+b[3]*0.36,mH,b[2]*0.90,1.35,A(0.25),0.05,'#ffd24a',0.6);
     /* the unlocks themselves, one per slot, typed in */
+    /* ⚠ A SQUARE BOX WITH THE NAME BESIDE IT, FOUR ROWS, ONE COLUMN (Mike, 0916): "use square
+       boxes plus rectangle text next to them. the icons go in the boxes, text for the attack next
+       to the box." That is the shape of the RANK bay and its word strip, which is where he asked
+       for it first, so the box is drawn in the PLATE'S OWN socket colours rather than invented -
+       measured off stat_panel_full.png at both a stat bay and the rank bay: a bronze rail at
+       rgb(112,88,72) around a rgb(22,22,32) well, identical on the two.
+       The LEFT column only (slots 0,2,4,6). The right column stays empty because four is the most
+       that can ever be announced, and a name that wrapped into the next column would read as a
+       fifth unlock. */
     const slots=S.stats;
-    for(let i=0;i<U.rows.length && i<slots.length;i++){
-      const r=U.rows[i], sb=bay(slots[i]), a=A(0.55+i*0.45);
+    for(let i=0;i<U.rows.length && i<UNLOCK_MAX;i++){
+      const r=U.rows[i], sb=bay(slots[i*2]||slots[i]), a=A(0.55+i*0.45);
       if(a<=0) break;
-      /* icon at the left of the bay, the name laid out from the icon's RIGHT edge plus air - the
-         first cut put the name at a fixed fraction and the icon ran under its first letter */
-      const ih=sb[3]*0.78, ix0=sb[0]+sb[2]*0.04, ix=ix0+ih/2, tx0=ix0+ih+sb[2]*0.035;
-      if(typeof iconBlit==='function'){ ctx.save(); ctx.globalAlpha=a; iconBlit(ctx,r[1],ix,sb[1]+sb[3]/2,ih,true); ctx.restore(); }
+      const bh=sb[3], bw=bh, bx=sb[0], by=sb[1];     // SQUARE: the bay's own height, so it seats in the row
+      ctx.save(); ctx.globalAlpha=a;
+      ctx.fillStyle='#16161f'; ctx.fillRect(bx,by,bw,bh);
+      ctx.lineWidth=Math.max(1,bh*0.06); ctx.strokeStyle='#705848';
+      ctx.strokeRect(bx+ctx.lineWidth/2,by+ctx.lineWidth/2,bw-ctx.lineWidth,bh-ctx.lineWidth);
+      ctx.restore();
+      const ih=bh*0.74, tx0=bx+bw+sb[2]*0.035;
+      if(typeof iconBlit==='function'){ ctx.save(); ctx.globalAlpha=a; iconBlit(ctx,r[1],bx+bw/2,by+bh/2,ih,true); ctx.restore(); }
       const full=r[0], shown=full.slice(0, Math.max(0,Math.round((t-(0.55+i*0.45))*22)));
       const room=sb[0]+sb[2]*0.97-tx0;
       const lH=(typeof stageFitH==='function')?stageFitH(art,full,room,sb[3]*0.60,9,0.06):sb[3]*0.5;

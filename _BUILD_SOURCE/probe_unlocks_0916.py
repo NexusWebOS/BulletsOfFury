@@ -211,6 +211,27 @@ def main():
         ok(R2['isUnlocks'] and R2['rows'] == ['FIRE ORB'],
            'stage 2 as Yuri announces the fire orb alone (%s)' % R2['rows'])
 
+        # ---- 6. the layout Mike asked for: four rows, one column, a square box each ------------
+        # four is the cap, so the four-row case is the one that has to be looked at. Driven through
+        # the page's own entry point with real icon keys.
+        L = pg.evaluate("""async () => {
+          const step = async (n) => { for (let i=0;i<n;i++){ window.__bofStepNow=(window.__bofStepNow||performance.now())+1000/60; loop(window.__bofStepNow); } };
+          run.stage = 2;
+          window.__icons = [];
+          unlocksStart([['FIRE ORB','micon_fireorb_3'],['ICE BREATH','micon_icebreath_3'],
+                        ['THERMOSHOCK BALL','micon_thermoshock_3'],['LASER MIST','micon_lasermist_3']], null);
+          await step(160);
+          const keys = window.__icons.slice(-8).map(o => o.key);
+          return {state: state, rows: unlocks ? unlocks.rows.length : 0, keys: keys,
+                  shot: (document.getElementById('screen')||{toDataURL:()=>null}).toDataURL('image/png')};
+        }""")
+        ok(L['rows'] == 4, 'the page carries four rows (%s)' % L['rows'])
+        ok(len(set(L['keys'])) == 4, 'and four distinct icons are asked for on one frame (%s)' % sorted(set(L['keys'])))
+        if L.get('shot'):
+            open(os.path.join(OUT, '03_four_rows.png'), 'wb').write(base64.b64decode(L['shot'].split(',', 1)[1]))
+        ok(pg.evaluate("() => UNLOCK_MAX === 4"), 'the cap and the layout are one number (UNLOCK_MAX)')
+        ok(pg.evaluate("() => unlockRowsFor(2,'freezer').length <= UNLOCK_MAX"), "Freezer's row set is within the cap")
+
         ok(not errs, 'no page or console errors (%d)' % len(errs))
         for e in errs[:6]:
             print('    !', e)

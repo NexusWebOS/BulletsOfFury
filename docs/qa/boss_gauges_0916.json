@@ -1,0 +1,148 @@
+{
+ "drop": "0916 boss/mini/shield gauges",
+ "request": "Mike, 0916: \"text in boss bars and min boss bars shold centered all around including vertically. Shield should get it's own shield like boss bar, not the same as the boss bar. our own custom solid/shield fills too. and Shield should be colored Blue as text.\"",
+ "changes": {
+  "label_centring": "centred on the tab SOCKET (rows 5..29, cols 5..198 of the 204x30 plate), not on the plate; was drawn at 0.72 of the tab height, 4.6px low at plate scale",
+  "shield_bar": "bmbar_frame_shield + bmbar_tab_shield - the boss frame hue-ROTATED +151 degrees to ice, opaque colours 9057 -> 8279 (0.91), well geometry unchanged, faint hex lattice in the well",
+  "fills": "bmbar_fill_solid replaces the hazard-stripe boss fill; bmbar_sf2_over/hex/plasma/low are our own blue hex field in four charge states. bmbar_fill_seg stays registered as the one-key way back.",
+  "shield_text": "#7fd8ff; measured in a live fight the SHIELD ink averages (137,192,213) against BOSS at (197,176,128)"
+ },
+ "probe": "_BUILD_SOURCE/probe_gauge_0916.py",
+ "probe_result": {
+  "ok": 25,
+  "fail": 0,
+  "page_errors": 0,
+  "console_errors": 0,
+  "browser": "real Chromium, index.html?bossmode=1, Stage-2 Furnace Tyrant (a real barrier) and the Stage-1 miniboss",
+  "method": "XART.get wrapped to record the KEY (both frames are 700x33, all three tabs 204x30, every fill 578x13 - size cannot identify them); the label ink read back with getImageData and its bbox centre compared to the socket centre"
+ },
+ "checks": [
+  {
+   "pass": true,
+   "label": "the Stage-2 boss is up"
+  },
+  {
+   "pass": true,
+   "label": "and it carries a shield, so both bars are on screen (1)"
+  },
+  {
+   "pass": true,
+   "label": "every new gauge plate decoded"
+  },
+  {
+   "pass": true,
+   "label": "the SHIELD bar draws its own frame, not the boss frame"
+  },
+  {
+   "pass": true,
+   "label": "and its own tab"
+  },
+  {
+   "pass": true,
+   "label": "while the HP bar still draws the boss frame (both are on screen)"
+  },
+  {
+   "pass": true,
+   "label": "the HP bar uses our own SOLID fill (['bmbar_fill_solid'])"
+  },
+  {
+   "pass": true,
+   "label": "the shield uses our own shield fill (['bmbar_sf2_over'])"
+  },
+  {
+   "pass": true,
+   "label": "and the hazard-stripe plate is no longer the boss fill"
+  },
+  {
+   "pass": true,
+   "label": "both tabs carry lettering (2 of 2 tabs)"
+  },
+  {
+   "pass": true,
+   "label": "label 0 is vertically centred in its socket (0.00 px off centre, socket 31px)"
+  },
+  {
+   "pass": true,
+   "label": "label 0 is horizontally centred (1.00 px off centre)"
+  },
+  {
+   "pass": true,
+   "label": "label 0 fits inside the socket (19px ink in 31px)"
+  },
+  {
+   "pass": true,
+   "label": "label 1 is vertically centred in its socket (0.00 px off centre, socket 31px)"
+  },
+  {
+   "pass": true,
+   "label": "label 1 is horizontally centred (1.00 px off centre)"
+  },
+  {
+   "pass": true,
+   "label": "label 1 fits inside the socket (19px ink in 31px)"
+  },
+  {
+   "pass": true,
+   "label": "the SHIELD label is blue ([(197, 176, 128), (137, 192, 213)])"
+  },
+  {
+   "pass": true,
+   "label": "and the BOSS label is not"
+  },
+  {
+   "pass": true,
+   "label": "a miniboss is up (stage 1)"
+  },
+  {
+   "pass": true,
+   "label": "it draws the mini tab"
+  },
+  {
+   "pass": true,
+   "label": "the mini tab carries lettering"
+  },
+  {
+   "pass": true,
+   "label": "MINI BOSS label 0 is vertically centred (0.00 px off, socket 21px)"
+  },
+  {
+   "pass": true,
+   "label": "MINI BOSS label 0 is horizontally centred (1.50 px off)"
+  },
+  {
+   "pass": true,
+   "label": "MINI BOSS fits its socket without touching the rails (116px ink in 165px)"
+  },
+  {
+   "pass": true,
+   "label": "no page or console errors (0)"
+  }
+ ],
+ "build_faults_fixed": [
+  "the tab was first built from the frame AFTER the lattice went into the well, so its interior came back as five stretched hexes the height of the plate - caught in the --check render, invisible to every number in the build"
+ ],
+ "suite": {
+  "command": "node _BUILD_SOURCE/test_fl.js",
+  "ok": 4598,
+  "fail": 56,
+  "exit": 1,
+  "final_summary_reached": true,
+  "section": "363 (18/18)",
+  "baseline": {
+   "worktree": "97265703",
+   "ok": 4552,
+   "fail": 57
+  },
+  "failure_names_new": [],
+  "failure_names_repaired": [
+   "stage 1: the sand tanks spawn (scroll never) - the documented flake, which passed this run"
+  ],
+  "note": "names compared with numbers masked"
+ },
+ "proofs": [
+  "docs/proofs/bossbar_0916/01_new_art.png",
+  "docs/proofs/bossbar_0916/03_gauges_live.png",
+  "docs/proofs/bossbar_0916/04_mini_live.png"
+ ],
+ "open_for_mike": "the boss HP fill is now solid instead of hazard stripes; that is what \"our own custom solid fill\" reads as, but it changes every boss bar and bmbar_fill_seg is one key away if he wants the stripes back"
+}

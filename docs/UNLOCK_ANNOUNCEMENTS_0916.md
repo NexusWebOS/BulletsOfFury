@@ -81,3 +81,23 @@ CRATES.` — wraps to three rows and its **third row sits below the brief bay**,
 clipped by the panel edge. It is the same on every stage that has a page (2, 4, 5 and now 9), it
 predates this drop, and it is the debrief plate's own layout, so it is Mike's call: either the
 sentence gets shorter or `stageWrapCen` gets the row count `stageWrapCount` can already give it.
+
+## 5. The layout (Mike, later the same day)
+
+> "we dont need to have multiple listed weapon unlocks like that, at most we might unlock 3 at once
+> like Freezer. you can list 4 at once, but use square boxes plus rectangle text next to them. the
+> icons go in the boxes, text for the attack next to the box. I love this design."
+
+`UNLOCK_MAX = 4` is the cap AND the layout, one number: `unlockRowsFor` slices to it and the page
+lays out that many rows. The rows use the **left column only** (`stats` slots 0, 2, 4, 6) - the
+right column stays empty, because a name that wrapped into it would read as a fifth unlock.
+
+Each row is a **square box with the name beside it**, which is the shape of the RANK bay and its
+word strip - the place he asked for it first. The box is drawn in the PLATE'S OWN socket colours
+rather than invented ones: measured off `stat_panel_full.png` at both a stat bay and the rank bay,
+a bronze rail at **rgb(112,88,72)** around a **rgb(22,22,32)** well, identical on the two. The icon
+sits in the box at 74% of its height; the name starts one gap past its right edge and is fitted to
+what is left.
+
+Proof: `docs/proofs/unlocks_0916/03_four_rows.png` - the four-row case, which is the one that had to
+be looked at, driven through the page's own entry point with real icon keys.
