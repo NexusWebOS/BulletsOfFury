@@ -334,28 +334,27 @@
  ],
  "suite": {
   "command": "node _BUILD_SOURCE/test_fl.js",
-  "ok": 4628,
-  "fail": 56,
+  "ok": 4627,
+  "fail": 57,
   "exit": 1,
   "final_summary_reached": true,
-  "section": "361 (46/46)",
   "baseline": {
    "worktree": "97265703",
    "ok": 4552,
    "fail": 57
   },
   "failure_names_new": [],
-  "failure_names_repaired": [
-   "stage 1: the sand tanks spawn (scroll never) - the documented flake, which passed this run"
-  ],
-  "note": "names compared with numbers masked"
+  "failure_names_repaired": [],
+  "note": "names compared with numbers masked; identical both sides"
  },
  "proofs": [
   "docs/proofs/chaingun_icons_0916/00_before.png",
   "docs/proofs/chaingun_icons_0916/01_new_icons.png",
   "docs/proofs/unlocks_0916/06_elements.png",
   "docs/proofs/chaingun_icons_0916/03_generated.png",
-  "docs/proofs/chaingun_icons_0916/04_barrel_tiers.png"
+  "docs/proofs/chaingun_icons_0916/04_barrel_tiers.png",
+  "docs/proofs/chaingun_icons_0916/06_scratch_all.png",
+  "docs/proofs/chaingun_icons_0916/07_final_badges.png"
  ],
  "barrel": {
   "request": "Mike, 0916, with a photo of a six-barrel minigun: \"chaingun icon should be a chain barrel icon with lvl1-5 upgrade color variants like our current scheme\" / \"something ike, generate it please.\"",
@@ -364,5 +363,15 @@
   "tier_colour": "a HUE ROTATION measured off each badge own ring, value untouched: tier1 0.060, tier2 0.620, tier3 0.329, tier5 0.008. Tier 4 is silver and reports no hue, so the barrel is left neutral rather than rotated onto noise.",
   "files": "chaingun_barrel_1..5.png beside the badges; the pre-0916 sprites remain as the fallback",
   "builder": "_BUILD_SOURCE/chaingun_barrel_0916.py"
+ },
+ "superseded": "the composite approach in \"icons\" and \"barrel\" was rejected by Mike (\"you have to generate those chaingun icons by scratch, they look clearly edited\") and is kept for its lessons only",
+ "generated_whole": {
+  "request": "Mike, 0916: \"you have to generate those chaingun icons by scratch, they look clearly edited.\"",
+  "how": "one SpriteCook job per tier (gemini-3.1-flash-image, 2 variations each) for the COMPLETE badge - frame, field, barrel and Roman-numeral tag - with three authored badges uploaded as a style reference asset",
+  "credits": "120 for the five tiers plus the earlier barrel work; balance 6,324 -> 6,168",
+  "numerals": "came back correct on every tier and that is NOT guaranteed - each was rendered and read before selection, and one rejected variation had a gold V on a red frame",
+  "size": "size_behavior is a hint: jobs returned 100, 106 and 200 for a requested 112. Each is scaled to the family height 112 with its aspect kept; tier 4 was re-picked because the first choice came back wider than its siblings",
+  "palette": "NO lock, measured: the authored family is 2,875-6,329 opaque colours and the generated badges are 4,600-5,600, inside that range. 0905 rule was written against a 61-colour boss plate. Kept behind --snap.",
+  "builder": "_BUILD_SOURCE/chaingun_badges_0916.py"
  }
 }

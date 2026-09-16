@@ -4660,3 +4660,27 @@ silver and reports NO hue, so the barrel is left neutral there** rather than rot
 a hue measured from a desaturated ring is whatever noise happens to be brightest.
 `chaingun_barrel_0916.py` builds the barrels; `chaingun_icons_0916.py` seats them in the badges.
 Probe 66/0. `docs/CHAINGUN_ICONS_0916.md` §4.
+
+## 0916 - "generate it by scratch": when compositing is the wrong process
+
+Mike, on the chaingun icons built by dropping a generated barrel into another weapon's badge: *"you
+have to generate those chaingun icons by scratch, they look clearly edited."* He was right, and the
+tell was in the process, not the picture: **four separate cuts at "find the badge's interior" and two
+at "protect the tier tag"**. That much machinery to make one picture sit inside another is the job
+telling you it is the wrong job.
+
+**Generated COMPLETE instead** - frame, field, barrel and the Roman-numeral plate, one job per tier -
+with three authored badges UPLOADED as a style reference asset, so the segmented ring and the tag
+come back in the family's own language instead of being described in words and hoped for. Two
+variations per tier, 120 credits, and the composite path is left on disk for its lessons.
+⚠ **THE NUMERALS CAME BACK CORRECT AND THAT IS NOT GUARANTEED** - generated text usually is not.
+Each tier was RENDERED AND READ before selection; one rejected variation had a gold V on a red frame.
+⚠ **AND THE 0905 PALETTE-LOCK RULE DID NOT APPLY HERE, WHICH IS ALSO A MEASUREMENT.** That rule was
+written against a boss plate whose authored counterpart is 61 colours. These badges are rich
+anti-aliased art: `icebreath_3` is **6,329** opaque colours, `mg_5` 4,775, `thermoshock_3` 2,875, and
+the generated ones land at 4,600-5,600 - INSIDE the family's range. Snapping would only flatten them.
+Measure the family before applying a rule written for a different one.
+⚠ `size_behavior` is still a hint: 112 was requested and 100, 106 and 200 came back. Scale to the
+family's HEIGHT and keep the aspect - one tier was re-picked because it returned wider than its
+siblings and would have drawn out of family.
+`chaingun_badges_0916.py`. Probe 66/0, suite 4,627 ok / 57 fail, no new names.
