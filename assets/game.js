@@ -2021,6 +2021,10 @@ const XART=(function(){
      fills the entire 640x480 screen"). The framed plate above left the screen's own background
      showing around it; this one is edge to edge, so the debrief IS the picture. */
   X._src['statpanel_full_0916']='assets/game/ui/debrief_0916/stat_panel_full.png';
+  /* the rank badges (Mike, 0916: "Make the Rank lettering generated graphics"). One plate per
+     letter, each in its own metal: F molten, S gold, A silver, B bronze, C steel, D scorched
+     iron, L cracked grey. */
+  for(const _rk of ['f','s','a','b','c','d','l']) X._src['rank_'+_rk+'_0916']='assets/game/ui/debrief_0916/rank_'+_rk+'.png';
   X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
   X._src['mode_time_attack_0915']='assets/game/ui/modes_0915/time_attack.png';
   X._src['mode_lock_nexus_0915']='assets/game/ui/modes_0915/nexus_chains.webp';
@@ -6501,9 +6505,9 @@ function _setCinematicViewport(on){
          edge, so the viewport has to BE 4:3 - taking the browser's aspect here would leave the
          plate floating in bands on a wide window, which is exactly what he photographed. The HQ
          cinematics keep the browser aspect: their art is a photograph of a scene, not a panel. */
-      /* the debrief plate is 459x256; the viewport takes ITS aspect so the art fills the screen
+      /* the debrief plate is 455x254; the viewport takes ITS aspect so the art fills the screen
          with nothing showing around it and nothing stretched */
-      const ar=(state===GS.STAGECLEAR) ? (459/256) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
+      const ar=(state===GS.STAGECLEAR) ? (455/254) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
       CINEMA_VW=(state===GS.STAGECLEAR) ? Math.round(VH*ar) : Math.max(640,Math.round(VH*ar));
       if(cv.width!==CINEMA_VW*SS||cv.height!==VH*SS){cv.width=CINEMA_VW*SS;cv.height=VH*SS;}
       document.body.classList.add('cinematic-full');
@@ -7937,7 +7941,10 @@ function yuriLightningOrbGrantStage4(){
    `wpn` are those measurements, taken at the same chokepoints the existing stats use so a new
    pickup kind or a new weapon is counted by existing code. */
 let stageStats={kills:0,shots:0,hits:0,livesStart:3,scoreStart:0,spawned:0,deaths:0,missiles:0,dmgDealt:0,dmgTaken:0,
-                mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{}};
+                mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{},
+                /* 0916: the debrief's two new slots. contStart is the RUN's continue count when the
+                   stage began, so the row reports what THIS stage cost rather than the whole run. */
+                contStart:0, upgrades:0};
 let _dmgSrc=null;                  // 'missile' | 'special' | null, for the frame of a damage call
 let _dmgBullet=null;               // the live player round, for directional enemy deflectors
 /* ============================================================
@@ -27615,6 +27622,7 @@ function applyPowerup(p){
       // First time acquiring this weapon (level 0/undefined) -> level 1. Otherwise level up.
       const _cur=(run.wlevels[_wt]|0);
       run.weapon=_wt; run.wlevels[_wt]=clamp(_cur+1,1,5); run.wlevel=run.wlevels[_wt];
+      if(run.wlevels[_wt]>_cur && typeof stageStats!=='undefined') stageStats.upgrades=(stageStats.upgrades|0)+1;   // 0916: counted for the debrief
       achievementWeaponMax(_wt,run.wlevel);
       /* ⚠ THE PICKUP'S BAKED VARIANT WAS READ FOR THE BANNER AND THEN THROWN AWAY (drop 0814a).
          `p.wvar` is decided once, at spawn, in spawnContainer — that is the whole design, and
@@ -30146,6 +30154,7 @@ function manualMissileUpgradeCanSpawn(id,r){
 function manualMissileApplyUpgrade(id,r){
   r=r||run;id=manualMissileSpec(id).id;if(!manualMissileUpgradeCanSpawn(id,r))return false;
   r.missileTier=id;r.bombs=clampManualMissiles(r.bombs,id);
+  if(r===run && typeof stageStats!=='undefined') stageStats.upgrades=(stageStats.upgrades|0)+1;   // 0916: counted for the debrief
   const next=id==='super'?'ultra':id==='ultra'?'uber':null;
   r.missileUpgrade=next?{next,ready:false,readyAfter:(r._missileWaveSerial||0)+1}:null;
   return true;
@@ -31111,7 +31120,8 @@ function beginStage(num){
      stage began — the four new rows would have read 0 forever. Caught by asserting the fields
      exist at RUNTIME rather than just in the source. */
   stageStats={kills:0,shots:0,hits:0,livesStart:run.lives,scoreStart:run.score,spawned:0,deaths:0,missiles:0,
-              dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{}};
+              dmgDealt:0,dmgTaken:0, mslHits:0, spShots:0, spHits:0, spDmg:0, pickups:0, pickupsSeen:0, wpn:{},
+              contStart:(run.contUsed|0), upgrades:0};
   /* P2's accumulator starts the stage alongside P1's. `spawned` is a STAGE fact, not a seat one -
      both rows show the same denominator - so it is mirrored onto seat 2 wherever seat 1 writes it
      (see the stamp in updatePlay) rather than counted twice. */
@@ -67616,12 +67626,23 @@ const SC_ROWS = [
   {k:'CLEAR TIME',     fill:'shield',    fmt:()=>fmtTime(stageTimer),
    val:()=>Math.max(0, 1-Math.max(0,(stageTimer-60))/180)},
 ];
+/* the briefing line a cleared stage hands the next one, in Mike's words. Keyed by the stage you
+   just finished. */
+const SC_BRIEF = {
+  1:"HEAD OVER TO THE VOLCANO THAT POPPED UP OFF THE COAST AND FIND OUT WHAT'S CAUSING ALL THE ERUPTIONS. OUR HQ REPORTS HEAVY ACTIVITY THERE.",
+};
 const SC_SEGS = 24;                    // segments in a full bar
+/* ⚠ F IS THE TOP OF THE LADDER HERE, NOT THE BOTTOM (Mike, 0916): "F - Furious, S - Spectacular,
+   A - Awesome, B - Better, C - Careless, D - Self-Destructive and L - Loser". FURIOUS is this
+   game's hardest difficulty, so F above S is his own vocabulary rather than a school grade, and
+   L takes the floor that F used to hold. The thresholds keep the old S..D bands and add one band
+   at each end. */
+const SC_RANK_NAME={F:'FURIOUS',S:'SPECTACULAR',A:'AWESOME',B:'BETTER',C:'CARELESS',D:'SELF-DESTRUCTIVE',L:'LOSER'};
 function scRank(pct){
-  return pct>=0.92?'S' : pct>=0.80?'A' : pct>=0.66?'B' : pct>=0.50?'C' : pct>=0.34?'D' : 'F';
+  return pct>=0.97?'F' : pct>=0.90?'S' : pct>=0.80?'A' : pct>=0.66?'B' : pct>=0.50?'C' : pct>=0.34?'D' : 'L';
 }
 /* the emotion the pilot pulls for that rank — the advanced touch */
-const SC_FACE={S:'victory',A:'victory',B:'laugh',C:'idle',D:'sad',F:'crash'};
+const SC_FACE={F:'victory',S:'victory',A:'victory',B:'laugh',C:'idle',D:'sad',L:'crash'};
 function scPortrait(pilot, rank){
   const want=SC_FACE[rank]||'idle';
   const approved=(typeof pilotPortrait==='function')?pilotPortrait(pilot,want):null;
@@ -67970,6 +67991,12 @@ const SC_CONCEPT = [
    val:s=>scTopWeapon(s)==='NONE'?0:1},
   {k:'POWER-UPS',       fill:'shield',    fmt:s=>(s.pickups|0)+' / '+Math.max(s.pickups|0,s.pickupsSeen|0),
    val:s=>(s.pickupsSeen|0)? Math.min(1,(s.pickups|0)/s.pickupsSeen) : 0},
+  /* 0916, Mike: "we need additional slots ... Continues lost and Upgrades Acquired". CONTINUES
+     LOST is inverted like LIVES LOST - a full bar is a stage that cost you nothing. */
+  {k:'CONTINUES LOST',  fill:'health',    fmt:s=>String(Math.max(0,(run.contUsed|0)-(s.contStart|0))),
+   val:s=>{ const c=Math.max(0,(run.contUsed|0)-(s.contStart|0)); return c?Math.max(0,1-c/3):1; }},
+  {k:'UPGRADES ACQUIRED',fill:'firepower',fmt:s=>String(s.upgrades|0),
+   val:s=>Math.min(1,(s.upgrades|0)/6)},
 ];
 /* "Weapon you used to kill the most enemies or do the most damage" - Mike's own definition, and
    damage is the half the engine can answer exactly, so the tally is by damage dealt. */
@@ -68179,15 +68206,16 @@ const SC_SLOTS_0916 = {
    briefing bays rather than under them, which is why these fractions look nothing like the
    framed plate's - they are the art's, not a layout I imposed on it. */
 const SC_SLOTS_FULL = {
-  title  :[0.2157,0.0312,0.5686,0.0977],
-  pilot  :[0.1002,0.1758,0.1046,0.1641],
-  brief  :[0.2375,0.1758,0.6841,0.1641],
-  stats  :[[0.0763,0.3867,0.4074,0.0664],[0.5163,0.3867,0.4074,0.0664],
-           [0.0763,0.4961,0.4074,0.0664],[0.5163,0.4961,0.4074,0.0664],
-           [0.0763,0.6016,0.4074,0.0664],[0.5163,0.6016,0.4074,0.0664]],
-  score  :[0.0763,0.7070,0.8475,0.0664],
-  signoff:[0.0763,0.8086,0.8497,0.0703],
-  footer :[0.3573,0.9258,0.2854,0.0625],
+  title  :[0.1978,0.0354,0.6044,0.0787],
+  pilot  :[0.1582,0.1654,0.0945,0.1457],
+  brief  :[0.2835,0.1654,0.5604,0.1457],
+  stats  :[[0.1560,0.3465,0.3297,0.0551],[0.5143,0.3465,0.3297,0.0551],
+           [0.1560,0.4370,0.3297,0.0591],[0.5143,0.4370,0.3297,0.0591],
+           [0.1560,0.5276,0.3297,0.0591],[0.5143,0.5276,0.3297,0.0591],
+           [0.1560,0.6181,0.3297,0.0630],[0.5143,0.6181,0.3297,0.0630]],
+  score  :[0.1560,0.7165,0.6879,0.0630],
+  signoff:[0.1560,0.8189,0.6879,0.0591],
+  footer :[0.3736,0.9213,0.2527,0.0551],
 };
 function scFullOn(){ return !!(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916') && !(typeof coopActive==='function' && coopActive())); }
 function scPlateOn(){ return !!(typeof XART!=='undefined' && XART.rdy('statpanel_0916') && !(typeof coopActive==='function' && coopActive())); }
@@ -68272,7 +68300,13 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
     const nx=(typeof STAGES!=='undefined')?STAGES[(run.stage|0)]:null;
     const bossNm=(run._lastBossName||scBossName((curStage&&curStage.boss)||'')||'ENEMY COMMAND');
     const lines=['BOSS DEFEATED = '+bossNm];
-    if(nx) lines.push('STATUS = HEAD TO '+String(nx.sub||nx.name)+' AND DESTROY '+scBossName(nx.boss)
+    /* ⚠ AUTHORED COPY BEATS A SENTENCE BUILT FROM TABLE NAMES (Mike, 0916, giving stage 1's in his
+       own words). The generated line reads like a database row - "HEAD TO IT'S HOT IN HERE AND
+       DESTROY FURNACE TYRANT" - and names the next boss before the player has met it. A stage with
+       no row here keeps the generated line, so nothing is left blank. */
+    const _brief=SC_BRIEF[run.stage|0];
+    if(_brief) lines.push('STATUS = '+_brief);
+    else if(nx) lines.push('STATUS = HEAD TO '+String(nx.sub||nx.name)+' AND DESTROY '+scBossName(nx.boss)
                       +'. OUR HQ REPORTS HEAVY ACTIVITY THERE.');
     else   lines.push('STATUS = ALL SECTORS CLEAR. RETURN TO FURY HQ FOR DEBRIEF.');
     const colW=b[2]*0.90, room=b[3]*0.88;
@@ -68357,7 +68391,31 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
       ctx.restore();
       scPairLift(art,sLab,sVal,b[0]+b[2]*0.185,cy,H,1,SP,SPV,0.45,1);
       scPairLift(art,cLab,cVal,b[0]+b[2]*0.500,cy,H,1,SP,SPV,0.45,1);
-      scPairLift(art,rLab,rVal,b[0]+b[2]*0.820,cy,H,1,SP,SPV,0.45,1);
+      /* ⚠ THE RANK IS A BADGE AND ITS WORD (Mike, 0916). The letter is authored art now, so it is
+         blitted rather than set, and the name beside it is what the letter MEANS - a lone S says
+         nothing to a player who has not learned the ladder. The badge keeps the bay's height and
+         the word shrinks to whatever room is left, so SELF-DESTRUCTIVE fits the same column as
+         AWESOME. Still untinted (Mike, 0807q: "Dont color overlay the rank please"). */
+      {
+        const _rk=String(rVal||'-').toUpperCase();
+        const _key='rank_'+_rk.toLowerCase()+'_0916';
+        const _rx=b[0]+b[2]*0.820, _av=(typeof XART!=='undefined')&&XART.rdy(_key);
+        if(_av && drawStageClear._stamp>0){
+          const im=XART.get(_key), bh=b[3]*0.86, bw=bh*(im.naturalWidth/Math.max(1,im.naturalHeight));
+          const word=SC_RANK_NAME[_rk]||'';
+          let wh=H; const wmax=b[2]*0.30-bw-b[2]*0.012;
+          while(wh>ph2*0.008 && stageWidth(art,word,wh,0.06)>wmax) wh-=0.5;
+          const ww=word?stageWidth(art,word,wh,0.06):0;
+          const tot=bw+(word?b[2]*0.012+ww:0), x0=_rx-tot/2;
+          /* the stamp beat scales the badge in, the same beat the old letter used */
+          const k=0.72+0.28*Math.min(1,drawStageClear._stamp);
+          ctx.save(); ctx.imageSmoothingEnabled=false;
+          ctx.drawImage(im, Math.round(x0+(bw-bw*k)/2), Math.round(cy-bh*k/2), Math.round(bw*k), Math.round(bh*k));
+          ctx.restore();
+          if(word) stageText(art, word, x0+bw+b[2]*0.012+ww/2, cy+wh*0.06, wh, null, null, 1, 0.06);
+        }
+        else scPairLift(art,rLab,rVal,_rx,cy,H,1,SP,SPV,0.45,1);
+      }
     }
     if(t>1.15 && drawStageClear._stamp<1){
       if(drawStageClear._stamp===0){ drawStageClear._stamp=0.0001; shake=Math.max(shake,7);
