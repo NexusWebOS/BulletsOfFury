@@ -6501,9 +6501,9 @@ function _setCinematicViewport(on){
          edge, so the viewport has to BE 4:3 - taking the browser's aspect here would leave the
          plate floating in bands on a wide window, which is exactly what he photographed. The HQ
          cinematics keep the browser aspect: their art is a photograph of a scene, not a panel. */
-      /* the debrief plate is 469x262; the viewport takes ITS aspect so the art fills the screen
+      /* the debrief plate is 459x256; the viewport takes ITS aspect so the art fills the screen
          with nothing showing around it and nothing stretched */
-      const ar=(state===GS.STAGECLEAR) ? (469/262) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
+      const ar=(state===GS.STAGECLEAR) ? (459/256) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
       CINEMA_VW=(state===GS.STAGECLEAR) ? Math.round(VH*ar) : Math.max(640,Math.round(VH*ar));
       if(cv.width!==CINEMA_VW*SS||cv.height!==VH*SS){cv.width=CINEMA_VW*SS;cv.height=VH*SS;}
       document.body.classList.add('cinematic-full');
@@ -64523,6 +64523,14 @@ function glyphBox(art, f, H, ch){
   }
   return {w: f[2]*sc, h: gh, dy: dy};
 }
+/* ⚠ A GLYPH THAT ROUNDS ITS WIDTH DOWN COMES OUT SQUISHED (Mike, 0916: "the smaller I looks
+   squished"). Widths and heights were each rounded on their own, so a two-and-a-half pixel I lost
+   half a pixel of width against a height that rounded UP - which is a different aspect from the
+   one the artist drew, and the narrower the glyph the larger the share. Rounding up from a
+   quarter pixel keeps thin letterforms at their authored proportion; wide glyphs are unaffected,
+   since a quarter pixel of 20 is nothing. */
+function _gw(v){ v=Math.max(0.0001,v); return Math.max(1, (v-Math.floor(v)>=0.25) ? Math.ceil(v) : Math.round(v)); }
+const FONT_KERN_PRE={'!':0.10,'?':0.08,'.':0.04,',':0.04};
 function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
   if(!art||!art.font) return;
   /* ⚠ THE GLYPH MAP CAN BE PRESENT WHILE THE SHEET IS NOT (drop 0810o), AND THIS DREW NOTHING AT
@@ -64580,7 +64588,8 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
     }
     const gb=glyphBox(g.art,g.f,H,ch);
     const gw=g.dbl?gb.w*g.sw:gb.w;
-    items.push([g.art,g.f,gw,gb,g.dbl?1:0,g.sh]); total+=gw+sp;
+    const pre=(FONT_KERN_PRE[ch]||0)*H;
+    items.push([g.art,g.f,gw,gb,g.dbl?1:0,g.sh,pre]); total+=gw+sp+pre;
   }
   total-=sp; let x=cx-total/2;
   /* ⚠ THE OUTLINE IS ITS OWN FULL PASS, BEFORE ANY FACE IS DRAWN. Doing it per glyph would lay
@@ -64592,6 +64601,7 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
     for(const it of items){
       if(!it){ ox+=H*0.42+sp; continue; }
       const ga=it[0], f=it[1], w=it[2], gb=it[3];
+      ox+=(it[6]||0);
       if(ga===null){ ox+=w+sp; continue; }         // the canvas rung already strokes itself
       if(it[4]){
         /* ⚠ EACH BAR IS RINGED ON ITS OUTER SIDES ONLY. The top bar takes the offsets that do not
@@ -64601,20 +64611,21 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
         const by=Math.round(cy-H/2+gb.dy), gT=Math.floor(gap/2), gB=gap-gT;
         const topY=by-gT-bh, botY=by+gB;
         for(const d of _OUTLINE_RING){
-          if(d[1]<=0) drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,topY+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
-          if(d[1]>=0) drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,botY+d[1]*outline,Math.round(w),bh,'#05070c',alpha);
+          if(d[1]<=0) drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,topY+d[1]*outline,_gw(w),bh,'#05070c',alpha);
+          if(d[1]>=0) drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,botY+d[1]*outline,_gw(w),bh,'#05070c',alpha);
         }
         ox+=w+sp; continue;
       }
       for(const d of _OUTLINE_RING)
         drawFrameSolid(ga.img,f,Math.round(ox)+d[0]*outline,Math.round(cy-H/2+gb.dy)+d[1]*outline,
-                       Math.round(w),Math.round(gb.h),'#05070c',alpha);
+                       _gw(w),Math.round(gb.h),'#05070c',alpha);
       ox+=w+sp;
     }
   }
   for(const it of items){
     if(!it){ x+=H*0.42+sp; continue; }
     const ga=it[0], f=it[1], w=it[2], gb=it[3];
+    x+=(it[6]||0);
     if(ga===null){
       /* ⚠ THE AUTHORED FACE IS A BRIGHT GLYPH OVER ITS OWN OPAQUE DARK SHADOW, so a flat canvas
          glyph beside it reads as a thin mark from a different font - which is exactly how '='
@@ -64633,11 +64644,11 @@ function stageText(art,text,cx,cy,H,tintC,tintA,alpha,spacingMul,outline){
       /* '=' from two hyphens, ':' from two periods - one path, the glyph carries its own scale */
       const gap=eqGap(H,outline), bh=Math.max(1,Math.round(gb.h*(it[5]||EQ_T)));
       const by=Math.round(cy-H/2+gb.dy), gT=Math.floor(gap/2), gB=gap-gT;
-      drawFrameTinted(ga.img,f,Math.round(x),by-gT-bh,Math.round(w),bh,tintC,tintA,alpha);
-      drawFrameTinted(ga.img,f,Math.round(x),by+gB,Math.round(w),bh,tintC,tintA,alpha);
+      drawFrameTinted(ga.img,f,Math.round(x),by-gT-bh,_gw(w),bh,tintC,tintA,alpha);
+      drawFrameTinted(ga.img,f,Math.round(x),by+gB,_gw(w),bh,tintC,tintA,alpha);
       x+=w+sp; continue;
     }
-    drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),Math.round(w),Math.round(gb.h),tintC,tintA,alpha);
+    drawFrameTinted(ga.img,f,Math.round(x),Math.round(cy-H/2+gb.dy),_gw(w),Math.round(gb.h),tintC,tintA,alpha);
     x+=w+sp;
   }
 }
@@ -68168,15 +68179,15 @@ const SC_SLOTS_0916 = {
    briefing bays rather than under them, which is why these fractions look nothing like the
    framed plate's - they are the art's, not a layout I imposed on it. */
 const SC_SLOTS_FULL = {
-  title  :[0.1727,0.0573,0.6546,0.1107],
-  pilot  :[0.0810,0.2443,0.1279,0.2328],
-  brief  :[0.2516,0.2405,0.2303,0.2366],
-  stats  :[[0.5288,0.2405,0.1748,0.0916],[0.7377,0.2405,0.1748,0.0916],
-           [0.5288,0.3893,0.1770,0.0916],[0.7377,0.3893,0.1770,0.0916],
-           [0.5288,0.5382,0.1770,0.0916],[0.7377,0.5382,0.1770,0.0916]],
-  score  :[0.0938,0.6832,0.8124,0.0802],
-  signoff:[0.1493,0.8244,0.7015,0.0611],
-  footer :[0.3497,0.9275,0.3006,0.0573],
+  title  :[0.2157,0.0312,0.5686,0.0977],
+  pilot  :[0.1002,0.1758,0.1046,0.1641],
+  brief  :[0.2375,0.1758,0.6841,0.1641],
+  stats  :[[0.0763,0.3867,0.4074,0.0664],[0.5163,0.3867,0.4074,0.0664],
+           [0.0763,0.4961,0.4074,0.0664],[0.5163,0.4961,0.4074,0.0664],
+           [0.0763,0.6016,0.4074,0.0664],[0.5163,0.6016,0.4074,0.0664]],
+  score  :[0.0763,0.7070,0.8475,0.0664],
+  signoff:[0.0763,0.8086,0.8497,0.0703],
+  footer :[0.3573,0.9258,0.2854,0.0625],
 };
 function scFullOn(){ return !!(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916') && !(typeof coopActive==='function' && coopActive())); }
 function scPlateOn(){ return !!(typeof XART!=='undefined' && XART.rdy('statpanel_0916') && !(typeof coopActive==='function' && coopActive())); }
@@ -68294,7 +68305,10 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
     /* inset so his cyan rim stays visible - the fill sits IN the recess, it does not replace it */
     scFillBar(b[0]+b[2]*0.020, b[1]+b[3]*0.16, b[2]*0.960, b[3]*0.68, row.fill, frac, t);
     const txt=row.k+' = '+row.fmt(S);
-    const H=scFit(art,txt,b[2]*0.90,b[3]*0.62,ph2*0.010,0.05);
+    /* ⚠ THESE BAYS ARE NARROWER THAN THE OLD FULL-WIDTH ROWS, so the same 0.90/0.62 box shrank the
+       line to a size where a one-pixel I reads as squished (Mike, 0916). The text uses more of the
+       bay now - it is a recess with a rim, not a frame that needs clearance. */
+    const H=scFit(art,txt,b[2]*0.96,b[3]*0.78,ph2*0.010,0.05);
     scCenLift(art,txt,b[0]+b[2]/2,b[1]+b[3]/2,H,null,0,app,0.05,0.55,1);
   }
 
@@ -68595,7 +68609,26 @@ function drawStageClear(dt){
          letters keep their deliberate 0.52 centre; only the label moves. */
       const _pwLH=ph*0.028, _pwVH=ph*0.046;
       const _pwLW=_tw(art,'PASSWORD',_pwLH,0.06);
-      stageText(art,'PASSWORD', rowsX+_pwLW/2, wy, _pwLH, null,null,1,0.06);
+      /* ⚠ ON THE FULL-SCREEN PLATE THE WHOLE ROW IS ONE CENTRED BLOCK (Mike, 0916: "Password =
+         Iron should be centered down here", "Iron should be Red"). The label used to sit in the
+         rows column on the far left with the code centred independently, which on a plate that
+         owns a footer bay reads as two unrelated things. Measured as LABEL + gap + CODE and
+         centred on the bay, so it stays centred whatever the password's length. */
+      /* ⚠ NO `return` HERE. This block sits inside drawStageClear, and leaving the function early
+         would skip the CONTINUE prompt and the input that reads it - the exact shape of every
+         soft lock this screen has already had. Branch, never return. */
+      const _pwFullPlate=(typeof scFullOn==='function' && scFullOn());
+      if(_pwFullPlate){
+        const _fb=SC_SLOTS_FULL.footer, _bx=px+pw*_fb[0], _bw=pw*_fb[2];
+        const _gap=ph*0.020;
+        const _cw=_tw(art, R.pw, _pwVH, 0.16);
+        const _x0=_bx+(_bw-(_pwLW+_gap+_cw))/2;
+        stageText(art,'PASSWORD', _x0+_pwLW/2, wy, _pwLH, null,null,1,0.06);
+        /* the code is RED, and the typing beat keeps its own brightening */
+        const _red=(pc==='#8de23a'||pc==='#ffd24a') ? (Math.floor(stateT*3)%2 ? '#ff6b5a' : '#e02b2b') : pc;
+        stageText(art, shown, _x0+_pwLW+_gap+_tw(art,shown,_pwVH,0.16)/2, wy, _pwVH, _red, 1, pa, 0.16, 1);
+      }
+      else stageText(art,'PASSWORD', rowsX+_pwLW/2, wy, _pwLH, null,null,1,0.06);
       /* ⚠ THE LETTERS ARE TYPED, SO THIS CANNOT BE RIGHT-ALIGNED like every other value on the
          panel — `shown` is a growing PREFIX, and pinning its right edge would make the password
          appear to type backwards. It is left-anchored instead, and the anchor is measured from the
@@ -68604,9 +68637,11 @@ function drawStageClear(dt){
          Clamped clear of the label: IRON is four characters and merely looked tight, but the
          centre at 0.52 puts an eight-character password's left edge 30px INSIDE "PASSWORD".
          Authored centre when there is room, pushed right when there is not. */
-      const _pwFull=_tw(art, R.pw, _pwVH, 0.16);
-      const _pwL=Math.max(rowsX+rowsW*0.52-_pwFull/2, rowsX+_pwLW+ph*0.022);
-      stageText(art, shown, _pwL+_tw(art,shown,_pwVH,0.16)/2, wy, _pwVH, pc, 1, pa, 0.16);
+      if(!_pwFullPlate){
+        const _pwFull=_tw(art, R.pw, _pwVH, 0.16);
+        const _pwL=Math.max(rowsX+rowsW*0.52-_pwFull/2, rowsX+_pwLW+ph*0.022);
+        stageText(art, shown, _pwL+_tw(art,shown,_pwVH,0.16)/2, wy, _pwVH, pc, 1, pa, 0.16);
+      }
     } else {
       ctx.textAlign='left'; ctx.fillStyle='#9fb4d0'; ctx.font=F(ph*0.028); ctx.fillText('PASSWORD', rowsX, wy);
       ctx.globalAlpha=pa; ctx.font=F(ph*0.046);
