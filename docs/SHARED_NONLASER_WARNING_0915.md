@@ -109,3 +109,7 @@ The Carrier's Phase 5 paired gravity mines now commit their two crossing paths b
 ## Stage 6 Doomsday Carrier omega-bomb follow-up
 
 Both Last Run omega-bomb variants now commit their center corridor before a 0.66-second shared warning. The origin follows the moving center cannon while the downward angle remains fixed. Authored omega art, both base speeds, acceleration, speed cap, scale, muzzle, sound and total cadences remain intact, and phase transitions cancel a pending warning. Chromium passes 16/16 and focused section 353 passes 11/11. See [STAGE6_CARRIER_OMEGA_WARNING_0916.md](STAGE6_CARRIER_OMEGA_WARNING_0916.md).
+
+## Stage 6 Doomsday Carrier mirrored cluster-fan follow-up
+
+The Last Run cluster fan now commits all six mirrored paths before a 0.62-second shared warning. Origins follow the moving left and right mounts while the three angles on each side remain fixed and preserve the open center escape wedge. Authored cluster bomblets, speed, muzzles, one release sound and total cadence remain intact, and phase transitions cancel a pending warning. Chromium passes 16/16 and focused section 354 passes 11/11. See [STAGE6_CARRIER_CLUSTER_WARNING_0916.md](STAGE6_CARRIER_CLUSTER_WARNING_0916.md).

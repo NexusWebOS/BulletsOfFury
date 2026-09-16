@@ -21612,6 +21612,24 @@ function carrierOmegaDraw(b,front){
   const M=b&&b._mega,F=M&&M.omegaBomb;if(!F||F.released)return false;const p=carrierOmegaPath(b,F),k=clamp(F.t/F.tell,0,1);
   if(!front)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.ex,ey:p.ey,progress:k,width:38,fieldOnly:true});else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});return true;
 }
+/* The Last Run cluster fan fires three mirrored paths from each side mount. Preserve the open
+   middle wedge, but commit all six paths before the fast authored bomblets leave the hull. */
+function carrierClusterFanPaths(b,F){
+  if(!b||!F)return [];const len=Math.max(VH,worldWidth())*1.35;return F.lanes.map(q=>{const p=shipBossMount(b,q.slot);return{x:p.x,y:p.y,a:q.a,slot:q.slot,ex:p.x+Math.cos(q.a)*len,ey:p.y+Math.sin(q.a)*len};});
+}
+function carrierClusterFanStart(b){
+  const M=b&&b._mega;if(!M||M.clusterFan)return false;const tell=.62,cooldown=1.18,lanes=[];for(const row of [['L',-1],['R',1]])for(const o of [.22,.38,.54])lanes.push({slot:row[0],a:Math.PI/2+row[1]*o});
+  M.clusterFan={t:0,tell:tell,cooldown:cooldown,id:'stage6-carrier-cluster-fan',lanes:lanes,released:false,finish:0};M.cd=cooldown;combatWarningTick(b,'stage6-carrier-cluster-fan',0,tell,true);if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle))(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle)();return true;
+}
+function carrierClusterFanTick(b,dt){
+  const M=b&&b._mega,F=M&&M.clusterFan;if(!F)return false;F.t+=dt;combatWarningTick(b,F.id,Math.min(F.t,F.tell),F.tell);
+  if(!F.released&&F.t>=F.tell){F.released=true;F.finish=F.t+Math.max(.14,F.cooldown-F.tell);const paths=carrierClusterFanPaths(b,F);for(const p of paths)carrierMegaShot(b,p,p.a,3.35,'s6cluster',{silent:true});carrierMegaMuzzle(b,'L','s6mb_cyclonemuzzle',1.0);carrierMegaMuzzle(b,'R','s6mb_cyclonemuzzle',1.0);if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch))(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch)();}
+  if(F.released&&F.t>=F.finish){M.clusterFan=null;M.cd=.02;return false;}return true;
+}
+function carrierClusterFanDraw(b,front){
+  const M=b&&b._mega,F=M&&M.clusterFan;if(!F||F.released)return false;const paths=carrierClusterFanPaths(b,F),k=clamp(F.t/F.tell,0,1);
+  if(!front)for(const p of paths)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.ex,ey:p.ey,progress:k,width:23,fieldOnly:true});else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});return true;
+}
 /* THUNDERHEAD is owned by the Mk II controller.  The earlier signature lived in the generic
    boss switch, but this carrier returns through its _ship controller before that switch can run.
    Eight lightning LANES are warned first; two neighbouring lanes are always empty and the safe
@@ -21733,7 +21751,7 @@ function carrierMegaTick(b,dt){
      the playfield, which is the moment the fight is meant to become desperate. */
   b._megaBeam = (phase>=5) ? 1 : 0;   // the quarter-screen cannon belongs to the LAST RUN now
   if(phase!==M.phase){
-    for(const q of [M.cycloneFan,M.nodeFan,M.prismFan,M.gravityFan,M.omegaBomb])if(q)combatWarningTick(b,q.id,q.tell,q.tell,true);M.cycloneFan=null;M.nodeFan=null;M.prismFan=null;M.gravityFan=null;M.omegaBomb=null;
+    for(const q of [M.cycloneFan,M.nodeFan,M.prismFan,M.gravityFan,M.omegaBomb,M.clusterFan])if(q)combatWarningTick(b,q.id,q.tell,q.tell,true);M.cycloneFan=null;M.nodeFan=null;M.prismFan=null;M.gravityFan=null;M.omegaBomb=null;M.clusterFan=null;
     M.phase=phase;M.shown=phase;M.cd=.55;M.step=0;b.flash=Math.max(b.flash||0,.36);
     /* ⚠ PHASES 1 AND 3 (1-BASED) ARE 'SHIELD UP'. Entering phase 2 after a bay falls has to RESTORE
        the field, or the alternation Mike described never happens - it broke in phase 1 and would
@@ -21755,6 +21773,7 @@ function carrierMegaTick(b,dt){
   if(carrierPrismFanTick(b,dt))return;
   if(carrierGravityFanTick(b,dt))return;
   if(carrierOmegaTick(b,dt))return;
+  if(carrierClusterFanTick(b,dt))return;
   /* The launch/cannon reels own their beat.  Pausing this clock during either keeps the mega
      arsenal forceful without stacking an unreadable attack on top of the existing bay mechanic. */
   if(b._cn||(b._lc&&b._lc.playing))return;
@@ -21789,8 +21808,7 @@ function carrierMegaTick(b,dt){
       carrierOmegaStart(b,1.1,1.45);return;
     }else if(M.step%4===1){
       /* Mirrored cluster fans leave the middle wedge open. */
-      for(const row of [[L,-1],[R,1]])for(const o of [.22,.38,.54])carrierMegaShot(b,row[0],Math.PI/2+row[1]*o,3.35,'s6cluster',{silent:true});
-      carrierMegaMuzzle(b,'L','s6mb_cyclonemuzzle',1.0);carrierMegaMuzzle(b,'R','s6mb_cyclonemuzzle',1.0);M.cd=1.18;
+      carrierClusterFanStart(b);return;
     }else if(M.step%4===2){
       /* CHROME FLAK FAN, to the pack's own geometry: alternating lower INNER pods, the four
          authored launch angles, and a fuse that turns each shell into a five-way fan. */
@@ -21820,7 +21838,7 @@ function carrierMegaTick(b,dt){
 }
 function carrierMegaDrawUnder(b){
   const M=b&&b._mega;if(!M||typeof XART==='undefined')return;
-  carrierCycloneFanDraw(b,false);carrierNodeFanDraw(b,false);carrierPrismFanDraw(b,false);carrierGravityFanDraw(b,false);carrierOmegaDraw(b,false);if(M.phase<1)return;
+  carrierCycloneFanDraw(b,false);carrierNodeFanDraw(b,false);carrierPrismFanDraw(b,false);carrierGravityFanDraw(b,false);carrierOmegaDraw(b,false);carrierClusterFanDraw(b,false);if(M.phase<1)return;
   carrierThunderheadDraw(b,false);
   const cy=(b._drawY!=null?b._drawY:b.y),fi=Math.floor(M.t*12)%6,key='s6mb_stormlink_'+fi;if(!XART.rdy(key))return;
   const im=XART.get(key);ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.78;
@@ -21835,7 +21853,7 @@ function carrierMegaDrawOver(b){
     if(XART.rdy(key)){ctx.save();ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(key),p.x-34,p.y-34,68,68);ctx.restore();}
     const r=clamp(n.hp/n.maxhp,0,1);ctx.fillStyle='#06111c';ctx.fillRect(p.x-21,p.y+26,42,4);ctx.fillStyle='#54e8ff';ctx.fillRect(p.x-20,p.y+27,40*r,2);
   }
-  carrierThunderheadDraw(b,true);carrierCycloneFanDraw(b,true);carrierNodeFanDraw(b,true);carrierPrismFanDraw(b,true);carrierGravityFanDraw(b,true);carrierOmegaDraw(b,true);
+  carrierThunderheadDraw(b,true);carrierCycloneFanDraw(b,true);carrierNodeFanDraw(b,true);carrierPrismFanDraw(b,true);carrierGravityFanDraw(b,true);carrierOmegaDraw(b,true);carrierClusterFanDraw(b,true);
 }
 function carrierBayBox(b, side){
   const f=CARRIER_BAY[side]; if(!f) return null;
