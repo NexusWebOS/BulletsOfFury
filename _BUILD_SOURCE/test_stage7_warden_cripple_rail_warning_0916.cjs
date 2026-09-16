@@ -1,0 +1,14 @@
+module.exports=function testStage7WardenCrippleRailWarning(vm,ctxv,ok){
+  console.log('=== 356. Stage-7 Warden cripple-rail warning ===');
+  const result=JSON.parse(vm.runInContext(`(function(){
+    const save={boss,player,run:{...run},camX,curStage,eBullets,charge:Audio.SFX.bossWeaponCharge,cannon:Audio.SFX.enemyBossCannon};const o={};
+    try{Audio.SFX.bossWeaponCharge=()=>{};Audio.SFX.enemyBossCannon=()=>{};camX=0;curStage=STAGES[6];run.stage=7;eBullets=[];player={x:340,y:470,dead:false,invuln:999,_hx:9,_hy:10};boss=null;spawnBoss('sludgeemperor');boss.enter=false;boss.x=340;boss.y=178;boss._drawY=178;s7WardenInit(boss);const S=boss._s7warden,F=S.final;F.phase='cripple';S.noHit=false;F.fire=0;F.crippleRail=null;boss._combatWarnings={};
+      s7WardenCrippleRailTick(boss,.01);const C=F.crippleRail,aim=C.aim;o.start=!!C&&C.warn===.58&&C.shot===0&&!C.released&&eBullets.length===0;o.paths=s7WardenCrippleRailPaths(boss,C).length===4;
+      s7WardenCrippleRailTick(boss,.12);let B=boss._combatWarnings[C.id];o.green=l23FovPhase(B.t/B.warm)==='green';boss.x+=36;s7WardenCrippleRailTick(boss,.25);B=boss._combatWarnings[C.id];const moved=s7WardenCrippleRailPaths(boss,C);o.yellow=l23FovPhase(B.t/B.warm)==='yellow'&&C.aim===aim&&moved[0].x!==340;
+      s7WardenCrippleRailTick(boss,.14);B=boss._combatWarnings[C.id];o.red=l23FovPhase(B.t/B.warm)==='red'&&eBullets.length===0;s7WardenCrippleRailTick(boss,.08);o.release=B.released&&C.released&&eBullets.filter(q=>q._s7warden==='rail').length===1;
+      s7WardenCrippleRailTick(boss,.70);const rails=eBullets.filter(q=>q._s7warden==='rail');o.sequence=rails.length===5&&rails.slice(0,3).every(q=>q.spd===5.25&&Math.abs(q.ang-aim)<.000001)&&rails[3].spd===4.65&&rails[4].spd===4.65&&Math.abs(rails[3].ang-(aim-.07))<.000001&&Math.abs(rails[4].ang-(aim+.07))<.000001;
+      s7WardenCrippleRailTick(boss,.50);o.cleanup=!F.crippleRail;player.x=90;s7WardenCrippleRailTick(boss,.03);const D=F.crippleRail;o.rearm=!!D&&D.aim!==aim&&D.shot===0;const did=D.id;s7WardenPhase(boss,'defeat');o.phaseCancel=!F.crippleRail&&boss._combatWarnings[did].released;
+      const draw=s7WardenCrippleRailWarningDraw.toString();o.shared=draw.includes('fieldOnly:true')&&draw.includes('alertOnly:true');o.layered=s7WardenDraw.toString().includes('s7WardenCrippleRailWarningDraw(b,false)')&&s7WardenDraw.toString().includes('s7WardenCrippleRailWarningDraw(b,true)');o.integrated=s7WardenFinalTick.toString().includes('s7WardenCrippleRailTick');return JSON.stringify(o);
+    }finally{boss=save.boss;player=save.player;Object.assign(run,save.run);camX=save.camX;curStage=save.curStage;eBullets=save.eBullets;Audio.SFX.bossWeaponCharge=save.charge;Audio.SFX.enemyBossCannon=save.cannon;}
+  })()`,ctxv));for(const k of Object.keys(result))ok(result[k],'Warden cripple rail warning: '+k);
+};

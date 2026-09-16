@@ -117,3 +117,7 @@ The Last Run cluster fan now commits all six mirrored paths before a 0.62-second
 ## Stage 6 Doomsday Carrier chrome-flak follow-up
 
 The Last Run chrome-flak pair now commits both shell paths before a 0.62-second shared warning. Origins follow the moving lower-inner hardpoints while the angles remain fixed. The unreachable outer `-18°/+18°` pair is restored and alternates with the inner `+10°/-10°` pair. Authored shell and burst art, speed, 0.64-second fuse, five fragments per shell, muzzles and total cadence remain intact. Chromium passes 19/19 and focused section 355 passes 13/13. See [STAGE6_CARRIER_FLAK_WARNING_0916.md](STAGE6_CARRIER_FLAK_WARNING_0916.md).
+
+## Stage 7 Toxic Portal Warden cripple-rail follow-up
+
+The crippled Warden now commits a complete rail group before a 0.58-second shared warning. Four fields preview the alternating straight singles and paired offset finisher. Their origins follow the crawling hull while their angles remain fixed; the next group samples a new aim only after the prior group completes. Authored rail spears, cannon mounts, speeds, offsets, muzzles and sound remain intact. Chromium passes 18/18 and focused section 356 passes 13/13. See [STAGE7_WARDEN_CRIPPLE_RAIL_WARNING_0916.md](STAGE7_WARDEN_CRIPPLE_RAIL_WARNING_0916.md).

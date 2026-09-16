@@ -1,0 +1,487 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-7 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "live cripple phase commits its four unique rail paths"
+    },
+    {
+      "pass": true,
+      "label": "authored cripple hull, rail spear and shared warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green previews the committed four-path rail group"
+    },
+    {
+      "pass": true,
+      "label": "green uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "yellow follows the crawling hull without changing committed aim"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "red preserves all promised rail paths until release"
+    },
+    {
+      "pass": true,
+      "label": "red uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "the first single rail releases only after the complete warning"
+    },
+    {
+      "pass": true,
+      "label": "the committed group preserves three singles and its dual finisher"
+    },
+    {
+      "pass": true,
+      "label": "authored Warden rail-spear art renders for the warned group"
+    },
+    {
+      "pass": true,
+      "label": "warden_cripple_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_cripple_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_cripple_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_cripple_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "warden_cripple_05_group is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "TOXIC PORTAL WARDEN",
+    "kind": "sludgeemperor",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "TOXIC PORTAL WARDEN",
+    "tell": 0.58,
+    "aim": 1.5707963267948966,
+    "paths": [
+      {
+        "slot": "L",
+        "x": 289,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 289.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "R",
+        "x": 391,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 391.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "L",
+        "x": 289,
+        "y": 235.5,
+        "a": 1.5007963267948965,
+        "ex": 348.45142023690295,
+        "ey": 1083.4183502152878
+      },
+      {
+        "slot": "R",
+        "x": 391,
+        "y": 235.5,
+        "a": 1.6407963267948966,
+        "ex": 331.54857976309717,
+        "ey": 1083.4183502152878
+      }
+    ],
+    "world": 680,
+    "center": 340
+  },
+  "green": {
+    "aim": 1.5707963267948966,
+    "paths": [
+      {
+        "slot": "L",
+        "x": 289,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 289.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "R",
+        "x": 391,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 391.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "L",
+        "x": 289,
+        "y": 235.5,
+        "a": 1.5007963267948965,
+        "ex": 348.45142023690295,
+        "ey": 1083.4183502152878
+      },
+      {
+        "slot": "R",
+        "x": 391,
+        "y": 235.5,
+        "a": 1.6407963267948966,
+        "ex": 331.54857976309717,
+        "ey": 1083.4183502152878
+      }
+    ],
+    "released": false,
+    "shot": 0,
+    "warn": {
+      "t": 0.1,
+      "warm": 0.58,
+      "released": false
+    },
+    "rails": [],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_green_tall",
+      "cfx_stage7_warden_cripple",
+      "bmfx_alert_green_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "aim": 1.5707963267948966,
+    "paths": [
+      {
+        "slot": "L",
+        "x": 323,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 323.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "R",
+        "x": 425,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 425.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "L",
+        "x": 323,
+        "y": 235.5,
+        "a": 1.5007963267948965,
+        "ex": 382.45142023690295,
+        "ey": 1083.4183502152878
+      },
+      {
+        "slot": "R",
+        "x": 425,
+        "y": 235.5,
+        "a": 1.6407963267948966,
+        "ex": 365.54857976309717,
+        "ey": 1083.4183502152878
+      }
+    ],
+    "released": false,
+    "shot": 0,
+    "warn": {
+      "t": 0.28,
+      "warm": 0.58,
+      "released": false
+    },
+    "rails": [],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_yellow_tall",
+      "cfx_stage7_warden_cripple",
+      "bmfx_alert_yellow_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "aim": 1.5707963267948966,
+    "paths": [
+      {
+        "slot": "L",
+        "x": 323,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 323.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "R",
+        "x": 425,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 425.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "L",
+        "x": 323,
+        "y": 235.5,
+        "a": 1.5007963267948965,
+        "ex": 382.45142023690295,
+        "ey": 1083.4183502152878
+      },
+      {
+        "slot": "R",
+        "x": 425,
+        "y": 235.5,
+        "a": 1.6407963267948966,
+        "ex": 365.54857976309717,
+        "ey": 1083.4183502152878
+      }
+    ],
+    "released": false,
+    "shot": 0,
+    "warn": {
+      "t": 0.51,
+      "warm": 0.58,
+      "released": false
+    },
+    "rails": [],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bmfx_fov_red_tall",
+      "cfx_stage7_warden_cripple",
+      "bmfx_alert_red_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "aim": 1.5707963267948966,
+    "paths": [
+      {
+        "slot": "L",
+        "x": 323,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 323.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "R",
+        "x": 425,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 425.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "L",
+        "x": 323,
+        "y": 235.5,
+        "a": 1.5007963267948965,
+        "ex": 382.45142023690295,
+        "ey": 1083.4183502152878
+      },
+      {
+        "slot": "R",
+        "x": 425,
+        "y": 235.5,
+        "a": 1.6407963267948966,
+        "ex": 365.54857976309717,
+        "ey": 1083.4183502152878
+      }
+    ],
+    "released": true,
+    "shot": 1,
+    "warn": {
+      "t": 0.58,
+      "warm": 0.58,
+      "released": true
+    },
+    "rails": [
+      {
+        "x": 323,
+        "y": 235.5,
+        "spd": 5.25,
+        "ang": 1.5707963267948966,
+        "slot": "rail"
+      }
+    ],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "cfx_stage7_warden_cripple",
+      "fx_ground_strikes_0916",
+      "cfx_stage7_warden_spear",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "group": {
+    "aim": 1.5707963267948966,
+    "paths": [
+      {
+        "slot": "L",
+        "x": 323,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 323.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "R",
+        "x": 425,
+        "y": 235.5,
+        "a": 1.5707963267948966,
+        "ex": 425.00000000000006,
+        "ey": 1085.5
+      },
+      {
+        "slot": "L",
+        "x": 323,
+        "y": 235.5,
+        "a": 1.5007963267948965,
+        "ex": 382.45142023690295,
+        "ey": 1083.4183502152878
+      },
+      {
+        "slot": "R",
+        "x": 425,
+        "y": 235.5,
+        "a": 1.6407963267948966,
+        "ex": 365.54857976309717,
+        "ey": 1083.4183502152878
+      }
+    ],
+    "released": true,
+    "shot": 4,
+    "warn": {
+      "t": 0.58,
+      "warm": 0.58,
+      "released": true
+    },
+    "rails": [
+      {
+        "x": 323,
+        "y": 235.5,
+        "spd": 5.25,
+        "ang": 1.5707963267948966,
+        "slot": "rail"
+      },
+      {
+        "x": 425,
+        "y": 235.5,
+        "spd": 5.25,
+        "ang": 1.5707963267948966,
+        "slot": "rail"
+      },
+      {
+        "x": 323,
+        "y": 235.5,
+        "spd": 5.25,
+        "ang": 1.5707963267948966,
+        "slot": "rail"
+      },
+      {
+        "x": 323,
+        "y": 235.5,
+        "spd": 4.65,
+        "ang": 1.5007963267948965,
+        "slot": "rail"
+      },
+      {
+        "x": 425,
+        "y": 235.5,
+        "spd": 4.65,
+        "ang": 1.6407963267948966,
+        "slot": "rail"
+      }
+    ],
+    "gets": [
+      "nwl_sludge_0",
+      "nwl_sludge_1",
+      "nwl_sludge_2",
+      "nwl_sludge_3",
+      "nst7_master_v3",
+      "bpfx_muzzle_laser_0",
+      "cfx_stage7_warden_cripple",
+      "fx_ground_strikes_0916",
+      "cfx_stage7_warden_spear",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage7_warden_cripple_rail_warning_0916\\warden_cripple_01_green.png",
+    "_shots\\stage7_warden_cripple_rail_warning_0916\\warden_cripple_02_yellow.png",
+    "_shots\\stage7_warden_cripple_rail_warning_0916\\warden_cripple_03_red.png",
+    "_shots\\stage7_warden_cripple_rail_warning_0916\\warden_cripple_04_release.png",
+    "_shots\\stage7_warden_cripple_rail_warning_0916\\warden_cripple_05_group.png"
+  ],
+  "suite": {
+    "passing": 4510,
+    "failures": 57,
+    "failureNames": "established 56-name baseline plus intermittent Stage-1 sand-tank fixture; no new names",
+    "focused": "section 356: 13/13"
+  }
+}
