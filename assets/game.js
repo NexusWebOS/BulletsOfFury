@@ -2017,6 +2017,10 @@ const XART=(function(){
      plate with its bays cut into it, so the screen is art rather than a frame with text floated
      over it - which is what the 9-sliced statscreen had become. */
   X._src['statpanel_0916']='assets/game/ui/debrief_0916/stat_panel.png';
+  /* ⚠ THE FULL-SCREEN PLATE (Mike, 0916: "This should be a full screen generated graphic that
+     fills the entire 640x480 screen"). The framed plate above left the screen's own background
+     showing around it; this one is edge to edge, so the debrief IS the picture. */
+  X._src['statpanel_full_0916']='assets/game/ui/debrief_0916/stat_panel_full.png';
   X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
   X._src['mode_time_attack_0915']='assets/game/ui/modes_0915/time_attack.png';
   X._src['mode_lock_nexus_0915']='assets/game/ui/modes_0915/nexus_chains.webp';
@@ -6492,8 +6496,15 @@ function _setCinematicViewport(on){
        Chromium off the frame the launch hands over. loop() resets the transform and the smoothing flag at the top of
        every frame, so nothing depended on the clear: the canvas is resized only when its size actually changes. */
     if(on){
-      const ar=Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
-      CINEMA_VW=Math.max(640,Math.round(VH*ar));
+      /* ⚠ THE DEBRIEF IS A FIXED 4:3 (Mike, 0916: "This should be a full screen generated graphic
+         that fills the entire 640x480 screen"). Its plate is authored at 4:3 and drawn edge to
+         edge, so the viewport has to BE 4:3 - taking the browser's aspect here would leave the
+         plate floating in bands on a wide window, which is exactly what he photographed. The HQ
+         cinematics keep the browser aspect: their art is a photograph of a scene, not a panel. */
+      /* the debrief plate is 469x262; the viewport takes ITS aspect so the art fills the screen
+         with nothing showing around it and nothing stretched */
+      const ar=(state===GS.STAGECLEAR) ? (469/262) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
+      CINEMA_VW=(state===GS.STAGECLEAR) ? Math.round(VH*ar) : Math.max(640,Math.round(VH*ar));
       if(cv.width!==CINEMA_VW*SS||cv.height!==VH*SS){cv.width=CINEMA_VW*SS;cv.height=VH*SS;}
       document.body.classList.add('cinematic-full');
     }else{
@@ -68152,8 +68163,24 @@ const SC_SLOTS_0916 = {
   score  :[0.1260,0.7382,0.7480,0.0698],
   signoff:[0.1260,0.8354,0.7480,0.0648],
 };
+/* measured off stat_panel_full.png the same way: flood its dark recesses, take each box as a
+   fraction of the whole plate. Its slots sit in a 2x3 block to the RIGHT of the portrait and
+   briefing bays rather than under them, which is why these fractions look nothing like the
+   framed plate's - they are the art's, not a layout I imposed on it. */
+const SC_SLOTS_FULL = {
+  title  :[0.1727,0.0573,0.6546,0.1107],
+  pilot  :[0.0810,0.2443,0.1279,0.2328],
+  brief  :[0.2516,0.2405,0.2303,0.2366],
+  stats  :[[0.5288,0.2405,0.1748,0.0916],[0.7377,0.2405,0.1748,0.0916],
+           [0.5288,0.3893,0.1770,0.0916],[0.7377,0.3893,0.1770,0.0916],
+           [0.5288,0.5382,0.1770,0.0916],[0.7377,0.5382,0.1770,0.0916]],
+  score  :[0.0938,0.6832,0.8124,0.0802],
+  signoff:[0.1493,0.8244,0.7015,0.0611],
+  footer :[0.3497,0.9275,0.3006,0.0573],
+};
+function scFullOn(){ return !!(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916') && !(typeof coopActive==='function' && coopActive())); }
 function scPlateOn(){ return !!(typeof XART!=='undefined' && XART.rdy('statpanel_0916') && !(typeof coopActive==='function' && coopActive())); }
-function scSlots(){ return scPlateOn() ? SC_SLOTS_0916 : SC_SLOTS; }
+function scSlots(){ return scFullOn() ? SC_SLOTS_FULL : (scPlateOn() ? SC_SLOTS_0916 : SC_SLOTS); }
 /* the plate's fitted rect on screen, and a bay resolved inside it */
 function scPanelRect(){
   const AW=1448, AH=1086;                       // the authored aspect, kept whatever the plate ships at
@@ -68175,7 +68202,7 @@ function scPanelRect(){
   if(_fr){
     /* the authored plate's bays are fractions of the WHOLE art, so it takes the rect as it is;
        the 9-sliced frame needs its measured interior inset instead */
-    if(scPlateOn()) return [_fr[0], _fr[1], _fr[2], _fr[3]];
+    if(scFullOn()||scPlateOn()) return [_fr[0], _fr[1], _fr[2], _fr[3]];
     const IL=0.046, IR=0.951, IT=0.086, IB=0.907;
     return [_fr[0]+_fr[2]*IL, _fr[1]+_fr[3]*IT, _fr[2]*(IR-IL), _fr[3]*(IB-IT)];
   }
@@ -68341,9 +68368,21 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
   }
 
   /* the password and PRESS FIRE go in the band BELOW his plate - it has no bay for them, and
-     putting them over the authored frame is what would spoil it */
-  drawStageClear._pwY = P[1]+P[3] + Math.max(10,(VH-(P[1]+P[3]))*0.34);
-  drawStageClear._pfY = P[1]+P[3] + Math.max(22,(VH-(P[1]+P[3]))*0.70);
+     putting them over the authored frame is what would spoil it.
+     ⚠ UNLESS THE PLATE IS THE WHOLE SCREEN (0916). The full-bleed plate leaves no band below
+     itself - anything placed there is off the bottom edge, which is where the password went on
+     the first cut - so it uses that plate's own footer bay instead. This runs AFTER the plate
+     block, so it is the ONE publisher of these two; setting them earlier would be overwritten. */
+  if(typeof scFullOn==='function' && scFullOn()){
+    const _fb=SC_SLOTS_FULL.footer;
+    drawStageClear._pwY = P[1]+P[3]*(_fb[1]+_fb[3]*0.52);          // inside the footer bay
+    /* CONTINUE goes on the plating between the sign-off bay and the footer, because below the
+       footer is the bottom EDGE of the screen - the plate has no band under itself any more. */
+    drawStageClear._pfY = P[1]+P[3]*0.898;
+  } else {
+    drawStageClear._pwY = P[1]+P[3] + Math.max(10,(VH-(P[1]+P[3]))*0.34);
+    drawStageClear._pfY = P[1]+P[3] + Math.max(22,(VH-(P[1]+P[3]))*0.70);
+  }
   return [P[0]+P[2]*0.10, P[2]*0.80];
 }
 function stageWrapCen(art,text,cx,y,H,maxW,lineMul,alpha,spacingMul,tintC,tintA){
@@ -68427,7 +68466,21 @@ function drawStageClear(dt){
      score row, sign-off - which is why the SC_SLOTS fractions map onto either one. The art is
      NOT deleted: it stays registered at X._src['statpanel_cf'] as the backup plate for Cole's
      dialogue window, per the same instruction. */
-  if(scPlateOn()){
+  if(scFullOn()){
+    /* EDGE TO EDGE. The viewport is set to this plate's own aspect while the debrief is up (see
+       _setCinematicViewport), so filling it costs no distortion and leaves no background showing.
+       The bays are fractions of the plate, so they follow it exactly. */
+    const im=XART.get('statpanel_full_0916');
+    const slide=1-Math.pow(1-Math.min(1,t/0.32),3);
+    const W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW;
+    ctx.save(); ctx.globalAlpha=slide; ctx.imageSmoothingEnabled=false;
+    ctx.drawImage(im, 0, -(1-slide)*40, W, VH);
+    ctx.restore();
+    px=0; py=0; pw=W; ph=VH;
+    /* PASSWORD gets the plate's own footer strip instead of a band under the panel - there is no
+       "under the panel" any more. */
+  }
+  else if(scPlateOn()){
     /* ONE PLATE, CONTAIN-FITTED. Stretching it would pull the corner brackets and the LED strips
        out of shape, which is the same reason the old concept plate was letterboxed. */
     const im=XART.get('statpanel_0916');
