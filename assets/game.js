@@ -2026,6 +2026,10 @@ const XART=(function(){
      interior magenta - and the 3,650px pink rim converted to a black edge, never deleted, per the
      standing halo rule. nbl_logo on ui_menu_1 stays as the decode fallback. */
   X._src['nbl_logo_0916']='assets/game/ui/logo_0916/bof_logo.png';
+  /* the escape arrow for the Stage-4 giant strike (S4-16). ONE plate, drawn mirrored on the left,
+     because a flipped pair is what Mike asked for and two files would be two things to keep in
+     step. Pointing RIGHT as authored. */
+  X._src['warn_escape_arrow_0916']='assets/game/ui/warn_0916/escape_arrow.png';
   /* the rank badges (Mike, 0916: "Make the Rank lettering generated graphics"). One plate per
      letter, each in its own metal: F molten, S gold, A silver, B bronze, C steel, D scorched
      iron, L cracked grey. */
@@ -15771,6 +15775,32 @@ function stage4GiantStrikeDraw(b){
   ctx.save();ctx.fillStyle='rgba(1,3,12,'+(charging?(.13+.28*q):.46)+')';ctx.fillRect(R.viewLeft,0,R.viewRight-R.viewLeft,VH);ctx.restore();
   if(charging){
     const col=stage4GiantStrikeColor(G),B={family:'rime',angles:[Math.PI/2],t:G.t,warm:G.charge,released:false,fovColor:col};
+    /* ⚠ THE ESCAPE ARROWS FLASH ON THE WARNING'S OWN BEAT (S4-16, Mike: "Authored left/right escape
+       arrows: flipped pair, flashing with synchronized warning sounds"). l23WarnSound fires once per
+       revealed arrow - k*L23_WARN_ARROWS - so the flash is derived from the SAME k rather than a
+       timer of its own. A fixed cadence drifts against the beeps and reads as an unrelated alarm
+       running underneath, which is the exact fault 0905t fixed for the laser warn.
+       They sit IN the safe lanes the strike leaves open (17% at each camera edge), at the player's
+       own altitude, pointing outward: the arrow says where to go, not where the danger is. */
+    {
+      const _ak='warn_escape_arrow_0916';
+      if(XART.rdy(_ak)){
+        const im=XART.get(_ak);
+        const beat=Math.floor(q*L23_WARN_ARROWS), frac=(q*L23_WARN_ARROWS)-beat;
+        const lit=frac<0.62;                                   // on for the front of each beat
+        if(lit){
+          const ah=Math.max(18, R.safe*0.42), aw=ah*(im.naturalWidth/Math.max(1,im.naturalHeight));
+          const py2=clamp((typeof player!=='undefined'&&player&&!player.dead)?player.y-18:VH*0.72, VH*0.34, VH-30);
+          const a=(col==='red'?0.95:0.72)*(0.55+0.45*(1-frac/0.62));
+          const lx=R.viewLeft+R.safe*0.5, rx=R.viewRight-R.safe*0.5;
+          ctx.save(); ctx.globalAlpha=a; ctx.imageSmoothingEnabled=false;
+          ctx.drawImage(im, Math.round(rx-aw/2), Math.round(py2-ah/2), Math.round(aw), Math.round(ah));
+          ctx.translate(Math.round(lx),0); ctx.scale(-1,1);     // the pair is ONE plate, mirrored
+          ctx.drawImage(im, Math.round(-aw/2), Math.round(py2-ah/2), Math.round(aw), Math.round(ah));
+          ctx.restore();
+        }
+      }
+    }
     ctx.save();ctx.translate(p.x,p.y);l23FovDraw(b,B,0,p,q,(R.right-R.left)*.5);ctx.restore();
     const ak='bmfx_alert_'+col+'_danger';
     if(XART.rdy(ak)&&(Math.floor(G.t*(col==='red'?8:4))%2)===0){
