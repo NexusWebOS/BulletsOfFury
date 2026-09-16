@@ -638,3 +638,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: the crippled Warden now commits a complete rail group before a 0.58-second shared green/yellow/red warning. Four fields preview its three alternating straight singles and paired offset finisher. The fields follow the crawling hardpoints while their angles stay locked against late movement.
 - The original three `5.25`-speed singles, dual `4.65`-speed finisher, `-0.07/+0.07` offsets, authored rail spears, muzzles and sound remain intact. A new group samples the player only after the previous group completes, and phase transitions cancel pending warnings. Focused 13/13 and Chromium 18/18 pass with zero errors. The full suite reaches 4,510 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture; no new name. Evidence: docs/STAGE7_WARDEN_CRIPPLE_RAIL_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-5 Archmage spiked-ball warning
+
+- ENG-02 advances: the Chrome Hammer Archmage now commits its spiked-ball launch direction and exact first wall impact before a 1.25-second shared green/yellow/red corridor. Player and camera movement cannot shift the promise after the curl begins.
+- The first reflection uses the committed bounds, then the original dynamic reflections resume. Authored ball art, `150/165` base velocity, 15-second duration, missile knockback and weapon-triggered rage remain intact. Focused 10/10 and Chromium 18/18 pass with zero errors. The full suite reaches 4,521 passes with the exact established 56-name baseline and no new name. Evidence: docs/ARCHMAGE_SPIKED_BALL_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

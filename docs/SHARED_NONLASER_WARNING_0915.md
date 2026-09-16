@@ -121,3 +121,7 @@ The Last Run chrome-flak pair now commits both shell paths before a 0.62-second 
 ## Stage 7 Toxic Portal Warden cripple-rail follow-up
 
 The crippled Warden now commits a complete rail group before a 0.58-second shared warning. Four fields preview the alternating straight singles and paired offset finisher. Their origins follow the crawling hull while their angles remain fixed; the next group samples a new aim only after the prior group completes. Authored rail spears, cannon mounts, speeds, offsets, muzzles and sound remain intact. Chromium passes 18/18 and focused section 356 passes 13/13. See [STAGE7_WARDEN_CRIPPLE_RAIL_WARNING_0916.md](STAGE7_WARDEN_CRIPPLE_RAIL_WARNING_0916.md).
+
+## Stage 5 Chrome Hammer Archmage spiked-ball follow-up
+
+The Archmage now commits its spiked-ball launch direction and exact first wall impact before a 1.25-second shared green/yellow/red warning. The corridor and first bounce remain fixed through player-driven camera movement; later reflections retain the original dynamic screen bounds. Authored ball art, base velocity, duration, missile knockback and rage behavior remain intact. Chromium passes 18/18 and focused section 357 passes 10/10. See [ARCHMAGE_SPIKED_BALL_WARNING_0916.md](ARCHMAGE_SPIKED_BALL_WARNING_0916.md).

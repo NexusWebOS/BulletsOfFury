@@ -34900,9 +34900,22 @@ function hammerBossInit(b){
   const mul=(DIFF&&DIFF.eHp)||1;b._hammer={state:'flyby',t:0,cycle:0,attackCycle:0,rage:0,shotCd:.4,angle:0,vx:0,vy:0,mode:'hammer',hammerHP:Math.ceil(70*mul),hammerMax:Math.ceil(70*mul),chainHP:Math.ceil(95*mul),chainMax:Math.ceil(95*mul),hammerDestroyed:false,chainDestroyed:false,bombs:[],pillars:[],hitCd:0};
   b._noHit=true;b.enter=true;for(const k of Object.keys(ARCH_FRAMES))XART.rdy('arch_'+k);XART.rdy('arch_effects');XART.rdy('hammer_reticle');
 }
-function hammerState(b,state){const h=b._hammer;h.state=state;h.t=0;h.ox=b.x;h.oy=b.y;}
+function hammerState(b,state){const h=b._hammer;if(h.state==='curl'&&state!=='curl'&&h.ballWarn){combatWarningTick(b,'archmage-spiked-ball',HAMMER_BALL_WARN,HAMMER_BALL_WARN,true);h.ballWarn=false;}h.state=state;h.t=0;h.ox=b.x;h.oy=b.y;}
 function hammerHard(){return diffKey==='hard'||diffKey==='furious';}
 function hammerFurious(){return diffKey==='furious';}
+const HAMMER_BALL_WARN=1.25;
+function hammerBallRay(b,dir){
+  const rad=54,vx=150*dir,vy=165,l=camLeftX()+rad,r=camRightX()-rad,bt=PLAY.y+PLAY.h-rad;
+  const sideT=(dir<0?(l-b.x)/vx:(r-b.x)/vx),bottomT=(bt-b.y)/vy,t=Math.max(0,Math.min(sideT>0?sideT:Infinity,bottomT>0?bottomT:Infinity));
+  return{x:b.x,y:b.y,ex:b.x+vx*t,ey:b.y+vy*t,dir:dir,bounds:{l:l,r:r,bt:bt}};
+}
+function hammerBallLaunchPath(b){
+  const h=b&&b._hammer,p=h&&h.ballPath?h.ballPath:hammerBallRay(b,h&&h.ballDir<0?-1:1);return{x:p.x,y:p.y,ex:p.ex,ey:p.ey,dir:p.dir};
+}
+function hammerBallArm(b){
+  const h=b._hammer;h.ballDir=Math.random()<.5?-1:1;const p=hammerBallRay(b,h.ballDir);h.ballPath={x:p.x,y:p.y,ex:p.ex,ey:p.ey,dir:p.dir};h.ballBounds=p.bounds;h.ballWarn=true;
+  combatWarningTick(b,'archmage-spiked-ball',0,HAMMER_BALL_WARN,true);if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle))(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle)();
+}
 function hammerGripPoint(b){return{x:b.x-48,y:b.y-10};}
 function hammerEnergyBomb(x,y,a,speed){hammerLaser(x,y,a,speed||3.6);}
 function hammerBossModuleBreak(b,which){const h=b._hammer;explode(which==='hammer'?b.x-54:b.x,which==='hammer'?b.y+8:b.y-52,70,which==='hammer'?'blue':'red');shake=Math.max(shake,10);(Audio.SFX.expBig||Audio.SFX.hit)();
@@ -34936,9 +34949,14 @@ function hammerBossTick(b,dt){
   else if(h.state==='warn'){const warn=fur?.58:1.2;combatWarningTick(b,'chrome-hammer-leap',Math.min(h.t,warn),warn);if(h.t>=warn){hammerState(b,'leap');(Audio.SFX.enemyShoot||function(){})();}}
   else if(h.state==='leap'||h.state==='back'){const dur=fur?.27:.52,p=clamp(h.t/dur,0,1),q=p*p*(3-2*p);b.x=lerp(h.ox,h.tx,q);b.y=lerp(h.oy,h.ty,q);if(p>=1){if(h.state==='leap'){shake=Math.max(shake,11);explode(b.x,b.y+32,70,'blue');for(let i=0;i<8;i++)hammerEnergyBomb(b.x,b.y,TAU*i/8,3.5);hammerState(b,'recover');}else{h.attackCycle++;hammerState(b,'shield');}}}
   else if(h.state==='recover'){if(h.t>(fur?.34:.7)){if(!h.follow&&Math.random()<.55){h.follow=true;hammerTarget(b);hammerState(b,'warn');}else{h.follow=false;h.tx=homeX;h.ty=homeY;hammerState(b,'back');}}}
-  else if(h.state==='shield'){if(h.t>1.0)hammerState(b,'curl');}
-  else if(h.state==='curl'){if(h.t>1.25){h.rage=0;h.vx=150*(Math.random()<.5?-1:1);h.vy=165;h.shotCd=.7;hammerState(b,'ball');}}
-  else if(h.state==='ball'){const sp=h.rage>0?2.25:1,rad=54;b.x+=h.vx*dt*sp;b.y+=h.vy*dt*sp;h.angle+=dt*(h.rage>0?16:8);const l=camLeftX()+rad,r=camRightX()-rad,t=PLAY.y+rad,bt=PLAY.y+PLAY.h-rad;if(b.x<l){b.x=l;h.vx=Math.abs(h.vx);}if(b.x>r){b.x=r;h.vx=-Math.abs(h.vx);}if(b.y<t){b.y=t;h.vy=Math.abs(h.vy);}if(b.y>bt){b.y=bt;h.vy=-Math.abs(h.vy);}if(h.rage>0&&h.shotCd<=0){h.shotCd=.62;for(let i=0;i<8;i++)hammerEnergyBomb(b.x,b.y,TAU*i/8,4.5);}if(h.t>=15)hammerState(b,'uncurl');}
+  else if(h.state==='shield'){if(h.t>1.0){hammerBallArm(b);hammerState(b,'curl');}}
+  else if(h.state==='curl'){combatWarningTick(b,'archmage-spiked-ball',Math.min(h.t,HAMMER_BALL_WARN),HAMMER_BALL_WARN);if(h.t>HAMMER_BALL_WARN){h.rage=0;h.vx=150*(h.ballDir<0?-1:1);h.vy=165;h.shotCd=.7;h.ballFirst=true;hammerState(b,'ball');}}
+  else if(h.state==='ball'){
+    const sp=h.rage>0?2.25:1,rad=54;b.x+=h.vx*dt*sp;b.y+=h.vy*dt*sp;h.angle+=dt*(h.rage>0?16:8);
+    const fixed=h.ballFirst&&h.ballBounds,l=fixed?fixed.l:camLeftX()+rad,r=fixed?fixed.r:camRightX()-rad,t=PLAY.y+rad,bt=fixed?fixed.bt:PLAY.y+PLAY.h-rad;let bounced=false;
+    if(b.x<l){b.x=l;h.vx=Math.abs(h.vx);bounced=true;}if(b.x>r){b.x=r;h.vx=-Math.abs(h.vx);bounced=true;}if(b.y<t){b.y=t;h.vy=Math.abs(h.vy);bounced=true;}if(b.y>bt){b.y=bt;h.vy=-Math.abs(h.vy);bounced=true;}if(bounced)h.ballFirst=false;
+    if(h.rage>0&&h.shotCd<=0){h.shotCd=.62;for(let i=0;i<8;i++)hammerEnergyBomb(b.x,b.y,TAU*i/8,4.5);}if(h.t>=15)hammerState(b,'uncurl');
+  }
   else if(h.state==='uncurl'){if(h.t>1.25){h.attackCycle++;hammerState(b,'hammer');}}
   else if(h.state==='chaingun_draw'){b.x+=clamp(homeX-b.x,-100*dt,100*dt);b.y+=clamp(homeY-b.y,-100*dt,100*dt);if(h.t>2){h.chainHeat=0;h.shotCd=.2;hammerState(b,'chaingun');}}
   else if(h.state==='chaingun'){b.x+=clamp(player.x-b.x,-135*dt,135*dt);if(h.shotCd<=0)hammerBossChaingunFire(b);if(h.t>6.5){h.chainHeat=1;hammerState(b,'chain_cool');}}
@@ -34961,6 +34979,7 @@ function hammerBossAtmosphereDraw(b){const h=b._hammer,s=h.state,charged=['mega_
 function hammerModuleBars(b){const h=b._hammer;if(b.enter||b.dead)return;ctx.save();ctx.font='bold 7px "BOFmil", monospace';ctx.textAlign='center';for(const q of [{name:'HAMMER',v:h.hammerHP,m:h.hammerMax,x:b.x-53,y:b.y+58,dead:h.hammerDestroyed},{name:'CHAINGUN',v:h.chainHP,m:h.chainMax,x:b.x,y:b.y-92,dead:h.chainDestroyed}]){if(q.dead)continue;ctx.fillStyle='rgba(0,0,0,.75)';ctx.fillRect(q.x-28,q.y,56,5);ctx.fillStyle=q.name==='HAMMER'?'#6edfff':'#ff703c';ctx.fillRect(q.x-27,q.y+1,54*clamp(q.v/q.m,0,1),3);ctx.fillStyle='#e8f4ff';ctx.fillText(q.name,q.x,q.y-2);}ctx.restore();}
 function hammerBossDraw(b){
   const h=b._hammer;hammerBossAtmosphereDraw(b);
+  if(h.state==='curl'&&h.ballWarn){const p=hammerBallLaunchPath(b),k=clamp(h.t/HAMMER_BALL_WARN,0,1);combatWarningDraw(b,{x:p.x,y:p.y,ex:p.ex,ey:p.ey,progress:k,width:112,alertX:b.x-p.dir*86,alertY:b.y-76});}
   if(b.dead){const f=Math.min(15,Math.floor((b.dying||0)*3.1));archBlit('death',f,b.x,b.y,210,null,0);return;}
   if(h.state==='spell'||h.state==='spell_blast'){const ri=hammerFrame('reticle',0);for(const q of h.state==='spell'?h.spellTargets:h.pillars){hammerGroundReticleDraw(ri,q.x,PLAY.y+PLAY.h-35,128,.65+.35*Math.sin((stateT||0)*24));if(h.state==='spell_blast'){ctx.save();ctx.globalCompositeOperation='lighter';const grad=ctx.createLinearGradient(0,PLAY.y+PLAY.h,0,PLAY.y);grad.addColorStop(0,'#fff');grad.addColorStop(.18,'#4fdcff');grad.addColorStop(1,'rgba(80,80,255,0)');ctx.fillStyle=grad;ctx.fillRect(q.x-22,PLAY.y,44,PLAY.h);ctx.restore();}}}
   let key='idle',f=Math.floor(h.t*8)%12,tint=b.flash>0?'white':null,rot=0,z=206;

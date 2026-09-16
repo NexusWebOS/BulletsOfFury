@@ -1,0 +1,271 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-5 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "live Archmage arms its 1.25-second spiked-ball launch warning"
+    },
+    {
+      "pass": true,
+      "label": "the committed launch ray terminates at its exact first wall impact"
+    },
+    {
+      "pass": true,
+      "label": "authored spiked-ball and shared warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green previews the committed first-impact corridor"
+    },
+    {
+      "pass": true,
+      "label": "yellow remains committed after the player moves left"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses the shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "red preserves the promised launch through a late opposite dodge"
+    },
+    {
+      "pass": true,
+      "label": "red uses the shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "the spiked ball releases only after red on the committed velocity"
+    },
+    {
+      "pass": true,
+      "label": "the original physical wall reflection continues after the warned launch"
+    },
+    {
+      "pass": true,
+      "label": "the live danger phase renders the authored spiked-ball reel"
+    },
+    {
+      "pass": true,
+      "label": "archmage_ball_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_ball_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_ball_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_ball_04_launch is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "archmage_ball_05_first_bounce is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "XENO REGENT",
+    "kind": "xenoregent",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "CHROME HAMMER ARCHMAGE",
+    "state": "curl",
+    "warn": 1.25,
+    "dir": 1,
+    "path": {
+      "x": 240,
+      "y": 168,
+      "ex": 426,
+      "ey": 372.6,
+      "dir": 1
+    },
+    "world": 680,
+    "right": 426,
+    "bottom": 452
+  },
+  "green": {
+    "state": "curl",
+    "t": 0.18,
+    "dir": 1,
+    "vx": 0,
+    "vy": 0,
+    "angle": 0,
+    "path": {
+      "x": 240,
+      "y": 168,
+      "ex": 426,
+      "ey": 372.6,
+      "dir": 1
+    },
+    "warn": {
+      "t": 0.18,
+      "warm": 1.25,
+      "released": false
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "bmfx_fov_green_tall",
+      "bmfx_alert_green_danger",
+      "arch_spiked_ball",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "ngm_space_atlas",
+      "nequipbox",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "state": "curl",
+    "t": 0.6,
+    "dir": 1,
+    "vx": 0,
+    "vy": 0,
+    "angle": 0,
+    "path": {
+      "x": 240,
+      "y": 168,
+      "ex": 426,
+      "ey": 372.6,
+      "dir": 1
+    },
+    "warn": {
+      "t": 0.6,
+      "warm": 1.25,
+      "released": false
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "bmfx_fov_yellow_tall",
+      "bmfx_alert_yellow_danger",
+      "arch_spiked_ball",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "state": "curl",
+    "t": 1.05,
+    "dir": 1,
+    "vx": 0,
+    "vy": 0,
+    "angle": 0,
+    "path": {
+      "x": 240,
+      "y": 168,
+      "ex": 426,
+      "ey": 372.6,
+      "dir": 1
+    },
+    "warn": {
+      "t": 1.05,
+      "warm": 1.25,
+      "released": false
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "bmfx_fov_red_tall",
+      "bmfx_alert_red_danger",
+      "arch_spiked_ball",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "launch": {
+    "state": "ball",
+    "t": 0,
+    "dir": 1,
+    "vx": 150,
+    "vy": 165,
+    "angle": 0,
+    "path": {
+      "x": 240,
+      "y": 168,
+      "ex": 426,
+      "ey": 372.6,
+      "dir": 1
+    },
+    "warn": {
+      "t": 1.25,
+      "warm": 1.25,
+      "released": true
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "arch_spiked_ball",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "bounce": {
+    "state": "ball",
+    "t": 1.35,
+    "dir": 1,
+    "vx": -150,
+    "vy": 165,
+    "angle": 10.8,
+    "path": {
+      "x": 240,
+      "y": 168,
+      "ex": 426,
+      "ey": 372.6,
+      "dir": 1
+    },
+    "warn": {
+      "t": 1.25,
+      "warm": 1.25,
+      "released": true
+    },
+    "gets": [
+      "bg_stage05_loop",
+      "arch_spiked_ball",
+      "fx_ground_strikes_0916",
+      "fury_thrusters_04",
+      "alert_up",
+      "nequipbox",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\archmage_spiked_ball_warning_0916\\archmage_ball_01_green.png",
+    "_shots\\archmage_spiked_ball_warning_0916\\archmage_ball_02_yellow.png",
+    "_shots\\archmage_spiked_ball_warning_0916\\archmage_ball_03_red.png",
+    "_shots\\archmage_spiked_ball_warning_0916\\archmage_ball_04_launch.png",
+    "_shots\\archmage_spiked_ball_warning_0916\\archmage_ball_05_first_bounce.png"
+  ],
+  "suite": {
+    "passing": 4521,
+    "failures": 56,
+    "failureNames": "exact established 56-name baseline; no new names",
+    "focused": "section 357: 10/10"
+  }
+}
