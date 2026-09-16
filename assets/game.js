@@ -2035,6 +2035,14 @@ const XART=(function(){
      could not reach) and the pink fringe beside it converted to a black edge. The small badges
      above stay as the decode fallback. */
   for(const _rk of ['f','s','a','b','c','d','l']) X._src['rankplate_'+_rk+'_0916']='assets/game/ui/debrief_0916/rankplate_'+_rk+'.png';
+  /* ⚠ AND THE SAME PLATES CUT AT THEIR OWN WAIST. The debrief has a square bay for the shield and a
+     strip for the word, so each half is stored separately - cut at the row where the shield's point
+     meets the banner (the minimum-ink row between 55% and 85% of the plate), with a few pixels of
+     overlap kept on both pieces so neither loses its edge. */
+  for(const _rk of ['f','s','a','b','c','d','l']){
+    X._src['rankshield_'+_rk+'_0916']='assets/game/ui/debrief_0916/rankshield_'+_rk+'.png';
+    X._src['rankword_'+_rk+'_0916']='assets/game/ui/debrief_0916/rankword_'+_rk+'.png';
+  }
   X._src['mode_boss_rush_0915']='assets/game/ui/modes_0915/boss_rush.png';
   X._src['mode_time_attack_0915']='assets/game/ui/modes_0915/time_attack.png';
   X._src['mode_lock_nexus_0915']='assets/game/ui/modes_0915/nexus_chains.webp';
@@ -6515,9 +6523,9 @@ function _setCinematicViewport(on){
          edge, so the viewport has to BE 4:3 - taking the browser's aspect here would leave the
          plate floating in bands on a wide window, which is exactly what he photographed. The HQ
          cinematics keep the browser aspect: their art is a photograph of a scene, not a panel. */
-      /* the debrief plate is 455x254; the viewport takes ITS aspect so the art fills the screen
+      /* the debrief plate is 477x266; the viewport takes ITS aspect so the art fills the screen
          with nothing showing around it and nothing stretched */
-      const ar=(state===GS.STAGECLEAR||state===GS.UNLOCKS) ? (455/254) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
+      const ar=(state===GS.STAGECLEAR||state===GS.UNLOCKS) ? (477/266) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
       CINEMA_VW=(state===GS.STAGECLEAR||state===GS.UNLOCKS) ? Math.round(VH*ar) : Math.max(640,Math.round(VH*ar));
       if(cv.width!==CINEMA_VW*SS||cv.height!==VH*SS){cv.width=CINEMA_VW*SS;cv.height=VH*SS;}
       document.body.classList.add('cinematic-full');
@@ -68237,16 +68245,23 @@ const SC_SLOTS_0916 = {
    briefing bays rather than under them, which is why these fractions look nothing like the
    framed plate's - they are the art's, not a layout I imposed on it. */
 const SC_SLOTS_FULL = {
-  title  :[0.1978,0.0354,0.6044,0.0787],
-  pilot  :[0.1582,0.1654,0.0945,0.1457],
-  brief  :[0.2835,0.1654,0.5604,0.1457],
-  stats  :[[0.1560,0.3465,0.3297,0.0551],[0.5143,0.3465,0.3297,0.0551],
-           [0.1560,0.4370,0.3297,0.0591],[0.5143,0.4370,0.3297,0.0591],
-           [0.1560,0.5276,0.3297,0.0591],[0.5143,0.5276,0.3297,0.0591],
-           [0.1560,0.6181,0.3297,0.0630],[0.5143,0.6181,0.3297,0.0630]],
-  score  :[0.1560,0.7165,0.6879,0.0630],
-  signoff:[0.1560,0.8189,0.6879,0.0591],
-  footer :[0.3736,0.9213,0.2527,0.0551],
+  title  :[0.2285,0.0263,0.5430,0.1015],
+  pilot  :[0.0839,0.1278,0.1006,0.1767],
+  brief  :[0.2096,0.1767,0.7002,0.1316],
+  stats  :[[0.0818,0.3609,0.4109,0.0526],[0.5073,0.3609,0.4109,0.0526],
+           [0.0818,0.4286,0.4109,0.0526],[0.5073,0.4286,0.4109,0.0526],
+           [0.0818,0.4962,0.4109,0.0526],[0.5073,0.4962,0.4109,0.0526],
+           [0.0818,0.5639,0.4109,0.0564],[0.5073,0.5639,0.4109,0.0564]],
+  score  :[0.0881,0.6880,0.4004,0.0677],
+  /* ⚠ RANK HAS ITS OWN TWO BAYS NOW (Mike, 0916: "may need to regenerate our stats screen to have a
+     box for rank instead with the rectangular text section next to it"). His plate is a shield ABOVE
+     a word banner, and nothing that shape fits a 32px score row - the word came out five pixels
+     tall. The square bay takes the shield and the strip beside it takes the banner, each at the size
+     its own bay allows, and the score row goes back to SCORE and CLEAR TIME alone. */
+  rank   :[0.5220,0.6466,0.1111,0.1579],
+  rankword:[0.6667,0.6880,0.2453,0.0677],
+  signoff:[0.0818,0.8308,0.8365,0.0602],
+  footer :[0.3753,0.9361,0.2495,0.0489],
 };
 function scFullOn(){ return !!(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916') && !(typeof coopActive==='function' && coopActive())); }
 function scPlateOn(){ return !!(typeof XART!=='undefined' && XART.rdy('statpanel_0916') && !(typeof coopActive==='function' && coopActive())); }
@@ -68400,7 +68415,7 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
       const sLab='SCORE = ',      sVal=String(drawStageClear._scoreShown|0);
       const cLab='CLEAR TIME = ', cVal=((typeof fmtTime==='function')?fmtTime(R.clearT||0):String(Math.round(R.clearT||0)));
       const rLab='RANK = ',       rVal=(drawStageClear._stamp>0?R.rank:'-');
-      const colW3=b[2]*0.30;
+      const colW3=b[2]*0.44;   // two columns in this bar now, so each gets more of it
       /* ⚠ FITTED ACROSS BOTH HALVES AT THEIR OWN SPACINGS. Solving the size against the joined
          string at one spacing would under-measure the pair and let the widest column overrun its
          third of the bar - the label and the value are now set differently, so the fit has to be
@@ -68416,58 +68431,39 @@ function scConceptBody(R, px, py, pw, ph, t, dt, art, F){
          midpoints BETWEEN the three column centres rather than at chosen fractions, so a divider
          cannot drift into a column if the columns are ever re-spaced. Drawn in the plate's own rim
          cyan at low alpha so it reads as part of his panel, not as something laid over it. */
-      const _dv=[(0.185+0.500)/2, (0.500+0.820)/2];
+      const _dv=[(0.270+0.720)/2];   // one divider: the bar carries two readings now, not three
       ctx.save(); ctx.globalAlpha=0.42; ctx.fillStyle='#7fd8ef';
       for(const fx of _dv) ctx.fillRect(b[0]+b[2]*fx, cy-b[3]*0.30, Math.max(1,P[2]*0.0022), b[3]*0.60);
       ctx.restore();
-      scPairLift(art,sLab,sVal,b[0]+b[2]*0.185,cy,H,1,SP,SPV,0.45,1);
-      scPairLift(art,cLab,cVal,b[0]+b[2]*0.500,cy,H,1,SP,SPV,0.45,1);
+      scPairLift(art,sLab,sVal,b[0]+b[2]*0.270,cy,H,1,SP,SPV,0.45,1);
+      scPairLift(art,cLab,cVal,b[0]+b[2]*0.720,cy,H,1,SP,SPV,0.45,1);
       /* ⚠ THE RANK IS A BADGE AND ITS WORD (Mike, 0916). The letter is authored art now, so it is
          blitted rather than set, and the name beside it is what the letter MEANS - a lone S says
          nothing to a player who has not learned the ladder. The badge keeps the bay's height and
          the word shrinks to whatever room is left, so SELF-DESTRUCTIVE fits the same column as
          AWESOME. Still untinted (Mike, 0807q: "Dont color overlay the rank please"). */
-      {
-        const _rk=String(rVal||'-').toUpperCase();
-        const _key='rank_'+_rk.toLowerCase()+'_0916', _pkey='rankplate_'+_rk.toLowerCase()+'_0916';
-        const _rx=b[0]+b[2]*0.820, _av=(typeof XART!=='undefined')&&XART.rdy(_key);
-        const _pav=(typeof XART!=='undefined')&&XART.rdy(_pkey);
-        if(_pav && drawStageClear._stamp>0){
-          /* his plate carries the word, so it is the whole reading: fitted to the column's width
-             and let to stand taller than the bar - it is the one thing on this row meant to be
-             looked at, and it lands on the stamp beat the letter always had */
-          const im=XART.get(_pkey), colW=b[2]*0.30;
-          const k=0.72+0.28*Math.min(1,drawStageClear._stamp);
-          /* ⚠ CAPPED TO THE BAR, NOT TO THE COLUMN'S WIDTH. His plate is a shield ABOVE a word
-             banner - about 1:1.3 - so fitting it to a 30%-wide column made it three times the bar's
-             height and the banner fell out of the panel entirely. It overhangs by a quarter and no
-             more, which is what lets it read as a stamp pressed onto the row. */
-          /* ⚠ IT OVERHANGS THE BAR ON PURPOSE. His plate is a shield ABOVE a word banner, so fitting
-             it INSIDE a 32px row renders that banner at five pixels and the word cannot be read -
-             which is the whole reason the word is on the plate. The bays above and below the score
-             bar leave ~18px of plating each; at 2.1x the bar it fills that and the word comes up to
-             a readable size, and a rank stamp pressed across the row reads as deliberate. Drawn
-             after the row's own text, so nothing is drawn over it. */
-          const ph_=Math.min(b[3]*2.1, colW*0.95*(im.naturalHeight/im.naturalWidth))*k, pw_=ph_*(im.naturalWidth/im.naturalHeight);
+      /* RANK LIVES IN ITS OWN BAYS. The shield goes in the square, its word banner in the strip
+         beside it, each fitted to the bay the artist drew for it - so the word is readable instead
+         of being five pixels tall inside a 32px row. Both land on the stamp beat the letter had. */
+      if(drawStageClear._stamp>0){
+        const _rk=String(rVal||'-').toUpperCase(), _lo=_rk.toLowerCase();
+        const k=0.72+0.28*Math.min(1,drawStageClear._stamp);
+        const _fit=function(key, bf, fill){
+          if(!(typeof XART!=='undefined' && XART.rdy(key))) return false;
+          const im=XART.get(key); if(!im.naturalWidth) return false;
+          const bb=scBay(P,bf), f=(fill==null?0.92:fill)*k;
+          const sc2=Math.min(bb[2]*f/im.naturalWidth, bb[3]*f/im.naturalHeight);
+          const w=im.naturalWidth*sc2, h=im.naturalHeight*sc2;
           ctx.save(); ctx.imageSmoothingEnabled=false;
-          ctx.drawImage(im, Math.round(_rx-pw_/2), Math.round(cy-ph_/2), Math.round(pw_), Math.round(ph_));
-          ctx.restore();
+          ctx.drawImage(im, Math.round(bb[0]+(bb[2]-w)/2), Math.round(bb[1]+(bb[3]-h)/2), Math.round(w), Math.round(h));
+          ctx.restore(); return true;
+        };
+        const _shield=_fit('rankshield_'+_lo+'_0916', scSlots().rank||SC_SLOTS_FULL.rank, 0.96);
+        const _word  =_fit('rankword_'+_lo+'_0916',  scSlots().rankword||SC_SLOTS_FULL.rankword, 0.94);
+        if(!_shield && !_word){
+          /* nothing decoded yet: the old reading, in the score row where it always was */
+          scPairLift(art,rLab,rVal,b[0]+b[2]*0.820,cy,H,1,SP,SPV,0.45,1);
         }
-        else if(_av && drawStageClear._stamp>0){
-          const im=XART.get(_key), bh=b[3]*0.86, bw=bh*(im.naturalWidth/Math.max(1,im.naturalHeight));
-          const word=SC_RANK_NAME[_rk]||'';
-          let wh=H; const wmax=b[2]*0.30-bw-b[2]*0.012;
-          while(wh>ph2*0.008 && stageWidth(art,word,wh,0.06)>wmax) wh-=0.5;
-          const ww=word?stageWidth(art,word,wh,0.06):0;
-          const tot=bw+(word?b[2]*0.012+ww:0), x0=_rx-tot/2;
-          /* the stamp beat scales the badge in, the same beat the old letter used */
-          const k=0.72+0.28*Math.min(1,drawStageClear._stamp);
-          ctx.save(); ctx.imageSmoothingEnabled=false;
-          ctx.drawImage(im, Math.round(x0+(bw-bw*k)/2), Math.round(cy-bh*k/2), Math.round(bw*k), Math.round(bh*k));
-          ctx.restore();
-          if(word) stageText(art, word, x0+bw+b[2]*0.012+ww/2, cy+wh*0.06, wh, SC_RANK_TINT[_rk]||null, SC_RANK_TINT[_rk]?0.92:null, 1, 0.06);
-        }
-        else scPairLift(art,rLab,rVal,_rx,cy,H,1,SP,SPV,0.45,1);
       }
     }
     if(t>1.15 && drawStageClear._stamp<1){
