@@ -68894,17 +68894,29 @@ function scLeaveStage(R){
 
    Keyed by the stage just CLEARED. `all` is every pilot; a pilot's own row REPLACES it (Freezer
    never gets the fire orb - his fire and ice merged into the Thermoshock instead). Stage 2 is his
-   words verbatim. Stage 4 is what the engine actually grants there - Yuri's LIGHTNING ORB is
-   coded as the Stage-4 victory reward - and stage 5 the CHAINGUN; he has not yet said what stage 3
-   announces, so it has no row and the screen simply does not appear. The icons are the same
+   words verbatim.
+
+   Mike, 0916 (asked whether to move the grant or the announcement): "announcement should be after
+   stage 4 victory yes. The same should apply if you unlock the laser mist on stage 9 if you beat
+   the level." So the page ANNOUNCES WHERE THE ENGINE GRANTS, every time, and the stage-2 row no
+   longer promises Yuri a weapon he does not receive for two more stages:
+     - LIGHTNING ORB is announced on 4 only. `yuriLightningOrbGrantStage4` runs in `bossDie` and
+       needs Yuri in a seat, which is why that row is keyed to him.
+     - LASER MIST is announced on 9 - the BONUS stage, not the campaign end - because
+       `laserMistUnlock()` runs in `bossDie` at `run.stage===9`. Clearing the bonus stage still
+       returns to the map through `scLeaveStage`'s `curStage.bonus` branch; the page sits in front
+       of that exit like every other.
+   Stage 5 is the CHAINGUN; he has not yet said what stage 3 announces, so it has no row and the
+   screen simply does not appear. The icons are the same
    micon_ families the HUD and the pickups use, through iconBlit, the one path that knows all
    three art stores. */
 const SC_UNLOCKS = {
   2: { all:[['FIRE ORB','micon_fireorb_3']],
        freezer:[['ICE BREATH','micon_icebreath_3'],['THERMOSHOCK BALL','micon_thermoshock_3']],
-       yuri:[['FIRE ORB','micon_fireorb_3'],['LIGHTNING ORB','micon_lightningorb_3']] },
+       yuri:[['FIRE ORB','micon_fireorb_3']] },
   4: { yuri:[['LIGHTNING ORB','micon_lightningorb_3']] },
   5: { all:[['CHAINGUN','micon_chaingun_3']] },
+  9: { all:[['LASER MIST','micon_lasermist_3']] },
 };
 function unlockRowsFor(stage, pk){
   const T=SC_UNLOCKS[stage|0]; if(!T) return [];
@@ -68915,6 +68927,11 @@ let unlocks=null;
 function unlocksStart(rows, onDone){
   unlocks={rows:rows, onDone:onDone||null, t:0, md:!!(Input&&Input.mouse&&Input.mouse.down)};
   for(const r of rows){ try{ if(typeof XART!=='undefined') XART.rdy(r[1]); }catch(_){ } }   // start the decodes
+  /* the LASER MIST icon is NOT on nia_icons. iconBlit routes micon_lasermist_* to
+     laserMistAtlasBlit, which reads its own sheet, so touching the icon key above starts
+     nothing at all and the row would draw its name beside a hole. laserMistWarm touches the
+     atlas. Any future row whose art lives off the icon sheet needs the same. */
+  try{ if(rows.some(function(r){ return /^micon_lasermist_/.test(r[1]||''); }) && typeof laserMistWarm==='function') laserMistWarm(); }catch(_){ }
   try{ if(Audio.SFX && Audio.SFX.life) Audio.SFX.life(); }catch(_){ }
   setState(GS.UNLOCKS);
 }

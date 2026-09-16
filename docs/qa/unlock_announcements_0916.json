@@ -1,0 +1,136 @@
+{
+ "drop": "0916 unlock announcements",
+ "request": "Mike, 0916: \"announcement should be after stage 4 victory yes. The same should apply if you unlock the laser mist on stage 9 if you beat the level.\"",
+ "rule": "SC_UNLOCKS announces where bossDie grants: stage 4 LIGHTNING ORB (yuri), stage 5 CHAINGUN, stage 9 LASER MIST. Stage 2 no longer names the lightning orb.",
+ "probe": "_BUILD_SOURCE/probe_unlocks_0916.py",
+ "probe_result": {
+  "ok": 25,
+  "fail": 0,
+  "page_errors": 0,
+  "console_errors": 0,
+  "browser": "real Chromium via shoot.py server"
+ },
+ "checks": [
+  {
+   "pass": true,
+   "label": "the engine grants the lightning orb at stage 4 (bossDie)"
+  },
+  {
+   "pass": true,
+   "label": "the engine grants laser mist at stage 9 (bossDie)"
+  },
+  {
+   "pass": true,
+   "label": "stage 9 is the bonus stage, so this page is not the campaign end"
+  },
+  {
+   "pass": true,
+   "label": "stage 2 no longer promises Yuri the lightning orb (['FIRE ORB'])"
+  },
+  {
+   "pass": true,
+   "label": "stage 2 still announces the fire orb for everyone else (['FIRE ORB'])"
+  },
+  {
+   "pass": true,
+   "label": "Freezer's stage-2 row is untouched (['ICE BREATH', 'THERMOSHOCK BALL'])"
+  },
+  {
+   "pass": true,
+   "label": "stage 4 announces the lightning orb to Yuri (['LIGHTNING ORB'])"
+  },
+  {
+   "pass": true,
+   "label": "a pilot who is not Yuri gets no stage-4 page ([])"
+  },
+  {
+   "pass": true,
+   "label": "stage 9 announces laser mist (['LASER MIST'])"
+  },
+  {
+   "pass": true,
+   "label": "stage 9 announces it to every pilot (['LASER MIST'])"
+  },
+  {
+   "pass": true,
+   "label": "it uses the laser mist icon family (['micon_lasermist_3'])"
+  },
+  {
+   "pass": true,
+   "label": "stage 3 still has no row, so no page appears ([])"
+  },
+  {
+   "pass": true,
+   "label": "busted arm: with the warm suppressed the laser mist icon never blits (0)"
+  },
+  {
+   "pass": true,
+   "label": "stage 9 reaches the debrief"
+  },
+  {
+   "pass": true,
+   "label": "its CONTINUE lands on NEW WEAPONS UNLOCKED (state unlocks)"
+  },
+  {
+   "pass": true,
+   "label": "the page carries the laser mist row (['LASER MIST'])"
+  },
+  {
+   "pass": true,
+   "label": "the laser mist atlas decoded (the page warmed it)"
+  },
+  {
+   "pass": true,
+   "label": "the page asked iconBlit for micon_lasermist_3 (18 frames)"
+  },
+  {
+   "pass": true,
+   "label": "and it blitted from the laser mist atlas, not the icon sheet (18 of 18)"
+  },
+  {
+   "pass": true,
+   "label": "iconBlit reported a drawn width every time"
+  },
+  {
+   "pass": true,
+   "label": "its CONTINUE leaves the page through scLeaveStage at page t 1.58 (state stagesel)"
+  },
+  {
+   "pass": true,
+   "label": "stage 4 as Yuri shows LIGHTNING ORB (['LIGHTNING ORB'], state unlocks)"
+  },
+  {
+   "pass": true,
+   "label": "the lightning orb icon blits (17 frames)"
+  },
+  {
+   "pass": true,
+   "label": "stage 2 as Yuri announces the fire orb alone (['FIRE ORB'])"
+  },
+  {
+   "pass": true,
+   "label": "no page or console errors (0)"
+  }
+ ],
+ "suite": {
+  "command": "node _BUILD_SOURCE/test_fl.js",
+  "ok": 4568,
+  "fail": 57,
+  "exit": 1,
+  "final_summary_reached": true,
+  "section": "361 (16/16)",
+  "baseline": {
+   "worktree": "97265703",
+   "ok": 4552,
+   "fail": 57
+  },
+  "failure_names_new": [],
+  "failure_names_repaired": [],
+  "note": "names compared with numbers masked; identical both sides. 56 established names plus the intermittent stage-1 sand-tank fixture."
+ },
+ "proofs": [
+  "docs/proofs/unlocks_0916/01_stage4_lightningorb.png",
+  "docs/proofs/unlocks_0916/02_stage9_lasermist.png"
+ ],
+ "not_changed": "the briefing line wraps to three rows and its third row is clipped by the brief bay on every stage that has a page; pre-existing, flagged for Mike."
+}

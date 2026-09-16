@@ -4476,3 +4476,31 @@ there, with its store and size. ⚠ `micon_lasermist_*` does not resolve through
 its own path, `laserMistAtlasBlit` - so slot 6 draws nothing unless a UI calls that. ⚠ And the
 first pass reported 15 keys missing that are all fine: `XART.rdy` is false on its FIRST call, so a
 catalogue has to touch every key, WAIT, and then measure.
+
+## 0916 - the unlock page announces WHERE THE ENGINE GRANTS
+
+Mike, answering the resume note's first open question: *"announcement should be after stage 4 victory
+yes. The same should apply if you unlock the laser mist on stage 9 if you beat the level."*
+
+`SC_UNLOCKS` had been written from his stage-2 brief verbatim, so it promised Yuri the LIGHTNING ORB
+two stages before `bossDie` grants it - and LASER MIST, the one weapon the LAST stage grants, was
+announced by nothing but an arcade banner fired during the boss's death cook-off. The page is keyed
+to the grant sites now (stage 4 `yuriLightningOrbGrantStage4`, stage 5 `chaingunUnlock`, stage 9
+`laserMistUnlock`), and suite section 361 reads BOTH sides - `bossDie.toString()` and
+`unlockRowsFor` - so the copy and the code cannot drift apart again.
+- **Stage 9 is the BONUS stage, not the campaign end.** `CAMPAIGN_STAGES` counts the entries without
+  `bonus:true`, so its CONTINUE exits through `scLeaveStage`'s `curStage.bonus` branch to the map
+  (measured: `stagesel`), not through `triggerVictory`.
+- **A row whose art is not on `nia_icons` must warm its own sheet, or it draws a hole in silence.**
+  `iconBlit` routes `micon_lasermist_*` to `laserMistAtlasBlit`, which reads
+  `bof_laser_mist_weapon_atlas` - so `unlocksStart`'s per-row `XART.rdy(key)` touch, which is what
+  starts every other row's decode, starts NOTHING for this family. It calls `laserMistWarm()` now.
+  The probe's busted arm is exactly that: warm suppressed, **0** icon blits.
+- ⚠ **AND THE PAGE HAD TO BE SCREENSHOT, TWICE.** 24 green assertions described a page whose name
+  read "LASER" - the typewriter was mid-reveal at the frame the proof was taken, which no counter
+  could see. It also showed what the assertions were never asked about: the briefing line wraps to
+  three rows and its third row is clipped by the brief bay, on every stage that has a page. Not
+  changed - it predates this drop and the plate's layout is Mike's.
+`probe_unlocks_0916.py` 25/0 (real debrief, real key tap, icon identified by KEY and by the SHEET the
+blit came from). Suite 4,568 ok / 57 fail against a clean worktree at `97265703`'s 4,552 / 57 -
+failure names identical with the numbers masked. `docs/UNLOCK_ANNOUNCEMENTS_0916.md`.
