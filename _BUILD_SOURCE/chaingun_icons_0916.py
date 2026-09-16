@@ -259,9 +259,20 @@ def build(tier, atlas):
     mask = mask.filter(ImageFilter.MinFilter(3))       # keep off the ring's inner bevel
     cleared = clear_interior(badge, mask, None)
 
-    gun = emblem(drop_tag(Image.open(os.path.join(ARCH, 'chaingun_icon_%d.pre0916.png' % tier)
-                          if os.path.exists(os.path.join(ARCH, 'chaingun_icon_%d.pre0916.png' % tier))
-                          else os.path.join(ARCH, 'chaingun_icon_%d.png' % tier)).convert('RGBA')))
+    # ⚠ THE EMBLEM IS THE CHAIN BARREL NOW (Mike, 0916, with a photo of a six-barrel minigun:
+    #    "chaingun icon should be a chain barrel icon with lvl1-5 upgrade color variants like our
+    #    current scheme"). chaingun_barrel_N.png is built by chaingun_barrel_0916.py - generated,
+    #    palette-locked to the family's own silver badge, then hue-rotated onto THAT TIER'S ring
+    #    colour. It carries no tag of its own, so drop_tag/emblem are not run over it: their job was
+    #    to cut the old sprite's blue numeral off, and the barrel's own profile would be misread as
+    #    one. The old sprite stays as the fallback.
+    _b = os.path.join(ARCH, 'chaingun_barrel_%d.png' % tier)
+    if os.path.exists(_b):
+        gun = trim(Image.open(_b).convert('RGBA'))
+    else:
+        gun = emblem(drop_tag(Image.open(os.path.join(ARCH, 'chaingun_icon_%d.pre0916.png' % tier)
+                              if os.path.exists(os.path.join(ARCH, 'chaingun_icon_%d.pre0916.png' % tier))
+                              else os.path.join(ARCH, 'chaingun_icon_%d.png' % tier)).convert('RGBA')))
     bb = mask.getbbox()
     iw, ih = bb[2] - bb[0], bb[3] - bb[1]
     tw, th = int(iw * 0.88), int(ih * 0.88)

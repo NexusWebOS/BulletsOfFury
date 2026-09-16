@@ -353,6 +353,16 @@
  "proofs": [
   "docs/proofs/chaingun_icons_0916/00_before.png",
   "docs/proofs/chaingun_icons_0916/01_new_icons.png",
-  "docs/proofs/unlocks_0916/06_elements.png"
- ]
+  "docs/proofs/unlocks_0916/06_elements.png",
+  "docs/proofs/chaingun_icons_0916/03_generated.png",
+  "docs/proofs/chaingun_icons_0916/04_barrel_tiers.png"
+ ],
+ "barrel": {
+  "request": "Mike, 0916, with a photo of a six-barrel minigun: \"chaingun icon should be a chain barrel icon with lvl1-5 upgrade color variants like our current scheme\" / \"something ike, generate it please.\"",
+  "generated": "SpriteCook gemini-3.1-flash-image, 3 variations, 36 credits (6,324 -> 6,288). The variation chosen has its muzzle face square to the viewer, which is what reads at icon size - the same thing the MG badge emblem does.",
+  "palette_lock": "656 opaque colours -> 161, snapped dither-off to micon_mg_4 (the SILVER tier, the family neutral metal, no hue of its own to inject). pixel:true does not give pixel art.",
+  "tier_colour": "a HUE ROTATION measured off each badge own ring, value untouched: tier1 0.060, tier2 0.620, tier3 0.329, tier5 0.008. Tier 4 is silver and reports no hue, so the barrel is left neutral rather than rotated onto noise.",
+  "files": "chaingun_barrel_1..5.png beside the badges; the pre-0916 sprites remain as the fallback",
+  "builder": "_BUILD_SOURCE/chaingun_barrel_0916.py"
+ }
 }

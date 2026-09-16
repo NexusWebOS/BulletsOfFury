@@ -24,8 +24,9 @@ search the existing art first. Both halves already existed:
 
 - the **frame and its tier tag** are `micon_icebreath_N` — tier N's own badge, so the ring, the
   Roman numeral and the size progression are the authored ones;
-- the **emblem** is the chaingun art already shipping in `chaingun_icon_N`, which was always the
-  good part of those files. It is cut out, fitted to the interior and re-seated.
+- the **emblem** was the chaingun art already shipping in `chaingun_icon_N`, cut out and re-seated.
+  **Superseded by §4:** Mike asked for a chain BARREL, so the emblem is now a generated one and
+  those sprites are the fallback. The frame work below is unchanged and is what §4 seats it in.
 
 The old files are kept as `chaingun_icon_N.pre0916.png`; nothing was overwritten.
 
@@ -76,7 +77,38 @@ can only be one colour, so it takes the violet the two mix to.
 **Two he did not name, flagged rather than guessed silently:** MISSILE is grouped with the bullets
 as kinetic ordnance, and LASER keeps the default green. Say the word and either moves.
 
-## 4. Measured
+## 4. The emblem is a chain barrel, in five tier colours
+
+Mike, with a photo of a six-barrel minigun: *"chaingun icon should be a chain barrel icon with
+lvl1-5 upgrade color variants like our current scheme"* / *"something ike, generate it please."*
+
+**The barrel is GENERATED** — SpriteCook, `gemini-3.1-flash-image`, three variations, 36 credits
+(balance 6,324 → 6,288; CLAUDE.md's "22 left" note was stale). The one chosen has its muzzle face
+square to the viewer, which is what reads at icon size — the same thing the MG badge's own emblem
+does with its revolver face.
+
+⚠ **PALETTE-LOCKED FIRST, BECAUSE `pixel:true` DOES NOT GIVE PIXEL ART.** Measured on opaque pixels
+only — counting the RGB under transparent pixels is how this gets waved through — the generated
+barrel is **656 colours**. It is a continuous-tone render wearing pixel-art clothes, and dropped in
+as-is it sits inside hand-authored art at a different fidelity. It is snapped, **dither off**, to
+the palette of `micon_mg_4` — the SILVER tier, the family's own neutral metal, which has no hue of
+its own to inject. **656 → 161 colours.**
+
+⚠ **THEN THE TIER COLOUR IS A HUE ROTATION, NOT A PAINT.** Each tier's hue is measured off **that
+badge's own ring** (the family is colour-coded per tier) and the barrel is rotated onto it with its
+VALUE untouched, so every bevel, muzzle shadow and rim light survives — 0906t: rotate the hue,
+never set it. Measured: tier 1 hue 0.060, tier 2 0.620, tier 3 0.329, tier 5 0.008. **Tier 4 is
+silver: its ring has no hue to measure, so the barrel is left neutral rather than rotated onto
+noise.**
+
+The barrels ship as `chaingun_barrel_1..5.png` beside the badges, so the emblem can be re-tinted or
+replaced without touching the frame work. The pre-0916 sprites remain as the fallback.
+
+Builder: `_BUILD_SOURCE/chaingun_barrel_0916.py` (`--check` renders the five tiers without writing).
+Proof: `docs/proofs/chaingun_icons_0916/03_generated.png` (the three variations),
+`04_barrel_tiers.png` (the five colours), `01_new_icons.png` (was / donor / now).
+
+## 5. Measured
 
 `_BUILD_SOURCE/probe_unlocks_0916.py` — **66 ok / 0 fail**, real Chromium, 0 page or console
 errors. It checks the table *and* the pixels: one row per element driven through the page's own

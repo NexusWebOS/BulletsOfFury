@@ -4639,3 +4639,24 @@ exactly why the two must be read differently. (It was also asked cold: `XART.rdy
 first call.)
 `probe_unlocks_0916.py` 66/0, 0 errors - the table AND the pixels, one row per element read back off
 the canvas. Suite 4,628 ok / 56 fail, no new names. `docs/CHAINGUN_ICONS_0916.md`.
+
+## 0916 - the chaingun's emblem is a GENERATED chain barrel, in five tier colours
+
+Mike, with a photo of a six-barrel minigun: *"chaingun icon should be a chain barrel icon with lvl1-5
+upgrade color variants like our current scheme"*.
+
+**SpriteCook, three variations, 36 credits** - and the balance is **6,288**, not the 22 this file
+recorded on 0915. Do not plan around that number; ask `get_credit_balance`.
+⚠ **THE VARIATION THAT READS AT ICON SIZE IS THE ONE WITH THE MUZZLE FACE SQUARE TO THE VIEWER** -
+six circles in a ring, which is exactly what the MG badge's own authored emblem does with its
+revolver face. The two angled-barrel variations are better pictures and worse icons.
+⚠ **`pixel:true` STILL DOES NOT GIVE PIXEL ART** (0905's finding, unchanged): the plate came back at
+**656 opaque colours**. It is snapped, DITHER OFF, to the palette of `micon_mg_4` - the SILVER tier,
+the family's own neutral metal, chosen because it has no hue of its own to inject - which takes it to
+**161**.
+⚠ **AND THE TIER COLOUR IS A HUE ROTATION MEASURED OFF EACH BADGE'S OWN RING** (0.060 / 0.620 /
+0.329 / - / 0.008), with VALUE untouched so the bevels and muzzle shadows survive. **Tier 4 is
+silver and reports NO hue, so the barrel is left neutral there** rather than rotated onto noise -
+a hue measured from a desaturated ring is whatever noise happens to be brightest.
+`chaingun_barrel_0916.py` builds the barrels; `chaingun_icons_0916.py` seats them in the badges.
+Probe 66/0. `docs/CHAINGUN_ICONS_0916.md` §4.
