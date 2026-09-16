@@ -1,0 +1,4 @@
+const fs=require('fs'),path=require('path'),p=path.resolve(__dirname,'..','assets','game.js');let s=fs.readFileSync(p);
+const old=Buffer.from("  if(phase!==M.phase){M.phase=phase;M.shown=phase;M.cd=.55;M.step=0;b.flash=Math.max(b.flash||0,.36);",'ascii');
+const replacement=Buffer.from("  if(phase!==M.phase){\n    for(const q of [M.cycloneFan,M.nodeFan])if(q)combatWarningTick(b,q.id,q.tell,q.tell,true);M.cycloneFan=null;M.nodeFan=null;\n    M.phase=phase;M.shown=phase;M.cd=.55;M.step=0;b.flash=Math.max(b.flash||0,.36);",'ascii');
+const at=s.indexOf(old);if(at<0||s.indexOf(old,at+old.length)>=0)throw new Error('phase cleanup anchor missing or repeated');s=Buffer.concat([s.subarray(0,at),replacement,s.subarray(at+old.length)]);if(s.includes(13))throw new Error('assets/game.js line endings changed');fs.writeFileSync(p,s);console.log('PATCHED_STAGE6_CARRIER_WARNING_PHASE_CLEANUP_0916');

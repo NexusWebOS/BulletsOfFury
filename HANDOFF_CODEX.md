@@ -598,3 +598,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: the Doomsday Carrier Mk II now commits all six paths from its two rotary batteries before a 0.62-second shared green/yellow/red warning. The warning follows the physical hardpoints while the aim angles remain locked against late movement.
 - The mirrored three-lane geometry, authored `s6cyclone` rounds, base speed 4.1, muzzle reels and 1.35/1.12-second phase cadences remain intact. Focused 10/10 and Chromium 16/16 pass with zero errors. The full suite reaches 4,421 passes and the established 56 failures plus the intermittent Stage-1 sand-tank fixture, with no new name. Evidence: docs/STAGE6_CARRIER_CYCLONE_FAN_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-6 Doomsday Carrier storm-node warning
+
+- ENG-02 advances: both shield-down phases now commit the alternating storm-node pair and its six- or ten-lane fan before a 0.62-second shared green/yellow/red warning. The fields follow each live node while aim and pair parity remain locked against late movement.
+- Destroying a warned node disarms only its lanes. Phase transitions cancel stale Carrier fan warnings, and the original offsets, speeds, total cadences and central prism-lance beat remain intact. Focused 11/11 and Chromium 16/16 pass with zero errors. The full suite reaches 4,432 passes and the established 56 failures plus the intermittent Stage-1 sand-tank fixture, with no new name. Evidence: docs/STAGE6_CARRIER_NODE_FAN_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

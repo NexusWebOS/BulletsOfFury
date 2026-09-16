@@ -93,3 +93,7 @@ The final Vile form now commits all four original vertical missile lanes before 
 ## Stage 6 Doomsday Carrier twin-cyclone follow-up
 
 The Doomsday Carrier Mk II now commits the exact six paths from its twin rotary batteries before a 0.62-second shared warning. The left and right hardpoints retain their mirrored three-lane offsets, authored cyclone rounds, base speed, muzzle reels and phase-specific total cadences. The warning origins follow the moving hull while the six aim angles cannot chase a late dodge. Chromium passes 16/16 and focused section 348 passes 10/10. See [STAGE6_CARRIER_CYCLONE_FAN_WARNING_0916.md](STAGE6_CARRIER_CYCLONE_FAN_WARNING_0916.md).
+
+## Stage 6 Doomsday Carrier storm-node follow-up
+
+Both shield-down Carrier phases now commit the alternating storm-node pair and all six or ten original fan paths before a 0.62-second shared warning. The paths stay anchored to moving nodes while their aim angles and parity remain committed. Destroying a warned node disarms only its lanes, and phase changes cancel stale fan warnings. Original speeds, offsets, cadences and the central prism-lance beat remain intact. Chromium passes 16/16 and focused section 349 passes 11/11. See [STAGE6_CARRIER_NODE_FAN_WARNING_0916.md](STAGE6_CARRIER_NODE_FAN_WARNING_0916.md).

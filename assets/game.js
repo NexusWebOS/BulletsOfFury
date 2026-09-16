@@ -21525,6 +21525,34 @@ function carrierCycloneFanDraw(b,front){
   else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});
   return true;
 }
+/* Shield-down phases alternate the four storm nodes and widen each surviving node from three to
+   five cyclone lanes.  Commit node identity, parity and aim here; destroying a warned node still
+   disarms its own lanes, but moving after green cannot turn any surviving lane. */
+function carrierNodeFanPaths(b,F){
+  const M=b&&b._mega;if(!M||!F)return [];const len=Math.max(VH,worldWidth())*1.35,out=[];
+  for(const q of F.lanes){const n=M.nodes.find(v=>v.id===q.node);if(!n||n.dead)continue;const p=carrierMegaNodePos(b,n);out.push({x:p.x,y:p.y,a:q.a,node:q.node,sp:q.sp,ex:p.x+Math.cos(q.a)*len,ey:p.y+Math.sin(q.a)*len});}return out;
+}
+function carrierNodeFanStart(b){
+  const M=b&&b._mega;if(!M||M.nodeFan)return false;const phase=M.phase|0,step=M.step|0,tell=.62,cooldown=phase>=3?1.12:1.55,lanes=[],alive=M.nodes.filter(n=>!n.dead),parity=step&1;
+  for(let i=0;i<M.nodes.length;i++){const n=M.nodes[i];if(n.dead||(i&1)!==parity)continue;const p=carrierMegaNodePos(b,n),a=aimPlayer(p.x,p.y);for(const o of (phase>=3?[-.34,-.17,0,.17,.34]:[-.16,0,.16]))lanes.push({node:n.id,a:a+o,sp:3.15});}
+  if(!lanes.length&&alive.length){const n=alive[step%alive.length],p=carrierMegaNodePos(b,n);lanes.push({node:n.id,a:aimPlayer(p.x,p.y),sp:3.35});}
+  if(!lanes.length)return false;M.nodeFan={t:0,tell:tell,cooldown:cooldown,id:'stage6-carrier-node-fan',phase:phase,step:step,lanes:lanes,released:false,finish:0};M.cd=cooldown;
+  combatWarningTick(b,'stage6-carrier-node-fan',0,tell,true);if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle))(Audio.SFX.bossWeaponCharge||Audio.SFX.crackle)();return true;
+}
+function carrierNodeFanTick(b,dt){
+  const M=b&&b._mega,F=M&&M.nodeFan;if(!F)return false;F.t+=dt;combatWarningTick(b,F.id,Math.min(F.t,F.tell),F.tell);
+  if(!F.released&&F.t>=F.tell){F.released=true;F.finish=F.t+Math.max(.14,F.cooldown-F.tell);const paths=carrierNodeFanPaths(b,F);
+    for(let i=0;i<paths.length;i++){const p=paths[i];carrierMegaShot(b,p,p.a,p.sp,'s6cyclone',{silent:i>0});}
+    if(!b._s9Beam){const charged=(F.step%4)===3,tap=(F.phase>=3)||((F.step%2)===1);if(charged)s9aBeamStart(b,{charge:.62,off:1.70,end:2.05,w:64});else if(tap)s9aBeamStart(b,{charge:.24,off:.58,end:.74,w:30});if(b._s9Beam)carrierMegaMuzzle(b,'C','s6mb_prismmuzzle',charged?1.30:.90);}
+    if(Audio.SFX&&(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch))(Audio.SFX.enemyBossCannon||Audio.SFX.spaceVolleyLaunch)();
+  }
+  if(F.released&&F.t>=F.finish){M.nodeFan=null;M.cd=.02;return false;}return true;
+}
+function carrierNodeFanDraw(b,front){
+  const M=b&&b._mega,F=M&&M.nodeFan;if(!F||F.released)return false;const paths=carrierNodeFanPaths(b,F),k=clamp(F.t/F.tell,0,1);
+  if(!front)for(const p of paths)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.ex,ey:p.ey,progress:k,width:23,fieldOnly:true});
+  else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});return true;
+}
 /* THUNDERHEAD is owned by the Mk II controller.  The earlier signature lived in the generic
    boss switch, but this carrier returns through its _ship controller before that switch can run.
    Eight lightning LANES are warned first; two neighbouring lanes are always empty and the safe
@@ -21645,7 +21673,9 @@ function carrierMegaTick(b,dt){
      The last phase arms it: below 25% health the cannon column opens from 58px to a quarter of
      the playfield, which is the moment the fight is meant to become desperate. */
   b._megaBeam = (phase>=5) ? 1 : 0;   // the quarter-screen cannon belongs to the LAST RUN now
-  if(phase!==M.phase){M.phase=phase;M.shown=phase;M.cd=.55;M.step=0;b.flash=Math.max(b.flash||0,.36);
+  if(phase!==M.phase){
+    for(const q of [M.cycloneFan,M.nodeFan])if(q)combatWarningTick(b,q.id,q.tell,q.tell,true);M.cycloneFan=null;M.nodeFan=null;
+    M.phase=phase;M.shown=phase;M.cd=.55;M.step=0;b.flash=Math.max(b.flash||0,.36);
     /* ⚠ PHASES 1 AND 3 (1-BASED) ARE 'SHIELD UP'. Entering phase 2 after a bay falls has to RESTORE
        the field, or the alternation Mike described never happens - it broke in phase 1 and would
        simply stay broken for the rest of the fight. */
@@ -21658,6 +21688,7 @@ function carrierMegaTick(b,dt){
   }
   if(carrierThunderheadTick(b,dt))return;
   if(carrierCycloneFanTick(b,dt))return;
+  if(carrierNodeFanTick(b,dt))return;
   /* The launch/cannon reels own their beat.  Pausing this clock during either keeps the mega
      arsenal forceful without stacking an unreadable attack on top of the existing bay mechanic. */
   if(b._cn||(b._lc&&b._lc.playing))return;
@@ -21677,20 +21708,7 @@ function carrierMegaTick(b,dt){
        turret volley to a SPREAD and brings the lance in faster - Mike: "spread fire turret fire,
        laser beams more rapid". The opposite side is still
        always quiet, leaving a readable half-screen escape route. */
-    const alive=M.nodes.filter(n=>!n.dead),parity=M.step&1;let fired=0;
-    for(let i=0;i<M.nodes.length;i++){const n=M.nodes[i];if(n.dead||(i&1)!==parity)continue;const p=carrierMegaNodePos(b,n),a=aimPlayer(p.x,p.y);
-      for(const o of (M.phase>=3?[-.34,-.17,0,.17,.34]:[-.16,0,.16]))
-        carrierMegaShot(b,p,a+o,3.15,'s6cyclone',{silent:fired++>0});}
-    if(!fired&&alive.length){const n=alive[M.step%alive.length],p=carrierMegaNodePos(b,n),a=aimPlayer(p.x,p.y);carrierMegaShot(b,p,a,3.35,'s6cyclone',{});}
-    /* THE LANCE: short TAPS between volleys, a long CHARGED burn to punctuate. Phase 4 taps every
-       volley instead of every other one. Never stacked on a live beam. */
-    if(!b._s9Beam){
-      const _chg=(M.step%4)===3, _tap=(M.phase>=3)||((M.step%2)===1);
-      if(_chg)      s9aBeamStart(b,{charge:.62,off:1.70,end:2.05,w:64});
-      else if(_tap) s9aBeamStart(b,{charge:.24,off:.58,end:.74,w:30});
-      if(b._s9Beam) carrierMegaMuzzle(b,'C','s6mb_prismmuzzle',_chg?1.30:.90);
-    }
-    M.cd=(M.phase>=3?1.12:1.55);
+    carrierNodeFanStart(b);return;
   }else if(M.phase===4){
     /* PHASE 5: the turrets are gone, so the HULL fights - prism crossfire from the upper barrels,
        gravity mines holding the outer lanes. */
@@ -21748,7 +21766,7 @@ function carrierMegaTick(b,dt){
 }
 function carrierMegaDrawUnder(b){
   const M=b&&b._mega;if(!M||typeof XART==='undefined')return;
-  carrierCycloneFanDraw(b,false);if(M.phase<1)return;
+  carrierCycloneFanDraw(b,false);carrierNodeFanDraw(b,false);if(M.phase<1)return;
   carrierThunderheadDraw(b,false);
   const cy=(b._drawY!=null?b._drawY:b.y),fi=Math.floor(M.t*12)%6,key='s6mb_stormlink_'+fi;if(!XART.rdy(key))return;
   const im=XART.get(key);ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.78;
@@ -21763,7 +21781,7 @@ function carrierMegaDrawOver(b){
     if(XART.rdy(key)){ctx.save();ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(key),p.x-34,p.y-34,68,68);ctx.restore();}
     const r=clamp(n.hp/n.maxhp,0,1);ctx.fillStyle='#06111c';ctx.fillRect(p.x-21,p.y+26,42,4);ctx.fillStyle='#54e8ff';ctx.fillRect(p.x-20,p.y+27,40*r,2);
   }
-  carrierThunderheadDraw(b,true);carrierCycloneFanDraw(b,true);
+  carrierThunderheadDraw(b,true);carrierCycloneFanDraw(b,true);carrierNodeFanDraw(b,true);
 }
 function carrierBayBox(b, side){
   const f=CARRIER_BAY[side]; if(!f) return null;
