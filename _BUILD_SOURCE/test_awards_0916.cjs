@@ -6,11 +6,11 @@ module.exports=function testAwards(vm,ctxv,ok){
      Driven end to end by probe_awards_0916.py (22/0). */
 
   /* ---- the seventh title button ---- */
-  ok(vm.runInContext("TITLE_ITEMS.length===7&&TITLE_ITEMS.indexOf('AWARDS')>=0",ctxv),
-     'the title carries an AWARDS button');
-  ok(vm.runInContext("MENU_KEYS.length===TITLE_ITEMS.length&&MENU_KEYS.indexOf('btn_awards')===TITLE_ITEMS.indexOf('AWARDS')",ctxv),
+  ok(vm.runInContext("TITLE_ITEMS.length===7&&TITLE_ITEMS.indexOf('ACHIEVEMENTS')>=0",ctxv),
+     'the title carries an ACHIEVEMENTS button');
+  ok(vm.runInContext("MENU_KEYS.length===TITLE_ITEMS.length&&MENU_KEYS.indexOf('btn_achievements')===TITLE_ITEMS.indexOf('ACHIEVEMENTS')",ctxv),
      'its plate sits at its own index - the two tables cannot slip');
-  ok(vm.runInContext("typeof XART!=='undefined'&&/btn_awards\\.png$/.test(String(XART._src['btn_awards']||''))",ctxv),
+  ok(vm.runInContext("typeof XART!=='undefined'&&/btn_achievements\\.png$/.test(String(XART._src['btn_achievements']||''))",ctxv),
      'and that plate is registered');
 
   /* ⚠ THE DISPATCH IS KEYED BY NAME. It was `m===0 .. m===4` with `else { tryExit(); }`, so
@@ -29,7 +29,7 @@ module.exports=function testAwards(vm,ctxv,ok){
      'and an unrecognised row no longer quits the game');
 
   /* ---- the gallery ---- */
-  ok(vm.runInContext("GS.AWARDS==='awards'",ctxv), 'the gallery has its own state');
+  ok(vm.runInContext("GS.ACHIEVEMENTS==='achievements'",ctxv), 'the gallery has its own state');
   ok(vm.runInContext('typeof drawAwards==="function"&&typeof awardsOpen==="function"',ctxv), 'and its own draw');
   ok(vm.runInContext('AWARDS_VIEW===8',ctxv), 'eight rows at a time');
   const rows=vm.runInContext('awardsRows()',ctxv);
@@ -55,7 +55,7 @@ module.exports=function testAwards(vm,ctxv,ok){
      last and silently drop six. */
   vm.runInContext("achToasts.length=0;['a','b','c'].forEach(function(t){achToastPush({title:t,points:10});});",ctxv);
   ok(vm.runInContext('achToasts.length===3',ctxv), 'three at once queue three');
-  ok(vm.runInContext('ACH_TOAST.rise>0&&ACH_TOAST.hold>0&&ACH_TOAST.fall>0',ctxv),
+  ok(vm.runInContext('ACH_TOAST.slide>0&&ACH_TOAST.hold>0&&ACH_TOAST.out>0',ctxv),
      'it rises, holds and leaves rather than blinking on and off');
   vm.runInContext('achToasts.length=0;',ctxv);
 };

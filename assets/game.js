@@ -2029,7 +2029,7 @@ const XART=(function(){
   /* the seventh title button (ACH-02). Generated against the authored buttons as a style
      reference, the same route btn_help took in 0912a, and kept as a loose file rather than an
      atlas edit - manifest.js is GENERATED. */
-  X._src['btn_awards']='assets/game/ui/awards_0916/btn_awards.png';
+  X._src['btn_achievements']='assets/game/ui/awards_0916/btn_achievements.png';
   /* the escape arrow for the Stage-4 giant strike (S4-16). ONE plate, drawn mirrored on the left,
      because a flipped pair is what Mike asked for and two files would be two things to keep in
      step. Pointing RIGHT as authored. */
@@ -7345,8 +7345,8 @@ const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'
   OPENER:'opener',
   /* the controls reference Mike asked for as a sixth title button (0912) */
   HELP:'help',
-  /* the awards gallery, the seventh (ACH-02) */
-  AWARDS:'awards' };
+  /* the achievements gallery, the seventh (ACH-02) */
+  ACHIEVEMENTS:'achievements' };
 let state = GS.BOOT;
 /* ============================================================
    DEBUG SWITCHBOARD (drop 0724do)
@@ -47216,7 +47216,7 @@ function drawScene(dt){
     case GS.ATTRACT: return drawAttract(dt);
     case GS.OPENER:  return drawOpener(dt);
     case GS.HELP:    return drawHelp(dt);
-    case GS.AWARDS:  return drawAwards(dt);
+    case GS.ACHIEVEMENTS: return drawAwards(dt);
     case GS.CUTSCENE: return drawCutsceneState(dt);
     case GS.LOADING: return drawLoading(dt);
     case GS.TITLE:   return drawTitle(dt);
@@ -60191,8 +60191,8 @@ function drawStaticPlayer(){
    the cursor with `%5` in two places; adding a row without those would have made the last item
    unreachable from below and produced a cursor that skips - the exact symptom 0801r spent a drop
    chasing. Driven off TITLE_ITEMS.length now, so a seventh button is one edit. */
-const TITLE_ITEMS=['NEW GAME','PASSWORD','OPTIONS','HELP','AWARDS','CREDITS','EXIT GAME'];
-const MENU_KEYS=['btn_newgame','btn_password','btn_options','btn_help','btn_awards','btn_credits','btn_exit'];
+const TITLE_ITEMS=['NEW GAME','PASSWORD','OPTIONS','HELP','ACHIEVEMENTS','CREDITS','EXIT GAME'];
+const MENU_KEYS=['btn_newgame','btn_password','btn_options','btn_help','btn_achievements','btn_credits','btn_exit'];
 /* ⚠ THE DISPATCH IS KEYED BY NAME, NOT BY INDEX (ACH-02). It was a ladder of `m===0 .. m===4`
    with `else { tryExit(); }` at the end, so INSERTING a row silently repointed every entry below it
    and the fallback turned whatever landed last into EXIT GAME. Adding AWARDS before CREDITS is
@@ -60202,7 +60202,7 @@ const TITLE_ACTION={
   'PASSWORD': function(){ setState(GS.PASSWORD); pwInput=''; },
   'OPTIONS':  function(){ setState(GS.OPTIONS); menuIndex=0; },
   'HELP':     function(){ setState(GS.HELP); helpPage=0; helpT=0; },
-  'AWARDS':   function(){ setState(GS.AWARDS); awardsOpen(); },
+  'ACHIEVEMENTS': function(){ setState(GS.ACHIEVEMENTS); awardsOpen(); },
   'CREDITS':  function(){ setState('credits'); },
   'EXIT GAME':function(){ tryExit(); }
 };
@@ -60361,7 +60361,7 @@ function drawAwards(dt){
   const pts=(typeof achievementPoints==='function')?achievementPoints():0;
   let maxp=0; for(const r of A.rows) maxp+=r.points|0;
   if(art && typeof stageText==='function'){
-    stageText(art,'AWARDS',VW/2,26,20,'#ffd24a',0.9,1,0.08);
+    stageText(art,'ACHIEVEMENTS',VW/2,26,20,'#ffd24a',0.9,1,0.08);
     stageText(art,got+' OF '+total+'   '+pts+' PTS',VW/2,48,11,'#9fd6ff',0.8,1,0.06);
   }
   /* the rows, on the debrief plate's own authored strip - the same piece the unlock page uses */
@@ -60400,41 +60400,54 @@ function drawAwards(dt){
   const up=(Input.menuUp?Input.menuUp():false), dn=(Input.menuDown?Input.menuDown():false);
   if(dn) A.scroll=Math.min(maxScroll,A.scroll+1);
   else if(up) A.scroll=Math.max(0,A.scroll-1);
-  if(Input.menuBack&&Input.menuBack()){ setState(GS.TITLE); menuIndex=TITLE_ITEMS.indexOf('AWARDS'); }
+  if(Input.menuBack&&Input.menuBack()){ setState(GS.TITLE); menuIndex=TITLE_ITEMS.indexOf('ACHIEVEMENTS'); }
 }
 /* ---- the unlock toast -------------------------------------------------------
    ⚠ IT IS A QUEUE, NOT A SLOT. A stage clear can award seven at once (0915 measured exactly
    that), and one slot would show the last one and silently drop six. */
-const ACH_TOAST={rise:0.34, hold:2.4, fall:0.55, w:300, h:26};
+const ACH_TOAST={slide:0.30, hold:3.2, out:0.45, w:196, h:46, pad:8};
 let achToasts=[];
 function achToastPush(t){ if(t) achToasts.push({title:String(t.title||''), points:t.points|0, t:0}); }
+/* \u26a0 THE CARD SLIDES IN FROM THE LEFT EDGE AND SITS IN THE LOWER-LEFT CORNER (Mike, 0916: "should
+   pop up in the lower left corner when we unlock achievements in-game or in-menu, and should act
+   like a steam/xbox 360 achievement system"). The first cut was a centred strip along the bottom,
+   which is neither. A corner card can also carry TWO lines - the award and what it paid - where a
+   bottom strip had room for one. */
 function achToastTick(dt){
   if(!achToasts.length || typeof ctx==='undefined') return false;
-  const T=achToasts[0], D=ACH_TOAST, life=D.rise+D.hold+D.fall;
+  const T=achToasts[0], D=ACH_TOAST, life=D.slide+D.hold+D.out;
   T.t+=Math.max(0,dt||0);
   if(T.t>=life){ achToasts.shift(); return true; }
-  /* slides UP into place, holds, then slides back DOWN as it fades */
   let k=1, a=1;
-  if(T.t<D.rise) k=T.t/D.rise;
-  else if(T.t>D.rise+D.hold){ const f=(T.t-D.rise-D.hold)/D.fall; k=1-f; a=1-f; }
+  if(T.t<D.slide) k=T.t/D.slide;
+  else if(T.t>D.slide+D.hold){ const f=(T.t-D.slide-D.hold)/D.out; k=1-f; a=1-f; }
   const ease=k<0?0:(k>1?1:(k*k*(3-2*k)));
-  const w=Math.min(D.w,VW-24), h=D.h;
-  /* ⚠ IT RESTS ABOVE THE CONTROL HINT ROW, NOT ON IT. At a bottom of VH-8 the plate sat straight
-     over the MENU / SELECT / START line on every menu screen - seen in the first capture, invisible
-     to every counter. VH-26 leaves that row readable and still reads as "bottom of the screen". */
-  const x=Math.round((VW-w)/2), y=Math.round(VH-26-h*ease);
+  const w=Math.min(D.w,VW-16), h=D.h;
+  /* off the LEFT edge at 0, flush to the corner at 1 */
+  const x=Math.round(-w+(w+D.pad)*ease), y=Math.round(VH-D.pad-h);
   const pl=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
   ctx.save(); ctx.globalAlpha=a;
   if(pl && typeof unlockPanel==='function') unlockPanel(pl,UNLOCK_ART.strip,x,y,w,h,true);
   else { ctx.fillStyle='#16161f'; ctx.fillRect(x,y,w,h); ctx.strokeStyle='#705848'; ctx.lineWidth=1; ctx.strokeRect(x+0.5,y+0.5,w-1,h-1); }
+  /* the plaque socket, left - the art for it lands with the plaques; the box is its home either way */
+  const bs=h*0.66, bx=x+h*0.17, by=y+(h-bs)/2;
+  ctx.fillStyle='#16161f'; ctx.fillRect(bx,by,bs,bs);
+  ctx.strokeStyle='#705848'; ctx.lineWidth=Math.max(1,bs*0.07); ctx.strokeRect(bx+ctx.lineWidth/2,by+ctx.lineWidth/2,bs-ctx.lineWidth,bs-ctx.lineWidth);
+  if(typeof achPlaqueDraw==='function') achPlaqueDraw(T, bx, by, bs);
   const art=(typeof curFontArt==='function')?curFontArt():null;
   if(art && typeof stageText==='function'){
-    const nm=('AWARD  '+T.title).toUpperCase(), pts='+'+T.points;
-    const pad=w*0.04, pw=(typeof stageWidth==='function')?stageWidth(art,pts,9,0.06):0;
-    const room=w-pad*2-pw-8;
-    const fh=(typeof stageFitH==='function')?stageFitH(art,nm,room,h*0.46,8,0.06):9;
-    stageText(art,nm,x+pad+((typeof stageWidth==='function')?stageWidth(art,nm,fh,0.06):0)/2,y+h/2,fh,'#ffd24a',0.9,a,0.06);
-    stageText(art,pts,x+w-pad-pw/2,y+h/2,9,'#8de23a',0.9,a,0.06);
+    const tx=bx+bs+h*0.16, room=x+w-tx-h*0.16;
+    const t1='ACHIEVEMENT UNLOCKED', t2=String(T.title).toUpperCase();
+    const h1=(typeof stageFitH==='function')?stageFitH(art,t1,room,h*0.26,7,0.06):8;
+    const h2=(typeof stageFitH==='function')?stageFitH(art,t2,room,h*0.30,7,0.06):9;
+    const w1=(typeof stageWidth==='function')?stageWidth(art,t1,h1,0.06):0;
+    const w2=(typeof stageWidth==='function')?stageWidth(art,t2,h2,0.06):0;
+    stageText(art,t1,tx+w1/2,y+h*0.32,h1,'#9fd6ff',0.85,a,0.06);
+    stageText(art,t2,tx+w2/2,y+h*0.60,h2,'#ffd24a',0.9,a,0.06);
+    const p='+'+T.points+' FURIOUS';
+    const hp=(typeof stageFitH==='function')?stageFitH(art,p,room,h*0.22,7,0.06):7;
+    const wp=(typeof stageWidth==='function')?stageWidth(art,p,hp,0.06):0;
+    stageText(art,p,tx+wp/2,y+h*0.84,hp,'#8de23a',0.85,a,0.06);
   }
   ctx.restore();
   return true;

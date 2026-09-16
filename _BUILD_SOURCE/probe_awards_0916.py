@@ -7,8 +7,8 @@ event nothing listened to. A player could earn 1,630 points and never be told on
 
 Driven in real Chromium:
   * the title carries a SEVENTH button and its plate decodes;
-  * AWARDS opens the gallery, which lists all 66 with their points and a locked/unlocked state;
-  * the list scrolls and clamps, and BACK returns to the title with the cursor on AWARDS;
+  * ACHIEVEMENTS opens the gallery, which lists all 66 with their points and a locked/unlocked state;
+  * the list scrolls and clamps, and BACK returns to the title with the cursor on ACHIEVEMENTS;
   * an unlock draws a toast at the bottom that RISES, holds and leaves - measured as ink in the
     bottom band across frames, not as a flag;
   * several unlocks at once QUEUE rather than replacing one another (a stage clear can award seven).
@@ -58,9 +58,10 @@ TRAP = r"""() => {
         const W = im.width || im.naturalWidth, H = im.height || im.naturalHeight;
         if (pl && W === (pl.naturalWidth || pl.width) && H === (pl.naturalHeight || pl.height)) {
           const a = arguments;
-          let dy = 0, dh = 0;
-          if (a.length >= 9) { dy = a[6]; dh = a[8]; } else if (a.length >= 5) { dy = a[2]; dh = a[4]; }
-          window.__panels.push({y: dy, h: dh});
+          let dx = 0, dy = 0, dw = 0, dh = 0;
+          if (a.length >= 9) { dx = a[5]; dy = a[6]; dw = a[7]; dh = a[8]; }
+          else if (a.length >= 5) { dx = a[1]; dy = a[2]; dw = a[3]; dh = a[4]; }
+          window.__panels.push({x: dx, y: dy, w: dw, h: dh});
         }
       }
     } catch (e) {}
@@ -102,23 +103,23 @@ def main():
         # ---- 1. the seventh button ----
         T = pg.evaluate("""() => ({items: TITLE_ITEMS.slice(), keys: MENU_KEYS.slice(),
                                    acts: Object.keys(TITLE_ACTION),
-                                   idx: TITLE_ITEMS.indexOf('AWARDS')})""")
-        ok(len(T['items']) == 7 and 'AWARDS' in T['items'], 'the title carries a seventh button (%s)' % T['items'])
+                                   idx: TITLE_ITEMS.indexOf('ACHIEVEMENTS')})""")
+        ok(len(T['items']) == 7 and 'ACHIEVEMENTS' in T['items'], 'the title carries a seventh button (%s)' % T['items'])
         ok(len(T['keys']) == len(T['items']), 'every item has a plate (%d keys for %d items)' % (len(T['keys']), len(T['items'])))
         ok(sorted(T['acts']) == sorted(T['items']), 'and every item has its OWN action - the dispatch is keyed by name')
         for _ in range(40):
-            pg.evaluate("() => XART.rdy('btn_awards')")
-            if pg.evaluate("() => XART.rdy('btn_awards')"):
+            pg.evaluate("() => XART.rdy('btn_achievements')")
+            if pg.evaluate("() => XART.rdy('btn_achievements')"):
                 break
             pg.wait_for_timeout(80)
-        ok(pg.evaluate("() => XART.rdy('btn_awards')"), 'the AWARDS plate decoded')
+        ok(pg.evaluate("() => XART.rdy('btn_achievements')"), 'the AWARDS plate decoded')
         pg.evaluate(STEP, [6])
         shot(pg, '01_title.png')
 
         # ---- 2. the gallery ----
         pg.evaluate("""([i]) => { setState(GS.TITLE); menuIndex = i; titlePending = null; menuFlash = 0; chooseTitle(); }""", [T['idx']])
         st = pg.evaluate(STEP, [40])
-        ok(st == 'awards', 'choosing AWARDS opens the gallery (state %s)' % st)
+        ok(st == 'achievements', 'choosing ACHIEVEMENTS opens the gallery (state %s)' % st)
         G = pg.evaluate("""() => ({rows: awards.rows.length, view: AWARDS_VIEW, scroll: awards.scroll,
                                    first: awards.rows.slice(0,3).map(r => r.title),
                                    locked: awards.rows.filter(r => !r.unlocked).length,
@@ -142,11 +143,11 @@ def main():
         ok(s2['s'] == s2['max'], 'and clamps at the end (%s of %s)' % (s2['s'], s2['max']))
         shot(pg, '03_gallery_end.png')
 
-        # BACK returns to the title, with the cursor on AWARDS
+        # BACK returns to the title, with the cursor on ACHIEVEMENTS
         pg.evaluate("""() => { const k = (keybind.back && keybind.back[0]) || 'escape'; Input.keys[k] = false; Input.injectTap(k); }""")
         st = pg.evaluate(STEP, [4])
         ok(st == 'title', 'BACK returns to the title (%s)' % st)
-        ok(pg.evaluate("() => menuIndex === TITLE_ITEMS.indexOf('AWARDS')"), 'with the cursor left on AWARDS')
+        ok(pg.evaluate("() => menuIndex === TITLE_ITEMS.indexOf('ACHIEVEMENTS')"), 'with the cursor left on ACHIEVEMENTS')
 
         # ---- 3. the toast ----
         # ⚠ the store persists: clear it or nothing can unlock on a second run
@@ -157,17 +158,28 @@ def main():
         pg.evaluate(TRAP)
         pg.evaluate("() => achievementUnlock('stage_clear_1')")
         ok(pg.evaluate("() => achToasts.length === 1"), 'an unlock queues a toast')
-        ys = []
+        # \u26a0 REPOINTED: the card is a LOWER-LEFT corner card now (Mike, 0916: "should pop up in the
+        # lower left corner ... like a steam/xbox 360 achievement system"), so it travels in X from
+        # off the left edge. The old assertions measured a bottom strip rising in Y and reported
+        # "0.0 px of travel" on a build that moves its full width.
+        fr = []
         for i in range(7):
             pg.evaluate("() => { window.__panels = []; window.__rec = 1; }")
             pg.evaluate(STEP, [3])
             pg.evaluate("() => { window.__rec = 0; }")
             got = pg.evaluate("() => window.__panels.slice()")
             if got:
-                ys.append(round(min(q['y'] for q in got), 1))
-        ok(len(ys) >= 4, 'the toast panel is blitted every frame it is up (%d frames)' % len(ys))
-        ok(ys and ys[0] > ys[-1], 'and it RISES into place (panel y %s -> %s)' % (ys[0] if ys else None, ys[-1] if ys else None))
-        ok(ys and max(ys) - min(ys) >= 8, 'by its own height, not a pixel or two (%.1f px of travel)' % ((max(ys) - min(ys)) if ys else -1))
+                q = min(got, key=lambda r: r['x'])
+                fr.append((round(q['x'], 1), round(q['y'], 1), round(q['w'], 1), round(q['h'], 1)))
+        xs = [f[0] for f in fr]
+        ok(len(fr) >= 4, 'the toast panel is blitted every frame it is up (%d frames)' % len(fr))
+        ok(xs and xs[0] < xs[-1], 'and it SLIDES IN from the left edge (panel x %s -> %s)' % (xs[0] if xs else None, xs[-1] if xs else None))
+        ok(xs and xs[0] < 0, 'starting off-screen (%s)' % (xs[0] if xs else None))
+        vh = pg.evaluate("() => VH")
+        last = fr[-1] if fr else None
+        ok(last and abs(last[0] - 8) <= 2, 'and resting in the LEFT corner (x %s)' % (last[0] if last else None))
+        ok(last and abs((last[1] + last[3]) - (vh - 8)) <= 2,
+           'at the BOTTOM of the screen (bottom %s of %s)' % ((last[1] + last[3]) if last else None, vh - 8))
         shot(pg, '04_toast.png')
         pg.evaluate(STEP, [260])
         ok(pg.evaluate("() => achToasts.length === 0"), 'it leaves on its own')
@@ -181,7 +193,9 @@ def main():
                                achievementReload(); achToasts.length = 0;
                                ['stage_clear_1','stage_clear_2','stage_clear_3'].forEach(id => achievementUnlock(id)); }""")
         ok(pg.evaluate("() => achToasts.length === 3"), 'three unlocks at once queue three toasts')
-        pg.evaluate(STEP, [200])
+        # one card lives slide+hold+out = ~3.95s, so 200 frames (3.3s) is not enough to retire one -
+        # the first cut asserted against its own impatience
+        pg.evaluate(STEP, [260])
         ok(pg.evaluate("() => achToasts.length < 3"), 'and they play through in order')
 
         ok(not errs, 'no page or console errors (%d)' % len(errs))
