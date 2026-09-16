@@ -2021,6 +2021,11 @@ const XART=(function(){
      fills the entire 640x480 screen"). The framed plate above left the screen's own background
      showing around it; this one is edge to edge, so the debrief IS the picture. */
   X._src['statpanel_full_0916']='assets/game/ui/debrief_0916/stat_panel_full.png';
+  /* THE NEW WORDMARK (Mike, 0916: "this is the new game logo. Use this as the new logo after you
+     clean it up"). Keyed from its magenta by a border flood - 2 enclosed key pixels left, 6 of
+     interior magenta - and the 3,650px pink rim converted to a black edge, never deleted, per the
+     standing halo rule. nbl_logo on ui_menu_1 stays as the decode fallback. */
+  X._src['nbl_logo_0916']='assets/game/ui/logo_0916/bof_logo.png';
   /* the rank badges (Mike, 0916: "Make the Rank lettering generated graphics"). One plate per
      letter, each in its own metal: F molten, S gold, A silver, B bronze, C steel, D scorched
      iron, L cracked grey. */
@@ -6507,8 +6512,8 @@ function _setCinematicViewport(on){
          cinematics keep the browser aspect: their art is a photograph of a scene, not a panel. */
       /* the debrief plate is 455x254; the viewport takes ITS aspect so the art fills the screen
          with nothing showing around it and nothing stretched */
-      const ar=(state===GS.STAGECLEAR) ? (455/254) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
-      CINEMA_VW=(state===GS.STAGECLEAR) ? Math.round(VH*ar) : Math.max(640,Math.round(VH*ar));
+      const ar=(state===GS.STAGECLEAR||state===GS.UNLOCKS) ? (455/254) : Math.max(.85,window.innerWidth/Math.max(1,window.innerHeight));
+      CINEMA_VW=(state===GS.STAGECLEAR||state===GS.UNLOCKS) ? Math.round(VH*ar) : Math.max(640,Math.round(VH*ar));
       if(cv.width!==CINEMA_VW*SS||cv.height!==VH*SS){cv.width=CINEMA_VW*SS;cv.height=VH*SS;}
       document.body.classList.add('cinematic-full');
     }else{
@@ -6534,7 +6539,7 @@ function applyPendingViewport(){
   _viewportDirty=false;
   try{
     if(state===GS.PILOT){ _setPilotViewport(); return; }
-    if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||state===GS.STAGECLEAR) _setCinematicViewport(true);
+    if(state===GS.CUTSCENE||state===GS.CAMPAIGNINTRO||state===GS.VICTORY||state===GS.STAGECLEAR||state===GS.UNLOCKS) _setCinematicViewport(true);
   }catch(_cinResize){}
 }
 window.__bofResizeCinematic=function(){ _viewportDirty=true; };
@@ -7310,7 +7315,7 @@ function uiBlipRep(){
 }
 const GS = { BOOT:'boot', LOADING:'loading', TITLE:'title', DIFF:'diff', PILOT:'pilot',
   PASSWORD:'password', CREDITS:'credits', OPTIONS:'options', INTRO:'intro', LAUNCH:'launch',
-  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
+  PLAY:'play', GAMEOVER:'gameover', VICTORY:'victory', STAGECLEAR:'stageclear', UNLOCKS:'unlocks', CONTINUE:'continue', RIFTFALLBACK:'riftfallback', RIVAL:'rival', FLYOVER:'flyover', WARPENTRY:'warpentry', STAGESEL:'stagesel', MODESEL:'modesel', CAMPHUB:'camphub', CAMPAIGNINTRO:'campaignintro', ATTRACT:'attract', OUTBOUND:'outbound', OPENING:'opening', CUTSCENE:'cutscene',
   /* the co-op wing muster: both chosen pilots side by side before deploy (drop 0902f) */
   COOPROSTER:'cooproster',
   /* ⚠ 'opener' AND NOT 'intro'. GS.INTRO is the STAGE card that precedes GS.LAUNCH and has been
@@ -31301,7 +31306,7 @@ function _hudShow(on, divider){
 }
 function _hudStateWants(s){
   return s===GS.PLAY || s==='paused' || s===GS.LAUNCH || s===GS.WARPENTRY || s===GS.OUTBOUND ||
-         s===GS.INTRO || s===GS.STAGECLEAR || s===GS.RIVAL;
+         s===GS.INTRO || s===GS.STAGECLEAR || s===GS.UNLOCKS || s===GS.RIVAL;
 }
 let _pauseMusicVol=null;
 function _pausePresentation(on){
@@ -31334,7 +31339,7 @@ function setState(s){
      card is a full-screen presentation moment, not a gameplay frame with furniture around it. */
   if(s===GS.PILOT)_setPilotViewport();
   else _setCinematicViewport(s===GS.CUTSCENE || s===GS.CAMPAIGNINTRO || s===GS.VICTORY ||
-                        s===GS.STAGECLEAR);
+                        s===GS.STAGECLEAR || s===GS.UNLOCKS);   // the unlock page shares the debrief's plate and aspect
   /* The final results card is useful decode time. Start the ending plates here so a player who
      advances immediately never reaches the first line of the finale before its HQ background and
      selected straight-rear aircraft are drawable. The bonus stage returns to the campaign map and
@@ -47129,6 +47134,7 @@ function drawScene(dt){
     case GS.PLAY:    { drawWorld(dt); if(typeof s9WarpDraw==='function') s9WarpDraw(); return; }
     case 'paused':   playPauseWorldDraw(); return drawPaused(dt);
     case GS.STAGECLEAR: return drawStageClear(dt);
+    case GS.UNLOCKS:    return drawUnlocks(dt);
     case GS.GAMEOVER:return drawGameOver(dt);
     case GS.CONTINUE: return drawContinue(dt);
     case GS.RIFTFALLBACK:return drawRiftFallback(dt);
@@ -47528,7 +47534,8 @@ function opnBeatLogo(t, a){
      first cut ended a 30-second trailer on the engine's name. Rendered the three candidates side
      by side rather than picking by key name; nbl_logo on ui_menu_1 is the only BULLETS OF FURY
      wordmark in the build. The engine plate stays as the fallback - a wrong logo beats none. */
-  const lg=(typeof XART!=='undefined' && XART.rdy('nbl_logo')) ? XART.get('nbl_logo')
+  const lg=(typeof XART!=='undefined' && XART.rdy('nbl_logo_0916')) ? XART.get('nbl_logo_0916')
+          : (typeof XART!=='undefined' && XART.rdy('nbl_logo')) ? XART.get('nbl_logo')
           : ((typeof ASSETS!=='undefined' && ASSETS.rdy && ASSETS.rdy(ASSETS.menuLogo)) ? ASSETS.menuLogo
           : ((typeof XART!=='undefined' && XART.rdy('logo')) ? XART.get('logo') : null));
   if(lg){
@@ -60142,9 +60149,11 @@ function drawTitle(dt){
   } else { ctx.fillStyle='#080611'; ctx.fillRect(0,0,VW,VH);
     for(const s of starField){ s.y=(s.y+s.z*1.5*dt*60)%VH; ctx.fillStyle=s.z>1?'#cfe2ff':'#4455aa'; ctx.fillRect(s.x|0,s.y|0,2,2); } }
   // CANON TITLE LOGO (Mike 0719: logo-01 Primary Inferno)
-  if(typeof XART!=='undefined' && XART.rdy('nbl_logo')){
+  if(typeof XART!=='undefined' && (XART.rdy('nbl_logo_0916') || XART.rdy('nbl_logo'))){
     // fit the band ABOVE '- INSERT COIN -' (text center TMENU_Y0-50=118, top ~105): height-capped
-    const lm=XART.get('nbl_logo'), lh=88, lw=lh*(lm.naturalWidth/lm.naturalHeight);
+    /* the 0916 wordmark is taller for its width than the old cell, so it takes 82 not 88 - at 88
+       its turbine sat on the INSERT COIN line */
+    const lm=XART.rdy('nbl_logo_0916') ? XART.get('nbl_logo_0916') : XART.get('nbl_logo'), lh=XART.rdy('nbl_logo_0916')?82:88, lw=lh*(lm.naturalWidth/lm.naturalHeight);
     ctx.drawImage(lm,(VW-lw)/2, 8, lw, lh);
   }
   drawMenuButtons(dt);
@@ -68758,6 +68767,17 @@ function drawStageClear(dt){
          path — leaving only the arcade outbound. An assertion caught the victory gate, which is
          the one that would have rolled credits at the wrong time or never at all. This is why the
          suite pins it to STAGES.length rather than a number. */
+      /* THE UNLOCK SCREEN SITS BETWEEN THE DEBRIEF AND THE EXIT (Mike, 0916). Everything the exit
+         used to do is scLeaveStage(R) now, so it can run from here OR from the unlock screen's own
+         CONTINUE, and no branch of it moved. */
+      const _R=R, _un=unlockRowsFor(run.stage|0, (typeof _pilotKey==='function')?_pilotKey():'');
+      if(_un.length && !drawStageClear._unShown){ drawStageClear._unShown=true; unlocksStart(_un, function(){ drawStageClear._unShown=false; scLeaveStage(_R); }); }
+      else { drawStageClear._unShown=false; scLeaveStage(_R); }
+    }
+  }
+}
+
+function scLeaveStage(R){
       run.score=(run.score|0)+R.bonus;
       run.lives=clamp(run.lives,0,9);
       if(R.seats){ run2.score=(run2.score|0)+R.seats[1].bonus; run2.lives=clamp(run2.lives,0,9); }
@@ -68809,7 +68829,105 @@ function drawStageClear(dt){
           });
         } else openStageSelect(_next);
       }
+}
+
+/* ============================================================
+   NEW WEAPONS UNLOCKED (Mike, 0916)
+
+   "we need a secondary stats screen window for levels 2, 3 and 4. For level 2 after we defeat
+    the level we get this stats screen, than a secondary screen will fade/transition to matching
+    the style, but for all characters letting us know we have now unlocked Fire Orb. For Freezer -
+    that he's unlocked Ice Breath and ThermoShock Ball. For Yuri - Unlocks Fire Orb & Lightning Orb."
+
+   Keyed by the stage just CLEARED. `all` is every pilot; a pilot's own row REPLACES it (Freezer
+   never gets the fire orb - his fire and ice merged into the Thermoshock instead). Stage 2 is his
+   words verbatim. Stage 4 is what the engine actually grants there - Yuri's LIGHTNING ORB is
+   coded as the Stage-4 victory reward - and stage 5 the CHAINGUN; he has not yet said what stage 3
+   announces, so it has no row and the screen simply does not appear. The icons are the same
+   micon_ families the HUD and the pickups use, through iconBlit, the one path that knows all
+   three art stores. */
+const SC_UNLOCKS = {
+  2: { all:[['FIRE ORB','micon_fireorb_3']],
+       freezer:[['ICE BREATH','micon_icebreath_3'],['THERMOSHOCK BALL','micon_thermoshock_3']],
+       yuri:[['FIRE ORB','micon_fireorb_3'],['LIGHTNING ORB','micon_lightningorb_3']] },
+  4: { yuri:[['LIGHTNING ORB','micon_lightningorb_3']] },
+  5: { all:[['CHAINGUN','micon_chaingun_3']] },
+};
+function unlockRowsFor(stage, pk){
+  const T=SC_UNLOCKS[stage|0]; if(!T) return [];
+  const rows=(pk && T[pk]) ? T[pk] : (T.all||[]);
+  return rows.slice();
+}
+let unlocks=null;
+function unlocksStart(rows, onDone){
+  unlocks={rows:rows, onDone:onDone||null, t:0, md:!!(Input&&Input.mouse&&Input.mouse.down)};
+  for(const r of rows){ try{ if(typeof XART!=='undefined') XART.rdy(r[1]); }catch(_){ } }   // start the decodes
+  try{ if(Audio.SFX && Audio.SFX.life) Audio.SFX.life(); }catch(_){ }
+  setState(GS.UNLOCKS);
+}
+function drawUnlocks(dt){
+  const U=unlocks;
+  const W=(typeof cutsceneViewWidth==='function')?cutsceneViewWidth():VW, H=VH;
+  ctx.fillStyle='#000'; ctx.fillRect(0,0,W,H);
+  if(!U){ setState(GS.TITLE); return; }
+  U.t+=dt; const t=U.t;
+  const fade=Math.min(1,t/0.45);                        // the "fade/transition" from the debrief
+  /* the SAME plate the debrief uses, so this reads as its second page */
+  const plate=(typeof XART!=='undefined' && XART.rdy('statpanel_full_0916')) ? XART.get('statpanel_full_0916') : null;
+  ctx.save(); ctx.globalAlpha=fade;
+  if(plate){ ctx.imageSmoothingEnabled=false; ctx.drawImage(plate,0,0,W,H); }
+  else { ctx.fillStyle='#14171f'; ctx.fillRect(0,0,W,H); }
+  ctx.restore();
+  const P=[0,0,W,H], S=SC_SLOTS_FULL, bay=function(f){ return [P[0]+P[2]*f[0], P[1]+P[3]*f[1], P[2]*f[2], P[3]*f[3]]; };
+  const art=(typeof curFontArt==='function')?curFontArt():null;
+  const A=function(d){ return Math.max(0,Math.min(1,(t-d)/0.35)); };
+  if(art && typeof stageText==='function'){
+    /* title bay */
+    let b=bay(S.title);
+    const tH=(typeof stageFitH==='function')?stageFitH(art,'NEW WEAPONS UNLOCKED',b[2]*0.90,b[3]*0.62,10,0.08):b[3]*0.5;
+    stageText(art,'NEW WEAPONS UNLOCKED',b[0]+b[2]/2,b[1]+b[3]*0.55,tH,'#ffd24a',0.9,A(0.10),0.08);
+    /* portrait bay: the pilot, pleased */
+    b=bay(S.pilot);
+    try{
+      const pk=(typeof _pilotKey==='function')?_pilotKey():'axel';
+      const pkey=(typeof scPortrait==='function')?scPortrait(pk,'S'):null;
+      if(pkey && XART.rdy(pkey)){ const im=XART.get(pkey), k=Math.min(b[2]*0.88/im.naturalWidth,b[3]*0.88/im.naturalHeight), w=im.naturalWidth*k, h=im.naturalHeight*k;
+        ctx.save(); ctx.globalAlpha=A(0.15); ctx.drawImage(im,b[0]+(b[2]-w)/2,b[1]+(b[3]-h)/2,w,h); ctx.restore(); }
+    }catch(_){ }
+    /* briefing bay: what happened */
+    b=bay(S.brief);
+    const msg='STAGE '+(run.stage|0)+' CLEARED. YOUR ARSENAL GROWS - THE FOLLOWING WILL NOW DROP FROM SUPPLY CRATES.';
+    const mH=Math.max(9,Math.min(b[3]*0.26, (typeof stageFitH==='function')?stageFitH(art,msg,b[2]*0.90*2.2,b[3]*0.26,9,0.05):12));
+    if(typeof stageWrapCen==='function') stageWrapCen(art,msg,b[0]+b[2]/2,b[1]+b[3]*0.36,mH,b[2]*0.90,1.35,A(0.25),0.05,'#ffd24a',0.6);
+    /* the unlocks themselves, one per slot, typed in */
+    const slots=S.stats;
+    for(let i=0;i<U.rows.length && i<slots.length;i++){
+      const r=U.rows[i], sb=bay(slots[i]), a=A(0.55+i*0.45);
+      if(a<=0) break;
+      /* icon at the left of the bay, the name laid out from the icon's RIGHT edge plus air - the
+         first cut put the name at a fixed fraction and the icon ran under its first letter */
+      const ih=sb[3]*0.78, ix0=sb[0]+sb[2]*0.04, ix=ix0+ih/2, tx0=ix0+ih+sb[2]*0.035;
+      if(typeof iconBlit==='function'){ ctx.save(); ctx.globalAlpha=a; iconBlit(ctx,r[1],ix,sb[1]+sb[3]/2,ih,true); ctx.restore(); }
+      const full=r[0], shown=full.slice(0, Math.max(0,Math.round((t-(0.55+i*0.45))*22)));
+      const room=sb[0]+sb[2]*0.97-tx0;
+      const lH=(typeof stageFitH==='function')?stageFitH(art,full,room,sb[3]*0.60,9,0.06):sb[3]*0.5;
+      const lw=(typeof stageWidth==='function')?stageWidth(art,full,lH,0.06):0;
+      stageText(art,shown,tx0+lw/2,sb[1]+sb[3]*0.55,lH,'#8de23a',0.85,a,0.06);
     }
+    /* score bar carries the instruction; sign-off the flourish */
+    b=bay(S.score);
+    const goA=A(0.55+U.rows.length*0.45);
+    if(goA>0){ stageText(art,'LOOK FOR THEM IN THE FIELD',b[0]+b[2]/2,b[1]+b[3]*0.55,Math.min(b[3]*0.5,14),'#9fd6ff',0.8,goA,0.08); }
+    b=bay(S.signoff);
+    if(goA>0 && Math.floor(t*2)%2) controlHintRow([['pad_a','CONTINUE']],b[1]+b[3]*0.55,W/2,W-24);
+  }
+  /* exit: any press once the rows are in, click included */
+  const click=Input.mouse.down&&!U.md; U.md=!!Input.mouse.down;
+  const ready=t>0.55+U.rows.length*0.45+0.2;
+  if(ready && (click||Input.tap('enter')||keybind.fire.some(function(k){return Input.tap(k);})||Input.menuStart())){
+    Input.mouse.down=false;
+    const done=U.onDone; unlocks=null;
+    if(done) done(); else setState(GS.TITLE);
   }
 }
 

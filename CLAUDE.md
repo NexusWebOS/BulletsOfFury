@@ -4429,3 +4429,29 @@ Suite **57 fail**: the 56 established names plus the intermittent sand-tank fixt
 failed on today's deliberate changes and were repointed rather than worked around — §281's title
 pin now reads "one measured layout, read by both", and `test_locked_modes_0915.cjs` now looks for
 the refusal text in `modeLockedDeny` and the banner call in `drawModeSelect`.
+
+## 0916 (later) - the unlock page, the new wordmark, cover art, and the Forge concept
+
+**NEW WEAPONS UNLOCKED** is `GS.UNLOCKS`, a second page of the debrief that fades in on the same
+plate. It is keyed by the stage just CLEARED in `SC_UNLOCKS`; a pilot's own row REPLACES the `all`
+row (Freezer never gets the fire orb). Stage 2 is Mike's words verbatim, stage 4 is Yuri's LIGHTNING
+ORB and stage 5 the CHAINGUN because that is where `drawBullets` says those are granted; stage 3 has
+no row and the page does not appear. ⚠ **THE DEBRIEF'S EXIT IS `scLeaveStage(R)` NOW** - the whole
+branch ladder (bonus return, victory, stage 7 map, rival, arcade, campaign) moved into a function so
+the unlock page can run it from its own CONTINUE. Anything else that wants a beat between the
+debrief and the next stage (the Forge) hooks the same seam. ⚠ Any new state that shares the
+debrief's plate has to be added in FOUR places or it draws at the 480-wide aspect: the GS enum, the
+drawScene case, both `_setCinematicViewport` ar/CINEMA_VW lines, AND the `setState` predicate that
+turns the cinematic viewport on - the last one is the one I missed first, and the plate came out
+stretched into the play column.
+⚠ **THE ICON MAY NOT SIT UNDER THE FIRST LETTER.** Lay the name out from the icon's right edge, not
+from a fixed fraction of the bay.
+
+**The wordmark** is `nbl_logo_0916` (`assets/game/ui/logo_0916/bof_logo.png`), keyed from Mike's
+magenta plate by a border flood and its 3,650px pink rim converted to a black edge, never deleted.
+Both draw sites (title, opener) prefer it and fall back to the `nbl_logo` cell. It is taller for its
+width than the cell was, so the title draws it at 82 not 88.
+
+**Cover art** candidates and the Forge plates are in `docs/marketing_0916/`; the Forge design is
+`docs/UPGRADE_SYSTEM_CONCEPT_0916.md` - four concepts (fusion, mods, special tuning, arcade draft)
+with the build order and the code seams they would use. Nothing of it is wired.
