@@ -1492,7 +1492,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "Stage-5 Chrome Hammer Archmage Easy/Normal core recovery and fused mega-wave warning",
-    "evidence": "ARCHMAGE_CORE_RECOVERY_0916.md"
+    "description": "Stage-2 Inferno Reaver role repair and shared nine-lane shotgun warning",
+    "evidence": "STAGE2_REAVER_SHARED_WARNING_0916.md"
   }
 }

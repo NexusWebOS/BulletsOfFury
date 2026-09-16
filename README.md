@@ -1,10 +1,10 @@
-# Bullets of Fury — Codex Edition
+# Bullets of Fury — Active Development Build
 
-This branch is a separate development build of **Bullets of Fury**. It preserves the main branch
-while collecting the gameplay corrections, repaired boss presentation, and cinematic asset packs
-prepared during the Codex production pass.
+This is the current **Bullets of Fury** production build. The active work combines gameplay
+corrections, boss and miniboss redesigns, campaign systems, interface upgrades, authored asset
+integration, and real-browser verification on `main`.
 
-Branch: `codex/codex-edition`
+Branch: `main`
 
 ## Run the game
 
@@ -20,7 +20,21 @@ Then open <http://127.0.0.1:8000/> in a modern desktop browser.
 See [SETUP.md](SETUP.md) for project setup notes and [HOW_TO_PLAY.txt](HOW_TO_PLAY.txt) for controls
 and gameplay instructions.
 
-## Codex Edition gameplay changes
+## Production roadmap
+
+The tracked request ledger currently contains **151 deliverables: 128 complete, 7 partial, and
+16 pending**. Twenty-three items remain unfinished.
+
+- [Production roadmap](ROADMAP.md) — readable overview, current work, and every unfinished item.
+- [Full request checklist](docs/REQUEST_CHECKLIST_0914.md) — all 151 requests with completion
+  state and evidence links.
+- [Easiest-to-hardest work order](docs/WORK_ORDER_0914.md) — the active 23-item execution queue.
+- [Original request ledger](docs/OVERNIGHT_REQUESTS_0914.md) — detailed creative specifications.
+
+The checklist JSON is the canonical editable tracker. Its renderer validates stable IDs, evidence
+files, dependencies, and queue ordering before regenerating the human-readable documents.
+
+## Selected gameplay changes
 
 - Restores the original game sound routing and removes the replacement audio override.
 - Restores the legacy sustained laser for every pilot except Maverick, who retains his distinct
@@ -79,6 +93,6 @@ This edition was checked with the project’s browser and gameplay probes:
 
 ## Repository policy
 
-`codex/codex-edition` is intentionally separate from `main`. Scratch captures, extracted review
-packages, temporary generation inputs, and local QA workspaces are not part of the published build.
-Runtime assets and their manifests remain in `assets/game/`.
+Verified production work is published on `main`. Scratch captures, extracted review packages,
+temporary generation inputs, and local QA workspaces are not part of the published build. Runtime
+assets and their manifests remain in `assets/game/`.
