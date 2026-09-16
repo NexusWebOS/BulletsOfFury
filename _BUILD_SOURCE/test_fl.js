@@ -15686,6 +15686,7 @@ require('./test_stage6_carrier_node_fan_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage6_carrier_prism_crossfire_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage6_carrier_gravity_mine_warning_0916.cjs')(vm,ctxv,ok);
 require('./test_stage6_carrier_last_run_slide_0916.cjs')(vm,ctxv,ok);
+require('./test_stage6_carrier_omega_warning_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

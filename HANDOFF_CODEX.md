@@ -618,3 +618,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - The Carrier's sixth-phase sine traverse now runs before warning, cannon/beam and cooldown returns, so the complete authored hull and its live effects move on every gameplay frame instead of stepping only on attack beats.
 - The original 0.85 motion rate, bounded amplitude and attack cadence remain intact; earlier phases are unchanged. Focused 7/7 and Chromium 12/12 pass with zero errors. The full suite reaches 4,463 passes with the exact established 56-name baseline. Evidence: docs/STAGE6_CARRIER_LAST_RUN_SLIDE_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-6 Doomsday Carrier omega-bomb warning
+
+- ENG-02 advances: both Last Run omega variants now commit the center corridor before a 0.66-second shared green/yellow/red warning. The origin follows the continuously sliding center cannon while the downward angle stays locked.
+- The original base speeds 1.1/1.25, acceleration 1.05, maximum speed 5.2, scale 1.15, muzzle, sound route and 1.45/1.20-second total cadences remain intact. Phase transitions cancel a pending omega warning. Focused 11/11 and Chromium 16/16 pass with zero errors. The full suite reaches 4,473 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture; no new name. Evidence: docs/STAGE6_CARRIER_OMEGA_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.

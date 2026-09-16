@@ -105,3 +105,7 @@ The Carrier's Phase 5 four-barrel prism crossfire now commits all four upper-har
 ## Stage 6 Doomsday Carrier gravity-mine follow-up
 
 The Carrier's Phase 5 paired gravity mines now commit their two crossing paths before a 0.72-second shared warning. Origins follow the left and right mounts while both angles remain fixed. Authored gravity mines, slow acceleration, capped speed, scale, muzzles, sound and total cadence remain intact, and phase transitions cancel a pending warning. Chromium passes 16/16 and focused section 351 passes 11/11. See [STAGE6_CARRIER_GRAVITY_MINE_WARNING_0916.md](STAGE6_CARRIER_GRAVITY_MINE_WARNING_0916.md).
+
+## Stage 6 Doomsday Carrier omega-bomb follow-up
+
+Both Last Run omega-bomb variants now commit their center corridor before a 0.66-second shared warning. The origin follows the moving center cannon while the downward angle remains fixed. Authored omega art, both base speeds, acceleration, speed cap, scale, muzzle, sound and total cadences remain intact, and phase transitions cancel a pending warning. Chromium passes 16/16 and focused section 353 passes 11/11. See [STAGE6_CARRIER_OMEGA_WARNING_0916.md](STAGE6_CARRIER_OMEGA_WARNING_0916.md).
