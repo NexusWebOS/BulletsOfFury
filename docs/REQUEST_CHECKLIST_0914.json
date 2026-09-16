@@ -97,7 +97,7 @@
       "id": "ENG-02",
       "group": "Shared combat, warnings and targeting",
       "status": "partial",
-      "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-5 Chrome Hammer Archmage vertical boomerang, Stage-6 Thunderhead, Stage-7 DUAL SCOOP DREDGER minefield, Stage-8 BLACK COCOON crescent wall, RAVENOUS ASCENDANT five-needle fan, FURIOUS DEATH seven-gunship fan, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.",
+      "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-5 Chrome Hammer Archmage vertical boomerang, Stage-6 Thunderhead, Stage-7 DUAL SCOOP DREDGER minefield, Stage-8 BLACK COCOON crescent wall, RAVENOUS ASCENDANT five-needle fan, ABYSSAL LEVIATHAN nine-lane solar wheel, FURIOUS DEATH seven-gunship fan, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.",
       "evidence": "SHARED_NONLASER_WARNING_0915.md",
       "dependency": "",
       "workOrder": 53,
@@ -1492,7 +1492,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "Stage-8 RAVENOUS ASCENDANT five-needle and FURIOUS DEATH seven-gunship committed aimed-fan warnings",
-    "evidence": "STAGE8_VILE_AIMED_FAN_WARNING_0916.md"
+    "description": "Stage-8 ABYSSAL LEVIATHAN committed nine-lane solar-wheel warning",
+    "evidence": "STAGE8_VILE_SOLAR_WHEEL_WARNING_0916.md"
   }
 }

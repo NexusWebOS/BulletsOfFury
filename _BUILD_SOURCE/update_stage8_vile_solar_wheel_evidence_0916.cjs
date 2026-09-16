@@ -1,0 +1,12 @@
+const fs=require('fs'),path=require('path'),R=path.resolve(__dirname,'..');
+const shot=path.join(R,'_shots','stage8_vile_solar_wheel_warning_0916','results.json');
+const qa=path.join(R,'docs','qa','stage8_vile_solar_wheel_warning_0916.json');
+const result=JSON.parse(fs.readFileSync(shot,'utf8'));
+result.verification={focused:'section 346: 8/8',fullSuite:{passing:4402,failures:57,failureNames:'established 56-name baseline plus intermittent Stage-1 sand-tank fixture'},chromium:'16/16',pixelReview:'four native 960x1024 frames inspected'};
+fs.writeFileSync(qa,JSON.stringify(result,null,2)+'\n','utf8');
+const checklist=path.join(R,'docs','REQUEST_CHECKLIST_0914.json'),data=JSON.parse(fs.readFileSync(checklist,'utf8'));
+const item=data.items.find(x=>x.id==='ENG-02');if(!item)throw new Error('ENG-02 missing');
+item.request='Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-5 Chrome Hammer Archmage vertical boomerang, Stage-6 Thunderhead, Stage-7 DUAL SCOOP DREDGER minefield, Stage-8 BLACK COCOON crescent wall, RAVENOUS ASCENDANT five-needle fan, ABYSSAL LEVIATHAN nine-lane solar wheel, FURIOUS DEATH seven-gunship fan, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.';
+data.updated='2026-09-16';data.latestBatch={description:'Stage-8 ABYSSAL LEVIATHAN committed nine-lane solar-wheel warning',evidence:'STAGE8_VILE_SOLAR_WHEEL_WARNING_0916.md'};
+fs.writeFileSync(checklist,(JSON.stringify(data,null,2)+'\n').replace(/\n/g,'\r\n'),'utf8');
+console.log('UPDATED_STAGE8_VILE_SOLAR_WHEEL_EVIDENCE_0916');

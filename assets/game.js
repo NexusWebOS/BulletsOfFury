@@ -35303,6 +35303,7 @@ function updateBoss(dt){
   if(b._vile&&b._annihilation)vileAnnihilationTick(b,dt);
   if(b._vile&&b._vileWall)vileCrescentWallTick(b,dt);
   if(b._vile&&b._vileFan)vileAimedFanTick(b,dt);
+  if(b._vile&&b._vileSolar)vileSolarWheelTick(b,dt);
   /* MECH BOSSES (drop 0730u) own their own assembly and limb motion. While the mech is still
      building itself the fight is gated: it does not shoot, and it takes no damage, exactly like
      the modular entrance below. */
@@ -53056,12 +53057,38 @@ function vileAimedFanDraw(b,front){
   else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});
   return true;
 }
+function vileSolarWheelPaths(b,V){
+  if(!b||!V)return [];const p=vileHardpoint(b,0,.30);return V.angles.map(a=>({x:p.x,y:p.y,a:a}));
+}
+function vileSolarWheelStart(b){
+  if(!b||b._vileSolar)return false;const base=(b._vRot=(b._vRot||0)+.19),angles=[];for(let k=0;k<9;k++)angles.push(base+k*TAU/9);
+  b._vileSolar={t:0,tell:.62,cooldown:.95,id:'stage8-vile-solar-wheel',angles:angles,released:false,finish:0};
+  b.fireCd=.95;combatWarningTick(b,'stage8-vile-solar-wheel',0,.62,true);
+  if(Audio.SFX&&(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyBossCannon))(Audio.SFX.bossWeaponCharge||Audio.SFX.enemyBossCannon)();
+  return true;
+}
+function vileSolarWheelTick(b,dt){
+  const V=b&&b._vileSolar;if(!V)return false;V.t+=dt;combatWarningTick(b,V.id,Math.min(V.t,V.tell),V.tell);
+  if(!V.released&&V.t>=V.tell){
+    V.released=true;V.finish=V.t+Math.max(.14,V.cooldown-V.tell);const paths=vileSolarWheelPaths(b,V);
+    for(let i=0;i<paths.length;i++){const p=paths[i];vileAnnihilationShot(p.x,p.y,p.a,2.45,'s8nf_solar',{silent:i>0});}
+    vileMuzzle(b,0,.30,'solar_corvette',1.22,.22);if(typeof Audio!=='undefined'&&Audio.SFX&&Audio.SFX.enemyShoot)Audio.SFX.enemyShoot();
+  }
+  if(V.released&&V.t>=V.finish){b._vileSolar=null;return false;}return true;
+}
+function vileSolarWheelDraw(b,front){
+  const V=b&&b._vileSolar;if(!V||V.released)return false;const paths=vileSolarWheelPaths(b,V),k=clamp(V.t/V.tell,0,1);
+  if(!front)for(const p of paths)combatWarningDraw(b,{x:p.x,y:p.y,ex:p.x+Math.cos(p.a)*700,ey:p.y+Math.sin(p.a)*700,progress:k,width:17,fieldOnly:true});
+  else combatWarningDraw(b,{x:b.x,y:b.y,ex:b.x,ey:VH,progress:k,alertOnly:true,alertX:b.x,alertY:54});
+  return true;
+}
 function vileAttack(b){
   const f=b._vForm|0, y=b.y+b.h*0.28;
   const step=(b._vAtk=(b._vAtk|0)+1);
   if(b._annihilation){b.fireCd=.22;return;}
   if(b._vileWall){b.fireCd=.22;return;}
   if(b._vileFan){b.fireCd=.22;return;}
+  if(b._vileSolar){b.fireCd=.22;return;}
   if(f===3&&!b._annihilationUsed){vileAnnihilationStart(b);return;}
   if(f===0){vileCrescentWallStart(b);return;
   } else if(f===1){vileAimedFanStart(b,'needle',step);return;
@@ -53069,11 +53096,7 @@ function vileAttack(b){
     if(!b._brk && (step%3)===0 && typeof beamRakeStart==='function'){
       beamRakeStart(b, 4, (Math.random()<0.5?-1:1)*0.62, 5.0);
       vileMuzzle(b,0,.30,'solar_corvette',1.25,.26);
-    } else {
-      const p=vileHardpoint(b,0,.30),base=(b._vRot=(b._vRot||0)+.19);
-      for(let k=0;k<9;k++)vileAnnihilationShot(p.x,p.y,base+k*TAU/9,2.45,'s8nf_solar',{silent:k>0});
-      vileMuzzle(b,0,.30,'solar_corvette',1.22,.22);
-    }
+    } else {vileSolarWheelStart(b);return;}
     b.fireCd=0.95;
   } else {
     if(!b._brk && (step%4)===0 && typeof beamRakeStart==='function'){
@@ -53135,7 +53158,7 @@ function vileAnnihilationDraw(b,front){
   return true;
 }
 function vileBuildForm(b, idx){
-  const F=VILE_FORMS[idx];b._vileWall=null;b._vileFan=null;
+  const F=VILE_FORMS[idx];b._vileWall=null;b._vileFan=null;b._vileSolar=null;
   /* Equal phase pools are mandatory: one form is precisely 25% of the full
      encounter, while its attack vocabulary—not a larger life bar—escalates. */
   const phaseHp=b._vPhaseHp||Math.ceil(b._vBase/VILE_FORMS.length);
@@ -57146,6 +57169,7 @@ function drawModularBoss(b){
   if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,false);
   if(b._vileWall&&typeof vileCrescentWallDraw==='function')vileCrescentWallDraw(b,false);
   if(b._vileFan&&typeof vileAimedFanDraw==='function')vileAimedFanDraw(b,false);
+  if(b._vileSolar&&typeof vileSolarWheelDraw==='function')vileSolarWheelDraw(b,false);
   if(b._impT!=null && typeof vileImplosionDraw==='function'){ vileImplosionDraw(b); }
   // ANIMATED BASE (VILE EXISTENCE): the form's idle/attack reel replaces the intact layers.
   // Its silhouette is pixel-identical to the composited clean components, so undamaged parts
@@ -57170,7 +57194,7 @@ function drawModularBoss(b){
   /* The new symbiote forms are complete authored silhouettes. Their modular
      parts exist solely as five independently hittable HP regions; attempting
      to paint the former component plates over them causes seams and mutations. */
-  if(b._vile&&_animK&&_animK.indexOf('s8symboss_form_')===0){if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,true);if(b._vileWall&&typeof vileCrescentWallDraw==='function')vileCrescentWallDraw(b,true);if(b._vileFan&&typeof vileAimedFanDraw==='function')vileAimedFanDraw(b,true);return;}
+  if(b._vile&&_animK&&_animK.indexOf('s8symboss_form_')===0){if(b._annihilation&&typeof vileAnnihilationDraw==='function')vileAnnihilationDraw(b,true);if(b._vileWall&&typeof vileCrescentWallDraw==='function')vileCrescentWallDraw(b,true);if(b._vileFan&&typeof vileAimedFanDraw==='function')vileAimedFanDraw(b,true);if(b._vileSolar&&typeof vileSolarWheelDraw==='function')vileSolarWheelDraw(b,true);return;}
   if(b._be && typeof bossEntryPowerDraw==='function' && _animK){
     bossEntryPowerDraw(b, _animK, b.x-b.w/2, b.y-b.h/2, b.w, b.h);
   }

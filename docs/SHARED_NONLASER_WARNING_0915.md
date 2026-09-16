@@ -81,3 +81,7 @@ The opening Vile form now commits its original wide center corridor and previews
 ## Stage 8 Vile aimed-fan follow-up
 
 RAVENOUS ASCENDANT now commits its five needle paths before a 0.62-second shared warning, and FURIOUS DEATH commits its seven gunship paths before a 0.58-second warning. The original projectiles, speeds, alternating hardpoints, muzzles and total cooldowns remain unchanged. The second form's paired homing missiles retain the shared Retina rule and begin their lock only when the warned fan releases. Chromium passes 23/23 and focused section 345 passes 10/10. See [STAGE8_VILE_AIMED_FAN_WARNING_0916.md](STAGE8_VILE_AIMED_FAN_WARNING_0916.md).
+
+## Stage 8 ABYSSAL LEVIATHAN solar-wheel follow-up
+
+The third Vile form now commits all nine original solar-wheel angles before a 0.62-second shared warning. It retains the original 0.19-radian rotation step, equal spoke spacing, center hardpoint, authored solar rounds, speed 2.45, muzzle and 0.95-second total cadence. Chromium passes 16/16 and focused section 346 passes 8/8. See [STAGE8_VILE_SOLAR_WHEEL_WARNING_0916.md](STAGE8_VILE_SOLAR_WHEEL_WARNING_0916.md).

@@ -583,3 +583,8 @@ Chrome Hammer now has its one-hand vertical boomerang, Hard/Furious difficulty a
 
 - ENG-02 advances: RAVENOUS ASCENDANT commits its five needle paths before a 0.62-second shared green/yellow/red warning, and FURIOUS DEATH commits its seven gunship paths before a 0.58-second warning. Late player movement cannot redirect either fan.
 - The original projectiles, speeds, alternating physical hardpoints, muzzles and total cooldowns remain intact. The second form's even-step homing pair keeps the Retina rule and now begins its lock with the warned fan's release. Focused 10/10, Chromium 23/23 with zero errors, and full suite 4,395 passes with the exact established 56 failures. Evidence: docs/STAGE8_VILE_AIMED_FAN_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
+
+## Codex update — 2026-09-16: Stage-8 ABYSSAL LEVIATHAN solar-wheel warning
+
+- ENG-02 advances: the third Vile form now commits its nine original solar-wheel paths before a 0.62-second shared green/yellow/red warning. Late player movement cannot rotate the promised lanes.
+- The 0.19-radian wheel step, equal spacing, authored solar rounds, speed 2.45, center hardpoint, muzzle and 0.95-second total cadence remain intact. Focused 8/8, Chromium 16/16 with zero errors, and full suite 4,402 passes with the established 56 failures plus the intermittent Stage-1 sand-tank fixture. Evidence: docs/STAGE8_VILE_SOLAR_WHEEL_WARNING_0916.md. Tally remains 128 complete / 7 partial / 16 pending.
