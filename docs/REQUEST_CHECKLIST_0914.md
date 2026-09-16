@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: all four Stage-9 Tidal Sovereign cascade rows with committed moving gaps and 0.62-second shared warnings [Proof](STAGE9_TIDAL_CASCADE_WARNING_0916.md).
+Just verified: all four live Stage-6 Thunderhead rows with committed two-column openings and 0.66-second shared warnings [Proof](STAGE6_THUNDERHEAD_WARNING_0916.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -52,7 +52,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 ### Shared combat, warnings and targeting
 
 - [x] **ENG-01 · Complete** — Shared laser-family warning: three-second green/yellow/red FOV charge with overhead alert. [Evidence](qa/shared_laser_warnings_0914.json).
-- [ ] **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review. [Evidence](SHARED_NONLASER_WARNING_0915.md).
+- [ ] **ENG-02 · Partial** — Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-6 Thunderhead, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review. [Evidence](SHARED_NONLASER_WARNING_0915.md).
 - [x] **ENG-03 · Complete** — Shared bounded horizontal glide/follow integrated and verified in Frost Cruiser and Jungle chopper; later Warden choreography remains S4-06. [Evidence](MOVEMENT_BATCH_0914.md).
 - [x] **ENG-04 · Complete** — Player flamethrower: 25% smaller draw and collision footprint, Fire Orb palette, nozzle remains connected. [Evidence](READABLE_ATTACKS_0914.md).
 - [x] **ENG-05 · Complete** — No default enemy dies to a single hit: consistent damage accounting across ordinary enemies, pieces, shields and high-damage weapons. [Evidence](NO_ONE_SHOT_RULE_0915.md).

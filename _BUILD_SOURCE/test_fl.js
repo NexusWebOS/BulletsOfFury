@@ -3963,7 +3963,7 @@ console.log('\n=== 21. combat: twin guns, lock-on reticle, missiles ===');
   ok(vm.runInContext("carrierThunderheadStart.toString().indexOf('lightning LANES')>0", ctxv), 'THUNDERHEAD walks lightning lanes with readable gaps');
   ok(vm.runInContext("sludgeFloodStart.toString().indexOf('ONE moving gap')>0", ctxv), 'FLOOD SURGE is a descending wall with a single moving gap — the gap IS the answer');
   ok(vm.runInContext("vileAnnihilationStart.toString().indexOf('converging cross')>0", ctxv), 'ANNIHILATION converges a cross then bursts radially behind it');
-  vm.runInContext("run.stage=6;curStage=STAGES[5];boss=null;eBullets.length=0;spawnBoss('doomsdaycarriermk2');boss.enter=false;carrierMegaInit(boss);carrierThunderheadStart(boss);for(var z=0;z<150;z++)carrierThunderheadTick(boss,1/60);",ctxv);
+  vm.runInContext("run.stage=6;curStage=STAGES[5];boss=null;eBullets.length=0;spawnBoss('doomsdaycarriermk2');boss.enter=false;carrierMegaInit(boss);carrierThunderheadStart(boss);for(var z=0;z<170;z++)carrierThunderheadTick(boss,1/60);",ctxv);
   ok(vm.runInContext("eBullets.length===48",ctxv),'THUNDERHEAD fires four 8-lane waves while preserving a two-lane door (48 authored rounds)');
   vm.runInContext("run.stage=7;curStage=STAGES[6];boss=null;eBullets.length=0;spawnBoss('sludgeemperor');boss.enter=false;sludgeFloodStart(boss);for(var z=0;z<170;z++)sludgeFloodTick(boss,1/60);",ctxv);
   ok(vm.runInContext("eBullets.length===64",ctxv),'FLOOD SURGE fires four 9-lane double fronts while preserving one moving lane (64 authored rounds)');
@@ -15673,6 +15673,7 @@ require('./test_stage7_warden_shared_burst_warning_0915.cjs')(vm,ctxv,ok);
 require('./test_stage8_vile_shared_annihilation_warning_0915.cjs')(vm,ctxv,ok);
 require('./test_stage9_horizon_shared_volley_warning_0915.cjs')(vm,ctxv,ok);
 require('./test_stage9_tidal_cascade_warning_0915.cjs')(vm,ctxv,ok);
+require('./test_stage6_thunderhead_warning_0916.cjs')(vm,ctxv,ok);
 
 console.log('\n============================================');
 if (errors.length) { console.log('FAILED — ' + errors.length + ' error(s):'); errors.forEach(e => console.log('  ' + e)); process.exit(1); }

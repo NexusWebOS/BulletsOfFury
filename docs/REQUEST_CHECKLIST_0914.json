@@ -97,7 +97,7 @@
       "id": "ENG-02",
       "group": "Shared combat, warnings and targeting",
       "status": "partial",
-      "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.",
+      "request": "Migrate all dangerous non-laser boss/miniboss attacks to the shared warning rule. Covered families now include the Stage-6 Thunderhead, Stage-9 Event Horizon, independent Warp Sentinel radial/aimed volleys, and every row of the Tidal Sovereign cascade; remaining encounter families need review.",
       "evidence": "SHARED_NONLASER_WARNING_0915.md",
       "dependency": "",
       "workOrder": 53,
@@ -1404,7 +1404,7 @@
       "dependency": "Mike: Stage 2 boss identity",
       "workOrder": 0,
       "difficulty": 4,
-      "difficultyBand": "Current boss brief \u2014 awaiting Stage 2 identity"
+      "difficultyBand": "Current boss brief — awaiting Stage 2 identity"
     },
     {
       "id": "S2-11",
@@ -1415,7 +1415,7 @@
       "dependency": "S2-10",
       "workOrder": 1,
       "difficulty": 4,
-      "difficultyBand": "Current boss brief \u2014 awaiting Stage 2 identity"
+      "difficultyBand": "Current boss brief — awaiting Stage 2 identity"
     },
     {
       "id": "S4-17",
@@ -1492,7 +1492,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "all four Stage-9 Tidal Sovereign cascade rows with committed moving gaps and 0.62-second shared warnings",
-    "evidence": "STAGE9_TIDAL_CASCADE_WARNING_0916.md"
+    "description": "all four live Stage-6 Thunderhead rows with committed two-column openings and 0.66-second shared warnings",
+    "evidence": "STAGE6_THUNDERHEAD_WARNING_0916.md"
   }
 }

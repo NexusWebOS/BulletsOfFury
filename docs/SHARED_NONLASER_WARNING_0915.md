@@ -61,3 +61,7 @@ The Stage-7 Toxic Portal Warden now commits its rail aim and safe-side gap when 
 ## Tidal Sovereign cascade follow-up
 
 All four Tidal Cascade rows now commit a two-column opening, preview the other six exact release columns through a 0.62-second shared green/yellow/red warning, then move the opening by one column for the next warned row. Fields render behind the authored hull and the alert remains visible above it. Chromium 19/19 and focused section 340 9/9 pass. See [STAGE9_TIDAL_CASCADE_WARNING_0916.md](STAGE9_TIDAL_CASCADE_WARNING_0916.md).
+
+## Stage 6 Thunderhead follow-up
+
+All four live Doomsday Carrier Mk II Thunderhead rows now commit their two-column opening, preview the other six exact release columns through shared green/yellow/red fields, then move the opening one column for the next warned row. Chromium passes 19/19 and focused section 341 passes 12/12. See [STAGE6_THUNDERHEAD_WARNING_0916.md](STAGE6_THUNDERHEAD_WARNING_0916.md).

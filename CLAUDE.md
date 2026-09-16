@@ -4312,3 +4312,6 @@ Life Up now uses `life_up_wings.png`, a cache-safe transparent edit with symmetr
 
 ## 2026-09-16 Stage-9 Tidal Cascade shared row warnings
 ENG-02 advances: every Tidal Sovereign cascade row commits its two-column opening, previews the other six exact release columns through a 0.62-second shared green/yellow/red warning, and moves the opening one column only after release. Fields render behind the authored hull and the alert remains visible above it. Focused 9/9, Chromium 19/19 zero errors, full suite exact 57-name baseline after rebasing the incoming GitHub batches. Tally remains 128 complete / 7 partial / 16 pending. See docs/STAGE9_TIDAL_CASCADE_WARNING_0916.md.
+
+## 2026-09-16 Stage-6 Thunderhead shared row warnings
+ENG-02 advances: every live Thunderhead row on the Doomsday Carrier Mk II now uses a committed 0.66-second shared green/yellow/red warning over its exact six dangerous columns and two-column opening. Focused 12/12, Chromium 19/19 with zero errors, and post-rebase full suite 4,359 passes with the established 56-name baseline; incoming `02f38a6b` removed the intermittent Stage-1 sand-tank failure and Thunderhead added no new names. ENG-02 remains partial. See docs/STAGE6_THUNDERHEAD_WARNING_0916.md.

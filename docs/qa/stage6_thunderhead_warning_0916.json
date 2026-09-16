@@ -1,0 +1,505 @@
+{
+  "checks": [
+    {
+      "pass": true,
+      "label": "native Stage-6 boss route opens in Chromium"
+    },
+    {
+      "pass": true,
+      "label": "live Doomsday Carrier commits a 0.66-second first Thunderhead row"
+    },
+    {
+      "pass": true,
+      "label": "authored Carrier and green/yellow/red warning art decode before capture"
+    },
+    {
+      "pass": true,
+      "label": "green previews six lanes and preserves the two-column opening"
+    },
+    {
+      "pass": true,
+      "label": "green uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "yellow does not chase late player movement"
+    },
+    {
+      "pass": true,
+      "label": "yellow uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "red preserves the committed opening until release"
+    },
+    {
+      "pass": true,
+      "label": "red uses shared field and alert art"
+    },
+    {
+      "pass": true,
+      "label": "exactly the twelve rounds from six previewed columns release after the full warning"
+    },
+    {
+      "pass": true,
+      "label": "first shared warning records release and arms row two"
+    },
+    {
+      "pass": true,
+      "label": "next row visibly moves the promised opening by one column"
+    },
+    {
+      "pass": true,
+      "label": "the next row restarts the shared warning at green"
+    },
+    {
+      "pass": true,
+      "label": "thunderhead_01_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "thunderhead_02_yellow is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "thunderhead_03_red is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "thunderhead_04_release is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "thunderhead_05_next_row_green is a non-empty native gameplay frame"
+    },
+    {
+      "pass": true,
+      "label": "zero Chromium page, console or game-loop errors"
+    }
+  ],
+  "errors": [],
+  "fight": {
+    "ok": true,
+    "name": "DOOMSDAY CARRIER MK II",
+    "kind": "doomsdaycarriermk2",
+    "pilot": "yuri",
+    "state": "play"
+  },
+  "setup": {
+    "name": "DOOMSDAY CARRIER MK II",
+    "hull": "nsb_dcarrmk2_closed",
+    "gap": 3,
+    "rowTell": 0.66,
+    "next": 0.66,
+    "cols": 8,
+    "world": 680,
+    "camera": 100,
+    "center": 340
+  },
+  "green": {
+    "wave": 0,
+    "gap": 3,
+    "warnAt": 0,
+    "next": 0.66,
+    "rowTell": 0.66,
+    "shots": [],
+    "warnings": {
+      "stage6-thunderhead-0": {
+        "t": 0.1,
+        "warm": 0.66,
+        "released": false
+      }
+    },
+    "gets": [
+      "stage6_blue_master",
+      "nl6c_low_rolling_bank_0",
+      "nl6c_low_rolling_bank_2",
+      "nl6c_low_rolling_bank_1",
+      "nl6c_rain_cloud_0",
+      "nl6c_rain_cloud_1",
+      "nl6c_low_rolling_bank_5",
+      "nl6c_low_rolling_bank_4",
+      "bmfx_fov_green_tall",
+      "s6mb_stormlink_0",
+      "nsb_dcarrmk2_closed",
+      "s6mb_stormnode_0",
+      "bmfx_alert_green_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_fill_seg",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "yellow": {
+    "wave": 0,
+    "gap": 3,
+    "warnAt": 0,
+    "next": 0.66,
+    "rowTell": 0.66,
+    "shots": [],
+    "warnings": {
+      "stage6-thunderhead-0": {
+        "t": 0.34,
+        "warm": 0.66,
+        "released": false
+      }
+    },
+    "gets": [
+      "stage6_blue_master",
+      "nst6_neoncity",
+      "nl6c_low_rolling_bank_0",
+      "nl6c_low_rolling_bank_2",
+      "nl6c_low_rolling_bank_1",
+      "nl6c_rain_cloud_0",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_2",
+      "nl6c_low_rolling_bank_5",
+      "nl6c_low_rolling_bank_4",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_1",
+      "bmfx_fov_yellow_tall",
+      "s6mb_stormlink_0",
+      "nsb_dcarrmk2_closed",
+      "s6mb_stormnode_0",
+      "bmfx_alert_yellow_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "red": {
+    "wave": 0,
+    "gap": 3,
+    "warnAt": 0,
+    "next": 0.66,
+    "rowTell": 0.66,
+    "shots": [],
+    "warnings": {
+      "stage6-thunderhead-0": {
+        "t": 0.59,
+        "warm": 0.66,
+        "released": false
+      }
+    },
+    "gets": [
+      "stage6_blue_master",
+      "nst6_neoncity",
+      "nl6c_low_rolling_bank_0",
+      "nl6c_low_rolling_bank_2",
+      "nl6c_low_rolling_bank_1",
+      "nl6c_rain_cloud_0",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_2",
+      "nl6c_low_rolling_bank_5",
+      "nl6c_low_rolling_bank_4",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_1",
+      "bmfx_fov_red_tall",
+      "s6mb_stormlink_0",
+      "nsb_dcarrmk2_closed",
+      "s6mb_stormnode_0",
+      "bmfx_alert_red_danger",
+      "fx_ground_strikes_0916",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "release": {
+    "wave": 1,
+    "gap": 4,
+    "warnAt": 0.67,
+    "next": 1.33,
+    "rowTell": 0.66,
+    "shots": [
+      {
+        "kind": "s6prism",
+        "x": 42.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 42.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 127.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 127.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 212.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 212.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 467.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 467.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 552.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 552.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 637.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 637.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      }
+    ],
+    "warnings": {
+      "stage6-thunderhead-0": {
+        "t": 0.66,
+        "warm": 0.66,
+        "released": true
+      },
+      "stage6-thunderhead-1": {
+        "t": 0,
+        "warm": 0.66,
+        "released": false
+      }
+    },
+    "gets": [
+      "stage6_blue_master",
+      "nst6_neoncity",
+      "nl6c_low_rolling_bank_0",
+      "nl6c_low_rolling_bank_2",
+      "nl6c_low_rolling_bank_1",
+      "nl6c_rain_cloud_0",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_2",
+      "nl6c_low_rolling_bank_5",
+      "nl6c_low_rolling_bank_4",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_1",
+      "s6mb_prismmuzzle_0",
+      "bmfx_fov_green_tall",
+      "s6mb_stormlink_0",
+      "nsb_dcarrmk2_closed",
+      "s6mb_stormnode_0",
+      "bmfx_alert_green_danger",
+      "fx_ground_strikes_0916",
+      "s6mb_prismbolt_0",
+      "s6mb_cyclonetracer_0",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "next": {
+    "wave": 1,
+    "gap": 4,
+    "warnAt": 0.67,
+    "next": 1.33,
+    "rowTell": 0.66,
+    "shots": [
+      {
+        "kind": "s6prism",
+        "x": 42.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 42.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 127.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 127.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 212.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 212.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 467.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 467.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 552.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 552.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      },
+      {
+        "kind": "s6prism",
+        "x": 637.5,
+        "y": 18,
+        "vx": 3.495152479583963e-16,
+        "vy": 5.708017172
+      },
+      {
+        "kind": "s6cyclone",
+        "x": 637.5,
+        "y": -20,
+        "vx": 3.285443330808926e-16,
+        "vy": 5.365536141679999
+      }
+    ],
+    "warnings": {
+      "stage6-thunderhead-0": {
+        "t": 0.66,
+        "warm": 0.66,
+        "released": true
+      },
+      "stage6-thunderhead-1": {
+        "t": 0.10999999999999999,
+        "warm": 0.66,
+        "released": false
+      }
+    },
+    "gets": [
+      "stage6_blue_master",
+      "nst6_neoncity",
+      "nl6c_low_rolling_bank_0",
+      "nl6c_low_rolling_bank_2",
+      "nl6c_low_rolling_bank_1",
+      "nl6c_rain_cloud_0",
+      "nl6c_rain_cloud_1",
+      "nl6c_rain_cloud_2",
+      "nl6c_low_rolling_bank_5",
+      "nl6c_low_rolling_bank_4",
+      "nl6c_heavy_rain_cloud_0",
+      "nl6c_heavy_rain_cloud_4",
+      "nl6c_heavy_rain_cloud_5",
+      "nl6c_heavy_rain_cloud_2",
+      "nl6c_heavy_rain_cloud_3",
+      "nl6c_heavy_rain_cloud_1",
+      "s6mb_prismmuzzle_0",
+      "bmfx_fov_green_tall",
+      "s6mb_stormlink_0",
+      "nsb_dcarrmk2_closed",
+      "s6mb_stormnode_0",
+      "bmfx_alert_green_danger",
+      "fx_ground_strikes_0916",
+      "s6mb_prismbolt_0",
+      "s6mb_cyclonetracer_0",
+      "alert_up",
+      "nequipbox",
+      "bof_player_weapon_special_icons_atlas",
+      "bmbar_frame_boss",
+      "bmbar_tab_boss"
+    ]
+  },
+  "shots": [
+    "_shots\\stage6_thunderhead_warning_0916\\thunderhead_01_green.png",
+    "_shots\\stage6_thunderhead_warning_0916\\thunderhead_02_yellow.png",
+    "_shots\\stage6_thunderhead_warning_0916\\thunderhead_03_red.png",
+    "_shots\\stage6_thunderhead_warning_0916\\thunderhead_04_release.png",
+    "_shots\\stage6_thunderhead_warning_0916\\thunderhead_05_next_row_green.png"
+  ]
+}

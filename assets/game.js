@@ -21471,14 +21471,17 @@ function carrierThunderheadStart(b){
   /* lightning LANES retain two readable gaps through all four warned waves. */
   const M=b&&b._mega;if(!M||M.thunderhead)return false;
   const cols=8,start=clamp(Math.round(player.x/(worldWidth()/cols))-1,0,cols-2);
-  M.thunderhead={t:0,tell:.66,wave:0,waves:4,next:.66,gap:start,cols:cols};
+  const rowTell=.66;M.thunderhead={t:0,rowTell:rowTell,wave:0,waves:4,next:rowTell,warnAt:0,gap:start,cols:cols,finishAt:0};
   M.cd=2.1;b.fireCd=Math.max(b.fireCd||0,2.1);b.flash=Math.max(b.flash||0,.42);
+  combatWarningTick(b,'stage6-thunderhead-0',0,rowTell,true);
   if(typeof floatText==='function')floatText(b.x,(b._drawY!=null?b._drawY:b.y)+b.h*.38,'THUNDERHEAD!','#bdf5ff');
   if(Audio.SFX&&(Audio.SFX.bossPhase||Audio.SFX.crackle))(Audio.SFX.bossPhase||Audio.SFX.crackle)();
   return true;
 }
 function carrierThunderheadTick(b,dt){
   const M=b&&b._mega,T=M&&M.thunderhead;if(!T)return false;T.t+=dt;
+  if(T.wave<T.waves){const elapsed=Math.max(0,T.t-T.warnAt);
+    combatWarningTick(b,'stage6-thunderhead-'+T.wave,Math.min(elapsed,T.rowTell),T.rowTell);}
   if(T.t>=T.next&&T.wave<T.waves){
     const W=worldWidth(),cw=W/T.cols,top=(typeof viewTopY==='function'?viewTopY():0)+18;
     for(let i=0;i<T.cols;i++){
@@ -21492,22 +21495,22 @@ function carrierThunderheadTick(b,dt){
         navalFlash(null,{x:(i+.5)*cw,y:top},.58,'s6mb_prismmuzzle',{n:8,hpx:42,life:.12});
     }
     shake=Math.max(shake,5+T.wave);if(Audio.SFX&&Audio.SFX.crackle)Audio.SFX.crackle();
-    T.wave++;T.gap=clamp(T.gap+(T.wave&1?1:-1),0,T.cols-2);T.next+=.34;
+    T.wave++;
+    if(T.wave<T.waves){
+      T.gap=clamp(T.gap+(T.wave&1?1:-1),0,T.cols-2);T.warnAt=T.t;T.next=T.t+T.rowTell;
+      combatWarningTick(b,'stage6-thunderhead-'+T.wave,0,T.rowTell,true);
+    }else T.finishAt=T.t+.48;
   }
-  if(T.wave>=T.waves&&T.t>T.next+.48){M.thunderhead=null;M.cd=.72;return false;}
+  if(T.wave>=T.waves&&T.t>T.finishAt){M.thunderhead=null;M.cd=.72;return false;}
   return true;
 }
-function carrierThunderheadDraw(b){
-  const M=b&&b._mega,T=M&&M.thunderhead;if(!T||T.t>=T.tell)return;
-  const W=worldWidth(),cw=W/T.cols,pulse=.28+.20*Math.sin(T.t*22);
-  ctx.save();ctx.globalCompositeOperation='lighter';
-  for(let i=0;i<T.cols;i++){
-    if(i===T.gap||i===T.gap+1)continue;
-    ctx.globalAlpha=pulse;ctx.fillStyle='#67dcff';ctx.fillRect(i*cw+cw*.38,PLAY.y,cw*.24,VH-PLAY.y);
-    ctx.globalAlpha=.85;ctx.fillStyle='#eaffff';ctx.fillRect(i*cw+cw*.49,PLAY.y,cw*.035,VH-PLAY.y);
-  }
-  ctx.globalAlpha=.82;ctx.strokeStyle='#9bffdb';ctx.lineWidth=2;
-  ctx.strokeRect(T.gap*cw+3,PLAY.y+3,cw*2-6,VH-PLAY.y-6);ctx.restore();
+function carrierThunderheadDraw(b,front){
+  const M=b&&b._mega,T=M&&M.thunderhead;if(!T||T.wave>=T.waves||T.t>=T.next)return false;
+  const W=worldWidth(),cw=W/T.cols,k=clamp((T.t-T.warnAt)/T.rowTell,0,1),top=(typeof viewTopY==='function'?viewTopY():0)+18;
+  if(!front){for(let i=0;i<T.cols;i++)if(i!==T.gap&&i!==T.gap+1){const x=(i+.5)*cw;
+    combatWarningDraw(b,{x:x,y:top,ex:x,ey:VH+40,progress:k,width:Math.max(24,cw*.52),fieldOnly:true});}}
+  else{const p=shipBossMount(b,'C');combatWarningDraw(b,{x:p.x,y:p.y,ex:p.x,ey:VH+40,progress:k,alertOnly:true,alertX:b.x,alertY:48});}
+  return true;
 }
 /* ============================================================
    THE CARRIER'S ELEVEN NAMED HARDPOINTS (drop 0904ae)
@@ -21684,7 +21687,7 @@ function carrierMegaTick(b,dt){
 }
 function carrierMegaDrawUnder(b){
   const M=b&&b._mega;if(!M||M.phase<1||typeof XART==='undefined')return;
-  carrierThunderheadDraw(b);
+  carrierThunderheadDraw(b,false);
   const cy=(b._drawY!=null?b._drawY:b.y),fi=Math.floor(M.t*12)%6,key='s6mb_stormlink_'+fi;if(!XART.rdy(key))return;
   const im=XART.get(key);ctx.save();ctx.globalCompositeOperation='lighter';ctx.globalAlpha=.78;
   for(const n of M.nodes){if(n.dead)continue;const p=carrierMegaNodePos(b,n),dx=b.x-p.x,dy=cy-p.y,len=Math.hypot(dx,dy),a=Math.atan2(dy,dx);
@@ -21697,6 +21700,7 @@ function carrierMegaDrawOver(b){
     if(XART.rdy(key)){ctx.save();ctx.globalCompositeOperation='lighter';ctx.drawImage(XART.get(key),p.x-34,p.y-34,68,68);ctx.restore();}
     const r=clamp(n.hp/n.maxhp,0,1);ctx.fillStyle='#06111c';ctx.fillRect(p.x-21,p.y+26,42,4);ctx.fillStyle='#54e8ff';ctx.fillRect(p.x-20,p.y+27,40*r,2);
   }
+  carrierThunderheadDraw(b,true);
 }
 function carrierBayBox(b, side){
   const f=CARRIER_BAY[side]; if(!f) return null;
