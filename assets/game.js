@@ -4553,7 +4553,7 @@ function controlHintShellTick(){
   if(controlHintShellTick.done)return;
   const box=document.getElementById('hint');
   if(!box||typeof box.replaceChildren!=='function')return;
-  const items=[['pad_dpad','MOVE'],['pad_a','FIRE / SELECT'],['pad_b','MISSILE / BACK'],['pad_y','RETINA'],['pad_x','CHARGE'],['pad_start','PAUSE / MENU']];
+  const items=[['pad_dpad','MOVE'],['pad_a','FIRE / SELECT'],['pad_b','MISSILE / BACK'],['pad_c','RETINA'],['pad_x','CHARGE'],['pad_start','PAUSE / MENU']];
   if(items.some(([key])=>!XART.rdy(key)))return;
   box.replaceChildren();
   for(const [key,label] of items){
@@ -61443,11 +61443,13 @@ function drawCredits(dt){
     });
   }
   // panel behind the credit rows so the text sits on a plate rather than raw space
+  let _crPanel=null;
   if(XART.rdy('cfui_panel')){
     const im=XART.get('cfui_panel'), pw=VW-56, ph=pw*(im.naturalHeight/im.naturalWidth)*1.35;
     ctx.save(); ctx.globalAlpha=0.92;
     ctx.drawImage(im, 28, 176, pw, ph);
     ctx.restore();
+    _crPanel={x:28,y:176,w:pw,h:ph};
   }
   ctx.textAlign='center'; ctx.textBaseline='alphabetic';
   // stage-1 bitmap font for the section headers + the CREDITS title
@@ -61460,22 +61462,39 @@ function drawCredits(dt){
     ['name', 'MICHAEL "FORGE MASTER" COLE'],
     ['gap',''],
     ['label','ART'],
-    ['name', 'GPT IMAGES & NANO BANANA PRO'],
+    ['name', 'GPT IMAGES, NANO BANANA PRO & SPRITECOOK'],
     ['gap',''],
     ['name', 'COLEFORGE PHOENIX ENGINE'],
     ['gap',''],
     ['label','WRITTEN, CODED AND DESIGNED BY'],
     ['name', 'MICHAEL "FORGE MASTER" COLE']
   ];
-  let y=194;
+  /* ⚠ THE BLOCK IS CENTRED IN THE PANEL, NOT STARTED UNDER IT (Mike, 0916: "center my text inside
+     that box"). y began at a hard 194 while the plate is 176 tall-ish and grows with the art's own
+     aspect, so the first two rows sat ON the frame's top rail and everything else floated high
+     inside it. The rows are measured first, then the block is placed against the plate's middle -
+     and the widest label is shrunk to the plate's inner width instead of running off both sides. */
+  const _rowH=function(k){ return k==='gap'?14:(k==='label'?28:26); };
+  let _total=0; lines.forEach(function(r){ _total+=_rowH(r[0]); });
+  const _inW=(_crPanel?_crPanel.w:VW-56)-76;   // the plate's rails eat ~30px a side
+  let y=_crPanel ? Math.round(_crPanel.y+(_crPanel.h-_total)/2+10) : 194;
   lines.forEach(function(row){ const kind=row[0], txt=row[1];
     if(kind==='gap'){ y+=14; return; }
     ctx.textAlign='center';
     if(kind==='label'){
-      if(s1 && typeof stageText==='function'){ stageText(s1,txt,VW/2,y+2,13,null,null,1,0.07); y+=28; }
+      if(s1 && typeof stageText==='function'){
+        const H=(typeof stageFitH==='function')?stageFitH(s1,txt,_inW,13,8,0.07):13;
+        stageText(s1,txt,VW/2,y+2,H,null,null,1,0.07); y+=28;
+      }
       else { ctx.fillStyle='#aab4c2'; ctx.font='11px "BOFmil", monospace'; ctx.fillText(txt, VW/2, y); y+=24; }
     }
-    else { ctx.save(); ctx.shadowColor='rgba(120,180,255,0.5)'; ctx.shadowBlur=6; ctx.fillStyle='#eaf2ff'; ctx.font='bold 14px "BOFmil", monospace'; ctx.fillText(txt, VW/2, y); ctx.restore(); y+=26; }
+    else {
+      ctx.save(); ctx.shadowColor='rgba(120,180,255,0.5)'; ctx.shadowBlur=6; ctx.fillStyle='#eaf2ff';
+      /* the long ART credit is the widest name row; shrink to the plate rather than overrun it */
+      let fs=14; ctx.font='bold '+fs+'px "BOFmil", monospace';
+      while(fs>9 && ctx.measureText(txt).width>_inW){ fs--; ctx.font='bold '+fs+'px "BOFmil", monospace'; }
+      ctx.fillText(txt, VW/2, y); ctx.restore(); y+=26;
+    }
   });
   ctx.textAlign='center'; ctx.fillStyle='#cfd6e0'; ctx.font='9px "BOFmil", monospace'; controlHintRow([['pad_b','BACK']]);
   /* MOUSE (drop 0812b). Credits is a single "any key returns" screen, so the whole panel is the
@@ -68814,6 +68833,23 @@ function drawExited(){
    MAIN LOOP
    ============================================================ */
 let last=performance.now();
+/* the on-screen report for a swallowed draw error - see the catch in loop() */
+function drawFrameError(st, err){
+  if(typeof ctx==='undefined' || !ctx) return;
+  const msg=String((err&&err.message)||err||'?').slice(0,120);
+  const where=String((err&&err.stack)||'').split(String.fromCharCode(10))[1]||'';
+  const line=where.replace(/^\s*at\s*/,'').replace(/^.*game\.js/,'game.js').slice(0,60);
+  ctx.save();
+  ctx.setTransform(1,0,0,1,0,0);
+  const w=cv.width, h=cv.height, bh=Math.max(34, Math.round(h*0.055));
+  ctx.fillStyle='rgba(120,0,0,0.88)'; ctx.fillRect(0,0,w,bh);
+  ctx.fillStyle='#ffe0e0'; ctx.textAlign='left'; ctx.textBaseline='middle';
+  ctx.font='bold '+Math.round(bh*0.30)+'px monospace';
+  ctx.fillText('DRAW ERROR in '+st+' — '+msg, 10, bh*0.34);
+  ctx.font=Math.round(bh*0.26)+'px monospace';
+  ctx.fillText(line+'   (send this screen to Claude)', 10, bh*0.72);
+  ctx.restore();
+}
 function loop(now){
   if(Input.pollGamepad) Input.pollGamepad();
   const rawDt=(now-last)/1000;let dt=rawDt; last=now;
@@ -68875,6 +68911,13 @@ function loop(now){
     else { drawScene(dt); drawEncounterClocks(); menuControlFooter(); controlHintShellTick(); }
   }catch(_frameErr){
     if((typeof DBG!=='undefined' && DBG.verbose) || !loop._reported){ loop._reported=true; try{ console.error('draw error in state', state, _frameErr); }catch(e){} }
+    /* ⚠⚠ AND SAY SO ON THE SCREEN (0916). This catch is why a broken draw looks like a finished
+       screen that ignores you: the half that ran is still on the canvas, the half that threw is
+       simply absent, and the only record is a console line nobody playing the game is looking at.
+       Two days of "I cannot get past the pilot screen" were spent guessing at a picture that could
+       have named its own fault. It is deliberately ugly and deliberately unconditional: a player
+       who sees this knows to send it, and it cannot hide behind a debug flag that is off. */
+    try{ drawFrameError(state, _frameErr); }catch(_errErr){}
   }
   try{ debugRecOverlay(); }catch(_recErr){}   // the REC clock, painted into the recording on purpose (0910a)
   /* SELECTION FLASH — painted in the FRAME LOOP, over whatever the scene drew.
