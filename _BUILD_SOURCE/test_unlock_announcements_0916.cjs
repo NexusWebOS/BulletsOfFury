@@ -43,4 +43,17 @@ module.exports=function testUnlockAnnouncements(vm,ctxv,ok){
   const us=vm.runInContext('unlocksStart.toString()',ctxv);
   ok(/micon_lasermist/.test(us)&&/laserMistWarm/.test(us),
      'and unlocksStart warms that atlas, because touching the icon key starts nothing');
+
+  /* ---- the layout (Mike, 0916): "4 large boxes for th weapon icons, 4 rectangle boxes next to
+     the large boxes". The page lays out its OWN rows - the debrief's stat bays are thin strips and
+     a box the height of one reads as an icon with a border, which is what the first cut shipped. */
+  ok(vm.runInContext('typeof UNLOCK_ROWS==="object"&&UNLOCK_ROWS.h>0.30',ctxv),
+     'the rows own a tall region of the plate, not a 0.0526 stat bay (h=' +
+     vm.runInContext('UNLOCK_ROWS.h',ctxv) + ')');
+  const du=vm.runInContext('drawUnlocks.toString()',ctxv).replace(/\/\*[\s\S]*?\*\//g,'').replace(/\/\/.*/g,'');
+  ok(/UNLOCK_ROWS/.test(du), 'the draw reads that region');
+  ok(/i<UNLOCK_MAX/.test(du), 'and draws all four sockets, filled or not');
+  ok(/box\s*=\s*rh/.test(du.replace(/\s+/g,' ')) || /box=rh/.test(du.replace(/\s+/g,'')),
+     'the icon box is SQUARE at the row height - a large box, not a bay-tall one');
+  ok(!/slots\[i\*2\]/.test(du), 'it no longer borrows the thin stat bays');
 };

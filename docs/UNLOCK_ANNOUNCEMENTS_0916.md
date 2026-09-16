@@ -82,22 +82,40 @@ clipped by the panel edge. It is the same on every stage that has a page (2, 4, 
 predates this drop, and it is the debrief plate's own layout, so it is Mike's call: either the
 sentence gets shorter or `stageWrapCen` gets the row count `stageWrapCount` can already give it.
 
-## 5. The layout (Mike, later the same day)
+## 5. The layout (Mike, later the same day, twice)
 
 > "we dont need to have multiple listed weapon unlocks like that, at most we might unlock 3 at once
-> like Freezer. you can list 4 at once, but use square boxes plus rectangle text next to them. the
-> icons go in the boxes, text for the attack next to the box. I love this design."
+> like Freezer. you can list 4 at once, but use square boxes plus rectangle text next to them."
 
-`UNLOCK_MAX = 4` is the cap AND the layout, one number: `unlockRowsFor` slices to it and the page
-lays out that many rows. The rows use the **left column only** (`stats` slots 0, 2, 4, 6) - the
-right column stays empty, because a name that wrapped into it would read as a fifth unlock.
+then, on the first cut:
 
-Each row is a **square box with the name beside it**, which is the shape of the RANK bay and its
-word strip - the place he asked for it first. The box is drawn in the PLATE'S OWN socket colours
-rather than invented ones: measured off `stat_panel_full.png` at both a stat bay and the rank bay,
-a bronze rail at **rgb(112,88,72)** around a **rgb(22,22,32)** well, identical on the two. The icon
-sits in the box at 74% of its height; the name starts one gap past its right edge and is fitted to
-what is left.
+> "should be 4 large boxes for th weapon icons, 4 rectangle boxes next to the large boxes. re-do"
 
-Proof: `docs/proofs/unlocks_0916/03_four_rows.png` - the four-row case, which is the one that had to
-be looked at, driven through the page's own entry point with real icon keys.
+⚠ **THE FIRST CUT BORROWED THE DEBRIEF'S STAT BAYS, AND A STAT BAY IS A THIN STRIP.** At 0.0526 of
+the plate, a square the height of one is the height of a text row - so the "box" read as an icon
+with a border rather than as a box, which is exactly what he sent back. **Four LARGE boxes need
+vertical room the eight thin bays do not have.**
+
+So the page lays out its OWN rows now. `UNLOCK_ROWS` takes the whole middle of the plate - the stat
+block plus the score/rank strip under it, none of which this page has another use for - and divides
+it into **four rows**: a **square icon box** at the row's height, and a **rectangle** beside it
+holding the name. `UNLOCK_MAX = 4` is the cap and the row count, one number. All four sockets draw
+whether or not there is a weapon in them, because four is the layout.
+
+⚠ **THE PANELS MUST BE OPAQUE, AND THE EMPTY ONES TOO.** The plate's thin bays are BAKED under
+these rows. Drawing an unused socket at 0.55 alpha let two columns of old rails show straight
+through every empty box - worse than either layout on its own. The well is solid and only the RAIL
+dims, so an unused slot reads as an unlit socket. The gaps are small for the same reason: at the
+first spacing there were bronze nubs of the old bays between every row.
+
+Both panels are drawn in the PLATE'S OWN socket colours rather than invented ones - measured off
+`stat_panel_full.png` at a stat bay AND at the rank bay, identical on the two: a bronze rail at
+**rgb(112,88,72)** around a **rgb(22,22,32)** well, with the plate's own lighter bevel line inside
+the rail, which is what stops a drawn panel reading as a hole punched in the art.
+
+The rows cover the score bay, so **LOOK FOR THEM IN THE FIELD moved to the sign-off strip and the
+CONTINUE prompt to the footer** - 0814b's lesson that two strings at one y read as garbage, not as
+two lines.
+
+Proofs: `docs/proofs/unlocks_0916/03_four_rows.png` (four rows, the case that had to be looked at)
+and `02_stage9_lasermist.png` (one weapon in four sockets).

@@ -68969,6 +68969,20 @@ const SC_UNLOCKS = {
    listed weapon unlocks like that, at most we might unlock 3 at once like Freezer. you can list 4
    at once". The page lays out FOUR rows in one column, so the cap and the layout are one number. */
 const UNLOCK_MAX=4;
+/* ⚠ THE PAGE LAYS OUT ITS OWN FOUR ROWS - IT DOES NOT BORROW THE DEBRIEF'S STAT BAYS (Mike, 0916:
+   "should be 4 large boxes for th weapon icons, 4 rectangle boxes next to the large boxes").
+   The first cut drew a square inside each stat bay, and a stat bay is a THIN strip - 0.0526 of the
+   plate - so the box came out the height of a text row and read as an icon with a border, not as a
+   box. Four LARGE boxes need vertical room the eight thin bays do not have, so the rows take the
+   whole middle of the plate (the stat block plus the score/rank strip under it, all of which this
+   page has no other use for) and the panels are drawn OPAQUE, which covers the baked bays beneath
+   them rather than leaving them showing through.
+   x/y/w/h as fractions of the plate, the same convention SC_SLOTS_FULL uses. */
+/* ⚠ THE GAPS ARE SMALL ON PURPOSE. The plate's own thin stat bays are BAKED under these rows,
+   so anything the drawn panels do not cover shows through as fragments of the old layout - at
+   gap 0.13 there were bronze nubs between every row and a sliver of bay between each box and its
+   rectangle. Rendered, not reasoned about. */
+const UNLOCK_ROWS={ x:0.0818, y:0.3609, w:0.8364, h:0.3948, gap:0.055 };
 function unlockRowsFor(stage, pk){
   const T=SC_UNLOCKS[stage|0]; if(!T) return [];
   const rows=(pk && T[pk]) ? T[pk] : (T.all||[]);
@@ -69021,38 +69035,53 @@ function drawUnlocks(dt){
     const mH=Math.max(9,Math.min(b[3]*0.26, (typeof stageFitH==='function')?stageFitH(art,msg,b[2]*0.90*2.2,b[3]*0.26,9,0.05):12));
     if(typeof stageWrapCen==='function') stageWrapCen(art,msg,b[0]+b[2]/2,b[1]+b[3]*0.36,mH,b[2]*0.90,1.35,A(0.25),0.05,'#ffd24a',0.6);
     /* the unlocks themselves, one per slot, typed in */
-    /* ⚠ A SQUARE BOX WITH THE NAME BESIDE IT, FOUR ROWS, ONE COLUMN (Mike, 0916): "use square
-       boxes plus rectangle text next to them. the icons go in the boxes, text for the attack next
-       to the box." That is the shape of the RANK bay and its word strip, which is where he asked
-       for it first, so the box is drawn in the PLATE'S OWN socket colours rather than invented -
-       measured off stat_panel_full.png at both a stat bay and the rank bay: a bronze rail at
-       rgb(112,88,72) around a rgb(22,22,32) well, identical on the two.
-       The LEFT column only (slots 0,2,4,6). The right column stays empty because four is the most
-       that can ever be announced, and a name that wrapped into the next column would read as a
-       fifth unlock. */
-    const slots=S.stats;
-    for(let i=0;i<U.rows.length && i<UNLOCK_MAX;i++){
-      const r=U.rows[i], sb=bay(slots[i*2]||slots[i]), a=A(0.55+i*0.45);
-      if(a<=0) break;
-      const bh=sb[3], bw=bh, bx=sb[0], by=sb[1];     // SQUARE: the bay's own height, so it seats in the row
+    /* ⚠ FOUR LARGE ICON BOXES, EACH WITH ITS OWN RECTANGLE BESIDE IT (Mike, 0916): "should be 4
+       large boxes for th weapon icons, 4 rectangle boxes next to the large boxes."
+       Both panels are drawn in the PLATE'S OWN socket colours rather than invented ones - measured
+       off stat_panel_full.png at a stat bay AND at the rank bay, identical on the two: a bronze
+       rail at rgb(112,88,72) around a rgb(22,22,32) well, with the plate's own lighter top bevel
+       above the rail. All FOUR sockets draw whether or not there is a weapon in them, because four
+       is the layout, and an announcement of one weapon into one lit box of four reads better than
+       one box floating in the middle of a plate. */
+    const R0=UNLOCK_ROWS, RX=P[0]+P[2]*R0.x, RY=P[1]+P[3]*R0.y, RW=P[2]*R0.w, RH=P[3]*R0.h;
+    const pitch=RH/UNLOCK_MAX, rh=pitch*(1-R0.gap), box=rh, gapx=RW*0.010;
+    for(let i=0;i<UNLOCK_MAX;i++){
+      const r=U.rows[i]||null, ry=RY+pitch*i, a=r?A(0.55+i*0.45):A(0.30);
+      if(a<=0) continue;
+      const rx2=RX+box+gapx, rw2=RW-box-gapx;
+      /* ⚠ THE FILL IS OPAQUE EVEN ON AN EMPTY SLOT. Drawing the whole panel at 0.55 let the
+         plate's baked thin bays show straight THROUGH the three empty sockets - two columns of
+         old rails inside every new one, which is worse than either layout alone. The well is
+         solid and only the RAIL dims, so an unused slot reads as an unlit socket. */
       ctx.save(); ctx.globalAlpha=a;
-      ctx.fillStyle='#16161f'; ctx.fillRect(bx,by,bw,bh);
-      ctx.lineWidth=Math.max(1,bh*0.06); ctx.strokeStyle='#705848';
-      ctx.strokeRect(bx+ctx.lineWidth/2,by+ctx.lineWidth/2,bw-ctx.lineWidth,bh-ctx.lineWidth);
+      const lw2=Math.max(1,rh*0.055);
+      ctx.fillStyle='#16161f';
+      ctx.fillRect(RX,ry,box,rh); ctx.fillRect(rx2,ry,rw2,rh);
+      ctx.globalAlpha=a*(r?1:0.45);
+      ctx.strokeStyle='#705848'; ctx.lineWidth=lw2;
+      ctx.strokeRect(RX+lw2/2,ry+lw2/2,box-lw2,rh-lw2);
+      ctx.strokeRect(rx2+lw2/2,ry+lw2/2,rw2-lw2,rh-lw2);
+      /* the plate's own top bevel: one lighter line inside the rail, which is what stops a drawn
+         panel reading as a flat hole punched in the art */
+      ctx.strokeStyle='rgba(150,158,168,0.55)'; ctx.lineWidth=Math.max(1,lw2*0.5);
+      ctx.beginPath(); ctx.moveTo(RX+lw2,ry+lw2); ctx.lineTo(RX+box-lw2,ry+lw2);
+      ctx.moveTo(rx2+lw2,ry+lw2); ctx.lineTo(rx2+rw2-lw2,ry+lw2); ctx.stroke();
       ctx.restore();
-      const ih=bh*0.74, tx0=bx+bw+sb[2]*0.035;
-      if(typeof iconBlit==='function'){ ctx.save(); ctx.globalAlpha=a; iconBlit(ctx,r[1],bx+bw/2,by+bh/2,ih,true); ctx.restore(); }
+      if(!r) continue;
+      if(typeof iconBlit==='function'){ ctx.save(); ctx.globalAlpha=a; iconBlit(ctx,r[1],RX+box/2,ry+rh/2,box*0.78,true); ctx.restore(); }
       const full=r[0], shown=full.slice(0, Math.max(0,Math.round((t-(0.55+i*0.45))*22)));
-      const room=sb[0]+sb[2]*0.97-tx0;
-      const lH=(typeof stageFitH==='function')?stageFitH(art,full,room,sb[3]*0.60,9,0.06):sb[3]*0.5;
+      const pad=rw2*0.05, room=rw2-pad*2;
+      const lH=(typeof stageFitH==='function')?stageFitH(art,full,room,rh*0.52,9,0.06):rh*0.45;
       const lw=(typeof stageWidth==='function')?stageWidth(art,full,lH,0.06):0;
-      stageText(art,shown,tx0+lw/2,sb[1]+sb[3]*0.55,lH,'#8de23a',0.85,a,0.06);
+      stageText(art,shown,rx2+pad+lw/2,ry+rh/2,lH,'#8de23a',0.85,a,0.06);
     }
-    /* score bar carries the instruction; sign-off the flourish */
-    b=bay(S.score);
+    /* ⚠ THE INSTRUCTION MOVED OUT OF THE SCORE BAY - the four rows now cover it. It goes in the
+       sign-off strip, and the CONTINUE prompt goes in the footer, so nothing is drawn twice in one
+       place. (0814b: two strings at the same y read as garbage, not as two lines.) */
+    b=bay(S.signoff);
     const goA=A(0.55+U.rows.length*0.45);
     if(goA>0){ stageText(art,'LOOK FOR THEM IN THE FIELD',b[0]+b[2]/2,b[1]+b[3]*0.55,Math.min(b[3]*0.5,14),'#9fd6ff',0.8,goA,0.08); }
-    b=bay(S.signoff);
+    b=bay(S.footer);
     if(goA>0 && Math.floor(t*2)%2) controlHintRow([['pad_a','CONTINUE']],b[1]+b[3]*0.55,W/2,W-24);
   }
   /* exit: any press once the rows are in, click included */

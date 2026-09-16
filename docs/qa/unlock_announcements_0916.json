@@ -4,7 +4,7 @@
  "rule": "SC_UNLOCKS announces where bossDie grants: stage 4 LIGHTNING ORB (yuri), stage 5 CHAINGUN, stage 9 LASER MIST. Stage 2 no longer names the lightning orb.",
  "probe": "_BUILD_SOURCE/probe_unlocks_0916.py",
  "probe_result": {
-  "ok": 25,
+  "ok": 29,
   "fail": 0,
   "page_errors": 0,
   "console_errors": 0,
@@ -109,16 +109,32 @@
   },
   {
    "pass": true,
+   "label": "the page carries four rows (4)"
+  },
+  {
+   "pass": true,
+   "label": "and four distinct icons are asked for on one frame (['micon_fireorb_3', 'micon_icebreath_3', 'micon_lasermist_3', 'micon_thermoshock_3'])"
+  },
+  {
+   "pass": true,
+   "label": "the cap and the layout are one number (UNLOCK_MAX)"
+  },
+  {
+   "pass": true,
+   "label": "Freezer's row set is within the cap"
+  },
+  {
+   "pass": true,
    "label": "no page or console errors (0)"
   }
  ],
  "suite": {
   "command": "node _BUILD_SOURCE/test_fl.js",
-  "ok": 4568,
+  "ok": 4602,
   "fail": 57,
   "exit": 1,
   "final_summary_reached": true,
-  "section": "361 (16/16)",
+  "section": "361 (21/21)",
   "baseline": {
    "worktree": "97265703",
    "ok": 4552,
@@ -126,11 +142,20 @@
   },
   "failure_names_new": [],
   "failure_names_repaired": [],
-  "note": "names compared with numbers masked; identical both sides. 56 established names plus the intermittent stage-1 sand-tank fixture."
+  "note": "names compared with numbers masked; identical both sides"
  },
  "proofs": [
   "docs/proofs/unlocks_0916/01_stage4_lightningorb.png",
-  "docs/proofs/unlocks_0916/02_stage9_lasermist.png"
+  "docs/proofs/unlocks_0916/02_stage9_lasermist.png",
+  "docs/proofs/unlocks_0916/03_four_rows.png"
  ],
- "not_changed": "the briefing line wraps to three rows and its third row is clipped by the brief bay on every stage that has a page; pre-existing, flagged for Mike."
+ "not_changed": "the briefing line wraps to three rows and its third row is clipped by the brief bay on every stage that has a page; pre-existing, flagged for Mike.",
+ "layout": {
+  "request": "Mike, 0916: \"you can list 4 at once, but use square boxes plus rectangle text next to them\" then \"should be 4 large boxes for th weapon icons, 4 rectangle boxes next to the large boxes. re-do\"",
+  "first_cut": "borrowed the debrief stat bays (0.0526 of the plate each), so the square came out the height of a text row - sent back",
+  "now": "UNLOCK_ROWS owns the middle of the plate (0.3948 of its height) and divides it into four rows: a square icon box at the row height plus a rectangle beside it. UNLOCK_MAX=4 is the cap and the row count.",
+  "opacity": "the panels are opaque, including the empty sockets - at 0.55 alpha the plate\u2019s baked thin bays showed through every unused box; only the rail dims now",
+  "colours": "measured off stat_panel_full.png at a stat bay and the rank bay: bronze rail rgb(112,88,72), well rgb(22,22,32), plate bevel inside the rail",
+  "moved": "LOOK FOR THEM IN THE FIELD to the sign-off strip, CONTINUE to the footer, because the rows now cover the score bay"
+ }
 }
