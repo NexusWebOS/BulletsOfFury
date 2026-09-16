@@ -34397,11 +34397,16 @@ function hammerBoomerangBodyDraw(b,tint){
   const hh=200,w=hh*im.width/im.height;ctx.save();ctx.translate(b.x,b.y);ctx.imageSmoothingEnabled=false;
   ctx.drawImage(im,-w/2,-hh/2,w,hh);ctx.restore();return true;
 }
+function hammerGroundReticleDraw(im,x,y,w,alpha){
+  if(!im)return false;const hh=w*im.height/Math.max(1,im.width);
+  ctx.save();ctx.globalAlpha=alpha==null?1:alpha;ctx.imageSmoothingEnabled=false;
+  ctx.drawImage(im,x-w/2,y-hh/2,w,hh);ctx.restore();return true;
+}
 function hammerBoomerangSpinDraw(b){
   const h=b._hammer,g=hammerGripPoint(b),k=clamp(h.t/HAMMER_SPIN_TIME,0,1);
   combatWarningDraw(b,{x:h.throwX,y:b.y-24,ex:h.throwX,ey:VH,progress:k,width:42});
   const ri=hammerFrame('reticle',0,k<1/3?null:k<2/3?'yellow':'red');
-  if(ri){ctx.save();ctx.globalAlpha=.72+.28*Math.sin(h.t*28);ctx.drawImage(ri,h.throwX-48,h.throwY-48,96,96);ctx.restore();}
+  if(ri)hammerGroundReticleDraw(ri,h.throwX,h.throwY,122,.72+.28*Math.sin(h.t*28));
   hammerBoomerangBodyDraw(b,b.flash>0?'white':null);
   for(let i=3;i>=1;i--)hammerBoomerangPieceDraw({x:g.x,y:g.y,angle:h.spinAngle-i*.17},.08*(4-i));
   const im=hammerFrame('boomerang_hammer',0);if(!im)return;
@@ -34430,7 +34435,7 @@ function hammerBossDraw(b){
     const k=clamp(h.t/1.2,0,1);
     combatWarningDraw(b,{x:b.x,y:b.y,ex:h.tx,ey:h.ty,progress:k,width:96});
     const ri=hammerFrame('reticle',0,h.t<.4?null:h.t<.8?'yellow':'red');
-    if(ri){ctx.save();ctx.globalAlpha=.7+.3*Math.sin(h.t*30);ctx.drawImage(ri,h.tx-50,h.ty-50,100,100);ctx.restore();}
+    if(ri)hammerGroundReticleDraw(ri,h.tx,h.ty,126,.7+.3*Math.sin(h.t*30));
   }
   const tint=b.flash>0?'white':s==='ball'&&h.rage>0?'red':s==='shield'?'blue':null;
   const im=hammerFrame(key,f,tint);if(!im)return;

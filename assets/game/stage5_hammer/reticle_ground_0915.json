@@ -1,0 +1,22 @@
+{
+  "date": "2026-09-15",
+  "runtime": "reticle.png",
+  "generatedSource": "reticle_ground_source_0915.png",
+  "preservedOriginal": "reticle_topdown_original_0915.png",
+  "sourceSize": [
+    1774,
+    887
+  ],
+  "crop": [
+    0,
+    6,
+    1774,
+    887
+  ],
+  "runtimeSize": [
+    1774,
+    881
+  ],
+  "aspect": 2.0136,
+  "sha256": "128522f35d8d39f9a3080ea87c18f1ec65794c9c1aa0ee04b63c1809138e3516"
+}

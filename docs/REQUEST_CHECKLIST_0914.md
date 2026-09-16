@@ -12,7 +12,7 @@ Detailed specifications: [original request ledger](OVERNIGHT_REQUESTS_0914.md). 
 
 ## Current batch and next work
 
-Just verified: matching mouse and keyboard prompt art wired into Help and Options [Proof](INPUT_PROMPTS_0915.md).
+Just verified: Chrome Hammer depth-projected ground-floor target reticle [Proof](GROUND_RETICLE_0915.md).
 
 Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.
 
@@ -157,7 +157,7 @@ Mike selected furyship_somersault_13.png and approved image_gen for its replacem
 - [x] **SPACE-19 · Complete** — SpriteCook chrome hammer robot, ship transformation, blue/red charge and black spiked-ball animation family. [Evidence](BOSS_BATCH_0915.md).
 - [x] **SPACE-20 · Complete** — Easy/Normal Stage 5 replacement: harmless bottom flyby, top return and unfold; retain Xenoregent without assigning it to Stage 6/9. [Evidence](BOSS_BATCH_0915.md).
 - [x] **SPACE-21 · Complete** — 15-second bouncing spiked ball; ordinary fire enrages into faster laser volleys, manual missiles knock back; x10/x20 supplies only. [Evidence](BOSS_BATCH_0915.md).
-- [x] **SPACE-22 · Complete** — Hammer leap attacks with generated green/yellow/red committed target reticles, upward charge scan, return leap or follow-up strike. [Evidence](BOSS_BATCH_0915.md).
+- [x] **SPACE-22 · Complete** — Hammer leap attacks with a depth-projected green/yellow/red ground-floor target marker, upward charge scan, return leap or follow-up strike. [Evidence](GROUND_RETICLE_0915.md).
 - [x] **SPACE-23 · Complete** — Chrome Hammer one-hand boomerang: rapidly spin and charge the hammer, throw it vertically down a committed player lane, then visibly retract it to the raised hand at medium magnetic speed with sounds. [Evidence](CHROME_HAMMER_BOOMERANG_0915.md).
 - [x] **SPACE-24 · Complete** — Fury HQ Space Division crate with a three-reward RNG bag: autonomous helper orb, Akimbo projectile upgrade, and proximity mine with splash plus authored shrapnel. [Evidence](SPACE_ARMORY_0915.md).
 

@@ -1,0 +1,29 @@
+{
+  "date": "2026-09-15",
+  "checklistId": "SPACE-22",
+  "status": "complete",
+  "runtimeAsset": "assets/game/stage5_hammer/reticle.png",
+  "preservedOriginal": "assets/game/stage5_hammer/reticle_topdown_original_0915.png",
+  "runtimeSize": [
+    1774,
+    881
+  ],
+  "aspect": 2.0136,
+  "integration": [
+    "Chrome Hammer leap warning",
+    "Chrome Hammer boomerang lane warning"
+  ],
+  "focused": {
+    "test": "_BUILD_SOURCE/test_ground_reticle_0915.cjs",
+    "passed": 10,
+    "failed": 0
+  },
+  "syntax": "passed",
+  "chromium": {
+    "url": "http://127.0.0.1:8785/_shots/ground_reticle_0915/review.html",
+    "decoded": 1,
+    "status": "READY \u2014 FLOOR PROJECTION DECODED"
+  },
+  "commit": false,
+  "push": false
+}

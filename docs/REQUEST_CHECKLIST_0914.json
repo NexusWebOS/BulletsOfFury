@@ -1461,8 +1461,8 @@
       "id": "SPACE-22",
       "group": "Stages 5-9: space and encounter cleanup",
       "status": "complete",
-      "request": "Hammer leap attacks with generated green/yellow/red committed target reticles, upward charge scan, return leap or follow-up strike.",
-      "evidence": "BOSS_BATCH_0915.md",
+      "request": "Hammer leap attacks with a depth-projected green/yellow/red ground-floor target marker, upward charge scan, return leap or follow-up strike.",
+      "evidence": "GROUND_RETICLE_0915.md",
       "dependency": ""
     },
     {
@@ -1492,7 +1492,7 @@
   ],
   "queuePolicy": "Work in ascending workOrder, an estimate of implementation plus verification difficulty. Respect prerequisites and skip externally blocked items while continuing ready work. Re-rank when investigation changes the estimate; retain IDs and explain the change.",
   "latestBatch": {
-    "description": "mouse and keyboard input prompt art with live Help and Options integration",
-    "evidence": "INPUT_PROMPTS_0915.md"
+    "description": "Chrome Hammer depth-projected ground-floor target reticle",
+    "evidence": "GROUND_RETICLE_0915.md"
   }
 }
